@@ -27,6 +27,7 @@ pub struct RemoveApplicationInstanceInputBuilder {
 }
 impl RemoveApplicationInstanceInputBuilder {
     /// <p>An application instance ID.</p>
+    /// This field is required.
     pub fn application_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_instance_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl RemoveApplicationInstanceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_application_instance::RemoveApplicationInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::remove_application_instance::RemoveApplicationInstanceInput {
             application_instance_id: self.application_instance_id,

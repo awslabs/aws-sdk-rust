@@ -2,14 +2,14 @@
 pub fn ser_discovery_server_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DiscoveryServerConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.server_hostname {
-        object.key("ServerHostname").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("ServerHostname").string(input.server_hostname.as_str());
     }
-    if let Some(var_2) = &input.server_port {
+    if let Some(var_1) = &input.server_port {
         object.key("ServerPort").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
     Ok(())
@@ -54,7 +54,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::discovery_server_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

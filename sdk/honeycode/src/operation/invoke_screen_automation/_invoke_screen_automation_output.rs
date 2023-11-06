@@ -34,6 +34,7 @@ pub struct InvokeScreenAutomationOutputBuilder {
 }
 impl InvokeScreenAutomationOutputBuilder {
     /// <p>The updated workbook cursor after performing the automation action.</p>
+    /// This field is required.
     pub fn workbook_cursor(mut self, input: i64) -> Self {
         self.workbook_cursor = ::std::option::Option::Some(input);
         self

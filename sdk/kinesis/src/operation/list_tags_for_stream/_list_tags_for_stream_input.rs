@@ -107,7 +107,7 @@ impl ListTagsForStreamInputBuilder {
     /// Consumes the builder and constructs a [`ListTagsForStreamInput`](crate::operation::list_tags_for_stream::ListTagsForStreamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_tags_for_stream::ListTagsForStreamInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_tags_for_stream::ListTagsForStreamInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_tags_for_stream::ListTagsForStreamInput {
             stream_name: self.stream_name,
             exclusive_start_tag_key: self.exclusive_start_tag_key,

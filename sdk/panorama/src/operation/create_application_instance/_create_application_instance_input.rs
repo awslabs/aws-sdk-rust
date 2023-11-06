@@ -104,6 +104,7 @@ impl CreateApplicationInstanceInputBuilder {
         &self.description
     }
     /// <p>The application's manifest document.</p>
+    /// This field is required.
     pub fn manifest_payload(mut self, input: crate::types::ManifestPayload) -> Self {
         self.manifest_payload = ::std::option::Option::Some(input);
         self
@@ -160,6 +161,7 @@ impl CreateApplicationInstanceInputBuilder {
         &self.runtime_role_arn
     }
     /// <p>A device's ID.</p>
+    /// This field is required.
     pub fn default_runtime_context_device(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_runtime_context_device = ::std::option::Option::Some(input.into());
         self
@@ -198,7 +200,7 @@ impl CreateApplicationInstanceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_application_instance::CreateApplicationInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_application_instance::CreateApplicationInstanceInput {
             name: self.name,

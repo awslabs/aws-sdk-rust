@@ -34,6 +34,7 @@ pub struct RegisterStreamConsumerInputBuilder {
 }
 impl RegisterStreamConsumerInputBuilder {
     /// <p>The ARN of the Kinesis data stream that you want to register the consumer with. For more info, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
+    /// This field is required.
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl RegisterStreamConsumerInputBuilder {
         &self.stream_arn
     }
     /// <p>For a given Kinesis data stream, each consumer must have a unique name. However, consumer names don't have to be unique across data streams.</p>
+    /// This field is required.
     pub fn consumer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.consumer_name = ::std::option::Option::Some(input.into());
         self
@@ -64,8 +66,10 @@ impl RegisterStreamConsumerInputBuilder {
     /// Consumes the builder and constructs a [`RegisterStreamConsumerInput`](crate::operation::register_stream_consumer::RegisterStreamConsumerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_stream_consumer::RegisterStreamConsumerInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::register_stream_consumer::RegisterStreamConsumerInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::register_stream_consumer::RegisterStreamConsumerInput {
             stream_arn: self.stream_arn,
             consumer_name: self.consumer_name,

@@ -25,8 +25,10 @@ impl GetRightsizingRecommendationOutput {
         self.summary.as_ref()
     }
     /// <p>Recommendations to rightsize resources.</p>
-    pub fn rightsizing_recommendations(&self) -> ::std::option::Option<&[crate::types::RightsizingRecommendation]> {
-        self.rightsizing_recommendations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rightsizing_recommendations.is_none()`.
+    pub fn rightsizing_recommendations(&self) -> &[crate::types::RightsizingRecommendation] {
+        self.rightsizing_recommendations.as_deref().unwrap_or_default()
     }
     /// <p>The token to retrieve the next set of results.</p>
     pub fn next_page_token(&self) -> ::std::option::Option<&str> {

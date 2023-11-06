@@ -87,6 +87,7 @@ pub struct CreateNetworkInputBuilder {
 }
 impl CreateNetworkInputBuilder {
     /// <p>This is a unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the Amazon Web Services CLI. </p>
+    /// This field is required.
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
@@ -101,6 +102,7 @@ impl CreateNetworkInputBuilder {
         &self.client_request_token
     }
     /// <p>The name of the network.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -129,6 +131,7 @@ impl CreateNetworkInputBuilder {
         &self.description
     }
     /// <p>The blockchain framework that the network uses.</p>
+    /// This field is required.
     pub fn framework(mut self, input: crate::types::Framework) -> Self {
         self.framework = ::std::option::Option::Some(input);
         self
@@ -143,6 +146,7 @@ impl CreateNetworkInputBuilder {
         &self.framework
     }
     /// <p>The version of the blockchain framework that the network uses.</p>
+    /// This field is required.
     pub fn framework_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.framework_version = ::std::option::Option::Some(input.into());
         self
@@ -171,6 +175,7 @@ impl CreateNetworkInputBuilder {
         &self.framework_configuration
     }
     /// <p> The voting rules used by the network to determine if a proposal is approved. </p>
+    /// This field is required.
     pub fn voting_policy(mut self, input: crate::types::VotingPolicy) -> Self {
         self.voting_policy = ::std::option::Option::Some(input);
         self
@@ -185,6 +190,7 @@ impl CreateNetworkInputBuilder {
         &self.voting_policy
     }
     /// <p>Configuration properties for the first member within the network.</p>
+    /// This field is required.
     pub fn member_configuration(mut self, input: crate::types::MemberConfiguration) -> Self {
         self.member_configuration = ::std::option::Option::Some(input);
         self
@@ -227,7 +233,7 @@ impl CreateNetworkInputBuilder {
     /// Consumes the builder and constructs a [`CreateNetworkInput`](crate::operation::create_network::CreateNetworkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_network::CreateNetworkInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_network::CreateNetworkInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_network::CreateNetworkInput {
             client_request_token: self.client_request_token,
             name: self.name,

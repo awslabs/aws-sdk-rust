@@ -52,6 +52,7 @@ pub struct UpdateResourceShareInputBuilder {
 }
 impl UpdateResourceShareInputBuilder {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share that you want to modify.</p>
+    /// This field is required.
     pub fn resource_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_share_arn = ::std::option::Option::Some(input.into());
         self
@@ -116,7 +117,7 @@ impl UpdateResourceShareInputBuilder {
     /// Consumes the builder and constructs a [`UpdateResourceShareInput`](crate::operation::update_resource_share::UpdateResourceShareInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_resource_share::UpdateResourceShareInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_resource_share::UpdateResourceShareInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_resource_share::UpdateResourceShareInput {
             resource_share_arn: self.resource_share_arn,

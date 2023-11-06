@@ -14,8 +14,10 @@ impl ResolveComponentCandidatesInput {
         self.platform.as_ref()
     }
     /// <p>The list of components to resolve.</p>
-    pub fn component_candidates(&self) -> ::std::option::Option<&[crate::types::ComponentCandidate]> {
-        self.component_candidates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.component_candidates.is_none()`.
+    pub fn component_candidates(&self) -> &[crate::types::ComponentCandidate] {
+        self.component_candidates.as_deref().unwrap_or_default()
     }
 }
 impl ResolveComponentCandidatesInput {
@@ -72,7 +74,7 @@ impl ResolveComponentCandidatesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::resolve_component_candidates::ResolveComponentCandidatesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::resolve_component_candidates::ResolveComponentCandidatesInput {
             platform: self.platform,

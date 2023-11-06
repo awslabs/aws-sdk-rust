@@ -34,6 +34,7 @@ pub struct PutVoiceConnectorOriginationInputBuilder {
 }
 impl PutVoiceConnectorOriginationInputBuilder {
     /// <p>The Amazon Chime Voice Connector ID.</p>
+    /// This field is required.
     pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl PutVoiceConnectorOriginationInputBuilder {
         &self.voice_connector_id
     }
     /// <p>The origination setting details to add.</p>
+    /// This field is required.
     pub fn origination(mut self, input: crate::types::Origination) -> Self {
         self.origination = ::std::option::Option::Some(input);
         self
@@ -66,7 +68,7 @@ impl PutVoiceConnectorOriginationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_voice_connector_origination::PutVoiceConnectorOriginationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_voice_connector_origination::PutVoiceConnectorOriginationInput {
             voice_connector_id: self.voice_connector_id,

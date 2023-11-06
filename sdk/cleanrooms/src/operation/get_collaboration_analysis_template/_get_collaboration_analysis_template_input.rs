@@ -34,6 +34,7 @@ pub struct GetCollaborationAnalysisTemplateInputBuilder {
 }
 impl GetCollaborationAnalysisTemplateInputBuilder {
     /// <p>A unique identifier for the collaboration that the analysis templates belong to. Currently accepts collaboration ID.</p>
+    /// This field is required.
     pub fn collaboration_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collaboration_identifier = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetCollaborationAnalysisTemplateInputBuilder {
         &self.collaboration_identifier
     }
     /// <p>The Amazon Resource Name (ARN) associated with the analysis template within a collaboration.</p>
+    /// This field is required.
     pub fn analysis_template_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analysis_template_arn = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl GetCollaborationAnalysisTemplateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_collaboration_analysis_template::GetCollaborationAnalysisTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_collaboration_analysis_template::GetCollaborationAnalysisTemplateInput {

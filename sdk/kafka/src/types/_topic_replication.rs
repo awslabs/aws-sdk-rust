@@ -29,12 +29,16 @@ impl TopicReplication {
         self.detect_and_copy_new_topics
     }
     /// <p>List of regular expression patterns indicating the topics that should not be replicated.</p>
-    pub fn topics_to_exclude(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.topics_to_exclude.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.topics_to_exclude.is_none()`.
+    pub fn topics_to_exclude(&self) -> &[::std::string::String] {
+        self.topics_to_exclude.as_deref().unwrap_or_default()
     }
     /// <p>List of regular expression patterns indicating the topics to copy.</p>
-    pub fn topics_to_replicate(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.topics_to_replicate.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.topics_to_replicate.is_none()`.
+    pub fn topics_to_replicate(&self) -> &[::std::string::String] {
+        self.topics_to_replicate.as_deref().unwrap_or_default()
     }
 }
 impl TopicReplication {

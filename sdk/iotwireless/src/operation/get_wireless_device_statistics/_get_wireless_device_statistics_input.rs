@@ -27,6 +27,7 @@ pub struct GetWirelessDeviceStatisticsInputBuilder {
 }
 impl GetWirelessDeviceStatisticsInputBuilder {
     /// <p>The ID of the wireless device for which to get the data.</p>
+    /// This field is required.
     pub fn wireless_device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.wireless_device_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetWirelessDeviceStatisticsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_wireless_device_statistics::GetWirelessDeviceStatisticsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_wireless_device_statistics::GetWirelessDeviceStatisticsInput {
             wireless_device_id: self.wireless_device_id,

@@ -2,64 +2,64 @@
 pub fn ser_action_declaration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ActionDeclaration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("name").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.action_type_id {
+    if let Some(var_1) = &input.action_type_id {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("actionTypeId").start_object();
-        crate::protocol_serde::shape_action_type_id::ser_action_type_id(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("actionTypeId").start_object();
+        crate::protocol_serde::shape_action_type_id::ser_action_type_id(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.run_order {
+    if let Some(var_3) = &input.run_order {
         object.key("runOrder").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_5) = &input.configuration {
+    if let Some(var_4) = &input.configuration {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("configuration").start_object();
-        for (key_7, value_8) in var_5 {
+        let mut object_5 = object.key("configuration").start_object();
+        for (key_6, value_7) in var_4 {
             {
-                object_6.key(key_7.as_str()).string(value_8.as_str());
+                object_5.key(key_6.as_str()).string(value_7.as_str());
             }
         }
-        object_6.finish();
+        object_5.finish();
     }
-    if let Some(var_9) = &input.output_artifacts {
-        let mut array_10 = object.key("outputArtifacts").start_array();
-        for item_11 in var_9 {
-            {
-                #[allow(unused_mut)]
-                let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_output_artifact::ser_output_artifact(&mut object_12, item_11)?;
-                object_12.finish();
-            }
-        }
-        array_10.finish();
-    }
-    if let Some(var_13) = &input.input_artifacts {
-        let mut array_14 = object.key("inputArtifacts").start_array();
-        for item_15 in var_13 {
+    if let Some(var_8) = &input.output_artifacts {
+        let mut array_9 = object.key("outputArtifacts").start_array();
+        for item_10 in var_8 {
             {
                 #[allow(unused_mut)]
-                let mut object_16 = array_14.value().start_object();
-                crate::protocol_serde::shape_input_artifact::ser_input_artifact(&mut object_16, item_15)?;
-                object_16.finish();
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_output_artifact::ser_output_artifact(&mut object_11, item_10)?;
+                object_11.finish();
             }
         }
-        array_14.finish();
+        array_9.finish();
     }
-    if let Some(var_17) = &input.role_arn {
-        object.key("roleArn").string(var_17.as_str());
+    if let Some(var_12) = &input.input_artifacts {
+        let mut array_13 = object.key("inputArtifacts").start_array();
+        for item_14 in var_12 {
+            {
+                #[allow(unused_mut)]
+                let mut object_15 = array_13.value().start_object();
+                crate::protocol_serde::shape_input_artifact::ser_input_artifact(&mut object_15, item_14)?;
+                object_15.finish();
+            }
+        }
+        array_13.finish();
     }
-    if let Some(var_18) = &input.region {
-        object.key("region").string(var_18.as_str());
+    if let Some(var_16) = &input.role_arn {
+        object.key("roleArn").string(var_16.as_str());
     }
-    if let Some(var_19) = &input.namespace {
-        object.key("namespace").string(var_19.as_str());
+    if let Some(var_17) = &input.region {
+        object.key("region").string(var_17.as_str());
+    }
+    if let Some(var_18) = &input.namespace {
+        object.key("namespace").string(var_18.as_str());
     }
     Ok(())
 }
@@ -139,7 +139,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::action_declaration_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

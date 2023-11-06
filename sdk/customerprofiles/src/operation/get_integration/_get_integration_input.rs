@@ -34,6 +34,7 @@ pub struct GetIntegrationInputBuilder {
 }
 impl GetIntegrationInputBuilder {
     /// <p>The unique name of the domain.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetIntegrationInputBuilder {
         &self.domain_name
     }
     /// <p>The URI of the S3 bucket or any other type of data source.</p>
+    /// This field is required.
     pub fn uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.uri = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl GetIntegrationInputBuilder {
     /// Consumes the builder and constructs a [`GetIntegrationInput`](crate::operation::get_integration::GetIntegrationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_integration::GetIntegrationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_integration::GetIntegrationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_integration::GetIntegrationInput {
             domain_name: self.domain_name,
             uri: self.uri,

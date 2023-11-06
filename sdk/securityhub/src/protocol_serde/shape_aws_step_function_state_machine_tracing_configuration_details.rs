@@ -2,7 +2,7 @@
 pub fn ser_aws_step_function_state_machine_tracing_configuration_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsStepFunctionStateMachineTracingConfigurationDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.enabled {
         object.key("Enabled").boolean(*var_1);
     }

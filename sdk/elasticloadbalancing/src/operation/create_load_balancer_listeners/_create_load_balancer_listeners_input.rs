@@ -15,8 +15,10 @@ impl CreateLoadBalancerListenersInput {
         self.load_balancer_name.as_deref()
     }
     /// <p>The listeners.</p>
-    pub fn listeners(&self) -> ::std::option::Option<&[crate::types::Listener]> {
-        self.listeners.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.listeners.is_none()`.
+    pub fn listeners(&self) -> &[crate::types::Listener] {
+        self.listeners.as_deref().unwrap_or_default()
     }
 }
 impl CreateLoadBalancerListenersInput {
@@ -35,6 +37,7 @@ pub struct CreateLoadBalancerListenersInputBuilder {
 }
 impl CreateLoadBalancerListenersInputBuilder {
     /// <p>The name of the load balancer.</p>
+    /// This field is required.
     pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
@@ -73,7 +76,7 @@ impl CreateLoadBalancerListenersInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_load_balancer_listeners::CreateLoadBalancerListenersInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_load_balancer_listeners::CreateLoadBalancerListenersInput {
             load_balancer_name: self.load_balancer_name,

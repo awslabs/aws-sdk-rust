@@ -11,12 +11,16 @@ pub struct BatchGetMembershipDatasourcesOutput {
 }
 impl BatchGetMembershipDatasourcesOutput {
     /// <p>Details on the data source package history for an member of the behavior graph.</p>
-    pub fn membership_datasources(&self) -> ::std::option::Option<&[crate::types::MembershipDatasources]> {
-        self.membership_datasources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.membership_datasources.is_none()`.
+    pub fn membership_datasources(&self) -> &[crate::types::MembershipDatasources] {
+        self.membership_datasources.as_deref().unwrap_or_default()
     }
     /// <p>Graphs that data source package information could not be retrieved for.</p>
-    pub fn unprocessed_graphs(&self) -> ::std::option::Option<&[crate::types::UnprocessedGraph]> {
-        self.unprocessed_graphs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unprocessed_graphs.is_none()`.
+    pub fn unprocessed_graphs(&self) -> &[crate::types::UnprocessedGraph] {
+        self.unprocessed_graphs.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchGetMembershipDatasourcesOutput {

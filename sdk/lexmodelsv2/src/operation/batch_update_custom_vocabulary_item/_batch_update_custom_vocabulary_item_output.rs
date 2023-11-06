@@ -29,12 +29,16 @@ impl BatchUpdateCustomVocabularyItemOutput {
         self.locale_id.as_deref()
     }
     /// <p>A list of custom vocabulary items that failed to update during the operation. The reason for the error is contained within each error object.</p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::FailedCustomVocabularyItem]> {
-        self.errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
+    pub fn errors(&self) -> &[crate::types::FailedCustomVocabularyItem] {
+        self.errors.as_deref().unwrap_or_default()
     }
     /// <p>A list of custom vocabulary items that were successfully updated during the operation.</p>
-    pub fn resources(&self) -> ::std::option::Option<&[crate::types::CustomVocabularyItem]> {
-        self.resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
+    pub fn resources(&self) -> &[crate::types::CustomVocabularyItem] {
+        self.resources.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchUpdateCustomVocabularyItemOutput {

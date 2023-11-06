@@ -11,8 +11,10 @@ pub struct GetLinksOutput {
 }
 impl GetLinksOutput {
     /// <p>The links.</p>
-    pub fn links(&self) -> ::std::option::Option<&[crate::types::Link]> {
-        self.links.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.links.is_none()`.
+    pub fn links(&self) -> &[crate::types::Link] {
+        self.links.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -8,8 +8,10 @@ pub struct DescribeClientPropertiesInput {
 }
 impl DescribeClientPropertiesInput {
     /// <p>The resource identifier, in the form of directory IDs.</p>
-    pub fn resource_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_ids.is_none()`.
+    pub fn resource_ids(&self) -> &[::std::string::String] {
+        self.resource_ids.as_deref().unwrap_or_default()
     }
 }
 impl DescribeClientPropertiesInput {
@@ -51,7 +53,7 @@ impl DescribeClientPropertiesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_client_properties::DescribeClientPropertiesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_client_properties::DescribeClientPropertiesInput {
             resource_ids: self.resource_ids,

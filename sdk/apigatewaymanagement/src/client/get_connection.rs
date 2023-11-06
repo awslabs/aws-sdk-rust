@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetConnection`](crate::operation::get_connection::builders::GetConnectionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`connection_id(impl Into<String>)`](crate::operation::get_connection::builders::GetConnectionFluentBuilder::connection_id) / [`set_connection_id(Option<String>)`](crate::operation::get_connection::builders::GetConnectionFluentBuilder::set_connection_id): (undocumented)
+    ///   - [`connection_id(impl Into<String>)`](crate::operation::get_connection::builders::GetConnectionFluentBuilder::connection_id) / [`set_connection_id(Option<String>)`](crate::operation::get_connection::builders::GetConnectionFluentBuilder::set_connection_id):<br>required: **true**<br>(undocumented)<br>
     /// - On success, responds with [`GetConnectionOutput`](crate::operation::get_connection::GetConnectionOutput) with field(s):
     ///   - [`connected_at(Option<DateTime>)`](crate::operation::get_connection::GetConnectionOutput::connected_at): <p>The time in ISO 8601 format for when the connection was established.</p>
     ///   - [`identity(Option<Identity>)`](crate::operation::get_connection::GetConnectionOutput::identity): (undocumented)

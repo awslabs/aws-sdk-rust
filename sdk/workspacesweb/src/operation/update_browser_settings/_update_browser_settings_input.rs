@@ -52,6 +52,7 @@ pub struct UpdateBrowserSettingsInputBuilder {
 }
 impl UpdateBrowserSettingsInputBuilder {
     /// <p>The ARN of the browser settings.</p>
+    /// This field is required.
     pub fn browser_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.browser_settings_arn = ::std::option::Option::Some(input.into());
         self
@@ -99,7 +100,7 @@ impl UpdateBrowserSettingsInputBuilder {
     /// Consumes the builder and constructs a [`UpdateBrowserSettingsInput`](crate::operation::update_browser_settings::UpdateBrowserSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_browser_settings::UpdateBrowserSettingsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_browser_settings::UpdateBrowserSettingsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_browser_settings::UpdateBrowserSettingsInput {
             browser_settings_arn: self.browser_settings_arn,

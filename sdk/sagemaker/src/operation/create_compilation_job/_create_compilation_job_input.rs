@@ -66,8 +66,10 @@ impl CreateCompilationJobInput {
         self.stopping_condition.as_ref()
     }
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateCompilationJobInput {
@@ -92,6 +94,7 @@ pub struct CreateCompilationJobInputBuilder {
 }
 impl CreateCompilationJobInputBuilder {
     /// <p>A name for the model compilation job. The name must be unique within the Amazon Web Services Region and within your Amazon Web Services account. </p>
+    /// This field is required.
     pub fn compilation_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compilation_job_name = ::std::option::Option::Some(input.into());
         self
@@ -114,6 +117,7 @@ impl CreateCompilationJobInputBuilder {
     /// <li> <p>Publish metrics to Amazon CloudWatch</p> </li>
     /// </ul>
     /// <p>You grant permissions for all of these tasks to an IAM role. To pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles.</a> </p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -172,6 +176,7 @@ impl CreateCompilationJobInputBuilder {
         &self.input_config
     }
     /// <p>Provides information about the output location for the compiled model and the target device the model runs on.</p>
+    /// This field is required.
     pub fn output_config(mut self, input: crate::types::OutputConfig) -> Self {
         self.output_config = ::std::option::Option::Some(input);
         self
@@ -200,6 +205,7 @@ impl CreateCompilationJobInputBuilder {
         &self.vpc_config
     }
     /// <p>Specifies a limit to how long a model compilation job can run. When the job reaches the time limit, Amazon SageMaker ends the compilation job. Use this API to cap model training costs.</p>
+    /// This field is required.
     pub fn stopping_condition(mut self, input: crate::types::StoppingCondition) -> Self {
         self.stopping_condition = ::std::option::Option::Some(input);
         self
@@ -236,7 +242,7 @@ impl CreateCompilationJobInputBuilder {
     /// Consumes the builder and constructs a [`CreateCompilationJobInput`](crate::operation::create_compilation_job::CreateCompilationJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_compilation_job::CreateCompilationJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_compilation_job::CreateCompilationJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_compilation_job::CreateCompilationJobInput {
             compilation_job_name: self.compilation_job_name,

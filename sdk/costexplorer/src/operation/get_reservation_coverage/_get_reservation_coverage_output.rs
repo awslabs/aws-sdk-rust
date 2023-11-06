@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetReservationCoverageOutput {
     /// <p>The amount of time that your reservations covered.</p>
-    pub coverages_by_time: ::std::option::Option<::std::vec::Vec<crate::types::CoverageByTime>>,
+    pub coverages_by_time: ::std::vec::Vec<crate::types::CoverageByTime>,
     /// <p>The total amount of instance usage that a reservation covered.</p>
     pub total: ::std::option::Option<crate::types::Coverage>,
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
@@ -13,8 +13,9 @@ pub struct GetReservationCoverageOutput {
 }
 impl GetReservationCoverageOutput {
     /// <p>The amount of time that your reservations covered.</p>
-    pub fn coverages_by_time(&self) -> ::std::option::Option<&[crate::types::CoverageByTime]> {
-        self.coverages_by_time.as_deref()
+    pub fn coverages_by_time(&self) -> &[crate::types::CoverageByTime] {
+        use std::ops::Deref;
+        self.coverages_by_time.deref()
     }
     /// <p>The total amount of instance usage that a reservation covered.</p>
     pub fn total(&self) -> ::std::option::Option<&crate::types::Coverage> {
@@ -105,12 +106,24 @@ impl GetReservationCoverageOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetReservationCoverageOutput`](crate::operation::get_reservation_coverage::GetReservationCoverageOutput).
-    pub fn build(self) -> crate::operation::get_reservation_coverage::GetReservationCoverageOutput {
-        crate::operation::get_reservation_coverage::GetReservationCoverageOutput {
-            coverages_by_time: self.coverages_by_time,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`coverages_by_time`](crate::operation::get_reservation_coverage::builders::GetReservationCoverageOutputBuilder::coverages_by_time)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_reservation_coverage::GetReservationCoverageOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::get_reservation_coverage::GetReservationCoverageOutput {
+            coverages_by_time: self.coverages_by_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "coverages_by_time",
+                    "coverages_by_time was not specified but it is required when building GetReservationCoverageOutput",
+                )
+            })?,
             total: self.total,
             next_page_token: self.next_page_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateTags`](crate::operation::create_tags::builders::CreateTagsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`configuration_ids(impl Into<String>)`](crate::operation::create_tags::builders::CreateTagsFluentBuilder::configuration_ids) / [`set_configuration_ids(Option<Vec<String>>)`](crate::operation::create_tags::builders::CreateTagsFluentBuilder::set_configuration_ids): <p>A list of configuration items that you want to tag.</p>
-    ///   - [`tags(Tag)`](crate::operation::create_tags::builders::CreateTagsFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::create_tags::builders::CreateTagsFluentBuilder::set_tags): <p>Tags that you want to associate with one or more configuration items. Specify the tags that you want to create in a <i>key</i>-<i>value</i> format. For example:</p>  <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
+    ///   - [`configuration_ids(impl Into<String>)`](crate::operation::create_tags::builders::CreateTagsFluentBuilder::configuration_ids) / [`set_configuration_ids(Option<Vec::<String>>)`](crate::operation::create_tags::builders::CreateTagsFluentBuilder::set_configuration_ids):<br>required: **true**<br><p>A list of configuration items that you want to tag.</p><br>
+    ///   - [`tags(Tag)`](crate::operation::create_tags::builders::CreateTagsFluentBuilder::tags) / [`set_tags(Option<Vec::<Tag>>)`](crate::operation::create_tags::builders::CreateTagsFluentBuilder::set_tags):<br>required: **true**<br><p>Tags that you want to associate with one or more configuration items. Specify the tags that you want to create in a <i>key</i>-<i>value</i> format. For example:</p>  <p> <code>{"key": "serverType", "value": "webServer"}</code> </p><br>
     /// - On success, responds with [`CreateTagsOutput`](crate::operation::create_tags::CreateTagsOutput)
     /// - On failure, responds with [`SdkError<CreateTagsError>`](crate::operation::create_tags::CreateTagsError)
     pub fn create_tags(&self) -> crate::operation::create_tags::builders::CreateTagsFluentBuilder {

@@ -28,6 +28,7 @@ pub struct StopRemoteAccessSessionInputBuilder {
 }
 impl StopRemoteAccessSessionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the remote access session to stop.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl StopRemoteAccessSessionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_remote_access_session::StopRemoteAccessSessionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::stop_remote_access_session::StopRemoteAccessSessionInput { arn: self.arn })
     }

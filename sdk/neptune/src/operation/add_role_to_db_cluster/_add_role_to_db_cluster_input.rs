@@ -7,7 +7,7 @@ pub struct AddRoleToDbClusterInput {
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with the Neptune DB cluster, for example <code>arn:aws:iam::123456789012:role/NeptuneAccessRole</code>.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the feature for the Neptune DB cluster that the IAM role is to be associated with. For the list of supported feature names, see <a href="neptune/latest/userguide/api-other-apis.html#DBEngineVersion">DBEngineVersion</a>.</p>
+    /// <p>The name of the feature for the Neptune DB cluster that the IAM role is to be associated with. For the list of supported feature names, see <code>DBEngineVersion</code>.</p>
     pub feature_name: ::std::option::Option<::std::string::String>,
 }
 impl AddRoleToDbClusterInput {
@@ -19,7 +19,7 @@ impl AddRoleToDbClusterInput {
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The name of the feature for the Neptune DB cluster that the IAM role is to be associated with. For the list of supported feature names, see <a href="neptune/latest/userguide/api-other-apis.html#DBEngineVersion">DBEngineVersion</a>.</p>
+    /// <p>The name of the feature for the Neptune DB cluster that the IAM role is to be associated with. For the list of supported feature names, see <code>DBEngineVersion</code>.</p>
     pub fn feature_name(&self) -> ::std::option::Option<&str> {
         self.feature_name.as_deref()
     }
@@ -41,6 +41,7 @@ pub struct AddRoleToDbClusterInputBuilder {
 }
 impl AddRoleToDbClusterInputBuilder {
     /// <p>The name of the DB cluster to associate the IAM role with.</p>
+    /// This field is required.
     pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_identifier = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl AddRoleToDbClusterInputBuilder {
         &self.db_cluster_identifier
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with the Neptune DB cluster, for example <code>arn:aws:iam::123456789012:role/NeptuneAccessRole</code>.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -68,24 +70,24 @@ impl AddRoleToDbClusterInputBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
-    /// <p>The name of the feature for the Neptune DB cluster that the IAM role is to be associated with. For the list of supported feature names, see <a href="neptune/latest/userguide/api-other-apis.html#DBEngineVersion">DBEngineVersion</a>.</p>
+    /// <p>The name of the feature for the Neptune DB cluster that the IAM role is to be associated with. For the list of supported feature names, see <code>DBEngineVersion</code>.</p>
     pub fn feature_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the feature for the Neptune DB cluster that the IAM role is to be associated with. For the list of supported feature names, see <a href="neptune/latest/userguide/api-other-apis.html#DBEngineVersion">DBEngineVersion</a>.</p>
+    /// <p>The name of the feature for the Neptune DB cluster that the IAM role is to be associated with. For the list of supported feature names, see <code>DBEngineVersion</code>.</p>
     pub fn set_feature_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feature_name = input;
         self
     }
-    /// <p>The name of the feature for the Neptune DB cluster that the IAM role is to be associated with. For the list of supported feature names, see <a href="neptune/latest/userguide/api-other-apis.html#DBEngineVersion">DBEngineVersion</a>.</p>
+    /// <p>The name of the feature for the Neptune DB cluster that the IAM role is to be associated with. For the list of supported feature names, see <code>DBEngineVersion</code>.</p>
     pub fn get_feature_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.feature_name
     }
     /// Consumes the builder and constructs a [`AddRoleToDbClusterInput`](crate::operation::add_role_to_db_cluster::AddRoleToDbClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::add_role_to_db_cluster::AddRoleToDbClusterInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::add_role_to_db_cluster::AddRoleToDbClusterInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::add_role_to_db_cluster::AddRoleToDbClusterInput {
             db_cluster_identifier: self.db_cluster_identifier,

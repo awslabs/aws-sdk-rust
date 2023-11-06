@@ -5,8 +5,14 @@
 
 //! Useful runtime-agnostic future implementations.
 
-pub mod fn_stream;
+use futures_util::Future;
+use std::pin::Pin;
+
 pub mod never;
 pub mod now_or_later;
+pub mod pagination_stream;
 pub mod rendezvous;
 pub mod timeout;
+
+/// A boxed future that outputs a `Result<T, E>`.
+pub type BoxFuture<'a, T, E> = Pin<Box<dyn Future<Output = Result<T, E>> + Send + 'a>>;

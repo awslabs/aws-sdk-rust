@@ -34,6 +34,7 @@ pub struct CreateJobInputBuilder {
 }
 impl CreateJobInputBuilder {
     /// <p>The details for the CreateJob request.</p>
+    /// This field is required.
     pub fn details(mut self, input: crate::types::RequestDetails) -> Self {
         self.details = ::std::option::Option::Some(input);
         self
@@ -48,6 +49,7 @@ impl CreateJobInputBuilder {
         &self.details
     }
     /// <p>The type of job to be created.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::Type) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -62,7 +64,7 @@ impl CreateJobInputBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`CreateJobInput`](crate::operation::create_job::CreateJobInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_job::CreateJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_job::CreateJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_job::CreateJobInput {
             details: self.details,
             r#type: self.r#type,

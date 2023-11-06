@@ -176,8 +176,10 @@ impl GetUnfilteredPartitionsMetadataInput {
         self.audit_context.as_ref()
     }
     /// <p>A list of supported permission types. </p>
-    pub fn supported_permission_types(&self) -> ::std::option::Option<&[crate::types::PermissionType]> {
-        self.supported_permission_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_permission_types.is_none()`.
+    pub fn supported_permission_types(&self) -> &[crate::types::PermissionType] {
+        self.supported_permission_types.as_deref().unwrap_or_default()
     }
     /// <p>A continuation token, if this is not the first call to retrieve these partitions.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -215,6 +217,7 @@ pub struct GetUnfilteredPartitionsMetadataInputBuilder {
 }
 impl GetUnfilteredPartitionsMetadataInputBuilder {
     /// <p>The ID of the Data Catalog where the partitions in question reside. If none is provided, the AWS account ID is used by default. </p>
+    /// This field is required.
     pub fn catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.catalog_id = ::std::option::Option::Some(input.into());
         self
@@ -229,6 +232,7 @@ impl GetUnfilteredPartitionsMetadataInputBuilder {
         &self.catalog_id
     }
     /// <p>The name of the catalog database where the partitions reside.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -243,6 +247,7 @@ impl GetUnfilteredPartitionsMetadataInputBuilder {
         &self.database_name
     }
     /// <p>The name of the table that contains the partition.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -549,7 +554,7 @@ impl GetUnfilteredPartitionsMetadataInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataInput {

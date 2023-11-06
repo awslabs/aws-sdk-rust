@@ -90,6 +90,7 @@ impl RetrieveEnvironmentInfoInputBuilder {
         &self.environment_name
     }
     /// <p>The type of information to retrieve.</p>
+    /// This field is required.
     pub fn info_type(mut self, input: crate::types::EnvironmentInfoType) -> Self {
         self.info_type = ::std::option::Option::Some(input);
         self
@@ -108,7 +109,7 @@ impl RetrieveEnvironmentInfoInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::retrieve_environment_info::RetrieveEnvironmentInfoInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::retrieve_environment_info::RetrieveEnvironmentInfoInput {
             environment_id: self.environment_id,

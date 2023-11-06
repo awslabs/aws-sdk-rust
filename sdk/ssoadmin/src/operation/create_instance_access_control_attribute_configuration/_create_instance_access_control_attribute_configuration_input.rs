@@ -36,6 +36,7 @@ pub struct CreateInstanceAccessControlAttributeConfigurationInputBuilder {
 }
 impl CreateInstanceAccessControlAttributeConfigurationInputBuilder {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
+    /// This field is required.
     pub fn instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_arn = ::std::option::Option::Some(input.into());
         self
@@ -50,6 +51,7 @@ impl CreateInstanceAccessControlAttributeConfigurationInputBuilder {
         &self.instance_arn
     }
     /// <p>Specifies the IAM Identity Center identity store attributes to add to your ABAC configuration. When using an external identity provider as an identity source, you can pass attributes through the SAML assertion. Doing so provides an alternative to configuring attributes from the IAM Identity Center identity store. If a SAML assertion passes any of these attributes, IAM Identity Center will replace the attribute value with the value from the IAM Identity Center identity store.</p>
+    /// This field is required.
     pub fn instance_access_control_attribute_configuration(mut self, input: crate::types::InstanceAccessControlAttributeConfiguration) -> Self {
         self.instance_access_control_attribute_configuration = ::std::option::Option::Some(input);
         self
@@ -73,7 +75,7 @@ impl CreateInstanceAccessControlAttributeConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_instance_access_control_attribute_configuration::CreateInstanceAccessControlAttributeConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_instance_access_control_attribute_configuration::CreateInstanceAccessControlAttributeConfigurationInput {

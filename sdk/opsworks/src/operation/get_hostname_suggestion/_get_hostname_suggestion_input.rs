@@ -27,6 +27,7 @@ pub struct GetHostnameSuggestionInputBuilder {
 }
 impl GetHostnameSuggestionInputBuilder {
     /// <p>The layer ID.</p>
+    /// This field is required.
     pub fn layer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.layer_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetHostnameSuggestionInputBuilder {
     /// Consumes the builder and constructs a [`GetHostnameSuggestionInput`](crate::operation::get_hostname_suggestion::GetHostnameSuggestionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_hostname_suggestion::GetHostnameSuggestionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_hostname_suggestion::GetHostnameSuggestionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_hostname_suggestion::GetHostnameSuggestionInput { layer_id: self.layer_id })
     }

@@ -34,6 +34,7 @@ pub struct CancelServiceInstanceDeploymentInputBuilder {
 }
 impl CancelServiceInstanceDeploymentInputBuilder {
     /// <p>The name of the service instance with the deployment to cancel.</p>
+    /// This field is required.
     pub fn service_instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_instance_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl CancelServiceInstanceDeploymentInputBuilder {
         &self.service_instance_name
     }
     /// <p>The name of the service with the service instance deployment to cancel.</p>
+    /// This field is required.
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl CancelServiceInstanceDeploymentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_service_instance_deployment::CancelServiceInstanceDeploymentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::cancel_service_instance_deployment::CancelServiceInstanceDeploymentInput {

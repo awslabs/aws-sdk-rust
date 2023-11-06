@@ -34,6 +34,7 @@ pub struct DeleteConnectClientAddInInputBuilder {
 }
 impl DeleteConnectClientAddInInputBuilder {
     /// <p>The identifier of the client add-in to delete.</p>
+    /// This field is required.
     pub fn add_in_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.add_in_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteConnectClientAddInInputBuilder {
         &self.add_in_id
     }
     /// <p>The directory identifier for which the client add-in is configured.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl DeleteConnectClientAddInInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_connect_client_add_in::DeleteConnectClientAddInInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_connect_client_add_in::DeleteConnectClientAddInInput {
             add_in_id: self.add_in_id,

@@ -48,6 +48,7 @@ pub struct ListWorkersInputBuilder {
 }
 impl ListWorkersInputBuilder {
     /// Site ARN.
+    /// This field is required.
     pub fn site(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.site = ::std::option::Option::Some(input.into());
         self
@@ -104,7 +105,7 @@ impl ListWorkersInputBuilder {
         &self.fleet
     }
     /// Consumes the builder and constructs a [`ListWorkersInput`](crate::operation::list_workers::ListWorkersInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_workers::ListWorkersInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_workers::ListWorkersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_workers::ListWorkersInput {
             site: self.site,
             max_results: self.max_results,

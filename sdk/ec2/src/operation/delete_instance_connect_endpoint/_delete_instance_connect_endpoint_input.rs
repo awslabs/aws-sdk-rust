@@ -48,6 +48,7 @@ impl DeleteInstanceConnectEndpointInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the EC2 Instance Connect Endpoint to delete.</p>
+    /// This field is required.
     pub fn instance_connect_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_connect_endpoint_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl DeleteInstanceConnectEndpointInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_instance_connect_endpoint::DeleteInstanceConnectEndpointInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_instance_connect_endpoint::DeleteInstanceConnectEndpointInput {
             dry_run: self.dry_run,

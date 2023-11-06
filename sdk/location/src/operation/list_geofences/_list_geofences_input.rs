@@ -45,6 +45,7 @@ pub struct ListGeofencesInputBuilder {
 }
 impl ListGeofencesInputBuilder {
     /// <p>The name of the geofence collection storing the list of geofences.</p>
+    /// This field is required.
     pub fn collection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_name = ::std::option::Option::Some(input.into());
         self
@@ -95,7 +96,7 @@ impl ListGeofencesInputBuilder {
     /// Consumes the builder and constructs a [`ListGeofencesInput`](crate::operation::list_geofences::ListGeofencesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_geofences::ListGeofencesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_geofences::ListGeofencesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_geofences::ListGeofencesInput {
             collection_name: self.collection_name,
             next_token: self.next_token,

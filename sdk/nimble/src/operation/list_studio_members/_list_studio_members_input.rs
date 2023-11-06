@@ -69,6 +69,7 @@ impl ListStudioMembersInputBuilder {
         &self.next_token
     }
     /// <p>The studio ID. </p>
+    /// This field is required.
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl ListStudioMembersInputBuilder {
     /// Consumes the builder and constructs a [`ListStudioMembersInput`](crate::operation::list_studio_members::ListStudioMembersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_studio_members::ListStudioMembersInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_studio_members::ListStudioMembersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_studio_members::ListStudioMembersInput {
             max_results: self.max_results,
             next_token: self.next_token,

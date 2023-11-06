@@ -14,8 +14,10 @@ impl BatchDeleteScheduledActionInput {
         self.auto_scaling_group_name.as_deref()
     }
     /// <p>The names of the scheduled actions to delete. The maximum number allowed is 50. </p>
-    pub fn scheduled_action_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.scheduled_action_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scheduled_action_names.is_none()`.
+    pub fn scheduled_action_names(&self) -> &[::std::string::String] {
+        self.scheduled_action_names.as_deref().unwrap_or_default()
     }
 }
 impl BatchDeleteScheduledActionInput {
@@ -34,6 +36,7 @@ pub struct BatchDeleteScheduledActionInputBuilder {
 }
 impl BatchDeleteScheduledActionInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
+    /// This field is required.
     pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
@@ -72,7 +75,7 @@ impl BatchDeleteScheduledActionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_delete_scheduled_action::BatchDeleteScheduledActionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_delete_scheduled_action::BatchDeleteScheduledActionInput {
             auto_scaling_group_name: self.auto_scaling_group_name,

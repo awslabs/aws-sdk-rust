@@ -11,8 +11,10 @@ pub struct ListClustersOutput {
 }
 impl ListClustersOutput {
     /// <p>Information on each of the MSK clusters in the response.</p>
-    pub fn cluster_info_list(&self) -> ::std::option::Option<&[crate::types::ClusterInfo]> {
-        self.cluster_info_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cluster_info_list.is_none()`.
+    pub fn cluster_info_list(&self) -> &[crate::types::ClusterInfo] {
+        self.cluster_info_list.as_deref().unwrap_or_default()
     }
     /// <p>The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response. To get another batch of clusters, provide this token in your next request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

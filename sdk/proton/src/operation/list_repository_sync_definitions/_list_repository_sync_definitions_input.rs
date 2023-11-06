@@ -48,6 +48,7 @@ pub struct ListRepositorySyncDefinitionsInputBuilder {
 }
 impl ListRepositorySyncDefinitionsInputBuilder {
     /// <p>The repository name.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl ListRepositorySyncDefinitionsInputBuilder {
         &self.repository_name
     }
     /// <p>The repository provider.</p>
+    /// This field is required.
     pub fn repository_provider(mut self, input: crate::types::RepositoryProvider) -> Self {
         self.repository_provider = ::std::option::Option::Some(input);
         self
@@ -76,6 +78,7 @@ impl ListRepositorySyncDefinitionsInputBuilder {
         &self.repository_provider
     }
     /// <p>The sync type. The only supported value is <code>TEMPLATE_SYNC</code>.</p>
+    /// This field is required.
     pub fn sync_type(mut self, input: crate::types::SyncType) -> Self {
         self.sync_type = ::std::option::Option::Some(input);
         self
@@ -108,7 +111,7 @@ impl ListRepositorySyncDefinitionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsInput {
             repository_name: self.repository_name,

@@ -41,6 +41,7 @@ pub struct DeleteAccessPolicyInputBuilder {
 }
 impl DeleteAccessPolicyInputBuilder {
     /// <p>The type of policy.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::AccessPolicyType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -55,6 +56,7 @@ impl DeleteAccessPolicyInputBuilder {
         &self.r#type
     }
     /// <p>The name of the policy to delete.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +87,8 @@ impl DeleteAccessPolicyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAccessPolicyInput`](crate::operation::delete_access_policy::DeleteAccessPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_access_policy::DeleteAccessPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_access_policy::DeleteAccessPolicyInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_access_policy::DeleteAccessPolicyInput {
             r#type: self.r#type,
             name: self.name,

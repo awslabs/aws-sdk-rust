@@ -8,7 +8,7 @@ pub struct ListDevicesJobsInput {
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of device jobs to return in one page of results.</p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
 }
 impl ListDevicesJobsInput {
     /// <p>Filter results by the job's target device ID.</p>
@@ -20,7 +20,7 @@ impl ListDevicesJobsInput {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of device jobs to return in one page of results.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
 }
@@ -85,11 +85,11 @@ impl ListDevicesJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListDevicesJobsInput`](crate::operation::list_devices_jobs::ListDevicesJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_devices_jobs::ListDevicesJobsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_devices_jobs::ListDevicesJobsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_devices_jobs::ListDevicesJobsInput {
             device_id: self.device_id,
             next_token: self.next_token,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
         })
     }
 }

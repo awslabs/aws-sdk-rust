@@ -70,6 +70,7 @@ impl DynamicDefaultValueBuilder {
         &self.group_name_column
     }
     /// <p>The column that contains the default value of each user or group.</p>
+    /// This field is required.
     pub fn default_value_column(mut self, input: crate::types::ColumnIdentifier) -> Self {
         self.default_value_column = ::std::option::Option::Some(input);
         self

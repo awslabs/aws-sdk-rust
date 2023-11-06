@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAnomalyMonitorOutput {
     /// <p>The unique identifier of your newly created cost anomaly detection monitor.</p>
-    pub monitor_arn: ::std::option::Option<::std::string::String>,
+    pub monitor_arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateAnomalyMonitorOutput {
     /// <p>The unique identifier of your newly created cost anomaly detection monitor.</p>
-    pub fn monitor_arn(&self) -> ::std::option::Option<&str> {
-        self.monitor_arn.as_deref()
+    pub fn monitor_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.monitor_arn.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateAnomalyMonitorOutput {
@@ -34,6 +35,7 @@ pub struct CreateAnomalyMonitorOutputBuilder {
 }
 impl CreateAnomalyMonitorOutputBuilder {
     /// <p>The unique identifier of your newly created cost anomaly detection monitor.</p>
+    /// This field is required.
     pub fn monitor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitor_arn = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,20 @@ impl CreateAnomalyMonitorOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateAnomalyMonitorOutput`](crate::operation::create_anomaly_monitor::CreateAnomalyMonitorOutput).
-    pub fn build(self) -> crate::operation::create_anomaly_monitor::CreateAnomalyMonitorOutput {
-        crate::operation::create_anomaly_monitor::CreateAnomalyMonitorOutput {
-            monitor_arn: self.monitor_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`monitor_arn`](crate::operation::create_anomaly_monitor::builders::CreateAnomalyMonitorOutputBuilder::monitor_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_anomaly_monitor::CreateAnomalyMonitorOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_anomaly_monitor::CreateAnomalyMonitorOutput {
+            monitor_arn: self.monitor_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "monitor_arn",
+                    "monitor_arn was not specified but it is required when building CreateAnomalyMonitorOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

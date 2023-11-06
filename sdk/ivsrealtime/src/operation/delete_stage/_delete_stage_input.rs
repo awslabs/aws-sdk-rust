@@ -27,6 +27,7 @@ pub struct DeleteStageInputBuilder {
 }
 impl DeleteStageInputBuilder {
     /// <p>ARN of the stage to be deleted.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl DeleteStageInputBuilder {
         &self.arn
     }
     /// Consumes the builder and constructs a [`DeleteStageInput`](crate::operation::delete_stage::DeleteStageInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_stage::DeleteStageInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_stage::DeleteStageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_stage::DeleteStageInput { arn: self.arn })
     }
 }

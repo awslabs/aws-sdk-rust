@@ -62,6 +62,7 @@ impl WarmPoolStatusBuilder {
     /// <li> <p> <code>Reused</code>: The warm pool moved to a matching training job for reuse.</p> </li>
     /// <li> <p> <code>Terminated</code>: The warm pool is no longer available. Warm pools are unavailable if they are terminated by a user, terminated for a patch update, or terminated for exceeding the specified <code>KeepAlivePeriodInSeconds</code>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::WarmPoolResourceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self

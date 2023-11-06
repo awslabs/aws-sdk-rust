@@ -28,6 +28,7 @@ pub struct FaqStatisticsBuilder {
 }
 impl FaqStatisticsBuilder {
     /// <p>The total number of FAQ questions and answers contained in the index.</p>
+    /// This field is required.
     pub fn indexed_question_answers_count(mut self, input: i32) -> Self {
         self.indexed_question_answers_count = ::std::option::Option::Some(input);
         self

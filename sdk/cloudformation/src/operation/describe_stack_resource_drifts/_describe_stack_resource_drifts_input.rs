@@ -30,8 +30,10 @@ impl DescribeStackResourceDriftsInput {
     /// <li> <p> <code>IN_SYNC</code>: The resource's actual configuration matches its expected template configuration.</p> </li>
     /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p> </li>
     /// </ul>
-    pub fn stack_resource_drift_status_filters(&self) -> ::std::option::Option<&[crate::types::StackResourceDriftStatus]> {
-        self.stack_resource_drift_status_filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stack_resource_drift_status_filters.is_none()`.
+    pub fn stack_resource_drift_status_filters(&self) -> &[crate::types::StackResourceDriftStatus] {
+        self.stack_resource_drift_status_filters.as_deref().unwrap_or_default()
     }
     /// <p>A string that identifies the next page of stack resource drift results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -60,6 +62,7 @@ pub struct DescribeStackResourceDriftsInputBuilder {
 }
 impl DescribeStackResourceDriftsInputBuilder {
     /// <p>The name of the stack for which you want drift information.</p>
+    /// This field is required.
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_name = ::std::option::Option::Some(input.into());
         self
@@ -147,7 +150,7 @@ impl DescribeStackResourceDriftsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_stack_resource_drifts::DescribeStackResourceDriftsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_stack_resource_drifts::DescribeStackResourceDriftsInput {
             stack_name: self.stack_name,

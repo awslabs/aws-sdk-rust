@@ -28,6 +28,7 @@ pub struct SubjectAlternativeNamesBuilder {
 }
 impl SubjectAlternativeNamesBuilder {
     /// <p>An object that represents the criteria for determining a SANs match.</p>
+    /// This field is required.
     pub fn r#match(mut self, input: crate::types::SubjectAlternativeNameMatchers) -> Self {
         self.r#match = ::std::option::Option::Some(input);
         self

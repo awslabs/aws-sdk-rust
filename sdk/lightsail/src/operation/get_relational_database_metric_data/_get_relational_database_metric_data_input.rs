@@ -100,8 +100,10 @@ impl GetRelationalDatabaseMetricDataInput {
     /// <li> <p> <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your resources.</p> </li>
     /// <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>
     /// </ul>
-    pub fn statistics(&self) -> ::std::option::Option<&[crate::types::MetricStatistic]> {
-        self.statistics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.statistics.is_none()`.
+    pub fn statistics(&self) -> &[crate::types::MetricStatistic] {
+        self.statistics.as_deref().unwrap_or_default()
     }
 }
 impl GetRelationalDatabaseMetricDataInput {
@@ -125,6 +127,7 @@ pub struct GetRelationalDatabaseMetricDataInputBuilder {
 }
 impl GetRelationalDatabaseMetricDataInputBuilder {
     /// <p>The name of your database from which to get metric data.</p>
+    /// This field is required.
     pub fn relational_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.relational_database_name = ::std::option::Option::Some(input.into());
         self
@@ -148,6 +151,7 @@ impl GetRelationalDatabaseMetricDataInputBuilder {
     /// <li> <p> <b> <code>NetworkReceiveThroughput</code> </b> - The incoming (Receive) network traffic on the database, including both customer database traffic and AWS traffic used for monitoring and replication.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is <code>Bytes/Second</code>.</p> </li>
     /// <li> <p> <b> <code>NetworkTransmitThroughput</code> </b> - The outgoing (Transmit) network traffic on the database, including both customer database traffic and AWS traffic used for monitoring and replication.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is <code>Bytes/Second</code>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn metric_name(mut self, input: crate::types::RelationalDatabaseMetricName) -> Self {
         self.metric_name = ::std::option::Option::Some(input);
         self
@@ -181,6 +185,7 @@ impl GetRelationalDatabaseMetricDataInputBuilder {
     }
     /// <p>The granularity, in seconds, of the returned data points.</p>
     /// <p>All relational database metric data is available in 1-minute (60 seconds) granularity.</p>
+    /// This field is required.
     pub fn period(mut self, input: i32) -> Self {
         self.period = ::std::option::Option::Some(input);
         self
@@ -202,6 +207,7 @@ impl GetRelationalDatabaseMetricDataInputBuilder {
     /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
     /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the start time.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
@@ -231,6 +237,7 @@ impl GetRelationalDatabaseMetricDataInputBuilder {
     /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
     /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the end time.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
@@ -255,6 +262,7 @@ impl GetRelationalDatabaseMetricDataInputBuilder {
         &self.end_time
     }
     /// <p>The unit for the metric data request. Valid units depend on the metric data being requested. For the valid units with each available metric, see the <code>metricName</code> parameter.</p>
+    /// This field is required.
     pub fn unit(mut self, input: crate::types::MetricUnit) -> Self {
         self.unit = ::std::option::Option::Some(input);
         self
@@ -317,7 +325,7 @@ impl GetRelationalDatabaseMetricDataInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_relational_database_metric_data::GetRelationalDatabaseMetricDataInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_relational_database_metric_data::GetRelationalDatabaseMetricDataInput {

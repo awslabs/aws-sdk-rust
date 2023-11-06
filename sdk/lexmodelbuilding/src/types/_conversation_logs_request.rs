@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConversationLogsRequest {
     /// <p>The settings for your conversation logs. You can log the conversation text, conversation audio, or both.</p>
-    pub log_settings: ::std::option::Option<::std::vec::Vec<crate::types::LogSettingsRequest>>,
+    pub log_settings: ::std::vec::Vec<crate::types::LogSettingsRequest>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to write to your CloudWatch Logs for text logs and your S3 bucket for audio logs. If audio encryption is enabled, this role also provides access permission for the AWS KMS key used for encrypting audio logs. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/conversation-logs-role-and-policy.html">Creating an IAM Role and Policy for Conversation Logs</a>.</p>
-    pub iam_role_arn: ::std::option::Option<::std::string::String>,
+    pub iam_role_arn: ::std::string::String,
 }
 impl ConversationLogsRequest {
     /// <p>The settings for your conversation logs. You can log the conversation text, conversation audio, or both.</p>
-    pub fn log_settings(&self) -> ::std::option::Option<&[crate::types::LogSettingsRequest]> {
-        self.log_settings.as_deref()
+    pub fn log_settings(&self) -> &[crate::types::LogSettingsRequest] {
+        use std::ops::Deref;
+        self.log_settings.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to write to your CloudWatch Logs for text logs and your S3 bucket for audio logs. If audio encryption is enabled, this role also provides access permission for the AWS KMS key used for encrypting audio logs. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/conversation-logs-role-and-policy.html">Creating an IAM Role and Policy for Conversation Logs</a>.</p>
-    pub fn iam_role_arn(&self) -> ::std::option::Option<&str> {
-        self.iam_role_arn.as_deref()
+    pub fn iam_role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.iam_role_arn.deref()
     }
 }
 impl ConversationLogsRequest {
@@ -55,6 +57,7 @@ impl ConversationLogsRequestBuilder {
         &self.log_settings
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to write to your CloudWatch Logs for text logs and your S3 bucket for audio logs. If audio encryption is enabled, this role also provides access permission for the AWS KMS key used for encrypting audio logs. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/conversation-logs-role-and-policy.html">Creating an IAM Role and Policy for Conversation Logs</a>.</p>
+    /// This field is required.
     pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -69,10 +72,23 @@ impl ConversationLogsRequestBuilder {
         &self.iam_role_arn
     }
     /// Consumes the builder and constructs a [`ConversationLogsRequest`](crate::types::ConversationLogsRequest).
-    pub fn build(self) -> crate::types::ConversationLogsRequest {
-        crate::types::ConversationLogsRequest {
-            log_settings: self.log_settings,
-            iam_role_arn: self.iam_role_arn,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`log_settings`](crate::types::builders::ConversationLogsRequestBuilder::log_settings)
+    /// - [`iam_role_arn`](crate::types::builders::ConversationLogsRequestBuilder::iam_role_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::ConversationLogsRequest, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ConversationLogsRequest {
+            log_settings: self.log_settings.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "log_settings",
+                    "log_settings was not specified but it is required when building ConversationLogsRequest",
+                )
+            })?,
+            iam_role_arn: self.iam_role_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "iam_role_arn",
+                    "iam_role_arn was not specified but it is required when building ConversationLogsRequest",
+                )
+            })?,
+        })
     }
 }

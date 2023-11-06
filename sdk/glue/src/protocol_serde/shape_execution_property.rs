@@ -2,7 +2,7 @@
 pub fn ser_execution_property(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ExecutionProperty,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.max_concurrent_runs != 0 {
         object.key("MaxConcurrentRuns").number(
             #[allow(clippy::useless_conversion)]

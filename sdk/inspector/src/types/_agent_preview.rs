@@ -7,7 +7,7 @@ pub struct AgentPreview {
     /// <p>The hostname of the EC2 instance on which the Amazon Inspector Agent is installed.</p>
     pub hostname: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the EC2 instance where the agent is installed.</p>
-    pub agent_id: ::std::option::Option<::std::string::String>,
+    pub agent_id: ::std::string::String,
     /// <p>The Auto Scaling group for the EC2 instance where the agent is installed.</p>
     pub auto_scaling_group: ::std::option::Option<::std::string::String>,
     /// <p>The health status of the Amazon Inspector Agent.</p>
@@ -27,8 +27,9 @@ impl AgentPreview {
         self.hostname.as_deref()
     }
     /// <p>The ID of the EC2 instance where the agent is installed.</p>
-    pub fn agent_id(&self) -> ::std::option::Option<&str> {
-        self.agent_id.as_deref()
+    pub fn agent_id(&self) -> &str {
+        use std::ops::Deref;
+        self.agent_id.deref()
     }
     /// <p>The Auto Scaling group for the EC2 instance where the agent is installed.</p>
     pub fn auto_scaling_group(&self) -> ::std::option::Option<&str> {
@@ -91,6 +92,7 @@ impl AgentPreviewBuilder {
         &self.hostname
     }
     /// <p>The ID of the EC2 instance where the agent is installed.</p>
+    /// This field is required.
     pub fn agent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_id = ::std::option::Option::Some(input.into());
         self
@@ -189,16 +191,23 @@ impl AgentPreviewBuilder {
         &self.ipv4_address
     }
     /// Consumes the builder and constructs a [`AgentPreview`](crate::types::AgentPreview).
-    pub fn build(self) -> crate::types::AgentPreview {
-        crate::types::AgentPreview {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`agent_id`](crate::types::builders::AgentPreviewBuilder::agent_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::AgentPreview, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AgentPreview {
             hostname: self.hostname,
-            agent_id: self.agent_id,
+            agent_id: self.agent_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "agent_id",
+                    "agent_id was not specified but it is required when building AgentPreview",
+                )
+            })?,
             auto_scaling_group: self.auto_scaling_group,
             agent_health: self.agent_health,
             agent_version: self.agent_version,
             operating_system: self.operating_system,
             kernel_version: self.kernel_version,
             ipv4_address: self.ipv4_address,
-        }
+        })
     }
 }

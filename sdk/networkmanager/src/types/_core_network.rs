@@ -49,16 +49,22 @@ impl CoreNetwork {
         self.state.as_ref()
     }
     /// <p>The segments within a core network.</p>
-    pub fn segments(&self) -> ::std::option::Option<&[crate::types::CoreNetworkSegment]> {
-        self.segments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.segments.is_none()`.
+    pub fn segments(&self) -> &[crate::types::CoreNetworkSegment] {
+        self.segments.as_deref().unwrap_or_default()
     }
     /// <p>The edges within a core network.</p>
-    pub fn edges(&self) -> ::std::option::Option<&[crate::types::CoreNetworkEdge]> {
-        self.edges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.edges.is_none()`.
+    pub fn edges(&self) -> &[crate::types::CoreNetworkEdge] {
+        self.edges.as_deref().unwrap_or_default()
     }
     /// <p>The list of key-value tags associated with a core network.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CoreNetwork {

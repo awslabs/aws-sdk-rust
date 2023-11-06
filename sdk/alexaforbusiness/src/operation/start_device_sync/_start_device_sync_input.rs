@@ -20,8 +20,10 @@ impl StartDeviceSyncInput {
         self.device_arn.as_deref()
     }
     /// <p>Request structure to start the device sync. Required.</p>
-    pub fn features(&self) -> ::std::option::Option<&[crate::types::Feature]> {
-        self.features.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.features.is_none()`.
+    pub fn features(&self) -> &[crate::types::Feature] {
+        self.features.as_deref().unwrap_or_default()
     }
 }
 impl StartDeviceSyncInput {
@@ -91,7 +93,7 @@ impl StartDeviceSyncInputBuilder {
     /// Consumes the builder and constructs a [`StartDeviceSyncInput`](crate::operation::start_device_sync::StartDeviceSyncInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_device_sync::StartDeviceSyncInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_device_sync::StartDeviceSyncInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_device_sync::StartDeviceSyncInput {
             room_arn: self.room_arn,
             device_arn: self.device_arn,

@@ -62,6 +62,7 @@ pub struct PostCommentForComparedCommitInputBuilder {
 }
 impl PostCommentForComparedCommitInputBuilder {
     /// <p>The name of the repository where you want to post a comment on the comparison between commits.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +91,7 @@ impl PostCommentForComparedCommitInputBuilder {
         &self.before_commit_id
     }
     /// <p>To establish the directionality of the comparison, the full commit ID of the after commit.</p>
+    /// This field is required.
     pub fn after_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.after_commit_id = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +120,7 @@ impl PostCommentForComparedCommitInputBuilder {
         &self.location
     }
     /// <p>The content of the comment you want to make.</p>
+    /// This field is required.
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
         self
@@ -150,7 +153,7 @@ impl PostCommentForComparedCommitInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitInput {
             repository_name: self.repository_name,

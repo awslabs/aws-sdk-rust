@@ -2,12 +2,12 @@
 pub fn ser_contact_list_destination(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ContactListDestination,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.contact_list_name {
-        object.key("ContactListName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("ContactListName").string(input.contact_list_name.as_str());
     }
-    if let Some(var_2) = &input.contact_list_import_action {
-        object.key("ContactListImportAction").string(var_2.as_str());
+    {
+        object.key("ContactListImportAction").string(input.contact_list_import_action.as_str());
     }
     Ok(())
 }
@@ -51,7 +51,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::contact_list_destination_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

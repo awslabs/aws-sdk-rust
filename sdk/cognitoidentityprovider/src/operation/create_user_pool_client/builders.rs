@@ -10,7 +10,7 @@ impl CreateUserPoolClientInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_user_pool_client::CreateUserPoolClientOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::create_user_pool_client::CreateUserPoolClientError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -82,12 +82,15 @@ impl CreateUserPoolClientFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_user_pool_client::CreateUserPoolClientOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::create_user_pool_client::CreateUserPoolClientError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::create_user_pool_client::CreateUserPoolClient::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -96,20 +99,15 @@ impl CreateUserPoolClientFluentBuilder {
         crate::operation::create_user_pool_client::CreateUserPoolClient::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::create_user_pool_client::CreateUserPoolClientOutput,
-            crate::operation::create_user_pool_client::CreateUserPoolClientError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::create_user_pool_client::CreateUserPoolClientError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::create_user_pool_client::CreateUserPoolClientOutput,
+        crate::operation::create_user_pool_client::CreateUserPoolClientError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -355,7 +353,7 @@ impl CreateUserPoolClientFluentBuilder {
     }
     /// Appends an item to `CallbackURLs`.
     ///
-    /// To override the contents of this collection use [`set_callback_ur_ls`](Self::set_callback_ur_ls).
+    /// To override the contents of this collection use [`set_callback_urls`](Self::set_callback_urls).
     ///
     /// <p>A list of allowed redirect (callback) URLs for the IdPs.</p>
     /// <p>A redirect URI must:</p>
@@ -367,8 +365,8 @@ impl CreateUserPoolClientFluentBuilder {
     /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
     /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
     /// <p>App callback URLs such as myapp://example are also supported.</p>
-    pub fn callback_ur_ls(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.callback_ur_ls(input.into());
+    pub fn callback_urls(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.callback_urls(input.into());
         self
     }
     /// <p>A list of allowed redirect (callback) URLs for the IdPs.</p>
@@ -381,8 +379,8 @@ impl CreateUserPoolClientFluentBuilder {
     /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
     /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
     /// <p>App callback URLs such as myapp://example are also supported.</p>
-    pub fn set_callback_ur_ls(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inner = self.inner.set_callback_ur_ls(input);
+    pub fn set_callback_urls(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_callback_urls(input);
         self
     }
     /// <p>A list of allowed redirect (callback) URLs for the IdPs.</p>
@@ -395,26 +393,26 @@ impl CreateUserPoolClientFluentBuilder {
     /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
     /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
     /// <p>App callback URLs such as myapp://example are also supported.</p>
-    pub fn get_callback_ur_ls(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        self.inner.get_callback_ur_ls()
+    pub fn get_callback_urls(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_callback_urls()
     }
     /// Appends an item to `LogoutURLs`.
     ///
-    /// To override the contents of this collection use [`set_logout_ur_ls`](Self::set_logout_ur_ls).
+    /// To override the contents of this collection use [`set_logout_urls`](Self::set_logout_urls).
     ///
     /// <p>A list of allowed logout URLs for the IdPs.</p>
-    pub fn logout_ur_ls(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.logout_ur_ls(input.into());
+    pub fn logout_urls(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.logout_urls(input.into());
         self
     }
     /// <p>A list of allowed logout URLs for the IdPs.</p>
-    pub fn set_logout_ur_ls(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inner = self.inner.set_logout_ur_ls(input);
+    pub fn set_logout_urls(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_logout_urls(input);
         self
     }
     /// <p>A list of allowed logout URLs for the IdPs.</p>
-    pub fn get_logout_ur_ls(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        self.inner.get_logout_ur_ls()
+    pub fn get_logout_urls(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_logout_urls()
     }
     /// <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
     /// <p>A redirect URI must:</p>

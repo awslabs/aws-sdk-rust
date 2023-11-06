@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SsmlMessage {
     /// <p>The SSML text that defines the prompt.</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
 }
 impl SsmlMessage {
     /// <p>The SSML text that defines the prompt.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
 }
 impl SsmlMessage {
@@ -28,6 +29,7 @@ pub struct SsmlMessageBuilder {
 }
 impl SsmlMessageBuilder {
     /// <p>The SSML text that defines the prompt.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl SsmlMessageBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`SsmlMessage`](crate::types::SsmlMessage).
-    pub fn build(self) -> crate::types::SsmlMessage {
-        crate::types::SsmlMessage { value: self.value }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`value`](crate::types::builders::SsmlMessageBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::SsmlMessage, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SsmlMessage {
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building SsmlMessage",
+                )
+            })?,
+        })
     }
 }

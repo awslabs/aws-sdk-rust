@@ -93,6 +93,7 @@ pub struct InferenceExperimentSummaryBuilder {
 }
 impl InferenceExperimentSummaryBuilder {
     /// <p>The name of the inference experiment.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -107,6 +108,7 @@ impl InferenceExperimentSummaryBuilder {
         &self.name
     }
     /// <p>The type of the inference experiment.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::InferenceExperimentType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -138,6 +140,7 @@ impl InferenceExperimentSummaryBuilder {
         &self.schedule
     }
     /// <p>The status of the inference experiment.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::InferenceExperimentStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -180,6 +183,7 @@ impl InferenceExperimentSummaryBuilder {
         &self.description
     }
     /// <p>The timestamp at which the inference experiment was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -208,6 +212,7 @@ impl InferenceExperimentSummaryBuilder {
         &self.completion_time
     }
     /// <p>The timestamp when you last modified the inference experiment.</p>
+    /// This field is required.
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
         self

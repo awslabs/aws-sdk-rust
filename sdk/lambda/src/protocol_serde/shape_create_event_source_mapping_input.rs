@@ -2,7 +2,7 @@
 pub fn ser_create_event_source_mapping_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_event_source_mapping::CreateEventSourceMappingInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.amazon_managed_kafka_event_source_config {
         #[allow(unused_mut)]
         let mut object_2 = object.key("AmazonManagedKafkaEventSourceConfig").start_object();

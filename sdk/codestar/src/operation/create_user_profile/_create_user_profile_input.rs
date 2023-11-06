@@ -58,6 +58,7 @@ pub struct CreateUserProfileInputBuilder {
 }
 impl CreateUserProfileInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
+    /// This field is required.
     pub fn user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_arn = ::std::option::Option::Some(input.into());
         self
@@ -72,6 +73,7 @@ impl CreateUserProfileInputBuilder {
         &self.user_arn
     }
     /// <p>The name that will be displayed as the friendly name for the user in AWS CodeStar. </p>
+    /// This field is required.
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
         self
@@ -86,6 +88,7 @@ impl CreateUserProfileInputBuilder {
         &self.display_name
     }
     /// <p>The email address that will be displayed as part of the user's profile in AWS CodeStar.</p>
+    /// This field is required.
     pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_address = ::std::option::Option::Some(input.into());
         self
@@ -116,7 +119,7 @@ impl CreateUserProfileInputBuilder {
     /// Consumes the builder and constructs a [`CreateUserProfileInput`](crate::operation::create_user_profile::CreateUserProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_user_profile::CreateUserProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_user_profile::CreateUserProfileInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_user_profile::CreateUserProfileInput {
             user_arn: self.user_arn,
             display_name: self.display_name,

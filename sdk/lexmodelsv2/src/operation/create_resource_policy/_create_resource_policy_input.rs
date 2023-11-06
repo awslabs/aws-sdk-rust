@@ -36,6 +36,7 @@ pub struct CreateResourcePolicyInputBuilder {
 }
 impl CreateResourcePolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -51,6 +52,7 @@ impl CreateResourcePolicyInputBuilder {
     }
     /// <p>A resource policy to add to the resource. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html"> IAM JSON policy reference </a>. </p>
     /// <p>If the policy isn't valid, Amazon Lex returns a validation exception.</p>
+    /// This field is required.
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
         self
@@ -69,7 +71,7 @@ impl CreateResourcePolicyInputBuilder {
     /// Consumes the builder and constructs a [`CreateResourcePolicyInput`](crate::operation::create_resource_policy::CreateResourcePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_resource_policy::CreateResourcePolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_resource_policy::CreateResourcePolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_resource_policy::CreateResourcePolicyInput {
             resource_arn: self.resource_arn,

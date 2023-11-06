@@ -5,18 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceDataSyncAwsOrganizationsSource {
     /// <p>If an Amazon Web Services organization is present, this is either <code>OrganizationalUnits</code> or <code>EntireOrganization</code>. For <code>OrganizationalUnits</code>, the data is aggregated from a set of organization units. For <code>EntireOrganization</code>, the data is aggregated from the entire Amazon Web Services organization.</p>
-    pub organization_source_type: ::std::option::Option<::std::string::String>,
+    pub organization_source_type: ::std::string::String,
     /// <p>The Organizations organization units included in the sync.</p>
     pub organizational_units: ::std::option::Option<::std::vec::Vec<crate::types::ResourceDataSyncOrganizationalUnit>>,
 }
 impl ResourceDataSyncAwsOrganizationsSource {
     /// <p>If an Amazon Web Services organization is present, this is either <code>OrganizationalUnits</code> or <code>EntireOrganization</code>. For <code>OrganizationalUnits</code>, the data is aggregated from a set of organization units. For <code>EntireOrganization</code>, the data is aggregated from the entire Amazon Web Services organization.</p>
-    pub fn organization_source_type(&self) -> ::std::option::Option<&str> {
-        self.organization_source_type.as_deref()
+    pub fn organization_source_type(&self) -> &str {
+        use std::ops::Deref;
+        self.organization_source_type.deref()
     }
     /// <p>The Organizations organization units included in the sync.</p>
-    pub fn organizational_units(&self) -> ::std::option::Option<&[crate::types::ResourceDataSyncOrganizationalUnit]> {
-        self.organizational_units.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.organizational_units.is_none()`.
+    pub fn organizational_units(&self) -> &[crate::types::ResourceDataSyncOrganizationalUnit] {
+        self.organizational_units.as_deref().unwrap_or_default()
     }
 }
 impl ResourceDataSyncAwsOrganizationsSource {
@@ -35,6 +38,7 @@ pub struct ResourceDataSyncAwsOrganizationsSourceBuilder {
 }
 impl ResourceDataSyncAwsOrganizationsSourceBuilder {
     /// <p>If an Amazon Web Services organization is present, this is either <code>OrganizationalUnits</code> or <code>EntireOrganization</code>. For <code>OrganizationalUnits</code>, the data is aggregated from a set of organization units. For <code>EntireOrganization</code>, the data is aggregated from the entire Amazon Web Services organization.</p>
+    /// This field is required.
     pub fn organization_source_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_source_type = ::std::option::Option::Some(input.into());
         self
@@ -72,10 +76,19 @@ impl ResourceDataSyncAwsOrganizationsSourceBuilder {
         &self.organizational_units
     }
     /// Consumes the builder and constructs a [`ResourceDataSyncAwsOrganizationsSource`](crate::types::ResourceDataSyncAwsOrganizationsSource).
-    pub fn build(self) -> crate::types::ResourceDataSyncAwsOrganizationsSource {
-        crate::types::ResourceDataSyncAwsOrganizationsSource {
-            organization_source_type: self.organization_source_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`organization_source_type`](crate::types::builders::ResourceDataSyncAwsOrganizationsSourceBuilder::organization_source_type)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::ResourceDataSyncAwsOrganizationsSource, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ResourceDataSyncAwsOrganizationsSource {
+            organization_source_type: self.organization_source_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "organization_source_type",
+                    "organization_source_type was not specified but it is required when building ResourceDataSyncAwsOrganizationsSource",
+                )
+            })?,
             organizational_units: self.organizational_units,
-        }
+        })
     }
 }

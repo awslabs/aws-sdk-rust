@@ -28,6 +28,7 @@ pub struct DisassociateEnvironmentOperationsRoleInputBuilder {
 }
 impl DisassociateEnvironmentOperationsRoleInputBuilder {
     /// <p>The name of the environment from which to disassociate the operations role.</p>
+    /// This field is required.
     pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl DisassociateEnvironmentOperationsRoleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_environment_operations_role::DisassociateEnvironmentOperationsRoleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_environment_operations_role::DisassociateEnvironmentOperationsRoleInput {

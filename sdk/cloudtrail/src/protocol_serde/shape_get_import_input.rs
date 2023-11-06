@@ -2,7 +2,7 @@
 pub fn ser_get_import_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_import::GetImportInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.import_id {
         object.key("ImportId").string(var_1.as_str());
     }

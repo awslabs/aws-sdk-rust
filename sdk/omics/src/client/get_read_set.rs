@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetReadSet`](crate::operation::get_read_set::builders::GetReadSetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_read_set::builders::GetReadSetFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_read_set::builders::GetReadSetFluentBuilder::set_id): <p>The read set's ID.</p>
-    ///   - [`sequence_store_id(impl Into<String>)`](crate::operation::get_read_set::builders::GetReadSetFluentBuilder::sequence_store_id) / [`set_sequence_store_id(Option<String>)`](crate::operation::get_read_set::builders::GetReadSetFluentBuilder::set_sequence_store_id): <p>The read set's sequence store ID.</p>
-    ///   - [`file(ReadSetFile)`](crate::operation::get_read_set::builders::GetReadSetFluentBuilder::file) / [`set_file(Option<ReadSetFile>)`](crate::operation::get_read_set::builders::GetReadSetFluentBuilder::set_file): <p>The file to retrieve.</p>
-    ///   - [`part_number(i32)`](crate::operation::get_read_set::builders::GetReadSetFluentBuilder::part_number) / [`set_part_number(Option<i32>)`](crate::operation::get_read_set::builders::GetReadSetFluentBuilder::set_part_number): <p>The part number to retrieve.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_read_set::builders::GetReadSetFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_read_set::builders::GetReadSetFluentBuilder::set_id):<br>required: **true**<br><p>The read set's ID.</p><br>
+    ///   - [`sequence_store_id(impl Into<String>)`](crate::operation::get_read_set::builders::GetReadSetFluentBuilder::sequence_store_id) / [`set_sequence_store_id(Option<String>)`](crate::operation::get_read_set::builders::GetReadSetFluentBuilder::set_sequence_store_id):<br>required: **true**<br><p>The read set's sequence store ID.</p><br>
+    ///   - [`file(ReadSetFile)`](crate::operation::get_read_set::builders::GetReadSetFluentBuilder::file) / [`set_file(Option<ReadSetFile>)`](crate::operation::get_read_set::builders::GetReadSetFluentBuilder::set_file):<br>required: **false**<br><p>The file to retrieve.</p><br>
+    ///   - [`part_number(i32)`](crate::operation::get_read_set::builders::GetReadSetFluentBuilder::part_number) / [`set_part_number(Option<i32>)`](crate::operation::get_read_set::builders::GetReadSetFluentBuilder::set_part_number):<br>required: **true**<br><p>The part number to retrieve.</p><br>
     /// - On success, responds with [`GetReadSetOutput`](crate::operation::get_read_set::GetReadSetOutput) with field(s):
     ///   - [`payload(ByteStream)`](crate::operation::get_read_set::GetReadSetOutput::payload): <p>The read set file payload.</p>
     /// - On failure, responds with [`SdkError<GetReadSetError>`](crate::operation::get_read_set::GetReadSetError)

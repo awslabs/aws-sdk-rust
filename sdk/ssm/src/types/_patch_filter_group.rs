@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PatchFilterGroup {
     /// <p>The set of patch filters that make up the group.</p>
-    pub patch_filters: ::std::option::Option<::std::vec::Vec<crate::types::PatchFilter>>,
+    pub patch_filters: ::std::vec::Vec<crate::types::PatchFilter>,
 }
 impl PatchFilterGroup {
     /// <p>The set of patch filters that make up the group.</p>
-    pub fn patch_filters(&self) -> ::std::option::Option<&[crate::types::PatchFilter]> {
-        self.patch_filters.as_deref()
+    pub fn patch_filters(&self) -> &[crate::types::PatchFilter] {
+        use std::ops::Deref;
+        self.patch_filters.deref()
     }
 }
 impl PatchFilterGroup {
@@ -48,9 +49,16 @@ impl PatchFilterGroupBuilder {
         &self.patch_filters
     }
     /// Consumes the builder and constructs a [`PatchFilterGroup`](crate::types::PatchFilterGroup).
-    pub fn build(self) -> crate::types::PatchFilterGroup {
-        crate::types::PatchFilterGroup {
-            patch_filters: self.patch_filters,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`patch_filters`](crate::types::builders::PatchFilterGroupBuilder::patch_filters)
+    pub fn build(self) -> ::std::result::Result<crate::types::PatchFilterGroup, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PatchFilterGroup {
+            patch_filters: self.patch_filters.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "patch_filters",
+                    "patch_filters was not specified but it is required when building PatchFilterGroup",
+                )
+            })?,
+        })
     }
 }

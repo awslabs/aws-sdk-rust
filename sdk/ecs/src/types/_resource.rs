@@ -39,8 +39,10 @@ impl Resource {
         self.integer_value
     }
     /// <p>When the <code>stringSetValue</code> type is set, the value of the resource must be a string type.</p>
-    pub fn string_set_value(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.string_set_value.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.string_set_value.is_none()`.
+    pub fn string_set_value(&self) -> &[::std::string::String] {
+        self.string_set_value.as_deref().unwrap_or_default()
     }
 }
 impl Resource {

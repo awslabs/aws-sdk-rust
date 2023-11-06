@@ -49,8 +49,10 @@ impl UpdateSourceLocationOutput {
         self.last_modified_time.as_ref()
     }
     /// <p>The segment delivery configurations for the source location. For information about MediaTailor configurations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working with configurations in AWS Elemental MediaTailor</a>.</p>
-    pub fn segment_delivery_configurations(&self) -> ::std::option::Option<&[crate::types::SegmentDeliveryConfiguration]> {
-        self.segment_delivery_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.segment_delivery_configurations.is_none()`.
+    pub fn segment_delivery_configurations(&self) -> &[crate::types::SegmentDeliveryConfiguration] {
+        self.segment_delivery_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The name of the source location.</p>
     pub fn source_location_name(&self) -> ::std::option::Option<&str> {

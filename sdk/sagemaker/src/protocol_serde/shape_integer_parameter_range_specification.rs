@@ -2,7 +2,7 @@
 pub fn ser_integer_parameter_range_specification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IntegerParameterRangeSpecification,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.min_value {
         object.key("MinValue").string(var_1.as_str());
     }
@@ -51,7 +51,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::integer_parameter_range_specification_correct_errors(builder).build(),
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

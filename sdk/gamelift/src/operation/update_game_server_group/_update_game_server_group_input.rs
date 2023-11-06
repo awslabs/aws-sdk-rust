@@ -29,8 +29,10 @@ impl UpdateGameServerGroupInput {
         self.role_arn.as_deref()
     }
     /// <p>An updated list of Amazon EC2 instance types to use in the Auto Scaling group. The instance definitions must specify at least two different instance types that are supported by Amazon GameLift FleetIQ. This updated list replaces the entire current list of instance definitions for the game server group. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each instance type. If no weight value is specified for an instance type, it is set to the default value "1". For more information about capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
-    pub fn instance_definitions(&self) -> ::std::option::Option<&[crate::types::InstanceDefinition]> {
-        self.instance_definitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_definitions.is_none()`.
+    pub fn instance_definitions(&self) -> &[crate::types::InstanceDefinition] {
+        self.instance_definitions.as_deref().unwrap_or_default()
     }
     /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by Amazon Web Services regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
     pub fn game_server_protection_policy(&self) -> ::std::option::Option<&crate::types::GameServerProtectionPolicy> {
@@ -65,6 +67,7 @@ pub struct UpdateGameServerGroupInputBuilder {
 }
 impl UpdateGameServerGroupInputBuilder {
     /// <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
+    /// This field is required.
     pub fn game_server_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_server_group_name = ::std::option::Option::Some(input.into());
         self
@@ -158,7 +161,7 @@ impl UpdateGameServerGroupInputBuilder {
     /// Consumes the builder and constructs a [`UpdateGameServerGroupInput`](crate::operation::update_game_server_group::UpdateGameServerGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_game_server_group::UpdateGameServerGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_game_server_group::UpdateGameServerGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_game_server_group::UpdateGameServerGroupInput {
             game_server_group_name: self.game_server_group_name,

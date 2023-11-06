@@ -27,6 +27,7 @@ pub struct DescribeNotebookExecutionInputBuilder {
 }
 impl DescribeNotebookExecutionInputBuilder {
     /// <p>The unique identifier of the notebook execution.</p>
+    /// This field is required.
     pub fn notebook_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_execution_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeNotebookExecutionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_notebook_execution::DescribeNotebookExecutionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_notebook_execution::DescribeNotebookExecutionInput {
             notebook_execution_id: self.notebook_execution_id,

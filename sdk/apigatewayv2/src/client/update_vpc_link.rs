@@ -3,14 +3,14 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateVpcLink`](crate::operation::update_vpc_link::builders::UpdateVpcLinkFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::update_vpc_link::builders::UpdateVpcLinkFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_vpc_link::builders::UpdateVpcLinkFluentBuilder::set_name): <p>The name of the VPC link.</p>
-    ///   - [`vpc_link_id(impl Into<String>)`](crate::operation::update_vpc_link::builders::UpdateVpcLinkFluentBuilder::vpc_link_id) / [`set_vpc_link_id(Option<String>)`](crate::operation::update_vpc_link::builders::UpdateVpcLinkFluentBuilder::set_vpc_link_id): <p>The ID of the VPC link.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::update_vpc_link::builders::UpdateVpcLinkFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_vpc_link::builders::UpdateVpcLinkFluentBuilder::set_name):<br>required: **false**<br><p>The name of the VPC link.</p><br>
+    ///   - [`vpc_link_id(impl Into<String>)`](crate::operation::update_vpc_link::builders::UpdateVpcLinkFluentBuilder::vpc_link_id) / [`set_vpc_link_id(Option<String>)`](crate::operation::update_vpc_link::builders::UpdateVpcLinkFluentBuilder::set_vpc_link_id):<br>required: **true**<br><p>The ID of the VPC link.</p><br>
     /// - On success, responds with [`UpdateVpcLinkOutput`](crate::operation::update_vpc_link::UpdateVpcLinkOutput) with field(s):
     ///   - [`created_date(Option<DateTime>)`](crate::operation::update_vpc_link::UpdateVpcLinkOutput::created_date): <p>The timestamp when the VPC link was created.</p>
     ///   - [`name(Option<String>)`](crate::operation::update_vpc_link::UpdateVpcLinkOutput::name): <p>The name of the VPC link.</p>
-    ///   - [`security_group_ids(Option<Vec<String>>)`](crate::operation::update_vpc_link::UpdateVpcLinkOutput::security_group_ids): <p>A list of security group IDs for the VPC link.</p>
-    ///   - [`subnet_ids(Option<Vec<String>>)`](crate::operation::update_vpc_link::UpdateVpcLinkOutput::subnet_ids): <p>A list of subnet IDs to include in the VPC link.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::update_vpc_link::UpdateVpcLinkOutput::tags): <p>Tags for the VPC link.</p>
+    ///   - [`security_group_ids(Option<Vec::<String>>)`](crate::operation::update_vpc_link::UpdateVpcLinkOutput::security_group_ids): <p>A list of security group IDs for the VPC link.</p>
+    ///   - [`subnet_ids(Option<Vec::<String>>)`](crate::operation::update_vpc_link::UpdateVpcLinkOutput::subnet_ids): <p>A list of subnet IDs to include in the VPC link.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::update_vpc_link::UpdateVpcLinkOutput::tags): <p>Tags for the VPC link.</p>
     ///   - [`vpc_link_id(Option<String>)`](crate::operation::update_vpc_link::UpdateVpcLinkOutput::vpc_link_id): <p>The ID of the VPC link.</p>
     ///   - [`vpc_link_status(Option<VpcLinkStatus>)`](crate::operation::update_vpc_link::UpdateVpcLinkOutput::vpc_link_status): <p>The status of the VPC link.</p>
     ///   - [`vpc_link_status_message(Option<String>)`](crate::operation::update_vpc_link::UpdateVpcLinkOutput::vpc_link_status_message): <p>A message summarizing the cause of the status of the VPC link.</p>

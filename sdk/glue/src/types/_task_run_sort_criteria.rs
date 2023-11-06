@@ -5,18 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TaskRunSortCriteria {
     /// <p>The column to be used to sort the list of task runs for the machine learning transform.</p>
-    pub column: ::std::option::Option<crate::types::TaskRunSortColumnType>,
+    pub column: crate::types::TaskRunSortColumnType,
     /// <p>The sort direction to be used to sort the list of task runs for the machine learning transform.</p>
-    pub sort_direction: ::std::option::Option<crate::types::SortDirectionType>,
+    pub sort_direction: crate::types::SortDirectionType,
 }
 impl TaskRunSortCriteria {
     /// <p>The column to be used to sort the list of task runs for the machine learning transform.</p>
-    pub fn column(&self) -> ::std::option::Option<&crate::types::TaskRunSortColumnType> {
-        self.column.as_ref()
+    pub fn column(&self) -> &crate::types::TaskRunSortColumnType {
+        &self.column
     }
     /// <p>The sort direction to be used to sort the list of task runs for the machine learning transform.</p>
-    pub fn sort_direction(&self) -> ::std::option::Option<&crate::types::SortDirectionType> {
-        self.sort_direction.as_ref()
+    pub fn sort_direction(&self) -> &crate::types::SortDirectionType {
+        &self.sort_direction
     }
 }
 impl TaskRunSortCriteria {
@@ -35,6 +35,7 @@ pub struct TaskRunSortCriteriaBuilder {
 }
 impl TaskRunSortCriteriaBuilder {
     /// <p>The column to be used to sort the list of task runs for the machine learning transform.</p>
+    /// This field is required.
     pub fn column(mut self, input: crate::types::TaskRunSortColumnType) -> Self {
         self.column = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl TaskRunSortCriteriaBuilder {
         &self.column
     }
     /// <p>The sort direction to be used to sort the list of task runs for the machine learning transform.</p>
+    /// This field is required.
     pub fn sort_direction(mut self, input: crate::types::SortDirectionType) -> Self {
         self.sort_direction = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl TaskRunSortCriteriaBuilder {
         &self.sort_direction
     }
     /// Consumes the builder and constructs a [`TaskRunSortCriteria`](crate::types::TaskRunSortCriteria).
-    pub fn build(self) -> crate::types::TaskRunSortCriteria {
-        crate::types::TaskRunSortCriteria {
-            column: self.column,
-            sort_direction: self.sort_direction,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`column`](crate::types::builders::TaskRunSortCriteriaBuilder::column)
+    /// - [`sort_direction`](crate::types::builders::TaskRunSortCriteriaBuilder::sort_direction)
+    pub fn build(self) -> ::std::result::Result<crate::types::TaskRunSortCriteria, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TaskRunSortCriteria {
+            column: self.column.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "column",
+                    "column was not specified but it is required when building TaskRunSortCriteria",
+                )
+            })?,
+            sort_direction: self.sort_direction.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "sort_direction",
+                    "sort_direction was not specified but it is required when building TaskRunSortCriteria",
+                )
+            })?,
+        })
     }
 }

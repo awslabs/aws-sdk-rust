@@ -34,13 +34,13 @@ impl ::std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::associate_repository::AssociateRepositoryError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_repository::AssociateRepositoryError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::associate_repository::AssociateRepositoryError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_repository::AssociateRepositoryError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -62,13 +62,13 @@ impl From<crate::operation::associate_repository::AssociateRepositoryError> for 
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_code_review::CreateCodeReviewError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_code_review::CreateCodeReviewError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_code_review::CreateCodeReviewError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_code_review::CreateCodeReviewError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -91,13 +91,13 @@ impl From<crate::operation::create_code_review::CreateCodeReviewError> for Error
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_code_review::DescribeCodeReviewError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_code_review::DescribeCodeReviewError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_code_review::DescribeCodeReviewError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_code_review::DescribeCodeReviewError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -121,16 +121,24 @@ impl From<crate::operation::describe_code_review::DescribeCodeReviewError> for E
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_recommendation_feedback::DescribeRecommendationFeedbackError, R>>
-    for Error
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_recommendation_feedback::DescribeRecommendationFeedbackError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: ::aws_smithy_http::result::SdkError<crate::operation::describe_recommendation_feedback::DescribeRecommendationFeedbackError, R>,
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_recommendation_feedback::DescribeRecommendationFeedbackError,
+            R,
+        >,
     ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -162,15 +170,20 @@ impl From<crate::operation::describe_recommendation_feedback::DescribeRecommenda
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_repository_association::DescribeRepositoryAssociationError, R>> for Error
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_repository_association::DescribeRepositoryAssociationError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: ::aws_smithy_http::result::SdkError<crate::operation::describe_repository_association::DescribeRepositoryAssociationError, R>,
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_repository_association::DescribeRepositoryAssociationError,
+            R,
+        >,
     ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -202,13 +215,15 @@ impl From<crate::operation::describe_repository_association::DescribeRepositoryA
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::disassociate_repository::DisassociateRepositoryError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_repository::DisassociateRepositoryError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::disassociate_repository::DisassociateRepositoryError, R>) -> Self {
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_repository::DisassociateRepositoryError, R>,
+    ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -235,13 +250,13 @@ impl From<crate::operation::disassociate_repository::DisassociateRepositoryError
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_code_reviews::ListCodeReviewsError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_code_reviews::ListCodeReviewsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_code_reviews::ListCodeReviewsError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_code_reviews::ListCodeReviewsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -262,13 +277,16 @@ impl From<crate::operation::list_code_reviews::ListCodeReviewsError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_recommendation_feedback::ListRecommendationFeedbackError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_recommendation_feedback::ListRecommendationFeedbackError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_recommendation_feedback::ListRecommendationFeedbackError, R>) -> Self {
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_recommendation_feedback::ListRecommendationFeedbackError, R>,
+    ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -300,13 +318,13 @@ impl From<crate::operation::list_recommendation_feedback::ListRecommendationFeed
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_recommendations::ListRecommendationsError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_recommendations::ListRecommendationsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_recommendations::ListRecommendationsError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_recommendations::ListRecommendationsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -330,13 +348,16 @@ impl From<crate::operation::list_recommendations::ListRecommendationsError> for 
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_repository_associations::ListRepositoryAssociationsError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_repository_associations::ListRepositoryAssociationsError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_repository_associations::ListRepositoryAssociationsError, R>) -> Self {
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_repository_associations::ListRepositoryAssociationsError, R>,
+    ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -362,13 +383,13 @@ impl From<crate::operation::list_repository_associations::ListRepositoryAssociat
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -392,13 +413,16 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::put_recommendation_feedback::PutRecommendationFeedbackError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_recommendation_feedback::PutRecommendationFeedbackError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::put_recommendation_feedback::PutRecommendationFeedbackError, R>) -> Self {
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_recommendation_feedback::PutRecommendationFeedbackError, R>,
+    ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -430,13 +454,13 @@ impl From<crate::operation::put_recommendation_feedback::PutRecommendationFeedba
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -456,13 +480,13 @@ impl From<crate::operation::tag_resource::TagResourceError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())

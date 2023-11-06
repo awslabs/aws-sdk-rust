@@ -13,8 +13,10 @@ pub struct GetInsightsInput {
 }
 impl GetInsightsInput {
     /// <p>The ARNs of the insights to describe. If you do not provide any insight ARNs, then <code>GetInsights</code> returns all of your custom insights. It does not return any managed insights.</p>
-    pub fn insight_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.insight_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.insight_arns.is_none()`.
+    pub fn insight_arns(&self) -> &[::std::string::String] {
+        self.insight_arns.as_deref().unwrap_or_default()
     }
     /// <p>The token that is required for pagination. On your first call to the <code>GetInsights</code> operation, set the value of this parameter to <code>NULL</code>.</p>
     /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
@@ -94,7 +96,7 @@ impl GetInsightsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetInsightsInput`](crate::operation::get_insights::GetInsightsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_insights::GetInsightsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_insights::GetInsightsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_insights::GetInsightsInput {
             insight_arns: self.insight_arns,
             next_token: self.next_token,

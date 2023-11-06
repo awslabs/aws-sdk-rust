@@ -12,8 +12,10 @@ pub struct ListResourcesInput {
 }
 impl ListResourcesInput {
     /// <p>Any applicable row-level and/or column-level filtering conditions for the resources.</p>
-    pub fn filter_condition_list(&self) -> ::std::option::Option<&[crate::types::FilterCondition]> {
-        self.filter_condition_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filter_condition_list.is_none()`.
+    pub fn filter_condition_list(&self) -> &[crate::types::FilterCondition] {
+        self.filter_condition_list.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of resource results.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -91,7 +93,7 @@ impl ListResourcesInputBuilder {
     /// Consumes the builder and constructs a [`ListResourcesInput`](crate::operation::list_resources::ListResourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_resources::ListResourcesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_resources::ListResourcesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_resources::ListResourcesInput {
             filter_condition_list: self.filter_condition_list,
             max_results: self.max_results,

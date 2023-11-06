@@ -34,6 +34,7 @@ pub struct PutModelPackageGroupPolicyOutputBuilder {
 }
 impl PutModelPackageGroupPolicyOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the model package group.</p>
+    /// This field is required.
     pub fn model_package_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_group_arn = ::std::option::Option::Some(input.into());
         self

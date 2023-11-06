@@ -5,20 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FulfillmentUpdateResponseSpecification {
     /// <p>The frequency that a message is sent to the user. When the period ends, Amazon Lex chooses a message from the message groups and plays it to the user. If the fulfillment Lambda returns before the first period ends, an update message is not played to the user.</p>
-    pub frequency_in_seconds: ::std::option::Option<i32>,
+    pub frequency_in_seconds: i32,
     /// <p>1 - 5 message groups that contain update messages. Amazon Lex chooses one of the messages to play to the user.</p>
-    pub message_groups: ::std::option::Option<::std::vec::Vec<crate::types::MessageGroup>>,
+    pub message_groups: ::std::vec::Vec<crate::types::MessageGroup>,
     /// <p>Determines whether the user can interrupt an update message while it is playing.</p>
     pub allow_interrupt: ::std::option::Option<bool>,
 }
 impl FulfillmentUpdateResponseSpecification {
     /// <p>The frequency that a message is sent to the user. When the period ends, Amazon Lex chooses a message from the message groups and plays it to the user. If the fulfillment Lambda returns before the first period ends, an update message is not played to the user.</p>
-    pub fn frequency_in_seconds(&self) -> ::std::option::Option<i32> {
+    pub fn frequency_in_seconds(&self) -> i32 {
         self.frequency_in_seconds
     }
     /// <p>1 - 5 message groups that contain update messages. Amazon Lex chooses one of the messages to play to the user.</p>
-    pub fn message_groups(&self) -> ::std::option::Option<&[crate::types::MessageGroup]> {
-        self.message_groups.as_deref()
+    pub fn message_groups(&self) -> &[crate::types::MessageGroup] {
+        use std::ops::Deref;
+        self.message_groups.deref()
     }
     /// <p>Determines whether the user can interrupt an update message while it is playing.</p>
     pub fn allow_interrupt(&self) -> ::std::option::Option<bool> {
@@ -42,6 +43,7 @@ pub struct FulfillmentUpdateResponseSpecificationBuilder {
 }
 impl FulfillmentUpdateResponseSpecificationBuilder {
     /// <p>The frequency that a message is sent to the user. When the period ends, Amazon Lex chooses a message from the message groups and plays it to the user. If the fulfillment Lambda returns before the first period ends, an update message is not played to the user.</p>
+    /// This field is required.
     pub fn frequency_in_seconds(mut self, input: i32) -> Self {
         self.frequency_in_seconds = ::std::option::Option::Some(input);
         self
@@ -90,11 +92,26 @@ impl FulfillmentUpdateResponseSpecificationBuilder {
         &self.allow_interrupt
     }
     /// Consumes the builder and constructs a [`FulfillmentUpdateResponseSpecification`](crate::types::FulfillmentUpdateResponseSpecification).
-    pub fn build(self) -> crate::types::FulfillmentUpdateResponseSpecification {
-        crate::types::FulfillmentUpdateResponseSpecification {
-            frequency_in_seconds: self.frequency_in_seconds,
-            message_groups: self.message_groups,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`frequency_in_seconds`](crate::types::builders::FulfillmentUpdateResponseSpecificationBuilder::frequency_in_seconds)
+    /// - [`message_groups`](crate::types::builders::FulfillmentUpdateResponseSpecificationBuilder::message_groups)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::FulfillmentUpdateResponseSpecification, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::FulfillmentUpdateResponseSpecification {
+            frequency_in_seconds: self.frequency_in_seconds.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "frequency_in_seconds",
+                    "frequency_in_seconds was not specified but it is required when building FulfillmentUpdateResponseSpecification",
+                )
+            })?,
+            message_groups: self.message_groups.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "message_groups",
+                    "message_groups was not specified but it is required when building FulfillmentUpdateResponseSpecification",
+                )
+            })?,
             allow_interrupt: self.allow_interrupt,
-        }
+        })
     }
 }

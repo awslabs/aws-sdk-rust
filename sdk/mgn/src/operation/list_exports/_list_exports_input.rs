@@ -7,7 +7,7 @@ pub struct ListExportsInput {
     /// <p>List exports request filters.</p>
     pub filters: ::std::option::Option<crate::types::ListExportsRequestFilters>,
     /// <p>List export request max results.</p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>List export request next token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
@@ -17,7 +17,7 @@ impl ListExportsInput {
         self.filters.as_ref()
     }
     /// <p>List export request max results.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>List export request next token.</p>
@@ -84,10 +84,10 @@ impl ListExportsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListExportsInput`](crate::operation::list_exports::ListExportsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_exports::ListExportsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_exports::ListExportsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_exports::ListExportsInput {
             filters: self.filters,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
         })
     }

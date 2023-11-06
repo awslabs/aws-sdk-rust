@@ -2,18 +2,18 @@
 pub fn ser_s3_logs_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::S3LogsConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.status {
-        object.key("status").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("status").string(input.status.as_str());
     }
-    if let Some(var_2) = &input.location {
-        object.key("location").string(var_2.as_str());
+    if let Some(var_1) = &input.location {
+        object.key("location").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.encryption_disabled {
-        object.key("encryptionDisabled").boolean(*var_3);
+    if let Some(var_2) = &input.encryption_disabled {
+        object.key("encryptionDisabled").boolean(*var_2);
     }
-    if let Some(var_4) = &input.bucket_owner_access {
-        object.key("bucketOwnerAccess").string(var_4.as_str());
+    if let Some(var_3) = &input.bucket_owner_access {
+        object.key("bucketOwnerAccess").string(var_3.as_str());
     }
     Ok(())
 }
@@ -67,7 +67,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::s3_logs_config_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

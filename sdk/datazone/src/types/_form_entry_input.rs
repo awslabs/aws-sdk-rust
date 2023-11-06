@@ -5,20 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FormEntryInput {
     /// <p>The type ID of the form entry.</p>
-    pub type_identifier: ::std::option::Option<::std::string::String>,
+    pub type_identifier: ::std::string::String,
     /// <p>The type revision of the form entry.</p>
-    pub type_revision: ::std::option::Option<::std::string::String>,
+    pub type_revision: ::std::string::String,
     /// <p>Specifies whether a form entry is required.</p>
     pub required: ::std::option::Option<bool>,
 }
 impl FormEntryInput {
     /// <p>The type ID of the form entry.</p>
-    pub fn type_identifier(&self) -> ::std::option::Option<&str> {
-        self.type_identifier.as_deref()
+    pub fn type_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.type_identifier.deref()
     }
     /// <p>The type revision of the form entry.</p>
-    pub fn type_revision(&self) -> ::std::option::Option<&str> {
-        self.type_revision.as_deref()
+    pub fn type_revision(&self) -> &str {
+        use std::ops::Deref;
+        self.type_revision.deref()
     }
     /// <p>Specifies whether a form entry is required.</p>
     pub fn required(&self) -> ::std::option::Option<bool> {
@@ -42,6 +44,7 @@ pub struct FormEntryInputBuilder {
 }
 impl FormEntryInputBuilder {
     /// <p>The type ID of the form entry.</p>
+    /// This field is required.
     pub fn type_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_identifier = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl FormEntryInputBuilder {
         &self.type_identifier
     }
     /// <p>The type revision of the form entry.</p>
+    /// This field is required.
     pub fn type_revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_revision = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +88,24 @@ impl FormEntryInputBuilder {
         &self.required
     }
     /// Consumes the builder and constructs a [`FormEntryInput`](crate::types::FormEntryInput).
-    pub fn build(self) -> crate::types::FormEntryInput {
-        crate::types::FormEntryInput {
-            type_identifier: self.type_identifier,
-            type_revision: self.type_revision,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`type_identifier`](crate::types::builders::FormEntryInputBuilder::type_identifier)
+    /// - [`type_revision`](crate::types::builders::FormEntryInputBuilder::type_revision)
+    pub fn build(self) -> ::std::result::Result<crate::types::FormEntryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::FormEntryInput {
+            type_identifier: self.type_identifier.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "type_identifier",
+                    "type_identifier was not specified but it is required when building FormEntryInput",
+                )
+            })?,
+            type_revision: self.type_revision.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "type_revision",
+                    "type_revision was not specified but it is required when building FormEntryInput",
+                )
+            })?,
             required: self.required,
-        }
+        })
     }
 }

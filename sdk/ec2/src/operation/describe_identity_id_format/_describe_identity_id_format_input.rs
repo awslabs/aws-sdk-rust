@@ -34,6 +34,7 @@ pub struct DescribeIdentityIdFormatInputBuilder {
 }
 impl DescribeIdentityIdFormatInputBuilder {
     /// <p>The ARN of the principal, which can be an IAM role, IAM user, or the root user.</p>
+    /// This field is required.
     pub fn principal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_arn = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl DescribeIdentityIdFormatInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_identity_id_format::DescribeIdentityIdFormatInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_identity_id_format::DescribeIdentityIdFormatInput {
             principal_arn: self.principal_arn,

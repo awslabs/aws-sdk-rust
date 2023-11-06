@@ -3,27 +3,28 @@
 pub fn ser_tag(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::Tag,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Key");
-    if let Some(var_2) = &input.key {
-        scope_1.string(var_2);
+    {
+        scope_1.string(&input.key);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("Value");
-    if let Some(var_4) = &input.value {
-        scope_3.string(var_4);
+    let mut scope_2 = writer.prefix("Value");
+    {
+        scope_2.string(&input.value);
     }
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_tag(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result<crate::types::Tag, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::Tag::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Key") /* Key com.amazonaws.iam#Tag$Key */ =>  {
-                let var_5 =
+                let var_3 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -32,11 +33,11 @@ pub fn de_tag(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result<c
                         ?
                     )
                 ;
-                builder = builder.set_key(var_5);
+                builder = builder.set_key(var_3);
             }
             ,
             s if s.matches("Value") /* Value com.amazonaws.iam#Tag$Value */ =>  {
-                let var_6 =
+                let var_4 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -45,11 +46,13 @@ pub fn de_tag(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result<c
                         ?
                     )
                 ;
-                builder = builder.set_value(var_6);
+                builder = builder.set_value(var_4);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::tag_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

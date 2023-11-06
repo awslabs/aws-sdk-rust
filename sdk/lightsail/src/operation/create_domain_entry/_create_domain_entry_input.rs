@@ -34,6 +34,7 @@ pub struct CreateDomainEntryInputBuilder {
 }
 impl CreateDomainEntryInputBuilder {
     /// <p>The domain name (e.g., <code>example.com</code>) for which you want to create the domain entry.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl CreateDomainEntryInputBuilder {
         &self.domain_name
     }
     /// <p>An array of key-value pairs containing information about the domain entry request.</p>
+    /// This field is required.
     pub fn domain_entry(mut self, input: crate::types::DomainEntry) -> Self {
         self.domain_entry = ::std::option::Option::Some(input);
         self
@@ -64,7 +66,7 @@ impl CreateDomainEntryInputBuilder {
     /// Consumes the builder and constructs a [`CreateDomainEntryInput`](crate::operation::create_domain_entry::CreateDomainEntryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_domain_entry::CreateDomainEntryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_domain_entry::CreateDomainEntryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_domain_entry::CreateDomainEntryInput {
             domain_name: self.domain_name,
             domain_entry: self.domain_entry,

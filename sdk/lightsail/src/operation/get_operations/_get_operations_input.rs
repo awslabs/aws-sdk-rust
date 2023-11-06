@@ -48,7 +48,7 @@ impl GetOperationsInputBuilder {
     /// Consumes the builder and constructs a [`GetOperationsInput`](crate::operation::get_operations::GetOperationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_operations::GetOperationsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_operations::GetOperationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_operations::GetOperationsInput { page_token: self.page_token })
     }
 }

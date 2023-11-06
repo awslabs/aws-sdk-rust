@@ -41,6 +41,7 @@ pub struct ListTargetsForSecurityProfileInputBuilder {
 }
 impl ListTargetsForSecurityProfileInputBuilder {
     /// <p>The security profile.</p>
+    /// This field is required.
     pub fn security_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_profile_name = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListTargetsForSecurityProfileInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_targets_for_security_profile::ListTargetsForSecurityProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_targets_for_security_profile::ListTargetsForSecurityProfileInput {
             security_profile_name: self.security_profile_name,

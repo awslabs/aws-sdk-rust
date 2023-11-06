@@ -11,8 +11,10 @@ pub struct SearchAvailablePhoneNumbersOutput {
 }
 impl SearchAvailablePhoneNumbersOutput {
     /// <p>List of phone numbers, in E.164 format.</p>
-    pub fn e164_phone_numbers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.e164_phone_numbers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.e164_phone_numbers.is_none()`.
+    pub fn e164_phone_numbers(&self) -> &[::std::string::String] {
+        self.e164_phone_numbers.as_deref().unwrap_or_default()
     }
     /// <p>The token used to retrieve the next page of search results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

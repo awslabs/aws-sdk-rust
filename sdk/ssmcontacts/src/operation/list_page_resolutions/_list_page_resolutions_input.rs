@@ -48,6 +48,7 @@ impl ListPageResolutionsInputBuilder {
         &self.next_token
     }
     /// <p>The Amazon Resource Name (ARN) of the contact engaged for the incident.</p>
+    /// This field is required.
     pub fn page_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.page_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl ListPageResolutionsInputBuilder {
     /// Consumes the builder and constructs a [`ListPageResolutionsInput`](crate::operation::list_page_resolutions::ListPageResolutionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_page_resolutions::ListPageResolutionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_page_resolutions::ListPageResolutionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_page_resolutions::ListPageResolutionsInput {
             next_token: self.next_token,

@@ -27,6 +27,7 @@ pub struct GetFailbackReplicationConfigurationInputBuilder {
 }
 impl GetFailbackReplicationConfigurationInputBuilder {
     /// <p>The ID of the Recovery Instance whose failback replication configuration should be returned.</p>
+    /// This field is required.
     pub fn recovery_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recovery_instance_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetFailbackReplicationConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_failback_replication_configuration::GetFailbackReplicationConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_failback_replication_configuration::GetFailbackReplicationConfigurationInput {

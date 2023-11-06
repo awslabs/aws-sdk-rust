@@ -19,7 +19,7 @@ pub struct PipeSourceKinesisStreamParameters {
     /// <p>(Streams only) The number of batches to process concurrently from each shard. The default value is 1.</p>
     pub parallelization_factor: ::std::option::Option<i32>,
     /// <p>(Streams only) The position in a stream from which to start reading.</p>
-    pub starting_position: ::std::option::Option<crate::types::KinesisStreamStartPosition>,
+    pub starting_position: crate::types::KinesisStreamStartPosition,
     /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading, in Unix time seconds.</p>
     pub starting_position_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -53,8 +53,8 @@ impl PipeSourceKinesisStreamParameters {
         self.parallelization_factor
     }
     /// <p>(Streams only) The position in a stream from which to start reading.</p>
-    pub fn starting_position(&self) -> ::std::option::Option<&crate::types::KinesisStreamStartPosition> {
-        self.starting_position.as_ref()
+    pub fn starting_position(&self) -> &crate::types::KinesisStreamStartPosition {
+        &self.starting_position
     }
     /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading, in Unix time seconds.</p>
     pub fn starting_position_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -182,6 +182,7 @@ impl PipeSourceKinesisStreamParametersBuilder {
         &self.parallelization_factor
     }
     /// <p>(Streams only) The position in a stream from which to start reading.</p>
+    /// This field is required.
     pub fn starting_position(mut self, input: crate::types::KinesisStreamStartPosition) -> Self {
         self.starting_position = ::std::option::Option::Some(input);
         self
@@ -210,8 +211,10 @@ impl PipeSourceKinesisStreamParametersBuilder {
         &self.starting_position_timestamp
     }
     /// Consumes the builder and constructs a [`PipeSourceKinesisStreamParameters`](crate::types::PipeSourceKinesisStreamParameters).
-    pub fn build(self) -> crate::types::PipeSourceKinesisStreamParameters {
-        crate::types::PipeSourceKinesisStreamParameters {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`starting_position`](crate::types::builders::PipeSourceKinesisStreamParametersBuilder::starting_position)
+    pub fn build(self) -> ::std::result::Result<crate::types::PipeSourceKinesisStreamParameters, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PipeSourceKinesisStreamParameters {
             batch_size: self.batch_size,
             dead_letter_config: self.dead_letter_config,
             on_partial_batch_item_failure: self.on_partial_batch_item_failure,
@@ -219,8 +222,13 @@ impl PipeSourceKinesisStreamParametersBuilder {
             maximum_record_age_in_seconds: self.maximum_record_age_in_seconds,
             maximum_retry_attempts: self.maximum_retry_attempts,
             parallelization_factor: self.parallelization_factor,
-            starting_position: self.starting_position,
+            starting_position: self.starting_position.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "starting_position",
+                    "starting_position was not specified but it is required when building PipeSourceKinesisStreamParameters",
+                )
+            })?,
             starting_position_timestamp: self.starting_position_timestamp,
-        }
+        })
     }
 }

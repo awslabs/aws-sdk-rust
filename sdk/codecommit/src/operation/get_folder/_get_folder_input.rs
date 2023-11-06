@@ -41,6 +41,7 @@ pub struct GetFolderInputBuilder {
 }
 impl GetFolderInputBuilder {
     /// <p>The name of the repository.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl GetFolderInputBuilder {
         &self.commit_specifier
     }
     /// <p>The fully qualified path to the folder whose contents are returned, including the folder name. For example, /examples is a fully-qualified path to a folder named examples that was created off of the root directory (/) of a repository. </p>
+    /// This field is required.
     pub fn folder_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.folder_path = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +85,7 @@ impl GetFolderInputBuilder {
         &self.folder_path
     }
     /// Consumes the builder and constructs a [`GetFolderInput`](crate::operation::get_folder::GetFolderInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_folder::GetFolderInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_folder::GetFolderInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_folder::GetFolderInput {
             repository_name: self.repository_name,
             commit_specifier: self.commit_specifier,

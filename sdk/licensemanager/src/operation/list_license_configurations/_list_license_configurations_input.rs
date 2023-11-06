@@ -19,8 +19,10 @@ pub struct ListLicenseConfigurationsInput {
 }
 impl ListLicenseConfigurationsInput {
     /// <p>Amazon Resource Names (ARN) of the license configurations.</p>
-    pub fn license_configuration_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.license_configuration_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.license_configuration_arns.is_none()`.
+    pub fn license_configuration_arns(&self) -> &[::std::string::String] {
+        self.license_configuration_arns.as_deref().unwrap_or_default()
     }
     /// <p>Maximum number of results to return in a single call.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -36,8 +38,10 @@ impl ListLicenseConfigurationsInput {
     /// <li> <p> <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license enforcement is used. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
     /// <li> <p> <code>usagelimitExceeded</code> - A Boolean value that indicates whether the available licenses have been exceeded. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
 }
 impl ListLicenseConfigurationsInput {
@@ -145,7 +149,7 @@ impl ListLicenseConfigurationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_license_configurations::ListLicenseConfigurationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_license_configurations::ListLicenseConfigurationsInput {
             license_configuration_arns: self.license_configuration_arns,

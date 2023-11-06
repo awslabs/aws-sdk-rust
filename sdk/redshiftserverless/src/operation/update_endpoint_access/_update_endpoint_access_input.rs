@@ -14,8 +14,10 @@ impl UpdateEndpointAccessInput {
         self.endpoint_name.as_deref()
     }
     /// <p>The list of VPC security groups associated with the endpoint after the endpoint is modified.</p>
-    pub fn vpc_security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.vpc_security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_group_ids.is_none()`.
+    pub fn vpc_security_group_ids(&self) -> &[::std::string::String] {
+        self.vpc_security_group_ids.as_deref().unwrap_or_default()
     }
 }
 impl UpdateEndpointAccessInput {
@@ -34,6 +36,7 @@ pub struct UpdateEndpointAccessInputBuilder {
 }
 impl UpdateEndpointAccessInputBuilder {
     /// <p>The name of the VPC endpoint to update.</p>
+    /// This field is required.
     pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_name = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +73,7 @@ impl UpdateEndpointAccessInputBuilder {
     /// Consumes the builder and constructs a [`UpdateEndpointAccessInput`](crate::operation::update_endpoint_access::UpdateEndpointAccessInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_endpoint_access::UpdateEndpointAccessInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_endpoint_access::UpdateEndpointAccessInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_endpoint_access::UpdateEndpointAccessInput {
             endpoint_name: self.endpoint_name,

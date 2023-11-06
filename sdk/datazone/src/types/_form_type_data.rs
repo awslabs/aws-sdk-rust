@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct FormTypeData {
     /// <p>The identifier of the Amazon DataZone domain in which the form type exists.</p>
-    pub domain_id: ::std::option::Option<::std::string::String>,
+    pub domain_id: ::std::string::String,
     /// <p>The name of the form type.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The revision of the form type.</p>
-    pub revision: ::std::option::Option<::std::string::String>,
+    pub revision: ::std::string::String,
     /// <p>The model of the form type.</p>
     pub model: ::std::option::Option<crate::types::Model>,
     /// <p>The status of the form type.</p>
@@ -31,16 +31,19 @@ pub struct FormTypeData {
 }
 impl FormTypeData {
     /// <p>The identifier of the Amazon DataZone domain in which the form type exists.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
-        self.domain_id.as_deref()
+    pub fn domain_id(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_id.deref()
     }
     /// <p>The name of the form type.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The revision of the form type.</p>
-    pub fn revision(&self) -> ::std::option::Option<&str> {
-        self.revision.as_deref()
+    pub fn revision(&self) -> &str {
+        use std::ops::Deref;
+        self.revision.deref()
     }
     /// <p>The model of the form type.</p>
     pub fn model(&self) -> ::std::option::Option<&crate::types::Model> {
@@ -75,8 +78,10 @@ impl FormTypeData {
         self.description.as_deref()
     }
     /// <p>The imports specified in the form type.</p>
-    pub fn imports(&self) -> ::std::option::Option<&[crate::types::Import]> {
-        self.imports.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.imports.is_none()`.
+    pub fn imports(&self) -> &[crate::types::Import] {
+        self.imports.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for FormTypeData {
@@ -123,6 +128,7 @@ pub struct FormTypeDataBuilder {
 }
 impl FormTypeDataBuilder {
     /// <p>The identifier of the Amazon DataZone domain in which the form type exists.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -137,6 +143,7 @@ impl FormTypeDataBuilder {
         &self.domain_id
     }
     /// <p>The name of the form type.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -151,6 +158,7 @@ impl FormTypeDataBuilder {
         &self.name
     }
     /// <p>The revision of the form type.</p>
+    /// This field is required.
     pub fn revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision = ::std::option::Option::Some(input.into());
         self
@@ -297,11 +305,30 @@ impl FormTypeDataBuilder {
         &self.imports
     }
     /// Consumes the builder and constructs a [`FormTypeData`](crate::types::FormTypeData).
-    pub fn build(self) -> crate::types::FormTypeData {
-        crate::types::FormTypeData {
-            domain_id: self.domain_id,
-            name: self.name,
-            revision: self.revision,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`domain_id`](crate::types::builders::FormTypeDataBuilder::domain_id)
+    /// - [`name`](crate::types::builders::FormTypeDataBuilder::name)
+    /// - [`revision`](crate::types::builders::FormTypeDataBuilder::revision)
+    pub fn build(self) -> ::std::result::Result<crate::types::FormTypeData, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::FormTypeData {
+            domain_id: self.domain_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "domain_id",
+                    "domain_id was not specified but it is required when building FormTypeData",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building FormTypeData",
+                )
+            })?,
+            revision: self.revision.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "revision",
+                    "revision was not specified but it is required when building FormTypeData",
+                )
+            })?,
             model: self.model,
             status: self.status,
             owning_project_id: self.owning_project_id,
@@ -311,7 +338,7 @@ impl FormTypeDataBuilder {
             created_by: self.created_by,
             description: self.description,
             imports: self.imports,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for FormTypeDataBuilder {

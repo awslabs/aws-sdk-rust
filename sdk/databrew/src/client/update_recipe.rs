@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateRecipe`](crate::operation::update_recipe::builders::UpdateRecipeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`description(impl Into<String>)`](crate::operation::update_recipe::builders::UpdateRecipeFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_recipe::builders::UpdateRecipeFluentBuilder::set_description): <p>A description of the recipe.</p>
-    ///   - [`name(impl Into<String>)`](crate::operation::update_recipe::builders::UpdateRecipeFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_recipe::builders::UpdateRecipeFluentBuilder::set_name): <p>The name of the recipe to be updated.</p>
-    ///   - [`steps(RecipeStep)`](crate::operation::update_recipe::builders::UpdateRecipeFluentBuilder::steps) / [`set_steps(Option<Vec<RecipeStep>>)`](crate::operation::update_recipe::builders::UpdateRecipeFluentBuilder::set_steps): <p>One or more steps to be performed by the recipe. Each step consists of an action, and the conditions under which the action should succeed.</p>
+    ///   - [`description(impl Into<String>)`](crate::operation::update_recipe::builders::UpdateRecipeFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_recipe::builders::UpdateRecipeFluentBuilder::set_description):<br>required: **false**<br><p>A description of the recipe.</p><br>
+    ///   - [`name(impl Into<String>)`](crate::operation::update_recipe::builders::UpdateRecipeFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_recipe::builders::UpdateRecipeFluentBuilder::set_name):<br>required: **true**<br><p>The name of the recipe to be updated.</p><br>
+    ///   - [`steps(RecipeStep)`](crate::operation::update_recipe::builders::UpdateRecipeFluentBuilder::steps) / [`set_steps(Option<Vec::<RecipeStep>>)`](crate::operation::update_recipe::builders::UpdateRecipeFluentBuilder::set_steps):<br>required: **false**<br><p>One or more steps to be performed by the recipe. Each step consists of an action, and the conditions under which the action should succeed.</p><br>
     /// - On success, responds with [`UpdateRecipeOutput`](crate::operation::update_recipe::UpdateRecipeOutput) with field(s):
-    ///   - [`name(Option<String>)`](crate::operation::update_recipe::UpdateRecipeOutput::name): <p>The name of the recipe that was updated.</p>
+    ///   - [`name(String)`](crate::operation::update_recipe::UpdateRecipeOutput::name): <p>The name of the recipe that was updated.</p>
     /// - On failure, responds with [`SdkError<UpdateRecipeError>`](crate::operation::update_recipe::UpdateRecipeError)
     pub fn update_recipe(&self) -> crate::operation::update_recipe::builders::UpdateRecipeFluentBuilder {
         crate::operation::update_recipe::builders::UpdateRecipeFluentBuilder::new(self.handle.clone())

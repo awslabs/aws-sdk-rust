@@ -37,8 +37,10 @@ impl GetAdapterOutput {
         self.description.as_deref()
     }
     /// <p>List of the targeted feature types for the requested adapter.</p>
-    pub fn feature_types(&self) -> ::std::option::Option<&[crate::types::FeatureType]> {
-        self.feature_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.feature_types.is_none()`.
+    pub fn feature_types(&self) -> &[crate::types::FeatureType] {
+        self.feature_types.as_deref().unwrap_or_default()
     }
     /// <p>Binary value indicating if the adapter is being automatically updated or not.</p>
     pub fn auto_update(&self) -> ::std::option::Option<&crate::types::AutoUpdate> {

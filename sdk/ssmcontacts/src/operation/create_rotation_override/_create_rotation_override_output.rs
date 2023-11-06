@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRotationOverrideOutput {
     /// <p>The Amazon Resource Name (ARN) of the created rotation override.</p>
-    pub rotation_override_id: ::std::option::Option<::std::string::String>,
+    pub rotation_override_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateRotationOverrideOutput {
     /// <p>The Amazon Resource Name (ARN) of the created rotation override.</p>
-    pub fn rotation_override_id(&self) -> ::std::option::Option<&str> {
-        self.rotation_override_id.as_deref()
+    pub fn rotation_override_id(&self) -> &str {
+        use std::ops::Deref;
+        self.rotation_override_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateRotationOverrideOutput {
@@ -34,6 +35,7 @@ pub struct CreateRotationOverrideOutputBuilder {
 }
 impl CreateRotationOverrideOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the created rotation override.</p>
+    /// This field is required.
     pub fn rotation_override_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rotation_override_id = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,22 @@ impl CreateRotationOverrideOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateRotationOverrideOutput`](crate::operation::create_rotation_override::CreateRotationOverrideOutput).
-    pub fn build(self) -> crate::operation::create_rotation_override::CreateRotationOverrideOutput {
-        crate::operation::create_rotation_override::CreateRotationOverrideOutput {
-            rotation_override_id: self.rotation_override_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`rotation_override_id`](crate::operation::create_rotation_override::builders::CreateRotationOverrideOutputBuilder::rotation_override_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_rotation_override::CreateRotationOverrideOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::create_rotation_override::CreateRotationOverrideOutput {
+            rotation_override_id: self.rotation_override_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "rotation_override_id",
+                    "rotation_override_id was not specified but it is required when building CreateRotationOverrideOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

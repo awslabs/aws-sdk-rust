@@ -2,7 +2,7 @@
 pub fn ser_notification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Notification,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.sns_topic_arn {
         object.key("SnsTopicARN").string(var_1.as_str());
     }

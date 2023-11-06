@@ -48,6 +48,7 @@ pub struct GetSegmentImportJobsInputBuilder {
 }
 impl GetSegmentImportJobsInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl GetSegmentImportJobsInputBuilder {
         &self.page_size
     }
     /// <p>The unique identifier for the segment.</p>
+    /// This field is required.
     pub fn segment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.segment_id = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +108,7 @@ impl GetSegmentImportJobsInputBuilder {
     /// Consumes the builder and constructs a [`GetSegmentImportJobsInput`](crate::operation::get_segment_import_jobs::GetSegmentImportJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_segment_import_jobs::GetSegmentImportJobsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_segment_import_jobs::GetSegmentImportJobsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_segment_import_jobs::GetSegmentImportJobsInput {
             application_id: self.application_id,

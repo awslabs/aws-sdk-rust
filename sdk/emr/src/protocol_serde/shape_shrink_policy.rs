@@ -2,7 +2,7 @@
 pub fn ser_shrink_policy(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ShrinkPolicy,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.decommission_timeout {
         object.key("DecommissionTimeout").number(
             #[allow(clippy::useless_conversion)]

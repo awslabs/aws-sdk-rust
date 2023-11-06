@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TopBottomFilter {
     /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
-    pub filter_id: ::std::option::Option<::std::string::String>,
+    pub filter_id: ::std::string::String,
     /// <p>The column that the filter is applied to.</p>
     pub column: ::std::option::Option<crate::types::ColumnIdentifier>,
     /// <p>The number of items to include in the top bottom filter results.</p>
     pub limit: ::std::option::Option<i32>,
     /// <p>The aggregation and sort configuration of the top bottom filter.</p>
-    pub aggregation_sort_configurations: ::std::option::Option<::std::vec::Vec<crate::types::AggregationSortConfiguration>>,
+    pub aggregation_sort_configurations: ::std::vec::Vec<crate::types::AggregationSortConfiguration>,
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
     pub time_granularity: ::std::option::Option<crate::types::TimeGranularity>,
     /// <p>The parameter whose value should be used for the filter value.</p>
@@ -19,8 +19,9 @@ pub struct TopBottomFilter {
 }
 impl TopBottomFilter {
     /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
-    pub fn filter_id(&self) -> ::std::option::Option<&str> {
-        self.filter_id.as_deref()
+    pub fn filter_id(&self) -> &str {
+        use std::ops::Deref;
+        self.filter_id.deref()
     }
     /// <p>The column that the filter is applied to.</p>
     pub fn column(&self) -> ::std::option::Option<&crate::types::ColumnIdentifier> {
@@ -31,8 +32,9 @@ impl TopBottomFilter {
         self.limit
     }
     /// <p>The aggregation and sort configuration of the top bottom filter.</p>
-    pub fn aggregation_sort_configurations(&self) -> ::std::option::Option<&[crate::types::AggregationSortConfiguration]> {
-        self.aggregation_sort_configurations.as_deref()
+    pub fn aggregation_sort_configurations(&self) -> &[crate::types::AggregationSortConfiguration] {
+        use std::ops::Deref;
+        self.aggregation_sort_configurations.deref()
     }
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
     pub fn time_granularity(&self) -> ::std::option::Option<&crate::types::TimeGranularity> {
@@ -63,6 +65,7 @@ pub struct TopBottomFilterBuilder {
 }
 impl TopBottomFilterBuilder {
     /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
+    /// This field is required.
     pub fn filter_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter_id = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +80,7 @@ impl TopBottomFilterBuilder {
         &self.filter_id
     }
     /// <p>The column that the filter is applied to.</p>
+    /// This field is required.
     pub fn column(mut self, input: crate::types::ColumnIdentifier) -> Self {
         self.column = ::std::option::Option::Some(input);
         self
@@ -156,14 +160,27 @@ impl TopBottomFilterBuilder {
         &self.parameter_name
     }
     /// Consumes the builder and constructs a [`TopBottomFilter`](crate::types::TopBottomFilter).
-    pub fn build(self) -> crate::types::TopBottomFilter {
-        crate::types::TopBottomFilter {
-            filter_id: self.filter_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`filter_id`](crate::types::builders::TopBottomFilterBuilder::filter_id)
+    /// - [`aggregation_sort_configurations`](crate::types::builders::TopBottomFilterBuilder::aggregation_sort_configurations)
+    pub fn build(self) -> ::std::result::Result<crate::types::TopBottomFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TopBottomFilter {
+            filter_id: self.filter_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "filter_id",
+                    "filter_id was not specified but it is required when building TopBottomFilter",
+                )
+            })?,
             column: self.column,
             limit: self.limit,
-            aggregation_sort_configurations: self.aggregation_sort_configurations,
+            aggregation_sort_configurations: self.aggregation_sort_configurations.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "aggregation_sort_configurations",
+                    "aggregation_sort_configurations was not specified but it is required when building TopBottomFilter",
+                )
+            })?,
             time_granularity: self.time_granularity,
             parameter_name: self.parameter_name,
-        }
+        })
     }
 }

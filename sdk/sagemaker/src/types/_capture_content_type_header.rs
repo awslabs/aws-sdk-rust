@@ -11,12 +11,16 @@ pub struct CaptureContentTypeHeader {
 }
 impl CaptureContentTypeHeader {
     /// <p>The list of all content type headers that Amazon SageMaker will treat as CSV and capture accordingly.</p>
-    pub fn csv_content_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.csv_content_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.csv_content_types.is_none()`.
+    pub fn csv_content_types(&self) -> &[::std::string::String] {
+        self.csv_content_types.as_deref().unwrap_or_default()
     }
     /// <p>The list of all content type headers that SageMaker will treat as JSON and capture accordingly.</p>
-    pub fn json_content_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.json_content_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.json_content_types.is_none()`.
+    pub fn json_content_types(&self) -> &[::std::string::String] {
+        self.json_content_types.as_deref().unwrap_or_default()
     }
 }
 impl CaptureContentTypeHeader {

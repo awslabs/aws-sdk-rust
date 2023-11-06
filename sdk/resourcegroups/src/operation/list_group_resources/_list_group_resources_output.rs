@@ -18,23 +18,29 @@ pub struct ListGroupResourcesOutput {
 }
 impl ListGroupResourcesOutput {
     /// <p>An array of resources from which you can determine each resource's identity, type, and group membership status.</p>
-    pub fn resources(&self) -> ::std::option::Option<&[crate::types::ListGroupResourcesItem]> {
-        self.resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
+    pub fn resources(&self) -> &[crate::types::ListGroupResourcesItem] {
+        self.resources.as_deref().unwrap_or_default()
     }
     /// <important>
     /// <p> <b> <i>Deprecated - don't use this parameter. Use the <code>Resources</code> response field instead.</i> </b> </p>
     /// </important>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_identifiers.is_none()`.
     #[deprecated(note = "This field is deprecated, use Resources instead.")]
-    pub fn resource_identifiers(&self) -> ::std::option::Option<&[crate::types::ResourceIdentifier]> {
-        self.resource_identifiers.as_deref()
+    pub fn resource_identifiers(&self) -> &[crate::types::ResourceIdentifier] {
+        self.resource_identifiers.as_deref().unwrap_or_default()
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and <code>Message</code> structures. Possible values for <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
-    pub fn query_errors(&self) -> ::std::option::Option<&[crate::types::QueryError]> {
-        self.query_errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.query_errors.is_none()`.
+    pub fn query_errors(&self) -> &[crate::types::QueryError] {
+        self.query_errors.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListGroupResourcesOutput {

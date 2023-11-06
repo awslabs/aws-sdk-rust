@@ -5,18 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventSubscription {
     /// <p>The event for which Amazon Simple Notification Service (SNS) notifications are sent.</p>
-    pub event: ::std::option::Option<crate::types::InspectorEvent>,
+    pub event: crate::types::InspectorEvent,
     /// <p>The time at which <code>SubscribeToEvent</code> is called.</p>
-    pub subscribed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub subscribed_at: ::aws_smithy_types::DateTime,
 }
 impl EventSubscription {
     /// <p>The event for which Amazon Simple Notification Service (SNS) notifications are sent.</p>
-    pub fn event(&self) -> ::std::option::Option<&crate::types::InspectorEvent> {
-        self.event.as_ref()
+    pub fn event(&self) -> &crate::types::InspectorEvent {
+        &self.event
     }
     /// <p>The time at which <code>SubscribeToEvent</code> is called.</p>
-    pub fn subscribed_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.subscribed_at.as_ref()
+    pub fn subscribed_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.subscribed_at
     }
 }
 impl EventSubscription {
@@ -35,6 +35,7 @@ pub struct EventSubscriptionBuilder {
 }
 impl EventSubscriptionBuilder {
     /// <p>The event for which Amazon Simple Notification Service (SNS) notifications are sent.</p>
+    /// This field is required.
     pub fn event(mut self, input: crate::types::InspectorEvent) -> Self {
         self.event = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl EventSubscriptionBuilder {
         &self.event
     }
     /// <p>The time at which <code>SubscribeToEvent</code> is called.</p>
+    /// This field is required.
     pub fn subscribed_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.subscribed_at = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl EventSubscriptionBuilder {
         &self.subscribed_at
     }
     /// Consumes the builder and constructs a [`EventSubscription`](crate::types::EventSubscription).
-    pub fn build(self) -> crate::types::EventSubscription {
-        crate::types::EventSubscription {
-            event: self.event,
-            subscribed_at: self.subscribed_at,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`event`](crate::types::builders::EventSubscriptionBuilder::event)
+    /// - [`subscribed_at`](crate::types::builders::EventSubscriptionBuilder::subscribed_at)
+    pub fn build(self) -> ::std::result::Result<crate::types::EventSubscription, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EventSubscription {
+            event: self.event.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "event",
+                    "event was not specified but it is required when building EventSubscription",
+                )
+            })?,
+            subscribed_at: self.subscribed_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "subscribed_at",
+                    "subscribed_at was not specified but it is required when building EventSubscription",
+                )
+            })?,
+        })
     }
 }

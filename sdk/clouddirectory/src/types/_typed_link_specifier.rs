@@ -11,7 +11,7 @@ pub struct TypedLinkSpecifier {
     /// <p>Identifies the target object that the typed link will attach to.</p>
     pub target_object_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>Identifies the attribute value to update.</p>
-    pub identity_attribute_values: ::std::option::Option<::std::vec::Vec<crate::types::AttributeNameAndValue>>,
+    pub identity_attribute_values: ::std::vec::Vec<crate::types::AttributeNameAndValue>,
 }
 impl TypedLinkSpecifier {
     /// <p>Identifies the typed link facet that is associated with the typed link.</p>
@@ -27,8 +27,9 @@ impl TypedLinkSpecifier {
         self.target_object_reference.as_ref()
     }
     /// <p>Identifies the attribute value to update.</p>
-    pub fn identity_attribute_values(&self) -> ::std::option::Option<&[crate::types::AttributeNameAndValue]> {
-        self.identity_attribute_values.as_deref()
+    pub fn identity_attribute_values(&self) -> &[crate::types::AttributeNameAndValue] {
+        use std::ops::Deref;
+        self.identity_attribute_values.deref()
     }
 }
 impl TypedLinkSpecifier {
@@ -49,6 +50,7 @@ pub struct TypedLinkSpecifierBuilder {
 }
 impl TypedLinkSpecifierBuilder {
     /// <p>Identifies the typed link facet that is associated with the typed link.</p>
+    /// This field is required.
     pub fn typed_link_facet(mut self, input: crate::types::TypedLinkSchemaAndFacetName) -> Self {
         self.typed_link_facet = ::std::option::Option::Some(input);
         self
@@ -63,6 +65,7 @@ impl TypedLinkSpecifierBuilder {
         &self.typed_link_facet
     }
     /// <p>Identifies the source object that the typed link will attach to.</p>
+    /// This field is required.
     pub fn source_object_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.source_object_reference = ::std::option::Option::Some(input);
         self
@@ -77,6 +80,7 @@ impl TypedLinkSpecifierBuilder {
         &self.source_object_reference
     }
     /// <p>Identifies the target object that the typed link will attach to.</p>
+    /// This field is required.
     pub fn target_object_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.target_object_reference = ::std::option::Option::Some(input);
         self
@@ -111,12 +115,19 @@ impl TypedLinkSpecifierBuilder {
         &self.identity_attribute_values
     }
     /// Consumes the builder and constructs a [`TypedLinkSpecifier`](crate::types::TypedLinkSpecifier).
-    pub fn build(self) -> crate::types::TypedLinkSpecifier {
-        crate::types::TypedLinkSpecifier {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`identity_attribute_values`](crate::types::builders::TypedLinkSpecifierBuilder::identity_attribute_values)
+    pub fn build(self) -> ::std::result::Result<crate::types::TypedLinkSpecifier, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TypedLinkSpecifier {
             typed_link_facet: self.typed_link_facet,
             source_object_reference: self.source_object_reference,
             target_object_reference: self.target_object_reference,
-            identity_attribute_values: self.identity_attribute_values,
-        }
+            identity_attribute_values: self.identity_attribute_values.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "identity_attribute_values",
+                    "identity_attribute_values was not specified but it is required when building TypedLinkSpecifier",
+                )
+            })?,
+        })
     }
 }

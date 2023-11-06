@@ -11,8 +11,10 @@ pub struct DescribeResourcePermissionsOutput {
 }
 impl DescribeResourcePermissionsOutput {
     /// <p>The principals.</p>
-    pub fn principals(&self) -> ::std::option::Option<&[crate::types::Principal]> {
-        self.principals.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.principals.is_none()`.
+    pub fn principals(&self) -> &[crate::types::Principal] {
+        self.principals.as_deref().unwrap_or_default()
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

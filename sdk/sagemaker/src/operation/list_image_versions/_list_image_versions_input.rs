@@ -111,6 +111,7 @@ impl ListImageVersionsInputBuilder {
         &self.creation_time_before
     }
     /// <p>The name of the image to list the versions of.</p>
+    /// This field is required.
     pub fn image_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_name = ::std::option::Option::Some(input.into());
         self
@@ -211,7 +212,7 @@ impl ListImageVersionsInputBuilder {
     /// Consumes the builder and constructs a [`ListImageVersionsInput`](crate::operation::list_image_versions::ListImageVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_image_versions::ListImageVersionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_image_versions::ListImageVersionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_image_versions::ListImageVersionsInput {
             creation_time_after: self.creation_time_after,
             creation_time_before: self.creation_time_before,

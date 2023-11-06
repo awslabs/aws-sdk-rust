@@ -72,7 +72,9 @@ construct credentials from hardcoded values.
 //! ```
 
 use crate::Credentials;
-use aws_smithy_types::config_bag::{Storable, StoreReplace};
+use aws_smithy_runtime_api::client::identity::{Identity, IdentityFuture, ResolveIdentity};
+use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
+use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreReplace};
 use std::sync::Arc;
 
 /// Credentials provider errors
@@ -354,4 +356,18 @@ impl ProvideCredentials for SharedCredentialsProvider {
 
 impl Storable for SharedCredentialsProvider {
     type Storer = StoreReplace<SharedCredentialsProvider>;
+}
+
+impl ResolveIdentity for SharedCredentialsProvider {
+    fn resolve_identity<'a>(
+        &'a self,
+        _runtime_components: &'a RuntimeComponents,
+        _config_bag: &'a ConfigBag,
+    ) -> IdentityFuture<'a> {
+        IdentityFuture::new(async move { Ok(self.provide_credentials().await?.into()) })
+    }
+
+    fn fallback_on_interrupt(&self) -> Option<Identity> {
+        ProvideCredentials::fallback_on_interrupt(self).map(|creds| creds.into())
+    }
 }

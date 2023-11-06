@@ -36,6 +36,7 @@ pub struct DeleteAllowListInputBuilder {
 }
 impl DeleteAllowListInputBuilder {
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -69,7 +70,7 @@ impl DeleteAllowListInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAllowListInput`](crate::operation::delete_allow_list::DeleteAllowListInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_allow_list::DeleteAllowListInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_allow_list::DeleteAllowListInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_allow_list::DeleteAllowListInput {
             id: self.id,
             ignore_job_checks: self.ignore_job_checks,

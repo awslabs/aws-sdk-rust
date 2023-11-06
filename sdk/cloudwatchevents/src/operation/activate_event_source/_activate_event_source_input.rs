@@ -27,6 +27,7 @@ pub struct ActivateEventSourceInputBuilder {
 }
 impl ActivateEventSourceInputBuilder {
     /// <p>The name of the partner event source to activate.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl ActivateEventSourceInputBuilder {
     /// Consumes the builder and constructs a [`ActivateEventSourceInput`](crate::operation::activate_event_source::ActivateEventSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::activate_event_source::ActivateEventSourceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::activate_event_source::ActivateEventSourceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::activate_event_source::ActivateEventSourceInput { name: self.name })
     }

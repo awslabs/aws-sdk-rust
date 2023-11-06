@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluateDataQualityMultiFrame {
     /// <p>The name of the data quality evaluation.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The inputs of your data quality evaluation. The first input in this list is the primary data source.</p>
-    pub inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub inputs: ::std::vec::Vec<::std::string::String>,
     /// <p>The aliases of all data sources except primary.</p>
     pub additional_data_sources: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The ruleset for your data quality evaluation.</p>
-    pub ruleset: ::std::option::Option<::std::string::String>,
+    pub ruleset: ::std::string::String,
     /// <p>Options to configure how your results are published.</p>
     pub publishing_options: ::std::option::Option<crate::types::DqResultsPublishingOptions>,
     /// <p>Options to configure runtime behavior of the transform.</p>
@@ -21,20 +21,23 @@ pub struct EvaluateDataQualityMultiFrame {
 }
 impl EvaluateDataQualityMultiFrame {
     /// <p>The name of the data quality evaluation.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The inputs of your data quality evaluation. The first input in this list is the primary data source.</p>
-    pub fn inputs(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.inputs.as_deref()
+    pub fn inputs(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.inputs.deref()
     }
     /// <p>The aliases of all data sources except primary.</p>
     pub fn additional_data_sources(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.additional_data_sources.as_ref()
     }
     /// <p>The ruleset for your data quality evaluation.</p>
-    pub fn ruleset(&self) -> ::std::option::Option<&str> {
-        self.ruleset.as_deref()
+    pub fn ruleset(&self) -> &str {
+        use std::ops::Deref;
+        self.ruleset.deref()
     }
     /// <p>Options to configure how your results are published.</p>
     pub fn publishing_options(&self) -> ::std::option::Option<&crate::types::DqResultsPublishingOptions> {
@@ -72,6 +75,7 @@ pub struct EvaluateDataQualityMultiFrameBuilder {
 }
 impl EvaluateDataQualityMultiFrameBuilder {
     /// <p>The name of the data quality evaluation.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -133,6 +137,7 @@ impl EvaluateDataQualityMultiFrameBuilder {
         &self.additional_data_sources
     }
     /// <p>The ruleset for your data quality evaluation.</p>
+    /// This field is required.
     pub fn ruleset(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ruleset = ::std::option::Option::Some(input.into());
         self
@@ -200,15 +205,34 @@ impl EvaluateDataQualityMultiFrameBuilder {
         &self.stop_job_on_failure_options
     }
     /// Consumes the builder and constructs a [`EvaluateDataQualityMultiFrame`](crate::types::EvaluateDataQualityMultiFrame).
-    pub fn build(self) -> crate::types::EvaluateDataQualityMultiFrame {
-        crate::types::EvaluateDataQualityMultiFrame {
-            name: self.name,
-            inputs: self.inputs,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::EvaluateDataQualityMultiFrameBuilder::name)
+    /// - [`inputs`](crate::types::builders::EvaluateDataQualityMultiFrameBuilder::inputs)
+    /// - [`ruleset`](crate::types::builders::EvaluateDataQualityMultiFrameBuilder::ruleset)
+    pub fn build(self) -> ::std::result::Result<crate::types::EvaluateDataQualityMultiFrame, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EvaluateDataQualityMultiFrame {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building EvaluateDataQualityMultiFrame",
+                )
+            })?,
+            inputs: self.inputs.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "inputs",
+                    "inputs was not specified but it is required when building EvaluateDataQualityMultiFrame",
+                )
+            })?,
             additional_data_sources: self.additional_data_sources,
-            ruleset: self.ruleset,
+            ruleset: self.ruleset.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "ruleset",
+                    "ruleset was not specified but it is required when building EvaluateDataQualityMultiFrame",
+                )
+            })?,
             publishing_options: self.publishing_options,
             additional_options: self.additional_options,
             stop_job_on_failure_options: self.stop_job_on_failure_options,
-        }
+        })
     }
 }

@@ -16,8 +16,10 @@ impl AcceptMatchInput {
         self.ticket_id.as_deref()
     }
     /// <p>A unique identifier for a player delivering the response. This parameter can include one or multiple player IDs.</p>
-    pub fn player_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.player_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.player_ids.is_none()`.
+    pub fn player_ids(&self) -> &[::std::string::String] {
+        self.player_ids.as_deref().unwrap_or_default()
     }
     /// <p>Player response to the proposed match.</p>
     pub fn acceptance_type(&self) -> ::std::option::Option<&crate::types::AcceptanceType> {
@@ -41,6 +43,7 @@ pub struct AcceptMatchInputBuilder {
 }
 impl AcceptMatchInputBuilder {
     /// <p>A unique identifier for a matchmaking ticket. The ticket must be in status <code>REQUIRES_ACCEPTANCE</code>; otherwise this request will fail.</p>
+    /// This field is required.
     pub fn ticket_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ticket_id = ::std::option::Option::Some(input.into());
         self
@@ -75,6 +78,7 @@ impl AcceptMatchInputBuilder {
         &self.player_ids
     }
     /// <p>Player response to the proposed match.</p>
+    /// This field is required.
     pub fn acceptance_type(mut self, input: crate::types::AcceptanceType) -> Self {
         self.acceptance_type = ::std::option::Option::Some(input);
         self
@@ -89,7 +93,7 @@ impl AcceptMatchInputBuilder {
         &self.acceptance_type
     }
     /// Consumes the builder and constructs a [`AcceptMatchInput`](crate::operation::accept_match::AcceptMatchInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::accept_match::AcceptMatchInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::accept_match::AcceptMatchInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::accept_match::AcceptMatchInput {
             ticket_id: self.ticket_id,
             player_ids: self.player_ids,

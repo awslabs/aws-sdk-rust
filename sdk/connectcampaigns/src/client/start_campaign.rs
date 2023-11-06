@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartCampaign`](crate::operation::start_campaign::builders::StartCampaignFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::start_campaign::builders::StartCampaignFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::start_campaign::builders::StartCampaignFluentBuilder::set_id): Identifier representing a Campaign
+    ///   - [`id(impl Into<String>)`](crate::operation::start_campaign::builders::StartCampaignFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::start_campaign::builders::StartCampaignFluentBuilder::set_id):<br>required: **true**<br>Identifier representing a Campaign<br>
     /// - On success, responds with [`StartCampaignOutput`](crate::operation::start_campaign::StartCampaignOutput)
     /// - On failure, responds with [`SdkError<StartCampaignError>`](crate::operation::start_campaign::StartCampaignError)
     pub fn start_campaign(&self) -> crate::operation::start_campaign::builders::StartCampaignFluentBuilder {

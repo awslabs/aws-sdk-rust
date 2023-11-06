@@ -13,8 +13,10 @@ pub struct DescribeWorkspacesOutput {
 impl DescribeWorkspacesOutput {
     /// <p>Information about the WorkSpaces.</p>
     /// <p>Because <code>CreateWorkspaces</code> is an asynchronous operation, some of the returned information could be incomplete.</p>
-    pub fn workspaces(&self) -> ::std::option::Option<&[crate::types::Workspace]> {
-        self.workspaces.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.workspaces.is_none()`.
+    pub fn workspaces(&self) -> &[crate::types::Workspace] {
+        self.workspaces.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -55,6 +55,7 @@ pub struct GetDeploymentInputBuilder {
 }
 impl GetDeploymentInputBuilder {
     /// <p>The ID of the deployment that you want to get the detailed data for.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -127,7 +128,7 @@ impl GetDeploymentInputBuilder {
     /// Consumes the builder and constructs a [`GetDeploymentInput`](crate::operation::get_deployment::GetDeploymentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_deployment::GetDeploymentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_deployment::GetDeploymentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_deployment::GetDeploymentInput {
             id: self.id,
             environment_name: self.environment_name,

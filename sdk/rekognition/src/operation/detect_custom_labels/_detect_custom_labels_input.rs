@@ -60,6 +60,7 @@ pub struct DetectCustomLabelsInputBuilder {
 }
 impl DetectCustomLabelsInputBuilder {
     /// <p>The ARN of the model version that you want to use. Only models associated with Custom Labels projects accepted by the operation. If a provided ARN refers to a model version associated with a project for a different feature type, then an InvalidParameterException is returned.</p>
+    /// This field is required.
     pub fn project_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_version_arn = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +81,7 @@ impl DetectCustomLabelsInputBuilder {
     /// <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p>
     /// <p>If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes using the Bytes property is not supported. You must first upload the image to an Amazon S3 bucket and then call the operation using the S3Object property.</p>
     /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see How Amazon Rekognition works with IAM in the Amazon Rekognition Developer Guide. </p>
+    /// This field is required.
     pub fn image(mut self, input: crate::types::Image) -> Self {
         self.image = ::std::option::Option::Some(input);
         self
@@ -136,7 +138,8 @@ impl DetectCustomLabelsInputBuilder {
     /// Consumes the builder and constructs a [`DetectCustomLabelsInput`](crate::operation::detect_custom_labels::DetectCustomLabelsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::detect_custom_labels::DetectCustomLabelsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::detect_custom_labels::DetectCustomLabelsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::detect_custom_labels::DetectCustomLabelsInput {
             project_version_arn: self.project_version_arn,
             image: self.image,

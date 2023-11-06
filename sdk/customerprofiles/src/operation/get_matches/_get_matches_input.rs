@@ -69,6 +69,7 @@ impl GetMatchesInputBuilder {
         &self.max_results
     }
     /// <p>The unique name of the domain.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +84,7 @@ impl GetMatchesInputBuilder {
         &self.domain_name
     }
     /// Consumes the builder and constructs a [`GetMatchesInput`](crate::operation::get_matches::GetMatchesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_matches::GetMatchesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_matches::GetMatchesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_matches::GetMatchesInput {
             next_token: self.next_token,
             max_results: self.max_results,

@@ -126,8 +126,10 @@ impl CallAnalyticsJob {
         self.settings.as_ref()
     }
     /// <p>Indicates which speaker is on which channel.</p>
-    pub fn channel_definitions(&self) -> ::std::option::Option<&[crate::types::ChannelDefinition]> {
-        self.channel_definitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.channel_definitions.is_none()`.
+    pub fn channel_definitions(&self) -> &[crate::types::ChannelDefinition] {
+        self.channel_definitions.as_deref().unwrap_or_default()
     }
 }
 impl CallAnalyticsJob {

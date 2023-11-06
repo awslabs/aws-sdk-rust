@@ -36,8 +36,10 @@ impl CreateActivityInput {
     /// <p>The list of tags to add to a resource.</p>
     /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
     /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateActivityInput {
@@ -65,6 +67,7 @@ impl CreateActivityInputBuilder {
     /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -125,7 +128,7 @@ impl CreateActivityInputBuilder {
     /// Consumes the builder and constructs a [`CreateActivityInput`](crate::operation::create_activity::CreateActivityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_activity::CreateActivityInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_activity::CreateActivityInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_activity::CreateActivityInput {
             name: self.name,
             tags: self.tags,

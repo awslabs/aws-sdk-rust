@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSourceVpcConfiguration {
     /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
-    pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subnet_ids: ::std::vec::Vec<::std::string::String>,
     /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
-    pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_group_ids: ::std::vec::Vec<::std::string::String>,
 }
 impl DataSourceVpcConfiguration {
     /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.subnet_ids.deref()
     }
     /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.security_group_ids.deref()
     }
 }
 impl DataSourceVpcConfiguration {
@@ -75,10 +77,23 @@ impl DataSourceVpcConfigurationBuilder {
         &self.security_group_ids
     }
     /// Consumes the builder and constructs a [`DataSourceVpcConfiguration`](crate::types::DataSourceVpcConfiguration).
-    pub fn build(self) -> crate::types::DataSourceVpcConfiguration {
-        crate::types::DataSourceVpcConfiguration {
-            subnet_ids: self.subnet_ids,
-            security_group_ids: self.security_group_ids,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`subnet_ids`](crate::types::builders::DataSourceVpcConfigurationBuilder::subnet_ids)
+    /// - [`security_group_ids`](crate::types::builders::DataSourceVpcConfigurationBuilder::security_group_ids)
+    pub fn build(self) -> ::std::result::Result<crate::types::DataSourceVpcConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DataSourceVpcConfiguration {
+            subnet_ids: self.subnet_ids.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "subnet_ids",
+                    "subnet_ids was not specified but it is required when building DataSourceVpcConfiguration",
+                )
+            })?,
+            security_group_ids: self.security_group_ids.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "security_group_ids",
+                    "security_group_ids was not specified but it is required when building DataSourceVpcConfiguration",
+                )
+            })?,
+        })
     }
 }

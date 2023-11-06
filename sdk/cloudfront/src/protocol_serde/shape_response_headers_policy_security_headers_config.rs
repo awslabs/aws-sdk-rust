@@ -2,7 +2,7 @@
 pub fn ser_response_headers_policy_security_headers_config(
     input: &crate::types::ResponseHeadersPolicySecurityHeadersConfig,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_1) = &input.xss_protection {
@@ -42,6 +42,7 @@ pub fn ser_response_headers_policy_security_headers_config(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_response_headers_policy_security_headers_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::ResponseHeadersPolicySecurityHeadersConfig, ::aws_smithy_xml::decode::XmlDecodeError> {

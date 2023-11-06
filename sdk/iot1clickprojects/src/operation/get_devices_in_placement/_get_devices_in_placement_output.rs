@@ -4,13 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDevicesInPlacementOutput {
     /// <p>An object containing the devices (zero or more) within the placement.</p>
-    pub devices: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub devices: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetDevicesInPlacementOutput {
     /// <p>An object containing the devices (zero or more) within the placement.</p>
-    pub fn devices(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
-        self.devices.as_ref()
+    pub fn devices(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+        &self.devices
     }
 }
 impl ::aws_http::request_id::RequestId for GetDevicesInPlacementOutput {
@@ -63,10 +63,22 @@ impl GetDevicesInPlacementOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetDevicesInPlacementOutput`](crate::operation::get_devices_in_placement::GetDevicesInPlacementOutput).
-    pub fn build(self) -> crate::operation::get_devices_in_placement::GetDevicesInPlacementOutput {
-        crate::operation::get_devices_in_placement::GetDevicesInPlacementOutput {
-            devices: self.devices,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`devices`](crate::operation::get_devices_in_placement::builders::GetDevicesInPlacementOutputBuilder::devices)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_devices_in_placement::GetDevicesInPlacementOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::get_devices_in_placement::GetDevicesInPlacementOutput {
+            devices: self.devices.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "devices",
+                    "devices was not specified but it is required when building GetDevicesInPlacementOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

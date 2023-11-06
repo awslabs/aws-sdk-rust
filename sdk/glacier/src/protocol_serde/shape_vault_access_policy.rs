@@ -17,7 +17,7 @@ pub(crate) fn de_vault_access_policy_payload(
 pub fn ser_vault_access_policy(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VaultAccessPolicy,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.policy {
         object.key("Policy").string(var_1.as_str());
     }

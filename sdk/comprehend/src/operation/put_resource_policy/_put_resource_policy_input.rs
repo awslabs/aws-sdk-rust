@@ -47,6 +47,7 @@ pub struct PutResourcePolicyInputBuilder {
 }
 impl PutResourcePolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the custom model to attach the policy to.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -64,6 +65,7 @@ impl PutResourcePolicyInputBuilder {
     /// <p> <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> </p>
     /// <p>To avoid escaping quotes, you can use single quotes to enclose the policy and double quotes to enclose the JSON names and values:</p>
     /// <p> <code>'{"attribute": "value", "attribute": ["value"]}'</code> </p>
+    /// This field is required.
     pub fn resource_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_policy = ::std::option::Option::Some(input.into());
         self
@@ -100,7 +102,7 @@ impl PutResourcePolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutResourcePolicyInput`](crate::operation::put_resource_policy::PutResourcePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_resource_policy::PutResourcePolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_resource_policy::PutResourcePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_resource_policy::PutResourcePolicyInput {
             resource_arn: self.resource_arn,
             resource_policy: self.resource_policy,

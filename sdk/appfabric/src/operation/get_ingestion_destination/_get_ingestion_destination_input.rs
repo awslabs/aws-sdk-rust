@@ -41,6 +41,7 @@ pub struct GetIngestionDestinationInputBuilder {
 }
 impl GetIngestionDestinationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
+    /// This field is required.
     pub fn app_bundle_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_bundle_identifier = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl GetIngestionDestinationInputBuilder {
         &self.app_bundle_identifier
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.</p>
+    /// This field is required.
     pub fn ingestion_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ingestion_identifier = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl GetIngestionDestinationInputBuilder {
         &self.ingestion_identifier
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion destination to use for the request.</p>
+    /// This field is required.
     pub fn ingestion_destination_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ingestion_destination_identifier = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +90,7 @@ impl GetIngestionDestinationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_ingestion_destination::GetIngestionDestinationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_ingestion_destination::GetIngestionDestinationInput {
             app_bundle_identifier: self.app_bundle_identifier,

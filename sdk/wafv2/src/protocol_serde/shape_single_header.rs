@@ -2,9 +2,9 @@
 pub fn ser_single_header(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SingleHeader,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("Name").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Name").string(input.name.as_str());
     }
     Ok(())
 }
@@ -41,7 +41,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::single_header_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

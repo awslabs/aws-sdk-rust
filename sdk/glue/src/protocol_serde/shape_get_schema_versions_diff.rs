@@ -105,12 +105,12 @@ pub fn de_get_schema_versions_diff_http_response(
 
 pub fn ser_get_schema_versions_diff_input(
     input: &crate::operation::get_schema_versions_diff::GetSchemaVersionsDiffInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_get_schema_versions_diff_input::ser_get_schema_versions_diff_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_get_schema_versions_diff(

@@ -17,6 +17,8 @@ pub struct RegisterApplicationInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The credentials of the SAP application.</p>
     pub credentials: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>,
+    /// <p>The Amazon Resource Name of the SAP HANA database.</p>
+    pub database_arn: ::std::option::Option<::std::string::String>,
 }
 impl RegisterApplicationInput {
     /// <p>The ID of the application.</p>
@@ -28,8 +30,10 @@ impl RegisterApplicationInput {
         self.application_type.as_ref()
     }
     /// <p>The Amazon EC2 instances on which your SAP application is running.</p>
-    pub fn instances(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.instances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instances.is_none()`.
+    pub fn instances(&self) -> &[::std::string::String] {
+        self.instances.as_deref().unwrap_or_default()
     }
     /// <p>The SAP instance number of the application.</p>
     pub fn sap_instance_number(&self) -> ::std::option::Option<&str> {
@@ -44,8 +48,14 @@ impl RegisterApplicationInput {
         self.tags.as_ref()
     }
     /// <p>The credentials of the SAP application.</p>
-    pub fn credentials(&self) -> ::std::option::Option<&[crate::types::ApplicationCredential]> {
-        self.credentials.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.credentials.is_none()`.
+    pub fn credentials(&self) -> &[crate::types::ApplicationCredential] {
+        self.credentials.as_deref().unwrap_or_default()
+    }
+    /// <p>The Amazon Resource Name of the SAP HANA database.</p>
+    pub fn database_arn(&self) -> ::std::option::Option<&str> {
+        self.database_arn.as_deref()
     }
 }
 impl RegisterApplicationInput {
@@ -66,9 +76,11 @@ pub struct RegisterApplicationInputBuilder {
     pub(crate) sid: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) credentials: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>,
+    pub(crate) database_arn: ::std::option::Option<::std::string::String>,
 }
 impl RegisterApplicationInputBuilder {
     /// <p>The ID of the application.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +95,7 @@ impl RegisterApplicationInputBuilder {
         &self.application_id
     }
     /// <p>The type of the application.</p>
+    /// This field is required.
     pub fn application_type(mut self, input: crate::types::ApplicationType) -> Self {
         self.application_type = ::std::option::Option::Some(input);
         self
@@ -184,10 +197,24 @@ impl RegisterApplicationInputBuilder {
     pub fn get_credentials(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>> {
         &self.credentials
     }
+    /// <p>The Amazon Resource Name of the SAP HANA database.</p>
+    pub fn database_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.database_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name of the SAP HANA database.</p>
+    pub fn set_database_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.database_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name of the SAP HANA database.</p>
+    pub fn get_database_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_arn
+    }
     /// Consumes the builder and constructs a [`RegisterApplicationInput`](crate::operation::register_application::RegisterApplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_application::RegisterApplicationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::register_application::RegisterApplicationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::register_application::RegisterApplicationInput {
             application_id: self.application_id,
@@ -197,6 +224,7 @@ impl RegisterApplicationInputBuilder {
             sid: self.sid,
             tags: self.tags,
             credentials: self.credentials,
+            database_arn: self.database_arn,
         })
     }
 }

@@ -41,6 +41,7 @@ pub struct ListTagsForDeliveryStreamInputBuilder {
 }
 impl ListTagsForDeliveryStreamInputBuilder {
     /// <p>The name of the delivery stream whose tags you want to list.</p>
+    /// This field is required.
     pub fn delivery_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delivery_stream_name = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListTagsForDeliveryStreamInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_tags_for_delivery_stream::ListTagsForDeliveryStreamInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_tags_for_delivery_stream::ListTagsForDeliveryStreamInput {
             delivery_stream_name: self.delivery_stream_name,

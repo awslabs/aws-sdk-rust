@@ -34,6 +34,7 @@ pub struct UpdateVoiceProfileInputBuilder {
 }
 impl UpdateVoiceProfileInputBuilder {
     /// <p>The profile ID.</p>
+    /// This field is required.
     pub fn voice_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_profile_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateVoiceProfileInputBuilder {
         &self.voice_profile_id
     }
     /// <p>The ID of the speaker search task.</p>
+    /// This field is required.
     pub fn speaker_search_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.speaker_search_task_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,8 @@ impl UpdateVoiceProfileInputBuilder {
     /// Consumes the builder and constructs a [`UpdateVoiceProfileInput`](crate::operation::update_voice_profile::UpdateVoiceProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_voice_profile::UpdateVoiceProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_voice_profile::UpdateVoiceProfileInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_voice_profile::UpdateVoiceProfileInput {
             voice_profile_id: self.voice_profile_id,
             speaker_search_task_id: self.speaker_search_task_id,

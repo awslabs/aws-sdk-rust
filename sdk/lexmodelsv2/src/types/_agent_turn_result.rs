@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AgentTurnResult {
     /// <p>The expected agent prompt for the agent turn in a test set execution.</p>
-    pub expected_agent_prompt: ::std::option::Option<::std::string::String>,
+    pub expected_agent_prompt: ::std::string::String,
     /// <p>The actual agent prompt for the agent turn in a test set execution.</p>
     pub actual_agent_prompt: ::std::option::Option<::std::string::String>,
     /// <p>Details about an error in an execution of a test set.</p>
@@ -17,8 +17,9 @@ pub struct AgentTurnResult {
 }
 impl AgentTurnResult {
     /// <p>The expected agent prompt for the agent turn in a test set execution.</p>
-    pub fn expected_agent_prompt(&self) -> ::std::option::Option<&str> {
-        self.expected_agent_prompt.as_deref()
+    pub fn expected_agent_prompt(&self) -> &str {
+        use std::ops::Deref;
+        self.expected_agent_prompt.deref()
     }
     /// <p>The actual agent prompt for the agent turn in a test set execution.</p>
     pub fn actual_agent_prompt(&self) -> ::std::option::Option<&str> {
@@ -56,6 +57,7 @@ pub struct AgentTurnResultBuilder {
 }
 impl AgentTurnResultBuilder {
     /// <p>The expected agent prompt for the agent turn in a test set execution.</p>
+    /// This field is required.
     pub fn expected_agent_prompt(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expected_agent_prompt = ::std::option::Option::Some(input.into());
         self
@@ -126,13 +128,20 @@ impl AgentTurnResultBuilder {
         &self.actual_intent
     }
     /// Consumes the builder and constructs a [`AgentTurnResult`](crate::types::AgentTurnResult).
-    pub fn build(self) -> crate::types::AgentTurnResult {
-        crate::types::AgentTurnResult {
-            expected_agent_prompt: self.expected_agent_prompt,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`expected_agent_prompt`](crate::types::builders::AgentTurnResultBuilder::expected_agent_prompt)
+    pub fn build(self) -> ::std::result::Result<crate::types::AgentTurnResult, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AgentTurnResult {
+            expected_agent_prompt: self.expected_agent_prompt.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "expected_agent_prompt",
+                    "expected_agent_prompt was not specified but it is required when building AgentTurnResult",
+                )
+            })?,
             actual_agent_prompt: self.actual_agent_prompt,
             error_details: self.error_details,
             actual_elicited_slot: self.actual_elicited_slot,
             actual_intent: self.actual_intent,
-        }
+        })
     }
 }

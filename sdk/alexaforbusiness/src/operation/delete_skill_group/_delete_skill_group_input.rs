@@ -43,7 +43,7 @@ impl DeleteSkillGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSkillGroupInput`](crate::operation::delete_skill_group::DeleteSkillGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_skill_group::DeleteSkillGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_skill_group::DeleteSkillGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_skill_group::DeleteSkillGroupInput {
             skill_group_arn: self.skill_group_arn,
         })

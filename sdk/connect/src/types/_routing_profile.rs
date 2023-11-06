@@ -49,8 +49,10 @@ impl RoutingProfile {
         self.description.as_deref()
     }
     /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
-    pub fn media_concurrencies(&self) -> ::std::option::Option<&[crate::types::MediaConcurrency]> {
-        self.media_concurrencies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.media_concurrencies.is_none()`.
+    pub fn media_concurrencies(&self) -> &[crate::types::MediaConcurrency] {
+        self.media_concurrencies.as_deref().unwrap_or_default()
     }
     /// <p>The identifier of the default outbound queue for this routing profile.</p>
     pub fn default_outbound_queue_id(&self) -> ::std::option::Option<&str> {

@@ -2,7 +2,7 @@
 pub fn ser_delete_data_repository_association_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_data_repository_association::DeleteDataRepositoryAssociationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.association_id {
         object.key("AssociationId").string(var_1.as_str());
     }

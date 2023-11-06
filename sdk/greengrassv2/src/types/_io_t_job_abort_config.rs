@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IoTJobAbortConfig {
     /// <p>The list of criteria that define when and how to cancel the configuration deployment.</p>
-    pub criteria_list: ::std::option::Option<::std::vec::Vec<crate::types::IoTJobAbortCriteria>>,
+    pub criteria_list: ::std::vec::Vec<crate::types::IoTJobAbortCriteria>,
 }
 impl IoTJobAbortConfig {
     /// <p>The list of criteria that define when and how to cancel the configuration deployment.</p>
-    pub fn criteria_list(&self) -> ::std::option::Option<&[crate::types::IoTJobAbortCriteria]> {
-        self.criteria_list.as_deref()
+    pub fn criteria_list(&self) -> &[crate::types::IoTJobAbortCriteria] {
+        use std::ops::Deref;
+        self.criteria_list.deref()
     }
 }
 impl IoTJobAbortConfig {
@@ -48,9 +49,16 @@ impl IoTJobAbortConfigBuilder {
         &self.criteria_list
     }
     /// Consumes the builder and constructs a [`IoTJobAbortConfig`](crate::types::IoTJobAbortConfig).
-    pub fn build(self) -> crate::types::IoTJobAbortConfig {
-        crate::types::IoTJobAbortConfig {
-            criteria_list: self.criteria_list,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`criteria_list`](crate::types::builders::IoTJobAbortConfigBuilder::criteria_list)
+    pub fn build(self) -> ::std::result::Result<crate::types::IoTJobAbortConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::IoTJobAbortConfig {
+            criteria_list: self.criteria_list.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "criteria_list",
+                    "criteria_list was not specified but it is required when building IoTJobAbortConfig",
+                )
+            })?,
+        })
     }
 }

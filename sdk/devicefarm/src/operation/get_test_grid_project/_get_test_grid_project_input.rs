@@ -27,6 +27,7 @@ pub struct GetTestGridProjectInputBuilder {
 }
 impl GetTestGridProjectInputBuilder {
     /// <p>The ARN of the Selenium testing project, from either <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>.</p>
+    /// This field is required.
     pub fn project_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetTestGridProjectInputBuilder {
     /// Consumes the builder and constructs a [`GetTestGridProjectInput`](crate::operation::get_test_grid_project::GetTestGridProjectInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_test_grid_project::GetTestGridProjectInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_test_grid_project::GetTestGridProjectInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_test_grid_project::GetTestGridProjectInput {
             project_arn: self.project_arn,

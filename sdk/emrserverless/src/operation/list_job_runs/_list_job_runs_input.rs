@@ -38,8 +38,10 @@ impl ListJobRunsInput {
         self.created_at_before.as_ref()
     }
     /// <p>An optional filter for job run states. Note that if this filter contains multiple states, the resulting list will be grouped by the state.</p>
-    pub fn states(&self) -> ::std::option::Option<&[crate::types::JobRunState]> {
-        self.states.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.states.is_none()`.
+    pub fn states(&self) -> &[crate::types::JobRunState] {
+        self.states.as_deref().unwrap_or_default()
     }
 }
 impl ListJobRunsInput {
@@ -62,6 +64,7 @@ pub struct ListJobRunsInputBuilder {
 }
 impl ListJobRunsInputBuilder {
     /// <p>The ID of the application for which to list the job run.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -152,7 +155,7 @@ impl ListJobRunsInputBuilder {
         &self.states
     }
     /// Consumes the builder and constructs a [`ListJobRunsInput`](crate::operation::list_job_runs::ListJobRunsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_job_runs::ListJobRunsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_job_runs::ListJobRunsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_job_runs::ListJobRunsInput {
             application_id: self.application_id,
             next_token: self.next_token,

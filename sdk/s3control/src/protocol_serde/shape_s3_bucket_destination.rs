@@ -2,37 +2,38 @@
 pub fn ser_s3_bucket_destination(
     input: &crate::types::S3BucketDestination,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.format {
+    {
         let mut inner_writer = scope.start_el("Format").finish();
+        inner_writer.data(input.format.as_str());
+    }
+    {
+        let mut inner_writer = scope.start_el("OutputSchemaVersion").finish();
+        inner_writer.data(input.output_schema_version.as_str());
+    }
+    {
+        let mut inner_writer = scope.start_el("AccountId").finish();
+        inner_writer.data(input.account_id.as_str());
+    }
+    {
+        let mut inner_writer = scope.start_el("Arn").finish();
+        inner_writer.data(input.arn.as_str());
+    }
+    if let Some(var_1) = &input.prefix {
+        let mut inner_writer = scope.start_el("Prefix").finish();
         inner_writer.data(var_1.as_str());
     }
-    if let Some(var_2) = &input.output_schema_version {
-        let mut inner_writer = scope.start_el("OutputSchemaVersion").finish();
-        inner_writer.data(var_2.as_str());
-    }
-    if let Some(var_3) = &input.account_id {
-        let mut inner_writer = scope.start_el("AccountId").finish();
-        inner_writer.data(var_3.as_str());
-    }
-    if let Some(var_4) = &input.arn {
-        let mut inner_writer = scope.start_el("Arn").finish();
-        inner_writer.data(var_4.as_str());
-    }
-    if let Some(var_5) = &input.prefix {
-        let mut inner_writer = scope.start_el("Prefix").finish();
-        inner_writer.data(var_5.as_str());
-    }
-    if let Some(var_6) = &input.encryption {
+    if let Some(var_2) = &input.encryption {
         let inner_writer = scope.start_el("Encryption");
-        crate::protocol_serde::shape_storage_lens_data_export_encryption::ser_storage_lens_data_export_encryption(var_6, inner_writer)?
+        crate::protocol_serde::shape_storage_lens_data_export_encryption::ser_storage_lens_data_export_encryption(var_2, inner_writer)?
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_s3_bucket_destination(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::S3BucketDestination, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -41,7 +42,7 @@ pub fn de_s3_bucket_destination(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Format") /* Format com.amazonaws.s3control#S3BucketDestination$Format */ =>  {
-                let var_7 =
+                let var_3 =
                     Some(
                         Result::<crate::types::Format, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::Format::from(
@@ -51,11 +52,11 @@ pub fn de_s3_bucket_destination(
                         ?
                     )
                 ;
-                builder = builder.set_format(var_7);
+                builder = builder.set_format(var_3);
             }
             ,
             s if s.matches("OutputSchemaVersion") /* OutputSchemaVersion com.amazonaws.s3control#S3BucketDestination$OutputSchemaVersion */ =>  {
-                let var_8 =
+                let var_4 =
                     Some(
                         Result::<crate::types::OutputSchemaVersion, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::OutputSchemaVersion::from(
@@ -65,11 +66,11 @@ pub fn de_s3_bucket_destination(
                         ?
                     )
                 ;
-                builder = builder.set_output_schema_version(var_8);
+                builder = builder.set_output_schema_version(var_4);
             }
             ,
             s if s.matches("AccountId") /* AccountId com.amazonaws.s3control#S3BucketDestination$AccountId */ =>  {
-                let var_9 =
+                let var_5 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -78,11 +79,11 @@ pub fn de_s3_bucket_destination(
                         ?
                     )
                 ;
-                builder = builder.set_account_id(var_9);
+                builder = builder.set_account_id(var_5);
             }
             ,
             s if s.matches("Arn") /* Arn com.amazonaws.s3control#S3BucketDestination$Arn */ =>  {
-                let var_10 =
+                let var_6 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -91,11 +92,11 @@ pub fn de_s3_bucket_destination(
                         ?
                     )
                 ;
-                builder = builder.set_arn(var_10);
+                builder = builder.set_arn(var_6);
             }
             ,
             s if s.matches("Prefix") /* Prefix com.amazonaws.s3control#S3BucketDestination$Prefix */ =>  {
-                let var_11 =
+                let var_7 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -104,21 +105,23 @@ pub fn de_s3_bucket_destination(
                         ?
                     )
                 ;
-                builder = builder.set_prefix(var_11);
+                builder = builder.set_prefix(var_7);
             }
             ,
             s if s.matches("Encryption") /* Encryption com.amazonaws.s3control#S3BucketDestination$Encryption */ =>  {
-                let var_12 =
+                let var_8 =
                     Some(
                         crate::protocol_serde::shape_storage_lens_data_export_encryption::de_storage_lens_data_export_encryption(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_encryption(var_12);
+                builder = builder.set_encryption(var_8);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::s3_bucket_destination_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

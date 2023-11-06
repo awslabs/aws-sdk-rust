@@ -10,8 +10,10 @@ pub struct UpdatePermissionsInput {
 }
 impl UpdatePermissionsInput {
     /// <p>An array of structures that contain the permission updates to make.</p>
-    pub fn update_instruction_batch(&self) -> ::std::option::Option<&[crate::types::UpdateInstruction]> {
-        self.update_instruction_batch.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.update_instruction_batch.is_none()`.
+    pub fn update_instruction_batch(&self) -> &[crate::types::UpdateInstruction] {
+        self.update_instruction_batch.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the workspace to update.</p>
     pub fn workspace_id(&self) -> ::std::option::Option<&str> {
@@ -54,6 +56,7 @@ impl UpdatePermissionsInputBuilder {
         &self.update_instruction_batch
     }
     /// <p>The ID of the workspace to update.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +73,7 @@ impl UpdatePermissionsInputBuilder {
     /// Consumes the builder and constructs a [`UpdatePermissionsInput`](crate::operation::update_permissions::UpdatePermissionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_permissions::UpdatePermissionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_permissions::UpdatePermissionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_permissions::UpdatePermissionsInput {
             update_instruction_batch: self.update_instruction_batch,
             workspace_id: self.workspace_id,

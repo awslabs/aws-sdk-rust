@@ -84,18 +84,20 @@ pub fn de_test_segment_pattern_http_response(
         output = crate::protocol_serde::shape_test_segment_pattern::de_test_segment_pattern(_response_body, output)
             .map_err(crate::operation::test_segment_pattern::TestSegmentPatternError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::test_segment_pattern_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::test_segment_pattern::TestSegmentPatternError::unhandled)?
     })
 }
 
 pub fn ser_test_segment_pattern_input(
     input: &crate::operation::test_segment_pattern::TestSegmentPatternInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_test_segment_pattern_input::ser_test_segment_pattern_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_test_segment_pattern(

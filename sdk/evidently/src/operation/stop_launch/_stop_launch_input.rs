@@ -48,6 +48,7 @@ pub struct StopLaunchInputBuilder {
 }
 impl StopLaunchInputBuilder {
     /// <p>The name or ARN of the project that contains the launch that you want to stop.</p>
+    /// This field is required.
     pub fn project(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl StopLaunchInputBuilder {
         &self.project
     }
     /// <p>The name of the launch to stop.</p>
+    /// This field is required.
     pub fn launch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch = ::std::option::Option::Some(input.into());
         self
@@ -104,7 +106,7 @@ impl StopLaunchInputBuilder {
         &self.reason
     }
     /// Consumes the builder and constructs a [`StopLaunchInput`](crate::operation::stop_launch::StopLaunchInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::stop_launch::StopLaunchInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_launch::StopLaunchInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_launch::StopLaunchInput {
             project: self.project,
             launch: self.launch,

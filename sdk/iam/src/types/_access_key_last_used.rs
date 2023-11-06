@@ -11,14 +11,14 @@ pub struct AccessKeyLastUsed {
     /// <li> <p>An access key exists but has not been used since IAM began tracking this information.</p> </li>
     /// <li> <p>There is no sign-in data associated with the user.</p> </li>
     /// </ul>
-    pub last_used_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub last_used_date: ::aws_smithy_types::DateTime,
     /// <p>The name of the Amazon Web Services service with which this access key was most recently used. The value of this field is "N/A" in the following situations:</p>
     /// <ul>
     /// <li> <p>The user does not have an access key.</p> </li>
     /// <li> <p>An access key exists but has not been used since IAM started tracking this information.</p> </li>
     /// <li> <p>There is no sign-in data associated with the user.</p> </li>
     /// </ul>
-    pub service_name: ::std::option::Option<::std::string::String>,
+    pub service_name: ::std::string::String,
     /// <p>The Amazon Web Services Region where this access key was most recently used. The value for this field is "N/A" in the following situations:</p>
     /// <ul>
     /// <li> <p>The user does not have an access key.</p> </li>
@@ -26,7 +26,7 @@ pub struct AccessKeyLastUsed {
     /// <li> <p>There is no sign-in data associated with the user.</p> </li>
     /// </ul>
     /// <p>For more information about Amazon Web Services Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and endpoints</a> in the Amazon Web Services General Reference.</p>
-    pub region: ::std::option::Option<::std::string::String>,
+    pub region: ::std::string::String,
 }
 impl AccessKeyLastUsed {
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the access key was most recently used. This field is null in the following situations:</p>
@@ -35,8 +35,8 @@ impl AccessKeyLastUsed {
     /// <li> <p>An access key exists but has not been used since IAM began tracking this information.</p> </li>
     /// <li> <p>There is no sign-in data associated with the user.</p> </li>
     /// </ul>
-    pub fn last_used_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.last_used_date.as_ref()
+    pub fn last_used_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.last_used_date
     }
     /// <p>The name of the Amazon Web Services service with which this access key was most recently used. The value of this field is "N/A" in the following situations:</p>
     /// <ul>
@@ -44,8 +44,9 @@ impl AccessKeyLastUsed {
     /// <li> <p>An access key exists but has not been used since IAM started tracking this information.</p> </li>
     /// <li> <p>There is no sign-in data associated with the user.</p> </li>
     /// </ul>
-    pub fn service_name(&self) -> ::std::option::Option<&str> {
-        self.service_name.as_deref()
+    pub fn service_name(&self) -> &str {
+        use std::ops::Deref;
+        self.service_name.deref()
     }
     /// <p>The Amazon Web Services Region where this access key was most recently used. The value for this field is "N/A" in the following situations:</p>
     /// <ul>
@@ -54,8 +55,9 @@ impl AccessKeyLastUsed {
     /// <li> <p>There is no sign-in data associated with the user.</p> </li>
     /// </ul>
     /// <p>For more information about Amazon Web Services Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and endpoints</a> in the Amazon Web Services General Reference.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
-        self.region.as_deref()
+    pub fn region(&self) -> &str {
+        use std::ops::Deref;
+        self.region.deref()
     }
 }
 impl AccessKeyLastUsed {
@@ -80,6 +82,7 @@ impl AccessKeyLastUsedBuilder {
     /// <li> <p>An access key exists but has not been used since IAM began tracking this information.</p> </li>
     /// <li> <p>There is no sign-in data associated with the user.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn last_used_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_used_date = ::std::option::Option::Some(input);
         self
@@ -109,6 +112,7 @@ impl AccessKeyLastUsedBuilder {
     /// <li> <p>An access key exists but has not been used since IAM started tracking this information.</p> </li>
     /// <li> <p>There is no sign-in data associated with the user.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
         self
@@ -139,6 +143,7 @@ impl AccessKeyLastUsedBuilder {
     /// <li> <p>There is no sign-in data associated with the user.</p> </li>
     /// </ul>
     /// <p>For more information about Amazon Web Services Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and endpoints</a> in the Amazon Web Services General Reference.</p>
+    /// This field is required.
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
         self
@@ -165,11 +170,30 @@ impl AccessKeyLastUsedBuilder {
         &self.region
     }
     /// Consumes the builder and constructs a [`AccessKeyLastUsed`](crate::types::AccessKeyLastUsed).
-    pub fn build(self) -> crate::types::AccessKeyLastUsed {
-        crate::types::AccessKeyLastUsed {
-            last_used_date: self.last_used_date,
-            service_name: self.service_name,
-            region: self.region,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`last_used_date`](crate::types::builders::AccessKeyLastUsedBuilder::last_used_date)
+    /// - [`service_name`](crate::types::builders::AccessKeyLastUsedBuilder::service_name)
+    /// - [`region`](crate::types::builders::AccessKeyLastUsedBuilder::region)
+    pub fn build(self) -> ::std::result::Result<crate::types::AccessKeyLastUsed, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AccessKeyLastUsed {
+            last_used_date: self.last_used_date.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "last_used_date",
+                    "last_used_date was not specified but it is required when building AccessKeyLastUsed",
+                )
+            })?,
+            service_name: self.service_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "service_name",
+                    "service_name was not specified but it is required when building AccessKeyLastUsed",
+                )
+            })?,
+            region: self.region.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "region",
+                    "region was not specified but it is required when building AccessKeyLastUsed",
+                )
+            })?,
+        })
     }
 }

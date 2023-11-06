@@ -17,8 +17,10 @@ impl ErrorDetail {
         self.error_code.as_deref()
     }
     /// <p>A list of key value pairs that provides contextual information about why an error occured.</p>
-    pub fn error_data(&self) -> ::std::option::Option<&[::std::collections::HashMap<::std::string::String, ::std::string::String>]> {
-        self.error_data.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.error_data.is_none()`.
+    pub fn error_data(&self) -> &[::std::collections::HashMap<::std::string::String, ::std::string::String>] {
+        self.error_data.as_deref().unwrap_or_default()
     }
     /// <p>A message that describes the error.</p>
     pub fn error_message(&self) -> ::std::option::Option<&str> {

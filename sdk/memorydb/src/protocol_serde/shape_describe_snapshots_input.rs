@@ -2,7 +2,7 @@
 pub fn ser_describe_snapshots_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_snapshots::DescribeSnapshotsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cluster_name {
         object.key("ClusterName").string(var_1.as_str());
     }

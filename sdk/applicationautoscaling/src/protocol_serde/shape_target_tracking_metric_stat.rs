@@ -2,18 +2,18 @@
 pub fn ser_target_tracking_metric_stat(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TargetTrackingMetricStat,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.metric {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Metric").start_object();
         crate::protocol_serde::shape_target_tracking_metric::ser_target_tracking_metric(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.stat {
-        object.key("Stat").string(var_3.as_str());
+    {
+        object.key("Stat").string(input.stat.as_str());
     }
-    if let Some(var_4) = &input.unit {
-        object.key("Unit").string(var_4.as_str());
+    if let Some(var_3) = &input.unit {
+        object.key("Unit").string(var_3.as_str());
     }
     Ok(())
 }
@@ -60,7 +60,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::target_tracking_metric_stat_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

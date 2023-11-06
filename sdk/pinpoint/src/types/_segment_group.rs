@@ -16,13 +16,17 @@ pub struct SegmentGroup {
 }
 impl SegmentGroup {
     /// <p>An array that defines the dimensions for the segment.</p>
-    pub fn dimensions(&self) -> ::std::option::Option<&[crate::types::SegmentDimensions]> {
-        self.dimensions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimensions.is_none()`.
+    pub fn dimensions(&self) -> &[crate::types::SegmentDimensions] {
+        self.dimensions.as_deref().unwrap_or_default()
     }
     /// <p>The base segment to build the segment on. A base segment, also referred to as a <i>source segment</i>, defines the initial population of endpoints for a segment. When you add dimensions to a segment, Amazon Pinpoint filters the base segment by using the dimensions that you specify.</p>
     /// <p>You can specify more than one dimensional segment or only one imported segment. If you specify an imported segment, the Amazon Pinpoint console displays a segment size estimate that indicates the size of the imported segment without any filters applied to it.</p>
-    pub fn source_segments(&self) -> ::std::option::Option<&[crate::types::SegmentReference]> {
-        self.source_segments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_segments.is_none()`.
+    pub fn source_segments(&self) -> &[crate::types::SegmentReference] {
+        self.source_segments.as_deref().unwrap_or_default()
     }
     /// <p>Specifies how to handle multiple base segments for the segment. For example, if you specify three base segments for the segment, whether the resulting segment is based on all, any, or none of the base segments.</p>
     pub fn source_type(&self) -> ::std::option::Option<&crate::types::SourceType> {

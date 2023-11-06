@@ -11,9 +11,9 @@ pub struct UpdateBackendAuthOAuthConfig {
     /// <p>The list of OAuth-related flows that can allow users to authenticate from your Amplify app.</p>
     pub o_auth_scopes: ::std::option::Option<::std::vec::Vec<crate::types::OAuthScopesElement>>,
     /// <p>Redirect URLs that OAuth uses when a user signs in to an Amplify app.</p>
-    pub redirect_sign_in_ur_is: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub redirect_sign_in_uris: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
-    pub redirect_sign_out_ur_is: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub redirect_sign_out_uris: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Describes third-party social federation configurations for allowing your users to sign in with OAuth.</p>
     pub social_provider_settings: ::std::option::Option<crate::types::SocialProviderSettings>,
 }
@@ -27,16 +27,22 @@ impl UpdateBackendAuthOAuthConfig {
         self.o_auth_grant_type.as_ref()
     }
     /// <p>The list of OAuth-related flows that can allow users to authenticate from your Amplify app.</p>
-    pub fn o_auth_scopes(&self) -> ::std::option::Option<&[crate::types::OAuthScopesElement]> {
-        self.o_auth_scopes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.o_auth_scopes.is_none()`.
+    pub fn o_auth_scopes(&self) -> &[crate::types::OAuthScopesElement] {
+        self.o_auth_scopes.as_deref().unwrap_or_default()
     }
     /// <p>Redirect URLs that OAuth uses when a user signs in to an Amplify app.</p>
-    pub fn redirect_sign_in_ur_is(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.redirect_sign_in_ur_is.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.redirect_sign_in_uris.is_none()`.
+    pub fn redirect_sign_in_uris(&self) -> &[::std::string::String] {
+        self.redirect_sign_in_uris.as_deref().unwrap_or_default()
     }
     /// <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
-    pub fn redirect_sign_out_ur_is(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.redirect_sign_out_ur_is.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.redirect_sign_out_uris.is_none()`.
+    pub fn redirect_sign_out_uris(&self) -> &[::std::string::String] {
+        self.redirect_sign_out_uris.as_deref().unwrap_or_default()
     }
     /// <p>Describes third-party social federation configurations for allowing your users to sign in with OAuth.</p>
     pub fn social_provider_settings(&self) -> ::std::option::Option<&crate::types::SocialProviderSettings> {
@@ -57,8 +63,8 @@ pub struct UpdateBackendAuthOAuthConfigBuilder {
     pub(crate) domain_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) o_auth_grant_type: ::std::option::Option<crate::types::OAuthGrantType>,
     pub(crate) o_auth_scopes: ::std::option::Option<::std::vec::Vec<crate::types::OAuthScopesElement>>,
-    pub(crate) redirect_sign_in_ur_is: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) redirect_sign_out_ur_is: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) redirect_sign_in_uris: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) redirect_sign_out_uris: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) social_provider_settings: ::std::option::Option<crate::types::SocialProviderSettings>,
 }
 impl UpdateBackendAuthOAuthConfigBuilder {
@@ -110,45 +116,45 @@ impl UpdateBackendAuthOAuthConfigBuilder {
     pub fn get_o_auth_scopes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OAuthScopesElement>> {
         &self.o_auth_scopes
     }
-    /// Appends an item to `redirect_sign_in_ur_is`.
+    /// Appends an item to `redirect_sign_in_uris`.
     ///
-    /// To override the contents of this collection use [`set_redirect_sign_in_ur_is`](Self::set_redirect_sign_in_ur_is).
+    /// To override the contents of this collection use [`set_redirect_sign_in_uris`](Self::set_redirect_sign_in_uris).
     ///
     /// <p>Redirect URLs that OAuth uses when a user signs in to an Amplify app.</p>
-    pub fn redirect_sign_in_ur_is(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.redirect_sign_in_ur_is.unwrap_or_default();
+    pub fn redirect_sign_in_uris(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.redirect_sign_in_uris.unwrap_or_default();
         v.push(input.into());
-        self.redirect_sign_in_ur_is = ::std::option::Option::Some(v);
+        self.redirect_sign_in_uris = ::std::option::Option::Some(v);
         self
     }
     /// <p>Redirect URLs that OAuth uses when a user signs in to an Amplify app.</p>
-    pub fn set_redirect_sign_in_ur_is(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.redirect_sign_in_ur_is = input;
+    pub fn set_redirect_sign_in_uris(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.redirect_sign_in_uris = input;
         self
     }
     /// <p>Redirect URLs that OAuth uses when a user signs in to an Amplify app.</p>
-    pub fn get_redirect_sign_in_ur_is(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.redirect_sign_in_ur_is
+    pub fn get_redirect_sign_in_uris(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.redirect_sign_in_uris
     }
-    /// Appends an item to `redirect_sign_out_ur_is`.
+    /// Appends an item to `redirect_sign_out_uris`.
     ///
-    /// To override the contents of this collection use [`set_redirect_sign_out_ur_is`](Self::set_redirect_sign_out_ur_is).
+    /// To override the contents of this collection use [`set_redirect_sign_out_uris`](Self::set_redirect_sign_out_uris).
     ///
     /// <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
-    pub fn redirect_sign_out_ur_is(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.redirect_sign_out_ur_is.unwrap_or_default();
+    pub fn redirect_sign_out_uris(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.redirect_sign_out_uris.unwrap_or_default();
         v.push(input.into());
-        self.redirect_sign_out_ur_is = ::std::option::Option::Some(v);
+        self.redirect_sign_out_uris = ::std::option::Option::Some(v);
         self
     }
     /// <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
-    pub fn set_redirect_sign_out_ur_is(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.redirect_sign_out_ur_is = input;
+    pub fn set_redirect_sign_out_uris(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.redirect_sign_out_uris = input;
         self
     }
     /// <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
-    pub fn get_redirect_sign_out_ur_is(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.redirect_sign_out_ur_is
+    pub fn get_redirect_sign_out_uris(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.redirect_sign_out_uris
     }
     /// <p>Describes third-party social federation configurations for allowing your users to sign in with OAuth.</p>
     pub fn social_provider_settings(mut self, input: crate::types::SocialProviderSettings) -> Self {
@@ -170,8 +176,8 @@ impl UpdateBackendAuthOAuthConfigBuilder {
             domain_prefix: self.domain_prefix,
             o_auth_grant_type: self.o_auth_grant_type,
             o_auth_scopes: self.o_auth_scopes,
-            redirect_sign_in_ur_is: self.redirect_sign_in_ur_is,
-            redirect_sign_out_ur_is: self.redirect_sign_out_ur_is,
+            redirect_sign_in_uris: self.redirect_sign_in_uris,
+            redirect_sign_out_uris: self.redirect_sign_out_uris,
             social_provider_settings: self.social_provider_settings,
         }
     }

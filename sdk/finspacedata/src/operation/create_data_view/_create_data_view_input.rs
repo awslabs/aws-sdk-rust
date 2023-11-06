@@ -33,12 +33,16 @@ impl CreateDataViewInput {
         self.auto_update
     }
     /// <p>Columns to be used for sorting the data.</p>
-    pub fn sort_columns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.sort_columns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sort_columns.is_none()`.
+    pub fn sort_columns(&self) -> &[::std::string::String] {
+        self.sort_columns.as_deref().unwrap_or_default()
     }
     /// <p>Ordered set of column names used to partition data.</p>
-    pub fn partition_columns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.partition_columns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.partition_columns.is_none()`.
+    pub fn partition_columns(&self) -> &[::std::string::String] {
+        self.partition_columns.as_deref().unwrap_or_default()
     }
     /// <p>Beginning time to use for the Dataview. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn as_of_timestamp(&self) -> ::std::option::Option<i64> {
@@ -84,6 +88,7 @@ impl CreateDataViewInputBuilder {
         &self.client_token
     }
     /// <p>The unique Dataset identifier that is used to create a Dataview.</p>
+    /// This field is required.
     pub fn dataset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_id = ::std::option::Option::Some(input.into());
         self
@@ -166,6 +171,7 @@ impl CreateDataViewInputBuilder {
         &self.as_of_timestamp
     }
     /// <p>Options that define the destination type for the Dataview.</p>
+    /// This field is required.
     pub fn destination_type_params(mut self, input: crate::types::DataViewDestinationTypeParams) -> Self {
         self.destination_type_params = ::std::option::Option::Some(input);
         self
@@ -182,7 +188,7 @@ impl CreateDataViewInputBuilder {
     /// Consumes the builder and constructs a [`CreateDataViewInput`](crate::operation::create_data_view::CreateDataViewInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_data_view::CreateDataViewInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_data_view::CreateDataViewInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_data_view::CreateDataViewInput {
             client_token: self.client_token,
             dataset_id: self.dataset_id,

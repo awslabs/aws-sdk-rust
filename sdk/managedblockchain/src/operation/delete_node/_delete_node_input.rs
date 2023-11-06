@@ -58,6 +58,7 @@ impl DeleteNodeInputBuilder {
     /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li>
     /// <li> <p> <code>n-ethereum-goerli</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_id = ::std::option::Option::Some(input.into());
         self
@@ -99,6 +100,7 @@ impl DeleteNodeInputBuilder {
         &self.member_id
     }
     /// <p>The unique identifier of the node.</p>
+    /// This field is required.
     pub fn node_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_id = ::std::option::Option::Some(input.into());
         self
@@ -113,7 +115,7 @@ impl DeleteNodeInputBuilder {
         &self.node_id
     }
     /// Consumes the builder and constructs a [`DeleteNodeInput`](crate::operation::delete_node::DeleteNodeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_node::DeleteNodeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_node::DeleteNodeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_node::DeleteNodeInput {
             network_id: self.network_id,
             member_id: self.member_id,

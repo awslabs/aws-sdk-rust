@@ -11,12 +11,16 @@ pub struct EndpointConfiguration {
 }
 impl EndpointConfiguration {
     /// <p>A list of endpoint types of an API (RestApi) or its custom domain name (DomainName). For an edge-optimized API and its custom domain name, the endpoint type is <code>"EDGE"</code>. For a regional API and its custom domain name, the endpoint type is <code>REGIONAL</code>. For a private API, the endpoint type is <code>PRIVATE</code>.</p>
-    pub fn types(&self) -> ::std::option::Option<&[crate::types::EndpointType]> {
-        self.types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.types.is_none()`.
+    pub fn types(&self) -> &[crate::types::EndpointType] {
+        self.types.as_deref().unwrap_or_default()
     }
     /// <p>A list of VpcEndpointIds of an API (RestApi) against which to create Route53 ALIASes. It is only supported for <code>PRIVATE</code> endpoint type.</p>
-    pub fn vpc_endpoint_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.vpc_endpoint_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_endpoint_ids.is_none()`.
+    pub fn vpc_endpoint_ids(&self) -> &[::std::string::String] {
+        self.vpc_endpoint_ids.as_deref().unwrap_or_default()
     }
 }
 impl EndpointConfiguration {

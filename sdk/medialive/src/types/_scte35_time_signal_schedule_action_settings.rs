@@ -9,8 +9,10 @@ pub struct Scte35TimeSignalScheduleActionSettings {
 }
 impl Scte35TimeSignalScheduleActionSettings {
     /// The list of SCTE-35 descriptors accompanying the SCTE-35 time_signal.
-    pub fn scte35_descriptors(&self) -> ::std::option::Option<&[crate::types::Scte35Descriptor]> {
-        self.scte35_descriptors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scte35_descriptors.is_none()`.
+    pub fn scte35_descriptors(&self) -> &[crate::types::Scte35Descriptor] {
+        self.scte35_descriptors.as_deref().unwrap_or_default()
     }
 }
 impl Scte35TimeSignalScheduleActionSettings {

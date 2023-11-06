@@ -51,8 +51,10 @@ impl ReactiveInsightSummary {
         self.service_collection.as_ref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the Amazon Web Services resources that generated this insight.</p>
-    pub fn associated_resource_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.associated_resource_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_resource_arns.is_none()`.
+    pub fn associated_resource_arns(&self) -> &[::std::string::String] {
+        self.associated_resource_arns.as_deref().unwrap_or_default()
     }
 }
 impl ReactiveInsightSummary {

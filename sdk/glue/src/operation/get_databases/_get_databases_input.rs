@@ -129,7 +129,9 @@ impl GetDatabasesInputBuilder {
         &self.resource_share_type
     }
     /// Consumes the builder and constructs a [`GetDatabasesInput`](crate::operation::get_databases::GetDatabasesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_databases::GetDatabasesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_databases::GetDatabasesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_databases::GetDatabasesInput {
             catalog_id: self.catalog_id,
             next_token: self.next_token,

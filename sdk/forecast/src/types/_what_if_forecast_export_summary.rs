@@ -42,8 +42,10 @@ impl WhatIfForecastExportSummary {
         self.what_if_forecast_export_arn.as_deref()
     }
     /// <p>An array of Amazon Resource Names (ARNs) that define the what-if forecasts included in the export.</p>
-    pub fn what_if_forecast_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.what_if_forecast_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.what_if_forecast_arns.is_none()`.
+    pub fn what_if_forecast_arns(&self) -> &[::std::string::String] {
+        self.what_if_forecast_arns.as_deref().unwrap_or_default()
     }
     /// <p>The what-if forecast export name.</p>
     pub fn what_if_forecast_export_name(&self) -> ::std::option::Option<&str> {

@@ -2,30 +2,30 @@
 pub fn ser_batch_add_facet_to_object(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BatchAddFacetToObject,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.schema_facet {
         #[allow(unused_mut)]
         let mut object_2 = object.key("SchemaFacet").start_object();
         crate::protocol_serde::shape_schema_facet::ser_schema_facet(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.object_attribute_list {
-        let mut array_4 = object.key("ObjectAttributeList").start_array();
-        for item_5 in var_3 {
+    {
+        let mut array_3 = object.key("ObjectAttributeList").start_array();
+        for item_4 in &input.object_attribute_list {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_attribute_key_and_value::ser_attribute_key_and_value(&mut object_6, item_5)?;
-                object_6.finish();
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_attribute_key_and_value::ser_attribute_key_and_value(&mut object_5, item_4)?;
+                object_5.finish();
             }
         }
-        array_4.finish();
+        array_3.finish();
     }
-    if let Some(var_7) = &input.object_reference {
+    if let Some(var_6) = &input.object_reference {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("ObjectReference").start_object();
-        crate::protocol_serde::shape_object_reference::ser_object_reference(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_7 = object.key("ObjectReference").start_object();
+        crate::protocol_serde::shape_object_reference::ser_object_reference(&mut object_7, var_6)?;
+        object_7.finish();
     }
     Ok(())
 }

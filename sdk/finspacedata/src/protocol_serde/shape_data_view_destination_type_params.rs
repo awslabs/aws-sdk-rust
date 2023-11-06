@@ -2,22 +2,22 @@
 pub fn ser_data_view_destination_type_params(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataViewDestinationTypeParams,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.destination_type {
-        object.key("destinationType").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("destinationType").string(input.destination_type.as_str());
     }
-    if let Some(var_2) = &input.s3_destination_export_file_format {
-        object.key("s3DestinationExportFileFormat").string(var_2.as_str());
+    if let Some(var_1) = &input.s3_destination_export_file_format {
+        object.key("s3DestinationExportFileFormat").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.s3_destination_export_file_format_options {
+    if let Some(var_2) = &input.s3_destination_export_file_format_options {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("s3DestinationExportFileFormatOptions").start_object();
-        for (key_5, value_6) in var_3 {
+        let mut object_3 = object.key("s3DestinationExportFileFormatOptions").start_object();
+        for (key_4, value_5) in var_2 {
             {
-                object_4.key(key_5.as_str()).string(value_6.as_str());
+                object_3.key(key_4.as_str()).string(value_5.as_str());
             }
         }
-        object_4.finish();
+        object_3.finish();
     }
     Ok(())
 }
@@ -66,7 +66,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::data_view_destination_type_params_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

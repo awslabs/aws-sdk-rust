@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTemplateStepGroupsInput {
     /// <p>The maximum number of results that can be returned.</p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>The pagination token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the template.</p>
@@ -12,7 +12,7 @@ pub struct ListTemplateStepGroupsInput {
 }
 impl ListTemplateStepGroupsInput {
     /// <p>The maximum number of results that can be returned.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The pagination token.</p>
@@ -69,6 +69,7 @@ impl ListTemplateStepGroupsInputBuilder {
         &self.next_token
     }
     /// <p>The ID of the template.</p>
+    /// This field is required.
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_id = ::std::option::Option::Some(input.into());
         self
@@ -87,10 +88,10 @@ impl ListTemplateStepGroupsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_template_step_groups::ListTemplateStepGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_template_step_groups::ListTemplateStepGroupsInput {
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
             template_id: self.template_id,
         })

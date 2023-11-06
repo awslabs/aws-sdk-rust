@@ -10,8 +10,10 @@ pub struct DescribeEventDetailsInput {
 }
 impl DescribeEventDetailsInput {
     /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code> </p>
-    pub fn event_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.event_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_arns.is_none()`.
+    pub fn event_arns(&self) -> &[::std::string::String] {
+        self.event_arns.as_deref().unwrap_or_default()
     }
     /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
     pub fn locale(&self) -> ::std::option::Option<&str> {
@@ -70,7 +72,7 @@ impl DescribeEventDetailsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEventDetailsInput`](crate::operation::describe_event_details::DescribeEventDetailsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_event_details::DescribeEventDetailsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_event_details::DescribeEventDetailsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_event_details::DescribeEventDetailsInput {
             event_arns: self.event_arns,

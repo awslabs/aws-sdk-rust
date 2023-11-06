@@ -41,6 +41,7 @@ pub struct GetCellReadinessSummaryInputBuilder {
 }
 impl GetCellReadinessSummaryInputBuilder {
     /// <p>The name of the cell.</p>
+    /// This field is required.
     pub fn cell_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cell_name = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl GetCellReadinessSummaryInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_cell_readiness_summary::GetCellReadinessSummaryInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_cell_readiness_summary::GetCellReadinessSummaryInput {
             cell_name: self.cell_name,

@@ -48,6 +48,7 @@ impl DeleteStudioInputBuilder {
         &self.client_token
     }
     /// <p>The studio ID. </p>
+    /// This field is required.
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +63,9 @@ impl DeleteStudioInputBuilder {
         &self.studio_id
     }
     /// Consumes the builder and constructs a [`DeleteStudioInput`](crate::operation::delete_studio::DeleteStudioInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_studio::DeleteStudioInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_studio::DeleteStudioInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_studio::DeleteStudioInput {
             client_token: self.client_token,
             studio_id: self.studio_id,

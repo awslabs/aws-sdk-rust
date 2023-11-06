@@ -1,6 +1,6 @@
 allowed_external_types = [
+    "aws_smithy_runtime_api::*",
     "aws_smithy_types::*",
-    "bytes::buf::buf_impl::Buf",
     "bytes::bytes::Bytes",
     "http::error::Error",
     "http::header::map::HeaderMap",
@@ -12,22 +12,9 @@ allowed_external_types = [
     "http::response::Builder",
     "http::response::Response",
     "http::uri::Uri",
-    "http::version::Version",
-    "http_body::Body",
-    "http_body::combinators::box_body::BoxBody",
-    "hyper::body::body::Body",
 
-    # TODO(https://github.com/awslabs/smithy-rs/issues/1193): Feature gate Tokio `AsyncRead`
-    "tokio::io::async_read::AsyncRead",
-
-    # TODO(https://github.com/awslabs/smithy-rs/issues/1193): Switch to AsyncIterator once standardized
+    # TODO(https://github.com/awslabs/smithy-rs/issues/1193): Once tooling permits it, only allow the following types in the `event-stream` feature
     "futures_core::stream::Stream",
-
-    # TODO(https://github.com/awslabs/smithy-rs/issues/1193): Feature gate references to Tokio `File`
-    "tokio::fs::file::File",
-
-    # TODO(https://github.com/awslabs/smithy-rs/issues/1193): Don't expose `once_cell` in public API
-    "once_cell::sync::Lazy",
 
     # TODO(https://github.com/awslabs/smithy-rs/issues/1193): Once tooling permits it, only allow the following types in the `event-stream` feature
     "aws_smithy_eventstream::*",

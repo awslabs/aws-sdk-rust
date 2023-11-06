@@ -49,6 +49,7 @@ pub struct SchedulingPolicyDetailBuilder {
 }
 impl SchedulingPolicyDetailBuilder {
     /// <p>The name of the scheduling policy.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl SchedulingPolicyDetailBuilder {
         &self.name
     }
     /// <p>The Amazon Resource Name (ARN) of the scheduling policy. An example is <code>arn:<i>aws</i>:batch:<i>us-east-1</i>:<i>123456789012</i>:scheduling-policy/<i>HighPriority</i> </code>.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self

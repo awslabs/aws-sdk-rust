@@ -5,24 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceGroup {
     /// <p>The ARN of the resource group.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The tags (key and value pairs) of the resource group. This data type property is used in the <code>CreateResourceGroup</code> action.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceGroupTag>>,
+    pub tags: ::std::vec::Vec<crate::types::ResourceGroupTag>,
     /// <p>The time at which resource group is created.</p>
-    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_at: ::aws_smithy_types::DateTime,
 }
 impl ResourceGroup {
     /// <p>The ARN of the resource group.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The tags (key and value pairs) of the resource group. This data type property is used in the <code>CreateResourceGroup</code> action.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::ResourceGroupTag]> {
-        self.tags.as_deref()
+    pub fn tags(&self) -> &[crate::types::ResourceGroupTag] {
+        use std::ops::Deref;
+        self.tags.deref()
     }
     /// <p>The time at which resource group is created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_at.as_ref()
+    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_at
     }
 }
 impl ResourceGroup {
@@ -42,6 +44,7 @@ pub struct ResourceGroupBuilder {
 }
 impl ResourceGroupBuilder {
     /// <p>The ARN of the resource group.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +79,7 @@ impl ResourceGroupBuilder {
         &self.tags
     }
     /// <p>The time at which resource group is created.</p>
+    /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
@@ -90,11 +94,30 @@ impl ResourceGroupBuilder {
         &self.created_at
     }
     /// Consumes the builder and constructs a [`ResourceGroup`](crate::types::ResourceGroup).
-    pub fn build(self) -> crate::types::ResourceGroup {
-        crate::types::ResourceGroup {
-            arn: self.arn,
-            tags: self.tags,
-            created_at: self.created_at,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::ResourceGroupBuilder::arn)
+    /// - [`tags`](crate::types::builders::ResourceGroupBuilder::tags)
+    /// - [`created_at`](crate::types::builders::ResourceGroupBuilder::created_at)
+    pub fn build(self) -> ::std::result::Result<crate::types::ResourceGroup, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ResourceGroup {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building ResourceGroup",
+                )
+            })?,
+            tags: self.tags.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "tags",
+                    "tags was not specified but it is required when building ResourceGroup",
+                )
+            })?,
+            created_at: self.created_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_at",
+                    "created_at was not specified but it is required when building ResourceGroup",
+                )
+            })?,
+        })
     }
 }

@@ -27,6 +27,7 @@ pub struct GetFirewallConfigInputBuilder {
 }
 impl GetFirewallConfigInputBuilder {
     /// <p>The ID of the VPC from Amazon VPC that the configuration is for.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetFirewallConfigInputBuilder {
     /// Consumes the builder and constructs a [`GetFirewallConfigInput`](crate::operation::get_firewall_config::GetFirewallConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_firewall_config::GetFirewallConfigInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_firewall_config::GetFirewallConfigInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_firewall_config::GetFirewallConfigInput {
             resource_id: self.resource_id,
         })

@@ -153,12 +153,12 @@ pub fn de_get_finding_statistics_http_response(
 
 pub fn ser_get_finding_statistics_input(
     input: &crate::operation::get_finding_statistics::GetFindingStatisticsInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_get_finding_statistics_input::ser_get_finding_statistics_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_get_finding_statistics(
@@ -176,7 +176,7 @@ pub(crate) fn de_get_finding_statistics(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "countsByGroup" => {
-                    builder = builder.set_counts_by_group(crate::protocol_serde::shape___list_of_group_count::de___list_of_group_count(tokens)?);
+                    builder = builder.set_counts_by_group(crate::protocol_serde::shape_list_of_group_count::de_list_of_group_count(tokens)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

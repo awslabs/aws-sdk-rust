@@ -11,8 +11,10 @@ pub struct ListCrawlsOutput {
 }
 impl ListCrawlsOutput {
     /// <p>A list of <code>CrawlerHistory</code> objects representing the crawl runs that meet your criteria.</p>
-    pub fn crawls(&self) -> ::std::option::Option<&[crate::types::CrawlerHistory]> {
-        self.crawls.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.crawls.is_none()`.
+    pub fn crawls(&self) -> &[crate::types::CrawlerHistory] {
+        self.crawls.as_deref().unwrap_or_default()
     }
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

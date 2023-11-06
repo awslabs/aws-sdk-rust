@@ -13,12 +13,16 @@ pub struct DescribeCapacityProvidersOutput {
 }
 impl DescribeCapacityProvidersOutput {
     /// <p>The list of capacity providers.</p>
-    pub fn capacity_providers(&self) -> ::std::option::Option<&[crate::types::CapacityProvider]> {
-        self.capacity_providers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capacity_providers.is_none()`.
+    pub fn capacity_providers(&self) -> &[crate::types::CapacityProvider] {
+        self.capacity_providers.as_deref().unwrap_or_default()
     }
     /// <p>Any failures associated with the call.</p>
-    pub fn failures(&self) -> ::std::option::Option<&[crate::types::Failure]> {
-        self.failures.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failures.is_none()`.
+    pub fn failures(&self) -> &[crate::types::Failure] {
+        self.failures.as_deref().unwrap_or_default()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeCapacityProviders</code> request. When the results of a <code>DescribeCapacityProviders</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

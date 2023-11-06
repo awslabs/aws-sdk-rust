@@ -48,6 +48,7 @@ pub struct ListResolversByFunctionInputBuilder {
 }
 impl ListResolversByFunctionInputBuilder {
     /// <p>The API ID.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl ListResolversByFunctionInputBuilder {
         &self.api_id
     }
     /// <p>The function ID.</p>
+    /// This field is required.
     pub fn function_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_id = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +110,7 @@ impl ListResolversByFunctionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resolvers_by_function::ListResolversByFunctionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_resolvers_by_function::ListResolversByFunctionInput {
             api_id: self.api_id,

@@ -2,7 +2,7 @@
 pub fn ser_service_now_knowledge_article_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ServiceNowKnowledgeArticleConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.crawl_attachments {
         object.key("CrawlAttachments").boolean(input.crawl_attachments);
     }
@@ -24,26 +24,26 @@ pub fn ser_service_now_knowledge_article_configuration(
         }
         array_5.finish();
     }
-    if let Some(var_7) = &input.document_data_field_name {
-        object.key("DocumentDataFieldName").string(var_7.as_str());
+    {
+        object.key("DocumentDataFieldName").string(input.document_data_field_name.as_str());
     }
-    if let Some(var_8) = &input.document_title_field_name {
-        object.key("DocumentTitleFieldName").string(var_8.as_str());
+    if let Some(var_7) = &input.document_title_field_name {
+        object.key("DocumentTitleFieldName").string(var_7.as_str());
     }
-    if let Some(var_9) = &input.field_mappings {
-        let mut array_10 = object.key("FieldMappings").start_array();
-        for item_11 in var_9 {
+    if let Some(var_8) = &input.field_mappings {
+        let mut array_9 = object.key("FieldMappings").start_array();
+        for item_10 in var_8 {
             {
                 #[allow(unused_mut)]
-                let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_12, item_11)?;
-                object_12.finish();
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_11, item_10)?;
+                object_11.finish();
             }
         }
-        array_10.finish();
+        array_9.finish();
     }
-    if let Some(var_13) = &input.filter_query {
-        object.key("FilterQuery").string(var_13.as_str());
+    if let Some(var_12) = &input.filter_query {
+        object.key("FilterQuery").string(var_12.as_str());
     }
     Ok(())
 }
@@ -116,7 +116,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::service_now_knowledge_article_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

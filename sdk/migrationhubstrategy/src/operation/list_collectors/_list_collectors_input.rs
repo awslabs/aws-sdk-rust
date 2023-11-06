@@ -64,7 +64,7 @@ impl ListCollectorsInputBuilder {
     /// Consumes the builder and constructs a [`ListCollectorsInput`](crate::operation::list_collectors::ListCollectorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_collectors::ListCollectorsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_collectors::ListCollectorsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_collectors::ListCollectorsInput {
             next_token: self.next_token,
             max_results: self.max_results,

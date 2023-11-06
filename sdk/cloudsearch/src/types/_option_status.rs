@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OptionStatus {
     /// <p>A timestamp for when this option was created.</p>
-    pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_date: ::aws_smithy_types::DateTime,
     /// <p>A timestamp for when this option was last updated.</p>
-    pub update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub update_date: ::aws_smithy_types::DateTime,
     /// <p>A unique integer that indicates when this option was last updated.</p>
     pub update_version: i32,
     /// <p>The state of processing a change to an option. Possible values:</p>
@@ -17,18 +17,18 @@ pub struct OptionStatus {
     /// <li><code>Active</code>: the option's latest value is completely deployed.</li>
     /// <li><code>FailedToValidate</code>: the option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li>
     /// </ul>
-    pub state: ::std::option::Option<crate::types::OptionState>,
+    pub state: crate::types::OptionState,
     /// <p>Indicates that the option will be deleted once processing is complete.</p>
     pub pending_deletion: ::std::option::Option<bool>,
 }
 impl OptionStatus {
     /// <p>A timestamp for when this option was created.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_date.as_ref()
+    pub fn creation_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_date
     }
     /// <p>A timestamp for when this option was last updated.</p>
-    pub fn update_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.update_date.as_ref()
+    pub fn update_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.update_date
     }
     /// <p>A unique integer that indicates when this option was last updated.</p>
     pub fn update_version(&self) -> i32 {
@@ -41,8 +41,8 @@ impl OptionStatus {
     /// <li><code>Active</code>: the option's latest value is completely deployed.</li>
     /// <li><code>FailedToValidate</code>: the option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li>
     /// </ul>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::OptionState> {
-        self.state.as_ref()
+    pub fn state(&self) -> &crate::types::OptionState {
+        &self.state
     }
     /// <p>Indicates that the option will be deleted once processing is complete.</p>
     pub fn pending_deletion(&self) -> ::std::option::Option<bool> {
@@ -68,6 +68,7 @@ pub struct OptionStatusBuilder {
 }
 impl OptionStatusBuilder {
     /// <p>A timestamp for when this option was created.</p>
+    /// This field is required.
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
         self
@@ -82,6 +83,7 @@ impl OptionStatusBuilder {
         &self.creation_date
     }
     /// <p>A timestamp for when this option was last updated.</p>
+    /// This field is required.
     pub fn update_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_date = ::std::option::Option::Some(input);
         self
@@ -116,6 +118,7 @@ impl OptionStatusBuilder {
     /// <li><code>Active</code>: the option's latest value is completely deployed.</li>
     /// <li><code>FailedToValidate</code>: the option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li>
     /// </ul>
+    /// This field is required.
     pub fn state(mut self, input: crate::types::OptionState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
@@ -156,13 +159,32 @@ impl OptionStatusBuilder {
         &self.pending_deletion
     }
     /// Consumes the builder and constructs a [`OptionStatus`](crate::types::OptionStatus).
-    pub fn build(self) -> crate::types::OptionStatus {
-        crate::types::OptionStatus {
-            creation_date: self.creation_date,
-            update_date: self.update_date,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`creation_date`](crate::types::builders::OptionStatusBuilder::creation_date)
+    /// - [`update_date`](crate::types::builders::OptionStatusBuilder::update_date)
+    /// - [`state`](crate::types::builders::OptionStatusBuilder::state)
+    pub fn build(self) -> ::std::result::Result<crate::types::OptionStatus, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::OptionStatus {
+            creation_date: self.creation_date.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "creation_date",
+                    "creation_date was not specified but it is required when building OptionStatus",
+                )
+            })?,
+            update_date: self.update_date.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "update_date",
+                    "update_date was not specified but it is required when building OptionStatus",
+                )
+            })?,
             update_version: self.update_version.unwrap_or_default(),
-            state: self.state,
+            state: self.state.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "state",
+                    "state was not specified but it is required when building OptionStatus",
+                )
+            })?,
             pending_deletion: self.pending_deletion,
-        }
+        })
     }
 }

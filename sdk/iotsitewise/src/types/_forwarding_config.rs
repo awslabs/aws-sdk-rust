@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ForwardingConfig {
     /// <p>The forwarding state for the given property. </p>
-    pub state: ::std::option::Option<crate::types::ForwardingConfigState>,
+    pub state: crate::types::ForwardingConfigState,
 }
 impl ForwardingConfig {
     /// <p>The forwarding state for the given property. </p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ForwardingConfigState> {
-        self.state.as_ref()
+    pub fn state(&self) -> &crate::types::ForwardingConfigState {
+        &self.state
     }
 }
 impl ForwardingConfig {
@@ -28,6 +28,7 @@ pub struct ForwardingConfigBuilder {
 }
 impl ForwardingConfigBuilder {
     /// <p>The forwarding state for the given property. </p>
+    /// This field is required.
     pub fn state(mut self, input: crate::types::ForwardingConfigState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,16 @@ impl ForwardingConfigBuilder {
         &self.state
     }
     /// Consumes the builder and constructs a [`ForwardingConfig`](crate::types::ForwardingConfig).
-    pub fn build(self) -> crate::types::ForwardingConfig {
-        crate::types::ForwardingConfig { state: self.state }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`state`](crate::types::builders::ForwardingConfigBuilder::state)
+    pub fn build(self) -> ::std::result::Result<crate::types::ForwardingConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ForwardingConfig {
+            state: self.state.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "state",
+                    "state was not specified but it is required when building ForwardingConfig",
+                )
+            })?,
+        })
     }
 }

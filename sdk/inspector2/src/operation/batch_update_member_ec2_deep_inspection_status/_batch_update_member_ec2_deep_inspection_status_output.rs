@@ -11,12 +11,16 @@ pub struct BatchUpdateMemberEc2DeepInspectionStatusOutput {
 }
 impl BatchUpdateMemberEc2DeepInspectionStatusOutput {
     /// <p>An array of objects that provide details for each of the accounts that Amazon Inspector deep inspection status was successfully changed for. </p>
-    pub fn account_ids(&self) -> ::std::option::Option<&[crate::types::MemberAccountEc2DeepInspectionStatusState]> {
-        self.account_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
+    pub fn account_ids(&self) -> &[crate::types::MemberAccountEc2DeepInspectionStatusState] {
+        self.account_ids.as_deref().unwrap_or_default()
     }
     /// <p>An array of objects that provide details for each of the accounts that Amazon Inspector deep inspection status could not be successfully changed for. </p>
-    pub fn failed_account_ids(&self) -> ::std::option::Option<&[crate::types::FailedMemberAccountEc2DeepInspectionStatusState]> {
-        self.failed_account_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_account_ids.is_none()`.
+    pub fn failed_account_ids(&self) -> &[crate::types::FailedMemberAccountEc2DeepInspectionStatusState] {
+        self.failed_account_ids.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchUpdateMemberEc2DeepInspectionStatusOutput {

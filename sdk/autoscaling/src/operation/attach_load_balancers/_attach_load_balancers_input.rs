@@ -14,8 +14,10 @@ impl AttachLoadBalancersInput {
         self.auto_scaling_group_name.as_deref()
     }
     /// <p>The names of the load balancers. You can specify up to 10 load balancers.</p>
-    pub fn load_balancer_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.load_balancer_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.load_balancer_names.is_none()`.
+    pub fn load_balancer_names(&self) -> &[::std::string::String] {
+        self.load_balancer_names.as_deref().unwrap_or_default()
     }
 }
 impl AttachLoadBalancersInput {
@@ -34,6 +36,7 @@ pub struct AttachLoadBalancersInputBuilder {
 }
 impl AttachLoadBalancersInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
+    /// This field is required.
     pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +73,7 @@ impl AttachLoadBalancersInputBuilder {
     /// Consumes the builder and constructs a [`AttachLoadBalancersInput`](crate::operation::attach_load_balancers::AttachLoadBalancersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::attach_load_balancers::AttachLoadBalancersInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::attach_load_balancers::AttachLoadBalancersInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::attach_load_balancers::AttachLoadBalancersInput {
             auto_scaling_group_name: self.auto_scaling_group_name,

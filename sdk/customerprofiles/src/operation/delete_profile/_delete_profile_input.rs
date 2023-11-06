@@ -34,6 +34,7 @@ pub struct DeleteProfileInputBuilder {
 }
 impl DeleteProfileInputBuilder {
     /// <p>The unique identifier of a customer profile.</p>
+    /// This field is required.
     pub fn profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteProfileInputBuilder {
         &self.profile_id
     }
     /// <p>The unique name of the domain.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DeleteProfileInputBuilder {
     /// Consumes the builder and constructs a [`DeleteProfileInput`](crate::operation::delete_profile::DeleteProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_profile::DeleteProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_profile::DeleteProfileInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_profile::DeleteProfileInput {
             profile_id: self.profile_id,
             domain_name: self.domain_name,

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteChannelPolicy`](crate::operation::delete_channel_policy::builders::DeleteChannelPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`channel_name(impl Into<String>)`](crate::operation::delete_channel_policy::builders::DeleteChannelPolicyFluentBuilder::channel_name) / [`set_channel_name(Option<String>)`](crate::operation::delete_channel_policy::builders::DeleteChannelPolicyFluentBuilder::set_channel_name): <p>The name of the channel associated with this channel policy.</p>
+    ///   - [`channel_name(impl Into<String>)`](crate::operation::delete_channel_policy::builders::DeleteChannelPolicyFluentBuilder::channel_name) / [`set_channel_name(Option<String>)`](crate::operation::delete_channel_policy::builders::DeleteChannelPolicyFluentBuilder::set_channel_name):<br>required: **true**<br><p>The name of the channel associated with this channel policy.</p><br>
     /// - On success, responds with [`DeleteChannelPolicyOutput`](crate::operation::delete_channel_policy::DeleteChannelPolicyOutput)
     /// - On failure, responds with [`SdkError<DeleteChannelPolicyError>`](crate::operation::delete_channel_policy::DeleteChannelPolicyError)
     pub fn delete_channel_policy(&self) -> crate::operation::delete_channel_policy::builders::DeleteChannelPolicyFluentBuilder {

@@ -27,6 +27,7 @@ pub struct GetTranscriptionJobInputBuilder {
 }
 impl GetTranscriptionJobInputBuilder {
     /// <p>The name of the transcription job you want information about. Job names are case sensitive.</p>
+    /// This field is required.
     pub fn transcription_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transcription_job_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetTranscriptionJobInputBuilder {
     /// Consumes the builder and constructs a [`GetTranscriptionJobInput`](crate::operation::get_transcription_job::GetTranscriptionJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_transcription_job::GetTranscriptionJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_transcription_job::GetTranscriptionJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_transcription_job::GetTranscriptionJobInput {
             transcription_job_name: self.transcription_job_name,

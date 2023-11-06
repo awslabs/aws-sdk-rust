@@ -2,7 +2,7 @@
 pub fn ser_update_backend_auth_forgot_password_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateBackendAuthForgotPasswordConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.delivery_method {
         object.key("deliveryMethod").string(var_1.as_str());
     }

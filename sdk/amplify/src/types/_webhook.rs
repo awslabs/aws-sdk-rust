@@ -5,48 +5,53 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Webhook {
     /// <p> The Amazon Resource Name (ARN) for the webhook. </p>
-    pub webhook_arn: ::std::option::Option<::std::string::String>,
+    pub webhook_arn: ::std::string::String,
     /// <p> The ID of the webhook. </p>
-    pub webhook_id: ::std::option::Option<::std::string::String>,
+    pub webhook_id: ::std::string::String,
     /// <p> The URL of the webhook. </p>
-    pub webhook_url: ::std::option::Option<::std::string::String>,
+    pub webhook_url: ::std::string::String,
     /// <p> The name for a branch that is part of an Amplify app. </p>
-    pub branch_name: ::std::option::Option<::std::string::String>,
+    pub branch_name: ::std::string::String,
     /// <p> The description for a webhook. </p>
-    pub description: ::std::option::Option<::std::string::String>,
+    pub description: ::std::string::String,
     /// <p> The create date and time for a webhook. </p>
-    pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub create_time: ::aws_smithy_types::DateTime,
     /// <p> Updates the date and time for a webhook. </p>
-    pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub update_time: ::aws_smithy_types::DateTime,
 }
 impl Webhook {
     /// <p> The Amazon Resource Name (ARN) for the webhook. </p>
-    pub fn webhook_arn(&self) -> ::std::option::Option<&str> {
-        self.webhook_arn.as_deref()
+    pub fn webhook_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.webhook_arn.deref()
     }
     /// <p> The ID of the webhook. </p>
-    pub fn webhook_id(&self) -> ::std::option::Option<&str> {
-        self.webhook_id.as_deref()
+    pub fn webhook_id(&self) -> &str {
+        use std::ops::Deref;
+        self.webhook_id.deref()
     }
     /// <p> The URL of the webhook. </p>
-    pub fn webhook_url(&self) -> ::std::option::Option<&str> {
-        self.webhook_url.as_deref()
+    pub fn webhook_url(&self) -> &str {
+        use std::ops::Deref;
+        self.webhook_url.deref()
     }
     /// <p> The name for a branch that is part of an Amplify app. </p>
-    pub fn branch_name(&self) -> ::std::option::Option<&str> {
-        self.branch_name.as_deref()
+    pub fn branch_name(&self) -> &str {
+        use std::ops::Deref;
+        self.branch_name.deref()
     }
     /// <p> The description for a webhook. </p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
-        self.description.as_deref()
+    pub fn description(&self) -> &str {
+        use std::ops::Deref;
+        self.description.deref()
     }
     /// <p> The create date and time for a webhook. </p>
-    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.create_time.as_ref()
+    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.create_time
     }
     /// <p> Updates the date and time for a webhook. </p>
-    pub fn update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.update_time.as_ref()
+    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.update_time
     }
 }
 impl Webhook {
@@ -70,6 +75,7 @@ pub struct WebhookBuilder {
 }
 impl WebhookBuilder {
     /// <p> The Amazon Resource Name (ARN) for the webhook. </p>
+    /// This field is required.
     pub fn webhook_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.webhook_arn = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +90,7 @@ impl WebhookBuilder {
         &self.webhook_arn
     }
     /// <p> The ID of the webhook. </p>
+    /// This field is required.
     pub fn webhook_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.webhook_id = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +105,7 @@ impl WebhookBuilder {
         &self.webhook_id
     }
     /// <p> The URL of the webhook. </p>
+    /// This field is required.
     pub fn webhook_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.webhook_url = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +120,7 @@ impl WebhookBuilder {
         &self.webhook_url
     }
     /// <p> The name for a branch that is part of an Amplify app. </p>
+    /// This field is required.
     pub fn branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch_name = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +135,7 @@ impl WebhookBuilder {
         &self.branch_name
     }
     /// <p> The description for a webhook. </p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -140,6 +150,7 @@ impl WebhookBuilder {
         &self.description
     }
     /// <p> The create date and time for a webhook. </p>
+    /// This field is required.
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
         self
@@ -154,6 +165,7 @@ impl WebhookBuilder {
         &self.create_time
     }
     /// <p> Updates the date and time for a webhook. </p>
+    /// This field is required.
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
         self
@@ -168,15 +180,58 @@ impl WebhookBuilder {
         &self.update_time
     }
     /// Consumes the builder and constructs a [`Webhook`](crate::types::Webhook).
-    pub fn build(self) -> crate::types::Webhook {
-        crate::types::Webhook {
-            webhook_arn: self.webhook_arn,
-            webhook_id: self.webhook_id,
-            webhook_url: self.webhook_url,
-            branch_name: self.branch_name,
-            description: self.description,
-            create_time: self.create_time,
-            update_time: self.update_time,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`webhook_arn`](crate::types::builders::WebhookBuilder::webhook_arn)
+    /// - [`webhook_id`](crate::types::builders::WebhookBuilder::webhook_id)
+    /// - [`webhook_url`](crate::types::builders::WebhookBuilder::webhook_url)
+    /// - [`branch_name`](crate::types::builders::WebhookBuilder::branch_name)
+    /// - [`description`](crate::types::builders::WebhookBuilder::description)
+    /// - [`create_time`](crate::types::builders::WebhookBuilder::create_time)
+    /// - [`update_time`](crate::types::builders::WebhookBuilder::update_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::Webhook, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Webhook {
+            webhook_arn: self.webhook_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "webhook_arn",
+                    "webhook_arn was not specified but it is required when building Webhook",
+                )
+            })?,
+            webhook_id: self.webhook_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "webhook_id",
+                    "webhook_id was not specified but it is required when building Webhook",
+                )
+            })?,
+            webhook_url: self.webhook_url.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "webhook_url",
+                    "webhook_url was not specified but it is required when building Webhook",
+                )
+            })?,
+            branch_name: self.branch_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "branch_name",
+                    "branch_name was not specified but it is required when building Webhook",
+                )
+            })?,
+            description: self.description.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "description",
+                    "description was not specified but it is required when building Webhook",
+                )
+            })?,
+            create_time: self.create_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "create_time",
+                    "create_time was not specified but it is required when building Webhook",
+                )
+            })?,
+            update_time: self.update_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "update_time",
+                    "update_time was not specified but it is required when building Webhook",
+                )
+            })?,
+        })
     }
 }

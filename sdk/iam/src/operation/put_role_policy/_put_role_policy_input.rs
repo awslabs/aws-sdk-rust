@@ -60,6 +60,7 @@ pub struct PutRolePolicyInputBuilder {
 impl PutRolePolicyInputBuilder {
     /// <p>The name of the role to associate the policy with.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// This field is required.
     pub fn role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +78,7 @@ impl PutRolePolicyInputBuilder {
     }
     /// <p>The name of the policy document.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// This field is required.
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
         self
@@ -100,6 +102,7 @@ impl PutRolePolicyInputBuilder {
     /// <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li>
     /// <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_document = ::std::option::Option::Some(input.into());
         self
@@ -130,7 +133,7 @@ impl PutRolePolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutRolePolicyInput`](crate::operation::put_role_policy::PutRolePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_role_policy::PutRolePolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_role_policy::PutRolePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_role_policy::PutRolePolicyInput {
             role_name: self.role_name,
             policy_name: self.policy_name,

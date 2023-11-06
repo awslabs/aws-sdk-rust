@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcConfigurationUpdate {
     /// <p>Describes an update to the ID of the VPC configuration.</p>
-    pub vpc_configuration_id: ::std::option::Option<::std::string::String>,
+    pub vpc_configuration_id: ::std::string::String,
     /// <p>Describes updates to the array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Subnet.html">Subnet</a> IDs used by the VPC configuration.</p>
     pub subnet_id_updates: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Describes updates to the array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SecurityGroup.html">SecurityGroup</a> IDs used by the VPC configuration.</p>
@@ -13,16 +13,21 @@ pub struct VpcConfigurationUpdate {
 }
 impl VpcConfigurationUpdate {
     /// <p>Describes an update to the ID of the VPC configuration.</p>
-    pub fn vpc_configuration_id(&self) -> ::std::option::Option<&str> {
-        self.vpc_configuration_id.as_deref()
+    pub fn vpc_configuration_id(&self) -> &str {
+        use std::ops::Deref;
+        self.vpc_configuration_id.deref()
     }
     /// <p>Describes updates to the array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Subnet.html">Subnet</a> IDs used by the VPC configuration.</p>
-    pub fn subnet_id_updates(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_id_updates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_id_updates.is_none()`.
+    pub fn subnet_id_updates(&self) -> &[::std::string::String] {
+        self.subnet_id_updates.as_deref().unwrap_or_default()
     }
     /// <p>Describes updates to the array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SecurityGroup.html">SecurityGroup</a> IDs used by the VPC configuration.</p>
-    pub fn security_group_id_updates(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_id_updates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_id_updates.is_none()`.
+    pub fn security_group_id_updates(&self) -> &[::std::string::String] {
+        self.security_group_id_updates.as_deref().unwrap_or_default()
     }
 }
 impl VpcConfigurationUpdate {
@@ -42,6 +47,7 @@ pub struct VpcConfigurationUpdateBuilder {
 }
 impl VpcConfigurationUpdateBuilder {
     /// <p>Describes an update to the ID of the VPC configuration.</p>
+    /// This field is required.
     pub fn vpc_configuration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_configuration_id = ::std::option::Option::Some(input.into());
         self
@@ -96,11 +102,18 @@ impl VpcConfigurationUpdateBuilder {
         &self.security_group_id_updates
     }
     /// Consumes the builder and constructs a [`VpcConfigurationUpdate`](crate::types::VpcConfigurationUpdate).
-    pub fn build(self) -> crate::types::VpcConfigurationUpdate {
-        crate::types::VpcConfigurationUpdate {
-            vpc_configuration_id: self.vpc_configuration_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`vpc_configuration_id`](crate::types::builders::VpcConfigurationUpdateBuilder::vpc_configuration_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::VpcConfigurationUpdate, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::VpcConfigurationUpdate {
+            vpc_configuration_id: self.vpc_configuration_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "vpc_configuration_id",
+                    "vpc_configuration_id was not specified but it is required when building VpcConfigurationUpdate",
+                )
+            })?,
             subnet_id_updates: self.subnet_id_updates,
             security_group_id_updates: self.security_group_id_updates,
-        }
+        })
     }
 }

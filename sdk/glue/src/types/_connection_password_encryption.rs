@@ -41,6 +41,7 @@ pub struct ConnectionPasswordEncryptionBuilder {
 }
 impl ConnectionPasswordEncryptionBuilder {
     /// <p>When the <code>ReturnConnectionPasswordEncrypted</code> flag is set to "true", passwords remain encrypted in the responses of <code>GetConnection</code> and <code>GetConnections</code>. This encryption takes effect independently from catalog encryption. </p>
+    /// This field is required.
     pub fn return_connection_password_encrypted(mut self, input: bool) -> Self {
         self.return_connection_password_encrypted = ::std::option::Option::Some(input);
         self

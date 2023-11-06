@@ -15,20 +15,28 @@ pub struct InclusionProtectionGroupFilters {
 }
 impl InclusionProtectionGroupFilters {
     /// <p>The ID of the protection group that you want to retrieve. </p>
-    pub fn protection_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.protection_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.protection_group_ids.is_none()`.
+    pub fn protection_group_ids(&self) -> &[::std::string::String] {
+        self.protection_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>The pattern specification of the protection groups that you want to retrieve. </p>
-    pub fn patterns(&self) -> ::std::option::Option<&[crate::types::ProtectionGroupPattern]> {
-        self.patterns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.patterns.is_none()`.
+    pub fn patterns(&self) -> &[crate::types::ProtectionGroupPattern] {
+        self.patterns.as_deref().unwrap_or_default()
     }
     /// <p>The resource type configuration of the protection groups that you want to retrieve. In the protection group configuration, you specify the resource type when you set the group's <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code>. </p>
-    pub fn resource_types(&self) -> ::std::option::Option<&[crate::types::ProtectedResourceType]> {
-        self.resource_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_types.is_none()`.
+    pub fn resource_types(&self) -> &[crate::types::ProtectedResourceType] {
+        self.resource_types.as_deref().unwrap_or_default()
     }
     /// <p>The aggregation setting of the protection groups that you want to retrieve. </p>
-    pub fn aggregations(&self) -> ::std::option::Option<&[crate::types::ProtectionGroupAggregation]> {
-        self.aggregations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aggregations.is_none()`.
+    pub fn aggregations(&self) -> &[crate::types::ProtectionGroupAggregation] {
+        self.aggregations.as_deref().unwrap_or_default()
     }
 }
 impl InclusionProtectionGroupFilters {

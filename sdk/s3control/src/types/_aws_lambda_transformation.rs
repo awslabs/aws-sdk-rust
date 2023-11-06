@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsLambdaTransformation {
     /// <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
-    pub function_arn: ::std::option::Option<::std::string::String>,
+    pub function_arn: ::std::string::String,
     /// <p>Additional JSON that provides supplemental data to the Lambda function used to transform objects.</p>
     pub function_payload: ::std::option::Option<::std::string::String>,
 }
 impl AwsLambdaTransformation {
     /// <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
-    pub fn function_arn(&self) -> ::std::option::Option<&str> {
-        self.function_arn.as_deref()
+    pub fn function_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.function_arn.deref()
     }
     /// <p>Additional JSON that provides supplemental data to the Lambda function used to transform objects.</p>
     pub fn function_payload(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct AwsLambdaTransformationBuilder {
 }
 impl AwsLambdaTransformationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
+    /// This field is required.
     pub fn function_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_arn = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl AwsLambdaTransformationBuilder {
         &self.function_payload
     }
     /// Consumes the builder and constructs a [`AwsLambdaTransformation`](crate::types::AwsLambdaTransformation).
-    pub fn build(self) -> crate::types::AwsLambdaTransformation {
-        crate::types::AwsLambdaTransformation {
-            function_arn: self.function_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`function_arn`](crate::types::builders::AwsLambdaTransformationBuilder::function_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::AwsLambdaTransformation, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AwsLambdaTransformation {
+            function_arn: self.function_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "function_arn",
+                    "function_arn was not specified but it is required when building AwsLambdaTransformation",
+                )
+            })?,
             function_payload: self.function_payload,
-        }
+        })
     }
 }

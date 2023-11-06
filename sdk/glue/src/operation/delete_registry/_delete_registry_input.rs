@@ -27,6 +27,7 @@ pub struct DeleteRegistryInputBuilder {
 }
 impl DeleteRegistryInputBuilder {
     /// <p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
+    /// This field is required.
     pub fn registry_id(mut self, input: crate::types::RegistryId) -> Self {
         self.registry_id = ::std::option::Option::Some(input);
         self
@@ -43,7 +44,7 @@ impl DeleteRegistryInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRegistryInput`](crate::operation::delete_registry::DeleteRegistryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_registry::DeleteRegistryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_registry::DeleteRegistryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_registry::DeleteRegistryInput {
             registry_id: self.registry_id,
         })

@@ -55,6 +55,7 @@ pub struct StartSigningJobInputBuilder {
 }
 impl StartSigningJobInputBuilder {
     /// <p>The S3 bucket that contains the object to sign or a BLOB that contains your raw code.</p>
+    /// This field is required.
     pub fn source(mut self, input: crate::types::Source) -> Self {
         self.source = ::std::option::Option::Some(input);
         self
@@ -69,6 +70,7 @@ impl StartSigningJobInputBuilder {
         &self.source
     }
     /// <p>The S3 bucket in which to save your signed object. The destination contains the name of your bucket and an optional prefix.</p>
+    /// This field is required.
     pub fn destination(mut self, input: crate::types::Destination) -> Self {
         self.destination = ::std::option::Option::Some(input);
         self
@@ -83,6 +85,7 @@ impl StartSigningJobInputBuilder {
         &self.destination
     }
     /// <p>The name of the signing profile.</p>
+    /// This field is required.
     pub fn profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +100,7 @@ impl StartSigningJobInputBuilder {
         &self.profile_name
     }
     /// <p>String that identifies the signing request. All calls after the first that use this token return the same response as the first call.</p>
+    /// This field is required.
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
@@ -127,7 +131,7 @@ impl StartSigningJobInputBuilder {
     /// Consumes the builder and constructs a [`StartSigningJobInput`](crate::operation::start_signing_job::StartSigningJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_signing_job::StartSigningJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_signing_job::StartSigningJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_signing_job::StartSigningJobInput {
             source: self.source,
             destination: self.destination,

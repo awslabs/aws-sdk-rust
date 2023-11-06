@@ -42,8 +42,10 @@ impl CreateServiceInstanceInput {
     }
     /// <p>An optional list of metadata items that you can associate with the Proton service instance. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The client token of the service instance to create.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -84,6 +86,7 @@ pub struct CreateServiceInstanceInputBuilder {
 }
 impl CreateServiceInstanceInputBuilder {
     /// <p>The name of the service instance to create.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +101,7 @@ impl CreateServiceInstanceInputBuilder {
         &self.name
     }
     /// <p>The name of the service the service instance is added to.</p>
+    /// This field is required.
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +116,7 @@ impl CreateServiceInstanceInputBuilder {
         &self.service_name
     }
     /// <p>The spec for the service instance you want to create.</p>
+    /// This field is required.
     pub fn spec(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.spec = ::std::option::Option::Some(input.into());
         self
@@ -193,7 +198,7 @@ impl CreateServiceInstanceInputBuilder {
     /// Consumes the builder and constructs a [`CreateServiceInstanceInput`](crate::operation::create_service_instance::CreateServiceInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_service_instance::CreateServiceInstanceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_service_instance::CreateServiceInstanceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_service_instance::CreateServiceInstanceInput {
             name: self.name,

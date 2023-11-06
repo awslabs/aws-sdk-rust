@@ -33,8 +33,10 @@ impl SipMediaApplication {
         self.name.as_deref()
     }
     /// <p>List of endpoints for a SIP media application. Currently, only one endpoint per SIP media application is permitted.</p>
-    pub fn endpoints(&self) -> ::std::option::Option<&[crate::types::SipMediaApplicationEndpoint]> {
-        self.endpoints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.endpoints.is_none()`.
+    pub fn endpoints(&self) -> &[crate::types::SipMediaApplicationEndpoint] {
+        self.endpoints.as_deref().unwrap_or_default()
     }
     /// <p>The SIP media application creation timestamp, in ISO 8601 format.</p>
     pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

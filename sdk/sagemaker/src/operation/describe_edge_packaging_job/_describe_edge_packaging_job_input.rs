@@ -27,6 +27,7 @@ pub struct DescribeEdgePackagingJobInputBuilder {
 }
 impl DescribeEdgePackagingJobInputBuilder {
     /// <p>The name of the edge packaging job.</p>
+    /// This field is required.
     pub fn edge_packaging_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_packaging_job_name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeEdgePackagingJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_edge_packaging_job::DescribeEdgePackagingJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_edge_packaging_job::DescribeEdgePackagingJobInput {
             edge_packaging_job_name: self.edge_packaging_job_name,

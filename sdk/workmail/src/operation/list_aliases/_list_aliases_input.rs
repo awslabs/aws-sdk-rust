@@ -48,6 +48,7 @@ pub struct ListAliasesInputBuilder {
 }
 impl ListAliasesInputBuilder {
     /// <p>The identifier for the organization under which the entity exists.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl ListAliasesInputBuilder {
         &self.organization_id
     }
     /// <p>The identifier for the entity for which to list the aliases.</p>
+    /// This field is required.
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
         self
@@ -104,7 +106,7 @@ impl ListAliasesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListAliasesInput`](crate::operation::list_aliases::ListAliasesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_aliases::ListAliasesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_aliases::ListAliasesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_aliases::ListAliasesInput {
             organization_id: self.organization_id,
             entity_id: self.entity_id,

@@ -10,8 +10,10 @@ pub struct SelectedSheetsFilterScopeConfiguration {
 }
 impl SelectedSheetsFilterScopeConfiguration {
     /// <p>The sheet ID and visual IDs of the sheet and visuals that the filter is applied to.</p>
-    pub fn sheet_visual_scoping_configurations(&self) -> ::std::option::Option<&[crate::types::SheetVisualScopingConfiguration]> {
-        self.sheet_visual_scoping_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sheet_visual_scoping_configurations.is_none()`.
+    pub fn sheet_visual_scoping_configurations(&self) -> &[crate::types::SheetVisualScopingConfiguration] {
+        self.sheet_visual_scoping_configurations.as_deref().unwrap_or_default()
     }
 }
 impl SelectedSheetsFilterScopeConfiguration {

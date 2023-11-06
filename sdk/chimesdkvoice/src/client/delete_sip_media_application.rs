@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteSipMediaApplication`](crate::operation::delete_sip_media_application::builders::DeleteSipMediaApplicationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`sip_media_application_id(impl Into<String>)`](crate::operation::delete_sip_media_application::builders::DeleteSipMediaApplicationFluentBuilder::sip_media_application_id) / [`set_sip_media_application_id(Option<String>)`](crate::operation::delete_sip_media_application::builders::DeleteSipMediaApplicationFluentBuilder::set_sip_media_application_id): <p>The SIP media application ID.</p>
+    ///   - [`sip_media_application_id(impl Into<String>)`](crate::operation::delete_sip_media_application::builders::DeleteSipMediaApplicationFluentBuilder::sip_media_application_id) / [`set_sip_media_application_id(Option<String>)`](crate::operation::delete_sip_media_application::builders::DeleteSipMediaApplicationFluentBuilder::set_sip_media_application_id):<br>required: **true**<br><p>The SIP media application ID.</p><br>
     /// - On success, responds with [`DeleteSipMediaApplicationOutput`](crate::operation::delete_sip_media_application::DeleteSipMediaApplicationOutput)
     /// - On failure, responds with [`SdkError<DeleteSipMediaApplicationError>`](crate::operation::delete_sip_media_application::DeleteSipMediaApplicationError)
     pub fn delete_sip_media_application(&self) -> crate::operation::delete_sip_media_application::builders::DeleteSipMediaApplicationFluentBuilder {

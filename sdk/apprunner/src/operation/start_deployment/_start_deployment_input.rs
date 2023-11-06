@@ -27,6 +27,7 @@ pub struct StartDeploymentInputBuilder {
 }
 impl StartDeploymentInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to manually deploy to.</p>
+    /// This field is required.
     pub fn service_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl StartDeploymentInputBuilder {
     /// Consumes the builder and constructs a [`StartDeploymentInput`](crate::operation::start_deployment::StartDeploymentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_deployment::StartDeploymentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_deployment::StartDeploymentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_deployment::StartDeploymentInput {
             service_arn: self.service_arn,
         })

@@ -2,12 +2,12 @@
 pub fn ser_tag(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Tag,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.tag_key {
-        object.key("TagKey").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("TagKey").string(input.tag_key.as_str());
     }
-    if let Some(var_2) = &input.tag_value {
-        object.key("TagValue").string(var_2.as_str());
+    {
+        object.key("TagValue").string(input.tag_value.as_str());
     }
     Ok(())
 }
@@ -51,7 +51,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::tag_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

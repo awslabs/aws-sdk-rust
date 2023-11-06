@@ -133,6 +133,7 @@ impl Ec2ReplaceRouteActionBuilder {
         &self.gateway_id
     }
     /// <p>Information about the ID of the route table.</p>
+    /// This field is required.
     pub fn route_table_id(mut self, input: crate::types::ActionTarget) -> Self {
         self.route_table_id = ::std::option::Option::Some(input);
         self

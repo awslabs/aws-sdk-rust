@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateProjectOutput {
     /// <p>The ID of the project.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the created project.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>A user- or system-generated token that identifies the entity that requested project creation.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>Reserved for future use.</p>
@@ -15,12 +15,14 @@ pub struct CreateProjectOutput {
 }
 impl CreateProjectOutput {
     /// <p>The ID of the project.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the created project.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>A user- or system-generated token that identifies the entity that requested project creation.</p>
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
@@ -55,6 +57,7 @@ pub struct CreateProjectOutputBuilder {
 }
 impl CreateProjectOutputBuilder {
     /// <p>The ID of the project.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +72,7 @@ impl CreateProjectOutputBuilder {
         &self.id
     }
     /// <p>The Amazon Resource Name (ARN) of the created project.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -120,13 +124,28 @@ impl CreateProjectOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateProjectOutput`](crate::operation::create_project::CreateProjectOutput).
-    pub fn build(self) -> crate::operation::create_project::CreateProjectOutput {
-        crate::operation::create_project::CreateProjectOutput {
-            id: self.id,
-            arn: self.arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::create_project::builders::CreateProjectOutputBuilder::id)
+    /// - [`arn`](crate::operation::create_project::builders::CreateProjectOutputBuilder::arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_project::CreateProjectOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_project::CreateProjectOutput {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building CreateProjectOutput",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building CreateProjectOutput",
+                )
+            })?,
             client_request_token: self.client_request_token,
             project_template_id: self.project_template_id,
             _request_id: self._request_id,
-        }
+        })
     }
 }

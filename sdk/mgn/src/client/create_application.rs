@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateApplication`](crate::operation::create_application::builders::CreateApplicationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::create_application::builders::CreateApplicationFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::create_application::builders::CreateApplicationFluentBuilder::set_name): <p>Application name.</p>
-    ///   - [`description(impl Into<String>)`](crate::operation::create_application::builders::CreateApplicationFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::create_application::builders::CreateApplicationFluentBuilder::set_description): <p>Application description.</p>
-    ///   - [`tags(impl Into<String>, impl Into<String>)`](crate::operation::create_application::builders::CreateApplicationFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::create_application::builders::CreateApplicationFluentBuilder::set_tags): <p>Application tags.</p>
-    ///   - [`account_id(impl Into<String>)`](crate::operation::create_application::builders::CreateApplicationFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::create_application::builders::CreateApplicationFluentBuilder::set_account_id): <p>Account ID.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::create_application::builders::CreateApplicationFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::create_application::builders::CreateApplicationFluentBuilder::set_name):<br>required: **true**<br><p>Application name.</p><br>
+    ///   - [`description(impl Into<String>)`](crate::operation::create_application::builders::CreateApplicationFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::create_application::builders::CreateApplicationFluentBuilder::set_description):<br>required: **false**<br><p>Application description.</p><br>
+    ///   - [`tags(impl Into<String>, impl Into<String>)`](crate::operation::create_application::builders::CreateApplicationFluentBuilder::tags) / [`set_tags(Option<HashMap::<String, String>>)`](crate::operation::create_application::builders::CreateApplicationFluentBuilder::set_tags):<br>required: **false**<br><p>Application tags.</p><br>
+    ///   - [`account_id(impl Into<String>)`](crate::operation::create_application::builders::CreateApplicationFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::create_application::builders::CreateApplicationFluentBuilder::set_account_id):<br>required: **false**<br><p>Account ID.</p><br>
     /// - On success, responds with [`CreateApplicationOutput`](crate::operation::create_application::CreateApplicationOutput) with field(s):
     ///   - [`application_id(Option<String>)`](crate::operation::create_application::CreateApplicationOutput::application_id): <p>Application ID.</p>
     ///   - [`arn(Option<String>)`](crate::operation::create_application::CreateApplicationOutput::arn): <p>Application ARN.</p>
@@ -16,7 +16,7 @@ impl super::Client {
     ///   - [`application_aggregated_status(Option<ApplicationAggregatedStatus>)`](crate::operation::create_application::CreateApplicationOutput::application_aggregated_status): <p>Application aggregated status.</p>
     ///   - [`creation_date_time(Option<String>)`](crate::operation::create_application::CreateApplicationOutput::creation_date_time): <p>Application creation dateTime.</p>
     ///   - [`last_modified_date_time(Option<String>)`](crate::operation::create_application::CreateApplicationOutput::last_modified_date_time): <p>Application last modified dateTime.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::create_application::CreateApplicationOutput::tags): <p>Application tags.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::create_application::CreateApplicationOutput::tags): <p>Application tags.</p>
     ///   - [`wave_id(Option<String>)`](crate::operation::create_application::CreateApplicationOutput::wave_id): <p>Application wave ID.</p>
     /// - On failure, responds with [`SdkError<CreateApplicationError>`](crate::operation::create_application::CreateApplicationError)
     pub fn create_application(&self) -> crate::operation::create_application::builders::CreateApplicationFluentBuilder {

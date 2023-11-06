@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeLocationEfs`](crate::operation::describe_location_efs::builders::DescribeLocationEfsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`location_arn(impl Into<String>)`](crate::operation::describe_location_efs::builders::DescribeLocationEfsFluentBuilder::location_arn) / [`set_location_arn(Option<String>)`](crate::operation::describe_location_efs::builders::DescribeLocationEfsFluentBuilder::set_location_arn): <p>The Amazon Resource Name (ARN) of the Amazon EFS file system location that you want information about.</p>
+    ///   - [`location_arn(impl Into<String>)`](crate::operation::describe_location_efs::builders::DescribeLocationEfsFluentBuilder::location_arn) / [`set_location_arn(Option<String>)`](crate::operation::describe_location_efs::builders::DescribeLocationEfsFluentBuilder::set_location_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the Amazon EFS file system location that you want information about.</p><br>
     /// - On success, responds with [`DescribeLocationEfsOutput`](crate::operation::describe_location_efs::DescribeLocationEfsOutput) with field(s):
     ///   - [`location_arn(Option<String>)`](crate::operation::describe_location_efs::DescribeLocationEfsOutput::location_arn): <p>The ARN of the Amazon EFS file system location.</p>
     ///   - [`location_uri(Option<String>)`](crate::operation::describe_location_efs::DescribeLocationEfsOutput::location_uri): <p>The URL of the Amazon EFS file system location.</p>

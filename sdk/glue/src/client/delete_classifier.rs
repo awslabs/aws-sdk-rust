@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteClassifier`](crate::operation::delete_classifier::builders::DeleteClassifierFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::delete_classifier::builders::DeleteClassifierFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_classifier::builders::DeleteClassifierFluentBuilder::set_name): <p>Name of the classifier to remove.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::delete_classifier::builders::DeleteClassifierFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_classifier::builders::DeleteClassifierFluentBuilder::set_name):<br>required: **true**<br><p>Name of the classifier to remove.</p><br>
     /// - On success, responds with [`DeleteClassifierOutput`](crate::operation::delete_classifier::DeleteClassifierOutput)
     /// - On failure, responds with [`SdkError<DeleteClassifierError>`](crate::operation::delete_classifier::DeleteClassifierError)
     pub fn delete_classifier(&self) -> crate::operation::delete_classifier::builders::DeleteClassifierFluentBuilder {

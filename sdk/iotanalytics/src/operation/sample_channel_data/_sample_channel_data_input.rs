@@ -48,6 +48,7 @@ pub struct SampleChannelDataInputBuilder {
 }
 impl SampleChannelDataInputBuilder {
     /// <p>The name of the channel whose message samples are retrieved.</p>
+    /// This field is required.
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_name = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,7 @@ impl SampleChannelDataInputBuilder {
     /// Consumes the builder and constructs a [`SampleChannelDataInput`](crate::operation::sample_channel_data::SampleChannelDataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::sample_channel_data::SampleChannelDataInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::sample_channel_data::SampleChannelDataInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::sample_channel_data::SampleChannelDataInput {
             channel_name: self.channel_name,
             max_messages: self.max_messages,

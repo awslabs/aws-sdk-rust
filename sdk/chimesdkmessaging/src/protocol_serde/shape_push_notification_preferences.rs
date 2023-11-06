@@ -38,7 +38,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::push_notification_preferences_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -49,12 +53,12 @@ where
 pub fn ser_push_notification_preferences(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PushNotificationPreferences,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.allow_notifications {
-        object.key("AllowNotifications").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("AllowNotifications").string(input.allow_notifications.as_str());
     }
-    if let Some(var_2) = &input.filter_rule {
-        object.key("FilterRule").string(var_2.as_str());
+    if let Some(var_1) = &input.filter_rule {
+        object.key("FilterRule").string(var_1.as_str());
     }
     Ok(())
 }

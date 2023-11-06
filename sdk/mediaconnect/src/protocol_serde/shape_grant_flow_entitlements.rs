@@ -28,11 +28,8 @@ pub fn de_grant_flow_entitlements_http_error(
                 output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output)
                     .map_err(crate::operation::grant_flow_entitlements::GrantFlowEntitlementsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::bad_request_exception_correct_errors(output).build()
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ForbiddenException" => crate::operation::grant_flow_entitlements::GrantFlowEntitlementsError::ForbiddenException({
@@ -43,11 +40,8 @@ pub fn de_grant_flow_entitlements_http_error(
                 output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(_response_body, output)
                     .map_err(crate::operation::grant_flow_entitlements::GrantFlowEntitlementsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::forbidden_exception_correct_errors(output).build()
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "GrantFlowEntitlements420Exception" => {
@@ -62,11 +56,8 @@ pub fn de_grant_flow_entitlements_http_error(
                     )
                     .map_err(crate::operation::grant_flow_entitlements::GrantFlowEntitlementsError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::grant_flow_entitlements420_exception_correct_errors(output).build()
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -79,11 +70,8 @@ pub fn de_grant_flow_entitlements_http_error(
                     crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(_response_body, output)
                         .map_err(crate::operation::grant_flow_entitlements::GrantFlowEntitlementsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_error_exception_correct_errors(output).build()
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "NotFoundException" => crate::operation::grant_flow_entitlements::GrantFlowEntitlementsError::NotFoundException({
@@ -94,11 +82,8 @@ pub fn de_grant_flow_entitlements_http_error(
                 output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::grant_flow_entitlements::GrantFlowEntitlementsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::not_found_exception_correct_errors(output).build()
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::grant_flow_entitlements::GrantFlowEntitlementsError::ServiceUnavailableException({
@@ -110,11 +95,8 @@ pub fn de_grant_flow_entitlements_http_error(
                     crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
                         .map_err(crate::operation::grant_flow_entitlements::GrantFlowEntitlementsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::service_unavailable_exception_correct_errors(output).build()
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "TooManyRequestsException" => crate::operation::grant_flow_entitlements::GrantFlowEntitlementsError::TooManyRequestsException({
@@ -125,11 +107,8 @@ pub fn de_grant_flow_entitlements_http_error(
                 output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output)
                     .map_err(crate::operation::grant_flow_entitlements::GrantFlowEntitlementsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::too_many_requests_exception_correct_errors(output).build()
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::grant_flow_entitlements::GrantFlowEntitlementsError::generic(generic),
@@ -157,12 +136,12 @@ pub fn de_grant_flow_entitlements_http_response(
 
 pub fn ser_grant_flow_entitlements_input(
     input: &crate::operation::grant_flow_entitlements::GrantFlowEntitlementsInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_grant_flow_entitlements_input::ser_grant_flow_entitlements_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_grant_flow_entitlements(
@@ -180,7 +159,7 @@ pub(crate) fn de_grant_flow_entitlements(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "entitlements" => {
-                    builder = builder.set_entitlements(crate::protocol_serde::shape___list_of_entitlement::de___list_of_entitlement(tokens)?);
+                    builder = builder.set_entitlements(crate::protocol_serde::shape_list_of_entitlement::de_list_of_entitlement(tokens)?);
                 }
                 "flowArn" => {
                     builder = builder.set_flow_arn(

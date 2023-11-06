@@ -48,8 +48,10 @@ impl CreateCloudFormationChangeSetInput {
     /// <p>The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html">AWS::S3::BucketPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>, and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS:TopicPolicy</a>.</p>
     /// <p>Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.</p>
     /// <p>If your application template contains any of the above resources, we recommend that you review all permissions associated with the application before deploying. If you don't specify this parameter for an application that requires capabilities, the call will fail.</p>
-    pub fn capabilities(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.capabilities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capabilities.is_none()`.
+    pub fn capabilities(&self) -> &[::std::string::String] {
+        self.capabilities.as_deref().unwrap_or_default()
     }
     /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
     pub fn change_set_name(&self) -> ::std::option::Option<&str> {
@@ -64,16 +66,22 @@ impl CreateCloudFormationChangeSetInput {
         self.description.as_deref()
     }
     /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
-    pub fn notification_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.notification_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notification_arns.is_none()`.
+    pub fn notification_arns(&self) -> &[::std::string::String] {
+        self.notification_arns.as_deref().unwrap_or_default()
     }
     /// <p>A list of parameter values for the parameters of the application.</p>
-    pub fn parameter_overrides(&self) -> ::std::option::Option<&[crate::types::ParameterValue]> {
-        self.parameter_overrides.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameter_overrides.is_none()`.
+    pub fn parameter_overrides(&self) -> &[crate::types::ParameterValue] {
+        self.parameter_overrides.as_deref().unwrap_or_default()
     }
     /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
-    pub fn resource_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_types.is_none()`.
+    pub fn resource_types(&self) -> &[::std::string::String] {
+        self.resource_types.as_deref().unwrap_or_default()
     }
     /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
     pub fn rollback_configuration(&self) -> ::std::option::Option<&crate::types::RollbackConfiguration> {
@@ -89,8 +97,10 @@ impl CreateCloudFormationChangeSetInput {
         self.stack_name.as_deref()
     }
     /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The UUID returned by CreateCloudFormationTemplate.</p>
     /// <p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
@@ -125,6 +135,7 @@ pub struct CreateCloudFormationChangeSetInputBuilder {
 }
 impl CreateCloudFormationChangeSetInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -307,6 +318,7 @@ impl CreateCloudFormationChangeSetInputBuilder {
         &self.semantic_version
     }
     /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
+    /// This field is required.
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_name = ::std::option::Option::Some(input.into());
         self
@@ -362,7 +374,7 @@ impl CreateCloudFormationChangeSetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_cloud_formation_change_set::CreateCloudFormationChangeSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_cloud_formation_change_set::CreateCloudFormationChangeSetInput {
             application_id: self.application_id,

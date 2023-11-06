@@ -69,8 +69,10 @@ impl EnableLoggingInput {
         self.log_destination_type.as_ref()
     }
     /// <p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>
-    pub fn log_exports(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.log_exports.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_exports.is_none()`.
+    pub fn log_exports(&self) -> &[::std::string::String] {
+        self.log_exports.as_deref().unwrap_or_default()
     }
 }
 impl EnableLoggingInput {
@@ -93,6 +95,7 @@ pub struct EnableLoggingInputBuilder {
 impl EnableLoggingInputBuilder {
     /// <p>The identifier of the cluster on which logging is to be started.</p>
     /// <p>Example: <code>examplecluster</code> </p>
+    /// This field is required.
     pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
@@ -224,7 +227,7 @@ impl EnableLoggingInputBuilder {
     /// Consumes the builder and constructs a [`EnableLoggingInput`](crate::operation::enable_logging::EnableLoggingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::enable_logging::EnableLoggingInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::enable_logging::EnableLoggingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::enable_logging::EnableLoggingInput {
             cluster_identifier: self.cluster_identifier,
             bucket_name: self.bucket_name,

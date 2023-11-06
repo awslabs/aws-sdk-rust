@@ -74,6 +74,7 @@ impl SearchInputBuilder {
     /// <p>The search is completely case insensitive. You can specify an empty string to return all results up to the limit of 1,000 total results.</p> <note>
     /// <p>The operation can return only the first 1,000 results. If the resource you want is not included, then use a different value for <code>QueryString</code> to refine the results.</p>
     /// </note>
+    /// This field is required.
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_string = ::std::option::Option::Some(input.into());
         self
@@ -144,7 +145,7 @@ impl SearchInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`SearchInput`](crate::operation::search::SearchInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::search::SearchInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::search::SearchInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search::SearchInput {
             query_string: self.query_string,
             max_results: self.max_results,

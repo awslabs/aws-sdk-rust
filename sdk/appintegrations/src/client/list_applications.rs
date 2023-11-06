@@ -4,10 +4,10 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    ///   - [`max_results(i32)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::set_max_results): <p>The maximum number of results to return per page.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p><br>
+    ///   - [`max_results(i32)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per page.</p><br>
     /// - On success, responds with [`ListApplicationsOutput`](crate::operation::list_applications::ListApplicationsOutput) with field(s):
-    ///   - [`applications(Option<Vec<ApplicationSummary>>)`](crate::operation::list_applications::ListApplicationsOutput::applications): <p>The Applications associated with this account.</p>
+    ///   - [`applications(Option<Vec::<ApplicationSummary>>)`](crate::operation::list_applications::ListApplicationsOutput::applications): <p>The Applications associated with this account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_applications::ListApplicationsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListApplicationsError>`](crate::operation::list_applications::ListApplicationsError)
     pub fn list_applications(&self) -> crate::operation::list_applications::builders::ListApplicationsFluentBuilder {

@@ -34,6 +34,7 @@ pub struct CreateLabelingJobOutputBuilder {
 }
 impl CreateLabelingJobOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the labeling job. You use this ARN to identify the labeling job.</p>
+    /// This field is required.
     pub fn labeling_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.labeling_job_arn = ::std::option::Option::Some(input.into());
         self

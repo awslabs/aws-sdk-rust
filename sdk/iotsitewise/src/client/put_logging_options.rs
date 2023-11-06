@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PutLoggingOptions`](crate::operation::put_logging_options::builders::PutLoggingOptionsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`logging_options(LoggingOptions)`](crate::operation::put_logging_options::builders::PutLoggingOptionsFluentBuilder::logging_options) / [`set_logging_options(Option<LoggingOptions>)`](crate::operation::put_logging_options::builders::PutLoggingOptionsFluentBuilder::set_logging_options): <p>The logging options to set.</p>
+    ///   - [`logging_options(LoggingOptions)`](crate::operation::put_logging_options::builders::PutLoggingOptionsFluentBuilder::logging_options) / [`set_logging_options(Option<LoggingOptions>)`](crate::operation::put_logging_options::builders::PutLoggingOptionsFluentBuilder::set_logging_options):<br>required: **true**<br><p>The logging options to set.</p><br>
     /// - On success, responds with [`PutLoggingOptionsOutput`](crate::operation::put_logging_options::PutLoggingOptionsOutput)
     /// - On failure, responds with [`SdkError<PutLoggingOptionsError>`](crate::operation::put_logging_options::PutLoggingOptionsError)
     pub fn put_logging_options(&self) -> crate::operation::put_logging_options::builders::PutLoggingOptionsFluentBuilder {

@@ -48,6 +48,7 @@ pub struct UpdateAliasInputBuilder {
 }
 impl UpdateAliasInputBuilder {
     /// <p>A unique identifier for the alias that you want to update. You can use either the alias ID or ARN value.</p>
+    /// This field is required.
     pub fn alias_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias_id = ::std::option::Option::Some(input.into());
         self
@@ -104,7 +105,7 @@ impl UpdateAliasInputBuilder {
         &self.routing_strategy
     }
     /// Consumes the builder and constructs a [`UpdateAliasInput`](crate::operation::update_alias::UpdateAliasInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_alias::UpdateAliasInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_alias::UpdateAliasInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_alias::UpdateAliasInput {
             alias_id: self.alias_id,
             name: self.name,

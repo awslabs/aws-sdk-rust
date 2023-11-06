@@ -34,6 +34,7 @@ pub struct DeleteClusterSnapshotOutputBuilder {
 }
 impl DeleteClusterSnapshotOutputBuilder {
     /// <p>Returns information about the newly deleted Elastic DocumentDB snapshot.</p>
+    /// This field is required.
     pub fn snapshot(mut self, input: crate::types::ClusterSnapshot) -> Self {
         self.snapshot = ::std::option::Option::Some(input);
         self

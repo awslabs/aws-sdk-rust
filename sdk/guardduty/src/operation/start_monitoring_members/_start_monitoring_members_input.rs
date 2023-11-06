@@ -14,8 +14,10 @@ impl StartMonitoringMembersInput {
         self.detector_id.as_deref()
     }
     /// <p>A list of account IDs of the GuardDuty member accounts to start monitoring.</p>
-    pub fn account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.account_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
+    pub fn account_ids(&self) -> &[::std::string::String] {
+        self.account_ids.as_deref().unwrap_or_default()
     }
 }
 impl StartMonitoringMembersInput {
@@ -34,6 +36,7 @@ pub struct StartMonitoringMembersInputBuilder {
 }
 impl StartMonitoringMembersInputBuilder {
     /// <p>The unique ID of the detector of the GuardDuty administrator account associated with the member accounts to monitor.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
@@ -70,8 +73,10 @@ impl StartMonitoringMembersInputBuilder {
     /// Consumes the builder and constructs a [`StartMonitoringMembersInput`](crate::operation::start_monitoring_members::StartMonitoringMembersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_monitoring_members::StartMonitoringMembersInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::start_monitoring_members::StartMonitoringMembersInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::start_monitoring_members::StartMonitoringMembersInput {
             detector_id: self.detector_id,
             account_ids: self.account_ids,

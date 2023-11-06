@@ -2,48 +2,48 @@
 pub fn ser_timestream_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TimestreamConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.database_name {
-        object.key("DatabaseName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("DatabaseName").string(input.database_name.as_str());
     }
-    if let Some(var_2) = &input.table_name {
-        object.key("TableName").string(var_2.as_str());
+    {
+        object.key("TableName").string(input.table_name.as_str());
     }
-    if let Some(var_3) = &input.time_column {
-        object.key("TimeColumn").string(var_3.as_str());
+    {
+        object.key("TimeColumn").string(input.time_column.as_str());
     }
-    if let Some(var_4) = &input.dimension_mappings {
-        let mut array_5 = object.key("DimensionMappings").start_array();
-        for item_6 in var_4 {
+    {
+        let mut array_1 = object.key("DimensionMappings").start_array();
+        for item_2 in &input.dimension_mappings {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_dimension_mapping::ser_dimension_mapping(&mut object_7, item_6)?;
-                object_7.finish();
+                let mut object_3 = array_1.value().start_object();
+                crate::protocol_serde::shape_dimension_mapping::ser_dimension_mapping(&mut object_3, item_2)?;
+                object_3.finish();
             }
         }
-        array_5.finish();
+        array_1.finish();
     }
-    if let Some(var_8) = &input.multi_measure_mappings {
+    if let Some(var_4) = &input.multi_measure_mappings {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("MultiMeasureMappings").start_object();
-        crate::protocol_serde::shape_multi_measure_mappings::ser_multi_measure_mappings(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_5 = object.key("MultiMeasureMappings").start_object();
+        crate::protocol_serde::shape_multi_measure_mappings::ser_multi_measure_mappings(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_10) = &input.mixed_measure_mappings {
-        let mut array_11 = object.key("MixedMeasureMappings").start_array();
-        for item_12 in var_10 {
+    if let Some(var_6) = &input.mixed_measure_mappings {
+        let mut array_7 = object.key("MixedMeasureMappings").start_array();
+        for item_8 in var_6 {
             {
                 #[allow(unused_mut)]
-                let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_mixed_measure_mapping::ser_mixed_measure_mapping(&mut object_13, item_12)?;
-                object_13.finish();
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_mixed_measure_mapping::ser_mixed_measure_mapping(&mut object_9, item_8)?;
+                object_9.finish();
             }
         }
-        array_11.finish();
+        array_7.finish();
     }
-    if let Some(var_14) = &input.measure_name_column {
-        object.key("MeasureNameColumn").string(var_14.as_str());
+    if let Some(var_10) = &input.measure_name_column {
+        object.key("MeasureNameColumn").string(var_10.as_str());
     }
     Ok(())
 }
@@ -114,7 +114,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::timestream_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

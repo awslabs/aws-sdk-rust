@@ -2,7 +2,7 @@
 pub fn ser_pin_generation_attributes(
     object_3: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PinGenerationAttributes,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::PinGenerationAttributes::VisaPin(inner) => {
             #[allow(unused_mut)]
@@ -41,7 +41,7 @@ pub fn ser_pin_generation_attributes(
             object_6.finish();
         }
         crate::types::PinGenerationAttributes::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "PinGenerationAttributes",
             ))
         }

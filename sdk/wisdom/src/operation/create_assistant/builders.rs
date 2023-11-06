@@ -10,7 +10,7 @@ impl CreateAssistantInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_assistant::CreateAssistantOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::create_assistant::CreateAssistantError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl CreateAssistantFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_assistant::CreateAssistantOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::create_assistant::CreateAssistantError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::create_assistant::CreateAssistant::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -86,20 +89,15 @@ impl CreateAssistantFluentBuilder {
         crate::operation::create_assistant::CreateAssistant::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::create_assistant::CreateAssistantOutput,
-            crate::operation::create_assistant::CreateAssistantError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::create_assistant::CreateAssistantError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::create_assistant::CreateAssistantOutput,
+        crate::operation::create_assistant::CreateAssistantError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -184,17 +182,23 @@ impl CreateAssistantFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
-    /// <p>The KMS key used for encryption.</p>
+    /// <p>The configuration information for the customer managed key used for encryption. </p>
+    /// <p>The customer managed key must have a policy that allows <code>kms:CreateGrant</code> and <code> kms:DescribeKey</code> permissions to the IAM identity using the key to invoke Wisdom. To use Wisdom with chat, the key policy must also allow <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>, and <code>kms:DescribeKey</code> permissions to the <code>connect.amazonaws.com</code> service principal. </p>
+    /// <p>For more information about setting up a customer managed key for Wisdom, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable Amazon Connect Wisdom for your instance</a>.</p>
     pub fn server_side_encryption_configuration(mut self, input: crate::types::ServerSideEncryptionConfiguration) -> Self {
         self.inner = self.inner.server_side_encryption_configuration(input);
         self
     }
-    /// <p>The KMS key used for encryption.</p>
+    /// <p>The configuration information for the customer managed key used for encryption. </p>
+    /// <p>The customer managed key must have a policy that allows <code>kms:CreateGrant</code> and <code> kms:DescribeKey</code> permissions to the IAM identity using the key to invoke Wisdom. To use Wisdom with chat, the key policy must also allow <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>, and <code>kms:DescribeKey</code> permissions to the <code>connect.amazonaws.com</code> service principal. </p>
+    /// <p>For more information about setting up a customer managed key for Wisdom, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable Amazon Connect Wisdom for your instance</a>.</p>
     pub fn set_server_side_encryption_configuration(mut self, input: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>) -> Self {
         self.inner = self.inner.set_server_side_encryption_configuration(input);
         self
     }
-    /// <p>The KMS key used for encryption.</p>
+    /// <p>The configuration information for the customer managed key used for encryption. </p>
+    /// <p>The customer managed key must have a policy that allows <code>kms:CreateGrant</code> and <code> kms:DescribeKey</code> permissions to the IAM identity using the key to invoke Wisdom. To use Wisdom with chat, the key policy must also allow <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>, and <code>kms:DescribeKey</code> permissions to the <code>connect.amazonaws.com</code> service principal. </p>
+    /// <p>For more information about setting up a customer managed key for Wisdom, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable Amazon Connect Wisdom for your instance</a>.</p>
     pub fn get_server_side_encryption_configuration(&self) -> &::std::option::Option<crate::types::ServerSideEncryptionConfiguration> {
         self.inner.get_server_side_encryption_configuration()
     }

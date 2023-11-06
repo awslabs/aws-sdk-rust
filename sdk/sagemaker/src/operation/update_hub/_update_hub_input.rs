@@ -26,8 +26,10 @@ impl UpdateHubInput {
         self.hub_display_name.as_deref()
     }
     /// <p>The searchable keywords for the hub.</p>
-    pub fn hub_search_keywords(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.hub_search_keywords.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hub_search_keywords.is_none()`.
+    pub fn hub_search_keywords(&self) -> &[::std::string::String] {
+        self.hub_search_keywords.as_deref().unwrap_or_default()
     }
 }
 impl UpdateHubInput {
@@ -48,6 +50,7 @@ pub struct UpdateHubInputBuilder {
 }
 impl UpdateHubInputBuilder {
     /// <p>The name of the hub to update.</p>
+    /// This field is required.
     pub fn hub_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hub_name = ::std::option::Option::Some(input.into());
         self
@@ -110,7 +113,7 @@ impl UpdateHubInputBuilder {
         &self.hub_search_keywords
     }
     /// Consumes the builder and constructs a [`UpdateHubInput`](crate::operation::update_hub::UpdateHubInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_hub::UpdateHubInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_hub::UpdateHubInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_hub::UpdateHubInput {
             hub_name: self.hub_name,
             hub_description: self.hub_description,

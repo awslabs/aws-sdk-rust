@@ -41,6 +41,7 @@ pub struct ModifyUsageLimitInputBuilder {
 }
 impl ModifyUsageLimitInputBuilder {
     /// <p>The identifier of the usage limit to modify.</p>
+    /// This field is required.
     pub fn usage_limit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.usage_limit_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl ModifyUsageLimitInputBuilder {
     /// Consumes the builder and constructs a [`ModifyUsageLimitInput`](crate::operation::modify_usage_limit::ModifyUsageLimitInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_usage_limit::ModifyUsageLimitInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::modify_usage_limit::ModifyUsageLimitInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_usage_limit::ModifyUsageLimitInput {
             usage_limit_id: self.usage_limit_id,
             amount: self.amount,

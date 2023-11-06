@@ -85,7 +85,7 @@ impl GetSlotTypesInputBuilder {
     /// Consumes the builder and constructs a [`GetSlotTypesInput`](crate::operation::get_slot_types::GetSlotTypesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_slot_types::GetSlotTypesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_slot_types::GetSlotTypesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_slot_types::GetSlotTypesInput {
             next_token: self.next_token,
             max_results: self.max_results,

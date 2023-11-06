@@ -35,6 +35,7 @@ pub struct ReportTaskProgressOutputBuilder {
 }
 impl ReportTaskProgressOutputBuilder {
     /// <p>If true, the calling task runner should cancel processing of the task. The task runner does not need to call <code>SetTaskStatus</code> for canceled tasks.</p>
+    /// This field is required.
     pub fn canceled(mut self, input: bool) -> Self {
         self.canceled = ::std::option::Option::Some(input);
         self

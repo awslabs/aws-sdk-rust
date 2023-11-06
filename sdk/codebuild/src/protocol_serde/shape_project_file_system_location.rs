@@ -2,7 +2,7 @@
 pub fn ser_project_file_system_location(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ProjectFileSystemLocation,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.r#type {
         object.key("type").string(var_1.as_str());
     }

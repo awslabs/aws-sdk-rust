@@ -64,6 +64,7 @@ pub struct ListSessionsInputBuilder {
 }
 impl ListSessionsInputBuilder {
     /// <p>The workgroup to which the session belongs.</p>
+    /// This field is required.
     pub fn work_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.work_group = ::std::option::Option::Some(input.into());
         self
@@ -144,7 +145,9 @@ impl ListSessionsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListSessionsInput`](crate::operation::list_sessions::ListSessionsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_sessions::ListSessionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_sessions::ListSessionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_sessions::ListSessionsInput {
             work_group: self.work_group,
             state_filter: self.state_filter,

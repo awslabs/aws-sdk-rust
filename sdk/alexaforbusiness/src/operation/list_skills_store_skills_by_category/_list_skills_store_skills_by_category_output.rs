@@ -11,8 +11,10 @@ pub struct ListSkillsStoreSkillsByCategoryOutput {
 }
 impl ListSkillsStoreSkillsByCategoryOutput {
     /// <p>The skill store skills.</p>
-    pub fn skills_store_skills(&self) -> ::std::option::Option<&[crate::types::SkillsStoreSkill]> {
-        self.skills_store_skills.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.skills_store_skills.is_none()`.
+    pub fn skills_store_skills(&self) -> &[crate::types::SkillsStoreSkill] {
+        self.skills_store_skills.as_deref().unwrap_or_default()
     }
     /// <p>The tokens used for pagination.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

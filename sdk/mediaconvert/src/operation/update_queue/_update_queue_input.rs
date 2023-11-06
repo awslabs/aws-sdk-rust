@@ -62,6 +62,7 @@ impl UpdateQueueInputBuilder {
         &self.description
     }
     /// The name of the queue that you are modifying.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -104,7 +105,7 @@ impl UpdateQueueInputBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`UpdateQueueInput`](crate::operation::update_queue::UpdateQueueInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_queue::UpdateQueueInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_queue::UpdateQueueInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_queue::UpdateQueueInput {
             description: self.description,
             name: self.name,

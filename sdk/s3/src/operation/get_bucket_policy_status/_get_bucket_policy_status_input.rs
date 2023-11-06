@@ -34,6 +34,7 @@ pub struct GetBucketPolicyStatusInputBuilder {
 }
 impl GetBucketPolicyStatusInputBuilder {
     /// <p>The name of the Amazon S3 bucket whose policy status you want to retrieve.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl GetBucketPolicyStatusInputBuilder {
     /// Consumes the builder and constructs a [`GetBucketPolicyStatusInput`](crate::operation::get_bucket_policy_status::GetBucketPolicyStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_bucket_policy_status::GetBucketPolicyStatusInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_bucket_policy_status::GetBucketPolicyStatusInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_bucket_policy_status::GetBucketPolicyStatusInput {
             bucket: self.bucket,

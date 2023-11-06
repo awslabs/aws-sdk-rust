@@ -2,7 +2,7 @@
 pub fn ser_public_dns_namespace_properties_change(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PublicDnsNamespacePropertiesChange,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.dns_properties {
         #[allow(unused_mut)]
         let mut object_2 = object.key("DnsProperties").start_object();

@@ -11,12 +11,16 @@ pub struct BatchUpdateAutomationRulesOutput {
 }
 impl BatchUpdateAutomationRulesOutput {
     /// <p> A list of properly processed rule ARNs. </p>
-    pub fn processed_automation_rules(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.processed_automation_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.processed_automation_rules.is_none()`.
+    pub fn processed_automation_rules(&self) -> &[::std::string::String] {
+        self.processed_automation_rules.as_deref().unwrap_or_default()
     }
     /// <p> A list of objects containing <code>RuleArn</code>, <code>ErrorCode</code>, and <code>ErrorMessage</code>. This parameter tells you which automation rules the request didn't update and why. </p>
-    pub fn unprocessed_automation_rules(&self) -> ::std::option::Option<&[crate::types::UnprocessedAutomationRule]> {
-        self.unprocessed_automation_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unprocessed_automation_rules.is_none()`.
+    pub fn unprocessed_automation_rules(&self) -> &[crate::types::UnprocessedAutomationRule] {
+        self.unprocessed_automation_rules.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchUpdateAutomationRulesOutput {

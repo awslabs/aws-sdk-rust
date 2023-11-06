@@ -30,6 +30,7 @@ pub struct DeleteLoginProfileInputBuilder {
 impl DeleteLoginProfileInputBuilder {
     /// <p>The name of the user whose password you want to delete.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// This field is required.
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self
@@ -48,7 +49,8 @@ impl DeleteLoginProfileInputBuilder {
     /// Consumes the builder and constructs a [`DeleteLoginProfileInput`](crate::operation::delete_login_profile::DeleteLoginProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_login_profile::DeleteLoginProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_login_profile::DeleteLoginProfileInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_login_profile::DeleteLoginProfileInput { user_name: self.user_name })
     }
 }

@@ -49,8 +49,10 @@ impl GetAssetPropertyValueHistoryInput {
         self.end_date.as_ref()
     }
     /// <p>The quality by which to filter asset data.</p>
-    pub fn qualities(&self) -> ::std::option::Option<&[crate::types::Quality]> {
-        self.qualities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.qualities.is_none()`.
+    pub fn qualities(&self) -> &[crate::types::Quality] {
+        self.qualities.as_deref().unwrap_or_default()
     }
     /// <p>The chronological sorting order of the requested information.</p>
     /// <p>Default: <code>ASCENDING</code> </p>
@@ -244,7 +246,7 @@ impl GetAssetPropertyValueHistoryInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryInput {
             asset_id: self.asset_id,

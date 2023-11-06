@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ResumeCluster`](crate::operation::resume_cluster::builders::ResumeClusterFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cluster_identifier(impl Into<String>)`](crate::operation::resume_cluster::builders::ResumeClusterFluentBuilder::cluster_identifier) / [`set_cluster_identifier(Option<String>)`](crate::operation::resume_cluster::builders::ResumeClusterFluentBuilder::set_cluster_identifier): <p>The identifier of the cluster to be resumed.</p>
+    ///   - [`cluster_identifier(impl Into<String>)`](crate::operation::resume_cluster::builders::ResumeClusterFluentBuilder::cluster_identifier) / [`set_cluster_identifier(Option<String>)`](crate::operation::resume_cluster::builders::ResumeClusterFluentBuilder::set_cluster_identifier):<br>required: **true**<br><p>The identifier of the cluster to be resumed.</p><br>
     /// - On success, responds with [`ResumeClusterOutput`](crate::operation::resume_cluster::ResumeClusterOutput) with field(s):
     ///   - [`cluster(Option<Cluster>)`](crate::operation::resume_cluster::ResumeClusterOutput::cluster): <p>Describes a cluster.</p>
     /// - On failure, responds with [`SdkError<ResumeClusterError>`](crate::operation::resume_cluster::ResumeClusterError)

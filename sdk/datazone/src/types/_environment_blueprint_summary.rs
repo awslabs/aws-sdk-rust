@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct EnvironmentBlueprintSummary {
     /// <p>The identifier of the blueprint.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The name of the blueprint.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The description of a blueprint.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The provider of the blueprint.</p>
-    pub provider: ::std::option::Option<::std::string::String>,
+    pub provider: ::std::string::String,
     /// <p>The provisioning properties of the blueprint.</p>
     pub provisioning_properties: ::std::option::Option<crate::types::ProvisioningProperties>,
     /// <p>The timestamp of when an environment blueprint was created.</p>
@@ -21,20 +21,23 @@ pub struct EnvironmentBlueprintSummary {
 }
 impl EnvironmentBlueprintSummary {
     /// <p>The identifier of the blueprint.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The name of the blueprint.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The description of a blueprint.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The provider of the blueprint.</p>
-    pub fn provider(&self) -> ::std::option::Option<&str> {
-        self.provider.as_deref()
+    pub fn provider(&self) -> &str {
+        use std::ops::Deref;
+        self.provider.deref()
     }
     /// <p>The provisioning properties of the blueprint.</p>
     pub fn provisioning_properties(&self) -> ::std::option::Option<&crate::types::ProvisioningProperties> {
@@ -83,6 +86,7 @@ pub struct EnvironmentBlueprintSummaryBuilder {
 }
 impl EnvironmentBlueprintSummaryBuilder {
     /// <p>The identifier of the blueprint.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +101,7 @@ impl EnvironmentBlueprintSummaryBuilder {
         &self.id
     }
     /// <p>The name of the blueprint.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +130,7 @@ impl EnvironmentBlueprintSummaryBuilder {
         &self.description
     }
     /// <p>The provider of the blueprint.</p>
+    /// This field is required.
     pub fn provider(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider = ::std::option::Option::Some(input.into());
         self
@@ -139,6 +145,7 @@ impl EnvironmentBlueprintSummaryBuilder {
         &self.provider
     }
     /// <p>The provisioning properties of the blueprint.</p>
+    /// This field is required.
     pub fn provisioning_properties(mut self, input: crate::types::ProvisioningProperties) -> Self {
         self.provisioning_properties = ::std::option::Option::Some(input);
         self
@@ -181,16 +188,35 @@ impl EnvironmentBlueprintSummaryBuilder {
         &self.updated_at
     }
     /// Consumes the builder and constructs a [`EnvironmentBlueprintSummary`](crate::types::EnvironmentBlueprintSummary).
-    pub fn build(self) -> crate::types::EnvironmentBlueprintSummary {
-        crate::types::EnvironmentBlueprintSummary {
-            id: self.id,
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::EnvironmentBlueprintSummaryBuilder::id)
+    /// - [`name`](crate::types::builders::EnvironmentBlueprintSummaryBuilder::name)
+    /// - [`provider`](crate::types::builders::EnvironmentBlueprintSummaryBuilder::provider)
+    pub fn build(self) -> ::std::result::Result<crate::types::EnvironmentBlueprintSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EnvironmentBlueprintSummary {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building EnvironmentBlueprintSummary",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building EnvironmentBlueprintSummary",
+                )
+            })?,
             description: self.description,
-            provider: self.provider,
+            provider: self.provider.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "provider",
+                    "provider was not specified but it is required when building EnvironmentBlueprintSummary",
+                )
+            })?,
             provisioning_properties: self.provisioning_properties,
             created_at: self.created_at,
             updated_at: self.updated_at,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for EnvironmentBlueprintSummaryBuilder {

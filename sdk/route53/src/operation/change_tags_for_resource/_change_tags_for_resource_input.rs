@@ -33,12 +33,16 @@ impl ChangeTagsForResourceInput {
     }
     /// <p>A complex type that contains a list of the tags that you want to add to the specified health check or hosted zone and/or the tags that you want to edit <code>Value</code> for.</p>
     /// <p>You can add a maximum of 10 tags to a health check or a hosted zone.</p>
-    pub fn add_tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.add_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_tags.is_none()`.
+    pub fn add_tags(&self) -> &[crate::types::Tag] {
+        self.add_tags.as_deref().unwrap_or_default()
     }
     /// <p>A complex type that contains a list of the tags that you want to delete from the specified health check or hosted zone. You can specify up to 10 keys.</p>
-    pub fn remove_tag_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.remove_tag_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove_tag_keys.is_none()`.
+    pub fn remove_tag_keys(&self) -> &[::std::string::String] {
+        self.remove_tag_keys.as_deref().unwrap_or_default()
     }
 }
 impl ChangeTagsForResourceInput {
@@ -63,6 +67,7 @@ impl ChangeTagsForResourceInputBuilder {
     /// <li> <p>The resource type for health checks is <code>healthcheck</code>.</p> </li>
     /// <li> <p>The resource type for hosted zones is <code>hostedzone</code>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn resource_type(mut self, input: crate::types::TagResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
@@ -85,6 +90,7 @@ impl ChangeTagsForResourceInputBuilder {
         &self.resource_type
     }
     /// <p>The ID of the resource for which you want to add, change, or delete tags.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -144,7 +150,7 @@ impl ChangeTagsForResourceInputBuilder {
     /// Consumes the builder and constructs a [`ChangeTagsForResourceInput`](crate::operation::change_tags_for_resource::ChangeTagsForResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::change_tags_for_resource::ChangeTagsForResourceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::change_tags_for_resource::ChangeTagsForResourceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::change_tags_for_resource::ChangeTagsForResourceInput {
             resource_type: self.resource_type,

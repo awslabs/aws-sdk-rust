@@ -131,7 +131,7 @@ impl ListReportGroupsInputBuilder {
     /// Consumes the builder and constructs a [`ListReportGroupsInput`](crate::operation::list_report_groups::ListReportGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_report_groups::ListReportGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_report_groups::ListReportGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_report_groups::ListReportGroupsInput {
             sort_order: self.sort_order,
             sort_by: self.sort_by,

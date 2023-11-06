@@ -2,7 +2,7 @@
 pub fn ser_condition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Condition,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.attribute_value_list {
         let mut array_2 = object.key("AttributeValueList").start_array();
         for item_3 in var_1 {
@@ -15,8 +15,8 @@ pub fn ser_condition(
         }
         array_2.finish();
     }
-    if let Some(var_5) = &input.comparison_operator {
-        object.key("ComparisonOperator").string(var_5.as_str());
+    {
+        object.key("ComparisonOperator").string(input.comparison_operator.as_str());
     }
     Ok(())
 }

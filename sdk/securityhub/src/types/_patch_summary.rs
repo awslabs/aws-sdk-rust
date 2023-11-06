@@ -102,6 +102,7 @@ pub struct PatchSummaryBuilder {
 }
 impl PatchSummaryBuilder {
     /// <p>The identifier of the compliance standard that was used to determine the patch compliance status.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

@@ -50,9 +50,11 @@ impl DeleteAnomalyDetectorInput {
         self.metric_name.as_deref()
     }
     /// <p>The metric dimensions associated with the anomaly detection model to delete.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimensions.is_none()`.
     #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
-    pub fn dimensions(&self) -> ::std::option::Option<&[crate::types::Dimension]> {
-        self.dimensions.as_deref()
+    pub fn dimensions(&self) -> &[crate::types::Dimension] {
+        self.dimensions.as_deref().unwrap_or_default()
     }
     /// <p>The statistic associated with the anomaly detection model to delete.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
@@ -264,7 +266,7 @@ impl DeleteAnomalyDetectorInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAnomalyDetectorInput`](crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorInput {
             namespace: self.namespace,

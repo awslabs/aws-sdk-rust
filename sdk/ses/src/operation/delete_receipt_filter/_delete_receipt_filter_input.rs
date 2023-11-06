@@ -28,6 +28,7 @@ pub struct DeleteReceiptFilterInputBuilder {
 }
 impl DeleteReceiptFilterInputBuilder {
     /// <p>The name of the IP address filter to delete.</p>
+    /// This field is required.
     pub fn filter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter_name = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl DeleteReceiptFilterInputBuilder {
     /// Consumes the builder and constructs a [`DeleteReceiptFilterInput`](crate::operation::delete_receipt_filter::DeleteReceiptFilterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_receipt_filter::DeleteReceiptFilterInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_receipt_filter::DeleteReceiptFilterInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_receipt_filter::DeleteReceiptFilterInput {
             filter_name: self.filter_name,

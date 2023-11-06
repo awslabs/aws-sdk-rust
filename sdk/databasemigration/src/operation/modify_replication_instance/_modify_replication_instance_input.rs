@@ -61,8 +61,10 @@ impl ModifyReplicationInstanceInput {
         self.replication_instance_class.as_deref()
     }
     /// <p> Specifies the VPC security group to be used with the replication instance. The VPC security group must work with the VPC containing the replication instance. </p>
-    pub fn vpc_security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.vpc_security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_group_ids.is_none()`.
+    pub fn vpc_security_group_ids(&self) -> &[::std::string::String] {
+        self.vpc_security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>The weekly time range (in UTC) during which system maintenance can occur, which might result in an outage. Changing this parameter does not result in an outage, except in the following situation, and the change is asynchronously applied as soon as possible. If moving this window to the current time, there must be at least 30 minutes between the current time and end of the window to ensure pending changes are applied.</p>
     /// <p>Default: Uses existing setting</p>
@@ -131,6 +133,7 @@ pub struct ModifyReplicationInstanceInputBuilder {
 }
 impl ModifyReplicationInstanceInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+    /// This field is required.
     pub fn replication_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_instance_arn = ::std::option::Option::Some(input.into());
         self
@@ -348,7 +351,7 @@ impl ModifyReplicationInstanceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_replication_instance::ModifyReplicationInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_replication_instance::ModifyReplicationInstanceInput {
             replication_instance_arn: self.replication_instance_arn,

@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportAssetFromSignedUrlJobErrorDetails {
     /// <p>Details about the job error.</p>
-    pub asset_name: ::std::option::Option<::std::string::String>,
+    pub asset_name: ::std::string::String,
 }
 impl ImportAssetFromSignedUrlJobErrorDetails {
     /// <p>Details about the job error.</p>
-    pub fn asset_name(&self) -> ::std::option::Option<&str> {
-        self.asset_name.as_deref()
+    pub fn asset_name(&self) -> &str {
+        use std::ops::Deref;
+        self.asset_name.deref()
     }
 }
 impl ImportAssetFromSignedUrlJobErrorDetails {
@@ -28,6 +29,7 @@ pub struct ImportAssetFromSignedUrlJobErrorDetailsBuilder {
 }
 impl ImportAssetFromSignedUrlJobErrorDetailsBuilder {
     /// <p>Details about the job error.</p>
+    /// This field is required.
     pub fn asset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_name = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,18 @@ impl ImportAssetFromSignedUrlJobErrorDetailsBuilder {
         &self.asset_name
     }
     /// Consumes the builder and constructs a [`ImportAssetFromSignedUrlJobErrorDetails`](crate::types::ImportAssetFromSignedUrlJobErrorDetails).
-    pub fn build(self) -> crate::types::ImportAssetFromSignedUrlJobErrorDetails {
-        crate::types::ImportAssetFromSignedUrlJobErrorDetails { asset_name: self.asset_name }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`asset_name`](crate::types::builders::ImportAssetFromSignedUrlJobErrorDetailsBuilder::asset_name)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::ImportAssetFromSignedUrlJobErrorDetails, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ImportAssetFromSignedUrlJobErrorDetails {
+            asset_name: self.asset_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "asset_name",
+                    "asset_name was not specified but it is required when building ImportAssetFromSignedUrlJobErrorDetails",
+                )
+            })?,
+        })
     }
 }

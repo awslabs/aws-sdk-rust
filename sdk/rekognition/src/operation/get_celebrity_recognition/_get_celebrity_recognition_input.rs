@@ -48,6 +48,7 @@ pub struct GetCelebrityRecognitionInputBuilder {
 }
 impl GetCelebrityRecognitionInputBuilder {
     /// <p>Job identifier for the required celebrity recognition analysis. You can get the job identifer from a call to <code>StartCelebrityRecognition</code>.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +109,7 @@ impl GetCelebrityRecognitionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_celebrity_recognition::GetCelebrityRecognitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_celebrity_recognition::GetCelebrityRecognitionInput {
             job_id: self.job_id,

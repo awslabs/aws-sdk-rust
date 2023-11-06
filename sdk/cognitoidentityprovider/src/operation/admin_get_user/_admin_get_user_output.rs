@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AdminGetUserOutput {
     /// <p>The username of the user that you requested.</p>
-    pub username: ::std::option::Option<::std::string::String>,
+    pub username: ::std::string::String,
     /// <p>An array of name-value pairs representing user attributes.</p>
     pub user_attributes: ::std::option::Option<::std::vec::Vec<crate::types::AttributeType>>,
     /// <p>The date the user was created.</p>
@@ -33,12 +33,15 @@ pub struct AdminGetUserOutput {
 }
 impl AdminGetUserOutput {
     /// <p>The username of the user that you requested.</p>
-    pub fn username(&self) -> ::std::option::Option<&str> {
-        self.username.as_deref()
+    pub fn username(&self) -> &str {
+        use std::ops::Deref;
+        self.username.deref()
     }
     /// <p>An array of name-value pairs representing user attributes.</p>
-    pub fn user_attributes(&self) -> ::std::option::Option<&[crate::types::AttributeType]> {
-        self.user_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_attributes.is_none()`.
+    pub fn user_attributes(&self) -> &[crate::types::AttributeType] {
+        self.user_attributes.as_deref().unwrap_or_default()
     }
     /// <p>The date the user was created.</p>
     pub fn user_create_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -64,16 +67,20 @@ impl AdminGetUserOutput {
         self.user_status.as_ref()
     }
     /// <p> <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
-    pub fn mfa_options(&self) -> ::std::option::Option<&[crate::types::MfaOptionType]> {
-        self.mfa_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mfa_options.is_none()`.
+    pub fn mfa_options(&self) -> &[crate::types::MfaOptionType] {
+        self.mfa_options.as_deref().unwrap_or_default()
     }
     /// <p>The user's preferred MFA setting.</p>
     pub fn preferred_mfa_setting(&self) -> ::std::option::Option<&str> {
         self.preferred_mfa_setting.as_deref()
     }
     /// <p>The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
-    pub fn user_mfa_setting_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.user_mfa_setting_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_mfa_setting_list.is_none()`.
+    pub fn user_mfa_setting_list(&self) -> &[::std::string::String] {
+        self.user_mfa_setting_list.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for AdminGetUserOutput {
@@ -121,6 +128,7 @@ pub struct AdminGetUserOutputBuilder {
 }
 impl AdminGetUserOutputBuilder {
     /// <p>The username of the user that you requested.</p>
+    /// This field is required.
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self
@@ -295,9 +303,18 @@ impl AdminGetUserOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AdminGetUserOutput`](crate::operation::admin_get_user::AdminGetUserOutput).
-    pub fn build(self) -> crate::operation::admin_get_user::AdminGetUserOutput {
-        crate::operation::admin_get_user::AdminGetUserOutput {
-            username: self.username,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`username`](crate::operation::admin_get_user::builders::AdminGetUserOutputBuilder::username)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::admin_get_user::AdminGetUserOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::admin_get_user::AdminGetUserOutput {
+            username: self.username.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "username",
+                    "username was not specified but it is required when building AdminGetUserOutput",
+                )
+            })?,
             user_attributes: self.user_attributes,
             user_create_date: self.user_create_date,
             user_last_modified_date: self.user_last_modified_date,
@@ -307,7 +324,7 @@ impl AdminGetUserOutputBuilder {
             preferred_mfa_setting: self.preferred_mfa_setting,
             user_mfa_setting_list: self.user_mfa_setting_list,
             _request_id: self._request_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for AdminGetUserOutputBuilder {

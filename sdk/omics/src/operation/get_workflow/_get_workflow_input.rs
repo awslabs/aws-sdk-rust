@@ -20,8 +20,10 @@ impl GetWorkflowInput {
         self.r#type.as_ref()
     }
     /// <p>The export format for the workflow.</p>
-    pub fn export(&self) -> ::std::option::Option<&[crate::types::WorkflowExport]> {
-        self.export.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.export.is_none()`.
+    pub fn export(&self) -> &[crate::types::WorkflowExport] {
+        self.export.as_deref().unwrap_or_default()
     }
 }
 impl GetWorkflowInput {
@@ -41,6 +43,7 @@ pub struct GetWorkflowInputBuilder {
 }
 impl GetWorkflowInputBuilder {
     /// <p>The workflow's ID.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -89,7 +92,7 @@ impl GetWorkflowInputBuilder {
         &self.export
     }
     /// Consumes the builder and constructs a [`GetWorkflowInput`](crate::operation::get_workflow::GetWorkflowInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_workflow::GetWorkflowInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_workflow::GetWorkflowInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_workflow::GetWorkflowInput {
             id: self.id,
             r#type: self.r#type,

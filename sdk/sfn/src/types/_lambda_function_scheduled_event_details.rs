@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct LambdaFunctionScheduledEventDetails {
     /// <p>The Amazon Resource Name (ARN) of the scheduled Lambda function.</p>
-    pub resource: ::std::option::Option<::std::string::String>,
+    pub resource: ::std::string::String,
     /// <p>The JSON data input to the Lambda function. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub input: ::std::option::Option<::std::string::String>,
     /// <p>Contains details about input for an execution history event.</p>
@@ -17,8 +17,9 @@ pub struct LambdaFunctionScheduledEventDetails {
 }
 impl LambdaFunctionScheduledEventDetails {
     /// <p>The Amazon Resource Name (ARN) of the scheduled Lambda function.</p>
-    pub fn resource(&self) -> ::std::option::Option<&str> {
-        self.resource.as_deref()
+    pub fn resource(&self) -> &str {
+        use std::ops::Deref;
+        self.resource.deref()
     }
     /// <p>The JSON data input to the Lambda function. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn input(&self) -> ::std::option::Option<&str> {
@@ -67,6 +68,7 @@ pub struct LambdaFunctionScheduledEventDetailsBuilder {
 }
 impl LambdaFunctionScheduledEventDetailsBuilder {
     /// <p>The Amazon Resource Name (ARN) of the scheduled Lambda function.</p>
+    /// This field is required.
     pub fn resource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource = ::std::option::Option::Some(input.into());
         self
@@ -137,14 +139,21 @@ impl LambdaFunctionScheduledEventDetailsBuilder {
         &self.task_credentials
     }
     /// Consumes the builder and constructs a [`LambdaFunctionScheduledEventDetails`](crate::types::LambdaFunctionScheduledEventDetails).
-    pub fn build(self) -> crate::types::LambdaFunctionScheduledEventDetails {
-        crate::types::LambdaFunctionScheduledEventDetails {
-            resource: self.resource,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource`](crate::types::builders::LambdaFunctionScheduledEventDetailsBuilder::resource)
+    pub fn build(self) -> ::std::result::Result<crate::types::LambdaFunctionScheduledEventDetails, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::LambdaFunctionScheduledEventDetails {
+            resource: self.resource.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "resource",
+                    "resource was not specified but it is required when building LambdaFunctionScheduledEventDetails",
+                )
+            })?,
             input: self.input,
             input_details: self.input_details,
             timeout_in_seconds: self.timeout_in_seconds,
             task_credentials: self.task_credentials,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for LambdaFunctionScheduledEventDetailsBuilder {

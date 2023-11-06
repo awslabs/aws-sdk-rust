@@ -11,12 +11,16 @@ pub struct RiskExceptionConfigurationType {
 }
 impl RiskExceptionConfigurationType {
     /// <p>Overrides the risk decision to always block the pre-authentication requests. The IP range is in CIDR notation, a compact representation of an IP address and its routing prefix.</p>
-    pub fn blocked_ip_range_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.blocked_ip_range_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.blocked_ip_range_list.is_none()`.
+    pub fn blocked_ip_range_list(&self) -> &[::std::string::String] {
+        self.blocked_ip_range_list.as_deref().unwrap_or_default()
     }
     /// <p>Risk detection isn't performed on the IP addresses in this range list. The IP range is in CIDR notation.</p>
-    pub fn skipped_ip_range_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.skipped_ip_range_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.skipped_ip_range_list.is_none()`.
+    pub fn skipped_ip_range_list(&self) -> &[::std::string::String] {
+        self.skipped_ip_range_list.as_deref().unwrap_or_default()
     }
 }
 impl RiskExceptionConfigurationType {

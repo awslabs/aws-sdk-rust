@@ -137,12 +137,12 @@ pub fn de_create_vpc_connection_http_response(
 
 pub fn ser_create_vpc_connection_input(
     input: &crate::operation::create_vpc_connection::CreateVpcConnectionInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_vpc_connection_input::ser_create_vpc_connection_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_create_vpc_connection(
@@ -167,7 +167,7 @@ pub(crate) fn de_create_vpc_connection(
                     );
                 }
                 "clientSubnets" => {
-                    builder = builder.set_client_subnets(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                    builder = builder.set_client_subnets(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                 }
                 "creationTime" => {
                     builder = builder.set_creation_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -176,7 +176,7 @@ pub(crate) fn de_create_vpc_connection(
                     )?);
                 }
                 "securityGroups" => {
-                    builder = builder.set_security_groups(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                    builder = builder.set_security_groups(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                 }
                 "state" => {
                     builder = builder.set_state(
@@ -186,7 +186,7 @@ pub(crate) fn de_create_vpc_connection(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape___map_of__string::de___map_of__string(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens)?);
                 }
                 "vpcConnectionArn" => {
                     builder = builder.set_vpc_connection_arn(

@@ -17,12 +17,16 @@ impl NodeStructure {
         self.count
     }
     /// <p>A list of the node properties present in this specific structure.</p>
-    pub fn node_properties(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.node_properties.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.node_properties.is_none()`.
+    pub fn node_properties(&self) -> &[::std::string::String] {
+        self.node_properties.as_deref().unwrap_or_default()
     }
     /// <p>A list of distinct outgoing edge labels present in this specific structure.</p>
-    pub fn distinct_outgoing_edge_labels(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.distinct_outgoing_edge_labels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.distinct_outgoing_edge_labels.is_none()`.
+    pub fn distinct_outgoing_edge_labels(&self) -> &[::std::string::String] {
+        self.distinct_outgoing_edge_labels.as_deref().unwrap_or_default()
     }
 }
 impl NodeStructure {

@@ -34,6 +34,7 @@ pub struct GetUserEndpointsOutputBuilder {
 }
 impl GetUserEndpointsOutputBuilder {
     /// <p>Provides information about all the endpoints that are associated with a user ID.</p>
+    /// This field is required.
     pub fn endpoints_response(mut self, input: crate::types::EndpointsResponse) -> Self {
         self.endpoints_response = ::std::option::Option::Some(input);
         self

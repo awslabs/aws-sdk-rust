@@ -83,16 +83,22 @@ impl JobRun {
         self.log_group_name.as_deref()
     }
     /// <p>One or more output artifacts from a job run.</p>
-    pub fn outputs(&self) -> ::std::option::Option<&[crate::types::Output]> {
-        self.outputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outputs.is_none()`.
+    pub fn outputs(&self) -> &[crate::types::Output] {
+        self.outputs.as_deref().unwrap_or_default()
     }
     /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
-    pub fn data_catalog_outputs(&self) -> ::std::option::Option<&[crate::types::DataCatalogOutput]> {
-        self.data_catalog_outputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_catalog_outputs.is_none()`.
+    pub fn data_catalog_outputs(&self) -> &[crate::types::DataCatalogOutput] {
+        self.data_catalog_outputs.as_deref().unwrap_or_default()
     }
     /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
-    pub fn database_outputs(&self) -> ::std::option::Option<&[crate::types::DatabaseOutput]> {
-        self.database_outputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.database_outputs.is_none()`.
+    pub fn database_outputs(&self) -> &[crate::types::DatabaseOutput] {
+        self.database_outputs.as_deref().unwrap_or_default()
     }
     /// <p>The set of steps processed by the job.</p>
     pub fn recipe_reference(&self) -> ::std::option::Option<&crate::types::RecipeReference> {
@@ -111,8 +117,10 @@ impl JobRun {
         self.job_sample.as_ref()
     }
     /// <p>List of validation configurations that are applied to the profile job run.</p>
-    pub fn validation_configurations(&self) -> ::std::option::Option<&[crate::types::ValidationConfiguration]> {
-        self.validation_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.validation_configurations.is_none()`.
+    pub fn validation_configurations(&self) -> &[crate::types::ValidationConfiguration] {
+        self.validation_configurations.as_deref().unwrap_or_default()
     }
 }
 impl JobRun {

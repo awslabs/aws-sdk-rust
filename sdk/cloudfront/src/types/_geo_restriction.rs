@@ -10,9 +10,9 @@ pub struct GeoRestriction {
     /// <li> <p> <code>blacklist</code>: The <code>Location</code> elements specify the countries in which you don't want CloudFront to distribute your content.</p> </li>
     /// <li> <p> <code>whitelist</code>: The <code>Location</code> elements specify the countries in which you want CloudFront to distribute your content.</p> </li>
     /// </ul>
-    pub restriction_type: ::std::option::Option<crate::types::GeoRestrictionType>,
+    pub restriction_type: crate::types::GeoRestrictionType,
     /// <p>When geo restriction is <code>enabled</code>, this is the number of countries in your <code>whitelist</code> or <code>blacklist</code>. Otherwise, when it is not enabled, <code>Quantity</code> is <code>0</code>, and you can omit <code>Items</code>.</p>
-    pub quantity: ::std::option::Option<i32>,
+    pub quantity: i32,
     /// <p>A complex type that contains a <code>Location</code> element for each country in which you want CloudFront either to distribute your content (<code>whitelist</code>) or not distribute your content (<code>blacklist</code>).</p>
     /// <p>The <code>Location</code> element is a two-letter, uppercase country code for a country that you want to include in your <code>blacklist</code> or <code>whitelist</code>. Include one <code>Location</code> element for each country.</p>
     /// <p>CloudFront and <code>MaxMind</code> both use <code>ISO 3166</code> country codes. For the current list of countries and the corresponding codes, see <code>ISO 3166-1-alpha-2</code> code on the <i>International Organization for Standardization</i> website. You can also refer to the country list on the CloudFront console, which includes both country names and codes.</p>
@@ -25,18 +25,20 @@ impl GeoRestriction {
     /// <li> <p> <code>blacklist</code>: The <code>Location</code> elements specify the countries in which you don't want CloudFront to distribute your content.</p> </li>
     /// <li> <p> <code>whitelist</code>: The <code>Location</code> elements specify the countries in which you want CloudFront to distribute your content.</p> </li>
     /// </ul>
-    pub fn restriction_type(&self) -> ::std::option::Option<&crate::types::GeoRestrictionType> {
-        self.restriction_type.as_ref()
+    pub fn restriction_type(&self) -> &crate::types::GeoRestrictionType {
+        &self.restriction_type
     }
     /// <p>When geo restriction is <code>enabled</code>, this is the number of countries in your <code>whitelist</code> or <code>blacklist</code>. Otherwise, when it is not enabled, <code>Quantity</code> is <code>0</code>, and you can omit <code>Items</code>.</p>
-    pub fn quantity(&self) -> ::std::option::Option<i32> {
+    pub fn quantity(&self) -> i32 {
         self.quantity
     }
     /// <p>A complex type that contains a <code>Location</code> element for each country in which you want CloudFront either to distribute your content (<code>whitelist</code>) or not distribute your content (<code>blacklist</code>).</p>
     /// <p>The <code>Location</code> element is a two-letter, uppercase country code for a country that you want to include in your <code>blacklist</code> or <code>whitelist</code>. Include one <code>Location</code> element for each country.</p>
     /// <p>CloudFront and <code>MaxMind</code> both use <code>ISO 3166</code> country codes. For the current list of countries and the corresponding codes, see <code>ISO 3166-1-alpha-2</code> code on the <i>International Organization for Standardization</i> website. You can also refer to the country list on the CloudFront console, which includes both country names and codes.</p>
-    pub fn items(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[::std::string::String] {
+        self.items.as_deref().unwrap_or_default()
     }
 }
 impl GeoRestriction {
@@ -61,6 +63,7 @@ impl GeoRestrictionBuilder {
     /// <li> <p> <code>blacklist</code>: The <code>Location</code> elements specify the countries in which you don't want CloudFront to distribute your content.</p> </li>
     /// <li> <p> <code>whitelist</code>: The <code>Location</code> elements specify the countries in which you want CloudFront to distribute your content.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn restriction_type(mut self, input: crate::types::GeoRestrictionType) -> Self {
         self.restriction_type = ::std::option::Option::Some(input);
         self
@@ -85,6 +88,7 @@ impl GeoRestrictionBuilder {
         &self.restriction_type
     }
     /// <p>When geo restriction is <code>enabled</code>, this is the number of countries in your <code>whitelist</code> or <code>blacklist</code>. Otherwise, when it is not enabled, <code>Quantity</code> is <code>0</code>, and you can omit <code>Items</code>.</p>
+    /// This field is required.
     pub fn quantity(mut self, input: i32) -> Self {
         self.quantity = ::std::option::Option::Some(input);
         self
@@ -125,11 +129,24 @@ impl GeoRestrictionBuilder {
         &self.items
     }
     /// Consumes the builder and constructs a [`GeoRestriction`](crate::types::GeoRestriction).
-    pub fn build(self) -> crate::types::GeoRestriction {
-        crate::types::GeoRestriction {
-            restriction_type: self.restriction_type,
-            quantity: self.quantity,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`restriction_type`](crate::types::builders::GeoRestrictionBuilder::restriction_type)
+    /// - [`quantity`](crate::types::builders::GeoRestrictionBuilder::quantity)
+    pub fn build(self) -> ::std::result::Result<crate::types::GeoRestriction, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::GeoRestriction {
+            restriction_type: self.restriction_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "restriction_type",
+                    "restriction_type was not specified but it is required when building GeoRestriction",
+                )
+            })?,
+            quantity: self.quantity.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "quantity",
+                    "quantity was not specified but it is required when building GeoRestriction",
+                )
+            })?,
             items: self.items,
-        }
+        })
     }
 }

@@ -2,42 +2,42 @@
 pub fn ser_asset_bundle_import_job_vpc_connection_override_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AssetBundleImportJobVpcConnectionOverrideParameters,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.vpc_connection_id {
-        object.key("VPCConnectionId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("VPCConnectionId").string(input.vpc_connection_id.as_str());
     }
-    if let Some(var_2) = &input.name {
-        object.key("Name").string(var_2.as_str());
+    if let Some(var_1) = &input.name {
+        object.key("Name").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.subnet_ids {
-        let mut array_4 = object.key("SubnetIds").start_array();
-        for item_5 in var_3 {
+    if let Some(var_2) = &input.subnet_ids {
+        let mut array_3 = object.key("SubnetIds").start_array();
+        for item_4 in var_2 {
             {
-                array_4.value().string(item_5.as_str());
+                array_3.value().string(item_4.as_str());
             }
         }
-        array_4.finish();
+        array_3.finish();
     }
-    if let Some(var_6) = &input.security_group_ids {
-        let mut array_7 = object.key("SecurityGroupIds").start_array();
-        for item_8 in var_6 {
+    if let Some(var_5) = &input.security_group_ids {
+        let mut array_6 = object.key("SecurityGroupIds").start_array();
+        for item_7 in var_5 {
             {
-                array_7.value().string(item_8.as_str());
+                array_6.value().string(item_7.as_str());
             }
         }
-        array_7.finish();
+        array_6.finish();
     }
-    if let Some(var_9) = &input.dns_resolvers {
-        let mut array_10 = object.key("DnsResolvers").start_array();
-        for item_11 in var_9 {
+    if let Some(var_8) = &input.dns_resolvers {
+        let mut array_9 = object.key("DnsResolvers").start_array();
+        for item_10 in var_8 {
             {
-                array_10.value().string(item_11.as_str());
+                array_9.value().string(item_10.as_str());
             }
         }
-        array_10.finish();
+        array_9.finish();
     }
-    if let Some(var_12) = &input.role_arn {
-        object.key("RoleArn").string(var_12.as_str());
+    if let Some(var_11) = &input.role_arn {
+        object.key("RoleArn").string(var_11.as_str());
     }
     Ok(())
 }
@@ -98,7 +98,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::asset_bundle_import_job_vpc_connection_override_parameters_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

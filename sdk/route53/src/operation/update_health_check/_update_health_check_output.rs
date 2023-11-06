@@ -35,6 +35,7 @@ pub struct UpdateHealthCheckOutputBuilder {
 }
 impl UpdateHealthCheckOutputBuilder {
     /// <p>A complex type that contains the response to an <code>UpdateHealthCheck</code> request.</p>
+    /// This field is required.
     pub fn health_check(mut self, input: crate::types::HealthCheck) -> Self {
         self.health_check = ::std::option::Option::Some(input);
         self

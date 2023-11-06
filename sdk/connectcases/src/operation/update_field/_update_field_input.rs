@@ -48,6 +48,7 @@ pub struct UpdateFieldInputBuilder {
 }
 impl UpdateFieldInputBuilder {
     /// <p>The unique identifier of the Cases domain. </p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl UpdateFieldInputBuilder {
         &self.domain_id
     }
     /// <p>The unique identifier of a field.</p>
+    /// This field is required.
     pub fn field_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.field_id = ::std::option::Option::Some(input.into());
         self
@@ -104,7 +106,7 @@ impl UpdateFieldInputBuilder {
         &self.description
     }
     /// Consumes the builder and constructs a [`UpdateFieldInput`](crate::operation::update_field::UpdateFieldInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_field::UpdateFieldInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_field::UpdateFieldInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_field::UpdateFieldInput {
             domain_id: self.domain_id,
             field_id: self.field_id,

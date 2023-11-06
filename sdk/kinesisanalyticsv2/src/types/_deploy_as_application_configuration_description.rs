@@ -28,6 +28,7 @@ pub struct DeployAsApplicationConfigurationDescriptionBuilder {
 }
 impl DeployAsApplicationConfigurationDescriptionBuilder {
     /// <p>The location that holds the data required to specify an Amazon Data Analytics application.</p>
+    /// This field is required.
     pub fn s3_content_location_description(mut self, input: crate::types::S3ContentBaseLocationDescription) -> Self {
         self.s3_content_location_description = ::std::option::Option::Some(input);
         self

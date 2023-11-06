@@ -125,12 +125,16 @@ pub struct Task {
 }
 impl Task {
     /// <p>The Elastic Network Adapter that's associated with the task if the task uses the <code>awsvpc</code> network mode.</p>
-    pub fn attachments(&self) -> ::std::option::Option<&[crate::types::Attachment]> {
-        self.attachments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attachments.is_none()`.
+    pub fn attachments(&self) -> &[crate::types::Attachment] {
+        self.attachments.as_deref().unwrap_or_default()
     }
     /// <p>The attributes of the task</p>
-    pub fn attributes(&self) -> ::std::option::Option<&[crate::types::Attribute]> {
-        self.attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
+    pub fn attributes(&self) -> &[crate::types::Attribute] {
+        self.attributes.as_deref().unwrap_or_default()
     }
     /// <p>The Availability Zone for the task.</p>
     pub fn availability_zone(&self) -> ::std::option::Option<&str> {
@@ -157,8 +161,10 @@ impl Task {
         self.container_instance_arn.as_deref()
     }
     /// <p>The containers that's associated with the task.</p>
-    pub fn containers(&self) -> ::std::option::Option<&[crate::types::Container]> {
-        self.containers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.containers.is_none()`.
+    pub fn containers(&self) -> &[crate::types::Container] {
+        self.containers.as_deref().unwrap_or_default()
     }
     /// <p>The number of CPU units used by the task as expressed in a task definition. It can be expressed as an integer using CPU units (for example, <code>1024</code>). It can also be expressed as a string using vCPUs (for example, <code>1 vCPU</code> or <code>1 vcpu</code>). String values are converted to an integer that indicates the CPU units when the task definition is registered.</p>
     /// <p>If you use the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).</p>
@@ -203,8 +209,10 @@ impl Task {
         self.health_status.as_ref()
     }
     /// <p>The Elastic Inference accelerator that's associated with the task.</p>
-    pub fn inference_accelerators(&self) -> ::std::option::Option<&[crate::types::InferenceAccelerator]> {
-        self.inference_accelerators.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inference_accelerators.is_none()`.
+    pub fn inference_accelerators(&self) -> &[crate::types::InferenceAccelerator] {
+        self.inference_accelerators.as_deref().unwrap_or_default()
     }
     /// <p>The last known status for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task Lifecycle</a>.</p>
     pub fn last_status(&self) -> ::std::option::Option<&str> {
@@ -295,8 +303,10 @@ impl Task {
     /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
     pub fn task_arn(&self) -> ::std::option::Option<&str> {

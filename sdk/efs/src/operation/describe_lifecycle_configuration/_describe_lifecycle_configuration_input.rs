@@ -27,6 +27,7 @@ pub struct DescribeLifecycleConfigurationInputBuilder {
 }
 impl DescribeLifecycleConfigurationInputBuilder {
     /// <p>The ID of the file system whose <code>LifecycleConfiguration</code> object you want to retrieve (String).</p>
+    /// This field is required.
     pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeLifecycleConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationInput {
             file_system_id: self.file_system_id,

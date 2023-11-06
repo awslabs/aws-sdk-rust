@@ -56,7 +56,7 @@ where
 pub fn ser_database_identifier(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DatabaseIdentifier,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.catalog_id {
         object.key("CatalogId").string(var_1.as_str());
     }

@@ -55,6 +55,7 @@ impl GetConsoleScreenshotInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl GetConsoleScreenshotInputBuilder {
     /// Consumes the builder and constructs a [`GetConsoleScreenshotInput`](crate::operation::get_console_screenshot::GetConsoleScreenshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_console_screenshot::GetConsoleScreenshotInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_console_screenshot::GetConsoleScreenshotInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_console_screenshot::GetConsoleScreenshotInput {
             dry_run: self.dry_run,

@@ -27,8 +27,10 @@ pub struct PredictiveScalingConfiguration {
 impl PredictiveScalingConfiguration {
     /// <p>This structure includes the metrics and target utilization to use for predictive scaling. </p>
     /// <p>This is an array, but we currently only support a single metric specification. That is, you can specify a target value and a single metric pair, or a target value and one scaling metric and one load metric.</p>
-    pub fn metric_specifications(&self) -> ::std::option::Option<&[crate::types::PredictiveScalingMetricSpecification]> {
-        self.metric_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_specifications.is_none()`.
+    pub fn metric_specifications(&self) -> &[crate::types::PredictiveScalingMetricSpecification] {
+        self.metric_specifications.as_deref().unwrap_or_default()
     }
     /// <p>The predictive scaling mode. Defaults to <code>ForecastOnly</code> if not specified.</p>
     pub fn mode(&self) -> ::std::option::Option<&crate::types::PredictiveScalingMode> {

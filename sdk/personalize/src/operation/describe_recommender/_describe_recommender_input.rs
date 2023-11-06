@@ -27,6 +27,7 @@ pub struct DescribeRecommenderInputBuilder {
 }
 impl DescribeRecommenderInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the recommender to describe.</p>
+    /// This field is required.
     pub fn recommender_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommender_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeRecommenderInputBuilder {
     /// Consumes the builder and constructs a [`DescribeRecommenderInput`](crate::operation::describe_recommender::DescribeRecommenderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_recommender::DescribeRecommenderInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_recommender::DescribeRecommenderInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_recommender::DescribeRecommenderInput {
             recommender_arn: self.recommender_arn,

@@ -22,12 +22,16 @@ impl SearchSkillGroupsInput {
         self.max_results
     }
     /// <p>The filters to use to list a specified set of skill groups. The supported filter key is SkillGroupName. </p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The sort order to use in listing the specified set of skill groups. The supported sort key is SkillGroupName. </p>
-    pub fn sort_criteria(&self) -> ::std::option::Option<&[crate::types::Sort]> {
-        self.sort_criteria.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sort_criteria.is_none()`.
+    pub fn sort_criteria(&self) -> &[crate::types::Sort] {
+        self.sort_criteria.as_deref().unwrap_or_default()
     }
 }
 impl SearchSkillGroupsInput {
@@ -118,7 +122,7 @@ impl SearchSkillGroupsInputBuilder {
     /// Consumes the builder and constructs a [`SearchSkillGroupsInput`](crate::operation::search_skill_groups::SearchSkillGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_skill_groups::SearchSkillGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::search_skill_groups::SearchSkillGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_skill_groups::SearchSkillGroupsInput {
             next_token: self.next_token,
             max_results: self.max_results,

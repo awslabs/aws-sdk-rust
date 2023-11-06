@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PutProfileObjectTypeOutput {
     /// <p>The name of the profile object type.</p>
-    pub object_type_name: ::std::option::Option<::std::string::String>,
+    pub object_type_name: ::std::string::String,
     /// <p>Description of the profile object type.</p>
-    pub description: ::std::option::Option<::std::string::String>,
+    pub description: ::std::string::String,
     /// <p>A unique identifier for the object template.</p>
     pub template_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of days until the data in the object expires.</p>
@@ -31,12 +31,14 @@ pub struct PutProfileObjectTypeOutput {
 }
 impl PutProfileObjectTypeOutput {
     /// <p>The name of the profile object type.</p>
-    pub fn object_type_name(&self) -> ::std::option::Option<&str> {
-        self.object_type_name.as_deref()
+    pub fn object_type_name(&self) -> &str {
+        use std::ops::Deref;
+        self.object_type_name.deref()
     }
     /// <p>Description of the profile object type.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
-        self.description.as_deref()
+    pub fn description(&self) -> &str {
+        use std::ops::Deref;
+        self.description.deref()
     }
     /// <p>A unique identifier for the object template.</p>
     pub fn template_id(&self) -> ::std::option::Option<&str> {
@@ -130,6 +132,7 @@ pub struct PutProfileObjectTypeOutputBuilder {
 }
 impl PutProfileObjectTypeOutputBuilder {
     /// <p>The name of the profile object type.</p>
+    /// This field is required.
     pub fn object_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_type_name = ::std::option::Option::Some(input.into());
         self
@@ -144,6 +147,7 @@ impl PutProfileObjectTypeOutputBuilder {
         &self.object_type_name
     }
     /// <p>Description of the profile object type.</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -333,10 +337,26 @@ impl PutProfileObjectTypeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutProfileObjectTypeOutput`](crate::operation::put_profile_object_type::PutProfileObjectTypeOutput).
-    pub fn build(self) -> crate::operation::put_profile_object_type::PutProfileObjectTypeOutput {
-        crate::operation::put_profile_object_type::PutProfileObjectTypeOutput {
-            object_type_name: self.object_type_name,
-            description: self.description,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`object_type_name`](crate::operation::put_profile_object_type::builders::PutProfileObjectTypeOutputBuilder::object_type_name)
+    /// - [`description`](crate::operation::put_profile_object_type::builders::PutProfileObjectTypeOutputBuilder::description)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::put_profile_object_type::PutProfileObjectTypeOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::put_profile_object_type::PutProfileObjectTypeOutput {
+            object_type_name: self.object_type_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "object_type_name",
+                    "object_type_name was not specified but it is required when building PutProfileObjectTypeOutput",
+                )
+            })?,
+            description: self.description.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "description",
+                    "description was not specified but it is required when building PutProfileObjectTypeOutput",
+                )
+            })?,
             template_id: self.template_id,
             expiration_days: self.expiration_days,
             encryption_key: self.encryption_key,
@@ -348,7 +368,7 @@ impl PutProfileObjectTypeOutputBuilder {
             last_updated_at: self.last_updated_at,
             tags: self.tags,
             _request_id: self._request_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for PutProfileObjectTypeOutputBuilder {

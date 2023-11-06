@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeCampaign`](crate::operation::describe_campaign::builders::DescribeCampaignFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`campaign_arn(impl Into<String>)`](crate::operation::describe_campaign::builders::DescribeCampaignFluentBuilder::campaign_arn) / [`set_campaign_arn(Option<String>)`](crate::operation::describe_campaign::builders::DescribeCampaignFluentBuilder::set_campaign_arn): <p>The Amazon Resource Name (ARN) of the campaign.</p>
+    ///   - [`campaign_arn(impl Into<String>)`](crate::operation::describe_campaign::builders::DescribeCampaignFluentBuilder::campaign_arn) / [`set_campaign_arn(Option<String>)`](crate::operation::describe_campaign::builders::DescribeCampaignFluentBuilder::set_campaign_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the campaign.</p><br>
     /// - On success, responds with [`DescribeCampaignOutput`](crate::operation::describe_campaign::DescribeCampaignOutput) with field(s):
     ///   - [`campaign(Option<Campaign>)`](crate::operation::describe_campaign::DescribeCampaignOutput::campaign): <p>The properties of the campaign.</p>
     /// - On failure, responds with [`SdkError<DescribeCampaignError>`](crate::operation::describe_campaign::DescribeCampaignError)

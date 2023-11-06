@@ -44,20 +44,26 @@ impl UpdateStudioComponentInput {
         self.description.as_deref()
     }
     /// <p>The EC2 security groups that control access to the studio component.</p>
-    pub fn ec2_security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ec2_security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ec2_security_group_ids.is_none()`.
+    pub fn ec2_security_group_ids(&self) -> &[::std::string::String] {
+        self.ec2_security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>Initialization scripts for studio components.</p>
-    pub fn initialization_scripts(&self) -> ::std::option::Option<&[crate::types::StudioComponentInitializationScript]> {
-        self.initialization_scripts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.initialization_scripts.is_none()`.
+    pub fn initialization_scripts(&self) -> &[crate::types::StudioComponentInitializationScript] {
+        self.initialization_scripts.as_deref().unwrap_or_default()
     }
     /// <p>The name for the studio component.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Parameters for the studio component scripts.</p>
-    pub fn script_parameters(&self) -> ::std::option::Option<&[crate::types::ScriptParameterKeyValue]> {
-        self.script_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.script_parameters.is_none()`.
+    pub fn script_parameters(&self) -> &[crate::types::ScriptParameterKeyValue] {
+        self.script_parameters.as_deref().unwrap_or_default()
     }
     /// <p>The studio component ID.</p>
     pub fn studio_component_id(&self) -> ::std::option::Option<&str> {
@@ -249,6 +255,7 @@ impl UpdateStudioComponentInputBuilder {
         &self.script_parameters
     }
     /// <p>The studio component ID.</p>
+    /// This field is required.
     pub fn studio_component_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_component_id = ::std::option::Option::Some(input.into());
         self
@@ -263,6 +270,7 @@ impl UpdateStudioComponentInputBuilder {
         &self.studio_component_id
     }
     /// <p>The studio ID. </p>
+    /// This field is required.
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
         self
@@ -335,7 +343,7 @@ impl UpdateStudioComponentInputBuilder {
     /// Consumes the builder and constructs a [`UpdateStudioComponentInput`](crate::operation::update_studio_component::UpdateStudioComponentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_studio_component::UpdateStudioComponentInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_studio_component::UpdateStudioComponentInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_studio_component::UpdateStudioComponentInput {
             client_token: self.client_token,

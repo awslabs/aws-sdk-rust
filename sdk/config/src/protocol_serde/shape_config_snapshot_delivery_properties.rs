@@ -2,7 +2,7 @@
 pub fn ser_config_snapshot_delivery_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ConfigSnapshotDeliveryProperties,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.delivery_frequency {
         object.key("deliveryFrequency").string(var_1.as_str());
     }

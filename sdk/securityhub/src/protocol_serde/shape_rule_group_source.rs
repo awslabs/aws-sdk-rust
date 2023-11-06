@@ -2,7 +2,7 @@
 pub fn ser_rule_group_source(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RuleGroupSource,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.rules_source_list {
         #[allow(unused_mut)]
         let mut object_2 = object.key("RulesSourceList").start_object();

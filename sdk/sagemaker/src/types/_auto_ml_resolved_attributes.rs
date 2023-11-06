@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoMlResolvedAttributes {
-    /// <p>Specifies a metric to minimize or maximize as the objective of a job.</p>
+    /// <p>Specifies a metric to minimize or maximize as the objective of an AutoML job.</p>
     pub auto_ml_job_objective: ::std::option::Option<crate::types::AutoMlJobObjective>,
     /// <p>How long a job is allowed to run, or how many candidates a job is allowed to generate.</p>
     pub completion_criteria: ::std::option::Option<crate::types::AutoMlJobCompletionCriteria>,
@@ -12,7 +12,7 @@ pub struct AutoMlResolvedAttributes {
     pub auto_ml_problem_type_resolved_attributes: ::std::option::Option<crate::types::AutoMlProblemTypeResolvedAttributes>,
 }
 impl AutoMlResolvedAttributes {
-    /// <p>Specifies a metric to minimize or maximize as the objective of a job.</p>
+    /// <p>Specifies a metric to minimize or maximize as the objective of an AutoML job.</p>
     pub fn auto_ml_job_objective(&self) -> ::std::option::Option<&crate::types::AutoMlJobObjective> {
         self.auto_ml_job_objective.as_ref()
     }
@@ -41,17 +41,17 @@ pub struct AutoMlResolvedAttributesBuilder {
     pub(crate) auto_ml_problem_type_resolved_attributes: ::std::option::Option<crate::types::AutoMlProblemTypeResolvedAttributes>,
 }
 impl AutoMlResolvedAttributesBuilder {
-    /// <p>Specifies a metric to minimize or maximize as the objective of a job.</p>
+    /// <p>Specifies a metric to minimize or maximize as the objective of an AutoML job.</p>
     pub fn auto_ml_job_objective(mut self, input: crate::types::AutoMlJobObjective) -> Self {
         self.auto_ml_job_objective = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies a metric to minimize or maximize as the objective of a job.</p>
+    /// <p>Specifies a metric to minimize or maximize as the objective of an AutoML job.</p>
     pub fn set_auto_ml_job_objective(mut self, input: ::std::option::Option<crate::types::AutoMlJobObjective>) -> Self {
         self.auto_ml_job_objective = input;
         self
     }
-    /// <p>Specifies a metric to minimize or maximize as the objective of a job.</p>
+    /// <p>Specifies a metric to minimize or maximize as the objective of an AutoML job.</p>
     pub fn get_auto_ml_job_objective(&self) -> &::std::option::Option<crate::types::AutoMlJobObjective> {
         &self.auto_ml_job_objective
     }

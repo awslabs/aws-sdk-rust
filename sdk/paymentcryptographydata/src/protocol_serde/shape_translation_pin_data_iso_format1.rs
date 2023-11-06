@@ -2,6 +2,6 @@
 pub fn ser_translation_pin_data_iso_format1(
     #[allow(unused_variables)] object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     #[allow(unused_variables)] input: &crate::types::TranslationPinDataIsoFormat1,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     Ok(())
 }

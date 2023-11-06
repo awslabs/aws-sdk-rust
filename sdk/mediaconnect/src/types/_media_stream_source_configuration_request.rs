@@ -17,8 +17,10 @@ impl MediaStreamSourceConfigurationRequest {
         self.encoding_name.as_ref()
     }
     /// The transport parameters that you want to associate with the media stream.
-    pub fn input_configurations(&self) -> ::std::option::Option<&[crate::types::InputConfigurationRequest]> {
-        self.input_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_configurations.is_none()`.
+    pub fn input_configurations(&self) -> &[crate::types::InputConfigurationRequest] {
+        self.input_configurations.as_deref().unwrap_or_default()
     }
     /// The name of the media stream.
     pub fn media_stream_name(&self) -> ::std::option::Option<&str> {
@@ -42,6 +44,7 @@ pub struct MediaStreamSourceConfigurationRequestBuilder {
 }
 impl MediaStreamSourceConfigurationRequestBuilder {
     /// The format you want to use to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding name to jxsv.
+    /// This field is required.
     pub fn encoding_name(mut self, input: crate::types::EncodingName) -> Self {
         self.encoding_name = ::std::option::Option::Some(input);
         self
@@ -76,6 +79,7 @@ impl MediaStreamSourceConfigurationRequestBuilder {
         &self.input_configurations
     }
     /// The name of the media stream.
+    /// This field is required.
     pub fn media_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.media_stream_name = ::std::option::Option::Some(input.into());
         self

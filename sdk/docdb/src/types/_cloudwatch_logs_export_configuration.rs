@@ -12,12 +12,16 @@ pub struct CloudwatchLogsExportConfiguration {
 }
 impl CloudwatchLogsExportConfiguration {
     /// <p>The list of log types to enable.</p>
-    pub fn enable_log_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.enable_log_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enable_log_types.is_none()`.
+    pub fn enable_log_types(&self) -> &[::std::string::String] {
+        self.enable_log_types.as_deref().unwrap_or_default()
     }
     /// <p>The list of log types to disable.</p>
-    pub fn disable_log_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.disable_log_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.disable_log_types.is_none()`.
+    pub fn disable_log_types(&self) -> &[::std::string::String] {
+        self.disable_log_types.as_deref().unwrap_or_default()
     }
 }
 impl CloudwatchLogsExportConfiguration {

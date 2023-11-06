@@ -56,6 +56,7 @@ impl CreateClusterInputBuilder {
         &self.client_token
     }
     /// <p>The name of the cluster.</p>
+    /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
@@ -92,7 +93,7 @@ impl CreateClusterInputBuilder {
     /// Consumes the builder and constructs a [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_cluster::CreateClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_cluster::CreateClusterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_cluster::CreateClusterInput {
             client_token: self.client_token,
             cluster_name: self.cluster_name,

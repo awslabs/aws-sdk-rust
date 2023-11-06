@@ -27,8 +27,10 @@ impl AccessScopeAnalysisFinding {
         self.finding_id.as_deref()
     }
     /// <p>The finding components.</p>
-    pub fn finding_components(&self) -> ::std::option::Option<&[crate::types::PathComponent]> {
-        self.finding_components.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.finding_components.is_none()`.
+    pub fn finding_components(&self) -> &[crate::types::PathComponent] {
+        self.finding_components.as_deref().unwrap_or_default()
     }
 }
 impl AccessScopeAnalysisFinding {

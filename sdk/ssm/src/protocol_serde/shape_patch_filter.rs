@@ -2,18 +2,18 @@
 pub fn ser_patch_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PatchFilter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.key {
-        object.key("Key").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Key").string(input.key.as_str());
     }
-    if let Some(var_2) = &input.values {
-        let mut array_3 = object.key("Values").start_array();
-        for item_4 in var_2 {
+    {
+        let mut array_1 = object.key("Values").start_array();
+        for item_2 in &input.values {
             {
-                array_3.value().string(item_4.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_3.finish();
+        array_1.finish();
     }
     Ok(())
 }
@@ -53,7 +53,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::patch_filter_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

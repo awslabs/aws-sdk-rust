@@ -8,8 +8,10 @@ pub struct CreateAwsLogSourceInput {
 }
 impl CreateAwsLogSourceInput {
     /// <p>Specify the natively-supported Amazon Web Services service to add as a source in Security Lake.</p>
-    pub fn sources(&self) -> ::std::option::Option<&[crate::types::AwsLogSourceConfiguration]> {
-        self.sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
+    pub fn sources(&self) -> &[crate::types::AwsLogSourceConfiguration] {
+        self.sources.as_deref().unwrap_or_default()
     }
 }
 impl CreateAwsLogSourceInput {
@@ -49,7 +51,7 @@ impl CreateAwsLogSourceInputBuilder {
     /// Consumes the builder and constructs a [`CreateAwsLogSourceInput`](crate::operation::create_aws_log_source::CreateAwsLogSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_aws_log_source::CreateAwsLogSourceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_aws_log_source::CreateAwsLogSourceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_aws_log_source::CreateAwsLogSourceInput { sources: self.sources })
     }

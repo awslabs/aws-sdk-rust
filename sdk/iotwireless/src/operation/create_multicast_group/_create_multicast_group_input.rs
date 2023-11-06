@@ -32,8 +32,10 @@ impl CreateMulticastGroupInput {
         self.lo_ra_wan.as_ref()
     }
     /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateMulticastGroupInput {
@@ -97,6 +99,7 @@ impl CreateMulticastGroupInputBuilder {
         &self.client_request_token
     }
     /// <p>The LoRaWAN information that is to be used with the multicast group.</p>
+    /// This field is required.
     pub fn lo_ra_wan(mut self, input: crate::types::LoRaWanMulticast) -> Self {
         self.lo_ra_wan = ::std::option::Option::Some(input);
         self
@@ -133,7 +136,7 @@ impl CreateMulticastGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateMulticastGroupInput`](crate::operation::create_multicast_group::CreateMulticastGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_multicast_group::CreateMulticastGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_multicast_group::CreateMulticastGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_multicast_group::CreateMulticastGroupInput {
             name: self.name,

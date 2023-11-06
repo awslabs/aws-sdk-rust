@@ -27,6 +27,7 @@ pub struct GetWirelessGatewayFirmwareInformationInputBuilder {
 }
 impl GetWirelessGatewayFirmwareInformationInputBuilder {
     /// <p>The ID of the resource to get.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetWirelessGatewayFirmwareInformationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_wireless_gateway_firmware_information::GetWirelessGatewayFirmwareInformationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_wireless_gateway_firmware_information::GetWirelessGatewayFirmwareInformationInput { id: self.id },

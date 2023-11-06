@@ -44,7 +44,7 @@ impl ListReceiptRuleSetsInputBuilder {
     /// Consumes the builder and constructs a [`ListReceiptRuleSetsInput`](crate::operation::list_receipt_rule_sets::ListReceiptRuleSetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_receipt_rule_sets::ListReceiptRuleSetsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_receipt_rule_sets::ListReceiptRuleSetsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_receipt_rule_sets::ListReceiptRuleSetsInput { next_token: self.next_token })
     }

@@ -2,7 +2,7 @@
 pub fn ser_output_group(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OutputGroup,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.automated_encoding_settings {
         #[allow(unused_mut)]
         let mut object_2 = object.key("automatedEncodingSettings").start_object();
@@ -75,7 +75,7 @@ where
                                 .set_output_group_settings(crate::protocol_serde::shape_output_group_settings::de_output_group_settings(tokens)?);
                         }
                         "outputs" => {
-                            builder = builder.set_outputs(crate::protocol_serde::shape___list_of_output::de___list_of_output(tokens)?);
+                            builder = builder.set_outputs(crate::protocol_serde::shape_list_of_output::de_list_of_output(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

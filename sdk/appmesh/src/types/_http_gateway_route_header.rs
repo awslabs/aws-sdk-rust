@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HttpGatewayRouteHeader {
     /// <p>A name for the HTTP header in the gateway route that will be matched on.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>Specify <code>True</code> to match anything except the match criteria. The default value is <code>False</code>.</p>
     pub invert: ::std::option::Option<bool>,
     /// <p>An object that represents the method and value to match with the header value sent in a request. Specify one match method.</p>
@@ -13,8 +13,9 @@ pub struct HttpGatewayRouteHeader {
 }
 impl HttpGatewayRouteHeader {
     /// <p>A name for the HTTP header in the gateway route that will be matched on.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>Specify <code>True</code> to match anything except the match criteria. The default value is <code>False</code>.</p>
     pub fn invert(&self) -> ::std::option::Option<bool> {
@@ -42,6 +43,7 @@ pub struct HttpGatewayRouteHeaderBuilder {
 }
 impl HttpGatewayRouteHeaderBuilder {
     /// <p>A name for the HTTP header in the gateway route that will be matched on.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +86,18 @@ impl HttpGatewayRouteHeaderBuilder {
         &self.r#match
     }
     /// Consumes the builder and constructs a [`HttpGatewayRouteHeader`](crate::types::HttpGatewayRouteHeader).
-    pub fn build(self) -> crate::types::HttpGatewayRouteHeader {
-        crate::types::HttpGatewayRouteHeader {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::HttpGatewayRouteHeaderBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::HttpGatewayRouteHeader, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::HttpGatewayRouteHeader {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building HttpGatewayRouteHeader",
+                )
+            })?,
             invert: self.invert,
             r#match: self.r#match,
-        }
+        })
     }
 }

@@ -14,8 +14,10 @@ impl PutProtocolsListInput {
         self.protocols_list.as_ref()
     }
     /// <p>The tags associated with the resource.</p>
-    pub fn tag_list(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tag_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_list.is_none()`.
+    pub fn tag_list(&self) -> &[crate::types::Tag] {
+        self.tag_list.as_deref().unwrap_or_default()
     }
 }
 impl PutProtocolsListInput {
@@ -34,6 +36,7 @@ pub struct PutProtocolsListInputBuilder {
 }
 impl PutProtocolsListInputBuilder {
     /// <p>The details of the Firewall Manager protocols list to be created.</p>
+    /// This field is required.
     pub fn protocols_list(mut self, input: crate::types::ProtocolsListData) -> Self {
         self.protocols_list = ::std::option::Option::Some(input);
         self
@@ -70,7 +73,7 @@ impl PutProtocolsListInputBuilder {
     /// Consumes the builder and constructs a [`PutProtocolsListInput`](crate::operation::put_protocols_list::PutProtocolsListInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_protocols_list::PutProtocolsListInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_protocols_list::PutProtocolsListInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_protocols_list::PutProtocolsListInput {
             protocols_list: self.protocols_list,
             tag_list: self.tag_list,

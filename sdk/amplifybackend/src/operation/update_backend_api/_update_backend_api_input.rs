@@ -49,6 +49,7 @@ pub struct UpdateBackendApiInputBuilder {
 }
 impl UpdateBackendApiInputBuilder {
     /// <p>The app ID.</p>
+    /// This field is required.
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl UpdateBackendApiInputBuilder {
         &self.app_id
     }
     /// <p>The name of the backend environment.</p>
+    /// This field is required.
     pub fn backend_environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backend_environment_name = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +93,7 @@ impl UpdateBackendApiInputBuilder {
         &self.resource_config
     }
     /// <p>The name of this resource.</p>
+    /// This field is required.
     pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self
@@ -107,7 +110,7 @@ impl UpdateBackendApiInputBuilder {
     /// Consumes the builder and constructs a [`UpdateBackendApiInput`](crate::operation::update_backend_api::UpdateBackendApiInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_backend_api::UpdateBackendApiInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_backend_api::UpdateBackendApiInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_backend_api::UpdateBackendApiInput {
             app_id: self.app_id,
             backend_environment_name: self.backend_environment_name,

@@ -48,6 +48,7 @@ pub struct StartConfigurationSessionInputBuilder {
 }
 impl StartConfigurationSessionInputBuilder {
     /// <p>The application ID or the application name.</p>
+    /// This field is required.
     pub fn application_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_identifier = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl StartConfigurationSessionInputBuilder {
         &self.application_identifier
     }
     /// <p>The environment ID or the environment name.</p>
+    /// This field is required.
     pub fn environment_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_identifier = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl StartConfigurationSessionInputBuilder {
         &self.environment_identifier
     }
     /// <p>The configuration profile ID or the configuration profile name.</p>
+    /// This field is required.
     pub fn configuration_profile_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_profile_identifier = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +111,7 @@ impl StartConfigurationSessionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_configuration_session::StartConfigurationSessionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_configuration_session::StartConfigurationSessionInput {
             application_identifier: self.application_identifier,

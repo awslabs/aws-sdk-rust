@@ -34,6 +34,7 @@ pub struct RollbackApplicationInputBuilder {
 }
 impl RollbackApplicationInputBuilder {
     /// <p>The name of the application.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl RollbackApplicationInputBuilder {
         &self.application_name
     }
     /// <p>The current application version ID. You can retrieve the application version ID using <code>DescribeApplication</code>.</p>
+    /// This field is required.
     pub fn current_application_version_id(mut self, input: i64) -> Self {
         self.current_application_version_id = ::std::option::Option::Some(input);
         self
@@ -64,7 +66,7 @@ impl RollbackApplicationInputBuilder {
     /// Consumes the builder and constructs a [`RollbackApplicationInput`](crate::operation::rollback_application::RollbackApplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::rollback_application::RollbackApplicationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::rollback_application::RollbackApplicationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::rollback_application::RollbackApplicationInput {
             application_name: self.application_name,

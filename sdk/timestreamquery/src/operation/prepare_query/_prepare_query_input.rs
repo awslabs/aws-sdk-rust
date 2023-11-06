@@ -42,6 +42,7 @@ pub struct PrepareQueryInputBuilder {
 }
 impl PrepareQueryInputBuilder {
     /// <p>The Timestream query string that you want to use as a prepared statement. Parameter names can be specified in the query string <code>@</code> character followed by an identifier. </p>
+    /// This field is required.
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_string = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +71,9 @@ impl PrepareQueryInputBuilder {
         &self.validate_only
     }
     /// Consumes the builder and constructs a [`PrepareQueryInput`](crate::operation::prepare_query::PrepareQueryInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::prepare_query::PrepareQueryInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::prepare_query::PrepareQueryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::prepare_query::PrepareQueryInput {
             query_string: self.query_string,
             validate_only: self.validate_only,

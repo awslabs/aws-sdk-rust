@@ -2,7 +2,7 @@
 pub fn ser_kinesis_video_stream_start_selector(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::KinesisVideoStreamStartSelector,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.producer_timestamp {
         object.key("ProducerTimestamp").number(
             #[allow(clippy::useless_conversion)]

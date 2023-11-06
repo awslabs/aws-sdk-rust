@@ -2,15 +2,15 @@
 pub fn ser_trigger_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TriggerConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.trigger_type {
-        object.key("TriggerType").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("TriggerType").string(input.trigger_type.as_str());
     }
-    if let Some(var_2) = &input.trigger_properties {
+    if let Some(var_1) = &input.trigger_properties {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("TriggerProperties").start_object();
-        crate::protocol_serde::shape_trigger_properties::ser_trigger_properties(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("TriggerProperties").start_object();
+        crate::protocol_serde::shape_trigger_properties::ser_trigger_properties(&mut object_2, var_1)?;
+        object_2.finish();
     }
     Ok(())
 }

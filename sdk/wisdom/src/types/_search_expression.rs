@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchExpression {
     /// <p>The search expression filters.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub filters: ::std::vec::Vec<crate::types::Filter>,
 }
 impl SearchExpression {
     /// <p>The search expression filters.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        use std::ops::Deref;
+        self.filters.deref()
     }
 }
 impl SearchExpression {
@@ -48,7 +49,16 @@ impl SearchExpressionBuilder {
         &self.filters
     }
     /// Consumes the builder and constructs a [`SearchExpression`](crate::types::SearchExpression).
-    pub fn build(self) -> crate::types::SearchExpression {
-        crate::types::SearchExpression { filters: self.filters }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`filters`](crate::types::builders::SearchExpressionBuilder::filters)
+    pub fn build(self) -> ::std::result::Result<crate::types::SearchExpression, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SearchExpression {
+            filters: self.filters.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "filters",
+                    "filters was not specified but it is required when building SearchExpression",
+                )
+            })?,
+        })
     }
 }

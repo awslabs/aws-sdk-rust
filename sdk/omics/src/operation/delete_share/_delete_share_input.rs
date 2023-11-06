@@ -27,6 +27,7 @@ pub struct DeleteShareInputBuilder {
 }
 impl DeleteShareInputBuilder {
     /// <p> The ID for the share request to be deleted. </p>
+    /// This field is required.
     pub fn share_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.share_id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl DeleteShareInputBuilder {
         &self.share_id
     }
     /// Consumes the builder and constructs a [`DeleteShareInput`](crate::operation::delete_share::DeleteShareInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_share::DeleteShareInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_share::DeleteShareInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_share::DeleteShareInput { share_id: self.share_id })
     }
 }

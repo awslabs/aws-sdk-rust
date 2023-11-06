@@ -37,8 +37,10 @@ impl DescribeVpcEndpointsInput {
         self.dry_run
     }
     /// <p>The IDs of the VPC endpoints.</p>
-    pub fn vpc_endpoint_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.vpc_endpoint_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_endpoint_ids.is_none()`.
+    pub fn vpc_endpoint_ids(&self) -> &[::std::string::String] {
+        self.vpc_endpoint_ids.as_deref().unwrap_or_default()
     }
     /// <p>The filters.</p>
     /// <ul>
@@ -57,8 +59,10 @@ impl DescribeVpcEndpointsInput {
     /// <li> <p> <code>vpc-endpoint-state</code> - The state of the endpoint (<code>pendingAcceptance</code> | <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code> | <code>rejected</code> | <code>failed</code>).</p> </li>
     /// <li> <p> <code>vpc-endpoint-type</code> - The type of VPC endpoint (<code>Interface</code> | <code>Gateway</code> | <code>GatewayLoadBalancer</code>).</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of items to return for this request. The request returns a token that you can specify in a subsequent call to get the next set of results.</p>
     /// <p>Constraint: If the value is greater than 1,000, we return only 1,000 items.</p>
@@ -224,7 +228,7 @@ impl DescribeVpcEndpointsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeVpcEndpointsInput`](crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsInput {
             dry_run: self.dry_run,

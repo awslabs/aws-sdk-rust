@@ -7,7 +7,7 @@ pub struct NotificationWithSubscribers {
     /// <p>The notification that's associated with a budget.</p>
     pub notification: ::std::option::Option<crate::types::Notification>,
     /// <p>A list of subscribers who are subscribed to this notification.</p>
-    pub subscribers: ::std::option::Option<::std::vec::Vec<crate::types::Subscriber>>,
+    pub subscribers: ::std::vec::Vec<crate::types::Subscriber>,
 }
 impl NotificationWithSubscribers {
     /// <p>The notification that's associated with a budget.</p>
@@ -15,8 +15,9 @@ impl NotificationWithSubscribers {
         self.notification.as_ref()
     }
     /// <p>A list of subscribers who are subscribed to this notification.</p>
-    pub fn subscribers(&self) -> ::std::option::Option<&[crate::types::Subscriber]> {
-        self.subscribers.as_deref()
+    pub fn subscribers(&self) -> &[crate::types::Subscriber] {
+        use std::ops::Deref;
+        self.subscribers.deref()
     }
 }
 impl NotificationWithSubscribers {
@@ -35,6 +36,7 @@ pub struct NotificationWithSubscribersBuilder {
 }
 impl NotificationWithSubscribersBuilder {
     /// <p>The notification that's associated with a budget.</p>
+    /// This field is required.
     pub fn notification(mut self, input: crate::types::Notification) -> Self {
         self.notification = ::std::option::Option::Some(input);
         self
@@ -69,10 +71,17 @@ impl NotificationWithSubscribersBuilder {
         &self.subscribers
     }
     /// Consumes the builder and constructs a [`NotificationWithSubscribers`](crate::types::NotificationWithSubscribers).
-    pub fn build(self) -> crate::types::NotificationWithSubscribers {
-        crate::types::NotificationWithSubscribers {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`subscribers`](crate::types::builders::NotificationWithSubscribersBuilder::subscribers)
+    pub fn build(self) -> ::std::result::Result<crate::types::NotificationWithSubscribers, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::NotificationWithSubscribers {
             notification: self.notification,
-            subscribers: self.subscribers,
-        }
+            subscribers: self.subscribers.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "subscribers",
+                    "subscribers was not specified but it is required when building NotificationWithSubscribers",
+                )
+            })?,
+        })
     }
 }

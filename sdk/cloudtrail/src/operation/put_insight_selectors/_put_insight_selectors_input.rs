@@ -18,8 +18,10 @@ impl PutInsightSelectorsInput {
     /// <p>A JSON string that contains the insight types you want to log on a trail. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid Insight types.</p>
     /// <p>The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are aggregated per minute against a baseline API call volume.</p>
     /// <p>The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error codes. The error is shown if the API call is unsuccessful.</p>
-    pub fn insight_selectors(&self) -> ::std::option::Option<&[crate::types::InsightSelector]> {
-        self.insight_selectors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.insight_selectors.is_none()`.
+    pub fn insight_selectors(&self) -> &[crate::types::InsightSelector] {
+        self.insight_selectors.as_deref().unwrap_or_default()
     }
 }
 impl PutInsightSelectorsInput {
@@ -38,6 +40,7 @@ pub struct PutInsightSelectorsInputBuilder {
 }
 impl PutInsightSelectorsInputBuilder {
     /// <p>The name of the CloudTrail trail for which you want to change or add Insights selectors.</p>
+    /// This field is required.
     pub fn trail_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trail_name = ::std::option::Option::Some(input.into());
         self
@@ -80,7 +83,7 @@ impl PutInsightSelectorsInputBuilder {
     /// Consumes the builder and constructs a [`PutInsightSelectorsInput`](crate::operation::put_insight_selectors::PutInsightSelectorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_insight_selectors::PutInsightSelectorsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_insight_selectors::PutInsightSelectorsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_insight_selectors::PutInsightSelectorsInput {
             trail_name: self.trail_name,

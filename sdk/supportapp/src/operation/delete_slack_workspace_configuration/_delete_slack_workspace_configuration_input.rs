@@ -27,6 +27,7 @@ pub struct DeleteSlackWorkspaceConfigurationInputBuilder {
 }
 impl DeleteSlackWorkspaceConfigurationInputBuilder {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
+    /// This field is required.
     pub fn team_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.team_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteSlackWorkspaceConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_slack_workspace_configuration::DeleteSlackWorkspaceConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_slack_workspace_configuration::DeleteSlackWorkspaceConfigurationInput { team_id: self.team_id },

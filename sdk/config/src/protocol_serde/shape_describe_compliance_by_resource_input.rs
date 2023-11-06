@@ -2,7 +2,7 @@
 pub fn ser_describe_compliance_by_resource_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_compliance_by_resource::DescribeComplianceByResourceInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.resource_type {
         object.key("ResourceType").string(var_1.as_str());
     }

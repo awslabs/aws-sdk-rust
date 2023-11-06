@@ -48,6 +48,7 @@ pub struct ListViewsInputBuilder {
 }
 impl ListViewsInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -104,7 +105,7 @@ impl ListViewsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListViewsInput`](crate::operation::list_views::ListViewsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_views::ListViewsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_views::ListViewsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_views::ListViewsInput {
             instance_id: self.instance_id,
             r#type: self.r#type,

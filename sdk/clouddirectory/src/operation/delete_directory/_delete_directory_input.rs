@@ -27,6 +27,7 @@ pub struct DeleteDirectoryInputBuilder {
 }
 impl DeleteDirectoryInputBuilder {
     /// <p>The ARN of the directory to delete.</p>
+    /// This field is required.
     pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteDirectoryInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDirectoryInput`](crate::operation::delete_directory::DeleteDirectoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_directory::DeleteDirectoryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_directory::DeleteDirectoryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_directory::DeleteDirectoryInput {
             directory_arn: self.directory_arn,
         })

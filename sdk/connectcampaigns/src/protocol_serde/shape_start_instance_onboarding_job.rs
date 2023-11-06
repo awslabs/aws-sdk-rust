@@ -35,11 +35,10 @@ pub fn de_start_instance_onboarding_job_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ConflictException" => crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobError::ConflictException({
@@ -57,11 +56,10 @@ pub fn de_start_instance_onboarding_job_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::conflict_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerException" => crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobError::InternalServerException({
@@ -79,11 +77,10 @@ pub fn de_start_instance_onboarding_job_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobError::ResourceNotFoundException({
@@ -101,11 +98,10 @@ pub fn de_start_instance_onboarding_job_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobError::ThrottlingException({
@@ -123,11 +119,10 @@ pub fn de_start_instance_onboarding_job_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobError::ValidationException({
@@ -145,11 +140,10 @@ pub fn de_start_instance_onboarding_job_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobError::generic(generic),
@@ -177,12 +171,12 @@ pub fn de_start_instance_onboarding_job_http_response(
 
 pub fn ser_start_instance_onboarding_job_input(
     input: &crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_start_instance_onboarding_job_input::ser_start_instance_onboarding_job_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_start_instance_onboarding_job(

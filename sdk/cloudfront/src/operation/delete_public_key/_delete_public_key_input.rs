@@ -34,6 +34,7 @@ pub struct DeletePublicKeyInputBuilder {
 }
 impl DeletePublicKeyInputBuilder {
     /// <p>The ID of the public key you want to remove from CloudFront.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl DeletePublicKeyInputBuilder {
     /// Consumes the builder and constructs a [`DeletePublicKeyInput`](crate::operation::delete_public_key::DeletePublicKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_public_key::DeletePublicKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_public_key::DeletePublicKeyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_public_key::DeletePublicKeyInput {
             id: self.id,
             if_match: self.if_match,

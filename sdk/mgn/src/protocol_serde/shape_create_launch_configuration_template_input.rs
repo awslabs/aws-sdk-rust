@@ -2,7 +2,7 @@
 pub fn ser_create_launch_configuration_template_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.associate_public_ip_address {
         object.key("associatePublicIpAddress").boolean(*var_1);
     }
@@ -48,24 +48,24 @@ pub fn ser_create_launch_configuration_template_input(
         crate::protocol_serde::shape_launch_template_disk_conf::ser_launch_template_disk_conf(&mut object_15, var_14)?;
         object_15.finish();
     }
-    if input.small_volume_max_size != 0 {
+    if let Some(var_16) = &input.small_volume_max_size {
         object.key("smallVolumeMaxSize").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.small_volume_max_size).into()),
+            ::aws_smithy_types::Number::NegInt((*var_16).into()),
         );
     }
-    if let Some(var_16) = &input.tags {
+    if let Some(var_17) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("tags").start_object();
-        for (key_18, value_19) in var_16 {
+        let mut object_18 = object.key("tags").start_object();
+        for (key_19, value_20) in var_17 {
             {
-                object_17.key(key_18.as_str()).string(value_19.as_str());
+                object_18.key(key_19.as_str()).string(value_20.as_str());
             }
         }
-        object_17.finish();
+        object_18.finish();
     }
-    if let Some(var_20) = &input.target_instance_type_right_sizing_method {
-        object.key("targetInstanceTypeRightSizingMethod").string(var_20.as_str());
+    if let Some(var_21) = &input.target_instance_type_right_sizing_method {
+        object.key("targetInstanceTypeRightSizingMethod").string(var_21.as_str());
     }
     Ok(())
 }

@@ -37,13 +37,13 @@ impl ::std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::abort_multipart_upload::AbortMultipartUploadError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::abort_multipart_upload::AbortMultipartUploadError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::abort_multipart_upload::AbortMultipartUploadError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::abort_multipart_upload::AbortMultipartUploadError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -72,13 +72,13 @@ impl From<crate::operation::abort_multipart_upload::AbortMultipartUploadError> f
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::abort_vault_lock::AbortVaultLockError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::abort_vault_lock::AbortVaultLockError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::abort_vault_lock::AbortVaultLockError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::abort_vault_lock::AbortVaultLockError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -103,13 +103,13 @@ impl From<crate::operation::abort_vault_lock::AbortVaultLockError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::add_tags_to_vault::AddTagsToVaultError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::add_tags_to_vault::AddTagsToVaultError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::add_tags_to_vault::AddTagsToVaultError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::add_tags_to_vault::AddTagsToVaultError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -135,13 +135,16 @@ impl From<crate::operation::add_tags_to_vault::AddTagsToVaultError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::complete_multipart_upload::CompleteMultipartUploadError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::complete_multipart_upload::CompleteMultipartUploadError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::complete_multipart_upload::CompleteMultipartUploadError, R>) -> Self {
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::complete_multipart_upload::CompleteMultipartUploadError, R>,
+    ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -170,13 +173,13 @@ impl From<crate::operation::complete_multipart_upload::CompleteMultipartUploadEr
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::complete_vault_lock::CompleteVaultLockError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::complete_vault_lock::CompleteVaultLockError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::complete_vault_lock::CompleteVaultLockError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::complete_vault_lock::CompleteVaultLockError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -205,13 +208,13 @@ impl From<crate::operation::complete_vault_lock::CompleteVaultLockError> for Err
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_vault::CreateVaultError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_vault::CreateVaultError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_vault::CreateVaultError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_vault::CreateVaultError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -232,13 +235,13 @@ impl From<crate::operation::create_vault::CreateVaultError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_archive::DeleteArchiveError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_archive::DeleteArchiveError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_archive::DeleteArchiveError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_archive::DeleteArchiveError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -263,13 +266,13 @@ impl From<crate::operation::delete_archive::DeleteArchiveError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_vault::DeleteVaultError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_vault::DeleteVaultError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_vault::DeleteVaultError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_vault::DeleteVaultError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -290,13 +293,16 @@ impl From<crate::operation::delete_vault::DeleteVaultError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_vault_access_policy::DeleteVaultAccessPolicyError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_vault_access_policy::DeleteVaultAccessPolicyError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_vault_access_policy::DeleteVaultAccessPolicyError, R>) -> Self {
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_vault_access_policy::DeleteVaultAccessPolicyError, R>,
+    ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -325,13 +331,16 @@ impl From<crate::operation::delete_vault_access_policy::DeleteVaultAccessPolicyE
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_vault_notifications::DeleteVaultNotificationsError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_vault_notifications::DeleteVaultNotificationsError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_vault_notifications::DeleteVaultNotificationsError, R>) -> Self {
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_vault_notifications::DeleteVaultNotificationsError, R>,
+    ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -360,13 +369,13 @@ impl From<crate::operation::delete_vault_notifications::DeleteVaultNotifications
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_job::DescribeJobError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_job::DescribeJobError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_job::DescribeJobError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_job::DescribeJobError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -387,13 +396,13 @@ impl From<crate::operation::describe_job::DescribeJobError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_vault::DescribeVaultError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_vault::DescribeVaultError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_vault::DescribeVaultError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_vault::DescribeVaultError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -418,13 +427,16 @@ impl From<crate::operation::describe_vault::DescribeVaultError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyError, R>) -> Self {
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyError, R>,
+    ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -450,13 +462,13 @@ impl From<crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyErr
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_job_output::GetJobOutputError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_job_output::GetJobOutputError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_job_output::GetJobOutputError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_job_output::GetJobOutputError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -481,13 +493,15 @@ impl From<crate::operation::get_job_output::GetJobOutputError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_vault_access_policy::GetVaultAccessPolicyError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_vault_access_policy::GetVaultAccessPolicyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_vault_access_policy::GetVaultAccessPolicyError, R>) -> Self {
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_vault_access_policy::GetVaultAccessPolicyError, R>,
+    ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -516,13 +530,13 @@ impl From<crate::operation::get_vault_access_policy::GetVaultAccessPolicyError> 
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_vault_lock::GetVaultLockError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_vault_lock::GetVaultLockError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_vault_lock::GetVaultLockError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_vault_lock::GetVaultLockError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -547,13 +561,15 @@ impl From<crate::operation::get_vault_lock::GetVaultLockError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_vault_notifications::GetVaultNotificationsError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_vault_notifications::GetVaultNotificationsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_vault_notifications::GetVaultNotificationsError, R>) -> Self {
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_vault_notifications::GetVaultNotificationsError, R>,
+    ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -582,13 +598,13 @@ impl From<crate::operation::get_vault_notifications::GetVaultNotificationsError>
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::initiate_job::InitiateJobError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::initiate_job::InitiateJobError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::initiate_job::InitiateJobError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::initiate_job::InitiateJobError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -611,13 +627,16 @@ impl From<crate::operation::initiate_job::InitiateJobError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::initiate_multipart_upload::InitiateMultipartUploadError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::initiate_multipart_upload::InitiateMultipartUploadError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::initiate_multipart_upload::InitiateMultipartUploadError, R>) -> Self {
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::initiate_multipart_upload::InitiateMultipartUploadError, R>,
+    ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -646,13 +665,13 @@ impl From<crate::operation::initiate_multipart_upload::InitiateMultipartUploadEr
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::initiate_vault_lock::InitiateVaultLockError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::initiate_vault_lock::InitiateVaultLockError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::initiate_vault_lock::InitiateVaultLockError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::initiate_vault_lock::InitiateVaultLockError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -681,13 +700,13 @@ impl From<crate::operation::initiate_vault_lock::InitiateVaultLockError> for Err
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_jobs::ListJobsError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_jobs::ListJobsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_jobs::ListJobsError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_jobs::ListJobsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -708,13 +727,13 @@ impl From<crate::operation::list_jobs::ListJobsError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_multipart_uploads::ListMultipartUploadsError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_multipart_uploads::ListMultipartUploadsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_multipart_uploads::ListMultipartUploadsError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_multipart_uploads::ListMultipartUploadsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -743,13 +762,13 @@ impl From<crate::operation::list_multipart_uploads::ListMultipartUploadsError> f
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_parts::ListPartsError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_parts::ListPartsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_parts::ListPartsError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_parts::ListPartsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -770,13 +789,16 @@ impl From<crate::operation::list_parts::ListPartsError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_provisioned_capacity::ListProvisionedCapacityError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_provisioned_capacity::ListProvisionedCapacityError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_provisioned_capacity::ListProvisionedCapacityError, R>) -> Self {
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_provisioned_capacity::ListProvisionedCapacityError, R>,
+    ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -802,13 +824,13 @@ impl From<crate::operation::list_provisioned_capacity::ListProvisionedCapacityEr
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_vault::ListTagsForVaultError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_vault::ListTagsForVaultError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_vault::ListTagsForVaultError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_vault::ListTagsForVaultError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -835,13 +857,13 @@ impl From<crate::operation::list_tags_for_vault::ListTagsForVaultError> for Erro
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_vaults::ListVaultsError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_vaults::ListVaultsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_vaults::ListVaultsError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_vaults::ListVaultsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -862,13 +884,16 @@ impl From<crate::operation::list_vaults::ListVaultsError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError, R>) -> Self {
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError, R>,
+    ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -897,13 +922,13 @@ impl From<crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCa
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::remove_tags_from_vault::RemoveTagsFromVaultError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::remove_tags_from_vault::RemoveTagsFromVaultError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::remove_tags_from_vault::RemoveTagsFromVaultError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::remove_tags_from_vault::RemoveTagsFromVaultError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -932,13 +957,16 @@ impl From<crate::operation::remove_tags_from_vault::RemoveTagsFromVaultError> fo
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyError, R>) -> Self {
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyError, R>,
+    ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -964,13 +992,15 @@ impl From<crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyErr
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::set_vault_access_policy::SetVaultAccessPolicyError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::set_vault_access_policy::SetVaultAccessPolicyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::set_vault_access_policy::SetVaultAccessPolicyError, R>) -> Self {
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::set_vault_access_policy::SetVaultAccessPolicyError, R>,
+    ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -999,13 +1029,15 @@ impl From<crate::operation::set_vault_access_policy::SetVaultAccessPolicyError> 
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::set_vault_notifications::SetVaultNotificationsError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::set_vault_notifications::SetVaultNotificationsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::set_vault_notifications::SetVaultNotificationsError, R>) -> Self {
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::set_vault_notifications::SetVaultNotificationsError, R>,
+    ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -1034,13 +1066,13 @@ impl From<crate::operation::set_vault_notifications::SetVaultNotificationsError>
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::upload_archive::UploadArchiveError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::upload_archive::UploadArchiveError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::upload_archive::UploadArchiveError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::upload_archive::UploadArchiveError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -1066,13 +1098,13 @@ impl From<crate::operation::upload_archive::UploadArchiveError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::upload_multipart_part::UploadMultipartPartError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::upload_multipart_part::UploadMultipartPartError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::upload_multipart_part::UploadMultipartPartError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::upload_multipart_part::UploadMultipartPartError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())

@@ -9,8 +9,10 @@ pub struct DescribeAdjustmentTypesOutput {
 }
 impl DescribeAdjustmentTypesOutput {
     /// <p>The policy adjustment types.</p>
-    pub fn adjustment_types(&self) -> ::std::option::Option<&[crate::types::AdjustmentType]> {
-        self.adjustment_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.adjustment_types.is_none()`.
+    pub fn adjustment_types(&self) -> &[crate::types::AdjustmentType] {
+        self.adjustment_types.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeAdjustmentTypesOutput {

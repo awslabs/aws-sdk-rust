@@ -13,8 +13,10 @@ pub struct GetContainerLogOutput {
 }
 impl GetContainerLogOutput {
     /// <p>An array of objects that describe the log events of a container.</p>
-    pub fn log_events(&self) -> ::std::option::Option<&[crate::types::ContainerServiceLogEvent]> {
-        self.log_events.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_events.is_none()`.
+    pub fn log_events(&self) -> &[crate::types::ContainerServiceLogEvent] {
+        self.log_events.as_deref().unwrap_or_default()
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>

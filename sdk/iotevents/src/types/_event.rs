@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Event {
     /// <p>The name of the event.</p>
-    pub event_name: ::std::option::Option<::std::string::String>,
+    pub event_name: ::std::string::String,
     /// <p>Optional. The Boolean expression that, when TRUE, causes the <code>actions</code> to be performed. If not present, the actions are performed (=TRUE). If the expression result is not a Boolean value, the actions are not performed (=FALSE).</p>
     pub condition: ::std::option::Option<::std::string::String>,
     /// <p>The actions to be performed.</p>
@@ -13,16 +13,19 @@ pub struct Event {
 }
 impl Event {
     /// <p>The name of the event.</p>
-    pub fn event_name(&self) -> ::std::option::Option<&str> {
-        self.event_name.as_deref()
+    pub fn event_name(&self) -> &str {
+        use std::ops::Deref;
+        self.event_name.deref()
     }
     /// <p>Optional. The Boolean expression that, when TRUE, causes the <code>actions</code> to be performed. If not present, the actions are performed (=TRUE). If the expression result is not a Boolean value, the actions are not performed (=FALSE).</p>
     pub fn condition(&self) -> ::std::option::Option<&str> {
         self.condition.as_deref()
     }
     /// <p>The actions to be performed.</p>
-    pub fn actions(&self) -> ::std::option::Option<&[crate::types::Action]> {
-        self.actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
+    pub fn actions(&self) -> &[crate::types::Action] {
+        self.actions.as_deref().unwrap_or_default()
     }
 }
 impl Event {
@@ -42,6 +45,7 @@ pub struct EventBuilder {
 }
 impl EventBuilder {
     /// <p>The name of the event.</p>
+    /// This field is required.
     pub fn event_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_name = ::std::option::Option::Some(input.into());
         self
@@ -90,11 +94,18 @@ impl EventBuilder {
         &self.actions
     }
     /// Consumes the builder and constructs a [`Event`](crate::types::Event).
-    pub fn build(self) -> crate::types::Event {
-        crate::types::Event {
-            event_name: self.event_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`event_name`](crate::types::builders::EventBuilder::event_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::Event, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Event {
+            event_name: self.event_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "event_name",
+                    "event_name was not specified but it is required when building Event",
+                )
+            })?,
             condition: self.condition,
             actions: self.actions,
-        }
+        })
     }
 }

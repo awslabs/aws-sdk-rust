@@ -34,6 +34,7 @@ pub struct GetFunctionInputBuilder {
 }
 impl GetFunctionInputBuilder {
     /// <p>The name of the function whose code you are getting.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +63,7 @@ impl GetFunctionInputBuilder {
         &self.stage
     }
     /// Consumes the builder and constructs a [`GetFunctionInput`](crate::operation::get_function::GetFunctionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_function::GetFunctionInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_function::GetFunctionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_function::GetFunctionInput {
             name: self.name,
             stage: self.stage,

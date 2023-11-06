@@ -9,8 +9,10 @@ pub struct DescribeApplicationsInput {
 }
 impl DescribeApplicationsInput {
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to only include those with the specified names.</p>
-    pub fn application_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.application_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.application_names.is_none()`.
+    pub fn application_names(&self) -> &[::std::string::String] {
+        self.application_names.as_deref().unwrap_or_default()
     }
 }
 impl DescribeApplicationsInput {
@@ -50,7 +52,7 @@ impl DescribeApplicationsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeApplicationsInput`](crate::operation::describe_applications::DescribeApplicationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_applications::DescribeApplicationsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_applications::DescribeApplicationsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_applications::DescribeApplicationsInput {
             application_names: self.application_names,

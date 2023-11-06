@@ -34,6 +34,7 @@ pub struct GetApplicationInputBuilder {
 }
 impl GetApplicationInputBuilder {
     /// <p>The ID of the environment. </p>
+    /// This field is required.
     pub fn environment_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_identifier = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetApplicationInputBuilder {
         &self.environment_identifier
     }
     /// <p>The ID of the application.</p>
+    /// This field is required.
     pub fn application_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_identifier = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl GetApplicationInputBuilder {
     /// Consumes the builder and constructs a [`GetApplicationInput`](crate::operation::get_application::GetApplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_application::GetApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_application::GetApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_application::GetApplicationInput {
             environment_identifier: self.environment_identifier,
             application_identifier: self.application_identifier,

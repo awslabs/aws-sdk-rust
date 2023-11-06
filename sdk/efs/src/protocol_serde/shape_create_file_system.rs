@@ -25,7 +25,9 @@ pub fn de_create_file_system_http_error(
                 output = crate::protocol_serde::shape_bad_request::de_bad_request_json_err(_response_body, output)
                     .map_err(crate::operation::create_file_system::CreateFileSystemError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::bad_request_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_file_system::CreateFileSystemError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -40,7 +42,9 @@ pub fn de_create_file_system_http_error(
                 output = crate::protocol_serde::shape_file_system_already_exists::de_file_system_already_exists_json_err(_response_body, output)
                     .map_err(crate::operation::create_file_system::CreateFileSystemError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::file_system_already_exists_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_file_system::CreateFileSystemError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -55,7 +59,9 @@ pub fn de_create_file_system_http_error(
                 output = crate::protocol_serde::shape_file_system_limit_exceeded::de_file_system_limit_exceeded_json_err(_response_body, output)
                     .map_err(crate::operation::create_file_system::CreateFileSystemError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::file_system_limit_exceeded_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_file_system::CreateFileSystemError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -73,7 +79,9 @@ pub fn de_create_file_system_http_error(
                 )
                 .map_err(crate::operation::create_file_system::CreateFileSystemError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::insufficient_throughput_capacity_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_file_system::CreateFileSystemError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -88,7 +96,9 @@ pub fn de_create_file_system_http_error(
                 output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(_response_body, output)
                     .map_err(crate::operation::create_file_system::CreateFileSystemError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_error_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_file_system::CreateFileSystemError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -103,7 +113,9 @@ pub fn de_create_file_system_http_error(
                 output = crate::protocol_serde::shape_throughput_limit_exceeded::de_throughput_limit_exceeded_json_err(_response_body, output)
                     .map_err(crate::operation::create_file_system::CreateFileSystemError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throughput_limit_exceeded_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_file_system::CreateFileSystemError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -119,7 +131,9 @@ pub fn de_create_file_system_http_error(
                     crate::protocol_serde::shape_unsupported_availability_zone::de_unsupported_availability_zone_json_err(_response_body, output)
                         .map_err(crate::operation::create_file_system::CreateFileSystemError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::unsupported_availability_zone_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_file_system::CreateFileSystemError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -142,18 +156,20 @@ pub fn de_create_file_system_http_response(
         output = crate::protocol_serde::shape_create_file_system::de_create_file_system(_response_body, output)
             .map_err(crate::operation::create_file_system::CreateFileSystemError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::create_file_system_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::create_file_system::CreateFileSystemError::unhandled)?
     })
 }
 
 pub fn ser_create_file_system_input(
     input: &crate::operation::create_file_system::CreateFileSystemInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_file_system_input::ser_create_file_system_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_create_file_system(

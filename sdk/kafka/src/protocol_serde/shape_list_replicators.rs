@@ -163,8 +163,9 @@ pub(crate) fn de_list_replicators(
                     );
                 }
                 "replicators" => {
-                    builder =
-                        builder.set_replicators(crate::protocol_serde::shape___list_of_replicator_summary::de___list_of_replicator_summary(tokens)?);
+                    builder = builder.set_replicators(crate::protocol_serde::shape_list_of_replicator_summary::de_list_of_replicator_summary(
+                        tokens,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

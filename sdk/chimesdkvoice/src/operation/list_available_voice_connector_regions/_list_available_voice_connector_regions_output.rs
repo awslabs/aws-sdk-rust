@@ -9,8 +9,10 @@ pub struct ListAvailableVoiceConnectorRegionsOutput {
 }
 impl ListAvailableVoiceConnectorRegionsOutput {
     /// <p>The list of AWS Regions.</p>
-    pub fn voice_connector_regions(&self) -> ::std::option::Option<&[crate::types::VoiceConnectorAwsRegion]> {
-        self.voice_connector_regions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.voice_connector_regions.is_none()`.
+    pub fn voice_connector_regions(&self) -> &[crate::types::VoiceConnectorAwsRegion] {
+        self.voice_connector_regions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListAvailableVoiceConnectorRegionsOutput {

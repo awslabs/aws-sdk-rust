@@ -2,47 +2,47 @@
 pub fn ser_job_template_data(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::JobTemplateData,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.execution_role_arn {
-        object.key("executionRoleArn").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("executionRoleArn").string(input.execution_role_arn.as_str());
     }
-    if let Some(var_2) = &input.release_label {
-        object.key("releaseLabel").string(var_2.as_str());
+    {
+        object.key("releaseLabel").string(input.release_label.as_str());
     }
-    if let Some(var_3) = &input.configuration_overrides {
+    if let Some(var_1) = &input.configuration_overrides {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("configurationOverrides").start_object();
-        crate::protocol_serde::shape_parametric_configuration_overrides::ser_parametric_configuration_overrides(&mut object_4, var_3)?;
+        let mut object_2 = object.key("configurationOverrides").start_object();
+        crate::protocol_serde::shape_parametric_configuration_overrides::ser_parametric_configuration_overrides(&mut object_2, var_1)?;
+        object_2.finish();
+    }
+    if let Some(var_3) = &input.job_driver {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("jobDriver").start_object();
+        crate::protocol_serde::shape_job_driver::ser_job_driver(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.job_driver {
+    if let Some(var_5) = &input.parameter_configuration {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("jobDriver").start_object();
-        crate::protocol_serde::shape_job_driver::ser_job_driver(&mut object_6, var_5)?;
-        object_6.finish();
-    }
-    if let Some(var_7) = &input.parameter_configuration {
-        #[allow(unused_mut)]
-        let mut object_8 = object.key("parameterConfiguration").start_object();
-        for (key_9, value_10) in var_7 {
+        let mut object_6 = object.key("parameterConfiguration").start_object();
+        for (key_7, value_8) in var_5 {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = object_8.key(key_9.as_str()).start_object();
-                crate::protocol_serde::shape_template_parameter_configuration::ser_template_parameter_configuration(&mut object_11, value_10)?;
-                object_11.finish();
+                let mut object_9 = object_6.key(key_7.as_str()).start_object();
+                crate::protocol_serde::shape_template_parameter_configuration::ser_template_parameter_configuration(&mut object_9, value_8)?;
+                object_9.finish();
             }
         }
-        object_8.finish();
+        object_6.finish();
     }
-    if let Some(var_12) = &input.job_tags {
+    if let Some(var_10) = &input.job_tags {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("jobTags").start_object();
-        for (key_14, value_15) in var_12 {
+        let mut object_11 = object.key("jobTags").start_object();
+        for (key_12, value_13) in var_10 {
             {
-                object_13.key(key_14.as_str()).string(value_15.as_str());
+                object_11.key(key_12.as_str()).string(value_13.as_str());
             }
         }
-        object_13.finish();
+        object_11.finish();
     }
     Ok(())
 }
@@ -102,7 +102,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::job_template_data_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

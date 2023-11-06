@@ -2,7 +2,7 @@
 pub fn ser_dataset_content_delivery_destination(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DatasetContentDeliveryDestination,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.iot_events_destination_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("iotEventsDestinationConfiguration").start_object();

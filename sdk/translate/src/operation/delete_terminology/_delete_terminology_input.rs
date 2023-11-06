@@ -27,6 +27,7 @@ pub struct DeleteTerminologyInputBuilder {
 }
 impl DeleteTerminologyInputBuilder {
     /// <p>The name of the custom terminology being deleted. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteTerminologyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteTerminologyInput`](crate::operation::delete_terminology::DeleteTerminologyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_terminology::DeleteTerminologyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_terminology::DeleteTerminologyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_terminology::DeleteTerminologyInput { name: self.name })
     }
 }

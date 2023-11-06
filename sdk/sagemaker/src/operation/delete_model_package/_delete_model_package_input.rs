@@ -30,6 +30,7 @@ pub struct DeleteModelPackageInputBuilder {
 impl DeleteModelPackageInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the model package to delete.</p>
     /// <p>When you specify a name, the name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
+    /// This field is required.
     pub fn model_package_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_name = ::std::option::Option::Some(input.into());
         self
@@ -48,7 +49,8 @@ impl DeleteModelPackageInputBuilder {
     /// Consumes the builder and constructs a [`DeleteModelPackageInput`](crate::operation::delete_model_package::DeleteModelPackageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_model_package::DeleteModelPackageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_model_package::DeleteModelPackageInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_model_package::DeleteModelPackageInput {
             model_package_name: self.model_package_name,
         })

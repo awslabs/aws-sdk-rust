@@ -13,8 +13,10 @@ pub struct RemixSettings {
 }
 impl RemixSettings {
     /// Mapping of input channels to output channels, with appropriate gain adjustments.
-    pub fn channel_mappings(&self) -> ::std::option::Option<&[crate::types::AudioChannelMapping]> {
-        self.channel_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.channel_mappings.is_none()`.
+    pub fn channel_mappings(&self) -> &[crate::types::AudioChannelMapping] {
+        self.channel_mappings.as_deref().unwrap_or_default()
     }
     /// Number of input channels to be used.
     pub fn channels_in(&self) -> ::std::option::Option<i32> {

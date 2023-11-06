@@ -11,8 +11,10 @@ pub struct ListClusterJobsOutput {
 }
 impl ListClusterJobsOutput {
     /// <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of export jobs. </p>
-    pub fn job_list_entries(&self) -> ::std::option::Option<&[crate::types::JobListEntry]> {
-        self.job_list_entries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_list_entries.is_none()`.
+    pub fn job_list_entries(&self) -> &[crate::types::JobListEntry] {
+        self.job_list_entries.as_deref().unwrap_or_default()
     }
     /// <p>HTTP requests are stateless. If you use the automatically generated <code>NextToken</code> value in your next <code>ListClusterJobsResult</code> call, your list of returned jobs will start from this point in the array.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

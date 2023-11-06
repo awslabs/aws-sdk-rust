@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AttachPrincipalPolicy`](crate::operation::attach_principal_policy::builders::AttachPrincipalPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`policy_name(impl Into<String>)`](crate::operation::attach_principal_policy::builders::AttachPrincipalPolicyFluentBuilder::policy_name) / [`set_policy_name(Option<String>)`](crate::operation::attach_principal_policy::builders::AttachPrincipalPolicyFluentBuilder::set_policy_name): <p>The policy name.</p>
-    ///   - [`principal(impl Into<String>)`](crate::operation::attach_principal_policy::builders::AttachPrincipalPolicyFluentBuilder::principal) / [`set_principal(Option<String>)`](crate::operation::attach_principal_policy::builders::AttachPrincipalPolicyFluentBuilder::set_principal): <p>The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</p>
+    ///   - [`policy_name(impl Into<String>)`](crate::operation::attach_principal_policy::builders::AttachPrincipalPolicyFluentBuilder::policy_name) / [`set_policy_name(Option<String>)`](crate::operation::attach_principal_policy::builders::AttachPrincipalPolicyFluentBuilder::set_policy_name):<br>required: **true**<br><p>The policy name.</p><br>
+    ///   - [`principal(impl Into<String>)`](crate::operation::attach_principal_policy::builders::AttachPrincipalPolicyFluentBuilder::principal) / [`set_principal(Option<String>)`](crate::operation::attach_principal_policy::builders::AttachPrincipalPolicyFluentBuilder::set_principal):<br>required: **true**<br><p>The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</p><br>
     /// - On success, responds with [`AttachPrincipalPolicyOutput`](crate::operation::attach_principal_policy::AttachPrincipalPolicyOutput)
     /// - On failure, responds with [`SdkError<AttachPrincipalPolicyError>`](crate::operation::attach_principal_policy::AttachPrincipalPolicyError)
     #[deprecated]

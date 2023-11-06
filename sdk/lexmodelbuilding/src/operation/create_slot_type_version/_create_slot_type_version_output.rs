@@ -35,8 +35,10 @@ impl CreateSlotTypeVersionOutput {
         self.description.as_deref()
     }
     /// <p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take.</p>
-    pub fn enumeration_values(&self) -> ::std::option::Option<&[crate::types::EnumerationValue]> {
-        self.enumeration_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enumeration_values.is_none()`.
+    pub fn enumeration_values(&self) -> &[crate::types::EnumerationValue] {
+        self.enumeration_values.as_deref().unwrap_or_default()
     }
     /// <p>The date that the slot type was updated. When you create a resource, the creation date and last update date are the same.</p>
     pub fn last_updated_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -63,8 +65,10 @@ impl CreateSlotTypeVersionOutput {
         self.parent_slot_type_signature.as_deref()
     }
     /// <p>Configuration information that extends the parent built-in slot type.</p>
-    pub fn slot_type_configurations(&self) -> ::std::option::Option<&[crate::types::SlotTypeConfiguration]> {
-        self.slot_type_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.slot_type_configurations.is_none()`.
+    pub fn slot_type_configurations(&self) -> &[crate::types::SlotTypeConfiguration] {
+        self.slot_type_configurations.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateSlotTypeVersionOutput {

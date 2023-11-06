@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteAuthenticationProfile`](crate::operation::delete_authentication_profile::builders::DeleteAuthenticationProfileFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`authentication_profile_name(impl Into<String>)`](crate::operation::delete_authentication_profile::builders::DeleteAuthenticationProfileFluentBuilder::authentication_profile_name) / [`set_authentication_profile_name(Option<String>)`](crate::operation::delete_authentication_profile::builders::DeleteAuthenticationProfileFluentBuilder::set_authentication_profile_name): <p>The name of the authentication profile to delete.</p>
+    ///   - [`authentication_profile_name(impl Into<String>)`](crate::operation::delete_authentication_profile::builders::DeleteAuthenticationProfileFluentBuilder::authentication_profile_name) / [`set_authentication_profile_name(Option<String>)`](crate::operation::delete_authentication_profile::builders::DeleteAuthenticationProfileFluentBuilder::set_authentication_profile_name):<br>required: **true**<br><p>The name of the authentication profile to delete.</p><br>
     /// - On success, responds with [`DeleteAuthenticationProfileOutput`](crate::operation::delete_authentication_profile::DeleteAuthenticationProfileOutput) with field(s):
     ///   - [`authentication_profile_name(Option<String>)`](crate::operation::delete_authentication_profile::DeleteAuthenticationProfileOutput::authentication_profile_name): <p>The name of the authentication profile that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteAuthenticationProfileError>`](crate::operation::delete_authentication_profile::DeleteAuthenticationProfileError)

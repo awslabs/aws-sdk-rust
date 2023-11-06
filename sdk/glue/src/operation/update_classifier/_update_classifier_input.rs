@@ -106,7 +106,7 @@ impl UpdateClassifierInputBuilder {
     /// Consumes the builder and constructs a [`UpdateClassifierInput`](crate::operation::update_classifier::UpdateClassifierInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_classifier::UpdateClassifierInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_classifier::UpdateClassifierInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_classifier::UpdateClassifierInput {
             grok_classifier: self.grok_classifier,
             xml_classifier: self.xml_classifier,

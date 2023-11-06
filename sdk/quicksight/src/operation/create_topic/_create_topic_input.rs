@@ -26,8 +26,10 @@ impl CreateTopicInput {
         self.topic.as_ref()
     }
     /// <p>Contains a map of the key-value pairs for the resource tag or tags that are assigned to the dataset.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateTopicInput {
@@ -48,6 +50,7 @@ pub struct CreateTopicInputBuilder {
 }
 impl CreateTopicInputBuilder {
     /// <p>The ID of the Amazon Web Services account that you want to create a topic in.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl CreateTopicInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID for the topic that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    /// This field is required.
     pub fn topic_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +80,7 @@ impl CreateTopicInputBuilder {
         &self.topic_id
     }
     /// <p>The definition of a topic to create.</p>
+    /// This field is required.
     pub fn topic(mut self, input: crate::types::TopicDetails) -> Self {
         self.topic = ::std::option::Option::Some(input);
         self
@@ -110,7 +115,7 @@ impl CreateTopicInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateTopicInput`](crate::operation::create_topic::CreateTopicInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_topic::CreateTopicInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_topic::CreateTopicInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_topic::CreateTopicInput {
             aws_account_id: self.aws_account_id,
             topic_id: self.topic_id,

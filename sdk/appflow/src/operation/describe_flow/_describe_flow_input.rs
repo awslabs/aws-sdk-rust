@@ -27,6 +27,7 @@ pub struct DescribeFlowInputBuilder {
 }
 impl DescribeFlowInputBuilder {
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
+    /// This field is required.
     pub fn flow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_name = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,9 @@ impl DescribeFlowInputBuilder {
         &self.flow_name
     }
     /// Consumes the builder and constructs a [`DescribeFlowInput`](crate::operation::describe_flow::DescribeFlowInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_flow::DescribeFlowInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_flow::DescribeFlowInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_flow::DescribeFlowInput { flow_name: self.flow_name })
     }
 }

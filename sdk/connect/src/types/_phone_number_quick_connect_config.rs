@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PhoneNumberQuickConnectConfig {
     /// <p>The phone number in E.164 format.</p>
-    pub phone_number: ::std::option::Option<::std::string::String>,
+    pub phone_number: ::std::string::String,
 }
 impl PhoneNumberQuickConnectConfig {
     /// <p>The phone number in E.164 format.</p>
-    pub fn phone_number(&self) -> ::std::option::Option<&str> {
-        self.phone_number.as_deref()
+    pub fn phone_number(&self) -> &str {
+        use std::ops::Deref;
+        self.phone_number.deref()
     }
 }
 impl PhoneNumberQuickConnectConfig {
@@ -28,6 +29,7 @@ pub struct PhoneNumberQuickConnectConfigBuilder {
 }
 impl PhoneNumberQuickConnectConfigBuilder {
     /// <p>The phone number in E.164 format.</p>
+    /// This field is required.
     pub fn phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl PhoneNumberQuickConnectConfigBuilder {
         &self.phone_number
     }
     /// Consumes the builder and constructs a [`PhoneNumberQuickConnectConfig`](crate::types::PhoneNumberQuickConnectConfig).
-    pub fn build(self) -> crate::types::PhoneNumberQuickConnectConfig {
-        crate::types::PhoneNumberQuickConnectConfig {
-            phone_number: self.phone_number,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`phone_number`](crate::types::builders::PhoneNumberQuickConnectConfigBuilder::phone_number)
+    pub fn build(self) -> ::std::result::Result<crate::types::PhoneNumberQuickConnectConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PhoneNumberQuickConnectConfig {
+            phone_number: self.phone_number.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "phone_number",
+                    "phone_number was not specified but it is required when building PhoneNumberQuickConnectConfig",
+                )
+            })?,
+        })
     }
 }

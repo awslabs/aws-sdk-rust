@@ -34,6 +34,7 @@ pub struct GetProtectedQueryInputBuilder {
 }
 impl GetProtectedQueryInputBuilder {
     /// <p>The identifier for a membership in a protected query instance.</p>
+    /// This field is required.
     pub fn membership_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.membership_identifier = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetProtectedQueryInputBuilder {
         &self.membership_identifier
     }
     /// <p>The identifier for a protected query instance.</p>
+    /// This field is required.
     pub fn protected_query_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.protected_query_identifier = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl GetProtectedQueryInputBuilder {
     /// Consumes the builder and constructs a [`GetProtectedQueryInput`](crate::operation::get_protected_query::GetProtectedQueryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_protected_query::GetProtectedQueryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_protected_query::GetProtectedQueryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_protected_query::GetProtectedQueryInput {
             membership_identifier: self.membership_identifier,
             protected_query_identifier: self.protected_query_identifier,

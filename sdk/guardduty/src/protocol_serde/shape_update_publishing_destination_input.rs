@@ -2,7 +2,7 @@
 pub fn ser_update_publishing_destination_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_publishing_destination::UpdatePublishingDestinationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.destination_properties {
         #[allow(unused_mut)]
         let mut object_2 = object.key("destinationProperties").start_object();

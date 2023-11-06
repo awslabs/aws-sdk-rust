@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Entity {
     /// <p>The type of entity.</p>
-    pub r#type: ::std::option::Option<::std::string::String>,
+    pub r#type: ::std::string::String,
     /// <p>The identifier for the entity.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
 }
 impl Entity {
     /// <p>The type of entity.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
-        self.r#type.as_deref()
+    pub fn r#type(&self) -> &str {
+        use std::ops::Deref;
+        self.r#type.deref()
     }
     /// <p>The identifier for the entity.</p>
     pub fn identifier(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct EntityBuilder {
 }
 impl EntityBuilder {
     /// <p>The type of entity.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl EntityBuilder {
         &self.identifier
     }
     /// Consumes the builder and constructs a [`Entity`](crate::types::Entity).
-    pub fn build(self) -> crate::types::Entity {
-        crate::types::Entity {
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::EntityBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::Entity, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Entity {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building Entity",
+                )
+            })?,
             identifier: self.identifier,
-        }
+        })
     }
 }

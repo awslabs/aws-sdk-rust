@@ -51,6 +51,7 @@ pub struct RegisterToWorkMailInputBuilder {
 }
 impl RegisterToWorkMailInputBuilder {
     /// <p>The identifier for the organization under which the user, group, or resource exists.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +71,7 @@ impl RegisterToWorkMailInputBuilder {
     /// <li> <p>Entity ID: 12345678-1234-1234-1234-123456789012, r-0123456789a0123456789b0123456789, or S-1-1-12-1234567890-123456789-123456789-1234</p> </li>
     /// <li> <p>Entity name: entity</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
         self
@@ -94,6 +96,7 @@ impl RegisterToWorkMailInputBuilder {
         &self.entity_id
     }
     /// <p>The email for the user, group, or resource to be updated.</p>
+    /// This field is required.
     pub fn email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email = ::std::option::Option::Some(input.into());
         self
@@ -110,7 +113,7 @@ impl RegisterToWorkMailInputBuilder {
     /// Consumes the builder and constructs a [`RegisterToWorkMailInput`](crate::operation::register_to_work_mail::RegisterToWorkMailInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_to_work_mail::RegisterToWorkMailInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::register_to_work_mail::RegisterToWorkMailInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::register_to_work_mail::RegisterToWorkMailInput {
             organization_id: self.organization_id,

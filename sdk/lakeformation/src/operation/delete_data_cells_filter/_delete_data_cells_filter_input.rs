@@ -106,7 +106,7 @@ impl DeleteDataCellsFilterInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDataCellsFilterInput`](crate::operation::delete_data_cells_filter::DeleteDataCellsFilterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_data_cells_filter::DeleteDataCellsFilterInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_data_cells_filter::DeleteDataCellsFilterInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_data_cells_filter::DeleteDataCellsFilterInput {
             table_catalog_id: self.table_catalog_id,

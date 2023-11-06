@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FixedResponseAction {
     /// <p>The HTTP response code.</p>
-    pub status_code: ::std::option::Option<i32>,
+    pub status_code: i32,
 }
 impl FixedResponseAction {
     /// <p>The HTTP response code.</p>
-    pub fn status_code(&self) -> ::std::option::Option<i32> {
+    pub fn status_code(&self) -> i32 {
         self.status_code
     }
 }
@@ -28,6 +28,7 @@ pub struct FixedResponseActionBuilder {
 }
 impl FixedResponseActionBuilder {
     /// <p>The HTTP response code.</p>
+    /// This field is required.
     pub fn status_code(mut self, input: i32) -> Self {
         self.status_code = ::std::option::Option::Some(input);
         self
@@ -42,9 +43,16 @@ impl FixedResponseActionBuilder {
         &self.status_code
     }
     /// Consumes the builder and constructs a [`FixedResponseAction`](crate::types::FixedResponseAction).
-    pub fn build(self) -> crate::types::FixedResponseAction {
-        crate::types::FixedResponseAction {
-            status_code: self.status_code,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status_code`](crate::types::builders::FixedResponseActionBuilder::status_code)
+    pub fn build(self) -> ::std::result::Result<crate::types::FixedResponseAction, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::FixedResponseAction {
+            status_code: self.status_code.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status_code",
+                    "status_code was not specified but it is required when building FixedResponseAction",
+                )
+            })?,
+        })
     }
 }

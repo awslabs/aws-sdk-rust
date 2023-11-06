@@ -13,8 +13,10 @@ pub struct GetActiveNamesOutput {
 }
 impl GetActiveNamesOutput {
     /// <p>The list of active names returned by the get active names request.</p>
-    pub fn active_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.active_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.active_names.is_none()`.
+    pub fn active_names(&self) -> &[::std::string::String] {
+        self.active_names.as_deref().unwrap_or_default()
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>

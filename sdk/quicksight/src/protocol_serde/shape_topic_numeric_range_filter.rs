@@ -2,7 +2,7 @@
 pub fn ser_topic_numeric_range_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TopicNumericRangeFilter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.inclusive {
         object.key("Inclusive").boolean(input.inclusive);
     }

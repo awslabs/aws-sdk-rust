@@ -2,33 +2,33 @@
 pub fn ser_rule_group_reference_statement(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RuleGroupReferenceStatement,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.arn {
-        object.key("ARN").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("ARN").string(input.arn.as_str());
     }
-    if let Some(var_2) = &input.excluded_rules {
-        let mut array_3 = object.key("ExcludedRules").start_array();
-        for item_4 in var_2 {
+    if let Some(var_1) = &input.excluded_rules {
+        let mut array_2 = object.key("ExcludedRules").start_array();
+        for item_3 in var_1 {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_excluded_rule::ser_excluded_rule(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_excluded_rule::ser_excluded_rule(&mut object_4, item_3)?;
+                object_4.finish();
             }
         }
-        array_3.finish();
+        array_2.finish();
     }
-    if let Some(var_6) = &input.rule_action_overrides {
-        let mut array_7 = object.key("RuleActionOverrides").start_array();
-        for item_8 in var_6 {
+    if let Some(var_5) = &input.rule_action_overrides {
+        let mut array_6 = object.key("RuleActionOverrides").start_array();
+        for item_7 in var_5 {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_rule_action_override::ser_rule_action_override(&mut object_9, item_8)?;
-                object_9.finish();
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_rule_action_override::ser_rule_action_override(&mut object_8, item_7)?;
+                object_8.finish();
             }
         }
-        array_7.finish();
+        array_6.finish();
     }
     Ok(())
 }
@@ -72,7 +72,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::rule_group_reference_statement_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

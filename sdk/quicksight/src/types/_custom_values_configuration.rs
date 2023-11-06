@@ -52,6 +52,7 @@ impl CustomValuesConfigurationBuilder {
     }
     /// <p>The customized parameter values.</p>
     /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
+    /// This field is required.
     pub fn custom_values(mut self, input: crate::types::CustomParameterValues) -> Self {
         self.custom_values = ::std::option::Option::Some(input);
         self

@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FilledMapShapeConditionalFormatting {
     /// <p>The field ID of the filled map shape.</p>
-    pub field_id: ::std::option::Option<::std::string::String>,
+    pub field_id: ::std::string::String,
     /// <p>The conditional formatting that determines the background color of a filled map's shape.</p>
     pub format: ::std::option::Option<crate::types::ShapeConditionalFormat>,
 }
 impl FilledMapShapeConditionalFormatting {
     /// <p>The field ID of the filled map shape.</p>
-    pub fn field_id(&self) -> ::std::option::Option<&str> {
-        self.field_id.as_deref()
+    pub fn field_id(&self) -> &str {
+        use std::ops::Deref;
+        self.field_id.deref()
     }
     /// <p>The conditional formatting that determines the background color of a filled map's shape.</p>
     pub fn format(&self) -> ::std::option::Option<&crate::types::ShapeConditionalFormat> {
@@ -35,6 +36,7 @@ pub struct FilledMapShapeConditionalFormattingBuilder {
 }
 impl FilledMapShapeConditionalFormattingBuilder {
     /// <p>The field ID of the filled map shape.</p>
+    /// This field is required.
     pub fn field_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.field_id = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl FilledMapShapeConditionalFormattingBuilder {
         &self.format
     }
     /// Consumes the builder and constructs a [`FilledMapShapeConditionalFormatting`](crate::types::FilledMapShapeConditionalFormatting).
-    pub fn build(self) -> crate::types::FilledMapShapeConditionalFormatting {
-        crate::types::FilledMapShapeConditionalFormatting {
-            field_id: self.field_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`field_id`](crate::types::builders::FilledMapShapeConditionalFormattingBuilder::field_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::FilledMapShapeConditionalFormatting, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::FilledMapShapeConditionalFormatting {
+            field_id: self.field_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "field_id",
+                    "field_id was not specified but it is required when building FilledMapShapeConditionalFormatting",
+                )
+            })?,
             format: self.format,
-        }
+        })
     }
 }

@@ -22,8 +22,10 @@ impl BatchDeleteTableInput {
         self.database_name.as_deref()
     }
     /// <p>A list of the table to delete.</p>
-    pub fn tables_to_delete(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tables_to_delete.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tables_to_delete.is_none()`.
+    pub fn tables_to_delete(&self) -> &[::std::string::String] {
+        self.tables_to_delete.as_deref().unwrap_or_default()
     }
     /// <p>The transaction ID at which to delete the table contents.</p>
     pub fn transaction_id(&self) -> ::std::option::Option<&str> {
@@ -62,6 +64,7 @@ impl BatchDeleteTableInputBuilder {
         &self.catalog_id
     }
     /// <p>The name of the catalog database in which the tables to delete reside. For Hive compatibility, this name is entirely lowercase.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -112,7 +115,7 @@ impl BatchDeleteTableInputBuilder {
     /// Consumes the builder and constructs a [`BatchDeleteTableInput`](crate::operation::batch_delete_table::BatchDeleteTableInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_delete_table::BatchDeleteTableInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_delete_table::BatchDeleteTableInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_delete_table::BatchDeleteTableInput {
             catalog_id: self.catalog_id,
             database_name: self.database_name,

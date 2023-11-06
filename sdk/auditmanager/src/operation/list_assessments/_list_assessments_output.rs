@@ -11,8 +11,10 @@ pub struct ListAssessmentsOutput {
 }
 impl ListAssessmentsOutput {
     /// <p>The metadata that the <code>ListAssessments</code> API returns for each assessment.</p>
-    pub fn assessment_metadata(&self) -> ::std::option::Option<&[crate::types::AssessmentMetadataItem]> {
-        self.assessment_metadata.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.assessment_metadata.is_none()`.
+    pub fn assessment_metadata(&self) -> &[crate::types::AssessmentMetadataItem] {
+        self.assessment_metadata.as_deref().unwrap_or_default()
     }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

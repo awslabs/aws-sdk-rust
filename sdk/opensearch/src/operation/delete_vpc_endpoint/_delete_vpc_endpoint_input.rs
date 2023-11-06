@@ -27,6 +27,7 @@ pub struct DeleteVpcEndpointInputBuilder {
 }
 impl DeleteVpcEndpointInputBuilder {
     /// <p>The unique identifier of the endpoint.</p>
+    /// This field is required.
     pub fn vpc_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_endpoint_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteVpcEndpointInputBuilder {
     /// Consumes the builder and constructs a [`DeleteVpcEndpointInput`](crate::operation::delete_vpc_endpoint::DeleteVpcEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_vpc_endpoint::DeleteVpcEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_vpc_endpoint::DeleteVpcEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_vpc_endpoint::DeleteVpcEndpointInput {
             vpc_endpoint_id: self.vpc_endpoint_id,
         })

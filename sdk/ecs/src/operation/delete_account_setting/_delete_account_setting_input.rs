@@ -34,6 +34,7 @@ pub struct DeleteAccountSettingInputBuilder {
 }
 impl DeleteAccountSettingInputBuilder {
     /// <p>The resource name to disable the account setting for. If <code>serviceLongArnFormat</code> is specified, the ARN for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS container instances is affected. If <code>awsvpcTrunking</code> is specified, the ENI limit for your Amazon ECS container instances is affected.</p>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::SettingName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -64,7 +65,7 @@ impl DeleteAccountSettingInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAccountSettingInput`](crate::operation::delete_account_setting::DeleteAccountSettingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_account_setting::DeleteAccountSettingInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_account_setting::DeleteAccountSettingInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_account_setting::DeleteAccountSettingInput {
             name: self.name,

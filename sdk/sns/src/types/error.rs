@@ -25,6 +25,8 @@ pub use crate::types::error::_invalid_security_exception::InvalidSecurityExcepti
 
 pub use crate::types::error::_subscription_limit_exceeded_exception::SubscriptionLimitExceededException;
 
+pub use crate::types::error::_replay_limit_exceeded_exception::ReplayLimitExceededException;
+
 pub use crate::types::error::_filter_policy_limit_exceeded_exception::FilterPolicyLimitExceededException;
 
 pub use crate::types::error::_validation_exception::ValidationException;
@@ -57,6 +59,8 @@ pub use crate::types::error::_batch_request_too_long_exception::BatchRequestTooL
 
 pub use crate::types::error::_batch_entry_ids_not_distinct_exception::BatchEntryIdsNotDistinctException;
 
+pub use crate::types::error::_invalid_state_exception::InvalidStateException;
+
 pub use crate::types::error::_user_error_exception::UserErrorException;
 
 pub use crate::types::error::_topic_limit_exceeded_exception::TopicLimitExceededException;
@@ -87,6 +91,8 @@ mod _invalid_parameter_value_exception;
 
 mod _invalid_security_exception;
 
+mod _invalid_state_exception;
+
 mod _kms_access_denied_exception;
 
 mod _kms_disabled_exception;
@@ -104,6 +110,8 @@ mod _not_found_exception;
 mod _opted_out_exception;
 
 mod _platform_application_disabled_exception;
+
+mod _replay_limit_exceeded_exception;
 
 mod _resource_not_found_exception;
 

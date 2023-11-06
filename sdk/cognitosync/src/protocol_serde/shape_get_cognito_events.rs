@@ -25,11 +25,10 @@ pub fn de_get_cognito_events_http_error(
                 output = crate::protocol_serde::shape_internal_error_exception::de_internal_error_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_cognito_events::GetCognitoEventsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_error_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_cognito_events::GetCognitoEventsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InvalidParameterException" => crate::operation::get_cognito_events::GetCognitoEventsError::InvalidParameterException({
@@ -40,11 +39,10 @@ pub fn de_get_cognito_events_http_error(
                 output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_cognito_events::GetCognitoEventsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_parameter_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_cognito_events::GetCognitoEventsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "NotAuthorizedException" => crate::operation::get_cognito_events::GetCognitoEventsError::NotAuthorizedException({
@@ -55,11 +53,10 @@ pub fn de_get_cognito_events_http_error(
                 output = crate::protocol_serde::shape_not_authorized_exception::de_not_authorized_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_cognito_events::GetCognitoEventsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::not_authorized_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_cognito_events::GetCognitoEventsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::get_cognito_events::GetCognitoEventsError::ResourceNotFoundException({
@@ -70,11 +67,10 @@ pub fn de_get_cognito_events_http_error(
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_cognito_events::GetCognitoEventsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_cognito_events::GetCognitoEventsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "TooManyRequestsException" => crate::operation::get_cognito_events::GetCognitoEventsError::TooManyRequestsException({
@@ -85,11 +81,10 @@ pub fn de_get_cognito_events_http_error(
                 output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_cognito_events::GetCognitoEventsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::too_many_requests_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_cognito_events::GetCognitoEventsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::get_cognito_events::GetCognitoEventsError::generic(generic),

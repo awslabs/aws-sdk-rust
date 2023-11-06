@@ -27,6 +27,7 @@ pub struct DeleteRolePermissionsBoundaryInputBuilder {
 }
 impl DeleteRolePermissionsBoundaryInputBuilder {
     /// <p>The name (friendly name, not ARN) of the IAM role from which you want to remove the permissions boundary.</p>
+    /// This field is required.
     pub fn role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteRolePermissionsBoundaryInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_role_permissions_boundary::DeleteRolePermissionsBoundaryInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_role_permissions_boundary::DeleteRolePermissionsBoundaryInput {
             role_name: self.role_name,

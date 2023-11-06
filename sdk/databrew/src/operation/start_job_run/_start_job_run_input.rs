@@ -27,6 +27,7 @@ pub struct StartJobRunInputBuilder {
 }
 impl StartJobRunInputBuilder {
     /// <p>The name of the job to be run.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl StartJobRunInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`StartJobRunInput`](crate::operation::start_job_run::StartJobRunInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_job_run::StartJobRunInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_job_run::StartJobRunInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_job_run::StartJobRunInput { name: self.name })
     }
 }

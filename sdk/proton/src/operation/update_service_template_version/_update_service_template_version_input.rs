@@ -43,15 +43,19 @@ impl UpdateServiceTemplateVersionInput {
         self.status.as_ref()
     }
     /// <p>An array of environment template objects that are compatible with this service template version. A service instance based on this service template version can run in environments based on compatible templates.</p>
-    pub fn compatible_environment_templates(&self) -> ::std::option::Option<&[crate::types::CompatibleEnvironmentTemplateInput]> {
-        self.compatible_environment_templates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compatible_environment_templates.is_none()`.
+    pub fn compatible_environment_templates(&self) -> &[crate::types::CompatibleEnvironmentTemplateInput] {
+        self.compatible_environment_templates.as_deref().unwrap_or_default()
     }
     /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p> <note>
     /// <p>A change to <code>supportedComponentSources</code> doesn't impact existing component attachments to instances based on this template version. A change only affects later associations.</p>
     /// </note>
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
-    pub fn supported_component_sources(&self) -> ::std::option::Option<&[crate::types::ServiceTemplateSupportedComponentSourceType]> {
-        self.supported_component_sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_component_sources.is_none()`.
+    pub fn supported_component_sources(&self) -> &[crate::types::ServiceTemplateSupportedComponentSourceType] {
+        self.supported_component_sources.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for UpdateServiceTemplateVersionInput {
@@ -88,6 +92,7 @@ pub struct UpdateServiceTemplateVersionInputBuilder {
 }
 impl UpdateServiceTemplateVersionInputBuilder {
     /// <p>The name of the service template.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
@@ -102,6 +107,7 @@ impl UpdateServiceTemplateVersionInputBuilder {
         &self.template_name
     }
     /// <p>To update a major version of a service template, include <code>major Version</code>.</p>
+    /// This field is required.
     pub fn major_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.major_version = ::std::option::Option::Some(input.into());
         self
@@ -116,6 +122,7 @@ impl UpdateServiceTemplateVersionInputBuilder {
         &self.major_version
     }
     /// <p>To update a minor version of a service template, include <code>minorVersion</code>.</p>
+    /// This field is required.
     pub fn minor_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.minor_version = ::std::option::Option::Some(input.into());
         self
@@ -219,7 +226,7 @@ impl UpdateServiceTemplateVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_service_template_version::UpdateServiceTemplateVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_service_template_version::UpdateServiceTemplateVersionInput {
             template_name: self.template_name,

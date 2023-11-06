@@ -2,7 +2,7 @@
 pub fn ser_production_variant_core_dump_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ProductionVariantCoreDumpConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.destination_s3_uri {
         object.key("DestinationS3Uri").string(var_1.as_str());
     }
@@ -51,7 +51,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::production_variant_core_dump_config_correct_errors(builder).build(),
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

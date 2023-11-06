@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoMerging {
     /// <p>The flag that enables the auto-merging of duplicate profiles.</p>
-    pub enabled: ::std::option::Option<bool>,
+    pub enabled: bool,
     /// <p>A list of matching attributes that represent matching criteria. If two profiles meet at least one of the requirements in the matching attributes list, they will be merged.</p>
     pub consolidation: ::std::option::Option<crate::types::Consolidation>,
     /// <p>How the auto-merging process should resolve conflicts between different profiles. For example, if Profile A and Profile B have the same <code>FirstName</code> and <code>LastName</code> (and that is the matching criteria), which <code>EmailAddress</code> should be used? </p>
@@ -15,7 +15,7 @@ pub struct AutoMerging {
 }
 impl AutoMerging {
     /// <p>The flag that enables the auto-merging of duplicate profiles.</p>
-    pub fn enabled(&self) -> ::std::option::Option<bool> {
+    pub fn enabled(&self) -> bool {
         self.enabled
     }
     /// <p>A list of matching attributes that represent matching criteria. If two profiles meet at least one of the requirements in the matching attributes list, they will be merged.</p>
@@ -49,6 +49,7 @@ pub struct AutoMergingBuilder {
 }
 impl AutoMergingBuilder {
     /// <p>The flag that enables the auto-merging of duplicate profiles.</p>
+    /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
@@ -105,12 +106,19 @@ impl AutoMergingBuilder {
         &self.min_allowed_confidence_score_for_merging
     }
     /// Consumes the builder and constructs a [`AutoMerging`](crate::types::AutoMerging).
-    pub fn build(self) -> crate::types::AutoMerging {
-        crate::types::AutoMerging {
-            enabled: self.enabled,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`enabled`](crate::types::builders::AutoMergingBuilder::enabled)
+    pub fn build(self) -> ::std::result::Result<crate::types::AutoMerging, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AutoMerging {
+            enabled: self.enabled.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "enabled",
+                    "enabled was not specified but it is required when building AutoMerging",
+                )
+            })?,
             consolidation: self.consolidation,
             conflict_resolution: self.conflict_resolution,
             min_allowed_confidence_score_for_merging: self.min_allowed_confidence_score_for_merging,
-        }
+        })
     }
 }

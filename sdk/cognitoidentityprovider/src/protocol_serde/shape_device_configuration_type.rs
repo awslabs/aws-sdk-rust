@@ -2,7 +2,7 @@
 pub fn ser_device_configuration_type(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DeviceConfigurationType,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.challenge_required_on_new_device {
         object.key("ChallengeRequiredOnNewDevice").boolean(input.challenge_required_on_new_device);
     }

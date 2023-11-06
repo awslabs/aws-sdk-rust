@@ -38,13 +38,13 @@ pub fn de_delete_multi_region_access_point_http_response(
 pub fn ser_delete_multi_region_access_point_headers(
     input: &crate::operation::delete_multi_region_access_point::DeleteMultiRegionAccessPointInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.account_id {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "account_id",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -57,7 +57,7 @@ pub fn ser_delete_multi_region_access_point_headers(
 
 pub fn ser_delete_multi_region_access_point_op_input(
     input: &crate::operation::delete_multi_region_access_point::DeleteMultiRegionAccessPointInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = ::aws_smithy_xml::encode::XmlWriter::new(&mut out);
@@ -67,7 +67,7 @@ pub fn ser_delete_multi_region_access_point_op_input(
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
         crate::protocol_serde::shape_delete_multi_region_access_point_input::ser_delete_multi_region_access_point_input_input(input, root)?
     }
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 #[allow(unused_mut)]

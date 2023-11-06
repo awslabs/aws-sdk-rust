@@ -50,6 +50,7 @@ pub struct RollbackStackInputBuilder {
 }
 impl RollbackStackInputBuilder {
     /// <p>The name that's associated with the stack.</p>
+    /// This field is required.
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_name = ::std::option::Option::Some(input.into());
         self
@@ -111,7 +112,7 @@ impl RollbackStackInputBuilder {
     /// Consumes the builder and constructs a [`RollbackStackInput`](crate::operation::rollback_stack::RollbackStackInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::rollback_stack::RollbackStackInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::rollback_stack::RollbackStackInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::rollback_stack::RollbackStackInput {
             stack_name: self.stack_name,
             role_arn: self.role_arn,

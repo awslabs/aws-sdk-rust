@@ -10,7 +10,7 @@ pub struct DescribeRecoverySnapshotsInput {
     /// <p>The sorted ordering by which to return Recovery Snapshots.</p>
     pub order: ::std::option::Option<crate::types::RecoverySnapshotsOrder>,
     /// <p>Maximum number of Recovery Snapshots to retrieve.</p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>The token of the next Recovery Snapshot to retrieve.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
@@ -28,7 +28,7 @@ impl DescribeRecoverySnapshotsInput {
         self.order.as_ref()
     }
     /// <p>Maximum number of Recovery Snapshots to retrieve.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token of the next Recovery Snapshot to retrieve.</p>
@@ -55,6 +55,7 @@ pub struct DescribeRecoverySnapshotsInputBuilder {
 }
 impl DescribeRecoverySnapshotsInputBuilder {
     /// <p>Filter Recovery Snapshots by Source Server ID.</p>
+    /// This field is required.
     pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
@@ -129,13 +130,13 @@ impl DescribeRecoverySnapshotsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_recovery_snapshots::DescribeRecoverySnapshotsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_recovery_snapshots::DescribeRecoverySnapshotsInput {
             source_server_id: self.source_server_id,
             filters: self.filters,
             order: self.order,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
         })
     }

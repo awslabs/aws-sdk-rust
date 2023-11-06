@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KinesisFirehoseConfig {
     /// <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
-    pub firehose_arn: ::std::option::Option<::std::string::String>,
+    pub firehose_arn: ::std::string::String,
 }
 impl KinesisFirehoseConfig {
     /// <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
-    pub fn firehose_arn(&self) -> ::std::option::Option<&str> {
-        self.firehose_arn.as_deref()
+    pub fn firehose_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.firehose_arn.deref()
     }
 }
 impl KinesisFirehoseConfig {
@@ -28,6 +29,7 @@ pub struct KinesisFirehoseConfigBuilder {
 }
 impl KinesisFirehoseConfigBuilder {
     /// <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
+    /// This field is required.
     pub fn firehose_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firehose_arn = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl KinesisFirehoseConfigBuilder {
         &self.firehose_arn
     }
     /// Consumes the builder and constructs a [`KinesisFirehoseConfig`](crate::types::KinesisFirehoseConfig).
-    pub fn build(self) -> crate::types::KinesisFirehoseConfig {
-        crate::types::KinesisFirehoseConfig {
-            firehose_arn: self.firehose_arn,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`firehose_arn`](crate::types::builders::KinesisFirehoseConfigBuilder::firehose_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::KinesisFirehoseConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::KinesisFirehoseConfig {
+            firehose_arn: self.firehose_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "firehose_arn",
+                    "firehose_arn was not specified but it is required when building KinesisFirehoseConfig",
+                )
+            })?,
+        })
     }
 }

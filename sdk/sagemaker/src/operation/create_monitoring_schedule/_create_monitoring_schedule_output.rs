@@ -34,6 +34,7 @@ pub struct CreateMonitoringScheduleOutputBuilder {
 }
 impl CreateMonitoringScheduleOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the monitoring schedule.</p>
+    /// This field is required.
     pub fn monitoring_schedule_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitoring_schedule_arn = ::std::option::Option::Some(input.into());
         self

@@ -34,6 +34,7 @@ pub struct StartWorkflowRunInputBuilder {
 }
 impl StartWorkflowRunInputBuilder {
     /// <p>The name of the workflow to start.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -77,7 +78,7 @@ impl StartWorkflowRunInputBuilder {
     /// Consumes the builder and constructs a [`StartWorkflowRunInput`](crate::operation::start_workflow_run::StartWorkflowRunInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_workflow_run::StartWorkflowRunInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_workflow_run::StartWorkflowRunInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_workflow_run::StartWorkflowRunInput {
             name: self.name,
             run_properties: self.run_properties,

@@ -2,15 +2,15 @@
 pub fn ser_ip_set(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IpSet,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.definition {
-        let mut array_2 = object.key("Definition").start_array();
-        for item_3 in var_1 {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        let mut array_1 = object.key("Definition").start_array();
+        for item_2 in &input.definition {
             {
-                array_2.value().string(item_3.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
     Ok(())
 }
@@ -45,7 +45,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::ip_set_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

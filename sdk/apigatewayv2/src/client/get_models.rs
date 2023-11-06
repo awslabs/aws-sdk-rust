@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetModels`](crate::operation::get_models::builders::GetModelsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`api_id(impl Into<String>)`](crate::operation::get_models::builders::GetModelsFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::get_models::builders::GetModelsFluentBuilder::set_api_id): <p>The API identifier.</p>
-    ///   - [`max_results(impl Into<String>)`](crate::operation::get_models::builders::GetModelsFluentBuilder::max_results) / [`set_max_results(Option<String>)`](crate::operation::get_models::builders::GetModelsFluentBuilder::set_max_results): <p>The maximum number of elements to be returned for this resource.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::get_models::builders::GetModelsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_models::builders::GetModelsFluentBuilder::set_next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
+    ///   - [`api_id(impl Into<String>)`](crate::operation::get_models::builders::GetModelsFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::get_models::builders::GetModelsFluentBuilder::set_api_id):<br>required: **true**<br><p>The API identifier.</p><br>
+    ///   - [`max_results(impl Into<String>)`](crate::operation::get_models::builders::GetModelsFluentBuilder::max_results) / [`set_max_results(Option<String>)`](crate::operation::get_models::builders::GetModelsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of elements to be returned for this resource.</p><br>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::get_models::builders::GetModelsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_models::builders::GetModelsFluentBuilder::set_next_token):<br>required: **false**<br><p>The next page of elements from this collection. Not valid for the last element of the collection.</p><br>
     /// - On success, responds with [`GetModelsOutput`](crate::operation::get_models::GetModelsOutput) with field(s):
-    ///   - [`items(Option<Vec<Model>>)`](crate::operation::get_models::GetModelsOutput::items): <p>The elements from this collection.</p>
+    ///   - [`items(Option<Vec::<Model>>)`](crate::operation::get_models::GetModelsOutput::items): <p>The elements from this collection.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_models::GetModelsOutput::next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
     /// - On failure, responds with [`SdkError<GetModelsError>`](crate::operation::get_models::GetModelsError)
     pub fn get_models(&self) -> crate::operation::get_models::builders::GetModelsFluentBuilder {

@@ -82,7 +82,7 @@ pub fn de_associate_alias_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::TooManyDistributionCnamEsBuilder::default();
-                output = crate::protocol_serde::shape_too_many_distribution_cnam_es::de_too_many_distribution_cnam_es_xml_err(_response_body, output)
+                output = crate::protocol_serde::shape_too_many_distribution_cnames::de_too_many_distribution_cnames_xml_err(_response_body, output)
                     .map_err(crate::operation::associate_alias::AssociateAliasError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()

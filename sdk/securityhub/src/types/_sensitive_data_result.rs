@@ -17,8 +17,10 @@ impl SensitiveDataResult {
         self.category.as_deref()
     }
     /// <p>The list of detected instances of sensitive data.</p>
-    pub fn detections(&self) -> ::std::option::Option<&[crate::types::SensitiveDataDetections]> {
-        self.detections.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.detections.is_none()`.
+    pub fn detections(&self) -> &[crate::types::SensitiveDataDetections] {
+        self.detections.as_deref().unwrap_or_default()
     }
     /// <p>The total number of occurrences of sensitive data.</p>
     pub fn total_count(&self) -> ::std::option::Option<i64> {

@@ -29,8 +29,10 @@ impl ManagedJobTemplateSummary {
         self.description.as_deref()
     }
     /// <p>A list of environments that are supported with the managed job template.</p>
-    pub fn environments(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.environments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.environments.is_none()`.
+    pub fn environments(&self) -> &[::std::string::String] {
+        self.environments.as_deref().unwrap_or_default()
     }
     /// <p>The version for a managed template.</p>
     pub fn template_version(&self) -> ::std::option::Option<&str> {

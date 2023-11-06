@@ -83,8 +83,10 @@ impl GetRouteOutput {
         self.source_path.as_deref()
     }
     /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service. </p>
-    pub fn methods(&self) -> ::std::option::Option<&[crate::types::HttpMethod]> {
-        self.methods.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.methods.is_none()`.
+    pub fn methods(&self) -> &[crate::types::HttpMethod] {
+        self.methods.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service. </p>
     pub fn include_child_paths(&self) -> ::std::option::Option<bool> {

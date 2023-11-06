@@ -34,6 +34,7 @@ pub struct UnregisterConnectorInputBuilder {
 }
 impl UnregisterConnectorInputBuilder {
     /// <p>The label of the connector. The label is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account.</p>
+    /// This field is required.
     pub fn connector_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_label = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl UnregisterConnectorInputBuilder {
     /// Consumes the builder and constructs a [`UnregisterConnectorInput`](crate::operation::unregister_connector::UnregisterConnectorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::unregister_connector::UnregisterConnectorInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::unregister_connector::UnregisterConnectorInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::unregister_connector::UnregisterConnectorInput {
             connector_label: self.connector_label,

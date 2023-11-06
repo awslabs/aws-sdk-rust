@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestSetIntentDiscrepancyItem {
     /// <p>The name of the intent in the discrepancy report.</p>
-    pub intent_name: ::std::option::Option<::std::string::String>,
+    pub intent_name: ::std::string::String,
     /// <p>The error message for a discrepancy for an intent between the test set and the bot.</p>
-    pub error_message: ::std::option::Option<::std::string::String>,
+    pub error_message: ::std::string::String,
 }
 impl TestSetIntentDiscrepancyItem {
     /// <p>The name of the intent in the discrepancy report.</p>
-    pub fn intent_name(&self) -> ::std::option::Option<&str> {
-        self.intent_name.as_deref()
+    pub fn intent_name(&self) -> &str {
+        use std::ops::Deref;
+        self.intent_name.deref()
     }
     /// <p>The error message for a discrepancy for an intent between the test set and the bot.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
-        self.error_message.as_deref()
+    pub fn error_message(&self) -> &str {
+        use std::ops::Deref;
+        self.error_message.deref()
     }
 }
 impl TestSetIntentDiscrepancyItem {
@@ -35,6 +37,7 @@ pub struct TestSetIntentDiscrepancyItemBuilder {
 }
 impl TestSetIntentDiscrepancyItemBuilder {
     /// <p>The name of the intent in the discrepancy report.</p>
+    /// This field is required.
     pub fn intent_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.intent_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl TestSetIntentDiscrepancyItemBuilder {
         &self.intent_name
     }
     /// <p>The error message for a discrepancy for an intent between the test set and the bot.</p>
+    /// This field is required.
     pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl TestSetIntentDiscrepancyItemBuilder {
         &self.error_message
     }
     /// Consumes the builder and constructs a [`TestSetIntentDiscrepancyItem`](crate::types::TestSetIntentDiscrepancyItem).
-    pub fn build(self) -> crate::types::TestSetIntentDiscrepancyItem {
-        crate::types::TestSetIntentDiscrepancyItem {
-            intent_name: self.intent_name,
-            error_message: self.error_message,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`intent_name`](crate::types::builders::TestSetIntentDiscrepancyItemBuilder::intent_name)
+    /// - [`error_message`](crate::types::builders::TestSetIntentDiscrepancyItemBuilder::error_message)
+    pub fn build(self) -> ::std::result::Result<crate::types::TestSetIntentDiscrepancyItem, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TestSetIntentDiscrepancyItem {
+            intent_name: self.intent_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "intent_name",
+                    "intent_name was not specified but it is required when building TestSetIntentDiscrepancyItem",
+                )
+            })?,
+            error_message: self.error_message.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "error_message",
+                    "error_message was not specified but it is required when building TestSetIntentDiscrepancyItem",
+                )
+            })?,
+        })
     }
 }

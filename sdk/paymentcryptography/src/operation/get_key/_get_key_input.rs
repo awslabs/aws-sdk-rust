@@ -27,6 +27,7 @@ pub struct GetKeyInputBuilder {
 }
 impl GetKeyInputBuilder {
     /// <p>The <code>KeyARN</code> of the Amazon Web Services Payment Cryptography key.</p>
+    /// This field is required.
     pub fn key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_identifier = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetKeyInputBuilder {
         &self.key_identifier
     }
     /// Consumes the builder and constructs a [`GetKeyInput`](crate::operation::get_key::GetKeyInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_key::GetKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_key::GetKeyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_key::GetKeyInput {
             key_identifier: self.key_identifier,
         })

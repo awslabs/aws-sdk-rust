@@ -69,8 +69,10 @@ impl DescribeReservedInstancesOfferingsInput {
     /// <li> <p> <code>scope</code> - The scope of the Reserved Instance (<code>Availability Zone</code> or <code>Region</code>).</p> </li>
     /// <li> <p> <code>usage-price</code> - The usage price of the Reserved Instance, per hour (for example, 0.84).</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>Include Reserved Instance Marketplace offerings in the response.</p>
     pub fn include_marketplace(&self) -> ::std::option::Option<bool> {
@@ -104,8 +106,10 @@ impl DescribeReservedInstancesOfferingsInput {
         self.product_description.as_ref()
     }
     /// <p>One or more Reserved Instances offering IDs.</p>
-    pub fn reserved_instances_offering_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.reserved_instances_offering_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reserved_instances_offering_ids.is_none()`.
+    pub fn reserved_instances_offering_ids(&self) -> &[::std::string::String] {
+        self.reserved_instances_offering_ids.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -437,7 +441,7 @@ impl DescribeReservedInstancesOfferingsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsInput {

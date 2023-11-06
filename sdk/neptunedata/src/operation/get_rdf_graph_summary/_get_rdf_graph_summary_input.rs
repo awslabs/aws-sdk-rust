@@ -43,7 +43,7 @@ impl GetRdfGraphSummaryInputBuilder {
     /// Consumes the builder and constructs a [`GetRdfGraphSummaryInput`](crate::operation::get_rdf_graph_summary::GetRdfGraphSummaryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_rdf_graph_summary::GetRdfGraphSummaryInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_rdf_graph_summary::GetRdfGraphSummaryInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_rdf_graph_summary::GetRdfGraphSummaryInput { mode: self.mode })
     }

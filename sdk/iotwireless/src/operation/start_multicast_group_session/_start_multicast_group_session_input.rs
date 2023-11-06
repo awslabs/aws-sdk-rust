@@ -34,6 +34,7 @@ pub struct StartMulticastGroupSessionInputBuilder {
 }
 impl StartMulticastGroupSessionInputBuilder {
     /// <p>The ID of the multicast group.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl StartMulticastGroupSessionInputBuilder {
         &self.id
     }
     /// <p>The LoRaWAN information used with the multicast session.</p>
+    /// This field is required.
     pub fn lo_ra_wan(mut self, input: crate::types::LoRaWanMulticastSession) -> Self {
         self.lo_ra_wan = ::std::option::Option::Some(input);
         self
@@ -66,7 +68,7 @@ impl StartMulticastGroupSessionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_multicast_group_session::StartMulticastGroupSessionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_multicast_group_session::StartMulticastGroupSessionInput {
             id: self.id,

@@ -66,7 +66,7 @@ impl ListTopicRuleDestinationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_topic_rule_destinations::ListTopicRuleDestinationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_topic_rule_destinations::ListTopicRuleDestinationsInput {
             max_results: self.max_results,

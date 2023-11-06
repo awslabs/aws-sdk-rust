@@ -14,8 +14,10 @@ pub struct ListStreamsOutput {
 }
 impl ListStreamsOutput {
     /// <p>A list of stream descriptors associated with the current account and endpoint.</p>
-    pub fn streams(&self) -> ::std::option::Option<&[crate::types::Stream]> {
-        self.streams.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.streams.is_none()`.
+    pub fn streams(&self) -> &[crate::types::Stream] {
+        self.streams.as_deref().unwrap_or_default()
     }
     /// <p>The stream ARN of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p>
     /// <p>If <code>LastEvaluatedStreamArn</code> is empty, then the "last page" of results has been processed and there is no more data to be retrieved.</p>

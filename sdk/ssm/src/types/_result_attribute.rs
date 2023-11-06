@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResultAttribute {
     /// <p>Name of the inventory item type. Valid value: <code>AWS:InstanceInformation</code>. Default Value: <code>AWS:InstanceInformation</code>.</p>
-    pub type_name: ::std::option::Option<::std::string::String>,
+    pub type_name: ::std::string::String,
 }
 impl ResultAttribute {
     /// <p>Name of the inventory item type. Valid value: <code>AWS:InstanceInformation</code>. Default Value: <code>AWS:InstanceInformation</code>.</p>
-    pub fn type_name(&self) -> ::std::option::Option<&str> {
-        self.type_name.as_deref()
+    pub fn type_name(&self) -> &str {
+        use std::ops::Deref;
+        self.type_name.deref()
     }
 }
 impl ResultAttribute {
@@ -28,6 +29,7 @@ pub struct ResultAttributeBuilder {
 }
 impl ResultAttributeBuilder {
     /// <p>Name of the inventory item type. Valid value: <code>AWS:InstanceInformation</code>. Default Value: <code>AWS:InstanceInformation</code>.</p>
+    /// This field is required.
     pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_name = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl ResultAttributeBuilder {
         &self.type_name
     }
     /// Consumes the builder and constructs a [`ResultAttribute`](crate::types::ResultAttribute).
-    pub fn build(self) -> crate::types::ResultAttribute {
-        crate::types::ResultAttribute { type_name: self.type_name }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`type_name`](crate::types::builders::ResultAttributeBuilder::type_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::ResultAttribute, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ResultAttribute {
+            type_name: self.type_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "type_name",
+                    "type_name was not specified but it is required when building ResultAttribute",
+                )
+            })?,
+        })
     }
 }

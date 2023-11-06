@@ -41,6 +41,7 @@ pub struct DeleteScheduleInputBuilder {
 }
 impl DeleteScheduleInputBuilder {
     /// <p>The name of the schedule to delete.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl DeleteScheduleInputBuilder {
     /// Consumes the builder and constructs a [`DeleteScheduleInput`](crate::operation::delete_schedule::DeleteScheduleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_schedule::DeleteScheduleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_schedule::DeleteScheduleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_schedule::DeleteScheduleInput {
             name: self.name,
             group_name: self.group_name,

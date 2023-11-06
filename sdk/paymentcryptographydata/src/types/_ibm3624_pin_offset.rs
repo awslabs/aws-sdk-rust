@@ -5,30 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ibm3624PinOffset {
     /// <p>The encrypted PIN block data. According to ISO 9564 standard, a PIN Block is an encoded representation of a payment card Personal Account Number (PAN) and the cardholder Personal Identification Number (PIN).</p>
-    pub encrypted_pin_block: ::std::option::Option<::std::string::String>,
+    pub encrypted_pin_block: ::std::string::String,
     /// <p>The decimalization table to use for IBM 3624 PIN algorithm. The table is used to convert the algorithm intermediate result from hexadecimal characters to decimal.</p>
-    pub decimalization_table: ::std::option::Option<::std::string::String>,
+    pub decimalization_table: ::std::string::String,
     /// <p>The padding character for validation data.</p>
-    pub pin_validation_data_pad_character: ::std::option::Option<::std::string::String>,
+    pub pin_validation_data_pad_character: ::std::string::String,
     /// <p>The unique data for cardholder identification.</p>
-    pub pin_validation_data: ::std::option::Option<::std::string::String>,
+    pub pin_validation_data: ::std::string::String,
 }
 impl Ibm3624PinOffset {
     /// <p>The encrypted PIN block data. According to ISO 9564 standard, a PIN Block is an encoded representation of a payment card Personal Account Number (PAN) and the cardholder Personal Identification Number (PIN).</p>
-    pub fn encrypted_pin_block(&self) -> ::std::option::Option<&str> {
-        self.encrypted_pin_block.as_deref()
+    pub fn encrypted_pin_block(&self) -> &str {
+        use std::ops::Deref;
+        self.encrypted_pin_block.deref()
     }
     /// <p>The decimalization table to use for IBM 3624 PIN algorithm. The table is used to convert the algorithm intermediate result from hexadecimal characters to decimal.</p>
-    pub fn decimalization_table(&self) -> ::std::option::Option<&str> {
-        self.decimalization_table.as_deref()
+    pub fn decimalization_table(&self) -> &str {
+        use std::ops::Deref;
+        self.decimalization_table.deref()
     }
     /// <p>The padding character for validation data.</p>
-    pub fn pin_validation_data_pad_character(&self) -> ::std::option::Option<&str> {
-        self.pin_validation_data_pad_character.as_deref()
+    pub fn pin_validation_data_pad_character(&self) -> &str {
+        use std::ops::Deref;
+        self.pin_validation_data_pad_character.deref()
     }
     /// <p>The unique data for cardholder identification.</p>
-    pub fn pin_validation_data(&self) -> ::std::option::Option<&str> {
-        self.pin_validation_data.as_deref()
+    pub fn pin_validation_data(&self) -> &str {
+        use std::ops::Deref;
+        self.pin_validation_data.deref()
     }
 }
 impl Ibm3624PinOffset {
@@ -49,6 +53,7 @@ pub struct Ibm3624PinOffsetBuilder {
 }
 impl Ibm3624PinOffsetBuilder {
     /// <p>The encrypted PIN block data. According to ISO 9564 standard, a PIN Block is an encoded representation of a payment card Personal Account Number (PAN) and the cardholder Personal Identification Number (PIN).</p>
+    /// This field is required.
     pub fn encrypted_pin_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encrypted_pin_block = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +68,7 @@ impl Ibm3624PinOffsetBuilder {
         &self.encrypted_pin_block
     }
     /// <p>The decimalization table to use for IBM 3624 PIN algorithm. The table is used to convert the algorithm intermediate result from hexadecimal characters to decimal.</p>
+    /// This field is required.
     pub fn decimalization_table(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.decimalization_table = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +83,7 @@ impl Ibm3624PinOffsetBuilder {
         &self.decimalization_table
     }
     /// <p>The padding character for validation data.</p>
+    /// This field is required.
     pub fn pin_validation_data_pad_character(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pin_validation_data_pad_character = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +98,7 @@ impl Ibm3624PinOffsetBuilder {
         &self.pin_validation_data_pad_character
     }
     /// <p>The unique data for cardholder identification.</p>
+    /// This field is required.
     pub fn pin_validation_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pin_validation_data = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +113,37 @@ impl Ibm3624PinOffsetBuilder {
         &self.pin_validation_data
     }
     /// Consumes the builder and constructs a [`Ibm3624PinOffset`](crate::types::Ibm3624PinOffset).
-    pub fn build(self) -> crate::types::Ibm3624PinOffset {
-        crate::types::Ibm3624PinOffset {
-            encrypted_pin_block: self.encrypted_pin_block,
-            decimalization_table: self.decimalization_table,
-            pin_validation_data_pad_character: self.pin_validation_data_pad_character,
-            pin_validation_data: self.pin_validation_data,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`encrypted_pin_block`](crate::types::builders::Ibm3624PinOffsetBuilder::encrypted_pin_block)
+    /// - [`decimalization_table`](crate::types::builders::Ibm3624PinOffsetBuilder::decimalization_table)
+    /// - [`pin_validation_data_pad_character`](crate::types::builders::Ibm3624PinOffsetBuilder::pin_validation_data_pad_character)
+    /// - [`pin_validation_data`](crate::types::builders::Ibm3624PinOffsetBuilder::pin_validation_data)
+    pub fn build(self) -> ::std::result::Result<crate::types::Ibm3624PinOffset, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Ibm3624PinOffset {
+            encrypted_pin_block: self.encrypted_pin_block.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "encrypted_pin_block",
+                    "encrypted_pin_block was not specified but it is required when building Ibm3624PinOffset",
+                )
+            })?,
+            decimalization_table: self.decimalization_table.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "decimalization_table",
+                    "decimalization_table was not specified but it is required when building Ibm3624PinOffset",
+                )
+            })?,
+            pin_validation_data_pad_character: self.pin_validation_data_pad_character.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "pin_validation_data_pad_character",
+                    "pin_validation_data_pad_character was not specified but it is required when building Ibm3624PinOffset",
+                )
+            })?,
+            pin_validation_data: self.pin_validation_data.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "pin_validation_data",
+                    "pin_validation_data was not specified but it is required when building Ibm3624PinOffset",
+                )
+            })?,
+        })
     }
 }

@@ -5,20 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Object {
     /// <p>The bucket containing the object.</p>
-    pub bucket: ::std::option::Option<::std::string::String>,
+    pub bucket: ::std::string::String,
     /// <p>The key of the object.</p>
-    pub key: ::std::option::Option<::std::string::String>,
+    pub key: ::std::string::String,
     /// <p>The etag of the object.</p>
     pub etag: ::std::option::Option<::std::string::String>,
 }
 impl S3Object {
     /// <p>The bucket containing the object.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
-        self.bucket.as_deref()
+    pub fn bucket(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket.deref()
     }
     /// <p>The key of the object.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
-        self.key.as_deref()
+    pub fn key(&self) -> &str {
+        use std::ops::Deref;
+        self.key.deref()
     }
     /// <p>The etag of the object.</p>
     pub fn etag(&self) -> ::std::option::Option<&str> {
@@ -42,6 +44,7 @@ pub struct S3ObjectBuilder {
 }
 impl S3ObjectBuilder {
     /// <p>The bucket containing the object.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl S3ObjectBuilder {
         &self.bucket
     }
     /// <p>The key of the object.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +88,24 @@ impl S3ObjectBuilder {
         &self.etag
     }
     /// Consumes the builder and constructs a [`S3Object`](crate::types::S3Object).
-    pub fn build(self) -> crate::types::S3Object {
-        crate::types::S3Object {
-            bucket: self.bucket,
-            key: self.key,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bucket`](crate::types::builders::S3ObjectBuilder::bucket)
+    /// - [`key`](crate::types::builders::S3ObjectBuilder::key)
+    pub fn build(self) -> ::std::result::Result<crate::types::S3Object, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::S3Object {
+            bucket: self.bucket.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "bucket",
+                    "bucket was not specified but it is required when building S3Object",
+                )
+            })?,
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building S3Object",
+                )
+            })?,
             etag: self.etag,
-        }
+        })
     }
 }

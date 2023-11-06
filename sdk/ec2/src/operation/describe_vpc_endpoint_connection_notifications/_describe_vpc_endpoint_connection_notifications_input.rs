@@ -40,8 +40,10 @@ impl DescribeVpcEndpointConnectionNotificationsInput {
     /// <li> <p> <code>service-id</code> - The ID of the endpoint service.</p> </li>
     /// <li> <p> <code>vpc-endpoint-id</code> - The ID of the VPC endpoint.</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another request with the returned <code>NextToken</code> value.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -176,7 +178,7 @@ impl DescribeVpcEndpointConnectionNotificationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_vpc_endpoint_connection_notifications::DescribeVpcEndpointConnectionNotificationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_vpc_endpoint_connection_notifications::DescribeVpcEndpointConnectionNotificationsInput {

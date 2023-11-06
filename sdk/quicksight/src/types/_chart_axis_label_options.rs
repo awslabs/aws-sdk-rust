@@ -29,8 +29,10 @@ impl ChartAxisLabelOptions {
         self.sort_icon_visibility.as_ref()
     }
     /// <p>The label options for a chart axis.</p>
-    pub fn axis_label_options(&self) -> ::std::option::Option<&[crate::types::AxisLabelOptions]> {
-        self.axis_label_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.axis_label_options.is_none()`.
+    pub fn axis_label_options(&self) -> &[crate::types::AxisLabelOptions] {
+        self.axis_label_options.as_deref().unwrap_or_default()
     }
 }
 impl ChartAxisLabelOptions {

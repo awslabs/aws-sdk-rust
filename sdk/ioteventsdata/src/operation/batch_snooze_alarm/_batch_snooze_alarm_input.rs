@@ -8,8 +8,10 @@ pub struct BatchSnoozeAlarmInput {
 }
 impl BatchSnoozeAlarmInput {
     /// <p>The list of snooze action requests. You can specify up to 10 requests per operation.</p>
-    pub fn snooze_action_requests(&self) -> ::std::option::Option<&[crate::types::SnoozeAlarmActionRequest]> {
-        self.snooze_action_requests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.snooze_action_requests.is_none()`.
+    pub fn snooze_action_requests(&self) -> &[crate::types::SnoozeAlarmActionRequest] {
+        self.snooze_action_requests.as_deref().unwrap_or_default()
     }
 }
 impl BatchSnoozeAlarmInput {
@@ -49,7 +51,7 @@ impl BatchSnoozeAlarmInputBuilder {
     /// Consumes the builder and constructs a [`BatchSnoozeAlarmInput`](crate::operation::batch_snooze_alarm::BatchSnoozeAlarmInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_snooze_alarm::BatchSnoozeAlarmInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_snooze_alarm::BatchSnoozeAlarmInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_snooze_alarm::BatchSnoozeAlarmInput {
             snooze_action_requests: self.snooze_action_requests,
         })

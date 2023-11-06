@@ -15,8 +15,10 @@ impl UpdateRestApiInput {
         self.rest_api_id.as_deref()
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn patch_operations(&self) -> ::std::option::Option<&[crate::types::PatchOperation]> {
-        self.patch_operations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.patch_operations.is_none()`.
+    pub fn patch_operations(&self) -> &[crate::types::PatchOperation] {
+        self.patch_operations.as_deref().unwrap_or_default()
     }
 }
 impl UpdateRestApiInput {
@@ -35,6 +37,7 @@ pub struct UpdateRestApiInputBuilder {
 }
 impl UpdateRestApiInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
+    /// This field is required.
     pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rest_api_id = ::std::option::Option::Some(input.into());
         self
@@ -71,7 +74,7 @@ impl UpdateRestApiInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRestApiInput`](crate::operation::update_rest_api::UpdateRestApiInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_rest_api::UpdateRestApiInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_rest_api::UpdateRestApiInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_rest_api::UpdateRestApiInput {
             rest_api_id: self.rest_api_id,
             patch_operations: self.patch_operations,

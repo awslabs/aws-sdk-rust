@@ -19,10 +19,10 @@ impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails {
         self.launch_template_specification.as_ref()
     }
     /// <p>Property values to use to override the values in the launch template.</p>
-    pub fn overrides(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails]> {
-        self.overrides.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.overrides.is_none()`.
+    pub fn overrides(&self) -> &[crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails] {
+        self.overrides.as_deref().unwrap_or_default()
     }
 }
 impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails {

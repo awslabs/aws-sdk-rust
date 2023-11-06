@@ -33,12 +33,16 @@ impl VpcEndpointDetail {
         self.vpc_id.as_deref()
     }
     /// <p>The ID of the subnets from which you access OpenSearch Serverless.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        self.subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>The unique identifiers of the security groups that define the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>The current status of the endpoint.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::VpcEndpointStatus> {

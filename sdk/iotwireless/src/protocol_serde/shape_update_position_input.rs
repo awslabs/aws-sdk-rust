@@ -2,7 +2,7 @@
 pub fn ser_update_position_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_position::UpdatePositionInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.position {
         let mut array_2 = object.key("Position").start_array();
         for item_3 in var_1 {

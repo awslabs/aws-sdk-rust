@@ -34,6 +34,7 @@ pub struct GetSchemaInputBuilder {
 }
 impl GetSchemaInputBuilder {
     /// <p>A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.</p>
+    /// This field is required.
     pub fn collaboration_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collaboration_identifier = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetSchemaInputBuilder {
         &self.collaboration_identifier
     }
     /// <p>The name of the relation to retrieve the schema for.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,7 @@ impl GetSchemaInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`GetSchemaInput`](crate::operation::get_schema::GetSchemaInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_schema::GetSchemaInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_schema::GetSchemaInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_schema::GetSchemaInput {
             collaboration_identifier: self.collaboration_identifier,
             name: self.name,

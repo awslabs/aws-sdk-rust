@@ -14,8 +14,10 @@ impl PutRecordBatchInput {
         self.delivery_stream_name.as_deref()
     }
     /// <p>One or more records.</p>
-    pub fn records(&self) -> ::std::option::Option<&[crate::types::Record]> {
-        self.records.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.records.is_none()`.
+    pub fn records(&self) -> &[crate::types::Record] {
+        self.records.as_deref().unwrap_or_default()
     }
 }
 impl PutRecordBatchInput {
@@ -34,6 +36,7 @@ pub struct PutRecordBatchInputBuilder {
 }
 impl PutRecordBatchInputBuilder {
     /// <p>The name of the delivery stream.</p>
+    /// This field is required.
     pub fn delivery_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delivery_stream_name = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +73,7 @@ impl PutRecordBatchInputBuilder {
     /// Consumes the builder and constructs a [`PutRecordBatchInput`](crate::operation::put_record_batch::PutRecordBatchInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_record_batch::PutRecordBatchInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_record_batch::PutRecordBatchInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_record_batch::PutRecordBatchInput {
             delivery_stream_name: self.delivery_stream_name,
             records: self.records,

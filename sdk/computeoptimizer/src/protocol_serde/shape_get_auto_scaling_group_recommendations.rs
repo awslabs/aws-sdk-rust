@@ -154,11 +154,10 @@ pub fn de_get_auto_scaling_group_recommendations_http_error(
                     output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                         .map_err(crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::throttling_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -189,12 +188,12 @@ pub fn de_get_auto_scaling_group_recommendations_http_response(
 
 pub fn ser_get_auto_scaling_group_recommendations_input(
     input: &crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_get_auto_scaling_group_recommendations_input::ser_get_auto_scaling_group_recommendations_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_get_auto_scaling_group_recommendations(

@@ -31,8 +31,10 @@ impl ModifyEventSubscriptionInput {
         self.source_type.as_deref()
     }
     /// <p>A list of event categories for a source type (<code>SourceType</code>) that you want to subscribe to. You can see a list of the categories for a given source type in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a> in the <i>Amazon RDS User Guide</i> or by using the <code>DescribeEventCategories</code> operation.</p>
-    pub fn event_categories(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.event_categories.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_categories.is_none()`.
+    pub fn event_categories(&self) -> &[::std::string::String] {
+        self.event_categories.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether to activate the subscription.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
@@ -58,6 +60,7 @@ pub struct ModifyEventSubscriptionInputBuilder {
 }
 impl ModifyEventSubscriptionInputBuilder {
     /// <p>The name of the RDS event notification subscription.</p>
+    /// This field is required.
     pub fn subscription_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_name = ::std::option::Option::Some(input.into());
         self
@@ -141,7 +144,7 @@ impl ModifyEventSubscriptionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_event_subscription::ModifyEventSubscriptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_event_subscription::ModifyEventSubscriptionInput {
             subscription_name: self.subscription_name,

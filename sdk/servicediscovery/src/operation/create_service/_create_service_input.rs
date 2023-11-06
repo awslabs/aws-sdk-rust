@@ -86,8 +86,10 @@ impl CreateServiceInput {
         self.health_check_custom_config.as_ref()
     }
     /// <p>The tags to add to the service. Each tag consists of a key and an optional value that you define. Tags keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>If present, specifies that the service instances are only discoverable using the <code>DiscoverInstances</code> API operation. No DNS records is registered for the service instances. The only valid value is <code>HTTP</code>.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ServiceTypeOption> {
@@ -128,6 +130,7 @@ impl CreateServiceInputBuilder {
     /// <p> <code>_exampleservice._tcp.example.com</code>).</p> <note>
     /// <p>For services that are accessible by DNS queries, you can't create multiple services with names that differ only by case (such as EXAMPLE and example). Otherwise, these services have the same DNS name and can't be distinguished. However, if you use a namespace that's only accessible by API calls, then you can create services that with names that differ only by case.</p>
     /// </note>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -302,7 +305,7 @@ impl CreateServiceInputBuilder {
     /// Consumes the builder and constructs a [`CreateServiceInput`](crate::operation::create_service::CreateServiceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_service::CreateServiceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_service::CreateServiceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_service::CreateServiceInput {
             name: self.name,
             namespace_id: self.namespace_id,

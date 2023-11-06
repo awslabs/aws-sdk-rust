@@ -27,6 +27,7 @@ pub struct DescribeUserPoolDomainInputBuilder {
 }
 impl DescribeUserPoolDomainInputBuilder {
     /// <p>The domain string. For custom domains, this is the fully-qualified domain name, such as <code>auth.example.com</code>. For Amazon Cognito prefix domains, this is the prefix alone, such as <code>auth</code>.</p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeUserPoolDomainInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_user_pool_domain::DescribeUserPoolDomainInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_user_pool_domain::DescribeUserPoolDomainInput { domain: self.domain })
     }

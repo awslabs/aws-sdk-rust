@@ -66,8 +66,10 @@ impl CreateConnectorInput {
         self.log_delivery.as_ref()
     }
     /// <p>Specifies which plugins to use for the connector.</p>
-    pub fn plugins(&self) -> ::std::option::Option<&[crate::types::Plugin]> {
-        self.plugins.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.plugins.is_none()`.
+    pub fn plugins(&self) -> &[crate::types::Plugin] {
+        self.plugins.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used by the connector to access the Amazon Web Services resources that it needs. The types of resources depends on the logic of the connector. For example, a connector that has Amazon S3 as a destination must have permissions that allow it to write to the S3 destination bucket.</p>
     pub fn service_execution_role_arn(&self) -> ::std::option::Option<&str> {
@@ -122,6 +124,7 @@ pub struct CreateConnectorInputBuilder {
 }
 impl CreateConnectorInputBuilder {
     /// <p>Information about the capacity allocated to the connector. Exactly one of the two properties must be specified.</p>
+    /// This field is required.
     pub fn capacity(mut self, input: crate::types::Capacity) -> Self {
         self.capacity = ::std::option::Option::Some(input);
         self
@@ -177,6 +180,7 @@ impl CreateConnectorInputBuilder {
         &self.connector_description
     }
     /// <p>The name of the connector.</p>
+    /// This field is required.
     pub fn connector_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_name = ::std::option::Option::Some(input.into());
         self
@@ -191,6 +195,7 @@ impl CreateConnectorInputBuilder {
         &self.connector_name
     }
     /// <p>Specifies which Apache Kafka cluster to connect to.</p>
+    /// This field is required.
     pub fn kafka_cluster(mut self, input: crate::types::KafkaCluster) -> Self {
         self.kafka_cluster = ::std::option::Option::Some(input);
         self
@@ -205,6 +210,7 @@ impl CreateConnectorInputBuilder {
         &self.kafka_cluster
     }
     /// <p>Details of the client authentication used by the Apache Kafka cluster.</p>
+    /// This field is required.
     pub fn kafka_cluster_client_authentication(mut self, input: crate::types::KafkaClusterClientAuthentication) -> Self {
         self.kafka_cluster_client_authentication = ::std::option::Option::Some(input);
         self
@@ -219,6 +225,7 @@ impl CreateConnectorInputBuilder {
         &self.kafka_cluster_client_authentication
     }
     /// <p>Details of encryption in transit to the Apache Kafka cluster.</p>
+    /// This field is required.
     pub fn kafka_cluster_encryption_in_transit(mut self, input: crate::types::KafkaClusterEncryptionInTransit) -> Self {
         self.kafka_cluster_encryption_in_transit = ::std::option::Option::Some(input);
         self
@@ -233,6 +240,7 @@ impl CreateConnectorInputBuilder {
         &self.kafka_cluster_encryption_in_transit
     }
     /// <p>The version of Kafka Connect. It has to be compatible with both the Apache Kafka cluster's version and the plugins.</p>
+    /// This field is required.
     pub fn kafka_connect_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kafka_connect_version = ::std::option::Option::Some(input.into());
         self
@@ -281,6 +289,7 @@ impl CreateConnectorInputBuilder {
         &self.plugins
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used by the connector to access the Amazon Web Services resources that it needs. The types of resources depends on the logic of the connector. For example, a connector that has Amazon S3 as a destination must have permissions that allow it to write to the S3 destination bucket.</p>
+    /// This field is required.
     pub fn service_execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_execution_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -311,7 +320,7 @@ impl CreateConnectorInputBuilder {
     /// Consumes the builder and constructs a [`CreateConnectorInput`](crate::operation::create_connector::CreateConnectorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_connector::CreateConnectorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_connector::CreateConnectorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_connector::CreateConnectorInput {
             capacity: self.capacity,
             connector_configuration: self.connector_configuration,

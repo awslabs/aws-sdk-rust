@@ -2,7 +2,7 @@
 pub fn ser_outbound_caller_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OutboundCallerConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.outbound_caller_id_name {
         object.key("OutboundCallerIdName").string(var_1.as_str());
     }

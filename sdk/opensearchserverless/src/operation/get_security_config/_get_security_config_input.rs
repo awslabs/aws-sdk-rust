@@ -27,6 +27,7 @@ pub struct GetSecurityConfigInputBuilder {
 }
 impl GetSecurityConfigInputBuilder {
     /// <p>The unique identifier of the security configuration.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetSecurityConfigInputBuilder {
     /// Consumes the builder and constructs a [`GetSecurityConfigInput`](crate::operation::get_security_config::GetSecurityConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_security_config::GetSecurityConfigInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_security_config::GetSecurityConfigInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_security_config::GetSecurityConfigInput { id: self.id })
     }
 }

@@ -15,9 +15,8 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ingestEndpoints" => {
-                            builder = builder.set_ingest_endpoints(
-                                crate::protocol_serde::shape___list_of_ingest_endpoint::de___list_of_ingest_endpoint(tokens)?,
-                            );
+                            builder = builder
+                                .set_ingest_endpoints(crate::protocol_serde::shape_list_of_ingest_endpoint::de_list_of_ingest_endpoint(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

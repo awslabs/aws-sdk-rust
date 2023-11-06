@@ -2,7 +2,7 @@
 pub fn ser_model_client_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ModelClientConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.invocations_timeout_in_seconds {
         object.key("InvocationsTimeoutInSeconds").number(
             #[allow(clippy::useless_conversion)]

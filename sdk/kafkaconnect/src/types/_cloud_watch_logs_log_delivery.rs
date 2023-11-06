@@ -35,6 +35,7 @@ pub struct CloudWatchLogsLogDeliveryBuilder {
 }
 impl CloudWatchLogsLogDeliveryBuilder {
     /// <p>Whether log delivery to Amazon CloudWatch Logs is enabled.</p>
+    /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self

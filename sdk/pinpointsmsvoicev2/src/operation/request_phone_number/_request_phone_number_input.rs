@@ -34,8 +34,10 @@ impl RequestPhoneNumberInput {
         self.message_type.as_ref()
     }
     /// <p>Indicates if the phone number will be used for text messages, voice messages, or both. </p>
-    pub fn number_capabilities(&self) -> ::std::option::Option<&[crate::types::NumberCapability]> {
-        self.number_capabilities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.number_capabilities.is_none()`.
+    pub fn number_capabilities(&self) -> &[crate::types::NumberCapability] {
+        self.number_capabilities.as_deref().unwrap_or_default()
     }
     /// <p>The type of phone number to request.</p>
     pub fn number_type(&self) -> ::std::option::Option<&crate::types::RequestableNumberType> {
@@ -58,8 +60,10 @@ impl RequestPhoneNumberInput {
         self.deletion_protection_enabled
     }
     /// <p>An array of tags (key and value pairs) associate with the requested phone number. </p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -90,6 +94,7 @@ pub struct RequestPhoneNumberInputBuilder {
 }
 impl RequestPhoneNumberInputBuilder {
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
+    /// This field is required.
     pub fn iso_country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iso_country_code = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +109,7 @@ impl RequestPhoneNumberInputBuilder {
         &self.iso_country_code
     }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
+    /// This field is required.
     pub fn message_type(mut self, input: crate::types::MessageType) -> Self {
         self.message_type = ::std::option::Option::Some(input);
         self
@@ -138,6 +144,7 @@ impl RequestPhoneNumberInputBuilder {
         &self.number_capabilities
     }
     /// <p>The type of phone number to request.</p>
+    /// This field is required.
     pub fn number_type(mut self, input: crate::types::RequestableNumberType) -> Self {
         self.number_type = ::std::option::Option::Some(input);
         self
@@ -244,7 +251,8 @@ impl RequestPhoneNumberInputBuilder {
     /// Consumes the builder and constructs a [`RequestPhoneNumberInput`](crate::operation::request_phone_number::RequestPhoneNumberInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::request_phone_number::RequestPhoneNumberInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::request_phone_number::RequestPhoneNumberInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::request_phone_number::RequestPhoneNumberInput {
             iso_country_code: self.iso_country_code,
             message_type: self.message_type,

@@ -27,6 +27,7 @@ pub struct DescribeDbClusterSnapshotAttributesInputBuilder {
 }
 impl DescribeDbClusterSnapshotAttributesInputBuilder {
     /// <p>The identifier for the DB cluster snapshot to describe the attributes for.</p>
+    /// This field is required.
     pub fn db_cluster_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_snapshot_identifier = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeDbClusterSnapshotAttributesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_db_cluster_snapshot_attributes::DescribeDbClusterSnapshotAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_db_cluster_snapshot_attributes::DescribeDbClusterSnapshotAttributesInput {

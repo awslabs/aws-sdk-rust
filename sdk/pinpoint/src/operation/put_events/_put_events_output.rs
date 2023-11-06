@@ -34,6 +34,7 @@ pub struct PutEventsOutputBuilder {
 }
 impl PutEventsOutputBuilder {
     /// <p>Provides information about endpoints and the events that they're associated with.</p>
+    /// This field is required.
     pub fn events_response(mut self, input: crate::types::EventsResponse) -> Self {
         self.events_response = ::std::option::Option::Some(input);
         self

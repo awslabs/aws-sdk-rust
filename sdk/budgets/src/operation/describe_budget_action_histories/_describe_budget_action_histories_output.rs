@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBudgetActionHistoriesOutput {
     /// <p> The historical record of the budget action resource. </p>
-    pub action_histories: ::std::option::Option<::std::vec::Vec<crate::types::ActionHistory>>,
+    pub action_histories: ::std::vec::Vec<crate::types::ActionHistory>,
     /// <p> A generic string.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeBudgetActionHistoriesOutput {
     /// <p> The historical record of the budget action resource. </p>
-    pub fn action_histories(&self) -> ::std::option::Option<&[crate::types::ActionHistory]> {
-        self.action_histories.as_deref()
+    pub fn action_histories(&self) -> &[crate::types::ActionHistory] {
+        use std::ops::Deref;
+        self.action_histories.deref()
     }
     /// <p> A generic string.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,23 @@ impl DescribeBudgetActionHistoriesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeBudgetActionHistoriesOutput`](crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesOutput).
-    pub fn build(self) -> crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesOutput {
-        crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesOutput {
-            action_histories: self.action_histories,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`action_histories`](crate::operation::describe_budget_action_histories::builders::DescribeBudgetActionHistoriesOutputBuilder::action_histories)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesOutput {
+            action_histories: self.action_histories.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "action_histories",
+                    "action_histories was not specified but it is required when building DescribeBudgetActionHistoriesOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

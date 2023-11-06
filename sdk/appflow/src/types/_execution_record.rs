@@ -51,8 +51,10 @@ impl ExecutionRecord {
         self.data_pull_end_time.as_ref()
     }
     /// <p>Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the associated flow run.</p>
-    pub fn metadata_catalog_details(&self) -> ::std::option::Option<&[crate::types::MetadataCatalogDetail]> {
-        self.metadata_catalog_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metadata_catalog_details.is_none()`.
+    pub fn metadata_catalog_details(&self) -> &[crate::types::MetadataCatalogDetail] {
+        self.metadata_catalog_details.as_deref().unwrap_or_default()
     }
 }
 impl ExecutionRecord {

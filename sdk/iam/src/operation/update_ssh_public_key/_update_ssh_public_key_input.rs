@@ -46,6 +46,7 @@ pub struct UpdateSshPublicKeyInputBuilder {
 impl UpdateSshPublicKeyInputBuilder {
     /// <p>The name of the IAM user associated with the SSH public key.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// This field is required.
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl UpdateSshPublicKeyInputBuilder {
     }
     /// <p>The unique identifier for the SSH public key.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
+    /// This field is required.
     pub fn ssh_public_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssh_public_key_id = ::std::option::Option::Some(input.into());
         self
@@ -79,6 +81,7 @@ impl UpdateSshPublicKeyInputBuilder {
         &self.ssh_public_key_id
     }
     /// <p>The status to assign to the SSH public key. <code>Active</code> means that the key can be used for authentication with an CodeCommit repository. <code>Inactive</code> means that the key cannot be used.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::StatusType) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -95,7 +98,7 @@ impl UpdateSshPublicKeyInputBuilder {
     /// Consumes the builder and constructs a [`UpdateSshPublicKeyInput`](crate::operation::update_ssh_public_key::UpdateSshPublicKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_ssh_public_key::UpdateSshPublicKeyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_ssh_public_key::UpdateSshPublicKeyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_ssh_public_key::UpdateSshPublicKeyInput {
             user_name: self.user_name,

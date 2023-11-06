@@ -80,6 +80,7 @@ impl StartSessionInputBuilder {
         &self.description
     }
     /// <p>The workgroup to which the session belongs.</p>
+    /// This field is required.
     pub fn work_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.work_group = ::std::option::Option::Some(input.into());
         self
@@ -94,6 +95,7 @@ impl StartSessionInputBuilder {
         &self.work_group
     }
     /// <p>Contains engine data processing unit (DPU) configuration settings and parameter mappings.</p>
+    /// This field is required.
     pub fn engine_configuration(mut self, input: crate::types::EngineConfiguration) -> Self {
         self.engine_configuration = ::std::option::Option::Some(input);
         self
@@ -156,7 +158,9 @@ impl StartSessionInputBuilder {
         &self.client_request_token
     }
     /// Consumes the builder and constructs a [`StartSessionInput`](crate::operation::start_session::StartSessionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_session::StartSessionInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::start_session::StartSessionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_session::StartSessionInput {
             description: self.description,
             work_group: self.work_group,

@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Target {
     /// <p>The target type is always an <code>ACCOUNT</code>.</p>
-    pub r#type: ::std::option::Option<crate::types::TargetType>,
+    pub r#type: crate::types::TargetType,
     /// <p>The <code>TargetID</code> is a 12-character identifier of the <code>ACCOUNT</code> for which the control was created. (This must be the current account.) </p>
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl Target {
     /// <p>The target type is always an <code>ACCOUNT</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::TargetType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::TargetType {
+        &self.r#type
     }
     /// <p>The <code>TargetID</code> is a 12-character identifier of the <code>ACCOUNT</code> for which the control was created. (This must be the current account.) </p>
     pub fn id(&self) -> ::std::option::Option<&str> {
@@ -35,6 +35,7 @@ pub struct TargetBuilder {
 }
 impl TargetBuilder {
     /// <p>The target type is always an <code>ACCOUNT</code>.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::TargetType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -63,10 +64,17 @@ impl TargetBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`Target`](crate::types::Target).
-    pub fn build(self) -> crate::types::Target {
-        crate::types::Target {
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::TargetBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::Target, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Target {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building Target",
+                )
+            })?,
             id: self.id,
-        }
+        })
     }
 }

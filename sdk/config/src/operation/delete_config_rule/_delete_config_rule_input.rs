@@ -28,6 +28,7 @@ pub struct DeleteConfigRuleInputBuilder {
 }
 impl DeleteConfigRuleInputBuilder {
     /// <p>The name of the Config rule that you want to delete.</p>
+    /// This field is required.
     pub fn config_rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.config_rule_name = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl DeleteConfigRuleInputBuilder {
     /// Consumes the builder and constructs a [`DeleteConfigRuleInput`](crate::operation::delete_config_rule::DeleteConfigRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_config_rule::DeleteConfigRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_config_rule::DeleteConfigRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_config_rule::DeleteConfigRuleInput {
             config_rule_name: self.config_rule_name,
         })

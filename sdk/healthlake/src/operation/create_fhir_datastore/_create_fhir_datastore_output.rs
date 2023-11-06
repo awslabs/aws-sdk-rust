@@ -4,31 +4,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFhirDatastoreOutput {
     /// <p>The AWS-generated data store id. This id is in the output from the initial data store creation call.</p>
-    pub datastore_id: ::std::option::Option<::std::string::String>,
+    pub datastore_id: ::std::string::String,
     /// <p>The data store ARN is generated during the creation of the data store and can be found in the output from the initial data store creation call.</p>
-    pub datastore_arn: ::std::option::Option<::std::string::String>,
+    pub datastore_arn: ::std::string::String,
     /// <p>The status of the FHIR data store.</p>
-    pub datastore_status: ::std::option::Option<crate::types::DatastoreStatus>,
+    pub datastore_status: crate::types::DatastoreStatus,
     /// <p>The AWS endpoint for the created data store.</p>
-    pub datastore_endpoint: ::std::option::Option<::std::string::String>,
+    pub datastore_endpoint: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateFhirDatastoreOutput {
     /// <p>The AWS-generated data store id. This id is in the output from the initial data store creation call.</p>
-    pub fn datastore_id(&self) -> ::std::option::Option<&str> {
-        self.datastore_id.as_deref()
+    pub fn datastore_id(&self) -> &str {
+        use std::ops::Deref;
+        self.datastore_id.deref()
     }
     /// <p>The data store ARN is generated during the creation of the data store and can be found in the output from the initial data store creation call.</p>
-    pub fn datastore_arn(&self) -> ::std::option::Option<&str> {
-        self.datastore_arn.as_deref()
+    pub fn datastore_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.datastore_arn.deref()
     }
     /// <p>The status of the FHIR data store.</p>
-    pub fn datastore_status(&self) -> ::std::option::Option<&crate::types::DatastoreStatus> {
-        self.datastore_status.as_ref()
+    pub fn datastore_status(&self) -> &crate::types::DatastoreStatus {
+        &self.datastore_status
     }
     /// <p>The AWS endpoint for the created data store.</p>
-    pub fn datastore_endpoint(&self) -> ::std::option::Option<&str> {
-        self.datastore_endpoint.as_deref()
+    pub fn datastore_endpoint(&self) -> &str {
+        use std::ops::Deref;
+        self.datastore_endpoint.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateFhirDatastoreOutput {
@@ -55,6 +58,7 @@ pub struct CreateFhirDatastoreOutputBuilder {
 }
 impl CreateFhirDatastoreOutputBuilder {
     /// <p>The AWS-generated data store id. This id is in the output from the initial data store creation call.</p>
+    /// This field is required.
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +73,7 @@ impl CreateFhirDatastoreOutputBuilder {
         &self.datastore_id
     }
     /// <p>The data store ARN is generated during the creation of the data store and can be found in the output from the initial data store creation call.</p>
+    /// This field is required.
     pub fn datastore_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_arn = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +88,7 @@ impl CreateFhirDatastoreOutputBuilder {
         &self.datastore_arn
     }
     /// <p>The status of the FHIR data store.</p>
+    /// This field is required.
     pub fn datastore_status(mut self, input: crate::types::DatastoreStatus) -> Self {
         self.datastore_status = ::std::option::Option::Some(input);
         self
@@ -97,6 +103,7 @@ impl CreateFhirDatastoreOutputBuilder {
         &self.datastore_status
     }
     /// <p>The AWS endpoint for the created data store.</p>
+    /// This field is required.
     pub fn datastore_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_endpoint = ::std::option::Option::Some(input.into());
         self
@@ -120,13 +127,41 @@ impl CreateFhirDatastoreOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateFhirDatastoreOutput`](crate::operation::create_fhir_datastore::CreateFhirDatastoreOutput).
-    pub fn build(self) -> crate::operation::create_fhir_datastore::CreateFhirDatastoreOutput {
-        crate::operation::create_fhir_datastore::CreateFhirDatastoreOutput {
-            datastore_id: self.datastore_id,
-            datastore_arn: self.datastore_arn,
-            datastore_status: self.datastore_status,
-            datastore_endpoint: self.datastore_endpoint,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`datastore_id`](crate::operation::create_fhir_datastore::builders::CreateFhirDatastoreOutputBuilder::datastore_id)
+    /// - [`datastore_arn`](crate::operation::create_fhir_datastore::builders::CreateFhirDatastoreOutputBuilder::datastore_arn)
+    /// - [`datastore_status`](crate::operation::create_fhir_datastore::builders::CreateFhirDatastoreOutputBuilder::datastore_status)
+    /// - [`datastore_endpoint`](crate::operation::create_fhir_datastore::builders::CreateFhirDatastoreOutputBuilder::datastore_endpoint)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_fhir_datastore::CreateFhirDatastoreOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_fhir_datastore::CreateFhirDatastoreOutput {
+            datastore_id: self.datastore_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "datastore_id",
+                    "datastore_id was not specified but it is required when building CreateFhirDatastoreOutput",
+                )
+            })?,
+            datastore_arn: self.datastore_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "datastore_arn",
+                    "datastore_arn was not specified but it is required when building CreateFhirDatastoreOutput",
+                )
+            })?,
+            datastore_status: self.datastore_status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "datastore_status",
+                    "datastore_status was not specified but it is required when building CreateFhirDatastoreOutput",
+                )
+            })?,
+            datastore_endpoint: self.datastore_endpoint.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "datastore_endpoint",
+                    "datastore_endpoint was not specified but it is required when building CreateFhirDatastoreOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

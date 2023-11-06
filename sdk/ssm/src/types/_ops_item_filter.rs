@@ -5,24 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OpsItemFilter {
     /// <p>The name of the filter.</p>
-    pub key: ::std::option::Option<crate::types::OpsItemFilterKey>,
+    pub key: crate::types::OpsItemFilterKey,
     /// <p>The filter value.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::vec::Vec<::std::string::String>,
     /// <p>The operator used by the filter call.</p>
-    pub operator: ::std::option::Option<crate::types::OpsItemFilterOperator>,
+    pub operator: crate::types::OpsItemFilterOperator,
 }
 impl OpsItemFilter {
     /// <p>The name of the filter.</p>
-    pub fn key(&self) -> ::std::option::Option<&crate::types::OpsItemFilterKey> {
-        self.key.as_ref()
+    pub fn key(&self) -> &crate::types::OpsItemFilterKey {
+        &self.key
     }
     /// <p>The filter value.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    pub fn values(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.values.deref()
     }
     /// <p>The operator used by the filter call.</p>
-    pub fn operator(&self) -> ::std::option::Option<&crate::types::OpsItemFilterOperator> {
-        self.operator.as_ref()
+    pub fn operator(&self) -> &crate::types::OpsItemFilterOperator {
+        &self.operator
     }
 }
 impl OpsItemFilter {
@@ -42,6 +43,7 @@ pub struct OpsItemFilterBuilder {
 }
 impl OpsItemFilterBuilder {
     /// <p>The name of the filter.</p>
+    /// This field is required.
     pub fn key(mut self, input: crate::types::OpsItemFilterKey) -> Self {
         self.key = ::std::option::Option::Some(input);
         self
@@ -76,6 +78,7 @@ impl OpsItemFilterBuilder {
         &self.values
     }
     /// <p>The operator used by the filter call.</p>
+    /// This field is required.
     pub fn operator(mut self, input: crate::types::OpsItemFilterOperator) -> Self {
         self.operator = ::std::option::Option::Some(input);
         self
@@ -90,11 +93,30 @@ impl OpsItemFilterBuilder {
         &self.operator
     }
     /// Consumes the builder and constructs a [`OpsItemFilter`](crate::types::OpsItemFilter).
-    pub fn build(self) -> crate::types::OpsItemFilter {
-        crate::types::OpsItemFilter {
-            key: self.key,
-            values: self.values,
-            operator: self.operator,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key`](crate::types::builders::OpsItemFilterBuilder::key)
+    /// - [`values`](crate::types::builders::OpsItemFilterBuilder::values)
+    /// - [`operator`](crate::types::builders::OpsItemFilterBuilder::operator)
+    pub fn build(self) -> ::std::result::Result<crate::types::OpsItemFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::OpsItemFilter {
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building OpsItemFilter",
+                )
+            })?,
+            values: self.values.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "values",
+                    "values was not specified but it is required when building OpsItemFilter",
+                )
+            })?,
+            operator: self.operator.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "operator",
+                    "operator was not specified but it is required when building OpsItemFilter",
+                )
+            })?,
+        })
     }
 }

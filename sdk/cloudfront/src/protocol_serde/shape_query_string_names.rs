@@ -2,19 +2,19 @@
 pub fn ser_query_string_names(
     input: &crate::types::QueryStringNames,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.quantity {
+    {
         let mut inner_writer = scope.start_el("Quantity").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_1).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.quantity).encode());
     }
-    if let Some(var_2) = &input.items {
+    if let Some(var_1) = &input.items {
         let mut inner_writer = scope.start_el("Items").finish();
-        for list_item_3 in var_2 {
+        for list_item_2 in var_1 {
             {
                 let mut inner_writer = inner_writer.start_el("Name").finish();
-                inner_writer.data(list_item_3.as_str());
+                inner_writer.data(list_item_2.as_str());
             }
         }
     }
@@ -22,6 +22,7 @@ pub fn ser_query_string_names(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_query_string_names(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::QueryStringNames, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -30,7 +31,7 @@ pub fn de_query_string_names(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Quantity") /* Quantity com.amazonaws.cloudfront#QueryStringNames$Quantity */ =>  {
-                let var_4 =
+                let var_3 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -41,21 +42,23 @@ pub fn de_query_string_names(
                         ?
                     )
                 ;
-                builder = builder.set_quantity(var_4);
+                builder = builder.set_quantity(var_3);
             }
             ,
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#QueryStringNames$Items */ =>  {
-                let var_5 =
+                let var_4 =
                     Some(
                         crate::protocol_serde::shape_query_string_names_list::de_query_string_names_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_items(var_5);
+                builder = builder.set_items(var_4);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::query_string_names_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

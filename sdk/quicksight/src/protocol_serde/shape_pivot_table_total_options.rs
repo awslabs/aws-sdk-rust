@@ -2,7 +2,7 @@
 pub fn ser_pivot_table_total_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PivotTableTotalOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.row_subtotal_options {
         #[allow(unused_mut)]
         let mut object_2 = object.key("RowSubtotalOptions").start_object();

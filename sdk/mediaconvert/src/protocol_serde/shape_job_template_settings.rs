@@ -2,7 +2,7 @@
 pub fn ser_job_template_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::JobTemplateSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ad_avail_offset {
         object.key("adAvailOffset").number(
             #[allow(clippy::useless_conversion)]
@@ -123,9 +123,7 @@ where
                                 .set_extended_data_services(crate::protocol_serde::shape_extended_data_services::de_extended_data_services(tokens)?);
                         }
                         "inputs" => {
-                            builder = builder.set_inputs(crate::protocol_serde::shape___list_of_input_template::de___list_of_input_template(
-                                tokens,
-                            )?);
+                            builder = builder.set_inputs(crate::protocol_serde::shape_list_of_input_template::de_list_of_input_template(tokens)?);
                         }
                         "kantarWatermark" => {
                             builder = builder.set_kantar_watermark(
@@ -146,8 +144,7 @@ where
                             );
                         }
                         "outputGroups" => {
-                            builder =
-                                builder.set_output_groups(crate::protocol_serde::shape___list_of_output_group::de___list_of_output_group(tokens)?);
+                            builder = builder.set_output_groups(crate::protocol_serde::shape_list_of_output_group::de_list_of_output_group(tokens)?);
                         }
                         "timecodeConfig" => {
                             builder = builder.set_timecode_config(crate::protocol_serde::shape_timecode_config::de_timecode_config(tokens)?);

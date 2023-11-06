@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnsTopicPublishAction {
     /// <p>The ARN of the Amazon SNS target where the message is sent.</p>
-    pub target_arn: ::std::option::Option<::std::string::String>,
+    pub target_arn: ::std::string::String,
     /// <p>You can configure the action payload when you send a message as an Amazon SNS push notification.</p>
     pub payload: ::std::option::Option<crate::types::Payload>,
 }
 impl SnsTopicPublishAction {
     /// <p>The ARN of the Amazon SNS target where the message is sent.</p>
-    pub fn target_arn(&self) -> ::std::option::Option<&str> {
-        self.target_arn.as_deref()
+    pub fn target_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.target_arn.deref()
     }
     /// <p>You can configure the action payload when you send a message as an Amazon SNS push notification.</p>
     pub fn payload(&self) -> ::std::option::Option<&crate::types::Payload> {
@@ -35,6 +36,7 @@ pub struct SnsTopicPublishActionBuilder {
 }
 impl SnsTopicPublishActionBuilder {
     /// <p>The ARN of the Amazon SNS target where the message is sent.</p>
+    /// This field is required.
     pub fn target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_arn = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl SnsTopicPublishActionBuilder {
         &self.payload
     }
     /// Consumes the builder and constructs a [`SnsTopicPublishAction`](crate::types::SnsTopicPublishAction).
-    pub fn build(self) -> crate::types::SnsTopicPublishAction {
-        crate::types::SnsTopicPublishAction {
-            target_arn: self.target_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`target_arn`](crate::types::builders::SnsTopicPublishActionBuilder::target_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::SnsTopicPublishAction, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SnsTopicPublishAction {
+            target_arn: self.target_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "target_arn",
+                    "target_arn was not specified but it is required when building SnsTopicPublishAction",
+                )
+            })?,
             payload: self.payload,
-        }
+        })
     }
 }

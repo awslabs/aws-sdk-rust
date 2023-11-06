@@ -8,12 +8,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicaModifications {
     /// <p>Specifies whether S3 on Outposts replicates modifications to object metadata on replicas.</p>
-    pub status: ::std::option::Option<crate::types::ReplicaModificationsStatus>,
+    pub status: crate::types::ReplicaModificationsStatus,
 }
 impl ReplicaModifications {
     /// <p>Specifies whether S3 on Outposts replicates modifications to object metadata on replicas.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ReplicaModificationsStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::ReplicaModificationsStatus {
+        &self.status
     }
 }
 impl ReplicaModifications {
@@ -31,6 +31,7 @@ pub struct ReplicaModificationsBuilder {
 }
 impl ReplicaModificationsBuilder {
     /// <p>Specifies whether S3 on Outposts replicates modifications to object metadata on replicas.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::ReplicaModificationsStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -45,7 +46,16 @@ impl ReplicaModificationsBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`ReplicaModifications`](crate::types::ReplicaModifications).
-    pub fn build(self) -> crate::types::ReplicaModifications {
-        crate::types::ReplicaModifications { status: self.status }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::types::builders::ReplicaModificationsBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::ReplicaModifications, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ReplicaModifications {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building ReplicaModifications",
+                )
+            })?,
+        })
     }
 }

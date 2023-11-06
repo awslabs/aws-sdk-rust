@@ -2,13 +2,13 @@
 pub fn ser_schema_definition(
     object_3: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SchemaDefinition,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::SchemaDefinition::CedarJson(inner) => {
             object_3.key("cedarJson").string(inner.as_str());
         }
         crate::types::SchemaDefinition::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "SchemaDefinition",
             ))
         }

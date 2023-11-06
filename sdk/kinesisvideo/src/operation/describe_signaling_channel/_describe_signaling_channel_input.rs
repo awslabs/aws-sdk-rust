@@ -66,7 +66,7 @@ impl DescribeSignalingChannelInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_signaling_channel::DescribeSignalingChannelInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_signaling_channel::DescribeSignalingChannelInput {
             channel_name: self.channel_name,

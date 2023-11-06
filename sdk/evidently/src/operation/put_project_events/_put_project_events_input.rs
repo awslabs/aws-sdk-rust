@@ -14,8 +14,10 @@ impl PutProjectEventsInput {
         self.project.as_deref()
     }
     /// <p>An array of event structures that contain the performance data that is being sent to Evidently.</p>
-    pub fn events(&self) -> ::std::option::Option<&[crate::types::Event]> {
-        self.events.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.events.is_none()`.
+    pub fn events(&self) -> &[crate::types::Event] {
+        self.events.as_deref().unwrap_or_default()
     }
 }
 impl PutProjectEventsInput {
@@ -34,6 +36,7 @@ pub struct PutProjectEventsInputBuilder {
 }
 impl PutProjectEventsInputBuilder {
     /// <p>The name or ARN of the project to write the events to.</p>
+    /// This field is required.
     pub fn project(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +73,7 @@ impl PutProjectEventsInputBuilder {
     /// Consumes the builder and constructs a [`PutProjectEventsInput`](crate::operation::put_project_events::PutProjectEventsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_project_events::PutProjectEventsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_project_events::PutProjectEventsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_project_events::PutProjectEventsInput {
             project: self.project,
             events: self.events,

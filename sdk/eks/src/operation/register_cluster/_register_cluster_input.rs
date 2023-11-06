@@ -48,6 +48,7 @@ pub struct RegisterClusterInputBuilder {
 }
 impl RegisterClusterInputBuilder {
     /// <p>Define a unique name for this cluster for your Region.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl RegisterClusterInputBuilder {
         &self.name
     }
     /// <p>The configuration settings required to connect the Kubernetes cluster to the Amazon EKS control plane.</p>
+    /// This field is required.
     pub fn connector_config(mut self, input: crate::types::ConnectorConfigRequest) -> Self {
         self.connector_config = ::std::option::Option::Some(input);
         self
@@ -112,7 +114,7 @@ impl RegisterClusterInputBuilder {
     /// Consumes the builder and constructs a [`RegisterClusterInput`](crate::operation::register_cluster::RegisterClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_cluster::RegisterClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::register_cluster::RegisterClusterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_cluster::RegisterClusterInput {
             name: self.name,
             connector_config: self.connector_config,

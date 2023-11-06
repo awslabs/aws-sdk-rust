@@ -2,7 +2,7 @@
 pub fn ser_priority_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PriorityConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.priority_order {
         let mut array_2 = object.key("PriorityOrder").start_array();
         for item_3 in var_1 {

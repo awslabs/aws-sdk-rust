@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBucketTaggingOutput {
     /// <p>The tags set of the Outposts bucket.</p>
-    pub tag_set: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>,
+    pub tag_set: ::std::vec::Vec<crate::types::S3Tag>,
     _request_id: Option<String>,
 }
 impl GetBucketTaggingOutput {
     /// <p>The tags set of the Outposts bucket.</p>
-    pub fn tag_set(&self) -> ::std::option::Option<&[crate::types::S3Tag]> {
-        self.tag_set.as_deref()
+    pub fn tag_set(&self) -> &[crate::types::S3Tag] {
+        use std::ops::Deref;
+        self.tag_set.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetBucketTaggingOutput {
@@ -63,10 +64,19 @@ impl GetBucketTaggingOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetBucketTaggingOutput`](crate::operation::get_bucket_tagging::GetBucketTaggingOutput).
-    pub fn build(self) -> crate::operation::get_bucket_tagging::GetBucketTaggingOutput {
-        crate::operation::get_bucket_tagging::GetBucketTaggingOutput {
-            tag_set: self.tag_set,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`tag_set`](crate::operation::get_bucket_tagging::builders::GetBucketTaggingOutputBuilder::tag_set)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_bucket_tagging::GetBucketTaggingOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_bucket_tagging::GetBucketTaggingOutput {
+            tag_set: self.tag_set.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "tag_set",
+                    "tag_set was not specified but it is required when building GetBucketTaggingOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -33,8 +33,10 @@ impl RuleMetadata {
         self.long_description.as_deref()
     }
     /// <p>Tags that are associated with the rule.</p>
-    pub fn rule_tags(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.rule_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rule_tags.is_none()`.
+    pub fn rule_tags(&self) -> &[::std::string::String] {
+        self.rule_tags.as_deref().unwrap_or_default()
     }
 }
 impl RuleMetadata {

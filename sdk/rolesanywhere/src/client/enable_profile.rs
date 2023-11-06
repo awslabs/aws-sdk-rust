@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`EnableProfile`](crate::operation::enable_profile::builders::EnableProfileFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`profile_id(impl Into<String>)`](crate::operation::enable_profile::builders::EnableProfileFluentBuilder::profile_id) / [`set_profile_id(Option<String>)`](crate::operation::enable_profile::builders::EnableProfileFluentBuilder::set_profile_id): <p>The unique identifier of the profile.</p>
+    ///   - [`profile_id(impl Into<String>)`](crate::operation::enable_profile::builders::EnableProfileFluentBuilder::profile_id) / [`set_profile_id(Option<String>)`](crate::operation::enable_profile::builders::EnableProfileFluentBuilder::set_profile_id):<br>required: **true**<br><p>The unique identifier of the profile.</p><br>
     /// - On success, responds with [`EnableProfileOutput`](crate::operation::enable_profile::EnableProfileOutput) with field(s):
     ///   - [`profile(Option<ProfileDetail>)`](crate::operation::enable_profile::EnableProfileOutput::profile): <p>The state of the profile after a read or write operation.</p>
     /// - On failure, responds with [`SdkError<EnableProfileError>`](crate::operation::enable_profile::EnableProfileError)

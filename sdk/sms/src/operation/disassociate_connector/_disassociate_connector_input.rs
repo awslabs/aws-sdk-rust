@@ -27,6 +27,7 @@ pub struct DisassociateConnectorInputBuilder {
 }
 impl DisassociateConnectorInputBuilder {
     /// <p>The ID of the connector.</p>
+    /// This field is required.
     pub fn connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DisassociateConnectorInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateConnectorInput`](crate::operation::disassociate_connector::DisassociateConnectorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disassociate_connector::DisassociateConnectorInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::disassociate_connector::DisassociateConnectorInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::disassociate_connector::DisassociateConnectorInput {
             connector_id: self.connector_id,

@@ -41,6 +41,7 @@ pub struct ListComponentVersionsInputBuilder {
 }
 impl ListComponentVersionsInputBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl ListComponentVersionsInputBuilder {
     /// Consumes the builder and constructs a [`ListComponentVersionsInput`](crate::operation::list_component_versions::ListComponentVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_component_versions::ListComponentVersionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_component_versions::ListComponentVersionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_component_versions::ListComponentVersionsInput {
             arn: self.arn,

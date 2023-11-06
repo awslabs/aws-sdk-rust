@@ -17,9 +17,9 @@ pub struct RevokeEndpointAccessOutput {
     /// <p>The status of the authorization action.</p>
     pub status: ::std::option::Option<crate::types::AuthorizationStatus>,
     /// <p>Indicates whether all VPCs in the grantee account are allowed access to the cluster.</p>
-    pub allowed_all_vp_cs: ::std::option::Option<bool>,
+    pub allowed_all_vpcs: ::std::option::Option<bool>,
     /// <p>The VPCs allowed access to the cluster.</p>
-    pub allowed_vp_cs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub allowed_vpcs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The number of Redshift-managed VPC endpoints created for the authorization.</p>
     pub endpoint_count: ::std::option::Option<i32>,
     _request_id: Option<String>,
@@ -50,12 +50,14 @@ impl RevokeEndpointAccessOutput {
         self.status.as_ref()
     }
     /// <p>Indicates whether all VPCs in the grantee account are allowed access to the cluster.</p>
-    pub fn allowed_all_vp_cs(&self) -> ::std::option::Option<bool> {
-        self.allowed_all_vp_cs
+    pub fn allowed_all_vpcs(&self) -> ::std::option::Option<bool> {
+        self.allowed_all_vpcs
     }
     /// <p>The VPCs allowed access to the cluster.</p>
-    pub fn allowed_vp_cs(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.allowed_vp_cs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_vpcs.is_none()`.
+    pub fn allowed_vpcs(&self) -> &[::std::string::String] {
+        self.allowed_vpcs.as_deref().unwrap_or_default()
     }
     /// <p>The number of Redshift-managed VPC endpoints created for the authorization.</p>
     pub fn endpoint_count(&self) -> ::std::option::Option<i32> {
@@ -84,8 +86,8 @@ pub struct RevokeEndpointAccessOutputBuilder {
     pub(crate) authorize_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) cluster_status: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::AuthorizationStatus>,
-    pub(crate) allowed_all_vp_cs: ::std::option::Option<bool>,
-    pub(crate) allowed_vp_cs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) allowed_all_vpcs: ::std::option::Option<bool>,
+    pub(crate) allowed_vpcs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) endpoint_count: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
@@ -175,38 +177,38 @@ impl RevokeEndpointAccessOutputBuilder {
         &self.status
     }
     /// <p>Indicates whether all VPCs in the grantee account are allowed access to the cluster.</p>
-    pub fn allowed_all_vp_cs(mut self, input: bool) -> Self {
-        self.allowed_all_vp_cs = ::std::option::Option::Some(input);
+    pub fn allowed_all_vpcs(mut self, input: bool) -> Self {
+        self.allowed_all_vpcs = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether all VPCs in the grantee account are allowed access to the cluster.</p>
-    pub fn set_allowed_all_vp_cs(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allowed_all_vp_cs = input;
+    pub fn set_allowed_all_vpcs(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.allowed_all_vpcs = input;
         self
     }
     /// <p>Indicates whether all VPCs in the grantee account are allowed access to the cluster.</p>
-    pub fn get_allowed_all_vp_cs(&self) -> &::std::option::Option<bool> {
-        &self.allowed_all_vp_cs
+    pub fn get_allowed_all_vpcs(&self) -> &::std::option::Option<bool> {
+        &self.allowed_all_vpcs
     }
-    /// Appends an item to `allowed_vp_cs`.
+    /// Appends an item to `allowed_vpcs`.
     ///
-    /// To override the contents of this collection use [`set_allowed_vp_cs`](Self::set_allowed_vp_cs).
+    /// To override the contents of this collection use [`set_allowed_vpcs`](Self::set_allowed_vpcs).
     ///
     /// <p>The VPCs allowed access to the cluster.</p>
-    pub fn allowed_vp_cs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.allowed_vp_cs.unwrap_or_default();
+    pub fn allowed_vpcs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.allowed_vpcs.unwrap_or_default();
         v.push(input.into());
-        self.allowed_vp_cs = ::std::option::Option::Some(v);
+        self.allowed_vpcs = ::std::option::Option::Some(v);
         self
     }
     /// <p>The VPCs allowed access to the cluster.</p>
-    pub fn set_allowed_vp_cs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.allowed_vp_cs = input;
+    pub fn set_allowed_vpcs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.allowed_vpcs = input;
         self
     }
     /// <p>The VPCs allowed access to the cluster.</p>
-    pub fn get_allowed_vp_cs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.allowed_vp_cs
+    pub fn get_allowed_vpcs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.allowed_vpcs
     }
     /// <p>The number of Redshift-managed VPC endpoints created for the authorization.</p>
     pub fn endpoint_count(mut self, input: i32) -> Self {
@@ -240,8 +242,8 @@ impl RevokeEndpointAccessOutputBuilder {
             authorize_time: self.authorize_time,
             cluster_status: self.cluster_status,
             status: self.status,
-            allowed_all_vp_cs: self.allowed_all_vp_cs,
-            allowed_vp_cs: self.allowed_vp_cs,
+            allowed_all_vpcs: self.allowed_all_vpcs,
+            allowed_vpcs: self.allowed_vpcs,
             endpoint_count: self.endpoint_count,
             _request_id: self._request_id,
         }

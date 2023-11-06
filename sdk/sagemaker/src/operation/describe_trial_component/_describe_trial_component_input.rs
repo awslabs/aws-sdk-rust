@@ -27,6 +27,7 @@ pub struct DescribeTrialComponentInputBuilder {
 }
 impl DescribeTrialComponentInputBuilder {
     /// <p>The name of the trial component to describe.</p>
+    /// This field is required.
     pub fn trial_component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trial_component_name = ::std::option::Option::Some(input.into());
         self
@@ -43,8 +44,10 @@ impl DescribeTrialComponentInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTrialComponentInput`](crate::operation::describe_trial_component::DescribeTrialComponentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_trial_component::DescribeTrialComponentInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_trial_component::DescribeTrialComponentInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_trial_component::DescribeTrialComponentInput {
             trial_component_name: self.trial_component_name,
         })

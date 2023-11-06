@@ -27,6 +27,7 @@ pub struct CancelFindingsReportInputBuilder {
 }
 impl CancelFindingsReportInputBuilder {
     /// <p>The ID of the report to be canceled.</p>
+    /// This field is required.
     pub fn report_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.report_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl CancelFindingsReportInputBuilder {
     /// Consumes the builder and constructs a [`CancelFindingsReportInput`](crate::operation::cancel_findings_report::CancelFindingsReportInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_findings_report::CancelFindingsReportInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::cancel_findings_report::CancelFindingsReportInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::cancel_findings_report::CancelFindingsReportInput { report_id: self.report_id })
     }

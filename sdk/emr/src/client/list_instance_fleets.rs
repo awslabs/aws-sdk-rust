@@ -4,10 +4,10 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_instance_fleets::builders::ListInstanceFleetsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cluster_id(impl Into<String>)`](crate::operation::list_instance_fleets::builders::ListInstanceFleetsFluentBuilder::cluster_id) / [`set_cluster_id(Option<String>)`](crate::operation::list_instance_fleets::builders::ListInstanceFleetsFluentBuilder::set_cluster_id): <p>The unique identifier of the cluster.</p>
-    ///   - [`marker(impl Into<String>)`](crate::operation::list_instance_fleets::builders::ListInstanceFleetsFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::list_instance_fleets::builders::ListInstanceFleetsFluentBuilder::set_marker): <p>The pagination token that indicates the next set of results to retrieve.</p>
+    ///   - [`cluster_id(impl Into<String>)`](crate::operation::list_instance_fleets::builders::ListInstanceFleetsFluentBuilder::cluster_id) / [`set_cluster_id(Option<String>)`](crate::operation::list_instance_fleets::builders::ListInstanceFleetsFluentBuilder::set_cluster_id):<br>required: **true**<br><p>The unique identifier of the cluster.</p><br>
+    ///   - [`marker(impl Into<String>)`](crate::operation::list_instance_fleets::builders::ListInstanceFleetsFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::list_instance_fleets::builders::ListInstanceFleetsFluentBuilder::set_marker):<br>required: **false**<br><p>The pagination token that indicates the next set of results to retrieve.</p><br>
     /// - On success, responds with [`ListInstanceFleetsOutput`](crate::operation::list_instance_fleets::ListInstanceFleetsOutput) with field(s):
-    ///   - [`instance_fleets(Option<Vec<InstanceFleet>>)`](crate::operation::list_instance_fleets::ListInstanceFleetsOutput::instance_fleets): <p>The list of instance fleets for the cluster and given filters.</p>
+    ///   - [`instance_fleets(Option<Vec::<InstanceFleet>>)`](crate::operation::list_instance_fleets::ListInstanceFleetsOutput::instance_fleets): <p>The list of instance fleets for the cluster and given filters.</p>
     ///   - [`marker(Option<String>)`](crate::operation::list_instance_fleets::ListInstanceFleetsOutput::marker): <p>The pagination token that indicates the next set of results to retrieve.</p>
     /// - On failure, responds with [`SdkError<ListInstanceFleetsError>`](crate::operation::list_instance_fleets::ListInstanceFleetsError)
     pub fn list_instance_fleets(&self) -> crate::operation::list_instance_fleets::builders::ListInstanceFleetsFluentBuilder {

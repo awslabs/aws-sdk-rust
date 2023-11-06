@@ -41,6 +41,7 @@ pub struct DescribeVirtualRouterInputBuilder {
 }
 impl DescribeVirtualRouterInputBuilder {
     /// <p>The name of the virtual router to describe.</p>
+    /// This field is required.
     pub fn virtual_router_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_router_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DescribeVirtualRouterInputBuilder {
         &self.virtual_router_name
     }
     /// <p>The name of the service mesh that the virtual router resides in.</p>
+    /// This field is required.
     pub fn mesh_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mesh_name = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +87,7 @@ impl DescribeVirtualRouterInputBuilder {
     /// Consumes the builder and constructs a [`DescribeVirtualRouterInput`](crate::operation::describe_virtual_router::DescribeVirtualRouterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_virtual_router::DescribeVirtualRouterInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_virtual_router::DescribeVirtualRouterInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_virtual_router::DescribeVirtualRouterInput {
             virtual_router_name: self.virtual_router_name,

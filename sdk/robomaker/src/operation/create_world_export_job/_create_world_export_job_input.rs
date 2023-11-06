@@ -20,8 +20,10 @@ impl CreateWorldExportJobInput {
         self.client_request_token.as_deref()
     }
     /// <p>A list of Amazon Resource Names (arns) that correspond to worlds to export.</p>
-    pub fn worlds(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.worlds.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.worlds.is_none()`.
+    pub fn worlds(&self) -> &[::std::string::String] {
+        self.worlds.as_deref().unwrap_or_default()
     }
     /// <p>The output location.</p>
     pub fn output_location(&self) -> ::std::option::Option<&crate::types::OutputLocation> {
@@ -89,6 +91,7 @@ impl CreateWorldExportJobInputBuilder {
         &self.worlds
     }
     /// <p>The output location.</p>
+    /// This field is required.
     pub fn output_location(mut self, input: crate::types::OutputLocation) -> Self {
         self.output_location = ::std::option::Option::Some(input);
         self
@@ -103,6 +106,7 @@ impl CreateWorldExportJobInputBuilder {
         &self.output_location
     }
     /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export.</p>
+    /// This field is required.
     pub fn iam_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_role = ::std::option::Option::Some(input.into());
         self
@@ -139,7 +143,7 @@ impl CreateWorldExportJobInputBuilder {
     /// Consumes the builder and constructs a [`CreateWorldExportJobInput`](crate::operation::create_world_export_job::CreateWorldExportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_world_export_job::CreateWorldExportJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_world_export_job::CreateWorldExportJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_world_export_job::CreateWorldExportJobInput {
             client_request_token: self.client_request_token,

@@ -41,6 +41,7 @@ pub struct DeleteChannelBanInputBuilder {
 }
 impl DeleteChannelBanInputBuilder {
     /// <p>The ARN of the channel from which the <code>AppInstanceUser</code> was banned.</p>
+    /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DeleteChannelBanInputBuilder {
         &self.channel_arn
     }
     /// <p>The ARN of the <code>AppInstanceUser</code> that you want to reinstate.</p>
+    /// This field is required.
     pub fn member_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_arn = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +87,7 @@ impl DeleteChannelBanInputBuilder {
     /// Consumes the builder and constructs a [`DeleteChannelBanInput`](crate::operation::delete_channel_ban::DeleteChannelBanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_channel_ban::DeleteChannelBanInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_channel_ban::DeleteChannelBanInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_channel_ban::DeleteChannelBanInput {
             channel_arn: self.channel_arn,
             member_arn: self.member_arn,

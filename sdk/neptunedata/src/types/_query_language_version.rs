@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryLanguageVersion {
     /// <p>The version of the query language.</p>
-    pub version: ::std::option::Option<::std::string::String>,
+    pub version: ::std::string::String,
 }
 impl QueryLanguageVersion {
     /// <p>The version of the query language.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
-        self.version.as_deref()
+    pub fn version(&self) -> &str {
+        use std::ops::Deref;
+        self.version.deref()
     }
 }
 impl QueryLanguageVersion {
@@ -28,6 +29,7 @@ pub struct QueryLanguageVersionBuilder {
 }
 impl QueryLanguageVersionBuilder {
     /// <p>The version of the query language.</p>
+    /// This field is required.
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl QueryLanguageVersionBuilder {
         &self.version
     }
     /// Consumes the builder and constructs a [`QueryLanguageVersion`](crate::types::QueryLanguageVersion).
-    pub fn build(self) -> crate::types::QueryLanguageVersion {
-        crate::types::QueryLanguageVersion { version: self.version }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`version`](crate::types::builders::QueryLanguageVersionBuilder::version)
+    pub fn build(self) -> ::std::result::Result<crate::types::QueryLanguageVersion, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::QueryLanguageVersion {
+            version: self.version.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "version",
+                    "version was not specified but it is required when building QueryLanguageVersion",
+                )
+            })?,
+        })
     }
 }

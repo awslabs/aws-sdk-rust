@@ -48,6 +48,7 @@ impl MoveAddressToVpcInputBuilder {
         &self.dry_run
     }
     /// <p>The Elastic IP address.</p>
+    /// This field is required.
     pub fn public_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_ip = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl MoveAddressToVpcInputBuilder {
     /// Consumes the builder and constructs a [`MoveAddressToVpcInput`](crate::operation::move_address_to_vpc::MoveAddressToVpcInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::move_address_to_vpc::MoveAddressToVpcInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::move_address_to_vpc::MoveAddressToVpcInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::move_address_to_vpc::MoveAddressToVpcInput {
             dry_run: self.dry_run,
             public_ip: self.public_ip,

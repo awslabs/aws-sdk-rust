@@ -2,12 +2,12 @@
 pub fn ser_node_signal(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NodeSignal,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.node_instance_id {
-        object.key("NodeInstanceId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("NodeInstanceId").string(input.node_instance_id.as_str());
     }
-    if let Some(var_2) = &input.signal {
-        object.key("Signal").string(var_2.as_str());
+    {
+        object.key("Signal").string(input.signal.as_str());
     }
     Ok(())
 }

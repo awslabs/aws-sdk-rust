@@ -41,6 +41,7 @@ pub struct DisassociateTransitGatewayRouteTableInputBuilder {
 }
 impl DisassociateTransitGatewayRouteTableInputBuilder {
     /// <p>The ID of the transit gateway route table.</p>
+    /// This field is required.
     pub fn transit_gateway_route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_route_table_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DisassociateTransitGatewayRouteTableInputBuilder {
         &self.transit_gateway_route_table_id
     }
     /// <p>The ID of the attachment.</p>
+    /// This field is required.
     pub fn transit_gateway_attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_attachment_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +89,7 @@ impl DisassociateTransitGatewayRouteTableInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_transit_gateway_route_table::DisassociateTransitGatewayRouteTableInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_transit_gateway_route_table::DisassociateTransitGatewayRouteTableInput {

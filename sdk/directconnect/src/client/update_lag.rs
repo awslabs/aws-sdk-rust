@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateLag`](crate::operation::update_lag::builders::UpdateLagFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`lag_id(impl Into<String>)`](crate::operation::update_lag::builders::UpdateLagFluentBuilder::lag_id) / [`set_lag_id(Option<String>)`](crate::operation::update_lag::builders::UpdateLagFluentBuilder::set_lag_id): <p>The ID of the LAG.</p>
-    ///   - [`lag_name(impl Into<String>)`](crate::operation::update_lag::builders::UpdateLagFluentBuilder::lag_name) / [`set_lag_name(Option<String>)`](crate::operation::update_lag::builders::UpdateLagFluentBuilder::set_lag_name): <p>The name of the LAG.</p>
-    ///   - [`minimum_links(i32)`](crate::operation::update_lag::builders::UpdateLagFluentBuilder::minimum_links) / [`set_minimum_links(Option<i32>)`](crate::operation::update_lag::builders::UpdateLagFluentBuilder::set_minimum_links): <p>The minimum number of physical connections that must be operational for the LAG itself to be operational.</p>
-    ///   - [`encryption_mode(impl Into<String>)`](crate::operation::update_lag::builders::UpdateLagFluentBuilder::encryption_mode) / [`set_encryption_mode(Option<String>)`](crate::operation::update_lag::builders::UpdateLagFluentBuilder::set_encryption_mode): <p>The LAG MAC Security (MACsec) encryption mode.</p>  <p>Amazon Web Services applies the value to all connections which are part of the LAG.</p>
+    ///   - [`lag_id(impl Into<String>)`](crate::operation::update_lag::builders::UpdateLagFluentBuilder::lag_id) / [`set_lag_id(Option<String>)`](crate::operation::update_lag::builders::UpdateLagFluentBuilder::set_lag_id):<br>required: **true**<br><p>The ID of the LAG.</p><br>
+    ///   - [`lag_name(impl Into<String>)`](crate::operation::update_lag::builders::UpdateLagFluentBuilder::lag_name) / [`set_lag_name(Option<String>)`](crate::operation::update_lag::builders::UpdateLagFluentBuilder::set_lag_name):<br>required: **false**<br><p>The name of the LAG.</p><br>
+    ///   - [`minimum_links(i32)`](crate::operation::update_lag::builders::UpdateLagFluentBuilder::minimum_links) / [`set_minimum_links(Option<i32>)`](crate::operation::update_lag::builders::UpdateLagFluentBuilder::set_minimum_links):<br>required: **false**<br><p>The minimum number of physical connections that must be operational for the LAG itself to be operational.</p><br>
+    ///   - [`encryption_mode(impl Into<String>)`](crate::operation::update_lag::builders::UpdateLagFluentBuilder::encryption_mode) / [`set_encryption_mode(Option<String>)`](crate::operation::update_lag::builders::UpdateLagFluentBuilder::set_encryption_mode):<br>required: **false**<br><p>The LAG MAC Security (MACsec) encryption mode.</p>  <p>Amazon Web Services applies the value to all connections which are part of the LAG.</p><br>
     /// - On success, responds with [`UpdateLagOutput`](crate::operation::update_lag::UpdateLagOutput) with field(s):
     ///   - [`connections_bandwidth(Option<String>)`](crate::operation::update_lag::UpdateLagOutput::connections_bandwidth): <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
     ///   - [`number_of_connections(i32)`](crate::operation::update_lag::UpdateLagOutput::number_of_connections): <p>The number of physical dedicated connections bundled by the LAG, up to a maximum of 10.</p>
@@ -20,15 +20,15 @@ impl super::Client {
     ///   - [`aws_device(Option<String>)`](crate::operation::update_lag::UpdateLagOutput::aws_device): <p>The Direct Connect endpoint that hosts the LAG.</p>
     ///   - [`aws_device_v2(Option<String>)`](crate::operation::update_lag::UpdateLagOutput::aws_device_v2): <p>The Direct Connect endpoint that hosts the LAG.</p>
     ///   - [`aws_logical_device_id(Option<String>)`](crate::operation::update_lag::UpdateLagOutput::aws_logical_device_id): <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-    ///   - [`connections(Option<Vec<Connection>>)`](crate::operation::update_lag::UpdateLagOutput::connections): <p>The connections bundled by the LAG.</p>
+    ///   - [`connections(Option<Vec::<Connection>>)`](crate::operation::update_lag::UpdateLagOutput::connections): <p>The connections bundled by the LAG.</p>
     ///   - [`allows_hosted_connections(bool)`](crate::operation::update_lag::UpdateLagOutput::allows_hosted_connections): <p>Indicates whether the LAG can host other connections.</p>
     ///   - [`jumbo_frame_capable(Option<bool>)`](crate::operation::update_lag::UpdateLagOutput::jumbo_frame_capable): <p>Indicates whether jumbo frames are supported.</p>
     ///   - [`has_logical_redundancy(Option<HasLogicalRedundancy>)`](crate::operation::update_lag::UpdateLagOutput::has_logical_redundancy): <p>Indicates whether the LAG supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::update_lag::UpdateLagOutput::tags): <p>The tags associated with the LAG.</p>
+    ///   - [`tags(Option<Vec::<Tag>>)`](crate::operation::update_lag::UpdateLagOutput::tags): <p>The tags associated with the LAG.</p>
     ///   - [`provider_name(Option<String>)`](crate::operation::update_lag::UpdateLagOutput::provider_name): <p>The name of the service provider associated with the LAG.</p>
     ///   - [`mac_sec_capable(Option<bool>)`](crate::operation::update_lag::UpdateLagOutput::mac_sec_capable): <p>Indicates whether the LAG supports MAC Security (MACsec).</p>
     ///   - [`encryption_mode(Option<String>)`](crate::operation::update_lag::UpdateLagOutput::encryption_mode): <p>The LAG MAC Security (MACsec) encryption mode.</p>  <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
-    ///   - [`mac_sec_keys(Option<Vec<MacSecKey>>)`](crate::operation::update_lag::UpdateLagOutput::mac_sec_keys): <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
+    ///   - [`mac_sec_keys(Option<Vec::<MacSecKey>>)`](crate::operation::update_lag::UpdateLagOutput::mac_sec_keys): <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
     /// - On failure, responds with [`SdkError<UpdateLagError>`](crate::operation::update_lag::UpdateLagError)
     pub fn update_lag(&self) -> crate::operation::update_lag::builders::UpdateLagFluentBuilder {
         crate::operation::update_lag::builders::UpdateLagFluentBuilder::new(self.handle.clone())

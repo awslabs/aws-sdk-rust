@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AssociateIpGroups`](crate::operation::associate_ip_groups::builders::AssociateIpGroupsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`directory_id(impl Into<String>)`](crate::operation::associate_ip_groups::builders::AssociateIpGroupsFluentBuilder::directory_id) / [`set_directory_id(Option<String>)`](crate::operation::associate_ip_groups::builders::AssociateIpGroupsFluentBuilder::set_directory_id): <p>The identifier of the directory.</p>
-    ///   - [`group_ids(impl Into<String>)`](crate::operation::associate_ip_groups::builders::AssociateIpGroupsFluentBuilder::group_ids) / [`set_group_ids(Option<Vec<String>>)`](crate::operation::associate_ip_groups::builders::AssociateIpGroupsFluentBuilder::set_group_ids): <p>The identifiers of one or more IP access control groups.</p>
+    ///   - [`directory_id(impl Into<String>)`](crate::operation::associate_ip_groups::builders::AssociateIpGroupsFluentBuilder::directory_id) / [`set_directory_id(Option<String>)`](crate::operation::associate_ip_groups::builders::AssociateIpGroupsFluentBuilder::set_directory_id):<br>required: **true**<br><p>The identifier of the directory.</p><br>
+    ///   - [`group_ids(impl Into<String>)`](crate::operation::associate_ip_groups::builders::AssociateIpGroupsFluentBuilder::group_ids) / [`set_group_ids(Option<Vec::<String>>)`](crate::operation::associate_ip_groups::builders::AssociateIpGroupsFluentBuilder::set_group_ids):<br>required: **true**<br><p>The identifiers of one or more IP access control groups.</p><br>
     /// - On success, responds with [`AssociateIpGroupsOutput`](crate::operation::associate_ip_groups::AssociateIpGroupsOutput)
     /// - On failure, responds with [`SdkError<AssociateIpGroupsError>`](crate::operation::associate_ip_groups::AssociateIpGroupsError)
     pub fn associate_ip_groups(&self) -> crate::operation::associate_ip_groups::builders::AssociateIpGroupsFluentBuilder {

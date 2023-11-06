@@ -2,7 +2,7 @@
 pub fn ser_subscribed_principal_input(
     object_10: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SubscribedPrincipalInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::SubscribedPrincipalInput::Project(inner) => {
             #[allow(unused_mut)]
@@ -11,7 +11,7 @@ pub fn ser_subscribed_principal_input(
             object_1.finish();
         }
         crate::types::SubscribedPrincipalInput::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "SubscribedPrincipalInput",
             ))
         }

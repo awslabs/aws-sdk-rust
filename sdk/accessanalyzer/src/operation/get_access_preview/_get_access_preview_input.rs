@@ -34,6 +34,7 @@ pub struct GetAccessPreviewInputBuilder {
 }
 impl GetAccessPreviewInputBuilder {
     /// <p>The unique ID for the access preview.</p>
+    /// This field is required.
     pub fn access_preview_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_preview_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetAccessPreviewInputBuilder {
         &self.access_preview_id
     }
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access preview.</p>
+    /// This field is required.
     pub fn analyzer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analyzer_arn = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl GetAccessPreviewInputBuilder {
     /// Consumes the builder and constructs a [`GetAccessPreviewInput`](crate::operation::get_access_preview::GetAccessPreviewInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_access_preview::GetAccessPreviewInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_access_preview::GetAccessPreviewInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_access_preview::GetAccessPreviewInput {
             access_preview_id: self.access_preview_id,
             analyzer_arn: self.analyzer_arn,

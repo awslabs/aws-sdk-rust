@@ -6,21 +6,23 @@
 pub struct Dimension {
     /// <p> Dimension represents the metadata attributes of the time series. For example, the name and Availability Zone of an EC2 instance or the name of the manufacturer of a wind turbine are dimensions. </p>
     /// <p>For constraints on dimension names, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.naming">Naming Constraints</a>.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The value of the dimension.</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
     /// <p>The data type of the dimension for the time-series data point.</p>
     pub dimension_value_type: ::std::option::Option<crate::types::DimensionValueType>,
 }
 impl Dimension {
     /// <p> Dimension represents the metadata attributes of the time series. For example, the name and Availability Zone of an EC2 instance or the name of the manufacturer of a wind turbine are dimensions. </p>
     /// <p>For constraints on dimension names, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.naming">Naming Constraints</a>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The value of the dimension.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
     /// <p>The data type of the dimension for the time-series data point.</p>
     pub fn dimension_value_type(&self) -> ::std::option::Option<&crate::types::DimensionValueType> {
@@ -45,6 +47,7 @@ pub struct DimensionBuilder {
 impl DimensionBuilder {
     /// <p> Dimension represents the metadata attributes of the time series. For example, the name and Availability Zone of an EC2 instance or the name of the manufacturer of a wind turbine are dimensions. </p>
     /// <p>For constraints on dimension names, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.naming">Naming Constraints</a>.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -61,6 +64,7 @@ impl DimensionBuilder {
         &self.name
     }
     /// <p>The value of the dimension.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -89,11 +93,24 @@ impl DimensionBuilder {
         &self.dimension_value_type
     }
     /// Consumes the builder and constructs a [`Dimension`](crate::types::Dimension).
-    pub fn build(self) -> crate::types::Dimension {
-        crate::types::Dimension {
-            name: self.name,
-            value: self.value,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::DimensionBuilder::name)
+    /// - [`value`](crate::types::builders::DimensionBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::Dimension, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Dimension {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building Dimension",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building Dimension",
+                )
+            })?,
             dimension_value_type: self.dimension_value_type,
-        }
+        })
     }
 }

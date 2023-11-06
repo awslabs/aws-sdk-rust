@@ -27,6 +27,7 @@ pub struct GetMedicalTranscriptionJobInputBuilder {
 }
 impl GetMedicalTranscriptionJobInputBuilder {
     /// <p>The name of the medical transcription job you want information about. Job names are case sensitive.</p>
+    /// This field is required.
     pub fn medical_transcription_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.medical_transcription_job_name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetMedicalTranscriptionJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_medical_transcription_job::GetMedicalTranscriptionJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_medical_transcription_job::GetMedicalTranscriptionJobInput {
             medical_transcription_job_name: self.medical_transcription_job_name,

@@ -45,7 +45,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::s3_object_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -56,15 +58,15 @@ where
 pub fn ser_s3_object(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::S3Object,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.bucket {
-        object.key("bucket").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("bucket").string(input.bucket.as_str());
     }
-    if let Some(var_2) = &input.key {
-        object.key("key").string(var_2.as_str());
+    {
+        object.key("key").string(input.key.as_str());
     }
-    if let Some(var_3) = &input.etag {
-        object.key("etag").string(var_3.as_str());
+    if let Some(var_1) = &input.etag {
+        object.key("etag").string(var_1.as_str());
     }
     Ok(())
 }

@@ -27,6 +27,7 @@ pub struct DescribeLabelGroupInputBuilder {
 }
 impl DescribeLabelGroupInputBuilder {
     /// <p> Returns the name of the label group. </p>
+    /// This field is required.
     pub fn label_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_group_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,8 @@ impl DescribeLabelGroupInputBuilder {
     /// Consumes the builder and constructs a [`DescribeLabelGroupInput`](crate::operation::describe_label_group::DescribeLabelGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_label_group::DescribeLabelGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_label_group::DescribeLabelGroupInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::describe_label_group::DescribeLabelGroupInput {
             label_group_name: self.label_group_name,
         })

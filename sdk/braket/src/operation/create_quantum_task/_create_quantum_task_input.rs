@@ -83,6 +83,7 @@ pub struct CreateQuantumTaskInputBuilder {
 }
 impl CreateQuantumTaskInputBuilder {
     /// <p>The client token associated with the request.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +98,7 @@ impl CreateQuantumTaskInputBuilder {
         &self.client_token
     }
     /// <p>The ARN of the device to run the task on.</p>
+    /// This field is required.
     pub fn device_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_arn = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +127,7 @@ impl CreateQuantumTaskInputBuilder {
         &self.device_parameters
     }
     /// <p>The number of shots to use for the task.</p>
+    /// This field is required.
     pub fn shots(mut self, input: i64) -> Self {
         self.shots = ::std::option::Option::Some(input);
         self
@@ -139,6 +142,7 @@ impl CreateQuantumTaskInputBuilder {
         &self.shots
     }
     /// <p>The S3 bucket to store task result files in.</p>
+    /// This field is required.
     pub fn output_s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_s3_bucket = ::std::option::Option::Some(input.into());
         self
@@ -153,6 +157,7 @@ impl CreateQuantumTaskInputBuilder {
         &self.output_s3_bucket
     }
     /// <p>The key prefix for the location in the S3 bucket to store task results in.</p>
+    /// This field is required.
     pub fn output_s3_key_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_s3_key_prefix = ::std::option::Option::Some(input.into());
         self
@@ -167,6 +172,7 @@ impl CreateQuantumTaskInputBuilder {
         &self.output_s3_key_prefix
     }
     /// <p>The action associated with the task.</p>
+    /// This field is required.
     pub fn action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action = ::std::option::Option::Some(input.into());
         self
@@ -217,7 +223,7 @@ impl CreateQuantumTaskInputBuilder {
     /// Consumes the builder and constructs a [`CreateQuantumTaskInput`](crate::operation::create_quantum_task::CreateQuantumTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_quantum_task::CreateQuantumTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_quantum_task::CreateQuantumTaskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_quantum_task::CreateQuantumTaskInput {
             client_token: self.client_token,
             device_arn: self.device_arn,

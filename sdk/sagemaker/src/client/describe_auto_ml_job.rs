@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeAutoMLJob`](crate::operation::describe_auto_ml_job::builders::DescribeAutoMLJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`auto_ml_job_name(impl Into<String>)`](crate::operation::describe_auto_ml_job::builders::DescribeAutoMLJobFluentBuilder::auto_ml_job_name) / [`set_auto_ml_job_name(Option<String>)`](crate::operation::describe_auto_ml_job::builders::DescribeAutoMLJobFluentBuilder::set_auto_ml_job_name): <p>Requests information about an AutoML job using its unique name.</p>
+    ///   - [`auto_ml_job_name(impl Into<String>)`](crate::operation::describe_auto_ml_job::builders::DescribeAutoMLJobFluentBuilder::auto_ml_job_name) / [`set_auto_ml_job_name(Option<String>)`](crate::operation::describe_auto_ml_job::builders::DescribeAutoMLJobFluentBuilder::set_auto_ml_job_name):<br>required: **true**<br><p>Requests information about an AutoML job using its unique name.</p><br>
     /// - On success, responds with [`DescribeAutoMlJobOutput`](crate::operation::describe_auto_ml_job::DescribeAutoMlJobOutput) with field(s):
     ///   - [`auto_ml_job_name(Option<String>)`](crate::operation::describe_auto_ml_job::DescribeAutoMlJobOutput::auto_ml_job_name): <p>Returns the name of the AutoML job.</p>
     ///   - [`auto_ml_job_arn(Option<String>)`](crate::operation::describe_auto_ml_job::DescribeAutoMlJobOutput::auto_ml_job_arn): <p>Returns the ARN of the AutoML job.</p>
-    ///   - [`input_data_config(Option<Vec<AutoMlChannel>>)`](crate::operation::describe_auto_ml_job::DescribeAutoMlJobOutput::input_data_config): <p>Returns the input data configuration for the AutoML job.</p>
+    ///   - [`input_data_config(Option<Vec::<AutoMlChannel>>)`](crate::operation::describe_auto_ml_job::DescribeAutoMlJobOutput::input_data_config): <p>Returns the input data configuration for the AutoML job.</p>
     ///   - [`output_data_config(Option<AutoMlOutputDataConfig>)`](crate::operation::describe_auto_ml_job::DescribeAutoMlJobOutput::output_data_config): <p>Returns the job's output data config.</p>
     ///   - [`role_arn(Option<String>)`](crate::operation::describe_auto_ml_job::DescribeAutoMlJobOutput::role_arn): <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that has read permission to the input data location and write permission to the output data location in Amazon S3.</p>
     ///   - [`auto_ml_job_objective(Option<AutoMlJobObjective>)`](crate::operation::describe_auto_ml_job::DescribeAutoMlJobOutput::auto_ml_job_objective): <p>Returns the job's objective.</p>
@@ -17,7 +17,7 @@ impl super::Client {
     ///   - [`end_time(Option<DateTime>)`](crate::operation::describe_auto_ml_job::DescribeAutoMlJobOutput::end_time): <p>Returns the end time of the AutoML job.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::describe_auto_ml_job::DescribeAutoMlJobOutput::last_modified_time): <p>Returns the job's last modified time.</p>
     ///   - [`failure_reason(Option<String>)`](crate::operation::describe_auto_ml_job::DescribeAutoMlJobOutput::failure_reason): <p>Returns the failure reason for an AutoML job, when applicable.</p>
-    ///   - [`partial_failure_reasons(Option<Vec<AutoMlPartialFailureReason>>)`](crate::operation::describe_auto_ml_job::DescribeAutoMlJobOutput::partial_failure_reasons): <p>Returns a list of reasons for partial failures within an AutoML job.</p>
+    ///   - [`partial_failure_reasons(Option<Vec::<AutoMlPartialFailureReason>>)`](crate::operation::describe_auto_ml_job::DescribeAutoMlJobOutput::partial_failure_reasons): <p>Returns a list of reasons for partial failures within an AutoML job.</p>
     ///   - [`best_candidate(Option<AutoMlCandidate>)`](crate::operation::describe_auto_ml_job::DescribeAutoMlJobOutput::best_candidate): <p>The best model candidate selected by SageMaker Autopilot using both the best objective metric and lowest <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">InferenceLatency</a> for an experiment.</p>
     ///   - [`auto_ml_job_status(Option<AutoMlJobStatus>)`](crate::operation::describe_auto_ml_job::DescribeAutoMlJobOutput::auto_ml_job_status): <p>Returns the status of the AutoML job.</p>
     ///   - [`auto_ml_job_secondary_status(Option<AutoMlJobSecondaryStatus>)`](crate::operation::describe_auto_ml_job::DescribeAutoMlJobOutput::auto_ml_job_secondary_status): <p>Returns the secondary status of the AutoML job.</p>

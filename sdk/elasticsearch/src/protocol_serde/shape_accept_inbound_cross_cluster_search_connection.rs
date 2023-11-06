@@ -36,8 +36,8 @@ pub fn de_accept_inbound_cross_cluster_search_connection_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "LimitExceededException" => crate::operation::accept_inbound_cross_cluster_search_connection::AcceptInboundCrossClusterSearchConnectionError::LimitExceededException({
@@ -52,8 +52,8 @@ pub fn de_accept_inbound_cross_cluster_search_connection_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::accept_inbound_cross_cluster_search_connection::AcceptInboundCrossClusterSearchConnectionError::ResourceNotFoundException({
@@ -68,8 +68,8 @@ pub fn de_accept_inbound_cross_cluster_search_connection_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::accept_inbound_cross_cluster_search_connection::AcceptInboundCrossClusterSearchConnectionError::generic(generic)

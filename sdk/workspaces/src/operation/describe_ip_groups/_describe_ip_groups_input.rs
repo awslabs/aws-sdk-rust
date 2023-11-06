@@ -12,8 +12,10 @@ pub struct DescribeIpGroupsInput {
 }
 impl DescribeIpGroupsInput {
     /// <p>The identifiers of one or more IP access control groups.</p>
-    pub fn group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_ids.is_none()`.
+    pub fn group_ids(&self) -> &[::std::string::String] {
+        self.group_ids.as_deref().unwrap_or_default()
     }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -91,7 +93,7 @@ impl DescribeIpGroupsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeIpGroupsInput`](crate::operation::describe_ip_groups::DescribeIpGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_ip_groups::DescribeIpGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_ip_groups::DescribeIpGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_ip_groups::DescribeIpGroupsInput {
             group_ids: self.group_ids,
             next_token: self.next_token,

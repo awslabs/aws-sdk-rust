@@ -39,12 +39,16 @@ impl CreateLocationS3Input {
         self.s3_config.as_ref()
     }
     /// <p>If you're using DataSync on an Amazon Web Services Outpost, specify the Amazon Resource Names (ARNs) of the DataSync agents deployed on your Outpost. For more information about launching a DataSync agent on an Amazon Web Services Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your DataSync agent on Outposts</a>.</p>
-    pub fn agent_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.agent_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agent_arns.is_none()`.
+    pub fn agent_arns(&self) -> &[::std::string::String] {
+        self.agent_arns.as_deref().unwrap_or_default()
     }
     /// <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::TagListEntry]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::TagListEntry] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateLocationS3Input {
@@ -81,6 +85,7 @@ impl CreateLocationS3InputBuilder {
         &self.subdirectory
     }
     /// <p>The ARN of the Amazon S3 bucket. If the bucket is on an Amazon Web Services Outpost, this must be an access point ARN.</p>
+    /// This field is required.
     pub fn s3_bucket_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket_arn = ::std::option::Option::Some(input.into());
         self
@@ -113,6 +118,7 @@ impl CreateLocationS3InputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role used to access an Amazon S3 bucket.</p>
     /// <p>For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>DataSync User Guide</i>.</p>
+    /// This field is required.
     pub fn s3_config(mut self, input: crate::types::S3Config) -> Self {
         self.s3_config = ::std::option::Option::Some(input);
         self
@@ -171,7 +177,7 @@ impl CreateLocationS3InputBuilder {
     /// Consumes the builder and constructs a [`CreateLocationS3Input`](crate::operation::create_location_s3::CreateLocationS3Input).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_location_s3::CreateLocationS3Input, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_location_s3::CreateLocationS3Input, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_location_s3::CreateLocationS3Input {
             subdirectory: self.subdirectory,
             s3_bucket_arn: self.s3_bucket_arn,

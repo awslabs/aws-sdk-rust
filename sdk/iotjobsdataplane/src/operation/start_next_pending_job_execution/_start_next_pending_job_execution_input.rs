@@ -41,6 +41,7 @@ pub struct StartNextPendingJobExecutionInputBuilder {
 }
 impl StartNextPendingJobExecutionInputBuilder {
     /// <p>The name of the thing associated with the device.</p>
+    /// This field is required.
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_name = ::std::option::Option::Some(input.into());
         self
@@ -100,7 +101,7 @@ impl StartNextPendingJobExecutionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_next_pending_job_execution::StartNextPendingJobExecutionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_next_pending_job_execution::StartNextPendingJobExecutionInput {
             thing_name: self.thing_name,

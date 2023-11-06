@@ -4,10 +4,10 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_channels::builders::ListChannelsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::operation::list_channels::builders::ListChannelsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_channels::builders::ListChannelsFluentBuilder::set_max_results): Upper bound on number of records to return.
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_channels::builders::ListChannelsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_channels::builders::ListChannelsFluentBuilder::set_next_token): A token used to resume pagination from the end of a previous request.
+    ///   - [`max_results(i32)`](crate::operation::list_channels::builders::ListChannelsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_channels::builders::ListChannelsFluentBuilder::set_max_results):<br>required: **false**<br>Upper bound on number of records to return.<br>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_channels::builders::ListChannelsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_channels::builders::ListChannelsFluentBuilder::set_next_token):<br>required: **false**<br>A token used to resume pagination from the end of a previous request.<br>
     /// - On success, responds with [`ListChannelsOutput`](crate::operation::list_channels::ListChannelsOutput) with field(s):
-    ///   - [`channels(Option<Vec<Channel>>)`](crate::operation::list_channels::ListChannelsOutput::channels): A list of Channel records.
+    ///   - [`channels(Option<Vec::<Channel>>)`](crate::operation::list_channels::ListChannelsOutput::channels): A list of Channel records.
     ///   - [`next_token(Option<String>)`](crate::operation::list_channels::ListChannelsOutput::next_token): A token that can be used to resume pagination from the end of the collection.
     /// - On failure, responds with [`SdkError<ListChannelsError>`](crate::operation::list_channels::ListChannelsError)
     pub fn list_channels(&self) -> crate::operation::list_channels::builders::ListChannelsFluentBuilder {

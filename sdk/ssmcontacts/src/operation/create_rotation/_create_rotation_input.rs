@@ -28,8 +28,10 @@ impl CreateRotationInput {
     }
     /// <p>The Amazon Resource Names (ARNs) of the contacts to add to the rotation.</p>
     /// <p>The order that you list the contacts in is their shift order in the rotation schedule. To change the order of the contact's shifts, use the <code>UpdateRotation</code> operation.</p>
-    pub fn contact_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.contact_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.contact_ids.is_none()`.
+    pub fn contact_ids(&self) -> &[::std::string::String] {
+        self.contact_ids.as_deref().unwrap_or_default()
     }
     /// <p>The date and time that the rotation goes into effect.</p>
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -46,8 +48,10 @@ impl CreateRotationInput {
         self.recurrence.as_ref()
     }
     /// <p>Optional metadata to assign to the rotation. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/incident-manager/latest/userguide/tagging.html">Tagging Incident Manager resources</a> in the <i>Incident Manager User Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>A token that ensures that the operation is called only once with the specified details.</p>
     pub fn idempotency_token(&self) -> ::std::option::Option<&str> {
@@ -75,6 +79,7 @@ pub struct CreateRotationInputBuilder {
 }
 impl CreateRotationInputBuilder {
     /// <p>The name of the rotation.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -128,6 +133,7 @@ impl CreateRotationInputBuilder {
     /// <p>The time zone to base the rotation’s activity on in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p> <note>
     /// <p>Designators for time zones that don’t support Daylight Savings Time rules, such as Pacific Standard Time (PST) and Pacific Daylight Time (PDT), are not supported.</p>
     /// </note>
+    /// This field is required.
     pub fn time_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.time_zone_id = ::std::option::Option::Some(input.into());
         self
@@ -146,6 +152,7 @@ impl CreateRotationInputBuilder {
         &self.time_zone_id
     }
     /// <p>Information about the rule that specifies when a shift's team members rotate.</p>
+    /// This field is required.
     pub fn recurrence(mut self, input: crate::types::RecurrenceSettings) -> Self {
         self.recurrence = ::std::option::Option::Some(input);
         self
@@ -196,7 +203,7 @@ impl CreateRotationInputBuilder {
     /// Consumes the builder and constructs a [`CreateRotationInput`](crate::operation::create_rotation::CreateRotationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_rotation::CreateRotationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_rotation::CreateRotationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_rotation::CreateRotationInput {
             name: self.name,
             contact_ids: self.contact_ids,

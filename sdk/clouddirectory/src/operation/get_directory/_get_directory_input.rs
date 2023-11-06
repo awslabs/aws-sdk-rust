@@ -27,6 +27,7 @@ pub struct GetDirectoryInputBuilder {
 }
 impl GetDirectoryInputBuilder {
     /// <p>The ARN of the directory.</p>
+    /// This field is required.
     pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,9 @@ impl GetDirectoryInputBuilder {
         &self.directory_arn
     }
     /// Consumes the builder and constructs a [`GetDirectoryInput`](crate::operation::get_directory::GetDirectoryInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_directory::GetDirectoryInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_directory::GetDirectoryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_directory::GetDirectoryInput {
             directory_arn: self.directory_arn,
         })

@@ -99,7 +99,9 @@ pub fn de_list_configured_tables_http_response(
         output = crate::protocol_serde::shape_list_configured_tables::de_list_configured_tables(_response_body, output)
             .map_err(crate::operation::list_configured_tables::ListConfiguredTablesError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::list_configured_tables_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::list_configured_tables::ListConfiguredTablesError::unhandled)?
     })
 }
 

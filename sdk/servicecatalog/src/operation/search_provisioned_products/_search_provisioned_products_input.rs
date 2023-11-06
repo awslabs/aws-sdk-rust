@@ -220,7 +220,7 @@ impl SearchProvisionedProductsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_provisioned_products::SearchProvisionedProductsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::search_provisioned_products::SearchProvisionedProductsInput {
             accept_language: self.accept_language,

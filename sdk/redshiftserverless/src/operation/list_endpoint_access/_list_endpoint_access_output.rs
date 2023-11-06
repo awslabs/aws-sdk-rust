@@ -6,7 +6,7 @@ pub struct ListEndpointAccessOutput {
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The returned VPC endpoints.</p>
-    pub endpoints: ::std::option::Option<::std::vec::Vec<crate::types::EndpointAccess>>,
+    pub endpoints: ::std::vec::Vec<crate::types::EndpointAccess>,
     _request_id: Option<String>,
 }
 impl ListEndpointAccessOutput {
@@ -15,8 +15,9 @@ impl ListEndpointAccessOutput {
         self.next_token.as_deref()
     }
     /// <p>The returned VPC endpoints.</p>
-    pub fn endpoints(&self) -> ::std::option::Option<&[crate::types::EndpointAccess]> {
-        self.endpoints.as_deref()
+    pub fn endpoints(&self) -> &[crate::types::EndpointAccess] {
+        use std::ops::Deref;
+        self.endpoints.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListEndpointAccessOutput {
@@ -84,11 +85,21 @@ impl ListEndpointAccessOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListEndpointAccessOutput`](crate::operation::list_endpoint_access::ListEndpointAccessOutput).
-    pub fn build(self) -> crate::operation::list_endpoint_access::ListEndpointAccessOutput {
-        crate::operation::list_endpoint_access::ListEndpointAccessOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`endpoints`](crate::operation::list_endpoint_access::builders::ListEndpointAccessOutputBuilder::endpoints)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_endpoint_access::ListEndpointAccessOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_endpoint_access::ListEndpointAccessOutput {
             next_token: self.next_token,
-            endpoints: self.endpoints,
+            endpoints: self.endpoints.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "endpoints",
+                    "endpoints was not specified but it is required when building ListEndpointAccessOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

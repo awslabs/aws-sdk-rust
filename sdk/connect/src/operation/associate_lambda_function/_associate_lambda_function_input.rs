@@ -34,6 +34,7 @@ pub struct AssociateLambdaFunctionInputBuilder {
 }
 impl AssociateLambdaFunctionInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl AssociateLambdaFunctionInputBuilder {
         &self.instance_id
     }
     /// <p>The Amazon Resource Name (ARN) for the Lambda function being associated. Maximum number of characters allowed is 140.</p>
+    /// This field is required.
     pub fn function_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_arn = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl AssociateLambdaFunctionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_lambda_function::AssociateLambdaFunctionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::associate_lambda_function::AssociateLambdaFunctionInput {
             instance_id: self.instance_id,

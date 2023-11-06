@@ -34,13 +34,16 @@ impl ::std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_earth_observation_job::DeleteEarthObservationJobError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_earth_observation_job::DeleteEarthObservationJobError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_earth_observation_job::DeleteEarthObservationJobError, R>) -> Self {
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_earth_observation_job::DeleteEarthObservationJobError, R>,
+    ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -75,13 +78,16 @@ impl From<crate::operation::delete_earth_observation_job::DeleteEarthObservation
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_vector_enrichment_job::DeleteVectorEnrichmentJobError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_vector_enrichment_job::DeleteVectorEnrichmentJobError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_vector_enrichment_job::DeleteVectorEnrichmentJobError, R>) -> Self {
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_vector_enrichment_job::DeleteVectorEnrichmentJobError, R>,
+    ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -116,13 +122,16 @@ impl From<crate::operation::delete_vector_enrichment_job::DeleteVectorEnrichment
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::export_earth_observation_job::ExportEarthObservationJobError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::export_earth_observation_job::ExportEarthObservationJobError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::export_earth_observation_job::ExportEarthObservationJobError, R>) -> Self {
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::export_earth_observation_job::ExportEarthObservationJobError, R>,
+    ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -160,13 +169,16 @@ impl From<crate::operation::export_earth_observation_job::ExportEarthObservation
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobError, R>) -> Self {
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobError, R>,
+    ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -204,13 +216,16 @@ impl From<crate::operation::export_vector_enrichment_job::ExportVectorEnrichment
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_earth_observation_job::GetEarthObservationJobError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_earth_observation_job::GetEarthObservationJobError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_earth_observation_job::GetEarthObservationJobError, R>) -> Self {
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_earth_observation_job::GetEarthObservationJobError, R>,
+    ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -238,13 +253,16 @@ impl From<crate::operation::get_earth_observation_job::GetEarthObservationJobErr
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_raster_data_collection::GetRasterDataCollectionError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_raster_data_collection::GetRasterDataCollectionError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_raster_data_collection::GetRasterDataCollectionError, R>) -> Self {
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_raster_data_collection::GetRasterDataCollectionError, R>,
+    ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -276,13 +294,13 @@ impl From<crate::operation::get_raster_data_collection::GetRasterDataCollectionE
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_tile::GetTileError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_tile::GetTileError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_tile::GetTileError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_tile::GetTileError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -304,13 +322,16 @@ impl From<crate::operation::get_tile::GetTileError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobError, R>) -> Self {
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobError, R>,
+    ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -338,13 +359,16 @@ impl From<crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobErr
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_earth_observation_jobs::ListEarthObservationJobsError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_earth_observation_jobs::ListEarthObservationJobsError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_earth_observation_jobs::ListEarthObservationJobsError, R>) -> Self {
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_earth_observation_jobs::ListEarthObservationJobsError, R>,
+    ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -376,13 +400,16 @@ impl From<crate::operation::list_earth_observation_jobs::ListEarthObservationJob
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_raster_data_collections::ListRasterDataCollectionsError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_raster_data_collections::ListRasterDataCollectionsError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_raster_data_collections::ListRasterDataCollectionsError, R>) -> Self {
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_raster_data_collections::ListRasterDataCollectionsError, R>,
+    ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -414,13 +441,13 @@ impl From<crate::operation::list_raster_data_collections::ListRasterDataCollecti
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -446,13 +473,16 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsError, R>) -> Self {
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsError, R>,
+    ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -484,13 +514,16 @@ impl From<crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJob
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::search_raster_data_collection::SearchRasterDataCollectionError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_raster_data_collection::SearchRasterDataCollectionError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::search_raster_data_collection::SearchRasterDataCollectionError, R>) -> Self {
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_raster_data_collection::SearchRasterDataCollectionError, R>,
+    ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -522,13 +555,16 @@ impl From<crate::operation::search_raster_data_collection::SearchRasterDataColle
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::start_earth_observation_job::StartEarthObservationJobError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_earth_observation_job::StartEarthObservationJobError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::start_earth_observation_job::StartEarthObservationJobError, R>) -> Self {
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_earth_observation_job::StartEarthObservationJobError, R>,
+    ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -564,13 +600,16 @@ impl From<crate::operation::start_earth_observation_job::StartEarthObservationJo
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::start_vector_enrichment_job::StartVectorEnrichmentJobError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_vector_enrichment_job::StartVectorEnrichmentJobError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::start_vector_enrichment_job::StartVectorEnrichmentJobError, R>) -> Self {
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_vector_enrichment_job::StartVectorEnrichmentJobError, R>,
+    ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -606,13 +645,16 @@ impl From<crate::operation::start_vector_enrichment_job::StartVectorEnrichmentJo
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::stop_earth_observation_job::StopEarthObservationJobError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_earth_observation_job::StopEarthObservationJobError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::stop_earth_observation_job::StopEarthObservationJobError, R>) -> Self {
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_earth_observation_job::StopEarthObservationJobError, R>,
+    ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -645,13 +687,16 @@ impl From<crate::operation::stop_earth_observation_job::StopEarthObservationJobE
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJobError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJobError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJobError, R>) -> Self {
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJobError, R>,
+    ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -684,13 +729,13 @@ impl From<crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJobE
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -712,13 +757,13 @@ impl From<crate::operation::tag_resource::TagResourceError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())

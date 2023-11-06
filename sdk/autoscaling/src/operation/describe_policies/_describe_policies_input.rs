@@ -22,12 +22,16 @@ impl DescribePoliciesInput {
     }
     /// <p>The names of one or more policies. If you omit this property, all policies are described. If a group name is provided, the results are limited to that group. If you specify an unknown policy name, it is ignored with no error.</p>
     /// <p>Array Members: Maximum number of 50 items.</p>
-    pub fn policy_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.policy_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_names.is_none()`.
+    pub fn policy_names(&self) -> &[::std::string::String] {
+        self.policy_names.as_deref().unwrap_or_default()
     }
     /// <p>One or more policy types. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>, <code>TargetTrackingScaling</code>, and <code>PredictiveScaling</code>.</p>
-    pub fn policy_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.policy_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_types.is_none()`.
+    pub fn policy_types(&self) -> &[::std::string::String] {
+        self.policy_types.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -144,7 +148,7 @@ impl DescribePoliciesInputBuilder {
     /// Consumes the builder and constructs a [`DescribePoliciesInput`](crate::operation::describe_policies::DescribePoliciesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_policies::DescribePoliciesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_policies::DescribePoliciesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_policies::DescribePoliciesInput {
             auto_scaling_group_name: self.auto_scaling_group_name,
             policy_names: self.policy_names,

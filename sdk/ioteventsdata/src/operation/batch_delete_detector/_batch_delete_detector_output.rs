@@ -9,8 +9,10 @@ pub struct BatchDeleteDetectorOutput {
 }
 impl BatchDeleteDetectorOutput {
     /// <p>A list of errors associated with the request, or an empty array (<code>[]</code>) if there are no errors. Each error entry contains a <code>messageId</code> that helps you identify the entry that failed.</p>
-    pub fn batch_delete_detector_error_entries(&self) -> ::std::option::Option<&[crate::types::BatchDeleteDetectorErrorEntry]> {
-        self.batch_delete_detector_error_entries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.batch_delete_detector_error_entries.is_none()`.
+    pub fn batch_delete_detector_error_entries(&self) -> &[crate::types::BatchDeleteDetectorErrorEntry] {
+        self.batch_delete_detector_error_entries.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchDeleteDetectorOutput {

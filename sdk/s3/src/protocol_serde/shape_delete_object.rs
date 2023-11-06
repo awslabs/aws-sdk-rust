@@ -47,13 +47,13 @@ pub fn de_delete_object_http_response(
 pub fn ser_delete_object_headers(
     input: &crate::operation::delete_object::DeleteObjectInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.mfa {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "mfa",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -66,7 +66,7 @@ pub fn ser_delete_object_headers(
         if !formatted_4.is_empty() {
             let header_value = formatted_4;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "request_payer",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -80,7 +80,7 @@ pub fn ser_delete_object_headers(
         if !formatted_6.is_empty() {
             let header_value = formatted_6;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "bypass_governance_retention",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -93,7 +93,7 @@ pub fn ser_delete_object_headers(
         if !formatted_8.is_empty() {
             let header_value = formatted_8;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "expected_bucket_owner",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )

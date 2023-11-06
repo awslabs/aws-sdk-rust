@@ -71,6 +71,7 @@ pub struct PredictiveScalingPredefinedMetricPairBuilder {
 }
 impl PredictiveScalingPredefinedMetricPairBuilder {
     /// <p>Indicates which metrics to use. There are two different types of metrics for each metric type: one is a load metric and one is a scaling metric. For example, if the metric type is <code>ASGCPUUtilization</code>, the Auto Scaling group's total CPU metric is used as the load metric, and the average CPU metric is used for the scaling metric.</p>
+    /// This field is required.
     pub fn predefined_metric_type(mut self, input: crate::types::PredefinedMetricPairType) -> Self {
         self.predefined_metric_type = ::std::option::Option::Some(input);
         self

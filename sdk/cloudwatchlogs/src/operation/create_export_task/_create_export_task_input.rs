@@ -85,6 +85,7 @@ impl CreateExportTaskInputBuilder {
         &self.task_name
     }
     /// <p>The name of the log group.</p>
+    /// This field is required.
     pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_name = ::std::option::Option::Some(input.into());
         self
@@ -113,6 +114,7 @@ impl CreateExportTaskInputBuilder {
         &self.log_stream_name_prefix
     }
     /// <p>The start time of the range for the request, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp earlier than this time are not exported.</p>
+    /// This field is required.
     pub fn from(mut self, input: i64) -> Self {
         self.from = ::std::option::Option::Some(input);
         self
@@ -128,6 +130,7 @@ impl CreateExportTaskInputBuilder {
     }
     /// <p>The end time of the range for the request, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp later than this time are not exported.</p>
     /// <p>You must specify a time that is not earlier than when this log group was created.</p>
+    /// This field is required.
     pub fn to(mut self, input: i64) -> Self {
         self.to = ::std::option::Option::Some(input);
         self
@@ -144,6 +147,7 @@ impl CreateExportTaskInputBuilder {
         &self.to
     }
     /// <p>The name of S3 bucket for the exported log data. The bucket must be in the same Amazon Web Services Region.</p>
+    /// This field is required.
     pub fn destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination = ::std::option::Option::Some(input.into());
         self
@@ -174,7 +178,7 @@ impl CreateExportTaskInputBuilder {
     /// Consumes the builder and constructs a [`CreateExportTaskInput`](crate::operation::create_export_task::CreateExportTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_export_task::CreateExportTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_export_task::CreateExportTaskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_export_task::CreateExportTaskInput {
             task_name: self.task_name,
             log_group_name: self.log_group_name,

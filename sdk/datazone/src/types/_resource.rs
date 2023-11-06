@@ -9,9 +9,9 @@ pub struct Resource {
     /// <p>The name of a provisioned resource of this Amazon DataZone environment.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The value of a provisioned resource of this Amazon DataZone environment.</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
     /// <p>The type of a provisioned resource of this Amazon DataZone environment.</p>
-    pub r#type: ::std::option::Option<::std::string::String>,
+    pub r#type: ::std::string::String,
 }
 impl Resource {
     /// <p>The provider of a provisioned resource of this Amazon DataZone environment.</p>
@@ -23,12 +23,14 @@ impl Resource {
         self.name.as_deref()
     }
     /// <p>The value of a provisioned resource of this Amazon DataZone environment.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
     /// <p>The type of a provisioned resource of this Amazon DataZone environment.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
-        self.r#type.as_deref()
+    pub fn r#type(&self) -> &str {
+        use std::ops::Deref;
+        self.r#type.deref()
     }
 }
 impl Resource {
@@ -77,6 +79,7 @@ impl ResourceBuilder {
         &self.name
     }
     /// <p>The value of a provisioned resource of this Amazon DataZone environment.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +94,7 @@ impl ResourceBuilder {
         &self.value
     }
     /// <p>The type of a provisioned resource of this Amazon DataZone environment.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +109,25 @@ impl ResourceBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`Resource`](crate::types::Resource).
-    pub fn build(self) -> crate::types::Resource {
-        crate::types::Resource {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`value`](crate::types::builders::ResourceBuilder::value)
+    /// - [`r#type`](crate::types::builders::ResourceBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::Resource, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Resource {
             provider: self.provider,
             name: self.name,
-            value: self.value,
-            r#type: self.r#type,
-        }
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building Resource",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building Resource",
+                )
+            })?,
+        })
     }
 }

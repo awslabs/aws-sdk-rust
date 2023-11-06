@@ -27,8 +27,10 @@ impl ListBotLocalesOutput {
         self.next_token.as_deref()
     }
     /// <p>Summary information for the locales that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more locales available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    pub fn bot_locale_summaries(&self) -> ::std::option::Option<&[crate::types::BotLocaleSummary]> {
-        self.bot_locale_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bot_locale_summaries.is_none()`.
+    pub fn bot_locale_summaries(&self) -> &[crate::types::BotLocaleSummary] {
+        self.bot_locale_summaries.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListBotLocalesOutput {

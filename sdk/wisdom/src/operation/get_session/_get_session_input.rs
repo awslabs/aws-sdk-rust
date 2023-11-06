@@ -34,6 +34,7 @@ pub struct GetSessionInputBuilder {
 }
 impl GetSessionInputBuilder {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// This field is required.
     pub fn assistant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assistant_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetSessionInputBuilder {
         &self.assistant_id
     }
     /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// This field is required.
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,7 @@ impl GetSessionInputBuilder {
         &self.session_id
     }
     /// Consumes the builder and constructs a [`GetSessionInput`](crate::operation::get_session::GetSessionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_session::GetSessionInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_session::GetSessionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_session::GetSessionInput {
             assistant_id: self.assistant_id,
             session_id: self.session_id,

@@ -11,8 +11,10 @@ pub struct GetExternalModelsOutput {
 }
 impl GetExternalModelsOutput {
     /// <p>Gets the Amazon SageMaker models.</p>
-    pub fn external_models(&self) -> ::std::option::Option<&[crate::types::ExternalModel]> {
-        self.external_models.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.external_models.is_none()`.
+    pub fn external_models(&self) -> &[crate::types::ExternalModel] {
+        self.external_models.as_deref().unwrap_or_default()
     }
     /// <p>The next page token to be used in subsequent requests.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -2,23 +2,23 @@
 pub fn ser_abort_criteria(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AbortCriteria,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.failure_type {
-        object.key("failureType").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("failureType").string(input.failure_type.as_str());
     }
-    if let Some(var_2) = &input.action {
-        object.key("action").string(var_2.as_str());
+    {
+        object.key("action").string(input.action.as_str());
     }
-    if let Some(var_3) = &input.threshold_percentage {
+    {
         object.key("thresholdPercentage").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_3).into()),
+            ::aws_smithy_types::Number::Float((input.threshold_percentage).into()),
         );
     }
-    if let Some(var_4) = &input.min_number_of_executed_things {
+    {
         object.key("minNumberOfExecutedThings").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+            ::aws_smithy_types::Number::NegInt((input.min_number_of_executed_things).into()),
         );
     }
     Ok(())
@@ -75,7 +75,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::abort_criteria_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

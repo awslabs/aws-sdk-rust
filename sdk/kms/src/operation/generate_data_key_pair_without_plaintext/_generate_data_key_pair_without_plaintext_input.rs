@@ -59,8 +59,10 @@ impl GenerateDataKeyPairWithoutPlaintextInput {
     }
     /// <p>A list of grant tokens.</p>
     /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    pub fn grant_tokens(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.grant_tokens.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.grant_tokens.is_none()`.
+    pub fn grant_tokens(&self) -> &[::std::string::String] {
+        self.grant_tokens.as_deref().unwrap_or_default()
     }
     /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
     /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
@@ -135,6 +137,7 @@ impl GenerateDataKeyPairWithoutPlaintextInputBuilder {
     /// <li> <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code> </p> </li>
     /// </ul>
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>. To get the alias name and alias ARN, use <code>ListAliases</code>.</p>
+    /// This field is required.
     pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_id = ::std::option::Option::Some(input.into());
         self
@@ -168,6 +171,7 @@ impl GenerateDataKeyPairWithoutPlaintextInputBuilder {
     }
     /// <p>Determines the type of data key pair that is generated.</p>
     /// <p>The KMS rule that restricts the use of asymmetric RSA and SM2 KMS keys to encrypt and decrypt or to sign and verify (but not both), and the rule that permits you to use ECC KMS keys only to sign and verify, are not effective on data key pairs, which are used outside of KMS. The SM2 key spec is only available in China Regions.</p>
+    /// This field is required.
     pub fn key_pair_spec(mut self, input: crate::types::DataKeyPairSpec) -> Self {
         self.key_pair_spec = ::std::option::Option::Some(input);
         self
@@ -228,7 +232,7 @@ impl GenerateDataKeyPairWithoutPlaintextInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::generate_data_key_pair_without_plaintext::GenerateDataKeyPairWithoutPlaintextInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::generate_data_key_pair_without_plaintext::GenerateDataKeyPairWithoutPlaintextInput {

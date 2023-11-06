@@ -5,18 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModuleLoggingConfigurationInput {
     /// <p>Indicates whether to enable the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>).</p>
-    pub enabled: ::std::option::Option<bool>,
+    pub enabled: bool,
     /// <p>Defines the Apache Airflow log level (e.g. <code>INFO</code>) to send to CloudWatch Logs.</p>
-    pub log_level: ::std::option::Option<crate::types::LoggingLevel>,
+    pub log_level: crate::types::LoggingLevel,
 }
 impl ModuleLoggingConfigurationInput {
     /// <p>Indicates whether to enable the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>).</p>
-    pub fn enabled(&self) -> ::std::option::Option<bool> {
+    pub fn enabled(&self) -> bool {
         self.enabled
     }
     /// <p>Defines the Apache Airflow log level (e.g. <code>INFO</code>) to send to CloudWatch Logs.</p>
-    pub fn log_level(&self) -> ::std::option::Option<&crate::types::LoggingLevel> {
-        self.log_level.as_ref()
+    pub fn log_level(&self) -> &crate::types::LoggingLevel {
+        &self.log_level
     }
 }
 impl ModuleLoggingConfigurationInput {
@@ -35,6 +35,7 @@ pub struct ModuleLoggingConfigurationInputBuilder {
 }
 impl ModuleLoggingConfigurationInputBuilder {
     /// <p>Indicates whether to enable the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>).</p>
+    /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl ModuleLoggingConfigurationInputBuilder {
         &self.enabled
     }
     /// <p>Defines the Apache Airflow log level (e.g. <code>INFO</code>) to send to CloudWatch Logs.</p>
+    /// This field is required.
     pub fn log_level(mut self, input: crate::types::LoggingLevel) -> Self {
         self.log_level = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl ModuleLoggingConfigurationInputBuilder {
         &self.log_level
     }
     /// Consumes the builder and constructs a [`ModuleLoggingConfigurationInput`](crate::types::ModuleLoggingConfigurationInput).
-    pub fn build(self) -> crate::types::ModuleLoggingConfigurationInput {
-        crate::types::ModuleLoggingConfigurationInput {
-            enabled: self.enabled,
-            log_level: self.log_level,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`enabled`](crate::types::builders::ModuleLoggingConfigurationInputBuilder::enabled)
+    /// - [`log_level`](crate::types::builders::ModuleLoggingConfigurationInputBuilder::log_level)
+    pub fn build(self) -> ::std::result::Result<crate::types::ModuleLoggingConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ModuleLoggingConfigurationInput {
+            enabled: self.enabled.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "enabled",
+                    "enabled was not specified but it is required when building ModuleLoggingConfigurationInput",
+                )
+            })?,
+            log_level: self.log_level.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "log_level",
+                    "log_level was not specified but it is required when building ModuleLoggingConfigurationInput",
+                )
+            })?,
+        })
     }
 }

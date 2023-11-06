@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalysisReport {
     /// <p>The name of the analysis report.</p>
-    pub analysis_report_id: ::std::option::Option<::std::string::String>,
+    pub analysis_report_id: ::std::string::String,
     /// <p>The unique identifier of the analysis report.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>List the tags for the Amazon Web Services service for which Performance Insights returns metrics. Valid values are as follows:</p>
@@ -27,8 +27,9 @@ pub struct AnalysisReport {
 }
 impl AnalysisReport {
     /// <p>The name of the analysis report.</p>
-    pub fn analysis_report_id(&self) -> ::std::option::Option<&str> {
-        self.analysis_report_id.as_deref()
+    pub fn analysis_report_id(&self) -> &str {
+        use std::ops::Deref;
+        self.analysis_report_id.deref()
     }
     /// <p>The unique identifier of the analysis report.</p>
     pub fn identifier(&self) -> ::std::option::Option<&str> {
@@ -59,8 +60,10 @@ impl AnalysisReport {
         self.status.as_ref()
     }
     /// <p>The list of identified insights in the analysis report.</p>
-    pub fn insights(&self) -> ::std::option::Option<&[crate::types::Insight]> {
-        self.insights.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.insights.is_none()`.
+    pub fn insights(&self) -> &[crate::types::Insight] {
+        self.insights.as_deref().unwrap_or_default()
     }
 }
 impl AnalysisReport {
@@ -85,6 +88,7 @@ pub struct AnalysisReportBuilder {
 }
 impl AnalysisReportBuilder {
     /// <p>The name of the analysis report.</p>
+    /// This field is required.
     pub fn analysis_report_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analysis_report_id = ::std::option::Option::Some(input.into());
         self
@@ -215,9 +219,16 @@ impl AnalysisReportBuilder {
         &self.insights
     }
     /// Consumes the builder and constructs a [`AnalysisReport`](crate::types::AnalysisReport).
-    pub fn build(self) -> crate::types::AnalysisReport {
-        crate::types::AnalysisReport {
-            analysis_report_id: self.analysis_report_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`analysis_report_id`](crate::types::builders::AnalysisReportBuilder::analysis_report_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::AnalysisReport, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AnalysisReport {
+            analysis_report_id: self.analysis_report_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "analysis_report_id",
+                    "analysis_report_id was not specified but it is required when building AnalysisReport",
+                )
+            })?,
             identifier: self.identifier,
             service_type: self.service_type,
             create_time: self.create_time,
@@ -225,6 +236,6 @@ impl AnalysisReportBuilder {
             end_time: self.end_time,
             status: self.status,
             insights: self.insights,
-        }
+        })
     }
 }

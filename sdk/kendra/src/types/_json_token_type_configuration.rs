@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JsonTokenTypeConfiguration {
     /// <p>The user name attribute field.</p>
-    pub user_name_attribute_field: ::std::option::Option<::std::string::String>,
+    pub user_name_attribute_field: ::std::string::String,
     /// <p>The group attribute field.</p>
-    pub group_attribute_field: ::std::option::Option<::std::string::String>,
+    pub group_attribute_field: ::std::string::String,
 }
 impl JsonTokenTypeConfiguration {
     /// <p>The user name attribute field.</p>
-    pub fn user_name_attribute_field(&self) -> ::std::option::Option<&str> {
-        self.user_name_attribute_field.as_deref()
+    pub fn user_name_attribute_field(&self) -> &str {
+        use std::ops::Deref;
+        self.user_name_attribute_field.deref()
     }
     /// <p>The group attribute field.</p>
-    pub fn group_attribute_field(&self) -> ::std::option::Option<&str> {
-        self.group_attribute_field.as_deref()
+    pub fn group_attribute_field(&self) -> &str {
+        use std::ops::Deref;
+        self.group_attribute_field.deref()
     }
 }
 impl JsonTokenTypeConfiguration {
@@ -35,6 +37,7 @@ pub struct JsonTokenTypeConfigurationBuilder {
 }
 impl JsonTokenTypeConfigurationBuilder {
     /// <p>The user name attribute field.</p>
+    /// This field is required.
     pub fn user_name_attribute_field(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name_attribute_field = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl JsonTokenTypeConfigurationBuilder {
         &self.user_name_attribute_field
     }
     /// <p>The group attribute field.</p>
+    /// This field is required.
     pub fn group_attribute_field(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_attribute_field = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl JsonTokenTypeConfigurationBuilder {
         &self.group_attribute_field
     }
     /// Consumes the builder and constructs a [`JsonTokenTypeConfiguration`](crate::types::JsonTokenTypeConfiguration).
-    pub fn build(self) -> crate::types::JsonTokenTypeConfiguration {
-        crate::types::JsonTokenTypeConfiguration {
-            user_name_attribute_field: self.user_name_attribute_field,
-            group_attribute_field: self.group_attribute_field,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`user_name_attribute_field`](crate::types::builders::JsonTokenTypeConfigurationBuilder::user_name_attribute_field)
+    /// - [`group_attribute_field`](crate::types::builders::JsonTokenTypeConfigurationBuilder::group_attribute_field)
+    pub fn build(self) -> ::std::result::Result<crate::types::JsonTokenTypeConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::JsonTokenTypeConfiguration {
+            user_name_attribute_field: self.user_name_attribute_field.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "user_name_attribute_field",
+                    "user_name_attribute_field was not specified but it is required when building JsonTokenTypeConfiguration",
+                )
+            })?,
+            group_attribute_field: self.group_attribute_field.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "group_attribute_field",
+                    "group_attribute_field was not specified but it is required when building JsonTokenTypeConfiguration",
+                )
+            })?,
+        })
     }
 }

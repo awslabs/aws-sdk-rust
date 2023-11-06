@@ -2,54 +2,54 @@
 pub fn ser_slot(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Slot,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("name").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.description {
-        object.key("description").string(var_2.as_str());
+    if let Some(var_1) = &input.description {
+        object.key("description").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.slot_constraint {
-        object.key("slotConstraint").string(var_3.as_str());
+    {
+        object.key("slotConstraint").string(input.slot_constraint.as_str());
     }
-    if let Some(var_4) = &input.slot_type {
-        object.key("slotType").string(var_4.as_str());
+    if let Some(var_2) = &input.slot_type {
+        object.key("slotType").string(var_2.as_str());
     }
-    if let Some(var_5) = &input.slot_type_version {
-        object.key("slotTypeVersion").string(var_5.as_str());
+    if let Some(var_3) = &input.slot_type_version {
+        object.key("slotTypeVersion").string(var_3.as_str());
     }
-    if let Some(var_6) = &input.value_elicitation_prompt {
+    if let Some(var_4) = &input.value_elicitation_prompt {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("valueElicitationPrompt").start_object();
-        crate::protocol_serde::shape_prompt::ser_prompt(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_5 = object.key("valueElicitationPrompt").start_object();
+        crate::protocol_serde::shape_prompt::ser_prompt(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_8) = &input.priority {
+    if let Some(var_6) = &input.priority {
         object.key("priority").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_8).into()),
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if let Some(var_9) = &input.sample_utterances {
-        let mut array_10 = object.key("sampleUtterances").start_array();
-        for item_11 in var_9 {
+    if let Some(var_7) = &input.sample_utterances {
+        let mut array_8 = object.key("sampleUtterances").start_array();
+        for item_9 in var_7 {
             {
-                array_10.value().string(item_11.as_str());
+                array_8.value().string(item_9.as_str());
             }
         }
-        array_10.finish();
+        array_8.finish();
     }
-    if let Some(var_12) = &input.response_card {
-        object.key("responseCard").string(var_12.as_str());
+    if let Some(var_10) = &input.response_card {
+        object.key("responseCard").string(var_10.as_str());
     }
-    if let Some(var_13) = &input.obfuscation_setting {
-        object.key("obfuscationSetting").string(var_13.as_str());
+    if let Some(var_11) = &input.obfuscation_setting {
+        object.key("obfuscationSetting").string(var_11.as_str());
     }
-    if let Some(var_14) = &input.default_value_spec {
+    if let Some(var_12) = &input.default_value_spec {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("defaultValueSpec").start_object();
-        crate::protocol_serde::shape_slot_default_value_spec::ser_slot_default_value_spec(&mut object_15, var_14)?;
-        object_15.finish();
+        let mut object_13 = object.key("defaultValueSpec").start_object();
+        crate::protocol_serde::shape_slot_default_value_spec::ser_slot_default_value_spec(&mut object_13, var_12)?;
+        object_13.finish();
     }
     Ok(())
 }
@@ -146,7 +146,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::slot_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

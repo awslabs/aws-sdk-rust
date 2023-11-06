@@ -2,12 +2,12 @@
 pub fn ser_attachment_state_change(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AttachmentStateChange,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.attachment_arn {
-        object.key("attachmentArn").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("attachmentArn").string(input.attachment_arn.as_str());
     }
-    if let Some(var_2) = &input.status {
-        object.key("status").string(var_2.as_str());
+    {
+        object.key("status").string(input.status.as_str());
     }
     Ok(())
 }

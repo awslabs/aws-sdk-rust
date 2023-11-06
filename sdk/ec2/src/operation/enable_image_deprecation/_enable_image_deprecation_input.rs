@@ -43,6 +43,7 @@ pub struct EnableImageDeprecationInputBuilder {
 }
 impl EnableImageDeprecationInputBuilder {
     /// <p>The ID of the AMI.</p>
+    /// This field is required.
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_id = ::std::option::Option::Some(input.into());
         self
@@ -58,6 +59,7 @@ impl EnableImageDeprecationInputBuilder {
     }
     /// <p>The date and time to deprecate the AMI, in UTC, in the following format: <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z. If you specify a value for seconds, Amazon EC2 rounds the seconds to the nearest minute.</p>
     /// <p>You can’t specify a date in the past. The upper limit for <code>DeprecateAt</code> is 10 years from now, except for public AMIs, where the upper limit is 2 years from the creation date.</p>
+    /// This field is required.
     pub fn deprecate_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.deprecate_at = ::std::option::Option::Some(input);
         self
@@ -90,8 +92,10 @@ impl EnableImageDeprecationInputBuilder {
     /// Consumes the builder and constructs a [`EnableImageDeprecationInput`](crate::operation::enable_image_deprecation::EnableImageDeprecationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::enable_image_deprecation::EnableImageDeprecationInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::enable_image_deprecation::EnableImageDeprecationInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::enable_image_deprecation::EnableImageDeprecationInput {
             image_id: self.image_id,
             deprecate_at: self.deprecate_at,

@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessPoliciesStatus {
     /// <p>Access rules for a domain's document or search service endpoints. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html" target="_blank">Configuring Access for a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>. The maximum size of a policy document is 100 KB.</p>
-    pub options: ::std::option::Option<::std::string::String>,
+    pub options: ::std::string::String,
     /// <p>The status of domain configuration option.</p>
     pub status: ::std::option::Option<crate::types::OptionStatus>,
 }
 impl AccessPoliciesStatus {
     /// <p>Access rules for a domain's document or search service endpoints. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html" target="_blank">Configuring Access for a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>. The maximum size of a policy document is 100 KB.</p>
-    pub fn options(&self) -> ::std::option::Option<&str> {
-        self.options.as_deref()
+    pub fn options(&self) -> &str {
+        use std::ops::Deref;
+        self.options.deref()
     }
     /// <p>The status of domain configuration option.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::OptionStatus> {
@@ -35,6 +36,7 @@ pub struct AccessPoliciesStatusBuilder {
 }
 impl AccessPoliciesStatusBuilder {
     /// <p>Access rules for a domain's document or search service endpoints. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html" target="_blank">Configuring Access for a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>. The maximum size of a policy document is 100 KB.</p>
+    /// This field is required.
     pub fn options(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.options = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl AccessPoliciesStatusBuilder {
         &self.options
     }
     /// <p>The status of domain configuration option.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,17 @@ impl AccessPoliciesStatusBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`AccessPoliciesStatus`](crate::types::AccessPoliciesStatus).
-    pub fn build(self) -> crate::types::AccessPoliciesStatus {
-        crate::types::AccessPoliciesStatus {
-            options: self.options,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`options`](crate::types::builders::AccessPoliciesStatusBuilder::options)
+    pub fn build(self) -> ::std::result::Result<crate::types::AccessPoliciesStatus, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AccessPoliciesStatus {
+            options: self.options.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "options",
+                    "options was not specified but it is required when building AccessPoliciesStatus",
+                )
+            })?,
             status: self.status,
-        }
+        })
     }
 }

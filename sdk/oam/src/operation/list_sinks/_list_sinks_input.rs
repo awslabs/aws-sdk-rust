@@ -62,7 +62,7 @@ impl ListSinksInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListSinksInput`](crate::operation::list_sinks::ListSinksInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_sinks::ListSinksInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_sinks::ListSinksInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_sinks::ListSinksInput {
             max_results: self.max_results,
             next_token: self.next_token,

@@ -27,6 +27,7 @@ pub struct DeleteIpGroupInputBuilder {
 }
 impl DeleteIpGroupInputBuilder {
     /// <p>The identifier of the IP access control group.</p>
+    /// This field is required.
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteIpGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteIpGroupInput`](crate::operation::delete_ip_group::DeleteIpGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_ip_group::DeleteIpGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_ip_group::DeleteIpGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_ip_group::DeleteIpGroupInput { group_id: self.group_id })
     }
 }

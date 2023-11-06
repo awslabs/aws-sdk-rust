@@ -55,6 +55,7 @@ impl DeleteLaunchProfileInputBuilder {
         &self.client_token
     }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
+    /// This field is required.
     pub fn launch_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_profile_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl DeleteLaunchProfileInputBuilder {
         &self.launch_profile_id
     }
     /// <p>The studio ID. </p>
+    /// This field is required.
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +87,7 @@ impl DeleteLaunchProfileInputBuilder {
     /// Consumes the builder and constructs a [`DeleteLaunchProfileInput`](crate::operation::delete_launch_profile::DeleteLaunchProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_launch_profile::DeleteLaunchProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_launch_profile::DeleteLaunchProfileInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_launch_profile::DeleteLaunchProfileInput {
             client_token: self.client_token,

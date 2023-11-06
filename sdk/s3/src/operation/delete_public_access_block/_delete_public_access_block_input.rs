@@ -34,6 +34,7 @@ pub struct DeletePublicAccessBlockInputBuilder {
 }
 impl DeletePublicAccessBlockInputBuilder {
     /// <p>The Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you want to delete. </p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl DeletePublicAccessBlockInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_public_access_block::DeletePublicAccessBlockInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_public_access_block::DeletePublicAccessBlockInput {
             bucket: self.bucket,

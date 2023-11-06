@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConcatenationSource {
     /// <p>The type of concatenation source in a configuration object.</p>
-    pub r#type: ::std::option::Option<crate::types::ConcatenationSourceType>,
+    pub r#type: crate::types::ConcatenationSourceType,
     /// <p>The concatenation settings for the media pipeline in a configuration object.</p>
     pub media_capture_pipeline_source_configuration: ::std::option::Option<crate::types::MediaCapturePipelineSourceConfiguration>,
 }
 impl ConcatenationSource {
     /// <p>The type of concatenation source in a configuration object.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ConcatenationSourceType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::ConcatenationSourceType {
+        &self.r#type
     }
     /// <p>The concatenation settings for the media pipeline in a configuration object.</p>
     pub fn media_capture_pipeline_source_configuration(&self) -> ::std::option::Option<&crate::types::MediaCapturePipelineSourceConfiguration> {
@@ -35,6 +35,7 @@ pub struct ConcatenationSourceBuilder {
 }
 impl ConcatenationSourceBuilder {
     /// <p>The type of concatenation source in a configuration object.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::ConcatenationSourceType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl ConcatenationSourceBuilder {
         &self.r#type
     }
     /// <p>The concatenation settings for the media pipeline in a configuration object.</p>
+    /// This field is required.
     pub fn media_capture_pipeline_source_configuration(mut self, input: crate::types::MediaCapturePipelineSourceConfiguration) -> Self {
         self.media_capture_pipeline_source_configuration = ::std::option::Option::Some(input);
         self
@@ -66,10 +68,17 @@ impl ConcatenationSourceBuilder {
         &self.media_capture_pipeline_source_configuration
     }
     /// Consumes the builder and constructs a [`ConcatenationSource`](crate::types::ConcatenationSource).
-    pub fn build(self) -> crate::types::ConcatenationSource {
-        crate::types::ConcatenationSource {
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::ConcatenationSourceBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::ConcatenationSource, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ConcatenationSource {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building ConcatenationSource",
+                )
+            })?,
             media_capture_pipeline_source_configuration: self.media_capture_pipeline_source_configuration,
-        }
+        })
     }
 }

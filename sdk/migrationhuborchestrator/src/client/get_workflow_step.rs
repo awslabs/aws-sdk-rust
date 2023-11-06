@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetWorkflowStep`](crate::operation::get_workflow_step::builders::GetWorkflowStepFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`workflow_id(impl Into<String>)`](crate::operation::get_workflow_step::builders::GetWorkflowStepFluentBuilder::workflow_id) / [`set_workflow_id(Option<String>)`](crate::operation::get_workflow_step::builders::GetWorkflowStepFluentBuilder::set_workflow_id): <p>The ID of the migration workflow.</p>
-    ///   - [`step_group_id(impl Into<String>)`](crate::operation::get_workflow_step::builders::GetWorkflowStepFluentBuilder::step_group_id) / [`set_step_group_id(Option<String>)`](crate::operation::get_workflow_step::builders::GetWorkflowStepFluentBuilder::set_step_group_id): <p>desThe ID of the step group.</p>
-    ///   - [`id(impl Into<String>)`](crate::operation::get_workflow_step::builders::GetWorkflowStepFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_workflow_step::builders::GetWorkflowStepFluentBuilder::set_id): <p>The ID of the step.</p>
+    ///   - [`workflow_id(impl Into<String>)`](crate::operation::get_workflow_step::builders::GetWorkflowStepFluentBuilder::workflow_id) / [`set_workflow_id(Option<String>)`](crate::operation::get_workflow_step::builders::GetWorkflowStepFluentBuilder::set_workflow_id):<br>required: **true**<br><p>The ID of the migration workflow.</p><br>
+    ///   - [`step_group_id(impl Into<String>)`](crate::operation::get_workflow_step::builders::GetWorkflowStepFluentBuilder::step_group_id) / [`set_step_group_id(Option<String>)`](crate::operation::get_workflow_step::builders::GetWorkflowStepFluentBuilder::set_step_group_id):<br>required: **true**<br><p>desThe ID of the step group.</p><br>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_workflow_step::builders::GetWorkflowStepFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_workflow_step::builders::GetWorkflowStepFluentBuilder::set_id):<br>required: **true**<br><p>The ID of the step.</p><br>
     /// - On success, responds with [`GetWorkflowStepOutput`](crate::operation::get_workflow_step::GetWorkflowStepOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::get_workflow_step::GetWorkflowStepOutput::name): <p>The name of the step.</p>
     ///   - [`step_group_id(Option<String>)`](crate::operation::get_workflow_step::GetWorkflowStepOutput::step_group_id): <p>The ID of the step group.</p>
@@ -15,10 +15,10 @@ impl super::Client {
     ///   - [`step_action_type(Option<StepActionType>)`](crate::operation::get_workflow_step::GetWorkflowStepOutput::step_action_type): <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
     ///   - [`owner(Option<Owner>)`](crate::operation::get_workflow_step::GetWorkflowStepOutput::owner): <p>The owner of the step.</p>
     ///   - [`workflow_step_automation_configuration(Option<WorkflowStepAutomationConfiguration>)`](crate::operation::get_workflow_step::GetWorkflowStepOutput::workflow_step_automation_configuration): <p>The custom script to run tests on source or target environments.</p>
-    ///   - [`step_target(Option<Vec<String>>)`](crate::operation::get_workflow_step::GetWorkflowStepOutput::step_target): <p>The servers on which a step will be run.</p>
-    ///   - [`outputs(Option<Vec<WorkflowStepOutput>>)`](crate::operation::get_workflow_step::GetWorkflowStepOutput::outputs): <p>The outputs of the step.</p>
-    ///   - [`previous(Option<Vec<String>>)`](crate::operation::get_workflow_step::GetWorkflowStepOutput::previous): <p>The previous step.</p>
-    ///   - [`next(Option<Vec<String>>)`](crate::operation::get_workflow_step::GetWorkflowStepOutput::next): <p>The next step.</p>
+    ///   - [`step_target(Option<Vec::<String>>)`](crate::operation::get_workflow_step::GetWorkflowStepOutput::step_target): <p>The servers on which a step will be run.</p>
+    ///   - [`outputs(Option<Vec::<WorkflowStepOutput>>)`](crate::operation::get_workflow_step::GetWorkflowStepOutput::outputs): <p>The outputs of the step.</p>
+    ///   - [`previous(Option<Vec::<String>>)`](crate::operation::get_workflow_step::GetWorkflowStepOutput::previous): <p>The previous step.</p>
+    ///   - [`next(Option<Vec::<String>>)`](crate::operation::get_workflow_step::GetWorkflowStepOutput::next): <p>The next step.</p>
     ///   - [`status(Option<StepStatus>)`](crate::operation::get_workflow_step::GetWorkflowStepOutput::status): <p>The status of the step.</p>
     ///   - [`status_message(Option<String>)`](crate::operation::get_workflow_step::GetWorkflowStepOutput::status_message): <p>The status message of the migration workflow.</p>
     ///   - [`script_output_location(Option<String>)`](crate::operation::get_workflow_step::GetWorkflowStepOutput::script_output_location): <p>The output location of the script.</p>

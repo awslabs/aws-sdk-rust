@@ -56,6 +56,7 @@ impl ListManagedRuleSetsInputBuilder {
     /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
     /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn scope(mut self, input: crate::types::Scope) -> Self {
         self.scope = ::std::option::Option::Some(input);
         self
@@ -110,7 +111,7 @@ impl ListManagedRuleSetsInputBuilder {
     /// Consumes the builder and constructs a [`ListManagedRuleSetsInput`](crate::operation::list_managed_rule_sets::ListManagedRuleSetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_managed_rule_sets::ListManagedRuleSetsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_managed_rule_sets::ListManagedRuleSetsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_managed_rule_sets::ListManagedRuleSetsInput {
             scope: self.scope,

@@ -28,8 +28,10 @@ impl ListFindingAggregationsInput {
         self.max_results
     }
     /// <p>The Amazon Web Services account IDs to retrieve finding aggregation data for.</p>
-    pub fn account_ids(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.account_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
+    pub fn account_ids(&self) -> &[crate::types::StringFilter] {
+        self.account_ids.as_deref().unwrap_or_default()
     }
     /// <p>Details of the aggregation request that is used to filter your aggregation results.</p>
     pub fn aggregation_request(&self) -> ::std::option::Option<&crate::types::AggregationRequest> {
@@ -55,6 +57,7 @@ pub struct ListFindingAggregationsInputBuilder {
 }
 impl ListFindingAggregationsInputBuilder {
     /// <p>The type of the aggregation request.</p>
+    /// This field is required.
     pub fn aggregation_type(mut self, input: crate::types::AggregationType) -> Self {
         self.aggregation_type = ::std::option::Option::Some(input);
         self
@@ -135,7 +138,7 @@ impl ListFindingAggregationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_finding_aggregations::ListFindingAggregationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_finding_aggregations::ListFindingAggregationsInput {
             aggregation_type: self.aggregation_type,

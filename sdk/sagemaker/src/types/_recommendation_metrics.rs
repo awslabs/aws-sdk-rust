@@ -76,6 +76,7 @@ pub struct RecommendationMetricsBuilder {
 }
 impl RecommendationMetricsBuilder {
     /// <p>Defines the cost per hour for the instance. </p>
+    /// This field is required.
     pub fn cost_per_hour(mut self, input: f32) -> Self {
         self.cost_per_hour = ::std::option::Option::Some(input);
         self
@@ -90,6 +91,7 @@ impl RecommendationMetricsBuilder {
         &self.cost_per_hour
     }
     /// <p>Defines the cost per inference for the instance .</p>
+    /// This field is required.
     pub fn cost_per_inference(mut self, input: f32) -> Self {
         self.cost_per_inference = ::std::option::Option::Some(input);
         self
@@ -104,6 +106,7 @@ impl RecommendationMetricsBuilder {
         &self.cost_per_inference
     }
     /// <p>The expected maximum number of requests per minute for the instance.</p>
+    /// This field is required.
     pub fn max_invocations(mut self, input: i32) -> Self {
         self.max_invocations = ::std::option::Option::Some(input);
         self
@@ -118,6 +121,7 @@ impl RecommendationMetricsBuilder {
         &self.max_invocations
     }
     /// <p>The expected model latency at maximum invocation per minute for the instance.</p>
+    /// This field is required.
     pub fn model_latency(mut self, input: i32) -> Self {
         self.model_latency = ::std::option::Option::Some(input);
         self

@@ -21,8 +21,10 @@ impl UpdateInputSecurityGroupInput {
         self.tags.as_ref()
     }
     /// List of IPv4 CIDR addresses to whitelist
-    pub fn whitelist_rules(&self) -> ::std::option::Option<&[crate::types::InputWhitelistRuleCidr]> {
-        self.whitelist_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.whitelist_rules.is_none()`.
+    pub fn whitelist_rules(&self) -> &[crate::types::InputWhitelistRuleCidr] {
+        self.whitelist_rules.as_deref().unwrap_or_default()
     }
 }
 impl UpdateInputSecurityGroupInput {
@@ -42,6 +44,7 @@ pub struct UpdateInputSecurityGroupInputBuilder {
 }
 impl UpdateInputSecurityGroupInputBuilder {
     /// The id of the Input Security Group to update.
+    /// This field is required.
     pub fn input_security_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_security_group_id = ::std::option::Option::Some(input.into());
         self
@@ -100,7 +103,7 @@ impl UpdateInputSecurityGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_input_security_group::UpdateInputSecurityGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_input_security_group::UpdateInputSecurityGroupInput {
             input_security_group_id: self.input_security_group_id,

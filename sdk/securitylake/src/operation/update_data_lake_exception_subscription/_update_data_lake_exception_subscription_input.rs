@@ -41,6 +41,7 @@ pub struct UpdateDataLakeExceptionSubscriptionInputBuilder {
 }
 impl UpdateDataLakeExceptionSubscriptionInputBuilder {
     /// <p>The subscription protocol to which exception messages are posted.</p>
+    /// This field is required.
     pub fn subscription_protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_protocol = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateDataLakeExceptionSubscriptionInputBuilder {
         &self.subscription_protocol
     }
     /// <p>The account that is subscribed to receive exception notifications.</p>
+    /// This field is required.
     pub fn notification_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notification_endpoint = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +89,7 @@ impl UpdateDataLakeExceptionSubscriptionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_data_lake_exception_subscription::UpdateDataLakeExceptionSubscriptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_data_lake_exception_subscription::UpdateDataLakeExceptionSubscriptionInput {

@@ -2,7 +2,7 @@
 pub fn ser_s3_access_control_policy(
     input: &crate::types::S3AccessControlPolicy,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_1) = &input.access_control_list {
@@ -17,6 +17,7 @@ pub fn ser_s3_access_control_policy(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_s3_access_control_policy(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::S3AccessControlPolicy, ::aws_smithy_xml::decode::XmlDecodeError> {

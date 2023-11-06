@@ -17,24 +17,32 @@ pub struct AnalysisPacketHeader {
 }
 impl AnalysisPacketHeader {
     /// <p>The destination addresses.</p>
-    pub fn destination_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.destination_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destination_addresses.is_none()`.
+    pub fn destination_addresses(&self) -> &[::std::string::String] {
+        self.destination_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The destination port ranges.</p>
-    pub fn destination_port_ranges(&self) -> ::std::option::Option<&[crate::types::PortRange]> {
-        self.destination_port_ranges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destination_port_ranges.is_none()`.
+    pub fn destination_port_ranges(&self) -> &[crate::types::PortRange] {
+        self.destination_port_ranges.as_deref().unwrap_or_default()
     }
     /// <p>The protocol.</p>
     pub fn protocol(&self) -> ::std::option::Option<&str> {
         self.protocol.as_deref()
     }
     /// <p>The source addresses.</p>
-    pub fn source_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.source_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_addresses.is_none()`.
+    pub fn source_addresses(&self) -> &[::std::string::String] {
+        self.source_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The source port ranges.</p>
-    pub fn source_port_ranges(&self) -> ::std::option::Option<&[crate::types::PortRange]> {
-        self.source_port_ranges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_port_ranges.is_none()`.
+    pub fn source_port_ranges(&self) -> &[crate::types::PortRange] {
+        self.source_port_ranges.as_deref().unwrap_or_default()
     }
 }
 impl AnalysisPacketHeader {

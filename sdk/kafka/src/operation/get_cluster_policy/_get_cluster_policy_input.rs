@@ -27,6 +27,7 @@ pub struct GetClusterPolicyInputBuilder {
 }
 impl GetClusterPolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    /// This field is required.
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetClusterPolicyInputBuilder {
     /// Consumes the builder and constructs a [`GetClusterPolicyInput`](crate::operation::get_cluster_policy::GetClusterPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_cluster_policy::GetClusterPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_cluster_policy::GetClusterPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_cluster_policy::GetClusterPolicyInput {
             cluster_arn: self.cluster_arn,
         })

@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DescribeExecutionOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
-    pub execution_arn: ::std::option::Option<::std::string::String>,
+    pub execution_arn: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the executed stated machine.</p>
-    pub state_machine_arn: ::std::option::Option<::std::string::String>,
+    pub state_machine_arn: ::std::string::String,
     /// <p>The name of the execution.</p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
@@ -19,9 +19,9 @@ pub struct DescribeExecutionOutput {
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the execution.</p>
-    pub status: ::std::option::Option<crate::types::ExecutionStatus>,
+    pub status: crate::types::ExecutionStatus,
     /// <p>The date the execution is started.</p>
-    pub start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub start_date: ::aws_smithy_types::DateTime,
     /// <p>If the execution ended, the date the execution stopped.</p>
     pub stop_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The string that contains the JSON input data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
@@ -52,12 +52,14 @@ pub struct DescribeExecutionOutput {
 }
 impl DescribeExecutionOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
-    pub fn execution_arn(&self) -> ::std::option::Option<&str> {
-        self.execution_arn.as_deref()
+    pub fn execution_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.execution_arn.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the executed stated machine.</p>
-    pub fn state_machine_arn(&self) -> ::std::option::Option<&str> {
-        self.state_machine_arn.as_deref()
+    pub fn state_machine_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.state_machine_arn.deref()
     }
     /// <p>The name of the execution.</p>
     /// <p>A name must <i>not</i> contain:</p>
@@ -73,12 +75,12 @@ impl DescribeExecutionOutput {
         self.name.as_deref()
     }
     /// <p>The current status of the execution.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ExecutionStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::ExecutionStatus {
+        &self.status
     }
     /// <p>The date the execution is started.</p>
-    pub fn start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.start_date.as_ref()
+    pub fn start_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.start_date
     }
     /// <p>If the execution ended, the date the execution stopped.</p>
     pub fn stop_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -188,6 +190,7 @@ pub struct DescribeExecutionOutputBuilder {
 }
 impl DescribeExecutionOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
+    /// This field is required.
     pub fn execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_arn = ::std::option::Option::Some(input.into());
         self
@@ -202,6 +205,7 @@ impl DescribeExecutionOutputBuilder {
         &self.execution_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the executed stated machine.</p>
+    /// This field is required.
     pub fn state_machine_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_machine_arn = ::std::option::Option::Some(input.into());
         self
@@ -257,6 +261,7 @@ impl DescribeExecutionOutputBuilder {
         &self.name
     }
     /// <p>The current status of the execution.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::ExecutionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -271,6 +276,7 @@ impl DescribeExecutionOutputBuilder {
         &self.status
     }
     /// <p>The date the execution is started.</p>
+    /// This field is required.
     pub fn start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_date = ::std::option::Option::Some(input);
         self
@@ -460,13 +466,40 @@ impl DescribeExecutionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeExecutionOutput`](crate::operation::describe_execution::DescribeExecutionOutput).
-    pub fn build(self) -> crate::operation::describe_execution::DescribeExecutionOutput {
-        crate::operation::describe_execution::DescribeExecutionOutput {
-            execution_arn: self.execution_arn,
-            state_machine_arn: self.state_machine_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`execution_arn`](crate::operation::describe_execution::builders::DescribeExecutionOutputBuilder::execution_arn)
+    /// - [`state_machine_arn`](crate::operation::describe_execution::builders::DescribeExecutionOutputBuilder::state_machine_arn)
+    /// - [`status`](crate::operation::describe_execution::builders::DescribeExecutionOutputBuilder::status)
+    /// - [`start_date`](crate::operation::describe_execution::builders::DescribeExecutionOutputBuilder::start_date)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_execution::DescribeExecutionOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_execution::DescribeExecutionOutput {
+            execution_arn: self.execution_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "execution_arn",
+                    "execution_arn was not specified but it is required when building DescribeExecutionOutput",
+                )
+            })?,
+            state_machine_arn: self.state_machine_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "state_machine_arn",
+                    "state_machine_arn was not specified but it is required when building DescribeExecutionOutput",
+                )
+            })?,
             name: self.name,
-            status: self.status,
-            start_date: self.start_date,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building DescribeExecutionOutput",
+                )
+            })?,
+            start_date: self.start_date.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "start_date",
+                    "start_date was not specified but it is required when building DescribeExecutionOutput",
+                )
+            })?,
             stop_date: self.stop_date,
             input: self.input,
             input_details: self.input_details,
@@ -479,7 +512,7 @@ impl DescribeExecutionOutputBuilder {
             state_machine_version_arn: self.state_machine_version_arn,
             state_machine_alias_arn: self.state_machine_alias_arn,
             _request_id: self._request_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for DescribeExecutionOutputBuilder {

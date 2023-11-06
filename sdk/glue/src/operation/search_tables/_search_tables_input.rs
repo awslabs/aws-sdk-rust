@@ -35,8 +35,10 @@ impl SearchTablesInput {
     }
     /// <p>A list of key-value pairs, and a comparator used to filter the search results. Returns all entities matching the predicate.</p>
     /// <p>The <code>Comparator</code> member of the <code>PropertyPredicate</code> struct is used only for time fields, and can be omitted for other field types. Also, when comparing string values, such as when <code>Key=Name</code>, a fuzzy match algorithm is used. The <code>Key</code> field (for example, the value of the <code>Name</code> field) is split on certain punctuation characters, for example, -, :, #, etc. into tokens. Then each token is exact-match compared with the <code>Value</code> member of <code>PropertyPredicate</code>. For example, if <code>Key=Name</code> and <code>Value=link</code>, tables named <code>customer-link</code> and <code>xx-link-yy</code> are returned, but <code>xxlinkyy</code> is not returned.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::PropertyPredicate]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::PropertyPredicate] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>A string used for a text search.</p>
     /// <p>Specifying a value in quotes filters based on an exact match to the value.</p>
@@ -44,8 +46,10 @@ impl SearchTablesInput {
         self.search_text.as_deref()
     }
     /// <p>A list of criteria for sorting the results by a field name, in an ascending or descending order.</p>
-    pub fn sort_criteria(&self) -> ::std::option::Option<&[crate::types::SortCriterion]> {
-        self.sort_criteria.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sort_criteria.is_none()`.
+    pub fn sort_criteria(&self) -> &[crate::types::SortCriterion] {
+        self.sort_criteria.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of tables to return in a single response.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -209,7 +213,9 @@ impl SearchTablesInputBuilder {
         &self.resource_share_type
     }
     /// Consumes the builder and constructs a [`SearchTablesInput`](crate::operation::search_tables::SearchTablesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::search_tables::SearchTablesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::search_tables::SearchTablesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_tables::SearchTablesInput {
             catalog_id: self.catalog_id,
             next_token: self.next_token,

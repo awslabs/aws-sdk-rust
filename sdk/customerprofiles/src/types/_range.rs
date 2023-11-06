@@ -5,18 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Range {
     /// <p>The amount of time of the specified unit.</p>
-    pub value: ::std::option::Option<i32>,
+    pub value: i32,
     /// <p>The unit of time.</p>
-    pub unit: ::std::option::Option<crate::types::Unit>,
+    pub unit: crate::types::Unit,
 }
 impl Range {
     /// <p>The amount of time of the specified unit.</p>
-    pub fn value(&self) -> ::std::option::Option<i32> {
+    pub fn value(&self) -> i32 {
         self.value
     }
     /// <p>The unit of time.</p>
-    pub fn unit(&self) -> ::std::option::Option<&crate::types::Unit> {
-        self.unit.as_ref()
+    pub fn unit(&self) -> &crate::types::Unit {
+        &self.unit
     }
 }
 impl Range {
@@ -35,6 +35,7 @@ pub struct RangeBuilder {
 }
 impl RangeBuilder {
     /// <p>The amount of time of the specified unit.</p>
+    /// This field is required.
     pub fn value(mut self, input: i32) -> Self {
         self.value = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl RangeBuilder {
         &self.value
     }
     /// <p>The unit of time.</p>
+    /// This field is required.
     pub fn unit(mut self, input: crate::types::Unit) -> Self {
         self.unit = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl RangeBuilder {
         &self.unit
     }
     /// Consumes the builder and constructs a [`Range`](crate::types::Range).
-    pub fn build(self) -> crate::types::Range {
-        crate::types::Range {
-            value: self.value,
-            unit: self.unit,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`value`](crate::types::builders::RangeBuilder::value)
+    /// - [`unit`](crate::types::builders::RangeBuilder::unit)
+    pub fn build(self) -> ::std::result::Result<crate::types::Range, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Range {
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building Range",
+                )
+            })?,
+            unit: self.unit.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "unit",
+                    "unit was not specified but it is required when building Range",
+                )
+            })?,
+        })
     }
 }

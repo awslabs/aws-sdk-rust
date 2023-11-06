@@ -2,7 +2,7 @@
 pub fn ser_lookup_events_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::lookup_events::LookupEventsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.lookup_attributes {
         let mut array_2 = object.key("LookupAttributes").start_array();
         for item_3 in var_1 {

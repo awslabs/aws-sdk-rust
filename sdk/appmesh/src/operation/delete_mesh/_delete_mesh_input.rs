@@ -27,6 +27,7 @@ pub struct DeleteMeshInputBuilder {
 }
 impl DeleteMeshInputBuilder {
     /// <p>The name of the service mesh to delete.</p>
+    /// This field is required.
     pub fn mesh_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mesh_name = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl DeleteMeshInputBuilder {
         &self.mesh_name
     }
     /// Consumes the builder and constructs a [`DeleteMeshInput`](crate::operation::delete_mesh::DeleteMeshInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_mesh::DeleteMeshInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_mesh::DeleteMeshInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_mesh::DeleteMeshInput { mesh_name: self.mesh_name })
     }
 }

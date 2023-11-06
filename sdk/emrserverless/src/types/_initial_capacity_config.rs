@@ -35,6 +35,7 @@ pub struct InitialCapacityConfigBuilder {
 }
 impl InitialCapacityConfigBuilder {
     /// <p>The number of workers in the initial capacity configuration.</p>
+    /// This field is required.
     pub fn worker_count(mut self, input: i64) -> Self {
         self.worker_count = ::std::option::Option::Some(input);
         self

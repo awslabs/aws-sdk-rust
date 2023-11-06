@@ -56,6 +56,7 @@ impl Ec2ReplaceRouteTableAssociationActionBuilder {
         &self.description
     }
     /// <p>Information about the association ID.</p>
+    /// This field is required.
     pub fn association_id(mut self, input: crate::types::ActionTarget) -> Self {
         self.association_id = ::std::option::Option::Some(input);
         self
@@ -70,6 +71,7 @@ impl Ec2ReplaceRouteTableAssociationActionBuilder {
         &self.association_id
     }
     /// <p>Information about the ID of the new route table to associate with the subnet.</p>
+    /// This field is required.
     pub fn route_table_id(mut self, input: crate::types::ActionTarget) -> Self {
         self.route_table_id = ::std::option::Option::Some(input);
         self

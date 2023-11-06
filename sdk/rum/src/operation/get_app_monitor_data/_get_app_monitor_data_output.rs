@@ -11,8 +11,10 @@ pub struct GetAppMonitorDataOutput {
 }
 impl GetAppMonitorDataOutput {
     /// <p>The events that RUM collected that match your request.</p>
-    pub fn events(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.events.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.events.is_none()`.
+    pub fn events(&self) -> &[::std::string::String] {
+        self.events.as_deref().unwrap_or_default()
     }
     /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

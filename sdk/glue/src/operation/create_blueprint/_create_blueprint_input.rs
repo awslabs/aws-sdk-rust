@@ -48,6 +48,7 @@ pub struct CreateBlueprintInputBuilder {
 }
 impl CreateBlueprintInputBuilder {
     /// <p>The name of the blueprint.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl CreateBlueprintInputBuilder {
         &self.description
     }
     /// <p>Specifies a path in Amazon S3 where the blueprint is published.</p>
+    /// This field is required.
     pub fn blueprint_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.blueprint_location = ::std::option::Option::Some(input.into());
         self
@@ -112,7 +114,7 @@ impl CreateBlueprintInputBuilder {
     /// Consumes the builder and constructs a [`CreateBlueprintInput`](crate::operation::create_blueprint::CreateBlueprintInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_blueprint::CreateBlueprintInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_blueprint::CreateBlueprintInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_blueprint::CreateBlueprintInput {
             name: self.name,
             description: self.description,

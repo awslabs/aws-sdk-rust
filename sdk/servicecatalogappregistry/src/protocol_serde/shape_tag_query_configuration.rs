@@ -42,7 +42,7 @@ where
 pub fn ser_tag_query_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TagQueryConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.tag_key {
         object.key("tagKey").string(var_1.as_str());
     }

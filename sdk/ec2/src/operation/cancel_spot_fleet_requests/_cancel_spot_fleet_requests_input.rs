@@ -18,8 +18,10 @@ impl CancelSpotFleetRequestsInput {
         self.dry_run
     }
     /// <p>The IDs of the Spot Fleet requests.</p>
-    pub fn spot_fleet_request_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.spot_fleet_request_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.spot_fleet_request_ids.is_none()`.
+    pub fn spot_fleet_request_ids(&self) -> &[::std::string::String] {
+        self.spot_fleet_request_ids.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether to terminate the associated instances when the Spot Fleet request is canceled. The default is to terminate the instances.</p>
     /// <p>To let the instances continue to run after the Spot Fleet request is canceled, specify <code>no-terminate-instances</code>.</p>
@@ -79,6 +81,7 @@ impl CancelSpotFleetRequestsInputBuilder {
     }
     /// <p>Indicates whether to terminate the associated instances when the Spot Fleet request is canceled. The default is to terminate the instances.</p>
     /// <p>To let the instances continue to run after the Spot Fleet request is canceled, specify <code>no-terminate-instances</code>.</p>
+    /// This field is required.
     pub fn terminate_instances(mut self, input: bool) -> Self {
         self.terminate_instances = ::std::option::Option::Some(input);
         self
@@ -99,7 +102,7 @@ impl CancelSpotFleetRequestsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsInput {
             dry_run: self.dry_run,

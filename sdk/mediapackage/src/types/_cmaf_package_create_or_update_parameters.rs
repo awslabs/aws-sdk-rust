@@ -21,8 +21,10 @@ impl CmafPackageCreateOrUpdateParameters {
         self.encryption.as_ref()
     }
     /// A list of HLS manifest configurations
-    pub fn hls_manifests(&self) -> ::std::option::Option<&[crate::types::HlsManifestCreateOrUpdateParameters]> {
-        self.hls_manifests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hls_manifests.is_none()`.
+    pub fn hls_manifests(&self) -> &[crate::types::HlsManifestCreateOrUpdateParameters] {
+        self.hls_manifests.as_deref().unwrap_or_default()
     }
     /// Duration (in seconds) of each segment. Actual segments will be rounded to the nearest multiple of the source segment duration.
     pub fn segment_duration_seconds(&self) -> ::std::option::Option<i32> {

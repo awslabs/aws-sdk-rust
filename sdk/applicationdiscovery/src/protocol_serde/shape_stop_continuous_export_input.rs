@@ -2,7 +2,7 @@
 pub fn ser_stop_continuous_export_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::stop_continuous_export::StopContinuousExportInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.export_id {
         object.key("exportId").string(var_1.as_str());
     }

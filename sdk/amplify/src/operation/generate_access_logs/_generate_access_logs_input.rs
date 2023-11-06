@@ -77,6 +77,7 @@ impl GenerateAccessLogsInputBuilder {
         &self.end_time
     }
     /// <p> The name of the domain. </p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +92,7 @@ impl GenerateAccessLogsInputBuilder {
         &self.domain_name
     }
     /// <p> The unique ID for an Amplify app. </p>
+    /// This field is required.
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
         self
@@ -107,7 +109,8 @@ impl GenerateAccessLogsInputBuilder {
     /// Consumes the builder and constructs a [`GenerateAccessLogsInput`](crate::operation::generate_access_logs::GenerateAccessLogsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::generate_access_logs::GenerateAccessLogsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::generate_access_logs::GenerateAccessLogsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::generate_access_logs::GenerateAccessLogsInput {
             start_time: self.start_time,
             end_time: self.end_time,

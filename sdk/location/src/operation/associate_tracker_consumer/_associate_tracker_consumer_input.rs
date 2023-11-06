@@ -40,6 +40,7 @@ pub struct AssociateTrackerConsumerInputBuilder {
 }
 impl AssociateTrackerConsumerInputBuilder {
     /// <p>The name of the tracker resource to be associated with a geofence collection.</p>
+    /// This field is required.
     pub fn tracker_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tracker_name = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +58,7 @@ impl AssociateTrackerConsumerInputBuilder {
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn consumer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.consumer_arn = ::std::option::Option::Some(input.into());
         self
@@ -81,7 +83,7 @@ impl AssociateTrackerConsumerInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_tracker_consumer::AssociateTrackerConsumerInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::associate_tracker_consumer::AssociateTrackerConsumerInput {
             tracker_name: self.tracker_name,

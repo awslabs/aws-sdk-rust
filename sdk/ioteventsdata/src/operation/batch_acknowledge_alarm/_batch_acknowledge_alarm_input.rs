@@ -8,8 +8,10 @@ pub struct BatchAcknowledgeAlarmInput {
 }
 impl BatchAcknowledgeAlarmInput {
     /// <p>The list of acknowledge action requests. You can specify up to 10 requests per operation.</p>
-    pub fn acknowledge_action_requests(&self) -> ::std::option::Option<&[crate::types::AcknowledgeAlarmActionRequest]> {
-        self.acknowledge_action_requests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.acknowledge_action_requests.is_none()`.
+    pub fn acknowledge_action_requests(&self) -> &[crate::types::AcknowledgeAlarmActionRequest] {
+        self.acknowledge_action_requests.as_deref().unwrap_or_default()
     }
 }
 impl BatchAcknowledgeAlarmInput {
@@ -52,7 +54,7 @@ impl BatchAcknowledgeAlarmInputBuilder {
     /// Consumes the builder and constructs a [`BatchAcknowledgeAlarmInput`](crate::operation::batch_acknowledge_alarm::BatchAcknowledgeAlarmInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_acknowledge_alarm::BatchAcknowledgeAlarmInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_acknowledge_alarm::BatchAcknowledgeAlarmInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_acknowledge_alarm::BatchAcknowledgeAlarmInput {
             acknowledge_action_requests: self.acknowledge_action_requests,

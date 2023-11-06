@@ -39,8 +39,10 @@ impl ExpenseField {
         self.currency.as_ref()
     }
     /// <p>Shows which group a response object belongs to, such as whether an address line belongs to the vendor's address or the recipent's address.</p>
-    pub fn group_properties(&self) -> ::std::option::Option<&[crate::types::ExpenseGroupProperty]> {
-        self.group_properties.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_properties.is_none()`.
+    pub fn group_properties(&self) -> &[crate::types::ExpenseGroupProperty] {
+        self.group_properties.as_deref().unwrap_or_default()
     }
 }
 impl ExpenseField {

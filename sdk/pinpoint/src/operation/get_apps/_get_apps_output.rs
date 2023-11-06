@@ -34,6 +34,7 @@ pub struct GetAppsOutputBuilder {
 }
 impl GetAppsOutputBuilder {
     /// <p>Provides information about all of your applications.</p>
+    /// This field is required.
     pub fn applications_response(mut self, input: crate::types::ApplicationsResponse) -> Self {
         self.applications_response = ::std::option::Option::Some(input);
         self

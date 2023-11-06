@@ -23,8 +23,10 @@ impl GetAggregateDiscoveredResourceCountsOutput {
         self.group_by_key.as_deref()
     }
     /// <p>Returns a list of GroupedResourceCount objects.</p>
-    pub fn grouped_resource_counts(&self) -> ::std::option::Option<&[crate::types::GroupedResourceCount]> {
-        self.grouped_resource_counts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.grouped_resource_counts.is_none()`.
+    pub fn grouped_resource_counts(&self) -> &[crate::types::GroupedResourceCount] {
+        self.grouped_resource_counts.as_deref().unwrap_or_default()
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -55,6 +57,7 @@ pub struct GetAggregateDiscoveredResourceCountsOutputBuilder {
 }
 impl GetAggregateDiscoveredResourceCountsOutputBuilder {
     /// <p>The total number of resources that are present in an aggregator with the filters that you provide.</p>
+    /// This field is required.
     pub fn total_discovered_resources(mut self, input: i64) -> Self {
         self.total_discovered_resources = ::std::option::Option::Some(input);
         self

@@ -16,8 +16,10 @@ impl UntagInstanceProfileInput {
         self.instance_profile_name.as_deref()
     }
     /// <p>A list of key names as a simple array of strings. The tags with matching keys are removed from the specified instance profile.</p>
-    pub fn tag_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tag_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_keys.is_none()`.
+    pub fn tag_keys(&self) -> &[::std::string::String] {
+        self.tag_keys.as_deref().unwrap_or_default()
     }
 }
 impl UntagInstanceProfileInput {
@@ -37,6 +39,7 @@ pub struct UntagInstanceProfileInputBuilder {
 impl UntagInstanceProfileInputBuilder {
     /// <p>The name of the IAM instance profile from which you want to remove tags.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// This field is required.
     pub fn instance_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_profile_name = ::std::option::Option::Some(input.into());
         self
@@ -75,7 +78,7 @@ impl UntagInstanceProfileInputBuilder {
     /// Consumes the builder and constructs a [`UntagInstanceProfileInput`](crate::operation::untag_instance_profile::UntagInstanceProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::untag_instance_profile::UntagInstanceProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::untag_instance_profile::UntagInstanceProfileInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::untag_instance_profile::UntagInstanceProfileInput {
             instance_profile_name: self.instance_profile_name,

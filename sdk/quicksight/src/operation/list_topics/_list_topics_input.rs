@@ -41,6 +41,7 @@ pub struct ListTopicsInputBuilder {
 }
 impl ListTopicsInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the topics that you want to list.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +84,7 @@ impl ListTopicsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListTopicsInput`](crate::operation::list_topics::ListTopicsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_topics::ListTopicsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_topics::ListTopicsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_topics::ListTopicsInput {
             aws_account_id: self.aws_account_id,
             next_token: self.next_token,

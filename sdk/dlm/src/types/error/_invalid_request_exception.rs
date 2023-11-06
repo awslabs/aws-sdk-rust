@@ -20,12 +20,16 @@ impl InvalidRequestException {
         self.code.as_deref()
     }
     /// <p>The request omitted one or more required parameters.</p>
-    pub fn required_parameters(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.required_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.required_parameters.is_none()`.
+    pub fn required_parameters(&self) -> &[::std::string::String] {
+        self.required_parameters.as_deref().unwrap_or_default()
     }
     /// <p>The request included parameters that cannot be provided together.</p>
-    pub fn mutually_exclusive_parameters(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.mutually_exclusive_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mutually_exclusive_parameters.is_none()`.
+    pub fn mutually_exclusive_parameters(&self) -> &[::std::string::String] {
+        self.mutually_exclusive_parameters.as_deref().unwrap_or_default()
     }
 }
 impl InvalidRequestException {

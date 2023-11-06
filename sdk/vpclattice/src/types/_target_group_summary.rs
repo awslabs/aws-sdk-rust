@@ -77,8 +77,10 @@ impl TargetGroupSummary {
         self.status.as_ref()
     }
     /// <p>The list of Amazon Resource Names (ARNs) of the service.</p>
-    pub fn service_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.service_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_arns.is_none()`.
+    pub fn service_arns(&self) -> &[::std::string::String] {
+        self.service_arns.as_deref().unwrap_or_default()
     }
     /// Lambda event structure version
     pub fn lambda_event_structure_version(&self) -> ::std::option::Option<&crate::types::LambdaEventStructureVersion> {

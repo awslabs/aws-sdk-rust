@@ -41,6 +41,7 @@ pub struct GetSegmentDetectionInputBuilder {
 }
 impl GetSegmentDetectionInputBuilder {
     /// <p>Job identifier for the text detection operation for which you want results returned. You get the job identifer from an initial call to <code>StartSegmentDetection</code>.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl GetSegmentDetectionInputBuilder {
     /// Consumes the builder and constructs a [`GetSegmentDetectionInput`](crate::operation::get_segment_detection::GetSegmentDetectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_segment_detection::GetSegmentDetectionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_segment_detection::GetSegmentDetectionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_segment_detection::GetSegmentDetectionInput {
             job_id: self.job_id,

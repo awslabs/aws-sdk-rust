@@ -2,12 +2,12 @@
 pub fn ser_anomaly_date_interval(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AnomalyDateInterval,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.start_date {
-        object.key("StartDate").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("StartDate").string(input.start_date.as_str());
     }
-    if let Some(var_2) = &input.end_date {
-        object.key("EndDate").string(var_2.as_str());
+    if let Some(var_1) = &input.end_date {
+        object.key("EndDate").string(var_1.as_str());
     }
     Ok(())
 }

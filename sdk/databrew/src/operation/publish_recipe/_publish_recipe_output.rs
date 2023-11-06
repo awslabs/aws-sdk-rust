@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PublishRecipeOutput {
     /// <p>The name of the recipe that you published.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     _request_id: Option<String>,
 }
 impl PublishRecipeOutput {
     /// <p>The name of the recipe that you published.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for PublishRecipeOutput {
@@ -34,6 +35,7 @@ pub struct PublishRecipeOutputBuilder {
 }
 impl PublishRecipeOutputBuilder {
     /// <p>The name of the recipe that you published.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,19 @@ impl PublishRecipeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PublishRecipeOutput`](crate::operation::publish_recipe::PublishRecipeOutput).
-    pub fn build(self) -> crate::operation::publish_recipe::PublishRecipeOutput {
-        crate::operation::publish_recipe::PublishRecipeOutput {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::publish_recipe::builders::PublishRecipeOutputBuilder::name)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::publish_recipe::PublishRecipeOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::publish_recipe::PublishRecipeOutput {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building PublishRecipeOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

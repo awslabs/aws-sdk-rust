@@ -38,7 +38,7 @@ where
 pub fn ser_licensing(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Licensing,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.os_byol {
         object.key("osByol").boolean(*var_1);
     }

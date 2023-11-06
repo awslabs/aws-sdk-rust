@@ -2,7 +2,7 @@
 pub fn ser_lustre_root_squash_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LustreRootSquashConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.root_squash {
         object.key("RootSquash").string(var_1.as_str());
     }

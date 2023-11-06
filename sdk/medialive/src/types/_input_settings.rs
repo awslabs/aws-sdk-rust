@@ -29,12 +29,16 @@ pub struct InputSettings {
 }
 impl InputSettings {
     /// Used to select the audio stream to decode for inputs that have multiple available.
-    pub fn audio_selectors(&self) -> ::std::option::Option<&[crate::types::AudioSelector]> {
-        self.audio_selectors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.audio_selectors.is_none()`.
+    pub fn audio_selectors(&self) -> &[crate::types::AudioSelector] {
+        self.audio_selectors.as_deref().unwrap_or_default()
     }
     /// Used to select the caption input to use for inputs that have multiple available.
-    pub fn caption_selectors(&self) -> ::std::option::Option<&[crate::types::CaptionSelector]> {
-        self.caption_selectors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.caption_selectors.is_none()`.
+    pub fn caption_selectors(&self) -> &[crate::types::CaptionSelector] {
+        self.caption_selectors.as_deref().unwrap_or_default()
     }
     /// Enable or disable the deblock filter when filtering.
     pub fn deblock_filter(&self) -> ::std::option::Option<&crate::types::InputDeblockFilter> {

@@ -15,8 +15,10 @@ impl HlsPlaylistSettings {
         self.manifest_window_seconds
     }
     /// <p>Determines the type of SCTE 35 tags to use in ad markup. Specify <code>DATERANGE</code> to use <code>DATERANGE</code> tags (for live or VOD content). Specify <code>SCTE35_ENHANCED</code> to use <code>EXT-X-CUE-OUT</code> and <code>EXT-X-CUE-IN</code> tags (for VOD content only).</p>
-    pub fn ad_markup_type(&self) -> ::std::option::Option<&[crate::types::AdMarkupType]> {
-        self.ad_markup_type.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ad_markup_type.is_none()`.
+    pub fn ad_markup_type(&self) -> &[crate::types::AdMarkupType] {
+        self.ad_markup_type.as_deref().unwrap_or_default()
     }
 }
 impl HlsPlaylistSettings {

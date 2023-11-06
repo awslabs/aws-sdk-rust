@@ -41,6 +41,7 @@ pub struct DeleteRumMetricsDestinationInputBuilder {
 }
 impl DeleteRumMetricsDestinationInputBuilder {
     /// <p>The name of the app monitor that is sending metrics to the destination that you want to delete.</p>
+    /// This field is required.
     pub fn app_monitor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_monitor_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DeleteRumMetricsDestinationInputBuilder {
         &self.app_monitor_name
     }
     /// <p>The type of destination to delete. Valid values are <code>CloudWatch</code> and <code>Evidently</code>.</p>
+    /// This field is required.
     pub fn destination(mut self, input: crate::types::MetricDestination) -> Self {
         self.destination = ::std::option::Option::Some(input);
         self
@@ -87,7 +89,7 @@ impl DeleteRumMetricsDestinationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_rum_metrics_destination::DeleteRumMetricsDestinationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_rum_metrics_destination::DeleteRumMetricsDestinationInput {
             app_monitor_name: self.app_monitor_name,

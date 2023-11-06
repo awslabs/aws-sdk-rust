@@ -22,8 +22,10 @@ impl CreateMeshInput {
         self.spec.as_ref()
     }
     /// <p>Optional metadata that you can apply to the service mesh to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::TagRef]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::TagRef] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -48,6 +50,7 @@ pub struct CreateMeshInputBuilder {
 }
 impl CreateMeshInputBuilder {
     /// <p>The name to use for the service mesh.</p>
+    /// This field is required.
     pub fn mesh_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mesh_name = ::std::option::Option::Some(input.into());
         self
@@ -110,7 +113,7 @@ impl CreateMeshInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateMeshInput`](crate::operation::create_mesh::CreateMeshInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_mesh::CreateMeshInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_mesh::CreateMeshInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_mesh::CreateMeshInput {
             mesh_name: self.mesh_name,
             spec: self.spec,

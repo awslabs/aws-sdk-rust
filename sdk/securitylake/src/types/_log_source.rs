@@ -21,8 +21,10 @@ impl LogSource {
         self.region.as_deref()
     }
     /// <p>Specify the sources from which you want to collect logs.</p>
-    pub fn sources(&self) -> ::std::option::Option<&[crate::types::LogSourceResource]> {
-        self.sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
+    pub fn sources(&self) -> &[crate::types::LogSourceResource] {
+        self.sources.as_deref().unwrap_or_default()
     }
 }
 impl LogSource {

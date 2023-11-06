@@ -58,20 +58,26 @@ impl CreateLicenseConfigurationInput {
     /// <li> <p> <code>vCPUs</code> dimension: <code>allowedTenancy</code> | <code>honorVcpuOptimization</code> | <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li>
     /// </ul>
     /// <p>The unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180. The possible values for <code>allowedTenancy</code> are <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and <code>EC2-DedicatedInstance</code>. The possible values for <code>honorVcpuOptimization</code> are <code>True</code> and <code>False</code>.</p>
-    pub fn license_rules(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.license_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.license_rules.is_none()`.
+    pub fn license_rules(&self) -> &[::std::string::String] {
+        self.license_rules.as_deref().unwrap_or_default()
     }
     /// <p>Tags to add to the license configuration.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>When true, disassociates a resource when software is uninstalled.</p>
     pub fn disassociate_when_not_found(&self) -> ::std::option::Option<bool> {
         self.disassociate_when_not_found
     }
     /// <p>Product information.</p>
-    pub fn product_information_list(&self) -> ::std::option::Option<&[crate::types::ProductInformation]> {
-        self.product_information_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.product_information_list.is_none()`.
+    pub fn product_information_list(&self) -> &[crate::types::ProductInformation] {
+        self.product_information_list.as_deref().unwrap_or_default()
     }
 }
 impl CreateLicenseConfigurationInput {
@@ -97,6 +103,7 @@ pub struct CreateLicenseConfigurationInputBuilder {
 }
 impl CreateLicenseConfigurationInputBuilder {
     /// <p>Name of the license configuration.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +132,7 @@ impl CreateLicenseConfigurationInputBuilder {
         &self.description
     }
     /// <p>Dimension used to track the license inventory.</p>
+    /// This field is required.
     pub fn license_counting_type(mut self, input: crate::types::LicenseCountingType) -> Self {
         self.license_counting_type = ::std::option::Option::Some(input);
         self
@@ -266,7 +274,7 @@ impl CreateLicenseConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_license_configuration::CreateLicenseConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_license_configuration::CreateLicenseConfigurationInput {
             name: self.name,

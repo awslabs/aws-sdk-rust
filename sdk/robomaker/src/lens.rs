@@ -172,30 +172,21 @@ pub(crate) fn lens_list_simulation_job_batches_output_simulation_job_batch_summa
 pub(crate) fn lens_list_simulation_jobs_output_simulation_job_summaries(
     input: crate::operation::list_simulation_jobs::ListSimulationJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SimulationJobSummary>> {
-    let input = match input.simulation_job_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.simulation_job_summaries;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_world_export_jobs_output_world_export_job_summaries(
     input: crate::operation::list_world_export_jobs::ListWorldExportJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::WorldExportJobSummary>> {
-    let input = match input.world_export_job_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.world_export_job_summaries;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_world_generation_jobs_output_world_generation_job_summaries(
     input: crate::operation::list_world_generation_jobs::ListWorldGenerationJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::WorldGenerationJobSummary>> {
-    let input = match input.world_generation_job_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.world_generation_job_summaries;
     ::std::option::Option::Some(input)
 }
 

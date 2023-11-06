@@ -27,6 +27,7 @@ pub struct DeleteMatchingWorkflowInputBuilder {
 }
 impl DeleteMatchingWorkflowInputBuilder {
     /// <p>The name of the workflow to be retrieved.</p>
+    /// This field is required.
     pub fn workflow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_name = ::std::option::Option::Some(input.into());
         self
@@ -43,8 +44,10 @@ impl DeleteMatchingWorkflowInputBuilder {
     /// Consumes the builder and constructs a [`DeleteMatchingWorkflowInput`](crate::operation::delete_matching_workflow::DeleteMatchingWorkflowInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_matching_workflow::DeleteMatchingWorkflowInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_matching_workflow::DeleteMatchingWorkflowInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_matching_workflow::DeleteMatchingWorkflowInput {
             workflow_name: self.workflow_name,
         })

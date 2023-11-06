@@ -34,6 +34,7 @@ pub struct DisableAddOnInputBuilder {
 }
 impl DisableAddOnInputBuilder {
     /// <p>The add-on type to disable.</p>
+    /// This field is required.
     pub fn add_on_type(mut self, input: crate::types::AddOnType) -> Self {
         self.add_on_type = ::std::option::Option::Some(input);
         self
@@ -48,6 +49,7 @@ impl DisableAddOnInputBuilder {
         &self.add_on_type
     }
     /// <p>The name of the source resource for which to disable the add-on.</p>
+    /// This field is required.
     pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DisableAddOnInputBuilder {
     /// Consumes the builder and constructs a [`DisableAddOnInput`](crate::operation::disable_add_on::DisableAddOnInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disable_add_on::DisableAddOnInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::disable_add_on::DisableAddOnInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::disable_add_on::DisableAddOnInput {
             add_on_type: self.add_on_type,
             resource_name: self.resource_name,

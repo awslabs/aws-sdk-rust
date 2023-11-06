@@ -27,8 +27,10 @@ impl Proxy {
         self.fall_back_phone_number.as_deref()
     }
     /// <p>The countries for proxy phone numbers to be selected from.</p>
-    pub fn phone_number_countries(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.phone_number_countries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phone_number_countries.is_none()`.
+    pub fn phone_number_countries(&self) -> &[::std::string::String] {
+        self.phone_number_countries.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for Proxy {

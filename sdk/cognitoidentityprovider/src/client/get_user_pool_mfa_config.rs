@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetUserPoolMfaConfig`](crate::operation::get_user_pool_mfa_config::builders::GetUserPoolMfaConfigFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`user_pool_id(impl Into<String>)`](crate::operation::get_user_pool_mfa_config::builders::GetUserPoolMfaConfigFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::get_user_pool_mfa_config::builders::GetUserPoolMfaConfigFluentBuilder::set_user_pool_id): <p>The user pool ID.</p>
+    ///   - [`user_pool_id(impl Into<String>)`](crate::operation::get_user_pool_mfa_config::builders::GetUserPoolMfaConfigFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::get_user_pool_mfa_config::builders::GetUserPoolMfaConfigFluentBuilder::set_user_pool_id):<br>required: **true**<br><p>The user pool ID.</p><br>
     /// - On success, responds with [`GetUserPoolMfaConfigOutput`](crate::operation::get_user_pool_mfa_config::GetUserPoolMfaConfigOutput) with field(s):
     ///   - [`sms_mfa_configuration(Option<SmsMfaConfigType>)`](crate::operation::get_user_pool_mfa_config::GetUserPoolMfaConfigOutput::sms_mfa_configuration): <p>The SMS text message multi-factor authentication (MFA) configuration.</p>
     ///   - [`software_token_mfa_configuration(Option<SoftwareTokenMfaConfigType>)`](crate::operation::get_user_pool_mfa_config::GetUserPoolMfaConfigOutput::software_token_mfa_configuration): <p>The software token multi-factor authentication (MFA) configuration.</p>

@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClearTimerAction {
     /// <p>The name of the timer to clear.</p>
-    pub timer_name: ::std::option::Option<::std::string::String>,
+    pub timer_name: ::std::string::String,
 }
 impl ClearTimerAction {
     /// <p>The name of the timer to clear.</p>
-    pub fn timer_name(&self) -> ::std::option::Option<&str> {
-        self.timer_name.as_deref()
+    pub fn timer_name(&self) -> &str {
+        use std::ops::Deref;
+        self.timer_name.deref()
     }
 }
 impl ClearTimerAction {
@@ -28,6 +29,7 @@ pub struct ClearTimerActionBuilder {
 }
 impl ClearTimerActionBuilder {
     /// <p>The name of the timer to clear.</p>
+    /// This field is required.
     pub fn timer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timer_name = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl ClearTimerActionBuilder {
         &self.timer_name
     }
     /// Consumes the builder and constructs a [`ClearTimerAction`](crate::types::ClearTimerAction).
-    pub fn build(self) -> crate::types::ClearTimerAction {
-        crate::types::ClearTimerAction { timer_name: self.timer_name }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`timer_name`](crate::types::builders::ClearTimerActionBuilder::timer_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::ClearTimerAction, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ClearTimerAction {
+            timer_name: self.timer_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "timer_name",
+                    "timer_name was not specified but it is required when building ClearTimerAction",
+                )
+            })?,
+        })
     }
 }

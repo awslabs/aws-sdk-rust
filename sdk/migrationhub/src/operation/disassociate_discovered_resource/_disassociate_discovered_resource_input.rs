@@ -48,6 +48,7 @@ pub struct DisassociateDiscoveredResourceInputBuilder {
 }
 impl DisassociateDiscoveredResourceInputBuilder {
     /// <p>The name of the ProgressUpdateStream.</p>
+    /// This field is required.
     pub fn progress_update_stream(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.progress_update_stream = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl DisassociateDiscoveredResourceInputBuilder {
         &self.progress_update_stream
     }
     /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
+    /// This field is required.
     pub fn migration_task_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.migration_task_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl DisassociateDiscoveredResourceInputBuilder {
         &self.migration_task_name
     }
     /// <p>ConfigurationId of the Application Discovery Service resource to be disassociated.</p>
+    /// This field is required.
     pub fn configuration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_id = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +111,7 @@ impl DisassociateDiscoveredResourceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_discovered_resource::DisassociateDiscoveredResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_discovered_resource::DisassociateDiscoveredResourceInput {
             progress_update_stream: self.progress_update_stream,

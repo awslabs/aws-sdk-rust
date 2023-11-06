@@ -48,6 +48,7 @@ pub struct RecordLifecycleActionHeartbeatInputBuilder {
 }
 impl RecordLifecycleActionHeartbeatInputBuilder {
     /// <p>The name of the lifecycle hook.</p>
+    /// This field is required.
     pub fn lifecycle_hook_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lifecycle_hook_name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl RecordLifecycleActionHeartbeatInputBuilder {
         &self.lifecycle_hook_name
     }
     /// <p>The name of the Auto Scaling group.</p>
+    /// This field is required.
     pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +110,7 @@ impl RecordLifecycleActionHeartbeatInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::record_lifecycle_action_heartbeat::RecordLifecycleActionHeartbeatInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::record_lifecycle_action_heartbeat::RecordLifecycleActionHeartbeatInput {
             lifecycle_hook_name: self.lifecycle_hook_name,

@@ -8,8 +8,10 @@ pub struct BatchDeleteAutomationRulesInput {
 }
 impl BatchDeleteAutomationRulesInput {
     /// <p> A list of Amazon Resource Names (ARNs) for the rules that are to be deleted. </p>
-    pub fn automation_rules_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.automation_rules_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.automation_rules_arns.is_none()`.
+    pub fn automation_rules_arns(&self) -> &[::std::string::String] {
+        self.automation_rules_arns.as_deref().unwrap_or_default()
     }
 }
 impl BatchDeleteAutomationRulesInput {
@@ -51,7 +53,7 @@ impl BatchDeleteAutomationRulesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_delete_automation_rules::BatchDeleteAutomationRulesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_delete_automation_rules::BatchDeleteAutomationRulesInput {
             automation_rules_arns: self.automation_rules_arns,

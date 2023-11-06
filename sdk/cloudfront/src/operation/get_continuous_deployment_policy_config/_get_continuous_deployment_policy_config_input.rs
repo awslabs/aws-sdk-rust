@@ -27,6 +27,7 @@ pub struct GetContinuousDeploymentPolicyConfigInputBuilder {
 }
 impl GetContinuousDeploymentPolicyConfigInputBuilder {
     /// <p>The identifier of the continuous deployment policy whose configuration you are getting.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetContinuousDeploymentPolicyConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_continuous_deployment_policy_config::GetContinuousDeploymentPolicyConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_continuous_deployment_policy_config::GetContinuousDeploymentPolicyConfigInput { id: self.id })
     }

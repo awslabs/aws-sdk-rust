@@ -119,6 +119,7 @@ impl CreateRouteCalculatorInputBuilder {
     /// <li> <p>Must be a unique Route calculator resource name.</p> </li>
     /// <li> <p>No spaces allowed. For example, <code>ExampleRouteCalculator</code>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn calculator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.calculator_name = ::std::option::Option::Some(input.into());
         self
@@ -154,6 +155,7 @@ impl CreateRouteCalculatorInputBuilder {
     /// <li> <p> <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>' coverage in your region of interest, see <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE car routing coverage</a> and <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE truck routing coverage</a>.</p> </li>
     /// </ul>
     /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
+    /// This field is required.
     pub fn data_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source = ::std::option::Option::Some(input.into());
         self
@@ -278,7 +280,7 @@ impl CreateRouteCalculatorInputBuilder {
     /// Consumes the builder and constructs a [`CreateRouteCalculatorInput`](crate::operation::create_route_calculator::CreateRouteCalculatorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_route_calculator::CreateRouteCalculatorInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_route_calculator::CreateRouteCalculatorInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_route_calculator::CreateRouteCalculatorInput {
             calculator_name: self.calculator_name,

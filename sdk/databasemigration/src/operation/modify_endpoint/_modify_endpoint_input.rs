@@ -325,6 +325,7 @@ pub struct ModifyEndpointInputBuilder {
 }
 impl ModifyEndpointInputBuilder {
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
+    /// This field is required.
     pub fn endpoint_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_arn = ::std::option::Option::Some(input.into());
         self
@@ -842,7 +843,7 @@ impl ModifyEndpointInputBuilder {
     /// Consumes the builder and constructs a [`ModifyEndpointInput`](crate::operation::modify_endpoint::ModifyEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_endpoint::ModifyEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::modify_endpoint::ModifyEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_endpoint::ModifyEndpointInput {
             endpoint_arn: self.endpoint_arn,
             endpoint_identifier: self.endpoint_identifier,

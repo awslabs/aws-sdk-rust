@@ -22,8 +22,10 @@ impl ApplySecurityGroupsToClientVpnTargetNetworkInput {
         self.vpc_id.as_deref()
     }
     /// <p>The IDs of the security groups to apply to the associated target network. Up to 5 security groups can be applied to an associated target network.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -49,6 +51,7 @@ pub struct ApplySecurityGroupsToClientVpnTargetNetworkInputBuilder {
 }
 impl ApplySecurityGroupsToClientVpnTargetNetworkInputBuilder {
     /// <p>The ID of the Client VPN endpoint.</p>
+    /// This field is required.
     pub fn client_vpn_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_vpn_endpoint_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +66,7 @@ impl ApplySecurityGroupsToClientVpnTargetNetworkInputBuilder {
         &self.client_vpn_endpoint_id
     }
     /// <p>The ID of the VPC in which the associated target network is located.</p>
+    /// This field is required.
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
         self
@@ -115,7 +119,7 @@ impl ApplySecurityGroupsToClientVpnTargetNetworkInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::apply_security_groups_to_client_vpn_target_network::ApplySecurityGroupsToClientVpnTargetNetworkInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::apply_security_groups_to_client_vpn_target_network::ApplySecurityGroupsToClientVpnTargetNetworkInput {

@@ -63,6 +63,7 @@ pub struct JobFlowExecutionStatusDetailBuilder {
 }
 impl JobFlowExecutionStatusDetailBuilder {
     /// <p>The state of the job flow.</p>
+    /// This field is required.
     pub fn state(mut self, input: crate::types::JobFlowExecutionState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
@@ -77,6 +78,7 @@ impl JobFlowExecutionStatusDetailBuilder {
         &self.state
     }
     /// <p>The creation date and time of the job flow.</p>
+    /// This field is required.
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
         self

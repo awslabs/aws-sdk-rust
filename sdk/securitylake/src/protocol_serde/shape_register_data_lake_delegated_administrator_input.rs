@@ -2,7 +2,7 @@
 pub fn ser_register_data_lake_delegated_administrator_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::register_data_lake_delegated_administrator::RegisterDataLakeDelegatedAdministratorInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.account_id {
         object.key("accountId").string(var_1.as_str());
     }

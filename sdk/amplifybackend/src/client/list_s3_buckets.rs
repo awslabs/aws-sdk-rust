@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ListS3Buckets`](crate::operation::list_s3_buckets::builders::ListS3BucketsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_s3_buckets::builders::ListS3BucketsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_s3_buckets::builders::ListS3BucketsFluentBuilder::set_next_token): <p>Reserved for future use.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_s3_buckets::builders::ListS3BucketsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_s3_buckets::builders::ListS3BucketsFluentBuilder::set_next_token):<br>required: **false**<br><p>Reserved for future use.</p><br>
     /// - On success, responds with [`ListS3BucketsOutput`](crate::operation::list_s3_buckets::ListS3BucketsOutput) with field(s):
-    ///   - [`buckets(Option<Vec<S3BucketInfo>>)`](crate::operation::list_s3_buckets::ListS3BucketsOutput::buckets): <p>The list of S3 buckets.</p>
+    ///   - [`buckets(Option<Vec::<S3BucketInfo>>)`](crate::operation::list_s3_buckets::ListS3BucketsOutput::buckets): <p>The list of S3 buckets.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_s3_buckets::ListS3BucketsOutput::next_token): <p>Reserved for future use.</p>
     /// - On failure, responds with [`SdkError<ListS3BucketsError>`](crate::operation::list_s3_buckets::ListS3BucketsError)
     pub fn list_s3_buckets(&self) -> crate::operation::list_s3_buckets::builders::ListS3BucketsFluentBuilder {

@@ -2,7 +2,7 @@
 pub fn ser_tag_criterion_for_job(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TagCriterionForJob,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.comparator {
         object.key("comparator").string(var_1.as_str());
     }
@@ -45,7 +45,7 @@ where
                         }
                         "tagValues" => {
                             builder = builder.set_tag_values(
-                                crate::protocol_serde::shape___list_of_tag_criterion_pair_for_job::de___list_of_tag_criterion_pair_for_job(tokens)?,
+                                crate::protocol_serde::shape_list_of_tag_criterion_pair_for_job::de_list_of_tag_criterion_pair_for_job(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

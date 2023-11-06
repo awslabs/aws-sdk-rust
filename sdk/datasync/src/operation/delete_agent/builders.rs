@@ -10,7 +10,7 @@ impl DeleteAgentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_agent::DeleteAgentOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::delete_agent::DeleteAgentError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -22,7 +22,8 @@ impl DeleteAgentInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteAgent`.
 ///
-/// <p>Deletes an agent. To specify which agent to delete, use the Amazon Resource Name (ARN) of the agent in your request. The operation disassociates the agent from your Amazon Web Services account. However, it doesn't delete the agent virtual machine (VM) from your on-premises environment.</p>
+/// <p>Removes an DataSync agent resource from your Amazon Web Services account.</p>
+/// <p>Keep in mind that this operation (which can't be undone) doesn't remove the agent's virtual machine (VM) or Amazon EC2 instance from your storage environment. For next steps, you can delete the VM or instance from your storage environment or reuse it to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/activate-agent.html">activate a new agent</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAgentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -72,12 +73,15 @@ impl DeleteAgentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_agent::DeleteAgentOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::delete_agent::DeleteAgentError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::delete_agent::DeleteAgent::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -86,20 +90,15 @@ impl DeleteAgentFluentBuilder {
         crate::operation::delete_agent::DeleteAgent::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::delete_agent::DeleteAgentOutput,
-            crate::operation::delete_agent::DeleteAgentError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::delete_agent::DeleteAgentError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::delete_agent::DeleteAgentOutput,
+        crate::operation::delete_agent::DeleteAgentError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

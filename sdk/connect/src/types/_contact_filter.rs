@@ -9,8 +9,10 @@ pub struct ContactFilter {
 }
 impl ContactFilter {
     /// <p>A list of up to 9 <a href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">contact states</a>.</p>
-    pub fn contact_states(&self) -> ::std::option::Option<&[crate::types::ContactState]> {
-        self.contact_states.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.contact_states.is_none()`.
+    pub fn contact_states(&self) -> &[crate::types::ContactState] {
+        self.contact_states.as_deref().unwrap_or_default()
     }
 }
 impl ContactFilter {

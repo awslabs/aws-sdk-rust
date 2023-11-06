@@ -282,10 +282,7 @@ pub(crate) fn lens_list_imports_output_items(
 pub(crate) fn lens_list_managed_accounts_output_items(
     input: crate::operation::list_managed_accounts::ListManagedAccountsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ManagedAccount>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items;
     ::std::option::Option::Some(input)
 }
 

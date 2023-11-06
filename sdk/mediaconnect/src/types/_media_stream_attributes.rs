@@ -35,6 +35,7 @@ pub struct MediaStreamAttributesBuilder {
 }
 impl MediaStreamAttributesBuilder {
     /// A set of parameters that define the media stream.
+    /// This field is required.
     pub fn fmtp(mut self, input: crate::types::Fmtp) -> Self {
         self.fmtp = ::std::option::Option::Some(input);
         self

@@ -25,11 +25,10 @@ pub fn de_delete_pipeline_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::delete_pipeline::DeletePipelineError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::delete_pipeline::DeletePipelineError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "IncompatibleVersionException" => crate::operation::delete_pipeline::DeletePipelineError::IncompatibleVersionException({
@@ -41,11 +40,10 @@ pub fn de_delete_pipeline_http_error(
                     crate::protocol_serde::shape_incompatible_version_exception::de_incompatible_version_exception_json_err(_response_body, output)
                         .map_err(crate::operation::delete_pipeline::DeletePipelineError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::incompatible_version_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::delete_pipeline::DeletePipelineError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServiceException" => crate::operation::delete_pipeline::DeletePipelineError::InternalServiceException({
@@ -56,11 +54,10 @@ pub fn de_delete_pipeline_http_error(
                 output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_json_err(_response_body, output)
                     .map_err(crate::operation::delete_pipeline::DeletePipelineError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_service_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::delete_pipeline::DeletePipelineError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceInUseException" => crate::operation::delete_pipeline::DeletePipelineError::ResourceInUseException({
@@ -71,11 +68,10 @@ pub fn de_delete_pipeline_http_error(
                 output = crate::protocol_serde::shape_resource_in_use_exception::de_resource_in_use_exception_json_err(_response_body, output)
                     .map_err(crate::operation::delete_pipeline::DeletePipelineError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_in_use_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::delete_pipeline::DeletePipelineError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::delete_pipeline::DeletePipelineError::ResourceNotFoundException({
@@ -86,11 +82,10 @@ pub fn de_delete_pipeline_http_error(
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::delete_pipeline::DeletePipelineError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::delete_pipeline::DeletePipelineError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::delete_pipeline::DeletePipelineError::ValidationException({
@@ -101,11 +96,10 @@ pub fn de_delete_pipeline_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::delete_pipeline::DeletePipelineError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::delete_pipeline::DeletePipelineError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::delete_pipeline::DeletePipelineError::generic(generic),

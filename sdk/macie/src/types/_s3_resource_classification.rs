@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3ResourceClassification {
     /// <p>(Discontinued) The name of the S3 bucket that you want to associate with Amazon Macie Classic.</p>
-    pub bucket_name: ::std::option::Option<::std::string::String>,
+    pub bucket_name: ::std::string::String,
     /// <p>(Discontinued) The prefix of the S3 bucket that you want to associate with Amazon Macie Classic.</p>
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>(Discontinued) The classification type that you want to specify for the resource associated with Amazon Macie Classic. </p>
@@ -13,8 +13,9 @@ pub struct S3ResourceClassification {
 }
 impl S3ResourceClassification {
     /// <p>(Discontinued) The name of the S3 bucket that you want to associate with Amazon Macie Classic.</p>
-    pub fn bucket_name(&self) -> ::std::option::Option<&str> {
-        self.bucket_name.as_deref()
+    pub fn bucket_name(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket_name.deref()
     }
     /// <p>(Discontinued) The prefix of the S3 bucket that you want to associate with Amazon Macie Classic.</p>
     pub fn prefix(&self) -> ::std::option::Option<&str> {
@@ -42,6 +43,7 @@ pub struct S3ResourceClassificationBuilder {
 }
 impl S3ResourceClassificationBuilder {
     /// <p>(Discontinued) The name of the S3 bucket that you want to associate with Amazon Macie Classic.</p>
+    /// This field is required.
     pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl S3ResourceClassificationBuilder {
         &self.prefix
     }
     /// <p>(Discontinued) The classification type that you want to specify for the resource associated with Amazon Macie Classic. </p>
+    /// This field is required.
     pub fn classification_type(mut self, input: crate::types::ClassificationType) -> Self {
         self.classification_type = ::std::option::Option::Some(input);
         self
@@ -84,11 +87,18 @@ impl S3ResourceClassificationBuilder {
         &self.classification_type
     }
     /// Consumes the builder and constructs a [`S3ResourceClassification`](crate::types::S3ResourceClassification).
-    pub fn build(self) -> crate::types::S3ResourceClassification {
-        crate::types::S3ResourceClassification {
-            bucket_name: self.bucket_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bucket_name`](crate::types::builders::S3ResourceClassificationBuilder::bucket_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::S3ResourceClassification, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::S3ResourceClassification {
+            bucket_name: self.bucket_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "bucket_name",
+                    "bucket_name was not specified but it is required when building S3ResourceClassification",
+                )
+            })?,
             prefix: self.prefix,
             classification_type: self.classification_type,
-        }
+        })
     }
 }

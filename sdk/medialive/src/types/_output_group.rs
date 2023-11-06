@@ -21,8 +21,10 @@ impl OutputGroup {
         self.output_group_settings.as_ref()
     }
     /// Placeholder documentation for __listOfOutput
-    pub fn outputs(&self) -> ::std::option::Option<&[crate::types::Output]> {
-        self.outputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outputs.is_none()`.
+    pub fn outputs(&self) -> &[crate::types::Output] {
+        self.outputs.as_deref().unwrap_or_default()
     }
 }
 impl OutputGroup {
@@ -56,6 +58,7 @@ impl OutputGroupBuilder {
         &self.name
     }
     /// Settings associated with the output group.
+    /// This field is required.
     pub fn output_group_settings(mut self, input: crate::types::OutputGroupSettings) -> Self {
         self.output_group_settings = ::std::option::Option::Some(input);
         self

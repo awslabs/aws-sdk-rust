@@ -37,8 +37,10 @@ impl CreateConnectionInput {
         self.lag_id.as_deref()
     }
     /// <p>The tags to associate with the lag.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The name of the service provider associated with the requested connection.</p>
     pub fn provider_name(&self) -> ::std::option::Option<&str> {
@@ -71,6 +73,7 @@ pub struct CreateConnectionInputBuilder {
 }
 impl CreateConnectionInputBuilder {
     /// <p>The location of the connection.</p>
+    /// This field is required.
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
         self
@@ -85,6 +88,7 @@ impl CreateConnectionInputBuilder {
         &self.location
     }
     /// <p>The bandwidth of the connection.</p>
+    /// This field is required.
     pub fn bandwidth(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bandwidth = ::std::option::Option::Some(input.into());
         self
@@ -99,6 +103,7 @@ impl CreateConnectionInputBuilder {
         &self.bandwidth
     }
     /// <p>The name of the connection.</p>
+    /// This field is required.
     pub fn connection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_name = ::std::option::Option::Some(input.into());
         self
@@ -180,7 +185,7 @@ impl CreateConnectionInputBuilder {
     /// Consumes the builder and constructs a [`CreateConnectionInput`](crate::operation::create_connection::CreateConnectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_connection::CreateConnectionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_connection::CreateConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_connection::CreateConnectionInput {
             location: self.location,
             bandwidth: self.bandwidth,

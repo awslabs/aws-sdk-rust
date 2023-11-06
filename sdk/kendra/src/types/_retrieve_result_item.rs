@@ -41,8 +41,10 @@ impl RetrieveResultItem {
         self.document_uri.as_deref()
     }
     /// <p>An array of document fields/attributes assigned to a document in the search results. For example, the document author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.</p>
-    pub fn document_attributes(&self) -> ::std::option::Option<&[crate::types::DocumentAttribute]> {
-        self.document_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.document_attributes.is_none()`.
+    pub fn document_attributes(&self) -> &[crate::types::DocumentAttribute] {
+        self.document_attributes.as_deref().unwrap_or_default()
     }
     /// <p>The confidence score bucket for a retrieved passage result. The confidence bucket provides a relative ranking that indicates how confident Amazon Kendra is that the response is relevant to the query.</p>
     pub fn score_attributes(&self) -> ::std::option::Option<&crate::types::ScoreAttributes> {

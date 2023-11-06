@@ -5,30 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VerificationFailedException {
     /// <p>The reason for the exception.</p>
-    pub reason: ::std::option::Option<crate::types::VerificationFailedReason>,
+    pub reason: crate::types::VerificationFailedReason,
     #[allow(missing_docs)] // documentation missing in model
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl VerificationFailedException {
     /// <p>The reason for the exception.</p>
-    pub fn reason(&self) -> ::std::option::Option<&crate::types::VerificationFailedReason> {
-        self.reason.as_ref()
+    pub fn reason(&self) -> &crate::types::VerificationFailedReason {
+        &self.reason
     }
 }
 impl VerificationFailedException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        &self.message
     }
 }
 impl ::std::fmt::Display for VerificationFailedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "VerificationFailedException")?;
-        if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
-                ::std::write!(f, ": {}", inner_1)?;
-            }
+        {
+            ::std::write!(f, ": {}", &self.message)?;
         }
         Ok(())
     }
@@ -62,6 +60,7 @@ pub struct VerificationFailedExceptionBuilder {
 }
 impl VerificationFailedExceptionBuilder {
     /// <p>The reason for the exception.</p>
+    /// This field is required.
     pub fn reason(mut self, input: crate::types::VerificationFailedReason) -> Self {
         self.reason = ::std::option::Option::Some(input);
         self
@@ -76,6 +75,7 @@ impl VerificationFailedExceptionBuilder {
         &self.reason
     }
     #[allow(missing_docs)] // documentation missing in model
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -101,11 +101,24 @@ impl VerificationFailedExceptionBuilder {
         self
     }
     /// Consumes the builder and constructs a [`VerificationFailedException`](crate::types::error::VerificationFailedException).
-    pub fn build(self) -> crate::types::error::VerificationFailedException {
-        crate::types::error::VerificationFailedException {
-            reason: self.reason,
-            message: self.message,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`reason`](crate::types::error::builders::VerificationFailedExceptionBuilder::reason)
+    /// - [`message`](crate::types::error::builders::VerificationFailedExceptionBuilder::message)
+    pub fn build(self) -> ::std::result::Result<crate::types::error::VerificationFailedException, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::error::VerificationFailedException {
+            reason: self.reason.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "reason",
+                    "reason was not specified but it is required when building VerificationFailedException",
+                )
+            })?,
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building VerificationFailedException",
+                )
+            })?,
             meta: self.meta.unwrap_or_default(),
-        }
+        })
     }
 }

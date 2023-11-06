@@ -62,7 +62,7 @@ impl RetryBuildInputBuilder {
         &self.idempotency_token
     }
     /// Consumes the builder and constructs a [`RetryBuildInput`](crate::operation::retry_build::RetryBuildInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::retry_build::RetryBuildInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::retry_build::RetryBuildInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::retry_build::RetryBuildInput {
             id: self.id,
             idempotency_token: self.idempotency_token,

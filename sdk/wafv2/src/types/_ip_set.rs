@@ -6,15 +6,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpSet {
     /// <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>A description of the IP set that helps with identification. </p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The version of the IP addresses, either <code>IPV4</code> or <code>IPV6</code>. </p>
-    pub ip_address_version: ::std::option::Option<crate::types::IpAddressVersion>,
+    pub ip_address_version: crate::types::IpAddressVersion,
     /// <p>Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses that you want WAF to inspect for in incoming requests. All addresses must be specified using Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for <code>/0</code>. </p>
     /// <p>Example address strings: </p>
     /// <ul>
@@ -31,28 +31,31 @@ pub struct IpSet {
     /// <li> <p>Array with three addresses: <code>"Addresses": ["192.0.2.44/32", "192.0.2.0/24", "192.0.0.0/16"]</code> </p> </li>
     /// <li> <p>INVALID specification: <code>"Addresses": [""]</code> INVALID </p> </li>
     /// </ul>
-    pub addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub addresses: ::std::vec::Vec<::std::string::String>,
 }
 impl IpSet {
     /// <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>A description of the IP set that helps with identification. </p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The version of the IP addresses, either <code>IPV4</code> or <code>IPV6</code>. </p>
-    pub fn ip_address_version(&self) -> ::std::option::Option<&crate::types::IpAddressVersion> {
-        self.ip_address_version.as_ref()
+    pub fn ip_address_version(&self) -> &crate::types::IpAddressVersion {
+        &self.ip_address_version
     }
     /// <p>Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses that you want WAF to inspect for in incoming requests. All addresses must be specified using Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for <code>/0</code>. </p>
     /// <p>Example address strings: </p>
@@ -70,8 +73,9 @@ impl IpSet {
     /// <li> <p>Array with three addresses: <code>"Addresses": ["192.0.2.44/32", "192.0.2.0/24", "192.0.0.0/16"]</code> </p> </li>
     /// <li> <p>INVALID specification: <code>"Addresses": [""]</code> INVALID </p> </li>
     /// </ul>
-    pub fn addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.addresses.as_deref()
+    pub fn addresses(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.addresses.deref()
     }
 }
 impl IpSet {
@@ -94,6 +98,7 @@ pub struct IpSetBuilder {
 }
 impl IpSetBuilder {
     /// <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -108,6 +113,7 @@ impl IpSetBuilder {
         &self.name
     }
     /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -122,6 +128,7 @@ impl IpSetBuilder {
         &self.id
     }
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -150,6 +157,7 @@ impl IpSetBuilder {
         &self.description
     }
     /// <p>The version of the IP addresses, either <code>IPV4</code> or <code>IPV6</code>. </p>
+    /// This field is required.
     pub fn ip_address_version(mut self, input: crate::types::IpAddressVersion) -> Self {
         self.ip_address_version = ::std::option::Option::Some(input);
         self
@@ -229,14 +237,39 @@ impl IpSetBuilder {
         &self.addresses
     }
     /// Consumes the builder and constructs a [`IpSet`](crate::types::IpSet).
-    pub fn build(self) -> crate::types::IpSet {
-        crate::types::IpSet {
-            name: self.name,
-            id: self.id,
-            arn: self.arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::IpSetBuilder::name)
+    /// - [`id`](crate::types::builders::IpSetBuilder::id)
+    /// - [`arn`](crate::types::builders::IpSetBuilder::arn)
+    /// - [`ip_address_version`](crate::types::builders::IpSetBuilder::ip_address_version)
+    /// - [`addresses`](crate::types::builders::IpSetBuilder::addresses)
+    pub fn build(self) -> ::std::result::Result<crate::types::IpSet, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::IpSet {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building IpSet",
+                )
+            })?,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building IpSet")
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building IpSet")
+            })?,
             description: self.description,
-            ip_address_version: self.ip_address_version,
-            addresses: self.addresses,
-        }
+            ip_address_version: self.ip_address_version.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "ip_address_version",
+                    "ip_address_version was not specified but it is required when building IpSet",
+                )
+            })?,
+            addresses: self.addresses.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "addresses",
+                    "addresses was not specified but it is required when building IpSet",
+                )
+            })?,
+        })
     }
 }

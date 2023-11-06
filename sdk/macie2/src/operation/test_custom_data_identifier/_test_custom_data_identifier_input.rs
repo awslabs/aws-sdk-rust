@@ -16,12 +16,16 @@ pub struct TestCustomDataIdentifierInput {
 }
 impl TestCustomDataIdentifierInput {
     /// <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. The array can contain as many as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore words are case sensitive.</p>
-    pub fn ignore_words(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ignore_words.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ignore_words.is_none()`.
+    pub fn ignore_words(&self) -> &[::std::string::String] {
+        self.ignore_words.as_deref().unwrap_or_default()
     }
     /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must precede and be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
-    pub fn keywords(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.keywords.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.keywords.is_none()`.
+    pub fn keywords(&self) -> &[::std::string::String] {
+        self.keywords.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. The distance can be 1-300 characters. The default value is 50.</p>
     pub fn maximum_match_distance(&self) -> ::std::option::Option<i32> {
@@ -109,6 +113,7 @@ impl TestCustomDataIdentifierInputBuilder {
         &self.maximum_match_distance
     }
     /// <p>The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as many as 512 characters.</p>
+    /// This field is required.
     pub fn regex(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.regex = ::std::option::Option::Some(input.into());
         self
@@ -123,6 +128,7 @@ impl TestCustomDataIdentifierInputBuilder {
         &self.regex
     }
     /// <p>The sample text to inspect by using the custom data identifier. The text can contain as many as 1,000 characters.</p>
+    /// This field is required.
     pub fn sample_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sample_text = ::std::option::Option::Some(input.into());
         self
@@ -141,7 +147,7 @@ impl TestCustomDataIdentifierInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::test_custom_data_identifier::TestCustomDataIdentifierInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::test_custom_data_identifier::TestCustomDataIdentifierInput {
             ignore_words: self.ignore_words,

@@ -13,8 +13,10 @@ pub struct ListThingRegistrationTaskReportsOutput {
 }
 impl ListThingRegistrationTaskReportsOutput {
     /// <p>Links to the task resources.</p>
-    pub fn resource_links(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_links.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_links.is_none()`.
+    pub fn resource_links(&self) -> &[::std::string::String] {
+        self.resource_links.as_deref().unwrap_or_default()
     }
     /// <p>The type of task report.</p>
     pub fn report_type(&self) -> ::std::option::Option<&crate::types::ReportType> {

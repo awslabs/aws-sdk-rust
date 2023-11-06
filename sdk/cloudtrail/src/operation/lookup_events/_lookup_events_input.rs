@@ -19,8 +19,10 @@ pub struct LookupEventsInput {
 }
 impl LookupEventsInput {
     /// <p>Contains a list of lookup attributes. Currently the list can contain only one item.</p>
-    pub fn lookup_attributes(&self) -> ::std::option::Option<&[crate::types::LookupAttribute]> {
-        self.lookup_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lookup_attributes.is_none()`.
+    pub fn lookup_attributes(&self) -> &[crate::types::LookupAttribute] {
+        self.lookup_attributes.as_deref().unwrap_or_default()
     }
     /// <p>Specifies that only events that occur after or at the specified time are returned. If the specified start time is after the specified end time, an error is returned.</p>
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -153,7 +155,9 @@ impl LookupEventsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`LookupEventsInput`](crate::operation::lookup_events::LookupEventsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::lookup_events::LookupEventsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::lookup_events::LookupEventsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::lookup_events::LookupEventsInput {
             lookup_attributes: self.lookup_attributes,
             start_time: self.start_time,

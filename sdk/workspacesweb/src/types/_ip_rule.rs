@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct IpRule {
     /// <p>The IP range of the IP rule.</p>
-    pub ip_range: ::std::option::Option<::std::string::String>,
+    pub ip_range: ::std::string::String,
     /// <p>The description of the IP rule.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl IpRule {
     /// <p>The IP range of the IP rule.</p>
-    pub fn ip_range(&self) -> ::std::option::Option<&str> {
-        self.ip_range.as_deref()
+    pub fn ip_range(&self) -> &str {
+        use std::ops::Deref;
+        self.ip_range.deref()
     }
     /// <p>The description of the IP rule.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -43,6 +44,7 @@ pub struct IpRuleBuilder {
 }
 impl IpRuleBuilder {
     /// <p>The IP range of the IP rule.</p>
+    /// This field is required.
     pub fn ip_range(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_range = ::std::option::Option::Some(input.into());
         self
@@ -71,11 +73,18 @@ impl IpRuleBuilder {
         &self.description
     }
     /// Consumes the builder and constructs a [`IpRule`](crate::types::IpRule).
-    pub fn build(self) -> crate::types::IpRule {
-        crate::types::IpRule {
-            ip_range: self.ip_range,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`ip_range`](crate::types::builders::IpRuleBuilder::ip_range)
+    pub fn build(self) -> ::std::result::Result<crate::types::IpRule, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::IpRule {
+            ip_range: self.ip_range.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "ip_range",
+                    "ip_range was not specified but it is required when building IpRule",
+                )
+            })?,
             description: self.description,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for IpRuleBuilder {

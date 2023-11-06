@@ -28,6 +28,7 @@ pub struct DisableGatewayInputBuilder {
 }
 impl DisableGatewayInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// This field is required.
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_arn = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl DisableGatewayInputBuilder {
     /// Consumes the builder and constructs a [`DisableGatewayInput`](crate::operation::disable_gateway::DisableGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disable_gateway::DisableGatewayInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::disable_gateway::DisableGatewayInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::disable_gateway::DisableGatewayInput {
             gateway_arn: self.gateway_arn,
         })

@@ -27,6 +27,7 @@ pub struct DeleteGlobalClusterInputBuilder {
 }
 impl DeleteGlobalClusterInputBuilder {
     /// <p>The cluster identifier of the global database cluster being deleted.</p>
+    /// This field is required.
     pub fn global_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_cluster_identifier = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteGlobalClusterInputBuilder {
     /// Consumes the builder and constructs a [`DeleteGlobalClusterInput`](crate::operation::delete_global_cluster::DeleteGlobalClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_global_cluster::DeleteGlobalClusterInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_global_cluster::DeleteGlobalClusterInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_global_cluster::DeleteGlobalClusterInput {
             global_cluster_identifier: self.global_cluster_identifier,

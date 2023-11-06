@@ -53,6 +53,7 @@ pub struct DecisionTaskScheduledEventAttributesBuilder {
 }
 impl DecisionTaskScheduledEventAttributesBuilder {
     /// <p>The name of the task list in which the decision task was scheduled.</p>
+    /// This field is required.
     pub fn task_list(mut self, input: crate::types::TaskList) -> Self {
         self.task_list = ::std::option::Option::Some(input);
         self

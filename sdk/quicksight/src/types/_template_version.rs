@@ -38,8 +38,10 @@ impl TemplateVersion {
         self.created_time.as_ref()
     }
     /// <p>Errors associated with this template version.</p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::TemplateError]> {
-        self.errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
+    pub fn errors(&self) -> &[crate::types::TemplateError] {
+        self.errors.as_deref().unwrap_or_default()
     }
     /// <p>The version number of the template version.</p>
     pub fn version_number(&self) -> ::std::option::Option<i64> {
@@ -59,8 +61,10 @@ impl TemplateVersion {
         self.status.as_ref()
     }
     /// <p>Schema of the dataset identified by the placeholder. Any dashboard created from this template should be bound to new datasets matching the same schema described through this API operation.</p>
-    pub fn data_set_configurations(&self) -> ::std::option::Option<&[crate::types::DataSetConfiguration]> {
-        self.data_set_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_set_configurations.is_none()`.
+    pub fn data_set_configurations(&self) -> &[crate::types::DataSetConfiguration] {
+        self.data_set_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The description of the template.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -75,8 +79,10 @@ impl TemplateVersion {
         self.theme_arn.as_deref()
     }
     /// <p>A list of the associated sheets with the unique identifier and name of each sheet.</p>
-    pub fn sheets(&self) -> ::std::option::Option<&[crate::types::Sheet]> {
-        self.sheets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sheets.is_none()`.
+    pub fn sheets(&self) -> &[crate::types::Sheet] {
+        self.sheets.as_deref().unwrap_or_default()
     }
 }
 impl TemplateVersion {

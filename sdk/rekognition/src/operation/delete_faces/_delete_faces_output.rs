@@ -11,12 +11,16 @@ pub struct DeleteFacesOutput {
 }
 impl DeleteFacesOutput {
     /// <p>An array of strings (face IDs) of the faces that were deleted.</p>
-    pub fn deleted_faces(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.deleted_faces.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.deleted_faces.is_none()`.
+    pub fn deleted_faces(&self) -> &[::std::string::String] {
+        self.deleted_faces.as_deref().unwrap_or_default()
     }
     /// <p>An array of any faces that weren't deleted.</p>
-    pub fn unsuccessful_face_deletions(&self) -> ::std::option::Option<&[crate::types::UnsuccessfulFaceDeletion]> {
-        self.unsuccessful_face_deletions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unsuccessful_face_deletions.is_none()`.
+    pub fn unsuccessful_face_deletions(&self) -> &[crate::types::UnsuccessfulFaceDeletion] {
+        self.unsuccessful_face_deletions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteFacesOutput {

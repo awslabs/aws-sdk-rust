@@ -7,7 +7,7 @@ pub struct DestinationConfig {
     /// <p>The name of the IoT thing to which you want to connect.</p>
     pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of service names that identify the target application. The IoT client running on the destination device reads this value and uses it to look up a port or an IP address and a port. The IoT client instantiates the local proxy, which uses this information to connect to the destination application.</p>
-    pub services: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub services: ::std::vec::Vec<::std::string::String>,
 }
 impl DestinationConfig {
     /// <p>The name of the IoT thing to which you want to connect.</p>
@@ -15,8 +15,9 @@ impl DestinationConfig {
         self.thing_name.as_deref()
     }
     /// <p>A list of service names that identify the target application. The IoT client running on the destination device reads this value and uses it to look up a port or an IP address and a port. The IoT client instantiates the local proxy, which uses this information to connect to the destination application.</p>
-    pub fn services(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.services.as_deref()
+    pub fn services(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.services.deref()
     }
 }
 impl DestinationConfig {
@@ -69,10 +70,17 @@ impl DestinationConfigBuilder {
         &self.services
     }
     /// Consumes the builder and constructs a [`DestinationConfig`](crate::types::DestinationConfig).
-    pub fn build(self) -> crate::types::DestinationConfig {
-        crate::types::DestinationConfig {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`services`](crate::types::builders::DestinationConfigBuilder::services)
+    pub fn build(self) -> ::std::result::Result<crate::types::DestinationConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DestinationConfig {
             thing_name: self.thing_name,
-            services: self.services,
-        }
+            services: self.services.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "services",
+                    "services was not specified but it is required when building DestinationConfig",
+                )
+            })?,
+        })
     }
 }

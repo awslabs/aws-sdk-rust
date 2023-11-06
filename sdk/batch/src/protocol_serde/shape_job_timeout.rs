@@ -2,7 +2,7 @@
 pub fn ser_job_timeout(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::JobTimeout,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.attempt_duration_seconds {
         object.key("attemptDurationSeconds").number(
             #[allow(clippy::useless_conversion)]

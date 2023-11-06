@@ -3,7 +3,7 @@
 pub fn ser_build_configuration(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::BuildConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("ArtifactName");
     if let Some(var_2) = &input.artifact_name {
@@ -11,25 +11,25 @@ pub fn ser_build_configuration(
     }
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("CodeBuildServiceRole");
-    if let Some(var_4) = &input.code_build_service_role {
-        scope_3.string(var_4);
+    {
+        scope_3.string(&input.code_build_service_role);
     }
     #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("ComputeType");
-    if let Some(var_6) = &input.compute_type {
-        scope_5.string(var_6.as_str());
+    let mut scope_4 = writer.prefix("ComputeType");
+    if let Some(var_5) = &input.compute_type {
+        scope_4.string(var_5.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_7 = writer.prefix("Image");
-    if let Some(var_8) = &input.image {
-        scope_7.string(var_8);
+    let mut scope_6 = writer.prefix("Image");
+    {
+        scope_6.string(&input.image);
     }
     #[allow(unused_mut)]
-    let mut scope_9 = writer.prefix("TimeoutInMinutes");
-    if let Some(var_10) = &input.timeout_in_minutes {
-        scope_9.number(
+    let mut scope_7 = writer.prefix("TimeoutInMinutes");
+    if let Some(var_8) = &input.timeout_in_minutes {
+        scope_7.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_10).into()),
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
     Ok(())

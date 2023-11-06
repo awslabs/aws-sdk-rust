@@ -67,8 +67,10 @@ impl PostTextOutput {
     }
     /// <p>One to four alternative intents that may be applicable to the user's intent.</p>
     /// <p>Each alternative includes a score that indicates how confident Amazon Lex is that the intent matches the user's intent. The intents are sorted by the confidence score.</p>
-    pub fn alternative_intents(&self) -> ::std::option::Option<&[crate::types::PredictedIntent]> {
-        self.alternative_intents.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alternative_intents.is_none()`.
+    pub fn alternative_intents(&self) -> &[crate::types::PredictedIntent] {
+        self.alternative_intents.as_deref().unwrap_or_default()
     }
     /// <p> The intent slots that Amazon Lex detected from the user input in the conversation. </p>
     /// <p>Amazon Lex creates a resolution list containing likely values for a slot. The value that it returns is determined by the <code>valueSelectionStrategy</code> selected when the slot type was created or updated. If <code>valueSelectionStrategy</code> is set to <code>ORIGINAL_VALUE</code>, the value provided by the user is returned, if the user value is similar to the slot values. If <code>valueSelectionStrategy</code> is set to <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the resolution list or, if there is no resolution list, null. If you don't specify a <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>
@@ -131,8 +133,10 @@ impl PostTextOutput {
     }
     /// <p>A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling the <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.</p>
     /// <p>You can use a context to control the intents that can follow up an intent, or to modify the operation of your application.</p>
-    pub fn active_contexts(&self) -> ::std::option::Option<&[crate::types::ActiveContext]> {
-        self.active_contexts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.active_contexts.is_none()`.
+    pub fn active_contexts(&self) -> &[crate::types::ActiveContext] {
+        self.active_contexts.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for PostTextOutput {

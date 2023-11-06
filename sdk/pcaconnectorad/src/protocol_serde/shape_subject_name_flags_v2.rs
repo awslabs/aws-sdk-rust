@@ -2,7 +2,7 @@
 pub fn ser_subject_name_flags_v2(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SubjectNameFlagsV2,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.san_require_domain_dns {
         object.key("SanRequireDomainDns").boolean(*var_1);
     }

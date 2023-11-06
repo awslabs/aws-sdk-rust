@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder::set_resource_arn): <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder::set_resource_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p><br>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::operation::list_tags_for_resource::ListTagsForResourceOutput) with field(s):
-    ///   - [`tag_list(Option<Vec<Tag>>)`](crate::operation::list_tags_for_resource::ListTagsForResourceOutput::tag_list): <p>One or more tags.</p>
+    ///   - [`tag_list(Vec::<Tag>)`](crate::operation::list_tags_for_resource::ListTagsForResourceOutput::tag_list): <p>One or more tags.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::operation::list_tags_for_resource::ListTagsForResourceError)
     #[deprecated(note = "This API is deprecated.")]
     pub fn list_tags_for_resource(&self) -> crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder {

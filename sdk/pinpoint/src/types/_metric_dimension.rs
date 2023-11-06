@@ -35,6 +35,7 @@ pub struct MetricDimensionBuilder {
 }
 impl MetricDimensionBuilder {
     /// <p>The operator to use when comparing metric values. Valid values are: GREATER_THAN, LESS_THAN, GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL, and EQUAL.</p>
+    /// This field is required.
     pub fn comparison_operator(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comparison_operator = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl MetricDimensionBuilder {
         &self.comparison_operator
     }
     /// <p>The value to compare.</p>
+    /// This field is required.
     pub fn value(mut self, input: f64) -> Self {
         self.value = ::std::option::Option::Some(input);
         self

@@ -27,6 +27,7 @@ pub struct DescribeHarvestJobInputBuilder {
 }
 impl DescribeHarvestJobInputBuilder {
     /// The ID of the HarvestJob.
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,8 @@ impl DescribeHarvestJobInputBuilder {
     /// Consumes the builder and constructs a [`DescribeHarvestJobInput`](crate::operation::describe_harvest_job::DescribeHarvestJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_harvest_job::DescribeHarvestJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_harvest_job::DescribeHarvestJobInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::describe_harvest_job::DescribeHarvestJobInput { id: self.id })
     }
 }

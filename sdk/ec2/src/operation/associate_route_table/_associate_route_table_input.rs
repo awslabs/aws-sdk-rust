@@ -62,6 +62,7 @@ impl AssociateRouteTableInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the route table.</p>
+    /// This field is required.
     pub fn route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_table_id = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,7 @@ impl AssociateRouteTableInputBuilder {
     /// Consumes the builder and constructs a [`AssociateRouteTableInput`](crate::operation::associate_route_table::AssociateRouteTableInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_route_table::AssociateRouteTableInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::associate_route_table::AssociateRouteTableInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::associate_route_table::AssociateRouteTableInput {
             dry_run: self.dry_run,

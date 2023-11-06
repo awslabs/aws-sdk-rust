@@ -2,21 +2,21 @@
 pub fn ser_custom_filter_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CustomFilterConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.match_operator {
-        object.key("MatchOperator").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("MatchOperator").string(input.match_operator.as_str());
     }
-    if let Some(var_2) = &input.category_value {
-        object.key("CategoryValue").string(var_2.as_str());
+    if let Some(var_1) = &input.category_value {
+        object.key("CategoryValue").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.select_all_options {
-        object.key("SelectAllOptions").string(var_3.as_str());
+    if let Some(var_2) = &input.select_all_options {
+        object.key("SelectAllOptions").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.parameter_name {
-        object.key("ParameterName").string(var_4.as_str());
+    if let Some(var_3) = &input.parameter_name {
+        object.key("ParameterName").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.null_option {
-        object.key("NullOption").string(var_5.as_str());
+    {
+        object.key("NullOption").string(input.null_option.as_str());
     }
     Ok(())
 }
@@ -81,7 +81,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::custom_filter_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

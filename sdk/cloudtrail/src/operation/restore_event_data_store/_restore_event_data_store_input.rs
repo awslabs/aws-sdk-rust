@@ -27,6 +27,7 @@ pub struct RestoreEventDataStoreInputBuilder {
 }
 impl RestoreEventDataStoreInputBuilder {
     /// <p>The ARN (or the ID suffix of the ARN) of the event data store that you want to restore.</p>
+    /// This field is required.
     pub fn event_data_store(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_data_store = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl RestoreEventDataStoreInputBuilder {
     /// Consumes the builder and constructs a [`RestoreEventDataStoreInput`](crate::operation::restore_event_data_store::RestoreEventDataStoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::restore_event_data_store::RestoreEventDataStoreInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::restore_event_data_store::RestoreEventDataStoreInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::restore_event_data_store::RestoreEventDataStoreInput {
             event_data_store: self.event_data_store,

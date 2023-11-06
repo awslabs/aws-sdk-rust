@@ -16,8 +16,10 @@ impl UpdateChannelInput {
         self.channel.as_deref()
     }
     /// <p>The ARNs of event data stores that you want to log events arriving through the channel.</p>
-    pub fn destinations(&self) -> ::std::option::Option<&[crate::types::Destination]> {
-        self.destinations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destinations.is_none()`.
+    pub fn destinations(&self) -> &[crate::types::Destination] {
+        self.destinations.as_deref().unwrap_or_default()
     }
     /// <p> Changes the name of the channel. </p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -41,6 +43,7 @@ pub struct UpdateChannelInputBuilder {
 }
 impl UpdateChannelInputBuilder {
     /// <p>The ARN or ID (the ARN suffix) of the channel that you want to update.</p>
+    /// This field is required.
     pub fn channel(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel = ::std::option::Option::Some(input.into());
         self
@@ -91,7 +94,7 @@ impl UpdateChannelInputBuilder {
     /// Consumes the builder and constructs a [`UpdateChannelInput`](crate::operation::update_channel::UpdateChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_channel::UpdateChannelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_channel::UpdateChannelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_channel::UpdateChannelInput {
             channel: self.channel,
             destinations: self.destinations,

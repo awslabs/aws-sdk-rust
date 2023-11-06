@@ -34,6 +34,7 @@ pub struct UpdateChannelGroupInputBuilder {
 }
 impl UpdateChannelGroupInputBuilder {
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
+    /// This field is required.
     pub fn channel_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_group_name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,8 @@ impl UpdateChannelGroupInputBuilder {
     /// Consumes the builder and constructs a [`UpdateChannelGroupInput`](crate::operation::update_channel_group::UpdateChannelGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_channel_group::UpdateChannelGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_channel_group::UpdateChannelGroupInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_channel_group::UpdateChannelGroupInput {
             channel_group_name: self.channel_group_name,
             description: self.description,

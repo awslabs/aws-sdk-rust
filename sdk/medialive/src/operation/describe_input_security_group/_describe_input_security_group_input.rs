@@ -28,6 +28,7 @@ pub struct DescribeInputSecurityGroupInputBuilder {
 }
 impl DescribeInputSecurityGroupInputBuilder {
     /// The id of the Input Security Group to describe
+    /// This field is required.
     pub fn input_security_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_security_group_id = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl DescribeInputSecurityGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_input_security_group::DescribeInputSecurityGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_input_security_group::DescribeInputSecurityGroupInput {
             input_security_group_id: self.input_security_group_id,

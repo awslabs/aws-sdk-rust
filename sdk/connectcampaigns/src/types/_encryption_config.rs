@@ -42,6 +42,7 @@ pub struct EncryptionConfigBuilder {
 }
 impl EncryptionConfigBuilder {
     /// Boolean to indicate if custom encryption has been enabled.
+    /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self

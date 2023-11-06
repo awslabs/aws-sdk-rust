@@ -27,6 +27,7 @@ pub struct DescribeSimulationInputBuilder {
 }
 impl DescribeSimulationInputBuilder {
     /// <p>The name of the simulation.</p>
+    /// This field is required.
     pub fn simulation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.simulation = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeSimulationInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSimulationInput`](crate::operation::describe_simulation::DescribeSimulationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_simulation::DescribeSimulationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_simulation::DescribeSimulationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_simulation::DescribeSimulationInput { simulation: self.simulation })
     }
 }

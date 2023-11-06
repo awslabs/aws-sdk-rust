@@ -11,8 +11,10 @@ pub struct ListKxEnvironmentsOutput {
 }
 impl ListKxEnvironmentsOutput {
     /// <p>A list of environments in an account.</p>
-    pub fn environments(&self) -> ::std::option::Option<&[crate::types::KxEnvironment]> {
-        self.environments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.environments.is_none()`.
+    pub fn environments(&self) -> &[crate::types::KxEnvironment] {
+        self.environments.as_deref().unwrap_or_default()
     }
     /// <p>A token that indicates where a results page should begin.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

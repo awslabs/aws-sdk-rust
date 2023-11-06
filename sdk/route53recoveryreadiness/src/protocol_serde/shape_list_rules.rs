@@ -116,7 +116,7 @@ pub(crate) fn de_list_rules(
                     );
                 }
                 "rules" => {
-                    builder = builder.set_rules(crate::protocol_serde::shape___list_of_list_rules_output::de___list_of_list_rules_output(
+                    builder = builder.set_rules(crate::protocol_serde::shape_list_of_list_rules_output::de_list_of_list_rules_output(
                         tokens,
                     )?);
                 }

@@ -11,8 +11,10 @@ pub struct ListClustersOutput {
 }
 impl ListClustersOutput {
     /// <p>Each <code>ClusterListEntry</code> object contains a cluster's state, a cluster's ID, and other important status information.</p>
-    pub fn cluster_list_entries(&self) -> ::std::option::Option<&[crate::types::ClusterListEntry]> {
-        self.cluster_list_entries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cluster_list_entries.is_none()`.
+    pub fn cluster_list_entries(&self) -> &[crate::types::ClusterListEntry] {
+        self.cluster_list_entries.as_deref().unwrap_or_default()
     }
     /// <p>HTTP requests are stateless. If you use the automatically generated <code>NextToken</code> value in your next <code>ClusterListEntry</code> call, your list of returned clusters will start from this point in the array.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

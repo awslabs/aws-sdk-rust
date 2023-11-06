@@ -34,6 +34,7 @@ pub struct DescribeResiliencyPolicyOutputBuilder {
 }
 impl DescribeResiliencyPolicyOutputBuilder {
     /// <p>Information about the specific resiliency policy, returned as an object. This object includes creation time, data location constraints, its name, description, tags, the recovery time objective (RTO) and recovery point objective (RPO) in seconds, and more.</p>
+    /// This field is required.
     pub fn policy(mut self, input: crate::types::ResiliencyPolicy) -> Self {
         self.policy = ::std::option::Option::Some(input);
         self

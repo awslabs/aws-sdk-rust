@@ -2,7 +2,7 @@
 pub fn ser_aws_secrets_manager_secret_rotation_rules(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsSecretsManagerSecretRotationRules,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.automatically_after_days {
         object.key("AutomaticallyAfterDays").number(
             #[allow(clippy::useless_conversion)]

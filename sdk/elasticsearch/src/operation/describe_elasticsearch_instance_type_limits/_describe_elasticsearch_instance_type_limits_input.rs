@@ -56,6 +56,7 @@ impl DescribeElasticsearchInstanceTypeLimitsInputBuilder {
         &self.domain_name
     }
     /// <p> The instance type for an Elasticsearch cluster for which Elasticsearch <code> <code>Limits</code> </code> are needed. </p>
+    /// This field is required.
     pub fn instance_type(mut self, input: crate::types::EsPartitionInstanceType) -> Self {
         self.instance_type = ::std::option::Option::Some(input);
         self
@@ -70,6 +71,7 @@ impl DescribeElasticsearchInstanceTypeLimitsInputBuilder {
         &self.instance_type
     }
     /// <p> Version of Elasticsearch for which <code> <code>Limits</code> </code> are needed. </p>
+    /// This field is required.
     pub fn elasticsearch_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.elasticsearch_version = ::std::option::Option::Some(input.into());
         self
@@ -88,7 +90,7 @@ impl DescribeElasticsearchInstanceTypeLimitsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_elasticsearch_instance_type_limits::DescribeElasticsearchInstanceTypeLimitsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_elasticsearch_instance_type_limits::DescribeElasticsearchInstanceTypeLimitsInput {

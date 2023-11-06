@@ -2,12 +2,12 @@
 pub fn ser_ps_attributes(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PsAttributes,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.format {
-        object.key("format").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("format").string(input.format.as_str());
     }
-    if let Some(var_2) = &input.encoding {
-        object.key("encoding").string(var_2.as_str());
+    if let Some(var_1) = &input.encoding {
+        object.key("encoding").string(var_1.as_str());
     }
     Ok(())
 }

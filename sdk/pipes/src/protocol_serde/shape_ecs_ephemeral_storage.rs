@@ -2,11 +2,11 @@
 pub fn ser_ecs_ephemeral_storage(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EcsEphemeralStorage,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("sizeInGiB").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.size_in_gi_b).into()),
+            ::aws_smithy_types::Number::NegInt((input.size_in_gib).into()),
         );
     }
     Ok(())
@@ -28,7 +28,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "sizeInGiB" => {
-                            builder = builder.set_size_in_gi_b(
+                            builder = builder.set_size_in_gib(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
@@ -44,7 +44,7 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::ecs_ephemeral_storage_correct_errors(builder).build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

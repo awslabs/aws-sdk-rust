@@ -20,12 +20,16 @@ impl DescribeOptedOutNumbersInput {
         self.opt_out_list_name.as_deref()
     }
     /// <p>An array of phone numbers to search for in the OptOutList.</p>
-    pub fn opted_out_numbers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.opted_out_numbers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.opted_out_numbers.is_none()`.
+    pub fn opted_out_numbers(&self) -> &[::std::string::String] {
+        self.opted_out_numbers.as_deref().unwrap_or_default()
     }
     /// <p>An array of OptedOutFilter objects to filter the results on.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::OptedOutFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::OptedOutFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -55,6 +59,7 @@ pub struct DescribeOptedOutNumbersInputBuilder {
 }
 impl DescribeOptedOutNumbersInputBuilder {
     /// <p>The OptOutListName or OptOutListArn of the OptOutList. You can use <code>DescribeOptOutLists</code> to find the values for OptOutListName and OptOutListArn.</p>
+    /// This field is required.
     pub fn opt_out_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.opt_out_list_name = ::std::option::Option::Some(input.into());
         self
@@ -141,7 +146,7 @@ impl DescribeOptedOutNumbersInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersInput {
             opt_out_list_name: self.opt_out_list_name,

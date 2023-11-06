@@ -96,6 +96,7 @@ impl EvaluateOnExitBuilder {
         &self.on_exit_code
     }
     /// <p>Specifies the action to take if all of the specified conditions (<code>onStatusReason</code>, <code>onReason</code>, and <code>onExitCode</code>) are met. The values aren't case sensitive.</p>
+    /// This field is required.
     pub fn action(mut self, input: crate::types::RetryAction) -> Self {
         self.action = ::std::option::Option::Some(input);
         self

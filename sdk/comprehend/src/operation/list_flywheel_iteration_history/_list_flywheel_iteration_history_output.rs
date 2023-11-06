@@ -11,8 +11,10 @@ pub struct ListFlywheelIterationHistoryOutput {
 }
 impl ListFlywheelIterationHistoryOutput {
     /// <p>List of flywheel iteration properties</p>
-    pub fn flywheel_iteration_properties_list(&self) -> ::std::option::Option<&[crate::types::FlywheelIterationProperties]> {
-        self.flywheel_iteration_properties_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.flywheel_iteration_properties_list.is_none()`.
+    pub fn flywheel_iteration_properties_list(&self) -> &[crate::types::FlywheelIterationProperties] {
+        self.flywheel_iteration_properties_list.as_deref().unwrap_or_default()
     }
     /// <p>Next token</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

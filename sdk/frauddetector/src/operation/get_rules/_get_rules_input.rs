@@ -69,6 +69,7 @@ impl GetRulesInputBuilder {
         &self.rule_id
     }
     /// <p>The detector ID.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
@@ -125,7 +126,7 @@ impl GetRulesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetRulesInput`](crate::operation::get_rules::GetRulesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_rules::GetRulesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_rules::GetRulesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_rules::GetRulesInput {
             rule_id: self.rule_id,
             detector_id: self.detector_id,

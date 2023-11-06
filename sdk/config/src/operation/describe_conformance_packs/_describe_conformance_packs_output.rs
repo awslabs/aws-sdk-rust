@@ -11,8 +11,10 @@ pub struct DescribeConformancePacksOutput {
 }
 impl DescribeConformancePacksOutput {
     /// <p>Returns a list of <code>ConformancePackDetail</code> objects.</p>
-    pub fn conformance_pack_details(&self) -> ::std::option::Option<&[crate::types::ConformancePackDetail]> {
-        self.conformance_pack_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.conformance_pack_details.is_none()`.
+    pub fn conformance_pack_details(&self) -> &[crate::types::ConformancePackDetail] {
+        self.conformance_pack_details.as_deref().unwrap_or_default()
     }
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -35,6 +35,7 @@ pub struct TagResourceInputBuilder {
 }
 impl TagResourceInputBuilder {
     /// <p>An ARN of a CloudFront resource.</p>
+    /// This field is required.
     pub fn resource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl TagResourceInputBuilder {
         &self.resource
     }
     /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
+    /// This field is required.
     pub fn tags(mut self, input: crate::types::Tags) -> Self {
         self.tags = ::std::option::Option::Some(input);
         self
@@ -63,7 +65,7 @@ impl TagResourceInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`TagResourceInput`](crate::operation::tag_resource::TagResourceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::tag_resource::TagResourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::tag_resource::TagResourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::tag_resource::TagResourceInput {
             resource: self.resource,
             tags: self.tags,

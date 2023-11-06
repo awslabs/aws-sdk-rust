@@ -76,6 +76,7 @@ impl ProvisionIpamPoolCidrInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the IPAM pool to which you want to assign a CIDR.</p>
+    /// This field is required.
     pub fn ipam_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -148,7 +149,7 @@ impl ProvisionIpamPoolCidrInputBuilder {
     /// Consumes the builder and constructs a [`ProvisionIpamPoolCidrInput`](crate::operation::provision_ipam_pool_cidr::ProvisionIpamPoolCidrInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::provision_ipam_pool_cidr::ProvisionIpamPoolCidrInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::provision_ipam_pool_cidr::ProvisionIpamPoolCidrInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::provision_ipam_pool_cidr::ProvisionIpamPoolCidrInput {
             dry_run: self.dry_run,

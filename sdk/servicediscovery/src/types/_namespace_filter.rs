@@ -10,14 +10,14 @@ pub struct NamespaceFilter {
     /// <li> <p> <code>NAME</code>: Gets the namespaces with the specified name.</p> </li>
     /// <li> <p> <code>HTTP_NAME</code>: Gets the namespaces with the specified HTTP name.</p> </li>
     /// </ul>
-    pub name: ::std::option::Option<crate::types::NamespaceFilterName>,
+    pub name: crate::types::NamespaceFilterName,
     /// <p>Specify the values that are applicable to the value that you specify for <code>Name</code>.</p>
     /// <ul>
     /// <li> <p> <code>TYPE</code>: Specify <code>HTTP</code>, <code>DNS_PUBLIC</code>, or <code>DNS_PRIVATE</code>.</p> </li>
     /// <li> <p> <code>NAME</code>: Specify the name of the namespace, which is found in <code>Namespace.Name</code>.</p> </li>
     /// <li> <p> <code>HTTP_NAME</code>: Specify the HTTP name of the namespace, which is found in <code>Namespace.Properties.HttpProperties.HttpName</code>.</p> </li>
     /// </ul>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::vec::Vec<::std::string::String>,
     /// <p>Specify the operator that you want to use to determine whether a namespace matches the specified value. Valid values for <code>Condition</code> are one of the following.</p>
     /// <ul>
     /// <li> <p> <code>EQ</code>: When you specify <code>EQ</code> for <code>Condition</code>, you can specify only one value. <code>EQ</code> is supported for <code>TYPE</code>, <code>NAME</code>, and <code>HTTP_NAME</code>. <code>EQ</code> is the default condition and can be omitted.</p> </li>
@@ -32,8 +32,8 @@ impl NamespaceFilter {
     /// <li> <p> <code>NAME</code>: Gets the namespaces with the specified name.</p> </li>
     /// <li> <p> <code>HTTP_NAME</code>: Gets the namespaces with the specified HTTP name.</p> </li>
     /// </ul>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::NamespaceFilterName> {
-        self.name.as_ref()
+    pub fn name(&self) -> &crate::types::NamespaceFilterName {
+        &self.name
     }
     /// <p>Specify the values that are applicable to the value that you specify for <code>Name</code>.</p>
     /// <ul>
@@ -41,8 +41,9 @@ impl NamespaceFilter {
     /// <li> <p> <code>NAME</code>: Specify the name of the namespace, which is found in <code>Namespace.Name</code>.</p> </li>
     /// <li> <p> <code>HTTP_NAME</code>: Specify the HTTP name of the namespace, which is found in <code>Namespace.Properties.HttpProperties.HttpName</code>.</p> </li>
     /// </ul>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    pub fn values(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.values.deref()
     }
     /// <p>Specify the operator that you want to use to determine whether a namespace matches the specified value. Valid values for <code>Condition</code> are one of the following.</p>
     /// <ul>
@@ -75,6 +76,7 @@ impl NamespaceFilterBuilder {
     /// <li> <p> <code>NAME</code>: Gets the namespaces with the specified name.</p> </li>
     /// <li> <p> <code>HTTP_NAME</code>: Gets the namespaces with the specified HTTP name.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::NamespaceFilterName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -160,11 +162,24 @@ impl NamespaceFilterBuilder {
         &self.condition
     }
     /// Consumes the builder and constructs a [`NamespaceFilter`](crate::types::NamespaceFilter).
-    pub fn build(self) -> crate::types::NamespaceFilter {
-        crate::types::NamespaceFilter {
-            name: self.name,
-            values: self.values,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::NamespaceFilterBuilder::name)
+    /// - [`values`](crate::types::builders::NamespaceFilterBuilder::values)
+    pub fn build(self) -> ::std::result::Result<crate::types::NamespaceFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::NamespaceFilter {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building NamespaceFilter",
+                )
+            })?,
+            values: self.values.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "values",
+                    "values was not specified but it is required when building NamespaceFilter",
+                )
+            })?,
             condition: self.condition,
-        }
+        })
     }
 }

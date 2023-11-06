@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConnectorOutput {
     /// <p>The unique identifier for the connector, returned after the API call succeeds.</p>
-    pub connector_id: ::std::option::Option<::std::string::String>,
+    pub connector_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateConnectorOutput {
     /// <p>The unique identifier for the connector, returned after the API call succeeds.</p>
-    pub fn connector_id(&self) -> ::std::option::Option<&str> {
-        self.connector_id.as_deref()
+    pub fn connector_id(&self) -> &str {
+        use std::ops::Deref;
+        self.connector_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateConnectorOutput {
@@ -34,6 +35,7 @@ pub struct CreateConnectorOutputBuilder {
 }
 impl CreateConnectorOutputBuilder {
     /// <p>The unique identifier for the connector, returned after the API call succeeds.</p>
+    /// This field is required.
     pub fn connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_id = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,19 @@ impl CreateConnectorOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateConnectorOutput`](crate::operation::create_connector::CreateConnectorOutput).
-    pub fn build(self) -> crate::operation::create_connector::CreateConnectorOutput {
-        crate::operation::create_connector::CreateConnectorOutput {
-            connector_id: self.connector_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`connector_id`](crate::operation::create_connector::builders::CreateConnectorOutputBuilder::connector_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_connector::CreateConnectorOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_connector::CreateConnectorOutput {
+            connector_id: self.connector_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "connector_id",
+                    "connector_id was not specified but it is required when building CreateConnectorOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

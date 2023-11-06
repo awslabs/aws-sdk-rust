@@ -48,6 +48,7 @@ pub struct UpdateVirtualInterfaceAttributesInputBuilder {
 }
 impl UpdateVirtualInterfaceAttributesInputBuilder {
     /// <p>The ID of the virtual private interface.</p>
+    /// This field is required.
     pub fn virtual_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_interface_id = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +109,7 @@ impl UpdateVirtualInterfaceAttributesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesInput {

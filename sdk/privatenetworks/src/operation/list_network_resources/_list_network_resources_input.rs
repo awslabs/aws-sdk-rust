@@ -101,6 +101,7 @@ impl ListNetworkResourcesInputBuilder {
         &self.filters
     }
     /// <p>The Amazon Resource Name (ARN) of the network.</p>
+    /// This field is required.
     pub fn network_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_arn = ::std::option::Option::Some(input.into());
         self
@@ -145,7 +146,7 @@ impl ListNetworkResourcesInputBuilder {
     /// Consumes the builder and constructs a [`ListNetworkResourcesInput`](crate::operation::list_network_resources::ListNetworkResourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_network_resources::ListNetworkResourcesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_network_resources::ListNetworkResourcesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_network_resources::ListNetworkResourcesInput {
             filters: self.filters,

@@ -12,8 +12,10 @@ pub struct DescribeApplicationVersionsOutput {
 }
 impl DescribeApplicationVersionsOutput {
     /// <p>List of <code>ApplicationVersionDescription</code> objects sorted in order of creation.</p>
-    pub fn application_versions(&self) -> ::std::option::Option<&[crate::types::ApplicationVersionDescription]> {
-        self.application_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.application_versions.is_none()`.
+    pub fn application_versions(&self) -> &[crate::types::ApplicationVersionDescription] {
+        self.application_versions.as_deref().unwrap_or_default()
     }
     /// <p>In a paginated request, the token that you can pass in a subsequent request to get the next response page.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

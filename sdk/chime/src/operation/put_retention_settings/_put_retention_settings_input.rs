@@ -34,6 +34,7 @@ pub struct PutRetentionSettingsInputBuilder {
 }
 impl PutRetentionSettingsInputBuilder {
     /// <p>The Amazon Chime account ID.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl PutRetentionSettingsInputBuilder {
         &self.account_id
     }
     /// <p>The retention settings.</p>
+    /// This field is required.
     pub fn retention_settings(mut self, input: crate::types::RetentionSettings) -> Self {
         self.retention_settings = ::std::option::Option::Some(input);
         self
@@ -64,7 +66,7 @@ impl PutRetentionSettingsInputBuilder {
     /// Consumes the builder and constructs a [`PutRetentionSettingsInput`](crate::operation::put_retention_settings::PutRetentionSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_retention_settings::PutRetentionSettingsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_retention_settings::PutRetentionSettingsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_retention_settings::PutRetentionSettingsInput {
             account_id: self.account_id,

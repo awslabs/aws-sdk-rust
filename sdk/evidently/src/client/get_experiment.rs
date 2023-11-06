@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetExperiment`](crate::operation::get_experiment::builders::GetExperimentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`project(impl Into<String>)`](crate::operation::get_experiment::builders::GetExperimentFluentBuilder::project) / [`set_project(Option<String>)`](crate::operation::get_experiment::builders::GetExperimentFluentBuilder::set_project): <p>The name or ARN of the project that contains the experiment.</p>
-    ///   - [`experiment(impl Into<String>)`](crate::operation::get_experiment::builders::GetExperimentFluentBuilder::experiment) / [`set_experiment(Option<String>)`](crate::operation::get_experiment::builders::GetExperimentFluentBuilder::set_experiment): <p>The name of the experiment that you want to see the details of.</p>
+    ///   - [`project(impl Into<String>)`](crate::operation::get_experiment::builders::GetExperimentFluentBuilder::project) / [`set_project(Option<String>)`](crate::operation::get_experiment::builders::GetExperimentFluentBuilder::set_project):<br>required: **true**<br><p>The name or ARN of the project that contains the experiment.</p><br>
+    ///   - [`experiment(impl Into<String>)`](crate::operation::get_experiment::builders::GetExperimentFluentBuilder::experiment) / [`set_experiment(Option<String>)`](crate::operation::get_experiment::builders::GetExperimentFluentBuilder::set_experiment):<br>required: **true**<br><p>The name of the experiment that you want to see the details of.</p><br>
     /// - On success, responds with [`GetExperimentOutput`](crate::operation::get_experiment::GetExperimentOutput) with field(s):
     ///   - [`experiment(Option<Experiment>)`](crate::operation::get_experiment::GetExperimentOutput::experiment): <p>A structure containing the configuration details of the experiment.</p>
     /// - On failure, responds with [`SdkError<GetExperimentError>`](crate::operation::get_experiment::GetExperimentError)

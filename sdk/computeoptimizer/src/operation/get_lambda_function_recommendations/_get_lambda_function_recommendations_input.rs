@@ -21,18 +21,24 @@ pub struct GetLambdaFunctionRecommendationsInput {
 impl GetLambdaFunctionRecommendationsInput {
     /// <p>The Amazon Resource Name (ARN) of the functions for which to return recommendations.</p>
     /// <p>You can specify a qualified or unqualified ARN. If you specify an unqualified ARN without a function version suffix, Compute Optimizer will return recommendations for the latest (<code>$LATEST</code>) version of the function. If you specify a qualified ARN with a version suffix, Compute Optimizer will return recommendations for the specified function version. For more information about using function versions, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html#versioning-versions-using">Using versions</a> in the <i>Lambda Developer Guide</i>.</p>
-    pub fn function_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.function_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.function_arns.is_none()`.
+    pub fn function_arns(&self) -> &[::std::string::String] {
+        self.function_arns.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the Amazon Web Services account for which to return function recommendations.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return function recommendations.</p>
     /// <p>Only one account ID can be specified per request.</p>
-    pub fn account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.account_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
+    pub fn account_ids(&self) -> &[::std::string::String] {
+        self.account_ids.as_deref().unwrap_or_default()
     }
     /// <p>An array of objects to specify a filter that returns a more specific list of function recommendations.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::LambdaFunctionRecommendationFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::LambdaFunctionRecommendationFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The token to advance to the next page of function recommendations.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -167,7 +173,7 @@ impl GetLambdaFunctionRecommendationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendationsInput {

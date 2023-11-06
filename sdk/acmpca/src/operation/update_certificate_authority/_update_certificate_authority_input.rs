@@ -60,6 +60,7 @@ pub struct UpdateCertificateAuthorityInputBuilder {
 impl UpdateCertificateAuthorityInputBuilder {
     /// <p>Amazon Resource Name (ARN) of the private CA that issued the certificate to be revoked. This must be of the form:</p>
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
+    /// This field is required.
     pub fn certificate_authority_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_authority_arn = ::std::option::Option::Some(input.into());
         self
@@ -132,7 +133,7 @@ impl UpdateCertificateAuthorityInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_certificate_authority::UpdateCertificateAuthorityInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_certificate_authority::UpdateCertificateAuthorityInput {
             certificate_authority_arn: self.certificate_authority_arn,

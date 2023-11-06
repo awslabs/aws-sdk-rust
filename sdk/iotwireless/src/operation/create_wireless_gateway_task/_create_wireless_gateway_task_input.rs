@@ -34,6 +34,7 @@ pub struct CreateWirelessGatewayTaskInputBuilder {
 }
 impl CreateWirelessGatewayTaskInputBuilder {
     /// <p>The ID of the resource to update.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl CreateWirelessGatewayTaskInputBuilder {
         &self.id
     }
     /// <p>The ID of the WirelessGatewayTaskDefinition.</p>
+    /// This field is required.
     pub fn wireless_gateway_task_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.wireless_gateway_task_definition_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl CreateWirelessGatewayTaskInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_wireless_gateway_task::CreateWirelessGatewayTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_wireless_gateway_task::CreateWirelessGatewayTaskInput {
             id: self.id,

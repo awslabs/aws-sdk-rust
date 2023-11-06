@@ -27,6 +27,7 @@ pub struct DeleteOpsMetadataInputBuilder {
 }
 impl DeleteOpsMetadataInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of an OpsMetadata Object to delete.</p>
+    /// This field is required.
     pub fn ops_metadata_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ops_metadata_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteOpsMetadataInputBuilder {
     /// Consumes the builder and constructs a [`DeleteOpsMetadataInput`](crate::operation::delete_ops_metadata::DeleteOpsMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_ops_metadata::DeleteOpsMetadataInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_ops_metadata::DeleteOpsMetadataInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_ops_metadata::DeleteOpsMetadataInput {
             ops_metadata_arn: self.ops_metadata_arn,
         })

@@ -27,6 +27,7 @@ pub struct DescribeTrialInputBuilder {
 }
 impl DescribeTrialInputBuilder {
     /// <p>The name of the trial to describe.</p>
+    /// This field is required.
     pub fn trial_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trial_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeTrialInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTrialInput`](crate::operation::describe_trial::DescribeTrialInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_trial::DescribeTrialInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_trial::DescribeTrialInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_trial::DescribeTrialInput { trial_name: self.trial_name })
     }
 }

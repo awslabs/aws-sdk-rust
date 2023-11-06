@@ -82,6 +82,7 @@ pub struct CreateResiliencyPolicyInputBuilder {
 }
 impl CreateResiliencyPolicyInputBuilder {
     /// <p>The name of the policy</p>
+    /// This field is required.
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
         self
@@ -124,6 +125,7 @@ impl CreateResiliencyPolicyInputBuilder {
         &self.data_location_constraint
     }
     /// <p>The tier for this resiliency policy, ranging from the highest severity (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
+    /// This field is required.
     pub fn tier(mut self, input: crate::types::ResiliencyPolicyTier) -> Self {
         self.tier = ::std::option::Option::Some(input);
         self
@@ -197,8 +199,10 @@ impl CreateResiliencyPolicyInputBuilder {
     /// Consumes the builder and constructs a [`CreateResiliencyPolicyInput`](crate::operation::create_resiliency_policy::CreateResiliencyPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_resiliency_policy::CreateResiliencyPolicyInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_resiliency_policy::CreateResiliencyPolicyInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_resiliency_policy::CreateResiliencyPolicyInput {
             policy_name: self.policy_name,
             policy_description: self.policy_description,

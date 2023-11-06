@@ -27,8 +27,10 @@ impl ThreatDetectedByName {
         self.shortened
     }
     /// <p>List of identified threats with details, organized by threat name.</p>
-    pub fn threat_names(&self) -> ::std::option::Option<&[crate::types::ScanThreatName]> {
-        self.threat_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.threat_names.is_none()`.
+    pub fn threat_names(&self) -> &[crate::types::ScanThreatName] {
+        self.threat_names.as_deref().unwrap_or_default()
     }
 }
 impl ThreatDetectedByName {

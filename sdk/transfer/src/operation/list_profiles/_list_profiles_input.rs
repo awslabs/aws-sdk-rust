@@ -83,7 +83,9 @@ impl ListProfilesInputBuilder {
         &self.profile_type
     }
     /// Consumes the builder and constructs a [`ListProfilesInput`](crate::operation::list_profiles::ListProfilesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_profiles::ListProfilesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_profiles::ListProfilesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_profiles::ListProfilesInput {
             max_results: self.max_results,
             next_token: self.next_token,

@@ -53,8 +53,10 @@ impl FilterLogEventsInput {
     }
     /// <p>Filters the results to only logs from the log streams in this list.</p>
     /// <p>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, the action returns an <code>InvalidParameterException</code> error.</p>
-    pub fn log_stream_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.log_stream_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_stream_names.is_none()`.
+    pub fn log_stream_names(&self) -> &[::std::string::String] {
+        self.log_stream_names.as_deref().unwrap_or_default()
     }
     /// <p>Filters the results to include only events from log streams that have names starting with this prefix.</p>
     /// <p>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the value for <code>logStreamNamePrefix</code> does not match any log stream names specified in <code>logStreamNames</code>, the action returns an <code>InvalidParameterException</code> error.</p>
@@ -319,7 +321,7 @@ impl FilterLogEventsInputBuilder {
     /// Consumes the builder and constructs a [`FilterLogEventsInput`](crate::operation::filter_log_events::FilterLogEventsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::filter_log_events::FilterLogEventsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::filter_log_events::FilterLogEventsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::filter_log_events::FilterLogEventsInput {
             log_group_name: self.log_group_name,
             log_group_identifier: self.log_group_identifier,

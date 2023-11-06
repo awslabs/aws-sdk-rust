@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateSite`](crate::operation::update_site::builders::UpdateSiteFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`site_id(impl Into<String>)`](crate::operation::update_site::builders::UpdateSiteFluentBuilder::site_id) / [`set_site_id(Option<String>)`](crate::operation::update_site::builders::UpdateSiteFluentBuilder::set_site_id): <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
-    ///   - [`name(impl Into<String>)`](crate::operation::update_site::builders::UpdateSiteFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_site::builders::UpdateSiteFluentBuilder::set_name): <p>The name of the site.</p>
-    ///   - [`description(impl Into<String>)`](crate::operation::update_site::builders::UpdateSiteFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_site::builders::UpdateSiteFluentBuilder::set_description): <p>The description of the site.</p>
-    ///   - [`notes(impl Into<String>)`](crate::operation::update_site::builders::UpdateSiteFluentBuilder::notes) / [`set_notes(Option<String>)`](crate::operation::update_site::builders::UpdateSiteFluentBuilder::set_notes): <p>Notes about a site.</p>
+    ///   - [`site_id(impl Into<String>)`](crate::operation::update_site::builders::UpdateSiteFluentBuilder::site_id) / [`set_site_id(Option<String>)`](crate::operation::update_site::builders::UpdateSiteFluentBuilder::set_site_id):<br>required: **true**<br><p> The ID or the Amazon Resource Name (ARN) of the site. </p><br>
+    ///   - [`name(impl Into<String>)`](crate::operation::update_site::builders::UpdateSiteFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_site::builders::UpdateSiteFluentBuilder::set_name):<br>required: **false**<br><p>The name of the site.</p><br>
+    ///   - [`description(impl Into<String>)`](crate::operation::update_site::builders::UpdateSiteFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_site::builders::UpdateSiteFluentBuilder::set_description):<br>required: **false**<br><p>The description of the site.</p><br>
+    ///   - [`notes(impl Into<String>)`](crate::operation::update_site::builders::UpdateSiteFluentBuilder::notes) / [`set_notes(Option<String>)`](crate::operation::update_site::builders::UpdateSiteFluentBuilder::set_notes):<br>required: **false**<br><p>Notes about a site.</p><br>
     /// - On success, responds with [`UpdateSiteOutput`](crate::operation::update_site::UpdateSiteOutput) with field(s):
     ///   - [`site(Option<Site>)`](crate::operation::update_site::UpdateSiteOutput::site): <p>Information about a site.</p>
     /// - On failure, responds with [`SdkError<UpdateSiteError>`](crate::operation::update_site::UpdateSiteError)

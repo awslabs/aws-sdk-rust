@@ -3,7 +3,7 @@
 pub fn ser_receipt_action(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::ReceiptAction,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("S3Action");
     if let Some(var_2) = &input.s3_action {
@@ -42,6 +42,7 @@ pub fn ser_receipt_action(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_receipt_action(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::ReceiptAction, ::aws_smithy_xml::decode::XmlDecodeError> {

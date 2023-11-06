@@ -4,13 +4,13 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_runs::builders::ListRunsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::list_runs::builders::ListRunsFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::list_runs::builders::ListRunsFluentBuilder::set_name): <p>Filter the list by run name.</p>
-    ///   - [`run_group_id(impl Into<String>)`](crate::operation::list_runs::builders::ListRunsFluentBuilder::run_group_id) / [`set_run_group_id(Option<String>)`](crate::operation::list_runs::builders::ListRunsFluentBuilder::set_run_group_id): <p>Filter the list by run group ID.</p>
-    ///   - [`starting_token(impl Into<String>)`](crate::operation::list_runs::builders::ListRunsFluentBuilder::starting_token) / [`set_starting_token(Option<String>)`](crate::operation::list_runs::builders::ListRunsFluentBuilder::set_starting_token): <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    ///   - [`max_results(i32)`](crate::operation::list_runs::builders::ListRunsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_runs::builders::ListRunsFluentBuilder::set_max_results): <p>The maximum number of runs to return in one page of results.</p>
-    ///   - [`status(RunStatus)`](crate::operation::list_runs::builders::ListRunsFluentBuilder::status) / [`set_status(Option<RunStatus>)`](crate::operation::list_runs::builders::ListRunsFluentBuilder::set_status): <p> The status of a run. </p>
+    ///   - [`name(impl Into<String>)`](crate::operation::list_runs::builders::ListRunsFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::list_runs::builders::ListRunsFluentBuilder::set_name):<br>required: **false**<br><p>Filter the list by run name.</p><br>
+    ///   - [`run_group_id(impl Into<String>)`](crate::operation::list_runs::builders::ListRunsFluentBuilder::run_group_id) / [`set_run_group_id(Option<String>)`](crate::operation::list_runs::builders::ListRunsFluentBuilder::set_run_group_id):<br>required: **false**<br><p>Filter the list by run group ID.</p><br>
+    ///   - [`starting_token(impl Into<String>)`](crate::operation::list_runs::builders::ListRunsFluentBuilder::starting_token) / [`set_starting_token(Option<String>)`](crate::operation::list_runs::builders::ListRunsFluentBuilder::set_starting_token):<br>required: **false**<br><p>Specify the pagination token from a previous request to retrieve the next page of results.</p><br>
+    ///   - [`max_results(i32)`](crate::operation::list_runs::builders::ListRunsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_runs::builders::ListRunsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of runs to return in one page of results.</p><br>
+    ///   - [`status(RunStatus)`](crate::operation::list_runs::builders::ListRunsFluentBuilder::status) / [`set_status(Option<RunStatus>)`](crate::operation::list_runs::builders::ListRunsFluentBuilder::set_status):<br>required: **false**<br><p> The status of a run. </p><br>
     /// - On success, responds with [`ListRunsOutput`](crate::operation::list_runs::ListRunsOutput) with field(s):
-    ///   - [`items(Option<Vec<RunListItem>>)`](crate::operation::list_runs::ListRunsOutput::items): <p>A list of runs.</p>
+    ///   - [`items(Option<Vec::<RunListItem>>)`](crate::operation::list_runs::ListRunsOutput::items): <p>A list of runs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_runs::ListRunsOutput::next_token): <p>A pagination token that's included if more results are available.</p>
     /// - On failure, responds with [`SdkError<ListRunsError>`](crate::operation::list_runs::ListRunsError)
     pub fn list_runs(&self) -> crate::operation::list_runs::builders::ListRunsFluentBuilder {

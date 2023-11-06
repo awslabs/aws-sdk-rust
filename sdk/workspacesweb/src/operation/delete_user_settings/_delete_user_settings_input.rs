@@ -27,6 +27,7 @@ pub struct DeleteUserSettingsInputBuilder {
 }
 impl DeleteUserSettingsInputBuilder {
     /// <p>The ARN of the user settings.</p>
+    /// This field is required.
     pub fn user_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_settings_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,8 @@ impl DeleteUserSettingsInputBuilder {
     /// Consumes the builder and constructs a [`DeleteUserSettingsInput`](crate::operation::delete_user_settings::DeleteUserSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_user_settings::DeleteUserSettingsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_user_settings::DeleteUserSettingsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_user_settings::DeleteUserSettingsInput {
             user_settings_arn: self.user_settings_arn,
         })

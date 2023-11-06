@@ -125,7 +125,7 @@ pub(crate) fn de_get_api(
                     builder = builder.set_disable_schema_validation(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "importInfo" => {
-                    builder = builder.set_import_info(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                    builder = builder.set_import_info(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                 }
                 "name" => {
                     builder = builder.set_name(
@@ -159,7 +159,7 @@ pub(crate) fn de_get_api(
                     );
                 }
                 "warnings" => {
-                    builder = builder.set_warnings(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                    builder = builder.set_warnings(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

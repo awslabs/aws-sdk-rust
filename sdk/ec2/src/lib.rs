@@ -34,8 +34,8 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = "0.56.1"
-//! aws-sdk-ec2 = "0.34.0"
+//! aws-config = "0.57.1"
+//! aws-sdk-ec2 = "0.35.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -189,6 +189,8 @@ pub mod primitives;
 /// Data structures used by operation inputs/outputs.
 pub mod types;
 
+mod auth_plugin;
+
 pub(crate) mod client_idempotency_token;
 
 mod idempotency_token;
@@ -202,6 +204,8 @@ mod lens;
 mod ec2_query_errors;
 
 mod endpoint_lib;
+
+mod serde_util;
 
 #[doc(inline)]
 pub use client::Client;

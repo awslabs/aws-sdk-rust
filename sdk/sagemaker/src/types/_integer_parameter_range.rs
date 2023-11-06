@@ -91,6 +91,7 @@ pub struct IntegerParameterRangeBuilder {
 }
 impl IntegerParameterRangeBuilder {
     /// <p>The name of the hyperparameter to search.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +106,7 @@ impl IntegerParameterRangeBuilder {
         &self.name
     }
     /// <p>The minimum value of the hyperparameter to search.</p>
+    /// This field is required.
     pub fn min_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.min_value = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +121,7 @@ impl IntegerParameterRangeBuilder {
         &self.min_value
     }
     /// <p>The maximum value of the hyperparameter to search.</p>
+    /// This field is required.
     pub fn max_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.max_value = ::std::option::Option::Some(input.into());
         self

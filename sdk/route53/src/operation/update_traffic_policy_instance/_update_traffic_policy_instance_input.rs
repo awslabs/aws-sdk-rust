@@ -49,6 +49,7 @@ pub struct UpdateTrafficPolicyInstanceInputBuilder {
 }
 impl UpdateTrafficPolicyInstanceInputBuilder {
     /// <p>The ID of the traffic policy instance that you want to update.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl UpdateTrafficPolicyInstanceInputBuilder {
         &self.id
     }
     /// <p>The TTL that you want Amazon Route 53 to assign to all of the updated resource record sets.</p>
+    /// This field is required.
     pub fn ttl(mut self, input: i64) -> Self {
         self.ttl = ::std::option::Option::Some(input);
         self
@@ -77,6 +79,7 @@ impl UpdateTrafficPolicyInstanceInputBuilder {
         &self.ttl
     }
     /// <p>The ID of the traffic policy that you want Amazon Route 53 to use to update resource record sets for the specified traffic policy instance.</p>
+    /// This field is required.
     pub fn traffic_policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.traffic_policy_id = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +94,7 @@ impl UpdateTrafficPolicyInstanceInputBuilder {
         &self.traffic_policy_id
     }
     /// <p>The version of the traffic policy that you want Amazon Route 53 to use to update resource record sets for the specified traffic policy instance.</p>
+    /// This field is required.
     pub fn traffic_policy_version(mut self, input: i32) -> Self {
         self.traffic_policy_version = ::std::option::Option::Some(input);
         self
@@ -109,7 +113,7 @@ impl UpdateTrafficPolicyInstanceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_traffic_policy_instance::UpdateTrafficPolicyInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_traffic_policy_instance::UpdateTrafficPolicyInstanceInput {
             id: self.id,

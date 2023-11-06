@@ -76,8 +76,10 @@ impl ImportSnapshotInput {
         self.role_name.as_deref()
     }
     /// <p>The tags to apply to the import snapshot task during creation.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
 }
 impl ImportSnapshotInput {
@@ -267,7 +269,7 @@ impl ImportSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`ImportSnapshotInput`](crate::operation::import_snapshot::ImportSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::import_snapshot::ImportSnapshotInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::import_snapshot::ImportSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::import_snapshot::ImportSnapshotInput {
             client_data: self.client_data,
             client_token: self.client_token,

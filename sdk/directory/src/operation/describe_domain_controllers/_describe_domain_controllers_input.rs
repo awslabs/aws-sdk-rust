@@ -18,8 +18,10 @@ impl DescribeDomainControllersInput {
         self.directory_id.as_deref()
     }
     /// <p>A list of identifiers for the domain controllers whose information will be provided.</p>
-    pub fn domain_controller_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.domain_controller_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domain_controller_ids.is_none()`.
+    pub fn domain_controller_ids(&self) -> &[::std::string::String] {
+        self.domain_controller_ids.as_deref().unwrap_or_default()
     }
     /// <p>The <i>DescribeDomainControllers.NextToken</i> value from a previous call to <code>DescribeDomainControllers</code>. Pass null if this is the first call. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -48,6 +50,7 @@ pub struct DescribeDomainControllersInputBuilder {
 }
 impl DescribeDomainControllersInputBuilder {
     /// <p>Identifier of the directory for which to retrieve the domain controller information.</p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self
@@ -114,7 +117,7 @@ impl DescribeDomainControllersInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_domain_controllers::DescribeDomainControllersInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_domain_controllers::DescribeDomainControllersInput {
             directory_id: self.directory_id,

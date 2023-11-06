@@ -2,21 +2,21 @@
 pub fn ser_category_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CategoryFilter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.filter_id {
-        object.key("FilterId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("FilterId").string(input.filter_id.as_str());
     }
-    if let Some(var_2) = &input.column {
+    if let Some(var_1) = &input.column {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("Column").start_object();
-        crate::protocol_serde::shape_column_identifier::ser_column_identifier(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("Column").start_object();
+        crate::protocol_serde::shape_column_identifier::ser_column_identifier(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.configuration {
+    if let Some(var_3) = &input.configuration {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("Configuration").start_object();
-        crate::protocol_serde::shape_category_filter_configuration::ser_category_filter_configuration(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("Configuration").start_object();
+        crate::protocol_serde::shape_category_filter_configuration::ser_category_filter_configuration(&mut object_4, var_3)?;
+        object_4.finish();
     }
     Ok(())
 }
@@ -61,7 +61,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::category_filter_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

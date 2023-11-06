@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSpaceOutput {
     /// <p>The name of the space.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The Amazon Web Services Region where the space exists.</p>
-    pub region_name: ::std::option::Option<::std::string::String>,
+    pub region_name: ::std::string::String,
     /// <p>The friendly name of the space displayed to users.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the space.</p>
@@ -15,12 +15,14 @@ pub struct GetSpaceOutput {
 }
 impl GetSpaceOutput {
     /// <p>The name of the space.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The Amazon Web Services Region where the space exists.</p>
-    pub fn region_name(&self) -> ::std::option::Option<&str> {
-        self.region_name.as_deref()
+    pub fn region_name(&self) -> &str {
+        use std::ops::Deref;
+        self.region_name.deref()
     }
     /// <p>The friendly name of the space displayed to users.</p>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
@@ -55,6 +57,7 @@ pub struct GetSpaceOutputBuilder {
 }
 impl GetSpaceOutputBuilder {
     /// <p>The name of the space.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +72,7 @@ impl GetSpaceOutputBuilder {
         &self.name
     }
     /// <p>The Amazon Web Services Region where the space exists.</p>
+    /// This field is required.
     pub fn region_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region_name = ::std::option::Option::Some(input.into());
         self
@@ -120,13 +124,26 @@ impl GetSpaceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetSpaceOutput`](crate::operation::get_space::GetSpaceOutput).
-    pub fn build(self) -> crate::operation::get_space::GetSpaceOutput {
-        crate::operation::get_space::GetSpaceOutput {
-            name: self.name,
-            region_name: self.region_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::get_space::builders::GetSpaceOutputBuilder::name)
+    /// - [`region_name`](crate::operation::get_space::builders::GetSpaceOutputBuilder::region_name)
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_space::GetSpaceOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_space::GetSpaceOutput {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building GetSpaceOutput",
+                )
+            })?,
+            region_name: self.region_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "region_name",
+                    "region_name was not specified but it is required when building GetSpaceOutput",
+                )
+            })?,
             display_name: self.display_name,
             description: self.description,
             _request_id: self._request_id,
-        }
+        })
     }
 }

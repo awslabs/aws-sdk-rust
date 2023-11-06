@@ -55,16 +55,22 @@ impl SnomedctEntity {
         self.end_offset
     }
     /// <p> An extracted segment of the text that is an attribute of an entity, or otherwise related to an entity, such as the dosage of a medication taken. </p>
-    pub fn attributes(&self) -> ::std::option::Option<&[crate::types::SnomedctAttribute]> {
-        self.attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
+    pub fn attributes(&self) -> &[crate::types::SnomedctAttribute] {
+        self.attributes.as_deref().unwrap_or_default()
     }
     /// <p> Contextual information for the entity. </p>
-    pub fn traits(&self) -> ::std::option::Option<&[crate::types::SnomedctTrait]> {
-        self.traits.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.traits.is_none()`.
+    pub fn traits(&self) -> &[crate::types::SnomedctTrait] {
+        self.traits.as_deref().unwrap_or_default()
     }
     /// <p> The SNOMED concepts that the entity could refer to, along with a score indicating the likelihood of the match. </p>
-    pub fn snomedct_concepts(&self) -> ::std::option::Option<&[crate::types::SnomedctConcept]> {
-        self.snomedct_concepts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.snomedct_concepts.is_none()`.
+    pub fn snomedct_concepts(&self) -> &[crate::types::SnomedctConcept] {
+        self.snomedct_concepts.as_deref().unwrap_or_default()
     }
 }
 impl SnomedctEntity {

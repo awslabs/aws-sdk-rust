@@ -66,8 +66,10 @@ impl GetRecommendationsInput {
         self.recommender_arn.as_deref()
     }
     /// <p>The promotions to apply to the recommendation request. A promotion defines additional business rules that apply to a configurable subset of recommended items.</p>
-    pub fn promotions(&self) -> ::std::option::Option<&[crate::types::Promotion]> {
-        self.promotions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.promotions.is_none()`.
+    pub fn promotions(&self) -> &[crate::types::Promotion] {
+        self.promotions.as_deref().unwrap_or_default()
     }
 }
 impl GetRecommendationsInput {
@@ -257,7 +259,7 @@ impl GetRecommendationsInputBuilder {
     /// Consumes the builder and constructs a [`GetRecommendationsInput`](crate::operation::get_recommendations::GetRecommendationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_recommendations::GetRecommendationsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_recommendations::GetRecommendationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_recommendations::GetRecommendationsInput {
             campaign_arn: self.campaign_arn,
             item_id: self.item_id,

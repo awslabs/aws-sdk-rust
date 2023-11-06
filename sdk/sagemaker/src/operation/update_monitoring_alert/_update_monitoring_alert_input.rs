@@ -48,6 +48,7 @@ pub struct UpdateMonitoringAlertInputBuilder {
 }
 impl UpdateMonitoringAlertInputBuilder {
     /// <p>The name of a monitoring schedule.</p>
+    /// This field is required.
     pub fn monitoring_schedule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitoring_schedule_name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl UpdateMonitoringAlertInputBuilder {
         &self.monitoring_schedule_name
     }
     /// <p>The name of a monitoring alert.</p>
+    /// This field is required.
     pub fn monitoring_alert_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitoring_alert_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl UpdateMonitoringAlertInputBuilder {
         &self.monitoring_alert_name
     }
     /// <p>Within <code>EvaluationPeriod</code>, how many execution failures will raise an alert.</p>
+    /// This field is required.
     pub fn datapoints_to_alert(mut self, input: i32) -> Self {
         self.datapoints_to_alert = ::std::option::Option::Some(input);
         self
@@ -90,6 +93,7 @@ impl UpdateMonitoringAlertInputBuilder {
         &self.datapoints_to_alert
     }
     /// <p>The number of most recent monitoring executions to consider when evaluating alert status.</p>
+    /// This field is required.
     pub fn evaluation_period(mut self, input: i32) -> Self {
         self.evaluation_period = ::std::option::Option::Some(input);
         self
@@ -106,7 +110,7 @@ impl UpdateMonitoringAlertInputBuilder {
     /// Consumes the builder and constructs a [`UpdateMonitoringAlertInput`](crate::operation::update_monitoring_alert::UpdateMonitoringAlertInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_monitoring_alert::UpdateMonitoringAlertInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_monitoring_alert::UpdateMonitoringAlertInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_monitoring_alert::UpdateMonitoringAlertInput {
             monitoring_schedule_name: self.monitoring_schedule_name,

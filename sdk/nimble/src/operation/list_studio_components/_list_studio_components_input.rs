@@ -24,16 +24,20 @@ impl ListStudioComponentsInput {
         self.next_token.as_deref()
     }
     /// <p>Filters the request to studio components that are in one of the given states. </p>
-    pub fn states(&self) -> ::std::option::Option<&[crate::types::StudioComponentState]> {
-        self.states.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.states.is_none()`.
+    pub fn states(&self) -> &[crate::types::StudioComponentState] {
+        self.states.as_deref().unwrap_or_default()
     }
     /// <p>The studio ID. </p>
     pub fn studio_id(&self) -> ::std::option::Option<&str> {
         self.studio_id.as_deref()
     }
     /// <p>Filters the request to studio components that are of one of the given types.</p>
-    pub fn types(&self) -> ::std::option::Option<&[crate::types::StudioComponentType]> {
-        self.types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.types.is_none()`.
+    pub fn types(&self) -> &[crate::types::StudioComponentType] {
+        self.types.as_deref().unwrap_or_default()
     }
 }
 impl ListStudioComponentsInput {
@@ -103,6 +107,7 @@ impl ListStudioComponentsInputBuilder {
         &self.states
     }
     /// <p>The studio ID. </p>
+    /// This field is required.
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
         self
@@ -139,7 +144,7 @@ impl ListStudioComponentsInputBuilder {
     /// Consumes the builder and constructs a [`ListStudioComponentsInput`](crate::operation::list_studio_components::ListStudioComponentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_studio_components::ListStudioComponentsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_studio_components::ListStudioComponentsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_studio_components::ListStudioComponentsInput {
             max_results: self.max_results,

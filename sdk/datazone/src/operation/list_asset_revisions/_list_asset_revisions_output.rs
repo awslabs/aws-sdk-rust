@@ -11,8 +11,10 @@ pub struct ListAssetRevisionsOutput {
 }
 impl ListAssetRevisionsOutput {
     /// <p>The results of the <code>ListAssetRevisions</code> action.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::AssetRevision]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[crate::types::AssetRevision] {
+        self.items.as_deref().unwrap_or_default()
     }
     /// <p>When the number of revisions is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of revisions, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListAssetRevisions</code> to list the next set of revisions.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

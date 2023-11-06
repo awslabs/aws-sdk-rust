@@ -21,8 +21,10 @@ impl GroupResult {
         self.group_name.as_deref()
     }
     /// <p>Tests under Group Result.</p>
-    pub fn tests(&self) -> ::std::option::Option<&[crate::types::TestCaseRun]> {
-        self.tests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tests.is_none()`.
+    pub fn tests(&self) -> &[crate::types::TestCaseRun] {
+        self.tests.as_deref().unwrap_or_default()
     }
 }
 impl GroupResult {

@@ -32,8 +32,8 @@ pub fn de_get_custom_verification_email_template_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::get_custom_verification_email_template::GetCustomVerificationEmailTemplateError::generic(generic)

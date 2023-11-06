@@ -5,25 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListHealthChecksOutput {
     /// <p>A complex type that contains one <code>HealthCheck</code> element for each health check that is associated with the current Amazon Web Services account.</p>
-    pub health_checks: ::std::option::Option<::std::vec::Vec<crate::types::HealthCheck>>,
+    pub health_checks: ::std::vec::Vec<crate::types::HealthCheck>,
     /// <p>For the second and subsequent calls to <code>ListHealthChecks</code>, <code>Marker</code> is the value that you specified for the <code>marker</code> parameter in the previous request.</p>
-    pub marker: ::std::option::Option<::std::string::String>,
+    pub marker: ::std::string::String,
     /// <p>A flag that indicates whether there are more health checks to be listed. If the response was truncated, you can get the next group of health checks by submitting another <code>ListHealthChecks</code> request and specifying the value of <code>NextMarker</code> in the <code>marker</code> parameter.</p>
     pub is_truncated: bool,
     /// <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the first health check that Amazon Route 53 returns if you submit another <code>ListHealthChecks</code> request and specify the value of <code>NextMarker</code> in the <code>marker</code> parameter.</p>
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>The value that you specified for the <code>maxitems</code> parameter in the call to <code>ListHealthChecks</code> that produced the current response.</p>
-    pub max_items: ::std::option::Option<i32>,
+    pub max_items: i32,
     _request_id: Option<String>,
 }
 impl ListHealthChecksOutput {
     /// <p>A complex type that contains one <code>HealthCheck</code> element for each health check that is associated with the current Amazon Web Services account.</p>
-    pub fn health_checks(&self) -> ::std::option::Option<&[crate::types::HealthCheck]> {
-        self.health_checks.as_deref()
+    pub fn health_checks(&self) -> &[crate::types::HealthCheck] {
+        use std::ops::Deref;
+        self.health_checks.deref()
     }
     /// <p>For the second and subsequent calls to <code>ListHealthChecks</code>, <code>Marker</code> is the value that you specified for the <code>marker</code> parameter in the previous request.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
-        self.marker.as_deref()
+    pub fn marker(&self) -> &str {
+        use std::ops::Deref;
+        self.marker.deref()
     }
     /// <p>A flag that indicates whether there are more health checks to be listed. If the response was truncated, you can get the next group of health checks by submitting another <code>ListHealthChecks</code> request and specifying the value of <code>NextMarker</code> in the <code>marker</code> parameter.</p>
     pub fn is_truncated(&self) -> bool {
@@ -34,7 +36,7 @@ impl ListHealthChecksOutput {
         self.next_marker.as_deref()
     }
     /// <p>The value that you specified for the <code>maxitems</code> parameter in the call to <code>ListHealthChecks</code> that produced the current response.</p>
-    pub fn max_items(&self) -> ::std::option::Option<i32> {
+    pub fn max_items(&self) -> i32 {
         self.max_items
     }
 }
@@ -83,6 +85,7 @@ impl ListHealthChecksOutputBuilder {
         &self.health_checks
     }
     /// <p>For the second and subsequent calls to <code>ListHealthChecks</code>, <code>Marker</code> is the value that you specified for the <code>marker</code> parameter in the previous request.</p>
+    /// This field is required.
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +100,7 @@ impl ListHealthChecksOutputBuilder {
         &self.marker
     }
     /// <p>A flag that indicates whether there are more health checks to be listed. If the response was truncated, you can get the next group of health checks by submitting another <code>ListHealthChecks</code> request and specifying the value of <code>NextMarker</code> in the <code>marker</code> parameter.</p>
+    /// This field is required.
     pub fn is_truncated(mut self, input: bool) -> Self {
         self.is_truncated = ::std::option::Option::Some(input);
         self
@@ -125,6 +129,7 @@ impl ListHealthChecksOutputBuilder {
         &self.next_marker
     }
     /// <p>The value that you specified for the <code>maxitems</code> parameter in the call to <code>ListHealthChecks</code> that produced the current response.</p>
+    /// This field is required.
     pub fn max_items(mut self, input: i32) -> Self {
         self.max_items = ::std::option::Option::Some(input);
         self
@@ -148,14 +153,35 @@ impl ListHealthChecksOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListHealthChecksOutput`](crate::operation::list_health_checks::ListHealthChecksOutput).
-    pub fn build(self) -> crate::operation::list_health_checks::ListHealthChecksOutput {
-        crate::operation::list_health_checks::ListHealthChecksOutput {
-            health_checks: self.health_checks,
-            marker: self.marker,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`health_checks`](crate::operation::list_health_checks::builders::ListHealthChecksOutputBuilder::health_checks)
+    /// - [`marker`](crate::operation::list_health_checks::builders::ListHealthChecksOutputBuilder::marker)
+    /// - [`max_items`](crate::operation::list_health_checks::builders::ListHealthChecksOutputBuilder::max_items)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_health_checks::ListHealthChecksOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_health_checks::ListHealthChecksOutput {
+            health_checks: self.health_checks.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "health_checks",
+                    "health_checks was not specified but it is required when building ListHealthChecksOutput",
+                )
+            })?,
+            marker: self.marker.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "marker",
+                    "marker was not specified but it is required when building ListHealthChecksOutput",
+                )
+            })?,
             is_truncated: self.is_truncated.unwrap_or_default(),
             next_marker: self.next_marker,
-            max_items: self.max_items,
+            max_items: self.max_items.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "max_items",
+                    "max_items was not specified but it is required when building ListHealthChecksOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

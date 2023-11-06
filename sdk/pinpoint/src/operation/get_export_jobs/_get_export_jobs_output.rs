@@ -34,6 +34,7 @@ pub struct GetExportJobsOutputBuilder {
 }
 impl GetExportJobsOutputBuilder {
     /// <p>Provides information about all the export jobs that are associated with an application or segment. An export job is a job that exports endpoint definitions to a file.</p>
+    /// This field is required.
     pub fn export_jobs_response(mut self, input: crate::types::ExportJobsResponse) -> Self {
         self.export_jobs_response = ::std::option::Option::Some(input);
         self

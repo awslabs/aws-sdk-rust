@@ -4,17 +4,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMediaAnalysisJobOutput {
     /// <p>The identifier for the media analysis job.</p>
-    pub job_id: ::std::option::Option<::std::string::String>,
+    pub job_id: ::std::string::String,
     /// <p>The name of the media analysis job.</p>
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>Operation configurations that were provided during job creation.</p>
     pub operations_config: ::std::option::Option<crate::types::MediaAnalysisOperationsConfig>,
     /// <p>The current status of the media analysis job.</p>
-    pub status: ::std::option::Option<crate::types::MediaAnalysisJobStatus>,
+    pub status: crate::types::MediaAnalysisJobStatus,
     /// <p>Details about the error that resulted in failure of the job.</p>
     pub failure_details: ::std::option::Option<crate::types::MediaAnalysisJobFailureDetails>,
     /// <p>The Unix date and time when the job was started.</p>
-    pub creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_timestamp: ::aws_smithy_types::DateTime,
     /// <p>The Unix date and time when the job finished.</p>
     pub completion_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Reference to the input manifest that was provided in the job creation request.</p>
@@ -31,8 +31,9 @@ pub struct GetMediaAnalysisJobOutput {
 }
 impl GetMediaAnalysisJobOutput {
     /// <p>The identifier for the media analysis job.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
-        self.job_id.as_deref()
+    pub fn job_id(&self) -> &str {
+        use std::ops::Deref;
+        self.job_id.deref()
     }
     /// <p>The name of the media analysis job.</p>
     pub fn job_name(&self) -> ::std::option::Option<&str> {
@@ -43,16 +44,16 @@ impl GetMediaAnalysisJobOutput {
         self.operations_config.as_ref()
     }
     /// <p>The current status of the media analysis job.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::MediaAnalysisJobStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::MediaAnalysisJobStatus {
+        &self.status
     }
     /// <p>Details about the error that resulted in failure of the job.</p>
     pub fn failure_details(&self) -> ::std::option::Option<&crate::types::MediaAnalysisJobFailureDetails> {
         self.failure_details.as_ref()
     }
     /// <p>The Unix date and time when the job was started.</p>
-    pub fn creation_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_timestamp.as_ref()
+    pub fn creation_timestamp(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_timestamp
     }
     /// <p>The Unix date and time when the job finished.</p>
     pub fn completion_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -111,6 +112,7 @@ pub struct GetMediaAnalysisJobOutputBuilder {
 }
 impl GetMediaAnalysisJobOutputBuilder {
     /// <p>The identifier for the media analysis job.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -139,6 +141,7 @@ impl GetMediaAnalysisJobOutputBuilder {
         &self.job_name
     }
     /// <p>Operation configurations that were provided during job creation.</p>
+    /// This field is required.
     pub fn operations_config(mut self, input: crate::types::MediaAnalysisOperationsConfig) -> Self {
         self.operations_config = ::std::option::Option::Some(input);
         self
@@ -153,6 +156,7 @@ impl GetMediaAnalysisJobOutputBuilder {
         &self.operations_config
     }
     /// <p>The current status of the media analysis job.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::MediaAnalysisJobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -181,6 +185,7 @@ impl GetMediaAnalysisJobOutputBuilder {
         &self.failure_details
     }
     /// <p>The Unix date and time when the job was started.</p>
+    /// This field is required.
     pub fn creation_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_timestamp = ::std::option::Option::Some(input);
         self
@@ -209,6 +214,7 @@ impl GetMediaAnalysisJobOutputBuilder {
         &self.completion_timestamp
     }
     /// <p>Reference to the input manifest that was provided in the job creation request.</p>
+    /// This field is required.
     pub fn input(mut self, input: crate::types::MediaAnalysisInput) -> Self {
         self.input = ::std::option::Option::Some(input);
         self
@@ -223,6 +229,7 @@ impl GetMediaAnalysisJobOutputBuilder {
         &self.input
     }
     /// <p>Output configuration that was provided in the creation request.</p>
+    /// This field is required.
     pub fn output_config(mut self, input: crate::types::MediaAnalysisOutputConfig) -> Self {
         self.output_config = ::std::option::Option::Some(input);
         self
@@ -288,14 +295,36 @@ impl GetMediaAnalysisJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetMediaAnalysisJobOutput`](crate::operation::get_media_analysis_job::GetMediaAnalysisJobOutput).
-    pub fn build(self) -> crate::operation::get_media_analysis_job::GetMediaAnalysisJobOutput {
-        crate::operation::get_media_analysis_job::GetMediaAnalysisJobOutput {
-            job_id: self.job_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`job_id`](crate::operation::get_media_analysis_job::builders::GetMediaAnalysisJobOutputBuilder::job_id)
+    /// - [`status`](crate::operation::get_media_analysis_job::builders::GetMediaAnalysisJobOutputBuilder::status)
+    /// - [`creation_timestamp`](crate::operation::get_media_analysis_job::builders::GetMediaAnalysisJobOutputBuilder::creation_timestamp)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_media_analysis_job::GetMediaAnalysisJobOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_media_analysis_job::GetMediaAnalysisJobOutput {
+            job_id: self.job_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "job_id",
+                    "job_id was not specified but it is required when building GetMediaAnalysisJobOutput",
+                )
+            })?,
             job_name: self.job_name,
             operations_config: self.operations_config,
-            status: self.status,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building GetMediaAnalysisJobOutput",
+                )
+            })?,
             failure_details: self.failure_details,
-            creation_timestamp: self.creation_timestamp,
+            creation_timestamp: self.creation_timestamp.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "creation_timestamp",
+                    "creation_timestamp was not specified but it is required when building GetMediaAnalysisJobOutput",
+                )
+            })?,
             completion_timestamp: self.completion_timestamp,
             input: self.input,
             output_config: self.output_config,
@@ -303,6 +332,6 @@ impl GetMediaAnalysisJobOutputBuilder {
             results: self.results,
             manifest_summary: self.manifest_summary,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -48,6 +48,7 @@ pub struct UpdateConfiguredTableAssociationInputBuilder {
 }
 impl UpdateConfiguredTableAssociationInputBuilder {
     /// <p>The unique identifier for the configured table association to update. Currently accepts the configured table association ID.</p>
+    /// This field is required.
     pub fn configured_table_association_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configured_table_association_identifier = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl UpdateConfiguredTableAssociationInputBuilder {
         &self.configured_table_association_identifier
     }
     /// <p>The unique ID for the membership that the configured table association belongs to.</p>
+    /// This field is required.
     pub fn membership_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.membership_identifier = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +110,7 @@ impl UpdateConfiguredTableAssociationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_configured_table_association::UpdateConfiguredTableAssociationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_configured_table_association::UpdateConfiguredTableAssociationInput {

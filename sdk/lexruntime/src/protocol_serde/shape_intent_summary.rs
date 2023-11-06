@@ -2,7 +2,7 @@
 pub fn ser_intent_summary(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IntentSummary,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.intent_name {
         object.key("intentName").string(var_1.as_str());
     }
@@ -22,14 +22,14 @@ pub fn ser_intent_summary(
     if let Some(var_7) = &input.confirmation_status {
         object.key("confirmationStatus").string(var_7.as_str());
     }
-    if let Some(var_8) = &input.dialog_action_type {
-        object.key("dialogActionType").string(var_8.as_str());
+    {
+        object.key("dialogActionType").string(input.dialog_action_type.as_str());
     }
-    if let Some(var_9) = &input.fulfillment_state {
-        object.key("fulfillmentState").string(var_9.as_str());
+    if let Some(var_8) = &input.fulfillment_state {
+        object.key("fulfillmentState").string(var_8.as_str());
     }
-    if let Some(var_10) = &input.slot_to_elicit {
-        object.key("slotToElicit").string(var_10.as_str());
+    if let Some(var_9) = &input.slot_to_elicit {
+        object.key("slotToElicit").string(var_9.as_str());
     }
     Ok(())
 }
@@ -104,7 +104,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::intent_summary_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -2,7 +2,7 @@
 pub fn ser_describe_opt_out_lists_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_opt_out_lists::DescribeOptOutListsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.opt_out_list_names {
         let mut array_2 = object.key("OptOutListNames").start_array();
         for item_3 in var_1 {

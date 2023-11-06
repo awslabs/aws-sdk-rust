@@ -48,6 +48,7 @@ pub struct ListSchemasInputBuilder {
 }
 impl ListSchemasInputBuilder {
     /// <p>A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.</p>
+    /// This field is required.
     pub fn collaboration_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collaboration_identifier = ::std::option::Option::Some(input.into());
         self
@@ -104,7 +105,7 @@ impl ListSchemasInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListSchemasInput`](crate::operation::list_schemas::ListSchemasInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_schemas::ListSchemasInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_schemas::ListSchemasInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_schemas::ListSchemasInput {
             collaboration_identifier: self.collaboration_identifier,
             schema_type: self.schema_type,

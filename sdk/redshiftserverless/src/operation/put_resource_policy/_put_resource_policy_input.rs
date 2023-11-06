@@ -36,6 +36,7 @@ pub struct PutResourcePolicyInputBuilder {
 }
 impl PutResourcePolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the account to create or update a resource policy for.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -51,6 +52,7 @@ impl PutResourcePolicyInputBuilder {
     }
     /// <p>The policy to create or update. For example, the following policy grants a user authorization to restore a snapshot.</p>
     /// <p> <code>"{\"Version\": \"2012-10-17\", \"Statement\" : [{ \"Sid\": \"AllowUserRestoreFromSnapshot\", \"Principal\":{\"AWS\": [\"739247239426\"]}, \"Action\": [\"redshift-serverless:RestoreFromSnapshot\"] , \"Effect\": \"Allow\" }]}"</code> </p>
+    /// This field is required.
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
         self
@@ -69,7 +71,7 @@ impl PutResourcePolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutResourcePolicyInput`](crate::operation::put_resource_policy::PutResourcePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_resource_policy::PutResourcePolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_resource_policy::PutResourcePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_resource_policy::PutResourcePolicyInput {
             resource_arn: self.resource_arn,
             policy: self.policy,

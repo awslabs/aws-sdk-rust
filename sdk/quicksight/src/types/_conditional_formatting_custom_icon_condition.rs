@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ConditionalFormattingCustomIconCondition {
     /// <p>The expression that determines the condition of the icon set.</p>
-    pub expression: ::std::option::Option<::std::string::String>,
+    pub expression: ::std::string::String,
     /// <p>Custom icon options for an icon set.</p>
     pub icon_options: ::std::option::Option<crate::types::ConditionalFormattingCustomIconOptions>,
     /// <p>Determines the color of the icon.</p>
@@ -15,8 +15,9 @@ pub struct ConditionalFormattingCustomIconCondition {
 }
 impl ConditionalFormattingCustomIconCondition {
     /// <p>The expression that determines the condition of the icon set.</p>
-    pub fn expression(&self) -> ::std::option::Option<&str> {
-        self.expression.as_deref()
+    pub fn expression(&self) -> &str {
+        use std::ops::Deref;
+        self.expression.deref()
     }
     /// <p>Custom icon options for an icon set.</p>
     pub fn icon_options(&self) -> ::std::option::Option<&crate::types::ConditionalFormattingCustomIconOptions> {
@@ -59,6 +60,7 @@ pub struct ConditionalFormattingCustomIconConditionBuilder {
 }
 impl ConditionalFormattingCustomIconConditionBuilder {
     /// <p>The expression that determines the condition of the icon set.</p>
+    /// This field is required.
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expression = ::std::option::Option::Some(input.into());
         self
@@ -73,6 +75,7 @@ impl ConditionalFormattingCustomIconConditionBuilder {
         &self.expression
     }
     /// <p>Custom icon options for an icon set.</p>
+    /// This field is required.
     pub fn icon_options(mut self, input: crate::types::ConditionalFormattingCustomIconOptions) -> Self {
         self.icon_options = ::std::option::Option::Some(input);
         self
@@ -115,13 +118,22 @@ impl ConditionalFormattingCustomIconConditionBuilder {
         &self.display_configuration
     }
     /// Consumes the builder and constructs a [`ConditionalFormattingCustomIconCondition`](crate::types::ConditionalFormattingCustomIconCondition).
-    pub fn build(self) -> crate::types::ConditionalFormattingCustomIconCondition {
-        crate::types::ConditionalFormattingCustomIconCondition {
-            expression: self.expression,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`expression`](crate::types::builders::ConditionalFormattingCustomIconConditionBuilder::expression)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::ConditionalFormattingCustomIconCondition, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ConditionalFormattingCustomIconCondition {
+            expression: self.expression.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "expression",
+                    "expression was not specified but it is required when building ConditionalFormattingCustomIconCondition",
+                )
+            })?,
             icon_options: self.icon_options,
             color: self.color,
             display_configuration: self.display_configuration,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for ConditionalFormattingCustomIconConditionBuilder {

@@ -62,6 +62,7 @@ pub struct ListDataSourceSyncJobsInputBuilder {
 }
 impl ListDataSourceSyncJobsInputBuilder {
     /// <p>The identifier of the data source connector.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl ListDataSourceSyncJobsInputBuilder {
         &self.id
     }
     /// <p>The identifier of the index used with the data source connector.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self
@@ -150,7 +152,7 @@ impl ListDataSourceSyncJobsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsInput {
             id: self.id,

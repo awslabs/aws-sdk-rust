@@ -7,9 +7,9 @@ pub struct CreateDeploymentOutput {
     /// <p> The job ID for this deployment. will supply to start deployment api. </p>
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p> When the <code>fileMap</code> argument is provided in the request, <code>fileUploadUrls</code> will contain a map of file names to upload URLs. </p>
-    pub file_upload_urls: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub file_upload_urls: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     /// <p> When the <code>fileMap</code> argument is not provided in the request, this <code>zipUploadUrl</code> is returned. </p>
-    pub zip_upload_url: ::std::option::Option<::std::string::String>,
+    pub zip_upload_url: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateDeploymentOutput {
@@ -18,12 +18,13 @@ impl CreateDeploymentOutput {
         self.job_id.as_deref()
     }
     /// <p> When the <code>fileMap</code> argument is provided in the request, <code>fileUploadUrls</code> will contain a map of file names to upload URLs. </p>
-    pub fn file_upload_urls(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
-        self.file_upload_urls.as_ref()
+    pub fn file_upload_urls(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+        &self.file_upload_urls
     }
     /// <p> When the <code>fileMap</code> argument is not provided in the request, this <code>zipUploadUrl</code> is returned. </p>
-    pub fn zip_upload_url(&self) -> ::std::option::Option<&str> {
-        self.zip_upload_url.as_deref()
+    pub fn zip_upload_url(&self) -> &str {
+        use std::ops::Deref;
+        self.zip_upload_url.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateDeploymentOutput {
@@ -90,6 +91,7 @@ impl CreateDeploymentOutputBuilder {
         &self.file_upload_urls
     }
     /// <p> When the <code>fileMap</code> argument is not provided in the request, this <code>zipUploadUrl</code> is returned. </p>
+    /// This field is required.
     pub fn zip_upload_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.zip_upload_url = ::std::option::Option::Some(input.into());
         self
@@ -113,12 +115,27 @@ impl CreateDeploymentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateDeploymentOutput`](crate::operation::create_deployment::CreateDeploymentOutput).
-    pub fn build(self) -> crate::operation::create_deployment::CreateDeploymentOutput {
-        crate::operation::create_deployment::CreateDeploymentOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`file_upload_urls`](crate::operation::create_deployment::builders::CreateDeploymentOutputBuilder::file_upload_urls)
+    /// - [`zip_upload_url`](crate::operation::create_deployment::builders::CreateDeploymentOutputBuilder::zip_upload_url)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_deployment::CreateDeploymentOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_deployment::CreateDeploymentOutput {
             job_id: self.job_id,
-            file_upload_urls: self.file_upload_urls,
-            zip_upload_url: self.zip_upload_url,
+            file_upload_urls: self.file_upload_urls.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "file_upload_urls",
+                    "file_upload_urls was not specified but it is required when building CreateDeploymentOutput",
+                )
+            })?,
+            zip_upload_url: self.zip_upload_url.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "zip_upload_url",
+                    "zip_upload_url was not specified but it is required when building CreateDeploymentOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

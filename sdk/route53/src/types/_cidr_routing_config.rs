@@ -6,18 +6,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CidrRoutingConfig {
     /// <p>The CIDR collection ID.</p>
-    pub collection_id: ::std::option::Option<::std::string::String>,
+    pub collection_id: ::std::string::String,
     /// <p>The CIDR collection location name.</p>
-    pub location_name: ::std::option::Option<::std::string::String>,
+    pub location_name: ::std::string::String,
 }
 impl CidrRoutingConfig {
     /// <p>The CIDR collection ID.</p>
-    pub fn collection_id(&self) -> ::std::option::Option<&str> {
-        self.collection_id.as_deref()
+    pub fn collection_id(&self) -> &str {
+        use std::ops::Deref;
+        self.collection_id.deref()
     }
     /// <p>The CIDR collection location name.</p>
-    pub fn location_name(&self) -> ::std::option::Option<&str> {
-        self.location_name.as_deref()
+    pub fn location_name(&self) -> &str {
+        use std::ops::Deref;
+        self.location_name.deref()
     }
 }
 impl CidrRoutingConfig {
@@ -36,6 +38,7 @@ pub struct CidrRoutingConfigBuilder {
 }
 impl CidrRoutingConfigBuilder {
     /// <p>The CIDR collection ID.</p>
+    /// This field is required.
     pub fn collection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_id = ::std::option::Option::Some(input.into());
         self
@@ -50,6 +53,7 @@ impl CidrRoutingConfigBuilder {
         &self.collection_id
     }
     /// <p>The CIDR collection location name.</p>
+    /// This field is required.
     pub fn location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_name = ::std::option::Option::Some(input.into());
         self
@@ -64,10 +68,23 @@ impl CidrRoutingConfigBuilder {
         &self.location_name
     }
     /// Consumes the builder and constructs a [`CidrRoutingConfig`](crate::types::CidrRoutingConfig).
-    pub fn build(self) -> crate::types::CidrRoutingConfig {
-        crate::types::CidrRoutingConfig {
-            collection_id: self.collection_id,
-            location_name: self.location_name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`collection_id`](crate::types::builders::CidrRoutingConfigBuilder::collection_id)
+    /// - [`location_name`](crate::types::builders::CidrRoutingConfigBuilder::location_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::CidrRoutingConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CidrRoutingConfig {
+            collection_id: self.collection_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "collection_id",
+                    "collection_id was not specified but it is required when building CidrRoutingConfig",
+                )
+            })?,
+            location_name: self.location_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "location_name",
+                    "location_name was not specified but it is required when building CidrRoutingConfig",
+                )
+            })?,
+        })
     }
 }

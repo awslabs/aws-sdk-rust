@@ -43,6 +43,7 @@ pub struct UpdateApplicationInputBuilder {
 }
 impl UpdateApplicationInputBuilder {
     /// <p> The name, ID, or ARN of the application that will be updated. </p>
+    /// This field is required.
     pub fn application(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application = ::std::option::Option::Some(input.into());
         self
@@ -90,7 +91,7 @@ impl UpdateApplicationInputBuilder {
     /// Consumes the builder and constructs a [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_application::UpdateApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_application::UpdateApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_application::UpdateApplicationInput {
             application: self.application,
             name: self.name,

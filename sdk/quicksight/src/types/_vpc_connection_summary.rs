@@ -47,12 +47,16 @@ impl VpcConnectionSummary {
         self.vpc_id.as_deref()
     }
     /// <p>The Amazon EC2 security group IDs associated with the VPC connection.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>A list of IP addresses of DNS resolver endpoints for the VPC connection.</p>
-    pub fn dns_resolvers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.dns_resolvers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dns_resolvers.is_none()`.
+    pub fn dns_resolvers(&self) -> &[::std::string::String] {
+        self.dns_resolvers.as_deref().unwrap_or_default()
     }
     /// <p>The status of the VPC connection.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::VpcConnectionResourceStatus> {
@@ -63,8 +67,10 @@ impl VpcConnectionSummary {
         self.availability_status.as_ref()
     }
     /// <p>A list of network interfaces.</p>
-    pub fn network_interfaces(&self) -> ::std::option::Option<&[crate::types::NetworkInterface]> {
-        self.network_interfaces.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_interfaces.is_none()`.
+    pub fn network_interfaces(&self) -> &[crate::types::NetworkInterface] {
+        self.network_interfaces.as_deref().unwrap_or_default()
     }
     /// <p>The ARN of the IAM role associated with the VPC connection.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {

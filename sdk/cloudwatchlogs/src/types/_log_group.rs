@@ -59,8 +59,10 @@ impl LogGroup {
         self.data_protection_status.as_ref()
     }
     /// <p>Displays all the properties that this log group has inherited from account-level settings.</p>
-    pub fn inherited_properties(&self) -> ::std::option::Option<&[crate::types::InheritedProperty]> {
-        self.inherited_properties.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inherited_properties.is_none()`.
+    pub fn inherited_properties(&self) -> &[crate::types::InheritedProperty] {
+        self.inherited_properties.as_deref().unwrap_or_default()
     }
 }
 impl LogGroup {

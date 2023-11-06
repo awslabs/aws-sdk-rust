@@ -2,21 +2,21 @@
 pub fn ser_parameter_slider_control(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ParameterSliderControl,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.parameter_control_id {
-        object.key("ParameterControlId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("ParameterControlId").string(input.parameter_control_id.as_str());
     }
-    if let Some(var_2) = &input.title {
-        object.key("Title").string(var_2.as_str());
+    {
+        object.key("Title").string(input.title.as_str());
     }
-    if let Some(var_3) = &input.source_parameter_name {
-        object.key("SourceParameterName").string(var_3.as_str());
+    {
+        object.key("SourceParameterName").string(input.source_parameter_name.as_str());
     }
-    if let Some(var_4) = &input.display_options {
+    if let Some(var_1) = &input.display_options {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("DisplayOptions").start_object();
-        crate::protocol_serde::shape_slider_control_display_options::ser_slider_control_display_options(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_2 = object.key("DisplayOptions").start_object();
+        crate::protocol_serde::shape_slider_control_display_options::ser_slider_control_display_options(&mut object_2, var_1)?;
+        object_2.finish();
     }
     {
         object.key("MaximumValue").number(
@@ -105,7 +105,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::parameter_slider_control_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

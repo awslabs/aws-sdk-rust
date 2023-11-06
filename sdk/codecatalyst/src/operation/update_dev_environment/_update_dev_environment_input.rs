@@ -20,7 +20,7 @@ pub struct UpdateDevEnvironmentInput {
     /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Only whole integers are allowed. Dev Environments consume compute minutes when running.</p> <note>
     /// <p>Changing this value will cause a restart of the Dev Environment if it is running.</p>
     /// </note>
-    pub inactivity_timeout_minutes: i32,
+    pub inactivity_timeout_minutes: ::std::option::Option<i32>,
     /// <p>A user-specified idempotency token. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries return the result from the original successful request and have no additional effect.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
@@ -42,8 +42,10 @@ impl UpdateDevEnvironmentInput {
         self.alias.as_deref()
     }
     /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p>
-    pub fn ides(&self) -> ::std::option::Option<&[crate::types::IdeConfiguration]> {
-        self.ides.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ides.is_none()`.
+    pub fn ides(&self) -> &[crate::types::IdeConfiguration] {
+        self.ides.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p> <note>
     /// <p>Changing this value will cause a restart of the Dev Environment if it is running.</p>
@@ -54,7 +56,7 @@ impl UpdateDevEnvironmentInput {
     /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Only whole integers are allowed. Dev Environments consume compute minutes when running.</p> <note>
     /// <p>Changing this value will cause a restart of the Dev Environment if it is running.</p>
     /// </note>
-    pub fn inactivity_timeout_minutes(&self) -> i32 {
+    pub fn inactivity_timeout_minutes(&self) -> ::std::option::Option<i32> {
         self.inactivity_timeout_minutes
     }
     /// <p>A user-specified idempotency token. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries return the result from the original successful request and have no additional effect.</p>
@@ -84,6 +86,7 @@ pub struct UpdateDevEnvironmentInputBuilder {
 }
 impl UpdateDevEnvironmentInputBuilder {
     /// <p>The name of the space.</p>
+    /// This field is required.
     pub fn space_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.space_name = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +101,7 @@ impl UpdateDevEnvironmentInputBuilder {
         &self.space_name
     }
     /// <p>The name of the project in the space.</p>
+    /// This field is required.
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +116,7 @@ impl UpdateDevEnvironmentInputBuilder {
         &self.project_name
     }
     /// <p>The system-generated unique ID of the Dev Environment. </p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -216,7 +221,7 @@ impl UpdateDevEnvironmentInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDevEnvironmentInput`](crate::operation::update_dev_environment::UpdateDevEnvironmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_dev_environment::UpdateDevEnvironmentInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_dev_environment::UpdateDevEnvironmentInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_dev_environment::UpdateDevEnvironmentInput {
             space_name: self.space_name,
@@ -225,7 +230,7 @@ impl UpdateDevEnvironmentInputBuilder {
             alias: self.alias,
             ides: self.ides,
             instance_type: self.instance_type,
-            inactivity_timeout_minutes: self.inactivity_timeout_minutes.unwrap_or_default(),
+            inactivity_timeout_minutes: self.inactivity_timeout_minutes,
             client_token: self.client_token,
         })
     }

@@ -2,15 +2,15 @@
 pub fn ser_ssl_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SslConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.certificate {
-        object.key("Certificate").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Certificate").string(input.certificate.as_str());
     }
-    if let Some(var_2) = &input.private_key {
-        object.key("PrivateKey").string(var_2.as_str());
+    {
+        object.key("PrivateKey").string(input.private_key.as_str());
     }
-    if let Some(var_3) = &input.chain {
-        object.key("Chain").string(var_3.as_str());
+    if let Some(var_1) = &input.chain {
+        object.key("Chain").string(var_1.as_str());
     }
     Ok(())
 }
@@ -61,7 +61,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::ssl_configuration_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

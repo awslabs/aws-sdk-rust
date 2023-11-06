@@ -41,6 +41,7 @@ pub struct ListAssetContractsInputBuilder {
 }
 impl ListAssetContractsInputBuilder {
     /// <p>Contains the filter parameter for the request.</p>
+    /// This field is required.
     pub fn contract_filter(mut self, input: crate::types::ContractFilter) -> Self {
         self.contract_filter = ::std::option::Option::Some(input);
         self
@@ -85,7 +86,8 @@ impl ListAssetContractsInputBuilder {
     /// Consumes the builder and constructs a [`ListAssetContractsInput`](crate::operation::list_asset_contracts::ListAssetContractsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_asset_contracts::ListAssetContractsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_asset_contracts::ListAssetContractsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_asset_contracts::ListAssetContractsInput {
             contract_filter: self.contract_filter,
             next_token: self.next_token,

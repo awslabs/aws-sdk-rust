@@ -43,6 +43,7 @@ pub struct CreateTypeInputBuilder {
 }
 impl CreateTypeInputBuilder {
     /// <p>The API ID.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -58,6 +59,7 @@ impl CreateTypeInputBuilder {
     }
     /// <p>The type definition, in GraphQL Schema Definition Language (SDL) format.</p>
     /// <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL documentation</a>.</p>
+    /// This field is required.
     pub fn definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.definition = ::std::option::Option::Some(input.into());
         self
@@ -74,6 +76,7 @@ impl CreateTypeInputBuilder {
         &self.definition
     }
     /// <p>The type format: SDL or JSON.</p>
+    /// This field is required.
     pub fn format(mut self, input: crate::types::TypeDefinitionFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
         self
@@ -88,7 +91,7 @@ impl CreateTypeInputBuilder {
         &self.format
     }
     /// Consumes the builder and constructs a [`CreateTypeInput`](crate::operation::create_type::CreateTypeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_type::CreateTypeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_type::CreateTypeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_type::CreateTypeInput {
             api_id: self.api_id,
             definition: self.definition,

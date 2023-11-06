@@ -15,8 +15,10 @@ impl HistoricalMetricResult {
         self.dimensions.as_ref()
     }
     /// <p>The set of metrics.</p>
-    pub fn collections(&self) -> ::std::option::Option<&[crate::types::HistoricalMetricData]> {
-        self.collections.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.collections.is_none()`.
+    pub fn collections(&self) -> &[crate::types::HistoricalMetricData] {
+        self.collections.as_deref().unwrap_or_default()
     }
 }
 impl HistoricalMetricResult {

@@ -35,6 +35,7 @@ pub struct DeleteNetworkInsightsAccessScopeAnalysisInputBuilder {
 }
 impl DeleteNetworkInsightsAccessScopeAnalysisInputBuilder {
     /// <p>The ID of the Network Access Scope analysis.</p>
+    /// This field is required.
     pub fn network_insights_access_scope_analysis_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_insights_access_scope_analysis_id = ::std::option::Option::Some(input.into());
         self
@@ -67,7 +68,7 @@ impl DeleteNetworkInsightsAccessScopeAnalysisInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_network_insights_access_scope_analysis::DeleteNetworkInsightsAccessScopeAnalysisInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_network_insights_access_scope_analysis::DeleteNetworkInsightsAccessScopeAnalysisInput {

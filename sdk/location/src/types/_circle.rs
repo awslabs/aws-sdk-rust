@@ -5,17 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Circle {
     /// <p>A single point geometry, specifying the center of the circle, using <a href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a> coordinates, in the form <code>[longitude, latitude]</code>.</p>
-    pub center: ::std::option::Option<::std::vec::Vec<f64>>,
+    pub center: ::std::vec::Vec<f64>,
     /// <p>The radius of the circle in meters. Must be greater than zero and no larger than 100,000 (100 kilometers).</p>
-    pub radius: ::std::option::Option<f64>,
+    pub radius: f64,
 }
 impl Circle {
     /// <p>A single point geometry, specifying the center of the circle, using <a href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a> coordinates, in the form <code>[longitude, latitude]</code>.</p>
-    pub fn center(&self) -> ::std::option::Option<&[f64]> {
-        self.center.as_deref()
+    pub fn center(&self) -> &[f64] {
+        use std::ops::Deref;
+        self.center.deref()
     }
     /// <p>The radius of the circle in meters. Must be greater than zero and no larger than 100,000 (100 kilometers).</p>
-    pub fn radius(&self) -> ::std::option::Option<f64> {
+    pub fn radius(&self) -> f64 {
         self.radius
     }
 }
@@ -63,6 +64,7 @@ impl CircleBuilder {
         &self.center
     }
     /// <p>The radius of the circle in meters. Must be greater than zero and no larger than 100,000 (100 kilometers).</p>
+    /// This field is required.
     pub fn radius(mut self, input: f64) -> Self {
         self.radius = ::std::option::Option::Some(input);
         self
@@ -77,11 +79,24 @@ impl CircleBuilder {
         &self.radius
     }
     /// Consumes the builder and constructs a [`Circle`](crate::types::Circle).
-    pub fn build(self) -> crate::types::Circle {
-        crate::types::Circle {
-            center: self.center,
-            radius: self.radius,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`center`](crate::types::builders::CircleBuilder::center)
+    /// - [`radius`](crate::types::builders::CircleBuilder::radius)
+    pub fn build(self) -> ::std::result::Result<crate::types::Circle, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Circle {
+            center: self.center.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "center",
+                    "center was not specified but it is required when building Circle",
+                )
+            })?,
+            radius: self.radius.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "radius",
+                    "radius was not specified but it is required when building Circle",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for CircleBuilder {

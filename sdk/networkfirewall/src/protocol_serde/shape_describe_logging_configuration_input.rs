@@ -2,7 +2,7 @@
 pub fn ser_describe_logging_configuration_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_logging_configuration::DescribeLoggingConfigurationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.firewall_arn {
         object.key("FirewallArn").string(var_1.as_str());
     }

@@ -27,6 +27,7 @@ pub struct GetFleetInputBuilder {
 }
 impl GetFleetInputBuilder {
     /// <p> The ID of the fleet to retrieve information about. </p>
+    /// This field is required.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetFleetInputBuilder {
         &self.fleet_id
     }
     /// Consumes the builder and constructs a [`GetFleetInput`](crate::operation::get_fleet::GetFleetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_fleet::GetFleetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_fleet::GetFleetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_fleet::GetFleetInput { fleet_id: self.fleet_id })
     }
 }

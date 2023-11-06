@@ -2,7 +2,7 @@
 pub fn ser_dialer_config(
     object_3: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DialerConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::DialerConfig::ProgressiveDialerConfig(inner) => {
             #[allow(unused_mut)]
@@ -22,7 +22,7 @@ pub fn ser_dialer_config(
             crate::protocol_serde::shape_agentless_dialer_config::ser_agentless_dialer_config(&mut object_3, inner)?;
             object_3.finish();
         }
-        crate::types::DialerConfig::Unknown => return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("DialerConfig")),
+        crate::types::DialerConfig::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("DialerConfig")),
     }
     Ok(())
 }
@@ -40,12 +40,17 @@ where
             match tokens.next().transpose()? {
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                    let key = key.to_unescaped()?;
+                    if key == "__type" {
+                        ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                        continue;
+                    }
                     if variant.is_some() {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
                             "encountered mixed variants in union",
                         ));
                     }
-                    variant = match key.to_unescaped()?.as_ref() {
+                    variant = match key.as_ref() {
                         "progressiveDialerConfig" => Some(crate::types::DialerConfig::ProgressiveDialerConfig(
                             crate::protocol_serde::shape_progressive_dialer_config::de_progressive_dialer_config(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'progressiveDialerConfig' cannot be null")

@@ -2,7 +2,7 @@
 pub fn ser_sidewalk_send_data_to_device(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SidewalkSendDataToDevice,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.seq {
         object.key("Seq").number(
             #[allow(clippy::useless_conversion)]

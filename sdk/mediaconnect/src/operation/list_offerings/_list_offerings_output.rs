@@ -15,8 +15,10 @@ impl ListOfferingsOutput {
         self.next_token.as_deref()
     }
     /// A list of offerings that are available to this account in the current AWS Region.
-    pub fn offerings(&self) -> ::std::option::Option<&[crate::types::Offering]> {
-        self.offerings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.offerings.is_none()`.
+    pub fn offerings(&self) -> &[crate::types::Offering] {
+        self.offerings.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListOfferingsOutput {

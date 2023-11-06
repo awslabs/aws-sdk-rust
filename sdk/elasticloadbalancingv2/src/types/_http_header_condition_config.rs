@@ -22,8 +22,10 @@ impl HttpHeaderConditionConfig {
     /// <p>The strings to compare against the value of the HTTP header. The maximum size of each string is 128 characters. The comparison strings are case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
     /// <p>If the same header appears multiple times in the request, we search them in order until a match is found.</p>
     /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches the value of the HTTP header. To require that all of the strings are a match, create one condition per string.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
+    pub fn values(&self) -> &[::std::string::String] {
+        self.values.as_deref().unwrap_or_default()
     }
 }
 impl HttpHeaderConditionConfig {

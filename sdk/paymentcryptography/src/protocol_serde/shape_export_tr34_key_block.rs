@@ -2,21 +2,23 @@
 pub fn ser_export_tr34_key_block(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ExportTr34KeyBlock,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.certificate_authority_public_key_identifier {
-        object.key("CertificateAuthorityPublicKeyIdentifier").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object
+            .key("CertificateAuthorityPublicKeyIdentifier")
+            .string(input.certificate_authority_public_key_identifier.as_str());
     }
-    if let Some(var_2) = &input.wrapping_key_certificate {
-        object.key("WrappingKeyCertificate").string(var_2.as_str());
+    {
+        object.key("WrappingKeyCertificate").string(input.wrapping_key_certificate.as_str());
     }
-    if let Some(var_3) = &input.export_token {
-        object.key("ExportToken").string(var_3.as_str());
+    {
+        object.key("ExportToken").string(input.export_token.as_str());
     }
-    if let Some(var_4) = &input.key_block_format {
-        object.key("KeyBlockFormat").string(var_4.as_str());
+    {
+        object.key("KeyBlockFormat").string(input.key_block_format.as_str());
     }
-    if let Some(var_5) = &input.random_nonce {
-        object.key("RandomNonce").string(var_5.as_str());
+    if let Some(var_1) = &input.random_nonce {
+        object.key("RandomNonce").string(var_1.as_str());
     }
     Ok(())
 }

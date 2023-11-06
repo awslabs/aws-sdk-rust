@@ -56,6 +56,7 @@ pub struct ListedBridgeBuilder {
 }
 impl ListedBridgeBuilder {
     /// The ARN of the bridge.
+    /// This field is required.
     pub fn bridge_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bridge_arn = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +71,7 @@ impl ListedBridgeBuilder {
         &self.bridge_arn
     }
     #[allow(missing_docs)] // documentation missing in model
+    /// This field is required.
     pub fn bridge_state(mut self, input: crate::types::BridgeState) -> Self {
         self.bridge_state = ::std::option::Option::Some(input);
         self
@@ -84,6 +86,7 @@ impl ListedBridgeBuilder {
         &self.bridge_state
     }
     /// The type of the bridge.
+    /// This field is required.
     pub fn bridge_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bridge_type = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +101,7 @@ impl ListedBridgeBuilder {
         &self.bridge_type
     }
     /// The name of the bridge.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +116,7 @@ impl ListedBridgeBuilder {
         &self.name
     }
     /// The ARN of the gateway associated with the bridge.
+    /// This field is required.
     pub fn placement_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.placement_arn = ::std::option::Option::Some(input.into());
         self

@@ -2,9 +2,9 @@
 pub fn ser_export_read_set(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ExportReadSet,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.read_set_id {
-        object.key("readSetId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("readSetId").string(input.read_set_id.as_str());
     }
     Ok(())
 }

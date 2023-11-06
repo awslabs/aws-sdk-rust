@@ -815,14 +815,18 @@ impl CreateDbInstanceInput {
     }
     /// <p>A list of DB security groups to associate with this DB instance.</p>
     /// <p>This setting applies to the legacy EC2-Classic platform, which is no longer used to create new DB instances. Use the <code>VpcSecurityGroupIds</code> setting instead.</p>
-    pub fn db_security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.db_security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_security_groups.is_none()`.
+    pub fn db_security_groups(&self) -> &[::std::string::String] {
+        self.db_security_groups.as_deref().unwrap_or_default()
     }
     /// <p>A list of Amazon EC2 VPC security groups to associate with this DB instance.</p>
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. The associated list of EC2 VPC security groups is managed by the DB cluster.</p>
     /// <p>Default: The default EC2 VPC security group for the DB subnet group's VPC.</p>
-    pub fn vpc_security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.vpc_security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_group_ids.is_none()`.
+    pub fn vpc_security_group_ids(&self) -> &[::std::string::String] {
+        self.vpc_security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>The Availability Zone (AZ) where the database will be created. For information on Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions and Availability Zones</a>.</p>
     /// <p>For Amazon Aurora, each Aurora DB cluster hosts copies of its storage in three separate Availability Zones. Specify one of these Availability Zones. Aurora automatically chooses an appropriate Availability Zone if you don't specify one.</p>
@@ -1038,8 +1042,10 @@ impl CreateDbInstanceInput {
         self.publicly_accessible
     }
     /// <p>Tags to assign to the DB instance.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The identifier of the DB cluster that this DB instance will belong to.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
@@ -1118,8 +1124,10 @@ impl CreateDbInstanceInput {
     /// <li> <p>Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the primary domain controller for both entries in the list.</p> </li>
     /// </ul>
     /// <p>Example: <code>123.124.125.126,234.235.236.237</code> </p>
-    pub fn domain_dns_ips(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.domain_dns_ips.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domain_dns_ips.is_none()`.
+    pub fn domain_dns_ips(&self) -> &[::std::string::String] {
+        self.domain_dns_ips.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether to copy tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. Copying tags to snapshots is managed by the DB cluster. Setting this value for an Aurora DB instance has no effect on the DB cluster setting.</p>
@@ -1209,13 +1217,17 @@ impl CreateDbInstanceInput {
     /// <li> <p>RDS for Oracle - <code>alert | audit | listener | trace | oemagent</code> </p> </li>
     /// <li> <p>RDS for PostgreSQL - <code>postgresql | upgrade</code> </p> </li>
     /// </ul>
-    pub fn enable_cloudwatch_logs_exports(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.enable_cloudwatch_logs_exports.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enable_cloudwatch_logs_exports.is_none()`.
+    pub fn enable_cloudwatch_logs_exports(&self) -> &[::std::string::String] {
+        self.enable_cloudwatch_logs_exports.as_deref().unwrap_or_default()
     }
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
     /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
-    pub fn processor_features(&self) -> ::std::option::Option<&[crate::types::ProcessorFeature]> {
-        self.processor_features.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.processor_features.is_none()`.
+    pub fn processor_features(&self) -> &[crate::types::ProcessorFeature] {
+        self.processor_features.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether the DB instance has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB Instance</a>.</p>
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. You can enable or disable deletion protection for the DB cluster. For more information, see <code>CreateDBCluster</code>. DB instances in a DB cluster can be deleted even when deletion protection is enabled for the DB cluster.</p>
@@ -1580,6 +1592,7 @@ impl CreateDbInstanceInputBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>mydbinstance</code> </p>
+    /// This field is required.
     pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_identifier = ::std::option::Option::Some(input.into());
         self
@@ -1862,6 +1875,7 @@ impl CreateDbInstanceInputBuilder {
         &self.allocated_storage
     }
     /// <p>The compute and memory capacity of the DB instance, for example <code>db.m5.large</code>. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance classes</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    /// This field is required.
     pub fn db_instance_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_class = ::std::option::Option::Some(input.into());
         self
@@ -1898,6 +1912,7 @@ impl CreateDbInstanceInputBuilder {
     /// <li> <p> <code>sqlserver-ex</code> </p> </li>
     /// <li> <p> <code>sqlserver-web</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
         self
@@ -3675,7 +3690,7 @@ impl CreateDbInstanceInputBuilder {
     /// Consumes the builder and constructs a [`CreateDbInstanceInput`](crate::operation::create_db_instance::CreateDbInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_db_instance::CreateDbInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_db_instance::CreateDbInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_db_instance::CreateDbInstanceInput {
             db_name: self.db_name,
             db_instance_identifier: self.db_instance_identifier,

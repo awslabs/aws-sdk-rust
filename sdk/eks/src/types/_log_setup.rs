@@ -11,8 +11,10 @@ pub struct LogSetup {
 }
 impl LogSetup {
     /// <p>The available cluster control plane log types.</p>
-    pub fn types(&self) -> ::std::option::Option<&[crate::types::LogType]> {
-        self.types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.types.is_none()`.
+    pub fn types(&self) -> &[crate::types::LogType] {
+        self.types.as_deref().unwrap_or_default()
     }
     /// <p>If a log type is enabled, that log type exports its control plane logs to CloudWatch Logs. If a log type isn't enabled, that log type doesn't export its control plane logs. Each individual log type can be enabled or disabled independently.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {

@@ -6,15 +6,15 @@
 pub struct EncryptionConfiguration {
     /// <p>Indicates whether Amazon S3 server-side encryption with Amazon S3-managed keys (<code>SSE_S3</code>), server-side encryption with KMS-managed keys (<code>SSE_KMS</code>), or client-side encryption with KMS-managed keys (<code>CSE_KMS</code>) is used.</p>
     /// <p>If a query runs in a workgroup and the workgroup overrides client-side settings, then the workgroup's setting for encryption is used. It specifies whether query results must be encrypted, for all queries that run in this workgroup. </p>
-    pub encryption_option: ::std::option::Option<crate::types::EncryptionOption>,
+    pub encryption_option: crate::types::EncryptionOption,
     /// <p>For <code>SSE_KMS</code> and <code>CSE_KMS</code>, this is the KMS key ARN or ID.</p>
     pub kms_key: ::std::option::Option<::std::string::String>,
 }
 impl EncryptionConfiguration {
     /// <p>Indicates whether Amazon S3 server-side encryption with Amazon S3-managed keys (<code>SSE_S3</code>), server-side encryption with KMS-managed keys (<code>SSE_KMS</code>), or client-side encryption with KMS-managed keys (<code>CSE_KMS</code>) is used.</p>
     /// <p>If a query runs in a workgroup and the workgroup overrides client-side settings, then the workgroup's setting for encryption is used. It specifies whether query results must be encrypted, for all queries that run in this workgroup. </p>
-    pub fn encryption_option(&self) -> ::std::option::Option<&crate::types::EncryptionOption> {
-        self.encryption_option.as_ref()
+    pub fn encryption_option(&self) -> &crate::types::EncryptionOption {
+        &self.encryption_option
     }
     /// <p>For <code>SSE_KMS</code> and <code>CSE_KMS</code>, this is the KMS key ARN or ID.</p>
     pub fn kms_key(&self) -> ::std::option::Option<&str> {
@@ -38,6 +38,7 @@ pub struct EncryptionConfigurationBuilder {
 impl EncryptionConfigurationBuilder {
     /// <p>Indicates whether Amazon S3 server-side encryption with Amazon S3-managed keys (<code>SSE_S3</code>), server-side encryption with KMS-managed keys (<code>SSE_KMS</code>), or client-side encryption with KMS-managed keys (<code>CSE_KMS</code>) is used.</p>
     /// <p>If a query runs in a workgroup and the workgroup overrides client-side settings, then the workgroup's setting for encryption is used. It specifies whether query results must be encrypted, for all queries that run in this workgroup. </p>
+    /// This field is required.
     pub fn encryption_option(mut self, input: crate::types::EncryptionOption) -> Self {
         self.encryption_option = ::std::option::Option::Some(input);
         self
@@ -68,10 +69,17 @@ impl EncryptionConfigurationBuilder {
         &self.kms_key
     }
     /// Consumes the builder and constructs a [`EncryptionConfiguration`](crate::types::EncryptionConfiguration).
-    pub fn build(self) -> crate::types::EncryptionConfiguration {
-        crate::types::EncryptionConfiguration {
-            encryption_option: self.encryption_option,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`encryption_option`](crate::types::builders::EncryptionConfigurationBuilder::encryption_option)
+    pub fn build(self) -> ::std::result::Result<crate::types::EncryptionConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EncryptionConfiguration {
+            encryption_option: self.encryption_option.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "encryption_option",
+                    "encryption_option was not specified but it is required when building EncryptionConfiguration",
+                )
+            })?,
             kms_key: self.kms_key,
-        }
+        })
     }
 }

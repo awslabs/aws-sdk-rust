@@ -41,6 +41,7 @@ pub struct UpdateCrlInputBuilder {
 }
 impl UpdateCrlInputBuilder {
     /// <p>The unique identifier of the certificate revocation list (CRL).</p>
+    /// This field is required.
     pub fn crl_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.crl_id = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +84,7 @@ impl UpdateCrlInputBuilder {
         &self.crl_data
     }
     /// Consumes the builder and constructs a [`UpdateCrlInput`](crate::operation::update_crl::UpdateCrlInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_crl::UpdateCrlInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_crl::UpdateCrlInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_crl::UpdateCrlInput {
             crl_id: self.crl_id,
             name: self.name,

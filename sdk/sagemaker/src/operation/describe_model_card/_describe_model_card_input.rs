@@ -34,6 +34,7 @@ pub struct DescribeModelCardInputBuilder {
 }
 impl DescribeModelCardInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the model card to describe.</p>
+    /// This field is required.
     pub fn model_card_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_card_name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl DescribeModelCardInputBuilder {
     /// Consumes the builder and constructs a [`DescribeModelCardInput`](crate::operation::describe_model_card::DescribeModelCardInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_model_card::DescribeModelCardInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_model_card::DescribeModelCardInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_model_card::DescribeModelCardInput {
             model_card_name: self.model_card_name,
             model_card_version: self.model_card_version,

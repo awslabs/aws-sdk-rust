@@ -11,8 +11,10 @@ pub struct ListResourcePoliciesOutput {
 }
 impl ListResourcePoliciesOutput {
     /// <p>The list of resource policies in the target Amazon Web Services account.</p>
-    pub fn resource_policies(&self) -> ::std::option::Option<&[crate::types::ResourcePolicy]> {
-        self.resource_policies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_policies.is_none()`.
+    pub fn resource_policies(&self) -> &[crate::types::ResourcePolicy] {
+        self.resource_policies.as_deref().unwrap_or_default()
     }
     /// <p>Pagination token. Not currently supported.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

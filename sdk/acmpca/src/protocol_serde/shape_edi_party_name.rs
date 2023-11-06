@@ -2,12 +2,12 @@
 pub fn ser_edi_party_name(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EdiPartyName,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.party_name {
-        object.key("PartyName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("PartyName").string(input.party_name.as_str());
     }
-    if let Some(var_2) = &input.name_assigner {
-        object.key("NameAssigner").string(var_2.as_str());
+    if let Some(var_1) = &input.name_assigner {
+        object.key("NameAssigner").string(var_1.as_str());
     }
     Ok(())
 }
@@ -51,7 +51,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::edi_party_name_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

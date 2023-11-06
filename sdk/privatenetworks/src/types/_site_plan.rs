@@ -11,12 +11,16 @@ pub struct SitePlan {
 }
 impl SitePlan {
     /// <p>The resource definitions of the plan.</p>
-    pub fn resource_definitions(&self) -> ::std::option::Option<&[crate::types::NetworkResourceDefinition]> {
-        self.resource_definitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_definitions.is_none()`.
+    pub fn resource_definitions(&self) -> &[crate::types::NetworkResourceDefinition] {
+        self.resource_definitions.as_deref().unwrap_or_default()
     }
     /// <p>The options of the plan.</p>
-    pub fn options(&self) -> ::std::option::Option<&[crate::types::NameValuePair]> {
-        self.options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.options.is_none()`.
+    pub fn options(&self) -> &[crate::types::NameValuePair] {
+        self.options.as_deref().unwrap_or_default()
     }
 }
 impl SitePlan {

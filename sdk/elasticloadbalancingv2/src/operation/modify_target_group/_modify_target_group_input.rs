@@ -94,6 +94,7 @@ pub struct ModifyTargetGroupInputBuilder {
 }
 impl ModifyTargetGroupInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
+    /// This field is required.
     pub fn target_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_group_arn = ::std::option::Option::Some(input.into());
         self
@@ -242,7 +243,7 @@ impl ModifyTargetGroupInputBuilder {
     /// Consumes the builder and constructs a [`ModifyTargetGroupInput`](crate::operation::modify_target_group::ModifyTargetGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_target_group::ModifyTargetGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::modify_target_group::ModifyTargetGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_target_group::ModifyTargetGroupInput {
             target_group_arn: self.target_group_arn,
             health_check_protocol: self.health_check_protocol,

@@ -33,8 +33,10 @@ impl CreateGuiSessionAccessDetailsOutput {
         self.failure_reason.as_deref()
     }
     /// <p>Returns information about the specified NICE DCV GUI session.</p>
-    pub fn sessions(&self) -> ::std::option::Option<&[crate::types::Session]> {
-        self.sessions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sessions.is_none()`.
+    pub fn sessions(&self) -> &[crate::types::Session] {
+        self.sessions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateGuiSessionAccessDetailsOutput {

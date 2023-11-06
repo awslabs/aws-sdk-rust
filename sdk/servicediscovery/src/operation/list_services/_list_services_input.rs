@@ -28,8 +28,10 @@ impl ListServicesInput {
     }
     /// <p>A complex type that contains specifications for the namespaces that you want to list services for. </p>
     /// <p>If you specify more than one filter, an operation must match all filters to be returned by <code>ListServices</code>.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::ServiceFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::ServiceFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
 }
 impl ListServicesInput {
@@ -109,7 +111,9 @@ impl ListServicesInputBuilder {
         &self.filters
     }
     /// Consumes the builder and constructs a [`ListServicesInput`](crate::operation::list_services::ListServicesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_services::ListServicesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_services::ListServicesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_services::ListServicesInput {
             next_token: self.next_token,
             max_results: self.max_results,

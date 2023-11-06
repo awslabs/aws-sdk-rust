@@ -35,6 +35,7 @@ pub struct UpdateConfigurationSetSendingEnabledInputBuilder {
 }
 impl UpdateConfigurationSetSendingEnabledInputBuilder {
     /// <p>The name of the configuration set to update.</p>
+    /// This field is required.
     pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl UpdateConfigurationSetSendingEnabledInputBuilder {
         &self.configuration_set_name
     }
     /// <p>Describes whether email sending is enabled or disabled for the configuration set. </p>
+    /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
@@ -67,7 +69,7 @@ impl UpdateConfigurationSetSendingEnabledInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_configuration_set_sending_enabled::UpdateConfigurationSetSendingEnabledInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_configuration_set_sending_enabled::UpdateConfigurationSetSendingEnabledInput {

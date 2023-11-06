@@ -3,7 +3,7 @@
 pub fn ser_spot_maintenance_strategies(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::SpotMaintenanceStrategies,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("CapacityRebalance");
     if let Some(var_2) = &input.capacity_rebalance {
@@ -12,6 +12,7 @@ pub fn ser_spot_maintenance_strategies(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_spot_maintenance_strategies(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::SpotMaintenanceStrategies, ::aws_smithy_xml::decode::XmlDecodeError> {

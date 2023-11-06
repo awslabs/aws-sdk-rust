@@ -2,24 +2,24 @@
 pub fn ser_stream_channel_definition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StreamChannelDefinition,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.number_of_channels {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
         object.key("NumberOfChannels").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+            ::aws_smithy_types::Number::NegInt((input.number_of_channels).into()),
         );
     }
-    if let Some(var_2) = &input.channel_definitions {
-        let mut array_3 = object.key("ChannelDefinitions").start_array();
-        for item_4 in var_2 {
+    if let Some(var_1) = &input.channel_definitions {
+        let mut array_2 = object.key("ChannelDefinitions").start_array();
+        for item_3 in var_1 {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_channel_definition::ser_channel_definition(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_channel_definition::ser_channel_definition(&mut object_4, item_3)?;
+                object_4.finish();
             }
         }
-        array_3.finish();
+        array_2.finish();
     }
     Ok(())
 }
@@ -60,7 +60,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::stream_channel_definition_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

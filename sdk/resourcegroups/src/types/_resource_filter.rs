@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceFilter {
     /// <p>The name of the filter. Filter names are case-sensitive.</p>
-    pub name: ::std::option::Option<crate::types::ResourceFilterName>,
+    pub name: crate::types::ResourceFilterName,
     /// <p>One or more filter values. Allowed filter values vary by resource filter name, and are case-sensitive.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::vec::Vec<::std::string::String>,
 }
 impl ResourceFilter {
     /// <p>The name of the filter. Filter names are case-sensitive.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::ResourceFilterName> {
-        self.name.as_ref()
+    pub fn name(&self) -> &crate::types::ResourceFilterName {
+        &self.name
     }
     /// <p>One or more filter values. Allowed filter values vary by resource filter name, and are case-sensitive.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    pub fn values(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.values.deref()
     }
 }
 impl ResourceFilter {
@@ -35,6 +36,7 @@ pub struct ResourceFilterBuilder {
 }
 impl ResourceFilterBuilder {
     /// <p>The name of the filter. Filter names are case-sensitive.</p>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::ResourceFilterName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -69,10 +71,23 @@ impl ResourceFilterBuilder {
         &self.values
     }
     /// Consumes the builder and constructs a [`ResourceFilter`](crate::types::ResourceFilter).
-    pub fn build(self) -> crate::types::ResourceFilter {
-        crate::types::ResourceFilter {
-            name: self.name,
-            values: self.values,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::ResourceFilterBuilder::name)
+    /// - [`values`](crate::types::builders::ResourceFilterBuilder::values)
+    pub fn build(self) -> ::std::result::Result<crate::types::ResourceFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ResourceFilter {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ResourceFilter",
+                )
+            })?,
+            values: self.values.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "values",
+                    "values was not specified but it is required when building ResourceFilter",
+                )
+            })?,
+        })
     }
 }

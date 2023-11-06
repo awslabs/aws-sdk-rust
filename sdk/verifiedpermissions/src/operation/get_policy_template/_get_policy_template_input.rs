@@ -34,6 +34,7 @@ pub struct GetPolicyTemplateInputBuilder {
 }
 impl GetPolicyTemplateInputBuilder {
     /// <p>Specifies the ID of the policy store that contains the policy template that you want information about.</p>
+    /// This field is required.
     pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_store_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetPolicyTemplateInputBuilder {
         &self.policy_store_id
     }
     /// <p>Specifies the ID of the policy template that you want information about.</p>
+    /// This field is required.
     pub fn policy_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_template_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl GetPolicyTemplateInputBuilder {
     /// Consumes the builder and constructs a [`GetPolicyTemplateInput`](crate::operation::get_policy_template::GetPolicyTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_policy_template::GetPolicyTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_policy_template::GetPolicyTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_policy_template::GetPolicyTemplateInput {
             policy_store_id: self.policy_store_id,
             policy_template_id: self.policy_template_id,

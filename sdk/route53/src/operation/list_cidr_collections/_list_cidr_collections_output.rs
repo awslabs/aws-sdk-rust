@@ -17,8 +17,10 @@ impl ListCidrCollectionsOutput {
         self.next_token.as_deref()
     }
     /// <p>A complex type with information about the CIDR collection.</p>
-    pub fn cidr_collections(&self) -> ::std::option::Option<&[crate::types::CollectionSummary]> {
-        self.cidr_collections.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cidr_collections.is_none()`.
+    pub fn cidr_collections(&self) -> &[crate::types::CollectionSummary] {
+        self.cidr_collections.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListCidrCollectionsOutput {

@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InitializationConfiguration {
     /// <p>The value must be <code>TRUE</code> or <code>FALSE</code>. If <code>FALSE</code>, all alarm instances created based on the alarm model are activated. The default value is <code>TRUE</code>.</p>
-    pub disabled_on_initialization: ::std::option::Option<bool>,
+    pub disabled_on_initialization: bool,
 }
 impl InitializationConfiguration {
     /// <p>The value must be <code>TRUE</code> or <code>FALSE</code>. If <code>FALSE</code>, all alarm instances created based on the alarm model are activated. The default value is <code>TRUE</code>.</p>
-    pub fn disabled_on_initialization(&self) -> ::std::option::Option<bool> {
+    pub fn disabled_on_initialization(&self) -> bool {
         self.disabled_on_initialization
     }
 }
@@ -28,6 +28,7 @@ pub struct InitializationConfigurationBuilder {
 }
 impl InitializationConfigurationBuilder {
     /// <p>The value must be <code>TRUE</code> or <code>FALSE</code>. If <code>FALSE</code>, all alarm instances created based on the alarm model are activated. The default value is <code>TRUE</code>.</p>
+    /// This field is required.
     pub fn disabled_on_initialization(mut self, input: bool) -> Self {
         self.disabled_on_initialization = ::std::option::Option::Some(input);
         self
@@ -42,9 +43,16 @@ impl InitializationConfigurationBuilder {
         &self.disabled_on_initialization
     }
     /// Consumes the builder and constructs a [`InitializationConfiguration`](crate::types::InitializationConfiguration).
-    pub fn build(self) -> crate::types::InitializationConfiguration {
-        crate::types::InitializationConfiguration {
-            disabled_on_initialization: self.disabled_on_initialization,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`disabled_on_initialization`](crate::types::builders::InitializationConfigurationBuilder::disabled_on_initialization)
+    pub fn build(self) -> ::std::result::Result<crate::types::InitializationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::InitializationConfiguration {
+            disabled_on_initialization: self.disabled_on_initialization.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "disabled_on_initialization",
+                    "disabled_on_initialization was not specified but it is required when building InitializationConfiguration",
+                )
+            })?,
+        })
     }
 }

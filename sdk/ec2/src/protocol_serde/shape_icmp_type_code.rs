@@ -3,7 +3,7 @@
 pub fn ser_icmp_type_code(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::IcmpTypeCode,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Code");
     if let Some(var_2) = &input.code {
@@ -23,6 +23,7 @@ pub fn ser_icmp_type_code(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_icmp_type_code(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::IcmpTypeCode, ::aws_smithy_xml::decode::XmlDecodeError> {

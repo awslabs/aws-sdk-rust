@@ -9,8 +9,10 @@ pub struct HoneycodeMetadata {
 }
 impl HoneycodeMetadata {
     /// <p> The desired authorization scope for the Amazon Honeycode account. </p>
-    pub fn o_auth_scopes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.o_auth_scopes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.o_auth_scopes.is_none()`.
+    pub fn o_auth_scopes(&self) -> &[::std::string::String] {
+        self.o_auth_scopes.as_deref().unwrap_or_default()
     }
 }
 impl HoneycodeMetadata {

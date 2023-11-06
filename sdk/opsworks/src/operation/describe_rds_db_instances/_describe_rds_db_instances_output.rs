@@ -10,8 +10,10 @@ pub struct DescribeRdsDbInstancesOutput {
 }
 impl DescribeRdsDbInstancesOutput {
     /// <p>An a array of <code>RdsDbInstance</code> objects that describe the instances.</p>
-    pub fn rds_db_instances(&self) -> ::std::option::Option<&[crate::types::RdsDbInstance]> {
-        self.rds_db_instances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rds_db_instances.is_none()`.
+    pub fn rds_db_instances(&self) -> &[crate::types::RdsDbInstance] {
+        self.rds_db_instances.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeRdsDbInstancesOutput {

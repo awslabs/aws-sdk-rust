@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartPipeline`](crate::operation::start_pipeline::builders::StartPipelineFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`pipeline_name(impl Into<String>)`](crate::operation::start_pipeline::builders::StartPipelineFluentBuilder::pipeline_name) / [`set_pipeline_name(Option<String>)`](crate::operation::start_pipeline::builders::StartPipelineFluentBuilder::set_pipeline_name): <p>The name of the pipeline to start.</p>
+    ///   - [`pipeline_name(impl Into<String>)`](crate::operation::start_pipeline::builders::StartPipelineFluentBuilder::pipeline_name) / [`set_pipeline_name(Option<String>)`](crate::operation::start_pipeline::builders::StartPipelineFluentBuilder::set_pipeline_name):<br>required: **true**<br><p>The name of the pipeline to start.</p><br>
     /// - On success, responds with [`StartPipelineOutput`](crate::operation::start_pipeline::StartPipelineOutput) with field(s):
     ///   - [`pipeline(Option<Pipeline>)`](crate::operation::start_pipeline::StartPipelineOutput::pipeline): <p>Information about an existing OpenSearch Ingestion pipeline.</p>
     /// - On failure, responds with [`SdkError<StartPipelineError>`](crate::operation::start_pipeline::StartPipelineError)

@@ -2,7 +2,7 @@
 pub fn ser_rule(
     object_5: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Rule,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::Rule::NonTalkTimeFilter(inner) => {
             #[allow(unused_mut)]
@@ -28,7 +28,7 @@ pub fn ser_rule(
             crate::protocol_serde::shape_sentiment_filter::ser_sentiment_filter(&mut object_4, inner)?;
             object_4.finish();
         }
-        crate::types::Rule::Unknown => return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("Rule")),
+        crate::types::Rule::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("Rule")),
     }
     Ok(())
 }
@@ -46,12 +46,17 @@ where
             match tokens.next().transpose()? {
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                    let key = key.to_unescaped()?;
+                    if key == "__type" {
+                        ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                        continue;
+                    }
                     if variant.is_some() {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
                             "encountered mixed variants in union",
                         ));
                     }
-                    variant = match key.to_unescaped()?.as_ref() {
+                    variant = match key.as_ref() {
                         "NonTalkTimeFilter" => Some(crate::types::Rule::NonTalkTimeFilter(
                             crate::protocol_serde::shape_non_talk_time_filter::de_non_talk_time_filter(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'NonTalkTimeFilter' cannot be null")

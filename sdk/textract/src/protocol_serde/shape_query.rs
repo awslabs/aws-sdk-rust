@@ -2,21 +2,21 @@
 pub fn ser_query(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Query,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.text {
-        object.key("Text").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Text").string(input.text.as_str());
     }
-    if let Some(var_2) = &input.alias {
-        object.key("Alias").string(var_2.as_str());
+    if let Some(var_1) = &input.alias {
+        object.key("Alias").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.pages {
-        let mut array_4 = object.key("Pages").start_array();
-        for item_5 in var_3 {
+    if let Some(var_2) = &input.pages {
+        let mut array_3 = object.key("Pages").start_array();
+        for item_4 in var_2 {
             {
-                array_4.value().string(item_5.as_str());
+                array_3.value().string(item_4.as_str());
             }
         }
-        array_4.finish();
+        array_3.finish();
     }
     Ok(())
 }
@@ -63,7 +63,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::query_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

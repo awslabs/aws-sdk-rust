@@ -28,6 +28,7 @@ pub struct GetXssMatchSetInputBuilder {
 }
 impl GetXssMatchSetInputBuilder {
     /// <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to get. <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
+    /// This field is required.
     pub fn xss_match_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.xss_match_set_id = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl GetXssMatchSetInputBuilder {
     /// Consumes the builder and constructs a [`GetXssMatchSetInput`](crate::operation::get_xss_match_set::GetXssMatchSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_xss_match_set::GetXssMatchSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_xss_match_set::GetXssMatchSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_xss_match_set::GetXssMatchSetInput {
             xss_match_set_id: self.xss_match_set_id,
         })

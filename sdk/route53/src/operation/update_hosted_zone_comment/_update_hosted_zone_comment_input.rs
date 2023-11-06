@@ -35,6 +35,7 @@ pub struct UpdateHostedZoneCommentInputBuilder {
 }
 impl UpdateHostedZoneCommentInputBuilder {
     /// <p>The ID for the hosted zone that you want to update the comment for.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -67,7 +68,7 @@ impl UpdateHostedZoneCommentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_hosted_zone_comment::UpdateHostedZoneCommentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_hosted_zone_comment::UpdateHostedZoneCommentInput {
             id: self.id,

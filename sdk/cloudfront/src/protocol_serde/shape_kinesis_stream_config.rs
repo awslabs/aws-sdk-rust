@@ -2,21 +2,22 @@
 pub fn ser_kinesis_stream_config(
     input: &crate::types::KinesisStreamConfig,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.role_arn {
+    {
         let mut inner_writer = scope.start_el("RoleARN").finish();
-        inner_writer.data(var_1.as_str());
+        inner_writer.data(input.role_arn.as_str());
     }
-    if let Some(var_2) = &input.stream_arn {
+    {
         let mut inner_writer = scope.start_el("StreamARN").finish();
-        inner_writer.data(var_2.as_str());
+        inner_writer.data(input.stream_arn.as_str());
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_kinesis_stream_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::KinesisStreamConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -25,7 +26,7 @@ pub fn de_kinesis_stream_config(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("RoleARN") /* RoleARN com.amazonaws.cloudfront#KinesisStreamConfig$RoleARN */ =>  {
-                let var_3 =
+                let var_1 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -34,11 +35,11 @@ pub fn de_kinesis_stream_config(
                         ?
                     )
                 ;
-                builder = builder.set_role_arn(var_3);
+                builder = builder.set_role_arn(var_1);
             }
             ,
             s if s.matches("StreamARN") /* StreamARN com.amazonaws.cloudfront#KinesisStreamConfig$StreamARN */ =>  {
-                let var_4 =
+                let var_2 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -47,11 +48,13 @@ pub fn de_kinesis_stream_config(
                         ?
                     )
                 ;
-                builder = builder.set_stream_arn(var_4);
+                builder = builder.set_stream_arn(var_2);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::kinesis_stream_config_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

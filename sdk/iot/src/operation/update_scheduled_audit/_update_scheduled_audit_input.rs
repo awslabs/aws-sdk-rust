@@ -28,8 +28,10 @@ impl UpdateScheduledAuditInput {
         self.day_of_week.as_ref()
     }
     /// <p>Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
-    pub fn target_check_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.target_check_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_check_names.is_none()`.
+    pub fn target_check_names(&self) -> &[::std::string::String] {
+        self.target_check_names.as_deref().unwrap_or_default()
     }
     /// <p>The name of the scheduled audit. (Max. 128 chars)</p>
     pub fn scheduled_audit_name(&self) -> ::std::option::Option<&str> {
@@ -117,6 +119,7 @@ impl UpdateScheduledAuditInputBuilder {
         &self.target_check_names
     }
     /// <p>The name of the scheduled audit. (Max. 128 chars)</p>
+    /// This field is required.
     pub fn scheduled_audit_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduled_audit_name = ::std::option::Option::Some(input.into());
         self
@@ -133,7 +136,7 @@ impl UpdateScheduledAuditInputBuilder {
     /// Consumes the builder and constructs a [`UpdateScheduledAuditInput`](crate::operation::update_scheduled_audit::UpdateScheduledAuditInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_scheduled_audit::UpdateScheduledAuditInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_scheduled_audit::UpdateScheduledAuditInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_scheduled_audit::UpdateScheduledAuditInput {
             frequency: self.frequency,

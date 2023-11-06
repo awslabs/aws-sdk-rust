@@ -11,12 +11,16 @@ pub struct ListJobsFilterCriteria {
 }
 impl ListJobsFilterCriteria {
     /// <p>An array of objects, one for each condition that determines which jobs to exclude from the results.</p>
-    pub fn excludes(&self) -> ::std::option::Option<&[crate::types::ListJobsFilterTerm]> {
-        self.excludes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.excludes.is_none()`.
+    pub fn excludes(&self) -> &[crate::types::ListJobsFilterTerm] {
+        self.excludes.as_deref().unwrap_or_default()
     }
     /// <p>An array of objects, one for each condition that determines which jobs to include in the results.</p>
-    pub fn includes(&self) -> ::std::option::Option<&[crate::types::ListJobsFilterTerm]> {
-        self.includes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.includes.is_none()`.
+    pub fn includes(&self) -> &[crate::types::ListJobsFilterTerm] {
+        self.includes.as_deref().unwrap_or_default()
     }
 }
 impl ListJobsFilterCriteria {

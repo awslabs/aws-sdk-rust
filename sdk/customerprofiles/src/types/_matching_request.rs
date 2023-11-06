@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MatchingRequest {
     /// <p>The flag that enables the matching process of duplicate profiles.</p>
-    pub enabled: ::std::option::Option<bool>,
+    pub enabled: bool,
     /// <p>The day and time when do you want to start the Identity Resolution Job every week.</p>
     pub job_schedule: ::std::option::Option<crate::types::JobSchedule>,
     /// <p>Configuration information about the auto-merging process.</p>
@@ -15,7 +15,7 @@ pub struct MatchingRequest {
 }
 impl MatchingRequest {
     /// <p>The flag that enables the matching process of duplicate profiles.</p>
-    pub fn enabled(&self) -> ::std::option::Option<bool> {
+    pub fn enabled(&self) -> bool {
         self.enabled
     }
     /// <p>The day and time when do you want to start the Identity Resolution Job every week.</p>
@@ -49,6 +49,7 @@ pub struct MatchingRequestBuilder {
 }
 impl MatchingRequestBuilder {
     /// <p>The flag that enables the matching process of duplicate profiles.</p>
+    /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
@@ -105,12 +106,19 @@ impl MatchingRequestBuilder {
         &self.exporting_config
     }
     /// Consumes the builder and constructs a [`MatchingRequest`](crate::types::MatchingRequest).
-    pub fn build(self) -> crate::types::MatchingRequest {
-        crate::types::MatchingRequest {
-            enabled: self.enabled,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`enabled`](crate::types::builders::MatchingRequestBuilder::enabled)
+    pub fn build(self) -> ::std::result::Result<crate::types::MatchingRequest, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::MatchingRequest {
+            enabled: self.enabled.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "enabled",
+                    "enabled was not specified but it is required when building MatchingRequest",
+                )
+            })?,
             job_schedule: self.job_schedule,
             auto_merging: self.auto_merging,
             exporting_config: self.exporting_config,
-        }
+        })
     }
 }

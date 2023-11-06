@@ -2,7 +2,7 @@
 pub fn ser_get_percentiles_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_percentiles::GetPercentilesInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.aggregation_field {
         object.key("aggregationField").string(var_1.as_str());
     }

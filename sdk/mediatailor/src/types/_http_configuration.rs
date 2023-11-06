@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HttpConfiguration {
     /// <p>The base URL for the source location host server. This string must include the protocol, such as <b>https://</b>.</p>
-    pub base_url: ::std::option::Option<::std::string::String>,
+    pub base_url: ::std::string::String,
 }
 impl HttpConfiguration {
     /// <p>The base URL for the source location host server. This string must include the protocol, such as <b>https://</b>.</p>
-    pub fn base_url(&self) -> ::std::option::Option<&str> {
-        self.base_url.as_deref()
+    pub fn base_url(&self) -> &str {
+        use std::ops::Deref;
+        self.base_url.deref()
     }
 }
 impl HttpConfiguration {
@@ -28,6 +29,7 @@ pub struct HttpConfigurationBuilder {
 }
 impl HttpConfigurationBuilder {
     /// <p>The base URL for the source location host server. This string must include the protocol, such as <b>https://</b>.</p>
+    /// This field is required.
     pub fn base_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.base_url = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl HttpConfigurationBuilder {
         &self.base_url
     }
     /// Consumes the builder and constructs a [`HttpConfiguration`](crate::types::HttpConfiguration).
-    pub fn build(self) -> crate::types::HttpConfiguration {
-        crate::types::HttpConfiguration { base_url: self.base_url }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`base_url`](crate::types::builders::HttpConfigurationBuilder::base_url)
+    pub fn build(self) -> ::std::result::Result<crate::types::HttpConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::HttpConfiguration {
+            base_url: self.base_url.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "base_url",
+                    "base_url was not specified but it is required when building HttpConfiguration",
+                )
+            })?,
+        })
     }
 }

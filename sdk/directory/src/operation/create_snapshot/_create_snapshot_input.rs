@@ -35,6 +35,7 @@ pub struct CreateSnapshotInputBuilder {
 }
 impl CreateSnapshotInputBuilder {
     /// <p>The identifier of the directory of which to take a snapshot.</p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self
@@ -65,7 +66,7 @@ impl CreateSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`CreateSnapshotInput`](crate::operation::create_snapshot::CreateSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_snapshot::CreateSnapshotInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_snapshot::CreateSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_snapshot::CreateSnapshotInput {
             directory_id: self.directory_id,
             name: self.name,

@@ -34,6 +34,7 @@ pub struct DeleteEventDestinationInputBuilder {
 }
 impl DeleteEventDestinationInputBuilder {
     /// <p>The name of the configuration set or the configuration set's Amazon Resource Name (ARN) to remove the event destination from. The ConfigurateSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
+    /// This field is required.
     pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteEventDestinationInputBuilder {
         &self.configuration_set_name
     }
     /// <p>The name of the event destination to delete.</p>
+    /// This field is required.
     pub fn event_destination_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_destination_name = ::std::option::Option::Some(input.into());
         self
@@ -64,8 +66,10 @@ impl DeleteEventDestinationInputBuilder {
     /// Consumes the builder and constructs a [`DeleteEventDestinationInput`](crate::operation::delete_event_destination::DeleteEventDestinationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_event_destination::DeleteEventDestinationInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_event_destination::DeleteEventDestinationInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_event_destination::DeleteEventDestinationInput {
             configuration_set_name: self.configuration_set_name,
             event_destination_name: self.event_destination_name,

@@ -57,16 +57,22 @@ impl GetTemplateStepOutput {
         self.creation_time.as_deref()
     }
     /// <p>The previous step.</p>
-    pub fn previous(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.previous.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.previous.is_none()`.
+    pub fn previous(&self) -> &[::std::string::String] {
+        self.previous.as_deref().unwrap_or_default()
     }
     /// <p>The next step.</p>
-    pub fn next(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.next.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.next.is_none()`.
+    pub fn next(&self) -> &[::std::string::String] {
+        self.next.as_deref().unwrap_or_default()
     }
     /// <p>The outputs of the step.</p>
-    pub fn outputs(&self) -> ::std::option::Option<&[crate::types::StepOutput]> {
-        self.outputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outputs.is_none()`.
+    pub fn outputs(&self) -> &[crate::types::StepOutput] {
+        self.outputs.as_deref().unwrap_or_default()
     }
     /// <p>The custom script to run tests on source or target environments.</p>
     pub fn step_automation_configuration(&self) -> ::std::option::Option<&crate::types::StepAutomationConfiguration> {

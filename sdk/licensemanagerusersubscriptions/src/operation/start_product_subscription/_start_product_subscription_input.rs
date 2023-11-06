@@ -48,6 +48,7 @@ pub struct StartProductSubscriptionInputBuilder {
 }
 impl StartProductSubscriptionInputBuilder {
     /// <p>The user name from the identity provider of the user.</p>
+    /// This field is required.
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl StartProductSubscriptionInputBuilder {
         &self.username
     }
     /// <p>An object that specifies details for the identity provider.</p>
+    /// This field is required.
     pub fn identity_provider(mut self, input: crate::types::IdentityProvider) -> Self {
         self.identity_provider = ::std::option::Option::Some(input);
         self
@@ -76,6 +78,7 @@ impl StartProductSubscriptionInputBuilder {
         &self.identity_provider
     }
     /// <p>The name of the user-based subscription product.</p>
+    /// This field is required.
     pub fn product(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +111,7 @@ impl StartProductSubscriptionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_product_subscription::StartProductSubscriptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_product_subscription::StartProductSubscriptionInput {
             username: self.username,

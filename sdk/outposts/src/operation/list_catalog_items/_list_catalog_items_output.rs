@@ -11,8 +11,10 @@ pub struct ListCatalogItemsOutput {
 }
 impl ListCatalogItemsOutput {
     /// <p>Information about the catalog items.</p>
-    pub fn catalog_items(&self) -> ::std::option::Option<&[crate::types::CatalogItem]> {
-        self.catalog_items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.catalog_items.is_none()`.
+    pub fn catalog_items(&self) -> &[crate::types::CatalogItem] {
+        self.catalog_items.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -192,9 +192,6 @@ pub(crate) fn lens_list_studio_members_output_members(
 pub(crate) fn lens_list_studios_output_studios(
     input: crate::operation::list_studios::ListStudiosOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Studio>> {
-    let input = match input.studios {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.studios;
     ::std::option::Option::Some(input)
 }

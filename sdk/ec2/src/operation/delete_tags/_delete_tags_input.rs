@@ -20,14 +20,18 @@ impl DeleteTagsInput {
     }
     /// <p>The IDs of the resources, separated by spaces.</p>
     /// <p>Constraints: Up to 1000 resource IDs. We recommend breaking up this request into smaller batches.</p>
-    pub fn resources(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
+    pub fn resources(&self) -> &[::std::string::String] {
+        self.resources.as_deref().unwrap_or_default()
     }
     /// <p>The tags to delete. Specify a tag key and an optional tag value to delete specific tags. If you specify a tag key without a tag value, we delete any tag with this key regardless of its value. If you specify a tag key with an empty string as the tag value, we delete the tag only if its value is an empty string.</p>
     /// <p>If you omit this parameter, we delete all user-defined tags for the specified resources. We do not delete Amazon Web Services-generated tags (tags that have the <code>aws:</code> prefix).</p>
     /// <p>Constraints: Up to 1000 tags.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl DeleteTagsInput {
@@ -110,7 +114,7 @@ impl DeleteTagsInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`DeleteTagsInput`](crate::operation::delete_tags::DeleteTagsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_tags::DeleteTagsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_tags::DeleteTagsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_tags::DeleteTagsInput {
             dry_run: self.dry_run,
             resources: self.resources,

@@ -49,6 +49,7 @@ impl ResourceSpecificationBuilder {
         &self.reserved_bitrate
     }
     /// The type of resource and the unit that is being billed for.
+    /// This field is required.
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self

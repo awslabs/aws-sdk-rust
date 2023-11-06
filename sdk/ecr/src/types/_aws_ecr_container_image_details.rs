@@ -35,8 +35,10 @@ impl AwsEcrContainerImageDetails {
         self.image_hash.as_deref()
     }
     /// <p>The image tags attached to the Amazon ECR container image.</p>
-    pub fn image_tags(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.image_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_tags.is_none()`.
+    pub fn image_tags(&self) -> &[::std::string::String] {
+        self.image_tags.as_deref().unwrap_or_default()
     }
     /// <p>The platform of the Amazon ECR container image.</p>
     pub fn platform(&self) -> ::std::option::Option<&str> {

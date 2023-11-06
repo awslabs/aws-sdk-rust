@@ -69,6 +69,7 @@ impl CreateSessionInputBuilder {
         &self.client_token
     }
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// This field is required.
     pub fn assistant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assistant_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +84,7 @@ impl CreateSessionInputBuilder {
         &self.assistant_id
     }
     /// <p>The name of the session.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -133,7 +135,7 @@ impl CreateSessionInputBuilder {
     /// Consumes the builder and constructs a [`CreateSessionInput`](crate::operation::create_session::CreateSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_session::CreateSessionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_session::CreateSessionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_session::CreateSessionInput {
             client_token: self.client_token,
             assistant_id: self.assistant_id,

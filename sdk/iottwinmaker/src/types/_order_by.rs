@@ -7,7 +7,7 @@ pub struct OrderBy {
     /// <p>The set order that filters results.</p>
     pub order: ::std::option::Option<crate::types::Order>,
     /// <p>The property name.</p>
-    pub property_name: ::std::option::Option<::std::string::String>,
+    pub property_name: ::std::string::String,
 }
 impl OrderBy {
     /// <p>The set order that filters results.</p>
@@ -15,8 +15,9 @@ impl OrderBy {
         self.order.as_ref()
     }
     /// <p>The property name.</p>
-    pub fn property_name(&self) -> ::std::option::Option<&str> {
-        self.property_name.as_deref()
+    pub fn property_name(&self) -> &str {
+        use std::ops::Deref;
+        self.property_name.deref()
     }
 }
 impl OrderBy {
@@ -49,6 +50,7 @@ impl OrderByBuilder {
         &self.order
     }
     /// <p>The property name.</p>
+    /// This field is required.
     pub fn property_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.property_name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl OrderByBuilder {
         &self.property_name
     }
     /// Consumes the builder and constructs a [`OrderBy`](crate::types::OrderBy).
-    pub fn build(self) -> crate::types::OrderBy {
-        crate::types::OrderBy {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`property_name`](crate::types::builders::OrderByBuilder::property_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::OrderBy, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::OrderBy {
             order: self.order,
-            property_name: self.property_name,
-        }
+            property_name: self.property_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "property_name",
+                    "property_name was not specified but it is required when building OrderBy",
+                )
+            })?,
+        })
     }
 }

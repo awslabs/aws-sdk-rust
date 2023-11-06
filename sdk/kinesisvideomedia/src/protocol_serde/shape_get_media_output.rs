@@ -7,9 +7,9 @@ pub(crate) fn de_content_type_header(
 }
 
 pub fn de_payload_payload(
-    body: &mut ::aws_smithy_http::body::SdkBody,
-) -> std::result::Result<::aws_smithy_http::byte_stream::ByteStream, crate::operation::get_media::GetMediaError> {
+    body: &mut ::aws_smithy_types::body::SdkBody,
+) -> std::result::Result<::aws_smithy_types::byte_stream::ByteStream, crate::operation::get_media::GetMediaError> {
     // replace the body with an empty body
-    let body = std::mem::replace(body, ::aws_smithy_http::body::SdkBody::taken());
-    Ok(::aws_smithy_http::byte_stream::ByteStream::new(body))
+    let body = std::mem::replace(body, ::aws_smithy_types::body::SdkBody::taken());
+    Ok(::aws_smithy_types::byte_stream::ByteStream::new(body))
 }

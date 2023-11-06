@@ -12,8 +12,10 @@ pub struct HttpRequestMethodConditionConfig {
 impl HttpRequestMethodConditionConfig {
     /// <p>The name of the request method. The maximum size is 40 characters. The allowed characters are A-Z, hyphen (-), and underscore (_). The comparison is case sensitive. Wildcards are not supported; therefore, the method name must be an exact match.</p>
     /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches the HTTP request method. We recommend that you route GET and HEAD requests in the same way, because the response to a HEAD request may be cached.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
+    pub fn values(&self) -> &[::std::string::String] {
+        self.values.as_deref().unwrap_or_default()
     }
 }
 impl HttpRequestMethodConditionConfig {

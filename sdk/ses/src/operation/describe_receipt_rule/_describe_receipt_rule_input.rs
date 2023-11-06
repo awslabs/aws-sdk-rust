@@ -35,6 +35,7 @@ pub struct DescribeReceiptRuleInputBuilder {
 }
 impl DescribeReceiptRuleInputBuilder {
     /// <p>The name of the receipt rule set that the receipt rule belongs to.</p>
+    /// This field is required.
     pub fn rule_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_set_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl DescribeReceiptRuleInputBuilder {
         &self.rule_set_name
     }
     /// <p>The name of the receipt rule.</p>
+    /// This field is required.
     pub fn rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_name = ::std::option::Option::Some(input.into());
         self
@@ -65,7 +67,7 @@ impl DescribeReceiptRuleInputBuilder {
     /// Consumes the builder and constructs a [`DescribeReceiptRuleInput`](crate::operation::describe_receipt_rule::DescribeReceiptRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_receipt_rule::DescribeReceiptRuleInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_receipt_rule::DescribeReceiptRuleInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_receipt_rule::DescribeReceiptRuleInput {
             rule_set_name: self.rule_set_name,

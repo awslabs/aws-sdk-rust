@@ -103,12 +103,16 @@ impl CapacityReservationFleet {
         self.allocation_strategy.as_deref()
     }
     /// <p>Information about the instance types for which to reserve the capacity.</p>
-    pub fn instance_type_specifications(&self) -> ::std::option::Option<&[crate::types::FleetCapacityReservation]> {
-        self.instance_type_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_type_specifications.is_none()`.
+    pub fn instance_type_specifications(&self) -> &[crate::types::FleetCapacityReservation] {
+        self.instance_type_specifications.as_deref().unwrap_or_default()
     }
     /// <p>The tags assigned to the Capacity Reservation Fleet.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CapacityReservationFleet {

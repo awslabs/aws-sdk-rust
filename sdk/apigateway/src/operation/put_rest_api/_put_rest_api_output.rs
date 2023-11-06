@@ -56,12 +56,16 @@ impl PutRestApiOutput {
         self.version.as_deref()
     }
     /// <p>The warning messages reported when <code>failonwarnings</code> is turned on during API import.</p>
-    pub fn warnings(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.warnings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.warnings.is_none()`.
+    pub fn warnings(&self) -> &[::std::string::String] {
+        self.warnings.as_deref().unwrap_or_default()
     }
     /// <p>The list of binary media types supported by the RestApi. By default, the RestApi supports only UTF-8-encoded text payloads.</p>
-    pub fn binary_media_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.binary_media_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.binary_media_types.is_none()`.
+    pub fn binary_media_types(&self) -> &[::std::string::String] {
+        self.binary_media_types.as_deref().unwrap_or_default()
     }
     /// <p>A nullable integer that is used to enable compression (with non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable compression (with a null value) on an API. When compression is enabled, compression or decompression is not applied on the payload if the payload size is smaller than this value. Setting it to zero allows compression for any payload size.</p>
     pub fn minimum_compression_size(&self) -> ::std::option::Option<i32> {

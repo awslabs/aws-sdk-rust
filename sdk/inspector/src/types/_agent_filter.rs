@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AgentFilter {
     /// <p>The current health state of the agent. Values can be set to <b>HEALTHY</b> or <b>UNHEALTHY</b>.</p>
-    pub agent_healths: ::std::option::Option<::std::vec::Vec<crate::types::AgentHealth>>,
+    pub agent_healths: ::std::vec::Vec<crate::types::AgentHealth>,
     /// <p>The detailed health state of the agent. Values can be set to <b>IDLE</b>, <b>RUNNING</b>, <b>SHUTDOWN</b>, <b>UNHEALTHY</b>, <b>THROTTLED</b>, and <b>UNKNOWN</b>. </p>
-    pub agent_health_codes: ::std::option::Option<::std::vec::Vec<crate::types::AgentHealthCode>>,
+    pub agent_health_codes: ::std::vec::Vec<crate::types::AgentHealthCode>,
 }
 impl AgentFilter {
     /// <p>The current health state of the agent. Values can be set to <b>HEALTHY</b> or <b>UNHEALTHY</b>.</p>
-    pub fn agent_healths(&self) -> ::std::option::Option<&[crate::types::AgentHealth]> {
-        self.agent_healths.as_deref()
+    pub fn agent_healths(&self) -> &[crate::types::AgentHealth] {
+        use std::ops::Deref;
+        self.agent_healths.deref()
     }
     /// <p>The detailed health state of the agent. Values can be set to <b>IDLE</b>, <b>RUNNING</b>, <b>SHUTDOWN</b>, <b>UNHEALTHY</b>, <b>THROTTLED</b>, and <b>UNKNOWN</b>. </p>
-    pub fn agent_health_codes(&self) -> ::std::option::Option<&[crate::types::AgentHealthCode]> {
-        self.agent_health_codes.as_deref()
+    pub fn agent_health_codes(&self) -> &[crate::types::AgentHealthCode] {
+        use std::ops::Deref;
+        self.agent_health_codes.deref()
     }
 }
 impl AgentFilter {
@@ -75,10 +77,23 @@ impl AgentFilterBuilder {
         &self.agent_health_codes
     }
     /// Consumes the builder and constructs a [`AgentFilter`](crate::types::AgentFilter).
-    pub fn build(self) -> crate::types::AgentFilter {
-        crate::types::AgentFilter {
-            agent_healths: self.agent_healths,
-            agent_health_codes: self.agent_health_codes,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`agent_healths`](crate::types::builders::AgentFilterBuilder::agent_healths)
+    /// - [`agent_health_codes`](crate::types::builders::AgentFilterBuilder::agent_health_codes)
+    pub fn build(self) -> ::std::result::Result<crate::types::AgentFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AgentFilter {
+            agent_healths: self.agent_healths.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "agent_healths",
+                    "agent_healths was not specified but it is required when building AgentFilter",
+                )
+            })?,
+            agent_health_codes: self.agent_health_codes.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "agent_health_codes",
+                    "agent_health_codes was not specified but it is required when building AgentFilter",
+                )
+            })?,
+        })
     }
 }

@@ -2,61 +2,61 @@
 pub fn ser_backup_rule_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BackupRuleInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.rule_name {
-        object.key("RuleName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("RuleName").string(input.rule_name.as_str());
     }
-    if let Some(var_2) = &input.target_backup_vault_name {
-        object.key("TargetBackupVaultName").string(var_2.as_str());
+    {
+        object.key("TargetBackupVaultName").string(input.target_backup_vault_name.as_str());
     }
-    if let Some(var_3) = &input.schedule_expression {
-        object.key("ScheduleExpression").string(var_3.as_str());
+    if let Some(var_1) = &input.schedule_expression {
+        object.key("ScheduleExpression").string(var_1.as_str());
     }
-    if let Some(var_4) = &input.start_window_minutes {
+    if let Some(var_2) = &input.start_window_minutes {
         object.key("StartWindowMinutes").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_5) = &input.completion_window_minutes {
+    if let Some(var_3) = &input.completion_window_minutes {
         object.key("CompletionWindowMinutes").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_5).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_6) = &input.lifecycle {
+    if let Some(var_4) = &input.lifecycle {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("Lifecycle").start_object();
-        crate::protocol_serde::shape_lifecycle::ser_lifecycle(&mut object_7, var_6)?;
+        let mut object_5 = object.key("Lifecycle").start_object();
+        crate::protocol_serde::shape_lifecycle::ser_lifecycle(&mut object_5, var_4)?;
+        object_5.finish();
+    }
+    if let Some(var_6) = &input.recovery_point_tags {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("RecoveryPointTags").start_object();
+        for (key_8, value_9) in var_6 {
+            {
+                object_7.key(key_8.as_str()).string(value_9.as_str());
+            }
+        }
         object_7.finish();
     }
-    if let Some(var_8) = &input.recovery_point_tags {
-        #[allow(unused_mut)]
-        let mut object_9 = object.key("RecoveryPointTags").start_object();
-        for (key_10, value_11) in var_8 {
-            {
-                object_9.key(key_10.as_str()).string(value_11.as_str());
-            }
-        }
-        object_9.finish();
-    }
-    if let Some(var_12) = &input.copy_actions {
-        let mut array_13 = object.key("CopyActions").start_array();
-        for item_14 in var_12 {
+    if let Some(var_10) = &input.copy_actions {
+        let mut array_11 = object.key("CopyActions").start_array();
+        for item_12 in var_10 {
             {
                 #[allow(unused_mut)]
-                let mut object_15 = array_13.value().start_object();
-                crate::protocol_serde::shape_copy_action::ser_copy_action(&mut object_15, item_14)?;
-                object_15.finish();
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_copy_action::ser_copy_action(&mut object_13, item_12)?;
+                object_13.finish();
             }
         }
-        array_13.finish();
+        array_11.finish();
     }
-    if let Some(var_16) = &input.enable_continuous_backup {
-        object.key("EnableContinuousBackup").boolean(*var_16);
+    if let Some(var_14) = &input.enable_continuous_backup {
+        object.key("EnableContinuousBackup").boolean(*var_14);
     }
-    if let Some(var_17) = &input.schedule_expression_timezone {
-        object.key("ScheduleExpressionTimezone").string(var_17.as_str());
+    if let Some(var_15) = &input.schedule_expression_timezone {
+        object.key("ScheduleExpressionTimezone").string(var_15.as_str());
     }
     Ok(())
 }

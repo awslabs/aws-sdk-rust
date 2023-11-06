@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StatusReason {
     /// <p>The reason code for the current status of the analyzer.</p>
-    pub code: ::std::option::Option<crate::types::ReasonCode>,
+    pub code: crate::types::ReasonCode,
 }
 impl StatusReason {
     /// <p>The reason code for the current status of the analyzer.</p>
-    pub fn code(&self) -> ::std::option::Option<&crate::types::ReasonCode> {
-        self.code.as_ref()
+    pub fn code(&self) -> &crate::types::ReasonCode {
+        &self.code
     }
 }
 impl StatusReason {
@@ -28,6 +28,7 @@ pub struct StatusReasonBuilder {
 }
 impl StatusReasonBuilder {
     /// <p>The reason code for the current status of the analyzer.</p>
+    /// This field is required.
     pub fn code(mut self, input: crate::types::ReasonCode) -> Self {
         self.code = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,16 @@ impl StatusReasonBuilder {
         &self.code
     }
     /// Consumes the builder and constructs a [`StatusReason`](crate::types::StatusReason).
-    pub fn build(self) -> crate::types::StatusReason {
-        crate::types::StatusReason { code: self.code }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`code`](crate::types::builders::StatusReasonBuilder::code)
+    pub fn build(self) -> ::std::result::Result<crate::types::StatusReason, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::StatusReason {
+            code: self.code.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "code",
+                    "code was not specified but it is required when building StatusReason",
+                )
+            })?,
+        })
     }
 }

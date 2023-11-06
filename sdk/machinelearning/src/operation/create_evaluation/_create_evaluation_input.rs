@@ -50,6 +50,7 @@ pub struct CreateEvaluationInputBuilder {
 }
 impl CreateEvaluationInputBuilder {
     /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code>.</p>
+    /// This field is required.
     pub fn evaluation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_id = ::std::option::Option::Some(input.into());
         self
@@ -79,6 +80,7 @@ impl CreateEvaluationInputBuilder {
     }
     /// <p>The ID of the <code>MLModel</code> to evaluate.</p>
     /// <p>The schema used in creating the <code>MLModel</code> must match the schema of the <code>DataSource</code> used in the <code>Evaluation</code>.</p>
+    /// This field is required.
     pub fn ml_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ml_model_id = ::std::option::Option::Some(input.into());
         self
@@ -95,6 +97,7 @@ impl CreateEvaluationInputBuilder {
         &self.ml_model_id
     }
     /// <p>The ID of the <code>DataSource</code> for the evaluation. The schema of the <code>DataSource</code> must match the schema used to create the <code>MLModel</code>.</p>
+    /// This field is required.
     pub fn evaluation_data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_data_source_id = ::std::option::Option::Some(input.into());
         self
@@ -111,7 +114,7 @@ impl CreateEvaluationInputBuilder {
     /// Consumes the builder and constructs a [`CreateEvaluationInput`](crate::operation::create_evaluation::CreateEvaluationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_evaluation::CreateEvaluationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_evaluation::CreateEvaluationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_evaluation::CreateEvaluationInput {
             evaluation_id: self.evaluation_id,
             evaluation_name: self.evaluation_name,

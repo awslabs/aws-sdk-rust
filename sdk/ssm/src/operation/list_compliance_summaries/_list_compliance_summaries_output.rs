@@ -11,8 +11,10 @@ pub struct ListComplianceSummariesOutput {
 }
 impl ListComplianceSummariesOutput {
     /// <p>A list of compliant and non-compliant summary counts based on compliance types. For example, this call returns State Manager associations, patches, or custom compliance types according to the filter criteria that you specified.</p>
-    pub fn compliance_summary_items(&self) -> ::std::option::Option<&[crate::types::ComplianceSummaryItem]> {
-        self.compliance_summary_items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compliance_summary_items.is_none()`.
+    pub fn compliance_summary_items(&self) -> &[crate::types::ComplianceSummaryItem] {
+        self.compliance_summary_items.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

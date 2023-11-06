@@ -27,6 +27,7 @@ pub struct GetIpSetInputBuilder {
 }
 impl GetIpSetInputBuilder {
     /// <p>The <code>IPSetId</code> of the <code>IPSet</code> that you want to get. <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
+    /// This field is required.
     pub fn ip_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_set_id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetIpSetInputBuilder {
         &self.ip_set_id
     }
     /// Consumes the builder and constructs a [`GetIpSetInput`](crate::operation::get_ip_set::GetIpSetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_ip_set::GetIpSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_ip_set::GetIpSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_ip_set::GetIpSetInput { ip_set_id: self.ip_set_id })
     }
 }

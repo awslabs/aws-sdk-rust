@@ -2,38 +2,38 @@
 pub fn ser_code_configuration_values(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CodeConfigurationValues,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.runtime {
-        object.key("Runtime").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Runtime").string(input.runtime.as_str());
     }
-    if let Some(var_2) = &input.build_command {
-        object.key("BuildCommand").string(var_2.as_str());
+    if let Some(var_1) = &input.build_command {
+        object.key("BuildCommand").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.start_command {
-        object.key("StartCommand").string(var_3.as_str());
+    if let Some(var_2) = &input.start_command {
+        object.key("StartCommand").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.port {
-        object.key("Port").string(var_4.as_str());
+    if let Some(var_3) = &input.port {
+        object.key("Port").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.runtime_environment_variables {
+    if let Some(var_4) = &input.runtime_environment_variables {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("RuntimeEnvironmentVariables").start_object();
-        for (key_7, value_8) in var_5 {
+        let mut object_5 = object.key("RuntimeEnvironmentVariables").start_object();
+        for (key_6, value_7) in var_4 {
             {
-                object_6.key(key_7.as_str()).string(value_8.as_str());
+                object_5.key(key_6.as_str()).string(value_7.as_str());
             }
         }
-        object_6.finish();
+        object_5.finish();
     }
-    if let Some(var_9) = &input.runtime_environment_secrets {
+    if let Some(var_8) = &input.runtime_environment_secrets {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("RuntimeEnvironmentSecrets").start_object();
-        for (key_11, value_12) in var_9 {
+        let mut object_9 = object.key("RuntimeEnvironmentSecrets").start_object();
+        for (key_10, value_11) in var_8 {
             {
-                object_10.key(key_11.as_str()).string(value_12.as_str());
+                object_9.key(key_10.as_str()).string(value_11.as_str());
             }
         }
-        object_10.finish();
+        object_9.finish();
     }
     Ok(())
 }
@@ -101,7 +101,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::code_configuration_values_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

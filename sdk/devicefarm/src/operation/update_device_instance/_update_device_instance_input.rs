@@ -20,8 +20,10 @@ impl UpdateDeviceInstanceInput {
         self.profile_arn.as_deref()
     }
     /// <p>An array of strings that you want to associate with the device instance.</p>
-    pub fn labels(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.labels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.labels.is_none()`.
+    pub fn labels(&self) -> &[::std::string::String] {
+        self.labels.as_deref().unwrap_or_default()
     }
 }
 impl UpdateDeviceInstanceInput {
@@ -41,6 +43,7 @@ pub struct UpdateDeviceInstanceInputBuilder {
 }
 impl UpdateDeviceInstanceInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the device instance.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -91,7 +94,7 @@ impl UpdateDeviceInstanceInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDeviceInstanceInput`](crate::operation::update_device_instance::UpdateDeviceInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_device_instance::UpdateDeviceInstanceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_device_instance::UpdateDeviceInstanceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_device_instance::UpdateDeviceInstanceInput {
             arn: self.arn,

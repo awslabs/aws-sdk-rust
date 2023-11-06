@@ -8,8 +8,10 @@ pub struct DeleteAlarmsInput {
 }
 impl DeleteAlarmsInput {
     /// <p>The alarms to be deleted. Do not enclose the alarm names in quote marks.</p>
-    pub fn alarm_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.alarm_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alarm_names.is_none()`.
+    pub fn alarm_names(&self) -> &[::std::string::String] {
+        self.alarm_names.as_deref().unwrap_or_default()
     }
 }
 impl DeleteAlarmsInput {
@@ -47,7 +49,9 @@ impl DeleteAlarmsInputBuilder {
         &self.alarm_names
     }
     /// Consumes the builder and constructs a [`DeleteAlarmsInput`](crate::operation::delete_alarms::DeleteAlarmsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_alarms::DeleteAlarmsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_alarms::DeleteAlarmsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_alarms::DeleteAlarmsInput {
             alarm_names: self.alarm_names,
         })

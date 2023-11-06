@@ -49,6 +49,7 @@ impl TelemetryConfigurationBuilder {
         &self.configuration_sync_status
     }
     /// Configure telemetry to be on or off.
+    /// This field is required.
     pub fn telemetry(mut self, input: crate::types::Telemetry) -> Self {
         self.telemetry = ::std::option::Option::Some(input);
         self

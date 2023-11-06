@@ -36,8 +36,8 @@ pub fn de_disassociate_wireless_gateway_from_certificate_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InternalServerException" => crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificateError::InternalServerException({
@@ -52,8 +52,8 @@ pub fn de_disassociate_wireless_gateway_from_certificate_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificateError::ResourceNotFoundException({
@@ -68,8 +68,8 @@ pub fn de_disassociate_wireless_gateway_from_certificate_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ThrottlingException" => crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificateError::ThrottlingException({
@@ -84,8 +84,8 @@ pub fn de_disassociate_wireless_gateway_from_certificate_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ValidationException" => crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificateError::ValidationException({
@@ -100,8 +100,8 @@ pub fn de_disassociate_wireless_gateway_from_certificate_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificateError::generic(generic)

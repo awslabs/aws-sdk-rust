@@ -2,7 +2,7 @@
 pub fn ser_data_cells_filter_resource(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataCellsFilterResource,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.table_catalog_id {
         object.key("TableCatalogId").string(var_1.as_str());
     }

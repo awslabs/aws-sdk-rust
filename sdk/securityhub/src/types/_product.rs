@@ -47,8 +47,10 @@ impl Product {
         self.description.as_deref()
     }
     /// <p>The categories assigned to the product.</p>
-    pub fn categories(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.categories.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.categories.is_none()`.
+    pub fn categories(&self) -> &[::std::string::String] {
+        self.categories.as_deref().unwrap_or_default()
     }
     /// <p>The types of integration that the product supports. Available values are the following.</p>
     /// <ul>
@@ -56,8 +58,10 @@ impl Product {
     /// <li> <p> <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives findings from Security Hub.</p> </li>
     /// <li> <p> <code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new findings to Security Hub, but does make updates to the findings that it receives from Security Hub.</p> </li>
     /// </ul>
-    pub fn integration_types(&self) -> ::std::option::Option<&[crate::types::IntegrationType]> {
-        self.integration_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.integration_types.is_none()`.
+    pub fn integration_types(&self) -> &[crate::types::IntegrationType] {
+        self.integration_types.as_deref().unwrap_or_default()
     }
     /// <p>For integrations with Amazon Web Services services, the Amazon Web Services Console URL from which to activate the service.</p>
     /// <p>For integrations with third-party products, the Amazon Web Services Marketplace URL from which to subscribe to or purchase the product.</p>
@@ -96,6 +100,7 @@ pub struct ProductBuilder {
 }
 impl ProductBuilder {
     /// <p>The ARN assigned to the product.</p>
+    /// This field is required.
     pub fn product_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_arn = ::std::option::Option::Some(input.into());
         self

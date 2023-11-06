@@ -17,16 +17,22 @@ pub struct LambdaLayerAggregation {
 }
 impl LambdaLayerAggregation {
     /// <p>The names of the AWS Lambda functions associated with the layers.</p>
-    pub fn function_names(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.function_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.function_names.is_none()`.
+    pub fn function_names(&self) -> &[crate::types::StringFilter] {
+        self.function_names.as_deref().unwrap_or_default()
     }
     /// <p>The resource IDs for the AWS Lambda function layers.</p>
-    pub fn resource_ids(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.resource_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_ids.is_none()`.
+    pub fn resource_ids(&self) -> &[crate::types::StringFilter] {
+        self.resource_ids.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Lambda function layer. </p>
-    pub fn layer_arns(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.layer_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.layer_arns.is_none()`.
+    pub fn layer_arns(&self) -> &[crate::types::StringFilter] {
+        self.layer_arns.as_deref().unwrap_or_default()
     }
     /// <p>The order to use for sorting the results.</p>
     pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {

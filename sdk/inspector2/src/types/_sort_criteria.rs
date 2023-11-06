@@ -5,18 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SortCriteria {
     /// <p>The finding detail field by which results are sorted.</p>
-    pub field: ::std::option::Option<crate::types::SortField>,
+    pub field: crate::types::SortField,
     /// <p>The order by which findings are sorted.</p>
-    pub sort_order: ::std::option::Option<crate::types::SortOrder>,
+    pub sort_order: crate::types::SortOrder,
 }
 impl SortCriteria {
     /// <p>The finding detail field by which results are sorted.</p>
-    pub fn field(&self) -> ::std::option::Option<&crate::types::SortField> {
-        self.field.as_ref()
+    pub fn field(&self) -> &crate::types::SortField {
+        &self.field
     }
     /// <p>The order by which findings are sorted.</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
-        self.sort_order.as_ref()
+    pub fn sort_order(&self) -> &crate::types::SortOrder {
+        &self.sort_order
     }
 }
 impl SortCriteria {
@@ -35,6 +35,7 @@ pub struct SortCriteriaBuilder {
 }
 impl SortCriteriaBuilder {
     /// <p>The finding detail field by which results are sorted.</p>
+    /// This field is required.
     pub fn field(mut self, input: crate::types::SortField) -> Self {
         self.field = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl SortCriteriaBuilder {
         &self.field
     }
     /// <p>The order by which findings are sorted.</p>
+    /// This field is required.
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl SortCriteriaBuilder {
         &self.sort_order
     }
     /// Consumes the builder and constructs a [`SortCriteria`](crate::types::SortCriteria).
-    pub fn build(self) -> crate::types::SortCriteria {
-        crate::types::SortCriteria {
-            field: self.field,
-            sort_order: self.sort_order,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`field`](crate::types::builders::SortCriteriaBuilder::field)
+    /// - [`sort_order`](crate::types::builders::SortCriteriaBuilder::sort_order)
+    pub fn build(self) -> ::std::result::Result<crate::types::SortCriteria, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SortCriteria {
+            field: self.field.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "field",
+                    "field was not specified but it is required when building SortCriteria",
+                )
+            })?,
+            sort_order: self.sort_order.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "sort_order",
+                    "sort_order was not specified but it is required when building SortCriteria",
+                )
+            })?,
+        })
     }
 }

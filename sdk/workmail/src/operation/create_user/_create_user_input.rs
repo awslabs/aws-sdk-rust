@@ -92,6 +92,7 @@ pub struct CreateUserInputBuilder {
 }
 impl CreateUserInputBuilder {
     /// <p>The identifier of the organization for which the user is created.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -106,6 +107,7 @@ impl CreateUserInputBuilder {
         &self.organization_id
     }
     /// <p>The name for the new user. WorkMail directory user names have a maximum length of 64. All others have a maximum length of 20.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -120,6 +122,7 @@ impl CreateUserInputBuilder {
         &self.name
     }
     /// <p>The display name for the new user.</p>
+    /// This field is required.
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
         self
@@ -207,7 +210,7 @@ impl CreateUserInputBuilder {
         &self.hidden_from_global_address_list
     }
     /// Consumes the builder and constructs a [`CreateUserInput`](crate::operation::create_user::CreateUserInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_user::CreateUserInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_user::CreateUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_user::CreateUserInput {
             organization_id: self.organization_id,
             name: self.name,

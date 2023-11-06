@@ -4,19 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateGroupOutput {
     /// <p>The identifier of the newly created group in the identity store.</p>
-    pub group_id: ::std::option::Option<::std::string::String>,
+    pub group_id: ::std::string::String,
     /// <p>The globally unique identifier for the identity store.</p>
-    pub identity_store_id: ::std::option::Option<::std::string::String>,
+    pub identity_store_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateGroupOutput {
     /// <p>The identifier of the newly created group in the identity store.</p>
-    pub fn group_id(&self) -> ::std::option::Option<&str> {
-        self.group_id.as_deref()
+    pub fn group_id(&self) -> &str {
+        use std::ops::Deref;
+        self.group_id.deref()
     }
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(&self) -> ::std::option::Option<&str> {
-        self.identity_store_id.as_deref()
+    pub fn identity_store_id(&self) -> &str {
+        use std::ops::Deref;
+        self.identity_store_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateGroupOutput {
@@ -41,6 +43,7 @@ pub struct CreateGroupOutputBuilder {
 }
 impl CreateGroupOutputBuilder {
     /// <p>The identifier of the newly created group in the identity store.</p>
+    /// This field is required.
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl CreateGroupOutputBuilder {
         &self.group_id
     }
     /// <p>The globally unique identifier for the identity store.</p>
+    /// This field is required.
     pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_store_id = ::std::option::Option::Some(input.into());
         self
@@ -78,11 +82,24 @@ impl CreateGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateGroupOutput`](crate::operation::create_group::CreateGroupOutput).
-    pub fn build(self) -> crate::operation::create_group::CreateGroupOutput {
-        crate::operation::create_group::CreateGroupOutput {
-            group_id: self.group_id,
-            identity_store_id: self.identity_store_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`group_id`](crate::operation::create_group::builders::CreateGroupOutputBuilder::group_id)
+    /// - [`identity_store_id`](crate::operation::create_group::builders::CreateGroupOutputBuilder::identity_store_id)
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_group::CreateGroupOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_group::CreateGroupOutput {
+            group_id: self.group_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "group_id",
+                    "group_id was not specified but it is required when building CreateGroupOutput",
+                )
+            })?,
+            identity_store_id: self.identity_store_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "identity_store_id",
+                    "identity_store_id was not specified but it is required when building CreateGroupOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

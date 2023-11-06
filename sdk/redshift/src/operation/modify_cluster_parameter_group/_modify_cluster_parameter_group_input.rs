@@ -19,8 +19,10 @@ impl ModifyClusterParameterGroupInput {
     /// <p>An array of parameters to be modified. A maximum of 20 parameters can be modified in a single request.</p>
     /// <p>For each parameter to be modified, you must supply at least the parameter name and parameter value; other name-value pairs of the parameter are optional.</p>
     /// <p>For the workload management (WLM) configuration, you must supply all the name-value pairs in the wlm_json_configuration parameter.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&[crate::types::Parameter]> {
-        self.parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
+    pub fn parameters(&self) -> &[crate::types::Parameter] {
+        self.parameters.as_deref().unwrap_or_default()
     }
 }
 impl ModifyClusterParameterGroupInput {
@@ -39,6 +41,7 @@ pub struct ModifyClusterParameterGroupInputBuilder {
 }
 impl ModifyClusterParameterGroupInputBuilder {
     /// <p>The name of the parameter group to be modified.</p>
+    /// This field is required.
     pub fn parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_group_name = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +86,7 @@ impl ModifyClusterParameterGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupInput {
             parameter_group_name: self.parameter_group_name,

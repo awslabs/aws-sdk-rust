@@ -76,6 +76,7 @@ impl ListReferenceImportJobsInputBuilder {
         &self.next_token
     }
     /// <p>The job's reference store ID.</p>
+    /// This field is required.
     pub fn reference_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reference_store_id = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +109,7 @@ impl ListReferenceImportJobsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_reference_import_jobs::ListReferenceImportJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_reference_import_jobs::ListReferenceImportJobsInput {
             max_results: self.max_results,

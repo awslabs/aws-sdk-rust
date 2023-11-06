@@ -38,6 +38,7 @@ pub struct EntityDetailsBuilder {
 }
 impl EntityDetailsBuilder {
     /// <p>The&nbsp;<code>EntityInfo</code> object that contains details about the entity (user or role).</p>
+    /// This field is required.
     pub fn entity_info(mut self, input: crate::types::EntityInfo) -> Self {
         self.entity_info = ::std::option::Option::Some(input);
         self

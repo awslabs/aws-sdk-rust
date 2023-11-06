@@ -11,8 +11,10 @@ pub struct ListSimulationJobBatchesOutput {
 }
 impl ListSimulationJobBatchesOutput {
     /// <p>A list of simulation job batch summaries.</p>
-    pub fn simulation_job_batch_summaries(&self) -> ::std::option::Option<&[crate::types::SimulationJobBatchSummary]> {
-        self.simulation_job_batch_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.simulation_job_batch_summaries.is_none()`.
+    pub fn simulation_job_batch_summaries(&self) -> &[crate::types::SimulationJobBatchSummary] {
+        self.simulation_job_batch_summaries.as_deref().unwrap_or_default()
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobBatches</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

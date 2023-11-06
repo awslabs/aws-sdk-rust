@@ -34,6 +34,7 @@ pub struct GetEvidenceFileUploadUrlInputBuilder {
 }
 impl GetEvidenceFileUploadUrlInputBuilder {
     /// <p>The file that you want to upload. For a list of supported file formats, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files">Supported file types for manual evidence</a> in the <i>Audit Manager User Guide</i>.</p>
+    /// This field is required.
     pub fn file_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_name = ::std::option::Option::Some(input.into());
         self
@@ -52,7 +53,7 @@ impl GetEvidenceFileUploadUrlInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_evidence_file_upload_url::GetEvidenceFileUploadUrlInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_evidence_file_upload_url::GetEvidenceFileUploadUrlInput { file_name: self.file_name })
     }

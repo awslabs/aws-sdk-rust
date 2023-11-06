@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRowData {
     /// <p> An external identifier that represents the single row that is being created as part of the BatchCreateTableRows request. This can be any string that you can use to identify the row in the request. The BatchCreateTableRows API puts the batch item id in the results to allow you to link data in the request to data in the results. </p>
-    pub batch_item_id: ::std::option::Option<::std::string::String>,
+    pub batch_item_id: ::std::string::String,
     /// <p> A map representing the cells to create in the new row. The key is the column id of the cell and the value is the CellInput object that represents the data to set in that cell. </p>
-    pub cells_to_create: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CellInput>>,
+    pub cells_to_create: ::std::collections::HashMap<::std::string::String, crate::types::CellInput>,
 }
 impl CreateRowData {
     /// <p> An external identifier that represents the single row that is being created as part of the BatchCreateTableRows request. This can be any string that you can use to identify the row in the request. The BatchCreateTableRows API puts the batch item id in the results to allow you to link data in the request to data in the results. </p>
-    pub fn batch_item_id(&self) -> ::std::option::Option<&str> {
-        self.batch_item_id.as_deref()
+    pub fn batch_item_id(&self) -> &str {
+        use std::ops::Deref;
+        self.batch_item_id.deref()
     }
     /// <p> A map representing the cells to create in the new row. The key is the column id of the cell and the value is the CellInput object that represents the data to set in that cell. </p>
-    pub fn cells_to_create(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::CellInput>> {
-        self.cells_to_create.as_ref()
+    pub fn cells_to_create(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::CellInput> {
+        &self.cells_to_create
     }
 }
 impl CreateRowData {
@@ -35,6 +36,7 @@ pub struct CreateRowDataBuilder {
 }
 impl CreateRowDataBuilder {
     /// <p> An external identifier that represents the single row that is being created as part of the BatchCreateTableRows request. This can be any string that you can use to identify the row in the request. The BatchCreateTableRows API puts the batch item id in the results to allow you to link data in the request to data in the results. </p>
+    /// This field is required.
     pub fn batch_item_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.batch_item_id = ::std::option::Option::Some(input.into());
         self
@@ -72,10 +74,23 @@ impl CreateRowDataBuilder {
         &self.cells_to_create
     }
     /// Consumes the builder and constructs a [`CreateRowData`](crate::types::CreateRowData).
-    pub fn build(self) -> crate::types::CreateRowData {
-        crate::types::CreateRowData {
-            batch_item_id: self.batch_item_id,
-            cells_to_create: self.cells_to_create,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`batch_item_id`](crate::types::builders::CreateRowDataBuilder::batch_item_id)
+    /// - [`cells_to_create`](crate::types::builders::CreateRowDataBuilder::cells_to_create)
+    pub fn build(self) -> ::std::result::Result<crate::types::CreateRowData, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CreateRowData {
+            batch_item_id: self.batch_item_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "batch_item_id",
+                    "batch_item_id was not specified but it is required when building CreateRowData",
+                )
+            })?,
+            cells_to_create: self.cells_to_create.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "cells_to_create",
+                    "cells_to_create was not specified but it is required when building CreateRowData",
+                )
+            })?,
+        })
     }
 }

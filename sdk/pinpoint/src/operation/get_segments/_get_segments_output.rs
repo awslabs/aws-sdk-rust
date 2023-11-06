@@ -34,6 +34,7 @@ pub struct GetSegmentsOutputBuilder {
 }
 impl GetSegmentsOutputBuilder {
     /// <p>Provides information about all the segments that are associated with an application.</p>
+    /// This field is required.
     pub fn segments_response(mut self, input: crate::types::SegmentsResponse) -> Self {
         self.segments_response = ::std::option::Option::Some(input);
         self

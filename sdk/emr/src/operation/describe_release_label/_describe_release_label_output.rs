@@ -19,16 +19,20 @@ impl DescribeReleaseLabelOutput {
         self.release_label.as_deref()
     }
     /// <p>The list of applications available for the target release label. <code>Name</code> is the name of the application. <code>Version</code> is the concise version of the application.</p>
-    pub fn applications(&self) -> ::std::option::Option<&[crate::types::SimplifiedApplication]> {
-        self.applications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.applications.is_none()`.
+    pub fn applications(&self) -> &[crate::types::SimplifiedApplication] {
+        self.applications.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token. Reserved for future use. Currently set to null.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The list of available Amazon Linux release versions for an Amazon EMR release. Contains a Label field that is formatted as shown in <a href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-al2.html"> <i>Amazon Linux 2 Release Notes</i> </a>. For example, <a href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html">2.0.20220218.1</a>.</p>
-    pub fn available_os_releases(&self) -> ::std::option::Option<&[crate::types::OsRelease]> {
-        self.available_os_releases.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.available_os_releases.is_none()`.
+    pub fn available_os_releases(&self) -> &[crate::types::OsRelease] {
+        self.available_os_releases.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeReleaseLabelOutput {

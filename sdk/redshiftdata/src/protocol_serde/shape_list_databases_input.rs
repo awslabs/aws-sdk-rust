@@ -2,7 +2,7 @@
 pub fn ser_list_databases_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_databases::ListDatabasesInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cluster_identifier {
         object.key("ClusterIdentifier").string(var_1.as_str());
     }
@@ -18,14 +18,14 @@ pub fn ser_list_databases_input(
     if let Some(var_5) = &input.next_token {
         object.key("NextToken").string(var_5.as_str());
     }
-    if input.max_results != 0 {
+    if let Some(var_6) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.max_results).into()),
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if let Some(var_6) = &input.workgroup_name {
-        object.key("WorkgroupName").string(var_6.as_str());
+    if let Some(var_7) = &input.workgroup_name {
+        object.key("WorkgroupName").string(var_7.as_str());
     }
     Ok(())
 }

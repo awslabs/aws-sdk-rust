@@ -11,12 +11,16 @@ pub struct CancelCapacityReservationFleetsOutput {
 }
 impl CancelCapacityReservationFleetsOutput {
     /// <p>Information about the Capacity Reservation Fleets that were successfully cancelled.</p>
-    pub fn successful_fleet_cancellations(&self) -> ::std::option::Option<&[crate::types::CapacityReservationFleetCancellationState]> {
-        self.successful_fleet_cancellations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.successful_fleet_cancellations.is_none()`.
+    pub fn successful_fleet_cancellations(&self) -> &[crate::types::CapacityReservationFleetCancellationState] {
+        self.successful_fleet_cancellations.as_deref().unwrap_or_default()
     }
     /// <p>Information about the Capacity Reservation Fleets that could not be cancelled.</p>
-    pub fn failed_fleet_cancellations(&self) -> ::std::option::Option<&[crate::types::FailedCapacityReservationFleetCancellationResult]> {
-        self.failed_fleet_cancellations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_fleet_cancellations.is_none()`.
+    pub fn failed_fleet_cancellations(&self) -> &[crate::types::FailedCapacityReservationFleetCancellationResult] {
+        self.failed_fleet_cancellations.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for CancelCapacityReservationFleetsOutput {

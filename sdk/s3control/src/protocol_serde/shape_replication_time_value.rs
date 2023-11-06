@@ -2,7 +2,7 @@
 pub fn ser_replication_time_value(
     input: &crate::types::ReplicationTimeValue,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_1) = &input.minutes {
@@ -13,6 +13,7 @@ pub fn ser_replication_time_value(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_replication_time_value(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::ReplicationTimeValue, ::aws_smithy_xml::decode::XmlDecodeError> {

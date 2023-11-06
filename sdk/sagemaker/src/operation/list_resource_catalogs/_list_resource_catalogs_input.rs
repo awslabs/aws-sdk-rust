@@ -169,7 +169,7 @@ impl ListResourceCatalogsInputBuilder {
     /// Consumes the builder and constructs a [`ListResourceCatalogsInput`](crate::operation::list_resource_catalogs::ListResourceCatalogsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_resource_catalogs::ListResourceCatalogsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_resource_catalogs::ListResourceCatalogsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_resource_catalogs::ListResourceCatalogsInput {
             name_contains: self.name_contains,

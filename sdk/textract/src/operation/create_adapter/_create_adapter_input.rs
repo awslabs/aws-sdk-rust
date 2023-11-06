@@ -30,8 +30,10 @@ impl CreateAdapterInput {
         self.description.as_deref()
     }
     /// <p>The type of feature that the adapter is being trained on. Currrenly, supported feature types are: <code>QUERIES</code> </p>
-    pub fn feature_types(&self) -> ::std::option::Option<&[crate::types::FeatureType]> {
-        self.feature_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.feature_types.is_none()`.
+    pub fn feature_types(&self) -> &[crate::types::FeatureType] {
+        self.feature_types.as_deref().unwrap_or_default()
     }
     /// <p>Controls whether or not the adapter should automatically update.</p>
     pub fn auto_update(&self) -> ::std::option::Option<&crate::types::AutoUpdate> {
@@ -62,6 +64,7 @@ pub struct CreateAdapterInputBuilder {
 }
 impl CreateAdapterInputBuilder {
     /// <p>The name to be assigned to the adapter being created.</p>
+    /// This field is required.
     pub fn adapter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.adapter_name = ::std::option::Option::Some(input.into());
         self
@@ -160,7 +163,7 @@ impl CreateAdapterInputBuilder {
     /// Consumes the builder and constructs a [`CreateAdapterInput`](crate::operation::create_adapter::CreateAdapterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_adapter::CreateAdapterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_adapter::CreateAdapterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_adapter::CreateAdapterInput {
             adapter_name: self.adapter_name,
             client_request_token: self.client_request_token,

@@ -11,8 +11,10 @@ pub struct ListRelatedResourcesForAuditFindingOutput {
 }
 impl ListRelatedResourcesForAuditFindingOutput {
     /// <p>The related resources.</p>
-    pub fn related_resources(&self) -> ::std::option::Option<&[crate::types::RelatedResource]> {
-        self.related_resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.related_resources.is_none()`.
+    pub fn related_resources(&self) -> &[crate::types::RelatedResource] {
+        self.related_resources.as_deref().unwrap_or_default()
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> for the first API call.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

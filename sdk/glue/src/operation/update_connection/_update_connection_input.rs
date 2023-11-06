@@ -55,6 +55,7 @@ impl UpdateConnectionInputBuilder {
         &self.catalog_id
     }
     /// <p>The name of the connection definition to update.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl UpdateConnectionInputBuilder {
         &self.name
     }
     /// <p>A <code>ConnectionInput</code> object that redefines the connection in question.</p>
+    /// This field is required.
     pub fn connection_input(mut self, input: crate::types::ConnectionInput) -> Self {
         self.connection_input = ::std::option::Option::Some(input);
         self
@@ -85,7 +87,7 @@ impl UpdateConnectionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateConnectionInput`](crate::operation::update_connection::UpdateConnectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_connection::UpdateConnectionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_connection::UpdateConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_connection::UpdateConnectionInput {
             catalog_id: self.catalog_id,
             name: self.name,

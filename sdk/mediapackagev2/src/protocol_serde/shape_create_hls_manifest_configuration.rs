@@ -2,30 +2,36 @@
 pub fn ser_create_hls_manifest_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CreateHlsManifestConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.manifest_name {
-        object.key("ManifestName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("ManifestName").string(input.manifest_name.as_str());
     }
-    if let Some(var_2) = &input.child_manifest_name {
-        object.key("ChildManifestName").string(var_2.as_str());
+    if let Some(var_1) = &input.child_manifest_name {
+        object.key("ChildManifestName").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.scte_hls {
+    if let Some(var_2) = &input.scte_hls {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("ScteHls").start_object();
-        crate::protocol_serde::shape_scte_hls::ser_scte_hls(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_3 = object.key("ScteHls").start_object();
+        crate::protocol_serde::shape_scte_hls::ser_scte_hls(&mut object_3, var_2)?;
+        object_3.finish();
     }
-    if let Some(var_5) = &input.manifest_window_seconds {
+    if let Some(var_4) = &input.manifest_window_seconds {
         object.key("ManifestWindowSeconds").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+        );
+    }
+    if let Some(var_5) = &input.program_date_time_interval_seconds {
+        object.key("ProgramDateTimeIntervalSeconds").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_6) = &input.program_date_time_interval_seconds {
-        object.key("ProgramDateTimeIntervalSeconds").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_6).into()),
-        );
+    if let Some(var_6) = &input.filter_configuration {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("FilterConfiguration").start_object();
+        crate::protocol_serde::shape_filter_configuration::ser_filter_configuration(&mut object_7, var_6)?;
+        object_7.finish();
     }
     Ok(())
 }

@@ -35,8 +35,10 @@ pub struct LambdaExecutionParameters {
 }
 impl LambdaExecutionParameters {
     /// <p>The list of event sources to which to subscribe to receive work messages. The Lambda function runs when it receives a message from an event source. You can subscribe this function to local publish/subscribe messages and Amazon Web Services IoT Core MQTT messages.</p>
-    pub fn event_sources(&self) -> ::std::option::Option<&[crate::types::LambdaEventSource]> {
-        self.event_sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_sources.is_none()`.
+    pub fn event_sources(&self) -> &[crate::types::LambdaEventSource] {
+        self.event_sources.as_deref().unwrap_or_default()
     }
     /// <p>The maximum size of the message queue for the Lambda function component. The IoT Greengrass core stores messages in a FIFO (first-in-first-out) queue until it can run the Lambda function to consume each message.</p>
     pub fn max_queue_size(&self) -> ::std::option::Option<i32> {
@@ -73,8 +75,10 @@ impl LambdaExecutionParameters {
         self.input_payload_encoding_type.as_ref()
     }
     /// <p>The list of arguments to pass to the Lambda function when it runs.</p>
-    pub fn exec_args(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.exec_args.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exec_args.is_none()`.
+    pub fn exec_args(&self) -> &[::std::string::String] {
+        self.exec_args.as_deref().unwrap_or_default()
     }
     /// <p>The map of environment variables that are available to the Lambda function when it runs.</p>
     pub fn environment_variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {

@@ -19,12 +19,16 @@ impl TagValues {
         self.key.as_deref()
     }
     /// <p>The specific value of the tag.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
+    pub fn values(&self) -> &[::std::string::String] {
+        self.values.as_deref().unwrap_or_default()
     }
     /// <p>The match options that you can use to filter your results. <code>MatchOptions</code> is only applicable for actions related to Cost Category. The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
-    pub fn match_options(&self) -> ::std::option::Option<&[crate::types::MatchOption]> {
-        self.match_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.match_options.is_none()`.
+    pub fn match_options(&self) -> &[crate::types::MatchOption] {
+        self.match_options.as_deref().unwrap_or_default()
     }
 }
 impl TagValues {

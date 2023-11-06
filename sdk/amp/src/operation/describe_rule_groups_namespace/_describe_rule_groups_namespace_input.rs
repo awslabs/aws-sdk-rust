@@ -35,6 +35,7 @@ pub struct DescribeRuleGroupsNamespaceInputBuilder {
 }
 impl DescribeRuleGroupsNamespaceInputBuilder {
     /// The ID of the workspace to describe.
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl DescribeRuleGroupsNamespaceInputBuilder {
         &self.workspace_id
     }
     /// The rule groups namespace.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -67,7 +69,7 @@ impl DescribeRuleGroupsNamespaceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_rule_groups_namespace::DescribeRuleGroupsNamespaceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_rule_groups_namespace::DescribeRuleGroupsNamespaceInput {
             workspace_id: self.workspace_id,

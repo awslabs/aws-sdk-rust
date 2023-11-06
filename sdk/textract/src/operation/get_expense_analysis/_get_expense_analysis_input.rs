@@ -41,6 +41,7 @@ pub struct GetExpenseAnalysisInputBuilder {
 }
 impl GetExpenseAnalysisInputBuilder {
     /// <p>A unique identifier for the text detection job. The <code>JobId</code> is returned from <code>StartExpenseAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,8 @@ impl GetExpenseAnalysisInputBuilder {
     /// Consumes the builder and constructs a [`GetExpenseAnalysisInput`](crate::operation::get_expense_analysis::GetExpenseAnalysisInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_expense_analysis::GetExpenseAnalysisInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_expense_analysis::GetExpenseAnalysisInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_expense_analysis::GetExpenseAnalysisInput {
             job_id: self.job_id,
             max_results: self.max_results,

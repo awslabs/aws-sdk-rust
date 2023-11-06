@@ -2,12 +2,12 @@
 pub fn ser_recommendation_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RecommendationSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.instance_sizing_type {
-        object.key("InstanceSizingType").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("InstanceSizingType").string(input.instance_sizing_type.as_str());
     }
-    if let Some(var_2) = &input.workload_type {
-        object.key("WorkloadType").string(var_2.as_str());
+    {
+        object.key("WorkloadType").string(input.workload_type.as_str());
     }
     Ok(())
 }
@@ -51,7 +51,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::recommendation_settings_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

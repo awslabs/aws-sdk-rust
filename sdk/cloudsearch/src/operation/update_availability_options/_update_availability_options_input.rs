@@ -35,6 +35,7 @@ pub struct UpdateAvailabilityOptionsInputBuilder {
 }
 impl UpdateAvailabilityOptionsInputBuilder {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl UpdateAvailabilityOptionsInputBuilder {
         &self.domain_name
     }
     /// <p>You expand an existing search domain to a second Availability Zone by setting the Multi-AZ option to true. Similarly, you can turn off the Multi-AZ option to downgrade the domain to a single Availability Zone by setting the Multi-AZ option to <code>false</code>. </p>
+    /// This field is required.
     pub fn multi_az(mut self, input: bool) -> Self {
         self.multi_az = ::std::option::Option::Some(input);
         self
@@ -67,7 +69,7 @@ impl UpdateAvailabilityOptionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_availability_options::UpdateAvailabilityOptionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_availability_options::UpdateAvailabilityOptionsInput {
             domain_name: self.domain_name,

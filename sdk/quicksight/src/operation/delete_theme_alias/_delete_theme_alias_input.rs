@@ -41,6 +41,7 @@ pub struct DeleteThemeAliasInputBuilder {
 }
 impl DeleteThemeAliasInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the theme alias to delete.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DeleteThemeAliasInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID for the theme that the specified alias is for.</p>
+    /// This field is required.
     pub fn theme_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.theme_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl DeleteThemeAliasInputBuilder {
         &self.theme_id
     }
     /// <p>The unique name for the theme alias to delete.</p>
+    /// This field is required.
     pub fn alias_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias_name = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +88,7 @@ impl DeleteThemeAliasInputBuilder {
     /// Consumes the builder and constructs a [`DeleteThemeAliasInput`](crate::operation::delete_theme_alias::DeleteThemeAliasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_theme_alias::DeleteThemeAliasInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_theme_alias::DeleteThemeAliasInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_theme_alias::DeleteThemeAliasInput {
             aws_account_id: self.aws_account_id,
             theme_id: self.theme_id,

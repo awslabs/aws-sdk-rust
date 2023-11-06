@@ -11,8 +11,10 @@ pub struct ListRegistriesOutput {
 }
 impl ListRegistriesOutput {
     /// <p>An array of <code>RegistryDetailedListItem</code> objects containing minimal details of each registry.</p>
-    pub fn registries(&self) -> ::std::option::Option<&[crate::types::RegistryListItem]> {
-        self.registries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.registries.is_none()`.
+    pub fn registries(&self) -> &[crate::types::RegistryListItem] {
+        self.registries.as_deref().unwrap_or_default()
     }
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -11,8 +11,10 @@ pub struct GetSecurityConfigurationsOutput {
 }
 impl GetSecurityConfigurationsOutput {
     /// <p>A list of security configurations.</p>
-    pub fn security_configurations(&self) -> ::std::option::Option<&[crate::types::SecurityConfiguration]> {
-        self.security_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_configurations.is_none()`.
+    pub fn security_configurations(&self) -> &[crate::types::SecurityConfiguration] {
+        self.security_configurations.as_deref().unwrap_or_default()
     }
     /// <p>A continuation token, if there are more security configurations to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

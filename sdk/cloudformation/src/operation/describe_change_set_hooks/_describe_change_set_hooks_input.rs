@@ -48,6 +48,7 @@ pub struct DescribeChangeSetHooksInputBuilder {
 }
 impl DescribeChangeSetHooksInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to describe.</p>
+    /// This field is required.
     pub fn change_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_set_name = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +109,7 @@ impl DescribeChangeSetHooksInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_change_set_hooks::DescribeChangeSetHooksInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_change_set_hooks::DescribeChangeSetHooksInput {
             change_set_name: self.change_set_name,

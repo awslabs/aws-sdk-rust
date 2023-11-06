@@ -84,6 +84,7 @@ pub struct CreateViewInputBuilder {
 }
 impl CreateViewInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +113,7 @@ impl CreateViewInputBuilder {
         &self.client_token
     }
     /// <p>Indicates the view status as either <code>SAVED</code> or <code>PUBLISHED</code>. The <code>PUBLISHED</code> status will initiate validation on the content.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::ViewStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -127,6 +129,7 @@ impl CreateViewInputBuilder {
     }
     /// <p>View content containing all content necessary to render a view except for runtime input data.</p>
     /// <p>The total uncompressed content has a maximum file size of 400kB.</p>
+    /// This field is required.
     pub fn content(mut self, input: crate::types::ViewInputContent) -> Self {
         self.content = ::std::option::Option::Some(input);
         self
@@ -157,6 +160,7 @@ impl CreateViewInputBuilder {
         &self.description
     }
     /// <p>The name of the view.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -191,7 +195,7 @@ impl CreateViewInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateViewInput`](crate::operation::create_view::CreateViewInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_view::CreateViewInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_view::CreateViewInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_view::CreateViewInput {
             instance_id: self.instance_id,
             client_token: self.client_token,

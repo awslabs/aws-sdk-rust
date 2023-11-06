@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SectionalElement {
     /// <p>The type of sectional element. Valid values are <code>Heading</code>, <code>Text</code>, and <code>Divider</code>.</p>
-    pub r#type: ::std::option::Option<::std::string::String>,
+    pub r#type: ::std::string::String,
     /// <p>Specifies the position of the text in a field for a <code>Text</code> sectional element.</p>
     pub position: ::std::option::Option<crate::types::FieldPosition>,
     /// <p>The text for a <code>Text</code> sectional element.</p>
@@ -19,8 +19,9 @@ pub struct SectionalElement {
 }
 impl SectionalElement {
     /// <p>The type of sectional element. Valid values are <code>Heading</code>, <code>Text</code>, and <code>Divider</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
-        self.r#type.as_deref()
+    pub fn r#type(&self) -> &str {
+        use std::ops::Deref;
+        self.r#type.deref()
     }
     /// <p>Specifies the position of the text in a field for a <code>Text</code> sectional element.</p>
     pub fn position(&self) -> ::std::option::Option<&crate::types::FieldPosition> {
@@ -63,6 +64,7 @@ pub struct SectionalElementBuilder {
 }
 impl SectionalElementBuilder {
     /// <p>The type of sectional element. Valid values are <code>Heading</code>, <code>Text</code>, and <code>Divider</code>.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
@@ -147,14 +149,21 @@ impl SectionalElementBuilder {
         &self.excluded
     }
     /// Consumes the builder and constructs a [`SectionalElement`](crate::types::SectionalElement).
-    pub fn build(self) -> crate::types::SectionalElement {
-        crate::types::SectionalElement {
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::SectionalElementBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::SectionalElement, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SectionalElement {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building SectionalElement",
+                )
+            })?,
             position: self.position,
             text: self.text,
             level: self.level,
             orientation: self.orientation,
             excluded: self.excluded,
-        }
+        })
     }
 }

@@ -35,12 +35,16 @@ impl AwsEc2SecurityGroupDetails {
         self.vpc_id.as_deref()
     }
     /// <p>The inbound rules associated with the security group.</p>
-    pub fn ip_permissions(&self) -> ::std::option::Option<&[crate::types::AwsEc2SecurityGroupIpPermission]> {
-        self.ip_permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ip_permissions.is_none()`.
+    pub fn ip_permissions(&self) -> &[crate::types::AwsEc2SecurityGroupIpPermission] {
+        self.ip_permissions.as_deref().unwrap_or_default()
     }
     /// <p>[VPC only] The outbound rules associated with the security group.</p>
-    pub fn ip_permissions_egress(&self) -> ::std::option::Option<&[crate::types::AwsEc2SecurityGroupIpPermission]> {
-        self.ip_permissions_egress.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ip_permissions_egress.is_none()`.
+    pub fn ip_permissions_egress(&self) -> &[crate::types::AwsEc2SecurityGroupIpPermission] {
+        self.ip_permissions_egress.as_deref().unwrap_or_default()
     }
 }
 impl AwsEc2SecurityGroupDetails {

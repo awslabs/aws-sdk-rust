@@ -17,8 +17,10 @@ impl ComparativeOrder {
         self.use_ordering.as_ref()
     }
     /// <p>The list of columns to be used in the ordering.</p>
-    pub fn specifed_order(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.specifed_order.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.specifed_order.is_none()`.
+    pub fn specifed_order(&self) -> &[::std::string::String] {
+        self.specifed_order.as_deref().unwrap_or_default()
     }
     /// <p>The treat of undefined specified values. Valid values for this structure are <code>LEAST</code> and <code>MOST</code>.</p>
     pub fn treat_undefined_specified_values(&self) -> ::std::option::Option<&crate::types::UndefinedSpecifiedValueType> {

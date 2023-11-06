@@ -38,7 +38,7 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::action_type_artifact_details_correct_errors(builder).build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -49,7 +49,7 @@ where
 pub fn ser_action_type_artifact_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ActionTypeArtifactDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("minimumCount").number(
             #[allow(clippy::useless_conversion)]

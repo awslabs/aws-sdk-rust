@@ -30,8 +30,10 @@ impl ListSecretsInput {
         self.next_token.as_deref()
     }
     /// <p>The filters to apply to the list of secrets.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>Secrets are listed by <code>CreatedDate</code>. </p>
     pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrderType> {
@@ -136,7 +138,7 @@ impl ListSecretsInputBuilder {
         &self.sort_order
     }
     /// Consumes the builder and constructs a [`ListSecretsInput`](crate::operation::list_secrets::ListSecretsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_secrets::ListSecretsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_secrets::ListSecretsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_secrets::ListSecretsInput {
             include_planned_deletion: self.include_planned_deletion,
             max_results: self.max_results,

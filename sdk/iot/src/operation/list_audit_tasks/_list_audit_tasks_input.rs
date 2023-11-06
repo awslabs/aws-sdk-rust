@@ -62,6 +62,7 @@ pub struct ListAuditTasksInputBuilder {
 }
 impl ListAuditTasksInputBuilder {
     /// <p>The beginning of the time period. Audit information is retained for a limited time (90 days). Requesting a start time prior to what is retained results in an "InvalidRequestException".</p>
+    /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
@@ -76,6 +77,7 @@ impl ListAuditTasksInputBuilder {
         &self.start_time
     }
     /// <p>The end of the time period.</p>
+    /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
@@ -148,7 +150,7 @@ impl ListAuditTasksInputBuilder {
     /// Consumes the builder and constructs a [`ListAuditTasksInput`](crate::operation::list_audit_tasks::ListAuditTasksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_audit_tasks::ListAuditTasksInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_audit_tasks::ListAuditTasksInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_audit_tasks::ListAuditTasksInput {
             start_time: self.start_time,
             end_time: self.end_time,

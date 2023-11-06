@@ -25,8 +25,10 @@ impl TestInvokeAuthorizerOutput {
         self.principal_id.as_deref()
     }
     /// <p>IAM policy documents.</p>
-    pub fn policy_documents(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.policy_documents.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_documents.is_none()`.
+    pub fn policy_documents(&self) -> &[::std::string::String] {
+        self.policy_documents.as_deref().unwrap_or_default()
     }
     /// <p>The number of seconds after which the temporary credentials are refreshed.</p>
     pub fn refresh_after_in_seconds(&self) -> ::std::option::Option<i32> {

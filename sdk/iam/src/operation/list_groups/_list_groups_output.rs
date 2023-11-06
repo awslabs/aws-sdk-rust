@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListGroupsOutput {
     /// <p>A list of groups.</p>
-    pub groups: ::std::option::Option<::std::vec::Vec<crate::types::Group>>,
+    pub groups: ::std::vec::Vec<crate::types::Group>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
@@ -14,8 +14,9 @@ pub struct ListGroupsOutput {
 }
 impl ListGroupsOutput {
     /// <p>A list of groups.</p>
-    pub fn groups(&self) -> ::std::option::Option<&[crate::types::Group]> {
-        self.groups.as_deref()
+    pub fn groups(&self) -> &[crate::types::Group] {
+        use std::ops::Deref;
+        self.groups.deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub fn is_truncated(&self) -> bool {
@@ -106,12 +107,19 @@ impl ListGroupsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListGroupsOutput`](crate::operation::list_groups::ListGroupsOutput).
-    pub fn build(self) -> crate::operation::list_groups::ListGroupsOutput {
-        crate::operation::list_groups::ListGroupsOutput {
-            groups: self.groups,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`groups`](crate::operation::list_groups::builders::ListGroupsOutputBuilder::groups)
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_groups::ListGroupsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_groups::ListGroupsOutput {
+            groups: self.groups.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "groups",
+                    "groups was not specified but it is required when building ListGroupsOutput",
+                )
+            })?,
             is_truncated: self.is_truncated.unwrap_or_default(),
             marker: self.marker,
             _request_id: self._request_id,
-        }
+        })
     }
 }

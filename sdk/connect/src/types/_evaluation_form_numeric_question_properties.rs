@@ -23,8 +23,10 @@ impl EvaluationFormNumericQuestionProperties {
         self.max_value
     }
     /// <p>The scoring options of the numeric question.</p>
-    pub fn options(&self) -> ::std::option::Option<&[crate::types::EvaluationFormNumericQuestionOption]> {
-        self.options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.options.is_none()`.
+    pub fn options(&self) -> &[crate::types::EvaluationFormNumericQuestionOption] {
+        self.options.as_deref().unwrap_or_default()
     }
     /// <p>The automation properties of the numeric question.</p>
     pub fn automation(&self) -> ::std::option::Option<&crate::types::EvaluationFormNumericQuestionAutomation> {
@@ -49,6 +51,7 @@ pub struct EvaluationFormNumericQuestionPropertiesBuilder {
 }
 impl EvaluationFormNumericQuestionPropertiesBuilder {
     /// <p>The minimum answer value.</p>
+    /// This field is required.
     pub fn min_value(mut self, input: i32) -> Self {
         self.min_value = ::std::option::Option::Some(input);
         self
@@ -63,6 +66,7 @@ impl EvaluationFormNumericQuestionPropertiesBuilder {
         &self.min_value
     }
     /// <p>The maximum answer value.</p>
+    /// This field is required.
     pub fn max_value(mut self, input: i32) -> Self {
         self.max_value = ::std::option::Option::Some(input);
         self

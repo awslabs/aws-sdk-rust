@@ -25,8 +25,10 @@ impl ModifySpotFleetRequestInput {
         self.excess_capacity_termination_policy.as_ref()
     }
     /// <p>The launch template and overrides. You can only use this parameter if you specified a launch template (<code>LaunchTemplateConfigs</code>) in your Spot Fleet request. If you specified <code>LaunchSpecifications</code> in your Spot Fleet request, then omit this parameter.</p>
-    pub fn launch_template_configs(&self) -> ::std::option::Option<&[crate::types::LaunchTemplateConfig]> {
-        self.launch_template_configs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.launch_template_configs.is_none()`.
+    pub fn launch_template_configs(&self) -> &[crate::types::LaunchTemplateConfig] {
+        self.launch_template_configs.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the Spot Fleet request.</p>
     pub fn spot_fleet_request_id(&self) -> ::std::option::Option<&str> {
@@ -102,6 +104,7 @@ impl ModifySpotFleetRequestInputBuilder {
         &self.launch_template_configs
     }
     /// <p>The ID of the Spot Fleet request.</p>
+    /// This field is required.
     pub fn spot_fleet_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.spot_fleet_request_id = ::std::option::Option::Some(input.into());
         self
@@ -162,7 +165,7 @@ impl ModifySpotFleetRequestInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_spot_fleet_request::ModifySpotFleetRequestInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_spot_fleet_request::ModifySpotFleetRequestInput {
             excess_capacity_termination_policy: self.excess_capacity_termination_policy,

@@ -49,6 +49,7 @@ pub struct RawMetricDataBuilder {
 }
 impl RawMetricDataBuilder {
     /// <p>The name of the metric.</p>
+    /// This field is required.
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_name = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl RawMetricDataBuilder {
         &self.metric_name
     }
     /// <p>The time that the metric was recorded.</p>
+    /// This field is required.
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
         self
@@ -91,6 +93,7 @@ impl RawMetricDataBuilder {
         &self.step
     }
     /// <p>The metric value.</p>
+    /// This field is required.
     pub fn value(mut self, input: f64) -> Self {
         self.value = ::std::option::Option::Some(input);
         self

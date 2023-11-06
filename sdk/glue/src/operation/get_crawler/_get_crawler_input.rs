@@ -27,6 +27,7 @@ pub struct GetCrawlerInputBuilder {
 }
 impl GetCrawlerInputBuilder {
     /// <p>The name of the crawler to retrieve metadata for.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetCrawlerInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`GetCrawlerInput`](crate::operation::get_crawler::GetCrawlerInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_crawler::GetCrawlerInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_crawler::GetCrawlerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_crawler::GetCrawlerInput { name: self.name })
     }
 }

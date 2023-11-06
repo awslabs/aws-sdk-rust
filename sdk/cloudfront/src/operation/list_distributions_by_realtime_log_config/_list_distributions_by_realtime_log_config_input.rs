@@ -108,7 +108,7 @@ impl ListDistributionsByRealtimeLogConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigInput {

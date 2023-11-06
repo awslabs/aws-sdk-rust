@@ -30,8 +30,10 @@ impl PutStorageLensConfigurationInput {
     /// <p>The tag set of the S3 Storage Lens configuration.</p> <note>
     /// <p>You can set up to a maximum of 50 tags.</p>
     /// </note>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::StorageLensTag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::StorageLensTag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl PutStorageLensConfigurationInput {
@@ -52,6 +54,7 @@ pub struct PutStorageLensConfigurationInputBuilder {
 }
 impl PutStorageLensConfigurationInputBuilder {
     /// <p>The ID of the S3 Storage Lens configuration.</p>
+    /// This field is required.
     pub fn config_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.config_id = ::std::option::Option::Some(input.into());
         self
@@ -66,6 +69,7 @@ impl PutStorageLensConfigurationInputBuilder {
         &self.config_id
     }
     /// <p>The account ID of the requester.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +84,7 @@ impl PutStorageLensConfigurationInputBuilder {
         &self.account_id
     }
     /// <p>The S3 Storage Lens configuration.</p>
+    /// This field is required.
     pub fn storage_lens_configuration(mut self, input: crate::types::StorageLensConfiguration) -> Self {
         self.storage_lens_configuration = ::std::option::Option::Some(input);
         self
@@ -124,7 +129,7 @@ impl PutStorageLensConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationInput {
             config_id: self.config_id,

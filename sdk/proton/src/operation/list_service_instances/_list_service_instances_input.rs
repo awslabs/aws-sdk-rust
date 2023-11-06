@@ -33,8 +33,10 @@ impl ListServiceInstancesInput {
         self.max_results
     }
     /// <p>An array of filtering criteria that scope down the result list. By default, all service instances in the Amazon Web Services account are returned.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::ListServiceInstancesFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::ListServiceInstancesFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The field that the result list is sorted by.</p>
     /// <p>When you choose to sort by <code>serviceName</code>, service instances within each service are sorted by service instance name.</p>
@@ -169,7 +171,7 @@ impl ListServiceInstancesInputBuilder {
     /// Consumes the builder and constructs a [`ListServiceInstancesInput`](crate::operation::list_service_instances::ListServiceInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_service_instances::ListServiceInstancesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_service_instances::ListServiceInstancesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_service_instances::ListServiceInstancesInput {
             service_name: self.service_name,

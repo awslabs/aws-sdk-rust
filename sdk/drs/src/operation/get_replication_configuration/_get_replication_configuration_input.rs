@@ -27,6 +27,7 @@ pub struct GetReplicationConfigurationInputBuilder {
 }
 impl GetReplicationConfigurationInputBuilder {
     /// <p>The ID of the Source Serve for this Replication Configuration.r</p>
+    /// This field is required.
     pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetReplicationConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_replication_configuration::GetReplicationConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_replication_configuration::GetReplicationConfigurationInput {
             source_server_id: self.source_server_id,

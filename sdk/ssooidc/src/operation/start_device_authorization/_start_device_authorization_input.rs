@@ -41,6 +41,7 @@ pub struct StartDeviceAuthorizationInputBuilder {
 }
 impl StartDeviceAuthorizationInputBuilder {
     /// <p>The unique identifier string for the client that is registered with IAM Identity Center. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
+    /// This field is required.
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl StartDeviceAuthorizationInputBuilder {
         &self.client_id
     }
     /// <p>A secret string that is generated for the client. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
+    /// This field is required.
     pub fn client_secret(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_secret = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl StartDeviceAuthorizationInputBuilder {
         &self.client_secret
     }
     /// <p>The URL for the AWS access portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the AWS access portal</a> in the <i>IAM Identity Center User Guide</i>.</p>
+    /// This field is required.
     pub fn start_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_url = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +90,7 @@ impl StartDeviceAuthorizationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_device_authorization::StartDeviceAuthorizationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_device_authorization::StartDeviceAuthorizationInput {
             client_id: self.client_id,

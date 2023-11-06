@@ -11,8 +11,10 @@ pub struct ListAccessPointsForObjectLambdaOutput {
 }
 impl ListAccessPointsForObjectLambdaOutput {
     /// <p>Returns list of Object Lambda Access Points.</p>
-    pub fn object_lambda_access_point_list(&self) -> ::std::option::Option<&[crate::types::ObjectLambdaAccessPoint]> {
-        self.object_lambda_access_point_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.object_lambda_access_point_list.is_none()`.
+    pub fn object_lambda_access_point_list(&self) -> &[crate::types::ObjectLambdaAccessPoint] {
+        self.object_lambda_access_point_list.as_deref().unwrap_or_default()
     }
     /// <p>If the list has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

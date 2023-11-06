@@ -28,6 +28,7 @@ pub struct DescribeChapCredentialsInputBuilder {
 }
 impl DescribeChapCredentialsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <code>DescribeStorediSCSIVolumes</code> operation to return to retrieve the TargetARN for specified VolumeARN.</p>
+    /// This field is required.
     pub fn target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_arn = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl DescribeChapCredentialsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_chap_credentials::DescribeChapCredentialsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_chap_credentials::DescribeChapCredentialsInput { target_arn: self.target_arn })
     }

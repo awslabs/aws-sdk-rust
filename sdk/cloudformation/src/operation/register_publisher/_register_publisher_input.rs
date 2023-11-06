@@ -74,7 +74,7 @@ impl RegisterPublisherInputBuilder {
     /// Consumes the builder and constructs a [`RegisterPublisherInput`](crate::operation::register_publisher::RegisterPublisherInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_publisher::RegisterPublisherInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::register_publisher::RegisterPublisherInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_publisher::RegisterPublisherInput {
             accept_terms_and_conditions: self.accept_terms_and_conditions,
             connection_arn: self.connection_arn,

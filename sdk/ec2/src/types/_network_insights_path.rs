@@ -79,8 +79,10 @@ impl NetworkInsightsPath {
         self.destination_port
     }
     /// <p>The tags associated with the path.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Scopes the analysis to network paths that match specific filters at the source.</p>
     pub fn filter_at_source(&self) -> ::std::option::Option<&crate::types::PathFilter> {

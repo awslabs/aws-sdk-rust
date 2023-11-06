@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SecurityServicePolicyData {
     /// <p>The service that the policy is using to protect the resources. This specifies the type of policy that is created, either an WAF policy, a Shield Advanced policy, or a security group policy. For security group policies, Firewall Manager supports one security group for each common policy and for each content audit policy. This is an adjustable limit that you can increase by contacting Amazon Web Services Support.</p>
-    pub r#type: ::std::option::Option<crate::types::SecurityServiceType>,
+    pub r#type: crate::types::SecurityServiceType,
     /// <p>Details about the service that are specific to the service type, in JSON format. </p>
     /// <ul>
     /// <li> <p>Example: <code>DNS_FIREWALL</code> </p> <p> <code>"{\"type\":\"DNS_FIREWALL\",\"preProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-1\",\"priority\":10}],\"postProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-2\",\"priority\":9911}]}"</code> </p> <note>
@@ -43,8 +43,8 @@ pub struct SecurityServicePolicyData {
 }
 impl SecurityServicePolicyData {
     /// <p>The service that the policy is using to protect the resources. This specifies the type of policy that is created, either an WAF policy, a Shield Advanced policy, or a security group policy. For security group policies, Firewall Manager supports one security group for each common policy and for each content audit policy. This is an adjustable limit that you can increase by contacting Amazon Web Services Support.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::SecurityServiceType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::SecurityServiceType {
+        &self.r#type
     }
     /// <p>Details about the service that are specific to the service type, in JSON format. </p>
     /// <ul>
@@ -102,6 +102,7 @@ pub struct SecurityServicePolicyDataBuilder {
 }
 impl SecurityServicePolicyDataBuilder {
     /// <p>The service that the policy is using to protect the resources. This specifies the type of policy that is created, either an WAF policy, a Shield Advanced policy, or a security group policy. For security group policies, Firewall Manager supports one security group for each common policy and for each content audit policy. This is an adjustable limit that you can increase by contacting Amazon Web Services Support.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::SecurityServiceType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -234,11 +235,18 @@ impl SecurityServicePolicyDataBuilder {
         &self.policy_option
     }
     /// Consumes the builder and constructs a [`SecurityServicePolicyData`](crate::types::SecurityServicePolicyData).
-    pub fn build(self) -> crate::types::SecurityServicePolicyData {
-        crate::types::SecurityServicePolicyData {
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::SecurityServicePolicyDataBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::SecurityServicePolicyData, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SecurityServicePolicyData {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building SecurityServicePolicyData",
+                )
+            })?,
             managed_service_data: self.managed_service_data,
             policy_option: self.policy_option,
-        }
+        })
     }
 }

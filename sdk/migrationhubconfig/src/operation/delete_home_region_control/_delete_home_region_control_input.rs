@@ -27,6 +27,7 @@ pub struct DeleteHomeRegionControlInputBuilder {
 }
 impl DeleteHomeRegionControlInputBuilder {
     /// <p>A unique identifier that's generated for each home region control. It's always a string that begins with "hrc-" followed by 12 lowercase letters and numbers.</p>
+    /// This field is required.
     pub fn control_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteHomeRegionControlInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_home_region_control::DeleteHomeRegionControlInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_home_region_control::DeleteHomeRegionControlInput { control_id: self.control_id })
     }

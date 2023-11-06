@@ -27,6 +27,7 @@ pub struct DeleteRoomInputBuilder {
 }
 impl DeleteRoomInputBuilder {
     /// <p>Identifier of the room to be deleted. Currently this must be an ARN.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl DeleteRoomInputBuilder {
         &self.identifier
     }
     /// Consumes the builder and constructs a [`DeleteRoomInput`](crate::operation::delete_room::DeleteRoomInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_room::DeleteRoomInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_room::DeleteRoomInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_room::DeleteRoomInput { identifier: self.identifier })
     }
 }

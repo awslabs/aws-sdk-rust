@@ -41,6 +41,7 @@ pub struct DisconnectUserInputBuilder {
 }
 impl DisconnectUserInputBuilder {
     /// <p>Identifier of the room from which the user's clients should be disconnected. Currently this must be an ARN.</p>
+    /// This field is required.
     pub fn room_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.room_identifier = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DisconnectUserInputBuilder {
         &self.room_identifier
     }
     /// <p>ID of the user (connection) to disconnect from the room.</p>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +87,7 @@ impl DisconnectUserInputBuilder {
     /// Consumes the builder and constructs a [`DisconnectUserInput`](crate::operation::disconnect_user::DisconnectUserInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disconnect_user::DisconnectUserInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::disconnect_user::DisconnectUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::disconnect_user::DisconnectUserInput {
             room_identifier: self.room_identifier,
             user_id: self.user_id,

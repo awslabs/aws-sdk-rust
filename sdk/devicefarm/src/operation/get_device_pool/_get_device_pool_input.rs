@@ -28,6 +28,7 @@ pub struct GetDevicePoolInputBuilder {
 }
 impl GetDevicePoolInputBuilder {
     /// <p>The device pool's ARN.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl GetDevicePoolInputBuilder {
     /// Consumes the builder and constructs a [`GetDevicePoolInput`](crate::operation::get_device_pool::GetDevicePoolInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_device_pool::GetDevicePoolInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_device_pool::GetDevicePoolInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_device_pool::GetDevicePoolInput { arn: self.arn })
     }
 }

@@ -35,6 +35,7 @@ pub struct CreateApplicationRequestBuilder {
 }
 impl CreateApplicationRequestBuilder {
     /// <p>The display name of the application. This name is displayed as the <b>Project name</b> on the Amazon Pinpoint console.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

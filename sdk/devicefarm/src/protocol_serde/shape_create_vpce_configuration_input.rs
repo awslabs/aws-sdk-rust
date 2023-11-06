@@ -2,7 +2,7 @@
 pub fn ser_create_vpce_configuration_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_vpce_configuration::CreateVpceConfigurationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.vpce_configuration_name {
         object.key("vpceConfigurationName").string(var_1.as_str());
     }

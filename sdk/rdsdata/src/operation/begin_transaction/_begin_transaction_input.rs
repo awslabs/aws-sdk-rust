@@ -49,6 +49,7 @@ pub struct BeginTransactionInputBuilder {
 }
 impl BeginTransactionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl BeginTransactionInputBuilder {
         &self.resource_arn
     }
     /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
+    /// This field is required.
     pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_arn = ::std::option::Option::Some(input.into());
         self
@@ -107,7 +109,7 @@ impl BeginTransactionInputBuilder {
     /// Consumes the builder and constructs a [`BeginTransactionInput`](crate::operation::begin_transaction::BeginTransactionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::begin_transaction::BeginTransactionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::begin_transaction::BeginTransactionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::begin_transaction::BeginTransactionInput {
             resource_arn: self.resource_arn,
             secret_arn: self.secret_arn,

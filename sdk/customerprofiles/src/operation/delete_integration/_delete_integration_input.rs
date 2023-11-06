@@ -34,6 +34,7 @@ pub struct DeleteIntegrationInputBuilder {
 }
 impl DeleteIntegrationInputBuilder {
     /// <p>The unique name of the domain.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteIntegrationInputBuilder {
         &self.domain_name
     }
     /// <p>The URI of the S3 bucket or any other type of data source.</p>
+    /// This field is required.
     pub fn uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.uri = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DeleteIntegrationInputBuilder {
     /// Consumes the builder and constructs a [`DeleteIntegrationInput`](crate::operation::delete_integration::DeleteIntegrationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_integration::DeleteIntegrationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_integration::DeleteIntegrationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_integration::DeleteIntegrationInput {
             domain_name: self.domain_name,
             uri: self.uri,

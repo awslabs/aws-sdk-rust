@@ -19,7 +19,7 @@ pub struct PublishPackageVersionInput {
     /// <p>The package version to publish (for example, <code>3.5.2</code>).</p>
     pub package_version: ::std::option::Option<::std::string::String>,
     /// <p>The content of the asset to publish.</p>
-    pub asset_content: ::aws_smithy_http::byte_stream::ByteStream,
+    pub asset_content: ::aws_smithy_types::byte_stream::ByteStream,
     /// <p>The name of the asset to publish. Asset names can include Unicode letters and numbers, and the following special characters: <code>~ ! @ ^ &amp; ( ) - ` _ + [ ] { } ; , . `</code> </p>
     pub asset_name: ::std::option::Option<::std::string::String>,
     /// <p>The SHA256 hash of the <code>assetContent</code> to publish. This value must be calculated by the caller and provided with the request (see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-generic.html#publishing-generic-packages">Publishing a generic package</a> in the <i>CodeArtifact User Guide</i>).</p>
@@ -60,7 +60,7 @@ impl PublishPackageVersionInput {
         self.package_version.as_deref()
     }
     /// <p>The content of the asset to publish.</p>
-    pub fn asset_content(&self) -> &::aws_smithy_http::byte_stream::ByteStream {
+    pub fn asset_content(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
         &self.asset_content
     }
     /// <p>The name of the asset to publish. Asset names can include Unicode letters and numbers, and the following special characters: <code>~ ! @ ^ &amp; ( ) - ` _ + [ ] { } ; , . `</code> </p>
@@ -96,13 +96,14 @@ pub struct PublishPackageVersionInputBuilder {
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
     pub(crate) package: ::std::option::Option<::std::string::String>,
     pub(crate) package_version: ::std::option::Option<::std::string::String>,
-    pub(crate) asset_content: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
+    pub(crate) asset_content: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,
     pub(crate) asset_name: ::std::option::Option<::std::string::String>,
     pub(crate) asset_sha256: ::std::option::Option<::std::string::String>,
     pub(crate) unfinished: ::std::option::Option<bool>,
 }
 impl PublishPackageVersionInputBuilder {
     /// <p>The name of the domain that contains the repository that contains the package version to publish.</p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -131,6 +132,7 @@ impl PublishPackageVersionInputBuilder {
         &self.domain_owner
     }
     /// <p>The name of the repository that the package version will be published to.</p>
+    /// This field is required.
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository = ::std::option::Option::Some(input.into());
         self
@@ -146,6 +148,7 @@ impl PublishPackageVersionInputBuilder {
     }
     /// <p>A format that specifies the type of the package version with the requested asset file.</p>
     /// <p>The only supported value is <code>generic</code>.</p>
+    /// This field is required.
     pub fn format(mut self, input: crate::types::PackageFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
         self
@@ -176,6 +179,7 @@ impl PublishPackageVersionInputBuilder {
         &self.namespace
     }
     /// <p>The name of the package version to publish.</p>
+    /// This field is required.
     pub fn package(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package = ::std::option::Option::Some(input.into());
         self
@@ -190,6 +194,7 @@ impl PublishPackageVersionInputBuilder {
         &self.package
     }
     /// <p>The package version to publish (for example, <code>3.5.2</code>).</p>
+    /// This field is required.
     pub fn package_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_version = ::std::option::Option::Some(input.into());
         self
@@ -204,20 +209,22 @@ impl PublishPackageVersionInputBuilder {
         &self.package_version
     }
     /// <p>The content of the asset to publish.</p>
-    pub fn asset_content(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
+    /// This field is required.
+    pub fn asset_content(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.asset_content = ::std::option::Option::Some(input);
         self
     }
     /// <p>The content of the asset to publish.</p>
-    pub fn set_asset_content(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
+    pub fn set_asset_content(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.asset_content = input;
         self
     }
     /// <p>The content of the asset to publish.</p>
-    pub fn get_asset_content(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_asset_content(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         &self.asset_content
     }
     /// <p>The name of the asset to publish. Asset names can include Unicode letters and numbers, and the following special characters: <code>~ ! @ ^ &amp; ( ) - ` _ + [ ] { } ; , . `</code> </p>
+    /// This field is required.
     pub fn asset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_name = ::std::option::Option::Some(input.into());
         self
@@ -233,6 +240,7 @@ impl PublishPackageVersionInputBuilder {
     }
     /// <p>The SHA256 hash of the <code>assetContent</code> to publish. This value must be calculated by the caller and provided with the request (see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-generic.html#publishing-generic-packages">Publishing a generic package</a> in the <i>CodeArtifact User Guide</i>).</p>
     /// <p>This value is used as an integrity check to verify that the <code>assetContent</code> has not changed after it was originally sent.</p>
+    /// This field is required.
     pub fn asset_sha256(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_sha256 = ::std::option::Option::Some(input.into());
         self
@@ -268,7 +276,7 @@ impl PublishPackageVersionInputBuilder {
     /// Consumes the builder and constructs a [`PublishPackageVersionInput`](crate::operation::publish_package_version::PublishPackageVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::publish_package_version::PublishPackageVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::publish_package_version::PublishPackageVersionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::publish_package_version::PublishPackageVersionInput {
             domain: self.domain,

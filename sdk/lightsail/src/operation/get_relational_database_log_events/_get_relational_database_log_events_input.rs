@@ -90,6 +90,7 @@ pub struct GetRelationalDatabaseLogEventsInputBuilder {
 }
 impl GetRelationalDatabaseLogEventsInputBuilder {
     /// <p>The name of your database for which to get log events.</p>
+    /// This field is required.
     pub fn relational_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.relational_database_name = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +106,7 @@ impl GetRelationalDatabaseLogEventsInputBuilder {
     }
     /// <p>The name of the log stream.</p>
     /// <p>Use the <code>get relational database log streams</code> operation to get a list of available log streams.</p>
+    /// This field is required.
     pub fn log_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_stream_name = ::std::option::Option::Some(input.into());
         self
@@ -220,7 +222,7 @@ impl GetRelationalDatabaseLogEventsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsInput {

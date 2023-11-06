@@ -39,6 +39,7 @@ pub struct DetachUserPolicyInputBuilder {
 impl DetachUserPolicyInputBuilder {
     /// <p>The name (friendly name, not ARN) of the IAM user to detach the policy from.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// This field is required.
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl DetachUserPolicyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// This field is required.
     pub fn policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_arn = ::std::option::Option::Some(input.into());
         self
@@ -74,7 +76,7 @@ impl DetachUserPolicyInputBuilder {
     /// Consumes the builder and constructs a [`DetachUserPolicyInput`](crate::operation::detach_user_policy::DetachUserPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::detach_user_policy::DetachUserPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::detach_user_policy::DetachUserPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::detach_user_policy::DetachUserPolicyInput {
             user_name: self.user_name,
             policy_arn: self.policy_arn,

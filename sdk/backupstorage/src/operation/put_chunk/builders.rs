@@ -10,7 +10,10 @@ impl PutChunkInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_chunk::PutChunkOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::put_chunk::PutChunkError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>,
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_chunk::PutChunkError,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        >,
     > {
         let mut fluent_builder = client.put_chunk();
         fluent_builder.inner = self;
@@ -63,9 +66,15 @@ impl PutChunkFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_chunk::PutChunkOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::put_chunk::PutChunkError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>,
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_chunk::PutChunkError,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::put_chunk::PutChunk::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -74,20 +83,12 @@ impl PutChunkFluentBuilder {
         crate::operation::put_chunk::PutChunk::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::put_chunk::PutChunkOutput,
-            crate::operation::put_chunk::PutChunkError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::put_chunk::PutChunkError>,
-    > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+    ) -> crate::client::customize::CustomizableOperation<crate::operation::put_chunk::PutChunkOutput, crate::operation::put_chunk::PutChunkError, Self>
+    {
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -141,17 +142,17 @@ impl PutChunkFluentBuilder {
         self.inner.get_chunk_index()
     }
     /// Data to be uploaded
-    pub fn data(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
+    pub fn data(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.inner = self.inner.data(input);
         self
     }
     /// Data to be uploaded
-    pub fn set_data(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
+    pub fn set_data(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.inner = self.inner.set_data(input);
         self
     }
     /// Data to be uploaded
-    pub fn get_data(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_data(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         self.inner.get_data()
     }
     /// Data length

@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IntegerRange {
     /// <p>A minimum value.</p>
-    pub minimum: ::std::option::Option<i32>,
+    pub minimum: i32,
     /// <p>A maximum value.</p>
-    pub maximum: ::std::option::Option<i32>,
+    pub maximum: i32,
 }
 impl IntegerRange {
     /// <p>A minimum value.</p>
-    pub fn minimum(&self) -> ::std::option::Option<i32> {
+    pub fn minimum(&self) -> i32 {
         self.minimum
     }
     /// <p>A maximum value.</p>
-    pub fn maximum(&self) -> ::std::option::Option<i32> {
+    pub fn maximum(&self) -> i32 {
         self.maximum
     }
 }
@@ -35,6 +35,7 @@ pub struct IntegerRangeBuilder {
 }
 impl IntegerRangeBuilder {
     /// <p>A minimum value.</p>
+    /// This field is required.
     pub fn minimum(mut self, input: i32) -> Self {
         self.minimum = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl IntegerRangeBuilder {
         &self.minimum
     }
     /// <p>A maximum value.</p>
+    /// This field is required.
     pub fn maximum(mut self, input: i32) -> Self {
         self.maximum = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl IntegerRangeBuilder {
         &self.maximum
     }
     /// Consumes the builder and constructs a [`IntegerRange`](crate::types::IntegerRange).
-    pub fn build(self) -> crate::types::IntegerRange {
-        crate::types::IntegerRange {
-            minimum: self.minimum,
-            maximum: self.maximum,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`minimum`](crate::types::builders::IntegerRangeBuilder::minimum)
+    /// - [`maximum`](crate::types::builders::IntegerRangeBuilder::maximum)
+    pub fn build(self) -> ::std::result::Result<crate::types::IntegerRange, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::IntegerRange {
+            minimum: self.minimum.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "minimum",
+                    "minimum was not specified but it is required when building IntegerRange",
+                )
+            })?,
+            maximum: self.maximum.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "maximum",
+                    "maximum was not specified but it is required when building IntegerRange",
+                )
+            })?,
+        })
     }
 }

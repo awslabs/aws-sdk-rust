@@ -31,8 +31,10 @@ impl EffectiveRecommendationPreferences {
     /// <li> <p>A <code>GetEC2RecommendationProjectedMetrics</code> request, Compute Optimizer returns projected utilization metrics for Graviton2 instance type recommendations only.</p> </li>
     /// <li> <p>A <code>ExportEC2InstanceRecommendations</code> or <code>ExportAutoScalingGroupRecommendations</code> request, Compute Optimizer exports recommendations that consist of Graviton2 instance types only.</p> </li>
     /// </ul>
-    pub fn cpu_vendor_architectures(&self) -> ::std::option::Option<&[crate::types::CpuVendorArchitecture]> {
-        self.cpu_vendor_architectures.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cpu_vendor_architectures.is_none()`.
+    pub fn cpu_vendor_architectures(&self) -> &[crate::types::CpuVendorArchitecture] {
+        self.cpu_vendor_architectures.as_deref().unwrap_or_default()
     }
     /// <p>Describes the activation status of the enhanced infrastructure metrics preference.</p>
     /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>

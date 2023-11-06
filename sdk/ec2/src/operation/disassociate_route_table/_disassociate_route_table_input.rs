@@ -34,6 +34,7 @@ pub struct DisassociateRouteTableInputBuilder {
 }
 impl DisassociateRouteTableInputBuilder {
     /// <p>The association ID representing the current association between the route table and subnet or gateway.</p>
+    /// This field is required.
     pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_id = ::std::option::Option::Some(input.into());
         self
@@ -64,8 +65,10 @@ impl DisassociateRouteTableInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateRouteTableInput`](crate::operation::disassociate_route_table::DisassociateRouteTableInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disassociate_route_table::DisassociateRouteTableInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_route_table::DisassociateRouteTableInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::disassociate_route_table::DisassociateRouteTableInput {
             association_id: self.association_id,
             dry_run: self.dry_run,

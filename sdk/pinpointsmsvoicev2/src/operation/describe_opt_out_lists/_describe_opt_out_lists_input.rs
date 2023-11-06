@@ -12,8 +12,10 @@ pub struct DescribeOptOutListsInput {
 }
 impl DescribeOptOutListsInput {
     /// <p>The OptOutLists to show the details of. This is an array of strings that can be either the OptOutListName or OptOutListArn.</p>
-    pub fn opt_out_list_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.opt_out_list_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.opt_out_list_names.is_none()`.
+    pub fn opt_out_list_names(&self) -> &[::std::string::String] {
+        self.opt_out_list_names.as_deref().unwrap_or_default()
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -91,7 +93,7 @@ impl DescribeOptOutListsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeOptOutListsInput`](crate::operation::describe_opt_out_lists::DescribeOptOutListsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_opt_out_lists::DescribeOptOutListsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_opt_out_lists::DescribeOptOutListsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_opt_out_lists::DescribeOptOutListsInput {
             opt_out_list_names: self.opt_out_list_names,

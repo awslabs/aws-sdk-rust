@@ -11,8 +11,10 @@ pub struct GetPersonalizedRankingOutput {
 }
 impl GetPersonalizedRankingOutput {
     /// <p>A list of items in order of most likely interest to the user. The maximum is 500.</p>
-    pub fn personalized_ranking(&self) -> ::std::option::Option<&[crate::types::PredictedItem]> {
-        self.personalized_ranking.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.personalized_ranking.is_none()`.
+    pub fn personalized_ranking(&self) -> &[crate::types::PredictedItem] {
+        self.personalized_ranking.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the recommendation.</p>
     pub fn recommendation_id(&self) -> ::std::option::Option<&str> {

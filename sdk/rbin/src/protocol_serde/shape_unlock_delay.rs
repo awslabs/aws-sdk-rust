@@ -38,7 +38,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::unlock_delay_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -49,15 +51,15 @@ where
 pub fn ser_unlock_delay(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UnlockDelay,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.unlock_delay_value {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
         object.key("UnlockDelayValue").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+            ::aws_smithy_types::Number::NegInt((input.unlock_delay_value).into()),
         );
     }
-    if let Some(var_2) = &input.unlock_delay_unit {
-        object.key("UnlockDelayUnit").string(var_2.as_str());
+    {
+        object.key("UnlockDelayUnit").string(input.unlock_delay_unit.as_str());
     }
     Ok(())
 }

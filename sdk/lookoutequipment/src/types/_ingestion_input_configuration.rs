@@ -28,6 +28,7 @@ pub struct IngestionInputConfigurationBuilder {
 }
 impl IngestionInputConfigurationBuilder {
     /// <p>The location information for the S3 bucket used for input data for the data ingestion. </p>
+    /// This field is required.
     pub fn s3_input_configuration(mut self, input: crate::types::IngestionS3InputConfiguration) -> Self {
         self.s3_input_configuration = ::std::option::Option::Some(input);
         self

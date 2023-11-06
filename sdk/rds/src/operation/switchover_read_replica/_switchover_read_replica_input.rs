@@ -39,6 +39,7 @@ impl SwitchoverReadReplicaInputBuilder {
     /// <ul>
     /// <li> <p>Must match the identiﬁer of an existing Oracle read replica DB instance.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_identifier = ::std::option::Option::Some(input.into());
         self
@@ -63,7 +64,7 @@ impl SwitchoverReadReplicaInputBuilder {
     /// Consumes the builder and constructs a [`SwitchoverReadReplicaInput`](crate::operation::switchover_read_replica::SwitchoverReadReplicaInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::switchover_read_replica::SwitchoverReadReplicaInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::switchover_read_replica::SwitchoverReadReplicaInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::switchover_read_replica::SwitchoverReadReplicaInput {
             db_instance_identifier: self.db_instance_identifier,

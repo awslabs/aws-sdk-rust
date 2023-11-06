@@ -17,24 +17,34 @@ pub struct OAuth2Defaults {
 }
 impl OAuth2Defaults {
     /// <p>OAuth 2.0 scopes that the connector supports.</p>
-    pub fn oauth_scopes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.oauth_scopes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.oauth_scopes.is_none()`.
+    pub fn oauth_scopes(&self) -> &[::std::string::String] {
+        self.oauth_scopes.as_deref().unwrap_or_default()
     }
     /// <p>Token URLs that can be used for OAuth 2.0 authentication.</p>
-    pub fn token_urls(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.token_urls.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.token_urls.is_none()`.
+    pub fn token_urls(&self) -> &[::std::string::String] {
+        self.token_urls.as_deref().unwrap_or_default()
     }
     /// <p>Auth code URLs that can be used for OAuth 2.0 authentication.</p>
-    pub fn auth_code_urls(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.auth_code_urls.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auth_code_urls.is_none()`.
+    pub fn auth_code_urls(&self) -> &[::std::string::String] {
+        self.auth_code_urls.as_deref().unwrap_or_default()
     }
     /// <p>OAuth 2.0 grant types supported by the connector.</p>
-    pub fn oauth2_grant_types_supported(&self) -> ::std::option::Option<&[crate::types::OAuth2GrantType]> {
-        self.oauth2_grant_types_supported.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.oauth2_grant_types_supported.is_none()`.
+    pub fn oauth2_grant_types_supported(&self) -> &[crate::types::OAuth2GrantType] {
+        self.oauth2_grant_types_supported.as_deref().unwrap_or_default()
     }
     /// <p>List of custom parameters required for OAuth 2.0 authentication.</p>
-    pub fn oauth2_custom_properties(&self) -> ::std::option::Option<&[crate::types::OAuth2CustomParameter]> {
-        self.oauth2_custom_properties.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.oauth2_custom_properties.is_none()`.
+    pub fn oauth2_custom_properties(&self) -> &[crate::types::OAuth2CustomParameter] {
+        self.oauth2_custom_properties.as_deref().unwrap_or_default()
     }
 }
 impl OAuth2Defaults {

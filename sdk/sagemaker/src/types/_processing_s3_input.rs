@@ -63,6 +63,7 @@ pub struct ProcessingS3InputBuilder {
 }
 impl ProcessingS3InputBuilder {
     /// <p>The URI of the Amazon S3 prefix Amazon SageMaker downloads data required to run a processing job.</p>
+    /// This field is required.
     pub fn s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_uri = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +92,7 @@ impl ProcessingS3InputBuilder {
         &self.local_path
     }
     /// <p>Whether you use an <code>S3Prefix</code> or a <code>ManifestFile</code> for the data type. If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. Amazon SageMaker uses all objects with the specified key name prefix for the processing job. If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file containing a list of object keys that you want Amazon SageMaker to use for the processing job.</p>
+    /// This field is required.
     pub fn s3_data_type(mut self, input: crate::types::ProcessingS3DataType) -> Self {
         self.s3_data_type = ::std::option::Option::Some(input);
         self

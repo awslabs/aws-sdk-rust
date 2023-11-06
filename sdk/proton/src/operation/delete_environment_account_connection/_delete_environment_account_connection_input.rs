@@ -27,6 +27,7 @@ pub struct DeleteEnvironmentAccountConnectionInputBuilder {
 }
 impl DeleteEnvironmentAccountConnectionInputBuilder {
     /// <p>The ID of the environment account connection to delete.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteEnvironmentAccountConnectionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_environment_account_connection::DeleteEnvironmentAccountConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_environment_account_connection::DeleteEnvironmentAccountConnectionInput { id: self.id })
     }

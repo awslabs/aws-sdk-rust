@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteInboundConnection`](crate::operation::delete_inbound_connection::builders::DeleteInboundConnectionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`connection_id(impl Into<String>)`](crate::operation::delete_inbound_connection::builders::DeleteInboundConnectionFluentBuilder::connection_id) / [`set_connection_id(Option<String>)`](crate::operation::delete_inbound_connection::builders::DeleteInboundConnectionFluentBuilder::set_connection_id): <p>The ID of the inbound connection to permanently delete.</p>
+    ///   - [`connection_id(impl Into<String>)`](crate::operation::delete_inbound_connection::builders::DeleteInboundConnectionFluentBuilder::connection_id) / [`set_connection_id(Option<String>)`](crate::operation::delete_inbound_connection::builders::DeleteInboundConnectionFluentBuilder::set_connection_id):<br>required: **true**<br><p>The ID of the inbound connection to permanently delete.</p><br>
     /// - On success, responds with [`DeleteInboundConnectionOutput`](crate::operation::delete_inbound_connection::DeleteInboundConnectionOutput) with field(s):
     ///   - [`connection(Option<InboundConnection>)`](crate::operation::delete_inbound_connection::DeleteInboundConnectionOutput::connection): <p>The deleted inbound connection.</p>
     /// - On failure, responds with [`SdkError<DeleteInboundConnectionError>`](crate::operation::delete_inbound_connection::DeleteInboundConnectionError)

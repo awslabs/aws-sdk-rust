@@ -43,6 +43,7 @@ pub struct DeleteLoadBalancerTlsCertificateInputBuilder {
 }
 impl DeleteLoadBalancerTlsCertificateInputBuilder {
     /// <p>The load balancer name.</p>
+    /// This field is required.
     pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +58,7 @@ impl DeleteLoadBalancerTlsCertificateInputBuilder {
         &self.load_balancer_name
     }
     /// <p>The SSL/TLS certificate name.</p>
+    /// This field is required.
     pub fn certificate_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_name = ::std::option::Option::Some(input.into());
         self
@@ -92,7 +94,7 @@ impl DeleteLoadBalancerTlsCertificateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBalancerTlsCertificateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBalancerTlsCertificateInput {

@@ -27,6 +27,7 @@ pub struct GetRegexMatchSetInputBuilder {
 }
 impl GetRegexMatchSetInputBuilder {
     /// <p>The <code>RegexMatchSetId</code> of the <code>RegexMatchSet</code> that you want to get. <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
+    /// This field is required.
     pub fn regex_match_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.regex_match_set_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetRegexMatchSetInputBuilder {
     /// Consumes the builder and constructs a [`GetRegexMatchSetInput`](crate::operation::get_regex_match_set::GetRegexMatchSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_regex_match_set::GetRegexMatchSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_regex_match_set::GetRegexMatchSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_regex_match_set::GetRegexMatchSetInput {
             regex_match_set_id: self.regex_match_set_id,
         })

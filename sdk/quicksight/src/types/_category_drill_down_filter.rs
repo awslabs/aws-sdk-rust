@@ -7,7 +7,7 @@ pub struct CategoryDrillDownFilter {
     /// <p>The column that the filter is applied to.</p>
     pub column: ::std::option::Option<crate::types::ColumnIdentifier>,
     /// <p>A list of the string inputs that are the values of the category drill down filter.</p>
-    pub category_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub category_values: ::std::vec::Vec<::std::string::String>,
 }
 impl CategoryDrillDownFilter {
     /// <p>The column that the filter is applied to.</p>
@@ -15,8 +15,9 @@ impl CategoryDrillDownFilter {
         self.column.as_ref()
     }
     /// <p>A list of the string inputs that are the values of the category drill down filter.</p>
-    pub fn category_values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.category_values.as_deref()
+    pub fn category_values(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.category_values.deref()
     }
 }
 impl CategoryDrillDownFilter {
@@ -35,6 +36,7 @@ pub struct CategoryDrillDownFilterBuilder {
 }
 impl CategoryDrillDownFilterBuilder {
     /// <p>The column that the filter is applied to.</p>
+    /// This field is required.
     pub fn column(mut self, input: crate::types::ColumnIdentifier) -> Self {
         self.column = ::std::option::Option::Some(input);
         self
@@ -69,10 +71,17 @@ impl CategoryDrillDownFilterBuilder {
         &self.category_values
     }
     /// Consumes the builder and constructs a [`CategoryDrillDownFilter`](crate::types::CategoryDrillDownFilter).
-    pub fn build(self) -> crate::types::CategoryDrillDownFilter {
-        crate::types::CategoryDrillDownFilter {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`category_values`](crate::types::builders::CategoryDrillDownFilterBuilder::category_values)
+    pub fn build(self) -> ::std::result::Result<crate::types::CategoryDrillDownFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CategoryDrillDownFilter {
             column: self.column,
-            category_values: self.category_values,
-        }
+            category_values: self.category_values.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "category_values",
+                    "category_values was not specified but it is required when building CategoryDrillDownFilter",
+                )
+            })?,
+        })
     }
 }

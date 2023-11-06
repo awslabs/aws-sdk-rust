@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CorsConfiguration {
     /// <p>A set of origins and methods (cross-origin access that you want to allow). You can add up to 100 rules to the configuration.</p>
-    pub cors_rules: ::std::option::Option<::std::vec::Vec<crate::types::CorsRule>>,
+    pub cors_rules: ::std::vec::Vec<crate::types::CorsRule>,
 }
 impl CorsConfiguration {
     /// <p>A set of origins and methods (cross-origin access that you want to allow). You can add up to 100 rules to the configuration.</p>
-    pub fn cors_rules(&self) -> ::std::option::Option<&[crate::types::CorsRule]> {
-        self.cors_rules.as_deref()
+    pub fn cors_rules(&self) -> &[crate::types::CorsRule] {
+        use std::ops::Deref;
+        self.cors_rules.deref()
     }
 }
 impl CorsConfiguration {
@@ -48,7 +49,16 @@ impl CorsConfigurationBuilder {
         &self.cors_rules
     }
     /// Consumes the builder and constructs a [`CorsConfiguration`](crate::types::CorsConfiguration).
-    pub fn build(self) -> crate::types::CorsConfiguration {
-        crate::types::CorsConfiguration { cors_rules: self.cors_rules }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`cors_rules`](crate::types::builders::CorsConfigurationBuilder::cors_rules)
+    pub fn build(self) -> ::std::result::Result<crate::types::CorsConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CorsConfiguration {
+            cors_rules: self.cors_rules.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "cors_rules",
+                    "cors_rules was not specified but it is required when building CorsConfiguration",
+                )
+            })?,
+        })
     }
 }

@@ -2,7 +2,7 @@
 pub fn ser_stop_experiment_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::stop_experiment::StopExperimentInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.desired_state {
         object.key("desiredState").string(var_1.as_str());
     }

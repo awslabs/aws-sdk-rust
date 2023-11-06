@@ -83,6 +83,7 @@ impl PutRuntimeManagementConfigInputBuilder {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    /// This field is required.
     pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_name = ::std::option::Option::Some(input.into());
         self
@@ -130,6 +131,7 @@ impl PutRuntimeManagementConfigInputBuilder {
     /// <li> <p> <b>Function update</b> - Lambda updates the runtime of your function to the most recent and secure runtime version when you update your function. This approach synchronizes runtime updates with function deployments, giving you control over when runtime updates are applied and allowing you to detect and mitigate rare runtime update incompatibilities early. When using this setting, you need to regularly update your functions to keep their runtime up-to-date.</p> </li>
     /// <li> <p> <b>Manual</b> - You specify a runtime version in your function configuration. The function will use this runtime version indefinitely. In the rare case where a new runtime version is incompatible with an existing function, this allows you to roll back your function to an earlier runtime version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-update.html#runtime-management-rollback">Roll back a runtime version</a>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn update_runtime_on(mut self, input: crate::types::UpdateRuntimeOn) -> Self {
         self.update_runtime_on = ::std::option::Option::Some(input);
         self
@@ -178,7 +180,7 @@ impl PutRuntimeManagementConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_runtime_management_config::PutRuntimeManagementConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_runtime_management_config::PutRuntimeManagementConfigInput {
             function_name: self.function_name,

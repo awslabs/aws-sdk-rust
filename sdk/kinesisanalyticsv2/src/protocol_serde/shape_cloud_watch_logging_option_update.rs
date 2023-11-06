@@ -2,12 +2,14 @@
 pub fn ser_cloud_watch_logging_option_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CloudWatchLoggingOptionUpdate,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.cloud_watch_logging_option_id {
-        object.key("CloudWatchLoggingOptionId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object
+            .key("CloudWatchLoggingOptionId")
+            .string(input.cloud_watch_logging_option_id.as_str());
     }
-    if let Some(var_2) = &input.log_stream_arn_update {
-        object.key("LogStreamARNUpdate").string(var_2.as_str());
+    if let Some(var_1) = &input.log_stream_arn_update {
+        object.key("LogStreamARNUpdate").string(var_1.as_str());
     }
     Ok(())
 }

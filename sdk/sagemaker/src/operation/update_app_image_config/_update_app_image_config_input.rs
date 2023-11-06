@@ -34,6 +34,7 @@ pub struct UpdateAppImageConfigInputBuilder {
 }
 impl UpdateAppImageConfigInputBuilder {
     /// <p>The name of the AppImageConfig to update.</p>
+    /// This field is required.
     pub fn app_image_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_image_config_name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl UpdateAppImageConfigInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAppImageConfigInput`](crate::operation::update_app_image_config::UpdateAppImageConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_app_image_config::UpdateAppImageConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_app_image_config::UpdateAppImageConfigInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_app_image_config::UpdateAppImageConfigInput {
             app_image_config_name: self.app_image_config_name,

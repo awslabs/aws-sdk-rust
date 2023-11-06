@@ -34,6 +34,7 @@ pub struct UpdateHitTypeOfHitInputBuilder {
 }
 impl UpdateHitTypeOfHitInputBuilder {
     /// <p>The HIT to update.</p>
+    /// This field is required.
     pub fn hit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hit_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateHitTypeOfHitInputBuilder {
         &self.hit_id
     }
     /// <p>The ID of the new HIT type.</p>
+    /// This field is required.
     pub fn hit_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hit_type_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl UpdateHitTypeOfHitInputBuilder {
     /// Consumes the builder and constructs a [`UpdateHitTypeOfHitInput`](crate::operation::update_hit_type_of_hit::UpdateHitTypeOfHitInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_hit_type_of_hit::UpdateHitTypeOfHitInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_hit_type_of_hit::UpdateHitTypeOfHitInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_hit_type_of_hit::UpdateHitTypeOfHitInput {
             hit_id: self.hit_id,

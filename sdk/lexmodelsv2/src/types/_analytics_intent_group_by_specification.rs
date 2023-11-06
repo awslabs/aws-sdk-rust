@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalyticsIntentGroupBySpecification {
     /// <p>Specifies whether to group the intent stages by their name or their end state.</p>
-    pub name: ::std::option::Option<crate::types::AnalyticsIntentField>,
+    pub name: crate::types::AnalyticsIntentField,
 }
 impl AnalyticsIntentGroupBySpecification {
     /// <p>Specifies whether to group the intent stages by their name or their end state.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::AnalyticsIntentField> {
-        self.name.as_ref()
+    pub fn name(&self) -> &crate::types::AnalyticsIntentField {
+        &self.name
     }
 }
 impl AnalyticsIntentGroupBySpecification {
@@ -28,6 +28,7 @@ pub struct AnalyticsIntentGroupBySpecificationBuilder {
 }
 impl AnalyticsIntentGroupBySpecificationBuilder {
     /// <p>Specifies whether to group the intent stages by their name or their end state.</p>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::AnalyticsIntentField) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,16 @@ impl AnalyticsIntentGroupBySpecificationBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`AnalyticsIntentGroupBySpecification`](crate::types::AnalyticsIntentGroupBySpecification).
-    pub fn build(self) -> crate::types::AnalyticsIntentGroupBySpecification {
-        crate::types::AnalyticsIntentGroupBySpecification { name: self.name }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::AnalyticsIntentGroupBySpecificationBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::AnalyticsIntentGroupBySpecification, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AnalyticsIntentGroupBySpecification {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building AnalyticsIntentGroupBySpecification",
+                )
+            })?,
+        })
     }
 }

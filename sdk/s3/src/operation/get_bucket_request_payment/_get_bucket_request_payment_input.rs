@@ -34,6 +34,7 @@ pub struct GetBucketRequestPaymentInputBuilder {
 }
 impl GetBucketRequestPaymentInputBuilder {
     /// <p>The name of the bucket for which to get the payment request configuration</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl GetBucketRequestPaymentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_bucket_request_payment::GetBucketRequestPaymentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_bucket_request_payment::GetBucketRequestPaymentInput {
             bucket: self.bucket,

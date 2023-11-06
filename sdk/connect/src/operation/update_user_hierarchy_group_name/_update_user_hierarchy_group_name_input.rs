@@ -41,6 +41,7 @@ pub struct UpdateUserHierarchyGroupNameInputBuilder {
 }
 impl UpdateUserHierarchyGroupNameInputBuilder {
     /// <p>The name of the hierarchy group. Must not be more than 100 characters.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateUserHierarchyGroupNameInputBuilder {
         &self.name
     }
     /// <p>The identifier of the hierarchy group.</p>
+    /// This field is required.
     pub fn hierarchy_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hierarchy_group_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl UpdateUserHierarchyGroupNameInputBuilder {
         &self.hierarchy_group_id
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +90,7 @@ impl UpdateUserHierarchyGroupNameInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_user_hierarchy_group_name::UpdateUserHierarchyGroupNameInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_user_hierarchy_group_name::UpdateUserHierarchyGroupNameInput {
             name: self.name,

@@ -57,8 +57,10 @@ impl CreateIntentOutput {
         self.parent_intent_signature.as_deref()
     }
     /// <p>The sample utterances specified for the intent.</p>
-    pub fn sample_utterances(&self) -> ::std::option::Option<&[crate::types::SampleUtterance]> {
-        self.sample_utterances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sample_utterances.is_none()`.
+    pub fn sample_utterances(&self) -> &[crate::types::SampleUtterance] {
+        self.sample_utterances.as_deref().unwrap_or_default()
     }
     /// <p>The dialog Lambda function specified for the intent.</p>
     pub fn dialog_code_hook(&self) -> ::std::option::Option<&crate::types::DialogCodeHookSettings> {
@@ -77,12 +79,16 @@ impl CreateIntentOutput {
         self.intent_closing_setting.as_ref()
     }
     /// <p>The list of input contexts specified for the intent.</p>
-    pub fn input_contexts(&self) -> ::std::option::Option<&[crate::types::InputContext]> {
-        self.input_contexts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_contexts.is_none()`.
+    pub fn input_contexts(&self) -> &[crate::types::InputContext] {
+        self.input_contexts.as_deref().unwrap_or_default()
     }
     /// <p>The list of output contexts specified for the intent.</p>
-    pub fn output_contexts(&self) -> ::std::option::Option<&[crate::types::OutputContext]> {
-        self.output_contexts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_contexts.is_none()`.
+    pub fn output_contexts(&self) -> &[crate::types::OutputContext] {
+        self.output_contexts.as_deref().unwrap_or_default()
     }
     /// <p>Configuration for searching a Amazon Kendra index specified for the intent.</p>
     pub fn kendra_configuration(&self) -> ::std::option::Option<&crate::types::KendraConfiguration> {

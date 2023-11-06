@@ -34,6 +34,7 @@ pub struct CancelJournalKinesisStreamInputBuilder {
 }
 impl CancelJournalKinesisStreamInputBuilder {
     /// <p>The name of the ledger.</p>
+    /// This field is required.
     pub fn ledger_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ledger_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl CancelJournalKinesisStreamInputBuilder {
         &self.ledger_name
     }
     /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to be canceled.</p>
+    /// This field is required.
     pub fn stream_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl CancelJournalKinesisStreamInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_journal_kinesis_stream::CancelJournalKinesisStreamInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::cancel_journal_kinesis_stream::CancelJournalKinesisStreamInput {
             ledger_name: self.ledger_name,

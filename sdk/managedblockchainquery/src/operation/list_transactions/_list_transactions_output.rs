@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTransactionsOutput {
     /// <p>The array of transactions returned by the request.</p>
-    pub transactions: ::std::option::Option<::std::vec::Vec<crate::types::TransactionOutputItem>>,
+    pub transactions: ::std::vec::Vec<crate::types::TransactionOutputItem>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListTransactionsOutput {
     /// <p>The array of transactions returned by the request.</p>
-    pub fn transactions(&self) -> ::std::option::Option<&[crate::types::TransactionOutputItem]> {
-        self.transactions.as_deref()
+    pub fn transactions(&self) -> &[crate::types::TransactionOutputItem] {
+        use std::ops::Deref;
+        self.transactions.deref()
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ListTransactionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListTransactionsOutput`](crate::operation::list_transactions::ListTransactionsOutput).
-    pub fn build(self) -> crate::operation::list_transactions::ListTransactionsOutput {
-        crate::operation::list_transactions::ListTransactionsOutput {
-            transactions: self.transactions,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`transactions`](crate::operation::list_transactions::builders::ListTransactionsOutputBuilder::transactions)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_transactions::ListTransactionsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_transactions::ListTransactionsOutput {
+            transactions: self.transactions.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "transactions",
+                    "transactions was not specified but it is required when building ListTransactionsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

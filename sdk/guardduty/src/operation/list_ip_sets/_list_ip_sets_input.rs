@@ -41,6 +41,7 @@ pub struct ListIpSetsInputBuilder {
 }
 impl ListIpSetsInputBuilder {
     /// <p>The unique ID of the detector that the IPSet is associated with.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +84,7 @@ impl ListIpSetsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListIpSetsInput`](crate::operation::list_ip_sets::ListIpSetsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_ip_sets::ListIpSetsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_ip_sets::ListIpSetsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_ip_sets::ListIpSetsInput {
             detector_id: self.detector_id,
             max_results: self.max_results,

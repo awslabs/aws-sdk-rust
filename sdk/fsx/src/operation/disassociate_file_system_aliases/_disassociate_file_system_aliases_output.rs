@@ -10,8 +10,10 @@ pub struct DisassociateFileSystemAliasesOutput {
 }
 impl DisassociateFileSystemAliasesOutput {
     /// <p>An array of one or more DNS aliases that Amazon FSx is attempting to disassociate from the file system.</p>
-    pub fn aliases(&self) -> ::std::option::Option<&[crate::types::Alias]> {
-        self.aliases.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aliases.is_none()`.
+    pub fn aliases(&self) -> &[crate::types::Alias] {
+        self.aliases.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DisassociateFileSystemAliasesOutput {

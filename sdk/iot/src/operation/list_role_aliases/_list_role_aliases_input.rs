@@ -85,7 +85,7 @@ impl ListRoleAliasesInputBuilder {
     /// Consumes the builder and constructs a [`ListRoleAliasesInput`](crate::operation::list_role_aliases::ListRoleAliasesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_role_aliases::ListRoleAliasesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_role_aliases::ListRoleAliasesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_role_aliases::ListRoleAliasesInput {
             page_size: self.page_size,
             marker: self.marker,

@@ -169,7 +169,7 @@ impl ListAlgorithmsInputBuilder {
     /// Consumes the builder and constructs a [`ListAlgorithmsInput`](crate::operation::list_algorithms::ListAlgorithmsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_algorithms::ListAlgorithmsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_algorithms::ListAlgorithmsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_algorithms::ListAlgorithmsInput {
             creation_time_after: self.creation_time_after,
             creation_time_before: self.creation_time_before,

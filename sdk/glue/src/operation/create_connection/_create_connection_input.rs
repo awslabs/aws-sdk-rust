@@ -55,6 +55,7 @@ impl CreateConnectionInputBuilder {
         &self.catalog_id
     }
     /// <p>A <code>ConnectionInput</code> object defining the connection to create.</p>
+    /// This field is required.
     pub fn connection_input(mut self, input: crate::types::ConnectionInput) -> Self {
         self.connection_input = ::std::option::Option::Some(input);
         self
@@ -91,7 +92,7 @@ impl CreateConnectionInputBuilder {
     /// Consumes the builder and constructs a [`CreateConnectionInput`](crate::operation::create_connection::CreateConnectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_connection::CreateConnectionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_connection::CreateConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_connection::CreateConnectionInput {
             catalog_id: self.catalog_id,
             connection_input: self.connection_input,

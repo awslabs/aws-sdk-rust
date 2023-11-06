@@ -2,7 +2,7 @@
 pub fn ser_start_restore_job_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_restore_job::StartRestoreJobInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.copy_source_tags_to_restored_resource {
         object.key("CopySourceTagsToRestoredResource").boolean(*var_1);
     }

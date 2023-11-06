@@ -11,8 +11,10 @@ pub struct ListConnectorsOutput {
 }
 impl ListConnectorsOutput {
     /// <p>Summary information about each connector you have created.</p>
-    pub fn connectors(&self) -> ::std::option::Option<&[crate::types::ConnectorSummary]> {
-        self.connectors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connectors.is_none()`.
+    pub fn connectors(&self) -> &[crate::types::ConnectorSummary] {
+        self.connectors.as_deref().unwrap_or_default()
     }
     /// <p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the NextToken parameter from the response you just received.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

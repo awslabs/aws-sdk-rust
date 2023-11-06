@@ -53,6 +53,7 @@ impl StackDriftInformationBuilder {
     /// <li> <p> <code>IN_SYNC</code>: The stack's actual configuration matches its expected template configuration.</p> </li>
     /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn stack_drift_status(mut self, input: crate::types::StackDriftStatus) -> Self {
         self.stack_drift_status = ::std::option::Option::Some(input);
         self

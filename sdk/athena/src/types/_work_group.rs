@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkGroup {
     /// <p>The workgroup name.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The state of the workgroup: ENABLED or DISABLED.</p>
     pub state: ::std::option::Option<crate::types::WorkGroupState>,
     /// <p>The configuration of the workgroup, which includes the location in Amazon S3 where query and calculation results are stored, the encryption configuration, if any, used for query and calculation results; whether the Amazon CloudWatch Metrics are enabled for the workgroup; whether workgroup settings override client-side settings; and the data usage limits for the amount of data scanned per query or per workgroup. The workgroup settings override is specified in <code>EnforceWorkGroupConfiguration</code> (true/false) in the <code>WorkGroupConfiguration</code>. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
@@ -17,8 +17,9 @@ pub struct WorkGroup {
 }
 impl WorkGroup {
     /// <p>The workgroup name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The state of the workgroup: ENABLED or DISABLED.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::WorkGroupState> {
@@ -56,6 +57,7 @@ pub struct WorkGroupBuilder {
 }
 impl WorkGroupBuilder {
     /// <p>The workgroup name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -126,13 +128,20 @@ impl WorkGroupBuilder {
         &self.creation_time
     }
     /// Consumes the builder and constructs a [`WorkGroup`](crate::types::WorkGroup).
-    pub fn build(self) -> crate::types::WorkGroup {
-        crate::types::WorkGroup {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::WorkGroupBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::WorkGroup, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::WorkGroup {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building WorkGroup",
+                )
+            })?,
             state: self.state,
             configuration: self.configuration,
             description: self.description,
             creation_time: self.creation_time,
-        }
+        })
     }
 }

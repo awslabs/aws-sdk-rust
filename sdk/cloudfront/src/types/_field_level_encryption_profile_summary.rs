@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FieldLevelEncryptionProfileSummary {
     /// <p>ID for the field-level encryption profile summary.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The time when the the field-level encryption profile summary was last updated.</p>
-    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub last_modified_time: ::aws_smithy_types::DateTime,
     /// <p>Name for the field-level encryption profile summary.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>A complex data type of encryption entities for the field-level encryption profile that include the public key ID, provider, and field patterns for specifying which fields to encrypt with this key.</p>
     pub encryption_entities: ::std::option::Option<crate::types::EncryptionEntities>,
     /// <p>An optional comment for the field-level encryption profile summary. The comment cannot be longer than 128 characters.</p>
@@ -17,16 +17,18 @@ pub struct FieldLevelEncryptionProfileSummary {
 }
 impl FieldLevelEncryptionProfileSummary {
     /// <p>ID for the field-level encryption profile summary.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The time when the the field-level encryption profile summary was last updated.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.last_modified_time.as_ref()
+    pub fn last_modified_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.last_modified_time
     }
     /// <p>Name for the field-level encryption profile summary.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>A complex data type of encryption entities for the field-level encryption profile that include the public key ID, provider, and field patterns for specifying which fields to encrypt with this key.</p>
     pub fn encryption_entities(&self) -> ::std::option::Option<&crate::types::EncryptionEntities> {
@@ -56,6 +58,7 @@ pub struct FieldLevelEncryptionProfileSummaryBuilder {
 }
 impl FieldLevelEncryptionProfileSummaryBuilder {
     /// <p>ID for the field-level encryption profile summary.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +73,7 @@ impl FieldLevelEncryptionProfileSummaryBuilder {
         &self.id
     }
     /// <p>The time when the the field-level encryption profile summary was last updated.</p>
+    /// This field is required.
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
         self
@@ -84,6 +88,7 @@ impl FieldLevelEncryptionProfileSummaryBuilder {
         &self.last_modified_time
     }
     /// <p>Name for the field-level encryption profile summary.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +103,7 @@ impl FieldLevelEncryptionProfileSummaryBuilder {
         &self.name
     }
     /// <p>A complex data type of encryption entities for the field-level encryption profile that include the public key ID, provider, and field patterns for specifying which fields to encrypt with this key.</p>
+    /// This field is required.
     pub fn encryption_entities(mut self, input: crate::types::EncryptionEntities) -> Self {
         self.encryption_entities = ::std::option::Option::Some(input);
         self
@@ -126,13 +132,32 @@ impl FieldLevelEncryptionProfileSummaryBuilder {
         &self.comment
     }
     /// Consumes the builder and constructs a [`FieldLevelEncryptionProfileSummary`](crate::types::FieldLevelEncryptionProfileSummary).
-    pub fn build(self) -> crate::types::FieldLevelEncryptionProfileSummary {
-        crate::types::FieldLevelEncryptionProfileSummary {
-            id: self.id,
-            last_modified_time: self.last_modified_time,
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::FieldLevelEncryptionProfileSummaryBuilder::id)
+    /// - [`last_modified_time`](crate::types::builders::FieldLevelEncryptionProfileSummaryBuilder::last_modified_time)
+    /// - [`name`](crate::types::builders::FieldLevelEncryptionProfileSummaryBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::FieldLevelEncryptionProfileSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::FieldLevelEncryptionProfileSummary {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building FieldLevelEncryptionProfileSummary",
+                )
+            })?,
+            last_modified_time: self.last_modified_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "last_modified_time",
+                    "last_modified_time was not specified but it is required when building FieldLevelEncryptionProfileSummary",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building FieldLevelEncryptionProfileSummary",
+                )
+            })?,
             encryption_entities: self.encryption_entities,
             comment: self.comment,
-        }
+        })
     }
 }

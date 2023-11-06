@@ -8,8 +8,10 @@ pub struct CreateCloudFormationStackInput {
 }
 impl CreateCloudFormationStackInput {
     /// <p>An array of parameters that will be used to create the new Amazon EC2 instance. You can only pass one instance entry at a time in this array. You will get an invalid parameter error if you pass more than one instance entry in this array.</p>
-    pub fn instances(&self) -> ::std::option::Option<&[crate::types::InstanceEntry]> {
-        self.instances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instances.is_none()`.
+    pub fn instances(&self) -> &[crate::types::InstanceEntry] {
+        self.instances.as_deref().unwrap_or_default()
     }
 }
 impl CreateCloudFormationStackInput {
@@ -51,7 +53,7 @@ impl CreateCloudFormationStackInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_cloud_formation_stack::CreateCloudFormationStackInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_cloud_formation_stack::CreateCloudFormationStackInput { instances: self.instances })
     }

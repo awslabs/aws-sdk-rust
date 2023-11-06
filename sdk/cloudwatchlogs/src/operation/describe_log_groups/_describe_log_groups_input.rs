@@ -24,8 +24,10 @@ pub struct DescribeLogGroupsInput {
 }
 impl DescribeLogGroupsInput {
     /// <p>When <code>includeLinkedAccounts</code> is set to <code>True</code>, use this parameter to specify the list of accounts to search. You can specify as many as 20 account IDs in the array. </p>
-    pub fn account_identifiers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.account_identifiers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_identifiers.is_none()`.
+    pub fn account_identifiers(&self) -> &[::std::string::String] {
+        self.account_identifiers.as_deref().unwrap_or_default()
     }
     /// <p>The prefix to match.</p> <note>
     /// <p> <code>logGroupNamePrefix</code> and <code>logGroupNamePattern</code> are mutually exclusive. Only one of these parameters can be passed. </p>
@@ -184,7 +186,7 @@ impl DescribeLogGroupsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeLogGroupsInput`](crate::operation::describe_log_groups::DescribeLogGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_log_groups::DescribeLogGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_log_groups::DescribeLogGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_log_groups::DescribeLogGroupsInput {
             account_identifiers: self.account_identifiers,
             log_group_name_prefix: self.log_group_name_prefix,

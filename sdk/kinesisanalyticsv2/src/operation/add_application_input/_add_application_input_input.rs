@@ -41,6 +41,7 @@ pub struct AddApplicationInputInputBuilder {
 }
 impl AddApplicationInputInputBuilder {
     /// <p>The name of your existing application to which you want to add the streaming source.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl AddApplicationInputInputBuilder {
         &self.application_name
     }
     /// <p>The current version of your application. You must provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>.You can use the <code>DescribeApplication</code> operation to find the current application version.</p>
+    /// This field is required.
     pub fn current_application_version_id(mut self, input: i64) -> Self {
         self.current_application_version_id = ::std::option::Option::Some(input);
         self
@@ -69,6 +71,7 @@ impl AddApplicationInputInputBuilder {
         &self.current_application_version_id
     }
     /// <p>The <code>Input</code> to add.</p>
+    /// This field is required.
     pub fn input(mut self, input: crate::types::Input) -> Self {
         self.input = ::std::option::Option::Some(input);
         self
@@ -85,7 +88,7 @@ impl AddApplicationInputInputBuilder {
     /// Consumes the builder and constructs a [`AddApplicationInputInput`](crate::operation::add_application_input::AddApplicationInputInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::add_application_input::AddApplicationInputInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::add_application_input::AddApplicationInputInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::add_application_input::AddApplicationInputInput {
             application_name: self.application_name,

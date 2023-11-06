@@ -5,30 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThemeSummary {
     /// <p>The unique ID for the app associated with the theme summary.</p>
-    pub app_id: ::std::option::Option<::std::string::String>,
+    pub app_id: ::std::string::String,
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
-    pub environment_name: ::std::option::Option<::std::string::String>,
+    pub environment_name: ::std::string::String,
     /// <p>The ID of the theme.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The name of the theme.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
 }
 impl ThemeSummary {
     /// <p>The unique ID for the app associated with the theme summary.</p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
-        self.app_id.as_deref()
+    pub fn app_id(&self) -> &str {
+        use std::ops::Deref;
+        self.app_id.deref()
     }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
-    pub fn environment_name(&self) -> ::std::option::Option<&str> {
-        self.environment_name.as_deref()
+    pub fn environment_name(&self) -> &str {
+        use std::ops::Deref;
+        self.environment_name.deref()
     }
     /// <p>The ID of the theme.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The name of the theme.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
 }
 impl ThemeSummary {
@@ -49,6 +53,7 @@ pub struct ThemeSummaryBuilder {
 }
 impl ThemeSummaryBuilder {
     /// <p>The unique ID for the app associated with the theme summary.</p>
+    /// This field is required.
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +68,7 @@ impl ThemeSummaryBuilder {
         &self.app_id
     }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
+    /// This field is required.
     pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +83,7 @@ impl ThemeSummaryBuilder {
         &self.environment_name
     }
     /// <p>The ID of the theme.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +98,7 @@ impl ThemeSummaryBuilder {
         &self.id
     }
     /// <p>The name of the theme.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +113,37 @@ impl ThemeSummaryBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`ThemeSummary`](crate::types::ThemeSummary).
-    pub fn build(self) -> crate::types::ThemeSummary {
-        crate::types::ThemeSummary {
-            app_id: self.app_id,
-            environment_name: self.environment_name,
-            id: self.id,
-            name: self.name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`app_id`](crate::types::builders::ThemeSummaryBuilder::app_id)
+    /// - [`environment_name`](crate::types::builders::ThemeSummaryBuilder::environment_name)
+    /// - [`id`](crate::types::builders::ThemeSummaryBuilder::id)
+    /// - [`name`](crate::types::builders::ThemeSummaryBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::ThemeSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ThemeSummary {
+            app_id: self.app_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "app_id",
+                    "app_id was not specified but it is required when building ThemeSummary",
+                )
+            })?,
+            environment_name: self.environment_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "environment_name",
+                    "environment_name was not specified but it is required when building ThemeSummary",
+                )
+            })?,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building ThemeSummary",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ThemeSummary",
+                )
+            })?,
+        })
     }
 }

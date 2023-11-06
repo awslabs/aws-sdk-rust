@@ -93,7 +93,7 @@ impl GetBucketsInputBuilder {
         &self.include_connected_resources
     }
     /// Consumes the builder and constructs a [`GetBucketsInput`](crate::operation::get_buckets::GetBucketsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_buckets::GetBucketsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_buckets::GetBucketsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_buckets::GetBucketsInput {
             bucket_name: self.bucket_name,
             page_token: self.page_token,

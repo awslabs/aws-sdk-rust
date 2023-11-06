@@ -77,6 +77,7 @@ impl UpdateReplicationInfoInputBuilder {
         &self.consumer_group_replication
     }
     /// <p>Current replicator version.</p>
+    /// This field is required.
     pub fn current_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_version = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +92,7 @@ impl UpdateReplicationInfoInputBuilder {
         &self.current_version
     }
     /// <p>The Amazon Resource Name (ARN) of the replicator to be updated.</p>
+    /// This field is required.
     pub fn replicator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replicator_arn = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +107,7 @@ impl UpdateReplicationInfoInputBuilder {
         &self.replicator_arn
     }
     /// <p>The ARN of the source Kafka cluster.</p>
+    /// This field is required.
     pub fn source_kafka_cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_kafka_cluster_arn = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +122,7 @@ impl UpdateReplicationInfoInputBuilder {
         &self.source_kafka_cluster_arn
     }
     /// <p>The ARN of the target Kafka cluster.</p>
+    /// This field is required.
     pub fn target_kafka_cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_kafka_cluster_arn = ::std::option::Option::Some(input.into());
         self
@@ -149,7 +153,7 @@ impl UpdateReplicationInfoInputBuilder {
     /// Consumes the builder and constructs a [`UpdateReplicationInfoInput`](crate::operation::update_replication_info::UpdateReplicationInfoInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_replication_info::UpdateReplicationInfoInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_replication_info::UpdateReplicationInfoInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_replication_info::UpdateReplicationInfoInput {
             consumer_group_replication: self.consumer_group_replication,

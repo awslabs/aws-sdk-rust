@@ -11,8 +11,10 @@ pub struct ListRunsOutput {
 }
 impl ListRunsOutput {
     /// <p>A list of runs.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::RunListItem]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[crate::types::RunListItem] {
+        self.items.as_deref().unwrap_or_default()
     }
     /// <p>A pagination token that's included if more results are available.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

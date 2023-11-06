@@ -2,7 +2,7 @@
 pub fn ser_update_dev_environment_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_dev_environment::UpdateDevEnvironmentInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.alias {
         object.key("alias").string(var_1.as_str());
     }
@@ -21,14 +21,14 @@ pub fn ser_update_dev_environment_input(
         }
         array_4.finish();
     }
-    if input.inactivity_timeout_minutes != 0 {
+    if let Some(var_7) = &input.inactivity_timeout_minutes {
         object.key("inactivityTimeoutMinutes").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.inactivity_timeout_minutes).into()),
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_7) = &input.instance_type {
-        object.key("instanceType").string(var_7.as_str());
+    if let Some(var_8) = &input.instance_type {
+        object.key("instanceType").string(var_8.as_str());
     }
     Ok(())
 }

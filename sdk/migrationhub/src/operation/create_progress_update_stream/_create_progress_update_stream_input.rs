@@ -34,6 +34,7 @@ pub struct CreateProgressUpdateStreamInputBuilder {
 }
 impl CreateProgressUpdateStreamInputBuilder {
     /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
+    /// This field is required.
     pub fn progress_update_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.progress_update_stream_name = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl CreateProgressUpdateStreamInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_progress_update_stream::CreateProgressUpdateStreamInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_progress_update_stream::CreateProgressUpdateStreamInput {
             progress_update_stream_name: self.progress_update_stream_name,

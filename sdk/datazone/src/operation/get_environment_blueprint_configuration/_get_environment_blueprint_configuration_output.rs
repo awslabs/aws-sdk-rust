@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEnvironmentBlueprintConfigurationOutput {
     /// <p>The ID of the Amazon DataZone domain where this blueprint exists.</p>
-    pub domain_id: ::std::option::Option<::std::string::String>,
+    pub domain_id: ::std::string::String,
     /// <p>The ID of the blueprint.</p>
-    pub environment_blueprint_id: ::std::option::Option<::std::string::String>,
+    pub environment_blueprint_id: ::std::string::String,
     /// <p>The ARN of the provisioning role with which this blueprint is created.</p>
     pub provisioning_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the manage access role with which this blueprint is created.</p>
@@ -25,12 +25,14 @@ pub struct GetEnvironmentBlueprintConfigurationOutput {
 }
 impl GetEnvironmentBlueprintConfigurationOutput {
     /// <p>The ID of the Amazon DataZone domain where this blueprint exists.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
-        self.domain_id.as_deref()
+    pub fn domain_id(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_id.deref()
     }
     /// <p>The ID of the blueprint.</p>
-    pub fn environment_blueprint_id(&self) -> ::std::option::Option<&str> {
-        self.environment_blueprint_id.as_deref()
+    pub fn environment_blueprint_id(&self) -> &str {
+        use std::ops::Deref;
+        self.environment_blueprint_id.deref()
     }
     /// <p>The ARN of the provisioning role with which this blueprint is created.</p>
     pub fn provisioning_role_arn(&self) -> ::std::option::Option<&str> {
@@ -41,8 +43,10 @@ impl GetEnvironmentBlueprintConfigurationOutput {
         self.manage_access_role_arn.as_deref()
     }
     /// <p>The Amazon Web Services regions in which this blueprint is enabled.</p>
-    pub fn enabled_regions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.enabled_regions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enabled_regions.is_none()`.
+    pub fn enabled_regions(&self) -> &[::std::string::String] {
+        self.enabled_regions.as_deref().unwrap_or_default()
     }
     /// <p>The regional parameters of the blueprint.</p>
     pub fn regional_parameters(
@@ -91,6 +95,7 @@ pub struct GetEnvironmentBlueprintConfigurationOutputBuilder {
 }
 impl GetEnvironmentBlueprintConfigurationOutputBuilder {
     /// <p>The ID of the Amazon DataZone domain where this blueprint exists.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +110,7 @@ impl GetEnvironmentBlueprintConfigurationOutputBuilder {
         &self.domain_id
     }
     /// <p>The ID of the blueprint.</p>
+    /// This field is required.
     pub fn environment_blueprint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_blueprint_id = ::std::option::Option::Some(input.into());
         self
@@ -237,17 +243,37 @@ impl GetEnvironmentBlueprintConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetEnvironmentBlueprintConfigurationOutput`](crate::operation::get_environment_blueprint_configuration::GetEnvironmentBlueprintConfigurationOutput).
-    pub fn build(self) -> crate::operation::get_environment_blueprint_configuration::GetEnvironmentBlueprintConfigurationOutput {
-        crate::operation::get_environment_blueprint_configuration::GetEnvironmentBlueprintConfigurationOutput {
-            domain_id: self.domain_id,
-            environment_blueprint_id: self.environment_blueprint_id,
-            provisioning_role_arn: self.provisioning_role_arn,
-            manage_access_role_arn: self.manage_access_role_arn,
-            enabled_regions: self.enabled_regions,
-            regional_parameters: self.regional_parameters,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`domain_id`](crate::operation::get_environment_blueprint_configuration::builders::GetEnvironmentBlueprintConfigurationOutputBuilder::domain_id)
+    /// - [`environment_blueprint_id`](crate::operation::get_environment_blueprint_configuration::builders::GetEnvironmentBlueprintConfigurationOutputBuilder::environment_blueprint_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_environment_blueprint_configuration::GetEnvironmentBlueprintConfigurationOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::get_environment_blueprint_configuration::GetEnvironmentBlueprintConfigurationOutput {
+                domain_id: self.domain_id.ok_or_else(|| {
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
+                        "domain_id",
+                        "domain_id was not specified but it is required when building GetEnvironmentBlueprintConfigurationOutput",
+                    )
+                })?,
+                environment_blueprint_id: self.environment_blueprint_id.ok_or_else(|| {
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
+                        "environment_blueprint_id",
+                        "environment_blueprint_id was not specified but it is required when building GetEnvironmentBlueprintConfigurationOutput",
+                    )
+                })?,
+                provisioning_role_arn: self.provisioning_role_arn,
+                manage_access_role_arn: self.manage_access_role_arn,
+                enabled_regions: self.enabled_regions,
+                regional_parameters: self.regional_parameters,
+                created_at: self.created_at,
+                updated_at: self.updated_at,
+                _request_id: self._request_id,
+            },
+        )
     }
 }

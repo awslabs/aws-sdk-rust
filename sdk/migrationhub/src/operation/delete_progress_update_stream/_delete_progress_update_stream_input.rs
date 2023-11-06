@@ -34,6 +34,7 @@ pub struct DeleteProgressUpdateStreamInputBuilder {
 }
 impl DeleteProgressUpdateStreamInputBuilder {
     /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
+    /// This field is required.
     pub fn progress_update_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.progress_update_stream_name = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl DeleteProgressUpdateStreamInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_progress_update_stream::DeleteProgressUpdateStreamInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_progress_update_stream::DeleteProgressUpdateStreamInput {
             progress_update_stream_name: self.progress_update_stream_name,

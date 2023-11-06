@@ -27,6 +27,7 @@ pub struct GetContactInputBuilder {
 }
 impl GetContactInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
+    /// This field is required.
     pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetContactInputBuilder {
         &self.contact_id
     }
     /// Consumes the builder and constructs a [`GetContactInput`](crate::operation::get_contact::GetContactInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_contact::GetContactInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_contact::GetContactInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_contact::GetContactInput { contact_id: self.contact_id })
     }
 }

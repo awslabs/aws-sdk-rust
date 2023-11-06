@@ -4,21 +4,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListUnsupportedAppVersionResourcesOutput {
     /// <p>The unsupported resources for the application.</p>
-    pub unsupported_resources: ::std::option::Option<::std::vec::Vec<crate::types::UnsupportedResource>>,
+    pub unsupported_resources: ::std::vec::Vec<crate::types::UnsupportedResource>,
     /// <p>The identifier for a specific resolution.</p>
-    pub resolution_id: ::std::option::Option<::std::string::String>,
+    pub resolution_id: ::std::string::String,
     /// <p>Token for the next set of results, or null if there are no more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListUnsupportedAppVersionResourcesOutput {
     /// <p>The unsupported resources for the application.</p>
-    pub fn unsupported_resources(&self) -> ::std::option::Option<&[crate::types::UnsupportedResource]> {
-        self.unsupported_resources.as_deref()
+    pub fn unsupported_resources(&self) -> &[crate::types::UnsupportedResource] {
+        use std::ops::Deref;
+        self.unsupported_resources.deref()
     }
     /// <p>The identifier for a specific resolution.</p>
-    pub fn resolution_id(&self) -> ::std::option::Option<&str> {
-        self.resolution_id.as_deref()
+    pub fn resolution_id(&self) -> &str {
+        use std::ops::Deref;
+        self.resolution_id.deref()
     }
     /// <p>Token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -68,6 +70,7 @@ impl ListUnsupportedAppVersionResourcesOutputBuilder {
         &self.unsupported_resources
     }
     /// <p>The identifier for a specific resolution.</p>
+    /// This field is required.
     pub fn resolution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolution_id = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +108,32 @@ impl ListUnsupportedAppVersionResourcesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListUnsupportedAppVersionResourcesOutput`](crate::operation::list_unsupported_app_version_resources::ListUnsupportedAppVersionResourcesOutput).
-    pub fn build(self) -> crate::operation::list_unsupported_app_version_resources::ListUnsupportedAppVersionResourcesOutput {
-        crate::operation::list_unsupported_app_version_resources::ListUnsupportedAppVersionResourcesOutput {
-            unsupported_resources: self.unsupported_resources,
-            resolution_id: self.resolution_id,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`unsupported_resources`](crate::operation::list_unsupported_app_version_resources::builders::ListUnsupportedAppVersionResourcesOutputBuilder::unsupported_resources)
+    /// - [`resolution_id`](crate::operation::list_unsupported_app_version_resources::builders::ListUnsupportedAppVersionResourcesOutputBuilder::resolution_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_unsupported_app_version_resources::ListUnsupportedAppVersionResourcesOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::list_unsupported_app_version_resources::ListUnsupportedAppVersionResourcesOutput {
+                unsupported_resources: self.unsupported_resources.ok_or_else(|| {
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
+                        "unsupported_resources",
+                        "unsupported_resources was not specified but it is required when building ListUnsupportedAppVersionResourcesOutput",
+                    )
+                })?,
+                resolution_id: self.resolution_id.ok_or_else(|| {
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
+                        "resolution_id",
+                        "resolution_id was not specified but it is required when building ListUnsupportedAppVersionResourcesOutput",
+                    )
+                })?,
+                next_token: self.next_token,
+                _request_id: self._request_id,
+            },
+        )
     }
 }

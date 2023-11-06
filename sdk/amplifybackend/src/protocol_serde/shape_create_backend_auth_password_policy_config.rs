@@ -2,7 +2,7 @@
 pub fn ser_create_backend_auth_password_policy_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CreateBackendAuthPasswordPolicyConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.additional_constraints {
         let mut array_2 = object.key("additionalConstraints").start_array();
         for item_3 in var_1 {
@@ -58,7 +58,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::create_backend_auth_password_policy_config_correct_errors(builder).build(),
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

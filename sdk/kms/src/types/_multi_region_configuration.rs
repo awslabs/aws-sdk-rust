@@ -22,8 +22,10 @@ impl MultiRegionConfiguration {
         self.primary_key.as_ref()
     }
     /// <p>displays the key ARNs and Regions of all replica keys. This field includes the current KMS key if it is a replica key.</p>
-    pub fn replica_keys(&self) -> ::std::option::Option<&[crate::types::MultiRegionKey]> {
-        self.replica_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replica_keys.is_none()`.
+    pub fn replica_keys(&self) -> &[crate::types::MultiRegionKey] {
+        self.replica_keys.as_deref().unwrap_or_default()
     }
 }
 impl MultiRegionConfiguration {

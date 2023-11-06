@@ -6,17 +6,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Location {
     /// <p>The latitude.</p>
-    pub latitude: ::std::option::Option<f64>,
+    pub latitude: f64,
     /// <p>The longitude.</p>
-    pub longitude: ::std::option::Option<f64>,
+    pub longitude: f64,
 }
 impl Location {
     /// <p>The latitude.</p>
-    pub fn latitude(&self) -> ::std::option::Option<f64> {
+    pub fn latitude(&self) -> f64 {
         self.latitude
     }
     /// <p>The longitude.</p>
-    pub fn longitude(&self) -> ::std::option::Option<f64> {
+    pub fn longitude(&self) -> f64 {
         self.longitude
     }
 }
@@ -36,6 +36,7 @@ pub struct LocationBuilder {
 }
 impl LocationBuilder {
     /// <p>The latitude.</p>
+    /// This field is required.
     pub fn latitude(mut self, input: f64) -> Self {
         self.latitude = ::std::option::Option::Some(input);
         self
@@ -50,6 +51,7 @@ impl LocationBuilder {
         &self.latitude
     }
     /// <p>The longitude.</p>
+    /// This field is required.
     pub fn longitude(mut self, input: f64) -> Self {
         self.longitude = ::std::option::Option::Some(input);
         self
@@ -64,10 +66,23 @@ impl LocationBuilder {
         &self.longitude
     }
     /// Consumes the builder and constructs a [`Location`](crate::types::Location).
-    pub fn build(self) -> crate::types::Location {
-        crate::types::Location {
-            latitude: self.latitude,
-            longitude: self.longitude,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`latitude`](crate::types::builders::LocationBuilder::latitude)
+    /// - [`longitude`](crate::types::builders::LocationBuilder::longitude)
+    pub fn build(self) -> ::std::result::Result<crate::types::Location, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Location {
+            latitude: self.latitude.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "latitude",
+                    "latitude was not specified but it is required when building Location",
+                )
+            })?,
+            longitude: self.longitude.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "longitude",
+                    "longitude was not specified but it is required when building Location",
+                )
+            })?,
+        })
     }
 }

@@ -37,7 +37,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::thing_group_indexing_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -48,33 +52,33 @@ where
 pub fn ser_thing_group_indexing_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ThingGroupIndexingConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.thing_group_indexing_mode {
-        object.key("thingGroupIndexingMode").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("thingGroupIndexingMode").string(input.thing_group_indexing_mode.as_str());
     }
-    if let Some(var_2) = &input.managed_fields {
-        let mut array_3 = object.key("managedFields").start_array();
-        for item_4 in var_2 {
+    if let Some(var_1) = &input.managed_fields {
+        let mut array_2 = object.key("managedFields").start_array();
+        for item_3 in var_1 {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_field::ser_field(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_field::ser_field(&mut object_4, item_3)?;
+                object_4.finish();
             }
         }
-        array_3.finish();
+        array_2.finish();
     }
-    if let Some(var_6) = &input.custom_fields {
-        let mut array_7 = object.key("customFields").start_array();
-        for item_8 in var_6 {
+    if let Some(var_5) = &input.custom_fields {
+        let mut array_6 = object.key("customFields").start_array();
+        for item_7 in var_5 {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_field::ser_field(&mut object_9, item_8)?;
-                object_9.finish();
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_field::ser_field(&mut object_8, item_7)?;
+                object_8.finish();
             }
         }
-        array_7.finish();
+        array_6.finish();
     }
     Ok(())
 }

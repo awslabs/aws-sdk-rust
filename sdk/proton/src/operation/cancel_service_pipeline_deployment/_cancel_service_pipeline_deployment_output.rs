@@ -34,6 +34,7 @@ pub struct CancelServicePipelineDeploymentOutputBuilder {
 }
 impl CancelServicePipelineDeploymentOutputBuilder {
     /// <p>The service pipeline detail data that's returned by Proton.</p>
+    /// This field is required.
     pub fn pipeline(mut self, input: crate::types::ServicePipeline) -> Self {
         self.pipeline = ::std::option::Option::Some(input);
         self

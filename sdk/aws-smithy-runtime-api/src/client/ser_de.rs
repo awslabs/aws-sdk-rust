@@ -8,12 +8,16 @@
 use crate::box_error::BoxError;
 use crate::client::interceptors::context::{Error, Input, Output};
 use crate::client::orchestrator::{HttpRequest, HttpResponse, OrchestratorError};
+use crate::impl_shared_conversions;
 use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreReplace};
 use std::fmt;
 use std::sync::Arc;
 
+#[deprecated(note = "Renamed to SerializeRequest.")]
+pub use SerializeRequest as RequestSerializer;
+
 /// Serialization implementation that converts an [`Input`] into an [`HttpRequest`].
-pub trait RequestSerializer: Send + Sync + fmt::Debug {
+pub trait SerializeRequest: Send + Sync + fmt::Debug {
     /// Serializes the input into an HTTP request.
     ///
     /// The type of the [`Input`] must be known ahead of time by the request serializer
@@ -27,18 +31,18 @@ pub trait RequestSerializer: Send + Sync + fmt::Debug {
 
 /// A shared request serializer.
 ///
-/// This is a simple shared ownership wrapper type for the [`RequestSerializer`] trait.
+/// This is a simple shared ownership wrapper type for the [`SerializeRequest`] trait.
 #[derive(Clone, Debug)]
-pub struct SharedRequestSerializer(Arc<dyn RequestSerializer>);
+pub struct SharedRequestSerializer(Arc<dyn SerializeRequest>);
 
 impl SharedRequestSerializer {
     /// Creates a new shared request serializer.
-    pub fn new(serializer: impl RequestSerializer + 'static) -> Self {
+    pub fn new(serializer: impl SerializeRequest + 'static) -> Self {
         Self(Arc::new(serializer))
     }
 }
 
-impl RequestSerializer for SharedRequestSerializer {
+impl SerializeRequest for SharedRequestSerializer {
     fn serialize_input(&self, input: Input, cfg: &mut ConfigBag) -> Result<HttpRequest, BoxError> {
         self.0.serialize_input(input, cfg)
     }
@@ -48,8 +52,13 @@ impl Storable for SharedRequestSerializer {
     type Storer = StoreReplace<Self>;
 }
 
+impl_shared_conversions!(convert SharedRequestSerializer from SerializeRequest using SharedRequestSerializer::new);
+
+#[deprecated(note = "Renamed to DeserializeResponse.")]
+pub use DeserializeResponse as ResponseDeserializer;
+
 /// Deserialization implementation that converts an [`HttpResponse`] into an [`Output`] or [`Error`].
-pub trait ResponseDeserializer: Send + Sync + fmt::Debug {
+pub trait DeserializeResponse: Send + Sync + fmt::Debug {
     /// For streaming requests, deserializes the response headers.
     ///
     /// The orchestrator will call `deserialize_streaming` first, and if it returns `None`,
@@ -73,18 +82,18 @@ pub trait ResponseDeserializer: Send + Sync + fmt::Debug {
 
 /// Shared response deserializer.
 ///
-/// This is a simple shared ownership wrapper type for the [`ResponseDeserializer`] trait.
+/// This is a simple shared ownership wrapper type for the [`DeserializeResponse`] trait.
 #[derive(Debug)]
-pub struct SharedResponseDeserializer(Arc<dyn ResponseDeserializer>);
+pub struct SharedResponseDeserializer(Arc<dyn DeserializeResponse>);
 
 impl SharedResponseDeserializer {
     /// Creates a new [`SharedResponseDeserializer`].
-    pub fn new(serializer: impl ResponseDeserializer + 'static) -> Self {
+    pub fn new(serializer: impl DeserializeResponse + 'static) -> Self {
         Self(Arc::new(serializer))
     }
 }
 
-impl ResponseDeserializer for SharedResponseDeserializer {
+impl DeserializeResponse for SharedResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &HttpResponse,
@@ -103,3 +112,5 @@ impl ResponseDeserializer for SharedResponseDeserializer {
 impl Storable for SharedResponseDeserializer {
     type Storer = StoreReplace<Self>;
 }
+
+impl_shared_conversions!(convert SharedResponseDeserializer from DeserializeResponse using SharedResponseDeserializer::new);

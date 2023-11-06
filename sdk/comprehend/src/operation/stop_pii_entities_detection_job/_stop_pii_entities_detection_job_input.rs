@@ -27,6 +27,7 @@ pub struct StopPiiEntitiesDetectionJobInputBuilder {
 }
 impl StopPiiEntitiesDetectionJobInputBuilder {
     /// <p>The identifier of the PII entities detection job to stop.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl StopPiiEntitiesDetectionJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_pii_entities_detection_job::StopPiiEntitiesDetectionJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::stop_pii_entities_detection_job::StopPiiEntitiesDetectionJobInput { job_id: self.job_id })
     }

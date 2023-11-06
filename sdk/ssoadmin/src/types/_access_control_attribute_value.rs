@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessControlAttributeValue {
     /// <p>The identity source to use when mapping a specified attribute to IAM Identity Center.</p>
-    pub source: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub source: ::std::vec::Vec<::std::string::String>,
 }
 impl AccessControlAttributeValue {
     /// <p>The identity source to use when mapping a specified attribute to IAM Identity Center.</p>
-    pub fn source(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.source.as_deref()
+    pub fn source(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.source.deref()
     }
 }
 impl AccessControlAttributeValue {
@@ -48,7 +49,16 @@ impl AccessControlAttributeValueBuilder {
         &self.source
     }
     /// Consumes the builder and constructs a [`AccessControlAttributeValue`](crate::types::AccessControlAttributeValue).
-    pub fn build(self) -> crate::types::AccessControlAttributeValue {
-        crate::types::AccessControlAttributeValue { source: self.source }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`source`](crate::types::builders::AccessControlAttributeValueBuilder::source)
+    pub fn build(self) -> ::std::result::Result<crate::types::AccessControlAttributeValue, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AccessControlAttributeValue {
+            source: self.source.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "source",
+                    "source was not specified but it is required when building AccessControlAttributeValue",
+                )
+            })?,
+        })
     }
 }

@@ -2,12 +2,12 @@
 pub fn ser_typed_link_schema_and_facet_name(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TypedLinkSchemaAndFacetName,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.schema_arn {
-        object.key("SchemaArn").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("SchemaArn").string(input.schema_arn.as_str());
     }
-    if let Some(var_2) = &input.typed_link_name {
-        object.key("TypedLinkName").string(var_2.as_str());
+    {
+        object.key("TypedLinkName").string(input.typed_link_name.as_str());
     }
     Ok(())
 }
@@ -51,7 +51,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::typed_link_schema_and_facet_name_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

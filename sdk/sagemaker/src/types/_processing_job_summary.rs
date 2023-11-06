@@ -77,6 +77,7 @@ pub struct ProcessingJobSummaryBuilder {
 }
 impl ProcessingJobSummaryBuilder {
     /// <p>The name of the processing job.</p>
+    /// This field is required.
     pub fn processing_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.processing_job_name = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +92,7 @@ impl ProcessingJobSummaryBuilder {
         &self.processing_job_name
     }
     /// <p>The Amazon Resource Name (ARN) of the processing job..</p>
+    /// This field is required.
     pub fn processing_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.processing_job_arn = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +107,7 @@ impl ProcessingJobSummaryBuilder {
         &self.processing_job_arn
     }
     /// <p>The time at which the processing job was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -147,6 +150,7 @@ impl ProcessingJobSummaryBuilder {
         &self.last_modified_time
     }
     /// <p>The status of the processing job.</p>
+    /// This field is required.
     pub fn processing_job_status(mut self, input: crate::types::ProcessingJobStatus) -> Self {
         self.processing_job_status = ::std::option::Option::Some(input);
         self

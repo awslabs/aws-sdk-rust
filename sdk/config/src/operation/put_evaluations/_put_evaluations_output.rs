@@ -10,8 +10,10 @@ pub struct PutEvaluationsOutput {
 }
 impl PutEvaluationsOutput {
     /// <p>Requests that failed because of a client or server error.</p>
-    pub fn failed_evaluations(&self) -> ::std::option::Option<&[crate::types::Evaluation]> {
-        self.failed_evaluations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_evaluations.is_none()`.
+    pub fn failed_evaluations(&self) -> &[crate::types::Evaluation] {
+        self.failed_evaluations.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for PutEvaluationsOutput {

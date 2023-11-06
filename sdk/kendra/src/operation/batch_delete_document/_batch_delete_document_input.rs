@@ -16,8 +16,10 @@ impl BatchDeleteDocumentInput {
         self.index_id.as_deref()
     }
     /// <p>One or more identifiers for documents to delete from the index.</p>
-    pub fn document_id_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.document_id_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.document_id_list.is_none()`.
+    pub fn document_id_list(&self) -> &[::std::string::String] {
+        self.document_id_list.as_deref().unwrap_or_default()
     }
     /// <p>Maps a particular data source sync job to a particular data source.</p>
     pub fn data_source_sync_job_metric_target(&self) -> ::std::option::Option<&crate::types::DataSourceSyncJobMetricTarget> {
@@ -41,6 +43,7 @@ pub struct BatchDeleteDocumentInputBuilder {
 }
 impl BatchDeleteDocumentInputBuilder {
     /// <p>The identifier of the index that contains the documents to delete.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self
@@ -91,7 +94,7 @@ impl BatchDeleteDocumentInputBuilder {
     /// Consumes the builder and constructs a [`BatchDeleteDocumentInput`](crate::operation::batch_delete_document::BatchDeleteDocumentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_delete_document::BatchDeleteDocumentInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_delete_document::BatchDeleteDocumentInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_delete_document::BatchDeleteDocumentInput {
             index_id: self.index_id,

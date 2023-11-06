@@ -5,33 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GridLayoutElement {
     /// <p>A unique identifier for an element within a grid layout.</p>
-    pub element_id: ::std::option::Option<::std::string::String>,
+    pub element_id: ::std::string::String,
     /// <p>The type of element.</p>
-    pub element_type: ::std::option::Option<crate::types::LayoutElementType>,
+    pub element_type: crate::types::LayoutElementType,
     /// <p>The column index for the upper left corner of an element.</p>
     pub column_index: ::std::option::Option<i32>,
     /// <p>The width of a grid element expressed as a number of grid columns.</p>
-    pub column_span: ::std::option::Option<i32>,
+    pub column_span: i32,
     /// <p>The row index for the upper left corner of an element.</p>
     pub row_index: ::std::option::Option<i32>,
     /// <p>The height of a grid element expressed as a number of grid rows.</p>
-    pub row_span: ::std::option::Option<i32>,
+    pub row_span: i32,
 }
 impl GridLayoutElement {
     /// <p>A unique identifier for an element within a grid layout.</p>
-    pub fn element_id(&self) -> ::std::option::Option<&str> {
-        self.element_id.as_deref()
+    pub fn element_id(&self) -> &str {
+        use std::ops::Deref;
+        self.element_id.deref()
     }
     /// <p>The type of element.</p>
-    pub fn element_type(&self) -> ::std::option::Option<&crate::types::LayoutElementType> {
-        self.element_type.as_ref()
+    pub fn element_type(&self) -> &crate::types::LayoutElementType {
+        &self.element_type
     }
     /// <p>The column index for the upper left corner of an element.</p>
     pub fn column_index(&self) -> ::std::option::Option<i32> {
         self.column_index
     }
     /// <p>The width of a grid element expressed as a number of grid columns.</p>
-    pub fn column_span(&self) -> ::std::option::Option<i32> {
+    pub fn column_span(&self) -> i32 {
         self.column_span
     }
     /// <p>The row index for the upper left corner of an element.</p>
@@ -39,7 +40,7 @@ impl GridLayoutElement {
         self.row_index
     }
     /// <p>The height of a grid element expressed as a number of grid rows.</p>
-    pub fn row_span(&self) -> ::std::option::Option<i32> {
+    pub fn row_span(&self) -> i32 {
         self.row_span
     }
 }
@@ -63,6 +64,7 @@ pub struct GridLayoutElementBuilder {
 }
 impl GridLayoutElementBuilder {
     /// <p>A unique identifier for an element within a grid layout.</p>
+    /// This field is required.
     pub fn element_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.element_id = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +79,7 @@ impl GridLayoutElementBuilder {
         &self.element_id
     }
     /// <p>The type of element.</p>
+    /// This field is required.
     pub fn element_type(mut self, input: crate::types::LayoutElementType) -> Self {
         self.element_type = ::std::option::Option::Some(input);
         self
@@ -105,6 +108,7 @@ impl GridLayoutElementBuilder {
         &self.column_index
     }
     /// <p>The width of a grid element expressed as a number of grid columns.</p>
+    /// This field is required.
     pub fn column_span(mut self, input: i32) -> Self {
         self.column_span = ::std::option::Option::Some(input);
         self
@@ -133,6 +137,7 @@ impl GridLayoutElementBuilder {
         &self.row_index
     }
     /// <p>The height of a grid element expressed as a number of grid rows.</p>
+    /// This field is required.
     pub fn row_span(mut self, input: i32) -> Self {
         self.row_span = ::std::option::Option::Some(input);
         self
@@ -147,14 +152,39 @@ impl GridLayoutElementBuilder {
         &self.row_span
     }
     /// Consumes the builder and constructs a [`GridLayoutElement`](crate::types::GridLayoutElement).
-    pub fn build(self) -> crate::types::GridLayoutElement {
-        crate::types::GridLayoutElement {
-            element_id: self.element_id,
-            element_type: self.element_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`element_id`](crate::types::builders::GridLayoutElementBuilder::element_id)
+    /// - [`element_type`](crate::types::builders::GridLayoutElementBuilder::element_type)
+    /// - [`column_span`](crate::types::builders::GridLayoutElementBuilder::column_span)
+    /// - [`row_span`](crate::types::builders::GridLayoutElementBuilder::row_span)
+    pub fn build(self) -> ::std::result::Result<crate::types::GridLayoutElement, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::GridLayoutElement {
+            element_id: self.element_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "element_id",
+                    "element_id was not specified but it is required when building GridLayoutElement",
+                )
+            })?,
+            element_type: self.element_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "element_type",
+                    "element_type was not specified but it is required when building GridLayoutElement",
+                )
+            })?,
             column_index: self.column_index,
-            column_span: self.column_span,
+            column_span: self.column_span.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "column_span",
+                    "column_span was not specified but it is required when building GridLayoutElement",
+                )
+            })?,
             row_index: self.row_index,
-            row_span: self.row_span,
-        }
+            row_span: self.row_span.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "row_span",
+                    "row_span was not specified but it is required when building GridLayoutElement",
+                )
+            })?,
+        })
     }
 }

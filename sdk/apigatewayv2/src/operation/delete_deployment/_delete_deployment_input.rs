@@ -34,6 +34,7 @@ pub struct DeleteDeploymentInputBuilder {
 }
 impl DeleteDeploymentInputBuilder {
     /// <p>The API identifier.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteDeploymentInputBuilder {
         &self.api_id
     }
     /// <p>The deployment ID.</p>
+    /// This field is required.
     pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DeleteDeploymentInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDeploymentInput`](crate::operation::delete_deployment::DeleteDeploymentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_deployment::DeleteDeploymentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_deployment::DeleteDeploymentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_deployment::DeleteDeploymentInput {
             api_id: self.api_id,
             deployment_id: self.deployment_id,

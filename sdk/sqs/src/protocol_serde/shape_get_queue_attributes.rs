@@ -88,7 +88,7 @@ pub fn de_get_queue_attributes(
             s if s.matches("Attribute") /* Attributes com.amazonaws.sqs.synthetic#GetQueueAttributesOutput$Attributes */ =>  {
                 let var_1 =
                     Some(
-                        Result::<::std::collections::HashMap<crate::types::QueueAttributeName, ::std::string::String>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::collections::HashMap::<crate::types::QueueAttributeName, ::std::string::String>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut map_2 = builder.attributes.take().unwrap_or_default();
                                             crate::protocol_serde::shape_queue_attribute_map::de_queue_attribute_map_entry(&mut tag, &mut map_2)?;
                                             map_2

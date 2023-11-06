@@ -48,6 +48,7 @@ impl InitiateLayerUploadInputBuilder {
         &self.registry_id
     }
     /// <p>The name of the repository to which you intend to upload layers.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl InitiateLayerUploadInputBuilder {
     /// Consumes the builder and constructs a [`InitiateLayerUploadInput`](crate::operation::initiate_layer_upload::InitiateLayerUploadInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::initiate_layer_upload::InitiateLayerUploadInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::initiate_layer_upload::InitiateLayerUploadInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::initiate_layer_upload::InitiateLayerUploadInput {
             registry_id: self.registry_id,

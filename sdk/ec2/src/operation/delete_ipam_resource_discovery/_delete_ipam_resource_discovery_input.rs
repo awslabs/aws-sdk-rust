@@ -48,6 +48,7 @@ impl DeleteIpamResourceDiscoveryInputBuilder {
         &self.dry_run
     }
     /// <p>The IPAM resource discovery ID.</p>
+    /// This field is required.
     pub fn ipam_resource_discovery_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_resource_discovery_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl DeleteIpamResourceDiscoveryInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_ipam_resource_discovery::DeleteIpamResourceDiscoveryInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_ipam_resource_discovery::DeleteIpamResourceDiscoveryInput {
             dry_run: self.dry_run,

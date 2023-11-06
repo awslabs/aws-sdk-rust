@@ -78,6 +78,7 @@ pub struct UpdatePackageVersionInputBuilder {
 }
 impl UpdatePackageVersionInputBuilder {
     /// <p>The name of the associated software package.</p>
+    /// This field is required.
     pub fn package_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_name = ::std::option::Option::Some(input.into());
         self
@@ -92,6 +93,7 @@ impl UpdatePackageVersionInputBuilder {
         &self.package_name
     }
     /// <p>The name of the target package version.</p>
+    /// This field is required.
     pub fn version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_name = ::std::option::Option::Some(input.into());
         self
@@ -176,7 +178,7 @@ impl UpdatePackageVersionInputBuilder {
     /// Consumes the builder and constructs a [`UpdatePackageVersionInput`](crate::operation::update_package_version::UpdatePackageVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_package_version::UpdatePackageVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_package_version::UpdatePackageVersionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_package_version::UpdatePackageVersionInput {
             package_name: self.package_name,

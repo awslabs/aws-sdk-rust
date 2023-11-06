@@ -110,7 +110,9 @@ pub fn de_get_origin_endpoint_http_response(
         output = crate::protocol_serde::shape_get_origin_endpoint::de_get_origin_endpoint(_response_body, output)
             .map_err(crate::operation::get_origin_endpoint::GetOriginEndpointError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::get_origin_endpoint_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::get_origin_endpoint::GetOriginEndpointError::unhandled)?
     })
 }
 

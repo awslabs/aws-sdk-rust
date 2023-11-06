@@ -86,7 +86,7 @@ impl ListRepositoriesInputBuilder {
     /// Consumes the builder and constructs a [`ListRepositoriesInput`](crate::operation::list_repositories::ListRepositoriesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_repositories::ListRepositoriesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_repositories::ListRepositoriesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_repositories::ListRepositoriesInput {
             next_token: self.next_token,
             sort_by: self.sort_by,

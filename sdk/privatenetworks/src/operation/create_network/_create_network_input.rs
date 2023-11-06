@@ -58,6 +58,7 @@ pub struct CreateNetworkInputBuilder {
 }
 impl CreateNetworkInputBuilder {
     /// <p>The name of the network. You can't change the name after you create the network.</p>
+    /// This field is required.
     pub fn network_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_name = ::std::option::Option::Some(input.into());
         self
@@ -122,7 +123,7 @@ impl CreateNetworkInputBuilder {
     /// Consumes the builder and constructs a [`CreateNetworkInput`](crate::operation::create_network::CreateNetworkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_network::CreateNetworkInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_network::CreateNetworkInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_network::CreateNetworkInput {
             network_name: self.network_name,
             description: self.description,

@@ -34,6 +34,7 @@ pub struct DeleteBucketReplicationInputBuilder {
 }
 impl DeleteBucketReplicationInputBuilder {
     /// <p> The bucket name. </p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl DeleteBucketReplicationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_bucket_replication::DeleteBucketReplicationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_bucket_replication::DeleteBucketReplicationInput {
             bucket: self.bucket,

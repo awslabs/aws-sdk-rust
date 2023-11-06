@@ -9,8 +9,10 @@ pub struct GetServerStrategiesOutput {
 }
 impl GetServerStrategiesOutput {
     /// <p> A list of strategy recommendations for the server. </p>
-    pub fn server_strategies(&self) -> ::std::option::Option<&[crate::types::ServerStrategy]> {
-        self.server_strategies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.server_strategies.is_none()`.
+    pub fn server_strategies(&self) -> &[crate::types::ServerStrategy] {
+        self.server_strategies.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetServerStrategiesOutput {

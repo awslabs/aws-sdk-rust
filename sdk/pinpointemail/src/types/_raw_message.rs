@@ -14,7 +14,7 @@ pub struct RawMessage {
     /// <li> <p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, you should encode that content to ensure that recipients' email clients render the message properly.</p> </li>
     /// <li> <p>The length of any single line of text in the message can't exceed 1,000 characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p> </li>
     /// </ul>
-    pub data: ::std::option::Option<::aws_smithy_types::Blob>,
+    pub data: ::aws_smithy_types::Blob,
 }
 impl RawMessage {
     /// <p>The raw email message. The message has to meet the following criteria:</p>
@@ -27,8 +27,8 @@ impl RawMessage {
     /// <li> <p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, you should encode that content to ensure that recipients' email clients render the message properly.</p> </li>
     /// <li> <p>The length of any single line of text in the message can't exceed 1,000 characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p> </li>
     /// </ul>
-    pub fn data(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
-        self.data.as_ref()
+    pub fn data(&self) -> &::aws_smithy_types::Blob {
+        &self.data
     }
 }
 impl RawMessage {
@@ -55,6 +55,7 @@ impl RawMessageBuilder {
     /// <li> <p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, you should encode that content to ensure that recipients' email clients render the message properly.</p> </li>
     /// <li> <p>The length of any single line of text in the message can't exceed 1,000 characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn data(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.data = ::std::option::Option::Some(input);
         self
@@ -87,7 +88,16 @@ impl RawMessageBuilder {
         &self.data
     }
     /// Consumes the builder and constructs a [`RawMessage`](crate::types::RawMessage).
-    pub fn build(self) -> crate::types::RawMessage {
-        crate::types::RawMessage { data: self.data }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`data`](crate::types::builders::RawMessageBuilder::data)
+    pub fn build(self) -> ::std::result::Result<crate::types::RawMessage, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RawMessage {
+            data: self.data.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "data",
+                    "data was not specified but it is required when building RawMessage",
+                )
+            })?,
+        })
     }
 }

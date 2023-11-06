@@ -11,8 +11,10 @@ pub struct DescribeReplicationConfigurationTemplatesOutput {
 }
 impl DescribeReplicationConfigurationTemplatesOutput {
     /// <p>Request to describe Replication Configuration template by items.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::ReplicationConfigurationTemplate]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[crate::types::ReplicationConfigurationTemplate] {
+        self.items.as_deref().unwrap_or_default()
     }
     /// <p>Request to describe Replication Configuration template by next token.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

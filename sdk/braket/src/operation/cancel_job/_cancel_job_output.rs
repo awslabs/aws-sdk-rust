@@ -4,19 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelJobOutput {
     /// <p>The ARN of the Amazon Braket job.</p>
-    pub job_arn: ::std::option::Option<::std::string::String>,
+    pub job_arn: ::std::string::String,
     /// <p>The status of the job cancellation request.</p>
-    pub cancellation_status: ::std::option::Option<crate::types::CancellationStatus>,
+    pub cancellation_status: crate::types::CancellationStatus,
     _request_id: Option<String>,
 }
 impl CancelJobOutput {
     /// <p>The ARN of the Amazon Braket job.</p>
-    pub fn job_arn(&self) -> ::std::option::Option<&str> {
-        self.job_arn.as_deref()
+    pub fn job_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.job_arn.deref()
     }
     /// <p>The status of the job cancellation request.</p>
-    pub fn cancellation_status(&self) -> ::std::option::Option<&crate::types::CancellationStatus> {
-        self.cancellation_status.as_ref()
+    pub fn cancellation_status(&self) -> &crate::types::CancellationStatus {
+        &self.cancellation_status
     }
 }
 impl ::aws_http::request_id::RequestId for CancelJobOutput {
@@ -41,6 +42,7 @@ pub struct CancelJobOutputBuilder {
 }
 impl CancelJobOutputBuilder {
     /// <p>The ARN of the Amazon Braket job.</p>
+    /// This field is required.
     pub fn job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +57,7 @@ impl CancelJobOutputBuilder {
         &self.job_arn
     }
     /// <p>The status of the job cancellation request.</p>
+    /// This field is required.
     pub fn cancellation_status(mut self, input: crate::types::CancellationStatus) -> Self {
         self.cancellation_status = ::std::option::Option::Some(input);
         self
@@ -78,11 +81,24 @@ impl CancelJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CancelJobOutput`](crate::operation::cancel_job::CancelJobOutput).
-    pub fn build(self) -> crate::operation::cancel_job::CancelJobOutput {
-        crate::operation::cancel_job::CancelJobOutput {
-            job_arn: self.job_arn,
-            cancellation_status: self.cancellation_status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`job_arn`](crate::operation::cancel_job::builders::CancelJobOutputBuilder::job_arn)
+    /// - [`cancellation_status`](crate::operation::cancel_job::builders::CancelJobOutputBuilder::cancellation_status)
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_job::CancelJobOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::cancel_job::CancelJobOutput {
+            job_arn: self.job_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "job_arn",
+                    "job_arn was not specified but it is required when building CancelJobOutput",
+                )
+            })?,
+            cancellation_status: self.cancellation_status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "cancellation_status",
+                    "cancellation_status was not specified but it is required when building CancelJobOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

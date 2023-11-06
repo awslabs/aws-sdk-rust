@@ -55,6 +55,7 @@ pub struct CreatePrefetchScheduleInputBuilder {
 }
 impl CreatePrefetchScheduleInputBuilder {
     /// <p>The configuration settings for MediaTailor's <i>consumption</i> of the prefetched ads from the ad decision server. Each consumption configuration contains an end time and an optional start time that define the <i>consumption window</i>. Prefetch schedules automatically expire no earlier than seven days after the end time.</p>
+    /// This field is required.
     pub fn consumption(mut self, input: crate::types::PrefetchConsumption) -> Self {
         self.consumption = ::std::option::Option::Some(input);
         self
@@ -69,6 +70,7 @@ impl CreatePrefetchScheduleInputBuilder {
         &self.consumption
     }
     /// <p>The name to assign to the schedule request.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +85,7 @@ impl CreatePrefetchScheduleInputBuilder {
         &self.name
     }
     /// <p>The name to assign to the playback configuration.</p>
+    /// This field is required.
     pub fn playback_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.playback_configuration_name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +100,7 @@ impl CreatePrefetchScheduleInputBuilder {
         &self.playback_configuration_name
     }
     /// <p>The configuration settings for retrieval of prefetched ads from the ad decision server. Only one set of prefetched ads will be retrieved and subsequently consumed for each ad break.</p>
+    /// This field is required.
     pub fn retrieval(mut self, input: crate::types::PrefetchRetrieval) -> Self {
         self.retrieval = ::std::option::Option::Some(input);
         self
@@ -127,8 +131,10 @@ impl CreatePrefetchScheduleInputBuilder {
     /// Consumes the builder and constructs a [`CreatePrefetchScheduleInput`](crate::operation::create_prefetch_schedule::CreatePrefetchScheduleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_prefetch_schedule::CreatePrefetchScheduleInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_prefetch_schedule::CreatePrefetchScheduleInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_prefetch_schedule::CreatePrefetchScheduleInput {
             consumption: self.consumption,
             name: self.name,

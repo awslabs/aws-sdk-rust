@@ -42,6 +42,7 @@ pub struct ThresholdBuilder {
 }
 impl ThresholdBuilder {
     /// <p>The value of a threshold.</p>
+    /// This field is required.
     pub fn value(mut self, input: f64) -> Self {
         self.value = ::std::option::Option::Some(input);
         self

@@ -16,8 +16,10 @@ impl AddAttachmentsToSetInput {
     }
     /// <p>One or more attachments to add to the set. You can add up to three attachments per set. The size limit is 5 MB per attachment.</p>
     /// <p>In the <code>Attachment</code> object, use the <code>data</code> parameter to specify the contents of the attachment file. In the previous request syntax, the value for <code>data</code> appear as <code>blob</code>, which is represented as a base64-encoded string. The value for <code>fileName</code> is the name of the attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
-    pub fn attachments(&self) -> ::std::option::Option<&[crate::types::Attachment]> {
-        self.attachments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attachments.is_none()`.
+    pub fn attachments(&self) -> &[crate::types::Attachment] {
+        self.attachments.as_deref().unwrap_or_default()
     }
 }
 impl AddAttachmentsToSetInput {
@@ -75,7 +77,7 @@ impl AddAttachmentsToSetInputBuilder {
     /// Consumes the builder and constructs a [`AddAttachmentsToSetInput`](crate::operation::add_attachments_to_set::AddAttachmentsToSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::add_attachments_to_set::AddAttachmentsToSetInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::add_attachments_to_set::AddAttachmentsToSetInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::add_attachments_to_set::AddAttachmentsToSetInput {
             attachment_set_id: self.attachment_set_id,

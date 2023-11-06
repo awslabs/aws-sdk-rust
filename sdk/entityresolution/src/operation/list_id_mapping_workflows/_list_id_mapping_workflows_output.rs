@@ -11,8 +11,10 @@ pub struct ListIdMappingWorkflowsOutput {
 }
 impl ListIdMappingWorkflowsOutput {
     /// <p>A list of <code>IdMappingWorkflowSummary</code> objects.</p>
-    pub fn workflow_summaries(&self) -> ::std::option::Option<&[crate::types::IdMappingWorkflowSummary]> {
-        self.workflow_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.workflow_summaries.is_none()`.
+    pub fn workflow_summaries(&self) -> &[crate::types::IdMappingWorkflowSummary] {
+        self.workflow_summaries.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token from the previous API call.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

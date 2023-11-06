@@ -5,18 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StatelessRulesAndCustomActions {
     /// <p>Defines the set of stateless rules for use in a stateless rule group. </p>
-    pub stateless_rules: ::std::option::Option<::std::vec::Vec<crate::types::StatelessRule>>,
+    pub stateless_rules: ::std::vec::Vec<crate::types::StatelessRule>,
     /// <p>Defines an array of individual custom action definitions that are available for use by the stateless rules in this <code>StatelessRulesAndCustomActions</code> specification. You name each custom action that you define, and then you can use it by name in your <code>StatelessRule</code> <code>RuleDefinition</code> <code>Actions</code> specification.</p>
     pub custom_actions: ::std::option::Option<::std::vec::Vec<crate::types::CustomAction>>,
 }
 impl StatelessRulesAndCustomActions {
     /// <p>Defines the set of stateless rules for use in a stateless rule group. </p>
-    pub fn stateless_rules(&self) -> ::std::option::Option<&[crate::types::StatelessRule]> {
-        self.stateless_rules.as_deref()
+    pub fn stateless_rules(&self) -> &[crate::types::StatelessRule] {
+        use std::ops::Deref;
+        self.stateless_rules.deref()
     }
     /// <p>Defines an array of individual custom action definitions that are available for use by the stateless rules in this <code>StatelessRulesAndCustomActions</code> specification. You name each custom action that you define, and then you can use it by name in your <code>StatelessRule</code> <code>RuleDefinition</code> <code>Actions</code> specification.</p>
-    pub fn custom_actions(&self) -> ::std::option::Option<&[crate::types::CustomAction]> {
-        self.custom_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_actions.is_none()`.
+    pub fn custom_actions(&self) -> &[crate::types::CustomAction] {
+        self.custom_actions.as_deref().unwrap_or_default()
     }
 }
 impl StatelessRulesAndCustomActions {
@@ -75,10 +78,17 @@ impl StatelessRulesAndCustomActionsBuilder {
         &self.custom_actions
     }
     /// Consumes the builder and constructs a [`StatelessRulesAndCustomActions`](crate::types::StatelessRulesAndCustomActions).
-    pub fn build(self) -> crate::types::StatelessRulesAndCustomActions {
-        crate::types::StatelessRulesAndCustomActions {
-            stateless_rules: self.stateless_rules,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`stateless_rules`](crate::types::builders::StatelessRulesAndCustomActionsBuilder::stateless_rules)
+    pub fn build(self) -> ::std::result::Result<crate::types::StatelessRulesAndCustomActions, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::StatelessRulesAndCustomActions {
+            stateless_rules: self.stateless_rules.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "stateless_rules",
+                    "stateless_rules was not specified but it is required when building StatelessRulesAndCustomActions",
+                )
+            })?,
             custom_actions: self.custom_actions,
-        }
+        })
     }
 }

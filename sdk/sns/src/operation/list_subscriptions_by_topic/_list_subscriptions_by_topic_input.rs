@@ -35,6 +35,7 @@ pub struct ListSubscriptionsByTopicInputBuilder {
 }
 impl ListSubscriptionsByTopicInputBuilder {
     /// <p>The ARN of the topic for which you wish to find subscriptions.</p>
+    /// This field is required.
     pub fn topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_arn = ::std::option::Option::Some(input.into());
         self
@@ -67,7 +68,7 @@ impl ListSubscriptionsByTopicInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_subscriptions_by_topic::ListSubscriptionsByTopicInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_subscriptions_by_topic::ListSubscriptionsByTopicInput {
             topic_arn: self.topic_arn,

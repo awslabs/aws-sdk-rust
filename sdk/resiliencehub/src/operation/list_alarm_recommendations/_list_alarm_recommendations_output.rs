@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAlarmRecommendationsOutput {
     /// <p>The alarm recommendations for an Resilience Hub application, returned as an object. This object includes Application Component names, descriptions, information about whether a recommendation has already been implemented or not, prerequisites, and more.</p>
-    pub alarm_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::AlarmRecommendation>>,
+    pub alarm_recommendations: ::std::vec::Vec<crate::types::AlarmRecommendation>,
     /// <p>Token for the next set of results, or null if there are no more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAlarmRecommendationsOutput {
     /// <p>The alarm recommendations for an Resilience Hub application, returned as an object. This object includes Application Component names, descriptions, information about whether a recommendation has already been implemented or not, prerequisites, and more.</p>
-    pub fn alarm_recommendations(&self) -> ::std::option::Option<&[crate::types::AlarmRecommendation]> {
-        self.alarm_recommendations.as_deref()
+    pub fn alarm_recommendations(&self) -> &[crate::types::AlarmRecommendation] {
+        use std::ops::Deref;
+        self.alarm_recommendations.deref()
     }
     /// <p>Token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,23 @@ impl ListAlarmRecommendationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAlarmRecommendationsOutput`](crate::operation::list_alarm_recommendations::ListAlarmRecommendationsOutput).
-    pub fn build(self) -> crate::operation::list_alarm_recommendations::ListAlarmRecommendationsOutput {
-        crate::operation::list_alarm_recommendations::ListAlarmRecommendationsOutput {
-            alarm_recommendations: self.alarm_recommendations,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`alarm_recommendations`](crate::operation::list_alarm_recommendations::builders::ListAlarmRecommendationsOutputBuilder::alarm_recommendations)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_alarm_recommendations::ListAlarmRecommendationsOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_alarm_recommendations::ListAlarmRecommendationsOutput {
+            alarm_recommendations: self.alarm_recommendations.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "alarm_recommendations",
+                    "alarm_recommendations was not specified but it is required when building ListAlarmRecommendationsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

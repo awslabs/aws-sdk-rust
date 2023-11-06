@@ -2,7 +2,7 @@
 pub fn ser_issuer_certificate_identifier(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IssuerCertificateIdentifier,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.issuer_certificate_subject {
         object.key("issuerCertificateSubject").string(var_1.as_str());
     }

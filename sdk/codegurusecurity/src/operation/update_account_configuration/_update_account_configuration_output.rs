@@ -34,6 +34,7 @@ pub struct UpdateAccountConfigurationOutputBuilder {
 }
 impl UpdateAccountConfigurationOutputBuilder {
     /// <p>An <code>EncryptionConfig</code> object that contains the KMS key ARN to use for encryption.</p>
+    /// This field is required.
     pub fn encryption_config(mut self, input: crate::types::EncryptionConfig) -> Self {
         self.encryption_config = ::std::option::Option::Some(input);
         self

@@ -11,12 +11,16 @@ pub struct BoxPlotAggregatedFieldWells {
 }
 impl BoxPlotAggregatedFieldWells {
     /// <p>The group by field well of a box plot chart. Values are grouped based on group by fields.</p>
-    pub fn group_by(&self) -> ::std::option::Option<&[crate::types::DimensionField]> {
-        self.group_by.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_by.is_none()`.
+    pub fn group_by(&self) -> &[crate::types::DimensionField] {
+        self.group_by.as_deref().unwrap_or_default()
     }
     /// <p>The value field well of a box plot chart. Values are aggregated based on group by fields.</p>
-    pub fn values(&self) -> ::std::option::Option<&[crate::types::MeasureField]> {
-        self.values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
+    pub fn values(&self) -> &[crate::types::MeasureField] {
+        self.values.as_deref().unwrap_or_default()
     }
 }
 impl BoxPlotAggregatedFieldWells {

@@ -56,6 +56,7 @@ pub struct CreateHarvestJobInputBuilder {
 }
 impl CreateHarvestJobInputBuilder {
     /// The end of the time-window which will be harvested
+    /// This field is required.
     pub fn end_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.end_time = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +71,7 @@ impl CreateHarvestJobInputBuilder {
         &self.end_time
     }
     /// The ID of the HarvestJob. The ID must be unique within the region and it cannot be changed after the HarvestJob is submitted
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +86,7 @@ impl CreateHarvestJobInputBuilder {
         &self.id
     }
     /// The ID of the OriginEndpoint that the HarvestJob will harvest from. This cannot be changed after the HarvestJob is submitted.
+    /// This field is required.
     pub fn origin_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origin_endpoint_id = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +101,7 @@ impl CreateHarvestJobInputBuilder {
         &self.origin_endpoint_id
     }
     /// Configuration parameters for where in an S3 bucket to place the harvested content
+    /// This field is required.
     pub fn s3_destination(mut self, input: crate::types::S3Destination) -> Self {
         self.s3_destination = ::std::option::Option::Some(input);
         self
@@ -112,6 +116,7 @@ impl CreateHarvestJobInputBuilder {
         &self.s3_destination
     }
     /// The start of the time-window which will be harvested
+    /// This field is required.
     pub fn start_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_time = ::std::option::Option::Some(input.into());
         self
@@ -128,7 +133,7 @@ impl CreateHarvestJobInputBuilder {
     /// Consumes the builder and constructs a [`CreateHarvestJobInput`](crate::operation::create_harvest_job::CreateHarvestJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_harvest_job::CreateHarvestJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_harvest_job::CreateHarvestJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_harvest_job::CreateHarvestJobInput {
             end_time: self.end_time,
             id: self.id,

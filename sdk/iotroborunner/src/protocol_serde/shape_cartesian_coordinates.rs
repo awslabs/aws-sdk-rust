@@ -2,23 +2,23 @@
 pub fn ser_cartesian_coordinates(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CartesianCoordinates,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.x {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
         object.key("x").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_1).into()),
+            ::aws_smithy_types::Number::Float((input.x).into()),
         );
     }
-    if let Some(var_2) = &input.y {
+    {
         object.key("y").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_2).into()),
+            ::aws_smithy_types::Number::Float((input.y).into()),
         );
     }
-    if let Some(var_3) = &input.z {
+    if let Some(var_1) = &input.z {
         object.key("z").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_3).into()),
+            ::aws_smithy_types::Number::Float((*var_1).into()),
         );
     }
     Ok(())
@@ -61,7 +61,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::cartesian_coordinates_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

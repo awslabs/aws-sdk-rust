@@ -27,6 +27,7 @@ pub struct DeleteInfrastructureConfigurationInputBuilder {
 }
 impl DeleteInfrastructureConfigurationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration to delete.</p>
+    /// This field is required.
     pub fn infrastructure_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.infrastructure_configuration_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteInfrastructureConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationInput {

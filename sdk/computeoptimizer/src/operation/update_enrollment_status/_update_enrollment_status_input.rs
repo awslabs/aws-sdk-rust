@@ -55,6 +55,7 @@ impl UpdateEnrollmentStatusInputBuilder {
     /// </ul> <note>
     /// <p>The <code>Pending</code> and <code>Failed</code> options cannot be used to update the enrollment status of an account. They are returned in the response of a request to update the enrollment status of an account.</p>
     /// </note>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -99,8 +100,10 @@ impl UpdateEnrollmentStatusInputBuilder {
     /// Consumes the builder and constructs a [`UpdateEnrollmentStatusInput`](crate::operation::update_enrollment_status::UpdateEnrollmentStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_enrollment_status::UpdateEnrollmentStatusInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::update_enrollment_status::UpdateEnrollmentStatusInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::update_enrollment_status::UpdateEnrollmentStatusInput {
             status: self.status,
             include_member_accounts: self.include_member_accounts,

@@ -41,6 +41,7 @@ pub struct ListFunctionDefinitionVersionsInputBuilder {
 }
 impl ListFunctionDefinitionVersionsInputBuilder {
     /// The ID of the Lambda function definition.
+    /// This field is required.
     pub fn function_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_definition_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListFunctionDefinitionVersionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_function_definition_versions::ListFunctionDefinitionVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_function_definition_versions::ListFunctionDefinitionVersionsInput {
             function_definition_id: self.function_definition_id,

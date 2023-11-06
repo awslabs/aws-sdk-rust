@@ -14,8 +14,10 @@ impl BatchGetFieldInput {
         self.domain_id.as_deref()
     }
     /// <p>A list of unique field identifiers. </p>
-    pub fn fields(&self) -> ::std::option::Option<&[crate::types::FieldIdentifier]> {
-        self.fields.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fields.is_none()`.
+    pub fn fields(&self) -> &[crate::types::FieldIdentifier] {
+        self.fields.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetFieldInput {
@@ -34,6 +36,7 @@ pub struct BatchGetFieldInputBuilder {
 }
 impl BatchGetFieldInputBuilder {
     /// <p>The unique identifier of the Cases domain. </p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +73,7 @@ impl BatchGetFieldInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetFieldInput`](crate::operation::batch_get_field::BatchGetFieldInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_get_field::BatchGetFieldInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_get_field::BatchGetFieldInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_get_field::BatchGetFieldInput {
             domain_id: self.domain_id,
             fields: self.fields,

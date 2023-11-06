@@ -34,6 +34,7 @@ pub struct ListTagsForResourceOutputBuilder {
 }
 impl ListTagsForResourceOutputBuilder {
     /// <p>Specifies the tags (keys and values) for an application, campaign, message template, or segment.</p>
+    /// This field is required.
     pub fn tags_model(mut self, input: crate::types::TagsModel) -> Self {
         self.tags_model = ::std::option::Option::Some(input);
         self

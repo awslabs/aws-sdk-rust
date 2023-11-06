@@ -11,8 +11,10 @@ pub struct ListProviderServicesOutput {
 }
 impl ListProviderServicesOutput {
     /// <p>A list of <code>ProviderServices</code> objects.</p>
-    pub fn provider_service_summaries(&self) -> ::std::option::Option<&[crate::types::ProviderServiceSummary]> {
-        self.provider_service_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provider_service_summaries.is_none()`.
+    pub fn provider_service_summaries(&self) -> &[crate::types::ProviderServiceSummary] {
+        self.provider_service_summaries.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token from the previous API call.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

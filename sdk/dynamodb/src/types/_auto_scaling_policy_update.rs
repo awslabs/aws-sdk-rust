@@ -52,6 +52,7 @@ impl AutoScalingPolicyUpdateBuilder {
         &self.policy_name
     }
     /// <p>Represents a target tracking scaling policy configuration.</p>
+    /// This field is required.
     pub fn target_tracking_scaling_policy_configuration(
         mut self,
         input: crate::types::AutoScalingTargetTrackingScalingPolicyConfigurationUpdate,

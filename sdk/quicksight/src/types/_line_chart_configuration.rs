@@ -53,8 +53,10 @@ impl LineChartConfiguration {
         self.sort_configuration.as_ref()
     }
     /// <p>The forecast configuration of a line chart.</p>
-    pub fn forecast_configurations(&self) -> ::std::option::Option<&[crate::types::ForecastConfiguration]> {
-        self.forecast_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.forecast_configurations.is_none()`.
+    pub fn forecast_configurations(&self) -> &[crate::types::ForecastConfiguration] {
+        self.forecast_configurations.as_deref().unwrap_or_default()
     }
     /// <p>Determines the type of the line chart.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::LineChartType> {
@@ -93,8 +95,10 @@ impl LineChartConfiguration {
         self.default_series_settings.as_ref()
     }
     /// <p>The series item configuration of a line chart.</p>
-    pub fn series(&self) -> ::std::option::Option<&[crate::types::SeriesItem]> {
-        self.series.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.series.is_none()`.
+    pub fn series(&self) -> &[crate::types::SeriesItem] {
+        self.series.as_deref().unwrap_or_default()
     }
     /// <p>The legend configuration of a line chart.</p>
     pub fn legend(&self) -> ::std::option::Option<&crate::types::LegendOptions> {
@@ -105,16 +109,20 @@ impl LineChartConfiguration {
         self.data_labels.as_ref()
     }
     /// <p>The reference lines configuration of a line chart.</p>
-    pub fn reference_lines(&self) -> ::std::option::Option<&[crate::types::ReferenceLine]> {
-        self.reference_lines.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reference_lines.is_none()`.
+    pub fn reference_lines(&self) -> &[crate::types::ReferenceLine] {
+        self.reference_lines.as_deref().unwrap_or_default()
     }
     /// <p>The tooltip configuration of a line chart.</p>
     pub fn tooltip(&self) -> ::std::option::Option<&crate::types::TooltipOptions> {
         self.tooltip.as_ref()
     }
     /// <p>The default configuration of a line chart's contribution analysis.</p>
-    pub fn contribution_analysis_defaults(&self) -> ::std::option::Option<&[crate::types::ContributionAnalysisDefault]> {
-        self.contribution_analysis_defaults.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.contribution_analysis_defaults.is_none()`.
+    pub fn contribution_analysis_defaults(&self) -> &[crate::types::ContributionAnalysisDefault] {
+        self.contribution_analysis_defaults.as_deref().unwrap_or_default()
     }
     /// <p>The visual palette configuration of a line chart.</p>
     pub fn visual_palette(&self) -> ::std::option::Option<&crate::types::VisualPalette> {

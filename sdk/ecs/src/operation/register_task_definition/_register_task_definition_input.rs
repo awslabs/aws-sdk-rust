@@ -134,20 +134,28 @@ impl RegisterTaskDefinitionInput {
         self.network_mode.as_ref()
     }
     /// <p>A list of container definitions in JSON format that describe the different containers that make up your task.</p>
-    pub fn container_definitions(&self) -> ::std::option::Option<&[crate::types::ContainerDefinition]> {
-        self.container_definitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.container_definitions.is_none()`.
+    pub fn container_definitions(&self) -> &[crate::types::ContainerDefinition] {
+        self.container_definitions.as_deref().unwrap_or_default()
     }
     /// <p>A list of volume definitions in JSON format that containers in your task might use.</p>
-    pub fn volumes(&self) -> ::std::option::Option<&[crate::types::Volume]> {
-        self.volumes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volumes.is_none()`.
+    pub fn volumes(&self) -> &[crate::types::Volume] {
+        self.volumes.as_deref().unwrap_or_default()
     }
     /// <p>An array of placement constraint objects to use for the task. You can specify a maximum of 10 constraints for each task. This limit includes constraints in the task definition and those specified at runtime.</p>
-    pub fn placement_constraints(&self) -> ::std::option::Option<&[crate::types::TaskDefinitionPlacementConstraint]> {
-        self.placement_constraints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.placement_constraints.is_none()`.
+    pub fn placement_constraints(&self) -> &[crate::types::TaskDefinitionPlacementConstraint] {
+        self.placement_constraints.as_deref().unwrap_or_default()
     }
     /// <p>The task launch type that Amazon ECS validates the task definition against. A client exception is returned if the task definition doesn't validate against the compatibilities specified. If no value is specified, the parameter is omitted from the response.</p>
-    pub fn requires_compatibilities(&self) -> ::std::option::Option<&[crate::types::Compatibility]> {
-        self.requires_compatibilities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.requires_compatibilities.is_none()`.
+    pub fn requires_compatibilities(&self) -> &[crate::types::Compatibility] {
+        self.requires_compatibilities.as_deref().unwrap_or_default()
     }
     /// <p>The number of CPU units used by the task. It can be expressed as an integer using CPU units (for example, <code>1024</code>) or as a string using vCPUs (for example, <code>1 vCPU</code> or <code>1 vcpu</code>) in a task definition. String values are converted to an integer indicating the CPU units when the task definition is registered.</p> <note>
     /// <p>Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying container-level resources for Windows containers.</p>
@@ -196,8 +204,10 @@ impl RegisterTaskDefinitionInput {
     /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The process namespace to use for the containers in the task. The valid values are <code>host</code> or <code>task</code>. On Fargate for Linux containers, the only valid value is <code>task</code>. For example, monitoring sidecars might need <code>pidMode</code> to access information about other containers running in the same task.</p>
     /// <p>If <code>host</code> is specified, all containers within the tasks that specified the <code>host</code> PID mode on the same container instance share the same process namespace with the host Amazon EC2 instance.</p>
@@ -229,8 +239,10 @@ impl RegisterTaskDefinitionInput {
         self.proxy_configuration.as_ref()
     }
     /// <p>The Elastic Inference accelerators to use for the containers in the task.</p>
-    pub fn inference_accelerators(&self) -> ::std::option::Option<&[crate::types::InferenceAccelerator]> {
-        self.inference_accelerators.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inference_accelerators.is_none()`.
+    pub fn inference_accelerators(&self) -> &[crate::types::InferenceAccelerator] {
+        self.inference_accelerators.as_deref().unwrap_or_default()
     }
     /// <p>The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on Fargate. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate task storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p> <note>
     /// <p>For tasks using the Fargate launch type, the task requires the following platforms:</p>
@@ -279,6 +291,7 @@ pub struct RegisterTaskDefinitionInputBuilder {
 }
 impl RegisterTaskDefinitionInputBuilder {
     /// <p>You must specify a <code>family</code> for a task definition. You can use it track multiple versions of the same task definition. The <code>family</code> is used as a name for your task definition. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed.</p>
+    /// This field is required.
     pub fn family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.family = ::std::option::Option::Some(input.into());
         self
@@ -768,8 +781,10 @@ impl RegisterTaskDefinitionInputBuilder {
     /// Consumes the builder and constructs a [`RegisterTaskDefinitionInput`](crate::operation::register_task_definition::RegisterTaskDefinitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_task_definition::RegisterTaskDefinitionInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::register_task_definition::RegisterTaskDefinitionInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::register_task_definition::RegisterTaskDefinitionInput {
             family: self.family,
             task_role_arn: self.task_role_arn,

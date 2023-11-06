@@ -27,6 +27,7 @@ pub struct DeleteWorkforceInputBuilder {
 }
 impl DeleteWorkforceInputBuilder {
     /// <p>The name of the workforce.</p>
+    /// This field is required.
     pub fn workforce_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workforce_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteWorkforceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteWorkforceInput`](crate::operation::delete_workforce::DeleteWorkforceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_workforce::DeleteWorkforceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_workforce::DeleteWorkforceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_workforce::DeleteWorkforceInput {
             workforce_name: self.workforce_name,
         })

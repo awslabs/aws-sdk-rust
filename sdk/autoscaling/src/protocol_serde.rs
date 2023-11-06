@@ -487,7 +487,7 @@ pub(crate) mod shape_step_adjustments;
 
 pub(crate) mod shape_suspended_processes;
 
-pub(crate) mod shape_target_group_ar_ns;
+pub(crate) mod shape_target_group_arns;
 
 pub(crate) mod shape_target_tracking_metric_stat;
 
@@ -495,7 +495,7 @@ pub(crate) mod shape_traffic_sources;
 
 pub(crate) mod shape_accelerator_count_request;
 
-pub(crate) mod shape_accelerator_total_memory_mi_b_request;
+pub(crate) mod shape_accelerator_total_memory_mib_request;
 
 pub(crate) mod shape_baseline_ebs_bandwidth_mbps_request;
 
@@ -507,9 +507,9 @@ pub(crate) mod shape_instance_refresh_live_pool_progress;
 
 pub(crate) mod shape_instance_refresh_warm_pool_progress;
 
-pub(crate) mod shape_memory_gi_b_per_v_cpu_request;
+pub(crate) mod shape_memory_gib_per_v_cpu_request;
 
-pub(crate) mod shape_memory_mi_b_request;
+pub(crate) mod shape_memory_mib_request;
 
 pub(crate) mod shape_metric;
 

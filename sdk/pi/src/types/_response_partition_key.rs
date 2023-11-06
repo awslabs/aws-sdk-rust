@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponsePartitionKey {
     /// <p>A dimension map that contains the dimensions for this partition.</p>
-    pub dimensions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub dimensions: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
 }
 impl ResponsePartitionKey {
     /// <p>A dimension map that contains the dimensions for this partition.</p>
-    pub fn dimensions(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
-        self.dimensions.as_ref()
+    pub fn dimensions(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+        &self.dimensions
     }
 }
 impl ResponsePartitionKey {
@@ -48,7 +48,16 @@ impl ResponsePartitionKeyBuilder {
         &self.dimensions
     }
     /// Consumes the builder and constructs a [`ResponsePartitionKey`](crate::types::ResponsePartitionKey).
-    pub fn build(self) -> crate::types::ResponsePartitionKey {
-        crate::types::ResponsePartitionKey { dimensions: self.dimensions }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`dimensions`](crate::types::builders::ResponsePartitionKeyBuilder::dimensions)
+    pub fn build(self) -> ::std::result::Result<crate::types::ResponsePartitionKey, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ResponsePartitionKey {
+            dimensions: self.dimensions.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "dimensions",
+                    "dimensions was not specified but it is required when building ResponsePartitionKey",
+                )
+            })?,
+        })
     }
 }

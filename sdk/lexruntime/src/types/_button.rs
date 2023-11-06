@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Button {
     /// <p>Text that is visible to the user on the button.</p>
-    pub text: ::std::option::Option<::std::string::String>,
+    pub text: ::std::string::String,
     /// <p>The value sent to Amazon Lex when a user chooses the button. For example, consider button text "NYC." When the user chooses the button, the value sent can be "New York City."</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
 }
 impl Button {
     /// <p>Text that is visible to the user on the button.</p>
-    pub fn text(&self) -> ::std::option::Option<&str> {
-        self.text.as_deref()
+    pub fn text(&self) -> &str {
+        use std::ops::Deref;
+        self.text.deref()
     }
     /// <p>The value sent to Amazon Lex when a user chooses the button. For example, consider button text "NYC." When the user chooses the button, the value sent can be "New York City."</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
 }
 impl Button {
@@ -35,6 +37,7 @@ pub struct ButtonBuilder {
 }
 impl ButtonBuilder {
     /// <p>Text that is visible to the user on the button.</p>
+    /// This field is required.
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl ButtonBuilder {
         &self.text
     }
     /// <p>The value sent to Amazon Lex when a user chooses the button. For example, consider button text "NYC." When the user chooses the button, the value sent can be "New York City."</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl ButtonBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`Button`](crate::types::Button).
-    pub fn build(self) -> crate::types::Button {
-        crate::types::Button {
-            text: self.text,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`text`](crate::types::builders::ButtonBuilder::text)
+    /// - [`value`](crate::types::builders::ButtonBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::Button, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Button {
+            text: self.text.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "text",
+                    "text was not specified but it is required when building Button",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building Button",
+                )
+            })?,
+        })
     }
 }

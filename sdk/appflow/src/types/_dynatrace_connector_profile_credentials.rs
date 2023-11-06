@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DynatraceConnectorProfileCredentials {
     /// <p> The API tokens used by Dynatrace API to authenticate various API calls. </p>
-    pub api_token: ::std::option::Option<::std::string::String>,
+    pub api_token: ::std::string::String,
 }
 impl DynatraceConnectorProfileCredentials {
     /// <p> The API tokens used by Dynatrace API to authenticate various API calls. </p>
-    pub fn api_token(&self) -> ::std::option::Option<&str> {
-        self.api_token.as_deref()
+    pub fn api_token(&self) -> &str {
+        use std::ops::Deref;
+        self.api_token.deref()
     }
 }
 impl DynatraceConnectorProfileCredentials {
@@ -28,6 +29,7 @@ pub struct DynatraceConnectorProfileCredentialsBuilder {
 }
 impl DynatraceConnectorProfileCredentialsBuilder {
     /// <p> The API tokens used by Dynatrace API to authenticate various API calls. </p>
+    /// This field is required.
     pub fn api_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_token = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,18 @@ impl DynatraceConnectorProfileCredentialsBuilder {
         &self.api_token
     }
     /// Consumes the builder and constructs a [`DynatraceConnectorProfileCredentials`](crate::types::DynatraceConnectorProfileCredentials).
-    pub fn build(self) -> crate::types::DynatraceConnectorProfileCredentials {
-        crate::types::DynatraceConnectorProfileCredentials { api_token: self.api_token }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`api_token`](crate::types::builders::DynatraceConnectorProfileCredentialsBuilder::api_token)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::DynatraceConnectorProfileCredentials, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DynatraceConnectorProfileCredentials {
+            api_token: self.api_token.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "api_token",
+                    "api_token was not specified but it is required when building DynatraceConnectorProfileCredentials",
+                )
+            })?,
+        })
     }
 }

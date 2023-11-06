@@ -2,7 +2,7 @@
 pub fn ser_update_vpc_attachment_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_vpc_attachment::UpdateVpcAttachmentInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.add_subnet_arns {
         let mut array_2 = object.key("AddSubnetArns").start_array();
         for item_3 in var_1 {

@@ -85,7 +85,7 @@ impl ListClusterSnapshotsInputBuilder {
     /// Consumes the builder and constructs a [`ListClusterSnapshotsInput`](crate::operation::list_cluster_snapshots::ListClusterSnapshotsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_cluster_snapshots::ListClusterSnapshotsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_cluster_snapshots::ListClusterSnapshotsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_cluster_snapshots::ListClusterSnapshotsInput {
             cluster_arn: self.cluster_arn,

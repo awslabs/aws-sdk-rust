@@ -10,8 +10,10 @@ pub struct DescribeRaidArraysOutput {
 }
 impl DescribeRaidArraysOutput {
     /// <p>A <code>RaidArrays</code> object that describes the specified RAID arrays.</p>
-    pub fn raid_arrays(&self) -> ::std::option::Option<&[crate::types::RaidArray]> {
-        self.raid_arrays.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.raid_arrays.is_none()`.
+    pub fn raid_arrays(&self) -> &[crate::types::RaidArray] {
+        self.raid_arrays.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeRaidArraysOutput {

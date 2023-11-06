@@ -68,6 +68,7 @@ impl EntitlementAttributeBuilder {
     /// <li> <p>userType</p> </li>
     /// </ul>
     /// <p> </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +105,7 @@ impl EntitlementAttributeBuilder {
         &self.name
     }
     /// <p>A value that is matched to a supported SAML attribute name when a user identity federates into an Amazon AppStream 2.0 SAML application. </p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self

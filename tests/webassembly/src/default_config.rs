@@ -3,13 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+use crate::http::WasmHttpConnector;
 use aws_config::retry::RetryConfig;
 use aws_credential_types::Credentials;
 use aws_smithy_types::timeout::TimeoutConfig;
 use aws_types::region::Region;
 use std::future::Future;
-
-use crate::adapter::Adapter;
 
 pub(crate) fn get_default_config() -> impl Future<Output = aws_config::SdkConfig> {
     aws_config::from_env()
@@ -21,7 +20,7 @@ pub(crate) fn get_default_config() -> impl Future<Output = aws_config::SdkConfig
         ))
         .timeout_config(TimeoutConfig::disabled())
         .retry_config(RetryConfig::disabled())
-        .http_connector(Adapter::to_http_connector())
+        .http_client(WasmHttpConnector::new())
         .load()
 }
 
@@ -29,5 +28,5 @@ pub(crate) fn get_default_config() -> impl Future<Output = aws_config::SdkConfig
 pub async fn test_default_config() {
     let shared_config = get_default_config().await;
     let client = aws_sdk_s3::Client::new(&shared_config);
-    assert_eq!(client.conf().region().unwrap().to_string(), "us-west-2")
+    assert_eq!(client.config().region().unwrap().to_string(), "us-west-2")
 }

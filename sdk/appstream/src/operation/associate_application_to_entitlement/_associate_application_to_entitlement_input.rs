@@ -41,6 +41,7 @@ pub struct AssociateApplicationToEntitlementInputBuilder {
 }
 impl AssociateApplicationToEntitlementInputBuilder {
     /// <p>The name of the stack.</p>
+    /// This field is required.
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl AssociateApplicationToEntitlementInputBuilder {
         &self.stack_name
     }
     /// <p>The name of the entitlement.</p>
+    /// This field is required.
     pub fn entitlement_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entitlement_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl AssociateApplicationToEntitlementInputBuilder {
         &self.entitlement_name
     }
     /// <p>The identifier of the application.</p>
+    /// This field is required.
     pub fn application_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_identifier = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +90,7 @@ impl AssociateApplicationToEntitlementInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_application_to_entitlement::AssociateApplicationToEntitlementInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::associate_application_to_entitlement::AssociateApplicationToEntitlementInput {

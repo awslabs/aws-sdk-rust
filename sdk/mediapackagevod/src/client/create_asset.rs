@@ -3,22 +3,22 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateAsset`](crate::operation::create_asset::builders::CreateAssetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::create_asset::builders::CreateAssetFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::create_asset::builders::CreateAssetFluentBuilder::set_id): The unique identifier for the Asset.
-    ///   - [`packaging_group_id(impl Into<String>)`](crate::operation::create_asset::builders::CreateAssetFluentBuilder::packaging_group_id) / [`set_packaging_group_id(Option<String>)`](crate::operation::create_asset::builders::CreateAssetFluentBuilder::set_packaging_group_id): The ID of the PackagingGroup for the Asset.
-    ///   - [`resource_id(impl Into<String>)`](crate::operation::create_asset::builders::CreateAssetFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::create_asset::builders::CreateAssetFluentBuilder::set_resource_id): The resource ID to include in SPEKE key requests.
-    ///   - [`source_arn(impl Into<String>)`](crate::operation::create_asset::builders::CreateAssetFluentBuilder::source_arn) / [`set_source_arn(Option<String>)`](crate::operation::create_asset::builders::CreateAssetFluentBuilder::set_source_arn): ARN of the source object in S3.
-    ///   - [`source_role_arn(impl Into<String>)`](crate::operation::create_asset::builders::CreateAssetFluentBuilder::source_role_arn) / [`set_source_role_arn(Option<String>)`](crate::operation::create_asset::builders::CreateAssetFluentBuilder::set_source_role_arn): The IAM role ARN used to access the source S3 bucket.
-    ///   - [`tags(impl Into<String>, impl Into<String>)`](crate::operation::create_asset::builders::CreateAssetFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::create_asset::builders::CreateAssetFluentBuilder::set_tags): A collection of tags associated with a resource
+    ///   - [`id(impl Into<String>)`](crate::operation::create_asset::builders::CreateAssetFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::create_asset::builders::CreateAssetFluentBuilder::set_id):<br>required: **true**<br>The unique identifier for the Asset.<br>
+    ///   - [`packaging_group_id(impl Into<String>)`](crate::operation::create_asset::builders::CreateAssetFluentBuilder::packaging_group_id) / [`set_packaging_group_id(Option<String>)`](crate::operation::create_asset::builders::CreateAssetFluentBuilder::set_packaging_group_id):<br>required: **true**<br>The ID of the PackagingGroup for the Asset.<br>
+    ///   - [`resource_id(impl Into<String>)`](crate::operation::create_asset::builders::CreateAssetFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::create_asset::builders::CreateAssetFluentBuilder::set_resource_id):<br>required: **false**<br>The resource ID to include in SPEKE key requests.<br>
+    ///   - [`source_arn(impl Into<String>)`](crate::operation::create_asset::builders::CreateAssetFluentBuilder::source_arn) / [`set_source_arn(Option<String>)`](crate::operation::create_asset::builders::CreateAssetFluentBuilder::set_source_arn):<br>required: **true**<br>ARN of the source object in S3.<br>
+    ///   - [`source_role_arn(impl Into<String>)`](crate::operation::create_asset::builders::CreateAssetFluentBuilder::source_role_arn) / [`set_source_role_arn(Option<String>)`](crate::operation::create_asset::builders::CreateAssetFluentBuilder::set_source_role_arn):<br>required: **true**<br>The IAM role ARN used to access the source S3 bucket.<br>
+    ///   - [`tags(impl Into<String>, impl Into<String>)`](crate::operation::create_asset::builders::CreateAssetFluentBuilder::tags) / [`set_tags(Option<HashMap::<String, String>>)`](crate::operation::create_asset::builders::CreateAssetFluentBuilder::set_tags):<br>required: **false**<br>A collection of tags associated with a resource<br>
     /// - On success, responds with [`CreateAssetOutput`](crate::operation::create_asset::CreateAssetOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::create_asset::CreateAssetOutput::arn): The ARN of the Asset.
     ///   - [`created_at(Option<String>)`](crate::operation::create_asset::CreateAssetOutput::created_at): The time the Asset was initially submitted for Ingest.
-    ///   - [`egress_endpoints(Option<Vec<EgressEndpoint>>)`](crate::operation::create_asset::CreateAssetOutput::egress_endpoints): The list of egress endpoints available for the Asset.
+    ///   - [`egress_endpoints(Option<Vec::<EgressEndpoint>>)`](crate::operation::create_asset::CreateAssetOutput::egress_endpoints): The list of egress endpoints available for the Asset.
     ///   - [`id(Option<String>)`](crate::operation::create_asset::CreateAssetOutput::id): The unique identifier for the Asset.
     ///   - [`packaging_group_id(Option<String>)`](crate::operation::create_asset::CreateAssetOutput::packaging_group_id): The ID of the PackagingGroup for the Asset.
     ///   - [`resource_id(Option<String>)`](crate::operation::create_asset::CreateAssetOutput::resource_id): The resource ID to include in SPEKE key requests.
     ///   - [`source_arn(Option<String>)`](crate::operation::create_asset::CreateAssetOutput::source_arn): ARN of the source object in S3.
     ///   - [`source_role_arn(Option<String>)`](crate::operation::create_asset::CreateAssetOutput::source_role_arn): The IAM role_arn used to access the source S3 bucket.
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::create_asset::CreateAssetOutput::tags): A collection of tags associated with a resource
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::create_asset::CreateAssetOutput::tags): A collection of tags associated with a resource
     /// - On failure, responds with [`SdkError<CreateAssetError>`](crate::operation::create_asset::CreateAssetError)
     pub fn create_asset(&self) -> crate::operation::create_asset::builders::CreateAssetFluentBuilder {
         crate::operation::create_asset::builders::CreateAssetFluentBuilder::new(self.handle.clone())

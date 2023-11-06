@@ -28,6 +28,7 @@ pub struct GetRetainedMessageInputBuilder {
 }
 impl GetRetainedMessageInputBuilder {
     /// <p>The topic name of the retained message to retrieve.</p>
+    /// This field is required.
     pub fn topic(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,8 @@ impl GetRetainedMessageInputBuilder {
     /// Consumes the builder and constructs a [`GetRetainedMessageInput`](crate::operation::get_retained_message::GetRetainedMessageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_retained_message::GetRetainedMessageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_retained_message::GetRetainedMessageInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_retained_message::GetRetainedMessageInput { topic: self.topic })
     }
 }

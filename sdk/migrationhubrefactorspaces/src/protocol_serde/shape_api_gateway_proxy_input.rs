@@ -49,7 +49,7 @@ where
 pub fn ser_api_gateway_proxy_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ApiGatewayProxyInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.endpoint_type {
         object.key("EndpointType").string(var_1.as_str());
     }

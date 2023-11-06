@@ -101,8 +101,10 @@ impl EventsDetectionJobProperties {
         self.data_access_role_arn.as_deref()
     }
     /// <p>The types of events that are detected by the job.</p>
-    pub fn target_event_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.target_event_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_event_types.is_none()`.
+    pub fn target_event_types(&self) -> &[::std::string::String] {
+        self.target_event_types.as_deref().unwrap_or_default()
     }
 }
 impl EventsDetectionJobProperties {

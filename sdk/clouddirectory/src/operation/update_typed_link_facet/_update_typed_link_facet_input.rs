@@ -22,12 +22,16 @@ impl UpdateTypedLinkFacetInput {
         self.name.as_deref()
     }
     /// <p>Attributes update structure.</p>
-    pub fn attribute_updates(&self) -> ::std::option::Option<&[crate::types::TypedLinkFacetAttributeUpdate]> {
-        self.attribute_updates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attribute_updates.is_none()`.
+    pub fn attribute_updates(&self) -> &[crate::types::TypedLinkFacetAttributeUpdate] {
+        self.attribute_updates.as_deref().unwrap_or_default()
     }
     /// <p>The order of identity attributes for the facet, from most significant to least significant. The ability to filter typed links considers the order that the attributes are defined on the typed link facet. When providing ranges to a typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range. Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    pub fn identity_attribute_order(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.identity_attribute_order.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.identity_attribute_order.is_none()`.
+    pub fn identity_attribute_order(&self) -> &[::std::string::String] {
+        self.identity_attribute_order.as_deref().unwrap_or_default()
     }
 }
 impl UpdateTypedLinkFacetInput {
@@ -48,6 +52,7 @@ pub struct UpdateTypedLinkFacetInputBuilder {
 }
 impl UpdateTypedLinkFacetInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
+    /// This field is required.
     pub fn schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_arn = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +67,7 @@ impl UpdateTypedLinkFacetInputBuilder {
         &self.schema_arn
     }
     /// <p>The unique name of the typed link facet.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -118,7 +124,7 @@ impl UpdateTypedLinkFacetInputBuilder {
     /// Consumes the builder and constructs a [`UpdateTypedLinkFacetInput`](crate::operation::update_typed_link_facet::UpdateTypedLinkFacetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_typed_link_facet::UpdateTypedLinkFacetInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_typed_link_facet::UpdateTypedLinkFacetInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_typed_link_facet::UpdateTypedLinkFacetInput {
             schema_arn: self.schema_arn,

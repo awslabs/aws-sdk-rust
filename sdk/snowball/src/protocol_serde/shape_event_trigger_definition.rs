@@ -2,7 +2,7 @@
 pub fn ser_event_trigger_definition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EventTriggerDefinition,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.event_resource_arn {
         object.key("EventResourceARN").string(var_1.as_str());
     }

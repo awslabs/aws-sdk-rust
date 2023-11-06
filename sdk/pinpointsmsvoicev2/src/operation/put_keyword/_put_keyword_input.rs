@@ -58,6 +58,7 @@ pub struct PutKeywordInputBuilder {
 }
 impl PutKeywordInputBuilder {
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> get the values for PhoneNumberId and PhoneNumberArn while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
+    /// This field is required.
     pub fn origination_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origination_identity = ::std::option::Option::Some(input.into());
         self
@@ -72,6 +73,7 @@ impl PutKeywordInputBuilder {
         &self.origination_identity
     }
     /// <p>The new keyword to add.</p>
+    /// This field is required.
     pub fn keyword(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.keyword = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +93,7 @@ impl PutKeywordInputBuilder {
     /// <li> <p>OPT_OUT: Keeps the recipient from receiving future messages.</p> </li>
     /// <li> <p>OPT_IN: The recipient wants to receive future messages.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn keyword_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.keyword_message = ::std::option::Option::Some(input.into());
         self
@@ -129,7 +132,7 @@ impl PutKeywordInputBuilder {
         &self.keyword_action
     }
     /// Consumes the builder and constructs a [`PutKeywordInput`](crate::operation::put_keyword::PutKeywordInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_keyword::PutKeywordInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_keyword::PutKeywordInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_keyword::PutKeywordInput {
             origination_identity: self.origination_identity,
             keyword: self.keyword,

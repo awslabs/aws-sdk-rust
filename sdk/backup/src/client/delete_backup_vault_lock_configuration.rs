@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteBackupVaultLockConfiguration`](crate::operation::delete_backup_vault_lock_configuration::builders::DeleteBackupVaultLockConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`backup_vault_name(impl Into<String>)`](crate::operation::delete_backup_vault_lock_configuration::builders::DeleteBackupVaultLockConfigurationFluentBuilder::backup_vault_name) / [`set_backup_vault_name(Option<String>)`](crate::operation::delete_backup_vault_lock_configuration::builders::DeleteBackupVaultLockConfigurationFluentBuilder::set_backup_vault_name): <p>The name of the backup vault from which to delete Backup Vault Lock.</p>
+    ///   - [`backup_vault_name(impl Into<String>)`](crate::operation::delete_backup_vault_lock_configuration::builders::DeleteBackupVaultLockConfigurationFluentBuilder::backup_vault_name) / [`set_backup_vault_name(Option<String>)`](crate::operation::delete_backup_vault_lock_configuration::builders::DeleteBackupVaultLockConfigurationFluentBuilder::set_backup_vault_name):<br>required: **true**<br><p>The name of the backup vault from which to delete Backup Vault Lock.</p><br>
     /// - On success, responds with [`DeleteBackupVaultLockConfigurationOutput`](crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationOutput)
     /// - On failure, responds with [`SdkError<DeleteBackupVaultLockConfigurationError>`](crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationError)
     pub fn delete_backup_vault_lock_configuration(

@@ -42,6 +42,7 @@ pub struct GetBasePathMappingsInputBuilder {
 }
 impl GetBasePathMappingsInputBuilder {
     /// <p>The domain name of a BasePathMapping resource.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -86,7 +87,7 @@ impl GetBasePathMappingsInputBuilder {
     /// Consumes the builder and constructs a [`GetBasePathMappingsInput`](crate::operation::get_base_path_mappings::GetBasePathMappingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_base_path_mappings::GetBasePathMappingsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_base_path_mappings::GetBasePathMappingsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_base_path_mappings::GetBasePathMappingsInput {
             domain_name: self.domain_name,

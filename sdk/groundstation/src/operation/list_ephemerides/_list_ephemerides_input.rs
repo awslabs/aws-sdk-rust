@@ -30,8 +30,10 @@ impl ListEphemeridesInput {
         self.end_time.as_ref()
     }
     /// <p>The list of ephemeris status to return.</p>
-    pub fn status_list(&self) -> ::std::option::Option<&[crate::types::EphemerisStatus]> {
-        self.status_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.status_list.is_none()`.
+    pub fn status_list(&self) -> &[crate::types::EphemerisStatus] {
+        self.status_list.as_deref().unwrap_or_default()
     }
     /// <p>Maximum number of ephemerides to return.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -62,6 +64,7 @@ pub struct ListEphemeridesInputBuilder {
 }
 impl ListEphemeridesInputBuilder {
     /// <p>The AWS Ground Station satellite ID to list ephemeris for.</p>
+    /// This field is required.
     pub fn satellite_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.satellite_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +79,7 @@ impl ListEphemeridesInputBuilder {
         &self.satellite_id
     }
     /// <p>The start time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
+    /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
@@ -90,6 +94,7 @@ impl ListEphemeridesInputBuilder {
         &self.start_time
     }
     /// <p>The end time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
+    /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
@@ -154,7 +159,7 @@ impl ListEphemeridesInputBuilder {
     /// Consumes the builder and constructs a [`ListEphemeridesInput`](crate::operation::list_ephemerides::ListEphemeridesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_ephemerides::ListEphemeridesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_ephemerides::ListEphemeridesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_ephemerides::ListEphemeridesInput {
             satellite_id: self.satellite_id,
             start_time: self.start_time,

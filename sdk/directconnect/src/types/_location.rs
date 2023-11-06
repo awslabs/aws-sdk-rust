@@ -31,16 +31,22 @@ impl Location {
         self.region.as_deref()
     }
     /// <p>The available port speeds for the location.</p>
-    pub fn available_port_speeds(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.available_port_speeds.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.available_port_speeds.is_none()`.
+    pub fn available_port_speeds(&self) -> &[::std::string::String] {
+        self.available_port_speeds.as_deref().unwrap_or_default()
     }
     /// <p>The name of the service provider for the location.</p>
-    pub fn available_providers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.available_providers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.available_providers.is_none()`.
+    pub fn available_providers(&self) -> &[::std::string::String] {
+        self.available_providers.as_deref().unwrap_or_default()
     }
     /// <p>The available MAC Security (MACsec) port speeds for the location.</p>
-    pub fn available_mac_sec_port_speeds(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.available_mac_sec_port_speeds.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.available_mac_sec_port_speeds.is_none()`.
+    pub fn available_mac_sec_port_speeds(&self) -> &[::std::string::String] {
+        self.available_mac_sec_port_speeds.as_deref().unwrap_or_default()
     }
 }
 impl Location {

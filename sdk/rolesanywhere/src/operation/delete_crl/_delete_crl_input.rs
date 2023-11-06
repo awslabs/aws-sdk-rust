@@ -27,6 +27,7 @@ pub struct DeleteCrlInputBuilder {
 }
 impl DeleteCrlInputBuilder {
     /// <p>The unique identifier of the certificate revocation list (CRL).</p>
+    /// This field is required.
     pub fn crl_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.crl_id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl DeleteCrlInputBuilder {
         &self.crl_id
     }
     /// Consumes the builder and constructs a [`DeleteCrlInput`](crate::operation::delete_crl::DeleteCrlInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_crl::DeleteCrlInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_crl::DeleteCrlInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_crl::DeleteCrlInput { crl_id: self.crl_id })
     }
 }

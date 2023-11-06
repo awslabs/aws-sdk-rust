@@ -96,7 +96,7 @@ impl ListProfilingGroupsInputBuilder {
     /// Consumes the builder and constructs a [`ListProfilingGroupsInput`](crate::operation::list_profiling_groups::ListProfilingGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_profiling_groups::ListProfilingGroupsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_profiling_groups::ListProfilingGroupsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_profiling_groups::ListProfilingGroupsInput {
             next_token: self.next_token,

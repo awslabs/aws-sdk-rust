@@ -27,6 +27,7 @@ pub struct GetInsightInputBuilder {
 }
 impl GetInsightInputBuilder {
     /// <p>The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.</p>
+    /// This field is required.
     pub fn insight_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.insight_id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetInsightInputBuilder {
         &self.insight_id
     }
     /// Consumes the builder and constructs a [`GetInsightInput`](crate::operation::get_insight::GetInsightInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_insight::GetInsightInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_insight::GetInsightInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_insight::GetInsightInput { insight_id: self.insight_id })
     }
 }

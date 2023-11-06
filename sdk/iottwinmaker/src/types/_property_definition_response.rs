@@ -7,19 +7,19 @@ pub struct PropertyDefinitionResponse {
     /// <p>An object that contains information about the data type.</p>
     pub data_type: ::std::option::Option<crate::types::DataType>,
     /// <p>A Boolean value that specifies whether the property consists of time series data.</p>
-    pub is_time_series: ::std::option::Option<bool>,
+    pub is_time_series: bool,
     /// <p>A Boolean value that specifies whether the property is required in an entity.</p>
-    pub is_required_in_entity: ::std::option::Option<bool>,
+    pub is_required_in_entity: bool,
     /// <p>A Boolean value that specifies whether the property ID comes from an external data store.</p>
-    pub is_external_id: ::std::option::Option<bool>,
+    pub is_external_id: bool,
     /// <p>A Boolean value that specifies whether the property is stored externally.</p>
-    pub is_stored_externally: ::std::option::Option<bool>,
+    pub is_stored_externally: bool,
     /// <p>A Boolean value that specifies whether the property definition is imported from an external data store.</p>
-    pub is_imported: ::std::option::Option<bool>,
+    pub is_imported: bool,
     /// <p>A Boolean value that specifies whether the property definition can be updated.</p>
-    pub is_final: ::std::option::Option<bool>,
+    pub is_final: bool,
     /// <p>A Boolean value that specifies whether the property definition is inherited from a parent entity.</p>
-    pub is_inherited: ::std::option::Option<bool>,
+    pub is_inherited: bool,
     /// <p>An object that contains the default value.</p>
     pub default_value: ::std::option::Option<crate::types::DataValue>,
     /// <p>A mapping that specifies configuration information about the property.</p>
@@ -33,31 +33,31 @@ impl PropertyDefinitionResponse {
         self.data_type.as_ref()
     }
     /// <p>A Boolean value that specifies whether the property consists of time series data.</p>
-    pub fn is_time_series(&self) -> ::std::option::Option<bool> {
+    pub fn is_time_series(&self) -> bool {
         self.is_time_series
     }
     /// <p>A Boolean value that specifies whether the property is required in an entity.</p>
-    pub fn is_required_in_entity(&self) -> ::std::option::Option<bool> {
+    pub fn is_required_in_entity(&self) -> bool {
         self.is_required_in_entity
     }
     /// <p>A Boolean value that specifies whether the property ID comes from an external data store.</p>
-    pub fn is_external_id(&self) -> ::std::option::Option<bool> {
+    pub fn is_external_id(&self) -> bool {
         self.is_external_id
     }
     /// <p>A Boolean value that specifies whether the property is stored externally.</p>
-    pub fn is_stored_externally(&self) -> ::std::option::Option<bool> {
+    pub fn is_stored_externally(&self) -> bool {
         self.is_stored_externally
     }
     /// <p>A Boolean value that specifies whether the property definition is imported from an external data store.</p>
-    pub fn is_imported(&self) -> ::std::option::Option<bool> {
+    pub fn is_imported(&self) -> bool {
         self.is_imported
     }
     /// <p>A Boolean value that specifies whether the property definition can be updated.</p>
-    pub fn is_final(&self) -> ::std::option::Option<bool> {
+    pub fn is_final(&self) -> bool {
         self.is_final
     }
     /// <p>A Boolean value that specifies whether the property definition is inherited from a parent entity.</p>
-    pub fn is_inherited(&self) -> ::std::option::Option<bool> {
+    pub fn is_inherited(&self) -> bool {
         self.is_inherited
     }
     /// <p>An object that contains the default value.</p>
@@ -98,6 +98,7 @@ pub struct PropertyDefinitionResponseBuilder {
 }
 impl PropertyDefinitionResponseBuilder {
     /// <p>An object that contains information about the data type.</p>
+    /// This field is required.
     pub fn data_type(mut self, input: crate::types::DataType) -> Self {
         self.data_type = ::std::option::Option::Some(input);
         self
@@ -112,6 +113,7 @@ impl PropertyDefinitionResponseBuilder {
         &self.data_type
     }
     /// <p>A Boolean value that specifies whether the property consists of time series data.</p>
+    /// This field is required.
     pub fn is_time_series(mut self, input: bool) -> Self {
         self.is_time_series = ::std::option::Option::Some(input);
         self
@@ -126,6 +128,7 @@ impl PropertyDefinitionResponseBuilder {
         &self.is_time_series
     }
     /// <p>A Boolean value that specifies whether the property is required in an entity.</p>
+    /// This field is required.
     pub fn is_required_in_entity(mut self, input: bool) -> Self {
         self.is_required_in_entity = ::std::option::Option::Some(input);
         self
@@ -140,6 +143,7 @@ impl PropertyDefinitionResponseBuilder {
         &self.is_required_in_entity
     }
     /// <p>A Boolean value that specifies whether the property ID comes from an external data store.</p>
+    /// This field is required.
     pub fn is_external_id(mut self, input: bool) -> Self {
         self.is_external_id = ::std::option::Option::Some(input);
         self
@@ -154,6 +158,7 @@ impl PropertyDefinitionResponseBuilder {
         &self.is_external_id
     }
     /// <p>A Boolean value that specifies whether the property is stored externally.</p>
+    /// This field is required.
     pub fn is_stored_externally(mut self, input: bool) -> Self {
         self.is_stored_externally = ::std::option::Option::Some(input);
         self
@@ -168,6 +173,7 @@ impl PropertyDefinitionResponseBuilder {
         &self.is_stored_externally
     }
     /// <p>A Boolean value that specifies whether the property definition is imported from an external data store.</p>
+    /// This field is required.
     pub fn is_imported(mut self, input: bool) -> Self {
         self.is_imported = ::std::option::Option::Some(input);
         self
@@ -182,6 +188,7 @@ impl PropertyDefinitionResponseBuilder {
         &self.is_imported
     }
     /// <p>A Boolean value that specifies whether the property definition can be updated.</p>
+    /// This field is required.
     pub fn is_final(mut self, input: bool) -> Self {
         self.is_final = ::std::option::Option::Some(input);
         self
@@ -196,6 +203,7 @@ impl PropertyDefinitionResponseBuilder {
         &self.is_final
     }
     /// <p>A Boolean value that specifies whether the property definition is inherited from a parent entity.</p>
+    /// This field is required.
     pub fn is_inherited(mut self, input: bool) -> Self {
         self.is_inherited = ::std::option::Option::Some(input);
         self
@@ -261,19 +269,62 @@ impl PropertyDefinitionResponseBuilder {
         &self.display_name
     }
     /// Consumes the builder and constructs a [`PropertyDefinitionResponse`](crate::types::PropertyDefinitionResponse).
-    pub fn build(self) -> crate::types::PropertyDefinitionResponse {
-        crate::types::PropertyDefinitionResponse {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`is_time_series`](crate::types::builders::PropertyDefinitionResponseBuilder::is_time_series)
+    /// - [`is_required_in_entity`](crate::types::builders::PropertyDefinitionResponseBuilder::is_required_in_entity)
+    /// - [`is_external_id`](crate::types::builders::PropertyDefinitionResponseBuilder::is_external_id)
+    /// - [`is_stored_externally`](crate::types::builders::PropertyDefinitionResponseBuilder::is_stored_externally)
+    /// - [`is_imported`](crate::types::builders::PropertyDefinitionResponseBuilder::is_imported)
+    /// - [`is_final`](crate::types::builders::PropertyDefinitionResponseBuilder::is_final)
+    /// - [`is_inherited`](crate::types::builders::PropertyDefinitionResponseBuilder::is_inherited)
+    pub fn build(self) -> ::std::result::Result<crate::types::PropertyDefinitionResponse, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PropertyDefinitionResponse {
             data_type: self.data_type,
-            is_time_series: self.is_time_series,
-            is_required_in_entity: self.is_required_in_entity,
-            is_external_id: self.is_external_id,
-            is_stored_externally: self.is_stored_externally,
-            is_imported: self.is_imported,
-            is_final: self.is_final,
-            is_inherited: self.is_inherited,
+            is_time_series: self.is_time_series.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "is_time_series",
+                    "is_time_series was not specified but it is required when building PropertyDefinitionResponse",
+                )
+            })?,
+            is_required_in_entity: self.is_required_in_entity.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "is_required_in_entity",
+                    "is_required_in_entity was not specified but it is required when building PropertyDefinitionResponse",
+                )
+            })?,
+            is_external_id: self.is_external_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "is_external_id",
+                    "is_external_id was not specified but it is required when building PropertyDefinitionResponse",
+                )
+            })?,
+            is_stored_externally: self.is_stored_externally.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "is_stored_externally",
+                    "is_stored_externally was not specified but it is required when building PropertyDefinitionResponse",
+                )
+            })?,
+            is_imported: self.is_imported.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "is_imported",
+                    "is_imported was not specified but it is required when building PropertyDefinitionResponse",
+                )
+            })?,
+            is_final: self.is_final.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "is_final",
+                    "is_final was not specified but it is required when building PropertyDefinitionResponse",
+                )
+            })?,
+            is_inherited: self.is_inherited.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "is_inherited",
+                    "is_inherited was not specified but it is required when building PropertyDefinitionResponse",
+                )
+            })?,
             default_value: self.default_value,
             configuration: self.configuration,
             display_name: self.display_name,
-        }
+        })
     }
 }

@@ -11,12 +11,16 @@ pub struct OnInputLifecycle {
 }
 impl OnInputLifecycle {
     /// <p>Specifies the actions performed when the <code>condition</code> evaluates to TRUE.</p>
-    pub fn events(&self) -> ::std::option::Option<&[crate::types::Event]> {
-        self.events.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.events.is_none()`.
+    pub fn events(&self) -> &[crate::types::Event] {
+        self.events.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the actions performed, and the next state entered, when a <code>condition</code> evaluates to TRUE.</p>
-    pub fn transition_events(&self) -> ::std::option::Option<&[crate::types::TransitionEvent]> {
-        self.transition_events.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.transition_events.is_none()`.
+    pub fn transition_events(&self) -> &[crate::types::TransitionEvent] {
+        self.transition_events.as_deref().unwrap_or_default()
     }
 }
 impl OnInputLifecycle {

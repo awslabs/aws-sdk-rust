@@ -5,20 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeviceQueueInfo {
     /// <p>The name of the queue. </p>
-    pub queue: ::std::option::Option<crate::types::QueueName>,
+    pub queue: crate::types::QueueName,
     /// <p>The number of jobs or tasks in the queue for a given device. </p>
-    pub queue_size: ::std::option::Option<::std::string::String>,
+    pub queue_size: ::std::string::String,
     /// <p>Optional. Specifies the priority of the queue. Tasks in a priority queue are processed before the tasks in a normal queue.</p>
     pub queue_priority: ::std::option::Option<crate::types::QueuePriority>,
 }
 impl DeviceQueueInfo {
     /// <p>The name of the queue. </p>
-    pub fn queue(&self) -> ::std::option::Option<&crate::types::QueueName> {
-        self.queue.as_ref()
+    pub fn queue(&self) -> &crate::types::QueueName {
+        &self.queue
     }
     /// <p>The number of jobs or tasks in the queue for a given device. </p>
-    pub fn queue_size(&self) -> ::std::option::Option<&str> {
-        self.queue_size.as_deref()
+    pub fn queue_size(&self) -> &str {
+        use std::ops::Deref;
+        self.queue_size.deref()
     }
     /// <p>Optional. Specifies the priority of the queue. Tasks in a priority queue are processed before the tasks in a normal queue.</p>
     pub fn queue_priority(&self) -> ::std::option::Option<&crate::types::QueuePriority> {
@@ -42,6 +43,7 @@ pub struct DeviceQueueInfoBuilder {
 }
 impl DeviceQueueInfoBuilder {
     /// <p>The name of the queue. </p>
+    /// This field is required.
     pub fn queue(mut self, input: crate::types::QueueName) -> Self {
         self.queue = ::std::option::Option::Some(input);
         self
@@ -56,6 +58,7 @@ impl DeviceQueueInfoBuilder {
         &self.queue
     }
     /// <p>The number of jobs or tasks in the queue for a given device. </p>
+    /// This field is required.
     pub fn queue_size(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_size = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +87,24 @@ impl DeviceQueueInfoBuilder {
         &self.queue_priority
     }
     /// Consumes the builder and constructs a [`DeviceQueueInfo`](crate::types::DeviceQueueInfo).
-    pub fn build(self) -> crate::types::DeviceQueueInfo {
-        crate::types::DeviceQueueInfo {
-            queue: self.queue,
-            queue_size: self.queue_size,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`queue`](crate::types::builders::DeviceQueueInfoBuilder::queue)
+    /// - [`queue_size`](crate::types::builders::DeviceQueueInfoBuilder::queue_size)
+    pub fn build(self) -> ::std::result::Result<crate::types::DeviceQueueInfo, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DeviceQueueInfo {
+            queue: self.queue.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "queue",
+                    "queue was not specified but it is required when building DeviceQueueInfo",
+                )
+            })?,
+            queue_size: self.queue_size.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "queue_size",
+                    "queue_size was not specified but it is required when building DeviceQueueInfo",
+                )
+            })?,
             queue_priority: self.queue_priority,
-        }
+        })
     }
 }

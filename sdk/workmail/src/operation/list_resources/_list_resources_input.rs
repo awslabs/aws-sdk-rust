@@ -48,6 +48,7 @@ pub struct ListResourcesInputBuilder {
 }
 impl ListResourcesInputBuilder {
     /// <p>The identifier for the organization under which the resources exist.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,7 @@ impl ListResourcesInputBuilder {
     /// Consumes the builder and constructs a [`ListResourcesInput`](crate::operation::list_resources::ListResourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_resources::ListResourcesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_resources::ListResourcesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_resources::ListResourcesInput {
             organization_id: self.organization_id,
             next_token: self.next_token,

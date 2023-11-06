@@ -27,6 +27,7 @@ pub struct GetBuiltinIntentInputBuilder {
 }
 impl GetBuiltinIntentInputBuilder {
     /// <p>The unique identifier for a built-in intent. To find the signature for an intent, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
+    /// This field is required.
     pub fn signature(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signature = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetBuiltinIntentInputBuilder {
     /// Consumes the builder and constructs a [`GetBuiltinIntentInput`](crate::operation::get_builtin_intent::GetBuiltinIntentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_builtin_intent::GetBuiltinIntentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_builtin_intent::GetBuiltinIntentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_builtin_intent::GetBuiltinIntentInput { signature: self.signature })
     }
 }

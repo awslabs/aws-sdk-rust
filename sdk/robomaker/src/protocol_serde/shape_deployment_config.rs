@@ -59,7 +59,7 @@ where
 pub fn ser_deployment_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DeploymentConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.concurrent_deployment_percentage {
         object.key("concurrentDeploymentPercentage").number(
             #[allow(clippy::useless_conversion)]

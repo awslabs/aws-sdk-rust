@@ -42,6 +42,7 @@ pub struct UpdateTrafficPolicyCommentInputBuilder {
 }
 impl UpdateTrafficPolicyCommentInputBuilder {
     /// <p>The value of <code>Id</code> for the traffic policy that you want to update the comment for.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl UpdateTrafficPolicyCommentInputBuilder {
         &self.id
     }
     /// <p>The value of <code>Version</code> for the traffic policy that you want to update the comment for.</p>
+    /// This field is required.
     pub fn version(mut self, input: i32) -> Self {
         self.version = ::std::option::Option::Some(input);
         self
@@ -70,6 +72,7 @@ impl UpdateTrafficPolicyCommentInputBuilder {
         &self.version
     }
     /// <p>The new comment for the specified traffic policy and version.</p>
+    /// This field is required.
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment = ::std::option::Option::Some(input.into());
         self
@@ -88,7 +91,7 @@ impl UpdateTrafficPolicyCommentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_traffic_policy_comment::UpdateTrafficPolicyCommentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_traffic_policy_comment::UpdateTrafficPolicyCommentInput {
             id: self.id,

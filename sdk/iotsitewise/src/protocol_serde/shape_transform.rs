@@ -2,27 +2,27 @@
 pub fn ser_transform(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Transform,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.expression {
-        object.key("expression").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("expression").string(input.expression.as_str());
     }
-    if let Some(var_2) = &input.variables {
-        let mut array_3 = object.key("variables").start_array();
-        for item_4 in var_2 {
+    {
+        let mut array_1 = object.key("variables").start_array();
+        for item_2 in &input.variables {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_expression_variable::ser_expression_variable(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_3 = array_1.value().start_object();
+                crate::protocol_serde::shape_expression_variable::ser_expression_variable(&mut object_3, item_2)?;
+                object_3.finish();
             }
         }
-        array_3.finish();
+        array_1.finish();
     }
-    if let Some(var_6) = &input.processing_config {
+    if let Some(var_4) = &input.processing_config {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("processingConfig").start_object();
-        crate::protocol_serde::shape_transform_processing_config::ser_transform_processing_config(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_5 = object.key("processingConfig").start_object();
+        crate::protocol_serde::shape_transform_processing_config::ser_transform_processing_config(&mut object_5, var_4)?;
+        object_5.finish();
     }
     Ok(())
 }
@@ -67,7 +67,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::transform_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

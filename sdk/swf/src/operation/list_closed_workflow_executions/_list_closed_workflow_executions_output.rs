@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListClosedWorkflowExecutionsOutput {
     /// <p>The list of workflow information structures.</p>
-    pub execution_infos: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowExecutionInfo>>,
+    pub execution_infos: ::std::vec::Vec<crate::types::WorkflowExecutionInfo>,
     /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
     pub next_page_token: ::std::option::Option<::std::string::String>,
@@ -13,8 +13,9 @@ pub struct ListClosedWorkflowExecutionsOutput {
 }
 impl ListClosedWorkflowExecutionsOutput {
     /// <p>The list of workflow information structures.</p>
-    pub fn execution_infos(&self) -> ::std::option::Option<&[crate::types::WorkflowExecutionInfo]> {
-        self.execution_infos.as_deref()
+    pub fn execution_infos(&self) -> &[crate::types::WorkflowExecutionInfo] {
+        use std::ops::Deref;
+        self.execution_infos.deref()
     }
     /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
@@ -90,11 +91,23 @@ impl ListClosedWorkflowExecutionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListClosedWorkflowExecutionsOutput`](crate::operation::list_closed_workflow_executions::ListClosedWorkflowExecutionsOutput).
-    pub fn build(self) -> crate::operation::list_closed_workflow_executions::ListClosedWorkflowExecutionsOutput {
-        crate::operation::list_closed_workflow_executions::ListClosedWorkflowExecutionsOutput {
-            execution_infos: self.execution_infos,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`execution_infos`](crate::operation::list_closed_workflow_executions::builders::ListClosedWorkflowExecutionsOutputBuilder::execution_infos)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_closed_workflow_executions::ListClosedWorkflowExecutionsOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_closed_workflow_executions::ListClosedWorkflowExecutionsOutput {
+            execution_infos: self.execution_infos.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "execution_infos",
+                    "execution_infos was not specified but it is required when building ListClosedWorkflowExecutionsOutput",
+                )
+            })?,
             next_page_token: self.next_page_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

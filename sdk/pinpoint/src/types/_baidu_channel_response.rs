@@ -126,6 +126,7 @@ impl BaiduChannelResponseBuilder {
         &self.creation_date
     }
     /// <p>The API key that you received from the Baidu Cloud Push service to communicate with the service.</p>
+    /// This field is required.
     pub fn credential(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.credential = ::std::option::Option::Some(input.into());
         self
@@ -224,6 +225,7 @@ impl BaiduChannelResponseBuilder {
         &self.last_modified_date
     }
     /// <p>The type of messaging or notification platform for the channel. For the Baidu channel, this value is BAIDU.</p>
+    /// This field is required.
     pub fn platform(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform = ::std::option::Option::Some(input.into());
         self

@@ -29,7 +29,7 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::multi_layer_storage_correct_errors(builder).build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -40,7 +40,7 @@ where
 pub fn ser_multi_layer_storage(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MultiLayerStorage,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.customer_managed_s3_storage {
         #[allow(unused_mut)]
         let mut object_2 = object.key("customerManagedS3Storage").start_object();

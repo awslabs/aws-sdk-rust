@@ -61,6 +61,7 @@ pub struct StartSpeakerSearchTaskInputBuilder {
 }
 impl StartSpeakerSearchTaskInputBuilder {
     /// <p>The unique identifier of the resource to be updated. Valid values include the ID and ARN of the media insights pipeline.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -75,6 +76,7 @@ impl StartSpeakerSearchTaskInputBuilder {
         &self.identifier
     }
     /// <p>The ARN of the voice profile domain that will store the voice profile.</p>
+    /// This field is required.
     pub fn voice_profile_domain_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_profile_domain_arn = ::std::option::Option::Some(input.into());
         self
@@ -126,7 +128,7 @@ impl StartSpeakerSearchTaskInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_speaker_search_task::StartSpeakerSearchTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_speaker_search_task::StartSpeakerSearchTaskInput {
             identifier: self.identifier,

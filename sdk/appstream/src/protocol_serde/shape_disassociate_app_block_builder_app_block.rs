@@ -122,7 +122,7 @@ pub fn de_disassociate_app_block_builder_app_block_http_response(
 
 pub fn ser_disassociate_app_block_builder_app_block_input(
     input: &crate::operation::disassociate_app_block_builder_app_block::DisassociateAppBlockBuilderAppBlockInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_disassociate_app_block_builder_app_block_input::ser_disassociate_app_block_builder_app_block_input(
@@ -130,5 +130,5 @@ pub fn ser_disassociate_app_block_builder_app_block_input(
         input,
     )?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

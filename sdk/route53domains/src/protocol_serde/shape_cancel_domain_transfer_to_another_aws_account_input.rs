@@ -2,7 +2,7 @@
 pub fn ser_cancel_domain_transfer_to_another_aws_account_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::cancel_domain_transfer_to_another_aws_account::CancelDomainTransferToAnotherAwsAccountInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.domain_name {
         object.key("DomainName").string(var_1.as_str());
     }

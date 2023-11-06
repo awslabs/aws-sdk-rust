@@ -13,8 +13,10 @@ pub struct ListKeyPoliciesOutput {
 }
 impl ListKeyPoliciesOutput {
     /// <p>A list of key policy names. The only valid value is <code>default</code>.</p>
-    pub fn policy_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.policy_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_names.is_none()`.
+    pub fn policy_names(&self) -> &[::std::string::String] {
+        self.policy_names.as_deref().unwrap_or_default()
     }
     /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
     pub fn next_marker(&self) -> ::std::option::Option<&str> {

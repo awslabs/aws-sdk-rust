@@ -85,6 +85,7 @@ pub struct CopyProjectVersionInputBuilder {
 }
 impl CopyProjectVersionInputBuilder {
     /// <p>The ARN of the source project in the trusting AWS account.</p>
+    /// This field is required.
     pub fn source_project_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_project_arn = ::std::option::Option::Some(input.into());
         self
@@ -99,6 +100,7 @@ impl CopyProjectVersionInputBuilder {
         &self.source_project_arn
     }
     /// <p>The ARN of the model version in the source project that you want to copy to a destination project.</p>
+    /// This field is required.
     pub fn source_project_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_project_version_arn = ::std::option::Option::Some(input.into());
         self
@@ -113,6 +115,7 @@ impl CopyProjectVersionInputBuilder {
         &self.source_project_version_arn
     }
     /// <p>The ARN of the project in the trusted AWS account that you want to copy the model version to. </p>
+    /// This field is required.
     pub fn destination_project_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_project_arn = ::std::option::Option::Some(input.into());
         self
@@ -127,6 +130,7 @@ impl CopyProjectVersionInputBuilder {
         &self.destination_project_arn
     }
     /// <p>A name for the version of the model that's copied to the destination project.</p>
+    /// This field is required.
     pub fn version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_name = ::std::option::Option::Some(input.into());
         self
@@ -141,6 +145,7 @@ impl CopyProjectVersionInputBuilder {
         &self.version_name
     }
     /// <p>The S3 bucket and folder location where the training output for the source model version is placed.</p>
+    /// This field is required.
     pub fn output_config(mut self, input: crate::types::OutputConfig) -> Self {
         self.output_config = ::std::option::Option::Some(input);
         self
@@ -215,7 +220,8 @@ impl CopyProjectVersionInputBuilder {
     /// Consumes the builder and constructs a [`CopyProjectVersionInput`](crate::operation::copy_project_version::CopyProjectVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::copy_project_version::CopyProjectVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::copy_project_version::CopyProjectVersionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::copy_project_version::CopyProjectVersionInput {
             source_project_arn: self.source_project_arn,
             source_project_version_arn: self.source_project_version_arn,

@@ -20,8 +20,10 @@ impl CreateCoreDefinitionVersionInput {
         self.core_definition_id.as_deref()
     }
     /// A list of cores in the core definition version.
-    pub fn cores(&self) -> ::std::option::Option<&[crate::types::Core]> {
-        self.cores.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cores.is_none()`.
+    pub fn cores(&self) -> &[crate::types::Core] {
+        self.cores.as_deref().unwrap_or_default()
     }
 }
 impl CreateCoreDefinitionVersionInput {
@@ -55,6 +57,7 @@ impl CreateCoreDefinitionVersionInputBuilder {
         &self.amzn_client_token
     }
     /// The ID of the core definition.
+    /// This field is required.
     pub fn core_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_definition_id = ::std::option::Option::Some(input.into());
         self
@@ -93,7 +96,7 @@ impl CreateCoreDefinitionVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_core_definition_version::CreateCoreDefinitionVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_core_definition_version::CreateCoreDefinitionVersionInput {
             amzn_client_token: self.amzn_client_token,

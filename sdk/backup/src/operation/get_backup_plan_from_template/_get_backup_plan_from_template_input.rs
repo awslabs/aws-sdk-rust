@@ -27,6 +27,7 @@ pub struct GetBackupPlanFromTemplateInputBuilder {
 }
 impl GetBackupPlanFromTemplateInputBuilder {
     /// <p>Uniquely identifies a stored backup plan template.</p>
+    /// This field is required.
     pub fn backup_plan_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_plan_template_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetBackupPlanFromTemplateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_backup_plan_from_template::GetBackupPlanFromTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_backup_plan_from_template::GetBackupPlanFromTemplateInput {
             backup_plan_template_id: self.backup_plan_template_id,

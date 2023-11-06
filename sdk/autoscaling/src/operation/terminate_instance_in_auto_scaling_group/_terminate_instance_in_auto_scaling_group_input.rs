@@ -34,6 +34,7 @@ pub struct TerminateInstanceInAutoScalingGroupInputBuilder {
 }
 impl TerminateInstanceInAutoScalingGroupInputBuilder {
     /// <p>The ID of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl TerminateInstanceInAutoScalingGroupInputBuilder {
         &self.instance_id
     }
     /// <p>Indicates whether terminating the instance also decrements the size of the Auto Scaling group.</p>
+    /// This field is required.
     pub fn should_decrement_desired_capacity(mut self, input: bool) -> Self {
         self.should_decrement_desired_capacity = ::std::option::Option::Some(input);
         self
@@ -66,7 +68,7 @@ impl TerminateInstanceInAutoScalingGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::terminate_instance_in_auto_scaling_group::TerminateInstanceInAutoScalingGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::terminate_instance_in_auto_scaling_group::TerminateInstanceInAutoScalingGroupInput {

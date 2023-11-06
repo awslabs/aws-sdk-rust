@@ -6,7 +6,7 @@ pub struct GetIamPortalLoginUrlOutput {
     /// <p>The data portal URL of the specified Amazon DataZone domain.</p>
     pub auth_code_url: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the user profile.</p>
-    pub user_profile_id: ::std::option::Option<::std::string::String>,
+    pub user_profile_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl GetIamPortalLoginUrlOutput {
@@ -15,8 +15,9 @@ impl GetIamPortalLoginUrlOutput {
         self.auth_code_url.as_deref()
     }
     /// <p>The ID of the user profile.</p>
-    pub fn user_profile_id(&self) -> ::std::option::Option<&str> {
-        self.user_profile_id.as_deref()
+    pub fn user_profile_id(&self) -> &str {
+        use std::ops::Deref;
+        self.user_profile_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetIamPortalLoginUrlOutput {
@@ -55,6 +56,7 @@ impl GetIamPortalLoginUrlOutputBuilder {
         &self.auth_code_url
     }
     /// <p>The ID of the user profile.</p>
+    /// This field is required.
     pub fn user_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_profile_id = ::std::option::Option::Some(input.into());
         self
@@ -78,11 +80,21 @@ impl GetIamPortalLoginUrlOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetIamPortalLoginUrlOutput`](crate::operation::get_iam_portal_login_url::GetIamPortalLoginUrlOutput).
-    pub fn build(self) -> crate::operation::get_iam_portal_login_url::GetIamPortalLoginUrlOutput {
-        crate::operation::get_iam_portal_login_url::GetIamPortalLoginUrlOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`user_profile_id`](crate::operation::get_iam_portal_login_url::builders::GetIamPortalLoginUrlOutputBuilder::user_profile_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_iam_portal_login_url::GetIamPortalLoginUrlOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_iam_portal_login_url::GetIamPortalLoginUrlOutput {
             auth_code_url: self.auth_code_url,
-            user_profile_id: self.user_profile_id,
+            user_profile_id: self.user_profile_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "user_profile_id",
+                    "user_profile_id was not specified but it is required when building GetIamPortalLoginUrlOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -12,7 +12,7 @@ use std::time::{Duration, SystemTime};
 #[tokio::test]
 async fn test_presigning() {
     let config = Config::builder()
-        .credentials_provider(Credentials::for_tests())
+        .credentials_provider(Credentials::for_tests_with_session_token())
         .region(Region::new("us-east-1"))
         .build();
     let client = polly::Client::from_conf(config);
@@ -32,13 +32,14 @@ async fn test_presigning() {
         .await
         .expect("success");
 
-    let pq = presigned.uri().path_and_query().unwrap();
+    let uri = presigned.uri().parse::<http::Uri>().unwrap();
+    let pq = uri.path_and_query().unwrap();
     let path = pq.path();
     let query = pq.query().unwrap();
     let mut query_params: Vec<&str> = query.split('&').collect();
     query_params.sort();
 
-    assert_eq!("GET", presigned.method().as_str());
+    assert_eq!("GET", presigned.method());
     assert_eq!("/v1/speech", path);
     assert_eq!(
         &[
@@ -55,5 +56,5 @@ async fn test_presigning() {
         ][..],
         &query_params
     );
-    assert!(presigned.headers().is_empty());
+    assert_eq!(presigned.headers().count(), 0);
 }

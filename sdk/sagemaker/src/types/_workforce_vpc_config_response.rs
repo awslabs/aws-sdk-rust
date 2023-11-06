@@ -19,12 +19,16 @@ impl WorkforceVpcConfigResponse {
         self.vpc_id.as_deref()
     }
     /// <p>The VPC security group IDs, in the form sg-xxxxxxxx. The security groups must be for the same VPC as specified in the subnet.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the subnets in the VPC that you want to connect.</p>
-    pub fn subnets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnets.is_none()`.
+    pub fn subnets(&self) -> &[::std::string::String] {
+        self.subnets.as_deref().unwrap_or_default()
     }
     /// <p>The IDs for the VPC service endpoints of your VPC workforce when it is created and updated.</p>
     pub fn vpc_endpoint_id(&self) -> ::std::option::Option<&str> {
@@ -49,6 +53,7 @@ pub struct WorkforceVpcConfigResponseBuilder {
 }
 impl WorkforceVpcConfigResponseBuilder {
     /// <p>The ID of the VPC that the workforce uses for communication.</p>
+    /// This field is required.
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
         self

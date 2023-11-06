@@ -27,6 +27,7 @@ pub struct CancelJobInputBuilder {
 }
 impl CancelJobInputBuilder {
     /// <p>The unique identifier for a job.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl CancelJobInputBuilder {
         &self.job_id
     }
     /// Consumes the builder and constructs a [`CancelJobInput`](crate::operation::cancel_job::CancelJobInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_job::CancelJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_job::CancelJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_job::CancelJobInput { job_id: self.job_id })
     }
 }

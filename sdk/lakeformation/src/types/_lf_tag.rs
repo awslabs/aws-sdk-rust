@@ -5,20 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LfTag {
     /// <p>The key-name for the LF-tag.</p>
-    pub tag_key: ::std::option::Option<::std::string::String>,
+    pub tag_key: ::std::string::String,
     /// <p>A list of possible values an attribute can take.</p>
     /// <p>The maximum number of values that can be defined for a LF-Tag is 1000. A single API call supports 50 values. You can use multiple API calls to add more values.</p>
-    pub tag_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub tag_values: ::std::vec::Vec<::std::string::String>,
 }
 impl LfTag {
     /// <p>The key-name for the LF-tag.</p>
-    pub fn tag_key(&self) -> ::std::option::Option<&str> {
-        self.tag_key.as_deref()
+    pub fn tag_key(&self) -> &str {
+        use std::ops::Deref;
+        self.tag_key.deref()
     }
     /// <p>A list of possible values an attribute can take.</p>
     /// <p>The maximum number of values that can be defined for a LF-Tag is 1000. A single API call supports 50 values. You can use multiple API calls to add more values.</p>
-    pub fn tag_values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tag_values.as_deref()
+    pub fn tag_values(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.tag_values.deref()
     }
 }
 impl LfTag {
@@ -37,6 +39,7 @@ pub struct LfTagBuilder {
 }
 impl LfTagBuilder {
     /// <p>The key-name for the LF-tag.</p>
+    /// This field is required.
     pub fn tag_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tag_key = ::std::option::Option::Some(input.into());
         self
@@ -74,10 +77,23 @@ impl LfTagBuilder {
         &self.tag_values
     }
     /// Consumes the builder and constructs a [`LfTag`](crate::types::LfTag).
-    pub fn build(self) -> crate::types::LfTag {
-        crate::types::LfTag {
-            tag_key: self.tag_key,
-            tag_values: self.tag_values,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`tag_key`](crate::types::builders::LfTagBuilder::tag_key)
+    /// - [`tag_values`](crate::types::builders::LfTagBuilder::tag_values)
+    pub fn build(self) -> ::std::result::Result<crate::types::LfTag, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::LfTag {
+            tag_key: self.tag_key.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "tag_key",
+                    "tag_key was not specified but it is required when building LfTag",
+                )
+            })?,
+            tag_values: self.tag_values.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "tag_values",
+                    "tag_values was not specified but it is required when building LfTag",
+                )
+            })?,
+        })
     }
 }

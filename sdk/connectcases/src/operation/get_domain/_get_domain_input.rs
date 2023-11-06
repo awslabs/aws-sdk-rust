@@ -27,6 +27,7 @@ pub struct GetDomainInputBuilder {
 }
 impl GetDomainInputBuilder {
     /// <p>The unique identifier of the Cases domain. </p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetDomainInputBuilder {
         &self.domain_id
     }
     /// Consumes the builder and constructs a [`GetDomainInput`](crate::operation::get_domain::GetDomainInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_domain::GetDomainInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_domain::GetDomainInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_domain::GetDomainInput { domain_id: self.domain_id })
     }
 }

@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFilterOutput {
     /// <p>The Amazon Resource Number (ARN) of the successfully updated filter.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl UpdateFilterOutput {
     /// <p>The Amazon Resource Number (ARN) of the successfully updated filter.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateFilterOutput {
@@ -34,6 +35,7 @@ pub struct UpdateFilterOutputBuilder {
 }
 impl UpdateFilterOutputBuilder {
     /// <p>The Amazon Resource Number (ARN) of the successfully updated filter.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,19 @@ impl UpdateFilterOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateFilterOutput`](crate::operation::update_filter::UpdateFilterOutput).
-    pub fn build(self) -> crate::operation::update_filter::UpdateFilterOutput {
-        crate::operation::update_filter::UpdateFilterOutput {
-            arn: self.arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::operation::update_filter::builders::UpdateFilterOutputBuilder::arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_filter::UpdateFilterOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_filter::UpdateFilterOutput {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building UpdateFilterOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

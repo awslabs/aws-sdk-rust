@@ -14,8 +14,10 @@ impl AssociateS3ResourcesInput {
         self.member_account_id.as_deref()
     }
     /// <p>(Discontinued) The S3 resources that you want to associate with Amazon Macie Classic for monitoring and data classification.</p>
-    pub fn s3_resources(&self) -> ::std::option::Option<&[crate::types::S3ResourceClassification]> {
-        self.s3_resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.s3_resources.is_none()`.
+    pub fn s3_resources(&self) -> &[crate::types::S3ResourceClassification] {
+        self.s3_resources.as_deref().unwrap_or_default()
     }
 }
 impl AssociateS3ResourcesInput {
@@ -70,7 +72,7 @@ impl AssociateS3ResourcesInputBuilder {
     /// Consumes the builder and constructs a [`AssociateS3ResourcesInput`](crate::operation::associate_s3_resources::AssociateS3ResourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_s3_resources::AssociateS3ResourcesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::associate_s3_resources::AssociateS3ResourcesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::associate_s3_resources::AssociateS3ResourcesInput {
             member_account_id: self.member_account_id,

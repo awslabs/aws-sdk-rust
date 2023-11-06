@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3ExportingConfig {
     /// <p>The name of the S3 bucket where Identity Resolution Jobs write result files.</p>
-    pub s3_bucket_name: ::std::option::Option<::std::string::String>,
+    pub s3_bucket_name: ::std::string::String,
     /// <p>The S3 key name of the location where Identity Resolution Jobs write result files.</p>
     pub s3_key_name: ::std::option::Option<::std::string::String>,
 }
 impl S3ExportingConfig {
     /// <p>The name of the S3 bucket where Identity Resolution Jobs write result files.</p>
-    pub fn s3_bucket_name(&self) -> ::std::option::Option<&str> {
-        self.s3_bucket_name.as_deref()
+    pub fn s3_bucket_name(&self) -> &str {
+        use std::ops::Deref;
+        self.s3_bucket_name.deref()
     }
     /// <p>The S3 key name of the location where Identity Resolution Jobs write result files.</p>
     pub fn s3_key_name(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct S3ExportingConfigBuilder {
 }
 impl S3ExportingConfigBuilder {
     /// <p>The name of the S3 bucket where Identity Resolution Jobs write result files.</p>
+    /// This field is required.
     pub fn s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket_name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl S3ExportingConfigBuilder {
         &self.s3_key_name
     }
     /// Consumes the builder and constructs a [`S3ExportingConfig`](crate::types::S3ExportingConfig).
-    pub fn build(self) -> crate::types::S3ExportingConfig {
-        crate::types::S3ExportingConfig {
-            s3_bucket_name: self.s3_bucket_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`s3_bucket_name`](crate::types::builders::S3ExportingConfigBuilder::s3_bucket_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::S3ExportingConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::S3ExportingConfig {
+            s3_bucket_name: self.s3_bucket_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "s3_bucket_name",
+                    "s3_bucket_name was not specified but it is required when building S3ExportingConfig",
+                )
+            })?,
             s3_key_name: self.s3_key_name,
-        }
+        })
     }
 }

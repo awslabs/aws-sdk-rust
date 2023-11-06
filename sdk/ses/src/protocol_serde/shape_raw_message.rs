@@ -3,11 +3,11 @@
 pub fn ser_raw_message(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::RawMessage,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Data");
-    if let Some(var_2) = &input.data {
-        scope_1.string(&::aws_smithy_types::base64::encode(var_2));
+    {
+        scope_1.string(&::aws_smithy_types::base64::encode(&input.data));
     }
     Ok(())
 }

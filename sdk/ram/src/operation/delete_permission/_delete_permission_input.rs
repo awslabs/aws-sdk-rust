@@ -38,6 +38,7 @@ pub struct DeletePermissionInputBuilder {
 }
 impl DeletePermissionInputBuilder {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the customer managed permission that you want to delete.</p>
+    /// This field is required.
     pub fn permission_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permission_arn = ::std::option::Option::Some(input.into());
         self
@@ -74,7 +75,7 @@ impl DeletePermissionInputBuilder {
     /// Consumes the builder and constructs a [`DeletePermissionInput`](crate::operation::delete_permission::DeletePermissionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_permission::DeletePermissionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_permission::DeletePermissionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_permission::DeletePermissionInput {
             permission_arn: self.permission_arn,
             client_token: self.client_token,

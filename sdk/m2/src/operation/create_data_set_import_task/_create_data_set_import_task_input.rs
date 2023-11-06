@@ -41,6 +41,7 @@ pub struct CreateDataSetImportTaskInputBuilder {
 }
 impl CreateDataSetImportTaskInputBuilder {
     /// <p>The unique identifier of the application for which you want to import data sets.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl CreateDataSetImportTaskInputBuilder {
         &self.application_id
     }
     /// <p>The data set import task configuration.</p>
+    /// This field is required.
     pub fn import_config(mut self, input: crate::types::DataSetImportConfig) -> Self {
         self.import_config = ::std::option::Option::Some(input);
         self
@@ -87,7 +89,7 @@ impl CreateDataSetImportTaskInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_data_set_import_task::CreateDataSetImportTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_data_set_import_task::CreateDataSetImportTaskInput {
             application_id: self.application_id,

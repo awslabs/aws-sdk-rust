@@ -35,6 +35,7 @@ pub struct CognitoConfigBuilder {
 }
 impl CognitoConfigBuilder {
     /// <p>A <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html"> user pool</a> is a user directory in Amazon Cognito. With a user pool, your users can sign in to your web or mobile app through Amazon Cognito. Your users can also sign in through social identity providers like Google, Facebook, Amazon, or Apple, and through SAML identity providers.</p>
+    /// This field is required.
     pub fn user_pool(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl CognitoConfigBuilder {
         &self.user_pool
     }
     /// <p>The client ID for your Amazon Cognito user pool.</p>
+    /// This field is required.
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
         self

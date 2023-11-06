@@ -5,50 +5,54 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Destination {
     /// Destination ARN.
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// Filters access by the destination's identifier
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// Human friendly name of the resource.
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// Site ARN.
-    pub site: ::std::option::Option<::std::string::String>,
+    pub site: ::std::string::String,
     /// Timestamp at which the resource was created.
-    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_at: ::aws_smithy_types::DateTime,
     /// Timestamp at which the resource was last updated.
-    pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub updated_at: ::aws_smithy_types::DateTime,
     /// State of the destination.
-    pub state: ::std::option::Option<crate::types::DestinationState>,
+    pub state: crate::types::DestinationState,
     /// JSON document containing additional fixed properties regarding the destination
     pub additional_fixed_properties: ::std::option::Option<::std::string::String>,
 }
 impl Destination {
     /// Destination ARN.
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// Filters access by the destination's identifier
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// Human friendly name of the resource.
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// Site ARN.
-    pub fn site(&self) -> ::std::option::Option<&str> {
-        self.site.as_deref()
+    pub fn site(&self) -> &str {
+        use std::ops::Deref;
+        self.site.deref()
     }
     /// Timestamp at which the resource was created.
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_at.as_ref()
+    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_at
     }
     /// Timestamp at which the resource was last updated.
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.updated_at.as_ref()
+    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.updated_at
     }
     /// State of the destination.
-    pub fn state(&self) -> ::std::option::Option<&crate::types::DestinationState> {
-        self.state.as_ref()
+    pub fn state(&self) -> &crate::types::DestinationState {
+        &self.state
     }
     /// JSON document containing additional fixed properties regarding the destination
     pub fn additional_fixed_properties(&self) -> ::std::option::Option<&str> {
@@ -77,6 +81,7 @@ pub struct DestinationBuilder {
 }
 impl DestinationBuilder {
     /// Destination ARN.
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +96,7 @@ impl DestinationBuilder {
         &self.arn
     }
     /// Filters access by the destination's identifier
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +111,7 @@ impl DestinationBuilder {
         &self.id
     }
     /// Human friendly name of the resource.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +126,7 @@ impl DestinationBuilder {
         &self.name
     }
     /// Site ARN.
+    /// This field is required.
     pub fn site(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.site = ::std::option::Option::Some(input.into());
         self
@@ -133,6 +141,7 @@ impl DestinationBuilder {
         &self.site
     }
     /// Timestamp at which the resource was created.
+    /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
@@ -147,6 +156,7 @@ impl DestinationBuilder {
         &self.created_at
     }
     /// Timestamp at which the resource was last updated.
+    /// This field is required.
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
@@ -161,6 +171,7 @@ impl DestinationBuilder {
         &self.updated_at
     }
     /// State of the destination.
+    /// This field is required.
     pub fn state(mut self, input: crate::types::DestinationState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
@@ -189,16 +200,59 @@ impl DestinationBuilder {
         &self.additional_fixed_properties
     }
     /// Consumes the builder and constructs a [`Destination`](crate::types::Destination).
-    pub fn build(self) -> crate::types::Destination {
-        crate::types::Destination {
-            arn: self.arn,
-            id: self.id,
-            name: self.name,
-            site: self.site,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
-            state: self.state,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::DestinationBuilder::arn)
+    /// - [`id`](crate::types::builders::DestinationBuilder::id)
+    /// - [`name`](crate::types::builders::DestinationBuilder::name)
+    /// - [`site`](crate::types::builders::DestinationBuilder::site)
+    /// - [`created_at`](crate::types::builders::DestinationBuilder::created_at)
+    /// - [`updated_at`](crate::types::builders::DestinationBuilder::updated_at)
+    /// - [`state`](crate::types::builders::DestinationBuilder::state)
+    pub fn build(self) -> ::std::result::Result<crate::types::Destination, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Destination {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building Destination",
+                )
+            })?,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building Destination",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building Destination",
+                )
+            })?,
+            site: self.site.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "site",
+                    "site was not specified but it is required when building Destination",
+                )
+            })?,
+            created_at: self.created_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_at",
+                    "created_at was not specified but it is required when building Destination",
+                )
+            })?,
+            updated_at: self.updated_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "updated_at",
+                    "updated_at was not specified but it is required when building Destination",
+                )
+            })?,
+            state: self.state.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "state",
+                    "state was not specified but it is required when building Destination",
+                )
+            })?,
             additional_fixed_properties: self.additional_fixed_properties,
-        }
+        })
     }
 }

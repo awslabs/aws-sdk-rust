@@ -9,8 +9,10 @@ pub struct CascadingControlConfiguration {
 }
 impl CascadingControlConfiguration {
     /// <p>A list of source controls that determine the values that are used in the current control.</p>
-    pub fn source_controls(&self) -> ::std::option::Option<&[crate::types::CascadingControlSource]> {
-        self.source_controls.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_controls.is_none()`.
+    pub fn source_controls(&self) -> &[crate::types::CascadingControlSource] {
+        self.source_controls.as_deref().unwrap_or_default()
     }
 }
 impl CascadingControlConfiguration {

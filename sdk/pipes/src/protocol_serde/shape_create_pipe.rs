@@ -25,11 +25,10 @@ pub fn de_create_pipe_http_error(
                 output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_pipe::CreatePipeError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::conflict_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_pipe::CreatePipeError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalException" => crate::operation::create_pipe::CreatePipeError::InternalException({
@@ -45,11 +44,10 @@ pub fn de_create_pipe_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_pipe::CreatePipeError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "NotFoundException" => crate::operation::create_pipe::CreatePipeError::NotFoundException({
@@ -78,11 +76,10 @@ pub fn de_create_pipe_http_error(
                 )
                 .map_err(crate::operation::create_pipe::CreatePipeError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::service_quota_exceeded_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_pipe::CreatePipeError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::create_pipe::CreatePipeError::ThrottlingException({
@@ -98,11 +95,10 @@ pub fn de_create_pipe_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_pipe::CreatePipeError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::create_pipe::CreatePipeError::ValidationException({
@@ -142,12 +138,12 @@ pub fn de_create_pipe_http_response(
 
 pub fn ser_create_pipe_input(
     input: &crate::operation::create_pipe::CreatePipeInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_pipe_input::ser_create_pipe_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_create_pipe(

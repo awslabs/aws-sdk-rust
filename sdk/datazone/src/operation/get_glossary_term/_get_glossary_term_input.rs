@@ -34,6 +34,7 @@ pub struct GetGlossaryTermInputBuilder {
 }
 impl GetGlossaryTermInputBuilder {
     /// <p>The ID of the Amazon DataZone domain in which this business glossary term exists.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetGlossaryTermInputBuilder {
         &self.domain_identifier
     }
     /// <p>The ID of the business glossary term.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl GetGlossaryTermInputBuilder {
     /// Consumes the builder and constructs a [`GetGlossaryTermInput`](crate::operation::get_glossary_term::GetGlossaryTermInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_glossary_term::GetGlossaryTermInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_glossary_term::GetGlossaryTermInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_glossary_term::GetGlossaryTermInput {
             domain_identifier: self.domain_identifier,
             identifier: self.identifier,

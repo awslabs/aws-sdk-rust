@@ -55,6 +55,7 @@ pub struct CreateAnnotationStoreVersionInputBuilder {
 }
 impl CreateAnnotationStoreVersionInputBuilder {
     /// <p> The name of an annotation store version from which versions are being created. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl CreateAnnotationStoreVersionInputBuilder {
         &self.name
     }
     /// <p> The name given to an annotation store version to distinguish it from other versions. </p>
+    /// This field is required.
     pub fn version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_name = ::std::option::Option::Some(input.into());
         self
@@ -135,7 +137,7 @@ impl CreateAnnotationStoreVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_annotation_store_version::CreateAnnotationStoreVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_annotation_store_version::CreateAnnotationStoreVersionInput {
             name: self.name,

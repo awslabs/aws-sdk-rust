@@ -13,8 +13,10 @@ pub struct SearchHoursOfOperationsOutput {
 }
 impl SearchHoursOfOperationsOutput {
     /// <p>Information about the hours of operations.</p>
-    pub fn hours_of_operations(&self) -> ::std::option::Option<&[crate::types::HoursOfOperation]> {
-        self.hours_of_operations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hours_of_operations.is_none()`.
+    pub fn hours_of_operations(&self) -> &[crate::types::HoursOfOperation] {
+        self.hours_of_operations.as_deref().unwrap_or_default()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

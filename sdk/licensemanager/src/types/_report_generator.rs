@@ -37,8 +37,10 @@ impl ReportGenerator {
         self.report_generator_name.as_deref()
     }
     /// <p>Type of reports that are generated.</p>
-    pub fn report_type(&self) -> ::std::option::Option<&[crate::types::ReportType]> {
-        self.report_type.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.report_type.is_none()`.
+    pub fn report_type(&self) -> &[crate::types::ReportType] {
+        self.report_type.as_deref().unwrap_or_default()
     }
     /// <p>License configuration type for this generator.</p>
     pub fn report_context(&self) -> ::std::option::Option<&crate::types::ReportContext> {
@@ -81,8 +83,10 @@ impl ReportGenerator {
         self.create_time.as_deref()
     }
     /// <p>Tags associated with the report generator.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ReportGenerator {

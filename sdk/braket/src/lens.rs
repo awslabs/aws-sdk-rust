@@ -32,29 +32,20 @@ pub(crate) fn reflens_search_quantum_tasks_output_next_token(
 pub(crate) fn lens_search_devices_output_devices(
     input: crate::operation::search_devices::SearchDevicesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DeviceSummary>> {
-    let input = match input.devices {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.devices;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_search_jobs_output_jobs(
     input: crate::operation::search_jobs::SearchJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::JobSummary>> {
-    let input = match input.jobs {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.jobs;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_search_quantum_tasks_output_quantum_tasks(
     input: crate::operation::search_quantum_tasks::SearchQuantumTasksOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::QuantumTaskSummary>> {
-    let input = match input.quantum_tasks {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.quantum_tasks;
     ::std::option::Option::Some(input)
 }

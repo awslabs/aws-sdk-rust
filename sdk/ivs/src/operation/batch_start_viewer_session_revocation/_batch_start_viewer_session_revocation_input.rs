@@ -8,8 +8,10 @@ pub struct BatchStartViewerSessionRevocationInput {
 }
 impl BatchStartViewerSessionRevocationInput {
     /// <p>Array of viewer sessions, one per channel-ARN and viewer-ID pair.</p>
-    pub fn viewer_sessions(&self) -> ::std::option::Option<&[crate::types::BatchStartViewerSessionRevocationViewerSession]> {
-        self.viewer_sessions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.viewer_sessions.is_none()`.
+    pub fn viewer_sessions(&self) -> &[crate::types::BatchStartViewerSessionRevocationViewerSession] {
+        self.viewer_sessions.as_deref().unwrap_or_default()
     }
 }
 impl BatchStartViewerSessionRevocationInput {
@@ -54,7 +56,7 @@ impl BatchStartViewerSessionRevocationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationInput {

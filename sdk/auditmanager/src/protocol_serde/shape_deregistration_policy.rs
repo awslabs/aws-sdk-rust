@@ -2,7 +2,7 @@
 pub fn ser_deregistration_policy(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DeregistrationPolicy,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.delete_resources {
         object.key("deleteResources").string(var_1.as_str());
     }

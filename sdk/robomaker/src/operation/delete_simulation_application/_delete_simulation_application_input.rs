@@ -34,6 +34,7 @@ pub struct DeleteSimulationApplicationInputBuilder {
 }
 impl DeleteSimulationApplicationInputBuilder {
     /// <p>The application information for the simulation application to delete.</p>
+    /// This field is required.
     pub fn application(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl DeleteSimulationApplicationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_simulation_application::DeleteSimulationApplicationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_simulation_application::DeleteSimulationApplicationInput {
             application: self.application,

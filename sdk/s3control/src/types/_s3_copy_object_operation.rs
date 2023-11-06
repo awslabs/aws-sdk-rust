@@ -52,8 +52,10 @@ impl S3CopyObjectOperation {
         self.canned_access_control_list.as_ref()
     }
     /// <p></p>
-    pub fn access_control_grants(&self) -> ::std::option::Option<&[crate::types::S3Grant]> {
-        self.access_control_grants.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.access_control_grants.is_none()`.
+    pub fn access_control_grants(&self) -> &[crate::types::S3Grant] {
+        self.access_control_grants.as_deref().unwrap_or_default()
     }
     /// <p></p>
     pub fn metadata_directive(&self) -> ::std::option::Option<&crate::types::S3MetadataDirective> {
@@ -68,8 +70,10 @@ impl S3CopyObjectOperation {
         self.new_object_metadata.as_ref()
     }
     /// <p></p>
-    pub fn new_object_tagging(&self) -> ::std::option::Option<&[crate::types::S3Tag]> {
-        self.new_object_tagging.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.new_object_tagging.is_none()`.
+    pub fn new_object_tagging(&self) -> &[crate::types::S3Tag] {
+        self.new_object_tagging.as_deref().unwrap_or_default()
     }
     /// <p>Specifies an optional metadata property for website redirects, <code>x-amz-website-redirect-location</code>. Allows webpage redirects if the object is accessed through a website endpoint.</p>
     pub fn redirect_location(&self) -> ::std::option::Option<&str> {

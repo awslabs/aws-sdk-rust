@@ -48,6 +48,7 @@ impl DeleteUserInputBuilder {
     /// <p>The email address of the user.</p> <note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
+    /// This field is required.
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self
@@ -66,6 +67,7 @@ impl DeleteUserInputBuilder {
         &self.user_name
     }
     /// <p>The authentication type for the user. You must specify USERPOOL.</p>
+    /// This field is required.
     pub fn authentication_type(mut self, input: crate::types::AuthenticationType) -> Self {
         self.authentication_type = ::std::option::Option::Some(input);
         self
@@ -80,7 +82,7 @@ impl DeleteUserInputBuilder {
         &self.authentication_type
     }
     /// Consumes the builder and constructs a [`DeleteUserInput`](crate::operation::delete_user::DeleteUserInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_user::DeleteUserInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_user::DeleteUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_user::DeleteUserInput {
             user_name: self.user_name,
             authentication_type: self.authentication_type,

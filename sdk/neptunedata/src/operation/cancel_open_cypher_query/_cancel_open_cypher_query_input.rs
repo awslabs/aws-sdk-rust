@@ -34,6 +34,7 @@ pub struct CancelOpenCypherQueryInputBuilder {
 }
 impl CancelOpenCypherQueryInputBuilder {
     /// <p>The unique ID of the openCypher query to cancel.</p>
+    /// This field is required.
     pub fn query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl CancelOpenCypherQueryInputBuilder {
     /// Consumes the builder and constructs a [`CancelOpenCypherQueryInput`](crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryInput {
             query_id: self.query_id,

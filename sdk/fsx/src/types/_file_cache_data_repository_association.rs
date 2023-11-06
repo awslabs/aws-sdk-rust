@@ -48,8 +48,10 @@ impl FileCacheDataRepositoryAssociation {
         self.data_repository_path.as_deref()
     }
     /// <p>A list of NFS Exports that will be linked with this data repository association. The Export paths are in the format <code>/exportpath1</code>. To use this parameter, you must configure <code>DataRepositoryPath</code> as the domain name of the NFS file system. The NFS file system domain name in effect is the root of the subdirectories. Note that <code>DataRepositorySubdirectories</code> is not supported for S3 data repositories.</p>
-    pub fn data_repository_subdirectories(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.data_repository_subdirectories.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_repository_subdirectories.is_none()`.
+    pub fn data_repository_subdirectories(&self) -> &[::std::string::String] {
+        self.data_repository_subdirectories.as_deref().unwrap_or_default()
     }
     /// <p>The configuration for a data repository association that links an Amazon File Cache resource to an NFS data repository.</p>
     pub fn nfs(&self) -> ::std::option::Option<&crate::types::FileCacheNfsConfiguration> {
@@ -78,6 +80,7 @@ impl FileCacheDataRepositoryAssociationBuilder {
     /// <p>The cache path can only be set to root (/) on an NFS DRA when <code>DataRepositorySubdirectories</code> is specified. If you specify root (/) as the cache path, you can create only one DRA on the cache.</p>
     /// <p>The cache path cannot be set to root (/) for an S3 DRA.</p>
     /// </note>
+    /// This field is required.
     pub fn file_cache_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_cache_path = ::std::option::Option::Some(input.into());
         self
@@ -108,6 +111,7 @@ impl FileCacheDataRepositoryAssociationBuilder {
     /// </ul> </li>
     /// <li> <p>The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn data_repository_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_repository_path = ::std::option::Option::Some(input.into());
         self

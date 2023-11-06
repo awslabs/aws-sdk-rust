@@ -38,8 +38,10 @@ impl Environment {
         self.state.as_ref()
     }
     /// <p>Amazon CloudWatch alarms monitored during the deployment.</p>
-    pub fn monitors(&self) -> ::std::option::Option<&[crate::types::Monitor]> {
-        self.monitors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.monitors.is_none()`.
+    pub fn monitors(&self) -> &[crate::types::Monitor] {
+        self.monitors.as_deref().unwrap_or_default()
     }
 }
 impl Environment {

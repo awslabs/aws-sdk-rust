@@ -83,6 +83,7 @@ pub struct UpdateLaunchConfigurationTemplateInputBuilder {
 }
 impl UpdateLaunchConfigurationTemplateInputBuilder {
     /// <p>Launch Configuration Template ID.</p>
+    /// This field is required.
     pub fn launch_configuration_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_configuration_template_id = ::std::option::Option::Some(input.into());
         self
@@ -216,7 +217,7 @@ impl UpdateLaunchConfigurationTemplateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplateInput {

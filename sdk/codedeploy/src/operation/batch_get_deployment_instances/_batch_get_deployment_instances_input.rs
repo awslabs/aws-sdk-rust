@@ -15,8 +15,10 @@ impl BatchGetDeploymentInstancesInput {
         self.deployment_id.as_deref()
     }
     /// <p>The unique IDs of instances used in the deployment. The maximum number of instance IDs you can specify is 25.</p>
-    pub fn instance_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.instance_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_ids.is_none()`.
+    pub fn instance_ids(&self) -> &[::std::string::String] {
+        self.instance_ids.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetDeploymentInstancesInput {
@@ -35,6 +37,7 @@ pub struct BatchGetDeploymentInstancesInputBuilder {
 }
 impl BatchGetDeploymentInstancesInputBuilder {
     /// <p> The unique ID of a deployment. </p>
+    /// This field is required.
     pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
@@ -73,7 +76,7 @@ impl BatchGetDeploymentInstancesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesInput {
             deployment_id: self.deployment_id,

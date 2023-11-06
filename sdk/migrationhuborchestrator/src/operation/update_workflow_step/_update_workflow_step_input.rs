@@ -58,20 +58,28 @@ impl UpdateWorkflowStepInput {
         self.workflow_step_automation_configuration.as_ref()
     }
     /// <p>The servers on which a step will be run.</p>
-    pub fn step_target(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.step_target.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.step_target.is_none()`.
+    pub fn step_target(&self) -> &[::std::string::String] {
+        self.step_target.as_deref().unwrap_or_default()
     }
     /// <p>The outputs of a step.</p>
-    pub fn outputs(&self) -> ::std::option::Option<&[crate::types::WorkflowStepOutput]> {
-        self.outputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outputs.is_none()`.
+    pub fn outputs(&self) -> &[crate::types::WorkflowStepOutput] {
+        self.outputs.as_deref().unwrap_or_default()
     }
     /// <p>The previous step.</p>
-    pub fn previous(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.previous.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.previous.is_none()`.
+    pub fn previous(&self) -> &[::std::string::String] {
+        self.previous.as_deref().unwrap_or_default()
     }
     /// <p>The next step.</p>
-    pub fn next(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.next.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.next.is_none()`.
+    pub fn next(&self) -> &[::std::string::String] {
+        self.next.as_deref().unwrap_or_default()
     }
     /// <p>The status of the step.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::StepStatus> {
@@ -104,6 +112,7 @@ pub struct UpdateWorkflowStepInputBuilder {
 }
 impl UpdateWorkflowStepInputBuilder {
     /// <p>The ID of the step.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +127,7 @@ impl UpdateWorkflowStepInputBuilder {
         &self.id
     }
     /// <p>The ID of the step group.</p>
+    /// This field is required.
     pub fn step_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.step_group_id = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +142,7 @@ impl UpdateWorkflowStepInputBuilder {
         &self.step_group_id
     }
     /// <p>The ID of the migration workflow.</p>
+    /// This field is required.
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_id = ::std::option::Option::Some(input.into());
         self
@@ -301,7 +312,8 @@ impl UpdateWorkflowStepInputBuilder {
     /// Consumes the builder and constructs a [`UpdateWorkflowStepInput`](crate::operation::update_workflow_step::UpdateWorkflowStepInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_workflow_step::UpdateWorkflowStepInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_workflow_step::UpdateWorkflowStepInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_workflow_step::UpdateWorkflowStepInput {
             id: self.id,
             step_group_id: self.step_group_id,

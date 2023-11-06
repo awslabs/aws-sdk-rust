@@ -27,8 +27,10 @@ impl VoiceConnectorGroup {
         self.name.as_deref()
     }
     /// <p>The Amazon Chime Voice Connectors to which to route inbound calls.</p>
-    pub fn voice_connector_items(&self) -> ::std::option::Option<&[crate::types::VoiceConnectorItem]> {
-        self.voice_connector_items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.voice_connector_items.is_none()`.
+    pub fn voice_connector_items(&self) -> &[crate::types::VoiceConnectorItem] {
+        self.voice_connector_items.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Chime Voice Connector group creation time stamp, in ISO 8601 format.</p>
     pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

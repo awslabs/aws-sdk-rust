@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AmiAggregationResponse {
     /// <p>The ID of the AMI that findings were aggregated for.</p>
-    pub ami: ::std::option::Option<::std::string::String>,
+    pub ami: ::std::string::String,
     /// <p>The Amazon Web Services account ID for the AMI.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>An object that contains the count of matched findings per severity.</p>
@@ -15,8 +15,9 @@ pub struct AmiAggregationResponse {
 }
 impl AmiAggregationResponse {
     /// <p>The ID of the AMI that findings were aggregated for.</p>
-    pub fn ami(&self) -> ::std::option::Option<&str> {
-        self.ami.as_deref()
+    pub fn ami(&self) -> &str {
+        use std::ops::Deref;
+        self.ami.deref()
     }
     /// <p>The Amazon Web Services account ID for the AMI.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
@@ -49,6 +50,7 @@ pub struct AmiAggregationResponseBuilder {
 }
 impl AmiAggregationResponseBuilder {
     /// <p>The ID of the AMI that findings were aggregated for.</p>
+    /// This field is required.
     pub fn ami(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ami = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +107,19 @@ impl AmiAggregationResponseBuilder {
         &self.affected_instances
     }
     /// Consumes the builder and constructs a [`AmiAggregationResponse`](crate::types::AmiAggregationResponse).
-    pub fn build(self) -> crate::types::AmiAggregationResponse {
-        crate::types::AmiAggregationResponse {
-            ami: self.ami,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`ami`](crate::types::builders::AmiAggregationResponseBuilder::ami)
+    pub fn build(self) -> ::std::result::Result<crate::types::AmiAggregationResponse, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AmiAggregationResponse {
+            ami: self.ami.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "ami",
+                    "ami was not specified but it is required when building AmiAggregationResponse",
+                )
+            })?,
             account_id: self.account_id,
             severity_counts: self.severity_counts,
             affected_instances: self.affected_instances,
-        }
+        })
     }
 }

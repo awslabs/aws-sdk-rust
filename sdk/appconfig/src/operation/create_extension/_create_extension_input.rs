@@ -62,6 +62,7 @@ pub struct CreateExtensionInputBuilder {
 }
 impl CreateExtensionInputBuilder {
     /// <p>A name for the extension. Each extension name in your account must be unique. Extension versions use the same name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -174,7 +175,7 @@ impl CreateExtensionInputBuilder {
     /// Consumes the builder and constructs a [`CreateExtensionInput`](crate::operation::create_extension::CreateExtensionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_extension::CreateExtensionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_extension::CreateExtensionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_extension::CreateExtensionInput {
             name: self.name,
             description: self.description,

@@ -34,6 +34,7 @@ pub struct DeleteKeyGroupInputBuilder {
 }
 impl DeleteKeyGroupInputBuilder {
     /// <p>The identifier of the key group that you are deleting. To get the identifier, use <code>ListKeyGroups</code>.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl DeleteKeyGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteKeyGroupInput`](crate::operation::delete_key_group::DeleteKeyGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_key_group::DeleteKeyGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_key_group::DeleteKeyGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_key_group::DeleteKeyGroupInput {
             id: self.id,
             if_match: self.if_match,

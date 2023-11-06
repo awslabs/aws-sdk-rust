@@ -27,6 +27,7 @@ pub struct DeleteEventActionInputBuilder {
 }
 impl DeleteEventActionInputBuilder {
     /// <p>The unique identifier for the event action.</p>
+    /// This field is required.
     pub fn event_action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_action_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteEventActionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteEventActionInput`](crate::operation::delete_event_action::DeleteEventActionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_event_action::DeleteEventActionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_event_action::DeleteEventActionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_event_action::DeleteEventActionInput {
             event_action_id: self.event_action_id,
         })

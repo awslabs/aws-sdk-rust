@@ -16,8 +16,10 @@ impl UpdateFeatureGroupInput {
         self.feature_group_name.as_deref()
     }
     /// <p>Updates the feature group. Updating a feature group is an asynchronous operation. When you get an HTTP 200 response, you've made a valid request. It takes some time after you've made a valid request for Feature Store to update the feature group.</p>
-    pub fn feature_additions(&self) -> ::std::option::Option<&[crate::types::FeatureDefinition]> {
-        self.feature_additions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.feature_additions.is_none()`.
+    pub fn feature_additions(&self) -> &[crate::types::FeatureDefinition] {
+        self.feature_additions.as_deref().unwrap_or_default()
     }
     /// <p>Updates the feature group online store configuration.</p>
     pub fn online_store_config(&self) -> ::std::option::Option<&crate::types::OnlineStoreConfigUpdate> {
@@ -41,6 +43,7 @@ pub struct UpdateFeatureGroupInputBuilder {
 }
 impl UpdateFeatureGroupInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the feature group that you're updating.</p>
+    /// This field is required.
     pub fn feature_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_group_name = ::std::option::Option::Some(input.into());
         self
@@ -91,7 +94,8 @@ impl UpdateFeatureGroupInputBuilder {
     /// Consumes the builder and constructs a [`UpdateFeatureGroupInput`](crate::operation::update_feature_group::UpdateFeatureGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_feature_group::UpdateFeatureGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_feature_group::UpdateFeatureGroupInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_feature_group::UpdateFeatureGroupInput {
             feature_group_name: self.feature_group_name,
             feature_additions: self.feature_additions,

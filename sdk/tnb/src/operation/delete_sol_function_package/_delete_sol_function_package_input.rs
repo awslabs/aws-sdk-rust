@@ -27,6 +27,7 @@ pub struct DeleteSolFunctionPackageInputBuilder {
 }
 impl DeleteSolFunctionPackageInputBuilder {
     /// <p>ID of the function package.</p>
+    /// This field is required.
     pub fn vnf_pkg_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vnf_pkg_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteSolFunctionPackageInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_sol_function_package::DeleteSolFunctionPackageInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_sol_function_package::DeleteSolFunctionPackageInput { vnf_pkg_id: self.vnf_pkg_id })
     }

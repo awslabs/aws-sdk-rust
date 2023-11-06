@@ -16,6 +16,8 @@ pub struct ClusterSubnetGroup {
     pub subnets: ::std::option::Option<::std::vec::Vec<crate::types::Subnet>>,
     /// <p>The list of tags for the cluster subnet group.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The IP address types supported by this cluster subnet group. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
+    pub supported_cluster_ip_address_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ClusterSubnetGroup {
     /// <p>The name of the cluster subnet group.</p>
@@ -35,12 +37,22 @@ impl ClusterSubnetGroup {
         self.subnet_group_status.as_deref()
     }
     /// <p>A list of the VPC <code>Subnet</code> elements. </p>
-    pub fn subnets(&self) -> ::std::option::Option<&[crate::types::Subnet]> {
-        self.subnets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnets.is_none()`.
+    pub fn subnets(&self) -> &[crate::types::Subnet] {
+        self.subnets.as_deref().unwrap_or_default()
     }
     /// <p>The list of tags for the cluster subnet group.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
+    }
+    /// <p>The IP address types supported by this cluster subnet group. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_cluster_ip_address_types.is_none()`.
+    pub fn supported_cluster_ip_address_types(&self) -> &[::std::string::String] {
+        self.supported_cluster_ip_address_types.as_deref().unwrap_or_default()
     }
 }
 impl ClusterSubnetGroup {
@@ -60,6 +72,7 @@ pub struct ClusterSubnetGroupBuilder {
     pub(crate) subnet_group_status: ::std::option::Option<::std::string::String>,
     pub(crate) subnets: ::std::option::Option<::std::vec::Vec<crate::types::Subnet>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) supported_cluster_ip_address_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ClusterSubnetGroupBuilder {
     /// <p>The name of the cluster subnet group.</p>
@@ -158,6 +171,26 @@ impl ClusterSubnetGroupBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// Appends an item to `supported_cluster_ip_address_types`.
+    ///
+    /// To override the contents of this collection use [`set_supported_cluster_ip_address_types`](Self::set_supported_cluster_ip_address_types).
+    ///
+    /// <p>The IP address types supported by this cluster subnet group. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
+    pub fn supported_cluster_ip_address_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.supported_cluster_ip_address_types.unwrap_or_default();
+        v.push(input.into());
+        self.supported_cluster_ip_address_types = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The IP address types supported by this cluster subnet group. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
+    pub fn set_supported_cluster_ip_address_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.supported_cluster_ip_address_types = input;
+        self
+    }
+    /// <p>The IP address types supported by this cluster subnet group. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
+    pub fn get_supported_cluster_ip_address_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.supported_cluster_ip_address_types
+    }
     /// Consumes the builder and constructs a [`ClusterSubnetGroup`](crate::types::ClusterSubnetGroup).
     pub fn build(self) -> crate::types::ClusterSubnetGroup {
         crate::types::ClusterSubnetGroup {
@@ -167,6 +200,7 @@ impl ClusterSubnetGroupBuilder {
             subnet_group_status: self.subnet_group_status,
             subnets: self.subnets,
             tags: self.tags,
+            supported_cluster_ip_address_types: self.supported_cluster_ip_address_types,
         }
     }
 }

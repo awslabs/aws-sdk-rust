@@ -48,6 +48,7 @@ pub struct CreateNotificationSubscriptionInputBuilder {
 }
 impl CreateNotificationSubscriptionInputBuilder {
     /// <p>The ID of the organization.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl CreateNotificationSubscriptionInputBuilder {
         &self.organization_id
     }
     /// <p>The endpoint to receive the notifications. If the protocol is HTTPS, the endpoint is a URL that begins with <code>https</code>.</p>
+    /// This field is required.
     pub fn endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl CreateNotificationSubscriptionInputBuilder {
         &self.endpoint
     }
     /// <p>The protocol to use. The supported value is https, which delivers JSON-encoded messages using HTTPS POST.</p>
+    /// This field is required.
     pub fn protocol(mut self, input: crate::types::SubscriptionProtocolType) -> Self {
         self.protocol = ::std::option::Option::Some(input);
         self
@@ -90,6 +93,7 @@ impl CreateNotificationSubscriptionInputBuilder {
         &self.protocol
     }
     /// <p>The notification type.</p>
+    /// This field is required.
     pub fn subscription_type(mut self, input: crate::types::SubscriptionType) -> Self {
         self.subscription_type = ::std::option::Option::Some(input);
         self
@@ -108,7 +112,7 @@ impl CreateNotificationSubscriptionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_notification_subscription::CreateNotificationSubscriptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_notification_subscription::CreateNotificationSubscriptionInput {
             organization_id: self.organization_id,

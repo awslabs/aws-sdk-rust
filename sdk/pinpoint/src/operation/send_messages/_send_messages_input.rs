@@ -34,6 +34,7 @@ pub struct SendMessagesInputBuilder {
 }
 impl SendMessagesInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl SendMessagesInputBuilder {
         &self.application_id
     }
     /// <p>Specifies the configuration and other settings for a message.</p>
+    /// This field is required.
     pub fn message_request(mut self, input: crate::types::MessageRequest) -> Self {
         self.message_request = ::std::option::Option::Some(input);
         self
@@ -62,7 +64,9 @@ impl SendMessagesInputBuilder {
         &self.message_request
     }
     /// Consumes the builder and constructs a [`SendMessagesInput`](crate::operation::send_messages::SendMessagesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::send_messages::SendMessagesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::send_messages::SendMessagesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_messages::SendMessagesInput {
             application_id: self.application_id,
             message_request: self.message_request,

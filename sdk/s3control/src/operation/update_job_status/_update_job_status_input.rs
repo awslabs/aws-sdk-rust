@@ -48,6 +48,7 @@ pub struct UpdateJobStatusInputBuilder {
 }
 impl UpdateJobStatusInputBuilder {
     /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl UpdateJobStatusInputBuilder {
         &self.account_id
     }
     /// <p>The ID of the job whose status you want to update.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl UpdateJobStatusInputBuilder {
         &self.job_id
     }
     /// <p>The status that you want to move the specified job to.</p>
+    /// This field is required.
     pub fn requested_job_status(mut self, input: crate::types::RequestedJobStatus) -> Self {
         self.requested_job_status = ::std::option::Option::Some(input);
         self
@@ -106,7 +109,7 @@ impl UpdateJobStatusInputBuilder {
     /// Consumes the builder and constructs a [`UpdateJobStatusInput`](crate::operation::update_job_status::UpdateJobStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_job_status::UpdateJobStatusInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_job_status::UpdateJobStatusInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_job_status::UpdateJobStatusInput {
             account_id: self.account_id,
             job_id: self.job_id,

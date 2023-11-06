@@ -91,18 +91,20 @@ pub fn de_get_savings_plans_utilization_details_http_response(
         output = crate::protocol_serde::shape_get_savings_plans_utilization_details::de_get_savings_plans_utilization_details(_response_body, output)
             .map_err(crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::get_savings_plans_utilization_details_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsError::unhandled)?
     })
 }
 
 pub fn ser_get_savings_plans_utilization_details_input(
     input: &crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_get_savings_plans_utilization_details_input::ser_get_savings_plans_utilization_details_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_get_savings_plans_utilization_details(

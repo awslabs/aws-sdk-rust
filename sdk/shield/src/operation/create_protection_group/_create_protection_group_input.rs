@@ -44,12 +44,16 @@ impl CreateProtectionGroupInput {
         self.resource_type.as_ref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the resources to include in the protection group. You must set this when you set <code>Pattern</code> to <code>ARBITRARY</code> and you must not set it for any other <code>Pattern</code> setting. </p>
-    pub fn members(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.members.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.members.is_none()`.
+    pub fn members(&self) -> &[::std::string::String] {
+        self.members.as_deref().unwrap_or_default()
     }
     /// <p>One or more tag key-value pairs for the protection group.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateProtectionGroupInput {
@@ -72,6 +76,7 @@ pub struct CreateProtectionGroupInputBuilder {
 }
 impl CreateProtectionGroupInputBuilder {
     /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
+    /// This field is required.
     pub fn protection_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.protection_group_id = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +96,7 @@ impl CreateProtectionGroupInputBuilder {
     /// <li> <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p> </li>
     /// <li> <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront and origin resources for CloudFront distributions.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn aggregation(mut self, input: crate::types::ProtectionGroupAggregation) -> Self {
         self.aggregation = ::std::option::Option::Some(input);
         self
@@ -115,6 +121,7 @@ impl CreateProtectionGroupInputBuilder {
         &self.aggregation
     }
     /// <p>The criteria to use to choose the protected resources for inclusion in the group. You can include all resources that have protections, provide a list of resource Amazon Resource Names (ARNs), or include all resources of a specified resource type. </p>
+    /// This field is required.
     pub fn pattern(mut self, input: crate::types::ProtectionGroupPattern) -> Self {
         self.pattern = ::std::option::Option::Some(input);
         self
@@ -185,7 +192,7 @@ impl CreateProtectionGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateProtectionGroupInput`](crate::operation::create_protection_group::CreateProtectionGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_protection_group::CreateProtectionGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_protection_group::CreateProtectionGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_protection_group::CreateProtectionGroupInput {
             protection_group_id: self.protection_group_id,

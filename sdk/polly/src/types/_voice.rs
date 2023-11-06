@@ -43,12 +43,16 @@ impl Voice {
     }
     /// <p>Additional codes for languages available for the specified voice in addition to its default language. </p>
     /// <p>For example, the default language for Aditi is Indian English (en-IN) because it was first used for that language. Since Aditi is bilingual and fluent in both Indian English and Hindi, this parameter would show the code <code>hi-IN</code>.</p>
-    pub fn additional_language_codes(&self) -> ::std::option::Option<&[crate::types::LanguageCode]> {
-        self.additional_language_codes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_language_codes.is_none()`.
+    pub fn additional_language_codes(&self) -> &[crate::types::LanguageCode] {
+        self.additional_language_codes.as_deref().unwrap_or_default()
     }
     /// <p>Specifies which engines (<code>standard</code> or <code>neural</code>) that are supported by a given voice.</p>
-    pub fn supported_engines(&self) -> ::std::option::Option<&[crate::types::Engine]> {
-        self.supported_engines.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_engines.is_none()`.
+    pub fn supported_engines(&self) -> &[crate::types::Engine] {
+        self.supported_engines.as_deref().unwrap_or_default()
     }
 }
 impl Voice {

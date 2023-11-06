@@ -27,20 +27,26 @@ impl StaleIpPermission {
         self.ip_protocol.as_deref()
     }
     /// <p>The IP ranges. Not applicable for stale security group rules.</p>
-    pub fn ip_ranges(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ip_ranges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ip_ranges.is_none()`.
+    pub fn ip_ranges(&self) -> &[::std::string::String] {
+        self.ip_ranges.as_deref().unwrap_or_default()
     }
     /// <p>The prefix list IDs. Not applicable for stale security group rules.</p>
-    pub fn prefix_list_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.prefix_list_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.prefix_list_ids.is_none()`.
+    pub fn prefix_list_ids(&self) -> &[::std::string::String] {
+        self.prefix_list_ids.as_deref().unwrap_or_default()
     }
     /// <p>The end of the port range for the TCP and UDP protocols, or an ICMP type number. A value of <code>-1</code> indicates all ICMP types. </p>
     pub fn to_port(&self) -> ::std::option::Option<i32> {
         self.to_port
     }
     /// <p>The security group pairs. Returns the ID of the referenced security group and VPC, and the ID and status of the VPC peering connection.</p>
-    pub fn user_id_group_pairs(&self) -> ::std::option::Option<&[crate::types::UserIdGroupPair]> {
-        self.user_id_group_pairs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_id_group_pairs.is_none()`.
+    pub fn user_id_group_pairs(&self) -> &[crate::types::UserIdGroupPair] {
+        self.user_id_group_pairs.as_deref().unwrap_or_default()
     }
 }
 impl StaleIpPermission {

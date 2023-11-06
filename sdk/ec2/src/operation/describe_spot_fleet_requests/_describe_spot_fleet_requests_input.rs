@@ -27,8 +27,10 @@ impl DescribeSpotFleetRequestsInput {
         self.next_token.as_deref()
     }
     /// <p>The IDs of the Spot Fleet requests.</p>
-    pub fn spot_fleet_request_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.spot_fleet_request_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.spot_fleet_request_ids.is_none()`.
+    pub fn spot_fleet_request_ids(&self) -> &[::std::string::String] {
+        self.spot_fleet_request_ids.as_deref().unwrap_or_default()
     }
 }
 impl DescribeSpotFleetRequestsInput {
@@ -115,7 +117,7 @@ impl DescribeSpotFleetRequestsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_spot_fleet_requests::DescribeSpotFleetRequestsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_spot_fleet_requests::DescribeSpotFleetRequestsInput {
             dry_run: self.dry_run,

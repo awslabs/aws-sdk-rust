@@ -55,6 +55,7 @@ pub struct GetChangeLogsInputBuilder {
 }
 impl GetChangeLogsInputBuilder {
     /// <p>The unique identifier for the assessment. </p>
+    /// This field is required.
     pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_id = ::std::option::Option::Some(input.into());
         self
@@ -127,7 +128,7 @@ impl GetChangeLogsInputBuilder {
     /// Consumes the builder and constructs a [`GetChangeLogsInput`](crate::operation::get_change_logs::GetChangeLogsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_change_logs::GetChangeLogsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_change_logs::GetChangeLogsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_change_logs::GetChangeLogsInput {
             assessment_id: self.assessment_id,
             control_set_id: self.control_set_id,

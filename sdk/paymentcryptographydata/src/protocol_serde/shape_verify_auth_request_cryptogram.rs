@@ -91,11 +91,10 @@ pub fn de_verify_auth_request_cryptogram_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "VerificationFailedException" => {
@@ -108,11 +107,10 @@ pub fn de_verify_auth_request_cryptogram_http_error(
                         crate::protocol_serde::shape_verification_failed_exception::de_verification_failed_exception_json_err(_response_body, output)
                             .map_err(crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::verification_failed_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -135,18 +133,20 @@ pub fn de_verify_auth_request_cryptogram_http_response(
         output = crate::protocol_serde::shape_verify_auth_request_cryptogram::de_verify_auth_request_cryptogram(_response_body, output)
             .map_err(crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::verify_auth_request_cryptogram_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError::unhandled)?
     })
 }
 
 pub fn ser_verify_auth_request_cryptogram_input(
     input: &crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_verify_auth_request_cryptogram_input::ser_verify_auth_request_cryptogram_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_verify_auth_request_cryptogram(

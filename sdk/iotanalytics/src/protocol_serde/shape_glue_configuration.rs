@@ -2,12 +2,12 @@
 pub fn ser_glue_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GlueConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.table_name {
-        object.key("tableName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("tableName").string(input.table_name.as_str());
     }
-    if let Some(var_2) = &input.database_name {
-        object.key("databaseName").string(var_2.as_str());
+    {
+        object.key("databaseName").string(input.database_name.as_str());
     }
     Ok(())
 }
@@ -51,7 +51,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::glue_configuration_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -18,7 +18,7 @@ impl EnableAllFeaturesInputBuilder {
     /// Consumes the builder and constructs a [`EnableAllFeaturesInput`](crate::operation::enable_all_features::EnableAllFeaturesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::enable_all_features::EnableAllFeaturesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::enable_all_features::EnableAllFeaturesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::enable_all_features::EnableAllFeaturesInput {})
     }
 }

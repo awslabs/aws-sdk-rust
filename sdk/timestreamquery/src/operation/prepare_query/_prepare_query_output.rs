@@ -4,25 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PrepareQueryOutput {
     /// <p>The query string that you want prepare.</p>
-    pub query_string: ::std::option::Option<::std::string::String>,
+    pub query_string: ::std::string::String,
     /// <p>A list of SELECT clause columns of the submitted query string. </p>
-    pub columns: ::std::option::Option<::std::vec::Vec<crate::types::SelectColumn>>,
+    pub columns: ::std::vec::Vec<crate::types::SelectColumn>,
     /// <p>A list of parameters used in the submitted query string. </p>
-    pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::ParameterMapping>>,
+    pub parameters: ::std::vec::Vec<crate::types::ParameterMapping>,
     _request_id: Option<String>,
 }
 impl PrepareQueryOutput {
     /// <p>The query string that you want prepare.</p>
-    pub fn query_string(&self) -> ::std::option::Option<&str> {
-        self.query_string.as_deref()
+    pub fn query_string(&self) -> &str {
+        use std::ops::Deref;
+        self.query_string.deref()
     }
     /// <p>A list of SELECT clause columns of the submitted query string. </p>
-    pub fn columns(&self) -> ::std::option::Option<&[crate::types::SelectColumn]> {
-        self.columns.as_deref()
+    pub fn columns(&self) -> &[crate::types::SelectColumn] {
+        use std::ops::Deref;
+        self.columns.deref()
     }
     /// <p>A list of parameters used in the submitted query string. </p>
-    pub fn parameters(&self) -> ::std::option::Option<&[crate::types::ParameterMapping]> {
-        self.parameters.as_deref()
+    pub fn parameters(&self) -> &[crate::types::ParameterMapping] {
+        use std::ops::Deref;
+        self.parameters.deref()
     }
 }
 impl ::std::fmt::Debug for PrepareQueryOutput {
@@ -58,6 +61,7 @@ pub struct PrepareQueryOutputBuilder {
 }
 impl PrepareQueryOutputBuilder {
     /// <p>The query string that you want prepare.</p>
+    /// This field is required.
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_string = ::std::option::Option::Some(input.into());
         self
@@ -121,13 +125,34 @@ impl PrepareQueryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PrepareQueryOutput`](crate::operation::prepare_query::PrepareQueryOutput).
-    pub fn build(self) -> crate::operation::prepare_query::PrepareQueryOutput {
-        crate::operation::prepare_query::PrepareQueryOutput {
-            query_string: self.query_string,
-            columns: self.columns,
-            parameters: self.parameters,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`query_string`](crate::operation::prepare_query::builders::PrepareQueryOutputBuilder::query_string)
+    /// - [`columns`](crate::operation::prepare_query::builders::PrepareQueryOutputBuilder::columns)
+    /// - [`parameters`](crate::operation::prepare_query::builders::PrepareQueryOutputBuilder::parameters)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::prepare_query::PrepareQueryOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::prepare_query::PrepareQueryOutput {
+            query_string: self.query_string.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "query_string",
+                    "query_string was not specified but it is required when building PrepareQueryOutput",
+                )
+            })?,
+            columns: self.columns.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "columns",
+                    "columns was not specified but it is required when building PrepareQueryOutput",
+                )
+            })?,
+            parameters: self.parameters.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "parameters",
+                    "parameters was not specified but it is required when building PrepareQueryOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for PrepareQueryOutputBuilder {

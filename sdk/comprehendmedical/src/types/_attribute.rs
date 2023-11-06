@@ -63,8 +63,10 @@ impl Attribute {
         self.category.as_ref()
     }
     /// <p> Contextual information for this attribute. </p>
-    pub fn traits(&self) -> ::std::option::Option<&[crate::types::Trait]> {
-        self.traits.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.traits.is_none()`.
+    pub fn traits(&self) -> &[crate::types::Trait] {
+        self.traits.as_deref().unwrap_or_default()
     }
 }
 impl Attribute {

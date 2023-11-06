@@ -112,6 +112,7 @@ impl CreateChangesetInputBuilder {
         &self.client_token
     }
     /// <p>The unique identifier for the FinSpace Dataset where the Changeset will be created. </p>
+    /// This field is required.
     pub fn dataset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_id = ::std::option::Option::Some(input.into());
         self
@@ -131,6 +132,7 @@ impl CreateChangesetInputBuilder {
     /// <li> <p> <code>APPEND</code> – Changeset will be considered as an addition to the end of all prior loaded Changesets.</p> </li>
     /// <li> <p> <code>MODIFY</code> – Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn change_type(mut self, input: crate::types::ChangeType) -> Self {
         self.change_type = ::std::option::Option::Some(input);
         self
@@ -251,7 +253,7 @@ impl CreateChangesetInputBuilder {
     /// Consumes the builder and constructs a [`CreateChangesetInput`](crate::operation::create_changeset::CreateChangesetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_changeset::CreateChangesetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_changeset::CreateChangesetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_changeset::CreateChangesetInput {
             client_token: self.client_token,
             dataset_id: self.dataset_id,

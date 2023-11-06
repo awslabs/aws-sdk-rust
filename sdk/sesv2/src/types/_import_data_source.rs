@@ -6,19 +6,20 @@
 pub struct ImportDataSource {
     /// <p>An Amazon S3 URL in the format s3://<i>
     /// <bucket_name></bucket_name></i>/<i><object>.<p></p></object></i></p>
-    pub s3_url: ::std::option::Option<::std::string::String>,
+    pub s3_url: ::std::string::String,
     /// <p>The data format of the import job's data source.</p>
-    pub data_format: ::std::option::Option<crate::types::DataFormat>,
+    pub data_format: crate::types::DataFormat,
 }
 impl ImportDataSource {
     /// <p>An Amazon S3 URL in the format s3://<i>
     /// <bucket_name></bucket_name></i>/<i><object>.<p></p></object></i></p>
-    pub fn s3_url(&self) -> ::std::option::Option<&str> {
-        self.s3_url.as_deref()
+    pub fn s3_url(&self) -> &str {
+        use std::ops::Deref;
+        self.s3_url.deref()
     }
     /// <p>The data format of the import job's data source.</p>
-    pub fn data_format(&self) -> ::std::option::Option<&crate::types::DataFormat> {
-        self.data_format.as_ref()
+    pub fn data_format(&self) -> &crate::types::DataFormat {
+        &self.data_format
     }
 }
 impl ImportDataSource {
@@ -38,6 +39,7 @@ pub struct ImportDataSourceBuilder {
 impl ImportDataSourceBuilder {
     /// <p>An Amazon S3 URL in the format s3://<i>
     /// <bucket_name></bucket_name></i>/<i><object>.<p></p></object></i></p>
+    /// This field is required.
     pub fn s3_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_url = ::std::option::Option::Some(input.into());
         self
@@ -54,6 +56,7 @@ impl ImportDataSourceBuilder {
         &self.s3_url
     }
     /// <p>The data format of the import job's data source.</p>
+    /// This field is required.
     pub fn data_format(mut self, input: crate::types::DataFormat) -> Self {
         self.data_format = ::std::option::Option::Some(input);
         self
@@ -68,10 +71,23 @@ impl ImportDataSourceBuilder {
         &self.data_format
     }
     /// Consumes the builder and constructs a [`ImportDataSource`](crate::types::ImportDataSource).
-    pub fn build(self) -> crate::types::ImportDataSource {
-        crate::types::ImportDataSource {
-            s3_url: self.s3_url,
-            data_format: self.data_format,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`s3_url`](crate::types::builders::ImportDataSourceBuilder::s3_url)
+    /// - [`data_format`](crate::types::builders::ImportDataSourceBuilder::data_format)
+    pub fn build(self) -> ::std::result::Result<crate::types::ImportDataSource, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ImportDataSource {
+            s3_url: self.s3_url.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "s3_url",
+                    "s3_url was not specified but it is required when building ImportDataSource",
+                )
+            })?,
+            data_format: self.data_format.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "data_format",
+                    "data_format was not specified but it is required when building ImportDataSource",
+                )
+            })?,
+        })
     }
 }

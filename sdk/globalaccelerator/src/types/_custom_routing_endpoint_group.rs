@@ -23,12 +23,16 @@ impl CustomRoutingEndpointGroup {
         self.endpoint_group_region.as_deref()
     }
     /// <p>For a custom routing accelerator, describes the port range and protocol for all endpoints (virtual private cloud subnets) in an endpoint group to accept client traffic on.</p>
-    pub fn destination_descriptions(&self) -> ::std::option::Option<&[crate::types::CustomRoutingDestinationDescription]> {
-        self.destination_descriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destination_descriptions.is_none()`.
+    pub fn destination_descriptions(&self) -> &[crate::types::CustomRoutingDestinationDescription] {
+        self.destination_descriptions.as_deref().unwrap_or_default()
     }
     /// <p>For a custom routing accelerator, describes the endpoints (virtual private cloud subnets) in an endpoint group to accept client traffic on.</p>
-    pub fn endpoint_descriptions(&self) -> ::std::option::Option<&[crate::types::CustomRoutingEndpointDescription]> {
-        self.endpoint_descriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.endpoint_descriptions.is_none()`.
+    pub fn endpoint_descriptions(&self) -> &[crate::types::CustomRoutingEndpointDescription] {
+        self.endpoint_descriptions.as_deref().unwrap_or_default()
     }
 }
 impl CustomRoutingEndpointGroup {

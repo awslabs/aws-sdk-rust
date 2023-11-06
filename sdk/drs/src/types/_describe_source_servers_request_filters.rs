@@ -5,24 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSourceServersRequestFilters {
     /// <p>An array of Source Servers IDs that should be returned. An empty array means all Source Servers.</p>
-    pub source_server_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub source_server_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An ID that describes the hardware of the Source Server. This is either an EC2 instance id, a VMware uuid or a mac address.</p>
     pub hardware_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of staging account IDs that extended source servers belong to. An empty array means all source servers will be shown.</p>
-    pub staging_account_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub staging_account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeSourceServersRequestFilters {
     /// <p>An array of Source Servers IDs that should be returned. An empty array means all Source Servers.</p>
-    pub fn source_server_i_ds(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.source_server_i_ds.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_server_ids.is_none()`.
+    pub fn source_server_ids(&self) -> &[::std::string::String] {
+        self.source_server_ids.as_deref().unwrap_or_default()
     }
     /// <p>An ID that describes the hardware of the Source Server. This is either an EC2 instance id, a VMware uuid or a mac address.</p>
     pub fn hardware_id(&self) -> ::std::option::Option<&str> {
         self.hardware_id.as_deref()
     }
     /// <p>An array of staging account IDs that extended source servers belong to. An empty array means all source servers will be shown.</p>
-    pub fn staging_account_i_ds(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.staging_account_i_ds.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.staging_account_ids.is_none()`.
+    pub fn staging_account_ids(&self) -> &[::std::string::String] {
+        self.staging_account_ids.as_deref().unwrap_or_default()
     }
 }
 impl DescribeSourceServersRequestFilters {
@@ -36,30 +40,30 @@ impl DescribeSourceServersRequestFilters {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSourceServersRequestFiltersBuilder {
-    pub(crate) source_server_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) source_server_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) hardware_id: ::std::option::Option<::std::string::String>,
-    pub(crate) staging_account_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) staging_account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeSourceServersRequestFiltersBuilder {
-    /// Appends an item to `source_server_i_ds`.
+    /// Appends an item to `source_server_ids`.
     ///
-    /// To override the contents of this collection use [`set_source_server_i_ds`](Self::set_source_server_i_ds).
+    /// To override the contents of this collection use [`set_source_server_ids`](Self::set_source_server_ids).
     ///
     /// <p>An array of Source Servers IDs that should be returned. An empty array means all Source Servers.</p>
-    pub fn source_server_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.source_server_i_ds.unwrap_or_default();
+    pub fn source_server_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.source_server_ids.unwrap_or_default();
         v.push(input.into());
-        self.source_server_i_ds = ::std::option::Option::Some(v);
+        self.source_server_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of Source Servers IDs that should be returned. An empty array means all Source Servers.</p>
-    pub fn set_source_server_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.source_server_i_ds = input;
+    pub fn set_source_server_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.source_server_ids = input;
         self
     }
     /// <p>An array of Source Servers IDs that should be returned. An empty array means all Source Servers.</p>
-    pub fn get_source_server_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.source_server_i_ds
+    pub fn get_source_server_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.source_server_ids
     }
     /// <p>An ID that describes the hardware of the Source Server. This is either an EC2 instance id, a VMware uuid or a mac address.</p>
     pub fn hardware_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -75,32 +79,32 @@ impl DescribeSourceServersRequestFiltersBuilder {
     pub fn get_hardware_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.hardware_id
     }
-    /// Appends an item to `staging_account_i_ds`.
+    /// Appends an item to `staging_account_ids`.
     ///
-    /// To override the contents of this collection use [`set_staging_account_i_ds`](Self::set_staging_account_i_ds).
+    /// To override the contents of this collection use [`set_staging_account_ids`](Self::set_staging_account_ids).
     ///
     /// <p>An array of staging account IDs that extended source servers belong to. An empty array means all source servers will be shown.</p>
-    pub fn staging_account_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.staging_account_i_ds.unwrap_or_default();
+    pub fn staging_account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.staging_account_ids.unwrap_or_default();
         v.push(input.into());
-        self.staging_account_i_ds = ::std::option::Option::Some(v);
+        self.staging_account_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of staging account IDs that extended source servers belong to. An empty array means all source servers will be shown.</p>
-    pub fn set_staging_account_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.staging_account_i_ds = input;
+    pub fn set_staging_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.staging_account_ids = input;
         self
     }
     /// <p>An array of staging account IDs that extended source servers belong to. An empty array means all source servers will be shown.</p>
-    pub fn get_staging_account_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.staging_account_i_ds
+    pub fn get_staging_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.staging_account_ids
     }
     /// Consumes the builder and constructs a [`DescribeSourceServersRequestFilters`](crate::types::DescribeSourceServersRequestFilters).
     pub fn build(self) -> crate::types::DescribeSourceServersRequestFilters {
         crate::types::DescribeSourceServersRequestFilters {
-            source_server_i_ds: self.source_server_i_ds,
+            source_server_ids: self.source_server_ids,
             hardware_id: self.hardware_id,
-            staging_account_i_ds: self.staging_account_i_ds,
+            staging_account_ids: self.staging_account_ids,
         }
     }
 }

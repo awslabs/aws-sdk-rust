@@ -11,8 +11,10 @@ pub struct DescribeDbProxiesOutput {
 }
 impl DescribeDbProxiesOutput {
     /// <p>A return value representing an arbitrary number of <code>DBProxy</code> data structures.</p>
-    pub fn db_proxies(&self) -> ::std::option::Option<&[crate::types::DbProxy]> {
-        self.db_proxies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_proxies.is_none()`.
+    pub fn db_proxies(&self) -> &[crate::types::DbProxy] {
+        self.db_proxies.as_deref().unwrap_or_default()
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

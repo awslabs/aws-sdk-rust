@@ -49,6 +49,7 @@ pub struct TransferInputDeviceInputBuilder {
 }
 impl TransferInputDeviceInputBuilder {
     /// The unique ID of this input device. For example, hd-123456789abcdef.
+    /// This field is required.
     pub fn input_device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_device_id = ::std::option::Option::Some(input.into());
         self
@@ -107,7 +108,7 @@ impl TransferInputDeviceInputBuilder {
     /// Consumes the builder and constructs a [`TransferInputDeviceInput`](crate::operation::transfer_input_device::TransferInputDeviceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::transfer_input_device::TransferInputDeviceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::transfer_input_device::TransferInputDeviceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::transfer_input_device::TransferInputDeviceInput {
             input_device_id: self.input_device_id,

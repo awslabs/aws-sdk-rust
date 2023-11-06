@@ -38,6 +38,7 @@ pub struct AcceptResourceShareInvitationInputBuilder {
 }
 impl AcceptResourceShareInvitationInputBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the invitation that you want to accept.</p>
+    /// This field is required.
     pub fn resource_share_invitation_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_share_invitation_arn = ::std::option::Option::Some(input.into());
         self
@@ -76,7 +77,7 @@ impl AcceptResourceShareInvitationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::accept_resource_share_invitation::AcceptResourceShareInvitationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::accept_resource_share_invitation::AcceptResourceShareInvitationInput {
             resource_share_invitation_arn: self.resource_share_invitation_arn,

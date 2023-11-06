@@ -34,6 +34,7 @@ pub struct DeleteThreatIntelSetInputBuilder {
 }
 impl DeleteThreatIntelSetInputBuilder {
     /// <p>The unique ID of the detector that the threatIntelSet is associated with.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteThreatIntelSetInputBuilder {
         &self.detector_id
     }
     /// <p>The unique ID of the threatIntelSet that you want to delete.</p>
+    /// This field is required.
     pub fn threat_intel_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.threat_intel_set_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DeleteThreatIntelSetInputBuilder {
     /// Consumes the builder and constructs a [`DeleteThreatIntelSetInput`](crate::operation::delete_threat_intel_set::DeleteThreatIntelSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_threat_intel_set::DeleteThreatIntelSetInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_threat_intel_set::DeleteThreatIntelSetInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_threat_intel_set::DeleteThreatIntelSetInput {
             detector_id: self.detector_id,

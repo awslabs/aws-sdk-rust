@@ -11,10 +11,10 @@ pub struct PostCallAnalyticsSettings {
     /// <li> <p>s3://DOC-EXAMPLE-BUCKET/my-output-folder/</p> </li>
     /// <li> <p>s3://DOC-EXAMPLE-BUCKET/my-output-folder/my-call-analytics-job.json</p> </li>
     /// </ol>
-    pub output_location: ::std::option::Option<::std::string::String>,
+    pub output_location: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
     /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
-    pub data_access_role_arn: ::std::option::Option<::std::string::String>,
+    pub data_access_role_arn: ::std::string::String,
     /// <p>Specify whether you want only a redacted transcript or both a redacted and an unredacted transcript. If you choose redacted and unredacted, two JSON files are generated and stored in the Amazon S3 output location you specify.</p>
     /// <p>Note that to include <code>ContentRedactionOutput</code> in your request, you must enable content redaction (<code>ContentRedactionType</code>).</p>
     pub content_redaction_output: ::std::option::Option<crate::types::ContentRedactionOutput>,
@@ -41,13 +41,15 @@ impl PostCallAnalyticsSettings {
     /// <li> <p>s3://DOC-EXAMPLE-BUCKET/my-output-folder/</p> </li>
     /// <li> <p>s3://DOC-EXAMPLE-BUCKET/my-output-folder/my-call-analytics-job.json</p> </li>
     /// </ol>
-    pub fn output_location(&self) -> ::std::option::Option<&str> {
-        self.output_location.as_deref()
+    pub fn output_location(&self) -> &str {
+        use std::ops::Deref;
+        self.output_location.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
     /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
-    pub fn data_access_role_arn(&self) -> ::std::option::Option<&str> {
-        self.data_access_role_arn.as_deref()
+    pub fn data_access_role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.data_access_role_arn.deref()
     }
     /// <p>Specify whether you want only a redacted transcript or both a redacted and an unredacted transcript. If you choose redacted and unredacted, two JSON files are generated and stored in the Amazon S3 output location you specify.</p>
     /// <p>Note that to include <code>ContentRedactionOutput</code> in your request, you must enable content redaction (<code>ContentRedactionType</code>).</p>
@@ -95,6 +97,7 @@ impl PostCallAnalyticsSettingsBuilder {
     /// <li> <p>s3://DOC-EXAMPLE-BUCKET/my-output-folder/</p> </li>
     /// <li> <p>s3://DOC-EXAMPLE-BUCKET/my-output-folder/my-call-analytics-job.json</p> </li>
     /// </ol>
+    /// This field is required.
     pub fn output_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_location = ::std::option::Option::Some(input.into());
         self
@@ -120,6 +123,7 @@ impl PostCallAnalyticsSettingsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
     /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
+    /// This field is required.
     pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_access_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -206,12 +210,25 @@ impl PostCallAnalyticsSettingsBuilder {
         &self.output_encryption_kms_key_id
     }
     /// Consumes the builder and constructs a [`PostCallAnalyticsSettings`](crate::types::PostCallAnalyticsSettings).
-    pub fn build(self) -> crate::types::PostCallAnalyticsSettings {
-        crate::types::PostCallAnalyticsSettings {
-            output_location: self.output_location,
-            data_access_role_arn: self.data_access_role_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`output_location`](crate::types::builders::PostCallAnalyticsSettingsBuilder::output_location)
+    /// - [`data_access_role_arn`](crate::types::builders::PostCallAnalyticsSettingsBuilder::data_access_role_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::PostCallAnalyticsSettings, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PostCallAnalyticsSettings {
+            output_location: self.output_location.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "output_location",
+                    "output_location was not specified but it is required when building PostCallAnalyticsSettings",
+                )
+            })?,
+            data_access_role_arn: self.data_access_role_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "data_access_role_arn",
+                    "data_access_role_arn was not specified but it is required when building PostCallAnalyticsSettings",
+                )
+            })?,
             content_redaction_output: self.content_redaction_output,
             output_encryption_kms_key_id: self.output_encryption_kms_key_id,
-        }
+        })
     }
 }

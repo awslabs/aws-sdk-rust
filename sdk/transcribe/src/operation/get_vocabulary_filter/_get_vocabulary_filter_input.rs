@@ -27,6 +27,7 @@ pub struct GetVocabularyFilterInputBuilder {
 }
 impl GetVocabularyFilterInputBuilder {
     /// <p>The name of the custom vocabulary filter you want information about. Custom vocabulary filter names are case sensitive.</p>
+    /// This field is required.
     pub fn vocabulary_filter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vocabulary_filter_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetVocabularyFilterInputBuilder {
     /// Consumes the builder and constructs a [`GetVocabularyFilterInput`](crate::operation::get_vocabulary_filter::GetVocabularyFilterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_vocabulary_filter::GetVocabularyFilterInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_vocabulary_filter::GetVocabularyFilterInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_vocabulary_filter::GetVocabularyFilterInput {
             vocabulary_filter_name: self.vocabulary_filter_name,

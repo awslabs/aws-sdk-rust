@@ -42,6 +42,7 @@ pub struct BatchUpdateScheduleInputBuilder {
 }
 impl BatchUpdateScheduleInputBuilder {
     /// Id of the channel whose schedule is being updated.
+    /// This field is required.
     pub fn channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_id = ::std::option::Option::Some(input.into());
         self
@@ -86,7 +87,7 @@ impl BatchUpdateScheduleInputBuilder {
     /// Consumes the builder and constructs a [`BatchUpdateScheduleInput`](crate::operation::batch_update_schedule::BatchUpdateScheduleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_update_schedule::BatchUpdateScheduleInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_update_schedule::BatchUpdateScheduleInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_update_schedule::BatchUpdateScheduleInput {
             channel_id: self.channel_id,

@@ -11,12 +11,16 @@ pub struct RegisterTargetsOutput {
 }
 impl RegisterTargetsOutput {
     /// <p>The targets that were successfully registered.</p>
-    pub fn successful(&self) -> ::std::option::Option<&[crate::types::Target]> {
-        self.successful.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.successful.is_none()`.
+    pub fn successful(&self) -> &[crate::types::Target] {
+        self.successful.as_deref().unwrap_or_default()
     }
     /// <p>The targets that were not registered.</p>
-    pub fn unsuccessful(&self) -> ::std::option::Option<&[crate::types::TargetFailure]> {
-        self.unsuccessful.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unsuccessful.is_none()`.
+    pub fn unsuccessful(&self) -> &[crate::types::TargetFailure] {
+        self.unsuccessful.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for RegisterTargetsOutput {

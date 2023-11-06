@@ -34,6 +34,7 @@ pub struct PutVoiceConnectorStreamingConfigurationInputBuilder {
 }
 impl PutVoiceConnectorStreamingConfigurationInputBuilder {
     /// <p>The Amazon Chime Voice Connector ID.</p>
+    /// This field is required.
     pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl PutVoiceConnectorStreamingConfigurationInputBuilder {
         &self.voice_connector_id
     }
     /// <p>The streaming configuration details to add.</p>
+    /// This field is required.
     pub fn streaming_configuration(mut self, input: crate::types::StreamingConfiguration) -> Self {
         self.streaming_configuration = ::std::option::Option::Some(input);
         self
@@ -66,7 +68,7 @@ impl PutVoiceConnectorStreamingConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_voice_connector_streaming_configuration::PutVoiceConnectorStreamingConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::put_voice_connector_streaming_configuration::PutVoiceConnectorStreamingConfigurationInput {

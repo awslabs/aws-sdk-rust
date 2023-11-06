@@ -2,48 +2,48 @@
 pub fn ser_relative_dates_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RelativeDatesFilter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.filter_id {
-        object.key("FilterId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("FilterId").string(input.filter_id.as_str());
     }
-    if let Some(var_2) = &input.column {
+    if let Some(var_1) = &input.column {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("Column").start_object();
-        crate::protocol_serde::shape_column_identifier::ser_column_identifier(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("Column").start_object();
+        crate::protocol_serde::shape_column_identifier::ser_column_identifier(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.anchor_date_configuration {
+    if let Some(var_3) = &input.anchor_date_configuration {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("AnchorDateConfiguration").start_object();
-        crate::protocol_serde::shape_anchor_date_configuration::ser_anchor_date_configuration(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("AnchorDateConfiguration").start_object();
+        crate::protocol_serde::shape_anchor_date_configuration::ser_anchor_date_configuration(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_6) = &input.minimum_granularity {
-        object.key("MinimumGranularity").string(var_6.as_str());
+    if let Some(var_5) = &input.minimum_granularity {
+        object.key("MinimumGranularity").string(var_5.as_str());
     }
-    if let Some(var_7) = &input.time_granularity {
-        object.key("TimeGranularity").string(var_7.as_str());
+    {
+        object.key("TimeGranularity").string(input.time_granularity.as_str());
     }
-    if let Some(var_8) = &input.relative_date_type {
-        object.key("RelativeDateType").string(var_8.as_str());
+    {
+        object.key("RelativeDateType").string(input.relative_date_type.as_str());
     }
-    if let Some(var_9) = &input.relative_date_value {
+    if let Some(var_6) = &input.relative_date_value {
         object.key("RelativeDateValue").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_9).into()),
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if let Some(var_10) = &input.parameter_name {
-        object.key("ParameterName").string(var_10.as_str());
+    if let Some(var_7) = &input.parameter_name {
+        object.key("ParameterName").string(var_7.as_str());
     }
-    if let Some(var_11) = &input.null_option {
-        object.key("NullOption").string(var_11.as_str());
+    {
+        object.key("NullOption").string(input.null_option.as_str());
     }
-    if let Some(var_12) = &input.exclude_period_configuration {
+    if let Some(var_8) = &input.exclude_period_configuration {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("ExcludePeriodConfiguration").start_object();
-        crate::protocol_serde::shape_exclude_period_configuration::ser_exclude_period_configuration(&mut object_13, var_12)?;
-        object_13.finish();
+        let mut object_9 = object.key("ExcludePeriodConfiguration").start_object();
+        crate::protocol_serde::shape_exclude_period_configuration::ser_exclude_period_configuration(&mut object_9, var_8)?;
+        object_9.finish();
     }
     Ok(())
 }
@@ -135,7 +135,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::relative_dates_filter_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

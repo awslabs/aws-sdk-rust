@@ -11,7 +11,7 @@ pub struct SearchPlaceIndexForPositionInput {
     pub position: ::std::option::Option<::std::vec::Vec<f64>>,
     /// <p>An optional parameter. The maximum number of results returned per request.</p>
     /// <p>Default value: <code>50</code> </p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
     /// <p>This setting affects the languages used in the results, but not the results themselves. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>
     /// <p>For an example, we'll use the Greek language. You search for a location around Athens, Greece, with the <code>language</code> parameter set to <code>en</code>. The <code>city</code> in the results will most likely be returned as <code>Athens</code>.</p>
@@ -29,12 +29,14 @@ impl SearchPlaceIndexForPositionInput {
     /// <p>Specifies the longitude and latitude of the position to query.</p>
     /// <p> This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
     /// <p>For example, <code>[-123.1174, 49.2847]</code> represents a position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
-    pub fn position(&self) -> ::std::option::Option<&[f64]> {
-        self.position.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.position.is_none()`.
+    pub fn position(&self) -> &[f64] {
+        self.position.as_deref().unwrap_or_default()
     }
     /// <p>An optional parameter. The maximum number of results returned per request.</p>
     /// <p>Default value: <code>50</code> </p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
@@ -80,6 +82,7 @@ pub struct SearchPlaceIndexForPositionInputBuilder {
 }
 impl SearchPlaceIndexForPositionInputBuilder {
     /// <p>The name of the place index resource you want to use for the search.</p>
+    /// This field is required.
     pub fn index_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_name = ::std::option::Option::Some(input.into());
         self
@@ -181,12 +184,12 @@ impl SearchPlaceIndexForPositionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionInput {
             index_name: self.index_name,
             position: self.position,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             language: self.language,
             key: self.key,
         })

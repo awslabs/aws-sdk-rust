@@ -2,33 +2,34 @@
 pub fn ser_s3_manifest_output_location(
     input: &crate::types::S3ManifestOutputLocation,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_1) = &input.expected_manifest_bucket_owner {
         let mut inner_writer = scope.start_el("ExpectedManifestBucketOwner").finish();
         inner_writer.data(var_1.as_str());
     }
-    if let Some(var_2) = &input.bucket {
+    {
         let mut inner_writer = scope.start_el("Bucket").finish();
+        inner_writer.data(input.bucket.as_str());
+    }
+    if let Some(var_2) = &input.manifest_prefix {
+        let mut inner_writer = scope.start_el("ManifestPrefix").finish();
         inner_writer.data(var_2.as_str());
     }
-    if let Some(var_3) = &input.manifest_prefix {
-        let mut inner_writer = scope.start_el("ManifestPrefix").finish();
-        inner_writer.data(var_3.as_str());
-    }
-    if let Some(var_4) = &input.manifest_encryption {
+    if let Some(var_3) = &input.manifest_encryption {
         let inner_writer = scope.start_el("ManifestEncryption");
-        crate::protocol_serde::shape_generated_manifest_encryption::ser_generated_manifest_encryption(var_4, inner_writer)?
+        crate::protocol_serde::shape_generated_manifest_encryption::ser_generated_manifest_encryption(var_3, inner_writer)?
     }
-    if let Some(var_5) = &input.manifest_format {
+    {
         let mut inner_writer = scope.start_el("ManifestFormat").finish();
-        inner_writer.data(var_5.as_str());
+        inner_writer.data(input.manifest_format.as_str());
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_s3_manifest_output_location(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::S3ManifestOutputLocation, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -37,6 +38,32 @@ pub fn de_s3_manifest_output_location(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ExpectedManifestBucketOwner") /* ExpectedManifestBucketOwner com.amazonaws.s3control#S3ManifestOutputLocation$ExpectedManifestBucketOwner */ =>  {
+                let var_4 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_expected_manifest_bucket_owner(var_4);
+            }
+            ,
+            s if s.matches("Bucket") /* Bucket com.amazonaws.s3control#S3ManifestOutputLocation$Bucket */ =>  {
+                let var_5 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_bucket(var_5);
+            }
+            ,
+            s if s.matches("ManifestPrefix") /* ManifestPrefix com.amazonaws.s3control#S3ManifestOutputLocation$ManifestPrefix */ =>  {
                 let var_6 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -46,47 +73,21 @@ pub fn de_s3_manifest_output_location(
                         ?
                     )
                 ;
-                builder = builder.set_expected_manifest_bucket_owner(var_6);
-            }
-            ,
-            s if s.matches("Bucket") /* Bucket com.amazonaws.s3control#S3ManifestOutputLocation$Bucket */ =>  {
-                let var_7 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_bucket(var_7);
-            }
-            ,
-            s if s.matches("ManifestPrefix") /* ManifestPrefix com.amazonaws.s3control#S3ManifestOutputLocation$ManifestPrefix */ =>  {
-                let var_8 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_manifest_prefix(var_8);
+                builder = builder.set_manifest_prefix(var_6);
             }
             ,
             s if s.matches("ManifestEncryption") /* ManifestEncryption com.amazonaws.s3control#S3ManifestOutputLocation$ManifestEncryption */ =>  {
-                let var_9 =
+                let var_7 =
                     Some(
                         crate::protocol_serde::shape_generated_manifest_encryption::de_generated_manifest_encryption(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_manifest_encryption(var_9);
+                builder = builder.set_manifest_encryption(var_7);
             }
             ,
             s if s.matches("ManifestFormat") /* ManifestFormat com.amazonaws.s3control#S3ManifestOutputLocation$ManifestFormat */ =>  {
-                let var_10 =
+                let var_8 =
                     Some(
                         Result::<crate::types::GeneratedManifestFormat, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::GeneratedManifestFormat::from(
@@ -96,11 +97,13 @@ pub fn de_s3_manifest_output_location(
                         ?
                     )
                 ;
-                builder = builder.set_manifest_format(var_10);
+                builder = builder.set_manifest_format(var_8);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::s3_manifest_output_location_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

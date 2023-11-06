@@ -15,8 +15,10 @@ impl RemoveTagsInput {
         self.pipeline_id.as_deref()
     }
     /// <p>The keys of the tags to remove.</p>
-    pub fn tag_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tag_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_keys.is_none()`.
+    pub fn tag_keys(&self) -> &[::std::string::String] {
+        self.tag_keys.as_deref().unwrap_or_default()
     }
 }
 impl RemoveTagsInput {
@@ -35,6 +37,7 @@ pub struct RemoveTagsInputBuilder {
 }
 impl RemoveTagsInputBuilder {
     /// <p>The ID of the pipeline.</p>
+    /// This field is required.
     pub fn pipeline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_id = ::std::option::Option::Some(input.into());
         self
@@ -69,7 +72,7 @@ impl RemoveTagsInputBuilder {
         &self.tag_keys
     }
     /// Consumes the builder and constructs a [`RemoveTagsInput`](crate::operation::remove_tags::RemoveTagsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::remove_tags::RemoveTagsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::remove_tags::RemoveTagsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::remove_tags::RemoveTagsInput {
             pipeline_id: self.pipeline_id,
             tag_keys: self.tag_keys,

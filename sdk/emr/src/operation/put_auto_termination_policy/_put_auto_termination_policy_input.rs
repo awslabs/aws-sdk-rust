@@ -34,6 +34,7 @@ pub struct PutAutoTerminationPolicyInputBuilder {
 }
 impl PutAutoTerminationPolicyInputBuilder {
     /// <p>Specifies the ID of the Amazon EMR cluster to which the auto-termination policy will be attached.</p>
+    /// This field is required.
     pub fn cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl PutAutoTerminationPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_auto_termination_policy::PutAutoTerminationPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_auto_termination_policy::PutAutoTerminationPolicyInput {
             cluster_id: self.cluster_id,

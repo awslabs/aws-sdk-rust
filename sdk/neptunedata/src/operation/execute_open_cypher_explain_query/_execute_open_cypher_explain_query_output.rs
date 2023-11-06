@@ -4,13 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecuteOpenCypherExplainQueryOutput {
     /// <p>A text blob containing the openCypher <code>explain</code> results.</p>
-    pub results: ::std::option::Option<::aws_smithy_types::Blob>,
+    pub results: ::aws_smithy_types::Blob,
     _request_id: Option<String>,
 }
 impl ExecuteOpenCypherExplainQueryOutput {
     /// <p>A text blob containing the openCypher <code>explain</code> results.</p>
-    pub fn results(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
-        self.results.as_ref()
+    pub fn results(&self) -> &::aws_smithy_types::Blob {
+        &self.results
     }
 }
 impl ::aws_http::request_id::RequestId for ExecuteOpenCypherExplainQueryOutput {
@@ -34,6 +34,7 @@ pub struct ExecuteOpenCypherExplainQueryOutputBuilder {
 }
 impl ExecuteOpenCypherExplainQueryOutputBuilder {
     /// <p>A text blob containing the openCypher <code>explain</code> results.</p>
+    /// This field is required.
     pub fn results(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.results = ::std::option::Option::Some(input);
         self
@@ -57,10 +58,22 @@ impl ExecuteOpenCypherExplainQueryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ExecuteOpenCypherExplainQueryOutput`](crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryOutput).
-    pub fn build(self) -> crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryOutput {
-        crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryOutput {
-            results: self.results,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`results`](crate::operation::execute_open_cypher_explain_query::builders::ExecuteOpenCypherExplainQueryOutputBuilder::results)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryOutput {
+            results: self.results.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "results",
+                    "results was not specified but it is required when building ExecuteOpenCypherExplainQueryOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

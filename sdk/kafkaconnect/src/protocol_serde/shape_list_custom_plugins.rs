@@ -159,9 +159,8 @@ pub(crate) fn de_list_custom_plugins(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "customPlugins" => {
-                    builder = builder.set_custom_plugins(
-                        crate::protocol_serde::shape___list_of_custom_plugin_summary::de___list_of_custom_plugin_summary(tokens)?,
-                    );
+                    builder = builder
+                        .set_custom_plugins(crate::protocol_serde::shape_list_of_custom_plugin_summary::de_list_of_custom_plugin_summary(tokens)?);
                 }
                 "nextToken" => {
                     builder = builder.set_next_token(

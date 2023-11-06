@@ -12,8 +12,10 @@ pub struct FeaturedResultsConflictException {
 }
 impl FeaturedResultsConflictException {
     /// <p>A list of the conflicting queries, including the query text, the name for the featured results set, and the identifier of the featured results set.</p>
-    pub fn conflicting_items(&self) -> ::std::option::Option<&[crate::types::ConflictingItem]> {
-        self.conflicting_items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.conflicting_items.is_none()`.
+    pub fn conflicting_items(&self) -> &[crate::types::ConflictingItem] {
+        self.conflicting_items.as_deref().unwrap_or_default()
     }
 }
 impl FeaturedResultsConflictException {

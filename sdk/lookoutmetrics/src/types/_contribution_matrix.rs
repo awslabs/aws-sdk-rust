@@ -9,8 +9,10 @@ pub struct ContributionMatrix {
 }
 impl ContributionMatrix {
     /// <p>A list of contributing dimensions.</p>
-    pub fn dimension_contribution_list(&self) -> ::std::option::Option<&[crate::types::DimensionContribution]> {
-        self.dimension_contribution_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimension_contribution_list.is_none()`.
+    pub fn dimension_contribution_list(&self) -> &[crate::types::DimensionContribution] {
+        self.dimension_contribution_list.as_deref().unwrap_or_default()
     }
 }
 impl ContributionMatrix {

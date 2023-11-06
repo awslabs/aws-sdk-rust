@@ -4,19 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetFreeTrialInfoOutput {
     /// <p>An array of objects that provide Amazon Inspector free trial details for each of the requested accounts. </p>
-    pub accounts: ::std::option::Option<::std::vec::Vec<crate::types::FreeTrialAccountInfo>>,
+    pub accounts: ::std::vec::Vec<crate::types::FreeTrialAccountInfo>,
     /// <p>An array of objects detailing any accounts that free trial data could not be returned for.</p>
-    pub failed_accounts: ::std::option::Option<::std::vec::Vec<crate::types::FreeTrialInfoError>>,
+    pub failed_accounts: ::std::vec::Vec<crate::types::FreeTrialInfoError>,
     _request_id: Option<String>,
 }
 impl BatchGetFreeTrialInfoOutput {
     /// <p>An array of objects that provide Amazon Inspector free trial details for each of the requested accounts. </p>
-    pub fn accounts(&self) -> ::std::option::Option<&[crate::types::FreeTrialAccountInfo]> {
-        self.accounts.as_deref()
+    pub fn accounts(&self) -> &[crate::types::FreeTrialAccountInfo] {
+        use std::ops::Deref;
+        self.accounts.deref()
     }
     /// <p>An array of objects detailing any accounts that free trial data could not be returned for.</p>
-    pub fn failed_accounts(&self) -> ::std::option::Option<&[crate::types::FreeTrialInfoError]> {
-        self.failed_accounts.as_deref()
+    pub fn failed_accounts(&self) -> &[crate::types::FreeTrialInfoError] {
+        use std::ops::Deref;
+        self.failed_accounts.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchGetFreeTrialInfoOutput {
@@ -90,11 +92,29 @@ impl BatchGetFreeTrialInfoOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchGetFreeTrialInfoOutput`](crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoOutput).
-    pub fn build(self) -> crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoOutput {
-        crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoOutput {
-            accounts: self.accounts,
-            failed_accounts: self.failed_accounts,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`accounts`](crate::operation::batch_get_free_trial_info::builders::BatchGetFreeTrialInfoOutputBuilder::accounts)
+    /// - [`failed_accounts`](crate::operation::batch_get_free_trial_info::builders::BatchGetFreeTrialInfoOutputBuilder::failed_accounts)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoOutput {
+            accounts: self.accounts.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "accounts",
+                    "accounts was not specified but it is required when building BatchGetFreeTrialInfoOutput",
+                )
+            })?,
+            failed_accounts: self.failed_accounts.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "failed_accounts",
+                    "failed_accounts was not specified but it is required when building BatchGetFreeTrialInfoOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

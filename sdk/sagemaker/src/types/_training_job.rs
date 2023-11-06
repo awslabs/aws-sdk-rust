@@ -267,8 +267,10 @@ impl TrainingJob {
     }
     /// <p>An array of <code>Channel</code> objects that describes each data input channel.</p>
     /// <p>Your input must be in the same Amazon Web Services region as your training job.</p>
-    pub fn input_data_config(&self) -> ::std::option::Option<&[crate::types::Channel]> {
-        self.input_data_config.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_data_config.is_none()`.
+    pub fn input_data_config(&self) -> &[crate::types::Channel] {
+        self.input_data_config.as_deref().unwrap_or_default()
     }
     /// <p>The S3 path where model artifacts that you configured when creating the job are stored. SageMaker creates subfolders for model artifacts.</p>
     pub fn output_data_config(&self) -> ::std::option::Option<&crate::types::OutputDataConfig> {
@@ -304,12 +306,16 @@ impl TrainingJob {
         self.last_modified_time.as_ref()
     }
     /// <p>A history of all of the secondary statuses that the training job has transitioned through.</p>
-    pub fn secondary_status_transitions(&self) -> ::std::option::Option<&[crate::types::SecondaryStatusTransition]> {
-        self.secondary_status_transitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secondary_status_transitions.is_none()`.
+    pub fn secondary_status_transitions(&self) -> &[crate::types::SecondaryStatusTransition] {
+        self.secondary_status_transitions.as_deref().unwrap_or_default()
     }
     /// <p>A list of final metric values that are set when the training job completes. Used only if the training job was configured to use metrics.</p>
-    pub fn final_metric_data_list(&self) -> ::std::option::Option<&[crate::types::MetricData]> {
-        self.final_metric_data_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.final_metric_data_list.is_none()`.
+    pub fn final_metric_data_list(&self) -> &[crate::types::MetricData] {
+        self.final_metric_data_list.as_deref().unwrap_or_default()
     }
     /// <p>If the <code>TrainingJob</code> was created with network isolation, the value is set to <code>true</code>. If network isolation is enabled, nodes can't communicate beyond the VPC they run in.</p>
     pub fn enable_network_isolation(&self) -> ::std::option::Option<bool> {
@@ -349,16 +355,20 @@ impl TrainingJob {
         self.experiment_config.as_ref()
     }
     /// <p>Information about the debug rule configuration.</p>
-    pub fn debug_rule_configurations(&self) -> ::std::option::Option<&[crate::types::DebugRuleConfiguration]> {
-        self.debug_rule_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.debug_rule_configurations.is_none()`.
+    pub fn debug_rule_configurations(&self) -> &[crate::types::DebugRuleConfiguration] {
+        self.debug_rule_configurations.as_deref().unwrap_or_default()
     }
     /// <p>Configuration of storage locations for the Amazon SageMaker Debugger TensorBoard output data.</p>
     pub fn tensor_board_output_config(&self) -> ::std::option::Option<&crate::types::TensorBoardOutputConfig> {
         self.tensor_board_output_config.as_ref()
     }
     /// <p>Information about the evaluation status of the rules for the training job.</p>
-    pub fn debug_rule_evaluation_statuses(&self) -> ::std::option::Option<&[crate::types::DebugRuleEvaluationStatus]> {
-        self.debug_rule_evaluation_statuses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.debug_rule_evaluation_statuses.is_none()`.
+    pub fn debug_rule_evaluation_statuses(&self) -> &[crate::types::DebugRuleEvaluationStatus] {
+        self.debug_rule_evaluation_statuses.as_deref().unwrap_or_default()
     }
     /// <p>Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and storage paths.</p>
     pub fn profiler_config(&self) -> ::std::option::Option<&crate::types::ProfilerConfig> {
@@ -373,8 +383,10 @@ impl TrainingJob {
         self.retry_strategy.as_ref()
     }
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl TrainingJob {

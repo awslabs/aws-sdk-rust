@@ -2,7 +2,7 @@
 pub fn ser_delete_detector_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_detector::DeleteDetectorInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.detector_id {
         object.key("detectorId").string(var_1.as_str());
     }

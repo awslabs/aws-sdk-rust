@@ -48,6 +48,7 @@ impl AssociateSkillWithSkillGroupInputBuilder {
         &self.skill_group_arn
     }
     /// <p>The unique identifier of the skill.</p>
+    /// This field is required.
     pub fn skill_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.skill_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl AssociateSkillWithSkillGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_skill_with_skill_group::AssociateSkillWithSkillGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::associate_skill_with_skill_group::AssociateSkillWithSkillGroupInput {
             skill_group_arn: self.skill_group_arn,

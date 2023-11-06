@@ -24,8 +24,10 @@ pub struct DescribeLocalGatewayRouteTablesInput {
 }
 impl DescribeLocalGatewayRouteTablesInput {
     /// <p>The IDs of the local gateway route tables.</p>
-    pub fn local_gateway_route_table_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.local_gateway_route_table_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.local_gateway_route_table_ids.is_none()`.
+    pub fn local_gateway_route_table_ids(&self) -> &[::std::string::String] {
+        self.local_gateway_route_table_ids.as_deref().unwrap_or_default()
     }
     /// <p>One or more filters.</p>
     /// <ul>
@@ -36,8 +38,10 @@ impl DescribeLocalGatewayRouteTablesInput {
     /// <li> <p> <code>owner-id</code> - The ID of the Amazon Web Services account that owns the local gateway route table.</p> </li>
     /// <li> <p> <code>state</code> - The state of the local gateway route table.</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -181,7 +185,7 @@ impl DescribeLocalGatewayRouteTablesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_local_gateway_route_tables::DescribeLocalGatewayRouteTablesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_local_gateway_route_tables::DescribeLocalGatewayRouteTablesInput {

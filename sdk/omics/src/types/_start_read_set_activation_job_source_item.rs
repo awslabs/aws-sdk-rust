@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartReadSetActivationJobSourceItem {
     /// <p>The source's read set ID.</p>
-    pub read_set_id: ::std::option::Option<::std::string::String>,
+    pub read_set_id: ::std::string::String,
 }
 impl StartReadSetActivationJobSourceItem {
     /// <p>The source's read set ID.</p>
-    pub fn read_set_id(&self) -> ::std::option::Option<&str> {
-        self.read_set_id.as_deref()
+    pub fn read_set_id(&self) -> &str {
+        use std::ops::Deref;
+        self.read_set_id.deref()
     }
 }
 impl StartReadSetActivationJobSourceItem {
@@ -28,6 +29,7 @@ pub struct StartReadSetActivationJobSourceItemBuilder {
 }
 impl StartReadSetActivationJobSourceItemBuilder {
     /// <p>The source's read set ID.</p>
+    /// This field is required.
     pub fn read_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.read_set_id = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl StartReadSetActivationJobSourceItemBuilder {
         &self.read_set_id
     }
     /// Consumes the builder and constructs a [`StartReadSetActivationJobSourceItem`](crate::types::StartReadSetActivationJobSourceItem).
-    pub fn build(self) -> crate::types::StartReadSetActivationJobSourceItem {
-        crate::types::StartReadSetActivationJobSourceItem {
-            read_set_id: self.read_set_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`read_set_id`](crate::types::builders::StartReadSetActivationJobSourceItemBuilder::read_set_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::StartReadSetActivationJobSourceItem, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::StartReadSetActivationJobSourceItem {
+            read_set_id: self.read_set_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "read_set_id",
+                    "read_set_id was not specified but it is required when building StartReadSetActivationJobSourceItem",
+                )
+            })?,
+        })
     }
 }

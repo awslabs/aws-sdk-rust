@@ -34,6 +34,7 @@ pub struct DeleteRepositoryInputBuilder {
 }
 impl DeleteRepositoryInputBuilder {
     /// <p>The repository provider.</p>
+    /// This field is required.
     pub fn provider(mut self, input: crate::types::RepositoryProvider) -> Self {
         self.provider = ::std::option::Option::Some(input);
         self
@@ -48,6 +49,7 @@ impl DeleteRepositoryInputBuilder {
         &self.provider
     }
     /// <p>The repository name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DeleteRepositoryInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRepositoryInput`](crate::operation::delete_repository::DeleteRepositoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_repository::DeleteRepositoryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_repository::DeleteRepositoryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_repository::DeleteRepositoryInput {
             provider: self.provider,
             name: self.name,

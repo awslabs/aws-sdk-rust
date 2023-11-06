@@ -13,8 +13,10 @@ pub struct GetEnabledStandardsInput {
 }
 impl GetEnabledStandardsInput {
     /// <p>The list of the standards subscription ARNs for the standards to retrieve.</p>
-    pub fn standards_subscription_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.standards_subscription_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.standards_subscription_arns.is_none()`.
+    pub fn standards_subscription_arns(&self) -> &[::std::string::String] {
+        self.standards_subscription_arns.as_deref().unwrap_or_default()
     }
     /// <p>The token that is required for pagination. On your first call to the <code>GetEnabledStandards</code> operation, set the value of this parameter to <code>NULL</code>.</p>
     /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
@@ -96,7 +98,7 @@ impl GetEnabledStandardsInputBuilder {
     /// Consumes the builder and constructs a [`GetEnabledStandardsInput`](crate::operation::get_enabled_standards::GetEnabledStandardsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_enabled_standards::GetEnabledStandardsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_enabled_standards::GetEnabledStandardsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_enabled_standards::GetEnabledStandardsInput {
             standards_subscription_arns: self.standards_subscription_arns,

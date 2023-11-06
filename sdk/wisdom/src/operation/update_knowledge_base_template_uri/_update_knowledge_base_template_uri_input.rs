@@ -34,6 +34,7 @@ pub struct UpdateKnowledgeBaseTemplateUriInputBuilder {
 }
 impl UpdateKnowledgeBaseTemplateUriInputBuilder {
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// This field is required.
     pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.knowledge_base_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateKnowledgeBaseTemplateUriInputBuilder {
         &self.knowledge_base_id
     }
     /// <p>The template URI to update.</p>
+    /// This field is required.
     pub fn template_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_uri = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl UpdateKnowledgeBaseTemplateUriInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_knowledge_base_template_uri::UpdateKnowledgeBaseTemplateUriInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_knowledge_base_template_uri::UpdateKnowledgeBaseTemplateUriInput {

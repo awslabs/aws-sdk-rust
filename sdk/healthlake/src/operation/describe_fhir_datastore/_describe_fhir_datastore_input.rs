@@ -27,6 +27,7 @@ pub struct DescribeFhirDatastoreInputBuilder {
 }
 impl DescribeFhirDatastoreInputBuilder {
     /// <p>The AWS-generated data store ID.</p>
+    /// This field is required.
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeFhirDatastoreInputBuilder {
     /// Consumes the builder and constructs a [`DescribeFhirDatastoreInput`](crate::operation::describe_fhir_datastore::DescribeFhirDatastoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_fhir_datastore::DescribeFhirDatastoreInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_fhir_datastore::DescribeFhirDatastoreInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_fhir_datastore::DescribeFhirDatastoreInput {
             datastore_id: self.datastore_id,

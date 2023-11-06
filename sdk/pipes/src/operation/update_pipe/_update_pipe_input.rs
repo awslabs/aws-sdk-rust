@@ -98,6 +98,7 @@ pub struct UpdatePipeInputBuilder {
 }
 impl UpdatePipeInputBuilder {
     /// <p>The name of the pipe.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -210,6 +211,7 @@ impl UpdatePipeInputBuilder {
         &self.target_parameters
     }
     /// <p>The ARN of the role that allows the pipe to send data to the target.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -224,7 +226,7 @@ impl UpdatePipeInputBuilder {
         &self.role_arn
     }
     /// Consumes the builder and constructs a [`UpdatePipeInput`](crate::operation::update_pipe::UpdatePipeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_pipe::UpdatePipeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_pipe::UpdatePipeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_pipe::UpdatePipeInput {
             name: self.name,
             description: self.description,

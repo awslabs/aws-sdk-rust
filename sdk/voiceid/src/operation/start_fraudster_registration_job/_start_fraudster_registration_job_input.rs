@@ -110,6 +110,7 @@ impl StartFraudsterRegistrationJobInputBuilder {
         &self.job_name
     }
     /// <p>The identifier of the domain that contains the fraudster registration job and in which the fraudsters are registered.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -124,6 +125,7 @@ impl StartFraudsterRegistrationJobInputBuilder {
         &self.domain_id
     }
     /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the Job output file. Refer to the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-fraudster-watchlist.html">Create and edit a fraudster watchlist</a> documentation for the permissions needed in this role.</p>
+    /// This field is required.
     pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_access_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -152,6 +154,7 @@ impl StartFraudsterRegistrationJobInputBuilder {
         &self.registration_config
     }
     /// <p>The input data config containing an S3 URI for the input manifest file that contains the list of fraudster registration requests.</p>
+    /// This field is required.
     pub fn input_data_config(mut self, input: crate::types::InputDataConfig) -> Self {
         self.input_data_config = ::std::option::Option::Some(input);
         self
@@ -166,6 +169,7 @@ impl StartFraudsterRegistrationJobInputBuilder {
         &self.input_data_config
     }
     /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS key ID to encrypt the file.</p>
+    /// This field is required.
     pub fn output_data_config(mut self, input: crate::types::OutputDataConfig) -> Self {
         self.output_data_config = ::std::option::Option::Some(input);
         self
@@ -184,7 +188,7 @@ impl StartFraudsterRegistrationJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJobInput {
             client_token: self.client_token,

@@ -5,18 +5,18 @@
 
 //! Assume credentials for a role through the AWS Security Token Service (STS).
 
-use crate::connector::expect_connector;
-use crate::provider_config::ProviderConfig;
-use aws_credential_types::cache::CredentialsCache;
-use aws_credential_types::provider::{self, error::CredentialsError, future, ProvideCredentials};
+use aws_credential_types::provider::{
+    self, error::CredentialsError, future, ProvideCredentials, SharedCredentialsProvider,
+};
 use aws_sdk_sts::operation::assume_role::builders::AssumeRoleFluentBuilder;
 use aws_sdk_sts::operation::assume_role::AssumeRoleError;
 use aws_sdk_sts::types::PolicyDescriptorType;
 use aws_sdk_sts::Client as StsClient;
-use aws_smithy_client::erase::DynConnector;
-use aws_smithy_http::result::SdkError;
+use aws_smithy_runtime::client::identity::IdentityCache;
+use aws_smithy_runtime_api::client::result::SdkError;
 use aws_smithy_types::error::display::DisplayErrorContext;
 use aws_types::region::Region;
+use aws_types::SdkConfig;
 use std::time::Duration;
 use tracing::Instrument;
 
@@ -28,19 +28,44 @@ use tracing::Instrument;
 /// the desired role.
 ///
 /// # Examples
+/// Create an AssumeRoleProvider explicitly set to us-east-2 that utilizes the default credentials chain.
 /// ```no_run
-/// use aws_credential_types::Credentials;
-/// use aws_config::sts::{AssumeRoleProvider};
+/// use aws_config::sts::AssumeRoleProvider;
 /// use aws_types::region::Region;
-/// use aws_config::environment;
-/// use aws_config::environment::credentials::EnvironmentVariableCredentialsProvider;
-/// use std::sync::Arc;
-///
+/// # async fn docs() {
 /// let provider = AssumeRoleProvider::builder("arn:aws:iam::123456789012:role/demo")
 ///   .region(Region::from_static("us-east-2"))
 ///   .session_name("testAR")
-///   .build(Arc::new(EnvironmentVariableCredentialsProvider::new()) as Arc<_>);
+///   .build().await;
+/// }
 /// ```
+///
+/// Create an AssumeRoleProvider from an explicitly configured base configuration.
+/// ```no_run
+/// use aws_config::sts::AssumeRoleProvider;
+/// use aws_types::region::Region;
+/// # async fn docs() {
+/// let conf = aws_config::from_env().use_fips(true).load().await;
+/// let provider = AssumeRoleProvider::builder("arn:aws:iam::123456789012:role/demo")
+///   .configure(&conf)
+///   .session_name("testAR")
+///   .build().await;
+/// }
+/// ```
+///
+/// Create an AssumeroleProvider that sources credentials from a provider credential provider:
+/// ```no_run
+/// use aws_config::sts::AssumeRoleProvider;
+/// use aws_types::region::Region;
+/// use aws_config::environment::EnvironmentVariableCredentialsProvider;
+/// # async fn docs() {
+/// let provider = AssumeRoleProvider::builder("arn:aws:iam::123456789012:role/demo")
+///   .session_name("test-assume-role-session")
+///   // only consider environment variables, explicitly.
+///   .build_from_provider(EnvironmentVariableCredentialsProvider::new()).await;
+/// }
+/// ```
+///
 #[derive(Debug)]
 pub struct AssumeRoleProvider {
     inner: Inner,
@@ -72,12 +97,11 @@ pub struct AssumeRoleProviderBuilder {
     role_arn: String,
     external_id: Option<String>,
     session_name: Option<String>,
-    region: Option<Region>,
-    conf: Option<ProviderConfig>,
     session_length: Option<Duration>,
     policy: Option<String>,
     policy_arns: Option<Vec<PolicyDescriptorType>>,
-    credentials_cache: Option<CredentialsCache>,
+    region_override: Option<Region>,
+    sdk_config: Option<SdkConfig>,
 }
 
 impl AssumeRoleProviderBuilder {
@@ -94,11 +118,10 @@ impl AssumeRoleProviderBuilder {
             external_id: None,
             session_name: None,
             session_length: None,
-            region: None,
-            conf: None,
             policy: None,
             policy_arns: None,
-            credentials_cache: None,
+            sdk_config: None,
+            region_override: None,
         }
     }
 
@@ -162,65 +185,61 @@ impl AssumeRoleProviderBuilder {
 
     /// Set the region to assume the role in.
     ///
-    /// This dictates which STS endpoint the AssumeRole action is invoked on.
+    /// This dictates which STS endpoint the AssumeRole action is invoked on. This will override
+    /// a region set from `.configure(...)`
     pub fn region(mut self, region: Region) -> Self {
-        self.region = Some(region);
+        self.region_override = Some(region);
         self
     }
 
-    /// If the `rustls` or `nativetls` features are enabled, this field is optional and a default
-    /// backing connection will be provided.
-    pub fn connection(mut self, conn: impl aws_smithy_client::bounds::SmithyConnector) -> Self {
-        let conf = match self.conf {
-            Some(conf) => conf.with_http_connector(DynConnector::new(conn)),
-            None => ProviderConfig::default().with_http_connector(DynConnector::new(conn)),
-        };
-        self.conf = Some(conf);
-        self
-    }
-
-    #[deprecated(
-        note = "This should not be necessary as the default, no caching, is usually what you want."
-    )]
-    /// Set the [`CredentialsCache`] for credentials retrieved from STS.
-    ///
-    /// By default, an [`AssumeRoleProvider`] internally uses `NoCredentialsCache` because the
-    /// provider itself will be wrapped by `LazyCredentialsCache` when a service client is created.
-    pub fn credentials_cache(mut self, cache: CredentialsCache) -> Self {
-        self.credentials_cache = Some(cache);
-        self
-    }
-
-    /// Override the configuration used for this provider
+    /// Sets the configuration used for this provider
     ///
     /// This enables overriding the connection used to communicate with STS in addition to other internal
     /// fields like the time source and sleep implementation used for caching.
-    pub fn configure(mut self, conf: &ProviderConfig) -> Self {
-        self.conf = Some(conf.clone());
+    ///
+    /// If this field is not provided, configuration from [`aws_config::load_from_env().await`] is used.
+    ///
+    /// # Examples
+    /// ```rust
+    /// # async fn docs() {
+    /// use aws_types::region::Region;
+    /// use aws_config::sts::AssumeRoleProvider;
+    /// let config = aws_config::from_env().region(Region::from_static("us-west-2")).load().await;
+    /// let assume_role_provider = AssumeRoleProvider::builder("arn:aws:iam::123456789012:role/example")
+    ///   .configure(&config)
+    ///   .build();
+    /// }
+    pub fn configure(mut self, conf: &SdkConfig) -> Self {
+        self.sdk_config = Some(conf.clone());
         self
     }
 
-    /// Build a credentials provider for this role authorized by the given `provider`.
-    pub fn build(self, provider: impl ProvideCredentials + 'static) -> AssumeRoleProvider {
-        let conf = self.conf.unwrap_or_default();
+    /// Build a credentials provider for this role.
+    ///
+    /// Base credentials will be used from the [`SdkConfig`] set via [`Self::configure`] or loaded
+    /// from [`aws_config::from_env`](crate::from_env) if `configure` was never called.
+    pub async fn build(self) -> AssumeRoleProvider {
+        let mut conf = match self.sdk_config {
+            Some(conf) => conf,
+            None => crate::load_from_env().await,
+        };
+        // ignore a identity cache set from SdkConfig
+        conf = conf
+            .into_builder()
+            .identity_cache(IdentityCache::no_cache())
+            .build();
 
-        let credentials_cache = self
-            .credentials_cache
-            .unwrap_or_else(CredentialsCache::no_caching);
+        // set a region override if one exists
+        if let Some(region) = self.region_override {
+            conf = conf.into_builder().region(region).build()
+        }
 
-        let mut config = aws_sdk_sts::Config::builder()
-            .credentials_cache(credentials_cache)
-            .credentials_provider(provider)
-            .time_source(conf.time_source())
-            .region(self.region.clone())
-            .http_connector(expect_connector(
-                "The AssumeRole credentials provider",
-                conf.connector(&Default::default()),
-            ));
-        config.set_sleep_impl(conf.sleep());
+        let config = aws_sdk_sts::config::Builder::from(&conf);
+
+        let time_source = conf.time_source().expect("A time source must be provided.");
 
         let session_name = self.session_name.unwrap_or_else(|| {
-            super::util::default_session_name("assume-role-provider", conf.time_source().now())
+            super::util::default_session_name("assume-role-provider", time_source.now())
         });
 
         let sts_client = StsClient::from_conf(config.build());
@@ -236,6 +255,23 @@ impl AssumeRoleProviderBuilder {
         AssumeRoleProvider {
             inner: Inner { fluent_builder },
         }
+    }
+
+    /// Build a credentials provider for this role authorized by the given `provider`.
+    pub async fn build_from_provider(
+        mut self,
+        provider: impl ProvideCredentials + 'static,
+    ) -> AssumeRoleProvider {
+        let conf = match self.sdk_config {
+            Some(conf) => conf,
+            None => crate::load_from_env().await,
+        };
+        let conf = conf
+            .into_builder()
+            .credentials_provider(SharedCredentialsProvider::new(provider))
+            .build();
+        self.sdk_config = Some(conf);
+        self.build().await
     }
 }
 
@@ -287,50 +323,124 @@ impl ProvideCredentials for AssumeRoleProvider {
 
 #[cfg(test)]
 mod test {
-    use crate::provider_config::ProviderConfig;
     use crate::sts::AssumeRoleProvider;
     use aws_credential_types::credential_fn::provide_credentials_fn;
-    use aws_credential_types::provider::ProvideCredentials;
+    use aws_credential_types::provider::{ProvideCredentials, SharedCredentialsProvider};
     use aws_credential_types::Credentials;
-    use aws_smithy_async::rt::sleep::TokioSleep;
+    use aws_smithy_async::rt::sleep::{SharedAsyncSleep, TokioSleep};
     use aws_smithy_async::test_util::instant_time_and_sleep;
     use aws_smithy_async::time::StaticTimeSource;
-    use aws_smithy_client::erase::DynConnector;
-    use aws_smithy_client::test_connection::{capture_request, TestConnection};
-    use aws_smithy_http::body::SdkBody;
+    use aws_smithy_runtime::client::http::test_util::{
+        capture_request, ReplayEvent, StaticReplayClient,
+    };
+    use aws_smithy_runtime::test_util::capture_test_logs::capture_test_logs;
+    use aws_smithy_types::body::SdkBody;
+    use aws_types::os_shim_internal::Env;
     use aws_types::region::Region;
+    use aws_types::SdkConfig;
+    use http::header::AUTHORIZATION;
     use std::time::{Duration, UNIX_EPOCH};
 
     #[tokio::test]
     async fn configures_session_length() {
-        let (server, request) = capture_request(None);
-        let provider_conf = ProviderConfig::empty()
-            .with_sleep(TokioSleep::new())
-            .with_time_source(StaticTimeSource::new(
+        let (http_client, request) = capture_request(None);
+        let sdk_config = SdkConfig::builder()
+            .sleep_impl(SharedAsyncSleep::new(TokioSleep::new()))
+            .time_source(StaticTimeSource::new(
                 UNIX_EPOCH + Duration::from_secs(1234567890 - 120),
             ))
-            .with_http_connector(DynConnector::new(server));
+            .http_client(http_client)
+            .region(Region::from_static("this-will-be-overridden"))
+            .build();
         let provider = AssumeRoleProvider::builder("myrole")
-            .configure(&provider_conf)
+            .configure(&sdk_config)
             .region(Region::new("us-east-1"))
             .session_length(Duration::from_secs(1234567))
-            .build(provide_credentials_fn(|| async {
+            .build_from_provider(provide_credentials_fn(|| async {
                 Ok(Credentials::for_tests())
-            }));
-        let _ = provider.provide_credentials().await;
+            }))
+            .await;
+        let _ = dbg!(provider.provide_credentials().await);
         let req = request.expect_request();
         let str_body = std::str::from_utf8(req.body().bytes().unwrap()).unwrap();
         assert!(str_body.contains("1234567"), "{}", str_body);
+        assert_eq!(req.uri(), "https://sts.us-east-1.amazonaws.com/");
+    }
+
+    #[tokio::test]
+    async fn loads_region_from_sdk_config() {
+        let (http_client, request) = capture_request(None);
+        let sdk_config = SdkConfig::builder()
+            .sleep_impl(SharedAsyncSleep::new(TokioSleep::new()))
+            .time_source(StaticTimeSource::new(
+                UNIX_EPOCH + Duration::from_secs(1234567890 - 120),
+            ))
+            .http_client(http_client)
+            .credentials_provider(SharedCredentialsProvider::new(provide_credentials_fn(
+                || async {
+                    panic!("don't call me — will be overridden");
+                },
+            )))
+            .region(Region::from_static("us-west-2"))
+            .build();
+        let provider = AssumeRoleProvider::builder("myrole")
+            .configure(&sdk_config)
+            .session_length(Duration::from_secs(1234567))
+            .build_from_provider(provide_credentials_fn(|| async {
+                Ok(Credentials::for_tests())
+            }))
+            .await;
+        let _ = dbg!(provider.provide_credentials().await);
+        let req = request.expect_request();
+        assert_eq!(req.uri(), "https://sts.us-west-2.amazonaws.com/");
+    }
+
+    /// Test that `build()` where no provider is passed still works
+    #[tokio::test]
+    async fn build_method_from_sdk_config() {
+        let _guard = capture_test_logs();
+        let (http_client, request) = capture_request(Some(
+            http::Response::builder()
+                .status(404)
+                .body(SdkBody::from(""))
+                .unwrap(),
+        ));
+        let conf = crate::from_env()
+            .env(Env::from_slice(&[
+                ("AWS_ACCESS_KEY_ID", "123-key"),
+                ("AWS_SECRET_ACCESS_KEY", "456"),
+                ("AWS_REGION", "us-west-17"),
+            ]))
+            .use_dual_stack(true)
+            .use_fips(true)
+            .time_source(StaticTimeSource::from_secs(1234567890))
+            .http_client(http_client)
+            .load()
+            .await;
+        let provider = AssumeRoleProvider::builder("role")
+            .configure(&conf)
+            .build()
+            .await;
+        let _ = provider.provide_credentials().await;
+        let req = request.expect_request();
+        let auth_header = req.headers().get(AUTHORIZATION).unwrap().to_string();
+        let expect = "Credential=123-key/20090213/us-west-17/sts/aws4_request";
+        assert!(
+            auth_header.contains(expect),
+            "Expected header to contain {expect} but it was {auth_header}"
+        );
+        // ensure that FIPS & DualStack are also respected
+        assert_eq!("https://sts-fips.us-west-17.api.aws/", req.uri())
     }
 
     #[tokio::test]
     async fn provider_does_not_cache_credentials_by_default() {
-        let conn = TestConnection::new(vec![
-            (http::Request::new(SdkBody::from("request body")),
+        let http_client = StaticReplayClient::new(vec![
+            ReplayEvent::new(http::Request::new(SdkBody::from("request body")),
             http::Response::builder().status(200).body(SdkBody::from(
                 "<AssumeRoleResponse xmlns=\"https://sts.amazonaws.com/doc/2011-06-15/\">\n  <AssumeRoleResult>\n    <AssumedRoleUser>\n      <AssumedRoleId>AROAR42TAWARILN3MNKUT:assume-role-from-profile-1632246085998</AssumedRoleId>\n      <Arn>arn:aws:sts::130633740322:assumed-role/assume-provider-test/assume-role-from-profile-1632246085998</Arn>\n    </AssumedRoleUser>\n    <Credentials>\n      <AccessKeyId>ASIARCORRECT</AccessKeyId>\n      <SecretAccessKey>secretkeycorrect</SecretAccessKey>\n      <SessionToken>tokencorrect</SessionToken>\n      <Expiration>2009-02-13T23:31:30Z</Expiration>\n    </Credentials>\n  </AssumeRoleResult>\n  <ResponseMetadata>\n    <RequestId>d9d47248-fd55-4686-ad7c-0fb7cd1cddd7</RequestId>\n  </ResponseMetadata>\n</AssumeRoleResponse>\n"
             )).unwrap()),
-            (http::Request::new(SdkBody::from("request body")),
+            ReplayEvent::new(http::Request::new(SdkBody::from("request body")),
             http::Response::builder().status(200).body(SdkBody::from(
                 "<AssumeRoleResponse xmlns=\"https://sts.amazonaws.com/doc/2011-06-15/\">\n  <AssumeRoleResult>\n    <AssumedRoleUser>\n      <AssumedRoleId>AROAR42TAWARILN3MNKUT:assume-role-from-profile-1632246085998</AssumedRoleId>\n      <Arn>arn:aws:sts::130633740322:assumed-role/assume-provider-test/assume-role-from-profile-1632246085998</Arn>\n    </AssumedRoleUser>\n    <Credentials>\n      <AccessKeyId>ASIARCORRECT</AccessKeyId>\n      <SecretAccessKey>TESTSECRET</SecretAccessKey>\n      <SessionToken>tokencorrect</SessionToken>\n      <Expiration>2009-02-13T23:33:30Z</Expiration>\n    </Credentials>\n  </AssumeRoleResult>\n  <ResponseMetadata>\n    <RequestId>c2e971c2-702d-4124-9b1f-1670febbea18</RequestId>\n  </ResponseMetadata>\n</AssumeRoleResponse>\n"
             )).unwrap()),
@@ -340,10 +450,11 @@ mod test {
             UNIX_EPOCH + Duration::from_secs(1234567890 - 120), // 1234567890 since UNIX_EPOCH is 2009-02-13T23:31:30Z
         );
 
-        let provider_conf = ProviderConfig::empty()
-            .with_sleep(sleep)
-            .with_time_source(testing_time_source.clone())
-            .with_http_connector(DynConnector::new(conn));
+        let sdk_config = SdkConfig::builder()
+            .sleep_impl(SharedAsyncSleep::new(sleep))
+            .time_source(testing_time_source.clone())
+            .http_client(http_client)
+            .build();
         let credentials_list = std::sync::Arc::new(std::sync::Mutex::new(vec![
             Credentials::new(
                 "test",
@@ -362,15 +473,16 @@ mod test {
         ]));
         let credentials_list_cloned = credentials_list.clone();
         let provider = AssumeRoleProvider::builder("myrole")
-            .configure(&provider_conf)
+            .configure(&sdk_config)
             .region(Region::new("us-east-1"))
-            .build(provide_credentials_fn(move || {
+            .build_from_provider(provide_credentials_fn(move || {
                 let list = credentials_list.clone();
                 async move {
                     let next = list.lock().unwrap().remove(0);
                     Ok(next)
                 }
-            }));
+            }))
+            .await;
 
         let creds_first = provider
             .provide_credentials()

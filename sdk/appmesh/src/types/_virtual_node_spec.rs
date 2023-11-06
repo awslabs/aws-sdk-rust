@@ -21,12 +21,16 @@ impl VirtualNodeSpec {
         self.service_discovery.as_ref()
     }
     /// <p>The listener that the virtual node is expected to receive inbound traffic from. You can specify one listener.</p>
-    pub fn listeners(&self) -> ::std::option::Option<&[crate::types::Listener]> {
-        self.listeners.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.listeners.is_none()`.
+    pub fn listeners(&self) -> &[crate::types::Listener] {
+        self.listeners.as_deref().unwrap_or_default()
     }
     /// <p>The backends that the virtual node is expected to send outbound traffic to.</p>
-    pub fn backends(&self) -> ::std::option::Option<&[crate::types::Backend]> {
-        self.backends.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.backends.is_none()`.
+    pub fn backends(&self) -> &[crate::types::Backend] {
+        self.backends.as_deref().unwrap_or_default()
     }
     /// <p>A reference to an object that represents the defaults for backends.</p>
     pub fn backend_defaults(&self) -> ::std::option::Option<&crate::types::BackendDefaults> {

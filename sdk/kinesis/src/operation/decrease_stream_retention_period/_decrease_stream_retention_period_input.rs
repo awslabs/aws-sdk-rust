@@ -56,6 +56,7 @@ impl DecreaseStreamRetentionPeriodInputBuilder {
         &self.stream_name
     }
     /// <p>The new retention period of the stream, in hours. Must be less than the current retention period.</p>
+    /// This field is required.
     pub fn retention_period_hours(mut self, input: i32) -> Self {
         self.retention_period_hours = ::std::option::Option::Some(input);
         self
@@ -88,7 +89,7 @@ impl DecreaseStreamRetentionPeriodInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::decrease_stream_retention_period::DecreaseStreamRetentionPeriodInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::decrease_stream_retention_period::DecreaseStreamRetentionPeriodInput {
             stream_name: self.stream_name,

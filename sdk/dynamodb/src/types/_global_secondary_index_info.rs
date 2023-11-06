@@ -33,8 +33,10 @@ impl GlobalSecondaryIndexInfo {
     /// <p>The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.</p>
     /// <p>The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.</p>
     /// </note>
-    pub fn key_schema(&self) -> ::std::option::Option<&[crate::types::KeySchemaElement]> {
-        self.key_schema.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.key_schema.is_none()`.
+    pub fn key_schema(&self) -> &[crate::types::KeySchemaElement] {
+        self.key_schema.as_deref().unwrap_or_default()
     }
     /// <p>Represents attributes that are copied (projected) from the table into the global secondary index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. </p>
     pub fn projection(&self) -> ::std::option::Option<&crate::types::Projection> {

@@ -5,20 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Location {
     /// <p>The Amazon Resource Name (ARN) of an S3 bucket.</p>
-    pub bucket_arn: ::std::option::Option<::std::string::String>,
+    pub bucket_arn: ::std::string::String,
     /// <p>The file key for an object in an S3 bucket.</p>
-    pub file_key: ::std::option::Option<::std::string::String>,
+    pub file_key: ::std::string::String,
     /// <p>The version of an object in an S3 bucket.</p>
     pub object_version: ::std::option::Option<::std::string::String>,
 }
 impl S3Location {
     /// <p>The Amazon Resource Name (ARN) of an S3 bucket.</p>
-    pub fn bucket_arn(&self) -> ::std::option::Option<&str> {
-        self.bucket_arn.as_deref()
+    pub fn bucket_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket_arn.deref()
     }
     /// <p>The file key for an object in an S3 bucket.</p>
-    pub fn file_key(&self) -> ::std::option::Option<&str> {
-        self.file_key.as_deref()
+    pub fn file_key(&self) -> &str {
+        use std::ops::Deref;
+        self.file_key.deref()
     }
     /// <p>The version of an object in an S3 bucket.</p>
     pub fn object_version(&self) -> ::std::option::Option<&str> {
@@ -42,6 +44,7 @@ pub struct S3LocationBuilder {
 }
 impl S3LocationBuilder {
     /// <p>The Amazon Resource Name (ARN) of an S3 bucket.</p>
+    /// This field is required.
     pub fn bucket_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_arn = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl S3LocationBuilder {
         &self.bucket_arn
     }
     /// <p>The file key for an object in an S3 bucket.</p>
+    /// This field is required.
     pub fn file_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_key = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +88,24 @@ impl S3LocationBuilder {
         &self.object_version
     }
     /// Consumes the builder and constructs a [`S3Location`](crate::types::S3Location).
-    pub fn build(self) -> crate::types::S3Location {
-        crate::types::S3Location {
-            bucket_arn: self.bucket_arn,
-            file_key: self.file_key,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bucket_arn`](crate::types::builders::S3LocationBuilder::bucket_arn)
+    /// - [`file_key`](crate::types::builders::S3LocationBuilder::file_key)
+    pub fn build(self) -> ::std::result::Result<crate::types::S3Location, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::S3Location {
+            bucket_arn: self.bucket_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "bucket_arn",
+                    "bucket_arn was not specified but it is required when building S3Location",
+                )
+            })?,
+            file_key: self.file_key.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "file_key",
+                    "file_key was not specified but it is required when building S3Location",
+                )
+            })?,
             object_version: self.object_version,
-        }
+        })
     }
 }

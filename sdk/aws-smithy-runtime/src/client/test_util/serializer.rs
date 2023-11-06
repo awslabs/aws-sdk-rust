@@ -7,11 +7,11 @@ use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::interceptors::context::Input;
 use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
 use aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin;
-use aws_smithy_runtime_api::client::ser_de::{RequestSerializer, SharedRequestSerializer};
+use aws_smithy_runtime_api::client::ser_de::{SerializeRequest, SharedRequestSerializer};
 use aws_smithy_types::config_bag::{ConfigBag, FrozenLayer, Layer};
 use std::sync::Mutex;
 
-/// Test [`RequestSerializer`] that returns a canned request.
+/// Test [`SerializeRequest`] that returns a canned request.
 #[derive(Default, Debug)]
 pub struct CannedRequestSerializer {
     inner: Mutex<Option<Result<HttpRequest, BoxError>>>,
@@ -40,7 +40,7 @@ impl CannedRequestSerializer {
     }
 }
 
-impl RequestSerializer for CannedRequestSerializer {
+impl SerializeRequest for CannedRequestSerializer {
     fn serialize_input(
         &self,
         _input: Input,

@@ -55,6 +55,7 @@ pub struct GetCommentsForComparedCommitInputBuilder {
 }
 impl GetCommentsForComparedCommitInputBuilder {
     /// <p>The name of the repository where you want to compare commits.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +84,7 @@ impl GetCommentsForComparedCommitInputBuilder {
         &self.before_commit_id
     }
     /// <p>To establish the directionality of the comparison, the full commit ID of the after commit.</p>
+    /// This field is required.
     pub fn after_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.after_commit_id = ::std::option::Option::Some(input.into());
         self
@@ -129,7 +131,7 @@ impl GetCommentsForComparedCommitInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitInput {
             repository_name: self.repository_name,

@@ -33,11 +33,10 @@ pub fn de_describe_gateway_capability_configuration_http_error(
                             crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationError::unhandled,
                         )?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::internal_failure_exception_correct_errors(output).build().map_err(
+                        crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationError::unhandled,
+                    )?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -52,11 +51,10 @@ pub fn de_describe_gateway_capability_configuration_http_error(
                             crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationError::unhandled,
                         )?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::invalid_request_exception_correct_errors(output).build().map_err(
+                        crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationError::unhandled,
+                    )?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -72,11 +70,10 @@ pub fn de_describe_gateway_capability_configuration_http_error(
                             crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationError::unhandled,
                         )?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::resource_not_found_exception_correct_errors(output).build().map_err(
+                        crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationError::unhandled,
+                    )?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -90,11 +87,10 @@ pub fn de_describe_gateway_capability_configuration_http_error(
                         crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationError::unhandled,
                     )?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::throttling_exception_correct_errors(output).build().map_err(
+                        crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationError::unhandled,
+                    )?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -121,7 +117,9 @@ pub fn de_describe_gateway_capability_configuration_http_response(
         )
         .map_err(crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::describe_gateway_capability_configuration_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationError::unhandled)?
     })
 }
 

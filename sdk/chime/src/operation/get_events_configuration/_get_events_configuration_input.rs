@@ -34,6 +34,7 @@ pub struct GetEventsConfigurationInputBuilder {
 }
 impl GetEventsConfigurationInputBuilder {
     /// <p>The Amazon Chime account ID.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetEventsConfigurationInputBuilder {
         &self.account_id
     }
     /// <p>The bot ID.</p>
+    /// This field is required.
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
         self
@@ -64,8 +66,10 @@ impl GetEventsConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`GetEventsConfigurationInput`](crate::operation::get_events_configuration::GetEventsConfigurationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_events_configuration::GetEventsConfigurationInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::get_events_configuration::GetEventsConfigurationInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::get_events_configuration::GetEventsConfigurationInput {
             account_id: self.account_id,
             bot_id: self.bot_id,

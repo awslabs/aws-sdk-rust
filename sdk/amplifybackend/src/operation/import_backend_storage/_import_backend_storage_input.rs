@@ -49,6 +49,7 @@ pub struct ImportBackendStorageInputBuilder {
 }
 impl ImportBackendStorageInputBuilder {
     /// <p>The app ID.</p>
+    /// This field is required.
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl ImportBackendStorageInputBuilder {
         &self.app_id
     }
     /// <p>The name of the backend environment.</p>
+    /// This field is required.
     pub fn backend_environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backend_environment_name = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +93,7 @@ impl ImportBackendStorageInputBuilder {
         &self.bucket_name
     }
     /// <p>The name of the storage service.</p>
+    /// This field is required.
     pub fn service_name(mut self, input: crate::types::ServiceName) -> Self {
         self.service_name = ::std::option::Option::Some(input);
         self
@@ -107,7 +110,7 @@ impl ImportBackendStorageInputBuilder {
     /// Consumes the builder and constructs a [`ImportBackendStorageInput`](crate::operation::import_backend_storage::ImportBackendStorageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::import_backend_storage::ImportBackendStorageInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::import_backend_storage::ImportBackendStorageInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::import_backend_storage::ImportBackendStorageInput {
             app_id: self.app_id,

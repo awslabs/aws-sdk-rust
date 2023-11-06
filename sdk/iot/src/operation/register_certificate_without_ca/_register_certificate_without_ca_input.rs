@@ -34,6 +34,7 @@ pub struct RegisterCertificateWithoutCaInputBuilder {
 }
 impl RegisterCertificateWithoutCaInputBuilder {
     /// <p>The certificate data, in PEM format.</p>
+    /// This field is required.
     pub fn certificate_pem(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_pem = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl RegisterCertificateWithoutCaInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCaInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCaInput {
             certificate_pem: self.certificate_pem,

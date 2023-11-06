@@ -6,7 +6,7 @@ pub struct ListIdentitySourcesOutput {
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The list of identity sources stored in the specified policy store.</p>
-    pub identity_sources: ::std::option::Option<::std::vec::Vec<crate::types::IdentitySourceItem>>,
+    pub identity_sources: ::std::vec::Vec<crate::types::IdentitySourceItem>,
     _request_id: Option<String>,
 }
 impl ListIdentitySourcesOutput {
@@ -15,8 +15,9 @@ impl ListIdentitySourcesOutput {
         self.next_token.as_deref()
     }
     /// <p>The list of identity sources stored in the specified policy store.</p>
-    pub fn identity_sources(&self) -> ::std::option::Option<&[crate::types::IdentitySourceItem]> {
-        self.identity_sources.as_deref()
+    pub fn identity_sources(&self) -> &[crate::types::IdentitySourceItem] {
+        use std::ops::Deref;
+        self.identity_sources.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListIdentitySourcesOutput {
@@ -84,11 +85,21 @@ impl ListIdentitySourcesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListIdentitySourcesOutput`](crate::operation::list_identity_sources::ListIdentitySourcesOutput).
-    pub fn build(self) -> crate::operation::list_identity_sources::ListIdentitySourcesOutput {
-        crate::operation::list_identity_sources::ListIdentitySourcesOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`identity_sources`](crate::operation::list_identity_sources::builders::ListIdentitySourcesOutputBuilder::identity_sources)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_identity_sources::ListIdentitySourcesOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_identity_sources::ListIdentitySourcesOutput {
             next_token: self.next_token,
-            identity_sources: self.identity_sources,
+            identity_sources: self.identity_sources.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "identity_sources",
+                    "identity_sources was not specified but it is required when building ListIdentitySourcesOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

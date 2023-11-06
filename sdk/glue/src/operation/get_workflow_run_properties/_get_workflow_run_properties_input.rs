@@ -34,6 +34,7 @@ pub struct GetWorkflowRunPropertiesInputBuilder {
 }
 impl GetWorkflowRunPropertiesInputBuilder {
     /// <p>Name of the workflow which was run.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetWorkflowRunPropertiesInputBuilder {
         &self.name
     }
     /// <p>The ID of the workflow run whose run properties should be returned.</p>
+    /// This field is required.
     pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.run_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl GetWorkflowRunPropertiesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_workflow_run_properties::GetWorkflowRunPropertiesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_workflow_run_properties::GetWorkflowRunPropertiesInput {
             name: self.name,

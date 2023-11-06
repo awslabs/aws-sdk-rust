@@ -28,6 +28,7 @@ pub struct ResumeClusterMessageBuilder {
 }
 impl ResumeClusterMessageBuilder {
     /// <p>The identifier of the cluster to be resumed.</p>
+    /// This field is required.
     pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self

@@ -13,16 +13,22 @@ pub struct GetEventPredictionOutput {
 }
 impl GetEventPredictionOutput {
     /// <p>The model scores. Amazon Fraud Detector generates model scores between 0 and 1000, where 0 is low fraud risk and 1000 is high fraud risk. Model scores are directly related to the false positive rate (FPR). For example, a score of 600 corresponds to an estimated 10% false positive rate whereas a score of 900 corresponds to an estimated 2% false positive rate.</p>
-    pub fn model_scores(&self) -> ::std::option::Option<&[crate::types::ModelScores]> {
-        self.model_scores.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.model_scores.is_none()`.
+    pub fn model_scores(&self) -> &[crate::types::ModelScores] {
+        self.model_scores.as_deref().unwrap_or_default()
     }
     /// <p>The results from the rules.</p>
-    pub fn rule_results(&self) -> ::std::option::Option<&[crate::types::RuleResult]> {
-        self.rule_results.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rule_results.is_none()`.
+    pub fn rule_results(&self) -> &[crate::types::RuleResult] {
+        self.rule_results.as_deref().unwrap_or_default()
     }
     /// <p>The model scores for Amazon SageMaker models.</p>
-    pub fn external_model_outputs(&self) -> ::std::option::Option<&[crate::types::ExternalModelOutputs]> {
-        self.external_model_outputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.external_model_outputs.is_none()`.
+    pub fn external_model_outputs(&self) -> &[crate::types::ExternalModelOutputs] {
+        self.external_model_outputs.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetEventPredictionOutput {

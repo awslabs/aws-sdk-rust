@@ -5,24 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EntitlementData {
     /// <p>Entitlement data name.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>Entitlement data value.</p>
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>Entitlement data unit.</p>
-    pub unit: ::std::option::Option<crate::types::EntitlementDataUnit>,
+    pub unit: crate::types::EntitlementDataUnit,
 }
 impl EntitlementData {
     /// <p>Entitlement data name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>Entitlement data value.</p>
     pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
     /// <p>Entitlement data unit.</p>
-    pub fn unit(&self) -> ::std::option::Option<&crate::types::EntitlementDataUnit> {
-        self.unit.as_ref()
+    pub fn unit(&self) -> &crate::types::EntitlementDataUnit {
+        &self.unit
     }
 }
 impl EntitlementData {
@@ -42,6 +43,7 @@ pub struct EntitlementDataBuilder {
 }
 impl EntitlementDataBuilder {
     /// <p>Entitlement data name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl EntitlementDataBuilder {
         &self.value
     }
     /// <p>Entitlement data unit.</p>
+    /// This field is required.
     pub fn unit(mut self, input: crate::types::EntitlementDataUnit) -> Self {
         self.unit = ::std::option::Option::Some(input);
         self
@@ -84,11 +87,24 @@ impl EntitlementDataBuilder {
         &self.unit
     }
     /// Consumes the builder and constructs a [`EntitlementData`](crate::types::EntitlementData).
-    pub fn build(self) -> crate::types::EntitlementData {
-        crate::types::EntitlementData {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::EntitlementDataBuilder::name)
+    /// - [`unit`](crate::types::builders::EntitlementDataBuilder::unit)
+    pub fn build(self) -> ::std::result::Result<crate::types::EntitlementData, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EntitlementData {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building EntitlementData",
+                )
+            })?,
             value: self.value,
-            unit: self.unit,
-        }
+            unit: self.unit.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "unit",
+                    "unit was not specified but it is required when building EntitlementData",
+                )
+            })?,
+        })
     }
 }

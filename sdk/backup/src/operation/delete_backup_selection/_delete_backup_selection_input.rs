@@ -34,6 +34,7 @@ pub struct DeleteBackupSelectionInputBuilder {
 }
 impl DeleteBackupSelectionInputBuilder {
     /// <p>Uniquely identifies a backup plan.</p>
+    /// This field is required.
     pub fn backup_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_plan_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteBackupSelectionInputBuilder {
         &self.backup_plan_id
     }
     /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup plan.</p>
+    /// This field is required.
     pub fn selection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.selection_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DeleteBackupSelectionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteBackupSelectionInput`](crate::operation::delete_backup_selection::DeleteBackupSelectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_backup_selection::DeleteBackupSelectionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_backup_selection::DeleteBackupSelectionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_backup_selection::DeleteBackupSelectionInput {
             backup_plan_id: self.backup_plan_id,

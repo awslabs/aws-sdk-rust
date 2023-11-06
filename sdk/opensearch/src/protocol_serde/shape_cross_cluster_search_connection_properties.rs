@@ -42,7 +42,7 @@ where
 pub fn ser_cross_cluster_search_connection_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CrossClusterSearchConnectionProperties,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.skip_unavailable {
         object.key("SkipUnavailable").string(var_1.as_str());
     }

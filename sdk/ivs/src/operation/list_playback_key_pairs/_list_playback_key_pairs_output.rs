@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPlaybackKeyPairsOutput {
     /// <p>List of key pairs.</p>
-    pub key_pairs: ::std::option::Option<::std::vec::Vec<crate::types::PlaybackKeyPairSummary>>,
+    pub key_pairs: ::std::vec::Vec<crate::types::PlaybackKeyPairSummary>,
     /// <p>If there are more key pairs than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListPlaybackKeyPairsOutput {
     /// <p>List of key pairs.</p>
-    pub fn key_pairs(&self) -> ::std::option::Option<&[crate::types::PlaybackKeyPairSummary]> {
-        self.key_pairs.as_deref()
+    pub fn key_pairs(&self) -> &[crate::types::PlaybackKeyPairSummary] {
+        use std::ops::Deref;
+        self.key_pairs.deref()
     }
     /// <p>If there are more key pairs than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,21 @@ impl ListPlaybackKeyPairsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListPlaybackKeyPairsOutput`](crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsOutput).
-    pub fn build(self) -> crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsOutput {
-        crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsOutput {
-            key_pairs: self.key_pairs,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key_pairs`](crate::operation::list_playback_key_pairs::builders::ListPlaybackKeyPairsOutputBuilder::key_pairs)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsOutput {
+            key_pairs: self.key_pairs.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "key_pairs",
+                    "key_pairs was not specified but it is required when building ListPlaybackKeyPairsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

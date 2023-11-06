@@ -45,8 +45,10 @@ impl DescribeVolumeStatusInput {
     /// <li> <p> <code>volume-status.details-status</code> - The status of <code>volume-status.details-name</code> (for <code>io-enabled</code>: <code>passed</code> | <code>failed</code>; for <code>io-performance</code>: <code>normal</code> | <code>degraded</code> | <code>severely-degraded</code> | <code>stalled</code>).</p> </li>
     /// <li> <p> <code>volume-status.status</code> - The status of the volume (<code>ok</code> | <code>impaired</code> | <code>warning</code> | <code>insufficient-data</code>).</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. This value can be between 5 and 1,000; if the value is larger than 1,000, only 1,000 results are returned. If this parameter is not used, then all items are returned. You cannot specify this parameter and the volume IDs parameter in the same request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -58,8 +60,10 @@ impl DescribeVolumeStatusInput {
     }
     /// <p>The IDs of the volumes.</p>
     /// <p>Default: Describes all your volumes.</p>
-    pub fn volume_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.volume_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volume_ids.is_none()`.
+    pub fn volume_ids(&self) -> &[::std::string::String] {
+        self.volume_ids.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -214,7 +218,7 @@ impl DescribeVolumeStatusInputBuilder {
     /// Consumes the builder and constructs a [`DescribeVolumeStatusInput`](crate::operation::describe_volume_status::DescribeVolumeStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_volume_status::DescribeVolumeStatusInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_volume_status::DescribeVolumeStatusInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_volume_status::DescribeVolumeStatusInput {
             filters: self.filters,

@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetFindings`](crate::operation::get_findings::builders::GetFindingsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`detector_id(impl Into<String>)`](crate::operation::get_findings::builders::GetFindingsFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::get_findings::builders::GetFindingsFluentBuilder::set_detector_id): <p>The ID of the detector that specifies the GuardDuty service whose findings you want to retrieve.</p>
-    ///   - [`finding_ids(impl Into<String>)`](crate::operation::get_findings::builders::GetFindingsFluentBuilder::finding_ids) / [`set_finding_ids(Option<Vec<String>>)`](crate::operation::get_findings::builders::GetFindingsFluentBuilder::set_finding_ids): <p>The IDs of the findings that you want to retrieve.</p>
-    ///   - [`sort_criteria(SortCriteria)`](crate::operation::get_findings::builders::GetFindingsFluentBuilder::sort_criteria) / [`set_sort_criteria(Option<SortCriteria>)`](crate::operation::get_findings::builders::GetFindingsFluentBuilder::set_sort_criteria): <p>Represents the criteria used for sorting findings.</p>
+    ///   - [`detector_id(impl Into<String>)`](crate::operation::get_findings::builders::GetFindingsFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::get_findings::builders::GetFindingsFluentBuilder::set_detector_id):<br>required: **true**<br><p>The ID of the detector that specifies the GuardDuty service whose findings you want to retrieve.</p><br>
+    ///   - [`finding_ids(impl Into<String>)`](crate::operation::get_findings::builders::GetFindingsFluentBuilder::finding_ids) / [`set_finding_ids(Option<Vec::<String>>)`](crate::operation::get_findings::builders::GetFindingsFluentBuilder::set_finding_ids):<br>required: **true**<br><p>The IDs of the findings that you want to retrieve.</p><br>
+    ///   - [`sort_criteria(SortCriteria)`](crate::operation::get_findings::builders::GetFindingsFluentBuilder::sort_criteria) / [`set_sort_criteria(Option<SortCriteria>)`](crate::operation::get_findings::builders::GetFindingsFluentBuilder::set_sort_criteria):<br>required: **false**<br><p>Represents the criteria used for sorting findings.</p><br>
     /// - On success, responds with [`GetFindingsOutput`](crate::operation::get_findings::GetFindingsOutput) with field(s):
-    ///   - [`findings(Option<Vec<Finding>>)`](crate::operation::get_findings::GetFindingsOutput::findings): <p>A list of findings.</p>
+    ///   - [`findings(Option<Vec::<Finding>>)`](crate::operation::get_findings::GetFindingsOutput::findings): <p>A list of findings.</p>
     /// - On failure, responds with [`SdkError<GetFindingsError>`](crate::operation::get_findings::GetFindingsError)
     pub fn get_findings(&self) -> crate::operation::get_findings::builders::GetFindingsFluentBuilder {
         crate::operation::get_findings::builders::GetFindingsFluentBuilder::new(self.handle.clone())

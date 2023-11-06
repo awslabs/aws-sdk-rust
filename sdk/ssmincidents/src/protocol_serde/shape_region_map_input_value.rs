@@ -2,7 +2,7 @@
 pub fn ser_region_map_input_value(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RegionMapInputValue,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.sse_kms_key_id {
         object.key("sseKmsKeyId").string(var_1.as_str());
     }

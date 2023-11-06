@@ -48,6 +48,7 @@ pub struct ListCodegenJobsInputBuilder {
 }
 impl ListCodegenJobsInputBuilder {
     /// <p>The unique ID for the Amplify app.</p>
+    /// This field is required.
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl ListCodegenJobsInputBuilder {
         &self.app_id
     }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
+    /// This field is required.
     pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +108,7 @@ impl ListCodegenJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListCodegenJobsInput`](crate::operation::list_codegen_jobs::ListCodegenJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_codegen_jobs::ListCodegenJobsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_codegen_jobs::ListCodegenJobsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_codegen_jobs::ListCodegenJobsInput {
             app_id: self.app_id,
             environment_name: self.environment_name,

@@ -5,32 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActivateReadSetJobItem {
     /// <p>The job's ID.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The job's sequence store ID.</p>
-    pub sequence_store_id: ::std::option::Option<::std::string::String>,
+    pub sequence_store_id: ::std::string::String,
     /// <p>The job's status.</p>
-    pub status: ::std::option::Option<crate::types::ReadSetActivationJobStatus>,
+    pub status: crate::types::ReadSetActivationJobStatus,
     /// <p>When the job was created.</p>
-    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_time: ::aws_smithy_types::DateTime,
     /// <p>When the job completed.</p>
     pub completion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ActivateReadSetJobItem {
     /// <p>The job's ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The job's sequence store ID.</p>
-    pub fn sequence_store_id(&self) -> ::std::option::Option<&str> {
-        self.sequence_store_id.as_deref()
+    pub fn sequence_store_id(&self) -> &str {
+        use std::ops::Deref;
+        self.sequence_store_id.deref()
     }
     /// <p>The job's status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ReadSetActivationJobStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::ReadSetActivationJobStatus {
+        &self.status
     }
     /// <p>When the job was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_time.as_ref()
+    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_time
     }
     /// <p>When the job completed.</p>
     pub fn completion_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -56,6 +58,7 @@ pub struct ActivateReadSetJobItemBuilder {
 }
 impl ActivateReadSetJobItemBuilder {
     /// <p>The job's ID.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +73,7 @@ impl ActivateReadSetJobItemBuilder {
         &self.id
     }
     /// <p>The job's sequence store ID.</p>
+    /// This field is required.
     pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_store_id = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +88,7 @@ impl ActivateReadSetJobItemBuilder {
         &self.sequence_store_id
     }
     /// <p>The job's status.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::ReadSetActivationJobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -98,6 +103,7 @@ impl ActivateReadSetJobItemBuilder {
         &self.status
     }
     /// <p>When the job was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -126,13 +132,38 @@ impl ActivateReadSetJobItemBuilder {
         &self.completion_time
     }
     /// Consumes the builder and constructs a [`ActivateReadSetJobItem`](crate::types::ActivateReadSetJobItem).
-    pub fn build(self) -> crate::types::ActivateReadSetJobItem {
-        crate::types::ActivateReadSetJobItem {
-            id: self.id,
-            sequence_store_id: self.sequence_store_id,
-            status: self.status,
-            creation_time: self.creation_time,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::ActivateReadSetJobItemBuilder::id)
+    /// - [`sequence_store_id`](crate::types::builders::ActivateReadSetJobItemBuilder::sequence_store_id)
+    /// - [`status`](crate::types::builders::ActivateReadSetJobItemBuilder::status)
+    /// - [`creation_time`](crate::types::builders::ActivateReadSetJobItemBuilder::creation_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::ActivateReadSetJobItem, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ActivateReadSetJobItem {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building ActivateReadSetJobItem",
+                )
+            })?,
+            sequence_store_id: self.sequence_store_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "sequence_store_id",
+                    "sequence_store_id was not specified but it is required when building ActivateReadSetJobItem",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building ActivateReadSetJobItem",
+                )
+            })?,
+            creation_time: self.creation_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "creation_time",
+                    "creation_time was not specified but it is required when building ActivateReadSetJobItem",
+                )
+            })?,
             completion_time: self.completion_time,
-        }
+        })
     }
 }

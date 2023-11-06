@@ -42,6 +42,7 @@ pub struct UpdateRoutingProfileAgentAvailabilityTimerInputBuilder {
 }
 impl UpdateRoutingProfileAgentAvailabilityTimerInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl UpdateRoutingProfileAgentAvailabilityTimerInputBuilder {
         &self.instance_id
     }
     /// <p>The identifier of the routing profile.</p>
+    /// This field is required.
     pub fn routing_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.routing_profile_id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl UpdateRoutingProfileAgentAvailabilityTimerInputBuilder {
         &self.routing_profile_id
     }
     /// <p>Whether agents with this routing profile will have their routing order calculated based on <i>time since their last inbound contact</i> or <i>longest idle time</i>. </p>
+    /// This field is required.
     pub fn agent_availability_timer(mut self, input: crate::types::AgentAvailabilityTimer) -> Self {
         self.agent_availability_timer = ::std::option::Option::Some(input);
         self
@@ -88,7 +91,7 @@ impl UpdateRoutingProfileAgentAvailabilityTimerInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_routing_profile_agent_availability_timer::UpdateRoutingProfileAgentAvailabilityTimerInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_routing_profile_agent_availability_timer::UpdateRoutingProfileAgentAvailabilityTimerInput {

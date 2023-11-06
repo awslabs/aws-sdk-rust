@@ -27,6 +27,7 @@ pub struct GetActionInputBuilder {
 }
 impl GetActionInputBuilder {
     /// <p>The ID of the action.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetActionInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetActionInput`](crate::operation::get_action::GetActionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_action::GetActionInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_action::GetActionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_action::GetActionInput { id: self.id })
     }
 }

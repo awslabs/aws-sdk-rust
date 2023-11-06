@@ -5,20 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomPolicyDetails {
     /// <p>The runtime system for your Config Custom Policy rule. Guard is a policy-as-code language that allows you to write policies that are enforced by Config Custom Policy rules. For more information about Guard, see the <a href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>.</p>
-    pub policy_runtime: ::std::option::Option<::std::string::String>,
+    pub policy_runtime: ::std::string::String,
     /// <p>The policy definition containing the logic for your Config Custom Policy rule.</p>
-    pub policy_text: ::std::option::Option<::std::string::String>,
+    pub policy_text: ::std::string::String,
     /// <p>The boolean expression for enabling debug logging for your Config Custom Policy rule. The default value is <code>false</code>.</p>
     pub enable_debug_log_delivery: bool,
 }
 impl CustomPolicyDetails {
     /// <p>The runtime system for your Config Custom Policy rule. Guard is a policy-as-code language that allows you to write policies that are enforced by Config Custom Policy rules. For more information about Guard, see the <a href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>.</p>
-    pub fn policy_runtime(&self) -> ::std::option::Option<&str> {
-        self.policy_runtime.as_deref()
+    pub fn policy_runtime(&self) -> &str {
+        use std::ops::Deref;
+        self.policy_runtime.deref()
     }
     /// <p>The policy definition containing the logic for your Config Custom Policy rule.</p>
-    pub fn policy_text(&self) -> ::std::option::Option<&str> {
-        self.policy_text.as_deref()
+    pub fn policy_text(&self) -> &str {
+        use std::ops::Deref;
+        self.policy_text.deref()
     }
     /// <p>The boolean expression for enabling debug logging for your Config Custom Policy rule. The default value is <code>false</code>.</p>
     pub fn enable_debug_log_delivery(&self) -> bool {
@@ -42,6 +44,7 @@ pub struct CustomPolicyDetailsBuilder {
 }
 impl CustomPolicyDetailsBuilder {
     /// <p>The runtime system for your Config Custom Policy rule. Guard is a policy-as-code language that allows you to write policies that are enforced by Config Custom Policy rules. For more information about Guard, see the <a href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>.</p>
+    /// This field is required.
     pub fn policy_runtime(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_runtime = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl CustomPolicyDetailsBuilder {
         &self.policy_runtime
     }
     /// <p>The policy definition containing the logic for your Config Custom Policy rule.</p>
+    /// This field is required.
     pub fn policy_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_text = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +88,24 @@ impl CustomPolicyDetailsBuilder {
         &self.enable_debug_log_delivery
     }
     /// Consumes the builder and constructs a [`CustomPolicyDetails`](crate::types::CustomPolicyDetails).
-    pub fn build(self) -> crate::types::CustomPolicyDetails {
-        crate::types::CustomPolicyDetails {
-            policy_runtime: self.policy_runtime,
-            policy_text: self.policy_text,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`policy_runtime`](crate::types::builders::CustomPolicyDetailsBuilder::policy_runtime)
+    /// - [`policy_text`](crate::types::builders::CustomPolicyDetailsBuilder::policy_text)
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomPolicyDetails, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CustomPolicyDetails {
+            policy_runtime: self.policy_runtime.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "policy_runtime",
+                    "policy_runtime was not specified but it is required when building CustomPolicyDetails",
+                )
+            })?,
+            policy_text: self.policy_text.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "policy_text",
+                    "policy_text was not specified but it is required when building CustomPolicyDetails",
+                )
+            })?,
             enable_debug_log_delivery: self.enable_debug_log_delivery.unwrap_or_default(),
-        }
+        })
     }
 }

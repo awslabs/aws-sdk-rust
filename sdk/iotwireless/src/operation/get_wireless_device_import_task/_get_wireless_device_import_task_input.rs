@@ -27,6 +27,7 @@ pub struct GetWirelessDeviceImportTaskInputBuilder {
 }
 impl GetWirelessDeviceImportTaskInputBuilder {
     /// <p>The identifier of the import task for which information is requested.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetWirelessDeviceImportTaskInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskInput { id: self.id })
     }

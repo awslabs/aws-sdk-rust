@@ -25,8 +25,10 @@ impl DescribeDataSourcePermissionsOutput {
         self.data_source_id.as_deref()
     }
     /// <p>A list of resource permissions on the data source.</p>
-    pub fn permissions(&self) -> ::std::option::Option<&[crate::types::ResourcePermission]> {
-        self.permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permissions.is_none()`.
+    pub fn permissions(&self) -> &[crate::types::ResourcePermission] {
+        self.permissions.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(&self) -> ::std::option::Option<&str> {

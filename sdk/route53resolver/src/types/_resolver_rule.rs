@@ -73,8 +73,10 @@ impl ResolverRule {
         self.name.as_deref()
     }
     /// <p>An array that contains the IP addresses and ports that an outbound endpoint forwards DNS queries to. Typically, these are the IP addresses of DNS resolvers on your network. </p>
-    pub fn target_ips(&self) -> ::std::option::Option<&[crate::types::TargetAddress]> {
-        self.target_ips.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_ips.is_none()`.
+    pub fn target_ips(&self) -> &[crate::types::TargetAddress] {
+        self.target_ips.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the endpoint that the rule is associated with.</p>
     pub fn resolver_endpoint_id(&self) -> ::std::option::Option<&str> {

@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ConditionalFormattingGradientColor {
     /// <p>The expression that determines the formatting configuration for gradient color.</p>
-    pub expression: ::std::option::Option<::std::string::String>,
+    pub expression: ::std::string::String,
     /// <p>Determines the color.</p>
     pub color: ::std::option::Option<crate::types::GradientColor>,
 }
 impl ConditionalFormattingGradientColor {
     /// <p>The expression that determines the formatting configuration for gradient color.</p>
-    pub fn expression(&self) -> ::std::option::Option<&str> {
-        self.expression.as_deref()
+    pub fn expression(&self) -> &str {
+        use std::ops::Deref;
+        self.expression.deref()
     }
     /// <p>Determines the color.</p>
     pub fn color(&self) -> ::std::option::Option<&crate::types::GradientColor> {
@@ -43,6 +44,7 @@ pub struct ConditionalFormattingGradientColorBuilder {
 }
 impl ConditionalFormattingGradientColorBuilder {
     /// <p>The expression that determines the formatting configuration for gradient color.</p>
+    /// This field is required.
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expression = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +59,7 @@ impl ConditionalFormattingGradientColorBuilder {
         &self.expression
     }
     /// <p>Determines the color.</p>
+    /// This field is required.
     pub fn color(mut self, input: crate::types::GradientColor) -> Self {
         self.color = ::std::option::Option::Some(input);
         self
@@ -71,11 +74,18 @@ impl ConditionalFormattingGradientColorBuilder {
         &self.color
     }
     /// Consumes the builder and constructs a [`ConditionalFormattingGradientColor`](crate::types::ConditionalFormattingGradientColor).
-    pub fn build(self) -> crate::types::ConditionalFormattingGradientColor {
-        crate::types::ConditionalFormattingGradientColor {
-            expression: self.expression,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`expression`](crate::types::builders::ConditionalFormattingGradientColorBuilder::expression)
+    pub fn build(self) -> ::std::result::Result<crate::types::ConditionalFormattingGradientColor, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ConditionalFormattingGradientColor {
+            expression: self.expression.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "expression",
+                    "expression was not specified but it is required when building ConditionalFormattingGradientColor",
+                )
+            })?,
             color: self.color,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for ConditionalFormattingGradientColorBuilder {

@@ -64,7 +64,7 @@ impl ListRegexMatchSetsInputBuilder {
     /// Consumes the builder and constructs a [`ListRegexMatchSetsInput`](crate::operation::list_regex_match_sets::ListRegexMatchSetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_regex_match_sets::ListRegexMatchSetsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_regex_match_sets::ListRegexMatchSetsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_regex_match_sets::ListRegexMatchSetsInput {
             next_marker: self.next_marker,

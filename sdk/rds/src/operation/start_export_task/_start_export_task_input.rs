@@ -106,8 +106,10 @@ impl StartExportTaskInput {
     /// <li> <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot or cluster. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
     /// <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
     /// </ul>
-    pub fn export_only(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.export_only.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.export_only.is_none()`.
+    pub fn export_only(&self) -> &[::std::string::String] {
+        self.export_only.as_deref().unwrap_or_default()
     }
 }
 impl StartExportTaskInput {
@@ -131,6 +133,7 @@ pub struct StartExportTaskInputBuilder {
 }
 impl StartExportTaskInputBuilder {
     /// <p>A unique identifier for the export task. This ID isn't an identifier for the Amazon S3 bucket where the data is to be exported.</p>
+    /// This field is required.
     pub fn export_task_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.export_task_identifier = ::std::option::Option::Some(input.into());
         self
@@ -145,6 +148,7 @@ impl StartExportTaskInputBuilder {
         &self.export_task_identifier
     }
     /// <p>The Amazon Resource Name (ARN) of the snapshot or cluster to export to Amazon S3.</p>
+    /// This field is required.
     pub fn source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_arn = ::std::option::Option::Some(input.into());
         self
@@ -159,6 +163,7 @@ impl StartExportTaskInputBuilder {
         &self.source_arn
     }
     /// <p>The name of the Amazon S3 bucket to export the snapshot or cluster data to.</p>
+    /// This field is required.
     pub fn s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket_name = ::std::option::Option::Some(input.into());
         self
@@ -186,6 +191,7 @@ impl StartExportTaskInputBuilder {
     /// <li> <p> <code>arn:aws:s3:::<i>your-s3-bucket</i> </code> </p> </li>
     /// <li> <p> <code>arn:aws:s3:::<i>your-s3-bucket</i>/*</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -237,6 +243,7 @@ impl StartExportTaskInputBuilder {
     /// <li> <p>kms:DescribeKey</p> </li>
     /// <li> <p>kms:RetireGrant</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
         self
@@ -330,7 +337,7 @@ impl StartExportTaskInputBuilder {
     /// Consumes the builder and constructs a [`StartExportTaskInput`](crate::operation::start_export_task::StartExportTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_export_task::StartExportTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_export_task::StartExportTaskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_export_task::StartExportTaskInput {
             export_task_identifier: self.export_task_identifier,
             source_arn: self.source_arn,

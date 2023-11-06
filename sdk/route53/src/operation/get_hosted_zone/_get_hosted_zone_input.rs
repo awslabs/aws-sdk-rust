@@ -28,6 +28,7 @@ pub struct GetHostedZoneInputBuilder {
 }
 impl GetHostedZoneInputBuilder {
     /// <p>The ID of the hosted zone that you want to get information about.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl GetHostedZoneInputBuilder {
     /// Consumes the builder and constructs a [`GetHostedZoneInput`](crate::operation::get_hosted_zone::GetHostedZoneInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_hosted_zone::GetHostedZoneInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_hosted_zone::GetHostedZoneInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_hosted_zone::GetHostedZoneInput { id: self.id })
     }
 }

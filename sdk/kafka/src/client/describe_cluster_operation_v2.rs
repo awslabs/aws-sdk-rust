@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeClusterOperationV2`](crate::operation::describe_cluster_operation_v2::builders::DescribeClusterOperationV2FluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cluster_operation_arn(impl Into<String>)`](crate::operation::describe_cluster_operation_v2::builders::DescribeClusterOperationV2FluentBuilder::cluster_operation_arn) / [`set_cluster_operation_arn(Option<String>)`](crate::operation::describe_cluster_operation_v2::builders::DescribeClusterOperationV2FluentBuilder::set_cluster_operation_arn): ARN of the cluster operation to describe.
+    ///   - [`cluster_operation_arn(impl Into<String>)`](crate::operation::describe_cluster_operation_v2::builders::DescribeClusterOperationV2FluentBuilder::cluster_operation_arn) / [`set_cluster_operation_arn(Option<String>)`](crate::operation::describe_cluster_operation_v2::builders::DescribeClusterOperationV2FluentBuilder::set_cluster_operation_arn):<br>required: **true**<br>ARN of the cluster operation to describe.<br>
     /// - On success, responds with [`DescribeClusterOperationV2Output`](crate::operation::describe_cluster_operation_v2::DescribeClusterOperationV2Output) with field(s):
     ///   - [`cluster_operation_info(Option<ClusterOperationV2>)`](crate::operation::describe_cluster_operation_v2::DescribeClusterOperationV2Output::cluster_operation_info): <p>Cluster operation information</p>
     /// - On failure, responds with [`SdkError<DescribeClusterOperationV2Error>`](crate::operation::describe_cluster_operation_v2::DescribeClusterOperationV2Error)

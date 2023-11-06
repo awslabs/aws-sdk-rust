@@ -12,8 +12,10 @@ pub struct ListUserPoolsOutput {
 }
 impl ListUserPoolsOutput {
     /// <p>The user pools from the response to list users.</p>
-    pub fn user_pools(&self) -> ::std::option::Option<&[crate::types::UserPoolDescriptionType]> {
-        self.user_pools.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_pools.is_none()`.
+    pub fn user_pools(&self) -> &[crate::types::UserPoolDescriptionType] {
+        self.user_pools.as_deref().unwrap_or_default()
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

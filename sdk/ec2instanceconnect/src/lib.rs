@@ -28,8 +28,8 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = "0.56.1"
-//! aws-sdk-ec2instanceconnect = "0.34.0"
+//! aws-config = "0.57.1"
+//! aws-sdk-ec2instanceconnect = "0.35.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -179,6 +179,8 @@ pub mod operation;
 
 /// Primitives such as `Blob` or `DateTime` used by other types.
 pub mod primitives;
+
+mod auth_plugin;
 
 pub(crate) mod protocol_serde;
 

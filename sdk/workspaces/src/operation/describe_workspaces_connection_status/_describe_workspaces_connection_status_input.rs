@@ -10,8 +10,10 @@ pub struct DescribeWorkspacesConnectionStatusInput {
 }
 impl DescribeWorkspacesConnectionStatusInput {
     /// <p>The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.</p>
-    pub fn workspace_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.workspace_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.workspace_ids.is_none()`.
+    pub fn workspace_ids(&self) -> &[::std::string::String] {
+        self.workspace_ids.as_deref().unwrap_or_default()
     }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -72,7 +74,7 @@ impl DescribeWorkspacesConnectionStatusInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_workspaces_connection_status::DescribeWorkspacesConnectionStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_workspaces_connection_status::DescribeWorkspacesConnectionStatusInput {

@@ -24,8 +24,10 @@ impl NotifyResourceDeploymentStatusChangeInput {
         self.status.as_ref()
     }
     /// <p>The provisioned resource state change detail data that's returned by Proton.</p>
-    pub fn outputs(&self) -> ::std::option::Option<&[crate::types::Output]> {
-        self.outputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outputs.is_none()`.
+    pub fn outputs(&self) -> &[crate::types::Output] {
+        self.outputs.as_deref().unwrap_or_default()
     }
     /// <p>The deployment ID for your provisioned resource.</p>
     pub fn deployment_id(&self) -> ::std::option::Option<&str> {
@@ -66,6 +68,7 @@ pub struct NotifyResourceDeploymentStatusChangeInputBuilder {
 }
 impl NotifyResourceDeploymentStatusChangeInputBuilder {
     /// <p>The provisioned resource Amazon Resource Name (ARN).</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -146,7 +149,7 @@ impl NotifyResourceDeploymentStatusChangeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeInput {

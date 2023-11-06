@@ -11,8 +11,10 @@ pub struct DescribeAlarmHistoryOutput {
 }
 impl DescribeAlarmHistoryOutput {
     /// <p>The alarm histories, in JSON format.</p>
-    pub fn alarm_history_items(&self) -> ::std::option::Option<&[crate::types::AlarmHistoryItem]> {
-        self.alarm_history_items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alarm_history_items.is_none()`.
+    pub fn alarm_history_items(&self) -> &[crate::types::AlarmHistoryItem] {
+        self.alarm_history_items.as_deref().unwrap_or_default()
     }
     /// <p>The token that marks the start of the next batch of returned results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

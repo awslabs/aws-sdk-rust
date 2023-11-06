@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OpsMetadataFilter {
     /// <p>A filter key.</p>
-    pub key: ::std::option::Option<::std::string::String>,
+    pub key: ::std::string::String,
     /// <p>A filter value.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::vec::Vec<::std::string::String>,
 }
 impl OpsMetadataFilter {
     /// <p>A filter key.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
-        self.key.as_deref()
+    pub fn key(&self) -> &str {
+        use std::ops::Deref;
+        self.key.deref()
     }
     /// <p>A filter value.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    pub fn values(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.values.deref()
     }
 }
 impl OpsMetadataFilter {
@@ -35,6 +37,7 @@ pub struct OpsMetadataFilterBuilder {
 }
 impl OpsMetadataFilterBuilder {
     /// <p>A filter key.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -69,10 +72,23 @@ impl OpsMetadataFilterBuilder {
         &self.values
     }
     /// Consumes the builder and constructs a [`OpsMetadataFilter`](crate::types::OpsMetadataFilter).
-    pub fn build(self) -> crate::types::OpsMetadataFilter {
-        crate::types::OpsMetadataFilter {
-            key: self.key,
-            values: self.values,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key`](crate::types::builders::OpsMetadataFilterBuilder::key)
+    /// - [`values`](crate::types::builders::OpsMetadataFilterBuilder::values)
+    pub fn build(self) -> ::std::result::Result<crate::types::OpsMetadataFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::OpsMetadataFilter {
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building OpsMetadataFilter",
+                )
+            })?,
+            values: self.values.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "values",
+                    "values was not specified but it is required when building OpsMetadataFilter",
+                )
+            })?,
+        })
     }
 }

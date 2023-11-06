@@ -99,6 +99,7 @@ pub struct CreateFunctionInputBuilder {
 }
 impl CreateFunctionInputBuilder {
     /// <p>The GraphQL API ID.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -113,6 +114,7 @@ impl CreateFunctionInputBuilder {
         &self.api_id
     }
     /// <p>The <code>Function</code> name. The function name does not have to be unique.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -141,6 +143,7 @@ impl CreateFunctionInputBuilder {
         &self.description
     }
     /// <p>The <code>Function</code> <code>DataSource</code> name.</p>
+    /// This field is required.
     pub fn data_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_name = ::std::option::Option::Some(input.into());
         self
@@ -258,7 +261,7 @@ impl CreateFunctionInputBuilder {
     /// Consumes the builder and constructs a [`CreateFunctionInput`](crate::operation::create_function::CreateFunctionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_function::CreateFunctionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_function::CreateFunctionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_function::CreateFunctionInput {
             api_id: self.api_id,
             name: self.name,

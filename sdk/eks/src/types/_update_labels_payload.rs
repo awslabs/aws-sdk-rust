@@ -15,8 +15,10 @@ impl UpdateLabelsPayload {
         self.add_or_update_labels.as_ref()
     }
     /// <p>Kubernetes labels to be removed.</p>
-    pub fn remove_labels(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.remove_labels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove_labels.is_none()`.
+    pub fn remove_labels(&self) -> &[::std::string::String] {
+        self.remove_labels.as_deref().unwrap_or_default()
     }
 }
 impl UpdateLabelsPayload {

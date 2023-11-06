@@ -2,7 +2,7 @@
 pub fn ser_create_backend_auth_user_pool_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CreateBackendAuthUserPoolConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.forgot_password {
         #[allow(unused_mut)]
         let mut object_2 = object.key("forgotPassword").start_object();
@@ -128,7 +128,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::create_backend_auth_user_pool_config_correct_errors(builder).build(),
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

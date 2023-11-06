@@ -41,6 +41,7 @@ pub struct GetFaceDetectionInputBuilder {
 }
 impl GetFaceDetectionInputBuilder {
     /// <p>Unique identifier for the face detection job. The <code>JobId</code> is returned from <code>StartFaceDetection</code>.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl GetFaceDetectionInputBuilder {
     /// Consumes the builder and constructs a [`GetFaceDetectionInput`](crate::operation::get_face_detection::GetFaceDetectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_face_detection::GetFaceDetectionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_face_detection::GetFaceDetectionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_face_detection::GetFaceDetectionInput {
             job_id: self.job_id,
             max_results: self.max_results,

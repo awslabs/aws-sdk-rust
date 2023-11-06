@@ -88,6 +88,7 @@ impl StartAppInputBuilder {
         &self.client_token
     }
     /// <p>The name of the simulation of the app.</p>
+    /// This field is required.
     pub fn simulation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.simulation = ::std::option::Option::Some(input.into());
         self
@@ -102,6 +103,7 @@ impl StartAppInputBuilder {
         &self.simulation
     }
     /// <p>The name of the domain of the app.</p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -116,6 +118,7 @@ impl StartAppInputBuilder {
         &self.domain
     }
     /// <p>The name of the app.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -158,7 +161,7 @@ impl StartAppInputBuilder {
         &self.launch_overrides
     }
     /// Consumes the builder and constructs a [`StartAppInput`](crate::operation::start_app::StartAppInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_app::StartAppInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_app::StartAppInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_app::StartAppInput {
             client_token: self.client_token,
             simulation: self.simulation,

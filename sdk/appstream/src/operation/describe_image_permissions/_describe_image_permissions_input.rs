@@ -22,8 +22,10 @@ impl DescribeImagePermissionsInput {
         self.max_results
     }
     /// <p>The 12-digit identifier of one or more AWS accounts with which the image is shared.</p>
-    pub fn shared_aws_account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.shared_aws_account_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.shared_aws_account_ids.is_none()`.
+    pub fn shared_aws_account_ids(&self) -> &[::std::string::String] {
+        self.shared_aws_account_ids.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -48,6 +50,7 @@ pub struct DescribeImagePermissionsInputBuilder {
 }
 impl DescribeImagePermissionsInputBuilder {
     /// <p>The name of the private image for which to describe permissions. The image must be one that you own. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -114,7 +117,7 @@ impl DescribeImagePermissionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_image_permissions::DescribeImagePermissionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_image_permissions::DescribeImagePermissionsInput {
             name: self.name,

@@ -35,6 +35,7 @@ pub struct BatchRemoveFacetFromObjectBuilder {
 }
 impl BatchRemoveFacetFromObjectBuilder {
     /// <p>The facet to remove from the object.</p>
+    /// This field is required.
     pub fn schema_facet(mut self, input: crate::types::SchemaFacet) -> Self {
         self.schema_facet = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl BatchRemoveFacetFromObjectBuilder {
         &self.schema_facet
     }
     /// <p>A reference to the object whose facet will be removed.</p>
+    /// This field is required.
     pub fn object_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.object_reference = ::std::option::Option::Some(input);
         self

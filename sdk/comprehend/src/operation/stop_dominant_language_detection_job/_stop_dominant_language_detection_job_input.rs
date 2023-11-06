@@ -27,6 +27,7 @@ pub struct StopDominantLanguageDetectionJobInputBuilder {
 }
 impl StopDominantLanguageDetectionJobInputBuilder {
     /// <p>The identifier of the dominant language detection job to stop.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl StopDominantLanguageDetectionJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_dominant_language_detection_job::StopDominantLanguageDetectionJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::stop_dominant_language_detection_job::StopDominantLanguageDetectionJobInput { job_id: self.job_id },

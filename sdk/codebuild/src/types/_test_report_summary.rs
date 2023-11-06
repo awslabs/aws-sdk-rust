@@ -5,23 +5,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestReportSummary {
     /// <p> The number of test cases in this <code>TestReportSummary</code>. The total includes truncated test cases. </p>
-    pub total: ::std::option::Option<i32>,
+    pub total: i32,
     /// <p> A map that contains the number of each type of status returned by the test results in this <code>TestReportSummary</code>. </p>
-    pub status_counts: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
+    pub status_counts: ::std::collections::HashMap<::std::string::String, i32>,
     /// <p> The number of nanoseconds it took to run all of the test cases in this report. </p>
-    pub duration_in_nano_seconds: ::std::option::Option<i64>,
+    pub duration_in_nano_seconds: i64,
 }
 impl TestReportSummary {
     /// <p> The number of test cases in this <code>TestReportSummary</code>. The total includes truncated test cases. </p>
-    pub fn total(&self) -> ::std::option::Option<i32> {
+    pub fn total(&self) -> i32 {
         self.total
     }
     /// <p> A map that contains the number of each type of status returned by the test results in this <code>TestReportSummary</code>. </p>
-    pub fn status_counts(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, i32>> {
-        self.status_counts.as_ref()
+    pub fn status_counts(&self) -> &::std::collections::HashMap<::std::string::String, i32> {
+        &self.status_counts
     }
     /// <p> The number of nanoseconds it took to run all of the test cases in this report. </p>
-    pub fn duration_in_nano_seconds(&self) -> ::std::option::Option<i64> {
+    pub fn duration_in_nano_seconds(&self) -> i64 {
         self.duration_in_nano_seconds
     }
 }
@@ -42,6 +42,7 @@ pub struct TestReportSummaryBuilder {
 }
 impl TestReportSummaryBuilder {
     /// <p> The number of test cases in this <code>TestReportSummary</code>. The total includes truncated test cases. </p>
+    /// This field is required.
     pub fn total(mut self, input: i32) -> Self {
         self.total = ::std::option::Option::Some(input);
         self
@@ -76,6 +77,7 @@ impl TestReportSummaryBuilder {
         &self.status_counts
     }
     /// <p> The number of nanoseconds it took to run all of the test cases in this report. </p>
+    /// This field is required.
     pub fn duration_in_nano_seconds(mut self, input: i64) -> Self {
         self.duration_in_nano_seconds = ::std::option::Option::Some(input);
         self
@@ -90,11 +92,30 @@ impl TestReportSummaryBuilder {
         &self.duration_in_nano_seconds
     }
     /// Consumes the builder and constructs a [`TestReportSummary`](crate::types::TestReportSummary).
-    pub fn build(self) -> crate::types::TestReportSummary {
-        crate::types::TestReportSummary {
-            total: self.total,
-            status_counts: self.status_counts,
-            duration_in_nano_seconds: self.duration_in_nano_seconds,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`total`](crate::types::builders::TestReportSummaryBuilder::total)
+    /// - [`status_counts`](crate::types::builders::TestReportSummaryBuilder::status_counts)
+    /// - [`duration_in_nano_seconds`](crate::types::builders::TestReportSummaryBuilder::duration_in_nano_seconds)
+    pub fn build(self) -> ::std::result::Result<crate::types::TestReportSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TestReportSummary {
+            total: self.total.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "total",
+                    "total was not specified but it is required when building TestReportSummary",
+                )
+            })?,
+            status_counts: self.status_counts.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status_counts",
+                    "status_counts was not specified but it is required when building TestReportSummary",
+                )
+            })?,
+            duration_in_nano_seconds: self.duration_in_nano_seconds.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "duration_in_nano_seconds",
+                    "duration_in_nano_seconds was not specified but it is required when building TestReportSummary",
+                )
+            })?,
+        })
     }
 }

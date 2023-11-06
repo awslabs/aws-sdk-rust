@@ -28,6 +28,7 @@ pub struct ImportDataSourceBuilder {
 }
 impl ImportDataSourceBuilder {
     /// <p>The configuration parameters for the data source of the import</p>
+    /// This field is required.
     pub fn data_source_config(mut self, input: crate::types::ImportDataSourceConfig) -> Self {
         self.data_source_config = ::std::option::Option::Some(input);
         self

@@ -34,6 +34,7 @@ pub struct GetJobRunInputBuilder {
 }
 impl GetJobRunInputBuilder {
     /// <p>The ID of the application on which the job run is submitted.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetJobRunInputBuilder {
         &self.application_id
     }
     /// <p>The ID of the job run.</p>
+    /// This field is required.
     pub fn job_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_run_id = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,7 @@ impl GetJobRunInputBuilder {
         &self.job_run_id
     }
     /// Consumes the builder and constructs a [`GetJobRunInput`](crate::operation::get_job_run::GetJobRunInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_job_run::GetJobRunInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_job_run::GetJobRunInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_job_run::GetJobRunInput {
             application_id: self.application_id,
             job_run_id: self.job_run_id,

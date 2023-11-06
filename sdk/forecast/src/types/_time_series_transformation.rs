@@ -15,8 +15,10 @@ impl TimeSeriesTransformation {
         self.action.as_ref()
     }
     /// <p>An array of conditions that define which members of the related time series are transformed.</p>
-    pub fn time_series_conditions(&self) -> ::std::option::Option<&[crate::types::TimeSeriesCondition]> {
-        self.time_series_conditions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.time_series_conditions.is_none()`.
+    pub fn time_series_conditions(&self) -> &[crate::types::TimeSeriesCondition] {
+        self.time_series_conditions.as_deref().unwrap_or_default()
     }
 }
 impl TimeSeriesTransformation {

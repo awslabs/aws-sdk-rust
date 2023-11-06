@@ -37,6 +37,7 @@ pub struct SyncDeploymentJobInputBuilder {
 }
 impl SyncDeploymentJobInputBuilder {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// This field is required.
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
@@ -51,6 +52,7 @@ impl SyncDeploymentJobInputBuilder {
         &self.client_request_token
     }
     /// <p>The target fleet for the synchronization.</p>
+    /// This field is required.
     pub fn fleet(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet = ::std::option::Option::Some(input.into());
         self
@@ -67,7 +69,7 @@ impl SyncDeploymentJobInputBuilder {
     /// Consumes the builder and constructs a [`SyncDeploymentJobInput`](crate::operation::sync_deployment_job::SyncDeploymentJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::sync_deployment_job::SyncDeploymentJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::sync_deployment_job::SyncDeploymentJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::sync_deployment_job::SyncDeploymentJobInput {
             client_request_token: self.client_request_token,
             fleet: self.fleet,

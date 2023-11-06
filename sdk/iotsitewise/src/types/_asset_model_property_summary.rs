@@ -7,9 +7,9 @@ pub struct AssetModelPropertySummary {
     /// <p>The ID of the property.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the property.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The data type of the property.</p>
-    pub data_type: ::std::option::Option<crate::types::PropertyDataType>,
+    pub data_type: crate::types::PropertyDataType,
     /// <p>The data type of the structure for this property. This parameter exists on properties that have the <code>STRUCT</code> data type.</p>
     pub data_type_spec: ::std::option::Option<::std::string::String>,
     /// <p>The unit (such as <code>Newtons</code> or <code>RPM</code>) of the property.</p>
@@ -25,12 +25,13 @@ impl AssetModelPropertySummary {
         self.id.as_deref()
     }
     /// <p>The name of the property.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The data type of the property.</p>
-    pub fn data_type(&self) -> ::std::option::Option<&crate::types::PropertyDataType> {
-        self.data_type.as_ref()
+    pub fn data_type(&self) -> &crate::types::PropertyDataType {
+        &self.data_type
     }
     /// <p>The data type of the structure for this property. This parameter exists on properties that have the <code>STRUCT</code> data type.</p>
     pub fn data_type_spec(&self) -> ::std::option::Option<&str> {
@@ -84,6 +85,7 @@ impl AssetModelPropertySummaryBuilder {
         &self.id
     }
     /// <p>The name of the property.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +100,7 @@ impl AssetModelPropertySummaryBuilder {
         &self.name
     }
     /// <p>The data type of the property.</p>
+    /// This field is required.
     pub fn data_type(mut self, input: crate::types::PropertyDataType) -> Self {
         self.data_type = ::std::option::Option::Some(input);
         self
@@ -140,6 +143,7 @@ impl AssetModelPropertySummaryBuilder {
         &self.unit
     }
     /// <p>Contains a property type, which can be one of <code>attribute</code>, <code>measurement</code>, <code>metric</code>, or <code>transform</code>.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::PropertyType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -168,15 +172,28 @@ impl AssetModelPropertySummaryBuilder {
         &self.asset_model_composite_model_id
     }
     /// Consumes the builder and constructs a [`AssetModelPropertySummary`](crate::types::AssetModelPropertySummary).
-    pub fn build(self) -> crate::types::AssetModelPropertySummary {
-        crate::types::AssetModelPropertySummary {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::AssetModelPropertySummaryBuilder::name)
+    /// - [`data_type`](crate::types::builders::AssetModelPropertySummaryBuilder::data_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::AssetModelPropertySummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AssetModelPropertySummary {
             id: self.id,
-            name: self.name,
-            data_type: self.data_type,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building AssetModelPropertySummary",
+                )
+            })?,
+            data_type: self.data_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "data_type",
+                    "data_type was not specified but it is required when building AssetModelPropertySummary",
+                )
+            })?,
             data_type_spec: self.data_type_spec,
             unit: self.unit,
             r#type: self.r#type,
             asset_model_composite_model_id: self.asset_model_composite_model_id,
-        }
+        })
     }
 }

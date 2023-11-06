@@ -12,9 +12,9 @@ pub struct UploadConfiguration {
     /// /robot-test
     /// </runid>
     /// </simid></code>. </p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p> Specifies the path of the file(s) to upload. Standard Unix glob matching rules are accepted, with the addition of <code>**</code> as a <i>super asterisk</i>. For example, specifying <code>/var/log/**.log</code> causes all .log files in the <code>/var/log</code> directory tree to be collected. For more examples, see <a href="https://github.com/gobwas/glob">Glob Library</a>. </p>
-    pub path: ::std::option::Option<::std::string::String>,
+    pub path: ::std::string::String,
     /// <p>Specifies when to upload the files:</p>
     /// <dl>
     /// <dt>
@@ -31,7 +31,7 @@ pub struct UploadConfiguration {
     /// <p>Matching files are uploaded as they are created. They are deleted after they are uploaded. The specified path is checked every 5 seconds. A final check is made when all of your code (including tools) have stopped. </p>
     /// </dd>
     /// </dl>
-    pub upload_behavior: ::std::option::Option<crate::types::UploadBehavior>,
+    pub upload_behavior: crate::types::UploadBehavior,
 }
 impl UploadConfiguration {
     /// <p>A prefix that specifies where files will be uploaded in Amazon S3. It is appended to the simulation output location to determine the final path. </p>
@@ -42,12 +42,14 @@ impl UploadConfiguration {
     /// /robot-test
     /// </runid>
     /// </simid></code>. </p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p> Specifies the path of the file(s) to upload. Standard Unix glob matching rules are accepted, with the addition of <code>**</code> as a <i>super asterisk</i>. For example, specifying <code>/var/log/**.log</code> causes all .log files in the <code>/var/log</code> directory tree to be collected. For more examples, see <a href="https://github.com/gobwas/glob">Glob Library</a>. </p>
-    pub fn path(&self) -> ::std::option::Option<&str> {
-        self.path.as_deref()
+    pub fn path(&self) -> &str {
+        use std::ops::Deref;
+        self.path.deref()
     }
     /// <p>Specifies when to upload the files:</p>
     /// <dl>
@@ -65,8 +67,8 @@ impl UploadConfiguration {
     /// <p>Matching files are uploaded as they are created. They are deleted after they are uploaded. The specified path is checked every 5 seconds. A final check is made when all of your code (including tools) have stopped. </p>
     /// </dd>
     /// </dl>
-    pub fn upload_behavior(&self) -> ::std::option::Option<&crate::types::UploadBehavior> {
-        self.upload_behavior.as_ref()
+    pub fn upload_behavior(&self) -> &crate::types::UploadBehavior {
+        &self.upload_behavior
     }
 }
 impl UploadConfiguration {
@@ -93,6 +95,7 @@ impl UploadConfigurationBuilder {
     /// /robot-test
     /// </runid>
     /// </simid></code>. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -121,6 +124,7 @@ impl UploadConfigurationBuilder {
         &self.name
     }
     /// <p> Specifies the path of the file(s) to upload. Standard Unix glob matching rules are accepted, with the addition of <code>**</code> as a <i>super asterisk</i>. For example, specifying <code>/var/log/**.log</code> causes all .log files in the <code>/var/log</code> directory tree to be collected. For more examples, see <a href="https://github.com/gobwas/glob">Glob Library</a>. </p>
+    /// This field is required.
     pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path = ::std::option::Option::Some(input.into());
         self
@@ -150,6 +154,7 @@ impl UploadConfigurationBuilder {
     /// <p>Matching files are uploaded as they are created. They are deleted after they are uploaded. The specified path is checked every 5 seconds. A final check is made when all of your code (including tools) have stopped. </p>
     /// </dd>
     /// </dl>
+    /// This field is required.
     pub fn upload_behavior(mut self, input: crate::types::UploadBehavior) -> Self {
         self.upload_behavior = ::std::option::Option::Some(input);
         self
@@ -194,11 +199,30 @@ impl UploadConfigurationBuilder {
         &self.upload_behavior
     }
     /// Consumes the builder and constructs a [`UploadConfiguration`](crate::types::UploadConfiguration).
-    pub fn build(self) -> crate::types::UploadConfiguration {
-        crate::types::UploadConfiguration {
-            name: self.name,
-            path: self.path,
-            upload_behavior: self.upload_behavior,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::UploadConfigurationBuilder::name)
+    /// - [`path`](crate::types::builders::UploadConfigurationBuilder::path)
+    /// - [`upload_behavior`](crate::types::builders::UploadConfigurationBuilder::upload_behavior)
+    pub fn build(self) -> ::std::result::Result<crate::types::UploadConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::UploadConfiguration {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building UploadConfiguration",
+                )
+            })?,
+            path: self.path.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "path",
+                    "path was not specified but it is required when building UploadConfiguration",
+                )
+            })?,
+            upload_behavior: self.upload_behavior.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "upload_behavior",
+                    "upload_behavior was not specified but it is required when building UploadConfiguration",
+                )
+            })?,
+        })
     }
 }

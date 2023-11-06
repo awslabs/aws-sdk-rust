@@ -41,6 +41,7 @@ pub struct DeleteRuleInputBuilder {
 }
 impl DeleteRuleInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    /// This field is required.
     pub fn service_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_identifier = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DeleteRuleInputBuilder {
         &self.service_identifier
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
+    /// This field is required.
     pub fn listener_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.listener_identifier = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl DeleteRuleInputBuilder {
         &self.listener_identifier
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the rule.</p>
+    /// This field is required.
     pub fn rule_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_identifier = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +86,7 @@ impl DeleteRuleInputBuilder {
         &self.rule_identifier
     }
     /// Consumes the builder and constructs a [`DeleteRuleInput`](crate::operation::delete_rule::DeleteRuleInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_rule::DeleteRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_rule::DeleteRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_rule::DeleteRuleInput {
             service_identifier: self.service_identifier,
             listener_identifier: self.listener_identifier,

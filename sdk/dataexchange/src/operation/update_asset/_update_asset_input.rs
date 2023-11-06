@@ -48,6 +48,7 @@ pub struct UpdateAssetInputBuilder {
 }
 impl UpdateAssetInputBuilder {
     /// <p>The unique identifier for an asset.</p>
+    /// This field is required.
     pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl UpdateAssetInputBuilder {
         &self.asset_id
     }
     /// <p>The unique identifier for a data set.</p>
+    /// This field is required.
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl UpdateAssetInputBuilder {
         &self.data_set_id
     }
     /// <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target Amazon S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name. When importing from AWS Lake Formation, the static values of "Database(s) included in the LF-tag policy" or "Table(s) included in LF-tag policy" are used as the name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl UpdateAssetInputBuilder {
         &self.name
     }
     /// <p>The unique identifier for a revision.</p>
+    /// This field is required.
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
         self
@@ -104,7 +108,7 @@ impl UpdateAssetInputBuilder {
         &self.revision_id
     }
     /// Consumes the builder and constructs a [`UpdateAssetInput`](crate::operation::update_asset::UpdateAssetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_asset::UpdateAssetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_asset::UpdateAssetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_asset::UpdateAssetInput {
             asset_id: self.asset_id,
             data_set_id: self.data_set_id,

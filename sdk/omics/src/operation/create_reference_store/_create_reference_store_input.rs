@@ -55,6 +55,7 @@ pub struct CreateReferenceStoreInputBuilder {
 }
 impl CreateReferenceStoreInputBuilder {
     /// <p>A name for the store.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -133,7 +134,7 @@ impl CreateReferenceStoreInputBuilder {
     /// Consumes the builder and constructs a [`CreateReferenceStoreInput`](crate::operation::create_reference_store::CreateReferenceStoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_reference_store::CreateReferenceStoreInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_reference_store::CreateReferenceStoreInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_reference_store::CreateReferenceStoreInput {
             name: self.name,

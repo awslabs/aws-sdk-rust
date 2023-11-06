@@ -85,7 +85,8 @@ impl DescribeUserGroupsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeUserGroupsInput`](crate::operation::describe_user_groups::DescribeUserGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_user_groups::DescribeUserGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_user_groups::DescribeUserGroupsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::describe_user_groups::DescribeUserGroupsInput {
             user_group_id: self.user_group_id,
             max_records: self.max_records,

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSuiteRunReport`](crate::operation::get_suite_run_report::builders::GetSuiteRunReportFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`suite_definition_id(impl Into<String>)`](crate::operation::get_suite_run_report::builders::GetSuiteRunReportFluentBuilder::suite_definition_id) / [`set_suite_definition_id(Option<String>)`](crate::operation::get_suite_run_report::builders::GetSuiteRunReportFluentBuilder::set_suite_definition_id): <p>Suite definition ID of the test suite.</p>
-    ///   - [`suite_run_id(impl Into<String>)`](crate::operation::get_suite_run_report::builders::GetSuiteRunReportFluentBuilder::suite_run_id) / [`set_suite_run_id(Option<String>)`](crate::operation::get_suite_run_report::builders::GetSuiteRunReportFluentBuilder::set_suite_run_id): <p>Suite run ID of the test suite run.</p>
+    ///   - [`suite_definition_id(impl Into<String>)`](crate::operation::get_suite_run_report::builders::GetSuiteRunReportFluentBuilder::suite_definition_id) / [`set_suite_definition_id(Option<String>)`](crate::operation::get_suite_run_report::builders::GetSuiteRunReportFluentBuilder::set_suite_definition_id):<br>required: **true**<br><p>Suite definition ID of the test suite.</p><br>
+    ///   - [`suite_run_id(impl Into<String>)`](crate::operation::get_suite_run_report::builders::GetSuiteRunReportFluentBuilder::suite_run_id) / [`set_suite_run_id(Option<String>)`](crate::operation::get_suite_run_report::builders::GetSuiteRunReportFluentBuilder::set_suite_run_id):<br>required: **true**<br><p>Suite run ID of the test suite run.</p><br>
     /// - On success, responds with [`GetSuiteRunReportOutput`](crate::operation::get_suite_run_report::GetSuiteRunReportOutput) with field(s):
     ///   - [`qualification_report_download_url(Option<String>)`](crate::operation::get_suite_run_report::GetSuiteRunReportOutput::qualification_report_download_url): <p>Download URL of the qualification report.</p>
     /// - On failure, responds with [`SdkError<GetSuiteRunReportError>`](crate::operation::get_suite_run_report::GetSuiteRunReportError)

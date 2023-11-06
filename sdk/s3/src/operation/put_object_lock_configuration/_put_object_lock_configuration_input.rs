@@ -73,6 +73,7 @@ pub struct PutObjectLockConfigurationInputBuilder {
 }
 impl PutObjectLockConfigurationInputBuilder {
     /// <p>The bucket whose Object Lock configuration you want to create or replace.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -181,7 +182,7 @@ impl PutObjectLockConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_object_lock_configuration::PutObjectLockConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_object_lock_configuration::PutObjectLockConfigurationInput {
             bucket: self.bucket,

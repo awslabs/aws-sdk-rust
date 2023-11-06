@@ -27,6 +27,7 @@ pub struct DeleteCommentContentInputBuilder {
 }
 impl DeleteCommentContentInputBuilder {
     /// <p>The unique, system-generated ID of the comment. To get this ID, use <code>GetCommentsForComparedCommit</code> or <code>GetCommentsForPullRequest</code>.</p>
+    /// This field is required.
     pub fn comment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteCommentContentInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCommentContentInput`](crate::operation::delete_comment_content::DeleteCommentContentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_comment_content::DeleteCommentContentInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_comment_content::DeleteCommentContentInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_comment_content::DeleteCommentContentInput { comment_id: self.comment_id })
     }

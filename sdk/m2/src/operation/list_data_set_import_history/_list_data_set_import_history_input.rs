@@ -69,6 +69,7 @@ impl ListDataSetImportHistoryInputBuilder {
         &self.max_results
     }
     /// <p>The unique identifier of the application.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListDataSetImportHistoryInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_data_set_import_history::ListDataSetImportHistoryInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_data_set_import_history::ListDataSetImportHistoryInput {
             next_token: self.next_token,

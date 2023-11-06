@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UnarchiveApplication`](crate::operation::unarchive_application::builders::UnarchiveApplicationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::operation::unarchive_application::builders::UnarchiveApplicationFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::unarchive_application::builders::UnarchiveApplicationFluentBuilder::set_application_id): <p>Application ID.</p>
-    ///   - [`account_id(impl Into<String>)`](crate::operation::unarchive_application::builders::UnarchiveApplicationFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::unarchive_application::builders::UnarchiveApplicationFluentBuilder::set_account_id): <p>Account ID.</p>
+    ///   - [`application_id(impl Into<String>)`](crate::operation::unarchive_application::builders::UnarchiveApplicationFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::unarchive_application::builders::UnarchiveApplicationFluentBuilder::set_application_id):<br>required: **true**<br><p>Application ID.</p><br>
+    ///   - [`account_id(impl Into<String>)`](crate::operation::unarchive_application::builders::UnarchiveApplicationFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::unarchive_application::builders::UnarchiveApplicationFluentBuilder::set_account_id):<br>required: **false**<br><p>Account ID.</p><br>
     /// - On success, responds with [`UnarchiveApplicationOutput`](crate::operation::unarchive_application::UnarchiveApplicationOutput) with field(s):
     ///   - [`application_id(Option<String>)`](crate::operation::unarchive_application::UnarchiveApplicationOutput::application_id): <p>Application ID.</p>
     ///   - [`arn(Option<String>)`](crate::operation::unarchive_application::UnarchiveApplicationOutput::arn): <p>Application ARN.</p>
@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`application_aggregated_status(Option<ApplicationAggregatedStatus>)`](crate::operation::unarchive_application::UnarchiveApplicationOutput::application_aggregated_status): <p>Application aggregated status.</p>
     ///   - [`creation_date_time(Option<String>)`](crate::operation::unarchive_application::UnarchiveApplicationOutput::creation_date_time): <p>Application creation dateTime.</p>
     ///   - [`last_modified_date_time(Option<String>)`](crate::operation::unarchive_application::UnarchiveApplicationOutput::last_modified_date_time): <p>Application last modified dateTime.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::unarchive_application::UnarchiveApplicationOutput::tags): <p>Application tags.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::unarchive_application::UnarchiveApplicationOutput::tags): <p>Application tags.</p>
     ///   - [`wave_id(Option<String>)`](crate::operation::unarchive_application::UnarchiveApplicationOutput::wave_id): <p>Application wave ID.</p>
     /// - On failure, responds with [`SdkError<UnarchiveApplicationError>`](crate::operation::unarchive_application::UnarchiveApplicationError)
     pub fn unarchive_application(&self) -> crate::operation::unarchive_application::builders::UnarchiveApplicationFluentBuilder {

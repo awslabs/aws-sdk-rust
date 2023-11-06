@@ -162,8 +162,10 @@ impl GetPropertygraphStreamInputBuilder {
     /// Consumes the builder and constructs a [`GetPropertygraphStreamInput`](crate::operation::get_propertygraph_stream::GetPropertygraphStreamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_propertygraph_stream::GetPropertygraphStreamInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::get_propertygraph_stream::GetPropertygraphStreamInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::get_propertygraph_stream::GetPropertygraphStreamInput {
             limit: self.limit,
             iterator_type: self.iterator_type,

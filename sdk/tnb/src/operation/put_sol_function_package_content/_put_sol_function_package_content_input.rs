@@ -41,6 +41,7 @@ pub struct PutSolFunctionPackageContentInputBuilder {
 }
 impl PutSolFunctionPackageContentInputBuilder {
     /// <p>Function package ID.</p>
+    /// This field is required.
     pub fn vnf_pkg_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vnf_pkg_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl PutSolFunctionPackageContentInputBuilder {
         &self.content_type
     }
     /// <p>Function package file.</p>
+    /// This field is required.
     pub fn file(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.file = ::std::option::Option::Some(input);
         self
@@ -87,7 +89,7 @@ impl PutSolFunctionPackageContentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentInput {
             vnf_pkg_id: self.vnf_pkg_id,

@@ -2,54 +2,54 @@
 pub fn ser_report_definition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ReportDefinition,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.report_name {
-        object.key("ReportName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("ReportName").string(input.report_name.as_str());
     }
-    if let Some(var_2) = &input.time_unit {
-        object.key("TimeUnit").string(var_2.as_str());
+    {
+        object.key("TimeUnit").string(input.time_unit.as_str());
     }
-    if let Some(var_3) = &input.format {
-        object.key("Format").string(var_3.as_str());
+    {
+        object.key("Format").string(input.format.as_str());
     }
-    if let Some(var_4) = &input.compression {
-        object.key("Compression").string(var_4.as_str());
+    {
+        object.key("Compression").string(input.compression.as_str());
     }
-    if let Some(var_5) = &input.additional_schema_elements {
-        let mut array_6 = object.key("AdditionalSchemaElements").start_array();
-        for item_7 in var_5 {
+    {
+        let mut array_1 = object.key("AdditionalSchemaElements").start_array();
+        for item_2 in &input.additional_schema_elements {
             {
-                array_6.value().string(item_7.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_6.finish();
+        array_1.finish();
     }
-    if let Some(var_8) = &input.s3_bucket {
-        object.key("S3Bucket").string(var_8.as_str());
+    {
+        object.key("S3Bucket").string(input.s3_bucket.as_str());
     }
-    if let Some(var_9) = &input.s3_prefix {
-        object.key("S3Prefix").string(var_9.as_str());
+    {
+        object.key("S3Prefix").string(input.s3_prefix.as_str());
     }
-    if let Some(var_10) = &input.s3_region {
-        object.key("S3Region").string(var_10.as_str());
+    {
+        object.key("S3Region").string(input.s3_region.as_str());
     }
-    if let Some(var_11) = &input.additional_artifacts {
-        let mut array_12 = object.key("AdditionalArtifacts").start_array();
-        for item_13 in var_11 {
+    if let Some(var_3) = &input.additional_artifacts {
+        let mut array_4 = object.key("AdditionalArtifacts").start_array();
+        for item_5 in var_3 {
             {
-                array_12.value().string(item_13.as_str());
+                array_4.value().string(item_5.as_str());
             }
         }
-        array_12.finish();
+        array_4.finish();
     }
-    if let Some(var_14) = &input.refresh_closed_reports {
-        object.key("RefreshClosedReports").boolean(*var_14);
+    if let Some(var_6) = &input.refresh_closed_reports {
+        object.key("RefreshClosedReports").boolean(*var_6);
     }
-    if let Some(var_15) = &input.report_versioning {
-        object.key("ReportVersioning").string(var_15.as_str());
+    if let Some(var_7) = &input.report_versioning {
+        object.key("ReportVersioning").string(var_7.as_str());
     }
-    if let Some(var_16) = &input.billing_view_arn {
-        object.key("BillingViewArn").string(var_16.as_str());
+    if let Some(var_8) = &input.billing_view_arn {
+        object.key("BillingViewArn").string(var_8.as_str());
     }
     Ok(())
 }
@@ -154,7 +154,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::report_definition_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

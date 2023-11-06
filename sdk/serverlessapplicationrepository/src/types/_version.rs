@@ -40,8 +40,10 @@ impl Version {
         self.creation_time.as_deref()
     }
     /// <p>An array of parameter types supported by the application.</p>
-    pub fn parameter_definitions(&self) -> ::std::option::Option<&[crate::types::ParameterDefinition]> {
-        self.parameter_definitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameter_definitions.is_none()`.
+    pub fn parameter_definitions(&self) -> &[crate::types::ParameterDefinition] {
+        self.parameter_definitions.as_deref().unwrap_or_default()
     }
     /// <p>A list of values that you must specify before you can deploy certain applications. Some applications might include resources that can affect permissions in your AWS account, for example, by creating new AWS Identity and Access Management (IAM) users. For those applications, you must explicitly acknowledge their capabilities by specifying this parameter.</p>
     /// <p>The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_RESOURCE_POLICY, and CAPABILITY_AUTO_EXPAND.</p>
@@ -49,8 +51,10 @@ impl Version {
     /// <p>The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html">AWS::S3::BucketPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>, and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p>
     /// <p>Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.</p>
     /// <p>If your application template contains any of the above resources, we recommend that you review all permissions associated with the application before deploying. If you don't specify this parameter for an application that requires capabilities, the call will fail.</p>
-    pub fn required_capabilities(&self) -> ::std::option::Option<&[crate::types::Capability]> {
-        self.required_capabilities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.required_capabilities.is_none()`.
+    pub fn required_capabilities(&self) -> &[crate::types::Capability] {
+        self.required_capabilities.as_deref().unwrap_or_default()
     }
     /// <p>Whether all of the AWS resources contained in this application are supported in the region in which it is being retrieved.</p>
     pub fn resources_supported(&self) -> ::std::option::Option<bool> {
@@ -98,6 +102,7 @@ pub struct VersionBuilder {
 }
 impl VersionBuilder {
     /// <p>The application Amazon Resource Name (ARN).</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +117,7 @@ impl VersionBuilder {
         &self.application_id
     }
     /// <p>The date and time this resource was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_time = ::std::option::Option::Some(input.into());
         self
@@ -181,6 +187,7 @@ impl VersionBuilder {
         &self.required_capabilities
     }
     /// <p>Whether all of the AWS resources contained in this application are supported in the region in which it is being retrieved.</p>
+    /// This field is required.
     pub fn resources_supported(mut self, input: bool) -> Self {
         self.resources_supported = ::std::option::Option::Some(input);
         self
@@ -196,6 +203,7 @@ impl VersionBuilder {
     }
     /// <p>The semantic version of the application:</p>
     /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
+    /// This field is required.
     pub fn semantic_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.semantic_version = ::std::option::Option::Some(input.into());
         self
@@ -243,6 +251,7 @@ impl VersionBuilder {
         &self.source_code_url
     }
     /// <p>A link to the packaged AWS SAM template of your application.</p>
+    /// This field is required.
     pub fn template_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_url = ::std::option::Option::Some(input.into());
         self

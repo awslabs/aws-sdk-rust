@@ -27,6 +27,7 @@ pub struct DeleteCorsPolicyInputBuilder {
 }
 impl DeleteCorsPolicyInputBuilder {
     /// <p>The name of the container to remove the policy from.</p>
+    /// This field is required.
     pub fn container_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteCorsPolicyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCorsPolicyInput`](crate::operation::delete_cors_policy::DeleteCorsPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_cors_policy::DeleteCorsPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_cors_policy::DeleteCorsPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_cors_policy::DeleteCorsPolicyInput {
             container_name: self.container_name,
         })

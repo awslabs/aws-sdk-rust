@@ -15,8 +15,10 @@ impl DimensionFilter {
         self.dimension_name.as_deref()
     }
     /// <p>The list of values for the dimension specified in DimensionName that you want to filter on.</p>
-    pub fn dimension_value_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.dimension_value_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimension_value_list.is_none()`.
+    pub fn dimension_value_list(&self) -> &[::std::string::String] {
+        self.dimension_value_list.as_deref().unwrap_or_default()
     }
 }
 impl DimensionFilter {

@@ -5,20 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AggregateOperation {
     /// <p>Specifies the column on the data set on which the aggregation function will be applied.</p>
-    pub column: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub column: ::std::vec::Vec<::std::string::String>,
     /// <p>Specifies the aggregation function to apply.</p>
     /// <p>Possible aggregation functions include: avg countDistinct, count, first, last, kurtosis, max, min, skewness, stddev_samp, stddev_pop, sum, sumDistinct, var_samp, var_pop</p>
-    pub agg_func: ::std::option::Option<crate::types::AggFunction>,
+    pub agg_func: crate::types::AggFunction,
 }
 impl AggregateOperation {
     /// <p>Specifies the column on the data set on which the aggregation function will be applied.</p>
-    pub fn column(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.column.as_deref()
+    pub fn column(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.column.deref()
     }
     /// <p>Specifies the aggregation function to apply.</p>
     /// <p>Possible aggregation functions include: avg countDistinct, count, first, last, kurtosis, max, min, skewness, stddev_samp, stddev_pop, sum, sumDistinct, var_samp, var_pop</p>
-    pub fn agg_func(&self) -> ::std::option::Option<&crate::types::AggFunction> {
-        self.agg_func.as_ref()
+    pub fn agg_func(&self) -> &crate::types::AggFunction {
+        &self.agg_func
     }
 }
 impl AggregateOperation {
@@ -58,6 +59,7 @@ impl AggregateOperationBuilder {
     }
     /// <p>Specifies the aggregation function to apply.</p>
     /// <p>Possible aggregation functions include: avg countDistinct, count, first, last, kurtosis, max, min, skewness, stddev_samp, stddev_pop, sum, sumDistinct, var_samp, var_pop</p>
+    /// This field is required.
     pub fn agg_func(mut self, input: crate::types::AggFunction) -> Self {
         self.agg_func = ::std::option::Option::Some(input);
         self
@@ -74,10 +76,23 @@ impl AggregateOperationBuilder {
         &self.agg_func
     }
     /// Consumes the builder and constructs a [`AggregateOperation`](crate::types::AggregateOperation).
-    pub fn build(self) -> crate::types::AggregateOperation {
-        crate::types::AggregateOperation {
-            column: self.column,
-            agg_func: self.agg_func,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`column`](crate::types::builders::AggregateOperationBuilder::column)
+    /// - [`agg_func`](crate::types::builders::AggregateOperationBuilder::agg_func)
+    pub fn build(self) -> ::std::result::Result<crate::types::AggregateOperation, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AggregateOperation {
+            column: self.column.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "column",
+                    "column was not specified but it is required when building AggregateOperation",
+                )
+            })?,
+            agg_func: self.agg_func.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "agg_func",
+                    "agg_func was not specified but it is required when building AggregateOperation",
+                )
+            })?,
+        })
     }
 }

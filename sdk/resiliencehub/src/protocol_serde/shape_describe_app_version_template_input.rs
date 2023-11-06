@@ -2,7 +2,7 @@
 pub fn ser_describe_app_version_template_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_app_version_template::DescribeAppVersionTemplateInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.app_arn {
         object.key("appArn").string(var_1.as_str());
     }

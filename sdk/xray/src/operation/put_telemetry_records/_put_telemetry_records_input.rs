@@ -14,8 +14,10 @@ pub struct PutTelemetryRecordsInput {
 }
 impl PutTelemetryRecordsInput {
     /// <p></p>
-    pub fn telemetry_records(&self) -> ::std::option::Option<&[crate::types::TelemetryRecord]> {
-        self.telemetry_records.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.telemetry_records.is_none()`.
+    pub fn telemetry_records(&self) -> &[crate::types::TelemetryRecord] {
+        self.telemetry_records.as_deref().unwrap_or_default()
     }
     /// <p></p>
     pub fn ec2_instance_id(&self) -> ::std::option::Option<&str> {
@@ -112,7 +114,7 @@ impl PutTelemetryRecordsInputBuilder {
     /// Consumes the builder and constructs a [`PutTelemetryRecordsInput`](crate::operation::put_telemetry_records::PutTelemetryRecordsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_telemetry_records::PutTelemetryRecordsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_telemetry_records::PutTelemetryRecordsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_telemetry_records::PutTelemetryRecordsInput {
             telemetry_records: self.telemetry_records,

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribePackagingConfiguration`](crate::operation::describe_packaging_configuration::builders::DescribePackagingConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::describe_packaging_configuration::builders::DescribePackagingConfigurationFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::describe_packaging_configuration::builders::DescribePackagingConfigurationFluentBuilder::set_id): The ID of a MediaPackage VOD PackagingConfiguration resource.
+    ///   - [`id(impl Into<String>)`](crate::operation::describe_packaging_configuration::builders::DescribePackagingConfigurationFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::describe_packaging_configuration::builders::DescribePackagingConfigurationFluentBuilder::set_id):<br>required: **true**<br>The ID of a MediaPackage VOD PackagingConfiguration resource.<br>
     /// - On success, responds with [`DescribePackagingConfigurationOutput`](crate::operation::describe_packaging_configuration::DescribePackagingConfigurationOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::describe_packaging_configuration::DescribePackagingConfigurationOutput::arn): The ARN of the PackagingConfiguration.
     ///   - [`cmaf_package(Option<CmafPackage>)`](crate::operation::describe_packaging_configuration::DescribePackagingConfigurationOutput::cmaf_package): A CMAF packaging configuration.
@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::describe_packaging_configuration::DescribePackagingConfigurationOutput::id): The ID of the PackagingConfiguration.
     ///   - [`mss_package(Option<MssPackage>)`](crate::operation::describe_packaging_configuration::DescribePackagingConfigurationOutput::mss_package): A Microsoft Smooth Streaming (MSS) PackagingConfiguration.
     ///   - [`packaging_group_id(Option<String>)`](crate::operation::describe_packaging_configuration::DescribePackagingConfigurationOutput::packaging_group_id): The ID of a PackagingGroup.
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_packaging_configuration::DescribePackagingConfigurationOutput::tags): A collection of tags associated with a resource
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_packaging_configuration::DescribePackagingConfigurationOutput::tags): A collection of tags associated with a resource
     /// - On failure, responds with [`SdkError<DescribePackagingConfigurationError>`](crate::operation::describe_packaging_configuration::DescribePackagingConfigurationError)
     pub fn describe_packaging_configuration(
         &self,

@@ -47,6 +47,7 @@ impl GetFlowTemplateRevisionsInputBuilder {
     /// <p>The ID of the workflow.</p>
     /// <p>The ID should be in the following format.</p>
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -97,7 +98,7 @@ impl GetFlowTemplateRevisionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_flow_template_revisions::GetFlowTemplateRevisionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_flow_template_revisions::GetFlowTemplateRevisionsInput {
             id: self.id,

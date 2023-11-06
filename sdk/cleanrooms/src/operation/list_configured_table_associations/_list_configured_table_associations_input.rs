@@ -41,6 +41,7 @@ pub struct ListConfiguredTableAssociationsInputBuilder {
 }
 impl ListConfiguredTableAssociationsInputBuilder {
     /// <p>A unique identifier for the membership to list configured table associations for. Currently accepts the membership ID.</p>
+    /// This field is required.
     pub fn membership_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.membership_identifier = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListConfiguredTableAssociationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsInput {

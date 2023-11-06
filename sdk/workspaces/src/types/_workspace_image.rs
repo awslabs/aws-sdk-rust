@@ -75,8 +75,10 @@ impl WorkspaceImage {
         self.updates.as_ref()
     }
     /// <p>Additional details of the error returned for the image, including the possible causes of the errors and troubleshooting information.</p>
-    pub fn error_details(&self) -> ::std::option::Option<&[crate::types::ErrorDetails]> {
-        self.error_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.error_details.is_none()`.
+    pub fn error_details(&self) -> &[crate::types::ErrorDetails] {
+        self.error_details.as_deref().unwrap_or_default()
     }
 }
 impl WorkspaceImage {

@@ -2,9 +2,9 @@
 pub fn ser_point_in_time_recovery(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PointInTimeRecovery,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.status {
-        object.key("status").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("status").string(input.status.as_str());
     }
     Ok(())
 }

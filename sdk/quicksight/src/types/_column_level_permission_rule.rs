@@ -11,12 +11,16 @@ pub struct ColumnLevelPermissionRule {
 }
 impl ColumnLevelPermissionRule {
     /// <p>An array of Amazon Resource Names (ARNs) for Amazon QuickSight users or groups.</p>
-    pub fn principals(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.principals.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.principals.is_none()`.
+    pub fn principals(&self) -> &[::std::string::String] {
+        self.principals.as_deref().unwrap_or_default()
     }
     /// <p>An array of column names.</p>
-    pub fn column_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.column_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.column_names.is_none()`.
+    pub fn column_names(&self) -> &[::std::string::String] {
+        self.column_names.as_deref().unwrap_or_default()
     }
 }
 impl ColumnLevelPermissionRule {

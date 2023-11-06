@@ -27,6 +27,7 @@ pub struct DeleteReportDefinitionInputBuilder {
 }
 impl DeleteReportDefinitionInputBuilder {
     /// <p>Required. ID of the report to delete.</p>
+    /// This field is required.
     pub fn report_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.report_id = ::std::option::Option::Some(input.into());
         self
@@ -43,8 +44,10 @@ impl DeleteReportDefinitionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteReportDefinitionInput`](crate::operation::delete_report_definition::DeleteReportDefinitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_report_definition::DeleteReportDefinitionInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_report_definition::DeleteReportDefinitionInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_report_definition::DeleteReportDefinitionInput { report_id: self.report_id })
     }
 }

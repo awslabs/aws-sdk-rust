@@ -13,16 +13,22 @@ pub struct ConnectionHttpParameters {
 }
 impl ConnectionHttpParameters {
     /// <p>Contains additional header parameters for the connection.</p>
-    pub fn header_parameters(&self) -> ::std::option::Option<&[crate::types::ConnectionHeaderParameter]> {
-        self.header_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.header_parameters.is_none()`.
+    pub fn header_parameters(&self) -> &[crate::types::ConnectionHeaderParameter] {
+        self.header_parameters.as_deref().unwrap_or_default()
     }
     /// <p>Contains additional query string parameters for the connection.</p>
-    pub fn query_string_parameters(&self) -> ::std::option::Option<&[crate::types::ConnectionQueryStringParameter]> {
-        self.query_string_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.query_string_parameters.is_none()`.
+    pub fn query_string_parameters(&self) -> &[crate::types::ConnectionQueryStringParameter] {
+        self.query_string_parameters.as_deref().unwrap_or_default()
     }
     /// <p>Contains additional body string parameters for the connection.</p>
-    pub fn body_parameters(&self) -> ::std::option::Option<&[crate::types::ConnectionBodyParameter]> {
-        self.body_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.body_parameters.is_none()`.
+    pub fn body_parameters(&self) -> &[crate::types::ConnectionBodyParameter] {
+        self.body_parameters.as_deref().unwrap_or_default()
     }
 }
 impl ConnectionHttpParameters {

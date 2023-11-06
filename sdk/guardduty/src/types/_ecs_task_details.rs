@@ -51,16 +51,22 @@ impl EcsTaskDetails {
         self.started_by.as_deref()
     }
     /// <p>The tags of the ECS Task.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The list of data volume definitions for the task.</p>
-    pub fn volumes(&self) -> ::std::option::Option<&[crate::types::Volume]> {
-        self.volumes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volumes.is_none()`.
+    pub fn volumes(&self) -> &[crate::types::Volume] {
+        self.volumes.as_deref().unwrap_or_default()
     }
     /// <p>The containers that's associated with the task.</p>
-    pub fn containers(&self) -> ::std::option::Option<&[crate::types::Container]> {
-        self.containers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.containers.is_none()`.
+    pub fn containers(&self) -> &[crate::types::Container] {
+        self.containers.as_deref().unwrap_or_default()
     }
     /// <p>The name of the task group that's associated with the task.</p>
     pub fn group(&self) -> ::std::option::Option<&str> {

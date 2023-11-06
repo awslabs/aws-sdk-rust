@@ -24,12 +24,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MatchingRule {
     /// <p>A single rule level of the <code>MatchRules</code>. Configures how the rule-based matching process should match profiles.</p>
-    pub rule: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub rule: ::std::vec::Vec<::std::string::String>,
 }
 impl MatchingRule {
     /// <p>A single rule level of the <code>MatchRules</code>. Configures how the rule-based matching process should match profiles.</p>
-    pub fn rule(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.rule.as_deref()
+    pub fn rule(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.rule.deref()
     }
 }
 impl MatchingRule {
@@ -67,7 +68,16 @@ impl MatchingRuleBuilder {
         &self.rule
     }
     /// Consumes the builder and constructs a [`MatchingRule`](crate::types::MatchingRule).
-    pub fn build(self) -> crate::types::MatchingRule {
-        crate::types::MatchingRule { rule: self.rule }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`rule`](crate::types::builders::MatchingRuleBuilder::rule)
+    pub fn build(self) -> ::std::result::Result<crate::types::MatchingRule, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::MatchingRule {
+            rule: self.rule.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "rule",
+                    "rule was not specified but it is required when building MatchingRule",
+                )
+            })?,
+        })
     }
 }

@@ -2,21 +2,21 @@
 pub fn ser_bot_member(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BotMember,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.bot_member_id {
-        object.key("botMemberId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("botMemberId").string(input.bot_member_id.as_str());
     }
-    if let Some(var_2) = &input.bot_member_name {
-        object.key("botMemberName").string(var_2.as_str());
+    {
+        object.key("botMemberName").string(input.bot_member_name.as_str());
     }
-    if let Some(var_3) = &input.bot_member_alias_id {
-        object.key("botMemberAliasId").string(var_3.as_str());
+    {
+        object.key("botMemberAliasId").string(input.bot_member_alias_id.as_str());
     }
-    if let Some(var_4) = &input.bot_member_alias_name {
-        object.key("botMemberAliasName").string(var_4.as_str());
+    {
+        object.key("botMemberAliasName").string(input.bot_member_alias_name.as_str());
     }
-    if let Some(var_5) = &input.bot_member_version {
-        object.key("botMemberVersion").string(var_5.as_str());
+    {
+        object.key("botMemberVersion").string(input.bot_member_version.as_str());
     }
     Ok(())
 }
@@ -81,7 +81,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::bot_member_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

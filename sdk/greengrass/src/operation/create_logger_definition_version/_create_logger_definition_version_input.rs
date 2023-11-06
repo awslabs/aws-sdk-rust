@@ -20,8 +20,10 @@ impl CreateLoggerDefinitionVersionInput {
         self.logger_definition_id.as_deref()
     }
     /// A list of loggers.
-    pub fn loggers(&self) -> ::std::option::Option<&[crate::types::Logger]> {
-        self.loggers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.loggers.is_none()`.
+    pub fn loggers(&self) -> &[crate::types::Logger] {
+        self.loggers.as_deref().unwrap_or_default()
     }
 }
 impl CreateLoggerDefinitionVersionInput {
@@ -55,6 +57,7 @@ impl CreateLoggerDefinitionVersionInputBuilder {
         &self.amzn_client_token
     }
     /// The ID of the logger definition.
+    /// This field is required.
     pub fn logger_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.logger_definition_id = ::std::option::Option::Some(input.into());
         self
@@ -93,7 +96,7 @@ impl CreateLoggerDefinitionVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_logger_definition_version::CreateLoggerDefinitionVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_logger_definition_version::CreateLoggerDefinitionVersionInput {
             amzn_client_token: self.amzn_client_token,

@@ -2,7 +2,7 @@
 pub fn ser_update_subnet_group_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_subnet_group::UpdateSubnetGroupInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.subnet_group_name {
         object.key("SubnetGroupName").string(var_1.as_str());
     }

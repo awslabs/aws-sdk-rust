@@ -117,6 +117,7 @@ pub struct GetUsageForecastInputBuilder {
 }
 impl GetUsageForecastInputBuilder {
     /// <p>The start and end dates of the period that you want to retrieve usage forecast for. The start date is included in the period, but the end date isn't included in the period. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. The start date must be equal to or later than the current date to avoid a validation error.</p>
+    /// This field is required.
     pub fn time_period(mut self, input: crate::types::DateInterval) -> Self {
         self.time_period = ::std::option::Option::Some(input);
         self
@@ -136,6 +137,7 @@ impl GetUsageForecastInputBuilder {
     /// <li> <p>USAGE_QUANTITY</p> </li>
     /// <li> <p>NORMALIZED_USAGE_AMOUNT</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn metric(mut self, input: crate::types::Metric) -> Self {
         self.metric = ::std::option::Option::Some(input);
         self
@@ -161,6 +163,7 @@ impl GetUsageForecastInputBuilder {
     }
     /// <p>How granular you want the forecast to be. You can get 3 months of <code>DAILY</code> forecasts or 12 months of <code>MONTHLY</code> forecasts.</p>
     /// <p>The <code>GetUsageForecast</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
+    /// This field is required.
     pub fn granularity(mut self, input: crate::types::Granularity) -> Self {
         self.granularity = ::std::option::Option::Some(input);
         self
@@ -282,7 +285,7 @@ impl GetUsageForecastInputBuilder {
     /// Consumes the builder and constructs a [`GetUsageForecastInput`](crate::operation::get_usage_forecast::GetUsageForecastInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_usage_forecast::GetUsageForecastInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_usage_forecast::GetUsageForecastInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_usage_forecast::GetUsageForecastInput {
             time_period: self.time_period,
             metric: self.metric,

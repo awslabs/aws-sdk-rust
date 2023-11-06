@@ -64,8 +64,8 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = "0.56.1"
-//! aws-sdk-opsworks = "0.34.0"
+//! aws-config = "0.57.1"
+//! aws-sdk-opsworks = "0.35.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -219,6 +219,8 @@ pub mod primitives;
 /// Data structures used by operation inputs/outputs.
 pub mod types;
 
+mod auth_plugin;
+
 pub(crate) mod protocol_serde;
 
 mod serialization_settings;
@@ -228,6 +230,8 @@ mod lens;
 mod endpoint_lib;
 
 mod json_errors;
+
+mod serde_util;
 
 #[doc(inline)]
 pub use client::Client;

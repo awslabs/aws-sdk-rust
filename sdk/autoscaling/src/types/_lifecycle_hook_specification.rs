@@ -83,6 +83,7 @@ pub struct LifecycleHookSpecificationBuilder {
 }
 impl LifecycleHookSpecificationBuilder {
     /// <p>The name of the lifecycle hook.</p>
+    /// This field is required.
     pub fn lifecycle_hook_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lifecycle_hook_name = ::std::option::Option::Some(input.into());
         self
@@ -101,6 +102,7 @@ impl LifecycleHookSpecificationBuilder {
     /// <li> <p>To create a lifecycle hook for scale-out events, specify <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>.</p> </li>
     /// <li> <p>To create a lifecycle hook for scale-in events, specify <code>autoscaling:EC2_INSTANCE_TERMINATING</code>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn lifecycle_transition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lifecycle_transition = ::std::option::Option::Some(input.into());
         self

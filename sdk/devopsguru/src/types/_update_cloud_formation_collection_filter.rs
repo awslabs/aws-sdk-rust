@@ -9,8 +9,10 @@ pub struct UpdateCloudFormationCollectionFilter {
 }
 impl UpdateCloudFormationCollectionFilter {
     /// <p> An array of the names of the Amazon Web Services CloudFormation stacks to update. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    pub fn stack_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.stack_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stack_names.is_none()`.
+    pub fn stack_names(&self) -> &[::std::string::String] {
+        self.stack_names.as_deref().unwrap_or_default()
     }
 }
 impl UpdateCloudFormationCollectionFilter {

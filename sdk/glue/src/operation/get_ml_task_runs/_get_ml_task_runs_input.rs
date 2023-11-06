@@ -55,6 +55,7 @@ pub struct GetMlTaskRunsInputBuilder {
 }
 impl GetMlTaskRunsInputBuilder {
     /// <p>The unique identifier of the machine learning transform.</p>
+    /// This field is required.
     pub fn transform_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transform_id = ::std::option::Option::Some(input.into());
         self
@@ -127,7 +128,7 @@ impl GetMlTaskRunsInputBuilder {
     /// Consumes the builder and constructs a [`GetMlTaskRunsInput`](crate::operation::get_ml_task_runs::GetMlTaskRunsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_ml_task_runs::GetMlTaskRunsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_ml_task_runs::GetMlTaskRunsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_ml_task_runs::GetMlTaskRunsInput {
             transform_id: self.transform_id,
             next_token: self.next_token,

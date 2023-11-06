@@ -2,7 +2,7 @@
 pub fn ser_source_connector_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SourceConnectorProperties,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.amplitude {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Amplitude").start_object();

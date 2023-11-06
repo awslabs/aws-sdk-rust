@@ -15,8 +15,10 @@ pub struct ListVpcConnectionsOutput {
 }
 impl ListVpcConnectionsOutput {
     /// <p>A <code>VPCConnectionSummaries</code> object that returns a summary of VPC connection objects.</p>
-    pub fn vpc_connection_summaries(&self) -> ::std::option::Option<&[crate::types::VpcConnectionSummary]> {
-        self.vpc_connection_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_connection_summaries.is_none()`.
+    pub fn vpc_connection_summaries(&self) -> &[crate::types::VpcConnectionSummary] {
+        self.vpc_connection_summaries.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

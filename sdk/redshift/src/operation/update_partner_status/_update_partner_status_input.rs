@@ -62,6 +62,7 @@ pub struct UpdatePartnerStatusInputBuilder {
 }
 impl UpdatePartnerStatusInputBuilder {
     /// <p>The Amazon Web Services account ID that owns the cluster.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl UpdatePartnerStatusInputBuilder {
         &self.account_id
     }
     /// <p>The cluster identifier of the cluster whose partner integration status is being updated.</p>
+    /// This field is required.
     pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +92,7 @@ impl UpdatePartnerStatusInputBuilder {
         &self.cluster_identifier
     }
     /// <p>The name of the database whose partner integration status is being updated.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +107,7 @@ impl UpdatePartnerStatusInputBuilder {
         &self.database_name
     }
     /// <p>The name of the partner whose integration status is being updated.</p>
+    /// This field is required.
     pub fn partner_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.partner_name = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +122,7 @@ impl UpdatePartnerStatusInputBuilder {
         &self.partner_name
     }
     /// <p>The value of the updated status.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::PartnerIntegrationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -148,7 +153,7 @@ impl UpdatePartnerStatusInputBuilder {
     /// Consumes the builder and constructs a [`UpdatePartnerStatusInput`](crate::operation::update_partner_status::UpdatePartnerStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_partner_status::UpdatePartnerStatusInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_partner_status::UpdatePartnerStatusInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_partner_status::UpdatePartnerStatusInput {
             account_id: self.account_id,

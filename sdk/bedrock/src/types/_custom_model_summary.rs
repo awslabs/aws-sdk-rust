@@ -5,36 +5,40 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomModelSummary {
     /// <p>The ARN of the custom model.</p>
-    pub model_arn: ::std::option::Option<::std::string::String>,
+    pub model_arn: ::std::string::String,
     /// <p>The name of the custom model.</p>
-    pub model_name: ::std::option::Option<::std::string::String>,
+    pub model_name: ::std::string::String,
     /// <p>Creation time of the model.</p>
-    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_time: ::aws_smithy_types::DateTime,
     /// <p>The base model ARN.</p>
-    pub base_model_arn: ::std::option::Option<::std::string::String>,
+    pub base_model_arn: ::std::string::String,
     /// <p>The base model name.</p>
-    pub base_model_name: ::std::option::Option<::std::string::String>,
+    pub base_model_name: ::std::string::String,
 }
 impl CustomModelSummary {
     /// <p>The ARN of the custom model.</p>
-    pub fn model_arn(&self) -> ::std::option::Option<&str> {
-        self.model_arn.as_deref()
+    pub fn model_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.model_arn.deref()
     }
     /// <p>The name of the custom model.</p>
-    pub fn model_name(&self) -> ::std::option::Option<&str> {
-        self.model_name.as_deref()
+    pub fn model_name(&self) -> &str {
+        use std::ops::Deref;
+        self.model_name.deref()
     }
     /// <p>Creation time of the model.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_time.as_ref()
+    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_time
     }
     /// <p>The base model ARN.</p>
-    pub fn base_model_arn(&self) -> ::std::option::Option<&str> {
-        self.base_model_arn.as_deref()
+    pub fn base_model_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.base_model_arn.deref()
     }
     /// <p>The base model name.</p>
-    pub fn base_model_name(&self) -> ::std::option::Option<&str> {
-        self.base_model_name.as_deref()
+    pub fn base_model_name(&self) -> &str {
+        use std::ops::Deref;
+        self.base_model_name.deref()
     }
 }
 impl CustomModelSummary {
@@ -56,6 +60,7 @@ pub struct CustomModelSummaryBuilder {
 }
 impl CustomModelSummaryBuilder {
     /// <p>The ARN of the custom model.</p>
+    /// This field is required.
     pub fn model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_arn = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +75,7 @@ impl CustomModelSummaryBuilder {
         &self.model_arn
     }
     /// <p>The name of the custom model.</p>
+    /// This field is required.
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_name = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +90,7 @@ impl CustomModelSummaryBuilder {
         &self.model_name
     }
     /// <p>Creation time of the model.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -98,6 +105,7 @@ impl CustomModelSummaryBuilder {
         &self.creation_time
     }
     /// <p>The base model ARN.</p>
+    /// This field is required.
     pub fn base_model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.base_model_arn = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +120,7 @@ impl CustomModelSummaryBuilder {
         &self.base_model_arn
     }
     /// <p>The base model name.</p>
+    /// This field is required.
     pub fn base_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.base_model_name = ::std::option::Option::Some(input.into());
         self
@@ -126,13 +135,44 @@ impl CustomModelSummaryBuilder {
         &self.base_model_name
     }
     /// Consumes the builder and constructs a [`CustomModelSummary`](crate::types::CustomModelSummary).
-    pub fn build(self) -> crate::types::CustomModelSummary {
-        crate::types::CustomModelSummary {
-            model_arn: self.model_arn,
-            model_name: self.model_name,
-            creation_time: self.creation_time,
-            base_model_arn: self.base_model_arn,
-            base_model_name: self.base_model_name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`model_arn`](crate::types::builders::CustomModelSummaryBuilder::model_arn)
+    /// - [`model_name`](crate::types::builders::CustomModelSummaryBuilder::model_name)
+    /// - [`creation_time`](crate::types::builders::CustomModelSummaryBuilder::creation_time)
+    /// - [`base_model_arn`](crate::types::builders::CustomModelSummaryBuilder::base_model_arn)
+    /// - [`base_model_name`](crate::types::builders::CustomModelSummaryBuilder::base_model_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomModelSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CustomModelSummary {
+            model_arn: self.model_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "model_arn",
+                    "model_arn was not specified but it is required when building CustomModelSummary",
+                )
+            })?,
+            model_name: self.model_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "model_name",
+                    "model_name was not specified but it is required when building CustomModelSummary",
+                )
+            })?,
+            creation_time: self.creation_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "creation_time",
+                    "creation_time was not specified but it is required when building CustomModelSummary",
+                )
+            })?,
+            base_model_arn: self.base_model_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "base_model_arn",
+                    "base_model_arn was not specified but it is required when building CustomModelSummary",
+                )
+            })?,
+            base_model_name: self.base_model_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "base_model_name",
+                    "base_model_name was not specified but it is required when building CustomModelSummary",
+                )
+            })?,
+        })
     }
 }

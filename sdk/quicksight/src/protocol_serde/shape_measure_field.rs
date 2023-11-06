@@ -2,7 +2,7 @@
 pub fn ser_measure_field(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MeasureField,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.numerical_measure_field {
         #[allow(unused_mut)]
         let mut object_2 = object.key("NumericalMeasureField").start_object();

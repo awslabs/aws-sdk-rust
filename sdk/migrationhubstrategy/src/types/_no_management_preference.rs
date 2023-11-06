@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NoManagementPreference {
     /// <p> The choice of application destination that you specify. </p>
-    pub target_destination: ::std::option::Option<::std::vec::Vec<crate::types::NoPreferenceTargetDestination>>,
+    pub target_destination: ::std::vec::Vec<crate::types::NoPreferenceTargetDestination>,
 }
 impl NoManagementPreference {
     /// <p> The choice of application destination that you specify. </p>
-    pub fn target_destination(&self) -> ::std::option::Option<&[crate::types::NoPreferenceTargetDestination]> {
-        self.target_destination.as_deref()
+    pub fn target_destination(&self) -> &[crate::types::NoPreferenceTargetDestination] {
+        use std::ops::Deref;
+        self.target_destination.deref()
     }
 }
 impl NoManagementPreference {
@@ -48,9 +49,16 @@ impl NoManagementPreferenceBuilder {
         &self.target_destination
     }
     /// Consumes the builder and constructs a [`NoManagementPreference`](crate::types::NoManagementPreference).
-    pub fn build(self) -> crate::types::NoManagementPreference {
-        crate::types::NoManagementPreference {
-            target_destination: self.target_destination,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`target_destination`](crate::types::builders::NoManagementPreferenceBuilder::target_destination)
+    pub fn build(self) -> ::std::result::Result<crate::types::NoManagementPreference, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::NoManagementPreference {
+            target_destination: self.target_destination.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "target_destination",
+                    "target_destination was not specified but it is required when building NoManagementPreference",
+                )
+            })?,
+        })
     }
 }

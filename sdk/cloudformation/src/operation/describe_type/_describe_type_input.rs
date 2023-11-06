@@ -171,7 +171,9 @@ impl DescribeTypeInputBuilder {
         &self.public_version_number
     }
     /// Consumes the builder and constructs a [`DescribeTypeInput`](crate::operation::describe_type::DescribeTypeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_type::DescribeTypeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_type::DescribeTypeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_type::DescribeTypeInput {
             r#type: self.r#type,
             type_name: self.type_name,

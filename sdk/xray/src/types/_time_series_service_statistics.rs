@@ -33,8 +33,10 @@ impl TimeSeriesServiceStatistics {
         self.service_forecast_statistics.as_ref()
     }
     /// <p>The response time histogram for the selected entities.</p>
-    pub fn response_time_histogram(&self) -> ::std::option::Option<&[crate::types::HistogramEntry]> {
-        self.response_time_histogram.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.response_time_histogram.is_none()`.
+    pub fn response_time_histogram(&self) -> &[crate::types::HistogramEntry] {
+        self.response_time_histogram.as_deref().unwrap_or_default()
     }
 }
 impl TimeSeriesServiceStatistics {

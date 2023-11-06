@@ -13,12 +13,16 @@ pub struct EffectiveDeploymentStatusDetails {
 }
 impl EffectiveDeploymentStatusDetails {
     /// <p>Contains an ordered list of short error codes that range from the most generic error to the most specific one. The error codes describe the reason for failure whenever the <code>coreDeviceExecutionStatus</code> is in a failed state. The response will be an empty list if there is no error.</p>
-    pub fn error_stack(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.error_stack.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.error_stack.is_none()`.
+    pub fn error_stack(&self) -> &[::std::string::String] {
+        self.error_stack.as_deref().unwrap_or_default()
     }
     /// <p>Contains tags which describe the error. You can use the error types to classify errors to assist with remediating the failure. The response will be an empty list if there is no error.</p>
-    pub fn error_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.error_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.error_types.is_none()`.
+    pub fn error_types(&self) -> &[::std::string::String] {
+        self.error_types.as_deref().unwrap_or_default()
     }
 }
 impl EffectiveDeploymentStatusDetails {

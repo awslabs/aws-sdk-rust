@@ -48,6 +48,7 @@ pub struct UpdateWorkflowInputBuilder {
 }
 impl UpdateWorkflowInputBuilder {
     /// <p>Name of the workflow to be updated.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -119,7 +120,7 @@ impl UpdateWorkflowInputBuilder {
     /// Consumes the builder and constructs a [`UpdateWorkflowInput`](crate::operation::update_workflow::UpdateWorkflowInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_workflow::UpdateWorkflowInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_workflow::UpdateWorkflowInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_workflow::UpdateWorkflowInput {
             name: self.name,
             description: self.description,

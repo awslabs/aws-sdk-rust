@@ -5,24 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BackupPlan {
     /// <p>The display name of a backup plan. Must contain 1 to 50 alphanumeric or '-_.' characters.</p>
-    pub backup_plan_name: ::std::option::Option<::std::string::String>,
+    pub backup_plan_name: ::std::string::String,
     /// <p>An array of <code>BackupRule</code> objects, each of which specifies a scheduled task that is used to back up a selection of resources. </p>
-    pub rules: ::std::option::Option<::std::vec::Vec<crate::types::BackupRule>>,
+    pub rules: ::std::vec::Vec<crate::types::BackupRule>,
     /// <p>Contains a list of <code>BackupOptions</code> for each resource type.</p>
     pub advanced_backup_settings: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedBackupSetting>>,
 }
 impl BackupPlan {
     /// <p>The display name of a backup plan. Must contain 1 to 50 alphanumeric or '-_.' characters.</p>
-    pub fn backup_plan_name(&self) -> ::std::option::Option<&str> {
-        self.backup_plan_name.as_deref()
+    pub fn backup_plan_name(&self) -> &str {
+        use std::ops::Deref;
+        self.backup_plan_name.deref()
     }
     /// <p>An array of <code>BackupRule</code> objects, each of which specifies a scheduled task that is used to back up a selection of resources. </p>
-    pub fn rules(&self) -> ::std::option::Option<&[crate::types::BackupRule]> {
-        self.rules.as_deref()
+    pub fn rules(&self) -> &[crate::types::BackupRule] {
+        use std::ops::Deref;
+        self.rules.deref()
     }
     /// <p>Contains a list of <code>BackupOptions</code> for each resource type.</p>
-    pub fn advanced_backup_settings(&self) -> ::std::option::Option<&[crate::types::AdvancedBackupSetting]> {
-        self.advanced_backup_settings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.advanced_backup_settings.is_none()`.
+    pub fn advanced_backup_settings(&self) -> &[crate::types::AdvancedBackupSetting] {
+        self.advanced_backup_settings.as_deref().unwrap_or_default()
     }
 }
 impl BackupPlan {
@@ -42,6 +46,7 @@ pub struct BackupPlanBuilder {
 }
 impl BackupPlanBuilder {
     /// <p>The display name of a backup plan. Must contain 1 to 50 alphanumeric or '-_.' characters.</p>
+    /// This field is required.
     pub fn backup_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_plan_name = ::std::option::Option::Some(input.into());
         self
@@ -96,11 +101,24 @@ impl BackupPlanBuilder {
         &self.advanced_backup_settings
     }
     /// Consumes the builder and constructs a [`BackupPlan`](crate::types::BackupPlan).
-    pub fn build(self) -> crate::types::BackupPlan {
-        crate::types::BackupPlan {
-            backup_plan_name: self.backup_plan_name,
-            rules: self.rules,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`backup_plan_name`](crate::types::builders::BackupPlanBuilder::backup_plan_name)
+    /// - [`rules`](crate::types::builders::BackupPlanBuilder::rules)
+    pub fn build(self) -> ::std::result::Result<crate::types::BackupPlan, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::BackupPlan {
+            backup_plan_name: self.backup_plan_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "backup_plan_name",
+                    "backup_plan_name was not specified but it is required when building BackupPlan",
+                )
+            })?,
+            rules: self.rules.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "rules",
+                    "rules was not specified but it is required when building BackupPlan",
+                )
+            })?,
             advanced_backup_settings: self.advanced_backup_settings,
-        }
+        })
     }
 }

@@ -13,12 +13,16 @@ pub struct GetSubnetCidrReservationsOutput {
 }
 impl GetSubnetCidrReservationsOutput {
     /// <p>Information about the IPv4 subnet CIDR reservations.</p>
-    pub fn subnet_ipv4_cidr_reservations(&self) -> ::std::option::Option<&[crate::types::SubnetCidrReservation]> {
-        self.subnet_ipv4_cidr_reservations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ipv4_cidr_reservations.is_none()`.
+    pub fn subnet_ipv4_cidr_reservations(&self) -> &[crate::types::SubnetCidrReservation] {
+        self.subnet_ipv4_cidr_reservations.as_deref().unwrap_or_default()
     }
     /// <p>Information about the IPv6 subnet CIDR reservations.</p>
-    pub fn subnet_ipv6_cidr_reservations(&self) -> ::std::option::Option<&[crate::types::SubnetCidrReservation]> {
-        self.subnet_ipv6_cidr_reservations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ipv6_cidr_reservations.is_none()`.
+    pub fn subnet_ipv6_cidr_reservations(&self) -> &[crate::types::SubnetCidrReservation] {
+        self.subnet_ipv6_cidr_reservations.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

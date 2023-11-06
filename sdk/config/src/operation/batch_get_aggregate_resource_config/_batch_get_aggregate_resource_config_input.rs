@@ -14,8 +14,10 @@ impl BatchGetAggregateResourceConfigInput {
         self.configuration_aggregator_name.as_deref()
     }
     /// <p>A list of aggregate ResourceIdentifiers objects. </p>
-    pub fn resource_identifiers(&self) -> ::std::option::Option<&[crate::types::AggregateResourceIdentifier]> {
-        self.resource_identifiers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_identifiers.is_none()`.
+    pub fn resource_identifiers(&self) -> &[crate::types::AggregateResourceIdentifier] {
+        self.resource_identifiers.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetAggregateResourceConfigInput {
@@ -34,6 +36,7 @@ pub struct BatchGetAggregateResourceConfigInputBuilder {
 }
 impl BatchGetAggregateResourceConfigInputBuilder {
     /// <p>The name of the configuration aggregator.</p>
+    /// This field is required.
     pub fn configuration_aggregator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_aggregator_name = ::std::option::Option::Some(input.into());
         self
@@ -72,7 +75,7 @@ impl BatchGetAggregateResourceConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_aggregate_resource_config::BatchGetAggregateResourceConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::batch_get_aggregate_resource_config::BatchGetAggregateResourceConfigInput {

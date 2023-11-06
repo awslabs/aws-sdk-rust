@@ -41,6 +41,7 @@ pub struct CancelMlModelTransformJobInputBuilder {
 }
 impl CancelMlModelTransformJobInputBuilder {
     /// <p>The unique ID of the model transform job to be canceled.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl CancelMlModelTransformJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_ml_model_transform_job::CancelMlModelTransformJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::cancel_ml_model_transform_job::CancelMlModelTransformJobInput {
             id: self.id,

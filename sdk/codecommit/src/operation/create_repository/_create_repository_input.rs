@@ -52,6 +52,7 @@ impl CreateRepositoryInputBuilder {
     /// <p>The name of the new repository to be created.</p> <note>
     /// <p>The repository name must be unique across the calling Amazon Web Services account. Repository names are limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters. For more information about the limits on repository names, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a> in the <i>CodeCommit User Guide</i>. The suffix .git is prohibited.</p>
     /// </note>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -112,7 +113,7 @@ impl CreateRepositoryInputBuilder {
     /// Consumes the builder and constructs a [`CreateRepositoryInput`](crate::operation::create_repository::CreateRepositoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_repository::CreateRepositoryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_repository::CreateRepositoryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_repository::CreateRepositoryInput {
             repository_name: self.repository_name,
             repository_description: self.repository_description,

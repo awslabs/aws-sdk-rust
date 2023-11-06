@@ -41,6 +41,7 @@ pub struct DeleteOriginEndpointInputBuilder {
 }
 impl DeleteOriginEndpointInputBuilder {
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
+    /// This field is required.
     pub fn channel_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_group_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DeleteOriginEndpointInputBuilder {
         &self.channel_group_name
     }
     /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. </p>
+    /// This field is required.
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl DeleteOriginEndpointInputBuilder {
         &self.channel_name
     }
     /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel. </p>
+    /// This field is required.
     pub fn origin_endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origin_endpoint_name = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +88,7 @@ impl DeleteOriginEndpointInputBuilder {
     /// Consumes the builder and constructs a [`DeleteOriginEndpointInput`](crate::operation::delete_origin_endpoint::DeleteOriginEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_origin_endpoint::DeleteOriginEndpointInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_origin_endpoint::DeleteOriginEndpointInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_origin_endpoint::DeleteOriginEndpointInput {
             channel_group_name: self.channel_group_name,

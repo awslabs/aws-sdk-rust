@@ -2,30 +2,31 @@
 pub fn ser_key_group_config(
     input: &crate::types::KeyGroupConfig,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.name {
+    {
         let mut inner_writer = scope.start_el("Name").finish();
-        inner_writer.data(var_1.as_str());
+        inner_writer.data(input.name.as_str());
     }
-    if let Some(var_2) = &input.items {
+    {
         let mut inner_writer = scope.start_el("Items").finish();
-        for list_item_3 in var_2 {
+        for list_item_1 in &input.items {
             {
                 let mut inner_writer = inner_writer.start_el("PublicKey").finish();
-                inner_writer.data(list_item_3.as_str());
+                inner_writer.data(list_item_1.as_str());
             }
         }
     }
-    if let Some(var_4) = &input.comment {
+    if let Some(var_2) = &input.comment {
         let mut inner_writer = scope.start_el("Comment").finish();
-        inner_writer.data(var_4.as_str());
+        inner_writer.data(var_2.as_str());
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_key_group_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::KeyGroupConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -34,6 +35,29 @@ pub fn de_key_group_config(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Name") /* Name com.amazonaws.cloudfront#KeyGroupConfig$Name */ =>  {
+                let var_3 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_name(var_3);
+            }
+            ,
+            s if s.matches("Items") /* Items com.amazonaws.cloudfront#KeyGroupConfig$Items */ =>  {
+                let var_4 =
+                    Some(
+                        crate::protocol_serde::shape_public_key_id_list::de_public_key_id_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_items(var_4);
+            }
+            ,
+            s if s.matches("Comment") /* Comment com.amazonaws.cloudfront#KeyGroupConfig$Comment */ =>  {
                 let var_5 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -43,34 +67,13 @@ pub fn de_key_group_config(
                         ?
                     )
                 ;
-                builder = builder.set_name(var_5);
-            }
-            ,
-            s if s.matches("Items") /* Items com.amazonaws.cloudfront#KeyGroupConfig$Items */ =>  {
-                let var_6 =
-                    Some(
-                        crate::protocol_serde::shape_public_key_id_list::de_public_key_id_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_items(var_6);
-            }
-            ,
-            s if s.matches("Comment") /* Comment com.amazonaws.cloudfront#KeyGroupConfig$Comment */ =>  {
-                let var_7 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_comment(var_7);
+                builder = builder.set_comment(var_5);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::key_group_config_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

@@ -114,7 +114,7 @@ impl CreateResourceDefinitionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_resource_definition::CreateResourceDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_resource_definition::CreateResourceDefinitionInput {
             amzn_client_token: self.amzn_client_token,

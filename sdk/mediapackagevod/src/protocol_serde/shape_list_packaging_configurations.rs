@@ -169,7 +169,7 @@ pub(crate) fn de_list_packaging_configurations(
                 }
                 "packagingConfigurations" => {
                     builder = builder.set_packaging_configurations(
-                        crate::protocol_serde::shape___list_of_packaging_configuration::de___list_of_packaging_configuration(tokens)?,
+                        crate::protocol_serde::shape_list_of_packaging_configuration::de_list_of_packaging_configuration(tokens)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

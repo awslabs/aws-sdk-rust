@@ -11,8 +11,10 @@ pub struct DescribeQueryDefinitionsOutput {
 }
 impl DescribeQueryDefinitionsOutput {
     /// <p>The list of query definitions that match your request.</p>
-    pub fn query_definitions(&self) -> ::std::option::Option<&[crate::types::QueryDefinition]> {
-        self.query_definitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.query_definitions.is_none()`.
+    pub fn query_definitions(&self) -> &[crate::types::QueryDefinition] {
+        self.query_definitions.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

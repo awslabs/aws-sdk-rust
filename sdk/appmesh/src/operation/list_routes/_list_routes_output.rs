@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRoutesOutput {
     /// <p>The list of existing routes for the specified service mesh and virtual router.</p>
-    pub routes: ::std::option::Option<::std::vec::Vec<crate::types::RouteRef>>,
+    pub routes: ::std::vec::Vec<crate::types::RouteRef>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListRoutes</code> request. When the results of a <code>ListRoutes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListRoutesOutput {
     /// <p>The list of existing routes for the specified service mesh and virtual router.</p>
-    pub fn routes(&self) -> ::std::option::Option<&[crate::types::RouteRef]> {
-        self.routes.as_deref()
+    pub fn routes(&self) -> &[crate::types::RouteRef] {
+        use std::ops::Deref;
+        self.routes.deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListRoutes</code> request. When the results of a <code>ListRoutes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,18 @@ impl ListRoutesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListRoutesOutput`](crate::operation::list_routes::ListRoutesOutput).
-    pub fn build(self) -> crate::operation::list_routes::ListRoutesOutput {
-        crate::operation::list_routes::ListRoutesOutput {
-            routes: self.routes,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`routes`](crate::operation::list_routes::builders::ListRoutesOutputBuilder::routes)
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_routes::ListRoutesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_routes::ListRoutesOutput {
+            routes: self.routes.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "routes",
+                    "routes was not specified but it is required when building ListRoutesOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -55,6 +55,7 @@ pub struct CreateSecurityPolicyInputBuilder {
 }
 impl CreateSecurityPolicyInputBuilder {
     /// <p>The type of security policy.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::SecurityPolicyType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -69,6 +70,7 @@ impl CreateSecurityPolicyInputBuilder {
         &self.r#type
     }
     /// <p>The name of the policy.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +99,7 @@ impl CreateSecurityPolicyInputBuilder {
         &self.description
     }
     /// <p>The JSON policy document to use as the content for the new policy.</p>
+    /// This field is required.
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
         self
@@ -127,7 +130,7 @@ impl CreateSecurityPolicyInputBuilder {
     /// Consumes the builder and constructs a [`CreateSecurityPolicyInput`](crate::operation::create_security_policy::CreateSecurityPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_security_policy::CreateSecurityPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_security_policy::CreateSecurityPolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_security_policy::CreateSecurityPolicyInput {
             r#type: self.r#type,

@@ -12,12 +12,17 @@ where
             match tokens.next().transpose()? {
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                    let key = key.to_unescaped()?;
+                    if key == "__type" {
+                        ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                        continue;
+                    }
                     if variant.is_some() {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
                             "encountered mixed variants in union",
                         ));
                     }
-                    variant = match key.to_unescaped()?.as_ref() {
+                    variant = match key.as_ref() {
                         "S3Data" => Some(crate::types::VectorEnrichmentJobDataSourceConfigInput::S3Data(
                             crate::protocol_serde::shape_vector_enrichment_job_s3_data::de_vector_enrichment_job_s3_data(tokens)?.ok_or_else(
                                 || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'S3Data' cannot be null"),
@@ -47,18 +52,18 @@ where
 }
 
 pub fn ser_vector_enrichment_job_data_source_config_input(
-    object_3: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
+    object_2: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VectorEnrichmentJobDataSourceConfigInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::VectorEnrichmentJobDataSourceConfigInput::S3Data(inner) => {
             #[allow(unused_mut)]
-            let mut object_1 = object_3.key("S3Data").start_object();
+            let mut object_1 = object_2.key("S3Data").start_object();
             crate::protocol_serde::shape_vector_enrichment_job_s3_data::ser_vector_enrichment_job_s3_data(&mut object_1, inner)?;
             object_1.finish();
         }
         crate::types::VectorEnrichmentJobDataSourceConfigInput::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "VectorEnrichmentJobDataSourceConfigInput",
             ))
         }

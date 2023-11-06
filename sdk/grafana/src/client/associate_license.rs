@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AssociateLicense`](crate::operation::associate_license::builders::AssociateLicenseFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`workspace_id(impl Into<String>)`](crate::operation::associate_license::builders::AssociateLicenseFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::associate_license::builders::AssociateLicenseFluentBuilder::set_workspace_id): <p>The ID of the workspace to associate the license with.</p>
-    ///   - [`license_type(LicenseType)`](crate::operation::associate_license::builders::AssociateLicenseFluentBuilder::license_type) / [`set_license_type(Option<LicenseType>)`](crate::operation::associate_license::builders::AssociateLicenseFluentBuilder::set_license_type): <p>The type of license to associate with the workspace.</p>
+    ///   - [`workspace_id(impl Into<String>)`](crate::operation::associate_license::builders::AssociateLicenseFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::associate_license::builders::AssociateLicenseFluentBuilder::set_workspace_id):<br>required: **true**<br><p>The ID of the workspace to associate the license with.</p><br>
+    ///   - [`license_type(LicenseType)`](crate::operation::associate_license::builders::AssociateLicenseFluentBuilder::license_type) / [`set_license_type(Option<LicenseType>)`](crate::operation::associate_license::builders::AssociateLicenseFluentBuilder::set_license_type):<br>required: **true**<br><p>The type of license to associate with the workspace.</p><br>
     /// - On success, responds with [`AssociateLicenseOutput`](crate::operation::associate_license::AssociateLicenseOutput) with field(s):
     ///   - [`workspace(Option<WorkspaceDescription>)`](crate::operation::associate_license::AssociateLicenseOutput::workspace): <p>A structure containing data about the workspace.</p>
     /// - On failure, responds with [`SdkError<AssociateLicenseError>`](crate::operation::associate_license::AssociateLicenseError)

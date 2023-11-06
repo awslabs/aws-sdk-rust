@@ -17,8 +17,10 @@ impl TrafficPattern {
         self.traffic_type.as_ref()
     }
     /// <p>Defines the phases traffic specification.</p>
-    pub fn phases(&self) -> ::std::option::Option<&[crate::types::Phase]> {
-        self.phases.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phases.is_none()`.
+    pub fn phases(&self) -> &[crate::types::Phase] {
+        self.phases.as_deref().unwrap_or_default()
     }
     /// <p>Defines the stairs traffic pattern.</p>
     pub fn stairs(&self) -> ::std::option::Option<&crate::types::Stairs> {

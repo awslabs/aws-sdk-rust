@@ -87,8 +87,10 @@ impl DescribeStreamProcessorOutput {
         self.kms_key_id.as_deref()
     }
     /// <p> Specifies locations in the frames where Amazon Rekognition checks for objects or people. This is an optional parameter for label detection stream processors. </p>
-    pub fn regions_of_interest(&self) -> ::std::option::Option<&[crate::types::RegionOfInterest]> {
-        self.regions_of_interest.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regions_of_interest.is_none()`.
+    pub fn regions_of_interest(&self) -> &[crate::types::RegionOfInterest] {
+        self.regions_of_interest.as_deref().unwrap_or_default()
     }
     /// <p> Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams. </p>
     pub fn data_sharing_preference(&self) -> ::std::option::Option<&crate::types::StreamProcessorDataSharingPreference> {

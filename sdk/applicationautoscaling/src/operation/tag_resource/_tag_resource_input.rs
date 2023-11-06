@@ -46,6 +46,7 @@ impl TagResourceInputBuilder {
     /// <p>Identifies the Application Auto Scaling scalable target that you want to apply tags to.</p>
     /// <p>For example: <code>arn:aws:application-autoscaling:us-east-1:123456789012:scalable-target/1234abcd56ab78cd901ef1234567890ab123</code> </p>
     /// <p>To get the ARN for a scalable target, use <code>DescribeScalableTargets</code>.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -93,7 +94,7 @@ impl TagResourceInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`TagResourceInput`](crate::operation::tag_resource::TagResourceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::tag_resource::TagResourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::tag_resource::TagResourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::tag_resource::TagResourceInput {
             resource_arn: self.resource_arn,
             tags: self.tags,

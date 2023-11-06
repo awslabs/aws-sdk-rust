@@ -35,6 +35,7 @@ pub struct GatewayNetworkBuilder {
 }
 impl GatewayNetworkBuilder {
     /// A unique IP address range to use for this network. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+    /// This field is required.
     pub fn cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cidr_block = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl GatewayNetworkBuilder {
         &self.cidr_block
     }
     /// The name of the network. This name is used to reference the network and must be unique among networks in this gateway.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

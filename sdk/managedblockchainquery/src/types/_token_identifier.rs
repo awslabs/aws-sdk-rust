@@ -7,7 +7,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TokenIdentifier {
     /// <p>The blockchain network of the token.</p>
-    pub network: ::std::option::Option<crate::types::QueryNetwork>,
+    pub network: crate::types::QueryNetwork,
     /// <p>This is the token's contract address.</p>
     pub contract_address: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the token.</p> <note>
@@ -17,8 +17,8 @@ pub struct TokenIdentifier {
 }
 impl TokenIdentifier {
     /// <p>The blockchain network of the token.</p>
-    pub fn network(&self) -> ::std::option::Option<&crate::types::QueryNetwork> {
-        self.network.as_ref()
+    pub fn network(&self) -> &crate::types::QueryNetwork {
+        &self.network
     }
     /// <p>This is the token's contract address.</p>
     pub fn contract_address(&self) -> ::std::option::Option<&str> {
@@ -48,6 +48,7 @@ pub struct TokenIdentifierBuilder {
 }
 impl TokenIdentifierBuilder {
     /// <p>The blockchain network of the token.</p>
+    /// This field is required.
     pub fn network(mut self, input: crate::types::QueryNetwork) -> Self {
         self.network = ::std::option::Option::Some(input);
         self
@@ -96,11 +97,18 @@ impl TokenIdentifierBuilder {
         &self.token_id
     }
     /// Consumes the builder and constructs a [`TokenIdentifier`](crate::types::TokenIdentifier).
-    pub fn build(self) -> crate::types::TokenIdentifier {
-        crate::types::TokenIdentifier {
-            network: self.network,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`network`](crate::types::builders::TokenIdentifierBuilder::network)
+    pub fn build(self) -> ::std::result::Result<crate::types::TokenIdentifier, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TokenIdentifier {
+            network: self.network.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "network",
+                    "network was not specified but it is required when building TokenIdentifier",
+                )
+            })?,
             contract_address: self.contract_address,
             token_id: self.token_id,
-        }
+        })
     }
 }

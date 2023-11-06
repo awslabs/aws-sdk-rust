@@ -42,8 +42,10 @@ impl ParticipantToken {
         self.duration
     }
     /// <p>Set of capabilities that the user is allowed to perform in the stage.</p>
-    pub fn capabilities(&self) -> ::std::option::Option<&[crate::types::ParticipantTokenCapability]> {
-        self.capabilities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capabilities.is_none()`.
+    pub fn capabilities(&self) -> &[crate::types::ParticipantTokenCapability] {
+        self.capabilities.as_deref().unwrap_or_default()
     }
     /// <p>ISO 8601 timestamp (returned as a string) for when this token expires.</p>
     pub fn expiration_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

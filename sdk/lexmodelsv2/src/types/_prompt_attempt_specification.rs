@@ -63,6 +63,7 @@ impl PromptAttemptSpecificationBuilder {
         &self.allow_interrupt
     }
     /// <p>Indicates the allowed input types of the prompt attempt.</p>
+    /// This field is required.
     pub fn allowed_input_types(mut self, input: crate::types::AllowedInputTypes) -> Self {
         self.allowed_input_types = ::std::option::Option::Some(input);
         self

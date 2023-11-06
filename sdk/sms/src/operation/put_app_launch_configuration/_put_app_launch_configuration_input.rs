@@ -26,8 +26,10 @@ impl PutAppLaunchConfigurationInput {
         self.auto_launch
     }
     /// <p>Information about the launch configurations for server groups in the application.</p>
-    pub fn server_group_launch_configurations(&self) -> ::std::option::Option<&[crate::types::ServerGroupLaunchConfiguration]> {
-        self.server_group_launch_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.server_group_launch_configurations.is_none()`.
+    pub fn server_group_launch_configurations(&self) -> &[crate::types::ServerGroupLaunchConfiguration] {
+        self.server_group_launch_configurations.as_deref().unwrap_or_default()
     }
 }
 impl PutAppLaunchConfigurationInput {
@@ -117,7 +119,7 @@ impl PutAppLaunchConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationInput {
             app_id: self.app_id,

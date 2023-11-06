@@ -49,8 +49,10 @@ impl DescribeSourceLocationOutput {
         self.last_modified_time.as_ref()
     }
     /// <p>A list of the segment delivery configurations associated with this resource.</p>
-    pub fn segment_delivery_configurations(&self) -> ::std::option::Option<&[crate::types::SegmentDeliveryConfiguration]> {
-        self.segment_delivery_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.segment_delivery_configurations.is_none()`.
+    pub fn segment_delivery_configurations(&self) -> &[crate::types::SegmentDeliveryConfiguration] {
+        self.segment_delivery_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The name of the source location.</p>
     pub fn source_location_name(&self) -> ::std::option::Option<&str> {

@@ -2,7 +2,7 @@
 pub fn ser_list_transactions_sort(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ListTransactionsSort,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.sort_by {
         object.key("sortBy").string(var_1.as_str());
     }

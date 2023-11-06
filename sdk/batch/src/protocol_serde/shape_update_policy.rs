@@ -2,7 +2,7 @@
 pub fn ser_update_policy(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdatePolicy,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.terminate_jobs_on_update {
         object.key("terminateJobsOnUpdate").boolean(*var_1);
     }

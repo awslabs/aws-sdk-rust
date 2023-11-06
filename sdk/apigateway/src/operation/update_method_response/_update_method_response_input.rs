@@ -33,8 +33,10 @@ impl UpdateMethodResponseInput {
         self.status_code.as_deref()
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn patch_operations(&self) -> ::std::option::Option<&[crate::types::PatchOperation]> {
-        self.patch_operations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.patch_operations.is_none()`.
+    pub fn patch_operations(&self) -> &[crate::types::PatchOperation] {
+        self.patch_operations.as_deref().unwrap_or_default()
     }
 }
 impl UpdateMethodResponseInput {
@@ -56,6 +58,7 @@ pub struct UpdateMethodResponseInputBuilder {
 }
 impl UpdateMethodResponseInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
+    /// This field is required.
     pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rest_api_id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +73,7 @@ impl UpdateMethodResponseInputBuilder {
         &self.rest_api_id
     }
     /// <p>The Resource identifier for the MethodResponse resource.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +88,7 @@ impl UpdateMethodResponseInputBuilder {
         &self.resource_id
     }
     /// <p>The HTTP verb of the Method resource.</p>
+    /// This field is required.
     pub fn http_method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.http_method = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +103,7 @@ impl UpdateMethodResponseInputBuilder {
         &self.http_method
     }
     /// <p>The status code for the MethodResponse resource.</p>
+    /// This field is required.
     pub fn status_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_code = ::std::option::Option::Some(input.into());
         self
@@ -134,7 +140,7 @@ impl UpdateMethodResponseInputBuilder {
     /// Consumes the builder and constructs a [`UpdateMethodResponseInput`](crate::operation::update_method_response::UpdateMethodResponseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_method_response::UpdateMethodResponseInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_method_response::UpdateMethodResponseInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_method_response::UpdateMethodResponseInput {
             rest_api_id: self.rest_api_id,

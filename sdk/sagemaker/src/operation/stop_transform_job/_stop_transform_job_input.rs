@@ -27,6 +27,7 @@ pub struct StopTransformJobInputBuilder {
 }
 impl StopTransformJobInputBuilder {
     /// <p>The name of the batch transform job to stop.</p>
+    /// This field is required.
     pub fn transform_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transform_job_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl StopTransformJobInputBuilder {
     /// Consumes the builder and constructs a [`StopTransformJobInput`](crate::operation::stop_transform_job::StopTransformJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_transform_job::StopTransformJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_transform_job::StopTransformJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_transform_job::StopTransformJobInput {
             transform_job_name: self.transform_job_name,
         })

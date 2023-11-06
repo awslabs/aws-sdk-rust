@@ -50,6 +50,7 @@ pub struct UpdatePricingPlanInputBuilder {
 }
 impl UpdatePricingPlanInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're updating. </p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -94,7 +95,7 @@ impl UpdatePricingPlanInputBuilder {
     /// Consumes the builder and constructs a [`UpdatePricingPlanInput`](crate::operation::update_pricing_plan::UpdatePricingPlanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_pricing_plan::UpdatePricingPlanInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_pricing_plan::UpdatePricingPlanInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_pricing_plan::UpdatePricingPlanInput {
             arn: self.arn,
             name: self.name,

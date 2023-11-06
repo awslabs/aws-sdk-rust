@@ -2,7 +2,7 @@
 pub fn ser_update_finding_aggregator_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_finding_aggregator::UpdateFindingAggregatorInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.finding_aggregator_arn {
         object.key("FindingAggregatorArn").string(var_1.as_str());
     }

@@ -11,8 +11,10 @@ pub struct ListDiscoverersOutput {
 }
 impl ListDiscoverersOutput {
     /// <p>An array of DiscovererSummary information.</p>
-    pub fn discoverers(&self) -> ::std::option::Option<&[crate::types::DiscovererSummary]> {
-        self.discoverers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.discoverers.is_none()`.
+    pub fn discoverers(&self) -> &[crate::types::DiscovererSummary] {
+        self.discoverers.as_deref().unwrap_or_default()
     }
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

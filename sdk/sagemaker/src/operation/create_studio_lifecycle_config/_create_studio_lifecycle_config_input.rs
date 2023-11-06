@@ -26,8 +26,10 @@ impl CreateStudioLifecycleConfigInput {
         self.studio_lifecycle_config_app_type.as_ref()
     }
     /// <p>Tags to be associated with the Lifecycle Configuration. Each tag consists of a key and an optional value. Tag keys must be unique per resource. Tags are searchable using the Search API. </p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateStudioLifecycleConfigInput {
@@ -48,6 +50,7 @@ pub struct CreateStudioLifecycleConfigInputBuilder {
 }
 impl CreateStudioLifecycleConfigInputBuilder {
     /// <p>The name of the Studio Lifecycle Configuration to create.</p>
+    /// This field is required.
     pub fn studio_lifecycle_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_lifecycle_config_name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl CreateStudioLifecycleConfigInputBuilder {
         &self.studio_lifecycle_config_name
     }
     /// <p>The content of your Studio Lifecycle Configuration script. This content must be base64 encoded.</p>
+    /// This field is required.
     pub fn studio_lifecycle_config_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_lifecycle_config_content = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +80,7 @@ impl CreateStudioLifecycleConfigInputBuilder {
         &self.studio_lifecycle_config_content
     }
     /// <p>The App type that the Lifecycle Configuration is attached to.</p>
+    /// This field is required.
     pub fn studio_lifecycle_config_app_type(mut self, input: crate::types::StudioLifecycleConfigAppType) -> Self {
         self.studio_lifecycle_config_app_type = ::std::option::Option::Some(input);
         self
@@ -114,7 +119,7 @@ impl CreateStudioLifecycleConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_studio_lifecycle_config::CreateStudioLifecycleConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_studio_lifecycle_config::CreateStudioLifecycleConfigInput {
             studio_lifecycle_config_name: self.studio_lifecycle_config_name,

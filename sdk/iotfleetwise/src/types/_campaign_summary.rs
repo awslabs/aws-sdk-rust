@@ -24,9 +24,9 @@ pub struct CampaignSummary {
     /// </ul>
     pub status: ::std::option::Option<crate::types::CampaignStatus>,
     /// <p>The time the campaign was created.</p>
-    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_time: ::aws_smithy_types::DateTime,
     /// <p>The last time the campaign was modified.</p>
-    pub last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub last_modification_time: ::aws_smithy_types::DateTime,
 }
 impl CampaignSummary {
     /// <p>The Amazon Resource Name (ARN) of a campaign.</p>
@@ -60,12 +60,12 @@ impl CampaignSummary {
         self.status.as_ref()
     }
     /// <p>The time the campaign was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_time.as_ref()
+    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_time
     }
     /// <p>The last time the campaign was modified.</p>
-    pub fn last_modification_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.last_modification_time.as_ref()
+    pub fn last_modification_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.last_modification_time
     }
 }
 impl CampaignSummary {
@@ -192,6 +192,7 @@ impl CampaignSummaryBuilder {
         &self.status
     }
     /// <p>The time the campaign was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -206,6 +207,7 @@ impl CampaignSummaryBuilder {
         &self.creation_time
     }
     /// <p>The last time the campaign was modified.</p>
+    /// This field is required.
     pub fn last_modification_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modification_time = ::std::option::Option::Some(input);
         self
@@ -220,16 +222,29 @@ impl CampaignSummaryBuilder {
         &self.last_modification_time
     }
     /// Consumes the builder and constructs a [`CampaignSummary`](crate::types::CampaignSummary).
-    pub fn build(self) -> crate::types::CampaignSummary {
-        crate::types::CampaignSummary {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`creation_time`](crate::types::builders::CampaignSummaryBuilder::creation_time)
+    /// - [`last_modification_time`](crate::types::builders::CampaignSummaryBuilder::last_modification_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::CampaignSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CampaignSummary {
             arn: self.arn,
             name: self.name,
             description: self.description,
             signal_catalog_arn: self.signal_catalog_arn,
             target_arn: self.target_arn,
             status: self.status,
-            creation_time: self.creation_time,
-            last_modification_time: self.last_modification_time,
-        }
+            creation_time: self.creation_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "creation_time",
+                    "creation_time was not specified but it is required when building CampaignSummary",
+                )
+            })?,
+            last_modification_time: self.last_modification_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "last_modification_time",
+                    "last_modification_time was not specified but it is required when building CampaignSummary",
+                )
+            })?,
+        })
     }
 }

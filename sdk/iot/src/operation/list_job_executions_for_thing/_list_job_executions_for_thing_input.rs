@@ -70,6 +70,7 @@ pub struct ListJobExecutionsForThingInputBuilder {
 }
 impl ListJobExecutionsForThingInputBuilder {
     /// <p>The thing name.</p>
+    /// This field is required.
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_name = ::std::option::Option::Some(input.into());
         self
@@ -170,7 +171,7 @@ impl ListJobExecutionsForThingInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_job_executions_for_thing::ListJobExecutionsForThingInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_job_executions_for_thing::ListJobExecutionsForThingInput {
             thing_name: self.thing_name,

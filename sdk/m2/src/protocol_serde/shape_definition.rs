@@ -2,7 +2,7 @@
 pub fn ser_definition(
     object_3: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Definition,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::Definition::S3Location(inner) => {
             object_3.key("s3Location").string(inner.as_str());
@@ -10,7 +10,7 @@ pub fn ser_definition(
         crate::types::Definition::Content(inner) => {
             object_3.key("content").string(inner.as_str());
         }
-        crate::types::Definition::Unknown => return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("Definition")),
+        crate::types::Definition::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("Definition")),
     }
     Ok(())
 }

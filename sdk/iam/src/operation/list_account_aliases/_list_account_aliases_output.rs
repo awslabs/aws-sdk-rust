@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAccountAliasesOutput {
     /// <p>A list of aliases associated with the account. Amazon Web Services supports only one alias per account.</p>
-    pub account_aliases: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub account_aliases: ::std::vec::Vec<::std::string::String>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
@@ -14,8 +14,9 @@ pub struct ListAccountAliasesOutput {
 }
 impl ListAccountAliasesOutput {
     /// <p>A list of aliases associated with the account. Amazon Web Services supports only one alias per account.</p>
-    pub fn account_aliases(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.account_aliases.as_deref()
+    pub fn account_aliases(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.account_aliases.deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub fn is_truncated(&self) -> bool {
@@ -106,12 +107,22 @@ impl ListAccountAliasesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAccountAliasesOutput`](crate::operation::list_account_aliases::ListAccountAliasesOutput).
-    pub fn build(self) -> crate::operation::list_account_aliases::ListAccountAliasesOutput {
-        crate::operation::list_account_aliases::ListAccountAliasesOutput {
-            account_aliases: self.account_aliases,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`account_aliases`](crate::operation::list_account_aliases::builders::ListAccountAliasesOutputBuilder::account_aliases)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_account_aliases::ListAccountAliasesOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_account_aliases::ListAccountAliasesOutput {
+            account_aliases: self.account_aliases.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "account_aliases",
+                    "account_aliases was not specified but it is required when building ListAccountAliasesOutput",
+                )
+            })?,
             is_truncated: self.is_truncated.unwrap_or_default(),
             marker: self.marker,
             _request_id: self._request_id,
-        }
+        })
     }
 }

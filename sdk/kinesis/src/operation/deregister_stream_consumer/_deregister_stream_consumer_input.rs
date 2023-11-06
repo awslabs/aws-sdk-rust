@@ -87,7 +87,7 @@ impl DeregisterStreamConsumerInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_stream_consumer::DeregisterStreamConsumerInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::deregister_stream_consumer::DeregisterStreamConsumerInput {
             stream_arn: self.stream_arn,

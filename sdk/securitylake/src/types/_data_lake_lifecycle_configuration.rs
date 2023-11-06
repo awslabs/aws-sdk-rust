@@ -15,8 +15,10 @@ impl DataLakeLifecycleConfiguration {
         self.expiration.as_ref()
     }
     /// <p>Provides data storage transition details of Amazon Security Lake object.</p>
-    pub fn transitions(&self) -> ::std::option::Option<&[crate::types::DataLakeLifecycleTransition]> {
-        self.transitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.transitions.is_none()`.
+    pub fn transitions(&self) -> &[crate::types::DataLakeLifecycleTransition] {
+        self.transitions.as_deref().unwrap_or_default()
     }
 }
 impl DataLakeLifecycleConfiguration {

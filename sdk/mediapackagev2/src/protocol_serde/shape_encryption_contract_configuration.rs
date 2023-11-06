@@ -38,7 +38,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::encryption_contract_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -49,12 +53,12 @@ where
 pub fn ser_encryption_contract_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EncryptionContractConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.preset_speke20_audio {
-        object.key("PresetSpeke20Audio").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("PresetSpeke20Audio").string(input.preset_speke20_audio.as_str());
     }
-    if let Some(var_2) = &input.preset_speke20_video {
-        object.key("PresetSpeke20Video").string(var_2.as_str());
+    {
+        object.key("PresetSpeke20Video").string(input.preset_speke20_video.as_str());
     }
     Ok(())
 }

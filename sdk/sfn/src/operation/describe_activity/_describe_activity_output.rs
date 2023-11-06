@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeActivityOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the activity.</p>
-    pub activity_arn: ::std::option::Option<::std::string::String>,
+    pub activity_arn: ::std::string::String,
     /// <p>The name of the activity.</p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
@@ -15,15 +15,16 @@ pub struct DescribeActivityOutput {
     /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The date the activity is created.</p>
-    pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_date: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
 impl DescribeActivityOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the activity.</p>
-    pub fn activity_arn(&self) -> ::std::option::Option<&str> {
-        self.activity_arn.as_deref()
+    pub fn activity_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.activity_arn.deref()
     }
     /// <p>The name of the activity.</p>
     /// <p>A name must <i>not</i> contain:</p>
@@ -35,12 +36,13 @@ impl DescribeActivityOutput {
     /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The date the activity is created.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_date.as_ref()
+    pub fn creation_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_date
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeActivityOutput {
@@ -66,6 +68,7 @@ pub struct DescribeActivityOutputBuilder {
 }
 impl DescribeActivityOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) that identifies the activity.</p>
+    /// This field is required.
     pub fn activity_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.activity_arn = ::std::option::Option::Some(input.into());
         self
@@ -89,6 +92,7 @@ impl DescribeActivityOutputBuilder {
     /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -121,6 +125,7 @@ impl DescribeActivityOutputBuilder {
         &self.name
     }
     /// <p>The date the activity is created.</p>
+    /// This field is required.
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
         self
@@ -144,12 +149,33 @@ impl DescribeActivityOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeActivityOutput`](crate::operation::describe_activity::DescribeActivityOutput).
-    pub fn build(self) -> crate::operation::describe_activity::DescribeActivityOutput {
-        crate::operation::describe_activity::DescribeActivityOutput {
-            activity_arn: self.activity_arn,
-            name: self.name,
-            creation_date: self.creation_date,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`activity_arn`](crate::operation::describe_activity::builders::DescribeActivityOutputBuilder::activity_arn)
+    /// - [`name`](crate::operation::describe_activity::builders::DescribeActivityOutputBuilder::name)
+    /// - [`creation_date`](crate::operation::describe_activity::builders::DescribeActivityOutputBuilder::creation_date)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_activity::DescribeActivityOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_activity::DescribeActivityOutput {
+            activity_arn: self.activity_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "activity_arn",
+                    "activity_arn was not specified but it is required when building DescribeActivityOutput",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DescribeActivityOutput",
+                )
+            })?,
+            creation_date: self.creation_date.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "creation_date",
+                    "creation_date was not specified but it is required when building DescribeActivityOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

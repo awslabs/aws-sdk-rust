@@ -55,6 +55,7 @@ pub struct ListTemplateSharesInputBuilder {
 }
 impl ListTemplateSharesInputBuilder {
     /// <p>The review template ARN.</p>
+    /// This field is required.
     pub fn template_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_arn = ::std::option::Option::Some(input.into());
         self
@@ -127,7 +128,8 @@ impl ListTemplateSharesInputBuilder {
     /// Consumes the builder and constructs a [`ListTemplateSharesInput`](crate::operation::list_template_shares::ListTemplateSharesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_template_shares::ListTemplateSharesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_template_shares::ListTemplateSharesInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_template_shares::ListTemplateSharesInput {
             template_arn: self.template_arn,
             shared_with_prefix: self.shared_with_prefix,

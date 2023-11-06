@@ -41,6 +41,7 @@ pub struct UpdateImagePermissionsInputBuilder {
 }
 impl UpdateImagePermissionsInputBuilder {
     /// <p>The name of the private image.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateImagePermissionsInputBuilder {
         &self.name
     }
     /// <p>The 12-digit identifier of the AWS account for which you want add or update image permissions.</p>
+    /// This field is required.
     pub fn shared_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shared_account_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl UpdateImagePermissionsInputBuilder {
         &self.shared_account_id
     }
     /// <p>The permissions for the image.</p>
+    /// This field is required.
     pub fn image_permissions(mut self, input: crate::types::ImagePermissions) -> Self {
         self.image_permissions = ::std::option::Option::Some(input);
         self
@@ -85,8 +88,10 @@ impl UpdateImagePermissionsInputBuilder {
     /// Consumes the builder and constructs a [`UpdateImagePermissionsInput`](crate::operation::update_image_permissions::UpdateImagePermissionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_image_permissions::UpdateImagePermissionsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::update_image_permissions::UpdateImagePermissionsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::update_image_permissions::UpdateImagePermissionsInput {
             name: self.name,
             shared_account_id: self.shared_account_id,

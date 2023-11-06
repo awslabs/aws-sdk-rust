@@ -24,8 +24,10 @@ impl CreateDomainInput {
         self.encryption_key.as_deref()
     }
     /// <p>One or more tag key-value pairs for the domain.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateDomainInput {
@@ -45,6 +47,7 @@ pub struct CreateDomainInputBuilder {
 }
 impl CreateDomainInputBuilder {
     /// <p> The name of the domain to create. All domain names in an Amazon Web Services Region that are in the same Amazon Web Services account must be unique. The domain name is used as the prefix in DNS hostnames. Do not use sensitive information in a domain name because it is publicly discoverable. </p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -99,7 +102,9 @@ impl CreateDomainInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateDomainInput`](crate::operation::create_domain::CreateDomainInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_domain::CreateDomainInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_domain::CreateDomainInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_domain::CreateDomainInput {
             domain: self.domain,
             encryption_key: self.encryption_key,

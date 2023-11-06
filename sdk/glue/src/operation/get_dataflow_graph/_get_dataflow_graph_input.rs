@@ -43,7 +43,7 @@ impl GetDataflowGraphInputBuilder {
     /// Consumes the builder and constructs a [`GetDataflowGraphInput`](crate::operation::get_dataflow_graph::GetDataflowGraphInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_dataflow_graph::GetDataflowGraphInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_dataflow_graph::GetDataflowGraphInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_dataflow_graph::GetDataflowGraphInput {
             python_script: self.python_script,
         })

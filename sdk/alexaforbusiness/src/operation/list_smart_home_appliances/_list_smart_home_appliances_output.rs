@@ -11,8 +11,10 @@ pub struct ListSmartHomeAppliancesOutput {
 }
 impl ListSmartHomeAppliancesOutput {
     /// <p>The smart home appliances.</p>
-    pub fn smart_home_appliances(&self) -> ::std::option::Option<&[crate::types::SmartHomeAppliance]> {
-        self.smart_home_appliances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.smart_home_appliances.is_none()`.
+    pub fn smart_home_appliances(&self) -> &[crate::types::SmartHomeAppliance] {
+        self.smart_home_appliances.as_deref().unwrap_or_default()
     }
     /// <p>The tokens used for pagination.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -32,8 +32,10 @@ impl DescribeStateMachineAliasOutput {
         self.description.as_deref()
     }
     /// <p>The routing configuration of the alias.</p>
-    pub fn routing_configuration(&self) -> ::std::option::Option<&[crate::types::RoutingConfigurationListItem]> {
-        self.routing_configuration.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.routing_configuration.is_none()`.
+    pub fn routing_configuration(&self) -> &[crate::types::RoutingConfigurationListItem] {
+        self.routing_configuration.as_deref().unwrap_or_default()
     }
     /// <p>The date the state machine alias was created.</p>
     pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

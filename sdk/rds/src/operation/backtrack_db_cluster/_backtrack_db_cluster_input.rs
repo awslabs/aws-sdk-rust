@@ -86,6 +86,7 @@ impl BacktrackDbClusterInputBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster1</code> </p>
+    /// This field is required.
     pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_identifier = ::std::option::Option::Some(input.into());
         self
@@ -122,6 +123,7 @@ impl BacktrackDbClusterInputBuilder {
     /// <li> <p>Can't contain a timestamp set in the future.</p> </li>
     /// </ul>
     /// <p>Example: <code>2017-07-08T18:00Z</code> </p>
+    /// This field is required.
     pub fn backtrack_to(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.backtrack_to = ::std::option::Option::Some(input);
         self
@@ -182,7 +184,8 @@ impl BacktrackDbClusterInputBuilder {
     /// Consumes the builder and constructs a [`BacktrackDbClusterInput`](crate::operation::backtrack_db_cluster::BacktrackDbClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::backtrack_db_cluster::BacktrackDbClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::backtrack_db_cluster::BacktrackDbClusterInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::backtrack_db_cluster::BacktrackDbClusterInput {
             db_cluster_identifier: self.db_cluster_identifier,
             backtrack_to: self.backtrack_to,

@@ -34,6 +34,7 @@ pub struct StartMlLabelingSetGenerationTaskRunInputBuilder {
 }
 impl StartMlLabelingSetGenerationTaskRunInputBuilder {
     /// <p>The unique identifier of the machine learning transform.</p>
+    /// This field is required.
     pub fn transform_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transform_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl StartMlLabelingSetGenerationTaskRunInputBuilder {
         &self.transform_id
     }
     /// <p>The Amazon Simple Storage Service (Amazon S3) path where you generate the labeling set.</p>
+    /// This field is required.
     pub fn output_s3_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_s3_path = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl StartMlLabelingSetGenerationTaskRunInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_ml_labeling_set_generation_task_run::StartMlLabelingSetGenerationTaskRunInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::start_ml_labeling_set_generation_task_run::StartMlLabelingSetGenerationTaskRunInput {

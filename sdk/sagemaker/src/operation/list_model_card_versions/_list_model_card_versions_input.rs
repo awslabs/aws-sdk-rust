@@ -118,6 +118,7 @@ impl ListModelCardVersionsInputBuilder {
         &self.max_results
     }
     /// <p>List model card versions for the model card with the specified name or Amazon Resource Name (ARN).</p>
+    /// This field is required.
     pub fn model_card_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_card_name = ::std::option::Option::Some(input.into());
         self
@@ -190,7 +191,7 @@ impl ListModelCardVersionsInputBuilder {
     /// Consumes the builder and constructs a [`ListModelCardVersionsInput`](crate::operation::list_model_card_versions::ListModelCardVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_model_card_versions::ListModelCardVersionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_model_card_versions::ListModelCardVersionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_model_card_versions::ListModelCardVersionsInput {
             creation_time_after: self.creation_time_after,

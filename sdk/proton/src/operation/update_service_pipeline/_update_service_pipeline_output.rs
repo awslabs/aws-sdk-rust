@@ -34,6 +34,7 @@ pub struct UpdateServicePipelineOutputBuilder {
 }
 impl UpdateServicePipelineOutputBuilder {
     /// <p>The pipeline details that are returned by Proton.</p>
+    /// This field is required.
     pub fn pipeline(mut self, input: crate::types::ServicePipeline) -> Self {
         self.pipeline = ::std::option::Option::Some(input);
         self

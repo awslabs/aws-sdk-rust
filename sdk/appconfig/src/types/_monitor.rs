@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Monitor {
     /// <p>Amazon Resource Name (ARN) of the Amazon CloudWatch alarm.</p>
-    pub alarm_arn: ::std::option::Option<::std::string::String>,
+    pub alarm_arn: ::std::string::String,
     /// <p>ARN of an Identity and Access Management (IAM) role for AppConfig to monitor <code>AlarmArn</code>.</p>
     pub alarm_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl Monitor {
     /// <p>Amazon Resource Name (ARN) of the Amazon CloudWatch alarm.</p>
-    pub fn alarm_arn(&self) -> ::std::option::Option<&str> {
-        self.alarm_arn.as_deref()
+    pub fn alarm_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.alarm_arn.deref()
     }
     /// <p>ARN of an Identity and Access Management (IAM) role for AppConfig to monitor <code>AlarmArn</code>.</p>
     pub fn alarm_role_arn(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct MonitorBuilder {
 }
 impl MonitorBuilder {
     /// <p>Amazon Resource Name (ARN) of the Amazon CloudWatch alarm.</p>
+    /// This field is required.
     pub fn alarm_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alarm_arn = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl MonitorBuilder {
         &self.alarm_role_arn
     }
     /// Consumes the builder and constructs a [`Monitor`](crate::types::Monitor).
-    pub fn build(self) -> crate::types::Monitor {
-        crate::types::Monitor {
-            alarm_arn: self.alarm_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`alarm_arn`](crate::types::builders::MonitorBuilder::alarm_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::Monitor, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Monitor {
+            alarm_arn: self.alarm_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "alarm_arn",
+                    "alarm_arn was not specified but it is required when building Monitor",
+                )
+            })?,
             alarm_role_arn: self.alarm_role_arn,
-        }
+        })
     }
 }

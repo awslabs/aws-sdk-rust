@@ -6,7 +6,7 @@ pub struct ListPoliciesOutput {
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Lists all policies that are available in the specified policy store.</p>
-    pub policies: ::std::option::Option<::std::vec::Vec<crate::types::PolicyItem>>,
+    pub policies: ::std::vec::Vec<crate::types::PolicyItem>,
     _request_id: Option<String>,
 }
 impl ListPoliciesOutput {
@@ -15,8 +15,9 @@ impl ListPoliciesOutput {
         self.next_token.as_deref()
     }
     /// <p>Lists all policies that are available in the specified policy store.</p>
-    pub fn policies(&self) -> ::std::option::Option<&[crate::types::PolicyItem]> {
-        self.policies.as_deref()
+    pub fn policies(&self) -> &[crate::types::PolicyItem] {
+        use std::ops::Deref;
+        self.policies.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListPoliciesOutput {
@@ -84,11 +85,20 @@ impl ListPoliciesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListPoliciesOutput`](crate::operation::list_policies::ListPoliciesOutput).
-    pub fn build(self) -> crate::operation::list_policies::ListPoliciesOutput {
-        crate::operation::list_policies::ListPoliciesOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`policies`](crate::operation::list_policies::builders::ListPoliciesOutputBuilder::policies)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_policies::ListPoliciesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_policies::ListPoliciesOutput {
             next_token: self.next_token,
-            policies: self.policies,
+            policies: self.policies.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "policies",
+                    "policies was not specified but it is required when building ListPoliciesOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -104,6 +104,7 @@ impl MatchmakingRuleSetBuilder {
         &self.rule_set_arn
     }
     /// <p>A collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most elements support a description field.</p>
+    /// This field is required.
     pub fn rule_set_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_set_body = ::std::option::Option::Some(input.into());
         self

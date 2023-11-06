@@ -51,6 +51,7 @@ pub struct GetMobileDeviceAccessOverrideInputBuilder {
 }
 impl GetMobileDeviceAccessOverrideInputBuilder {
     /// <p>The WorkMail organization to which you want to apply the override.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +71,7 @@ impl GetMobileDeviceAccessOverrideInputBuilder {
     /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
     /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
@@ -94,6 +96,7 @@ impl GetMobileDeviceAccessOverrideInputBuilder {
         &self.user_id
     }
     /// <p>The mobile device to which the override applies. <code>DeviceId</code> is case insensitive.</p>
+    /// This field is required.
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_id = ::std::option::Option::Some(input.into());
         self
@@ -112,7 +115,7 @@ impl GetMobileDeviceAccessOverrideInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_mobile_device_access_override::GetMobileDeviceAccessOverrideInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_mobile_device_access_override::GetMobileDeviceAccessOverrideInput {
             organization_id: self.organization_id,

@@ -27,6 +27,7 @@ pub struct GetSchemaAsJsonInputBuilder {
 }
 impl GetSchemaAsJsonInputBuilder {
     /// <p>The ARN of the schema to retrieve.</p>
+    /// This field is required.
     pub fn schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetSchemaAsJsonInputBuilder {
     /// Consumes the builder and constructs a [`GetSchemaAsJsonInput`](crate::operation::get_schema_as_json::GetSchemaAsJsonInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_schema_as_json::GetSchemaAsJsonInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_schema_as_json::GetSchemaAsJsonInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_schema_as_json::GetSchemaAsJsonInput { schema_arn: self.schema_arn })
     }
 }

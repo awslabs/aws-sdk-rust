@@ -5,20 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSetImportTask {
     /// <p>The identifier of the data set import task.</p>
-    pub task_id: ::std::option::Option<::std::string::String>,
+    pub task_id: ::std::string::String,
     /// <p>The status of the data set import task.</p>
-    pub status: ::std::option::Option<crate::types::DataSetTaskLifecycle>,
+    pub status: crate::types::DataSetTaskLifecycle,
     /// <p>A summary of the data set import task.</p>
     pub summary: ::std::option::Option<crate::types::DataSetImportSummary>,
 }
 impl DataSetImportTask {
     /// <p>The identifier of the data set import task.</p>
-    pub fn task_id(&self) -> ::std::option::Option<&str> {
-        self.task_id.as_deref()
+    pub fn task_id(&self) -> &str {
+        use std::ops::Deref;
+        self.task_id.deref()
     }
     /// <p>The status of the data set import task.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::DataSetTaskLifecycle> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::DataSetTaskLifecycle {
+        &self.status
     }
     /// <p>A summary of the data set import task.</p>
     pub fn summary(&self) -> ::std::option::Option<&crate::types::DataSetImportSummary> {
@@ -42,6 +43,7 @@ pub struct DataSetImportTaskBuilder {
 }
 impl DataSetImportTaskBuilder {
     /// <p>The identifier of the data set import task.</p>
+    /// This field is required.
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +58,7 @@ impl DataSetImportTaskBuilder {
         &self.task_id
     }
     /// <p>The status of the data set import task.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::DataSetTaskLifecycle) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -70,6 +73,7 @@ impl DataSetImportTaskBuilder {
         &self.status
     }
     /// <p>A summary of the data set import task.</p>
+    /// This field is required.
     pub fn summary(mut self, input: crate::types::DataSetImportSummary) -> Self {
         self.summary = ::std::option::Option::Some(input);
         self
@@ -84,11 +88,24 @@ impl DataSetImportTaskBuilder {
         &self.summary
     }
     /// Consumes the builder and constructs a [`DataSetImportTask`](crate::types::DataSetImportTask).
-    pub fn build(self) -> crate::types::DataSetImportTask {
-        crate::types::DataSetImportTask {
-            task_id: self.task_id,
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`task_id`](crate::types::builders::DataSetImportTaskBuilder::task_id)
+    /// - [`status`](crate::types::builders::DataSetImportTaskBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::DataSetImportTask, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DataSetImportTask {
+            task_id: self.task_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "task_id",
+                    "task_id was not specified but it is required when building DataSetImportTask",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building DataSetImportTask",
+                )
+            })?,
             summary: self.summary,
-        }
+        })
     }
 }

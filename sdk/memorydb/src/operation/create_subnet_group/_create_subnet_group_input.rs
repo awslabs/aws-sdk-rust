@@ -22,12 +22,16 @@ impl CreateSubnetGroupInput {
         self.description.as_deref()
     }
     /// <p>A list of VPC subnet IDs for the subnet group.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        self.subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateSubnetGroupInput {
@@ -48,6 +52,7 @@ pub struct CreateSubnetGroupInputBuilder {
 }
 impl CreateSubnetGroupInputBuilder {
     /// <p>The name of the subnet group.</p>
+    /// This field is required.
     pub fn subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_group_name = ::std::option::Option::Some(input.into());
         self
@@ -118,7 +123,7 @@ impl CreateSubnetGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateSubnetGroupInput`](crate::operation::create_subnet_group::CreateSubnetGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_subnet_group::CreateSubnetGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_subnet_group::CreateSubnetGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_subnet_group::CreateSubnetGroupInput {
             subnet_group_name: self.subnet_group_name,
             description: self.description,

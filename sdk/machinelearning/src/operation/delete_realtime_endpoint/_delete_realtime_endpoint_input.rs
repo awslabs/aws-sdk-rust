@@ -27,6 +27,7 @@ pub struct DeleteRealtimeEndpointInputBuilder {
 }
 impl DeleteRealtimeEndpointInputBuilder {
     /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
+    /// This field is required.
     pub fn ml_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ml_model_id = ::std::option::Option::Some(input.into());
         self
@@ -43,8 +44,10 @@ impl DeleteRealtimeEndpointInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRealtimeEndpointInput`](crate::operation::delete_realtime_endpoint::DeleteRealtimeEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_realtime_endpoint::DeleteRealtimeEndpointInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_realtime_endpoint::DeleteRealtimeEndpointInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_realtime_endpoint::DeleteRealtimeEndpointInput {
             ml_model_id: self.ml_model_id,
         })

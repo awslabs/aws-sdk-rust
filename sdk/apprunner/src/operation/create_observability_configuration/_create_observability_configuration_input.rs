@@ -26,8 +26,10 @@ impl CreateObservabilityConfigurationInput {
         self.trace_configuration.as_ref()
     }
     /// <p>A list of metadata items that you can associate with your observability configuration resource. A tag is a key-value pair.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateObservabilityConfigurationInput {
@@ -50,6 +52,7 @@ impl CreateObservabilityConfigurationInputBuilder {
     /// <p>The name <code>DefaultConfiguration</code> is reserved. You can't use it to create a new observability configuration, and you can't create a revision of it.</p>
     /// <p>When you want to use your own observability configuration for your App Runner service, <i>create a configuration with a different name</i>, and then provide it when you create or update your service.</p>
     /// </note>
+    /// This field is required.
     pub fn observability_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.observability_configuration_name = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +111,7 @@ impl CreateObservabilityConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_observability_configuration::CreateObservabilityConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_observability_configuration::CreateObservabilityConfigurationInput {

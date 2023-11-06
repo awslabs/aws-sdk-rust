@@ -10,8 +10,8 @@ pub struct PhysicalResource {
     pub logical_resource_id: ::std::option::Option<crate::types::LogicalResourceId>,
     /// <p>Identifier of the physical resource.</p>
     pub physical_resource_id: ::std::option::Option<crate::types::PhysicalResourceId>,
-    /// <p>The type of resource.</p>
-    pub resource_type: ::std::option::Option<::std::string::String>,
+    /// <p>Type of resource.</p>
+    pub resource_type: ::std::string::String,
     /// <p>The application components that belong to this resource.</p>
     pub app_components: ::std::option::Option<::std::vec::Vec<crate::types::AppComponent>>,
     /// <p>Additional configuration parameters for an Resilience Hub application. If you want to implement <code>additionalInfo</code> through the Resilience Hub console rather than using an API call, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure the application configuration parameters</a>.</p> <note>
@@ -40,13 +40,16 @@ impl PhysicalResource {
     pub fn physical_resource_id(&self) -> ::std::option::Option<&crate::types::PhysicalResourceId> {
         self.physical_resource_id.as_ref()
     }
-    /// <p>The type of resource.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
-        self.resource_type.as_deref()
+    /// <p>Type of resource.</p>
+    pub fn resource_type(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_type.deref()
     }
     /// <p>The application components that belong to this resource.</p>
-    pub fn app_components(&self) -> ::std::option::Option<&[crate::types::AppComponent]> {
-        self.app_components.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.app_components.is_none()`.
+    pub fn app_components(&self) -> &[crate::types::AppComponent] {
+        self.app_components.as_deref().unwrap_or_default()
     }
     /// <p>Additional configuration parameters for an Resilience Hub application. If you want to implement <code>additionalInfo</code> through the Resilience Hub console rather than using an API call, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure the application configuration parameters</a>.</p> <note>
     /// <p>Currently, this parameter accepts a key-value mapping (in a string format) of only one failover region and one associated account.</p>
@@ -108,6 +111,7 @@ impl PhysicalResourceBuilder {
         &self.resource_name
     }
     /// <p>Logical identifier of the resource.</p>
+    /// This field is required.
     pub fn logical_resource_id(mut self, input: crate::types::LogicalResourceId) -> Self {
         self.logical_resource_id = ::std::option::Option::Some(input);
         self
@@ -122,6 +126,7 @@ impl PhysicalResourceBuilder {
         &self.logical_resource_id
     }
     /// <p>Identifier of the physical resource.</p>
+    /// This field is required.
     pub fn physical_resource_id(mut self, input: crate::types::PhysicalResourceId) -> Self {
         self.physical_resource_id = ::std::option::Option::Some(input);
         self
@@ -135,17 +140,18 @@ impl PhysicalResourceBuilder {
     pub fn get_physical_resource_id(&self) -> &::std::option::Option<crate::types::PhysicalResourceId> {
         &self.physical_resource_id
     }
-    /// <p>The type of resource.</p>
+    /// <p>Type of resource.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of resource.</p>
+    /// <p>Type of resource.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
-    /// <p>The type of resource.</p>
+    /// <p>Type of resource.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_type
     }
@@ -249,17 +255,24 @@ impl PhysicalResourceBuilder {
         &self.parent_resource_name
     }
     /// Consumes the builder and constructs a [`PhysicalResource`](crate::types::PhysicalResource).
-    pub fn build(self) -> crate::types::PhysicalResource {
-        crate::types::PhysicalResource {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource_type`](crate::types::builders::PhysicalResourceBuilder::resource_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::PhysicalResource, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PhysicalResource {
             resource_name: self.resource_name,
             logical_resource_id: self.logical_resource_id,
             physical_resource_id: self.physical_resource_id,
-            resource_type: self.resource_type,
+            resource_type: self.resource_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "resource_type",
+                    "resource_type was not specified but it is required when building PhysicalResource",
+                )
+            })?,
             app_components: self.app_components,
             additional_info: self.additional_info,
             excluded: self.excluded,
             source_type: self.source_type,
             parent_resource_name: self.parent_resource_name,
-        }
+        })
     }
 }

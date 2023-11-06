@@ -3,7 +3,7 @@
 pub fn ser_disk_image_detail(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::DiskImageDetail,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Bytes");
     if let Some(var_2) = &input.bytes {

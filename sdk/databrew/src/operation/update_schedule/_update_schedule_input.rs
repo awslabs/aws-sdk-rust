@@ -12,8 +12,10 @@ pub struct UpdateScheduleInput {
 }
 impl UpdateScheduleInput {
     /// <p>The name or names of one or more jobs to be run for this schedule.</p>
-    pub fn job_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.job_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_names.is_none()`.
+    pub fn job_names(&self) -> &[::std::string::String] {
+        self.job_names.as_deref().unwrap_or_default()
     }
     /// <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
     pub fn cron_expression(&self) -> ::std::option::Option<&str> {
@@ -61,6 +63,7 @@ impl UpdateScheduleInputBuilder {
         &self.job_names
     }
     /// <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
+    /// This field is required.
     pub fn cron_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cron_expression = ::std::option::Option::Some(input.into());
         self
@@ -75,6 +78,7 @@ impl UpdateScheduleInputBuilder {
         &self.cron_expression
     }
     /// <p>The name of the schedule to update.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -91,7 +95,7 @@ impl UpdateScheduleInputBuilder {
     /// Consumes the builder and constructs a [`UpdateScheduleInput`](crate::operation::update_schedule::UpdateScheduleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_schedule::UpdateScheduleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_schedule::UpdateScheduleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_schedule::UpdateScheduleInput {
             job_names: self.job_names,
             cron_expression: self.cron_expression,

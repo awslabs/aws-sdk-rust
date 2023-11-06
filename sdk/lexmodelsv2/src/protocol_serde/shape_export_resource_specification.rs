@@ -57,7 +57,7 @@ where
 pub fn ser_export_resource_specification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ExportResourceSpecification,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.bot_export_specification {
         #[allow(unused_mut)]
         let mut object_2 = object.key("botExportSpecification").start_object();

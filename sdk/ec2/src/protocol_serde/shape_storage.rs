@@ -3,7 +3,7 @@
 pub fn ser_storage(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::Storage,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("S3");
     if let Some(var_2) = &input.s3 {
@@ -12,6 +12,7 @@ pub fn ser_storage(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_storage(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result<crate::types::Storage, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::Storage::builder();

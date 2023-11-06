@@ -7,9 +7,9 @@ pub struct TrustedCertificatePublicKey {
     /// <p>The role of the key, the algorithm it supports, and the cryptographic operations allowed with the key. This data is immutable after a trusted public key is imported.</p>
     pub key_attributes: ::std::option::Option<crate::types::KeyAttributes>,
     /// <p>Parameter information for trusted public key certificate import.</p>
-    pub public_key_certificate: ::std::option::Option<::std::string::String>,
+    pub public_key_certificate: ::std::string::String,
     /// <p>The <code>KeyARN</code> of the root public key certificate or certificate chain that signs the trusted public key certificate import.</p>
-    pub certificate_authority_public_key_identifier: ::std::option::Option<::std::string::String>,
+    pub certificate_authority_public_key_identifier: ::std::string::String,
 }
 impl TrustedCertificatePublicKey {
     /// <p>The role of the key, the algorithm it supports, and the cryptographic operations allowed with the key. This data is immutable after a trusted public key is imported.</p>
@@ -17,12 +17,14 @@ impl TrustedCertificatePublicKey {
         self.key_attributes.as_ref()
     }
     /// <p>Parameter information for trusted public key certificate import.</p>
-    pub fn public_key_certificate(&self) -> ::std::option::Option<&str> {
-        self.public_key_certificate.as_deref()
+    pub fn public_key_certificate(&self) -> &str {
+        use std::ops::Deref;
+        self.public_key_certificate.deref()
     }
     /// <p>The <code>KeyARN</code> of the root public key certificate or certificate chain that signs the trusted public key certificate import.</p>
-    pub fn certificate_authority_public_key_identifier(&self) -> ::std::option::Option<&str> {
-        self.certificate_authority_public_key_identifier.as_deref()
+    pub fn certificate_authority_public_key_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.certificate_authority_public_key_identifier.deref()
     }
 }
 impl ::std::fmt::Debug for TrustedCertificatePublicKey {
@@ -54,6 +56,7 @@ pub struct TrustedCertificatePublicKeyBuilder {
 }
 impl TrustedCertificatePublicKeyBuilder {
     /// <p>The role of the key, the algorithm it supports, and the cryptographic operations allowed with the key. This data is immutable after a trusted public key is imported.</p>
+    /// This field is required.
     pub fn key_attributes(mut self, input: crate::types::KeyAttributes) -> Self {
         self.key_attributes = ::std::option::Option::Some(input);
         self
@@ -68,6 +71,7 @@ impl TrustedCertificatePublicKeyBuilder {
         &self.key_attributes
     }
     /// <p>Parameter information for trusted public key certificate import.</p>
+    /// This field is required.
     pub fn public_key_certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_key_certificate = ::std::option::Option::Some(input.into());
         self
@@ -82,6 +86,7 @@ impl TrustedCertificatePublicKeyBuilder {
         &self.public_key_certificate
     }
     /// <p>The <code>KeyARN</code> of the root public key certificate or certificate chain that signs the trusted public key certificate import.</p>
+    /// This field is required.
     pub fn certificate_authority_public_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_authority_public_key_identifier = ::std::option::Option::Some(input.into());
         self
@@ -96,12 +101,25 @@ impl TrustedCertificatePublicKeyBuilder {
         &self.certificate_authority_public_key_identifier
     }
     /// Consumes the builder and constructs a [`TrustedCertificatePublicKey`](crate::types::TrustedCertificatePublicKey).
-    pub fn build(self) -> crate::types::TrustedCertificatePublicKey {
-        crate::types::TrustedCertificatePublicKey {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`public_key_certificate`](crate::types::builders::TrustedCertificatePublicKeyBuilder::public_key_certificate)
+    /// - [`certificate_authority_public_key_identifier`](crate::types::builders::TrustedCertificatePublicKeyBuilder::certificate_authority_public_key_identifier)
+    pub fn build(self) -> ::std::result::Result<crate::types::TrustedCertificatePublicKey, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TrustedCertificatePublicKey {
             key_attributes: self.key_attributes,
-            public_key_certificate: self.public_key_certificate,
-            certificate_authority_public_key_identifier: self.certificate_authority_public_key_identifier,
-        }
+            public_key_certificate: self.public_key_certificate.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "public_key_certificate",
+                    "public_key_certificate was not specified but it is required when building TrustedCertificatePublicKey",
+                )
+            })?,
+            certificate_authority_public_key_identifier: self.certificate_authority_public_key_identifier.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "certificate_authority_public_key_identifier",
+                    "certificate_authority_public_key_identifier was not specified but it is required when building TrustedCertificatePublicKey",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for TrustedCertificatePublicKeyBuilder {

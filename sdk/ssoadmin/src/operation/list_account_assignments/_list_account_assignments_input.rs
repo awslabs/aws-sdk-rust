@@ -55,6 +55,7 @@ pub struct ListAccountAssignmentsInputBuilder {
 }
 impl ListAccountAssignmentsInputBuilder {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// This field is required.
     pub fn instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_arn = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl ListAccountAssignmentsInputBuilder {
         &self.instance_arn
     }
     /// <p>The identifier of the Amazon Web Services account from which to list the assignments.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +85,7 @@ impl ListAccountAssignmentsInputBuilder {
         &self.account_id
     }
     /// <p>The ARN of the permission set from which to list assignments.</p>
+    /// This field is required.
     pub fn permission_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permission_set_arn = ::std::option::Option::Some(input.into());
         self
@@ -127,8 +130,10 @@ impl ListAccountAssignmentsInputBuilder {
     /// Consumes the builder and constructs a [`ListAccountAssignmentsInput`](crate::operation::list_account_assignments::ListAccountAssignmentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_account_assignments::ListAccountAssignmentsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::list_account_assignments::ListAccountAssignmentsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::list_account_assignments::ListAccountAssignmentsInput {
             instance_arn: self.instance_arn,
             account_id: self.account_id,

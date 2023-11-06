@@ -27,8 +27,10 @@ impl DeviceInstance {
         self.device_arn.as_deref()
     }
     /// <p>An array of strings that describe the device instance.</p>
-    pub fn labels(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.labels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.labels.is_none()`.
+    pub fn labels(&self) -> &[::std::string::String] {
+        self.labels.as_deref().unwrap_or_default()
     }
     /// <p>The status of the device instance. Valid values are listed here.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::InstanceStatus> {

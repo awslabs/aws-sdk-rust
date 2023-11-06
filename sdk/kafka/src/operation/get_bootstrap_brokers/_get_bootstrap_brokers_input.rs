@@ -27,6 +27,7 @@ pub struct GetBootstrapBrokersInputBuilder {
 }
 impl GetBootstrapBrokersInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    /// This field is required.
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetBootstrapBrokersInputBuilder {
     /// Consumes the builder and constructs a [`GetBootstrapBrokersInput`](crate::operation::get_bootstrap_brokers::GetBootstrapBrokersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_bootstrap_brokers::GetBootstrapBrokersInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_bootstrap_brokers::GetBootstrapBrokersInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_bootstrap_brokers::GetBootstrapBrokersInput {
             cluster_arn: self.cluster_arn,

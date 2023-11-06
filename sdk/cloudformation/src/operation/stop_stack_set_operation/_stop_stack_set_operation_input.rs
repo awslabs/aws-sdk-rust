@@ -51,6 +51,7 @@ pub struct StopStackSetOperationInputBuilder {
 }
 impl StopStackSetOperationInputBuilder {
     /// <p>The name or unique ID of the stack set that you want to stop the operation for.</p>
+    /// This field is required.
     pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_set_name = ::std::option::Option::Some(input.into());
         self
@@ -65,6 +66,7 @@ impl StopStackSetOperationInputBuilder {
         &self.stack_set_name
     }
     /// <p>The ID of the stack operation.</p>
+    /// This field is required.
     pub fn operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operation_id = ::std::option::Option::Some(input.into());
         self
@@ -110,7 +112,7 @@ impl StopStackSetOperationInputBuilder {
     /// Consumes the builder and constructs a [`StopStackSetOperationInput`](crate::operation::stop_stack_set_operation::StopStackSetOperationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_stack_set_operation::StopStackSetOperationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::stop_stack_set_operation::StopStackSetOperationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::stop_stack_set_operation::StopStackSetOperationInput {
             stack_set_name: self.stack_set_name,

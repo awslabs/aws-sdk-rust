@@ -147,8 +147,10 @@ impl DescribeLabelingJobOutput {
         self.human_task_config.as_ref()
     }
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The location of the output produced by the labeling job.</p>
     pub fn labeling_job_output(&self) -> ::std::option::Option<&crate::types::LabelingJobOutput> {
@@ -193,6 +195,7 @@ pub struct DescribeLabelingJobOutputBuilder {
 }
 impl DescribeLabelingJobOutputBuilder {
     /// <p>The processing status of the labeling job. </p>
+    /// This field is required.
     pub fn labeling_job_status(mut self, input: crate::types::LabelingJobStatus) -> Self {
         self.labeling_job_status = ::std::option::Option::Some(input);
         self
@@ -207,6 +210,7 @@ impl DescribeLabelingJobOutputBuilder {
         &self.labeling_job_status
     }
     /// <p>Provides a breakdown of the number of data objects labeled by humans, the number of objects labeled by machine, the number of objects than couldn't be labeled, and the total number of objects labeled. </p>
+    /// This field is required.
     pub fn label_counters(mut self, input: crate::types::LabelCounters) -> Self {
         self.label_counters = ::std::option::Option::Some(input);
         self
@@ -235,6 +239,7 @@ impl DescribeLabelingJobOutputBuilder {
         &self.failure_reason
     }
     /// <p>The date and time that the labeling job was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -249,6 +254,7 @@ impl DescribeLabelingJobOutputBuilder {
         &self.creation_time
     }
     /// <p>The date and time that the labeling job was last updated.</p>
+    /// This field is required.
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
         self
@@ -263,6 +269,7 @@ impl DescribeLabelingJobOutputBuilder {
         &self.last_modified_time
     }
     /// <p>A unique identifier for work done as part of a labeling job.</p>
+    /// This field is required.
     pub fn job_reference_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_reference_code = ::std::option::Option::Some(input.into());
         self
@@ -277,6 +284,7 @@ impl DescribeLabelingJobOutputBuilder {
         &self.job_reference_code
     }
     /// <p>The name assigned to the labeling job when it was created.</p>
+    /// This field is required.
     pub fn labeling_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.labeling_job_name = ::std::option::Option::Some(input.into());
         self
@@ -291,6 +299,7 @@ impl DescribeLabelingJobOutputBuilder {
         &self.labeling_job_name
     }
     /// <p>The Amazon Resource Name (ARN) of the labeling job.</p>
+    /// This field is required.
     pub fn labeling_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.labeling_job_arn = ::std::option::Option::Some(input.into());
         self
@@ -319,6 +328,7 @@ impl DescribeLabelingJobOutputBuilder {
         &self.label_attribute_name
     }
     /// <p>Input configuration information for the labeling job, such as the Amazon S3 location of the data objects and the location of the manifest file that describes the data objects.</p>
+    /// This field is required.
     pub fn input_config(mut self, input: crate::types::LabelingJobInputConfig) -> Self {
         self.input_config = ::std::option::Option::Some(input);
         self
@@ -333,6 +343,7 @@ impl DescribeLabelingJobOutputBuilder {
         &self.input_config
     }
     /// <p>The location of the job's output data and the Amazon Web Services Key Management Service key ID for the key used to encrypt the output data, if any.</p>
+    /// This field is required.
     pub fn output_config(mut self, input: crate::types::LabelingJobOutputConfig) -> Self {
         self.output_config = ::std::option::Option::Some(input);
         self
@@ -347,6 +358,7 @@ impl DescribeLabelingJobOutputBuilder {
         &self.output_config
     }
     /// <p>The Amazon Resource Name (ARN) that SageMaker assumes to perform tasks on your behalf during data labeling.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -463,6 +475,7 @@ impl DescribeLabelingJobOutputBuilder {
         &self.labeling_job_algorithms_config
     }
     /// <p>Configuration information required for human workers to complete a labeling task.</p>
+    /// This field is required.
     pub fn human_task_config(mut self, input: crate::types::HumanTaskConfig) -> Self {
         self.human_task_config = ::std::option::Option::Some(input);
         self

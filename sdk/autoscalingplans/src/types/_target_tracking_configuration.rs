@@ -9,7 +9,7 @@ pub struct TargetTrackingConfiguration {
     /// <p>A customized metric. You can specify either a predefined metric or a customized metric. </p>
     pub customized_scaling_metric_specification: ::std::option::Option<crate::types::CustomizedScalingMetricSpecification>,
     /// <p>The target value for the metric. Although this property accepts numbers of type Double, it won't accept values that are either too small or too large. Values must be in the range of -2^360 to 2^360.</p>
-    pub target_value: ::std::option::Option<f64>,
+    pub target_value: f64,
     /// <p>Indicates whether scale in by the target tracking scaling policy is disabled. If the value is <code>true</code>, scale in is disabled and the target tracking scaling policy doesn't remove capacity from the scalable resource. Otherwise, scale in is enabled and the target tracking scaling policy can remove capacity from the scalable resource. </p>
     /// <p>The default value is <code>false</code>.</p>
     pub disable_scale_in: ::std::option::Option<bool>,
@@ -32,7 +32,7 @@ impl TargetTrackingConfiguration {
         self.customized_scaling_metric_specification.as_ref()
     }
     /// <p>The target value for the metric. Although this property accepts numbers of type Double, it won't accept values that are either too small or too large. Values must be in the range of -2^360 to 2^360.</p>
-    pub fn target_value(&self) -> ::std::option::Option<f64> {
+    pub fn target_value(&self) -> f64 {
         self.target_value
     }
     /// <p>Indicates whether scale in by the target tracking scaling policy is disabled. If the value is <code>true</code>, scale in is disabled and the target tracking scaling policy doesn't remove capacity from the scalable resource. Otherwise, scale in is enabled and the target tracking scaling policy can remove capacity from the scalable resource. </p>
@@ -110,6 +110,7 @@ impl TargetTrackingConfigurationBuilder {
         &self.customized_scaling_metric_specification
     }
     /// <p>The target value for the metric. Although this property accepts numbers of type Double, it won't accept values that are either too small or too large. Values must be in the range of -2^360 to 2^360.</p>
+    /// This field is required.
     pub fn target_value(mut self, input: f64) -> Self {
         self.target_value = ::std::option::Option::Some(input);
         self
@@ -189,15 +190,22 @@ impl TargetTrackingConfigurationBuilder {
         &self.estimated_instance_warmup
     }
     /// Consumes the builder and constructs a [`TargetTrackingConfiguration`](crate::types::TargetTrackingConfiguration).
-    pub fn build(self) -> crate::types::TargetTrackingConfiguration {
-        crate::types::TargetTrackingConfiguration {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`target_value`](crate::types::builders::TargetTrackingConfigurationBuilder::target_value)
+    pub fn build(self) -> ::std::result::Result<crate::types::TargetTrackingConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TargetTrackingConfiguration {
             predefined_scaling_metric_specification: self.predefined_scaling_metric_specification,
             customized_scaling_metric_specification: self.customized_scaling_metric_specification,
-            target_value: self.target_value,
+            target_value: self.target_value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "target_value",
+                    "target_value was not specified but it is required when building TargetTrackingConfiguration",
+                )
+            })?,
             disable_scale_in: self.disable_scale_in,
             scale_out_cooldown: self.scale_out_cooldown,
             scale_in_cooldown: self.scale_in_cooldown,
             estimated_instance_warmup: self.estimated_instance_warmup,
-        }
+        })
     }
 }

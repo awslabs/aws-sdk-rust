@@ -27,6 +27,7 @@ pub struct DeleteGatewayInputBuilder {
 }
 impl DeleteGatewayInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the gateway to delete.</p>
+    /// This field is required.
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteGatewayInputBuilder {
     /// Consumes the builder and constructs a [`DeleteGatewayInput`](crate::operation::delete_gateway::DeleteGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_gateway::DeleteGatewayInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_gateway::DeleteGatewayInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_gateway::DeleteGatewayInput {
             gateway_arn: self.gateway_arn,
         })

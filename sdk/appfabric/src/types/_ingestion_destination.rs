@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IngestionDestination {
     /// <p>The Amazon Resource Name (ARN) of the ingestion destination.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the ingestion.</p>
-    pub ingestion_arn: ::std::option::Option<::std::string::String>,
+    pub ingestion_arn: ::std::string::String,
     /// <p>Contains information about how ingested data is processed.</p>
     pub processing_configuration: ::std::option::Option<crate::types::ProcessingConfiguration>,
     /// <p>Contains information about the destination of ingested data.</p>
@@ -29,12 +29,14 @@ pub struct IngestionDestination {
 }
 impl IngestionDestination {
     /// <p>The Amazon Resource Name (ARN) of the ingestion destination.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the ingestion.</p>
-    pub fn ingestion_arn(&self) -> ::std::option::Option<&str> {
-        self.ingestion_arn.as_deref()
+    pub fn ingestion_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.ingestion_arn.deref()
     }
     /// <p>Contains information about how ingested data is processed.</p>
     pub fn processing_configuration(&self) -> ::std::option::Option<&crate::types::ProcessingConfiguration> {
@@ -89,6 +91,7 @@ pub struct IngestionDestinationBuilder {
 }
 impl IngestionDestinationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the ingestion destination.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -103,6 +106,7 @@ impl IngestionDestinationBuilder {
         &self.arn
     }
     /// <p>The Amazon Resource Name (ARN) of the ingestion.</p>
+    /// This field is required.
     pub fn ingestion_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ingestion_arn = ::std::option::Option::Some(input.into());
         self
@@ -117,6 +121,7 @@ impl IngestionDestinationBuilder {
         &self.ingestion_arn
     }
     /// <p>Contains information about how ingested data is processed.</p>
+    /// This field is required.
     pub fn processing_configuration(mut self, input: crate::types::ProcessingConfiguration) -> Self {
         self.processing_configuration = ::std::option::Option::Some(input);
         self
@@ -131,6 +136,7 @@ impl IngestionDestinationBuilder {
         &self.processing_configuration
     }
     /// <p>Contains information about the destination of ingested data.</p>
+    /// This field is required.
     pub fn destination_configuration(mut self, input: crate::types::DestinationConfiguration) -> Self {
         self.destination_configuration = ::std::option::Option::Some(input);
         self
@@ -219,16 +225,29 @@ impl IngestionDestinationBuilder {
         &self.updated_at
     }
     /// Consumes the builder and constructs a [`IngestionDestination`](crate::types::IngestionDestination).
-    pub fn build(self) -> crate::types::IngestionDestination {
-        crate::types::IngestionDestination {
-            arn: self.arn,
-            ingestion_arn: self.ingestion_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::IngestionDestinationBuilder::arn)
+    /// - [`ingestion_arn`](crate::types::builders::IngestionDestinationBuilder::ingestion_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::IngestionDestination, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::IngestionDestination {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building IngestionDestination",
+                )
+            })?,
+            ingestion_arn: self.ingestion_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "ingestion_arn",
+                    "ingestion_arn was not specified but it is required when building IngestionDestination",
+                )
+            })?,
             processing_configuration: self.processing_configuration,
             destination_configuration: self.destination_configuration,
             status: self.status,
             status_reason: self.status_reason,
             created_at: self.created_at,
             updated_at: self.updated_at,
-        }
+        })
     }
 }

@@ -42,6 +42,7 @@ pub struct ListRepositoriesForApprovalRuleTemplateInputBuilder {
 }
 impl ListRepositoriesForApprovalRuleTemplateInputBuilder {
     /// <p>The name of the approval rule template for which you want to list repositories that are associated with that template.</p>
+    /// This field is required.
     pub fn approval_rule_template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.approval_rule_template_name = ::std::option::Option::Some(input.into());
         self
@@ -88,7 +89,7 @@ impl ListRepositoriesForApprovalRuleTemplateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateInput {

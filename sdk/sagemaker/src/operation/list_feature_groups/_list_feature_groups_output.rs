@@ -11,8 +11,10 @@ pub struct ListFeatureGroupsOutput {
 }
 impl ListFeatureGroupsOutput {
     /// <p>A summary of feature groups.</p>
-    pub fn feature_group_summaries(&self) -> ::std::option::Option<&[crate::types::FeatureGroupSummary]> {
-        self.feature_group_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.feature_group_summaries.is_none()`.
+    pub fn feature_group_summaries(&self) -> &[crate::types::FeatureGroupSummary] {
+        self.feature_group_summaries.as_deref().unwrap_or_default()
     }
     /// <p>A token to resume pagination of <code>ListFeatureGroups</code> results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -61,6 +63,7 @@ impl ListFeatureGroupsOutputBuilder {
         &self.feature_group_summaries
     }
     /// <p>A token to resume pagination of <code>ListFeatureGroups</code> results.</p>
+    /// This field is required.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self

@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudWatchLogDestination {
     /// <p>The name of the CloudWatch Logs group to send pipeline logs to. You can specify an existing log group or create a new one. For example, <code>/aws/OpenSearchService/IngestionService/my-pipeline</code>.</p>
-    pub log_group: ::std::option::Option<::std::string::String>,
+    pub log_group: ::std::string::String,
 }
 impl CloudWatchLogDestination {
     /// <p>The name of the CloudWatch Logs group to send pipeline logs to. You can specify an existing log group or create a new one. For example, <code>/aws/OpenSearchService/IngestionService/my-pipeline</code>.</p>
-    pub fn log_group(&self) -> ::std::option::Option<&str> {
-        self.log_group.as_deref()
+    pub fn log_group(&self) -> &str {
+        use std::ops::Deref;
+        self.log_group.deref()
     }
 }
 impl CloudWatchLogDestination {
@@ -28,6 +29,7 @@ pub struct CloudWatchLogDestinationBuilder {
 }
 impl CloudWatchLogDestinationBuilder {
     /// <p>The name of the CloudWatch Logs group to send pipeline logs to. You can specify an existing log group or create a new one. For example, <code>/aws/OpenSearchService/IngestionService/my-pipeline</code>.</p>
+    /// This field is required.
     pub fn log_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl CloudWatchLogDestinationBuilder {
         &self.log_group
     }
     /// Consumes the builder and constructs a [`CloudWatchLogDestination`](crate::types::CloudWatchLogDestination).
-    pub fn build(self) -> crate::types::CloudWatchLogDestination {
-        crate::types::CloudWatchLogDestination { log_group: self.log_group }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`log_group`](crate::types::builders::CloudWatchLogDestinationBuilder::log_group)
+    pub fn build(self) -> ::std::result::Result<crate::types::CloudWatchLogDestination, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CloudWatchLogDestination {
+            log_group: self.log_group.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "log_group",
+                    "log_group was not specified but it is required when building CloudWatchLogDestination",
+                )
+            })?,
+        })
     }
 }

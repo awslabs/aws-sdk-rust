@@ -15,8 +15,10 @@ impl DocumentText {
         self.text.as_deref()
     }
     /// <p>Highlights in the document text.</p>
-    pub fn highlights(&self) -> ::std::option::Option<&[crate::types::Highlight]> {
-        self.highlights.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.highlights.is_none()`.
+    pub fn highlights(&self) -> &[crate::types::Highlight] {
+        self.highlights.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for DocumentText {

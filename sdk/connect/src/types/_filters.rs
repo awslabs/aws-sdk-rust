@@ -13,16 +13,22 @@ pub struct Filters {
 }
 impl Filters {
     /// <p>The queues to use to filter the metrics. You should specify at least one queue, and can specify up to 100 queues per request. The <code>GetCurrentMetricsData</code> API in particular requires a queue when you include a <code>Filter</code> in your request. </p>
-    pub fn queues(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.queues.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.queues.is_none()`.
+    pub fn queues(&self) -> &[::std::string::String] {
+        self.queues.as_deref().unwrap_or_default()
     }
     /// <p>The channel to use to filter the metrics.</p>
-    pub fn channels(&self) -> ::std::option::Option<&[crate::types::Channel]> {
-        self.channels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.channels.is_none()`.
+    pub fn channels(&self) -> &[crate::types::Channel] {
+        self.channels.as_deref().unwrap_or_default()
     }
     /// <p>A list of up to 100 routing profile IDs or ARNs.</p>
-    pub fn routing_profiles(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.routing_profiles.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.routing_profiles.is_none()`.
+    pub fn routing_profiles(&self) -> &[::std::string::String] {
+        self.routing_profiles.as_deref().unwrap_or_default()
     }
 }
 impl Filters {

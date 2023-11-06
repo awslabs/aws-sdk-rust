@@ -49,8 +49,10 @@ impl Application {
         self.discovery_status.as_ref()
     }
     /// <p>The components of the application.</p>
-    pub fn components(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.components.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.components.is_none()`.
+    pub fn components(&self) -> &[::std::string::String] {
+        self.components.as_deref().unwrap_or_default()
     }
     /// <p>The time at which the application was last updated.</p>
     pub fn last_updated(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

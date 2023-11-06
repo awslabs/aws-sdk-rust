@@ -34,6 +34,7 @@ pub struct UpdateClusterOutputBuilder {
 }
 impl UpdateClusterOutputBuilder {
     /// <p>Returns information about the updated Elastic DocumentDB cluster.</p>
+    /// This field is required.
     pub fn cluster(mut self, input: crate::types::Cluster) -> Self {
         self.cluster = ::std::option::Option::Some(input);
         self

@@ -18,8 +18,10 @@ pub struct GetQueryResultsOutput {
 impl GetQueryResultsOutput {
     /// <p>The log events that matched the query criteria during the most recent time it ran.</p>
     /// <p>The <code>results</code> value is an array of arrays. Each log event is one object in the top-level array. Each of these log event objects is an array of <code>field</code>/<code>value</code> pairs.</p>
-    pub fn results(&self) -> ::std::option::Option<&[::std::vec::Vec<crate::types::ResultField>]> {
-        self.results.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.results.is_none()`.
+    pub fn results(&self) -> &[::std::vec::Vec<crate::types::ResultField>] {
+        self.results.as_deref().unwrap_or_default()
     }
     /// <p>Includes the number of log events scanned by the query, the number of log events that matched the query criteria, and the total number of bytes in the scanned log events. These values reflect the full raw results of the query.</p>
     pub fn statistics(&self) -> ::std::option::Option<&crate::types::QueryStatistics> {

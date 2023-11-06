@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDirectory`](crate::operation::get_directory::builders::GetDirectoryFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`directory_arn(impl Into<String>)`](crate::operation::get_directory::builders::GetDirectoryFluentBuilder::directory_arn) / [`set_directory_arn(Option<String>)`](crate::operation::get_directory::builders::GetDirectoryFluentBuilder::set_directory_arn): <p>The ARN of the directory.</p>
+    ///   - [`directory_arn(impl Into<String>)`](crate::operation::get_directory::builders::GetDirectoryFluentBuilder::directory_arn) / [`set_directory_arn(Option<String>)`](crate::operation::get_directory::builders::GetDirectoryFluentBuilder::set_directory_arn):<br>required: **true**<br><p>The ARN of the directory.</p><br>
     /// - On success, responds with [`GetDirectoryOutput`](crate::operation::get_directory::GetDirectoryOutput) with field(s):
     ///   - [`directory(Option<Directory>)`](crate::operation::get_directory::GetDirectoryOutput::directory): <p>Metadata about the directory.</p>
     /// - On failure, responds with [`SdkError<GetDirectoryError>`](crate::operation::get_directory::GetDirectoryError)

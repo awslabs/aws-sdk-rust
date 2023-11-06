@@ -15,7 +15,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BarChartVisual {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers.</p>
-    pub visual_id: ::std::option::Option<::std::string::String>,
+    pub visual_id: ::std::string::String,
     /// <p>The title that is displayed on the visual.</p>
     pub title: ::std::option::Option<crate::types::VisualTitleLabelOptions>,
     /// <p>The subtitle that is displayed on the visual.</p>
@@ -29,8 +29,9 @@ pub struct BarChartVisual {
 }
 impl BarChartVisual {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers.</p>
-    pub fn visual_id(&self) -> ::std::option::Option<&str> {
-        self.visual_id.as_deref()
+    pub fn visual_id(&self) -> &str {
+        use std::ops::Deref;
+        self.visual_id.deref()
     }
     /// <p>The title that is displayed on the visual.</p>
     pub fn title(&self) -> ::std::option::Option<&crate::types::VisualTitleLabelOptions> {
@@ -45,12 +46,16 @@ impl BarChartVisual {
         self.chart_configuration.as_ref()
     }
     /// <p>The list of custom actions that are configured for a visual.</p>
-    pub fn actions(&self) -> ::std::option::Option<&[crate::types::VisualCustomAction]> {
-        self.actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
+    pub fn actions(&self) -> &[crate::types::VisualCustomAction] {
+        self.actions.as_deref().unwrap_or_default()
     }
     /// <p>The column hierarchy that is used during drill-downs and drill-ups.</p>
-    pub fn column_hierarchies(&self) -> ::std::option::Option<&[crate::types::ColumnHierarchy]> {
-        self.column_hierarchies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.column_hierarchies.is_none()`.
+    pub fn column_hierarchies(&self) -> &[crate::types::ColumnHierarchy] {
+        self.column_hierarchies.as_deref().unwrap_or_default()
     }
 }
 impl BarChartVisual {
@@ -73,6 +78,7 @@ pub struct BarChartVisualBuilder {
 }
 impl BarChartVisualBuilder {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers.</p>
+    /// This field is required.
     pub fn visual_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.visual_id = ::std::option::Option::Some(input.into());
         self
@@ -169,14 +175,21 @@ impl BarChartVisualBuilder {
         &self.column_hierarchies
     }
     /// Consumes the builder and constructs a [`BarChartVisual`](crate::types::BarChartVisual).
-    pub fn build(self) -> crate::types::BarChartVisual {
-        crate::types::BarChartVisual {
-            visual_id: self.visual_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`visual_id`](crate::types::builders::BarChartVisualBuilder::visual_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::BarChartVisual, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::BarChartVisual {
+            visual_id: self.visual_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "visual_id",
+                    "visual_id was not specified but it is required when building BarChartVisual",
+                )
+            })?,
             title: self.title,
             subtitle: self.subtitle,
             chart_configuration: self.chart_configuration,
             actions: self.actions,
             column_hierarchies: self.column_hierarchies,
-        }
+        })
     }
 }

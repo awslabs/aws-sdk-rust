@@ -3,7 +3,7 @@
 pub fn ser_predictive_scaling_predefined_load_metric(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::PredictiveScalingPredefinedLoadMetric,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("PredefinedMetricType");
     if let Some(var_2) = &input.predefined_metric_type {
@@ -17,6 +17,7 @@ pub fn ser_predictive_scaling_predefined_load_metric(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_predictive_scaling_predefined_load_metric(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::PredictiveScalingPredefinedLoadMetric, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -54,5 +55,5 @@ pub fn de_predictive_scaling_predefined_load_metric(
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::predictive_scaling_predefined_load_metric_correct_errors(builder).build())
 }

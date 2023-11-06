@@ -2,7 +2,7 @@
 pub fn ser_get_enabled_control_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_enabled_control::GetEnabledControlInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.enabled_control_identifier {
         object.key("enabledControlIdentifier").string(var_1.as_str());
     }

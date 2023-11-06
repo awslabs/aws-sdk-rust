@@ -74,6 +74,7 @@ pub struct DeletePackageInputBuilder {
 }
 impl DeletePackageInputBuilder {
     /// <p>The name of the domain that contains the package to delete.</p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -102,6 +103,7 @@ impl DeletePackageInputBuilder {
         &self.domain_owner
     }
     /// <p>The name of the repository that contains the package to delete.</p>
+    /// This field is required.
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository = ::std::option::Option::Some(input.into());
         self
@@ -116,6 +118,7 @@ impl DeletePackageInputBuilder {
         &self.repository
     }
     /// <p>The format of the requested package to delete.</p>
+    /// This field is required.
     pub fn format(mut self, input: crate::types::PackageFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
         self
@@ -162,6 +165,7 @@ impl DeletePackageInputBuilder {
         &self.namespace
     }
     /// <p>The name of the package to delete.</p>
+    /// This field is required.
     pub fn package(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package = ::std::option::Option::Some(input.into());
         self
@@ -178,7 +182,7 @@ impl DeletePackageInputBuilder {
     /// Consumes the builder and constructs a [`DeletePackageInput`](crate::operation::delete_package::DeletePackageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_package::DeletePackageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_package::DeletePackageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_package::DeletePackageInput {
             domain: self.domain,
             domain_owner: self.domain_owner,

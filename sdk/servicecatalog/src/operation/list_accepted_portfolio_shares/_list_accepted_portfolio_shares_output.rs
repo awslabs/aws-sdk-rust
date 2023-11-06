@@ -11,8 +11,10 @@ pub struct ListAcceptedPortfolioSharesOutput {
 }
 impl ListAcceptedPortfolioSharesOutput {
     /// <p>Information about the portfolios.</p>
-    pub fn portfolio_details(&self) -> ::std::option::Option<&[crate::types::PortfolioDetail]> {
-        self.portfolio_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.portfolio_details.is_none()`.
+    pub fn portfolio_details(&self) -> &[crate::types::PortfolioDetail] {
+        self.portfolio_details.as_deref().unwrap_or_default()
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub fn next_page_token(&self) -> ::std::option::Option<&str> {

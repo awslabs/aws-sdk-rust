@@ -11,8 +11,10 @@ pub struct ListRecommendationFeedbackOutput {
 }
 impl ListRecommendationFeedbackOutput {
     /// <p>Recommendation feedback summaries corresponding to the code review ARN.</p>
-    pub fn recommendation_feedback_summaries(&self) -> ::std::option::Option<&[crate::types::RecommendationFeedbackSummary]> {
-        self.recommendation_feedback_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recommendation_feedback_summaries.is_none()`.
+    pub fn recommendation_feedback_summaries(&self) -> &[crate::types::RecommendationFeedbackSummary] {
+        self.recommendation_feedback_summaries.as_deref().unwrap_or_default()
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -2,13 +2,13 @@
 pub fn ser_input_data_config(
     object_3: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InputDataConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::InputDataConfig::S3Uri(inner) => {
             object_3.key("S3Uri").string(inner.as_str());
         }
         crate::types::InputDataConfig::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "InputDataConfig",
             ))
         }
@@ -29,17 +29,22 @@ where
             match tokens.next().transpose()? {
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                    let key = key.to_unescaped()?;
+                    if key == "__type" {
+                        ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                        continue;
+                    }
                     if variant.is_some() {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
                             "encountered mixed variants in union",
                         ));
                     }
-                    variant = match key.to_unescaped()?.as_ref() {
+                    variant = match key.as_ref() {
                         "S3Uri" => Some(crate::types::InputDataConfig::S3Uri(
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                 .transpose()?
-                                .unwrap_or_default(),
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'S3Uri' cannot be null"))?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

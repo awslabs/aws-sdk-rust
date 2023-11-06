@@ -448,8 +448,10 @@ impl ModifyDbInstanceInput {
     /// <ul>
     /// <li> <p>If supplied, must match existing DB security groups.</p> </li>
     /// </ul>
-    pub fn db_security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.db_security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_security_groups.is_none()`.
+    pub fn db_security_groups(&self) -> &[::std::string::String] {
+        self.db_security_groups.as_deref().unwrap_or_default()
     }
     /// <p>A list of Amazon EC2 VPC security groups to associate with this DB instance. This change is asynchronously applied as soon as possible.</p>
     /// <p>This setting doesn't apply to the following DB instances:</p>
@@ -461,8 +463,10 @@ impl ModifyDbInstanceInput {
     /// <ul>
     /// <li> <p>If supplied, must match existing VPC security group IDs.</p> </li>
     /// </ul>
-    pub fn vpc_security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.vpc_security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_group_ids.is_none()`.
+    pub fn vpc_security_group_ids(&self) -> &[::std::string::String] {
+        self.vpc_security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether the modifications in this request and any pending modifications are asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the DB instance. By default, this parameter is disabled.</p>
     /// <p>If this parameter is disabled, changes to the DB instance are applied during the next maintenance window. Some parameter changes can cause an outage and are applied on the next call to <code>RebootDBInstance</code>, or the next failure reboot. Review the table of parameters in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html">Modifying a DB Instance</a> in the <i>Amazon RDS User Guide</i> to see the impact of enabling or disabling <code>ApplyImmediately</code> for each modified parameter and to determine when the changes are applied.</p>
@@ -688,8 +692,10 @@ impl ModifyDbInstanceInput {
     /// <li> <p>Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the primary domain controller for both entries in the list.</p> </li>
     /// </ul>
     /// <p>Example: <code>123.124.125.126,234.235.236.237</code> </p>
-    pub fn domain_dns_ips(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.domain_dns_ips.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domain_dns_ips.is_none()`.
+    pub fn domain_dns_ips(&self) -> &[::std::string::String] {
+        self.domain_dns_ips.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether to copy all tags from the DB instance to snapshots of the DB instance. By default, tags aren't copied.</p>
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. Copying tags to snapshots is managed by the DB cluster. Setting this value for an Aurora DB instance has no effect on the DB cluster setting. For more information, see <code>ModifyDBCluster</code>.</p>
@@ -796,8 +802,10 @@ impl ModifyDbInstanceInput {
     }
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    pub fn processor_features(&self) -> ::std::option::Option<&[crate::types::ProcessorFeature]> {
-        self.processor_features.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.processor_features.is_none()`.
+    pub fn processor_features(&self) -> &[crate::types::ProcessorFeature] {
+        self.processor_features.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether the DB instance class of the DB instance uses its default processor features.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
@@ -1004,6 +1012,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing DB instance.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_identifier = ::std::option::Option::Some(input.into());
         self
@@ -2701,7 +2710,7 @@ impl ModifyDbInstanceInputBuilder {
     /// Consumes the builder and constructs a [`ModifyDbInstanceInput`](crate::operation::modify_db_instance::ModifyDbInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_db_instance::ModifyDbInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::modify_db_instance::ModifyDbInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_db_instance::ModifyDbInstanceInput {
             db_instance_identifier: self.db_instance_identifier,
             allocated_storage: self.allocated_storage,

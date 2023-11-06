@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OverallTestResults {
     /// <p>A list of the overall test results.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::OverallTestResultItem>>,
+    pub items: ::std::vec::Vec<crate::types::OverallTestResultItem>,
 }
 impl OverallTestResults {
     /// <p>A list of the overall test results.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::OverallTestResultItem]> {
-        self.items.as_deref()
+    pub fn items(&self) -> &[crate::types::OverallTestResultItem] {
+        use std::ops::Deref;
+        self.items.deref()
     }
 }
 impl OverallTestResults {
@@ -48,7 +49,16 @@ impl OverallTestResultsBuilder {
         &self.items
     }
     /// Consumes the builder and constructs a [`OverallTestResults`](crate::types::OverallTestResults).
-    pub fn build(self) -> crate::types::OverallTestResults {
-        crate::types::OverallTestResults { items: self.items }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`items`](crate::types::builders::OverallTestResultsBuilder::items)
+    pub fn build(self) -> ::std::result::Result<crate::types::OverallTestResults, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::OverallTestResults {
+            items: self.items.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "items",
+                    "items was not specified but it is required when building OverallTestResults",
+                )
+            })?,
+        })
     }
 }

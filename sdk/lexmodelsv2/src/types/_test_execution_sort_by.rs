@@ -5,18 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestExecutionSortBy {
     /// <p>Specifies whether to sort the test set executions by the date and time at which the test sets were created.</p>
-    pub attribute: ::std::option::Option<crate::types::TestExecutionSortAttribute>,
+    pub attribute: crate::types::TestExecutionSortAttribute,
     /// <p>Specifies whether to sort in ascending or descending order.</p>
-    pub order: ::std::option::Option<crate::types::SortOrder>,
+    pub order: crate::types::SortOrder,
 }
 impl TestExecutionSortBy {
     /// <p>Specifies whether to sort the test set executions by the date and time at which the test sets were created.</p>
-    pub fn attribute(&self) -> ::std::option::Option<&crate::types::TestExecutionSortAttribute> {
-        self.attribute.as_ref()
+    pub fn attribute(&self) -> &crate::types::TestExecutionSortAttribute {
+        &self.attribute
     }
     /// <p>Specifies whether to sort in ascending or descending order.</p>
-    pub fn order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
-        self.order.as_ref()
+    pub fn order(&self) -> &crate::types::SortOrder {
+        &self.order
     }
 }
 impl TestExecutionSortBy {
@@ -35,6 +35,7 @@ pub struct TestExecutionSortByBuilder {
 }
 impl TestExecutionSortByBuilder {
     /// <p>Specifies whether to sort the test set executions by the date and time at which the test sets were created.</p>
+    /// This field is required.
     pub fn attribute(mut self, input: crate::types::TestExecutionSortAttribute) -> Self {
         self.attribute = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl TestExecutionSortByBuilder {
         &self.attribute
     }
     /// <p>Specifies whether to sort in ascending or descending order.</p>
+    /// This field is required.
     pub fn order(mut self, input: crate::types::SortOrder) -> Self {
         self.order = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl TestExecutionSortByBuilder {
         &self.order
     }
     /// Consumes the builder and constructs a [`TestExecutionSortBy`](crate::types::TestExecutionSortBy).
-    pub fn build(self) -> crate::types::TestExecutionSortBy {
-        crate::types::TestExecutionSortBy {
-            attribute: self.attribute,
-            order: self.order,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`attribute`](crate::types::builders::TestExecutionSortByBuilder::attribute)
+    /// - [`order`](crate::types::builders::TestExecutionSortByBuilder::order)
+    pub fn build(self) -> ::std::result::Result<crate::types::TestExecutionSortBy, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TestExecutionSortBy {
+            attribute: self.attribute.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "attribute",
+                    "attribute was not specified but it is required when building TestExecutionSortBy",
+                )
+            })?,
+            order: self.order.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "order",
+                    "order was not specified but it is required when building TestExecutionSortBy",
+                )
+            })?,
+        })
     }
 }

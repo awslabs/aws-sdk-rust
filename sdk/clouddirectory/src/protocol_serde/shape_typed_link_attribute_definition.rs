@@ -55,7 +55,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::typed_link_attribute_definition_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -66,37 +70,37 @@ where
 pub fn ser_typed_link_attribute_definition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TypedLinkAttributeDefinition,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("Name").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.r#type {
-        object.key("Type").string(var_2.as_str());
+    {
+        object.key("Type").string(input.r#type.as_str());
     }
-    if let Some(var_3) = &input.default_value {
+    if let Some(var_1) = &input.default_value {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("DefaultValue").start_object();
-        crate::protocol_serde::shape_typed_attribute_value::ser_typed_attribute_value(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_2 = object.key("DefaultValue").start_object();
+        crate::protocol_serde::shape_typed_attribute_value::ser_typed_attribute_value(&mut object_2, var_1)?;
+        object_2.finish();
     }
     if input.is_immutable {
         object.key("IsImmutable").boolean(input.is_immutable);
     }
-    if let Some(var_5) = &input.rules {
+    if let Some(var_3) = &input.rules {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("Rules").start_object();
-        for (key_7, value_8) in var_5 {
+        let mut object_4 = object.key("Rules").start_object();
+        for (key_5, value_6) in var_3 {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = object_6.key(key_7.as_str()).start_object();
-                crate::protocol_serde::shape_rule::ser_rule(&mut object_9, value_8)?;
-                object_9.finish();
+                let mut object_7 = object_4.key(key_5.as_str()).start_object();
+                crate::protocol_serde::shape_rule::ser_rule(&mut object_7, value_6)?;
+                object_7.finish();
             }
         }
-        object_6.finish();
+        object_4.finish();
     }
-    if let Some(var_10) = &input.required_behavior {
-        object.key("RequiredBehavior").string(var_10.as_str());
+    {
+        object.key("RequiredBehavior").string(input.required_behavior.as_str());
     }
     Ok(())
 }

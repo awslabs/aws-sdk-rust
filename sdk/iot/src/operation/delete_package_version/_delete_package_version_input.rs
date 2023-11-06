@@ -41,6 +41,7 @@ pub struct DeletePackageVersionInputBuilder {
 }
 impl DeletePackageVersionInputBuilder {
     /// <p>The name of the associated software package.</p>
+    /// This field is required.
     pub fn package_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DeletePackageVersionInputBuilder {
         &self.package_name
     }
     /// <p>The name of the target package version.</p>
+    /// This field is required.
     pub fn version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_name = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +87,7 @@ impl DeletePackageVersionInputBuilder {
     /// Consumes the builder and constructs a [`DeletePackageVersionInput`](crate::operation::delete_package_version::DeletePackageVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_package_version::DeletePackageVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_package_version::DeletePackageVersionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_package_version::DeletePackageVersionInput {
             package_name: self.package_name,

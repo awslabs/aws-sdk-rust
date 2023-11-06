@@ -55,8 +55,10 @@ impl ApplicationSummary {
     /// <p>Labels to improve discovery of apps in search results.</p>
     /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
     /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
-    pub fn labels(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.labels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.labels.is_none()`.
+    pub fn labels(&self) -> &[::std::string::String] {
+        self.labels.as_deref().unwrap_or_default()
     }
     /// <p>The name of the application.</p>
     /// <p>Minimum length=1. Maximum length=140</p>
@@ -91,6 +93,7 @@ pub struct ApplicationSummaryBuilder {
 }
 impl ApplicationSummaryBuilder {
     /// <p>The application Amazon Resource Name (ARN).</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -107,6 +110,7 @@ impl ApplicationSummaryBuilder {
     /// <p>The name of the author publishing the app.</p>
     /// <p>Minimum length=1. Maximum length=127.</p>
     /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+    /// This field is required.
     pub fn author(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.author = ::std::option::Option::Some(input.into());
         self
@@ -140,6 +144,7 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>The description of the application.</p>
     /// <p>Minimum length=1. Maximum length=256</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -198,6 +203,7 @@ impl ApplicationSummaryBuilder {
     /// <p>The name of the application.</p>
     /// <p>Minimum length=1. Maximum length=140</p>
     /// <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

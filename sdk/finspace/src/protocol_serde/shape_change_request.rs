@@ -2,15 +2,15 @@
 pub fn ser_change_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ChangeRequest,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.change_type {
-        object.key("changeType").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("changeType").string(input.change_type.as_str());
     }
-    if let Some(var_2) = &input.s3_path {
-        object.key("s3Path").string(var_2.as_str());
+    if let Some(var_1) = &input.s3_path {
+        object.key("s3Path").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.db_path {
-        object.key("dbPath").string(var_3.as_str());
+    {
+        object.key("dbPath").string(input.db_path.as_str());
     }
     Ok(())
 }
@@ -61,7 +61,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::change_request_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

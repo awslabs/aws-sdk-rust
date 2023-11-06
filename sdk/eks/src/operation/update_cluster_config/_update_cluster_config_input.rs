@@ -52,6 +52,7 @@ pub struct UpdateClusterConfigInputBuilder {
 }
 impl UpdateClusterConfigInputBuilder {
     /// <p>The name of the Amazon EKS cluster to update.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -116,7 +117,7 @@ impl UpdateClusterConfigInputBuilder {
     /// Consumes the builder and constructs a [`UpdateClusterConfigInput`](crate::operation::update_cluster_config::UpdateClusterConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_cluster_config::UpdateClusterConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_cluster_config::UpdateClusterConfigInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_cluster_config::UpdateClusterConfigInput {
             name: self.name,

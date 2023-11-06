@@ -32,8 +32,10 @@ impl ListFacesInput {
         self.user_id.as_deref()
     }
     /// <p>An array of face IDs to filter results with when listing faces in a collection.</p>
-    pub fn face_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.face_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.face_ids.is_none()`.
+    pub fn face_ids(&self) -> &[::std::string::String] {
+        self.face_ids.as_deref().unwrap_or_default()
     }
 }
 impl ListFacesInput {
@@ -55,6 +57,7 @@ pub struct ListFacesInputBuilder {
 }
 impl ListFacesInputBuilder {
     /// <p>ID of the collection from which to list the faces.</p>
+    /// This field is required.
     pub fn collection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_id = ::std::option::Option::Some(input.into());
         self
@@ -131,7 +134,7 @@ impl ListFacesInputBuilder {
         &self.face_ids
     }
     /// Consumes the builder and constructs a [`ListFacesInput`](crate::operation::list_faces::ListFacesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_faces::ListFacesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_faces::ListFacesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_faces::ListFacesInput {
             collection_id: self.collection_id,
             next_token: self.next_token,

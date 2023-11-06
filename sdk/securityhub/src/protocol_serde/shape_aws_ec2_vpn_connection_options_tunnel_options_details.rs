@@ -2,7 +2,7 @@
 pub fn ser_aws_ec2_vpn_connection_options_tunnel_options_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEc2VpnConnectionOptionsTunnelOptionsDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.dpd_timeout_seconds {
         object.key("DpdTimeoutSeconds").number(
             #[allow(clippy::useless_conversion)]

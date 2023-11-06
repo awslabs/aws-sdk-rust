@@ -27,6 +27,7 @@ pub struct DeleteDbProxyEndpointInputBuilder {
 }
 impl DeleteDbProxyEndpointInputBuilder {
     /// <p>The name of the DB proxy endpoint to delete.</p>
+    /// This field is required.
     pub fn db_proxy_endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_proxy_endpoint_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteDbProxyEndpointInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDbProxyEndpointInput`](crate::operation::delete_db_proxy_endpoint::DeleteDbProxyEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_db_proxy_endpoint::DeleteDbProxyEndpointInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_db_proxy_endpoint::DeleteDbProxyEndpointInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_db_proxy_endpoint::DeleteDbProxyEndpointInput {
             db_proxy_endpoint_name: self.db_proxy_endpoint_name,

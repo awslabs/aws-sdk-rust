@@ -11,8 +11,10 @@ pub struct BatchGetObjectInformationResponse {
 }
 impl BatchGetObjectInformationResponse {
     /// <p>The facets attached to the specified object.</p>
-    pub fn schema_facets(&self) -> ::std::option::Option<&[crate::types::SchemaFacet]> {
-        self.schema_facets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.schema_facets.is_none()`.
+    pub fn schema_facets(&self) -> &[crate::types::SchemaFacet] {
+        self.schema_facets.as_deref().unwrap_or_default()
     }
     /// <p>The <code>ObjectIdentifier</code> of the specified object.</p>
     pub fn object_identifier(&self) -> ::std::option::Option<&str> {

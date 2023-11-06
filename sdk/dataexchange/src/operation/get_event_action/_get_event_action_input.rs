@@ -27,6 +27,7 @@ pub struct GetEventActionInputBuilder {
 }
 impl GetEventActionInputBuilder {
     /// <p>The unique identifier for the event action.</p>
+    /// This field is required.
     pub fn event_action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_action_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetEventActionInputBuilder {
     /// Consumes the builder and constructs a [`GetEventActionInput`](crate::operation::get_event_action::GetEventActionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_event_action::GetEventActionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_event_action::GetEventActionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_event_action::GetEventActionInput {
             event_action_id: self.event_action_id,
         })

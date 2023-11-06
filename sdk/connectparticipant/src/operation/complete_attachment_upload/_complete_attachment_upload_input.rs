@@ -12,8 +12,10 @@ pub struct CompleteAttachmentUploadInput {
 }
 impl CompleteAttachmentUploadInput {
     /// <p>A list of unique identifiers for the attachments.</p>
-    pub fn attachment_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.attachment_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attachment_ids.is_none()`.
+    pub fn attachment_ids(&self) -> &[::std::string::String] {
+        self.attachment_ids.as_deref().unwrap_or_default()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -61,6 +63,7 @@ impl CompleteAttachmentUploadInputBuilder {
         &self.attachment_ids
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -75,6 +78,7 @@ impl CompleteAttachmentUploadInputBuilder {
         &self.client_token
     }
     /// <p>The authentication token associated with the participant's connection.</p>
+    /// This field is required.
     pub fn connection_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_token = ::std::option::Option::Some(input.into());
         self
@@ -93,7 +97,7 @@ impl CompleteAttachmentUploadInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::complete_attachment_upload::CompleteAttachmentUploadInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::complete_attachment_upload::CompleteAttachmentUploadInput {
             attachment_ids: self.attachment_ids,

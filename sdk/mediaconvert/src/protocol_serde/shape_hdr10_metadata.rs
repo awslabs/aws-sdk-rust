@@ -2,7 +2,7 @@
 pub fn ser_hdr10_metadata(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Hdr10Metadata,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.blue_primary_x {
         object.key("bluePrimaryX").number(
             #[allow(clippy::useless_conversion)]

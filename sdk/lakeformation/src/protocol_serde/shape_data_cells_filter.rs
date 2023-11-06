@@ -2,42 +2,42 @@
 pub fn ser_data_cells_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataCellsFilter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.table_catalog_id {
-        object.key("TableCatalogId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("TableCatalogId").string(input.table_catalog_id.as_str());
     }
-    if let Some(var_2) = &input.database_name {
-        object.key("DatabaseName").string(var_2.as_str());
+    {
+        object.key("DatabaseName").string(input.database_name.as_str());
     }
-    if let Some(var_3) = &input.table_name {
-        object.key("TableName").string(var_3.as_str());
+    {
+        object.key("TableName").string(input.table_name.as_str());
     }
-    if let Some(var_4) = &input.name {
-        object.key("Name").string(var_4.as_str());
+    {
+        object.key("Name").string(input.name.as_str());
     }
-    if let Some(var_5) = &input.row_filter {
+    if let Some(var_1) = &input.row_filter {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("RowFilter").start_object();
-        crate::protocol_serde::shape_row_filter::ser_row_filter(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_2 = object.key("RowFilter").start_object();
+        crate::protocol_serde::shape_row_filter::ser_row_filter(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_7) = &input.column_names {
-        let mut array_8 = object.key("ColumnNames").start_array();
-        for item_9 in var_7 {
+    if let Some(var_3) = &input.column_names {
+        let mut array_4 = object.key("ColumnNames").start_array();
+        for item_5 in var_3 {
             {
-                array_8.value().string(item_9.as_str());
+                array_4.value().string(item_5.as_str());
             }
         }
-        array_8.finish();
+        array_4.finish();
     }
-    if let Some(var_10) = &input.column_wildcard {
+    if let Some(var_6) = &input.column_wildcard {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("ColumnWildcard").start_object();
-        crate::protocol_serde::shape_column_wildcard::ser_column_wildcard(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_7 = object.key("ColumnWildcard").start_object();
+        crate::protocol_serde::shape_column_wildcard::ser_column_wildcard(&mut object_7, var_6)?;
+        object_7.finish();
     }
-    if let Some(var_12) = &input.version_id {
-        object.key("VersionId").string(var_12.as_str());
+    if let Some(var_8) = &input.version_id {
+        object.key("VersionId").string(var_8.as_str());
     }
     Ok(())
 }
@@ -111,7 +111,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::data_cells_filter_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

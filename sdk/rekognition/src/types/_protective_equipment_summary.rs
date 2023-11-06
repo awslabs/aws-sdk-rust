@@ -14,16 +14,22 @@ pub struct ProtectiveEquipmentSummary {
 }
 impl ProtectiveEquipmentSummary {
     /// <p>An array of IDs for persons who are wearing detected personal protective equipment. </p>
-    pub fn persons_with_required_equipment(&self) -> ::std::option::Option<&[i32]> {
-        self.persons_with_required_equipment.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.persons_with_required_equipment.is_none()`.
+    pub fn persons_with_required_equipment(&self) -> &[i32] {
+        self.persons_with_required_equipment.as_deref().unwrap_or_default()
     }
     /// <p>An array of IDs for persons who are not wearing all of the types of PPE specified in the <code>RequiredEquipmentTypes</code> field of the detected personal protective equipment. </p>
-    pub fn persons_without_required_equipment(&self) -> ::std::option::Option<&[i32]> {
-        self.persons_without_required_equipment.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.persons_without_required_equipment.is_none()`.
+    pub fn persons_without_required_equipment(&self) -> &[i32] {
+        self.persons_without_required_equipment.as_deref().unwrap_or_default()
     }
     /// <p>An array of IDs for persons where it was not possible to determine if they are wearing personal protective equipment. </p>
-    pub fn persons_indeterminate(&self) -> ::std::option::Option<&[i32]> {
-        self.persons_indeterminate.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.persons_indeterminate.is_none()`.
+    pub fn persons_indeterminate(&self) -> &[i32] {
+        self.persons_indeterminate.as_deref().unwrap_or_default()
     }
 }
 impl ProtectiveEquipmentSummary {

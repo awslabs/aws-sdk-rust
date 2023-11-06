@@ -66,6 +66,7 @@ pub struct StartCopyJobInputBuilder {
 }
 impl StartCopyJobInputBuilder {
     /// <p>An ARN that uniquely identifies a recovery point to use for the copy job; for example, arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45. </p>
+    /// This field is required.
     pub fn recovery_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recovery_point_arn = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +81,7 @@ impl StartCopyJobInputBuilder {
         &self.recovery_point_arn
     }
     /// <p>The name of a logical source container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    /// This field is required.
     pub fn source_backup_vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_backup_vault_name = ::std::option::Option::Some(input.into());
         self
@@ -94,6 +96,7 @@ impl StartCopyJobInputBuilder {
         &self.source_backup_vault_name
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a destination backup vault to copy to; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+    /// This field is required.
     pub fn destination_backup_vault_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_backup_vault_arn = ::std::option::Option::Some(input.into());
         self
@@ -108,6 +111,7 @@ impl StartCopyJobInputBuilder {
         &self.destination_backup_vault_arn
     }
     /// <p>Specifies the IAM role ARN used to copy the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+    /// This field is required.
     pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -158,7 +162,7 @@ impl StartCopyJobInputBuilder {
     /// Consumes the builder and constructs a [`StartCopyJobInput`](crate::operation::start_copy_job::StartCopyJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_copy_job::StartCopyJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_copy_job::StartCopyJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_copy_job::StartCopyJobInput {
             recovery_point_arn: self.recovery_point_arn,
             source_backup_vault_name: self.source_backup_vault_name,

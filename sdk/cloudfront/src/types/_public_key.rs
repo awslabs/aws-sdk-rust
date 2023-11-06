@@ -5,20 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PublicKey {
     /// <p>The identifier of the public key.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The date and time when the public key was uploaded.</p>
-    pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_time: ::aws_smithy_types::DateTime,
     /// <p>Configuration information about a public key that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level encryption</a>.</p>
     pub public_key_config: ::std::option::Option<crate::types::PublicKeyConfig>,
 }
 impl PublicKey {
     /// <p>The identifier of the public key.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The date and time when the public key was uploaded.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_time.as_ref()
+    pub fn created_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_time
     }
     /// <p>Configuration information about a public key that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level encryption</a>.</p>
     pub fn public_key_config(&self) -> ::std::option::Option<&crate::types::PublicKeyConfig> {
@@ -42,6 +43,7 @@ pub struct PublicKeyBuilder {
 }
 impl PublicKeyBuilder {
     /// <p>The identifier of the public key.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +58,7 @@ impl PublicKeyBuilder {
         &self.id
     }
     /// <p>The date and time when the public key was uploaded.</p>
+    /// This field is required.
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
         self
@@ -70,6 +73,7 @@ impl PublicKeyBuilder {
         &self.created_time
     }
     /// <p>Configuration information about a public key that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level encryption</a>.</p>
+    /// This field is required.
     pub fn public_key_config(mut self, input: crate::types::PublicKeyConfig) -> Self {
         self.public_key_config = ::std::option::Option::Some(input);
         self
@@ -84,11 +88,24 @@ impl PublicKeyBuilder {
         &self.public_key_config
     }
     /// Consumes the builder and constructs a [`PublicKey`](crate::types::PublicKey).
-    pub fn build(self) -> crate::types::PublicKey {
-        crate::types::PublicKey {
-            id: self.id,
-            created_time: self.created_time,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::PublicKeyBuilder::id)
+    /// - [`created_time`](crate::types::builders::PublicKeyBuilder::created_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::PublicKey, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PublicKey {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building PublicKey",
+                )
+            })?,
+            created_time: self.created_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_time",
+                    "created_time was not specified but it is required when building PublicKey",
+                )
+            })?,
             public_key_config: self.public_key_config,
-        }
+        })
     }
 }

@@ -18,8 +18,10 @@ pub struct DescribeFleetHistoryOutput {
 }
 impl DescribeFleetHistoryOutput {
     /// <p>Information about the events in the history of the EC2 Fleet.</p>
-    pub fn history_records(&self) -> ::std::option::Option<&[crate::types::HistoryRecordEntry]> {
-        self.history_records.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.history_records.is_none()`.
+    pub fn history_records(&self) -> &[crate::types::HistoryRecordEntry] {
+        self.history_records.as_deref().unwrap_or_default()
     }
     /// <p>The last date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were retrieved.</p>
     /// <p>If <code>nextToken</code> indicates that there are more items, this value is not present.</p>

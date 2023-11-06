@@ -396,7 +396,7 @@ mod test {
         );
         assert_eq!(
             date_time.fmt(Format::HttpDate).unwrap(),
-            "Mon, 16 Dec 2019 23:48:18.52 GMT"
+            "Mon, 16 Dec 2019 23:48:18 GMT"
         );
     }
 

@@ -19,8 +19,10 @@ impl UpdateClusterInput {
         self.cluster.as_deref()
     }
     /// <p>The cluster settings for your cluster.</p>
-    pub fn settings(&self) -> ::std::option::Option<&[crate::types::ClusterSetting]> {
-        self.settings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.settings.is_none()`.
+    pub fn settings(&self) -> &[crate::types::ClusterSetting] {
+        self.settings.as_deref().unwrap_or_default()
     }
     /// <p>The execute command configuration for the cluster.</p>
     pub fn configuration(&self) -> ::std::option::Option<&crate::types::ClusterConfiguration> {
@@ -50,6 +52,7 @@ pub struct UpdateClusterInputBuilder {
 }
 impl UpdateClusterInputBuilder {
     /// <p>The name of the cluster to modify the settings for.</p>
+    /// This field is required.
     pub fn cluster(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster = ::std::option::Option::Some(input.into());
         self
@@ -117,7 +120,7 @@ impl UpdateClusterInputBuilder {
     /// Consumes the builder and constructs a [`UpdateClusterInput`](crate::operation::update_cluster::UpdateClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_cluster::UpdateClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_cluster::UpdateClusterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_cluster::UpdateClusterInput {
             cluster: self.cluster,
             settings: self.settings,

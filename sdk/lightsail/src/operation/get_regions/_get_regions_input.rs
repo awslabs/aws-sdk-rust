@@ -62,7 +62,7 @@ impl GetRegionsInputBuilder {
         &self.include_relational_database_availability_zones
     }
     /// Consumes the builder and constructs a [`GetRegionsInput`](crate::operation::get_regions::GetRegionsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_regions::GetRegionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_regions::GetRegionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_regions::GetRegionsInput {
             include_availability_zones: self.include_availability_zones,
             include_relational_database_availability_zones: self.include_relational_database_availability_zones,

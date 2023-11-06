@@ -51,8 +51,10 @@ impl Endpoint {
         self.creation_time.as_ref()
     }
     /// <p>The network interface of the endpoint.</p>
-    pub fn network_interfaces(&self) -> ::std::option::Option<&[crate::types::NetworkInterface]> {
-        self.network_interfaces.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_interfaces.is_none()`.
+    pub fn network_interfaces(&self) -> &[crate::types::NetworkInterface] {
+        self.network_interfaces.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the VPC used for the endpoint.</p>
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {

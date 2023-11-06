@@ -30,16 +30,22 @@ impl CreateSubscriberInput {
         self.subscriber_description.as_deref()
     }
     /// <p>The supported Amazon Web Services from which logs and events are collected. Security Lake supports log and event collection for natively supported Amazon Web Services.</p>
-    pub fn sources(&self) -> ::std::option::Option<&[crate::types::LogSourceResource]> {
-        self.sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
+    pub fn sources(&self) -> &[crate::types::LogSourceResource] {
+        self.sources.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon S3 or Lake Formation access type.</p>
-    pub fn access_types(&self) -> ::std::option::Option<&[crate::types::AccessType]> {
-        self.access_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.access_types.is_none()`.
+    pub fn access_types(&self) -> &[crate::types::AccessType] {
+        self.access_types.as_deref().unwrap_or_default()
     }
     /// <p>An array of objects, one for each tag to associate with the subscriber. For each tag, you must specify both a tag key and a tag value. A tag value cannot be null, but it can be an empty string.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateSubscriberInput {
@@ -62,6 +68,7 @@ pub struct CreateSubscriberInputBuilder {
 }
 impl CreateSubscriberInputBuilder {
     /// <p>The AWS identity used to access your data.</p>
+    /// This field is required.
     pub fn subscriber_identity(mut self, input: crate::types::AwsIdentity) -> Self {
         self.subscriber_identity = ::std::option::Option::Some(input);
         self
@@ -76,6 +83,7 @@ impl CreateSubscriberInputBuilder {
         &self.subscriber_identity
     }
     /// <p>The name of your Security Lake subscriber account.</p>
+    /// This field is required.
     pub fn subscriber_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscriber_name = ::std::option::Option::Some(input.into());
         self
@@ -166,7 +174,7 @@ impl CreateSubscriberInputBuilder {
     /// Consumes the builder and constructs a [`CreateSubscriberInput`](crate::operation::create_subscriber::CreateSubscriberInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_subscriber::CreateSubscriberInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_subscriber::CreateSubscriberInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_subscriber::CreateSubscriberInput {
             subscriber_identity: self.subscriber_identity,
             subscriber_name: self.subscriber_name,

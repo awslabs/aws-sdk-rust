@@ -2,33 +2,33 @@
 pub fn ser_redshift_connector_profile_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RedshiftConnectorProfileProperties,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.database_url {
         object.key("databaseUrl").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.bucket_name {
-        object.key("bucketName").string(var_2.as_str());
+    {
+        object.key("bucketName").string(input.bucket_name.as_str());
     }
-    if let Some(var_3) = &input.bucket_prefix {
-        object.key("bucketPrefix").string(var_3.as_str());
+    if let Some(var_2) = &input.bucket_prefix {
+        object.key("bucketPrefix").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.role_arn {
-        object.key("roleArn").string(var_4.as_str());
+    {
+        object.key("roleArn").string(input.role_arn.as_str());
     }
-    if let Some(var_5) = &input.data_api_role_arn {
-        object.key("dataApiRoleArn").string(var_5.as_str());
+    if let Some(var_3) = &input.data_api_role_arn {
+        object.key("dataApiRoleArn").string(var_3.as_str());
     }
     if input.is_redshift_serverless {
         object.key("isRedshiftServerless").boolean(input.is_redshift_serverless);
     }
-    if let Some(var_6) = &input.cluster_identifier {
-        object.key("clusterIdentifier").string(var_6.as_str());
+    if let Some(var_4) = &input.cluster_identifier {
+        object.key("clusterIdentifier").string(var_4.as_str());
     }
-    if let Some(var_7) = &input.workgroup_name {
-        object.key("workgroupName").string(var_7.as_str());
+    if let Some(var_5) = &input.workgroup_name {
+        object.key("workgroupName").string(var_5.as_str());
     }
-    if let Some(var_8) = &input.database_name {
-        object.key("databaseName").string(var_8.as_str());
+    if let Some(var_6) = &input.database_name {
+        object.key("databaseName").string(var_6.as_str());
     }
     Ok(())
 }
@@ -117,7 +117,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::redshift_connector_profile_properties_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

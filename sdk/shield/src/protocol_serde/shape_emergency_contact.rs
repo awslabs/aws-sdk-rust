@@ -2,15 +2,15 @@
 pub fn ser_emergency_contact(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EmergencyContact,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.email_address {
-        object.key("EmailAddress").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("EmailAddress").string(input.email_address.as_str());
     }
-    if let Some(var_2) = &input.phone_number {
-        object.key("PhoneNumber").string(var_2.as_str());
+    if let Some(var_1) = &input.phone_number {
+        object.key("PhoneNumber").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.contact_notes {
-        object.key("ContactNotes").string(var_3.as_str());
+    if let Some(var_2) = &input.contact_notes {
+        object.key("ContactNotes").string(var_2.as_str());
     }
     Ok(())
 }
@@ -61,7 +61,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::emergency_contact_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

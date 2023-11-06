@@ -45,12 +45,16 @@ impl DescribeVpcConnectionOutput {
         self.vpc_id.as_deref()
     }
     /// <p>The list of subnets for the VPC connection.</p>
-    pub fn subnets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnets.is_none()`.
+    pub fn subnets(&self) -> &[::std::string::String] {
+        self.subnets.as_deref().unwrap_or_default()
     }
     /// <p>The list of security groups for the VPC connection.</p>
-    pub fn security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
+    pub fn security_groups(&self) -> &[::std::string::String] {
+        self.security_groups.as_deref().unwrap_or_default()
     }
     /// <p>The creation time of the VPC connection.</p>
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

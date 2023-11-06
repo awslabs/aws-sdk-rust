@@ -34,6 +34,7 @@ pub struct GetPullRequestOverrideStateInputBuilder {
 }
 impl GetPullRequestOverrideStateInputBuilder {
     /// <p>The ID of the pull request for which you want to get information about whether approval rules have been set aside (overridden).</p>
+    /// This field is required.
     pub fn pull_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pull_request_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetPullRequestOverrideStateInputBuilder {
         &self.pull_request_id
     }
     /// <p>The system-generated ID of the revision for the pull request. To retrieve the most recent revision ID, use <code>GetPullRequest</code>.</p>
+    /// This field is required.
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl GetPullRequestOverrideStateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateInput {
             pull_request_id: self.pull_request_id,

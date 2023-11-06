@@ -11,8 +11,10 @@ pub struct DescribeFlowExecutionRecordsOutput {
 }
 impl DescribeFlowExecutionRecordsOutput {
     /// <p> Returns a list of all instances when this flow was run. </p>
-    pub fn flow_executions(&self) -> ::std::option::Option<&[crate::types::ExecutionRecord]> {
-        self.flow_executions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.flow_executions.is_none()`.
+    pub fn flow_executions(&self) -> &[crate::types::ExecutionRecord] {
+        self.flow_executions.as_deref().unwrap_or_default()
     }
     /// <p> The pagination token for the next page of data. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -176,6 +176,7 @@ impl GetReservationPurchaseRecommendationInputBuilder {
         &self.account_id
     }
     /// <p>The specific service that you want recommendations for.</p>
+    /// This field is required.
     pub fn service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service = ::std::option::Option::Some(input.into());
         self
@@ -414,7 +415,7 @@ impl GetReservationPurchaseRecommendationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendationInput {

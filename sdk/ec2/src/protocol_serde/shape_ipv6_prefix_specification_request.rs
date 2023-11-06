@@ -3,7 +3,7 @@
 pub fn ser_ipv6_prefix_specification_request(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::Ipv6PrefixSpecificationRequest,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Ipv6Prefix");
     if let Some(var_2) = &input.ipv6_prefix {
@@ -12,6 +12,7 @@ pub fn ser_ipv6_prefix_specification_request(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_ipv6_prefix_specification_request(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::Ipv6PrefixSpecificationRequest, ::aws_smithy_xml::decode::XmlDecodeError> {

@@ -34,6 +34,7 @@ pub struct CreateKeyOutputBuilder {
 }
 impl CreateKeyOutputBuilder {
     /// <p>The key material that contains all the key attributes.</p>
+    /// This field is required.
     pub fn key(mut self, input: crate::types::Key) -> Self {
         self.key = ::std::option::Option::Some(input);
         self

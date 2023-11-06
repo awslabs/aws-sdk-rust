@@ -5,24 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RepositoryBranchInput {
     /// <p>The repository provider.</p>
-    pub provider: ::std::option::Option<crate::types::RepositoryProvider>,
+    pub provider: crate::types::RepositoryProvider,
     /// <p>The repository name.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The repository branch.</p>
-    pub branch: ::std::option::Option<::std::string::String>,
+    pub branch: ::std::string::String,
 }
 impl RepositoryBranchInput {
     /// <p>The repository provider.</p>
-    pub fn provider(&self) -> ::std::option::Option<&crate::types::RepositoryProvider> {
-        self.provider.as_ref()
+    pub fn provider(&self) -> &crate::types::RepositoryProvider {
+        &self.provider
     }
     /// <p>The repository name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The repository branch.</p>
-    pub fn branch(&self) -> ::std::option::Option<&str> {
-        self.branch.as_deref()
+    pub fn branch(&self) -> &str {
+        use std::ops::Deref;
+        self.branch.deref()
     }
 }
 impl RepositoryBranchInput {
@@ -42,6 +44,7 @@ pub struct RepositoryBranchInputBuilder {
 }
 impl RepositoryBranchInputBuilder {
     /// <p>The repository provider.</p>
+    /// This field is required.
     pub fn provider(mut self, input: crate::types::RepositoryProvider) -> Self {
         self.provider = ::std::option::Option::Some(input);
         self
@@ -56,6 +59,7 @@ impl RepositoryBranchInputBuilder {
         &self.provider
     }
     /// <p>The repository name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +74,7 @@ impl RepositoryBranchInputBuilder {
         &self.name
     }
     /// <p>The repository branch.</p>
+    /// This field is required.
     pub fn branch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +89,30 @@ impl RepositoryBranchInputBuilder {
         &self.branch
     }
     /// Consumes the builder and constructs a [`RepositoryBranchInput`](crate::types::RepositoryBranchInput).
-    pub fn build(self) -> crate::types::RepositoryBranchInput {
-        crate::types::RepositoryBranchInput {
-            provider: self.provider,
-            name: self.name,
-            branch: self.branch,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`provider`](crate::types::builders::RepositoryBranchInputBuilder::provider)
+    /// - [`name`](crate::types::builders::RepositoryBranchInputBuilder::name)
+    /// - [`branch`](crate::types::builders::RepositoryBranchInputBuilder::branch)
+    pub fn build(self) -> ::std::result::Result<crate::types::RepositoryBranchInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RepositoryBranchInput {
+            provider: self.provider.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "provider",
+                    "provider was not specified but it is required when building RepositoryBranchInput",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building RepositoryBranchInput",
+                )
+            })?,
+            branch: self.branch.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "branch",
+                    "branch was not specified but it is required when building RepositoryBranchInput",
+                )
+            })?,
+        })
     }
 }

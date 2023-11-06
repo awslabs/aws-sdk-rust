@@ -108,7 +108,7 @@ pub fn de_delete_expression_http_response(
         output = crate::protocol_serde::shape_delete_expression::de_delete_expression(_response_body, output)
             .map_err(crate::operation::delete_expression::DeleteExpressionError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::delete_expression_output_correct_errors(output).build()
     })
 }
 

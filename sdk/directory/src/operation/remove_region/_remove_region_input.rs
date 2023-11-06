@@ -27,6 +27,7 @@ pub struct RemoveRegionInputBuilder {
 }
 impl RemoveRegionInputBuilder {
     /// <p>The identifier of the directory for which you want to remove Region replication.</p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,9 @@ impl RemoveRegionInputBuilder {
         &self.directory_id
     }
     /// Consumes the builder and constructs a [`RemoveRegionInput`](crate::operation::remove_region::RemoveRegionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::remove_region::RemoveRegionInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::remove_region::RemoveRegionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::remove_region::RemoveRegionInput {
             directory_id: self.directory_id,
         })

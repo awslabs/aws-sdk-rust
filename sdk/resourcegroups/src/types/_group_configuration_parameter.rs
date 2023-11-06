@@ -5,18 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GroupConfigurationParameter {
     /// <p>The name of the group configuration parameter. For the list of parameters that you can use with each configuration item type, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported resource types and parameters</a>.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The value or values to be used for the specified parameter. For the list of values you can use with each parameter, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported resource types and parameters</a>.</p>
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GroupConfigurationParameter {
     /// <p>The name of the group configuration parameter. For the list of parameters that you can use with each configuration item type, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported resource types and parameters</a>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The value or values to be used for the specified parameter. For the list of values you can use with each parameter, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported resource types and parameters</a>.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
+    pub fn values(&self) -> &[::std::string::String] {
+        self.values.as_deref().unwrap_or_default()
     }
 }
 impl GroupConfigurationParameter {
@@ -35,6 +38,7 @@ pub struct GroupConfigurationParameterBuilder {
 }
 impl GroupConfigurationParameterBuilder {
     /// <p>The name of the group configuration parameter. For the list of parameters that you can use with each configuration item type, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported resource types and parameters</a>.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -69,10 +73,17 @@ impl GroupConfigurationParameterBuilder {
         &self.values
     }
     /// Consumes the builder and constructs a [`GroupConfigurationParameter`](crate::types::GroupConfigurationParameter).
-    pub fn build(self) -> crate::types::GroupConfigurationParameter {
-        crate::types::GroupConfigurationParameter {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::GroupConfigurationParameterBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::GroupConfigurationParameter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::GroupConfigurationParameter {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building GroupConfigurationParameter",
+                )
+            })?,
             values: self.values,
-        }
+        })
     }
 }

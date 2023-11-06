@@ -9,8 +9,10 @@ pub struct PathFormat {
 }
 impl PathFormat {
     /// <p>A list of Amazon S3 prefixes that points to sub-folders in the Amazon S3 bucket. Specify this list if you only want Lex to read the files under this set of sub-folders.</p>
-    pub fn object_prefixes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.object_prefixes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.object_prefixes.is_none()`.
+    pub fn object_prefixes(&self) -> &[::std::string::String] {
+        self.object_prefixes.as_deref().unwrap_or_default()
     }
 }
 impl PathFormat {

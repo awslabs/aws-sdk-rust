@@ -56,6 +56,7 @@ pub struct ModelPackageGroupSummaryBuilder {
 }
 impl ModelPackageGroupSummaryBuilder {
     /// <p>The name of the model group.</p>
+    /// This field is required.
     pub fn model_package_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_group_name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +71,7 @@ impl ModelPackageGroupSummaryBuilder {
         &self.model_package_group_name
     }
     /// <p>The Amazon Resource Name (ARN) of the model group.</p>
+    /// This field is required.
     pub fn model_package_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_group_arn = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +100,7 @@ impl ModelPackageGroupSummaryBuilder {
         &self.model_package_group_description
     }
     /// <p>The time that the model group was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -112,6 +115,7 @@ impl ModelPackageGroupSummaryBuilder {
         &self.creation_time
     }
     /// <p>The status of the model group.</p>
+    /// This field is required.
     pub fn model_package_group_status(mut self, input: crate::types::ModelPackageGroupStatus) -> Self {
         self.model_package_group_status = ::std::option::Option::Some(input);
         self

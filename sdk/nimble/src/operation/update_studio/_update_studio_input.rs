@@ -108,6 +108,7 @@ impl UpdateStudioInputBuilder {
         &self.display_name
     }
     /// <p>The studio ID. </p>
+    /// This field is required.
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
         self
@@ -136,7 +137,9 @@ impl UpdateStudioInputBuilder {
         &self.user_role_arn
     }
     /// Consumes the builder and constructs a [`UpdateStudioInput`](crate::operation::update_studio::UpdateStudioInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_studio::UpdateStudioInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_studio::UpdateStudioInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_studio::UpdateStudioInput {
             admin_role_arn: self.admin_role_arn,
             client_token: self.client_token,

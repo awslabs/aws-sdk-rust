@@ -34,6 +34,7 @@ pub struct DeleteSmsTemplateOutputBuilder {
 }
 impl DeleteSmsTemplateOutputBuilder {
     /// <p>Provides information about an API request or response.</p>
+    /// This field is required.
     pub fn message_body(mut self, input: crate::types::MessageBody) -> Self {
         self.message_body = ::std::option::Option::Some(input);
         self

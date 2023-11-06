@@ -2,7 +2,7 @@
 pub fn ser_io_t_job_executions_rollout_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IoTJobExecutionsRolloutConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.exponential_rate {
         #[allow(unused_mut)]
         let mut object_2 = object.key("exponentialRate").start_object();

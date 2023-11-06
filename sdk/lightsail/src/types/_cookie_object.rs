@@ -16,8 +16,10 @@ impl CookieObject {
         self.option.as_ref()
     }
     /// <p>The specific cookies to forward to your distribution's origin.</p>
-    pub fn cookies_allow_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cookies_allow_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cookies_allow_list.is_none()`.
+    pub fn cookies_allow_list(&self) -> &[::std::string::String] {
+        self.cookies_allow_list.as_deref().unwrap_or_default()
     }
 }
 impl CookieObject {

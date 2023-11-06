@@ -27,6 +27,7 @@ pub struct GetTableRestoreStatusInputBuilder {
 }
 impl GetTableRestoreStatusInputBuilder {
     /// <p>The ID of the <code>RestoreTableFromSnapshot</code> request to return status for.</p>
+    /// This field is required.
     pub fn table_restore_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_restore_request_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetTableRestoreStatusInputBuilder {
     /// Consumes the builder and constructs a [`GetTableRestoreStatusInput`](crate::operation::get_table_restore_status::GetTableRestoreStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_table_restore_status::GetTableRestoreStatusInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_table_restore_status::GetTableRestoreStatusInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_table_restore_status::GetTableRestoreStatusInput {
             table_restore_request_id: self.table_restore_request_id,

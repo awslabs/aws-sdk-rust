@@ -2,7 +2,7 @@
 pub fn ser_geospatial_point_style_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GeospatialPointStyleOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.selected_point_style {
         object.key("SelectedPointStyle").string(var_1.as_str());
     }

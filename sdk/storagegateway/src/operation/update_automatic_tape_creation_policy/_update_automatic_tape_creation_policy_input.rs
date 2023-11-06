@@ -10,8 +10,10 @@ pub struct UpdateAutomaticTapeCreationPolicyInput {
 }
 impl UpdateAutomaticTapeCreationPolicyInput {
     /// <p>An automatic tape creation policy consists of a list of automatic tape creation rules. The rules determine when and how to automatically create new tapes.</p>
-    pub fn automatic_tape_creation_rules(&self) -> ::std::option::Option<&[crate::types::AutomaticTapeCreationRule]> {
-        self.automatic_tape_creation_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.automatic_tape_creation_rules.is_none()`.
+    pub fn automatic_tape_creation_rules(&self) -> &[crate::types::AutomaticTapeCreationRule] {
+        self.automatic_tape_creation_rules.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
@@ -57,6 +59,7 @@ impl UpdateAutomaticTapeCreationPolicyInputBuilder {
         &self.automatic_tape_creation_rules
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// This field is required.
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_arn = ::std::option::Option::Some(input.into());
         self
@@ -75,7 +78,7 @@ impl UpdateAutomaticTapeCreationPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_automatic_tape_creation_policy::UpdateAutomaticTapeCreationPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_automatic_tape_creation_policy::UpdateAutomaticTapeCreationPolicyInput {

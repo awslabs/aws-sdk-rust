@@ -48,6 +48,7 @@ pub struct ListVirtualRoutersInputBuilder {
 }
 impl ListVirtualRoutersInputBuilder {
     /// <p>The name of the service mesh to list virtual routers in.</p>
+    /// This field is required.
     pub fn mesh_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mesh_name = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,8 @@ impl ListVirtualRoutersInputBuilder {
     /// Consumes the builder and constructs a [`ListVirtualRoutersInput`](crate::operation::list_virtual_routers::ListVirtualRoutersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_virtual_routers::ListVirtualRoutersInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_virtual_routers::ListVirtualRoutersInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_virtual_routers::ListVirtualRoutersInput {
             mesh_name: self.mesh_name,
             next_token: self.next_token,

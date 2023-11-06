@@ -168,11 +168,10 @@ pub fn de_export_auto_scaling_group_recommendations_http_error(
                         crate::operation::export_auto_scaling_group_recommendations::ExportAutoScalingGroupRecommendationsError::unhandled,
                     )?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::throttling_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::export_auto_scaling_group_recommendations::ExportAutoScalingGroupRecommendationsError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -205,7 +204,7 @@ pub fn de_export_auto_scaling_group_recommendations_http_response(
 
 pub fn ser_export_auto_scaling_group_recommendations_input(
     input: &crate::operation::export_auto_scaling_group_recommendations::ExportAutoScalingGroupRecommendationsInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_export_auto_scaling_group_recommendations_input::ser_export_auto_scaling_group_recommendations_input(
@@ -213,7 +212,7 @@ pub fn ser_export_auto_scaling_group_recommendations_input(
         input,
     )?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_export_auto_scaling_group_recommendations(

@@ -41,8 +41,10 @@ impl GetLifecyclePolicyPreviewOutput {
         self.next_token.as_deref()
     }
     /// <p>The results of the lifecycle policy preview request.</p>
-    pub fn preview_results(&self) -> ::std::option::Option<&[crate::types::LifecyclePolicyPreviewResult]> {
-        self.preview_results.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.preview_results.is_none()`.
+    pub fn preview_results(&self) -> &[crate::types::LifecyclePolicyPreviewResult] {
+        self.preview_results.as_deref().unwrap_or_default()
     }
     /// <p>The list of images that is returned as a result of the action.</p>
     pub fn summary(&self) -> ::std::option::Option<&crate::types::LifecyclePolicyPreviewSummary> {

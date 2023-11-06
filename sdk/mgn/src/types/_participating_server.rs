@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParticipatingServer {
     /// <p>Participating server Source Server ID.</p>
-    pub source_server_id: ::std::option::Option<::std::string::String>,
+    pub source_server_id: ::std::string::String,
     /// <p>Participating server launch status.</p>
     pub launch_status: ::std::option::Option<crate::types::LaunchStatus>,
     /// <p>Participating server's launched ec2 instance ID.</p>
@@ -15,8 +15,9 @@ pub struct ParticipatingServer {
 }
 impl ParticipatingServer {
     /// <p>Participating server Source Server ID.</p>
-    pub fn source_server_id(&self) -> ::std::option::Option<&str> {
-        self.source_server_id.as_deref()
+    pub fn source_server_id(&self) -> &str {
+        use std::ops::Deref;
+        self.source_server_id.deref()
     }
     /// <p>Participating server launch status.</p>
     pub fn launch_status(&self) -> ::std::option::Option<&crate::types::LaunchStatus> {
@@ -49,6 +50,7 @@ pub struct ParticipatingServerBuilder {
 }
 impl ParticipatingServerBuilder {
     /// <p>Participating server Source Server ID.</p>
+    /// This field is required.
     pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +107,19 @@ impl ParticipatingServerBuilder {
         &self.post_launch_actions_status
     }
     /// Consumes the builder and constructs a [`ParticipatingServer`](crate::types::ParticipatingServer).
-    pub fn build(self) -> crate::types::ParticipatingServer {
-        crate::types::ParticipatingServer {
-            source_server_id: self.source_server_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`source_server_id`](crate::types::builders::ParticipatingServerBuilder::source_server_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::ParticipatingServer, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ParticipatingServer {
+            source_server_id: self.source_server_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "source_server_id",
+                    "source_server_id was not specified but it is required when building ParticipatingServer",
+                )
+            })?,
             launch_status: self.launch_status,
             launched_ec2_instance_id: self.launched_ec2_instance_id,
             post_launch_actions_status: self.post_launch_actions_status,
-        }
+        })
     }
 }

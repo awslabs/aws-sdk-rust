@@ -34,6 +34,7 @@ pub struct GetUserIdInputBuilder {
 }
 impl GetUserIdInputBuilder {
     /// <p>The globally unique identifier for the identity store.</p>
+    /// This field is required.
     pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_store_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetUserIdInputBuilder {
         &self.identity_store_id
     }
     /// <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For the unique attribute, the only valid paths are <code>userName</code> and <code>emails.value</code>.</p>
+    /// This field is required.
     pub fn alternate_identifier(mut self, input: crate::types::AlternateIdentifier) -> Self {
         self.alternate_identifier = ::std::option::Option::Some(input);
         self
@@ -62,7 +64,7 @@ impl GetUserIdInputBuilder {
         &self.alternate_identifier
     }
     /// Consumes the builder and constructs a [`GetUserIdInput`](crate::operation::get_user_id::GetUserIdInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_user_id::GetUserIdInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_user_id::GetUserIdInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_user_id::GetUserIdInput {
             identity_store_id: self.identity_store_id,
             alternate_identifier: self.alternate_identifier,

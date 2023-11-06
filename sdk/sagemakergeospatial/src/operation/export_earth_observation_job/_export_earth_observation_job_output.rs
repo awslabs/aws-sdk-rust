@@ -4,13 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportEarthObservationJobOutput {
     /// <p>The output Amazon Resource Name (ARN) of the Earth Observation job being exported.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The creation time.</p>
-    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_time: ::aws_smithy_types::DateTime,
     /// <p>The status of the results of the Earth Observation job being exported.</p>
-    pub export_status: ::std::option::Option<crate::types::EarthObservationJobExportStatus>,
+    pub export_status: crate::types::EarthObservationJobExportStatus,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
-    pub execution_role_arn: ::std::option::Option<::std::string::String>,
+    pub execution_role_arn: ::std::string::String,
     /// <p>An object containing information about the output file.</p>
     pub output_config: ::std::option::Option<crate::types::OutputConfigInput>,
     /// <p>The source images provided to the Earth Observation job being exported.</p>
@@ -19,20 +19,22 @@ pub struct ExportEarthObservationJobOutput {
 }
 impl ExportEarthObservationJobOutput {
     /// <p>The output Amazon Resource Name (ARN) of the Earth Observation job being exported.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The creation time.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_time.as_ref()
+    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_time
     }
     /// <p>The status of the results of the Earth Observation job being exported.</p>
-    pub fn export_status(&self) -> ::std::option::Option<&crate::types::EarthObservationJobExportStatus> {
-        self.export_status.as_ref()
+    pub fn export_status(&self) -> &crate::types::EarthObservationJobExportStatus {
+        &self.export_status
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
-    pub fn execution_role_arn(&self) -> ::std::option::Option<&str> {
-        self.execution_role_arn.as_deref()
+    pub fn execution_role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.execution_role_arn.deref()
     }
     /// <p>An object containing information about the output file.</p>
     pub fn output_config(&self) -> ::std::option::Option<&crate::types::OutputConfigInput> {
@@ -69,6 +71,7 @@ pub struct ExportEarthObservationJobOutputBuilder {
 }
 impl ExportEarthObservationJobOutputBuilder {
     /// <p>The output Amazon Resource Name (ARN) of the Earth Observation job being exported.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +86,7 @@ impl ExportEarthObservationJobOutputBuilder {
         &self.arn
     }
     /// <p>The creation time.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -97,6 +101,7 @@ impl ExportEarthObservationJobOutputBuilder {
         &self.creation_time
     }
     /// <p>The status of the results of the Earth Observation job being exported.</p>
+    /// This field is required.
     pub fn export_status(mut self, input: crate::types::EarthObservationJobExportStatus) -> Self {
         self.export_status = ::std::option::Option::Some(input);
         self
@@ -111,6 +116,7 @@ impl ExportEarthObservationJobOutputBuilder {
         &self.export_status
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
+    /// This field is required.
     pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +131,7 @@ impl ExportEarthObservationJobOutputBuilder {
         &self.execution_role_arn
     }
     /// <p>An object containing information about the output file.</p>
+    /// This field is required.
     pub fn output_config(mut self, input: crate::types::OutputConfigInput) -> Self {
         self.output_config = ::std::option::Option::Some(input);
         self
@@ -162,15 +169,45 @@ impl ExportEarthObservationJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ExportEarthObservationJobOutput`](crate::operation::export_earth_observation_job::ExportEarthObservationJobOutput).
-    pub fn build(self) -> crate::operation::export_earth_observation_job::ExportEarthObservationJobOutput {
-        crate::operation::export_earth_observation_job::ExportEarthObservationJobOutput {
-            arn: self.arn,
-            creation_time: self.creation_time,
-            export_status: self.export_status,
-            execution_role_arn: self.execution_role_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::operation::export_earth_observation_job::builders::ExportEarthObservationJobOutputBuilder::arn)
+    /// - [`creation_time`](crate::operation::export_earth_observation_job::builders::ExportEarthObservationJobOutputBuilder::creation_time)
+    /// - [`export_status`](crate::operation::export_earth_observation_job::builders::ExportEarthObservationJobOutputBuilder::export_status)
+    /// - [`execution_role_arn`](crate::operation::export_earth_observation_job::builders::ExportEarthObservationJobOutputBuilder::execution_role_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::export_earth_observation_job::ExportEarthObservationJobOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::export_earth_observation_job::ExportEarthObservationJobOutput {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building ExportEarthObservationJobOutput",
+                )
+            })?,
+            creation_time: self.creation_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "creation_time",
+                    "creation_time was not specified but it is required when building ExportEarthObservationJobOutput",
+                )
+            })?,
+            export_status: self.export_status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "export_status",
+                    "export_status was not specified but it is required when building ExportEarthObservationJobOutput",
+                )
+            })?,
+            execution_role_arn: self.execution_role_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "execution_role_arn",
+                    "execution_role_arn was not specified but it is required when building ExportEarthObservationJobOutput",
+                )
+            })?,
             output_config: self.output_config,
             export_source_images: self.export_source_images,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -20,8 +20,10 @@ impl BatchCheckLayerAvailabilityInput {
         self.repository_name.as_deref()
     }
     /// <p>The digests of the image layers to check.</p>
-    pub fn layer_digests(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.layer_digests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.layer_digests.is_none()`.
+    pub fn layer_digests(&self) -> &[::std::string::String] {
+        self.layer_digests.as_deref().unwrap_or_default()
     }
 }
 impl BatchCheckLayerAvailabilityInput {
@@ -55,6 +57,7 @@ impl BatchCheckLayerAvailabilityInputBuilder {
         &self.registry_id
     }
     /// <p>The name of the repository that is associated with the image layers to check.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -93,7 +96,7 @@ impl BatchCheckLayerAvailabilityInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_check_layer_availability::BatchCheckLayerAvailabilityInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_check_layer_availability::BatchCheckLayerAvailabilityInput {
             registry_id: self.registry_id,

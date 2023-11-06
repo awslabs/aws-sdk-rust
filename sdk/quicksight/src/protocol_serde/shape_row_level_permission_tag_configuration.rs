@@ -2,36 +2,36 @@
 pub fn ser_row_level_permission_tag_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RowLevelPermissionTagConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.status {
         object.key("Status").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.tag_rules {
-        let mut array_3 = object.key("TagRules").start_array();
-        for item_4 in var_2 {
+    {
+        let mut array_2 = object.key("TagRules").start_array();
+        for item_3 in &input.tag_rules {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_row_level_permission_tag_rule::ser_row_level_permission_tag_rule(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_row_level_permission_tag_rule::ser_row_level_permission_tag_rule(&mut object_4, item_3)?;
+                object_4.finish();
             }
         }
-        array_3.finish();
+        array_2.finish();
     }
-    if let Some(var_6) = &input.tag_rule_configurations {
-        let mut array_7 = object.key("TagRuleConfigurations").start_array();
-        for item_8 in var_6 {
+    if let Some(var_5) = &input.tag_rule_configurations {
+        let mut array_6 = object.key("TagRuleConfigurations").start_array();
+        for item_7 in var_5 {
             {
-                let mut array_9 = array_7.value().start_array();
-                for item_10 in item_8 {
+                let mut array_8 = array_6.value().start_array();
+                for item_9 in item_7 {
                     {
-                        array_9.value().string(item_10.as_str());
+                        array_8.value().string(item_9.as_str());
                     }
                 }
-                array_9.finish();
+                array_8.finish();
             }
         }
-        array_7.finish();
+        array_6.finish();
     }
     Ok(())
 }
@@ -78,7 +78,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::row_level_permission_tag_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -104,6 +104,7 @@ pub struct DescribeAlgorithmOutputBuilder {
 }
 impl DescribeAlgorithmOutputBuilder {
     /// <p>The name of the algorithm being described.</p>
+    /// This field is required.
     pub fn algorithm_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.algorithm_name = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +119,7 @@ impl DescribeAlgorithmOutputBuilder {
         &self.algorithm_name
     }
     /// <p>The Amazon Resource Name (ARN) of the algorithm.</p>
+    /// This field is required.
     pub fn algorithm_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.algorithm_arn = ::std::option::Option::Some(input.into());
         self
@@ -146,6 +148,7 @@ impl DescribeAlgorithmOutputBuilder {
         &self.algorithm_description
     }
     /// <p>A timestamp specifying when the algorithm was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -160,6 +163,7 @@ impl DescribeAlgorithmOutputBuilder {
         &self.creation_time
     }
     /// <p>Details about training jobs run by this algorithm.</p>
+    /// This field is required.
     pub fn training_specification(mut self, input: crate::types::TrainingSpecification) -> Self {
         self.training_specification = ::std::option::Option::Some(input);
         self
@@ -202,6 +206,7 @@ impl DescribeAlgorithmOutputBuilder {
         &self.validation_specification
     }
     /// <p>The current status of the algorithm.</p>
+    /// This field is required.
     pub fn algorithm_status(mut self, input: crate::types::AlgorithmStatus) -> Self {
         self.algorithm_status = ::std::option::Option::Some(input);
         self
@@ -216,6 +221,7 @@ impl DescribeAlgorithmOutputBuilder {
         &self.algorithm_status
     }
     /// <p>Details about the current status of the algorithm.</p>
+    /// This field is required.
     pub fn algorithm_status_details(mut self, input: crate::types::AlgorithmStatusDetails) -> Self {
         self.algorithm_status_details = ::std::option::Option::Some(input);
         self

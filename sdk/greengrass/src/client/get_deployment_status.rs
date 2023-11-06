@@ -3,12 +3,12 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDeploymentStatus`](crate::operation::get_deployment_status::builders::GetDeploymentStatusFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`deployment_id(impl Into<String>)`](crate::operation::get_deployment_status::builders::GetDeploymentStatusFluentBuilder::deployment_id) / [`set_deployment_id(Option<String>)`](crate::operation::get_deployment_status::builders::GetDeploymentStatusFluentBuilder::set_deployment_id): The ID of the deployment.
-    ///   - [`group_id(impl Into<String>)`](crate::operation::get_deployment_status::builders::GetDeploymentStatusFluentBuilder::group_id) / [`set_group_id(Option<String>)`](crate::operation::get_deployment_status::builders::GetDeploymentStatusFluentBuilder::set_group_id): The ID of the Greengrass group.
+    ///   - [`deployment_id(impl Into<String>)`](crate::operation::get_deployment_status::builders::GetDeploymentStatusFluentBuilder::deployment_id) / [`set_deployment_id(Option<String>)`](crate::operation::get_deployment_status::builders::GetDeploymentStatusFluentBuilder::set_deployment_id):<br>required: **true**<br>The ID of the deployment.<br>
+    ///   - [`group_id(impl Into<String>)`](crate::operation::get_deployment_status::builders::GetDeploymentStatusFluentBuilder::group_id) / [`set_group_id(Option<String>)`](crate::operation::get_deployment_status::builders::GetDeploymentStatusFluentBuilder::set_group_id):<br>required: **true**<br>The ID of the Greengrass group.<br>
     /// - On success, responds with [`GetDeploymentStatusOutput`](crate::operation::get_deployment_status::GetDeploymentStatusOutput) with field(s):
     ///   - [`deployment_status(Option<String>)`](crate::operation::get_deployment_status::GetDeploymentStatusOutput::deployment_status): The status of the deployment: ''InProgress'', ''Building'', ''Success'', or ''Failure''.
     ///   - [`deployment_type(Option<DeploymentType>)`](crate::operation::get_deployment_status::GetDeploymentStatusOutput::deployment_type): The type of the deployment.
-    ///   - [`error_details(Option<Vec<ErrorDetail>>)`](crate::operation::get_deployment_status::GetDeploymentStatusOutput::error_details): Error details
+    ///   - [`error_details(Option<Vec::<ErrorDetail>>)`](crate::operation::get_deployment_status::GetDeploymentStatusOutput::error_details): Error details
     ///   - [`error_message(Option<String>)`](crate::operation::get_deployment_status::GetDeploymentStatusOutput::error_message): Error message
     ///   - [`updated_at(Option<String>)`](crate::operation::get_deployment_status::GetDeploymentStatusOutput::updated_at): The time, in milliseconds since the epoch, when the deployment status was updated.
     /// - On failure, responds with [`SdkError<GetDeploymentStatusError>`](crate::operation::get_deployment_status::GetDeploymentStatusError)

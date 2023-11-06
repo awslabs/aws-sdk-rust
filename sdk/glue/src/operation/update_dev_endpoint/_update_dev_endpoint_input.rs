@@ -35,12 +35,16 @@ impl UpdateDevEndpointInput {
         self.public_key.as_deref()
     }
     /// <p>The list of public keys for the <code>DevEndpoint</code> to use.</p>
-    pub fn add_public_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.add_public_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_public_keys.is_none()`.
+    pub fn add_public_keys(&self) -> &[::std::string::String] {
+        self.add_public_keys.as_deref().unwrap_or_default()
     }
     /// <p>The list of public keys to be deleted from the <code>DevEndpoint</code>.</p>
-    pub fn delete_public_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.delete_public_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.delete_public_keys.is_none()`.
+    pub fn delete_public_keys(&self) -> &[::std::string::String] {
+        self.delete_public_keys.as_deref().unwrap_or_default()
     }
     /// <p>Custom Python or Java libraries to be loaded in the <code>DevEndpoint</code>.</p>
     pub fn custom_libraries(&self) -> ::std::option::Option<&crate::types::DevEndpointCustomLibraries> {
@@ -51,8 +55,10 @@ impl UpdateDevEndpointInput {
         self.update_etl_libraries
     }
     /// <p>The list of argument keys to be deleted from the map of arguments used to configure the <code>DevEndpoint</code>.</p>
-    pub fn delete_arguments(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.delete_arguments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.delete_arguments.is_none()`.
+    pub fn delete_arguments(&self) -> &[::std::string::String] {
+        self.delete_arguments.as_deref().unwrap_or_default()
     }
     /// <p>The map of arguments to add the map of arguments used to configure the <code>DevEndpoint</code>.</p>
     /// <p>Valid arguments are:</p>
@@ -86,6 +92,7 @@ pub struct UpdateDevEndpointInputBuilder {
 }
 impl UpdateDevEndpointInputBuilder {
     /// <p>The name of the <code>DevEndpoint</code> to be updated.</p>
+    /// This field is required.
     pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_name = ::std::option::Option::Some(input.into());
         self
@@ -242,7 +249,7 @@ impl UpdateDevEndpointInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDevEndpointInput`](crate::operation::update_dev_endpoint::UpdateDevEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_dev_endpoint::UpdateDevEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_dev_endpoint::UpdateDevEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_dev_endpoint::UpdateDevEndpointInput {
             endpoint_name: self.endpoint_name,
             public_key: self.public_key,

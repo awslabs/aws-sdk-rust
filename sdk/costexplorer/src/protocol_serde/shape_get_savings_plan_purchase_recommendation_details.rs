@@ -38,8 +38,8 @@ pub fn de_get_savings_plan_purchase_recommendation_details_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "LimitExceededException" => crate::operation::get_savings_plan_purchase_recommendation_details::GetSavingsPlanPurchaseRecommendationDetailsError::LimitExceededException({
@@ -54,8 +54,8 @@ pub fn de_get_savings_plan_purchase_recommendation_details_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::get_savings_plan_purchase_recommendation_details::GetSavingsPlanPurchaseRecommendationDetailsError::generic(generic)
@@ -86,7 +86,7 @@ pub fn de_get_savings_plan_purchase_recommendation_details_http_response(
 
 pub fn ser_get_savings_plan_purchase_recommendation_details_input(
     input: &crate::operation::get_savings_plan_purchase_recommendation_details::GetSavingsPlanPurchaseRecommendationDetailsInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_get_savings_plan_purchase_recommendation_details_input::ser_get_savings_plan_purchase_recommendation_details_input(
@@ -94,7 +94,7 @@ pub fn ser_get_savings_plan_purchase_recommendation_details_input(
         input,
     )?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_get_savings_plan_purchase_recommendation_details(

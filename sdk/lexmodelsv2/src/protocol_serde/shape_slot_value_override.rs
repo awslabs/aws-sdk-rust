@@ -2,7 +2,7 @@
 pub fn ser_slot_value_override(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SlotValueOverride,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.shape {
         object.key("shape").string(var_1.as_str());
     }

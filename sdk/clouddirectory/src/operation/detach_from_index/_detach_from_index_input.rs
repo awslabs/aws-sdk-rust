@@ -41,6 +41,7 @@ pub struct DetachFromIndexInputBuilder {
 }
 impl DetachFromIndexInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the directory the index and object exist in.</p>
+    /// This field is required.
     pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DetachFromIndexInputBuilder {
         &self.directory_arn
     }
     /// <p>A reference to the index object.</p>
+    /// This field is required.
     pub fn index_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.index_reference = ::std::option::Option::Some(input);
         self
@@ -69,6 +71,7 @@ impl DetachFromIndexInputBuilder {
         &self.index_reference
     }
     /// <p>A reference to the object being detached from the index.</p>
+    /// This field is required.
     pub fn target_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.target_reference = ::std::option::Option::Some(input);
         self
@@ -85,7 +88,7 @@ impl DetachFromIndexInputBuilder {
     /// Consumes the builder and constructs a [`DetachFromIndexInput`](crate::operation::detach_from_index::DetachFromIndexInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::detach_from_index::DetachFromIndexInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::detach_from_index::DetachFromIndexInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::detach_from_index::DetachFromIndexInput {
             directory_arn: self.directory_arn,
             index_reference: self.index_reference,

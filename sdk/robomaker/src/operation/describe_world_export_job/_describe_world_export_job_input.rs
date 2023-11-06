@@ -27,6 +27,7 @@ pub struct DescribeWorldExportJobInputBuilder {
 }
 impl DescribeWorldExportJobInputBuilder {
     /// <p>The Amazon Resource Name (arn) of the world export job to describe.</p>
+    /// This field is required.
     pub fn job(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeWorldExportJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_world_export_job::DescribeWorldExportJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_world_export_job::DescribeWorldExportJobInput { job: self.job })
     }

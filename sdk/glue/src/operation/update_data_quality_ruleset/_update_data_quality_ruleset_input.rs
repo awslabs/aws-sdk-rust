@@ -41,6 +41,7 @@ pub struct UpdateDataQualityRulesetInputBuilder {
 }
 impl UpdateDataQualityRulesetInputBuilder {
     /// <p>The name of the data quality ruleset.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl UpdateDataQualityRulesetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_data_quality_ruleset::UpdateDataQualityRulesetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_data_quality_ruleset::UpdateDataQualityRulesetInput {
             name: self.name,

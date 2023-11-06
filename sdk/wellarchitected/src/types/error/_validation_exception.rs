@@ -18,8 +18,10 @@ impl ValidationException {
         self.reason.as_ref()
     }
     /// <p>The fields that caused the error, if applicable.</p>
-    pub fn fields(&self) -> ::std::option::Option<&[crate::types::ValidationExceptionField]> {
-        self.fields.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fields.is_none()`.
+    pub fn fields(&self) -> &[crate::types::ValidationExceptionField] {
+        self.fields.as_deref().unwrap_or_default()
     }
 }
 impl ValidationException {
@@ -69,6 +71,7 @@ pub struct ValidationExceptionBuilder {
 }
 impl ValidationExceptionBuilder {
     /// <p>Description of the error.</p>
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self

@@ -2,27 +2,27 @@
 pub fn ser_signal_decoder(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SignalDecoder,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.fully_qualified_name {
-        object.key("fullyQualifiedName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("fullyQualifiedName").string(input.fully_qualified_name.as_str());
     }
-    if let Some(var_2) = &input.r#type {
-        object.key("type").string(var_2.as_str());
+    {
+        object.key("type").string(input.r#type.as_str());
     }
-    if let Some(var_3) = &input.interface_id {
-        object.key("interfaceId").string(var_3.as_str());
+    {
+        object.key("interfaceId").string(input.interface_id.as_str());
     }
-    if let Some(var_4) = &input.can_signal {
+    if let Some(var_1) = &input.can_signal {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("canSignal").start_object();
-        crate::protocol_serde::shape_can_signal::ser_can_signal(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_2 = object.key("canSignal").start_object();
+        crate::protocol_serde::shape_can_signal::ser_can_signal(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_6) = &input.obd_signal {
+    if let Some(var_3) = &input.obd_signal {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("obdSignal").start_object();
-        crate::protocol_serde::shape_obd_signal::ser_obd_signal(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_4 = object.key("obdSignal").start_object();
+        crate::protocol_serde::shape_obd_signal::ser_obd_signal(&mut object_4, var_3)?;
+        object_4.finish();
     }
     Ok(())
 }
@@ -79,7 +79,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::signal_decoder_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

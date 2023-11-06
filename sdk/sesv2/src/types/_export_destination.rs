@@ -9,7 +9,7 @@ pub struct ExportDestination {
     /// <li> <p> <code>CSV</code> - A comma-separated values file.</p> </li>
     /// <li> <p> <code>JSON</code> - A Json file.</p> </li>
     /// </ul>
-    pub data_format: ::std::option::Option<crate::types::DataFormat>,
+    pub data_format: crate::types::DataFormat,
     /// <p>An Amazon S3 pre-signed URL that points to the generated export file.</p>
     pub s3_url: ::std::option::Option<::std::string::String>,
 }
@@ -19,8 +19,8 @@ impl ExportDestination {
     /// <li> <p> <code>CSV</code> - A comma-separated values file.</p> </li>
     /// <li> <p> <code>JSON</code> - A Json file.</p> </li>
     /// </ul>
-    pub fn data_format(&self) -> ::std::option::Option<&crate::types::DataFormat> {
-        self.data_format.as_ref()
+    pub fn data_format(&self) -> &crate::types::DataFormat {
+        &self.data_format
     }
     /// <p>An Amazon S3 pre-signed URL that points to the generated export file.</p>
     pub fn s3_url(&self) -> ::std::option::Option<&str> {
@@ -47,6 +47,7 @@ impl ExportDestinationBuilder {
     /// <li> <p> <code>CSV</code> - A comma-separated values file.</p> </li>
     /// <li> <p> <code>JSON</code> - A Json file.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn data_format(mut self, input: crate::types::DataFormat) -> Self {
         self.data_format = ::std::option::Option::Some(input);
         self
@@ -83,10 +84,17 @@ impl ExportDestinationBuilder {
         &self.s3_url
     }
     /// Consumes the builder and constructs a [`ExportDestination`](crate::types::ExportDestination).
-    pub fn build(self) -> crate::types::ExportDestination {
-        crate::types::ExportDestination {
-            data_format: self.data_format,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`data_format`](crate::types::builders::ExportDestinationBuilder::data_format)
+    pub fn build(self) -> ::std::result::Result<crate::types::ExportDestination, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ExportDestination {
+            data_format: self.data_format.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "data_format",
+                    "data_format was not specified but it is required when building ExportDestination",
+                )
+            })?,
             s3_url: self.s3_url,
-        }
+        })
     }
 }

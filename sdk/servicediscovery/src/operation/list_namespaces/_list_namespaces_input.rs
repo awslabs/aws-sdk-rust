@@ -28,8 +28,10 @@ impl ListNamespacesInput {
     }
     /// <p>A complex type that contains specifications for the namespaces that you want to list.</p>
     /// <p>If you specify more than one filter, a namespace must match all filters to be returned by <code>ListNamespaces</code>.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::NamespaceFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::NamespaceFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
 }
 impl ListNamespacesInput {
@@ -111,7 +113,7 @@ impl ListNamespacesInputBuilder {
     /// Consumes the builder and constructs a [`ListNamespacesInput`](crate::operation::list_namespaces::ListNamespacesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_namespaces::ListNamespacesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_namespaces::ListNamespacesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_namespaces::ListNamespacesInput {
             next_token: self.next_token,
             max_results: self.max_results,

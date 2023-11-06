@@ -27,6 +27,7 @@ pub struct GetChannelInputBuilder {
 }
 impl GetChannelInputBuilder {
     /// <p>ARN of the channel for which the configuration is to be retrieved.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetChannelInputBuilder {
         &self.arn
     }
     /// Consumes the builder and constructs a [`GetChannelInput`](crate::operation::get_channel::GetChannelInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_channel::GetChannelInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_channel::GetChannelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_channel::GetChannelInput { arn: self.arn })
     }
 }

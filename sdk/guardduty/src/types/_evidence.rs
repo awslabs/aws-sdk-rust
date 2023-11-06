@@ -9,8 +9,10 @@ pub struct Evidence {
 }
 impl Evidence {
     /// <p>A list of threat intelligence details related to the evidence.</p>
-    pub fn threat_intelligence_details(&self) -> ::std::option::Option<&[crate::types::ThreatIntelligenceDetail]> {
-        self.threat_intelligence_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.threat_intelligence_details.is_none()`.
+    pub fn threat_intelligence_details(&self) -> &[crate::types::ThreatIntelligenceDetail] {
+        self.threat_intelligence_details.as_deref().unwrap_or_default()
     }
 }
 impl Evidence {

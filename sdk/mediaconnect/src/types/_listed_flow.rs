@@ -70,6 +70,7 @@ pub struct ListedFlowBuilder {
 }
 impl ListedFlowBuilder {
     /// The Availability Zone that the flow was created in.
+    /// This field is required.
     pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +85,7 @@ impl ListedFlowBuilder {
         &self.availability_zone
     }
     /// A description of the flow.
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +100,7 @@ impl ListedFlowBuilder {
         &self.description
     }
     /// The ARN of the flow.
+    /// This field is required.
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_arn = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +115,7 @@ impl ListedFlowBuilder {
         &self.flow_arn
     }
     /// The name of the flow.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +130,7 @@ impl ListedFlowBuilder {
         &self.name
     }
     /// The type of source. This value is either owned (originated somewhere other than an AWS Elemental MediaConnect flow owned by another AWS account) or entitled (originated at an AWS Elemental MediaConnect flow owned by another AWS account).
+    /// This field is required.
     pub fn source_type(mut self, input: crate::types::SourceType) -> Self {
         self.source_type = ::std::option::Option::Some(input);
         self
@@ -140,6 +145,7 @@ impl ListedFlowBuilder {
         &self.source_type
     }
     /// The current status of the flow.
+    /// This field is required.
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = ::std::option::Option::Some(input);
         self

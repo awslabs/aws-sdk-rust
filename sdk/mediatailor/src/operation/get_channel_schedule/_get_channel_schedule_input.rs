@@ -8,7 +8,7 @@ pub struct GetChannelScheduleInput {
     /// <p>The duration in minutes of the channel schedule.</p>
     pub duration_minutes: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of channel schedules that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> channel schedules, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>(Optional) If the playback configuration has more than <code>MaxResults</code> channel schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p>
     /// <p>For the first <code>GetChannelScheduleRequest</code> request, omit this value.</p>
     /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>
@@ -25,7 +25,7 @@ impl GetChannelScheduleInput {
         self.duration_minutes.as_deref()
     }
     /// <p>The maximum number of channel schedules that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> channel schedules, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>(Optional) If the playback configuration has more than <code>MaxResults</code> channel schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p>
@@ -54,6 +54,7 @@ pub struct GetChannelScheduleInputBuilder {
 }
 impl GetChannelScheduleInputBuilder {
     /// <p>The name of the channel associated with this Channel Schedule.</p>
+    /// This field is required.
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_name = ::std::option::Option::Some(input.into());
         self
@@ -121,11 +122,12 @@ impl GetChannelScheduleInputBuilder {
     /// Consumes the builder and constructs a [`GetChannelScheduleInput`](crate::operation::get_channel_schedule::GetChannelScheduleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_channel_schedule::GetChannelScheduleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_channel_schedule::GetChannelScheduleInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_channel_schedule::GetChannelScheduleInput {
             channel_name: self.channel_name,
             duration_minutes: self.duration_minutes,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
         })
     }

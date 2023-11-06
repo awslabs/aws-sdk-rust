@@ -43,6 +43,7 @@ pub struct DeleteApplicationInputProcessingConfigurationInputBuilder {
 }
 impl DeleteApplicationInputProcessingConfigurationInputBuilder {
     /// <p>The Kinesis Analytics application name.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +58,7 @@ impl DeleteApplicationInputProcessingConfigurationInputBuilder {
         &self.application_name
     }
     /// <p>The version ID of the Kinesis Analytics application.</p>
+    /// This field is required.
     pub fn current_application_version_id(mut self, input: i64) -> Self {
         self.current_application_version_id = ::std::option::Option::Some(input);
         self
@@ -71,6 +73,7 @@ impl DeleteApplicationInputProcessingConfigurationInputBuilder {
         &self.current_application_version_id
     }
     /// <p>The ID of the input configuration from which to delete the input processing configuration. You can get a list of the input IDs for an application by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
+    /// This field is required.
     pub fn input_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_id = ::std::option::Option::Some(input.into());
         self
@@ -89,7 +92,7 @@ impl DeleteApplicationInputProcessingConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationInput {

@@ -23,12 +23,16 @@ impl AtigData {
         self.last_seen.as_ref()
     }
     /// <p>The commercial sectors this vulnerability targets.</p>
-    pub fn targets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
+    pub fn targets(&self) -> &[::std::string::String] {
+        self.targets.as_deref().unwrap_or_default()
     }
     /// <p>The <a href="https://attack.mitre.org/">MITRE ATT&amp;CK</a> tactics, techniques, and procedures (TTPs) associated with vulnerability.</p>
-    pub fn ttps(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ttps.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ttps.is_none()`.
+    pub fn ttps(&self) -> &[::std::string::String] {
+        self.ttps.as_deref().unwrap_or_default()
     }
 }
 impl AtigData {

@@ -27,6 +27,7 @@ pub struct GetInstanceInputBuilder {
 }
 impl GetInstanceInputBuilder {
     /// <p>The name of the instance.</p>
+    /// This field is required.
     pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_name = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetInstanceInputBuilder {
         &self.instance_name
     }
     /// Consumes the builder and constructs a [`GetInstanceInput`](crate::operation::get_instance::GetInstanceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_instance::GetInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_instance::GetInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_instance::GetInstanceInput {
             instance_name: self.instance_name,
         })

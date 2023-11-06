@@ -2,7 +2,7 @@
 pub fn ser_r_studio_server_pro_domain_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RStudioServerProDomainSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.domain_execution_role_arn {
         object.key("DomainExecutionRoleArn").string(var_1.as_str());
     }
@@ -70,7 +70,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::r_studio_server_pro_domain_settings_correct_errors(builder).build(),
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateRevealConfiguration`](crate::operation::update_reveal_configuration::builders::UpdateRevealConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`configuration(RevealConfiguration)`](crate::operation::update_reveal_configuration::builders::UpdateRevealConfigurationFluentBuilder::configuration) / [`set_configuration(Option<RevealConfiguration>)`](crate::operation::update_reveal_configuration::builders::UpdateRevealConfigurationFluentBuilder::set_configuration): <p>The new configuration settings and the status of the configuration for the account.</p>
+    ///   - [`configuration(RevealConfiguration)`](crate::operation::update_reveal_configuration::builders::UpdateRevealConfigurationFluentBuilder::configuration) / [`set_configuration(Option<RevealConfiguration>)`](crate::operation::update_reveal_configuration::builders::UpdateRevealConfigurationFluentBuilder::set_configuration):<br>required: **true**<br><p>The new configuration settings and the status of the configuration for the account.</p><br>
     /// - On success, responds with [`UpdateRevealConfigurationOutput`](crate::operation::update_reveal_configuration::UpdateRevealConfigurationOutput) with field(s):
     ///   - [`configuration(Option<RevealConfiguration>)`](crate::operation::update_reveal_configuration::UpdateRevealConfigurationOutput::configuration): <p>The new configuration settings and the status of the configuration for the account.</p>
     /// - On failure, responds with [`SdkError<UpdateRevealConfigurationError>`](crate::operation::update_reveal_configuration::UpdateRevealConfigurationError)

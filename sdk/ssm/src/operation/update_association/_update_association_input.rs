@@ -95,8 +95,10 @@ impl UpdateAssociationInput {
         self.name.as_deref()
     }
     /// <p>The targets of the association.</p>
-    pub fn targets(&self) -> ::std::option::Option<&[crate::types::Target]> {
-        self.targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
+    pub fn targets(&self) -> &[crate::types::Target] {
+        self.targets.as_deref().unwrap_or_default()
     }
     /// <p>The name of the association that you want to update.</p>
     pub fn association_name(&self) -> ::std::option::Option<&str> {
@@ -137,12 +139,16 @@ impl UpdateAssociationInput {
         self.apply_only_at_cron_interval
     }
     /// <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type documents you want to gate your associations under. The associations only run when that change calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change Calendar</a>.</p>
-    pub fn calendar_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.calendar_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.calendar_names.is_none()`.
+    pub fn calendar_names(&self) -> &[::std::string::String] {
+        self.calendar_names.as_deref().unwrap_or_default()
     }
     /// <p>A location is a combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the association. Use this action to update an association in multiple Regions and multiple accounts.</p>
-    pub fn target_locations(&self) -> ::std::option::Option<&[crate::types::TargetLocation]> {
-        self.target_locations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_locations.is_none()`.
+    pub fn target_locations(&self) -> &[crate::types::TargetLocation] {
+        self.target_locations.as_deref().unwrap_or_default()
     }
     /// <p>Number of days to wait after the scheduled day to run an association. For example, if you specified a cron schedule of <code>cron(0 0 ? * THU#2 *)</code>, you could specify an offset of 3 to run the association each Sunday after the second Thursday of the month. For more information about cron schedules for associations, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/reference-cron-and-rate-expressions.html">Reference: Cron and rate expressions for Systems Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p> <note>
     /// <p>To use offsets, you must specify the <code>ApplyOnlyAtCronInterval</code> parameter. This option tells the system not to run an association immediately after you create it. </p>
@@ -151,10 +157,10 @@ impl UpdateAssociationInput {
         self.schedule_offset
     }
     /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
-    pub fn target_maps(
-        &self,
-    ) -> ::std::option::Option<&[::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>]> {
-        self.target_maps.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_maps.is_none()`.
+    pub fn target_maps(&self) -> &[::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>] {
+        self.target_maps.as_deref().unwrap_or_default()
     }
     /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
     pub fn alarm_configuration(&self) -> ::std::option::Option<&crate::types::AlarmConfiguration> {
@@ -222,6 +228,7 @@ pub struct UpdateAssociationInputBuilder {
 }
 impl UpdateAssociationInputBuilder {
     /// <p>The ID of the association you want to update. </p>
+    /// This field is required.
     pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_id = ::std::option::Option::Some(input.into());
         self
@@ -592,7 +599,7 @@ impl UpdateAssociationInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAssociationInput`](crate::operation::update_association::UpdateAssociationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_association::UpdateAssociationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_association::UpdateAssociationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_association::UpdateAssociationInput {
             association_id: self.association_id,
             parameters: self.parameters,

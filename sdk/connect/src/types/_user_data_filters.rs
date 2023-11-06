@@ -17,24 +17,32 @@ pub struct UserDataFilters {
 }
 impl UserDataFilters {
     /// <p>A list of up to 100 queues or ARNs.</p>
-    pub fn queues(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.queues.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.queues.is_none()`.
+    pub fn queues(&self) -> &[::std::string::String] {
+        self.queues.as_deref().unwrap_or_default()
     }
     /// <p>A filter for the user data based on the contact information that is associated to the user. It contains a list of contact states. </p>
     pub fn contact_filter(&self) -> ::std::option::Option<&crate::types::ContactFilter> {
         self.contact_filter.as_ref()
     }
     /// <p>A list of up to 100 routing profile IDs or ARNs.</p>
-    pub fn routing_profiles(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.routing_profiles.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.routing_profiles.is_none()`.
+    pub fn routing_profiles(&self) -> &[::std::string::String] {
+        self.routing_profiles.as_deref().unwrap_or_default()
     }
     /// <p>A list of up to 100 agent IDs or ARNs.</p>
-    pub fn agents(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.agents.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agents.is_none()`.
+    pub fn agents(&self) -> &[::std::string::String] {
+        self.agents.as_deref().unwrap_or_default()
     }
     /// <p>A UserHierarchyGroup ID or ARN.</p>
-    pub fn user_hierarchy_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.user_hierarchy_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_hierarchy_groups.is_none()`.
+    pub fn user_hierarchy_groups(&self) -> &[::std::string::String] {
+        self.user_hierarchy_groups.as_deref().unwrap_or_default()
     }
 }
 impl UserDataFilters {

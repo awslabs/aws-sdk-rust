@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoScalingGroupProvider {
     /// <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group, or the Auto Scaling group name.</p>
-    pub auto_scaling_group_arn: ::std::option::Option<::std::string::String>,
+    pub auto_scaling_group_arn: ::std::string::String,
     /// <p>The managed scaling settings for the Auto Scaling group capacity provider.</p>
     pub managed_scaling: ::std::option::Option<crate::types::ManagedScaling>,
     /// <p>The managed termination protection setting to use for the Auto Scaling group capacity provider. This determines whether the Auto Scaling group has managed termination protection. The default is off.</p> <important>
@@ -17,8 +17,9 @@ pub struct AutoScalingGroupProvider {
 }
 impl AutoScalingGroupProvider {
     /// <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group, or the Auto Scaling group name.</p>
-    pub fn auto_scaling_group_arn(&self) -> ::std::option::Option<&str> {
-        self.auto_scaling_group_arn.as_deref()
+    pub fn auto_scaling_group_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.auto_scaling_group_arn.deref()
     }
     /// <p>The managed scaling settings for the Auto Scaling group capacity provider.</p>
     pub fn managed_scaling(&self) -> ::std::option::Option<&crate::types::ManagedScaling> {
@@ -50,6 +51,7 @@ pub struct AutoScalingGroupProviderBuilder {
 }
 impl AutoScalingGroupProviderBuilder {
     /// <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group, or the Auto Scaling group name.</p>
+    /// This field is required.
     pub fn auto_scaling_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_arn = ::std::option::Option::Some(input.into());
         self
@@ -104,11 +106,18 @@ impl AutoScalingGroupProviderBuilder {
         &self.managed_termination_protection
     }
     /// Consumes the builder and constructs a [`AutoScalingGroupProvider`](crate::types::AutoScalingGroupProvider).
-    pub fn build(self) -> crate::types::AutoScalingGroupProvider {
-        crate::types::AutoScalingGroupProvider {
-            auto_scaling_group_arn: self.auto_scaling_group_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`auto_scaling_group_arn`](crate::types::builders::AutoScalingGroupProviderBuilder::auto_scaling_group_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::AutoScalingGroupProvider, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AutoScalingGroupProvider {
+            auto_scaling_group_arn: self.auto_scaling_group_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "auto_scaling_group_arn",
+                    "auto_scaling_group_arn was not specified but it is required when building AutoScalingGroupProvider",
+                )
+            })?,
             managed_scaling: self.managed_scaling,
             managed_termination_protection: self.managed_termination_protection,
-        }
+        })
     }
 }

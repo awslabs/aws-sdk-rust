@@ -106,7 +106,8 @@ impl ListEndpointAccessInputBuilder {
     /// Consumes the builder and constructs a [`ListEndpointAccessInput`](crate::operation::list_endpoint_access::ListEndpointAccessInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_endpoint_access::ListEndpointAccessInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_endpoint_access::ListEndpointAccessInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_endpoint_access::ListEndpointAccessInput {
             next_token: self.next_token,
             max_results: self.max_results,

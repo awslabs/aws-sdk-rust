@@ -73,16 +73,22 @@ impl InstanceTypeInfo {
         self.free_tier_eligible
     }
     /// <p>Indicates whether the instance type is offered for spot or On-Demand.</p>
-    pub fn supported_usage_classes(&self) -> ::std::option::Option<&[crate::types::UsageClassType]> {
-        self.supported_usage_classes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_usage_classes.is_none()`.
+    pub fn supported_usage_classes(&self) -> &[crate::types::UsageClassType] {
+        self.supported_usage_classes.as_deref().unwrap_or_default()
     }
     /// <p>The supported root device types.</p>
-    pub fn supported_root_device_types(&self) -> ::std::option::Option<&[crate::types::RootDeviceType]> {
-        self.supported_root_device_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_root_device_types.is_none()`.
+    pub fn supported_root_device_types(&self) -> &[crate::types::RootDeviceType] {
+        self.supported_root_device_types.as_deref().unwrap_or_default()
     }
     /// <p>The supported virtualization types.</p>
-    pub fn supported_virtualization_types(&self) -> ::std::option::Option<&[crate::types::VirtualizationType]> {
-        self.supported_virtualization_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_virtualization_types.is_none()`.
+    pub fn supported_virtualization_types(&self) -> &[crate::types::VirtualizationType] {
+        self.supported_virtualization_types.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether the instance is a bare metal instance type.</p>
     pub fn bare_metal(&self) -> ::std::option::Option<bool> {
@@ -153,8 +159,10 @@ impl InstanceTypeInfo {
         self.auto_recovery_supported
     }
     /// <p>The supported boot modes. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn supported_boot_modes(&self) -> ::std::option::Option<&[crate::types::BootModeType]> {
-        self.supported_boot_modes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_boot_modes.is_none()`.
+    pub fn supported_boot_modes(&self) -> &[crate::types::BootModeType] {
+        self.supported_boot_modes.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether Nitro Enclaves is supported.</p>
     pub fn nitro_enclaves_support(&self) -> ::std::option::Option<&crate::types::NitroEnclavesSupport> {

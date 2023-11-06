@@ -76,6 +76,7 @@ pub struct GetSessionEmbedUrlInputBuilder {
 }
 impl GetSessionEmbedUrlInputBuilder {
     /// <p>The ID for the Amazon Web Services account associated with your Amazon QuickSight subscription.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -176,7 +177,7 @@ impl GetSessionEmbedUrlInputBuilder {
     /// Consumes the builder and constructs a [`GetSessionEmbedUrlInput`](crate::operation::get_session_embed_url::GetSessionEmbedUrlInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_session_embed_url::GetSessionEmbedUrlInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_session_embed_url::GetSessionEmbedUrlInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_session_embed_url::GetSessionEmbedUrlInput {
             aws_account_id: self.aws_account_id,

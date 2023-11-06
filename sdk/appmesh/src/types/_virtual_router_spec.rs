@@ -9,8 +9,10 @@ pub struct VirtualRouterSpec {
 }
 impl VirtualRouterSpec {
     /// <p>The listeners that the virtual router is expected to receive inbound traffic from. You can specify one listener.</p>
-    pub fn listeners(&self) -> ::std::option::Option<&[crate::types::VirtualRouterListener]> {
-        self.listeners.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.listeners.is_none()`.
+    pub fn listeners(&self) -> &[crate::types::VirtualRouterListener] {
+        self.listeners.as_deref().unwrap_or_default()
     }
 }
 impl VirtualRouterSpec {

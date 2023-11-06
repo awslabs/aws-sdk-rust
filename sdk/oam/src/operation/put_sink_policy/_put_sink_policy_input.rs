@@ -38,6 +38,7 @@ pub struct PutSinkPolicyInputBuilder {
 }
 impl PutSinkPolicyInputBuilder {
     /// <p>The ARN of the sink to attach this policy to.</p>
+    /// This field is required.
     pub fn sink_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sink_identifier = ::std::option::Option::Some(input.into());
         self
@@ -54,6 +55,7 @@ impl PutSinkPolicyInputBuilder {
     /// <p>The JSON policy to use. If you are updating an existing policy, the entire existing policy is replaced by what you specify here.</p>
     /// <p>The policy must be in JSON string format with quotation marks escaped and no newlines.</p>
     /// <p>For examples of different types of policies, see the <b>Examples</b> section on this page.</p>
+    /// This field is required.
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
         self
@@ -74,7 +76,7 @@ impl PutSinkPolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutSinkPolicyInput`](crate::operation::put_sink_policy::PutSinkPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_sink_policy::PutSinkPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_sink_policy::PutSinkPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_sink_policy::PutSinkPolicyInput {
             sink_identifier: self.sink_identifier,
             policy: self.policy,

@@ -34,6 +34,7 @@ pub struct PublishFunctionInputBuilder {
 }
 impl PublishFunctionInputBuilder {
     /// <p>The name of the function that you are publishing.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl PublishFunctionInputBuilder {
         &self.name
     }
     /// <p>The current version (<code>ETag</code> value) of the function that you are publishing, which you can get using <code>DescribeFunction</code>.</p>
+    /// This field is required.
     pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.if_match = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl PublishFunctionInputBuilder {
     /// Consumes the builder and constructs a [`PublishFunctionInput`](crate::operation::publish_function::PublishFunctionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::publish_function::PublishFunctionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::publish_function::PublishFunctionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::publish_function::PublishFunctionInput {
             name: self.name,
             if_match: self.if_match,

@@ -38,16 +38,20 @@ impl CreateMeetingWithAttendeesInput {
         self.media_region.as_deref()
     }
     /// <p>The tag key-value pairs.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The resource target configurations for receiving Amazon Chime SDK meeting and attendee event notifications. The Amazon Chime SDK supports resource targets located in the US East (N. Virginia) AWS Region (us-east-1).</p>
     pub fn notifications_configuration(&self) -> ::std::option::Option<&crate::types::MeetingNotificationConfiguration> {
         self.notifications_configuration.as_ref()
     }
     /// <p>The request containing the attendees to create.</p>
-    pub fn attendees(&self) -> ::std::option::Option<&[crate::types::CreateAttendeeRequestItem]> {
-        self.attendees.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attendees.is_none()`.
+    pub fn attendees(&self) -> &[crate::types::CreateAttendeeRequestItem] {
+        self.attendees.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for CreateMeetingWithAttendeesInput {
@@ -84,6 +88,7 @@ pub struct CreateMeetingWithAttendeesInputBuilder {
 }
 impl CreateMeetingWithAttendeesInputBuilder {
     /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
+    /// This field is required.
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
@@ -201,7 +206,7 @@ impl CreateMeetingWithAttendeesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesInput {
             client_request_token: self.client_request_token,

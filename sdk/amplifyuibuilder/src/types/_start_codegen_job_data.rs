@@ -56,6 +56,7 @@ pub struct StartCodegenJobDataBuilder {
 }
 impl StartCodegenJobDataBuilder {
     /// <p>The code generation configuration for the codegen job.</p>
+    /// This field is required.
     pub fn render_config(mut self, input: crate::types::CodegenJobRenderConfig) -> Self {
         self.render_config = ::std::option::Option::Some(input);
         self

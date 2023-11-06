@@ -164,13 +164,13 @@ pub fn de_create_custom_metadata_http_response(
 pub fn ser_create_custom_metadata_headers(
     input: &crate::operation::create_custom_metadata::CreateCustomMetadataInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.authentication_token {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "authentication_token",
                     format!("`{}` cannot be used as a header value: {}", &"*** Sensitive Data Redacted ***", err),
                 )
@@ -183,10 +183,10 @@ pub fn ser_create_custom_metadata_headers(
 
 pub fn ser_create_custom_metadata_input(
     input: &crate::operation::create_custom_metadata::CreateCustomMetadataInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_custom_metadata_input::ser_create_custom_metadata_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

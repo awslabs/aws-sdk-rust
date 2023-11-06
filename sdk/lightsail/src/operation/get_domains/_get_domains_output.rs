@@ -13,8 +13,10 @@ pub struct GetDomainsOutput {
 }
 impl GetDomainsOutput {
     /// <p>An array of key-value pairs containing information about each of the domain entries in the user's account.</p>
-    pub fn domains(&self) -> ::std::option::Option<&[crate::types::Domain]> {
-        self.domains.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domains.is_none()`.
+    pub fn domains(&self) -> &[crate::types::Domain] {
+        self.domains.as_deref().unwrap_or_default()
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>

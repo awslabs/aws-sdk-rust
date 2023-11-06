@@ -41,6 +41,7 @@ pub struct DeleteSessionInputBuilder {
 }
 impl DeleteSessionInputBuilder {
     /// <p>The name of the bot that contains the session data.</p>
+    /// This field is required.
     pub fn bot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DeleteSessionInputBuilder {
         &self.bot_name
     }
     /// <p>The alias in use for the bot that contains the session data.</p>
+    /// This field is required.
     pub fn bot_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_alias = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl DeleteSessionInputBuilder {
         &self.bot_alias
     }
     /// <p>The identifier of the user associated with the session data.</p>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +88,7 @@ impl DeleteSessionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSessionInput`](crate::operation::delete_session::DeleteSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_session::DeleteSessionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_session::DeleteSessionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_session::DeleteSessionInput {
             bot_name: self.bot_name,
             bot_alias: self.bot_alias,

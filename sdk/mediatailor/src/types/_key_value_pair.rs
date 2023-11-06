@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KeyValuePair {
     /// <p>For <code>SCTE35_ENHANCED</code> output, defines a key. MediaTailor takes this key, and its associated value, and generates the key/value pair within the <code>EXT-X-ASSET</code>tag. If you specify a key, you must also specify a corresponding value.</p>
-    pub key: ::std::option::Option<::std::string::String>,
+    pub key: ::std::string::String,
     /// <p>For <code>SCTE35_ENHANCED</code> output, defines a value. MediaTailor; takes this value, and its associated key, and generates the key/value pair within the <code>EXT-X-ASSET</code>tag. If you specify a value, you must also specify a corresponding key.</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
 }
 impl KeyValuePair {
     /// <p>For <code>SCTE35_ENHANCED</code> output, defines a key. MediaTailor takes this key, and its associated value, and generates the key/value pair within the <code>EXT-X-ASSET</code>tag. If you specify a key, you must also specify a corresponding value.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
-        self.key.as_deref()
+    pub fn key(&self) -> &str {
+        use std::ops::Deref;
+        self.key.deref()
     }
     /// <p>For <code>SCTE35_ENHANCED</code> output, defines a value. MediaTailor; takes this value, and its associated key, and generates the key/value pair within the <code>EXT-X-ASSET</code>tag. If you specify a value, you must also specify a corresponding key.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
 }
 impl KeyValuePair {
@@ -35,6 +37,7 @@ pub struct KeyValuePairBuilder {
 }
 impl KeyValuePairBuilder {
     /// <p>For <code>SCTE35_ENHANCED</code> output, defines a key. MediaTailor takes this key, and its associated value, and generates the key/value pair within the <code>EXT-X-ASSET</code>tag. If you specify a key, you must also specify a corresponding value.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl KeyValuePairBuilder {
         &self.key
     }
     /// <p>For <code>SCTE35_ENHANCED</code> output, defines a value. MediaTailor; takes this value, and its associated key, and generates the key/value pair within the <code>EXT-X-ASSET</code>tag. If you specify a value, you must also specify a corresponding key.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl KeyValuePairBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`KeyValuePair`](crate::types::KeyValuePair).
-    pub fn build(self) -> crate::types::KeyValuePair {
-        crate::types::KeyValuePair {
-            key: self.key,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key`](crate::types::builders::KeyValuePairBuilder::key)
+    /// - [`value`](crate::types::builders::KeyValuePairBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::KeyValuePair, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::KeyValuePair {
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building KeyValuePair",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building KeyValuePair",
+                )
+            })?,
+        })
     }
 }

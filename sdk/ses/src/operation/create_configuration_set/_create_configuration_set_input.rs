@@ -28,6 +28,7 @@ pub struct CreateConfigurationSetInputBuilder {
 }
 impl CreateConfigurationSetInputBuilder {
     /// <p>A data structure that contains the name of the configuration set.</p>
+    /// This field is required.
     pub fn configuration_set(mut self, input: crate::types::ConfigurationSet) -> Self {
         self.configuration_set = ::std::option::Option::Some(input);
         self
@@ -44,8 +45,10 @@ impl CreateConfigurationSetInputBuilder {
     /// Consumes the builder and constructs a [`CreateConfigurationSetInput`](crate::operation::create_configuration_set::CreateConfigurationSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_configuration_set::CreateConfigurationSetInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_configuration_set::CreateConfigurationSetInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_configuration_set::CreateConfigurationSetInput {
             configuration_set: self.configuration_set,
         })

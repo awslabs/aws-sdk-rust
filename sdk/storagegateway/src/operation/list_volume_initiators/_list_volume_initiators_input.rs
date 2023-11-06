@@ -28,6 +28,7 @@ pub struct ListVolumeInitiatorsInputBuilder {
 }
 impl ListVolumeInitiatorsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes for the gateway.</p>
+    /// This field is required.
     pub fn volume_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_arn = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl ListVolumeInitiatorsInputBuilder {
     /// Consumes the builder and constructs a [`ListVolumeInitiatorsInput`](crate::operation::list_volume_initiators::ListVolumeInitiatorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_volume_initiators::ListVolumeInitiatorsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_volume_initiators::ListVolumeInitiatorsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_volume_initiators::ListVolumeInitiatorsInput { volume_arn: self.volume_arn })
     }

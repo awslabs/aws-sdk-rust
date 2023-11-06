@@ -27,8 +27,10 @@ impl Hits {
         self.cursor.as_deref()
     }
     /// <p>A document that matches the search request.</p>
-    pub fn hit(&self) -> ::std::option::Option<&[crate::types::Hit]> {
-        self.hit.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hit.is_none()`.
+    pub fn hit(&self) -> &[crate::types::Hit] {
+        self.hit.as_deref().unwrap_or_default()
     }
 }
 impl Hits {

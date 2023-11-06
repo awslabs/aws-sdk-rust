@@ -5,36 +5,40 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DevEnvironmentSessionSummary {
     /// <p>The name of the space.</p>
-    pub space_name: ::std::option::Option<::std::string::String>,
+    pub space_name: ::std::string::String,
     /// <p>The name of the project in the space.</p>
-    pub project_name: ::std::option::Option<::std::string::String>,
+    pub project_name: ::std::string::String,
     /// <p>The system-generated unique ID of the Dev Environment.</p>
-    pub dev_environment_id: ::std::option::Option<::std::string::String>,
+    pub dev_environment_id: ::std::string::String,
     /// <p>The date and time the session started, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a> </p>
-    pub started_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub started_time: ::aws_smithy_types::DateTime,
     /// <p>The system-generated unique ID of the Dev Environment session.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
 }
 impl DevEnvironmentSessionSummary {
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> ::std::option::Option<&str> {
-        self.space_name.as_deref()
+    pub fn space_name(&self) -> &str {
+        use std::ops::Deref;
+        self.space_name.deref()
     }
     /// <p>The name of the project in the space.</p>
-    pub fn project_name(&self) -> ::std::option::Option<&str> {
-        self.project_name.as_deref()
+    pub fn project_name(&self) -> &str {
+        use std::ops::Deref;
+        self.project_name.deref()
     }
     /// <p>The system-generated unique ID of the Dev Environment.</p>
-    pub fn dev_environment_id(&self) -> ::std::option::Option<&str> {
-        self.dev_environment_id.as_deref()
+    pub fn dev_environment_id(&self) -> &str {
+        use std::ops::Deref;
+        self.dev_environment_id.deref()
     }
     /// <p>The date and time the session started, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a> </p>
-    pub fn started_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.started_time.as_ref()
+    pub fn started_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.started_time
     }
     /// <p>The system-generated unique ID of the Dev Environment session.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
 }
 impl DevEnvironmentSessionSummary {
@@ -56,6 +60,7 @@ pub struct DevEnvironmentSessionSummaryBuilder {
 }
 impl DevEnvironmentSessionSummaryBuilder {
     /// <p>The name of the space.</p>
+    /// This field is required.
     pub fn space_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.space_name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +75,7 @@ impl DevEnvironmentSessionSummaryBuilder {
         &self.space_name
     }
     /// <p>The name of the project in the space.</p>
+    /// This field is required.
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +90,7 @@ impl DevEnvironmentSessionSummaryBuilder {
         &self.project_name
     }
     /// <p>The system-generated unique ID of the Dev Environment.</p>
+    /// This field is required.
     pub fn dev_environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dev_environment_id = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +105,7 @@ impl DevEnvironmentSessionSummaryBuilder {
         &self.dev_environment_id
     }
     /// <p>The date and time the session started, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a> </p>
+    /// This field is required.
     pub fn started_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.started_time = ::std::option::Option::Some(input);
         self
@@ -112,6 +120,7 @@ impl DevEnvironmentSessionSummaryBuilder {
         &self.started_time
     }
     /// <p>The system-generated unique ID of the Dev Environment session.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -126,13 +135,44 @@ impl DevEnvironmentSessionSummaryBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`DevEnvironmentSessionSummary`](crate::types::DevEnvironmentSessionSummary).
-    pub fn build(self) -> crate::types::DevEnvironmentSessionSummary {
-        crate::types::DevEnvironmentSessionSummary {
-            space_name: self.space_name,
-            project_name: self.project_name,
-            dev_environment_id: self.dev_environment_id,
-            started_time: self.started_time,
-            id: self.id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`space_name`](crate::types::builders::DevEnvironmentSessionSummaryBuilder::space_name)
+    /// - [`project_name`](crate::types::builders::DevEnvironmentSessionSummaryBuilder::project_name)
+    /// - [`dev_environment_id`](crate::types::builders::DevEnvironmentSessionSummaryBuilder::dev_environment_id)
+    /// - [`started_time`](crate::types::builders::DevEnvironmentSessionSummaryBuilder::started_time)
+    /// - [`id`](crate::types::builders::DevEnvironmentSessionSummaryBuilder::id)
+    pub fn build(self) -> ::std::result::Result<crate::types::DevEnvironmentSessionSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DevEnvironmentSessionSummary {
+            space_name: self.space_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "space_name",
+                    "space_name was not specified but it is required when building DevEnvironmentSessionSummary",
+                )
+            })?,
+            project_name: self.project_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "project_name",
+                    "project_name was not specified but it is required when building DevEnvironmentSessionSummary",
+                )
+            })?,
+            dev_environment_id: self.dev_environment_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "dev_environment_id",
+                    "dev_environment_id was not specified but it is required when building DevEnvironmentSessionSummary",
+                )
+            })?,
+            started_time: self.started_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "started_time",
+                    "started_time was not specified but it is required when building DevEnvironmentSessionSummary",
+                )
+            })?,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building DevEnvironmentSessionSummary",
+                )
+            })?,
+        })
     }
 }

@@ -44,8 +44,10 @@ impl UpdateControlInput {
         self.action_plan_instructions.as_deref()
     }
     /// <p> The data mapping sources for the control. </p>
-    pub fn control_mapping_sources(&self) -> ::std::option::Option<&[crate::types::ControlMappingSource]> {
-        self.control_mapping_sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.control_mapping_sources.is_none()`.
+    pub fn control_mapping_sources(&self) -> &[crate::types::ControlMappingSource] {
+        self.control_mapping_sources.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for UpdateControlInput {
@@ -82,6 +84,7 @@ pub struct UpdateControlInputBuilder {
 }
 impl UpdateControlInputBuilder {
     /// <p> The identifier for the control. </p>
+    /// This field is required.
     pub fn control_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_id = ::std::option::Option::Some(input.into());
         self
@@ -96,6 +99,7 @@ impl UpdateControlInputBuilder {
         &self.control_id
     }
     /// <p> The name of the updated control. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -188,7 +192,7 @@ impl UpdateControlInputBuilder {
     /// Consumes the builder and constructs a [`UpdateControlInput`](crate::operation::update_control::UpdateControlInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_control::UpdateControlInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_control::UpdateControlInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_control::UpdateControlInput {
             control_id: self.control_id,
             name: self.name,

@@ -11,8 +11,10 @@ pub struct ListPickupLocationsOutput {
 }
 impl ListPickupLocationsOutput {
     /// <p>Information about the address of pickup locations.</p>
-    pub fn addresses(&self) -> ::std::option::Option<&[crate::types::Address]> {
-        self.addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.addresses.is_none()`.
+    pub fn addresses(&self) -> &[crate::types::Address] {
+        self.addresses.as_deref().unwrap_or_default()
     }
     /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of <code>ListPickupLocationsResult</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

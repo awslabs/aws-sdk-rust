@@ -14,8 +14,10 @@ impl GetAccessTokenInput {
         self.token.as_deref()
     }
     /// <p>Token properties to validate against those present in the JWT token.</p>
-    pub fn token_properties(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.token_properties.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.token_properties.is_none()`.
+    pub fn token_properties(&self) -> &[::std::string::String] {
+        self.token_properties.as_deref().unwrap_or_default()
     }
 }
 impl GetAccessTokenInput {
@@ -34,6 +36,7 @@ pub struct GetAccessTokenInputBuilder {
 }
 impl GetAccessTokenInputBuilder {
     /// <p>Refresh token, encoded as a JWT token.</p>
+    /// This field is required.
     pub fn token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.token = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +73,7 @@ impl GetAccessTokenInputBuilder {
     /// Consumes the builder and constructs a [`GetAccessTokenInput`](crate::operation::get_access_token::GetAccessTokenInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_access_token::GetAccessTokenInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_access_token::GetAccessTokenInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_access_token::GetAccessTokenInput {
             token: self.token,
             token_properties: self.token_properties,

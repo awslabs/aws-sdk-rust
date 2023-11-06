@@ -20,8 +20,10 @@ impl ResumeWorkflowRunInput {
         self.run_id.as_deref()
     }
     /// <p>A list of the node IDs for the nodes you want to restart. The nodes that are to be restarted must have a run attempt in the original run.</p>
-    pub fn node_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.node_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.node_ids.is_none()`.
+    pub fn node_ids(&self) -> &[::std::string::String] {
+        self.node_ids.as_deref().unwrap_or_default()
     }
 }
 impl ResumeWorkflowRunInput {
@@ -41,6 +43,7 @@ pub struct ResumeWorkflowRunInputBuilder {
 }
 impl ResumeWorkflowRunInputBuilder {
     /// <p>The name of the workflow to resume.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl ResumeWorkflowRunInputBuilder {
         &self.name
     }
     /// <p>The ID of the workflow run to resume.</p>
+    /// This field is required.
     pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.run_id = ::std::option::Option::Some(input.into());
         self
@@ -91,7 +95,7 @@ impl ResumeWorkflowRunInputBuilder {
     /// Consumes the builder and constructs a [`ResumeWorkflowRunInput`](crate::operation::resume_workflow_run::ResumeWorkflowRunInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::resume_workflow_run::ResumeWorkflowRunInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::resume_workflow_run::ResumeWorkflowRunInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::resume_workflow_run::ResumeWorkflowRunInput {
             name: self.name,
             run_id: self.run_id,

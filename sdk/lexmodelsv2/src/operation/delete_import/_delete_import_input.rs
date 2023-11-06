@@ -27,6 +27,7 @@ pub struct DeleteImportInputBuilder {
 }
 impl DeleteImportInputBuilder {
     /// <p>The unique identifier of the import to delete.</p>
+    /// This field is required.
     pub fn import_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.import_id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,9 @@ impl DeleteImportInputBuilder {
         &self.import_id
     }
     /// Consumes the builder and constructs a [`DeleteImportInput`](crate::operation::delete_import::DeleteImportInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_import::DeleteImportInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_import::DeleteImportInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_import::DeleteImportInput { import_id: self.import_id })
     }
 }

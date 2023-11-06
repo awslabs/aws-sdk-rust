@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnomalyTimeRange {
     /// <p> The time when the anomalous behavior started. </p>
-    pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub start_time: ::aws_smithy_types::DateTime,
     /// <p> The time when the anomalous behavior ended. </p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AnomalyTimeRange {
     /// <p> The time when the anomalous behavior started. </p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.start_time.as_ref()
+    pub fn start_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.start_time
     }
     /// <p> The time when the anomalous behavior ended. </p>
     pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -35,6 +35,7 @@ pub struct AnomalyTimeRangeBuilder {
 }
 impl AnomalyTimeRangeBuilder {
     /// <p> The time when the anomalous behavior started. </p>
+    /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
@@ -63,10 +64,17 @@ impl AnomalyTimeRangeBuilder {
         &self.end_time
     }
     /// Consumes the builder and constructs a [`AnomalyTimeRange`](crate::types::AnomalyTimeRange).
-    pub fn build(self) -> crate::types::AnomalyTimeRange {
-        crate::types::AnomalyTimeRange {
-            start_time: self.start_time,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`start_time`](crate::types::builders::AnomalyTimeRangeBuilder::start_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::AnomalyTimeRange, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AnomalyTimeRange {
+            start_time: self.start_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "start_time",
+                    "start_time was not specified but it is required when building AnomalyTimeRange",
+                )
+            })?,
             end_time: self.end_time,
-        }
+        })
     }
 }

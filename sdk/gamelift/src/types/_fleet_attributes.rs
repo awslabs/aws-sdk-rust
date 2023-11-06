@@ -145,8 +145,10 @@ impl FleetAttributes {
         self.server_launch_parameters.as_deref()
     }
     /// <p> <b>This parameter is no longer used.</b> Game session log paths are now defined using the Amazon GameLift server API <code>ProcessReady()</code> <code>logParameters</code>. See more information in the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server API Reference</a>. </p>
-    pub fn log_paths(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.log_paths.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_paths.is_none()`.
+    pub fn log_paths(&self) -> &[::std::string::String] {
+        self.log_paths.as_deref().unwrap_or_default()
     }
     /// <p>The type of game session protection to set on all new instances that are started in the fleet.</p>
     /// <ul>
@@ -166,12 +168,16 @@ impl FleetAttributes {
         self.resource_creation_limit_policy.as_ref()
     }
     /// <p>Name of a metric group that metrics for this fleet are added to. In Amazon CloudWatch, you can view aggregated metrics for fleets that are in a metric group. A fleet can be included in only one metric group at a time.</p>
-    pub fn metric_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.metric_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_groups.is_none()`.
+    pub fn metric_groups(&self) -> &[::std::string::String] {
+        self.metric_groups.as_deref().unwrap_or_default()
     }
     /// <p>A list of fleet activity that has been suspended using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html">StopFleetActions</a> . This includes fleet auto-scaling.</p>
-    pub fn stopped_actions(&self) -> ::std::option::Option<&[crate::types::FleetAction]> {
-        self.stopped_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stopped_actions.is_none()`.
+    pub fn stopped_actions(&self) -> &[crate::types::FleetAction] {
+        self.stopped_actions.as_deref().unwrap_or_default()
     }
     /// <p>A unique identifier for an IAM role that manages access to your Amazon Web Services services. With an instance role ARN set, any application that runs on an instance in this fleet can assume the role, including install scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the Amazon Web Services Management Console. Learn more about using on-box credentials for your game servers at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access external resources from a game server</a>.</p>
     pub fn instance_role_arn(&self) -> ::std::option::Option<&str> {

@@ -16,8 +16,10 @@ impl DescribeReservedInstancesOutput {
         self.next_token.as_deref()
     }
     /// <p>List of Reserved Instances in the current Region.</p>
-    pub fn reserved_instances(&self) -> ::std::option::Option<&[crate::types::ReservedInstance]> {
-        self.reserved_instances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reserved_instances.is_none()`.
+    pub fn reserved_instances(&self) -> &[crate::types::ReservedInstance] {
+        self.reserved_instances.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeReservedInstancesOutput {

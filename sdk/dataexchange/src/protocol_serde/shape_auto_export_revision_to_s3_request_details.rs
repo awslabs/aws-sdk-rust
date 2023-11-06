@@ -36,7 +36,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::auto_export_revision_to_s3_request_details_correct_errors(builder).build(),
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -47,7 +49,7 @@ where
 pub fn ser_auto_export_revision_to_s3_request_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AutoExportRevisionToS3RequestDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.encryption {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Encryption").start_object();

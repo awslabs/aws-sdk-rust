@@ -18,8 +18,10 @@ impl ListLifecyclePoliciesInput {
         self.r#type.as_ref()
     }
     /// <p>Resource filters that policies can apply to. Currently, the only supported resource type is <code>index</code>.</p>
-    pub fn resources(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
+    pub fn resources(&self) -> &[::std::string::String] {
+        self.resources.as_deref().unwrap_or_default()
     }
     /// <p>If your initial <code>ListLifecyclePolicies</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListLifecyclePolicies</code> operations, which returns results in the next page.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -48,6 +50,7 @@ pub struct ListLifecyclePoliciesInputBuilder {
 }
 impl ListLifecyclePoliciesInputBuilder {
     /// <p>The type of lifecycle policy.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::LifecyclePolicyType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -112,7 +115,7 @@ impl ListLifecyclePoliciesInputBuilder {
     /// Consumes the builder and constructs a [`ListLifecyclePoliciesInput`](crate::operation::list_lifecycle_policies::ListLifecyclePoliciesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_lifecycle_policies::ListLifecyclePoliciesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_lifecycle_policies::ListLifecyclePoliciesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_lifecycle_policies::ListLifecyclePoliciesInput {
             r#type: self.r#type,

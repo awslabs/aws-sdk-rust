@@ -11,8 +11,10 @@ pub struct StructValue {
 }
 impl StructValue {
     /// <p>The attributes returned in the record.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&[crate::types::Value]> {
-        self.attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
+    pub fn attributes(&self) -> &[crate::types::Value] {
+        self.attributes.as_deref().unwrap_or_default()
     }
 }
 impl StructValue {

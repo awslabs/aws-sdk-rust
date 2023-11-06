@@ -56,6 +56,7 @@ impl UpsolverS3OutputFormatConfigBuilder {
         &self.file_type
     }
     /// <p>Specifies elements that Amazon AppFlow includes in the file and folder names in the flow destination.</p>
+    /// This field is required.
     pub fn prefix_config(mut self, input: crate::types::PrefixConfig) -> Self {
         self.prefix_config = ::std::option::Option::Some(input);
         self

@@ -27,6 +27,7 @@ pub struct DescribeInstanceAccessControlAttributeConfigurationInputBuilder {
 }
 impl DescribeInstanceAccessControlAttributeConfigurationInputBuilder {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
+    /// This field is required.
     pub fn instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeInstanceAccessControlAttributeConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_instance_access_control_attribute_configuration::DescribeInstanceAccessControlAttributeConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_instance_access_control_attribute_configuration::DescribeInstanceAccessControlAttributeConfigurationInput {

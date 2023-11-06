@@ -9,8 +9,10 @@ pub struct UpdateResult {
 }
 impl UpdateResult {
     /// <p>Values for fields generated during the request.</p>
-    pub fn generated_fields(&self) -> ::std::option::Option<&[crate::types::Field]> {
-        self.generated_fields.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.generated_fields.is_none()`.
+    pub fn generated_fields(&self) -> &[crate::types::Field] {
+        self.generated_fields.as_deref().unwrap_or_default()
     }
 }
 impl UpdateResult {

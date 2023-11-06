@@ -27,6 +27,7 @@ pub struct StartMonitoringScheduleInputBuilder {
 }
 impl StartMonitoringScheduleInputBuilder {
     /// <p>The name of the schedule to start.</p>
+    /// This field is required.
     pub fn monitoring_schedule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitoring_schedule_name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl StartMonitoringScheduleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_monitoring_schedule::StartMonitoringScheduleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_monitoring_schedule::StartMonitoringScheduleInput {
             monitoring_schedule_name: self.monitoring_schedule_name,

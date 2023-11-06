@@ -41,6 +41,7 @@ pub struct UpdateDocumentMetadataInputBuilder {
 }
 impl UpdateDocumentMetadataInputBuilder {
     /// <p>The name of the change template for which a version's metadata is to be updated.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl UpdateDocumentMetadataInputBuilder {
         &self.document_version
     }
     /// <p>The change template review details to update.</p>
+    /// This field is required.
     pub fn document_reviews(mut self, input: crate::types::DocumentReviews) -> Self {
         self.document_reviews = ::std::option::Option::Some(input);
         self
@@ -85,8 +87,10 @@ impl UpdateDocumentMetadataInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDocumentMetadataInput`](crate::operation::update_document_metadata::UpdateDocumentMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_document_metadata::UpdateDocumentMetadataInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::update_document_metadata::UpdateDocumentMetadataInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::update_document_metadata::UpdateDocumentMetadataInput {
             name: self.name,
             document_version: self.document_version,

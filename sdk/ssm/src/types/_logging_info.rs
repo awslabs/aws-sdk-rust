@@ -7,24 +7,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoggingInfo {
     /// <p>The name of an S3 bucket where execution logs are stored.</p>
-    pub s3_bucket_name: ::std::option::Option<::std::string::String>,
+    pub s3_bucket_name: ::std::string::String,
     /// <p>(Optional) The S3 bucket subfolder. </p>
     pub s3_key_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region where the S3 bucket is located.</p>
-    pub s3_region: ::std::option::Option<::std::string::String>,
+    pub s3_region: ::std::string::String,
 }
 impl LoggingInfo {
     /// <p>The name of an S3 bucket where execution logs are stored.</p>
-    pub fn s3_bucket_name(&self) -> ::std::option::Option<&str> {
-        self.s3_bucket_name.as_deref()
+    pub fn s3_bucket_name(&self) -> &str {
+        use std::ops::Deref;
+        self.s3_bucket_name.deref()
     }
     /// <p>(Optional) The S3 bucket subfolder. </p>
     pub fn s3_key_prefix(&self) -> ::std::option::Option<&str> {
         self.s3_key_prefix.as_deref()
     }
     /// <p>The Amazon Web Services Region where the S3 bucket is located.</p>
-    pub fn s3_region(&self) -> ::std::option::Option<&str> {
-        self.s3_region.as_deref()
+    pub fn s3_region(&self) -> &str {
+        use std::ops::Deref;
+        self.s3_region.deref()
     }
 }
 impl LoggingInfo {
@@ -44,6 +46,7 @@ pub struct LoggingInfoBuilder {
 }
 impl LoggingInfoBuilder {
     /// <p>The name of an S3 bucket where execution logs are stored.</p>
+    /// This field is required.
     pub fn s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket_name = ::std::option::Option::Some(input.into());
         self
@@ -72,6 +75,7 @@ impl LoggingInfoBuilder {
         &self.s3_key_prefix
     }
     /// <p>The Amazon Web Services Region where the S3 bucket is located.</p>
+    /// This field is required.
     pub fn s3_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_region = ::std::option::Option::Some(input.into());
         self
@@ -86,11 +90,24 @@ impl LoggingInfoBuilder {
         &self.s3_region
     }
     /// Consumes the builder and constructs a [`LoggingInfo`](crate::types::LoggingInfo).
-    pub fn build(self) -> crate::types::LoggingInfo {
-        crate::types::LoggingInfo {
-            s3_bucket_name: self.s3_bucket_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`s3_bucket_name`](crate::types::builders::LoggingInfoBuilder::s3_bucket_name)
+    /// - [`s3_region`](crate::types::builders::LoggingInfoBuilder::s3_region)
+    pub fn build(self) -> ::std::result::Result<crate::types::LoggingInfo, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::LoggingInfo {
+            s3_bucket_name: self.s3_bucket_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "s3_bucket_name",
+                    "s3_bucket_name was not specified but it is required when building LoggingInfo",
+                )
+            })?,
             s3_key_prefix: self.s3_key_prefix,
-            s3_region: self.s3_region,
-        }
+            s3_region: self.s3_region.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "s3_region",
+                    "s3_region was not specified but it is required when building LoggingInfo",
+                )
+            })?,
+        })
     }
 }

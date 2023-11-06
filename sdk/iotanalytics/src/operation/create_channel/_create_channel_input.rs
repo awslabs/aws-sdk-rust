@@ -26,8 +26,10 @@ impl CreateChannelInput {
         self.retention_period.as_ref()
     }
     /// <p>Metadata which can be used to manage the channel.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateChannelInput {
@@ -48,6 +50,7 @@ pub struct CreateChannelInputBuilder {
 }
 impl CreateChannelInputBuilder {
     /// <p>The name of the channel.</p>
+    /// This field is required.
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_name = ::std::option::Option::Some(input.into());
         self
@@ -112,7 +115,7 @@ impl CreateChannelInputBuilder {
     /// Consumes the builder and constructs a [`CreateChannelInput`](crate::operation::create_channel::CreateChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_channel::CreateChannelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_channel::CreateChannelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_channel::CreateChannelInput {
             channel_name: self.channel_name,
             channel_storage: self.channel_storage,

@@ -27,6 +27,7 @@ pub struct CancelInstanceRefreshInputBuilder {
 }
 impl CancelInstanceRefreshInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
+    /// This field is required.
     pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl CancelInstanceRefreshInputBuilder {
     /// Consumes the builder and constructs a [`CancelInstanceRefreshInput`](crate::operation::cancel_instance_refresh::CancelInstanceRefreshInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_instance_refresh::CancelInstanceRefreshInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::cancel_instance_refresh::CancelInstanceRefreshInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::cancel_instance_refresh::CancelInstanceRefreshInput {
             auto_scaling_group_name: self.auto_scaling_group_name,

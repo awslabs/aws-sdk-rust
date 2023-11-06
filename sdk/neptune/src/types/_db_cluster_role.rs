@@ -13,7 +13,7 @@ pub struct DbClusterRole {
     /// <li> <p> <code>INVALID</code> - the IAM role ARN is associated with the DB cluster, but the DB cluster is unable to assume the IAM role in order to access other Amazon services on your behalf.</p> </li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the feature associated with the Amazon Identity and Access Management (IAM) role. For the list of supported feature names, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>. </p>
+    /// <p>The name of the feature associated with the Amazon Identity and Access Management (IAM) role. For the list of supported feature names, see <code>DescribeDBEngineVersions</code>. </p>
     pub feature_name: ::std::option::Option<::std::string::String>,
 }
 impl DbClusterRole {
@@ -30,7 +30,7 @@ impl DbClusterRole {
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
-    /// <p>The name of the feature associated with the Amazon Identity and Access Management (IAM) role. For the list of supported feature names, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>. </p>
+    /// <p>The name of the feature associated with the Amazon Identity and Access Management (IAM) role. For the list of supported feature names, see <code>DescribeDBEngineVersions</code>. </p>
     pub fn feature_name(&self) -> ::std::option::Option<&str> {
         self.feature_name.as_deref()
     }
@@ -94,17 +94,17 @@ impl DbClusterRoleBuilder {
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
     }
-    /// <p>The name of the feature associated with the Amazon Identity and Access Management (IAM) role. For the list of supported feature names, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>. </p>
+    /// <p>The name of the feature associated with the Amazon Identity and Access Management (IAM) role. For the list of supported feature names, see <code>DescribeDBEngineVersions</code>. </p>
     pub fn feature_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the feature associated with the Amazon Identity and Access Management (IAM) role. For the list of supported feature names, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>. </p>
+    /// <p>The name of the feature associated with the Amazon Identity and Access Management (IAM) role. For the list of supported feature names, see <code>DescribeDBEngineVersions</code>. </p>
     pub fn set_feature_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feature_name = input;
         self
     }
-    /// <p>The name of the feature associated with the Amazon Identity and Access Management (IAM) role. For the list of supported feature names, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>. </p>
+    /// <p>The name of the feature associated with the Amazon Identity and Access Management (IAM) role. For the list of supported feature names, see <code>DescribeDBEngineVersions</code>. </p>
     pub fn get_feature_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.feature_name
     }

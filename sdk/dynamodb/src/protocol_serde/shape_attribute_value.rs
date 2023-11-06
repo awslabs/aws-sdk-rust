@@ -2,7 +2,7 @@
 pub fn ser_attribute_value(
     object_6: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AttributeValue,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::AttributeValue::S(inner) => {
             object_6.key("S").string(inner.as_str());
@@ -72,7 +72,9 @@ pub fn ser_attribute_value(
             object_6.key("BOOL").boolean(*inner);
         }
         crate::types::AttributeValue::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("AttributeValue"))
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
+                "AttributeValue",
+            ))
         }
     }
     Ok(())
@@ -91,23 +93,28 @@ where
             match tokens.next().transpose()? {
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                    let key = key.to_unescaped()?;
+                    if key == "__type" {
+                        ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                        continue;
+                    }
                     if variant.is_some() {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
                             "encountered mixed variants in union",
                         ));
                     }
-                    variant = match key.to_unescaped()?.as_ref() {
+                    variant = match key.as_ref() {
                         "S" => Some(crate::types::AttributeValue::S(
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                 .transpose()?
-                                .unwrap_or_default(),
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'S' cannot be null"))?,
                         )),
                         "N" => Some(crate::types::AttributeValue::N(
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                 .transpose()?
-                                .unwrap_or_default(),
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'N' cannot be null"))?,
                         )),
                         "B" => Some(crate::types::AttributeValue::B(
                             ::aws_smithy_json::deserialize::token::expect_blob_or_null(tokens.next())?
@@ -134,10 +141,12 @@ where
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'L' cannot be null"))?,
                         )),
                         "NULL" => Some(crate::types::AttributeValue::Null(
-                            ::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?.unwrap_or_default(),
+                            ::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'NULL' cannot be null"))?,
                         )),
                         "BOOL" => Some(crate::types::AttributeValue::Bool(
-                            ::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?.unwrap_or_default(),
+                            ::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'BOOL' cannot be null"))?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

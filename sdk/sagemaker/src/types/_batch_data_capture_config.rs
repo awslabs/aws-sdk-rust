@@ -56,6 +56,7 @@ pub struct BatchDataCaptureConfigBuilder {
 }
 impl BatchDataCaptureConfigBuilder {
     /// <p>The Amazon S3 location being used to capture the data.</p>
+    /// This field is required.
     pub fn destination_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_s3_uri = ::std::option::Option::Some(input.into());
         self

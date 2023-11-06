@@ -20,7 +20,7 @@ impl DescribeScalingProcessTypesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_scaling_process_types::DescribeScalingProcessTypesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_scaling_process_types::DescribeScalingProcessTypesInput {})
     }

@@ -2,9 +2,9 @@
 pub fn ser_azure_blob_sas_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AzureBlobSasConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.token {
-        object.key("Token").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Token").string(input.token.as_str());
     }
     Ok(())
 }

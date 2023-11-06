@@ -2,7 +2,7 @@
 pub fn ser_salesforce_standard_object_attachment_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SalesforceStandardObjectAttachmentConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.document_title_field_name {
         object.key("DocumentTitleFieldName").string(var_1.as_str());
     }

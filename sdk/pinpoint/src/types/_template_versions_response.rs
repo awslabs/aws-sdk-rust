@@ -15,8 +15,10 @@ pub struct TemplateVersionsResponse {
 }
 impl TemplateVersionsResponse {
     /// <p>An array of responses, one for each version of the message template.</p>
-    pub fn item(&self) -> ::std::option::Option<&[crate::types::TemplateVersionResponse]> {
-        self.item.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.item.is_none()`.
+    pub fn item(&self) -> &[crate::types::TemplateVersionResponse] {
+        self.item.as_deref().unwrap_or_default()
     }
     /// <p>The message that's returned from the API for the request to retrieve information about all the versions of the message template.</p>
     pub fn message(&self) -> ::std::option::Option<&str> {

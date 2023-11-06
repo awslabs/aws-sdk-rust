@@ -36,7 +36,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::iot_site_wise_action_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -47,21 +49,21 @@ where
 pub fn ser_iot_site_wise_action(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IotSiteWiseAction,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.put_asset_property_value_entries {
-        let mut array_2 = object.key("putAssetPropertyValueEntries").start_array();
-        for item_3 in var_1 {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        let mut array_1 = object.key("putAssetPropertyValueEntries").start_array();
+        for item_2 in &input.put_asset_property_value_entries {
             {
                 #[allow(unused_mut)]
-                let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_put_asset_property_value_entry::ser_put_asset_property_value_entry(&mut object_4, item_3)?;
-                object_4.finish();
+                let mut object_3 = array_1.value().start_object();
+                crate::protocol_serde::shape_put_asset_property_value_entry::ser_put_asset_property_value_entry(&mut object_3, item_2)?;
+                object_3.finish();
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
-    if let Some(var_5) = &input.role_arn {
-        object.key("roleArn").string(var_5.as_str());
+    {
+        object.key("roleArn").string(input.role_arn.as_str());
     }
     Ok(())
 }

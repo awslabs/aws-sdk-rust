@@ -123,12 +123,16 @@ impl Snapshot {
         self.snapshot_arn.as_deref()
     }
     /// <p>All of the Amazon Web Services accounts that have access to restore a snapshot to a namespace.</p>
-    pub fn accounts_with_restore_access(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.accounts_with_restore_access.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accounts_with_restore_access.is_none()`.
+    pub fn accounts_with_restore_access(&self) -> &[::std::string::String] {
+        self.accounts_with_restore_access.as_deref().unwrap_or_default()
     }
     /// <p>All of the Amazon Web Services accounts that have access to restore a snapshot to a provisioned cluster.</p>
-    pub fn accounts_with_provisioned_restore_access(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.accounts_with_provisioned_restore_access.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accounts_with_provisioned_restore_access.is_none()`.
+    pub fn accounts_with_provisioned_restore_access(&self) -> &[::std::string::String] {
+        self.accounts_with_provisioned_restore_access.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) for the namespace's admin user credentials secret.</p>
     pub fn admin_password_secret_arn(&self) -> ::std::option::Option<&str> {

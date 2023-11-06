@@ -73,8 +73,10 @@ impl ReplicaDescription {
         self.provisioned_throughput_override.as_ref()
     }
     /// <p>Replica-specific global secondary index settings.</p>
-    pub fn global_secondary_indexes(&self) -> ::std::option::Option<&[crate::types::ReplicaGlobalSecondaryIndexDescription]> {
-        self.global_secondary_indexes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.global_secondary_indexes.is_none()`.
+    pub fn global_secondary_indexes(&self) -> &[crate::types::ReplicaGlobalSecondaryIndexDescription] {
+        self.global_secondary_indexes.as_deref().unwrap_or_default()
     }
     /// <p>The time at which the replica was first detected as inaccessible. To determine cause of inaccessibility check the <code>ReplicaStatus</code> property.</p>
     pub fn replica_inaccessible_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

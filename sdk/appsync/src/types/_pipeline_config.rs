@@ -9,8 +9,10 @@ pub struct PipelineConfig {
 }
 impl PipelineConfig {
     /// <p>A list of <code>Function</code> objects.</p>
-    pub fn functions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.functions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.functions.is_none()`.
+    pub fn functions(&self) -> &[::std::string::String] {
+        self.functions.as_deref().unwrap_or_default()
     }
 }
 impl PipelineConfig {

@@ -4,18 +4,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTagsForDeliveryStreamOutput {
     /// <p>A list of tags associated with <code>DeliveryStreamName</code>, starting with the first tag after <code>ExclusiveStartTagKey</code> and up to the specified <code>Limit</code>.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::vec::Vec<crate::types::Tag>,
     /// <p>If this is <code>true</code> in the response, more tags are available. To list the remaining tags, set <code>ExclusiveStartTagKey</code> to the key of the last tag returned and call <code>ListTagsForDeliveryStream</code> again.</p>
-    pub has_more_tags: ::std::option::Option<bool>,
+    pub has_more_tags: bool,
     _request_id: Option<String>,
 }
 impl ListTagsForDeliveryStreamOutput {
     /// <p>A list of tags associated with <code>DeliveryStreamName</code>, starting with the first tag after <code>ExclusiveStartTagKey</code> and up to the specified <code>Limit</code>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        use std::ops::Deref;
+        self.tags.deref()
     }
     /// <p>If this is <code>true</code> in the response, more tags are available. To list the remaining tags, set <code>ExclusiveStartTagKey</code> to the key of the last tag returned and call <code>ListTagsForDeliveryStream</code> again.</p>
-    pub fn has_more_tags(&self) -> ::std::option::Option<bool> {
+    pub fn has_more_tags(&self) -> bool {
         self.has_more_tags
     }
 }
@@ -61,6 +62,7 @@ impl ListTagsForDeliveryStreamOutputBuilder {
         &self.tags
     }
     /// <p>If this is <code>true</code> in the response, more tags are available. To list the remaining tags, set <code>ExclusiveStartTagKey</code> to the key of the last tag returned and call <code>ListTagsForDeliveryStream</code> again.</p>
+    /// This field is required.
     pub fn has_more_tags(mut self, input: bool) -> Self {
         self.has_more_tags = ::std::option::Option::Some(input);
         self
@@ -84,11 +86,29 @@ impl ListTagsForDeliveryStreamOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListTagsForDeliveryStreamOutput`](crate::operation::list_tags_for_delivery_stream::ListTagsForDeliveryStreamOutput).
-    pub fn build(self) -> crate::operation::list_tags_for_delivery_stream::ListTagsForDeliveryStreamOutput {
-        crate::operation::list_tags_for_delivery_stream::ListTagsForDeliveryStreamOutput {
-            tags: self.tags,
-            has_more_tags: self.has_more_tags,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`tags`](crate::operation::list_tags_for_delivery_stream::builders::ListTagsForDeliveryStreamOutputBuilder::tags)
+    /// - [`has_more_tags`](crate::operation::list_tags_for_delivery_stream::builders::ListTagsForDeliveryStreamOutputBuilder::has_more_tags)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_tags_for_delivery_stream::ListTagsForDeliveryStreamOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_tags_for_delivery_stream::ListTagsForDeliveryStreamOutput {
+            tags: self.tags.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "tags",
+                    "tags was not specified but it is required when building ListTagsForDeliveryStreamOutput",
+                )
+            })?,
+            has_more_tags: self.has_more_tags.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "has_more_tags",
+                    "has_more_tags was not specified but it is required when building ListTagsForDeliveryStreamOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

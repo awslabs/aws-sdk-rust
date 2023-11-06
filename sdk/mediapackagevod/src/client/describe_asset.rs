@@ -3,17 +3,17 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeAsset`](crate::operation::describe_asset::builders::DescribeAssetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::describe_asset::builders::DescribeAssetFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::describe_asset::builders::DescribeAssetFluentBuilder::set_id): The ID of an MediaPackage VOD Asset resource.
+    ///   - [`id(impl Into<String>)`](crate::operation::describe_asset::builders::DescribeAssetFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::describe_asset::builders::DescribeAssetFluentBuilder::set_id):<br>required: **true**<br>The ID of an MediaPackage VOD Asset resource.<br>
     /// - On success, responds with [`DescribeAssetOutput`](crate::operation::describe_asset::DescribeAssetOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::describe_asset::DescribeAssetOutput::arn): The ARN of the Asset.
     ///   - [`created_at(Option<String>)`](crate::operation::describe_asset::DescribeAssetOutput::created_at): The time the Asset was initially submitted for Ingest.
-    ///   - [`egress_endpoints(Option<Vec<EgressEndpoint>>)`](crate::operation::describe_asset::DescribeAssetOutput::egress_endpoints): The list of egress endpoints available for the Asset.
+    ///   - [`egress_endpoints(Option<Vec::<EgressEndpoint>>)`](crate::operation::describe_asset::DescribeAssetOutput::egress_endpoints): The list of egress endpoints available for the Asset.
     ///   - [`id(Option<String>)`](crate::operation::describe_asset::DescribeAssetOutput::id): The unique identifier for the Asset.
     ///   - [`packaging_group_id(Option<String>)`](crate::operation::describe_asset::DescribeAssetOutput::packaging_group_id): The ID of the PackagingGroup for the Asset.
     ///   - [`resource_id(Option<String>)`](crate::operation::describe_asset::DescribeAssetOutput::resource_id): The resource ID to include in SPEKE key requests.
     ///   - [`source_arn(Option<String>)`](crate::operation::describe_asset::DescribeAssetOutput::source_arn): ARN of the source object in S3.
     ///   - [`source_role_arn(Option<String>)`](crate::operation::describe_asset::DescribeAssetOutput::source_role_arn): The IAM role_arn used to access the source S3 bucket.
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_asset::DescribeAssetOutput::tags): A collection of tags associated with a resource
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_asset::DescribeAssetOutput::tags): A collection of tags associated with a resource
     /// - On failure, responds with [`SdkError<DescribeAssetError>`](crate::operation::describe_asset::DescribeAssetError)
     pub fn describe_asset(&self) -> crate::operation::describe_asset::builders::DescribeAssetFluentBuilder {
         crate::operation::describe_asset::builders::DescribeAssetFluentBuilder::new(self.handle.clone())

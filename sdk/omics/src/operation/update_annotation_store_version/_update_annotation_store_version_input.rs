@@ -41,6 +41,7 @@ pub struct UpdateAnnotationStoreVersionInputBuilder {
 }
 impl UpdateAnnotationStoreVersionInputBuilder {
     /// <p> The name of an annotation store. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateAnnotationStoreVersionInputBuilder {
         &self.name
     }
     /// <p> The name of an annotation store version. </p>
+    /// This field is required.
     pub fn version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_name = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +89,7 @@ impl UpdateAnnotationStoreVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_annotation_store_version::UpdateAnnotationStoreVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_annotation_store_version::UpdateAnnotationStoreVersionInput {
             name: self.name,

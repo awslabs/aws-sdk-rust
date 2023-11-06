@@ -2,7 +2,7 @@
 pub fn ser_active_speaker_only_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ActiveSpeakerOnlyConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.active_speaker_position {
         object.key("ActiveSpeakerPosition").string(var_1.as_str());
     }

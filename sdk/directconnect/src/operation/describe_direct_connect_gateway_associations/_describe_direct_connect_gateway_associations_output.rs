@@ -11,8 +11,10 @@ pub struct DescribeDirectConnectGatewayAssociationsOutput {
 }
 impl DescribeDirectConnectGatewayAssociationsOutput {
     /// <p>Information about the associations.</p>
-    pub fn direct_connect_gateway_associations(&self) -> ::std::option::Option<&[crate::types::DirectConnectGatewayAssociation]> {
-        self.direct_connect_gateway_associations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.direct_connect_gateway_associations.is_none()`.
+    pub fn direct_connect_gateway_associations(&self) -> &[crate::types::DirectConnectGatewayAssociation] {
+        self.direct_connect_gateway_associations.as_deref().unwrap_or_default()
     }
     /// <p>The token to retrieve the next page.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

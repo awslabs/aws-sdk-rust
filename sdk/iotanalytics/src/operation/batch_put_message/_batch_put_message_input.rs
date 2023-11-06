@@ -34,8 +34,10 @@ impl BatchPutMessageInput {
     /// <li> <p>Are case insensitive. (Fields named foo and FOO in the same payload are considered duplicates.)</p> </li>
     /// </ul>
     /// <p>For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but {"temp-01": 29}, {"01_temp": 29} or {"__temp_01": 29} are invalid in message payloads. </p>
-    pub fn messages(&self) -> ::std::option::Option<&[crate::types::Message]> {
-        self.messages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.messages.is_none()`.
+    pub fn messages(&self) -> &[crate::types::Message] {
+        self.messages.as_deref().unwrap_or_default()
     }
 }
 impl BatchPutMessageInput {
@@ -54,6 +56,7 @@ pub struct BatchPutMessageInputBuilder {
 }
 impl BatchPutMessageInputBuilder {
     /// <p>The name of the channel where the messages are sent.</p>
+    /// This field is required.
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_name = ::std::option::Option::Some(input.into());
         self
@@ -120,7 +123,7 @@ impl BatchPutMessageInputBuilder {
     /// Consumes the builder and constructs a [`BatchPutMessageInput`](crate::operation::batch_put_message::BatchPutMessageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_put_message::BatchPutMessageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_put_message::BatchPutMessageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_put_message::BatchPutMessageInput {
             channel_name: self.channel_name,
             messages: self.messages,

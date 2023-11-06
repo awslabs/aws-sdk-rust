@@ -57,8 +57,10 @@ impl DescribeChangeSetOutput {
         self.failure_description.as_deref()
     }
     /// <p>An array of <code>ChangeSummary</code> objects.</p>
-    pub fn change_set(&self) -> ::std::option::Option<&[crate::types::ChangeSummary]> {
-        self.change_set.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.change_set.is_none()`.
+    pub fn change_set(&self) -> &[crate::types::ChangeSummary] {
+        self.change_set.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeChangeSetOutput {

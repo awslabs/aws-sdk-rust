@@ -26,8 +26,10 @@ impl ListTemplatesInput {
         self.next_token.as_deref()
     }
     /// <p>A list of status values to filter on.</p>
-    pub fn status(&self) -> ::std::option::Option<&[crate::types::TemplateStatus]> {
-        self.status.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.status.is_none()`.
+    pub fn status(&self) -> &[crate::types::TemplateStatus] {
+        self.status.as_deref().unwrap_or_default()
     }
 }
 impl ListTemplatesInput {
@@ -48,6 +50,7 @@ pub struct ListTemplatesInputBuilder {
 }
 impl ListTemplatesInputBuilder {
     /// <p>The unique identifier of the Cases domain. </p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -112,7 +115,7 @@ impl ListTemplatesInputBuilder {
     /// Consumes the builder and constructs a [`ListTemplatesInput`](crate::operation::list_templates::ListTemplatesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_templates::ListTemplatesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_templates::ListTemplatesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_templates::ListTemplatesInput {
             domain_id: self.domain_id,
             max_results: self.max_results,

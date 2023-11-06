@@ -5,16 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomOriginConfig {
     /// <p>The HTTP port that CloudFront uses to connect to the origin. Specify the HTTP port that the origin listens on.</p>
-    pub http_port: ::std::option::Option<i32>,
+    pub http_port: i32,
     /// <p>The HTTPS port that CloudFront uses to connect to the origin. Specify the HTTPS port that the origin listens on.</p>
-    pub https_port: ::std::option::Option<i32>,
+    pub https_port: i32,
     /// <p>Specifies the protocol (HTTP or HTTPS) that CloudFront uses to connect to the origin. Valid values are:</p>
     /// <ul>
     /// <li> <p> <code>http-only</code> – CloudFront always uses HTTP to connect to the origin.</p> </li>
     /// <li> <p> <code>match-viewer</code> – CloudFront connects to the origin using the same protocol that the viewer used to connect to CloudFront.</p> </li>
     /// <li> <p> <code>https-only</code> – CloudFront always uses HTTPS to connect to the origin.</p> </li>
     /// </ul>
-    pub origin_protocol_policy: ::std::option::Option<crate::types::OriginProtocolPolicy>,
+    pub origin_protocol_policy: crate::types::OriginProtocolPolicy,
     /// <p>Specifies the minimum SSL/TLS protocol that CloudFront uses when connecting to your origin over HTTPS. Valid values include <code>SSLv3</code>, <code>TLSv1</code>, <code>TLSv1.1</code>, and <code>TLSv1.2</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginSSLProtocols">Minimum Origin SSL Protocol</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub origin_ssl_protocols: ::std::option::Option<crate::types::OriginSslProtocols>,
@@ -27,11 +27,11 @@ pub struct CustomOriginConfig {
 }
 impl CustomOriginConfig {
     /// <p>The HTTP port that CloudFront uses to connect to the origin. Specify the HTTP port that the origin listens on.</p>
-    pub fn http_port(&self) -> ::std::option::Option<i32> {
+    pub fn http_port(&self) -> i32 {
         self.http_port
     }
     /// <p>The HTTPS port that CloudFront uses to connect to the origin. Specify the HTTPS port that the origin listens on.</p>
-    pub fn https_port(&self) -> ::std::option::Option<i32> {
+    pub fn https_port(&self) -> i32 {
         self.https_port
     }
     /// <p>Specifies the protocol (HTTP or HTTPS) that CloudFront uses to connect to the origin. Valid values are:</p>
@@ -40,8 +40,8 @@ impl CustomOriginConfig {
     /// <li> <p> <code>match-viewer</code> – CloudFront connects to the origin using the same protocol that the viewer used to connect to CloudFront.</p> </li>
     /// <li> <p> <code>https-only</code> – CloudFront always uses HTTPS to connect to the origin.</p> </li>
     /// </ul>
-    pub fn origin_protocol_policy(&self) -> ::std::option::Option<&crate::types::OriginProtocolPolicy> {
-        self.origin_protocol_policy.as_ref()
+    pub fn origin_protocol_policy(&self) -> &crate::types::OriginProtocolPolicy {
+        &self.origin_protocol_policy
     }
     /// <p>Specifies the minimum SSL/TLS protocol that CloudFront uses when connecting to your origin over HTTPS. Valid values include <code>SSLv3</code>, <code>TLSv1</code>, <code>TLSv1.1</code>, and <code>TLSv1.2</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginSSLProtocols">Minimum Origin SSL Protocol</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -79,6 +79,7 @@ pub struct CustomOriginConfigBuilder {
 }
 impl CustomOriginConfigBuilder {
     /// <p>The HTTP port that CloudFront uses to connect to the origin. Specify the HTTP port that the origin listens on.</p>
+    /// This field is required.
     pub fn http_port(mut self, input: i32) -> Self {
         self.http_port = ::std::option::Option::Some(input);
         self
@@ -93,6 +94,7 @@ impl CustomOriginConfigBuilder {
         &self.http_port
     }
     /// <p>The HTTPS port that CloudFront uses to connect to the origin. Specify the HTTPS port that the origin listens on.</p>
+    /// This field is required.
     pub fn https_port(mut self, input: i32) -> Self {
         self.https_port = ::std::option::Option::Some(input);
         self
@@ -112,6 +114,7 @@ impl CustomOriginConfigBuilder {
     /// <li> <p> <code>match-viewer</code> – CloudFront connects to the origin using the same protocol that the viewer used to connect to CloudFront.</p> </li>
     /// <li> <p> <code>https-only</code> – CloudFront always uses HTTPS to connect to the origin.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn origin_protocol_policy(mut self, input: crate::types::OriginProtocolPolicy) -> Self {
         self.origin_protocol_policy = ::std::option::Option::Some(input);
         self
@@ -187,14 +190,33 @@ impl CustomOriginConfigBuilder {
         &self.origin_keepalive_timeout
     }
     /// Consumes the builder and constructs a [`CustomOriginConfig`](crate::types::CustomOriginConfig).
-    pub fn build(self) -> crate::types::CustomOriginConfig {
-        crate::types::CustomOriginConfig {
-            http_port: self.http_port,
-            https_port: self.https_port,
-            origin_protocol_policy: self.origin_protocol_policy,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`http_port`](crate::types::builders::CustomOriginConfigBuilder::http_port)
+    /// - [`https_port`](crate::types::builders::CustomOriginConfigBuilder::https_port)
+    /// - [`origin_protocol_policy`](crate::types::builders::CustomOriginConfigBuilder::origin_protocol_policy)
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomOriginConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CustomOriginConfig {
+            http_port: self.http_port.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "http_port",
+                    "http_port was not specified but it is required when building CustomOriginConfig",
+                )
+            })?,
+            https_port: self.https_port.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "https_port",
+                    "https_port was not specified but it is required when building CustomOriginConfig",
+                )
+            })?,
+            origin_protocol_policy: self.origin_protocol_policy.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "origin_protocol_policy",
+                    "origin_protocol_policy was not specified but it is required when building CustomOriginConfig",
+                )
+            })?,
             origin_ssl_protocols: self.origin_ssl_protocols,
             origin_read_timeout: self.origin_read_timeout,
             origin_keepalive_timeout: self.origin_keepalive_timeout,
-        }
+        })
     }
 }

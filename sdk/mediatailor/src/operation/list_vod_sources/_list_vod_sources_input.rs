@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListVodSourcesInput {
     /// <p> The maximum number of VOD sources that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> VOD sources, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The name of the source location associated with this VOD Source list.</p>
@@ -12,7 +12,7 @@ pub struct ListVodSourcesInput {
 }
 impl ListVodSourcesInput {
     /// <p> The maximum number of VOD sources that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> VOD sources, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
@@ -69,6 +69,7 @@ impl ListVodSourcesInputBuilder {
         &self.next_token
     }
     /// <p>The name of the source location associated with this VOD Source list.</p>
+    /// This field is required.
     pub fn source_location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_location_name = ::std::option::Option::Some(input.into());
         self
@@ -85,9 +86,9 @@ impl ListVodSourcesInputBuilder {
     /// Consumes the builder and constructs a [`ListVodSourcesInput`](crate::operation::list_vod_sources::ListVodSourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_vod_sources::ListVodSourcesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_vod_sources::ListVodSourcesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_vod_sources::ListVodSourcesInput {
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
             source_location_name: self.source_location_name,
         })

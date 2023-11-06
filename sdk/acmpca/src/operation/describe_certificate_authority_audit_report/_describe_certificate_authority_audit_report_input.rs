@@ -37,6 +37,7 @@ pub struct DescribeCertificateAuthorityAuditReportInputBuilder {
 impl DescribeCertificateAuthorityAuditReportInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the private CA. This must be of the form:</p>
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
+    /// This field is required.
     pub fn certificate_authority_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_authority_arn = ::std::option::Option::Some(input.into());
         self
@@ -53,6 +54,7 @@ impl DescribeCertificateAuthorityAuditReportInputBuilder {
         &self.certificate_authority_arn
     }
     /// <p>The report ID returned by calling the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthorityAuditReport.html">CreateCertificateAuthorityAuditReport</a> action.</p>
+    /// This field is required.
     pub fn audit_report_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.audit_report_id = ::std::option::Option::Some(input.into());
         self
@@ -71,7 +73,7 @@ impl DescribeCertificateAuthorityAuditReportInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_certificate_authority_audit_report::DescribeCertificateAuthorityAuditReportInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_certificate_authority_audit_report::DescribeCertificateAuthorityAuditReportInput {

@@ -43,8 +43,10 @@ impl Subscription {
         self.auto_renew.as_ref()
     }
     /// <p>Specifies how many protections of a given type you can create.</p>
-    pub fn limits(&self) -> ::std::option::Option<&[crate::types::Limit]> {
-        self.limits.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.limits.is_none()`.
+    pub fn limits(&self) -> &[crate::types::Limit] {
+        self.limits.as_deref().unwrap_or_default()
     }
     /// <p>If <code>ENABLED</code>, the Shield Response Team (SRT) will use email and phone to notify contacts about escalations to the SRT and to initiate proactive customer support.</p>
     /// <p>If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes to <code>ENABLED</code> when your request is fully processed.</p>
@@ -182,6 +184,7 @@ impl SubscriptionBuilder {
         &self.proactive_engagement_status
     }
     /// <p>Limits settings for your subscription. </p>
+    /// This field is required.
     pub fn subscription_limits(mut self, input: crate::types::SubscriptionLimits) -> Self {
         self.subscription_limits = ::std::option::Option::Some(input);
         self

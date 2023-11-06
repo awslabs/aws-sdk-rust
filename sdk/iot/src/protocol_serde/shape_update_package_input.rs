@@ -2,7 +2,7 @@
 pub fn ser_update_package_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_package::UpdatePackageInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.default_version_name {
         object.key("defaultVersionName").string(var_1.as_str());
     }

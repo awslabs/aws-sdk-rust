@@ -2,27 +2,27 @@
 pub fn ser_snowflake_source(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SnowflakeSource,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("Name").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.data {
+    if let Some(var_1) = &input.data {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("Data").start_object();
-        crate::protocol_serde::shape_snowflake_node_data::ser_snowflake_node_data(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("Data").start_object();
+        crate::protocol_serde::shape_snowflake_node_data::ser_snowflake_node_data(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.output_schemas {
-        let mut array_5 = object.key("OutputSchemas").start_array();
-        for item_6 in var_4 {
+    if let Some(var_3) = &input.output_schemas {
+        let mut array_4 = object.key("OutputSchemas").start_array();
+        for item_5 in var_3 {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_glue_schema::ser_glue_schema(&mut object_7, item_6)?;
-                object_7.finish();
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_glue_schema::ser_glue_schema(&mut object_6, item_5)?;
+                object_6.finish();
             }
         }
-        array_5.finish();
+        array_4.finish();
     }
     Ok(())
 }
@@ -65,7 +65,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::snowflake_source_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

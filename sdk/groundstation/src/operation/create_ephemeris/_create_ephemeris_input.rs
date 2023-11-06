@@ -82,6 +82,7 @@ pub struct CreateEphemerisInputBuilder {
 }
 impl CreateEphemerisInputBuilder {
     /// <p>AWS Ground Station satellite ID for this ephemeris.</p>
+    /// This field is required.
     pub fn satellite_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.satellite_id = ::std::option::Option::Some(input.into());
         self
@@ -147,6 +148,7 @@ impl CreateEphemerisInputBuilder {
         &self.expiration_time
     }
     /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -211,7 +213,7 @@ impl CreateEphemerisInputBuilder {
     /// Consumes the builder and constructs a [`CreateEphemerisInput`](crate::operation::create_ephemeris::CreateEphemerisInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_ephemeris::CreateEphemerisInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_ephemeris::CreateEphemerisInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_ephemeris::CreateEphemerisInput {
             satellite_id: self.satellite_id,
             enabled: self.enabled,

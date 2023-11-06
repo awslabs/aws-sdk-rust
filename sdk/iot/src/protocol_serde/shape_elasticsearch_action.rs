@@ -59,7 +59,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::elasticsearch_action_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -70,21 +72,21 @@ where
 pub fn ser_elasticsearch_action(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ElasticsearchAction,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.role_arn {
-        object.key("roleArn").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("roleArn").string(input.role_arn.as_str());
     }
-    if let Some(var_2) = &input.endpoint {
-        object.key("endpoint").string(var_2.as_str());
+    {
+        object.key("endpoint").string(input.endpoint.as_str());
     }
-    if let Some(var_3) = &input.index {
-        object.key("index").string(var_3.as_str());
+    {
+        object.key("index").string(input.index.as_str());
     }
-    if let Some(var_4) = &input.r#type {
-        object.key("type").string(var_4.as_str());
+    {
+        object.key("type").string(input.r#type.as_str());
     }
-    if let Some(var_5) = &input.id {
-        object.key("id").string(var_5.as_str());
+    {
+        object.key("id").string(input.id.as_str());
     }
     Ok(())
 }

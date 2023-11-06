@@ -3,13 +3,13 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RetryDataReplication`](crate::operation::retry_data_replication::builders::RetryDataReplicationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`source_server_id(impl Into<String>)`](crate::operation::retry_data_replication::builders::RetryDataReplicationFluentBuilder::source_server_id) / [`set_source_server_id(Option<String>)`](crate::operation::retry_data_replication::builders::RetryDataReplicationFluentBuilder::set_source_server_id): <p>Retry data replication for Source Server ID.</p>
-    ///   - [`account_id(impl Into<String>)`](crate::operation::retry_data_replication::builders::RetryDataReplicationFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::retry_data_replication::builders::RetryDataReplicationFluentBuilder::set_account_id): <p>Retry data replication for Account ID.</p>
+    ///   - [`source_server_id(impl Into<String>)`](crate::operation::retry_data_replication::builders::RetryDataReplicationFluentBuilder::source_server_id) / [`set_source_server_id(Option<String>)`](crate::operation::retry_data_replication::builders::RetryDataReplicationFluentBuilder::set_source_server_id):<br>required: **true**<br><p>Retry data replication for Source Server ID.</p><br>
+    ///   - [`account_id(impl Into<String>)`](crate::operation::retry_data_replication::builders::RetryDataReplicationFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::retry_data_replication::builders::RetryDataReplicationFluentBuilder::set_account_id):<br>required: **false**<br><p>Retry data replication for Account ID.</p><br>
     /// - On success, responds with [`RetryDataReplicationOutput`](crate::operation::retry_data_replication::RetryDataReplicationOutput) with field(s):
     ///   - [`source_server_id(Option<String>)`](crate::operation::retry_data_replication::RetryDataReplicationOutput::source_server_id): <p>Source server ID.</p>
     ///   - [`arn(Option<String>)`](crate::operation::retry_data_replication::RetryDataReplicationOutput::arn): <p>Source server ARN.</p>
     ///   - [`is_archived(Option<bool>)`](crate::operation::retry_data_replication::RetryDataReplicationOutput::is_archived): <p>Source server archived status.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::retry_data_replication::RetryDataReplicationOutput::tags): <p>Source server Tags.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::retry_data_replication::RetryDataReplicationOutput::tags): <p>Source server Tags.</p>
     ///   - [`launched_instance(Option<LaunchedInstance>)`](crate::operation::retry_data_replication::RetryDataReplicationOutput::launched_instance): <p>Source server launched instance.</p>
     ///   - [`data_replication_info(Option<DataReplicationInfo>)`](crate::operation::retry_data_replication::RetryDataReplicationOutput::data_replication_info): <p>Source server data replication info.</p>
     ///   - [`life_cycle(Option<LifeCycle>)`](crate::operation::retry_data_replication::RetryDataReplicationOutput::life_cycle): <p>Source server lifecycle state.</p>

@@ -49,8 +49,10 @@ impl Handshake {
         self.arn.as_deref()
     }
     /// <p>Information about the two accounts that are participating in the handshake.</p>
-    pub fn parties(&self) -> ::std::option::Option<&[crate::types::HandshakeParty]> {
-        self.parties.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parties.is_none()`.
+    pub fn parties(&self) -> &[crate::types::HandshakeParty] {
+        self.parties.as_deref().unwrap_or_default()
     }
     /// <p>The current state of the handshake. Use the state to trace the flow of the handshake through the process from its creation to its acceptance. The meaning of each of the valid values is as follows:</p>
     /// <ul>
@@ -82,8 +84,10 @@ impl Handshake {
         self.action.as_ref()
     }
     /// <p>Additional information that is needed to process the handshake.</p>
-    pub fn resources(&self) -> ::std::option::Option<&[crate::types::HandshakeResource]> {
-        self.resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
+    pub fn resources(&self) -> &[crate::types::HandshakeResource] {
+        self.resources.as_deref().unwrap_or_default()
     }
 }
 impl Handshake {

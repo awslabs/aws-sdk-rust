@@ -25,11 +25,11 @@ pub struct ExecuteStatementInput {
     /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
     pub transaction_id: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether to include metadata in the results.</p>
-    pub include_result_metadata: bool,
+    pub include_result_metadata: ::std::option::Option<bool>,
     /// <p>A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.</p> <note>
     /// <p>For DDL statements, we recommend continuing to run the statement after the call times out. When a DDL statement terminates before it is finished running, it can result in errors and possibly corrupted data structures.</p>
     /// </note>
-    pub continue_after_timeout: bool,
+    pub continue_after_timeout: ::std::option::Option<bool>,
     /// <p>Options that control how the result set is returned.</p>
     pub result_set_options: ::std::option::Option<crate::types::ResultSetOptions>,
     /// <p>A value that indicates whether to format the result set as a single JSON string. This parameter only applies to <code>SELECT</code> statements and is ignored for other types of statements. Allowed values are <code>NONE</code> and <code>JSON</code>. The default value is <code>NONE</code>. The result is returned in the <code>formattedRecords</code> field.</p>
@@ -63,8 +63,10 @@ impl ExecuteStatementInput {
     /// <p>The parameters for the SQL statement.</p> <note>
     /// <p>Array parameters are not supported.</p>
     /// </note>
-    pub fn parameters(&self) -> ::std::option::Option<&[crate::types::SqlParameter]> {
-        self.parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
+    pub fn parameters(&self) -> &[crate::types::SqlParameter] {
+        self.parameters.as_deref().unwrap_or_default()
     }
     /// <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p>
     /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
@@ -72,13 +74,13 @@ impl ExecuteStatementInput {
         self.transaction_id.as_deref()
     }
     /// <p>A value that indicates whether to include metadata in the results.</p>
-    pub fn include_result_metadata(&self) -> bool {
+    pub fn include_result_metadata(&self) -> ::std::option::Option<bool> {
         self.include_result_metadata
     }
     /// <p>A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.</p> <note>
     /// <p>For DDL statements, we recommend continuing to run the statement after the call times out. When a DDL statement terminates before it is finished running, it can result in errors and possibly corrupted data structures.</p>
     /// </note>
-    pub fn continue_after_timeout(&self) -> bool {
+    pub fn continue_after_timeout(&self) -> ::std::option::Option<bool> {
         self.continue_after_timeout
     }
     /// <p>Options that control how the result set is returned.</p>
@@ -116,6 +118,7 @@ pub struct ExecuteStatementInputBuilder {
 }
 impl ExecuteStatementInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -131,6 +134,7 @@ impl ExecuteStatementInputBuilder {
     }
     /// <p>The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
     /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
+    /// This field is required.
     pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_arn = ::std::option::Option::Some(input.into());
         self
@@ -147,6 +151,7 @@ impl ExecuteStatementInputBuilder {
         &self.secret_arn
     }
     /// <p>The SQL statement to run.</p>
+    /// This field is required.
     pub fn sql(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sql = ::std::option::Option::Some(input.into());
         self
@@ -305,7 +310,7 @@ impl ExecuteStatementInputBuilder {
     /// Consumes the builder and constructs a [`ExecuteStatementInput`](crate::operation::execute_statement::ExecuteStatementInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::execute_statement::ExecuteStatementInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::execute_statement::ExecuteStatementInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::execute_statement::ExecuteStatementInput {
             resource_arn: self.resource_arn,
             secret_arn: self.secret_arn,
@@ -314,8 +319,8 @@ impl ExecuteStatementInputBuilder {
             schema: self.schema,
             parameters: self.parameters,
             transaction_id: self.transaction_id,
-            include_result_metadata: self.include_result_metadata.unwrap_or_default(),
-            continue_after_timeout: self.continue_after_timeout.unwrap_or_default(),
+            include_result_metadata: self.include_result_metadata,
+            continue_after_timeout: self.continue_after_timeout,
             result_set_options: self.result_set_options,
             format_records_as: self.format_records_as,
         })

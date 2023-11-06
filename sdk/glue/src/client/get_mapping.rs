@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetMapping`](crate::operation::get_mapping::builders::GetMappingFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`source(CatalogEntry)`](crate::operation::get_mapping::builders::GetMappingFluentBuilder::source) / [`set_source(Option<CatalogEntry>)`](crate::operation::get_mapping::builders::GetMappingFluentBuilder::set_source): <p>Specifies the source table.</p>
-    ///   - [`sinks(CatalogEntry)`](crate::operation::get_mapping::builders::GetMappingFluentBuilder::sinks) / [`set_sinks(Option<Vec<CatalogEntry>>)`](crate::operation::get_mapping::builders::GetMappingFluentBuilder::set_sinks): <p>A list of target tables.</p>
-    ///   - [`location(Location)`](crate::operation::get_mapping::builders::GetMappingFluentBuilder::location) / [`set_location(Option<Location>)`](crate::operation::get_mapping::builders::GetMappingFluentBuilder::set_location): <p>Parameters for the mapping.</p>
+    ///   - [`source(CatalogEntry)`](crate::operation::get_mapping::builders::GetMappingFluentBuilder::source) / [`set_source(Option<CatalogEntry>)`](crate::operation::get_mapping::builders::GetMappingFluentBuilder::set_source):<br>required: **true**<br><p>Specifies the source table.</p><br>
+    ///   - [`sinks(CatalogEntry)`](crate::operation::get_mapping::builders::GetMappingFluentBuilder::sinks) / [`set_sinks(Option<Vec::<CatalogEntry>>)`](crate::operation::get_mapping::builders::GetMappingFluentBuilder::set_sinks):<br>required: **false**<br><p>A list of target tables.</p><br>
+    ///   - [`location(Location)`](crate::operation::get_mapping::builders::GetMappingFluentBuilder::location) / [`set_location(Option<Location>)`](crate::operation::get_mapping::builders::GetMappingFluentBuilder::set_location):<br>required: **false**<br><p>Parameters for the mapping.</p><br>
     /// - On success, responds with [`GetMappingOutput`](crate::operation::get_mapping::GetMappingOutput) with field(s):
-    ///   - [`mapping(Option<Vec<MappingEntry>>)`](crate::operation::get_mapping::GetMappingOutput::mapping): <p>A list of mappings to the specified targets.</p>
+    ///   - [`mapping(Vec::<MappingEntry>)`](crate::operation::get_mapping::GetMappingOutput::mapping): <p>A list of mappings to the specified targets.</p>
     /// - On failure, responds with [`SdkError<GetMappingError>`](crate::operation::get_mapping::GetMappingError)
     pub fn get_mapping(&self) -> crate::operation::get_mapping::builders::GetMappingFluentBuilder {
         crate::operation::get_mapping::builders::GetMappingFluentBuilder::new(self.handle.clone())

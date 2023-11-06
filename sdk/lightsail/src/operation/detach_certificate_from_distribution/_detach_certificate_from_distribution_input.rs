@@ -30,6 +30,7 @@ pub struct DetachCertificateFromDistributionInputBuilder {
 impl DetachCertificateFromDistributionInputBuilder {
     /// <p>The name of the distribution from which to detach the certificate.</p>
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
+    /// This field is required.
     pub fn distribution_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.distribution_name = ::std::option::Option::Some(input.into());
         self
@@ -50,7 +51,7 @@ impl DetachCertificateFromDistributionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detach_certificate_from_distribution::DetachCertificateFromDistributionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::detach_certificate_from_distribution::DetachCertificateFromDistributionInput {

@@ -18,12 +18,16 @@ impl UpdateVpcAttachmentInput {
         self.attachment_id.as_deref()
     }
     /// <p>Adds a subnet ARN to the VPC attachment.</p>
-    pub fn add_subnet_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.add_subnet_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_subnet_arns.is_none()`.
+    pub fn add_subnet_arns(&self) -> &[::std::string::String] {
+        self.add_subnet_arns.as_deref().unwrap_or_default()
     }
     /// <p>Removes a subnet ARN from the attachment.</p>
-    pub fn remove_subnet_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.remove_subnet_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove_subnet_arns.is_none()`.
+    pub fn remove_subnet_arns(&self) -> &[::std::string::String] {
+        self.remove_subnet_arns.as_deref().unwrap_or_default()
     }
     /// <p>Additional options for updating the VPC attachment. </p>
     pub fn options(&self) -> ::std::option::Option<&crate::types::VpcOptions> {
@@ -48,6 +52,7 @@ pub struct UpdateVpcAttachmentInputBuilder {
 }
 impl UpdateVpcAttachmentInputBuilder {
     /// <p>The ID of the attachment.</p>
+    /// This field is required.
     pub fn attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attachment_id = ::std::option::Option::Some(input.into());
         self
@@ -118,7 +123,7 @@ impl UpdateVpcAttachmentInputBuilder {
     /// Consumes the builder and constructs a [`UpdateVpcAttachmentInput`](crate::operation::update_vpc_attachment::UpdateVpcAttachmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_vpc_attachment::UpdateVpcAttachmentInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_vpc_attachment::UpdateVpcAttachmentInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_vpc_attachment::UpdateVpcAttachmentInput {
             attachment_id: self.attachment_id,

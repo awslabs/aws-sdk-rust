@@ -27,6 +27,7 @@ pub struct DeletePredictorInputBuilder {
 }
 impl DeletePredictorInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the predictor to delete.</p>
+    /// This field is required.
     pub fn predictor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.predictor_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeletePredictorInputBuilder {
     /// Consumes the builder and constructs a [`DeletePredictorInput`](crate::operation::delete_predictor::DeletePredictorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_predictor::DeletePredictorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_predictor::DeletePredictorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_predictor::DeletePredictorInput {
             predictor_arn: self.predictor_arn,
         })

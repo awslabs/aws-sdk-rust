@@ -4,13 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSceneOutput {
     /// <p>The date and time when the scene was last updated.</p>
-    pub update_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub update_date_time: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
 impl UpdateSceneOutput {
     /// <p>The date and time when the scene was last updated.</p>
-    pub fn update_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.update_date_time.as_ref()
+    pub fn update_date_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.update_date_time
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateSceneOutput {
@@ -34,6 +34,7 @@ pub struct UpdateSceneOutputBuilder {
 }
 impl UpdateSceneOutputBuilder {
     /// <p>The date and time when the scene was last updated.</p>
+    /// This field is required.
     pub fn update_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_date_time = ::std::option::Option::Some(input);
         self
@@ -57,10 +58,17 @@ impl UpdateSceneOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateSceneOutput`](crate::operation::update_scene::UpdateSceneOutput).
-    pub fn build(self) -> crate::operation::update_scene::UpdateSceneOutput {
-        crate::operation::update_scene::UpdateSceneOutput {
-            update_date_time: self.update_date_time,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`update_date_time`](crate::operation::update_scene::builders::UpdateSceneOutputBuilder::update_date_time)
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_scene::UpdateSceneOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_scene::UpdateSceneOutput {
+            update_date_time: self.update_date_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "update_date_time",
+                    "update_date_time was not specified but it is required when building UpdateSceneOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

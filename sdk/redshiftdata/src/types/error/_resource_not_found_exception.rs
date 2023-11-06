@@ -5,30 +5,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceNotFoundException {
     /// <p>The exception message.</p>
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
     /// <p>Resource identifier associated with the exception.</p>
-    pub resource_id: ::std::option::Option<::std::string::String>,
+    pub resource_id: ::std::string::String,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl ResourceNotFoundException {
     /// <p>Resource identifier associated with the exception.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
-        self.resource_id.as_deref()
+    pub fn resource_id(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_id.deref()
     }
 }
 impl ResourceNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        &self.message
     }
 }
 impl ::std::fmt::Display for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "ResourceNotFoundException")?;
-        if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
-                ::std::write!(f, ": {}", inner_1)?;
-            }
+        {
+            ::std::write!(f, ": {}", &self.message)?;
         }
         Ok(())
     }
@@ -62,6 +61,7 @@ pub struct ResourceNotFoundExceptionBuilder {
 }
 impl ResourceNotFoundExceptionBuilder {
     /// <p>The exception message.</p>
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +76,7 @@ impl ResourceNotFoundExceptionBuilder {
         &self.message
     }
     /// <p>Resource identifier associated with the exception.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -101,11 +102,24 @@ impl ResourceNotFoundExceptionBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::types::error::ResourceNotFoundException).
-    pub fn build(self) -> crate::types::error::ResourceNotFoundException {
-        crate::types::error::ResourceNotFoundException {
-            message: self.message,
-            resource_id: self.resource_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`message`](crate::types::error::builders::ResourceNotFoundExceptionBuilder::message)
+    /// - [`resource_id`](crate::types::error::builders::ResourceNotFoundExceptionBuilder::resource_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::error::ResourceNotFoundException, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::error::ResourceNotFoundException {
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building ResourceNotFoundException",
+                )
+            })?,
+            resource_id: self.resource_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "resource_id",
+                    "resource_id was not specified but it is required when building ResourceNotFoundException",
+                )
+            })?,
             meta: self.meta.unwrap_or_default(),
-        }
+        })
     }
 }

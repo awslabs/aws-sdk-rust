@@ -11,8 +11,10 @@ pub struct ListTestGridSessionArtifactsOutput {
 }
 impl ListTestGridSessionArtifactsOutput {
     /// <p>A list of test grid session artifacts for a <code>TestGridSession</code>.</p>
-    pub fn artifacts(&self) -> ::std::option::Option<&[crate::types::TestGridSessionArtifact]> {
-        self.artifacts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.artifacts.is_none()`.
+    pub fn artifacts(&self) -> &[crate::types::TestGridSessionArtifact] {
+        self.artifacts.as_deref().unwrap_or_default()
     }
     /// <p>Pagination token.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

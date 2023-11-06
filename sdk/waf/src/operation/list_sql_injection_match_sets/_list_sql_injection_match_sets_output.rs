@@ -16,8 +16,10 @@ impl ListSqlInjectionMatchSetsOutput {
         self.next_marker.as_deref()
     }
     /// <p>An array of <code>SqlInjectionMatchSetSummary</code> objects.</p>
-    pub fn sql_injection_match_sets(&self) -> ::std::option::Option<&[crate::types::SqlInjectionMatchSetSummary]> {
-        self.sql_injection_match_sets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sql_injection_match_sets.is_none()`.
+    pub fn sql_injection_match_sets(&self) -> &[crate::types::SqlInjectionMatchSetSummary] {
+        self.sql_injection_match_sets.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListSqlInjectionMatchSetsOutput {

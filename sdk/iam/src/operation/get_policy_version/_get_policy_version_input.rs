@@ -39,6 +39,7 @@ pub struct GetPolicyVersionInputBuilder {
 impl GetPolicyVersionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the managed policy that you want information about.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// This field is required.
     pub fn policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_arn = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl GetPolicyVersionInputBuilder {
     }
     /// <p>Identifies the policy version to retrieve.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consists of the lowercase letter 'v' followed by one or two digits, and optionally followed by a period '.' and a string of letters and digits.</p>
+    /// This field is required.
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_id = ::std::option::Option::Some(input.into());
         self
@@ -74,7 +76,7 @@ impl GetPolicyVersionInputBuilder {
     /// Consumes the builder and constructs a [`GetPolicyVersionInput`](crate::operation::get_policy_version::GetPolicyVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_policy_version::GetPolicyVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_policy_version::GetPolicyVersionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_policy_version::GetPolicyVersionInput {
             policy_arn: self.policy_arn,
             version_id: self.version_id,

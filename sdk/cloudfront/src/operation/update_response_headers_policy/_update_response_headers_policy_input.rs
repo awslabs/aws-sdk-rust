@@ -43,6 +43,7 @@ pub struct UpdateResponseHeadersPolicyInputBuilder {
 }
 impl UpdateResponseHeadersPolicyInputBuilder {
     /// <p>A response headers policy configuration.</p>
+    /// This field is required.
     pub fn response_headers_policy_config(mut self, input: crate::types::ResponseHeadersPolicyConfig) -> Self {
         self.response_headers_policy_config = ::std::option::Option::Some(input);
         self
@@ -57,6 +58,7 @@ impl UpdateResponseHeadersPolicyInputBuilder {
         &self.response_headers_policy_config
     }
     /// <p>The identifier for the response headers policy that you are updating.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -92,7 +94,7 @@ impl UpdateResponseHeadersPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyInput {
             response_headers_policy_config: self.response_headers_policy_config,

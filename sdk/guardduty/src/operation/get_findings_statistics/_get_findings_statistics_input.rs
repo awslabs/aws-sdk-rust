@@ -16,8 +16,10 @@ impl GetFindingsStatisticsInput {
         self.detector_id.as_deref()
     }
     /// <p>The types of finding statistics to retrieve.</p>
-    pub fn finding_statistic_types(&self) -> ::std::option::Option<&[crate::types::FindingStatisticType]> {
-        self.finding_statistic_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.finding_statistic_types.is_none()`.
+    pub fn finding_statistic_types(&self) -> &[crate::types::FindingStatisticType] {
+        self.finding_statistic_types.as_deref().unwrap_or_default()
     }
     /// <p>Represents the criteria that is used for querying findings.</p>
     pub fn finding_criteria(&self) -> ::std::option::Option<&crate::types::FindingCriteria> {
@@ -41,6 +43,7 @@ pub struct GetFindingsStatisticsInputBuilder {
 }
 impl GetFindingsStatisticsInputBuilder {
     /// <p>The ID of the detector that specifies the GuardDuty service whose findings' statistics you want to retrieve.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
@@ -91,7 +94,7 @@ impl GetFindingsStatisticsInputBuilder {
     /// Consumes the builder and constructs a [`GetFindingsStatisticsInput`](crate::operation::get_findings_statistics::GetFindingsStatisticsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_findings_statistics::GetFindingsStatisticsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_findings_statistics::GetFindingsStatisticsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_findings_statistics::GetFindingsStatisticsInput {
             detector_id: self.detector_id,

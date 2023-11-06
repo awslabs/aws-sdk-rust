@@ -61,7 +61,7 @@ pub use crate::types::error::_subnet_already_in_use::SubnetAlreadyInUse;
 
 pub use crate::types::error::_db_subnet_quota_exceeded_fault::DbSubnetQuotaExceededFault;
 
-pub use crate::types::error::_db_subnet_group_does_not_cover_enough_a_zs::DbSubnetGroupDoesNotCoverEnoughAZs;
+pub use crate::types::error::_db_subnet_group_does_not_cover_enough_azs::DbSubnetGroupDoesNotCoverEnoughAZs;
 
 pub use crate::types::error::_storage_type_not_supported_fault::StorageTypeNotSupportedFault;
 
@@ -147,7 +147,7 @@ mod _db_snapshot_not_found_fault;
 
 mod _db_subnet_group_already_exists_fault;
 
-mod _db_subnet_group_does_not_cover_enough_a_zs;
+mod _db_subnet_group_does_not_cover_enough_azs;
 
 mod _db_subnet_group_not_found_fault;
 

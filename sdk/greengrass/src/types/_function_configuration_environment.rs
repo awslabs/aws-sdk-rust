@@ -23,8 +23,10 @@ impl FunctionConfigurationEnvironment {
         self.execution.as_ref()
     }
     /// A list of the resources, with their permissions, to which the Lambda function will be granted access. A Lambda function can have at most 10 resources. ResourceAccessPolicies apply only when you run the Lambda function in a Greengrass container.
-    pub fn resource_access_policies(&self) -> ::std::option::Option<&[crate::types::ResourceAccessPolicy]> {
-        self.resource_access_policies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_access_policies.is_none()`.
+    pub fn resource_access_policies(&self) -> &[crate::types::ResourceAccessPolicy] {
+        self.resource_access_policies.as_deref().unwrap_or_default()
     }
     /// Environment variables for the Lambda function's configuration.
     pub fn variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {

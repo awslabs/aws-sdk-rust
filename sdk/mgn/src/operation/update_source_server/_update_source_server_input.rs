@@ -55,6 +55,7 @@ impl UpdateSourceServerInputBuilder {
         &self.account_id
     }
     /// <p>Update Source Server request source server ID.</p>
+    /// This field is required.
     pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,8 @@ impl UpdateSourceServerInputBuilder {
     /// Consumes the builder and constructs a [`UpdateSourceServerInput`](crate::operation::update_source_server::UpdateSourceServerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_source_server::UpdateSourceServerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_source_server::UpdateSourceServerInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_source_server::UpdateSourceServerInput {
             account_id: self.account_id,
             source_server_id: self.source_server_id,

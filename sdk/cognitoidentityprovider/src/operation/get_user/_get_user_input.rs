@@ -35,6 +35,7 @@ pub struct GetUserInputBuilder {
 }
 impl GetUserInputBuilder {
     /// <p>A non-expired access token for the user whose information you want to query.</p>
+    /// This field is required.
     pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_token = ::std::option::Option::Some(input.into());
         self
@@ -49,7 +50,7 @@ impl GetUserInputBuilder {
         &self.access_token
     }
     /// Consumes the builder and constructs a [`GetUserInput`](crate::operation::get_user::GetUserInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_user::GetUserInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_user::GetUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_user::GetUserInput {
             access_token: self.access_token,
         })

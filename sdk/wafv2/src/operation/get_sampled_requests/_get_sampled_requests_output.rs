@@ -13,8 +13,10 @@ pub struct GetSampledRequestsOutput {
 }
 impl GetSampledRequestsOutput {
     /// <p>A complex type that contains detailed information about each of the requests in the sample.</p>
-    pub fn sampled_requests(&self) -> ::std::option::Option<&[crate::types::SampledHttpRequest]> {
-        self.sampled_requests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sampled_requests.is_none()`.
+    pub fn sampled_requests(&self) -> &[crate::types::SampledHttpRequest] {
+        self.sampled_requests.as_deref().unwrap_or_default()
     }
     /// <p>The total number of requests from which <code>GetSampledRequests</code> got a sample of <code>MaxItems</code> requests. If <code>PopulationSize</code> is less than <code>MaxItems</code>, the sample includes every request that your Amazon Web Services resource received during the specified time range.</p>
     pub fn population_size(&self) -> i64 {

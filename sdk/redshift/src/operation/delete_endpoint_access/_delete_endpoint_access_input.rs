@@ -27,6 +27,7 @@ pub struct DeleteEndpointAccessInputBuilder {
 }
 impl DeleteEndpointAccessInputBuilder {
     /// <p>The Redshift-managed VPC endpoint to delete.</p>
+    /// This field is required.
     pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteEndpointAccessInputBuilder {
     /// Consumes the builder and constructs a [`DeleteEndpointAccessInput`](crate::operation::delete_endpoint_access::DeleteEndpointAccessInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_endpoint_access::DeleteEndpointAccessInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_endpoint_access::DeleteEndpointAccessInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_endpoint_access::DeleteEndpointAccessInput {
             endpoint_name: self.endpoint_name,

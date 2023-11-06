@@ -34,6 +34,7 @@ pub struct GetContactAttributesInputBuilder {
 }
 impl GetContactAttributesInputBuilder {
     /// <p>The identifier of the Amazon Connect instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetContactAttributesInputBuilder {
         &self.instance_id
     }
     /// <p>The identifier of the initial contact.</p>
+    /// This field is required.
     pub fn initial_contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.initial_contact_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl GetContactAttributesInputBuilder {
     /// Consumes the builder and constructs a [`GetContactAttributesInput`](crate::operation::get_contact_attributes::GetContactAttributesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_contact_attributes::GetContactAttributesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_contact_attributes::GetContactAttributesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_contact_attributes::GetContactAttributesInput {
             instance_id: self.instance_id,

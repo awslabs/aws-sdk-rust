@@ -68,6 +68,7 @@ impl ListProvisioningArtifactsInputBuilder {
         &self.accept_language
     }
     /// <p>The product identifier.</p>
+    /// This field is required.
     pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_id = ::std::option::Option::Some(input.into());
         self
@@ -86,7 +87,7 @@ impl ListProvisioningArtifactsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_provisioning_artifacts::ListProvisioningArtifactsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_provisioning_artifacts::ListProvisioningArtifactsInput {
             accept_language: self.accept_language,

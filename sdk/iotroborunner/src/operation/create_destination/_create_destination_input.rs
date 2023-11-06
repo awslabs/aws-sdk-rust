@@ -69,6 +69,7 @@ impl CreateDestinationInputBuilder {
         &self.client_token
     }
     /// Human friendly name of the resource.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +84,7 @@ impl CreateDestinationInputBuilder {
         &self.name
     }
     /// Site ARN.
+    /// This field is required.
     pub fn site(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.site = ::std::option::Option::Some(input.into());
         self
@@ -127,7 +129,7 @@ impl CreateDestinationInputBuilder {
     /// Consumes the builder and constructs a [`CreateDestinationInput`](crate::operation::create_destination::CreateDestinationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_destination::CreateDestinationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_destination::CreateDestinationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_destination::CreateDestinationInput {
             client_token: self.client_token,
             name: self.name,

@@ -17,12 +17,16 @@ impl SearchIndexOutput {
         self.next_token.as_deref()
     }
     /// <p>The things that match the search query.</p>
-    pub fn things(&self) -> ::std::option::Option<&[crate::types::ThingDocument]> {
-        self.things.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.things.is_none()`.
+    pub fn things(&self) -> &[crate::types::ThingDocument] {
+        self.things.as_deref().unwrap_or_default()
     }
     /// <p>The thing groups that match the search query.</p>
-    pub fn thing_groups(&self) -> ::std::option::Option<&[crate::types::ThingGroupDocument]> {
-        self.thing_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.thing_groups.is_none()`.
+    pub fn thing_groups(&self) -> &[crate::types::ThingGroupDocument] {
+        self.thing_groups.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for SearchIndexOutput {

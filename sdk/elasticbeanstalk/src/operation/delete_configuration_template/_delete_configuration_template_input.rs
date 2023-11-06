@@ -35,6 +35,7 @@ pub struct DeleteConfigurationTemplateInputBuilder {
 }
 impl DeleteConfigurationTemplateInputBuilder {
     /// <p>The name of the application to delete the configuration template from.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl DeleteConfigurationTemplateInputBuilder {
         &self.application_name
     }
     /// <p>The name of the configuration template to delete.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
@@ -67,7 +69,7 @@ impl DeleteConfigurationTemplateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_configuration_template::DeleteConfigurationTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_configuration_template::DeleteConfigurationTemplateInput {
             application_name: self.application_name,

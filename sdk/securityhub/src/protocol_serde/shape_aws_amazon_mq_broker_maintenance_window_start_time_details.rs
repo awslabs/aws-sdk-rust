@@ -2,7 +2,7 @@
 pub fn ser_aws_amazon_mq_broker_maintenance_window_start_time_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsAmazonMqBrokerMaintenanceWindowStartTimeDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.day_of_week {
         object.key("DayOfWeek").string(var_1.as_str());
     }

@@ -4,31 +4,33 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartReadSetActivationJobOutput {
     /// <p>The job's ID.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The read set's sequence store ID.</p>
-    pub sequence_store_id: ::std::option::Option<::std::string::String>,
+    pub sequence_store_id: ::std::string::String,
     /// <p>The job's status.</p>
-    pub status: ::std::option::Option<crate::types::ReadSetActivationJobStatus>,
+    pub status: crate::types::ReadSetActivationJobStatus,
     /// <p>When the job was created.</p>
-    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_time: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
 impl StartReadSetActivationJobOutput {
     /// <p>The job's ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The read set's sequence store ID.</p>
-    pub fn sequence_store_id(&self) -> ::std::option::Option<&str> {
-        self.sequence_store_id.as_deref()
+    pub fn sequence_store_id(&self) -> &str {
+        use std::ops::Deref;
+        self.sequence_store_id.deref()
     }
     /// <p>The job's status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ReadSetActivationJobStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::ReadSetActivationJobStatus {
+        &self.status
     }
     /// <p>When the job was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_time.as_ref()
+    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_time
     }
 }
 impl ::aws_http::request_id::RequestId for StartReadSetActivationJobOutput {
@@ -55,6 +57,7 @@ pub struct StartReadSetActivationJobOutputBuilder {
 }
 impl StartReadSetActivationJobOutputBuilder {
     /// <p>The job's ID.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +72,7 @@ impl StartReadSetActivationJobOutputBuilder {
         &self.id
     }
     /// <p>The read set's sequence store ID.</p>
+    /// This field is required.
     pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_store_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +87,7 @@ impl StartReadSetActivationJobOutputBuilder {
         &self.sequence_store_id
     }
     /// <p>The job's status.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::ReadSetActivationJobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -97,6 +102,7 @@ impl StartReadSetActivationJobOutputBuilder {
         &self.status
     }
     /// <p>When the job was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -120,13 +126,43 @@ impl StartReadSetActivationJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartReadSetActivationJobOutput`](crate::operation::start_read_set_activation_job::StartReadSetActivationJobOutput).
-    pub fn build(self) -> crate::operation::start_read_set_activation_job::StartReadSetActivationJobOutput {
-        crate::operation::start_read_set_activation_job::StartReadSetActivationJobOutput {
-            id: self.id,
-            sequence_store_id: self.sequence_store_id,
-            status: self.status,
-            creation_time: self.creation_time,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::start_read_set_activation_job::builders::StartReadSetActivationJobOutputBuilder::id)
+    /// - [`sequence_store_id`](crate::operation::start_read_set_activation_job::builders::StartReadSetActivationJobOutputBuilder::sequence_store_id)
+    /// - [`status`](crate::operation::start_read_set_activation_job::builders::StartReadSetActivationJobOutputBuilder::status)
+    /// - [`creation_time`](crate::operation::start_read_set_activation_job::builders::StartReadSetActivationJobOutputBuilder::creation_time)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::start_read_set_activation_job::StartReadSetActivationJobOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::start_read_set_activation_job::StartReadSetActivationJobOutput {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building StartReadSetActivationJobOutput",
+                )
+            })?,
+            sequence_store_id: self.sequence_store_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "sequence_store_id",
+                    "sequence_store_id was not specified but it is required when building StartReadSetActivationJobOutput",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building StartReadSetActivationJobOutput",
+                )
+            })?,
+            creation_time: self.creation_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "creation_time",
+                    "creation_time was not specified but it is required when building StartReadSetActivationJobOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

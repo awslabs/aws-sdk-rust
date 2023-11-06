@@ -87,6 +87,7 @@ impl PropertyValueBuilder {
         &self.timestamp
     }
     /// <p>An object that specifies a value for a time series property.</p>
+    /// This field is required.
     pub fn value(mut self, input: crate::types::DataValue) -> Self {
         self.value = ::std::option::Option::Some(input);
         self

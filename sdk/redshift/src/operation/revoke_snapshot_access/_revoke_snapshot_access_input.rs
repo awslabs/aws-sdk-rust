@@ -91,6 +91,7 @@ impl RevokeSnapshotAccessInputBuilder {
         &self.snapshot_cluster_identifier
     }
     /// <p>The identifier of the Amazon Web Services account that can no longer restore the specified snapshot.</p>
+    /// This field is required.
     pub fn account_with_restore_access(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_with_restore_access = ::std::option::Option::Some(input.into());
         self
@@ -107,7 +108,7 @@ impl RevokeSnapshotAccessInputBuilder {
     /// Consumes the builder and constructs a [`RevokeSnapshotAccessInput`](crate::operation::revoke_snapshot_access::RevokeSnapshotAccessInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::revoke_snapshot_access::RevokeSnapshotAccessInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::revoke_snapshot_access::RevokeSnapshotAccessInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::revoke_snapshot_access::RevokeSnapshotAccessInput {
             snapshot_identifier: self.snapshot_identifier,

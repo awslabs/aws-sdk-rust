@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PortalSummary {
     /// <p>The ARN of the web portal.</p>
-    pub portal_arn: ::std::option::Option<::std::string::String>,
+    pub portal_arn: ::std::string::String,
     /// <p>The renderer that is used in streaming sessions.</p>
     pub renderer_type: ::std::option::Option<crate::types::RendererType>,
     /// <p>The browser type of the web portal.</p>
@@ -37,8 +37,9 @@ pub struct PortalSummary {
 }
 impl PortalSummary {
     /// <p>The ARN of the web portal.</p>
-    pub fn portal_arn(&self) -> ::std::option::Option<&str> {
-        self.portal_arn.as_deref()
+    pub fn portal_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.portal_arn.deref()
     }
     /// <p>The renderer that is used in streaming sessions.</p>
     pub fn renderer_type(&self) -> ::std::option::Option<&crate::types::RendererType> {
@@ -143,6 +144,7 @@ pub struct PortalSummaryBuilder {
 }
 impl PortalSummaryBuilder {
     /// <p>The ARN of the web portal.</p>
+    /// This field is required.
     pub fn portal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portal_arn = ::std::option::Option::Some(input.into());
         self
@@ -345,9 +347,16 @@ impl PortalSummaryBuilder {
         &self.ip_access_settings_arn
     }
     /// Consumes the builder and constructs a [`PortalSummary`](crate::types::PortalSummary).
-    pub fn build(self) -> crate::types::PortalSummary {
-        crate::types::PortalSummary {
-            portal_arn: self.portal_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`portal_arn`](crate::types::builders::PortalSummaryBuilder::portal_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::PortalSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PortalSummary {
+            portal_arn: self.portal_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "portal_arn",
+                    "portal_arn was not specified but it is required when building PortalSummary",
+                )
+            })?,
             renderer_type: self.renderer_type,
             browser_type: self.browser_type,
             portal_status: self.portal_status,
@@ -361,7 +370,7 @@ impl PortalSummaryBuilder {
             user_access_logging_settings_arn: self.user_access_logging_settings_arn,
             authentication_type: self.authentication_type,
             ip_access_settings_arn: self.ip_access_settings_arn,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for PortalSummaryBuilder {

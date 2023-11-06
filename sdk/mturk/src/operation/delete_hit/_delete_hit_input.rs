@@ -27,6 +27,7 @@ pub struct DeleteHitInputBuilder {
 }
 impl DeleteHitInputBuilder {
     /// <p>The ID of the HIT to be deleted.</p>
+    /// This field is required.
     pub fn hit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hit_id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl DeleteHitInputBuilder {
         &self.hit_id
     }
     /// Consumes the builder and constructs a [`DeleteHitInput`](crate::operation::delete_hit::DeleteHitInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_hit::DeleteHitInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_hit::DeleteHitInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_hit::DeleteHitInput { hit_id: self.hit_id })
     }
 }

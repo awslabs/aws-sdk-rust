@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`EnableUser`](crate::operation::enable_user::builders::EnableUserFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`user_id(impl Into<String>)`](crate::operation::enable_user::builders::EnableUserFluentBuilder::user_id) / [`set_user_id(Option<String>)`](crate::operation::enable_user::builders::EnableUserFluentBuilder::set_user_id): <p>The unique identifier for the user that you want to activate.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::operation::enable_user::builders::EnableUserFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::enable_user::builders::EnableUserFluentBuilder::set_client_token): <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    ///   - [`user_id(impl Into<String>)`](crate::operation::enable_user::builders::EnableUserFluentBuilder::user_id) / [`set_user_id(Option<String>)`](crate::operation::enable_user::builders::EnableUserFluentBuilder::set_user_id):<br>required: **true**<br><p>The unique identifier for the user that you want to activate.</p><br>
+    ///   - [`client_token(impl Into<String>)`](crate::operation::enable_user::builders::EnableUserFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::enable_user::builders::EnableUserFluentBuilder::set_client_token):<br>required: **false**<br><p>A token that ensures idempotency. This token expires in 10 minutes.</p><br>
     /// - On success, responds with [`EnableUserOutput`](crate::operation::enable_user::EnableUserOutput) with field(s):
     ///   - [`user_id(Option<String>)`](crate::operation::enable_user::EnableUserOutput::user_id): <p>The unique identifier for the active user.</p>
     /// - On failure, responds with [`SdkError<EnableUserError>`](crate::operation::enable_user::EnableUserError)

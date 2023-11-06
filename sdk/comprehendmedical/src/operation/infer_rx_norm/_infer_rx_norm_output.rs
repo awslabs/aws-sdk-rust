@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InferRxNormOutput {
     /// <p>The medication entities detected in the text linked to RxNorm concepts. If the action is successful, the service sends back an HTTP 200 response, as well as the entities detected.</p>
-    pub entities: ::std::option::Option<::std::vec::Vec<crate::types::RxNormEntity>>,
+    pub entities: ::std::vec::Vec<crate::types::RxNormEntity>,
     /// <p>If the result of the previous request to <code>InferRxNorm</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of medication entities.</p>
     pub pagination_token: ::std::option::Option<::std::string::String>,
     /// <p>The version of the model used to analyze the documents, in the format <i>n</i>.<i>n</i>.<i>n</i> You can use this information to track the model used for a particular batch of documents.</p>
@@ -13,8 +13,9 @@ pub struct InferRxNormOutput {
 }
 impl InferRxNormOutput {
     /// <p>The medication entities detected in the text linked to RxNorm concepts. If the action is successful, the service sends back an HTTP 200 response, as well as the entities detected.</p>
-    pub fn entities(&self) -> ::std::option::Option<&[crate::types::RxNormEntity]> {
-        self.entities.as_deref()
+    pub fn entities(&self) -> &[crate::types::RxNormEntity] {
+        use std::ops::Deref;
+        self.entities.deref()
     }
     /// <p>If the result of the previous request to <code>InferRxNorm</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of medication entities.</p>
     pub fn pagination_token(&self) -> ::std::option::Option<&str> {
@@ -105,12 +106,21 @@ impl InferRxNormOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`InferRxNormOutput`](crate::operation::infer_rx_norm::InferRxNormOutput).
-    pub fn build(self) -> crate::operation::infer_rx_norm::InferRxNormOutput {
-        crate::operation::infer_rx_norm::InferRxNormOutput {
-            entities: self.entities,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`entities`](crate::operation::infer_rx_norm::builders::InferRxNormOutputBuilder::entities)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::infer_rx_norm::InferRxNormOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::infer_rx_norm::InferRxNormOutput {
+            entities: self.entities.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "entities",
+                    "entities was not specified but it is required when building InferRxNormOutput",
+                )
+            })?,
             pagination_token: self.pagination_token,
             model_version: self.model_version,
             _request_id: self._request_id,
-        }
+        })
     }
 }

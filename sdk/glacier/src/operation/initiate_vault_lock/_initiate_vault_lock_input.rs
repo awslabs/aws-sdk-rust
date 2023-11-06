@@ -47,6 +47,7 @@ pub struct InitiateVaultLockInputBuilder {
 }
 impl InitiateVaultLockInputBuilder {
     /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -61,6 +62,7 @@ impl InitiateVaultLockInputBuilder {
         &self.account_id
     }
     /// <p>The name of the vault.</p>
+    /// This field is required.
     pub fn vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vault_name = ::std::option::Option::Some(input.into());
         self
@@ -91,7 +93,7 @@ impl InitiateVaultLockInputBuilder {
     /// Consumes the builder and constructs a [`InitiateVaultLockInput`](crate::operation::initiate_vault_lock::InitiateVaultLockInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::initiate_vault_lock::InitiateVaultLockInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::initiate_vault_lock::InitiateVaultLockInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::initiate_vault_lock::InitiateVaultLockInput {
             account_id: self.account_id,
             vault_name: self.vault_name,

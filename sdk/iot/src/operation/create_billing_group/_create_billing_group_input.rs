@@ -20,8 +20,10 @@ impl CreateBillingGroupInput {
         self.billing_group_properties.as_ref()
     }
     /// <p>Metadata which can be used to manage the billing group.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateBillingGroupInput {
@@ -41,6 +43,7 @@ pub struct CreateBillingGroupInputBuilder {
 }
 impl CreateBillingGroupInputBuilder {
     /// <p>The name you wish to give to the billing group.</p>
+    /// This field is required.
     pub fn billing_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.billing_group_name = ::std::option::Option::Some(input.into());
         self
@@ -91,7 +94,8 @@ impl CreateBillingGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateBillingGroupInput`](crate::operation::create_billing_group::CreateBillingGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_billing_group::CreateBillingGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_billing_group::CreateBillingGroupInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_billing_group::CreateBillingGroupInput {
             billing_group_name: self.billing_group_name,
             billing_group_properties: self.billing_group_properties,

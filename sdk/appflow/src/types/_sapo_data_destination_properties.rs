@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SapoDataDestinationProperties {
     /// <p>The object path specified in the SAPOData flow destination.</p>
-    pub object_path: ::std::option::Option<::std::string::String>,
+    pub object_path: ::std::string::String,
     /// <p>Determines how Amazon AppFlow handles the success response that it gets from the connector after placing data.</p>
     /// <p>For example, this setting would determine where to write the response from a destination connector upon a successful insert operation.</p>
     pub success_response_handling_config: ::std::option::Option<crate::types::SuccessResponseHandlingConfig>,
@@ -18,8 +18,9 @@ pub struct SapoDataDestinationProperties {
 }
 impl SapoDataDestinationProperties {
     /// <p>The object path specified in the SAPOData flow destination.</p>
-    pub fn object_path(&self) -> ::std::option::Option<&str> {
-        self.object_path.as_deref()
+    pub fn object_path(&self) -> &str {
+        use std::ops::Deref;
+        self.object_path.deref()
     }
     /// <p>Determines how Amazon AppFlow handles the success response that it gets from the connector after placing data.</p>
     /// <p>For example, this setting would determine where to write the response from a destination connector upon a successful insert operation.</p>
@@ -27,8 +28,10 @@ impl SapoDataDestinationProperties {
         self.success_response_handling_config.as_ref()
     }
     /// <p> A list of field names that can be used as an ID field when performing a write operation. </p>
-    pub fn id_field_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.id_field_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.id_field_names.is_none()`.
+    pub fn id_field_names(&self) -> &[::std::string::String] {
+        self.id_field_names.as_deref().unwrap_or_default()
     }
     /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
     pub fn error_handling_config(&self) -> ::std::option::Option<&crate::types::ErrorHandlingConfig> {
@@ -58,6 +61,7 @@ pub struct SapoDataDestinationPropertiesBuilder {
 }
 impl SapoDataDestinationPropertiesBuilder {
     /// <p>The object path specified in the SAPOData flow destination.</p>
+    /// This field is required.
     pub fn object_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_path = ::std::option::Option::Some(input.into());
         self
@@ -137,13 +141,20 @@ impl SapoDataDestinationPropertiesBuilder {
         &self.write_operation_type
     }
     /// Consumes the builder and constructs a [`SapoDataDestinationProperties`](crate::types::SapoDataDestinationProperties).
-    pub fn build(self) -> crate::types::SapoDataDestinationProperties {
-        crate::types::SapoDataDestinationProperties {
-            object_path: self.object_path,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`object_path`](crate::types::builders::SapoDataDestinationPropertiesBuilder::object_path)
+    pub fn build(self) -> ::std::result::Result<crate::types::SapoDataDestinationProperties, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SapoDataDestinationProperties {
+            object_path: self.object_path.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "object_path",
+                    "object_path was not specified but it is required when building SapoDataDestinationProperties",
+                )
+            })?,
             success_response_handling_config: self.success_response_handling_config,
             id_field_names: self.id_field_names,
             error_handling_config: self.error_handling_config,
             write_operation_type: self.write_operation_type,
-        }
+        })
     }
 }

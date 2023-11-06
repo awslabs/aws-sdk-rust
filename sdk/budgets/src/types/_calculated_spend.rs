@@ -36,6 +36,7 @@ pub struct CalculatedSpendBuilder {
 }
 impl CalculatedSpendBuilder {
     /// <p>The amount of cost, usage, RI units, or Savings Plans units that you used.</p>
+    /// This field is required.
     pub fn actual_spend(mut self, input: crate::types::Spend) -> Self {
         self.actual_spend = ::std::option::Option::Some(input);
         self

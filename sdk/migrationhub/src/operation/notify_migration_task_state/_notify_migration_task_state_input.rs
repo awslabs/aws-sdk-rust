@@ -62,6 +62,7 @@ pub struct NotifyMigrationTaskStateInputBuilder {
 }
 impl NotifyMigrationTaskStateInputBuilder {
     /// <p>The name of the ProgressUpdateStream. </p>
+    /// This field is required.
     pub fn progress_update_stream(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.progress_update_stream = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl NotifyMigrationTaskStateInputBuilder {
         &self.progress_update_stream
     }
     /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
+    /// This field is required.
     pub fn migration_task_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.migration_task_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +92,7 @@ impl NotifyMigrationTaskStateInputBuilder {
         &self.migration_task_name
     }
     /// <p>Information about the task's progress and status.</p>
+    /// This field is required.
     pub fn task(mut self, input: crate::types::Task) -> Self {
         self.task = ::std::option::Option::Some(input);
         self
@@ -104,6 +107,7 @@ impl NotifyMigrationTaskStateInputBuilder {
         &self.task
     }
     /// <p>The timestamp when the task was gathered.</p>
+    /// This field is required.
     pub fn update_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_date_time = ::std::option::Option::Some(input);
         self
@@ -118,6 +122,7 @@ impl NotifyMigrationTaskStateInputBuilder {
         &self.update_date_time
     }
     /// <p>Number of seconds after the UpdateDateTime within which the Migration Hub can expect an update. If Migration Hub does not receive an update within the specified interval, then the migration task will be considered stale.</p>
+    /// This field is required.
     pub fn next_update_seconds(mut self, input: i32) -> Self {
         self.next_update_seconds = ::std::option::Option::Some(input);
         self
@@ -150,7 +155,7 @@ impl NotifyMigrationTaskStateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::notify_migration_task_state::NotifyMigrationTaskStateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::notify_migration_task_state::NotifyMigrationTaskStateInput {
             progress_update_stream: self.progress_update_stream,

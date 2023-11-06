@@ -34,6 +34,7 @@ pub struct DescribeGroupMembershipInputBuilder {
 }
 impl DescribeGroupMembershipInputBuilder {
     /// <p>The globally unique identifier for the identity store.</p>
+    /// This field is required.
     pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_store_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeGroupMembershipInputBuilder {
         &self.identity_store_id
     }
     /// <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
+    /// This field is required.
     pub fn membership_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.membership_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl DescribeGroupMembershipInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_group_membership::DescribeGroupMembershipInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_group_membership::DescribeGroupMembershipInput {
             identity_store_id: self.identity_store_id,

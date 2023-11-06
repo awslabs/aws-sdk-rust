@@ -14,8 +14,10 @@ impl StartRecommendationReportGenerationInput {
         self.output_format.as_ref()
     }
     /// <p> Groups the resources in the recommendation report with a unique name. </p>
-    pub fn group_id_filter(&self) -> ::std::option::Option<&[crate::types::Group]> {
-        self.group_id_filter.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_id_filter.is_none()`.
+    pub fn group_id_filter(&self) -> &[crate::types::Group] {
+        self.group_id_filter.as_deref().unwrap_or_default()
     }
 }
 impl StartRecommendationReportGenerationInput {
@@ -72,7 +74,7 @@ impl StartRecommendationReportGenerationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationInput {

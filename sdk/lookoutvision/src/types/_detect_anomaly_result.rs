@@ -36,8 +36,10 @@ impl DetectAnomalyResult {
     /// <p>If the list has one entry ('background'), no anomalies were found on the image.</p>
     /// <p></p>
     /// <p>An image classification model doesn't return an <code>Anomalies</code> list. </p>
-    pub fn anomalies(&self) -> ::std::option::Option<&[crate::types::Anomaly]> {
-        self.anomalies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.anomalies.is_none()`.
+    pub fn anomalies(&self) -> &[crate::types::Anomaly] {
+        self.anomalies.as_deref().unwrap_or_default()
     }
     /// <p>If the model is an image segmentation model, <code>AnomalyMask</code> contains pixel masks that covers all anomaly types found on the image. Each anomaly type has a different mask color. To map a color to an anomaly type, see the <code>color</code> field of the <code>PixelAnomaly</code> object.</p>
     /// <p>An image classification model doesn't return an <code>Anomalies</code> list. </p>

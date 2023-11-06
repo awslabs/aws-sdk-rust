@@ -39,16 +39,20 @@ impl LayerVersionsListItem {
     }
     /// <p>The layer's compatible runtimes.</p>
     /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
-    pub fn compatible_runtimes(&self) -> ::std::option::Option<&[crate::types::Runtime]> {
-        self.compatible_runtimes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compatible_runtimes.is_none()`.
+    pub fn compatible_runtimes(&self) -> &[crate::types::Runtime] {
+        self.compatible_runtimes.as_deref().unwrap_or_default()
     }
     /// <p>The layer's open-source license.</p>
     pub fn license_info(&self) -> ::std::option::Option<&str> {
         self.license_info.as_deref()
     }
     /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
-    pub fn compatible_architectures(&self) -> ::std::option::Option<&[crate::types::Architecture]> {
-        self.compatible_architectures.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compatible_architectures.is_none()`.
+    pub fn compatible_architectures(&self) -> &[crate::types::Architecture] {
+        self.compatible_architectures.as_deref().unwrap_or_default()
     }
 }
 impl LayerVersionsListItem {

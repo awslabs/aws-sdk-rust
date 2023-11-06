@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CancelJobRun`](crate::operation::cancel_job_run::builders::CancelJobRunFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::cancel_job_run::builders::CancelJobRunFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::cancel_job_run::builders::CancelJobRunFluentBuilder::set_id): <p>The ID of the job run to cancel.</p>
-    ///   - [`virtual_cluster_id(impl Into<String>)`](crate::operation::cancel_job_run::builders::CancelJobRunFluentBuilder::virtual_cluster_id) / [`set_virtual_cluster_id(Option<String>)`](crate::operation::cancel_job_run::builders::CancelJobRunFluentBuilder::set_virtual_cluster_id): <p>The ID of the virtual cluster for which the job run will be canceled.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::cancel_job_run::builders::CancelJobRunFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::cancel_job_run::builders::CancelJobRunFluentBuilder::set_id):<br>required: **true**<br><p>The ID of the job run to cancel.</p><br>
+    ///   - [`virtual_cluster_id(impl Into<String>)`](crate::operation::cancel_job_run::builders::CancelJobRunFluentBuilder::virtual_cluster_id) / [`set_virtual_cluster_id(Option<String>)`](crate::operation::cancel_job_run::builders::CancelJobRunFluentBuilder::set_virtual_cluster_id):<br>required: **true**<br><p>The ID of the virtual cluster for which the job run will be canceled.</p><br>
     /// - On success, responds with [`CancelJobRunOutput`](crate::operation::cancel_job_run::CancelJobRunOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::cancel_job_run::CancelJobRunOutput::id): <p>The output contains the ID of the cancelled job run.</p>
     ///   - [`virtual_cluster_id(Option<String>)`](crate::operation::cancel_job_run::CancelJobRunOutput::virtual_cluster_id): <p>The output contains the virtual cluster ID for which the job run is cancelled.</p>

@@ -10,8 +10,10 @@ pub struct GetConfigurationSetEventDestinationsOutput {
 }
 impl GetConfigurationSetEventDestinationsOutput {
     /// An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination.
-    pub fn event_destinations(&self) -> ::std::option::Option<&[crate::types::EventDestination]> {
-        self.event_destinations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_destinations.is_none()`.
+    pub fn event_destinations(&self) -> &[crate::types::EventDestination] {
+        self.event_destinations.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetConfigurationSetEventDestinationsOutput {

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteQueuedSavingsPlan`](crate::operation::delete_queued_savings_plan::builders::DeleteQueuedSavingsPlanFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`savings_plan_id(impl Into<String>)`](crate::operation::delete_queued_savings_plan::builders::DeleteQueuedSavingsPlanFluentBuilder::savings_plan_id) / [`set_savings_plan_id(Option<String>)`](crate::operation::delete_queued_savings_plan::builders::DeleteQueuedSavingsPlanFluentBuilder::set_savings_plan_id): <p>The ID of the Savings Plan.</p>
+    ///   - [`savings_plan_id(impl Into<String>)`](crate::operation::delete_queued_savings_plan::builders::DeleteQueuedSavingsPlanFluentBuilder::savings_plan_id) / [`set_savings_plan_id(Option<String>)`](crate::operation::delete_queued_savings_plan::builders::DeleteQueuedSavingsPlanFluentBuilder::set_savings_plan_id):<br>required: **true**<br><p>The ID of the Savings Plan.</p><br>
     /// - On success, responds with [`DeleteQueuedSavingsPlanOutput`](crate::operation::delete_queued_savings_plan::DeleteQueuedSavingsPlanOutput)
     /// - On failure, responds with [`SdkError<DeleteQueuedSavingsPlanError>`](crate::operation::delete_queued_savings_plan::DeleteQueuedSavingsPlanError)
     pub fn delete_queued_savings_plan(&self) -> crate::operation::delete_queued_savings_plan::builders::DeleteQueuedSavingsPlanFluentBuilder {

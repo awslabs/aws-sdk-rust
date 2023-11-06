@@ -11,8 +11,10 @@ pub struct DescribeEventsOutput {
 }
 impl DescribeEventsOutput {
     /// <p>Contains the response to a <code>DescribeEvents</code> request. </p>
-    pub fn server_events(&self) -> ::std::option::Option<&[crate::types::ServerEvent]> {
-        self.server_events.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.server_events.is_none()`.
+    pub fn server_events(&self) -> &[crate::types::ServerEvent] {
+        self.server_events.as_deref().unwrap_or_default()
     }
     /// <p>NextToken is a string that is returned in some command responses. It indicates that not all entries have been returned, and that you must run at least one more request to get remaining items. To get remaining results, call <code>DescribeEvents</code> again, and assign the token from the previous results as the value of the <code>nextToken</code> parameter. If there are no more results, the response object's <code>nextToken</code> parameter value is <code>null</code>. Setting a <code>nextToken</code> value that was not returned in your previous results causes an <code>InvalidNextTokenException</code> to occur. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -17,8 +17,10 @@ impl GetProductsOutput {
         self.format_version.as_deref()
     }
     /// <p>The list of products that match your filters. The list contains both the product metadata and the price information.</p>
-    pub fn price_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.price_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.price_list.is_none()`.
+    pub fn price_list(&self) -> &[::std::string::String] {
+        self.price_list.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageSetsMetadataSummary {
     /// <p>The image set identifier.</p>
-    pub image_set_id: ::std::option::Option<::std::string::String>,
+    pub image_set_id: ::std::string::String,
     /// <p>The image set version.</p>
     pub version: ::std::option::Option<i32>,
     /// <p>The time an image set is created. Sample creation date is provided in <code>1985-04-12T23:20:50.52Z</code> format.</p>
@@ -17,8 +17,9 @@ pub struct ImageSetsMetadataSummary {
 }
 impl ImageSetsMetadataSummary {
     /// <p>The image set identifier.</p>
-    pub fn image_set_id(&self) -> ::std::option::Option<&str> {
-        self.image_set_id.as_deref()
+    pub fn image_set_id(&self) -> &str {
+        use std::ops::Deref;
+        self.image_set_id.deref()
     }
     /// <p>The image set version.</p>
     pub fn version(&self) -> ::std::option::Option<i32> {
@@ -56,6 +57,7 @@ pub struct ImageSetsMetadataSummaryBuilder {
 }
 impl ImageSetsMetadataSummaryBuilder {
     /// <p>The image set identifier.</p>
+    /// This field is required.
     pub fn image_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_set_id = ::std::option::Option::Some(input.into());
         self
@@ -126,13 +128,20 @@ impl ImageSetsMetadataSummaryBuilder {
         &self.dicom_tags
     }
     /// Consumes the builder and constructs a [`ImageSetsMetadataSummary`](crate::types::ImageSetsMetadataSummary).
-    pub fn build(self) -> crate::types::ImageSetsMetadataSummary {
-        crate::types::ImageSetsMetadataSummary {
-            image_set_id: self.image_set_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`image_set_id`](crate::types::builders::ImageSetsMetadataSummaryBuilder::image_set_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::ImageSetsMetadataSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ImageSetsMetadataSummary {
+            image_set_id: self.image_set_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "image_set_id",
+                    "image_set_id was not specified but it is required when building ImageSetsMetadataSummary",
+                )
+            })?,
             version: self.version,
             created_at: self.created_at,
             updated_at: self.updated_at,
             dicom_tags: self.dicom_tags,
-        }
+        })
     }
 }

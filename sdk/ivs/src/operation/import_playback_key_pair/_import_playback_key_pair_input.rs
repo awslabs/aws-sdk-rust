@@ -41,6 +41,7 @@ pub struct ImportPlaybackKeyPairInputBuilder {
 }
 impl ImportPlaybackKeyPairInputBuilder {
     /// <p>The public portion of a customer-generated key pair.</p>
+    /// This field is required.
     pub fn public_key_material(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_key_material = ::std::option::Option::Some(input.into());
         self
@@ -91,7 +92,7 @@ impl ImportPlaybackKeyPairInputBuilder {
     /// Consumes the builder and constructs a [`ImportPlaybackKeyPairInput`](crate::operation::import_playback_key_pair::ImportPlaybackKeyPairInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::import_playback_key_pair::ImportPlaybackKeyPairInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::import_playback_key_pair::ImportPlaybackKeyPairInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::import_playback_key_pair::ImportPlaybackKeyPairInput {
             public_key_material: self.public_key_material,

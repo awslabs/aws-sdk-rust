@@ -26,7 +26,7 @@ pub struct SendVoiceMessageInput {
     /// <p>You can specify custom data in this field. If you do, that data is logged to the event destination.</p>
     pub context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>When set to true, the message is checked and validated, but isn't sent to the end recipient.</p>
-    pub dry_run: bool,
+    pub dry_run: ::std::option::Option<bool>,
 }
 impl SendVoiceMessageInput {
     /// <p>The destination phone number in E.164 format.</p>
@@ -70,7 +70,7 @@ impl SendVoiceMessageInput {
         self.context.as_ref()
     }
     /// <p>When set to true, the message is checked and validated, but isn't sent to the end recipient.</p>
-    pub fn dry_run(&self) -> bool {
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
 }
@@ -98,6 +98,7 @@ pub struct SendVoiceMessageInputBuilder {
 }
 impl SendVoiceMessageInputBuilder {
     /// <p>The destination phone number in E.164 format.</p>
+    /// This field is required.
     pub fn destination_phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_phone_number = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +113,7 @@ impl SendVoiceMessageInputBuilder {
         &self.destination_phone_number
     }
     /// <p>The origination identity to use for the voice call. This can be the PhoneNumber, PhoneNumberId, PhoneNumberArn, PoolId, or PoolArn.</p>
+    /// This field is required.
     pub fn origination_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origination_identity = ::std::option::Option::Some(input.into());
         self
@@ -258,7 +260,7 @@ impl SendVoiceMessageInputBuilder {
     /// Consumes the builder and constructs a [`SendVoiceMessageInput`](crate::operation::send_voice_message::SendVoiceMessageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::send_voice_message::SendVoiceMessageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::send_voice_message::SendVoiceMessageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_voice_message::SendVoiceMessageInput {
             destination_phone_number: self.destination_phone_number,
             origination_identity: self.origination_identity,
@@ -269,7 +271,7 @@ impl SendVoiceMessageInputBuilder {
             max_price_per_minute: self.max_price_per_minute,
             time_to_live: self.time_to_live,
             context: self.context,
-            dry_run: self.dry_run.unwrap_or_default(),
+            dry_run: self.dry_run,
         })
     }
 }

@@ -2,7 +2,7 @@
 pub fn ser_detect_custom_labels_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::detect_custom_labels::DetectCustomLabelsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.project_version_arn {
         object.key("ProjectVersionArn").string(var_1.as_str());
     }

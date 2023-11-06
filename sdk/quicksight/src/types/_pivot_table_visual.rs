@@ -6,7 +6,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PivotTableVisual {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers..</p>
-    pub visual_id: ::std::option::Option<::std::string::String>,
+    pub visual_id: ::std::string::String,
     /// <p>The title that is displayed on the visual.</p>
     pub title: ::std::option::Option<crate::types::VisualTitleLabelOptions>,
     /// <p>The subtitle that is displayed on the visual.</p>
@@ -20,8 +20,9 @@ pub struct PivotTableVisual {
 }
 impl PivotTableVisual {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers..</p>
-    pub fn visual_id(&self) -> ::std::option::Option<&str> {
-        self.visual_id.as_deref()
+    pub fn visual_id(&self) -> &str {
+        use std::ops::Deref;
+        self.visual_id.deref()
     }
     /// <p>The title that is displayed on the visual.</p>
     pub fn title(&self) -> ::std::option::Option<&crate::types::VisualTitleLabelOptions> {
@@ -40,8 +41,10 @@ impl PivotTableVisual {
         self.conditional_formatting.as_ref()
     }
     /// <p>The list of custom actions that are configured for a visual.</p>
-    pub fn actions(&self) -> ::std::option::Option<&[crate::types::VisualCustomAction]> {
-        self.actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
+    pub fn actions(&self) -> &[crate::types::VisualCustomAction] {
+        self.actions.as_deref().unwrap_or_default()
     }
 }
 impl PivotTableVisual {
@@ -64,6 +67,7 @@ pub struct PivotTableVisualBuilder {
 }
 impl PivotTableVisualBuilder {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers..</p>
+    /// This field is required.
     pub fn visual_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.visual_id = ::std::option::Option::Some(input.into());
         self
@@ -154,14 +158,21 @@ impl PivotTableVisualBuilder {
         &self.actions
     }
     /// Consumes the builder and constructs a [`PivotTableVisual`](crate::types::PivotTableVisual).
-    pub fn build(self) -> crate::types::PivotTableVisual {
-        crate::types::PivotTableVisual {
-            visual_id: self.visual_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`visual_id`](crate::types::builders::PivotTableVisualBuilder::visual_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::PivotTableVisual, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PivotTableVisual {
+            visual_id: self.visual_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "visual_id",
+                    "visual_id was not specified but it is required when building PivotTableVisual",
+                )
+            })?,
             title: self.title,
             subtitle: self.subtitle,
             chart_configuration: self.chart_configuration,
             conditional_formatting: self.conditional_formatting,
             actions: self.actions,
-        }
+        })
     }
 }

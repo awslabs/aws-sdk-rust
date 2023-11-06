@@ -27,6 +27,7 @@ pub struct GetAppliedSchemaVersionInputBuilder {
 }
 impl GetAppliedSchemaVersionInputBuilder {
     /// <p>The ARN of the applied schema.</p>
+    /// This field is required.
     pub fn schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetAppliedSchemaVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_applied_schema_version::GetAppliedSchemaVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_applied_schema_version::GetAppliedSchemaVersionInput { schema_arn: self.schema_arn })
     }

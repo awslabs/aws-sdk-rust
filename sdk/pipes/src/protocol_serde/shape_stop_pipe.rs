@@ -25,11 +25,10 @@ pub fn de_stop_pipe_http_error(
                 output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
                     .map_err(crate::operation::stop_pipe::StopPipeError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::conflict_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::stop_pipe::StopPipeError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalException" => crate::operation::stop_pipe::StopPipeError::InternalException({
@@ -45,11 +44,10 @@ pub fn de_stop_pipe_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::stop_pipe::StopPipeError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "NotFoundException" => crate::operation::stop_pipe::StopPipeError::NotFoundException({
@@ -80,11 +78,10 @@ pub fn de_stop_pipe_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::stop_pipe::StopPipeError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::stop_pipe::StopPipeError::ValidationException({

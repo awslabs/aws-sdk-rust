@@ -3,16 +3,16 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateLink`](crate::operation::update_link::builders::UpdateLinkFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identifier(impl Into<String>)`](crate::operation::update_link::builders::UpdateLinkFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::update_link::builders::UpdateLinkFluentBuilder::set_identifier): <p>The ARN of the link that you want to update.</p>
-    ///   - [`resource_types(ResourceType)`](crate::operation::update_link::builders::UpdateLinkFluentBuilder::resource_types) / [`set_resource_types(Option<Vec<ResourceType>>)`](crate::operation::update_link::builders::UpdateLinkFluentBuilder::set_resource_types): <p>An array of strings that define which types of data that the source account will send to the monitoring account.</p>  <p>Your input here replaces the current set of data types that are shared.</p>
+    ///   - [`identifier(impl Into<String>)`](crate::operation::update_link::builders::UpdateLinkFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::update_link::builders::UpdateLinkFluentBuilder::set_identifier):<br>required: **true**<br><p>The ARN of the link that you want to update.</p><br>
+    ///   - [`resource_types(ResourceType)`](crate::operation::update_link::builders::UpdateLinkFluentBuilder::resource_types) / [`set_resource_types(Option<Vec::<ResourceType>>)`](crate::operation::update_link::builders::UpdateLinkFluentBuilder::set_resource_types):<br>required: **true**<br><p>An array of strings that define which types of data that the source account will send to the monitoring account.</p>  <p>Your input here replaces the current set of data types that are shared.</p><br>
     /// - On success, responds with [`UpdateLinkOutput`](crate::operation::update_link::UpdateLinkOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::update_link::UpdateLinkOutput::arn): <p>The ARN of the link that you have updated.</p>
     ///   - [`id(Option<String>)`](crate::operation::update_link::UpdateLinkOutput::id): <p>The random ID string that Amazon Web Services generated as part of the sink ARN.</p>
     ///   - [`label(Option<String>)`](crate::operation::update_link::UpdateLinkOutput::label): <p>The label assigned to this link, with the variables resolved to their actual values.</p>
     ///   - [`label_template(Option<String>)`](crate::operation::update_link::UpdateLinkOutput::label_template): <p>The exact label template that was specified when the link was created, with the template variables not resolved.</p>
-    ///   - [`resource_types(Option<Vec<String>>)`](crate::operation::update_link::UpdateLinkOutput::resource_types): <p>The resource types now supported by this link.</p>
+    ///   - [`resource_types(Option<Vec::<String>>)`](crate::operation::update_link::UpdateLinkOutput::resource_types): <p>The resource types now supported by this link.</p>
     ///   - [`sink_arn(Option<String>)`](crate::operation::update_link::UpdateLinkOutput::sink_arn): <p>The ARN of the sink that is used for this link.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::update_link::UpdateLinkOutput::tags): <p>The tags assigned to the link.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::update_link::UpdateLinkOutput::tags): <p>The tags assigned to the link.</p>
     /// - On failure, responds with [`SdkError<UpdateLinkError>`](crate::operation::update_link::UpdateLinkError)
     pub fn update_link(&self) -> crate::operation::update_link::builders::UpdateLinkFluentBuilder {
         crate::operation::update_link::builders::UpdateLinkFluentBuilder::new(self.handle.clone())

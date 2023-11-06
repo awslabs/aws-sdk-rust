@@ -33,8 +33,10 @@ impl QueryDefinition {
         self.last_modified
     }
     /// <p>If this query definition contains a list of log groups that it is limited to, that list appears here.</p>
-    pub fn log_group_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.log_group_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_group_names.is_none()`.
+    pub fn log_group_names(&self) -> &[::std::string::String] {
+        self.log_group_names.as_deref().unwrap_or_default()
     }
 }
 impl QueryDefinition {

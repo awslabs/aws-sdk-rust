@@ -5,24 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetSchemaError {
     /// <p>An error name for the error.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>An error code for the error. </p>
-    pub code: ::std::option::Option<::std::string::String>,
+    pub code: ::std::string::String,
     /// <p>An error message for the error.</p>
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
 }
 impl BatchGetSchemaError {
     /// <p>An error name for the error.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>An error code for the error. </p>
-    pub fn code(&self) -> ::std::option::Option<&str> {
-        self.code.as_deref()
+    pub fn code(&self) -> &str {
+        use std::ops::Deref;
+        self.code.deref()
     }
     /// <p>An error message for the error.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        use std::ops::Deref;
+        self.message.deref()
     }
 }
 impl BatchGetSchemaError {
@@ -42,6 +45,7 @@ pub struct BatchGetSchemaErrorBuilder {
 }
 impl BatchGetSchemaErrorBuilder {
     /// <p>An error name for the error.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +60,7 @@ impl BatchGetSchemaErrorBuilder {
         &self.name
     }
     /// <p>An error code for the error. </p>
+    /// This field is required.
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +75,7 @@ impl BatchGetSchemaErrorBuilder {
         &self.code
     }
     /// <p>An error message for the error.</p>
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +90,30 @@ impl BatchGetSchemaErrorBuilder {
         &self.message
     }
     /// Consumes the builder and constructs a [`BatchGetSchemaError`](crate::types::BatchGetSchemaError).
-    pub fn build(self) -> crate::types::BatchGetSchemaError {
-        crate::types::BatchGetSchemaError {
-            name: self.name,
-            code: self.code,
-            message: self.message,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::BatchGetSchemaErrorBuilder::name)
+    /// - [`code`](crate::types::builders::BatchGetSchemaErrorBuilder::code)
+    /// - [`message`](crate::types::builders::BatchGetSchemaErrorBuilder::message)
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchGetSchemaError, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::BatchGetSchemaError {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building BatchGetSchemaError",
+                )
+            })?,
+            code: self.code.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "code",
+                    "code was not specified but it is required when building BatchGetSchemaError",
+                )
+            })?,
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building BatchGetSchemaError",
+                )
+            })?,
+        })
     }
 }

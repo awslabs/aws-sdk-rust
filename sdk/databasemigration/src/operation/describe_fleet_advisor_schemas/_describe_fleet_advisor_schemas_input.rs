@@ -36,8 +36,10 @@ impl DescribeFleetAdvisorSchemasInput {
     /// <li> <p> <code>server-ip-address</code> – The IP address of the schema database's server.</p> </li>
     /// </ul>
     /// <p>An example is: <code>describe-fleet-advisor-schemas --filter Name="schema-id",Values="50"</code> </p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>Sets the maximum number of records returned in the response.</p>
     pub fn max_records(&self) -> ::std::option::Option<i32> {
@@ -153,7 +155,7 @@ impl DescribeFleetAdvisorSchemasInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_fleet_advisor_schemas::DescribeFleetAdvisorSchemasInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_fleet_advisor_schemas::DescribeFleetAdvisorSchemasInput {
             filters: self.filters,

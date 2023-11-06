@@ -2,7 +2,7 @@
 pub fn ser_component_binding_properties_value_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ComponentBindingPropertiesValueProperties,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.model {
         object.key("model").string(var_1.as_str());
     }

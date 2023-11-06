@@ -34,6 +34,7 @@ pub struct DeleteEndpointOutputBuilder {
 }
 impl DeleteEndpointOutputBuilder {
     /// <p>Provides information about the channel type and other settings for an endpoint.</p>
+    /// This field is required.
     pub fn endpoint_response(mut self, input: crate::types::EndpointResponse) -> Self {
         self.endpoint_response = ::std::option::Option::Some(input);
         self

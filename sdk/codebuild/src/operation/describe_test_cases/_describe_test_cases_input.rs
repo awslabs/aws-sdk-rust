@@ -48,6 +48,7 @@ pub struct DescribeTestCasesInputBuilder {
 }
 impl DescribeTestCasesInputBuilder {
     /// <p> The ARN of the report for which test cases are returned. </p>
+    /// This field is required.
     pub fn report_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.report_arn = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,7 @@ impl DescribeTestCasesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTestCasesInput`](crate::operation::describe_test_cases::DescribeTestCasesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_test_cases::DescribeTestCasesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_test_cases::DescribeTestCasesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_test_cases::DescribeTestCasesInput {
             report_arn: self.report_arn,
             next_token: self.next_token,

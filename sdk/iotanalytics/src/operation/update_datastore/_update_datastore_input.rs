@@ -52,6 +52,7 @@ pub struct UpdateDatastoreInputBuilder {
 }
 impl UpdateDatastoreInputBuilder {
     /// <p>The name of the data store to be updated.</p>
+    /// This field is required.
     pub fn datastore_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_name = ::std::option::Option::Some(input.into());
         self
@@ -116,7 +117,7 @@ impl UpdateDatastoreInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDatastoreInput`](crate::operation::update_datastore::UpdateDatastoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_datastore::UpdateDatastoreInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_datastore::UpdateDatastoreInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_datastore::UpdateDatastoreInput {
             datastore_name: self.datastore_name,
             retention_period: self.retention_period,

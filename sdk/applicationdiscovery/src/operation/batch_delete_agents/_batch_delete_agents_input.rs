@@ -8,8 +8,10 @@ pub struct BatchDeleteAgentsInput {
 }
 impl BatchDeleteAgentsInput {
     /// <p> The list of agents to delete. </p>
-    pub fn delete_agents(&self) -> ::std::option::Option<&[crate::types::DeleteAgent]> {
-        self.delete_agents.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.delete_agents.is_none()`.
+    pub fn delete_agents(&self) -> &[crate::types::DeleteAgent] {
+        self.delete_agents.as_deref().unwrap_or_default()
     }
 }
 impl BatchDeleteAgentsInput {
@@ -49,7 +51,7 @@ impl BatchDeleteAgentsInputBuilder {
     /// Consumes the builder and constructs a [`BatchDeleteAgentsInput`](crate::operation::batch_delete_agents::BatchDeleteAgentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_delete_agents::BatchDeleteAgentsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_delete_agents::BatchDeleteAgentsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_delete_agents::BatchDeleteAgentsInput {
             delete_agents: self.delete_agents,
         })

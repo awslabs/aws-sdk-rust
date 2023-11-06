@@ -19,8 +19,10 @@ impl UpdateMemberDetectorsInput {
         self.detector_id.as_deref()
     }
     /// <p>A list of member account IDs to be updated.</p>
-    pub fn account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.account_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
+    pub fn account_ids(&self) -> &[::std::string::String] {
+        self.account_ids.as_deref().unwrap_or_default()
     }
     /// <p>Describes which data sources will be updated.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
@@ -28,8 +30,10 @@ impl UpdateMemberDetectorsInput {
         self.data_sources.as_ref()
     }
     /// <p>A list of features that will be updated for the specified member accounts.</p>
-    pub fn features(&self) -> ::std::option::Option<&[crate::types::MemberFeaturesConfiguration]> {
-        self.features.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.features.is_none()`.
+    pub fn features(&self) -> &[crate::types::MemberFeaturesConfiguration] {
+        self.features.as_deref().unwrap_or_default()
     }
 }
 impl UpdateMemberDetectorsInput {
@@ -50,6 +54,7 @@ pub struct UpdateMemberDetectorsInputBuilder {
 }
 impl UpdateMemberDetectorsInputBuilder {
     /// <p>The detector ID of the administrator account.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
@@ -123,7 +128,7 @@ impl UpdateMemberDetectorsInputBuilder {
     /// Consumes the builder and constructs a [`UpdateMemberDetectorsInput`](crate::operation::update_member_detectors::UpdateMemberDetectorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_member_detectors::UpdateMemberDetectorsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_member_detectors::UpdateMemberDetectorsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_member_detectors::UpdateMemberDetectorsInput {
             detector_id: self.detector_id,

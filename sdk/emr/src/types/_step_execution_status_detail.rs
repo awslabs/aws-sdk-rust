@@ -56,6 +56,7 @@ pub struct StepExecutionStatusDetailBuilder {
 }
 impl StepExecutionStatusDetailBuilder {
     /// <p>The state of the step.</p>
+    /// This field is required.
     pub fn state(mut self, input: crate::types::StepExecutionState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
@@ -70,6 +71,7 @@ impl StepExecutionStatusDetailBuilder {
         &self.state
     }
     /// <p>The creation date and time of the step.</p>
+    /// This field is required.
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
         self

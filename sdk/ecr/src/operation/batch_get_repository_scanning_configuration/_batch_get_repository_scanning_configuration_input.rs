@@ -8,8 +8,10 @@ pub struct BatchGetRepositoryScanningConfigurationInput {
 }
 impl BatchGetRepositoryScanningConfigurationInput {
     /// <p>One or more repository names to get the scanning configuration for.</p>
-    pub fn repository_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.repository_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.repository_names.is_none()`.
+    pub fn repository_names(&self) -> &[::std::string::String] {
+        self.repository_names.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetRepositoryScanningConfigurationInput {
@@ -51,7 +53,7 @@ impl BatchGetRepositoryScanningConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfigurationInput {

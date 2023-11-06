@@ -27,6 +27,7 @@ pub struct DeleteClusterPolicyInputBuilder {
 }
 impl DeleteClusterPolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    /// This field is required.
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteClusterPolicyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteClusterPolicyInput`](crate::operation::delete_cluster_policy::DeleteClusterPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_cluster_policy::DeleteClusterPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_cluster_policy::DeleteClusterPolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_cluster_policy::DeleteClusterPolicyInput {
             cluster_arn: self.cluster_arn,

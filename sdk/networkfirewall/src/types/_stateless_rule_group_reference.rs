@@ -5,17 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StatelessRuleGroupReference {
     /// <p>The Amazon Resource Name (ARN) of the stateless rule group.</p>
-    pub resource_arn: ::std::option::Option<::std::string::String>,
+    pub resource_arn: ::std::string::String,
     /// <p>An integer setting that indicates the order in which to run the stateless rule groups in a single <code>FirewallPolicy</code>. Network Firewall applies each stateless rule group to a packet starting with the group that has the lowest priority setting. You must ensure that the priority settings are unique within each policy.</p>
-    pub priority: ::std::option::Option<i32>,
+    pub priority: i32,
 }
 impl StatelessRuleGroupReference {
     /// <p>The Amazon Resource Name (ARN) of the stateless rule group.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
-        self.resource_arn.as_deref()
+    pub fn resource_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_arn.deref()
     }
     /// <p>An integer setting that indicates the order in which to run the stateless rule groups in a single <code>FirewallPolicy</code>. Network Firewall applies each stateless rule group to a packet starting with the group that has the lowest priority setting. You must ensure that the priority settings are unique within each policy.</p>
-    pub fn priority(&self) -> ::std::option::Option<i32> {
+    pub fn priority(&self) -> i32 {
         self.priority
     }
 }
@@ -35,6 +36,7 @@ pub struct StatelessRuleGroupReferenceBuilder {
 }
 impl StatelessRuleGroupReferenceBuilder {
     /// <p>The Amazon Resource Name (ARN) of the stateless rule group.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl StatelessRuleGroupReferenceBuilder {
         &self.resource_arn
     }
     /// <p>An integer setting that indicates the order in which to run the stateless rule groups in a single <code>FirewallPolicy</code>. Network Firewall applies each stateless rule group to a packet starting with the group that has the lowest priority setting. You must ensure that the priority settings are unique within each policy.</p>
+    /// This field is required.
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,23 @@ impl StatelessRuleGroupReferenceBuilder {
         &self.priority
     }
     /// Consumes the builder and constructs a [`StatelessRuleGroupReference`](crate::types::StatelessRuleGroupReference).
-    pub fn build(self) -> crate::types::StatelessRuleGroupReference {
-        crate::types::StatelessRuleGroupReference {
-            resource_arn: self.resource_arn,
-            priority: self.priority,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource_arn`](crate::types::builders::StatelessRuleGroupReferenceBuilder::resource_arn)
+    /// - [`priority`](crate::types::builders::StatelessRuleGroupReferenceBuilder::priority)
+    pub fn build(self) -> ::std::result::Result<crate::types::StatelessRuleGroupReference, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::StatelessRuleGroupReference {
+            resource_arn: self.resource_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "resource_arn",
+                    "resource_arn was not specified but it is required when building StatelessRuleGroupReference",
+                )
+            })?,
+            priority: self.priority.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "priority",
+                    "priority was not specified but it is required when building StatelessRuleGroupReference",
+                )
+            })?,
+        })
     }
 }

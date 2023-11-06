@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteAssetType`](crate::operation::delete_asset_type::builders::DeleteAssetTypeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_identifier(impl Into<String>)`](crate::operation::delete_asset_type::builders::DeleteAssetTypeFluentBuilder::domain_identifier) / [`set_domain_identifier(Option<String>)`](crate::operation::delete_asset_type::builders::DeleteAssetTypeFluentBuilder::set_domain_identifier): <p>The ID of the Amazon DataZone domain in which the asset type is deleted.</p>
-    ///   - [`identifier(impl Into<String>)`](crate::operation::delete_asset_type::builders::DeleteAssetTypeFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::delete_asset_type::builders::DeleteAssetTypeFluentBuilder::set_identifier): <p>The identifier of the asset type that is deleted.</p>
+    ///   - [`domain_identifier(impl Into<String>)`](crate::operation::delete_asset_type::builders::DeleteAssetTypeFluentBuilder::domain_identifier) / [`set_domain_identifier(Option<String>)`](crate::operation::delete_asset_type::builders::DeleteAssetTypeFluentBuilder::set_domain_identifier):<br>required: **true**<br><p>The ID of the Amazon DataZone domain in which the asset type is deleted.</p><br>
+    ///   - [`identifier(impl Into<String>)`](crate::operation::delete_asset_type::builders::DeleteAssetTypeFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::delete_asset_type::builders::DeleteAssetTypeFluentBuilder::set_identifier):<br>required: **true**<br><p>The identifier of the asset type that is deleted.</p><br>
     /// - On success, responds with [`DeleteAssetTypeOutput`](crate::operation::delete_asset_type::DeleteAssetTypeOutput)
     /// - On failure, responds with [`SdkError<DeleteAssetTypeError>`](crate::operation::delete_asset_type::DeleteAssetTypeError)
     pub fn delete_asset_type(&self) -> crate::operation::delete_asset_type::builders::DeleteAssetTypeFluentBuilder {

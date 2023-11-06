@@ -13,8 +13,10 @@ pub struct DescribeCustomKeyStoresOutput {
 }
 impl DescribeCustomKeyStoresOutput {
     /// <p>Contains metadata about each custom key store.</p>
-    pub fn custom_key_stores(&self) -> ::std::option::Option<&[crate::types::CustomKeyStoresListEntry]> {
-        self.custom_key_stores.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_key_stores.is_none()`.
+    pub fn custom_key_stores(&self) -> &[crate::types::CustomKeyStoresListEntry] {
+        self.custom_key_stores.as_deref().unwrap_or_default()
     }
     /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
     pub fn next_marker(&self) -> ::std::option::Option<&str> {

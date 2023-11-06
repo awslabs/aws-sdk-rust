@@ -27,6 +27,7 @@ pub struct GetTagsInputBuilder {
 }
 impl GetTagsInputBuilder {
     /// <p>The ARN of the resource group whose tags you want to retrieve.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetTagsInputBuilder {
         &self.arn
     }
     /// Consumes the builder and constructs a [`GetTagsInput`](crate::operation::get_tags::GetTagsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_tags::GetTagsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_tags::GetTagsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_tags::GetTagsInput { arn: self.arn })
     }
 }

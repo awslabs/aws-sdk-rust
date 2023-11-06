@@ -31,8 +31,10 @@ impl ListContactsInput {
         self.next_token.as_deref()
     }
     /// <p>Status of a contact reservation.</p>
-    pub fn status_list(&self) -> ::std::option::Option<&[crate::types::ContactStatus]> {
-        self.status_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.status_list.is_none()`.
+    pub fn status_list(&self) -> &[crate::types::ContactStatus] {
+        self.status_list.as_deref().unwrap_or_default()
     }
     /// <p>Start time of a contact in UTC.</p>
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -125,6 +127,7 @@ impl ListContactsInputBuilder {
         &self.status_list
     }
     /// <p>Start time of a contact in UTC.</p>
+    /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
@@ -139,6 +142,7 @@ impl ListContactsInputBuilder {
         &self.start_time
     }
     /// <p>End time of a contact in UTC.</p>
+    /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
@@ -195,7 +199,9 @@ impl ListContactsInputBuilder {
         &self.mission_profile_arn
     }
     /// Consumes the builder and constructs a [`ListContactsInput`](crate::operation::list_contacts::ListContactsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_contacts::ListContactsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_contacts::ListContactsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_contacts::ListContactsInput {
             max_results: self.max_results,
             next_token: self.next_token,

@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LogGroupSummary {
     /// <p>The type of log.</p>
-    pub log_type: ::std::option::Option<::std::string::String>,
+    pub log_type: ::std::string::String,
     /// <p>The name of the log group.</p>
-    pub log_group_name: ::std::option::Option<::std::string::String>,
+    pub log_group_name: ::std::string::String,
 }
 impl LogGroupSummary {
     /// <p>The type of log.</p>
-    pub fn log_type(&self) -> ::std::option::Option<&str> {
-        self.log_type.as_deref()
+    pub fn log_type(&self) -> &str {
+        use std::ops::Deref;
+        self.log_type.deref()
     }
     /// <p>The name of the log group.</p>
-    pub fn log_group_name(&self) -> ::std::option::Option<&str> {
-        self.log_group_name.as_deref()
+    pub fn log_group_name(&self) -> &str {
+        use std::ops::Deref;
+        self.log_group_name.deref()
     }
 }
 impl LogGroupSummary {
@@ -35,6 +37,7 @@ pub struct LogGroupSummaryBuilder {
 }
 impl LogGroupSummaryBuilder {
     /// <p>The type of log.</p>
+    /// This field is required.
     pub fn log_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_type = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl LogGroupSummaryBuilder {
         &self.log_type
     }
     /// <p>The name of the log group.</p>
+    /// This field is required.
     pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl LogGroupSummaryBuilder {
         &self.log_group_name
     }
     /// Consumes the builder and constructs a [`LogGroupSummary`](crate::types::LogGroupSummary).
-    pub fn build(self) -> crate::types::LogGroupSummary {
-        crate::types::LogGroupSummary {
-            log_type: self.log_type,
-            log_group_name: self.log_group_name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`log_type`](crate::types::builders::LogGroupSummaryBuilder::log_type)
+    /// - [`log_group_name`](crate::types::builders::LogGroupSummaryBuilder::log_group_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::LogGroupSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::LogGroupSummary {
+            log_type: self.log_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "log_type",
+                    "log_type was not specified but it is required when building LogGroupSummary",
+                )
+            })?,
+            log_group_name: self.log_group_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "log_group_name",
+                    "log_group_name was not specified but it is required when building LogGroupSummary",
+                )
+            })?,
+        })
     }
 }

@@ -100,7 +100,7 @@ pub fn de_delete_backup_http_error(
                 output = crate::protocol_serde::shape_incompatible_parameter_error::de_incompatible_parameter_error_json_err(_response_body, output)
                     .map_err(crate::operation::delete_backup::DeleteBackupError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::incompatible_parameter_error_correct_errors(output).build()
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -144,12 +144,12 @@ pub fn de_delete_backup_http_response(
 
 pub fn ser_delete_backup_input(
     input: &crate::operation::delete_backup::DeleteBackupInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_delete_backup_input::ser_delete_backup_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_delete_backup(

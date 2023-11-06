@@ -15,12 +15,16 @@ pub struct HeatMapSortConfiguration {
 }
 impl HeatMapSortConfiguration {
     /// <p>The field sort configuration of the rows fields.</p>
-    pub fn heat_map_row_sort(&self) -> ::std::option::Option<&[crate::types::FieldSortOptions]> {
-        self.heat_map_row_sort.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.heat_map_row_sort.is_none()`.
+    pub fn heat_map_row_sort(&self) -> &[crate::types::FieldSortOptions] {
+        self.heat_map_row_sort.as_deref().unwrap_or_default()
     }
     /// <p>The column sort configuration for heat map for columns that aren't a part of a field well.</p>
-    pub fn heat_map_column_sort(&self) -> ::std::option::Option<&[crate::types::FieldSortOptions]> {
-        self.heat_map_column_sort.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.heat_map_column_sort.is_none()`.
+    pub fn heat_map_column_sort(&self) -> &[crate::types::FieldSortOptions] {
+        self.heat_map_column_sort.as_deref().unwrap_or_default()
     }
     /// <p>The limit on the number of rows that are displayed in a heat map.</p>
     pub fn heat_map_row_items_limit_configuration(&self) -> ::std::option::Option<&crate::types::ItemsLimitConfiguration> {

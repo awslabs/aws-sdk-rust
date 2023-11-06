@@ -84,8 +84,10 @@ impl ReceiveMessageInput {
     /// <li> <p> <code>MessageGroupId</code> – Returns the value provided by the producer that calls the <code> <code>SendMessage</code> </code> action. Messages with the same <code>MessageGroupId</code> are returned in sequence.</p> </li>
     /// <li> <p> <code>SequenceNumber</code> – Returns the value provided by Amazon SQS.</p> </li>
     /// </ul>
-    pub fn attribute_names(&self) -> ::std::option::Option<&[crate::types::QueueAttributeName]> {
-        self.attribute_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attribute_names.is_none()`.
+    pub fn attribute_names(&self) -> &[crate::types::QueueAttributeName] {
+        self.attribute_names.as_deref().unwrap_or_default()
     }
     /// <p>The name of the message attribute, where <i>N</i> is the index.</p>
     /// <ul>
@@ -96,8 +98,10 @@ impl ReceiveMessageInput {
     /// <li> <p>The name can be up to 256 characters long.</p> </li>
     /// </ul>
     /// <p>When using <code>ReceiveMessage</code>, you can send a list of attribute names to receive, or you can return all of the attributes by specifying <code>All</code> or <code>.*</code> in your request. You can also use all message attributes starting with a prefix, for example <code>bar.*</code>.</p>
-    pub fn message_attribute_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.message_attribute_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.message_attribute_names.is_none()`.
+    pub fn message_attribute_names(&self) -> &[::std::string::String] {
+        self.message_attribute_names.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of messages to return. Amazon SQS never returns more messages than this value (however, fewer messages might be returned). Valid values: 1 to 10. Default: 1.</p>
     pub fn max_number_of_messages(&self) -> ::std::option::Option<i32> {
@@ -155,6 +159,7 @@ pub struct ReceiveMessageInputBuilder {
 impl ReceiveMessageInputBuilder {
     /// <p>The URL of the Amazon SQS queue from which messages are received.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
+    /// This field is required.
     pub fn queue_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_url = ::std::option::Option::Some(input.into());
         self
@@ -392,7 +397,7 @@ impl ReceiveMessageInputBuilder {
     /// Consumes the builder and constructs a [`ReceiveMessageInput`](crate::operation::receive_message::ReceiveMessageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::receive_message::ReceiveMessageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::receive_message::ReceiveMessageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::receive_message::ReceiveMessageInput {
             queue_url: self.queue_url,
             attribute_names: self.attribute_names,

@@ -2,7 +2,7 @@
 pub fn ser_message_template_type(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MessageTemplateType,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.sms_message {
         object.key("SMSMessage").string(var_1.as_str());
     }

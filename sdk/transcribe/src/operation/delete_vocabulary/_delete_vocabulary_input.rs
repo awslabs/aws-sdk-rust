@@ -27,6 +27,7 @@ pub struct DeleteVocabularyInputBuilder {
 }
 impl DeleteVocabularyInputBuilder {
     /// <p>The name of the custom vocabulary you want to delete. Custom vocabulary names are case sensitive.</p>
+    /// This field is required.
     pub fn vocabulary_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vocabulary_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteVocabularyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteVocabularyInput`](crate::operation::delete_vocabulary::DeleteVocabularyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_vocabulary::DeleteVocabularyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_vocabulary::DeleteVocabularyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_vocabulary::DeleteVocabularyInput {
             vocabulary_name: self.vocabulary_name,
         })

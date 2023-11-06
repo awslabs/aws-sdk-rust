@@ -7,7 +7,7 @@ pub struct Job {
     /// <p> Describes the summary for an execution job for an Amplify app. </p>
     pub summary: ::std::option::Option<crate::types::JobSummary>,
     /// <p> The execution steps for an execution job, for an Amplify app. </p>
-    pub steps: ::std::option::Option<::std::vec::Vec<crate::types::Step>>,
+    pub steps: ::std::vec::Vec<crate::types::Step>,
 }
 impl Job {
     /// <p> Describes the summary for an execution job for an Amplify app. </p>
@@ -15,8 +15,9 @@ impl Job {
         self.summary.as_ref()
     }
     /// <p> The execution steps for an execution job, for an Amplify app. </p>
-    pub fn steps(&self) -> ::std::option::Option<&[crate::types::Step]> {
-        self.steps.as_deref()
+    pub fn steps(&self) -> &[crate::types::Step] {
+        use std::ops::Deref;
+        self.steps.deref()
     }
 }
 impl Job {
@@ -35,6 +36,7 @@ pub struct JobBuilder {
 }
 impl JobBuilder {
     /// <p> Describes the summary for an execution job for an Amplify app. </p>
+    /// This field is required.
     pub fn summary(mut self, input: crate::types::JobSummary) -> Self {
         self.summary = ::std::option::Option::Some(input);
         self
@@ -69,10 +71,17 @@ impl JobBuilder {
         &self.steps
     }
     /// Consumes the builder and constructs a [`Job`](crate::types::Job).
-    pub fn build(self) -> crate::types::Job {
-        crate::types::Job {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`steps`](crate::types::builders::JobBuilder::steps)
+    pub fn build(self) -> ::std::result::Result<crate::types::Job, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Job {
             summary: self.summary,
-            steps: self.steps,
-        }
+            steps: self.steps.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "steps",
+                    "steps was not specified but it is required when building Job",
+                )
+            })?,
+        })
     }
 }

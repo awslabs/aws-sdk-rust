@@ -34,6 +34,7 @@ pub struct DescribeFhirImportJobOutputBuilder {
 }
 impl DescribeFhirImportJobOutputBuilder {
     /// <p>The properties of the Import job request, including the ID, ARN, name, and the status of the job.</p>
+    /// This field is required.
     pub fn import_job_properties(mut self, input: crate::types::ImportJobProperties) -> Self {
         self.import_job_properties = ::std::option::Option::Some(input);
         self

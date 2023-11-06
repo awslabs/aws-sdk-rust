@@ -50,7 +50,7 @@ impl GetLoadBalancerTlsPoliciesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_load_balancer_tls_policies::GetLoadBalancerTlsPoliciesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_load_balancer_tls_policies::GetLoadBalancerTlsPoliciesInput { page_token: self.page_token })
     }

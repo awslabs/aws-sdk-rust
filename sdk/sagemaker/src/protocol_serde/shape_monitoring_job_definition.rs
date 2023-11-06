@@ -2,7 +2,7 @@
 pub fn ser_monitoring_job_definition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MonitoringJobDefinition,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.baseline_config {
         #[allow(unused_mut)]
         let mut object_2 = object.key("BaselineConfig").start_object();
@@ -134,7 +134,7 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::monitoring_job_definition_correct_errors(builder).build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

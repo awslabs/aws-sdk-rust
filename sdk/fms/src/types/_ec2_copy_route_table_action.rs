@@ -56,6 +56,7 @@ impl Ec2CopyRouteTableActionBuilder {
         &self.description
     }
     /// <p>The VPC ID of the copied EC2 route table that is associated with the remediation action.</p>
+    /// This field is required.
     pub fn vpc_id(mut self, input: crate::types::ActionTarget) -> Self {
         self.vpc_id = ::std::option::Option::Some(input);
         self
@@ -70,6 +71,7 @@ impl Ec2CopyRouteTableActionBuilder {
         &self.vpc_id
     }
     /// <p>The ID of the copied EC2 route table that is associated with the remediation action.</p>
+    /// This field is required.
     pub fn route_table_id(mut self, input: crate::types::ActionTarget) -> Self {
         self.route_table_id = ::std::option::Option::Some(input);
         self

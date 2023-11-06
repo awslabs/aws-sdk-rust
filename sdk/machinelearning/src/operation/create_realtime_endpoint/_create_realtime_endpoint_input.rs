@@ -27,6 +27,7 @@ pub struct CreateRealtimeEndpointInputBuilder {
 }
 impl CreateRealtimeEndpointInputBuilder {
     /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
+    /// This field is required.
     pub fn ml_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ml_model_id = ::std::option::Option::Some(input.into());
         self
@@ -43,8 +44,10 @@ impl CreateRealtimeEndpointInputBuilder {
     /// Consumes the builder and constructs a [`CreateRealtimeEndpointInput`](crate::operation::create_realtime_endpoint::CreateRealtimeEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_realtime_endpoint::CreateRealtimeEndpointInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_realtime_endpoint::CreateRealtimeEndpointInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_realtime_endpoint::CreateRealtimeEndpointInput {
             ml_model_id: self.ml_model_id,
         })

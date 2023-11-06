@@ -126,6 +126,7 @@ pub struct PutScalingPolicyInputBuilder {
 }
 impl PutScalingPolicyInputBuilder {
     /// <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique. A fleet can have only one scaling policy with the same name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -140,6 +141,7 @@ impl PutScalingPolicyInputBuilder {
         &self.name
     }
     /// <p>A unique identifier for the fleet to apply this policy to. You can use either the fleet ID or ARN value. The fleet cannot be in any of the following statuses: ERROR or DELETING.</p>
+    /// This field is required.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
         self
@@ -252,6 +254,7 @@ impl PutScalingPolicyInputBuilder {
     /// <li> <p> <b>QueueDepth</b> -- Pending game session placement requests, in any queue, where the current fleet is the top-priority destination.</p> </li>
     /// <li> <p> <b>WaitTime</b> -- Current wait time for pending game session placement requests, in any queue, where the current fleet is the top-priority destination. </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn metric_name(mut self, input: crate::types::MetricName) -> Self {
         self.metric_name = ::std::option::Option::Some(input);
         self
@@ -322,7 +325,7 @@ impl PutScalingPolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutScalingPolicyInput`](crate::operation::put_scaling_policy::PutScalingPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_scaling_policy::PutScalingPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_scaling_policy::PutScalingPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_scaling_policy::PutScalingPolicyInput {
             name: self.name,
             fleet_id: self.fleet_id,

@@ -34,6 +34,7 @@ pub struct GetPlaceOutputBuilder {
 }
 impl GetPlaceOutputBuilder {
     /// <p>Details about the result, such as its address and position.</p>
+    /// This field is required.
     pub fn place(mut self, input: crate::types::Place) -> Self {
         self.place = ::std::option::Option::Some(input);
         self

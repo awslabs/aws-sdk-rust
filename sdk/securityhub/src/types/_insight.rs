@@ -49,6 +49,7 @@ pub struct InsightBuilder {
 }
 impl InsightBuilder {
     /// <p>The ARN of a Security Hub insight.</p>
+    /// This field is required.
     pub fn insight_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.insight_arn = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl InsightBuilder {
         &self.insight_arn
     }
     /// <p>The name of a Security Hub insight.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +79,7 @@ impl InsightBuilder {
         &self.name
     }
     /// <p>One or more attributes used to filter the findings included in the insight. The insight only includes findings that match the criteria defined in the filters.</p>
+    /// This field is required.
     pub fn filters(mut self, input: crate::types::AwsSecurityFindingFilters) -> Self {
         self.filters = ::std::option::Option::Some(input);
         self
@@ -91,6 +94,7 @@ impl InsightBuilder {
         &self.filters
     }
     /// <p>The grouping attribute for the insight's findings. Indicates how to group the matching findings, and identifies the type of item that the insight applies to. For example, if an insight is grouped by resource identifier, then the insight produces a list of resource identifiers.</p>
+    /// This field is required.
     pub fn group_by_attribute(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_by_attribute = ::std::option::Option::Some(input.into());
         self

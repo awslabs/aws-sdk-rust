@@ -11,8 +11,10 @@ pub struct DescribeLocalGatewayVirtualInterfacesOutput {
 }
 impl DescribeLocalGatewayVirtualInterfacesOutput {
     /// <p>Information about the virtual interfaces.</p>
-    pub fn local_gateway_virtual_interfaces(&self) -> ::std::option::Option<&[crate::types::LocalGatewayVirtualInterface]> {
-        self.local_gateway_virtual_interfaces.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.local_gateway_virtual_interfaces.is_none()`.
+    pub fn local_gateway_virtual_interfaces(&self) -> &[crate::types::LocalGatewayVirtualInterface] {
+        self.local_gateway_virtual_interfaces.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

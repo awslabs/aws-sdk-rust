@@ -15,7 +15,7 @@ pub struct Hsm {
     /// <p>The IP address of the HSM's elastic network interface (ENI).</p>
     pub eni_ip: ::std::option::Option<::std::string::String>,
     /// <p>The HSM's identifier (ID).</p>
-    pub hsm_id: ::std::option::Option<::std::string::String>,
+    pub hsm_id: ::std::string::String,
     /// <p>The HSM's state.</p>
     pub state: ::std::option::Option<crate::types::HsmState>,
     /// <p>A description of the HSM's state.</p>
@@ -43,8 +43,9 @@ impl Hsm {
         self.eni_ip.as_deref()
     }
     /// <p>The HSM's identifier (ID).</p>
-    pub fn hsm_id(&self) -> ::std::option::Option<&str> {
-        self.hsm_id.as_deref()
+    pub fn hsm_id(&self) -> &str {
+        use std::ops::Deref;
+        self.hsm_id.deref()
     }
     /// <p>The HSM's state.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::HsmState> {
@@ -147,6 +148,7 @@ impl HsmBuilder {
         &self.eni_ip
     }
     /// <p>The HSM's identifier (ID).</p>
+    /// This field is required.
     pub fn hsm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hsm_id = ::std::option::Option::Some(input.into());
         self
@@ -189,16 +191,23 @@ impl HsmBuilder {
         &self.state_message
     }
     /// Consumes the builder and constructs a [`Hsm`](crate::types::Hsm).
-    pub fn build(self) -> crate::types::Hsm {
-        crate::types::Hsm {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`hsm_id`](crate::types::builders::HsmBuilder::hsm_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::Hsm, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Hsm {
             availability_zone: self.availability_zone,
             cluster_id: self.cluster_id,
             subnet_id: self.subnet_id,
             eni_id: self.eni_id,
             eni_ip: self.eni_ip,
-            hsm_id: self.hsm_id,
+            hsm_id: self.hsm_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "hsm_id",
+                    "hsm_id was not specified but it is required when building Hsm",
+                )
+            })?,
             state: self.state,
             state_message: self.state_message,
-        }
+        })
     }
 }

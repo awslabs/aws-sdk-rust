@@ -9,7 +9,7 @@ pub struct SignUpOutput {
     /// <p>The code delivery details returned by the server response to the user registration request.</p>
     pub code_delivery_details: ::std::option::Option<crate::types::CodeDeliveryDetailsType>,
     /// <p>The UUID of the authenticated user. This isn't the same as <code>username</code>.</p>
-    pub user_sub: ::std::option::Option<::std::string::String>,
+    pub user_sub: ::std::string::String,
     _request_id: Option<String>,
 }
 impl SignUpOutput {
@@ -22,8 +22,9 @@ impl SignUpOutput {
         self.code_delivery_details.as_ref()
     }
     /// <p>The UUID of the authenticated user. This isn't the same as <code>username</code>.</p>
-    pub fn user_sub(&self) -> ::std::option::Option<&str> {
-        self.user_sub.as_deref()
+    pub fn user_sub(&self) -> &str {
+        use std::ops::Deref;
+        self.user_sub.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for SignUpOutput {
@@ -49,6 +50,7 @@ pub struct SignUpOutputBuilder {
 }
 impl SignUpOutputBuilder {
     /// <p>A response from the server indicating that a user registration has been confirmed.</p>
+    /// This field is required.
     pub fn user_confirmed(mut self, input: bool) -> Self {
         self.user_confirmed = ::std::option::Option::Some(input);
         self
@@ -77,6 +79,7 @@ impl SignUpOutputBuilder {
         &self.code_delivery_details
     }
     /// <p>The UUID of the authenticated user. This isn't the same as <code>username</code>.</p>
+    /// This field is required.
     pub fn user_sub(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_sub = ::std::option::Option::Some(input.into());
         self
@@ -100,12 +103,19 @@ impl SignUpOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SignUpOutput`](crate::operation::sign_up::SignUpOutput).
-    pub fn build(self) -> crate::operation::sign_up::SignUpOutput {
-        crate::operation::sign_up::SignUpOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`user_sub`](crate::operation::sign_up::builders::SignUpOutputBuilder::user_sub)
+    pub fn build(self) -> ::std::result::Result<crate::operation::sign_up::SignUpOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::sign_up::SignUpOutput {
             user_confirmed: self.user_confirmed.unwrap_or_default(),
             code_delivery_details: self.code_delivery_details,
-            user_sub: self.user_sub,
+            user_sub: self.user_sub.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "user_sub",
+                    "user_sub was not specified but it is required when building SignUpOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

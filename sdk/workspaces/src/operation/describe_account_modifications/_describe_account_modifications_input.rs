@@ -45,7 +45,7 @@ impl DescribeAccountModificationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_account_modifications::DescribeAccountModificationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_account_modifications::DescribeAccountModificationsInput { next_token: self.next_token })
     }

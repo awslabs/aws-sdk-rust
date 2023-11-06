@@ -41,6 +41,7 @@ pub struct RestoreFromRecoveryPointInputBuilder {
 }
 impl RestoreFromRecoveryPointInputBuilder {
     /// <p>The unique identifier of the recovery point to restore from.</p>
+    /// This field is required.
     pub fn recovery_point_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recovery_point_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl RestoreFromRecoveryPointInputBuilder {
         &self.recovery_point_id
     }
     /// <p>The name of the namespace to restore data into.</p>
+    /// This field is required.
     pub fn namespace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl RestoreFromRecoveryPointInputBuilder {
         &self.namespace_name
     }
     /// <p>The name of the workgroup used to restore data.</p>
+    /// This field is required.
     pub fn workgroup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workgroup_name = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +90,7 @@ impl RestoreFromRecoveryPointInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_from_recovery_point::RestoreFromRecoveryPointInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::restore_from_recovery_point::RestoreFromRecoveryPointInput {
             recovery_point_id: self.recovery_point_id,

@@ -16,16 +16,22 @@ pub struct ListLogSourcesInput {
 }
 impl ListLogSourcesInput {
     /// <p>The list of Amazon Web Services accounts for which log sources are displayed.</p>
-    pub fn accounts(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.accounts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accounts.is_none()`.
+    pub fn accounts(&self) -> &[::std::string::String] {
+        self.accounts.as_deref().unwrap_or_default()
     }
     /// <p>The list of regions for which log sources are displayed.</p>
-    pub fn regions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.regions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regions.is_none()`.
+    pub fn regions(&self) -> &[::std::string::String] {
+        self.regions.as_deref().unwrap_or_default()
     }
     /// <p>The list of sources for which log sources are displayed.</p>
-    pub fn sources(&self) -> ::std::option::Option<&[crate::types::LogSourceResource]> {
-        self.sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
+    pub fn sources(&self) -> &[crate::types::LogSourceResource] {
+        self.sources.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of accounts for which the log sources are displayed.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -145,7 +151,7 @@ impl ListLogSourcesInputBuilder {
     /// Consumes the builder and constructs a [`ListLogSourcesInput`](crate::operation::list_log_sources::ListLogSourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_log_sources::ListLogSourcesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_log_sources::ListLogSourcesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_log_sources::ListLogSourcesInput {
             accounts: self.accounts,
             regions: self.regions,

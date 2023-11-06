@@ -2,7 +2,7 @@
 pub fn ser_file_group_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FileGroupSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.destination {
         object.key("destination").string(var_1.as_str());
     }

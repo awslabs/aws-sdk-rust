@@ -41,6 +41,7 @@ pub struct ListThesauriInputBuilder {
 }
 impl ListThesauriInputBuilder {
     /// <p>The identifier of the index with one or more thesauri.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +84,9 @@ impl ListThesauriInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListThesauriInput`](crate::operation::list_thesauri::ListThesauriInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_thesauri::ListThesauriInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_thesauri::ListThesauriInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_thesauri::ListThesauriInput {
             index_id: self.index_id,
             next_token: self.next_token,

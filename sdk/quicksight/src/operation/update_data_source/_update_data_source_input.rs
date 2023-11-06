@@ -82,6 +82,7 @@ pub struct UpdateDataSourceInputBuilder {
 }
 impl UpdateDataSourceInputBuilder {
     /// <p>The Amazon Web Services account ID.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -96,6 +97,7 @@ impl UpdateDataSourceInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account. </p>
+    /// This field is required.
     pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_id = ::std::option::Option::Some(input.into());
         self
@@ -110,6 +112,7 @@ impl UpdateDataSourceInputBuilder {
         &self.data_source_id
     }
     /// <p>A display name for the data source.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -182,7 +185,7 @@ impl UpdateDataSourceInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDataSourceInput`](crate::operation::update_data_source::UpdateDataSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_data_source::UpdateDataSourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_data_source::UpdateDataSourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_data_source::UpdateDataSourceInput {
             aws_account_id: self.aws_account_id,
             data_source_id: self.data_source_id,

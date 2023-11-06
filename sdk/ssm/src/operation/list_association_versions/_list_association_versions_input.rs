@@ -41,6 +41,7 @@ pub struct ListAssociationVersionsInputBuilder {
 }
 impl ListAssociationVersionsInputBuilder {
     /// <p>The association ID for which you want to view all versions.</p>
+    /// This field is required.
     pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListAssociationVersionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_association_versions::ListAssociationVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_association_versions::ListAssociationVersionsInput {
             association_id: self.association_id,

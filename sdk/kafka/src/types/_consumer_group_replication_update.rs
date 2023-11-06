@@ -15,12 +15,16 @@ pub struct ConsumerGroupReplicationUpdate {
 }
 impl ConsumerGroupReplicationUpdate {
     /// <p>List of regular expression patterns indicating the consumer groups that should not be replicated.</p>
-    pub fn consumer_groups_to_exclude(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.consumer_groups_to_exclude.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.consumer_groups_to_exclude.is_none()`.
+    pub fn consumer_groups_to_exclude(&self) -> &[::std::string::String] {
+        self.consumer_groups_to_exclude.as_deref().unwrap_or_default()
     }
     /// <p>List of regular expression patterns indicating the consumer groups to copy.</p>
-    pub fn consumer_groups_to_replicate(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.consumer_groups_to_replicate.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.consumer_groups_to_replicate.is_none()`.
+    pub fn consumer_groups_to_replicate(&self) -> &[::std::string::String] {
+        self.consumer_groups_to_replicate.as_deref().unwrap_or_default()
     }
     /// <p>Enables synchronization of consumer groups to target cluster.</p>
     pub fn detect_and_copy_new_consumer_groups(&self) -> ::std::option::Option<bool> {
@@ -89,6 +93,7 @@ impl ConsumerGroupReplicationUpdateBuilder {
         &self.consumer_groups_to_replicate
     }
     /// <p>Enables synchronization of consumer groups to target cluster.</p>
+    /// This field is required.
     pub fn detect_and_copy_new_consumer_groups(mut self, input: bool) -> Self {
         self.detect_and_copy_new_consumer_groups = ::std::option::Option::Some(input);
         self
@@ -103,6 +108,7 @@ impl ConsumerGroupReplicationUpdateBuilder {
         &self.detect_and_copy_new_consumer_groups
     }
     /// <p>Enables synchronization of consumer group offsets to target cluster. The translated offsets will be written to topic __consumer_offsets.</p>
+    /// This field is required.
     pub fn synchronise_consumer_group_offsets(mut self, input: bool) -> Self {
         self.synchronise_consumer_group_offsets = ::std::option::Option::Some(input);
         self

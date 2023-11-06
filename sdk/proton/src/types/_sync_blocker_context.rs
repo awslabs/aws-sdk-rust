@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SyncBlockerContext {
     /// <p>The key for the sync blocker context.</p>
-    pub key: ::std::option::Option<::std::string::String>,
+    pub key: ::std::string::String,
     /// <p>The value of the sync blocker context.</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
 }
 impl SyncBlockerContext {
     /// <p>The key for the sync blocker context.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
-        self.key.as_deref()
+    pub fn key(&self) -> &str {
+        use std::ops::Deref;
+        self.key.deref()
     }
     /// <p>The value of the sync blocker context.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
 }
 impl SyncBlockerContext {
@@ -35,6 +37,7 @@ pub struct SyncBlockerContextBuilder {
 }
 impl SyncBlockerContextBuilder {
     /// <p>The key for the sync blocker context.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl SyncBlockerContextBuilder {
         &self.key
     }
     /// <p>The value of the sync blocker context.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl SyncBlockerContextBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`SyncBlockerContext`](crate::types::SyncBlockerContext).
-    pub fn build(self) -> crate::types::SyncBlockerContext {
-        crate::types::SyncBlockerContext {
-            key: self.key,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key`](crate::types::builders::SyncBlockerContextBuilder::key)
+    /// - [`value`](crate::types::builders::SyncBlockerContextBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::SyncBlockerContext, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SyncBlockerContext {
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building SyncBlockerContext",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building SyncBlockerContext",
+                )
+            })?,
+        })
     }
 }

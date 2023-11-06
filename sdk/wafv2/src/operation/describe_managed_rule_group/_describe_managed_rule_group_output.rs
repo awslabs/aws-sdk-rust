@@ -43,8 +43,10 @@ impl DescribeManagedRuleGroupOutput {
         self.capacity
     }
     /// <p></p>
-    pub fn rules(&self) -> ::std::option::Option<&[crate::types::RuleSummary]> {
-        self.rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
+    pub fn rules(&self) -> &[crate::types::RuleSummary] {
+        self.rules.as_deref().unwrap_or_default()
     }
     /// <p>The label namespace prefix for this rule group. All labels added by rules in this rule group have this prefix. </p>
     /// <ul>
@@ -59,12 +61,16 @@ impl DescribeManagedRuleGroupOutput {
         self.label_namespace.as_deref()
     }
     /// <p>The labels that one or more rules in this rule group add to matching web requests. These labels are defined in the <code>RuleLabels</code> for a <code>Rule</code>.</p>
-    pub fn available_labels(&self) -> ::std::option::Option<&[crate::types::LabelSummary]> {
-        self.available_labels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.available_labels.is_none()`.
+    pub fn available_labels(&self) -> &[crate::types::LabelSummary] {
+        self.available_labels.as_deref().unwrap_or_default()
     }
     /// <p>The labels that one or more rules in this rule group match against in label match statements. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <code>Statement</code> definition of a rule. </p>
-    pub fn consumed_labels(&self) -> ::std::option::Option<&[crate::types::LabelSummary]> {
-        self.consumed_labels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.consumed_labels.is_none()`.
+    pub fn consumed_labels(&self) -> &[crate::types::LabelSummary] {
+        self.consumed_labels.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeManagedRuleGroupOutput {

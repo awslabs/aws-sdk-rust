@@ -10,8 +10,10 @@ pub struct DescribeJobFlowsOutput {
 }
 impl DescribeJobFlowsOutput {
     /// <p>A list of job flows matching the parameters supplied.</p>
-    pub fn job_flows(&self) -> ::std::option::Option<&[crate::types::JobFlowDetail]> {
-        self.job_flows.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_flows.is_none()`.
+    pub fn job_flows(&self) -> &[crate::types::JobFlowDetail] {
+        self.job_flows.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeJobFlowsOutput {

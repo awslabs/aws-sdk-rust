@@ -62,6 +62,7 @@ pub struct GetUsageStatisticsInputBuilder {
 }
 impl GetUsageStatisticsInputBuilder {
     /// <p>The ID of the detector that specifies the GuardDuty service whose usage statistics you want to retrieve.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl GetUsageStatisticsInputBuilder {
         &self.detector_id
     }
     /// <p>The type of usage statistics to retrieve.</p>
+    /// This field is required.
     pub fn usage_statistic_type(mut self, input: crate::types::UsageStatisticType) -> Self {
         self.usage_statistic_type = ::std::option::Option::Some(input);
         self
@@ -90,6 +92,7 @@ impl GetUsageStatisticsInputBuilder {
         &self.usage_statistic_type
     }
     /// <p>Represents the criteria used for querying usage.</p>
+    /// This field is required.
     pub fn usage_criteria(mut self, input: crate::types::UsageCriteria) -> Self {
         self.usage_criteria = ::std::option::Option::Some(input);
         self
@@ -148,7 +151,8 @@ impl GetUsageStatisticsInputBuilder {
     /// Consumes the builder and constructs a [`GetUsageStatisticsInput`](crate::operation::get_usage_statistics::GetUsageStatisticsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_usage_statistics::GetUsageStatisticsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_usage_statistics::GetUsageStatisticsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_usage_statistics::GetUsageStatisticsInput {
             detector_id: self.detector_id,
             usage_statistic_type: self.usage_statistic_type,

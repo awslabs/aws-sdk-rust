@@ -14,8 +14,10 @@ impl CreateGlobalTableInput {
         self.global_table_name.as_deref()
     }
     /// <p>The Regions where the global table needs to be created.</p>
-    pub fn replication_group(&self) -> ::std::option::Option<&[crate::types::Replica]> {
-        self.replication_group.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_group.is_none()`.
+    pub fn replication_group(&self) -> &[crate::types::Replica] {
+        self.replication_group.as_deref().unwrap_or_default()
     }
 }
 impl CreateGlobalTableInput {
@@ -34,6 +36,7 @@ pub struct CreateGlobalTableInputBuilder {
 }
 impl CreateGlobalTableInputBuilder {
     /// <p>The global table name.</p>
+    /// This field is required.
     pub fn global_table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_table_name = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +73,7 @@ impl CreateGlobalTableInputBuilder {
     /// Consumes the builder and constructs a [`CreateGlobalTableInput`](crate::operation::create_global_table::CreateGlobalTableInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_global_table::CreateGlobalTableInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_global_table::CreateGlobalTableInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_global_table::CreateGlobalTableInput {
             global_table_name: self.global_table_name,
             replication_group: self.replication_group,

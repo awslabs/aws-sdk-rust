@@ -31,6 +31,7 @@ pub struct ListIdentityPoliciesInputBuilder {
 impl ListIdentityPoliciesInputBuilder {
     /// <p>The identity that is associated with the policy for which the policies are listed. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
     /// <p>To successfully call this operation, you must own the identity.</p>
+    /// This field is required.
     pub fn identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity = ::std::option::Option::Some(input.into());
         self
@@ -49,7 +50,7 @@ impl ListIdentityPoliciesInputBuilder {
     /// Consumes the builder and constructs a [`ListIdentityPoliciesInput`](crate::operation::list_identity_policies::ListIdentityPoliciesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_identity_policies::ListIdentityPoliciesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_identity_policies::ListIdentityPoliciesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_identity_policies::ListIdentityPoliciesInput { identity: self.identity })
     }

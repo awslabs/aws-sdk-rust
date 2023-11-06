@@ -27,6 +27,7 @@ pub struct DeleteRecommenderConfigurationInputBuilder {
 }
 impl DeleteRecommenderConfigurationInputBuilder {
     /// <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
+    /// This field is required.
     pub fn recommender_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommender_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteRecommenderConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_recommender_configuration::DeleteRecommenderConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_recommender_configuration::DeleteRecommenderConfigurationInput {
             recommender_id: self.recommender_id,

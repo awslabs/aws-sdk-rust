@@ -44,8 +44,10 @@ impl DescribeLocationObjectStorageOutput {
         self.server_protocol.as_ref()
     }
     /// <p>The ARNs of the DataSync agents that can securely connect with your location.</p>
-    pub fn agent_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.agent_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agent_arns.is_none()`.
+    pub fn agent_arns(&self) -> &[::std::string::String] {
+        self.agent_arns.as_deref().unwrap_or_default()
     }
     /// <p>The time that the location was created.</p>
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

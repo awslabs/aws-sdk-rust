@@ -77,6 +77,7 @@ impl WriteEventStreamBuilder {
     /// </replaceable>:deliverystream/<replaceable>
     /// stream_name
     /// </replaceable> </p>
+    /// This field is required.
     pub fn destination_stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_stream_arn = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +120,7 @@ impl WriteEventStreamBuilder {
         &self.destination_stream_arn
     }
     /// <p>The AWS Identity and Access Management (IAM) role that authorizes Amazon Pinpoint to publish event data to the stream in your AWS account.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self

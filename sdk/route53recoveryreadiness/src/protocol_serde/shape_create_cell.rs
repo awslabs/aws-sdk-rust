@@ -114,12 +114,12 @@ pub fn de_create_cell_http_response(
 
 pub fn ser_create_cell_input(
     input: &crate::operation::create_cell::CreateCellInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_cell_input::ser_create_cell_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_create_cell(
@@ -148,10 +148,10 @@ pub(crate) fn de_create_cell(
                     );
                 }
                 "cells" => {
-                    builder = builder.set_cells(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                    builder = builder.set_cells(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                 }
                 "parentReadinessScopes" => {
-                    builder = builder.set_parent_readiness_scopes(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                    builder = builder.set_parent_readiness_scopes(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                 }
                 "tags" => {
                     builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);

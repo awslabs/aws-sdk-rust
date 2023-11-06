@@ -34,6 +34,7 @@ pub struct SyncResourceInputBuilder {
 }
 impl SyncResourceInputBuilder {
     /// <p>The type of resource of which the application will be associated.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
@@ -48,6 +49,7 @@ impl SyncResourceInputBuilder {
         &self.resource_type
     }
     /// <p>An entity you can work with and specify with a name or ID. Examples include an Amazon EC2 instance, an Amazon Web Services CloudFormation stack, or an Amazon S3 bucket.</p>
+    /// This field is required.
     pub fn resource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,9 @@ impl SyncResourceInputBuilder {
         &self.resource
     }
     /// Consumes the builder and constructs a [`SyncResourceInput`](crate::operation::sync_resource::SyncResourceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::sync_resource::SyncResourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::sync_resource::SyncResourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::sync_resource::SyncResourceInput {
             resource_type: self.resource_type,
             resource: self.resource,

@@ -36,8 +36,8 @@ pub fn de_describe_aggregate_compliance_by_config_rules_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidNextTokenException" => crate::operation::describe_aggregate_compliance_by_config_rules::DescribeAggregateComplianceByConfigRulesError::InvalidNextTokenException({
@@ -52,8 +52,8 @@ pub fn de_describe_aggregate_compliance_by_config_rules_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NoSuchConfigurationAggregatorException" => crate::operation::describe_aggregate_compliance_by_config_rules::DescribeAggregateComplianceByConfigRulesError::NoSuchConfigurationAggregatorException({
@@ -68,8 +68,8 @@ pub fn de_describe_aggregate_compliance_by_config_rules_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ValidationException" => crate::operation::describe_aggregate_compliance_by_config_rules::DescribeAggregateComplianceByConfigRulesError::ValidationException({
@@ -84,8 +84,8 @@ pub fn de_describe_aggregate_compliance_by_config_rules_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::describe_aggregate_compliance_by_config_rules::DescribeAggregateComplianceByConfigRulesError::generic(generic)
@@ -118,7 +118,7 @@ pub fn de_describe_aggregate_compliance_by_config_rules_http_response(
 
 pub fn ser_describe_aggregate_compliance_by_config_rules_input(
     input: &crate::operation::describe_aggregate_compliance_by_config_rules::DescribeAggregateComplianceByConfigRulesInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_describe_aggregate_compliance_by_config_rules_input::ser_describe_aggregate_compliance_by_config_rules_input(
@@ -126,7 +126,7 @@ pub fn ser_describe_aggregate_compliance_by_config_rules_input(
         input,
     )?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_describe_aggregate_compliance_by_config_rules(

@@ -19,8 +19,10 @@ impl InstanceStorageInfo {
         self.total_size_in_gb
     }
     /// <p>Describes the disks that are available for the instance type.</p>
-    pub fn disks(&self) -> ::std::option::Option<&[crate::types::DiskInfo]> {
-        self.disks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.disks.is_none()`.
+    pub fn disks(&self) -> &[crate::types::DiskInfo] {
+        self.disks.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether non-volatile memory express (NVMe) is supported.</p>
     pub fn nvme_support(&self) -> ::std::option::Option<&crate::types::EphemeralNvmeSupport> {

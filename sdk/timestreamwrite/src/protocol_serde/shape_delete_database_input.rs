@@ -2,7 +2,7 @@
 pub fn ser_delete_database_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_database::DeleteDatabaseInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.database_name {
         object.key("DatabaseName").string(var_1.as_str());
     }

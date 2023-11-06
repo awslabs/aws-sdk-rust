@@ -4,33 +4,37 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateSolNetworkInstanceOutput {
     /// <p>Network instance ID.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>Network instance ARN.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>Network service descriptor ID.</p>
-    pub nsd_info_id: ::std::option::Option<::std::string::String>,
+    pub nsd_info_id: ::std::string::String,
     /// <p>Network instance name.</p>
-    pub ns_instance_name: ::std::option::Option<::std::string::String>,
+    pub ns_instance_name: ::std::string::String,
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl CreateSolNetworkInstanceOutput {
     /// <p>Network instance ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>Network instance ARN.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>Network service descriptor ID.</p>
-    pub fn nsd_info_id(&self) -> ::std::option::Option<&str> {
-        self.nsd_info_id.as_deref()
+    pub fn nsd_info_id(&self) -> &str {
+        use std::ops::Deref;
+        self.nsd_info_id.deref()
     }
     /// <p>Network instance name.</p>
-    pub fn ns_instance_name(&self) -> ::std::option::Option<&str> {
-        self.ns_instance_name.as_deref()
+    pub fn ns_instance_name(&self) -> &str {
+        use std::ops::Deref;
+        self.ns_instance_name.deref()
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -74,6 +78,7 @@ pub struct CreateSolNetworkInstanceOutputBuilder {
 }
 impl CreateSolNetworkInstanceOutputBuilder {
     /// <p>Network instance ID.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -88,6 +93,7 @@ impl CreateSolNetworkInstanceOutputBuilder {
         &self.id
     }
     /// <p>Network instance ARN.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -102,6 +108,7 @@ impl CreateSolNetworkInstanceOutputBuilder {
         &self.arn
     }
     /// <p>Network service descriptor ID.</p>
+    /// This field is required.
     pub fn nsd_info_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nsd_info_id = ::std::option::Option::Some(input.into());
         self
@@ -116,6 +123,7 @@ impl CreateSolNetworkInstanceOutputBuilder {
         &self.nsd_info_id
     }
     /// <p>Network instance name.</p>
+    /// This field is required.
     pub fn ns_instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ns_instance_name = ::std::option::Option::Some(input.into());
         self
@@ -159,15 +167,45 @@ impl CreateSolNetworkInstanceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateSolNetworkInstanceOutput`](crate::operation::create_sol_network_instance::CreateSolNetworkInstanceOutput).
-    pub fn build(self) -> crate::operation::create_sol_network_instance::CreateSolNetworkInstanceOutput {
-        crate::operation::create_sol_network_instance::CreateSolNetworkInstanceOutput {
-            id: self.id,
-            arn: self.arn,
-            nsd_info_id: self.nsd_info_id,
-            ns_instance_name: self.ns_instance_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::create_sol_network_instance::builders::CreateSolNetworkInstanceOutputBuilder::id)
+    /// - [`arn`](crate::operation::create_sol_network_instance::builders::CreateSolNetworkInstanceOutputBuilder::arn)
+    /// - [`nsd_info_id`](crate::operation::create_sol_network_instance::builders::CreateSolNetworkInstanceOutputBuilder::nsd_info_id)
+    /// - [`ns_instance_name`](crate::operation::create_sol_network_instance::builders::CreateSolNetworkInstanceOutputBuilder::ns_instance_name)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_sol_network_instance::CreateSolNetworkInstanceOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::create_sol_network_instance::CreateSolNetworkInstanceOutput {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building CreateSolNetworkInstanceOutput",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building CreateSolNetworkInstanceOutput",
+                )
+            })?,
+            nsd_info_id: self.nsd_info_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "nsd_info_id",
+                    "nsd_info_id was not specified but it is required when building CreateSolNetworkInstanceOutput",
+                )
+            })?,
+            ns_instance_name: self.ns_instance_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "ns_instance_name",
+                    "ns_instance_name was not specified but it is required when building CreateSolNetworkInstanceOutput",
+                )
+            })?,
             tags: self.tags,
             _request_id: self._request_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for CreateSolNetworkInstanceOutputBuilder {

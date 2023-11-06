@@ -3,7 +3,7 @@
 pub fn ser_forward_action_config(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::ForwardActionConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("TargetGroups");
     if let Some(var_2) = &input.target_groups {
@@ -23,6 +23,7 @@ pub fn ser_forward_action_config(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_forward_action_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::ForwardActionConfig, ::aws_smithy_xml::decode::XmlDecodeError> {

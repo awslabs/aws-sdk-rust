@@ -34,6 +34,7 @@ pub struct DeregisterTaskFromMaintenanceWindowInputBuilder {
 }
 impl DeregisterTaskFromMaintenanceWindowInputBuilder {
     /// <p>The ID of the maintenance window the task should be removed from.</p>
+    /// This field is required.
     pub fn window_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.window_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeregisterTaskFromMaintenanceWindowInputBuilder {
         &self.window_id
     }
     /// <p>The ID of the task to remove from the maintenance window.</p>
+    /// This field is required.
     pub fn window_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.window_task_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl DeregisterTaskFromMaintenanceWindowInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_task_from_maintenance_window::DeregisterTaskFromMaintenanceWindowInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::deregister_task_from_maintenance_window::DeregisterTaskFromMaintenanceWindowInput {

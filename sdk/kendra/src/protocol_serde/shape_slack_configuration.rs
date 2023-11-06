@@ -2,27 +2,27 @@
 pub fn ser_slack_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SlackConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.team_id {
-        object.key("TeamId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("TeamId").string(input.team_id.as_str());
     }
-    if let Some(var_2) = &input.secret_arn {
-        object.key("SecretArn").string(var_2.as_str());
+    {
+        object.key("SecretArn").string(input.secret_arn.as_str());
     }
-    if let Some(var_3) = &input.vpc_configuration {
+    if let Some(var_1) = &input.vpc_configuration {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("VpcConfiguration").start_object();
-        crate::protocol_serde::shape_data_source_vpc_configuration::ser_data_source_vpc_configuration(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_2 = object.key("VpcConfiguration").start_object();
+        crate::protocol_serde::shape_data_source_vpc_configuration::ser_data_source_vpc_configuration(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_5) = &input.slack_entity_list {
-        let mut array_6 = object.key("SlackEntityList").start_array();
-        for item_7 in var_5 {
+    {
+        let mut array_3 = object.key("SlackEntityList").start_array();
+        for item_4 in &input.slack_entity_list {
             {
-                array_6.value().string(item_7.as_str());
+                array_3.value().string(item_4.as_str());
             }
         }
-        array_6.finish();
+        array_3.finish();
     }
     if input.use_change_log {
         object.key("UseChangeLog").boolean(input.use_change_log);
@@ -33,62 +33,62 @@ pub fn ser_slack_configuration(
     if input.exclude_archived {
         object.key("ExcludeArchived").boolean(input.exclude_archived);
     }
-    if let Some(var_8) = &input.since_crawl_date {
-        object.key("SinceCrawlDate").string(var_8.as_str());
+    {
+        object.key("SinceCrawlDate").string(input.since_crawl_date.as_str());
     }
-    if let Some(var_9) = &input.look_back_period {
+    if let Some(var_5) = &input.look_back_period {
         object.key("LookBackPeriod").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_9).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_10) = &input.private_channel_filter {
-        let mut array_11 = object.key("PrivateChannelFilter").start_array();
-        for item_12 in var_10 {
+    if let Some(var_6) = &input.private_channel_filter {
+        let mut array_7 = object.key("PrivateChannelFilter").start_array();
+        for item_8 in var_6 {
             {
-                array_11.value().string(item_12.as_str());
+                array_7.value().string(item_8.as_str());
             }
         }
-        array_11.finish();
+        array_7.finish();
     }
-    if let Some(var_13) = &input.public_channel_filter {
-        let mut array_14 = object.key("PublicChannelFilter").start_array();
-        for item_15 in var_13 {
+    if let Some(var_9) = &input.public_channel_filter {
+        let mut array_10 = object.key("PublicChannelFilter").start_array();
+        for item_11 in var_9 {
             {
-                array_14.value().string(item_15.as_str());
+                array_10.value().string(item_11.as_str());
             }
         }
-        array_14.finish();
+        array_10.finish();
     }
-    if let Some(var_16) = &input.inclusion_patterns {
-        let mut array_17 = object.key("InclusionPatterns").start_array();
-        for item_18 in var_16 {
+    if let Some(var_12) = &input.inclusion_patterns {
+        let mut array_13 = object.key("InclusionPatterns").start_array();
+        for item_14 in var_12 {
             {
-                array_17.value().string(item_18.as_str());
+                array_13.value().string(item_14.as_str());
             }
         }
-        array_17.finish();
+        array_13.finish();
     }
-    if let Some(var_19) = &input.exclusion_patterns {
-        let mut array_20 = object.key("ExclusionPatterns").start_array();
-        for item_21 in var_19 {
+    if let Some(var_15) = &input.exclusion_patterns {
+        let mut array_16 = object.key("ExclusionPatterns").start_array();
+        for item_17 in var_15 {
             {
-                array_20.value().string(item_21.as_str());
+                array_16.value().string(item_17.as_str());
             }
         }
-        array_20.finish();
+        array_16.finish();
     }
-    if let Some(var_22) = &input.field_mappings {
-        let mut array_23 = object.key("FieldMappings").start_array();
-        for item_24 in var_22 {
+    if let Some(var_18) = &input.field_mappings {
+        let mut array_19 = object.key("FieldMappings").start_array();
+        for item_20 in var_18 {
             {
                 #[allow(unused_mut)]
-                let mut object_25 = array_23.value().start_object();
-                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_25, item_24)?;
-                object_25.finish();
+                let mut object_21 = array_19.value().start_object();
+                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_21, item_20)?;
+                object_21.finish();
             }
         }
-        array_23.finish();
+        array_19.finish();
     }
     Ok(())
 }
@@ -192,7 +192,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::slack_configuration_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

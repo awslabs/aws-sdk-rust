@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryAssistantOutput {
     /// <p>The results of the query.</p>
-    pub results: ::std::option::Option<::std::vec::Vec<crate::types::ResultData>>,
+    pub results: ::std::vec::Vec<crate::types::ResultData>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl QueryAssistantOutput {
     /// <p>The results of the query.</p>
-    pub fn results(&self) -> ::std::option::Option<&[crate::types::ResultData]> {
-        self.results.as_deref()
+    pub fn results(&self) -> &[crate::types::ResultData] {
+        use std::ops::Deref;
+        self.results.deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl QueryAssistantOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`QueryAssistantOutput`](crate::operation::query_assistant::QueryAssistantOutput).
-    pub fn build(self) -> crate::operation::query_assistant::QueryAssistantOutput {
-        crate::operation::query_assistant::QueryAssistantOutput {
-            results: self.results,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`results`](crate::operation::query_assistant::builders::QueryAssistantOutputBuilder::results)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::query_assistant::QueryAssistantOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::query_assistant::QueryAssistantOutput {
+            results: self.results.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "results",
+                    "results was not specified but it is required when building QueryAssistantOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

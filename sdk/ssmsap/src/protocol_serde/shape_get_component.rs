@@ -32,6 +32,21 @@ pub fn de_get_component_http_error(
             }
             tmp
         }),
+        "UnauthorizedException" => crate::operation::get_component::GetComponentError::UnauthorizedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::UnauthorizedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_component::GetComponentError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ValidationException" => crate::operation::get_component::GetComponentError::ValidationException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -69,12 +84,12 @@ pub fn de_get_component_http_response(
 
 pub fn ser_get_component_input(
     input: &crate::operation::get_component::GetComponentInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_get_component_input::ser_get_component_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_get_component(

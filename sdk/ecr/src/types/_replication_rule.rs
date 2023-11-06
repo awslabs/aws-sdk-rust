@@ -5,18 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicationRule {
     /// <p>An array of objects representing the destination for a replication rule.</p>
-    pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationDestination>>,
+    pub destinations: ::std::vec::Vec<crate::types::ReplicationDestination>,
     /// <p>An array of objects representing the filters for a replication rule. Specifying a repository filter for a replication rule provides a method for controlling which repositories in a private registry are replicated.</p>
     pub repository_filters: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryFilter>>,
 }
 impl ReplicationRule {
     /// <p>An array of objects representing the destination for a replication rule.</p>
-    pub fn destinations(&self) -> ::std::option::Option<&[crate::types::ReplicationDestination]> {
-        self.destinations.as_deref()
+    pub fn destinations(&self) -> &[crate::types::ReplicationDestination] {
+        use std::ops::Deref;
+        self.destinations.deref()
     }
     /// <p>An array of objects representing the filters for a replication rule. Specifying a repository filter for a replication rule provides a method for controlling which repositories in a private registry are replicated.</p>
-    pub fn repository_filters(&self) -> ::std::option::Option<&[crate::types::RepositoryFilter]> {
-        self.repository_filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.repository_filters.is_none()`.
+    pub fn repository_filters(&self) -> &[crate::types::RepositoryFilter] {
+        self.repository_filters.as_deref().unwrap_or_default()
     }
 }
 impl ReplicationRule {
@@ -75,10 +78,17 @@ impl ReplicationRuleBuilder {
         &self.repository_filters
     }
     /// Consumes the builder and constructs a [`ReplicationRule`](crate::types::ReplicationRule).
-    pub fn build(self) -> crate::types::ReplicationRule {
-        crate::types::ReplicationRule {
-            destinations: self.destinations,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`destinations`](crate::types::builders::ReplicationRuleBuilder::destinations)
+    pub fn build(self) -> ::std::result::Result<crate::types::ReplicationRule, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ReplicationRule {
+            destinations: self.destinations.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "destinations",
+                    "destinations was not specified but it is required when building ReplicationRule",
+                )
+            })?,
             repository_filters: self.repository_filters,
-        }
+        })
     }
 }

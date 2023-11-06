@@ -13,8 +13,10 @@ pub struct DescribeParameterGroupsInput {
 }
 impl DescribeParameterGroupsInput {
     /// <p>The names of the parameter groups.</p>
-    pub fn parameter_group_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.parameter_group_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameter_group_names.is_none()`.
+    pub fn parameter_group_names(&self) -> &[::std::string::String] {
+        self.parameter_group_names.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
@@ -98,7 +100,7 @@ impl DescribeParameterGroupsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_parameter_groups::DescribeParameterGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_parameter_groups::DescribeParameterGroupsInput {
             parameter_group_names: self.parameter_group_names,

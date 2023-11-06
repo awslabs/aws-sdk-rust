@@ -2,7 +2,7 @@
 pub fn ser_analysis_defaults(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AnalysisDefaults,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.default_new_sheet_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("DefaultNewSheetConfiguration").start_object();
@@ -42,7 +42,7 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::analysis_defaults_correct_errors(builder).build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

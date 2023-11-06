@@ -216,8 +216,10 @@ impl UpdateHealthCheckInput {
         self.health_threshold
     }
     /// <p>A complex type that contains one <code>ChildHealthCheck</code> element for each health check that you want to associate with a <code>CALCULATED</code> health check.</p>
-    pub fn child_health_checks(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.child_health_checks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.child_health_checks.is_none()`.
+    pub fn child_health_checks(&self) -> &[::std::string::String] {
+        self.child_health_checks.as_deref().unwrap_or_default()
     }
     /// <p>Specify whether you want Amazon Route 53 to send the value of <code>FullyQualifiedDomainName</code> to the endpoint in the <code>client_hello</code> message during <code>TLS</code> negotiation. This allows the endpoint to respond to <code>HTTPS</code> health check requests with the applicable SSL/TLS certificate.</p>
     /// <p>Some endpoints require that HTTPS requests include the host name in the <code>client_hello</code> message. If you don't enable SNI, the status of the health check will be SSL alert <code>handshake_failure</code>. A health check can also have that status for other reasons. If SNI is enabled and you're still getting the error, check the SSL/TLS configuration on your endpoint and confirm that your certificate is valid.</p>
@@ -226,8 +228,10 @@ impl UpdateHealthCheckInput {
         self.enable_sni
     }
     /// <p>A complex type that contains one <code>Region</code> element for each region that you want Amazon Route 53 health checkers to check the specified endpoint from.</p>
-    pub fn regions(&self) -> ::std::option::Option<&[crate::types::HealthCheckRegion]> {
-        self.regions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regions.is_none()`.
+    pub fn regions(&self) -> &[crate::types::HealthCheckRegion] {
+        self.regions.as_deref().unwrap_or_default()
     }
     /// <p>A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether the specified health check is healthy.</p>
     pub fn alarm_identifier(&self) -> ::std::option::Option<&crate::types::AlarmIdentifier> {
@@ -249,8 +253,10 @@ impl UpdateHealthCheckInput {
     /// <li> <p> <code>Regions</code>: Route 53 resets the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_HealthCheckConfig.html#Route53-Type-HealthCheckConfig-Regions">Regions</a> list to the default set of regions. </p> </li>
     /// <li> <p> <code>ResourcePath</code>: Route 53 resets <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_HealthCheckConfig.html#Route53-Type-HealthCheckConfig-ResourcePath">ResourcePath</a> to null.</p> </li>
     /// </ul>
-    pub fn reset_elements(&self) -> ::std::option::Option<&[crate::types::ResettableElementName]> {
-        self.reset_elements.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reset_elements.is_none()`.
+    pub fn reset_elements(&self) -> &[crate::types::ResettableElementName] {
+        self.reset_elements.as_deref().unwrap_or_default()
     }
 }
 impl UpdateHealthCheckInput {
@@ -284,6 +290,7 @@ pub struct UpdateHealthCheckInputBuilder {
 }
 impl UpdateHealthCheckInputBuilder {
     /// <p>The ID for the health check for which you want detailed information. When you created the health check, <code>CreateHealthCheck</code> returned the ID in the response, in the <code>HealthCheckId</code> element.</p>
+    /// This field is required.
     pub fn health_check_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.health_check_id = ::std::option::Option::Some(input.into());
         self
@@ -758,7 +765,7 @@ impl UpdateHealthCheckInputBuilder {
     /// Consumes the builder and constructs a [`UpdateHealthCheckInput`](crate::operation::update_health_check::UpdateHealthCheckInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_health_check::UpdateHealthCheckInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_health_check::UpdateHealthCheckInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_health_check::UpdateHealthCheckInput {
             health_check_id: self.health_check_id,
             health_check_version: self.health_check_version,

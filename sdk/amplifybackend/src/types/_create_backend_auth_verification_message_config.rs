@@ -51,6 +51,7 @@ pub struct CreateBackendAuthVerificationMessageConfigBuilder {
 }
 impl CreateBackendAuthVerificationMessageConfigBuilder {
     /// <p>The type of verification message to send.</p>
+    /// This field is required.
     pub fn delivery_method(mut self, input: crate::types::DeliveryMethod) -> Self {
         self.delivery_method = ::std::option::Option::Some(input);
         self

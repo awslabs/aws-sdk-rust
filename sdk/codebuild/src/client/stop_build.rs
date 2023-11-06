@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopBuild`](crate::operation::stop_build::builders::StopBuildFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::stop_build::builders::StopBuildFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::stop_build::builders::StopBuildFluentBuilder::set_id): <p>The ID of the build.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::stop_build::builders::StopBuildFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::stop_build::builders::StopBuildFluentBuilder::set_id):<br>required: **true**<br><p>The ID of the build.</p><br>
     /// - On success, responds with [`StopBuildOutput`](crate::operation::stop_build::StopBuildOutput) with field(s):
     ///   - [`build_value(Option<Build>)`](crate::operation::stop_build::StopBuildOutput::build_value): <p>Information about the build.</p>
     /// - On failure, responds with [`SdkError<StopBuildError>`](crate::operation::stop_build::StopBuildError)

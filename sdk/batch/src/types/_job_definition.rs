@@ -95,8 +95,10 @@ impl JobDefinition {
         self.propagate_tags
     }
     /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.</p>
-    pub fn platform_capabilities(&self) -> ::std::option::Option<&[crate::types::PlatformCapability]> {
-        self.platform_capabilities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.platform_capabilities.is_none()`.
+    pub fn platform_capabilities(&self) -> &[crate::types::PlatformCapability] {
+        self.platform_capabilities.as_deref().unwrap_or_default()
     }
     /// <p>An object with various properties that are specific to Amazon EKS based jobs. Valid values are <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be specified.</p>
     pub fn eks_properties(&self) -> ::std::option::Option<&crate::types::EksProperties> {
@@ -137,6 +139,7 @@ pub struct JobDefinitionBuilder {
 }
 impl JobDefinitionBuilder {
     /// <p>The name of the job definition.</p>
+    /// This field is required.
     pub fn job_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_definition_name = ::std::option::Option::Some(input.into());
         self
@@ -151,6 +154,7 @@ impl JobDefinitionBuilder {
         &self.job_definition_name
     }
     /// <p>The Amazon Resource Name (ARN) for the job definition.</p>
+    /// This field is required.
     pub fn job_definition_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_definition_arn = ::std::option::Option::Some(input.into());
         self
@@ -165,6 +169,7 @@ impl JobDefinitionBuilder {
         &self.job_definition_arn
     }
     /// <p>The revision of the job definition.</p>
+    /// This field is required.
     pub fn revision(mut self, input: i32) -> Self {
         self.revision = ::std::option::Option::Some(input);
         self
@@ -193,6 +198,7 @@ impl JobDefinitionBuilder {
         &self.status
     }
     /// <p>The type of job definition. It's either <code>container</code> or <code>multinode</code>. If the job is run on Fargate resources, then <code>multinode</code> isn't supported. For more information about multi-node parallel jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self

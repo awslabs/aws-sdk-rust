@@ -48,6 +48,7 @@ pub struct StartConnectionInputBuilder {
 }
 impl StartConnectionInputBuilder {
     /// <p> The serial number of the dongle. </p>
+    /// This field is required.
     pub fn device_serial_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_serial_number = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl StartConnectionInputBuilder {
         &self.device_serial_number
     }
     /// <p> The ID of the Outpost server. </p>
+    /// This field is required.
     pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl StartConnectionInputBuilder {
         &self.asset_id
     }
     /// <p> The public key of the client. </p>
+    /// This field is required.
     pub fn client_public_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_public_key = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl StartConnectionInputBuilder {
         &self.client_public_key
     }
     /// <p> The device index of the network interface on the Outpost server. </p>
+    /// This field is required.
     pub fn network_interface_device_index(mut self, input: i32) -> Self {
         self.network_interface_device_index = ::std::option::Option::Some(input);
         self
@@ -106,7 +110,7 @@ impl StartConnectionInputBuilder {
     /// Consumes the builder and constructs a [`StartConnectionInput`](crate::operation::start_connection::StartConnectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_connection::StartConnectionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_connection::StartConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_connection::StartConnectionInput {
             device_serial_number: self.device_serial_number,
             asset_id: self.asset_id,

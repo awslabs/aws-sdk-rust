@@ -27,6 +27,7 @@ pub struct GetServiceInputBuilder {
 }
 impl GetServiceInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    /// This field is required.
     pub fn service_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_identifier = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetServiceInputBuilder {
         &self.service_identifier
     }
     /// Consumes the builder and constructs a [`GetServiceInput`](crate::operation::get_service::GetServiceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_service::GetServiceInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_service::GetServiceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_service::GetServiceInput {
             service_identifier: self.service_identifier,
         })

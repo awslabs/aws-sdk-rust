@@ -208,6 +208,7 @@ pub struct RegisterInstanceInputBuilder {
 }
 impl RegisterInstanceInputBuilder {
     /// <p>The ID of the service that you want to use for settings for the instance.</p>
+    /// This field is required.
     pub fn service_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_id = ::std::option::Option::Some(input.into());
         self
@@ -232,6 +233,7 @@ impl RegisterInstanceInputBuilder {
     /// </ul> <note>
     /// <p>Do not include sensitive information in <code>InstanceId</code> if the namespace is discoverable by public DNS queries and any <code>Type</code> member of <code>DnsRecord</code> for the service contains <code>SRV</code> because the <code>InstanceId</code> is discoverable by public DNS queries.</p>
     /// </note>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -512,7 +514,7 @@ impl RegisterInstanceInputBuilder {
     /// Consumes the builder and constructs a [`RegisterInstanceInput`](crate::operation::register_instance::RegisterInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_instance::RegisterInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::register_instance::RegisterInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_instance::RegisterInstanceInput {
             service_id: self.service_id,
             instance_id: self.instance_id,

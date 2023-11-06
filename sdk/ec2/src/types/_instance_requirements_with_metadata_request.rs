@@ -14,12 +14,16 @@ pub struct InstanceRequirementsWithMetadataRequest {
 }
 impl InstanceRequirementsWithMetadataRequest {
     /// <p>The architecture type.</p>
-    pub fn architecture_types(&self) -> ::std::option::Option<&[crate::types::ArchitectureType]> {
-        self.architecture_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.architecture_types.is_none()`.
+    pub fn architecture_types(&self) -> &[crate::types::ArchitectureType] {
+        self.architecture_types.as_deref().unwrap_or_default()
     }
     /// <p>The virtualization type.</p>
-    pub fn virtualization_types(&self) -> ::std::option::Option<&[crate::types::VirtualizationType]> {
-        self.virtualization_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.virtualization_types.is_none()`.
+    pub fn virtualization_types(&self) -> &[crate::types::VirtualizationType] {
+        self.virtualization_types.as_deref().unwrap_or_default()
     }
     /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p>
     pub fn instance_requirements(&self) -> ::std::option::Option<&crate::types::InstanceRequirementsRequest> {

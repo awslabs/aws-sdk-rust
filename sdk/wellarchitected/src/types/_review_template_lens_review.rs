@@ -54,8 +54,10 @@ impl ReviewTemplateLensReview {
         self.lens_status.as_ref()
     }
     /// <p>Pillar review summaries of a lens review.</p>
-    pub fn pillar_review_summaries(&self) -> ::std::option::Option<&[crate::types::ReviewTemplatePillarReviewSummary]> {
-        self.pillar_review_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pillar_review_summaries.is_none()`.
+    pub fn pillar_review_summaries(&self) -> &[crate::types::ReviewTemplatePillarReviewSummary] {
+        self.pillar_review_summaries.as_deref().unwrap_or_default()
     }
     /// <p>The date and time recorded.</p>
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

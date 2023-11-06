@@ -3,7 +3,7 @@
 pub fn ser_type_filters(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::TypeFilters,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Category");
     if let Some(var_2) = &input.category {

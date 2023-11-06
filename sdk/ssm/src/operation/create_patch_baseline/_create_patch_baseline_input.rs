@@ -61,8 +61,10 @@ impl CreatePatchBaselineInput {
     }
     /// <p>A list of explicitly approved patches for the baseline.</p>
     /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn approved_patches(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.approved_patches.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.approved_patches.is_none()`.
+    pub fn approved_patches(&self) -> &[::std::string::String] {
+        self.approved_patches.as_deref().unwrap_or_default()
     }
     /// <p>Defines the compliance level for approved patches. When an approved patch is reported as missing, this value describes the severity of the compliance violation. The default value is <code>UNSPECIFIED</code>.</p>
     pub fn approved_patches_compliance_level(&self) -> ::std::option::Option<&crate::types::PatchComplianceLevel> {
@@ -74,8 +76,10 @@ impl CreatePatchBaselineInput {
     }
     /// <p>A list of explicitly rejected patches for the baseline.</p>
     /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn rejected_patches(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.rejected_patches.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rejected_patches.is_none()`.
+    pub fn rejected_patches(&self) -> &[::std::string::String] {
+        self.rejected_patches.as_deref().unwrap_or_default()
     }
     /// <p>The action for Patch Manager to take on patches included in the <code>RejectedPackages</code> list.</p>
     /// <ul>
@@ -90,8 +94,10 @@ impl CreatePatchBaselineInput {
         self.description.as_deref()
     }
     /// <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
-    pub fn sources(&self) -> ::std::option::Option<&[crate::types::PatchSource]> {
-        self.sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
+    pub fn sources(&self) -> &[crate::types::PatchSource] {
+        self.sources.as_deref().unwrap_or_default()
     }
     /// <p>User-provided idempotency token.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -104,8 +110,10 @@ impl CreatePatchBaselineInput {
     /// </ul> <note>
     /// <p>To add tags to an existing patch baseline, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreatePatchBaselineInput {
@@ -149,6 +157,7 @@ impl CreatePatchBaselineInputBuilder {
         &self.operating_system
     }
     /// <p>The name of the patch baseline.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -379,7 +388,7 @@ impl CreatePatchBaselineInputBuilder {
     /// Consumes the builder and constructs a [`CreatePatchBaselineInput`](crate::operation::create_patch_baseline::CreatePatchBaselineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_patch_baseline::CreatePatchBaselineInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_patch_baseline::CreatePatchBaselineInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_patch_baseline::CreatePatchBaselineInput {
             operating_system: self.operating_system,

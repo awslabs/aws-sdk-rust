@@ -2,48 +2,48 @@
 pub fn ser_project_source(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ProjectSource,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.r#type {
-        object.key("type").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("type").string(input.r#type.as_str());
     }
-    if let Some(var_2) = &input.location {
-        object.key("location").string(var_2.as_str());
+    if let Some(var_1) = &input.location {
+        object.key("location").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.git_clone_depth {
+    if let Some(var_2) = &input.git_clone_depth {
         object.key("gitCloneDepth").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_4) = &input.git_submodules_config {
+    if let Some(var_3) = &input.git_submodules_config {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("gitSubmodulesConfig").start_object();
-        crate::protocol_serde::shape_git_submodules_config::ser_git_submodules_config(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("gitSubmodulesConfig").start_object();
+        crate::protocol_serde::shape_git_submodules_config::ser_git_submodules_config(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_6) = &input.buildspec {
-        object.key("buildspec").string(var_6.as_str());
+    if let Some(var_5) = &input.buildspec {
+        object.key("buildspec").string(var_5.as_str());
     }
-    if let Some(var_7) = &input.auth {
+    if let Some(var_6) = &input.auth {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("auth").start_object();
-        crate::protocol_serde::shape_source_auth::ser_source_auth(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_7 = object.key("auth").start_object();
+        crate::protocol_serde::shape_source_auth::ser_source_auth(&mut object_7, var_6)?;
+        object_7.finish();
     }
-    if let Some(var_9) = &input.report_build_status {
-        object.key("reportBuildStatus").boolean(*var_9);
+    if let Some(var_8) = &input.report_build_status {
+        object.key("reportBuildStatus").boolean(*var_8);
     }
-    if let Some(var_10) = &input.build_status_config {
+    if let Some(var_9) = &input.build_status_config {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("buildStatusConfig").start_object();
-        crate::protocol_serde::shape_build_status_config::ser_build_status_config(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_10 = object.key("buildStatusConfig").start_object();
+        crate::protocol_serde::shape_build_status_config::ser_build_status_config(&mut object_10, var_9)?;
+        object_10.finish();
     }
-    if let Some(var_12) = &input.insecure_ssl {
-        object.key("insecureSsl").boolean(*var_12);
+    if let Some(var_11) = &input.insecure_ssl {
+        object.key("insecureSsl").boolean(*var_11);
     }
-    if let Some(var_13) = &input.source_identifier {
-        object.key("sourceIdentifier").string(var_13.as_str());
+    if let Some(var_12) = &input.source_identifier {
+        object.key("sourceIdentifier").string(var_12.as_str());
     }
     Ok(())
 }
@@ -125,7 +125,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::project_source_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

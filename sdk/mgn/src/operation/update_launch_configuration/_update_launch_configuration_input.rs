@@ -104,6 +104,7 @@ pub struct UpdateLaunchConfigurationInputBuilder {
 }
 impl UpdateLaunchConfigurationInputBuilder {
     /// <p>Update Launch configuration by Source Server ID request.</p>
+    /// This field is required.
     pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
@@ -279,7 +280,7 @@ impl UpdateLaunchConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_launch_configuration::UpdateLaunchConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_launch_configuration::UpdateLaunchConfigurationInput {
             source_server_id: self.source_server_id,

@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LabelsS3InputConfiguration {
     /// <p>The name of the S3 bucket holding the label data. </p>
-    pub bucket: ::std::option::Option<::std::string::String>,
+    pub bucket: ::std::string::String,
     /// <p> The prefix for the S3 bucket used for the label data. </p>
     pub prefix: ::std::option::Option<::std::string::String>,
 }
 impl LabelsS3InputConfiguration {
     /// <p>The name of the S3 bucket holding the label data. </p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
-        self.bucket.as_deref()
+    pub fn bucket(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket.deref()
     }
     /// <p> The prefix for the S3 bucket used for the label data. </p>
     pub fn prefix(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct LabelsS3InputConfigurationBuilder {
 }
 impl LabelsS3InputConfigurationBuilder {
     /// <p>The name of the S3 bucket holding the label data. </p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl LabelsS3InputConfigurationBuilder {
         &self.prefix
     }
     /// Consumes the builder and constructs a [`LabelsS3InputConfiguration`](crate::types::LabelsS3InputConfiguration).
-    pub fn build(self) -> crate::types::LabelsS3InputConfiguration {
-        crate::types::LabelsS3InputConfiguration {
-            bucket: self.bucket,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bucket`](crate::types::builders::LabelsS3InputConfigurationBuilder::bucket)
+    pub fn build(self) -> ::std::result::Result<crate::types::LabelsS3InputConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::LabelsS3InputConfiguration {
+            bucket: self.bucket.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "bucket",
+                    "bucket was not specified but it is required when building LabelsS3InputConfiguration",
+                )
+            })?,
             prefix: self.prefix,
-        }
+        })
     }
 }

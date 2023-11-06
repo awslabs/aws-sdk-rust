@@ -23,8 +23,10 @@ impl MetricFilterV2 {
     /// <p>The values to use for filtering data. </p>
     /// <p>Valid metric filter values for <code>INITIATION_METHOD</code>: <code>INBOUND</code> | <code>OUTBOUND</code> | <code>TRANSFER</code> | <code>QUEUE_TRANSFER</code> | <code>CALLBACK</code> | <code>API</code> </p>
     /// <p>Valid metric filter values for <code>DISCONNECT_REASON</code>: <code>CUSTOMER_DISCONNECT</code> | <code>AGENT_DISCONNECT</code> | <code>THIRD_PARTY_DISCONNECT</code> | <code>TELECOM_PROBLEM</code> | <code>BARGED</code> | <code>CONTACT_FLOW_DISCONNECT</code> | <code>OTHER</code> | <code>EXPIRED</code> | <code>API</code> </p>
-    pub fn metric_filter_values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.metric_filter_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_filter_values.is_none()`.
+    pub fn metric_filter_values(&self) -> &[::std::string::String] {
+        self.metric_filter_values.as_deref().unwrap_or_default()
     }
     /// <p>The flag to use to filter on requested metric filter values or to not filter on requested metric filter values. By default the negate is <code>false</code>, which indicates to filter on the requested metric filter. </p>
     pub fn negate(&self) -> bool {

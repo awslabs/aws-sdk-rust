@@ -17,8 +17,10 @@ impl SendMessageBatchInput {
         self.queue_url.as_deref()
     }
     /// <p>A list of <code> <code>SendMessageBatchRequestEntry</code> </code> items.</p>
-    pub fn entries(&self) -> ::std::option::Option<&[crate::types::SendMessageBatchRequestEntry]> {
-        self.entries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entries.is_none()`.
+    pub fn entries(&self) -> &[crate::types::SendMessageBatchRequestEntry] {
+        self.entries.as_deref().unwrap_or_default()
     }
 }
 impl SendMessageBatchInput {
@@ -38,6 +40,7 @@ pub struct SendMessageBatchInputBuilder {
 impl SendMessageBatchInputBuilder {
     /// <p>The URL of the Amazon SQS queue to which batched messages are sent.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
+    /// This field is required.
     pub fn queue_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_url = ::std::option::Option::Some(input.into());
         self
@@ -76,7 +79,7 @@ impl SendMessageBatchInputBuilder {
     /// Consumes the builder and constructs a [`SendMessageBatchInput`](crate::operation::send_message_batch::SendMessageBatchInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::send_message_batch::SendMessageBatchInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::send_message_batch::SendMessageBatchInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_message_batch::SendMessageBatchInput {
             queue_url: self.queue_url,
             entries: self.entries,

@@ -34,6 +34,7 @@ pub struct GetMatchingJobInputBuilder {
 }
 impl GetMatchingJobInputBuilder {
     /// <p>The name of the workflow.</p>
+    /// This field is required.
     pub fn workflow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetMatchingJobInputBuilder {
         &self.workflow_name
     }
     /// <p>The ID of the job.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl GetMatchingJobInputBuilder {
     /// Consumes the builder and constructs a [`GetMatchingJobInput`](crate::operation::get_matching_job::GetMatchingJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_matching_job::GetMatchingJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_matching_job::GetMatchingJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_matching_job::GetMatchingJobInput {
             workflow_name: self.workflow_name,
             job_id: self.job_id,

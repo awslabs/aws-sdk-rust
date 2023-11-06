@@ -63,6 +63,7 @@ pub struct ImportBackendAuthInputBuilder {
 }
 impl ImportBackendAuthInputBuilder {
     /// <p>The app ID.</p>
+    /// This field is required.
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +78,7 @@ impl ImportBackendAuthInputBuilder {
         &self.app_id
     }
     /// <p>The name of the backend environment.</p>
+    /// This field is required.
     pub fn backend_environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backend_environment_name = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +107,7 @@ impl ImportBackendAuthInputBuilder {
         &self.identity_pool_id
     }
     /// <p>The ID of the Amazon Cognito native client.</p>
+    /// This field is required.
     pub fn native_client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.native_client_id = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +122,7 @@ impl ImportBackendAuthInputBuilder {
         &self.native_client_id
     }
     /// <p>The ID of the Amazon Cognito user pool.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -133,6 +137,7 @@ impl ImportBackendAuthInputBuilder {
         &self.user_pool_id
     }
     /// <p>The ID of the Amazon Cognito web client.</p>
+    /// This field is required.
     pub fn web_client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.web_client_id = ::std::option::Option::Some(input.into());
         self
@@ -149,7 +154,7 @@ impl ImportBackendAuthInputBuilder {
     /// Consumes the builder and constructs a [`ImportBackendAuthInput`](crate::operation::import_backend_auth::ImportBackendAuthInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::import_backend_auth::ImportBackendAuthInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::import_backend_auth::ImportBackendAuthInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::import_backend_auth::ImportBackendAuthInput {
             app_id: self.app_id,
             backend_environment_name: self.backend_environment_name,

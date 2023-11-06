@@ -28,6 +28,7 @@ pub struct PutConfigurationRecorderInputBuilder {
 }
 impl PutConfigurationRecorderInputBuilder {
     /// <p>An object for the configuration recorder to record configuration changes for specified resource types.</p>
+    /// This field is required.
     pub fn configuration_recorder(mut self, input: crate::types::ConfigurationRecorder) -> Self {
         self.configuration_recorder = ::std::option::Option::Some(input);
         self
@@ -46,7 +47,7 @@ impl PutConfigurationRecorderInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_configuration_recorder::PutConfigurationRecorderInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_configuration_recorder::PutConfigurationRecorderInput {
             configuration_recorder: self.configuration_recorder,

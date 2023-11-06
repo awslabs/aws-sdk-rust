@@ -18,8 +18,10 @@ pub struct AggregatedVariablesImpactExplanation {
 }
 impl AggregatedVariablesImpactExplanation {
     /// <p> The names of all the event variables that were used to derive the aggregated variables. </p>
-    pub fn event_variable_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.event_variable_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_variable_names.is_none()`.
+    pub fn event_variable_names(&self) -> &[::std::string::String] {
+        self.event_variable_names.as_deref().unwrap_or_default()
     }
     /// <p> The relative impact of the aggregated variables in terms of magnitude on the prediction scores. </p>
     pub fn relative_impact(&self) -> ::std::option::Option<&str> {

@@ -24,8 +24,10 @@ impl ModifyHostsInput {
         self.auto_placement.as_ref()
     }
     /// <p>The IDs of the Dedicated Hosts to modify.</p>
-    pub fn host_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.host_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.host_ids.is_none()`.
+    pub fn host_ids(&self) -> &[::std::string::String] {
+        self.host_ids.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether to enable or disable host recovery for the Dedicated Host. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host recovery</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn host_recovery(&self) -> ::std::option::Option<&crate::types::HostRecovery> {
@@ -162,7 +164,7 @@ impl ModifyHostsInputBuilder {
         &self.host_maintenance
     }
     /// Consumes the builder and constructs a [`ModifyHostsInput`](crate::operation::modify_hosts::ModifyHostsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::modify_hosts::ModifyHostsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_hosts::ModifyHostsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_hosts::ModifyHostsInput {
             auto_placement: self.auto_placement,
             host_ids: self.host_ids,

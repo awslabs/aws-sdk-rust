@@ -2,7 +2,7 @@
 pub fn ser_update_configuration(
     object_4: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::UpdateConfiguration::CognitoUserPoolConfiguration(inner) => {
             #[allow(unused_mut)]
@@ -11,7 +11,7 @@ pub fn ser_update_configuration(
             object_1.finish();
         }
         crate::types::UpdateConfiguration::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "UpdateConfiguration",
             ))
         }

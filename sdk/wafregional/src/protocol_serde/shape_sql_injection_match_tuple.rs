@@ -2,15 +2,15 @@
 pub fn ser_sql_injection_match_tuple(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SqlInjectionMatchTuple,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.field_to_match {
         #[allow(unused_mut)]
         let mut object_2 = object.key("FieldToMatch").start_object();
         crate::protocol_serde::shape_field_to_match::ser_field_to_match(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.text_transformation {
-        object.key("TextTransformation").string(var_3.as_str());
+    {
+        object.key("TextTransformation").string(input.text_transformation.as_str());
     }
     Ok(())
 }
@@ -50,7 +50,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::sql_injection_match_tuple_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

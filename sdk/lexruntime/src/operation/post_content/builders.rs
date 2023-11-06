@@ -10,7 +10,7 @@ impl PostContentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::post_content::PostContentOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::post_content::PostContentError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -92,12 +92,15 @@ impl PostContentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::post_content::PostContentOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::post_content::PostContentError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::post_content::PostContent::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -106,20 +109,15 @@ impl PostContentFluentBuilder {
         crate::operation::post_content::PostContent::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::post_content::PostContentOutput,
-            crate::operation::post_content::PostContentError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::post_content::PostContentError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::post_content::PostContentOutput,
+        crate::operation::post_content::PostContentError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -359,19 +357,19 @@ impl PostContentFluentBuilder {
     }
     /// <p> User input in PCM or Opus audio format or text format as described in the <code>Content-Type</code> HTTP header. </p>
     /// <p>You can stream audio data to Amazon Lex or you can create a local buffer that captures all of the audio data before sending. In general, you get better performance if you stream audio data rather than buffering the data locally.</p>
-    pub fn input_stream(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
+    pub fn input_stream(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.inner = self.inner.input_stream(input);
         self
     }
     /// <p> User input in PCM or Opus audio format or text format as described in the <code>Content-Type</code> HTTP header. </p>
     /// <p>You can stream audio data to Amazon Lex or you can create a local buffer that captures all of the audio data before sending. In general, you get better performance if you stream audio data rather than buffering the data locally.</p>
-    pub fn set_input_stream(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
+    pub fn set_input_stream(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.inner = self.inner.set_input_stream(input);
         self
     }
     /// <p> User input in PCM or Opus audio format or text format as described in the <code>Content-Type</code> HTTP header. </p>
     /// <p>You can stream audio data to Amazon Lex or you can create a local buffer that captures all of the audio data before sending. In general, you get better performance if you stream audio data rather than buffering the data locally.</p>
-    pub fn get_input_stream(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_input_stream(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         self.inner.get_input_stream()
     }
     /// <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request,</p>

@@ -139,6 +139,10 @@ pub(crate) mod shape_create_global_cluster;
 
 pub(crate) mod shape_create_global_cluster_input;
 
+pub(crate) mod shape_create_integration;
+
+pub(crate) mod shape_create_integration_input;
+
 pub(crate) mod shape_create_option_group;
 
 pub(crate) mod shape_create_option_group_input;
@@ -210,6 +214,10 @@ pub(crate) mod shape_delete_event_subscription_input;
 pub(crate) mod shape_delete_global_cluster;
 
 pub(crate) mod shape_delete_global_cluster_input;
+
+pub(crate) mod shape_delete_integration;
+
+pub(crate) mod shape_delete_integration_input;
 
 pub(crate) mod shape_delete_option_group;
 
@@ -346,6 +354,10 @@ pub(crate) mod shape_describe_export_tasks_input;
 pub(crate) mod shape_describe_global_clusters;
 
 pub(crate) mod shape_describe_global_clusters_input;
+
+pub(crate) mod shape_describe_integrations;
+
+pub(crate) mod shape_describe_integrations_input;
 
 pub(crate) mod shape_describe_option_group_options;
 
@@ -711,7 +723,7 @@ pub(crate) mod shape_db_snapshot_not_found_fault;
 
 pub(crate) mod shape_db_subnet_group_already_exists_fault;
 
-pub(crate) mod shape_db_subnet_group_does_not_cover_enough_a_zs;
+pub(crate) mod shape_db_subnet_group_does_not_cover_enough_azs;
 
 pub(crate) mod shape_db_subnet_group_not_allowed_fault;
 
@@ -747,13 +759,21 @@ pub(crate) mod shape_iam_role_not_found_fault;
 
 pub(crate) mod shape_instance_quota_exceeded_fault;
 
-pub(crate) mod shape_insufficient_available_i_ps_in_subnet_fault;
+pub(crate) mod shape_insufficient_available_ips_in_subnet_fault;
 
 pub(crate) mod shape_insufficient_db_cluster_capacity_fault;
 
 pub(crate) mod shape_insufficient_db_instance_capacity_fault;
 
 pub(crate) mod shape_insufficient_storage_cluster_capacity_fault;
+
+pub(crate) mod shape_integration_already_exists_fault;
+
+pub(crate) mod shape_integration_conflict_operation_fault;
+
+pub(crate) mod shape_integration_not_found_fault;
+
+pub(crate) mod shape_integration_quota_exceeded_fault;
 
 pub(crate) mod shape_invalid_blue_green_deployment_state_fault;
 
@@ -798,6 +818,8 @@ pub(crate) mod shape_invalid_export_source_state_fault;
 pub(crate) mod shape_invalid_export_task_state_fault;
 
 pub(crate) mod shape_invalid_global_cluster_state_fault;
+
+pub(crate) mod shape_invalid_integration_state_fault;
 
 pub(crate) mod shape_invalid_option_group_state_fault;
 
@@ -955,6 +977,8 @@ pub(crate) mod shape_db_subnet_groups;
 
 pub(crate) mod shape_describe_db_log_files_list;
 
+pub(crate) mod shape_encryption_context_map;
+
 pub(crate) mod shape_engine_defaults;
 
 pub(crate) mod shape_engine_mode_list;
@@ -974,6 +998,10 @@ pub(crate) mod shape_feature_name_list;
 pub(crate) mod shape_global_cluster;
 
 pub(crate) mod shape_global_cluster_list;
+
+pub(crate) mod shape_integration_error_list;
+
+pub(crate) mod shape_integration_list;
 
 pub(crate) mod shape_log_type_list;
 
@@ -1078,6 +1106,10 @@ pub(crate) mod shape_export_task;
 pub(crate) mod shape_failover_state;
 
 pub(crate) mod shape_global_cluster_member_list;
+
+pub(crate) mod shape_integration;
+
+pub(crate) mod shape_integration_error;
 
 pub(crate) mod shape_ip_range_list;
 

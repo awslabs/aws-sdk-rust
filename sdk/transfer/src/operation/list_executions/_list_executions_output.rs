@@ -6,9 +6,9 @@ pub struct ListExecutionsOutput {
     /// <p> <code>ListExecutions</code> returns the <code>NextToken</code> parameter in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional executions.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the workflow.</p>
-    pub workflow_id: ::std::option::Option<::std::string::String>,
+    pub workflow_id: ::std::string::String,
     /// <p>Returns the details for each execution, in a <code>ListedExecution</code> array.</p>
-    pub executions: ::std::option::Option<::std::vec::Vec<crate::types::ListedExecution>>,
+    pub executions: ::std::vec::Vec<crate::types::ListedExecution>,
     _request_id: Option<String>,
 }
 impl ListExecutionsOutput {
@@ -17,12 +17,14 @@ impl ListExecutionsOutput {
         self.next_token.as_deref()
     }
     /// <p>A unique identifier for the workflow.</p>
-    pub fn workflow_id(&self) -> ::std::option::Option<&str> {
-        self.workflow_id.as_deref()
+    pub fn workflow_id(&self) -> &str {
+        use std::ops::Deref;
+        self.workflow_id.deref()
     }
     /// <p>Returns the details for each execution, in a <code>ListedExecution</code> array.</p>
-    pub fn executions(&self) -> ::std::option::Option<&[crate::types::ListedExecution]> {
-        self.executions.as_deref()
+    pub fn executions(&self) -> &[crate::types::ListedExecution] {
+        use std::ops::Deref;
+        self.executions.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListExecutionsOutput {
@@ -62,6 +64,7 @@ impl ListExecutionsOutputBuilder {
         &self.next_token
     }
     /// <p>A unique identifier for the workflow.</p>
+    /// This field is required.
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_id = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +108,27 @@ impl ListExecutionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListExecutionsOutput`](crate::operation::list_executions::ListExecutionsOutput).
-    pub fn build(self) -> crate::operation::list_executions::ListExecutionsOutput {
-        crate::operation::list_executions::ListExecutionsOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workflow_id`](crate::operation::list_executions::builders::ListExecutionsOutputBuilder::workflow_id)
+    /// - [`executions`](crate::operation::list_executions::builders::ListExecutionsOutputBuilder::executions)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_executions::ListExecutionsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_executions::ListExecutionsOutput {
             next_token: self.next_token,
-            workflow_id: self.workflow_id,
-            executions: self.executions,
+            workflow_id: self.workflow_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "workflow_id",
+                    "workflow_id was not specified but it is required when building ListExecutionsOutput",
+                )
+            })?,
+            executions: self.executions.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "executions",
+                    "executions was not specified but it is required when building ListExecutionsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

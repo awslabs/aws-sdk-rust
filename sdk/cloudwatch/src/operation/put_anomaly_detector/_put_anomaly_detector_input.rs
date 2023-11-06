@@ -53,9 +53,11 @@ impl PutAnomalyDetectorInput {
         self.metric_name.as_deref()
     }
     /// <p>The metric dimensions to create the anomaly detection model for.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimensions.is_none()`.
     #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
-    pub fn dimensions(&self) -> ::std::option::Option<&[crate::types::Dimension]> {
-        self.dimensions.as_deref()
+    pub fn dimensions(&self) -> &[crate::types::Dimension] {
+        self.dimensions.as_deref().unwrap_or_default()
     }
     /// <p>The statistic to use for the metric and the anomaly detection model.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
@@ -290,7 +292,8 @@ impl PutAnomalyDetectorInputBuilder {
     /// Consumes the builder and constructs a [`PutAnomalyDetectorInput`](crate::operation::put_anomaly_detector::PutAnomalyDetectorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_anomaly_detector::PutAnomalyDetectorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_anomaly_detector::PutAnomalyDetectorInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::put_anomaly_detector::PutAnomalyDetectorInput {
             namespace: self.namespace,
             metric_name: self.metric_name,

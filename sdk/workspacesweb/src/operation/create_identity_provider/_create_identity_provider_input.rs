@@ -148,6 +148,7 @@ pub struct CreateIdentityProviderInputBuilder {
 }
 impl CreateIdentityProviderInputBuilder {
     /// <p>The ARN of the web portal.</p>
+    /// This field is required.
     pub fn portal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portal_arn = ::std::option::Option::Some(input.into());
         self
@@ -162,6 +163,7 @@ impl CreateIdentityProviderInputBuilder {
         &self.portal_arn
     }
     /// <p>The identity provider name.</p>
+    /// This field is required.
     pub fn identity_provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_provider_name = ::std::option::Option::Some(input.into());
         self
@@ -176,6 +178,7 @@ impl CreateIdentityProviderInputBuilder {
         &self.identity_provider_name
     }
     /// <p>The identity provider type.</p>
+    /// This field is required.
     pub fn identity_provider_type(mut self, input: crate::types::IdentityProviderType) -> Self {
         self.identity_provider_type = ::std::option::Option::Some(input);
         self
@@ -356,8 +359,10 @@ impl CreateIdentityProviderInputBuilder {
     /// Consumes the builder and constructs a [`CreateIdentityProviderInput`](crate::operation::create_identity_provider::CreateIdentityProviderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_identity_provider::CreateIdentityProviderInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_identity_provider::CreateIdentityProviderInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_identity_provider::CreateIdentityProviderInput {
             portal_arn: self.portal_arn,
             identity_provider_name: self.identity_provider_name,

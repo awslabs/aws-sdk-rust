@@ -41,6 +41,7 @@ pub struct UpdateTagOptionInputBuilder {
 }
 impl UpdateTagOptionInputBuilder {
     /// <p>The TagOption identifier.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl UpdateTagOptionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateTagOptionInput`](crate::operation::update_tag_option::UpdateTagOptionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_tag_option::UpdateTagOptionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_tag_option::UpdateTagOptionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_tag_option::UpdateTagOptionInput {
             id: self.id,
             value: self.value,

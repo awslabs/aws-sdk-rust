@@ -89,6 +89,7 @@ impl ImportKeyMaterialInputBuilder {
     /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
     /// </ul>
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
+    /// This field is required.
     pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_id = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +120,7 @@ impl ImportKeyMaterialInputBuilder {
         &self.key_id
     }
     /// <p>The import token that you received in the response to a previous <code>GetParametersForImport</code> request. It must be from the same response that contained the public key that you used to encrypt the key material.</p>
+    /// This field is required.
     pub fn import_token(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.import_token = ::std::option::Option::Some(input);
         self
@@ -133,6 +135,7 @@ impl ImportKeyMaterialInputBuilder {
         &self.import_token
     }
     /// <p>The encrypted key material to import. The key material must be encrypted under the public wrapping key that <code>GetParametersForImport</code> returned, using the wrapping algorithm that you specified in the same <code>GetParametersForImport</code> request.</p>
+    /// This field is required.
     pub fn encrypted_key_material(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.encrypted_key_material = ::std::option::Option::Some(input);
         self
@@ -192,7 +195,7 @@ impl ImportKeyMaterialInputBuilder {
     /// Consumes the builder and constructs a [`ImportKeyMaterialInput`](crate::operation::import_key_material::ImportKeyMaterialInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::import_key_material::ImportKeyMaterialInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::import_key_material::ImportKeyMaterialInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::import_key_material::ImportKeyMaterialInput {
             key_id: self.key_id,
             import_token: self.import_token,

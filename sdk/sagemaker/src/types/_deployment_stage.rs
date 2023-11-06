@@ -42,6 +42,7 @@ pub struct DeploymentStageBuilder {
 }
 impl DeploymentStageBuilder {
     /// <p>The name of the stage.</p>
+    /// This field is required.
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl DeploymentStageBuilder {
         &self.stage_name
     }
     /// <p>Configuration of the devices in the stage.</p>
+    /// This field is required.
     pub fn device_selection_config(mut self, input: crate::types::DeviceSelectionConfig) -> Self {
         self.device_selection_config = ::std::option::Option::Some(input);
         self

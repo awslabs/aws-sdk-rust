@@ -34,6 +34,7 @@ pub struct EvaluatePullRequestApprovalRulesOutputBuilder {
 }
 impl EvaluatePullRequestApprovalRulesOutputBuilder {
     /// <p>The result of the evaluation, including the names of the rules whose conditions have been met (if any), the names of the rules whose conditions have not been met (if any), whether the pull request is in the approved state, and whether the pull request approval rule has been set aside by an override. </p>
+    /// This field is required.
     pub fn evaluation(mut self, input: crate::types::Evaluation) -> Self {
         self.evaluation = ::std::option::Option::Some(input);
         self

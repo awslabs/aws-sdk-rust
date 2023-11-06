@@ -11,7 +11,7 @@ pub struct CachePolicyQueryStringsConfig {
     /// <li> <p> <code>allExcept</code> – All query strings in viewer requests are included in the cache key and in requests that CloudFront sends to the origin, <i> <b>except</b> </i> those that are listed in the <code>QueryStringNames</code> type, which are not included.</p> </li>
     /// <li> <p> <code>all</code> – All query strings in viewer requests are included in the cache key and in requests that CloudFront sends to the origin.</p> </li>
     /// </ul>
-    pub query_string_behavior: ::std::option::Option<crate::types::CachePolicyQueryStringBehavior>,
+    pub query_string_behavior: crate::types::CachePolicyQueryStringBehavior,
     /// <p>Contains the specific query strings in viewer requests that either <i> <b>are</b> </i> or <i> <b>are not</b> </i> included in the cache key and in requests that CloudFront sends to the origin. The behavior depends on whether the <code>QueryStringBehavior</code> field in the <code>CachePolicyQueryStringsConfig</code> type is set to <code>whitelist</code> (the listed query strings <i> <b>are</b> </i> included) or <code>allExcept</code> (the listed query strings <i> <b>are not</b> </i> included, but all other query strings are).</p>
     pub query_strings: ::std::option::Option<crate::types::QueryStringNames>,
 }
@@ -23,8 +23,8 @@ impl CachePolicyQueryStringsConfig {
     /// <li> <p> <code>allExcept</code> – All query strings in viewer requests are included in the cache key and in requests that CloudFront sends to the origin, <i> <b>except</b> </i> those that are listed in the <code>QueryStringNames</code> type, which are not included.</p> </li>
     /// <li> <p> <code>all</code> – All query strings in viewer requests are included in the cache key and in requests that CloudFront sends to the origin.</p> </li>
     /// </ul>
-    pub fn query_string_behavior(&self) -> ::std::option::Option<&crate::types::CachePolicyQueryStringBehavior> {
-        self.query_string_behavior.as_ref()
+    pub fn query_string_behavior(&self) -> &crate::types::CachePolicyQueryStringBehavior {
+        &self.query_string_behavior
     }
     /// <p>Contains the specific query strings in viewer requests that either <i> <b>are</b> </i> or <i> <b>are not</b> </i> included in the cache key and in requests that CloudFront sends to the origin. The behavior depends on whether the <code>QueryStringBehavior</code> field in the <code>CachePolicyQueryStringsConfig</code> type is set to <code>whitelist</code> (the listed query strings <i> <b>are</b> </i> included) or <code>allExcept</code> (the listed query strings <i> <b>are not</b> </i> included, but all other query strings are).</p>
     pub fn query_strings(&self) -> ::std::option::Option<&crate::types::QueryStringNames> {
@@ -53,6 +53,7 @@ impl CachePolicyQueryStringsConfigBuilder {
     /// <li> <p> <code>allExcept</code> – All query strings in viewer requests are included in the cache key and in requests that CloudFront sends to the origin, <i> <b>except</b> </i> those that are listed in the <code>QueryStringNames</code> type, which are not included.</p> </li>
     /// <li> <p> <code>all</code> – All query strings in viewer requests are included in the cache key and in requests that CloudFront sends to the origin.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn query_string_behavior(mut self, input: crate::types::CachePolicyQueryStringBehavior) -> Self {
         self.query_string_behavior = ::std::option::Option::Some(input);
         self
@@ -93,10 +94,17 @@ impl CachePolicyQueryStringsConfigBuilder {
         &self.query_strings
     }
     /// Consumes the builder and constructs a [`CachePolicyQueryStringsConfig`](crate::types::CachePolicyQueryStringsConfig).
-    pub fn build(self) -> crate::types::CachePolicyQueryStringsConfig {
-        crate::types::CachePolicyQueryStringsConfig {
-            query_string_behavior: self.query_string_behavior,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`query_string_behavior`](crate::types::builders::CachePolicyQueryStringsConfigBuilder::query_string_behavior)
+    pub fn build(self) -> ::std::result::Result<crate::types::CachePolicyQueryStringsConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CachePolicyQueryStringsConfig {
+            query_string_behavior: self.query_string_behavior.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "query_string_behavior",
+                    "query_string_behavior was not specified but it is required when building CachePolicyQueryStringsConfig",
+                )
+            })?,
             query_strings: self.query_strings,
-        }
+        })
     }
 }

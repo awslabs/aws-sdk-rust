@@ -20,12 +20,16 @@ impl DescribeImportSnapshotTasksInput {
         self.dry_run
     }
     /// <p>The filters.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>A list of import snapshot task IDs.</p>
-    pub fn import_task_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.import_task_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.import_task_ids.is_none()`.
+    pub fn import_task_ids(&self) -> &[::std::string::String] {
+        self.import_task_ids.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -141,7 +145,7 @@ impl DescribeImportSnapshotTasksInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_import_snapshot_tasks::DescribeImportSnapshotTasksInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_import_snapshot_tasks::DescribeImportSnapshotTasksInput {
             dry_run: self.dry_run,

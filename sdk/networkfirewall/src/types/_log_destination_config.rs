@@ -6,25 +6,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LogDestinationConfig {
     /// <p>The type of log to send. Alert logs report traffic that matches a <code>StatefulRule</code> with an action setting that sends an alert log message. Flow logs are standard network traffic flow logs. </p>
-    pub log_type: ::std::option::Option<crate::types::LogType>,
+    pub log_type: crate::types::LogType,
     /// <p>The type of storage destination to send these logs to. You can send logs to an Amazon S3 bucket, a CloudWatch log group, or a Kinesis Data Firehose delivery stream.</p>
-    pub log_destination_type: ::std::option::Option<crate::types::LogDestinationType>,
+    pub log_destination_type: crate::types::LogDestinationType,
     /// <p>The named location for the logs, provided in a key:value mapping that is specific to the chosen destination type. </p>
     /// <ul>
     /// <li> <p>For an Amazon S3 bucket, provide the name of the bucket, with key <code>bucketName</code>, and optionally provide a prefix, with key <code>prefix</code>. The following example specifies an Amazon S3 bucket named <code>DOC-EXAMPLE-BUCKET</code> and the prefix <code>alerts</code>: </p> <p> <code>"LogDestination": { "bucketName": "DOC-EXAMPLE-BUCKET", "prefix": "alerts" }</code> </p> </li>
     /// <li> <p>For a CloudWatch log group, provide the name of the CloudWatch log group, with key <code>logGroup</code>. The following example specifies a log group named <code>alert-log-group</code>: </p> <p> <code>"LogDestination": { "logGroup": "alert-log-group" }</code> </p> </li>
     /// <li> <p>For a Kinesis Data Firehose delivery stream, provide the name of the delivery stream, with key <code>deliveryStream</code>. The following example specifies a delivery stream named <code>alert-delivery-stream</code>: </p> <p> <code>"LogDestination": { "deliveryStream": "alert-delivery-stream" }</code> </p> </li>
     /// </ul>
-    pub log_destination: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub log_destination: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
 }
 impl LogDestinationConfig {
     /// <p>The type of log to send. Alert logs report traffic that matches a <code>StatefulRule</code> with an action setting that sends an alert log message. Flow logs are standard network traffic flow logs. </p>
-    pub fn log_type(&self) -> ::std::option::Option<&crate::types::LogType> {
-        self.log_type.as_ref()
+    pub fn log_type(&self) -> &crate::types::LogType {
+        &self.log_type
     }
     /// <p>The type of storage destination to send these logs to. You can send logs to an Amazon S3 bucket, a CloudWatch log group, or a Kinesis Data Firehose delivery stream.</p>
-    pub fn log_destination_type(&self) -> ::std::option::Option<&crate::types::LogDestinationType> {
-        self.log_destination_type.as_ref()
+    pub fn log_destination_type(&self) -> &crate::types::LogDestinationType {
+        &self.log_destination_type
     }
     /// <p>The named location for the logs, provided in a key:value mapping that is specific to the chosen destination type. </p>
     /// <ul>
@@ -32,8 +32,8 @@ impl LogDestinationConfig {
     /// <li> <p>For a CloudWatch log group, provide the name of the CloudWatch log group, with key <code>logGroup</code>. The following example specifies a log group named <code>alert-log-group</code>: </p> <p> <code>"LogDestination": { "logGroup": "alert-log-group" }</code> </p> </li>
     /// <li> <p>For a Kinesis Data Firehose delivery stream, provide the name of the delivery stream, with key <code>deliveryStream</code>. The following example specifies a delivery stream named <code>alert-delivery-stream</code>: </p> <p> <code>"LogDestination": { "deliveryStream": "alert-delivery-stream" }</code> </p> </li>
     /// </ul>
-    pub fn log_destination(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
-        self.log_destination.as_ref()
+    pub fn log_destination(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+        &self.log_destination
     }
 }
 impl LogDestinationConfig {
@@ -53,6 +53,7 @@ pub struct LogDestinationConfigBuilder {
 }
 impl LogDestinationConfigBuilder {
     /// <p>The type of log to send. Alert logs report traffic that matches a <code>StatefulRule</code> with an action setting that sends an alert log message. Flow logs are standard network traffic flow logs. </p>
+    /// This field is required.
     pub fn log_type(mut self, input: crate::types::LogType) -> Self {
         self.log_type = ::std::option::Option::Some(input);
         self
@@ -67,6 +68,7 @@ impl LogDestinationConfigBuilder {
         &self.log_type
     }
     /// <p>The type of storage destination to send these logs to. You can send logs to an Amazon S3 bucket, a CloudWatch log group, or a Kinesis Data Firehose delivery stream.</p>
+    /// This field is required.
     pub fn log_destination_type(mut self, input: crate::types::LogDestinationType) -> Self {
         self.log_destination_type = ::std::option::Option::Some(input);
         self
@@ -123,11 +125,30 @@ impl LogDestinationConfigBuilder {
         &self.log_destination
     }
     /// Consumes the builder and constructs a [`LogDestinationConfig`](crate::types::LogDestinationConfig).
-    pub fn build(self) -> crate::types::LogDestinationConfig {
-        crate::types::LogDestinationConfig {
-            log_type: self.log_type,
-            log_destination_type: self.log_destination_type,
-            log_destination: self.log_destination,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`log_type`](crate::types::builders::LogDestinationConfigBuilder::log_type)
+    /// - [`log_destination_type`](crate::types::builders::LogDestinationConfigBuilder::log_destination_type)
+    /// - [`log_destination`](crate::types::builders::LogDestinationConfigBuilder::log_destination)
+    pub fn build(self) -> ::std::result::Result<crate::types::LogDestinationConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::LogDestinationConfig {
+            log_type: self.log_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "log_type",
+                    "log_type was not specified but it is required when building LogDestinationConfig",
+                )
+            })?,
+            log_destination_type: self.log_destination_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "log_destination_type",
+                    "log_destination_type was not specified but it is required when building LogDestinationConfig",
+                )
+            })?,
+            log_destination: self.log_destination.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "log_destination",
+                    "log_destination was not specified but it is required when building LogDestinationConfig",
+                )
+            })?,
+        })
     }
 }

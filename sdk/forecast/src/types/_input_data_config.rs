@@ -8,18 +8,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputDataConfig {
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
-    pub dataset_group_arn: ::std::option::Option<::std::string::String>,
+    pub dataset_group_arn: ::std::string::String,
     /// <p>An array of supplementary features. The only supported feature is a holiday calendar.</p>
     pub supplementary_features: ::std::option::Option<::std::vec::Vec<crate::types::SupplementaryFeature>>,
 }
 impl InputDataConfig {
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
-    pub fn dataset_group_arn(&self) -> ::std::option::Option<&str> {
-        self.dataset_group_arn.as_deref()
+    pub fn dataset_group_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.dataset_group_arn.deref()
     }
     /// <p>An array of supplementary features. The only supported feature is a holiday calendar.</p>
-    pub fn supplementary_features(&self) -> ::std::option::Option<&[crate::types::SupplementaryFeature]> {
-        self.supplementary_features.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supplementary_features.is_none()`.
+    pub fn supplementary_features(&self) -> &[crate::types::SupplementaryFeature] {
+        self.supplementary_features.as_deref().unwrap_or_default()
     }
 }
 impl InputDataConfig {
@@ -38,6 +41,7 @@ pub struct InputDataConfigBuilder {
 }
 impl InputDataConfigBuilder {
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
+    /// This field is required.
     pub fn dataset_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_group_arn = ::std::option::Option::Some(input.into());
         self
@@ -72,10 +76,17 @@ impl InputDataConfigBuilder {
         &self.supplementary_features
     }
     /// Consumes the builder and constructs a [`InputDataConfig`](crate::types::InputDataConfig).
-    pub fn build(self) -> crate::types::InputDataConfig {
-        crate::types::InputDataConfig {
-            dataset_group_arn: self.dataset_group_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`dataset_group_arn`](crate::types::builders::InputDataConfigBuilder::dataset_group_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::InputDataConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::InputDataConfig {
+            dataset_group_arn: self.dataset_group_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "dataset_group_arn",
+                    "dataset_group_arn was not specified but it is required when building InputDataConfig",
+                )
+            })?,
             supplementary_features: self.supplementary_features,
-        }
+        })
     }
 }

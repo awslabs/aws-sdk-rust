@@ -18,8 +18,10 @@ impl DeleteFleetsInput {
         self.dry_run
     }
     /// <p>The IDs of the EC2 Fleets.</p>
-    pub fn fleet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.fleet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fleet_ids.is_none()`.
+    pub fn fleet_ids(&self) -> &[::std::string::String] {
+        self.fleet_ids.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether to terminate the associated instances when the EC2 Fleet is deleted. The default is to terminate the instances.</p>
     /// <p>To let the instances continue to run after the EC2 Fleet is deleted, specify <code>no-terminate-instances</code>. Supported only for fleets of type <code>maintain</code> and <code>request</code>.</p>
@@ -81,6 +83,7 @@ impl DeleteFleetsInputBuilder {
     /// <p>Indicates whether to terminate the associated instances when the EC2 Fleet is deleted. The default is to terminate the instances.</p>
     /// <p>To let the instances continue to run after the EC2 Fleet is deleted, specify <code>no-terminate-instances</code>. Supported only for fleets of type <code>maintain</code> and <code>request</code>.</p>
     /// <p>For <code>instant</code> fleets, you cannot specify <code>NoTerminateInstances</code>. A deleted <code>instant</code> fleet with running instances is not supported.</p>
+    /// This field is required.
     pub fn terminate_instances(mut self, input: bool) -> Self {
         self.terminate_instances = ::std::option::Option::Some(input);
         self
@@ -99,7 +102,9 @@ impl DeleteFleetsInputBuilder {
         &self.terminate_instances
     }
     /// Consumes the builder and constructs a [`DeleteFleetsInput`](crate::operation::delete_fleets::DeleteFleetsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_fleets::DeleteFleetsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_fleets::DeleteFleetsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_fleets::DeleteFleetsInput {
             dry_run: self.dry_run,
             fleet_ids: self.fleet_ids,

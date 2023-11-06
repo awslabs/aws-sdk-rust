@@ -10,8 +10,10 @@ pub struct BatchDeleteImportDataInput {
 }
 impl BatchDeleteImportDataInput {
     /// <p>The IDs for the import tasks that you want to delete.</p>
-    pub fn import_task_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.import_task_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.import_task_ids.is_none()`.
+    pub fn import_task_ids(&self) -> &[::std::string::String] {
+        self.import_task_ids.as_deref().unwrap_or_default()
     }
     /// <p> Set to <code>true</code> to remove the deleted import task from <code>DescribeImportTasks</code>. </p>
     pub fn delete_history(&self) -> ::std::option::Option<bool> {
@@ -70,7 +72,7 @@ impl BatchDeleteImportDataInputBuilder {
     /// Consumes the builder and constructs a [`BatchDeleteImportDataInput`](crate::operation::batch_delete_import_data::BatchDeleteImportDataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_delete_import_data::BatchDeleteImportDataInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_delete_import_data::BatchDeleteImportDataInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_delete_import_data::BatchDeleteImportDataInput {
             import_task_ids: self.import_task_ids,

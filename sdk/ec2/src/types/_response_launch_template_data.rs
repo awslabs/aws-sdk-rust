@@ -92,12 +92,16 @@ impl ResponseLaunchTemplateData {
         self.iam_instance_profile.as_ref()
     }
     /// <p>The block device mappings.</p>
-    pub fn block_device_mappings(&self) -> ::std::option::Option<&[crate::types::LaunchTemplateBlockDeviceMapping]> {
-        self.block_device_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.block_device_mappings.is_none()`.
+    pub fn block_device_mappings(&self) -> &[crate::types::LaunchTemplateBlockDeviceMapping] {
+        self.block_device_mappings.as_deref().unwrap_or_default()
     }
     /// <p>The network interfaces.</p>
-    pub fn network_interfaces(&self) -> ::std::option::Option<&[crate::types::LaunchTemplateInstanceNetworkInterfaceSpecification]> {
-        self.network_interfaces.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_interfaces.is_none()`.
+    pub fn network_interfaces(&self) -> &[crate::types::LaunchTemplateInstanceNetworkInterfaceSpecification] {
+        self.network_interfaces.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the AMI or a Systems Manager parameter. The Systems Manager parameter will resolve to the ID of the AMI at instance launch.</p>
     /// <p>The value depends on what you specified in the request. The possible values are:</p>
@@ -143,27 +147,37 @@ impl ResponseLaunchTemplateData {
         self.user_data.as_deref()
     }
     /// <p>The tags that are applied to the resources that are created during instance launch.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::LaunchTemplateTagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::LaunchTemplateTagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
     /// <p>The elastic GPU specification.</p>
-    pub fn elastic_gpu_specifications(&self) -> ::std::option::Option<&[crate::types::ElasticGpuSpecificationResponse]> {
-        self.elastic_gpu_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.elastic_gpu_specifications.is_none()`.
+    pub fn elastic_gpu_specifications(&self) -> &[crate::types::ElasticGpuSpecificationResponse] {
+        self.elastic_gpu_specifications.as_deref().unwrap_or_default()
     }
     /// <p>An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a resource you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference workloads.</p>
     /// <p>You cannot specify accelerators from different generations in the same request.</p> <note>
     /// <p>Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performance. After April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past 30-day period are considered current customers and will be able to continue using the service.</p>
     /// </note>
-    pub fn elastic_inference_accelerators(&self) -> ::std::option::Option<&[crate::types::LaunchTemplateElasticInferenceAcceleratorResponse]> {
-        self.elastic_inference_accelerators.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.elastic_inference_accelerators.is_none()`.
+    pub fn elastic_inference_accelerators(&self) -> &[crate::types::LaunchTemplateElasticInferenceAcceleratorResponse] {
+        self.elastic_inference_accelerators.as_deref().unwrap_or_default()
     }
     /// <p>The security group IDs.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>The security group names.</p>
-    pub fn security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
+    pub fn security_groups(&self) -> &[::std::string::String] {
+        self.security_groups.as_deref().unwrap_or_default()
     }
     /// <p>The market (purchasing) option for the instances.</p>
     pub fn instance_market_options(&self) -> ::std::option::Option<&crate::types::LaunchTemplateInstanceMarketOptions> {
@@ -182,8 +196,10 @@ impl ResponseLaunchTemplateData {
         self.capacity_reservation_specification.as_ref()
     }
     /// <p>The license configurations.</p>
-    pub fn license_specifications(&self) -> ::std::option::Option<&[crate::types::LaunchTemplateLicenseConfiguration]> {
-        self.license_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.license_specifications.is_none()`.
+    pub fn license_specifications(&self) -> &[crate::types::LaunchTemplateLicenseConfiguration] {
+        self.license_specifications.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether an instance is configured for hibernation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub fn hibernation_options(&self) -> ::std::option::Option<&crate::types::LaunchTemplateHibernationOptions> {

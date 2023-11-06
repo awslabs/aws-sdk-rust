@@ -2,7 +2,7 @@
 pub fn ser_create_calculated_attribute_definition_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_calculated_attribute_definition::CreateCalculatedAttributeDefinitionInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.attribute_details {
         #[allow(unused_mut)]
         let mut object_2 = object.key("AttributeDetails").start_object();

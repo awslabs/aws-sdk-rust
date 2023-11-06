@@ -34,6 +34,7 @@ pub struct DeleteFlowInputBuilder {
 }
 impl DeleteFlowInputBuilder {
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
+    /// This field is required.
     pub fn flow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_name = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +63,7 @@ impl DeleteFlowInputBuilder {
         &self.force_delete
     }
     /// Consumes the builder and constructs a [`DeleteFlowInput`](crate::operation::delete_flow::DeleteFlowInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_flow::DeleteFlowInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_flow::DeleteFlowInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_flow::DeleteFlowInput {
             flow_name: self.flow_name,
             force_delete: self.force_delete,

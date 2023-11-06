@@ -56,7 +56,7 @@ impl UpdateEventConfigurationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_event_configurations::UpdateEventConfigurationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_event_configurations::UpdateEventConfigurationsInput {
             event_configurations: self.event_configurations,

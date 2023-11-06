@@ -33,8 +33,10 @@ impl FilePath {
         self.end_line
     }
     /// <p>A list of <code>CodeLine</code> objects that describe where the security vulnerability appears in your code.</p>
-    pub fn code_snippet(&self) -> ::std::option::Option<&[crate::types::CodeLine]> {
-        self.code_snippet.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.code_snippet.is_none()`.
+    pub fn code_snippet(&self) -> &[crate::types::CodeLine] {
+        self.code_snippet.as_deref().unwrap_or_default()
     }
 }
 impl FilePath {

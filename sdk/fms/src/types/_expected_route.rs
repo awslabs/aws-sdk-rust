@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExpectedRoute {
     /// <p>Information about the IPv4 CIDR block.</p>
-    pub ip_v4_cidr: ::std::option::Option<::std::string::String>,
+    pub ipv4_cidr: ::std::option::Option<::std::string::String>,
     /// <p>Information about the ID of the prefix list for the route.</p>
     pub prefix_list_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the IPv6 CIDR block.</p>
-    pub ip_v6_cidr: ::std::option::Option<::std::string::String>,
+    pub ipv6_cidr: ::std::option::Option<::std::string::String>,
     /// <p>Information about the contributing subnets.</p>
     pub contributing_subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Information about the allowed targets.</p>
@@ -19,24 +19,28 @@ pub struct ExpectedRoute {
 }
 impl ExpectedRoute {
     /// <p>Information about the IPv4 CIDR block.</p>
-    pub fn ip_v4_cidr(&self) -> ::std::option::Option<&str> {
-        self.ip_v4_cidr.as_deref()
+    pub fn ipv4_cidr(&self) -> ::std::option::Option<&str> {
+        self.ipv4_cidr.as_deref()
     }
     /// <p>Information about the ID of the prefix list for the route.</p>
     pub fn prefix_list_id(&self) -> ::std::option::Option<&str> {
         self.prefix_list_id.as_deref()
     }
     /// <p>Information about the IPv6 CIDR block.</p>
-    pub fn ip_v6_cidr(&self) -> ::std::option::Option<&str> {
-        self.ip_v6_cidr.as_deref()
+    pub fn ipv6_cidr(&self) -> ::std::option::Option<&str> {
+        self.ipv6_cidr.as_deref()
     }
     /// <p>Information about the contributing subnets.</p>
-    pub fn contributing_subnets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.contributing_subnets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.contributing_subnets.is_none()`.
+    pub fn contributing_subnets(&self) -> &[::std::string::String] {
+        self.contributing_subnets.as_deref().unwrap_or_default()
     }
     /// <p>Information about the allowed targets.</p>
-    pub fn allowed_targets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.allowed_targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_targets.is_none()`.
+    pub fn allowed_targets(&self) -> &[::std::string::String] {
+        self.allowed_targets.as_deref().unwrap_or_default()
     }
     /// <p>Information about the route table ID.</p>
     pub fn route_table_id(&self) -> ::std::option::Option<&str> {
@@ -54,27 +58,27 @@ impl ExpectedRoute {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExpectedRouteBuilder {
-    pub(crate) ip_v4_cidr: ::std::option::Option<::std::string::String>,
+    pub(crate) ipv4_cidr: ::std::option::Option<::std::string::String>,
     pub(crate) prefix_list_id: ::std::option::Option<::std::string::String>,
-    pub(crate) ip_v6_cidr: ::std::option::Option<::std::string::String>,
+    pub(crate) ipv6_cidr: ::std::option::Option<::std::string::String>,
     pub(crate) contributing_subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) allowed_targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) route_table_id: ::std::option::Option<::std::string::String>,
 }
 impl ExpectedRouteBuilder {
     /// <p>Information about the IPv4 CIDR block.</p>
-    pub fn ip_v4_cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.ip_v4_cidr = ::std::option::Option::Some(input.into());
+    pub fn ipv4_cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ipv4_cidr = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Information about the IPv4 CIDR block.</p>
-    pub fn set_ip_v4_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_v4_cidr = input;
+    pub fn set_ipv4_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ipv4_cidr = input;
         self
     }
     /// <p>Information about the IPv4 CIDR block.</p>
-    pub fn get_ip_v4_cidr(&self) -> &::std::option::Option<::std::string::String> {
-        &self.ip_v4_cidr
+    pub fn get_ipv4_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv4_cidr
     }
     /// <p>Information about the ID of the prefix list for the route.</p>
     pub fn prefix_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -91,18 +95,18 @@ impl ExpectedRouteBuilder {
         &self.prefix_list_id
     }
     /// <p>Information about the IPv6 CIDR block.</p>
-    pub fn ip_v6_cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.ip_v6_cidr = ::std::option::Option::Some(input.into());
+    pub fn ipv6_cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ipv6_cidr = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Information about the IPv6 CIDR block.</p>
-    pub fn set_ip_v6_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_v6_cidr = input;
+    pub fn set_ipv6_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ipv6_cidr = input;
         self
     }
     /// <p>Information about the IPv6 CIDR block.</p>
-    pub fn get_ip_v6_cidr(&self) -> &::std::option::Option<::std::string::String> {
-        &self.ip_v6_cidr
+    pub fn get_ipv6_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv6_cidr
     }
     /// Appends an item to `contributing_subnets`.
     ///
@@ -161,9 +165,9 @@ impl ExpectedRouteBuilder {
     /// Consumes the builder and constructs a [`ExpectedRoute`](crate::types::ExpectedRoute).
     pub fn build(self) -> crate::types::ExpectedRoute {
         crate::types::ExpectedRoute {
-            ip_v4_cidr: self.ip_v4_cidr,
+            ipv4_cidr: self.ipv4_cidr,
             prefix_list_id: self.prefix_list_id,
-            ip_v6_cidr: self.ip_v6_cidr,
+            ipv6_cidr: self.ipv6_cidr,
             contributing_subnets: self.contributing_subnets,
             allowed_targets: self.allowed_targets,
             route_table_id: self.route_table_id,

@@ -35,6 +35,7 @@ pub struct DeactivatePipelineInputBuilder {
 }
 impl DeactivatePipelineInputBuilder {
     /// <p>The ID of the pipeline.</p>
+    /// This field is required.
     pub fn pipeline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_id = ::std::option::Option::Some(input.into());
         self
@@ -65,7 +66,7 @@ impl DeactivatePipelineInputBuilder {
     /// Consumes the builder and constructs a [`DeactivatePipelineInput`](crate::operation::deactivate_pipeline::DeactivatePipelineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::deactivate_pipeline::DeactivatePipelineInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::deactivate_pipeline::DeactivatePipelineInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::deactivate_pipeline::DeactivatePipelineInput {
             pipeline_id: self.pipeline_id,
             cancel_active: self.cancel_active,

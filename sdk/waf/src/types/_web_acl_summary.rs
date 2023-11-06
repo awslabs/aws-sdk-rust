@@ -10,19 +10,21 @@
 pub struct WebAclSummary {
     /// <p>A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code> to get information about a <code>WebACL</code> (see <code>GetWebACL</code>), update a <code>WebACL</code> (see <code>UpdateWebACL</code>), and delete a <code>WebACL</code> from AWS WAF (see <code>DeleteWebACL</code>).</p>
     /// <p> <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
-    pub web_acl_id: ::std::option::Option<::std::string::String>,
+    pub web_acl_id: ::std::string::String,
     /// <p>A friendly name or description of the <code>WebACL</code>. You can't change the name of a <code>WebACL</code> after you create it.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
 }
 impl WebAclSummary {
     /// <p>A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code> to get information about a <code>WebACL</code> (see <code>GetWebACL</code>), update a <code>WebACL</code> (see <code>UpdateWebACL</code>), and delete a <code>WebACL</code> from AWS WAF (see <code>DeleteWebACL</code>).</p>
     /// <p> <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
-    pub fn web_acl_id(&self) -> ::std::option::Option<&str> {
-        self.web_acl_id.as_deref()
+    pub fn web_acl_id(&self) -> &str {
+        use std::ops::Deref;
+        self.web_acl_id.deref()
     }
     /// <p>A friendly name or description of the <code>WebACL</code>. You can't change the name of a <code>WebACL</code> after you create it.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
 }
 impl WebAclSummary {
@@ -42,6 +44,7 @@ pub struct WebAclSummaryBuilder {
 impl WebAclSummaryBuilder {
     /// <p>A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code> to get information about a <code>WebACL</code> (see <code>GetWebACL</code>), update a <code>WebACL</code> (see <code>UpdateWebACL</code>), and delete a <code>WebACL</code> from AWS WAF (see <code>DeleteWebACL</code>).</p>
     /// <p> <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
+    /// This field is required.
     pub fn web_acl_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.web_acl_id = ::std::option::Option::Some(input.into());
         self
@@ -58,6 +61,7 @@ impl WebAclSummaryBuilder {
         &self.web_acl_id
     }
     /// <p>A friendly name or description of the <code>WebACL</code>. You can't change the name of a <code>WebACL</code> after you create it.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -72,10 +76,23 @@ impl WebAclSummaryBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`WebAclSummary`](crate::types::WebAclSummary).
-    pub fn build(self) -> crate::types::WebAclSummary {
-        crate::types::WebAclSummary {
-            web_acl_id: self.web_acl_id,
-            name: self.name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`web_acl_id`](crate::types::builders::WebAclSummaryBuilder::web_acl_id)
+    /// - [`name`](crate::types::builders::WebAclSummaryBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::WebAclSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::WebAclSummary {
+            web_acl_id: self.web_acl_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "web_acl_id",
+                    "web_acl_id was not specified but it is required when building WebAclSummary",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building WebAclSummary",
+                )
+            })?,
+        })
     }
 }

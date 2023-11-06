@@ -26,8 +26,10 @@ impl UpdateSipRuleInput {
         self.disabled
     }
     /// <p>The new list of target applications.</p>
-    pub fn target_applications(&self) -> ::std::option::Option<&[crate::types::SipRuleTargetApplication]> {
-        self.target_applications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_applications.is_none()`.
+    pub fn target_applications(&self) -> &[crate::types::SipRuleTargetApplication] {
+        self.target_applications.as_deref().unwrap_or_default()
     }
 }
 impl UpdateSipRuleInput {
@@ -48,6 +50,7 @@ pub struct UpdateSipRuleInputBuilder {
 }
 impl UpdateSipRuleInputBuilder {
     /// <p>The SIP rule ID.</p>
+    /// This field is required.
     pub fn sip_rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sip_rule_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl UpdateSipRuleInputBuilder {
         &self.sip_rule_id
     }
     /// <p>The new name for the specified SIP rule.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -112,7 +116,7 @@ impl UpdateSipRuleInputBuilder {
     /// Consumes the builder and constructs a [`UpdateSipRuleInput`](crate::operation::update_sip_rule::UpdateSipRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_sip_rule::UpdateSipRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_sip_rule::UpdateSipRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_sip_rule::UpdateSipRuleInput {
             sip_rule_id: self.sip_rule_id,
             name: self.name,

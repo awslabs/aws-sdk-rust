@@ -41,6 +41,7 @@ pub struct UpdateNetworkResourceMetadataInputBuilder {
 }
 impl UpdateNetworkResourceMetadataInputBuilder {
     /// <p>The ID of the global network.</p>
+    /// This field is required.
     pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_network_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateNetworkResourceMetadataInputBuilder {
         &self.global_network_id
     }
     /// <p>The ARN of the resource.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -93,7 +95,7 @@ impl UpdateNetworkResourceMetadataInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_network_resource_metadata::UpdateNetworkResourceMetadataInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_network_resource_metadata::UpdateNetworkResourceMetadataInput {
             global_network_id: self.global_network_id,

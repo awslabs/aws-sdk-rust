@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Qualifier {
     /// <p>Contains a pointer to a certification practice statement (CPS) published by the CA.</p>
-    pub cps_uri: ::std::option::Option<::std::string::String>,
+    pub cps_uri: ::std::string::String,
 }
 impl Qualifier {
     /// <p>Contains a pointer to a certification practice statement (CPS) published by the CA.</p>
-    pub fn cps_uri(&self) -> ::std::option::Option<&str> {
-        self.cps_uri.as_deref()
+    pub fn cps_uri(&self) -> &str {
+        use std::ops::Deref;
+        self.cps_uri.deref()
     }
 }
 impl Qualifier {
@@ -28,6 +29,7 @@ pub struct QualifierBuilder {
 }
 impl QualifierBuilder {
     /// <p>Contains a pointer to a certification practice statement (CPS) published by the CA.</p>
+    /// This field is required.
     pub fn cps_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cps_uri = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl QualifierBuilder {
         &self.cps_uri
     }
     /// Consumes the builder and constructs a [`Qualifier`](crate::types::Qualifier).
-    pub fn build(self) -> crate::types::Qualifier {
-        crate::types::Qualifier { cps_uri: self.cps_uri }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`cps_uri`](crate::types::builders::QualifierBuilder::cps_uri)
+    pub fn build(self) -> ::std::result::Result<crate::types::Qualifier, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Qualifier {
+            cps_uri: self.cps_uri.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "cps_uri",
+                    "cps_uri was not specified but it is required when building Qualifier",
+                )
+            })?,
+        })
     }
 }

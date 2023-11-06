@@ -34,6 +34,7 @@ pub struct CreateBackupInputBuilder {
 }
 impl CreateBackupInputBuilder {
     /// <p>The name of the table.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl CreateBackupInputBuilder {
         &self.table_name
     }
     /// <p>Specified name for the backup.</p>
+    /// This field is required.
     pub fn backup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_name = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,9 @@ impl CreateBackupInputBuilder {
         &self.backup_name
     }
     /// Consumes the builder and constructs a [`CreateBackupInput`](crate::operation::create_backup::CreateBackupInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_backup::CreateBackupInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_backup::CreateBackupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_backup::CreateBackupInput {
             table_name: self.table_name,
             backup_name: self.backup_name,

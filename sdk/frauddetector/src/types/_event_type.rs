@@ -37,16 +37,22 @@ impl EventType {
         self.description.as_deref()
     }
     /// <p>The event type event variables.</p>
-    pub fn event_variables(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.event_variables.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_variables.is_none()`.
+    pub fn event_variables(&self) -> &[::std::string::String] {
+        self.event_variables.as_deref().unwrap_or_default()
     }
     /// <p>The event type labels.</p>
-    pub fn labels(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.labels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.labels.is_none()`.
+    pub fn labels(&self) -> &[::std::string::String] {
+        self.labels.as_deref().unwrap_or_default()
     }
     /// <p>The event type entity types.</p>
-    pub fn entity_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.entity_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entity_types.is_none()`.
+    pub fn entity_types(&self) -> &[::std::string::String] {
+        self.entity_types.as_deref().unwrap_or_default()
     }
     /// <p>If <code>Enabled</code>, Amazon Fraud Detector stores event data when you generate a prediction and uses that data to update calculated variables in near real-time. Amazon Fraud Detector uses this data, known as <code>INGESTED_EVENTS</code>, to train your model and improve fraud predictions.</p>
     pub fn event_ingestion(&self) -> ::std::option::Option<&crate::types::EventIngestion> {

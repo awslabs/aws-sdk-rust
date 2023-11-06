@@ -35,6 +35,7 @@ pub struct DeregisterEventTopicInputBuilder {
 }
 impl DeregisterEventTopicInputBuilder {
     /// <p>The Directory ID to remove as a publisher. This directory will no longer send messages to the specified Amazon SNS topic.</p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl DeregisterEventTopicInputBuilder {
         &self.directory_id
     }
     /// <p>The name of the Amazon SNS topic from which to remove the directory as a publisher.</p>
+    /// This field is required.
     pub fn topic_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_name = ::std::option::Option::Some(input.into());
         self
@@ -65,7 +67,7 @@ impl DeregisterEventTopicInputBuilder {
     /// Consumes the builder and constructs a [`DeregisterEventTopicInput`](crate::operation::deregister_event_topic::DeregisterEventTopicInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::deregister_event_topic::DeregisterEventTopicInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::deregister_event_topic::DeregisterEventTopicInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::deregister_event_topic::DeregisterEventTopicInput {
             directory_id: self.directory_id,

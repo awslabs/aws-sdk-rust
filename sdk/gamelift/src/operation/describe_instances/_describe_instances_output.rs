@@ -11,8 +11,10 @@ pub struct DescribeInstancesOutput {
 }
 impl DescribeInstancesOutput {
     /// <p>A collection of objects containing properties for each instance returned.</p>
-    pub fn instances(&self) -> ::std::option::Option<&[crate::types::Instance]> {
-        self.instances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instances.is_none()`.
+    pub fn instances(&self) -> &[crate::types::Instance] {
+        self.instances.as_deref().unwrap_or_default()
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -15,20 +15,28 @@ pub struct BatchDeleteInput {
 }
 impl BatchDeleteInput {
     /// List of channel IDs
-    pub fn channel_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.channel_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.channel_ids.is_none()`.
+    pub fn channel_ids(&self) -> &[::std::string::String] {
+        self.channel_ids.as_deref().unwrap_or_default()
     }
     /// List of input IDs
-    pub fn input_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.input_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_ids.is_none()`.
+    pub fn input_ids(&self) -> &[::std::string::String] {
+        self.input_ids.as_deref().unwrap_or_default()
     }
     /// List of input security group IDs
-    pub fn input_security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.input_security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_security_group_ids.is_none()`.
+    pub fn input_security_group_ids(&self) -> &[::std::string::String] {
+        self.input_security_group_ids.as_deref().unwrap_or_default()
     }
     /// List of multiplex IDs
-    pub fn multiplex_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.multiplex_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.multiplex_ids.is_none()`.
+    pub fn multiplex_ids(&self) -> &[::std::string::String] {
+        self.multiplex_ids.as_deref().unwrap_or_default()
     }
 }
 impl BatchDeleteInput {
@@ -129,7 +137,7 @@ impl BatchDeleteInputBuilder {
         &self.multiplex_ids
     }
     /// Consumes the builder and constructs a [`BatchDeleteInput`](crate::operation::batch_delete::BatchDeleteInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::batch_delete::BatchDeleteInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_delete::BatchDeleteInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_delete::BatchDeleteInput {
             channel_ids: self.channel_ids,
             input_ids: self.input_ids,

@@ -38,8 +38,10 @@ impl CreateImpersonationRoleInput {
         self.description.as_deref()
     }
     /// <p>The list of rules for the impersonation role.</p>
-    pub fn rules(&self) -> ::std::option::Option<&[crate::types::ImpersonationRule]> {
-        self.rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
+    pub fn rules(&self) -> &[crate::types::ImpersonationRule] {
+        self.rules.as_deref().unwrap_or_default()
     }
 }
 impl CreateImpersonationRoleInput {
@@ -76,6 +78,7 @@ impl CreateImpersonationRoleInputBuilder {
         &self.client_token
     }
     /// <p>The WorkMail organization to create the new impersonation role within.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl CreateImpersonationRoleInputBuilder {
         &self.organization_id
     }
     /// <p>The name of the new impersonation role.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +108,7 @@ impl CreateImpersonationRoleInputBuilder {
         &self.name
     }
     /// <p>The impersonation role's type. The available impersonation role types are <code>READ_ONLY</code> or <code>FULL_ACCESS</code>.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::ImpersonationRoleType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -156,7 +161,7 @@ impl CreateImpersonationRoleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_impersonation_role::CreateImpersonationRoleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_impersonation_role::CreateImpersonationRoleInput {
             client_token: self.client_token,

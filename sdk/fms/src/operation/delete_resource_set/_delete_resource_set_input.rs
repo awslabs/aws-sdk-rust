@@ -27,6 +27,7 @@ pub struct DeleteResourceSetInputBuilder {
 }
 impl DeleteResourceSetInputBuilder {
     /// <p>A unique identifier for the resource set, used in a request to refer to the resource set.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteResourceSetInputBuilder {
     /// Consumes the builder and constructs a [`DeleteResourceSetInput`](crate::operation::delete_resource_set::DeleteResourceSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_resource_set::DeleteResourceSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_resource_set::DeleteResourceSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_resource_set::DeleteResourceSetInput { identifier: self.identifier })
     }
 }

@@ -12,8 +12,10 @@ pub struct DescribeAppBlockBuildersInput {
 }
 impl DescribeAppBlockBuildersInput {
     /// <p>The names of the app block builders.</p>
-    pub fn names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.names.is_none()`.
+    pub fn names(&self) -> &[::std::string::String] {
+        self.names.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -93,7 +95,7 @@ impl DescribeAppBlockBuildersInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_app_block_builders::DescribeAppBlockBuildersInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_app_block_builders::DescribeAppBlockBuildersInput {
             names: self.names,

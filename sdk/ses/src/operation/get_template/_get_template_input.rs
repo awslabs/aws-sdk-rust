@@ -27,6 +27,7 @@ pub struct GetTemplateInputBuilder {
 }
 impl GetTemplateInputBuilder {
     /// <p>The name of the template to retrieve.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetTemplateInputBuilder {
         &self.template_name
     }
     /// Consumes the builder and constructs a [`GetTemplateInput`](crate::operation::get_template::GetTemplateInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_template::GetTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_template::GetTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_template::GetTemplateInput {
             template_name: self.template_name,
         })

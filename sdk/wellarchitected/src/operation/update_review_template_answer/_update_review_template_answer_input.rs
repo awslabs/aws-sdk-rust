@@ -43,8 +43,10 @@ impl UpdateReviewTemplateAnswerInput {
     }
     /// <p>List of selected choice IDs in a question answer.</p>
     /// <p>The values entered replace the previously selected choices.</p>
-    pub fn selected_choices(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.selected_choices.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.selected_choices.is_none()`.
+    pub fn selected_choices(&self) -> &[::std::string::String] {
+        self.selected_choices.as_deref().unwrap_or_default()
     }
     /// <p>A list of choices to be updated.</p>
     pub fn choice_updates(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ChoiceUpdate>> {
@@ -86,6 +88,7 @@ pub struct UpdateReviewTemplateAnswerInputBuilder {
 }
 impl UpdateReviewTemplateAnswerInputBuilder {
     /// <p>The review template ARN.</p>
+    /// This field is required.
     pub fn template_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_arn = ::std::option::Option::Some(input.into());
         self
@@ -103,6 +106,7 @@ impl UpdateReviewTemplateAnswerInputBuilder {
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    /// This field is required.
     pub fn lens_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lens_alias = ::std::option::Option::Some(input.into());
         self
@@ -123,6 +127,7 @@ impl UpdateReviewTemplateAnswerInputBuilder {
         &self.lens_alias
     }
     /// <p>The ID of the question.</p>
+    /// This field is required.
     pub fn question_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.question_id = ::std::option::Option::Some(input.into());
         self
@@ -232,7 +237,7 @@ impl UpdateReviewTemplateAnswerInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_review_template_answer::UpdateReviewTemplateAnswerInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_review_template_answer::UpdateReviewTemplateAnswerInput {
             template_arn: self.template_arn,

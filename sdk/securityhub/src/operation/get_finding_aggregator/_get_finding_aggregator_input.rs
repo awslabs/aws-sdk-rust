@@ -27,6 +27,7 @@ pub struct GetFindingAggregatorInputBuilder {
 }
 impl GetFindingAggregatorInputBuilder {
     /// <p>The ARN of the finding aggregator to return details for. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
+    /// This field is required.
     pub fn finding_aggregator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.finding_aggregator_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetFindingAggregatorInputBuilder {
     /// Consumes the builder and constructs a [`GetFindingAggregatorInput`](crate::operation::get_finding_aggregator::GetFindingAggregatorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_finding_aggregator::GetFindingAggregatorInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_finding_aggregator::GetFindingAggregatorInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_finding_aggregator::GetFindingAggregatorInput {
             finding_aggregator_arn: self.finding_aggregator_arn,

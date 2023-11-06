@@ -35,6 +35,7 @@ pub struct DeregisterImageInputBuilder {
 }
 impl DeregisterImageInputBuilder {
     /// <p>The ID of the AMI.</p>
+    /// This field is required.
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_id = ::std::option::Option::Some(input.into());
         self
@@ -65,7 +66,7 @@ impl DeregisterImageInputBuilder {
     /// Consumes the builder and constructs a [`DeregisterImageInput`](crate::operation::deregister_image::DeregisterImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::deregister_image::DeregisterImageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::deregister_image::DeregisterImageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::deregister_image::DeregisterImageInput {
             image_id: self.image_id,
             dry_run: self.dry_run,

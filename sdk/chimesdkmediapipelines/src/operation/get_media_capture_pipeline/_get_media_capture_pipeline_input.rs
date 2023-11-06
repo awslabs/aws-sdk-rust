@@ -27,6 +27,7 @@ pub struct GetMediaCapturePipelineInputBuilder {
 }
 impl GetMediaCapturePipelineInputBuilder {
     /// <p>The ID of the pipeline that you want to get.</p>
+    /// This field is required.
     pub fn media_pipeline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.media_pipeline_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetMediaCapturePipelineInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_media_capture_pipeline::GetMediaCapturePipelineInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_media_capture_pipeline::GetMediaCapturePipelineInput {
             media_pipeline_id: self.media_pipeline_id,

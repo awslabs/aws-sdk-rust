@@ -28,6 +28,7 @@ pub struct DeregisterOrganizationDelegatedAdminInputBuilder {
 }
 impl DeregisterOrganizationDelegatedAdminInputBuilder {
     /// <p>A delegated administrator account ID. This is a member account in an organization that is currently designated as a delegated administrator.</p>
+    /// This field is required.
     pub fn delegated_admin_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delegated_admin_account_id = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl DeregisterOrganizationDelegatedAdminInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminInput {

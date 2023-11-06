@@ -2,7 +2,7 @@
 pub fn ser_batch_put_message_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::batch_put_message::BatchPutMessageInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.channel_name {
         object.key("channelName").string(var_1.as_str());
     }

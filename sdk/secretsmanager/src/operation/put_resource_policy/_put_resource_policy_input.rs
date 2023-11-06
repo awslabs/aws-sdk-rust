@@ -44,6 +44,7 @@ pub struct PutResourcePolicyInputBuilder {
 impl PutResourcePolicyInputBuilder {
     /// <p>The ARN or name of the secret to attach the resource-based policy.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
+    /// This field is required.
     pub fn secret_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_id = ::std::option::Option::Some(input.into());
         self
@@ -60,6 +61,7 @@ impl PutResourcePolicyInputBuilder {
         &self.secret_id
     }
     /// <p>A JSON-formatted string for an Amazon Web Services resource-based policy. For example policies, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html">Permissions policy examples</a>.</p>
+    /// This field is required.
     pub fn resource_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_policy = ::std::option::Option::Some(input.into());
         self
@@ -90,7 +92,7 @@ impl PutResourcePolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutResourcePolicyInput`](crate::operation::put_resource_policy::PutResourcePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_resource_policy::PutResourcePolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_resource_policy::PutResourcePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_resource_policy::PutResourcePolicyInput {
             secret_id: self.secret_id,
             resource_policy: self.resource_policy,

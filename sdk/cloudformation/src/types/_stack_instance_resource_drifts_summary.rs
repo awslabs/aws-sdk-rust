@@ -41,16 +41,20 @@ impl StackInstanceResourceDriftsSummary {
         self.physical_resource_id.as_deref()
     }
     /// <p>Context information that enables CloudFormation to uniquely identify a resource. CloudFormation uses context key-value pairs in cases where a resource's logical and physical IDs aren't enough to uniquely identify that resource. Each context key-value pair specifies a unique resource that contains the targeted resource.</p>
-    pub fn physical_resource_id_context(&self) -> ::std::option::Option<&[crate::types::PhysicalResourceIdContextKeyValuePair]> {
-        self.physical_resource_id_context.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.physical_resource_id_context.is_none()`.
+    pub fn physical_resource_id_context(&self) -> &[crate::types::PhysicalResourceIdContextKeyValuePair] {
+        self.physical_resource_id_context.as_deref().unwrap_or_default()
     }
     /// <p>Type of resource. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the CloudFormation User Guide.</p>
     pub fn resource_type(&self) -> ::std::option::Option<&str> {
         self.resource_type.as_deref()
     }
     /// <p>Status of the actual configuration of the resource compared to its expected configuration. These will be present only for resources whose <code>StackInstanceResourceDriftStatus</code> is <code>MODIFIED</code>. </p>
-    pub fn property_differences(&self) -> ::std::option::Option<&[crate::types::PropertyDifference]> {
-        self.property_differences.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.property_differences.is_none()`.
+    pub fn property_differences(&self) -> &[crate::types::PropertyDifference] {
+        self.property_differences.as_deref().unwrap_or_default()
     }
     /// <p>The drift status of the resource in a stack instance.</p>
     /// <ul>
@@ -89,6 +93,7 @@ pub struct StackInstanceResourceDriftsSummaryBuilder {
 }
 impl StackInstanceResourceDriftsSummaryBuilder {
     /// <p>The ID of the stack instance.</p>
+    /// This field is required.
     pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_id = ::std::option::Option::Some(input.into());
         self
@@ -103,6 +108,7 @@ impl StackInstanceResourceDriftsSummaryBuilder {
         &self.stack_id
     }
     /// <p>The logical name of the resource specified in the template.</p>
+    /// This field is required.
     pub fn logical_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.logical_resource_id = ::std::option::Option::Some(input.into());
         self
@@ -154,6 +160,7 @@ impl StackInstanceResourceDriftsSummaryBuilder {
         &self.physical_resource_id_context
     }
     /// <p>Type of resource. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the CloudFormation User Guide.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
@@ -194,6 +201,7 @@ impl StackInstanceResourceDriftsSummaryBuilder {
     /// <li> <p> <code>IN_SYNC</code>: The resource's actual configuration matches its expected template configuration.</p> </li>
     /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn stack_resource_drift_status(mut self, input: crate::types::StackResourceDriftStatus) -> Self {
         self.stack_resource_drift_status = ::std::option::Option::Some(input);
         self
@@ -220,6 +228,7 @@ impl StackInstanceResourceDriftsSummaryBuilder {
         &self.stack_resource_drift_status
     }
     /// <p>Time at which the stack instance drift detection operation was initiated.</p>
+    /// This field is required.
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
         self

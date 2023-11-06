@@ -41,6 +41,7 @@ pub struct DeleteEnvironmentTemplateVersionInputBuilder {
 }
 impl DeleteEnvironmentTemplateVersionInputBuilder {
     /// <p>The name of the environment template.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DeleteEnvironmentTemplateVersionInputBuilder {
         &self.template_name
     }
     /// <p>The environment template major version to delete.</p>
+    /// This field is required.
     pub fn major_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.major_version = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl DeleteEnvironmentTemplateVersionInputBuilder {
         &self.major_version
     }
     /// <p>The environment template minor version to delete.</p>
+    /// This field is required.
     pub fn minor_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.minor_version = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +90,7 @@ impl DeleteEnvironmentTemplateVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_environment_template_version::DeleteEnvironmentTemplateVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_environment_template_version::DeleteEnvironmentTemplateVersionInput {

@@ -14,8 +14,10 @@ impl DeleteRemediationExceptionsInput {
         self.config_rule_name.as_deref()
     }
     /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys. </p>
-    pub fn resource_keys(&self) -> ::std::option::Option<&[crate::types::RemediationExceptionResourceKey]> {
-        self.resource_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_keys.is_none()`.
+    pub fn resource_keys(&self) -> &[crate::types::RemediationExceptionResourceKey] {
+        self.resource_keys.as_deref().unwrap_or_default()
     }
 }
 impl DeleteRemediationExceptionsInput {
@@ -34,6 +36,7 @@ pub struct DeleteRemediationExceptionsInputBuilder {
 }
 impl DeleteRemediationExceptionsInputBuilder {
     /// <p>The name of the Config rule for which you want to delete remediation exception configuration.</p>
+    /// This field is required.
     pub fn config_rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.config_rule_name = ::std::option::Option::Some(input.into());
         self
@@ -72,7 +75,7 @@ impl DeleteRemediationExceptionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_remediation_exceptions::DeleteRemediationExceptionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_remediation_exceptions::DeleteRemediationExceptionsInput {
             config_rule_name: self.config_rule_name,

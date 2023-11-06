@@ -18,7 +18,7 @@ impl GetPricingPlanInputBuilder {
     /// Consumes the builder and constructs a [`GetPricingPlanInput`](crate::operation::get_pricing_plan::GetPricingPlanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_pricing_plan::GetPricingPlanInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_pricing_plan::GetPricingPlanInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_pricing_plan::GetPricingPlanInput {})
     }
 }

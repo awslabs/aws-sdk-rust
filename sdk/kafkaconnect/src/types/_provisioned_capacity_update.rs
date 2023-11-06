@@ -35,6 +35,7 @@ pub struct ProvisionedCapacityUpdateBuilder {
 }
 impl ProvisionedCapacityUpdateBuilder {
     /// <p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>
+    /// This field is required.
     pub fn mcu_count(mut self, input: i32) -> Self {
         self.mcu_count = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl ProvisionedCapacityUpdateBuilder {
         &self.mcu_count
     }
     /// <p>The number of workers that are allocated to the connector.</p>
+    /// This field is required.
     pub fn worker_count(mut self, input: i32) -> Self {
         self.worker_count = ::std::option::Option::Some(input);
         self

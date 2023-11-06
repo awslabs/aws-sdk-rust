@@ -38,8 +38,10 @@ impl CreateProvisionedModelThroughputInput {
         self.commitment_duration.as_ref()
     }
     /// <p>Tags to associate with this provisioned throughput.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateProvisionedModelThroughputInput {
@@ -76,6 +78,7 @@ impl CreateProvisionedModelThroughputInputBuilder {
         &self.client_request_token
     }
     /// <p>Number of model units to allocate.</p>
+    /// This field is required.
     pub fn model_units(mut self, input: i32) -> Self {
         self.model_units = ::std::option::Option::Some(input);
         self
@@ -90,6 +93,7 @@ impl CreateProvisionedModelThroughputInputBuilder {
         &self.model_units
     }
     /// <p>Unique name for this provisioned throughput.</p>
+    /// This field is required.
     pub fn provisioned_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioned_model_name = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +108,7 @@ impl CreateProvisionedModelThroughputInputBuilder {
         &self.provisioned_model_name
     }
     /// <p>Name or ARN of the model to associate with this provisioned throughput.</p>
+    /// This field is required.
     pub fn model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_id = ::std::option::Option::Some(input.into());
         self
@@ -156,7 +161,7 @@ impl CreateProvisionedModelThroughputInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_provisioned_model_throughput::CreateProvisionedModelThroughputInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_provisioned_model_throughput::CreateProvisionedModelThroughputInput {

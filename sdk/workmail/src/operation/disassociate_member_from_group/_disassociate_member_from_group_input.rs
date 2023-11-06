@@ -65,6 +65,7 @@ pub struct DisassociateMemberFromGroupInputBuilder {
 }
 impl DisassociateMemberFromGroupInputBuilder {
     /// <p>The identifier for the organization under which the group exists.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -85,6 +86,7 @@ impl DisassociateMemberFromGroupInputBuilder {
     /// <li> <p>Email address: group@domain.tld</p> </li>
     /// <li> <p>Group name: group</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
         self
@@ -117,6 +119,7 @@ impl DisassociateMemberFromGroupInputBuilder {
     /// <li> <p>Email address: member@domain.tld</p> </li>
     /// <li> <p>Member name: member</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn member_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_id = ::std::option::Option::Some(input.into());
         self
@@ -147,7 +150,7 @@ impl DisassociateMemberFromGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupInput {
             organization_id: self.organization_id,

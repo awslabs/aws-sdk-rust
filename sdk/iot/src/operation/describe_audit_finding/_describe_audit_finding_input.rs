@@ -27,6 +27,7 @@ pub struct DescribeAuditFindingInputBuilder {
 }
 impl DescribeAuditFindingInputBuilder {
     /// <p>A unique identifier for a single audit finding. You can use this identifier to apply mitigation actions to the finding.</p>
+    /// This field is required.
     pub fn finding_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.finding_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeAuditFindingInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAuditFindingInput`](crate::operation::describe_audit_finding::DescribeAuditFindingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_audit_finding::DescribeAuditFindingInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_audit_finding::DescribeAuditFindingInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_audit_finding::DescribeAuditFindingInput { finding_id: self.finding_id })
     }

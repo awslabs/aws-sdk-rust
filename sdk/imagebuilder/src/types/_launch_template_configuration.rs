@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LaunchTemplateConfiguration {
     /// <p>Identifies the Amazon EC2 launch template to use.</p>
-    pub launch_template_id: ::std::option::Option<::std::string::String>,
+    pub launch_template_id: ::std::string::String,
     /// <p>The account ID that this configuration applies to.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Set the specified Amazon EC2 launch template as the default launch template for the specified account.</p>
@@ -13,8 +13,9 @@ pub struct LaunchTemplateConfiguration {
 }
 impl LaunchTemplateConfiguration {
     /// <p>Identifies the Amazon EC2 launch template to use.</p>
-    pub fn launch_template_id(&self) -> ::std::option::Option<&str> {
-        self.launch_template_id.as_deref()
+    pub fn launch_template_id(&self) -> &str {
+        use std::ops::Deref;
+        self.launch_template_id.deref()
     }
     /// <p>The account ID that this configuration applies to.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
@@ -42,6 +43,7 @@ pub struct LaunchTemplateConfigurationBuilder {
 }
 impl LaunchTemplateConfigurationBuilder {
     /// <p>Identifies the Amazon EC2 launch template to use.</p>
+    /// This field is required.
     pub fn launch_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_template_id = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +86,18 @@ impl LaunchTemplateConfigurationBuilder {
         &self.set_default_version
     }
     /// Consumes the builder and constructs a [`LaunchTemplateConfiguration`](crate::types::LaunchTemplateConfiguration).
-    pub fn build(self) -> crate::types::LaunchTemplateConfiguration {
-        crate::types::LaunchTemplateConfiguration {
-            launch_template_id: self.launch_template_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`launch_template_id`](crate::types::builders::LaunchTemplateConfigurationBuilder::launch_template_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::LaunchTemplateConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::LaunchTemplateConfiguration {
+            launch_template_id: self.launch_template_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "launch_template_id",
+                    "launch_template_id was not specified but it is required when building LaunchTemplateConfiguration",
+                )
+            })?,
             account_id: self.account_id,
             set_default_version: self.set_default_version.unwrap_or_default(),
-        }
+        })
     }
 }

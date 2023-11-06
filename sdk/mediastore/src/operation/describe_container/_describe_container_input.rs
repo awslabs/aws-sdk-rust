@@ -43,7 +43,7 @@ impl DescribeContainerInputBuilder {
     /// Consumes the builder and constructs a [`DescribeContainerInput`](crate::operation::describe_container::DescribeContainerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_container::DescribeContainerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_container::DescribeContainerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_container::DescribeContainerInput {
             container_name: self.container_name,
         })

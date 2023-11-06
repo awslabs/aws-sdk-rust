@@ -35,6 +35,7 @@ pub struct GetApiKeyInputBuilder {
 }
 impl GetApiKeyInputBuilder {
     /// <p>The identifier of the ApiKey resource.</p>
+    /// This field is required.
     pub fn api_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_key = ::std::option::Option::Some(input.into());
         self
@@ -63,7 +64,7 @@ impl GetApiKeyInputBuilder {
         &self.include_value
     }
     /// Consumes the builder and constructs a [`GetApiKeyInput`](crate::operation::get_api_key::GetApiKeyInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_api_key::GetApiKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_api_key::GetApiKeyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_api_key::GetApiKeyInput {
             api_key: self.api_key,
             include_value: self.include_value,

@@ -41,6 +41,7 @@ pub struct UpdateSignalingChannelInputBuilder {
 }
 impl UpdateSignalingChannelInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the signaling channel that you want to update.</p>
+    /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateSignalingChannelInputBuilder {
         &self.channel_arn
     }
     /// <p>The current version of the signaling channel that you want to update.</p>
+    /// This field is required.
     pub fn current_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_version = ::std::option::Option::Some(input.into());
         self
@@ -85,8 +87,10 @@ impl UpdateSignalingChannelInputBuilder {
     /// Consumes the builder and constructs a [`UpdateSignalingChannelInput`](crate::operation::update_signaling_channel::UpdateSignalingChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_signaling_channel::UpdateSignalingChannelInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::update_signaling_channel::UpdateSignalingChannelInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::update_signaling_channel::UpdateSignalingChannelInput {
             channel_arn: self.channel_arn,
             current_version: self.current_version,

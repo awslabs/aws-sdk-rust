@@ -6,7 +6,7 @@ pub struct PutObjectInput {
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
     pub acl: ::std::option::Option<crate::types::ObjectCannedAcl>,
     /// <p>Object data.</p>
-    pub body: ::aws_smithy_http::byte_stream::ByteStream,
+    pub body: ::aws_smithy_types::byte_stream::ByteStream,
     /// <p>The bucket name to which the PUT action was initiated. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -98,7 +98,7 @@ impl PutObjectInput {
         self.acl.as_ref()
     }
     /// <p>Object data.</p>
-    pub fn body(&self) -> &::aws_smithy_http::byte_stream::ByteStream {
+    pub fn body(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
         &self.body
     }
     /// <p>The bucket name to which the PUT action was initiated. </p>
@@ -310,7 +310,7 @@ impl PutObjectInput {
 #[derive(::std::default::Default)]
 pub struct PutObjectInputBuilder {
     pub(crate) acl: ::std::option::Option<crate::types::ObjectCannedAcl>,
-    pub(crate) body: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
+    pub(crate) body: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) cache_control: ::std::option::Option<::std::string::String>,
     pub(crate) content_disposition: ::std::option::Option<::std::string::String>,
@@ -366,22 +366,23 @@ impl PutObjectInputBuilder {
         &self.acl
     }
     /// <p>Object data.</p>
-    pub fn body(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
+    pub fn body(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.body = ::std::option::Option::Some(input);
         self
     }
     /// <p>Object data.</p>
-    pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
+    pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.body = input;
         self
     }
     /// <p>Object data.</p>
-    pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         &self.body
     }
     /// <p>The bucket name to which the PUT action was initiated. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -653,6 +654,7 @@ impl PutObjectInputBuilder {
         &self.grant_write_acp
     }
     /// <p>Object key for which the PUT action was initiated.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -915,7 +917,7 @@ impl PutObjectInputBuilder {
         &self.expected_bucket_owner
     }
     /// Consumes the builder and constructs a [`PutObjectInput`](crate::operation::put_object::PutObjectInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_object::PutObjectInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_object::PutObjectInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_object::PutObjectInput {
             acl: self.acl,
             body: self.body.unwrap_or_default(),

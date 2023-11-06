@@ -14,7 +14,7 @@ pub struct MultiRegionAccessPointRoute {
     /// <p>A value of <code>100</code> indicates an active state, which means that traffic will be routed to the specified Region. </p>
     /// <p>When the routing configuration for a Region is changed from active to passive, any in-progress operations (uploads, copies, deletes, and so on) to the formerly active Region will continue to run to until a final success or failure status is reached.</p>
     /// <p>If all Regions in the routing configuration are designated as passive, you'll receive an <code>InvalidRequest</code> error.</p>
-    pub traffic_dial_percentage: ::std::option::Option<i32>,
+    pub traffic_dial_percentage: i32,
 }
 impl MultiRegionAccessPointRoute {
     /// <p>The name of the Amazon S3 bucket for which you'll submit a routing configuration change. Either the <code>Bucket</code> or the <code>Region</code> value must be provided. If both are provided, the bucket must be in the specified Region.</p>
@@ -30,7 +30,7 @@ impl MultiRegionAccessPointRoute {
     /// <p>A value of <code>100</code> indicates an active state, which means that traffic will be routed to the specified Region. </p>
     /// <p>When the routing configuration for a Region is changed from active to passive, any in-progress operations (uploads, copies, deletes, and so on) to the formerly active Region will continue to run to until a final success or failure status is reached.</p>
     /// <p>If all Regions in the routing configuration are designated as passive, you'll receive an <code>InvalidRequest</code> error.</p>
-    pub fn traffic_dial_percentage(&self) -> ::std::option::Option<i32> {
+    pub fn traffic_dial_percentage(&self) -> i32 {
         self.traffic_dial_percentage
     }
 }
@@ -83,6 +83,7 @@ impl MultiRegionAccessPointRouteBuilder {
     /// <p>A value of <code>100</code> indicates an active state, which means that traffic will be routed to the specified Region. </p>
     /// <p>When the routing configuration for a Region is changed from active to passive, any in-progress operations (uploads, copies, deletes, and so on) to the formerly active Region will continue to run to until a final success or failure status is reached.</p>
     /// <p>If all Regions in the routing configuration are designated as passive, you'll receive an <code>InvalidRequest</code> error.</p>
+    /// This field is required.
     pub fn traffic_dial_percentage(mut self, input: i32) -> Self {
         self.traffic_dial_percentage = ::std::option::Option::Some(input);
         self
@@ -105,11 +106,18 @@ impl MultiRegionAccessPointRouteBuilder {
         &self.traffic_dial_percentage
     }
     /// Consumes the builder and constructs a [`MultiRegionAccessPointRoute`](crate::types::MultiRegionAccessPointRoute).
-    pub fn build(self) -> crate::types::MultiRegionAccessPointRoute {
-        crate::types::MultiRegionAccessPointRoute {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`traffic_dial_percentage`](crate::types::builders::MultiRegionAccessPointRouteBuilder::traffic_dial_percentage)
+    pub fn build(self) -> ::std::result::Result<crate::types::MultiRegionAccessPointRoute, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::MultiRegionAccessPointRoute {
             bucket: self.bucket,
             region: self.region,
-            traffic_dial_percentage: self.traffic_dial_percentage,
-        }
+            traffic_dial_percentage: self.traffic_dial_percentage.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "traffic_dial_percentage",
+                    "traffic_dial_percentage was not specified but it is required when building MultiRegionAccessPointRoute",
+                )
+            })?,
+        })
     }
 }

@@ -77,6 +77,7 @@ impl RtmpOutputSettingsBuilder {
         &self.connection_retry_interval
     }
     /// The RTMP endpoint excluding the stream name (eg. rtmp://host/appname). For connection to Akamai, a username and password must be supplied. URI fields accept format identifiers.
+    /// This field is required.
     pub fn destination(mut self, input: crate::types::OutputLocationRef) -> Self {
         self.destination = ::std::option::Option::Some(input);
         self

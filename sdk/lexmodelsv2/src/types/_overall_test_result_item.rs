@@ -7,11 +7,11 @@ pub struct OverallTestResultItem {
     /// <p>Indicates whether the conversation contains multiple turns or not.</p>
     pub multi_turn_conversation: bool,
     /// <p>The total number of overall results in the result of the test execution.</p>
-    pub total_result_count: ::std::option::Option<i32>,
+    pub total_result_count: i32,
     /// <p>The number of speech transcription results in the overall test.</p>
     pub speech_transcription_result_counts: ::std::option::Option<::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>>,
     /// <p>The number of results that succeeded.</p>
-    pub end_to_end_result_counts: ::std::option::Option<::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>>,
+    pub end_to_end_result_counts: ::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>,
 }
 impl OverallTestResultItem {
     /// <p>Indicates whether the conversation contains multiple turns or not.</p>
@@ -19,7 +19,7 @@ impl OverallTestResultItem {
         self.multi_turn_conversation
     }
     /// <p>The total number of overall results in the result of the test execution.</p>
-    pub fn total_result_count(&self) -> ::std::option::Option<i32> {
+    pub fn total_result_count(&self) -> i32 {
         self.total_result_count
     }
     /// <p>The number of speech transcription results in the overall test.</p>
@@ -29,8 +29,8 @@ impl OverallTestResultItem {
         self.speech_transcription_result_counts.as_ref()
     }
     /// <p>The number of results that succeeded.</p>
-    pub fn end_to_end_result_counts(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>> {
-        self.end_to_end_result_counts.as_ref()
+    pub fn end_to_end_result_counts(&self) -> &::std::collections::HashMap<crate::types::TestResultMatchStatus, i32> {
+        &self.end_to_end_result_counts
     }
 }
 impl OverallTestResultItem {
@@ -51,6 +51,7 @@ pub struct OverallTestResultItemBuilder {
 }
 impl OverallTestResultItemBuilder {
     /// <p>Indicates whether the conversation contains multiple turns or not.</p>
+    /// This field is required.
     pub fn multi_turn_conversation(mut self, input: bool) -> Self {
         self.multi_turn_conversation = ::std::option::Option::Some(input);
         self
@@ -65,6 +66,7 @@ impl OverallTestResultItemBuilder {
         &self.multi_turn_conversation
     }
     /// <p>The total number of overall results in the result of the test execution.</p>
+    /// This field is required.
     pub fn total_result_count(mut self, input: i32) -> Self {
         self.total_result_count = ::std::option::Option::Some(input);
         self
@@ -127,12 +129,25 @@ impl OverallTestResultItemBuilder {
         &self.end_to_end_result_counts
     }
     /// Consumes the builder and constructs a [`OverallTestResultItem`](crate::types::OverallTestResultItem).
-    pub fn build(self) -> crate::types::OverallTestResultItem {
-        crate::types::OverallTestResultItem {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`total_result_count`](crate::types::builders::OverallTestResultItemBuilder::total_result_count)
+    /// - [`end_to_end_result_counts`](crate::types::builders::OverallTestResultItemBuilder::end_to_end_result_counts)
+    pub fn build(self) -> ::std::result::Result<crate::types::OverallTestResultItem, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::OverallTestResultItem {
             multi_turn_conversation: self.multi_turn_conversation.unwrap_or_default(),
-            total_result_count: self.total_result_count,
+            total_result_count: self.total_result_count.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "total_result_count",
+                    "total_result_count was not specified but it is required when building OverallTestResultItem",
+                )
+            })?,
             speech_transcription_result_counts: self.speech_transcription_result_counts,
-            end_to_end_result_counts: self.end_to_end_result_counts,
-        }
+            end_to_end_result_counts: self.end_to_end_result_counts.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "end_to_end_result_counts",
+                    "end_to_end_result_counts was not specified but it is required when building OverallTestResultItem",
+                )
+            })?,
+        })
     }
 }

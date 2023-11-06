@@ -27,6 +27,7 @@ pub struct DescribeWorkforceInputBuilder {
 }
 impl DescribeWorkforceInputBuilder {
     /// <p>The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is automatically set to <code>default</code> when a workforce is created and cannot be modified. </p>
+    /// This field is required.
     pub fn workforce_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workforce_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeWorkforceInputBuilder {
     /// Consumes the builder and constructs a [`DescribeWorkforceInput`](crate::operation::describe_workforce::DescribeWorkforceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_workforce::DescribeWorkforceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_workforce::DescribeWorkforceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_workforce::DescribeWorkforceInput {
             workforce_name: self.workforce_name,
         })

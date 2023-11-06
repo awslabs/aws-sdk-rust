@@ -5,26 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChangeInfo {
     /// <p>This element contains an ID that you use when performing a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a> action to get detailed information about the change.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The current state of the request. <code>PENDING</code> indicates that this request has not yet been applied to all Amazon Route 53 DNS servers.</p>
-    pub status: ::std::option::Option<crate::types::ChangeStatus>,
+    pub status: crate::types::ChangeStatus,
     /// <p>The date and time that the change request was submitted in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC). For example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751 UTC.</p>
-    pub submitted_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub submitted_at: ::aws_smithy_types::DateTime,
     /// <p>A comment you can provide.</p>
     pub comment: ::std::option::Option<::std::string::String>,
 }
 impl ChangeInfo {
     /// <p>This element contains an ID that you use when performing a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a> action to get detailed information about the change.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The current state of the request. <code>PENDING</code> indicates that this request has not yet been applied to all Amazon Route 53 DNS servers.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ChangeStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::ChangeStatus {
+        &self.status
     }
     /// <p>The date and time that the change request was submitted in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC). For example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751 UTC.</p>
-    pub fn submitted_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.submitted_at.as_ref()
+    pub fn submitted_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.submitted_at
     }
     /// <p>A comment you can provide.</p>
     pub fn comment(&self) -> ::std::option::Option<&str> {
@@ -49,6 +50,7 @@ pub struct ChangeInfoBuilder {
 }
 impl ChangeInfoBuilder {
     /// <p>This element contains an ID that you use when performing a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a> action to get detailed information about the change.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +65,7 @@ impl ChangeInfoBuilder {
         &self.id
     }
     /// <p>The current state of the request. <code>PENDING</code> indicates that this request has not yet been applied to all Amazon Route 53 DNS servers.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::ChangeStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -77,6 +80,7 @@ impl ChangeInfoBuilder {
         &self.status
     }
     /// <p>The date and time that the change request was submitted in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC). For example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751 UTC.</p>
+    /// This field is required.
     pub fn submitted_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.submitted_at = ::std::option::Option::Some(input);
         self
@@ -105,12 +109,31 @@ impl ChangeInfoBuilder {
         &self.comment
     }
     /// Consumes the builder and constructs a [`ChangeInfo`](crate::types::ChangeInfo).
-    pub fn build(self) -> crate::types::ChangeInfo {
-        crate::types::ChangeInfo {
-            id: self.id,
-            status: self.status,
-            submitted_at: self.submitted_at,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::ChangeInfoBuilder::id)
+    /// - [`status`](crate::types::builders::ChangeInfoBuilder::status)
+    /// - [`submitted_at`](crate::types::builders::ChangeInfoBuilder::submitted_at)
+    pub fn build(self) -> ::std::result::Result<crate::types::ChangeInfo, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ChangeInfo {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building ChangeInfo",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building ChangeInfo",
+                )
+            })?,
+            submitted_at: self.submitted_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "submitted_at",
+                    "submitted_at was not specified but it is required when building ChangeInfo",
+                )
+            })?,
             comment: self.comment,
-        }
+        })
     }
 }

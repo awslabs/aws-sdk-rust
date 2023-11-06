@@ -41,8 +41,10 @@ impl ApplicationConfiguration {
         self.application_snapshot_configuration.as_ref()
     }
     /// <p>The array of descriptions of VPC configurations available to the application.</p>
-    pub fn vpc_configurations(&self) -> ::std::option::Option<&[crate::types::VpcConfiguration]> {
-        self.vpc_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_configurations.is_none()`.
+    pub fn vpc_configurations(&self) -> &[crate::types::VpcConfiguration] {
+        self.vpc_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The configuration parameters for a Kinesis Data Analytics Studio notebook.</p>
     pub fn zeppelin_application_configuration(&self) -> ::std::option::Option<&crate::types::ZeppelinApplicationConfiguration> {

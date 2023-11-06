@@ -9,8 +9,10 @@ pub struct DescribeServiceActionExecutionParametersOutput {
 }
 impl DescribeServiceActionExecutionParametersOutput {
     /// <p>The parameters of the self-service action.</p>
-    pub fn service_action_parameters(&self) -> ::std::option::Option<&[crate::types::ExecutionParameter]> {
-        self.service_action_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_action_parameters.is_none()`.
+    pub fn service_action_parameters(&self) -> &[crate::types::ExecutionParameter] {
+        self.service_action_parameters.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeServiceActionExecutionParametersOutput {

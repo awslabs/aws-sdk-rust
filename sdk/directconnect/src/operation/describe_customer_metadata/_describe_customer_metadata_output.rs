@@ -16,8 +16,10 @@ pub struct DescribeCustomerMetadataOutput {
 }
 impl DescribeCustomerMetadataOutput {
     /// <p>The list of customer agreements.</p>
-    pub fn agreements(&self) -> ::std::option::Option<&[crate::types::CustomerAgreement]> {
-        self.agreements.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agreements.is_none()`.
+    pub fn agreements(&self) -> &[crate::types::CustomerAgreement] {
+        self.agreements.as_deref().unwrap_or_default()
     }
     /// <p>The type of network-to-network interface (NNI) partner. The partner type will be one of the following:</p>
     /// <ul>

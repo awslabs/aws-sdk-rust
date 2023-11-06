@@ -15,8 +15,10 @@ impl AutoRollbackConfiguration {
         self.enabled
     }
     /// <p>The event type or types that trigger a rollback.</p>
-    pub fn events(&self) -> ::std::option::Option<&[crate::types::AutoRollbackEvent]> {
-        self.events.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.events.is_none()`.
+    pub fn events(&self) -> &[crate::types::AutoRollbackEvent] {
+        self.events.as_deref().unwrap_or_default()
     }
 }
 impl AutoRollbackConfiguration {

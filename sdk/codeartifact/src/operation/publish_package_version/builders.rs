@@ -10,7 +10,7 @@ impl PublishPackageVersionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::publish_package_version::PublishPackageVersionOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::publish_package_version::PublishPackageVersionError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -75,12 +75,15 @@ impl PublishPackageVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::publish_package_version::PublishPackageVersionOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::publish_package_version::PublishPackageVersionError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::publish_package_version::PublishPackageVersion::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -89,20 +92,15 @@ impl PublishPackageVersionFluentBuilder {
         crate::operation::publish_package_version::PublishPackageVersion::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::publish_package_version::PublishPackageVersionOutput,
-            crate::operation::publish_package_version::PublishPackageVersionError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::publish_package_version::PublishPackageVersionError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::publish_package_version::PublishPackageVersionOutput,
+        crate::operation::publish_package_version::PublishPackageVersionError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -215,17 +213,17 @@ impl PublishPackageVersionFluentBuilder {
         self.inner.get_package_version()
     }
     /// <p>The content of the asset to publish.</p>
-    pub fn asset_content(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
+    pub fn asset_content(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.inner = self.inner.asset_content(input);
         self
     }
     /// <p>The content of the asset to publish.</p>
-    pub fn set_asset_content(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
+    pub fn set_asset_content(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.inner = self.inner.set_asset_content(input);
         self
     }
     /// <p>The content of the asset to publish.</p>
-    pub fn get_asset_content(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_asset_content(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         self.inner.get_asset_content()
     }
     /// <p>The name of the asset to publish. Asset names can include Unicode letters and numbers, and the following special characters: <code>~ ! @ ^ &amp; ( ) - ` _ + [ ] { } ; , . `</code> </p>

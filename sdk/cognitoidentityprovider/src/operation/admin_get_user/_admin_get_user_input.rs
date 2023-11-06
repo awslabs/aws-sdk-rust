@@ -43,6 +43,7 @@ pub struct AdminGetUserInputBuilder {
 }
 impl AdminGetUserInputBuilder {
     /// <p>The user pool ID for the user pool where you want to get information about the user.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +58,7 @@ impl AdminGetUserInputBuilder {
         &self.user_pool_id
     }
     /// <p>The user name of the user you want to retrieve.</p>
+    /// This field is required.
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self
@@ -73,7 +75,7 @@ impl AdminGetUserInputBuilder {
     /// Consumes the builder and constructs a [`AdminGetUserInput`](crate::operation::admin_get_user::AdminGetUserInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::admin_get_user::AdminGetUserInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::admin_get_user::AdminGetUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::admin_get_user::AdminGetUserInput {
             user_pool_id: self.user_pool_id,
             username: self.username,

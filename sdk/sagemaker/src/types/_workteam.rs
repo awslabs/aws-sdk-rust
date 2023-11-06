@@ -33,8 +33,10 @@ impl Workteam {
     }
     /// <p>A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make up the work team. </p>
     /// <p>Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private workforces created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC identity provider (IdP) use <code>OidcMemberDefinition</code>.</p>
-    pub fn member_definitions(&self) -> ::std::option::Option<&[crate::types::MemberDefinition]> {
-        self.member_definitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.member_definitions.is_none()`.
+    pub fn member_definitions(&self) -> &[crate::types::MemberDefinition] {
+        self.member_definitions.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the work team.</p>
     pub fn workteam_arn(&self) -> ::std::option::Option<&str> {
@@ -45,8 +47,10 @@ impl Workteam {
         self.workforce_arn.as_deref()
     }
     /// <p>The Amazon Marketplace identifier for a vendor's work team.</p>
-    pub fn product_listing_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.product_listing_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.product_listing_ids.is_none()`.
+    pub fn product_listing_ids(&self) -> &[::std::string::String] {
+        self.product_listing_ids.as_deref().unwrap_or_default()
     }
     /// <p>A description of the work team.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -93,6 +97,7 @@ pub struct WorkteamBuilder {
 }
 impl WorkteamBuilder {
     /// <p>The name of the work team.</p>
+    /// This field is required.
     pub fn workteam_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workteam_name = ::std::option::Option::Some(input.into());
         self
@@ -130,6 +135,7 @@ impl WorkteamBuilder {
         &self.member_definitions
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the work team.</p>
+    /// This field is required.
     pub fn workteam_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workteam_arn = ::std::option::Option::Some(input.into());
         self
@@ -178,6 +184,7 @@ impl WorkteamBuilder {
         &self.product_listing_ids
     }
     /// <p>A description of the work team.</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self

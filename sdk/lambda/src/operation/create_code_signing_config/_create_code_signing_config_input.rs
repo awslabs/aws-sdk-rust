@@ -55,6 +55,7 @@ impl CreateCodeSigningConfigInputBuilder {
         &self.description
     }
     /// <p>Signing profiles for this code signing configuration.</p>
+    /// This field is required.
     pub fn allowed_publishers(mut self, input: crate::types::AllowedPublishers) -> Self {
         self.allowed_publishers = ::std::option::Option::Some(input);
         self
@@ -87,7 +88,7 @@ impl CreateCodeSigningConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_code_signing_config::CreateCodeSigningConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_code_signing_config::CreateCodeSigningConfigInput {
             description: self.description,

@@ -23,8 +23,10 @@ impl Cluster {
     }
     /// <p>Endpoints for a cluster. Specify one of these endpoints when you want to set or retrieve a routing control state in the cluster.</p>
     /// <p>To get or update the routing control state, see the Amazon Route 53 Application Recovery Controller Routing Control Actions.</p>
-    pub fn cluster_endpoints(&self) -> ::std::option::Option<&[crate::types::ClusterEndpoint]> {
-        self.cluster_endpoints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cluster_endpoints.is_none()`.
+    pub fn cluster_endpoints(&self) -> &[crate::types::ClusterEndpoint] {
+        self.cluster_endpoints.as_deref().unwrap_or_default()
     }
     /// <p>The name of the cluster.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {

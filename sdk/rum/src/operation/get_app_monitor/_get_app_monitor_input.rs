@@ -27,6 +27,7 @@ pub struct GetAppMonitorInputBuilder {
 }
 impl GetAppMonitorInputBuilder {
     /// <p>The app monitor to retrieve information for.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetAppMonitorInputBuilder {
     /// Consumes the builder and constructs a [`GetAppMonitorInput`](crate::operation::get_app_monitor::GetAppMonitorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_app_monitor::GetAppMonitorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_app_monitor::GetAppMonitorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_app_monitor::GetAppMonitorInput { name: self.name })
     }
 }

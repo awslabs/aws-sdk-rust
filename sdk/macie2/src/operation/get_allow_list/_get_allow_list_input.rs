@@ -27,6 +27,7 @@ pub struct GetAllowListInputBuilder {
 }
 impl GetAllowListInputBuilder {
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetAllowListInputBuilder {
     /// Consumes the builder and constructs a [`GetAllowListInput`](crate::operation::get_allow_list::GetAllowListInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_allow_list::GetAllowListInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_allow_list::GetAllowListInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_allow_list::GetAllowListInput { id: self.id })
     }
 }

@@ -27,6 +27,7 @@ pub struct DeregisterWorkspaceDirectoryInputBuilder {
 }
 impl DeregisterWorkspaceDirectoryInputBuilder {
     /// <p>The identifier of the directory. If any WorkSpaces are registered to this directory, you must remove them before you deregister the directory, or you will receive an OperationNotSupportedException error.</p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeregisterWorkspaceDirectoryInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_workspace_directory::DeregisterWorkspaceDirectoryInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::deregister_workspace_directory::DeregisterWorkspaceDirectoryInput {
             directory_id: self.directory_id,

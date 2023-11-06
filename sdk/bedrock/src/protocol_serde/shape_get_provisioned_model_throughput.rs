@@ -119,7 +119,9 @@ pub fn de_get_provisioned_model_throughput_http_response(
         output = crate::protocol_serde::shape_get_provisioned_model_throughput::de_get_provisioned_model_throughput(_response_body, output)
             .map_err(crate::operation::get_provisioned_model_throughput::GetProvisionedModelThroughputError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::get_provisioned_model_throughput_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::get_provisioned_model_throughput::GetProvisionedModelThroughputError::unhandled)?
     })
 }
 

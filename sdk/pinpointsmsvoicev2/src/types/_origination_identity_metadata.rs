@@ -5,30 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OriginationIdentityMetadata {
     /// <p>The Amazon Resource Name (ARN) associated with the origination identity.</p>
-    pub origination_identity_arn: ::std::option::Option<::std::string::String>,
+    pub origination_identity_arn: ::std::string::String,
     /// <p>The unique identifier of the origination identity.</p>
-    pub origination_identity: ::std::option::Option<::std::string::String>,
+    pub origination_identity: ::std::string::String,
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    pub iso_country_code: ::std::option::Option<::std::string::String>,
+    pub iso_country_code: ::std::string::String,
     /// <p>Describes if the origination identity can be used for text messages, voice calls or both.</p>
-    pub number_capabilities: ::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>>,
+    pub number_capabilities: ::std::vec::Vec<crate::types::NumberCapability>,
 }
 impl OriginationIdentityMetadata {
     /// <p>The Amazon Resource Name (ARN) associated with the origination identity.</p>
-    pub fn origination_identity_arn(&self) -> ::std::option::Option<&str> {
-        self.origination_identity_arn.as_deref()
+    pub fn origination_identity_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.origination_identity_arn.deref()
     }
     /// <p>The unique identifier of the origination identity.</p>
-    pub fn origination_identity(&self) -> ::std::option::Option<&str> {
-        self.origination_identity.as_deref()
+    pub fn origination_identity(&self) -> &str {
+        use std::ops::Deref;
+        self.origination_identity.deref()
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    pub fn iso_country_code(&self) -> ::std::option::Option<&str> {
-        self.iso_country_code.as_deref()
+    pub fn iso_country_code(&self) -> &str {
+        use std::ops::Deref;
+        self.iso_country_code.deref()
     }
     /// <p>Describes if the origination identity can be used for text messages, voice calls or both.</p>
-    pub fn number_capabilities(&self) -> ::std::option::Option<&[crate::types::NumberCapability]> {
-        self.number_capabilities.as_deref()
+    pub fn number_capabilities(&self) -> &[crate::types::NumberCapability] {
+        use std::ops::Deref;
+        self.number_capabilities.deref()
     }
 }
 impl OriginationIdentityMetadata {
@@ -49,6 +53,7 @@ pub struct OriginationIdentityMetadataBuilder {
 }
 impl OriginationIdentityMetadataBuilder {
     /// <p>The Amazon Resource Name (ARN) associated with the origination identity.</p>
+    /// This field is required.
     pub fn origination_identity_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origination_identity_arn = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +68,7 @@ impl OriginationIdentityMetadataBuilder {
         &self.origination_identity_arn
     }
     /// <p>The unique identifier of the origination identity.</p>
+    /// This field is required.
     pub fn origination_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origination_identity = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +83,7 @@ impl OriginationIdentityMetadataBuilder {
         &self.origination_identity
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
+    /// This field is required.
     pub fn iso_country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iso_country_code = ::std::option::Option::Some(input.into());
         self
@@ -111,12 +118,37 @@ impl OriginationIdentityMetadataBuilder {
         &self.number_capabilities
     }
     /// Consumes the builder and constructs a [`OriginationIdentityMetadata`](crate::types::OriginationIdentityMetadata).
-    pub fn build(self) -> crate::types::OriginationIdentityMetadata {
-        crate::types::OriginationIdentityMetadata {
-            origination_identity_arn: self.origination_identity_arn,
-            origination_identity: self.origination_identity,
-            iso_country_code: self.iso_country_code,
-            number_capabilities: self.number_capabilities,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`origination_identity_arn`](crate::types::builders::OriginationIdentityMetadataBuilder::origination_identity_arn)
+    /// - [`origination_identity`](crate::types::builders::OriginationIdentityMetadataBuilder::origination_identity)
+    /// - [`iso_country_code`](crate::types::builders::OriginationIdentityMetadataBuilder::iso_country_code)
+    /// - [`number_capabilities`](crate::types::builders::OriginationIdentityMetadataBuilder::number_capabilities)
+    pub fn build(self) -> ::std::result::Result<crate::types::OriginationIdentityMetadata, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::OriginationIdentityMetadata {
+            origination_identity_arn: self.origination_identity_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "origination_identity_arn",
+                    "origination_identity_arn was not specified but it is required when building OriginationIdentityMetadata",
+                )
+            })?,
+            origination_identity: self.origination_identity.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "origination_identity",
+                    "origination_identity was not specified but it is required when building OriginationIdentityMetadata",
+                )
+            })?,
+            iso_country_code: self.iso_country_code.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "iso_country_code",
+                    "iso_country_code was not specified but it is required when building OriginationIdentityMetadata",
+                )
+            })?,
+            number_capabilities: self.number_capabilities.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "number_capabilities",
+                    "number_capabilities was not specified but it is required when building OriginationIdentityMetadata",
+                )
+            })?,
+        })
     }
 }

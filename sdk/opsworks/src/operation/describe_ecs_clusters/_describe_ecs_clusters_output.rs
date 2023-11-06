@@ -12,8 +12,10 @@ pub struct DescribeEcsClustersOutput {
 }
 impl DescribeEcsClustersOutput {
     /// <p>A list of <code>EcsCluster</code> objects containing the cluster descriptions.</p>
-    pub fn ecs_clusters(&self) -> ::std::option::Option<&[crate::types::EcsCluster]> {
-        self.ecs_clusters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ecs_clusters.is_none()`.
+    pub fn ecs_clusters(&self) -> &[crate::types::EcsCluster] {
+        self.ecs_clusters.as_deref().unwrap_or_default()
     }
     /// <p>If a paginated request does not return all of the remaining results, this parameter is set to a token that you can assign to the request object's <code>NextToken</code> parameter to retrieve the next set of results. If the previous paginated request returned all of the remaining results, this parameter is set to <code>null</code>.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDataSetImportHistoryOutput {
     /// <p>The data set import tasks.</p>
-    pub data_set_import_tasks: ::std::option::Option<::std::vec::Vec<crate::types::DataSetImportTask>>,
+    pub data_set_import_tasks: ::std::vec::Vec<crate::types::DataSetImportTask>,
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListDataSetImportHistoryOutput {
     /// <p>The data set import tasks.</p>
-    pub fn data_set_import_tasks(&self) -> ::std::option::Option<&[crate::types::DataSetImportTask]> {
-        self.data_set_import_tasks.as_deref()
+    pub fn data_set_import_tasks(&self) -> &[crate::types::DataSetImportTask] {
+        use std::ops::Deref;
+        self.data_set_import_tasks.deref()
     }
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,23 @@ impl ListDataSetImportHistoryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDataSetImportHistoryOutput`](crate::operation::list_data_set_import_history::ListDataSetImportHistoryOutput).
-    pub fn build(self) -> crate::operation::list_data_set_import_history::ListDataSetImportHistoryOutput {
-        crate::operation::list_data_set_import_history::ListDataSetImportHistoryOutput {
-            data_set_import_tasks: self.data_set_import_tasks,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`data_set_import_tasks`](crate::operation::list_data_set_import_history::builders::ListDataSetImportHistoryOutputBuilder::data_set_import_tasks)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_data_set_import_history::ListDataSetImportHistoryOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_data_set_import_history::ListDataSetImportHistoryOutput {
+            data_set_import_tasks: self.data_set_import_tasks.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "data_set_import_tasks",
+                    "data_set_import_tasks was not specified but it is required when building ListDataSetImportHistoryOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

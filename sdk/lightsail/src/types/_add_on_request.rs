@@ -7,7 +7,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddOnRequest {
     /// <p>The add-on type.</p>
-    pub add_on_type: ::std::option::Option<crate::types::AddOnType>,
+    pub add_on_type: crate::types::AddOnType,
     /// <p>An object that represents additional parameters when enabling or modifying the automatic snapshot add-on.</p>
     pub auto_snapshot_add_on_request: ::std::option::Option<crate::types::AutoSnapshotAddOnRequest>,
     /// <p>An object that represents additional parameters when enabling or modifying the <code>StopInstanceOnIdle</code> add-on.</p> <important>
@@ -17,8 +17,8 @@ pub struct AddOnRequest {
 }
 impl AddOnRequest {
     /// <p>The add-on type.</p>
-    pub fn add_on_type(&self) -> ::std::option::Option<&crate::types::AddOnType> {
-        self.add_on_type.as_ref()
+    pub fn add_on_type(&self) -> &crate::types::AddOnType {
+        &self.add_on_type
     }
     /// <p>An object that represents additional parameters when enabling or modifying the automatic snapshot add-on.</p>
     pub fn auto_snapshot_add_on_request(&self) -> ::std::option::Option<&crate::types::AutoSnapshotAddOnRequest> {
@@ -48,6 +48,7 @@ pub struct AddOnRequestBuilder {
 }
 impl AddOnRequestBuilder {
     /// <p>The add-on type.</p>
+    /// This field is required.
     pub fn add_on_type(mut self, input: crate::types::AddOnType) -> Self {
         self.add_on_type = ::std::option::Option::Some(input);
         self
@@ -96,11 +97,18 @@ impl AddOnRequestBuilder {
         &self.stop_instance_on_idle_request
     }
     /// Consumes the builder and constructs a [`AddOnRequest`](crate::types::AddOnRequest).
-    pub fn build(self) -> crate::types::AddOnRequest {
-        crate::types::AddOnRequest {
-            add_on_type: self.add_on_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`add_on_type`](crate::types::builders::AddOnRequestBuilder::add_on_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::AddOnRequest, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AddOnRequest {
+            add_on_type: self.add_on_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "add_on_type",
+                    "add_on_type was not specified but it is required when building AddOnRequest",
+                )
+            })?,
             auto_snapshot_add_on_request: self.auto_snapshot_add_on_request,
             stop_instance_on_idle_request: self.stop_instance_on_idle_request,
-        }
+        })
     }
 }

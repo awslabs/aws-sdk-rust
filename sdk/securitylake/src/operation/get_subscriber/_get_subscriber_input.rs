@@ -27,6 +27,7 @@ pub struct GetSubscriberInputBuilder {
 }
 impl GetSubscriberInputBuilder {
     /// <p>A value created by Amazon Security Lake that uniquely identifies your <code>GetSubscriber</code> API request.</p>
+    /// This field is required.
     pub fn subscriber_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscriber_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetSubscriberInputBuilder {
     /// Consumes the builder and constructs a [`GetSubscriberInput`](crate::operation::get_subscriber::GetSubscriberInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_subscriber::GetSubscriberInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_subscriber::GetSubscriberInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_subscriber::GetSubscriberInput {
             subscriber_id: self.subscriber_id,
         })

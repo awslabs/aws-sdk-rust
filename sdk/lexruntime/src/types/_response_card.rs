@@ -21,8 +21,10 @@ impl ResponseCard {
         self.content_type.as_ref()
     }
     /// <p>An array of attachment objects representing options.</p>
-    pub fn generic_attachments(&self) -> ::std::option::Option<&[crate::types::GenericAttachment]> {
-        self.generic_attachments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.generic_attachments.is_none()`.
+    pub fn generic_attachments(&self) -> &[crate::types::GenericAttachment] {
+        self.generic_attachments.as_deref().unwrap_or_default()
     }
 }
 impl ResponseCard {

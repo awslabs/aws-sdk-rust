@@ -34,6 +34,7 @@ pub struct GetProposalInputBuilder {
 }
 impl GetProposalInputBuilder {
     /// <p>The unique identifier of the network for which the proposal is made.</p>
+    /// This field is required.
     pub fn network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetProposalInputBuilder {
         &self.network_id
     }
     /// <p>The unique identifier of the proposal.</p>
+    /// This field is required.
     pub fn proposal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.proposal_id = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,7 @@ impl GetProposalInputBuilder {
         &self.proposal_id
     }
     /// Consumes the builder and constructs a [`GetProposalInput`](crate::operation::get_proposal::GetProposalInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_proposal::GetProposalInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_proposal::GetProposalInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_proposal::GetProposalInput {
             network_id: self.network_id,
             proposal_id: self.proposal_id,

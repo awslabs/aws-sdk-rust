@@ -2,7 +2,7 @@
 pub fn ser_grant(
     input: &crate::types::Grant,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_1) = &input.grantee {
@@ -19,6 +19,7 @@ pub fn ser_grant(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_grant(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result<crate::types::Grant, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::Grant::builder();

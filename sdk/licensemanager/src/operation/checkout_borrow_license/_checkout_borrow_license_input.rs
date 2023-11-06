@@ -22,8 +22,10 @@ impl CheckoutBorrowLicenseInput {
         self.license_arn.as_deref()
     }
     /// <p>License entitlements. Partial checkouts are not supported.</p>
-    pub fn entitlements(&self) -> ::std::option::Option<&[crate::types::EntitlementData]> {
-        self.entitlements.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entitlements.is_none()`.
+    pub fn entitlements(&self) -> &[crate::types::EntitlementData] {
+        self.entitlements.as_deref().unwrap_or_default()
     }
     /// <p>Digital signature method. The possible value is JSON Web Signature (JWS) algorithm PS384. For more information, see <a href="https://tools.ietf.org/html/rfc7518#section-3.5">RFC 7518 Digital Signature with RSASSA-PSS</a>.</p>
     pub fn digital_signature_method(&self) -> ::std::option::Option<&crate::types::DigitalSignatureMethod> {
@@ -34,8 +36,10 @@ impl CheckoutBorrowLicenseInput {
         self.node_id.as_deref()
     }
     /// <p>Information about constraints.</p>
-    pub fn checkout_metadata(&self) -> ::std::option::Option<&[crate::types::Metadata]> {
-        self.checkout_metadata.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.checkout_metadata.is_none()`.
+    pub fn checkout_metadata(&self) -> &[crate::types::Metadata] {
+        self.checkout_metadata.as_deref().unwrap_or_default()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -62,6 +66,7 @@ pub struct CheckoutBorrowLicenseInputBuilder {
 }
 impl CheckoutBorrowLicenseInputBuilder {
     /// <p>Amazon Resource Name (ARN) of the license. The license must use the borrow consumption configuration.</p>
+    /// This field is required.
     pub fn license_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_arn = ::std::option::Option::Some(input.into());
         self
@@ -96,6 +101,7 @@ impl CheckoutBorrowLicenseInputBuilder {
         &self.entitlements
     }
     /// <p>Digital signature method. The possible value is JSON Web Signature (JWS) algorithm PS384. For more information, see <a href="https://tools.ietf.org/html/rfc7518#section-3.5">RFC 7518 Digital Signature with RSASSA-PSS</a>.</p>
+    /// This field is required.
     pub fn digital_signature_method(mut self, input: crate::types::DigitalSignatureMethod) -> Self {
         self.digital_signature_method = ::std::option::Option::Some(input);
         self
@@ -144,6 +150,7 @@ impl CheckoutBorrowLicenseInputBuilder {
         &self.checkout_metadata
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -160,7 +167,7 @@ impl CheckoutBorrowLicenseInputBuilder {
     /// Consumes the builder and constructs a [`CheckoutBorrowLicenseInput`](crate::operation::checkout_borrow_license::CheckoutBorrowLicenseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::checkout_borrow_license::CheckoutBorrowLicenseInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::checkout_borrow_license::CheckoutBorrowLicenseInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::checkout_borrow_license::CheckoutBorrowLicenseInput {
             license_arn: self.license_arn,

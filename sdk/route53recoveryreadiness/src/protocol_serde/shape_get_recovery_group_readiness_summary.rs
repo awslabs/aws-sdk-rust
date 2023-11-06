@@ -159,7 +159,7 @@ pub(crate) fn de_get_recovery_group_readiness_summary(
                 }
                 "readinessChecks" => {
                     builder = builder.set_readiness_checks(
-                        crate::protocol_serde::shape___list_of_readiness_check_summary::de___list_of_readiness_check_summary(tokens)?,
+                        crate::protocol_serde::shape_list_of_readiness_check_summary::de_list_of_readiness_check_summary(tokens)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

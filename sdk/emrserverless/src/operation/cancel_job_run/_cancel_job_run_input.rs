@@ -34,6 +34,7 @@ pub struct CancelJobRunInputBuilder {
 }
 impl CancelJobRunInputBuilder {
     /// <p>The ID of the application on which the job run will be canceled.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl CancelJobRunInputBuilder {
         &self.application_id
     }
     /// <p>The ID of the job run to cancel.</p>
+    /// This field is required.
     pub fn job_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_run_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl CancelJobRunInputBuilder {
     /// Consumes the builder and constructs a [`CancelJobRunInput`](crate::operation::cancel_job_run::CancelJobRunInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_job_run::CancelJobRunInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::cancel_job_run::CancelJobRunInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_job_run::CancelJobRunInput {
             application_id: self.application_id,
             job_run_id: self.job_run_id,

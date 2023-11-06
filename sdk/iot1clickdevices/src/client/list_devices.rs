@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ListDevices`](crate::operation::list_devices::builders::ListDevicesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`device_type(impl Into<String>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::device_type) / [`set_device_type(Option<String>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::set_device_type): <p>The type of the device, such as "button".</p>
-    ///   - [`max_results(i32)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::set_max_results): <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::set_next_token): <p>The token to retrieve the next set of results.</p>
+    ///   - [`device_type(impl Into<String>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::device_type) / [`set_device_type(Option<String>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::set_device_type):<br>required: **false**<br><p>The type of the device, such as "button".</p><br>
+    ///   - [`max_results(i32)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p><br>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to retrieve the next set of results.</p><br>
     /// - On success, responds with [`ListDevicesOutput`](crate::operation::list_devices::ListDevicesOutput) with field(s):
-    ///   - [`devices(Option<Vec<DeviceDescription>>)`](crate::operation::list_devices::ListDevicesOutput::devices): <p>A list of devices.</p>
+    ///   - [`devices(Option<Vec::<DeviceDescription>>)`](crate::operation::list_devices::ListDevicesOutput::devices): <p>A list of devices.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_devices::ListDevicesOutput::next_token): <p>The token to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListDevicesError>`](crate::operation::list_devices::ListDevicesError)
     pub fn list_devices(&self) -> crate::operation::list_devices::builders::ListDevicesFluentBuilder {

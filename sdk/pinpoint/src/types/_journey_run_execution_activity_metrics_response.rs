@@ -94,6 +94,7 @@ impl JourneyRunExecutionActivityMetricsResponseBuilder {
     /// <li><p>RANDOM_SPLIT – For a random split activity, which is an activity that sends specified percentages of participants down one of as many as five paths in a journey.</p></li>
     /// <li><p>WAIT – For a wait activity, which is an activity that waits for a certain amount of time or until a specific date and time before moving participants to the next activity in a journey.</p></li>
     /// </ul>
+    /// This field is required.
     pub fn activity_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.activity_type = ::std::option::Option::Some(input.into());
         self
@@ -124,6 +125,7 @@ impl JourneyRunExecutionActivityMetricsResponseBuilder {
         &self.activity_type
     }
     /// <p>The unique identifier for the application that the metric applies to.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -138,6 +140,7 @@ impl JourneyRunExecutionActivityMetricsResponseBuilder {
         &self.application_id
     }
     /// <p>The unique identifier for the activity that the metric applies to.</p>
+    /// This field is required.
     pub fn journey_activity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.journey_activity_id = ::std::option::Option::Some(input.into());
         self
@@ -152,6 +155,7 @@ impl JourneyRunExecutionActivityMetricsResponseBuilder {
         &self.journey_activity_id
     }
     /// <p>The unique identifier for the journey that the metric applies to.</p>
+    /// This field is required.
     pub fn journey_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.journey_id = ::std::option::Option::Some(input.into());
         self
@@ -166,6 +170,7 @@ impl JourneyRunExecutionActivityMetricsResponseBuilder {
         &self.journey_id
     }
     /// <p>The date and time, in ISO 8601 format, when Amazon Pinpoint last evaluated the execution status of the activity for this journey run and updated the data for the metric.</p>
+    /// This field is required.
     pub fn last_evaluated_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_evaluated_time = ::std::option::Option::Some(input.into());
         self
@@ -200,6 +205,7 @@ impl JourneyRunExecutionActivityMetricsResponseBuilder {
         &self.metrics
     }
     /// <p>The unique identifier for the journey run that the metric applies to.</p>
+    /// This field is required.
     pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.run_id = ::std::option::Option::Some(input.into());
         self

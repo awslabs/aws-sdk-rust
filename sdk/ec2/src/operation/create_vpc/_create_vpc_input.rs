@@ -82,8 +82,10 @@ impl CreateVpcInput {
         self.ipv6_cidr_block_network_border_group.as_deref()
     }
     /// <p>The tags to assign to the VPC.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
 }
 impl CreateVpcInput {
@@ -298,7 +300,7 @@ impl CreateVpcInputBuilder {
         &self.tag_specifications
     }
     /// Consumes the builder and constructs a [`CreateVpcInput`](crate::operation::create_vpc::CreateVpcInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_vpc::CreateVpcInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_vpc::CreateVpcInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_vpc::CreateVpcInput {
             cidr_block: self.cidr_block,
             amazon_provided_ipv6_cidr_block: self.amazon_provided_ipv6_cidr_block,

@@ -66,7 +66,7 @@ impl PutFindingsPublicationConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_findings_publication_configuration::PutFindingsPublicationConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::put_findings_publication_configuration::PutFindingsPublicationConfigurationInput {

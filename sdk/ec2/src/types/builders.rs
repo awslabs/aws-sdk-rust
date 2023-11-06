@@ -237,7 +237,7 @@ pub use crate::types::_instance_requirements::InstanceRequirementsBuilder;
 
 pub use crate::types::_network_bandwidth_gbps::NetworkBandwidthGbpsBuilder;
 
-pub use crate::types::_accelerator_total_memory_mi_b::AcceleratorTotalMemoryMiBBuilder;
+pub use crate::types::_accelerator_total_memory_mib::AcceleratorTotalMemoryMiBBuilder;
 
 pub use crate::types::_accelerator_count::AcceleratorCountBuilder;
 
@@ -247,9 +247,9 @@ pub use crate::types::_total_local_storage_gb::TotalLocalStorageGbBuilder;
 
 pub use crate::types::_network_interface_count::NetworkInterfaceCountBuilder;
 
-pub use crate::types::_memory_gi_b_per_v_cpu::MemoryGiBPerVCpuBuilder;
+pub use crate::types::_memory_gib_per_v_cpu::MemoryGiBPerVCpuBuilder;
 
-pub use crate::types::_memory_mi_b::MemoryMiBBuilder;
+pub use crate::types::_memory_mib::MemoryMiBBuilder;
 
 pub use crate::types::_v_cpu_count_range::VCpuCountRangeBuilder;
 
@@ -543,7 +543,7 @@ pub use crate::types::_instance_requirements_request::InstanceRequirementsReques
 
 pub use crate::types::_network_bandwidth_gbps_request::NetworkBandwidthGbpsRequestBuilder;
 
-pub use crate::types::_accelerator_total_memory_mi_b_request::AcceleratorTotalMemoryMiBRequestBuilder;
+pub use crate::types::_accelerator_total_memory_mib_request::AcceleratorTotalMemoryMiBRequestBuilder;
 
 pub use crate::types::_accelerator_count_request::AcceleratorCountRequestBuilder;
 
@@ -553,9 +553,9 @@ pub use crate::types::_total_local_storage_gb_request::TotalLocalStorageGbReques
 
 pub use crate::types::_network_interface_count_request::NetworkInterfaceCountRequestBuilder;
 
-pub use crate::types::_memory_gi_b_per_v_cpu_request::MemoryGiBPerVCpuRequestBuilder;
+pub use crate::types::_memory_gib_per_v_cpu_request::MemoryGiBPerVCpuRequestBuilder;
 
-pub use crate::types::_memory_mi_b_request::MemoryMiBRequestBuilder;
+pub use crate::types::_memory_mib_request::MemoryMiBRequestBuilder;
 
 pub use crate::types::_v_cpu_count_range_request::VCpuCountRangeRequestBuilder;
 
@@ -640,6 +640,8 @@ pub use crate::types::_subnet_cidr_reservation::SubnetCidrReservationBuilder;
 pub use crate::types::_spot_placement_score::SpotPlacementScoreBuilder;
 
 pub use crate::types::_instance_requirements_with_metadata_request::InstanceRequirementsWithMetadataRequestBuilder;
+
+pub use crate::types::_security_group_for_vpc::SecurityGroupForVpcBuilder;
 
 pub use crate::types::_target_reservation_value::TargetReservationValueBuilder;
 

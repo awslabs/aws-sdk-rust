@@ -153,7 +153,7 @@ impl ListReportJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListReportJobsInput`](crate::operation::list_report_jobs::ListReportJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_report_jobs::ListReportJobsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_report_jobs::ListReportJobsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_report_jobs::ListReportJobsInput {
             by_report_plan_name: self.by_report_plan_name,
             by_creation_before: self.by_creation_before,

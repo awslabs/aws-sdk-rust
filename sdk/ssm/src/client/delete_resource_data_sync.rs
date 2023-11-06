@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteResourceDataSync`](crate::operation::delete_resource_data_sync::builders::DeleteResourceDataSyncFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`sync_name(impl Into<String>)`](crate::operation::delete_resource_data_sync::builders::DeleteResourceDataSyncFluentBuilder::sync_name) / [`set_sync_name(Option<String>)`](crate::operation::delete_resource_data_sync::builders::DeleteResourceDataSyncFluentBuilder::set_sync_name): <p>The name of the configuration to delete.</p>
-    ///   - [`sync_type(impl Into<String>)`](crate::operation::delete_resource_data_sync::builders::DeleteResourceDataSyncFluentBuilder::sync_type) / [`set_sync_type(Option<String>)`](crate::operation::delete_resource_data_sync::builders::DeleteResourceDataSyncFluentBuilder::set_sync_type): <p>Specify the type of resource data sync to delete.</p>
+    ///   - [`sync_name(impl Into<String>)`](crate::operation::delete_resource_data_sync::builders::DeleteResourceDataSyncFluentBuilder::sync_name) / [`set_sync_name(Option<String>)`](crate::operation::delete_resource_data_sync::builders::DeleteResourceDataSyncFluentBuilder::set_sync_name):<br>required: **true**<br><p>The name of the configuration to delete.</p><br>
+    ///   - [`sync_type(impl Into<String>)`](crate::operation::delete_resource_data_sync::builders::DeleteResourceDataSyncFluentBuilder::sync_type) / [`set_sync_type(Option<String>)`](crate::operation::delete_resource_data_sync::builders::DeleteResourceDataSyncFluentBuilder::set_sync_type):<br>required: **false**<br><p>Specify the type of resource data sync to delete.</p><br>
     /// - On success, responds with [`DeleteResourceDataSyncOutput`](crate::operation::delete_resource_data_sync::DeleteResourceDataSyncOutput)
     /// - On failure, responds with [`SdkError<DeleteResourceDataSyncError>`](crate::operation::delete_resource_data_sync::DeleteResourceDataSyncError)
     pub fn delete_resource_data_sync(&self) -> crate::operation::delete_resource_data_sync::builders::DeleteResourceDataSyncFluentBuilder {

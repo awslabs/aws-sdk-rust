@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRotationOutput {
     /// <p>The Amazon Resource Name (ARN) of the created rotation.</p>
-    pub rotation_arn: ::std::option::Option<::std::string::String>,
+    pub rotation_arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateRotationOutput {
     /// <p>The Amazon Resource Name (ARN) of the created rotation.</p>
-    pub fn rotation_arn(&self) -> ::std::option::Option<&str> {
-        self.rotation_arn.as_deref()
+    pub fn rotation_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.rotation_arn.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateRotationOutput {
@@ -34,6 +35,7 @@ pub struct CreateRotationOutputBuilder {
 }
 impl CreateRotationOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the created rotation.</p>
+    /// This field is required.
     pub fn rotation_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rotation_arn = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,19 @@ impl CreateRotationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateRotationOutput`](crate::operation::create_rotation::CreateRotationOutput).
-    pub fn build(self) -> crate::operation::create_rotation::CreateRotationOutput {
-        crate::operation::create_rotation::CreateRotationOutput {
-            rotation_arn: self.rotation_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`rotation_arn`](crate::operation::create_rotation::builders::CreateRotationOutputBuilder::rotation_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_rotation::CreateRotationOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_rotation::CreateRotationOutput {
+            rotation_arn: self.rotation_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "rotation_arn",
+                    "rotation_arn was not specified but it is required when building CreateRotationOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

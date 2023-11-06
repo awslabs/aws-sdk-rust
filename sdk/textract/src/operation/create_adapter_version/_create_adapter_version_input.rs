@@ -68,6 +68,7 @@ pub struct CreateAdapterVersionInputBuilder {
 }
 impl CreateAdapterVersionInputBuilder {
     /// <p>A string containing a unique ID for the adapter that will receive a new version.</p>
+    /// This field is required.
     pub fn adapter_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.adapter_id = ::std::option::Option::Some(input.into());
         self
@@ -96,6 +97,7 @@ impl CreateAdapterVersionInputBuilder {
         &self.client_request_token
     }
     /// <p>Specifies a dataset used to train a new adapter version. Takes a ManifestS3Object as the value.</p>
+    /// This field is required.
     pub fn dataset_config(mut self, input: crate::types::AdapterVersionDatasetConfig) -> Self {
         self.dataset_config = ::std::option::Option::Some(input);
         self
@@ -127,6 +129,7 @@ impl CreateAdapterVersionInputBuilder {
     /// <p> <code>OutputConfig</code> is an optional parameter which lets you adjust where your output will be placed. By default, Amazon Textract will store the results internally and can only be accessed by the Get API operations. With <code>OutputConfig</code> enabled, you can set the name of the bucket the output will be sent to the file prefix of the results where you can download your results. Additionally, you can set the <code>KMSKeyID</code> parameter to a customer master key (CMK) to encrypt your output. Without this parameter set Amazon Textract will encrypt server-side using the AWS managed CMK for Amazon S3.</p>
     /// <p>Decryption of Customer Content is necessary for processing of the documents by Amazon Textract. If your account is opted out under an AI services opt out policy then all unencrypted Customer Content is immediately and permanently deleted after the Customer Content has been processed by the service. No copy of of the output is retained by Amazon Textract. For information about how to opt out, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html"> Managing AI services opt-out policy. </a> </p>
     /// <p>For more information on data privacy, see the <a href="https://aws.amazon.com/compliance/data-privacy-faq/">Data Privacy FAQ</a>.</p>
+    /// This field is required.
     pub fn output_config(mut self, input: crate::types::OutputConfig) -> Self {
         self.output_config = ::std::option::Option::Some(input);
         self
@@ -169,7 +172,7 @@ impl CreateAdapterVersionInputBuilder {
     /// Consumes the builder and constructs a [`CreateAdapterVersionInput`](crate::operation::create_adapter_version::CreateAdapterVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_adapter_version::CreateAdapterVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_adapter_version::CreateAdapterVersionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_adapter_version::CreateAdapterVersionInput {
             adapter_id: self.adapter_id,

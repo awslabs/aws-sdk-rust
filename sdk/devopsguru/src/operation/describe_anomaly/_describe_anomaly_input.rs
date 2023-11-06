@@ -34,6 +34,7 @@ pub struct DescribeAnomalyInputBuilder {
 }
 impl DescribeAnomalyInputBuilder {
     /// <p> The ID of the anomaly. </p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl DescribeAnomalyInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAnomalyInput`](crate::operation::describe_anomaly::DescribeAnomalyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_anomaly::DescribeAnomalyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_anomaly::DescribeAnomalyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_anomaly::DescribeAnomalyInput {
             id: self.id,
             account_id: self.account_id,

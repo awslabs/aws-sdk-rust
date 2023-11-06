@@ -148,6 +148,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing <code>DBInstance</code>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_identifier = ::std::option::Option::Some(input.into());
         self
@@ -369,7 +370,7 @@ impl ModifyDbInstanceInputBuilder {
     /// Consumes the builder and constructs a [`ModifyDbInstanceInput`](crate::operation::modify_db_instance::ModifyDbInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_db_instance::ModifyDbInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::modify_db_instance::ModifyDbInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_db_instance::ModifyDbInstanceInput {
             db_instance_identifier: self.db_instance_identifier,
             db_instance_class: self.db_instance_class,

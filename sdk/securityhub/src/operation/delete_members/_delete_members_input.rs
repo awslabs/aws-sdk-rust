@@ -8,8 +8,10 @@ pub struct DeleteMembersInput {
 }
 impl DeleteMembersInput {
     /// <p>The list of account IDs for the member accounts to delete.</p>
-    pub fn account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.account_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
+    pub fn account_ids(&self) -> &[::std::string::String] {
+        self.account_ids.as_deref().unwrap_or_default()
     }
 }
 impl DeleteMembersInput {
@@ -49,7 +51,7 @@ impl DeleteMembersInputBuilder {
     /// Consumes the builder and constructs a [`DeleteMembersInput`](crate::operation::delete_members::DeleteMembersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_members::DeleteMembersInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_members::DeleteMembersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_members::DeleteMembersInput {
             account_ids: self.account_ids,
         })

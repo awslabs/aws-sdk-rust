@@ -13,16 +13,22 @@ pub struct EventTypeFilter {
 }
 impl EventTypeFilter {
     /// <p>A list of event type codes.</p>
-    pub fn event_type_codes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.event_type_codes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_type_codes.is_none()`.
+    pub fn event_type_codes(&self) -> &[::std::string::String] {
+        self.event_type_codes.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Web Services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
-    pub fn services(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.services.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.services.is_none()`.
+    pub fn services(&self) -> &[::std::string::String] {
+        self.services.as_deref().unwrap_or_default()
     }
     /// <p>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't supported at this time.</p>
-    pub fn event_type_categories(&self) -> ::std::option::Option<&[crate::types::EventTypeCategory]> {
-        self.event_type_categories.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_type_categories.is_none()`.
+    pub fn event_type_categories(&self) -> &[crate::types::EventTypeCategory] {
+        self.event_type_categories.as_deref().unwrap_or_default()
     }
 }
 impl EventTypeFilter {

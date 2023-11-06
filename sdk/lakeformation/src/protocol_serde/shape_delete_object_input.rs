@@ -2,21 +2,21 @@
 pub fn ser_delete_object_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DeleteObjectInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.uri {
-        object.key("Uri").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Uri").string(input.uri.as_str());
     }
-    if let Some(var_2) = &input.e_tag {
-        object.key("ETag").string(var_2.as_str());
+    if let Some(var_1) = &input.e_tag {
+        object.key("ETag").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.partition_values {
-        let mut array_4 = object.key("PartitionValues").start_array();
-        for item_5 in var_3 {
+    if let Some(var_2) = &input.partition_values {
+        let mut array_3 = object.key("PartitionValues").start_array();
+        for item_4 in var_2 {
             {
-                array_4.value().string(item_5.as_str());
+                array_3.value().string(item_4.as_str());
             }
         }
-        array_4.finish();
+        array_3.finish();
     }
     Ok(())
 }

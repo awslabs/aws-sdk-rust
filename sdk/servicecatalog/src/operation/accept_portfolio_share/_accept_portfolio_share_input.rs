@@ -87,6 +87,7 @@ impl AcceptPortfolioShareInputBuilder {
         &self.accept_language
     }
     /// <p>The portfolio identifier.</p>
+    /// This field is required.
     pub fn portfolio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portfolio_id = ::std::option::Option::Some(input.into());
         self
@@ -135,7 +136,7 @@ impl AcceptPortfolioShareInputBuilder {
     /// Consumes the builder and constructs a [`AcceptPortfolioShareInput`](crate::operation::accept_portfolio_share::AcceptPortfolioShareInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::accept_portfolio_share::AcceptPortfolioShareInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::accept_portfolio_share::AcceptPortfolioShareInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::accept_portfolio_share::AcceptPortfolioShareInput {
             accept_language: self.accept_language,

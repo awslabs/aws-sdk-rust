@@ -63,8 +63,10 @@ impl DescribeSnapshotsInput {
     /// <li> <p> <code>volume-id</code> - The ID of the volume the snapshot is for.</p> </li>
     /// <li> <p> <code>volume-size</code> - The size of the volume, in GiB.</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of snapshots to return for this request. This value can be between 5 and 1,000; if this value is larger than 1,000, only 1,000 results are returned. If this parameter is not used, then the request returns all snapshots. You cannot specify this parameter and the snapshot IDs parameter in the same request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -75,17 +77,23 @@ impl DescribeSnapshotsInput {
         self.next_token.as_deref()
     }
     /// <p>Scopes the results to snapshots with the specified owners. You can specify a combination of Amazon Web Services account IDs, <code>self</code>, and <code>amazon</code>.</p>
-    pub fn owner_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.owner_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.owner_ids.is_none()`.
+    pub fn owner_ids(&self) -> &[::std::string::String] {
+        self.owner_ids.as_deref().unwrap_or_default()
     }
     /// <p>The IDs of the Amazon Web Services accounts that can create volumes from the snapshot.</p>
-    pub fn restorable_by_user_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.restorable_by_user_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.restorable_by_user_ids.is_none()`.
+    pub fn restorable_by_user_ids(&self) -> &[::std::string::String] {
+        self.restorable_by_user_ids.as_deref().unwrap_or_default()
     }
     /// <p>The snapshot IDs.</p>
     /// <p>Default: Describes the snapshots for which you have create volume permissions.</p>
-    pub fn snapshot_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.snapshot_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.snapshot_ids.is_none()`.
+    pub fn snapshot_ids(&self) -> &[::std::string::String] {
+        self.snapshot_ids.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -303,7 +311,7 @@ impl DescribeSnapshotsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSnapshotsInput`](crate::operation::describe_snapshots::DescribeSnapshotsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_snapshots::DescribeSnapshotsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_snapshots::DescribeSnapshotsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_snapshots::DescribeSnapshotsInput {
             filters: self.filters,
             max_results: self.max_results,

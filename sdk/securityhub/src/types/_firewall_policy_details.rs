@@ -19,26 +19,36 @@ pub struct FirewallPolicyDetails {
 }
 impl FirewallPolicyDetails {
     /// <p>The stateful rule groups that are used in the firewall policy.</p>
-    pub fn stateful_rule_group_references(&self) -> ::std::option::Option<&[crate::types::FirewallPolicyStatefulRuleGroupReferencesDetails]> {
-        self.stateful_rule_group_references.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stateful_rule_group_references.is_none()`.
+    pub fn stateful_rule_group_references(&self) -> &[crate::types::FirewallPolicyStatefulRuleGroupReferencesDetails] {
+        self.stateful_rule_group_references.as_deref().unwrap_or_default()
     }
     /// <p>The custom action definitions that are available to use in the firewall policy's <code>StatelessDefaultActions</code> setting.</p>
-    pub fn stateless_custom_actions(&self) -> ::std::option::Option<&[crate::types::FirewallPolicyStatelessCustomActionsDetails]> {
-        self.stateless_custom_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stateless_custom_actions.is_none()`.
+    pub fn stateless_custom_actions(&self) -> &[crate::types::FirewallPolicyStatelessCustomActionsDetails] {
+        self.stateless_custom_actions.as_deref().unwrap_or_default()
     }
     /// <p>The actions to take on a packet if it doesn't match any of the stateless rules in the policy.</p>
     /// <p>You must specify a standard action (<code>aws:pass</code>, <code>aws:drop</code>, <code>aws:forward_to_sfe</code>), and can optionally include a custom action from <code>StatelessCustomActions</code>. </p>
-    pub fn stateless_default_actions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.stateless_default_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stateless_default_actions.is_none()`.
+    pub fn stateless_default_actions(&self) -> &[::std::string::String] {
+        self.stateless_default_actions.as_deref().unwrap_or_default()
     }
     /// <p>The actions to take on a fragmented UDP packet if it doesn't match any of the stateless rules in the policy.</p>
     /// <p>You must specify a standard action (<code>aws:pass</code>, <code>aws:drop</code>, <code>aws:forward_to_sfe</code>), and can optionally include a custom action from <code>StatelessCustomActions</code>. </p>
-    pub fn stateless_fragment_default_actions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.stateless_fragment_default_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stateless_fragment_default_actions.is_none()`.
+    pub fn stateless_fragment_default_actions(&self) -> &[::std::string::String] {
+        self.stateless_fragment_default_actions.as_deref().unwrap_or_default()
     }
     /// <p>The stateless rule groups that are used in the firewall policy.</p>
-    pub fn stateless_rule_group_references(&self) -> ::std::option::Option<&[crate::types::FirewallPolicyStatelessRuleGroupReferencesDetails]> {
-        self.stateless_rule_group_references.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stateless_rule_group_references.is_none()`.
+    pub fn stateless_rule_group_references(&self) -> &[crate::types::FirewallPolicyStatelessRuleGroupReferencesDetails] {
+        self.stateless_rule_group_references.as_deref().unwrap_or_default()
     }
 }
 impl FirewallPolicyDetails {

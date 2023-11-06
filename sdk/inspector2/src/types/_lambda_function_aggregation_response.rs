@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaFunctionAggregationResponse {
     /// <p>The resource IDs included in the aggregation results.</p>
-    pub resource_id: ::std::option::Option<::std::string::String>,
+    pub resource_id: ::std::string::String,
     /// <p>The AWS Lambda function names included in the aggregation results.</p>
     pub function_name: ::std::option::Option<::std::string::String>,
     /// <p>The runtimes included in the aggregation results.</p>
@@ -21,8 +21,9 @@ pub struct LambdaFunctionAggregationResponse {
 }
 impl LambdaFunctionAggregationResponse {
     /// <p>The resource IDs included in the aggregation results.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
-        self.resource_id.as_deref()
+    pub fn resource_id(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_id.deref()
     }
     /// <p>The AWS Lambda function names included in the aggregation results.</p>
     pub fn function_name(&self) -> ::std::option::Option<&str> {
@@ -70,6 +71,7 @@ pub struct LambdaFunctionAggregationResponseBuilder {
 }
 impl LambdaFunctionAggregationResponseBuilder {
     /// <p>The resource IDs included in the aggregation results.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -177,15 +179,22 @@ impl LambdaFunctionAggregationResponseBuilder {
         &self.last_modified_at
     }
     /// Consumes the builder and constructs a [`LambdaFunctionAggregationResponse`](crate::types::LambdaFunctionAggregationResponse).
-    pub fn build(self) -> crate::types::LambdaFunctionAggregationResponse {
-        crate::types::LambdaFunctionAggregationResponse {
-            resource_id: self.resource_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource_id`](crate::types::builders::LambdaFunctionAggregationResponseBuilder::resource_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::LambdaFunctionAggregationResponse, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::LambdaFunctionAggregationResponse {
+            resource_id: self.resource_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "resource_id",
+                    "resource_id was not specified but it is required when building LambdaFunctionAggregationResponse",
+                )
+            })?,
             function_name: self.function_name,
             runtime: self.runtime,
             lambda_tags: self.lambda_tags,
             account_id: self.account_id,
             severity_counts: self.severity_counts,
             last_modified_at: self.last_modified_at,
-        }
+        })
     }
 }

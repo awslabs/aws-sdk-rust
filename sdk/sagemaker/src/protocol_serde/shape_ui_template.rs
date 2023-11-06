@@ -2,7 +2,7 @@
 pub fn ser_ui_template(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UiTemplate,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.content {
         object.key("Content").string(var_1.as_str());
     }

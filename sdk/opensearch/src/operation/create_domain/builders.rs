@@ -10,7 +10,7 @@ impl CreateDomainInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_domain::CreateDomainOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::create_domain::CreateDomainError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl CreateDomainFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_domain::CreateDomainOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::create_domain::CreateDomainError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::create_domain::CreateDomain::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -86,20 +89,15 @@ impl CreateDomainFluentBuilder {
         crate::operation::create_domain::CreateDomain::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::create_domain::CreateDomainOutput,
-            crate::operation::create_domain::CreateDomainError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::create_domain::CreateDomainError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::create_domain::CreateDomainOutput,
+        crate::operation::create_domain::CreateDomainError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -179,6 +177,20 @@ impl CreateDomainFluentBuilder {
     /// <p>Identity and Access Management (IAM) policy document specifying the access policies for the new domain.</p>
     pub fn get_access_policies(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_access_policies()
+    }
+    /// <p>The type of IP addresses supported by the endpoint for the domain.</p>
+    pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
+        self.inner = self.inner.ip_address_type(input);
+        self
+    }
+    /// <p>The type of IP addresses supported by the endpoint for the domain.</p>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
+        self.inner = self.inner.set_ip_address_type(input);
+        self
+    }
+    /// <p>The type of IP addresses supported by the endpoint for the domain.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
+        self.inner.get_ip_address_type()
     }
     /// <p>DEPRECATED. Container for the parameters required to configure automated snapshots of domain indexes.</p>
     pub fn snapshot_options(mut self, input: crate::types::SnapshotOptions) -> Self {

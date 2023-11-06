@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchContentOutput {
     /// <p>Summary information about the content.</p>
-    pub content_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ContentSummary>>,
+    pub content_summaries: ::std::vec::Vec<crate::types::ContentSummary>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl SearchContentOutput {
     /// <p>Summary information about the content.</p>
-    pub fn content_summaries(&self) -> ::std::option::Option<&[crate::types::ContentSummary]> {
-        self.content_summaries.as_deref()
+    pub fn content_summaries(&self) -> &[crate::types::ContentSummary] {
+        use std::ops::Deref;
+        self.content_summaries.deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl SearchContentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SearchContentOutput`](crate::operation::search_content::SearchContentOutput).
-    pub fn build(self) -> crate::operation::search_content::SearchContentOutput {
-        crate::operation::search_content::SearchContentOutput {
-            content_summaries: self.content_summaries,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`content_summaries`](crate::operation::search_content::builders::SearchContentOutputBuilder::content_summaries)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::search_content::SearchContentOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::search_content::SearchContentOutput {
+            content_summaries: self.content_summaries.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "content_summaries",
+                    "content_summaries was not specified but it is required when building SearchContentOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

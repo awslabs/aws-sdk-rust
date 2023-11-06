@@ -38,6 +38,7 @@ pub struct DeleteKeyPairInputBuilder {
 }
 impl DeleteKeyPairInputBuilder {
     /// <p>The name of the key pair to delete.</p>
+    /// This field is required.
     pub fn key_pair_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_pair_name = ::std::option::Option::Some(input.into());
         self
@@ -74,7 +75,7 @@ impl DeleteKeyPairInputBuilder {
     /// Consumes the builder and constructs a [`DeleteKeyPairInput`](crate::operation::delete_key_pair::DeleteKeyPairInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_key_pair::DeleteKeyPairInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_key_pair::DeleteKeyPairInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_key_pair::DeleteKeyPairInput {
             key_pair_name: self.key_pair_name,
             expected_fingerprint: self.expected_fingerprint,

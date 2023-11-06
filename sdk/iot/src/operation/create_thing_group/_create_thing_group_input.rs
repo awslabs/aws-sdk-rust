@@ -26,8 +26,10 @@ impl CreateThingGroupInput {
         self.thing_group_properties.as_ref()
     }
     /// <p>Metadata which can be used to manage the thing group.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateThingGroupInput {
@@ -48,6 +50,7 @@ pub struct CreateThingGroupInputBuilder {
 }
 impl CreateThingGroupInputBuilder {
     /// <p>The thing group name to create.</p>
+    /// This field is required.
     pub fn thing_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_group_name = ::std::option::Option::Some(input.into());
         self
@@ -112,7 +115,7 @@ impl CreateThingGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateThingGroupInput`](crate::operation::create_thing_group::CreateThingGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_thing_group::CreateThingGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_thing_group::CreateThingGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_thing_group::CreateThingGroupInput {
             thing_group_name: self.thing_group_name,
             parent_group_name: self.parent_group_name,

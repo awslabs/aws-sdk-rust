@@ -5,23 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FieldOption {
     /// <p> <code>FieldOptionName</code> has max length 100 and disallows trailing spaces.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p> <code>FieldOptionValue</code> has max length 100 and must be alphanumeric with hyphens and underscores.</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
     /// <p>Describes whether the <code>FieldOption</code> is active (displayed) or inactive.</p>
-    pub active: ::std::option::Option<bool>,
+    pub active: bool,
 }
 impl FieldOption {
     /// <p> <code>FieldOptionName</code> has max length 100 and disallows trailing spaces.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p> <code>FieldOptionValue</code> has max length 100 and must be alphanumeric with hyphens and underscores.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
     /// <p>Describes whether the <code>FieldOption</code> is active (displayed) or inactive.</p>
-    pub fn active(&self) -> ::std::option::Option<bool> {
+    pub fn active(&self) -> bool {
         self.active
     }
 }
@@ -42,6 +44,7 @@ pub struct FieldOptionBuilder {
 }
 impl FieldOptionBuilder {
     /// <p> <code>FieldOptionName</code> has max length 100 and disallows trailing spaces.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl FieldOptionBuilder {
         &self.name
     }
     /// <p> <code>FieldOptionValue</code> has max length 100 and must be alphanumeric with hyphens and underscores.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +74,7 @@ impl FieldOptionBuilder {
         &self.value
     }
     /// <p>Describes whether the <code>FieldOption</code> is active (displayed) or inactive.</p>
+    /// This field is required.
     pub fn active(mut self, input: bool) -> Self {
         self.active = ::std::option::Option::Some(input);
         self
@@ -84,11 +89,30 @@ impl FieldOptionBuilder {
         &self.active
     }
     /// Consumes the builder and constructs a [`FieldOption`](crate::types::FieldOption).
-    pub fn build(self) -> crate::types::FieldOption {
-        crate::types::FieldOption {
-            name: self.name,
-            value: self.value,
-            active: self.active,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::FieldOptionBuilder::name)
+    /// - [`value`](crate::types::builders::FieldOptionBuilder::value)
+    /// - [`active`](crate::types::builders::FieldOptionBuilder::active)
+    pub fn build(self) -> ::std::result::Result<crate::types::FieldOption, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::FieldOption {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building FieldOption",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building FieldOption",
+                )
+            })?,
+            active: self.active.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "active",
+                    "active was not specified but it is required when building FieldOption",
+                )
+            })?,
+        })
     }
 }

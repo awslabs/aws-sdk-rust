@@ -11,8 +11,10 @@ pub struct DescribeAccountLimitsOutput {
 }
 impl DescribeAccountLimitsOutput {
     /// <p>Information about the limits.</p>
-    pub fn limits(&self) -> ::std::option::Option<&[crate::types::Limit]> {
-        self.limits.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.limits.is_none()`.
+    pub fn limits(&self) -> &[crate::types::Limit] {
+        self.limits.as_deref().unwrap_or_default()
     }
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
     pub fn next_marker(&self) -> ::std::option::Option<&str> {

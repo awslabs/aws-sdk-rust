@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScalableTarget {
     /// <p>The namespace of the Amazon Web Services service that provides the resource, or a <code>custom-resource</code>.</p>
-    pub service_namespace: ::std::option::Option<crate::types::ServiceNamespace>,
+    pub service_namespace: crate::types::ServiceNamespace,
     /// <p>The identifier of the resource associated with the scalable target. This string consists of the resource type and unique identifier.</p>
     /// <ul>
     /// <li> <p>ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service name. Example: <code>service/default/sample-webapp</code>.</p> </li>
@@ -26,7 +26,7 @@ pub struct ScalableTarget {
     /// <li> <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p> </li>
     /// <li> <p>SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li>
     /// </ul>
-    pub resource_id: ::std::option::Option<::std::string::String>,
+    pub resource_id: ::std::string::String,
     /// <p>The scalable dimension associated with the scalable target. This string consists of the service namespace, resource type, and scaling property.</p>
     /// <ul>
     /// <li> <p> <code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.</p> </li>
@@ -51,15 +51,15 @@ pub struct ScalableTarget {
     /// <li> <p> <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p> </li>
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
-    pub scalable_dimension: ::std::option::Option<crate::types::ScalableDimension>,
+    pub scalable_dimension: crate::types::ScalableDimension,
     /// <p>The minimum value to scale to in response to a scale-in activity.</p>
-    pub min_capacity: ::std::option::Option<i32>,
+    pub min_capacity: i32,
     /// <p>The maximum value to scale to in response to a scale-out activity.</p>
-    pub max_capacity: ::std::option::Option<i32>,
+    pub max_capacity: i32,
     /// <p>The ARN of an IAM role that allows Application Auto Scaling to modify the scalable target on your behalf.</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
     /// <p>The Unix timestamp for when the scalable target was created.</p>
-    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_time: ::aws_smithy_types::DateTime,
     /// <p>Specifies whether the scaling activities for a scalable target are in a suspended state.</p>
     pub suspended_state: ::std::option::Option<crate::types::SuspendedState>,
     /// <p>The ARN of the scalable target.</p>
@@ -67,8 +67,8 @@ pub struct ScalableTarget {
 }
 impl ScalableTarget {
     /// <p>The namespace of the Amazon Web Services service that provides the resource, or a <code>custom-resource</code>.</p>
-    pub fn service_namespace(&self) -> ::std::option::Option<&crate::types::ServiceNamespace> {
-        self.service_namespace.as_ref()
+    pub fn service_namespace(&self) -> &crate::types::ServiceNamespace {
+        &self.service_namespace
     }
     /// <p>The identifier of the resource associated with the scalable target. This string consists of the resource type and unique identifier.</p>
     /// <ul>
@@ -90,8 +90,9 @@ impl ScalableTarget {
     /// <li> <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p> </li>
     /// <li> <p>SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li>
     /// </ul>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
-        self.resource_id.as_deref()
+    pub fn resource_id(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_id.deref()
     }
     /// <p>The scalable dimension associated with the scalable target. This string consists of the service namespace, resource type, and scaling property.</p>
     /// <ul>
@@ -117,24 +118,25 @@ impl ScalableTarget {
     /// <li> <p> <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p> </li>
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
-    pub fn scalable_dimension(&self) -> ::std::option::Option<&crate::types::ScalableDimension> {
-        self.scalable_dimension.as_ref()
+    pub fn scalable_dimension(&self) -> &crate::types::ScalableDimension {
+        &self.scalable_dimension
     }
     /// <p>The minimum value to scale to in response to a scale-in activity.</p>
-    pub fn min_capacity(&self) -> ::std::option::Option<i32> {
+    pub fn min_capacity(&self) -> i32 {
         self.min_capacity
     }
     /// <p>The maximum value to scale to in response to a scale-out activity.</p>
-    pub fn max_capacity(&self) -> ::std::option::Option<i32> {
+    pub fn max_capacity(&self) -> i32 {
         self.max_capacity
     }
     /// <p>The ARN of an IAM role that allows Application Auto Scaling to modify the scalable target on your behalf.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
     /// <p>The Unix timestamp for when the scalable target was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_time.as_ref()
+    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_time
     }
     /// <p>Specifies whether the scaling activities for a scalable target are in a suspended state.</p>
     pub fn suspended_state(&self) -> ::std::option::Option<&crate::types::SuspendedState> {
@@ -168,6 +170,7 @@ pub struct ScalableTargetBuilder {
 }
 impl ScalableTargetBuilder {
     /// <p>The namespace of the Amazon Web Services service that provides the resource, or a <code>custom-resource</code>.</p>
+    /// This field is required.
     pub fn service_namespace(mut self, input: crate::types::ServiceNamespace) -> Self {
         self.service_namespace = ::std::option::Option::Some(input);
         self
@@ -201,6 +204,7 @@ impl ScalableTargetBuilder {
     /// <li> <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p> </li>
     /// <li> <p>SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -276,6 +280,7 @@ impl ScalableTargetBuilder {
     /// <li> <p> <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p> </li>
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn scalable_dimension(mut self, input: crate::types::ScalableDimension) -> Self {
         self.scalable_dimension = ::std::option::Option::Some(input);
         self
@@ -336,6 +341,7 @@ impl ScalableTargetBuilder {
         &self.scalable_dimension
     }
     /// <p>The minimum value to scale to in response to a scale-in activity.</p>
+    /// This field is required.
     pub fn min_capacity(mut self, input: i32) -> Self {
         self.min_capacity = ::std::option::Option::Some(input);
         self
@@ -350,6 +356,7 @@ impl ScalableTargetBuilder {
         &self.min_capacity
     }
     /// <p>The maximum value to scale to in response to a scale-out activity.</p>
+    /// This field is required.
     pub fn max_capacity(mut self, input: i32) -> Self {
         self.max_capacity = ::std::option::Option::Some(input);
         self
@@ -364,6 +371,7 @@ impl ScalableTargetBuilder {
         &self.max_capacity
     }
     /// <p>The ARN of an IAM role that allows Application Auto Scaling to modify the scalable target on your behalf.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -378,6 +386,7 @@ impl ScalableTargetBuilder {
         &self.role_arn
     }
     /// <p>The Unix timestamp for when the scalable target was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -420,17 +429,60 @@ impl ScalableTargetBuilder {
         &self.scalable_target_arn
     }
     /// Consumes the builder and constructs a [`ScalableTarget`](crate::types::ScalableTarget).
-    pub fn build(self) -> crate::types::ScalableTarget {
-        crate::types::ScalableTarget {
-            service_namespace: self.service_namespace,
-            resource_id: self.resource_id,
-            scalable_dimension: self.scalable_dimension,
-            min_capacity: self.min_capacity,
-            max_capacity: self.max_capacity,
-            role_arn: self.role_arn,
-            creation_time: self.creation_time,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`service_namespace`](crate::types::builders::ScalableTargetBuilder::service_namespace)
+    /// - [`resource_id`](crate::types::builders::ScalableTargetBuilder::resource_id)
+    /// - [`scalable_dimension`](crate::types::builders::ScalableTargetBuilder::scalable_dimension)
+    /// - [`min_capacity`](crate::types::builders::ScalableTargetBuilder::min_capacity)
+    /// - [`max_capacity`](crate::types::builders::ScalableTargetBuilder::max_capacity)
+    /// - [`role_arn`](crate::types::builders::ScalableTargetBuilder::role_arn)
+    /// - [`creation_time`](crate::types::builders::ScalableTargetBuilder::creation_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::ScalableTarget, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ScalableTarget {
+            service_namespace: self.service_namespace.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "service_namespace",
+                    "service_namespace was not specified but it is required when building ScalableTarget",
+                )
+            })?,
+            resource_id: self.resource_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "resource_id",
+                    "resource_id was not specified but it is required when building ScalableTarget",
+                )
+            })?,
+            scalable_dimension: self.scalable_dimension.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "scalable_dimension",
+                    "scalable_dimension was not specified but it is required when building ScalableTarget",
+                )
+            })?,
+            min_capacity: self.min_capacity.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "min_capacity",
+                    "min_capacity was not specified but it is required when building ScalableTarget",
+                )
+            })?,
+            max_capacity: self.max_capacity.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "max_capacity",
+                    "max_capacity was not specified but it is required when building ScalableTarget",
+                )
+            })?,
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building ScalableTarget",
+                )
+            })?,
+            creation_time: self.creation_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "creation_time",
+                    "creation_time was not specified but it is required when building ScalableTarget",
+                )
+            })?,
             suspended_state: self.suspended_state,
             scalable_target_arn: self.scalable_target_arn,
-        }
+        })
     }
 }

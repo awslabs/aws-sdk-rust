@@ -46,6 +46,7 @@ pub struct DescribeConfigurationSettingsInputBuilder {
 }
 impl DescribeConfigurationSettingsInputBuilder {
     /// <p>The application for the environment or configuration template.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
@@ -98,7 +99,7 @@ impl DescribeConfigurationSettingsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_configuration_settings::DescribeConfigurationSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_configuration_settings::DescribeConfigurationSettingsInput {
             application_name: self.application_name,

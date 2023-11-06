@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateLaunchConfigurationTemplateOutput {
     /// <p>ID of the Launch Configuration Template.</p>
-    pub launch_configuration_template_id: ::std::option::Option<::std::string::String>,
+    pub launch_configuration_template_id: ::std::string::String,
     /// <p>ARN of the Launch Configuration Template.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Post Launch Actions of the Launch Configuration Template.</p>
@@ -41,8 +41,9 @@ pub struct CreateLaunchConfigurationTemplateOutput {
 }
 impl CreateLaunchConfigurationTemplateOutput {
     /// <p>ID of the Launch Configuration Template.</p>
-    pub fn launch_configuration_template_id(&self) -> ::std::option::Option<&str> {
-        self.launch_configuration_template_id.as_deref()
+    pub fn launch_configuration_template_id(&self) -> &str {
+        use std::ops::Deref;
+        self.launch_configuration_template_id.deref()
     }
     /// <p>ARN of the Launch Configuration Template.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
@@ -170,6 +171,7 @@ pub struct CreateLaunchConfigurationTemplateOutputBuilder {
 }
 impl CreateLaunchConfigurationTemplateOutputBuilder {
     /// <p>ID of the Launch Configuration Template.</p>
+    /// This field is required.
     pub fn launch_configuration_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_configuration_template_id = ::std::option::Option::Some(input.into());
         self
@@ -426,27 +428,41 @@ impl CreateLaunchConfigurationTemplateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateLaunchConfigurationTemplateOutput`](crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateOutput).
-    pub fn build(self) -> crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateOutput {
-        crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateOutput {
-            launch_configuration_template_id: self.launch_configuration_template_id,
-            arn: self.arn,
-            post_launch_actions: self.post_launch_actions,
-            enable_map_auto_tagging: self.enable_map_auto_tagging,
-            map_auto_tagging_mpe_id: self.map_auto_tagging_mpe_id,
-            tags: self.tags,
-            ec2_launch_template_id: self.ec2_launch_template_id,
-            launch_disposition: self.launch_disposition,
-            target_instance_type_right_sizing_method: self.target_instance_type_right_sizing_method,
-            copy_private_ip: self.copy_private_ip,
-            associate_public_ip_address: self.associate_public_ip_address,
-            copy_tags: self.copy_tags,
-            licensing: self.licensing,
-            boot_mode: self.boot_mode,
-            small_volume_max_size: self.small_volume_max_size.unwrap_or_default(),
-            small_volume_conf: self.small_volume_conf,
-            large_volume_conf: self.large_volume_conf,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`launch_configuration_template_id`](crate::operation::create_launch_configuration_template::builders::CreateLaunchConfigurationTemplateOutputBuilder::launch_configuration_template_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateOutput {
+                launch_configuration_template_id: self.launch_configuration_template_id.ok_or_else(|| {
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
+                        "launch_configuration_template_id",
+                        "launch_configuration_template_id was not specified but it is required when building CreateLaunchConfigurationTemplateOutput",
+                    )
+                })?,
+                arn: self.arn,
+                post_launch_actions: self.post_launch_actions,
+                enable_map_auto_tagging: self.enable_map_auto_tagging,
+                map_auto_tagging_mpe_id: self.map_auto_tagging_mpe_id,
+                tags: self.tags,
+                ec2_launch_template_id: self.ec2_launch_template_id,
+                launch_disposition: self.launch_disposition,
+                target_instance_type_right_sizing_method: self.target_instance_type_right_sizing_method,
+                copy_private_ip: self.copy_private_ip,
+                associate_public_ip_address: self.associate_public_ip_address,
+                copy_tags: self.copy_tags,
+                licensing: self.licensing,
+                boot_mode: self.boot_mode,
+                small_volume_max_size: self.small_volume_max_size.unwrap_or_default(),
+                small_volume_conf: self.small_volume_conf,
+                large_volume_conf: self.large_volume_conf,
+                _request_id: self._request_id,
+            },
+        )
     }
 }
 impl ::std::fmt::Debug for CreateLaunchConfigurationTemplateOutputBuilder {

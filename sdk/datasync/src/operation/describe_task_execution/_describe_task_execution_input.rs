@@ -28,6 +28,7 @@ pub struct DescribeTaskExecutionInputBuilder {
 }
 impl DescribeTaskExecutionInputBuilder {
     /// <p>Specifies the Amazon Resource Name (ARN) of the task execution that you want information about.</p>
+    /// This field is required.
     pub fn task_execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_execution_arn = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl DescribeTaskExecutionInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTaskExecutionInput`](crate::operation::describe_task_execution::DescribeTaskExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_task_execution::DescribeTaskExecutionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_task_execution::DescribeTaskExecutionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_task_execution::DescribeTaskExecutionInput {
             task_execution_arn: self.task_execution_arn,

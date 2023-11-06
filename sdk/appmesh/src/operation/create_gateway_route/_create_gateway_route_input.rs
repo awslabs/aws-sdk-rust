@@ -36,8 +36,10 @@ impl CreateGatewayRouteInput {
         self.spec.as_ref()
     }
     /// <p>Optional metadata that you can apply to the gateway route to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::TagRef]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::TagRef] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -69,6 +71,7 @@ pub struct CreateGatewayRouteInputBuilder {
 }
 impl CreateGatewayRouteInputBuilder {
     /// <p>The name to use for the gateway route.</p>
+    /// This field is required.
     pub fn gateway_route_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_route_name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +86,7 @@ impl CreateGatewayRouteInputBuilder {
         &self.gateway_route_name
     }
     /// <p>The name of the service mesh to create the gateway route in.</p>
+    /// This field is required.
     pub fn mesh_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mesh_name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +101,7 @@ impl CreateGatewayRouteInputBuilder {
         &self.mesh_name
     }
     /// <p>The name of the virtual gateway to associate the gateway route with. If the virtual gateway is in a shared mesh, then you must be the owner of the virtual gateway resource.</p>
+    /// This field is required.
     pub fn virtual_gateway_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_gateway_name = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +116,7 @@ impl CreateGatewayRouteInputBuilder {
         &self.virtual_gateway_name
     }
     /// <p>The gateway route specification to apply.</p>
+    /// This field is required.
     pub fn spec(mut self, input: crate::types::GatewayRouteSpec) -> Self {
         self.spec = ::std::option::Option::Some(input);
         self
@@ -175,7 +181,8 @@ impl CreateGatewayRouteInputBuilder {
     /// Consumes the builder and constructs a [`CreateGatewayRouteInput`](crate::operation::create_gateway_route::CreateGatewayRouteInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_gateway_route::CreateGatewayRouteInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_gateway_route::CreateGatewayRouteInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_gateway_route::CreateGatewayRouteInput {
             gateway_route_name: self.gateway_route_name,
             mesh_name: self.mesh_name,

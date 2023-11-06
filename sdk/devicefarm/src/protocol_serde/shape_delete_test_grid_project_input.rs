@@ -2,7 +2,7 @@
 pub fn ser_delete_test_grid_project_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_test_grid_project::DeleteTestGridProjectInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.project_arn {
         object.key("projectArn").string(var_1.as_str());
     }

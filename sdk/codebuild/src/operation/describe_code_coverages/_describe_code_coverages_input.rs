@@ -97,6 +97,7 @@ pub struct DescribeCodeCoveragesInputBuilder {
 }
 impl DescribeCodeCoveragesInputBuilder {
     /// <p> The ARN of the report for which test cases are returned. </p>
+    /// This field is required.
     pub fn report_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.report_arn = ::std::option::Option::Some(input.into());
         self
@@ -239,7 +240,7 @@ impl DescribeCodeCoveragesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeCodeCoveragesInput`](crate::operation::describe_code_coverages::DescribeCodeCoveragesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_code_coverages::DescribeCodeCoveragesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_code_coverages::DescribeCodeCoveragesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_code_coverages::DescribeCodeCoveragesInput {
             report_arn: self.report_arn,

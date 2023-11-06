@@ -42,6 +42,7 @@ pub struct DescribeServiceActionInputBuilder {
 }
 impl DescribeServiceActionInputBuilder {
     /// <p>The self-service action identifier.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -84,7 +85,7 @@ impl DescribeServiceActionInputBuilder {
     /// Consumes the builder and constructs a [`DescribeServiceActionInput`](crate::operation::describe_service_action::DescribeServiceActionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_service_action::DescribeServiceActionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_service_action::DescribeServiceActionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_service_action::DescribeServiceActionInput {
             id: self.id,

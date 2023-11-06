@@ -27,6 +27,7 @@ pub struct GetNetworkAnalyzerConfigurationInputBuilder {
 }
 impl GetNetworkAnalyzerConfigurationInputBuilder {
     /// <p>Name of the network analyzer configuration.</p>
+    /// This field is required.
     pub fn configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetNetworkAnalyzerConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_network_analyzer_configuration::GetNetworkAnalyzerConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_network_analyzer_configuration::GetNetworkAnalyzerConfigurationInput {

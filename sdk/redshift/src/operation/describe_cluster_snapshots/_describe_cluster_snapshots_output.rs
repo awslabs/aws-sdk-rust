@@ -16,8 +16,10 @@ impl DescribeClusterSnapshotsOutput {
         self.marker.as_deref()
     }
     /// <p>A list of <code>Snapshot</code> instances. </p>
-    pub fn snapshots(&self) -> ::std::option::Option<&[crate::types::Snapshot]> {
-        self.snapshots.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.snapshots.is_none()`.
+    pub fn snapshots(&self) -> &[crate::types::Snapshot] {
+        self.snapshots.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeClusterSnapshotsOutput {

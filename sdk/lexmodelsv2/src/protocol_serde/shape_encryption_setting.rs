@@ -56,7 +56,7 @@ where
 pub fn ser_encryption_setting(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EncryptionSetting,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.kms_key_arn {
         object.key("kmsKeyArn").string(var_1.as_str());
     }

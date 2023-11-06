@@ -34,6 +34,7 @@ pub struct EnableAddOnInputBuilder {
 }
 impl EnableAddOnInputBuilder {
     /// <p>The name of the source resource for which to enable or modify the add-on.</p>
+    /// This field is required.
     pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl EnableAddOnInputBuilder {
         &self.resource_name
     }
     /// <p>An array of strings representing the add-on to enable or modify.</p>
+    /// This field is required.
     pub fn add_on_request(mut self, input: crate::types::AddOnRequest) -> Self {
         self.add_on_request = ::std::option::Option::Some(input);
         self
@@ -62,7 +64,7 @@ impl EnableAddOnInputBuilder {
         &self.add_on_request
     }
     /// Consumes the builder and constructs a [`EnableAddOnInput`](crate::operation::enable_add_on::EnableAddOnInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::enable_add_on::EnableAddOnInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::enable_add_on::EnableAddOnInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::enable_add_on::EnableAddOnInput {
             resource_name: self.resource_name,
             add_on_request: self.add_on_request,

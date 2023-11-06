@@ -27,6 +27,7 @@ pub struct DescribeTransactionInputBuilder {
 }
 impl DescribeTransactionInputBuilder {
     /// <p>The transaction for which to return status.</p>
+    /// This field is required.
     pub fn transaction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transaction_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeTransactionInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTransactionInput`](crate::operation::describe_transaction::DescribeTransactionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_transaction::DescribeTransactionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_transaction::DescribeTransactionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_transaction::DescribeTransactionInput {
             transaction_id: self.transaction_id,

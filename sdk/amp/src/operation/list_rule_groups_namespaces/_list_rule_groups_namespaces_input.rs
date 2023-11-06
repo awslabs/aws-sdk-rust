@@ -49,6 +49,7 @@ pub struct ListRuleGroupsNamespacesInputBuilder {
 }
 impl ListRuleGroupsNamespacesInputBuilder {
     /// The ID of the workspace.
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -109,7 +110,7 @@ impl ListRuleGroupsNamespacesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesInput {
             workspace_id: self.workspace_id,

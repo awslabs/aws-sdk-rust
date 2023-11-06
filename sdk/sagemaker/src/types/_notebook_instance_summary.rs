@@ -65,8 +65,10 @@ impl NotebookInstanceSummary {
         self.default_code_repository.as_deref()
     }
     /// <p>An array of up to three Git repositories associated with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
-    pub fn additional_code_repositories(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.additional_code_repositories.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_code_repositories.is_none()`.
+    pub fn additional_code_repositories(&self) -> &[::std::string::String] {
+        self.additional_code_repositories.as_deref().unwrap_or_default()
     }
 }
 impl NotebookInstanceSummary {
@@ -93,6 +95,7 @@ pub struct NotebookInstanceSummaryBuilder {
 }
 impl NotebookInstanceSummaryBuilder {
     /// <p>The name of the notebook instance that you want a summary for.</p>
+    /// This field is required.
     pub fn notebook_instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_instance_name = ::std::option::Option::Some(input.into());
         self
@@ -107,6 +110,7 @@ impl NotebookInstanceSummaryBuilder {
         &self.notebook_instance_name
     }
     /// <p>The Amazon Resource Name (ARN) of the notebook instance.</p>
+    /// This field is required.
     pub fn notebook_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_instance_arn = ::std::option::Option::Some(input.into());
         self

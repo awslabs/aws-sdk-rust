@@ -76,6 +76,7 @@ pub struct CreateApplicationInputBuilder {
 }
 impl CreateApplicationInputBuilder {
     /// <p>The unique identifier of the application.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +105,7 @@ impl CreateApplicationInputBuilder {
         &self.description
     }
     /// <p>The type of the target platform for this application.</p>
+    /// This field is required.
     pub fn engine_type(mut self, input: crate::types::EngineType) -> Self {
         self.engine_type = ::std::option::Option::Some(input);
         self
@@ -118,6 +120,7 @@ impl CreateApplicationInputBuilder {
         &self.engine_type
     }
     /// <p>The application definition for this application. You can specify either inline JSON or an S3 bucket location.</p>
+    /// This field is required.
     pub fn definition(mut self, input: crate::types::Definition) -> Self {
         self.definition = ::std::option::Option::Some(input);
         self
@@ -196,7 +199,7 @@ impl CreateApplicationInputBuilder {
     /// Consumes the builder and constructs a [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_application::CreateApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_application::CreateApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_application::CreateApplicationInput {
             name: self.name,
             description: self.description,

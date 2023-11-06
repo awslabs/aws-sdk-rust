@@ -28,6 +28,7 @@ pub struct DescribeModelExplainabilityJobDefinitionInputBuilder {
 }
 impl DescribeModelExplainabilityJobDefinitionInputBuilder {
     /// <p>The name of the model explainability job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
+    /// This field is required.
     pub fn job_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_definition_name = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl DescribeModelExplainabilityJobDefinitionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_model_explainability_job_definition::DescribeModelExplainabilityJobDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_model_explainability_job_definition::DescribeModelExplainabilityJobDefinitionInput {

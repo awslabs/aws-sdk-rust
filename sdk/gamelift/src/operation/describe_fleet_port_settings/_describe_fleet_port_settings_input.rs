@@ -34,6 +34,7 @@ pub struct DescribeFleetPortSettingsInputBuilder {
 }
 impl DescribeFleetPortSettingsInputBuilder {
     /// <p>A unique identifier for the fleet to retrieve port settings for. You can use either the fleet ID or ARN value.</p>
+    /// This field is required.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl DescribeFleetPortSettingsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_fleet_port_settings::DescribeFleetPortSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_fleet_port_settings::DescribeFleetPortSettingsInput {
             fleet_id: self.fleet_id,

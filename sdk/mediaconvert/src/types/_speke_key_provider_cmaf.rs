@@ -21,12 +21,16 @@ impl SpekeKeyProviderCmaf {
         self.certificate_arn.as_deref()
     }
     /// Specify the DRM system IDs that you want signaled in the DASH manifest that MediaConvert creates as part of this CMAF package. The DASH manifest can currently signal up to three system IDs. For more information, see https://dashif.org/identifiers/content_protection/.
-    pub fn dash_signaled_system_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.dash_signaled_system_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dash_signaled_system_ids.is_none()`.
+    pub fn dash_signaled_system_ids(&self) -> &[::std::string::String] {
+        self.dash_signaled_system_ids.as_deref().unwrap_or_default()
     }
     /// Specify the DRM system ID that you want signaled in the HLS manifest that MediaConvert creates as part of this CMAF package. The HLS manifest can currently signal only one system ID. For more information, see https://dashif.org/identifiers/content_protection/.
-    pub fn hls_signaled_system_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.hls_signaled_system_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hls_signaled_system_ids.is_none()`.
+    pub fn hls_signaled_system_ids(&self) -> &[::std::string::String] {
+        self.hls_signaled_system_ids.as_deref().unwrap_or_default()
     }
     /// Specify the resource ID that your SPEKE-compliant key provider uses to identify this content.
     pub fn resource_id(&self) -> ::std::option::Option<&str> {

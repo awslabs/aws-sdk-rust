@@ -2,93 +2,93 @@
 pub fn ser_topic_calculated_field(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TopicCalculatedField,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.calculated_field_name {
-        object.key("CalculatedFieldName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("CalculatedFieldName").string(input.calculated_field_name.as_str());
     }
-    if let Some(var_2) = &input.calculated_field_description {
-        object.key("CalculatedFieldDescription").string(var_2.as_str());
+    if let Some(var_1) = &input.calculated_field_description {
+        object.key("CalculatedFieldDescription").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.expression {
-        object.key("Expression").string(var_3.as_str());
+    {
+        object.key("Expression").string(input.expression.as_str());
     }
-    if let Some(var_4) = &input.calculated_field_synonyms {
-        let mut array_5 = object.key("CalculatedFieldSynonyms").start_array();
-        for item_6 in var_4 {
+    if let Some(var_2) = &input.calculated_field_synonyms {
+        let mut array_3 = object.key("CalculatedFieldSynonyms").start_array();
+        for item_4 in var_2 {
             {
-                array_5.value().string(item_6.as_str());
+                array_3.value().string(item_4.as_str());
             }
         }
-        array_5.finish();
+        array_3.finish();
     }
     if input.is_included_in_topic {
         object.key("IsIncludedInTopic").boolean(input.is_included_in_topic);
     }
-    if let Some(var_7) = &input.disable_indexing {
-        object.key("DisableIndexing").boolean(*var_7);
+    if let Some(var_5) = &input.disable_indexing {
+        object.key("DisableIndexing").boolean(*var_5);
     }
-    if let Some(var_8) = &input.column_data_role {
-        object.key("ColumnDataRole").string(var_8.as_str());
+    if let Some(var_6) = &input.column_data_role {
+        object.key("ColumnDataRole").string(var_6.as_str());
     }
-    if let Some(var_9) = &input.time_granularity {
-        object.key("TimeGranularity").string(var_9.as_str());
+    if let Some(var_7) = &input.time_granularity {
+        object.key("TimeGranularity").string(var_7.as_str());
     }
-    if let Some(var_10) = &input.default_formatting {
+    if let Some(var_8) = &input.default_formatting {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("DefaultFormatting").start_object();
-        crate::protocol_serde::shape_default_formatting::ser_default_formatting(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_9 = object.key("DefaultFormatting").start_object();
+        crate::protocol_serde::shape_default_formatting::ser_default_formatting(&mut object_9, var_8)?;
+        object_9.finish();
     }
-    if let Some(var_12) = &input.aggregation {
-        object.key("Aggregation").string(var_12.as_str());
+    if let Some(var_10) = &input.aggregation {
+        object.key("Aggregation").string(var_10.as_str());
     }
-    if let Some(var_13) = &input.comparative_order {
+    if let Some(var_11) = &input.comparative_order {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("ComparativeOrder").start_object();
-        crate::protocol_serde::shape_comparative_order::ser_comparative_order(&mut object_14, var_13)?;
+        let mut object_12 = object.key("ComparativeOrder").start_object();
+        crate::protocol_serde::shape_comparative_order::ser_comparative_order(&mut object_12, var_11)?;
+        object_12.finish();
+    }
+    if let Some(var_13) = &input.semantic_type {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("SemanticType").start_object();
+        crate::protocol_serde::shape_semantic_type::ser_semantic_type(&mut object_14, var_13)?;
         object_14.finish();
     }
-    if let Some(var_15) = &input.semantic_type {
-        #[allow(unused_mut)]
-        let mut object_16 = object.key("SemanticType").start_object();
-        crate::protocol_serde::shape_semantic_type::ser_semantic_type(&mut object_16, var_15)?;
-        object_16.finish();
-    }
-    if let Some(var_17) = &input.allowed_aggregations {
-        let mut array_18 = object.key("AllowedAggregations").start_array();
-        for item_19 in var_17 {
+    if let Some(var_15) = &input.allowed_aggregations {
+        let mut array_16 = object.key("AllowedAggregations").start_array();
+        for item_17 in var_15 {
             {
-                array_18.value().string(item_19.as_str());
+                array_16.value().string(item_17.as_str());
             }
         }
-        array_18.finish();
+        array_16.finish();
     }
-    if let Some(var_20) = &input.not_allowed_aggregations {
-        let mut array_21 = object.key("NotAllowedAggregations").start_array();
-        for item_22 in var_20 {
+    if let Some(var_18) = &input.not_allowed_aggregations {
+        let mut array_19 = object.key("NotAllowedAggregations").start_array();
+        for item_20 in var_18 {
             {
-                array_21.value().string(item_22.as_str());
+                array_19.value().string(item_20.as_str());
             }
         }
-        array_21.finish();
+        array_19.finish();
     }
     if input.never_aggregate_in_filter {
         object.key("NeverAggregateInFilter").boolean(input.never_aggregate_in_filter);
     }
-    if let Some(var_23) = &input.cell_value_synonyms {
-        let mut array_24 = object.key("CellValueSynonyms").start_array();
-        for item_25 in var_23 {
+    if let Some(var_21) = &input.cell_value_synonyms {
+        let mut array_22 = object.key("CellValueSynonyms").start_array();
+        for item_23 in var_21 {
             {
                 #[allow(unused_mut)]
-                let mut object_26 = array_24.value().start_object();
-                crate::protocol_serde::shape_cell_value_synonym::ser_cell_value_synonym(&mut object_26, item_25)?;
-                object_26.finish();
+                let mut object_24 = array_22.value().start_object();
+                crate::protocol_serde::shape_cell_value_synonym::ser_cell_value_synonym(&mut object_24, item_23)?;
+                object_24.finish();
             }
         }
-        array_24.finish();
+        array_22.finish();
     }
-    if let Some(var_27) = &input.non_additive {
-        object.key("NonAdditive").boolean(*var_27);
+    if let Some(var_25) = &input.non_additive {
+        object.key("NonAdditive").boolean(*var_25);
     }
     Ok(())
 }
@@ -199,7 +199,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::topic_calculated_field_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

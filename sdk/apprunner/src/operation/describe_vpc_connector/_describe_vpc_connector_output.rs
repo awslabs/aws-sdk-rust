@@ -34,6 +34,7 @@ pub struct DescribeVpcConnectorOutputBuilder {
 }
 impl DescribeVpcConnectorOutputBuilder {
     /// <p>A description of the App Runner VPC connector that you specified in this request.</p>
+    /// This field is required.
     pub fn vpc_connector(mut self, input: crate::types::VpcConnector) -> Self {
         self.vpc_connector = ::std::option::Option::Some(input);
         self

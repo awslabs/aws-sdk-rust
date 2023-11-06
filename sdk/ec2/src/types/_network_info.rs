@@ -49,8 +49,10 @@ impl NetworkInfo {
         self.default_network_card_index
     }
     /// <p>Describes the network cards for the instance type.</p>
-    pub fn network_cards(&self) -> ::std::option::Option<&[crate::types::NetworkCardInfo]> {
-        self.network_cards.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_cards.is_none()`.
+    pub fn network_cards(&self) -> &[crate::types::NetworkCardInfo] {
+        self.network_cards.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of IPv4 addresses per network interface.</p>
     pub fn ipv4_addresses_per_interface(&self) -> ::std::option::Option<i32> {

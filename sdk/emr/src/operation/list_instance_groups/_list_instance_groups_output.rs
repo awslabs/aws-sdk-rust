@@ -12,8 +12,10 @@ pub struct ListInstanceGroupsOutput {
 }
 impl ListInstanceGroupsOutput {
     /// <p>The list of instance groups for the cluster and given filters.</p>
-    pub fn instance_groups(&self) -> ::std::option::Option<&[crate::types::InstanceGroup]> {
-        self.instance_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_groups.is_none()`.
+    pub fn instance_groups(&self) -> &[crate::types::InstanceGroup] {
+        self.instance_groups.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

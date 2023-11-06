@@ -27,6 +27,7 @@ pub struct DeleteEvaluationInputBuilder {
 }
 impl DeleteEvaluationInputBuilder {
     /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code> to delete.</p>
+    /// This field is required.
     pub fn evaluation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteEvaluationInputBuilder {
     /// Consumes the builder and constructs a [`DeleteEvaluationInput`](crate::operation::delete_evaluation::DeleteEvaluationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_evaluation::DeleteEvaluationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_evaluation::DeleteEvaluationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_evaluation::DeleteEvaluationInput {
             evaluation_id: self.evaluation_id,
         })

@@ -27,6 +27,7 @@ pub struct PhoneNumberValidateInputBuilder {
 }
 impl PhoneNumberValidateInputBuilder {
     /// <p>Specifies a phone number to validate and retrieve information about.</p>
+    /// This field is required.
     pub fn number_validate_request(mut self, input: crate::types::NumberValidateRequest) -> Self {
         self.number_validate_request = ::std::option::Option::Some(input);
         self
@@ -43,7 +44,7 @@ impl PhoneNumberValidateInputBuilder {
     /// Consumes the builder and constructs a [`PhoneNumberValidateInput`](crate::operation::phone_number_validate::PhoneNumberValidateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::phone_number_validate::PhoneNumberValidateInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::phone_number_validate::PhoneNumberValidateInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::phone_number_validate::PhoneNumberValidateInput {
             number_validate_request: self.number_validate_request,

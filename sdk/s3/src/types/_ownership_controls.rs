@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OwnershipControls {
     /// <p>The container element for an ownership control rule.</p>
-    pub rules: ::std::option::Option<::std::vec::Vec<crate::types::OwnershipControlsRule>>,
+    pub rules: ::std::vec::Vec<crate::types::OwnershipControlsRule>,
 }
 impl OwnershipControls {
     /// <p>The container element for an ownership control rule.</p>
-    pub fn rules(&self) -> ::std::option::Option<&[crate::types::OwnershipControlsRule]> {
-        self.rules.as_deref()
+    pub fn rules(&self) -> &[crate::types::OwnershipControlsRule] {
+        use std::ops::Deref;
+        self.rules.deref()
     }
 }
 impl OwnershipControls {
@@ -48,7 +49,16 @@ impl OwnershipControlsBuilder {
         &self.rules
     }
     /// Consumes the builder and constructs a [`OwnershipControls`](crate::types::OwnershipControls).
-    pub fn build(self) -> crate::types::OwnershipControls {
-        crate::types::OwnershipControls { rules: self.rules }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`rules`](crate::types::builders::OwnershipControlsBuilder::rules)
+    pub fn build(self) -> ::std::result::Result<crate::types::OwnershipControls, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::OwnershipControls {
+            rules: self.rules.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "rules",
+                    "rules was not specified but it is required when building OwnershipControls",
+                )
+            })?,
+        })
     }
 }

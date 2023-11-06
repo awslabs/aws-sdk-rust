@@ -2,7 +2,7 @@
 pub fn ser_case_filter(
     object_6: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CaseFilter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::CaseFilter::Field(inner) => {
             #[allow(unused_mut)]
@@ -40,7 +40,7 @@ pub fn ser_case_filter(
             }
             array_6.finish();
         }
-        crate::types::CaseFilter::Unknown => return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("CaseFilter")),
+        crate::types::CaseFilter::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("CaseFilter")),
     }
     Ok(())
 }

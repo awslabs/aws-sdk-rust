@@ -21,8 +21,10 @@ impl InventoryDeletionSummary {
         self.remaining_count
     }
     /// <p>A list of counts and versions for deleted items.</p>
-    pub fn summary_items(&self) -> ::std::option::Option<&[crate::types::InventoryDeletionSummaryItem]> {
-        self.summary_items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.summary_items.is_none()`.
+    pub fn summary_items(&self) -> &[crate::types::InventoryDeletionSummaryItem] {
+        self.summary_items.as_deref().unwrap_or_default()
     }
 }
 impl InventoryDeletionSummary {

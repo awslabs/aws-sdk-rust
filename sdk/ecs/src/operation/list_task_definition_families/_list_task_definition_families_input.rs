@@ -118,7 +118,7 @@ impl ListTaskDefinitionFamiliesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_task_definition_families::ListTaskDefinitionFamiliesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_task_definition_families::ListTaskDefinitionFamiliesInput {
             family_prefix: self.family_prefix,

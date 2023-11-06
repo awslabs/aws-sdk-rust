@@ -21,8 +21,10 @@ impl DeleteApplicationCloudWatchLoggingOptionOutput {
         self.application_version_id
     }
     /// <p>The descriptions of the remaining CloudWatch logging options for the application.</p>
-    pub fn cloud_watch_logging_option_descriptions(&self) -> ::std::option::Option<&[crate::types::CloudWatchLoggingOptionDescription]> {
-        self.cloud_watch_logging_option_descriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_watch_logging_option_descriptions.is_none()`.
+    pub fn cloud_watch_logging_option_descriptions(&self) -> &[crate::types::CloudWatchLoggingOptionDescription] {
+        self.cloud_watch_logging_option_descriptions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteApplicationCloudWatchLoggingOptionOutput {

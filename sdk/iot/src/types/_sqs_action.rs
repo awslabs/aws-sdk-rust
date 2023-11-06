@@ -5,20 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SqsAction {
     /// <p>The ARN of the IAM role that grants access.</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
     /// <p>The URL of the Amazon SQS queue.</p>
-    pub queue_url: ::std::option::Option<::std::string::String>,
+    pub queue_url: ::std::string::String,
     /// <p>Specifies whether to use Base64 encoding.</p>
     pub use_base64: ::std::option::Option<bool>,
 }
 impl SqsAction {
     /// <p>The ARN of the IAM role that grants access.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
     /// <p>The URL of the Amazon SQS queue.</p>
-    pub fn queue_url(&self) -> ::std::option::Option<&str> {
-        self.queue_url.as_deref()
+    pub fn queue_url(&self) -> &str {
+        use std::ops::Deref;
+        self.queue_url.deref()
     }
     /// <p>Specifies whether to use Base64 encoding.</p>
     pub fn use_base64(&self) -> ::std::option::Option<bool> {
@@ -42,6 +44,7 @@ pub struct SqsActionBuilder {
 }
 impl SqsActionBuilder {
     /// <p>The ARN of the IAM role that grants access.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl SqsActionBuilder {
         &self.role_arn
     }
     /// <p>The URL of the Amazon SQS queue.</p>
+    /// This field is required.
     pub fn queue_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_url = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +88,24 @@ impl SqsActionBuilder {
         &self.use_base64
     }
     /// Consumes the builder and constructs a [`SqsAction`](crate::types::SqsAction).
-    pub fn build(self) -> crate::types::SqsAction {
-        crate::types::SqsAction {
-            role_arn: self.role_arn,
-            queue_url: self.queue_url,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`role_arn`](crate::types::builders::SqsActionBuilder::role_arn)
+    /// - [`queue_url`](crate::types::builders::SqsActionBuilder::queue_url)
+    pub fn build(self) -> ::std::result::Result<crate::types::SqsAction, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SqsAction {
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building SqsAction",
+                )
+            })?,
+            queue_url: self.queue_url.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "queue_url",
+                    "queue_url was not specified but it is required when building SqsAction",
+                )
+            })?,
             use_base64: self.use_base64,
-        }
+        })
     }
 }

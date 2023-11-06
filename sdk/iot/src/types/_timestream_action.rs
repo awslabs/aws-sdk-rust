@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimestreamAction {
     /// <p>The ARN of the role that grants permission to write to the Amazon Timestream database table.</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
     /// <p>The name of an Amazon Timestream database.</p>
-    pub database_name: ::std::option::Option<::std::string::String>,
+    pub database_name: ::std::string::String,
     /// <p>The name of the database table into which to write the measure records.</p>
-    pub table_name: ::std::option::Option<::std::string::String>,
+    pub table_name: ::std::string::String,
     /// <p>Metadata attributes of the time series that are written in each measure record.</p>
-    pub dimensions: ::std::option::Option<::std::vec::Vec<crate::types::TimestreamDimension>>,
+    pub dimensions: ::std::vec::Vec<crate::types::TimestreamDimension>,
     /// <p>Specifies an application-defined value to replace the default value assigned to the Timestream record's timestamp in the <code>time</code> column.</p>
     /// <p>You can use this property to specify the value and the precision of the Timestream record's timestamp. You can specify a value from the message payload or a value computed by a substitution template.</p>
     /// <p>If omitted, the topic rule action assigns the timestamp, in milliseconds, at the time it processed the rule. </p>
@@ -19,20 +19,24 @@ pub struct TimestreamAction {
 }
 impl TimestreamAction {
     /// <p>The ARN of the role that grants permission to write to the Amazon Timestream database table.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
     /// <p>The name of an Amazon Timestream database.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
-        self.database_name.as_deref()
+    pub fn database_name(&self) -> &str {
+        use std::ops::Deref;
+        self.database_name.deref()
     }
     /// <p>The name of the database table into which to write the measure records.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
-        self.table_name.as_deref()
+    pub fn table_name(&self) -> &str {
+        use std::ops::Deref;
+        self.table_name.deref()
     }
     /// <p>Metadata attributes of the time series that are written in each measure record.</p>
-    pub fn dimensions(&self) -> ::std::option::Option<&[crate::types::TimestreamDimension]> {
-        self.dimensions.as_deref()
+    pub fn dimensions(&self) -> &[crate::types::TimestreamDimension] {
+        use std::ops::Deref;
+        self.dimensions.deref()
     }
     /// <p>Specifies an application-defined value to replace the default value assigned to the Timestream record's timestamp in the <code>time</code> column.</p>
     /// <p>You can use this property to specify the value and the precision of the Timestream record's timestamp. You can specify a value from the message payload or a value computed by a substitution template.</p>
@@ -60,6 +64,7 @@ pub struct TimestreamActionBuilder {
 }
 impl TimestreamActionBuilder {
     /// <p>The ARN of the role that grants permission to write to the Amazon Timestream database table.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -74,6 +79,7 @@ impl TimestreamActionBuilder {
         &self.role_arn
     }
     /// <p>The name of an Amazon Timestream database.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -88,6 +94,7 @@ impl TimestreamActionBuilder {
         &self.database_name
     }
     /// <p>The name of the database table into which to write the measure records.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -142,13 +149,38 @@ impl TimestreamActionBuilder {
         &self.timestamp
     }
     /// Consumes the builder and constructs a [`TimestreamAction`](crate::types::TimestreamAction).
-    pub fn build(self) -> crate::types::TimestreamAction {
-        crate::types::TimestreamAction {
-            role_arn: self.role_arn,
-            database_name: self.database_name,
-            table_name: self.table_name,
-            dimensions: self.dimensions,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`role_arn`](crate::types::builders::TimestreamActionBuilder::role_arn)
+    /// - [`database_name`](crate::types::builders::TimestreamActionBuilder::database_name)
+    /// - [`table_name`](crate::types::builders::TimestreamActionBuilder::table_name)
+    /// - [`dimensions`](crate::types::builders::TimestreamActionBuilder::dimensions)
+    pub fn build(self) -> ::std::result::Result<crate::types::TimestreamAction, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TimestreamAction {
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building TimestreamAction",
+                )
+            })?,
+            database_name: self.database_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "database_name",
+                    "database_name was not specified but it is required when building TimestreamAction",
+                )
+            })?,
+            table_name: self.table_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "table_name",
+                    "table_name was not specified but it is required when building TimestreamAction",
+                )
+            })?,
+            dimensions: self.dimensions.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "dimensions",
+                    "dimensions was not specified but it is required when building TimestreamAction",
+                )
+            })?,
             timestamp: self.timestamp,
-        }
+        })
     }
 }

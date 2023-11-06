@@ -45,8 +45,10 @@ impl UpdateRuleOutput {
         self.resource_type.as_ref()
     }
     /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
-    pub fn resource_tags(&self) -> ::std::option::Option<&[crate::types::ResourceTag]> {
-        self.resource_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_tags.is_none()`.
+    pub fn resource_tags(&self) -> &[crate::types::ResourceTag] {
+        self.resource_tags.as_deref().unwrap_or_default()
     }
     /// <p>The state of the retention rule. Only retention rules that are in the <code>available</code> state retain resources.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::RuleStatus> {

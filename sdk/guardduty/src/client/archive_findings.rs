@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ArchiveFindings`](crate::operation::archive_findings::builders::ArchiveFindingsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`detector_id(impl Into<String>)`](crate::operation::archive_findings::builders::ArchiveFindingsFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::archive_findings::builders::ArchiveFindingsFluentBuilder::set_detector_id): <p>The ID of the detector that specifies the GuardDuty service whose findings you want to archive.</p>
-    ///   - [`finding_ids(impl Into<String>)`](crate::operation::archive_findings::builders::ArchiveFindingsFluentBuilder::finding_ids) / [`set_finding_ids(Option<Vec<String>>)`](crate::operation::archive_findings::builders::ArchiveFindingsFluentBuilder::set_finding_ids): <p>The IDs of the findings that you want to archive.</p>
+    ///   - [`detector_id(impl Into<String>)`](crate::operation::archive_findings::builders::ArchiveFindingsFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::archive_findings::builders::ArchiveFindingsFluentBuilder::set_detector_id):<br>required: **true**<br><p>The ID of the detector that specifies the GuardDuty service whose findings you want to archive.</p><br>
+    ///   - [`finding_ids(impl Into<String>)`](crate::operation::archive_findings::builders::ArchiveFindingsFluentBuilder::finding_ids) / [`set_finding_ids(Option<Vec::<String>>)`](crate::operation::archive_findings::builders::ArchiveFindingsFluentBuilder::set_finding_ids):<br>required: **true**<br><p>The IDs of the findings that you want to archive.</p><br>
     /// - On success, responds with [`ArchiveFindingsOutput`](crate::operation::archive_findings::ArchiveFindingsOutput)
     /// - On failure, responds with [`SdkError<ArchiveFindingsError>`](crate::operation::archive_findings::ArchiveFindingsError)
     pub fn archive_findings(&self) -> crate::operation::archive_findings::builders::ArchiveFindingsFluentBuilder {

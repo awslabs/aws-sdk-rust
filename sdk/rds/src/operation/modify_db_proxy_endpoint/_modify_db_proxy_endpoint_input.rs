@@ -20,8 +20,10 @@ impl ModifyDbProxyEndpointInput {
         self.new_db_proxy_endpoint_name.as_deref()
     }
     /// <p>The VPC security group IDs for the DB proxy endpoint. When the DB proxy endpoint uses a different VPC than the original proxy, you also specify a different set of security group IDs than for the original proxy.</p>
-    pub fn vpc_security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.vpc_security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_group_ids.is_none()`.
+    pub fn vpc_security_group_ids(&self) -> &[::std::string::String] {
+        self.vpc_security_group_ids.as_deref().unwrap_or_default()
     }
 }
 impl ModifyDbProxyEndpointInput {
@@ -41,6 +43,7 @@ pub struct ModifyDbProxyEndpointInputBuilder {
 }
 impl ModifyDbProxyEndpointInputBuilder {
     /// <p>The name of the DB proxy sociated with the DB proxy endpoint that you want to modify.</p>
+    /// This field is required.
     pub fn db_proxy_endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_proxy_endpoint_name = ::std::option::Option::Some(input.into());
         self
@@ -91,7 +94,7 @@ impl ModifyDbProxyEndpointInputBuilder {
     /// Consumes the builder and constructs a [`ModifyDbProxyEndpointInput`](crate::operation::modify_db_proxy_endpoint::ModifyDbProxyEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_db_proxy_endpoint::ModifyDbProxyEndpointInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::modify_db_proxy_endpoint::ModifyDbProxyEndpointInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::modify_db_proxy_endpoint::ModifyDbProxyEndpointInput {
             db_proxy_endpoint_name: self.db_proxy_endpoint_name,

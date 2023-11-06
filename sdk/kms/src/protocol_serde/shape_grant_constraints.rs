@@ -2,7 +2,7 @@
 pub fn ser_grant_constraints(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GrantConstraints,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.encryption_context_subset {
         #[allow(unused_mut)]
         let mut object_2 = object.key("EncryptionContextSubset").start_object();

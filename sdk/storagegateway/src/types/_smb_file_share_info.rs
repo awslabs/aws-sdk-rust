@@ -181,16 +181,22 @@ impl SmbFileShareInfo {
         self.access_based_enumeration
     }
     /// <p>A list of users or groups in the Active Directory that have administrator rights to the file share. A group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.</p>
-    pub fn admin_user_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.admin_user_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.admin_user_list.is_none()`.
+    pub fn admin_user_list(&self) -> &[::std::string::String] {
+        self.admin_user_list.as_deref().unwrap_or_default()
     }
     /// <p>A list of users or groups in the Active Directory that are allowed to access the file share. A group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.</p>
-    pub fn valid_user_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.valid_user_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.valid_user_list.is_none()`.
+    pub fn valid_user_list(&self) -> &[::std::string::String] {
+        self.valid_user_list.as_deref().unwrap_or_default()
     }
     /// <p>A list of users or groups in the Active Directory that are not allowed to access the file share. A group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.</p>
-    pub fn invalid_user_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.invalid_user_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.invalid_user_list.is_none()`.
+    pub fn invalid_user_list(&self) -> &[::std::string::String] {
+        self.invalid_user_list.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
     pub fn audit_destination_arn(&self) -> ::std::option::Option<&str> {
@@ -206,8 +212,10 @@ impl SmbFileShareInfo {
         self.case_sensitivity.as_ref()
     }
     /// <p>A list of up to 50 tags assigned to the SMB file share, sorted alphabetically by key name. Each tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the <code>ListTagsForResource</code> API operation.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The name of the file share. Optional.</p> <note>
     /// <p> <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>

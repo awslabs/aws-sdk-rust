@@ -48,8 +48,10 @@ impl ListAggregatedUtterancesInput {
         self.sort_by.as_ref()
     }
     /// <p>Provides the specification of a filter used to limit the utterances in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::AggregatedUtterancesFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::AggregatedUtterancesFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of utterances to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned. If you don't specify the <code>maxResults</code> parameter, 1,000 results are returned.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -83,6 +85,7 @@ pub struct ListAggregatedUtterancesInputBuilder {
 }
 impl ListAggregatedUtterancesInputBuilder {
     /// <p>The unique identifier of the bot associated with this request.</p>
+    /// This field is required.
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +128,7 @@ impl ListAggregatedUtterancesInputBuilder {
         &self.bot_version
     }
     /// <p>The identifier of the language and locale where the utterances were collected. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// This field is required.
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
         self
@@ -139,6 +143,7 @@ impl ListAggregatedUtterancesInputBuilder {
         &self.locale_id
     }
     /// <p>The time window for aggregating the utterance information. You can specify a time between one hour and two weeks.</p>
+    /// This field is required.
     pub fn aggregation_duration(mut self, input: crate::types::UtteranceAggregationDuration) -> Self {
         self.aggregation_duration = ::std::option::Option::Some(input);
         self
@@ -219,7 +224,7 @@ impl ListAggregatedUtterancesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_aggregated_utterances::ListAggregatedUtterancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_aggregated_utterances::ListAggregatedUtterancesInput {
             bot_id: self.bot_id,

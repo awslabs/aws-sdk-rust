@@ -28,6 +28,7 @@ pub struct AttackVolumeStatisticsBuilder {
 }
 impl AttackVolumeStatisticsBuilder {
     /// <p>The maximum attack volume observed for the given unit.</p>
+    /// This field is required.
     pub fn max(mut self, input: f64) -> Self {
         self.max = ::std::option::Option::Some(input);
         self

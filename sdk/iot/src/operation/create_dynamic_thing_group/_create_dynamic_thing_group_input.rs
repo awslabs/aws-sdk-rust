@@ -48,8 +48,10 @@ impl CreateDynamicThingGroupInput {
         self.query_version.as_deref()
     }
     /// <p>Metadata which can be used to manage the dynamic thing group.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateDynamicThingGroupInput {
@@ -72,6 +74,7 @@ pub struct CreateDynamicThingGroupInputBuilder {
 }
 impl CreateDynamicThingGroupInputBuilder {
     /// <p>The dynamic thing group name to create.</p>
+    /// This field is required.
     pub fn thing_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_group_name = ::std::option::Option::Some(input.into());
         self
@@ -121,6 +124,7 @@ impl CreateDynamicThingGroupInputBuilder {
     }
     /// <p>The dynamic thing group search query string.</p>
     /// <p>See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query Syntax</a> for information about query string syntax.</p>
+    /// This field is required.
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_string = ::std::option::Option::Some(input.into());
         self
@@ -181,7 +185,7 @@ impl CreateDynamicThingGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_dynamic_thing_group::CreateDynamicThingGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_dynamic_thing_group::CreateDynamicThingGroupInput {
             thing_group_name: self.thing_group_name,

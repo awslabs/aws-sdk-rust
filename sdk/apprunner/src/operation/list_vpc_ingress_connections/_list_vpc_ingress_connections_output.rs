@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListVpcIngressConnectionsOutput {
     /// <p>A list of summary information records for VPC Ingress Connections. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
-    pub vpc_ingress_connection_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::VpcIngressConnectionSummary>>,
+    pub vpc_ingress_connection_summary_list: ::std::vec::Vec<crate::types::VpcIngressConnectionSummary>,
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListVpcIngressConnectionsOutput {
     /// <p>A list of summary information records for VPC Ingress Connections. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
-    pub fn vpc_ingress_connection_summary_list(&self) -> ::std::option::Option<&[crate::types::VpcIngressConnectionSummary]> {
-        self.vpc_ingress_connection_summary_list.as_deref()
+    pub fn vpc_ingress_connection_summary_list(&self) -> &[crate::types::VpcIngressConnectionSummary] {
+        use std::ops::Deref;
+        self.vpc_ingress_connection_summary_list.deref()
     }
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -87,11 +88,23 @@ impl ListVpcIngressConnectionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListVpcIngressConnectionsOutput`](crate::operation::list_vpc_ingress_connections::ListVpcIngressConnectionsOutput).
-    pub fn build(self) -> crate::operation::list_vpc_ingress_connections::ListVpcIngressConnectionsOutput {
-        crate::operation::list_vpc_ingress_connections::ListVpcIngressConnectionsOutput {
-            vpc_ingress_connection_summary_list: self.vpc_ingress_connection_summary_list,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`vpc_ingress_connection_summary_list`](crate::operation::list_vpc_ingress_connections::builders::ListVpcIngressConnectionsOutputBuilder::vpc_ingress_connection_summary_list)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_vpc_ingress_connections::ListVpcIngressConnectionsOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_vpc_ingress_connections::ListVpcIngressConnectionsOutput {
+            vpc_ingress_connection_summary_list: self.vpc_ingress_connection_summary_list.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "vpc_ingress_connection_summary_list",
+                    "vpc_ingress_connection_summary_list was not specified but it is required when building ListVpcIngressConnectionsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

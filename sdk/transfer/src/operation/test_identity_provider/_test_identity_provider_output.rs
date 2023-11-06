@@ -12,7 +12,7 @@ pub struct TestIdentityProviderOutput {
     /// </note>
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint of the service used to authenticate a user.</p>
-    pub url: ::std::option::Option<::std::string::String>,
+    pub url: ::std::string::String,
     _request_id: Option<String>,
 }
 impl TestIdentityProviderOutput {
@@ -31,8 +31,9 @@ impl TestIdentityProviderOutput {
         self.message.as_deref()
     }
     /// <p>The endpoint of the service used to authenticate a user.</p>
-    pub fn url(&self) -> ::std::option::Option<&str> {
-        self.url.as_deref()
+    pub fn url(&self) -> &str {
+        use std::ops::Deref;
+        self.url.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for TestIdentityProviderOutput {
@@ -73,6 +74,7 @@ impl TestIdentityProviderOutputBuilder {
         &self.response
     }
     /// <p>The HTTP status code that is the response from your API Gateway or your Lambda function.</p>
+    /// This field is required.
     pub fn status_code(mut self, input: i32) -> Self {
         self.status_code = ::std::option::Option::Some(input);
         self
@@ -107,6 +109,7 @@ impl TestIdentityProviderOutputBuilder {
         &self.message
     }
     /// <p>The endpoint of the service used to authenticate a user.</p>
+    /// This field is required.
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
         self
@@ -130,13 +133,23 @@ impl TestIdentityProviderOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`TestIdentityProviderOutput`](crate::operation::test_identity_provider::TestIdentityProviderOutput).
-    pub fn build(self) -> crate::operation::test_identity_provider::TestIdentityProviderOutput {
-        crate::operation::test_identity_provider::TestIdentityProviderOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`url`](crate::operation::test_identity_provider::builders::TestIdentityProviderOutputBuilder::url)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::test_identity_provider::TestIdentityProviderOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::test_identity_provider::TestIdentityProviderOutput {
             response: self.response,
             status_code: self.status_code.unwrap_or_default(),
             message: self.message,
-            url: self.url,
+            url: self.url.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "url",
+                    "url was not specified but it is required when building TestIdentityProviderOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

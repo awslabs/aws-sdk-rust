@@ -29,6 +29,7 @@ pub struct RejectInboundCrossClusterSearchConnectionInputBuilder {
 }
 impl RejectInboundCrossClusterSearchConnectionInputBuilder {
     /// <p>The id of the inbound connection that you want to reject.</p>
+    /// This field is required.
     pub fn cross_cluster_search_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cross_cluster_search_connection_id = ::std::option::Option::Some(input.into());
         self
@@ -47,7 +48,7 @@ impl RejectInboundCrossClusterSearchConnectionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reject_inbound_cross_cluster_search_connection::RejectInboundCrossClusterSearchConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::reject_inbound_cross_cluster_search_connection::RejectInboundCrossClusterSearchConnectionInput {

@@ -102,7 +102,7 @@ impl ListAccountAssociationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_account_associations::ListAccountAssociationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_account_associations::ListAccountAssociationsInput {
             billing_period: self.billing_period,

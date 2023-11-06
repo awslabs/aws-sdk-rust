@@ -41,6 +41,7 @@ pub struct DisassociateClientVpnTargetNetworkInputBuilder {
 }
 impl DisassociateClientVpnTargetNetworkInputBuilder {
     /// <p>The ID of the Client VPN endpoint from which to disassociate the target network.</p>
+    /// This field is required.
     pub fn client_vpn_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_vpn_endpoint_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DisassociateClientVpnTargetNetworkInputBuilder {
         &self.client_vpn_endpoint_id
     }
     /// <p>The ID of the target network association.</p>
+    /// This field is required.
     pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +89,7 @@ impl DisassociateClientVpnTargetNetworkInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_client_vpn_target_network::DisassociateClientVpnTargetNetworkInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_client_vpn_target_network::DisassociateClientVpnTargetNetworkInput {

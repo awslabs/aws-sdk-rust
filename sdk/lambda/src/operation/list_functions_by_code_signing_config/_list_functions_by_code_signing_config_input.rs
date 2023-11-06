@@ -41,6 +41,7 @@ pub struct ListFunctionsByCodeSigningConfigInputBuilder {
 }
 impl ListFunctionsByCodeSigningConfigInputBuilder {
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
+    /// This field is required.
     pub fn code_signing_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code_signing_config_arn = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListFunctionsByCodeSigningConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_functions_by_code_signing_config::ListFunctionsByCodeSigningConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_functions_by_code_signing_config::ListFunctionsByCodeSigningConfigInput {

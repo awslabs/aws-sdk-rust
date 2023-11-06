@@ -12,8 +12,10 @@ pub struct StartSourceNetworkRecoveryInput {
 }
 impl StartSourceNetworkRecoveryInput {
     /// <p>The Source Networks that we want to start a Recovery Job for.</p>
-    pub fn source_networks(&self) -> ::std::option::Option<&[crate::types::StartSourceNetworkRecoveryRequestNetworkEntry]> {
-        self.source_networks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_networks.is_none()`.
+    pub fn source_networks(&self) -> &[crate::types::StartSourceNetworkRecoveryRequestNetworkEntry] {
+        self.source_networks.as_deref().unwrap_or_default()
     }
     /// <p>Don't update existing CloudFormation Stack, recover the network using a new stack.</p>
     pub fn deploy_as_new(&self) -> ::std::option::Option<bool> {
@@ -111,7 +113,7 @@ impl StartSourceNetworkRecoveryInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_source_network_recovery::StartSourceNetworkRecoveryInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_source_network_recovery::StartSourceNetworkRecoveryInput {
             source_networks: self.source_networks,

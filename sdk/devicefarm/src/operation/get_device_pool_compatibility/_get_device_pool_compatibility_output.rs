@@ -12,12 +12,16 @@ pub struct GetDevicePoolCompatibilityOutput {
 }
 impl GetDevicePoolCompatibilityOutput {
     /// <p>Information about compatible devices.</p>
-    pub fn compatible_devices(&self) -> ::std::option::Option<&[crate::types::DevicePoolCompatibilityResult]> {
-        self.compatible_devices.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compatible_devices.is_none()`.
+    pub fn compatible_devices(&self) -> &[crate::types::DevicePoolCompatibilityResult] {
+        self.compatible_devices.as_deref().unwrap_or_default()
     }
     /// <p>Information about incompatible devices.</p>
-    pub fn incompatible_devices(&self) -> ::std::option::Option<&[crate::types::DevicePoolCompatibilityResult]> {
-        self.incompatible_devices.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.incompatible_devices.is_none()`.
+    pub fn incompatible_devices(&self) -> &[crate::types::DevicePoolCompatibilityResult] {
+        self.incompatible_devices.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetDevicePoolCompatibilityOutput {

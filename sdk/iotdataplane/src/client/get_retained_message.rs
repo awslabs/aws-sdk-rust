@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetRetainedMessage`](crate::operation::get_retained_message::builders::GetRetainedMessageFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`topic(impl Into<String>)`](crate::operation::get_retained_message::builders::GetRetainedMessageFluentBuilder::topic) / [`set_topic(Option<String>)`](crate::operation::get_retained_message::builders::GetRetainedMessageFluentBuilder::set_topic): <p>The topic name of the retained message to retrieve.</p>
+    ///   - [`topic(impl Into<String>)`](crate::operation::get_retained_message::builders::GetRetainedMessageFluentBuilder::topic) / [`set_topic(Option<String>)`](crate::operation::get_retained_message::builders::GetRetainedMessageFluentBuilder::set_topic):<br>required: **true**<br><p>The topic name of the retained message to retrieve.</p><br>
     /// - On success, responds with [`GetRetainedMessageOutput`](crate::operation::get_retained_message::GetRetainedMessageOutput) with field(s):
     ///   - [`topic(Option<String>)`](crate::operation::get_retained_message::GetRetainedMessageOutput::topic): <p>The topic name to which the retained message was published.</p>
     ///   - [`payload(Option<Blob>)`](crate::operation::get_retained_message::GetRetainedMessageOutput::payload): <p>The Base64-encoded message payload of the retained message body.</p>

@@ -37,11 +37,10 @@ pub fn de_associate_resource_share_http_error(
                         )
                         .map_err(crate::operation::associate_resource_share::AssociateResourceShareError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::idempotent_parameter_mismatch_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::associate_resource_share::AssociateResourceShareError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -54,11 +53,10 @@ pub fn de_associate_resource_share_http_error(
                     crate::protocol_serde::shape_invalid_client_token_exception::de_invalid_client_token_exception_json_err(_response_body, output)
                         .map_err(crate::operation::associate_resource_share::AssociateResourceShareError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_client_token_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::associate_resource_share::AssociateResourceShareError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InvalidParameterException" => crate::operation::associate_resource_share::AssociateResourceShareError::InvalidParameterException({
@@ -69,11 +67,10 @@ pub fn de_associate_resource_share_http_error(
                 output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output)
                     .map_err(crate::operation::associate_resource_share::AssociateResourceShareError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_parameter_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::associate_resource_share::AssociateResourceShareError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InvalidStateTransitionException" => {
@@ -88,11 +85,10 @@ pub fn de_associate_resource_share_http_error(
                     )
                     .map_err(crate::operation::associate_resource_share::AssociateResourceShareError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::invalid_state_transition_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::associate_resource_share::AssociateResourceShareError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -104,11 +100,10 @@ pub fn de_associate_resource_share_http_error(
                 output = crate::protocol_serde::shape_malformed_arn_exception::de_malformed_arn_exception_json_err(_response_body, output)
                     .map_err(crate::operation::associate_resource_share::AssociateResourceShareError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::malformed_arn_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::associate_resource_share::AssociateResourceShareError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "OperationNotPermittedException" => {
@@ -123,11 +118,10 @@ pub fn de_associate_resource_share_http_error(
                     )
                     .map_err(crate::operation::associate_resource_share::AssociateResourceShareError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::operation_not_permitted_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::associate_resource_share::AssociateResourceShareError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -144,11 +138,10 @@ pub fn de_associate_resource_share_http_error(
                         )
                         .map_err(crate::operation::associate_resource_share::AssociateResourceShareError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::resource_share_limit_exceeded_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::associate_resource_share::AssociateResourceShareError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -160,11 +153,10 @@ pub fn de_associate_resource_share_http_error(
                 output = crate::protocol_serde::shape_server_internal_exception::de_server_internal_exception_json_err(_response_body, output)
                     .map_err(crate::operation::associate_resource_share::AssociateResourceShareError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::server_internal_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::associate_resource_share::AssociateResourceShareError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::associate_resource_share::AssociateResourceShareError::ServiceUnavailableException({
@@ -176,11 +168,10 @@ pub fn de_associate_resource_share_http_error(
                     crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
                         .map_err(crate::operation::associate_resource_share::AssociateResourceShareError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::service_unavailable_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::associate_resource_share::AssociateResourceShareError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::associate_resource_share::AssociateResourceShareError::ThrottlingException({
@@ -191,11 +182,10 @@ pub fn de_associate_resource_share_http_error(
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::associate_resource_share::AssociateResourceShareError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::associate_resource_share::AssociateResourceShareError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "UnknownResourceException" => crate::operation::associate_resource_share::AssociateResourceShareError::UnknownResourceException({
@@ -206,11 +196,10 @@ pub fn de_associate_resource_share_http_error(
                 output = crate::protocol_serde::shape_unknown_resource_exception::de_unknown_resource_exception_json_err(_response_body, output)
                     .map_err(crate::operation::associate_resource_share::AssociateResourceShareError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::unknown_resource_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::associate_resource_share::AssociateResourceShareError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::associate_resource_share::AssociateResourceShareError::generic(generic),
@@ -238,12 +227,12 @@ pub fn de_associate_resource_share_http_response(
 
 pub fn ser_associate_resource_share_input(
     input: &crate::operation::associate_resource_share::AssociateResourceShareInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_associate_resource_share_input::ser_associate_resource_share_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_associate_resource_share(

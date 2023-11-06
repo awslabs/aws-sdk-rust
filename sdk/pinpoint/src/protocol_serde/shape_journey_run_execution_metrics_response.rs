@@ -51,7 +51,7 @@ where
                             );
                         }
                         "Metrics" => {
-                            builder = builder.set_metrics(crate::protocol_serde::shape_map_of__string::de_map_of__string(tokens)?);
+                            builder = builder.set_metrics(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens)?);
                         }
                         "RunId" => {
                             builder = builder.set_run_id(
@@ -70,7 +70,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::journey_run_execution_metrics_response_correct_errors(builder).build(),
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

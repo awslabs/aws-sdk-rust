@@ -2,7 +2,7 @@
 pub fn ser_update_notification_settings_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_notification_settings::UpdateNotificationSettingsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.hit_type_id {
         object.key("HITTypeId").string(var_1.as_str());
     }

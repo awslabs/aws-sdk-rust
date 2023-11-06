@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEncryptionKeyOutput {
     /// <p>A kms key ID.</p>
-    pub kms_key_id: ::std::option::Option<::std::string::String>,
+    pub kms_key_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl GetEncryptionKeyOutput {
     /// <p>A kms key ID.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
-        self.kms_key_id.as_deref()
+    pub fn kms_key_id(&self) -> &str {
+        use std::ops::Deref;
+        self.kms_key_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetEncryptionKeyOutput {
@@ -34,6 +35,7 @@ pub struct GetEncryptionKeyOutputBuilder {
 }
 impl GetEncryptionKeyOutputBuilder {
     /// <p>A kms key ID.</p>
+    /// This field is required.
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,19 @@ impl GetEncryptionKeyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetEncryptionKeyOutput`](crate::operation::get_encryption_key::GetEncryptionKeyOutput).
-    pub fn build(self) -> crate::operation::get_encryption_key::GetEncryptionKeyOutput {
-        crate::operation::get_encryption_key::GetEncryptionKeyOutput {
-            kms_key_id: self.kms_key_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`kms_key_id`](crate::operation::get_encryption_key::builders::GetEncryptionKeyOutputBuilder::kms_key_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_encryption_key::GetEncryptionKeyOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_encryption_key::GetEncryptionKeyOutput {
+            kms_key_id: self.kms_key_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "kms_key_id",
+                    "kms_key_id was not specified but it is required when building GetEncryptionKeyOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

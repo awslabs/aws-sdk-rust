@@ -64,7 +64,7 @@ impl ListSecurityPoliciesInputBuilder {
     /// Consumes the builder and constructs a [`ListSecurityPoliciesInput`](crate::operation::list_security_policies::ListSecurityPoliciesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_security_policies::ListSecurityPoliciesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_security_policies::ListSecurityPoliciesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_security_policies::ListSecurityPoliciesInput {
             max_results: self.max_results,

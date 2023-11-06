@@ -87,7 +87,7 @@ impl ListActivatedRulesInRuleGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_activated_rules_in_rule_group::ListActivatedRulesInRuleGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_activated_rules_in_rule_group::ListActivatedRulesInRuleGroupInput {
             rule_group_id: self.rule_group_id,

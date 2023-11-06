@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InventorySchedule {
     /// <p>Specifies how frequently inventory results are produced.</p>
-    pub frequency: ::std::option::Option<crate::types::InventoryFrequency>,
+    pub frequency: crate::types::InventoryFrequency,
 }
 impl InventorySchedule {
     /// <p>Specifies how frequently inventory results are produced.</p>
-    pub fn frequency(&self) -> ::std::option::Option<&crate::types::InventoryFrequency> {
-        self.frequency.as_ref()
+    pub fn frequency(&self) -> &crate::types::InventoryFrequency {
+        &self.frequency
     }
 }
 impl InventorySchedule {
@@ -28,6 +28,7 @@ pub struct InventoryScheduleBuilder {
 }
 impl InventoryScheduleBuilder {
     /// <p>Specifies how frequently inventory results are produced.</p>
+    /// This field is required.
     pub fn frequency(mut self, input: crate::types::InventoryFrequency) -> Self {
         self.frequency = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,16 @@ impl InventoryScheduleBuilder {
         &self.frequency
     }
     /// Consumes the builder and constructs a [`InventorySchedule`](crate::types::InventorySchedule).
-    pub fn build(self) -> crate::types::InventorySchedule {
-        crate::types::InventorySchedule { frequency: self.frequency }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`frequency`](crate::types::builders::InventoryScheduleBuilder::frequency)
+    pub fn build(self) -> ::std::result::Result<crate::types::InventorySchedule, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::InventorySchedule {
+            frequency: self.frequency.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "frequency",
+                    "frequency was not specified but it is required when building InventorySchedule",
+                )
+            })?,
+        })
     }
 }

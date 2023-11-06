@@ -34,6 +34,7 @@ pub struct CancelImageLaunchPermissionInputBuilder {
 }
 impl CancelImageLaunchPermissionInputBuilder {
     /// <p>The ID of the AMI that was shared with your Amazon Web Services account.</p>
+    /// This field is required.
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl CancelImageLaunchPermissionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_image_launch_permission::CancelImageLaunchPermissionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::cancel_image_launch_permission::CancelImageLaunchPermissionInput {
             image_id: self.image_id,

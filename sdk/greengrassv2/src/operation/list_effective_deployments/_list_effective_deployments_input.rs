@@ -41,6 +41,7 @@ pub struct ListEffectiveDeploymentsInputBuilder {
 }
 impl ListEffectiveDeploymentsInputBuilder {
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
+    /// This field is required.
     pub fn core_device_thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_device_thing_name = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListEffectiveDeploymentsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_effective_deployments::ListEffectiveDeploymentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_effective_deployments::ListEffectiveDeploymentsInput {
             core_device_thing_name: self.core_device_thing_name,

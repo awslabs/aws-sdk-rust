@@ -69,6 +69,7 @@ pub struct UpdateProjectVisibilityInputBuilder {
 }
 impl UpdateProjectVisibilityInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the build project.</p>
+    /// This field is required.
     pub fn project_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_arn = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +98,7 @@ impl UpdateProjectVisibilityInputBuilder {
     /// <p>The project builds are not visible to the public.</p>
     /// </dd>
     /// </dl>
+    /// This field is required.
     pub fn project_visibility(mut self, input: crate::types::ProjectVisibilityType) -> Self {
         self.project_visibility = ::std::option::Option::Some(input);
         self
@@ -157,7 +159,7 @@ impl UpdateProjectVisibilityInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_project_visibility::UpdateProjectVisibilityInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_project_visibility::UpdateProjectVisibilityInput {
             project_arn: self.project_arn,

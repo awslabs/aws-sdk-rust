@@ -7,14 +7,14 @@ pub struct OrganizationCustomRuleMetadata {
     /// <p>The description that you provide for your organization Config rule.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The lambda function ARN.</p>
-    pub lambda_function_arn: ::std::option::Option<::std::string::String>,
+    pub lambda_function_arn: ::std::string::String,
     /// <p>The type of notification that triggers Config to run an evaluation for a rule. You can specify the following notification types:</p>
     /// <ul>
     /// <li> <p> <code>ConfigurationItemChangeNotification</code> - Triggers an evaluation when Config delivers a configuration item as a result of a resource change.</p> </li>
     /// <li> <p> <code>OversizedConfigurationItemChangeNotification</code> - Triggers an evaluation when Config delivers an oversized configuration item. Config may generate this notification type when a resource changes and the notification exceeds the maximum size allowed by Amazon SNS.</p> </li>
     /// <li> <p> <code>ScheduledNotification</code> - Triggers a periodic evaluation at the frequency specified for <code>MaximumExecutionFrequency</code>.</p> </li>
     /// </ul>
-    pub organization_config_rule_trigger_types: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationConfigRuleTriggerType>>,
+    pub organization_config_rule_trigger_types: ::std::vec::Vec<crate::types::OrganizationConfigRuleTriggerType>,
     /// <p>A string, in JSON format, that is passed to your organization Config rule Lambda function.</p>
     pub input_parameters: ::std::option::Option<::std::string::String>,
     /// <p>The maximum frequency with which Config runs evaluations for a rule. Your custom rule is triggered when Config delivers the configuration snapshot. For more information, see <code>ConfigSnapshotDeliveryProperties</code>.</p> <note>
@@ -36,8 +36,9 @@ impl OrganizationCustomRuleMetadata {
         self.description.as_deref()
     }
     /// <p>The lambda function ARN.</p>
-    pub fn lambda_function_arn(&self) -> ::std::option::Option<&str> {
-        self.lambda_function_arn.as_deref()
+    pub fn lambda_function_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.lambda_function_arn.deref()
     }
     /// <p>The type of notification that triggers Config to run an evaluation for a rule. You can specify the following notification types:</p>
     /// <ul>
@@ -45,8 +46,9 @@ impl OrganizationCustomRuleMetadata {
     /// <li> <p> <code>OversizedConfigurationItemChangeNotification</code> - Triggers an evaluation when Config delivers an oversized configuration item. Config may generate this notification type when a resource changes and the notification exceeds the maximum size allowed by Amazon SNS.</p> </li>
     /// <li> <p> <code>ScheduledNotification</code> - Triggers a periodic evaluation at the frequency specified for <code>MaximumExecutionFrequency</code>.</p> </li>
     /// </ul>
-    pub fn organization_config_rule_trigger_types(&self) -> ::std::option::Option<&[crate::types::OrganizationConfigRuleTriggerType]> {
-        self.organization_config_rule_trigger_types.as_deref()
+    pub fn organization_config_rule_trigger_types(&self) -> &[crate::types::OrganizationConfigRuleTriggerType] {
+        use std::ops::Deref;
+        self.organization_config_rule_trigger_types.deref()
     }
     /// <p>A string, in JSON format, that is passed to your organization Config rule Lambda function.</p>
     pub fn input_parameters(&self) -> ::std::option::Option<&str> {
@@ -59,8 +61,10 @@ impl OrganizationCustomRuleMetadata {
         self.maximum_execution_frequency.as_ref()
     }
     /// <p>The type of the Amazon Web Services resource that was evaluated.</p>
-    pub fn resource_types_scope(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_types_scope.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_types_scope.is_none()`.
+    pub fn resource_types_scope(&self) -> &[::std::string::String] {
+        self.resource_types_scope.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
     pub fn resource_id_scope(&self) -> ::std::option::Option<&str> {
@@ -112,6 +116,7 @@ impl OrganizationCustomRuleMetadataBuilder {
         &self.description
     }
     /// <p>The lambda function ARN.</p>
+    /// This field is required.
     pub fn lambda_function_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lambda_function_arn = ::std::option::Option::Some(input.into());
         self
@@ -262,17 +267,30 @@ impl OrganizationCustomRuleMetadataBuilder {
         &self.tag_value_scope
     }
     /// Consumes the builder and constructs a [`OrganizationCustomRuleMetadata`](crate::types::OrganizationCustomRuleMetadata).
-    pub fn build(self) -> crate::types::OrganizationCustomRuleMetadata {
-        crate::types::OrganizationCustomRuleMetadata {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`lambda_function_arn`](crate::types::builders::OrganizationCustomRuleMetadataBuilder::lambda_function_arn)
+    /// - [`organization_config_rule_trigger_types`](crate::types::builders::OrganizationCustomRuleMetadataBuilder::organization_config_rule_trigger_types)
+    pub fn build(self) -> ::std::result::Result<crate::types::OrganizationCustomRuleMetadata, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::OrganizationCustomRuleMetadata {
             description: self.description,
-            lambda_function_arn: self.lambda_function_arn,
-            organization_config_rule_trigger_types: self.organization_config_rule_trigger_types,
+            lambda_function_arn: self.lambda_function_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "lambda_function_arn",
+                    "lambda_function_arn was not specified but it is required when building OrganizationCustomRuleMetadata",
+                )
+            })?,
+            organization_config_rule_trigger_types: self.organization_config_rule_trigger_types.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "organization_config_rule_trigger_types",
+                    "organization_config_rule_trigger_types was not specified but it is required when building OrganizationCustomRuleMetadata",
+                )
+            })?,
             input_parameters: self.input_parameters,
             maximum_execution_frequency: self.maximum_execution_frequency,
             resource_types_scope: self.resource_types_scope,
             resource_id_scope: self.resource_id_scope,
             tag_key_scope: self.tag_key_scope,
             tag_value_scope: self.tag_value_scope,
-        }
+        })
     }
 }

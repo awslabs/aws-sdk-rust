@@ -2,7 +2,7 @@
 pub fn ser_template_version_source_input(
     object_6: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TemplateVersionSourceInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::TemplateVersionSourceInput::S3(inner) => {
             #[allow(unused_mut)]
@@ -11,7 +11,7 @@ pub fn ser_template_version_source_input(
             object_1.finish();
         }
         crate::types::TemplateVersionSourceInput::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "TemplateVersionSourceInput",
             ))
         }

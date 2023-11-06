@@ -2,7 +2,7 @@
 pub fn ser_update_instance_storage_config_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_instance_storage_config::UpdateInstanceStorageConfigInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.storage_config {
         #[allow(unused_mut)]
         let mut object_2 = object.key("StorageConfig").start_object();

@@ -52,7 +52,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::s3_action_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -63,18 +65,18 @@ where
 pub fn ser_s3_action(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::S3Action,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.role_arn {
-        object.key("roleArn").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("roleArn").string(input.role_arn.as_str());
     }
-    if let Some(var_2) = &input.bucket_name {
-        object.key("bucketName").string(var_2.as_str());
+    {
+        object.key("bucketName").string(input.bucket_name.as_str());
     }
-    if let Some(var_3) = &input.key {
-        object.key("key").string(var_3.as_str());
+    {
+        object.key("key").string(input.key.as_str());
     }
-    if let Some(var_4) = &input.canned_acl {
-        object.key("cannedAcl").string(var_4.as_str());
+    if let Some(var_1) = &input.canned_acl {
+        object.key("cannedAcl").string(var_1.as_str());
     }
     Ok(())
 }

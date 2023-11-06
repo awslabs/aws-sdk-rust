@@ -55,6 +55,7 @@ pub struct CreateStudioSessionMappingInputBuilder {
 }
 impl CreateStudioSessionMappingInputBuilder {
     /// <p>The ID of the Amazon EMR Studio to which the user or group will be mapped.</p>
+    /// This field is required.
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +98,7 @@ impl CreateStudioSessionMappingInputBuilder {
         &self.identity_name
     }
     /// <p>Specifies whether the identity to map to the Amazon EMR Studio is a user or a group.</p>
+    /// This field is required.
     pub fn identity_type(mut self, input: crate::types::IdentityType) -> Self {
         self.identity_type = ::std::option::Option::Some(input);
         self
@@ -111,6 +113,7 @@ impl CreateStudioSessionMappingInputBuilder {
         &self.identity_type
     }
     /// <p>The Amazon Resource Name (ARN) for the session policy that will be applied to the user or group. You should specify the ARN for the session policy that you want to apply, not the ARN of your user role. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create an Amazon EMR Studio User Role with Session Policies</a>.</p>
+    /// This field is required.
     pub fn session_policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_policy_arn = ::std::option::Option::Some(input.into());
         self
@@ -129,7 +132,7 @@ impl CreateStudioSessionMappingInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_studio_session_mapping::CreateStudioSessionMappingInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_studio_session_mapping::CreateStudioSessionMappingInput {
             studio_id: self.studio_id,

@@ -12,8 +12,10 @@ pub struct DescribeDomainAutoTunesOutput {
 }
 impl DescribeDomainAutoTunesOutput {
     /// <p>Specifies the list of setting adjustments that Auto-Tune has made to the domain. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information.</p>
-    pub fn auto_tunes(&self) -> ::std::option::Option<&[crate::types::AutoTune]> {
-        self.auto_tunes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auto_tunes.is_none()`.
+    pub fn auto_tunes(&self) -> &[crate::types::AutoTune] {
+        self.auto_tunes.as_deref().unwrap_or_default()
     }
     /// <p>Specifies an identifier to allow retrieval of paginated results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

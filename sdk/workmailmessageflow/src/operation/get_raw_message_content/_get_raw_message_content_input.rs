@@ -27,6 +27,7 @@ pub struct GetRawMessageContentInputBuilder {
 }
 impl GetRawMessageContentInputBuilder {
     /// <p>The identifier of the email message to retrieve.</p>
+    /// This field is required.
     pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetRawMessageContentInputBuilder {
     /// Consumes the builder and constructs a [`GetRawMessageContentInput`](crate::operation::get_raw_message_content::GetRawMessageContentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_raw_message_content::GetRawMessageContentInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_raw_message_content::GetRawMessageContentInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_raw_message_content::GetRawMessageContentInput { message_id: self.message_id })
     }

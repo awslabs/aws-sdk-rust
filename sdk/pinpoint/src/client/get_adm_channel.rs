@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetAdmChannel`](crate::operation::get_adm_channel::builders::GetAdmChannelFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::operation::get_adm_channel::builders::GetAdmChannelFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::get_adm_channel::builders::GetAdmChannelFluentBuilder::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`application_id(impl Into<String>)`](crate::operation::get_adm_channel::builders::GetAdmChannelFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::get_adm_channel::builders::GetAdmChannelFluentBuilder::set_application_id):<br>required: **true**<br><p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p><br>
     /// - On success, responds with [`GetAdmChannelOutput`](crate::operation::get_adm_channel::GetAdmChannelOutput) with field(s):
     ///   - [`adm_channel_response(Option<AdmChannelResponse>)`](crate::operation::get_adm_channel::GetAdmChannelOutput::adm_channel_response): <p>Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
     /// - On failure, responds with [`SdkError<GetAdmChannelError>`](crate::operation::get_adm_channel::GetAdmChannelError)

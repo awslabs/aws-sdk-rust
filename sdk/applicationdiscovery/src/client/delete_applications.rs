@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteApplications`](crate::operation::delete_applications::builders::DeleteApplicationsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`configuration_ids(impl Into<String>)`](crate::operation::delete_applications::builders::DeleteApplicationsFluentBuilder::configuration_ids) / [`set_configuration_ids(Option<Vec<String>>)`](crate::operation::delete_applications::builders::DeleteApplicationsFluentBuilder::set_configuration_ids): <p>Configuration ID of an application to be deleted.</p>
+    ///   - [`configuration_ids(impl Into<String>)`](crate::operation::delete_applications::builders::DeleteApplicationsFluentBuilder::configuration_ids) / [`set_configuration_ids(Option<Vec::<String>>)`](crate::operation::delete_applications::builders::DeleteApplicationsFluentBuilder::set_configuration_ids):<br>required: **true**<br><p>Configuration ID of an application to be deleted.</p><br>
     /// - On success, responds with [`DeleteApplicationsOutput`](crate::operation::delete_applications::DeleteApplicationsOutput)
     /// - On failure, responds with [`SdkError<DeleteApplicationsError>`](crate::operation::delete_applications::DeleteApplicationsError)
     pub fn delete_applications(&self) -> crate::operation::delete_applications::builders::DeleteApplicationsFluentBuilder {

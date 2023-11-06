@@ -47,8 +47,10 @@ impl GetMetricStatisticsInput {
         self.metric_name.as_deref()
     }
     /// <p>The dimensions. If the metric contains multiple dimensions, you must include a value for each dimension. CloudWatch treats each unique combination of dimensions as a separate metric. If a specific combination of dimensions was not published, you can't retrieve statistics for it. You must specify the same dimensions that were used when the metrics were created. For an example, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations">Dimension Combinations</a> in the <i>Amazon CloudWatch User Guide</i>. For more information about specifying dimensions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
-    pub fn dimensions(&self) -> ::std::option::Option<&[crate::types::Dimension]> {
-        self.dimensions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimensions.is_none()`.
+    pub fn dimensions(&self) -> &[crate::types::Dimension] {
+        self.dimensions.as_deref().unwrap_or_default()
     }
     /// <p>The time stamp that determines the first data point to return. Start times are evaluated relative to the time that CloudWatch receives the request.</p>
     /// <p>The value specified is inclusive; results include data points with the specified time stamp. In a raw HTTP query, the time stamp must be in ISO 8601 UTC format (for example, 2016-10-03T23:00:00Z).</p>
@@ -78,12 +80,16 @@ impl GetMetricStatisticsInput {
         self.period
     }
     /// <p>The metric statistics, other than percentile. For percentile statistics, use <code>ExtendedStatistics</code>. When calling <code>GetMetricStatistics</code>, you must specify either <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both.</p>
-    pub fn statistics(&self) -> ::std::option::Option<&[crate::types::Statistic]> {
-        self.statistics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.statistics.is_none()`.
+    pub fn statistics(&self) -> &[crate::types::Statistic] {
+        self.statistics.as_deref().unwrap_or_default()
     }
     /// <p>The percentile statistics. Specify values between p0.0 and p100. When calling <code>GetMetricStatistics</code>, you must specify either <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both. Percentile statistics are not available for metrics when any of the metric values are negative numbers.</p>
-    pub fn extended_statistics(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.extended_statistics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.extended_statistics.is_none()`.
+    pub fn extended_statistics(&self) -> &[::std::string::String] {
+        self.extended_statistics.as_deref().unwrap_or_default()
     }
     /// <p>The unit for a given metric. If you omit <code>Unit</code>, all data that was collected with any unit is returned, along with the corresponding units that were specified when the data was reported to CloudWatch. If you specify a unit, the operation returns only data that was collected with that unit specified. If you specify a unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform unit conversions.</p>
     pub fn unit(&self) -> ::std::option::Option<&crate::types::StandardUnit> {
@@ -113,6 +119,7 @@ pub struct GetMetricStatisticsInputBuilder {
 }
 impl GetMetricStatisticsInputBuilder {
     /// <p>The namespace of the metric, with or without spaces.</p>
+    /// This field is required.
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
         self
@@ -127,6 +134,7 @@ impl GetMetricStatisticsInputBuilder {
         &self.namespace
     }
     /// <p>The name of the metric, with or without spaces.</p>
+    /// This field is required.
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_name = ::std::option::Option::Some(input.into());
         self
@@ -169,6 +177,7 @@ impl GetMetricStatisticsInputBuilder {
     /// <li> <p>Start time greater than 63 days ago - Round down to the nearest 1-hour clock interval. For example, 12:32:34 is rounded down to 12:00:00.</p> </li>
     /// </ul>
     /// <p>If you set <code>Period</code> to 5, 10, or 30, the start time of your request is rounded down to the nearest time that corresponds to even 5-, 10-, or 30-second divisions of a minute. For example, if you make a query at (HH:mm:ss) 01:05:23 for the previous 10-second period, the start time of your request is rounded down and you receive data from 01:05:10 to 01:05:20. If you make a query at 15:07:17 for the previous 5 minutes of data, using a period of 5 seconds, you receive data timestamped between 15:02:15 and 15:07:15. </p>
+    /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
@@ -200,6 +209,7 @@ impl GetMetricStatisticsInputBuilder {
     }
     /// <p>The time stamp that determines the last data point to return.</p>
     /// <p>The value specified is exclusive; results include data points up to the specified time stamp. In a raw HTTP query, the time stamp must be in ISO 8601 UTC format (for example, 2016-10-10T23:00:00Z).</p>
+    /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
@@ -222,6 +232,7 @@ impl GetMetricStatisticsInputBuilder {
     /// <li> <p>Start time between 15 and 63 days ago - Use a multiple of 300 seconds (5 minutes).</p> </li>
     /// <li> <p>Start time greater than 63 days ago - Use a multiple of 3600 seconds (1 hour).</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn period(mut self, input: i32) -> Self {
         self.period = ::std::option::Option::Some(input);
         self
@@ -304,7 +315,7 @@ impl GetMetricStatisticsInputBuilder {
     /// Consumes the builder and constructs a [`GetMetricStatisticsInput`](crate::operation::get_metric_statistics::GetMetricStatisticsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_metric_statistics::GetMetricStatisticsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_metric_statistics::GetMetricStatisticsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_metric_statistics::GetMetricStatisticsInput {
             namespace: self.namespace,

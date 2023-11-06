@@ -27,6 +27,7 @@ pub struct DescribeTimeToLiveInputBuilder {
 }
 impl DescribeTimeToLiveInputBuilder {
     /// <p>The name of the table to be described.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeTimeToLiveInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTimeToLiveInput`](crate::operation::describe_time_to_live::DescribeTimeToLiveInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_time_to_live::DescribeTimeToLiveInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_time_to_live::DescribeTimeToLiveInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_time_to_live::DescribeTimeToLiveInput { table_name: self.table_name })
     }

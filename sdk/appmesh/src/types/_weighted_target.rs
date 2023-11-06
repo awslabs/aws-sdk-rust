@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WeightedTarget {
     /// <p>The virtual node to associate with the weighted target.</p>
-    pub virtual_node: ::std::option::Option<::std::string::String>,
+    pub virtual_node: ::std::string::String,
     /// <p>The relative weight of the weighted target.</p>
     pub weight: i32,
     /// <p>The targeted port of the weighted object.</p>
@@ -13,8 +13,9 @@ pub struct WeightedTarget {
 }
 impl WeightedTarget {
     /// <p>The virtual node to associate with the weighted target.</p>
-    pub fn virtual_node(&self) -> ::std::option::Option<&str> {
-        self.virtual_node.as_deref()
+    pub fn virtual_node(&self) -> &str {
+        use std::ops::Deref;
+        self.virtual_node.deref()
     }
     /// <p>The relative weight of the weighted target.</p>
     pub fn weight(&self) -> i32 {
@@ -42,6 +43,7 @@ pub struct WeightedTargetBuilder {
 }
 impl WeightedTargetBuilder {
     /// <p>The virtual node to associate with the weighted target.</p>
+    /// This field is required.
     pub fn virtual_node(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_node = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +58,7 @@ impl WeightedTargetBuilder {
         &self.virtual_node
     }
     /// <p>The relative weight of the weighted target.</p>
+    /// This field is required.
     pub fn weight(mut self, input: i32) -> Self {
         self.weight = ::std::option::Option::Some(input);
         self
@@ -84,11 +87,18 @@ impl WeightedTargetBuilder {
         &self.port
     }
     /// Consumes the builder and constructs a [`WeightedTarget`](crate::types::WeightedTarget).
-    pub fn build(self) -> crate::types::WeightedTarget {
-        crate::types::WeightedTarget {
-            virtual_node: self.virtual_node,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`virtual_node`](crate::types::builders::WeightedTargetBuilder::virtual_node)
+    pub fn build(self) -> ::std::result::Result<crate::types::WeightedTarget, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::WeightedTarget {
+            virtual_node: self.virtual_node.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "virtual_node",
+                    "virtual_node was not specified but it is required when building WeightedTarget",
+                )
+            })?,
             weight: self.weight.unwrap_or_default(),
             port: self.port,
-        }
+        })
     }
 }

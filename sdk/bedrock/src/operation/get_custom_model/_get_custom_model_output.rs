@@ -4,15 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCustomModelOutput {
     /// <p>ARN associated with this model.</p>
-    pub model_arn: ::std::option::Option<::std::string::String>,
+    pub model_arn: ::std::string::String,
     /// <p>Model name associated with this model.</p>
-    pub model_name: ::std::option::Option<::std::string::String>,
+    pub model_name: ::std::string::String,
     /// <p>Job name associated with this model.</p>
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>Job ARN associated with this model.</p>
-    pub job_arn: ::std::option::Option<::std::string::String>,
+    pub job_arn: ::std::string::String,
     /// <p>ARN of the base model.</p>
-    pub base_model_arn: ::std::option::Option<::std::string::String>,
+    pub base_model_arn: ::std::string::String,
     /// <p>The custom model is encrypted at rest using this key.</p>
     pub model_kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>Hyperparameter values associated with this model.</p>
@@ -28,29 +28,33 @@ pub struct GetCustomModelOutput {
     /// <p>The validation metrics from the job creation.</p>
     pub validation_metrics: ::std::option::Option<::std::vec::Vec<crate::types::ValidatorMetric>>,
     /// <p>Creation time of the model.</p>
-    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_time: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
 impl GetCustomModelOutput {
     /// <p>ARN associated with this model.</p>
-    pub fn model_arn(&self) -> ::std::option::Option<&str> {
-        self.model_arn.as_deref()
+    pub fn model_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.model_arn.deref()
     }
     /// <p>Model name associated with this model.</p>
-    pub fn model_name(&self) -> ::std::option::Option<&str> {
-        self.model_name.as_deref()
+    pub fn model_name(&self) -> &str {
+        use std::ops::Deref;
+        self.model_name.deref()
     }
     /// <p>Job name associated with this model.</p>
     pub fn job_name(&self) -> ::std::option::Option<&str> {
         self.job_name.as_deref()
     }
     /// <p>Job ARN associated with this model.</p>
-    pub fn job_arn(&self) -> ::std::option::Option<&str> {
-        self.job_arn.as_deref()
+    pub fn job_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.job_arn.deref()
     }
     /// <p>ARN of the base model.</p>
-    pub fn base_model_arn(&self) -> ::std::option::Option<&str> {
-        self.base_model_arn.as_deref()
+    pub fn base_model_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.base_model_arn.deref()
     }
     /// <p>The custom model is encrypted at rest using this key.</p>
     pub fn model_kms_key_arn(&self) -> ::std::option::Option<&str> {
@@ -77,12 +81,14 @@ impl GetCustomModelOutput {
         self.training_metrics.as_ref()
     }
     /// <p>The validation metrics from the job creation.</p>
-    pub fn validation_metrics(&self) -> ::std::option::Option<&[crate::types::ValidatorMetric]> {
-        self.validation_metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.validation_metrics.is_none()`.
+    pub fn validation_metrics(&self) -> &[crate::types::ValidatorMetric] {
+        self.validation_metrics.as_deref().unwrap_or_default()
     }
     /// <p>Creation time of the model.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_time.as_ref()
+    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_time
     }
 }
 impl ::aws_http::request_id::RequestId for GetCustomModelOutput {
@@ -118,6 +124,7 @@ pub struct GetCustomModelOutputBuilder {
 }
 impl GetCustomModelOutputBuilder {
     /// <p>ARN associated with this model.</p>
+    /// This field is required.
     pub fn model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_arn = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +139,7 @@ impl GetCustomModelOutputBuilder {
         &self.model_arn
     }
     /// <p>Model name associated with this model.</p>
+    /// This field is required.
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_name = ::std::option::Option::Some(input.into());
         self
@@ -160,6 +168,7 @@ impl GetCustomModelOutputBuilder {
         &self.job_name
     }
     /// <p>Job ARN associated with this model.</p>
+    /// This field is required.
     pub fn job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_arn = ::std::option::Option::Some(input.into());
         self
@@ -174,6 +183,7 @@ impl GetCustomModelOutputBuilder {
         &self.job_arn
     }
     /// <p>ARN of the base model.</p>
+    /// This field is required.
     pub fn base_model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.base_model_arn = ::std::option::Option::Some(input.into());
         self
@@ -229,6 +239,7 @@ impl GetCustomModelOutputBuilder {
         &self.hyper_parameters
     }
     /// <p>Information about the training dataset.</p>
+    /// This field is required.
     pub fn training_data_config(mut self, input: crate::types::TrainingDataConfig) -> Self {
         self.training_data_config = ::std::option::Option::Some(input);
         self
@@ -257,6 +268,7 @@ impl GetCustomModelOutputBuilder {
         &self.validation_data_config
     }
     /// <p>Output data configuration associated with this custom model.</p>
+    /// This field is required.
     pub fn output_data_config(mut self, input: crate::types::OutputDataConfig) -> Self {
         self.output_data_config = ::std::option::Option::Some(input);
         self
@@ -305,6 +317,7 @@ impl GetCustomModelOutputBuilder {
         &self.validation_metrics
     }
     /// <p>Creation time of the model.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -328,13 +341,41 @@ impl GetCustomModelOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetCustomModelOutput`](crate::operation::get_custom_model::GetCustomModelOutput).
-    pub fn build(self) -> crate::operation::get_custom_model::GetCustomModelOutput {
-        crate::operation::get_custom_model::GetCustomModelOutput {
-            model_arn: self.model_arn,
-            model_name: self.model_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`model_arn`](crate::operation::get_custom_model::builders::GetCustomModelOutputBuilder::model_arn)
+    /// - [`model_name`](crate::operation::get_custom_model::builders::GetCustomModelOutputBuilder::model_name)
+    /// - [`job_arn`](crate::operation::get_custom_model::builders::GetCustomModelOutputBuilder::job_arn)
+    /// - [`base_model_arn`](crate::operation::get_custom_model::builders::GetCustomModelOutputBuilder::base_model_arn)
+    /// - [`creation_time`](crate::operation::get_custom_model::builders::GetCustomModelOutputBuilder::creation_time)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_custom_model::GetCustomModelOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_custom_model::GetCustomModelOutput {
+            model_arn: self.model_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "model_arn",
+                    "model_arn was not specified but it is required when building GetCustomModelOutput",
+                )
+            })?,
+            model_name: self.model_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "model_name",
+                    "model_name was not specified but it is required when building GetCustomModelOutput",
+                )
+            })?,
             job_name: self.job_name,
-            job_arn: self.job_arn,
-            base_model_arn: self.base_model_arn,
+            job_arn: self.job_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "job_arn",
+                    "job_arn was not specified but it is required when building GetCustomModelOutput",
+                )
+            })?,
+            base_model_arn: self.base_model_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "base_model_arn",
+                    "base_model_arn was not specified but it is required when building GetCustomModelOutput",
+                )
+            })?,
             model_kms_key_arn: self.model_kms_key_arn,
             hyper_parameters: self.hyper_parameters,
             training_data_config: self.training_data_config,
@@ -342,8 +383,13 @@ impl GetCustomModelOutputBuilder {
             output_data_config: self.output_data_config,
             training_metrics: self.training_metrics,
             validation_metrics: self.validation_metrics,
-            creation_time: self.creation_time,
+            creation_time: self.creation_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "creation_time",
+                    "creation_time was not specified but it is required when building GetCustomModelOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

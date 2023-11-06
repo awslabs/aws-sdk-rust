@@ -75,6 +75,7 @@ impl DeleteDbClusterInputBuilder {
     /// <ul>
     /// <li> <p>Must match an existing DBClusterIdentifier.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_identifier = ::std::option::Option::Some(input.into());
         self
@@ -160,7 +161,7 @@ impl DeleteDbClusterInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDbClusterInput`](crate::operation::delete_db_cluster::DeleteDbClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_db_cluster::DeleteDbClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_db_cluster::DeleteDbClusterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_db_cluster::DeleteDbClusterInput {
             db_cluster_identifier: self.db_cluster_identifier,
             skip_final_snapshot: self.skip_final_snapshot,

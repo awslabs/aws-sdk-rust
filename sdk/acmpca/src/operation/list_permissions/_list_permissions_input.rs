@@ -41,6 +41,7 @@ pub struct ListPermissionsInputBuilder {
 }
 impl ListPermissionsInputBuilder {
     /// <p>The Amazon Resource Number (ARN) of the private CA to inspect. You can find the ARN by calling the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. This must be of the form: <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code> You can get a private CA's ARN by running the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action.</p>
+    /// This field is required.
     pub fn certificate_authority_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_authority_arn = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl ListPermissionsInputBuilder {
     /// Consumes the builder and constructs a [`ListPermissionsInput`](crate::operation::list_permissions::ListPermissionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_permissions::ListPermissionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_permissions::ListPermissionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_permissions::ListPermissionsInput {
             certificate_authority_arn: self.certificate_authority_arn,
             next_token: self.next_token,

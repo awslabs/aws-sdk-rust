@@ -2,15 +2,15 @@
 pub fn ser_condition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Condition,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.condition_type {
-        object.key("ConditionType").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("ConditionType").string(input.condition_type.as_str());
     }
-    if let Some(var_2) = &input.condition_key {
-        object.key("ConditionKey").string(var_2.as_str());
+    {
+        object.key("ConditionKey").string(input.condition_key.as_str());
     }
-    if let Some(var_3) = &input.condition_value {
-        object.key("ConditionValue").string(var_3.as_str());
+    {
+        object.key("ConditionValue").string(input.condition_value.as_str());
     }
     Ok(())
 }
@@ -61,7 +61,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::condition_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

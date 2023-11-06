@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateProject`](crate::operation::update_project::builders::UpdateProjectFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`space_name(impl Into<String>)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::space_name) / [`set_space_name(Option<String>)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::set_space_name): <p>The name of the space.</p>
-    ///   - [`name(impl Into<String>)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::set_name): <p>The name of the project.</p>
-    ///   - [`description(impl Into<String>)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::set_description): <p>The description of the project.</p>
+    ///   - [`space_name(impl Into<String>)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::space_name) / [`set_space_name(Option<String>)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::set_space_name):<br>required: **true**<br><p>The name of the space.</p><br>
+    ///   - [`name(impl Into<String>)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::set_name):<br>required: **true**<br><p>The name of the project.</p><br>
+    ///   - [`description(impl Into<String>)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::set_description):<br>required: **false**<br><p>The description of the project.</p><br>
     /// - On success, responds with [`UpdateProjectOutput`](crate::operation::update_project::UpdateProjectOutput) with field(s):
     ///   - [`space_name(Option<String>)`](crate::operation::update_project::UpdateProjectOutput::space_name): <p>The name of the space.</p>
     ///   - [`name(Option<String>)`](crate::operation::update_project::UpdateProjectOutput::name): <p>The name of the project.</p>

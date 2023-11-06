@@ -34,8 +34,10 @@ impl CreateDatasetGroupInput {
         self.domain.as_ref()
     }
     /// <p>An array of Amazon Resource Names (ARNs) of the datasets that you want to include in the dataset group.</p>
-    pub fn dataset_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.dataset_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dataset_arns.is_none()`.
+    pub fn dataset_arns(&self) -> &[::std::string::String] {
+        self.dataset_arns.as_deref().unwrap_or_default()
     }
     /// <p>The optional metadata that you apply to the dataset group to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -48,8 +50,10 @@ impl CreateDatasetGroupInput {
     /// <li> <p>Tag keys and values are case sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
     /// </ul>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateDatasetGroupInput {
@@ -70,6 +74,7 @@ pub struct CreateDatasetGroupInputBuilder {
 }
 impl CreateDatasetGroupInputBuilder {
     /// <p>A name for the dataset group.</p>
+    /// This field is required.
     pub fn dataset_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_group_name = ::std::option::Option::Some(input.into());
         self
@@ -85,6 +90,7 @@ impl CreateDatasetGroupInputBuilder {
     }
     /// <p>The domain associated with the dataset group. When you add a dataset to a dataset group, this value and the value specified for the <code>Domain</code> parameter of the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a> operation must match.</p>
     /// <p>The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields that must be present in training data that you import to a dataset. For example, if you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast requires that <code>item_id</code>, <code>timestamp</code>, and <code>demand</code> fields are present in your data. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html">Dataset groups</a>.</p>
+    /// This field is required.
     pub fn domain(mut self, input: crate::types::Domain) -> Self {
         self.domain = ::std::option::Option::Some(input);
         self
@@ -173,7 +179,8 @@ impl CreateDatasetGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateDatasetGroupInput`](crate::operation::create_dataset_group::CreateDatasetGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_dataset_group::CreateDatasetGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_dataset_group::CreateDatasetGroupInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_dataset_group::CreateDatasetGroupInput {
             dataset_group_name: self.dataset_group_name,
             domain: self.domain,

@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TypedLinkAttributeDefinition {
     /// <p>The unique name of the typed link attribute.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The type of the attribute.</p>
-    pub r#type: ::std::option::Option<crate::types::FacetAttributeType>,
+    pub r#type: crate::types::FacetAttributeType,
     /// <p>The default value of the attribute (if configured).</p>
     pub default_value: ::std::option::Option<crate::types::TypedAttributeValue>,
     /// <p>Whether the attribute is mutable or not.</p>
@@ -15,16 +15,17 @@ pub struct TypedLinkAttributeDefinition {
     /// <p>Validation rules that are attached to the attribute definition.</p>
     pub rules: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Rule>>,
     /// <p>The required behavior of the <code>TypedLinkAttributeDefinition</code>.</p>
-    pub required_behavior: ::std::option::Option<crate::types::RequiredAttributeBehavior>,
+    pub required_behavior: crate::types::RequiredAttributeBehavior,
 }
 impl TypedLinkAttributeDefinition {
     /// <p>The unique name of the typed link attribute.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The type of the attribute.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::FacetAttributeType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::FacetAttributeType {
+        &self.r#type
     }
     /// <p>The default value of the attribute (if configured).</p>
     pub fn default_value(&self) -> ::std::option::Option<&crate::types::TypedAttributeValue> {
@@ -39,8 +40,8 @@ impl TypedLinkAttributeDefinition {
         self.rules.as_ref()
     }
     /// <p>The required behavior of the <code>TypedLinkAttributeDefinition</code>.</p>
-    pub fn required_behavior(&self) -> ::std::option::Option<&crate::types::RequiredAttributeBehavior> {
-        self.required_behavior.as_ref()
+    pub fn required_behavior(&self) -> &crate::types::RequiredAttributeBehavior {
+        &self.required_behavior
     }
 }
 impl TypedLinkAttributeDefinition {
@@ -63,6 +64,7 @@ pub struct TypedLinkAttributeDefinitionBuilder {
 }
 impl TypedLinkAttributeDefinitionBuilder {
     /// <p>The unique name of the typed link attribute.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +79,7 @@ impl TypedLinkAttributeDefinitionBuilder {
         &self.name
     }
     /// <p>The type of the attribute.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::FacetAttributeType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -139,6 +142,7 @@ impl TypedLinkAttributeDefinitionBuilder {
         &self.rules
     }
     /// <p>The required behavior of the <code>TypedLinkAttributeDefinition</code>.</p>
+    /// This field is required.
     pub fn required_behavior(mut self, input: crate::types::RequiredAttributeBehavior) -> Self {
         self.required_behavior = ::std::option::Option::Some(input);
         self
@@ -153,14 +157,33 @@ impl TypedLinkAttributeDefinitionBuilder {
         &self.required_behavior
     }
     /// Consumes the builder and constructs a [`TypedLinkAttributeDefinition`](crate::types::TypedLinkAttributeDefinition).
-    pub fn build(self) -> crate::types::TypedLinkAttributeDefinition {
-        crate::types::TypedLinkAttributeDefinition {
-            name: self.name,
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::TypedLinkAttributeDefinitionBuilder::name)
+    /// - [`r#type`](crate::types::builders::TypedLinkAttributeDefinitionBuilder::r#type)
+    /// - [`required_behavior`](crate::types::builders::TypedLinkAttributeDefinitionBuilder::required_behavior)
+    pub fn build(self) -> ::std::result::Result<crate::types::TypedLinkAttributeDefinition, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TypedLinkAttributeDefinition {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building TypedLinkAttributeDefinition",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building TypedLinkAttributeDefinition",
+                )
+            })?,
             default_value: self.default_value,
             is_immutable: self.is_immutable.unwrap_or_default(),
             rules: self.rules,
-            required_behavior: self.required_behavior,
-        }
+            required_behavior: self.required_behavior.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "required_behavior",
+                    "required_behavior was not specified but it is required when building TypedLinkAttributeDefinition",
+                )
+            })?,
+        })
     }
 }

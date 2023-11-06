@@ -7,7 +7,7 @@ pub struct EncryptionConfiguration {
     /// <p>The ID of the Amazon Web Services Key Management Service (KMS) customer managed key. You can use any of the key identifiers that KMS supports, unless you're using a key that's managed by another account. If you're using a key managed by another account, then specify the key ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key ID</a> in the <i>Amazon Web Services KMS Developer Guide</i>.</p>
     pub key_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of Amazon Web Services KMS key to use for encryption of your Network Firewall resources.</p>
-    pub r#type: ::std::option::Option<crate::types::EncryptionType>,
+    pub r#type: crate::types::EncryptionType,
 }
 impl EncryptionConfiguration {
     /// <p>The ID of the Amazon Web Services Key Management Service (KMS) customer managed key. You can use any of the key identifiers that KMS supports, unless you're using a key that's managed by another account. If you're using a key managed by another account, then specify the key ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key ID</a> in the <i>Amazon Web Services KMS Developer Guide</i>.</p>
@@ -15,8 +15,8 @@ impl EncryptionConfiguration {
         self.key_id.as_deref()
     }
     /// <p>The type of Amazon Web Services KMS key to use for encryption of your Network Firewall resources.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::EncryptionType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::EncryptionType {
+        &self.r#type
     }
 }
 impl EncryptionConfiguration {
@@ -49,6 +49,7 @@ impl EncryptionConfigurationBuilder {
         &self.key_id
     }
     /// <p>The type of Amazon Web Services KMS key to use for encryption of your Network Firewall resources.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::EncryptionType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -63,10 +64,17 @@ impl EncryptionConfigurationBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`EncryptionConfiguration`](crate::types::EncryptionConfiguration).
-    pub fn build(self) -> crate::types::EncryptionConfiguration {
-        crate::types::EncryptionConfiguration {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::EncryptionConfigurationBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::EncryptionConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EncryptionConfiguration {
             key_id: self.key_id,
-            r#type: self.r#type,
-        }
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building EncryptionConfiguration",
+                )
+            })?,
+        })
     }
 }

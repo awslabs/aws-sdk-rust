@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventOrchestration {
     /// <p>Specifies if event orchestration is enabled through Amazon EventBridge.</p>
-    pub event_bridge_enabled: ::std::option::Option<bool>,
+    pub event_bridge_enabled: bool,
 }
 impl EventOrchestration {
     /// <p>Specifies if event orchestration is enabled through Amazon EventBridge.</p>
-    pub fn event_bridge_enabled(&self) -> ::std::option::Option<bool> {
+    pub fn event_bridge_enabled(&self) -> bool {
         self.event_bridge_enabled
     }
 }
@@ -28,6 +28,7 @@ pub struct EventOrchestrationBuilder {
 }
 impl EventOrchestrationBuilder {
     /// <p>Specifies if event orchestration is enabled through Amazon EventBridge.</p>
+    /// This field is required.
     pub fn event_bridge_enabled(mut self, input: bool) -> Self {
         self.event_bridge_enabled = ::std::option::Option::Some(input);
         self
@@ -42,9 +43,16 @@ impl EventOrchestrationBuilder {
         &self.event_bridge_enabled
     }
     /// Consumes the builder and constructs a [`EventOrchestration`](crate::types::EventOrchestration).
-    pub fn build(self) -> crate::types::EventOrchestration {
-        crate::types::EventOrchestration {
-            event_bridge_enabled: self.event_bridge_enabled,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`event_bridge_enabled`](crate::types::builders::EventOrchestrationBuilder::event_bridge_enabled)
+    pub fn build(self) -> ::std::result::Result<crate::types::EventOrchestration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EventOrchestration {
+            event_bridge_enabled: self.event_bridge_enabled.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "event_bridge_enabled",
+                    "event_bridge_enabled was not specified but it is required when building EventOrchestration",
+                )
+            })?,
+        })
     }
 }

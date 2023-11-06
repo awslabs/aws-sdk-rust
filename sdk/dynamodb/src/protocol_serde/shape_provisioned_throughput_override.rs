@@ -2,7 +2,7 @@
 pub fn ser_provisioned_throughput_override(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ProvisionedThroughputOverride,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.read_capacity_units {
         object.key("ReadCapacityUnits").number(
             #[allow(clippy::useless_conversion)]

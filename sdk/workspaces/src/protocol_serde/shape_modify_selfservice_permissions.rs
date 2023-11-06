@@ -96,10 +96,10 @@ pub fn de_modify_selfservice_permissions_http_response(
 
 pub fn ser_modify_selfservice_permissions_input(
     input: &crate::operation::modify_selfservice_permissions::ModifySelfservicePermissionsInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_modify_selfservice_permissions_input::ser_modify_selfservice_permissions_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

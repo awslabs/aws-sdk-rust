@@ -28,7 +28,9 @@ pub fn de_get_propertygraph_statistics_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -43,7 +45,9 @@ pub fn de_get_propertygraph_statistics_http_error(
                 output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::bad_request_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -58,7 +62,9 @@ pub fn de_get_propertygraph_statistics_http_error(
                 output = crate::protocol_serde::shape_client_timeout_exception::de_client_timeout_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::client_timeout_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -77,7 +83,9 @@ pub fn de_get_propertygraph_statistics_http_error(
                     )
                     .map_err(crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::constraint_violation_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::unhandled)?
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
@@ -93,7 +101,9 @@ pub fn de_get_propertygraph_statistics_http_error(
                 output = crate::protocol_serde::shape_illegal_argument_exception::de_illegal_argument_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::illegal_argument_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -108,7 +118,9 @@ pub fn de_get_propertygraph_statistics_http_error(
                 output = crate::protocol_serde::shape_invalid_argument_exception::de_invalid_argument_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_argument_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -123,7 +135,9 @@ pub fn de_get_propertygraph_statistics_http_error(
                 output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_parameter_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -138,7 +152,9 @@ pub fn de_get_propertygraph_statistics_http_error(
                 output = crate::protocol_serde::shape_missing_parameter_exception::de_missing_parameter_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::missing_parameter_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -157,7 +173,9 @@ pub fn de_get_propertygraph_statistics_http_error(
                     )
                     .map_err(crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::preconditions_failed_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::unhandled)?
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
@@ -175,7 +193,9 @@ pub fn de_get_propertygraph_statistics_http_error(
                         crate::protocol_serde::shape_read_only_violation_exception::de_read_only_violation_exception_json_err(_response_body, output)
                             .map_err(crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::read_only_violation_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::unhandled)?
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
@@ -195,7 +215,9 @@ pub fn de_get_propertygraph_statistics_http_error(
                     )
                     .map_err(crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::statistics_not_available_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::unhandled)?
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
@@ -211,7 +233,9 @@ pub fn de_get_propertygraph_statistics_http_error(
                 output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::too_many_requests_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -230,7 +254,9 @@ pub fn de_get_propertygraph_statistics_http_error(
                     )
                     .map_err(crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::unsupported_operation_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::unhandled)?
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
@@ -257,7 +283,9 @@ pub fn de_get_propertygraph_statistics_http_response(
         output = crate::protocol_serde::shape_get_propertygraph_statistics::de_get_propertygraph_statistics(_response_body, output)
             .map_err(crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::get_propertygraph_statistics_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::unhandled)?
     })
 }
 

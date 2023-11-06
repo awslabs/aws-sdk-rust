@@ -12,8 +12,10 @@ pub struct ListApplicationsOutput {
 }
 impl ListApplicationsOutput {
     /// <p>A list of application names.</p>
-    pub fn applications(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.applications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.applications.is_none()`.
+    pub fn applications(&self) -> &[::std::string::String] {
+        self.applications.as_deref().unwrap_or_default()
     }
     /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list applications call to return the next set of applications in the list.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

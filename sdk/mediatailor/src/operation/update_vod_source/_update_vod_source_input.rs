@@ -12,8 +12,10 @@ pub struct UpdateVodSourceInput {
 }
 impl UpdateVodSourceInput {
     /// <p>A list of HTTP package configurations for the VOD source on this account.</p>
-    pub fn http_package_configurations(&self) -> ::std::option::Option<&[crate::types::HttpPackageConfiguration]> {
-        self.http_package_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.http_package_configurations.is_none()`.
+    pub fn http_package_configurations(&self) -> &[crate::types::HttpPackageConfiguration] {
+        self.http_package_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The name of the source location associated with this VOD Source.</p>
     pub fn source_location_name(&self) -> ::std::option::Option<&str> {
@@ -61,6 +63,7 @@ impl UpdateVodSourceInputBuilder {
         &self.http_package_configurations
     }
     /// <p>The name of the source location associated with this VOD Source.</p>
+    /// This field is required.
     pub fn source_location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_location_name = ::std::option::Option::Some(input.into());
         self
@@ -75,6 +78,7 @@ impl UpdateVodSourceInputBuilder {
         &self.source_location_name
     }
     /// <p>The name of the VOD source.</p>
+    /// This field is required.
     pub fn vod_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vod_source_name = ::std::option::Option::Some(input.into());
         self
@@ -91,7 +95,7 @@ impl UpdateVodSourceInputBuilder {
     /// Consumes the builder and constructs a [`UpdateVodSourceInput`](crate::operation::update_vod_source::UpdateVodSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_vod_source::UpdateVodSourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_vod_source::UpdateVodSourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_vod_source::UpdateVodSourceInput {
             http_package_configurations: self.http_package_configurations,
             source_location_name: self.source_location_name,

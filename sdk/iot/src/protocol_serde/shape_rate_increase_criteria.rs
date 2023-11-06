@@ -2,7 +2,7 @@
 pub fn ser_rate_increase_criteria(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RateIncreaseCriteria,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.number_of_notified_things {
         object.key("numberOfNotifiedThings").number(
             #[allow(clippy::useless_conversion)]

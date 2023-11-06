@@ -6,9 +6,9 @@ pub struct ProvisionDeviceOutput {
     /// <p>The device's ID.</p>
     pub device_id: ::std::option::Option<::std::string::String>,
     /// <p>The device's ARN.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The device's status.</p>
-    pub status: ::std::option::Option<crate::types::DeviceStatus>,
+    pub status: crate::types::DeviceStatus,
     /// <p>The device's configuration bundle.</p>
     pub certificates: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The device's IoT thing name.</p>
@@ -21,12 +21,13 @@ impl ProvisionDeviceOutput {
         self.device_id.as_deref()
     }
     /// <p>The device's ARN.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The device's status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::DeviceStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::DeviceStatus {
+        &self.status
     }
     /// <p>The device's configuration bundle.</p>
     pub fn certificates(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
@@ -76,6 +77,7 @@ impl ProvisionDeviceOutputBuilder {
         &self.device_id
     }
     /// <p>The device's ARN.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +92,7 @@ impl ProvisionDeviceOutputBuilder {
         &self.arn
     }
     /// <p>The device's status.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::DeviceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -141,14 +144,29 @@ impl ProvisionDeviceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ProvisionDeviceOutput`](crate::operation::provision_device::ProvisionDeviceOutput).
-    pub fn build(self) -> crate::operation::provision_device::ProvisionDeviceOutput {
-        crate::operation::provision_device::ProvisionDeviceOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::operation::provision_device::builders::ProvisionDeviceOutputBuilder::arn)
+    /// - [`status`](crate::operation::provision_device::builders::ProvisionDeviceOutputBuilder::status)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::provision_device::ProvisionDeviceOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::provision_device::ProvisionDeviceOutput {
             device_id: self.device_id,
-            arn: self.arn,
-            status: self.status,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building ProvisionDeviceOutput",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building ProvisionDeviceOutput",
+                )
+            })?,
             certificates: self.certificates,
             iot_thing_name: self.iot_thing_name,
             _request_id: self._request_id,
-        }
+        })
     }
 }

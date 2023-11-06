@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InforNexusSourceProperties {
     /// <p> The object specified in the Infor Nexus flow source. </p>
-    pub object: ::std::option::Option<::std::string::String>,
+    pub object: ::std::string::String,
 }
 impl InforNexusSourceProperties {
     /// <p> The object specified in the Infor Nexus flow source. </p>
-    pub fn object(&self) -> ::std::option::Option<&str> {
-        self.object.as_deref()
+    pub fn object(&self) -> &str {
+        use std::ops::Deref;
+        self.object.deref()
     }
 }
 impl InforNexusSourceProperties {
@@ -28,6 +29,7 @@ pub struct InforNexusSourcePropertiesBuilder {
 }
 impl InforNexusSourcePropertiesBuilder {
     /// <p> The object specified in the Infor Nexus flow source. </p>
+    /// This field is required.
     pub fn object(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl InforNexusSourcePropertiesBuilder {
         &self.object
     }
     /// Consumes the builder and constructs a [`InforNexusSourceProperties`](crate::types::InforNexusSourceProperties).
-    pub fn build(self) -> crate::types::InforNexusSourceProperties {
-        crate::types::InforNexusSourceProperties { object: self.object }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`object`](crate::types::builders::InforNexusSourcePropertiesBuilder::object)
+    pub fn build(self) -> ::std::result::Result<crate::types::InforNexusSourceProperties, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::InforNexusSourceProperties {
+            object: self.object.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "object",
+                    "object was not specified but it is required when building InforNexusSourceProperties",
+                )
+            })?,
+        })
     }
 }

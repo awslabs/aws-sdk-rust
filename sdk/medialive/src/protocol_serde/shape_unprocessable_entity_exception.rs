@@ -18,7 +18,7 @@ pub(crate) fn de_unprocessable_entity_exception_json_err(
                     );
                 }
                 "validationErrors" => {
-                    builder = builder.set_validation_errors(crate::protocol_serde::shape___list_of_validation_error::de___list_of_validation_error(
+                    builder = builder.set_validation_errors(crate::protocol_serde::shape_list_of_validation_error::de_list_of_validation_error(
                         tokens,
                     )?);
                 }

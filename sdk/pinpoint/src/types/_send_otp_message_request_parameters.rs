@@ -112,6 +112,7 @@ impl SendOtpMessageRequestParametersBuilder {
         &self.allowed_attempts
     }
     /// <p>The brand name that will be substituted into the OTP message body. Should be owned by calling AWS account.</p>
+    /// This field is required.
     pub fn brand_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.brand_name = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +127,7 @@ impl SendOtpMessageRequestParametersBuilder {
         &self.brand_name
     }
     /// <p>Channel type for the OTP message. Supported values: [SMS].</p>
+    /// This field is required.
     pub fn channel(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel = ::std::option::Option::Some(input.into());
         self
@@ -154,6 +156,7 @@ impl SendOtpMessageRequestParametersBuilder {
         &self.code_length
     }
     /// <p>The destination identity to send OTP to.</p>
+    /// This field is required.
     pub fn destination_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_identity = ::std::option::Option::Some(input.into());
         self
@@ -196,6 +199,7 @@ impl SendOtpMessageRequestParametersBuilder {
         &self.language
     }
     /// <p>The origination identity used to send OTP from.</p>
+    /// This field is required.
     pub fn origination_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origination_identity = ::std::option::Option::Some(input.into());
         self
@@ -210,6 +214,7 @@ impl SendOtpMessageRequestParametersBuilder {
         &self.origination_identity
     }
     /// <p>Developer-specified reference identifier. Required to match during OTP verification.</p>
+    /// This field is required.
     pub fn reference_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reference_id = ::std::option::Option::Some(input.into());
         self

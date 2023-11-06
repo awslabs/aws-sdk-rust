@@ -28,6 +28,7 @@ pub struct ShapeConditionalFormatBuilder {
 }
 impl ShapeConditionalFormatBuilder {
     /// <p>The conditional formatting for the shape background color of a filled map visual.</p>
+    /// This field is required.
     pub fn background_color(mut self, input: crate::types::ConditionalFormattingColor) -> Self {
         self.background_color = ::std::option::Option::Some(input);
         self

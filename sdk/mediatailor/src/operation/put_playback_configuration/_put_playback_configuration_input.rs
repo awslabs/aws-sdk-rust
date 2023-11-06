@@ -24,7 +24,7 @@ pub struct PutPlaybackConfigurationInput {
     /// <p>The identifier for the playback configuration.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Defines the maximum duration of underfilled ad time (in seconds) allowed in an ad break. If the duration of underfilled ad time exceeds the personalization threshold, then the personalization of the ad break is abandoned and the underlying content is shown. This feature applies to <i>ad replacement</i> in live and VOD streams, rather than ad insertion, because it relies on an underlying content stream. For more information about ad break behavior, including ad replacement and insertion, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Behavior in AWS Elemental MediaTailor</a>.</p>
-    pub personalization_threshold_seconds: i32,
+    pub personalization_threshold_seconds: ::std::option::Option<i32>,
     /// <p>The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because MediaTailor provides it in the slots that are designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.</p>
     pub slate_ad_url: ::std::option::Option<::std::string::String>,
     /// <p>The tags to assign to the playback configuration. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
@@ -76,7 +76,7 @@ impl PutPlaybackConfigurationInput {
         self.name.as_deref()
     }
     /// <p>Defines the maximum duration of underfilled ad time (in seconds) allowed in an ad break. If the duration of underfilled ad time exceeds the personalization threshold, then the personalization of the ad break is abandoned and the underlying content is shown. This feature applies to <i>ad replacement</i> in live and VOD streams, rather than ad insertion, because it relies on an underlying content stream. For more information about ad break behavior, including ad replacement and insertion, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Behavior in AWS Elemental MediaTailor</a>.</p>
-    pub fn personalization_threshold_seconds(&self) -> i32 {
+    pub fn personalization_threshold_seconds(&self) -> ::std::option::Option<i32> {
         self.personalization_threshold_seconds
     }
     /// <p>The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because MediaTailor provides it in the slots that are designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.</p>
@@ -257,6 +257,7 @@ impl PutPlaybackConfigurationInputBuilder {
         &self.manifest_processing_rules
     }
     /// <p>The identifier for the playback configuration.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -351,7 +352,7 @@ impl PutPlaybackConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_playback_configuration::PutPlaybackConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_playback_configuration::PutPlaybackConfigurationInput {
             ad_decision_server_url: self.ad_decision_server_url,
@@ -363,7 +364,7 @@ impl PutPlaybackConfigurationInputBuilder {
             live_pre_roll_configuration: self.live_pre_roll_configuration,
             manifest_processing_rules: self.manifest_processing_rules,
             name: self.name,
-            personalization_threshold_seconds: self.personalization_threshold_seconds.unwrap_or_default(),
+            personalization_threshold_seconds: self.personalization_threshold_seconds,
             slate_ad_url: self.slate_ad_url,
             tags: self.tags,
             transcode_profile_name: self.transcode_profile_name,

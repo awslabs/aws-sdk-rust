@@ -6,13 +6,14 @@
 pub struct AnonymousUserQSearchBarEmbeddingConfiguration {
     /// <p>The QuickSight Q topic ID of the topic that you want the anonymous user to see first. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders the Q search bar with this topic pre-selected.</p>
     /// <p>The Amazon Resource Name (ARN) of this Q topic must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.</p>
-    pub initial_topic_id: ::std::option::Option<::std::string::String>,
+    pub initial_topic_id: ::std::string::String,
 }
 impl AnonymousUserQSearchBarEmbeddingConfiguration {
     /// <p>The QuickSight Q topic ID of the topic that you want the anonymous user to see first. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders the Q search bar with this topic pre-selected.</p>
     /// <p>The Amazon Resource Name (ARN) of this Q topic must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.</p>
-    pub fn initial_topic_id(&self) -> ::std::option::Option<&str> {
-        self.initial_topic_id.as_deref()
+    pub fn initial_topic_id(&self) -> &str {
+        use std::ops::Deref;
+        self.initial_topic_id.deref()
     }
 }
 impl AnonymousUserQSearchBarEmbeddingConfiguration {
@@ -31,6 +32,7 @@ pub struct AnonymousUserQSearchBarEmbeddingConfigurationBuilder {
 impl AnonymousUserQSearchBarEmbeddingConfigurationBuilder {
     /// <p>The QuickSight Q topic ID of the topic that you want the anonymous user to see first. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders the Q search bar with this topic pre-selected.</p>
     /// <p>The Amazon Resource Name (ARN) of this Q topic must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.</p>
+    /// This field is required.
     pub fn initial_topic_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.initial_topic_id = ::std::option::Option::Some(input.into());
         self
@@ -47,9 +49,18 @@ impl AnonymousUserQSearchBarEmbeddingConfigurationBuilder {
         &self.initial_topic_id
     }
     /// Consumes the builder and constructs a [`AnonymousUserQSearchBarEmbeddingConfiguration`](crate::types::AnonymousUserQSearchBarEmbeddingConfiguration).
-    pub fn build(self) -> crate::types::AnonymousUserQSearchBarEmbeddingConfiguration {
-        crate::types::AnonymousUserQSearchBarEmbeddingConfiguration {
-            initial_topic_id: self.initial_topic_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`initial_topic_id`](crate::types::builders::AnonymousUserQSearchBarEmbeddingConfigurationBuilder::initial_topic_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::AnonymousUserQSearchBarEmbeddingConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AnonymousUserQSearchBarEmbeddingConfiguration {
+            initial_topic_id: self.initial_topic_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "initial_topic_id",
+                    "initial_topic_id was not specified but it is required when building AnonymousUserQSearchBarEmbeddingConfiguration",
+                )
+            })?,
+        })
     }
 }

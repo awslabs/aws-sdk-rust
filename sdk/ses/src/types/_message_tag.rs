@@ -10,13 +10,13 @@ pub struct MessageTag {
     /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
     /// <li> <p>Contain 256 characters or fewer.</p> </li>
     /// </ul>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The value of the tag. The value must meet the following requirements:</p>
     /// <ul>
     /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
     /// <li> <p>Contain 256 characters or fewer.</p> </li>
     /// </ul>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
 }
 impl MessageTag {
     /// <p>The name of the tag. The name must meet the following requirements:</p>
@@ -24,16 +24,18 @@ impl MessageTag {
     /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
     /// <li> <p>Contain 256 characters or fewer.</p> </li>
     /// </ul>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The value of the tag. The value must meet the following requirements:</p>
     /// <ul>
     /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
     /// <li> <p>Contain 256 characters or fewer.</p> </li>
     /// </ul>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
 }
 impl MessageTag {
@@ -56,6 +58,7 @@ impl MessageTagBuilder {
     /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
     /// <li> <p>Contain 256 characters or fewer.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -82,6 +85,7 @@ impl MessageTagBuilder {
     /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
     /// <li> <p>Contain 256 characters or fewer.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -104,10 +108,23 @@ impl MessageTagBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`MessageTag`](crate::types::MessageTag).
-    pub fn build(self) -> crate::types::MessageTag {
-        crate::types::MessageTag {
-            name: self.name,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::MessageTagBuilder::name)
+    /// - [`value`](crate::types::builders::MessageTagBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::MessageTag, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::MessageTag {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building MessageTag",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building MessageTag",
+                )
+            })?,
+        })
     }
 }

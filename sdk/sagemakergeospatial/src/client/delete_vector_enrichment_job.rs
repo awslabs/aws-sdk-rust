@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteVectorEnrichmentJob`](crate::operation::delete_vector_enrichment_job::builders::DeleteVectorEnrichmentJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::delete_vector_enrichment_job::builders::DeleteVectorEnrichmentJobFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_vector_enrichment_job::builders::DeleteVectorEnrichmentJobFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) of the Vector Enrichment job being deleted.</p>
+    ///   - [`arn(impl Into<String>)`](crate::operation::delete_vector_enrichment_job::builders::DeleteVectorEnrichmentJobFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_vector_enrichment_job::builders::DeleteVectorEnrichmentJobFluentBuilder::set_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the Vector Enrichment job being deleted.</p><br>
     /// - On success, responds with [`DeleteVectorEnrichmentJobOutput`](crate::operation::delete_vector_enrichment_job::DeleteVectorEnrichmentJobOutput)
     /// - On failure, responds with [`SdkError<DeleteVectorEnrichmentJobError>`](crate::operation::delete_vector_enrichment_job::DeleteVectorEnrichmentJobError)
     pub fn delete_vector_enrichment_job(&self) -> crate::operation::delete_vector_enrichment_job::builders::DeleteVectorEnrichmentJobFluentBuilder {

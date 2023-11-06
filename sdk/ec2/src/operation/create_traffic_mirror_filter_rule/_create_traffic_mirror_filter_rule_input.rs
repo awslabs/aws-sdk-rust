@@ -106,6 +106,7 @@ pub struct CreateTrafficMirrorFilterRuleInputBuilder {
 }
 impl CreateTrafficMirrorFilterRuleInputBuilder {
     /// <p>The ID of the filter that this rule is associated with.</p>
+    /// This field is required.
     pub fn traffic_mirror_filter_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.traffic_mirror_filter_id = ::std::option::Option::Some(input.into());
         self
@@ -120,6 +121,7 @@ impl CreateTrafficMirrorFilterRuleInputBuilder {
         &self.traffic_mirror_filter_id
     }
     /// <p>The type of traffic.</p>
+    /// This field is required.
     pub fn traffic_direction(mut self, input: crate::types::TrafficDirection) -> Self {
         self.traffic_direction = ::std::option::Option::Some(input);
         self
@@ -134,6 +136,7 @@ impl CreateTrafficMirrorFilterRuleInputBuilder {
         &self.traffic_direction
     }
     /// <p>The number of the Traffic Mirror rule. This number must be unique for each Traffic Mirror rule in a given direction. The rules are processed in ascending order by rule number.</p>
+    /// This field is required.
     pub fn rule_number(mut self, input: i32) -> Self {
         self.rule_number = ::std::option::Option::Some(input);
         self
@@ -148,6 +151,7 @@ impl CreateTrafficMirrorFilterRuleInputBuilder {
         &self.rule_number
     }
     /// <p>The action to take on the filtered traffic.</p>
+    /// This field is required.
     pub fn rule_action(mut self, input: crate::types::TrafficMirrorRuleAction) -> Self {
         self.rule_action = ::std::option::Option::Some(input);
         self
@@ -207,6 +211,7 @@ impl CreateTrafficMirrorFilterRuleInputBuilder {
         &self.protocol
     }
     /// <p>The destination CIDR block to assign to the Traffic Mirror rule.</p>
+    /// This field is required.
     pub fn destination_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_cidr_block = ::std::option::Option::Some(input.into());
         self
@@ -221,6 +226,7 @@ impl CreateTrafficMirrorFilterRuleInputBuilder {
         &self.destination_cidr_block
     }
     /// <p>The source CIDR block to assign to the Traffic Mirror rule.</p>
+    /// This field is required.
     pub fn source_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_cidr_block = ::std::option::Option::Some(input.into());
         self
@@ -281,7 +287,7 @@ impl CreateTrafficMirrorFilterRuleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_traffic_mirror_filter_rule::CreateTrafficMirrorFilterRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_traffic_mirror_filter_rule::CreateTrafficMirrorFilterRuleInput {
             traffic_mirror_filter_id: self.traffic_mirror_filter_id,

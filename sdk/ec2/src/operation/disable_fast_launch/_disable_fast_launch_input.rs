@@ -41,6 +41,7 @@ pub struct DisableFastLaunchInputBuilder {
 }
 impl DisableFastLaunchInputBuilder {
     /// <p>The ID of the image for which you’re turning off faster launching, and removing pre-provisioned snapshots.</p>
+    /// This field is required.
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl DisableFastLaunchInputBuilder {
     /// Consumes the builder and constructs a [`DisableFastLaunchInput`](crate::operation::disable_fast_launch::DisableFastLaunchInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disable_fast_launch::DisableFastLaunchInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::disable_fast_launch::DisableFastLaunchInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::disable_fast_launch::DisableFastLaunchInput {
             image_id: self.image_id,
             force: self.force,

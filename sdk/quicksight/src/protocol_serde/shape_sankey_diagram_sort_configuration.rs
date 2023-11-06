@@ -2,7 +2,7 @@
 pub fn ser_sankey_diagram_sort_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SankeyDiagramSortConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.weight_sort {
         let mut array_2 = object.key("WeightSort").start_array();
         for item_3 in var_1 {

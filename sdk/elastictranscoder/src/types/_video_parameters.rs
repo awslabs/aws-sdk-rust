@@ -393,8 +393,10 @@ impl VideoParameters {
     /// <p>Settings for the size, location, and opacity of graphics that you want Elastic Transcoder to overlay over videos that are transcoded using this preset. You can specify settings for up to four watermarks. Watermarks appear in the specified size and location, and with the specified opacity for the duration of the transcoded video.</p>
     /// <p>Watermarks can be in .png or .jpg format. If you want to display a watermark that is not rectangular, use the .png format, which supports transparency.</p>
     /// <p>When you create a job that uses this preset, you specify the .png or .jpg graphics that you want Elastic Transcoder to include in the transcoded videos. You can specify fewer graphics in the job than you specify watermark settings in the preset, which allows you to use the same preset for up to four watermarks that have different dimensions.</p>
-    pub fn watermarks(&self) -> ::std::option::Option<&[crate::types::PresetWatermark]> {
-        self.watermarks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.watermarks.is_none()`.
+    pub fn watermarks(&self) -> &[crate::types::PresetWatermark] {
+        self.watermarks.as_deref().unwrap_or_default()
     }
 }
 impl VideoParameters {

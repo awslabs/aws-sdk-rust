@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetAgentConfiguration`](crate::operation::get_agent_configuration::builders::GetAgentConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`agent_id(impl Into<String>)`](crate::operation::get_agent_configuration::builders::GetAgentConfigurationFluentBuilder::agent_id) / [`set_agent_id(Option<String>)`](crate::operation::get_agent_configuration::builders::GetAgentConfigurationFluentBuilder::set_agent_id): <p>UUID of agent to get configuration information for.</p>
+    ///   - [`agent_id(impl Into<String>)`](crate::operation::get_agent_configuration::builders::GetAgentConfigurationFluentBuilder::agent_id) / [`set_agent_id(Option<String>)`](crate::operation::get_agent_configuration::builders::GetAgentConfigurationFluentBuilder::set_agent_id):<br>required: **true**<br><p>UUID of agent to get configuration information for.</p><br>
     /// - On success, responds with [`GetAgentConfigurationOutput`](crate::operation::get_agent_configuration::GetAgentConfigurationOutput) with field(s):
     ///   - [`agent_id(Option<String>)`](crate::operation::get_agent_configuration::GetAgentConfigurationOutput::agent_id): <p>UUID of agent.</p>
     ///   - [`tasking_document(Option<String>)`](crate::operation::get_agent_configuration::GetAgentConfigurationOutput::tasking_document): <p>Tasking document for agent.</p>

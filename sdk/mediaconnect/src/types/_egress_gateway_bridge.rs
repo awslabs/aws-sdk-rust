@@ -48,6 +48,7 @@ impl EgressGatewayBridgeBuilder {
         &self.instance_id
     }
     /// The maximum expected bitrate (in bps) of the egress bridge.
+    /// This field is required.
     pub fn max_bitrate(mut self, input: i32) -> Self {
         self.max_bitrate = ::std::option::Option::Some(input);
         self

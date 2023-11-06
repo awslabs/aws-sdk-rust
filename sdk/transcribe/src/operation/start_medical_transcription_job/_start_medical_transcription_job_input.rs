@@ -148,8 +148,10 @@ impl StartMedicalTranscriptionJobInput {
     }
     /// <p>Adds one or more custom tags, each in the form of a key:value pair, to a new medical transcription job at the time you start this new job.</p>
     /// <p>To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl StartMedicalTranscriptionJobInput {
@@ -181,6 +183,7 @@ pub struct StartMedicalTranscriptionJobInputBuilder {
 impl StartMedicalTranscriptionJobInputBuilder {
     /// <p>A unique name, chosen by you, for your medical transcription job. The name that you specify is also used as the default name of your transcription output file. If you want to specify a different name for your transcription output, use the <code>OutputKey</code> parameter.</p>
     /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a new job with the same name as an existing job, you get a <code>ConflictException</code> error.</p>
+    /// This field is required.
     pub fn medical_transcription_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.medical_transcription_job_name = ::std::option::Option::Some(input.into());
         self
@@ -197,6 +200,7 @@ impl StartMedicalTranscriptionJobInputBuilder {
         &self.medical_transcription_job_name
     }
     /// <p>The language code that represents the language spoken in the input media file. US English (<code>en-US</code>) is the only valid value for medical transcription jobs. Any other value you enter for language code results in a <code>BadRequestException</code> error.</p>
+    /// This field is required.
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.language_code = ::std::option::Option::Some(input);
         self
@@ -243,6 +247,7 @@ impl StartMedicalTranscriptionJobInputBuilder {
     }
     /// <p>Describes the Amazon S3 location of the media file you want to use in your request.</p>
     /// <p>For information on supported media formats, refer to the <a href="https://docs.aws.amazon.com/APIReference/API_StartTranscriptionJob.html#transcribe-StartTranscriptionJob-request-MediaFormat">MediaFormat</a> parameter or the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a> section in the Amazon S3 Developer Guide.</p>
+    /// This field is required.
     pub fn media(mut self, input: crate::types::Media) -> Self {
         self.media = ::std::option::Option::Some(input);
         self
@@ -262,6 +267,7 @@ impl StartMedicalTranscriptionJobInputBuilder {
     /// <p>If you want your output to go to a sub-folder of this bucket, specify it using the <code>OutputKey</code> parameter; <code>OutputBucketName</code> only accepts the name of a bucket.</p>
     /// <p>For example, if you want your output stored in <code>S3://DOC-EXAMPLE-BUCKET</code>, set <code>OutputBucketName</code> to <code>DOC-EXAMPLE-BUCKET</code>. However, if you want your output stored in <code>S3://DOC-EXAMPLE-BUCKET/test-files/</code>, set <code>OutputBucketName</code> to <code>DOC-EXAMPLE-BUCKET</code> and <code>OutputKey</code> to <code>test-files/</code>.</p>
     /// <p>Note that Amazon Transcribe must have permission to use the specified location. You can change Amazon S3 permissions using the <a href="https://console.aws.amazon.com/s3">Amazon Web Services Management Console</a>. See also <a href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions Required for IAM User Roles</a>.</p>
+    /// This field is required.
     pub fn output_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_bucket_name = ::std::option::Option::Some(input.into());
         self
@@ -434,6 +440,7 @@ impl StartMedicalTranscriptionJobInputBuilder {
         &self.content_identification_type
     }
     /// <p>Specify the predominant medical specialty represented in your media. For batch transcriptions, <code>PRIMARYCARE</code> is the only valid value. If you require additional specialties, refer to .</p>
+    /// This field is required.
     pub fn specialty(mut self, input: crate::types::Specialty) -> Self {
         self.specialty = ::std::option::Option::Some(input);
         self
@@ -449,6 +456,7 @@ impl StartMedicalTranscriptionJobInputBuilder {
     }
     /// <p>Specify whether your input media contains only one person (<code>DICTATION</code>) or contains a conversation between two people (<code>CONVERSATION</code>).</p>
     /// <p>For example, <code>DICTATION</code> could be used for a medical professional wanting to transcribe voice memos; <code>CONVERSATION</code> could be used for transcribing the doctor-patient dialogue during the patient's office visit.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::Type) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -492,7 +500,7 @@ impl StartMedicalTranscriptionJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_medical_transcription_job::StartMedicalTranscriptionJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_medical_transcription_job::StartMedicalTranscriptionJobInput {
             medical_transcription_job_name: self.medical_transcription_job_name,

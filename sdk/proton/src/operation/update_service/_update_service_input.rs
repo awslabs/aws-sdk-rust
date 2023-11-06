@@ -50,6 +50,7 @@ pub struct UpdateServiceInputBuilder {
 }
 impl UpdateServiceInputBuilder {
     /// <p>The name of the service to edit.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -94,7 +95,7 @@ impl UpdateServiceInputBuilder {
     /// Consumes the builder and constructs a [`UpdateServiceInput`](crate::operation::update_service::UpdateServiceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_service::UpdateServiceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_service::UpdateServiceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_service::UpdateServiceInput {
             name: self.name,
             description: self.description,

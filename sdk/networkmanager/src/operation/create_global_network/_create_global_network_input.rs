@@ -16,8 +16,10 @@ impl CreateGlobalNetworkInput {
         self.description.as_deref()
     }
     /// <p>The tags to apply to the resource during creation.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateGlobalNetworkInput {
@@ -75,7 +77,7 @@ impl CreateGlobalNetworkInputBuilder {
     /// Consumes the builder and constructs a [`CreateGlobalNetworkInput`](crate::operation::create_global_network::CreateGlobalNetworkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_global_network::CreateGlobalNetworkInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_global_network::CreateGlobalNetworkInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_global_network::CreateGlobalNetworkInput {
             description: self.description,

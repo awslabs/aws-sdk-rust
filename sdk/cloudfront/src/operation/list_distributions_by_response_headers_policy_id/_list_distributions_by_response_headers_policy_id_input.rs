@@ -71,6 +71,7 @@ impl ListDistributionsByResponseHeadersPolicyIdInputBuilder {
         &self.max_items
     }
     /// <p>The ID of the response headers policy whose associated distribution IDs you want to list.</p>
+    /// This field is required.
     pub fn response_headers_policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.response_headers_policy_id = ::std::option::Option::Some(input.into());
         self
@@ -89,7 +90,7 @@ impl ListDistributionsByResponseHeadersPolicyIdInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyIdInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyIdInput {

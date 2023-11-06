@@ -11,8 +11,10 @@ pub struct ListImportFileTaskOutput {
 }
 impl ListImportFileTaskOutput {
     /// <p> Lists information about the files you import.</p>
-    pub fn task_infos(&self) -> ::std::option::Option<&[crate::types::ImportFileTaskInformation]> {
-        self.task_infos.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.task_infos.is_none()`.
+    pub fn task_infos(&self) -> &[crate::types::ImportFileTaskInformation] {
+        self.task_infos.as_deref().unwrap_or_default()
     }
     /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

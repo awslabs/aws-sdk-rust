@@ -15,9 +15,9 @@ pub struct DecoderManifestSummary {
     /// <p>The state of the decoder manifest. If the status is <code>ACTIVE</code>, the decoder manifest can't be edited. If the status is marked <code>DRAFT</code>, you can edit the decoder manifest.</p>
     pub status: ::std::option::Option<crate::types::ManifestStatus>,
     /// <p>The time the decoder manifest was created in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
-    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_time: ::aws_smithy_types::DateTime,
     /// <p>The time the decoder manifest was last updated in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
-    pub last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub last_modification_time: ::aws_smithy_types::DateTime,
 }
 impl DecoderManifestSummary {
     /// <p>The name of the decoder manifest.</p>
@@ -41,12 +41,12 @@ impl DecoderManifestSummary {
         self.status.as_ref()
     }
     /// <p>The time the decoder manifest was created in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_time.as_ref()
+    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_time
     }
     /// <p>The time the decoder manifest was last updated in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
-    pub fn last_modification_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.last_modification_time.as_ref()
+    pub fn last_modification_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.last_modification_time
     }
 }
 impl DecoderManifestSummary {
@@ -140,6 +140,7 @@ impl DecoderManifestSummaryBuilder {
         &self.status
     }
     /// <p>The time the decoder manifest was created in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -154,6 +155,7 @@ impl DecoderManifestSummaryBuilder {
         &self.creation_time
     }
     /// <p>The time the decoder manifest was last updated in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
+    /// This field is required.
     pub fn last_modification_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modification_time = ::std::option::Option::Some(input);
         self
@@ -168,15 +170,28 @@ impl DecoderManifestSummaryBuilder {
         &self.last_modification_time
     }
     /// Consumes the builder and constructs a [`DecoderManifestSummary`](crate::types::DecoderManifestSummary).
-    pub fn build(self) -> crate::types::DecoderManifestSummary {
-        crate::types::DecoderManifestSummary {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`creation_time`](crate::types::builders::DecoderManifestSummaryBuilder::creation_time)
+    /// - [`last_modification_time`](crate::types::builders::DecoderManifestSummaryBuilder::last_modification_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::DecoderManifestSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DecoderManifestSummary {
             name: self.name,
             arn: self.arn,
             model_manifest_arn: self.model_manifest_arn,
             description: self.description,
             status: self.status,
-            creation_time: self.creation_time,
-            last_modification_time: self.last_modification_time,
-        }
+            creation_time: self.creation_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "creation_time",
+                    "creation_time was not specified but it is required when building DecoderManifestSummary",
+                )
+            })?,
+            last_modification_time: self.last_modification_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "last_modification_time",
+                    "last_modification_time was not specified but it is required when building DecoderManifestSummary",
+                )
+            })?,
+        })
     }
 }

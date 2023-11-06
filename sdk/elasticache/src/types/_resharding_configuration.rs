@@ -15,8 +15,10 @@ impl ReshardingConfiguration {
         self.node_group_id.as_deref()
     }
     /// <p>A list of preferred availability zones for the nodes in this cluster.</p>
-    pub fn preferred_availability_zones(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.preferred_availability_zones.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.preferred_availability_zones.is_none()`.
+    pub fn preferred_availability_zones(&self) -> &[::std::string::String] {
+        self.preferred_availability_zones.as_deref().unwrap_or_default()
     }
 }
 impl ReshardingConfiguration {

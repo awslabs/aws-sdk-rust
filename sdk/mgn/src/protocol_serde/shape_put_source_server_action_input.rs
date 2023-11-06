@@ -2,7 +2,7 @@
 pub fn ser_put_source_server_action_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_source_server_action::PutSourceServerActionInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.account_id {
         object.key("accountID").string(var_1.as_str());
     }
@@ -43,38 +43,38 @@ pub fn ser_put_source_server_action_input(
     if let Some(var_14) = &input.must_succeed_for_cutover {
         object.key("mustSucceedForCutover").boolean(*var_14);
     }
-    {
+    if let Some(var_15) = &input.order {
         object.key("order").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.order).into()),
+            ::aws_smithy_types::Number::NegInt((*var_15).into()),
         );
     }
-    if let Some(var_15) = &input.parameters {
+    if let Some(var_16) = &input.parameters {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("parameters").start_object();
-        for (key_17, value_18) in var_15 {
+        let mut object_17 = object.key("parameters").start_object();
+        for (key_18, value_19) in var_16 {
             {
-                let mut array_19 = object_16.key(key_17.as_str()).start_array();
-                for item_20 in value_18 {
+                let mut array_20 = object_17.key(key_18.as_str()).start_array();
+                for item_21 in value_19 {
                     {
                         #[allow(unused_mut)]
-                        let mut object_21 = array_19.value().start_object();
-                        crate::protocol_serde::shape_ssm_parameter_store_parameter::ser_ssm_parameter_store_parameter(&mut object_21, item_20)?;
-                        object_21.finish();
+                        let mut object_22 = array_20.value().start_object();
+                        crate::protocol_serde::shape_ssm_parameter_store_parameter::ser_ssm_parameter_store_parameter(&mut object_22, item_21)?;
+                        object_22.finish();
                     }
                 }
-                array_19.finish();
+                array_20.finish();
             }
         }
-        object_16.finish();
+        object_17.finish();
     }
-    if let Some(var_22) = &input.source_server_id {
-        object.key("sourceServerID").string(var_22.as_str());
+    if let Some(var_23) = &input.source_server_id {
+        object.key("sourceServerID").string(var_23.as_str());
     }
-    if input.timeout_seconds != 0 {
+    if let Some(var_24) = &input.timeout_seconds {
         object.key("timeoutSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.timeout_seconds).into()),
+            ::aws_smithy_types::Number::NegInt((*var_24).into()),
         );
     }
     Ok(())

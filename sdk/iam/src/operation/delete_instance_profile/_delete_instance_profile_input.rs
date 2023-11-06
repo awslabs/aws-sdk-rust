@@ -30,6 +30,7 @@ pub struct DeleteInstanceProfileInputBuilder {
 impl DeleteInstanceProfileInputBuilder {
     /// <p>The name of the instance profile to delete.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// This field is required.
     pub fn instance_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_profile_name = ::std::option::Option::Some(input.into());
         self
@@ -48,7 +49,7 @@ impl DeleteInstanceProfileInputBuilder {
     /// Consumes the builder and constructs a [`DeleteInstanceProfileInput`](crate::operation::delete_instance_profile::DeleteInstanceProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_instance_profile::DeleteInstanceProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_instance_profile::DeleteInstanceProfileInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_instance_profile::DeleteInstanceProfileInput {
             instance_profile_name: self.instance_profile_name,

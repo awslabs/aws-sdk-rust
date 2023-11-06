@@ -44,7 +44,7 @@ where
                             );
                         }
                         "Attributes" => {
-                            builder = builder.set_attributes(crate::protocol_serde::shape_map_of_list_of__string::de_map_of_list_of__string(tokens)?);
+                            builder = builder.set_attributes(crate::protocol_serde::shape_map_of_list_of_string::de_map_of_list_of_string(tokens)?);
                         }
                         "ChannelType" => {
                             builder = builder.set_channel_type(
@@ -95,7 +95,7 @@ where
                             builder = builder.set_location(crate::protocol_serde::shape_endpoint_location::de_endpoint_location(tokens)?);
                         }
                         "Metrics" => {
-                            builder = builder.set_metrics(crate::protocol_serde::shape_map_of__double::de_map_of__double(tokens)?);
+                            builder = builder.set_metrics(crate::protocol_serde::shape_map_of_double::de_map_of_double(tokens)?);
                         }
                         "OptOut" => {
                             builder = builder.set_opt_out(

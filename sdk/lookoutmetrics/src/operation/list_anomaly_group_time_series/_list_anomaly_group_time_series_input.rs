@@ -55,6 +55,7 @@ pub struct ListAnomalyGroupTimeSeriesInputBuilder {
 }
 impl ListAnomalyGroupTimeSeriesInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+    /// This field is required.
     pub fn anomaly_detector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_detector_arn = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl ListAnomalyGroupTimeSeriesInputBuilder {
         &self.anomaly_detector_arn
     }
     /// <p>The ID of the anomaly group.</p>
+    /// This field is required.
     pub fn anomaly_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_group_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +85,7 @@ impl ListAnomalyGroupTimeSeriesInputBuilder {
         &self.anomaly_group_id
     }
     /// <p>The name of the measure field.</p>
+    /// This field is required.
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_name = ::std::option::Option::Some(input.into());
         self
@@ -129,7 +132,7 @@ impl ListAnomalyGroupTimeSeriesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeriesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeriesInput {
             anomaly_detector_arn: self.anomaly_detector_arn,

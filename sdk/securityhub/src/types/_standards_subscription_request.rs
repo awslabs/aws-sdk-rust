@@ -35,6 +35,7 @@ pub struct StandardsSubscriptionRequestBuilder {
 }
 impl StandardsSubscriptionRequestBuilder {
     /// <p>The ARN of the standard that you want to enable. To view the list of available standards and their ARNs, use the <code>DescribeStandards</code> operation.</p>
+    /// This field is required.
     pub fn standards_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.standards_arn = ::std::option::Option::Some(input.into());
         self

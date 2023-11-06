@@ -56,6 +56,7 @@ pub struct CreateTransitGatewayPrefixListReferenceInputBuilder {
 }
 impl CreateTransitGatewayPrefixListReferenceInputBuilder {
     /// <p>The ID of the transit gateway route table.</p>
+    /// This field is required.
     pub fn transit_gateway_route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_route_table_id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +71,7 @@ impl CreateTransitGatewayPrefixListReferenceInputBuilder {
         &self.transit_gateway_route_table_id
     }
     /// <p>The ID of the prefix list that is used for destination matches.</p>
+    /// This field is required.
     pub fn prefix_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix_list_id = ::std::option::Option::Some(input.into());
         self
@@ -130,7 +132,7 @@ impl CreateTransitGatewayPrefixListReferenceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_transit_gateway_prefix_list_reference::CreateTransitGatewayPrefixListReferenceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_transit_gateway_prefix_list_reference::CreateTransitGatewayPrefixListReferenceInput {

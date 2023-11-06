@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetConnectInstanceConfig`](crate::operation::get_connect_instance_config::builders::GetConnectInstanceConfigFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`connect_instance_id(impl Into<String>)`](crate::operation::get_connect_instance_config::builders::GetConnectInstanceConfigFluentBuilder::connect_instance_id) / [`set_connect_instance_id(Option<String>)`](crate::operation::get_connect_instance_config::builders::GetConnectInstanceConfigFluentBuilder::set_connect_instance_id): Amazon Connect Instance Id
+    ///   - [`connect_instance_id(impl Into<String>)`](crate::operation::get_connect_instance_config::builders::GetConnectInstanceConfigFluentBuilder::connect_instance_id) / [`set_connect_instance_id(Option<String>)`](crate::operation::get_connect_instance_config::builders::GetConnectInstanceConfigFluentBuilder::set_connect_instance_id):<br>required: **true**<br>Amazon Connect Instance Id<br>
     /// - On success, responds with [`GetConnectInstanceConfigOutput`](crate::operation::get_connect_instance_config::GetConnectInstanceConfigOutput) with field(s):
     ///   - [`connect_instance_config(Option<InstanceConfig>)`](crate::operation::get_connect_instance_config::GetConnectInstanceConfigOutput::connect_instance_config): Instance config object
     /// - On failure, responds with [`SdkError<GetConnectInstanceConfigError>`](crate::operation::get_connect_instance_config::GetConnectInstanceConfigError)

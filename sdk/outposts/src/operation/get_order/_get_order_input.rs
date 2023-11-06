@@ -27,6 +27,7 @@ pub struct GetOrderInputBuilder {
 }
 impl GetOrderInputBuilder {
     /// <p>The ID of the order.</p>
+    /// This field is required.
     pub fn order_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.order_id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetOrderInputBuilder {
         &self.order_id
     }
     /// Consumes the builder and constructs a [`GetOrderInput`](crate::operation::get_order::GetOrderInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_order::GetOrderInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_order::GetOrderInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_order::GetOrderInput { order_id: self.order_id })
     }
 }

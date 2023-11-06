@@ -26,8 +26,10 @@ impl CreateProjectInput {
         self.description.as_deref()
     }
     /// <p>The glossary terms that can be used in this Amazon DataZone project.</p>
-    pub fn glossary_terms(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.glossary_terms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.glossary_terms.is_none()`.
+    pub fn glossary_terms(&self) -> &[::std::string::String] {
+        self.glossary_terms.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for CreateProjectInput {
@@ -58,6 +60,7 @@ pub struct CreateProjectInputBuilder {
 }
 impl CreateProjectInputBuilder {
     /// <p>The ID of the Amazon DataZone domain in which this project is created.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -72,6 +75,7 @@ impl CreateProjectInputBuilder {
         &self.domain_identifier
     }
     /// <p>The name of the Amazon DataZone project.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -122,7 +126,7 @@ impl CreateProjectInputBuilder {
     /// Consumes the builder and constructs a [`CreateProjectInput`](crate::operation::create_project::CreateProjectInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_project::CreateProjectInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_project::CreateProjectInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_project::CreateProjectInput {
             domain_identifier: self.domain_identifier,
             name: self.name,

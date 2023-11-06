@@ -28,6 +28,7 @@ pub struct TextLogDestinationBuilder {
 }
 impl TextLogDestinationBuilder {
     /// <p>Defines the Amazon CloudWatch Logs log group where text and metadata logs are delivered.</p>
+    /// This field is required.
     pub fn cloud_watch(mut self, input: crate::types::CloudWatchLogGroupLogDestination) -> Self {
         self.cloud_watch = ::std::option::Option::Some(input);
         self

@@ -63,6 +63,7 @@ pub struct UpdateGameSessionInputBuilder {
 }
 impl UpdateGameSessionInputBuilder {
     /// <p>A unique identifier for the game session to update. </p>
+    /// This field is required.
     pub fn game_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_session_id = ::std::option::Option::Some(input.into());
         self
@@ -147,7 +148,7 @@ impl UpdateGameSessionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateGameSessionInput`](crate::operation::update_game_session::UpdateGameSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_game_session::UpdateGameSessionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_game_session::UpdateGameSessionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_game_session::UpdateGameSessionInput {
             game_session_id: self.game_session_id,
             maximum_player_session_count: self.maximum_player_session_count,

@@ -55,6 +55,7 @@ impl GetDownloadUrlForLayerInputBuilder {
         &self.registry_id
     }
     /// <p>The name of the repository that is associated with the image layer to download.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl GetDownloadUrlForLayerInputBuilder {
         &self.repository_name
     }
     /// <p>The digest of the image layer to download.</p>
+    /// This field is required.
     pub fn layer_digest(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.layer_digest = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +89,7 @@ impl GetDownloadUrlForLayerInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_download_url_for_layer::GetDownloadUrlForLayerInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_download_url_for_layer::GetDownloadUrlForLayerInput {
             registry_id: self.registry_id,

@@ -23,8 +23,10 @@ impl GetNetworkInsightsAccessScopeAnalysisFindingsOutput {
         self.analysis_status.as_ref()
     }
     /// <p>The findings associated with Network Access Scope Analysis.</p>
-    pub fn analysis_findings(&self) -> ::std::option::Option<&[crate::types::AccessScopeAnalysisFinding]> {
-        self.analysis_findings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.analysis_findings.is_none()`.
+    pub fn analysis_findings(&self) -> &[crate::types::AccessScopeAnalysisFinding] {
+        self.analysis_findings.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

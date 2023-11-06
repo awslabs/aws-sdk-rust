@@ -2,7 +2,7 @@
 pub fn ser_numeric_axis_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NumericAxisOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.scale {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Scale").start_object();

@@ -58,6 +58,7 @@ pub struct ListAssetModelPropertiesInputBuilder {
 }
 impl ListAssetModelPropertiesInputBuilder {
     /// <p>The ID of the asset model.</p>
+    /// This field is required.
     pub fn asset_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_model_id = ::std::option::Option::Some(input.into());
         self
@@ -133,7 +134,7 @@ impl ListAssetModelPropertiesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_asset_model_properties::ListAssetModelPropertiesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_asset_model_properties::ListAssetModelPropertiesInput {
             asset_model_id: self.asset_model_id,

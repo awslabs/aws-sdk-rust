@@ -11,8 +11,10 @@ pub struct ListGameServerGroupsOutput {
 }
 impl ListGameServerGroupsOutput {
     /// <p>The game server groups' game server groups.</p>
-    pub fn game_server_groups(&self) -> ::std::option::Option<&[crate::types::GameServerGroup]> {
-        self.game_server_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.game_server_groups.is_none()`.
+    pub fn game_server_groups(&self) -> &[crate::types::GameServerGroup] {
+        self.game_server_groups.as_deref().unwrap_or_default()
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -58,6 +58,7 @@ pub struct UpdateFunctionInputBuilder {
 }
 impl UpdateFunctionInputBuilder {
     /// <p>The name of the function that you are updating.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -72,6 +73,7 @@ impl UpdateFunctionInputBuilder {
         &self.name
     }
     /// <p>The current version (<code>ETag</code> value) of the function that you are updating, which you can get using <code>DescribeFunction</code>.</p>
+    /// This field is required.
     pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.if_match = ::std::option::Option::Some(input.into());
         self
@@ -86,6 +88,7 @@ impl UpdateFunctionInputBuilder {
         &self.if_match
     }
     /// <p>Configuration information about the function.</p>
+    /// This field is required.
     pub fn function_config(mut self, input: crate::types::FunctionConfig) -> Self {
         self.function_config = ::std::option::Option::Some(input);
         self
@@ -100,6 +103,7 @@ impl UpdateFunctionInputBuilder {
         &self.function_config
     }
     /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// This field is required.
     pub fn function_code(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.function_code = ::std::option::Option::Some(input);
         self
@@ -116,7 +120,7 @@ impl UpdateFunctionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateFunctionInput`](crate::operation::update_function::UpdateFunctionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_function::UpdateFunctionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_function::UpdateFunctionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_function::UpdateFunctionInput {
             name: self.name,
             if_match: self.if_match,

@@ -35,6 +35,7 @@ pub struct BootstrapActionConfigBuilder {
 }
 impl BootstrapActionConfigBuilder {
     /// <p>The name of the bootstrap action.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl BootstrapActionConfigBuilder {
         &self.name
     }
     /// <p>The script run by the bootstrap action.</p>
+    /// This field is required.
     pub fn script_bootstrap_action(mut self, input: crate::types::ScriptBootstrapActionConfig) -> Self {
         self.script_bootstrap_action = ::std::option::Option::Some(input);
         self

@@ -83,6 +83,7 @@ pub struct ListViolationEventsInputBuilder {
 }
 impl ListViolationEventsInputBuilder {
     /// <p>The start time for the alerts to be listed.</p>
+    /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
@@ -97,6 +98,7 @@ impl ListViolationEventsInputBuilder {
         &self.start_time
     }
     /// <p>The end time for the alerts to be listed.</p>
+    /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
@@ -211,7 +213,7 @@ impl ListViolationEventsInputBuilder {
     /// Consumes the builder and constructs a [`ListViolationEventsInput`](crate::operation::list_violation_events::ListViolationEventsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_violation_events::ListViolationEventsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_violation_events::ListViolationEventsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_violation_events::ListViolationEventsInput {
             start_time: self.start_time,

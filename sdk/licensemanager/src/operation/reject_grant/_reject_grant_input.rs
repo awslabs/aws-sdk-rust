@@ -27,6 +27,7 @@ pub struct RejectGrantInputBuilder {
 }
 impl RejectGrantInputBuilder {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
+    /// This field is required.
     pub fn grant_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grant_arn = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl RejectGrantInputBuilder {
         &self.grant_arn
     }
     /// Consumes the builder and constructs a [`RejectGrantInput`](crate::operation::reject_grant::RejectGrantInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::reject_grant::RejectGrantInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::reject_grant::RejectGrantInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::reject_grant::RejectGrantInput { grant_arn: self.grant_arn })
     }
 }

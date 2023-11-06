@@ -2,7 +2,7 @@
 pub fn ser_put_external_evaluation_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_external_evaluation::PutExternalEvaluationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.config_rule_name {
         object.key("ConfigRuleName").string(var_1.as_str());
     }

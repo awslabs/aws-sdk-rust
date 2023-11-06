@@ -34,6 +34,7 @@ pub struct StopContactInputBuilder {
 }
 impl StopContactInputBuilder {
     /// <p>The ID of the contact.</p>
+    /// This field is required.
     pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl StopContactInputBuilder {
         &self.contact_id
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,7 @@ impl StopContactInputBuilder {
         &self.instance_id
     }
     /// Consumes the builder and constructs a [`StopContactInput`](crate::operation::stop_contact::StopContactInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::stop_contact::StopContactInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_contact::StopContactInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_contact::StopContactInput {
             contact_id: self.contact_id,
             instance_id: self.instance_id,

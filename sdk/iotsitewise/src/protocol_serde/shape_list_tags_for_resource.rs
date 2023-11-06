@@ -29,11 +29,10 @@ pub fn de_list_tags_for_resource_http_error(
                     crate::protocol_serde::shape_conflicting_operation_exception::de_conflicting_operation_exception_json_err(_response_body, output)
                         .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::conflicting_operation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalFailureException" => crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalFailureException({
@@ -44,11 +43,10 @@ pub fn de_list_tags_for_resource_http_error(
                 output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_failure_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InvalidRequestException" => crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidRequestException({
@@ -59,11 +57,10 @@ pub fn de_list_tags_for_resource_http_error(
                 output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_request_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "LimitExceededException" => crate::operation::list_tags_for_resource::ListTagsForResourceError::LimitExceededException({
@@ -74,11 +71,10 @@ pub fn de_list_tags_for_resource_http_error(
                 output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::limit_exceeded_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException({
@@ -89,11 +85,10 @@ pub fn de_list_tags_for_resource_http_error(
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::list_tags_for_resource::ListTagsForResourceError::ThrottlingException({
@@ -104,11 +99,10 @@ pub fn de_list_tags_for_resource_http_error(
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "UnauthorizedException" => crate::operation::list_tags_for_resource::ListTagsForResourceError::UnauthorizedException({
@@ -119,11 +113,10 @@ pub fn de_list_tags_for_resource_http_error(
                 output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::unauthorized_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::list_tags_for_resource::ListTagsForResourceError::generic(generic),

@@ -97,6 +97,7 @@ pub struct PutLaunchActionInputBuilder {
 }
 impl PutLaunchActionInputBuilder {
     /// <p>Launch configuration template Id or Source Server Id</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +112,7 @@ impl PutLaunchActionInputBuilder {
         &self.resource_id
     }
     /// <p>Launch action code.</p>
+    /// This field is required.
     pub fn action_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_code = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +127,7 @@ impl PutLaunchActionInputBuilder {
         &self.action_code
     }
     /// <p>Launch action order.</p>
+    /// This field is required.
     pub fn order(mut self, input: i32) -> Self {
         self.order = ::std::option::Option::Some(input);
         self
@@ -139,6 +142,7 @@ impl PutLaunchActionInputBuilder {
         &self.order
     }
     /// <p>Launch action Id.</p>
+    /// This field is required.
     pub fn action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_id = ::std::option::Option::Some(input.into());
         self
@@ -153,6 +157,7 @@ impl PutLaunchActionInputBuilder {
         &self.action_id
     }
     /// <p>Whether the launch will not be marked as failed if this action fails.</p>
+    /// This field is required.
     pub fn optional(mut self, input: bool) -> Self {
         self.optional = ::std::option::Option::Some(input);
         self
@@ -167,6 +172,7 @@ impl PutLaunchActionInputBuilder {
         &self.optional
     }
     /// <p>Whether the launch action is active.</p>
+    /// This field is required.
     pub fn active(mut self, input: bool) -> Self {
         self.active = ::std::option::Option::Some(input);
         self
@@ -181,6 +187,7 @@ impl PutLaunchActionInputBuilder {
         &self.active
     }
     /// <p>Launch action name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -195,6 +202,7 @@ impl PutLaunchActionInputBuilder {
         &self.name
     }
     /// <p>Launch action version.</p>
+    /// This field is required.
     pub fn action_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_version = ::std::option::Option::Some(input.into());
         self
@@ -209,6 +217,7 @@ impl PutLaunchActionInputBuilder {
         &self.action_version
     }
     /// <p>Launch action category.</p>
+    /// This field is required.
     pub fn category(mut self, input: crate::types::LaunchActionCategory) -> Self {
         self.category = ::std::option::Option::Some(input);
         self
@@ -246,6 +255,7 @@ impl PutLaunchActionInputBuilder {
         &self.parameters
     }
     /// <p>Launch action description.</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -262,7 +272,7 @@ impl PutLaunchActionInputBuilder {
     /// Consumes the builder and constructs a [`PutLaunchActionInput`](crate::operation::put_launch_action::PutLaunchActionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_launch_action::PutLaunchActionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_launch_action::PutLaunchActionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_launch_action::PutLaunchActionInput {
             resource_id: self.resource_id,
             action_code: self.action_code,

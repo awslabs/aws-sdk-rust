@@ -34,6 +34,7 @@ pub struct ResetPersonalPinInputBuilder {
 }
 impl ResetPersonalPinInputBuilder {
     /// <p>The Amazon Chime account ID.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl ResetPersonalPinInputBuilder {
         &self.account_id
     }
     /// <p>The user ID.</p>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl ResetPersonalPinInputBuilder {
     /// Consumes the builder and constructs a [`ResetPersonalPinInput`](crate::operation::reset_personal_pin::ResetPersonalPinInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::reset_personal_pin::ResetPersonalPinInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::reset_personal_pin::ResetPersonalPinInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::reset_personal_pin::ResetPersonalPinInput {
             account_id: self.account_id,
             user_id: self.user_id,

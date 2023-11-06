@@ -60,16 +60,22 @@ impl UpdateRecipeJobInput {
         self.max_retries
     }
     /// <p>One or more artifacts that represent the output from running the job. </p>
-    pub fn outputs(&self) -> ::std::option::Option<&[crate::types::Output]> {
-        self.outputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outputs.is_none()`.
+    pub fn outputs(&self) -> &[crate::types::Output] {
+        self.outputs.as_deref().unwrap_or_default()
     }
     /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
-    pub fn data_catalog_outputs(&self) -> ::std::option::Option<&[crate::types::DataCatalogOutput]> {
-        self.data_catalog_outputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_catalog_outputs.is_none()`.
+    pub fn data_catalog_outputs(&self) -> &[crate::types::DataCatalogOutput] {
+        self.data_catalog_outputs.as_deref().unwrap_or_default()
     }
     /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
-    pub fn database_outputs(&self) -> ::std::option::Option<&[crate::types::DatabaseOutput]> {
-        self.database_outputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.database_outputs.is_none()`.
+    pub fn database_outputs(&self) -> &[crate::types::DatabaseOutput] {
+        self.database_outputs.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
@@ -145,6 +151,7 @@ impl UpdateRecipeJobInputBuilder {
         &self.encryption_mode
     }
     /// <p>The name of the job to update.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -261,6 +268,7 @@ impl UpdateRecipeJobInputBuilder {
         &self.database_outputs
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -291,7 +299,7 @@ impl UpdateRecipeJobInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRecipeJobInput`](crate::operation::update_recipe_job::UpdateRecipeJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_recipe_job::UpdateRecipeJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_recipe_job::UpdateRecipeJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_recipe_job::UpdateRecipeJobInput {
             encryption_key_arn: self.encryption_key_arn,
             encryption_mode: self.encryption_mode,

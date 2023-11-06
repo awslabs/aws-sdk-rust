@@ -15,8 +15,10 @@ impl RegisterInstanceTagAttributeRequest {
         self.include_all_tags_of_instance
     }
     /// <p>The tag keys to register.</p>
-    pub fn instance_tag_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.instance_tag_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_tag_keys.is_none()`.
+    pub fn instance_tag_keys(&self) -> &[::std::string::String] {
+        self.instance_tag_keys.as_deref().unwrap_or_default()
     }
 }
 impl RegisterInstanceTagAttributeRequest {

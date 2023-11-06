@@ -15,8 +15,10 @@ impl ListRecoveryGroupsOutput {
         self.next_token.as_deref()
     }
     /// <p>A list of recovery groups.</p>
-    pub fn recovery_groups(&self) -> ::std::option::Option<&[crate::types::RecoveryGroupOutput]> {
-        self.recovery_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recovery_groups.is_none()`.
+    pub fn recovery_groups(&self) -> &[crate::types::RecoveryGroupOutput] {
+        self.recovery_groups.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListRecoveryGroupsOutput {

@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateScript`](crate::operation::create_script::builders::CreateScriptFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`dag_nodes(CodeGenNode)`](crate::operation::create_script::builders::CreateScriptFluentBuilder::dag_nodes) / [`set_dag_nodes(Option<Vec<CodeGenNode>>)`](crate::operation::create_script::builders::CreateScriptFluentBuilder::set_dag_nodes): <p>A list of the nodes in the DAG.</p>
-    ///   - [`dag_edges(CodeGenEdge)`](crate::operation::create_script::builders::CreateScriptFluentBuilder::dag_edges) / [`set_dag_edges(Option<Vec<CodeGenEdge>>)`](crate::operation::create_script::builders::CreateScriptFluentBuilder::set_dag_edges): <p>A list of the edges in the DAG.</p>
-    ///   - [`language(Language)`](crate::operation::create_script::builders::CreateScriptFluentBuilder::language) / [`set_language(Option<Language>)`](crate::operation::create_script::builders::CreateScriptFluentBuilder::set_language): <p>The programming language of the resulting code from the DAG.</p>
+    ///   - [`dag_nodes(CodeGenNode)`](crate::operation::create_script::builders::CreateScriptFluentBuilder::dag_nodes) / [`set_dag_nodes(Option<Vec::<CodeGenNode>>)`](crate::operation::create_script::builders::CreateScriptFluentBuilder::set_dag_nodes):<br>required: **false**<br><p>A list of the nodes in the DAG.</p><br>
+    ///   - [`dag_edges(CodeGenEdge)`](crate::operation::create_script::builders::CreateScriptFluentBuilder::dag_edges) / [`set_dag_edges(Option<Vec::<CodeGenEdge>>)`](crate::operation::create_script::builders::CreateScriptFluentBuilder::set_dag_edges):<br>required: **false**<br><p>A list of the edges in the DAG.</p><br>
+    ///   - [`language(Language)`](crate::operation::create_script::builders::CreateScriptFluentBuilder::language) / [`set_language(Option<Language>)`](crate::operation::create_script::builders::CreateScriptFluentBuilder::set_language):<br>required: **false**<br><p>The programming language of the resulting code from the DAG.</p><br>
     /// - On success, responds with [`CreateScriptOutput`](crate::operation::create_script::CreateScriptOutput) with field(s):
     ///   - [`python_script(Option<String>)`](crate::operation::create_script::CreateScriptOutput::python_script): <p>The Python script generated from the DAG.</p>
     ///   - [`scala_code(Option<String>)`](crate::operation::create_script::CreateScriptOutput::scala_code): <p>The Scala code generated from the DAG.</p>

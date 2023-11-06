@@ -27,6 +27,7 @@ pub struct DescribeApiDestinationInputBuilder {
 }
 impl DescribeApiDestinationInputBuilder {
     /// <p>The name of the API destination to retrieve.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -43,8 +44,10 @@ impl DescribeApiDestinationInputBuilder {
     /// Consumes the builder and constructs a [`DescribeApiDestinationInput`](crate::operation::describe_api_destination::DescribeApiDestinationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_api_destination::DescribeApiDestinationInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_api_destination::DescribeApiDestinationInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_api_destination::DescribeApiDestinationInput { name: self.name })
     }
 }

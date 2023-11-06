@@ -81,16 +81,20 @@ impl AwsElasticBeanstalkEnvironmentDetails {
         self.environment_id.as_deref()
     }
     /// <p>Links to other environments in the same group.</p>
-    pub fn environment_links(&self) -> ::std::option::Option<&[crate::types::AwsElasticBeanstalkEnvironmentEnvironmentLink]> {
-        self.environment_links.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.environment_links.is_none()`.
+    pub fn environment_links(&self) -> &[crate::types::AwsElasticBeanstalkEnvironmentEnvironmentLink] {
+        self.environment_links.as_deref().unwrap_or_default()
     }
     /// <p>The name of the environment.</p>
     pub fn environment_name(&self) -> ::std::option::Option<&str> {
         self.environment_name.as_deref()
     }
     /// <p>The configuration setting for the environment.</p>
-    pub fn option_settings(&self) -> ::std::option::Option<&[crate::types::AwsElasticBeanstalkEnvironmentOptionSetting]> {
-        self.option_settings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.option_settings.is_none()`.
+    pub fn option_settings(&self) -> &[crate::types::AwsElasticBeanstalkEnvironmentOptionSetting] {
+        self.option_settings.as_deref().unwrap_or_default()
     }
     /// <p>The ARN of the platform version for the environment.</p>
     pub fn platform_arn(&self) -> ::std::option::Option<&str> {

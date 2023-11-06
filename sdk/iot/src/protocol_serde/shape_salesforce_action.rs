@@ -38,7 +38,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::salesforce_action_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -49,12 +51,12 @@ where
 pub fn ser_salesforce_action(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SalesforceAction,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.token {
-        object.key("token").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("token").string(input.token.as_str());
     }
-    if let Some(var_2) = &input.url {
-        object.key("url").string(var_2.as_str());
+    {
+        object.key("url").string(input.url.as_str());
     }
     Ok(())
 }

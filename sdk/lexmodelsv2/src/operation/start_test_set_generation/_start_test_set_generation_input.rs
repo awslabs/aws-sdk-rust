@@ -62,6 +62,7 @@ pub struct StartTestSetGenerationInputBuilder {
 }
 impl StartTestSetGenerationInputBuilder {
     /// <p>The test set name for the test set generation request.</p>
+    /// This field is required.
     pub fn test_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.test_set_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +91,7 @@ impl StartTestSetGenerationInputBuilder {
         &self.description
     }
     /// <p>The Amazon S3 storage location for the test set generation.</p>
+    /// This field is required.
     pub fn storage_location(mut self, input: crate::types::TestSetStorageLocation) -> Self {
         self.storage_location = ::std::option::Option::Some(input);
         self
@@ -104,6 +106,7 @@ impl StartTestSetGenerationInputBuilder {
         &self.storage_location
     }
     /// <p>The data source for the test set generation.</p>
+    /// This field is required.
     pub fn generation_data_source(mut self, input: crate::types::TestSetGenerationDataSource) -> Self {
         self.generation_data_source = ::std::option::Option::Some(input);
         self
@@ -118,6 +121,7 @@ impl StartTestSetGenerationInputBuilder {
         &self.generation_data_source
     }
     /// <p>The roleARN used for any operation in the test set to access resources in the Amazon Web Services account.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -159,7 +163,7 @@ impl StartTestSetGenerationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_test_set_generation::StartTestSetGenerationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_test_set_generation::StartTestSetGenerationInput {
             test_set_name: self.test_set_name,

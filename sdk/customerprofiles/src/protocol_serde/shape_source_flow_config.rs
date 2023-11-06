@@ -2,24 +2,24 @@
 pub fn ser_source_flow_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SourceFlowConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.connector_profile_name {
         object.key("ConnectorProfileName").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.connector_type {
-        object.key("ConnectorType").string(var_2.as_str());
+    {
+        object.key("ConnectorType").string(input.connector_type.as_str());
     }
-    if let Some(var_3) = &input.incremental_pull_config {
+    if let Some(var_2) = &input.incremental_pull_config {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("IncrementalPullConfig").start_object();
-        crate::protocol_serde::shape_incremental_pull_config::ser_incremental_pull_config(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_3 = object.key("IncrementalPullConfig").start_object();
+        crate::protocol_serde::shape_incremental_pull_config::ser_incremental_pull_config(&mut object_3, var_2)?;
+        object_3.finish();
     }
-    if let Some(var_5) = &input.source_connector_properties {
+    if let Some(var_4) = &input.source_connector_properties {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("SourceConnectorProperties").start_object();
-        crate::protocol_serde::shape_source_connector_properties::ser_source_connector_properties(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_5 = object.key("SourceConnectorProperties").start_object();
+        crate::protocol_serde::shape_source_connector_properties::ser_source_connector_properties(&mut object_5, var_4)?;
+        object_5.finish();
     }
     Ok(())
 }

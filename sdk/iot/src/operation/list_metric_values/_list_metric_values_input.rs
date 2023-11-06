@@ -76,6 +76,7 @@ pub struct ListMetricValuesInputBuilder {
 }
 impl ListMetricValuesInputBuilder {
     /// <p>The name of the thing for which security profile metric values are returned.</p>
+    /// This field is required.
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +91,7 @@ impl ListMetricValuesInputBuilder {
         &self.thing_name
     }
     /// <p>The name of the security profile metric for which values are returned.</p>
+    /// This field is required.
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_name = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +134,7 @@ impl ListMetricValuesInputBuilder {
         &self.dimension_value_operator
     }
     /// <p>The start of the time period for which metric values are returned.</p>
+    /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
@@ -146,6 +149,7 @@ impl ListMetricValuesInputBuilder {
         &self.start_time
     }
     /// <p>The end of the time period for which metric values are returned.</p>
+    /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
@@ -190,7 +194,7 @@ impl ListMetricValuesInputBuilder {
     /// Consumes the builder and constructs a [`ListMetricValuesInput`](crate::operation::list_metric_values::ListMetricValuesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_metric_values::ListMetricValuesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_metric_values::ListMetricValuesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_metric_values::ListMetricValuesInput {
             thing_name: self.thing_name,
             metric_name: self.metric_name,

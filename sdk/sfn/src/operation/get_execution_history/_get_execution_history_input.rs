@@ -57,6 +57,7 @@ pub struct GetExecutionHistoryInputBuilder {
 }
 impl GetExecutionHistoryInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the execution.</p>
+    /// This field is required.
     pub fn execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_arn = ::std::option::Option::Some(input.into());
         self
@@ -132,7 +133,7 @@ impl GetExecutionHistoryInputBuilder {
     /// Consumes the builder and constructs a [`GetExecutionHistoryInput`](crate::operation::get_execution_history::GetExecutionHistoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_execution_history::GetExecutionHistoryInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_execution_history::GetExecutionHistoryInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_execution_history::GetExecutionHistoryInput {
             execution_arn: self.execution_arn,

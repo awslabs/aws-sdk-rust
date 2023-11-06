@@ -48,6 +48,7 @@ pub struct StartDataIngestionJobInputBuilder {
 }
 impl StartDataIngestionJobInputBuilder {
     /// <p>The name of the dataset being used by the data ingestion job. </p>
+    /// This field is required.
     pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl StartDataIngestionJobInputBuilder {
         &self.dataset_name
     }
     /// <p> Specifies information for the input data for the data ingestion job, including dataset S3 location. </p>
+    /// This field is required.
     pub fn ingestion_input_configuration(mut self, input: crate::types::IngestionInputConfiguration) -> Self {
         self.ingestion_input_configuration = ::std::option::Option::Some(input);
         self
@@ -76,6 +78,7 @@ impl StartDataIngestionJobInputBuilder {
         &self.ingestion_input_configuration
     }
     /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for the data ingestion job. </p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl StartDataIngestionJobInputBuilder {
         &self.role_arn
     }
     /// <p> A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +110,7 @@ impl StartDataIngestionJobInputBuilder {
     /// Consumes the builder and constructs a [`StartDataIngestionJobInput`](crate::operation::start_data_ingestion_job::StartDataIngestionJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_data_ingestion_job::StartDataIngestionJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_data_ingestion_job::StartDataIngestionJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_data_ingestion_job::StartDataIngestionJobInput {
             dataset_name: self.dataset_name,

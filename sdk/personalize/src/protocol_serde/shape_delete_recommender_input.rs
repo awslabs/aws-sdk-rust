@@ -2,7 +2,7 @@
 pub fn ser_delete_recommender_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_recommender::DeleteRecommenderInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.recommender_arn {
         object.key("recommenderArn").string(var_1.as_str());
     }

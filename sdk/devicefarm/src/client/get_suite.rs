@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSuite`](crate::operation::get_suite::builders::GetSuiteFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::get_suite::builders::GetSuiteFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_suite::builders::GetSuiteFluentBuilder::set_arn): <p>The suite's ARN.</p>
+    ///   - [`arn(impl Into<String>)`](crate::operation::get_suite::builders::GetSuiteFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_suite::builders::GetSuiteFluentBuilder::set_arn):<br>required: **true**<br><p>The suite's ARN.</p><br>
     /// - On success, responds with [`GetSuiteOutput`](crate::operation::get_suite::GetSuiteOutput) with field(s):
     ///   - [`suite(Option<Suite>)`](crate::operation::get_suite::GetSuiteOutput::suite): <p>A collection of one or more tests.</p>
     /// - On failure, responds with [`SdkError<GetSuiteError>`](crate::operation::get_suite::GetSuiteError)

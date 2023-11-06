@@ -13,8 +13,10 @@ pub struct GetBundlesOutput {
 }
 impl GetBundlesOutput {
     /// <p>An array of key-value pairs that contains information about the available bundles.</p>
-    pub fn bundles(&self) -> ::std::option::Option<&[crate::types::Bundle]> {
-        self.bundles.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bundles.is_none()`.
+    pub fn bundles(&self) -> &[crate::types::Bundle] {
+        self.bundles.as_deref().unwrap_or_default()
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>

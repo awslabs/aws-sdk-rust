@@ -34,6 +34,7 @@ pub struct CreateAnalysisTemplateOutputBuilder {
 }
 impl CreateAnalysisTemplateOutputBuilder {
     /// <p>The analysis template.</p>
+    /// This field is required.
     pub fn analysis_template(mut self, input: crate::types::AnalysisTemplate) -> Self {
         self.analysis_template = ::std::option::Option::Some(input);
         self

@@ -2,39 +2,39 @@
 pub fn ser_histogram_visual(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HistogramVisual,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.visual_id {
-        object.key("VisualId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("VisualId").string(input.visual_id.as_str());
     }
-    if let Some(var_2) = &input.title {
+    if let Some(var_1) = &input.title {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("Title").start_object();
-        crate::protocol_serde::shape_visual_title_label_options::ser_visual_title_label_options(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("Title").start_object();
+        crate::protocol_serde::shape_visual_title_label_options::ser_visual_title_label_options(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.subtitle {
+    if let Some(var_3) = &input.subtitle {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("Subtitle").start_object();
-        crate::protocol_serde::shape_visual_subtitle_label_options::ser_visual_subtitle_label_options(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("Subtitle").start_object();
+        crate::protocol_serde::shape_visual_subtitle_label_options::ser_visual_subtitle_label_options(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_6) = &input.chart_configuration {
+    if let Some(var_5) = &input.chart_configuration {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("ChartConfiguration").start_object();
-        crate::protocol_serde::shape_histogram_configuration::ser_histogram_configuration(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_6 = object.key("ChartConfiguration").start_object();
+        crate::protocol_serde::shape_histogram_configuration::ser_histogram_configuration(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_8) = &input.actions {
-        let mut array_9 = object.key("Actions").start_array();
-        for item_10 in var_8 {
+    if let Some(var_7) = &input.actions {
+        let mut array_8 = object.key("Actions").start_array();
+        for item_9 in var_7 {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_visual_custom_action::ser_visual_custom_action(&mut object_11, item_10)?;
-                object_11.finish();
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_visual_custom_action::ser_visual_custom_action(&mut object_10, item_9)?;
+                object_10.finish();
             }
         }
-        array_9.finish();
+        array_8.finish();
     }
     Ok(())
 }
@@ -89,7 +89,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::histogram_visual_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

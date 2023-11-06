@@ -9,8 +9,10 @@ pub struct GetRevocationStatusOutput {
 }
 impl GetRevocationStatusOutput {
     /// <p>A list of revoked entities (including one or more of the signing profile ARN, signing job ID, and certificate hash) supplied as input to the API.</p>
-    pub fn revoked_entities(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.revoked_entities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.revoked_entities.is_none()`.
+    pub fn revoked_entities(&self) -> &[::std::string::String] {
+        self.revoked_entities.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetRevocationStatusOutput {

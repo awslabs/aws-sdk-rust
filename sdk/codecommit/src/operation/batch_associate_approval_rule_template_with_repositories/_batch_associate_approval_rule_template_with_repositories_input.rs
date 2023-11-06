@@ -18,8 +18,10 @@ impl BatchAssociateApprovalRuleTemplateWithRepositoriesInput {
     /// <p>The names of the repositories you want to associate with the template.</p> <note>
     /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>
     /// </note>
-    pub fn repository_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.repository_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.repository_names.is_none()`.
+    pub fn repository_names(&self) -> &[::std::string::String] {
+        self.repository_names.as_deref().unwrap_or_default()
     }
 }
 impl BatchAssociateApprovalRuleTemplateWithRepositoriesInput {
@@ -38,6 +40,7 @@ pub struct BatchAssociateApprovalRuleTemplateWithRepositoriesInputBuilder {
 }
 impl BatchAssociateApprovalRuleTemplateWithRepositoriesInputBuilder {
     /// <p>The name of the template you want to associate with one or more repositories.</p>
+    /// This field is required.
     pub fn approval_rule_template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.approval_rule_template_name = ::std::option::Option::Some(input.into());
         self
@@ -82,7 +85,7 @@ impl BatchAssociateApprovalRuleTemplateWithRepositoriesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_associate_approval_rule_template_with_repositories::BatchAssociateApprovalRuleTemplateWithRepositoriesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::batch_associate_approval_rule_template_with_repositories::BatchAssociateApprovalRuleTemplateWithRepositoriesInput {

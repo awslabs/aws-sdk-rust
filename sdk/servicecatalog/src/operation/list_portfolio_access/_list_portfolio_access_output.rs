@@ -11,8 +11,10 @@ pub struct ListPortfolioAccessOutput {
 }
 impl ListPortfolioAccessOutput {
     /// <p>Information about the Amazon Web Services accounts with access to the portfolio.</p>
-    pub fn account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.account_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
+    pub fn account_ids(&self) -> &[::std::string::String] {
+        self.account_ids.as_deref().unwrap_or_default()
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub fn next_page_token(&self) -> ::std::option::Option<&str> {

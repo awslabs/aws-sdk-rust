@@ -3,25 +3,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSecurityProfileApplicationsInput {
-    /// <p>The security profile identifier.</p>
+    /// <p>The identifier for the security profle.</p>
     pub security_profile_id: ::std::option::Option<::std::string::String>,
-    /// <p>The instance identifier.</p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
-    /// <p>The token for the next set of results. The next set of results can be retrieved by using the token value returned in the previous response when making the next request.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListSecurityProfileApplicationsInput {
-    /// <p>The security profile identifier.</p>
+    /// <p>The identifier for the security profle.</p>
     pub fn security_profile_id(&self) -> ::std::option::Option<&str> {
         self.security_profile_id.as_deref()
     }
-    /// <p>The instance identifier.</p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The token for the next set of results. The next set of results can be retrieved by using the token value returned in the previous response when making the next request.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -47,45 +47,47 @@ pub struct ListSecurityProfileApplicationsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListSecurityProfileApplicationsInputBuilder {
-    /// <p>The security profile identifier.</p>
+    /// <p>The identifier for the security profle.</p>
+    /// This field is required.
     pub fn security_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_profile_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The security profile identifier.</p>
+    /// <p>The identifier for the security profle.</p>
     pub fn set_security_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_profile_id = input;
         self
     }
-    /// <p>The security profile identifier.</p>
+    /// <p>The identifier for the security profle.</p>
     pub fn get_security_profile_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.security_profile_id
     }
-    /// <p>The instance identifier.</p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The instance identifier.</p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
     }
-    /// <p>The instance identifier.</p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }
-    /// <p>The token for the next set of results. The next set of results can be retrieved by using the token value returned in the previous response when making the next request.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token for the next set of results. The next set of results can be retrieved by using the token value returned in the previous response when making the next request.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The token for the next set of results. The next set of results can be retrieved by using the token value returned in the previous response when making the next request.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
@@ -108,7 +110,7 @@ impl ListSecurityProfileApplicationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_security_profile_applications::ListSecurityProfileApplicationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_security_profile_applications::ListSecurityProfileApplicationsInput {

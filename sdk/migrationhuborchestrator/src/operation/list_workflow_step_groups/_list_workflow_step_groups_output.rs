@@ -6,7 +6,7 @@ pub struct ListWorkflowStepGroupsOutput {
     /// <p>The pagination token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The summary of step groups in a migration workflow.</p>
-    pub workflow_step_groups_summary: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepGroupSummary>>,
+    pub workflow_step_groups_summary: ::std::vec::Vec<crate::types::WorkflowStepGroupSummary>,
     _request_id: Option<String>,
 }
 impl ListWorkflowStepGroupsOutput {
@@ -15,8 +15,9 @@ impl ListWorkflowStepGroupsOutput {
         self.next_token.as_deref()
     }
     /// <p>The summary of step groups in a migration workflow.</p>
-    pub fn workflow_step_groups_summary(&self) -> ::std::option::Option<&[crate::types::WorkflowStepGroupSummary]> {
-        self.workflow_step_groups_summary.as_deref()
+    pub fn workflow_step_groups_summary(&self) -> &[crate::types::WorkflowStepGroupSummary] {
+        use std::ops::Deref;
+        self.workflow_step_groups_summary.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListWorkflowStepGroupsOutput {
@@ -84,11 +85,23 @@ impl ListWorkflowStepGroupsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListWorkflowStepGroupsOutput`](crate::operation::list_workflow_step_groups::ListWorkflowStepGroupsOutput).
-    pub fn build(self) -> crate::operation::list_workflow_step_groups::ListWorkflowStepGroupsOutput {
-        crate::operation::list_workflow_step_groups::ListWorkflowStepGroupsOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workflow_step_groups_summary`](crate::operation::list_workflow_step_groups::builders::ListWorkflowStepGroupsOutputBuilder::workflow_step_groups_summary)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_workflow_step_groups::ListWorkflowStepGroupsOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_workflow_step_groups::ListWorkflowStepGroupsOutput {
             next_token: self.next_token,
-            workflow_step_groups_summary: self.workflow_step_groups_summary,
+            workflow_step_groups_summary: self.workflow_step_groups_summary.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "workflow_step_groups_summary",
+                    "workflow_step_groups_summary was not specified but it is required when building ListWorkflowStepGroupsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

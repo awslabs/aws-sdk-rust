@@ -20,7 +20,7 @@ pub struct DescribeScheduleOutput {
     /// <p>Metadata tags associated with this schedule.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The name of the schedule.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     _request_id: Option<String>,
 }
 impl DescribeScheduleOutput {
@@ -33,8 +33,10 @@ impl DescribeScheduleOutput {
         self.created_by.as_deref()
     }
     /// <p>The name or names of one or more jobs to be run by using the schedule.</p>
-    pub fn job_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.job_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_names.is_none()`.
+    pub fn job_names(&self) -> &[::std::string::String] {
+        self.job_names.as_deref().unwrap_or_default()
     }
     /// <p>The identifier (user name) of the user who last modified the schedule.</p>
     pub fn last_modified_by(&self) -> ::std::option::Option<&str> {
@@ -57,8 +59,9 @@ impl DescribeScheduleOutput {
         self.tags.as_ref()
     }
     /// <p>The name of the schedule.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeScheduleOutput {
@@ -214,6 +217,7 @@ impl DescribeScheduleOutputBuilder {
         &self.tags
     }
     /// <p>The name of the schedule.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -237,8 +241,12 @@ impl DescribeScheduleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeScheduleOutput`](crate::operation::describe_schedule::DescribeScheduleOutput).
-    pub fn build(self) -> crate::operation::describe_schedule::DescribeScheduleOutput {
-        crate::operation::describe_schedule::DescribeScheduleOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::describe_schedule::builders::DescribeScheduleOutputBuilder::name)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_schedule::DescribeScheduleOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_schedule::DescribeScheduleOutput {
             create_date: self.create_date,
             created_by: self.created_by,
             job_names: self.job_names,
@@ -247,8 +255,13 @@ impl DescribeScheduleOutputBuilder {
             resource_arn: self.resource_arn,
             cron_expression: self.cron_expression,
             tags: self.tags,
-            name: self.name,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DescribeScheduleOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -35,6 +35,7 @@ pub struct UpdateProfilingGroupOutputBuilder {
 }
 impl UpdateProfilingGroupOutputBuilder {
     /// <p> A <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> that contains information about the returned updated profiling group. </p>
+    /// This field is required.
     pub fn profiling_group(mut self, input: crate::types::ProfilingGroupDescription) -> Self {
         self.profiling_group = ::std::option::Option::Some(input);
         self

@@ -58,6 +58,7 @@ pub struct CreateSolNetworkInstanceInputBuilder {
 }
 impl CreateSolNetworkInstanceInputBuilder {
     /// <p>ID for network service descriptor.</p>
+    /// This field is required.
     pub fn nsd_info_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nsd_info_id = ::std::option::Option::Some(input.into());
         self
@@ -72,6 +73,7 @@ impl CreateSolNetworkInstanceInputBuilder {
         &self.nsd_info_id
     }
     /// <p>Network instance name.</p>
+    /// This field is required.
     pub fn ns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ns_name = ::std::option::Option::Some(input.into());
         self
@@ -124,7 +126,7 @@ impl CreateSolNetworkInstanceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_sol_network_instance::CreateSolNetworkInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_sol_network_instance::CreateSolNetworkInstanceInput {
             nsd_info_id: self.nsd_info_id,

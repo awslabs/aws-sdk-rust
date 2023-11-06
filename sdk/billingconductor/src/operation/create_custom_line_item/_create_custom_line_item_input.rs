@@ -96,6 +96,7 @@ impl CreateCustomLineItemInputBuilder {
         &self.client_token
     }
     /// <p> The name of the custom line item. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -110,6 +111,7 @@ impl CreateCustomLineItemInputBuilder {
         &self.name
     }
     /// <p> The description of the custom line item. This is shown on the Bills page in association with the charge value. </p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -124,6 +126,7 @@ impl CreateCustomLineItemInputBuilder {
         &self.description
     }
     /// <p> The Amazon Resource Name (ARN) that references the billing group where the custom line item applies to. </p>
+    /// This field is required.
     pub fn billing_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.billing_group_arn = ::std::option::Option::Some(input.into());
         self
@@ -172,6 +175,7 @@ impl CreateCustomLineItemInputBuilder {
         &self.tags
     }
     /// <p> A <code>CustomLineItemChargeDetails</code> that describes the charge details for a custom line item. </p>
+    /// This field is required.
     pub fn charge_details(mut self, input: crate::types::CustomLineItemChargeDetails) -> Self {
         self.charge_details = ::std::option::Option::Some(input);
         self
@@ -188,7 +192,7 @@ impl CreateCustomLineItemInputBuilder {
     /// Consumes the builder and constructs a [`CreateCustomLineItemInput`](crate::operation::create_custom_line_item::CreateCustomLineItemInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_custom_line_item::CreateCustomLineItemInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_custom_line_item::CreateCustomLineItemInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_custom_line_item::CreateCustomLineItemInput {
             client_token: self.client_token,

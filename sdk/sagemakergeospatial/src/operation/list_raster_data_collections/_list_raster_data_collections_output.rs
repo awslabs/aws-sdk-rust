@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ListRasterDataCollectionsOutput {
     /// <p>Contains summary information about the raster data collection.</p>
-    pub raster_data_collection_summaries: ::std::option::Option<::std::vec::Vec<crate::types::RasterDataCollectionMetadata>>,
+    pub raster_data_collection_summaries: ::std::vec::Vec<crate::types::RasterDataCollectionMetadata>,
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListRasterDataCollectionsOutput {
     /// <p>Contains summary information about the raster data collection.</p>
-    pub fn raster_data_collection_summaries(&self) -> ::std::option::Option<&[crate::types::RasterDataCollectionMetadata]> {
-        self.raster_data_collection_summaries.as_deref()
+    pub fn raster_data_collection_summaries(&self) -> &[crate::types::RasterDataCollectionMetadata] {
+        use std::ops::Deref;
+        self.raster_data_collection_summaries.deref()
     }
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -96,12 +97,24 @@ impl ListRasterDataCollectionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListRasterDataCollectionsOutput`](crate::operation::list_raster_data_collections::ListRasterDataCollectionsOutput).
-    pub fn build(self) -> crate::operation::list_raster_data_collections::ListRasterDataCollectionsOutput {
-        crate::operation::list_raster_data_collections::ListRasterDataCollectionsOutput {
-            raster_data_collection_summaries: self.raster_data_collection_summaries,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`raster_data_collection_summaries`](crate::operation::list_raster_data_collections::builders::ListRasterDataCollectionsOutputBuilder::raster_data_collection_summaries)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_raster_data_collections::ListRasterDataCollectionsOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_raster_data_collections::ListRasterDataCollectionsOutput {
+            raster_data_collection_summaries: self.raster_data_collection_summaries.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "raster_data_collection_summaries",
+                    "raster_data_collection_summaries was not specified but it is required when building ListRasterDataCollectionsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for ListRasterDataCollectionsOutputBuilder {

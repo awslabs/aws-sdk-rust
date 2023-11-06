@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Resource {
     /// <p>The type of resource.</p>
-    pub r#type: ::std::option::Option<crate::types::ResourceType>,
+    pub r#type: crate::types::ResourceType,
     /// <p>The ID of the resource.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The partition of the resource.</p>
     pub partition: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region the impacted resource is located in.</p>
@@ -19,12 +19,13 @@ pub struct Resource {
 }
 impl Resource {
     /// <p>The type of resource.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::ResourceType {
+        &self.r#type
     }
     /// <p>The ID of the resource.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The partition of the resource.</p>
     pub fn partition(&self) -> ::std::option::Option<&str> {
@@ -63,6 +64,7 @@ pub struct ResourceBuilder {
 }
 impl ResourceBuilder {
     /// <p>The type of resource.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::ResourceType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -77,6 +79,7 @@ impl ResourceBuilder {
         &self.r#type
     }
     /// <p>The ID of the resource.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -153,14 +156,27 @@ impl ResourceBuilder {
         &self.details
     }
     /// Consumes the builder and constructs a [`Resource`](crate::types::Resource).
-    pub fn build(self) -> crate::types::Resource {
-        crate::types::Resource {
-            r#type: self.r#type,
-            id: self.id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::ResourceBuilder::r#type)
+    /// - [`id`](crate::types::builders::ResourceBuilder::id)
+    pub fn build(self) -> ::std::result::Result<crate::types::Resource, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Resource {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building Resource",
+                )
+            })?,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building Resource",
+                )
+            })?,
             partition: self.partition,
             region: self.region,
             tags: self.tags,
             details: self.details,
-        }
+        })
     }
 }

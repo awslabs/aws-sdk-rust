@@ -27,6 +27,7 @@ pub struct CreateResponseHeadersPolicyInputBuilder {
 }
 impl CreateResponseHeadersPolicyInputBuilder {
     /// <p>Contains metadata about the response headers policy, and a set of configurations that specify the HTTP headers.</p>
+    /// This field is required.
     pub fn response_headers_policy_config(mut self, input: crate::types::ResponseHeadersPolicyConfig) -> Self {
         self.response_headers_policy_config = ::std::option::Option::Some(input);
         self
@@ -45,7 +46,7 @@ impl CreateResponseHeadersPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyInput {
             response_headers_policy_config: self.response_headers_policy_config,

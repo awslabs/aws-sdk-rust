@@ -2,30 +2,30 @@
 pub fn ser_augmented_manifests_list_item(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AugmentedManifestsListItem,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.s3_uri {
-        object.key("S3Uri").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("S3Uri").string(input.s3_uri.as_str());
     }
-    if let Some(var_2) = &input.split {
-        object.key("Split").string(var_2.as_str());
+    if let Some(var_1) = &input.split {
+        object.key("Split").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.attribute_names {
-        let mut array_4 = object.key("AttributeNames").start_array();
-        for item_5 in var_3 {
+    {
+        let mut array_2 = object.key("AttributeNames").start_array();
+        for item_3 in &input.attribute_names {
             {
-                array_4.value().string(item_5.as_str());
+                array_2.value().string(item_3.as_str());
             }
         }
-        array_4.finish();
+        array_2.finish();
     }
-    if let Some(var_6) = &input.annotation_data_s3_uri {
-        object.key("AnnotationDataS3Uri").string(var_6.as_str());
+    if let Some(var_4) = &input.annotation_data_s3_uri {
+        object.key("AnnotationDataS3Uri").string(var_4.as_str());
     }
-    if let Some(var_7) = &input.source_documents_s3_uri {
-        object.key("SourceDocumentsS3Uri").string(var_7.as_str());
+    if let Some(var_5) = &input.source_documents_s3_uri {
+        object.key("SourceDocumentsS3Uri").string(var_5.as_str());
     }
-    if let Some(var_8) = &input.document_type {
-        object.key("DocumentType").string(var_8.as_str());
+    if let Some(var_6) = &input.document_type {
+        object.key("DocumentType").string(var_6.as_str());
     }
     Ok(())
 }
@@ -97,7 +97,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::augmented_manifests_list_item_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

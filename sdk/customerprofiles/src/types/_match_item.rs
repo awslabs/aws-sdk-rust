@@ -17,8 +17,10 @@ impl MatchItem {
         self.match_id.as_deref()
     }
     /// <p>A list of identifiers for profiles that match.</p>
-    pub fn profile_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.profile_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.profile_ids.is_none()`.
+    pub fn profile_ids(&self) -> &[::std::string::String] {
+        self.profile_ids.as_deref().unwrap_or_default()
     }
     /// <p>A number between 0 and 1, where a higher score means higher similarity. Examining match confidence scores lets you distinguish between groups of similar records in which the system is highly confident (which you may decide to merge), groups of similar records about which the system is uncertain (which you may decide to have reviewed by a human), and groups of similar records that the system deems to be unlikely (which you may decide to reject). Given confidence scores vary as per the data input, it should not be used an absolute measure of matching quality.</p>
     pub fn confidence_score(&self) -> ::std::option::Option<f64> {

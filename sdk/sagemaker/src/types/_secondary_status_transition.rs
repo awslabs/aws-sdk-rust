@@ -273,6 +273,7 @@ impl SecondaryStatusTransitionBuilder {
     /// <li> <p> <code>PreparingTrainingStack</code> </p> </li>
     /// <li> <p> <code>DownloadingTrainingImage</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::SecondaryStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -393,6 +394,7 @@ impl SecondaryStatusTransitionBuilder {
         &self.status
     }
     /// <p>A timestamp that shows when the training job transitioned to the current secondary status state.</p>
+    /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self

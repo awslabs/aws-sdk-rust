@@ -32,8 +32,10 @@ impl AttackDetail {
         self.resource_arn.as_deref()
     }
     /// <p>If applicable, additional detail about the resource being attacked, for example, IP address or URL.</p>
-    pub fn sub_resources(&self) -> ::std::option::Option<&[crate::types::SubResourceSummary]> {
-        self.sub_resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sub_resources.is_none()`.
+    pub fn sub_resources(&self) -> &[crate::types::SubResourceSummary] {
+        self.sub_resources.as_deref().unwrap_or_default()
     }
     /// <p>The time the attack started, in Unix time in seconds. </p>
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -44,17 +46,23 @@ impl AttackDetail {
         self.end_time.as_ref()
     }
     /// <p>List of counters that describe the attack for the specified time period.</p>
-    pub fn attack_counters(&self) -> ::std::option::Option<&[crate::types::SummarizedCounter]> {
-        self.attack_counters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attack_counters.is_none()`.
+    pub fn attack_counters(&self) -> &[crate::types::SummarizedCounter] {
+        self.attack_counters.as_deref().unwrap_or_default()
     }
     /// <p>The array of objects that provide details of the Shield event. </p>
     /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
-    pub fn attack_properties(&self) -> ::std::option::Option<&[crate::types::AttackProperty]> {
-        self.attack_properties.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attack_properties.is_none()`.
+    pub fn attack_properties(&self) -> &[crate::types::AttackProperty] {
+        self.attack_properties.as_deref().unwrap_or_default()
     }
     /// <p>List of mitigation actions taken for the attack.</p>
-    pub fn mitigations(&self) -> ::std::option::Option<&[crate::types::Mitigation]> {
-        self.mitigations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mitigations.is_none()`.
+    pub fn mitigations(&self) -> &[crate::types::Mitigation] {
+        self.mitigations.as_deref().unwrap_or_default()
     }
 }
 impl AttackDetail {

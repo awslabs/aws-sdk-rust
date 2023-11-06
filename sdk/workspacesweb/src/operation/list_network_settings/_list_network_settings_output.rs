@@ -11,8 +11,10 @@ pub struct ListNetworkSettingsOutput {
 }
 impl ListNetworkSettingsOutput {
     /// <p>The network settings.</p>
-    pub fn network_settings(&self) -> ::std::option::Option<&[crate::types::NetworkSettingsSummary]> {
-        self.network_settings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_settings.is_none()`.
+    pub fn network_settings(&self) -> &[crate::types::NetworkSettingsSummary] {
+        self.network_settings.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -74,8 +74,10 @@ impl AssociationVersionInfo {
         self.parameters.as_ref()
     }
     /// <p>The targets specified for the association when the association version was created. </p>
-    pub fn targets(&self) -> ::std::option::Option<&[crate::types::Target]> {
-        self.targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
+    pub fn targets(&self) -> &[crate::types::Target] {
+        self.targets.as_deref().unwrap_or_default()
     }
     /// <p>The cron or rate schedule specified for the association when the association version was created.</p>
     pub fn schedule_expression(&self) -> ::std::option::Option<&str> {
@@ -114,22 +116,26 @@ impl AssociationVersionInfo {
         self.apply_only_at_cron_interval
     }
     /// <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type documents your associations are gated under. The associations for this version only run when that Change Calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change Calendar</a>.</p>
-    pub fn calendar_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.calendar_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.calendar_names.is_none()`.
+    pub fn calendar_names(&self) -> &[::std::string::String] {
+        self.calendar_names.as_deref().unwrap_or_default()
     }
     /// <p>The combination of Amazon Web Services Regions and Amazon Web Services accounts where you wanted to run the association when this association version was created.</p>
-    pub fn target_locations(&self) -> ::std::option::Option<&[crate::types::TargetLocation]> {
-        self.target_locations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_locations.is_none()`.
+    pub fn target_locations(&self) -> &[crate::types::TargetLocation] {
+        self.target_locations.as_deref().unwrap_or_default()
     }
     /// <p>Number of days to wait after the scheduled day to run an association.</p>
     pub fn schedule_offset(&self) -> ::std::option::Option<i32> {
         self.schedule_offset
     }
     /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
-    pub fn target_maps(
-        &self,
-    ) -> ::std::option::Option<&[::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>]> {
-        self.target_maps.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_maps.is_none()`.
+    pub fn target_maps(&self) -> &[::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>] {
+        self.target_maps.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for AssociationVersionInfo {

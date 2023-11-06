@@ -9,18 +9,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegexPatternSetUpdate {
     /// <p>Specifies whether to insert or delete a <code>RegexPatternString</code>.</p>
-    pub action: ::std::option::Option<crate::types::ChangeAction>,
+    pub action: crate::types::ChangeAction,
     /// <p>Specifies the regular expression (regex) pattern that you want AWS WAF to search for, such as <code>B[a@]dB[o0]t</code>.</p>
-    pub regex_pattern_string: ::std::option::Option<::std::string::String>,
+    pub regex_pattern_string: ::std::string::String,
 }
 impl RegexPatternSetUpdate {
     /// <p>Specifies whether to insert or delete a <code>RegexPatternString</code>.</p>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::ChangeAction> {
-        self.action.as_ref()
+    pub fn action(&self) -> &crate::types::ChangeAction {
+        &self.action
     }
     /// <p>Specifies the regular expression (regex) pattern that you want AWS WAF to search for, such as <code>B[a@]dB[o0]t</code>.</p>
-    pub fn regex_pattern_string(&self) -> ::std::option::Option<&str> {
-        self.regex_pattern_string.as_deref()
+    pub fn regex_pattern_string(&self) -> &str {
+        use std::ops::Deref;
+        self.regex_pattern_string.deref()
     }
 }
 impl RegexPatternSetUpdate {
@@ -39,6 +40,7 @@ pub struct RegexPatternSetUpdateBuilder {
 }
 impl RegexPatternSetUpdateBuilder {
     /// <p>Specifies whether to insert or delete a <code>RegexPatternString</code>.</p>
+    /// This field is required.
     pub fn action(mut self, input: crate::types::ChangeAction) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
@@ -53,6 +55,7 @@ impl RegexPatternSetUpdateBuilder {
         &self.action
     }
     /// <p>Specifies the regular expression (regex) pattern that you want AWS WAF to search for, such as <code>B[a@]dB[o0]t</code>.</p>
+    /// This field is required.
     pub fn regex_pattern_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.regex_pattern_string = ::std::option::Option::Some(input.into());
         self
@@ -67,10 +70,23 @@ impl RegexPatternSetUpdateBuilder {
         &self.regex_pattern_string
     }
     /// Consumes the builder and constructs a [`RegexPatternSetUpdate`](crate::types::RegexPatternSetUpdate).
-    pub fn build(self) -> crate::types::RegexPatternSetUpdate {
-        crate::types::RegexPatternSetUpdate {
-            action: self.action,
-            regex_pattern_string: self.regex_pattern_string,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`action`](crate::types::builders::RegexPatternSetUpdateBuilder::action)
+    /// - [`regex_pattern_string`](crate::types::builders::RegexPatternSetUpdateBuilder::regex_pattern_string)
+    pub fn build(self) -> ::std::result::Result<crate::types::RegexPatternSetUpdate, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RegexPatternSetUpdate {
+            action: self.action.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "action",
+                    "action was not specified but it is required when building RegexPatternSetUpdate",
+                )
+            })?,
+            regex_pattern_string: self.regex_pattern_string.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "regex_pattern_string",
+                    "regex_pattern_string was not specified but it is required when building RegexPatternSetUpdate",
+                )
+            })?,
+        })
     }
 }

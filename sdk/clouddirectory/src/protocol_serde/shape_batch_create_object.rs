@@ -2,42 +2,42 @@
 pub fn ser_batch_create_object(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BatchCreateObject,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.schema_facet {
-        let mut array_2 = object.key("SchemaFacet").start_array();
-        for item_3 in var_1 {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        let mut array_1 = object.key("SchemaFacet").start_array();
+        for item_2 in &input.schema_facet {
             {
                 #[allow(unused_mut)]
-                let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_schema_facet::ser_schema_facet(&mut object_4, item_3)?;
-                object_4.finish();
+                let mut object_3 = array_1.value().start_object();
+                crate::protocol_serde::shape_schema_facet::ser_schema_facet(&mut object_3, item_2)?;
+                object_3.finish();
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
-    if let Some(var_5) = &input.object_attribute_list {
-        let mut array_6 = object.key("ObjectAttributeList").start_array();
-        for item_7 in var_5 {
+    {
+        let mut array_4 = object.key("ObjectAttributeList").start_array();
+        for item_5 in &input.object_attribute_list {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_attribute_key_and_value::ser_attribute_key_and_value(&mut object_8, item_7)?;
-                object_8.finish();
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_attribute_key_and_value::ser_attribute_key_and_value(&mut object_6, item_5)?;
+                object_6.finish();
             }
         }
-        array_6.finish();
+        array_4.finish();
     }
-    if let Some(var_9) = &input.parent_reference {
+    if let Some(var_7) = &input.parent_reference {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("ParentReference").start_object();
-        crate::protocol_serde::shape_object_reference::ser_object_reference(&mut object_10, var_9)?;
-        object_10.finish();
+        let mut object_8 = object.key("ParentReference").start_object();
+        crate::protocol_serde::shape_object_reference::ser_object_reference(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_11) = &input.link_name {
-        object.key("LinkName").string(var_11.as_str());
+    if let Some(var_9) = &input.link_name {
+        object.key("LinkName").string(var_9.as_str());
     }
-    if let Some(var_12) = &input.batch_reference_name {
-        object.key("BatchReferenceName").string(var_12.as_str());
+    if let Some(var_10) = &input.batch_reference_name {
+        object.key("BatchReferenceName").string(var_10.as_str());
     }
     Ok(())
 }

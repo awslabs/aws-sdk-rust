@@ -15,8 +15,10 @@ impl ResourceTag {
         self.resource_id.as_deref()
     }
     /// <p>A list of tags.</p>
-    pub fn tags_list(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags_list.is_none()`.
+    pub fn tags_list(&self) -> &[crate::types::Tag] {
+        self.tags_list.as_deref().unwrap_or_default()
     }
 }
 impl ResourceTag {

@@ -27,6 +27,7 @@ pub struct DeleteCollaborationInputBuilder {
 }
 impl DeleteCollaborationInputBuilder {
     /// <p>The identifier for the collaboration.</p>
+    /// This field is required.
     pub fn collaboration_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collaboration_identifier = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteCollaborationInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCollaborationInput`](crate::operation::delete_collaboration::DeleteCollaborationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_collaboration::DeleteCollaborationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_collaboration::DeleteCollaborationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_collaboration::DeleteCollaborationInput {
             collaboration_identifier: self.collaboration_identifier,

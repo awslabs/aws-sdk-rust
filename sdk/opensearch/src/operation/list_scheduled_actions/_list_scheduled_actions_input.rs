@@ -41,6 +41,7 @@ pub struct ListScheduledActionsInputBuilder {
 }
 impl ListScheduledActionsInputBuilder {
     /// <p>The name of the domain.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl ListScheduledActionsInputBuilder {
     /// Consumes the builder and constructs a [`ListScheduledActionsInput`](crate::operation::list_scheduled_actions::ListScheduledActionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_scheduled_actions::ListScheduledActionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_scheduled_actions::ListScheduledActionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_scheduled_actions::ListScheduledActionsInput {
             domain_name: self.domain_name,

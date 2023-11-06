@@ -14,8 +14,10 @@ impl ConfigureLogsForChannelInput {
         self.channel_name.as_deref()
     }
     /// <p>The types of logs to collect.</p>
-    pub fn log_types(&self) -> ::std::option::Option<&[crate::types::LogType]> {
-        self.log_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_types.is_none()`.
+    pub fn log_types(&self) -> &[crate::types::LogType] {
+        self.log_types.as_deref().unwrap_or_default()
     }
 }
 impl ConfigureLogsForChannelInput {
@@ -34,6 +36,7 @@ pub struct ConfigureLogsForChannelInputBuilder {
 }
 impl ConfigureLogsForChannelInputBuilder {
     /// <p>The name of the channel.</p>
+    /// This field is required.
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_name = ::std::option::Option::Some(input.into());
         self
@@ -72,7 +75,7 @@ impl ConfigureLogsForChannelInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::configure_logs_for_channel::ConfigureLogsForChannelInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::configure_logs_for_channel::ConfigureLogsForChannelInput {
             channel_name: self.channel_name,

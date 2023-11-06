@@ -104,7 +104,9 @@ impl ListAdaptersInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListAdaptersInput`](crate::operation::list_adapters::ListAdaptersInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_adapters::ListAdaptersInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_adapters::ListAdaptersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_adapters::ListAdaptersInput {
             after_creation_time: self.after_creation_time,
             before_creation_time: self.before_creation_time,

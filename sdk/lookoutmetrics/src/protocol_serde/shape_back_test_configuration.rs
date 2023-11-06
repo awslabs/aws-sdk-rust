@@ -2,9 +2,9 @@
 pub fn ser_back_test_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BackTestConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.run_back_test_mode {
-        object.key("RunBackTestMode").boolean(*var_1);
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("RunBackTestMode").boolean(input.run_back_test_mode);
     }
     Ok(())
 }
@@ -37,7 +37,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::back_test_configuration_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -5,15 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AssetItem {
     /// <p>The identifier of the Amazon DataZone domain in which the inventory asset exists.</p>
-    pub domain_id: ::std::option::Option<::std::string::String>,
+    pub domain_id: ::std::string::String,
     /// <p>the identifier of the Amazon DataZone inventory asset.</p>
-    pub identifier: ::std::option::Option<::std::string::String>,
+    pub identifier: ::std::string::String,
     /// <p>The name of the Amazon DataZone inventory asset.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The identifier of the asset type of the specified Amazon DataZone inventory asset.</p>
-    pub type_identifier: ::std::option::Option<::std::string::String>,
+    pub type_identifier: ::std::string::String,
     /// <p>The revision of the inventory asset type.</p>
-    pub type_revision: ::std::option::Option<::std::string::String>,
+    pub type_revision: ::std::string::String,
     /// <p>The external identifier of the Amazon DataZone inventory asset.</p>
     pub external_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The description of an Amazon DataZone inventory asset.</p>
@@ -29,30 +29,35 @@ pub struct AssetItem {
     /// <p>The glossary terms attached to the Amazon DataZone inventory asset.</p>
     pub glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The identifier of the Amazon DataZone project that owns the inventory asset.</p>
-    pub owning_project_id: ::std::option::Option<::std::string::String>,
+    pub owning_project_id: ::std::string::String,
     /// <p>The additional attributes of a Amazon DataZone inventory asset. </p>
     pub additional_attributes: ::std::option::Option<crate::types::AssetItemAdditionalAttributes>,
 }
 impl AssetItem {
     /// <p>The identifier of the Amazon DataZone domain in which the inventory asset exists.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
-        self.domain_id.as_deref()
+    pub fn domain_id(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_id.deref()
     }
     /// <p>the identifier of the Amazon DataZone inventory asset.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
-        self.identifier.as_deref()
+    pub fn identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.identifier.deref()
     }
     /// <p>The name of the Amazon DataZone inventory asset.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The identifier of the asset type of the specified Amazon DataZone inventory asset.</p>
-    pub fn type_identifier(&self) -> ::std::option::Option<&str> {
-        self.type_identifier.as_deref()
+    pub fn type_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.type_identifier.deref()
     }
     /// <p>The revision of the inventory asset type.</p>
-    pub fn type_revision(&self) -> ::std::option::Option<&str> {
-        self.type_revision.as_deref()
+    pub fn type_revision(&self) -> &str {
+        use std::ops::Deref;
+        self.type_revision.deref()
     }
     /// <p>The external identifier of the Amazon DataZone inventory asset.</p>
     pub fn external_identifier(&self) -> ::std::option::Option<&str> {
@@ -79,12 +84,15 @@ impl AssetItem {
         self.first_revision_created_by.as_deref()
     }
     /// <p>The glossary terms attached to the Amazon DataZone inventory asset.</p>
-    pub fn glossary_terms(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.glossary_terms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.glossary_terms.is_none()`.
+    pub fn glossary_terms(&self) -> &[::std::string::String] {
+        self.glossary_terms.as_deref().unwrap_or_default()
     }
     /// <p>The identifier of the Amazon DataZone project that owns the inventory asset.</p>
-    pub fn owning_project_id(&self) -> ::std::option::Option<&str> {
-        self.owning_project_id.as_deref()
+    pub fn owning_project_id(&self) -> &str {
+        use std::ops::Deref;
+        self.owning_project_id.deref()
     }
     /// <p>The additional attributes of a Amazon DataZone inventory asset. </p>
     pub fn additional_attributes(&self) -> ::std::option::Option<&crate::types::AssetItemAdditionalAttributes> {
@@ -139,6 +147,7 @@ pub struct AssetItemBuilder {
 }
 impl AssetItemBuilder {
     /// <p>The identifier of the Amazon DataZone domain in which the inventory asset exists.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -153,6 +162,7 @@ impl AssetItemBuilder {
         &self.domain_id
     }
     /// <p>the identifier of the Amazon DataZone inventory asset.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -167,6 +177,7 @@ impl AssetItemBuilder {
         &self.identifier
     }
     /// <p>The name of the Amazon DataZone inventory asset.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -181,6 +192,7 @@ impl AssetItemBuilder {
         &self.name
     }
     /// <p>The identifier of the asset type of the specified Amazon DataZone inventory asset.</p>
+    /// This field is required.
     pub fn type_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_identifier = ::std::option::Option::Some(input.into());
         self
@@ -195,6 +207,7 @@ impl AssetItemBuilder {
         &self.type_identifier
     }
     /// <p>The revision of the inventory asset type.</p>
+    /// This field is required.
     pub fn type_revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_revision = ::std::option::Option::Some(input.into());
         self
@@ -313,6 +326,7 @@ impl AssetItemBuilder {
         &self.glossary_terms
     }
     /// <p>The identifier of the Amazon DataZone project that owns the inventory asset.</p>
+    /// This field is required.
     pub fn owning_project_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owning_project_id = ::std::option::Option::Some(input.into());
         self
@@ -341,13 +355,45 @@ impl AssetItemBuilder {
         &self.additional_attributes
     }
     /// Consumes the builder and constructs a [`AssetItem`](crate::types::AssetItem).
-    pub fn build(self) -> crate::types::AssetItem {
-        crate::types::AssetItem {
-            domain_id: self.domain_id,
-            identifier: self.identifier,
-            name: self.name,
-            type_identifier: self.type_identifier,
-            type_revision: self.type_revision,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`domain_id`](crate::types::builders::AssetItemBuilder::domain_id)
+    /// - [`identifier`](crate::types::builders::AssetItemBuilder::identifier)
+    /// - [`name`](crate::types::builders::AssetItemBuilder::name)
+    /// - [`type_identifier`](crate::types::builders::AssetItemBuilder::type_identifier)
+    /// - [`type_revision`](crate::types::builders::AssetItemBuilder::type_revision)
+    /// - [`owning_project_id`](crate::types::builders::AssetItemBuilder::owning_project_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::AssetItem, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AssetItem {
+            domain_id: self.domain_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "domain_id",
+                    "domain_id was not specified but it is required when building AssetItem",
+                )
+            })?,
+            identifier: self.identifier.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "identifier",
+                    "identifier was not specified but it is required when building AssetItem",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building AssetItem",
+                )
+            })?,
+            type_identifier: self.type_identifier.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "type_identifier",
+                    "type_identifier was not specified but it is required when building AssetItem",
+                )
+            })?,
+            type_revision: self.type_revision.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "type_revision",
+                    "type_revision was not specified but it is required when building AssetItem",
+                )
+            })?,
             external_identifier: self.external_identifier,
             description: self.description,
             created_at: self.created_at,
@@ -355,9 +401,14 @@ impl AssetItemBuilder {
             first_revision_created_at: self.first_revision_created_at,
             first_revision_created_by: self.first_revision_created_by,
             glossary_terms: self.glossary_terms,
-            owning_project_id: self.owning_project_id,
+            owning_project_id: self.owning_project_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "owning_project_id",
+                    "owning_project_id was not specified but it is required when building AssetItem",
+                )
+            })?,
             additional_attributes: self.additional_attributes,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for AssetItemBuilder {

@@ -50,8 +50,10 @@ impl CreateLinkInput {
         self.site_id.as_deref()
     }
     /// <p>The tags to apply to the resource during creation.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateLinkInput {
@@ -75,6 +77,7 @@ pub struct CreateLinkInputBuilder {
 }
 impl CreateLinkInputBuilder {
     /// <p>The ID of the global network.</p>
+    /// This field is required.
     pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_network_id = ::std::option::Option::Some(input.into());
         self
@@ -123,6 +126,7 @@ impl CreateLinkInputBuilder {
         &self.r#type
     }
     /// <p> The upload speed and download speed in Mbps. </p>
+    /// This field is required.
     pub fn bandwidth(mut self, input: crate::types::Bandwidth) -> Self {
         self.bandwidth = ::std::option::Option::Some(input);
         self
@@ -154,6 +158,7 @@ impl CreateLinkInputBuilder {
         &self.provider
     }
     /// <p>The ID of the site.</p>
+    /// This field is required.
     pub fn site_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.site_id = ::std::option::Option::Some(input.into());
         self
@@ -188,7 +193,7 @@ impl CreateLinkInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateLinkInput`](crate::operation::create_link::CreateLinkInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_link::CreateLinkInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_link::CreateLinkInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_link::CreateLinkInput {
             global_network_id: self.global_network_id,
             description: self.description,

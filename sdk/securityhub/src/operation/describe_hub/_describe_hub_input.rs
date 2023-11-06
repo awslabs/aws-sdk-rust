@@ -41,7 +41,7 @@ impl DescribeHubInputBuilder {
         &self.hub_arn
     }
     /// Consumes the builder and constructs a [`DescribeHubInput`](crate::operation::describe_hub::DescribeHubInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_hub::DescribeHubInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_hub::DescribeHubInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_hub::DescribeHubInput { hub_arn: self.hub_arn })
     }
 }

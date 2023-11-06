@@ -16,8 +16,10 @@ impl DescribeReservedCacheNodesOutput {
         self.marker.as_deref()
     }
     /// <p>A list of reserved cache nodes. Each element in the list contains detailed information about one node.</p>
-    pub fn reserved_cache_nodes(&self) -> ::std::option::Option<&[crate::types::ReservedCacheNode]> {
-        self.reserved_cache_nodes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reserved_cache_nodes.is_none()`.
+    pub fn reserved_cache_nodes(&self) -> &[crate::types::ReservedCacheNode] {
+        self.reserved_cache_nodes.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeReservedCacheNodesOutput {

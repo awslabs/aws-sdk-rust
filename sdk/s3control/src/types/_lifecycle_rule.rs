@@ -11,7 +11,7 @@ pub struct LifecycleRule {
     /// <p>The container for the filter of lifecycle rule.</p>
     pub filter: ::std::option::Option<crate::types::LifecycleRuleFilter>,
     /// <p>If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is not currently being applied.</p>
-    pub status: ::std::option::Option<crate::types::ExpirationStatus>,
+    pub status: crate::types::ExpirationStatus,
     /// <p>Specifies when an Amazon S3 object transitions to a specified storage class.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
@@ -39,20 +39,24 @@ impl LifecycleRule {
         self.filter.as_ref()
     }
     /// <p>If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is not currently being applied.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ExpirationStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::ExpirationStatus {
+        &self.status
     }
     /// <p>Specifies when an Amazon S3 object transitions to a specified storage class.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
-    pub fn transitions(&self) -> ::std::option::Option<&[crate::types::Transition]> {
-        self.transitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.transitions.is_none()`.
+    pub fn transitions(&self) -> &[crate::types::Transition] {
+        self.transitions.as_deref().unwrap_or_default()
     }
     /// <p> Specifies the transition rule for the lifecycle rule that describes when noncurrent objects transition to a specific storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to a specific storage class at a set period in the object's lifetime. </p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
-    pub fn noncurrent_version_transitions(&self) -> ::std::option::Option<&[crate::types::NoncurrentVersionTransition]> {
-        self.noncurrent_version_transitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.noncurrent_version_transitions.is_none()`.
+    pub fn noncurrent_version_transitions(&self) -> &[crate::types::NoncurrentVersionTransition] {
+        self.noncurrent_version_transitions.as_deref().unwrap_or_default()
     }
     /// <p>The noncurrent version expiration of the lifecycle rule.</p>
     pub fn noncurrent_version_expiration(&self) -> ::std::option::Option<&crate::types::NoncurrentVersionExpiration> {
@@ -127,6 +131,7 @@ impl LifecycleRuleBuilder {
         &self.filter
     }
     /// <p>If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is not currently being applied.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::ExpirationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -224,16 +229,23 @@ impl LifecycleRuleBuilder {
         &self.abort_incomplete_multipart_upload
     }
     /// Consumes the builder and constructs a [`LifecycleRule`](crate::types::LifecycleRule).
-    pub fn build(self) -> crate::types::LifecycleRule {
-        crate::types::LifecycleRule {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::types::builders::LifecycleRuleBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::LifecycleRule, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::LifecycleRule {
             expiration: self.expiration,
             id: self.id,
             filter: self.filter,
-            status: self.status,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building LifecycleRule",
+                )
+            })?,
             transitions: self.transitions,
             noncurrent_version_transitions: self.noncurrent_version_transitions,
             noncurrent_version_expiration: self.noncurrent_version_expiration,
             abort_incomplete_multipart_upload: self.abort_incomplete_multipart_upload,
-        }
+        })
     }
 }

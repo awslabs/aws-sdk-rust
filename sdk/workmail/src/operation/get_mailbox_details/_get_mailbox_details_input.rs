@@ -46,6 +46,7 @@ pub struct GetMailboxDetailsInputBuilder {
 }
 impl GetMailboxDetailsInputBuilder {
     /// <p>The identifier for the organization that contains the user whose mailbox details are being requested.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -66,6 +67,7 @@ impl GetMailboxDetailsInputBuilder {
     /// <li> <p>Email address: user@domain.tld</p> </li>
     /// <li> <p>User name: user</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
@@ -94,7 +96,7 @@ impl GetMailboxDetailsInputBuilder {
     /// Consumes the builder and constructs a [`GetMailboxDetailsInput`](crate::operation::get_mailbox_details::GetMailboxDetailsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_mailbox_details::GetMailboxDetailsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_mailbox_details::GetMailboxDetailsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_mailbox_details::GetMailboxDetailsInput {
             organization_id: self.organization_id,
             user_id: self.user_id,

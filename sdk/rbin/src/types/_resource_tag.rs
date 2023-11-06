@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceTag {
     /// <p>The tag key.</p>
-    pub resource_tag_key: ::std::option::Option<::std::string::String>,
+    pub resource_tag_key: ::std::string::String,
     /// <p>The tag value.</p>
     pub resource_tag_value: ::std::option::Option<::std::string::String>,
 }
 impl ResourceTag {
     /// <p>The tag key.</p>
-    pub fn resource_tag_key(&self) -> ::std::option::Option<&str> {
-        self.resource_tag_key.as_deref()
+    pub fn resource_tag_key(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_tag_key.deref()
     }
     /// <p>The tag value.</p>
     pub fn resource_tag_value(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct ResourceTagBuilder {
 }
 impl ResourceTagBuilder {
     /// <p>The tag key.</p>
+    /// This field is required.
     pub fn resource_tag_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_tag_key = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl ResourceTagBuilder {
         &self.resource_tag_value
     }
     /// Consumes the builder and constructs a [`ResourceTag`](crate::types::ResourceTag).
-    pub fn build(self) -> crate::types::ResourceTag {
-        crate::types::ResourceTag {
-            resource_tag_key: self.resource_tag_key,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource_tag_key`](crate::types::builders::ResourceTagBuilder::resource_tag_key)
+    pub fn build(self) -> ::std::result::Result<crate::types::ResourceTag, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ResourceTag {
+            resource_tag_key: self.resource_tag_key.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "resource_tag_key",
+                    "resource_tag_key was not specified but it is required when building ResourceTag",
+                )
+            })?,
             resource_tag_value: self.resource_tag_value,
-        }
+        })
     }
 }

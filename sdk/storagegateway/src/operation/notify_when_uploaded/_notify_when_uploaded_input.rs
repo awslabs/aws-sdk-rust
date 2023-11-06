@@ -27,6 +27,7 @@ pub struct NotifyWhenUploadedInputBuilder {
 }
 impl NotifyWhenUploadedInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the file share.</p>
+    /// This field is required.
     pub fn file_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_share_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,8 @@ impl NotifyWhenUploadedInputBuilder {
     /// Consumes the builder and constructs a [`NotifyWhenUploadedInput`](crate::operation::notify_when_uploaded::NotifyWhenUploadedInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::notify_when_uploaded::NotifyWhenUploadedInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::notify_when_uploaded::NotifyWhenUploadedInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::notify_when_uploaded::NotifyWhenUploadedInput {
             file_share_arn: self.file_share_arn,
         })

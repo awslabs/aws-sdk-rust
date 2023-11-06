@@ -27,6 +27,7 @@ pub struct DescribeForecastInputBuilder {
 }
 impl DescribeForecastInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the forecast.</p>
+    /// This field is required.
     pub fn forecast_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.forecast_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeForecastInputBuilder {
     /// Consumes the builder and constructs a [`DescribeForecastInput`](crate::operation::describe_forecast::DescribeForecastInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_forecast::DescribeForecastInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_forecast::DescribeForecastInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_forecast::DescribeForecastInput {
             forecast_arn: self.forecast_arn,
         })

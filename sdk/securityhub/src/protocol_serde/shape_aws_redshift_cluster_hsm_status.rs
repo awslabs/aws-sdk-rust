@@ -2,7 +2,7 @@
 pub fn ser_aws_redshift_cluster_hsm_status(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsRedshiftClusterHsmStatus,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.hsm_client_certificate_identifier {
         object.key("HsmClientCertificateIdentifier").string(var_1.as_str());
     }

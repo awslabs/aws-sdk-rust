@@ -14,8 +14,10 @@ impl GetMembersInput {
         self.detector_id.as_deref()
     }
     /// <p>A list of account IDs of the GuardDuty member accounts that you want to describe.</p>
-    pub fn account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.account_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
+    pub fn account_ids(&self) -> &[::std::string::String] {
+        self.account_ids.as_deref().unwrap_or_default()
     }
 }
 impl GetMembersInput {
@@ -34,6 +36,7 @@ pub struct GetMembersInputBuilder {
 }
 impl GetMembersInputBuilder {
     /// <p>The unique ID of the detector of the GuardDuty account whose members you want to retrieve.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
@@ -68,7 +71,7 @@ impl GetMembersInputBuilder {
         &self.account_ids
     }
     /// Consumes the builder and constructs a [`GetMembersInput`](crate::operation::get_members::GetMembersInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_members::GetMembersInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_members::GetMembersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_members::GetMembersInput {
             detector_id: self.detector_id,
             account_ids: self.account_ids,

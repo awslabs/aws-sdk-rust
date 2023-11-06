@@ -27,6 +27,7 @@ pub struct GetSiteToSiteVpnAttachmentInputBuilder {
 }
 impl GetSiteToSiteVpnAttachmentInputBuilder {
     /// <p>The ID of the attachment.</p>
+    /// This field is required.
     pub fn attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attachment_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetSiteToSiteVpnAttachmentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_site_to_site_vpn_attachment::GetSiteToSiteVpnAttachmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_site_to_site_vpn_attachment::GetSiteToSiteVpnAttachmentInput {
             attachment_id: self.attachment_id,

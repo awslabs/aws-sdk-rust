@@ -2,7 +2,7 @@
 pub fn ser_delete_device_usage_data_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_device_usage_data::DeleteDeviceUsageDataInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.device_arn {
         object.key("DeviceArn").string(var_1.as_str());
     }

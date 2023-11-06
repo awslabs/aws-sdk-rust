@@ -2,7 +2,7 @@
 pub fn ser_image_inserter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ImageInserter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.insertable_images {
         let mut array_2 = object.key("insertableImages").start_array();
         for item_3 in var_1 {
@@ -41,7 +41,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "insertableImages" => {
                             builder = builder.set_insertable_images(
-                                crate::protocol_serde::shape___list_of_insertable_image::de___list_of_insertable_image(tokens)?,
+                                crate::protocol_serde::shape_list_of_insertable_image::de_list_of_insertable_image(tokens)?,
                             );
                         }
                         "sdrReferenceWhiteLevel" => {

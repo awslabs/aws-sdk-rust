@@ -34,6 +34,7 @@ pub struct UpdateDocumentDefaultVersionInputBuilder {
 }
 impl UpdateDocumentDefaultVersionInputBuilder {
     /// <p>The name of a custom document that you want to set as the default version.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateDocumentDefaultVersionInputBuilder {
         &self.name
     }
     /// <p>The version of a custom document that you want to set as the default version.</p>
+    /// This field is required.
     pub fn document_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_version = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl UpdateDocumentDefaultVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_document_default_version::UpdateDocumentDefaultVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_document_default_version::UpdateDocumentDefaultVersionInput {
             name: self.name,

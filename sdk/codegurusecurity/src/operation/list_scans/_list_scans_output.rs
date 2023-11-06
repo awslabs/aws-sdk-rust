@@ -11,8 +11,10 @@ pub struct ListScansOutput {
 }
 impl ListScansOutput {
     /// <p>A list of <code>ScanSummary</code> objects with information about all scans in an account.</p>
-    pub fn summaries(&self) -> ::std::option::Option<&[crate::types::ScanSummary]> {
-        self.summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.summaries.is_none()`.
+    pub fn summaries(&self) -> &[crate::types::ScanSummary] {
+        self.summaries.as_deref().unwrap_or_default()
     }
     /// <p>A pagination token. You can use this in future calls to <code>ListScans</code> to continue listing results after the current page.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

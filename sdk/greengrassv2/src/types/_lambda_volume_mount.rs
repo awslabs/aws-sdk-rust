@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaVolumeMount {
     /// <p>The path to the physical volume in the file system.</p>
-    pub source_path: ::std::option::Option<::std::string::String>,
+    pub source_path: ::std::string::String,
     /// <p>The path to the logical volume in the file system.</p>
-    pub destination_path: ::std::option::Option<::std::string::String>,
+    pub destination_path: ::std::string::String,
     /// <p>The permission to access the volume: read/only (<code>ro</code>) or read/write (<code>rw</code>).</p>
     /// <p>Default: <code>ro</code> </p>
     pub permission: ::std::option::Option<crate::types::LambdaFilesystemPermission>,
@@ -17,12 +17,14 @@ pub struct LambdaVolumeMount {
 }
 impl LambdaVolumeMount {
     /// <p>The path to the physical volume in the file system.</p>
-    pub fn source_path(&self) -> ::std::option::Option<&str> {
-        self.source_path.as_deref()
+    pub fn source_path(&self) -> &str {
+        use std::ops::Deref;
+        self.source_path.deref()
     }
     /// <p>The path to the logical volume in the file system.</p>
-    pub fn destination_path(&self) -> ::std::option::Option<&str> {
-        self.destination_path.as_deref()
+    pub fn destination_path(&self) -> &str {
+        use std::ops::Deref;
+        self.destination_path.deref()
     }
     /// <p>The permission to access the volume: read/only (<code>ro</code>) or read/write (<code>rw</code>).</p>
     /// <p>Default: <code>ro</code> </p>
@@ -53,6 +55,7 @@ pub struct LambdaVolumeMountBuilder {
 }
 impl LambdaVolumeMountBuilder {
     /// <p>The path to the physical volume in the file system.</p>
+    /// This field is required.
     pub fn source_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_path = ::std::option::Option::Some(input.into());
         self
@@ -67,6 +70,7 @@ impl LambdaVolumeMountBuilder {
         &self.source_path
     }
     /// <p>The path to the logical volume in the file system.</p>
+    /// This field is required.
     pub fn destination_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_path = ::std::option::Option::Some(input.into());
         self
@@ -115,12 +119,25 @@ impl LambdaVolumeMountBuilder {
         &self.add_group_owner
     }
     /// Consumes the builder and constructs a [`LambdaVolumeMount`](crate::types::LambdaVolumeMount).
-    pub fn build(self) -> crate::types::LambdaVolumeMount {
-        crate::types::LambdaVolumeMount {
-            source_path: self.source_path,
-            destination_path: self.destination_path,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`source_path`](crate::types::builders::LambdaVolumeMountBuilder::source_path)
+    /// - [`destination_path`](crate::types::builders::LambdaVolumeMountBuilder::destination_path)
+    pub fn build(self) -> ::std::result::Result<crate::types::LambdaVolumeMount, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::LambdaVolumeMount {
+            source_path: self.source_path.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "source_path",
+                    "source_path was not specified but it is required when building LambdaVolumeMount",
+                )
+            })?,
+            destination_path: self.destination_path.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "destination_path",
+                    "destination_path was not specified but it is required when building LambdaVolumeMount",
+                )
+            })?,
             permission: self.permission,
             add_group_owner: self.add_group_owner,
-        }
+        })
     }
 }

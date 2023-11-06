@@ -2,7 +2,7 @@
 pub fn ser_teletext_source_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TeletextSourceSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.page_number {
         object.key("pageNumber").string(var_1.as_str());
     }

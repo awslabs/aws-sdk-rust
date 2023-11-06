@@ -13,8 +13,10 @@ pub struct ListApplicationVersionsOutput {
 impl ListApplicationVersionsOutput {
     /// <p>A list of the application versions and the associated configuration summaries. The list includes application versions that were rolled back.</p>
     /// <p>To get the complete description of a specific application version, invoke the <code>DescribeApplicationVersion</code> operation.</p>
-    pub fn application_version_summaries(&self) -> ::std::option::Option<&[crate::types::ApplicationVersionSummary]> {
-        self.application_version_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.application_version_summaries.is_none()`.
+    pub fn application_version_summaries(&self) -> &[crate::types::ApplicationVersionSummary] {
+        self.application_version_summaries.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results. To retrieve the next set of items, pass this token into a subsequent invocation of this operation. For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

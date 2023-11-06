@@ -11,8 +11,10 @@ pub struct ListTapePoolsOutput {
 }
 impl ListTapePoolsOutput {
     /// <p>An array of <code>PoolInfo</code> objects, where each object describes a single custom tape pool. If there are no custom tape pools, the <code>PoolInfos</code> is an empty array. </p>
-    pub fn pool_infos(&self) -> ::std::option::Option<&[crate::types::PoolInfo]> {
-        self.pool_infos.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pool_infos.is_none()`.
+    pub fn pool_infos(&self) -> &[crate::types::PoolInfo] {
+        self.pool_infos.as_deref().unwrap_or_default()
     }
     /// <p>A string that indicates the position at which to begin the returned list of tape pools. Use the marker in your next request to continue pagination of tape pools. If there are no more tape pools to list, this element does not appear in the response body. </p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

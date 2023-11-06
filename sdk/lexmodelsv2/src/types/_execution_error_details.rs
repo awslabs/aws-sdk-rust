@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecutionErrorDetails {
     /// <p>The error code for the error.</p>
-    pub error_code: ::std::option::Option<::std::string::String>,
+    pub error_code: ::std::string::String,
     /// <p>The message describing the error.</p>
-    pub error_message: ::std::option::Option<::std::string::String>,
+    pub error_message: ::std::string::String,
 }
 impl ExecutionErrorDetails {
     /// <p>The error code for the error.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
-        self.error_code.as_deref()
+    pub fn error_code(&self) -> &str {
+        use std::ops::Deref;
+        self.error_code.deref()
     }
     /// <p>The message describing the error.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
-        self.error_message.as_deref()
+    pub fn error_message(&self) -> &str {
+        use std::ops::Deref;
+        self.error_message.deref()
     }
 }
 impl ExecutionErrorDetails {
@@ -35,6 +37,7 @@ pub struct ExecutionErrorDetailsBuilder {
 }
 impl ExecutionErrorDetailsBuilder {
     /// <p>The error code for the error.</p>
+    /// This field is required.
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl ExecutionErrorDetailsBuilder {
         &self.error_code
     }
     /// <p>The message describing the error.</p>
+    /// This field is required.
     pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl ExecutionErrorDetailsBuilder {
         &self.error_message
     }
     /// Consumes the builder and constructs a [`ExecutionErrorDetails`](crate::types::ExecutionErrorDetails).
-    pub fn build(self) -> crate::types::ExecutionErrorDetails {
-        crate::types::ExecutionErrorDetails {
-            error_code: self.error_code,
-            error_message: self.error_message,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`error_code`](crate::types::builders::ExecutionErrorDetailsBuilder::error_code)
+    /// - [`error_message`](crate::types::builders::ExecutionErrorDetailsBuilder::error_message)
+    pub fn build(self) -> ::std::result::Result<crate::types::ExecutionErrorDetails, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ExecutionErrorDetails {
+            error_code: self.error_code.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "error_code",
+                    "error_code was not specified but it is required when building ExecutionErrorDetails",
+                )
+            })?,
+            error_message: self.error_message.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "error_message",
+                    "error_message was not specified but it is required when building ExecutionErrorDetails",
+                )
+            })?,
+        })
     }
 }

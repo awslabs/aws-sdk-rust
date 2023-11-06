@@ -10,7 +10,7 @@ impl StartDomainMaintenanceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_domain_maintenance::StartDomainMaintenanceOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::start_domain_maintenance::StartDomainMaintenanceError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -22,7 +22,7 @@ impl StartDomainMaintenanceInputBuilder {
 }
 /// Fluent builder constructing a request to `StartDomainMaintenance`.
 ///
-/// <p>Starts the node maintenance (Node restart, Node reboot, Opensearch/Elasticsearch process restart, Dashboard/kibana restart) on the data node.</p>
+/// <p>Starts the node maintenance process on the data node. These processes can include a node reboot, an Opensearch or Elasticsearch process restart, or a Dashboard or Kibana restart.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartDomainMaintenanceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -72,12 +72,15 @@ impl StartDomainMaintenanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_domain_maintenance::StartDomainMaintenanceOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::start_domain_maintenance::StartDomainMaintenanceError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::start_domain_maintenance::StartDomainMaintenance::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -86,20 +89,15 @@ impl StartDomainMaintenanceFluentBuilder {
         crate::operation::start_domain_maintenance::StartDomainMaintenance::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::start_domain_maintenance::StartDomainMaintenanceOutput,
-            crate::operation::start_domain_maintenance::StartDomainMaintenanceError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::start_domain_maintenance::StartDomainMaintenanceError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::start_domain_maintenance::StartDomainMaintenanceOutput,
+        crate::operation::start_domain_maintenance::StartDomainMaintenanceError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -138,17 +136,17 @@ impl StartDomainMaintenanceFluentBuilder {
     pub fn get_action(&self) -> &::std::option::Option<crate::types::MaintenanceType> {
         self.inner.get_action()
     }
-    /// <p>Id of the data node.</p>
+    /// <p>The ID of the data node.</p>
     pub fn node_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.node_id(input.into());
         self
     }
-    /// <p>Id of the data node.</p>
+    /// <p>The ID of the data node.</p>
     pub fn set_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_node_id(input);
         self
     }
-    /// <p>Id of the data node.</p>
+    /// <p>The ID of the data node.</p>
     pub fn get_node_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_node_id()
     }

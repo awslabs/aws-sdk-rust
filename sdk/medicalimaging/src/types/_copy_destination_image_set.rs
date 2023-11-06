@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CopyDestinationImageSet {
     /// <p>The image set identifier for the destination image set.</p>
-    pub image_set_id: ::std::option::Option<::std::string::String>,
+    pub image_set_id: ::std::string::String,
     /// <p>The latest version identifier for the destination image set.</p>
-    pub latest_version_id: ::std::option::Option<::std::string::String>,
+    pub latest_version_id: ::std::string::String,
 }
 impl CopyDestinationImageSet {
     /// <p>The image set identifier for the destination image set.</p>
-    pub fn image_set_id(&self) -> ::std::option::Option<&str> {
-        self.image_set_id.as_deref()
+    pub fn image_set_id(&self) -> &str {
+        use std::ops::Deref;
+        self.image_set_id.deref()
     }
     /// <p>The latest version identifier for the destination image set.</p>
-    pub fn latest_version_id(&self) -> ::std::option::Option<&str> {
-        self.latest_version_id.as_deref()
+    pub fn latest_version_id(&self) -> &str {
+        use std::ops::Deref;
+        self.latest_version_id.deref()
     }
 }
 impl CopyDestinationImageSet {
@@ -35,6 +37,7 @@ pub struct CopyDestinationImageSetBuilder {
 }
 impl CopyDestinationImageSetBuilder {
     /// <p>The image set identifier for the destination image set.</p>
+    /// This field is required.
     pub fn image_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_set_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl CopyDestinationImageSetBuilder {
         &self.image_set_id
     }
     /// <p>The latest version identifier for the destination image set.</p>
+    /// This field is required.
     pub fn latest_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.latest_version_id = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl CopyDestinationImageSetBuilder {
         &self.latest_version_id
     }
     /// Consumes the builder and constructs a [`CopyDestinationImageSet`](crate::types::CopyDestinationImageSet).
-    pub fn build(self) -> crate::types::CopyDestinationImageSet {
-        crate::types::CopyDestinationImageSet {
-            image_set_id: self.image_set_id,
-            latest_version_id: self.latest_version_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`image_set_id`](crate::types::builders::CopyDestinationImageSetBuilder::image_set_id)
+    /// - [`latest_version_id`](crate::types::builders::CopyDestinationImageSetBuilder::latest_version_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::CopyDestinationImageSet, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CopyDestinationImageSet {
+            image_set_id: self.image_set_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "image_set_id",
+                    "image_set_id was not specified but it is required when building CopyDestinationImageSet",
+                )
+            })?,
+            latest_version_id: self.latest_version_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "latest_version_id",
+                    "latest_version_id was not specified but it is required when building CopyDestinationImageSet",
+                )
+            })?,
+        })
     }
 }

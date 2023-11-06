@@ -19,26 +19,36 @@ pub struct InferenceSpecification {
 }
 impl InferenceSpecification {
     /// <p>The Amazon ECR registry path of the Docker image that contains the inference code.</p>
-    pub fn containers(&self) -> ::std::option::Option<&[crate::types::ModelPackageContainerDefinition]> {
-        self.containers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.containers.is_none()`.
+    pub fn containers(&self) -> &[crate::types::ModelPackageContainerDefinition] {
+        self.containers.as_deref().unwrap_or_default()
     }
     /// <p>A list of the instance types on which a transformation job can be run or on which an endpoint can be deployed.</p>
     /// <p>This parameter is required for unversioned models, and optional for versioned models.</p>
-    pub fn supported_transform_instance_types(&self) -> ::std::option::Option<&[crate::types::TransformInstanceType]> {
-        self.supported_transform_instance_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_transform_instance_types.is_none()`.
+    pub fn supported_transform_instance_types(&self) -> &[crate::types::TransformInstanceType] {
+        self.supported_transform_instance_types.as_deref().unwrap_or_default()
     }
     /// <p>A list of the instance types that are used to generate inferences in real-time.</p>
     /// <p>This parameter is required for unversioned models, and optional for versioned models.</p>
-    pub fn supported_realtime_inference_instance_types(&self) -> ::std::option::Option<&[crate::types::ProductionVariantInstanceType]> {
-        self.supported_realtime_inference_instance_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_realtime_inference_instance_types.is_none()`.
+    pub fn supported_realtime_inference_instance_types(&self) -> &[crate::types::ProductionVariantInstanceType] {
+        self.supported_realtime_inference_instance_types.as_deref().unwrap_or_default()
     }
     /// <p>The supported MIME types for the input data.</p>
-    pub fn supported_content_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.supported_content_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_content_types.is_none()`.
+    pub fn supported_content_types(&self) -> &[::std::string::String] {
+        self.supported_content_types.as_deref().unwrap_or_default()
     }
     /// <p>The supported MIME types for the output data.</p>
-    pub fn supported_response_mime_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.supported_response_mime_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_response_mime_types.is_none()`.
+    pub fn supported_response_mime_types(&self) -> &[::std::string::String] {
+        self.supported_response_mime_types.as_deref().unwrap_or_default()
     }
 }
 impl InferenceSpecification {

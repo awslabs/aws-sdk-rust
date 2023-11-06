@@ -16,8 +16,10 @@ impl UpdateContactListInput {
         self.contact_list_name.as_deref()
     }
     /// <p>An interest group, theme, or label within a list. A contact list can have multiple topics.</p>
-    pub fn topics(&self) -> ::std::option::Option<&[crate::types::Topic]> {
-        self.topics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.topics.is_none()`.
+    pub fn topics(&self) -> &[crate::types::Topic] {
+        self.topics.as_deref().unwrap_or_default()
     }
     /// <p>A description of what the contact list is about.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -41,6 +43,7 @@ pub struct UpdateContactListInputBuilder {
 }
 impl UpdateContactListInputBuilder {
     /// <p>The name of the contact list.</p>
+    /// This field is required.
     pub fn contact_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_list_name = ::std::option::Option::Some(input.into());
         self
@@ -91,7 +94,7 @@ impl UpdateContactListInputBuilder {
     /// Consumes the builder and constructs a [`UpdateContactListInput`](crate::operation::update_contact_list::UpdateContactListInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_contact_list::UpdateContactListInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_contact_list::UpdateContactListInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_contact_list::UpdateContactListInput {
             contact_list_name: self.contact_list_name,
             topics: self.topics,

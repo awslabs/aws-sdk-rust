@@ -56,6 +56,7 @@ pub struct AutoScalingBuilder {
 }
 impl AutoScalingBuilder {
     /// <p>The maximum number of workers allocated to the connector.</p>
+    /// This field is required.
     pub fn max_worker_count(mut self, input: i32) -> Self {
         self.max_worker_count = ::std::option::Option::Some(input);
         self
@@ -70,6 +71,7 @@ impl AutoScalingBuilder {
         &self.max_worker_count
     }
     /// <p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>
+    /// This field is required.
     pub fn mcu_count(mut self, input: i32) -> Self {
         self.mcu_count = ::std::option::Option::Some(input);
         self
@@ -84,6 +86,7 @@ impl AutoScalingBuilder {
         &self.mcu_count
     }
     /// <p>The minimum number of workers allocated to the connector.</p>
+    /// This field is required.
     pub fn min_worker_count(mut self, input: i32) -> Self {
         self.min_worker_count = ::std::option::Option::Some(input);
         self

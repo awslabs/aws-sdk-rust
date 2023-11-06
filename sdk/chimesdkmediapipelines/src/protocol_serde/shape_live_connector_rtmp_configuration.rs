@@ -2,15 +2,15 @@
 pub fn ser_live_connector_rtmp_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LiveConnectorRtmpConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.url {
-        object.key("Url").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Url").string(input.url.as_str());
     }
-    if let Some(var_2) = &input.audio_channels {
-        object.key("AudioChannels").string(var_2.as_str());
+    if let Some(var_1) = &input.audio_channels {
+        object.key("AudioChannels").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.audio_sample_rate {
-        object.key("AudioSampleRate").string(var_3.as_str());
+    if let Some(var_2) = &input.audio_sample_rate {
+        object.key("AudioSampleRate").string(var_2.as_str());
     }
     Ok(())
 }
@@ -61,7 +61,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::live_connector_rtmp_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

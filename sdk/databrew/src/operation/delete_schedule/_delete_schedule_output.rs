@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteScheduleOutput {
     /// <p>The name of the schedule that was deleted.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     _request_id: Option<String>,
 }
 impl DeleteScheduleOutput {
     /// <p>The name of the schedule that was deleted.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteScheduleOutput {
@@ -34,6 +35,7 @@ pub struct DeleteScheduleOutputBuilder {
 }
 impl DeleteScheduleOutputBuilder {
     /// <p>The name of the schedule that was deleted.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,19 @@ impl DeleteScheduleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteScheduleOutput`](crate::operation::delete_schedule::DeleteScheduleOutput).
-    pub fn build(self) -> crate::operation::delete_schedule::DeleteScheduleOutput {
-        crate::operation::delete_schedule::DeleteScheduleOutput {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::delete_schedule::builders::DeleteScheduleOutputBuilder::name)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_schedule::DeleteScheduleOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_schedule::DeleteScheduleOutput {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DeleteScheduleOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

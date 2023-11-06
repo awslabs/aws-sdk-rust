@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSourceErrorMessage {
     /// <p>The type of the error message that is returned if the operation cannot be successfully completed.</p>
-    pub error_type: ::std::option::Option<crate::types::DataSourceErrorType>,
+    pub error_type: crate::types::DataSourceErrorType,
     /// <p>The details of the error message that is returned if the operation cannot be successfully completed.</p>
     pub error_detail: ::std::option::Option<::std::string::String>,
 }
 impl DataSourceErrorMessage {
     /// <p>The type of the error message that is returned if the operation cannot be successfully completed.</p>
-    pub fn error_type(&self) -> ::std::option::Option<&crate::types::DataSourceErrorType> {
-        self.error_type.as_ref()
+    pub fn error_type(&self) -> &crate::types::DataSourceErrorType {
+        &self.error_type
     }
     /// <p>The details of the error message that is returned if the operation cannot be successfully completed.</p>
     pub fn error_detail(&self) -> ::std::option::Option<&str> {
@@ -35,6 +35,7 @@ pub struct DataSourceErrorMessageBuilder {
 }
 impl DataSourceErrorMessageBuilder {
     /// <p>The type of the error message that is returned if the operation cannot be successfully completed.</p>
+    /// This field is required.
     pub fn error_type(mut self, input: crate::types::DataSourceErrorType) -> Self {
         self.error_type = ::std::option::Option::Some(input);
         self
@@ -63,10 +64,17 @@ impl DataSourceErrorMessageBuilder {
         &self.error_detail
     }
     /// Consumes the builder and constructs a [`DataSourceErrorMessage`](crate::types::DataSourceErrorMessage).
-    pub fn build(self) -> crate::types::DataSourceErrorMessage {
-        crate::types::DataSourceErrorMessage {
-            error_type: self.error_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`error_type`](crate::types::builders::DataSourceErrorMessageBuilder::error_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::DataSourceErrorMessage, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DataSourceErrorMessage {
+            error_type: self.error_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "error_type",
+                    "error_type was not specified but it is required when building DataSourceErrorMessage",
+                )
+            })?,
             error_detail: self.error_detail,
-        }
+        })
     }
 }

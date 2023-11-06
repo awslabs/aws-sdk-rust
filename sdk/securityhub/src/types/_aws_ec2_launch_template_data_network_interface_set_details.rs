@@ -66,8 +66,10 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails {
         self.device_index
     }
     /// <p> The IDs of one or more security groups. </p>
-    pub fn groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
+    pub fn groups(&self) -> &[::std::string::String] {
+        self.groups.as_deref().unwrap_or_default()
     }
     /// <p> The type of network interface. </p>
     pub fn interface_type(&self) -> ::std::option::Option<&str> {
@@ -78,24 +80,30 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails {
         self.ipv4_prefix_count
     }
     /// <p> One or more IPv4 prefixes to be assigned to the network interface. You cannot use this option if you use the <code>Ipv4PrefixCount</code> option. </p>
-    pub fn ipv4_prefixes(&self) -> ::std::option::Option<&[crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails]> {
-        self.ipv4_prefixes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv4_prefixes.is_none()`.
+    pub fn ipv4_prefixes(&self) -> &[crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails] {
+        self.ipv4_prefixes.as_deref().unwrap_or_default()
     }
     /// <p> The number of IPv6 addresses to assign to a network interface. Amazon EC2 automatically selects the IPv6 addresses from the subnet range. You can't use this option if you use <code>Ipv6Addresses</code>. </p>
     pub fn ipv6_address_count(&self) -> ::std::option::Option<i32> {
         self.ipv6_address_count
     }
     /// <p> One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this option if you use <code>Ipv6AddressCount</code>. </p>
-    pub fn ipv6_addresses(&self) -> ::std::option::Option<&[crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails]> {
-        self.ipv6_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv6_addresses.is_none()`.
+    pub fn ipv6_addresses(&self) -> &[crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails] {
+        self.ipv6_addresses.as_deref().unwrap_or_default()
     }
     /// <p> The number of IPv6 prefixes to be automatically assigned to the network interface. You cannot use this option if you use the <code>Ipv6Prefix</code> option. </p>
     pub fn ipv6_prefix_count(&self) -> ::std::option::Option<i32> {
         self.ipv6_prefix_count
     }
     /// <p> One or more IPv6 prefixes to be assigned to the network interface. You cannot use this option if you use the <code>Ipv6PrefixCount</code> option. </p>
-    pub fn ipv6_prefixes(&self) -> ::std::option::Option<&[crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails]> {
-        self.ipv6_prefixes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv6_prefixes.is_none()`.
+    pub fn ipv6_prefixes(&self) -> &[crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails] {
+        self.ipv6_prefixes.as_deref().unwrap_or_default()
     }
     /// <p> The index of the network card. Some instance types support multiple network cards. The primary network interface must be assigned to network card index <code>0</code>. The default is network card index <code>0</code>. </p>
     pub fn network_card_index(&self) -> ::std::option::Option<i32> {
@@ -110,10 +118,10 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails {
         self.private_ip_address.as_deref()
     }
     /// <p> One or more private IPv4 addresses. </p>
-    pub fn private_ip_addresses(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails]> {
-        self.private_ip_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.private_ip_addresses.is_none()`.
+    pub fn private_ip_addresses(&self) -> &[crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails] {
+        self.private_ip_addresses.as_deref().unwrap_or_default()
     }
     /// <p> The number of secondary private IPv4 addresses to assign to a network interface. </p>
     pub fn secondary_private_ip_address_count(&self) -> ::std::option::Option<i32> {

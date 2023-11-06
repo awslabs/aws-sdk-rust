@@ -69,12 +69,16 @@ impl CreateConfigurationTemplateInput {
         self.description.as_deref()
     }
     /// <p>Option values for the Elastic Beanstalk configuration, such as the instance type. If specified, these values override the values obtained from the solution stack or the source configuration template. For a complete list of Elastic Beanstalk configuration options, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option Values</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
-    pub fn option_settings(&self) -> ::std::option::Option<&[crate::types::ConfigurationOptionSetting]> {
-        self.option_settings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.option_settings.is_none()`.
+    pub fn option_settings(&self) -> &[crate::types::ConfigurationOptionSetting] {
+        self.option_settings.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the tags applied to the configuration template.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateConfigurationTemplateInput {
@@ -100,6 +104,7 @@ pub struct CreateConfigurationTemplateInputBuilder {
 }
 impl CreateConfigurationTemplateInputBuilder {
     /// <p>The name of the Elastic Beanstalk application to associate with this configuration template.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
@@ -115,6 +120,7 @@ impl CreateConfigurationTemplateInputBuilder {
     }
     /// <p>The name of the configuration template.</p>
     /// <p>Constraint: This name must be unique per application.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
@@ -266,7 +272,7 @@ impl CreateConfigurationTemplateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_configuration_template::CreateConfigurationTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_configuration_template::CreateConfigurationTemplateInput {
             application_name: self.application_name,

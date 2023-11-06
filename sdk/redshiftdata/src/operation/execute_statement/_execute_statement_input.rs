@@ -54,8 +54,10 @@ impl ExecuteStatementInput {
         self.statement_name.as_deref()
     }
     /// <p>The parameters for the SQL statement.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&[crate::types::SqlParameter]> {
-        self.parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
+    pub fn parameters(&self) -> &[crate::types::SqlParameter] {
+        self.parameters.as_deref().unwrap_or_default()
     }
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
     pub fn workgroup_name(&self) -> ::std::option::Option<&str> {
@@ -90,6 +92,7 @@ pub struct ExecuteStatementInputBuilder {
 }
 impl ExecuteStatementInputBuilder {
     /// <p>The SQL statement text to run. </p>
+    /// This field is required.
     pub fn sql(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sql = ::std::option::Option::Some(input.into());
         self
@@ -146,6 +149,7 @@ impl ExecuteStatementInputBuilder {
         &self.db_user
     }
     /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+    /// This field is required.
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database = ::std::option::Option::Some(input.into());
         self
@@ -238,7 +242,7 @@ impl ExecuteStatementInputBuilder {
     /// Consumes the builder and constructs a [`ExecuteStatementInput`](crate::operation::execute_statement::ExecuteStatementInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::execute_statement::ExecuteStatementInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::execute_statement::ExecuteStatementInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::execute_statement::ExecuteStatementInput {
             sql: self.sql,
             cluster_identifier: self.cluster_identifier,

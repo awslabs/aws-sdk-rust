@@ -28,6 +28,7 @@ pub struct CreateReceiptFilterInputBuilder {
 }
 impl CreateReceiptFilterInputBuilder {
     /// <p>A data structure that describes the IP address filter to create, which consists of a name, an IP address range, and whether to allow or block mail from it.</p>
+    /// This field is required.
     pub fn filter(mut self, input: crate::types::ReceiptFilter) -> Self {
         self.filter = ::std::option::Option::Some(input);
         self
@@ -44,7 +45,7 @@ impl CreateReceiptFilterInputBuilder {
     /// Consumes the builder and constructs a [`CreateReceiptFilterInput`](crate::operation::create_receipt_filter::CreateReceiptFilterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_receipt_filter::CreateReceiptFilterInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_receipt_filter::CreateReceiptFilterInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_receipt_filter::CreateReceiptFilterInput { filter: self.filter })
     }

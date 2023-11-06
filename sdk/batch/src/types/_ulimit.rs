@@ -44,6 +44,7 @@ pub struct UlimitBuilder {
 }
 impl UlimitBuilder {
     /// <p>The hard limit for the <code>ulimit</code> type.</p>
+    /// This field is required.
     pub fn hard_limit(mut self, input: i32) -> Self {
         self.hard_limit = ::std::option::Option::Some(input);
         self
@@ -58,6 +59,7 @@ impl UlimitBuilder {
         &self.hard_limit
     }
     /// <p>The <code>type</code> of the <code>ulimit</code>.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -72,6 +74,7 @@ impl UlimitBuilder {
         &self.name
     }
     /// <p>The soft limit for the <code>ulimit</code> type.</p>
+    /// This field is required.
     pub fn soft_limit(mut self, input: i32) -> Self {
         self.soft_limit = ::std::option::Option::Some(input);
         self

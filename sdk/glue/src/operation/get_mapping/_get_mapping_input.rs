@@ -16,8 +16,10 @@ impl GetMappingInput {
         self.source.as_ref()
     }
     /// <p>A list of target tables.</p>
-    pub fn sinks(&self) -> ::std::option::Option<&[crate::types::CatalogEntry]> {
-        self.sinks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sinks.is_none()`.
+    pub fn sinks(&self) -> &[crate::types::CatalogEntry] {
+        self.sinks.as_deref().unwrap_or_default()
     }
     /// <p>Parameters for the mapping.</p>
     pub fn location(&self) -> ::std::option::Option<&crate::types::Location> {
@@ -41,6 +43,7 @@ pub struct GetMappingInputBuilder {
 }
 impl GetMappingInputBuilder {
     /// <p>Specifies the source table.</p>
+    /// This field is required.
     pub fn source(mut self, input: crate::types::CatalogEntry) -> Self {
         self.source = ::std::option::Option::Some(input);
         self
@@ -89,7 +92,7 @@ impl GetMappingInputBuilder {
         &self.location
     }
     /// Consumes the builder and constructs a [`GetMappingInput`](crate::operation::get_mapping::GetMappingInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_mapping::GetMappingInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_mapping::GetMappingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_mapping::GetMappingInput {
             source: self.source,
             sinks: self.sinks,

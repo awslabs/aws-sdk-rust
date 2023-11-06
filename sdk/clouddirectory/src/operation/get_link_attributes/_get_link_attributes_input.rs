@@ -22,8 +22,10 @@ impl GetLinkAttributesInput {
         self.typed_link_specifier.as_ref()
     }
     /// <p>A list of attribute names whose values will be retrieved.</p>
-    pub fn attribute_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.attribute_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attribute_names.is_none()`.
+    pub fn attribute_names(&self) -> &[::std::string::String] {
+        self.attribute_names.as_deref().unwrap_or_default()
     }
     /// <p>The consistency level at which to retrieve the attributes on a typed link.</p>
     pub fn consistency_level(&self) -> ::std::option::Option<&crate::types::ConsistencyLevel> {
@@ -48,6 +50,7 @@ pub struct GetLinkAttributesInputBuilder {
 }
 impl GetLinkAttributesInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the typed link resides. For more information, see <code>arns</code> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    /// This field is required.
     pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl GetLinkAttributesInputBuilder {
         &self.directory_arn
     }
     /// <p>Allows a typed link specifier to be accepted as input.</p>
+    /// This field is required.
     pub fn typed_link_specifier(mut self, input: crate::types::TypedLinkSpecifier) -> Self {
         self.typed_link_specifier = ::std::option::Option::Some(input);
         self
@@ -112,7 +116,7 @@ impl GetLinkAttributesInputBuilder {
     /// Consumes the builder and constructs a [`GetLinkAttributesInput`](crate::operation::get_link_attributes::GetLinkAttributesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_link_attributes::GetLinkAttributesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_link_attributes::GetLinkAttributesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_link_attributes::GetLinkAttributesInput {
             directory_arn: self.directory_arn,
             typed_link_specifier: self.typed_link_specifier,

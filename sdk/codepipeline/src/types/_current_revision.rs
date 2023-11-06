@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CurrentRevision {
     /// <p>The revision ID of the current version of an artifact.</p>
-    pub revision: ::std::option::Option<::std::string::String>,
+    pub revision: ::std::string::String,
     /// <p>The change identifier for the current revision.</p>
-    pub change_identifier: ::std::option::Option<::std::string::String>,
+    pub change_identifier: ::std::string::String,
     /// <p>The date and time when the most recent revision of the artifact was created, in timestamp format.</p>
     pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The summary of the most recent revision of the artifact.</p>
@@ -15,12 +15,14 @@ pub struct CurrentRevision {
 }
 impl CurrentRevision {
     /// <p>The revision ID of the current version of an artifact.</p>
-    pub fn revision(&self) -> ::std::option::Option<&str> {
-        self.revision.as_deref()
+    pub fn revision(&self) -> &str {
+        use std::ops::Deref;
+        self.revision.deref()
     }
     /// <p>The change identifier for the current revision.</p>
-    pub fn change_identifier(&self) -> ::std::option::Option<&str> {
-        self.change_identifier.as_deref()
+    pub fn change_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.change_identifier.deref()
     }
     /// <p>The date and time when the most recent revision of the artifact was created, in timestamp format.</p>
     pub fn created(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -49,6 +51,7 @@ pub struct CurrentRevisionBuilder {
 }
 impl CurrentRevisionBuilder {
     /// <p>The revision ID of the current version of an artifact.</p>
+    /// This field is required.
     pub fn revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +66,7 @@ impl CurrentRevisionBuilder {
         &self.revision
     }
     /// <p>The change identifier for the current revision.</p>
+    /// This field is required.
     pub fn change_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_identifier = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +109,25 @@ impl CurrentRevisionBuilder {
         &self.revision_summary
     }
     /// Consumes the builder and constructs a [`CurrentRevision`](crate::types::CurrentRevision).
-    pub fn build(self) -> crate::types::CurrentRevision {
-        crate::types::CurrentRevision {
-            revision: self.revision,
-            change_identifier: self.change_identifier,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`revision`](crate::types::builders::CurrentRevisionBuilder::revision)
+    /// - [`change_identifier`](crate::types::builders::CurrentRevisionBuilder::change_identifier)
+    pub fn build(self) -> ::std::result::Result<crate::types::CurrentRevision, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CurrentRevision {
+            revision: self.revision.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "revision",
+                    "revision was not specified but it is required when building CurrentRevision",
+                )
+            })?,
+            change_identifier: self.change_identifier.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "change_identifier",
+                    "change_identifier was not specified but it is required when building CurrentRevision",
+                )
+            })?,
             created: self.created,
             revision_summary: self.revision_summary,
-        }
+        })
     }
 }

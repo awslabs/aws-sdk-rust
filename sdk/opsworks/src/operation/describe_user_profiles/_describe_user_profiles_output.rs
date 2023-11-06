@@ -10,8 +10,10 @@ pub struct DescribeUserProfilesOutput {
 }
 impl DescribeUserProfilesOutput {
     /// <p>A <code>Users</code> object that describes the specified users.</p>
-    pub fn user_profiles(&self) -> ::std::option::Option<&[crate::types::UserProfile]> {
-        self.user_profiles.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_profiles.is_none()`.
+    pub fn user_profiles(&self) -> &[crate::types::UserProfile] {
+        self.user_profiles.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeUserProfilesOutput {

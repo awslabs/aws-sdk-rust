@@ -5,24 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PropertyValidationExceptionProperty {
     /// <p>The full property path.</p>
-    pub property_path: ::std::option::Option<::std::string::String>,
+    pub property_path: ::std::string::String,
     /// <p>Why the property is not valid.</p>
-    pub reason: ::std::option::Option<crate::types::PropertyValidationExceptionReason>,
+    pub reason: crate::types::PropertyValidationExceptionReason,
     /// <p>A message describing why the property is not valid.</p>
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
 }
 impl PropertyValidationExceptionProperty {
     /// <p>The full property path.</p>
-    pub fn property_path(&self) -> ::std::option::Option<&str> {
-        self.property_path.as_deref()
+    pub fn property_path(&self) -> &str {
+        use std::ops::Deref;
+        self.property_path.deref()
     }
     /// <p>Why the property is not valid.</p>
-    pub fn reason(&self) -> ::std::option::Option<&crate::types::PropertyValidationExceptionReason> {
-        self.reason.as_ref()
+    pub fn reason(&self) -> &crate::types::PropertyValidationExceptionReason {
+        &self.reason
     }
     /// <p>A message describing why the property is not valid.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        use std::ops::Deref;
+        self.message.deref()
     }
 }
 impl PropertyValidationExceptionProperty {
@@ -42,6 +44,7 @@ pub struct PropertyValidationExceptionPropertyBuilder {
 }
 impl PropertyValidationExceptionPropertyBuilder {
     /// <p>The full property path.</p>
+    /// This field is required.
     pub fn property_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.property_path = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl PropertyValidationExceptionPropertyBuilder {
         &self.property_path
     }
     /// <p>Why the property is not valid.</p>
+    /// This field is required.
     pub fn reason(mut self, input: crate::types::PropertyValidationExceptionReason) -> Self {
         self.reason = ::std::option::Option::Some(input);
         self
@@ -70,6 +74,7 @@ impl PropertyValidationExceptionPropertyBuilder {
         &self.reason
     }
     /// <p>A message describing why the property is not valid.</p>
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +89,30 @@ impl PropertyValidationExceptionPropertyBuilder {
         &self.message
     }
     /// Consumes the builder and constructs a [`PropertyValidationExceptionProperty`](crate::types::PropertyValidationExceptionProperty).
-    pub fn build(self) -> crate::types::PropertyValidationExceptionProperty {
-        crate::types::PropertyValidationExceptionProperty {
-            property_path: self.property_path,
-            reason: self.reason,
-            message: self.message,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`property_path`](crate::types::builders::PropertyValidationExceptionPropertyBuilder::property_path)
+    /// - [`reason`](crate::types::builders::PropertyValidationExceptionPropertyBuilder::reason)
+    /// - [`message`](crate::types::builders::PropertyValidationExceptionPropertyBuilder::message)
+    pub fn build(self) -> ::std::result::Result<crate::types::PropertyValidationExceptionProperty, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PropertyValidationExceptionProperty {
+            property_path: self.property_path.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "property_path",
+                    "property_path was not specified but it is required when building PropertyValidationExceptionProperty",
+                )
+            })?,
+            reason: self.reason.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "reason",
+                    "reason was not specified but it is required when building PropertyValidationExceptionProperty",
+                )
+            })?,
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building PropertyValidationExceptionProperty",
+                )
+            })?,
+        })
     }
 }

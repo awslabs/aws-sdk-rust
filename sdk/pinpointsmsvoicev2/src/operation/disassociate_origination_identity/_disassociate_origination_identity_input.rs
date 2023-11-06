@@ -48,6 +48,7 @@ pub struct DisassociateOriginationIdentityInputBuilder {
 }
 impl DisassociateOriginationIdentityInputBuilder {
     /// <p>The unique identifier for the pool to disassociate with the origination identity. This value can be either the PoolId or PoolArn.</p>
+    /// This field is required.
     pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pool_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl DisassociateOriginationIdentityInputBuilder {
         &self.pool_id
     }
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> find the values for PhoneNumberId and PhoneNumberArn, or use <code>DescribeSenderIds</code> to get the values for SenderId and SenderIdArn.</p>
+    /// This field is required.
     pub fn origination_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origination_identity = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl DisassociateOriginationIdentityInputBuilder {
         &self.origination_identity
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
+    /// This field is required.
     pub fn iso_country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iso_country_code = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +111,7 @@ impl DisassociateOriginationIdentityInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_origination_identity::DisassociateOriginationIdentityInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_origination_identity::DisassociateOriginationIdentityInput {

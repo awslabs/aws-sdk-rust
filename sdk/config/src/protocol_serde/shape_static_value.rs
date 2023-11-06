@@ -2,15 +2,15 @@
 pub fn ser_static_value(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StaticValue,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.values {
-        let mut array_2 = object.key("Values").start_array();
-        for item_3 in var_1 {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        let mut array_1 = object.key("Values").start_array();
+        for item_2 in &input.values {
             {
-                array_2.value().string(item_3.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
     Ok(())
 }
@@ -43,7 +43,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::static_value_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -32,16 +32,22 @@ impl UpdateVpcConnectionInput {
         self.name.as_deref()
     }
     /// <p>A list of subnet IDs for the VPC connection.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        self.subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>A list of security group IDs for the VPC connection.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>A list of IP addresses of DNS resolver endpoints for the VPC connection.</p>
-    pub fn dns_resolvers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.dns_resolvers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dns_resolvers.is_none()`.
+    pub fn dns_resolvers(&self) -> &[::std::string::String] {
+        self.dns_resolvers.as_deref().unwrap_or_default()
     }
     /// <p>An IAM role associated with the VPC connection.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
@@ -69,6 +75,7 @@ pub struct UpdateVpcConnectionInputBuilder {
 }
 impl UpdateVpcConnectionInputBuilder {
     /// <p>The Amazon Web Services account ID of the account that contains the VPC connection that you want to update.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +90,7 @@ impl UpdateVpcConnectionInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID of the VPC connection that you're updating. This ID is a unique identifier for each Amazon Web Services Region in an Amazon Web Services account.</p>
+    /// This field is required.
     pub fn vpc_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_connection_id = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +105,7 @@ impl UpdateVpcConnectionInputBuilder {
         &self.vpc_connection_id
     }
     /// <p>The display name for the VPC connection.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -171,6 +180,7 @@ impl UpdateVpcConnectionInputBuilder {
         &self.dns_resolvers
     }
     /// <p>An IAM role associated with the VPC connection.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -187,7 +197,7 @@ impl UpdateVpcConnectionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateVpcConnectionInput`](crate::operation::update_vpc_connection::UpdateVpcConnectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_vpc_connection::UpdateVpcConnectionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_vpc_connection::UpdateVpcConnectionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_vpc_connection::UpdateVpcConnectionInput {
             aws_account_id: self.aws_account_id,

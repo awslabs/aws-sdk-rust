@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Destination {
     /// <p> The Amazon Resource Name (ARN) of the bucket where you want Amazon S3 to store the results.</p>
-    pub bucket: ::std::option::Option<::std::string::String>,
+    pub bucket: ::std::string::String,
     /// <p>Destination bucket owner account ID. In a cross-account scenario, if you direct Amazon S3 to change replica ownership to the Amazon Web Services account that owns the destination bucket by specifying the <code>AccessControlTranslation</code> property, this is the account ID of the destination bucket owner. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-change-owner.html">Replication Additional Configuration: Changing the Replica Owner</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub account: ::std::option::Option<::std::string::String>,
     /// <p> The storage class to use when replicating objects, such as S3 Standard or reduced redundancy. By default, Amazon S3 uses the storage class of the source object to create the object replica. </p>
@@ -22,8 +22,9 @@ pub struct Destination {
 }
 impl Destination {
     /// <p> The Amazon Resource Name (ARN) of the bucket where you want Amazon S3 to store the results.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
-        self.bucket.as_deref()
+    pub fn bucket(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket.deref()
     }
     /// <p>Destination bucket owner account ID. In a cross-account scenario, if you direct Amazon S3 to change replica ownership to the Amazon Web Services account that owns the destination bucket by specifying the <code>AccessControlTranslation</code> property, this is the account ID of the destination bucket owner. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-change-owner.html">Replication Additional Configuration: Changing the Replica Owner</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn account(&self) -> ::std::option::Option<&str> {
@@ -72,6 +73,7 @@ pub struct DestinationBuilder {
 }
 impl DestinationBuilder {
     /// <p> The Amazon Resource Name (ARN) of the bucket where you want Amazon S3 to store the results.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -173,15 +175,22 @@ impl DestinationBuilder {
         &self.metrics
     }
     /// Consumes the builder and constructs a [`Destination`](crate::types::Destination).
-    pub fn build(self) -> crate::types::Destination {
-        crate::types::Destination {
-            bucket: self.bucket,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bucket`](crate::types::builders::DestinationBuilder::bucket)
+    pub fn build(self) -> ::std::result::Result<crate::types::Destination, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Destination {
+            bucket: self.bucket.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "bucket",
+                    "bucket was not specified but it is required when building Destination",
+                )
+            })?,
             account: self.account,
             storage_class: self.storage_class,
             access_control_translation: self.access_control_translation,
             encryption_configuration: self.encryption_configuration,
             replication_time: self.replication_time,
             metrics: self.metrics,
-        }
+        })
     }
 }

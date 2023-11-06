@@ -92,6 +92,7 @@ pub struct CreateAddonInputBuilder {
 }
 impl CreateAddonInputBuilder {
     /// <p>The name of the cluster to create the add-on for.</p>
+    /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
@@ -106,6 +107,7 @@ impl CreateAddonInputBuilder {
         &self.cluster_name
     }
     /// <p>The name of the add-on. The name must match one of the names that <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a> returns.</p>
+    /// This field is required.
     pub fn addon_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.addon_name = ::std::option::Option::Some(input.into());
         self
@@ -234,7 +236,7 @@ impl CreateAddonInputBuilder {
         &self.configuration_values
     }
     /// Consumes the builder and constructs a [`CreateAddonInput`](crate::operation::create_addon::CreateAddonInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_addon::CreateAddonInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_addon::CreateAddonInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_addon::CreateAddonInput {
             cluster_name: self.cluster_name,
             addon_name: self.addon_name,

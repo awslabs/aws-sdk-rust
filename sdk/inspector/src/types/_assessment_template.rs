@@ -5,60 +5,65 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssessmentTemplate {
     /// <p>The ARN of the assessment template.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The name of the assessment template.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The ARN of the assessment target that corresponds to this assessment template.</p>
-    pub assessment_target_arn: ::std::option::Option<::std::string::String>,
+    pub assessment_target_arn: ::std::string::String,
     /// <p>The duration in seconds specified for this assessment template. The default value is 3600 seconds (one hour). The maximum value is 86400 seconds (one day).</p>
-    pub duration_in_seconds: ::std::option::Option<i32>,
+    pub duration_in_seconds: i32,
     /// <p>The rules packages that are specified for this assessment template.</p>
-    pub rules_package_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub rules_package_arns: ::std::vec::Vec<::std::string::String>,
     /// <p>The user-defined attributes that are assigned to every generated finding from the assessment run that uses this assessment template.</p>
-    pub user_attributes_for_findings: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
+    pub user_attributes_for_findings: ::std::vec::Vec<crate::types::Attribute>,
     /// <p>The Amazon Resource Name (ARN) of the most recent assessment run associated with this assessment template. This value exists only when the value of assessmentRunCount is greaterpa than zero.</p>
     pub last_assessment_run_arn: ::std::option::Option<::std::string::String>,
     /// <p>The number of existing assessment runs associated with this assessment template. This value can be zero or a positive integer.</p>
-    pub assessment_run_count: ::std::option::Option<i32>,
+    pub assessment_run_count: i32,
     /// <p>The time at which the assessment template is created.</p>
-    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_at: ::aws_smithy_types::DateTime,
 }
 impl AssessmentTemplate {
     /// <p>The ARN of the assessment template.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The name of the assessment template.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The ARN of the assessment target that corresponds to this assessment template.</p>
-    pub fn assessment_target_arn(&self) -> ::std::option::Option<&str> {
-        self.assessment_target_arn.as_deref()
+    pub fn assessment_target_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.assessment_target_arn.deref()
     }
     /// <p>The duration in seconds specified for this assessment template. The default value is 3600 seconds (one hour). The maximum value is 86400 seconds (one day).</p>
-    pub fn duration_in_seconds(&self) -> ::std::option::Option<i32> {
+    pub fn duration_in_seconds(&self) -> i32 {
         self.duration_in_seconds
     }
     /// <p>The rules packages that are specified for this assessment template.</p>
-    pub fn rules_package_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.rules_package_arns.as_deref()
+    pub fn rules_package_arns(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.rules_package_arns.deref()
     }
     /// <p>The user-defined attributes that are assigned to every generated finding from the assessment run that uses this assessment template.</p>
-    pub fn user_attributes_for_findings(&self) -> ::std::option::Option<&[crate::types::Attribute]> {
-        self.user_attributes_for_findings.as_deref()
+    pub fn user_attributes_for_findings(&self) -> &[crate::types::Attribute] {
+        use std::ops::Deref;
+        self.user_attributes_for_findings.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the most recent assessment run associated with this assessment template. This value exists only when the value of assessmentRunCount is greaterpa than zero.</p>
     pub fn last_assessment_run_arn(&self) -> ::std::option::Option<&str> {
         self.last_assessment_run_arn.as_deref()
     }
     /// <p>The number of existing assessment runs associated with this assessment template. This value can be zero or a positive integer.</p>
-    pub fn assessment_run_count(&self) -> ::std::option::Option<i32> {
+    pub fn assessment_run_count(&self) -> i32 {
         self.assessment_run_count
     }
     /// <p>The time at which the assessment template is created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_at.as_ref()
+    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_at
     }
 }
 impl AssessmentTemplate {
@@ -84,6 +89,7 @@ pub struct AssessmentTemplateBuilder {
 }
 impl AssessmentTemplateBuilder {
     /// <p>The ARN of the assessment template.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +104,7 @@ impl AssessmentTemplateBuilder {
         &self.arn
     }
     /// <p>The name of the assessment template.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +119,7 @@ impl AssessmentTemplateBuilder {
         &self.name
     }
     /// <p>The ARN of the assessment target that corresponds to this assessment template.</p>
+    /// This field is required.
     pub fn assessment_target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_target_arn = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +134,7 @@ impl AssessmentTemplateBuilder {
         &self.assessment_target_arn
     }
     /// <p>The duration in seconds specified for this assessment template. The default value is 3600 seconds (one hour). The maximum value is 86400 seconds (one day).</p>
+    /// This field is required.
     pub fn duration_in_seconds(mut self, input: i32) -> Self {
         self.duration_in_seconds = ::std::option::Option::Some(input);
         self
@@ -194,6 +203,7 @@ impl AssessmentTemplateBuilder {
         &self.last_assessment_run_arn
     }
     /// <p>The number of existing assessment runs associated with this assessment template. This value can be zero or a positive integer.</p>
+    /// This field is required.
     pub fn assessment_run_count(mut self, input: i32) -> Self {
         self.assessment_run_count = ::std::option::Option::Some(input);
         self
@@ -208,6 +218,7 @@ impl AssessmentTemplateBuilder {
         &self.assessment_run_count
     }
     /// <p>The time at which the assessment template is created.</p>
+    /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
@@ -222,17 +233,66 @@ impl AssessmentTemplateBuilder {
         &self.created_at
     }
     /// Consumes the builder and constructs a [`AssessmentTemplate`](crate::types::AssessmentTemplate).
-    pub fn build(self) -> crate::types::AssessmentTemplate {
-        crate::types::AssessmentTemplate {
-            arn: self.arn,
-            name: self.name,
-            assessment_target_arn: self.assessment_target_arn,
-            duration_in_seconds: self.duration_in_seconds,
-            rules_package_arns: self.rules_package_arns,
-            user_attributes_for_findings: self.user_attributes_for_findings,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::AssessmentTemplateBuilder::arn)
+    /// - [`name`](crate::types::builders::AssessmentTemplateBuilder::name)
+    /// - [`assessment_target_arn`](crate::types::builders::AssessmentTemplateBuilder::assessment_target_arn)
+    /// - [`duration_in_seconds`](crate::types::builders::AssessmentTemplateBuilder::duration_in_seconds)
+    /// - [`rules_package_arns`](crate::types::builders::AssessmentTemplateBuilder::rules_package_arns)
+    /// - [`user_attributes_for_findings`](crate::types::builders::AssessmentTemplateBuilder::user_attributes_for_findings)
+    /// - [`assessment_run_count`](crate::types::builders::AssessmentTemplateBuilder::assessment_run_count)
+    /// - [`created_at`](crate::types::builders::AssessmentTemplateBuilder::created_at)
+    pub fn build(self) -> ::std::result::Result<crate::types::AssessmentTemplate, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AssessmentTemplate {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building AssessmentTemplate",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building AssessmentTemplate",
+                )
+            })?,
+            assessment_target_arn: self.assessment_target_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "assessment_target_arn",
+                    "assessment_target_arn was not specified but it is required when building AssessmentTemplate",
+                )
+            })?,
+            duration_in_seconds: self.duration_in_seconds.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "duration_in_seconds",
+                    "duration_in_seconds was not specified but it is required when building AssessmentTemplate",
+                )
+            })?,
+            rules_package_arns: self.rules_package_arns.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "rules_package_arns",
+                    "rules_package_arns was not specified but it is required when building AssessmentTemplate",
+                )
+            })?,
+            user_attributes_for_findings: self.user_attributes_for_findings.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "user_attributes_for_findings",
+                    "user_attributes_for_findings was not specified but it is required when building AssessmentTemplate",
+                )
+            })?,
             last_assessment_run_arn: self.last_assessment_run_arn,
-            assessment_run_count: self.assessment_run_count,
-            created_at: self.created_at,
-        }
+            assessment_run_count: self.assessment_run_count.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "assessment_run_count",
+                    "assessment_run_count was not specified but it is required when building AssessmentTemplate",
+                )
+            })?,
+            created_at: self.created_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_at",
+                    "created_at was not specified but it is required when building AssessmentTemplate",
+                )
+            })?,
+        })
     }
 }

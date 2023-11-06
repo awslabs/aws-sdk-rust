@@ -55,6 +55,7 @@ pub struct CreateTopicRefreshScheduleInputBuilder {
 }
 impl CreateTopicRefreshScheduleInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the topic you're creating a refresh schedule for.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl CreateTopicRefreshScheduleInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    /// This field is required.
     pub fn topic_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +85,7 @@ impl CreateTopicRefreshScheduleInputBuilder {
         &self.topic_id
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
+    /// This field is required.
     pub fn dataset_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_arn = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +114,7 @@ impl CreateTopicRefreshScheduleInputBuilder {
         &self.dataset_name
     }
     /// <p>The definition of a refresh schedule.</p>
+    /// This field is required.
     pub fn refresh_schedule(mut self, input: crate::types::TopicRefreshSchedule) -> Self {
         self.refresh_schedule = ::std::option::Option::Some(input);
         self
@@ -129,7 +133,7 @@ impl CreateTopicRefreshScheduleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_topic_refresh_schedule::CreateTopicRefreshScheduleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_topic_refresh_schedule::CreateTopicRefreshScheduleInput {
             aws_account_id: self.aws_account_id,

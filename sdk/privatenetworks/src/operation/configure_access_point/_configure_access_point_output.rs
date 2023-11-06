@@ -34,6 +34,7 @@ pub struct ConfigureAccessPointOutputBuilder {
 }
 impl ConfigureAccessPointOutputBuilder {
     /// <p>Information about the network resource.</p>
+    /// This field is required.
     pub fn access_point(mut self, input: crate::types::NetworkResource) -> Self {
         self.access_point = ::std::option::Option::Some(input);
         self

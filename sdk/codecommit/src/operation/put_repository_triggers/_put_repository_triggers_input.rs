@@ -15,8 +15,10 @@ impl PutRepositoryTriggersInput {
         self.repository_name.as_deref()
     }
     /// <p>The JSON block of configuration information for each trigger.</p>
-    pub fn triggers(&self) -> ::std::option::Option<&[crate::types::RepositoryTrigger]> {
-        self.triggers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.triggers.is_none()`.
+    pub fn triggers(&self) -> &[crate::types::RepositoryTrigger] {
+        self.triggers.as_deref().unwrap_or_default()
     }
 }
 impl PutRepositoryTriggersInput {
@@ -35,6 +37,7 @@ pub struct PutRepositoryTriggersInputBuilder {
 }
 impl PutRepositoryTriggersInputBuilder {
     /// <p>The name of the repository where you want to create or update the trigger.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -71,7 +74,7 @@ impl PutRepositoryTriggersInputBuilder {
     /// Consumes the builder and constructs a [`PutRepositoryTriggersInput`](crate::operation::put_repository_triggers::PutRepositoryTriggersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_repository_triggers::PutRepositoryTriggersInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_repository_triggers::PutRepositoryTriggersInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_repository_triggers::PutRepositoryTriggersInput {
             repository_name: self.repository_name,

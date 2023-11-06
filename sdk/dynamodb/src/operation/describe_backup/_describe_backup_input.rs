@@ -27,6 +27,7 @@ pub struct DescribeBackupInputBuilder {
 }
 impl DescribeBackupInputBuilder {
     /// <p>The Amazon Resource Name (ARN) associated with the backup.</p>
+    /// This field is required.
     pub fn backup_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeBackupInputBuilder {
     /// Consumes the builder and constructs a [`DescribeBackupInput`](crate::operation::describe_backup::DescribeBackupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_backup::DescribeBackupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_backup::DescribeBackupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_backup::DescribeBackupInput { backup_arn: self.backup_arn })
     }
 }

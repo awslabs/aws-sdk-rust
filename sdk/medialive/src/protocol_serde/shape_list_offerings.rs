@@ -147,7 +147,7 @@ pub(crate) fn de_list_offerings(
                     );
                 }
                 "offerings" => {
-                    builder = builder.set_offerings(crate::protocol_serde::shape___list_of_offering::de___list_of_offering(tokens)?);
+                    builder = builder.set_offerings(crate::protocol_serde::shape_list_of_offering::de_list_of_offering(tokens)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

@@ -3,27 +3,27 @@
 pub fn ser_message_dsn(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::MessageDsn,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("ReportingMta");
-    if let Some(var_2) = &input.reporting_mta {
-        scope_1.string(var_2);
+    {
+        scope_1.string(&input.reporting_mta);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("ArrivalDate");
-    if let Some(var_4) = &input.arrival_date {
-        scope_3.date_time(var_4, ::aws_smithy_types::date_time::Format::DateTime)?;
+    let mut scope_2 = writer.prefix("ArrivalDate");
+    if let Some(var_3) = &input.arrival_date {
+        scope_2.date_time(var_3, ::aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("ExtensionFields");
-    if let Some(var_6) = &input.extension_fields {
-        let mut list_8 = scope_5.start_list(false, None);
-        for item_7 in var_6 {
+    let mut scope_4 = writer.prefix("ExtensionFields");
+    if let Some(var_5) = &input.extension_fields {
+        let mut list_7 = scope_4.start_list(false, None);
+        for item_6 in var_5 {
             #[allow(unused_mut)]
-            let mut entry_9 = list_8.entry();
-            crate::protocol_serde::shape_extension_field::ser_extension_field(entry_9, item_7)?;
+            let mut entry_8 = list_7.entry();
+            crate::protocol_serde::shape_extension_field::ser_extension_field(entry_8, item_6)?;
         }
-        list_8.finish();
+        list_7.finish();
     }
     Ok(())
 }

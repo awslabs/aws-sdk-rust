@@ -24,8 +24,10 @@ impl CreateAppBundleInput {
         self.customer_managed_key_identifier.as_deref()
     }
     /// <p>A map of the key-value pairs of the tag or tags to assign to the resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateAppBundleInput {
@@ -101,7 +103,7 @@ impl CreateAppBundleInputBuilder {
     /// Consumes the builder and constructs a [`CreateAppBundleInput`](crate::operation::create_app_bundle::CreateAppBundleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_app_bundle::CreateAppBundleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_app_bundle::CreateAppBundleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_app_bundle::CreateAppBundleInput {
             client_token: self.client_token,
             customer_managed_key_identifier: self.customer_managed_key_identifier,

@@ -49,6 +49,7 @@ impl AccountTakeoverRiskConfigurationTypeBuilder {
         &self.notify_configuration
     }
     /// <p>Account takeover risk configuration actions.</p>
+    /// This field is required.
     pub fn actions(mut self, input: crate::types::AccountTakeoverActionsType) -> Self {
         self.actions = ::std::option::Option::Some(input);
         self

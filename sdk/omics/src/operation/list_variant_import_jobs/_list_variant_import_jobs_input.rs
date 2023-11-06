@@ -18,8 +18,10 @@ impl ListVariantImportJobsInput {
         self.max_results
     }
     /// <p>A list of job IDs.</p>
-    pub fn ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ids.is_none()`.
+    pub fn ids(&self) -> &[::std::string::String] {
+        self.ids.as_deref().unwrap_or_default()
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -112,7 +114,7 @@ impl ListVariantImportJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListVariantImportJobsInput`](crate::operation::list_variant_import_jobs::ListVariantImportJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_variant_import_jobs::ListVariantImportJobsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_variant_import_jobs::ListVariantImportJobsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_variant_import_jobs::ListVariantImportJobsInput {
             max_results: self.max_results,

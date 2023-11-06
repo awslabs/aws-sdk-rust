@@ -21,12 +21,16 @@ pub struct ExecuteStatementOutput {
 }
 impl ExecuteStatementOutput {
     /// <p>The records returned by the SQL statement. This field is blank if the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
-    pub fn records(&self) -> ::std::option::Option<&[::std::vec::Vec<crate::types::Field>]> {
-        self.records.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.records.is_none()`.
+    pub fn records(&self) -> &[::std::vec::Vec<crate::types::Field>] {
+        self.records.as_deref().unwrap_or_default()
     }
     /// <p>Metadata for the columns included in the results. This field is blank if the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
-    pub fn column_metadata(&self) -> ::std::option::Option<&[crate::types::ColumnMetadata]> {
-        self.column_metadata.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.column_metadata.is_none()`.
+    pub fn column_metadata(&self) -> &[crate::types::ColumnMetadata] {
+        self.column_metadata.as_deref().unwrap_or_default()
     }
     /// <p>The number of records updated by the request.</p>
     pub fn number_of_records_updated(&self) -> i64 {
@@ -35,8 +39,10 @@ impl ExecuteStatementOutput {
     /// <p>Values for fields generated during a DML request.</p> <note>
     /// <p>The <code>generatedFields</code> data isn't supported by Aurora PostgreSQL. To get the values of generated fields, use the <code>RETURNING</code> clause. For more information, see <a href="https://www.postgresql.org/docs/10/dml-returning.html">Returning Data From Modified Rows</a> in the PostgreSQL documentation.</p>
     /// </note>
-    pub fn generated_fields(&self) -> ::std::option::Option<&[crate::types::Field]> {
-        self.generated_fields.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.generated_fields.is_none()`.
+    pub fn generated_fields(&self) -> &[crate::types::Field] {
+        self.generated_fields.as_deref().unwrap_or_default()
     }
     /// <p>A string value that represents the result set of a <code>SELECT</code> statement in JSON format. This value is only present when the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
     /// <p>The size limit for this field is currently 10 MB. If the JSON-formatted string representing the result set requires more than 10 MB, the call returns an error.</p>

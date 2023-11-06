@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteTask`](crate::operation::delete_task::builders::DeleteTaskFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`task_arn(impl Into<String>)`](crate::operation::delete_task::builders::DeleteTaskFluentBuilder::task_arn) / [`set_task_arn(Option<String>)`](crate::operation::delete_task::builders::DeleteTaskFluentBuilder::set_task_arn): <p>Specifies the Amazon Resource Name (ARN) of the task that you want to delete.</p>
+    ///   - [`task_arn(impl Into<String>)`](crate::operation::delete_task::builders::DeleteTaskFluentBuilder::task_arn) / [`set_task_arn(Option<String>)`](crate::operation::delete_task::builders::DeleteTaskFluentBuilder::set_task_arn):<br>required: **true**<br><p>Specifies the Amazon Resource Name (ARN) of the task that you want to delete.</p><br>
     /// - On success, responds with [`DeleteTaskOutput`](crate::operation::delete_task::DeleteTaskOutput)
     /// - On failure, responds with [`SdkError<DeleteTaskError>`](crate::operation::delete_task::DeleteTaskError)
     pub fn delete_task(&self) -> crate::operation::delete_task::builders::DeleteTaskFluentBuilder {

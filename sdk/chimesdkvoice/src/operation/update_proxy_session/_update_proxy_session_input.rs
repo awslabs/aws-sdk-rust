@@ -22,8 +22,10 @@ impl UpdateProxySessionInput {
         self.proxy_session_id.as_deref()
     }
     /// <p>The proxy session capabilities.</p>
-    pub fn capabilities(&self) -> ::std::option::Option<&[crate::types::Capability]> {
-        self.capabilities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capabilities.is_none()`.
+    pub fn capabilities(&self) -> &[crate::types::Capability] {
+        self.capabilities.as_deref().unwrap_or_default()
     }
     /// <p>The number of minutes allowed for the proxy session.</p>
     pub fn expiry_minutes(&self) -> ::std::option::Option<i32> {
@@ -48,6 +50,7 @@ pub struct UpdateProxySessionInputBuilder {
 }
 impl UpdateProxySessionInputBuilder {
     /// <p>The Voice Connector ID.</p>
+    /// This field is required.
     pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl UpdateProxySessionInputBuilder {
         &self.voice_connector_id
     }
     /// <p>The proxy session ID.</p>
+    /// This field is required.
     pub fn proxy_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.proxy_session_id = ::std::option::Option::Some(input.into());
         self
@@ -112,7 +116,8 @@ impl UpdateProxySessionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateProxySessionInput`](crate::operation::update_proxy_session::UpdateProxySessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_proxy_session::UpdateProxySessionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_proxy_session::UpdateProxySessionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_proxy_session::UpdateProxySessionInput {
             voice_connector_id: self.voice_connector_id,
             proxy_session_id: self.proxy_session_id,

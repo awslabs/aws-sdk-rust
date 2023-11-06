@@ -67,8 +67,10 @@ impl ParameterMetadata {
         self.tier.as_ref()
     }
     /// <p>A list of policies associated with a parameter.</p>
-    pub fn policies(&self) -> ::std::option::Option<&[crate::types::ParameterInlinePolicy]> {
-        self.policies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policies.is_none()`.
+    pub fn policies(&self) -> &[crate::types::ParameterInlinePolicy] {
+        self.policies.as_deref().unwrap_or_default()
     }
     /// <p>The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
     pub fn data_type(&self) -> ::std::option::Option<&str> {

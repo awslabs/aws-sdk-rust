@@ -35,6 +35,7 @@ pub struct PurchaseRequestBuilder {
 }
 impl PurchaseRequestBuilder {
     /// <p>The number of instances.</p>
+    /// This field is required.
     pub fn instance_count(mut self, input: i32) -> Self {
         self.instance_count = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl PurchaseRequestBuilder {
         &self.instance_count
     }
     /// <p>The purchase token.</p>
+    /// This field is required.
     pub fn purchase_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.purchase_token = ::std::option::Option::Some(input.into());
         self

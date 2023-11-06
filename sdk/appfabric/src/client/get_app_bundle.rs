@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetAppBundle`](crate::operation::get_app_bundle::builders::GetAppBundleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_bundle_identifier(impl Into<String>)`](crate::operation::get_app_bundle::builders::GetAppBundleFluentBuilder::app_bundle_identifier) / [`set_app_bundle_identifier(Option<String>)`](crate::operation::get_app_bundle::builders::GetAppBundleFluentBuilder::set_app_bundle_identifier): <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
+    ///   - [`app_bundle_identifier(impl Into<String>)`](crate::operation::get_app_bundle::builders::GetAppBundleFluentBuilder::app_bundle_identifier) / [`set_app_bundle_identifier(Option<String>)`](crate::operation::get_app_bundle::builders::GetAppBundleFluentBuilder::set_app_bundle_identifier):<br>required: **true**<br><p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p><br>
     /// - On success, responds with [`GetAppBundleOutput`](crate::operation::get_app_bundle::GetAppBundleOutput) with field(s):
     ///   - [`app_bundle(Option<AppBundle>)`](crate::operation::get_app_bundle::GetAppBundleOutput::app_bundle): <p>Contains information about an app bundle.</p>
     /// - On failure, responds with [`SdkError<GetAppBundleError>`](crate::operation::get_app_bundle::GetAppBundleError)

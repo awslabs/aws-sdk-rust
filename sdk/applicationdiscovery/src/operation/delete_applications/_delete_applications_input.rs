@@ -8,8 +8,10 @@ pub struct DeleteApplicationsInput {
 }
 impl DeleteApplicationsInput {
     /// <p>Configuration ID of an application to be deleted.</p>
-    pub fn configuration_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.configuration_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configuration_ids.is_none()`.
+    pub fn configuration_ids(&self) -> &[::std::string::String] {
+        self.configuration_ids.as_deref().unwrap_or_default()
     }
 }
 impl DeleteApplicationsInput {
@@ -49,7 +51,7 @@ impl DeleteApplicationsInputBuilder {
     /// Consumes the builder and constructs a [`DeleteApplicationsInput`](crate::operation::delete_applications::DeleteApplicationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_applications::DeleteApplicationsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_applications::DeleteApplicationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_applications::DeleteApplicationsInput {
             configuration_ids: self.configuration_ids,
         })

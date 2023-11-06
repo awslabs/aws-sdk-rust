@@ -12,15 +12,15 @@
 pub struct User {
     /// <p>The path to the user. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
     /// <p>The ARN of the policy used to set the permissions boundary for the user.</p>
-    pub path: ::std::option::Option<::std::string::String>,
+    pub path: ::std::string::String,
     /// <p>The friendly name identifying the user.</p>
-    pub user_name: ::std::option::Option<::std::string::String>,
+    pub user_name: ::std::string::String,
     /// <p>The stable and unique string identifying the user. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
-    pub user_id: ::std::option::Option<::std::string::String>,
+    pub user_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>. </p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the user was created.</p>
-    pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub create_date: ::aws_smithy_types::DateTime,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the user's password was last used to sign in to an Amazon Web Services website. For a list of Amazon Web Services websites that capture a user's last sign-in time, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential reports</a> topic in the <i>IAM User Guide</i>. If a password is used more than once in a five-minute span, only the first use is returned in this field. If the field is null (no value), then it indicates that they never signed in with a password. This can be because:</p>
     /// <ul>
     /// <li> <p>The user never had a password.</p> </li>
@@ -37,24 +37,28 @@ pub struct User {
 impl User {
     /// <p>The path to the user. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
     /// <p>The ARN of the policy used to set the permissions boundary for the user.</p>
-    pub fn path(&self) -> ::std::option::Option<&str> {
-        self.path.as_deref()
+    pub fn path(&self) -> &str {
+        use std::ops::Deref;
+        self.path.deref()
     }
     /// <p>The friendly name identifying the user.</p>
-    pub fn user_name(&self) -> ::std::option::Option<&str> {
-        self.user_name.as_deref()
+    pub fn user_name(&self) -> &str {
+        use std::ops::Deref;
+        self.user_name.deref()
     }
     /// <p>The stable and unique string identifying the user. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
-        self.user_id.as_deref()
+    pub fn user_id(&self) -> &str {
+        use std::ops::Deref;
+        self.user_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>. </p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the user was created.</p>
-    pub fn create_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.create_date.as_ref()
+    pub fn create_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.create_date
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the user's password was last used to sign in to an Amazon Web Services website. For a list of Amazon Web Services websites that capture a user's last sign-in time, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential reports</a> topic in the <i>IAM User Guide</i>. If a password is used more than once in a five-minute span, only the first use is returned in this field. If the field is null (no value), then it indicates that they never signed in with a password. This can be because:</p>
     /// <ul>
@@ -71,8 +75,10 @@ impl User {
         self.permissions_boundary.as_ref()
     }
     /// <p>A list of tags that are associated with the user. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl User {
@@ -98,6 +104,7 @@ pub struct UserBuilder {
 impl UserBuilder {
     /// <p>The path to the user. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
     /// <p>The ARN of the policy used to set the permissions boundary for the user.</p>
+    /// This field is required.
     pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path = ::std::option::Option::Some(input.into());
         self
@@ -114,6 +121,7 @@ impl UserBuilder {
         &self.path
     }
     /// <p>The friendly name identifying the user.</p>
+    /// This field is required.
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self
@@ -128,6 +136,7 @@ impl UserBuilder {
         &self.user_name
     }
     /// <p>The stable and unique string identifying the user. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
@@ -142,6 +151,7 @@ impl UserBuilder {
         &self.user_id
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>. </p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -156,6 +166,7 @@ impl UserBuilder {
         &self.arn
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the user was created.</p>
+    /// This field is required.
     pub fn create_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_date = ::std::option::Option::Some(input);
         self
@@ -236,16 +247,44 @@ impl UserBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`User`](crate::types::User).
-    pub fn build(self) -> crate::types::User {
-        crate::types::User {
-            path: self.path,
-            user_name: self.user_name,
-            user_id: self.user_id,
-            arn: self.arn,
-            create_date: self.create_date,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`path`](crate::types::builders::UserBuilder::path)
+    /// - [`user_name`](crate::types::builders::UserBuilder::user_name)
+    /// - [`user_id`](crate::types::builders::UserBuilder::user_id)
+    /// - [`arn`](crate::types::builders::UserBuilder::arn)
+    /// - [`create_date`](crate::types::builders::UserBuilder::create_date)
+    pub fn build(self) -> ::std::result::Result<crate::types::User, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::User {
+            path: self.path.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "path",
+                    "path was not specified but it is required when building User",
+                )
+            })?,
+            user_name: self.user_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "user_name",
+                    "user_name was not specified but it is required when building User",
+                )
+            })?,
+            user_id: self.user_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "user_id",
+                    "user_id was not specified but it is required when building User",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building User")
+            })?,
+            create_date: self.create_date.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "create_date",
+                    "create_date was not specified but it is required when building User",
+                )
+            })?,
             password_last_used: self.password_last_used,
             permissions_boundary: self.permissions_boundary,
             tags: self.tags,
-        }
+        })
     }
 }

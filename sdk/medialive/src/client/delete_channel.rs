@@ -3,25 +3,25 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteChannel`](crate::operation::delete_channel::builders::DeleteChannelFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`channel_id(impl Into<String>)`](crate::operation::delete_channel::builders::DeleteChannelFluentBuilder::channel_id) / [`set_channel_id(Option<String>)`](crate::operation::delete_channel::builders::DeleteChannelFluentBuilder::set_channel_id): Unique ID of the channel.
+    ///   - [`channel_id(impl Into<String>)`](crate::operation::delete_channel::builders::DeleteChannelFluentBuilder::channel_id) / [`set_channel_id(Option<String>)`](crate::operation::delete_channel::builders::DeleteChannelFluentBuilder::set_channel_id):<br>required: **true**<br>Unique ID of the channel.<br>
     /// - On success, responds with [`DeleteChannelOutput`](crate::operation::delete_channel::DeleteChannelOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::delete_channel::DeleteChannelOutput::arn): The unique arn of the channel.
     ///   - [`cdi_input_specification(Option<CdiInputSpecification>)`](crate::operation::delete_channel::DeleteChannelOutput::cdi_input_specification): Specification of CDI inputs for this channel
     ///   - [`channel_class(Option<ChannelClass>)`](crate::operation::delete_channel::DeleteChannelOutput::channel_class): The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
-    ///   - [`destinations(Option<Vec<OutputDestination>>)`](crate::operation::delete_channel::DeleteChannelOutput::destinations): A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
-    ///   - [`egress_endpoints(Option<Vec<ChannelEgressEndpoint>>)`](crate::operation::delete_channel::DeleteChannelOutput::egress_endpoints): The endpoints where outgoing connections initiate from
+    ///   - [`destinations(Option<Vec::<OutputDestination>>)`](crate::operation::delete_channel::DeleteChannelOutput::destinations): A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
+    ///   - [`egress_endpoints(Option<Vec::<ChannelEgressEndpoint>>)`](crate::operation::delete_channel::DeleteChannelOutput::egress_endpoints): The endpoints where outgoing connections initiate from
     ///   - [`encoder_settings(Option<EncoderSettings>)`](crate::operation::delete_channel::DeleteChannelOutput::encoder_settings): Encoder Settings
     ///   - [`id(Option<String>)`](crate::operation::delete_channel::DeleteChannelOutput::id): The unique id of the channel.
-    ///   - [`input_attachments(Option<Vec<InputAttachment>>)`](crate::operation::delete_channel::DeleteChannelOutput::input_attachments): List of input attachments for channel.
+    ///   - [`input_attachments(Option<Vec::<InputAttachment>>)`](crate::operation::delete_channel::DeleteChannelOutput::input_attachments): List of input attachments for channel.
     ///   - [`input_specification(Option<InputSpecification>)`](crate::operation::delete_channel::DeleteChannelOutput::input_specification): Specification of network and file inputs for this channel
     ///   - [`log_level(Option<LogLevel>)`](crate::operation::delete_channel::DeleteChannelOutput::log_level): The log level being written to CloudWatch Logs.
     ///   - [`maintenance(Option<MaintenanceStatus>)`](crate::operation::delete_channel::DeleteChannelOutput::maintenance): Maintenance settings for this channel.
     ///   - [`name(Option<String>)`](crate::operation::delete_channel::DeleteChannelOutput::name): The name of the channel. (user-mutable)
-    ///   - [`pipeline_details(Option<Vec<PipelineDetail>>)`](crate::operation::delete_channel::DeleteChannelOutput::pipeline_details): Runtime details for the pipelines of a running channel.
+    ///   - [`pipeline_details(Option<Vec::<PipelineDetail>>)`](crate::operation::delete_channel::DeleteChannelOutput::pipeline_details): Runtime details for the pipelines of a running channel.
     ///   - [`pipelines_running_count(Option<i32>)`](crate::operation::delete_channel::DeleteChannelOutput::pipelines_running_count): The number of currently healthy pipelines.
     ///   - [`role_arn(Option<String>)`](crate::operation::delete_channel::DeleteChannelOutput::role_arn): The Amazon Resource Name (ARN) of the role assumed when running the Channel.
     ///   - [`state(Option<ChannelState>)`](crate::operation::delete_channel::DeleteChannelOutput::state): Placeholder documentation for ChannelState
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::delete_channel::DeleteChannelOutput::tags): A collection of key-value pairs.
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::delete_channel::DeleteChannelOutput::tags): A collection of key-value pairs.
     ///   - [`vpc(Option<VpcOutputSettingsDescription>)`](crate::operation::delete_channel::DeleteChannelOutput::vpc): Settings for VPC output
     /// - On failure, responds with [`SdkError<DeleteChannelError>`](crate::operation::delete_channel::DeleteChannelError)
     pub fn delete_channel(&self) -> crate::operation::delete_channel::builders::DeleteChannelFluentBuilder {

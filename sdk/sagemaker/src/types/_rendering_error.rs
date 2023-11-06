@@ -35,6 +35,7 @@ pub struct RenderingErrorBuilder {
 }
 impl RenderingErrorBuilder {
     /// <p>A unique identifier for a specific class of errors.</p>
+    /// This field is required.
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl RenderingErrorBuilder {
         &self.code
     }
     /// <p>A human-readable message describing the error.</p>
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self

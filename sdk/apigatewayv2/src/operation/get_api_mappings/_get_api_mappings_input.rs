@@ -41,6 +41,7 @@ pub struct GetApiMappingsInputBuilder {
 }
 impl GetApiMappingsInputBuilder {
     /// <p>The domain name.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl GetApiMappingsInputBuilder {
     /// Consumes the builder and constructs a [`GetApiMappingsInput`](crate::operation::get_api_mappings::GetApiMappingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_api_mappings::GetApiMappingsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_api_mappings::GetApiMappingsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_api_mappings::GetApiMappingsInput {
             domain_name: self.domain_name,
             max_results: self.max_results,

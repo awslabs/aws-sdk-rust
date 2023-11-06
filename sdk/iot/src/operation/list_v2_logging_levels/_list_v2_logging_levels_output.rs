@@ -11,8 +11,10 @@ pub struct ListV2LoggingLevelsOutput {
 }
 impl ListV2LoggingLevelsOutput {
     /// <p>The logging configuration for a target.</p>
-    pub fn log_target_configurations(&self) -> ::std::option::Option<&[crate::types::LogTargetConfiguration]> {
-        self.log_target_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_target_configurations.is_none()`.
+    pub fn log_target_configurations(&self) -> &[crate::types::LogTargetConfiguration] {
+        self.log_target_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

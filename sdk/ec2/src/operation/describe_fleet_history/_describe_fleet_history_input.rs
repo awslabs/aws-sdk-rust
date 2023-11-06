@@ -118,6 +118,7 @@ impl DescribeFleetHistoryInputBuilder {
         &self.next_token
     }
     /// <p>The ID of the EC2 Fleet.</p>
+    /// This field is required.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +133,7 @@ impl DescribeFleetHistoryInputBuilder {
         &self.fleet_id
     }
     /// <p>The start date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+    /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
@@ -148,7 +150,7 @@ impl DescribeFleetHistoryInputBuilder {
     /// Consumes the builder and constructs a [`DescribeFleetHistoryInput`](crate::operation::describe_fleet_history::DescribeFleetHistoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_fleet_history::DescribeFleetHistoryInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_fleet_history::DescribeFleetHistoryInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_fleet_history::DescribeFleetHistoryInput {
             dry_run: self.dry_run,

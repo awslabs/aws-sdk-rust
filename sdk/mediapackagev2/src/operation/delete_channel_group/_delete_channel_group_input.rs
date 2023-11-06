@@ -27,6 +27,7 @@ pub struct DeleteChannelGroupInputBuilder {
 }
 impl DeleteChannelGroupInputBuilder {
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
+    /// This field is required.
     pub fn channel_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_group_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,8 @@ impl DeleteChannelGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteChannelGroupInput`](crate::operation::delete_channel_group::DeleteChannelGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_channel_group::DeleteChannelGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_channel_group::DeleteChannelGroupInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_channel_group::DeleteChannelGroupInput {
             channel_group_name: self.channel_group_name,
         })

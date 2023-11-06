@@ -41,8 +41,10 @@ impl UpdateRouteInput {
         self.api_key_required
     }
     /// <p>The authorization scopes supported by this route.</p>
-    pub fn authorization_scopes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.authorization_scopes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.authorization_scopes.is_none()`.
+    pub fn authorization_scopes(&self) -> &[::std::string::String] {
+        self.authorization_scopes.as_deref().unwrap_or_default()
     }
     /// <p>The authorization type for the route. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer For HTTP APIs, valid values are NONE for open access, JWT for using JSON Web Tokens, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer.</p>
     pub fn authorization_type(&self) -> ::std::option::Option<&crate::types::AuthorizationType> {
@@ -114,6 +116,7 @@ pub struct UpdateRouteInputBuilder {
 }
 impl UpdateRouteInputBuilder {
     /// <p>The API identifier.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -270,6 +273,7 @@ impl UpdateRouteInputBuilder {
         &self.request_parameters
     }
     /// <p>The route ID.</p>
+    /// This field is required.
     pub fn route_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_id = ::std::option::Option::Some(input.into());
         self
@@ -326,7 +330,7 @@ impl UpdateRouteInputBuilder {
         &self.target
     }
     /// Consumes the builder and constructs a [`UpdateRouteInput`](crate::operation::update_route::UpdateRouteInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_route::UpdateRouteInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_route::UpdateRouteInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_route::UpdateRouteInput {
             api_id: self.api_id,
             api_key_required: self.api_key_required,

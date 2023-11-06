@@ -18,8 +18,10 @@ impl UpdateFindingsFeedbackInput {
         self.detector_id.as_deref()
     }
     /// <p>The IDs of the findings that you want to mark as useful or not useful.</p>
-    pub fn finding_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.finding_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.finding_ids.is_none()`.
+    pub fn finding_ids(&self) -> &[::std::string::String] {
+        self.finding_ids.as_deref().unwrap_or_default()
     }
     /// <p>The feedback for the finding.</p>
     pub fn feedback(&self) -> ::std::option::Option<&crate::types::Feedback> {
@@ -48,6 +50,7 @@ pub struct UpdateFindingsFeedbackInputBuilder {
 }
 impl UpdateFindingsFeedbackInputBuilder {
     /// <p>The ID of the detector associated with the findings to update feedback for.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
@@ -82,6 +85,7 @@ impl UpdateFindingsFeedbackInputBuilder {
         &self.finding_ids
     }
     /// <p>The feedback for the finding.</p>
+    /// This field is required.
     pub fn feedback(mut self, input: crate::types::Feedback) -> Self {
         self.feedback = ::std::option::Option::Some(input);
         self
@@ -112,8 +116,10 @@ impl UpdateFindingsFeedbackInputBuilder {
     /// Consumes the builder and constructs a [`UpdateFindingsFeedbackInput`](crate::operation::update_findings_feedback::UpdateFindingsFeedbackInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_findings_feedback::UpdateFindingsFeedbackInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::update_findings_feedback::UpdateFindingsFeedbackInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::update_findings_feedback::UpdateFindingsFeedbackInput {
             detector_id: self.detector_id,
             finding_ids: self.finding_ids,

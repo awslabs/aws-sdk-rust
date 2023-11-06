@@ -34,6 +34,7 @@ pub struct StartFlywheelIterationInputBuilder {
 }
 impl StartFlywheelIterationInputBuilder {
     /// <p>The ARN of the flywheel.</p>
+    /// This field is required.
     pub fn flywheel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flywheel_arn = ::std::option::Option::Some(input.into());
         self
@@ -64,8 +65,10 @@ impl StartFlywheelIterationInputBuilder {
     /// Consumes the builder and constructs a [`StartFlywheelIterationInput`](crate::operation::start_flywheel_iteration::StartFlywheelIterationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_flywheel_iteration::StartFlywheelIterationInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::start_flywheel_iteration::StartFlywheelIterationInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::start_flywheel_iteration::StartFlywheelIterationInput {
             flywheel_arn: self.flywheel_arn,
             client_request_token: self.client_request_token,

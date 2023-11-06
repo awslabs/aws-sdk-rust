@@ -10,8 +10,10 @@ pub struct GetTraceGraphInput {
 }
 impl GetTraceGraphInput {
     /// <p>Trace IDs of requests for which to generate a service graph.</p>
-    pub fn trace_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.trace_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.trace_ids.is_none()`.
+    pub fn trace_ids(&self) -> &[::std::string::String] {
+        self.trace_ids.as_deref().unwrap_or_default()
     }
     /// <p>Pagination token.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -70,7 +72,7 @@ impl GetTraceGraphInputBuilder {
     /// Consumes the builder and constructs a [`GetTraceGraphInput`](crate::operation::get_trace_graph::GetTraceGraphInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_trace_graph::GetTraceGraphInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_trace_graph::GetTraceGraphInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_trace_graph::GetTraceGraphInput {
             trace_ids: self.trace_ids,
             next_token: self.next_token,

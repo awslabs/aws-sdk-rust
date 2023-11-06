@@ -8,8 +8,10 @@ pub struct UpdateDataLakeInput {
 }
 impl UpdateDataLakeInput {
     /// <p>Specify the Region or Regions that will contribute data to the rollup region.</p>
-    pub fn configurations(&self) -> ::std::option::Option<&[crate::types::DataLakeConfiguration]> {
-        self.configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configurations.is_none()`.
+    pub fn configurations(&self) -> &[crate::types::DataLakeConfiguration] {
+        self.configurations.as_deref().unwrap_or_default()
     }
 }
 impl UpdateDataLakeInput {
@@ -49,7 +51,7 @@ impl UpdateDataLakeInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDataLakeInput`](crate::operation::update_data_lake::UpdateDataLakeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_data_lake::UpdateDataLakeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_data_lake::UpdateDataLakeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_data_lake::UpdateDataLakeInput {
             configurations: self.configurations,
         })

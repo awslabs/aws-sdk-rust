@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PollForDecisionTaskOutput {
     /// <p>The opaque string used as a handle on the task. This token is used by workers to communicate progress and response information back to the system about the task.</p>
-    pub task_token: ::std::option::Option<::std::string::String>,
+    pub task_token: ::std::string::String,
     /// <p>The ID of the <code>DecisionTaskStarted</code> event recorded in the history.</p>
     pub started_event_id: i64,
     /// <p>The workflow execution for which this decision task was created.</p>
@@ -13,7 +13,7 @@ pub struct PollForDecisionTaskOutput {
     /// <p>The type of the workflow execution for which this decision task was created.</p>
     pub workflow_type: ::std::option::Option<crate::types::WorkflowType>,
     /// <p>A paginated list of history events of the workflow execution. The decider uses this during the processing of the decision task.</p>
-    pub events: ::std::option::Option<::std::vec::Vec<crate::types::HistoryEvent>>,
+    pub events: ::std::vec::Vec<crate::types::HistoryEvent>,
     /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
     pub next_page_token: ::std::option::Option<::std::string::String>,
@@ -23,8 +23,9 @@ pub struct PollForDecisionTaskOutput {
 }
 impl PollForDecisionTaskOutput {
     /// <p>The opaque string used as a handle on the task. This token is used by workers to communicate progress and response information back to the system about the task.</p>
-    pub fn task_token(&self) -> ::std::option::Option<&str> {
-        self.task_token.as_deref()
+    pub fn task_token(&self) -> &str {
+        use std::ops::Deref;
+        self.task_token.deref()
     }
     /// <p>The ID of the <code>DecisionTaskStarted</code> event recorded in the history.</p>
     pub fn started_event_id(&self) -> i64 {
@@ -39,8 +40,9 @@ impl PollForDecisionTaskOutput {
         self.workflow_type.as_ref()
     }
     /// <p>A paginated list of history events of the workflow execution. The decider uses this during the processing of the decision task.</p>
-    pub fn events(&self) -> ::std::option::Option<&[crate::types::HistoryEvent]> {
-        self.events.as_deref()
+    pub fn events(&self) -> &[crate::types::HistoryEvent] {
+        use std::ops::Deref;
+        self.events.deref()
     }
     /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
@@ -79,6 +81,7 @@ pub struct PollForDecisionTaskOutputBuilder {
 }
 impl PollForDecisionTaskOutputBuilder {
     /// <p>The opaque string used as a handle on the task. This token is used by workers to communicate progress and response information back to the system about the task.</p>
+    /// This field is required.
     pub fn task_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_token = ::std::option::Option::Some(input.into());
         self
@@ -93,6 +96,7 @@ impl PollForDecisionTaskOutputBuilder {
         &self.task_token
     }
     /// <p>The ID of the <code>DecisionTaskStarted</code> event recorded in the history.</p>
+    /// This field is required.
     pub fn started_event_id(mut self, input: i64) -> Self {
         self.started_event_id = ::std::option::Option::Some(input);
         self
@@ -107,6 +111,7 @@ impl PollForDecisionTaskOutputBuilder {
         &self.started_event_id
     }
     /// <p>The workflow execution for which this decision task was created.</p>
+    /// This field is required.
     pub fn workflow_execution(mut self, input: crate::types::WorkflowExecution) -> Self {
         self.workflow_execution = ::std::option::Option::Some(input);
         self
@@ -121,6 +126,7 @@ impl PollForDecisionTaskOutputBuilder {
         &self.workflow_execution
     }
     /// <p>The type of the workflow execution for which this decision task was created.</p>
+    /// This field is required.
     pub fn workflow_type(mut self, input: crate::types::WorkflowType) -> Self {
         self.workflow_type = ::std::option::Option::Some(input);
         self
@@ -195,16 +201,32 @@ impl PollForDecisionTaskOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PollForDecisionTaskOutput`](crate::operation::poll_for_decision_task::PollForDecisionTaskOutput).
-    pub fn build(self) -> crate::operation::poll_for_decision_task::PollForDecisionTaskOutput {
-        crate::operation::poll_for_decision_task::PollForDecisionTaskOutput {
-            task_token: self.task_token,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`task_token`](crate::operation::poll_for_decision_task::builders::PollForDecisionTaskOutputBuilder::task_token)
+    /// - [`events`](crate::operation::poll_for_decision_task::builders::PollForDecisionTaskOutputBuilder::events)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::poll_for_decision_task::PollForDecisionTaskOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::poll_for_decision_task::PollForDecisionTaskOutput {
+            task_token: self.task_token.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "task_token",
+                    "task_token was not specified but it is required when building PollForDecisionTaskOutput",
+                )
+            })?,
             started_event_id: self.started_event_id.unwrap_or_default(),
             workflow_execution: self.workflow_execution,
             workflow_type: self.workflow_type,
-            events: self.events,
+            events: self.events.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "events",
+                    "events was not specified but it is required when building PollForDecisionTaskOutput",
+                )
+            })?,
             next_page_token: self.next_page_token,
             previous_started_event_id: self.previous_started_event_id.unwrap_or_default(),
             _request_id: self._request_id,
-        }
+        })
     }
 }

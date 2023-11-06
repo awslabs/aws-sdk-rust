@@ -2,7 +2,7 @@
 pub fn ser_put_function_event_invoke_config_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.destination_config {
         #[allow(unused_mut)]
         let mut object_2 = object.key("DestinationConfig").start_object();

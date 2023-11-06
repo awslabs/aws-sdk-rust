@@ -40,16 +40,22 @@ impl UpdateSubscriptionTargetInput {
         self.name.as_deref()
     }
     /// <p>The authorized principals to be updated as part of the <code>UpdateSubscriptionTarget</code> action.</p>
-    pub fn authorized_principals(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.authorized_principals.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.authorized_principals.is_none()`.
+    pub fn authorized_principals(&self) -> &[::std::string::String] {
+        self.authorized_principals.as_deref().unwrap_or_default()
     }
     /// <p>The applicable asset types to be updated as part of the <code>UpdateSubscriptionTarget</code> action.</p>
-    pub fn applicable_asset_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.applicable_asset_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.applicable_asset_types.is_none()`.
+    pub fn applicable_asset_types(&self) -> &[::std::string::String] {
+        self.applicable_asset_types.as_deref().unwrap_or_default()
     }
     /// <p>The configuration to be updated as part of the <code>UpdateSubscriptionTarget</code> action.</p>
-    pub fn subscription_target_config(&self) -> ::std::option::Option<&[crate::types::SubscriptionTargetForm]> {
-        self.subscription_target_config.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subscription_target_config.is_none()`.
+    pub fn subscription_target_config(&self) -> &[crate::types::SubscriptionTargetForm] {
+        self.subscription_target_config.as_deref().unwrap_or_default()
     }
     /// <p>The manage access role to be updated as part of the <code>UpdateSubscriptionTarget</code> action.</p>
     pub fn manage_access_role(&self) -> ::std::option::Option<&str> {
@@ -98,6 +104,7 @@ pub struct UpdateSubscriptionTargetInputBuilder {
 }
 impl UpdateSubscriptionTargetInputBuilder {
     /// <p>The identifier of the Amazon DataZone domain in which a subscription target is to be updated.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +119,7 @@ impl UpdateSubscriptionTargetInputBuilder {
         &self.domain_identifier
     }
     /// <p>The identifier of the environment in which a subscription target is to be updated.</p>
+    /// This field is required.
     pub fn environment_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_identifier = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +134,7 @@ impl UpdateSubscriptionTargetInputBuilder {
         &self.environment_identifier
     }
     /// <p>Identifier of the subscription target that is to be updated.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -246,7 +255,7 @@ impl UpdateSubscriptionTargetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_subscription_target::UpdateSubscriptionTargetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_subscription_target::UpdateSubscriptionTargetInput {
             domain_identifier: self.domain_identifier,

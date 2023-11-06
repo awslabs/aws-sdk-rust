@@ -28,6 +28,7 @@ pub struct CreateCloudFrontOriginAccessIdentityInputBuilder {
 }
 impl CreateCloudFrontOriginAccessIdentityInputBuilder {
     /// <p>The current configuration information for the identity.</p>
+    /// This field is required.
     pub fn cloud_front_origin_access_identity_config(mut self, input: crate::types::CloudFrontOriginAccessIdentityConfig) -> Self {
         self.cloud_front_origin_access_identity_config = ::std::option::Option::Some(input);
         self
@@ -49,7 +50,7 @@ impl CreateCloudFrontOriginAccessIdentityInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityInput {

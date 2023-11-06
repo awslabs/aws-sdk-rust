@@ -160,12 +160,12 @@ pub fn de_batch_delete_http_response(
 
 pub fn ser_batch_delete_input(
     input: &crate::operation::batch_delete::BatchDeleteInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_batch_delete_input::ser_batch_delete_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_batch_delete(
@@ -180,13 +180,12 @@ pub(crate) fn de_batch_delete(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "failed" => {
-                    builder = builder.set_failed(
-                        crate::protocol_serde::shape___list_of_batch_failed_result_model::de___list_of_batch_failed_result_model(tokens)?,
-                    );
+                    builder = builder
+                        .set_failed(crate::protocol_serde::shape_list_of_batch_failed_result_model::de_list_of_batch_failed_result_model(tokens)?);
                 }
                 "successful" => {
                     builder = builder.set_successful(
-                        crate::protocol_serde::shape___list_of_batch_successful_result_model::de___list_of_batch_successful_result_model(tokens)?,
+                        crate::protocol_serde::shape_list_of_batch_successful_result_model::de_list_of_batch_successful_result_model(tokens)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

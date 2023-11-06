@@ -35,6 +35,7 @@ pub struct OutputParameterBuilder {
 }
 impl OutputParameterBuilder {
     /// <p>The name of the output parameter.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl OutputParameterBuilder {
         &self.name
     }
     /// <p>The value of the output parameter.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self

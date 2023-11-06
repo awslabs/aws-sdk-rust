@@ -57,6 +57,7 @@ pub struct UpdateAppMonitorInputBuilder {
 }
 impl UpdateAppMonitorInputBuilder {
     /// <p>The name of the app monitor to update.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -132,7 +133,7 @@ impl UpdateAppMonitorInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAppMonitorInput`](crate::operation::update_app_monitor::UpdateAppMonitorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_app_monitor::UpdateAppMonitorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_app_monitor::UpdateAppMonitorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_app_monitor::UpdateAppMonitorInput {
             name: self.name,
             domain: self.domain,

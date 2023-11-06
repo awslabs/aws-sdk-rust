@@ -5,24 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Permission {
     /// <p>The identifier of the user, group, or resource to which the permissions are granted.</p>
-    pub grantee_id: ::std::option::Option<::std::string::String>,
+    pub grantee_id: ::std::string::String,
     /// <p>The type of user, group, or resource referred to in GranteeId.</p>
-    pub grantee_type: ::std::option::Option<crate::types::MemberType>,
+    pub grantee_type: crate::types::MemberType,
     /// <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full access to the mailbox, irrespective of other folder-level permissions set on the mailbox.</p>
-    pub permission_values: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
+    pub permission_values: ::std::vec::Vec<crate::types::PermissionType>,
 }
 impl Permission {
     /// <p>The identifier of the user, group, or resource to which the permissions are granted.</p>
-    pub fn grantee_id(&self) -> ::std::option::Option<&str> {
-        self.grantee_id.as_deref()
+    pub fn grantee_id(&self) -> &str {
+        use std::ops::Deref;
+        self.grantee_id.deref()
     }
     /// <p>The type of user, group, or resource referred to in GranteeId.</p>
-    pub fn grantee_type(&self) -> ::std::option::Option<&crate::types::MemberType> {
-        self.grantee_type.as_ref()
+    pub fn grantee_type(&self) -> &crate::types::MemberType {
+        &self.grantee_type
     }
     /// <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full access to the mailbox, irrespective of other folder-level permissions set on the mailbox.</p>
-    pub fn permission_values(&self) -> ::std::option::Option<&[crate::types::PermissionType]> {
-        self.permission_values.as_deref()
+    pub fn permission_values(&self) -> &[crate::types::PermissionType] {
+        use std::ops::Deref;
+        self.permission_values.deref()
     }
 }
 impl Permission {
@@ -42,6 +44,7 @@ pub struct PermissionBuilder {
 }
 impl PermissionBuilder {
     /// <p>The identifier of the user, group, or resource to which the permissions are granted.</p>
+    /// This field is required.
     pub fn grantee_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grantee_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl PermissionBuilder {
         &self.grantee_id
     }
     /// <p>The type of user, group, or resource referred to in GranteeId.</p>
+    /// This field is required.
     pub fn grantee_type(mut self, input: crate::types::MemberType) -> Self {
         self.grantee_type = ::std::option::Option::Some(input);
         self
@@ -90,11 +94,30 @@ impl PermissionBuilder {
         &self.permission_values
     }
     /// Consumes the builder and constructs a [`Permission`](crate::types::Permission).
-    pub fn build(self) -> crate::types::Permission {
-        crate::types::Permission {
-            grantee_id: self.grantee_id,
-            grantee_type: self.grantee_type,
-            permission_values: self.permission_values,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`grantee_id`](crate::types::builders::PermissionBuilder::grantee_id)
+    /// - [`grantee_type`](crate::types::builders::PermissionBuilder::grantee_type)
+    /// - [`permission_values`](crate::types::builders::PermissionBuilder::permission_values)
+    pub fn build(self) -> ::std::result::Result<crate::types::Permission, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Permission {
+            grantee_id: self.grantee_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "grantee_id",
+                    "grantee_id was not specified but it is required when building Permission",
+                )
+            })?,
+            grantee_type: self.grantee_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "grantee_type",
+                    "grantee_type was not specified but it is required when building Permission",
+                )
+            })?,
+            permission_values: self.permission_values.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "permission_values",
+                    "permission_values was not specified but it is required when building Permission",
+                )
+            })?,
+        })
     }
 }

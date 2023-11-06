@@ -133,8 +133,10 @@ impl CreateClusterInput {
         self.force_create_jobs
     }
     /// <p>Lists long-term pricing id that will be used to associate with jobs automatically created for the new cluster.</p>
-    pub fn long_term_pricing_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.long_term_pricing_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.long_term_pricing_ids.is_none()`.
+    pub fn long_term_pricing_ids(&self) -> &[::std::string::String] {
+        self.long_term_pricing_ids.as_deref().unwrap_or_default()
     }
     /// <p>If your job is being created in one of the US regions, you have the option of specifying what size Snow device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.</p>
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
@@ -174,6 +176,7 @@ pub struct CreateClusterInputBuilder {
 impl CreateClusterInputBuilder {
     /// <p>The type of job for this cluster. Currently, the only job type supported for clusters is <code>LOCAL_USE</code>.</p>
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+    /// This field is required.
     pub fn job_type(mut self, input: crate::types::JobType) -> Self {
         self.job_type = ::std::option::Option::Some(input);
         self
@@ -232,6 +235,7 @@ impl CreateClusterInputBuilder {
         &self.description
     }
     /// <p>The ID for the address that you want the cluster shipped to.</p>
+    /// This field is required.
     pub fn address_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.address_id = ::std::option::Option::Some(input.into());
         self
@@ -277,6 +281,7 @@ impl CreateClusterInputBuilder {
     /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
     /// </note>
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+    /// This field is required.
     pub fn snowball_type(mut self, input: crate::types::SnowballType) -> Self {
         self.snowball_type = ::std::option::Option::Some(input);
         self
@@ -309,6 +314,7 @@ impl CreateClusterInputBuilder {
     /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
     /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn shipping_option(mut self, input: crate::types::ShippingOption) -> Self {
         self.shipping_option = ::std::option::Option::Some(input);
         self
@@ -470,7 +476,7 @@ impl CreateClusterInputBuilder {
     /// Consumes the builder and constructs a [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_cluster::CreateClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_cluster::CreateClusterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_cluster::CreateClusterInput {
             job_type: self.job_type,
             resources: self.resources,

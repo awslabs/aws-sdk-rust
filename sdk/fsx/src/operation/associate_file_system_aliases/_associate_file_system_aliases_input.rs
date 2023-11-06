@@ -35,8 +35,10 @@ impl AssociateFileSystemAliasesInput {
     /// <li> <p>Can start with a numeric.</p> </li>
     /// </ul>
     /// <p>For DNS alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of how you specify them: as uppercase letters, lowercase letters, or the corresponding letters in escape codes.</p>
-    pub fn aliases(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.aliases.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aliases.is_none()`.
+    pub fn aliases(&self) -> &[::std::string::String] {
+        self.aliases.as_deref().unwrap_or_default()
     }
 }
 impl AssociateFileSystemAliasesInput {
@@ -70,6 +72,7 @@ impl AssociateFileSystemAliasesInputBuilder {
         &self.client_request_token
     }
     /// <p>Specifies the file system with which you want to associate one or more DNS aliases.</p>
+    /// This field is required.
     pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
@@ -129,7 +132,7 @@ impl AssociateFileSystemAliasesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_file_system_aliases::AssociateFileSystemAliasesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::associate_file_system_aliases::AssociateFileSystemAliasesInput {
             client_request_token: self.client_request_token,

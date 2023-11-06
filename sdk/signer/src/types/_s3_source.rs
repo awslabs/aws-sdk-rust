@@ -5,24 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Source {
     /// <p>Name of the S3 bucket.</p>
-    pub bucket_name: ::std::option::Option<::std::string::String>,
+    pub bucket_name: ::std::string::String,
     /// <p>Key name of the bucket object that contains your unsigned code.</p>
-    pub key: ::std::option::Option<::std::string::String>,
+    pub key: ::std::string::String,
     /// <p>Version of your source image in your version enabled S3 bucket.</p>
-    pub version: ::std::option::Option<::std::string::String>,
+    pub version: ::std::string::String,
 }
 impl S3Source {
     /// <p>Name of the S3 bucket.</p>
-    pub fn bucket_name(&self) -> ::std::option::Option<&str> {
-        self.bucket_name.as_deref()
+    pub fn bucket_name(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket_name.deref()
     }
     /// <p>Key name of the bucket object that contains your unsigned code.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
-        self.key.as_deref()
+    pub fn key(&self) -> &str {
+        use std::ops::Deref;
+        self.key.deref()
     }
     /// <p>Version of your source image in your version enabled S3 bucket.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
-        self.version.as_deref()
+    pub fn version(&self) -> &str {
+        use std::ops::Deref;
+        self.version.deref()
     }
 }
 impl S3Source {
@@ -42,6 +45,7 @@ pub struct S3SourceBuilder {
 }
 impl S3SourceBuilder {
     /// <p>Name of the S3 bucket.</p>
+    /// This field is required.
     pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +60,7 @@ impl S3SourceBuilder {
         &self.bucket_name
     }
     /// <p>Key name of the bucket object that contains your unsigned code.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +75,7 @@ impl S3SourceBuilder {
         &self.key
     }
     /// <p>Version of your source image in your version enabled S3 bucket.</p>
+    /// This field is required.
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +90,30 @@ impl S3SourceBuilder {
         &self.version
     }
     /// Consumes the builder and constructs a [`S3Source`](crate::types::S3Source).
-    pub fn build(self) -> crate::types::S3Source {
-        crate::types::S3Source {
-            bucket_name: self.bucket_name,
-            key: self.key,
-            version: self.version,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bucket_name`](crate::types::builders::S3SourceBuilder::bucket_name)
+    /// - [`key`](crate::types::builders::S3SourceBuilder::key)
+    /// - [`version`](crate::types::builders::S3SourceBuilder::version)
+    pub fn build(self) -> ::std::result::Result<crate::types::S3Source, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::S3Source {
+            bucket_name: self.bucket_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "bucket_name",
+                    "bucket_name was not specified but it is required when building S3Source",
+                )
+            })?,
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building S3Source",
+                )
+            })?,
+            version: self.version.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "version",
+                    "version was not specified but it is required when building S3Source",
+                )
+            })?,
+        })
     }
 }

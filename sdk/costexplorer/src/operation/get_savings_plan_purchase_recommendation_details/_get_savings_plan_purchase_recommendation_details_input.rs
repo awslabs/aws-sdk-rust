@@ -29,6 +29,7 @@ pub struct GetSavingsPlanPurchaseRecommendationDetailsInputBuilder {
 }
 impl GetSavingsPlanPurchaseRecommendationDetailsInputBuilder {
     /// <p>The ID that is associated with the Savings Plan recommendation.</p>
+    /// This field is required.
     pub fn recommendation_detail_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommendation_detail_id = ::std::option::Option::Some(input.into());
         self
@@ -47,7 +48,7 @@ impl GetSavingsPlanPurchaseRecommendationDetailsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_savings_plan_purchase_recommendation_details::GetSavingsPlanPurchaseRecommendationDetailsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_savings_plan_purchase_recommendation_details::GetSavingsPlanPurchaseRecommendationDetailsInput {

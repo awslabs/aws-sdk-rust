@@ -35,6 +35,7 @@ pub struct DeleteAnalysisSchemeOutputBuilder {
 }
 impl DeleteAnalysisSchemeOutputBuilder {
     /// <p>The status of the analysis scheme being deleted.</p>
+    /// This field is required.
     pub fn analysis_scheme(mut self, input: crate::types::AnalysisSchemeStatus) -> Self {
         self.analysis_scheme = ::std::option::Option::Some(input);
         self

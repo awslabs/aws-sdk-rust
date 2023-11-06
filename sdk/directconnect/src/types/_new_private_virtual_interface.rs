@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NewPrivateVirtualInterface {
     /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
-    pub virtual_interface_name: ::std::option::Option<::std::string::String>,
+    pub virtual_interface_name: ::std::string::String,
     /// <p>The ID of the VLAN.</p>
     pub vlan: i32,
     /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
@@ -32,8 +32,9 @@ pub struct NewPrivateVirtualInterface {
 }
 impl NewPrivateVirtualInterface {
     /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
-    pub fn virtual_interface_name(&self) -> ::std::option::Option<&str> {
-        self.virtual_interface_name.as_deref()
+    pub fn virtual_interface_name(&self) -> &str {
+        use std::ops::Deref;
+        self.virtual_interface_name.deref()
     }
     /// <p>The ID of the VLAN.</p>
     pub fn vlan(&self) -> i32 {
@@ -73,8 +74,10 @@ impl NewPrivateVirtualInterface {
         self.direct_connect_gateway_id.as_deref()
     }
     /// <p>The tags associated with the private virtual interface.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether to enable or disable SiteLink.</p>
     pub fn enable_site_link(&self) -> ::std::option::Option<bool> {
@@ -107,6 +110,7 @@ pub struct NewPrivateVirtualInterfaceBuilder {
 }
 impl NewPrivateVirtualInterfaceBuilder {
     /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
+    /// This field is required.
     pub fn virtual_interface_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_interface_name = ::std::option::Option::Some(input.into());
         self
@@ -121,6 +125,7 @@ impl NewPrivateVirtualInterfaceBuilder {
         &self.virtual_interface_name
     }
     /// <p>The ID of the VLAN.</p>
+    /// This field is required.
     pub fn vlan(mut self, input: i32) -> Self {
         self.vlan = ::std::option::Option::Some(input);
         self
@@ -136,6 +141,7 @@ impl NewPrivateVirtualInterfaceBuilder {
     }
     /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
     /// <p>The valid values are 1-2147483647.</p>
+    /// This field is required.
     pub fn asn(mut self, input: i32) -> Self {
         self.asn = ::std::option::Option::Some(input);
         self
@@ -284,9 +290,16 @@ impl NewPrivateVirtualInterfaceBuilder {
         &self.enable_site_link
     }
     /// Consumes the builder and constructs a [`NewPrivateVirtualInterface`](crate::types::NewPrivateVirtualInterface).
-    pub fn build(self) -> crate::types::NewPrivateVirtualInterface {
-        crate::types::NewPrivateVirtualInterface {
-            virtual_interface_name: self.virtual_interface_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`virtual_interface_name`](crate::types::builders::NewPrivateVirtualInterfaceBuilder::virtual_interface_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::NewPrivateVirtualInterface, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::NewPrivateVirtualInterface {
+            virtual_interface_name: self.virtual_interface_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "virtual_interface_name",
+                    "virtual_interface_name was not specified but it is required when building NewPrivateVirtualInterface",
+                )
+            })?,
             vlan: self.vlan.unwrap_or_default(),
             asn: self.asn.unwrap_or_default(),
             mtu: self.mtu,
@@ -298,6 +311,6 @@ impl NewPrivateVirtualInterfaceBuilder {
             direct_connect_gateway_id: self.direct_connect_gateway_id,
             tags: self.tags,
             enable_site_link: self.enable_site_link,
-        }
+        })
     }
 }

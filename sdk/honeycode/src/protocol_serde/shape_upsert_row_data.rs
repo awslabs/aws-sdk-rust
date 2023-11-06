@@ -2,28 +2,28 @@
 pub fn ser_upsert_row_data(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpsertRowData,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.batch_item_id {
-        object.key("batchItemId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("batchItemId").string(input.batch_item_id.as_str());
     }
-    if let Some(var_2) = &input.filter {
+    if let Some(var_1) = &input.filter {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("filter").start_object();
-        crate::protocol_serde::shape_filter::ser_filter(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("filter").start_object();
+        crate::protocol_serde::shape_filter::ser_filter(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.cells_to_update {
+    {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("cellsToUpdate").start_object();
-        for (key_6, value_7) in var_4 {
+        let mut object_3 = object.key("cellsToUpdate").start_object();
+        for (key_4, value_5) in &input.cells_to_update {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = object_5.key(key_6.as_str()).start_object();
-                crate::protocol_serde::shape_cell_input::ser_cell_input(&mut object_8, value_7)?;
-                object_8.finish();
+                let mut object_6 = object_3.key(key_4.as_str()).start_object();
+                crate::protocol_serde::shape_cell_input::ser_cell_input(&mut object_6, value_5)?;
+                object_6.finish();
             }
         }
-        object_5.finish();
+        object_3.finish();
     }
     Ok(())
 }

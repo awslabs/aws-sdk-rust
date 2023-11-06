@@ -112,6 +112,8 @@ pub struct RestoreFromClusterSnapshotInput {
     pub manage_master_password: ::std::option::Option<bool>,
     /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret. You can only use this parameter if <code>ManageMasterPassword</code> is true.</p>
     pub master_password_secret_kms_key_id: ::std::option::Option<::std::string::String>,
+    /// <p>The IP address type for the cluster. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
+    pub ip_address_type: ::std::option::Option<::std::string::String>,
 }
 impl RestoreFromClusterSnapshotInput {
     /// <p>The identifier of the cluster that will be created from restoring the snapshot.</p>
@@ -195,14 +197,18 @@ impl RestoreFromClusterSnapshotInput {
     /// <p>A list of security groups to be associated with this cluster.</p>
     /// <p>Default: The default cluster security group for Amazon Redshift.</p>
     /// <p>Cluster security groups only apply to clusters outside of VPCs.</p>
-    pub fn cluster_security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cluster_security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cluster_security_groups.is_none()`.
+    pub fn cluster_security_groups(&self) -> &[::std::string::String] {
+        self.cluster_security_groups.as_deref().unwrap_or_default()
     }
     /// <p>A list of Virtual Private Cloud (VPC) security groups to be associated with the cluster.</p>
     /// <p>Default: The default VPC security group is associated with the cluster.</p>
     /// <p>VPC security groups only apply to clusters in VPCs.</p>
-    pub fn vpc_security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.vpc_security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_group_ids.is_none()`.
+    pub fn vpc_security_group_ids(&self) -> &[::std::string::String] {
+        self.vpc_security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>The weekly time range (in UTC) during which automated cluster maintenance can occur.</p>
     /// <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
@@ -245,8 +251,10 @@ impl RestoreFromClusterSnapshotInput {
     }
     /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. </p>
     /// <p>The maximum number of IAM roles that you can associate is subject to a quota. For more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    pub fn iam_roles(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.iam_roles.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.iam_roles.is_none()`.
+    pub fn iam_roles(&self) -> &[::std::string::String] {
+        self.iam_roles.as_deref().unwrap_or_default()
     }
     /// <p>The name of the maintenance track for the restored cluster. When you take a snapshot, the snapshot inherits the <code>MaintenanceTrack</code> value from the cluster. The snapshot might be on a different track than the cluster that was the source for the snapshot. For example, suppose that you take a snapshot of a cluster that is on the current track and then change the cluster to be on the trailing track. In this case, the snapshot and the source cluster are on different tracks.</p>
     pub fn maintenance_track_name(&self) -> ::std::option::Option<&str> {
@@ -291,6 +299,10 @@ impl RestoreFromClusterSnapshotInput {
     /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret. You can only use this parameter if <code>ManageMasterPassword</code> is true.</p>
     pub fn master_password_secret_kms_key_id(&self) -> ::std::option::Option<&str> {
         self.master_password_secret_kms_key_id.as_deref()
+    }
+    /// <p>The IP address type for the cluster. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
+    pub fn ip_address_type(&self) -> ::std::option::Option<&str> {
+        self.ip_address_type.as_deref()
     }
 }
 impl RestoreFromClusterSnapshotInput {
@@ -339,6 +351,7 @@ pub struct RestoreFromClusterSnapshotInputBuilder {
     pub(crate) encrypted: ::std::option::Option<bool>,
     pub(crate) manage_master_password: ::std::option::Option<bool>,
     pub(crate) master_password_secret_kms_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) ip_address_type: ::std::option::Option<::std::string::String>,
 }
 impl RestoreFromClusterSnapshotInputBuilder {
     /// <p>The identifier of the cluster that will be created from restoring the snapshot.</p>
@@ -350,6 +363,7 @@ impl RestoreFromClusterSnapshotInputBuilder {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
@@ -963,12 +977,26 @@ impl RestoreFromClusterSnapshotInputBuilder {
     pub fn get_master_password_secret_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.master_password_secret_kms_key_id
     }
+    /// <p>The IP address type for the cluster. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
+    pub fn ip_address_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ip_address_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The IP address type for the cluster. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ip_address_type = input;
+        self
+    }
+    /// <p>The IP address type for the cluster. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_address_type
+    }
     /// Consumes the builder and constructs a [`RestoreFromClusterSnapshotInput`](crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotInput {
             cluster_identifier: self.cluster_identifier,
@@ -1006,6 +1034,7 @@ impl RestoreFromClusterSnapshotInputBuilder {
             encrypted: self.encrypted,
             manage_master_password: self.manage_master_password,
             master_password_secret_kms_key_id: self.master_password_secret_kms_key_id,
+            ip_address_type: self.ip_address_type,
         })
     }
 }

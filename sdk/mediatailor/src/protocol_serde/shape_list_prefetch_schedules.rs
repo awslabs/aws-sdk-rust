@@ -37,12 +37,12 @@ pub fn de_list_prefetch_schedules_http_response(
 
 pub fn ser_list_prefetch_schedules_input(
     input: &crate::operation::list_prefetch_schedules::ListPrefetchSchedulesInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_list_prefetch_schedules_input::ser_list_prefetch_schedules_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_list_prefetch_schedules(
@@ -60,7 +60,7 @@ pub(crate) fn de_list_prefetch_schedules(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Items" => {
-                    builder = builder.set_items(crate::protocol_serde::shape___list_of_prefetch_schedule::de___list_of_prefetch_schedule(
+                    builder = builder.set_items(crate::protocol_serde::shape_list_of_prefetch_schedule::de_list_of_prefetch_schedule(
                         tokens,
                     )?);
                 }

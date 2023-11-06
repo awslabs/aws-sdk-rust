@@ -11,8 +11,10 @@ pub struct ListApplicationInstanceDependenciesOutput {
 }
 impl ListApplicationInstanceDependenciesOutput {
     /// <p>A list of package objects.</p>
-    pub fn package_objects(&self) -> ::std::option::Option<&[crate::types::PackageObject]> {
-        self.package_objects.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.package_objects.is_none()`.
+    pub fn package_objects(&self) -> &[crate::types::PackageObject] {
+        self.package_objects.as_deref().unwrap_or_default()
     }
     /// <p>A pagination token that's included if more results are available.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

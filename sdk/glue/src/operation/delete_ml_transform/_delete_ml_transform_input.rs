@@ -27,6 +27,7 @@ pub struct DeleteMlTransformInputBuilder {
 }
 impl DeleteMlTransformInputBuilder {
     /// <p>The unique identifier of the transform to delete.</p>
+    /// This field is required.
     pub fn transform_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transform_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteMlTransformInputBuilder {
     /// Consumes the builder and constructs a [`DeleteMlTransformInput`](crate::operation::delete_ml_transform::DeleteMlTransformInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_ml_transform::DeleteMlTransformInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_ml_transform::DeleteMlTransformInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_ml_transform::DeleteMlTransformInput {
             transform_id: self.transform_id,
         })

@@ -2,7 +2,7 @@
 pub fn ser_http_gateway_route_prefix_rewrite(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HttpGatewayRoutePrefixRewrite,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.default_prefix {
         object.key("defaultPrefix").string(var_1.as_str());
     }

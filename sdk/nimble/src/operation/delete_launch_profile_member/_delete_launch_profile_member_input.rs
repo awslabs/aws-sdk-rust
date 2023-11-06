@@ -62,6 +62,7 @@ impl DeleteLaunchProfileMemberInputBuilder {
         &self.client_token
     }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
+    /// This field is required.
     pub fn launch_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_profile_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl DeleteLaunchProfileMemberInputBuilder {
         &self.launch_profile_id
     }
     /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
+    /// This field is required.
     pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +92,7 @@ impl DeleteLaunchProfileMemberInputBuilder {
         &self.principal_id
     }
     /// <p>The studio ID. </p>
+    /// This field is required.
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +111,7 @@ impl DeleteLaunchProfileMemberInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_launch_profile_member::DeleteLaunchProfileMemberInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_launch_profile_member::DeleteLaunchProfileMemberInput {
             client_token: self.client_token,

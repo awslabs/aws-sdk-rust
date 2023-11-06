@@ -2,15 +2,15 @@
 pub fn ser_xss_match_set_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::XssMatchSetUpdate,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.action {
-        object.key("Action").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Action").string(input.action.as_str());
     }
-    if let Some(var_2) = &input.xss_match_tuple {
+    if let Some(var_1) = &input.xss_match_tuple {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("XssMatchTuple").start_object();
-        crate::protocol_serde::shape_xss_match_tuple::ser_xss_match_tuple(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("XssMatchTuple").start_object();
+        crate::protocol_serde::shape_xss_match_tuple::ser_xss_match_tuple(&mut object_2, var_1)?;
+        object_2.finish();
     }
     Ok(())
 }

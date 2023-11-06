@@ -2,15 +2,15 @@
 pub fn ser_partition_value_list(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PartitionValueList,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.values {
-        let mut array_2 = object.key("Values").start_array();
-        for item_3 in var_1 {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        let mut array_1 = object.key("Values").start_array();
+        for item_2 in &input.values {
             {
-                array_2.value().string(item_3.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
     Ok(())
 }

@@ -27,6 +27,7 @@ pub struct DescribeSimulationJobBatchInputBuilder {
 }
 impl DescribeSimulationJobBatchInputBuilder {
     /// <p>The id of the batch to describe.</p>
+    /// This field is required.
     pub fn batch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.batch = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeSimulationJobBatchInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_simulation_job_batch::DescribeSimulationJobBatchInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_simulation_job_batch::DescribeSimulationJobBatchInput { batch: self.batch })
     }

@@ -27,6 +27,7 @@ pub struct GetOperationInputBuilder {
 }
 impl GetOperationInputBuilder {
     /// <p>The ID of the operation.</p>
+    /// This field is required.
     pub fn operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operation_id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,9 @@ impl GetOperationInputBuilder {
         &self.operation_id
     }
     /// Consumes the builder and constructs a [`GetOperationInput`](crate::operation::get_operation::GetOperationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_operation::GetOperationInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_operation::GetOperationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_operation::GetOperationInput {
             operation_id: self.operation_id,
         })

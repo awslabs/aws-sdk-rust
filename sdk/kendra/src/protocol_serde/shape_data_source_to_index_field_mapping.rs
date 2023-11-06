@@ -2,15 +2,15 @@
 pub fn ser_data_source_to_index_field_mapping(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataSourceToIndexFieldMapping,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.data_source_field_name {
-        object.key("DataSourceFieldName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("DataSourceFieldName").string(input.data_source_field_name.as_str());
     }
-    if let Some(var_2) = &input.date_field_format {
-        object.key("DateFieldFormat").string(var_2.as_str());
+    if let Some(var_1) = &input.date_field_format {
+        object.key("DateFieldFormat").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.index_field_name {
-        object.key("IndexFieldName").string(var_3.as_str());
+    {
+        object.key("IndexFieldName").string(input.index_field_name.as_str());
     }
     Ok(())
 }
@@ -61,7 +61,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::data_source_to_index_field_mapping_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -2,24 +2,24 @@
 pub fn ser_aws_managed_rules_acfp_rule_set(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsManagedRulesAcfpRuleSet,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.creation_path {
-        object.key("CreationPath").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("CreationPath").string(input.creation_path.as_str());
     }
-    if let Some(var_2) = &input.registration_page_path {
-        object.key("RegistrationPagePath").string(var_2.as_str());
+    {
+        object.key("RegistrationPagePath").string(input.registration_page_path.as_str());
     }
-    if let Some(var_3) = &input.request_inspection {
+    if let Some(var_1) = &input.request_inspection {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("RequestInspection").start_object();
-        crate::protocol_serde::shape_request_inspection_acfp::ser_request_inspection_acfp(&mut object_4, var_3)?;
+        let mut object_2 = object.key("RequestInspection").start_object();
+        crate::protocol_serde::shape_request_inspection_acfp::ser_request_inspection_acfp(&mut object_2, var_1)?;
+        object_2.finish();
+    }
+    if let Some(var_3) = &input.response_inspection {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("ResponseInspection").start_object();
+        crate::protocol_serde::shape_response_inspection::ser_response_inspection(&mut object_4, var_3)?;
         object_4.finish();
-    }
-    if let Some(var_5) = &input.response_inspection {
-        #[allow(unused_mut)]
-        let mut object_6 = object.key("ResponseInspection").start_object();
-        crate::protocol_serde::shape_response_inspection::ser_response_inspection(&mut object_6, var_5)?;
-        object_6.finish();
     }
     if input.enable_regex_in_path {
         object.key("EnableRegexInPath").boolean(input.enable_regex_in_path);
@@ -77,7 +77,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::aws_managed_rules_acfp_rule_set_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

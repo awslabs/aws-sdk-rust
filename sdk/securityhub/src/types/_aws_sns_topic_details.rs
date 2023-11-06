@@ -33,8 +33,10 @@ impl AwsSnsTopicDetails {
         self.kms_master_key_id.as_deref()
     }
     /// <p>Subscription is an embedded property that describes the subscription endpoints of an Amazon SNS topic.</p>
-    pub fn subscription(&self) -> ::std::option::Option<&[crate::types::AwsSnsTopicSubscription]> {
-        self.subscription.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subscription.is_none()`.
+    pub fn subscription(&self) -> &[crate::types::AwsSnsTopicSubscription] {
+        self.subscription.as_deref().unwrap_or_default()
     }
     /// <p>The name of the Amazon SNS topic.</p>
     pub fn topic_name(&self) -> ::std::option::Option<&str> {

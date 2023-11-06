@@ -64,7 +64,7 @@ impl ModifyActivityStreamInputBuilder {
     /// Consumes the builder and constructs a [`ModifyActivityStreamInput`](crate::operation::modify_activity_stream::ModifyActivityStreamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_activity_stream::ModifyActivityStreamInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::modify_activity_stream::ModifyActivityStreamInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::modify_activity_stream::ModifyActivityStreamInput {
             resource_arn: self.resource_arn,

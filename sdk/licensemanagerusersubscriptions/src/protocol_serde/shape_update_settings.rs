@@ -2,27 +2,27 @@
 pub fn ser_update_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.add_subnets {
-        let mut array_2 = object.key("AddSubnets").start_array();
-        for item_3 in var_1 {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        let mut array_1 = object.key("AddSubnets").start_array();
+        for item_2 in &input.add_subnets {
             {
-                array_2.value().string(item_3.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
-    if let Some(var_4) = &input.remove_subnets {
-        let mut array_5 = object.key("RemoveSubnets").start_array();
-        for item_6 in var_4 {
+    {
+        let mut array_3 = object.key("RemoveSubnets").start_array();
+        for item_4 in &input.remove_subnets {
             {
-                array_5.value().string(item_6.as_str());
+                array_3.value().string(item_4.as_str());
             }
         }
-        array_5.finish();
+        array_3.finish();
     }
-    if let Some(var_7) = &input.security_group_id {
-        object.key("SecurityGroupId").string(var_7.as_str());
+    if let Some(var_5) = &input.security_group_id {
+        object.key("SecurityGroupId").string(var_5.as_str());
     }
     Ok(())
 }

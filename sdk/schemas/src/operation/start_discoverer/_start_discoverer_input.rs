@@ -27,6 +27,7 @@ pub struct StartDiscovererInputBuilder {
 }
 impl StartDiscovererInputBuilder {
     /// <p>The ID of the discoverer.</p>
+    /// This field is required.
     pub fn discoverer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.discoverer_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl StartDiscovererInputBuilder {
     /// Consumes the builder and constructs a [`StartDiscovererInput`](crate::operation::start_discoverer::StartDiscovererInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_discoverer::StartDiscovererInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_discoverer::StartDiscovererInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_discoverer::StartDiscovererInput {
             discoverer_id: self.discoverer_id,
         })

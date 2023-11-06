@@ -7,7 +7,7 @@ pub struct ActivityTaskScheduledEventAttributes {
     /// <p>The type of the activity task.</p>
     pub activity_type: ::std::option::Option<crate::types::ActivityType>,
     /// <p>The unique ID of the activity task.</p>
-    pub activity_id: ::std::option::Option<::std::string::String>,
+    pub activity_id: ::std::string::String,
     /// <p>The input provided to the activity task.</p>
     pub input: ::std::option::Option<::std::string::String>,
     /// <p>Data attached to the event that can be used by the decider in subsequent workflow tasks. This data isn't sent to the activity.</p>
@@ -35,8 +35,9 @@ impl ActivityTaskScheduledEventAttributes {
         self.activity_type.as_ref()
     }
     /// <p>The unique ID of the activity task.</p>
-    pub fn activity_id(&self) -> ::std::option::Option<&str> {
-        self.activity_id.as_deref()
+    pub fn activity_id(&self) -> &str {
+        use std::ops::Deref;
+        self.activity_id.deref()
     }
     /// <p>The input provided to the activity task.</p>
     pub fn input(&self) -> ::std::option::Option<&str> {
@@ -102,6 +103,7 @@ pub struct ActivityTaskScheduledEventAttributesBuilder {
 }
 impl ActivityTaskScheduledEventAttributesBuilder {
     /// <p>The type of the activity task.</p>
+    /// This field is required.
     pub fn activity_type(mut self, input: crate::types::ActivityType) -> Self {
         self.activity_type = ::std::option::Option::Some(input);
         self
@@ -116,6 +118,7 @@ impl ActivityTaskScheduledEventAttributesBuilder {
         &self.activity_type
     }
     /// <p>The unique ID of the activity task.</p>
+    /// This field is required.
     pub fn activity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.activity_id = ::std::option::Option::Some(input.into());
         self
@@ -200,6 +203,7 @@ impl ActivityTaskScheduledEventAttributesBuilder {
         &self.start_to_close_timeout
     }
     /// <p>The task list in which the activity task has been scheduled.</p>
+    /// This field is required.
     pub fn task_list(mut self, input: crate::types::TaskList) -> Self {
         self.task_list = ::std::option::Option::Some(input);
         self
@@ -234,6 +238,7 @@ impl ActivityTaskScheduledEventAttributesBuilder {
         &self.task_priority
     }
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision that resulted in the scheduling of this activity task. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    /// This field is required.
     pub fn decision_task_completed_event_id(mut self, input: i64) -> Self {
         self.decision_task_completed_event_id = ::std::option::Option::Some(input);
         self
@@ -262,10 +267,19 @@ impl ActivityTaskScheduledEventAttributesBuilder {
         &self.heartbeat_timeout
     }
     /// Consumes the builder and constructs a [`ActivityTaskScheduledEventAttributes`](crate::types::ActivityTaskScheduledEventAttributes).
-    pub fn build(self) -> crate::types::ActivityTaskScheduledEventAttributes {
-        crate::types::ActivityTaskScheduledEventAttributes {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`activity_id`](crate::types::builders::ActivityTaskScheduledEventAttributesBuilder::activity_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::ActivityTaskScheduledEventAttributes, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ActivityTaskScheduledEventAttributes {
             activity_type: self.activity_type,
-            activity_id: self.activity_id,
+            activity_id: self.activity_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "activity_id",
+                    "activity_id was not specified but it is required when building ActivityTaskScheduledEventAttributes",
+                )
+            })?,
             input: self.input,
             control: self.control,
             schedule_to_start_timeout: self.schedule_to_start_timeout,
@@ -275,6 +289,6 @@ impl ActivityTaskScheduledEventAttributesBuilder {
             task_priority: self.task_priority,
             decision_task_completed_event_id: self.decision_task_completed_event_id.unwrap_or_default(),
             heartbeat_timeout: self.heartbeat_timeout,
-        }
+        })
     }
 }

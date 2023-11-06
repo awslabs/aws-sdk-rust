@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParallelismConfiguration {
     /// <p>Describes whether the application uses the default parallelism for the Kinesis Data Analytics service. You must set this property to <code>CUSTOM</code> in order to change your application's <code>AutoScalingEnabled</code>, <code>Parallelism</code>, or <code>ParallelismPerKPU</code> properties.</p>
-    pub configuration_type: ::std::option::Option<crate::types::ConfigurationType>,
+    pub configuration_type: crate::types::ConfigurationType,
     /// <p>Describes the initial number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform. If <code>AutoScalingEnabled</code> is set to True, Kinesis Data Analytics increases the <code>CurrentParallelism</code> value in response to application load. The service can increase the <code>CurrentParallelism</code> value up to the maximum parallelism, which is <code>ParalellismPerKPU</code> times the maximum KPUs for the application. The maximum KPUs for an application is 32 by default, and can be increased by requesting a limit increase. If application load is reduced, the service can reduce the <code>CurrentParallelism</code> value down to the <code>Parallelism</code> setting.</p>
     pub parallelism: ::std::option::Option<i32>,
     /// <p>Describes the number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform per Kinesis Processing Unit (KPU) used by the application. For more information about KPUs, see <a href="http://aws.amazon.com/kinesis/data-analytics/pricing/">Amazon Kinesis Data Analytics Pricing</a>.</p>
@@ -15,8 +15,8 @@ pub struct ParallelismConfiguration {
 }
 impl ParallelismConfiguration {
     /// <p>Describes whether the application uses the default parallelism for the Kinesis Data Analytics service. You must set this property to <code>CUSTOM</code> in order to change your application's <code>AutoScalingEnabled</code>, <code>Parallelism</code>, or <code>ParallelismPerKPU</code> properties.</p>
-    pub fn configuration_type(&self) -> ::std::option::Option<&crate::types::ConfigurationType> {
-        self.configuration_type.as_ref()
+    pub fn configuration_type(&self) -> &crate::types::ConfigurationType {
+        &self.configuration_type
     }
     /// <p>Describes the initial number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform. If <code>AutoScalingEnabled</code> is set to True, Kinesis Data Analytics increases the <code>CurrentParallelism</code> value in response to application load. The service can increase the <code>CurrentParallelism</code> value up to the maximum parallelism, which is <code>ParalellismPerKPU</code> times the maximum KPUs for the application. The maximum KPUs for an application is 32 by default, and can be increased by requesting a limit increase. If application load is reduced, the service can reduce the <code>CurrentParallelism</code> value down to the <code>Parallelism</code> setting.</p>
     pub fn parallelism(&self) -> ::std::option::Option<i32> {
@@ -49,6 +49,7 @@ pub struct ParallelismConfigurationBuilder {
 }
 impl ParallelismConfigurationBuilder {
     /// <p>Describes whether the application uses the default parallelism for the Kinesis Data Analytics service. You must set this property to <code>CUSTOM</code> in order to change your application's <code>AutoScalingEnabled</code>, <code>Parallelism</code>, or <code>ParallelismPerKPU</code> properties.</p>
+    /// This field is required.
     pub fn configuration_type(mut self, input: crate::types::ConfigurationType) -> Self {
         self.configuration_type = ::std::option::Option::Some(input);
         self
@@ -105,12 +106,19 @@ impl ParallelismConfigurationBuilder {
         &self.auto_scaling_enabled
     }
     /// Consumes the builder and constructs a [`ParallelismConfiguration`](crate::types::ParallelismConfiguration).
-    pub fn build(self) -> crate::types::ParallelismConfiguration {
-        crate::types::ParallelismConfiguration {
-            configuration_type: self.configuration_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`configuration_type`](crate::types::builders::ParallelismConfigurationBuilder::configuration_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::ParallelismConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ParallelismConfiguration {
+            configuration_type: self.configuration_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "configuration_type",
+                    "configuration_type was not specified but it is required when building ParallelismConfiguration",
+                )
+            })?,
             parallelism: self.parallelism,
             parallelism_per_kpu: self.parallelism_per_kpu,
             auto_scaling_enabled: self.auto_scaling_enabled,
-        }
+        })
     }
 }

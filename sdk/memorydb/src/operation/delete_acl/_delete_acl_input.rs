@@ -27,6 +27,7 @@ pub struct DeleteAclInputBuilder {
 }
 impl DeleteAclInputBuilder {
     /// <p>The name of the Access Control List to delete</p>
+    /// This field is required.
     pub fn acl_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.acl_name = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl DeleteAclInputBuilder {
         &self.acl_name
     }
     /// Consumes the builder and constructs a [`DeleteAclInput`](crate::operation::delete_acl::DeleteAclInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_acl::DeleteAclInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_acl::DeleteAclInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_acl::DeleteAclInput { acl_name: self.acl_name })
     }
 }

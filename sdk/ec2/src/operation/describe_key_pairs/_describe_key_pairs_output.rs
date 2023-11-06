@@ -9,8 +9,10 @@ pub struct DescribeKeyPairsOutput {
 }
 impl DescribeKeyPairsOutput {
     /// <p>Information about the key pairs.</p>
-    pub fn key_pairs(&self) -> ::std::option::Option<&[crate::types::KeyPairInfo]> {
-        self.key_pairs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.key_pairs.is_none()`.
+    pub fn key_pairs(&self) -> &[crate::types::KeyPairInfo] {
+        self.key_pairs.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeKeyPairsOutput {

@@ -27,6 +27,7 @@ pub struct StopEntitiesDetectionV2JobInputBuilder {
 }
 impl StopEntitiesDetectionV2JobInputBuilder {
     /// <p>The identifier of the medical entities job to stop.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl StopEntitiesDetectionV2JobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_entities_detection_v2_job::StopEntitiesDetectionV2JobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::stop_entities_detection_v2_job::StopEntitiesDetectionV2JobInput { job_id: self.job_id })
     }

@@ -15,8 +15,10 @@ impl FieldFolder {
         self.description.as_deref()
     }
     /// <p>A folder has a list of columns. A column can only be in one folder.</p>
-    pub fn columns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.columns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.columns.is_none()`.
+    pub fn columns(&self) -> &[::std::string::String] {
+        self.columns.as_deref().unwrap_or_default()
     }
 }
 impl FieldFolder {

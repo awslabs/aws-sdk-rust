@@ -42,6 +42,7 @@ pub struct TransferCertificateInputBuilder {
 }
 impl TransferCertificateInputBuilder {
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
+    /// This field is required.
     pub fn certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl TransferCertificateInputBuilder {
         &self.certificate_id
     }
     /// <p>The Amazon Web Services account.</p>
+    /// This field is required.
     pub fn target_aws_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_aws_account = ::std::option::Option::Some(input.into());
         self
@@ -86,7 +88,7 @@ impl TransferCertificateInputBuilder {
     /// Consumes the builder and constructs a [`TransferCertificateInput`](crate::operation::transfer_certificate::TransferCertificateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::transfer_certificate::TransferCertificateInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::transfer_certificate::TransferCertificateInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::transfer_certificate::TransferCertificateInput {
             certificate_id: self.certificate_id,

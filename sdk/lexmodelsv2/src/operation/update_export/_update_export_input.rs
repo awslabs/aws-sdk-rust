@@ -42,6 +42,7 @@ pub struct UpdateExportInputBuilder {
 }
 impl UpdateExportInputBuilder {
     /// <p>The unique identifier Amazon Lex assigned to the export.</p>
+    /// This field is required.
     pub fn export_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.export_id = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +71,9 @@ impl UpdateExportInputBuilder {
         &self.file_password
     }
     /// Consumes the builder and constructs a [`UpdateExportInput`](crate::operation::update_export::UpdateExportInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_export::UpdateExportInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_export::UpdateExportInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_export::UpdateExportInput {
             export_id: self.export_id,
             file_password: self.file_password,

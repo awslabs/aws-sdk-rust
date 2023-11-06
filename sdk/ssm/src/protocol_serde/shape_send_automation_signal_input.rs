@@ -2,7 +2,7 @@
 pub fn ser_send_automation_signal_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::send_automation_signal::SendAutomationSignalInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.automation_execution_id {
         object.key("AutomationExecutionId").string(var_1.as_str());
     }

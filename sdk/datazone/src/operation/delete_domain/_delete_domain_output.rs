@@ -4,13 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDomainOutput {
     /// <p>The status of the domain.</p>
-    pub status: ::std::option::Option<crate::types::DomainStatus>,
+    pub status: crate::types::DomainStatus,
     _request_id: Option<String>,
 }
 impl DeleteDomainOutput {
     /// <p>The status of the domain.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::DomainStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::DomainStatus {
+        &self.status
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteDomainOutput {
@@ -34,6 +34,7 @@ pub struct DeleteDomainOutputBuilder {
 }
 impl DeleteDomainOutputBuilder {
     /// <p>The status of the domain.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::DomainStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -57,10 +58,19 @@ impl DeleteDomainOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteDomainOutput`](crate::operation::delete_domain::DeleteDomainOutput).
-    pub fn build(self) -> crate::operation::delete_domain::DeleteDomainOutput {
-        crate::operation::delete_domain::DeleteDomainOutput {
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::operation::delete_domain::builders::DeleteDomainOutputBuilder::status)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_domain::DeleteDomainOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_domain::DeleteDomainOutput {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building DeleteDomainOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

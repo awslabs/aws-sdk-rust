@@ -48,6 +48,7 @@ impl DeleteReplicatorInputBuilder {
         &self.current_version
     }
     /// <p>The Amazon Resource Name (ARN) of the replicator to be deleted.</p>
+    /// This field is required.
     pub fn replicator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replicator_arn = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl DeleteReplicatorInputBuilder {
     /// Consumes the builder and constructs a [`DeleteReplicatorInput`](crate::operation::delete_replicator::DeleteReplicatorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_replicator::DeleteReplicatorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_replicator::DeleteReplicatorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_replicator::DeleteReplicatorInput {
             current_version: self.current_version,
             replicator_arn: self.replicator_arn,

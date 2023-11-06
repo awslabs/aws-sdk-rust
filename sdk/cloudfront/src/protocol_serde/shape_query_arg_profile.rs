@@ -2,21 +2,22 @@
 pub fn ser_query_arg_profile(
     input: &crate::types::QueryArgProfile,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.query_arg {
+    {
         let mut inner_writer = scope.start_el("QueryArg").finish();
-        inner_writer.data(var_1.as_str());
+        inner_writer.data(input.query_arg.as_str());
     }
-    if let Some(var_2) = &input.profile_id {
+    {
         let mut inner_writer = scope.start_el("ProfileId").finish();
-        inner_writer.data(var_2.as_str());
+        inner_writer.data(input.profile_id.as_str());
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_query_arg_profile(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::QueryArgProfile, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -25,7 +26,7 @@ pub fn de_query_arg_profile(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("QueryArg") /* QueryArg com.amazonaws.cloudfront#QueryArgProfile$QueryArg */ =>  {
-                let var_3 =
+                let var_1 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -34,11 +35,11 @@ pub fn de_query_arg_profile(
                         ?
                     )
                 ;
-                builder = builder.set_query_arg(var_3);
+                builder = builder.set_query_arg(var_1);
             }
             ,
             s if s.matches("ProfileId") /* ProfileId com.amazonaws.cloudfront#QueryArgProfile$ProfileId */ =>  {
-                let var_4 =
+                let var_2 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -47,11 +48,13 @@ pub fn de_query_arg_profile(
                         ?
                     )
                 ;
-                builder = builder.set_profile_id(var_4);
+                builder = builder.set_profile_id(var_2);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::query_arg_profile_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

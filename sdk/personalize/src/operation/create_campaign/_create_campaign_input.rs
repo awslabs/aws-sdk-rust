@@ -32,8 +32,10 @@ impl CreateCampaignInput {
         self.campaign_config.as_ref()
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the campaign.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateCampaignInput {
@@ -55,6 +57,7 @@ pub struct CreateCampaignInputBuilder {
 }
 impl CreateCampaignInputBuilder {
     /// <p>A name for the new campaign. The campaign name must be unique within your account.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +72,7 @@ impl CreateCampaignInputBuilder {
         &self.name
     }
     /// <p>The Amazon Resource Name (ARN) of the solution version to deploy.</p>
+    /// This field is required.
     pub fn solution_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.solution_version_arn = ::std::option::Option::Some(input.into());
         self
@@ -133,7 +137,7 @@ impl CreateCampaignInputBuilder {
     /// Consumes the builder and constructs a [`CreateCampaignInput`](crate::operation::create_campaign::CreateCampaignInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_campaign::CreateCampaignInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_campaign::CreateCampaignInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_campaign::CreateCampaignInput {
             name: self.name,
             solution_version_arn: self.solution_version_arn,

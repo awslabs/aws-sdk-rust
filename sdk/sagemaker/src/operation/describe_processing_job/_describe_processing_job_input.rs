@@ -27,6 +27,7 @@ pub struct DescribeProcessingJobInputBuilder {
 }
 impl DescribeProcessingJobInputBuilder {
     /// <p>The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
+    /// This field is required.
     pub fn processing_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.processing_job_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeProcessingJobInputBuilder {
     /// Consumes the builder and constructs a [`DescribeProcessingJobInput`](crate::operation::describe_processing_job::DescribeProcessingJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_processing_job::DescribeProcessingJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_processing_job::DescribeProcessingJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_processing_job::DescribeProcessingJobInput {
             processing_job_name: self.processing_job_name,

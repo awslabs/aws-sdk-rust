@@ -2,7 +2,7 @@
 pub fn ser_timed_metadata_insertion(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TimedMetadataInsertion,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.id3_insertions {
         let mut array_2 = object.key("id3Insertions").start_array();
         for item_3 in var_1 {
@@ -35,7 +35,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "id3Insertions" => {
                             builder =
-                                builder.set_id3_insertions(crate::protocol_serde::shape___list_of_id3_insertion::de___list_of_id3_insertion(tokens)?);
+                                builder.set_id3_insertions(crate::protocol_serde::shape_list_of_id3_insertion::de_list_of_id3_insertion(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

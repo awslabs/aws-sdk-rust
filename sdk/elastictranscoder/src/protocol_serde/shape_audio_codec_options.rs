@@ -2,7 +2,7 @@
 pub fn ser_audio_codec_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AudioCodecOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.profile {
         object.key("Profile").string(var_1.as_str());
     }

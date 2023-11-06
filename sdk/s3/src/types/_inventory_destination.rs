@@ -28,6 +28,7 @@ pub struct InventoryDestinationBuilder {
 }
 impl InventoryDestinationBuilder {
     /// <p>Contains the bucket name, file format, bucket owner (optional), and prefix (optional) where inventory results are published.</p>
+    /// This field is required.
     pub fn s3_bucket_destination(mut self, input: crate::types::InventoryS3BucketDestination) -> Self {
         self.s3_bucket_destination = ::std::option::Option::Some(input);
         self

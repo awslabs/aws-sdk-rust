@@ -2,7 +2,7 @@
 pub fn ser_s3_output_location(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::S3OutputLocation,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.output_s3_region {
         object.key("OutputS3Region").string(var_1.as_str());
     }

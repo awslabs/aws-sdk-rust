@@ -4,15 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetReadSetActivationJobOutput {
     /// <p>The job's ID.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The job's sequence store ID.</p>
-    pub sequence_store_id: ::std::option::Option<::std::string::String>,
+    pub sequence_store_id: ::std::string::String,
     /// <p>The job's status.</p>
-    pub status: ::std::option::Option<crate::types::ReadSetActivationJobStatus>,
+    pub status: crate::types::ReadSetActivationJobStatus,
     /// <p>The job's status message.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>When the job was created.</p>
-    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_time: ::aws_smithy_types::DateTime,
     /// <p>When the job completed.</p>
     pub completion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The job's source files.</p>
@@ -21,32 +21,36 @@ pub struct GetReadSetActivationJobOutput {
 }
 impl GetReadSetActivationJobOutput {
     /// <p>The job's ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The job's sequence store ID.</p>
-    pub fn sequence_store_id(&self) -> ::std::option::Option<&str> {
-        self.sequence_store_id.as_deref()
+    pub fn sequence_store_id(&self) -> &str {
+        use std::ops::Deref;
+        self.sequence_store_id.deref()
     }
     /// <p>The job's status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ReadSetActivationJobStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::ReadSetActivationJobStatus {
+        &self.status
     }
     /// <p>The job's status message.</p>
     pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
     /// <p>When the job was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_time.as_ref()
+    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_time
     }
     /// <p>When the job completed.</p>
     pub fn completion_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.completion_time.as_ref()
     }
     /// <p>The job's source files.</p>
-    pub fn sources(&self) -> ::std::option::Option<&[crate::types::ActivateReadSetSourceItem]> {
-        self.sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
+    pub fn sources(&self) -> &[crate::types::ActivateReadSetSourceItem] {
+        self.sources.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetReadSetActivationJobOutput {
@@ -76,6 +80,7 @@ pub struct GetReadSetActivationJobOutputBuilder {
 }
 impl GetReadSetActivationJobOutputBuilder {
     /// <p>The job's ID.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +95,7 @@ impl GetReadSetActivationJobOutputBuilder {
         &self.id
     }
     /// <p>The job's sequence store ID.</p>
+    /// This field is required.
     pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_store_id = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +110,7 @@ impl GetReadSetActivationJobOutputBuilder {
         &self.sequence_store_id
     }
     /// <p>The job's status.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::ReadSetActivationJobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -132,6 +139,7 @@ impl GetReadSetActivationJobOutputBuilder {
         &self.status_message
     }
     /// <p>When the job was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -189,16 +197,46 @@ impl GetReadSetActivationJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetReadSetActivationJobOutput`](crate::operation::get_read_set_activation_job::GetReadSetActivationJobOutput).
-    pub fn build(self) -> crate::operation::get_read_set_activation_job::GetReadSetActivationJobOutput {
-        crate::operation::get_read_set_activation_job::GetReadSetActivationJobOutput {
-            id: self.id,
-            sequence_store_id: self.sequence_store_id,
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::get_read_set_activation_job::builders::GetReadSetActivationJobOutputBuilder::id)
+    /// - [`sequence_store_id`](crate::operation::get_read_set_activation_job::builders::GetReadSetActivationJobOutputBuilder::sequence_store_id)
+    /// - [`status`](crate::operation::get_read_set_activation_job::builders::GetReadSetActivationJobOutputBuilder::status)
+    /// - [`creation_time`](crate::operation::get_read_set_activation_job::builders::GetReadSetActivationJobOutputBuilder::creation_time)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_read_set_activation_job::GetReadSetActivationJobOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::get_read_set_activation_job::GetReadSetActivationJobOutput {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building GetReadSetActivationJobOutput",
+                )
+            })?,
+            sequence_store_id: self.sequence_store_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "sequence_store_id",
+                    "sequence_store_id was not specified but it is required when building GetReadSetActivationJobOutput",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building GetReadSetActivationJobOutput",
+                )
+            })?,
             status_message: self.status_message,
-            creation_time: self.creation_time,
+            creation_time: self.creation_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "creation_time",
+                    "creation_time was not specified but it is required when building GetReadSetActivationJobOutput",
+                )
+            })?,
             completion_time: self.completion_time,
             sources: self.sources,
             _request_id: self._request_id,
-        }
+        })
     }
 }

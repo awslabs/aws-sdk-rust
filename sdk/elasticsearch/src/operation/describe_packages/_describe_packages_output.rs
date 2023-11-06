@@ -12,8 +12,10 @@ pub struct DescribePackagesOutput {
 }
 impl DescribePackagesOutput {
     /// <p>List of <code>PackageDetails</code> objects.</p>
-    pub fn package_details_list(&self) -> ::std::option::Option<&[crate::types::PackageDetails]> {
-        self.package_details_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.package_details_list.is_none()`.
+    pub fn package_details_list(&self) -> &[crate::types::PackageDetails] {
+        self.package_details_list.as_deref().unwrap_or_default()
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn next_token(&self) -> ::std::option::Option<&str> {

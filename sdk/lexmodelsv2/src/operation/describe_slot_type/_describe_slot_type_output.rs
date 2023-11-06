@@ -45,8 +45,10 @@ impl DescribeSlotTypeOutput {
         self.description.as_deref()
     }
     /// <p>The values that the slot type can take. Includes any synonyms for the slot type values.</p>
-    pub fn slot_type_values(&self) -> ::std::option::Option<&[crate::types::SlotTypeValue]> {
-        self.slot_type_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.slot_type_values.is_none()`.
+    pub fn slot_type_values(&self) -> &[crate::types::SlotTypeValue] {
+        self.slot_type_values.as_deref().unwrap_or_default()
     }
     /// <p>The strategy that Amazon Lex uses to choose a value from a list of possible values.</p>
     pub fn value_selection_setting(&self) -> ::std::option::Option<&crate::types::SlotValueSelectionSetting> {

@@ -11,8 +11,10 @@ pub struct RuntimeHintDetails {
 }
 impl RuntimeHintDetails {
     /// <p>One or more strings that Amazon Lex should look for in the input to the bot. Each phrase is given preference when deciding on slot values.</p>
-    pub fn runtime_hint_values(&self) -> ::std::option::Option<&[crate::types::RuntimeHintValue]> {
-        self.runtime_hint_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.runtime_hint_values.is_none()`.
+    pub fn runtime_hint_values(&self) -> &[crate::types::RuntimeHintValue] {
+        self.runtime_hint_values.as_deref().unwrap_or_default()
     }
     /// <p>A map of constituent sub slot names inside a composite slot in the intent and the phrases that should be added for each sub slot. Inside each composite slot hints, this structure provides a mechanism to add granular sub slot phrases. Only sub slot hints are supported for composite slots. The intent name, composite slot name and the constituent sub slot names must exist.</p>
     pub fn sub_slot_hints(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::RuntimeHintDetails>> {

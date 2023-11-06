@@ -42,6 +42,7 @@ pub struct EvaluateExpressionInputBuilder {
 }
 impl EvaluateExpressionInputBuilder {
     /// <p>The ID of the pipeline.</p>
+    /// This field is required.
     pub fn pipeline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl EvaluateExpressionInputBuilder {
         &self.pipeline_id
     }
     /// <p>The ID of the object.</p>
+    /// This field is required.
     pub fn object_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl EvaluateExpressionInputBuilder {
         &self.object_id
     }
     /// <p>The expression to evaluate.</p>
+    /// This field is required.
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expression = ::std::option::Option::Some(input.into());
         self
@@ -86,7 +89,7 @@ impl EvaluateExpressionInputBuilder {
     /// Consumes the builder and constructs a [`EvaluateExpressionInput`](crate::operation::evaluate_expression::EvaluateExpressionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::evaluate_expression::EvaluateExpressionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::evaluate_expression::EvaluateExpressionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::evaluate_expression::EvaluateExpressionInput {
             pipeline_id: self.pipeline_id,
             object_id: self.object_id,

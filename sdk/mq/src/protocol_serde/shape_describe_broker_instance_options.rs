@@ -109,7 +109,7 @@ pub(crate) fn de_describe_broker_instance_options(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "brokerInstanceOptions" => {
                     builder = builder.set_broker_instance_options(
-                        crate::protocol_serde::shape___list_of_broker_instance_option::de___list_of_broker_instance_option(tokens)?,
+                        crate::protocol_serde::shape_list_of_broker_instance_option::de_list_of_broker_instance_option(tokens)?,
                     );
                 }
                 "maxResults" => {

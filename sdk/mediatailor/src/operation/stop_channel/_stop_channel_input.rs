@@ -27,6 +27,7 @@ pub struct StopChannelInputBuilder {
 }
 impl StopChannelInputBuilder {
     /// <p>The name of the channel.</p>
+    /// This field is required.
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_name = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl StopChannelInputBuilder {
         &self.channel_name
     }
     /// Consumes the builder and constructs a [`StopChannelInput`](crate::operation::stop_channel::StopChannelInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::stop_channel::StopChannelInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_channel::StopChannelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_channel::StopChannelInput {
             channel_name: self.channel_name,
         })

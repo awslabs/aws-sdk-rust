@@ -170,7 +170,7 @@ impl ListShareInvitationsInputBuilder {
     /// Consumes the builder and constructs a [`ListShareInvitationsInput`](crate::operation::list_share_invitations::ListShareInvitationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_share_invitations::ListShareInvitationsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_share_invitations::ListShareInvitationsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_share_invitations::ListShareInvitationsInput {
             workload_name_prefix: self.workload_name_prefix,

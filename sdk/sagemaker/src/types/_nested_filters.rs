@@ -20,8 +20,10 @@ impl NestedFilters {
         self.nested_property_name.as_deref()
     }
     /// <p>A list of filters. Each filter acts on a property. Filters must contain at least one <code>Filters</code> value. For example, a <code>NestedFilters</code> call might include a filter on the <code>PropertyName</code> parameter of the <code>InputDataConfig</code> property: <code>InputDataConfig.DataSource.S3DataSource.S3Uri</code>.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
 }
 impl NestedFilters {
@@ -40,6 +42,7 @@ pub struct NestedFiltersBuilder {
 }
 impl NestedFiltersBuilder {
     /// <p>The name of the property to use in the nested filters. The value must match a listed property name, such as <code>InputDataConfig</code>.</p>
+    /// This field is required.
     pub fn nested_property_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nested_property_name = ::std::option::Option::Some(input.into());
         self

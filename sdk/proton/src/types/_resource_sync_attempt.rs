@@ -9,13 +9,13 @@ pub struct ResourceSyncAttempt {
     /// <p>Detail data for the target revision.</p>
     pub target_revision: ::std::option::Option<crate::types::Revision>,
     /// <p>The resource that is synced to.</p>
-    pub target: ::std::option::Option<::std::string::String>,
+    pub target: ::std::string::String,
     /// <p>The time when the sync attempt started.</p>
-    pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub started_at: ::aws_smithy_types::DateTime,
     /// <p>The status of the sync attempt.</p>
-    pub status: ::std::option::Option<crate::types::ResourceSyncStatus>,
+    pub status: crate::types::ResourceSyncStatus,
     /// <p>An array of events with detail data.</p>
-    pub events: ::std::option::Option<::std::vec::Vec<crate::types::ResourceSyncEvent>>,
+    pub events: ::std::vec::Vec<crate::types::ResourceSyncEvent>,
 }
 impl ResourceSyncAttempt {
     /// <p>Detail data for the initial repository commit, path and push.</p>
@@ -27,20 +27,22 @@ impl ResourceSyncAttempt {
         self.target_revision.as_ref()
     }
     /// <p>The resource that is synced to.</p>
-    pub fn target(&self) -> ::std::option::Option<&str> {
-        self.target.as_deref()
+    pub fn target(&self) -> &str {
+        use std::ops::Deref;
+        self.target.deref()
     }
     /// <p>The time when the sync attempt started.</p>
-    pub fn started_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.started_at.as_ref()
+    pub fn started_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.started_at
     }
     /// <p>The status of the sync attempt.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ResourceSyncStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::ResourceSyncStatus {
+        &self.status
     }
     /// <p>An array of events with detail data.</p>
-    pub fn events(&self) -> ::std::option::Option<&[crate::types::ResourceSyncEvent]> {
-        self.events.as_deref()
+    pub fn events(&self) -> &[crate::types::ResourceSyncEvent] {
+        use std::ops::Deref;
+        self.events.deref()
     }
 }
 impl ResourceSyncAttempt {
@@ -63,6 +65,7 @@ pub struct ResourceSyncAttemptBuilder {
 }
 impl ResourceSyncAttemptBuilder {
     /// <p>Detail data for the initial repository commit, path and push.</p>
+    /// This field is required.
     pub fn initial_revision(mut self, input: crate::types::Revision) -> Self {
         self.initial_revision = ::std::option::Option::Some(input);
         self
@@ -77,6 +80,7 @@ impl ResourceSyncAttemptBuilder {
         &self.initial_revision
     }
     /// <p>Detail data for the target revision.</p>
+    /// This field is required.
     pub fn target_revision(mut self, input: crate::types::Revision) -> Self {
         self.target_revision = ::std::option::Option::Some(input);
         self
@@ -91,6 +95,7 @@ impl ResourceSyncAttemptBuilder {
         &self.target_revision
     }
     /// <p>The resource that is synced to.</p>
+    /// This field is required.
     pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +110,7 @@ impl ResourceSyncAttemptBuilder {
         &self.target
     }
     /// <p>The time when the sync attempt started.</p>
+    /// This field is required.
     pub fn started_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.started_at = ::std::option::Option::Some(input);
         self
@@ -119,6 +125,7 @@ impl ResourceSyncAttemptBuilder {
         &self.started_at
     }
     /// <p>The status of the sync attempt.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::ResourceSyncStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -153,14 +160,39 @@ impl ResourceSyncAttemptBuilder {
         &self.events
     }
     /// Consumes the builder and constructs a [`ResourceSyncAttempt`](crate::types::ResourceSyncAttempt).
-    pub fn build(self) -> crate::types::ResourceSyncAttempt {
-        crate::types::ResourceSyncAttempt {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`target`](crate::types::builders::ResourceSyncAttemptBuilder::target)
+    /// - [`started_at`](crate::types::builders::ResourceSyncAttemptBuilder::started_at)
+    /// - [`status`](crate::types::builders::ResourceSyncAttemptBuilder::status)
+    /// - [`events`](crate::types::builders::ResourceSyncAttemptBuilder::events)
+    pub fn build(self) -> ::std::result::Result<crate::types::ResourceSyncAttempt, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ResourceSyncAttempt {
             initial_revision: self.initial_revision,
             target_revision: self.target_revision,
-            target: self.target,
-            started_at: self.started_at,
-            status: self.status,
-            events: self.events,
-        }
+            target: self.target.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "target",
+                    "target was not specified but it is required when building ResourceSyncAttempt",
+                )
+            })?,
+            started_at: self.started_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "started_at",
+                    "started_at was not specified but it is required when building ResourceSyncAttempt",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building ResourceSyncAttempt",
+                )
+            })?,
+            events: self.events.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "events",
+                    "events was not specified but it is required when building ResourceSyncAttempt",
+                )
+            })?,
+        })
     }
 }

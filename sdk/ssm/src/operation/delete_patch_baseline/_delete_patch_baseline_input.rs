@@ -27,6 +27,7 @@ pub struct DeletePatchBaselineInputBuilder {
 }
 impl DeletePatchBaselineInputBuilder {
     /// <p>The ID of the patch baseline to delete.</p>
+    /// This field is required.
     pub fn baseline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.baseline_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeletePatchBaselineInputBuilder {
     /// Consumes the builder and constructs a [`DeletePatchBaselineInput`](crate::operation::delete_patch_baseline::DeletePatchBaselineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_patch_baseline::DeletePatchBaselineInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_patch_baseline::DeletePatchBaselineInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_patch_baseline::DeletePatchBaselineInput {
             baseline_id: self.baseline_id,

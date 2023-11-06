@@ -6,13 +6,13 @@ pub struct GetMergeConflictsOutput {
     /// <p>A Boolean value that indicates whether the code is mergeable by the specified merge option.</p>
     pub mergeable: bool,
     /// <p>The commit ID of the destination commit specifier that was used in the merge evaluation.</p>
-    pub destination_commit_id: ::std::option::Option<::std::string::String>,
+    pub destination_commit_id: ::std::string::String,
     /// <p>The commit ID of the source commit specifier that was used in the merge evaluation.</p>
-    pub source_commit_id: ::std::option::Option<::std::string::String>,
+    pub source_commit_id: ::std::string::String,
     /// <p>The commit ID of the merge base.</p>
     pub base_commit_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of metadata for any conflicting files. If the specified merge strategy is FAST_FORWARD_MERGE, this list is always empty.</p>
-    pub conflict_metadata_list: ::std::option::Option<::std::vec::Vec<crate::types::ConflictMetadata>>,
+    pub conflict_metadata_list: ::std::vec::Vec<crate::types::ConflictMetadata>,
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -23,20 +23,23 @@ impl GetMergeConflictsOutput {
         self.mergeable
     }
     /// <p>The commit ID of the destination commit specifier that was used in the merge evaluation.</p>
-    pub fn destination_commit_id(&self) -> ::std::option::Option<&str> {
-        self.destination_commit_id.as_deref()
+    pub fn destination_commit_id(&self) -> &str {
+        use std::ops::Deref;
+        self.destination_commit_id.deref()
     }
     /// <p>The commit ID of the source commit specifier that was used in the merge evaluation.</p>
-    pub fn source_commit_id(&self) -> ::std::option::Option<&str> {
-        self.source_commit_id.as_deref()
+    pub fn source_commit_id(&self) -> &str {
+        use std::ops::Deref;
+        self.source_commit_id.deref()
     }
     /// <p>The commit ID of the merge base.</p>
     pub fn base_commit_id(&self) -> ::std::option::Option<&str> {
         self.base_commit_id.as_deref()
     }
     /// <p>A list of metadata for any conflicting files. If the specified merge strategy is FAST_FORWARD_MERGE, this list is always empty.</p>
-    pub fn conflict_metadata_list(&self) -> ::std::option::Option<&[crate::types::ConflictMetadata]> {
-        self.conflict_metadata_list.as_deref()
+    pub fn conflict_metadata_list(&self) -> &[crate::types::ConflictMetadata] {
+        use std::ops::Deref;
+        self.conflict_metadata_list.deref()
     }
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -69,6 +72,7 @@ pub struct GetMergeConflictsOutputBuilder {
 }
 impl GetMergeConflictsOutputBuilder {
     /// <p>A Boolean value that indicates whether the code is mergeable by the specified merge option.</p>
+    /// This field is required.
     pub fn mergeable(mut self, input: bool) -> Self {
         self.mergeable = ::std::option::Option::Some(input);
         self
@@ -83,6 +87,7 @@ impl GetMergeConflictsOutputBuilder {
         &self.mergeable
     }
     /// <p>The commit ID of the destination commit specifier that was used in the merge evaluation.</p>
+    /// This field is required.
     pub fn destination_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_commit_id = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +102,7 @@ impl GetMergeConflictsOutputBuilder {
         &self.destination_commit_id
     }
     /// <p>The commit ID of the source commit specifier that was used in the merge evaluation.</p>
+    /// This field is required.
     pub fn source_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_commit_id = ::std::option::Option::Some(input.into());
         self
@@ -168,15 +174,36 @@ impl GetMergeConflictsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetMergeConflictsOutput`](crate::operation::get_merge_conflicts::GetMergeConflictsOutput).
-    pub fn build(self) -> crate::operation::get_merge_conflicts::GetMergeConflictsOutput {
-        crate::operation::get_merge_conflicts::GetMergeConflictsOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`destination_commit_id`](crate::operation::get_merge_conflicts::builders::GetMergeConflictsOutputBuilder::destination_commit_id)
+    /// - [`source_commit_id`](crate::operation::get_merge_conflicts::builders::GetMergeConflictsOutputBuilder::source_commit_id)
+    /// - [`conflict_metadata_list`](crate::operation::get_merge_conflicts::builders::GetMergeConflictsOutputBuilder::conflict_metadata_list)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_merge_conflicts::GetMergeConflictsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_merge_conflicts::GetMergeConflictsOutput {
             mergeable: self.mergeable.unwrap_or_default(),
-            destination_commit_id: self.destination_commit_id,
-            source_commit_id: self.source_commit_id,
+            destination_commit_id: self.destination_commit_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "destination_commit_id",
+                    "destination_commit_id was not specified but it is required when building GetMergeConflictsOutput",
+                )
+            })?,
+            source_commit_id: self.source_commit_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "source_commit_id",
+                    "source_commit_id was not specified but it is required when building GetMergeConflictsOutput",
+                )
+            })?,
             base_commit_id: self.base_commit_id,
-            conflict_metadata_list: self.conflict_metadata_list,
+            conflict_metadata_list: self.conflict_metadata_list.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "conflict_metadata_list",
+                    "conflict_metadata_list was not specified but it is required when building GetMergeConflictsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

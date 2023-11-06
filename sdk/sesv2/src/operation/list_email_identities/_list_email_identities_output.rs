@@ -12,8 +12,10 @@ pub struct ListEmailIdentitiesOutput {
 }
 impl ListEmailIdentitiesOutput {
     /// <p>An array that includes all of the email identities associated with your Amazon Web Services account.</p>
-    pub fn email_identities(&self) -> ::std::option::Option<&[crate::types::IdentityInfo]> {
-        self.email_identities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.email_identities.is_none()`.
+    pub fn email_identities(&self) -> &[crate::types::IdentityInfo] {
+        self.email_identities.as_deref().unwrap_or_default()
     }
     /// <p>A token that indicates that there are additional configuration sets to list. To view additional configuration sets, issue another request to <code>ListEmailIdentities</code>, and pass this token in the <code>NextToken</code> parameter.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

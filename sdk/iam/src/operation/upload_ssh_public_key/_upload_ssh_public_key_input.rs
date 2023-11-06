@@ -49,6 +49,7 @@ pub struct UploadSshPublicKeyInputBuilder {
 impl UploadSshPublicKeyInputBuilder {
     /// <p>The name of the IAM user to associate the SSH public key with.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// This field is required.
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self
@@ -71,6 +72,7 @@ impl UploadSshPublicKeyInputBuilder {
     /// <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li>
     /// <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn ssh_public_key_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssh_public_key_body = ::std::option::Option::Some(input.into());
         self
@@ -99,7 +101,7 @@ impl UploadSshPublicKeyInputBuilder {
     /// Consumes the builder and constructs a [`UploadSshPublicKeyInput`](crate::operation::upload_ssh_public_key::UploadSshPublicKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::upload_ssh_public_key::UploadSshPublicKeyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::upload_ssh_public_key::UploadSshPublicKeyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::upload_ssh_public_key::UploadSshPublicKeyInput {
             user_name: self.user_name,

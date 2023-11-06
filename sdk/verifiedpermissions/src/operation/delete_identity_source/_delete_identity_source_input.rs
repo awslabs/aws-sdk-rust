@@ -34,6 +34,7 @@ pub struct DeleteIdentitySourceInputBuilder {
 }
 impl DeleteIdentitySourceInputBuilder {
     /// <p>Specifies the ID of the policy store that contains the identity source that you want to delete.</p>
+    /// This field is required.
     pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_store_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteIdentitySourceInputBuilder {
         &self.policy_store_id
     }
     /// <p>Specifies the ID of the identity source that you want to delete.</p>
+    /// This field is required.
     pub fn identity_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_source_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DeleteIdentitySourceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteIdentitySourceInput`](crate::operation::delete_identity_source::DeleteIdentitySourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_identity_source::DeleteIdentitySourceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_identity_source::DeleteIdentitySourceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_identity_source::DeleteIdentitySourceInput {
             policy_store_id: self.policy_store_id,

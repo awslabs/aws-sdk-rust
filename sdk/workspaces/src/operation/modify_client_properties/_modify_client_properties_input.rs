@@ -34,6 +34,7 @@ pub struct ModifyClientPropertiesInputBuilder {
 }
 impl ModifyClientPropertiesInputBuilder {
     /// <p>The resource identifiers, in the form of directory IDs.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl ModifyClientPropertiesInputBuilder {
         &self.resource_id
     }
     /// <p>Information about the Amazon WorkSpaces client.</p>
+    /// This field is required.
     pub fn client_properties(mut self, input: crate::types::ClientProperties) -> Self {
         self.client_properties = ::std::option::Option::Some(input);
         self
@@ -64,8 +66,10 @@ impl ModifyClientPropertiesInputBuilder {
     /// Consumes the builder and constructs a [`ModifyClientPropertiesInput`](crate::operation::modify_client_properties::ModifyClientPropertiesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_client_properties::ModifyClientPropertiesInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::modify_client_properties::ModifyClientPropertiesInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::modify_client_properties::ModifyClientPropertiesInput {
             resource_id: self.resource_id,
             client_properties: self.client_properties,

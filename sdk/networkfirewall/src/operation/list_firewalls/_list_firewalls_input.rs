@@ -16,8 +16,10 @@ impl ListFirewallsInput {
         self.next_token.as_deref()
     }
     /// <p>The unique identifiers of the VPCs that you want Network Firewall to retrieve the firewalls for. Leave this blank to retrieve all firewalls that you have defined.</p>
-    pub fn vpc_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.vpc_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_ids.is_none()`.
+    pub fn vpc_ids(&self) -> &[::std::string::String] {
+        self.vpc_ids.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -91,7 +93,7 @@ impl ListFirewallsInputBuilder {
     /// Consumes the builder and constructs a [`ListFirewallsInput`](crate::operation::list_firewalls::ListFirewallsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_firewalls::ListFirewallsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_firewalls::ListFirewallsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_firewalls::ListFirewallsInput {
             next_token: self.next_token,
             vpc_ids: self.vpc_ids,

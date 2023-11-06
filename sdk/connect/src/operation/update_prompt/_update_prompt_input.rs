@@ -55,6 +55,7 @@ pub struct UpdatePromptInputBuilder {
 }
 impl UpdatePromptInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl UpdatePromptInputBuilder {
         &self.instance_id
     }
     /// <p>A unique identifier for the prompt.</p>
+    /// This field is required.
     pub fn prompt_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prompt_id = ::std::option::Option::Some(input.into());
         self
@@ -125,7 +127,9 @@ impl UpdatePromptInputBuilder {
         &self.s3_uri
     }
     /// Consumes the builder and constructs a [`UpdatePromptInput`](crate::operation::update_prompt::UpdatePromptInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_prompt::UpdatePromptInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_prompt::UpdatePromptInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_prompt::UpdatePromptInput {
             instance_id: self.instance_id,
             prompt_id: self.prompt_id,

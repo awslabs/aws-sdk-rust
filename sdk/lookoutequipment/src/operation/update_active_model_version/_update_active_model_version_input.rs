@@ -34,6 +34,7 @@ pub struct UpdateActiveModelVersionInputBuilder {
 }
 impl UpdateActiveModelVersionInputBuilder {
     /// <p>The name of the machine learning model for which the active model version is being set.</p>
+    /// This field is required.
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateActiveModelVersionInputBuilder {
         &self.model_name
     }
     /// <p>The version of the machine learning model for which the active model version is being set.</p>
+    /// This field is required.
     pub fn model_version(mut self, input: i64) -> Self {
         self.model_version = ::std::option::Option::Some(input);
         self
@@ -66,7 +68,7 @@ impl UpdateActiveModelVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_active_model_version::UpdateActiveModelVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_active_model_version::UpdateActiveModelVersionInput {
             model_name: self.model_name,

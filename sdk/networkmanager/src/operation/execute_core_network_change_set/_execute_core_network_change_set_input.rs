@@ -34,6 +34,7 @@ pub struct ExecuteCoreNetworkChangeSetInputBuilder {
 }
 impl ExecuteCoreNetworkChangeSetInputBuilder {
     /// <p>The ID of a core network.</p>
+    /// This field is required.
     pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_network_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl ExecuteCoreNetworkChangeSetInputBuilder {
         &self.core_network_id
     }
     /// <p>The ID of the policy version.</p>
+    /// This field is required.
     pub fn policy_version_id(mut self, input: i32) -> Self {
         self.policy_version_id = ::std::option::Option::Some(input);
         self
@@ -66,7 +68,7 @@ impl ExecuteCoreNetworkChangeSetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::execute_core_network_change_set::ExecuteCoreNetworkChangeSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::execute_core_network_change_set::ExecuteCoreNetworkChangeSetInput {
             core_network_id: self.core_network_id,

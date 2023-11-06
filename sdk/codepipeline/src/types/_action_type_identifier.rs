@@ -13,13 +13,13 @@ pub struct ActionTypeIdentifier {
     /// <li> <p> <code>Approval</code> </p> </li>
     /// <li> <p> <code>Invoke</code> </p> </li>
     /// </ul>
-    pub category: ::std::option::Option<crate::types::ActionCategory>,
+    pub category: crate::types::ActionCategory,
     /// <p>The creator of the action type being called: <code>AWS</code> or <code>ThirdParty</code>.</p>
-    pub owner: ::std::option::Option<::std::string::String>,
+    pub owner: ::std::string::String,
     /// <p>The provider of the action type being called. The provider name is supplied when the action type is created.</p>
-    pub provider: ::std::option::Option<::std::string::String>,
+    pub provider: ::std::string::String,
     /// <p>A string that describes the action type version.</p>
-    pub version: ::std::option::Option<::std::string::String>,
+    pub version: ::std::string::String,
 }
 impl ActionTypeIdentifier {
     /// <p>Defines what kind of action can be taken in the stage, one of the following:</p>
@@ -31,20 +31,23 @@ impl ActionTypeIdentifier {
     /// <li> <p> <code>Approval</code> </p> </li>
     /// <li> <p> <code>Invoke</code> </p> </li>
     /// </ul>
-    pub fn category(&self) -> ::std::option::Option<&crate::types::ActionCategory> {
-        self.category.as_ref()
+    pub fn category(&self) -> &crate::types::ActionCategory {
+        &self.category
     }
     /// <p>The creator of the action type being called: <code>AWS</code> or <code>ThirdParty</code>.</p>
-    pub fn owner(&self) -> ::std::option::Option<&str> {
-        self.owner.as_deref()
+    pub fn owner(&self) -> &str {
+        use std::ops::Deref;
+        self.owner.deref()
     }
     /// <p>The provider of the action type being called. The provider name is supplied when the action type is created.</p>
-    pub fn provider(&self) -> ::std::option::Option<&str> {
-        self.provider.as_deref()
+    pub fn provider(&self) -> &str {
+        use std::ops::Deref;
+        self.provider.deref()
     }
     /// <p>A string that describes the action type version.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
-        self.version.as_deref()
+    pub fn version(&self) -> &str {
+        use std::ops::Deref;
+        self.version.deref()
     }
 }
 impl ActionTypeIdentifier {
@@ -73,6 +76,7 @@ impl ActionTypeIdentifierBuilder {
     /// <li> <p> <code>Approval</code> </p> </li>
     /// <li> <p> <code>Invoke</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn category(mut self, input: crate::types::ActionCategory) -> Self {
         self.category = ::std::option::Option::Some(input);
         self
@@ -103,6 +107,7 @@ impl ActionTypeIdentifierBuilder {
         &self.category
     }
     /// <p>The creator of the action type being called: <code>AWS</code> or <code>ThirdParty</code>.</p>
+    /// This field is required.
     pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner = ::std::option::Option::Some(input.into());
         self
@@ -117,6 +122,7 @@ impl ActionTypeIdentifierBuilder {
         &self.owner
     }
     /// <p>The provider of the action type being called. The provider name is supplied when the action type is created.</p>
+    /// This field is required.
     pub fn provider(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider = ::std::option::Option::Some(input.into());
         self
@@ -131,6 +137,7 @@ impl ActionTypeIdentifierBuilder {
         &self.provider
     }
     /// <p>A string that describes the action type version.</p>
+    /// This field is required.
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
         self
@@ -145,12 +152,37 @@ impl ActionTypeIdentifierBuilder {
         &self.version
     }
     /// Consumes the builder and constructs a [`ActionTypeIdentifier`](crate::types::ActionTypeIdentifier).
-    pub fn build(self) -> crate::types::ActionTypeIdentifier {
-        crate::types::ActionTypeIdentifier {
-            category: self.category,
-            owner: self.owner,
-            provider: self.provider,
-            version: self.version,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`category`](crate::types::builders::ActionTypeIdentifierBuilder::category)
+    /// - [`owner`](crate::types::builders::ActionTypeIdentifierBuilder::owner)
+    /// - [`provider`](crate::types::builders::ActionTypeIdentifierBuilder::provider)
+    /// - [`version`](crate::types::builders::ActionTypeIdentifierBuilder::version)
+    pub fn build(self) -> ::std::result::Result<crate::types::ActionTypeIdentifier, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ActionTypeIdentifier {
+            category: self.category.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "category",
+                    "category was not specified but it is required when building ActionTypeIdentifier",
+                )
+            })?,
+            owner: self.owner.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "owner",
+                    "owner was not specified but it is required when building ActionTypeIdentifier",
+                )
+            })?,
+            provider: self.provider.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "provider",
+                    "provider was not specified but it is required when building ActionTypeIdentifier",
+                )
+            })?,
+            version: self.version.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "version",
+                    "version was not specified but it is required when building ActionTypeIdentifier",
+                )
+            })?,
+        })
     }
 }

@@ -2,7 +2,7 @@
 pub fn ser_send_pipeline_execution_step_success_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::send_pipeline_execution_step_success::SendPipelineExecutionStepSuccessInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.callback_token {
         object.key("CallbackToken").string(var_1.as_str());
     }

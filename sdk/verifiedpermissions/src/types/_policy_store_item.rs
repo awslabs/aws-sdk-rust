@@ -6,24 +6,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PolicyStoreItem {
     /// <p>The unique identifier of the policy store.</p>
-    pub policy_store_id: ::std::option::Option<::std::string::String>,
+    pub policy_store_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the policy store.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The date and time the policy was created.</p>
-    pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_date: ::aws_smithy_types::DateTime,
 }
 impl PolicyStoreItem {
     /// <p>The unique identifier of the policy store.</p>
-    pub fn policy_store_id(&self) -> ::std::option::Option<&str> {
-        self.policy_store_id.as_deref()
+    pub fn policy_store_id(&self) -> &str {
+        use std::ops::Deref;
+        self.policy_store_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the policy store.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The date and time the policy was created.</p>
-    pub fn created_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_date.as_ref()
+    pub fn created_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_date
     }
 }
 impl PolicyStoreItem {
@@ -43,6 +45,7 @@ pub struct PolicyStoreItemBuilder {
 }
 impl PolicyStoreItemBuilder {
     /// <p>The unique identifier of the policy store.</p>
+    /// This field is required.
     pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_store_id = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +60,7 @@ impl PolicyStoreItemBuilder {
         &self.policy_store_id
     }
     /// <p>The Amazon Resource Name (ARN) of the policy store.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -71,6 +75,7 @@ impl PolicyStoreItemBuilder {
         &self.arn
     }
     /// <p>The date and time the policy was created.</p>
+    /// This field is required.
     pub fn created_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_date = ::std::option::Option::Some(input);
         self
@@ -85,11 +90,30 @@ impl PolicyStoreItemBuilder {
         &self.created_date
     }
     /// Consumes the builder and constructs a [`PolicyStoreItem`](crate::types::PolicyStoreItem).
-    pub fn build(self) -> crate::types::PolicyStoreItem {
-        crate::types::PolicyStoreItem {
-            policy_store_id: self.policy_store_id,
-            arn: self.arn,
-            created_date: self.created_date,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`policy_store_id`](crate::types::builders::PolicyStoreItemBuilder::policy_store_id)
+    /// - [`arn`](crate::types::builders::PolicyStoreItemBuilder::arn)
+    /// - [`created_date`](crate::types::builders::PolicyStoreItemBuilder::created_date)
+    pub fn build(self) -> ::std::result::Result<crate::types::PolicyStoreItem, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PolicyStoreItem {
+            policy_store_id: self.policy_store_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "policy_store_id",
+                    "policy_store_id was not specified but it is required when building PolicyStoreItem",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building PolicyStoreItem",
+                )
+            })?,
+            created_date: self.created_date.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_date",
+                    "created_date was not specified but it is required when building PolicyStoreItem",
+                )
+            })?,
+        })
     }
 }

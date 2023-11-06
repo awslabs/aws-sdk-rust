@@ -36,6 +36,7 @@ pub struct UpdateGlobalNetworkInputBuilder {
 }
 impl UpdateGlobalNetworkInputBuilder {
     /// <p>The ID of your global network.</p>
+    /// This field is required.
     pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_network_id = ::std::option::Option::Some(input.into());
         self
@@ -69,7 +70,7 @@ impl UpdateGlobalNetworkInputBuilder {
     /// Consumes the builder and constructs a [`UpdateGlobalNetworkInput`](crate::operation::update_global_network::UpdateGlobalNetworkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_global_network::UpdateGlobalNetworkInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_global_network::UpdateGlobalNetworkInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_global_network::UpdateGlobalNetworkInput {
             global_network_id: self.global_network_id,

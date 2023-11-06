@@ -16,8 +16,10 @@ impl KmsKeyConfiguration {
         self.key_policies.as_ref()
     }
     /// <p>A list of proposed grant configurations for the KMS key. If the proposed grant configuration is for an existing key, the access preview uses the proposed list of grant configurations in place of the existing grants. Otherwise, the access preview uses the existing grants for the key.</p>
-    pub fn grants(&self) -> ::std::option::Option<&[crate::types::KmsGrantConfiguration]> {
-        self.grants.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.grants.is_none()`.
+    pub fn grants(&self) -> &[crate::types::KmsGrantConfiguration] {
+        self.grants.as_deref().unwrap_or_default()
     }
 }
 impl KmsKeyConfiguration {

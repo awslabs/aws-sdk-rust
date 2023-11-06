@@ -27,6 +27,7 @@ pub struct DeleteRescoreExecutionPlanInputBuilder {
 }
 impl DeleteRescoreExecutionPlanInputBuilder {
     /// <p>The identifier of the rescore execution plan that you want to delete.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteRescoreExecutionPlanInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_rescore_execution_plan::DeleteRescoreExecutionPlanInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_rescore_execution_plan::DeleteRescoreExecutionPlanInput { id: self.id })
     }

@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OtherName {
     /// <p>Specifies an OID. </p>
-    pub type_id: ::std::option::Option<::std::string::String>,
+    pub type_id: ::std::string::String,
     /// <p>Specifies an OID value.</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
 }
 impl OtherName {
     /// <p>Specifies an OID. </p>
-    pub fn type_id(&self) -> ::std::option::Option<&str> {
-        self.type_id.as_deref()
+    pub fn type_id(&self) -> &str {
+        use std::ops::Deref;
+        self.type_id.deref()
     }
     /// <p>Specifies an OID value.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
 }
 impl OtherName {
@@ -35,6 +37,7 @@ pub struct OtherNameBuilder {
 }
 impl OtherNameBuilder {
     /// <p>Specifies an OID. </p>
+    /// This field is required.
     pub fn type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl OtherNameBuilder {
         &self.type_id
     }
     /// <p>Specifies an OID value.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl OtherNameBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`OtherName`](crate::types::OtherName).
-    pub fn build(self) -> crate::types::OtherName {
-        crate::types::OtherName {
-            type_id: self.type_id,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`type_id`](crate::types::builders::OtherNameBuilder::type_id)
+    /// - [`value`](crate::types::builders::OtherNameBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::OtherName, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::OtherName {
+            type_id: self.type_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "type_id",
+                    "type_id was not specified but it is required when building OtherName",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building OtherName",
+                )
+            })?,
+        })
     }
 }

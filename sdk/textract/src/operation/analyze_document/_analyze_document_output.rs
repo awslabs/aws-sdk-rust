@@ -19,8 +19,10 @@ impl AnalyzeDocumentOutput {
         self.document_metadata.as_ref()
     }
     /// <p>The items that are detected and analyzed by <code>AnalyzeDocument</code>.</p>
-    pub fn blocks(&self) -> ::std::option::Option<&[crate::types::Block]> {
-        self.blocks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.blocks.is_none()`.
+    pub fn blocks(&self) -> &[crate::types::Block] {
+        self.blocks.as_deref().unwrap_or_default()
     }
     /// <p>Shows the results of the human in the loop evaluation.</p>
     pub fn human_loop_activation_output(&self) -> ::std::option::Option<&crate::types::HumanLoopActivationOutput> {

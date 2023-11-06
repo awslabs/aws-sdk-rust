@@ -57,8 +57,10 @@ impl ImportJobResponse {
         self.failed_pieces
     }
     /// <p>An array of entries, one for each of the first 100 entries that weren't processed successfully (failed) by the import job, if any.</p>
-    pub fn failures(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.failures.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failures.is_none()`.
+    pub fn failures(&self) -> &[::std::string::String] {
+        self.failures.as_deref().unwrap_or_default()
     }
     /// <p>The unique identifier for the import job.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
@@ -112,6 +114,7 @@ pub struct ImportJobResponseBuilder {
 }
 impl ImportJobResponseBuilder {
     /// <p>The unique identifier for the application that's associated with the import job.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -154,6 +157,7 @@ impl ImportJobResponseBuilder {
         &self.completion_date
     }
     /// <p>The date, in ISO 8601 format, when the import job was created.</p>
+    /// This field is required.
     pub fn creation_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_date = ::std::option::Option::Some(input.into());
         self
@@ -168,6 +172,7 @@ impl ImportJobResponseBuilder {
         &self.creation_date
     }
     /// <p>The resource settings that apply to the import job.</p>
+    /// This field is required.
     pub fn definition(mut self, input: crate::types::ImportJobResource) -> Self {
         self.definition = ::std::option::Option::Some(input);
         self
@@ -216,6 +221,7 @@ impl ImportJobResponseBuilder {
         &self.failures
     }
     /// <p>The unique identifier for the import job.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -230,6 +236,7 @@ impl ImportJobResponseBuilder {
         &self.id
     }
     /// <p>The status of the import job. The job status is FAILED if Amazon Pinpoint wasn't able to process one or more pieces in the job.</p>
+    /// This field is required.
     pub fn job_status(mut self, input: crate::types::JobStatus) -> Self {
         self.job_status = ::std::option::Option::Some(input);
         self
@@ -286,6 +293,7 @@ impl ImportJobResponseBuilder {
         &self.total_processed
     }
     /// <p>The job type. This value is IMPORT for import jobs.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self

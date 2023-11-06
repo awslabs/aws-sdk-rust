@@ -100,6 +100,7 @@ pub struct DescribeStackDriftDetectionStatusOutputBuilder {
 }
 impl DescribeStackDriftDetectionStatusOutputBuilder {
     /// <p>The ID of the stack.</p>
+    /// This field is required.
     pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_id = ::std::option::Option::Some(input.into());
         self
@@ -115,6 +116,7 @@ impl DescribeStackDriftDetectionStatusOutputBuilder {
     }
     /// <p>The ID of the drift detection results of this operation.</p>
     /// <p>CloudFormation generates new results, with a new drift detection ID, each time this operation is run. However, the number of reports CloudFormation retains for any given stack, and for how long, may vary.</p>
+    /// This field is required.
     pub fn stack_drift_detection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_drift_detection_id = ::std::option::Option::Some(input.into());
         self
@@ -168,6 +170,7 @@ impl DescribeStackDriftDetectionStatusOutputBuilder {
     /// <li> <p> <code>DETECTION_FAILED</code>: The stack drift detection operation has failed for at least one resource in the stack. Results will be available for resources on which CloudFormation successfully completed drift detection.</p> </li>
     /// <li> <p> <code>DETECTION_IN_PROGRESS</code>: The stack drift detection operation is currently in progress.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn detection_status(mut self, input: crate::types::StackDriftDetectionStatus) -> Self {
         self.detection_status = ::std::option::Option::Some(input);
         self
@@ -220,6 +223,7 @@ impl DescribeStackDriftDetectionStatusOutputBuilder {
         &self.drifted_stack_resource_count
     }
     /// <p>Time at which the stack drift detection operation was initiated.</p>
+    /// This field is required.
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
         self

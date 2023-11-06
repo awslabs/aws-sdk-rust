@@ -34,6 +34,7 @@ pub struct IdentityBuilder {
 }
 impl IdentityBuilder {
     /// <p>The source IP address of the TCP connection making the request to API Gateway.</p>
+    /// This field is required.
     pub fn source_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_ip = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl IdentityBuilder {
         &self.source_ip
     }
     /// <p>The User Agent of the API caller.</p>
+    /// This field is required.
     pub fn user_agent(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_agent = ::std::option::Option::Some(input.into());
         self

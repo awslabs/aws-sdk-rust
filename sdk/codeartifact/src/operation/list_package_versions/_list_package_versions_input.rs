@@ -109,6 +109,7 @@ pub struct ListPackageVersionsInputBuilder {
 }
 impl ListPackageVersionsInputBuilder {
     /// <p> The name of the domain that contains the repository that contains the requested package versions. </p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -137,6 +138,7 @@ impl ListPackageVersionsInputBuilder {
         &self.domain_owner
     }
     /// <p> The name of the repository that contains the requested package versions. </p>
+    /// This field is required.
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository = ::std::option::Option::Some(input.into());
         self
@@ -151,6 +153,7 @@ impl ListPackageVersionsInputBuilder {
         &self.repository
     }
     /// <p> The format of the package versions you want to list. </p>
+    /// This field is required.
     pub fn format(mut self, input: crate::types::PackageFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
         self
@@ -197,6 +200,7 @@ impl ListPackageVersionsInputBuilder {
         &self.namespace
     }
     /// <p> The name of the package for which you want to request package versions. </p>
+    /// This field is required.
     pub fn package(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package = ::std::option::Option::Some(input.into());
         self
@@ -283,7 +287,7 @@ impl ListPackageVersionsInputBuilder {
     /// Consumes the builder and constructs a [`ListPackageVersionsInput`](crate::operation::list_package_versions::ListPackageVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_package_versions::ListPackageVersionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_package_versions::ListPackageVersionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_package_versions::ListPackageVersionsInput {
             domain: self.domain,

@@ -9,8 +9,10 @@ pub struct DeleteVpcEndpointConnectionNotificationsOutput {
 }
 impl DeleteVpcEndpointConnectionNotificationsOutput {
     /// <p>Information about the notifications that could not be deleted successfully.</p>
-    pub fn unsuccessful(&self) -> ::std::option::Option<&[crate::types::UnsuccessfulItem]> {
-        self.unsuccessful.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unsuccessful.is_none()`.
+    pub fn unsuccessful(&self) -> &[crate::types::UnsuccessfulItem] {
+        self.unsuccessful.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteVpcEndpointConnectionNotificationsOutput {

@@ -55,6 +55,7 @@ pub struct ListFileCommitHistoryInputBuilder {
 }
 impl ListFileCommitHistoryInputBuilder {
     /// <p>The name of the repository that contains the file.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +84,7 @@ impl ListFileCommitHistoryInputBuilder {
         &self.commit_specifier
     }
     /// <p>The full path of the file whose history you want to retrieve, including the name of the file.</p>
+    /// This field is required.
     pub fn file_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_path = ::std::option::Option::Some(input.into());
         self
@@ -127,7 +129,7 @@ impl ListFileCommitHistoryInputBuilder {
     /// Consumes the builder and constructs a [`ListFileCommitHistoryInput`](crate::operation::list_file_commit_history::ListFileCommitHistoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_file_commit_history::ListFileCommitHistoryInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_file_commit_history::ListFileCommitHistoryInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_file_commit_history::ListFileCommitHistoryInput {
             repository_name: self.repository_name,

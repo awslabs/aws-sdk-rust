@@ -2,40 +2,40 @@
 pub fn ser_channel_message_callback(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ChannelMessageCallback,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.message_id {
-        object.key("MessageId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("MessageId").string(input.message_id.as_str());
     }
-    if let Some(var_2) = &input.content {
-        object.key("Content").string(var_2.as_str());
+    if let Some(var_1) = &input.content {
+        object.key("Content").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.metadata {
-        object.key("Metadata").string(var_3.as_str());
+    if let Some(var_2) = &input.metadata {
+        object.key("Metadata").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.push_notification {
+    if let Some(var_3) = &input.push_notification {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("PushNotification").start_object();
-        crate::protocol_serde::shape_push_notification_configuration::ser_push_notification_configuration(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("PushNotification").start_object();
+        crate::protocol_serde::shape_push_notification_configuration::ser_push_notification_configuration(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_6) = &input.message_attributes {
+    if let Some(var_5) = &input.message_attributes {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("MessageAttributes").start_object();
-        for (key_8, value_9) in var_6 {
+        let mut object_6 = object.key("MessageAttributes").start_object();
+        for (key_7, value_8) in var_5 {
             {
                 #[allow(unused_mut)]
-                let mut object_10 = object_7.key(key_8.as_str()).start_object();
-                crate::protocol_serde::shape_message_attribute_value::ser_message_attribute_value(&mut object_10, value_9)?;
-                object_10.finish();
+                let mut object_9 = object_6.key(key_7.as_str()).start_object();
+                crate::protocol_serde::shape_message_attribute_value::ser_message_attribute_value(&mut object_9, value_8)?;
+                object_9.finish();
             }
         }
-        object_7.finish();
+        object_6.finish();
     }
-    if let Some(var_11) = &input.sub_channel_id {
-        object.key("SubChannelId").string(var_11.as_str());
+    if let Some(var_10) = &input.sub_channel_id {
+        object.key("SubChannelId").string(var_10.as_str());
     }
-    if let Some(var_12) = &input.content_type {
-        object.key("ContentType").string(var_12.as_str());
+    if let Some(var_11) = &input.content_type {
+        object.key("ContentType").string(var_11.as_str());
     }
     Ok(())
 }

@@ -27,6 +27,7 @@ pub struct DeleteSinkInputBuilder {
 }
 impl DeleteSinkInputBuilder {
     /// <p>The ARN of the sink to delete.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl DeleteSinkInputBuilder {
         &self.identifier
     }
     /// Consumes the builder and constructs a [`DeleteSinkInput`](crate::operation::delete_sink::DeleteSinkInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_sink::DeleteSinkInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_sink::DeleteSinkInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_sink::DeleteSinkInput { identifier: self.identifier })
     }
 }

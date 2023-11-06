@@ -27,6 +27,7 @@ pub struct GetMediaAnalysisJobInputBuilder {
 }
 impl GetMediaAnalysisJobInputBuilder {
     /// <p>Unique identifier for the media analysis job for which you want to retrieve results.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetMediaAnalysisJobInputBuilder {
     /// Consumes the builder and constructs a [`GetMediaAnalysisJobInput`](crate::operation::get_media_analysis_job::GetMediaAnalysisJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_media_analysis_job::GetMediaAnalysisJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_media_analysis_job::GetMediaAnalysisJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_media_analysis_job::GetMediaAnalysisJobInput { job_id: self.job_id })
     }

@@ -41,7 +41,7 @@ impl ResolveCaseInputBuilder {
         &self.case_id
     }
     /// Consumes the builder and constructs a [`ResolveCaseInput`](crate::operation::resolve_case::ResolveCaseInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::resolve_case::ResolveCaseInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::resolve_case::ResolveCaseInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::resolve_case::ResolveCaseInput { case_id: self.case_id })
     }
 }

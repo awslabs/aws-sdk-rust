@@ -41,6 +41,7 @@ pub struct PutResourcePermissionInputBuilder {
 }
 impl PutResourcePermissionInputBuilder {
     /// <p></p>
+    /// This field is required.
     pub fn action_type(mut self, input: crate::types::PermissionActionType) -> Self {
         self.action_type = ::std::option::Option::Some(input);
         self
@@ -55,6 +56,7 @@ impl PutResourcePermissionInputBuilder {
         &self.action_type
     }
     /// <p></p>
+    /// This field is required.
     pub fn source_resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl PutResourcePermissionInputBuilder {
         &self.source_resource_arn
     }
     /// <p></p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +88,7 @@ impl PutResourcePermissionInputBuilder {
     /// Consumes the builder and constructs a [`PutResourcePermissionInput`](crate::operation::put_resource_permission::PutResourcePermissionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_resource_permission::PutResourcePermissionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_resource_permission::PutResourcePermissionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_resource_permission::PutResourcePermissionInput {
             action_type: self.action_type,

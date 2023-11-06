@@ -34,6 +34,7 @@ pub struct DescribeAnalysisDefinitionInputBuilder {
 }
 impl DescribeAnalysisDefinitionInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the analysis. You must be using the Amazon Web Services account that the analysis is in.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeAnalysisDefinitionInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID of the analysis that you're describing. The ID is part of the URL of the analysis.</p>
+    /// This field is required.
     pub fn analysis_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analysis_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl DescribeAnalysisDefinitionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionInput {
             aws_account_id: self.aws_account_id,

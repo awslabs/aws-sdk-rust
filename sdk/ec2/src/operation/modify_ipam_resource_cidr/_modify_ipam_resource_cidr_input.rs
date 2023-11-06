@@ -83,6 +83,7 @@ impl ModifyIpamResourceCidrInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the resource you want to modify.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +98,7 @@ impl ModifyIpamResourceCidrInputBuilder {
         &self.resource_id
     }
     /// <p>The CIDR of the resource you want to modify.</p>
+    /// This field is required.
     pub fn resource_cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_cidr = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +113,7 @@ impl ModifyIpamResourceCidrInputBuilder {
         &self.resource_cidr
     }
     /// <p>The Amazon Web Services Region of the resource you want to modify.</p>
+    /// This field is required.
     pub fn resource_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_region = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +128,7 @@ impl ModifyIpamResourceCidrInputBuilder {
         &self.resource_region
     }
     /// <p>The ID of the current scope that the resource CIDR is in.</p>
+    /// This field is required.
     pub fn current_ipam_scope_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_ipam_scope_id = ::std::option::Option::Some(input.into());
         self
@@ -153,6 +157,7 @@ impl ModifyIpamResourceCidrInputBuilder {
         &self.destination_ipam_scope_id
     }
     /// <p>Determines if the resource is monitored by IPAM. If a resource is monitored, the resource is discovered by IPAM and you can view details about the resource’s CIDR.</p>
+    /// This field is required.
     pub fn monitored(mut self, input: bool) -> Self {
         self.monitored = ::std::option::Option::Some(input);
         self
@@ -171,7 +176,7 @@ impl ModifyIpamResourceCidrInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_ipam_resource_cidr::ModifyIpamResourceCidrInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_ipam_resource_cidr::ModifyIpamResourceCidrInput {
             dry_run: self.dry_run,

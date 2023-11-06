@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeletePolicy`](crate::operation::delete_policy::builders::DeletePolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`policy_name(impl Into<String>)`](crate::operation::delete_policy::builders::DeletePolicyFluentBuilder::policy_name) / [`set_policy_name(Option<String>)`](crate::operation::delete_policy::builders::DeletePolicyFluentBuilder::set_policy_name): <p>The name of the policy to delete.</p>
+    ///   - [`policy_name(impl Into<String>)`](crate::operation::delete_policy::builders::DeletePolicyFluentBuilder::policy_name) / [`set_policy_name(Option<String>)`](crate::operation::delete_policy::builders::DeletePolicyFluentBuilder::set_policy_name):<br>required: **true**<br><p>The name of the policy to delete.</p><br>
     /// - On success, responds with [`DeletePolicyOutput`](crate::operation::delete_policy::DeletePolicyOutput)
     /// - On failure, responds with [`SdkError<DeletePolicyError>`](crate::operation::delete_policy::DeletePolicyError)
     pub fn delete_policy(&self) -> crate::operation::delete_policy::builders::DeletePolicyFluentBuilder {

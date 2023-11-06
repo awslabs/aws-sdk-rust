@@ -12,7 +12,7 @@ pub struct CookiePreference {
     /// <p>If you want to send cookies to the origin but not include them in the cache key, use origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>Specifies which cookies to forward to the origin for this cache behavior: all, none, or the list of cookies specified in the <code>WhitelistedNames</code> complex type.</p>
     /// <p>Amazon S3 doesn't process cookies. When the cache behavior is forwarding requests to an Amazon S3 origin, specify none for the <code>Forward</code> element.</p>
-    pub forward: ::std::option::Option<crate::types::ItemSelection>,
+    pub forward: crate::types::ItemSelection,
     /// <p>This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field.</p>
     /// <p>If you want to include cookies in the cache key, use a cache policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>If you want to send cookies to the origin but not include them in the cache key, use an origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -27,8 +27,8 @@ impl CookiePreference {
     /// <p>If you want to send cookies to the origin but not include them in the cache key, use origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>Specifies which cookies to forward to the origin for this cache behavior: all, none, or the list of cookies specified in the <code>WhitelistedNames</code> complex type.</p>
     /// <p>Amazon S3 doesn't process cookies. When the cache behavior is forwarding requests to an Amazon S3 origin, specify none for the <code>Forward</code> element.</p>
-    pub fn forward(&self) -> ::std::option::Option<&crate::types::ItemSelection> {
-        self.forward.as_ref()
+    pub fn forward(&self) -> &crate::types::ItemSelection {
+        &self.forward
     }
     /// <p>This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field.</p>
     /// <p>If you want to include cookies in the cache key, use a cache policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -60,6 +60,7 @@ impl CookiePreferenceBuilder {
     /// <p>If you want to send cookies to the origin but not include them in the cache key, use origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>Specifies which cookies to forward to the origin for this cache behavior: all, none, or the list of cookies specified in the <code>WhitelistedNames</code> complex type.</p>
     /// <p>Amazon S3 doesn't process cookies. When the cache behavior is forwarding requests to an Amazon S3 origin, specify none for the <code>Forward</code> element.</p>
+    /// This field is required.
     pub fn forward(mut self, input: crate::types::ItemSelection) -> Self {
         self.forward = ::std::option::Option::Some(input);
         self
@@ -111,10 +112,17 @@ impl CookiePreferenceBuilder {
         &self.whitelisted_names
     }
     /// Consumes the builder and constructs a [`CookiePreference`](crate::types::CookiePreference).
-    pub fn build(self) -> crate::types::CookiePreference {
-        crate::types::CookiePreference {
-            forward: self.forward,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`forward`](crate::types::builders::CookiePreferenceBuilder::forward)
+    pub fn build(self) -> ::std::result::Result<crate::types::CookiePreference, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CookiePreference {
+            forward: self.forward.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "forward",
+                    "forward was not specified but it is required when building CookiePreference",
+                )
+            })?,
             whitelisted_names: self.whitelisted_names,
-        }
+        })
     }
 }

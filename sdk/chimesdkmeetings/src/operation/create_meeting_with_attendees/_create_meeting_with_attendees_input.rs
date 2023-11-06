@@ -58,20 +58,26 @@ impl CreateMeetingWithAttendeesInput {
         self.notifications_configuration.as_ref()
     }
     /// <p>The attendee information, including attendees' IDs and join tokens.</p>
-    pub fn attendees(&self) -> ::std::option::Option<&[crate::types::CreateAttendeeRequestItem]> {
-        self.attendees.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attendees.is_none()`.
+    pub fn attendees(&self) -> &[crate::types::CreateAttendeeRequestItem] {
+        self.attendees.as_deref().unwrap_or_default()
     }
     /// <p>When specified, replicates the media from the primary meeting to the new meeting.</p>
     pub fn primary_meeting_id(&self) -> ::std::option::Option<&str> {
         self.primary_meeting_id.as_deref()
     }
     /// <p>A consistent and opaque identifier, created and maintained by the builder to represent a segment of their users.</p>
-    pub fn tenant_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tenant_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tenant_ids.is_none()`.
+    pub fn tenant_ids(&self) -> &[::std::string::String] {
+        self.tenant_ids.as_deref().unwrap_or_default()
     }
     /// <p>The tags in the request.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for CreateMeetingWithAttendeesInput {
@@ -114,6 +120,7 @@ pub struct CreateMeetingWithAttendeesInputBuilder {
 }
 impl CreateMeetingWithAttendeesInputBuilder {
     /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
+    /// This field is required.
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
@@ -130,6 +137,7 @@ impl CreateMeetingWithAttendeesInputBuilder {
     /// <p>The Region in which to create the meeting.</p>
     /// <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p>
     /// <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
+    /// This field is required.
     pub fn media_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.media_region = ::std::option::Option::Some(input.into());
         self
@@ -164,6 +172,7 @@ impl CreateMeetingWithAttendeesInputBuilder {
     /// <p>The external meeting ID.</p>
     /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p>
     /// <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case insensitive.</p>
+    /// This field is required.
     pub fn external_meeting_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.external_meeting_id = ::std::option::Option::Some(input.into());
         self
@@ -288,7 +297,7 @@ impl CreateMeetingWithAttendeesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesInput {
             client_request_token: self.client_request_token,

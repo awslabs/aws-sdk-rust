@@ -41,6 +41,7 @@ pub struct DeploySystemInstanceOutputBuilder {
 }
 impl DeploySystemInstanceOutputBuilder {
     /// <p>An object that contains summary information about a system instance that was deployed. </p>
+    /// This field is required.
     pub fn summary(mut self, input: crate::types::SystemInstanceSummary) -> Self {
         self.summary = ::std::option::Option::Some(input);
         self

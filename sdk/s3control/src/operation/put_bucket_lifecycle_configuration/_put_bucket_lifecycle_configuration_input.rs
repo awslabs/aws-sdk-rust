@@ -41,6 +41,7 @@ pub struct PutBucketLifecycleConfigurationInputBuilder {
 }
 impl PutBucketLifecycleConfigurationInputBuilder {
     /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl PutBucketLifecycleConfigurationInputBuilder {
         &self.account_id
     }
     /// <p>The name of the bucket for which to set the configuration.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +89,7 @@ impl PutBucketLifecycleConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_bucket_lifecycle_configuration::PutBucketLifecycleConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::put_bucket_lifecycle_configuration::PutBucketLifecycleConfigurationInput {

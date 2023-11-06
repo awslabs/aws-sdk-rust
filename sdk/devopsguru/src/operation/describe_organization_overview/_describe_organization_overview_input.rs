@@ -22,12 +22,16 @@ impl DescribeOrganizationOverviewInput {
         self.to_time.as_ref()
     }
     /// <p>The ID of the Amazon Web Services account.</p>
-    pub fn account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.account_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
+    pub fn account_ids(&self) -> &[::std::string::String] {
+        self.account_ids.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the organizational unit.</p>
-    pub fn organizational_unit_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.organizational_unit_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.organizational_unit_ids.is_none()`.
+    pub fn organizational_unit_ids(&self) -> &[::std::string::String] {
+        self.organizational_unit_ids.as_deref().unwrap_or_default()
     }
 }
 impl DescribeOrganizationOverviewInput {
@@ -48,6 +52,7 @@ pub struct DescribeOrganizationOverviewInputBuilder {
 }
 impl DescribeOrganizationOverviewInputBuilder {
     /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
+    /// This field is required.
     pub fn from_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.from_time = ::std::option::Option::Some(input);
         self
@@ -120,7 +125,7 @@ impl DescribeOrganizationOverviewInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_organization_overview::DescribeOrganizationOverviewInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_organization_overview::DescribeOrganizationOverviewInput {
             from_time: self.from_time,

@@ -27,6 +27,7 @@ pub struct GetCommentInputBuilder {
 }
 impl GetCommentInputBuilder {
     /// <p>The unique, system-generated ID of the comment. To get this ID, use <code>GetCommentsForComparedCommit</code> or <code>GetCommentsForPullRequest</code>.</p>
+    /// This field is required.
     pub fn comment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment_id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetCommentInputBuilder {
         &self.comment_id
     }
     /// Consumes the builder and constructs a [`GetCommentInput`](crate::operation::get_comment::GetCommentInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_comment::GetCommentInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_comment::GetCommentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_comment::GetCommentInput { comment_id: self.comment_id })
     }
 }

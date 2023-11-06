@@ -50,8 +50,10 @@ impl CreateForecastExportJobInput {
     /// <li> <p>Tag keys and values are case sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
     /// </ul>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The format of the exported data, CSV or PARQUET. The default value is CSV.</p>
     pub fn format(&self) -> ::std::option::Option<&str> {
@@ -77,6 +79,7 @@ pub struct CreateForecastExportJobInputBuilder {
 }
 impl CreateForecastExportJobInputBuilder {
     /// <p>The name for the forecast export job.</p>
+    /// This field is required.
     pub fn forecast_export_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.forecast_export_job_name = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +94,7 @@ impl CreateForecastExportJobInputBuilder {
         &self.forecast_export_job_name
     }
     /// <p>The Amazon Resource Name (ARN) of the forecast that you want to export.</p>
+    /// This field is required.
     pub fn forecast_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.forecast_arn = ::std::option::Option::Some(input.into());
         self
@@ -106,6 +110,7 @@ impl CreateForecastExportJobInputBuilder {
     }
     /// <p>The location where you want to save the forecast and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.</p>
     /// <p>If encryption is used, <code>Destination</code> must include an Key Management Service (KMS) key. The IAM role must allow Amazon Forecast permission to access the key.</p>
+    /// This field is required.
     pub fn destination(mut self, input: crate::types::DataDestination) -> Self {
         self.destination = ::std::option::Option::Some(input);
         self
@@ -190,7 +195,7 @@ impl CreateForecastExportJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_forecast_export_job::CreateForecastExportJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_forecast_export_job::CreateForecastExportJobInput {
             forecast_export_job_name: self.forecast_export_job_name,

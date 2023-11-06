@@ -34,6 +34,7 @@ pub struct DisassociateResolverRuleInputBuilder {
 }
 impl DisassociateResolverRuleInputBuilder {
     /// <p>The ID of the VPC that you want to disassociate the Resolver rule from.</p>
+    /// This field is required.
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DisassociateResolverRuleInputBuilder {
         &self.vpc_id
     }
     /// <p>The ID of the Resolver rule that you want to disassociate from the specified VPC.</p>
+    /// This field is required.
     pub fn resolver_rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolver_rule_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl DisassociateResolverRuleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_resolver_rule::DisassociateResolverRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_resolver_rule::DisassociateResolverRuleInput {
             vpc_id: self.vpc_id,

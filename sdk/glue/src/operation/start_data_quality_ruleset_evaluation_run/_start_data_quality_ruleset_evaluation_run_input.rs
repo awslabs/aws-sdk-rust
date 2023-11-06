@@ -46,8 +46,10 @@ impl StartDataQualityRulesetEvaluationRunInput {
         self.additional_run_options.as_ref()
     }
     /// <p>A list of ruleset names.</p>
-    pub fn ruleset_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ruleset_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ruleset_names.is_none()`.
+    pub fn ruleset_names(&self) -> &[::std::string::String] {
+        self.ruleset_names.as_deref().unwrap_or_default()
     }
     /// <p>A map of reference strings to additional data sources you can specify for an evaluation run.</p>
     pub fn additional_data_sources(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::DataSource>> {
@@ -76,6 +78,7 @@ pub struct StartDataQualityRulesetEvaluationRunInputBuilder {
 }
 impl StartDataQualityRulesetEvaluationRunInputBuilder {
     /// <p>The data source (Glue table) associated with this run.</p>
+    /// This field is required.
     pub fn data_source(mut self, input: crate::types::DataSource) -> Self {
         self.data_source = ::std::option::Option::Some(input);
         self
@@ -90,6 +93,7 @@ impl StartDataQualityRulesetEvaluationRunInputBuilder {
         &self.data_source
     }
     /// <p>An IAM role supplied to encrypt the results of the run.</p>
+    /// This field is required.
     pub fn role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role = ::std::option::Option::Some(input.into());
         self
@@ -209,7 +213,7 @@ impl StartDataQualityRulesetEvaluationRunInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_data_quality_ruleset_evaluation_run::StartDataQualityRulesetEvaluationRunInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::start_data_quality_ruleset_evaluation_run::StartDataQualityRulesetEvaluationRunInput {

@@ -28,6 +28,7 @@ pub struct GetIdentityPoolConfigurationInputBuilder {
 }
 impl GetIdentityPoolConfigurationInputBuilder {
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool for which to return a configuration.</p>
+    /// This field is required.
     pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl GetIdentityPoolConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_identity_pool_configuration::GetIdentityPoolConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_identity_pool_configuration::GetIdentityPoolConfigurationInput {
             identity_pool_id: self.identity_pool_id,

@@ -28,8 +28,10 @@ impl CreateServiceNetworkVpcAssociationInput {
         self.vpc_identifier.as_deref()
     }
     /// <p>The IDs of the security groups. Security groups aren't added by default. You can add a security group to apply network level controls to control which resources in a VPC are allowed to access the service network and its services. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Control traffic to resources using security groups</a> in the <i>Amazon VPC User Guide</i>.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>The tags for the association.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -69,6 +71,7 @@ impl CreateServiceNetworkVpcAssociationInputBuilder {
         &self.client_token
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service network. You must use the ARN when the resources specified in the operation are in different accounts.</p>
+    /// This field is required.
     pub fn service_network_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_network_identifier = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +86,7 @@ impl CreateServiceNetworkVpcAssociationInputBuilder {
         &self.service_network_identifier
     }
     /// <p>The ID of the VPC.</p>
+    /// This field is required.
     pub fn vpc_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_identifier = ::std::option::Option::Some(input.into());
         self
@@ -141,7 +145,7 @@ impl CreateServiceNetworkVpcAssociationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_service_network_vpc_association::CreateServiceNetworkVpcAssociationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_service_network_vpc_association::CreateServiceNetworkVpcAssociationInput {

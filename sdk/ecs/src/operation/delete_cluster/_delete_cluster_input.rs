@@ -27,6 +27,7 @@ pub struct DeleteClusterInputBuilder {
 }
 impl DeleteClusterInputBuilder {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to delete.</p>
+    /// This field is required.
     pub fn cluster(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteClusterInputBuilder {
     /// Consumes the builder and constructs a [`DeleteClusterInput`](crate::operation::delete_cluster::DeleteClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_cluster::DeleteClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_cluster::DeleteClusterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_cluster::DeleteClusterInput { cluster: self.cluster })
     }
 }

@@ -22,12 +22,16 @@ impl GetInstanceTypesFromInstanceRequirementsInput {
         self.dry_run
     }
     /// <p>The processor architecture type.</p>
-    pub fn architecture_types(&self) -> ::std::option::Option<&[crate::types::ArchitectureType]> {
-        self.architecture_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.architecture_types.is_none()`.
+    pub fn architecture_types(&self) -> &[crate::types::ArchitectureType] {
+        self.architecture_types.as_deref().unwrap_or_default()
     }
     /// <p>The virtualization type.</p>
-    pub fn virtualization_types(&self) -> ::std::option::Option<&[crate::types::VirtualizationType]> {
-        self.virtualization_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.virtualization_types.is_none()`.
+    pub fn virtualization_types(&self) -> &[crate::types::VirtualizationType] {
+        self.virtualization_types.as_deref().unwrap_or_default()
     }
     /// <p>The attributes required for the instance types.</p>
     pub fn instance_requirements(&self) -> ::std::option::Option<&crate::types::InstanceRequirementsRequest> {
@@ -117,6 +121,7 @@ impl GetInstanceTypesFromInstanceRequirementsInputBuilder {
         &self.virtualization_types
     }
     /// <p>The attributes required for the instance types.</p>
+    /// This field is required.
     pub fn instance_requirements(mut self, input: crate::types::InstanceRequirementsRequest) -> Self {
         self.instance_requirements = ::std::option::Option::Some(input);
         self
@@ -163,7 +168,7 @@ impl GetInstanceTypesFromInstanceRequirementsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsInput {

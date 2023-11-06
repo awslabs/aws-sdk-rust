@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDeploymentConfig`](crate::operation::delete_deployment_config::builders::DeleteDeploymentConfigFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`deployment_config_name(impl Into<String>)`](crate::operation::delete_deployment_config::builders::DeleteDeploymentConfigFluentBuilder::deployment_config_name) / [`set_deployment_config_name(Option<String>)`](crate::operation::delete_deployment_config::builders::DeleteDeploymentConfigFluentBuilder::set_deployment_config_name): <p>The name of a deployment configuration associated with the user or Amazon Web Services account.</p>
+    ///   - [`deployment_config_name(impl Into<String>)`](crate::operation::delete_deployment_config::builders::DeleteDeploymentConfigFluentBuilder::deployment_config_name) / [`set_deployment_config_name(Option<String>)`](crate::operation::delete_deployment_config::builders::DeleteDeploymentConfigFluentBuilder::set_deployment_config_name):<br>required: **true**<br><p>The name of a deployment configuration associated with the user or Amazon Web Services account.</p><br>
     /// - On success, responds with [`DeleteDeploymentConfigOutput`](crate::operation::delete_deployment_config::DeleteDeploymentConfigOutput)
     /// - On failure, responds with [`SdkError<DeleteDeploymentConfigError>`](crate::operation::delete_deployment_config::DeleteDeploymentConfigError)
     pub fn delete_deployment_config(&self) -> crate::operation::delete_deployment_config::builders::DeleteDeploymentConfigFluentBuilder {

@@ -27,6 +27,7 @@ pub struct CreateAddressInputBuilder {
 }
 impl CreateAddressInputBuilder {
     /// <p>The address that you want the Snow device shipped to.</p>
+    /// This field is required.
     pub fn address(mut self, input: crate::types::Address) -> Self {
         self.address = ::std::option::Option::Some(input);
         self
@@ -43,7 +44,7 @@ impl CreateAddressInputBuilder {
     /// Consumes the builder and constructs a [`CreateAddressInput`](crate::operation::create_address::CreateAddressInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_address::CreateAddressInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_address::CreateAddressInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_address::CreateAddressInput { address: self.address })
     }
 }

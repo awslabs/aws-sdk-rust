@@ -16,8 +16,10 @@ impl UpdateWorkspaceAuthenticationInput {
         self.workspace_id.as_deref()
     }
     /// <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
-    pub fn authentication_providers(&self) -> ::std::option::Option<&[crate::types::AuthenticationProviderTypes]> {
-        self.authentication_providers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.authentication_providers.is_none()`.
+    pub fn authentication_providers(&self) -> &[crate::types::AuthenticationProviderTypes] {
+        self.authentication_providers.as_deref().unwrap_or_default()
     }
     /// <p>If the workspace uses SAML, use this structure to map SAML assertion attributes to workspace user information and define which groups in the assertion attribute are to have the <code>Admin</code> and <code>Editor</code> roles in the workspace.</p>
     pub fn saml_configuration(&self) -> ::std::option::Option<&crate::types::SamlConfiguration> {
@@ -41,6 +43,7 @@ pub struct UpdateWorkspaceAuthenticationInputBuilder {
 }
 impl UpdateWorkspaceAuthenticationInputBuilder {
     /// <p>The ID of the workspace to update the authentication for.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -93,7 +96,7 @@ impl UpdateWorkspaceAuthenticationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_workspace_authentication::UpdateWorkspaceAuthenticationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_workspace_authentication::UpdateWorkspaceAuthenticationInput {
             workspace_id: self.workspace_id,

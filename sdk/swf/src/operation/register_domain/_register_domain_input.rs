@@ -34,8 +34,10 @@ impl RegisterDomainInput {
     }
     /// <p>Tags to be added when registering a domain.</p>
     /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::ResourceTag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::ResourceTag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl RegisterDomainInput {
@@ -57,6 +59,7 @@ pub struct RegisterDomainInputBuilder {
 impl RegisterDomainInputBuilder {
     /// <p>Name of the domain to register. The name must be unique in the region that the domain is registered in.</p>
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -89,6 +92,7 @@ impl RegisterDomainInputBuilder {
     /// <p>The duration (in days) that records and histories of workflow executions on the domain should be kept by the service. After the retention period, the workflow execution isn't available in the results of visibility calls.</p>
     /// <p>If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow execution history isn't retained. As soon as the workflow execution completes, the execution record and its history are deleted.</p>
     /// <p>The maximum workflow execution retention period is 90 days. For more information about Amazon SWF service limits, see: <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon SWF Service Limits</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    /// This field is required.
     pub fn workflow_execution_retention_period_in_days(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_execution_retention_period_in_days = ::std::option::Option::Some(input.into());
         self
@@ -132,7 +136,7 @@ impl RegisterDomainInputBuilder {
     /// Consumes the builder and constructs a [`RegisterDomainInput`](crate::operation::register_domain::RegisterDomainInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_domain::RegisterDomainInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::register_domain::RegisterDomainInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_domain::RegisterDomainInput {
             name: self.name,
             description: self.description,

@@ -35,6 +35,7 @@ pub struct ConnectionDetailsBuilder {
 }
 impl ConnectionDetailsBuilder {
     /// <p>A socket address.</p>
+    /// This field is required.
     pub fn socket_address(mut self, input: crate::types::SocketAddress) -> Self {
         self.socket_address = ::std::option::Option::Some(input);
         self

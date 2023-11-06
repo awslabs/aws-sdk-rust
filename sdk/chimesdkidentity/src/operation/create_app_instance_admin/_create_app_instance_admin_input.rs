@@ -34,6 +34,7 @@ pub struct CreateAppInstanceAdminInputBuilder {
 }
 impl CreateAppInstanceAdminInputBuilder {
     /// <p>The ARN of the administrator of the current <code>AppInstance</code>.</p>
+    /// This field is required.
     pub fn app_instance_admin_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_admin_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl CreateAppInstanceAdminInputBuilder {
         &self.app_instance_admin_arn
     }
     /// <p>The ARN of the <code>AppInstance</code>.</p>
+    /// This field is required.
     pub fn app_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_arn = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl CreateAppInstanceAdminInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_app_instance_admin::CreateAppInstanceAdminInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_app_instance_admin::CreateAppInstanceAdminInput {
             app_instance_admin_arn: self.app_instance_admin_arn,

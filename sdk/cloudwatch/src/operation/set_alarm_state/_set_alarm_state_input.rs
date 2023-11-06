@@ -50,6 +50,7 @@ pub struct SetAlarmStateInputBuilder {
 }
 impl SetAlarmStateInputBuilder {
     /// <p>The name of the alarm.</p>
+    /// This field is required.
     pub fn alarm_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alarm_name = ::std::option::Option::Some(input.into());
         self
@@ -64,6 +65,7 @@ impl SetAlarmStateInputBuilder {
         &self.alarm_name
     }
     /// <p>The value of the state.</p>
+    /// This field is required.
     pub fn state_value(mut self, input: crate::types::StateValue) -> Self {
         self.state_value = ::std::option::Option::Some(input);
         self
@@ -78,6 +80,7 @@ impl SetAlarmStateInputBuilder {
         &self.state_value
     }
     /// <p>The reason that this alarm is set to this specific state, in text format.</p>
+    /// This field is required.
     pub fn state_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_reason = ::std::option::Option::Some(input.into());
         self
@@ -111,7 +114,7 @@ impl SetAlarmStateInputBuilder {
     /// Consumes the builder and constructs a [`SetAlarmStateInput`](crate::operation::set_alarm_state::SetAlarmStateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::set_alarm_state::SetAlarmStateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::set_alarm_state::SetAlarmStateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::set_alarm_state::SetAlarmStateInput {
             alarm_name: self.alarm_name,
             state_value: self.state_value,

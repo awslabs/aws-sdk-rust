@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainValidation {
     /// <p>A fully qualified domain name (FQDN) in the certificate. For example, <code>www.example.com</code> or <code>example.com</code>. </p>
-    pub domain_name: ::std::option::Option<::std::string::String>,
+    pub domain_name: ::std::string::String,
     /// <p>A list of email addresses that ACM used to send domain validation emails.</p>
     pub validation_emails: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The domain name that ACM used to send domain validation emails.</p>
@@ -25,12 +25,15 @@ pub struct DomainValidation {
 }
 impl DomainValidation {
     /// <p>A fully qualified domain name (FQDN) in the certificate. For example, <code>www.example.com</code> or <code>example.com</code>. </p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
-        self.domain_name.as_deref()
+    pub fn domain_name(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_name.deref()
     }
     /// <p>A list of email addresses that ACM used to send domain validation emails.</p>
-    pub fn validation_emails(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.validation_emails.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.validation_emails.is_none()`.
+    pub fn validation_emails(&self) -> &[::std::string::String] {
+        self.validation_emails.as_deref().unwrap_or_default()
     }
     /// <p>The domain name that ACM used to send domain validation emails.</p>
     pub fn validation_domain(&self) -> ::std::option::Option<&str> {
@@ -75,6 +78,7 @@ pub struct DomainValidationBuilder {
 }
 impl DomainValidationBuilder {
     /// <p>A fully qualified domain name (FQDN) in the certificate. For example, <code>www.example.com</code> or <code>example.com</code>. </p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -183,14 +187,21 @@ impl DomainValidationBuilder {
         &self.validation_method
     }
     /// Consumes the builder and constructs a [`DomainValidation`](crate::types::DomainValidation).
-    pub fn build(self) -> crate::types::DomainValidation {
-        crate::types::DomainValidation {
-            domain_name: self.domain_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`domain_name`](crate::types::builders::DomainValidationBuilder::domain_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::DomainValidation, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DomainValidation {
+            domain_name: self.domain_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "domain_name",
+                    "domain_name was not specified but it is required when building DomainValidation",
+                )
+            })?,
             validation_emails: self.validation_emails,
             validation_domain: self.validation_domain,
             validation_status: self.validation_status,
             resource_record: self.resource_record,
             validation_method: self.validation_method,
-        }
+        })
     }
 }

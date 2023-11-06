@@ -17,8 +17,10 @@ impl DetectProtectiveEquipmentOutput {
         self.protective_equipment_model_version.as_deref()
     }
     /// <p>An array of persons detected in the image (including persons not wearing PPE).</p>
-    pub fn persons(&self) -> ::std::option::Option<&[crate::types::ProtectiveEquipmentPerson]> {
-        self.persons.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.persons.is_none()`.
+    pub fn persons(&self) -> &[crate::types::ProtectiveEquipmentPerson] {
+        self.persons.as_deref().unwrap_or_default()
     }
     /// <p>Summary information for the types of PPE specified in the <code>SummarizationAttributes</code> input parameter.</p>
     pub fn summary(&self) -> ::std::option::Option<&crate::types::ProtectiveEquipmentSummary> {

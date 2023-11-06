@@ -11,34 +11,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomizedScalingMetricSpecification {
     /// <p>The name of the metric.</p>
-    pub metric_name: ::std::option::Option<::std::string::String>,
+    pub metric_name: ::std::string::String,
     /// <p>The namespace of the metric.</p>
-    pub namespace: ::std::option::Option<::std::string::String>,
+    pub namespace: ::std::string::String,
     /// <p>The dimensions of the metric.</p>
     /// <p>Conditional: If you published your metric with dimensions, you must specify the same dimensions in your customized scaling metric specification.</p>
     pub dimensions: ::std::option::Option<::std::vec::Vec<crate::types::MetricDimension>>,
     /// <p>The statistic of the metric.</p>
-    pub statistic: ::std::option::Option<crate::types::MetricStatistic>,
+    pub statistic: crate::types::MetricStatistic,
     /// <p>The unit of the metric. </p>
     pub unit: ::std::option::Option<::std::string::String>,
 }
 impl CustomizedScalingMetricSpecification {
     /// <p>The name of the metric.</p>
-    pub fn metric_name(&self) -> ::std::option::Option<&str> {
-        self.metric_name.as_deref()
+    pub fn metric_name(&self) -> &str {
+        use std::ops::Deref;
+        self.metric_name.deref()
     }
     /// <p>The namespace of the metric.</p>
-    pub fn namespace(&self) -> ::std::option::Option<&str> {
-        self.namespace.as_deref()
+    pub fn namespace(&self) -> &str {
+        use std::ops::Deref;
+        self.namespace.deref()
     }
     /// <p>The dimensions of the metric.</p>
     /// <p>Conditional: If you published your metric with dimensions, you must specify the same dimensions in your customized scaling metric specification.</p>
-    pub fn dimensions(&self) -> ::std::option::Option<&[crate::types::MetricDimension]> {
-        self.dimensions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimensions.is_none()`.
+    pub fn dimensions(&self) -> &[crate::types::MetricDimension] {
+        self.dimensions.as_deref().unwrap_or_default()
     }
     /// <p>The statistic of the metric.</p>
-    pub fn statistic(&self) -> ::std::option::Option<&crate::types::MetricStatistic> {
-        self.statistic.as_ref()
+    pub fn statistic(&self) -> &crate::types::MetricStatistic {
+        &self.statistic
     }
     /// <p>The unit of the metric. </p>
     pub fn unit(&self) -> ::std::option::Option<&str> {
@@ -64,6 +68,7 @@ pub struct CustomizedScalingMetricSpecificationBuilder {
 }
 impl CustomizedScalingMetricSpecificationBuilder {
     /// <p>The name of the metric.</p>
+    /// This field is required.
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_name = ::std::option::Option::Some(input.into());
         self
@@ -78,6 +83,7 @@ impl CustomizedScalingMetricSpecificationBuilder {
         &self.metric_name
     }
     /// <p>The namespace of the metric.</p>
+    /// This field is required.
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
         self
@@ -115,6 +121,7 @@ impl CustomizedScalingMetricSpecificationBuilder {
         &self.dimensions
     }
     /// <p>The statistic of the metric.</p>
+    /// This field is required.
     pub fn statistic(mut self, input: crate::types::MetricStatistic) -> Self {
         self.statistic = ::std::option::Option::Some(input);
         self
@@ -143,13 +150,34 @@ impl CustomizedScalingMetricSpecificationBuilder {
         &self.unit
     }
     /// Consumes the builder and constructs a [`CustomizedScalingMetricSpecification`](crate::types::CustomizedScalingMetricSpecification).
-    pub fn build(self) -> crate::types::CustomizedScalingMetricSpecification {
-        crate::types::CustomizedScalingMetricSpecification {
-            metric_name: self.metric_name,
-            namespace: self.namespace,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`metric_name`](crate::types::builders::CustomizedScalingMetricSpecificationBuilder::metric_name)
+    /// - [`namespace`](crate::types::builders::CustomizedScalingMetricSpecificationBuilder::namespace)
+    /// - [`statistic`](crate::types::builders::CustomizedScalingMetricSpecificationBuilder::statistic)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::CustomizedScalingMetricSpecification, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CustomizedScalingMetricSpecification {
+            metric_name: self.metric_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "metric_name",
+                    "metric_name was not specified but it is required when building CustomizedScalingMetricSpecification",
+                )
+            })?,
+            namespace: self.namespace.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "namespace",
+                    "namespace was not specified but it is required when building CustomizedScalingMetricSpecification",
+                )
+            })?,
             dimensions: self.dimensions,
-            statistic: self.statistic,
+            statistic: self.statistic.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "statistic",
+                    "statistic was not specified but it is required when building CustomizedScalingMetricSpecification",
+                )
+            })?,
             unit: self.unit,
-        }
+        })
     }
 }

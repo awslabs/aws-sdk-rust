@@ -11,8 +11,10 @@ pub struct ListDomainsOutput {
 }
 impl ListDomainsOutput {
     /// <p>Information about the domains.</p>
-    pub fn domains(&self) -> ::std::option::Option<&[crate::types::DomainSummary]> {
-        self.domains.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domains.is_none()`.
+    pub fn domains(&self) -> &[crate::types::DomainSummary] {
+        self.domains.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

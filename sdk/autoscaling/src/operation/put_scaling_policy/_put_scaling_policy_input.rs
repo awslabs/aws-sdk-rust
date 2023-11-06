@@ -117,8 +117,10 @@ impl PutScalingPolicyInput {
     }
     /// <p>A set of adjustments that enable you to scale based on the size of the alarm breach.</p>
     /// <p>Required if the policy type is <code>StepScaling</code>. (Not used with any other policy type.) </p>
-    pub fn step_adjustments(&self) -> ::std::option::Option<&[crate::types::StepAdjustment]> {
-        self.step_adjustments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.step_adjustments.is_none()`.
+    pub fn step_adjustments(&self) -> &[crate::types::StepAdjustment] {
+        self.step_adjustments.as_deref().unwrap_or_default()
     }
     /// <p> <i>Not needed if the default instance warmup is defined for the group.</i> </p>
     /// <p>The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics. This warm-up period applies to instances launched due to a specific target tracking or step scaling policy. When a warm-up period is specified here, it overrides the default instance warmup.</p>
@@ -182,6 +184,7 @@ pub struct PutScalingPolicyInputBuilder {
 }
 impl PutScalingPolicyInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
+    /// This field is required.
     pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
@@ -196,6 +199,7 @@ impl PutScalingPolicyInputBuilder {
         &self.auto_scaling_group_name
     }
     /// <p>The name of the policy.</p>
+    /// This field is required.
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
         self
@@ -482,7 +486,7 @@ impl PutScalingPolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutScalingPolicyInput`](crate::operation::put_scaling_policy::PutScalingPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_scaling_policy::PutScalingPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_scaling_policy::PutScalingPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_scaling_policy::PutScalingPolicyInput {
             auto_scaling_group_name: self.auto_scaling_group_name,
             policy_name: self.policy_name,

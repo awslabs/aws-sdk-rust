@@ -2,7 +2,7 @@
 pub fn ser_update_thing_group_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_thing_group::UpdateThingGroupInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.expected_version {
         object.key("expectedVersion").number(
             #[allow(clippy::useless_conversion)]

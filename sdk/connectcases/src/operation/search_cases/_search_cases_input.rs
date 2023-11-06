@@ -40,12 +40,16 @@ impl SearchCasesInput {
         self.filter.as_ref()
     }
     /// <p>A list of sorts where each sort specifies a field and their sort order to be applied to the results. </p>
-    pub fn sorts(&self) -> ::std::option::Option<&[crate::types::Sort]> {
-        self.sorts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sorts.is_none()`.
+    pub fn sorts(&self) -> &[crate::types::Sort] {
+        self.sorts.as_deref().unwrap_or_default()
     }
     /// <p>The list of field identifiers to be returned as part of the response.</p>
-    pub fn fields(&self) -> ::std::option::Option<&[crate::types::FieldIdentifier]> {
-        self.fields.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fields.is_none()`.
+    pub fn fields(&self) -> &[crate::types::FieldIdentifier] {
+        self.fields.as_deref().unwrap_or_default()
     }
 }
 impl SearchCasesInput {
@@ -69,6 +73,7 @@ pub struct SearchCasesInputBuilder {
 }
 impl SearchCasesInputBuilder {
     /// <p>The unique identifier of the Cases domain. </p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -179,7 +184,7 @@ impl SearchCasesInputBuilder {
         &self.fields
     }
     /// Consumes the builder and constructs a [`SearchCasesInput`](crate::operation::search_cases::SearchCasesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::search_cases::SearchCasesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::search_cases::SearchCasesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_cases::SearchCasesInput {
             domain_id: self.domain_id,
             max_results: self.max_results,

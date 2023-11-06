@@ -14,8 +14,10 @@ impl BatchCreateAttendeeInput {
         self.meeting_id.as_deref()
     }
     /// <p>The request containing the attendees to create.</p>
-    pub fn attendees(&self) -> ::std::option::Option<&[crate::types::CreateAttendeeRequestItem]> {
-        self.attendees.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attendees.is_none()`.
+    pub fn attendees(&self) -> &[crate::types::CreateAttendeeRequestItem] {
+        self.attendees.as_deref().unwrap_or_default()
     }
 }
 impl BatchCreateAttendeeInput {
@@ -34,6 +36,7 @@ pub struct BatchCreateAttendeeInputBuilder {
 }
 impl BatchCreateAttendeeInputBuilder {
     /// <p>The Amazon Chime SDK meeting ID.</p>
+    /// This field is required.
     pub fn meeting_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.meeting_id = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +73,7 @@ impl BatchCreateAttendeeInputBuilder {
     /// Consumes the builder and constructs a [`BatchCreateAttendeeInput`](crate::operation::batch_create_attendee::BatchCreateAttendeeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_create_attendee::BatchCreateAttendeeInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_create_attendee::BatchCreateAttendeeInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_create_attendee::BatchCreateAttendeeInput {
             meeting_id: self.meeting_id,

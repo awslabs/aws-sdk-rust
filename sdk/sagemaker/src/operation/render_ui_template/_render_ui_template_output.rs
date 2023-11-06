@@ -15,8 +15,10 @@ impl RenderUiTemplateOutput {
         self.rendered_content.as_deref()
     }
     /// <p>A list of one or more <code>RenderingError</code> objects if any were encountered while rendering the template. If there were no errors, the list is empty.</p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::RenderingError]> {
-        self.errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
+    pub fn errors(&self) -> &[crate::types::RenderingError] {
+        self.errors.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for RenderUiTemplateOutput {
@@ -41,6 +43,7 @@ pub struct RenderUiTemplateOutputBuilder {
 }
 impl RenderUiTemplateOutputBuilder {
     /// <p>A Liquid template that renders the HTML for the worker UI.</p>
+    /// This field is required.
     pub fn rendered_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rendered_content = ::std::option::Option::Some(input.into());
         self

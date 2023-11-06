@@ -109,7 +109,7 @@ impl ListLayersInputBuilder {
         &self.compatible_architecture
     }
     /// Consumes the builder and constructs a [`ListLayersInput`](crate::operation::list_layers::ListLayersInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_layers::ListLayersInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_layers::ListLayersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_layers::ListLayersInput {
             compatible_runtime: self.compatible_runtime,
             marker: self.marker,

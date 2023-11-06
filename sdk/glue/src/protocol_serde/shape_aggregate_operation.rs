@@ -2,18 +2,18 @@
 pub fn ser_aggregate_operation(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AggregateOperation,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.column {
-        let mut array_2 = object.key("Column").start_array();
-        for item_3 in var_1 {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        let mut array_1 = object.key("Column").start_array();
+        for item_2 in &input.column {
             {
-                array_2.value().string(item_3.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
-    if let Some(var_4) = &input.agg_func {
-        object.key("AggFunc").string(var_4.as_str());
+    {
+        object.key("AggFunc").string(input.agg_func.as_str());
     }
     Ok(())
 }
@@ -54,7 +54,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::aggregate_operation_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

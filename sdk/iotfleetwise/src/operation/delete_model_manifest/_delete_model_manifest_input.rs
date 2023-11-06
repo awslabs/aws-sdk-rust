@@ -27,6 +27,7 @@ pub struct DeleteModelManifestInputBuilder {
 }
 impl DeleteModelManifestInputBuilder {
     /// <p> The name of the model manifest to delete. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteModelManifestInputBuilder {
     /// Consumes the builder and constructs a [`DeleteModelManifestInput`](crate::operation::delete_model_manifest::DeleteModelManifestInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_model_manifest::DeleteModelManifestInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_model_manifest::DeleteModelManifestInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_model_manifest::DeleteModelManifestInput { name: self.name })
     }

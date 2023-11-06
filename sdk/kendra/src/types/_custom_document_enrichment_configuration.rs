@@ -16,8 +16,10 @@ pub struct CustomDocumentEnrichmentConfiguration {
 }
 impl CustomDocumentEnrichmentConfiguration {
     /// <p>Configuration information to alter document attributes or metadata fields and content when ingesting documents into Amazon Kendra.</p>
-    pub fn inline_configurations(&self) -> ::std::option::Option<&[crate::types::InlineCustomDocumentEnrichmentConfiguration]> {
-        self.inline_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inline_configurations.is_none()`.
+    pub fn inline_configurations(&self) -> &[crate::types::InlineCustomDocumentEnrichmentConfiguration] {
+        self.inline_configurations.as_deref().unwrap_or_default()
     }
     /// <p>Configuration information for invoking a Lambda function in Lambda on the original or raw documents before extracting their metadata and text. You can use a Lambda function to apply advanced logic for creating, modifying, or deleting document metadata and content. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html#advanced-data-manipulation">Advanced data manipulation</a>.</p>
     pub fn pre_extraction_hook_configuration(&self) -> ::std::option::Option<&crate::types::HookConfiguration> {

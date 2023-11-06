@@ -2,24 +2,24 @@
 pub fn ser_processor(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Processor,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("Name").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.configuration {
+    if let Some(var_1) = &input.configuration {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("Configuration").start_object();
-        crate::protocol_serde::shape_processor_configuration::ser_processor_configuration(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("Configuration").start_object();
+        crate::protocol_serde::shape_processor_configuration::ser_processor_configuration(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.execution_order {
+    {
         object.key("ExecutionOrder").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+            ::aws_smithy_types::Number::NegInt((input.execution_order).into()),
         );
     }
-    if let Some(var_5) = &input.fallback_action {
-        object.key("FallbackAction").string(var_5.as_str());
+    {
+        object.key("FallbackAction").string(input.fallback_action.as_str());
     }
     Ok(())
 }
@@ -74,7 +74,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::processor_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

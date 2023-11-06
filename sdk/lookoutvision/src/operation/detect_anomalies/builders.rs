@@ -10,7 +10,7 @@ impl DetectAnomaliesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::detect_anomalies::DetectAnomaliesOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::detect_anomalies::DetectAnomaliesError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -77,12 +77,15 @@ impl DetectAnomaliesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detect_anomalies::DetectAnomaliesOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::detect_anomalies::DetectAnomaliesError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::detect_anomalies::DetectAnomalies::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -91,20 +94,15 @@ impl DetectAnomaliesFluentBuilder {
         crate::operation::detect_anomalies::DetectAnomalies::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::detect_anomalies::DetectAnomaliesOutput,
-            crate::operation::detect_anomalies::DetectAnomaliesError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::detect_anomalies::DetectAnomaliesError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::detect_anomalies::DetectAnomaliesOutput,
+        crate::operation::detect_anomalies::DetectAnomaliesError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -144,17 +142,17 @@ impl DetectAnomaliesFluentBuilder {
         self.inner.get_model_version()
     }
     /// <p>The unencrypted image bytes that you want to analyze. </p>
-    pub fn body(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
+    pub fn body(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.inner = self.inner.body(input);
         self
     }
     /// <p>The unencrypted image bytes that you want to analyze. </p>
-    pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
+    pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.inner = self.inner.set_body(input);
         self
     }
     /// <p>The unencrypted image bytes that you want to analyze. </p>
-    pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         self.inner.get_body()
     }
     /// <p>The type of the image passed in <code>Body</code>. Valid values are <code>image/png</code> (PNG format images) and <code>image/jpeg</code> (JPG format images). </p>

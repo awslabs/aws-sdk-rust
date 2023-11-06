@@ -58,8 +58,10 @@ impl CreateDevEndpointInput {
         self.role_arn.as_deref()
     }
     /// <p>Security group IDs for the security groups to be used by the new <code>DevEndpoint</code>.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>The subnet ID for the new <code>DevEndpoint</code> to use.</p>
     pub fn subnet_id(&self) -> ::std::option::Option<&str> {
@@ -72,8 +74,10 @@ impl CreateDevEndpointInput {
     /// <p>A list of public keys to be used by the development endpoints for authentication. The use of this attribute is preferred over a single public key because the public keys allow you to have a different private key per client.</p> <note>
     /// <p>If you previously created an endpoint with a public key, you must remove that key to be able to set a list of public keys. Call the <code>UpdateDevEndpoint</code> API with the public key content in the <code>deletePublicKeys</code> attribute, and the list of new keys in the <code>addPublicKeys</code> attribute.</p>
     /// </note>
-    pub fn public_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.public_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.public_keys.is_none()`.
+    pub fn public_keys(&self) -> &[::std::string::String] {
+        self.public_keys.as_deref().unwrap_or_default()
     }
     /// <p>The number of Glue Data Processing Units (DPUs) to allocate to this <code>DevEndpoint</code>.</p>
     pub fn number_of_nodes(&self) -> ::std::option::Option<i32> {
@@ -153,6 +157,7 @@ pub struct CreateDevEndpointInputBuilder {
 }
 impl CreateDevEndpointInputBuilder {
     /// <p>The name to be assigned to the new <code>DevEndpoint</code>.</p>
+    /// This field is required.
     pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_name = ::std::option::Option::Some(input.into());
         self
@@ -167,6 +172,7 @@ impl CreateDevEndpointInputBuilder {
         &self.endpoint_name
     }
     /// <p>The IAM role for the <code>DevEndpoint</code>.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -431,7 +437,7 @@ impl CreateDevEndpointInputBuilder {
     /// Consumes the builder and constructs a [`CreateDevEndpointInput`](crate::operation::create_dev_endpoint::CreateDevEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_dev_endpoint::CreateDevEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_dev_endpoint::CreateDevEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_dev_endpoint::CreateDevEndpointInput {
             endpoint_name: self.endpoint_name,
             role_arn: self.role_arn,

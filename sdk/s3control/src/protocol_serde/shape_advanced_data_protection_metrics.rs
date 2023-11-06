@@ -2,7 +2,7 @@
 pub fn ser_advanced_data_protection_metrics(
     input: &crate::types::AdvancedDataProtectionMetrics,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if input.is_enabled {
@@ -13,6 +13,7 @@ pub fn ser_advanced_data_protection_metrics(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_advanced_data_protection_metrics(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::AdvancedDataProtectionMetrics, ::aws_smithy_xml::decode::XmlDecodeError> {

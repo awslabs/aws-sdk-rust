@@ -5,15 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFindingsReportsOutput {
     /// <p>The list of analysis results summaries.</p>
-    pub findings_report_summaries: ::std::option::Option<::std::vec::Vec<crate::types::FindingsReportSummary>>,
+    pub findings_report_summaries: ::std::vec::Vec<crate::types::FindingsReportSummary>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListFindingsReports</code> request. When the results of a <code>ListFindingsReports</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListFindingsReportsOutput {
     /// <p>The list of analysis results summaries.</p>
-    pub fn findings_report_summaries(&self) -> ::std::option::Option<&[crate::types::FindingsReportSummary]> {
-        self.findings_report_summaries.as_deref()
+    pub fn findings_report_summaries(&self) -> &[crate::types::FindingsReportSummary] {
+        use std::ops::Deref;
+        self.findings_report_summaries.deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListFindingsReports</code> request. When the results of a <code>ListFindingsReports</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -85,11 +86,21 @@ impl ListFindingsReportsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListFindingsReportsOutput`](crate::operation::list_findings_reports::ListFindingsReportsOutput).
-    pub fn build(self) -> crate::operation::list_findings_reports::ListFindingsReportsOutput {
-        crate::operation::list_findings_reports::ListFindingsReportsOutput {
-            findings_report_summaries: self.findings_report_summaries,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`findings_report_summaries`](crate::operation::list_findings_reports::builders::ListFindingsReportsOutputBuilder::findings_report_summaries)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_findings_reports::ListFindingsReportsOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_findings_reports::ListFindingsReportsOutput {
+            findings_report_summaries: self.findings_report_summaries.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "findings_report_summaries",
+                    "findings_report_summaries was not specified but it is required when building ListFindingsReportsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

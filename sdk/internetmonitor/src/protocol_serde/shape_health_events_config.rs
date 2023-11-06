@@ -2,7 +2,7 @@
 pub fn ser_health_events_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HealthEventsConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.availability_score_threshold != 0.0 {
         object.key("AvailabilityScoreThreshold").number(
             #[allow(clippy::useless_conversion)]

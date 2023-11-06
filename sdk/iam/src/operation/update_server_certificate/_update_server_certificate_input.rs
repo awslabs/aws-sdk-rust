@@ -48,6 +48,7 @@ pub struct UpdateServerCertificateInputBuilder {
 impl UpdateServerCertificateInputBuilder {
     /// <p>The name of the server certificate that you want to update.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// This field is required.
     pub fn server_certificate_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_certificate_name = ::std::option::Option::Some(input.into());
         self
@@ -102,7 +103,7 @@ impl UpdateServerCertificateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_server_certificate::UpdateServerCertificateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_server_certificate::UpdateServerCertificateInput {
             server_certificate_name: self.server_certificate_name,

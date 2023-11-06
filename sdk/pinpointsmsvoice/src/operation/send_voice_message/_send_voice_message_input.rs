@@ -128,7 +128,7 @@ impl SendVoiceMessageInputBuilder {
     /// Consumes the builder and constructs a [`SendVoiceMessageInput`](crate::operation::send_voice_message::SendVoiceMessageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::send_voice_message::SendVoiceMessageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::send_voice_message::SendVoiceMessageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_voice_message::SendVoiceMessageInput {
             caller_id: self.caller_id,
             configuration_set_name: self.configuration_set_name,

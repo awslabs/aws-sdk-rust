@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetProject`](crate::operation::get_project::builders::GetProjectFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::get_project::builders::GetProjectFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_project::builders::GetProjectFluentBuilder::set_arn): <p>The project's ARN.</p>
+    ///   - [`arn(impl Into<String>)`](crate::operation::get_project::builders::GetProjectFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_project::builders::GetProjectFluentBuilder::set_arn):<br>required: **true**<br><p>The project's ARN.</p><br>
     /// - On success, responds with [`GetProjectOutput`](crate::operation::get_project::GetProjectOutput) with field(s):
     ///   - [`project(Option<Project>)`](crate::operation::get_project::GetProjectOutput::project): <p>The project to get information about.</p>
     /// - On failure, responds with [`SdkError<GetProjectError>`](crate::operation::get_project::GetProjectError)

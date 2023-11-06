@@ -27,6 +27,7 @@ pub struct DeleteWorkteamInputBuilder {
 }
 impl DeleteWorkteamInputBuilder {
     /// <p>The name of the work team to delete.</p>
+    /// This field is required.
     pub fn workteam_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workteam_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteWorkteamInputBuilder {
     /// Consumes the builder and constructs a [`DeleteWorkteamInput`](crate::operation::delete_workteam::DeleteWorkteamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_workteam::DeleteWorkteamInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_workteam::DeleteWorkteamInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_workteam::DeleteWorkteamInput {
             workteam_name: self.workteam_name,
         })

@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserAccessTaskItem {
     /// <p>The name of the application.</p>
-    pub app: ::std::option::Option<::std::string::String>,
+    pub app: ::std::string::String,
     /// <p>The ID of the application tenant.</p>
-    pub tenant_id: ::std::option::Option<::std::string::String>,
+    pub tenant_id: ::std::string::String,
     /// <p>The unique ID of the task.</p>
     pub task_id: ::std::option::Option<::std::string::String>,
     /// <p>Error from the task, if any.</p>
@@ -15,12 +15,14 @@ pub struct UserAccessTaskItem {
 }
 impl UserAccessTaskItem {
     /// <p>The name of the application.</p>
-    pub fn app(&self) -> ::std::option::Option<&str> {
-        self.app.as_deref()
+    pub fn app(&self) -> &str {
+        use std::ops::Deref;
+        self.app.deref()
     }
     /// <p>The ID of the application tenant.</p>
-    pub fn tenant_id(&self) -> ::std::option::Option<&str> {
-        self.tenant_id.as_deref()
+    pub fn tenant_id(&self) -> &str {
+        use std::ops::Deref;
+        self.tenant_id.deref()
     }
     /// <p>The unique ID of the task.</p>
     pub fn task_id(&self) -> ::std::option::Option<&str> {
@@ -49,6 +51,7 @@ pub struct UserAccessTaskItemBuilder {
 }
 impl UserAccessTaskItemBuilder {
     /// <p>The name of the application.</p>
+    /// This field is required.
     pub fn app(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +66,7 @@ impl UserAccessTaskItemBuilder {
         &self.app
     }
     /// <p>The ID of the application tenant.</p>
+    /// This field is required.
     pub fn tenant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tenant_id = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +109,25 @@ impl UserAccessTaskItemBuilder {
         &self.error
     }
     /// Consumes the builder and constructs a [`UserAccessTaskItem`](crate::types::UserAccessTaskItem).
-    pub fn build(self) -> crate::types::UserAccessTaskItem {
-        crate::types::UserAccessTaskItem {
-            app: self.app,
-            tenant_id: self.tenant_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`app`](crate::types::builders::UserAccessTaskItemBuilder::app)
+    /// - [`tenant_id`](crate::types::builders::UserAccessTaskItemBuilder::tenant_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::UserAccessTaskItem, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::UserAccessTaskItem {
+            app: self.app.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "app",
+                    "app was not specified but it is required when building UserAccessTaskItem",
+                )
+            })?,
+            tenant_id: self.tenant_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "tenant_id",
+                    "tenant_id was not specified but it is required when building UserAccessTaskItem",
+                )
+            })?,
             task_id: self.task_id,
             error: self.error,
-        }
+        })
     }
 }

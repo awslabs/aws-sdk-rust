@@ -34,6 +34,7 @@ pub struct PutNotificationChannelInputBuilder {
 }
 impl PutNotificationChannelInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the SNS topic that collects notifications from Firewall Manager.</p>
+    /// This field is required.
     pub fn sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sns_topic_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl PutNotificationChannelInputBuilder {
         &self.sns_topic_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record Firewall Manager activity. </p>
+    /// This field is required.
     pub fn sns_role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sns_role_name = ::std::option::Option::Some(input.into());
         self
@@ -64,8 +66,10 @@ impl PutNotificationChannelInputBuilder {
     /// Consumes the builder and constructs a [`PutNotificationChannelInput`](crate::operation::put_notification_channel::PutNotificationChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_notification_channel::PutNotificationChannelInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::put_notification_channel::PutNotificationChannelInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::put_notification_channel::PutNotificationChannelInput {
             sns_topic_arn: self.sns_topic_arn,
             sns_role_name: self.sns_role_name,

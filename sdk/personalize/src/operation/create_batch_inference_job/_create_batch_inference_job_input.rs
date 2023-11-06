@@ -56,8 +56,10 @@ impl CreateBatchInferenceJobInput {
         self.batch_inference_job_config.as_ref()
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the batch inference job.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateBatchInferenceJobInput {
@@ -83,6 +85,7 @@ pub struct CreateBatchInferenceJobInputBuilder {
 }
 impl CreateBatchInferenceJobInputBuilder {
     /// <p>The name of the batch inference job to create.</p>
+    /// This field is required.
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +100,7 @@ impl CreateBatchInferenceJobInputBuilder {
         &self.job_name
     }
     /// <p>The Amazon Resource Name (ARN) of the solution version that will be used to generate the batch inference recommendations.</p>
+    /// This field is required.
     pub fn solution_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.solution_version_arn = ::std::option::Option::Some(input.into());
         self
@@ -139,6 +143,7 @@ impl CreateBatchInferenceJobInputBuilder {
         &self.num_results
     }
     /// <p>The Amazon S3 path that leads to the input file to base your recommendations on. The input material must be in JSON format.</p>
+    /// This field is required.
     pub fn job_input(mut self, input: crate::types::BatchInferenceJobInput) -> Self {
         self.job_input = ::std::option::Option::Some(input);
         self
@@ -153,6 +158,7 @@ impl CreateBatchInferenceJobInputBuilder {
         &self.job_input
     }
     /// <p>The path to the Amazon S3 bucket where the job's output will be stored.</p>
+    /// This field is required.
     pub fn job_output(mut self, input: crate::types::BatchInferenceJobOutput) -> Self {
         self.job_output = ::std::option::Option::Some(input);
         self
@@ -167,6 +173,7 @@ impl CreateBatchInferenceJobInputBuilder {
         &self.job_output
     }
     /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output Amazon S3 buckets respectively.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -219,7 +226,7 @@ impl CreateBatchInferenceJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_batch_inference_job::CreateBatchInferenceJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_batch_inference_job::CreateBatchInferenceJobInput {
             job_name: self.job_name,

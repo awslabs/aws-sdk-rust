@@ -2,7 +2,7 @@
 pub fn ser_firewall_policy(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FirewallPolicy,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.stateless_rule_group_references {
         let mut array_2 = object.key("StatelessRuleGroupReferences").start_array();
         for item_3 in var_1 {
@@ -15,71 +15,71 @@ pub fn ser_firewall_policy(
         }
         array_2.finish();
     }
-    if let Some(var_5) = &input.stateless_default_actions {
-        let mut array_6 = object.key("StatelessDefaultActions").start_array();
-        for item_7 in var_5 {
+    {
+        let mut array_5 = object.key("StatelessDefaultActions").start_array();
+        for item_6 in &input.stateless_default_actions {
             {
-                array_6.value().string(item_7.as_str());
+                array_5.value().string(item_6.as_str());
             }
         }
-        array_6.finish();
+        array_5.finish();
     }
-    if let Some(var_8) = &input.stateless_fragment_default_actions {
-        let mut array_9 = object.key("StatelessFragmentDefaultActions").start_array();
-        for item_10 in var_8 {
+    {
+        let mut array_7 = object.key("StatelessFragmentDefaultActions").start_array();
+        for item_8 in &input.stateless_fragment_default_actions {
             {
-                array_9.value().string(item_10.as_str());
+                array_7.value().string(item_8.as_str());
             }
         }
-        array_9.finish();
+        array_7.finish();
     }
-    if let Some(var_11) = &input.stateless_custom_actions {
-        let mut array_12 = object.key("StatelessCustomActions").start_array();
-        for item_13 in var_11 {
-            {
-                #[allow(unused_mut)]
-                let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_custom_action::ser_custom_action(&mut object_14, item_13)?;
-                object_14.finish();
-            }
-        }
-        array_12.finish();
-    }
-    if let Some(var_15) = &input.stateful_rule_group_references {
-        let mut array_16 = object.key("StatefulRuleGroupReferences").start_array();
-        for item_17 in var_15 {
+    if let Some(var_9) = &input.stateless_custom_actions {
+        let mut array_10 = object.key("StatelessCustomActions").start_array();
+        for item_11 in var_9 {
             {
                 #[allow(unused_mut)]
-                let mut object_18 = array_16.value().start_object();
-                crate::protocol_serde::shape_stateful_rule_group_reference::ser_stateful_rule_group_reference(&mut object_18, item_17)?;
-                object_18.finish();
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_custom_action::ser_custom_action(&mut object_12, item_11)?;
+                object_12.finish();
             }
         }
-        array_16.finish();
+        array_10.finish();
     }
-    if let Some(var_19) = &input.stateful_default_actions {
-        let mut array_20 = object.key("StatefulDefaultActions").start_array();
-        for item_21 in var_19 {
+    if let Some(var_13) = &input.stateful_rule_group_references {
+        let mut array_14 = object.key("StatefulRuleGroupReferences").start_array();
+        for item_15 in var_13 {
             {
-                array_20.value().string(item_21.as_str());
+                #[allow(unused_mut)]
+                let mut object_16 = array_14.value().start_object();
+                crate::protocol_serde::shape_stateful_rule_group_reference::ser_stateful_rule_group_reference(&mut object_16, item_15)?;
+                object_16.finish();
             }
         }
-        array_20.finish();
+        array_14.finish();
     }
-    if let Some(var_22) = &input.stateful_engine_options {
+    if let Some(var_17) = &input.stateful_default_actions {
+        let mut array_18 = object.key("StatefulDefaultActions").start_array();
+        for item_19 in var_17 {
+            {
+                array_18.value().string(item_19.as_str());
+            }
+        }
+        array_18.finish();
+    }
+    if let Some(var_20) = &input.stateful_engine_options {
         #[allow(unused_mut)]
-        let mut object_23 = object.key("StatefulEngineOptions").start_object();
-        crate::protocol_serde::shape_stateful_engine_options::ser_stateful_engine_options(&mut object_23, var_22)?;
-        object_23.finish();
+        let mut object_21 = object.key("StatefulEngineOptions").start_object();
+        crate::protocol_serde::shape_stateful_engine_options::ser_stateful_engine_options(&mut object_21, var_20)?;
+        object_21.finish();
     }
-    if let Some(var_24) = &input.tls_inspection_configuration_arn {
-        object.key("TLSInspectionConfigurationArn").string(var_24.as_str());
+    if let Some(var_22) = &input.tls_inspection_configuration_arn {
+        object.key("TLSInspectionConfigurationArn").string(var_22.as_str());
     }
-    if let Some(var_25) = &input.policy_variables {
+    if let Some(var_23) = &input.policy_variables {
         #[allow(unused_mut)]
-        let mut object_26 = object.key("PolicyVariables").start_object();
-        crate::protocol_serde::shape_policy_variables::ser_policy_variables(&mut object_26, var_25)?;
-        object_26.finish();
+        let mut object_24 = object.key("PolicyVariables").start_object();
+        crate::protocol_serde::shape_policy_variables::ser_policy_variables(&mut object_24, var_23)?;
+        object_24.finish();
     }
     Ok(())
 }
@@ -150,7 +150,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::firewall_policy_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

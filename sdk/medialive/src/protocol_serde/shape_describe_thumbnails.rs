@@ -177,7 +177,7 @@ pub(crate) fn de_describe_thumbnails(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "thumbnailDetails" => {
-                    builder = builder.set_thumbnail_details(crate::protocol_serde::shape___list_of_thumbnail_detail::de___list_of_thumbnail_detail(
+                    builder = builder.set_thumbnail_details(crate::protocol_serde::shape_list_of_thumbnail_detail::de_list_of_thumbnail_detail(
                         tokens,
                     )?);
                 }

@@ -70,6 +70,7 @@ pub struct CreateGlobalClusterInputBuilder {
 }
 impl CreateGlobalClusterInputBuilder {
     /// <p>The cluster identifier of the new global cluster.</p>
+    /// This field is required.
     pub fn global_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_cluster_identifier = ::std::option::Option::Some(input.into());
         self
@@ -170,7 +171,7 @@ impl CreateGlobalClusterInputBuilder {
     /// Consumes the builder and constructs a [`CreateGlobalClusterInput`](crate::operation::create_global_cluster::CreateGlobalClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_global_cluster::CreateGlobalClusterInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_global_cluster::CreateGlobalClusterInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_global_cluster::CreateGlobalClusterInput {
             global_cluster_identifier: self.global_cluster_identifier,

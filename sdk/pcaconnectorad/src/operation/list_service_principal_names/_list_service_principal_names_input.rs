@@ -69,6 +69,7 @@ impl ListServicePrincipalNamesInputBuilder {
         &self.next_token
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateDirectoryRegistration.html">CreateDirectoryRegistration</a>.</p>
+    /// This field is required.
     pub fn directory_registration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_registration_arn = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListServicePrincipalNamesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_service_principal_names::ListServicePrincipalNamesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_service_principal_names::ListServicePrincipalNamesInput {
             max_results: self.max_results,

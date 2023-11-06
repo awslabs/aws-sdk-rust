@@ -12,8 +12,10 @@ pub struct ListBootstrapActionsOutput {
 }
 impl ListBootstrapActionsOutput {
     /// <p>The bootstrap actions associated with the cluster.</p>
-    pub fn bootstrap_actions(&self) -> ::std::option::Option<&[crate::types::Command]> {
-        self.bootstrap_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bootstrap_actions.is_none()`.
+    pub fn bootstrap_actions(&self) -> &[crate::types::Command] {
+        self.bootstrap_actions.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

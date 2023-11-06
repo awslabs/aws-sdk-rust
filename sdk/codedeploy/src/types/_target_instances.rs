@@ -13,12 +13,16 @@ pub struct TargetInstances {
 }
 impl TargetInstances {
     /// <p>The tag filter key, type, and value used to identify Amazon EC2 instances in a replacement environment for a blue/green deployment. Cannot be used in the same call as <code>ec2TagSet</code>.</p>
-    pub fn tag_filters(&self) -> ::std::option::Option<&[crate::types::Ec2TagFilter]> {
-        self.tag_filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_filters.is_none()`.
+    pub fn tag_filters(&self) -> &[crate::types::Ec2TagFilter] {
+        self.tag_filters.as_deref().unwrap_or_default()
     }
     /// <p>The names of one or more Auto Scaling groups to identify a replacement environment for a blue/green deployment.</p>
-    pub fn auto_scaling_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.auto_scaling_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auto_scaling_groups.is_none()`.
+    pub fn auto_scaling_groups(&self) -> &[::std::string::String] {
+        self.auto_scaling_groups.as_deref().unwrap_or_default()
     }
     /// <p>Information about the groups of Amazon EC2 instance tags that an instance must be identified by in order for it to be included in the replacement environment for a blue/green deployment. Cannot be used in the same call as <code>tagFilters</code>.</p>
     pub fn ec2_tag_set(&self) -> ::std::option::Option<&crate::types::Ec2TagSet> {

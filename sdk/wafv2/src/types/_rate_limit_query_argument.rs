@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RateLimitQueryArgument {
     /// <p>The name of the query argument to use. </p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the transformed component contents. </p>
-    pub text_transformations: ::std::option::Option<::std::vec::Vec<crate::types::TextTransformation>>,
+    pub text_transformations: ::std::vec::Vec<crate::types::TextTransformation>,
 }
 impl RateLimitQueryArgument {
     /// <p>The name of the query argument to use. </p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the transformed component contents. </p>
-    pub fn text_transformations(&self) -> ::std::option::Option<&[crate::types::TextTransformation]> {
-        self.text_transformations.as_deref()
+    pub fn text_transformations(&self) -> &[crate::types::TextTransformation] {
+        use std::ops::Deref;
+        self.text_transformations.deref()
     }
 }
 impl RateLimitQueryArgument {
@@ -35,6 +37,7 @@ pub struct RateLimitQueryArgumentBuilder {
 }
 impl RateLimitQueryArgumentBuilder {
     /// <p>The name of the query argument to use. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -69,10 +72,23 @@ impl RateLimitQueryArgumentBuilder {
         &self.text_transformations
     }
     /// Consumes the builder and constructs a [`RateLimitQueryArgument`](crate::types::RateLimitQueryArgument).
-    pub fn build(self) -> crate::types::RateLimitQueryArgument {
-        crate::types::RateLimitQueryArgument {
-            name: self.name,
-            text_transformations: self.text_transformations,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::RateLimitQueryArgumentBuilder::name)
+    /// - [`text_transformations`](crate::types::builders::RateLimitQueryArgumentBuilder::text_transformations)
+    pub fn build(self) -> ::std::result::Result<crate::types::RateLimitQueryArgument, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RateLimitQueryArgument {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building RateLimitQueryArgument",
+                )
+            })?,
+            text_transformations: self.text_transformations.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "text_transformations",
+                    "text_transformations was not specified but it is required when building RateLimitQueryArgument",
+                )
+            })?,
+        })
     }
 }

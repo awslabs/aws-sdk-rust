@@ -48,6 +48,7 @@ impl GetTagValuesInputBuilder {
         &self.pagination_token
     }
     /// <p>Specifies the tag key for which you want to list all existing values that are currently used in the specified Amazon Web Services Region for the calling account.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl GetTagValuesInputBuilder {
     /// Consumes the builder and constructs a [`GetTagValuesInput`](crate::operation::get_tag_values::GetTagValuesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_tag_values::GetTagValuesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_tag_values::GetTagValuesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_tag_values::GetTagValuesInput {
             pagination_token: self.pagination_token,
             key: self.key,

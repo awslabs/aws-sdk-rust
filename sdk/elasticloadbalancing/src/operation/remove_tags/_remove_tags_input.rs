@@ -11,12 +11,16 @@ pub struct RemoveTagsInput {
 }
 impl RemoveTagsInput {
     /// <p>The name of the load balancer. You can specify a maximum of one load balancer name.</p>
-    pub fn load_balancer_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.load_balancer_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.load_balancer_names.is_none()`.
+    pub fn load_balancer_names(&self) -> &[::std::string::String] {
+        self.load_balancer_names.as_deref().unwrap_or_default()
     }
     /// <p>The list of tag keys to remove.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::TagKeyOnly]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::TagKeyOnly] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl RemoveTagsInput {
@@ -75,7 +79,7 @@ impl RemoveTagsInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`RemoveTagsInput`](crate::operation::remove_tags::RemoveTagsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::remove_tags::RemoveTagsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::remove_tags::RemoveTagsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::remove_tags::RemoveTagsInput {
             load_balancer_names: self.load_balancer_names,
             tags: self.tags,

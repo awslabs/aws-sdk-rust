@@ -32,11 +32,10 @@ pub fn de_batch_get_finding_details_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::batch_get_finding_details::BatchGetFindingDetailsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::batch_get_finding_details::BatchGetFindingDetailsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerException" => crate::operation::batch_get_finding_details::BatchGetFindingDetailsError::InternalServerException({
@@ -54,11 +53,10 @@ pub fn de_batch_get_finding_details_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::batch_get_finding_details::BatchGetFindingDetailsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::batch_get_finding_details::BatchGetFindingDetailsError::ThrottlingException({
@@ -76,11 +74,10 @@ pub fn de_batch_get_finding_details_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::batch_get_finding_details::BatchGetFindingDetailsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::batch_get_finding_details::BatchGetFindingDetailsError::ValidationException({
@@ -91,11 +88,10 @@ pub fn de_batch_get_finding_details_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::batch_get_finding_details::BatchGetFindingDetailsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::batch_get_finding_details::BatchGetFindingDetailsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::batch_get_finding_details::BatchGetFindingDetailsError::generic(generic),
@@ -123,12 +119,12 @@ pub fn de_batch_get_finding_details_http_response(
 
 pub fn ser_batch_get_finding_details_input(
     input: &crate::operation::batch_get_finding_details::BatchGetFindingDetailsInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_batch_get_finding_details_input::ser_batch_get_finding_details_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_batch_get_finding_details(

@@ -15,8 +15,10 @@ impl SourceConfig {
         self.apply_to_all_regions
     }
     /// <p> The advanced event selectors that are configured for the channel.</p>
-    pub fn advanced_event_selectors(&self) -> ::std::option::Option<&[crate::types::AdvancedEventSelector]> {
-        self.advanced_event_selectors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.advanced_event_selectors.is_none()`.
+    pub fn advanced_event_selectors(&self) -> &[crate::types::AdvancedEventSelector] {
+        self.advanced_event_selectors.as_deref().unwrap_or_default()
     }
 }
 impl SourceConfig {

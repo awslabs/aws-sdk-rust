@@ -34,6 +34,7 @@ pub struct CreateInferenceRecommendationsJobOutputBuilder {
 }
 impl CreateInferenceRecommendationsJobOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the recommendation job.</p>
+    /// This field is required.
     pub fn job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_arn = ::std::option::Option::Some(input.into());
         self

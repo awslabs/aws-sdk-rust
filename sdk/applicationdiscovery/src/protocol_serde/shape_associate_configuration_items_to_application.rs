@@ -36,8 +36,8 @@ pub fn de_associate_configuration_items_to_application_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "HomeRegionNotSetException" => crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationError::HomeRegionNotSetException({
@@ -52,8 +52,8 @@ pub fn de_associate_configuration_items_to_application_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidParameterException" => crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationError::InvalidParameterException({
@@ -68,8 +68,8 @@ pub fn de_associate_configuration_items_to_application_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidParameterValueException" => crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationError::InvalidParameterValueException({
@@ -84,8 +84,8 @@ pub fn de_associate_configuration_items_to_application_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ServerInternalErrorException" => crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationError::ServerInternalErrorException({
@@ -100,8 +100,8 @@ pub fn de_associate_configuration_items_to_application_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationError::generic(generic)
@@ -129,7 +129,7 @@ pub fn de_associate_configuration_items_to_application_http_response(
 
 pub fn ser_associate_configuration_items_to_application_input(
     input: &crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_associate_configuration_items_to_application_input::ser_associate_configuration_items_to_application_input(
@@ -137,5 +137,5 @@ pub fn ser_associate_configuration_items_to_application_input(
         input,
     )?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

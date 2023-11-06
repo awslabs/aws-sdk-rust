@@ -30,8 +30,10 @@ impl AwsAutoScalingAutoScalingGroupDetails {
         self.launch_configuration_name.as_deref()
     }
     /// <p>The list of load balancers associated with the group.</p>
-    pub fn load_balancer_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.load_balancer_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.load_balancer_names.is_none()`.
+    pub fn load_balancer_names(&self) -> &[::std::string::String] {
+        self.load_balancer_names.as_deref().unwrap_or_default()
     }
     /// <p>The service to use for the health checks. Valid values are <code>EC2</code> or <code>ELB</code>.</p>
     pub fn health_check_type(&self) -> ::std::option::Option<&str> {
@@ -51,8 +53,10 @@ impl AwsAutoScalingAutoScalingGroupDetails {
         self.mixed_instances_policy.as_ref()
     }
     /// <p>The list of Availability Zones for the automatic scaling group.</p>
-    pub fn availability_zones(&self) -> ::std::option::Option<&[crate::types::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails]> {
-        self.availability_zones.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
+    pub fn availability_zones(&self) -> &[crate::types::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails] {
+        self.availability_zones.as_deref().unwrap_or_default()
     }
     /// <p>The launch template to use.</p>
     pub fn launch_template(&self) -> ::std::option::Option<&crate::types::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification> {

@@ -65,8 +65,10 @@ impl ModelDashboardMonitoringSchedule {
         self.endpoint_name.as_deref()
     }
     /// <p>A JSON array where each element is a summary for a monitoring alert.</p>
-    pub fn monitoring_alert_summaries(&self) -> ::std::option::Option<&[crate::types::MonitoringAlertSummary]> {
-        self.monitoring_alert_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.monitoring_alert_summaries.is_none()`.
+    pub fn monitoring_alert_summaries(&self) -> &[crate::types::MonitoringAlertSummary] {
+        self.monitoring_alert_summaries.as_deref().unwrap_or_default()
     }
     /// <p>Summary of information about the last monitoring job to run.</p>
     pub fn last_monitoring_execution_summary(&self) -> ::std::option::Option<&crate::types::MonitoringExecutionSummary> {

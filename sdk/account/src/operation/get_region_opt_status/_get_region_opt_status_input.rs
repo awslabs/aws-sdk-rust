@@ -63,6 +63,7 @@ impl GetRegionOptStatusInputBuilder {
         &self.account_id
     }
     /// <p>Specifies the Region-code for a given Region name (for example, <code>af-south-1</code>). This function will return the status of whatever Region you pass into this parameter. </p>
+    /// This field is required.
     pub fn region_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region_name = ::std::option::Option::Some(input.into());
         self
@@ -79,7 +80,7 @@ impl GetRegionOptStatusInputBuilder {
     /// Consumes the builder and constructs a [`GetRegionOptStatusInput`](crate::operation::get_region_opt_status::GetRegionOptStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_region_opt_status::GetRegionOptStatusInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_region_opt_status::GetRegionOptStatusInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_region_opt_status::GetRegionOptStatusInput {
             account_id: self.account_id,

@@ -55,6 +55,7 @@ pub struct CreateResourceInputBuilder {
 }
 impl CreateResourceInputBuilder {
     /// <p>The identifier associated with the organization for which the resource is created.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl CreateResourceInputBuilder {
         &self.organization_id
     }
     /// <p>The name of the new resource.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +85,7 @@ impl CreateResourceInputBuilder {
         &self.name
     }
     /// <p>The type of the new resource. The available types are <code>equipment</code> and <code>room</code>.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::ResourceType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -127,7 +130,7 @@ impl CreateResourceInputBuilder {
     /// Consumes the builder and constructs a [`CreateResourceInput`](crate::operation::create_resource::CreateResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_resource::CreateResourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_resource::CreateResourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_resource::CreateResourceInput {
             organization_id: self.organization_id,
             name: self.name,

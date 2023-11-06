@@ -50,6 +50,7 @@ pub struct ResetPasswordInputBuilder {
 }
 impl ResetPasswordInputBuilder {
     /// <p>The identifier of the organization that contains the user for which the password is reset.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -64,6 +65,7 @@ impl ResetPasswordInputBuilder {
         &self.organization_id
     }
     /// <p>The identifier of the user for whom the password is reset.</p>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
@@ -78,6 +80,7 @@ impl ResetPasswordInputBuilder {
         &self.user_id
     }
     /// <p>The new password for the user.</p>
+    /// This field is required.
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
         self
@@ -94,7 +97,7 @@ impl ResetPasswordInputBuilder {
     /// Consumes the builder and constructs a [`ResetPasswordInput`](crate::operation::reset_password::ResetPasswordInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::reset_password::ResetPasswordInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::reset_password::ResetPasswordInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::reset_password::ResetPasswordInput {
             organization_id: self.organization_id,
             user_id: self.user_id,

@@ -9,8 +9,10 @@ pub struct AcceptEulasOutput {
 }
 impl AcceptEulasOutput {
     /// <p>A collection of EULA acceptances.</p>
-    pub fn eula_acceptances(&self) -> ::std::option::Option<&[crate::types::EulaAcceptance]> {
-        self.eula_acceptances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.eula_acceptances.is_none()`.
+    pub fn eula_acceptances(&self) -> &[crate::types::EulaAcceptance] {
+        self.eula_acceptances.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for AcceptEulasOutput {

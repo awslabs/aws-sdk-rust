@@ -40,8 +40,10 @@ impl PutBackupVaultNotificationsInput {
     /// </ul> <note>
     /// <p>The list below shows items that are deprecated events (for reference) and are no longer in use. They are no longer supported and will not return statuses or notifications. Refer to the list above for current supported events.</p>
     /// </note>
-    pub fn backup_vault_events(&self) -> ::std::option::Option<&[crate::types::BackupVaultEvent]> {
-        self.backup_vault_events.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.backup_vault_events.is_none()`.
+    pub fn backup_vault_events(&self) -> &[crate::types::BackupVaultEvent] {
+        self.backup_vault_events.as_deref().unwrap_or_default()
     }
 }
 impl PutBackupVaultNotificationsInput {
@@ -61,6 +63,7 @@ pub struct PutBackupVaultNotificationsInputBuilder {
 }
 impl PutBackupVaultNotificationsInputBuilder {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    /// This field is required.
     pub fn backup_vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_vault_name = ::std::option::Option::Some(input.into());
         self
@@ -75,6 +78,7 @@ impl PutBackupVaultNotificationsInputBuilder {
         &self.backup_vault_name
     }
     /// <p>The Amazon Resource Name (ARN) that specifies the topic for a backup vault’s events; for example, <code>arn:aws:sns:us-west-2:111122223333:MyVaultTopic</code>.</p>
+    /// This field is required.
     pub fn sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sns_topic_arn = ::std::option::Option::Some(input.into());
         self
@@ -143,7 +147,7 @@ impl PutBackupVaultNotificationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_backup_vault_notifications::PutBackupVaultNotificationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_backup_vault_notifications::PutBackupVaultNotificationsInput {
             backup_vault_name: self.backup_vault_name,

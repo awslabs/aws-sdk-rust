@@ -27,6 +27,7 @@ pub struct DeleteStudioLifecycleConfigInputBuilder {
 }
 impl DeleteStudioLifecycleConfigInputBuilder {
     /// <p>The name of the Studio Lifecycle Configuration to delete.</p>
+    /// This field is required.
     pub fn studio_lifecycle_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_lifecycle_config_name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteStudioLifecycleConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_studio_lifecycle_config::DeleteStudioLifecycleConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_studio_lifecycle_config::DeleteStudioLifecycleConfigInput {
             studio_lifecycle_config_name: self.studio_lifecycle_config_name,

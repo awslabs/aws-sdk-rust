@@ -27,6 +27,7 @@ pub struct GetConnectorDefinitionInputBuilder {
 }
 impl GetConnectorDefinitionInputBuilder {
     /// The ID of the connector definition.
+    /// This field is required.
     pub fn connector_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_definition_id = ::std::option::Option::Some(input.into());
         self
@@ -43,8 +44,10 @@ impl GetConnectorDefinitionInputBuilder {
     /// Consumes the builder and constructs a [`GetConnectorDefinitionInput`](crate::operation::get_connector_definition::GetConnectorDefinitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_connector_definition::GetConnectorDefinitionInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::get_connector_definition::GetConnectorDefinitionInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::get_connector_definition::GetConnectorDefinitionInput {
             connector_definition_id: self.connector_definition_id,
         })

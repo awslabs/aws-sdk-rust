@@ -144,12 +144,16 @@ impl RestoreDbClusterToPointInTimeInput {
         self.option_group_name.as_deref()
     }
     /// <p>A list of VPC security groups that the new DB cluster belongs to.</p>
-    pub fn vpc_security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.vpc_security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_group_ids.is_none()`.
+    pub fn vpc_security_group_ids(&self) -> &[::std::string::String] {
+        self.vpc_security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>The tags to be applied to the restored DB cluster.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.</p>
     /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a DB cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
@@ -169,8 +173,10 @@ impl RestoreDbClusterToPointInTimeInput {
         self.enable_iam_database_authentication
     }
     /// <p>The list of logs that the restored DB cluster is to export to CloudWatch Logs.</p>
-    pub fn enable_cloudwatch_logs_exports(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.enable_cloudwatch_logs_exports.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enable_cloudwatch_logs_exports.is_none()`.
+    pub fn enable_cloudwatch_logs_exports(&self) -> &[::std::string::String] {
+        self.enable_cloudwatch_logs_exports.as_deref().unwrap_or_default()
     }
     /// <p>The name of the DB cluster parameter group to associate with the new DB cluster.</p>
     /// <p>Constraints:</p>
@@ -226,6 +232,7 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     /// <li> <p>First character must be a letter</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_identifier = ::std::option::Option::Some(input.into());
         self
@@ -285,6 +292,7 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn source_db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_db_cluster_identifier = ::std::option::Option::Some(input.into());
         self
@@ -598,7 +606,7 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_db_cluster_to_point_in_time::RestoreDbClusterToPointInTimeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::restore_db_cluster_to_point_in_time::RestoreDbClusterToPointInTimeInput {

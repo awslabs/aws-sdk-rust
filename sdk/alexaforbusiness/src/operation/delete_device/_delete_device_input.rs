@@ -27,6 +27,7 @@ pub struct DeleteDeviceInputBuilder {
 }
 impl DeleteDeviceInputBuilder {
     /// <p>The ARN of the device for which to request details.</p>
+    /// This field is required.
     pub fn device_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_arn = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,9 @@ impl DeleteDeviceInputBuilder {
         &self.device_arn
     }
     /// Consumes the builder and constructs a [`DeleteDeviceInput`](crate::operation::delete_device::DeleteDeviceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_device::DeleteDeviceInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_device::DeleteDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_device::DeleteDeviceInput { device_arn: self.device_arn })
     }
 }

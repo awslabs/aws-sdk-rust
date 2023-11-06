@@ -28,6 +28,7 @@ pub struct DescribeHapgInputBuilder {
 }
 impl DescribeHapgInputBuilder {
     /// <p>The ARN of the high-availability partition group to describe.</p>
+    /// This field is required.
     pub fn hapg_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hapg_arn = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +43,9 @@ impl DescribeHapgInputBuilder {
         &self.hapg_arn
     }
     /// Consumes the builder and constructs a [`DescribeHapgInput`](crate::operation::describe_hapg::DescribeHapgInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_hapg::DescribeHapgInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_hapg::DescribeHapgInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_hapg::DescribeHapgInput { hapg_arn: self.hapg_arn })
     }
 }

@@ -72,6 +72,7 @@ impl CreateCustomMetadataInputBuilder {
         &self.authentication_token
     }
     /// <p>The ID of the resource.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -129,7 +130,7 @@ impl CreateCustomMetadataInputBuilder {
     /// Consumes the builder and constructs a [`CreateCustomMetadataInput`](crate::operation::create_custom_metadata::CreateCustomMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_custom_metadata::CreateCustomMetadataInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_custom_metadata::CreateCustomMetadataInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_custom_metadata::CreateCustomMetadataInput {
             authentication_token: self.authentication_token,

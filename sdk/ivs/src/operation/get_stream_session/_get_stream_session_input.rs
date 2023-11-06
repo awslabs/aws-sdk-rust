@@ -34,6 +34,7 @@ pub struct GetStreamSessionInputBuilder {
 }
 impl GetStreamSessionInputBuilder {
     /// <p>ARN of the channel resource</p>
+    /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl GetStreamSessionInputBuilder {
     /// Consumes the builder and constructs a [`GetStreamSessionInput`](crate::operation::get_stream_session::GetStreamSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_stream_session::GetStreamSessionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_stream_session::GetStreamSessionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_stream_session::GetStreamSessionInput {
             channel_arn: self.channel_arn,
             stream_id: self.stream_id,

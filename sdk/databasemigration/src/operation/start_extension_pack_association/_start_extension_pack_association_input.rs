@@ -27,6 +27,7 @@ pub struct StartExtensionPackAssociationInputBuilder {
 }
 impl StartExtensionPackAssociationInputBuilder {
     /// <p>The migration project name or Amazon Resource Name (ARN).</p>
+    /// This field is required.
     pub fn migration_project_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.migration_project_identifier = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl StartExtensionPackAssociationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_extension_pack_association::StartExtensionPackAssociationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_extension_pack_association::StartExtensionPackAssociationInput {
             migration_project_identifier: self.migration_project_identifier,

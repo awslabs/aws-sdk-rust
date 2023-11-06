@@ -21,8 +21,10 @@ impl PolicyTypeDescription {
         self.description.as_deref()
     }
     /// <p>The description of the policy attributes associated with the policies defined by Elastic Load Balancing.</p>
-    pub fn policy_attribute_type_descriptions(&self) -> ::std::option::Option<&[crate::types::PolicyAttributeTypeDescription]> {
-        self.policy_attribute_type_descriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_attribute_type_descriptions.is_none()`.
+    pub fn policy_attribute_type_descriptions(&self) -> &[crate::types::PolicyAttributeTypeDescription] {
+        self.policy_attribute_type_descriptions.as_deref().unwrap_or_default()
     }
 }
 impl PolicyTypeDescription {

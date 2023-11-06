@@ -86,8 +86,9 @@ where
                             )?);
                         }
                         "plugins" => {
-                            builder = builder
-                                .set_plugins(crate::protocol_serde::shape___list_of_plugin_description::de___list_of_plugin_description(tokens)?);
+                            builder = builder.set_plugins(crate::protocol_serde::shape_list_of_plugin_description::de_list_of_plugin_description(
+                                tokens,
+                            )?);
                         }
                         "serviceExecutionRoleArn" => {
                             builder = builder.set_service_execution_role_arn(

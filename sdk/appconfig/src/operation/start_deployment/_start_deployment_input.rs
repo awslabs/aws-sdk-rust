@@ -76,6 +76,7 @@ pub struct StartDeploymentInputBuilder {
 }
 impl StartDeploymentInputBuilder {
     /// <p>The application ID.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +91,7 @@ impl StartDeploymentInputBuilder {
         &self.application_id
     }
     /// <p>The environment ID.</p>
+    /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +106,7 @@ impl StartDeploymentInputBuilder {
         &self.environment_id
     }
     /// <p>The deployment strategy ID.</p>
+    /// This field is required.
     pub fn deployment_strategy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_strategy_id = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +121,7 @@ impl StartDeploymentInputBuilder {
         &self.deployment_strategy_id
     }
     /// <p>The configuration profile ID.</p>
+    /// This field is required.
     pub fn configuration_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_profile_id = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +136,7 @@ impl StartDeploymentInputBuilder {
         &self.configuration_profile_id
     }
     /// <p>The configuration version to deploy. If deploying an AppConfig hosted configuration version, you can specify either the version number or version label. For all other configurations, you must specify the version number.</p>
+    /// This field is required.
     pub fn configuration_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_version = ::std::option::Option::Some(input.into());
         self
@@ -196,7 +201,7 @@ impl StartDeploymentInputBuilder {
     /// Consumes the builder and constructs a [`StartDeploymentInput`](crate::operation::start_deployment::StartDeploymentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_deployment::StartDeploymentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_deployment::StartDeploymentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_deployment::StartDeploymentInput {
             application_id: self.application_id,
             environment_id: self.environment_id,

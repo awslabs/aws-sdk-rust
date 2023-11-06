@@ -4,31 +4,33 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePlaceIndexOutput {
     /// <p>The name of the updated place index resource.</p>
-    pub index_name: ::std::option::Option<::std::string::String>,
+    pub index_name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the upated place index resource. Used to specify a resource across Amazon Web Services.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place- index/ExamplePlaceIndex</code> </p> </li>
     /// </ul>
-    pub index_arn: ::std::option::Option<::std::string::String>,
+    pub index_arn: ::std::string::String,
     /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub update_time: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
 impl UpdatePlaceIndexOutput {
     /// <p>The name of the updated place index resource.</p>
-    pub fn index_name(&self) -> ::std::option::Option<&str> {
-        self.index_name.as_deref()
+    pub fn index_name(&self) -> &str {
+        use std::ops::Deref;
+        self.index_name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the upated place index resource. Used to specify a resource across Amazon Web Services.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place- index/ExamplePlaceIndex</code> </p> </li>
     /// </ul>
-    pub fn index_arn(&self) -> ::std::option::Option<&str> {
-        self.index_arn.as_deref()
+    pub fn index_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.index_arn.deref()
     }
     /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.update_time.as_ref()
+    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.update_time
     }
 }
 impl ::aws_http::request_id::RequestId for UpdatePlaceIndexOutput {
@@ -54,6 +56,7 @@ pub struct UpdatePlaceIndexOutputBuilder {
 }
 impl UpdatePlaceIndexOutputBuilder {
     /// <p>The name of the updated place index resource.</p>
+    /// This field is required.
     pub fn index_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_name = ::std::option::Option::Some(input.into());
         self
@@ -71,6 +74,7 @@ impl UpdatePlaceIndexOutputBuilder {
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place- index/ExamplePlaceIndex</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn index_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_arn = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +95,7 @@ impl UpdatePlaceIndexOutputBuilder {
         &self.index_arn
     }
     /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// This field is required.
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
         self
@@ -114,12 +119,33 @@ impl UpdatePlaceIndexOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdatePlaceIndexOutput`](crate::operation::update_place_index::UpdatePlaceIndexOutput).
-    pub fn build(self) -> crate::operation::update_place_index::UpdatePlaceIndexOutput {
-        crate::operation::update_place_index::UpdatePlaceIndexOutput {
-            index_name: self.index_name,
-            index_arn: self.index_arn,
-            update_time: self.update_time,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`index_name`](crate::operation::update_place_index::builders::UpdatePlaceIndexOutputBuilder::index_name)
+    /// - [`index_arn`](crate::operation::update_place_index::builders::UpdatePlaceIndexOutputBuilder::index_arn)
+    /// - [`update_time`](crate::operation::update_place_index::builders::UpdatePlaceIndexOutputBuilder::update_time)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_place_index::UpdatePlaceIndexOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_place_index::UpdatePlaceIndexOutput {
+            index_name: self.index_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "index_name",
+                    "index_name was not specified but it is required when building UpdatePlaceIndexOutput",
+                )
+            })?,
+            index_arn: self.index_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "index_arn",
+                    "index_arn was not specified but it is required when building UpdatePlaceIndexOutput",
+                )
+            })?,
+            update_time: self.update_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "update_time",
+                    "update_time was not specified but it is required when building UpdatePlaceIndexOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -34,6 +34,7 @@ pub struct CreateRepositoryOutputBuilder {
 }
 impl CreateRepositoryOutputBuilder {
     /// <p>The repository link's detail data that's returned by Proton.</p>
+    /// This field is required.
     pub fn repository(mut self, input: crate::types::Repository) -> Self {
         self.repository = ::std::option::Option::Some(input);
         self

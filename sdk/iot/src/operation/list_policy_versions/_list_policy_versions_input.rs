@@ -28,6 +28,7 @@ pub struct ListPolicyVersionsInputBuilder {
 }
 impl ListPolicyVersionsInputBuilder {
     /// <p>The policy name.</p>
+    /// This field is required.
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,8 @@ impl ListPolicyVersionsInputBuilder {
     /// Consumes the builder and constructs a [`ListPolicyVersionsInput`](crate::operation::list_policy_versions::ListPolicyVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_policy_versions::ListPolicyVersionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_policy_versions::ListPolicyVersionsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_policy_versions::ListPolicyVersionsInput {
             policy_name: self.policy_name,
         })

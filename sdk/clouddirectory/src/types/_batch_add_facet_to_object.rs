@@ -7,7 +7,7 @@ pub struct BatchAddFacetToObject {
     /// <p>Represents the facet being added to the object.</p>
     pub schema_facet: ::std::option::Option<crate::types::SchemaFacet>,
     /// <p>The attributes to set on the object.</p>
-    pub object_attribute_list: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
+    pub object_attribute_list: ::std::vec::Vec<crate::types::AttributeKeyAndValue>,
     /// <p>A reference to the object being mutated.</p>
     pub object_reference: ::std::option::Option<crate::types::ObjectReference>,
 }
@@ -17,8 +17,9 @@ impl BatchAddFacetToObject {
         self.schema_facet.as_ref()
     }
     /// <p>The attributes to set on the object.</p>
-    pub fn object_attribute_list(&self) -> ::std::option::Option<&[crate::types::AttributeKeyAndValue]> {
-        self.object_attribute_list.as_deref()
+    pub fn object_attribute_list(&self) -> &[crate::types::AttributeKeyAndValue] {
+        use std::ops::Deref;
+        self.object_attribute_list.deref()
     }
     /// <p>A reference to the object being mutated.</p>
     pub fn object_reference(&self) -> ::std::option::Option<&crate::types::ObjectReference> {
@@ -42,6 +43,7 @@ pub struct BatchAddFacetToObjectBuilder {
 }
 impl BatchAddFacetToObjectBuilder {
     /// <p>Represents the facet being added to the object.</p>
+    /// This field is required.
     pub fn schema_facet(mut self, input: crate::types::SchemaFacet) -> Self {
         self.schema_facet = ::std::option::Option::Some(input);
         self
@@ -76,6 +78,7 @@ impl BatchAddFacetToObjectBuilder {
         &self.object_attribute_list
     }
     /// <p>A reference to the object being mutated.</p>
+    /// This field is required.
     pub fn object_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.object_reference = ::std::option::Option::Some(input);
         self
@@ -90,11 +93,18 @@ impl BatchAddFacetToObjectBuilder {
         &self.object_reference
     }
     /// Consumes the builder and constructs a [`BatchAddFacetToObject`](crate::types::BatchAddFacetToObject).
-    pub fn build(self) -> crate::types::BatchAddFacetToObject {
-        crate::types::BatchAddFacetToObject {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`object_attribute_list`](crate::types::builders::BatchAddFacetToObjectBuilder::object_attribute_list)
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchAddFacetToObject, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::BatchAddFacetToObject {
             schema_facet: self.schema_facet,
-            object_attribute_list: self.object_attribute_list,
+            object_attribute_list: self.object_attribute_list.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "object_attribute_list",
+                    "object_attribute_list was not specified but it is required when building BatchAddFacetToObject",
+                )
+            })?,
             object_reference: self.object_reference,
-        }
+        })
     }
 }

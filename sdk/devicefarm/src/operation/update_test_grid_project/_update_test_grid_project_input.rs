@@ -48,6 +48,7 @@ pub struct UpdateTestGridProjectInputBuilder {
 }
 impl UpdateTestGridProjectInputBuilder {
     /// <p>ARN of the project to update.</p>
+    /// This field is required.
     pub fn project_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_arn = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,7 @@ impl UpdateTestGridProjectInputBuilder {
     /// Consumes the builder and constructs a [`UpdateTestGridProjectInput`](crate::operation::update_test_grid_project::UpdateTestGridProjectInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_test_grid_project::UpdateTestGridProjectInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_test_grid_project::UpdateTestGridProjectInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_test_grid_project::UpdateTestGridProjectInput {
             project_arn: self.project_arn,

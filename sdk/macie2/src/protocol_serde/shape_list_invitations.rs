@@ -157,7 +157,7 @@ pub(crate) fn de_list_invitations(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "invitations" => {
-                    builder = builder.set_invitations(crate::protocol_serde::shape___list_of_invitation::de___list_of_invitation(tokens)?);
+                    builder = builder.set_invitations(crate::protocol_serde::shape_list_of_invitation::de_list_of_invitation(tokens)?);
                 }
                 "nextToken" => {
                     builder = builder.set_next_token(

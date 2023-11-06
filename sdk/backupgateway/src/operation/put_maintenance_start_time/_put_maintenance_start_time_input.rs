@@ -57,6 +57,7 @@ pub struct PutMaintenanceStartTimeInputBuilder {
 }
 impl PutMaintenanceStartTimeInputBuilder {
     /// <p>The Amazon Resource Name (ARN) for the gateway, used to specify its maintenance start time.</p>
+    /// This field is required.
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_arn = ::std::option::Option::Some(input.into());
         self
@@ -71,6 +72,7 @@ impl PutMaintenanceStartTimeInputBuilder {
         &self.gateway_arn
     }
     /// <p>The hour of the day to start maintenance on a gateway.</p>
+    /// This field is required.
     pub fn hour_of_day(mut self, input: i32) -> Self {
         self.hour_of_day = ::std::option::Option::Some(input);
         self
@@ -85,6 +87,7 @@ impl PutMaintenanceStartTimeInputBuilder {
         &self.hour_of_day
     }
     /// <p>The minute of the hour to start maintenance on a gateway.</p>
+    /// This field is required.
     pub fn minute_of_hour(mut self, input: i32) -> Self {
         self.minute_of_hour = ::std::option::Option::Some(input);
         self
@@ -134,7 +137,7 @@ impl PutMaintenanceStartTimeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_maintenance_start_time::PutMaintenanceStartTimeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_maintenance_start_time::PutMaintenanceStartTimeInput {
             gateway_arn: self.gateway_arn,

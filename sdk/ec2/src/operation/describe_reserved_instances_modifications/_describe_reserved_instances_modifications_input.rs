@@ -41,12 +41,16 @@ impl DescribeReservedInstancesModificationsInput {
     /// <li> <p> <code>status-message</code> - The reason for the status.</p> </li>
     /// <li> <p> <code>update-date</code> - The time when the modification request was last updated.</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>IDs for the submitted modification request.</p>
-    pub fn reserved_instances_modification_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.reserved_instances_modification_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reserved_instances_modification_ids.is_none()`.
+    pub fn reserved_instances_modification_ids(&self) -> &[::std::string::String] {
+        self.reserved_instances_modification_ids.as_deref().unwrap_or_default()
     }
     /// <p>The token to retrieve the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -170,7 +174,7 @@ impl DescribeReservedInstancesModificationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_reserved_instances_modifications::DescribeReservedInstancesModificationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_reserved_instances_modifications::DescribeReservedInstancesModificationsInput {

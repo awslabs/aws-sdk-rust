@@ -2,7 +2,7 @@
 pub fn ser_aws_wafv2_custom_response_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsWafv2CustomResponseDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.custom_response_body_key {
         object.key("CustomResponseBodyKey").string(var_1.as_str());
     }

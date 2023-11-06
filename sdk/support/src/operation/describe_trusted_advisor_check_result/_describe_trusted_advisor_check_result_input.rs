@@ -63,6 +63,7 @@ pub struct DescribeTrustedAdvisorCheckResultInputBuilder {
 }
 impl DescribeTrustedAdvisorCheckResultInputBuilder {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
+    /// This field is required.
     pub fn check_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.check_id = ::std::option::Option::Some(input.into());
         self
@@ -137,7 +138,7 @@ impl DescribeTrustedAdvisorCheckResultInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_trusted_advisor_check_result::DescribeTrustedAdvisorCheckResultInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_trusted_advisor_check_result::DescribeTrustedAdvisorCheckResultInput {

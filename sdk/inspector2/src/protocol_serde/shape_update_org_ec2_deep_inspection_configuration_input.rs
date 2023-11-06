@@ -2,7 +2,7 @@
 pub fn ser_update_org_ec2_deep_inspection_configuration_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_org_ec2_deep_inspection_configuration::UpdateOrgEc2DeepInspectionConfigurationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.org_package_paths {
         let mut array_2 = object.key("orgPackagePaths").start_array();
         for item_3 in var_1 {

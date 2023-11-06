@@ -76,6 +76,7 @@ impl CopyFpgaImageInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the source AFI.</p>
+    /// This field is required.
     pub fn source_fpga_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_fpga_image_id = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +119,7 @@ impl CopyFpgaImageInputBuilder {
         &self.name
     }
     /// <p>The Region that contains the source AFI.</p>
+    /// This field is required.
     pub fn source_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_region = ::std::option::Option::Some(input.into());
         self
@@ -148,7 +150,7 @@ impl CopyFpgaImageInputBuilder {
     /// Consumes the builder and constructs a [`CopyFpgaImageInput`](crate::operation::copy_fpga_image::CopyFpgaImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::copy_fpga_image::CopyFpgaImageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::copy_fpga_image::CopyFpgaImageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::copy_fpga_image::CopyFpgaImageInput {
             dry_run: self.dry_run,
             source_fpga_image_id: self.source_fpga_image_id,

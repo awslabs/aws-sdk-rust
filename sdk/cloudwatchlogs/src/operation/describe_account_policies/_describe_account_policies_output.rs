@@ -9,8 +9,10 @@ pub struct DescribeAccountPoliciesOutput {
 }
 impl DescribeAccountPoliciesOutput {
     /// <p>An array of structures that contain information about the CloudWatch Logs account policies that match the specified filters.</p>
-    pub fn account_policies(&self) -> ::std::option::Option<&[crate::types::AccountPolicy]> {
-        self.account_policies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_policies.is_none()`.
+    pub fn account_policies(&self) -> &[crate::types::AccountPolicy] {
+        self.account_policies.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeAccountPoliciesOutput {

@@ -27,6 +27,7 @@ pub struct GetWirelessGatewayStatisticsInputBuilder {
 }
 impl GetWirelessGatewayStatisticsInputBuilder {
     /// <p>The ID of the wireless gateway for which to get the data.</p>
+    /// This field is required.
     pub fn wireless_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.wireless_gateway_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetWirelessGatewayStatisticsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_wireless_gateway_statistics::GetWirelessGatewayStatisticsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_wireless_gateway_statistics::GetWirelessGatewayStatisticsInput {
             wireless_gateway_id: self.wireless_gateway_id,

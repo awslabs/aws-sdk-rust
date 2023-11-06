@@ -56,6 +56,7 @@ pub struct ListFindingsInputBuilder {
 }
 impl ListFindingsInputBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve findings from.</p>
+    /// This field is required.
     pub fn analyzer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analyzer_arn = ::std::option::Option::Some(input.into());
         self
@@ -132,7 +133,9 @@ impl ListFindingsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListFindingsInput`](crate::operation::list_findings::ListFindingsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_findings::ListFindingsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_findings::ListFindingsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_findings::ListFindingsInput {
             analyzer_arn: self.analyzer_arn,
             filter: self.filter,

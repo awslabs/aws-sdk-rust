@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopModelCustomizationJob`](crate::operation::stop_model_customization_job::builders::StopModelCustomizationJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_identifier(impl Into<String>)`](crate::operation::stop_model_customization_job::builders::StopModelCustomizationJobFluentBuilder::job_identifier) / [`set_job_identifier(Option<String>)`](crate::operation::stop_model_customization_job::builders::StopModelCustomizationJobFluentBuilder::set_job_identifier): <p>Job identifier of the job to stop.</p>
+    ///   - [`job_identifier(impl Into<String>)`](crate::operation::stop_model_customization_job::builders::StopModelCustomizationJobFluentBuilder::job_identifier) / [`set_job_identifier(Option<String>)`](crate::operation::stop_model_customization_job::builders::StopModelCustomizationJobFluentBuilder::set_job_identifier):<br>required: **true**<br><p>Job identifier of the job to stop.</p><br>
     /// - On success, responds with [`StopModelCustomizationJobOutput`](crate::operation::stop_model_customization_job::StopModelCustomizationJobOutput)
     /// - On failure, responds with [`SdkError<StopModelCustomizationJobError>`](crate::operation::stop_model_customization_job::StopModelCustomizationJobError)
     pub fn stop_model_customization_job(&self) -> crate::operation::stop_model_customization_job::builders::StopModelCustomizationJobFluentBuilder {

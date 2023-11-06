@@ -9,8 +9,10 @@ pub struct OutputGroupDetail {
 }
 impl OutputGroupDetail {
     /// Details about the output
-    pub fn output_details(&self) -> ::std::option::Option<&[crate::types::OutputDetail]> {
-        self.output_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_details.is_none()`.
+    pub fn output_details(&self) -> &[crate::types::OutputDetail] {
+        self.output_details.as_deref().unwrap_or_default()
     }
 }
 impl OutputGroupDetail {

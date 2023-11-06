@@ -27,6 +27,7 @@ pub struct DeleteModelExplainabilityJobDefinitionInputBuilder {
 }
 impl DeleteModelExplainabilityJobDefinitionInputBuilder {
     /// <p>The name of the model explainability job definition to delete.</p>
+    /// This field is required.
     pub fn job_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_definition_name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteModelExplainabilityJobDefinitionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_model_explainability_job_definition::DeleteModelExplainabilityJobDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_model_explainability_job_definition::DeleteModelExplainabilityJobDefinitionInput {

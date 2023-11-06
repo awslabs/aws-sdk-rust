@@ -2,7 +2,7 @@
 pub fn ser_list_components_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_components::ListComponentsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.by_name {
         object.key("byName").boolean(*var_1);
     }

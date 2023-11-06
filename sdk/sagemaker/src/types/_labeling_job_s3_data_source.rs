@@ -46,6 +46,7 @@ impl LabelingJobS3DataSourceBuilder {
     /// <li> <p> <code>source</code>: The source of the object is the value. Use this value when the object is a text value.</p> </li>
     /// </ul>
     /// <p>If you are a new user of Ground Truth, it is recommended you review <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-input-data-input-manifest.html">Use an Input Manifest File </a> in the Amazon SageMaker Developer Guide to learn how to create an input manifest file.</p>
+    /// This field is required.
     pub fn manifest_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.manifest_s3_uri = ::std::option::Option::Some(input.into());
         self

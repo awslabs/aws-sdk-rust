@@ -31,8 +31,10 @@ impl CheckoutLicenseOutput {
         self.license_consumption_token.as_deref()
     }
     /// <p>Allowed license entitlements.</p>
-    pub fn entitlements_allowed(&self) -> ::std::option::Option<&[crate::types::EntitlementData]> {
-        self.entitlements_allowed.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entitlements_allowed.is_none()`.
+    pub fn entitlements_allowed(&self) -> &[crate::types::EntitlementData] {
+        self.entitlements_allowed.as_deref().unwrap_or_default()
     }
     /// <p>Signed token.</p>
     pub fn signed_token(&self) -> ::std::option::Option<&str> {

@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct InstantiateSolNetworkInstanceOutput {
     /// <p>The identifier of the network operation.</p>
-    pub ns_lcm_op_occ_id: ::std::option::Option<::std::string::String>,
+    pub ns_lcm_op_occ_id: ::std::string::String,
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. When you use this API, the tags are transferred to the network operation that is created. Use tags to search and filter your resources or track your Amazon Web Services costs.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl InstantiateSolNetworkInstanceOutput {
     /// <p>The identifier of the network operation.</p>
-    pub fn ns_lcm_op_occ_id(&self) -> ::std::option::Option<&str> {
-        self.ns_lcm_op_occ_id.as_deref()
+    pub fn ns_lcm_op_occ_id(&self) -> &str {
+        use std::ops::Deref;
+        self.ns_lcm_op_occ_id.deref()
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. When you use this API, the tags are transferred to the network operation that is created. Use tags to search and filter your resources or track your Amazon Web Services costs.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -50,6 +51,7 @@ pub struct InstantiateSolNetworkInstanceOutputBuilder {
 }
 impl InstantiateSolNetworkInstanceOutputBuilder {
     /// <p>The identifier of the network operation.</p>
+    /// This field is required.
     pub fn ns_lcm_op_occ_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ns_lcm_op_occ_id = ::std::option::Option::Some(input.into());
         self
@@ -93,12 +95,24 @@ impl InstantiateSolNetworkInstanceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`InstantiateSolNetworkInstanceOutput`](crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceOutput).
-    pub fn build(self) -> crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceOutput {
-        crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceOutput {
-            ns_lcm_op_occ_id: self.ns_lcm_op_occ_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`ns_lcm_op_occ_id`](crate::operation::instantiate_sol_network_instance::builders::InstantiateSolNetworkInstanceOutputBuilder::ns_lcm_op_occ_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceOutput {
+            ns_lcm_op_occ_id: self.ns_lcm_op_occ_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "ns_lcm_op_occ_id",
+                    "ns_lcm_op_occ_id was not specified but it is required when building InstantiateSolNetworkInstanceOutput",
+                )
+            })?,
             tags: self.tags,
             _request_id: self._request_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for InstantiateSolNetworkInstanceOutputBuilder {

@@ -34,6 +34,7 @@ pub struct ProvisionByoipCidrInputBuilder {
 }
 impl ProvisionByoipCidrInputBuilder {
     /// <p>The public IPv4 address range, in CIDR notation. The most specific IP prefix that you can specify is /24. The address range cannot overlap with another address range that you've brought to this or another Region.</p>
+    /// This field is required.
     pub fn cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cidr = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl ProvisionByoipCidrInputBuilder {
         &self.cidr
     }
     /// <p>A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP. </p>
+    /// This field is required.
     pub fn cidr_authorization_context(mut self, input: crate::types::CidrAuthorizationContext) -> Self {
         self.cidr_authorization_context = ::std::option::Option::Some(input);
         self
@@ -64,7 +66,8 @@ impl ProvisionByoipCidrInputBuilder {
     /// Consumes the builder and constructs a [`ProvisionByoipCidrInput`](crate::operation::provision_byoip_cidr::ProvisionByoipCidrInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::provision_byoip_cidr::ProvisionByoipCidrInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::provision_byoip_cidr::ProvisionByoipCidrInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::provision_byoip_cidr::ProvisionByoipCidrInput {
             cidr: self.cidr,
             cidr_authorization_context: self.cidr_authorization_context,

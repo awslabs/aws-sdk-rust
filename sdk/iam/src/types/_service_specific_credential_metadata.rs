@@ -5,42 +5,46 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceSpecificCredentialMetadata {
     /// <p>The name of the IAM user associated with the service-specific credential.</p>
-    pub user_name: ::std::option::Option<::std::string::String>,
+    pub user_name: ::std::string::String,
     /// <p>The status of the service-specific credential. <code>Active</code> means that the key is valid for API calls, while <code>Inactive</code> means it is not.</p>
-    pub status: ::std::option::Option<crate::types::StatusType>,
+    pub status: crate::types::StatusType,
     /// <p>The generated user name for the service-specific credential.</p>
-    pub service_user_name: ::std::option::Option<::std::string::String>,
+    pub service_user_name: ::std::string::String,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the service-specific credential were created.</p>
-    pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub create_date: ::aws_smithy_types::DateTime,
     /// <p>The unique identifier for the service-specific credential.</p>
-    pub service_specific_credential_id: ::std::option::Option<::std::string::String>,
+    pub service_specific_credential_id: ::std::string::String,
     /// <p>The name of the service associated with the service-specific credential.</p>
-    pub service_name: ::std::option::Option<::std::string::String>,
+    pub service_name: ::std::string::String,
 }
 impl ServiceSpecificCredentialMetadata {
     /// <p>The name of the IAM user associated with the service-specific credential.</p>
-    pub fn user_name(&self) -> ::std::option::Option<&str> {
-        self.user_name.as_deref()
+    pub fn user_name(&self) -> &str {
+        use std::ops::Deref;
+        self.user_name.deref()
     }
     /// <p>The status of the service-specific credential. <code>Active</code> means that the key is valid for API calls, while <code>Inactive</code> means it is not.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::StatusType> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::StatusType {
+        &self.status
     }
     /// <p>The generated user name for the service-specific credential.</p>
-    pub fn service_user_name(&self) -> ::std::option::Option<&str> {
-        self.service_user_name.as_deref()
+    pub fn service_user_name(&self) -> &str {
+        use std::ops::Deref;
+        self.service_user_name.deref()
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the service-specific credential were created.</p>
-    pub fn create_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.create_date.as_ref()
+    pub fn create_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.create_date
     }
     /// <p>The unique identifier for the service-specific credential.</p>
-    pub fn service_specific_credential_id(&self) -> ::std::option::Option<&str> {
-        self.service_specific_credential_id.as_deref()
+    pub fn service_specific_credential_id(&self) -> &str {
+        use std::ops::Deref;
+        self.service_specific_credential_id.deref()
     }
     /// <p>The name of the service associated with the service-specific credential.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&str> {
-        self.service_name.as_deref()
+    pub fn service_name(&self) -> &str {
+        use std::ops::Deref;
+        self.service_name.deref()
     }
 }
 impl ServiceSpecificCredentialMetadata {
@@ -63,6 +67,7 @@ pub struct ServiceSpecificCredentialMetadataBuilder {
 }
 impl ServiceSpecificCredentialMetadataBuilder {
     /// <p>The name of the IAM user associated with the service-specific credential.</p>
+    /// This field is required.
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +82,7 @@ impl ServiceSpecificCredentialMetadataBuilder {
         &self.user_name
     }
     /// <p>The status of the service-specific credential. <code>Active</code> means that the key is valid for API calls, while <code>Inactive</code> means it is not.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::StatusType) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -91,6 +97,7 @@ impl ServiceSpecificCredentialMetadataBuilder {
         &self.status
     }
     /// <p>The generated user name for the service-specific credential.</p>
+    /// This field is required.
     pub fn service_user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_user_name = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +112,7 @@ impl ServiceSpecificCredentialMetadataBuilder {
         &self.service_user_name
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the service-specific credential were created.</p>
+    /// This field is required.
     pub fn create_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_date = ::std::option::Option::Some(input);
         self
@@ -119,6 +127,7 @@ impl ServiceSpecificCredentialMetadataBuilder {
         &self.create_date
     }
     /// <p>The unique identifier for the service-specific credential.</p>
+    /// This field is required.
     pub fn service_specific_credential_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_specific_credential_id = ::std::option::Option::Some(input.into());
         self
@@ -133,6 +142,7 @@ impl ServiceSpecificCredentialMetadataBuilder {
         &self.service_specific_credential_id
     }
     /// <p>The name of the service associated with the service-specific credential.</p>
+    /// This field is required.
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
         self
@@ -147,14 +157,51 @@ impl ServiceSpecificCredentialMetadataBuilder {
         &self.service_name
     }
     /// Consumes the builder and constructs a [`ServiceSpecificCredentialMetadata`](crate::types::ServiceSpecificCredentialMetadata).
-    pub fn build(self) -> crate::types::ServiceSpecificCredentialMetadata {
-        crate::types::ServiceSpecificCredentialMetadata {
-            user_name: self.user_name,
-            status: self.status,
-            service_user_name: self.service_user_name,
-            create_date: self.create_date,
-            service_specific_credential_id: self.service_specific_credential_id,
-            service_name: self.service_name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`user_name`](crate::types::builders::ServiceSpecificCredentialMetadataBuilder::user_name)
+    /// - [`status`](crate::types::builders::ServiceSpecificCredentialMetadataBuilder::status)
+    /// - [`service_user_name`](crate::types::builders::ServiceSpecificCredentialMetadataBuilder::service_user_name)
+    /// - [`create_date`](crate::types::builders::ServiceSpecificCredentialMetadataBuilder::create_date)
+    /// - [`service_specific_credential_id`](crate::types::builders::ServiceSpecificCredentialMetadataBuilder::service_specific_credential_id)
+    /// - [`service_name`](crate::types::builders::ServiceSpecificCredentialMetadataBuilder::service_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::ServiceSpecificCredentialMetadata, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ServiceSpecificCredentialMetadata {
+            user_name: self.user_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "user_name",
+                    "user_name was not specified but it is required when building ServiceSpecificCredentialMetadata",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building ServiceSpecificCredentialMetadata",
+                )
+            })?,
+            service_user_name: self.service_user_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "service_user_name",
+                    "service_user_name was not specified but it is required when building ServiceSpecificCredentialMetadata",
+                )
+            })?,
+            create_date: self.create_date.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "create_date",
+                    "create_date was not specified but it is required when building ServiceSpecificCredentialMetadata",
+                )
+            })?,
+            service_specific_credential_id: self.service_specific_credential_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "service_specific_credential_id",
+                    "service_specific_credential_id was not specified but it is required when building ServiceSpecificCredentialMetadata",
+                )
+            })?,
+            service_name: self.service_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "service_name",
+                    "service_name was not specified but it is required when building ServiceSpecificCredentialMetadata",
+                )
+            })?,
+        })
     }
 }

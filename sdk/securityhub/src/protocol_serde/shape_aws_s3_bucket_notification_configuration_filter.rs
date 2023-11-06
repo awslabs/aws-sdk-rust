@@ -2,7 +2,7 @@
 pub fn ser_aws_s3_bucket_notification_configuration_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsS3BucketNotificationConfigurationFilter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.s3_key_filter {
         #[allow(unused_mut)]
         let mut object_2 = object.key("S3KeyFilter").start_object();

@@ -2,15 +2,15 @@
 pub fn ser_single_select_question_rule_category_automation(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SingleSelectQuestionRuleCategoryAutomation,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.category {
-        object.key("Category").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Category").string(input.category.as_str());
     }
-    if let Some(var_2) = &input.condition {
-        object.key("Condition").string(var_2.as_str());
+    {
+        object.key("Condition").string(input.condition.as_str());
     }
-    if let Some(var_3) = &input.option_ref_id {
-        object.key("OptionRefId").string(var_3.as_str());
+    {
+        object.key("OptionRefId").string(input.option_ref_id.as_str());
     }
     Ok(())
 }
@@ -64,7 +64,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::single_select_question_rule_category_automation_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

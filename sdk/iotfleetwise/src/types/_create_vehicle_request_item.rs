@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVehicleRequestItem {
     /// <p>The unique ID of the vehicle to create.</p>
-    pub vehicle_name: ::std::option::Option<::std::string::String>,
+    pub vehicle_name: ::std::string::String,
     /// <p>The ARN of the vehicle model (model manifest) to create the vehicle from.</p>
-    pub model_manifest_arn: ::std::option::Option<::std::string::String>,
+    pub model_manifest_arn: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of a decoder manifest associated with the vehicle to create. </p>
-    pub decoder_manifest_arn: ::std::option::Option<::std::string::String>,
+    pub decoder_manifest_arn: ::std::string::String,
     /// <p>Static information about a vehicle in a key-value pair. For example: <code>"engine Type"</code> : <code>"v6"</code> </p>
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>An option to create a new Amazon Web Services IoT thing when creating a vehicle, or to validate an existing thing as a vehicle.</p>
@@ -19,16 +19,19 @@ pub struct CreateVehicleRequestItem {
 }
 impl CreateVehicleRequestItem {
     /// <p>The unique ID of the vehicle to create.</p>
-    pub fn vehicle_name(&self) -> ::std::option::Option<&str> {
-        self.vehicle_name.as_deref()
+    pub fn vehicle_name(&self) -> &str {
+        use std::ops::Deref;
+        self.vehicle_name.deref()
     }
     /// <p>The ARN of the vehicle model (model manifest) to create the vehicle from.</p>
-    pub fn model_manifest_arn(&self) -> ::std::option::Option<&str> {
-        self.model_manifest_arn.as_deref()
+    pub fn model_manifest_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.model_manifest_arn.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of a decoder manifest associated with the vehicle to create. </p>
-    pub fn decoder_manifest_arn(&self) -> ::std::option::Option<&str> {
-        self.decoder_manifest_arn.as_deref()
+    pub fn decoder_manifest_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.decoder_manifest_arn.deref()
     }
     /// <p>Static information about a vehicle in a key-value pair. For example: <code>"engine Type"</code> : <code>"v6"</code> </p>
     pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -39,8 +42,10 @@ impl CreateVehicleRequestItem {
         self.association_behavior.as_ref()
     }
     /// <p>Metadata which can be used to manage the vehicle.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateVehicleRequestItem {
@@ -63,6 +68,7 @@ pub struct CreateVehicleRequestItemBuilder {
 }
 impl CreateVehicleRequestItemBuilder {
     /// <p>The unique ID of the vehicle to create.</p>
+    /// This field is required.
     pub fn vehicle_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vehicle_name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +83,7 @@ impl CreateVehicleRequestItemBuilder {
         &self.vehicle_name
     }
     /// <p>The ARN of the vehicle model (model manifest) to create the vehicle from.</p>
+    /// This field is required.
     pub fn model_manifest_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_manifest_arn = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +98,7 @@ impl CreateVehicleRequestItemBuilder {
         &self.model_manifest_arn
     }
     /// <p>The Amazon Resource Name (ARN) of a decoder manifest associated with the vehicle to create. </p>
+    /// This field is required.
     pub fn decoder_manifest_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.decoder_manifest_arn = ::std::option::Option::Some(input.into());
         self
@@ -159,14 +167,33 @@ impl CreateVehicleRequestItemBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateVehicleRequestItem`](crate::types::CreateVehicleRequestItem).
-    pub fn build(self) -> crate::types::CreateVehicleRequestItem {
-        crate::types::CreateVehicleRequestItem {
-            vehicle_name: self.vehicle_name,
-            model_manifest_arn: self.model_manifest_arn,
-            decoder_manifest_arn: self.decoder_manifest_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`vehicle_name`](crate::types::builders::CreateVehicleRequestItemBuilder::vehicle_name)
+    /// - [`model_manifest_arn`](crate::types::builders::CreateVehicleRequestItemBuilder::model_manifest_arn)
+    /// - [`decoder_manifest_arn`](crate::types::builders::CreateVehicleRequestItemBuilder::decoder_manifest_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::CreateVehicleRequestItem, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CreateVehicleRequestItem {
+            vehicle_name: self.vehicle_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "vehicle_name",
+                    "vehicle_name was not specified but it is required when building CreateVehicleRequestItem",
+                )
+            })?,
+            model_manifest_arn: self.model_manifest_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "model_manifest_arn",
+                    "model_manifest_arn was not specified but it is required when building CreateVehicleRequestItem",
+                )
+            })?,
+            decoder_manifest_arn: self.decoder_manifest_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "decoder_manifest_arn",
+                    "decoder_manifest_arn was not specified but it is required when building CreateVehicleRequestItem",
+                )
+            })?,
             attributes: self.attributes,
             association_behavior: self.association_behavior,
             tags: self.tags,
-        }
+        })
     }
 }

@@ -2,21 +2,21 @@
 pub fn ser_data_catalog_input_definition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataCatalogInputDefinition,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.catalog_id {
         object.key("CatalogId").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.database_name {
-        object.key("DatabaseName").string(var_2.as_str());
+    {
+        object.key("DatabaseName").string(input.database_name.as_str());
     }
-    if let Some(var_3) = &input.table_name {
-        object.key("TableName").string(var_3.as_str());
+    {
+        object.key("TableName").string(input.table_name.as_str());
     }
-    if let Some(var_4) = &input.temp_directory {
+    if let Some(var_2) = &input.temp_directory {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("TempDirectory").start_object();
-        crate::protocol_serde::shape_s3_location::ser_s3_location(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_3 = object.key("TempDirectory").start_object();
+        crate::protocol_serde::shape_s3_location::ser_s3_location(&mut object_3, var_2)?;
+        object_3.finish();
     }
     Ok(())
 }
@@ -70,7 +70,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::data_catalog_input_definition_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

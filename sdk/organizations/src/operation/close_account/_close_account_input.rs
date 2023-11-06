@@ -27,6 +27,7 @@ pub struct CloseAccountInputBuilder {
 }
 impl CloseAccountInputBuilder {
     /// <p>Retrieves the Amazon Web Services account Id for the current <code>CloseAccount</code> API request. </p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,9 @@ impl CloseAccountInputBuilder {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`CloseAccountInput`](crate::operation::close_account::CloseAccountInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::close_account::CloseAccountInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::close_account::CloseAccountInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::close_account::CloseAccountInput { account_id: self.account_id })
     }
 }

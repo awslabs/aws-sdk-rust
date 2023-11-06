@@ -28,6 +28,7 @@ pub struct IssueDetectedBuilder {
 }
 impl IssueDetectedBuilder {
     /// <p>The offset for when the issue was detected in the segment.</p>
+    /// This field is required.
     pub fn character_offsets(mut self, input: crate::types::CharacterOffsets) -> Self {
         self.character_offsets = ::std::option::Option::Some(input);
         self

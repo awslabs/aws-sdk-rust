@@ -2,12 +2,12 @@
 pub fn ser_box_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BoxConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.enterprise_id {
-        object.key("EnterpriseId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("EnterpriseId").string(input.enterprise_id.as_str());
     }
-    if let Some(var_2) = &input.secret_arn {
-        object.key("SecretArn").string(var_2.as_str());
+    {
+        object.key("SecretArn").string(input.secret_arn.as_str());
     }
     if input.use_change_log {
         object.key("UseChangeLog").boolean(input.use_change_log);
@@ -21,77 +21,77 @@ pub fn ser_box_configuration(
     if input.crawl_web_links {
         object.key("CrawlWebLinks").boolean(input.crawl_web_links);
     }
-    if let Some(var_3) = &input.file_field_mappings {
-        let mut array_4 = object.key("FileFieldMappings").start_array();
-        for item_5 in var_3 {
+    if let Some(var_1) = &input.file_field_mappings {
+        let mut array_2 = object.key("FileFieldMappings").start_array();
+        for item_3 in var_1 {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_6, item_5)?;
-                object_6.finish();
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_4, item_3)?;
+                object_4.finish();
             }
         }
-        array_4.finish();
+        array_2.finish();
     }
-    if let Some(var_7) = &input.task_field_mappings {
-        let mut array_8 = object.key("TaskFieldMappings").start_array();
-        for item_9 in var_7 {
+    if let Some(var_5) = &input.task_field_mappings {
+        let mut array_6 = object.key("TaskFieldMappings").start_array();
+        for item_7 in var_5 {
             {
                 #[allow(unused_mut)]
-                let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_10, item_9)?;
-                object_10.finish();
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_8, item_7)?;
+                object_8.finish();
             }
         }
-        array_8.finish();
+        array_6.finish();
     }
-    if let Some(var_11) = &input.comment_field_mappings {
-        let mut array_12 = object.key("CommentFieldMappings").start_array();
-        for item_13 in var_11 {
+    if let Some(var_9) = &input.comment_field_mappings {
+        let mut array_10 = object.key("CommentFieldMappings").start_array();
+        for item_11 in var_9 {
             {
                 #[allow(unused_mut)]
-                let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_14, item_13)?;
-                object_14.finish();
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_12, item_11)?;
+                object_12.finish();
             }
         }
-        array_12.finish();
+        array_10.finish();
     }
-    if let Some(var_15) = &input.web_link_field_mappings {
-        let mut array_16 = object.key("WebLinkFieldMappings").start_array();
-        for item_17 in var_15 {
+    if let Some(var_13) = &input.web_link_field_mappings {
+        let mut array_14 = object.key("WebLinkFieldMappings").start_array();
+        for item_15 in var_13 {
             {
                 #[allow(unused_mut)]
-                let mut object_18 = array_16.value().start_object();
-                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_18, item_17)?;
-                object_18.finish();
+                let mut object_16 = array_14.value().start_object();
+                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_16, item_15)?;
+                object_16.finish();
             }
         }
-        array_16.finish();
+        array_14.finish();
     }
-    if let Some(var_19) = &input.inclusion_patterns {
-        let mut array_20 = object.key("InclusionPatterns").start_array();
-        for item_21 in var_19 {
+    if let Some(var_17) = &input.inclusion_patterns {
+        let mut array_18 = object.key("InclusionPatterns").start_array();
+        for item_19 in var_17 {
             {
-                array_20.value().string(item_21.as_str());
+                array_18.value().string(item_19.as_str());
             }
         }
-        array_20.finish();
+        array_18.finish();
     }
-    if let Some(var_22) = &input.exclusion_patterns {
-        let mut array_23 = object.key("ExclusionPatterns").start_array();
-        for item_24 in var_22 {
+    if let Some(var_20) = &input.exclusion_patterns {
+        let mut array_21 = object.key("ExclusionPatterns").start_array();
+        for item_22 in var_20 {
             {
-                array_23.value().string(item_24.as_str());
+                array_21.value().string(item_22.as_str());
             }
         }
-        array_23.finish();
+        array_21.finish();
     }
-    if let Some(var_25) = &input.vpc_configuration {
+    if let Some(var_23) = &input.vpc_configuration {
         #[allow(unused_mut)]
-        let mut object_26 = object.key("VpcConfiguration").start_object();
-        crate::protocol_serde::shape_data_source_vpc_configuration::ser_data_source_vpc_configuration(&mut object_26, var_25)?;
-        object_26.finish();
+        let mut object_24 = object.key("VpcConfiguration").start_object();
+        crate::protocol_serde::shape_data_source_vpc_configuration::ser_data_source_vpc_configuration(&mut object_24, var_23)?;
+        object_24.finish();
     }
     Ok(())
 }
@@ -192,7 +192,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::box_configuration_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

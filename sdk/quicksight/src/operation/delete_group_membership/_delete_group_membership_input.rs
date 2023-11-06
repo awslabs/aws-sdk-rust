@@ -48,6 +48,7 @@ pub struct DeleteGroupMembershipInputBuilder {
 }
 impl DeleteGroupMembershipInputBuilder {
     /// <p>The name of the user that you want to delete from the group membership.</p>
+    /// This field is required.
     pub fn member_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl DeleteGroupMembershipInputBuilder {
         &self.member_name
     }
     /// <p>The name of the group that you want to delete the user from.</p>
+    /// This field is required.
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl DeleteGroupMembershipInputBuilder {
         &self.group_name
     }
     /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl DeleteGroupMembershipInputBuilder {
         &self.aws_account_id
     }
     /// <p>The namespace of the group that you want to remove a user from.</p>
+    /// This field is required.
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +110,7 @@ impl DeleteGroupMembershipInputBuilder {
     /// Consumes the builder and constructs a [`DeleteGroupMembershipInput`](crate::operation::delete_group_membership::DeleteGroupMembershipInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_group_membership::DeleteGroupMembershipInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_group_membership::DeleteGroupMembershipInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_group_membership::DeleteGroupMembershipInput {
             member_name: self.member_name,

@@ -104,7 +104,7 @@ impl ListFleetsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListFleetsInput`](crate::operation::list_fleets::ListFleetsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_fleets::ListFleetsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_fleets::ListFleetsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_fleets::ListFleetsInput {
             build_id: self.build_id,
             script_id: self.script_id,

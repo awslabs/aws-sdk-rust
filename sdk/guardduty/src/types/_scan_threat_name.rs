@@ -27,8 +27,10 @@ impl ScanThreatName {
         self.item_count
     }
     /// <p>List of infected files in EBS volume with details.</p>
-    pub fn file_paths(&self) -> ::std::option::Option<&[crate::types::ScanFilePath]> {
-        self.file_paths.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.file_paths.is_none()`.
+    pub fn file_paths(&self) -> &[crate::types::ScanFilePath] {
+        self.file_paths.as_deref().unwrap_or_default()
     }
 }
 impl ScanThreatName {

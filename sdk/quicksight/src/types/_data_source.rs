@@ -65,8 +65,10 @@ impl DataSource {
         self.data_source_parameters.as_ref()
     }
     /// <p>A set of alternate data source parameters that you want to share for the credentials stored with this data source. The credentials are applied in tandem with the data source parameters when you copy a data source by using a create or update request. The API operation compares the <code>DataSourceParameters</code> structure that's in the request with the structures in the <code>AlternateDataSourceParameters</code> allow list. If the structures are an exact match, the request is allowed to use the credentials from this existing data source. If the <code>AlternateDataSourceParameters</code> list is null, the <code>Credentials</code> originally used with this <code>DataSourceParameters</code> are automatically allowed.</p>
-    pub fn alternate_data_source_parameters(&self) -> ::std::option::Option<&[crate::types::DataSourceParameters]> {
-        self.alternate_data_source_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alternate_data_source_parameters.is_none()`.
+    pub fn alternate_data_source_parameters(&self) -> &[crate::types::DataSourceParameters] {
+        self.alternate_data_source_parameters.as_deref().unwrap_or_default()
     }
     /// <p>The VPC connection information. You need to use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to your underlying source.</p>
     pub fn vpc_connection_properties(&self) -> ::std::option::Option<&crate::types::VpcConnectionProperties> {

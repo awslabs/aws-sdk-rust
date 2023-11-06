@@ -16,7 +16,7 @@ impl PeerVpcInput {
 pub struct PeerVpcInputBuilder {}
 impl PeerVpcInputBuilder {
     /// Consumes the builder and constructs a [`PeerVpcInput`](crate::operation::peer_vpc::PeerVpcInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::peer_vpc::PeerVpcInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::peer_vpc::PeerVpcInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::peer_vpc::PeerVpcInput {})
     }
 }

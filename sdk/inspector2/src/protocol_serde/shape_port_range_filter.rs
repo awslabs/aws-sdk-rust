@@ -2,7 +2,7 @@
 pub fn ser_port_range_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PortRangeFilter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.begin_inclusive {
         object.key("beginInclusive").number(
             #[allow(clippy::useless_conversion)]

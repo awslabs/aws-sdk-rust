@@ -2,7 +2,7 @@
 pub fn ser_lifecycle_rule(
     input: &crate::types::LifecycleRule,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_1) = &input.expiration {
@@ -17,40 +17,41 @@ pub fn ser_lifecycle_rule(
         let inner_writer = scope.start_el("Filter");
         crate::protocol_serde::shape_lifecycle_rule_filter::ser_lifecycle_rule_filter(var_3, inner_writer)?
     }
-    if let Some(var_4) = &input.status {
+    {
         let mut inner_writer = scope.start_el("Status").finish();
-        inner_writer.data(var_4.as_str());
+        inner_writer.data(input.status.as_str());
     }
-    if let Some(var_5) = &input.transitions {
+    if let Some(var_4) = &input.transitions {
         let mut inner_writer = scope.start_el("Transitions").finish();
-        for list_item_6 in var_5 {
+        for list_item_5 in var_4 {
             {
                 let inner_writer = inner_writer.start_el("Transition");
-                crate::protocol_serde::shape_transition::ser_transition(list_item_6, inner_writer)?
+                crate::protocol_serde::shape_transition::ser_transition(list_item_5, inner_writer)?
             }
         }
     }
-    if let Some(var_7) = &input.noncurrent_version_transitions {
+    if let Some(var_6) = &input.noncurrent_version_transitions {
         let mut inner_writer = scope.start_el("NoncurrentVersionTransitions").finish();
-        for list_item_8 in var_7 {
+        for list_item_7 in var_6 {
             {
                 let inner_writer = inner_writer.start_el("NoncurrentVersionTransition");
-                crate::protocol_serde::shape_noncurrent_version_transition::ser_noncurrent_version_transition(list_item_8, inner_writer)?
+                crate::protocol_serde::shape_noncurrent_version_transition::ser_noncurrent_version_transition(list_item_7, inner_writer)?
             }
         }
     }
-    if let Some(var_9) = &input.noncurrent_version_expiration {
+    if let Some(var_8) = &input.noncurrent_version_expiration {
         let inner_writer = scope.start_el("NoncurrentVersionExpiration");
-        crate::protocol_serde::shape_noncurrent_version_expiration::ser_noncurrent_version_expiration(var_9, inner_writer)?
+        crate::protocol_serde::shape_noncurrent_version_expiration::ser_noncurrent_version_expiration(var_8, inner_writer)?
     }
-    if let Some(var_10) = &input.abort_incomplete_multipart_upload {
+    if let Some(var_9) = &input.abort_incomplete_multipart_upload {
         let inner_writer = scope.start_el("AbortIncompleteMultipartUpload");
-        crate::protocol_serde::shape_abort_incomplete_multipart_upload::ser_abort_incomplete_multipart_upload(var_10, inner_writer)?
+        crate::protocol_serde::shape_abort_incomplete_multipart_upload::ser_abort_incomplete_multipart_upload(var_9, inner_writer)?
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_lifecycle_rule(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::LifecycleRule, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -59,17 +60,17 @@ pub fn de_lifecycle_rule(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Expiration") /* Expiration com.amazonaws.s3control#LifecycleRule$Expiration */ =>  {
-                let var_11 =
+                let var_10 =
                     Some(
                         crate::protocol_serde::shape_lifecycle_expiration::de_lifecycle_expiration(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_expiration(var_11);
+                builder = builder.set_expiration(var_10);
             }
             ,
             s if s.matches("ID") /* ID com.amazonaws.s3control#LifecycleRule$ID */ =>  {
-                let var_12 =
+                let var_11 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -78,21 +79,21 @@ pub fn de_lifecycle_rule(
                         ?
                     )
                 ;
-                builder = builder.set_id(var_12);
+                builder = builder.set_id(var_11);
             }
             ,
             s if s.matches("Filter") /* Filter com.amazonaws.s3control#LifecycleRule$Filter */ =>  {
-                let var_13 =
+                let var_12 =
                     Some(
                         crate::protocol_serde::shape_lifecycle_rule_filter::de_lifecycle_rule_filter(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_filter(var_13);
+                builder = builder.set_filter(var_12);
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.s3control#LifecycleRule$Status */ =>  {
-                let var_14 =
+                let var_13 =
                     Some(
                         Result::<crate::types::ExpirationStatus, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::ExpirationStatus::from(
@@ -102,51 +103,53 @@ pub fn de_lifecycle_rule(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_14);
+                builder = builder.set_status(var_13);
             }
             ,
             s if s.matches("Transitions") /* Transitions com.amazonaws.s3control#LifecycleRule$Transitions */ =>  {
-                let var_15 =
+                let var_14 =
                     Some(
                         crate::protocol_serde::shape_transition_list::de_transition_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_transitions(var_15);
+                builder = builder.set_transitions(var_14);
             }
             ,
             s if s.matches("NoncurrentVersionTransitions") /* NoncurrentVersionTransitions com.amazonaws.s3control#LifecycleRule$NoncurrentVersionTransitions */ =>  {
-                let var_16 =
+                let var_15 =
                     Some(
                         crate::protocol_serde::shape_noncurrent_version_transition_list::de_noncurrent_version_transition_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_noncurrent_version_transitions(var_16);
+                builder = builder.set_noncurrent_version_transitions(var_15);
             }
             ,
             s if s.matches("NoncurrentVersionExpiration") /* NoncurrentVersionExpiration com.amazonaws.s3control#LifecycleRule$NoncurrentVersionExpiration */ =>  {
-                let var_17 =
+                let var_16 =
                     Some(
                         crate::protocol_serde::shape_noncurrent_version_expiration::de_noncurrent_version_expiration(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_noncurrent_version_expiration(var_17);
+                builder = builder.set_noncurrent_version_expiration(var_16);
             }
             ,
             s if s.matches("AbortIncompleteMultipartUpload") /* AbortIncompleteMultipartUpload com.amazonaws.s3control#LifecycleRule$AbortIncompleteMultipartUpload */ =>  {
-                let var_18 =
+                let var_17 =
                     Some(
                         crate::protocol_serde::shape_abort_incomplete_multipart_upload::de_abort_incomplete_multipart_upload(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_abort_incomplete_multipart_upload(var_18);
+                builder = builder.set_abort_incomplete_multipart_upload(var_17);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::lifecycle_rule_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

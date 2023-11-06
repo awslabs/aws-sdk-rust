@@ -46,8 +46,10 @@ impl CreateStackInstancesInput {
     }
     /// <p>[Self-managed permissions] The names of one or more Amazon Web Services accounts that you want to create stack instances in the specified Region(s) for.</p>
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
-    pub fn accounts(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.accounts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accounts.is_none()`.
+    pub fn accounts(&self) -> &[::std::string::String] {
+        self.accounts.as_deref().unwrap_or_default()
     }
     /// <p>[Service-managed permissions] The Organizations accounts for which to create stack instances in the specified Amazon Web Services Regions.</p>
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
@@ -55,8 +57,10 @@ impl CreateStackInstancesInput {
         self.deployment_targets.as_ref()
     }
     /// <p>The names of one or more Amazon Web Services Regions where you want to create stack instances using the specified Amazon Web Services accounts.</p>
-    pub fn regions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.regions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regions.is_none()`.
+    pub fn regions(&self) -> &[::std::string::String] {
+        self.regions.as_deref().unwrap_or_default()
     }
     /// <p>A list of stack set parameters whose values you want to override in the selected stack instances.</p>
     /// <p>Any overridden parameter values will be applied to all stack instances in the specified accounts and Amazon Web Services Regions. When specifying parameters and their values, be aware of how CloudFormation sets parameter values during stack instance operations:</p>
@@ -68,8 +72,10 @@ impl CreateStackInstancesInput {
     /// </ul>
     /// <p>During stack set updates, any parameter values overridden for a stack instance aren't updated, but retain their overridden value.</p>
     /// <p>You can only override the parameter <i>values</i> that are specified in the stack set; to add or delete a parameter itself, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a> to update the stack set template.</p>
-    pub fn parameter_overrides(&self) -> ::std::option::Option<&[crate::types::Parameter]> {
-        self.parameter_overrides.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameter_overrides.is_none()`.
+    pub fn parameter_overrides(&self) -> &[crate::types::Parameter] {
+        self.parameter_overrides.as_deref().unwrap_or_default()
     }
     /// <p>Preferences for how CloudFormation performs this stack set operation.</p>
     pub fn operation_preferences(&self) -> ::std::option::Option<&crate::types::StackSetOperationPreferences> {
@@ -114,6 +120,7 @@ pub struct CreateStackInstancesInputBuilder {
 }
 impl CreateStackInstancesInputBuilder {
     /// <p>The name or unique ID of the stack set that you want to create stack instances from.</p>
+    /// This field is required.
     pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_set_name = ::std::option::Option::Some(input.into());
         self
@@ -303,7 +310,7 @@ impl CreateStackInstancesInputBuilder {
     /// Consumes the builder and constructs a [`CreateStackInstancesInput`](crate::operation::create_stack_instances::CreateStackInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_stack_instances::CreateStackInstancesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_stack_instances::CreateStackInstancesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_stack_instances::CreateStackInstancesInput {
             stack_set_name: self.stack_set_name,

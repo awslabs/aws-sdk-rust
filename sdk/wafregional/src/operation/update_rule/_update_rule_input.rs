@@ -30,8 +30,10 @@ impl UpdateRuleInput {
     /// <li> <p> <code>Predicate</code>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code> </p> </li>
     /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
-    pub fn updates(&self) -> ::std::option::Option<&[crate::types::RuleUpdate]> {
-        self.updates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.updates.is_none()`.
+    pub fn updates(&self) -> &[crate::types::RuleUpdate] {
+        self.updates.as_deref().unwrap_or_default()
     }
 }
 impl UpdateRuleInput {
@@ -51,6 +53,7 @@ pub struct UpdateRuleInputBuilder {
 }
 impl UpdateRuleInputBuilder {
     /// <p>The <code>RuleId</code> of the <code>Rule</code> that you want to update. <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
+    /// This field is required.
     pub fn rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_id = ::std::option::Option::Some(input.into());
         self
@@ -65,6 +68,7 @@ impl UpdateRuleInputBuilder {
         &self.rule_id
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    /// This field is required.
     pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_token = ::std::option::Option::Some(input.into());
         self
@@ -114,7 +118,7 @@ impl UpdateRuleInputBuilder {
         &self.updates
     }
     /// Consumes the builder and constructs a [`UpdateRuleInput`](crate::operation::update_rule::UpdateRuleInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_rule::UpdateRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_rule::UpdateRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_rule::UpdateRuleInput {
             rule_id: self.rule_id,
             change_token: self.change_token,

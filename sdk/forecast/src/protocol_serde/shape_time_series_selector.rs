@@ -2,7 +2,7 @@
 pub fn ser_time_series_selector(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TimeSeriesSelector,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.time_series_identifiers {
         #[allow(unused_mut)]
         let mut object_2 = object.key("TimeSeriesIdentifiers").start_object();

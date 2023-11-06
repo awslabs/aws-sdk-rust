@@ -28,8 +28,10 @@ impl StartDetectMitigationActionsTaskInput {
         self.target.as_ref()
     }
     /// <p> The actions to be performed when a device has unexpected behavior. </p>
-    pub fn actions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
+    pub fn actions(&self) -> &[::std::string::String] {
+        self.actions.as_deref().unwrap_or_default()
     }
     /// <p> Specifies the time period of which violation events occurred between. </p>
     pub fn violation_event_occurrence_range(&self) -> ::std::option::Option<&crate::types::ViolationEventOccurrenceRange> {
@@ -69,6 +71,7 @@ pub struct StartDetectMitigationActionsTaskInputBuilder {
 }
 impl StartDetectMitigationActionsTaskInputBuilder {
     /// <p> The unique identifier of the task. </p>
+    /// This field is required.
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +86,7 @@ impl StartDetectMitigationActionsTaskInputBuilder {
         &self.task_id
     }
     /// <p> Specifies the ML Detect findings to which the mitigation actions are applied. </p>
+    /// This field is required.
     pub fn target(mut self, input: crate::types::DetectMitigationActionsTaskTarget) -> Self {
         self.target = ::std::option::Option::Some(input);
         self
@@ -159,6 +163,7 @@ impl StartDetectMitigationActionsTaskInputBuilder {
         &self.include_suppressed_alerts
     }
     /// <p> Each mitigation action task must have a unique client request token. If you try to create a new task with the same token as a task that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
+    /// This field is required.
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
@@ -177,7 +182,7 @@ impl StartDetectMitigationActionsTaskInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_detect_mitigation_actions_task::StartDetectMitigationActionsTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::start_detect_mitigation_actions_task::StartDetectMitigationActionsTaskInput {

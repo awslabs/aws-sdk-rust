@@ -12,8 +12,10 @@ pub struct ListInstancesOutput {
 }
 impl ListInstancesOutput {
     /// <p>The list of instances for the cluster and given filters.</p>
-    pub fn instances(&self) -> ::std::option::Option<&[crate::types::Instance]> {
-        self.instances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instances.is_none()`.
+    pub fn instances(&self) -> &[crate::types::Instance] {
+        self.instances.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

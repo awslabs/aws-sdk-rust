@@ -192,8 +192,10 @@ impl CreateRelationalDatabaseInput {
     }
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for CreateRelationalDatabaseInput {
@@ -243,6 +245,7 @@ impl CreateRelationalDatabaseInputBuilder {
     /// <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
     /// <li> <p>The first and last character must be a letter or number.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn relational_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.relational_database_name = ::std::option::Option::Some(input.into());
         self
@@ -285,6 +288,7 @@ impl CreateRelationalDatabaseInputBuilder {
     }
     /// <p>The blueprint ID for your new database. A blueprint describes the major engine version of a database.</p>
     /// <p>You can get a list of database blueprints IDs by using the <code>get relational database blueprints</code> operation.</p>
+    /// This field is required.
     pub fn relational_database_blueprint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.relational_database_blueprint_id = ::std::option::Option::Some(input.into());
         self
@@ -302,6 +306,7 @@ impl CreateRelationalDatabaseInputBuilder {
     }
     /// <p>The bundle ID for your new database. A bundle describes the performance specifications for your database.</p>
     /// <p>You can get a list of database bundle IDs by using the <code>get relational database bundles</code> operation.</p>
+    /// This field is required.
     pub fn relational_database_bundle_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.relational_database_bundle_id = ::std::option::Option::Some(input.into());
         self
@@ -334,6 +339,7 @@ impl CreateRelationalDatabaseInputBuilder {
     /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0- 9).</p> </li>
     /// <li> <p>Can't be a word reserved by the specified database engine.</p> <p>For more information about reserved words in PostgreSQL, see the SQL Key Words articles for <a href="https://www.postgresql.org/docs/9.6/sql-keywords-appendix.html">PostgreSQL 9.6</a>, <a href="https://www.postgresql.org/docs/10/sql-keywords-appendix.html">PostgreSQL 10</a>, <a href="https://www.postgresql.org/docs/11/sql-keywords-appendix.html">PostgreSQL 11</a>, and <a href="https://www.postgresql.org/docs/12/sql-keywords-appendix.html">PostgreSQL 12</a>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn master_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_database_name = ::std::option::Option::Some(input.into());
         self
@@ -396,6 +402,7 @@ impl CreateRelationalDatabaseInputBuilder {
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Can't be a reserved word for the chosen database engine.</p> <p>For more information about reserved words in MySQL 5.6 or 5.7, see the Keywords and Reserved Words articles for <a href="https://www.postgresql.org/docs/9.6/sql-keywords-appendix.html">PostgreSQL 9.6</a>, <a href="https://www.postgresql.org/docs/10/sql-keywords-appendix.html">PostgreSQL 10</a>, <a href="https://www.postgresql.org/docs/11/sql-keywords-appendix.html">PostgreSQL 11</a>, and <a href="https://www.postgresql.org/docs/12/sql-keywords-appendix.html">PostgreSQL 12</a>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn master_username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_username = ::std::option::Option::Some(input.into());
         self
@@ -588,7 +595,7 @@ impl CreateRelationalDatabaseInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_relational_database::CreateRelationalDatabaseInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_relational_database::CreateRelationalDatabaseInput {
             relational_database_name: self.relational_database_name,

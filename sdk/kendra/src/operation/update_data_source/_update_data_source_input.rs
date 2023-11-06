@@ -92,6 +92,7 @@ pub struct UpdateDataSourceInputBuilder {
 }
 impl UpdateDataSourceInputBuilder {
     /// <p>The identifier of the data source connector you want to update.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -120,6 +121,7 @@ impl UpdateDataSourceInputBuilder {
         &self.name
     }
     /// <p>The identifier of the index used with the data source connector.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self
@@ -240,7 +242,7 @@ impl UpdateDataSourceInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDataSourceInput`](crate::operation::update_data_source::UpdateDataSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_data_source::UpdateDataSourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_data_source::UpdateDataSourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_data_source::UpdateDataSourceInput {
             id: self.id,
             name: self.name,

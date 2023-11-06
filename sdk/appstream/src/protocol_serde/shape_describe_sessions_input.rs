@@ -2,7 +2,7 @@
 pub fn ser_describe_sessions_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_sessions::DescribeSessionsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.stack_name {
         object.key("StackName").string(var_1.as_str());
     }
@@ -23,6 +23,9 @@ pub fn ser_describe_sessions_input(
     }
     if let Some(var_6) = &input.authentication_type {
         object.key("AuthenticationType").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.instance_id {
+        object.key("InstanceId").string(var_7.as_str());
     }
     Ok(())
 }

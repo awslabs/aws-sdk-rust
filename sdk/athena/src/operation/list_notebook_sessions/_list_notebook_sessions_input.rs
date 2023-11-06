@@ -41,6 +41,7 @@ pub struct ListNotebookSessionsInputBuilder {
 }
 impl ListNotebookSessionsInputBuilder {
     /// <p>The ID of the notebook to list sessions for.</p>
+    /// This field is required.
     pub fn notebook_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl ListNotebookSessionsInputBuilder {
     /// Consumes the builder and constructs a [`ListNotebookSessionsInput`](crate::operation::list_notebook_sessions::ListNotebookSessionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_notebook_sessions::ListNotebookSessionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_notebook_sessions::ListNotebookSessionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_notebook_sessions::ListNotebookSessionsInput {
             notebook_id: self.notebook_id,

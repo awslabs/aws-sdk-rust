@@ -153,8 +153,10 @@ impl EnvironmentDescription {
         self.tier.as_ref()
     }
     /// <p>A list of links to other environments in the same group.</p>
-    pub fn environment_links(&self) -> ::std::option::Option<&[crate::types::EnvironmentLink]> {
-        self.environment_links.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.environment_links.is_none()`.
+    pub fn environment_links(&self) -> &[crate::types::EnvironmentLink] {
+        self.environment_links.as_deref().unwrap_or_default()
     }
     /// <p>The environment's Amazon Resource Name (ARN), which can be used in other API requests that require an ARN.</p>
     pub fn environment_arn(&self) -> ::std::option::Option<&str> {

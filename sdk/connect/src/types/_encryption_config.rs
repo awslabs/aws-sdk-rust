@@ -5,24 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EncryptionConfig {
     /// <p>The type of encryption.</p>
-    pub encryption_type: ::std::option::Option<crate::types::EncryptionType>,
+    pub encryption_type: crate::types::EncryptionType,
     /// <p>The full ARN of the encryption key. </p> <note>
     /// <p>Be sure to provide the full ARN of the encryption key, not just the ID.</p>
     /// <p>Amazon Connect supports only KMS keys with the default key spec of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-symmetric-default"> <code>SYMMETRIC_DEFAULT</code> </a>. </p>
     /// </note>
-    pub key_id: ::std::option::Option<::std::string::String>,
+    pub key_id: ::std::string::String,
 }
 impl EncryptionConfig {
     /// <p>The type of encryption.</p>
-    pub fn encryption_type(&self) -> ::std::option::Option<&crate::types::EncryptionType> {
-        self.encryption_type.as_ref()
+    pub fn encryption_type(&self) -> &crate::types::EncryptionType {
+        &self.encryption_type
     }
     /// <p>The full ARN of the encryption key. </p> <note>
     /// <p>Be sure to provide the full ARN of the encryption key, not just the ID.</p>
     /// <p>Amazon Connect supports only KMS keys with the default key spec of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-symmetric-default"> <code>SYMMETRIC_DEFAULT</code> </a>. </p>
     /// </note>
-    pub fn key_id(&self) -> ::std::option::Option<&str> {
-        self.key_id.as_deref()
+    pub fn key_id(&self) -> &str {
+        use std::ops::Deref;
+        self.key_id.deref()
     }
 }
 impl EncryptionConfig {
@@ -41,6 +42,7 @@ pub struct EncryptionConfigBuilder {
 }
 impl EncryptionConfigBuilder {
     /// <p>The type of encryption.</p>
+    /// This field is required.
     pub fn encryption_type(mut self, input: crate::types::EncryptionType) -> Self {
         self.encryption_type = ::std::option::Option::Some(input);
         self
@@ -58,6 +60,7 @@ impl EncryptionConfigBuilder {
     /// <p>Be sure to provide the full ARN of the encryption key, not just the ID.</p>
     /// <p>Amazon Connect supports only KMS keys with the default key spec of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-symmetric-default"> <code>SYMMETRIC_DEFAULT</code> </a>. </p>
     /// </note>
+    /// This field is required.
     pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_id = ::std::option::Option::Some(input.into());
         self
@@ -78,10 +81,23 @@ impl EncryptionConfigBuilder {
         &self.key_id
     }
     /// Consumes the builder and constructs a [`EncryptionConfig`](crate::types::EncryptionConfig).
-    pub fn build(self) -> crate::types::EncryptionConfig {
-        crate::types::EncryptionConfig {
-            encryption_type: self.encryption_type,
-            key_id: self.key_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`encryption_type`](crate::types::builders::EncryptionConfigBuilder::encryption_type)
+    /// - [`key_id`](crate::types::builders::EncryptionConfigBuilder::key_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::EncryptionConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EncryptionConfig {
+            encryption_type: self.encryption_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "encryption_type",
+                    "encryption_type was not specified but it is required when building EncryptionConfig",
+                )
+            })?,
+            key_id: self.key_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "key_id",
+                    "key_id was not specified but it is required when building EncryptionConfig",
+                )
+            })?,
+        })
     }
 }

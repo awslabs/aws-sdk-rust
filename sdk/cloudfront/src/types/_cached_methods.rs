@@ -10,18 +10,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CachedMethods {
     /// <p>The number of HTTP methods for which you want CloudFront to cache responses. Valid values are <code>2</code> (for caching responses to <code>GET</code> and <code>HEAD</code> requests) and <code>3</code> (for caching responses to <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests).</p>
-    pub quantity: ::std::option::Option<i32>,
+    pub quantity: i32,
     /// <p>A complex type that contains the HTTP methods that you want CloudFront to cache responses to.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::Method>>,
+    pub items: ::std::vec::Vec<crate::types::Method>,
 }
 impl CachedMethods {
     /// <p>The number of HTTP methods for which you want CloudFront to cache responses. Valid values are <code>2</code> (for caching responses to <code>GET</code> and <code>HEAD</code> requests) and <code>3</code> (for caching responses to <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests).</p>
-    pub fn quantity(&self) -> ::std::option::Option<i32> {
+    pub fn quantity(&self) -> i32 {
         self.quantity
     }
     /// <p>A complex type that contains the HTTP methods that you want CloudFront to cache responses to.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::Method]> {
-        self.items.as_deref()
+    pub fn items(&self) -> &[crate::types::Method] {
+        use std::ops::Deref;
+        self.items.deref()
     }
 }
 impl CachedMethods {
@@ -40,6 +41,7 @@ pub struct CachedMethodsBuilder {
 }
 impl CachedMethodsBuilder {
     /// <p>The number of HTTP methods for which you want CloudFront to cache responses. Valid values are <code>2</code> (for caching responses to <code>GET</code> and <code>HEAD</code> requests) and <code>3</code> (for caching responses to <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests).</p>
+    /// This field is required.
     pub fn quantity(mut self, input: i32) -> Self {
         self.quantity = ::std::option::Option::Some(input);
         self
@@ -74,10 +76,23 @@ impl CachedMethodsBuilder {
         &self.items
     }
     /// Consumes the builder and constructs a [`CachedMethods`](crate::types::CachedMethods).
-    pub fn build(self) -> crate::types::CachedMethods {
-        crate::types::CachedMethods {
-            quantity: self.quantity,
-            items: self.items,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`quantity`](crate::types::builders::CachedMethodsBuilder::quantity)
+    /// - [`items`](crate::types::builders::CachedMethodsBuilder::items)
+    pub fn build(self) -> ::std::result::Result<crate::types::CachedMethods, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CachedMethods {
+            quantity: self.quantity.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "quantity",
+                    "quantity was not specified but it is required when building CachedMethods",
+                )
+            })?,
+            items: self.items.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "items",
+                    "items was not specified but it is required when building CachedMethods",
+                )
+            })?,
+        })
     }
 }

@@ -15,8 +15,10 @@ impl EdgeStructure {
         self.count
     }
     /// <p>A list of edge properties present in this specific structure.</p>
-    pub fn edge_properties(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.edge_properties.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.edge_properties.is_none()`.
+    pub fn edge_properties(&self) -> &[::std::string::String] {
+        self.edge_properties.as_deref().unwrap_or_default()
     }
 }
 impl EdgeStructure {

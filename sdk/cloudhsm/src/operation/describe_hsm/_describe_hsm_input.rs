@@ -63,7 +63,7 @@ impl DescribeHsmInputBuilder {
         &self.hsm_serial_number
     }
     /// Consumes the builder and constructs a [`DescribeHsmInput`](crate::operation::describe_hsm::DescribeHsmInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_hsm::DescribeHsmInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_hsm::DescribeHsmInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_hsm::DescribeHsmInput {
             hsm_arn: self.hsm_arn,
             hsm_serial_number: self.hsm_serial_number,

@@ -34,6 +34,7 @@ pub struct GetHealthEventInputBuilder {
 }
 impl GetHealthEventInputBuilder {
     /// <p>The name of the monitor.</p>
+    /// This field is required.
     pub fn monitor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitor_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetHealthEventInputBuilder {
         &self.monitor_name
     }
     /// <p>The internally generated identifier of a health event. Because <code>EventID</code> contains the forward slash (“/”) character, you must URL-encode the <code>EventID</code> field in the request URL.</p>
+    /// This field is required.
     pub fn event_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl GetHealthEventInputBuilder {
     /// Consumes the builder and constructs a [`GetHealthEventInput`](crate::operation::get_health_event::GetHealthEventInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_health_event::GetHealthEventInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_health_event::GetHealthEventInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_health_event::GetHealthEventInput {
             monitor_name: self.monitor_name,
             event_id: self.event_id,

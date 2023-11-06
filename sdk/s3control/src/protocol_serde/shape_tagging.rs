@@ -2,15 +2,15 @@
 pub fn ser_tagging(
     input: &crate::types::Tagging,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.tag_set {
+    {
         let mut inner_writer = scope.start_el("TagSet").finish();
-        for list_item_2 in var_1 {
+        for list_item_1 in &input.tag_set {
             {
                 let inner_writer = inner_writer.start_el("member");
-                crate::protocol_serde::shape_s3_tag::ser_s3_tag(list_item_2, inner_writer)?
+                crate::protocol_serde::shape_s3_tag::ser_s3_tag(list_item_1, inner_writer)?
             }
         }
     }

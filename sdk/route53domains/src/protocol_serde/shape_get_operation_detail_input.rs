@@ -2,7 +2,7 @@
 pub fn ser_get_operation_detail_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_operation_detail::GetOperationDetailInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.operation_id {
         object.key("OperationId").string(var_1.as_str());
     }

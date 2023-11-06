@@ -2,18 +2,18 @@
 pub fn ser_auto_scaling_group_provider(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AutoScalingGroupProvider,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.auto_scaling_group_arn {
-        object.key("autoScalingGroupArn").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("autoScalingGroupArn").string(input.auto_scaling_group_arn.as_str());
     }
-    if let Some(var_2) = &input.managed_scaling {
+    if let Some(var_1) = &input.managed_scaling {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("managedScaling").start_object();
-        crate::protocol_serde::shape_managed_scaling::ser_managed_scaling(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("managedScaling").start_object();
+        crate::protocol_serde::shape_managed_scaling::ser_managed_scaling(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.managed_termination_protection {
-        object.key("managedTerminationProtection").string(var_4.as_str());
+    if let Some(var_3) = &input.managed_termination_protection {
+        object.key("managedTerminationProtection").string(var_3.as_str());
     }
     Ok(())
 }
@@ -60,7 +60,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::auto_scaling_group_provider_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

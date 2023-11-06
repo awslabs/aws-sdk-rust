@@ -13,16 +13,22 @@ pub struct SankeyDiagramAggregatedFieldWells {
 }
 impl SankeyDiagramAggregatedFieldWells {
     /// <p>The source field wells of a sankey diagram.</p>
-    pub fn source(&self) -> ::std::option::Option<&[crate::types::DimensionField]> {
-        self.source.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source.is_none()`.
+    pub fn source(&self) -> &[crate::types::DimensionField] {
+        self.source.as_deref().unwrap_or_default()
     }
     /// <p>The destination field wells of a sankey diagram.</p>
-    pub fn destination(&self) -> ::std::option::Option<&[crate::types::DimensionField]> {
-        self.destination.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destination.is_none()`.
+    pub fn destination(&self) -> &[crate::types::DimensionField] {
+        self.destination.as_deref().unwrap_or_default()
     }
     /// <p>The weight field wells of a sankey diagram.</p>
-    pub fn weight(&self) -> ::std::option::Option<&[crate::types::MeasureField]> {
-        self.weight.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.weight.is_none()`.
+    pub fn weight(&self) -> &[crate::types::MeasureField] {
+        self.weight.as_deref().unwrap_or_default()
     }
 }
 impl SankeyDiagramAggregatedFieldWells {

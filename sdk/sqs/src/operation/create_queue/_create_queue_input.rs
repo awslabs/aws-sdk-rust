@@ -208,6 +208,7 @@ impl CreateQueueInputBuilder {
     /// <li> <p>A FIFO queue name must end with the <code>.fifo</code> suffix.</p> </li>
     /// </ul>
     /// <p>Queue URLs and names are case-sensitive.</p>
+    /// This field is required.
     pub fn queue_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_name = ::std::option::Option::Some(input.into());
         self
@@ -499,7 +500,7 @@ impl CreateQueueInputBuilder {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`CreateQueueInput`](crate::operation::create_queue::CreateQueueInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_queue::CreateQueueInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_queue::CreateQueueInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_queue::CreateQueueInput {
             queue_name: self.queue_name,
             tags: self.tags,

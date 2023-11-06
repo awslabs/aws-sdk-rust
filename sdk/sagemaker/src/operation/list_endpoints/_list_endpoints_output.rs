@@ -11,8 +11,10 @@ pub struct ListEndpointsOutput {
 }
 impl ListEndpointsOutput {
     /// <p> An array or endpoint objects. </p>
-    pub fn endpoints(&self) -> ::std::option::Option<&[crate::types::EndpointSummary]> {
-        self.endpoints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.endpoints.is_none()`.
+    pub fn endpoints(&self) -> &[crate::types::EndpointSummary] {
+        self.endpoints.as_deref().unwrap_or_default()
     }
     /// <p> If the response is truncated, SageMaker returns this token. To retrieve the next set of training jobs, use it in the subsequent request. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -27,6 +27,7 @@ pub struct GetFederationTokenInputBuilder {
 }
 impl GetFederationTokenInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,8 @@ impl GetFederationTokenInputBuilder {
     /// Consumes the builder and constructs a [`GetFederationTokenInput`](crate::operation::get_federation_token::GetFederationTokenInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_federation_token::GetFederationTokenInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_federation_token::GetFederationTokenInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_federation_token::GetFederationTokenInput {
             instance_id: self.instance_id,
         })

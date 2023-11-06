@@ -27,6 +27,7 @@ pub struct DescribeClientBrandingInputBuilder {
 }
 impl DescribeClientBrandingInputBuilder {
     /// <p>The directory identifier of the WorkSpace for which you want to view client branding information.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -43,8 +44,10 @@ impl DescribeClientBrandingInputBuilder {
     /// Consumes the builder and constructs a [`DescribeClientBrandingInput`](crate::operation::describe_client_branding::DescribeClientBrandingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_client_branding::DescribeClientBrandingInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_client_branding::DescribeClientBrandingInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_client_branding::DescribeClientBrandingInput {
             resource_id: self.resource_id,
         })

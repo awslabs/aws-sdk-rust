@@ -34,6 +34,7 @@ pub struct RefreshTokenInputBuilder {
 }
 impl RefreshTokenInputBuilder {
     /// <p>The third-party provider for the token. The only valid value is <code>figma</code>.</p>
+    /// This field is required.
     pub fn provider(mut self, input: crate::types::TokenProviders) -> Self {
         self.provider = ::std::option::Option::Some(input);
         self
@@ -48,6 +49,7 @@ impl RefreshTokenInputBuilder {
         &self.provider
     }
     /// <p>Information about the refresh token request.</p>
+    /// This field is required.
     pub fn refresh_token_body(mut self, input: crate::types::RefreshTokenRequestBody) -> Self {
         self.refresh_token_body = ::std::option::Option::Some(input);
         self
@@ -62,7 +64,9 @@ impl RefreshTokenInputBuilder {
         &self.refresh_token_body
     }
     /// Consumes the builder and constructs a [`RefreshTokenInput`](crate::operation::refresh_token::RefreshTokenInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::refresh_token::RefreshTokenInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::refresh_token::RefreshTokenInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::refresh_token::RefreshTokenInput {
             provider: self.provider,
             refresh_token_body: self.refresh_token_body,

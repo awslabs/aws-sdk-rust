@@ -34,6 +34,7 @@ pub struct DeleteRecipeVersionInputBuilder {
 }
 impl DeleteRecipeVersionInputBuilder {
     /// <p>The name of the recipe.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteRecipeVersionInputBuilder {
         &self.name
     }
     /// <p>The version of the recipe to be deleted. You can specify a numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.</p>
+    /// This field is required.
     pub fn recipe_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recipe_version = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DeleteRecipeVersionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRecipeVersionInput`](crate::operation::delete_recipe_version::DeleteRecipeVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_recipe_version::DeleteRecipeVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_recipe_version::DeleteRecipeVersionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_recipe_version::DeleteRecipeVersionInput {
             name: self.name,

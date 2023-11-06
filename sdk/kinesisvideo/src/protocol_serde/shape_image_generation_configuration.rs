@@ -74,7 +74,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::image_generation_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -85,48 +89,48 @@ where
 pub fn ser_image_generation_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ImageGenerationConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.status {
-        object.key("Status").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Status").string(input.status.as_str());
     }
-    if let Some(var_2) = &input.image_selector_type {
-        object.key("ImageSelectorType").string(var_2.as_str());
+    {
+        object.key("ImageSelectorType").string(input.image_selector_type.as_str());
     }
-    if let Some(var_3) = &input.destination_config {
+    if let Some(var_1) = &input.destination_config {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("DestinationConfig").start_object();
-        crate::protocol_serde::shape_image_generation_destination_config::ser_image_generation_destination_config(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_2 = object.key("DestinationConfig").start_object();
+        crate::protocol_serde::shape_image_generation_destination_config::ser_image_generation_destination_config(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_5) = &input.sampling_interval {
+    {
         object.key("SamplingInterval").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_5).into()),
+            ::aws_smithy_types::Number::NegInt((input.sampling_interval).into()),
         );
     }
-    if let Some(var_6) = &input.format {
-        object.key("Format").string(var_6.as_str());
+    {
+        object.key("Format").string(input.format.as_str());
     }
-    if let Some(var_7) = &input.format_config {
+    if let Some(var_3) = &input.format_config {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("FormatConfig").start_object();
-        for (key_9, value_10) in var_7 {
+        let mut object_4 = object.key("FormatConfig").start_object();
+        for (key_5, value_6) in var_3 {
             {
-                object_8.key(key_9.as_str()).string(value_10.as_str());
+                object_4.key(key_5.as_str()).string(value_6.as_str());
             }
         }
-        object_8.finish();
+        object_4.finish();
     }
-    if let Some(var_11) = &input.width_pixels {
+    if let Some(var_7) = &input.width_pixels {
         object.key("WidthPixels").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_11).into()),
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_12) = &input.height_pixels {
+    if let Some(var_8) = &input.height_pixels {
         object.key("HeightPixels").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_12).into()),
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
     Ok(())

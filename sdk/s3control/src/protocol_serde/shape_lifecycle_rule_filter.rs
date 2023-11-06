@@ -2,7 +2,7 @@
 pub fn ser_lifecycle_rule_filter(
     input: &crate::types::LifecycleRuleFilter,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_1) = &input.prefix {
@@ -29,6 +29,7 @@ pub fn ser_lifecycle_rule_filter(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_lifecycle_rule_filter(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::LifecycleRuleFilter, ::aws_smithy_xml::decode::XmlDecodeError> {

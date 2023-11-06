@@ -12,8 +12,10 @@ pub struct GetRecordsOutput {
 }
 impl GetRecordsOutput {
     /// <p>The stream records from the shard, which were retrieved using the shard iterator.</p>
-    pub fn records(&self) -> ::std::option::Option<&[crate::types::Record]> {
-        self.records.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.records.is_none()`.
+    pub fn records(&self) -> &[crate::types::Record] {
+        self.records.as_deref().unwrap_or_default()
     }
     /// <p>The next position in the shard from which to start sequentially reading stream records. If set to <code>null</code>, the shard has been closed and the requested iterator will not return any more data.</p>
     pub fn next_shard_iterator(&self) -> ::std::option::Option<&str> {

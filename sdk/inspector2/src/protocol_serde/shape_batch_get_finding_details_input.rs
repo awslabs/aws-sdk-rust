@@ -2,7 +2,7 @@
 pub fn ser_batch_get_finding_details_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::batch_get_finding_details::BatchGetFindingDetailsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.finding_arns {
         let mut array_2 = object.key("findingArns").start_array();
         for item_3 in var_1 {

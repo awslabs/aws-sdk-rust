@@ -26,8 +26,10 @@ impl BatchCreatePartitionInput {
         self.table_name.as_deref()
     }
     /// <p>A list of <code>PartitionInput</code> structures that define the partitions to be created.</p>
-    pub fn partition_input_list(&self) -> ::std::option::Option<&[crate::types::PartitionInput]> {
-        self.partition_input_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.partition_input_list.is_none()`.
+    pub fn partition_input_list(&self) -> &[crate::types::PartitionInput] {
+        self.partition_input_list.as_deref().unwrap_or_default()
     }
 }
 impl BatchCreatePartitionInput {
@@ -62,6 +64,7 @@ impl BatchCreatePartitionInputBuilder {
         &self.catalog_id
     }
     /// <p>The name of the metadata database in which the partition is to be created.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +79,7 @@ impl BatchCreatePartitionInputBuilder {
         &self.database_name
     }
     /// <p>The name of the metadata table in which the partition is to be created.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -112,7 +116,7 @@ impl BatchCreatePartitionInputBuilder {
     /// Consumes the builder and constructs a [`BatchCreatePartitionInput`](crate::operation::batch_create_partition::BatchCreatePartitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_create_partition::BatchCreatePartitionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_create_partition::BatchCreatePartitionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_create_partition::BatchCreatePartitionInput {
             catalog_id: self.catalog_id,

@@ -27,6 +27,7 @@ pub struct DeleteFunctionDefinitionInputBuilder {
 }
 impl DeleteFunctionDefinitionInputBuilder {
     /// The ID of the Lambda function definition.
+    /// This field is required.
     pub fn function_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_definition_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteFunctionDefinitionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_function_definition::DeleteFunctionDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_function_definition::DeleteFunctionDefinitionInput {
             function_definition_id: self.function_definition_id,

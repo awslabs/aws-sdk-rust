@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetMetricDataQuery {
     /// <p>The query identifier.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The query namespace - e.g. <code>VDM</code> </p>
-    pub namespace: ::std::option::Option<crate::types::MetricNamespace>,
+    pub namespace: crate::types::MetricNamespace,
     /// <p>The queried metric. This can be one of the following:</p>
     /// <ul>
     /// <li> <p> <code>SEND</code> – Emails sent eligible for tracking in the VDM dashboard. This excludes emails sent to the mailbox simulator and emails addressed to more than one recipient.</p> </li>
@@ -21,22 +21,23 @@ pub struct BatchGetMetricDataQuery {
     /// <li> <p> <code>DELIVERY_CLICK</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails without click trackers.</p> </li>
     /// <li> <p> <code>DELIVERY_COMPLAINT</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails addressed to recipients hosted by ISPs with which Amazon SES does not have a feedback loop agreement.</p> </li>
     /// </ul>
-    pub metric: ::std::option::Option<crate::types::Metric>,
+    pub metric: crate::types::Metric,
     /// <p>An object that contains mapping between <code>MetricDimensionName</code> and <code>MetricDimensionValue</code> to filter metrics by.</p>
     pub dimensions: ::std::option::Option<::std::collections::HashMap<crate::types::MetricDimensionName, ::std::string::String>>,
     /// <p>Represents the start date for the query interval.</p>
-    pub start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub start_date: ::aws_smithy_types::DateTime,
     /// <p>Represents the end date for the query interval.</p>
-    pub end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub end_date: ::aws_smithy_types::DateTime,
 }
 impl BatchGetMetricDataQuery {
     /// <p>The query identifier.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The query namespace - e.g. <code>VDM</code> </p>
-    pub fn namespace(&self) -> ::std::option::Option<&crate::types::MetricNamespace> {
-        self.namespace.as_ref()
+    pub fn namespace(&self) -> &crate::types::MetricNamespace {
+        &self.namespace
     }
     /// <p>The queried metric. This can be one of the following:</p>
     /// <ul>
@@ -51,20 +52,20 @@ impl BatchGetMetricDataQuery {
     /// <li> <p> <code>DELIVERY_CLICK</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails without click trackers.</p> </li>
     /// <li> <p> <code>DELIVERY_COMPLAINT</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails addressed to recipients hosted by ISPs with which Amazon SES does not have a feedback loop agreement.</p> </li>
     /// </ul>
-    pub fn metric(&self) -> ::std::option::Option<&crate::types::Metric> {
-        self.metric.as_ref()
+    pub fn metric(&self) -> &crate::types::Metric {
+        &self.metric
     }
     /// <p>An object that contains mapping between <code>MetricDimensionName</code> and <code>MetricDimensionValue</code> to filter metrics by.</p>
     pub fn dimensions(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::MetricDimensionName, ::std::string::String>> {
         self.dimensions.as_ref()
     }
     /// <p>Represents the start date for the query interval.</p>
-    pub fn start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.start_date.as_ref()
+    pub fn start_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.start_date
     }
     /// <p>Represents the end date for the query interval.</p>
-    pub fn end_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.end_date.as_ref()
+    pub fn end_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.end_date
     }
 }
 impl BatchGetMetricDataQuery {
@@ -87,6 +88,7 @@ pub struct BatchGetMetricDataQueryBuilder {
 }
 impl BatchGetMetricDataQueryBuilder {
     /// <p>The query identifier.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -101,6 +103,7 @@ impl BatchGetMetricDataQueryBuilder {
         &self.id
     }
     /// <p>The query namespace - e.g. <code>VDM</code> </p>
+    /// This field is required.
     pub fn namespace(mut self, input: crate::types::MetricNamespace) -> Self {
         self.namespace = ::std::option::Option::Some(input);
         self
@@ -127,6 +130,7 @@ impl BatchGetMetricDataQueryBuilder {
     /// <li> <p> <code>DELIVERY_CLICK</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails without click trackers.</p> </li>
     /// <li> <p> <code>DELIVERY_COMPLAINT</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails addressed to recipients hosted by ISPs with which Amazon SES does not have a feedback loop agreement.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn metric(mut self, input: crate::types::Metric) -> Self {
         self.metric = ::std::option::Option::Some(input);
         self
@@ -188,6 +192,7 @@ impl BatchGetMetricDataQueryBuilder {
         &self.dimensions
     }
     /// <p>Represents the start date for the query interval.</p>
+    /// This field is required.
     pub fn start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_date = ::std::option::Option::Some(input);
         self
@@ -202,6 +207,7 @@ impl BatchGetMetricDataQueryBuilder {
         &self.start_date
     }
     /// <p>Represents the end date for the query interval.</p>
+    /// This field is required.
     pub fn end_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_date = ::std::option::Option::Some(input);
         self
@@ -216,14 +222,45 @@ impl BatchGetMetricDataQueryBuilder {
         &self.end_date
     }
     /// Consumes the builder and constructs a [`BatchGetMetricDataQuery`](crate::types::BatchGetMetricDataQuery).
-    pub fn build(self) -> crate::types::BatchGetMetricDataQuery {
-        crate::types::BatchGetMetricDataQuery {
-            id: self.id,
-            namespace: self.namespace,
-            metric: self.metric,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::BatchGetMetricDataQueryBuilder::id)
+    /// - [`namespace`](crate::types::builders::BatchGetMetricDataQueryBuilder::namespace)
+    /// - [`metric`](crate::types::builders::BatchGetMetricDataQueryBuilder::metric)
+    /// - [`start_date`](crate::types::builders::BatchGetMetricDataQueryBuilder::start_date)
+    /// - [`end_date`](crate::types::builders::BatchGetMetricDataQueryBuilder::end_date)
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchGetMetricDataQuery, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::BatchGetMetricDataQuery {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building BatchGetMetricDataQuery",
+                )
+            })?,
+            namespace: self.namespace.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "namespace",
+                    "namespace was not specified but it is required when building BatchGetMetricDataQuery",
+                )
+            })?,
+            metric: self.metric.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "metric",
+                    "metric was not specified but it is required when building BatchGetMetricDataQuery",
+                )
+            })?,
             dimensions: self.dimensions,
-            start_date: self.start_date,
-            end_date: self.end_date,
-        }
+            start_date: self.start_date.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "start_date",
+                    "start_date was not specified but it is required when building BatchGetMetricDataQuery",
+                )
+            })?,
+            end_date: self.end_date.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "end_date",
+                    "end_date was not specified but it is required when building BatchGetMetricDataQuery",
+                )
+            })?,
+        })
     }
 }

@@ -34,6 +34,7 @@ pub struct RegisterThingInputBuilder {
 }
 impl RegisterThingInputBuilder {
     /// <p>The provisioning template. See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-w-cert.html">Provisioning Devices That Have Device Certificates</a> for more information.</p>
+    /// This field is required.
     pub fn template_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_body = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +71,7 @@ impl RegisterThingInputBuilder {
     /// Consumes the builder and constructs a [`RegisterThingInput`](crate::operation::register_thing::RegisterThingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_thing::RegisterThingInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::register_thing::RegisterThingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_thing::RegisterThingInput {
             template_body: self.template_body,
             parameters: self.parameters,

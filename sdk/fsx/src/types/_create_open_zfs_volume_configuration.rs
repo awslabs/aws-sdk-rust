@@ -7,12 +7,12 @@ pub struct CreateOpenZfsVolumeConfiguration {
     /// <p>The ID of the volume to use as the parent volume of the volume that you are creating.</p>
     pub parent_volume_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the amount of storage in gibibytes (GiB) to reserve from the parent volume. Setting <code>StorageCapacityReservationGiB</code> guarantees that the specified amount of storage space on the parent volume will always be available for the volume. You can't reserve more storage than the parent volume has. To <i>not</i> specify a storage capacity reservation, set this to <code>0</code> or <code>-1</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-volumes.html#volume-properties">Volume properties</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
-    pub storage_capacity_reservation_gi_b: ::std::option::Option<i32>,
+    pub storage_capacity_reservation_gib: ::std::option::Option<i32>,
     /// <p>Sets the maximum storage size in gibibytes (GiB) for the volume. You can specify a quota that is larger than the storage on the parent volume. A volume quota limits the amount of storage that the volume can consume to the configured amount, but does not guarantee the space will be available on the parent volume. To guarantee quota space, you must also set <code>StorageCapacityReservationGiB</code>. To <i>not</i> specify a storage capacity quota, set this to <code>-1</code>. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-volumes.html#volume-properties">Volume properties</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
-    pub storage_capacity_quota_gi_b: ::std::option::Option<i32>,
+    pub storage_capacity_quota_gib: ::std::option::Option<i32>,
     /// <p>Specifies the suggested block size for a volume in a ZFS dataset, in kibibytes (KiB). Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB. We recommend using the default setting for the majority of use cases. Generally, workloads that write in fixed small or large record sizes may benefit from setting a custom record size, like database workloads (small record size) or media streaming workloads (large record size). For additional guidance on when to set a custom record size, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#record-size-performance"> ZFS Record size</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
-    pub record_size_ki_b: ::std::option::Option<i32>,
+    pub record_size_kib: ::std::option::Option<i32>,
     /// <p>Specifies the method used to compress the data on the volume. The compression type is <code>NONE</code> by default.</p>
     /// <ul>
     /// <li> <p> <code>NONE</code> - Doesn't compress the data on the volume. <code>NONE</code> is the default.</p> </li>
@@ -38,17 +38,17 @@ impl CreateOpenZfsVolumeConfiguration {
         self.parent_volume_id.as_deref()
     }
     /// <p>Specifies the amount of storage in gibibytes (GiB) to reserve from the parent volume. Setting <code>StorageCapacityReservationGiB</code> guarantees that the specified amount of storage space on the parent volume will always be available for the volume. You can't reserve more storage than the parent volume has. To <i>not</i> specify a storage capacity reservation, set this to <code>0</code> or <code>-1</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-volumes.html#volume-properties">Volume properties</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
-    pub fn storage_capacity_reservation_gi_b(&self) -> ::std::option::Option<i32> {
-        self.storage_capacity_reservation_gi_b
+    pub fn storage_capacity_reservation_gib(&self) -> ::std::option::Option<i32> {
+        self.storage_capacity_reservation_gib
     }
     /// <p>Sets the maximum storage size in gibibytes (GiB) for the volume. You can specify a quota that is larger than the storage on the parent volume. A volume quota limits the amount of storage that the volume can consume to the configured amount, but does not guarantee the space will be available on the parent volume. To guarantee quota space, you must also set <code>StorageCapacityReservationGiB</code>. To <i>not</i> specify a storage capacity quota, set this to <code>-1</code>. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-volumes.html#volume-properties">Volume properties</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
-    pub fn storage_capacity_quota_gi_b(&self) -> ::std::option::Option<i32> {
-        self.storage_capacity_quota_gi_b
+    pub fn storage_capacity_quota_gib(&self) -> ::std::option::Option<i32> {
+        self.storage_capacity_quota_gib
     }
     /// <p>Specifies the suggested block size for a volume in a ZFS dataset, in kibibytes (KiB). Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB. We recommend using the default setting for the majority of use cases. Generally, workloads that write in fixed small or large record sizes may benefit from setting a custom record size, like database workloads (small record size) or media streaming workloads (large record size). For additional guidance on when to set a custom record size, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#record-size-performance"> ZFS Record size</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
-    pub fn record_size_ki_b(&self) -> ::std::option::Option<i32> {
-        self.record_size_ki_b
+    pub fn record_size_kib(&self) -> ::std::option::Option<i32> {
+        self.record_size_kib
     }
     /// <p>Specifies the method used to compress the data on the volume. The compression type is <code>NONE</code> by default.</p>
     /// <ul>
@@ -73,12 +73,16 @@ impl CreateOpenZfsVolumeConfiguration {
         self.read_only
     }
     /// <p>The configuration object for mounting a Network File System (NFS) file system.</p>
-    pub fn nfs_exports(&self) -> ::std::option::Option<&[crate::types::OpenZfsNfsExport]> {
-        self.nfs_exports.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.nfs_exports.is_none()`.
+    pub fn nfs_exports(&self) -> &[crate::types::OpenZfsNfsExport] {
+        self.nfs_exports.as_deref().unwrap_or_default()
     }
     /// <p>An object specifying how much storage users or groups can use on the volume.</p>
-    pub fn user_and_group_quotas(&self) -> ::std::option::Option<&[crate::types::OpenZfsUserOrGroupQuota]> {
-        self.user_and_group_quotas.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_and_group_quotas.is_none()`.
+    pub fn user_and_group_quotas(&self) -> &[crate::types::OpenZfsUserOrGroupQuota] {
+        self.user_and_group_quotas.as_deref().unwrap_or_default()
     }
 }
 impl CreateOpenZfsVolumeConfiguration {
@@ -93,9 +97,9 @@ impl CreateOpenZfsVolumeConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateOpenZfsVolumeConfigurationBuilder {
     pub(crate) parent_volume_id: ::std::option::Option<::std::string::String>,
-    pub(crate) storage_capacity_reservation_gi_b: ::std::option::Option<i32>,
-    pub(crate) storage_capacity_quota_gi_b: ::std::option::Option<i32>,
-    pub(crate) record_size_ki_b: ::std::option::Option<i32>,
+    pub(crate) storage_capacity_reservation_gib: ::std::option::Option<i32>,
+    pub(crate) storage_capacity_quota_gib: ::std::option::Option<i32>,
+    pub(crate) record_size_kib: ::std::option::Option<i32>,
     pub(crate) data_compression_type: ::std::option::Option<crate::types::OpenZfsDataCompressionType>,
     pub(crate) copy_tags_to_snapshots: ::std::option::Option<bool>,
     pub(crate) origin_snapshot: ::std::option::Option<crate::types::CreateOpenZfsOriginSnapshotConfiguration>,
@@ -105,6 +109,7 @@ pub struct CreateOpenZfsVolumeConfigurationBuilder {
 }
 impl CreateOpenZfsVolumeConfigurationBuilder {
     /// <p>The ID of the volume to use as the parent volume of the volume that you are creating.</p>
+    /// This field is required.
     pub fn parent_volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_volume_id = ::std::option::Option::Some(input.into());
         self
@@ -119,49 +124,49 @@ impl CreateOpenZfsVolumeConfigurationBuilder {
         &self.parent_volume_id
     }
     /// <p>Specifies the amount of storage in gibibytes (GiB) to reserve from the parent volume. Setting <code>StorageCapacityReservationGiB</code> guarantees that the specified amount of storage space on the parent volume will always be available for the volume. You can't reserve more storage than the parent volume has. To <i>not</i> specify a storage capacity reservation, set this to <code>0</code> or <code>-1</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-volumes.html#volume-properties">Volume properties</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
-    pub fn storage_capacity_reservation_gi_b(mut self, input: i32) -> Self {
-        self.storage_capacity_reservation_gi_b = ::std::option::Option::Some(input);
+    pub fn storage_capacity_reservation_gib(mut self, input: i32) -> Self {
+        self.storage_capacity_reservation_gib = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the amount of storage in gibibytes (GiB) to reserve from the parent volume. Setting <code>StorageCapacityReservationGiB</code> guarantees that the specified amount of storage space on the parent volume will always be available for the volume. You can't reserve more storage than the parent volume has. To <i>not</i> specify a storage capacity reservation, set this to <code>0</code> or <code>-1</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-volumes.html#volume-properties">Volume properties</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
-    pub fn set_storage_capacity_reservation_gi_b(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.storage_capacity_reservation_gi_b = input;
+    pub fn set_storage_capacity_reservation_gib(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.storage_capacity_reservation_gib = input;
         self
     }
     /// <p>Specifies the amount of storage in gibibytes (GiB) to reserve from the parent volume. Setting <code>StorageCapacityReservationGiB</code> guarantees that the specified amount of storage space on the parent volume will always be available for the volume. You can't reserve more storage than the parent volume has. To <i>not</i> specify a storage capacity reservation, set this to <code>0</code> or <code>-1</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-volumes.html#volume-properties">Volume properties</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
-    pub fn get_storage_capacity_reservation_gi_b(&self) -> &::std::option::Option<i32> {
-        &self.storage_capacity_reservation_gi_b
+    pub fn get_storage_capacity_reservation_gib(&self) -> &::std::option::Option<i32> {
+        &self.storage_capacity_reservation_gib
     }
     /// <p>Sets the maximum storage size in gibibytes (GiB) for the volume. You can specify a quota that is larger than the storage on the parent volume. A volume quota limits the amount of storage that the volume can consume to the configured amount, but does not guarantee the space will be available on the parent volume. To guarantee quota space, you must also set <code>StorageCapacityReservationGiB</code>. To <i>not</i> specify a storage capacity quota, set this to <code>-1</code>. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-volumes.html#volume-properties">Volume properties</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
-    pub fn storage_capacity_quota_gi_b(mut self, input: i32) -> Self {
-        self.storage_capacity_quota_gi_b = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Sets the maximum storage size in gibibytes (GiB) for the volume. You can specify a quota that is larger than the storage on the parent volume. A volume quota limits the amount of storage that the volume can consume to the configured amount, but does not guarantee the space will be available on the parent volume. To guarantee quota space, you must also set <code>StorageCapacityReservationGiB</code>. To <i>not</i> specify a storage capacity quota, set this to <code>-1</code>. </p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-volumes.html#volume-properties">Volume properties</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
-    pub fn set_storage_capacity_quota_gi_b(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.storage_capacity_quota_gi_b = input;
+    pub fn storage_capacity_quota_gib(mut self, input: i32) -> Self {
+        self.storage_capacity_quota_gib = ::std::option::Option::Some(input);
         self
     }
     /// <p>Sets the maximum storage size in gibibytes (GiB) for the volume. You can specify a quota that is larger than the storage on the parent volume. A volume quota limits the amount of storage that the volume can consume to the configured amount, but does not guarantee the space will be available on the parent volume. To guarantee quota space, you must also set <code>StorageCapacityReservationGiB</code>. To <i>not</i> specify a storage capacity quota, set this to <code>-1</code>. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-volumes.html#volume-properties">Volume properties</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
-    pub fn get_storage_capacity_quota_gi_b(&self) -> &::std::option::Option<i32> {
-        &self.storage_capacity_quota_gi_b
+    pub fn set_storage_capacity_quota_gib(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.storage_capacity_quota_gib = input;
+        self
+    }
+    /// <p>Sets the maximum storage size in gibibytes (GiB) for the volume. You can specify a quota that is larger than the storage on the parent volume. A volume quota limits the amount of storage that the volume can consume to the configured amount, but does not guarantee the space will be available on the parent volume. To guarantee quota space, you must also set <code>StorageCapacityReservationGiB</code>. To <i>not</i> specify a storage capacity quota, set this to <code>-1</code>. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-volumes.html#volume-properties">Volume properties</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
+    pub fn get_storage_capacity_quota_gib(&self) -> &::std::option::Option<i32> {
+        &self.storage_capacity_quota_gib
     }
     /// <p>Specifies the suggested block size for a volume in a ZFS dataset, in kibibytes (KiB). Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB. We recommend using the default setting for the majority of use cases. Generally, workloads that write in fixed small or large record sizes may benefit from setting a custom record size, like database workloads (small record size) or media streaming workloads (large record size). For additional guidance on when to set a custom record size, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#record-size-performance"> ZFS Record size</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
-    pub fn record_size_ki_b(mut self, input: i32) -> Self {
-        self.record_size_ki_b = ::std::option::Option::Some(input);
+    pub fn record_size_kib(mut self, input: i32) -> Self {
+        self.record_size_kib = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the suggested block size for a volume in a ZFS dataset, in kibibytes (KiB). Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB. We recommend using the default setting for the majority of use cases. Generally, workloads that write in fixed small or large record sizes may benefit from setting a custom record size, like database workloads (small record size) or media streaming workloads (large record size). For additional guidance on when to set a custom record size, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#record-size-performance"> ZFS Record size</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
-    pub fn set_record_size_ki_b(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.record_size_ki_b = input;
+    pub fn set_record_size_kib(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.record_size_kib = input;
         self
     }
     /// <p>Specifies the suggested block size for a volume in a ZFS dataset, in kibibytes (KiB). Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB. We recommend using the default setting for the majority of use cases. Generally, workloads that write in fixed small or large record sizes may benefit from setting a custom record size, like database workloads (small record size) or media streaming workloads (large record size). For additional guidance on when to set a custom record size, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#record-size-performance"> ZFS Record size</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
-    pub fn get_record_size_ki_b(&self) -> &::std::option::Option<i32> {
-        &self.record_size_ki_b
+    pub fn get_record_size_kib(&self) -> &::std::option::Option<i32> {
+        &self.record_size_kib
     }
     /// <p>Specifies the method used to compress the data on the volume. The compression type is <code>NONE</code> by default.</p>
     /// <ul>
@@ -281,9 +286,9 @@ impl CreateOpenZfsVolumeConfigurationBuilder {
     pub fn build(self) -> crate::types::CreateOpenZfsVolumeConfiguration {
         crate::types::CreateOpenZfsVolumeConfiguration {
             parent_volume_id: self.parent_volume_id,
-            storage_capacity_reservation_gi_b: self.storage_capacity_reservation_gi_b,
-            storage_capacity_quota_gi_b: self.storage_capacity_quota_gi_b,
-            record_size_ki_b: self.record_size_ki_b,
+            storage_capacity_reservation_gib: self.storage_capacity_reservation_gib,
+            storage_capacity_quota_gib: self.storage_capacity_quota_gib,
+            record_size_kib: self.record_size_kib,
             data_compression_type: self.data_compression_type,
             copy_tags_to_snapshots: self.copy_tags_to_snapshots,
             origin_snapshot: self.origin_snapshot,

@@ -50,8 +50,10 @@ impl DescribeAuditMitigationActionsTaskOutput {
         self.audit_check_to_actions_mapping.as_ref()
     }
     /// <p>Specifies the mitigation actions and their parameters that are applied as part of this task.</p>
-    pub fn actions_definition(&self) -> ::std::option::Option<&[crate::types::MitigationAction]> {
-        self.actions_definition.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions_definition.is_none()`.
+    pub fn actions_definition(&self) -> &[crate::types::MitigationAction] {
+        self.actions_definition.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeAuditMitigationActionsTaskOutput {

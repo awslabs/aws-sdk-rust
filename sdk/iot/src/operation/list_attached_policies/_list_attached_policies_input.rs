@@ -48,6 +48,7 @@ pub struct ListAttachedPoliciesInputBuilder {
 }
 impl ListAttachedPoliciesInputBuilder {
     /// <p>The group or principal for which the policies will be listed. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
+    /// This field is required.
     pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,7 @@ impl ListAttachedPoliciesInputBuilder {
     /// Consumes the builder and constructs a [`ListAttachedPoliciesInput`](crate::operation::list_attached_policies::ListAttachedPoliciesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_attached_policies::ListAttachedPoliciesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_attached_policies::ListAttachedPoliciesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_attached_policies::ListAttachedPoliciesInput {
             target: self.target,

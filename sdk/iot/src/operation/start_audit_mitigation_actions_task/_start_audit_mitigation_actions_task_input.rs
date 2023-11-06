@@ -52,6 +52,7 @@ pub struct StartAuditMitigationActionsTaskInputBuilder {
 }
 impl StartAuditMitigationActionsTaskInputBuilder {
     /// <p>A unique identifier for the task. You can use this identifier to check the status of the task or to cancel it.</p>
+    /// This field is required.
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_id = ::std::option::Option::Some(input.into());
         self
@@ -66,6 +67,7 @@ impl StartAuditMitigationActionsTaskInputBuilder {
         &self.task_id
     }
     /// <p>Specifies the audit findings to which the mitigation actions are applied. You can apply them to a type of audit check, to all findings from an audit, or to a specific set of findings.</p>
+    /// This field is required.
     pub fn target(mut self, input: crate::types::AuditMitigationActionsTaskTarget) -> Self {
         self.target = ::std::option::Option::Some(input);
         self
@@ -109,6 +111,7 @@ impl StartAuditMitigationActionsTaskInputBuilder {
         &self.audit_check_to_actions_mapping
     }
     /// <p>Each audit mitigation task must have a unique client request token. If you try to start a new task with the same token as a task that already exists, an exception occurs. If you omit this value, a unique client request token is generated automatically.</p>
+    /// This field is required.
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
@@ -127,7 +130,7 @@ impl StartAuditMitigationActionsTaskInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_audit_mitigation_actions_task::StartAuditMitigationActionsTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::start_audit_mitigation_actions_task::StartAuditMitigationActionsTaskInput {

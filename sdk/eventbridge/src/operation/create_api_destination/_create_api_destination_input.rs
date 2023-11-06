@@ -62,6 +62,7 @@ pub struct CreateApiDestinationInputBuilder {
 }
 impl CreateApiDestinationInputBuilder {
     /// <p>The name for the API destination to create.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +91,7 @@ impl CreateApiDestinationInputBuilder {
         &self.description
     }
     /// <p>The ARN of the connection to use for the API destination. The destination endpoint must support the authorization type specified for the connection.</p>
+    /// This field is required.
     pub fn connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_arn = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +106,7 @@ impl CreateApiDestinationInputBuilder {
         &self.connection_arn
     }
     /// <p>The URL to the HTTP invocation endpoint for the API destination.</p>
+    /// This field is required.
     pub fn invocation_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.invocation_endpoint = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +121,7 @@ impl CreateApiDestinationInputBuilder {
         &self.invocation_endpoint
     }
     /// <p>The method to use for the request to the HTTP invocation endpoint.</p>
+    /// This field is required.
     pub fn http_method(mut self, input: crate::types::ApiDestinationHttpMethod) -> Self {
         self.http_method = ::std::option::Option::Some(input);
         self
@@ -148,7 +152,7 @@ impl CreateApiDestinationInputBuilder {
     /// Consumes the builder and constructs a [`CreateApiDestinationInput`](crate::operation::create_api_destination::CreateApiDestinationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_api_destination::CreateApiDestinationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_api_destination::CreateApiDestinationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_api_destination::CreateApiDestinationInput {
             name: self.name,

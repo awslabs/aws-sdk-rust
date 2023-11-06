@@ -2,35 +2,35 @@
 pub fn ser_lte_nmr_obj(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LteNmrObj,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.pci {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
         object.key("Pci").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((input.pci).into()),
+        );
+    }
+    {
+        object.key("Earfcn").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((input.earfcn).into()),
+        );
+    }
+    {
+        object.key("EutranCid").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((input.eutran_cid).into()),
+        );
+    }
+    if let Some(var_1) = &input.rsrp {
+        object.key("Rsrp").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_2) = &input.earfcn {
-        object.key("Earfcn").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
-        );
-    }
-    if let Some(var_3) = &input.eutran_cid {
-        object.key("EutranCid").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
-        );
-    }
-    if let Some(var_4) = &input.rsrp {
-        object.key("Rsrp").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
-        );
-    }
-    if let Some(var_5) = &input.rsrq {
+    if let Some(var_2) = &input.rsrq {
         object.key("Rsrq").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_5).into()),
+            ::aws_smithy_types::Number::Float((*var_2).into()),
         );
     }
     Ok(())

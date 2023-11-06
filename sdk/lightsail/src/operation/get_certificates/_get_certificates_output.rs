@@ -11,8 +11,10 @@ pub struct GetCertificatesOutput {
 }
 impl GetCertificatesOutput {
     /// <p>An object that describes certificates.</p>
-    pub fn certificates(&self) -> ::std::option::Option<&[crate::types::CertificateSummary]> {
-        self.certificates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificates.is_none()`.
+    pub fn certificates(&self) -> &[crate::types::CertificateSummary] {
+        self.certificates.as_deref().unwrap_or_default()
     }
     /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     pub fn next_page_token(&self) -> ::std::option::Option<&str> {

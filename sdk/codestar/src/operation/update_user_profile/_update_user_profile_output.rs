@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateUserProfileOutput {
     /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
-    pub user_arn: ::std::option::Option<::std::string::String>,
+    pub user_arn: ::std::string::String,
     /// <p>The name that is displayed as the friendly name for the user in AWS CodeStar.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The email address that is displayed as part of the user's profile in AWS CodeStar.</p>
@@ -19,8 +19,9 @@ pub struct UpdateUserProfileOutput {
 }
 impl UpdateUserProfileOutput {
     /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
-    pub fn user_arn(&self) -> ::std::option::Option<&str> {
-        self.user_arn.as_deref()
+    pub fn user_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.user_arn.deref()
     }
     /// <p>The name that is displayed as the friendly name for the user in AWS CodeStar.</p>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
@@ -82,6 +83,7 @@ pub struct UpdateUserProfileOutputBuilder {
 }
 impl UpdateUserProfileOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
+    /// This field is required.
     pub fn user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_arn = ::std::option::Option::Some(input.into());
         self
@@ -175,16 +177,25 @@ impl UpdateUserProfileOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateUserProfileOutput`](crate::operation::update_user_profile::UpdateUserProfileOutput).
-    pub fn build(self) -> crate::operation::update_user_profile::UpdateUserProfileOutput {
-        crate::operation::update_user_profile::UpdateUserProfileOutput {
-            user_arn: self.user_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`user_arn`](crate::operation::update_user_profile::builders::UpdateUserProfileOutputBuilder::user_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_user_profile::UpdateUserProfileOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_user_profile::UpdateUserProfileOutput {
+            user_arn: self.user_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "user_arn",
+                    "user_arn was not specified but it is required when building UpdateUserProfileOutput",
+                )
+            })?,
             display_name: self.display_name,
             email_address: self.email_address,
             ssh_public_key: self.ssh_public_key,
             created_timestamp: self.created_timestamp,
             last_modified_timestamp: self.last_modified_timestamp,
             _request_id: self._request_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for UpdateUserProfileOutputBuilder {

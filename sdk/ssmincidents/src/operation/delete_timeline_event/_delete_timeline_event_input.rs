@@ -34,6 +34,7 @@ pub struct DeleteTimelineEventInputBuilder {
 }
 impl DeleteTimelineEventInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
+    /// This field is required.
     pub fn incident_record_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.incident_record_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteTimelineEventInputBuilder {
         &self.incident_record_arn
     }
     /// <p>The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID.</p>
+    /// This field is required.
     pub fn event_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DeleteTimelineEventInputBuilder {
     /// Consumes the builder and constructs a [`DeleteTimelineEventInput`](crate::operation::delete_timeline_event::DeleteTimelineEventInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_timeline_event::DeleteTimelineEventInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_timeline_event::DeleteTimelineEventInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_timeline_event::DeleteTimelineEventInput {
             incident_record_arn: self.incident_record_arn,

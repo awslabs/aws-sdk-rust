@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteStage`](crate::operation::delete_stage::builders::DeleteStageFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::delete_stage::builders::DeleteStageFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_stage::builders::DeleteStageFluentBuilder::set_arn): <p>ARN of the stage to be deleted.</p>
+    ///   - [`arn(impl Into<String>)`](crate::operation::delete_stage::builders::DeleteStageFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_stage::builders::DeleteStageFluentBuilder::set_arn):<br>required: **true**<br><p>ARN of the stage to be deleted.</p><br>
     /// - On success, responds with [`DeleteStageOutput`](crate::operation::delete_stage::DeleteStageOutput)
     /// - On failure, responds with [`SdkError<DeleteStageError>`](crate::operation::delete_stage::DeleteStageError)
     pub fn delete_stage(&self) -> crate::operation::delete_stage::builders::DeleteStageFluentBuilder {

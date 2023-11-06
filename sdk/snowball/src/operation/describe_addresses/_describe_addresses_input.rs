@@ -64,7 +64,7 @@ impl DescribeAddressesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAddressesInput`](crate::operation::describe_addresses::DescribeAddressesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_addresses::DescribeAddressesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_addresses::DescribeAddressesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_addresses::DescribeAddressesInput {
             max_results: self.max_results,
             next_token: self.next_token,

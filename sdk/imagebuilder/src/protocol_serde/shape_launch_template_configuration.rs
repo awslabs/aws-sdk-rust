@@ -2,12 +2,12 @@
 pub fn ser_launch_template_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LaunchTemplateConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.launch_template_id {
-        object.key("launchTemplateId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("launchTemplateId").string(input.launch_template_id.as_str());
     }
-    if let Some(var_2) = &input.account_id {
-        object.key("accountId").string(var_2.as_str());
+    if let Some(var_1) = &input.account_id {
+        object.key("accountId").string(var_1.as_str());
     }
     if input.set_default_version {
         object.key("setDefaultVersion").boolean(input.set_default_version);
@@ -57,7 +57,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::launch_template_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

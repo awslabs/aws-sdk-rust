@@ -34,6 +34,7 @@ pub struct UpdateWorkspaceOutputBuilder {
 }
 impl UpdateWorkspaceOutputBuilder {
     /// <p>A structure containing data about the workspace that was created.</p>
+    /// This field is required.
     pub fn workspace(mut self, input: crate::types::WorkspaceDescription) -> Self {
         self.workspace = ::std::option::Option::Some(input);
         self

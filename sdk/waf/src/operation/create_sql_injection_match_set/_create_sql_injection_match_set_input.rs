@@ -35,6 +35,7 @@ pub struct CreateSqlInjectionMatchSetInputBuilder {
 }
 impl CreateSqlInjectionMatchSetInputBuilder {
     /// <p>A friendly name or description for the <code>SqlInjectionMatchSet</code> that you're creating. You can't change <code>Name</code> after you create the <code>SqlInjectionMatchSet</code>.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl CreateSqlInjectionMatchSetInputBuilder {
         &self.name
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    /// This field is required.
     pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_token = ::std::option::Option::Some(input.into());
         self
@@ -67,7 +69,7 @@ impl CreateSqlInjectionMatchSetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetInput {
             name: self.name,

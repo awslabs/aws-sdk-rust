@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetBrowserSettings`](crate::operation::get_browser_settings::builders::GetBrowserSettingsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`browser_settings_arn(impl Into<String>)`](crate::operation::get_browser_settings::builders::GetBrowserSettingsFluentBuilder::browser_settings_arn) / [`set_browser_settings_arn(Option<String>)`](crate::operation::get_browser_settings::builders::GetBrowserSettingsFluentBuilder::set_browser_settings_arn): <p>The ARN of the browser settings.</p>
+    ///   - [`browser_settings_arn(impl Into<String>)`](crate::operation::get_browser_settings::builders::GetBrowserSettingsFluentBuilder::browser_settings_arn) / [`set_browser_settings_arn(Option<String>)`](crate::operation::get_browser_settings::builders::GetBrowserSettingsFluentBuilder::set_browser_settings_arn):<br>required: **true**<br><p>The ARN of the browser settings.</p><br>
     /// - On success, responds with [`GetBrowserSettingsOutput`](crate::operation::get_browser_settings::GetBrowserSettingsOutput) with field(s):
     ///   - [`browser_settings(Option<BrowserSettings>)`](crate::operation::get_browser_settings::GetBrowserSettingsOutput::browser_settings): <p>The browser settings.</p>
     /// - On failure, responds with [`SdkError<GetBrowserSettingsError>`](crate::operation::get_browser_settings::GetBrowserSettingsError)

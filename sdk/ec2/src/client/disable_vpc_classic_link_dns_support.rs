@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DisableVpcClassicLinkDnsSupport`](crate::operation::disable_vpc_classic_link_dns_support::builders::DisableVpcClassicLinkDnsSupportFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`vpc_id(impl Into<String>)`](crate::operation::disable_vpc_classic_link_dns_support::builders::DisableVpcClassicLinkDnsSupportFluentBuilder::vpc_id) / [`set_vpc_id(Option<String>)`](crate::operation::disable_vpc_classic_link_dns_support::builders::DisableVpcClassicLinkDnsSupportFluentBuilder::set_vpc_id): <p>The ID of the VPC.</p>
+    ///   - [`vpc_id(impl Into<String>)`](crate::operation::disable_vpc_classic_link_dns_support::builders::DisableVpcClassicLinkDnsSupportFluentBuilder::vpc_id) / [`set_vpc_id(Option<String>)`](crate::operation::disable_vpc_classic_link_dns_support::builders::DisableVpcClassicLinkDnsSupportFluentBuilder::set_vpc_id):<br>required: **false**<br><p>The ID of the VPC.</p><br>
     /// - On success, responds with [`DisableVpcClassicLinkDnsSupportOutput`](crate::operation::disable_vpc_classic_link_dns_support::DisableVpcClassicLinkDnsSupportOutput) with field(s):
     ///   - [`r#return(Option<bool>)`](crate::operation::disable_vpc_classic_link_dns_support::DisableVpcClassicLinkDnsSupportOutput::return): <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     /// - On failure, responds with [`SdkError<DisableVpcClassicLinkDnsSupportError>`](crate::operation::disable_vpc_classic_link_dns_support::DisableVpcClassicLinkDnsSupportError)

@@ -2,7 +2,7 @@
 pub fn ser_s3_grantee(
     input: &crate::types::S3Grantee,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_1) = &input.type_identifier {
@@ -21,6 +21,7 @@ pub fn ser_s3_grantee(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_s3_grantee(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::S3Grantee, ::aws_smithy_xml::decode::XmlDecodeError> {

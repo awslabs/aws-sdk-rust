@@ -34,6 +34,7 @@ pub struct UpdateCapacityReservationInputBuilder {
 }
 impl UpdateCapacityReservationInputBuilder {
     /// <p>The new number of requested data processing units.</p>
+    /// This field is required.
     pub fn target_dpus(mut self, input: i32) -> Self {
         self.target_dpus = ::std::option::Option::Some(input);
         self
@@ -48,6 +49,7 @@ impl UpdateCapacityReservationInputBuilder {
         &self.target_dpus
     }
     /// <p>The name of the capacity reservation.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl UpdateCapacityReservationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_capacity_reservation::UpdateCapacityReservationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_capacity_reservation::UpdateCapacityReservationInput {
             target_dpus: self.target_dpus,

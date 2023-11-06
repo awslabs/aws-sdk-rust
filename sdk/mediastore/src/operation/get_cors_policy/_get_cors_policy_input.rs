@@ -27,6 +27,7 @@ pub struct GetCorsPolicyInputBuilder {
 }
 impl GetCorsPolicyInputBuilder {
     /// <p>The name of the container that the policy is assigned to.</p>
+    /// This field is required.
     pub fn container_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetCorsPolicyInputBuilder {
     /// Consumes the builder and constructs a [`GetCorsPolicyInput`](crate::operation::get_cors_policy::GetCorsPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_cors_policy::GetCorsPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_cors_policy::GetCorsPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_cors_policy::GetCorsPolicyInput {
             container_name: self.container_name,
         })

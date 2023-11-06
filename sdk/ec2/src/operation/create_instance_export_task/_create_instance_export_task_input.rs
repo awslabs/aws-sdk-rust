@@ -32,8 +32,10 @@ impl CreateInstanceExportTaskInput {
         self.target_environment.as_ref()
     }
     /// <p>The tags to apply to the export instance task during creation.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
 }
 impl CreateInstanceExportTaskInput {
@@ -69,6 +71,7 @@ impl CreateInstanceExportTaskInputBuilder {
         &self.description
     }
     /// <p>The format and location for an export instance task.</p>
+    /// This field is required.
     pub fn export_to_s3_task(mut self, input: crate::types::ExportToS3TaskSpecification) -> Self {
         self.export_to_s3_task = ::std::option::Option::Some(input);
         self
@@ -83,6 +86,7 @@ impl CreateInstanceExportTaskInputBuilder {
         &self.export_to_s3_task
     }
     /// <p>The ID of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +101,7 @@ impl CreateInstanceExportTaskInputBuilder {
         &self.instance_id
     }
     /// <p>The target virtualization environment.</p>
+    /// This field is required.
     pub fn target_environment(mut self, input: crate::types::ExportEnvironment) -> Self {
         self.target_environment = ::std::option::Option::Some(input);
         self
@@ -135,7 +140,7 @@ impl CreateInstanceExportTaskInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_instance_export_task::CreateInstanceExportTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_instance_export_task::CreateInstanceExportTaskInput {
             description: self.description,

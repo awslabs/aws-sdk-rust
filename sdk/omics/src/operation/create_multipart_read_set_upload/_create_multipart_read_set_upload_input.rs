@@ -90,6 +90,7 @@ pub struct CreateMultipartReadSetUploadInputBuilder {
 }
 impl CreateMultipartReadSetUploadInputBuilder {
     /// <p> The sequence store ID for the store that is the destination of the multipart uploads. </p>
+    /// This field is required.
     pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_store_id = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +119,7 @@ impl CreateMultipartReadSetUploadInputBuilder {
         &self.client_token
     }
     /// <p> The type of file being uploaded. </p>
+    /// This field is required.
     pub fn source_file_type(mut self, input: crate::types::FileType) -> Self {
         self.source_file_type = ::std::option::Option::Some(input);
         self
@@ -132,6 +134,7 @@ impl CreateMultipartReadSetUploadInputBuilder {
         &self.source_file_type
     }
     /// <p> The source's subject ID. </p>
+    /// This field is required.
     pub fn subject_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subject_id = ::std::option::Option::Some(input.into());
         self
@@ -146,6 +149,7 @@ impl CreateMultipartReadSetUploadInputBuilder {
         &self.subject_id
     }
     /// <p> The source's sample ID. </p>
+    /// This field is required.
     pub fn sample_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sample_id = ::std::option::Option::Some(input.into());
         self
@@ -174,6 +178,7 @@ impl CreateMultipartReadSetUploadInputBuilder {
         &self.generated_from
     }
     /// <p> The ARN of the reference. </p>
+    /// This field is required.
     pub fn reference_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reference_arn = ::std::option::Option::Some(input.into());
         self
@@ -188,6 +193,7 @@ impl CreateMultipartReadSetUploadInputBuilder {
         &self.reference_arn
     }
     /// <p> The name of the read set. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -240,7 +246,7 @@ impl CreateMultipartReadSetUploadInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadInput {
             sequence_store_id: self.sequence_store_id,

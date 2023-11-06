@@ -2,7 +2,7 @@
 pub fn ser_lambda_container_params(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LambdaContainerParams,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.memory_size_in_kb {
         object.key("memorySizeInKB").number(
             #[allow(clippy::useless_conversion)]

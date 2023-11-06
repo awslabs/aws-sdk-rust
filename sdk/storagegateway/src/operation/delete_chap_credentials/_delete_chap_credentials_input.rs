@@ -39,6 +39,7 @@ pub struct DeleteChapCredentialsInputBuilder {
 }
 impl DeleteChapCredentialsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <code>DescribeStorediSCSIVolumes</code> operation to return to retrieve the TargetARN for specified VolumeARN.</p>
+    /// This field is required.
     pub fn target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_arn = ::std::option::Option::Some(input.into());
         self
@@ -53,6 +54,7 @@ impl DeleteChapCredentialsInputBuilder {
         &self.target_arn
     }
     /// <p>The iSCSI initiator that connects to the target.</p>
+    /// This field is required.
     pub fn initiator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.initiator_name = ::std::option::Option::Some(input.into());
         self
@@ -69,7 +71,7 @@ impl DeleteChapCredentialsInputBuilder {
     /// Consumes the builder and constructs a [`DeleteChapCredentialsInput`](crate::operation::delete_chap_credentials::DeleteChapCredentialsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_chap_credentials::DeleteChapCredentialsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_chap_credentials::DeleteChapCredentialsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_chap_credentials::DeleteChapCredentialsInput {
             target_arn: self.target_arn,

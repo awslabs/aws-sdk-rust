@@ -30,8 +30,10 @@ impl CreateDevicePoolInput {
         self.description.as_deref()
     }
     /// <p>The device pool's rules.</p>
-    pub fn rules(&self) -> ::std::option::Option<&[crate::types::Rule]> {
-        self.rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
+    pub fn rules(&self) -> &[crate::types::Rule] {
+        self.rules.as_deref().unwrap_or_default()
     }
     /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are available and meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many devices meet these constraints, your device pool might contain fewer devices than the value for this parameter.</p>
     /// <p>By specifying the maximum number of devices, you can control the costs that you incur by running tests.</p>
@@ -58,6 +60,7 @@ pub struct CreateDevicePoolInputBuilder {
 }
 impl CreateDevicePoolInputBuilder {
     /// <p>The ARN of the project for the device pool.</p>
+    /// This field is required.
     pub fn project_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_arn = ::std::option::Option::Some(input.into());
         self
@@ -72,6 +75,7 @@ impl CreateDevicePoolInputBuilder {
         &self.project_arn
     }
     /// <p>The device pool's name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -139,7 +143,7 @@ impl CreateDevicePoolInputBuilder {
     /// Consumes the builder and constructs a [`CreateDevicePoolInput`](crate::operation::create_device_pool::CreateDevicePoolInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_device_pool::CreateDevicePoolInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_device_pool::CreateDevicePoolInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_device_pool::CreateDevicePoolInput {
             project_arn: self.project_arn,
             name: self.name,

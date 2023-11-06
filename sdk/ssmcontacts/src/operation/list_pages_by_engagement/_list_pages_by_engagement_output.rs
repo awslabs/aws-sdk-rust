@@ -6,7 +6,7 @@ pub struct ListPagesByEngagementOutput {
     /// <p>The pagination token to continue to the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The list of engagements to contact channels.</p>
-    pub pages: ::std::option::Option<::std::vec::Vec<crate::types::Page>>,
+    pub pages: ::std::vec::Vec<crate::types::Page>,
     _request_id: Option<String>,
 }
 impl ListPagesByEngagementOutput {
@@ -15,8 +15,9 @@ impl ListPagesByEngagementOutput {
         self.next_token.as_deref()
     }
     /// <p>The list of engagements to contact channels.</p>
-    pub fn pages(&self) -> ::std::option::Option<&[crate::types::Page]> {
-        self.pages.as_deref()
+    pub fn pages(&self) -> &[crate::types::Page] {
+        use std::ops::Deref;
+        self.pages.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListPagesByEngagementOutput {
@@ -84,11 +85,23 @@ impl ListPagesByEngagementOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListPagesByEngagementOutput`](crate::operation::list_pages_by_engagement::ListPagesByEngagementOutput).
-    pub fn build(self) -> crate::operation::list_pages_by_engagement::ListPagesByEngagementOutput {
-        crate::operation::list_pages_by_engagement::ListPagesByEngagementOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`pages`](crate::operation::list_pages_by_engagement::builders::ListPagesByEngagementOutputBuilder::pages)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_pages_by_engagement::ListPagesByEngagementOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_pages_by_engagement::ListPagesByEngagementOutput {
             next_token: self.next_token,
-            pages: self.pages,
+            pages: self.pages.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "pages",
+                    "pages was not specified but it is required when building ListPagesByEngagementOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

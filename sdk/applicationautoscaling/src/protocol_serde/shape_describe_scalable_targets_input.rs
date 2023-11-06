@@ -2,7 +2,7 @@
 pub fn ser_describe_scalable_targets_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_scalable_targets::DescribeScalableTargetsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.service_namespace {
         object.key("ServiceNamespace").string(var_1.as_str());
     }

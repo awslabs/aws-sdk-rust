@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PipeSourceSelfManagedKafkaParameters {
     /// <p>The name of the topic that the pipe will read from.</p>
-    pub topic_name: ::std::option::Option<::std::string::String>,
+    pub topic_name: ::std::string::String,
     /// <p>(Streams only) The position in a stream from which to start reading.</p>
     pub starting_position: ::std::option::Option<crate::types::SelfManagedKafkaStartPosition>,
     /// <p>An array of server URLs.</p>
@@ -25,16 +25,19 @@ pub struct PipeSourceSelfManagedKafkaParameters {
 }
 impl PipeSourceSelfManagedKafkaParameters {
     /// <p>The name of the topic that the pipe will read from.</p>
-    pub fn topic_name(&self) -> ::std::option::Option<&str> {
-        self.topic_name.as_deref()
+    pub fn topic_name(&self) -> &str {
+        use std::ops::Deref;
+        self.topic_name.deref()
     }
     /// <p>(Streams only) The position in a stream from which to start reading.</p>
     pub fn starting_position(&self) -> ::std::option::Option<&crate::types::SelfManagedKafkaStartPosition> {
         self.starting_position.as_ref()
     }
     /// <p>An array of server URLs.</p>
-    pub fn additional_bootstrap_servers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.additional_bootstrap_servers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_bootstrap_servers.is_none()`.
+    pub fn additional_bootstrap_servers(&self) -> &[::std::string::String] {
+        self.additional_bootstrap_servers.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of records to include in each batch.</p>
     pub fn batch_size(&self) -> ::std::option::Option<i32> {
@@ -99,6 +102,7 @@ pub struct PipeSourceSelfManagedKafkaParametersBuilder {
 }
 impl PipeSourceSelfManagedKafkaParametersBuilder {
     /// <p>The name of the topic that the pipe will read from.</p>
+    /// This field is required.
     pub fn topic_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_name = ::std::option::Option::Some(input.into());
         self
@@ -231,9 +235,18 @@ impl PipeSourceSelfManagedKafkaParametersBuilder {
         &self.vpc
     }
     /// Consumes the builder and constructs a [`PipeSourceSelfManagedKafkaParameters`](crate::types::PipeSourceSelfManagedKafkaParameters).
-    pub fn build(self) -> crate::types::PipeSourceSelfManagedKafkaParameters {
-        crate::types::PipeSourceSelfManagedKafkaParameters {
-            topic_name: self.topic_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`topic_name`](crate::types::builders::PipeSourceSelfManagedKafkaParametersBuilder::topic_name)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::PipeSourceSelfManagedKafkaParameters, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PipeSourceSelfManagedKafkaParameters {
+            topic_name: self.topic_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "topic_name",
+                    "topic_name was not specified but it is required when building PipeSourceSelfManagedKafkaParameters",
+                )
+            })?,
             starting_position: self.starting_position,
             additional_bootstrap_servers: self.additional_bootstrap_servers,
             batch_size: self.batch_size,
@@ -242,7 +255,7 @@ impl PipeSourceSelfManagedKafkaParametersBuilder {
             credentials: self.credentials,
             server_root_ca_certificate: self.server_root_ca_certificate,
             vpc: self.vpc,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for PipeSourceSelfManagedKafkaParametersBuilder {

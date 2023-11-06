@@ -5,21 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Launch {
     /// <p>The ARN of the launch.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The name of the launch.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The name or ARN of the project that contains the launch.</p>
     pub project: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the launch.</p>
-    pub status: ::std::option::Option<crate::types::LaunchStatus>,
+    pub status: crate::types::LaunchStatus,
     /// <p>If the launch was stopped, this is the string that was entered by the person who stopped the launch, to explain why it was stopped.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The description of the launch.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the launch is created.</p>
-    pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_time: ::aws_smithy_types::DateTime,
     /// <p>The date and time that the launch was most recently updated.</p>
-    pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub last_updated_time: ::aws_smithy_types::DateTime,
     /// <p>A structure that contains information about the start and end times of the launch.</p>
     pub execution: ::std::option::Option<crate::types::LaunchExecution>,
     /// <p>An array of structures that define the feature variations that are being used in the launch.</p>
@@ -29,7 +29,7 @@ pub struct Launch {
     /// <p>This value is used when Evidently assigns a particular user session to the launch, to help create a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>.</p>
     pub randomization_salt: ::std::option::Option<::std::string::String>,
     /// <p>The type of launch.</p>
-    pub r#type: ::std::option::Option<crate::types::LaunchType>,
+    pub r#type: crate::types::LaunchType,
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
     pub scheduled_splits_definition: ::std::option::Option<crate::types::ScheduledSplitsLaunchDefinition>,
     /// <p>The list of tag keys and values associated with this launch.</p>
@@ -37,20 +37,22 @@ pub struct Launch {
 }
 impl Launch {
     /// <p>The ARN of the launch.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The name of the launch.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The name or ARN of the project that contains the launch.</p>
     pub fn project(&self) -> ::std::option::Option<&str> {
         self.project.as_deref()
     }
     /// <p>The current state of the launch.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::LaunchStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::LaunchStatus {
+        &self.status
     }
     /// <p>If the launch was stopped, this is the string that was entered by the person who stopped the launch, to explain why it was stopped.</p>
     pub fn status_reason(&self) -> ::std::option::Option<&str> {
@@ -61,32 +63,36 @@ impl Launch {
         self.description.as_deref()
     }
     /// <p>The date and time that the launch is created.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_time.as_ref()
+    pub fn created_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_time
     }
     /// <p>The date and time that the launch was most recently updated.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.last_updated_time.as_ref()
+    pub fn last_updated_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.last_updated_time
     }
     /// <p>A structure that contains information about the start and end times of the launch.</p>
     pub fn execution(&self) -> ::std::option::Option<&crate::types::LaunchExecution> {
         self.execution.as_ref()
     }
     /// <p>An array of structures that define the feature variations that are being used in the launch.</p>
-    pub fn groups(&self) -> ::std::option::Option<&[crate::types::LaunchGroup]> {
-        self.groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
+    pub fn groups(&self) -> &[crate::types::LaunchGroup] {
+        self.groups.as_deref().unwrap_or_default()
     }
     /// <p>An array of structures that define the metrics that are being used to monitor the launch performance.</p>
-    pub fn metric_monitors(&self) -> ::std::option::Option<&[crate::types::MetricMonitor]> {
-        self.metric_monitors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_monitors.is_none()`.
+    pub fn metric_monitors(&self) -> &[crate::types::MetricMonitor] {
+        self.metric_monitors.as_deref().unwrap_or_default()
     }
     /// <p>This value is used when Evidently assigns a particular user session to the launch, to help create a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>.</p>
     pub fn randomization_salt(&self) -> ::std::option::Option<&str> {
         self.randomization_salt.as_deref()
     }
     /// <p>The type of launch.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::LaunchType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::LaunchType {
+        &self.r#type
     }
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
     pub fn scheduled_splits_definition(&self) -> ::std::option::Option<&crate::types::ScheduledSplitsLaunchDefinition> {
@@ -126,6 +132,7 @@ pub struct LaunchBuilder {
 }
 impl LaunchBuilder {
     /// <p>The ARN of the launch.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -140,6 +147,7 @@ impl LaunchBuilder {
         &self.arn
     }
     /// <p>The name of the launch.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -168,6 +176,7 @@ impl LaunchBuilder {
         &self.project
     }
     /// <p>The current state of the launch.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::LaunchStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -210,6 +219,7 @@ impl LaunchBuilder {
         &self.description
     }
     /// <p>The date and time that the launch is created.</p>
+    /// This field is required.
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
         self
@@ -224,6 +234,7 @@ impl LaunchBuilder {
         &self.created_time
     }
     /// <p>The date and time that the launch was most recently updated.</p>
+    /// This field is required.
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
         self
@@ -306,6 +317,7 @@ impl LaunchBuilder {
         &self.randomization_salt
     }
     /// <p>The type of launch.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::LaunchType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -354,23 +366,60 @@ impl LaunchBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`Launch`](crate::types::Launch).
-    pub fn build(self) -> crate::types::Launch {
-        crate::types::Launch {
-            arn: self.arn,
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::LaunchBuilder::arn)
+    /// - [`name`](crate::types::builders::LaunchBuilder::name)
+    /// - [`status`](crate::types::builders::LaunchBuilder::status)
+    /// - [`created_time`](crate::types::builders::LaunchBuilder::created_time)
+    /// - [`last_updated_time`](crate::types::builders::LaunchBuilder::last_updated_time)
+    /// - [`r#type`](crate::types::builders::LaunchBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::Launch, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Launch {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building Launch",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building Launch",
+                )
+            })?,
             project: self.project,
-            status: self.status,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building Launch",
+                )
+            })?,
             status_reason: self.status_reason,
             description: self.description,
-            created_time: self.created_time,
-            last_updated_time: self.last_updated_time,
+            created_time: self.created_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_time",
+                    "created_time was not specified but it is required when building Launch",
+                )
+            })?,
+            last_updated_time: self.last_updated_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "last_updated_time",
+                    "last_updated_time was not specified but it is required when building Launch",
+                )
+            })?,
             execution: self.execution,
             groups: self.groups,
             metric_monitors: self.metric_monitors,
             randomization_salt: self.randomization_salt,
-            r#type: self.r#type,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building Launch",
+                )
+            })?,
             scheduled_splits_definition: self.scheduled_splits_definition,
             tags: self.tags,
-        }
+        })
     }
 }

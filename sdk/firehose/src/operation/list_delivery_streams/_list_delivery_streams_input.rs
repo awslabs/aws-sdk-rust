@@ -110,7 +110,7 @@ impl ListDeliveryStreamsInputBuilder {
     /// Consumes the builder and constructs a [`ListDeliveryStreamsInput`](crate::operation::list_delivery_streams::ListDeliveryStreamsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_delivery_streams::ListDeliveryStreamsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_delivery_streams::ListDeliveryStreamsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_delivery_streams::ListDeliveryStreamsInput {
             limit: self.limit,

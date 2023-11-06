@@ -27,6 +27,7 @@ pub struct GetRecoveryPointInputBuilder {
 }
 impl GetRecoveryPointInputBuilder {
     /// <p>The unique identifier of the recovery point to return information for.</p>
+    /// This field is required.
     pub fn recovery_point_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recovery_point_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetRecoveryPointInputBuilder {
     /// Consumes the builder and constructs a [`GetRecoveryPointInput`](crate::operation::get_recovery_point::GetRecoveryPointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_recovery_point::GetRecoveryPointInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_recovery_point::GetRecoveryPointInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_recovery_point::GetRecoveryPointInput {
             recovery_point_id: self.recovery_point_id,
         })

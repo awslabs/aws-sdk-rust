@@ -2,7 +2,7 @@
 pub fn ser_input_attachment(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InputAttachment,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.automatic_input_failover_settings {
         #[allow(unused_mut)]
         let mut object_2 = object.key("automaticInputFailoverSettings").start_object();

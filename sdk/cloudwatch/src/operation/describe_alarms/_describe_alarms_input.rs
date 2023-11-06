@@ -33,8 +33,10 @@ pub struct DescribeAlarmsInput {
 }
 impl DescribeAlarmsInput {
     /// <p>The names of the alarms to retrieve information about.</p>
-    pub fn alarm_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.alarm_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alarm_names.is_none()`.
+    pub fn alarm_names(&self) -> &[::std::string::String] {
+        self.alarm_names.as_deref().unwrap_or_default()
     }
     /// <p>An alarm name prefix. If you specify this parameter, you receive information about all alarms that have names that start with this prefix.</p>
     /// <p>If this parameter is specified, you cannot specify <code>AlarmNames</code>.</p>
@@ -44,8 +46,10 @@ impl DescribeAlarmsInput {
     /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned, even if composite alarms exist in the account.</p>
     /// <p>For example, if you omit this parameter or specify <code>MetricAlarms</code>, the operation returns only a list of metric alarms. It does not return any composite alarms, even if composite alarms exist in the account.</p>
     /// <p>If you specify <code>CompositeAlarms</code>, the operation returns only a list of composite alarms, and does not return any metric alarms.</p>
-    pub fn alarm_types(&self) -> ::std::option::Option<&[crate::types::AlarmType]> {
-        self.alarm_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alarm_types.is_none()`.
+    pub fn alarm_types(&self) -> &[crate::types::AlarmType] {
+        self.alarm_types.as_deref().unwrap_or_default()
     }
     /// <p>If you use this parameter and specify the name of a composite alarm, the operation returns information about the "children" alarms of the alarm you specify. These are the metric alarms and composite alarms referenced in the <code>AlarmRule</code> field of the composite alarm that you specify in <code>ChildrenOfAlarmName</code>. Information about the composite alarm that you name in <code>ChildrenOfAlarmName</code> is not returned.</p>
     /// <p>If you specify <code>ChildrenOfAlarmName</code>, you cannot specify any other parameters in the request except for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation error.</p> <note>
@@ -268,7 +272,7 @@ impl DescribeAlarmsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAlarmsInput`](crate::operation::describe_alarms::DescribeAlarmsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_alarms::DescribeAlarmsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_alarms::DescribeAlarmsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_alarms::DescribeAlarmsInput {
             alarm_names: self.alarm_names,
             alarm_name_prefix: self.alarm_name_prefix,

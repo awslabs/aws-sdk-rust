@@ -17,8 +17,10 @@ impl AutoTuneOptionsInput {
         self.desired_state.as_ref()
     }
     /// <p>A list of maintenance schedules during which Auto-Tune can deploy changes. Maintenance windows are deprecated and have been replaced with <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html">off-peak windows</a>.</p>
-    pub fn maintenance_schedules(&self) -> ::std::option::Option<&[crate::types::AutoTuneMaintenanceSchedule]> {
-        self.maintenance_schedules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.maintenance_schedules.is_none()`.
+    pub fn maintenance_schedules(&self) -> &[crate::types::AutoTuneMaintenanceSchedule] {
+        self.maintenance_schedules.as_deref().unwrap_or_default()
     }
     /// <p>Whether to schedule Auto-Tune optimizations that require blue/green deployments during the domain's configured daily off-peak window.</p>
     pub fn use_off_peak_window(&self) -> ::std::option::Option<bool> {

@@ -26,8 +26,10 @@ impl ListReceivedGrantsForOrganizationInput {
     /// <li> <p> <code>ParentArn</code> </p> </li>
     /// <li> <p> <code>GranteePrincipalArn</code> </p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>Token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -56,6 +58,7 @@ pub struct ListReceivedGrantsForOrganizationInputBuilder {
 }
 impl ListReceivedGrantsForOrganizationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the received license.</p>
+    /// This field is required.
     pub fn license_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_arn = ::std::option::Option::Some(input.into());
         self
@@ -134,7 +137,7 @@ impl ListReceivedGrantsForOrganizationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_received_grants_for_organization::ListReceivedGrantsForOrganizationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_received_grants_for_organization::ListReceivedGrantsForOrganizationInput {

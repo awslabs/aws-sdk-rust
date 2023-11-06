@@ -34,6 +34,7 @@ pub struct GetSubscriptionRequestDetailsInputBuilder {
 }
 impl GetSubscriptionRequestDetailsInputBuilder {
     /// <p>The identifier of the Amazon DataZone domain in which to get the subscription request details.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetSubscriptionRequestDetailsInputBuilder {
         &self.domain_identifier
     }
     /// <p>The identifier of the subscription request the details of which to get.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl GetSubscriptionRequestDetailsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_subscription_request_details::GetSubscriptionRequestDetailsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_subscription_request_details::GetSubscriptionRequestDetailsInput {
             domain_identifier: self.domain_identifier,

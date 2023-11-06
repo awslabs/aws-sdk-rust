@@ -14,7 +14,7 @@ pub struct ProjectEnvironment {
     /// <li> <p>The environment types <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code> are available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), and EU (Ireland).</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build environment compute types</a> in the <i>CodeBuild user guide</i>.</p>
-    pub r#type: ::std::option::Option<crate::types::EnvironmentType>,
+    pub r#type: crate::types::EnvironmentType,
     /// <p>The image tag or image digest that identifies the Docker image to use for this build project. Use the following formats:</p>
     /// <ul>
     /// <li> <p>For an image tag: <code>
@@ -41,7 +41,7 @@ pub struct ProjectEnvironment {
     /// </registry></code>.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-available.html">Docker images provided by CodeBuild</a> in the <i>CodeBuild user guide</i>.</p>
-    pub image: ::std::option::Option<::std::string::String>,
+    pub image: ::std::string::String,
     /// <p>Information about the compute resources the build project uses. Available values include:</p>
     /// <ul>
     /// <li> <p> <code>BUILD_GENERAL1_SMALL</code>: Use up to 3 GB memory and 2 vCPUs for builds.</p> </li>
@@ -56,7 +56,7 @@ pub struct ProjectEnvironment {
     /// <li> <p> For environment type <code>ARM_CONTAINER</code>, you can use up to 16 GB memory and 8 vCPUs on ARM-based processors for builds.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build Environment Compute Types</a> in the <i>CodeBuild User Guide.</i> </p>
-    pub compute_type: ::std::option::Option<crate::types::ComputeType>,
+    pub compute_type: crate::types::ComputeType,
     /// <p>A set of environment variables to make available to builds for this build project.</p>
     pub environment_variables: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>>,
     /// <p>Enables running the Docker daemon inside a Docker container. Set to true only if the build project is used to build Docker images. Otherwise, a build that attempts to interact with the Docker daemon fails. The default setting is <code>false</code>.</p>
@@ -91,8 +91,8 @@ impl ProjectEnvironment {
     /// <li> <p>The environment types <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code> are available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), and EU (Ireland).</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build environment compute types</a> in the <i>CodeBuild user guide</i>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::EnvironmentType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::EnvironmentType {
+        &self.r#type
     }
     /// <p>The image tag or image digest that identifies the Docker image to use for this build project. Use the following formats:</p>
     /// <ul>
@@ -120,8 +120,9 @@ impl ProjectEnvironment {
     /// </registry></code>.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-available.html">Docker images provided by CodeBuild</a> in the <i>CodeBuild user guide</i>.</p>
-    pub fn image(&self) -> ::std::option::Option<&str> {
-        self.image.as_deref()
+    pub fn image(&self) -> &str {
+        use std::ops::Deref;
+        self.image.deref()
     }
     /// <p>Information about the compute resources the build project uses. Available values include:</p>
     /// <ul>
@@ -137,12 +138,14 @@ impl ProjectEnvironment {
     /// <li> <p> For environment type <code>ARM_CONTAINER</code>, you can use up to 16 GB memory and 8 vCPUs on ARM-based processors for builds.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build Environment Compute Types</a> in the <i>CodeBuild User Guide.</i> </p>
-    pub fn compute_type(&self) -> ::std::option::Option<&crate::types::ComputeType> {
-        self.compute_type.as_ref()
+    pub fn compute_type(&self) -> &crate::types::ComputeType {
+        &self.compute_type
     }
     /// <p>A set of environment variables to make available to builds for this build project.</p>
-    pub fn environment_variables(&self) -> ::std::option::Option<&[crate::types::EnvironmentVariable]> {
-        self.environment_variables.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.environment_variables.is_none()`.
+    pub fn environment_variables(&self) -> &[crate::types::EnvironmentVariable] {
+        self.environment_variables.as_deref().unwrap_or_default()
     }
     /// <p>Enables running the Docker daemon inside a Docker container. Set to true only if the build project is used to build Docker images. Otherwise, a build that attempts to interact with the Docker daemon fails. The default setting is <code>false</code>.</p>
     /// <p>You can initialize the Docker daemon during the install phase of your build by adding one of the following sets of commands to the install phase of your buildspec file:</p>
@@ -204,6 +207,7 @@ impl ProjectEnvironmentBuilder {
     /// <li> <p>The environment types <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code> are available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), and EU (Ireland).</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build environment compute types</a> in the <i>CodeBuild user guide</i>.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::EnvironmentType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -261,6 +265,7 @@ impl ProjectEnvironmentBuilder {
     /// </registry></code>.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-available.html">Docker images provided by CodeBuild</a> in the <i>CodeBuild user guide</i>.</p>
+    /// This field is required.
     pub fn image(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image = ::std::option::Option::Some(input.into());
         self
@@ -338,6 +343,7 @@ impl ProjectEnvironmentBuilder {
     /// <li> <p> For environment type <code>ARM_CONTAINER</code>, you can use up to 16 GB memory and 8 vCPUs on ARM-based processors for builds.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build Environment Compute Types</a> in the <i>CodeBuild User Guide.</i> </p>
+    /// This field is required.
     pub fn compute_type(mut self, input: crate::types::ComputeType) -> Self {
         self.compute_type = ::std::option::Option::Some(input);
         self
@@ -490,16 +496,35 @@ impl ProjectEnvironmentBuilder {
         &self.image_pull_credentials_type
     }
     /// Consumes the builder and constructs a [`ProjectEnvironment`](crate::types::ProjectEnvironment).
-    pub fn build(self) -> crate::types::ProjectEnvironment {
-        crate::types::ProjectEnvironment {
-            r#type: self.r#type,
-            image: self.image,
-            compute_type: self.compute_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::ProjectEnvironmentBuilder::r#type)
+    /// - [`image`](crate::types::builders::ProjectEnvironmentBuilder::image)
+    /// - [`compute_type`](crate::types::builders::ProjectEnvironmentBuilder::compute_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::ProjectEnvironment, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ProjectEnvironment {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building ProjectEnvironment",
+                )
+            })?,
+            image: self.image.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "image",
+                    "image was not specified but it is required when building ProjectEnvironment",
+                )
+            })?,
+            compute_type: self.compute_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "compute_type",
+                    "compute_type was not specified but it is required when building ProjectEnvironment",
+                )
+            })?,
             environment_variables: self.environment_variables,
             privileged_mode: self.privileged_mode,
             certificate: self.certificate,
             registry_credential: self.registry_credential,
             image_pull_credentials_type: self.image_pull_credentials_type,
-        }
+        })
     }
 }

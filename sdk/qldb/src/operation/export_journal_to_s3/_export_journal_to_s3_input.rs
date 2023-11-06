@@ -86,6 +86,7 @@ pub struct ExportJournalToS3InputBuilder {
 }
 impl ExportJournalToS3InputBuilder {
     /// <p>The name of the ledger.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -103,6 +104,7 @@ impl ExportJournalToS3InputBuilder {
     /// <p>The <code>InclusiveStartTime</code> must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>
     /// <p>The <code>InclusiveStartTime</code> must be before <code>ExclusiveEndTime</code>.</p>
     /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's <code>CreationDateTime</code>, Amazon QLDB defaults it to the ledger's <code>CreationDateTime</code>.</p>
+    /// This field is required.
     pub fn inclusive_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inclusive_start_time = ::std::option::Option::Some(input);
         self
@@ -125,6 +127,7 @@ impl ExportJournalToS3InputBuilder {
     /// <p>The exclusive end date and time for the range of journal contents to export.</p>
     /// <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>
     /// <p>The <code>ExclusiveEndTime</code> must be less than or equal to the current UTC date and time.</p>
+    /// This field is required.
     pub fn exclusive_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.exclusive_end_time = ::std::option::Option::Some(input);
         self
@@ -143,6 +146,7 @@ impl ExportJournalToS3InputBuilder {
         &self.exclusive_end_time
     }
     /// <p>The configuration settings of the Amazon S3 bucket destination for your export request.</p>
+    /// This field is required.
     pub fn s3_export_configuration(mut self, input: crate::types::S3ExportConfiguration) -> Self {
         self.s3_export_configuration = ::std::option::Option::Some(input);
         self
@@ -162,6 +166,7 @@ impl ExportJournalToS3InputBuilder {
     /// <li> <p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p> </li>
     /// </ul>
     /// <p>To pass a role to QLDB when requesting a journal export, you must have permissions to perform the <code>iam:PassRole</code> action on the IAM role resource. This is required for all journal export requests.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -208,7 +213,7 @@ impl ExportJournalToS3InputBuilder {
     /// Consumes the builder and constructs a [`ExportJournalToS3Input`](crate::operation::export_journal_to_s3::ExportJournalToS3Input).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::export_journal_to_s3::ExportJournalToS3Input, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::export_journal_to_s3::ExportJournalToS3Input, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::export_journal_to_s3::ExportJournalToS3Input {
             name: self.name,
             inclusive_start_time: self.inclusive_start_time,

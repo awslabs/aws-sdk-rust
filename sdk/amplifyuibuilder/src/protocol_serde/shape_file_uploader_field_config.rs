@@ -2,35 +2,35 @@
 pub fn ser_file_uploader_field_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FileUploaderFieldConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.access_level {
-        object.key("accessLevel").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("accessLevel").string(input.access_level.as_str());
     }
-    if let Some(var_2) = &input.accepted_file_types {
-        let mut array_3 = object.key("acceptedFileTypes").start_array();
-        for item_4 in var_2 {
+    {
+        let mut array_1 = object.key("acceptedFileTypes").start_array();
+        for item_2 in &input.accepted_file_types {
             {
-                array_3.value().string(item_4.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_3.finish();
+        array_1.finish();
     }
-    if let Some(var_5) = &input.show_thumbnails {
-        object.key("showThumbnails").boolean(*var_5);
+    if let Some(var_3) = &input.show_thumbnails {
+        object.key("showThumbnails").boolean(*var_3);
     }
-    if let Some(var_6) = &input.is_resumable {
-        object.key("isResumable").boolean(*var_6);
+    if let Some(var_4) = &input.is_resumable {
+        object.key("isResumable").boolean(*var_4);
     }
-    if let Some(var_7) = &input.max_file_count {
+    if let Some(var_5) = &input.max_file_count {
         object.key("maxFileCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_7).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_8) = &input.max_size {
+    if let Some(var_6) = &input.max_size {
         object.key("maxSize").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_8).into()),
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
     Ok(())
@@ -91,7 +91,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::file_uploader_field_config_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

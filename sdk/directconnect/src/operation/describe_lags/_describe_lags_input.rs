@@ -41,7 +41,9 @@ impl DescribeLagsInputBuilder {
         &self.lag_id
     }
     /// Consumes the builder and constructs a [`DescribeLagsInput`](crate::operation::describe_lags::DescribeLagsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_lags::DescribeLagsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_lags::DescribeLagsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_lags::DescribeLagsInput { lag_id: self.lag_id })
     }
 }

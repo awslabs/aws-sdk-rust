@@ -41,6 +41,7 @@ pub struct DescribeParametersInputBuilder {
 }
 impl DescribeParametersInputBuilder {
     /// <p>he name of a specific parameter group to return details for.</p>
+    /// This field is required.
     pub fn parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_group_name = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl DescribeParametersInputBuilder {
     /// Consumes the builder and constructs a [`DescribeParametersInput`](crate::operation::describe_parameters::DescribeParametersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_parameters::DescribeParametersInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_parameters::DescribeParametersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_parameters::DescribeParametersInput {
             parameter_group_name: self.parameter_group_name,
             max_results: self.max_results,

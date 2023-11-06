@@ -35,6 +35,7 @@ pub struct SnapshotSortingEntityBuilder {
 }
 impl SnapshotSortingEntityBuilder {
     /// <p>The category for sorting the snapshots.</p>
+    /// This field is required.
     pub fn attribute(mut self, input: crate::types::SnapshotAttributeToSortBy) -> Self {
         self.attribute = ::std::option::Option::Some(input);
         self

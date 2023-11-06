@@ -41,6 +41,7 @@ pub struct UpdateServiceSettingsInputBuilder {
 }
 impl UpdateServiceSettingsInputBuilder {
     /// <p>Describes if the discovery of Linux subscriptions is enabled.</p>
+    /// This field is required.
     pub fn linux_subscriptions_discovery(mut self, input: crate::types::LinuxSubscriptionsDiscovery) -> Self {
         self.linux_subscriptions_discovery = ::std::option::Option::Some(input);
         self
@@ -55,6 +56,7 @@ impl UpdateServiceSettingsInputBuilder {
         &self.linux_subscriptions_discovery
     }
     /// <p>The settings defined for Linux subscriptions discovery. The settings include if Organizations integration has been enabled, and which Regions data will be aggregated from.</p>
+    /// This field is required.
     pub fn linux_subscriptions_discovery_settings(mut self, input: crate::types::LinuxSubscriptionsDiscoverySettings) -> Self {
         self.linux_subscriptions_discovery_settings = ::std::option::Option::Some(input);
         self
@@ -88,7 +90,7 @@ impl UpdateServiceSettingsInputBuilder {
     /// Consumes the builder and constructs a [`UpdateServiceSettingsInput`](crate::operation::update_service_settings::UpdateServiceSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_service_settings::UpdateServiceSettingsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_service_settings::UpdateServiceSettingsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_service_settings::UpdateServiceSettingsInput {
             linux_subscriptions_discovery: self.linux_subscriptions_discovery,

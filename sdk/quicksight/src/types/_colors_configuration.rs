@@ -9,8 +9,10 @@ pub struct ColorsConfiguration {
 }
 impl ColorsConfiguration {
     /// <p>A list of up to 50 custom colors.</p>
-    pub fn custom_colors(&self) -> ::std::option::Option<&[crate::types::CustomColor]> {
-        self.custom_colors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_colors.is_none()`.
+    pub fn custom_colors(&self) -> &[crate::types::CustomColor] {
+        self.custom_colors.as_deref().unwrap_or_default()
     }
 }
 impl ColorsConfiguration {

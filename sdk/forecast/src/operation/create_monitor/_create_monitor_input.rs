@@ -20,8 +20,10 @@ impl CreateMonitorInput {
         self.resource_arn.as_deref()
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the monitor resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateMonitorInput {
@@ -41,6 +43,7 @@ pub struct CreateMonitorInputBuilder {
 }
 impl CreateMonitorInputBuilder {
     /// <p>The name of the monitor resource.</p>
+    /// This field is required.
     pub fn monitor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitor_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl CreateMonitorInputBuilder {
         &self.monitor_name
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor to monitor.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -91,7 +95,7 @@ impl CreateMonitorInputBuilder {
     /// Consumes the builder and constructs a [`CreateMonitorInput`](crate::operation::create_monitor::CreateMonitorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_monitor::CreateMonitorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_monitor::CreateMonitorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_monitor::CreateMonitorInput {
             monitor_name: self.monitor_name,
             resource_arn: self.resource_arn,

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetPolicyVersion`](crate::operation::get_policy_version::builders::GetPolicyVersionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`policy_name(impl Into<String>)`](crate::operation::get_policy_version::builders::GetPolicyVersionFluentBuilder::policy_name) / [`set_policy_name(Option<String>)`](crate::operation::get_policy_version::builders::GetPolicyVersionFluentBuilder::set_policy_name): <p>The name of the policy.</p>
-    ///   - [`policy_version_id(impl Into<String>)`](crate::operation::get_policy_version::builders::GetPolicyVersionFluentBuilder::policy_version_id) / [`set_policy_version_id(Option<String>)`](crate::operation::get_policy_version::builders::GetPolicyVersionFluentBuilder::set_policy_version_id): <p>The policy version ID.</p>
+    ///   - [`policy_name(impl Into<String>)`](crate::operation::get_policy_version::builders::GetPolicyVersionFluentBuilder::policy_name) / [`set_policy_name(Option<String>)`](crate::operation::get_policy_version::builders::GetPolicyVersionFluentBuilder::set_policy_name):<br>required: **true**<br><p>The name of the policy.</p><br>
+    ///   - [`policy_version_id(impl Into<String>)`](crate::operation::get_policy_version::builders::GetPolicyVersionFluentBuilder::policy_version_id) / [`set_policy_version_id(Option<String>)`](crate::operation::get_policy_version::builders::GetPolicyVersionFluentBuilder::set_policy_version_id):<br>required: **true**<br><p>The policy version ID.</p><br>
     /// - On success, responds with [`GetPolicyVersionOutput`](crate::operation::get_policy_version::GetPolicyVersionOutput) with field(s):
     ///   - [`policy_arn(Option<String>)`](crate::operation::get_policy_version::GetPolicyVersionOutput::policy_arn): <p>The policy ARN.</p>
     ///   - [`policy_name(Option<String>)`](crate::operation::get_policy_version::GetPolicyVersionOutput::policy_name): <p>The policy name.</p>

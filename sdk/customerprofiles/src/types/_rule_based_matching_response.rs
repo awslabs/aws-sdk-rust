@@ -40,8 +40,10 @@ impl RuleBasedMatchingResponse {
         self.enabled
     }
     /// <p>Configures how the rule-based matching process should match profiles. You can have up to 15 <code>MatchingRule</code> in the <code>MatchingRules</code>.</p>
-    pub fn matching_rules(&self) -> ::std::option::Option<&[crate::types::MatchingRule]> {
-        self.matching_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.matching_rules.is_none()`.
+    pub fn matching_rules(&self) -> &[crate::types::MatchingRule] {
+        self.matching_rules.as_deref().unwrap_or_default()
     }
     /// <p>PENDING</p>
     /// <ul>

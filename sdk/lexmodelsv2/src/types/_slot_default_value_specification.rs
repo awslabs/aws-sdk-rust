@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SlotDefaultValueSpecification {
     /// <p>A list of default values. Amazon Lex chooses the default value to use in the order that they are presented in the list.</p>
-    pub default_value_list: ::std::option::Option<::std::vec::Vec<crate::types::SlotDefaultValue>>,
+    pub default_value_list: ::std::vec::Vec<crate::types::SlotDefaultValue>,
 }
 impl SlotDefaultValueSpecification {
     /// <p>A list of default values. Amazon Lex chooses the default value to use in the order that they are presented in the list.</p>
-    pub fn default_value_list(&self) -> ::std::option::Option<&[crate::types::SlotDefaultValue]> {
-        self.default_value_list.as_deref()
+    pub fn default_value_list(&self) -> &[crate::types::SlotDefaultValue] {
+        use std::ops::Deref;
+        self.default_value_list.deref()
     }
 }
 impl SlotDefaultValueSpecification {
@@ -48,9 +49,16 @@ impl SlotDefaultValueSpecificationBuilder {
         &self.default_value_list
     }
     /// Consumes the builder and constructs a [`SlotDefaultValueSpecification`](crate::types::SlotDefaultValueSpecification).
-    pub fn build(self) -> crate::types::SlotDefaultValueSpecification {
-        crate::types::SlotDefaultValueSpecification {
-            default_value_list: self.default_value_list,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`default_value_list`](crate::types::builders::SlotDefaultValueSpecificationBuilder::default_value_list)
+    pub fn build(self) -> ::std::result::Result<crate::types::SlotDefaultValueSpecification, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SlotDefaultValueSpecification {
+            default_value_list: self.default_value_list.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "default_value_list",
+                    "default_value_list was not specified but it is required when building SlotDefaultValueSpecification",
+                )
+            })?,
+        })
     }
 }

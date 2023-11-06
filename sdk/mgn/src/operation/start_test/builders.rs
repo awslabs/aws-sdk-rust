@@ -10,7 +10,7 @@ impl StartTestInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_test::StartTestOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::start_test::StartTestError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -66,12 +66,15 @@ impl StartTestFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_test::StartTestOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::start_test::StartTestError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::start_test::StartTest::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -80,20 +83,15 @@ impl StartTestFluentBuilder {
         crate::operation::start_test::StartTest::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::start_test::StartTestOutput,
-            crate::operation::start_test::StartTestError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::start_test::StartTestError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::start_test::StartTestOutput,
+        crate::operation::start_test::StartTestError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -106,21 +104,21 @@ impl StartTestFluentBuilder {
     }
     /// Appends an item to `sourceServerIDs`.
     ///
-    /// To override the contents of this collection use [`set_source_server_i_ds`](Self::set_source_server_i_ds).
+    /// To override the contents of this collection use [`set_source_server_ids`](Self::set_source_server_ids).
     ///
     /// <p>Start Test for Source Server IDs.</p>
-    pub fn source_server_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.source_server_i_ds(input.into());
+    pub fn source_server_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.source_server_ids(input.into());
         self
     }
     /// <p>Start Test for Source Server IDs.</p>
-    pub fn set_source_server_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inner = self.inner.set_source_server_i_ds(input);
+    pub fn set_source_server_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_source_server_ids(input);
         self
     }
     /// <p>Start Test for Source Server IDs.</p>
-    pub fn get_source_server_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        self.inner.get_source_server_i_ds()
+    pub fn get_source_server_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_source_server_ids()
     }
     /// Adds a key-value pair to `tags`.
     ///

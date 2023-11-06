@@ -2,7 +2,7 @@
 pub fn ser_start_build_batch_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_build_batch::StartBuildBatchInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.project_name {
         object.key("projectName").string(var_1.as_str());
     }

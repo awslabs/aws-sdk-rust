@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ColdStorageOptions {
     /// <p>Enable cold storage option. Accepted values true or false</p>
-    pub enabled: ::std::option::Option<bool>,
+    pub enabled: bool,
 }
 impl ColdStorageOptions {
     /// <p>Enable cold storage option. Accepted values true or false</p>
-    pub fn enabled(&self) -> ::std::option::Option<bool> {
+    pub fn enabled(&self) -> bool {
         self.enabled
     }
 }
@@ -28,6 +28,7 @@ pub struct ColdStorageOptionsBuilder {
 }
 impl ColdStorageOptionsBuilder {
     /// <p>Enable cold storage option. Accepted values true or false</p>
+    /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,16 @@ impl ColdStorageOptionsBuilder {
         &self.enabled
     }
     /// Consumes the builder and constructs a [`ColdStorageOptions`](crate::types::ColdStorageOptions).
-    pub fn build(self) -> crate::types::ColdStorageOptions {
-        crate::types::ColdStorageOptions { enabled: self.enabled }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`enabled`](crate::types::builders::ColdStorageOptionsBuilder::enabled)
+    pub fn build(self) -> ::std::result::Result<crate::types::ColdStorageOptions, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ColdStorageOptions {
+            enabled: self.enabled.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "enabled",
+                    "enabled was not specified but it is required when building ColdStorageOptions",
+                )
+            })?,
+        })
     }
 }

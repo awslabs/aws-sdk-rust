@@ -2,7 +2,7 @@
 pub fn ser_tag_scope_term(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TagScopeTerm,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.comparator {
         object.key("comparator").string(var_1.as_str());
     }
@@ -57,9 +57,7 @@ where
                             );
                         }
                         "tagValues" => {
-                            builder = builder.set_tag_values(crate::protocol_serde::shape___list_of_tag_value_pair::de___list_of_tag_value_pair(
-                                tokens,
-                            )?);
+                            builder = builder.set_tag_values(crate::protocol_serde::shape_list_of_tag_value_pair::de_list_of_tag_value_pair(tokens)?);
                         }
                         "target" => {
                             builder = builder.set_target(

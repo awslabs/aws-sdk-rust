@@ -12,7 +12,7 @@ pub struct ResponseResourceMetricKey {
     /// <li> <p>The counter metrics listed in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS">Performance Insights operating system counters</a> in the <i>Amazon Aurora User Guide</i>.</p> </li>
     /// </ul>
     /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only. </p>
-    pub metric: ::std::option::Option<::std::string::String>,
+    pub metric: ::std::string::String,
     /// <p>The valid dimensions for the metric.</p>
     pub dimensions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -25,8 +25,9 @@ impl ResponseResourceMetricKey {
     /// <li> <p>The counter metrics listed in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS">Performance Insights operating system counters</a> in the <i>Amazon Aurora User Guide</i>.</p> </li>
     /// </ul>
     /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only. </p>
-    pub fn metric(&self) -> ::std::option::Option<&str> {
-        self.metric.as_deref()
+    pub fn metric(&self) -> &str {
+        use std::ops::Deref;
+        self.metric.deref()
     }
     /// <p>The valid dimensions for the metric.</p>
     pub fn dimensions(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -56,6 +57,7 @@ impl ResponseResourceMetricKeyBuilder {
     /// <li> <p>The counter metrics listed in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS">Performance Insights operating system counters</a> in the <i>Amazon Aurora User Guide</i>.</p> </li>
     /// </ul>
     /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only. </p>
+    /// This field is required.
     pub fn metric(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric = ::std::option::Option::Some(input.into());
         self
@@ -104,10 +106,17 @@ impl ResponseResourceMetricKeyBuilder {
         &self.dimensions
     }
     /// Consumes the builder and constructs a [`ResponseResourceMetricKey`](crate::types::ResponseResourceMetricKey).
-    pub fn build(self) -> crate::types::ResponseResourceMetricKey {
-        crate::types::ResponseResourceMetricKey {
-            metric: self.metric,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`metric`](crate::types::builders::ResponseResourceMetricKeyBuilder::metric)
+    pub fn build(self) -> ::std::result::Result<crate::types::ResponseResourceMetricKey, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ResponseResourceMetricKey {
+            metric: self.metric.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "metric",
+                    "metric was not specified but it is required when building ResponseResourceMetricKey",
+                )
+            })?,
             dimensions: self.dimensions,
-        }
+        })
     }
 }

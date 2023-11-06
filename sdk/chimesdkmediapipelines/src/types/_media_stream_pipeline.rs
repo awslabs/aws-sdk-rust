@@ -41,12 +41,16 @@ impl MediaStreamPipeline {
         self.status.as_ref()
     }
     /// <p>The media stream pipeline's data sources.</p>
-    pub fn sources(&self) -> ::std::option::Option<&[crate::types::MediaStreamSource]> {
-        self.sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
+    pub fn sources(&self) -> &[crate::types::MediaStreamSource] {
+        self.sources.as_deref().unwrap_or_default()
     }
     /// <p>The media stream pipeline's data sinks.</p>
-    pub fn sinks(&self) -> ::std::option::Option<&[crate::types::MediaStreamSink]> {
-        self.sinks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sinks.is_none()`.
+    pub fn sinks(&self) -> &[crate::types::MediaStreamSink] {
+        self.sinks.as_deref().unwrap_or_default()
     }
 }
 impl MediaStreamPipeline {

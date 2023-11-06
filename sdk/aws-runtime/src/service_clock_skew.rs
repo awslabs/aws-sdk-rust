@@ -5,7 +5,7 @@
 
 use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::interceptors::context::BeforeDeserializationInterceptorContextMut;
-use aws_smithy_runtime_api::client::interceptors::Interceptor;
+use aws_smithy_runtime_api::client::interceptors::Intercept;
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreReplace};
 use aws_smithy_types::date_time::Format;
@@ -64,7 +64,7 @@ fn extract_time_sent_from_response(
     DateTime::from_str(date_header, Format::HttpDate).map_err(Into::into)
 }
 
-impl Interceptor for ServiceClockSkewInterceptor {
+impl Intercept for ServiceClockSkewInterceptor {
     fn name(&self) -> &'static str {
         "ServiceClockSkewInterceptor"
     }

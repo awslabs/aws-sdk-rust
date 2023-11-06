@@ -2,12 +2,12 @@
 pub fn ser_kinesis_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::KinesisConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.stream_arn {
-        object.key("StreamArn").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("StreamArn").string(input.stream_arn.as_str());
     }
-    if let Some(var_2) = &input.aggregation_enabled {
-        object.key("AggregationEnabled").boolean(*var_2);
+    if let Some(var_1) = &input.aggregation_enabled {
+        object.key("AggregationEnabled").boolean(*var_1);
     }
     Ok(())
 }
@@ -47,7 +47,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::kinesis_configuration_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

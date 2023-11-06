@@ -27,6 +27,7 @@ pub struct DescribeConfigurationInputBuilder {
 }
 impl DescribeConfigurationInputBuilder {
     /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
+    /// This field is required.
     pub fn configuration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`DescribeConfigurationInput`](crate::operation::describe_configuration::DescribeConfigurationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_configuration::DescribeConfigurationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_configuration::DescribeConfigurationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_configuration::DescribeConfigurationInput {
             configuration_id: self.configuration_id,

@@ -34,6 +34,7 @@ pub struct UpdateMediaStorageConfigurationInputBuilder {
 }
 impl UpdateMediaStorageConfigurationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the channel.</p>
+    /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateMediaStorageConfigurationInputBuilder {
         &self.channel_arn
     }
     /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
+    /// This field is required.
     pub fn media_storage_configuration(mut self, input: crate::types::MediaStorageConfiguration) -> Self {
         self.media_storage_configuration = ::std::option::Option::Some(input);
         self
@@ -66,7 +68,7 @@ impl UpdateMediaStorageConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_media_storage_configuration::UpdateMediaStorageConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_media_storage_configuration::UpdateMediaStorageConfigurationInput {

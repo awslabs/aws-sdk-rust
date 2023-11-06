@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteNotificationRule`](crate::operation::delete_notification_rule::builders::DeleteNotificationRuleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::delete_notification_rule::builders::DeleteNotificationRuleFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_notification_rule::builders::DeleteNotificationRuleFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) of the notification rule you want to delete.</p>
+    ///   - [`arn(impl Into<String>)`](crate::operation::delete_notification_rule::builders::DeleteNotificationRuleFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_notification_rule::builders::DeleteNotificationRuleFluentBuilder::set_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the notification rule you want to delete.</p><br>
     /// - On success, responds with [`DeleteNotificationRuleOutput`](crate::operation::delete_notification_rule::DeleteNotificationRuleOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::delete_notification_rule::DeleteNotificationRuleOutput::arn): <p>The Amazon Resource Name (ARN) of the deleted notification rule.</p>
     /// - On failure, responds with [`SdkError<DeleteNotificationRuleError>`](crate::operation::delete_notification_rule::DeleteNotificationRuleError)

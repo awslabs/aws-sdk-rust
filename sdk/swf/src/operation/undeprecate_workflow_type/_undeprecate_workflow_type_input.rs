@@ -34,6 +34,7 @@ pub struct UndeprecateWorkflowTypeInputBuilder {
 }
 impl UndeprecateWorkflowTypeInputBuilder {
     /// <p>The name of the domain of the deprecated workflow type.</p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UndeprecateWorkflowTypeInputBuilder {
         &self.domain
     }
     /// <p>The name of the domain of the deprecated workflow type.</p>
+    /// This field is required.
     pub fn workflow_type(mut self, input: crate::types::WorkflowType) -> Self {
         self.workflow_type = ::std::option::Option::Some(input);
         self
@@ -66,7 +68,7 @@ impl UndeprecateWorkflowTypeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::undeprecate_workflow_type::UndeprecateWorkflowTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::undeprecate_workflow_type::UndeprecateWorkflowTypeInput {
             domain: self.domain,

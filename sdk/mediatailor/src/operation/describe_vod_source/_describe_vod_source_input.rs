@@ -34,6 +34,7 @@ pub struct DescribeVodSourceInputBuilder {
 }
 impl DescribeVodSourceInputBuilder {
     /// <p>The name of the source location associated with this VOD Source.</p>
+    /// This field is required.
     pub fn source_location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_location_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeVodSourceInputBuilder {
         &self.source_location_name
     }
     /// <p>The name of the VOD Source.</p>
+    /// This field is required.
     pub fn vod_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vod_source_name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DescribeVodSourceInputBuilder {
     /// Consumes the builder and constructs a [`DescribeVodSourceInput`](crate::operation::describe_vod_source::DescribeVodSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_vod_source::DescribeVodSourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_vod_source::DescribeVodSourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_vod_source::DescribeVodSourceInput {
             source_location_name: self.source_location_name,
             vod_source_name: self.vod_source_name,

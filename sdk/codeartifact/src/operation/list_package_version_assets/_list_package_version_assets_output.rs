@@ -55,8 +55,10 @@ impl ListPackageVersionAssetsOutput {
         self.next_token.as_deref()
     }
     /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a> objects. </p>
-    pub fn assets(&self) -> ::std::option::Option<&[crate::types::AssetSummary]> {
-        self.assets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.assets.is_none()`.
+    pub fn assets(&self) -> &[crate::types::AssetSummary] {
+        self.assets.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListPackageVersionAssetsOutput {

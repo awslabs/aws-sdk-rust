@@ -22,8 +22,10 @@ impl ListIndexInput {
         self.directory_arn.as_deref()
     }
     /// <p>Specifies the ranges of indexed values that you want to query.</p>
-    pub fn ranges_on_indexed_values(&self) -> ::std::option::Option<&[crate::types::ObjectAttributeRange]> {
-        self.ranges_on_indexed_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ranges_on_indexed_values.is_none()`.
+    pub fn ranges_on_indexed_values(&self) -> &[crate::types::ObjectAttributeRange] {
+        self.ranges_on_indexed_values.as_deref().unwrap_or_default()
     }
     /// <p>The reference to the index to list.</p>
     pub fn index_reference(&self) -> ::std::option::Option<&crate::types::ObjectReference> {
@@ -62,6 +64,7 @@ pub struct ListIndexInputBuilder {
 }
 impl ListIndexInputBuilder {
     /// <p>The ARN of the directory that the index exists in.</p>
+    /// This field is required.
     pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self
@@ -96,6 +99,7 @@ impl ListIndexInputBuilder {
         &self.ranges_on_indexed_values
     }
     /// <p>The reference to the index to list.</p>
+    /// This field is required.
     pub fn index_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.index_reference = ::std::option::Option::Some(input);
         self
@@ -152,7 +156,7 @@ impl ListIndexInputBuilder {
         &self.consistency_level
     }
     /// Consumes the builder and constructs a [`ListIndexInput`](crate::operation::list_index::ListIndexInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_index::ListIndexInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_index::ListIndexInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_index::ListIndexInput {
             directory_arn: self.directory_arn,
             ranges_on_indexed_values: self.ranges_on_indexed_values,

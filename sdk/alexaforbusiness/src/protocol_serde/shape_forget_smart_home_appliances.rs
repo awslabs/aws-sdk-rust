@@ -62,10 +62,10 @@ pub fn de_forget_smart_home_appliances_http_response(
 
 pub fn ser_forget_smart_home_appliances_input(
     input: &crate::operation::forget_smart_home_appliances::ForgetSmartHomeAppliancesInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_forget_smart_home_appliances_input::ser_forget_smart_home_appliances_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

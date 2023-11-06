@@ -2,15 +2,15 @@
 pub fn ser_analytics_bin_by_specification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AnalyticsBinBySpecification,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("name").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.interval {
-        object.key("interval").string(var_2.as_str());
+    {
+        object.key("interval").string(input.interval.as_str());
     }
-    if let Some(var_3) = &input.order {
-        object.key("order").string(var_3.as_str());
+    if let Some(var_1) = &input.order {
+        object.key("order").string(var_1.as_str());
     }
     Ok(())
 }

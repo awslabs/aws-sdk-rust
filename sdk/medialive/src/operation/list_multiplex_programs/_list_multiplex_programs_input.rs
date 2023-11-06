@@ -56,6 +56,7 @@ impl ListMultiplexProgramsInputBuilder {
         &self.max_results
     }
     /// The ID of the multiplex that the programs belong to.
+    /// This field is required.
     pub fn multiplex_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.multiplex_id = ::std::option::Option::Some(input.into());
         self
@@ -86,7 +87,7 @@ impl ListMultiplexProgramsInputBuilder {
     /// Consumes the builder and constructs a [`ListMultiplexProgramsInput`](crate::operation::list_multiplex_programs::ListMultiplexProgramsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_multiplex_programs::ListMultiplexProgramsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_multiplex_programs::ListMultiplexProgramsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_multiplex_programs::ListMultiplexProgramsInput {
             max_results: self.max_results,

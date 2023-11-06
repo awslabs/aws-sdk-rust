@@ -28,6 +28,7 @@ pub struct CancelTaskExecutionInputBuilder {
 }
 impl CancelTaskExecutionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the task execution to stop.</p>
+    /// This field is required.
     pub fn task_execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_execution_arn = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl CancelTaskExecutionInputBuilder {
     /// Consumes the builder and constructs a [`CancelTaskExecutionInput`](crate::operation::cancel_task_execution::CancelTaskExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_task_execution::CancelTaskExecutionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::cancel_task_execution::CancelTaskExecutionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::cancel_task_execution::CancelTaskExecutionInput {
             task_execution_arn: self.task_execution_arn,

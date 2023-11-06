@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnomalyReportedTimeRange {
     /// <p> The time when an anomaly is opened. </p>
-    pub open_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub open_time: ::aws_smithy_types::DateTime,
     /// <p> The time when an anomaly is closed. </p>
     pub close_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AnomalyReportedTimeRange {
     /// <p> The time when an anomaly is opened. </p>
-    pub fn open_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.open_time.as_ref()
+    pub fn open_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.open_time
     }
     /// <p> The time when an anomaly is closed. </p>
     pub fn close_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -35,6 +35,7 @@ pub struct AnomalyReportedTimeRangeBuilder {
 }
 impl AnomalyReportedTimeRangeBuilder {
     /// <p> The time when an anomaly is opened. </p>
+    /// This field is required.
     pub fn open_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.open_time = ::std::option::Option::Some(input);
         self
@@ -63,10 +64,17 @@ impl AnomalyReportedTimeRangeBuilder {
         &self.close_time
     }
     /// Consumes the builder and constructs a [`AnomalyReportedTimeRange`](crate::types::AnomalyReportedTimeRange).
-    pub fn build(self) -> crate::types::AnomalyReportedTimeRange {
-        crate::types::AnomalyReportedTimeRange {
-            open_time: self.open_time,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`open_time`](crate::types::builders::AnomalyReportedTimeRangeBuilder::open_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::AnomalyReportedTimeRange, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AnomalyReportedTimeRange {
+            open_time: self.open_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "open_time",
+                    "open_time was not specified but it is required when building AnomalyReportedTimeRange",
+                )
+            })?,
             close_time: self.close_time,
-        }
+        })
     }
 }

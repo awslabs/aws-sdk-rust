@@ -90,6 +90,7 @@ pub struct CreateRouteInputBuilder {
 }
 impl CreateRouteInputBuilder {
     /// <p>The ID of the environment in which the route is created.</p>
+    /// This field is required.
     pub fn environment_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_identifier = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +105,7 @@ impl CreateRouteInputBuilder {
         &self.environment_identifier
     }
     /// <p>The ID of the application within which the route is being created.</p>
+    /// This field is required.
     pub fn application_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_identifier = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +120,7 @@ impl CreateRouteInputBuilder {
         &self.application_identifier
     }
     /// <p>The ID of the service in which the route is created. Traffic that matches this route is forwarded to this service.</p>
+    /// This field is required.
     pub fn service_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_identifier = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +135,7 @@ impl CreateRouteInputBuilder {
         &self.service_identifier
     }
     /// <p>The route type of the route. <code>DEFAULT</code> indicates that all traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created. <code>URI_PATH</code> indicates a route that is based on a URI path.</p>
+    /// This field is required.
     pub fn route_type(mut self, input: crate::types::RouteType) -> Self {
         self.route_type = ::std::option::Option::Some(input);
         self
@@ -208,7 +212,7 @@ impl CreateRouteInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateRouteInput`](crate::operation::create_route::CreateRouteInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_route::CreateRouteInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_route::CreateRouteInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_route::CreateRouteInput {
             environment_identifier: self.environment_identifier,
             application_identifier: self.application_identifier,

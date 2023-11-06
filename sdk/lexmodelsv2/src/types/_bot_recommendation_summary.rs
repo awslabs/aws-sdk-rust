@@ -6,9 +6,9 @@
 pub struct BotRecommendationSummary {
     /// <p>The status of the bot recommendation.</p>
     /// <p>If the status is Failed, then the reasons for the failure are listed in the failureReasons field. </p>
-    pub bot_recommendation_status: ::std::option::Option<crate::types::BotRecommendationStatus>,
+    pub bot_recommendation_status: crate::types::BotRecommendationStatus,
     /// <p>The unique identifier of the bot recommendation to be updated.</p>
-    pub bot_recommendation_id: ::std::option::Option<::std::string::String>,
+    pub bot_recommendation_id: ::std::string::String,
     /// <p>A timestamp of the date and time that the bot recommendation was created.</p>
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp of the date and time that the bot recommendation was last updated.</p>
@@ -17,12 +17,13 @@ pub struct BotRecommendationSummary {
 impl BotRecommendationSummary {
     /// <p>The status of the bot recommendation.</p>
     /// <p>If the status is Failed, then the reasons for the failure are listed in the failureReasons field. </p>
-    pub fn bot_recommendation_status(&self) -> ::std::option::Option<&crate::types::BotRecommendationStatus> {
-        self.bot_recommendation_status.as_ref()
+    pub fn bot_recommendation_status(&self) -> &crate::types::BotRecommendationStatus {
+        &self.bot_recommendation_status
     }
     /// <p>The unique identifier of the bot recommendation to be updated.</p>
-    pub fn bot_recommendation_id(&self) -> ::std::option::Option<&str> {
-        self.bot_recommendation_id.as_deref()
+    pub fn bot_recommendation_id(&self) -> &str {
+        use std::ops::Deref;
+        self.bot_recommendation_id.deref()
     }
     /// <p>A timestamp of the date and time that the bot recommendation was created.</p>
     pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -52,6 +53,7 @@ pub struct BotRecommendationSummaryBuilder {
 impl BotRecommendationSummaryBuilder {
     /// <p>The status of the bot recommendation.</p>
     /// <p>If the status is Failed, then the reasons for the failure are listed in the failureReasons field. </p>
+    /// This field is required.
     pub fn bot_recommendation_status(mut self, input: crate::types::BotRecommendationStatus) -> Self {
         self.bot_recommendation_status = ::std::option::Option::Some(input);
         self
@@ -68,6 +70,7 @@ impl BotRecommendationSummaryBuilder {
         &self.bot_recommendation_status
     }
     /// <p>The unique identifier of the bot recommendation to be updated.</p>
+    /// This field is required.
     pub fn bot_recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_recommendation_id = ::std::option::Option::Some(input.into());
         self
@@ -110,12 +113,25 @@ impl BotRecommendationSummaryBuilder {
         &self.last_updated_date_time
     }
     /// Consumes the builder and constructs a [`BotRecommendationSummary`](crate::types::BotRecommendationSummary).
-    pub fn build(self) -> crate::types::BotRecommendationSummary {
-        crate::types::BotRecommendationSummary {
-            bot_recommendation_status: self.bot_recommendation_status,
-            bot_recommendation_id: self.bot_recommendation_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bot_recommendation_status`](crate::types::builders::BotRecommendationSummaryBuilder::bot_recommendation_status)
+    /// - [`bot_recommendation_id`](crate::types::builders::BotRecommendationSummaryBuilder::bot_recommendation_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::BotRecommendationSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::BotRecommendationSummary {
+            bot_recommendation_status: self.bot_recommendation_status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "bot_recommendation_status",
+                    "bot_recommendation_status was not specified but it is required when building BotRecommendationSummary",
+                )
+            })?,
+            bot_recommendation_id: self.bot_recommendation_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "bot_recommendation_id",
+                    "bot_recommendation_id was not specified but it is required when building BotRecommendationSummary",
+                )
+            })?,
             creation_date_time: self.creation_date_time,
             last_updated_date_time: self.last_updated_date_time,
-        }
+        })
     }
 }

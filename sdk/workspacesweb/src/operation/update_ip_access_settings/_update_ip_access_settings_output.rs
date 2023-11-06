@@ -34,6 +34,7 @@ pub struct UpdateIpAccessSettingsOutputBuilder {
 }
 impl UpdateIpAccessSettingsOutputBuilder {
     /// <p>The IP access settings.</p>
+    /// This field is required.
     pub fn ip_access_settings(mut self, input: crate::types::IpAccessSettings) -> Self {
         self.ip_access_settings = ::std::option::Option::Some(input);
         self

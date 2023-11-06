@@ -34,6 +34,7 @@ pub struct DisassociateWebsiteCertificateAuthorityInputBuilder {
 }
 impl DisassociateWebsiteCertificateAuthorityInputBuilder {
     /// <p>The ARN of the fleet.</p>
+    /// This field is required.
     pub fn fleet_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DisassociateWebsiteCertificateAuthorityInputBuilder {
         &self.fleet_arn
     }
     /// <p>A unique identifier for the CA.</p>
+    /// This field is required.
     pub fn website_ca_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.website_ca_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl DisassociateWebsiteCertificateAuthorityInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_website_certificate_authority::DisassociateWebsiteCertificateAuthorityInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_website_certificate_authority::DisassociateWebsiteCertificateAuthorityInput {

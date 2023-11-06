@@ -34,6 +34,7 @@ pub struct UpdateLaunchOutputBuilder {
 }
 impl UpdateLaunchOutputBuilder {
     /// <p>A structure that contains the new configuration of the launch that was updated.</p>
+    /// This field is required.
     pub fn launch(mut self, input: crate::types::Launch) -> Self {
         self.launch = ::std::option::Option::Some(input);
         self

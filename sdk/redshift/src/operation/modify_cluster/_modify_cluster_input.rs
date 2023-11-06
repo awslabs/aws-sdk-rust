@@ -113,6 +113,8 @@ pub struct ModifyClusterInput {
     pub manage_master_password: ::std::option::Option<bool>,
     /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret. You can only use this parameter if <code>ManageMasterPassword</code> is true.</p>
     pub master_password_secret_kms_key_id: ::std::option::Option<::std::string::String>,
+    /// <p>The IP address types that the cluster supports. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
+    pub ip_address_type: ::std::option::Option<::std::string::String>,
 }
 impl ModifyClusterInput {
     /// <p>The unique identifier of the cluster to be modified.</p>
@@ -146,12 +148,16 @@ impl ModifyClusterInput {
     /// <li> <p>First character must be a letter</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
-    pub fn cluster_security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cluster_security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cluster_security_groups.is_none()`.
+    pub fn cluster_security_groups(&self) -> &[::std::string::String] {
+        self.cluster_security_groups.as_deref().unwrap_or_default()
     }
     /// <p>A list of virtual private cloud (VPC) security groups to be associated with the cluster. This change is asynchronously applied as soon as possible.</p>
-    pub fn vpc_security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.vpc_security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_group_ids.is_none()`.
+    pub fn vpc_security_group_ids(&self) -> &[::std::string::String] {
+        self.vpc_security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response. </p>
     /// <p>You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is <code>true</code>.</p> <note>
@@ -278,6 +284,10 @@ impl ModifyClusterInput {
     pub fn master_password_secret_kms_key_id(&self) -> ::std::option::Option<&str> {
         self.master_password_secret_kms_key_id.as_deref()
     }
+    /// <p>The IP address types that the cluster supports. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
+    pub fn ip_address_type(&self) -> ::std::option::Option<&str> {
+        self.ip_address_type.as_deref()
+    }
 }
 impl ::std::fmt::Debug for ModifyClusterInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -309,6 +319,7 @@ impl ::std::fmt::Debug for ModifyClusterInput {
         formatter.field("port", &self.port);
         formatter.field("manage_master_password", &self.manage_master_password);
         formatter.field("master_password_secret_kms_key_id", &self.master_password_secret_kms_key_id);
+        formatter.field("ip_address_type", &self.ip_address_type);
         formatter.finish()
     }
 }
@@ -350,10 +361,12 @@ pub struct ModifyClusterInputBuilder {
     pub(crate) port: ::std::option::Option<i32>,
     pub(crate) manage_master_password: ::std::option::Option<bool>,
     pub(crate) master_password_secret_kms_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) ip_address_type: ::std::option::Option<::std::string::String>,
 }
 impl ModifyClusterInputBuilder {
     /// <p>The unique identifier of the cluster to be modified.</p>
     /// <p>Example: <code>examplecluster</code> </p>
+    /// This field is required.
     pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
@@ -907,10 +920,24 @@ impl ModifyClusterInputBuilder {
     pub fn get_master_password_secret_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.master_password_secret_kms_key_id
     }
+    /// <p>The IP address types that the cluster supports. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
+    pub fn ip_address_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ip_address_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The IP address types that the cluster supports. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ip_address_type = input;
+        self
+    }
+    /// <p>The IP address types that the cluster supports. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_address_type
+    }
     /// Consumes the builder and constructs a [`ModifyClusterInput`](crate::operation::modify_cluster::ModifyClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_cluster::ModifyClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::modify_cluster::ModifyClusterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_cluster::ModifyClusterInput {
             cluster_identifier: self.cluster_identifier,
             cluster_type: self.cluster_type,
@@ -939,6 +966,7 @@ impl ModifyClusterInputBuilder {
             port: self.port,
             manage_master_password: self.manage_master_password,
             master_password_secret_kms_key_id: self.master_password_secret_kms_key_id,
+            ip_address_type: self.ip_address_type,
         })
     }
 }
@@ -972,6 +1000,7 @@ impl ::std::fmt::Debug for ModifyClusterInputBuilder {
         formatter.field("port", &self.port);
         formatter.field("manage_master_password", &self.manage_master_password);
         formatter.field("master_password_secret_kms_key_id", &self.master_password_secret_kms_key_id);
+        formatter.field("ip_address_type", &self.ip_address_type);
         formatter.finish()
     }
 }

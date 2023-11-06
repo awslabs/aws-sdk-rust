@@ -6,7 +6,7 @@ pub struct ListConnectorsInput {
     /// <p>The name prefix that you want to use to search for and list connectors.</p>
     pub connector_name_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of connectors to list in one response.</p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>If the response of a ListConnectors operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
@@ -16,7 +16,7 @@ impl ListConnectorsInput {
         self.connector_name_prefix.as_deref()
     }
     /// <p>The maximum number of connectors to list in one response.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>If the response of a ListConnectors operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
@@ -85,10 +85,10 @@ impl ListConnectorsInputBuilder {
     /// Consumes the builder and constructs a [`ListConnectorsInput`](crate::operation::list_connectors::ListConnectorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_connectors::ListConnectorsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_connectors::ListConnectorsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_connectors::ListConnectorsInput {
             connector_name_prefix: self.connector_name_prefix,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
         })
     }

@@ -22,10 +22,7 @@ pub(crate) fn reflens_list_zonal_shifts_output_next_token(
 pub(crate) fn lens_list_managed_resources_output_items(
     input: crate::operation::list_managed_resources::ListManagedResourcesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ManagedResourceSummary>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items;
     ::std::option::Option::Some(input)
 }
 

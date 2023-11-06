@@ -15,8 +15,10 @@ impl LineItemGroup {
         self.line_item_group_index
     }
     /// <p>The breakdown of information on a particular line of a table. </p>
-    pub fn line_items(&self) -> ::std::option::Option<&[crate::types::LineItemFields]> {
-        self.line_items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.line_items.is_none()`.
+    pub fn line_items(&self) -> &[crate::types::LineItemFields] {
+        self.line_items.as_deref().unwrap_or_default()
     }
 }
 impl LineItemGroup {

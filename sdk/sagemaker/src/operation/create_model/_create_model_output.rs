@@ -34,6 +34,7 @@ pub struct CreateModelOutputBuilder {
 }
 impl CreateModelOutputBuilder {
     /// <p>The ARN of the model created in SageMaker.</p>
+    /// This field is required.
     pub fn model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_arn = ::std::option::Option::Some(input.into());
         self

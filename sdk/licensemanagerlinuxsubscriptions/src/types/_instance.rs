@@ -55,8 +55,10 @@ impl Instance {
         self.usage_operation.as_deref()
     }
     /// <p>The product code for the instance. For more information, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/linux-subscriptions-usage-operation.html">Usage operation values</a> in the <i>License Manager User Guide</i> .</p>
-    pub fn product_code(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.product_code.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.product_code.is_none()`.
+    pub fn product_code(&self) -> &[::std::string::String] {
+        self.product_code.as_deref().unwrap_or_default()
     }
     /// <p>The time in which the last discovery updated the instance details.</p>
     pub fn last_updated_time(&self) -> ::std::option::Option<&str> {

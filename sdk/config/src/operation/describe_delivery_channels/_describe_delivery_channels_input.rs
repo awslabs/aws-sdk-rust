@@ -9,8 +9,10 @@ pub struct DescribeDeliveryChannelsInput {
 }
 impl DescribeDeliveryChannelsInput {
     /// <p>A list of delivery channel names.</p>
-    pub fn delivery_channel_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.delivery_channel_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.delivery_channel_names.is_none()`.
+    pub fn delivery_channel_names(&self) -> &[::std::string::String] {
+        self.delivery_channel_names.as_deref().unwrap_or_default()
     }
 }
 impl DescribeDeliveryChannelsInput {
@@ -52,7 +54,7 @@ impl DescribeDeliveryChannelsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_delivery_channels::DescribeDeliveryChannelsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_delivery_channels::DescribeDeliveryChannelsInput {
             delivery_channel_names: self.delivery_channel_names,

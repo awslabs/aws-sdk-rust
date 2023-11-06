@@ -41,6 +41,7 @@ pub struct CreateRefreshScheduleInputBuilder {
 }
 impl CreateRefreshScheduleInputBuilder {
     /// <p>The ID of the dataset.</p>
+    /// This field is required.
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl CreateRefreshScheduleInputBuilder {
         &self.data_set_id
     }
     /// <p>The Amazon Web Services account ID.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl CreateRefreshScheduleInputBuilder {
         &self.aws_account_id
     }
     /// <p>The refresh schedule.</p>
+    /// This field is required.
     pub fn schedule(mut self, input: crate::types::RefreshSchedule) -> Self {
         self.schedule = ::std::option::Option::Some(input);
         self
@@ -85,7 +88,7 @@ impl CreateRefreshScheduleInputBuilder {
     /// Consumes the builder and constructs a [`CreateRefreshScheduleInput`](crate::operation::create_refresh_schedule::CreateRefreshScheduleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_refresh_schedule::CreateRefreshScheduleInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_refresh_schedule::CreateRefreshScheduleInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_refresh_schedule::CreateRefreshScheduleInput {
             data_set_id: self.data_set_id,

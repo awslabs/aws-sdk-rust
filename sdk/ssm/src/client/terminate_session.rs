@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`TerminateSession`](crate::operation::terminate_session::builders::TerminateSessionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`session_id(impl Into<String>)`](crate::operation::terminate_session::builders::TerminateSessionFluentBuilder::session_id) / [`set_session_id(Option<String>)`](crate::operation::terminate_session::builders::TerminateSessionFluentBuilder::set_session_id): <p>The ID of the session to terminate.</p>
+    ///   - [`session_id(impl Into<String>)`](crate::operation::terminate_session::builders::TerminateSessionFluentBuilder::session_id) / [`set_session_id(Option<String>)`](crate::operation::terminate_session::builders::TerminateSessionFluentBuilder::set_session_id):<br>required: **true**<br><p>The ID of the session to terminate.</p><br>
     /// - On success, responds with [`TerminateSessionOutput`](crate::operation::terminate_session::TerminateSessionOutput) with field(s):
     ///   - [`session_id(Option<String>)`](crate::operation::terminate_session::TerminateSessionOutput::session_id): <p>The ID of the session that has been terminated.</p>
     /// - On failure, responds with [`SdkError<TerminateSessionError>`](crate::operation::terminate_session::TerminateSessionError)

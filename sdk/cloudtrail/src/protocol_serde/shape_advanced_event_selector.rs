@@ -2,21 +2,21 @@
 pub fn ser_advanced_event_selector(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AdvancedEventSelector,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.name {
         object.key("Name").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.field_selectors {
-        let mut array_3 = object.key("FieldSelectors").start_array();
-        for item_4 in var_2 {
+    {
+        let mut array_2 = object.key("FieldSelectors").start_array();
+        for item_3 in &input.field_selectors {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_advanced_field_selector::ser_advanced_field_selector(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_advanced_field_selector::ser_advanced_field_selector(&mut object_4, item_3)?;
+                object_4.finish();
             }
         }
-        array_3.finish();
+        array_2.finish();
     }
     Ok(())
 }
@@ -58,7 +58,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::advanced_event_selector_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

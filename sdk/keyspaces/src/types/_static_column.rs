@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StaticColumn {
     /// <p>The name of the static column.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
 }
 impl StaticColumn {
     /// <p>The name of the static column.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
 }
 impl StaticColumn {
@@ -28,6 +29,7 @@ pub struct StaticColumnBuilder {
 }
 impl StaticColumnBuilder {
     /// <p>The name of the static column.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl StaticColumnBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`StaticColumn`](crate::types::StaticColumn).
-    pub fn build(self) -> crate::types::StaticColumn {
-        crate::types::StaticColumn { name: self.name }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::StaticColumnBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::StaticColumn, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::StaticColumn {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building StaticColumn",
+                )
+            })?,
+        })
     }
 }

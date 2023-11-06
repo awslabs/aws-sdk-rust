@@ -9,8 +9,10 @@ pub struct DescribeAlarmsForMetricOutput {
 }
 impl DescribeAlarmsForMetricOutput {
     /// <p>The information for each alarm with the specified metric.</p>
-    pub fn metric_alarms(&self) -> ::std::option::Option<&[crate::types::MetricAlarm]> {
-        self.metric_alarms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_alarms.is_none()`.
+    pub fn metric_alarms(&self) -> &[crate::types::MetricAlarm] {
+        self.metric_alarms.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeAlarmsForMetricOutput {

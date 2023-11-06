@@ -33,8 +33,10 @@ impl GetSupportedResourceTypesOutput {
     /// <li> <p> <code>DocDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
     /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
     /// </ul>
-    pub fn resource_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_types.is_none()`.
+    pub fn resource_types(&self) -> &[::std::string::String] {
+        self.resource_types.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetSupportedResourceTypesOutput {

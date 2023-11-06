@@ -15,8 +15,10 @@ impl AddBridgeSourcesOutput {
         self.bridge_arn.as_deref()
     }
     /// The sources that you added to this bridge.
-    pub fn sources(&self) -> ::std::option::Option<&[crate::types::BridgeSource]> {
-        self.sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
+    pub fn sources(&self) -> &[crate::types::BridgeSource] {
+        self.sources.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for AddBridgeSourcesOutput {

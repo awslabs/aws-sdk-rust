@@ -4,19 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchAssociateResourceOutput {
     /// <p>A unique identifier for the resource set, used in a request to refer to the resource set.</p>
-    pub resource_set_identifier: ::std::option::Option<::std::string::String>,
+    pub resource_set_identifier: ::std::string::String,
     /// <p>The resources that failed to associate to the resource set.</p>
-    pub failed_items: ::std::option::Option<::std::vec::Vec<crate::types::FailedItem>>,
+    pub failed_items: ::std::vec::Vec<crate::types::FailedItem>,
     _request_id: Option<String>,
 }
 impl BatchAssociateResourceOutput {
     /// <p>A unique identifier for the resource set, used in a request to refer to the resource set.</p>
-    pub fn resource_set_identifier(&self) -> ::std::option::Option<&str> {
-        self.resource_set_identifier.as_deref()
+    pub fn resource_set_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_set_identifier.deref()
     }
     /// <p>The resources that failed to associate to the resource set.</p>
-    pub fn failed_items(&self) -> ::std::option::Option<&[crate::types::FailedItem]> {
-        self.failed_items.as_deref()
+    pub fn failed_items(&self) -> &[crate::types::FailedItem] {
+        use std::ops::Deref;
+        self.failed_items.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchAssociateResourceOutput {
@@ -41,6 +43,7 @@ pub struct BatchAssociateResourceOutputBuilder {
 }
 impl BatchAssociateResourceOutputBuilder {
     /// <p>A unique identifier for the resource set, used in a request to refer to the resource set.</p>
+    /// This field is required.
     pub fn resource_set_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_set_identifier = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +87,29 @@ impl BatchAssociateResourceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchAssociateResourceOutput`](crate::operation::batch_associate_resource::BatchAssociateResourceOutput).
-    pub fn build(self) -> crate::operation::batch_associate_resource::BatchAssociateResourceOutput {
-        crate::operation::batch_associate_resource::BatchAssociateResourceOutput {
-            resource_set_identifier: self.resource_set_identifier,
-            failed_items: self.failed_items,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource_set_identifier`](crate::operation::batch_associate_resource::builders::BatchAssociateResourceOutputBuilder::resource_set_identifier)
+    /// - [`failed_items`](crate::operation::batch_associate_resource::builders::BatchAssociateResourceOutputBuilder::failed_items)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::batch_associate_resource::BatchAssociateResourceOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::batch_associate_resource::BatchAssociateResourceOutput {
+            resource_set_identifier: self.resource_set_identifier.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "resource_set_identifier",
+                    "resource_set_identifier was not specified but it is required when building BatchAssociateResourceOutput",
+                )
+            })?,
+            failed_items: self.failed_items.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "failed_items",
+                    "failed_items was not specified but it is required when building BatchAssociateResourceOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

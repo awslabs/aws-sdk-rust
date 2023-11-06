@@ -11,8 +11,10 @@ pub struct BatchLookupPolicyResponse {
 }
 impl BatchLookupPolicyResponse {
     /// <p>Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and <code>PolicyType</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
-    pub fn policy_to_path_list(&self) -> ::std::option::Option<&[crate::types::PolicyToPath]> {
-        self.policy_to_path_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_to_path_list.is_none()`.
+    pub fn policy_to_path_list(&self) -> &[crate::types::PolicyToPath] {
+        self.policy_to_path_list.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -54,6 +54,7 @@ pub struct StartServiceSoftwareUpdateInputBuilder {
 }
 impl StartServiceSoftwareUpdateInputBuilder {
     /// <p>The name of the domain that you want to update to the latest service software.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -118,7 +119,7 @@ impl StartServiceSoftwareUpdateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_service_software_update::StartServiceSoftwareUpdateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_service_software_update::StartServiceSoftwareUpdateInput {
             domain_name: self.domain_name,

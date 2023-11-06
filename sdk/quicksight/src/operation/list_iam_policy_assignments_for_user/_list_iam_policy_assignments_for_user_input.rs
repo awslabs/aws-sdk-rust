@@ -55,6 +55,7 @@ pub struct ListIamPolicyAssignmentsForUserInputBuilder {
 }
 impl ListIamPolicyAssignmentsForUserInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the assignments.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl ListIamPolicyAssignmentsForUserInputBuilder {
         &self.aws_account_id
     }
     /// <p>The name of the user.</p>
+    /// This field is required.
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +113,7 @@ impl ListIamPolicyAssignmentsForUserInputBuilder {
         &self.max_results
     }
     /// <p>The namespace of the assignment.</p>
+    /// This field is required.
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
         self
@@ -129,7 +132,7 @@ impl ListIamPolicyAssignmentsForUserInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_iam_policy_assignments_for_user::ListIamPolicyAssignmentsForUserInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_iam_policy_assignments_for_user::ListIamPolicyAssignmentsForUserInput {

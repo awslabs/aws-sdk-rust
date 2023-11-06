@@ -27,6 +27,7 @@ pub struct DescribeAppInstanceUserInputBuilder {
 }
 impl DescribeAppInstanceUserInputBuilder {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    /// This field is required.
     pub fn app_instance_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_user_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeAppInstanceUserInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_app_instance_user::DescribeAppInstanceUserInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_app_instance_user::DescribeAppInstanceUserInput {
             app_instance_user_arn: self.app_instance_user_arn,

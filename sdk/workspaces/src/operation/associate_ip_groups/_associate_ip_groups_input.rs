@@ -14,8 +14,10 @@ impl AssociateIpGroupsInput {
         self.directory_id.as_deref()
     }
     /// <p>The identifiers of one or more IP access control groups.</p>
-    pub fn group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_ids.is_none()`.
+    pub fn group_ids(&self) -> &[::std::string::String] {
+        self.group_ids.as_deref().unwrap_or_default()
     }
 }
 impl AssociateIpGroupsInput {
@@ -34,6 +36,7 @@ pub struct AssociateIpGroupsInputBuilder {
 }
 impl AssociateIpGroupsInputBuilder {
     /// <p>The identifier of the directory.</p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +73,7 @@ impl AssociateIpGroupsInputBuilder {
     /// Consumes the builder and constructs a [`AssociateIpGroupsInput`](crate::operation::associate_ip_groups::AssociateIpGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_ip_groups::AssociateIpGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::associate_ip_groups::AssociateIpGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::associate_ip_groups::AssociateIpGroupsInput {
             directory_id: self.directory_id,
             group_ids: self.group_ids,

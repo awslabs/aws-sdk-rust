@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAnomalyMonitorsOutput {
     /// <p>A list of cost anomaly monitors that includes the detailed metadata for each monitor. </p>
-    pub anomaly_monitors: ::std::option::Option<::std::vec::Vec<crate::types::AnomalyMonitor>>,
+    pub anomaly_monitors: ::std::vec::Vec<crate::types::AnomalyMonitor>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetAnomalyMonitorsOutput {
     /// <p>A list of cost anomaly monitors that includes the detailed metadata for each monitor. </p>
-    pub fn anomaly_monitors(&self) -> ::std::option::Option<&[crate::types::AnomalyMonitor]> {
-        self.anomaly_monitors.as_deref()
+    pub fn anomaly_monitors(&self) -> &[crate::types::AnomalyMonitor] {
+        use std::ops::Deref;
+        self.anomaly_monitors.deref()
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub fn next_page_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,21 @@ impl GetAnomalyMonitorsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetAnomalyMonitorsOutput`](crate::operation::get_anomaly_monitors::GetAnomalyMonitorsOutput).
-    pub fn build(self) -> crate::operation::get_anomaly_monitors::GetAnomalyMonitorsOutput {
-        crate::operation::get_anomaly_monitors::GetAnomalyMonitorsOutput {
-            anomaly_monitors: self.anomaly_monitors,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`anomaly_monitors`](crate::operation::get_anomaly_monitors::builders::GetAnomalyMonitorsOutputBuilder::anomaly_monitors)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_anomaly_monitors::GetAnomalyMonitorsOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_anomaly_monitors::GetAnomalyMonitorsOutput {
+            anomaly_monitors: self.anomaly_monitors.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "anomaly_monitors",
+                    "anomaly_monitors was not specified but it is required when building GetAnomalyMonitorsOutput",
+                )
+            })?,
             next_page_token: self.next_page_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

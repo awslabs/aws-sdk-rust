@@ -2,7 +2,7 @@
 pub fn ser_push_notification_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PushNotificationConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.title {
         object.key("Title").string(var_1.as_str());
     }

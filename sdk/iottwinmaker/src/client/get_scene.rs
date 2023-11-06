@@ -3,19 +3,19 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetScene`](crate::operation::get_scene::builders::GetSceneFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`workspace_id(impl Into<String>)`](crate::operation::get_scene::builders::GetSceneFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::get_scene::builders::GetSceneFluentBuilder::set_workspace_id): <p>The ID of the workspace that contains the scene.</p>
-    ///   - [`scene_id(impl Into<String>)`](crate::operation::get_scene::builders::GetSceneFluentBuilder::scene_id) / [`set_scene_id(Option<String>)`](crate::operation::get_scene::builders::GetSceneFluentBuilder::set_scene_id): <p>The ID of the scene.</p>
+    ///   - [`workspace_id(impl Into<String>)`](crate::operation::get_scene::builders::GetSceneFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::get_scene::builders::GetSceneFluentBuilder::set_workspace_id):<br>required: **true**<br><p>The ID of the workspace that contains the scene.</p><br>
+    ///   - [`scene_id(impl Into<String>)`](crate::operation::get_scene::builders::GetSceneFluentBuilder::scene_id) / [`set_scene_id(Option<String>)`](crate::operation::get_scene::builders::GetSceneFluentBuilder::set_scene_id):<br>required: **true**<br><p>The ID of the scene.</p><br>
     /// - On success, responds with [`GetSceneOutput`](crate::operation::get_scene::GetSceneOutput) with field(s):
-    ///   - [`workspace_id(Option<String>)`](crate::operation::get_scene::GetSceneOutput::workspace_id): <p>The ID of the workspace that contains the scene.</p>
-    ///   - [`scene_id(Option<String>)`](crate::operation::get_scene::GetSceneOutput::scene_id): <p>The ID of the scene.</p>
-    ///   - [`content_location(Option<String>)`](crate::operation::get_scene::GetSceneOutput::content_location): <p>The relative path that specifies the location of the content definition file.</p>
-    ///   - [`arn(Option<String>)`](crate::operation::get_scene::GetSceneOutput::arn): <p>The ARN of the scene.</p>
-    ///   - [`creation_date_time(Option<DateTime>)`](crate::operation::get_scene::GetSceneOutput::creation_date_time): <p>The date and time when the scene was created.</p>
-    ///   - [`update_date_time(Option<DateTime>)`](crate::operation::get_scene::GetSceneOutput::update_date_time): <p>The date and time when the scene was last updated.</p>
+    ///   - [`workspace_id(String)`](crate::operation::get_scene::GetSceneOutput::workspace_id): <p>The ID of the workspace that contains the scene.</p>
+    ///   - [`scene_id(String)`](crate::operation::get_scene::GetSceneOutput::scene_id): <p>The ID of the scene.</p>
+    ///   - [`content_location(String)`](crate::operation::get_scene::GetSceneOutput::content_location): <p>The relative path that specifies the location of the content definition file.</p>
+    ///   - [`arn(String)`](crate::operation::get_scene::GetSceneOutput::arn): <p>The ARN of the scene.</p>
+    ///   - [`creation_date_time(DateTime)`](crate::operation::get_scene::GetSceneOutput::creation_date_time): <p>The date and time when the scene was created.</p>
+    ///   - [`update_date_time(DateTime)`](crate::operation::get_scene::GetSceneOutput::update_date_time): <p>The date and time when the scene was last updated.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_scene::GetSceneOutput::description): <p>The description of the scene.</p>
-    ///   - [`capabilities(Option<Vec<String>>)`](crate::operation::get_scene::GetSceneOutput::capabilities): <p>A list of capabilities that the scene uses to render.</p>
-    ///   - [`scene_metadata(Option<HashMap<String, String>>)`](crate::operation::get_scene::GetSceneOutput::scene_metadata): <p>The response metadata.</p>
-    ///   - [`generated_scene_metadata(Option<HashMap<String, String>>)`](crate::operation::get_scene::GetSceneOutput::generated_scene_metadata): <p>The generated scene metadata.</p>
+    ///   - [`capabilities(Option<Vec::<String>>)`](crate::operation::get_scene::GetSceneOutput::capabilities): <p>A list of capabilities that the scene uses to render.</p>
+    ///   - [`scene_metadata(Option<HashMap::<String, String>>)`](crate::operation::get_scene::GetSceneOutput::scene_metadata): <p>The response metadata.</p>
+    ///   - [`generated_scene_metadata(Option<HashMap::<String, String>>)`](crate::operation::get_scene::GetSceneOutput::generated_scene_metadata): <p>The generated scene metadata.</p>
     ///   - [`error(Option<SceneError>)`](crate::operation::get_scene::GetSceneOutput::error): <p>The SceneResponse error.</p>
     /// - On failure, responds with [`SdkError<GetSceneError>`](crate::operation::get_scene::GetSceneError)
     pub fn get_scene(&self) -> crate::operation::get_scene::builders::GetSceneFluentBuilder {

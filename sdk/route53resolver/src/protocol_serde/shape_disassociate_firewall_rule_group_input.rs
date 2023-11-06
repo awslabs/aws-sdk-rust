@@ -2,7 +2,7 @@
 pub fn ser_disassociate_firewall_rule_group_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::disassociate_firewall_rule_group::DisassociateFirewallRuleGroupInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.firewall_rule_group_association_id {
         object.key("FirewallRuleGroupAssociationId").string(var_1.as_str());
     }

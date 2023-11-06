@@ -27,6 +27,7 @@ pub struct DescribeWorkerConfigurationInputBuilder {
 }
 impl DescribeWorkerConfigurationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the worker configuration that you want to get information about.</p>
+    /// This field is required.
     pub fn worker_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.worker_configuration_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeWorkerConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_worker_configuration::DescribeWorkerConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_worker_configuration::DescribeWorkerConfigurationInput {
             worker_configuration_arn: self.worker_configuration_arn,

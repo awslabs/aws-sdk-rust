@@ -39,6 +39,7 @@ pub struct PutEmailIdentityFeedbackAttributesInputBuilder {
 }
 impl PutEmailIdentityFeedbackAttributesInputBuilder {
     /// <p>The email identity.</p>
+    /// This field is required.
     pub fn email_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_identity = ::std::option::Option::Some(input.into());
         self
@@ -77,7 +78,7 @@ impl PutEmailIdentityFeedbackAttributesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_email_identity_feedback_attributes::PutEmailIdentityFeedbackAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::put_email_identity_feedback_attributes::PutEmailIdentityFeedbackAttributesInput {

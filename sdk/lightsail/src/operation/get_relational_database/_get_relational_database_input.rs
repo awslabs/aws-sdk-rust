@@ -27,6 +27,7 @@ pub struct GetRelationalDatabaseInputBuilder {
 }
 impl GetRelationalDatabaseInputBuilder {
     /// <p>The name of the database that you are looking up.</p>
+    /// This field is required.
     pub fn relational_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.relational_database_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetRelationalDatabaseInputBuilder {
     /// Consumes the builder and constructs a [`GetRelationalDatabaseInput`](crate::operation::get_relational_database::GetRelationalDatabaseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_relational_database::GetRelationalDatabaseInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_relational_database::GetRelationalDatabaseInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_relational_database::GetRelationalDatabaseInput {
             relational_database_name: self.relational_database_name,

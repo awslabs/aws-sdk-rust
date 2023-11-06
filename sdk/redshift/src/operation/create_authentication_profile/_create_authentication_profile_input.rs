@@ -34,6 +34,7 @@ pub struct CreateAuthenticationProfileInputBuilder {
 }
 impl CreateAuthenticationProfileInputBuilder {
     /// <p>The name of the authentication profile to be created.</p>
+    /// This field is required.
     pub fn authentication_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authentication_profile_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl CreateAuthenticationProfileInputBuilder {
         &self.authentication_profile_name
     }
     /// <p>The content of the authentication profile in JSON format. The maximum length of the JSON string is determined by a quota for your account.</p>
+    /// This field is required.
     pub fn authentication_profile_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authentication_profile_content = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl CreateAuthenticationProfileInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_authentication_profile::CreateAuthenticationProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_authentication_profile::CreateAuthenticationProfileInput {
             authentication_profile_name: self.authentication_profile_name,

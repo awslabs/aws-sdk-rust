@@ -2,21 +2,21 @@
 pub fn ser_spark_submit_job_driver(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SparkSubmitJobDriver,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.entry_point {
-        object.key("entryPoint").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("entryPoint").string(input.entry_point.as_str());
     }
-    if let Some(var_2) = &input.entry_point_arguments {
-        let mut array_3 = object.key("entryPointArguments").start_array();
-        for item_4 in var_2 {
+    if let Some(var_1) = &input.entry_point_arguments {
+        let mut array_2 = object.key("entryPointArguments").start_array();
+        for item_3 in var_1 {
             {
-                array_3.value().string(item_4.as_str());
+                array_2.value().string(item_3.as_str());
             }
         }
-        array_3.finish();
+        array_2.finish();
     }
-    if let Some(var_5) = &input.spark_submit_parameters {
-        object.key("sparkSubmitParameters").string(var_5.as_str());
+    if let Some(var_4) = &input.spark_submit_parameters {
+        object.key("sparkSubmitParameters").string(var_4.as_str());
     }
     Ok(())
 }
@@ -64,7 +64,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::spark_submit_job_driver_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

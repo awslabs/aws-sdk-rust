@@ -40,8 +40,10 @@ impl DescribeEnvironmentHealthOutput {
         self.color.as_deref()
     }
     /// <p>Descriptions of the data that contributed to the environment's current health status.</p>
-    pub fn causes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.causes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.causes.is_none()`.
+    pub fn causes(&self) -> &[::std::string::String] {
+        self.causes.as_deref().unwrap_or_default()
     }
     /// <p>Application request metrics for the environment.</p>
     pub fn application_metrics(&self) -> ::std::option::Option<&crate::types::ApplicationMetrics> {

@@ -27,6 +27,7 @@ pub struct DeleteSuiteDefinitionInputBuilder {
 }
 impl DeleteSuiteDefinitionInputBuilder {
     /// <p>Suite definition ID of the test suite to be deleted.</p>
+    /// This field is required.
     pub fn suite_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.suite_definition_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteSuiteDefinitionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSuiteDefinitionInput`](crate::operation::delete_suite_definition::DeleteSuiteDefinitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_suite_definition::DeleteSuiteDefinitionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_suite_definition::DeleteSuiteDefinitionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_suite_definition::DeleteSuiteDefinitionInput {
             suite_definition_id: self.suite_definition_id,

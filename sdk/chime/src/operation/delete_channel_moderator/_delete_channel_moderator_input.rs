@@ -41,6 +41,7 @@ pub struct DeleteChannelModeratorInputBuilder {
 }
 impl DeleteChannelModeratorInputBuilder {
     /// <p>The ARN of the channel.</p>
+    /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DeleteChannelModeratorInputBuilder {
         &self.channel_arn
     }
     /// <p>The ARN of the moderator being deleted.</p>
+    /// This field is required.
     pub fn channel_moderator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_moderator_arn = ::std::option::Option::Some(input.into());
         self
@@ -85,8 +87,10 @@ impl DeleteChannelModeratorInputBuilder {
     /// Consumes the builder and constructs a [`DeleteChannelModeratorInput`](crate::operation::delete_channel_moderator::DeleteChannelModeratorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_channel_moderator::DeleteChannelModeratorInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_channel_moderator::DeleteChannelModeratorInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_channel_moderator::DeleteChannelModeratorInput {
             channel_arn: self.channel_arn,
             channel_moderator_arn: self.channel_moderator_arn,

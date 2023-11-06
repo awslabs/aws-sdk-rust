@@ -2,17 +2,17 @@
 pub fn ser_eo_cloud_cover_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EoCloudCoverInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.lower_bound {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
         object.key("LowerBound").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_1).into()),
+            ::aws_smithy_types::Number::Float((input.lower_bound).into()),
         );
     }
-    if let Some(var_2) = &input.upper_bound {
+    {
         object.key("UpperBound").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_2).into()),
+            ::aws_smithy_types::Number::Float((input.upper_bound).into()),
         );
     }
     Ok(())
@@ -53,7 +53,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::eo_cloud_cover_input_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

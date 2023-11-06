@@ -41,6 +41,7 @@ pub struct ResumeServiceOutputBuilder {
 }
 impl ResumeServiceOutputBuilder {
     /// <p>A description of the App Runner service that this request just resumed.</p>
+    /// This field is required.
     pub fn service(mut self, input: crate::types::Service) -> Self {
         self.service = ::std::option::Option::Some(input);
         self

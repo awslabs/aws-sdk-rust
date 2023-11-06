@@ -41,6 +41,7 @@ pub struct CreateGroupMembershipInputBuilder {
 }
 impl CreateGroupMembershipInputBuilder {
     /// <p>The globally unique identifier for the identity store.</p>
+    /// This field is required.
     pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_store_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl CreateGroupMembershipInputBuilder {
         &self.identity_store_id
     }
     /// <p>The identifier for a group in the identity store.</p>
+    /// This field is required.
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl CreateGroupMembershipInputBuilder {
         &self.group_id
     }
     /// <p>An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.</p>
+    /// This field is required.
     pub fn member_id(mut self, input: crate::types::MemberId) -> Self {
         self.member_id = ::std::option::Option::Some(input);
         self
@@ -85,7 +88,7 @@ impl CreateGroupMembershipInputBuilder {
     /// Consumes the builder and constructs a [`CreateGroupMembershipInput`](crate::operation::create_group_membership::CreateGroupMembershipInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_group_membership::CreateGroupMembershipInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_group_membership::CreateGroupMembershipInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_group_membership::CreateGroupMembershipInput {
             identity_store_id: self.identity_store_id,

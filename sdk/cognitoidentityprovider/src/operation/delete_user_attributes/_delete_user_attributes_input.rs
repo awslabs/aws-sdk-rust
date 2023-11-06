@@ -13,8 +13,10 @@ pub struct DeleteUserAttributesInput {
 impl DeleteUserAttributesInput {
     /// <p>An array of strings representing the user attribute names you want to delete.</p>
     /// <p>For custom attributes, you must prependattach the <code>custom:</code> prefix to the front of the attribute name.</p>
-    pub fn user_attribute_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.user_attribute_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_attribute_names.is_none()`.
+    pub fn user_attribute_names(&self) -> &[::std::string::String] {
+        self.user_attribute_names.as_deref().unwrap_or_default()
     }
     /// <p>A valid access token that Amazon Cognito issued to the user whose attributes you want to delete.</p>
     pub fn access_token(&self) -> ::std::option::Option<&str> {
@@ -68,6 +70,7 @@ impl DeleteUserAttributesInputBuilder {
         &self.user_attribute_names
     }
     /// <p>A valid access token that Amazon Cognito issued to the user whose attributes you want to delete.</p>
+    /// This field is required.
     pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_token = ::std::option::Option::Some(input.into());
         self
@@ -84,7 +87,7 @@ impl DeleteUserAttributesInputBuilder {
     /// Consumes the builder and constructs a [`DeleteUserAttributesInput`](crate::operation::delete_user_attributes::DeleteUserAttributesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_user_attributes::DeleteUserAttributesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_user_attributes::DeleteUserAttributesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_user_attributes::DeleteUserAttributesInput {
             user_attribute_names: self.user_attribute_names,

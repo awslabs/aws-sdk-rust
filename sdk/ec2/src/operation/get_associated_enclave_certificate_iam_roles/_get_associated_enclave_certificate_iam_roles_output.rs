@@ -9,8 +9,10 @@ pub struct GetAssociatedEnclaveCertificateIamRolesOutput {
 }
 impl GetAssociatedEnclaveCertificateIamRolesOutput {
     /// <p>Information about the associated IAM roles.</p>
-    pub fn associated_roles(&self) -> ::std::option::Option<&[crate::types::AssociatedRole]> {
-        self.associated_roles.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_roles.is_none()`.
+    pub fn associated_roles(&self) -> &[crate::types::AssociatedRole] {
+        self.associated_roles.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetAssociatedEnclaveCertificateIamRolesOutput {

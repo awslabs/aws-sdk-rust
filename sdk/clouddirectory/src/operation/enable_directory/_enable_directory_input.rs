@@ -27,6 +27,7 @@ pub struct EnableDirectoryInputBuilder {
 }
 impl EnableDirectoryInputBuilder {
     /// <p>The ARN of the directory to enable.</p>
+    /// This field is required.
     pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl EnableDirectoryInputBuilder {
     /// Consumes the builder and constructs a [`EnableDirectoryInput`](crate::operation::enable_directory::EnableDirectoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::enable_directory::EnableDirectoryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::enable_directory::EnableDirectoryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::enable_directory::EnableDirectoryInput {
             directory_arn: self.directory_arn,
         })

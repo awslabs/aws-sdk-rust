@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KeyPairIds {
     /// <p>The number of key pair identifiers in the list.</p>
-    pub quantity: ::std::option::Option<i32>,
+    pub quantity: i32,
     /// <p>A list of CloudFront key pair identifiers.</p>
     pub items: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl KeyPairIds {
     /// <p>The number of key pair identifiers in the list.</p>
-    pub fn quantity(&self) -> ::std::option::Option<i32> {
+    pub fn quantity(&self) -> i32 {
         self.quantity
     }
     /// <p>A list of CloudFront key pair identifiers.</p>
-    pub fn items(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[::std::string::String] {
+        self.items.as_deref().unwrap_or_default()
     }
 }
 impl KeyPairIds {
@@ -35,6 +37,7 @@ pub struct KeyPairIdsBuilder {
 }
 impl KeyPairIdsBuilder {
     /// <p>The number of key pair identifiers in the list.</p>
+    /// This field is required.
     pub fn quantity(mut self, input: i32) -> Self {
         self.quantity = ::std::option::Option::Some(input);
         self
@@ -69,10 +72,17 @@ impl KeyPairIdsBuilder {
         &self.items
     }
     /// Consumes the builder and constructs a [`KeyPairIds`](crate::types::KeyPairIds).
-    pub fn build(self) -> crate::types::KeyPairIds {
-        crate::types::KeyPairIds {
-            quantity: self.quantity,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`quantity`](crate::types::builders::KeyPairIdsBuilder::quantity)
+    pub fn build(self) -> ::std::result::Result<crate::types::KeyPairIds, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::KeyPairIds {
+            quantity: self.quantity.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "quantity",
+                    "quantity was not specified but it is required when building KeyPairIds",
+                )
+            })?,
             items: self.items,
-        }
+        })
     }
 }

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaDeviceMount {
     /// <p>The mount path for the device in the file system.</p>
-    pub path: ::std::option::Option<::std::string::String>,
+    pub path: ::std::string::String,
     /// <p>The permission to access the device: read/only (<code>ro</code>) or read/write (<code>rw</code>).</p>
     /// <p>Default: <code>ro</code> </p>
     pub permission: ::std::option::Option<crate::types::LambdaFilesystemPermission>,
@@ -15,8 +15,9 @@ pub struct LambdaDeviceMount {
 }
 impl LambdaDeviceMount {
     /// <p>The mount path for the device in the file system.</p>
-    pub fn path(&self) -> ::std::option::Option<&str> {
-        self.path.as_deref()
+    pub fn path(&self) -> &str {
+        use std::ops::Deref;
+        self.path.deref()
     }
     /// <p>The permission to access the device: read/only (<code>ro</code>) or read/write (<code>rw</code>).</p>
     /// <p>Default: <code>ro</code> </p>
@@ -46,6 +47,7 @@ pub struct LambdaDeviceMountBuilder {
 }
 impl LambdaDeviceMountBuilder {
     /// <p>The mount path for the device in the file system.</p>
+    /// This field is required.
     pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path = ::std::option::Option::Some(input.into());
         self
@@ -94,11 +96,18 @@ impl LambdaDeviceMountBuilder {
         &self.add_group_owner
     }
     /// Consumes the builder and constructs a [`LambdaDeviceMount`](crate::types::LambdaDeviceMount).
-    pub fn build(self) -> crate::types::LambdaDeviceMount {
-        crate::types::LambdaDeviceMount {
-            path: self.path,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`path`](crate::types::builders::LambdaDeviceMountBuilder::path)
+    pub fn build(self) -> ::std::result::Result<crate::types::LambdaDeviceMount, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::LambdaDeviceMount {
+            path: self.path.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "path",
+                    "path was not specified but it is required when building LambdaDeviceMount",
+                )
+            })?,
             permission: self.permission,
             add_group_owner: self.add_group_owner,
-        }
+        })
     }
 }

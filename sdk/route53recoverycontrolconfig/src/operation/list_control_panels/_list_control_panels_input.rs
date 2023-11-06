@@ -85,7 +85,7 @@ impl ListControlPanelsInputBuilder {
     /// Consumes the builder and constructs a [`ListControlPanelsInput`](crate::operation::list_control_panels::ListControlPanelsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_control_panels::ListControlPanelsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_control_panels::ListControlPanelsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_control_panels::ListControlPanelsInput {
             cluster_arn: self.cluster_arn,
             max_results: self.max_results,

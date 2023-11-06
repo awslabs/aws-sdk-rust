@@ -11,8 +11,10 @@ pub struct ListFlowExecutionMessagesOutput {
 }
 impl ListFlowExecutionMessagesOutput {
     /// <p>A list of objects that contain information about events in the specified flow execution.</p>
-    pub fn messages(&self) -> ::std::option::Option<&[crate::types::FlowExecutionMessage]> {
-        self.messages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.messages.is_none()`.
+    pub fn messages(&self) -> &[crate::types::FlowExecutionMessage] {
+        self.messages.as_deref().unwrap_or_default()
     }
     /// <p>The string to specify as <code>nextToken</code> when you request the next page of results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -4,12 +4,12 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_forms::builders::ListFormsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_id(impl Into<String>)`](crate::operation::list_forms::builders::ListFormsFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::list_forms::builders::ListFormsFluentBuilder::set_app_id): <p>The unique ID for the Amplify app.</p>
-    ///   - [`environment_name(impl Into<String>)`](crate::operation::list_forms::builders::ListFormsFluentBuilder::environment_name) / [`set_environment_name(Option<String>)`](crate::operation::list_forms::builders::ListFormsFluentBuilder::set_environment_name): <p>The name of the backend environment that is a part of the Amplify app.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_forms::builders::ListFormsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_forms::builders::ListFormsFluentBuilder::set_next_token): <p>The token to request the next page of results.</p>
-    ///   - [`max_results(i32)`](crate::operation::list_forms::builders::ListFormsFluentBuilder::max_results) / [`set_max_results(i32)`](crate::operation::list_forms::builders::ListFormsFluentBuilder::set_max_results): <p>The maximum number of forms to retrieve.</p>
+    ///   - [`app_id(impl Into<String>)`](crate::operation::list_forms::builders::ListFormsFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::list_forms::builders::ListFormsFluentBuilder::set_app_id):<br>required: **true**<br><p>The unique ID for the Amplify app.</p><br>
+    ///   - [`environment_name(impl Into<String>)`](crate::operation::list_forms::builders::ListFormsFluentBuilder::environment_name) / [`set_environment_name(Option<String>)`](crate::operation::list_forms::builders::ListFormsFluentBuilder::set_environment_name):<br>required: **true**<br><p>The name of the backend environment that is a part of the Amplify app.</p><br>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_forms::builders::ListFormsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_forms::builders::ListFormsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to request the next page of results.</p><br>
+    ///   - [`max_results(i32)`](crate::operation::list_forms::builders::ListFormsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_forms::builders::ListFormsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of forms to retrieve.</p><br>
     /// - On success, responds with [`ListFormsOutput`](crate::operation::list_forms::ListFormsOutput) with field(s):
-    ///   - [`entities(Option<Vec<FormSummary>>)`](crate::operation::list_forms::ListFormsOutput::entities): <p>The list of forms for the Amplify app.</p>
+    ///   - [`entities(Vec::<FormSummary>)`](crate::operation::list_forms::ListFormsOutput::entities): <p>The list of forms for the Amplify app.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_forms::ListFormsOutput::next_token): <p>The pagination token that's included if more results are available.</p>
     /// - On failure, responds with [`SdkError<ListFormsError>`](crate::operation::list_forms::ListFormsError)
     pub fn list_forms(&self) -> crate::operation::list_forms::builders::ListFormsFluentBuilder {

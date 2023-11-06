@@ -34,6 +34,7 @@ pub struct UpdateCollaborationOutputBuilder {
 }
 impl UpdateCollaborationOutputBuilder {
     /// <p>The entire collaboration that has been updated.</p>
+    /// This field is required.
     pub fn collaboration(mut self, input: crate::types::Collaboration) -> Self {
         self.collaboration = ::std::option::Option::Some(input);
         self

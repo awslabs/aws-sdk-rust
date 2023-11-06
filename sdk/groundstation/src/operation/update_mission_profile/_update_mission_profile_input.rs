@@ -45,8 +45,10 @@ impl UpdateMissionProfileInput {
         self.minimum_viable_contact_duration_seconds
     }
     /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
-    pub fn dataflow_edges(&self) -> ::std::option::Option<&[::std::vec::Vec<::std::string::String>]> {
-        self.dataflow_edges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dataflow_edges.is_none()`.
+    pub fn dataflow_edges(&self) -> &[::std::vec::Vec<::std::string::String>] {
+        self.dataflow_edges.as_deref().unwrap_or_default()
     }
     /// <p>ARN of a tracking <code>Config</code>.</p>
     pub fn tracking_config_arn(&self) -> ::std::option::Option<&str> {
@@ -84,6 +86,7 @@ pub struct UpdateMissionProfileInputBuilder {
 }
 impl UpdateMissionProfileInputBuilder {
     /// <p>UUID of a mission profile.</p>
+    /// This field is required.
     pub fn mission_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mission_profile_id = ::std::option::Option::Some(input.into());
         self
@@ -218,7 +221,7 @@ impl UpdateMissionProfileInputBuilder {
     /// Consumes the builder and constructs a [`UpdateMissionProfileInput`](crate::operation::update_mission_profile::UpdateMissionProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_mission_profile::UpdateMissionProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_mission_profile::UpdateMissionProfileInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_mission_profile::UpdateMissionProfileInput {
             mission_profile_id: self.mission_profile_id,

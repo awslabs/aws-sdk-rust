@@ -15,16 +15,22 @@ pub struct Destination {
 }
 impl Destination {
     /// <p>An array that contains the email addresses of the "To" recipients for the email.</p>
-    pub fn to_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.to_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.to_addresses.is_none()`.
+    pub fn to_addresses(&self) -> &[::std::string::String] {
+        self.to_addresses.as_deref().unwrap_or_default()
     }
     /// <p>An array that contains the email addresses of the "CC" (carbon copy) recipients for the email.</p>
-    pub fn cc_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cc_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cc_addresses.is_none()`.
+    pub fn cc_addresses(&self) -> &[::std::string::String] {
+        self.cc_addresses.as_deref().unwrap_or_default()
     }
     /// <p>An array that contains the email addresses of the "BCC" (blind carbon copy) recipients for the email.</p>
-    pub fn bcc_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.bcc_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bcc_addresses.is_none()`.
+    pub fn bcc_addresses(&self) -> &[::std::string::String] {
+        self.bcc_addresses.as_deref().unwrap_or_default()
     }
 }
 impl Destination {

@@ -69,6 +69,7 @@ impl SearchIndexInputBuilder {
         &self.index_name
     }
     /// <p>The search query string. For more information about the search query syntax, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query syntax</a>.</p>
+    /// This field is required.
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_string = ::std::option::Option::Some(input.into());
         self
@@ -125,7 +126,7 @@ impl SearchIndexInputBuilder {
         &self.query_version
     }
     /// Consumes the builder and constructs a [`SearchIndexInput`](crate::operation::search_index::SearchIndexInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::search_index::SearchIndexInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::search_index::SearchIndexInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_index::SearchIndexInput {
             index_name: self.index_name,
             query_string: self.query_string,

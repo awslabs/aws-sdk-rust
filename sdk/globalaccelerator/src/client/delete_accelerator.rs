@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteAccelerator`](crate::operation::delete_accelerator::builders::DeleteAcceleratorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`accelerator_arn(impl Into<String>)`](crate::operation::delete_accelerator::builders::DeleteAcceleratorFluentBuilder::accelerator_arn) / [`set_accelerator_arn(Option<String>)`](crate::operation::delete_accelerator::builders::DeleteAcceleratorFluentBuilder::set_accelerator_arn): <p>The Amazon Resource Name (ARN) of an accelerator.</p>
+    ///   - [`accelerator_arn(impl Into<String>)`](crate::operation::delete_accelerator::builders::DeleteAcceleratorFluentBuilder::accelerator_arn) / [`set_accelerator_arn(Option<String>)`](crate::operation::delete_accelerator::builders::DeleteAcceleratorFluentBuilder::set_accelerator_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of an accelerator.</p><br>
     /// - On success, responds with [`DeleteAcceleratorOutput`](crate::operation::delete_accelerator::DeleteAcceleratorOutput)
     /// - On failure, responds with [`SdkError<DeleteAcceleratorError>`](crate::operation::delete_accelerator::DeleteAcceleratorError)
     pub fn delete_accelerator(&self) -> crate::operation::delete_accelerator::builders::DeleteAcceleratorFluentBuilder {

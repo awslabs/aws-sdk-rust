@@ -27,6 +27,7 @@ pub struct GetThingRuntimeConfigurationInputBuilder {
 }
 impl GetThingRuntimeConfigurationInputBuilder {
     /// The thing name.
+    /// This field is required.
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetThingRuntimeConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_thing_runtime_configuration::GetThingRuntimeConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_thing_runtime_configuration::GetThingRuntimeConfigurationInput {
             thing_name: self.thing_name,

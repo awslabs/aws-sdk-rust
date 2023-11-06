@@ -12,8 +12,10 @@ pub struct StartInstancesInput {
 }
 impl StartInstancesInput {
     /// <p>The IDs of the instances.</p>
-    pub fn instance_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.instance_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_ids.is_none()`.
+    pub fn instance_ids(&self) -> &[::std::string::String] {
+        self.instance_ids.as_deref().unwrap_or_default()
     }
     /// <p>Reserved.</p>
     pub fn additional_info(&self) -> ::std::option::Option<&str> {
@@ -91,7 +93,7 @@ impl StartInstancesInputBuilder {
     /// Consumes the builder and constructs a [`StartInstancesInput`](crate::operation::start_instances::StartInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_instances::StartInstancesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_instances::StartInstancesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_instances::StartInstancesInput {
             instance_ids: self.instance_ids,
             additional_info: self.additional_info,

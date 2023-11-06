@@ -27,6 +27,7 @@ pub struct DeleteBridgeInputBuilder {
 }
 impl DeleteBridgeInputBuilder {
     /// The ARN of the bridge that you want to delete.
+    /// This field is required.
     pub fn bridge_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bridge_arn = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,9 @@ impl DeleteBridgeInputBuilder {
         &self.bridge_arn
     }
     /// Consumes the builder and constructs a [`DeleteBridgeInput`](crate::operation::delete_bridge::DeleteBridgeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_bridge::DeleteBridgeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_bridge::DeleteBridgeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_bridge::DeleteBridgeInput { bridge_arn: self.bridge_arn })
     }
 }

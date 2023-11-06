@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChangeCidrCollectionOutput {
     /// <p>The ID that is returned by <code>ChangeCidrCollection</code>. You can use it as input to <code>GetChange</code> to see if a CIDR collection change has propagated or not.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl ChangeCidrCollectionOutput {
     /// <p>The ID that is returned by <code>ChangeCidrCollection</code>. You can use it as input to <code>GetChange</code> to see if a CIDR collection change has propagated or not.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ChangeCidrCollectionOutput {
@@ -34,6 +35,7 @@ pub struct ChangeCidrCollectionOutputBuilder {
 }
 impl ChangeCidrCollectionOutputBuilder {
     /// <p>The ID that is returned by <code>ChangeCidrCollection</code>. You can use it as input to <code>GetChange</code> to see if a CIDR collection change has propagated or not.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,20 @@ impl ChangeCidrCollectionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ChangeCidrCollectionOutput`](crate::operation::change_cidr_collection::ChangeCidrCollectionOutput).
-    pub fn build(self) -> crate::operation::change_cidr_collection::ChangeCidrCollectionOutput {
-        crate::operation::change_cidr_collection::ChangeCidrCollectionOutput {
-            id: self.id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::change_cidr_collection::builders::ChangeCidrCollectionOutputBuilder::id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::change_cidr_collection::ChangeCidrCollectionOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::change_cidr_collection::ChangeCidrCollectionOutput {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building ChangeCidrCollectionOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

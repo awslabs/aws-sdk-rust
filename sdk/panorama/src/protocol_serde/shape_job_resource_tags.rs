@@ -2,19 +2,19 @@
 pub fn ser_job_resource_tags(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::JobResourceTags,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.resource_type {
-        object.key("ResourceType").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("ResourceType").string(input.resource_type.as_str());
     }
-    if let Some(var_2) = &input.tags {
+    {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("Tags").start_object();
-        for (key_4, value_5) in var_2 {
+        let mut object_1 = object.key("Tags").start_object();
+        for (key_2, value_3) in &input.tags {
             {
-                object_3.key(key_4.as_str()).string(value_5.as_str());
+                object_1.key(key_2.as_str()).string(value_3.as_str());
             }
         }
-        object_3.finish();
+        object_1.finish();
     }
     Ok(())
 }
@@ -54,7 +54,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::job_resource_tags_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -174,8 +174,8 @@ pub fn de_start_continuous_export_http_response(
 
 pub fn ser_start_continuous_export_input(
     _input: &crate::operation::start_continuous_export::StartContinuousExportInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
-    Ok(::aws_smithy_http::body::SdkBody::from("{}"))
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+    Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }
 
 pub(crate) fn de_start_continuous_export(

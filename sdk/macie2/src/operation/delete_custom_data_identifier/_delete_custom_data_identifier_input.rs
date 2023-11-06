@@ -27,6 +27,7 @@ pub struct DeleteCustomDataIdentifierInputBuilder {
 }
 impl DeleteCustomDataIdentifierInputBuilder {
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteCustomDataIdentifierInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_custom_data_identifier::DeleteCustomDataIdentifierInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_custom_data_identifier::DeleteCustomDataIdentifierInput { id: self.id })
     }

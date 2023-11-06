@@ -99,6 +99,7 @@ pub struct SetPlatformApplicationAttributesInputBuilder {
 }
 impl SetPlatformApplicationAttributesInputBuilder {
     /// <p>PlatformApplicationArn for SetPlatformApplicationAttributes action.</p>
+    /// This field is required.
     pub fn platform_application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform_application_arn = ::std::option::Option::Some(input.into());
         self
@@ -233,7 +234,7 @@ impl SetPlatformApplicationAttributesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_platform_application_attributes::SetPlatformApplicationAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::set_platform_application_attributes::SetPlatformApplicationAttributesInput {

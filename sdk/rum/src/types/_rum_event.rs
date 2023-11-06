@@ -5,36 +5,39 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RumEvent {
     /// <p>A unique ID for this event.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The exact time that this event occurred.</p>
-    pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub timestamp: ::aws_smithy_types::DateTime,
     /// <p>The JSON schema that denotes the type of event this is, such as a page load or a new session.</p>
-    pub r#type: ::std::option::Option<::std::string::String>,
+    pub r#type: ::std::string::String,
     /// <p>Metadata about this event, which contains a JSON serialization of the identity of the user for this session. The user information comes from information such as the HTTP user-agent request header and document interface.</p>
     pub metadata: ::std::option::Option<::std::string::String>,
     /// <p>A string containing details about the event.</p>
-    pub details: ::std::option::Option<::std::string::String>,
+    pub details: ::std::string::String,
 }
 impl RumEvent {
     /// <p>A unique ID for this event.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The exact time that this event occurred.</p>
-    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.timestamp.as_ref()
+    pub fn timestamp(&self) -> &::aws_smithy_types::DateTime {
+        &self.timestamp
     }
     /// <p>The JSON schema that denotes the type of event this is, such as a page load or a new session.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
-        self.r#type.as_deref()
+    pub fn r#type(&self) -> &str {
+        use std::ops::Deref;
+        self.r#type.deref()
     }
     /// <p>Metadata about this event, which contains a JSON serialization of the identity of the user for this session. The user information comes from information such as the HTTP user-agent request header and document interface.</p>
     pub fn metadata(&self) -> ::std::option::Option<&str> {
         self.metadata.as_deref()
     }
     /// <p>A string containing details about the event.</p>
-    pub fn details(&self) -> ::std::option::Option<&str> {
-        self.details.as_deref()
+    pub fn details(&self) -> &str {
+        use std::ops::Deref;
+        self.details.deref()
     }
 }
 impl RumEvent {
@@ -56,6 +59,7 @@ pub struct RumEventBuilder {
 }
 impl RumEventBuilder {
     /// <p>A unique ID for this event.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +74,7 @@ impl RumEventBuilder {
         &self.id
     }
     /// <p>The exact time that this event occurred.</p>
+    /// This field is required.
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
         self
@@ -84,6 +89,7 @@ impl RumEventBuilder {
         &self.timestamp
     }
     /// <p>The JSON schema that denotes the type of event this is, such as a page load or a new session.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +118,7 @@ impl RumEventBuilder {
         &self.metadata
     }
     /// <p>A string containing details about the event.</p>
+    /// This field is required.
     pub fn details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.details = ::std::option::Option::Some(input.into());
         self
@@ -126,13 +133,38 @@ impl RumEventBuilder {
         &self.details
     }
     /// Consumes the builder and constructs a [`RumEvent`](crate::types::RumEvent).
-    pub fn build(self) -> crate::types::RumEvent {
-        crate::types::RumEvent {
-            id: self.id,
-            timestamp: self.timestamp,
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::RumEventBuilder::id)
+    /// - [`timestamp`](crate::types::builders::RumEventBuilder::timestamp)
+    /// - [`r#type`](crate::types::builders::RumEventBuilder::r#type)
+    /// - [`details`](crate::types::builders::RumEventBuilder::details)
+    pub fn build(self) -> ::std::result::Result<crate::types::RumEvent, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RumEvent {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building RumEvent",
+                )
+            })?,
+            timestamp: self.timestamp.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "timestamp",
+                    "timestamp was not specified but it is required when building RumEvent",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building RumEvent",
+                )
+            })?,
             metadata: self.metadata,
-            details: self.details,
-        }
+            details: self.details.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "details",
+                    "details was not specified but it is required when building RumEvent",
+                )
+            })?,
+        })
     }
 }

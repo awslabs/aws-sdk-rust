@@ -35,6 +35,7 @@ pub struct DissociatePackageInputBuilder {
 }
 impl DissociatePackageInputBuilder {
     /// <p>Internal ID of the package to dissociate from the domain. Use <code>ListPackagesForDomain</code> to find this value.</p>
+    /// This field is required.
     pub fn package_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl DissociatePackageInputBuilder {
         &self.package_id
     }
     /// <p>Name of the domain to dissociate the package from.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -65,7 +67,7 @@ impl DissociatePackageInputBuilder {
     /// Consumes the builder and constructs a [`DissociatePackageInput`](crate::operation::dissociate_package::DissociatePackageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::dissociate_package::DissociatePackageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::dissociate_package::DissociatePackageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::dissociate_package::DissociatePackageInput {
             package_id: self.package_id,
             domain_name: self.domain_name,

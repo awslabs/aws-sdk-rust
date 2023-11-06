@@ -88,18 +88,20 @@ pub fn de_send_project_session_action_http_response(
         output = crate::protocol_serde::shape_send_project_session_action::de_send_project_session_action(_response_body, output)
             .map_err(crate::operation::send_project_session_action::SendProjectSessionActionError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::send_project_session_action_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::send_project_session_action::SendProjectSessionActionError::unhandled)?
     })
 }
 
 pub fn ser_send_project_session_action_input(
     input: &crate::operation::send_project_session_action::SendProjectSessionActionInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_send_project_session_action_input::ser_send_project_session_action_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_send_project_session_action(

@@ -55,6 +55,7 @@ pub struct UpdateDatasetInputBuilder {
 }
 impl UpdateDatasetInputBuilder {
     /// <p>The name of the dataset to be updated.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +98,7 @@ impl UpdateDatasetInputBuilder {
         &self.format_options
     }
     /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.</p>
+    /// This field is required.
     pub fn input(mut self, input: crate::types::Input) -> Self {
         self.input = ::std::option::Option::Some(input);
         self
@@ -127,7 +129,7 @@ impl UpdateDatasetInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDatasetInput`](crate::operation::update_dataset::UpdateDatasetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_dataset::UpdateDatasetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_dataset::UpdateDatasetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_dataset::UpdateDatasetInput {
             name: self.name,
             format: self.format,

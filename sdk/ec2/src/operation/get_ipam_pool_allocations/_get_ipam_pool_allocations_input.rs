@@ -30,8 +30,10 @@ impl GetIpamPoolAllocationsInput {
         self.ipam_pool_allocation_id.as_deref()
     }
     /// <p>One or more filters for the request. For more information about filtering, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Filtering CLI output</a>.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of results you would like returned per page.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -76,6 +78,7 @@ impl GetIpamPoolAllocationsInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the IPAM pool you want to see the allocations for.</p>
+    /// This field is required.
     pub fn ipam_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -156,7 +159,7 @@ impl GetIpamPoolAllocationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_ipam_pool_allocations::GetIpamPoolAllocationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_ipam_pool_allocations::GetIpamPoolAllocationsInput {
             dry_run: self.dry_run,

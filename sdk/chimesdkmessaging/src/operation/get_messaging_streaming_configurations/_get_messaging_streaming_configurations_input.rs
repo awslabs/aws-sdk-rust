@@ -27,6 +27,7 @@ pub struct GetMessagingStreamingConfigurationsInputBuilder {
 }
 impl GetMessagingStreamingConfigurationsInputBuilder {
     /// <p>The ARN of the streaming configurations.</p>
+    /// This field is required.
     pub fn app_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetMessagingStreamingConfigurationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_messaging_streaming_configurations::GetMessagingStreamingConfigurationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_messaging_streaming_configurations::GetMessagingStreamingConfigurationsInput {

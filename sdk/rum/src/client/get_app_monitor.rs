@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetAppMonitor`](crate::operation::get_app_monitor::builders::GetAppMonitorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::get_app_monitor::builders::GetAppMonitorFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_app_monitor::builders::GetAppMonitorFluentBuilder::set_name): <p>The app monitor to retrieve information for.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::get_app_monitor::builders::GetAppMonitorFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_app_monitor::builders::GetAppMonitorFluentBuilder::set_name):<br>required: **true**<br><p>The app monitor to retrieve information for.</p><br>
     /// - On success, responds with [`GetAppMonitorOutput`](crate::operation::get_app_monitor::GetAppMonitorOutput) with field(s):
     ///   - [`app_monitor(Option<AppMonitor>)`](crate::operation::get_app_monitor::GetAppMonitorOutput::app_monitor): <p>A structure containing all the configuration information for the app monitor.</p>
     /// - On failure, responds with [`SdkError<GetAppMonitorError>`](crate::operation::get_app_monitor::GetAppMonitorError)

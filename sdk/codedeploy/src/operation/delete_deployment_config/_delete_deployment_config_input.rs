@@ -28,6 +28,7 @@ pub struct DeleteDeploymentConfigInputBuilder {
 }
 impl DeleteDeploymentConfigInputBuilder {
     /// <p>The name of a deployment configuration associated with the user or Amazon Web Services account.</p>
+    /// This field is required.
     pub fn deployment_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_config_name = ::std::option::Option::Some(input.into());
         self
@@ -44,8 +45,10 @@ impl DeleteDeploymentConfigInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDeploymentConfigInput`](crate::operation::delete_deployment_config::DeleteDeploymentConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_deployment_config::DeleteDeploymentConfigInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_deployment_config::DeleteDeploymentConfigInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_deployment_config::DeleteDeploymentConfigInput {
             deployment_config_name: self.deployment_config_name,
         })

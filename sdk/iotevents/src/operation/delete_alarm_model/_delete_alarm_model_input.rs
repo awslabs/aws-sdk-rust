@@ -27,6 +27,7 @@ pub struct DeleteAlarmModelInputBuilder {
 }
 impl DeleteAlarmModelInputBuilder {
     /// <p>The name of the alarm model.</p>
+    /// This field is required.
     pub fn alarm_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alarm_model_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteAlarmModelInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAlarmModelInput`](crate::operation::delete_alarm_model::DeleteAlarmModelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_alarm_model::DeleteAlarmModelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_alarm_model::DeleteAlarmModelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_alarm_model::DeleteAlarmModelInput {
             alarm_model_name: self.alarm_model_name,
         })

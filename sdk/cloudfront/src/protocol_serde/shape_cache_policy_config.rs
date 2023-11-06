@@ -2,33 +2,33 @@
 pub fn ser_cache_policy_config(
     input: &crate::types::CachePolicyConfig,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_1) = &input.comment {
         let mut inner_writer = scope.start_el("Comment").finish();
         inner_writer.data(var_1.as_str());
     }
-    if let Some(var_2) = &input.name {
+    {
         let mut inner_writer = scope.start_el("Name").finish();
-        inner_writer.data(var_2.as_str());
+        inner_writer.data(input.name.as_str());
     }
-    if let Some(var_3) = &input.default_ttl {
+    if let Some(var_2) = &input.default_ttl {
         let mut inner_writer = scope.start_el("DefaultTTL").finish();
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_2).encode());
+    }
+    if let Some(var_3) = &input.max_ttl {
+        let mut inner_writer = scope.start_el("MaxTTL").finish();
         inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_3).encode());
     }
-    if let Some(var_4) = &input.max_ttl {
-        let mut inner_writer = scope.start_el("MaxTTL").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_4).encode());
-    }
-    if let Some(var_5) = &input.min_ttl {
+    {
         let mut inner_writer = scope.start_el("MinTTL").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_5).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.min_ttl).encode());
     }
-    if let Some(var_6) = &input.parameters_in_cache_key_and_forwarded_to_origin {
+    if let Some(var_4) = &input.parameters_in_cache_key_and_forwarded_to_origin {
         let inner_writer = scope.start_el("ParametersInCacheKeyAndForwardedToOrigin");
         crate::protocol_serde::shape_parameters_in_cache_key_and_forwarded_to_origin::ser_parameters_in_cache_key_and_forwarded_to_origin(
-            var_6,
+            var_4,
             inner_writer,
         )?
     }
@@ -36,6 +36,7 @@ pub fn ser_cache_policy_config(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_cache_policy_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::CachePolicyConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -44,7 +45,7 @@ pub fn de_cache_policy_config(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Comment") /* Comment com.amazonaws.cloudfront#CachePolicyConfig$Comment */ =>  {
-                let var_7 =
+                let var_5 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -53,11 +54,11 @@ pub fn de_cache_policy_config(
                         ?
                     )
                 ;
-                builder = builder.set_comment(var_7);
+                builder = builder.set_comment(var_5);
             }
             ,
             s if s.matches("Name") /* Name com.amazonaws.cloudfront#CachePolicyConfig$Name */ =>  {
-                let var_8 =
+                let var_6 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -66,10 +67,40 @@ pub fn de_cache_policy_config(
                         ?
                     )
                 ;
-                builder = builder.set_name(var_8);
+                builder = builder.set_name(var_6);
             }
             ,
             s if s.matches("DefaultTTL") /* DefaultTTL com.amazonaws.cloudfront#CachePolicyConfig$DefaultTTL */ =>  {
+                let var_7 =
+                    Some(
+                         {
+                            <i64 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (long: `com.amazonaws.cloudfront#long`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_default_ttl(var_7);
+            }
+            ,
+            s if s.matches("MaxTTL") /* MaxTTL com.amazonaws.cloudfront#CachePolicyConfig$MaxTTL */ =>  {
+                let var_8 =
+                    Some(
+                         {
+                            <i64 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (long: `com.amazonaws.cloudfront#long`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_max_ttl(var_8);
+            }
+            ,
+            s if s.matches("MinTTL") /* MinTTL com.amazonaws.cloudfront#CachePolicyConfig$MinTTL */ =>  {
                 let var_9 =
                     Some(
                          {
@@ -81,51 +112,23 @@ pub fn de_cache_policy_config(
                         ?
                     )
                 ;
-                builder = builder.set_default_ttl(var_9);
-            }
-            ,
-            s if s.matches("MaxTTL") /* MaxTTL com.amazonaws.cloudfront#CachePolicyConfig$MaxTTL */ =>  {
-                let var_10 =
-                    Some(
-                         {
-                            <i64 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (long: `com.amazonaws.cloudfront#long`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_max_ttl(var_10);
-            }
-            ,
-            s if s.matches("MinTTL") /* MinTTL com.amazonaws.cloudfront#CachePolicyConfig$MinTTL */ =>  {
-                let var_11 =
-                    Some(
-                         {
-                            <i64 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (long: `com.amazonaws.cloudfront#long`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_min_ttl(var_11);
+                builder = builder.set_min_ttl(var_9);
             }
             ,
             s if s.matches("ParametersInCacheKeyAndForwardedToOrigin") /* ParametersInCacheKeyAndForwardedToOrigin com.amazonaws.cloudfront#CachePolicyConfig$ParametersInCacheKeyAndForwardedToOrigin */ =>  {
-                let var_12 =
+                let var_10 =
                     Some(
                         crate::protocol_serde::shape_parameters_in_cache_key_and_forwarded_to_origin::de_parameters_in_cache_key_and_forwarded_to_origin(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_parameters_in_cache_key_and_forwarded_to_origin(var_12);
+                builder = builder.set_parameters_in_cache_key_and_forwarded_to_origin(var_10);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::cache_policy_config_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

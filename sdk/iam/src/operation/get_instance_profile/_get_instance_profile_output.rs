@@ -35,6 +35,7 @@ pub struct GetInstanceProfileOutputBuilder {
 }
 impl GetInstanceProfileOutputBuilder {
     /// <p>A structure containing details about the instance profile.</p>
+    /// This field is required.
     pub fn instance_profile(mut self, input: crate::types::InstanceProfile) -> Self {
         self.instance_profile = ::std::option::Option::Some(input);
         self

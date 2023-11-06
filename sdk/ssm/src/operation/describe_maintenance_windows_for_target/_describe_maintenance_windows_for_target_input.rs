@@ -14,8 +14,10 @@ pub struct DescribeMaintenanceWindowsForTargetInput {
 }
 impl DescribeMaintenanceWindowsForTargetInput {
     /// <p>The managed node ID or key-value pair to retrieve information about.</p>
-    pub fn targets(&self) -> ::std::option::Option<&[crate::types::Target]> {
-        self.targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
+    pub fn targets(&self) -> &[crate::types::Target] {
+        self.targets.as_deref().unwrap_or_default()
     }
     /// <p>The type of resource you want to retrieve information about. For example, <code>INSTANCE</code>.</p>
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::MaintenanceWindowResourceType> {
@@ -68,6 +70,7 @@ impl DescribeMaintenanceWindowsForTargetInputBuilder {
         &self.targets
     }
     /// <p>The type of resource you want to retrieve information about. For example, <code>INSTANCE</code>.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: crate::types::MaintenanceWindowResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
@@ -114,7 +117,7 @@ impl DescribeMaintenanceWindowsForTargetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetInput {

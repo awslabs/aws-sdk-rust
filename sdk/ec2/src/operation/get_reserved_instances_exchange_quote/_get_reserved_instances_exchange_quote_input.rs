@@ -17,12 +17,16 @@ impl GetReservedInstancesExchangeQuoteInput {
         self.dry_run
     }
     /// <p>The IDs of the Convertible Reserved Instances to exchange.</p>
-    pub fn reserved_instance_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.reserved_instance_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reserved_instance_ids.is_none()`.
+    pub fn reserved_instance_ids(&self) -> &[::std::string::String] {
+        self.reserved_instance_ids.as_deref().unwrap_or_default()
     }
     /// <p>The configuration of the target Convertible Reserved Instance to exchange for your current Convertible Reserved Instances.</p>
-    pub fn target_configurations(&self) -> ::std::option::Option<&[crate::types::TargetConfigurationRequest]> {
-        self.target_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_configurations.is_none()`.
+    pub fn target_configurations(&self) -> &[crate::types::TargetConfigurationRequest] {
+        self.target_configurations.as_deref().unwrap_or_default()
     }
 }
 impl GetReservedInstancesExchangeQuoteInput {
@@ -100,7 +104,7 @@ impl GetReservedInstancesExchangeQuoteInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_reserved_instances_exchange_quote::GetReservedInstancesExchangeQuoteInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_reserved_instances_exchange_quote::GetReservedInstancesExchangeQuoteInput {

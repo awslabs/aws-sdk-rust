@@ -17,24 +17,34 @@ pub struct UsageStatistics {
 }
 impl UsageStatistics {
     /// <p>The usage statistic sum organized by account ID.</p>
-    pub fn sum_by_account(&self) -> ::std::option::Option<&[crate::types::UsageAccountResult]> {
-        self.sum_by_account.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sum_by_account.is_none()`.
+    pub fn sum_by_account(&self) -> &[crate::types::UsageAccountResult] {
+        self.sum_by_account.as_deref().unwrap_or_default()
     }
     /// <p>The usage statistic sum organized by on data source.</p>
-    pub fn sum_by_data_source(&self) -> ::std::option::Option<&[crate::types::UsageDataSourceResult]> {
-        self.sum_by_data_source.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sum_by_data_source.is_none()`.
+    pub fn sum_by_data_source(&self) -> &[crate::types::UsageDataSourceResult] {
+        self.sum_by_data_source.as_deref().unwrap_or_default()
     }
     /// <p>The usage statistic sum organized by resource.</p>
-    pub fn sum_by_resource(&self) -> ::std::option::Option<&[crate::types::UsageResourceResult]> {
-        self.sum_by_resource.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sum_by_resource.is_none()`.
+    pub fn sum_by_resource(&self) -> &[crate::types::UsageResourceResult] {
+        self.sum_by_resource.as_deref().unwrap_or_default()
     }
     /// <p>Lists the top 50 resources that have generated the most GuardDuty usage, in order from most to least expensive.</p>
-    pub fn top_resources(&self) -> ::std::option::Option<&[crate::types::UsageResourceResult]> {
-        self.top_resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.top_resources.is_none()`.
+    pub fn top_resources(&self) -> &[crate::types::UsageResourceResult] {
+        self.top_resources.as_deref().unwrap_or_default()
     }
     /// <p>The usage statistic sum organized by feature.</p>
-    pub fn sum_by_feature(&self) -> ::std::option::Option<&[crate::types::UsageFeatureResult]> {
-        self.sum_by_feature.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sum_by_feature.is_none()`.
+    pub fn sum_by_feature(&self) -> &[crate::types::UsageFeatureResult] {
+        self.sum_by_feature.as_deref().unwrap_or_default()
     }
 }
 impl UsageStatistics {

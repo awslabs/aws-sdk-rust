@@ -61,12 +61,16 @@ impl Namespace {
         self.default_iam_role_arn.as_deref()
     }
     /// <p>A list of IAM roles to associate with the namespace.</p>
-    pub fn iam_roles(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.iam_roles.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.iam_roles.is_none()`.
+    pub fn iam_roles(&self) -> &[::std::string::String] {
+        self.iam_roles.as_deref().unwrap_or_default()
     }
     /// <p>The types of logs the namespace can export. Available export types are User log, Connection log, and User activity log.</p>
-    pub fn log_exports(&self) -> ::std::option::Option<&[crate::types::LogExport]> {
-        self.log_exports.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_exports.is_none()`.
+    pub fn log_exports(&self) -> &[crate::types::LogExport] {
+        self.log_exports.as_deref().unwrap_or_default()
     }
     /// <p>The status of the namespace.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::NamespaceStatus> {

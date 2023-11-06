@@ -5,18 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransformSortCriteria {
     /// <p>The column to be used in the sorting criteria that are associated with the machine learning transform.</p>
-    pub column: ::std::option::Option<crate::types::TransformSortColumnType>,
+    pub column: crate::types::TransformSortColumnType,
     /// <p>The sort direction to be used in the sorting criteria that are associated with the machine learning transform.</p>
-    pub sort_direction: ::std::option::Option<crate::types::SortDirectionType>,
+    pub sort_direction: crate::types::SortDirectionType,
 }
 impl TransformSortCriteria {
     /// <p>The column to be used in the sorting criteria that are associated with the machine learning transform.</p>
-    pub fn column(&self) -> ::std::option::Option<&crate::types::TransformSortColumnType> {
-        self.column.as_ref()
+    pub fn column(&self) -> &crate::types::TransformSortColumnType {
+        &self.column
     }
     /// <p>The sort direction to be used in the sorting criteria that are associated with the machine learning transform.</p>
-    pub fn sort_direction(&self) -> ::std::option::Option<&crate::types::SortDirectionType> {
-        self.sort_direction.as_ref()
+    pub fn sort_direction(&self) -> &crate::types::SortDirectionType {
+        &self.sort_direction
     }
 }
 impl TransformSortCriteria {
@@ -35,6 +35,7 @@ pub struct TransformSortCriteriaBuilder {
 }
 impl TransformSortCriteriaBuilder {
     /// <p>The column to be used in the sorting criteria that are associated with the machine learning transform.</p>
+    /// This field is required.
     pub fn column(mut self, input: crate::types::TransformSortColumnType) -> Self {
         self.column = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl TransformSortCriteriaBuilder {
         &self.column
     }
     /// <p>The sort direction to be used in the sorting criteria that are associated with the machine learning transform.</p>
+    /// This field is required.
     pub fn sort_direction(mut self, input: crate::types::SortDirectionType) -> Self {
         self.sort_direction = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl TransformSortCriteriaBuilder {
         &self.sort_direction
     }
     /// Consumes the builder and constructs a [`TransformSortCriteria`](crate::types::TransformSortCriteria).
-    pub fn build(self) -> crate::types::TransformSortCriteria {
-        crate::types::TransformSortCriteria {
-            column: self.column,
-            sort_direction: self.sort_direction,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`column`](crate::types::builders::TransformSortCriteriaBuilder::column)
+    /// - [`sort_direction`](crate::types::builders::TransformSortCriteriaBuilder::sort_direction)
+    pub fn build(self) -> ::std::result::Result<crate::types::TransformSortCriteria, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TransformSortCriteria {
+            column: self.column.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "column",
+                    "column was not specified but it is required when building TransformSortCriteria",
+                )
+            })?,
+            sort_direction: self.sort_direction.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "sort_direction",
+                    "sort_direction was not specified but it is required when building TransformSortCriteria",
+                )
+            })?,
+        })
     }
 }

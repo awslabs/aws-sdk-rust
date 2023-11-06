@@ -126,7 +126,7 @@ impl ListLensesInputBuilder {
         &self.lens_name
     }
     /// Consumes the builder and constructs a [`ListLensesInput`](crate::operation::list_lenses::ListLensesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_lenses::ListLensesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_lenses::ListLensesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_lenses::ListLensesInput {
             next_token: self.next_token,
             max_results: self.max_results,

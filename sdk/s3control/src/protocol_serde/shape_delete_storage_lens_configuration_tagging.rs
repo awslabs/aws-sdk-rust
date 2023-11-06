@@ -37,13 +37,13 @@ pub fn de_delete_storage_lens_configuration_tagging_http_response(
 pub fn ser_delete_storage_lens_configuration_tagging_headers(
     input: &crate::operation::delete_storage_lens_configuration_tagging::DeleteStorageLensConfigurationTaggingInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.account_id {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "account_id",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )

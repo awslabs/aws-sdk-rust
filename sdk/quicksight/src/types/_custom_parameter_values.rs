@@ -16,20 +16,28 @@ pub struct CustomParameterValues {
 }
 impl CustomParameterValues {
     /// <p>A list of string-type parameter values.</p>
-    pub fn string_values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.string_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.string_values.is_none()`.
+    pub fn string_values(&self) -> &[::std::string::String] {
+        self.string_values.as_deref().unwrap_or_default()
     }
     /// <p>A list of integer-type parameter values.</p>
-    pub fn integer_values(&self) -> ::std::option::Option<&[i64]> {
-        self.integer_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.integer_values.is_none()`.
+    pub fn integer_values(&self) -> &[i64] {
+        self.integer_values.as_deref().unwrap_or_default()
     }
     /// <p>A list of decimal-type parameter values.</p>
-    pub fn decimal_values(&self) -> ::std::option::Option<&[f64]> {
-        self.decimal_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.decimal_values.is_none()`.
+    pub fn decimal_values(&self) -> &[f64] {
+        self.decimal_values.as_deref().unwrap_or_default()
     }
     /// <p>A list of datetime-type parameter values.</p>
-    pub fn date_time_values(&self) -> ::std::option::Option<&[::aws_smithy_types::DateTime]> {
-        self.date_time_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.date_time_values.is_none()`.
+    pub fn date_time_values(&self) -> &[::aws_smithy_types::DateTime] {
+        self.date_time_values.as_deref().unwrap_or_default()
     }
 }
 impl CustomParameterValues {

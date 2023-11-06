@@ -17,12 +17,16 @@ impl AssignPrivateIpAddressesOutput {
         self.network_interface_id.as_deref()
     }
     /// <p>The private IP addresses assigned to the network interface.</p>
-    pub fn assigned_private_ip_addresses(&self) -> ::std::option::Option<&[crate::types::AssignedPrivateIpAddress]> {
-        self.assigned_private_ip_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.assigned_private_ip_addresses.is_none()`.
+    pub fn assigned_private_ip_addresses(&self) -> &[crate::types::AssignedPrivateIpAddress] {
+        self.assigned_private_ip_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The IPv4 prefixes that are assigned to the network interface.</p>
-    pub fn assigned_ipv4_prefixes(&self) -> ::std::option::Option<&[crate::types::Ipv4PrefixSpecification]> {
-        self.assigned_ipv4_prefixes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.assigned_ipv4_prefixes.is_none()`.
+    pub fn assigned_ipv4_prefixes(&self) -> &[crate::types::Ipv4PrefixSpecification] {
+        self.assigned_ipv4_prefixes.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for AssignPrivateIpAddressesOutput {

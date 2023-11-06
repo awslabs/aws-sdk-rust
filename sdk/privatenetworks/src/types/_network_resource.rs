@@ -89,8 +89,10 @@ impl NetworkResource {
         self.order_arn.as_deref()
     }
     /// <p>The attributes of the network resource.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&[crate::types::NameValuePair]> {
-        self.attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
+    pub fn attributes(&self) -> &[crate::types::NameValuePair] {
+        self.attributes.as_deref().unwrap_or_default()
     }
     /// <p>The position of the network resource.</p>
     pub fn position(&self) -> ::std::option::Option<&crate::types::Position> {

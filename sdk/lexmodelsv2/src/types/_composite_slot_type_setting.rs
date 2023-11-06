@@ -9,8 +9,10 @@ pub struct CompositeSlotTypeSetting {
 }
 impl CompositeSlotTypeSetting {
     /// <p>Subslots in the composite slot.</p>
-    pub fn sub_slots(&self) -> ::std::option::Option<&[crate::types::SubSlotTypeComposition]> {
-        self.sub_slots.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sub_slots.is_none()`.
+    pub fn sub_slots(&self) -> &[crate::types::SubSlotTypeComposition] {
+        self.sub_slots.as_deref().unwrap_or_default()
     }
 }
 impl CompositeSlotTypeSetting {

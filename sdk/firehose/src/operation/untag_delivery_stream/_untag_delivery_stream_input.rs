@@ -14,8 +14,10 @@ impl UntagDeliveryStreamInput {
         self.delivery_stream_name.as_deref()
     }
     /// <p>A list of tag keys. Each corresponding tag is removed from the delivery stream.</p>
-    pub fn tag_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tag_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_keys.is_none()`.
+    pub fn tag_keys(&self) -> &[::std::string::String] {
+        self.tag_keys.as_deref().unwrap_or_default()
     }
 }
 impl UntagDeliveryStreamInput {
@@ -34,6 +36,7 @@ pub struct UntagDeliveryStreamInputBuilder {
 }
 impl UntagDeliveryStreamInputBuilder {
     /// <p>The name of the delivery stream.</p>
+    /// This field is required.
     pub fn delivery_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delivery_stream_name = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +73,7 @@ impl UntagDeliveryStreamInputBuilder {
     /// Consumes the builder and constructs a [`UntagDeliveryStreamInput`](crate::operation::untag_delivery_stream::UntagDeliveryStreamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::untag_delivery_stream::UntagDeliveryStreamInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::untag_delivery_stream::UntagDeliveryStreamInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::untag_delivery_stream::UntagDeliveryStreamInput {
             delivery_stream_name: self.delivery_stream_name,

@@ -27,6 +27,7 @@ pub struct DeleteContainerPolicyInputBuilder {
 }
 impl DeleteContainerPolicyInputBuilder {
     /// <p>The name of the container that holds the policy.</p>
+    /// This field is required.
     pub fn container_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteContainerPolicyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteContainerPolicyInput`](crate::operation::delete_container_policy::DeleteContainerPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_container_policy::DeleteContainerPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_container_policy::DeleteContainerPolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_container_policy::DeleteContainerPolicyInput {
             container_name: self.container_name,

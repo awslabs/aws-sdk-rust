@@ -11,8 +11,10 @@ pub struct ListEventPredictionsOutput {
 }
 impl ListEventPredictionsOutput {
     /// <p> The summary of the past predictions. </p>
-    pub fn event_prediction_summaries(&self) -> ::std::option::Option<&[crate::types::EventPredictionSummary]> {
-        self.event_prediction_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_prediction_summaries.is_none()`.
+    pub fn event_prediction_summaries(&self) -> &[crate::types::EventPredictionSummary] {
+        self.event_prediction_summaries.as_deref().unwrap_or_default()
     }
     /// <p> Identifies the next page of results to return. Use the token to make the call again to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FieldIdentifier {
     /// <p>Unique identifier of a field.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
 }
 impl FieldIdentifier {
     /// <p>Unique identifier of a field.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
 }
 impl FieldIdentifier {
@@ -28,6 +29,7 @@ pub struct FieldIdentifierBuilder {
 }
 impl FieldIdentifierBuilder {
     /// <p>Unique identifier of a field.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl FieldIdentifierBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`FieldIdentifier`](crate::types::FieldIdentifier).
-    pub fn build(self) -> crate::types::FieldIdentifier {
-        crate::types::FieldIdentifier { id: self.id }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::FieldIdentifierBuilder::id)
+    pub fn build(self) -> ::std::result::Result<crate::types::FieldIdentifier, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::FieldIdentifier {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building FieldIdentifier",
+                )
+            })?,
+        })
     }
 }

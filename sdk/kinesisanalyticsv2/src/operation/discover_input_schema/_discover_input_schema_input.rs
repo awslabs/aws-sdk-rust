@@ -69,6 +69,7 @@ impl DiscoverInputSchemaInputBuilder {
         &self.resource_arn
     }
     /// <p>The ARN of the role that is used to access the streaming source.</p>
+    /// This field is required.
     pub fn service_execution_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_execution_role = ::std::option::Option::Some(input.into());
         self
@@ -130,7 +131,7 @@ impl DiscoverInputSchemaInputBuilder {
     /// Consumes the builder and constructs a [`DiscoverInputSchemaInput`](crate::operation::discover_input_schema::DiscoverInputSchemaInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::discover_input_schema::DiscoverInputSchemaInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::discover_input_schema::DiscoverInputSchemaInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::discover_input_schema::DiscoverInputSchemaInput {
             resource_arn: self.resource_arn,

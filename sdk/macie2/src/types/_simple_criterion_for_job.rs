@@ -35,8 +35,10 @@ impl SimpleCriterionForJob {
     /// <li><p>S3_BUCKET_SHARED_ACCESS - A string that represents an enumerated value that Macie defines for the <a href="https://docs.aws.amazon.com/macie/latest/APIReference/datasources-s3.html#datasources-s3-prop-bucketmetadata-sharedaccess">BucketMetadata.sharedAccess</a> property of a bucket.</p></li>
     /// </ul>
     /// <p>Values are case sensitive. Also, Macie doesn't support use of partial values or wildcard characters in these values.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
+    pub fn values(&self) -> &[::std::string::String] {
+        self.values.as_deref().unwrap_or_default()
     }
 }
 impl SimpleCriterionForJob {

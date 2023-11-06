@@ -49,6 +49,7 @@ pub struct EdgeModelBuilder {
 }
 impl EdgeModelBuilder {
     /// <p>The name of the model.</p>
+    /// This field is required.
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_name = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl EdgeModelBuilder {
         &self.model_name
     }
     /// <p>The model version.</p>
+    /// This field is required.
     pub fn model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_version = ::std::option::Option::Some(input.into());
         self

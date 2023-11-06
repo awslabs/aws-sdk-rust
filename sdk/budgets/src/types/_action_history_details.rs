@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionHistoryDetails {
     /// <p> A generic string.</p>
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
     /// <p>The budget action resource. </p>
     pub action: ::std::option::Option<crate::types::Action>,
 }
 impl ActionHistoryDetails {
     /// <p> A generic string.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        use std::ops::Deref;
+        self.message.deref()
     }
     /// <p>The budget action resource. </p>
     pub fn action(&self) -> ::std::option::Option<&crate::types::Action> {
@@ -35,6 +36,7 @@ pub struct ActionHistoryDetailsBuilder {
 }
 impl ActionHistoryDetailsBuilder {
     /// <p> A generic string.</p>
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl ActionHistoryDetailsBuilder {
         &self.message
     }
     /// <p>The budget action resource. </p>
+    /// This field is required.
     pub fn action(mut self, input: crate::types::Action) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,17 @@ impl ActionHistoryDetailsBuilder {
         &self.action
     }
     /// Consumes the builder and constructs a [`ActionHistoryDetails`](crate::types::ActionHistoryDetails).
-    pub fn build(self) -> crate::types::ActionHistoryDetails {
-        crate::types::ActionHistoryDetails {
-            message: self.message,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`message`](crate::types::builders::ActionHistoryDetailsBuilder::message)
+    pub fn build(self) -> ::std::result::Result<crate::types::ActionHistoryDetails, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ActionHistoryDetails {
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building ActionHistoryDetails",
+                )
+            })?,
             action: self.action,
-        }
+        })
     }
 }

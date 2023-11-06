@@ -27,6 +27,7 @@ pub struct StopAppBlockBuilderInputBuilder {
 }
 impl StopAppBlockBuilderInputBuilder {
     /// <p>The name of the app block builder.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl StopAppBlockBuilderInputBuilder {
     /// Consumes the builder and constructs a [`StopAppBlockBuilderInput`](crate::operation::stop_app_block_builder::StopAppBlockBuilderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_app_block_builder::StopAppBlockBuilderInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::stop_app_block_builder::StopAppBlockBuilderInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::stop_app_block_builder::StopAppBlockBuilderInput { name: self.name })
     }

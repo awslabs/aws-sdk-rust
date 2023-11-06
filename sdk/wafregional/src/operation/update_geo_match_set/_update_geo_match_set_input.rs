@@ -28,8 +28,10 @@ impl UpdateGeoMatchSetInput {
     /// <li> <p> <code>GeoMatchSetUpdate</code>: Contains <code>Action</code> and <code>GeoMatchConstraint</code> </p> </li>
     /// <li> <p> <code>GeoMatchConstraint</code>: Contains <code>Type</code> and <code>Value</code> </p> <p>You can have only one <code>Type</code> and <code>Value</code> per <code>GeoMatchConstraint</code>. To add multiple countries, include multiple <code>GeoMatchSetUpdate</code> objects in your request.</p> </li>
     /// </ul>
-    pub fn updates(&self) -> ::std::option::Option<&[crate::types::GeoMatchSetUpdate]> {
-        self.updates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.updates.is_none()`.
+    pub fn updates(&self) -> &[crate::types::GeoMatchSetUpdate] {
+        self.updates.as_deref().unwrap_or_default()
     }
 }
 impl UpdateGeoMatchSetInput {
@@ -49,6 +51,7 @@ pub struct UpdateGeoMatchSetInputBuilder {
 }
 impl UpdateGeoMatchSetInputBuilder {
     /// <p>The <code>GeoMatchSetId</code> of the <code>GeoMatchSet</code> that you want to update. <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
+    /// This field is required.
     pub fn geo_match_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.geo_match_set_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +66,7 @@ impl UpdateGeoMatchSetInputBuilder {
         &self.geo_match_set_id
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    /// This field is required.
     pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_token = ::std::option::Option::Some(input.into());
         self
@@ -111,7 +115,7 @@ impl UpdateGeoMatchSetInputBuilder {
     /// Consumes the builder and constructs a [`UpdateGeoMatchSetInput`](crate::operation::update_geo_match_set::UpdateGeoMatchSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_geo_match_set::UpdateGeoMatchSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_geo_match_set::UpdateGeoMatchSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_geo_match_set::UpdateGeoMatchSetInput {
             geo_match_set_id: self.geo_match_set_id,
             change_token: self.change_token,

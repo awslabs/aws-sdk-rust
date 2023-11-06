@@ -107,12 +107,12 @@ pub fn de_install_to_remote_access_session_http_response(
 
 pub fn ser_install_to_remote_access_session_input(
     input: &crate::operation::install_to_remote_access_session::InstallToRemoteAccessSessionInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_install_to_remote_access_session_input::ser_install_to_remote_access_session_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_install_to_remote_access_session(

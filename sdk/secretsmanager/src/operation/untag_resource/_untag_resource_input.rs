@@ -20,8 +20,10 @@ impl UntagResourceInput {
     /// <p>A list of tag key names to remove from the secret. You don't specify the value. Both the key and its associated value are removed.</p>
     /// <p>This parameter requires a JSON text string argument.</p>
     /// <p>For storing multiple values, we recommend that you use a JSON text string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a> in the Amazon Web Services CLI User Guide.</p>
-    pub fn tag_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tag_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_keys.is_none()`.
+    pub fn tag_keys(&self) -> &[::std::string::String] {
+        self.tag_keys.as_deref().unwrap_or_default()
     }
 }
 impl UntagResourceInput {
@@ -41,6 +43,7 @@ pub struct UntagResourceInputBuilder {
 impl UntagResourceInputBuilder {
     /// <p>The ARN or name of the secret.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
+    /// This field is required.
     pub fn secret_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +88,7 @@ impl UntagResourceInputBuilder {
     /// Consumes the builder and constructs a [`UntagResourceInput`](crate::operation::untag_resource::UntagResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::untag_resource::UntagResourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::untag_resource::UntagResourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::untag_resource::UntagResourceInput {
             secret_id: self.secret_id,
             tag_keys: self.tag_keys,

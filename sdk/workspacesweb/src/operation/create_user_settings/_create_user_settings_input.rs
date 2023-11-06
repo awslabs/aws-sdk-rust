@@ -51,8 +51,10 @@ impl CreateUserSettingsInput {
         self.print_allowed.as_ref()
     }
     /// <p>The tags to add to the user settings resource. A tag is a key-value pair.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The amount of time that a streaming session remains active after users disconnect.</p>
     pub fn disconnect_timeout_in_minutes(&self) -> ::std::option::Option<i32> {
@@ -124,6 +126,7 @@ pub struct CreateUserSettingsInputBuilder {
 }
 impl CreateUserSettingsInputBuilder {
     /// <p>Specifies whether the user can copy text from the streaming session to the local device.</p>
+    /// This field is required.
     pub fn copy_allowed(mut self, input: crate::types::EnabledType) -> Self {
         self.copy_allowed = ::std::option::Option::Some(input);
         self
@@ -138,6 +141,7 @@ impl CreateUserSettingsInputBuilder {
         &self.copy_allowed
     }
     /// <p>Specifies whether the user can paste text from the local device to the streaming session.</p>
+    /// This field is required.
     pub fn paste_allowed(mut self, input: crate::types::EnabledType) -> Self {
         self.paste_allowed = ::std::option::Option::Some(input);
         self
@@ -152,6 +156,7 @@ impl CreateUserSettingsInputBuilder {
         &self.paste_allowed
     }
     /// <p>Specifies whether the user can download files from the streaming session to the local device.</p>
+    /// This field is required.
     pub fn download_allowed(mut self, input: crate::types::EnabledType) -> Self {
         self.download_allowed = ::std::option::Option::Some(input);
         self
@@ -166,6 +171,7 @@ impl CreateUserSettingsInputBuilder {
         &self.download_allowed
     }
     /// <p>Specifies whether the user can upload files from the local device to the streaming session.</p>
+    /// This field is required.
     pub fn upload_allowed(mut self, input: crate::types::EnabledType) -> Self {
         self.upload_allowed = ::std::option::Option::Some(input);
         self
@@ -180,6 +186,7 @@ impl CreateUserSettingsInputBuilder {
         &self.upload_allowed
     }
     /// <p>Specifies whether the user can print to the local device.</p>
+    /// This field is required.
     pub fn print_allowed(mut self, input: crate::types::EnabledType) -> Self {
         self.print_allowed = ::std::option::Option::Some(input);
         self
@@ -321,7 +328,8 @@ impl CreateUserSettingsInputBuilder {
     /// Consumes the builder and constructs a [`CreateUserSettingsInput`](crate::operation::create_user_settings::CreateUserSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_user_settings::CreateUserSettingsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_user_settings::CreateUserSettingsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_user_settings::CreateUserSettingsInput {
             copy_allowed: self.copy_allowed,
             paste_allowed: self.paste_allowed,

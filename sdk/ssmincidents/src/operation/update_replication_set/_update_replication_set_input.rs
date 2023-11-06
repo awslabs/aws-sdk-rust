@@ -16,8 +16,10 @@ impl UpdateReplicationSetInput {
         self.arn.as_deref()
     }
     /// <p>An action to add or delete a Region.</p>
-    pub fn actions(&self) -> ::std::option::Option<&[crate::types::UpdateReplicationSetAction]> {
-        self.actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
+    pub fn actions(&self) -> &[crate::types::UpdateReplicationSetAction] {
+        self.actions.as_deref().unwrap_or_default()
     }
     /// <p>A token that ensures that the operation is called only once with the specified details.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -41,6 +43,7 @@ pub struct UpdateReplicationSetInputBuilder {
 }
 impl UpdateReplicationSetInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the replication set you're updating.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -91,7 +94,7 @@ impl UpdateReplicationSetInputBuilder {
     /// Consumes the builder and constructs a [`UpdateReplicationSetInput`](crate::operation::update_replication_set::UpdateReplicationSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_replication_set::UpdateReplicationSetInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_replication_set::UpdateReplicationSetInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_replication_set::UpdateReplicationSetInput {
             arn: self.arn,

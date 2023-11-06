@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetGroup`](crate::operation::get_group::builders::GetGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`group_id(impl Into<String>)`](crate::operation::get_group::builders::GetGroupFluentBuilder::group_id) / [`set_group_id(Option<String>)`](crate::operation::get_group::builders::GetGroupFluentBuilder::set_group_id): The ID of the Greengrass group.
+    ///   - [`group_id(impl Into<String>)`](crate::operation::get_group::builders::GetGroupFluentBuilder::group_id) / [`set_group_id(Option<String>)`](crate::operation::get_group::builders::GetGroupFluentBuilder::set_group_id):<br>required: **true**<br>The ID of the Greengrass group.<br>
     /// - On success, responds with [`GetGroupOutput`](crate::operation::get_group::GetGroupOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::get_group::GetGroupOutput::arn): The ARN of the definition.
     ///   - [`creation_timestamp(Option<String>)`](crate::operation::get_group::GetGroupOutput::creation_timestamp): The time, in milliseconds since the epoch, when the definition was created.
@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`latest_version(Option<String>)`](crate::operation::get_group::GetGroupOutput::latest_version): The ID of the latest version associated with the definition.
     ///   - [`latest_version_arn(Option<String>)`](crate::operation::get_group::GetGroupOutput::latest_version_arn): The ARN of the latest version associated with the definition.
     ///   - [`name(Option<String>)`](crate::operation::get_group::GetGroupOutput::name): The name of the definition.
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_group::GetGroupOutput::tags): Tag(s) attached to the resource arn.
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_group::GetGroupOutput::tags): Tag(s) attached to the resource arn.
     /// - On failure, responds with [`SdkError<GetGroupError>`](crate::operation::get_group::GetGroupError)
     pub fn get_group(&self) -> crate::operation::get_group::builders::GetGroupFluentBuilder {
         crate::operation::get_group::builders::GetGroupFluentBuilder::new(self.handle.clone())

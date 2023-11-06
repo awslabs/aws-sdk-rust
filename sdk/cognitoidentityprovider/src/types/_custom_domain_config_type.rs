@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomDomainConfigType {
     /// <p>The Amazon Resource Name (ARN) of an Certificate Manager SSL certificate. You use this certificate for the subdomain of your custom domain.</p>
-    pub certificate_arn: ::std::option::Option<::std::string::String>,
+    pub certificate_arn: ::std::string::String,
 }
 impl CustomDomainConfigType {
     /// <p>The Amazon Resource Name (ARN) of an Certificate Manager SSL certificate. You use this certificate for the subdomain of your custom domain.</p>
-    pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
-        self.certificate_arn.as_deref()
+    pub fn certificate_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.certificate_arn.deref()
     }
 }
 impl CustomDomainConfigType {
@@ -28,6 +29,7 @@ pub struct CustomDomainConfigTypeBuilder {
 }
 impl CustomDomainConfigTypeBuilder {
     /// <p>The Amazon Resource Name (ARN) of an Certificate Manager SSL certificate. You use this certificate for the subdomain of your custom domain.</p>
+    /// This field is required.
     pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_arn = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl CustomDomainConfigTypeBuilder {
         &self.certificate_arn
     }
     /// Consumes the builder and constructs a [`CustomDomainConfigType`](crate::types::CustomDomainConfigType).
-    pub fn build(self) -> crate::types::CustomDomainConfigType {
-        crate::types::CustomDomainConfigType {
-            certificate_arn: self.certificate_arn,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`certificate_arn`](crate::types::builders::CustomDomainConfigTypeBuilder::certificate_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomDomainConfigType, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CustomDomainConfigType {
+            certificate_arn: self.certificate_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "certificate_arn",
+                    "certificate_arn was not specified but it is required when building CustomDomainConfigType",
+                )
+            })?,
+        })
     }
 }

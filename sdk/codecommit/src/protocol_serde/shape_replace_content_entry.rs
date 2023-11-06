@@ -2,18 +2,18 @@
 pub fn ser_replace_content_entry(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ReplaceContentEntry,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.file_path {
-        object.key("filePath").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("filePath").string(input.file_path.as_str());
     }
-    if let Some(var_2) = &input.replacement_type {
-        object.key("replacementType").string(var_2.as_str());
+    {
+        object.key("replacementType").string(input.replacement_type.as_str());
     }
-    if let Some(var_3) = &input.content {
-        object.key("content").string_unchecked(&::aws_smithy_types::base64::encode(var_3));
+    if let Some(var_1) = &input.content {
+        object.key("content").string_unchecked(&::aws_smithy_types::base64::encode(var_1));
     }
-    if let Some(var_4) = &input.file_mode {
-        object.key("fileMode").string(var_4.as_str());
+    if let Some(var_2) = &input.file_mode {
+        object.key("fileMode").string(var_2.as_str());
     }
     Ok(())
 }

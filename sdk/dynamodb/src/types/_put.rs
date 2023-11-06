@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Put {
     /// <p>A map of attribute name to attribute values, representing the primary key of the item to be written by <code>PutItem</code>. All of the table's primary key attributes must be specified, and their data types must match those of the table's key schema. If any attributes are present in the item that are part of an index key schema for the table, their types must match the index key schema. </p>
-    pub item: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
+    pub item: ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
     /// <p>Name of the table in which to write the item.</p>
-    pub table_name: ::std::option::Option<::std::string::String>,
+    pub table_name: ::std::string::String,
     /// <p>A condition that must be satisfied in order for a conditional update to succeed.</p>
     pub condition_expression: ::std::option::Option<::std::string::String>,
     /// <p>One or more substitution tokens for attribute names in an expression.</p>
@@ -19,12 +19,13 @@ pub struct Put {
 }
 impl Put {
     /// <p>A map of attribute name to attribute values, representing the primary key of the item to be written by <code>PutItem</code>. All of the table's primary key attributes must be specified, and their data types must match those of the table's key schema. If any attributes are present in the item that are part of an index key schema for the table, their types must match the index key schema. </p>
-    pub fn item(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>> {
-        self.item.as_ref()
+    pub fn item(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::AttributeValue> {
+        &self.item
     }
     /// <p>Name of the table in which to write the item.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
-        self.table_name.as_deref()
+    pub fn table_name(&self) -> &str {
+        use std::ops::Deref;
+        self.table_name.deref()
     }
     /// <p>A condition that must be satisfied in order for a conditional update to succeed.</p>
     pub fn condition_expression(&self) -> ::std::option::Option<&str> {
@@ -88,6 +89,7 @@ impl PutBuilder {
         &self.item
     }
     /// <p>Name of the table in which to write the item.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -187,14 +189,24 @@ impl PutBuilder {
         &self.return_values_on_condition_check_failure
     }
     /// Consumes the builder and constructs a [`Put`](crate::types::Put).
-    pub fn build(self) -> crate::types::Put {
-        crate::types::Put {
-            item: self.item,
-            table_name: self.table_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`item`](crate::types::builders::PutBuilder::item)
+    /// - [`table_name`](crate::types::builders::PutBuilder::table_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::Put, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Put {
+            item: self.item.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field("item", "item was not specified but it is required when building Put")
+            })?,
+            table_name: self.table_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "table_name",
+                    "table_name was not specified but it is required when building Put",
+                )
+            })?,
             condition_expression: self.condition_expression,
             expression_attribute_names: self.expression_attribute_names,
             expression_attribute_values: self.expression_attribute_values,
             return_values_on_condition_check_failure: self.return_values_on_condition_check_failure,
-        }
+        })
     }
 }

@@ -55,6 +55,7 @@ pub struct DeleteBucketInputBuilder {
 impl DeleteBucketInputBuilder {
     /// <p>The name of the bucket to delete.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBuckets.html">GetBuckets</a> action to get a list of bucket names that you can specify.</p>
+    /// This field is required.
     pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_name = ::std::option::Option::Some(input.into());
         self
@@ -112,7 +113,9 @@ impl DeleteBucketInputBuilder {
         &self.force_delete
     }
     /// Consumes the builder and constructs a [`DeleteBucketInput`](crate::operation::delete_bucket::DeleteBucketInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_bucket::DeleteBucketInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_bucket::DeleteBucketInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_bucket::DeleteBucketInput {
             bucket_name: self.bucket_name,
             force_delete: self.force_delete,

@@ -211,7 +211,7 @@ impl ListSigningJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListSigningJobsInput`](crate::operation::list_signing_jobs::ListSigningJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_signing_jobs::ListSigningJobsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_signing_jobs::ListSigningJobsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_signing_jobs::ListSigningJobsInput {
             status: self.status,
             platform_id: self.platform_id,

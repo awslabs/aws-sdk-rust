@@ -48,6 +48,7 @@ pub struct UpdateArchiveInputBuilder {
 }
 impl UpdateArchiveInputBuilder {
     /// <p>The name of the archive to update.</p>
+    /// This field is required.
     pub fn archive_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.archive_name = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,7 @@ impl UpdateArchiveInputBuilder {
     /// Consumes the builder and constructs a [`UpdateArchiveInput`](crate::operation::update_archive::UpdateArchiveInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_archive::UpdateArchiveInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_archive::UpdateArchiveInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_archive::UpdateArchiveInput {
             archive_name: self.archive_name,
             description: self.description,

@@ -136,6 +136,7 @@ pub struct ComputeEnvironmentDetailBuilder {
 }
 impl ComputeEnvironmentDetailBuilder {
     /// <p>The name of the compute environment. It can be up to 128 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
+    /// This field is required.
     pub fn compute_environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compute_environment_name = ::std::option::Option::Some(input.into());
         self
@@ -150,6 +151,7 @@ impl ComputeEnvironmentDetailBuilder {
         &self.compute_environment_name
     }
     /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
+    /// This field is required.
     pub fn compute_environment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compute_environment_arn = ::std::option::Option::Some(input.into());
         self

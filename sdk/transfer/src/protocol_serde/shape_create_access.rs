@@ -25,11 +25,10 @@ pub fn de_create_access_http_error(
                 output = crate::protocol_serde::shape_internal_service_error::de_internal_service_error_json_err(_response_body, output)
                     .map_err(crate::operation::create_access::CreateAccessError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_service_error_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_access::CreateAccessError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InvalidRequestException" => crate::operation::create_access::CreateAccessError::InvalidRequestException({
@@ -40,11 +39,10 @@ pub fn de_create_access_http_error(
                 output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_access::CreateAccessError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_request_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_access::CreateAccessError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceExistsException" => crate::operation::create_access::CreateAccessError::ResourceExistsException({
@@ -55,11 +53,10 @@ pub fn de_create_access_http_error(
                 output = crate::protocol_serde::shape_resource_exists_exception::de_resource_exists_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_access::CreateAccessError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_exists_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_access::CreateAccessError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::create_access::CreateAccessError::ResourceNotFoundException({
@@ -70,11 +67,10 @@ pub fn de_create_access_http_error(
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_access::CreateAccessError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_access::CreateAccessError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::create_access::CreateAccessError::ServiceUnavailableException({
@@ -109,18 +105,20 @@ pub fn de_create_access_http_response(
         output = crate::protocol_serde::shape_create_access::de_create_access(_response_body, output)
             .map_err(crate::operation::create_access::CreateAccessError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::create_access_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::create_access::CreateAccessError::unhandled)?
     })
 }
 
 pub fn ser_create_access_input(
     input: &crate::operation::create_access::CreateAccessInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_access_input::ser_create_access_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_create_access(

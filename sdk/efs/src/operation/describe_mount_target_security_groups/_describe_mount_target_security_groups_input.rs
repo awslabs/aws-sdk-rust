@@ -28,6 +28,7 @@ pub struct DescribeMountTargetSecurityGroupsInputBuilder {
 }
 impl DescribeMountTargetSecurityGroupsInputBuilder {
     /// <p>The ID of the mount target whose security groups you want to retrieve.</p>
+    /// This field is required.
     pub fn mount_target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mount_target_id = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl DescribeMountTargetSecurityGroupsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsInput {

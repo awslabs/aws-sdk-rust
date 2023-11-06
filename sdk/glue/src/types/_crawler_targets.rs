@@ -23,36 +23,52 @@ pub struct CrawlerTargets {
 }
 impl CrawlerTargets {
     /// <p>Specifies Amazon Simple Storage Service (Amazon S3) targets.</p>
-    pub fn s3_targets(&self) -> ::std::option::Option<&[crate::types::S3Target]> {
-        self.s3_targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.s3_targets.is_none()`.
+    pub fn s3_targets(&self) -> &[crate::types::S3Target] {
+        self.s3_targets.as_deref().unwrap_or_default()
     }
     /// <p>Specifies JDBC targets.</p>
-    pub fn jdbc_targets(&self) -> ::std::option::Option<&[crate::types::JdbcTarget]> {
-        self.jdbc_targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.jdbc_targets.is_none()`.
+    pub fn jdbc_targets(&self) -> &[crate::types::JdbcTarget] {
+        self.jdbc_targets.as_deref().unwrap_or_default()
     }
     /// <p>Specifies Amazon DocumentDB or MongoDB targets.</p>
-    pub fn mongo_db_targets(&self) -> ::std::option::Option<&[crate::types::MongoDbTarget]> {
-        self.mongo_db_targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mongo_db_targets.is_none()`.
+    pub fn mongo_db_targets(&self) -> &[crate::types::MongoDbTarget] {
+        self.mongo_db_targets.as_deref().unwrap_or_default()
     }
     /// <p>Specifies Amazon DynamoDB targets.</p>
-    pub fn dynamo_db_targets(&self) -> ::std::option::Option<&[crate::types::DynamoDbTarget]> {
-        self.dynamo_db_targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dynamo_db_targets.is_none()`.
+    pub fn dynamo_db_targets(&self) -> &[crate::types::DynamoDbTarget] {
+        self.dynamo_db_targets.as_deref().unwrap_or_default()
     }
     /// <p>Specifies Glue Data Catalog targets.</p>
-    pub fn catalog_targets(&self) -> ::std::option::Option<&[crate::types::CatalogTarget]> {
-        self.catalog_targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.catalog_targets.is_none()`.
+    pub fn catalog_targets(&self) -> &[crate::types::CatalogTarget] {
+        self.catalog_targets.as_deref().unwrap_or_default()
     }
     /// <p>Specifies Delta data store targets.</p>
-    pub fn delta_targets(&self) -> ::std::option::Option<&[crate::types::DeltaTarget]> {
-        self.delta_targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.delta_targets.is_none()`.
+    pub fn delta_targets(&self) -> &[crate::types::DeltaTarget] {
+        self.delta_targets.as_deref().unwrap_or_default()
     }
     /// <p>Specifies Apache Iceberg data store targets.</p>
-    pub fn iceberg_targets(&self) -> ::std::option::Option<&[crate::types::IcebergTarget]> {
-        self.iceberg_targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.iceberg_targets.is_none()`.
+    pub fn iceberg_targets(&self) -> &[crate::types::IcebergTarget] {
+        self.iceberg_targets.as_deref().unwrap_or_default()
     }
     /// <p>Specifies Apache Hudi data store targets.</p>
-    pub fn hudi_targets(&self) -> ::std::option::Option<&[crate::types::HudiTarget]> {
-        self.hudi_targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hudi_targets.is_none()`.
+    pub fn hudi_targets(&self) -> &[crate::types::HudiTarget] {
+        self.hudi_targets.as_deref().unwrap_or_default()
     }
 }
 impl CrawlerTargets {

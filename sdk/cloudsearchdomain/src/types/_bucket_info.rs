@@ -9,8 +9,10 @@ pub struct BucketInfo {
 }
 impl BucketInfo {
     /// <p>A list of the calculated facet values and counts.</p>
-    pub fn buckets(&self) -> ::std::option::Option<&[crate::types::Bucket]> {
-        self.buckets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.buckets.is_none()`.
+    pub fn buckets(&self) -> &[crate::types::Bucket] {
+        self.buckets.as_deref().unwrap_or_default()
     }
 }
 impl BucketInfo {

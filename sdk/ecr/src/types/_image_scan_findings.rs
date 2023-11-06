@@ -29,12 +29,16 @@ impl ImageScanFindings {
         self.finding_severity_counts.as_ref()
     }
     /// <p>The findings from the image scan.</p>
-    pub fn findings(&self) -> ::std::option::Option<&[crate::types::ImageScanFinding]> {
-        self.findings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.findings.is_none()`.
+    pub fn findings(&self) -> &[crate::types::ImageScanFinding] {
+        self.findings.as_deref().unwrap_or_default()
     }
     /// <p>Details about the enhanced scan findings from Amazon Inspector.</p>
-    pub fn enhanced_findings(&self) -> ::std::option::Option<&[crate::types::EnhancedImageScanFinding]> {
-        self.enhanced_findings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enhanced_findings.is_none()`.
+    pub fn enhanced_findings(&self) -> &[crate::types::EnhancedImageScanFinding] {
+        self.enhanced_findings.as_deref().unwrap_or_default()
     }
 }
 impl ImageScanFindings {

@@ -2,7 +2,7 @@
 pub fn ser_monitoring_stopping_condition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MonitoringStoppingCondition,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.max_runtime_in_seconds {
         object.key("MaxRuntimeInSeconds").number(
             #[allow(clippy::useless_conversion)]
@@ -44,7 +44,7 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::monitoring_stopping_condition_correct_errors(builder).build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

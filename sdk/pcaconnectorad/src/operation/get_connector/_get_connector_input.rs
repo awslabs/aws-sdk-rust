@@ -27,6 +27,7 @@ pub struct GetConnectorInputBuilder {
 }
 impl GetConnectorInputBuilder {
     /// <p> The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
+    /// This field is required.
     pub fn connector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_arn = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,9 @@ impl GetConnectorInputBuilder {
         &self.connector_arn
     }
     /// Consumes the builder and constructs a [`GetConnectorInput`](crate::operation::get_connector::GetConnectorInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_connector::GetConnectorInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_connector::GetConnectorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_connector::GetConnectorInput {
             connector_arn: self.connector_arn,
         })

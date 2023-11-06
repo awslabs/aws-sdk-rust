@@ -49,6 +49,7 @@ pub struct DeleteIntegrationResponseInputBuilder {
 }
 impl DeleteIntegrationResponseInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
+    /// This field is required.
     pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rest_api_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl DeleteIntegrationResponseInputBuilder {
         &self.rest_api_id
     }
     /// <p>Specifies a delete integration response request's resource identifier.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +79,7 @@ impl DeleteIntegrationResponseInputBuilder {
         &self.resource_id
     }
     /// <p>Specifies a delete integration response request's HTTP method.</p>
+    /// This field is required.
     pub fn http_method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.http_method = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +94,7 @@ impl DeleteIntegrationResponseInputBuilder {
         &self.http_method
     }
     /// <p>Specifies a delete integration response request's status code.</p>
+    /// This field is required.
     pub fn status_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_code = ::std::option::Option::Some(input.into());
         self
@@ -109,7 +113,7 @@ impl DeleteIntegrationResponseInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_integration_response::DeleteIntegrationResponseInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_integration_response::DeleteIntegrationResponseInput {
             rest_api_id: self.rest_api_id,

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetApplication`](crate::operation::get_application::builders::GetApplicationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) of the Application.</p>
+    ///   - [`arn(impl Into<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::set_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the Application.</p><br>
     /// - On success, responds with [`GetApplicationOutput`](crate::operation::get_application::GetApplicationOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::get_application::GetApplicationOutput::arn): <p>The Amazon Resource Name (ARN) of the Application.</p>
     ///   - [`id(Option<String>)`](crate::operation::get_application::GetApplicationOutput::id): <p>A unique identifier for the Application.</p>
@@ -11,11 +11,11 @@ impl super::Client {
     ///   - [`namespace(Option<String>)`](crate::operation::get_application::GetApplicationOutput::namespace): <p>The namespace of the application.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_application::GetApplicationOutput::description): <p>The description of the application.</p>
     ///   - [`application_source_config(Option<ApplicationSourceConfig>)`](crate::operation::get_application::GetApplicationOutput::application_source_config): <p>The configuration for where the application should be loaded from.</p>
-    ///   - [`subscriptions(Option<Vec<Subscription>>)`](crate::operation::get_application::GetApplicationOutput::subscriptions): <p>The events that the application subscribes.</p>
-    ///   - [`publications(Option<Vec<Publication>>)`](crate::operation::get_application::GetApplicationOutput::publications): <p>The events that the application publishes.</p>
+    ///   - [`subscriptions(Option<Vec::<Subscription>>)`](crate::operation::get_application::GetApplicationOutput::subscriptions): <p>The events that the application subscribes.</p>
+    ///   - [`publications(Option<Vec::<Publication>>)`](crate::operation::get_application::GetApplicationOutput::publications): <p>The events that the application publishes.</p>
     ///   - [`created_time(Option<DateTime>)`](crate::operation::get_application::GetApplicationOutput::created_time): <p>The created time of the Application.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::get_application::GetApplicationOutput::last_modified_time): <p>The last modified time of the Application.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_application::GetApplicationOutput::tags): <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_application::GetApplicationOutput::tags): <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     /// - On failure, responds with [`SdkError<GetApplicationError>`](crate::operation::get_application::GetApplicationError)
     pub fn get_application(&self) -> crate::operation::get_application::builders::GetApplicationFluentBuilder {
         crate::operation::get_application::builders::GetApplicationFluentBuilder::new(self.handle.clone())

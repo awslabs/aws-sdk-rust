@@ -27,6 +27,7 @@ pub struct DeleteTargetGroupInputBuilder {
 }
 impl DeleteTargetGroupInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
+    /// This field is required.
     pub fn target_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_group_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteTargetGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteTargetGroupInput`](crate::operation::delete_target_group::DeleteTargetGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_target_group::DeleteTargetGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_target_group::DeleteTargetGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_target_group::DeleteTargetGroupInput {
             target_group_arn: self.target_group_arn,
         })

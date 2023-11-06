@@ -28,8 +28,10 @@ impl TestRoleInput {
         self.output_bucket.as_deref()
     }
     /// <p>The ARNs of one or more Amazon Simple Notification Service (Amazon SNS) topics that you want the action to send a test notification to.</p>
-    pub fn topics(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.topics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.topics.is_none()`.
+    pub fn topics(&self) -> &[::std::string::String] {
+        self.topics.as_deref().unwrap_or_default()
     }
 }
 impl TestRoleInput {
@@ -50,6 +52,7 @@ pub struct TestRoleInputBuilder {
 }
 impl TestRoleInputBuilder {
     /// <p>The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to test.</p>
+    /// This field is required.
     pub fn role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role = ::std::option::Option::Some(input.into());
         self
@@ -64,6 +67,7 @@ impl TestRoleInputBuilder {
         &self.role
     }
     /// <p>The Amazon S3 bucket that contains media files to be transcoded. The action attempts to read from this bucket.</p>
+    /// This field is required.
     pub fn input_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_bucket = ::std::option::Option::Some(input.into());
         self
@@ -78,6 +82,7 @@ impl TestRoleInputBuilder {
         &self.input_bucket
     }
     /// <p>The Amazon S3 bucket that Elastic Transcoder writes transcoded media files to. The action attempts to read from this bucket.</p>
+    /// This field is required.
     pub fn output_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_bucket = ::std::option::Option::Some(input.into());
         self
@@ -112,7 +117,7 @@ impl TestRoleInputBuilder {
         &self.topics
     }
     /// Consumes the builder and constructs a [`TestRoleInput`](crate::operation::test_role::TestRoleInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::test_role::TestRoleInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::test_role::TestRoleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::test_role::TestRoleInput {
             role: self.role,
             input_bucket: self.input_bucket,

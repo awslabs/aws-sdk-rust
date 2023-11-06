@@ -52,8 +52,10 @@ impl CreateTaskTemplateInput {
         self.status.as_ref()
     }
     /// <p>Fields that are part of the template.</p>
-    pub fn fields(&self) -> ::std::option::Option<&[crate::types::TaskTemplateField]> {
-        self.fields.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fields.is_none()`.
+    pub fn fields(&self) -> &[crate::types::TaskTemplateField] {
+        self.fields.as_deref().unwrap_or_default()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -83,6 +85,7 @@ pub struct CreateTaskTemplateInputBuilder {
 }
 impl CreateTaskTemplateInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +100,7 @@ impl CreateTaskTemplateInputBuilder {
         &self.instance_id
     }
     /// <p>The name of the task template.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -217,7 +221,8 @@ impl CreateTaskTemplateInputBuilder {
     /// Consumes the builder and constructs a [`CreateTaskTemplateInput`](crate::operation::create_task_template::CreateTaskTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_task_template::CreateTaskTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_task_template::CreateTaskTemplateInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_task_template::CreateTaskTemplateInput {
             instance_id: self.instance_id,
             name: self.name,

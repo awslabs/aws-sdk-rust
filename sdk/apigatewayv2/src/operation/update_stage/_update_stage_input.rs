@@ -105,6 +105,7 @@ impl UpdateStageInputBuilder {
         &self.access_log_settings
     }
     /// <p>The API identifier.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -212,6 +213,7 @@ impl UpdateStageInputBuilder {
         &self.route_settings
     }
     /// <p>The stage name. Stage names can contain only alphanumeric characters, hyphens, and underscores, or be $default. Maximum length is 128 characters.</p>
+    /// This field is required.
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_name = ::std::option::Option::Some(input.into());
         self
@@ -253,7 +255,7 @@ impl UpdateStageInputBuilder {
         &self.stage_variables
     }
     /// Consumes the builder and constructs a [`UpdateStageInput`](crate::operation::update_stage::UpdateStageInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_stage::UpdateStageInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_stage::UpdateStageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_stage::UpdateStageInput {
             access_log_settings: self.access_log_settings,
             api_id: self.api_id,

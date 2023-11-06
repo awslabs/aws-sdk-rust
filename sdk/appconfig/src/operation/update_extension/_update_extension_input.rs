@@ -55,6 +55,7 @@ pub struct UpdateExtensionInputBuilder {
 }
 impl UpdateExtensionInputBuilder {
     /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
+    /// This field is required.
     pub fn extension_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.extension_identifier = ::std::option::Option::Some(input.into());
         self
@@ -147,7 +148,7 @@ impl UpdateExtensionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateExtensionInput`](crate::operation::update_extension::UpdateExtensionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_extension::UpdateExtensionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_extension::UpdateExtensionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_extension::UpdateExtensionInput {
             extension_identifier: self.extension_identifier,
             description: self.description,

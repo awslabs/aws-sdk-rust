@@ -10,7 +10,7 @@ impl UpdatePullRequestApprovalRuleContentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -74,12 +74,15 @@ impl UpdatePullRequestApprovalRuleContentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins =
             crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContent::operation_runtime_plugins(
                 self.handle.runtime_plugins.clone(),
@@ -89,20 +92,15 @@ impl UpdatePullRequestApprovalRuleContentFluentBuilder {
         crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContent::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentOutput,
-            crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentOutput,
+        crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

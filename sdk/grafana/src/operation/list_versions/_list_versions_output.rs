@@ -15,8 +15,10 @@ impl ListVersionsOutput {
         self.next_token.as_deref()
     }
     /// <p>The Grafana versions available to create. If a workspace ID is included in the request, the Grafana versions to which this workspace can be upgraded.</p>
-    pub fn grafana_versions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.grafana_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.grafana_versions.is_none()`.
+    pub fn grafana_versions(&self) -> &[::std::string::String] {
+        self.grafana_versions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListVersionsOutput {

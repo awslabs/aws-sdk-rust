@@ -41,8 +41,10 @@ impl UpdateIndexInput {
         self.description.as_deref()
     }
     /// <p>The document metadata configuration you want to update for the index. Document metadata are fields or attributes associated with your documents. For example, the company department name associated with each document.</p>
-    pub fn document_metadata_configuration_updates(&self) -> ::std::option::Option<&[crate::types::DocumentMetadataConfiguration]> {
-        self.document_metadata_configuration_updates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.document_metadata_configuration_updates.is_none()`.
+    pub fn document_metadata_configuration_updates(&self) -> &[crate::types::DocumentMetadataConfiguration] {
+        self.document_metadata_configuration_updates.as_deref().unwrap_or_default()
     }
     /// <p>Sets the number of additional document storage and query capacity units that should be used by the index. You can change the capacity of the index up to 5 times per day, or make 5 API calls.</p>
     /// <p>If you are using extra storage units, you can't reduce the storage capacity below what is required to meet the storage needs for your index.</p>
@@ -50,8 +52,10 @@ impl UpdateIndexInput {
         self.capacity_units.as_ref()
     }
     /// <p>The user token configuration.</p>
-    pub fn user_token_configurations(&self) -> ::std::option::Option<&[crate::types::UserTokenConfiguration]> {
-        self.user_token_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_token_configurations.is_none()`.
+    pub fn user_token_configurations(&self) -> &[crate::types::UserTokenConfiguration] {
+        self.user_token_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The user context policy.</p>
     pub fn user_context_policy(&self) -> ::std::option::Option<&crate::types::UserContextPolicy> {
@@ -85,6 +89,7 @@ pub struct UpdateIndexInputBuilder {
 }
 impl UpdateIndexInputBuilder {
     /// <p>The identifier of the index you want to update.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -231,7 +236,7 @@ impl UpdateIndexInputBuilder {
         &self.user_group_resolution_configuration
     }
     /// Consumes the builder and constructs a [`UpdateIndexInput`](crate::operation::update_index::UpdateIndexInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_index::UpdateIndexInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_index::UpdateIndexInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_index::UpdateIndexInput {
             id: self.id,
             name: self.name,

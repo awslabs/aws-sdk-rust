@@ -34,6 +34,7 @@ pub struct GetPrefetchScheduleInputBuilder {
 }
 impl GetPrefetchScheduleInputBuilder {
     /// <p>The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetPrefetchScheduleInputBuilder {
         &self.name
     }
     /// <p>Returns information about the prefetch schedule for a specific playback configuration. If you call <code>GetPrefetchSchedule</code> on an expired prefetch schedule, MediaTailor returns an HTTP 404 status code.</p>
+    /// This field is required.
     pub fn playback_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.playback_configuration_name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl GetPrefetchScheduleInputBuilder {
     /// Consumes the builder and constructs a [`GetPrefetchScheduleInput`](crate::operation::get_prefetch_schedule::GetPrefetchScheduleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_prefetch_schedule::GetPrefetchScheduleInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_prefetch_schedule::GetPrefetchScheduleInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_prefetch_schedule::GetPrefetchScheduleInput {
             name: self.name,

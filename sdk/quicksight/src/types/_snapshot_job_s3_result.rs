@@ -21,8 +21,10 @@ impl SnapshotJobS3Result {
         self.s3_uri.as_deref()
     }
     /// <p>An array of error records that describe any failures that occur while the dashboard snapshot job runs.</p>
-    pub fn error_info(&self) -> ::std::option::Option<&[crate::types::SnapshotJobResultErrorInfo]> {
-        self.error_info.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.error_info.is_none()`.
+    pub fn error_info(&self) -> &[crate::types::SnapshotJobResultErrorInfo] {
+        self.error_info.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for SnapshotJobS3Result {

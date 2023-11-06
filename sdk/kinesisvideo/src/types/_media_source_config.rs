@@ -5,22 +5,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct MediaSourceConfig {
     /// <p>The Amazon Web Services Secrets Manager ARN for the username and password of the camera, or a local media file location.</p>
-    pub media_uri_secret_arn: ::std::option::Option<::std::string::String>,
+    pub media_uri_secret_arn: ::std::string::String,
     /// <p>The Uniform Resource Identifier (URI) type. The <code>FILE_URI</code> value can be used to stream local media files.</p> <note>
     /// <p>Preview only supports the <code>RTSP_URI</code> media source URI format .</p>
     /// </note>
-    pub media_uri_type: ::std::option::Option<crate::types::MediaUriType>,
+    pub media_uri_type: crate::types::MediaUriType,
 }
 impl MediaSourceConfig {
     /// <p>The Amazon Web Services Secrets Manager ARN for the username and password of the camera, or a local media file location.</p>
-    pub fn media_uri_secret_arn(&self) -> ::std::option::Option<&str> {
-        self.media_uri_secret_arn.as_deref()
+    pub fn media_uri_secret_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.media_uri_secret_arn.deref()
     }
     /// <p>The Uniform Resource Identifier (URI) type. The <code>FILE_URI</code> value can be used to stream local media files.</p> <note>
     /// <p>Preview only supports the <code>RTSP_URI</code> media source URI format .</p>
     /// </note>
-    pub fn media_uri_type(&self) -> ::std::option::Option<&crate::types::MediaUriType> {
-        self.media_uri_type.as_ref()
+    pub fn media_uri_type(&self) -> &crate::types::MediaUriType {
+        &self.media_uri_type
     }
 }
 impl ::std::fmt::Debug for MediaSourceConfig {
@@ -47,6 +48,7 @@ pub struct MediaSourceConfigBuilder {
 }
 impl MediaSourceConfigBuilder {
     /// <p>The Amazon Web Services Secrets Manager ARN for the username and password of the camera, or a local media file location.</p>
+    /// This field is required.
     pub fn media_uri_secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.media_uri_secret_arn = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +65,7 @@ impl MediaSourceConfigBuilder {
     /// <p>The Uniform Resource Identifier (URI) type. The <code>FILE_URI</code> value can be used to stream local media files.</p> <note>
     /// <p>Preview only supports the <code>RTSP_URI</code> media source URI format .</p>
     /// </note>
+    /// This field is required.
     pub fn media_uri_type(mut self, input: crate::types::MediaUriType) -> Self {
         self.media_uri_type = ::std::option::Option::Some(input);
         self
@@ -81,11 +84,24 @@ impl MediaSourceConfigBuilder {
         &self.media_uri_type
     }
     /// Consumes the builder and constructs a [`MediaSourceConfig`](crate::types::MediaSourceConfig).
-    pub fn build(self) -> crate::types::MediaSourceConfig {
-        crate::types::MediaSourceConfig {
-            media_uri_secret_arn: self.media_uri_secret_arn,
-            media_uri_type: self.media_uri_type,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`media_uri_secret_arn`](crate::types::builders::MediaSourceConfigBuilder::media_uri_secret_arn)
+    /// - [`media_uri_type`](crate::types::builders::MediaSourceConfigBuilder::media_uri_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::MediaSourceConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::MediaSourceConfig {
+            media_uri_secret_arn: self.media_uri_secret_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "media_uri_secret_arn",
+                    "media_uri_secret_arn was not specified but it is required when building MediaSourceConfig",
+                )
+            })?,
+            media_uri_type: self.media_uri_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "media_uri_type",
+                    "media_uri_type was not specified but it is required when building MediaSourceConfig",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for MediaSourceConfigBuilder {

@@ -28,6 +28,7 @@ pub struct VerifyEmailIdentityInputBuilder {
 }
 impl VerifyEmailIdentityInputBuilder {
     /// <p>The email address to be verified.</p>
+    /// This field is required.
     pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_address = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl VerifyEmailIdentityInputBuilder {
     /// Consumes the builder and constructs a [`VerifyEmailIdentityInput`](crate::operation::verify_email_identity::VerifyEmailIdentityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::verify_email_identity::VerifyEmailIdentityInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::verify_email_identity::VerifyEmailIdentityInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::verify_email_identity::VerifyEmailIdentityInput {
             email_address: self.email_address,

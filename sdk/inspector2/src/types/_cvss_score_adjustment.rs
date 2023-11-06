@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CvssScoreAdjustment {
     /// <p>The metric used to adjust the CVSS score.</p>
-    pub metric: ::std::option::Option<::std::string::String>,
+    pub metric: ::std::string::String,
     /// <p>The reason the CVSS score has been adjustment.</p>
-    pub reason: ::std::option::Option<::std::string::String>,
+    pub reason: ::std::string::String,
 }
 impl CvssScoreAdjustment {
     /// <p>The metric used to adjust the CVSS score.</p>
-    pub fn metric(&self) -> ::std::option::Option<&str> {
-        self.metric.as_deref()
+    pub fn metric(&self) -> &str {
+        use std::ops::Deref;
+        self.metric.deref()
     }
     /// <p>The reason the CVSS score has been adjustment.</p>
-    pub fn reason(&self) -> ::std::option::Option<&str> {
-        self.reason.as_deref()
+    pub fn reason(&self) -> &str {
+        use std::ops::Deref;
+        self.reason.deref()
     }
 }
 impl CvssScoreAdjustment {
@@ -35,6 +37,7 @@ pub struct CvssScoreAdjustmentBuilder {
 }
 impl CvssScoreAdjustmentBuilder {
     /// <p>The metric used to adjust the CVSS score.</p>
+    /// This field is required.
     pub fn metric(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl CvssScoreAdjustmentBuilder {
         &self.metric
     }
     /// <p>The reason the CVSS score has been adjustment.</p>
+    /// This field is required.
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl CvssScoreAdjustmentBuilder {
         &self.reason
     }
     /// Consumes the builder and constructs a [`CvssScoreAdjustment`](crate::types::CvssScoreAdjustment).
-    pub fn build(self) -> crate::types::CvssScoreAdjustment {
-        crate::types::CvssScoreAdjustment {
-            metric: self.metric,
-            reason: self.reason,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`metric`](crate::types::builders::CvssScoreAdjustmentBuilder::metric)
+    /// - [`reason`](crate::types::builders::CvssScoreAdjustmentBuilder::reason)
+    pub fn build(self) -> ::std::result::Result<crate::types::CvssScoreAdjustment, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CvssScoreAdjustment {
+            metric: self.metric.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "metric",
+                    "metric was not specified but it is required when building CvssScoreAdjustment",
+                )
+            })?,
+            reason: self.reason.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "reason",
+                    "reason was not specified but it is required when building CvssScoreAdjustment",
+                )
+            })?,
+        })
     }
 }

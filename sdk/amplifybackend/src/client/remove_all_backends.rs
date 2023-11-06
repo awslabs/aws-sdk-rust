@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RemoveAllBackends`](crate::operation::remove_all_backends::builders::RemoveAllBackendsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_id(impl Into<String>)`](crate::operation::remove_all_backends::builders::RemoveAllBackendsFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::remove_all_backends::builders::RemoveAllBackendsFluentBuilder::set_app_id): <p>The app ID.</p>
-    ///   - [`clean_amplify_app(bool)`](crate::operation::remove_all_backends::builders::RemoveAllBackendsFluentBuilder::clean_amplify_app) / [`set_clean_amplify_app(Option<bool>)`](crate::operation::remove_all_backends::builders::RemoveAllBackendsFluentBuilder::set_clean_amplify_app): <p>Cleans up the Amplify Console app if this value is set to true.</p>
+    ///   - [`app_id(impl Into<String>)`](crate::operation::remove_all_backends::builders::RemoveAllBackendsFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::remove_all_backends::builders::RemoveAllBackendsFluentBuilder::set_app_id):<br>required: **true**<br><p>The app ID.</p><br>
+    ///   - [`clean_amplify_app(bool)`](crate::operation::remove_all_backends::builders::RemoveAllBackendsFluentBuilder::clean_amplify_app) / [`set_clean_amplify_app(Option<bool>)`](crate::operation::remove_all_backends::builders::RemoveAllBackendsFluentBuilder::set_clean_amplify_app):<br>required: **false**<br><p>Cleans up the Amplify Console app if this value is set to true.</p><br>
     /// - On success, responds with [`RemoveAllBackendsOutput`](crate::operation::remove_all_backends::RemoveAllBackendsOutput) with field(s):
     ///   - [`app_id(Option<String>)`](crate::operation::remove_all_backends::RemoveAllBackendsOutput::app_id): <p>The app ID.</p>
     ///   - [`error(Option<String>)`](crate::operation::remove_all_backends::RemoveAllBackendsOutput::error): <p>If the request fails, this error is returned.</p>

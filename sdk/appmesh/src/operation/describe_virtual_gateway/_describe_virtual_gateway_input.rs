@@ -41,6 +41,7 @@ pub struct DescribeVirtualGatewayInputBuilder {
 }
 impl DescribeVirtualGatewayInputBuilder {
     /// <p>The name of the virtual gateway to describe.</p>
+    /// This field is required.
     pub fn virtual_gateway_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_gateway_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DescribeVirtualGatewayInputBuilder {
         &self.virtual_gateway_name
     }
     /// <p>The name of the service mesh that the gateway route resides in.</p>
+    /// This field is required.
     pub fn mesh_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mesh_name = ::std::option::Option::Some(input.into());
         self
@@ -85,8 +87,10 @@ impl DescribeVirtualGatewayInputBuilder {
     /// Consumes the builder and constructs a [`DescribeVirtualGatewayInput`](crate::operation::describe_virtual_gateway::DescribeVirtualGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_virtual_gateway::DescribeVirtualGatewayInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_virtual_gateway::DescribeVirtualGatewayInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_virtual_gateway::DescribeVirtualGatewayInput {
             virtual_gateway_name: self.virtual_gateway_name,
             mesh_name: self.mesh_name,

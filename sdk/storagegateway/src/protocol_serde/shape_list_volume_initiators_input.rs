@@ -2,7 +2,7 @@
 pub fn ser_list_volume_initiators_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_volume_initiators::ListVolumeInitiatorsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.volume_arn {
         object.key("VolumeARN").string(var_1.as_str());
     }

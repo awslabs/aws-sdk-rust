@@ -127,13 +127,15 @@ pub fn de_create_traffic_policy_version_http_response(
             })?,
         );
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::create_traffic_policy_version_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::create_traffic_policy_version::CreateTrafficPolicyVersionError::unhandled)?
     })
 }
 
 pub fn ser_create_traffic_policy_version_op_input(
     input: &crate::operation::create_traffic_policy_version::CreateTrafficPolicyVersionInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = ::aws_smithy_xml::encode::XmlWriter::new(&mut out);
@@ -143,7 +145,7 @@ pub fn ser_create_traffic_policy_version_op_input(
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
         crate::protocol_serde::shape_create_traffic_policy_version_input::ser_create_traffic_policy_version_input_input(input, root)?
     }
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 #[allow(unused_mut)]

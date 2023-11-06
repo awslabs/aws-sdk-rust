@@ -2,7 +2,7 @@
 pub fn ser_modify_backup_attributes_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::modify_backup_attributes::ModifyBackupAttributesInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.backup_id {
         object.key("BackupId").string(var_1.as_str());
     }

@@ -34,8 +34,10 @@ impl CreateContactInput {
         self.plan.as_ref()
     }
     /// <p>Adds a tag to the target. You can only tag resources created in the first Region of your replication set.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub fn idempotency_token(&self) -> ::std::option::Option<&str> {
@@ -62,6 +64,7 @@ pub struct CreateContactInputBuilder {
 }
 impl CreateContactInputBuilder {
     /// <p>The short name to quickly identify a contact or escalation plan. The contact alias must be unique and identifiable.</p>
+    /// This field is required.
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl CreateContactInputBuilder {
         &self.display_name
     }
     /// <p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use <code>PERSONAL</code>.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::ContactType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -104,6 +108,7 @@ impl CreateContactInputBuilder {
         &self.r#type
     }
     /// <p>A list of stages. A contact has an engagement plan with stages that contact specified contact channels. An escalation plan uses stages that contact specified contacts.</p>
+    /// This field is required.
     pub fn plan(mut self, input: crate::types::Plan) -> Self {
         self.plan = ::std::option::Option::Some(input);
         self
@@ -154,7 +159,7 @@ impl CreateContactInputBuilder {
     /// Consumes the builder and constructs a [`CreateContactInput`](crate::operation::create_contact::CreateContactInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_contact::CreateContactInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_contact::CreateContactInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_contact::CreateContactInput {
             alias: self.alias,
             display_name: self.display_name,

@@ -91,8 +91,10 @@ impl RuntimeContext {
         self.file_system_type.as_deref()
     }
     /// <p>Represents options that control the behavior of a runtime operation or action. For example, a filesystem mount operation may contain a read-only flag.</p>
-    pub fn flags(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.flags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.flags.is_none()`.
+    pub fn flags(&self) -> &[::std::string::String] {
+        self.flags.as_deref().unwrap_or_default()
     }
     /// <p>The name of the module loaded into the kernel.</p>
     pub fn module_name(&self) -> ::std::option::Option<&str> {
@@ -123,8 +125,10 @@ impl RuntimeContext {
         self.iana_protocol_number
     }
     /// <p>Specifies the Region of a process's address space such as stack and heap.</p>
-    pub fn memory_regions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.memory_regions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.memory_regions.is_none()`.
+    pub fn memory_regions(&self) -> &[::std::string::String] {
+        self.memory_regions.as_deref().unwrap_or_default()
     }
 }
 impl RuntimeContext {

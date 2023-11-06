@@ -48,6 +48,7 @@ pub struct DescribeUserInputBuilder {
 }
 impl DescribeUserInputBuilder {
     /// <p>The identifier for the organization under which the user exists.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl DescribeUserInputBuilder {
     /// <li> <p>User name: user</p> </li>
     /// </ul>
     /// <p></p>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
@@ -97,7 +99,9 @@ impl DescribeUserInputBuilder {
         &self.user_id
     }
     /// Consumes the builder and constructs a [`DescribeUserInput`](crate::operation::describe_user::DescribeUserInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_user::DescribeUserInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_user::DescribeUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_user::DescribeUserInput {
             organization_id: self.organization_id,
             user_id: self.user_id,

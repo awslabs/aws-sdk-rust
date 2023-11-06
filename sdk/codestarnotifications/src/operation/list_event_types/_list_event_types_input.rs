@@ -12,8 +12,10 @@ pub struct ListEventTypesInput {
 }
 impl ListEventTypesInput {
     /// <p>The filters to use to return information by service or resource type.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::ListEventTypesFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::ListEventTypesFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -91,7 +93,7 @@ impl ListEventTypesInputBuilder {
     /// Consumes the builder and constructs a [`ListEventTypesInput`](crate::operation::list_event_types::ListEventTypesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_event_types::ListEventTypesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_event_types::ListEventTypesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_event_types::ListEventTypesInput {
             filters: self.filters,
             next_token: self.next_token,

@@ -36,8 +36,8 @@ pub fn de_delete_application_cloud_watch_logging_option_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidApplicationConfigurationException" => crate::operation::delete_application_cloud_watch_logging_option::DeleteApplicationCloudWatchLoggingOptionError::InvalidApplicationConfigurationException({
@@ -52,8 +52,8 @@ pub fn de_delete_application_cloud_watch_logging_option_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidArgumentException" => crate::operation::delete_application_cloud_watch_logging_option::DeleteApplicationCloudWatchLoggingOptionError::InvalidArgumentException({
@@ -68,8 +68,8 @@ pub fn de_delete_application_cloud_watch_logging_option_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidRequestException" => crate::operation::delete_application_cloud_watch_logging_option::DeleteApplicationCloudWatchLoggingOptionError::InvalidRequestException({
@@ -84,8 +84,8 @@ pub fn de_delete_application_cloud_watch_logging_option_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ResourceInUseException" => crate::operation::delete_application_cloud_watch_logging_option::DeleteApplicationCloudWatchLoggingOptionError::ResourceInUseException({
@@ -100,8 +100,8 @@ pub fn de_delete_application_cloud_watch_logging_option_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::delete_application_cloud_watch_logging_option::DeleteApplicationCloudWatchLoggingOptionError::ResourceNotFoundException({
@@ -116,8 +116,8 @@ pub fn de_delete_application_cloud_watch_logging_option_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::delete_application_cloud_watch_logging_option::DeleteApplicationCloudWatchLoggingOptionError::generic(generic)
@@ -150,7 +150,7 @@ pub fn de_delete_application_cloud_watch_logging_option_http_response(
 
 pub fn ser_delete_application_cloud_watch_logging_option_input(
     input: &crate::operation::delete_application_cloud_watch_logging_option::DeleteApplicationCloudWatchLoggingOptionInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_delete_application_cloud_watch_logging_option_input::ser_delete_application_cloud_watch_logging_option_input(
@@ -158,7 +158,7 @@ pub fn ser_delete_application_cloud_watch_logging_option_input(
         input,
     )?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_delete_application_cloud_watch_logging_option(

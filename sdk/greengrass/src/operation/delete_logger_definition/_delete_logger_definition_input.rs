@@ -27,6 +27,7 @@ pub struct DeleteLoggerDefinitionInputBuilder {
 }
 impl DeleteLoggerDefinitionInputBuilder {
     /// The ID of the logger definition.
+    /// This field is required.
     pub fn logger_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.logger_definition_id = ::std::option::Option::Some(input.into());
         self
@@ -43,8 +44,10 @@ impl DeleteLoggerDefinitionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteLoggerDefinitionInput`](crate::operation::delete_logger_definition::DeleteLoggerDefinitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_logger_definition::DeleteLoggerDefinitionInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_logger_definition::DeleteLoggerDefinitionInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_logger_definition::DeleteLoggerDefinitionInput {
             logger_definition_id: self.logger_definition_id,
         })

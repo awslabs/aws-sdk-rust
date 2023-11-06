@@ -58,12 +58,16 @@ impl ListObjectVersionsOutput {
         self.next_version_id_marker.as_deref()
     }
     /// <p>Container for version information.</p>
-    pub fn versions(&self) -> ::std::option::Option<&[crate::types::ObjectVersion]> {
-        self.versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.versions.is_none()`.
+    pub fn versions(&self) -> &[crate::types::ObjectVersion] {
+        self.versions.as_deref().unwrap_or_default()
     }
     /// <p>Container for an object that is a delete marker.</p>
-    pub fn delete_markers(&self) -> ::std::option::Option<&[crate::types::DeleteMarkerEntry]> {
-        self.delete_markers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.delete_markers.is_none()`.
+    pub fn delete_markers(&self) -> &[crate::types::DeleteMarkerEntry] {
+        self.delete_markers.as_deref().unwrap_or_default()
     }
     /// <p>The bucket name.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -82,8 +86,10 @@ impl ListObjectVersionsOutput {
         self.max_keys
     }
     /// <p>All of the keys rolled up into a common prefix count as a single return when calculating the number of returns.</p>
-    pub fn common_prefixes(&self) -> ::std::option::Option<&[crate::types::CommonPrefix]> {
-        self.common_prefixes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.common_prefixes.is_none()`.
+    pub fn common_prefixes(&self) -> &[crate::types::CommonPrefix] {
+        self.common_prefixes.as_deref().unwrap_or_default()
     }
     /// <p> Encoding type used by Amazon S3 to encode object key names in the XML response.</p>
     /// <p>If you specify the <code>encoding-type</code> request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p>

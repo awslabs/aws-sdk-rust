@@ -55,6 +55,7 @@ impl DeprovisionIpamPoolCidrInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the pool that has the CIDR you want to deprovision.</p>
+    /// This field is required.
     pub fn ipam_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl DeprovisionIpamPoolCidrInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidrInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidrInput {
             dry_run: self.dry_run,

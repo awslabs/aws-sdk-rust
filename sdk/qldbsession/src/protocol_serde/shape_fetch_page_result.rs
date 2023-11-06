@@ -21,7 +21,7 @@ where
                             builder = builder.set_timing_information(crate::protocol_serde::shape_timing_information::de_timing_information(tokens)?);
                         }
                         "ConsumedIOs" => {
-                            builder = builder.set_consumed_i_os(crate::protocol_serde::shape_io_usage::de_io_usage(tokens)?);
+                            builder = builder.set_consumed_ios(crate::protocol_serde::shape_io_usage::de_io_usage(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

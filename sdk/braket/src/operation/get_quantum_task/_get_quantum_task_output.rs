@@ -4,23 +4,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetQuantumTaskOutput {
     /// <p>The ARN of the task.</p>
-    pub quantum_task_arn: ::std::option::Option<::std::string::String>,
+    pub quantum_task_arn: ::std::string::String,
     /// <p>The status of the task.</p>
-    pub status: ::std::option::Option<crate::types::QuantumTaskStatus>,
+    pub status: crate::types::QuantumTaskStatus,
     /// <p>The reason that a task failed.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the device the task was run on.</p>
-    pub device_arn: ::std::option::Option<::std::string::String>,
+    pub device_arn: ::std::string::String,
     /// <p>The parameters for the device on which the task ran.</p>
-    pub device_parameters: ::std::option::Option<::std::string::String>,
+    pub device_parameters: ::std::string::String,
     /// <p>The number of shots used in the task.</p>
-    pub shots: ::std::option::Option<i64>,
+    pub shots: i64,
     /// <p>The S3 bucket where task results are stored.</p>
-    pub output_s3_bucket: ::std::option::Option<::std::string::String>,
+    pub output_s3_bucket: ::std::string::String,
     /// <p>The folder in the S3 bucket where task results are stored.</p>
-    pub output_s3_directory: ::std::option::Option<::std::string::String>,
+    pub output_s3_directory: ::std::string::String,
     /// <p>The time at which the task was created.</p>
-    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The time at which the task ended.</p>
     pub ended_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The tags that belong to this task.</p>
@@ -33,40 +33,45 @@ pub struct GetQuantumTaskOutput {
 }
 impl GetQuantumTaskOutput {
     /// <p>The ARN of the task.</p>
-    pub fn quantum_task_arn(&self) -> ::std::option::Option<&str> {
-        self.quantum_task_arn.as_deref()
+    pub fn quantum_task_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.quantum_task_arn.deref()
     }
     /// <p>The status of the task.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::QuantumTaskStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::QuantumTaskStatus {
+        &self.status
     }
     /// <p>The reason that a task failed.</p>
     pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
     /// <p>The ARN of the device the task was run on.</p>
-    pub fn device_arn(&self) -> ::std::option::Option<&str> {
-        self.device_arn.as_deref()
+    pub fn device_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.device_arn.deref()
     }
     /// <p>The parameters for the device on which the task ran.</p>
-    pub fn device_parameters(&self) -> ::std::option::Option<&str> {
-        self.device_parameters.as_deref()
+    pub fn device_parameters(&self) -> &str {
+        use std::ops::Deref;
+        self.device_parameters.deref()
     }
     /// <p>The number of shots used in the task.</p>
-    pub fn shots(&self) -> ::std::option::Option<i64> {
+    pub fn shots(&self) -> i64 {
         self.shots
     }
     /// <p>The S3 bucket where task results are stored.</p>
-    pub fn output_s3_bucket(&self) -> ::std::option::Option<&str> {
-        self.output_s3_bucket.as_deref()
+    pub fn output_s3_bucket(&self) -> &str {
+        use std::ops::Deref;
+        self.output_s3_bucket.deref()
     }
     /// <p>The folder in the S3 bucket where task results are stored.</p>
-    pub fn output_s3_directory(&self) -> ::std::option::Option<&str> {
-        self.output_s3_directory.as_deref()
+    pub fn output_s3_directory(&self) -> &str {
+        use std::ops::Deref;
+        self.output_s3_directory.deref()
     }
     /// <p>The time at which the task was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_at.as_ref()
+    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_at
     }
     /// <p>The time at which the task ended.</p>
     pub fn ended_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -118,6 +123,7 @@ pub struct GetQuantumTaskOutputBuilder {
 }
 impl GetQuantumTaskOutputBuilder {
     /// <p>The ARN of the task.</p>
+    /// This field is required.
     pub fn quantum_task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.quantum_task_arn = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +138,7 @@ impl GetQuantumTaskOutputBuilder {
         &self.quantum_task_arn
     }
     /// <p>The status of the task.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::QuantumTaskStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -160,6 +167,7 @@ impl GetQuantumTaskOutputBuilder {
         &self.failure_reason
     }
     /// <p>The ARN of the device the task was run on.</p>
+    /// This field is required.
     pub fn device_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_arn = ::std::option::Option::Some(input.into());
         self
@@ -174,6 +182,7 @@ impl GetQuantumTaskOutputBuilder {
         &self.device_arn
     }
     /// <p>The parameters for the device on which the task ran.</p>
+    /// This field is required.
     pub fn device_parameters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_parameters = ::std::option::Option::Some(input.into());
         self
@@ -188,6 +197,7 @@ impl GetQuantumTaskOutputBuilder {
         &self.device_parameters
     }
     /// <p>The number of shots used in the task.</p>
+    /// This field is required.
     pub fn shots(mut self, input: i64) -> Self {
         self.shots = ::std::option::Option::Some(input);
         self
@@ -202,6 +212,7 @@ impl GetQuantumTaskOutputBuilder {
         &self.shots
     }
     /// <p>The S3 bucket where task results are stored.</p>
+    /// This field is required.
     pub fn output_s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_s3_bucket = ::std::option::Option::Some(input.into());
         self
@@ -216,6 +227,7 @@ impl GetQuantumTaskOutputBuilder {
         &self.output_s3_bucket
     }
     /// <p>The folder in the S3 bucket where task results are stored.</p>
+    /// This field is required.
     pub fn output_s3_directory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_s3_directory = ::std::option::Option::Some(input.into());
         self
@@ -230,6 +242,7 @@ impl GetQuantumTaskOutputBuilder {
         &self.output_s3_directory
     }
     /// <p>The time at which the task was created.</p>
+    /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
@@ -315,22 +328,73 @@ impl GetQuantumTaskOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetQuantumTaskOutput`](crate::operation::get_quantum_task::GetQuantumTaskOutput).
-    pub fn build(self) -> crate::operation::get_quantum_task::GetQuantumTaskOutput {
-        crate::operation::get_quantum_task::GetQuantumTaskOutput {
-            quantum_task_arn: self.quantum_task_arn,
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`quantum_task_arn`](crate::operation::get_quantum_task::builders::GetQuantumTaskOutputBuilder::quantum_task_arn)
+    /// - [`status`](crate::operation::get_quantum_task::builders::GetQuantumTaskOutputBuilder::status)
+    /// - [`device_arn`](crate::operation::get_quantum_task::builders::GetQuantumTaskOutputBuilder::device_arn)
+    /// - [`device_parameters`](crate::operation::get_quantum_task::builders::GetQuantumTaskOutputBuilder::device_parameters)
+    /// - [`shots`](crate::operation::get_quantum_task::builders::GetQuantumTaskOutputBuilder::shots)
+    /// - [`output_s3_bucket`](crate::operation::get_quantum_task::builders::GetQuantumTaskOutputBuilder::output_s3_bucket)
+    /// - [`output_s3_directory`](crate::operation::get_quantum_task::builders::GetQuantumTaskOutputBuilder::output_s3_directory)
+    /// - [`created_at`](crate::operation::get_quantum_task::builders::GetQuantumTaskOutputBuilder::created_at)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_quantum_task::GetQuantumTaskOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_quantum_task::GetQuantumTaskOutput {
+            quantum_task_arn: self.quantum_task_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "quantum_task_arn",
+                    "quantum_task_arn was not specified but it is required when building GetQuantumTaskOutput",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building GetQuantumTaskOutput",
+                )
+            })?,
             failure_reason: self.failure_reason,
-            device_arn: self.device_arn,
-            device_parameters: self.device_parameters,
-            shots: self.shots,
-            output_s3_bucket: self.output_s3_bucket,
-            output_s3_directory: self.output_s3_directory,
-            created_at: self.created_at,
+            device_arn: self.device_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "device_arn",
+                    "device_arn was not specified but it is required when building GetQuantumTaskOutput",
+                )
+            })?,
+            device_parameters: self.device_parameters.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "device_parameters",
+                    "device_parameters was not specified but it is required when building GetQuantumTaskOutput",
+                )
+            })?,
+            shots: self.shots.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "shots",
+                    "shots was not specified but it is required when building GetQuantumTaskOutput",
+                )
+            })?,
+            output_s3_bucket: self.output_s3_bucket.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "output_s3_bucket",
+                    "output_s3_bucket was not specified but it is required when building GetQuantumTaskOutput",
+                )
+            })?,
+            output_s3_directory: self.output_s3_directory.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "output_s3_directory",
+                    "output_s3_directory was not specified but it is required when building GetQuantumTaskOutput",
+                )
+            })?,
+            created_at: self.created_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_at",
+                    "created_at was not specified but it is required when building GetQuantumTaskOutput",
+                )
+            })?,
             ended_at: self.ended_at,
             tags: self.tags,
             job_arn: self.job_arn,
             queue_info: self.queue_info,
             _request_id: self._request_id,
-        }
+        })
     }
 }

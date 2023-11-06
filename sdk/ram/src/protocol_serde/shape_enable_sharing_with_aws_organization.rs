@@ -32,11 +32,10 @@ pub fn de_enable_sharing_with_aws_organization_http_error(
                     )
                     .map_err(crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::operation_not_permitted_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -49,11 +48,10 @@ pub fn de_enable_sharing_with_aws_organization_http_error(
                     output = crate::protocol_serde::shape_server_internal_exception::de_server_internal_exception_json_err(_response_body, output)
                         .map_err(crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::server_internal_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -67,11 +65,10 @@ pub fn de_enable_sharing_with_aws_organization_http_error(
                         crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
                             .map_err(crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::service_unavailable_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }

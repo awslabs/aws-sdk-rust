@@ -27,6 +27,7 @@ pub struct DeleteEntityTypeInputBuilder {
 }
 impl DeleteEntityTypeInputBuilder {
     /// <p>The name of the entity type to delete.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteEntityTypeInputBuilder {
     /// Consumes the builder and constructs a [`DeleteEntityTypeInput`](crate::operation::delete_entity_type::DeleteEntityTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_entity_type::DeleteEntityTypeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_entity_type::DeleteEntityTypeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_entity_type::DeleteEntityTypeInput { name: self.name })
     }
 }

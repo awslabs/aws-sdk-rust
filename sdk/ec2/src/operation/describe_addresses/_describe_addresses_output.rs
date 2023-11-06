@@ -9,8 +9,10 @@ pub struct DescribeAddressesOutput {
 }
 impl DescribeAddressesOutput {
     /// <p>Information about the Elastic IP addresses.</p>
-    pub fn addresses(&self) -> ::std::option::Option<&[crate::types::Address]> {
-        self.addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.addresses.is_none()`.
+    pub fn addresses(&self) -> &[crate::types::Address] {
+        self.addresses.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeAddressesOutput {

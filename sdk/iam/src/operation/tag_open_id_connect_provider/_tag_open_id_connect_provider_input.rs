@@ -16,8 +16,10 @@ impl TagOpenIdConnectProviderInput {
         self.open_id_connect_provider_arn.as_deref()
     }
     /// <p>The list of tags that you want to attach to the OIDC identity provider in IAM. Each tag consists of a key name and an associated value.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl TagOpenIdConnectProviderInput {
@@ -37,6 +39,7 @@ pub struct TagOpenIdConnectProviderInputBuilder {
 impl TagOpenIdConnectProviderInputBuilder {
     /// <p>The ARN of the OIDC identity provider in IAM to which you want to add tags.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// This field is required.
     pub fn open_id_connect_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.open_id_connect_provider_arn = ::std::option::Option::Some(input.into());
         self
@@ -77,7 +80,7 @@ impl TagOpenIdConnectProviderInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::tag_open_id_connect_provider::TagOpenIdConnectProviderInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::tag_open_id_connect_provider::TagOpenIdConnectProviderInput {
             open_id_connect_provider_arn: self.open_id_connect_provider_arn,

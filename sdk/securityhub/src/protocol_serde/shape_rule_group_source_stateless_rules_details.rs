@@ -2,7 +2,7 @@
 pub fn ser_rule_group_source_stateless_rules_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RuleGroupSourceStatelessRulesDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.priority {
         object.key("Priority").number(
             #[allow(clippy::useless_conversion)]

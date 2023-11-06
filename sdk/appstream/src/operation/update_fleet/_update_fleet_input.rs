@@ -98,6 +98,8 @@ pub struct UpdateFleetInput {
     pub usb_device_filter_strings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The S3 location of the session scripts configuration zip file. This only applies to Elastic fleets. </p>
     pub session_script_s3_location: ::std::option::Option<crate::types::S3Location>,
+    /// <p>The maximum number of user sessions on an instance. This only applies to multi-session fleets.</p>
+    pub max_sessions_per_instance: ::std::option::Option<i32>,
 }
 impl UpdateFleetInput {
     /// <p>The name of the image used to create the fleet.</p>
@@ -208,8 +210,10 @@ impl UpdateFleetInput {
         self.idle_disconnect_timeout_in_seconds
     }
     /// <p>The fleet attributes to delete.</p>
-    pub fn attributes_to_delete(&self) -> ::std::option::Option<&[crate::types::FleetAttribute]> {
-        self.attributes_to_delete.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes_to_delete.is_none()`.
+    pub fn attributes_to_delete(&self) -> &[crate::types::FleetAttribute] {
+        self.attributes_to_delete.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
@@ -230,12 +234,18 @@ impl UpdateFleetInput {
         self.max_concurrent_sessions
     }
     /// <p>The USB device filter strings that specify which USB devices a user can redirect to the fleet streaming session, when using the Windows native client. This is allowed but not required for Elastic fleets.</p>
-    pub fn usb_device_filter_strings(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.usb_device_filter_strings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.usb_device_filter_strings.is_none()`.
+    pub fn usb_device_filter_strings(&self) -> &[::std::string::String] {
+        self.usb_device_filter_strings.as_deref().unwrap_or_default()
     }
     /// <p>The S3 location of the session scripts configuration zip file. This only applies to Elastic fleets. </p>
     pub fn session_script_s3_location(&self) -> ::std::option::Option<&crate::types::S3Location> {
         self.session_script_s3_location.as_ref()
+    }
+    /// <p>The maximum number of user sessions on an instance. This only applies to multi-session fleets.</p>
+    pub fn max_sessions_per_instance(&self) -> ::std::option::Option<i32> {
+        self.max_sessions_per_instance
     }
 }
 impl UpdateFleetInput {
@@ -270,6 +280,7 @@ pub struct UpdateFleetInputBuilder {
     pub(crate) max_concurrent_sessions: ::std::option::Option<i32>,
     pub(crate) usb_device_filter_strings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) session_script_s3_location: ::std::option::Option<crate::types::S3Location>,
+    pub(crate) max_sessions_per_instance: ::std::option::Option<i32>,
 }
 impl UpdateFleetInputBuilder {
     /// <p>The name of the image used to create the fleet.</p>
@@ -737,8 +748,22 @@ impl UpdateFleetInputBuilder {
     pub fn get_session_script_s3_location(&self) -> &::std::option::Option<crate::types::S3Location> {
         &self.session_script_s3_location
     }
+    /// <p>The maximum number of user sessions on an instance. This only applies to multi-session fleets.</p>
+    pub fn max_sessions_per_instance(mut self, input: i32) -> Self {
+        self.max_sessions_per_instance = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum number of user sessions on an instance. This only applies to multi-session fleets.</p>
+    pub fn set_max_sessions_per_instance(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_sessions_per_instance = input;
+        self
+    }
+    /// <p>The maximum number of user sessions on an instance. This only applies to multi-session fleets.</p>
+    pub fn get_max_sessions_per_instance(&self) -> &::std::option::Option<i32> {
+        &self.max_sessions_per_instance
+    }
     /// Consumes the builder and constructs a [`UpdateFleetInput`](crate::operation::update_fleet::UpdateFleetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_fleet::UpdateFleetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_fleet::UpdateFleetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_fleet::UpdateFleetInput {
             image_name: self.image_name,
             image_arn: self.image_arn,
@@ -761,6 +786,7 @@ impl UpdateFleetInputBuilder {
             max_concurrent_sessions: self.max_concurrent_sessions,
             usb_device_filter_strings: self.usb_device_filter_strings,
             session_script_s3_location: self.session_script_s3_location,
+            max_sessions_per_instance: self.max_sessions_per_instance,
         })
     }
 }

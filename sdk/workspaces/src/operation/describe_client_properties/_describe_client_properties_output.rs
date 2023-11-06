@@ -9,8 +9,10 @@ pub struct DescribeClientPropertiesOutput {
 }
 impl DescribeClientPropertiesOutput {
     /// <p>Information about the specified Amazon WorkSpaces clients.</p>
-    pub fn client_properties_list(&self) -> ::std::option::Option<&[crate::types::ClientPropertiesResult]> {
-        self.client_properties_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.client_properties_list.is_none()`.
+    pub fn client_properties_list(&self) -> &[crate::types::ClientPropertiesResult] {
+        self.client_properties_list.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeClientPropertiesOutput {

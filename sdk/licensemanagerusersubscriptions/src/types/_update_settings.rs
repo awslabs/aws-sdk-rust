@@ -5,20 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSettings {
     /// <p>The ID of one or more subnets in which License Manager will create a VPC endpoint for products that require connectivity to activation servers.</p>
-    pub add_subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub add_subnets: ::std::vec::Vec<::std::string::String>,
     /// <p>The ID of one or more subnets to remove.</p>
-    pub remove_subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub remove_subnets: ::std::vec::Vec<::std::string::String>,
     /// <p>A security group ID that allows inbound TCP port 1688 communication between resources in your VPC and the VPC endpoints for activation servers.</p>
     pub security_group_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateSettings {
     /// <p>The ID of one or more subnets in which License Manager will create a VPC endpoint for products that require connectivity to activation servers.</p>
-    pub fn add_subnets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.add_subnets.as_deref()
+    pub fn add_subnets(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.add_subnets.deref()
     }
     /// <p>The ID of one or more subnets to remove.</p>
-    pub fn remove_subnets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.remove_subnets.as_deref()
+    pub fn remove_subnets(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.remove_subnets.deref()
     }
     /// <p>A security group ID that allows inbound TCP port 1688 communication between resources in your VPC and the VPC endpoints for activation servers.</p>
     pub fn security_group_id(&self) -> ::std::option::Option<&str> {
@@ -96,11 +98,24 @@ impl UpdateSettingsBuilder {
         &self.security_group_id
     }
     /// Consumes the builder and constructs a [`UpdateSettings`](crate::types::UpdateSettings).
-    pub fn build(self) -> crate::types::UpdateSettings {
-        crate::types::UpdateSettings {
-            add_subnets: self.add_subnets,
-            remove_subnets: self.remove_subnets,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`add_subnets`](crate::types::builders::UpdateSettingsBuilder::add_subnets)
+    /// - [`remove_subnets`](crate::types::builders::UpdateSettingsBuilder::remove_subnets)
+    pub fn build(self) -> ::std::result::Result<crate::types::UpdateSettings, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::UpdateSettings {
+            add_subnets: self.add_subnets.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "add_subnets",
+                    "add_subnets was not specified but it is required when building UpdateSettings",
+                )
+            })?,
+            remove_subnets: self.remove_subnets.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "remove_subnets",
+                    "remove_subnets was not specified but it is required when building UpdateSettings",
+                )
+            })?,
             security_group_id: self.security_group_id,
-        }
+        })
     }
 }

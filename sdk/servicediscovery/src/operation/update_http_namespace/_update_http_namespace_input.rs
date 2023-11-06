@@ -41,6 +41,7 @@ pub struct UpdateHttpNamespaceInputBuilder {
 }
 impl UpdateHttpNamespaceInputBuilder {
     /// <p>The ID of the namespace that you want to update.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl UpdateHttpNamespaceInputBuilder {
         &self.updater_request_id
     }
     /// <p>Updated properties for the the HTTP namespace.</p>
+    /// This field is required.
     pub fn namespace(mut self, input: crate::types::HttpNamespaceChange) -> Self {
         self.namespace = ::std::option::Option::Some(input);
         self
@@ -85,7 +87,7 @@ impl UpdateHttpNamespaceInputBuilder {
     /// Consumes the builder and constructs a [`UpdateHttpNamespaceInput`](crate::operation::update_http_namespace::UpdateHttpNamespaceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_http_namespace::UpdateHttpNamespaceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_http_namespace::UpdateHttpNamespaceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_http_namespace::UpdateHttpNamespaceInput {
             id: self.id,

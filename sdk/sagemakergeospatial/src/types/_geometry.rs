@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Geometry {
     /// <p>GeoJson Geometry types like Polygon and MultiPolygon.</p>
-    pub r#type: ::std::option::Option<::std::string::String>,
+    pub r#type: ::std::string::String,
     /// <p>The coordinates of the GeoJson Geometry.</p>
-    pub coordinates: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<f64>>>>,
+    pub coordinates: ::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<f64>>>,
 }
 impl Geometry {
     /// <p>GeoJson Geometry types like Polygon and MultiPolygon.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
-        self.r#type.as_deref()
+    pub fn r#type(&self) -> &str {
+        use std::ops::Deref;
+        self.r#type.deref()
     }
     /// <p>The coordinates of the GeoJson Geometry.</p>
-    pub fn coordinates(&self) -> ::std::option::Option<&[::std::vec::Vec<::std::vec::Vec<f64>>]> {
-        self.coordinates.as_deref()
+    pub fn coordinates(&self) -> &[::std::vec::Vec<::std::vec::Vec<f64>>] {
+        use std::ops::Deref;
+        self.coordinates.deref()
     }
 }
 impl Geometry {
@@ -35,6 +37,7 @@ pub struct GeometryBuilder {
 }
 impl GeometryBuilder {
     /// <p>GeoJson Geometry types like Polygon and MultiPolygon.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
@@ -69,10 +72,23 @@ impl GeometryBuilder {
         &self.coordinates
     }
     /// Consumes the builder and constructs a [`Geometry`](crate::types::Geometry).
-    pub fn build(self) -> crate::types::Geometry {
-        crate::types::Geometry {
-            r#type: self.r#type,
-            coordinates: self.coordinates,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::GeometryBuilder::r#type)
+    /// - [`coordinates`](crate::types::builders::GeometryBuilder::coordinates)
+    pub fn build(self) -> ::std::result::Result<crate::types::Geometry, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Geometry {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building Geometry",
+                )
+            })?,
+            coordinates: self.coordinates.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "coordinates",
+                    "coordinates was not specified but it is required when building Geometry",
+                )
+            })?,
+        })
     }
 }

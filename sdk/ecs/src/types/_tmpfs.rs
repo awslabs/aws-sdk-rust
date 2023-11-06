@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Tmpfs {
     /// <p>The absolute file path where the tmpfs volume is to be mounted.</p>
-    pub container_path: ::std::option::Option<::std::string::String>,
+    pub container_path: ::std::string::String,
     /// <p>The maximum size (in MiB) of the tmpfs volume.</p>
     pub size: i32,
     /// <p>The list of tmpfs volume mount options.</p>
@@ -14,8 +14,9 @@ pub struct Tmpfs {
 }
 impl Tmpfs {
     /// <p>The absolute file path where the tmpfs volume is to be mounted.</p>
-    pub fn container_path(&self) -> ::std::option::Option<&str> {
-        self.container_path.as_deref()
+    pub fn container_path(&self) -> &str {
+        use std::ops::Deref;
+        self.container_path.deref()
     }
     /// <p>The maximum size (in MiB) of the tmpfs volume.</p>
     pub fn size(&self) -> i32 {
@@ -23,8 +24,10 @@ impl Tmpfs {
     }
     /// <p>The list of tmpfs volume mount options.</p>
     /// <p>Valid values: <code>"defaults" | "ro" | "rw" | "suid" | "nosuid" | "dev" | "nodev" | "exec" | "noexec" | "sync" | "async" | "dirsync" | "remount" | "mand" | "nomand" | "atime" | "noatime" | "diratime" | "nodiratime" | "bind" | "rbind" | "unbindable" | "runbindable" | "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" | "relatime" | "norelatime" | "strictatime" | "nostrictatime" | "mode" | "uid" | "gid" | "nr_inodes" | "nr_blocks" | "mpol"</code> </p>
-    pub fn mount_options(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.mount_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mount_options.is_none()`.
+    pub fn mount_options(&self) -> &[::std::string::String] {
+        self.mount_options.as_deref().unwrap_or_default()
     }
 }
 impl Tmpfs {
@@ -44,6 +47,7 @@ pub struct TmpfsBuilder {
 }
 impl TmpfsBuilder {
     /// <p>The absolute file path where the tmpfs volume is to be mounted.</p>
+    /// This field is required.
     pub fn container_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_path = ::std::option::Option::Some(input.into());
         self
@@ -58,6 +62,7 @@ impl TmpfsBuilder {
         &self.container_path
     }
     /// <p>The maximum size (in MiB) of the tmpfs volume.</p>
+    /// This field is required.
     pub fn size(mut self, input: i32) -> Self {
         self.size = ::std::option::Option::Some(input);
         self
@@ -95,11 +100,18 @@ impl TmpfsBuilder {
         &self.mount_options
     }
     /// Consumes the builder and constructs a [`Tmpfs`](crate::types::Tmpfs).
-    pub fn build(self) -> crate::types::Tmpfs {
-        crate::types::Tmpfs {
-            container_path: self.container_path,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`container_path`](crate::types::builders::TmpfsBuilder::container_path)
+    pub fn build(self) -> ::std::result::Result<crate::types::Tmpfs, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Tmpfs {
+            container_path: self.container_path.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "container_path",
+                    "container_path was not specified but it is required when building Tmpfs",
+                )
+            })?,
             size: self.size.unwrap_or_default(),
             mount_options: self.mount_options,
-        }
+        })
     }
 }

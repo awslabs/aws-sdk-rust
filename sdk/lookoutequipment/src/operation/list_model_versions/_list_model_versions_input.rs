@@ -83,6 +83,7 @@ pub struct ListModelVersionsInputBuilder {
 }
 impl ListModelVersionsInputBuilder {
     /// <p>Then name of the machine learning model for which the model versions are to be listed.</p>
+    /// This field is required.
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_name = ::std::option::Option::Some(input.into());
         self
@@ -211,7 +212,7 @@ impl ListModelVersionsInputBuilder {
     /// Consumes the builder and constructs a [`ListModelVersionsInput`](crate::operation::list_model_versions::ListModelVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_model_versions::ListModelVersionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_model_versions::ListModelVersionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_model_versions::ListModelVersionsInput {
             model_name: self.model_name,
             next_token: self.next_token,

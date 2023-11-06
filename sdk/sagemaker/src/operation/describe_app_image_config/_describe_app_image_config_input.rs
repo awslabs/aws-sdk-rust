@@ -27,6 +27,7 @@ pub struct DescribeAppImageConfigInputBuilder {
 }
 impl DescribeAppImageConfigInputBuilder {
     /// <p>The name of the AppImageConfig to describe.</p>
+    /// This field is required.
     pub fn app_image_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_image_config_name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeAppImageConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_app_image_config::DescribeAppImageConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_app_image_config::DescribeAppImageConfigInput {
             app_image_config_name: self.app_image_config_name,

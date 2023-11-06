@@ -2,7 +2,7 @@
 pub fn ser_dispose_package_versions_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::dispose_package_versions::DisposePackageVersionsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.expected_status {
         object.key("expectedStatus").string(var_1.as_str());
     }

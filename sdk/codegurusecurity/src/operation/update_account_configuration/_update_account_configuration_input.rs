@@ -27,6 +27,7 @@ pub struct UpdateAccountConfigurationInputBuilder {
 }
 impl UpdateAccountConfigurationInputBuilder {
     /// <p>The KMS key ARN you want to use for encryption. Defaults to service-side encryption if missing.</p>
+    /// This field is required.
     pub fn encryption_config(mut self, input: crate::types::EncryptionConfig) -> Self {
         self.encryption_config = ::std::option::Option::Some(input);
         self
@@ -45,7 +46,7 @@ impl UpdateAccountConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_account_configuration::UpdateAccountConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_account_configuration::UpdateAccountConfigurationInput {
             encryption_config: self.encryption_config,

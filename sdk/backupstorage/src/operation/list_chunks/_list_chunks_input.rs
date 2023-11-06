@@ -48,6 +48,7 @@ pub struct ListChunksInputBuilder {
 }
 impl ListChunksInputBuilder {
     /// Storage job id
+    /// This field is required.
     pub fn storage_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_job_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl ListChunksInputBuilder {
         &self.storage_job_id
     }
     /// Object token
+    /// This field is required.
     pub fn object_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_token = ::std::option::Option::Some(input.into());
         self
@@ -104,7 +106,7 @@ impl ListChunksInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListChunksInput`](crate::operation::list_chunks::ListChunksInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_chunks::ListChunksInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_chunks::ListChunksInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_chunks::ListChunksInput {
             storage_job_id: self.storage_job_id,
             object_token: self.object_token,

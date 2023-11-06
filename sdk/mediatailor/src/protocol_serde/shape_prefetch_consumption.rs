@@ -16,7 +16,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "AvailMatchingCriteria" => {
                             builder = builder.set_avail_matching_criteria(
-                                crate::protocol_serde::shape___list_of_avail_matching_criteria::de___list_of_avail_matching_criteria(tokens)?,
+                                crate::protocol_serde::shape_list_of_avail_matching_criteria::de_list_of_avail_matching_criteria(tokens)?,
                             );
                         }
                         "EndTime" => {
@@ -41,7 +41,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::prefetch_consumption_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -52,7 +54,7 @@ where
 pub fn ser_prefetch_consumption(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PrefetchConsumption,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.avail_matching_criteria {
         let mut array_2 = object.key("AvailMatchingCriteria").start_array();
         for item_3 in var_1 {
@@ -65,15 +67,15 @@ pub fn ser_prefetch_consumption(
         }
         array_2.finish();
     }
-    if let Some(var_5) = &input.end_time {
+    {
         object
             .key("EndTime")
-            .date_time(var_5, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(&input.end_time, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_6) = &input.start_time {
+    if let Some(var_5) = &input.start_time {
         object
             .key("StartTime")
-            .date_time(var_6, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_5, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }

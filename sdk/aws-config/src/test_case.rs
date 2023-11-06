@@ -3,30 +3,26 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+use crate::default_provider::use_dual_stack::use_dual_stack_provider;
+use crate::default_provider::use_fips::use_fips_provider;
 use crate::provider_config::ProviderConfig;
-
 use aws_credential_types::provider::{self, ProvideCredentials};
 use aws_smithy_async::rt::sleep::{AsyncSleep, Sleep, TokioSleep};
-use aws_smithy_client::dvr::{NetworkTraffic, RecordingConnection, ReplayingConnection};
-use aws_smithy_client::erase::DynConnector;
-use aws_types::os_shim_internal::{Env, Fs};
-
-use serde::Deserialize;
-
-use crate::connector::default_connector;
+use aws_smithy_runtime::client::http::test_util::dvr::{
+    NetworkTraffic, RecordingClient, ReplayingClient,
+};
+use aws_smithy_runtime::test_util::capture_test_logs::capture_test_logs;
+use aws_smithy_runtime_api::shared::IntoShared;
 use aws_smithy_types::error::display::DisplayErrorContext;
+use aws_types::os_shim_internal::{Env, Fs};
+use aws_types::sdk_config::SharedHttpClient;
+use serde::Deserialize;
 use std::collections::HashMap;
-use std::env;
 use std::error::Error;
 use std::fmt::Debug;
 use std::future::Future;
-use std::io::Write;
 use std::path::{Path, PathBuf};
-use std::sync::{Arc, Mutex};
 use std::time::{Duration, UNIX_EPOCH};
-use tracing::dispatcher::DefaultGuard;
-use tracing::Level;
-use tracing_subscriber::fmt::TestWriter;
 
 /// Test case credentials
 ///
@@ -68,18 +64,18 @@ impl From<aws_credential_types::Credentials> for Credentials {
 /// A credentials test environment is a directory containing:
 /// - an `fs` directory. This is loaded into the test as if it was mounted at `/`
 /// - an `env.json` file containing environment variables
-/// - an  `http-traffic.json` file containing an http traffic log from [`dvr`](aws_smithy_client::dvr)
+/// - an  `http-traffic.json` file containing an http traffic log from [`dvr`](aws_smithy_runtime::client::http::test_utils::dvr)
 /// - a `test-case.json` file defining the expected output of the test
 pub(crate) struct TestEnvironment {
     metadata: Metadata,
     base_dir: PathBuf,
-    connector: ReplayingConnection,
+    http_client: ReplayingClient,
     provider_config: ProviderConfig,
 }
 
 /// Connector which expects no traffic
-pub(crate) fn no_traffic_connector() -> DynConnector {
-    DynConnector::new(ReplayingConnection::new(vec![]))
+pub(crate) fn no_traffic_client() -> SharedHttpClient {
+    ReplayingClient::new(Vec::new()).into_shared()
 }
 
 #[derive(Debug)]
@@ -136,81 +132,6 @@ pub(crate) struct Metadata {
     name: String,
 }
 
-// TODO(enableNewSmithyRuntimeCleanup): Replace Tee, capture_test_logs, and Rx with
-// the implementations added to aws_smithy_runtime::test_util::capture_test_logs
-struct Tee<W> {
-    buf: Arc<Mutex<Vec<u8>>>,
-    quiet: bool,
-    inner: W,
-}
-
-/// Capture logs from this test.
-///
-/// The logs will be captured until the `DefaultGuard` is dropped.
-///
-/// *Why use this instead of traced_test?*
-/// This captures _all_ logs, not just logs produced by the current crate.
-fn capture_test_logs() -> (DefaultGuard, Rx) {
-    // it may be helpful to upstream this at some point
-    let (mut writer, rx) = Tee::stdout();
-    if env::var("VERBOSE_TEST_LOGS").is_ok() {
-        writer.loud();
-    } else {
-        eprintln!("To see full logs from this test set VERBOSE_TEST_LOGS=true");
-    }
-    let subscriber = tracing_subscriber::fmt()
-        .with_max_level(Level::TRACE)
-        .with_writer(Mutex::new(writer))
-        .finish();
-    let guard = tracing::subscriber::set_default(subscriber);
-    (guard, rx)
-}
-
-struct Rx(Arc<Mutex<Vec<u8>>>);
-impl Rx {
-    pub(crate) fn contents(&self) -> String {
-        String::from_utf8(self.0.lock().unwrap().clone()).unwrap()
-    }
-}
-
-impl Tee<TestWriter> {
-    fn stdout() -> (Self, Rx) {
-        let buf: Arc<Mutex<Vec<u8>>> = Default::default();
-        (
-            Tee {
-                buf: buf.clone(),
-                quiet: true,
-                inner: TestWriter::new(),
-            },
-            Rx(buf),
-        )
-    }
-}
-
-impl<W> Tee<W> {
-    fn loud(&mut self) {
-        self.quiet = false;
-    }
-}
-
-impl<W> Write for Tee<W>
-where
-    W: Write,
-{
-    fn write(&mut self, buf: &[u8]) -> std::io::Result<usize> {
-        self.buf.lock().unwrap().extend_from_slice(buf);
-        if !self.quiet {
-            self.inner.write(buf)
-        } else {
-            Ok(buf.len())
-        }
-    }
-
-    fn flush(&mut self) -> std::io::Result<()> {
-        self.inner.flush()
-    }
-}
-
 impl TestEnvironment {
     pub(crate) async fn from_dir(dir: impl AsRef<Path>) -> Result<TestEnvironment, Box<dyn Error>> {
         let dir = dir.as_ref();
@@ -228,18 +149,25 @@ impl TestEnvironment {
             &std::fs::read_to_string(dir.join("test-case.json"))
                 .map_err(|e| format!("failed to load test case: {}", e))?,
         )?;
-        let connector = ReplayingConnection::new(network_traffic.events().clone());
+        let http_client = ReplayingClient::new(network_traffic.events().clone());
         let provider_config = ProviderConfig::empty()
             .with_fs(fs.clone())
             .with_env(env.clone())
-            .with_http_connector(DynConnector::new(connector.clone()))
-            .with_sleep(TokioSleep::new())
+            .with_http_client(http_client.clone())
+            .with_sleep_impl(TokioSleep::new())
             .load_default_region()
             .await;
+
+        let use_dual_stack = use_dual_stack_provider(&provider_config).await;
+        let use_fips = use_fips_provider(&provider_config).await;
+        let provider_config = provider_config
+            .with_use_fips(use_fips)
+            .with_use_dual_stack(use_dual_stack);
+
         Ok(TestEnvironment {
             base_dir: dir.into(),
             metadata,
-            connector,
+            http_client,
             provider_config,
         })
     }
@@ -257,6 +185,7 @@ impl TestEnvironment {
     }
 
     #[allow(unused)]
+    #[cfg(all(feature = "client-hyper", feature = "rustls"))]
     /// Record a test case from live (remote) HTTPS traffic
     ///
     /// The `default_connector()` from the crate will be used
@@ -268,18 +197,21 @@ impl TestEnvironment {
         P: ProvideCredentials,
     {
         // swap out the connector generated from `http-traffic.json` for a real connector:
-        let live_connector =
-            default_connector(&Default::default(), self.provider_config.sleep()).unwrap();
-        let live_connector = RecordingConnection::new(live_connector);
+        let live_connector = aws_smithy_runtime::client::http::hyper_014::default_connector(
+            &Default::default(),
+            self.provider_config.sleep_impl(),
+        )
+        .expect("feature gate on this function makes this always return Some");
+        let live_client = RecordingClient::new(live_connector);
         let config = self
             .provider_config
             .clone()
-            .with_http_connector(DynConnector::new(live_connector.clone()));
+            .with_http_client(live_client.clone());
         let provider = make_provider(config).await;
         let result = provider.provide_credentials().await;
         std::fs::write(
             self.base_dir.join("http-traffic-recorded.json"),
-            serde_json::to_string(&live_connector.network_traffic()).unwrap(),
+            serde_json::to_string(&live_client.network_traffic()).unwrap(),
         )
         .unwrap();
         self.check_results(result);
@@ -295,16 +227,16 @@ impl TestEnvironment {
         F: Future<Output = P>,
         P: ProvideCredentials,
     {
-        let recording_connector = RecordingConnection::new(self.connector.clone());
+        let recording_client = RecordingClient::new(self.http_client.clone());
         let config = self
             .provider_config
             .clone()
-            .with_http_connector(DynConnector::new(recording_connector.clone()));
+            .with_http_client(recording_client.clone());
         let provider = make_provider(config).await;
         let result = provider.provide_credentials().await;
         std::fs::write(
             self.base_dir.join("http-traffic-recorded.json"),
-            serde_json::to_string(&recording_connector.network_traffic()).unwrap(),
+            serde_json::to_string(&recording_client.network_traffic()).unwrap(),
         )
         .unwrap();
         self.check_results(result);
@@ -341,7 +273,7 @@ impl TestEnvironment {
         self.check_results(result);
         // todo: validate bodies
         match self
-            .connector
+            .http_client
             .clone()
             .validate(
                 &["CONTENT-TYPE", "x-aws-ec2-metadata-token"],

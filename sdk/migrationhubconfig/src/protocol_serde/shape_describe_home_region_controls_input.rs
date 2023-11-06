@@ -2,7 +2,7 @@
 pub fn ser_describe_home_region_controls_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_home_region_controls::DescribeHomeRegionControlsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.control_id {
         object.key("ControlId").string(var_1.as_str());
     }

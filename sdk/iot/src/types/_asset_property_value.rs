@@ -42,6 +42,7 @@ pub struct AssetPropertyValueBuilder {
 }
 impl AssetPropertyValueBuilder {
     /// <p>The value of the asset property.</p>
+    /// This field is required.
     pub fn value(mut self, input: crate::types::AssetPropertyVariant) -> Self {
         self.value = ::std::option::Option::Some(input);
         self
@@ -56,6 +57,7 @@ impl AssetPropertyValueBuilder {
         &self.value
     }
     /// <p>The asset property value timestamp.</p>
+    /// This field is required.
     pub fn timestamp(mut self, input: crate::types::AssetPropertyTimestamp) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
         self

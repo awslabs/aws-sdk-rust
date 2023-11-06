@@ -25,8 +25,10 @@ impl ListRobotsInput {
     }
     /// <p>Optional filters to limit results.</p>
     /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>Registered</code> or the status <code>Available</code>.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
 }
 impl ListRobotsInput {
@@ -97,7 +99,7 @@ impl ListRobotsInputBuilder {
         &self.filters
     }
     /// Consumes the builder and constructs a [`ListRobotsInput`](crate::operation::list_robots::ListRobotsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_robots::ListRobotsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_robots::ListRobotsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_robots::ListRobotsInput {
             next_token: self.next_token,
             max_results: self.max_results,

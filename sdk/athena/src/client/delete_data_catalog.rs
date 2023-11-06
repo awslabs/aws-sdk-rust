@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDataCatalog`](crate::operation::delete_data_catalog::builders::DeleteDataCatalogFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::delete_data_catalog::builders::DeleteDataCatalogFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_data_catalog::builders::DeleteDataCatalogFluentBuilder::set_name): <p>The name of the data catalog to delete.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::delete_data_catalog::builders::DeleteDataCatalogFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_data_catalog::builders::DeleteDataCatalogFluentBuilder::set_name):<br>required: **true**<br><p>The name of the data catalog to delete.</p><br>
     /// - On success, responds with [`DeleteDataCatalogOutput`](crate::operation::delete_data_catalog::DeleteDataCatalogOutput)
     /// - On failure, responds with [`SdkError<DeleteDataCatalogError>`](crate::operation::delete_data_catalog::DeleteDataCatalogError)
     pub fn delete_data_catalog(&self) -> crate::operation::delete_data_catalog::builders::DeleteDataCatalogFluentBuilder {

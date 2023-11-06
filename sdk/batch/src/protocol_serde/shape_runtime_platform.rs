@@ -2,7 +2,7 @@
 pub fn ser_runtime_platform(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RuntimePlatform,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.operating_system_family {
         object.key("operatingSystemFamily").string(var_1.as_str());
     }

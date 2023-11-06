@@ -11,8 +11,10 @@ pub struct ListImpersonationRolesOutput {
 }
 impl ListImpersonationRolesOutput {
     /// <p>The list of impersonation roles under the given WorkMail organization.</p>
-    pub fn roles(&self) -> ::std::option::Option<&[crate::types::ImpersonationRole]> {
-        self.roles.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.roles.is_none()`.
+    pub fn roles(&self) -> &[crate::types::ImpersonationRole] {
+        self.roles.as_deref().unwrap_or_default()
     }
     /// <p>The token to retrieve the next page of results. The value is <code>null</code> when there are no results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

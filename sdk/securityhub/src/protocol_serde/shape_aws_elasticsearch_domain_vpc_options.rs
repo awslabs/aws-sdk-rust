@@ -2,7 +2,7 @@
 pub fn ser_aws_elasticsearch_domain_vpc_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsElasticsearchDomainVpcOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.availability_zones {
         let mut array_2 = object.key("AvailabilityZones").start_array();
         for item_3 in var_1 {

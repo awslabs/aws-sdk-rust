@@ -25,8 +25,10 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails {
         self.capabilities.as_ref()
     }
     /// <p>The host devices to expose to the container.</p>
-    pub fn devices(&self) -> ::std::option::Option<&[crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails]> {
-        self.devices.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.devices.is_none()`.
+    pub fn devices(&self) -> &[crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails] {
+        self.devices.as_deref().unwrap_or_default()
     }
     /// <p>Whether to run an <code>init</code> process inside the container that forwards signals and reaps processes. </p>
     pub fn init_process_enabled(&self) -> ::std::option::Option<bool> {
@@ -45,8 +47,10 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails {
         self.swappiness
     }
     /// <p>The container path, mount options, and size (in MiB) of the tmpfs mount.</p>
-    pub fn tmpfs(&self) -> ::std::option::Option<&[crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails]> {
-        self.tmpfs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tmpfs.is_none()`.
+    pub fn tmpfs(&self) -> &[crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails] {
+        self.tmpfs.as_deref().unwrap_or_default()
     }
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails {

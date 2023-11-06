@@ -86,6 +86,7 @@ pub struct UpdateTopicRuleDestinationInputBuilder {
 }
 impl UpdateTopicRuleDestinationInputBuilder {
     /// <p>The ARN of the topic rule destination.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +127,7 @@ impl UpdateTopicRuleDestinationInputBuilder {
     /// <p>Confirmation could not be completed, for example if the confirmation timed out. You can call <code>GetTopicRuleDestination</code> for details about the error. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p>
     /// </dd>
     /// </dl>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::TopicRuleDestinationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -196,7 +198,7 @@ impl UpdateTopicRuleDestinationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_topic_rule_destination::UpdateTopicRuleDestinationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_topic_rule_destination::UpdateTopicRuleDestinationInput {
             arn: self.arn,

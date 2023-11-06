@@ -11,8 +11,10 @@ pub struct ListLogSourcesOutput {
 }
 impl ListLogSourcesOutput {
     /// <p>The list of log sources in your organization that send data to the data lake.</p>
-    pub fn sources(&self) -> ::std::option::Option<&[crate::types::LogSource]> {
-        self.sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
+    pub fn sources(&self) -> &[crate::types::LogSource] {
+        self.sources.as_deref().unwrap_or_default()
     }
     /// <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

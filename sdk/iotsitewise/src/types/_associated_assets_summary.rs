@@ -5,58 +5,63 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociatedAssetsSummary {
     /// <p>The ID of the asset.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The name of the asset.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The ID of the asset model used to create the asset.</p>
-    pub asset_model_id: ::std::option::Option<::std::string::String>,
+    pub asset_model_id: ::std::string::String,
     /// <p>The date the asset was created, in Unix epoch time.</p>
-    pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_date: ::aws_smithy_types::DateTime,
     /// <p>The date the asset was last updated, in Unix epoch time.</p>
-    pub last_update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub last_update_date: ::aws_smithy_types::DateTime,
     /// <p>The current status of the asset.</p>
     pub status: ::std::option::Option<crate::types::AssetStatus>,
     /// <p>A list of asset hierarchies that each contain a <code>hierarchyId</code>. A hierarchy specifies allowed parent/child asset relationships.</p>
-    pub hierarchies: ::std::option::Option<::std::vec::Vec<crate::types::AssetHierarchy>>,
+    pub hierarchies: ::std::vec::Vec<crate::types::AssetHierarchy>,
     /// <p>A description for the asset.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl AssociatedAssetsSummary {
     /// <p>The ID of the asset.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The name of the asset.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The ID of the asset model used to create the asset.</p>
-    pub fn asset_model_id(&self) -> ::std::option::Option<&str> {
-        self.asset_model_id.as_deref()
+    pub fn asset_model_id(&self) -> &str {
+        use std::ops::Deref;
+        self.asset_model_id.deref()
     }
     /// <p>The date the asset was created, in Unix epoch time.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_date.as_ref()
+    pub fn creation_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_date
     }
     /// <p>The date the asset was last updated, in Unix epoch time.</p>
-    pub fn last_update_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.last_update_date.as_ref()
+    pub fn last_update_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.last_update_date
     }
     /// <p>The current status of the asset.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::AssetStatus> {
         self.status.as_ref()
     }
     /// <p>A list of asset hierarchies that each contain a <code>hierarchyId</code>. A hierarchy specifies allowed parent/child asset relationships.</p>
-    pub fn hierarchies(&self) -> ::std::option::Option<&[crate::types::AssetHierarchy]> {
-        self.hierarchies.as_deref()
+    pub fn hierarchies(&self) -> &[crate::types::AssetHierarchy] {
+        use std::ops::Deref;
+        self.hierarchies.deref()
     }
     /// <p>A description for the asset.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -86,6 +91,7 @@ pub struct AssociatedAssetsSummaryBuilder {
 }
 impl AssociatedAssetsSummaryBuilder {
     /// <p>The ID of the asset.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -101,6 +107,7 @@ impl AssociatedAssetsSummaryBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -117,6 +124,7 @@ impl AssociatedAssetsSummaryBuilder {
         &self.arn
     }
     /// <p>The name of the asset.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -131,6 +139,7 @@ impl AssociatedAssetsSummaryBuilder {
         &self.name
     }
     /// <p>The ID of the asset model used to create the asset.</p>
+    /// This field is required.
     pub fn asset_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_model_id = ::std::option::Option::Some(input.into());
         self
@@ -145,6 +154,7 @@ impl AssociatedAssetsSummaryBuilder {
         &self.asset_model_id
     }
     /// <p>The date the asset was created, in Unix epoch time.</p>
+    /// This field is required.
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
         self
@@ -159,6 +169,7 @@ impl AssociatedAssetsSummaryBuilder {
         &self.creation_date
     }
     /// <p>The date the asset was last updated, in Unix epoch time.</p>
+    /// This field is required.
     pub fn last_update_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_update_date = ::std::option::Option::Some(input);
         self
@@ -173,6 +184,7 @@ impl AssociatedAssetsSummaryBuilder {
         &self.last_update_date
     }
     /// <p>The current status of the asset.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::AssetStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -221,17 +233,60 @@ impl AssociatedAssetsSummaryBuilder {
         &self.description
     }
     /// Consumes the builder and constructs a [`AssociatedAssetsSummary`](crate::types::AssociatedAssetsSummary).
-    pub fn build(self) -> crate::types::AssociatedAssetsSummary {
-        crate::types::AssociatedAssetsSummary {
-            id: self.id,
-            arn: self.arn,
-            name: self.name,
-            asset_model_id: self.asset_model_id,
-            creation_date: self.creation_date,
-            last_update_date: self.last_update_date,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::AssociatedAssetsSummaryBuilder::id)
+    /// - [`arn`](crate::types::builders::AssociatedAssetsSummaryBuilder::arn)
+    /// - [`name`](crate::types::builders::AssociatedAssetsSummaryBuilder::name)
+    /// - [`asset_model_id`](crate::types::builders::AssociatedAssetsSummaryBuilder::asset_model_id)
+    /// - [`creation_date`](crate::types::builders::AssociatedAssetsSummaryBuilder::creation_date)
+    /// - [`last_update_date`](crate::types::builders::AssociatedAssetsSummaryBuilder::last_update_date)
+    /// - [`hierarchies`](crate::types::builders::AssociatedAssetsSummaryBuilder::hierarchies)
+    pub fn build(self) -> ::std::result::Result<crate::types::AssociatedAssetsSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AssociatedAssetsSummary {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building AssociatedAssetsSummary",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building AssociatedAssetsSummary",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building AssociatedAssetsSummary",
+                )
+            })?,
+            asset_model_id: self.asset_model_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "asset_model_id",
+                    "asset_model_id was not specified but it is required when building AssociatedAssetsSummary",
+                )
+            })?,
+            creation_date: self.creation_date.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "creation_date",
+                    "creation_date was not specified but it is required when building AssociatedAssetsSummary",
+                )
+            })?,
+            last_update_date: self.last_update_date.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "last_update_date",
+                    "last_update_date was not specified but it is required when building AssociatedAssetsSummary",
+                )
+            })?,
             status: self.status,
-            hierarchies: self.hierarchies,
+            hierarchies: self.hierarchies.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "hierarchies",
+                    "hierarchies was not specified but it is required when building AssociatedAssetsSummary",
+                )
+            })?,
             description: self.description,
-        }
+        })
     }
 }

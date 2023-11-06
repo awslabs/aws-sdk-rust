@@ -13,8 +13,10 @@ pub struct DescribeBrokerEngineTypesOutput {
 }
 impl DescribeBrokerEngineTypesOutput {
     /// <p>List of available engine types and versions.</p>
-    pub fn broker_engine_types(&self) -> ::std::option::Option<&[crate::types::BrokerEngineType]> {
-        self.broker_engine_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.broker_engine_types.is_none()`.
+    pub fn broker_engine_types(&self) -> &[crate::types::BrokerEngineType] {
+        self.broker_engine_types.as_deref().unwrap_or_default()
     }
     /// <p>Required. The maximum number of engine types that can be returned per page (20 by default). This value must be an integer from 5 to 100.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {

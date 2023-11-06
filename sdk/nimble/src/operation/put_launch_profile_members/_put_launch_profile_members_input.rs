@@ -28,8 +28,10 @@ impl PutLaunchProfileMembersInput {
         self.launch_profile_id.as_deref()
     }
     /// <p>A list of members.</p>
-    pub fn members(&self) -> ::std::option::Option<&[crate::types::NewLaunchProfileMember]> {
-        self.members.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.members.is_none()`.
+    pub fn members(&self) -> &[crate::types::NewLaunchProfileMember] {
+        self.members.as_deref().unwrap_or_default()
     }
     /// <p>The studio ID. </p>
     pub fn studio_id(&self) -> ::std::option::Option<&str> {
@@ -69,6 +71,7 @@ impl PutLaunchProfileMembersInputBuilder {
         &self.client_token
     }
     /// <p>The ID of the identity store.</p>
+    /// This field is required.
     pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_store_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +86,7 @@ impl PutLaunchProfileMembersInputBuilder {
         &self.identity_store_id
     }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
+    /// This field is required.
     pub fn launch_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_profile_id = ::std::option::Option::Some(input.into());
         self
@@ -117,6 +121,7 @@ impl PutLaunchProfileMembersInputBuilder {
         &self.members
     }
     /// <p>The studio ID. </p>
+    /// This field is required.
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
         self
@@ -135,7 +140,7 @@ impl PutLaunchProfileMembersInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_launch_profile_members::PutLaunchProfileMembersInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_launch_profile_members::PutLaunchProfileMembersInput {
             client_token: self.client_token,

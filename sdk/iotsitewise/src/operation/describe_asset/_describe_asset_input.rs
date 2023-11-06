@@ -34,6 +34,7 @@ pub struct DescribeAssetInputBuilder {
 }
 impl DescribeAssetInputBuilder {
     /// <p>The ID of the asset.</p>
+    /// This field is required.
     pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl DescribeAssetInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAssetInput`](crate::operation::describe_asset::DescribeAssetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_asset::DescribeAssetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_asset::DescribeAssetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_asset::DescribeAssetInput {
             asset_id: self.asset_id,
             exclude_properties: self.exclude_properties,

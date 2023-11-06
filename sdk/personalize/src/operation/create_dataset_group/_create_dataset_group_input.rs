@@ -32,8 +32,10 @@ impl CreateDatasetGroupInput {
         self.domain.as_ref()
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the dataset group.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateDatasetGroupInput {
@@ -55,6 +57,7 @@ pub struct CreateDatasetGroupInputBuilder {
 }
 impl CreateDatasetGroupInputBuilder {
     /// <p>The name for the new dataset group.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -133,7 +136,8 @@ impl CreateDatasetGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateDatasetGroupInput`](crate::operation::create_dataset_group::CreateDatasetGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_dataset_group::CreateDatasetGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_dataset_group::CreateDatasetGroupInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_dataset_group::CreateDatasetGroupInput {
             name: self.name,
             role_arn: self.role_arn,

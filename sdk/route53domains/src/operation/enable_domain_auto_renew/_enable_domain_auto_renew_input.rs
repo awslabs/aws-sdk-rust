@@ -27,6 +27,7 @@ pub struct EnableDomainAutoRenewInputBuilder {
 }
 impl EnableDomainAutoRenewInputBuilder {
     /// <p>The name of the domain that you want to enable automatic renewal for.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl EnableDomainAutoRenewInputBuilder {
     /// Consumes the builder and constructs a [`EnableDomainAutoRenewInput`](crate::operation::enable_domain_auto_renew::EnableDomainAutoRenewInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::enable_domain_auto_renew::EnableDomainAutoRenewInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::enable_domain_auto_renew::EnableDomainAutoRenewInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::enable_domain_auto_renew::EnableDomainAutoRenewInput {
             domain_name: self.domain_name,

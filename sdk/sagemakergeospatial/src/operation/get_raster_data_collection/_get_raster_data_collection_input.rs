@@ -27,6 +27,7 @@ pub struct GetRasterDataCollectionInputBuilder {
 }
 impl GetRasterDataCollectionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetRasterDataCollectionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_raster_data_collection::GetRasterDataCollectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_raster_data_collection::GetRasterDataCollectionInput { arn: self.arn })
     }

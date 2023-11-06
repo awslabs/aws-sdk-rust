@@ -11,8 +11,10 @@ pub struct ListTemplateGroupAccessControlEntriesOutput {
 }
 impl ListTemplateGroupAccessControlEntriesOutput {
     /// <p>An access control entry grants or denies permission to an Active Directory group to enroll certificates for a template.</p>
-    pub fn access_control_entries(&self) -> ::std::option::Option<&[crate::types::AccessControlEntrySummary]> {
-        self.access_control_entries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.access_control_entries.is_none()`.
+    pub fn access_control_entries(&self) -> &[crate::types::AccessControlEntrySummary] {
+        self.access_control_entries.as_deref().unwrap_or_default()
     }
     /// <p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

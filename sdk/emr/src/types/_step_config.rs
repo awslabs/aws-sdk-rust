@@ -58,6 +58,7 @@ pub struct StepConfigBuilder {
 }
 impl StepConfigBuilder {
     /// <p>The name of the step.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -110,6 +111,7 @@ impl StepConfigBuilder {
         &self.action_on_failure
     }
     /// <p>The JAR file used for the step.</p>
+    /// This field is required.
     pub fn hadoop_jar_step(mut self, input: crate::types::HadoopJarStepConfig) -> Self {
         self.hadoop_jar_step = ::std::option::Option::Some(input);
         self

@@ -43,7 +43,7 @@ impl GetSamplingRulesInputBuilder {
     /// Consumes the builder and constructs a [`GetSamplingRulesInput`](crate::operation::get_sampling_rules::GetSamplingRulesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_sampling_rules::GetSamplingRulesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_sampling_rules::GetSamplingRulesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_sampling_rules::GetSamplingRulesInput { next_token: self.next_token })
     }
 }

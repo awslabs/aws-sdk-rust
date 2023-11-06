@@ -104,6 +104,7 @@ impl CreateGeofenceCollectionInputBuilder {
     /// <li> <p>Must be a unique geofence collection name.</p> </li>
     /// <li> <p>No spaces allowed. For example, <code>ExampleGeofenceCollection</code>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn collection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_name = ::std::option::Option::Some(input.into());
         self
@@ -246,7 +247,7 @@ impl CreateGeofenceCollectionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_geofence_collection::CreateGeofenceCollectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_geofence_collection::CreateGeofenceCollectionInput {
             collection_name: self.collection_name,

@@ -2,7 +2,7 @@
 pub fn ser_start_import_file_task_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_import_file_task::StartImportFileTaskInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.s3_bucket {
         object.key("S3Bucket").string(var_1.as_str());
     }
@@ -27,7 +27,7 @@ pub fn ser_start_import_file_task_input(
     if let Some(var_8) = &input.s3bucket_for_report_data {
         object.key("s3bucketForReportData").string(var_8.as_str());
     }
-    if let Some(var_9) = &input.s3key {
+    if let Some(var_9) = &input.s3_key {
         object.key("s3key").string(var_9.as_str());
     }
     Ok(())

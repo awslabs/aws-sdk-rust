@@ -8,7 +8,7 @@ To update it, edit the `aws/SDK_README.md.hb` Handlebars template in that reposi
 
 This repo contains the new AWS SDK for Rust (the SDK) and its [public roadmap](https://github.com/orgs/awslabs/projects/50/views/1).
 
-**Please Note: The SDK is currently released as a developer preview and is intended strictly for feedback purposes only. Do not use this SDK for production workloads.**
+**Please Note**: The SDK is currently released as a developer preview, without support or assistance for use on production workloads. Any use in production is at your own risk.
 
 The SDK is code generated from [Smithy models](https://awslabs.github.io/smithy/) that represent each AWS service. The code used to generate the SDK can be found in [smithy-rs](https://github.com/awslabs/smithy-rs).
 
@@ -25,8 +25,8 @@ The SDK provides one crate per AWS service. You must add [Tokio](https://crates.
 
     ```toml
     [dependencies]
-    aws-config = "0.56.1"
-    aws-sdk-dynamodb = "0.34.0"
+    aws-config = "0.57.1"
+    aws-sdk-dynamodb = "0.35.0"
     tokio = { version = "1", features = ["full"] }
     ```
 

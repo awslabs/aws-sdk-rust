@@ -20,8 +20,10 @@ impl ListWorldGenerationJobsInput {
         self.max_results
     }
     /// <p>Optional filters to limit results. You can use <code>status</code> and <code>templateId</code>.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
 }
 impl ListWorldGenerationJobsInput {
@@ -93,7 +95,7 @@ impl ListWorldGenerationJobsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_world_generation_jobs::ListWorldGenerationJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_world_generation_jobs::ListWorldGenerationJobsInput {
             next_token: self.next_token,

@@ -48,6 +48,7 @@ pub struct UpdateOutpostResolverInputBuilder {
 }
 impl UpdateOutpostResolverInputBuilder {
     /// <p>A unique string that identifies Resolver on an Outpost.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,7 @@ impl UpdateOutpostResolverInputBuilder {
     /// Consumes the builder and constructs a [`UpdateOutpostResolverInput`](crate::operation::update_outpost_resolver::UpdateOutpostResolverInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_outpost_resolver::UpdateOutpostResolverInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_outpost_resolver::UpdateOutpostResolverInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_outpost_resolver::UpdateOutpostResolverInput {
             id: self.id,

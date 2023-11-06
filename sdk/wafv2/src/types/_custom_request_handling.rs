@@ -7,13 +7,14 @@
 pub struct CustomRequestHandling {
     /// <p>The HTTP headers to insert into the request. Duplicate header names are not allowed. </p>
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>. </p>
-    pub insert_headers: ::std::option::Option<::std::vec::Vec<crate::types::CustomHttpHeader>>,
+    pub insert_headers: ::std::vec::Vec<crate::types::CustomHttpHeader>,
 }
 impl CustomRequestHandling {
     /// <p>The HTTP headers to insert into the request. Duplicate header names are not allowed. </p>
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>. </p>
-    pub fn insert_headers(&self) -> ::std::option::Option<&[crate::types::CustomHttpHeader]> {
-        self.insert_headers.as_deref()
+    pub fn insert_headers(&self) -> &[crate::types::CustomHttpHeader] {
+        use std::ops::Deref;
+        self.insert_headers.deref()
     }
 }
 impl CustomRequestHandling {
@@ -54,9 +55,16 @@ impl CustomRequestHandlingBuilder {
         &self.insert_headers
     }
     /// Consumes the builder and constructs a [`CustomRequestHandling`](crate::types::CustomRequestHandling).
-    pub fn build(self) -> crate::types::CustomRequestHandling {
-        crate::types::CustomRequestHandling {
-            insert_headers: self.insert_headers,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`insert_headers`](crate::types::builders::CustomRequestHandlingBuilder::insert_headers)
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomRequestHandling, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CustomRequestHandling {
+            insert_headers: self.insert_headers.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "insert_headers",
+                    "insert_headers was not specified but it is required when building CustomRequestHandling",
+                )
+            })?,
+        })
     }
 }

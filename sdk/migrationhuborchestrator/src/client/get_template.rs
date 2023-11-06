@@ -3,13 +3,13 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetTemplate`](crate::operation::get_template::builders::GetTemplateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_template::builders::GetTemplateFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_template::builders::GetTemplateFluentBuilder::set_id): <p>The ID of the template.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_template::builders::GetTemplateFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_template::builders::GetTemplateFluentBuilder::set_id):<br>required: **true**<br><p>The ID of the template.</p><br>
     /// - On success, responds with [`GetTemplateOutput`](crate::operation::get_template::GetTemplateOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_template::GetTemplateOutput::id): <p>The ID of the template.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_template::GetTemplateOutput::name): <p>The name of the template.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_template::GetTemplateOutput::description): <p>The time at which the template was last created.</p>
-    ///   - [`inputs(Option<Vec<TemplateInput>>)`](crate::operation::get_template::GetTemplateOutput::inputs): <p>The inputs provided for the creation of the migration workflow.</p>
-    ///   - [`tools(Option<Vec<Tool>>)`](crate::operation::get_template::GetTemplateOutput::tools): <p>List of AWS services utilized in a migration workflow.</p>
+    ///   - [`inputs(Option<Vec::<TemplateInput>>)`](crate::operation::get_template::GetTemplateOutput::inputs): <p>The inputs provided for the creation of the migration workflow.</p>
+    ///   - [`tools(Option<Vec::<Tool>>)`](crate::operation::get_template::GetTemplateOutput::tools): <p>List of AWS services utilized in a migration workflow.</p>
     ///   - [`status(Option<TemplateStatus>)`](crate::operation::get_template::GetTemplateOutput::status): <p>The status of the template.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_template::GetTemplateOutput::creation_time): <p>The time at which the template was last created.</p>
     /// - On failure, responds with [`SdkError<GetTemplateError>`](crate::operation::get_template::GetTemplateError)

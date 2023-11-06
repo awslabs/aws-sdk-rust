@@ -2,7 +2,7 @@
 pub fn ser_section_based_layout_paper_canvas_size_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SectionBasedLayoutPaperCanvasSizeOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.paper_size {
         object.key("PaperSize").string(var_1.as_str());
     }

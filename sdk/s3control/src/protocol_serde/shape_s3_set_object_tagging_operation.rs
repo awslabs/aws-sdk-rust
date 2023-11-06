@@ -2,7 +2,7 @@
 pub fn ser_s3_set_object_tagging_operation(
     input: &crate::types::S3SetObjectTaggingOperation,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_1) = &input.tag_set {
@@ -18,6 +18,7 @@ pub fn ser_s3_set_object_tagging_operation(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_s3_set_object_tagging_operation(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::S3SetObjectTaggingOperation, ::aws_smithy_xml::decode::XmlDecodeError> {

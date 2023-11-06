@@ -93,12 +93,16 @@ impl FileCacheCreating {
         self.vpc_id.as_deref()
     }
     /// <p>A list of subnet IDs that the cache will be accessible from. You can specify only one subnet ID in a call to the <code>CreateFileCache</code> operation.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        self.subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>A list of network interface IDs.</p>
-    pub fn network_interface_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.network_interface_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_interface_ids.is_none()`.
+    pub fn network_interface_ids(&self) -> &[::std::string::String] {
+        self.network_interface_ids.as_deref().unwrap_or_default()
     }
     /// <p>The Domain Name System (DNS) name for the cache.</p>
     pub fn dns_name(&self) -> ::std::option::Option<&str> {
@@ -113,8 +117,10 @@ impl FileCacheCreating {
         self.resource_arn.as_deref()
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>A boolean flag indicating whether tags for the cache should be copied to data repository associations.</p>
     pub fn copy_tags_to_data_repository_associations(&self) -> ::std::option::Option<bool> {
@@ -125,8 +131,10 @@ impl FileCacheCreating {
         self.lustre_configuration.as_ref()
     }
     /// <p>A list of IDs of data repository associations that are associated with this cache.</p>
-    pub fn data_repository_association_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.data_repository_association_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_repository_association_ids.is_none()`.
+    pub fn data_repository_association_ids(&self) -> &[::std::string::String] {
+        self.data_repository_association_ids.as_deref().unwrap_or_default()
     }
 }
 impl FileCacheCreating {

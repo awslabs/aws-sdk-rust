@@ -27,6 +27,7 @@ pub struct StartInferenceExperimentInputBuilder {
 }
 impl StartInferenceExperimentInputBuilder {
     /// <p>The name of the inference experiment to start.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl StartInferenceExperimentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_inference_experiment::StartInferenceExperimentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_inference_experiment::StartInferenceExperimentInput { name: self.name })
     }

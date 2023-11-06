@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PackageAggregationResponse {
     /// <p>The name of the operating system package.</p>
-    pub package_name: ::std::option::Option<::std::string::String>,
+    pub package_name: ::std::string::String,
     /// <p>The ID of the Amazon Web Services account associated with the findings.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>An object that contains the count of matched findings per severity.</p>
@@ -13,8 +13,9 @@ pub struct PackageAggregationResponse {
 }
 impl PackageAggregationResponse {
     /// <p>The name of the operating system package.</p>
-    pub fn package_name(&self) -> ::std::option::Option<&str> {
-        self.package_name.as_deref()
+    pub fn package_name(&self) -> &str {
+        use std::ops::Deref;
+        self.package_name.deref()
     }
     /// <p>The ID of the Amazon Web Services account associated with the findings.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
@@ -42,6 +43,7 @@ pub struct PackageAggregationResponseBuilder {
 }
 impl PackageAggregationResponseBuilder {
     /// <p>The name of the operating system package.</p>
+    /// This field is required.
     pub fn package_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_name = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +86,18 @@ impl PackageAggregationResponseBuilder {
         &self.severity_counts
     }
     /// Consumes the builder and constructs a [`PackageAggregationResponse`](crate::types::PackageAggregationResponse).
-    pub fn build(self) -> crate::types::PackageAggregationResponse {
-        crate::types::PackageAggregationResponse {
-            package_name: self.package_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`package_name`](crate::types::builders::PackageAggregationResponseBuilder::package_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::PackageAggregationResponse, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PackageAggregationResponse {
+            package_name: self.package_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "package_name",
+                    "package_name was not specified but it is required when building PackageAggregationResponse",
+                )
+            })?,
             account_id: self.account_id,
             severity_counts: self.severity_counts,
-        }
+        })
     }
 }

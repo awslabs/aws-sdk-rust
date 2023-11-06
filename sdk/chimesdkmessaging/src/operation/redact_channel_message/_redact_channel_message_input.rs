@@ -48,6 +48,7 @@ pub struct RedactChannelMessageInputBuilder {
 }
 impl RedactChannelMessageInputBuilder {
     /// <p>The ARN of the channel containing the messages that you want to redact.</p>
+    /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl RedactChannelMessageInputBuilder {
         &self.channel_arn
     }
     /// <p>The ID of the message being redacted.</p>
+    /// This field is required.
     pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl RedactChannelMessageInputBuilder {
         &self.message_id
     }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
+    /// This field is required.
     pub fn chime_bearer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.chime_bearer = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +109,7 @@ impl RedactChannelMessageInputBuilder {
     /// Consumes the builder and constructs a [`RedactChannelMessageInput`](crate::operation::redact_channel_message::RedactChannelMessageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::redact_channel_message::RedactChannelMessageInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::redact_channel_message::RedactChannelMessageInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::redact_channel_message::RedactChannelMessageInput {
             channel_arn: self.channel_arn,

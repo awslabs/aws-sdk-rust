@@ -116,8 +116,10 @@ impl Lag {
         self.aws_logical_device_id.as_deref()
     }
     /// <p>The connections bundled by the LAG.</p>
-    pub fn connections(&self) -> ::std::option::Option<&[crate::types::Connection]> {
-        self.connections.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connections.is_none()`.
+    pub fn connections(&self) -> &[crate::types::Connection] {
+        self.connections.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether the LAG can host other connections.</p>
     pub fn allows_hosted_connections(&self) -> bool {
@@ -132,8 +134,10 @@ impl Lag {
         self.has_logical_redundancy.as_ref()
     }
     /// <p>The tags associated with the LAG.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The name of the service provider associated with the LAG.</p>
     pub fn provider_name(&self) -> ::std::option::Option<&str> {
@@ -149,8 +153,10 @@ impl Lag {
         self.encryption_mode.as_deref()
     }
     /// <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
-    pub fn mac_sec_keys(&self) -> ::std::option::Option<&[crate::types::MacSecKey]> {
-        self.mac_sec_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mac_sec_keys.is_none()`.
+    pub fn mac_sec_keys(&self) -> &[crate::types::MacSecKey] {
+        self.mac_sec_keys.as_deref().unwrap_or_default()
     }
 }
 impl Lag {

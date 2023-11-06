@@ -34,6 +34,7 @@ pub struct GetMlModelTransformJobInputBuilder {
 }
 impl GetMlModelTransformJobInputBuilder {
     /// <p>The unique identifier of the model-transform job to be reetrieved.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl GetMlModelTransformJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_ml_model_transform_job::GetMlModelTransformJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_ml_model_transform_job::GetMlModelTransformJobInput {
             id: self.id,

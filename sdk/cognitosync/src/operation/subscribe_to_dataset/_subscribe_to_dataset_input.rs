@@ -49,6 +49,7 @@ pub struct SubscribeToDatasetInputBuilder {
 }
 impl SubscribeToDatasetInputBuilder {
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which the identity belongs.</p>
+    /// This field is required.
     pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl SubscribeToDatasetInputBuilder {
         &self.identity_pool_id
     }
     /// <p>Unique ID for this identity.</p>
+    /// This field is required.
     pub fn identity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_id = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +79,7 @@ impl SubscribeToDatasetInputBuilder {
         &self.identity_id
     }
     /// <p>The name of the dataset to subcribe to.</p>
+    /// This field is required.
     pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_name = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +94,7 @@ impl SubscribeToDatasetInputBuilder {
         &self.dataset_name
     }
     /// <p>The unique ID generated for this device by Cognito.</p>
+    /// This field is required.
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_id = ::std::option::Option::Some(input.into());
         self
@@ -107,7 +111,8 @@ impl SubscribeToDatasetInputBuilder {
     /// Consumes the builder and constructs a [`SubscribeToDatasetInput`](crate::operation::subscribe_to_dataset::SubscribeToDatasetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::subscribe_to_dataset::SubscribeToDatasetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::subscribe_to_dataset::SubscribeToDatasetInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::subscribe_to_dataset::SubscribeToDatasetInput {
             identity_pool_id: self.identity_pool_id,
             identity_id: self.identity_id,

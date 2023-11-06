@@ -38,7 +38,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::voice_settings_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -49,12 +51,12 @@ where
 pub fn ser_voice_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VoiceSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.voice_id {
-        object.key("voiceId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("voiceId").string(input.voice_id.as_str());
     }
-    if let Some(var_2) = &input.engine {
-        object.key("engine").string(var_2.as_str());
+    if let Some(var_1) = &input.engine {
+        object.key("engine").string(var_1.as_str());
     }
     Ok(())
 }

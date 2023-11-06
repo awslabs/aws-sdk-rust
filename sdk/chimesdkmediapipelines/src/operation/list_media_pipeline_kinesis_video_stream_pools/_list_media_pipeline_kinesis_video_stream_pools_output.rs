@@ -11,8 +11,10 @@ pub struct ListMediaPipelineKinesisVideoStreamPoolsOutput {
 }
 impl ListMediaPipelineKinesisVideoStreamPoolsOutput {
     /// <p>The list of video stream pools.</p>
-    pub fn kinesis_video_stream_pools(&self) -> ::std::option::Option<&[crate::types::KinesisVideoStreamPoolSummary]> {
-        self.kinesis_video_stream_pools.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.kinesis_video_stream_pools.is_none()`.
+    pub fn kinesis_video_stream_pools(&self) -> &[crate::types::KinesisVideoStreamPoolSummary] {
+        self.kinesis_video_stream_pools.as_deref().unwrap_or_default()
     }
     /// <p>The token used to return the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

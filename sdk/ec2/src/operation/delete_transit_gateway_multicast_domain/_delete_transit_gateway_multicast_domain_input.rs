@@ -34,6 +34,7 @@ pub struct DeleteTransitGatewayMulticastDomainInputBuilder {
 }
 impl DeleteTransitGatewayMulticastDomainInputBuilder {
     /// <p>The ID of the transit gateway multicast domain.</p>
+    /// This field is required.
     pub fn transit_gateway_multicast_domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_multicast_domain_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl DeleteTransitGatewayMulticastDomainInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_transit_gateway_multicast_domain::DeleteTransitGatewayMulticastDomainInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_transit_gateway_multicast_domain::DeleteTransitGatewayMulticastDomainInput {

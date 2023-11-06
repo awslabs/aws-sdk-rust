@@ -9,8 +9,10 @@ pub struct DescribeDeviceEc2InstancesOutput {
 }
 impl DescribeDeviceEc2InstancesOutput {
     /// <p>A list of structures containing information about each instance. </p>
-    pub fn instances(&self) -> ::std::option::Option<&[crate::types::InstanceSummary]> {
-        self.instances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instances.is_none()`.
+    pub fn instances(&self) -> &[crate::types::InstanceSummary] {
+        self.instances.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeDeviceEc2InstancesOutput {

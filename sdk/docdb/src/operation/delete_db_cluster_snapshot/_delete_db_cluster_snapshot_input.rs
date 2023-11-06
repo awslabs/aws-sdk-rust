@@ -31,6 +31,7 @@ pub struct DeleteDbClusterSnapshotInputBuilder {
 impl DeleteDbClusterSnapshotInputBuilder {
     /// <p>The identifier of the cluster snapshot to delete.</p>
     /// <p>Constraints: Must be the name of an existing cluster snapshot in the <code>available</code> state.</p>
+    /// This field is required.
     pub fn db_cluster_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_snapshot_identifier = ::std::option::Option::Some(input.into());
         self
@@ -51,7 +52,7 @@ impl DeleteDbClusterSnapshotInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_db_cluster_snapshot::DeleteDbClusterSnapshotInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_db_cluster_snapshot::DeleteDbClusterSnapshotInput {
             db_cluster_snapshot_identifier: self.db_cluster_snapshot_identifier,

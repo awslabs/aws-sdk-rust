@@ -15,6 +15,8 @@ pub struct DescribeSessionsInput {
     pub limit: ::std::option::Option<i32>,
     /// <p>The authentication method. Specify <code>API</code> for a user authenticated using a streaming URL or <code>SAML</code> for a SAML federated user. The default is to authenticate users using a streaming URL.</p>
     pub authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
+    /// <p>The identifier for the instance hosting the session.</p>
+    pub instance_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeSessionsInput {
     /// <p>The name of the stack. This value is case-sensitive.</p>
@@ -41,6 +43,10 @@ impl DescribeSessionsInput {
     pub fn authentication_type(&self) -> ::std::option::Option<&crate::types::AuthenticationType> {
         self.authentication_type.as_ref()
     }
+    /// <p>The identifier for the instance hosting the session.</p>
+    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
 }
 impl DescribeSessionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeSessionsInput`](crate::operation::describe_sessions::DescribeSessionsInput).
@@ -59,9 +65,11 @@ pub struct DescribeSessionsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,
     pub(crate) authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
+    pub(crate) instance_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeSessionsInputBuilder {
     /// <p>The name of the stack. This value is case-sensitive.</p>
+    /// This field is required.
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +84,7 @@ impl DescribeSessionsInputBuilder {
         &self.stack_name
     }
     /// <p>The name of the fleet. This value is case-sensitive.</p>
+    /// This field is required.
     pub fn fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_name = ::std::option::Option::Some(input.into());
         self
@@ -145,10 +154,24 @@ impl DescribeSessionsInputBuilder {
     pub fn get_authentication_type(&self) -> &::std::option::Option<crate::types::AuthenticationType> {
         &self.authentication_type
     }
+    /// <p>The identifier for the instance hosting the session.</p>
+    pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.instance_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier for the instance hosting the session.</p>
+    pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.instance_id = input;
+        self
+    }
+    /// <p>The identifier for the instance hosting the session.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// Consumes the builder and constructs a [`DescribeSessionsInput`](crate::operation::describe_sessions::DescribeSessionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_sessions::DescribeSessionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_sessions::DescribeSessionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_sessions::DescribeSessionsInput {
             stack_name: self.stack_name,
             fleet_name: self.fleet_name,
@@ -156,6 +179,7 @@ impl DescribeSessionsInputBuilder {
             next_token: self.next_token,
             limit: self.limit,
             authentication_type: self.authentication_type,
+            instance_id: self.instance_id,
         })
     }
 }

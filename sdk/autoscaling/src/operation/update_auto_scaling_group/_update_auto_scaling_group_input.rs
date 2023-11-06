@@ -96,8 +96,10 @@ impl UpdateAutoScalingGroupInput {
         self.default_cooldown
     }
     /// <p>One or more Availability Zones for the group.</p>
-    pub fn availability_zones(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.availability_zones.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
+    pub fn availability_zones(&self) -> &[::std::string::String] {
+        self.availability_zones.as_deref().unwrap_or_default()
     }
     /// <p>A comma-separated value string of one or more health check types.</p>
     /// <p>The valid values are <code>EC2</code>, <code>ELB</code>, and <code>VPC_LATTICE</code>. <code>EC2</code> is the default health check and cannot be disabled. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -121,8 +123,10 @@ impl UpdateAutoScalingGroupInput {
     }
     /// <p>A policy or a list of policies that are used to select the instances to terminate. The policies are executed in the order that you list them. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-termination-policies.html">Work with Amazon EC2 Auto Scaling termination policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// <p>Valid values: <code>Default</code> | <code>AllocationStrategy</code> | <code>ClosestToNextInstanceHour</code> | <code>NewestInstance</code> | <code>OldestInstance</code> | <code>OldestLaunchConfiguration</code> | <code>OldestLaunchTemplate</code> | <code>arn:aws:lambda:region:account-id:function:my-function:my-alias</code> </p>
-    pub fn termination_policies(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.termination_policies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.termination_policies.is_none()`.
+    pub fn termination_policies(&self) -> &[::std::string::String] {
+        self.termination_policies.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether newly launched instances are protected from termination by Amazon EC2 Auto Scaling when scaling in. For more information about preventing instances from terminating on scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Using instance scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub fn new_instances_protected_from_scale_in(&self) -> ::std::option::Option<bool> {
@@ -193,6 +197,7 @@ pub struct UpdateAutoScalingGroupInputBuilder {
 }
 impl UpdateAutoScalingGroupInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
+    /// This field is required.
     pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
@@ -542,7 +547,7 @@ impl UpdateAutoScalingGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_auto_scaling_group::UpdateAutoScalingGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_auto_scaling_group::UpdateAutoScalingGroupInput {
             auto_scaling_group_name: self.auto_scaling_group_name,

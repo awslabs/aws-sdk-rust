@@ -27,6 +27,7 @@ pub struct GetSigningPlatformInputBuilder {
 }
 impl GetSigningPlatformInputBuilder {
     /// <p>The ID of the target signing platform.</p>
+    /// This field is required.
     pub fn platform_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,8 @@ impl GetSigningPlatformInputBuilder {
     /// Consumes the builder and constructs a [`GetSigningPlatformInput`](crate::operation::get_signing_platform::GetSigningPlatformInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_signing_platform::GetSigningPlatformInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_signing_platform::GetSigningPlatformInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_signing_platform::GetSigningPlatformInput {
             platform_id: self.platform_id,
         })

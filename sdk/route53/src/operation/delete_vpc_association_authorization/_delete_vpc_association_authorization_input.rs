@@ -35,6 +35,7 @@ pub struct DeleteVpcAssociationAuthorizationInputBuilder {
 }
 impl DeleteVpcAssociationAuthorizationInputBuilder {
     /// <p>When removing authorization to associate a VPC that was created by one Amazon Web Services account with a hosted zone that was created with a different Amazon Web Services account, the ID of the hosted zone.</p>
+    /// This field is required.
     pub fn hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hosted_zone_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl DeleteVpcAssociationAuthorizationInputBuilder {
         &self.hosted_zone_id
     }
     /// <p>When removing authorization to associate a VPC that was created by one Amazon Web Services account with a hosted zone that was created with a different Amazon Web Services account, a complex type that includes the ID and region of the VPC.</p>
+    /// This field is required.
     pub fn vpc(mut self, input: crate::types::Vpc) -> Self {
         self.vpc = ::std::option::Option::Some(input);
         self
@@ -67,7 +69,7 @@ impl DeleteVpcAssociationAuthorizationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_vpc_association_authorization::DeleteVpcAssociationAuthorizationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_vpc_association_authorization::DeleteVpcAssociationAuthorizationInput {

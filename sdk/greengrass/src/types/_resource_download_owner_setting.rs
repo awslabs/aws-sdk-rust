@@ -35,6 +35,7 @@ pub struct ResourceDownloadOwnerSettingBuilder {
 }
 impl ResourceDownloadOwnerSettingBuilder {
     /// The group owner of the resource. This is the name of an existing Linux OS group on the system or a GID. The group's permissions are added to the Lambda process.
+    /// This field is required.
     pub fn group_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_owner = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl ResourceDownloadOwnerSettingBuilder {
         &self.group_owner
     }
     /// The permissions that the group owner has to the resource. Valid values are ''rw'' (read/write) or ''ro'' (read-only).
+    /// This field is required.
     pub fn group_permission(mut self, input: crate::types::Permission) -> Self {
         self.group_permission = ::std::option::Option::Some(input);
         self

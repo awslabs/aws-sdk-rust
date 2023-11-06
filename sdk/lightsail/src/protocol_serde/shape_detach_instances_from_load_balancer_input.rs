@@ -2,7 +2,7 @@
 pub fn ser_detach_instances_from_load_balancer_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::detach_instances_from_load_balancer::DetachInstancesFromLoadBalancerInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.load_balancer_name {
         object.key("loadBalancerName").string(var_1.as_str());
     }

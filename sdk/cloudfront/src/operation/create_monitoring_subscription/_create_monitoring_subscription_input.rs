@@ -34,6 +34,7 @@ pub struct CreateMonitoringSubscriptionInputBuilder {
 }
 impl CreateMonitoringSubscriptionInputBuilder {
     /// <p>The ID of the distribution that you are enabling metrics for.</p>
+    /// This field is required.
     pub fn distribution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.distribution_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl CreateMonitoringSubscriptionInputBuilder {
         &self.distribution_id
     }
     /// <p>A monitoring subscription. This structure contains information about whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
+    /// This field is required.
     pub fn monitoring_subscription(mut self, input: crate::types::MonitoringSubscription) -> Self {
         self.monitoring_subscription = ::std::option::Option::Some(input);
         self
@@ -66,7 +68,7 @@ impl CreateMonitoringSubscriptionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionInput {
             distribution_id: self.distribution_id,

@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListManagementOptions {
     /// <p>The name of the contact list.</p>
-    pub contact_list_name: ::std::option::Option<::std::string::String>,
+    pub contact_list_name: ::std::string::String,
     /// <p>The name of the topic.</p>
     pub topic_name: ::std::option::Option<::std::string::String>,
 }
 impl ListManagementOptions {
     /// <p>The name of the contact list.</p>
-    pub fn contact_list_name(&self) -> ::std::option::Option<&str> {
-        self.contact_list_name.as_deref()
+    pub fn contact_list_name(&self) -> &str {
+        use std::ops::Deref;
+        self.contact_list_name.deref()
     }
     /// <p>The name of the topic.</p>
     pub fn topic_name(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct ListManagementOptionsBuilder {
 }
 impl ListManagementOptionsBuilder {
     /// <p>The name of the contact list.</p>
+    /// This field is required.
     pub fn contact_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_list_name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl ListManagementOptionsBuilder {
         &self.topic_name
     }
     /// Consumes the builder and constructs a [`ListManagementOptions`](crate::types::ListManagementOptions).
-    pub fn build(self) -> crate::types::ListManagementOptions {
-        crate::types::ListManagementOptions {
-            contact_list_name: self.contact_list_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`contact_list_name`](crate::types::builders::ListManagementOptionsBuilder::contact_list_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::ListManagementOptions, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ListManagementOptions {
+            contact_list_name: self.contact_list_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "contact_list_name",
+                    "contact_list_name was not specified but it is required when building ListManagementOptions",
+                )
+            })?,
             topic_name: self.topic_name,
-        }
+        })
     }
 }

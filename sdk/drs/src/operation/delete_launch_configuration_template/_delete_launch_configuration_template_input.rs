@@ -27,6 +27,7 @@ pub struct DeleteLaunchConfigurationTemplateInputBuilder {
 }
 impl DeleteLaunchConfigurationTemplateInputBuilder {
     /// <p>The ID of the Launch Configuration Template to be deleted.</p>
+    /// This field is required.
     pub fn launch_configuration_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_configuration_template_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteLaunchConfigurationTemplateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_launch_configuration_template::DeleteLaunchConfigurationTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_launch_configuration_template::DeleteLaunchConfigurationTemplateInput {

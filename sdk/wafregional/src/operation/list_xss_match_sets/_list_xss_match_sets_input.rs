@@ -65,7 +65,7 @@ impl ListXssMatchSetsInputBuilder {
     /// Consumes the builder and constructs a [`ListXssMatchSetsInput`](crate::operation::list_xss_match_sets::ListXssMatchSetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_xss_match_sets::ListXssMatchSetsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_xss_match_sets::ListXssMatchSetsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_xss_match_sets::ListXssMatchSetsInput {
             next_marker: self.next_marker,
             limit: self.limit,

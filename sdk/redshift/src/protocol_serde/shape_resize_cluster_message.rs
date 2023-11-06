@@ -3,7 +3,7 @@
 pub fn ser_resize_cluster_message(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::ResizeClusterMessage,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("ClusterIdentifier");
     if let Some(var_2) = &input.cluster_identifier {
@@ -45,6 +45,7 @@ pub fn ser_resize_cluster_message(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_resize_cluster_message(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::ResizeClusterMessage, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -150,5 +151,5 @@ pub fn de_resize_cluster_message(
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::resize_cluster_message_correct_errors(builder).build())
 }

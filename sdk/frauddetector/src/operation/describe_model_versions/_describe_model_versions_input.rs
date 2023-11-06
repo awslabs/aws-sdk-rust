@@ -127,7 +127,7 @@ impl DescribeModelVersionsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeModelVersionsInput`](crate::operation::describe_model_versions::DescribeModelVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_model_versions::DescribeModelVersionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_model_versions::DescribeModelVersionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_model_versions::DescribeModelVersionsInput {
             model_id: self.model_id,

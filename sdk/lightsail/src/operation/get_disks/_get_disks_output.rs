@@ -13,8 +13,10 @@ pub struct GetDisksOutput {
 }
 impl GetDisksOutput {
     /// <p>An array of objects containing information about all block storage disks.</p>
-    pub fn disks(&self) -> ::std::option::Option<&[crate::types::Disk]> {
-        self.disks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.disks.is_none()`.
+    pub fn disks(&self) -> &[crate::types::Disk] {
+        self.disks.as_deref().unwrap_or_default()
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>

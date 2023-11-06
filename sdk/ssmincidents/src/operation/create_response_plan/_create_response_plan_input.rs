@@ -44,20 +44,26 @@ impl CreateResponsePlanInput {
         self.chat_channel.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>
-    pub fn engagements(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.engagements.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.engagements.is_none()`.
+    pub fn engagements(&self) -> &[::std::string::String] {
+        self.engagements.as_deref().unwrap_or_default()
     }
     /// <p>The actions that the response plan starts at the beginning of an incident.</p>
-    pub fn actions(&self) -> ::std::option::Option<&[crate::types::Action]> {
-        self.actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
+    pub fn actions(&self) -> &[crate::types::Action] {
+        self.actions.as_deref().unwrap_or_default()
     }
     /// <p>A list of tags that you are adding to the response plan.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Information about third-party services integrated into the response plan.</p>
-    pub fn integrations(&self) -> ::std::option::Option<&[crate::types::Integration]> {
-        self.integrations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.integrations.is_none()`.
+    pub fn integrations(&self) -> &[crate::types::Integration] {
+        self.integrations.as_deref().unwrap_or_default()
     }
 }
 impl CreateResponsePlanInput {
@@ -97,6 +103,7 @@ impl CreateResponsePlanInputBuilder {
         &self.client_token
     }
     /// <p>The short format name of the response plan. Can't include spaces.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +132,7 @@ impl CreateResponsePlanInputBuilder {
         &self.display_name
     }
     /// <p>Details used to create an incident when using this response plan.</p>
+    /// This field is required.
     pub fn incident_template(mut self, input: crate::types::IncidentTemplate) -> Self {
         self.incident_template = ::std::option::Option::Some(input);
         self
@@ -235,7 +243,8 @@ impl CreateResponsePlanInputBuilder {
     /// Consumes the builder and constructs a [`CreateResponsePlanInput`](crate::operation::create_response_plan::CreateResponsePlanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_response_plan::CreateResponsePlanInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_response_plan::CreateResponsePlanInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_response_plan::CreateResponsePlanInput {
             client_token: self.client_token,
             name: self.name,

@@ -18,7 +18,7 @@ impl GetGlobalSettingsInputBuilder {
     /// Consumes the builder and constructs a [`GetGlobalSettingsInput`](crate::operation::get_global_settings::GetGlobalSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_global_settings::GetGlobalSettingsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_global_settings::GetGlobalSettingsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_global_settings::GetGlobalSettingsInput {})
     }
 }

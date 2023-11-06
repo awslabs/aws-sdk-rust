@@ -42,6 +42,7 @@ pub struct ConnectorBuilder {
 }
 impl ConnectorBuilder {
     /// The ARN of the connector.
+    /// This field is required.
     pub fn connector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_arn = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl ConnectorBuilder {
         &self.connector_arn
     }
     /// A descriptive or arbitrary ID for the connector. This value must be unique within the connector definition version. Max length is 128 characters with pattern [a-zA-Z0-9:_-]+.
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

@@ -34,6 +34,7 @@ pub struct DescribeEndpointInputBuilder {
 }
 impl DescribeEndpointInputBuilder {
     /// <p>The name of the endpoint you want to get information about. For example, <code>"Name":"us-east-2-custom_bus_A-endpoint"</code>.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl DescribeEndpointInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEndpointInput`](crate::operation::describe_endpoint::DescribeEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_endpoint::DescribeEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_endpoint::DescribeEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_endpoint::DescribeEndpointInput {
             name: self.name,
             home_region: self.home_region,

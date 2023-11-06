@@ -27,6 +27,7 @@ pub struct CreateDataCellsFilterInputBuilder {
 }
 impl CreateDataCellsFilterInputBuilder {
     /// <p>A <code>DataCellsFilter</code> structure containing information about the data cells filter.</p>
+    /// This field is required.
     pub fn table_data(mut self, input: crate::types::DataCellsFilter) -> Self {
         self.table_data = ::std::option::Option::Some(input);
         self
@@ -43,7 +44,7 @@ impl CreateDataCellsFilterInputBuilder {
     /// Consumes the builder and constructs a [`CreateDataCellsFilterInput`](crate::operation::create_data_cells_filter::CreateDataCellsFilterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_data_cells_filter::CreateDataCellsFilterInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_data_cells_filter::CreateDataCellsFilterInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_data_cells_filter::CreateDataCellsFilterInput { table_data: self.table_data })
     }

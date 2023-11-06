@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`SetRulePriorities`](crate::operation::set_rule_priorities::builders::SetRulePrioritiesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`rule_priorities(RulePriorityPair)`](crate::operation::set_rule_priorities::builders::SetRulePrioritiesFluentBuilder::rule_priorities) / [`set_rule_priorities(Option<Vec<RulePriorityPair>>)`](crate::operation::set_rule_priorities::builders::SetRulePrioritiesFluentBuilder::set_rule_priorities): <p>The rule priorities.</p>
+    ///   - [`rule_priorities(RulePriorityPair)`](crate::operation::set_rule_priorities::builders::SetRulePrioritiesFluentBuilder::rule_priorities) / [`set_rule_priorities(Option<Vec::<RulePriorityPair>>)`](crate::operation::set_rule_priorities::builders::SetRulePrioritiesFluentBuilder::set_rule_priorities):<br>required: **true**<br><p>The rule priorities.</p><br>
     /// - On success, responds with [`SetRulePrioritiesOutput`](crate::operation::set_rule_priorities::SetRulePrioritiesOutput) with field(s):
-    ///   - [`rules(Option<Vec<Rule>>)`](crate::operation::set_rule_priorities::SetRulePrioritiesOutput::rules): <p>Information about the rules.</p>
+    ///   - [`rules(Option<Vec::<Rule>>)`](crate::operation::set_rule_priorities::SetRulePrioritiesOutput::rules): <p>Information about the rules.</p>
     /// - On failure, responds with [`SdkError<SetRulePrioritiesError>`](crate::operation::set_rule_priorities::SetRulePrioritiesError)
     pub fn set_rule_priorities(&self) -> crate::operation::set_rule_priorities::builders::SetRulePrioritiesFluentBuilder {
         crate::operation::set_rule_priorities::builders::SetRulePrioritiesFluentBuilder::new(self.handle.clone())

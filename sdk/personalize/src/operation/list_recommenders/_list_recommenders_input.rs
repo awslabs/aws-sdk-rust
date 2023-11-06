@@ -85,7 +85,7 @@ impl ListRecommendersInputBuilder {
     /// Consumes the builder and constructs a [`ListRecommendersInput`](crate::operation::list_recommenders::ListRecommendersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_recommenders::ListRecommendersInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_recommenders::ListRecommendersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_recommenders::ListRecommendersInput {
             dataset_group_arn: self.dataset_group_arn,
             next_token: self.next_token,

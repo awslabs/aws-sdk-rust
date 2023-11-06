@@ -106,7 +106,7 @@ impl ListGraphqlApisInputBuilder {
     /// Consumes the builder and constructs a [`ListGraphqlApisInput`](crate::operation::list_graphql_apis::ListGraphqlApisInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_graphql_apis::ListGraphqlApisInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_graphql_apis::ListGraphqlApisInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_graphql_apis::ListGraphqlApisInput {
             next_token: self.next_token,
             max_results: self.max_results,

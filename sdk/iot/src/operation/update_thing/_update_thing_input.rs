@@ -63,6 +63,7 @@ pub struct UpdateThingInputBuilder {
 impl UpdateThingInputBuilder {
     /// <p>The name of the thing to update.</p>
     /// <p>You can't change a thing's name. To change a thing's name, you must create a new thing, give it the new name, and then delete the old thing.</p>
+    /// This field is required.
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_name = ::std::option::Option::Some(input.into());
         self
@@ -141,7 +142,7 @@ impl UpdateThingInputBuilder {
         &self.remove_thing_type
     }
     /// Consumes the builder and constructs a [`UpdateThingInput`](crate::operation::update_thing::UpdateThingInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_thing::UpdateThingInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_thing::UpdateThingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_thing::UpdateThingInput {
             thing_name: self.thing_name,
             thing_type_name: self.thing_type_name,

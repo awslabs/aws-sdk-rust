@@ -22,12 +22,16 @@ impl DescribeTaskSetsInput {
         self.service.as_deref()
     }
     /// <p>The ID or full Amazon Resource Name (ARN) of task sets to describe.</p>
-    pub fn task_sets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.task_sets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.task_sets.is_none()`.
+    pub fn task_sets(&self) -> &[::std::string::String] {
+        self.task_sets.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether to see the resource tags for the task set. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
-    pub fn include(&self) -> ::std::option::Option<&[crate::types::TaskSetField]> {
-        self.include.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.include.is_none()`.
+    pub fn include(&self) -> &[crate::types::TaskSetField] {
+        self.include.as_deref().unwrap_or_default()
     }
 }
 impl DescribeTaskSetsInput {
@@ -48,6 +52,7 @@ pub struct DescribeTaskSetsInputBuilder {
 }
 impl DescribeTaskSetsInputBuilder {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task sets exist in.</p>
+    /// This field is required.
     pub fn cluster(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +67,7 @@ impl DescribeTaskSetsInputBuilder {
         &self.cluster
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the service that the task sets exist in.</p>
+    /// This field is required.
     pub fn service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service = ::std::option::Option::Some(input.into());
         self
@@ -118,7 +124,7 @@ impl DescribeTaskSetsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTaskSetsInput`](crate::operation::describe_task_sets::DescribeTaskSetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_task_sets::DescribeTaskSetsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_task_sets::DescribeTaskSetsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_task_sets::DescribeTaskSetsInput {
             cluster: self.cluster,
             service: self.service,

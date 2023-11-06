@@ -41,6 +41,7 @@ pub struct GetDetectorModelAnalysisResultsInputBuilder {
 }
 impl GetDetectorModelAnalysisResultsInputBuilder {
     /// <p>The ID of the analysis result that you want to retrieve.</p>
+    /// This field is required.
     pub fn analysis_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analysis_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl GetDetectorModelAnalysisResultsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_detector_model_analysis_results::GetDetectorModelAnalysisResultsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_detector_model_analysis_results::GetDetectorModelAnalysisResultsInput {

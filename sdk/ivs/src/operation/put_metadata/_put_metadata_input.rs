@@ -42,6 +42,7 @@ pub struct PutMetadataInputBuilder {
 }
 impl PutMetadataInputBuilder {
     /// <p>ARN of the channel into which metadata is inserted. This channel must have an active stream.</p>
+    /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl PutMetadataInputBuilder {
         &self.channel_arn
     }
     /// <p>Metadata to insert into the stream. Maximum: 1 KB per request.</p>
+    /// This field is required.
     pub fn metadata(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metadata = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +72,7 @@ impl PutMetadataInputBuilder {
         &self.metadata
     }
     /// Consumes the builder and constructs a [`PutMetadataInput`](crate::operation::put_metadata::PutMetadataInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_metadata::PutMetadataInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_metadata::PutMetadataInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_metadata::PutMetadataInput {
             channel_arn: self.channel_arn,
             metadata: self.metadata,

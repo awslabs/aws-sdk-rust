@@ -42,6 +42,7 @@ pub struct UpdateHitReviewStatusInputBuilder {
 }
 impl UpdateHitReviewStatusInputBuilder {
     /// <p> The ID of the HIT to update. </p>
+    /// This field is required.
     pub fn hit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hit_id = ::std::option::Option::Some(input.into());
         self
@@ -84,7 +85,7 @@ impl UpdateHitReviewStatusInputBuilder {
     /// Consumes the builder and constructs a [`UpdateHitReviewStatusInput`](crate::operation::update_hit_review_status::UpdateHitReviewStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_hit_review_status::UpdateHitReviewStatusInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_hit_review_status::UpdateHitReviewStatusInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_hit_review_status::UpdateHitReviewStatusInput {
             hit_id: self.hit_id,

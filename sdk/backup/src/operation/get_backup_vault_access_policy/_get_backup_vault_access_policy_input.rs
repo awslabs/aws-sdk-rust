@@ -27,6 +27,7 @@ pub struct GetBackupVaultAccessPolicyInputBuilder {
 }
 impl GetBackupVaultAccessPolicyInputBuilder {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    /// This field is required.
     pub fn backup_vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_vault_name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetBackupVaultAccessPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_backup_vault_access_policy::GetBackupVaultAccessPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_backup_vault_access_policy::GetBackupVaultAccessPolicyInput {
             backup_vault_name: self.backup_vault_name,

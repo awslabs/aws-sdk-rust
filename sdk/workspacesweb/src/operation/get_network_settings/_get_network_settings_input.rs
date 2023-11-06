@@ -27,6 +27,7 @@ pub struct GetNetworkSettingsInputBuilder {
 }
 impl GetNetworkSettingsInputBuilder {
     /// <p>The ARN of the network settings.</p>
+    /// This field is required.
     pub fn network_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_settings_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,8 @@ impl GetNetworkSettingsInputBuilder {
     /// Consumes the builder and constructs a [`GetNetworkSettingsInput`](crate::operation::get_network_settings::GetNetworkSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_network_settings::GetNetworkSettingsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_network_settings::GetNetworkSettingsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_network_settings::GetNetworkSettingsInput {
             network_settings_arn: self.network_settings_arn,
         })

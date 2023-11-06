@@ -57,8 +57,10 @@ impl AutoMlJobSummary {
         self.failure_reason.as_deref()
     }
     /// <p>The list of reasons for partial failures within an AutoML job.</p>
-    pub fn partial_failure_reasons(&self) -> ::std::option::Option<&[crate::types::AutoMlPartialFailureReason]> {
-        self.partial_failure_reasons.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.partial_failure_reasons.is_none()`.
+    pub fn partial_failure_reasons(&self) -> &[crate::types::AutoMlPartialFailureReason] {
+        self.partial_failure_reasons.as_deref().unwrap_or_default()
     }
 }
 impl AutoMlJobSummary {
@@ -84,6 +86,7 @@ pub struct AutoMlJobSummaryBuilder {
 }
 impl AutoMlJobSummaryBuilder {
     /// <p>The name of the AutoML job you are requesting.</p>
+    /// This field is required.
     pub fn auto_ml_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_ml_job_name = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +101,7 @@ impl AutoMlJobSummaryBuilder {
         &self.auto_ml_job_name
     }
     /// <p>The ARN of the AutoML job.</p>
+    /// This field is required.
     pub fn auto_ml_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_ml_job_arn = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +116,7 @@ impl AutoMlJobSummaryBuilder {
         &self.auto_ml_job_arn
     }
     /// <p>The status of the AutoML job.</p>
+    /// This field is required.
     pub fn auto_ml_job_status(mut self, input: crate::types::AutoMlJobStatus) -> Self {
         self.auto_ml_job_status = ::std::option::Option::Some(input);
         self
@@ -126,6 +131,7 @@ impl AutoMlJobSummaryBuilder {
         &self.auto_ml_job_status
     }
     /// <p>The secondary status of the AutoML job.</p>
+    /// This field is required.
     pub fn auto_ml_job_secondary_status(mut self, input: crate::types::AutoMlJobSecondaryStatus) -> Self {
         self.auto_ml_job_secondary_status = ::std::option::Option::Some(input);
         self
@@ -140,6 +146,7 @@ impl AutoMlJobSummaryBuilder {
         &self.auto_ml_job_secondary_status
     }
     /// <p>When the AutoML job was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -168,6 +175,7 @@ impl AutoMlJobSummaryBuilder {
         &self.end_time
     }
     /// <p>When the AutoML job was last modified.</p>
+    /// This field is required.
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
         self

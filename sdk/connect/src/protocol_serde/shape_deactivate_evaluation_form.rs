@@ -118,18 +118,20 @@ pub fn de_deactivate_evaluation_form_http_response(
         output = crate::protocol_serde::shape_deactivate_evaluation_form::de_deactivate_evaluation_form(_response_body, output)
             .map_err(crate::operation::deactivate_evaluation_form::DeactivateEvaluationFormError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::deactivate_evaluation_form_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::deactivate_evaluation_form::DeactivateEvaluationFormError::unhandled)?
     })
 }
 
 pub fn ser_deactivate_evaluation_form_input(
     input: &crate::operation::deactivate_evaluation_form::DeactivateEvaluationFormInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_deactivate_evaluation_form_input::ser_deactivate_evaluation_form_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_deactivate_evaluation_form(

@@ -35,6 +35,7 @@ pub struct SetIdentityFeedbackForwardingEnabledInputBuilder {
 }
 impl SetIdentityFeedbackForwardingEnabledInputBuilder {
     /// <p>The identity for which to set bounce and complaint notification forwarding. Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
+    /// This field is required.
     pub fn identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl SetIdentityFeedbackForwardingEnabledInputBuilder {
         &self.identity
     }
     /// <p>Sets whether Amazon SES forwards bounce and complaint notifications as email. <code>true</code> specifies that Amazon SES forwards bounce and complaint notifications as email, in addition to any Amazon SNS topic publishing otherwise specified. <code>false</code> specifies that Amazon SES publishes bounce and complaint notifications only through Amazon SNS. This value can only be set to <code>false</code> when Amazon SNS topics are set for both <code>Bounce</code> and <code>Complaint</code> notification types.</p>
+    /// This field is required.
     pub fn forwarding_enabled(mut self, input: bool) -> Self {
         self.forwarding_enabled = ::std::option::Option::Some(input);
         self
@@ -67,7 +69,7 @@ impl SetIdentityFeedbackForwardingEnabledInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_identity_feedback_forwarding_enabled::SetIdentityFeedbackForwardingEnabledInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::set_identity_feedback_forwarding_enabled::SetIdentityFeedbackForwardingEnabledInput {

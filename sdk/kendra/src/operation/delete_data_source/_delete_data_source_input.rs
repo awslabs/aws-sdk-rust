@@ -34,6 +34,7 @@ pub struct DeleteDataSourceInputBuilder {
 }
 impl DeleteDataSourceInputBuilder {
     /// <p>The identifier of the data source connector you want to delete.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteDataSourceInputBuilder {
         &self.id
     }
     /// <p>The identifier of the index used with the data source connector.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DeleteDataSourceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDataSourceInput`](crate::operation::delete_data_source::DeleteDataSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_data_source::DeleteDataSourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_data_source::DeleteDataSourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_data_source::DeleteDataSourceInput {
             id: self.id,
             index_id: self.index_id,

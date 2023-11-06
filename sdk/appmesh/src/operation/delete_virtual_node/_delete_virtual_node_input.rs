@@ -42,6 +42,7 @@ pub struct DeleteVirtualNodeInputBuilder {
 }
 impl DeleteVirtualNodeInputBuilder {
     /// <p>The name of the virtual node to delete.</p>
+    /// This field is required.
     pub fn virtual_node_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_node_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl DeleteVirtualNodeInputBuilder {
         &self.virtual_node_name
     }
     /// <p>The name of the service mesh to delete the virtual node in.</p>
+    /// This field is required.
     pub fn mesh_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mesh_name = ::std::option::Option::Some(input.into());
         self
@@ -86,7 +88,7 @@ impl DeleteVirtualNodeInputBuilder {
     /// Consumes the builder and constructs a [`DeleteVirtualNodeInput`](crate::operation::delete_virtual_node::DeleteVirtualNodeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_virtual_node::DeleteVirtualNodeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_virtual_node::DeleteVirtualNodeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_virtual_node::DeleteVirtualNodeInput {
             virtual_node_name: self.virtual_node_name,
             mesh_name: self.mesh_name,

@@ -2,7 +2,7 @@
 pub fn ser_aws_ec2_vpc_endpoint_service_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEc2VpcEndpointServiceDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.acceptance_required {
         object.key("AcceptanceRequired").boolean(*var_1);
     }

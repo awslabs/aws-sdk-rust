@@ -34,6 +34,7 @@ pub struct PostToConnectionInputBuilder {
 }
 impl PostToConnectionInputBuilder {
     /// <p>The data to be sent to the client specified by its connection id.</p>
+    /// This field is required.
     pub fn data(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.data = ::std::option::Option::Some(input);
         self
@@ -48,6 +49,7 @@ impl PostToConnectionInputBuilder {
         &self.data
     }
     /// <p>The identifier of the connection that a specific client is using.</p>
+    /// This field is required.
     pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl PostToConnectionInputBuilder {
     /// Consumes the builder and constructs a [`PostToConnectionInput`](crate::operation::post_to_connection::PostToConnectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::post_to_connection::PostToConnectionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::post_to_connection::PostToConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::post_to_connection::PostToConnectionInput {
             data: self.data,
             connection_id: self.connection_id,

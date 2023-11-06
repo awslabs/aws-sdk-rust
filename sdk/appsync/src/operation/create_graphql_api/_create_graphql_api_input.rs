@@ -57,8 +57,10 @@ impl CreateGraphqlApiInput {
         self.tags.as_ref()
     }
     /// <p>A list of additional authentication providers for the <code>GraphqlApi</code> API.</p>
-    pub fn additional_authentication_providers(&self) -> ::std::option::Option<&[crate::types::AdditionalAuthenticationProvider]> {
-        self.additional_authentication_providers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_authentication_providers.is_none()`.
+    pub fn additional_authentication_providers(&self) -> &[crate::types::AdditionalAuthenticationProvider] {
+        self.additional_authentication_providers.as_deref().unwrap_or_default()
     }
     /// <p>A flag indicating whether to use X-Ray tracing for the <code>GraphqlApi</code>.</p>
     pub fn xray_enabled(&self) -> ::std::option::Option<bool> {
@@ -113,6 +115,7 @@ pub struct CreateGraphqlApiInputBuilder {
 }
 impl CreateGraphqlApiInputBuilder {
     /// <p>A user-supplied name for the <code>GraphqlApi</code>.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -141,6 +144,7 @@ impl CreateGraphqlApiInputBuilder {
         &self.log_config
     }
     /// <p>The authentication type: API key, Identity and Access Management (IAM), OpenID Connect (OIDC), Amazon Cognito user pools, or Lambda.</p>
+    /// This field is required.
     pub fn authentication_type(mut self, input: crate::types::AuthenticationType) -> Self {
         self.authentication_type = ::std::option::Option::Some(input);
         self
@@ -315,7 +319,7 @@ impl CreateGraphqlApiInputBuilder {
     /// Consumes the builder and constructs a [`CreateGraphqlApiInput`](crate::operation::create_graphql_api::CreateGraphqlApiInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_graphql_api::CreateGraphqlApiInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_graphql_api::CreateGraphqlApiInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_graphql_api::CreateGraphqlApiInput {
             name: self.name,
             log_config: self.log_config,

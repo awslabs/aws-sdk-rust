@@ -10,7 +10,7 @@ impl ListResourcesForWebAclInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_resources_for_web_acl::ListResourcesForWebAclOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::list_resources_for_web_acl::ListResourcesForWebACLError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -22,7 +22,10 @@ impl ListResourcesForWebAclInputBuilder {
 }
 /// Fluent builder constructing a request to `ListResourcesForWebACL`.
 ///
-/// <p>Retrieves an array of the Amazon Resource Names (ARNs) for the regional resources that are associated with the specified web ACL. If you want the list of Amazon CloudFront resources, use the CloudFront call <code>ListDistributionsByWebACLId</code>. </p>
+/// <p>Retrieves an array of the Amazon Resource Names (ARNs) for the regional resources that are associated with the specified web ACL. </p>
+/// <p>For Amazon CloudFront, don't use this call. Instead, use the CloudFront call <code>ListDistributionsByWebACLId</code>. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByWebACLId.html">ListDistributionsByWebACLId</a> in the <i>Amazon CloudFront API Reference</i>. </p>
+/// <p> <b>Required permissions for customer-managed IAM policies</b> </p>
+/// <p>This call requires permissions that are specific to the protected resource type. For details, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/security_iam_service-with-iam.html#security_iam_action-ListResourcesForWebACL">Permissions for ListResourcesForWebACL</a> in the <i>WAF Developer Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListResourcesForWebACLFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -72,12 +75,15 @@ impl ListResourcesForWebACLFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resources_for_web_acl::ListResourcesForWebAclOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::list_resources_for_web_acl::ListResourcesForWebACLError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::list_resources_for_web_acl::ListResourcesForWebACL::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -86,20 +92,15 @@ impl ListResourcesForWebACLFluentBuilder {
         crate::operation::list_resources_for_web_acl::ListResourcesForWebACL::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::list_resources_for_web_acl::ListResourcesForWebAclOutput,
-            crate::operation::list_resources_for_web_acl::ListResourcesForWebACLError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::list_resources_for_web_acl::ListResourcesForWebACLError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::list_resources_for_web_acl::ListResourcesForWebAclOutput,
+        crate::operation::list_resources_for_web_acl::ListResourcesForWebACLError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

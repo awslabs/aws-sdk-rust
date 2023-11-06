@@ -23,16 +23,20 @@ impl ExperimentTemplateTarget {
         self.resource_type.as_deref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the targets.</p>
-    pub fn resource_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_arns.is_none()`.
+    pub fn resource_arns(&self) -> &[::std::string::String] {
+        self.resource_arns.as_deref().unwrap_or_default()
     }
     /// <p>The tags for the target resources.</p>
     pub fn resource_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.resource_tags.as_ref()
     }
     /// <p>The filters to apply to identify target resources using specific attributes.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::ExperimentTemplateTargetFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::ExperimentTemplateTargetFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>Scopes the identified resources to a specific count or percentage.</p>
     pub fn selection_mode(&self) -> ::std::option::Option<&str> {

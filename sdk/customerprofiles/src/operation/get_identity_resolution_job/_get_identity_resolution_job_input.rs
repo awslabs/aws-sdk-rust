@@ -34,6 +34,7 @@ pub struct GetIdentityResolutionJobInputBuilder {
 }
 impl GetIdentityResolutionJobInputBuilder {
     /// <p>The unique name of the domain.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetIdentityResolutionJobInputBuilder {
         &self.domain_name
     }
     /// <p>The unique identifier of the Identity Resolution Job.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl GetIdentityResolutionJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_identity_resolution_job::GetIdentityResolutionJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_identity_resolution_job::GetIdentityResolutionJobInput {
             domain_name: self.domain_name,

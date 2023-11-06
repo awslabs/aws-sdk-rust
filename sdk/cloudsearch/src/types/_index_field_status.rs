@@ -35,6 +35,7 @@ pub struct IndexFieldStatusBuilder {
 }
 impl IndexFieldStatusBuilder {
     /// <p>Configuration information for a field in the index, including its name, type, and options. The supported options depend on the <code><code>IndexFieldType</code></code>.</p>
+    /// This field is required.
     pub fn options(mut self, input: crate::types::IndexField) -> Self {
         self.options = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl IndexFieldStatusBuilder {
         &self.options
     }
     /// <p>The status of domain configuration option.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self

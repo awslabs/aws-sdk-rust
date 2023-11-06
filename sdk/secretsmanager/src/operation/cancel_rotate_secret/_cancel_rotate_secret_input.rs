@@ -30,6 +30,7 @@ pub struct CancelRotateSecretInputBuilder {
 impl CancelRotateSecretInputBuilder {
     /// <p>The ARN or name of the secret.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
+    /// This field is required.
     pub fn secret_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_id = ::std::option::Option::Some(input.into());
         self
@@ -48,7 +49,8 @@ impl CancelRotateSecretInputBuilder {
     /// Consumes the builder and constructs a [`CancelRotateSecretInput`](crate::operation::cancel_rotate_secret::CancelRotateSecretInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_rotate_secret::CancelRotateSecretInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::cancel_rotate_secret::CancelRotateSecretInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::cancel_rotate_secret::CancelRotateSecretInput { secret_id: self.secret_id })
     }
 }

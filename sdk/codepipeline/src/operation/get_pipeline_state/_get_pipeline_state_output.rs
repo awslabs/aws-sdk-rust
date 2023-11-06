@@ -30,8 +30,10 @@ impl GetPipelineStateOutput {
         self.pipeline_version
     }
     /// <p>A list of the pipeline stage output information, including stage name, state, most recent run details, whether the stage is disabled, and other data.</p>
-    pub fn stage_states(&self) -> ::std::option::Option<&[crate::types::StageState]> {
-        self.stage_states.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stage_states.is_none()`.
+    pub fn stage_states(&self) -> &[crate::types::StageState] {
+        self.stage_states.as_deref().unwrap_or_default()
     }
     /// <p>The date and time the pipeline was created, in timestamp format.</p>
     pub fn created(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

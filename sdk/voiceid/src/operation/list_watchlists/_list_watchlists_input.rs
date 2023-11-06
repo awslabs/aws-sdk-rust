@@ -41,6 +41,7 @@ pub struct ListWatchlistsInputBuilder {
 }
 impl ListWatchlistsInputBuilder {
     /// <p>The identifier of the domain.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl ListWatchlistsInputBuilder {
     /// Consumes the builder and constructs a [`ListWatchlistsInput`](crate::operation::list_watchlists::ListWatchlistsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_watchlists::ListWatchlistsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_watchlists::ListWatchlistsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_watchlists::ListWatchlistsInput {
             domain_id: self.domain_id,
             max_results: self.max_results,

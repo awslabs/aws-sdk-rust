@@ -2,7 +2,7 @@
 pub fn ser_update_experiment_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_experiment::UpdateExperimentInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.description {
         object.key("description").string(var_1.as_str());
     }
@@ -27,29 +27,29 @@ pub fn ser_update_experiment_input(
     if let Some(var_8) = &input.randomization_salt {
         object.key("randomizationSalt").string(var_8.as_str());
     }
-    if input.remove_segment {
-        object.key("removeSegment").boolean(input.remove_segment);
+    if let Some(var_9) = &input.remove_segment {
+        object.key("removeSegment").boolean(*var_9);
     }
-    if let Some(var_9) = &input.sampling_rate {
+    if let Some(var_10) = &input.sampling_rate {
         object.key("samplingRate").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_9).into()),
+            ::aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if let Some(var_10) = &input.segment {
-        object.key("segment").string(var_10.as_str());
+    if let Some(var_11) = &input.segment {
+        object.key("segment").string(var_11.as_str());
     }
-    if let Some(var_11) = &input.treatments {
-        let mut array_12 = object.key("treatments").start_array();
-        for item_13 in var_11 {
+    if let Some(var_12) = &input.treatments {
+        let mut array_13 = object.key("treatments").start_array();
+        for item_14 in var_12 {
             {
                 #[allow(unused_mut)]
-                let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_treatment_config::ser_treatment_config(&mut object_14, item_13)?;
-                object_14.finish();
+                let mut object_15 = array_13.value().start_object();
+                crate::protocol_serde::shape_treatment_config::ser_treatment_config(&mut object_15, item_14)?;
+                object_15.finish();
             }
         }
-        array_12.finish();
+        array_13.finish();
     }
     Ok(())
 }

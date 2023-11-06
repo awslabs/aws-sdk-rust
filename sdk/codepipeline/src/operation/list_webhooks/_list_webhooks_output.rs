@@ -11,8 +11,10 @@ pub struct ListWebhooksOutput {
 }
 impl ListWebhooksOutput {
     /// <p>The JSON detail returned for each webhook in the list output for the ListWebhooks call.</p>
-    pub fn webhooks(&self) -> ::std::option::Option<&[crate::types::ListWebhookItem]> {
-        self.webhooks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.webhooks.is_none()`.
+    pub fn webhooks(&self) -> &[crate::types::ListWebhookItem] {
+        self.webhooks.as_deref().unwrap_or_default()
     }
     /// <p>If the amount of returned information is significantly large, an identifier is also returned and can be used in a subsequent ListWebhooks call to return the next set of webhooks in the list. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

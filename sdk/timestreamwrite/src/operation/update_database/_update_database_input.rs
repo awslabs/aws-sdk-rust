@@ -48,6 +48,7 @@ pub struct UpdateDatabaseInputBuilder {
 }
 impl UpdateDatabaseInputBuilder {
     /// <p> The name of the database. </p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl UpdateDatabaseInputBuilder {
     /// <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li>
     /// <li> <p>Alias ARN: <code>arn:aws:kms:us-east-1:111122223333:alias/ExampleAlias</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
         self
@@ -99,7 +101,7 @@ impl UpdateDatabaseInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDatabaseInput`](crate::operation::update_database::UpdateDatabaseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_database::UpdateDatabaseInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_database::UpdateDatabaseInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_database::UpdateDatabaseInput {
             database_name: self.database_name,
             kms_key_id: self.kms_key_id,

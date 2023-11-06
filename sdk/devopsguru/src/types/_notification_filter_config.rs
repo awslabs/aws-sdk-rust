@@ -11,12 +11,16 @@ pub struct NotificationFilterConfig {
 }
 impl NotificationFilterConfig {
     /// <p> The severity levels that you want to receive notifications for. For example, you can choose to receive notifications only for insights with <code>HIGH</code> and <code>MEDIUM</code> severity levels. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding insight severities</a>. </p>
-    pub fn severities(&self) -> ::std::option::Option<&[crate::types::InsightSeverity]> {
-        self.severities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.severities.is_none()`.
+    pub fn severities(&self) -> &[crate::types::InsightSeverity] {
+        self.severities.as_deref().unwrap_or_default()
     }
     /// <p> The events that you want to receive notifications for. For example, you can choose to receive notifications only when the severity level is upgraded or a new insight is created. </p>
-    pub fn message_types(&self) -> ::std::option::Option<&[crate::types::NotificationMessageType]> {
-        self.message_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.message_types.is_none()`.
+    pub fn message_types(&self) -> &[crate::types::NotificationMessageType] {
+        self.message_types.as_deref().unwrap_or_default()
     }
 }
 impl NotificationFilterConfig {

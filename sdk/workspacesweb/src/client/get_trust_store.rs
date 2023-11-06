@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetTrustStore`](crate::operation::get_trust_store::builders::GetTrustStoreFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`trust_store_arn(impl Into<String>)`](crate::operation::get_trust_store::builders::GetTrustStoreFluentBuilder::trust_store_arn) / [`set_trust_store_arn(Option<String>)`](crate::operation::get_trust_store::builders::GetTrustStoreFluentBuilder::set_trust_store_arn): <p>The ARN of the trust store.</p>
+    ///   - [`trust_store_arn(impl Into<String>)`](crate::operation::get_trust_store::builders::GetTrustStoreFluentBuilder::trust_store_arn) / [`set_trust_store_arn(Option<String>)`](crate::operation::get_trust_store::builders::GetTrustStoreFluentBuilder::set_trust_store_arn):<br>required: **true**<br><p>The ARN of the trust store.</p><br>
     /// - On success, responds with [`GetTrustStoreOutput`](crate::operation::get_trust_store::GetTrustStoreOutput) with field(s):
     ///   - [`trust_store(Option<TrustStore>)`](crate::operation::get_trust_store::GetTrustStoreOutput::trust_store): <p>The trust store.</p>
     /// - On failure, responds with [`SdkError<GetTrustStoreError>`](crate::operation::get_trust_store::GetTrustStoreError)

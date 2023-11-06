@@ -9,8 +9,10 @@ pub struct S3ClassificationScopeExclusion {
 }
 impl S3ClassificationScopeExclusion {
     /// <p>An array of strings, one for each S3 bucket that is excluded. Each string is the full name of an excluded bucket.</p>
-    pub fn bucket_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.bucket_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bucket_names.is_none()`.
+    pub fn bucket_names(&self) -> &[::std::string::String] {
+        self.bucket_names.as_deref().unwrap_or_default()
     }
 }
 impl S3ClassificationScopeExclusion {

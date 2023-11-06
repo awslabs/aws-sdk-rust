@@ -12,7 +12,7 @@ use aws_smithy_runtime_api::client::auth::http::{
     HTTP_DIGEST_AUTH_SCHEME_ID,
 };
 use aws_smithy_runtime_api::client::auth::{
-    AuthScheme, AuthSchemeEndpointConfig, AuthSchemeId, Signer,
+    AuthScheme, AuthSchemeEndpointConfig, AuthSchemeId, Sign,
 };
 use aws_smithy_runtime_api::client::identity::http::{Login, Token};
 use aws_smithy_runtime_api::client::identity::{Identity, SharedIdentityResolver};
@@ -20,7 +20,6 @@ use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
 use aws_smithy_runtime_api::client::runtime_components::{GetIdentityResolver, RuntimeComponents};
 use aws_smithy_types::base64::encode;
 use aws_smithy_types::config_bag::ConfigBag;
-use http::header::HeaderName;
 use http::HeaderValue;
 
 /// Destination for the API key
@@ -67,7 +66,7 @@ impl AuthScheme for ApiKeyAuthScheme {
         identity_resolvers.identity_resolver(self.scheme_id())
     }
 
-    fn signer(&self) -> &dyn Signer {
+    fn signer(&self) -> &dyn Sign {
         &self.signer
     }
 }
@@ -79,7 +78,7 @@ struct ApiKeySigner {
     name: String,
 }
 
-impl Signer for ApiKeySigner {
+impl Sign for ApiKeySigner {
     fn sign_http_request(
         &self,
         request: &mut HttpRequest,
@@ -93,17 +92,22 @@ impl Signer for ApiKeySigner {
             .ok_or("HTTP ApiKey auth requires a `Token` identity")?;
         match self.location {
             ApiKeyLocation::Header => {
-                request.headers_mut().append(
-                    HeaderName::try_from(&self.name).expect("valid API key header name"),
-                    HeaderValue::try_from(format!("{} {}", self.scheme, api_key.token())).map_err(
-                        |_| "API key contains characters that can't be included in a HTTP header",
-                    )?,
-                );
+                request
+                    .headers_mut()
+                    .try_append(
+                        self.name.to_ascii_lowercase(),
+                        format!("{} {}", self.scheme, api_key.token()),
+                    )
+                    .map_err(|_| {
+                        "API key contains characters that can't be included in a HTTP header"
+                    })?;
             }
             ApiKeyLocation::Query => {
-                let mut query = QueryWriter::new(request.uri());
+                let mut query = QueryWriter::new_from_string(request.uri())?;
                 query.insert(&self.name, api_key.token());
-                *request.uri_mut() = query.build_uri();
+                request
+                    .set_uri(query.build_uri())
+                    .expect("query writer returns a valid URI")
             }
         }
 
@@ -138,7 +142,7 @@ impl AuthScheme for BasicAuthScheme {
         identity_resolvers.identity_resolver(self.scheme_id())
     }
 
-    fn signer(&self) -> &dyn Signer {
+    fn signer(&self) -> &dyn Sign {
         &self.signer
     }
 }
@@ -146,7 +150,7 @@ impl AuthScheme for BasicAuthScheme {
 #[derive(Debug, Default)]
 struct BasicAuthSigner;
 
-impl Signer for BasicAuthSigner {
+impl Sign for BasicAuthSigner {
     fn sign_http_request(
         &self,
         request: &mut HttpRequest,
@@ -197,7 +201,7 @@ impl AuthScheme for BearerAuthScheme {
         identity_resolvers.identity_resolver(self.scheme_id())
     }
 
-    fn signer(&self) -> &dyn Signer {
+    fn signer(&self) -> &dyn Sign {
         &self.signer
     }
 }
@@ -205,7 +209,7 @@ impl AuthScheme for BearerAuthScheme {
 #[derive(Debug, Default)]
 struct BearerAuthSigner;
 
-impl Signer for BearerAuthSigner {
+impl Sign for BearerAuthSigner {
     fn sign_http_request(
         &self,
         request: &mut HttpRequest,
@@ -254,7 +258,7 @@ impl AuthScheme for DigestAuthScheme {
         identity_resolvers.identity_resolver(self.scheme_id())
     }
 
-    fn signer(&self) -> &dyn Signer {
+    fn signer(&self) -> &dyn Sign {
         &self.signer
     }
 }
@@ -262,7 +266,7 @@ impl AuthScheme for DigestAuthScheme {
 #[derive(Debug, Default)]
 struct DigestAuthSigner;
 
-impl Signer for DigestAuthSigner {
+impl Sign for DigestAuthSigner {
     fn sign_http_request(
         &self,
         _request: &mut HttpRequest,
@@ -280,9 +284,9 @@ impl Signer for DigestAuthSigner {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use aws_smithy_http::body::SdkBody;
     use aws_smithy_runtime_api::client::identity::http::Login;
     use aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder;
+    use aws_smithy_types::body::SdkBody;
 
     #[test]
     fn test_api_key_signing_headers() {
@@ -294,9 +298,11 @@ mod tests {
         let runtime_components = RuntimeComponentsBuilder::for_tests().build().unwrap();
         let config_bag = ConfigBag::base();
         let identity = Identity::new(Token::new("some-token", None), None);
-        let mut request = http::Request::builder()
+        let mut request: HttpRequest = http::Request::builder()
             .uri("http://example.com/Foobaz")
             .body(SdkBody::empty())
+            .unwrap()
+            .try_into()
             .unwrap();
         signer
             .sign_http_request(
@@ -324,9 +330,11 @@ mod tests {
         let runtime_components = RuntimeComponentsBuilder::for_tests().build().unwrap();
         let config_bag = ConfigBag::base();
         let identity = Identity::new(Token::new("some-token", None), None);
-        let mut request = http::Request::builder()
+        let mut request: HttpRequest = http::Request::builder()
             .uri("http://example.com/Foobaz")
             .body(SdkBody::empty())
+            .unwrap()
+            .try_into()
             .unwrap();
         signer
             .sign_http_request(
@@ -350,7 +358,11 @@ mod tests {
         let runtime_components = RuntimeComponentsBuilder::for_tests().build().unwrap();
         let config_bag = ConfigBag::base();
         let identity = Identity::new(Login::new("Aladdin", "open sesame", None), None);
-        let mut request = http::Request::builder().body(SdkBody::empty()).unwrap();
+        let mut request = http::Request::builder()
+            .body(SdkBody::empty())
+            .unwrap()
+            .try_into()
+            .unwrap();
 
         signer
             .sign_http_request(
@@ -374,7 +386,39 @@ mod tests {
         let config_bag = ConfigBag::base();
         let runtime_components = RuntimeComponentsBuilder::for_tests().build().unwrap();
         let identity = Identity::new(Token::new("some-token", None), None);
-        let mut request = http::Request::builder().body(SdkBody::empty()).unwrap();
+        let mut request = http::Request::builder()
+            .body(SdkBody::empty())
+            .unwrap()
+            .try_into()
+            .unwrap();
+        signer
+            .sign_http_request(
+                &mut request,
+                &identity,
+                AuthSchemeEndpointConfig::empty(),
+                &runtime_components,
+                &config_bag,
+            )
+            .expect("success");
+        assert_eq!(
+            "Bearer some-token",
+            request.headers().get("Authorization").unwrap()
+        );
+    }
+
+    #[test]
+    fn test_bearer_auth_overwrite_existing_header() {
+        let signer = BearerAuthSigner;
+
+        let config_bag = ConfigBag::base();
+        let runtime_components = RuntimeComponentsBuilder::for_tests().build().unwrap();
+        let identity = Identity::new(Token::new("some-token", None), None);
+        let mut request = http::Request::builder()
+            .header("Authorization", "wrong")
+            .body(SdkBody::empty())
+            .unwrap()
+            .try_into()
+            .unwrap();
         signer
             .sign_http_request(
                 &mut request,

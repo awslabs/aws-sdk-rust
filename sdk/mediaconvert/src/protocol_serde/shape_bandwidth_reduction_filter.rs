@@ -2,7 +2,7 @@
 pub fn ser_bandwidth_reduction_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BandwidthReductionFilter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.sharpening {
         object.key("sharpening").string(var_1.as_str());
     }

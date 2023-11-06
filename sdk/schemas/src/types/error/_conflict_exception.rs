@@ -61,6 +61,7 @@ pub struct ConflictExceptionBuilder {
 }
 impl ConflictExceptionBuilder {
     /// <p>The error code.</p>
+    /// This field is required.
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
         self
@@ -75,6 +76,7 @@ impl ConflictExceptionBuilder {
         &self.code
     }
     /// <p>The message string of the error output.</p>
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self

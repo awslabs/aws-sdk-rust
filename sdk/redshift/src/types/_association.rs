@@ -21,8 +21,10 @@ impl Association {
         self.custom_domain_certificate_expiry_date.as_ref()
     }
     /// <p>A list of all associated clusters and domain names tied to a specific certificate.</p>
-    pub fn certificate_associations(&self) -> ::std::option::Option<&[crate::types::CertificateAssociation]> {
-        self.certificate_associations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificate_associations.is_none()`.
+    pub fn certificate_associations(&self) -> &[crate::types::CertificateAssociation] {
+        self.certificate_associations.as_deref().unwrap_or_default()
     }
 }
 impl Association {

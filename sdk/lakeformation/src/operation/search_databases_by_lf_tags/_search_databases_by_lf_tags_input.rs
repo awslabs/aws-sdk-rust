@@ -26,8 +26,10 @@ impl SearchDatabasesByLfTagsInput {
         self.catalog_id.as_deref()
     }
     /// <p>A list of conditions (<code>LFTag</code> structures) to search for in database resources.</p>
-    pub fn expression(&self) -> ::std::option::Option<&[crate::types::LfTag]> {
-        self.expression.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.expression.is_none()`.
+    pub fn expression(&self) -> &[crate::types::LfTag] {
+        self.expression.as_deref().unwrap_or_default()
     }
 }
 impl SearchDatabasesByLfTagsInput {
@@ -114,7 +116,7 @@ impl SearchDatabasesByLfTagsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_databases_by_lf_tags::SearchDatabasesByLfTagsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::search_databases_by_lf_tags::SearchDatabasesByLfTagsInput {
             next_token: self.next_token,

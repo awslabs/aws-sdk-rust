@@ -34,6 +34,7 @@ pub struct DescribeDataSetInputBuilder {
 }
 impl DescribeDataSetInputBuilder {
     /// <p>The Amazon Web Services account ID.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeDataSetInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    /// This field is required.
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DescribeDataSetInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDataSetInput`](crate::operation::describe_data_set::DescribeDataSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_data_set::DescribeDataSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_data_set::DescribeDataSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_data_set::DescribeDataSetInput {
             aws_account_id: self.aws_account_id,
             data_set_id: self.data_set_id,

@@ -49,8 +49,10 @@ impl CreateAnalysisInput {
     }
     /// <p>A structure that describes the principals and the resource-level permissions on an analysis. You can use the <code>Permissions</code> structure to grant permissions by providing a list of Identity and Access Management (IAM) action information for each principal listed by Amazon Resource Name (ARN). </p>
     /// <p>To specify no permissions, omit <code>Permissions</code>.</p>
-    pub fn permissions(&self) -> ::std::option::Option<&[crate::types::ResourcePermission]> {
-        self.permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permissions.is_none()`.
+    pub fn permissions(&self) -> &[crate::types::ResourcePermission] {
+        self.permissions.as_deref().unwrap_or_default()
     }
     /// <p>A source entity to use for the analysis that you're creating. This metadata structure contains details that describe a source template and one or more datasets.</p>
     /// <p>Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be valid.</p>
@@ -62,8 +64,10 @@ impl CreateAnalysisInput {
         self.theme_arn.as_deref()
     }
     /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the analysis.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The definition of an analysis.</p>
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
@@ -76,8 +80,10 @@ impl CreateAnalysisInput {
         self.validation_strategy.as_ref()
     }
     /// <p>When you create the analysis, Amazon QuickSight adds the analysis to these folders.</p>
-    pub fn folder_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.folder_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.folder_arns.is_none()`.
+    pub fn folder_arns(&self) -> &[::std::string::String] {
+        self.folder_arns.as_deref().unwrap_or_default()
     }
 }
 impl CreateAnalysisInput {
@@ -105,6 +111,7 @@ pub struct CreateAnalysisInputBuilder {
 }
 impl CreateAnalysisInputBuilder {
     /// <p>The ID of the Amazon Web Services account where you are creating an analysis.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +126,7 @@ impl CreateAnalysisInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID for the analysis that you're creating. This ID displays in the URL of the analysis.</p>
+    /// This field is required.
     pub fn analysis_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analysis_id = ::std::option::Option::Some(input.into());
         self
@@ -133,6 +141,7 @@ impl CreateAnalysisInputBuilder {
         &self.analysis_id
     }
     /// <p>A descriptive name for the analysis that you're creating. This name displays for the analysis in the Amazon QuickSight console. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -291,7 +300,7 @@ impl CreateAnalysisInputBuilder {
     /// Consumes the builder and constructs a [`CreateAnalysisInput`](crate::operation::create_analysis::CreateAnalysisInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_analysis::CreateAnalysisInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_analysis::CreateAnalysisInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_analysis::CreateAnalysisInput {
             aws_account_id: self.aws_account_id,
             analysis_id: self.analysis_id,

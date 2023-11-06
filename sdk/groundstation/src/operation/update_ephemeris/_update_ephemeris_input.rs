@@ -52,6 +52,7 @@ pub struct UpdateEphemerisInputBuilder {
 }
 impl UpdateEphemerisInputBuilder {
     /// <p>The AWS Ground Station ephemeris ID.</p>
+    /// This field is required.
     pub fn ephemeris_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ephemeris_id = ::std::option::Option::Some(input.into());
         self
@@ -66,6 +67,7 @@ impl UpdateEphemerisInputBuilder {
         &self.ephemeris_id
     }
     /// <p>Whether the ephemeris is enabled or not. Changing this value will not require the ephemeris to be re-validated.</p>
+    /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
@@ -116,7 +118,7 @@ impl UpdateEphemerisInputBuilder {
     /// Consumes the builder and constructs a [`UpdateEphemerisInput`](crate::operation::update_ephemeris::UpdateEphemerisInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_ephemeris::UpdateEphemerisInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_ephemeris::UpdateEphemerisInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_ephemeris::UpdateEphemerisInput {
             ephemeris_id: self.ephemeris_id,
             enabled: self.enabled,

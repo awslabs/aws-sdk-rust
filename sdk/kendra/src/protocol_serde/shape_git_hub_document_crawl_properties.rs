@@ -2,7 +2,7 @@
 pub fn ser_git_hub_document_crawl_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GitHubDocumentCrawlProperties,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.crawl_repository_documents {
         object.key("CrawlRepositoryDocuments").boolean(input.crawl_repository_documents);
     }

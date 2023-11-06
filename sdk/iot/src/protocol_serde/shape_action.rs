@@ -18,7 +18,7 @@ where
                             builder = builder.set_dynamo_db(crate::protocol_serde::shape_dynamo_db_action::de_dynamo_db_action(tokens)?);
                         }
                         "dynamoDBv2" => {
-                            builder = builder.set_dynamo_d_bv2(crate::protocol_serde::shape_dynamo_d_bv2_action::de_dynamo_d_bv2_action(tokens)?);
+                            builder = builder.set_dynamo_dbv2(crate::protocol_serde::shape_dynamo_dbv2_action::de_dynamo_dbv2_action(tokens)?);
                         }
                         "lambda" => {
                             builder = builder.set_lambda(crate::protocol_serde::shape_lambda_action::de_lambda_action(tokens)?);
@@ -109,17 +109,17 @@ where
 pub fn ser_action(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Action,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.dynamo_db {
         #[allow(unused_mut)]
         let mut object_2 = object.key("dynamoDB").start_object();
         crate::protocol_serde::shape_dynamo_db_action::ser_dynamo_db_action(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.dynamo_d_bv2 {
+    if let Some(var_3) = &input.dynamo_dbv2 {
         #[allow(unused_mut)]
         let mut object_4 = object.key("dynamoDBv2").start_object();
-        crate::protocol_serde::shape_dynamo_d_bv2_action::ser_dynamo_d_bv2_action(&mut object_4, var_3)?;
+        crate::protocol_serde::shape_dynamo_dbv2_action::ser_dynamo_dbv2_action(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.lambda {

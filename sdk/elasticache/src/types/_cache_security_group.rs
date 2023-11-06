@@ -34,8 +34,10 @@ impl CacheSecurityGroup {
         self.description.as_deref()
     }
     /// <p>A list of Amazon EC2 security groups that are associated with this cache security group.</p>
-    pub fn ec2_security_groups(&self) -> ::std::option::Option<&[crate::types::Ec2SecurityGroup]> {
-        self.ec2_security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ec2_security_groups.is_none()`.
+    pub fn ec2_security_groups(&self) -> &[crate::types::Ec2SecurityGroup] {
+        self.ec2_security_groups.as_deref().unwrap_or_default()
     }
     /// <p>The ARN of the cache security group,</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {

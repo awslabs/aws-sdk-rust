@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailedBatchItem {
     /// <p> The id of the batch item that failed. This is the batch item id for the BatchCreateTableRows and BatchUpsertTableRows operations and the row id for the BatchUpdateTableRows and BatchDeleteTableRows operations. </p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p> The error message that indicates why the batch item failed. </p>
-    pub error_message: ::std::option::Option<::std::string::String>,
+    pub error_message: ::std::string::String,
 }
 impl FailedBatchItem {
     /// <p> The id of the batch item that failed. This is the batch item id for the BatchCreateTableRows and BatchUpsertTableRows operations and the row id for the BatchUpdateTableRows and BatchDeleteTableRows operations. </p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p> The error message that indicates why the batch item failed. </p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
-        self.error_message.as_deref()
+    pub fn error_message(&self) -> &str {
+        use std::ops::Deref;
+        self.error_message.deref()
     }
 }
 impl FailedBatchItem {
@@ -35,6 +37,7 @@ pub struct FailedBatchItemBuilder {
 }
 impl FailedBatchItemBuilder {
     /// <p> The id of the batch item that failed. This is the batch item id for the BatchCreateTableRows and BatchUpsertTableRows operations and the row id for the BatchUpdateTableRows and BatchDeleteTableRows operations. </p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl FailedBatchItemBuilder {
         &self.id
     }
     /// <p> The error message that indicates why the batch item failed. </p>
+    /// This field is required.
     pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl FailedBatchItemBuilder {
         &self.error_message
     }
     /// Consumes the builder and constructs a [`FailedBatchItem`](crate::types::FailedBatchItem).
-    pub fn build(self) -> crate::types::FailedBatchItem {
-        crate::types::FailedBatchItem {
-            id: self.id,
-            error_message: self.error_message,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::FailedBatchItemBuilder::id)
+    /// - [`error_message`](crate::types::builders::FailedBatchItemBuilder::error_message)
+    pub fn build(self) -> ::std::result::Result<crate::types::FailedBatchItem, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::FailedBatchItem {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building FailedBatchItem",
+                )
+            })?,
+            error_message: self.error_message.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "error_message",
+                    "error_message was not specified but it is required when building FailedBatchItem",
+                )
+            })?,
+        })
     }
 }

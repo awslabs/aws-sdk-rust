@@ -34,6 +34,7 @@ pub struct DeleteRotationOverrideInputBuilder {
 }
 impl DeleteRotationOverrideInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the rotation that was overridden.</p>
+    /// This field is required.
     pub fn rotation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rotation_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteRotationOverrideInputBuilder {
         &self.rotation_id
     }
     /// <p>The Amazon Resource Name (ARN) of the on-call rotation override to delete.</p>
+    /// This field is required.
     pub fn rotation_override_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rotation_override_id = ::std::option::Option::Some(input.into());
         self
@@ -64,8 +66,10 @@ impl DeleteRotationOverrideInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRotationOverrideInput`](crate::operation::delete_rotation_override::DeleteRotationOverrideInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_rotation_override::DeleteRotationOverrideInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_rotation_override::DeleteRotationOverrideInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_rotation_override::DeleteRotationOverrideInput {
             rotation_id: self.rotation_id,
             rotation_override_id: self.rotation_override_id,

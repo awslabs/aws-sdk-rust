@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OriginGroupMembers {
     /// <p>The number of origins in an origin group.</p>
-    pub quantity: ::std::option::Option<i32>,
+    pub quantity: i32,
     /// <p>Items (origins) in an origin group.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::OriginGroupMember>>,
+    pub items: ::std::vec::Vec<crate::types::OriginGroupMember>,
 }
 impl OriginGroupMembers {
     /// <p>The number of origins in an origin group.</p>
-    pub fn quantity(&self) -> ::std::option::Option<i32> {
+    pub fn quantity(&self) -> i32 {
         self.quantity
     }
     /// <p>Items (origins) in an origin group.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::OriginGroupMember]> {
-        self.items.as_deref()
+    pub fn items(&self) -> &[crate::types::OriginGroupMember] {
+        use std::ops::Deref;
+        self.items.deref()
     }
 }
 impl OriginGroupMembers {
@@ -35,6 +36,7 @@ pub struct OriginGroupMembersBuilder {
 }
 impl OriginGroupMembersBuilder {
     /// <p>The number of origins in an origin group.</p>
+    /// This field is required.
     pub fn quantity(mut self, input: i32) -> Self {
         self.quantity = ::std::option::Option::Some(input);
         self
@@ -69,10 +71,23 @@ impl OriginGroupMembersBuilder {
         &self.items
     }
     /// Consumes the builder and constructs a [`OriginGroupMembers`](crate::types::OriginGroupMembers).
-    pub fn build(self) -> crate::types::OriginGroupMembers {
-        crate::types::OriginGroupMembers {
-            quantity: self.quantity,
-            items: self.items,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`quantity`](crate::types::builders::OriginGroupMembersBuilder::quantity)
+    /// - [`items`](crate::types::builders::OriginGroupMembersBuilder::items)
+    pub fn build(self) -> ::std::result::Result<crate::types::OriginGroupMembers, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::OriginGroupMembers {
+            quantity: self.quantity.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "quantity",
+                    "quantity was not specified but it is required when building OriginGroupMembers",
+                )
+            })?,
+            items: self.items.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "items",
+                    "items was not specified but it is required when building OriginGroupMembers",
+                )
+            })?,
+        })
     }
 }

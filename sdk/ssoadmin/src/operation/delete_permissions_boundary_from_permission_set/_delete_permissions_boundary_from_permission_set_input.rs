@@ -35,6 +35,7 @@ pub struct DeletePermissionsBoundaryFromPermissionSetInputBuilder {
 }
 impl DeletePermissionsBoundaryFromPermissionSetInputBuilder {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
+    /// This field is required.
     pub fn instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_arn = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl DeletePermissionsBoundaryFromPermissionSetInputBuilder {
         &self.instance_arn
     }
     /// <p>The ARN of the <code>PermissionSet</code>.</p>
+    /// This field is required.
     pub fn permission_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permission_set_arn = ::std::option::Option::Some(input.into());
         self
@@ -67,7 +69,7 @@ impl DeletePermissionsBoundaryFromPermissionSetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_permissions_boundary_from_permission_set::DeletePermissionsBoundaryFromPermissionSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_permissions_boundary_from_permission_set::DeletePermissionsBoundaryFromPermissionSetInput {

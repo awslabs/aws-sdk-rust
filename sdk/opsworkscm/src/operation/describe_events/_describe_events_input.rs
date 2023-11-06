@@ -41,6 +41,7 @@ pub struct DescribeEventsInputBuilder {
 }
 impl DescribeEventsInputBuilder {
     /// <p>The name of the server for which you want to view events.</p>
+    /// This field is required.
     pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_name = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl DescribeEventsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEventsInput`](crate::operation::describe_events::DescribeEventsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_events::DescribeEventsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_events::DescribeEventsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_events::DescribeEventsInput {
             server_name: self.server_name,
             next_token: self.next_token,

@@ -15,8 +15,10 @@ impl DescribeEndpointSettingsOutput {
         self.marker.as_deref()
     }
     /// <p>Descriptions of the endpoint settings available for your source or target database engine.</p>
-    pub fn endpoint_settings(&self) -> ::std::option::Option<&[crate::types::EndpointSetting]> {
-        self.endpoint_settings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.endpoint_settings.is_none()`.
+    pub fn endpoint_settings(&self) -> &[crate::types::EndpointSetting] {
+        self.endpoint_settings.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeEndpointSettingsOutput {

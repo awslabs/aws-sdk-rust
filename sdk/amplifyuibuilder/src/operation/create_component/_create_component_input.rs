@@ -48,6 +48,7 @@ pub struct CreateComponentInputBuilder {
 }
 impl CreateComponentInputBuilder {
     /// <p>The unique ID of the Amplify app to associate with the component.</p>
+    /// This field is required.
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl CreateComponentInputBuilder {
         &self.app_id
     }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
+    /// This field is required.
     pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +92,7 @@ impl CreateComponentInputBuilder {
         &self.client_token
     }
     /// <p>Represents the configuration of the component to create.</p>
+    /// This field is required.
     pub fn component_to_create(mut self, input: crate::types::CreateComponentData) -> Self {
         self.component_to_create = ::std::option::Option::Some(input);
         self
@@ -106,7 +109,7 @@ impl CreateComponentInputBuilder {
     /// Consumes the builder and constructs a [`CreateComponentInput`](crate::operation::create_component::CreateComponentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_component::CreateComponentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_component::CreateComponentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_component::CreateComponentInput {
             app_id: self.app_id,
             environment_name: self.environment_name,

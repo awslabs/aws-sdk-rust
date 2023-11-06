@@ -41,6 +41,7 @@ pub struct ListAlarmsInputBuilder {
 }
 impl ListAlarmsInputBuilder {
     /// <p>The name of the alarm model.</p>
+    /// This field is required.
     pub fn alarm_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alarm_model_name = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +84,7 @@ impl ListAlarmsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListAlarmsInput`](crate::operation::list_alarms::ListAlarmsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_alarms::ListAlarmsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_alarms::ListAlarmsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_alarms::ListAlarmsInput {
             alarm_model_name: self.alarm_model_name,
             next_token: self.next_token,

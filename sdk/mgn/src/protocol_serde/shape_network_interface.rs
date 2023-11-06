@@ -22,7 +22,7 @@ where
                             );
                         }
                         "ips" => {
-                            builder = builder.set_ips(crate::protocol_serde::shape_i_ps_list::de_i_ps_list(tokens)?);
+                            builder = builder.set_ips(crate::protocol_serde::shape_ips_list::de_ips_list(tokens)?);
                         }
                         "isPrimary" => {
                             builder = builder.set_is_primary(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

@@ -10,7 +10,7 @@ impl RegisterApplicationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::register_application::RegisterApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::register_application::RegisterApplicationError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -75,12 +75,15 @@ impl RegisterApplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_application::RegisterApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::register_application::RegisterApplicationError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::register_application::RegisterApplication::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -89,20 +92,15 @@ impl RegisterApplicationFluentBuilder {
         crate::operation::register_application::RegisterApplication::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::register_application::RegisterApplicationOutput,
-            crate::operation::register_application::RegisterApplicationError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::register_application::RegisterApplicationError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::register_application::RegisterApplicationOutput,
+        crate::operation::register_application::RegisterApplicationError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -222,5 +220,19 @@ impl RegisterApplicationFluentBuilder {
     /// <p>The credentials of the SAP application.</p>
     pub fn get_credentials(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>> {
         self.inner.get_credentials()
+    }
+    /// <p>The Amazon Resource Name of the SAP HANA database.</p>
+    pub fn database_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.database_arn(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name of the SAP HANA database.</p>
+    pub fn set_database_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_database_arn(input);
+        self
+    }
+    /// <p>The Amazon Resource Name of the SAP HANA database.</p>
+    pub fn get_database_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_database_arn()
     }
 }

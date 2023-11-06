@@ -28,6 +28,7 @@ pub struct GetSuiteInputBuilder {
 }
 impl GetSuiteInputBuilder {
     /// <p>The suite's ARN.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +43,7 @@ impl GetSuiteInputBuilder {
         &self.arn
     }
     /// Consumes the builder and constructs a [`GetSuiteInput`](crate::operation::get_suite::GetSuiteInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_suite::GetSuiteInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_suite::GetSuiteInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_suite::GetSuiteInput { arn: self.arn })
     }
 }

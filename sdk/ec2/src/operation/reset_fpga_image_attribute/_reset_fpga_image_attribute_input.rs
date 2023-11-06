@@ -55,6 +55,7 @@ impl ResetFpgaImageAttributeInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the AFI.</p>
+    /// This field is required.
     pub fn fpga_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fpga_image_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ResetFpgaImageAttributeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeInput {
             dry_run: self.dry_run,

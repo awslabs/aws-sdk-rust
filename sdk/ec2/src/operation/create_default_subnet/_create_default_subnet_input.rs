@@ -41,6 +41,7 @@ pub struct CreateDefaultSubnetInputBuilder {
 }
 impl CreateDefaultSubnetInputBuilder {
     /// <p>The Availability Zone in which to create the default subnet.</p>
+    /// This field is required.
     pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl CreateDefaultSubnetInputBuilder {
     /// Consumes the builder and constructs a [`CreateDefaultSubnetInput`](crate::operation::create_default_subnet::CreateDefaultSubnetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_default_subnet::CreateDefaultSubnetInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_default_subnet::CreateDefaultSubnetInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_default_subnet::CreateDefaultSubnetInput {
             availability_zone: self.availability_zone,

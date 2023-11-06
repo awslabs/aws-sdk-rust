@@ -85,6 +85,7 @@ pub struct CreateLabelInputBuilder {
 impl CreateLabelInputBuilder {
     /// <p> The name of a group of labels. </p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+    /// This field is required.
     pub fn label_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_group_name = ::std::option::Option::Some(input.into());
         self
@@ -101,6 +102,7 @@ impl CreateLabelInputBuilder {
         &self.label_group_name
     }
     /// <p> The start time of the labeled event. </p>
+    /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
@@ -115,6 +117,7 @@ impl CreateLabelInputBuilder {
         &self.start_time
     }
     /// <p> The end time of the labeled event. </p>
+    /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
@@ -129,6 +132,7 @@ impl CreateLabelInputBuilder {
         &self.end_time
     }
     /// <p> Indicates whether a labeled event represents an anomaly. </p>
+    /// This field is required.
     pub fn rating(mut self, input: crate::types::LabelRating) -> Self {
         self.rating = ::std::option::Option::Some(input);
         self
@@ -194,6 +198,7 @@ impl CreateLabelInputBuilder {
         &self.equipment
     }
     /// <p> A unique identifier for the request to create a label. If you do not set the client request token, Lookout for Equipment generates one. </p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -208,7 +213,7 @@ impl CreateLabelInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateLabelInput`](crate::operation::create_label::CreateLabelInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_label::CreateLabelInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_label::CreateLabelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_label::CreateLabelInput {
             label_group_name: self.label_group_name,
             start_time: self.start_time,

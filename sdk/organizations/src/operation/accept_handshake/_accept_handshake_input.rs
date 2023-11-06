@@ -30,6 +30,7 @@ pub struct AcceptHandshakeInputBuilder {
 impl AcceptHandshakeInputBuilder {
     /// <p>The unique identifier (ID) of the handshake that you want to accept.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
+    /// This field is required.
     pub fn handshake_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.handshake_id = ::std::option::Option::Some(input.into());
         self
@@ -48,7 +49,7 @@ impl AcceptHandshakeInputBuilder {
     /// Consumes the builder and constructs a [`AcceptHandshakeInput`](crate::operation::accept_handshake::AcceptHandshakeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::accept_handshake::AcceptHandshakeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::accept_handshake::AcceptHandshakeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::accept_handshake::AcceptHandshakeInput {
             handshake_id: self.handshake_id,
         })

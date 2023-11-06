@@ -43,8 +43,10 @@ impl AuthEventType {
         self.event_risk.as_ref()
     }
     /// <p>The challenge responses.</p>
-    pub fn challenge_responses(&self) -> ::std::option::Option<&[crate::types::ChallengeResponseType]> {
-        self.challenge_responses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.challenge_responses.is_none()`.
+    pub fn challenge_responses(&self) -> &[crate::types::ChallengeResponseType] {
+        self.challenge_responses.as_deref().unwrap_or_default()
     }
     /// <p>The user context data captured at the time of an event request. This value provides additional information about the client from which event the request is received.</p>
     pub fn event_context_data(&self) -> ::std::option::Option<&crate::types::EventContextDataType> {

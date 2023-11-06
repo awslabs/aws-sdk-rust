@@ -34,6 +34,7 @@ pub struct DescribeWorkspaceAuthenticationOutputBuilder {
 }
 impl DescribeWorkspaceAuthenticationOutputBuilder {
     /// <p>A structure containing information about the authentication methods used in the workspace.</p>
+    /// This field is required.
     pub fn authentication(mut self, input: crate::types::AuthenticationDescription) -> Self {
         self.authentication = ::std::option::Option::Some(input);
         self

@@ -34,8 +34,10 @@ impl CreateInstanceEventWindowInput {
         self.name.as_deref()
     }
     /// <p>The time range for the event window. If you specify a time range, you can't specify a cron expression.</p>
-    pub fn time_ranges(&self) -> ::std::option::Option<&[crate::types::InstanceEventWindowTimeRangeRequest]> {
-        self.time_ranges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.time_ranges.is_none()`.
+    pub fn time_ranges(&self) -> &[crate::types::InstanceEventWindowTimeRangeRequest] {
+        self.time_ranges.as_deref().unwrap_or_default()
     }
     /// <p>The cron expression for the event window, for example, <code>* 0-4,20-23 * * 1,5</code>. If you specify a cron expression, you can't specify a time range.</p>
     /// <p>Constraints:</p>
@@ -52,8 +54,10 @@ impl CreateInstanceEventWindowInput {
         self.cron_expression.as_deref()
     }
     /// <p>The tags to apply to the event window.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
 }
 impl CreateInstanceEventWindowInput {
@@ -191,7 +195,7 @@ impl CreateInstanceEventWindowInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_instance_event_window::CreateInstanceEventWindowInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_instance_event_window::CreateInstanceEventWindowInput {
             dry_run: self.dry_run,

@@ -32,20 +32,14 @@ pub(crate) fn reflens_query_objects_output_marker(
 pub(crate) fn lens_describe_objects_output_pipeline_objects(
     input: crate::operation::describe_objects::DescribeObjectsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>> {
-    let input = match input.pipeline_objects {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.pipeline_objects;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_pipelines_output_pipeline_id_list(
     input: crate::operation::list_pipelines::ListPipelinesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PipelineIdName>> {
-    let input = match input.pipeline_id_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.pipeline_id_list;
     ::std::option::Option::Some(input)
 }
 

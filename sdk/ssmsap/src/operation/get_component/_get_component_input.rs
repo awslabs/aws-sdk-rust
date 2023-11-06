@@ -34,6 +34,7 @@ pub struct GetComponentInputBuilder {
 }
 impl GetComponentInputBuilder {
     /// <p>The ID of the application.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetComponentInputBuilder {
         &self.application_id
     }
     /// <p>The ID of the component.</p>
+    /// This field is required.
     pub fn component_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_id = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,9 @@ impl GetComponentInputBuilder {
         &self.component_id
     }
     /// Consumes the builder and constructs a [`GetComponentInput`](crate::operation::get_component::GetComponentInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_component::GetComponentInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_component::GetComponentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_component::GetComponentInput {
             application_id: self.application_id,
             component_id: self.component_id,

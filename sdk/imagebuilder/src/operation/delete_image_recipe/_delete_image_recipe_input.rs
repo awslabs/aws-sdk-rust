@@ -27,6 +27,7 @@ pub struct DeleteImageRecipeInputBuilder {
 }
 impl DeleteImageRecipeInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the image recipe to delete.</p>
+    /// This field is required.
     pub fn image_recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_recipe_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteImageRecipeInputBuilder {
     /// Consumes the builder and constructs a [`DeleteImageRecipeInput`](crate::operation::delete_image_recipe::DeleteImageRecipeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_image_recipe::DeleteImageRecipeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_image_recipe::DeleteImageRecipeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_image_recipe::DeleteImageRecipeInput {
             image_recipe_arn: self.image_recipe_arn,
         })

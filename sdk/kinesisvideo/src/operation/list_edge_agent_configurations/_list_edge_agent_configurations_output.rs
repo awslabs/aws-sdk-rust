@@ -11,8 +11,10 @@ pub struct ListEdgeAgentConfigurationsOutput {
 }
 impl ListEdgeAgentConfigurationsOutput {
     /// <p>A description of a single stream's edge configuration.</p>
-    pub fn edge_configs(&self) -> ::std::option::Option<&[crate::types::ListEdgeAgentConfigurationsEdgeConfig]> {
-        self.edge_configs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.edge_configs.is_none()`.
+    pub fn edge_configs(&self) -> &[crate::types::ListEdgeAgentConfigurationsEdgeConfig] {
+        self.edge_configs.as_deref().unwrap_or_default()
     }
     /// <p>If the response is truncated, the call returns this element with a given token. To get the next batch of edge configurations, use this token in your next request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

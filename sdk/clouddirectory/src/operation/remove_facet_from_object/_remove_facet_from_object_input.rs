@@ -41,6 +41,7 @@ pub struct RemoveFacetFromObjectInputBuilder {
 }
 impl RemoveFacetFromObjectInputBuilder {
     /// <p>The ARN of the directory in which the object resides.</p>
+    /// This field is required.
     pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl RemoveFacetFromObjectInputBuilder {
         &self.directory_arn
     }
     /// <p>The facet to remove. See <code>SchemaFacet</code> for details.</p>
+    /// This field is required.
     pub fn schema_facet(mut self, input: crate::types::SchemaFacet) -> Self {
         self.schema_facet = ::std::option::Option::Some(input);
         self
@@ -69,6 +71,7 @@ impl RemoveFacetFromObjectInputBuilder {
         &self.schema_facet
     }
     /// <p>A reference to the object to remove the facet from.</p>
+    /// This field is required.
     pub fn object_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.object_reference = ::std::option::Option::Some(input);
         self
@@ -85,7 +88,7 @@ impl RemoveFacetFromObjectInputBuilder {
     /// Consumes the builder and constructs a [`RemoveFacetFromObjectInput`](crate::operation::remove_facet_from_object::RemoveFacetFromObjectInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::remove_facet_from_object::RemoveFacetFromObjectInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::remove_facet_from_object::RemoveFacetFromObjectInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::remove_facet_from_object::RemoveFacetFromObjectInput {
             directory_arn: self.directory_arn,

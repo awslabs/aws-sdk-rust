@@ -27,6 +27,7 @@ pub struct GetMulticastGroupInputBuilder {
 }
 impl GetMulticastGroupInputBuilder {
     /// <p>The ID of the multicast group.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetMulticastGroupInputBuilder {
     /// Consumes the builder and constructs a [`GetMulticastGroupInput`](crate::operation::get_multicast_group::GetMulticastGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_multicast_group::GetMulticastGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_multicast_group::GetMulticastGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_multicast_group::GetMulticastGroupInput { id: self.id })
     }
 }

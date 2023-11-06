@@ -82,6 +82,7 @@ impl ListLaunchPathsInputBuilder {
         &self.accept_language
     }
     /// <p>The product identifier.</p>
+    /// This field is required.
     pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_id = ::std::option::Option::Some(input.into());
         self
@@ -126,7 +127,7 @@ impl ListLaunchPathsInputBuilder {
     /// Consumes the builder and constructs a [`ListLaunchPathsInput`](crate::operation::list_launch_paths::ListLaunchPathsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_launch_paths::ListLaunchPathsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_launch_paths::ListLaunchPathsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_launch_paths::ListLaunchPathsInput {
             accept_language: self.accept_language,
             product_id: self.product_id,

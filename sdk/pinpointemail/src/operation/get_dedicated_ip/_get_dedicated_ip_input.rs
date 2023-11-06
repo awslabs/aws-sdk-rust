@@ -28,6 +28,7 @@ pub struct GetDedicatedIpInputBuilder {
 }
 impl GetDedicatedIpInputBuilder {
     /// <p>The IP address that you want to obtain more information about. The value you specify has to be a dedicated IP address that's assocaited with your Amazon Pinpoint account.</p>
+    /// This field is required.
     pub fn ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl GetDedicatedIpInputBuilder {
     /// Consumes the builder and constructs a [`GetDedicatedIpInput`](crate::operation::get_dedicated_ip::GetDedicatedIpInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_dedicated_ip::GetDedicatedIpInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_dedicated_ip::GetDedicatedIpInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_dedicated_ip::GetDedicatedIpInput { ip: self.ip })
     }
 }

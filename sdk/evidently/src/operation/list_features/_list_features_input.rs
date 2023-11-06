@@ -41,6 +41,7 @@ pub struct ListFeaturesInputBuilder {
 }
 impl ListFeaturesInputBuilder {
     /// <p>The name or ARN of the project to return the feature list from.</p>
+    /// This field is required.
     pub fn project(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +84,9 @@ impl ListFeaturesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListFeaturesInput`](crate::operation::list_features::ListFeaturesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_features::ListFeaturesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_features::ListFeaturesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_features::ListFeaturesInput {
             project: self.project,
             max_results: self.max_results,

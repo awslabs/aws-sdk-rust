@@ -41,6 +41,7 @@ pub struct AttachToIndexInputBuilder {
 }
 impl AttachToIndexInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the directory where the object and index exist.</p>
+    /// This field is required.
     pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl AttachToIndexInputBuilder {
         &self.directory_arn
     }
     /// <p>A reference to the index that you are attaching the object to.</p>
+    /// This field is required.
     pub fn index_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.index_reference = ::std::option::Option::Some(input);
         self
@@ -69,6 +71,7 @@ impl AttachToIndexInputBuilder {
         &self.index_reference
     }
     /// <p>A reference to the object that you are attaching to the index.</p>
+    /// This field is required.
     pub fn target_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.target_reference = ::std::option::Option::Some(input);
         self
@@ -85,7 +88,7 @@ impl AttachToIndexInputBuilder {
     /// Consumes the builder and constructs a [`AttachToIndexInput`](crate::operation::attach_to_index::AttachToIndexInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::attach_to_index::AttachToIndexInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::attach_to_index::AttachToIndexInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::attach_to_index::AttachToIndexInput {
             directory_arn: self.directory_arn,
             index_reference: self.index_reference,

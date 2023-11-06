@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceQuotaExceededException {
     #[allow(missing_docs)] // documentation missing in model
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
     /// <p>Identifier of the resource affected.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
@@ -18,17 +18,15 @@ impl ServiceQuotaExceededException {
 }
 impl ServiceQuotaExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        &self.message
     }
 }
 impl ::std::fmt::Display for ServiceQuotaExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "ServiceQuotaExceededException")?;
-        if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
-                ::std::write!(f, ": {}", inner_1)?;
-            }
+        {
+            ::std::write!(f, ": {}", &self.message)?;
         }
         Ok(())
     }
@@ -62,6 +60,7 @@ pub struct ServiceQuotaExceededExceptionBuilder {
 }
 impl ServiceQuotaExceededExceptionBuilder {
     #[allow(missing_docs)] // documentation missing in model
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -101,11 +100,20 @@ impl ServiceQuotaExceededExceptionBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ServiceQuotaExceededException`](crate::types::error::ServiceQuotaExceededException).
-    pub fn build(self) -> crate::types::error::ServiceQuotaExceededException {
-        crate::types::error::ServiceQuotaExceededException {
-            message: self.message,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`message`](crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::message)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::error::ServiceQuotaExceededException, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::error::ServiceQuotaExceededException {
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building ServiceQuotaExceededException",
+                )
+            })?,
             resource_id: self.resource_id,
             meta: self.meta.unwrap_or_default(),
-        }
+        })
     }
 }

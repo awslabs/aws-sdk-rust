@@ -99,12 +99,12 @@ pub fn de_get_backend_http_response(
 
 pub fn ser_get_backend_input(
     input: &crate::operation::get_backend::GetBackendInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_get_backend_input::ser_get_backend_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_get_backend(
@@ -147,7 +147,7 @@ pub(crate) fn de_get_backend(
                     );
                 }
                 "backendEnvironmentList" => {
-                    builder = builder.set_backend_environment_list(crate::protocol_serde::shape_list_of__string::de_list_of__string(tokens)?);
+                    builder = builder.set_backend_environment_list(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                 }
                 "backendEnvironmentName" => {
                     builder = builder.set_backend_environment_name(

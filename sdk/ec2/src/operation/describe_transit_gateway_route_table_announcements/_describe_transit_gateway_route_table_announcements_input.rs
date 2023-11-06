@@ -16,12 +16,16 @@ pub struct DescribeTransitGatewayRouteTableAnnouncementsInput {
 }
 impl DescribeTransitGatewayRouteTableAnnouncementsInput {
     /// <p>The IDs of the transit gateway route tables that are being advertised.</p>
-    pub fn transit_gateway_route_table_announcement_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.transit_gateway_route_table_announcement_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.transit_gateway_route_table_announcement_ids.is_none()`.
+    pub fn transit_gateway_route_table_announcement_ids(&self) -> &[::std::string::String] {
+        self.transit_gateway_route_table_announcement_ids.as_deref().unwrap_or_default()
     }
     /// <p>The filters associated with the transit gateway policy table.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -143,7 +147,7 @@ impl DescribeTransitGatewayRouteTableAnnouncementsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_transit_gateway_route_table_announcements::DescribeTransitGatewayRouteTableAnnouncementsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_transit_gateway_route_table_announcements::DescribeTransitGatewayRouteTableAnnouncementsInput {

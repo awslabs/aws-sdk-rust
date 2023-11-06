@@ -48,6 +48,7 @@ impl GetFunctionConcurrencyInputBuilder {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    /// This field is required.
     pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_name = ::std::option::Option::Some(input.into());
         self
@@ -78,8 +79,10 @@ impl GetFunctionConcurrencyInputBuilder {
     /// Consumes the builder and constructs a [`GetFunctionConcurrencyInput`](crate::operation::get_function_concurrency::GetFunctionConcurrencyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_function_concurrency::GetFunctionConcurrencyInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::get_function_concurrency::GetFunctionConcurrencyInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::get_function_concurrency::GetFunctionConcurrencyInput {
             function_name: self.function_name,
         })

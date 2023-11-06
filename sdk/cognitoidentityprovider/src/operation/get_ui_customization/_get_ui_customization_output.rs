@@ -34,6 +34,7 @@ pub struct GetUiCustomizationOutputBuilder {
 }
 impl GetUiCustomizationOutputBuilder {
     /// <p>The UI customization information.</p>
+    /// This field is required.
     pub fn ui_customization(mut self, input: crate::types::UiCustomizationType) -> Self {
         self.ui_customization = ::std::option::Option::Some(input);
         self

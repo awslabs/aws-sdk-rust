@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteInstanceOnboardingJob`](crate::operation::delete_instance_onboarding_job::builders::DeleteInstanceOnboardingJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`connect_instance_id(impl Into<String>)`](crate::operation::delete_instance_onboarding_job::builders::DeleteInstanceOnboardingJobFluentBuilder::connect_instance_id) / [`set_connect_instance_id(Option<String>)`](crate::operation::delete_instance_onboarding_job::builders::DeleteInstanceOnboardingJobFluentBuilder::set_connect_instance_id): Amazon Connect Instance Id
+    ///   - [`connect_instance_id(impl Into<String>)`](crate::operation::delete_instance_onboarding_job::builders::DeleteInstanceOnboardingJobFluentBuilder::connect_instance_id) / [`set_connect_instance_id(Option<String>)`](crate::operation::delete_instance_onboarding_job::builders::DeleteInstanceOnboardingJobFluentBuilder::set_connect_instance_id):<br>required: **true**<br>Amazon Connect Instance Id<br>
     /// - On success, responds with [`DeleteInstanceOnboardingJobOutput`](crate::operation::delete_instance_onboarding_job::DeleteInstanceOnboardingJobOutput)
     /// - On failure, responds with [`SdkError<DeleteInstanceOnboardingJobError>`](crate::operation::delete_instance_onboarding_job::DeleteInstanceOnboardingJobError)
     pub fn delete_instance_onboarding_job(

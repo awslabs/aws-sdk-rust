@@ -2,12 +2,12 @@
 pub fn ser_predefined_metric_specification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PredefinedMetricSpecification,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.predefined_metric_type {
-        object.key("PredefinedMetricType").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("PredefinedMetricType").string(input.predefined_metric_type.as_str());
     }
-    if let Some(var_2) = &input.resource_label {
-        object.key("ResourceLabel").string(var_2.as_str());
+    if let Some(var_1) = &input.resource_label {
+        object.key("ResourceLabel").string(var_1.as_str());
     }
     Ok(())
 }
@@ -51,7 +51,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::predefined_metric_specification_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

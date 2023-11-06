@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Comment {
     /// <p>An optional description of the table.</p>
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
 }
 impl Comment {
     /// <p>An optional description of the table.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        use std::ops::Deref;
+        self.message.deref()
     }
 }
 impl Comment {
@@ -28,6 +29,7 @@ pub struct CommentBuilder {
 }
 impl CommentBuilder {
     /// <p>An optional description of the table.</p>
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl CommentBuilder {
         &self.message
     }
     /// Consumes the builder and constructs a [`Comment`](crate::types::Comment).
-    pub fn build(self) -> crate::types::Comment {
-        crate::types::Comment { message: self.message }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`message`](crate::types::builders::CommentBuilder::message)
+    pub fn build(self) -> ::std::result::Result<crate::types::Comment, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Comment {
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building Comment",
+                )
+            })?,
+        })
     }
 }

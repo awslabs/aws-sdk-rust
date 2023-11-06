@@ -27,6 +27,7 @@ pub struct GetCelebrityInfoInputBuilder {
 }
 impl GetCelebrityInfoInputBuilder {
     /// <p>The ID for the celebrity. You get the celebrity ID from a call to the <code>RecognizeCelebrities</code> operation, which recognizes celebrities in an image. </p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetCelebrityInfoInputBuilder {
     /// Consumes the builder and constructs a [`GetCelebrityInfoInput`](crate::operation::get_celebrity_info::GetCelebrityInfoInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_celebrity_info::GetCelebrityInfoInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_celebrity_info::GetCelebrityInfoInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_celebrity_info::GetCelebrityInfoInput { id: self.id })
     }
 }

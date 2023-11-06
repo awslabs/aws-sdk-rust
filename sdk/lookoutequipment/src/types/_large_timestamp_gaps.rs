@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LargeTimestampGaps {
     /// <p> Indicates whether there is a potential data issue related to large gaps in timestamps. </p>
-    pub status: ::std::option::Option<crate::types::StatisticalIssueStatus>,
+    pub status: crate::types::StatisticalIssueStatus,
     /// <p> Indicates the number of large timestamp gaps, if there are any. </p>
     pub number_of_large_timestamp_gaps: ::std::option::Option<i32>,
     /// <p> Indicates the size of the largest timestamp gap, in days. </p>
@@ -13,8 +13,8 @@ pub struct LargeTimestampGaps {
 }
 impl LargeTimestampGaps {
     /// <p> Indicates whether there is a potential data issue related to large gaps in timestamps. </p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::StatisticalIssueStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::StatisticalIssueStatus {
+        &self.status
     }
     /// <p> Indicates the number of large timestamp gaps, if there are any. </p>
     pub fn number_of_large_timestamp_gaps(&self) -> ::std::option::Option<i32> {
@@ -42,6 +42,7 @@ pub struct LargeTimestampGapsBuilder {
 }
 impl LargeTimestampGapsBuilder {
     /// <p> Indicates whether there is a potential data issue related to large gaps in timestamps. </p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::StatisticalIssueStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -84,11 +85,18 @@ impl LargeTimestampGapsBuilder {
         &self.max_timestamp_gap_in_days
     }
     /// Consumes the builder and constructs a [`LargeTimestampGaps`](crate::types::LargeTimestampGaps).
-    pub fn build(self) -> crate::types::LargeTimestampGaps {
-        crate::types::LargeTimestampGaps {
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::types::builders::LargeTimestampGapsBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::LargeTimestampGaps, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::LargeTimestampGaps {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building LargeTimestampGaps",
+                )
+            })?,
             number_of_large_timestamp_gaps: self.number_of_large_timestamp_gaps,
             max_timestamp_gap_in_days: self.max_timestamp_gap_in_days,
-        }
+        })
     }
 }

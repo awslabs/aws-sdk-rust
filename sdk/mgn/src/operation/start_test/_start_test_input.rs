@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StartTestInput {
     /// <p>Start Test for Source Server IDs.</p>
-    pub source_server_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub source_server_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Start Test by Tags.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Start Test for Account ID.</p>
@@ -12,8 +12,10 @@ pub struct StartTestInput {
 }
 impl StartTestInput {
     /// <p>Start Test for Source Server IDs.</p>
-    pub fn source_server_i_ds(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.source_server_i_ds.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_server_ids.is_none()`.
+    pub fn source_server_ids(&self) -> &[::std::string::String] {
+        self.source_server_ids.as_deref().unwrap_or_default()
     }
     /// <p>Start Test by Tags.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -27,7 +29,7 @@ impl StartTestInput {
 impl ::std::fmt::Debug for StartTestInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("StartTestInput");
-        formatter.field("source_server_i_ds", &self.source_server_i_ds);
+        formatter.field("source_server_ids", &self.source_server_ids);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("account_id", &self.account_id);
         formatter.finish()
@@ -44,30 +46,30 @@ impl StartTestInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct StartTestInputBuilder {
-    pub(crate) source_server_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) source_server_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl StartTestInputBuilder {
-    /// Appends an item to `source_server_i_ds`.
+    /// Appends an item to `source_server_ids`.
     ///
-    /// To override the contents of this collection use [`set_source_server_i_ds`](Self::set_source_server_i_ds).
+    /// To override the contents of this collection use [`set_source_server_ids`](Self::set_source_server_ids).
     ///
     /// <p>Start Test for Source Server IDs.</p>
-    pub fn source_server_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.source_server_i_ds.unwrap_or_default();
+    pub fn source_server_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.source_server_ids.unwrap_or_default();
         v.push(input.into());
-        self.source_server_i_ds = ::std::option::Option::Some(v);
+        self.source_server_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>Start Test for Source Server IDs.</p>
-    pub fn set_source_server_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.source_server_i_ds = input;
+    pub fn set_source_server_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.source_server_ids = input;
         self
     }
     /// <p>Start Test for Source Server IDs.</p>
-    pub fn get_source_server_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.source_server_i_ds
+    pub fn get_source_server_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.source_server_ids
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -104,9 +106,9 @@ impl StartTestInputBuilder {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`StartTestInput`](crate::operation::start_test::StartTestInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_test::StartTestInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_test::StartTestInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_test::StartTestInput {
-            source_server_i_ds: self.source_server_i_ds,
+            source_server_ids: self.source_server_ids,
             tags: self.tags,
             account_id: self.account_id,
         })
@@ -115,7 +117,7 @@ impl StartTestInputBuilder {
 impl ::std::fmt::Debug for StartTestInputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("StartTestInputBuilder");
-        formatter.field("source_server_i_ds", &self.source_server_i_ds);
+        formatter.field("source_server_ids", &self.source_server_ids);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("account_id", &self.account_id);
         formatter.finish()

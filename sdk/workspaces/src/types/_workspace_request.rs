@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkspaceRequest {
     /// <p>The identifier of the Directory Service directory for the WorkSpace. You can use <code>DescribeWorkspaceDirectories</code> to list the available directories.</p>
-    pub directory_id: ::std::option::Option<::std::string::String>,
+    pub directory_id: ::std::string::String,
     /// <p>The user name of the user for the WorkSpace. This user name must exist in the Directory Service directory for the WorkSpace.</p>
-    pub user_name: ::std::option::Option<::std::string::String>,
+    pub user_name: ::std::string::String,
     /// <p>The identifier of the bundle for the WorkSpace. You can use <code>DescribeWorkspaceBundles</code> to list the available bundles.</p>
-    pub bundle_id: ::std::option::Option<::std::string::String>,
+    pub bundle_id: ::std::string::String,
     /// <p>The ARN of the symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support asymmetric KMS keys.</p>
     pub volume_encryption_key: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the data stored on the user volume is encrypted.</p>
@@ -23,16 +23,19 @@ pub struct WorkspaceRequest {
 }
 impl WorkspaceRequest {
     /// <p>The identifier of the Directory Service directory for the WorkSpace. You can use <code>DescribeWorkspaceDirectories</code> to list the available directories.</p>
-    pub fn directory_id(&self) -> ::std::option::Option<&str> {
-        self.directory_id.as_deref()
+    pub fn directory_id(&self) -> &str {
+        use std::ops::Deref;
+        self.directory_id.deref()
     }
     /// <p>The user name of the user for the WorkSpace. This user name must exist in the Directory Service directory for the WorkSpace.</p>
-    pub fn user_name(&self) -> ::std::option::Option<&str> {
-        self.user_name.as_deref()
+    pub fn user_name(&self) -> &str {
+        use std::ops::Deref;
+        self.user_name.deref()
     }
     /// <p>The identifier of the bundle for the WorkSpace. You can use <code>DescribeWorkspaceBundles</code> to list the available bundles.</p>
-    pub fn bundle_id(&self) -> ::std::option::Option<&str> {
-        self.bundle_id.as_deref()
+    pub fn bundle_id(&self) -> &str {
+        use std::ops::Deref;
+        self.bundle_id.deref()
     }
     /// <p>The ARN of the symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support asymmetric KMS keys.</p>
     pub fn volume_encryption_key(&self) -> ::std::option::Option<&str> {
@@ -51,8 +54,10 @@ impl WorkspaceRequest {
         self.workspace_properties.as_ref()
     }
     /// <p>The tags for the WorkSpace.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl WorkspaceRequest {
@@ -77,6 +82,7 @@ pub struct WorkspaceRequestBuilder {
 }
 impl WorkspaceRequestBuilder {
     /// <p>The identifier of the Directory Service directory for the WorkSpace. You can use <code>DescribeWorkspaceDirectories</code> to list the available directories.</p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +97,7 @@ impl WorkspaceRequestBuilder {
         &self.directory_id
     }
     /// <p>The user name of the user for the WorkSpace. This user name must exist in the Directory Service directory for the WorkSpace.</p>
+    /// This field is required.
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +112,7 @@ impl WorkspaceRequestBuilder {
         &self.user_name
     }
     /// <p>The identifier of the bundle for the WorkSpace. You can use <code>DescribeWorkspaceBundles</code> to list the available bundles.</p>
+    /// This field is required.
     pub fn bundle_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bundle_id = ::std::option::Option::Some(input.into());
         self
@@ -195,16 +203,35 @@ impl WorkspaceRequestBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`WorkspaceRequest`](crate::types::WorkspaceRequest).
-    pub fn build(self) -> crate::types::WorkspaceRequest {
-        crate::types::WorkspaceRequest {
-            directory_id: self.directory_id,
-            user_name: self.user_name,
-            bundle_id: self.bundle_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`directory_id`](crate::types::builders::WorkspaceRequestBuilder::directory_id)
+    /// - [`user_name`](crate::types::builders::WorkspaceRequestBuilder::user_name)
+    /// - [`bundle_id`](crate::types::builders::WorkspaceRequestBuilder::bundle_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::WorkspaceRequest, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::WorkspaceRequest {
+            directory_id: self.directory_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "directory_id",
+                    "directory_id was not specified but it is required when building WorkspaceRequest",
+                )
+            })?,
+            user_name: self.user_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "user_name",
+                    "user_name was not specified but it is required when building WorkspaceRequest",
+                )
+            })?,
+            bundle_id: self.bundle_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "bundle_id",
+                    "bundle_id was not specified but it is required when building WorkspaceRequest",
+                )
+            })?,
             volume_encryption_key: self.volume_encryption_key,
             user_volume_encryption_enabled: self.user_volume_encryption_enabled,
             root_volume_encryption_enabled: self.root_volume_encryption_enabled,
             workspace_properties: self.workspace_properties,
             tags: self.tags,
-        }
+        })
     }
 }

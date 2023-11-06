@@ -28,6 +28,7 @@ pub struct DeleteTopicRuleInputBuilder {
 }
 impl DeleteTopicRuleInputBuilder {
     /// <p>The name of the rule.</p>
+    /// This field is required.
     pub fn rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_name = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl DeleteTopicRuleInputBuilder {
     /// Consumes the builder and constructs a [`DeleteTopicRuleInput`](crate::operation::delete_topic_rule::DeleteTopicRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_topic_rule::DeleteTopicRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_topic_rule::DeleteTopicRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_topic_rule::DeleteTopicRuleInput { rule_name: self.rule_name })
     }
 }

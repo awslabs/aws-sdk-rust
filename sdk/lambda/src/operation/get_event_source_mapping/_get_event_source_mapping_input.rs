@@ -27,6 +27,7 @@ pub struct GetEventSourceMappingInputBuilder {
 }
 impl GetEventSourceMappingInputBuilder {
     /// <p>The identifier of the event source mapping.</p>
+    /// This field is required.
     pub fn uuid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.uuid = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetEventSourceMappingInputBuilder {
     /// Consumes the builder and constructs a [`GetEventSourceMappingInput`](crate::operation::get_event_source_mapping::GetEventSourceMappingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_event_source_mapping::GetEventSourceMappingInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_event_source_mapping::GetEventSourceMappingInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_event_source_mapping::GetEventSourceMappingInput { uuid: self.uuid })
     }

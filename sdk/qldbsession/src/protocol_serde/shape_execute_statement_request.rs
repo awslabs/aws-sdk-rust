@@ -2,24 +2,24 @@
 pub fn ser_execute_statement_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ExecuteStatementRequest,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.transaction_id {
-        object.key("TransactionId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("TransactionId").string(input.transaction_id.as_str());
     }
-    if let Some(var_2) = &input.statement {
-        object.key("Statement").string(var_2.as_str());
+    {
+        object.key("Statement").string(input.statement.as_str());
     }
-    if let Some(var_3) = &input.parameters {
-        let mut array_4 = object.key("Parameters").start_array();
-        for item_5 in var_3 {
+    if let Some(var_1) = &input.parameters {
+        let mut array_2 = object.key("Parameters").start_array();
+        for item_3 in var_1 {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_value_holder::ser_value_holder(&mut object_6, item_5)?;
-                object_6.finish();
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_value_holder::ser_value_holder(&mut object_4, item_3)?;
+                object_4.finish();
             }
         }
-        array_4.finish();
+        array_2.finish();
     }
     Ok(())
 }

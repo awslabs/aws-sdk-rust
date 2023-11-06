@@ -20,8 +20,10 @@ impl UpdateChannelInput {
         self.filler_slate.as_ref()
     }
     /// <p>The channel's output properties.</p>
-    pub fn outputs(&self) -> ::std::option::Option<&[crate::types::RequestOutputItem]> {
-        self.outputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outputs.is_none()`.
+    pub fn outputs(&self) -> &[crate::types::RequestOutputItem] {
+        self.outputs.as_deref().unwrap_or_default()
     }
 }
 impl UpdateChannelInput {
@@ -41,6 +43,7 @@ pub struct UpdateChannelInputBuilder {
 }
 impl UpdateChannelInputBuilder {
     /// <p>The name of the channel.</p>
+    /// This field is required.
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_name = ::std::option::Option::Some(input.into());
         self
@@ -91,7 +94,7 @@ impl UpdateChannelInputBuilder {
     /// Consumes the builder and constructs a [`UpdateChannelInput`](crate::operation::update_channel::UpdateChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_channel::UpdateChannelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_channel::UpdateChannelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_channel::UpdateChannelInput {
             channel_name: self.channel_name,
             filler_slate: self.filler_slate,

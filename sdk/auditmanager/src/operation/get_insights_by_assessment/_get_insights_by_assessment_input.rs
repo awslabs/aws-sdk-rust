@@ -27,6 +27,7 @@ pub struct GetInsightsByAssessmentInputBuilder {
 }
 impl GetInsightsByAssessmentInputBuilder {
     /// <p>The unique identifier for the assessment. </p>
+    /// This field is required.
     pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetInsightsByAssessmentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_insights_by_assessment::GetInsightsByAssessmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_insights_by_assessment::GetInsightsByAssessmentInput {
             assessment_id: self.assessment_id,

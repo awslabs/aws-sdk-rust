@@ -5,24 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransactionOutputItem {
     /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
-    pub transaction_hash: ::std::option::Option<::std::string::String>,
+    pub transaction_hash: ::std::string::String,
     /// <p>The blockchain network where the transaction occurred.</p>
-    pub network: ::std::option::Option<crate::types::QueryNetwork>,
+    pub network: crate::types::QueryNetwork,
     /// <p>The time when the transaction occurred.</p>
-    pub transaction_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub transaction_timestamp: ::aws_smithy_types::DateTime,
 }
 impl TransactionOutputItem {
     /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
-    pub fn transaction_hash(&self) -> ::std::option::Option<&str> {
-        self.transaction_hash.as_deref()
+    pub fn transaction_hash(&self) -> &str {
+        use std::ops::Deref;
+        self.transaction_hash.deref()
     }
     /// <p>The blockchain network where the transaction occurred.</p>
-    pub fn network(&self) -> ::std::option::Option<&crate::types::QueryNetwork> {
-        self.network.as_ref()
+    pub fn network(&self) -> &crate::types::QueryNetwork {
+        &self.network
     }
     /// <p>The time when the transaction occurred.</p>
-    pub fn transaction_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.transaction_timestamp.as_ref()
+    pub fn transaction_timestamp(&self) -> &::aws_smithy_types::DateTime {
+        &self.transaction_timestamp
     }
 }
 impl TransactionOutputItem {
@@ -42,6 +43,7 @@ pub struct TransactionOutputItemBuilder {
 }
 impl TransactionOutputItemBuilder {
     /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
+    /// This field is required.
     pub fn transaction_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transaction_hash = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +58,7 @@ impl TransactionOutputItemBuilder {
         &self.transaction_hash
     }
     /// <p>The blockchain network where the transaction occurred.</p>
+    /// This field is required.
     pub fn network(mut self, input: crate::types::QueryNetwork) -> Self {
         self.network = ::std::option::Option::Some(input);
         self
@@ -70,6 +73,7 @@ impl TransactionOutputItemBuilder {
         &self.network
     }
     /// <p>The time when the transaction occurred.</p>
+    /// This field is required.
     pub fn transaction_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.transaction_timestamp = ::std::option::Option::Some(input);
         self
@@ -84,11 +88,30 @@ impl TransactionOutputItemBuilder {
         &self.transaction_timestamp
     }
     /// Consumes the builder and constructs a [`TransactionOutputItem`](crate::types::TransactionOutputItem).
-    pub fn build(self) -> crate::types::TransactionOutputItem {
-        crate::types::TransactionOutputItem {
-            transaction_hash: self.transaction_hash,
-            network: self.network,
-            transaction_timestamp: self.transaction_timestamp,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`transaction_hash`](crate::types::builders::TransactionOutputItemBuilder::transaction_hash)
+    /// - [`network`](crate::types::builders::TransactionOutputItemBuilder::network)
+    /// - [`transaction_timestamp`](crate::types::builders::TransactionOutputItemBuilder::transaction_timestamp)
+    pub fn build(self) -> ::std::result::Result<crate::types::TransactionOutputItem, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TransactionOutputItem {
+            transaction_hash: self.transaction_hash.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "transaction_hash",
+                    "transaction_hash was not specified but it is required when building TransactionOutputItem",
+                )
+            })?,
+            network: self.network.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "network",
+                    "network was not specified but it is required when building TransactionOutputItem",
+                )
+            })?,
+            transaction_timestamp: self.transaction_timestamp.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "transaction_timestamp",
+                    "transaction_timestamp was not specified but it is required when building TransactionOutputItem",
+                )
+            })?,
+        })
     }
 }

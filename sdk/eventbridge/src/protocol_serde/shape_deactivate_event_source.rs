@@ -123,10 +123,10 @@ pub fn de_deactivate_event_source_http_response(
 
 pub fn ser_deactivate_event_source_input(
     input: &crate::operation::deactivate_event_source::DeactivateEventSourceInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_deactivate_event_source_input::ser_deactivate_event_source_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

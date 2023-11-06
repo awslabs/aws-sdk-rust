@@ -5,36 +5,36 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConflictException {
     #[allow(missing_docs)] // documentation missing in model
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
     /// <p> The ID of the Amazon Web Services resource in which a conflict occurred. </p>
-    pub resource_id: ::std::option::Option<::std::string::String>,
+    pub resource_id: ::std::string::String,
     /// <p> The type of the Amazon Web Services resource in which a conflict occurred. </p>
-    pub resource_type: ::std::option::Option<::std::string::String>,
+    pub resource_type: ::std::string::String,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl ConflictException {
     /// <p> The ID of the Amazon Web Services resource in which a conflict occurred. </p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
-        self.resource_id.as_deref()
+    pub fn resource_id(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_id.deref()
     }
     /// <p> The type of the Amazon Web Services resource in which a conflict occurred. </p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
-        self.resource_type.as_deref()
+    pub fn resource_type(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_type.deref()
     }
 }
 impl ConflictException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        &self.message
     }
 }
 impl ::std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "ConflictException")?;
-        if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
-                ::std::write!(f, ": {}", inner_1)?;
-            }
+        {
+            ::std::write!(f, ": {}", &self.message)?;
         }
         Ok(())
     }
@@ -69,6 +69,7 @@ pub struct ConflictExceptionBuilder {
 }
 impl ConflictExceptionBuilder {
     #[allow(missing_docs)] // documentation missing in model
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +84,7 @@ impl ConflictExceptionBuilder {
         &self.message
     }
     /// <p> The ID of the Amazon Web Services resource in which a conflict occurred. </p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +99,7 @@ impl ConflictExceptionBuilder {
         &self.resource_id
     }
     /// <p> The type of the Amazon Web Services resource in which a conflict occurred. </p>
+    /// This field is required.
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
@@ -122,12 +125,31 @@ impl ConflictExceptionBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ConflictException`](crate::types::error::ConflictException).
-    pub fn build(self) -> crate::types::error::ConflictException {
-        crate::types::error::ConflictException {
-            message: self.message,
-            resource_id: self.resource_id,
-            resource_type: self.resource_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`message`](crate::types::error::builders::ConflictExceptionBuilder::message)
+    /// - [`resource_id`](crate::types::error::builders::ConflictExceptionBuilder::resource_id)
+    /// - [`resource_type`](crate::types::error::builders::ConflictExceptionBuilder::resource_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::error::ConflictException, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::error::ConflictException {
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building ConflictException",
+                )
+            })?,
+            resource_id: self.resource_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "resource_id",
+                    "resource_id was not specified but it is required when building ConflictException",
+                )
+            })?,
+            resource_type: self.resource_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "resource_type",
+                    "resource_type was not specified but it is required when building ConflictException",
+                )
+            })?,
             meta: self.meta.unwrap_or_default(),
-        }
+        })
     }
 }

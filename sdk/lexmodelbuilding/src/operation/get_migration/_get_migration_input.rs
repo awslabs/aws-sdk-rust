@@ -27,6 +27,7 @@ pub struct GetMigrationInputBuilder {
 }
 impl GetMigrationInputBuilder {
     /// <p>The unique identifier of the migration to view. The <code>migrationID</code> is returned by the operation.</p>
+    /// This field is required.
     pub fn migration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.migration_id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,9 @@ impl GetMigrationInputBuilder {
         &self.migration_id
     }
     /// Consumes the builder and constructs a [`GetMigrationInput`](crate::operation::get_migration::GetMigrationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_migration::GetMigrationInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_migration::GetMigrationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_migration::GetMigrationInput {
             migration_id: self.migration_id,
         })

@@ -7,9 +7,9 @@ pub struct CreateConnectionOAuthRequestParameters {
     /// <p>A <code>CreateConnectionOAuthClientRequestParameters</code> object that contains the client parameters for OAuth authorization.</p>
     pub client_parameters: ::std::option::Option<crate::types::CreateConnectionOAuthClientRequestParameters>,
     /// <p>The URL to the authorization endpoint when OAuth is specified as the authorization type.</p>
-    pub authorization_endpoint: ::std::option::Option<::std::string::String>,
+    pub authorization_endpoint: ::std::string::String,
     /// <p>The method to use for the authorization request.</p>
-    pub http_method: ::std::option::Option<crate::types::ConnectionOAuthHttpMethod>,
+    pub http_method: crate::types::ConnectionOAuthHttpMethod,
     /// <p>A <code>ConnectionHttpParameters</code> object that contains details about the additional parameters to use for the connection.</p>
     pub o_auth_http_parameters: ::std::option::Option<crate::types::ConnectionHttpParameters>,
 }
@@ -19,12 +19,13 @@ impl CreateConnectionOAuthRequestParameters {
         self.client_parameters.as_ref()
     }
     /// <p>The URL to the authorization endpoint when OAuth is specified as the authorization type.</p>
-    pub fn authorization_endpoint(&self) -> ::std::option::Option<&str> {
-        self.authorization_endpoint.as_deref()
+    pub fn authorization_endpoint(&self) -> &str {
+        use std::ops::Deref;
+        self.authorization_endpoint.deref()
     }
     /// <p>The method to use for the authorization request.</p>
-    pub fn http_method(&self) -> ::std::option::Option<&crate::types::ConnectionOAuthHttpMethod> {
-        self.http_method.as_ref()
+    pub fn http_method(&self) -> &crate::types::ConnectionOAuthHttpMethod {
+        &self.http_method
     }
     /// <p>A <code>ConnectionHttpParameters</code> object that contains details about the additional parameters to use for the connection.</p>
     pub fn o_auth_http_parameters(&self) -> ::std::option::Option<&crate::types::ConnectionHttpParameters> {
@@ -49,6 +50,7 @@ pub struct CreateConnectionOAuthRequestParametersBuilder {
 }
 impl CreateConnectionOAuthRequestParametersBuilder {
     /// <p>A <code>CreateConnectionOAuthClientRequestParameters</code> object that contains the client parameters for OAuth authorization.</p>
+    /// This field is required.
     pub fn client_parameters(mut self, input: crate::types::CreateConnectionOAuthClientRequestParameters) -> Self {
         self.client_parameters = ::std::option::Option::Some(input);
         self
@@ -63,6 +65,7 @@ impl CreateConnectionOAuthRequestParametersBuilder {
         &self.client_parameters
     }
     /// <p>The URL to the authorization endpoint when OAuth is specified as the authorization type.</p>
+    /// This field is required.
     pub fn authorization_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorization_endpoint = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +80,7 @@ impl CreateConnectionOAuthRequestParametersBuilder {
         &self.authorization_endpoint
     }
     /// <p>The method to use for the authorization request.</p>
+    /// This field is required.
     pub fn http_method(mut self, input: crate::types::ConnectionOAuthHttpMethod) -> Self {
         self.http_method = ::std::option::Option::Some(input);
         self
@@ -105,12 +109,27 @@ impl CreateConnectionOAuthRequestParametersBuilder {
         &self.o_auth_http_parameters
     }
     /// Consumes the builder and constructs a [`CreateConnectionOAuthRequestParameters`](crate::types::CreateConnectionOAuthRequestParameters).
-    pub fn build(self) -> crate::types::CreateConnectionOAuthRequestParameters {
-        crate::types::CreateConnectionOAuthRequestParameters {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`authorization_endpoint`](crate::types::builders::CreateConnectionOAuthRequestParametersBuilder::authorization_endpoint)
+    /// - [`http_method`](crate::types::builders::CreateConnectionOAuthRequestParametersBuilder::http_method)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::CreateConnectionOAuthRequestParameters, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CreateConnectionOAuthRequestParameters {
             client_parameters: self.client_parameters,
-            authorization_endpoint: self.authorization_endpoint,
-            http_method: self.http_method,
+            authorization_endpoint: self.authorization_endpoint.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "authorization_endpoint",
+                    "authorization_endpoint was not specified but it is required when building CreateConnectionOAuthRequestParameters",
+                )
+            })?,
+            http_method: self.http_method.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "http_method",
+                    "http_method was not specified but it is required when building CreateConnectionOAuthRequestParameters",
+                )
+            })?,
             o_auth_http_parameters: self.o_auth_http_parameters,
-        }
+        })
     }
 }

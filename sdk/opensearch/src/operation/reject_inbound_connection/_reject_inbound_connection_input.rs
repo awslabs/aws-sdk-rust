@@ -28,6 +28,7 @@ pub struct RejectInboundConnectionInputBuilder {
 }
 impl RejectInboundConnectionInputBuilder {
     /// <p>The unique identifier of the inbound connection to reject.</p>
+    /// This field is required.
     pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_id = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl RejectInboundConnectionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reject_inbound_connection::RejectInboundConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::reject_inbound_connection::RejectInboundConnectionInput {
             connection_id: self.connection_id,

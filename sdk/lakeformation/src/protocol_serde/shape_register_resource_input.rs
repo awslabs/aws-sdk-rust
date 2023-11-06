@@ -2,7 +2,7 @@
 pub fn ser_register_resource_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::register_resource::RegisterResourceInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.hybrid_access_enabled {
         object.key("HybridAccessEnabled").boolean(*var_1);
     }

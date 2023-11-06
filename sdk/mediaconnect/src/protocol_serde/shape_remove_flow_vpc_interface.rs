@@ -32,11 +32,8 @@ pub fn de_remove_flow_vpc_interface_http_error(
                 output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output)
                     .map_err(crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterfaceError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::bad_request_exception_correct_errors(output).build()
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ForbiddenException" => crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterfaceError::ForbiddenException({
@@ -47,11 +44,8 @@ pub fn de_remove_flow_vpc_interface_http_error(
                 output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(_response_body, output)
                     .map_err(crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterfaceError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::forbidden_exception_correct_errors(output).build()
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerErrorException" => crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterfaceError::InternalServerErrorException({
@@ -63,11 +57,8 @@ pub fn de_remove_flow_vpc_interface_http_error(
                     crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(_response_body, output)
                         .map_err(crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterfaceError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_error_exception_correct_errors(output).build()
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "NotFoundException" => crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterfaceError::NotFoundException({
@@ -78,11 +69,8 @@ pub fn de_remove_flow_vpc_interface_http_error(
                 output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterfaceError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::not_found_exception_correct_errors(output).build()
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterfaceError::ServiceUnavailableException({
@@ -94,11 +82,8 @@ pub fn de_remove_flow_vpc_interface_http_error(
                     crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
                         .map_err(crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterfaceError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::service_unavailable_exception_correct_errors(output).build()
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "TooManyRequestsException" => crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterfaceError::TooManyRequestsException({
@@ -109,11 +94,8 @@ pub fn de_remove_flow_vpc_interface_http_error(
                 output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output)
                     .map_err(crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterfaceError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::too_many_requests_exception_correct_errors(output).build()
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterfaceError::generic(generic),
@@ -161,8 +143,7 @@ pub(crate) fn de_remove_flow_vpc_interface(
                     );
                 }
                 "nonDeletedNetworkInterfaceIds" => {
-                    builder =
-                        builder.set_non_deleted_network_interface_ids(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                    builder = builder.set_non_deleted_network_interface_ids(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                 }
                 "vpcInterfaceName" => {
                     builder = builder.set_vpc_interface_name(

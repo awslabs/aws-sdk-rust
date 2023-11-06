@@ -58,10 +58,10 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails {
         self.options.as_ref()
     }
     /// <p>The secrets to pass to the log configuration.</p>
-    pub fn secret_options(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails]> {
-        self.secret_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secret_options.is_none()`.
+    pub fn secret_options(&self) -> &[crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails] {
+        self.secret_options.as_deref().unwrap_or_default()
     }
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails {

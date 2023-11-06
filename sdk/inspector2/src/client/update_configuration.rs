@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateConfiguration`](crate::operation::update_configuration::builders::UpdateConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`ecr_configuration(EcrConfiguration)`](crate::operation::update_configuration::builders::UpdateConfigurationFluentBuilder::ecr_configuration) / [`set_ecr_configuration(Option<EcrConfiguration>)`](crate::operation::update_configuration::builders::UpdateConfigurationFluentBuilder::set_ecr_configuration): <p>Specifies how the ECR automated re-scan will be updated for your environment.</p>
+    ///   - [`ecr_configuration(EcrConfiguration)`](crate::operation::update_configuration::builders::UpdateConfigurationFluentBuilder::ecr_configuration) / [`set_ecr_configuration(Option<EcrConfiguration>)`](crate::operation::update_configuration::builders::UpdateConfigurationFluentBuilder::set_ecr_configuration):<br>required: **true**<br><p>Specifies how the ECR automated re-scan will be updated for your environment.</p><br>
     /// - On success, responds with [`UpdateConfigurationOutput`](crate::operation::update_configuration::UpdateConfigurationOutput)
     /// - On failure, responds with [`SdkError<UpdateConfigurationError>`](crate::operation::update_configuration::UpdateConfigurationError)
     pub fn update_configuration(&self) -> crate::operation::update_configuration::builders::UpdateConfigurationFluentBuilder {

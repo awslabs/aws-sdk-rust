@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Tag {
     /// <p>The name assigned to the tag that you create.</p>
-    pub key: ::std::option::Option<::std::string::String>,
+    pub key: ::std::string::String,
     /// <p>The value that corresponds to the key.</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
 }
 impl S3Tag {
     /// <p>The name assigned to the tag that you create.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
-        self.key.as_deref()
+    pub fn key(&self) -> &str {
+        use std::ops::Deref;
+        self.key.deref()
     }
     /// <p>The value that corresponds to the key.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
 }
 impl S3Tag {
@@ -35,6 +37,7 @@ pub struct S3TagBuilder {
 }
 impl S3TagBuilder {
     /// <p>The name assigned to the tag that you create.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl S3TagBuilder {
         &self.key
     }
     /// <p>The value that corresponds to the key.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,20 @@ impl S3TagBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`S3Tag`](crate::types::S3Tag).
-    pub fn build(self) -> crate::types::S3Tag {
-        crate::types::S3Tag {
-            key: self.key,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key`](crate::types::builders::S3TagBuilder::key)
+    /// - [`value`](crate::types::builders::S3TagBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::S3Tag, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::S3Tag {
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building S3Tag")
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building S3Tag",
+                )
+            })?,
+        })
     }
 }

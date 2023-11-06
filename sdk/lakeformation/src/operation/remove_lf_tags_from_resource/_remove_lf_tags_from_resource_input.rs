@@ -20,8 +20,10 @@ impl RemoveLfTagsFromResourceInput {
         self.resource.as_ref()
     }
     /// <p>The LF-tags to be removed from the resource.</p>
-    pub fn lf_tags(&self) -> ::std::option::Option<&[crate::types::LfTagPair]> {
-        self.lf_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lf_tags.is_none()`.
+    pub fn lf_tags(&self) -> &[crate::types::LfTagPair] {
+        self.lf_tags.as_deref().unwrap_or_default()
     }
 }
 impl RemoveLfTagsFromResourceInput {
@@ -55,6 +57,7 @@ impl RemoveLfTagsFromResourceInputBuilder {
         &self.catalog_id
     }
     /// <p>The database, table, or column resource where you want to remove an LF-tag.</p>
+    /// This field is required.
     pub fn resource(mut self, input: crate::types::Resource) -> Self {
         self.resource = ::std::option::Option::Some(input);
         self
@@ -93,7 +96,7 @@ impl RemoveLfTagsFromResourceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_lf_tags_from_resource::RemoveLfTagsFromResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::remove_lf_tags_from_resource::RemoveLfTagsFromResourceInput {
             catalog_id: self.catalog_id,

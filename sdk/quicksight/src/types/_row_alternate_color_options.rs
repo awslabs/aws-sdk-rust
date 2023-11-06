@@ -17,8 +17,10 @@ impl RowAlternateColorOptions {
         self.status.as_ref()
     }
     /// <p>Determines the list of row alternate colors.</p>
-    pub fn row_alternate_colors(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.row_alternate_colors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.row_alternate_colors.is_none()`.
+    pub fn row_alternate_colors(&self) -> &[::std::string::String] {
+        self.row_alternate_colors.as_deref().unwrap_or_default()
     }
     /// <p>The primary background color options for alternate rows.</p>
     pub fn use_primary_background_color(&self) -> ::std::option::Option<&crate::types::WidgetStatus> {

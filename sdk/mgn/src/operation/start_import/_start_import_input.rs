@@ -49,6 +49,7 @@ impl StartImportInputBuilder {
         &self.client_token
     }
     /// <p>Start import request s3 bucket source.</p>
+    /// This field is required.
     pub fn s3_bucket_source(mut self, input: crate::types::S3BucketSource) -> Self {
         self.s3_bucket_source = ::std::option::Option::Some(input);
         self
@@ -63,7 +64,7 @@ impl StartImportInputBuilder {
         &self.s3_bucket_source
     }
     /// Consumes the builder and constructs a [`StartImportInput`](crate::operation::start_import::StartImportInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_import::StartImportInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_import::StartImportInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_import::StartImportInput {
             client_token: self.client_token,
             s3_bucket_source: self.s3_bucket_source,

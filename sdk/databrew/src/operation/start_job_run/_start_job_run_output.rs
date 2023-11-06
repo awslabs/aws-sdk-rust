@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartJobRunOutput {
     /// <p>A system-generated identifier for this particular job run.</p>
-    pub run_id: ::std::option::Option<::std::string::String>,
+    pub run_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl StartJobRunOutput {
     /// <p>A system-generated identifier for this particular job run.</p>
-    pub fn run_id(&self) -> ::std::option::Option<&str> {
-        self.run_id.as_deref()
+    pub fn run_id(&self) -> &str {
+        use std::ops::Deref;
+        self.run_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for StartJobRunOutput {
@@ -34,6 +35,7 @@ pub struct StartJobRunOutputBuilder {
 }
 impl StartJobRunOutputBuilder {
     /// <p>A system-generated identifier for this particular job run.</p>
+    /// This field is required.
     pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.run_id = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,19 @@ impl StartJobRunOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartJobRunOutput`](crate::operation::start_job_run::StartJobRunOutput).
-    pub fn build(self) -> crate::operation::start_job_run::StartJobRunOutput {
-        crate::operation::start_job_run::StartJobRunOutput {
-            run_id: self.run_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`run_id`](crate::operation::start_job_run::builders::StartJobRunOutputBuilder::run_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::start_job_run::StartJobRunOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::start_job_run::StartJobRunOutput {
+            run_id: self.run_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "run_id",
+                    "run_id was not specified but it is required when building StartJobRunOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

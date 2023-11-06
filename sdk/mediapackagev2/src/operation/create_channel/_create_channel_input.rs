@@ -59,6 +59,7 @@ pub struct CreateChannelInputBuilder {
 }
 impl CreateChannelInputBuilder {
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
+    /// This field is required.
     pub fn channel_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_group_name = ::std::option::Option::Some(input.into());
         self
@@ -73,6 +74,7 @@ impl CreateChannelInputBuilder {
         &self.channel_group_name
     }
     /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. You can't change the name after you create the channel.</p>
+    /// This field is required.
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_name = ::std::option::Option::Some(input.into());
         self
@@ -143,7 +145,7 @@ impl CreateChannelInputBuilder {
     /// Consumes the builder and constructs a [`CreateChannelInput`](crate::operation::create_channel::CreateChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_channel::CreateChannelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_channel::CreateChannelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_channel::CreateChannelInput {
             channel_group_name: self.channel_group_name,
             channel_name: self.channel_name,

@@ -28,6 +28,7 @@ pub struct GetSqlInjectionMatchSetInputBuilder {
 }
 impl GetSqlInjectionMatchSetInputBuilder {
     /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to get. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
+    /// This field is required.
     pub fn sql_injection_match_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sql_injection_match_set_id = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl GetSqlInjectionMatchSetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_sql_injection_match_set::GetSqlInjectionMatchSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_sql_injection_match_set::GetSqlInjectionMatchSetInput {
             sql_injection_match_set_id: self.sql_injection_match_set_id,

@@ -51,8 +51,10 @@ impl CreateChannelOutput {
         self.last_modified_time.as_ref()
     }
     /// <p>The output properties to assign to the channel.</p>
-    pub fn outputs(&self) -> ::std::option::Option<&[crate::types::ResponseOutputItem]> {
-        self.outputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outputs.is_none()`.
+    pub fn outputs(&self) -> &[crate::types::ResponseOutputItem] {
+        self.outputs.as_deref().unwrap_or_default()
     }
     /// <p>The playback mode to assign to the channel.</p>
     pub fn playback_mode(&self) -> ::std::option::Option<&str> {

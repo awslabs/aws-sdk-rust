@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AggregationType {
     /// <p>The name of the aggregation type.</p>
-    pub name: ::std::option::Option<crate::types::AggregationTypeName>,
+    pub name: crate::types::AggregationTypeName,
     /// <p>A list of the values of aggregation types.</p>
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AggregationType {
     /// <p>The name of the aggregation type.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::AggregationTypeName> {
-        self.name.as_ref()
+    pub fn name(&self) -> &crate::types::AggregationTypeName {
+        &self.name
     }
     /// <p>A list of the values of aggregation types.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
+    pub fn values(&self) -> &[::std::string::String] {
+        self.values.as_deref().unwrap_or_default()
     }
 }
 impl AggregationType {
@@ -35,6 +37,7 @@ pub struct AggregationTypeBuilder {
 }
 impl AggregationTypeBuilder {
     /// <p>The name of the aggregation type.</p>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::AggregationTypeName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -69,10 +72,17 @@ impl AggregationTypeBuilder {
         &self.values
     }
     /// Consumes the builder and constructs a [`AggregationType`](crate::types::AggregationType).
-    pub fn build(self) -> crate::types::AggregationType {
-        crate::types::AggregationType {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::AggregationTypeBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::AggregationType, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AggregationType {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building AggregationType",
+                )
+            })?,
             values: self.values,
-        }
+        })
     }
 }

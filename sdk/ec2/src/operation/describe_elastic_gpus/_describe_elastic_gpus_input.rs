@@ -23,8 +23,10 @@ pub struct DescribeElasticGpusInput {
 }
 impl DescribeElasticGpusInput {
     /// <p>The Elastic Graphics accelerator IDs.</p>
-    pub fn elastic_gpu_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.elastic_gpu_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.elastic_gpu_ids.is_none()`.
+    pub fn elastic_gpu_ids(&self) -> &[::std::string::String] {
+        self.elastic_gpu_ids.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -38,8 +40,10 @@ impl DescribeElasticGpusInput {
     /// <li> <p> <code>elastic-gpu-type</code> - The type of Elastic Graphics accelerator; for example, <code>eg1.medium</code>.</p> </li>
     /// <li> <p> <code>instance-id</code> - The ID of the instance to which the Elastic Graphics accelerator is associated.</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. This value can be between 5 and 1000.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -174,7 +178,7 @@ impl DescribeElasticGpusInputBuilder {
     /// Consumes the builder and constructs a [`DescribeElasticGpusInput`](crate::operation::describe_elastic_gpus::DescribeElasticGpusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_elastic_gpus::DescribeElasticGpusInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_elastic_gpus::DescribeElasticGpusInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_elastic_gpus::DescribeElasticGpusInput {
             elastic_gpu_ids: self.elastic_gpu_ids,

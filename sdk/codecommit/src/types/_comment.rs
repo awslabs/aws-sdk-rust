@@ -59,8 +59,10 @@ impl Comment {
         self.client_request_token.as_deref()
     }
     /// <p>The emoji reactions to a comment, if any, submitted by the user whose credentials are associated with the call to the API.</p>
-    pub fn caller_reactions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.caller_reactions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.caller_reactions.is_none()`.
+    pub fn caller_reactions(&self) -> &[::std::string::String] {
+        self.caller_reactions.as_deref().unwrap_or_default()
     }
     /// <p>A string to integer map that represents the number of individual users who have responded to a comment with the specified reactions.</p>
     pub fn reaction_counts(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, i32>> {

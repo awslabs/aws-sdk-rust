@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdatePipeline`](crate::operation::update_pipeline::builders::UpdatePipelineFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`pipeline(PipelineDeclaration)`](crate::operation::update_pipeline::builders::UpdatePipelineFluentBuilder::pipeline) / [`set_pipeline(Option<PipelineDeclaration>)`](crate::operation::update_pipeline::builders::UpdatePipelineFluentBuilder::set_pipeline): <p>The name of the pipeline to be updated.</p>
+    ///   - [`pipeline(PipelineDeclaration)`](crate::operation::update_pipeline::builders::UpdatePipelineFluentBuilder::pipeline) / [`set_pipeline(Option<PipelineDeclaration>)`](crate::operation::update_pipeline::builders::UpdatePipelineFluentBuilder::set_pipeline):<br>required: **true**<br><p>The name of the pipeline to be updated.</p><br>
     /// - On success, responds with [`UpdatePipelineOutput`](crate::operation::update_pipeline::UpdatePipelineOutput) with field(s):
     ///   - [`pipeline(Option<PipelineDeclaration>)`](crate::operation::update_pipeline::UpdatePipelineOutput::pipeline): <p>The structure of the updated pipeline.</p>
     /// - On failure, responds with [`SdkError<UpdatePipelineError>`](crate::operation::update_pipeline::UpdatePipelineError)

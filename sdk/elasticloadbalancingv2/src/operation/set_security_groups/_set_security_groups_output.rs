@@ -12,8 +12,10 @@ pub struct SetSecurityGroupsOutput {
 }
 impl SetSecurityGroupsOutput {
     /// <p>The IDs of the security groups associated with the load balancer.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether to evaluate inbound security group rules for traffic sent to a Network Load Balancer through Amazon Web Services PrivateLink.</p>
     pub fn enforce_security_group_inbound_rules_on_private_link_traffic(

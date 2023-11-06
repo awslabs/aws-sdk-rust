@@ -14,14 +14,14 @@ pub struct AnalyticsSessionMetric {
     /// <li> <p> <code>TurnsPerSession</code> – The number of turns in the sessions.</p> </li>
     /// <li> <p> <code>Concurrency</code> – The number of sessions occurring in the same period of time.</p> </li>
     /// </ul>
-    pub name: ::std::option::Option<crate::types::AnalyticsSessionMetricName>,
+    pub name: crate::types::AnalyticsSessionMetricName,
     /// <p>The summary statistic to calculate.</p>
     /// <ul>
     /// <li> <p> <code>Sum</code> – The total count for the category you provide in <code>name</code>.</p> </li>
     /// <li> <p> <code>Average</code> – The total count divided by the number of sessions in the category you provide in <code>name</code>.</p> </li>
     /// <li> <p> <code>Max</code> – The highest count in the category you provide in <code>name</code>.</p> </li>
     /// </ul>
-    pub statistic: ::std::option::Option<crate::types::AnalyticsMetricStatistic>,
+    pub statistic: crate::types::AnalyticsMetricStatistic,
     /// <p>Specifies whether to sort the results in ascending or descending order.</p>
     pub order: ::std::option::Option<crate::types::AnalyticsSortOrder>,
 }
@@ -36,8 +36,8 @@ impl AnalyticsSessionMetric {
     /// <li> <p> <code>TurnsPerSession</code> – The number of turns in the sessions.</p> </li>
     /// <li> <p> <code>Concurrency</code> – The number of sessions occurring in the same period of time.</p> </li>
     /// </ul>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::AnalyticsSessionMetricName> {
-        self.name.as_ref()
+    pub fn name(&self) -> &crate::types::AnalyticsSessionMetricName {
+        &self.name
     }
     /// <p>The summary statistic to calculate.</p>
     /// <ul>
@@ -45,8 +45,8 @@ impl AnalyticsSessionMetric {
     /// <li> <p> <code>Average</code> – The total count divided by the number of sessions in the category you provide in <code>name</code>.</p> </li>
     /// <li> <p> <code>Max</code> – The highest count in the category you provide in <code>name</code>.</p> </li>
     /// </ul>
-    pub fn statistic(&self) -> ::std::option::Option<&crate::types::AnalyticsMetricStatistic> {
-        self.statistic.as_ref()
+    pub fn statistic(&self) -> &crate::types::AnalyticsMetricStatistic {
+        &self.statistic
     }
     /// <p>Specifies whether to sort the results in ascending or descending order.</p>
     pub fn order(&self) -> ::std::option::Option<&crate::types::AnalyticsSortOrder> {
@@ -79,6 +79,7 @@ impl AnalyticsSessionMetricBuilder {
     /// <li> <p> <code>TurnsPerSession</code> – The number of turns in the sessions.</p> </li>
     /// <li> <p> <code>Concurrency</code> – The number of sessions occurring in the same period of time.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::AnalyticsSessionMetricName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -116,6 +117,7 @@ impl AnalyticsSessionMetricBuilder {
     /// <li> <p> <code>Average</code> – The total count divided by the number of sessions in the category you provide in <code>name</code>.</p> </li>
     /// <li> <p> <code>Max</code> – The highest count in the category you provide in <code>name</code>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn statistic(mut self, input: crate::types::AnalyticsMetricStatistic) -> Self {
         self.statistic = ::std::option::Option::Some(input);
         self
@@ -154,11 +156,24 @@ impl AnalyticsSessionMetricBuilder {
         &self.order
     }
     /// Consumes the builder and constructs a [`AnalyticsSessionMetric`](crate::types::AnalyticsSessionMetric).
-    pub fn build(self) -> crate::types::AnalyticsSessionMetric {
-        crate::types::AnalyticsSessionMetric {
-            name: self.name,
-            statistic: self.statistic,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::AnalyticsSessionMetricBuilder::name)
+    /// - [`statistic`](crate::types::builders::AnalyticsSessionMetricBuilder::statistic)
+    pub fn build(self) -> ::std::result::Result<crate::types::AnalyticsSessionMetric, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AnalyticsSessionMetric {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building AnalyticsSessionMetric",
+                )
+            })?,
+            statistic: self.statistic.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "statistic",
+                    "statistic was not specified but it is required when building AnalyticsSessionMetric",
+                )
+            })?,
             order: self.order,
-        }
+        })
     }
 }

@@ -2,8 +2,8 @@
 pub fn ser_aws_app_sync_graph_ql_api_open_id_connect_config_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsAppSyncGraphQlApiOpenIdConnectConfigDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.auth_tt_l {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    if let Some(var_1) = &input.auth_ttl {
         object.key("AuthTtL").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_1).into()),
@@ -12,7 +12,7 @@ pub fn ser_aws_app_sync_graph_ql_api_open_id_connect_config_details(
     if let Some(var_2) = &input.client_id {
         object.key("ClientId").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.iat_tt_l {
+    if let Some(var_3) = &input.iat_ttl {
         object.key("IatTtL").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_3).into()),
@@ -40,7 +40,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "AuthTtL" => {
-                            builder = builder.set_auth_tt_l(
+                            builder = builder.set_auth_ttl(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i64::try_from)
                                     .transpose()?,
@@ -54,7 +54,7 @@ where
                             );
                         }
                         "IatTtL" => {
-                            builder = builder.set_iat_tt_l(
+                            builder = builder.set_iat_ttl(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i64::try_from)
                                     .transpose()?,

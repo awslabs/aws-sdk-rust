@@ -2,18 +2,18 @@
 pub fn ser_row_level_permission_tag_rule(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RowLevelPermissionTagRule,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.tag_key {
-        object.key("TagKey").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("TagKey").string(input.tag_key.as_str());
     }
-    if let Some(var_2) = &input.column_name {
-        object.key("ColumnName").string(var_2.as_str());
+    {
+        object.key("ColumnName").string(input.column_name.as_str());
     }
-    if let Some(var_3) = &input.tag_multi_value_delimiter {
-        object.key("TagMultiValueDelimiter").string(var_3.as_str());
+    if let Some(var_1) = &input.tag_multi_value_delimiter {
+        object.key("TagMultiValueDelimiter").string(var_1.as_str());
     }
-    if let Some(var_4) = &input.match_all_value {
-        object.key("MatchAllValue").string(var_4.as_str());
+    if let Some(var_2) = &input.match_all_value {
+        object.key("MatchAllValue").string(var_2.as_str());
     }
     Ok(())
 }
@@ -71,7 +71,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::row_level_permission_tag_rule_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

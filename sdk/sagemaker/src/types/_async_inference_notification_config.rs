@@ -25,8 +25,10 @@ impl AsyncInferenceNotificationConfig {
     /// <p>The Amazon SNS topics where you want the inference response to be included.</p> <note>
     /// <p>The inference response is included only if the response size is less than or equal to 128 KB.</p>
     /// </note>
-    pub fn include_inference_response_in(&self) -> ::std::option::Option<&[crate::types::AsyncNotificationTopicTypes]> {
-        self.include_inference_response_in.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.include_inference_response_in.is_none()`.
+    pub fn include_inference_response_in(&self) -> &[crate::types::AsyncNotificationTopicTypes] {
+        self.include_inference_response_in.as_deref().unwrap_or_default()
     }
 }
 impl AsyncInferenceNotificationConfig {

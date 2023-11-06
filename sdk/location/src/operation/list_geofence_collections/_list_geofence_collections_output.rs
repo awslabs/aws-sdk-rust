@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListGeofenceCollectionsOutput {
     /// <p>Lists the geofence collections that exist in your Amazon Web Services account.</p>
-    pub entries: ::std::option::Option<::std::vec::Vec<crate::types::ListGeofenceCollectionsResponseEntry>>,
+    pub entries: ::std::vec::Vec<crate::types::ListGeofenceCollectionsResponseEntry>,
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListGeofenceCollectionsOutput {
     /// <p>Lists the geofence collections that exist in your Amazon Web Services account.</p>
-    pub fn entries(&self) -> ::std::option::Option<&[crate::types::ListGeofenceCollectionsResponseEntry]> {
-        self.entries.as_deref()
+    pub fn entries(&self) -> &[crate::types::ListGeofenceCollectionsResponseEntry] {
+        use std::ops::Deref;
+        self.entries.deref()
     }
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,23 @@ impl ListGeofenceCollectionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListGeofenceCollectionsOutput`](crate::operation::list_geofence_collections::ListGeofenceCollectionsOutput).
-    pub fn build(self) -> crate::operation::list_geofence_collections::ListGeofenceCollectionsOutput {
-        crate::operation::list_geofence_collections::ListGeofenceCollectionsOutput {
-            entries: self.entries,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`entries`](crate::operation::list_geofence_collections::builders::ListGeofenceCollectionsOutputBuilder::entries)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_geofence_collections::ListGeofenceCollectionsOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_geofence_collections::ListGeofenceCollectionsOutput {
+            entries: self.entries.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "entries",
+                    "entries was not specified but it is required when building ListGeofenceCollectionsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

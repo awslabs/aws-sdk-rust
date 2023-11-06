@@ -26,20 +26,26 @@ impl LoadBalancerInfo {
     /// </note> <note>
     /// <p>If you're using Application Load Balancers or Network Load Balancers, use the <code>targetGroupInfoList</code> array instead of this one.</p>
     /// </note>
-    pub fn elb_info_list(&self) -> ::std::option::Option<&[crate::types::ElbInfo]> {
-        self.elb_info_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.elb_info_list.is_none()`.
+    pub fn elb_info_list(&self) -> &[crate::types::ElbInfo] {
+        self.elb_info_list.as_deref().unwrap_or_default()
     }
     /// <p>An array that contains information about the target groups to use for load balancing in a deployment. If you're using Application Load Balancers and Network Load Balancers, specify their associated target groups in this array.</p> <note>
     /// <p>You can add up to 10 target groups to the array.</p>
     /// </note> <note>
     /// <p>If you're using Classic Load Balancers, use the <code>elbInfoList</code> array instead of this one.</p>
     /// </note>
-    pub fn target_group_info_list(&self) -> ::std::option::Option<&[crate::types::TargetGroupInfo]> {
-        self.target_group_info_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_group_info_list.is_none()`.
+    pub fn target_group_info_list(&self) -> &[crate::types::TargetGroupInfo] {
+        self.target_group_info_list.as_deref().unwrap_or_default()
     }
     /// <p> The target group pair information. This is an array of <code>TargeGroupPairInfo</code> objects with a maximum size of one. </p>
-    pub fn target_group_pair_info_list(&self) -> ::std::option::Option<&[crate::types::TargetGroupPairInfo]> {
-        self.target_group_pair_info_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_group_pair_info_list.is_none()`.
+    pub fn target_group_pair_info_list(&self) -> &[crate::types::TargetGroupPairInfo] {
+        self.target_group_pair_info_list.as_deref().unwrap_or_default()
     }
 }
 impl LoadBalancerInfo {

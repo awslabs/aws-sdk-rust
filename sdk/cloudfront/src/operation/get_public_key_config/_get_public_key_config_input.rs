@@ -27,6 +27,7 @@ pub struct GetPublicKeyConfigInputBuilder {
 }
 impl GetPublicKeyConfigInputBuilder {
     /// <p>The identifier of the public key whose configuration you are getting.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetPublicKeyConfigInputBuilder {
     /// Consumes the builder and constructs a [`GetPublicKeyConfigInput`](crate::operation::get_public_key_config::GetPublicKeyConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_public_key_config::GetPublicKeyConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_public_key_config::GetPublicKeyConfigInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_public_key_config::GetPublicKeyConfigInput { id: self.id })
     }

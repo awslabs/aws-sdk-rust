@@ -35,6 +35,7 @@ pub struct JobManifestBuilder {
 }
 impl JobManifestBuilder {
     /// <p>Describes the format of the specified job's manifest. If the manifest is in CSV format, also describes the columns contained within the manifest.</p>
+    /// This field is required.
     pub fn spec(mut self, input: crate::types::JobManifestSpec) -> Self {
         self.spec = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl JobManifestBuilder {
         &self.spec
     }
     /// <p>Contains the information required to locate the specified job's manifest.</p>
+    /// This field is required.
     pub fn location(mut self, input: crate::types::JobManifestLocation) -> Self {
         self.location = ::std::option::Option::Some(input);
         self

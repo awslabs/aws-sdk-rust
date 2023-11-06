@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnsupportedTimestamps {
     /// <p> Indicates the total number of unsupported timestamps across the ingested data. </p>
-    pub total_number_of_unsupported_timestamps: ::std::option::Option<i32>,
+    pub total_number_of_unsupported_timestamps: i32,
 }
 impl UnsupportedTimestamps {
     /// <p> Indicates the total number of unsupported timestamps across the ingested data. </p>
-    pub fn total_number_of_unsupported_timestamps(&self) -> ::std::option::Option<i32> {
+    pub fn total_number_of_unsupported_timestamps(&self) -> i32 {
         self.total_number_of_unsupported_timestamps
     }
 }
@@ -28,6 +28,7 @@ pub struct UnsupportedTimestampsBuilder {
 }
 impl UnsupportedTimestampsBuilder {
     /// <p> Indicates the total number of unsupported timestamps across the ingested data. </p>
+    /// This field is required.
     pub fn total_number_of_unsupported_timestamps(mut self, input: i32) -> Self {
         self.total_number_of_unsupported_timestamps = ::std::option::Option::Some(input);
         self
@@ -42,9 +43,16 @@ impl UnsupportedTimestampsBuilder {
         &self.total_number_of_unsupported_timestamps
     }
     /// Consumes the builder and constructs a [`UnsupportedTimestamps`](crate::types::UnsupportedTimestamps).
-    pub fn build(self) -> crate::types::UnsupportedTimestamps {
-        crate::types::UnsupportedTimestamps {
-            total_number_of_unsupported_timestamps: self.total_number_of_unsupported_timestamps,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`total_number_of_unsupported_timestamps`](crate::types::builders::UnsupportedTimestampsBuilder::total_number_of_unsupported_timestamps)
+    pub fn build(self) -> ::std::result::Result<crate::types::UnsupportedTimestamps, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::UnsupportedTimestamps {
+            total_number_of_unsupported_timestamps: self.total_number_of_unsupported_timestamps.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "total_number_of_unsupported_timestamps",
+                    "total_number_of_unsupported_timestamps was not specified but it is required when building UnsupportedTimestamps",
+                )
+            })?,
+        })
     }
 }

@@ -34,6 +34,7 @@ pub struct DescribeWorkflowExecutionInputBuilder {
 }
 impl DescribeWorkflowExecutionInputBuilder {
     /// <p>The name of the domain containing the workflow execution.</p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeWorkflowExecutionInputBuilder {
         &self.domain
     }
     /// <p>The workflow execution to describe.</p>
+    /// This field is required.
     pub fn execution(mut self, input: crate::types::WorkflowExecution) -> Self {
         self.execution = ::std::option::Option::Some(input);
         self
@@ -66,7 +68,7 @@ impl DescribeWorkflowExecutionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_workflow_execution::DescribeWorkflowExecutionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_workflow_execution::DescribeWorkflowExecutionInput {
             domain: self.domain,

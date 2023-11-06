@@ -35,6 +35,7 @@ pub struct DeleteBranchInputBuilder {
 }
 impl DeleteBranchInputBuilder {
     /// <p>The name of the repository that contains the branch to be deleted.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl DeleteBranchInputBuilder {
         &self.repository_name
     }
     /// <p>The name of the branch to delete.</p>
+    /// This field is required.
     pub fn branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch_name = ::std::option::Option::Some(input.into());
         self
@@ -63,7 +65,9 @@ impl DeleteBranchInputBuilder {
         &self.branch_name
     }
     /// Consumes the builder and constructs a [`DeleteBranchInput`](crate::operation::delete_branch::DeleteBranchInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_branch::DeleteBranchInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_branch::DeleteBranchInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_branch::DeleteBranchInput {
             repository_name: self.repository_name,
             branch_name: self.branch_name,

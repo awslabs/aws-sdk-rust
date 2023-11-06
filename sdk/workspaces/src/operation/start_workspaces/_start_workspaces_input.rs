@@ -8,8 +8,10 @@ pub struct StartWorkspacesInput {
 }
 impl StartWorkspacesInput {
     /// <p>The WorkSpaces to start. You can specify up to 25 WorkSpaces.</p>
-    pub fn start_workspace_requests(&self) -> ::std::option::Option<&[crate::types::StartRequest]> {
-        self.start_workspace_requests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.start_workspace_requests.is_none()`.
+    pub fn start_workspace_requests(&self) -> &[crate::types::StartRequest] {
+        self.start_workspace_requests.as_deref().unwrap_or_default()
     }
 }
 impl StartWorkspacesInput {
@@ -49,7 +51,7 @@ impl StartWorkspacesInputBuilder {
     /// Consumes the builder and constructs a [`StartWorkspacesInput`](crate::operation::start_workspaces::StartWorkspacesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_workspaces::StartWorkspacesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_workspaces::StartWorkspacesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_workspaces::StartWorkspacesInput {
             start_workspace_requests: self.start_workspace_requests,
         })

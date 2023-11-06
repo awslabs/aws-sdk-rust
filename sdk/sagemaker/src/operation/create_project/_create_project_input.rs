@@ -26,8 +26,10 @@ impl CreateProjectInput {
         self.service_catalog_provisioning_details.as_ref()
     }
     /// <p>An array of key-value pairs that you want to use to organize and track your Amazon Web Services resource costs. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateProjectInput {
@@ -48,6 +50,7 @@ pub struct CreateProjectInputBuilder {
 }
 impl CreateProjectInputBuilder {
     /// <p>The name of the project.</p>
+    /// This field is required.
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +79,7 @@ impl CreateProjectInputBuilder {
         &self.project_description
     }
     /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.</p>
+    /// This field is required.
     pub fn service_catalog_provisioning_details(mut self, input: crate::types::ServiceCatalogProvisioningDetails) -> Self {
         self.service_catalog_provisioning_details = ::std::option::Option::Some(input);
         self
@@ -112,7 +116,7 @@ impl CreateProjectInputBuilder {
     /// Consumes the builder and constructs a [`CreateProjectInput`](crate::operation::create_project::CreateProjectInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_project::CreateProjectInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_project::CreateProjectInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_project::CreateProjectInput {
             project_name: self.project_name,
             project_description: self.project_description,

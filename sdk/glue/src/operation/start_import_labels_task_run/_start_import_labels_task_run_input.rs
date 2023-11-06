@@ -41,6 +41,7 @@ pub struct StartImportLabelsTaskRunInputBuilder {
 }
 impl StartImportLabelsTaskRunInputBuilder {
     /// <p>The unique identifier of the machine learning transform.</p>
+    /// This field is required.
     pub fn transform_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transform_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl StartImportLabelsTaskRunInputBuilder {
         &self.transform_id
     }
     /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you import the labels.</p>
+    /// This field is required.
     pub fn input_s3_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_s3_path = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +89,7 @@ impl StartImportLabelsTaskRunInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_import_labels_task_run::StartImportLabelsTaskRunInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_import_labels_task_run::StartImportLabelsTaskRunInput {
             transform_id: self.transform_id,

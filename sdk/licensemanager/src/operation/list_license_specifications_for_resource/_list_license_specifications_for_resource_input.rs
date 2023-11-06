@@ -41,6 +41,7 @@ pub struct ListLicenseSpecificationsForResourceInputBuilder {
 }
 impl ListLicenseSpecificationsForResourceInputBuilder {
     /// <p>Amazon Resource Name (ARN) of a resource that has an associated license configuration.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListLicenseSpecificationsForResourceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceInput {

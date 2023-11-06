@@ -3,7 +3,7 @@
 pub fn ser_register_instance_tag_attribute_request(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::RegisterInstanceTagAttributeRequest,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("IncludeAllTagsOfInstance");
     if let Some(var_2) = &input.include_all_tags_of_instance {

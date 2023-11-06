@@ -27,32 +27,46 @@ impl AssetBundleCloudFormationOverridePropertyConfiguration {
         self.resource_id_override_configuration.as_ref()
     }
     /// <p>An optional list of structures that control how <code>VPCConnection</code> resources are parameterized in the returned CloudFormation template.</p>
-    pub fn vpc_connections(&self) -> ::std::option::Option<&[crate::types::AssetBundleExportJobVpcConnectionOverrideProperties]> {
-        self.vpc_connections.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_connections.is_none()`.
+    pub fn vpc_connections(&self) -> &[crate::types::AssetBundleExportJobVpcConnectionOverrideProperties] {
+        self.vpc_connections.as_deref().unwrap_or_default()
     }
     /// <p>An optional list of structures that control how <code>RefreshSchedule</code> resources are parameterized in the returned CloudFormation template.</p>
-    pub fn refresh_schedules(&self) -> ::std::option::Option<&[crate::types::AssetBundleExportJobRefreshScheduleOverrideProperties]> {
-        self.refresh_schedules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.refresh_schedules.is_none()`.
+    pub fn refresh_schedules(&self) -> &[crate::types::AssetBundleExportJobRefreshScheduleOverrideProperties] {
+        self.refresh_schedules.as_deref().unwrap_or_default()
     }
     /// <p>An optional list of structures that control how <code>DataSource</code> resources are parameterized in the returned CloudFormation template.</p>
-    pub fn data_sources(&self) -> ::std::option::Option<&[crate::types::AssetBundleExportJobDataSourceOverrideProperties]> {
-        self.data_sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_sources.is_none()`.
+    pub fn data_sources(&self) -> &[crate::types::AssetBundleExportJobDataSourceOverrideProperties] {
+        self.data_sources.as_deref().unwrap_or_default()
     }
     /// <p>An optional list of structures that control how <code>DataSet</code> resources are parameterized in the returned CloudFormation template.</p>
-    pub fn data_sets(&self) -> ::std::option::Option<&[crate::types::AssetBundleExportJobDataSetOverrideProperties]> {
-        self.data_sets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_sets.is_none()`.
+    pub fn data_sets(&self) -> &[crate::types::AssetBundleExportJobDataSetOverrideProperties] {
+        self.data_sets.as_deref().unwrap_or_default()
     }
     /// <p>An optional list of structures that control how <code>Theme</code> resources are parameterized in the returned CloudFormation template.</p>
-    pub fn themes(&self) -> ::std::option::Option<&[crate::types::AssetBundleExportJobThemeOverrideProperties]> {
-        self.themes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.themes.is_none()`.
+    pub fn themes(&self) -> &[crate::types::AssetBundleExportJobThemeOverrideProperties] {
+        self.themes.as_deref().unwrap_or_default()
     }
     /// <p>An optional list of structures that control how <code>Analysis</code> resources are parameterized in the returned CloudFormation template.</p>
-    pub fn analyses(&self) -> ::std::option::Option<&[crate::types::AssetBundleExportJobAnalysisOverrideProperties]> {
-        self.analyses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.analyses.is_none()`.
+    pub fn analyses(&self) -> &[crate::types::AssetBundleExportJobAnalysisOverrideProperties] {
+        self.analyses.as_deref().unwrap_or_default()
     }
     /// <p>An optional list of structures that control how <code>Dashboard</code> resources are parameterized in the returned CloudFormation template.</p>
-    pub fn dashboards(&self) -> ::std::option::Option<&[crate::types::AssetBundleExportJobDashboardOverrideProperties]> {
-        self.dashboards.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dashboards.is_none()`.
+    pub fn dashboards(&self) -> &[crate::types::AssetBundleExportJobDashboardOverrideProperties] {
+        self.dashboards.as_deref().unwrap_or_default()
     }
 }
 impl AssetBundleCloudFormationOverridePropertyConfiguration {

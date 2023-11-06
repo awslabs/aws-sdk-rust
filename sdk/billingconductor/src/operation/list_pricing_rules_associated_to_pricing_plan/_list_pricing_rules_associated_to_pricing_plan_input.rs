@@ -63,6 +63,7 @@ impl ListPricingRulesAssociatedToPricingPlanInputBuilder {
         &self.billing_period
     }
     /// <p> The Amazon Resource Name (ARN) of the pricing plan for which associations are to be listed.</p>
+    /// This field is required.
     pub fn pricing_plan_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pricing_plan_arn = ::std::option::Option::Some(input.into());
         self
@@ -109,7 +110,7 @@ impl ListPricingRulesAssociatedToPricingPlanInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_pricing_rules_associated_to_pricing_plan::ListPricingRulesAssociatedToPricingPlanInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_pricing_rules_associated_to_pricing_plan::ListPricingRulesAssociatedToPricingPlanInput {

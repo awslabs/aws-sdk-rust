@@ -14,8 +14,10 @@ impl DescribeLifecycleHooksInput {
         self.auto_scaling_group_name.as_deref()
     }
     /// <p>The names of one or more lifecycle hooks. If you omit this property, all lifecycle hooks are described.</p>
-    pub fn lifecycle_hook_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.lifecycle_hook_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lifecycle_hook_names.is_none()`.
+    pub fn lifecycle_hook_names(&self) -> &[::std::string::String] {
+        self.lifecycle_hook_names.as_deref().unwrap_or_default()
     }
 }
 impl DescribeLifecycleHooksInput {
@@ -34,6 +36,7 @@ pub struct DescribeLifecycleHooksInputBuilder {
 }
 impl DescribeLifecycleHooksInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
+    /// This field is required.
     pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
@@ -70,8 +73,10 @@ impl DescribeLifecycleHooksInputBuilder {
     /// Consumes the builder and constructs a [`DescribeLifecycleHooksInput`](crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooksInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooksInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooksInput {
             auto_scaling_group_name: self.auto_scaling_group_name,
             lifecycle_hook_names: self.lifecycle_hook_names,

@@ -27,6 +27,7 @@ pub struct DeleteModelBiasJobDefinitionInputBuilder {
 }
 impl DeleteModelBiasJobDefinitionInputBuilder {
     /// <p>The name of the model bias job definition to delete.</p>
+    /// This field is required.
     pub fn job_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_definition_name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteModelBiasJobDefinitionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_model_bias_job_definition::DeleteModelBiasJobDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_model_bias_job_definition::DeleteModelBiasJobDefinitionInput {
             job_definition_name: self.job_definition_name,

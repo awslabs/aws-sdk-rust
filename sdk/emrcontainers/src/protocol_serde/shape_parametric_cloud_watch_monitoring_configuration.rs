@@ -2,7 +2,7 @@
 pub fn ser_parametric_cloud_watch_monitoring_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ParametricCloudWatchMonitoringConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.log_group_name {
         object.key("logGroupName").string(var_1.as_str());
     }

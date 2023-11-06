@@ -2,57 +2,57 @@
 pub fn ser_pipe_source_self_managed_kafka_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PipeSourceSelfManagedKafkaParameters,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.topic_name {
-        object.key("TopicName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("TopicName").string(input.topic_name.as_str());
     }
-    if let Some(var_2) = &input.starting_position {
-        object.key("StartingPosition").string(var_2.as_str());
+    if let Some(var_1) = &input.starting_position {
+        object.key("StartingPosition").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.additional_bootstrap_servers {
-        let mut array_4 = object.key("AdditionalBootstrapServers").start_array();
-        for item_5 in var_3 {
+    if let Some(var_2) = &input.additional_bootstrap_servers {
+        let mut array_3 = object.key("AdditionalBootstrapServers").start_array();
+        for item_4 in var_2 {
             {
-                array_4.value().string(item_5.as_str());
+                array_3.value().string(item_4.as_str());
             }
         }
-        array_4.finish();
+        array_3.finish();
     }
-    if let Some(var_6) = &input.batch_size {
+    if let Some(var_5) = &input.batch_size {
         object.key("BatchSize").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
+        );
+    }
+    if let Some(var_6) = &input.maximum_batching_window_in_seconds {
+        object.key("MaximumBatchingWindowInSeconds").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if let Some(var_7) = &input.maximum_batching_window_in_seconds {
-        object.key("MaximumBatchingWindowInSeconds").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_7).into()),
-        );
+    if let Some(var_7) = &input.consumer_group_id {
+        object.key("ConsumerGroupID").string(var_7.as_str());
     }
-    if let Some(var_8) = &input.consumer_group_id {
-        object.key("ConsumerGroupID").string(var_8.as_str());
-    }
-    if let Some(var_9) = &input.credentials {
+    if let Some(var_8) = &input.credentials {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("Credentials").start_object();
+        let mut object_9 = object.key("Credentials").start_object();
         crate::protocol_serde::shape_self_managed_kafka_access_configuration_credentials::ser_self_managed_kafka_access_configuration_credentials(
-            &mut object_10,
-            var_9,
+            &mut object_9,
+            var_8,
         )?;
-        object_10.finish();
+        object_9.finish();
     }
-    if let Some(var_11) = &input.server_root_ca_certificate {
-        object.key("ServerRootCaCertificate").string(var_11.as_str());
+    if let Some(var_10) = &input.server_root_ca_certificate {
+        object.key("ServerRootCaCertificate").string(var_10.as_str());
     }
-    if let Some(var_12) = &input.vpc {
+    if let Some(var_11) = &input.vpc {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("Vpc").start_object();
+        let mut object_12 = object.key("Vpc").start_object();
         crate::protocol_serde::shape_self_managed_kafka_access_configuration_vpc::ser_self_managed_kafka_access_configuration_vpc(
-            &mut object_13,
-            var_12,
+            &mut object_12,
+            var_11,
         )?;
-        object_13.finish();
+        object_12.finish();
     }
     Ok(())
 }
@@ -139,7 +139,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::pipe_source_self_managed_kafka_parameters_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

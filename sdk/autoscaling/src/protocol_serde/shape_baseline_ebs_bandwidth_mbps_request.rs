@@ -3,7 +3,7 @@
 pub fn ser_baseline_ebs_bandwidth_mbps_request(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::BaselineEbsBandwidthMbpsRequest,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Min");
     if let Some(var_2) = &input.min {
@@ -23,6 +23,7 @@ pub fn ser_baseline_ebs_bandwidth_mbps_request(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_baseline_ebs_bandwidth_mbps_request(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::BaselineEbsBandwidthMbpsRequest, ::aws_smithy_xml::decode::XmlDecodeError> {

@@ -34,6 +34,7 @@ pub struct DeleteCustomLineItemInputBuilder {
 }
 impl DeleteCustomLineItemInputBuilder {
     /// <p> The ARN of the custom line item to be deleted. </p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl DeleteCustomLineItemInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCustomLineItemInput`](crate::operation::delete_custom_line_item::DeleteCustomLineItemInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_custom_line_item::DeleteCustomLineItemInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_custom_line_item::DeleteCustomLineItemInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_custom_line_item::DeleteCustomLineItemInput {
             arn: self.arn,

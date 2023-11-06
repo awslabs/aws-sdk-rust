@@ -32,16 +32,22 @@ impl CreateDetectorVersionInput {
         self.description.as_deref()
     }
     /// <p>The Amazon Sagemaker model endpoints to include in the detector version.</p>
-    pub fn external_model_endpoints(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.external_model_endpoints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.external_model_endpoints.is_none()`.
+    pub fn external_model_endpoints(&self) -> &[::std::string::String] {
+        self.external_model_endpoints.as_deref().unwrap_or_default()
     }
     /// <p>The rules to include in the detector version.</p>
-    pub fn rules(&self) -> ::std::option::Option<&[crate::types::Rule]> {
-        self.rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
+    pub fn rules(&self) -> &[crate::types::Rule] {
+        self.rules.as_deref().unwrap_or_default()
     }
     /// <p>The model versions to include in the detector version.</p>
-    pub fn model_versions(&self) -> ::std::option::Option<&[crate::types::ModelVersion]> {
-        self.model_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.model_versions.is_none()`.
+    pub fn model_versions(&self) -> &[crate::types::ModelVersion] {
+        self.model_versions.as_deref().unwrap_or_default()
     }
     /// <p>The rule execution mode for the rules included in the detector version.</p>
     /// <p>You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
@@ -52,8 +58,10 @@ impl CreateDetectorVersionInput {
         self.rule_execution_mode.as_ref()
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateDetectorVersionInput {
@@ -77,6 +85,7 @@ pub struct CreateDetectorVersionInputBuilder {
 }
 impl CreateDetectorVersionInputBuilder {
     /// <p>The ID of the detector under which you want to create a new version.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
@@ -213,7 +222,7 @@ impl CreateDetectorVersionInputBuilder {
     /// Consumes the builder and constructs a [`CreateDetectorVersionInput`](crate::operation::create_detector_version::CreateDetectorVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_detector_version::CreateDetectorVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_detector_version::CreateDetectorVersionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_detector_version::CreateDetectorVersionInput {
             detector_id: self.detector_id,

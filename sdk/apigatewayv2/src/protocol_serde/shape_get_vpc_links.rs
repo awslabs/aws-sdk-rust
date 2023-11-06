@@ -79,7 +79,7 @@ pub(crate) fn de_get_vpc_links(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "items" => {
-                    builder = builder.set_items(crate::protocol_serde::shape___list_of_vpc_link::de___list_of_vpc_link(tokens)?);
+                    builder = builder.set_items(crate::protocol_serde::shape_list_of_vpc_link::de_list_of_vpc_link(tokens)?);
                 }
                 "nextToken" => {
                     builder = builder.set_next_token(

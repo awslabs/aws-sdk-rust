@@ -57,6 +57,7 @@ impl DescribeActivityTypeOutputBuilder {
     /// <li> <p> <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running. </p> </li>
     /// <li> <p> <code>DEPRECATED</code> – The type was deprecated using <code>DeprecateActivityType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new tasks of this type. </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn type_info(mut self, input: crate::types::ActivityTypeInfo) -> Self {
         self.type_info = ::std::option::Option::Some(input);
         self
@@ -81,6 +82,7 @@ impl DescribeActivityTypeOutputBuilder {
         &self.type_info
     }
     /// <p>The configuration settings registered with the activity type.</p>
+    /// This field is required.
     pub fn configuration(mut self, input: crate::types::ActivityTypeConfiguration) -> Self {
         self.configuration = ::std::option::Option::Some(input);
         self

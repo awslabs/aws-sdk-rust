@@ -55,6 +55,7 @@ pub struct CreateAccessPolicyInputBuilder {
 }
 impl CreateAccessPolicyInputBuilder {
     /// <p>The identity for this access policy. Choose an IAM Identity Center user, an IAM Identity Center group, or an IAM user.</p>
+    /// This field is required.
     pub fn access_policy_identity(mut self, input: crate::types::Identity) -> Self {
         self.access_policy_identity = ::std::option::Option::Some(input);
         self
@@ -69,6 +70,7 @@ impl CreateAccessPolicyInputBuilder {
         &self.access_policy_identity
     }
     /// <p>The IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.</p>
+    /// This field is required.
     pub fn access_policy_resource(mut self, input: crate::types::Resource) -> Self {
         self.access_policy_resource = ::std::option::Option::Some(input);
         self
@@ -83,6 +85,7 @@ impl CreateAccessPolicyInputBuilder {
         &self.access_policy_resource
     }
     /// <p>The permission level for this access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
+    /// This field is required.
     pub fn access_policy_permission(mut self, input: crate::types::Permission) -> Self {
         self.access_policy_permission = ::std::option::Option::Some(input);
         self
@@ -133,7 +136,8 @@ impl CreateAccessPolicyInputBuilder {
     /// Consumes the builder and constructs a [`CreateAccessPolicyInput`](crate::operation::create_access_policy::CreateAccessPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_access_policy::CreateAccessPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_access_policy::CreateAccessPolicyInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_access_policy::CreateAccessPolicyInput {
             access_policy_identity: self.access_policy_identity,
             access_policy_resource: self.access_policy_resource,

@@ -5,29 +5,31 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeFilePath {
     /// <p>The name of the file the code vulnerability was found in.</p>
-    pub file_name: ::std::option::Option<::std::string::String>,
+    pub file_name: ::std::string::String,
     /// <p>The file path to the code that a vulnerability was found in.</p>
-    pub file_path: ::std::option::Option<::std::string::String>,
+    pub file_path: ::std::string::String,
     /// <p>The line number of the first line of code that a vulnerability was found in.</p>
-    pub start_line: ::std::option::Option<i32>,
+    pub start_line: i32,
     /// <p>The line number of the last line of code that a vulnerability was found in.</p>
-    pub end_line: ::std::option::Option<i32>,
+    pub end_line: i32,
 }
 impl CodeFilePath {
     /// <p>The name of the file the code vulnerability was found in.</p>
-    pub fn file_name(&self) -> ::std::option::Option<&str> {
-        self.file_name.as_deref()
+    pub fn file_name(&self) -> &str {
+        use std::ops::Deref;
+        self.file_name.deref()
     }
     /// <p>The file path to the code that a vulnerability was found in.</p>
-    pub fn file_path(&self) -> ::std::option::Option<&str> {
-        self.file_path.as_deref()
+    pub fn file_path(&self) -> &str {
+        use std::ops::Deref;
+        self.file_path.deref()
     }
     /// <p>The line number of the first line of code that a vulnerability was found in.</p>
-    pub fn start_line(&self) -> ::std::option::Option<i32> {
+    pub fn start_line(&self) -> i32 {
         self.start_line
     }
     /// <p>The line number of the last line of code that a vulnerability was found in.</p>
-    pub fn end_line(&self) -> ::std::option::Option<i32> {
+    pub fn end_line(&self) -> i32 {
         self.end_line
     }
 }
@@ -49,6 +51,7 @@ pub struct CodeFilePathBuilder {
 }
 impl CodeFilePathBuilder {
     /// <p>The name of the file the code vulnerability was found in.</p>
+    /// This field is required.
     pub fn file_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_name = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +66,7 @@ impl CodeFilePathBuilder {
         &self.file_name
     }
     /// <p>The file path to the code that a vulnerability was found in.</p>
+    /// This field is required.
     pub fn file_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_path = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +81,7 @@ impl CodeFilePathBuilder {
         &self.file_path
     }
     /// <p>The line number of the first line of code that a vulnerability was found in.</p>
+    /// This field is required.
     pub fn start_line(mut self, input: i32) -> Self {
         self.start_line = ::std::option::Option::Some(input);
         self
@@ -91,6 +96,7 @@ impl CodeFilePathBuilder {
         &self.start_line
     }
     /// <p>The line number of the last line of code that a vulnerability was found in.</p>
+    /// This field is required.
     pub fn end_line(mut self, input: i32) -> Self {
         self.end_line = ::std::option::Option::Some(input);
         self
@@ -105,12 +111,37 @@ impl CodeFilePathBuilder {
         &self.end_line
     }
     /// Consumes the builder and constructs a [`CodeFilePath`](crate::types::CodeFilePath).
-    pub fn build(self) -> crate::types::CodeFilePath {
-        crate::types::CodeFilePath {
-            file_name: self.file_name,
-            file_path: self.file_path,
-            start_line: self.start_line,
-            end_line: self.end_line,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`file_name`](crate::types::builders::CodeFilePathBuilder::file_name)
+    /// - [`file_path`](crate::types::builders::CodeFilePathBuilder::file_path)
+    /// - [`start_line`](crate::types::builders::CodeFilePathBuilder::start_line)
+    /// - [`end_line`](crate::types::builders::CodeFilePathBuilder::end_line)
+    pub fn build(self) -> ::std::result::Result<crate::types::CodeFilePath, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CodeFilePath {
+            file_name: self.file_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "file_name",
+                    "file_name was not specified but it is required when building CodeFilePath",
+                )
+            })?,
+            file_path: self.file_path.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "file_path",
+                    "file_path was not specified but it is required when building CodeFilePath",
+                )
+            })?,
+            start_line: self.start_line.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "start_line",
+                    "start_line was not specified but it is required when building CodeFilePath",
+                )
+            })?,
+            end_line: self.end_line.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "end_line",
+                    "end_line was not specified but it is required when building CodeFilePath",
+                )
+            })?,
+        })
     }
 }

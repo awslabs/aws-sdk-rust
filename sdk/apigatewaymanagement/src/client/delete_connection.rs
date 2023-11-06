@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteConnection`](crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`connection_id(impl Into<String>)`](crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder::connection_id) / [`set_connection_id(Option<String>)`](crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder::set_connection_id): (undocumented)
+    ///   - [`connection_id(impl Into<String>)`](crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder::connection_id) / [`set_connection_id(Option<String>)`](crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder::set_connection_id):<br>required: **true**<br>(undocumented)<br>
     /// - On success, responds with [`DeleteConnectionOutput`](crate::operation::delete_connection::DeleteConnectionOutput)
     /// - On failure, responds with [`SdkError<DeleteConnectionError>`](crate::operation::delete_connection::DeleteConnectionError)
     pub fn delete_connection(&self) -> crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder {

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDatabase`](crate::operation::delete_database::builders::DeleteDatabaseFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`database_name(impl Into<String>)`](crate::operation::delete_database::builders::DeleteDatabaseFluentBuilder::database_name) / [`set_database_name(Option<String>)`](crate::operation::delete_database::builders::DeleteDatabaseFluentBuilder::set_database_name): <p>The name of the Timestream database to be deleted.</p>
+    ///   - [`database_name(impl Into<String>)`](crate::operation::delete_database::builders::DeleteDatabaseFluentBuilder::database_name) / [`set_database_name(Option<String>)`](crate::operation::delete_database::builders::DeleteDatabaseFluentBuilder::set_database_name):<br>required: **true**<br><p>The name of the Timestream database to be deleted.</p><br>
     /// - On success, responds with [`DeleteDatabaseOutput`](crate::operation::delete_database::DeleteDatabaseOutput)
     /// - On failure, responds with [`SdkError<DeleteDatabaseError>`](crate::operation::delete_database::DeleteDatabaseError)
     pub fn delete_database(&self) -> crate::operation::delete_database::builders::DeleteDatabaseFluentBuilder {

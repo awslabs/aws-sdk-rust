@@ -32,8 +32,10 @@ impl CopyWorkspaceImageInput {
         self.source_region.as_deref()
     }
     /// <p>The tags for the image.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CopyWorkspaceImageInput {
@@ -55,6 +57,7 @@ pub struct CopyWorkspaceImageInputBuilder {
 }
 impl CopyWorkspaceImageInputBuilder {
     /// <p>The name of the image.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +86,7 @@ impl CopyWorkspaceImageInputBuilder {
         &self.description
     }
     /// <p>The identifier of the source image.</p>
+    /// This field is required.
     pub fn source_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_image_id = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +101,7 @@ impl CopyWorkspaceImageInputBuilder {
         &self.source_image_id
     }
     /// <p>The identifier of the source Region.</p>
+    /// This field is required.
     pub fn source_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_region = ::std::option::Option::Some(input.into());
         self
@@ -133,7 +138,8 @@ impl CopyWorkspaceImageInputBuilder {
     /// Consumes the builder and constructs a [`CopyWorkspaceImageInput`](crate::operation::copy_workspace_image::CopyWorkspaceImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::copy_workspace_image::CopyWorkspaceImageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::copy_workspace_image::CopyWorkspaceImageInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::copy_workspace_image::CopyWorkspaceImageInput {
             name: self.name,
             description: self.description,

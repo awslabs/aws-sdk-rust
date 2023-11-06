@@ -34,6 +34,7 @@ pub struct GetJobTaggingInputBuilder {
 }
 impl GetJobTaggingInputBuilder {
     /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetJobTaggingInputBuilder {
         &self.account_id
     }
     /// <p>The ID for the S3 Batch Operations job whose tags you want to retrieve.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl GetJobTaggingInputBuilder {
     /// Consumes the builder and constructs a [`GetJobTaggingInput`](crate::operation::get_job_tagging::GetJobTaggingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_job_tagging::GetJobTaggingInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_job_tagging::GetJobTaggingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_job_tagging::GetJobTaggingInput {
             account_id: self.account_id,
             job_id: self.job_id,

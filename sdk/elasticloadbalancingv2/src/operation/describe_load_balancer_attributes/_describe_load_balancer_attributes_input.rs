@@ -27,6 +27,7 @@ pub struct DescribeLoadBalancerAttributesInputBuilder {
 }
 impl DescribeLoadBalancerAttributesInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
+    /// This field is required.
     pub fn load_balancer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeLoadBalancerAttributesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_load_balancer_attributes::DescribeLoadBalancerAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_load_balancer_attributes::DescribeLoadBalancerAttributesInput {
             load_balancer_arn: self.load_balancer_arn,

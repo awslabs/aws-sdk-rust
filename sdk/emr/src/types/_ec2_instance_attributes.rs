@@ -37,16 +37,20 @@ impl Ec2InstanceAttributes {
         self.ec2_subnet_id.as_deref()
     }
     /// <p>Applies to clusters configured with the instance fleets option. Specifies the unique identifier of one or more Amazon EC2 subnets in which to launch Amazon EC2 cluster instances. Subnets must exist within the same VPC. Amazon EMR chooses the Amazon EC2 subnet with the best fit from among the list of <code>RequestedEc2SubnetIds</code>, and then launches all cluster instances within that Subnet. If this value is not specified, and the account and Region support EC2-Classic networks, the cluster launches instances in the EC2-Classic network and uses <code>RequestedEc2AvailabilityZones</code> instead of this setting. If EC2-Classic is not supported, and no Subnet is specified, Amazon EMR chooses the subnet for you. <code>RequestedEc2SubnetIDs</code> and <code>RequestedEc2AvailabilityZones</code> cannot be specified together.</p>
-    pub fn requested_ec2_subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.requested_ec2_subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.requested_ec2_subnet_ids.is_none()`.
+    pub fn requested_ec2_subnet_ids(&self) -> &[::std::string::String] {
+        self.requested_ec2_subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>The Availability Zone in which the cluster will run. </p>
     pub fn ec2_availability_zone(&self) -> ::std::option::Option<&str> {
         self.ec2_availability_zone.as_deref()
     }
     /// <p>Applies to clusters configured with the instance fleets option. Specifies one or more Availability Zones in which to launch Amazon EC2 cluster instances when the EC2-Classic network configuration is supported. Amazon EMR chooses the Availability Zone with the best fit from among the list of <code>RequestedEc2AvailabilityZones</code>, and then launches all cluster instances within that Availability Zone. If you do not specify this value, Amazon EMR chooses the Availability Zone for you. <code>RequestedEc2SubnetIDs</code> and <code>RequestedEc2AvailabilityZones</code> cannot be specified together.</p>
-    pub fn requested_ec2_availability_zones(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.requested_ec2_availability_zones.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.requested_ec2_availability_zones.is_none()`.
+    pub fn requested_ec2_availability_zones(&self) -> &[::std::string::String] {
+        self.requested_ec2_availability_zones.as_deref().unwrap_or_default()
     }
     /// <p>The IAM role that was specified when the cluster was launched. The Amazon EC2 instances of the cluster assume this role.</p>
     pub fn iam_instance_profile(&self) -> ::std::option::Option<&str> {
@@ -65,12 +69,16 @@ impl Ec2InstanceAttributes {
         self.service_access_security_group.as_deref()
     }
     /// <p>A list of additional Amazon EC2 security group IDs for the master node.</p>
-    pub fn additional_master_security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.additional_master_security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_master_security_groups.is_none()`.
+    pub fn additional_master_security_groups(&self) -> &[::std::string::String] {
+        self.additional_master_security_groups.as_deref().unwrap_or_default()
     }
     /// <p>A list of additional Amazon EC2 security group IDs for the core and task nodes.</p>
-    pub fn additional_slave_security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.additional_slave_security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_slave_security_groups.is_none()`.
+    pub fn additional_slave_security_groups(&self) -> &[::std::string::String] {
+        self.additional_slave_security_groups.as_deref().unwrap_or_default()
     }
 }
 impl Ec2InstanceAttributes {

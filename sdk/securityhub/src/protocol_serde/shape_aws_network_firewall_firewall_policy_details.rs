@@ -2,7 +2,7 @@
 pub fn ser_aws_network_firewall_firewall_policy_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsNetworkFirewallFirewallPolicyDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.firewall_policy {
         #[allow(unused_mut)]
         let mut object_2 = object.key("FirewallPolicy").start_object();

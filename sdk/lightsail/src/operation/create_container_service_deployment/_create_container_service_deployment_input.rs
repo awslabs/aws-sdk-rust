@@ -41,6 +41,7 @@ pub struct CreateContainerServiceDeploymentInputBuilder {
 }
 impl CreateContainerServiceDeploymentInputBuilder {
     /// <p>The name of the container service for which to create the deployment.</p>
+    /// This field is required.
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
         self
@@ -96,7 +97,7 @@ impl CreateContainerServiceDeploymentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentInput {

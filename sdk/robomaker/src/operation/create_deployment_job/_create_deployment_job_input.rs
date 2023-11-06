@@ -31,8 +31,10 @@ impl CreateDeploymentJobInput {
         self.fleet.as_deref()
     }
     /// <p>The deployment application configuration.</p>
-    pub fn deployment_application_configs(&self) -> ::std::option::Option<&[crate::types::DeploymentApplicationConfig]> {
-        self.deployment_application_configs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.deployment_application_configs.is_none()`.
+    pub fn deployment_application_configs(&self) -> &[crate::types::DeploymentApplicationConfig] {
+        self.deployment_application_configs.as_deref().unwrap_or_default()
     }
     /// <p>A map that contains tag keys and tag values that are attached to the deployment job.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -72,6 +74,7 @@ impl CreateDeploymentJobInputBuilder {
         &self.deployment_config
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// This field is required.
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
@@ -86,6 +89,7 @@ impl CreateDeploymentJobInputBuilder {
         &self.client_request_token
     }
     /// <p>The Amazon Resource Name (ARN) of the fleet to deploy.</p>
+    /// This field is required.
     pub fn fleet(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet = ::std::option::Option::Some(input.into());
         self
@@ -145,7 +149,7 @@ impl CreateDeploymentJobInputBuilder {
     /// Consumes the builder and constructs a [`CreateDeploymentJobInput`](crate::operation::create_deployment_job::CreateDeploymentJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_deployment_job::CreateDeploymentJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_deployment_job::CreateDeploymentJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_deployment_job::CreateDeploymentJobInput {
             deployment_config: self.deployment_config,

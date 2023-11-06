@@ -54,6 +54,7 @@ pub struct CreateThingInputBuilder {
 impl CreateThingInputBuilder {
     /// <p>The name of the thing to create.</p>
     /// <p>You can't change a thing's name after you create it. To change a thing's name, you must create a new thing, give it the new name, and then delete the old thing.</p>
+    /// This field is required.
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_name = ::std::option::Option::Some(input.into());
         self
@@ -115,7 +116,7 @@ impl CreateThingInputBuilder {
         &self.billing_group_name
     }
     /// Consumes the builder and constructs a [`CreateThingInput`](crate::operation::create_thing::CreateThingInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_thing::CreateThingInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_thing::CreateThingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_thing::CreateThingInput {
             thing_name: self.thing_name,
             thing_type_name: self.thing_type_name,

@@ -50,6 +50,7 @@ pub struct UpdateNodeInputBuilder {
 }
 impl UpdateNodeInputBuilder {
     /// <p>The unique identifier of the network that the node is on.</p>
+    /// This field is required.
     pub fn network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_id = ::std::option::Option::Some(input.into());
         self
@@ -81,6 +82,7 @@ impl UpdateNodeInputBuilder {
         &self.member_id
     }
     /// <p>The unique identifier of the node.</p>
+    /// This field is required.
     pub fn node_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_id = ::std::option::Option::Some(input.into());
         self
@@ -109,7 +111,7 @@ impl UpdateNodeInputBuilder {
         &self.log_publishing_configuration
     }
     /// Consumes the builder and constructs a [`UpdateNodeInput`](crate::operation::update_node::UpdateNodeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_node::UpdateNodeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_node::UpdateNodeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_node::UpdateNodeInput {
             network_id: self.network_id,
             member_id: self.member_id,

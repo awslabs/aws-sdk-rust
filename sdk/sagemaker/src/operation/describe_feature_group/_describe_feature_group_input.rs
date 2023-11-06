@@ -34,6 +34,7 @@ pub struct DescribeFeatureGroupInputBuilder {
 }
 impl DescribeFeatureGroupInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code> you want described. </p>
+    /// This field is required.
     pub fn feature_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_group_name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl DescribeFeatureGroupInputBuilder {
     /// Consumes the builder and constructs a [`DescribeFeatureGroupInput`](crate::operation::describe_feature_group::DescribeFeatureGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_feature_group::DescribeFeatureGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_feature_group::DescribeFeatureGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_feature_group::DescribeFeatureGroupInput {
             feature_group_name: self.feature_group_name,

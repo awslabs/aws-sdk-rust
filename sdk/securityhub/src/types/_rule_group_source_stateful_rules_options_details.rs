@@ -15,8 +15,10 @@ impl RuleGroupSourceStatefulRulesOptionsDetails {
         self.keyword.as_deref()
     }
     /// <p>A list of settings.</p>
-    pub fn settings(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.settings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.settings.is_none()`.
+    pub fn settings(&self) -> &[::std::string::String] {
+        self.settings.as_deref().unwrap_or_default()
     }
 }
 impl RuleGroupSourceStatefulRulesOptionsDetails {

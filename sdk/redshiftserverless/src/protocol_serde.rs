@@ -25,6 +25,8 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_convert_recovery_point_to_snapshot;
 
+pub(crate) mod shape_create_custom_domain_association;
+
 pub(crate) mod shape_create_endpoint_access;
 
 pub(crate) mod shape_create_namespace;
@@ -34,6 +36,8 @@ pub(crate) mod shape_create_snapshot;
 pub(crate) mod shape_create_usage_limit;
 
 pub(crate) mod shape_create_workgroup;
+
+pub(crate) mod shape_delete_custom_domain_association;
 
 pub(crate) mod shape_delete_endpoint_access;
 
@@ -48,6 +52,8 @@ pub(crate) mod shape_delete_usage_limit;
 pub(crate) mod shape_delete_workgroup;
 
 pub(crate) mod shape_get_credentials;
+
+pub(crate) mod shape_get_custom_domain_association;
 
 pub(crate) mod shape_get_endpoint_access;
 
@@ -64,6 +70,8 @@ pub(crate) mod shape_get_table_restore_status;
 pub(crate) mod shape_get_usage_limit;
 
 pub(crate) mod shape_get_workgroup;
+
+pub(crate) mod shape_list_custom_domain_associations;
 
 pub(crate) mod shape_list_endpoint_access;
 
@@ -93,6 +101,8 @@ pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
 
+pub(crate) mod shape_update_custom_domain_association;
+
 pub(crate) mod shape_update_endpoint_access;
 
 pub(crate) mod shape_update_namespace;
@@ -117,6 +127,8 @@ pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_convert_recovery_point_to_snapshot_input;
 
+pub(crate) mod shape_create_custom_domain_association_input;
+
 pub(crate) mod shape_create_endpoint_access_input;
 
 pub(crate) mod shape_create_namespace_input;
@@ -126,6 +138,8 @@ pub(crate) mod shape_create_snapshot_input;
 pub(crate) mod shape_create_usage_limit_input;
 
 pub(crate) mod shape_create_workgroup_input;
+
+pub(crate) mod shape_delete_custom_domain_association_input;
 
 pub(crate) mod shape_delete_endpoint_access_input;
 
@@ -140,6 +154,8 @@ pub(crate) mod shape_delete_usage_limit_input;
 pub(crate) mod shape_delete_workgroup_input;
 
 pub(crate) mod shape_get_credentials_input;
+
+pub(crate) mod shape_get_custom_domain_association_input;
 
 pub(crate) mod shape_get_endpoint_access_input;
 
@@ -162,6 +178,8 @@ pub(crate) mod shape_insufficient_capacity_exception;
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_invalid_pagination_exception;
+
+pub(crate) mod shape_list_custom_domain_associations_input;
 
 pub(crate) mod shape_list_endpoint_access_input;
 
@@ -199,6 +217,8 @@ pub(crate) mod shape_too_many_tags_exception;
 
 pub(crate) mod shape_untag_resource_input;
 
+pub(crate) mod shape_update_custom_domain_association_input;
+
 pub(crate) mod shape_update_endpoint_access_input;
 
 pub(crate) mod shape_update_namespace_input;
@@ -210,6 +230,8 @@ pub(crate) mod shape_update_usage_limit_input;
 pub(crate) mod shape_update_workgroup_input;
 
 pub(crate) mod shape_validation_exception;
+
+pub(crate) mod shape_association_list;
 
 pub(crate) mod shape_config_parameter;
 
@@ -248,6 +270,8 @@ pub(crate) mod shape_workgroup;
 pub(crate) mod shape_workgroup_list;
 
 pub(crate) mod shape_account_id_list;
+
+pub(crate) mod shape_association;
 
 pub(crate) mod shape_config_parameter_list;
 

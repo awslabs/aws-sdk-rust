@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DynatraceConnectorProfileProperties {
     /// <p> The location of the Dynatrace resource. </p>
-    pub instance_url: ::std::option::Option<::std::string::String>,
+    pub instance_url: ::std::string::String,
 }
 impl DynatraceConnectorProfileProperties {
     /// <p> The location of the Dynatrace resource. </p>
-    pub fn instance_url(&self) -> ::std::option::Option<&str> {
-        self.instance_url.as_deref()
+    pub fn instance_url(&self) -> &str {
+        use std::ops::Deref;
+        self.instance_url.deref()
     }
 }
 impl DynatraceConnectorProfileProperties {
@@ -28,6 +29,7 @@ pub struct DynatraceConnectorProfilePropertiesBuilder {
 }
 impl DynatraceConnectorProfilePropertiesBuilder {
     /// <p> The location of the Dynatrace resource. </p>
+    /// This field is required.
     pub fn instance_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_url = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl DynatraceConnectorProfilePropertiesBuilder {
         &self.instance_url
     }
     /// Consumes the builder and constructs a [`DynatraceConnectorProfileProperties`](crate::types::DynatraceConnectorProfileProperties).
-    pub fn build(self) -> crate::types::DynatraceConnectorProfileProperties {
-        crate::types::DynatraceConnectorProfileProperties {
-            instance_url: self.instance_url,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`instance_url`](crate::types::builders::DynatraceConnectorProfilePropertiesBuilder::instance_url)
+    pub fn build(self) -> ::std::result::Result<crate::types::DynatraceConnectorProfileProperties, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DynatraceConnectorProfileProperties {
+            instance_url: self.instance_url.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "instance_url",
+                    "instance_url was not specified but it is required when building DynatraceConnectorProfileProperties",
+                )
+            })?,
+        })
     }
 }

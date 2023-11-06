@@ -28,6 +28,7 @@ pub struct IndexDocumentsInputBuilder {
 }
 impl IndexDocumentsInputBuilder {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl IndexDocumentsInputBuilder {
     /// Consumes the builder and constructs a [`IndexDocumentsInput`](crate::operation::index_documents::IndexDocumentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::index_documents::IndexDocumentsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::index_documents::IndexDocumentsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::index_documents::IndexDocumentsInput {
             domain_name: self.domain_name,
         })

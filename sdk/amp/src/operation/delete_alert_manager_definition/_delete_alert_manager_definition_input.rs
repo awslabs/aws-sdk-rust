@@ -35,6 +35,7 @@ pub struct DeleteAlertManagerDefinitionInputBuilder {
 }
 impl DeleteAlertManagerDefinitionInputBuilder {
     /// The ID of the workspace in which to delete the alert manager definition.
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -67,7 +68,7 @@ impl DeleteAlertManagerDefinitionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_alert_manager_definition::DeleteAlertManagerDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_alert_manager_definition::DeleteAlertManagerDefinitionInput {
             workspace_id: self.workspace_id,

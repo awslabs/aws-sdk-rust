@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GroupFilter {
     /// <p>The name of the filter. Filter names are case-sensitive.</p>
-    pub name: ::std::option::Option<crate::types::GroupFilterName>,
+    pub name: crate::types::GroupFilterName,
     /// <p>One or more filter values. Allowed filter values vary by group filter name, and are case-sensitive.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::vec::Vec<::std::string::String>,
 }
 impl GroupFilter {
     /// <p>The name of the filter. Filter names are case-sensitive.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::GroupFilterName> {
-        self.name.as_ref()
+    pub fn name(&self) -> &crate::types::GroupFilterName {
+        &self.name
     }
     /// <p>One or more filter values. Allowed filter values vary by group filter name, and are case-sensitive.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    pub fn values(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.values.deref()
     }
 }
 impl GroupFilter {
@@ -35,6 +36,7 @@ pub struct GroupFilterBuilder {
 }
 impl GroupFilterBuilder {
     /// <p>The name of the filter. Filter names are case-sensitive.</p>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::GroupFilterName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -69,10 +71,23 @@ impl GroupFilterBuilder {
         &self.values
     }
     /// Consumes the builder and constructs a [`GroupFilter`](crate::types::GroupFilter).
-    pub fn build(self) -> crate::types::GroupFilter {
-        crate::types::GroupFilter {
-            name: self.name,
-            values: self.values,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::GroupFilterBuilder::name)
+    /// - [`values`](crate::types::builders::GroupFilterBuilder::values)
+    pub fn build(self) -> ::std::result::Result<crate::types::GroupFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::GroupFilter {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building GroupFilter",
+                )
+            })?,
+            values: self.values.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "values",
+                    "values was not specified but it is required when building GroupFilter",
+                )
+            })?,
+        })
     }
 }

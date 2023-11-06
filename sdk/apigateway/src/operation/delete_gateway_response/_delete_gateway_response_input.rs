@@ -35,6 +35,7 @@ pub struct DeleteGatewayResponseInputBuilder {
 }
 impl DeleteGatewayResponseInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
+    /// This field is required.
     pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rest_api_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl DeleteGatewayResponseInputBuilder {
         &self.rest_api_id
     }
     /// <p>The response type of the associated GatewayResponse.</p>
+    /// This field is required.
     pub fn response_type(mut self, input: crate::types::GatewayResponseType) -> Self {
         self.response_type = ::std::option::Option::Some(input);
         self
@@ -65,7 +67,7 @@ impl DeleteGatewayResponseInputBuilder {
     /// Consumes the builder and constructs a [`DeleteGatewayResponseInput`](crate::operation::delete_gateway_response::DeleteGatewayResponseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_gateway_response::DeleteGatewayResponseInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_gateway_response::DeleteGatewayResponseInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_gateway_response::DeleteGatewayResponseInput {
             rest_api_id: self.rest_api_id,

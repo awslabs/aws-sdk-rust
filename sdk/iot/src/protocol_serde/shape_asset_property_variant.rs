@@ -2,7 +2,7 @@
 pub fn ser_asset_property_variant(
     object_2: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AssetPropertyVariant,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::AssetPropertyVariant::StringValue(inner) => {
             object_2.key("stringValue").string(inner.as_str());
@@ -17,7 +17,7 @@ pub fn ser_asset_property_variant(
             object_2.key("booleanValue").string(inner.as_str());
         }
         crate::types::AssetPropertyVariant::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "AssetPropertyVariant",
             ))
         }
@@ -38,35 +38,48 @@ where
             match tokens.next().transpose()? {
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                    let key = key.to_unescaped()?;
+                    if key == "__type" {
+                        ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                        continue;
+                    }
                     if variant.is_some() {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
                             "encountered mixed variants in union",
                         ));
                     }
-                    variant = match key.to_unescaped()?.as_ref() {
+                    variant = match key.as_ref() {
                         "stringValue" => Some(crate::types::AssetPropertyVariant::StringValue(
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                 .transpose()?
-                                .unwrap_or_default(),
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'stringValue' cannot be null")
+                                })?,
                         )),
                         "integerValue" => Some(crate::types::AssetPropertyVariant::IntegerValue(
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                 .transpose()?
-                                .unwrap_or_default(),
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'integerValue' cannot be null")
+                                })?,
                         )),
                         "doubleValue" => Some(crate::types::AssetPropertyVariant::DoubleValue(
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                 .transpose()?
-                                .unwrap_or_default(),
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'doubleValue' cannot be null")
+                                })?,
                         )),
                         "booleanValue" => Some(crate::types::AssetPropertyVariant::BooleanValue(
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                 .transpose()?
-                                .unwrap_or_default(),
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'booleanValue' cannot be null")
+                                })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

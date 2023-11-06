@@ -59,6 +59,7 @@ pub struct UpdateReportPlanInputBuilder {
 }
 impl UpdateReportPlanInputBuilder {
     /// <p>The unique name of the report plan. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
+    /// This field is required.
     pub fn report_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.report_plan_name = ::std::option::Option::Some(input.into());
         self
@@ -137,7 +138,7 @@ impl UpdateReportPlanInputBuilder {
     /// Consumes the builder and constructs a [`UpdateReportPlanInput`](crate::operation::update_report_plan::UpdateReportPlanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_report_plan::UpdateReportPlanInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_report_plan::UpdateReportPlanInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_report_plan::UpdateReportPlanInput {
             report_plan_name: self.report_plan_name,
             report_plan_description: self.report_plan_description,

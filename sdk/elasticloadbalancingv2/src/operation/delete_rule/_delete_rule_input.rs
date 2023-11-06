@@ -27,6 +27,7 @@ pub struct DeleteRuleInputBuilder {
 }
 impl DeleteRuleInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
+    /// This field is required.
     pub fn rule_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_arn = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl DeleteRuleInputBuilder {
         &self.rule_arn
     }
     /// Consumes the builder and constructs a [`DeleteRuleInput`](crate::operation::delete_rule::DeleteRuleInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_rule::DeleteRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_rule::DeleteRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_rule::DeleteRuleInput { rule_arn: self.rule_arn })
     }
 }

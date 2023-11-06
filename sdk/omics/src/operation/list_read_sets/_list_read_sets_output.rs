@@ -6,7 +6,7 @@ pub struct ListReadSetsOutput {
     /// <p>A pagination token that's included if more results are available.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of read sets.</p>
-    pub read_sets: ::std::option::Option<::std::vec::Vec<crate::types::ReadSetListItem>>,
+    pub read_sets: ::std::vec::Vec<crate::types::ReadSetListItem>,
     _request_id: Option<String>,
 }
 impl ListReadSetsOutput {
@@ -15,8 +15,9 @@ impl ListReadSetsOutput {
         self.next_token.as_deref()
     }
     /// <p>A list of read sets.</p>
-    pub fn read_sets(&self) -> ::std::option::Option<&[crate::types::ReadSetListItem]> {
-        self.read_sets.as_deref()
+    pub fn read_sets(&self) -> &[crate::types::ReadSetListItem] {
+        use std::ops::Deref;
+        self.read_sets.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListReadSetsOutput {
@@ -84,11 +85,20 @@ impl ListReadSetsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListReadSetsOutput`](crate::operation::list_read_sets::ListReadSetsOutput).
-    pub fn build(self) -> crate::operation::list_read_sets::ListReadSetsOutput {
-        crate::operation::list_read_sets::ListReadSetsOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`read_sets`](crate::operation::list_read_sets::builders::ListReadSetsOutputBuilder::read_sets)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_read_sets::ListReadSetsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_read_sets::ListReadSetsOutput {
             next_token: self.next_token,
-            read_sets: self.read_sets,
+            read_sets: self.read_sets.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "read_sets",
+                    "read_sets was not specified but it is required when building ListReadSetsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

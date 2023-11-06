@@ -13,16 +13,22 @@ pub struct BatchGetRecordOutput {
 }
 impl BatchGetRecordOutput {
     /// <p>A list of Records you requested to be retrieved in batch.</p>
-    pub fn records(&self) -> ::std::option::Option<&[crate::types::BatchGetRecordResultDetail]> {
-        self.records.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.records.is_none()`.
+    pub fn records(&self) -> &[crate::types::BatchGetRecordResultDetail] {
+        self.records.as_deref().unwrap_or_default()
     }
     /// <p>A list of errors that have occurred when retrieving a batch of Records.</p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::BatchGetRecordError]> {
-        self.errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
+    pub fn errors(&self) -> &[crate::types::BatchGetRecordError] {
+        self.errors.as_deref().unwrap_or_default()
     }
     /// <p>A unprocessed list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name.</p>
-    pub fn unprocessed_identifiers(&self) -> ::std::option::Option<&[crate::types::BatchGetRecordIdentifier]> {
-        self.unprocessed_identifiers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unprocessed_identifiers.is_none()`.
+    pub fn unprocessed_identifiers(&self) -> &[crate::types::BatchGetRecordIdentifier] {
+        self.unprocessed_identifiers.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchGetRecordOutput {

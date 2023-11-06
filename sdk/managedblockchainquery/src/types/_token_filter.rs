@@ -7,7 +7,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TokenFilter {
     /// <p>The blockchain network of the token.</p>
-    pub network: ::std::option::Option<crate::types::QueryNetwork>,
+    pub network: crate::types::QueryNetwork,
     /// <p>This is the address of the contract.</p>
     pub contract_address: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the token.</p>
@@ -15,8 +15,8 @@ pub struct TokenFilter {
 }
 impl TokenFilter {
     /// <p>The blockchain network of the token.</p>
-    pub fn network(&self) -> ::std::option::Option<&crate::types::QueryNetwork> {
-        self.network.as_ref()
+    pub fn network(&self) -> &crate::types::QueryNetwork {
+        &self.network
     }
     /// <p>This is the address of the contract.</p>
     pub fn contract_address(&self) -> ::std::option::Option<&str> {
@@ -44,6 +44,7 @@ pub struct TokenFilterBuilder {
 }
 impl TokenFilterBuilder {
     /// <p>The blockchain network of the token.</p>
+    /// This field is required.
     pub fn network(mut self, input: crate::types::QueryNetwork) -> Self {
         self.network = ::std::option::Option::Some(input);
         self
@@ -86,11 +87,18 @@ impl TokenFilterBuilder {
         &self.token_id
     }
     /// Consumes the builder and constructs a [`TokenFilter`](crate::types::TokenFilter).
-    pub fn build(self) -> crate::types::TokenFilter {
-        crate::types::TokenFilter {
-            network: self.network,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`network`](crate::types::builders::TokenFilterBuilder::network)
+    pub fn build(self) -> ::std::result::Result<crate::types::TokenFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TokenFilter {
+            network: self.network.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "network",
+                    "network was not specified but it is required when building TokenFilter",
+                )
+            })?,
             contract_address: self.contract_address,
             token_id: self.token_id,
-        }
+        })
     }
 }

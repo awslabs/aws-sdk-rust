@@ -31,8 +31,10 @@ impl GetSensitiveDataOccurrencesAvailabilityOutput {
     /// <li><p>UNSUPPORTED_OBJECT_TYPE - The affected S3 object uses a file or storage format that Macie doesn't support for retrieving occurrences of sensitive data.</p></li>
     /// </ul>
     /// <p>This value is null if sensitive data can be retrieved for the finding.</p>
-    pub fn reasons(&self) -> ::std::option::Option<&[crate::types::UnavailabilityReasonCode]> {
-        self.reasons.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reasons.is_none()`.
+    pub fn reasons(&self) -> &[crate::types::UnavailabilityReasonCode] {
+        self.reasons.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetSensitiveDataOccurrencesAvailabilityOutput {

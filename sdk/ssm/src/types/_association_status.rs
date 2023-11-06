@@ -5,26 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociationStatus {
     /// <p>The date when the status changed.</p>
-    pub date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub date: ::aws_smithy_types::DateTime,
     /// <p>The status.</p>
-    pub name: ::std::option::Option<crate::types::AssociationStatusName>,
+    pub name: crate::types::AssociationStatusName,
     /// <p>The reason for the status.</p>
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
     /// <p>A user-defined string.</p>
     pub additional_info: ::std::option::Option<::std::string::String>,
 }
 impl AssociationStatus {
     /// <p>The date when the status changed.</p>
-    pub fn date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.date.as_ref()
+    pub fn date(&self) -> &::aws_smithy_types::DateTime {
+        &self.date
     }
     /// <p>The status.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::AssociationStatusName> {
-        self.name.as_ref()
+    pub fn name(&self) -> &crate::types::AssociationStatusName {
+        &self.name
     }
     /// <p>The reason for the status.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        use std::ops::Deref;
+        self.message.deref()
     }
     /// <p>A user-defined string.</p>
     pub fn additional_info(&self) -> ::std::option::Option<&str> {
@@ -49,6 +50,7 @@ pub struct AssociationStatusBuilder {
 }
 impl AssociationStatusBuilder {
     /// <p>The date when the status changed.</p>
+    /// This field is required.
     pub fn date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.date = ::std::option::Option::Some(input);
         self
@@ -63,6 +65,7 @@ impl AssociationStatusBuilder {
         &self.date
     }
     /// <p>The status.</p>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::AssociationStatusName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -77,6 +80,7 @@ impl AssociationStatusBuilder {
         &self.name
     }
     /// <p>The reason for the status.</p>
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +109,31 @@ impl AssociationStatusBuilder {
         &self.additional_info
     }
     /// Consumes the builder and constructs a [`AssociationStatus`](crate::types::AssociationStatus).
-    pub fn build(self) -> crate::types::AssociationStatus {
-        crate::types::AssociationStatus {
-            date: self.date,
-            name: self.name,
-            message: self.message,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`date`](crate::types::builders::AssociationStatusBuilder::date)
+    /// - [`name`](crate::types::builders::AssociationStatusBuilder::name)
+    /// - [`message`](crate::types::builders::AssociationStatusBuilder::message)
+    pub fn build(self) -> ::std::result::Result<crate::types::AssociationStatus, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AssociationStatus {
+            date: self.date.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "date",
+                    "date was not specified but it is required when building AssociationStatus",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building AssociationStatus",
+                )
+            })?,
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building AssociationStatus",
+                )
+            })?,
             additional_info: self.additional_info,
-        }
+        })
     }
 }

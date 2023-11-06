@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProtectionLimits {
     /// <p>The maximum number of resource types that you can specify in a protection.</p>
-    pub protected_resource_type_limits: ::std::option::Option<::std::vec::Vec<crate::types::Limit>>,
+    pub protected_resource_type_limits: ::std::vec::Vec<crate::types::Limit>,
 }
 impl ProtectionLimits {
     /// <p>The maximum number of resource types that you can specify in a protection.</p>
-    pub fn protected_resource_type_limits(&self) -> ::std::option::Option<&[crate::types::Limit]> {
-        self.protected_resource_type_limits.as_deref()
+    pub fn protected_resource_type_limits(&self) -> &[crate::types::Limit] {
+        use std::ops::Deref;
+        self.protected_resource_type_limits.deref()
     }
 }
 impl ProtectionLimits {
@@ -48,9 +49,16 @@ impl ProtectionLimitsBuilder {
         &self.protected_resource_type_limits
     }
     /// Consumes the builder and constructs a [`ProtectionLimits`](crate::types::ProtectionLimits).
-    pub fn build(self) -> crate::types::ProtectionLimits {
-        crate::types::ProtectionLimits {
-            protected_resource_type_limits: self.protected_resource_type_limits,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`protected_resource_type_limits`](crate::types::builders::ProtectionLimitsBuilder::protected_resource_type_limits)
+    pub fn build(self) -> ::std::result::Result<crate::types::ProtectionLimits, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ProtectionLimits {
+            protected_resource_type_limits: self.protected_resource_type_limits.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "protected_resource_type_limits",
+                    "protected_resource_type_limits was not specified but it is required when building ProtectionLimits",
+                )
+            })?,
+        })
     }
 }

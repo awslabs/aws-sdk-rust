@@ -2,18 +2,18 @@
 pub fn ser_mutation_action_set_state_parameter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MutationActionSetStateParameter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.component_name {
-        object.key("componentName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("componentName").string(input.component_name.as_str());
     }
-    if let Some(var_2) = &input.property {
-        object.key("property").string(var_2.as_str());
+    {
+        object.key("property").string(input.property.as_str());
     }
-    if let Some(var_3) = &input.set {
+    if let Some(var_1) = &input.set {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("set").start_object();
-        crate::protocol_serde::shape_component_property::ser_component_property(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_2 = object.key("set").start_object();
+        crate::protocol_serde::shape_component_property::ser_component_property(&mut object_2, var_1)?;
+        object_2.finish();
     }
     Ok(())
 }
@@ -60,7 +60,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::mutation_action_set_state_parameter_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

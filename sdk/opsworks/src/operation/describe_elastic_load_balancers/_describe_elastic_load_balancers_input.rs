@@ -14,8 +14,10 @@ impl DescribeElasticLoadBalancersInput {
         self.stack_id.as_deref()
     }
     /// <p>A list of layer IDs. The action describes the Elastic Load Balancing instances for the specified layers.</p>
-    pub fn layer_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.layer_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.layer_ids.is_none()`.
+    pub fn layer_ids(&self) -> &[::std::string::String] {
+        self.layer_ids.as_deref().unwrap_or_default()
     }
 }
 impl DescribeElasticLoadBalancersInput {
@@ -72,7 +74,7 @@ impl DescribeElasticLoadBalancersInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_elastic_load_balancers::DescribeElasticLoadBalancersInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_elastic_load_balancers::DescribeElasticLoadBalancersInput {
             stack_id: self.stack_id,

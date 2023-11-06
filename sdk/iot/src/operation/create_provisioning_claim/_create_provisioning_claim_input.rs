@@ -27,6 +27,7 @@ pub struct CreateProvisioningClaimInputBuilder {
 }
 impl CreateProvisioningClaimInputBuilder {
     /// <p>The name of the provisioning template to use.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl CreateProvisioningClaimInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_provisioning_claim::CreateProvisioningClaimInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_provisioning_claim::CreateProvisioningClaimInput {
             template_name: self.template_name,

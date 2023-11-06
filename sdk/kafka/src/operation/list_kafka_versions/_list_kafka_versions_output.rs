@@ -11,8 +11,10 @@ pub struct ListKafkaVersionsOutput {
 }
 impl ListKafkaVersionsOutput {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn kafka_versions(&self) -> ::std::option::Option<&[crate::types::KafkaVersion]> {
-        self.kafka_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.kafka_versions.is_none()`.
+    pub fn kafka_versions(&self) -> &[crate::types::KafkaVersion] {
+        self.kafka_versions.as_deref().unwrap_or_default()
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn next_token(&self) -> ::std::option::Option<&str> {

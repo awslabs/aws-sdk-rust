@@ -50,8 +50,10 @@ impl CreatePolicyInput {
     /// <p>A list of tags that you want to attach to the newly created policy. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging Organizations resources</a> in the Organizations User Guide.</p> <note>
     /// <p>If any one of the tags is not valid or if you exceed the allowed number of tags for a policy, then the entire request fails and the policy is not created.</p>
     /// </note>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreatePolicyInput {
@@ -73,6 +75,7 @@ pub struct CreatePolicyInputBuilder {
 }
 impl CreatePolicyInputBuilder {
     /// <p>The policy text content to add to the new policy. The text that you supply must adhere to the rules of the policy type you specify in the <code>Type</code> parameter.</p>
+    /// This field is required.
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
         self
@@ -87,6 +90,7 @@ impl CreatePolicyInputBuilder {
         &self.content
     }
     /// <p>An optional description to assign to the policy.</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -102,6 +106,7 @@ impl CreatePolicyInputBuilder {
     }
     /// <p>The friendly name to assign to the policy.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -124,6 +129,7 @@ impl CreatePolicyInputBuilder {
     /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a> </p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::PolicyType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -176,7 +182,9 @@ impl CreatePolicyInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreatePolicyInput`](crate::operation::create_policy::CreatePolicyInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_policy::CreatePolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_policy::CreatePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_policy::CreatePolicyInput {
             content: self.content,
             description: self.description,

@@ -2,15 +2,15 @@
 pub fn ser_datetime_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DatetimeOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.format {
-        object.key("Format").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Format").string(input.format.as_str());
     }
-    if let Some(var_2) = &input.timezone_offset {
-        object.key("TimezoneOffset").string(var_2.as_str());
+    if let Some(var_1) = &input.timezone_offset {
+        object.key("TimezoneOffset").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.locale_code {
-        object.key("LocaleCode").string(var_3.as_str());
+    if let Some(var_2) = &input.locale_code {
+        object.key("LocaleCode").string(var_2.as_str());
     }
     Ok(())
 }
@@ -61,7 +61,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::datetime_options_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

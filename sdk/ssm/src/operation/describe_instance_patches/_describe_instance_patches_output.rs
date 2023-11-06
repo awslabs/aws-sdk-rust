@@ -29,8 +29,10 @@ impl DescribeInstancePatchesOutput {
     /// <li> <p>InstalledTime (DateTime)</p> </li>
     /// <li> <p>InstalledBy (string)</p> </li>
     /// </ul>
-    pub fn patches(&self) -> ::std::option::Option<&[crate::types::PatchComplianceData]> {
-        self.patches.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.patches.is_none()`.
+    pub fn patches(&self) -> &[crate::types::PatchComplianceData] {
+        self.patches.as_deref().unwrap_or_default()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -27,6 +27,7 @@ pub struct StartCrawlerInputBuilder {
 }
 impl StartCrawlerInputBuilder {
     /// <p>Name of the crawler to start.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,9 @@ impl StartCrawlerInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`StartCrawlerInput`](crate::operation::start_crawler::StartCrawlerInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_crawler::StartCrawlerInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::start_crawler::StartCrawlerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_crawler::StartCrawlerInput { name: self.name })
     }
 }

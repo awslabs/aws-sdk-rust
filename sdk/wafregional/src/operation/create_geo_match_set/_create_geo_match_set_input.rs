@@ -34,6 +34,7 @@ pub struct CreateGeoMatchSetInputBuilder {
 }
 impl CreateGeoMatchSetInputBuilder {
     /// <p>A friendly name or description of the <code>GeoMatchSet</code>. You can't change <code>Name</code> after you create the <code>GeoMatchSet</code>.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl CreateGeoMatchSetInputBuilder {
         &self.name
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    /// This field is required.
     pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_token = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl CreateGeoMatchSetInputBuilder {
     /// Consumes the builder and constructs a [`CreateGeoMatchSetInput`](crate::operation::create_geo_match_set::CreateGeoMatchSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_geo_match_set::CreateGeoMatchSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_geo_match_set::CreateGeoMatchSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_geo_match_set::CreateGeoMatchSetInput {
             name: self.name,
             change_token: self.change_token,

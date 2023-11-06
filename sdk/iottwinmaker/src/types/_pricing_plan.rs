@@ -9,13 +9,13 @@ pub struct PricingPlan {
     /// <p>The pricing plan's bundle information.</p>
     pub bundle_information: ::std::option::Option<crate::types::BundleInformation>,
     /// <p>The effective date and time of the pricing plan.</p>
-    pub effective_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub effective_date_time: ::aws_smithy_types::DateTime,
     /// <p>The pricing mode.</p>
-    pub pricing_mode: ::std::option::Option<crate::types::PricingMode>,
+    pub pricing_mode: crate::types::PricingMode,
     /// <p>The set date and time for updating a pricing plan.</p>
-    pub update_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub update_date_time: ::aws_smithy_types::DateTime,
     /// <p>The update reason for changing a pricing plan.</p>
-    pub update_reason: ::std::option::Option<crate::types::UpdateReason>,
+    pub update_reason: crate::types::UpdateReason,
 }
 impl PricingPlan {
     /// <p>The billable entity count.</p>
@@ -27,20 +27,20 @@ impl PricingPlan {
         self.bundle_information.as_ref()
     }
     /// <p>The effective date and time of the pricing plan.</p>
-    pub fn effective_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.effective_date_time.as_ref()
+    pub fn effective_date_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.effective_date_time
     }
     /// <p>The pricing mode.</p>
-    pub fn pricing_mode(&self) -> ::std::option::Option<&crate::types::PricingMode> {
-        self.pricing_mode.as_ref()
+    pub fn pricing_mode(&self) -> &crate::types::PricingMode {
+        &self.pricing_mode
     }
     /// <p>The set date and time for updating a pricing plan.</p>
-    pub fn update_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.update_date_time.as_ref()
+    pub fn update_date_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.update_date_time
     }
     /// <p>The update reason for changing a pricing plan.</p>
-    pub fn update_reason(&self) -> ::std::option::Option<&crate::types::UpdateReason> {
-        self.update_reason.as_ref()
+    pub fn update_reason(&self) -> &crate::types::UpdateReason {
+        &self.update_reason
     }
 }
 impl PricingPlan {
@@ -91,6 +91,7 @@ impl PricingPlanBuilder {
         &self.bundle_information
     }
     /// <p>The effective date and time of the pricing plan.</p>
+    /// This field is required.
     pub fn effective_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.effective_date_time = ::std::option::Option::Some(input);
         self
@@ -105,6 +106,7 @@ impl PricingPlanBuilder {
         &self.effective_date_time
     }
     /// <p>The pricing mode.</p>
+    /// This field is required.
     pub fn pricing_mode(mut self, input: crate::types::PricingMode) -> Self {
         self.pricing_mode = ::std::option::Option::Some(input);
         self
@@ -119,6 +121,7 @@ impl PricingPlanBuilder {
         &self.pricing_mode
     }
     /// <p>The set date and time for updating a pricing plan.</p>
+    /// This field is required.
     pub fn update_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_date_time = ::std::option::Option::Some(input);
         self
@@ -133,6 +136,7 @@ impl PricingPlanBuilder {
         &self.update_date_time
     }
     /// <p>The update reason for changing a pricing plan.</p>
+    /// This field is required.
     pub fn update_reason(mut self, input: crate::types::UpdateReason) -> Self {
         self.update_reason = ::std::option::Option::Some(input);
         self
@@ -147,14 +151,39 @@ impl PricingPlanBuilder {
         &self.update_reason
     }
     /// Consumes the builder and constructs a [`PricingPlan`](crate::types::PricingPlan).
-    pub fn build(self) -> crate::types::PricingPlan {
-        crate::types::PricingPlan {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`effective_date_time`](crate::types::builders::PricingPlanBuilder::effective_date_time)
+    /// - [`pricing_mode`](crate::types::builders::PricingPlanBuilder::pricing_mode)
+    /// - [`update_date_time`](crate::types::builders::PricingPlanBuilder::update_date_time)
+    /// - [`update_reason`](crate::types::builders::PricingPlanBuilder::update_reason)
+    pub fn build(self) -> ::std::result::Result<crate::types::PricingPlan, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PricingPlan {
             billable_entity_count: self.billable_entity_count,
             bundle_information: self.bundle_information,
-            effective_date_time: self.effective_date_time,
-            pricing_mode: self.pricing_mode,
-            update_date_time: self.update_date_time,
-            update_reason: self.update_reason,
-        }
+            effective_date_time: self.effective_date_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "effective_date_time",
+                    "effective_date_time was not specified but it is required when building PricingPlan",
+                )
+            })?,
+            pricing_mode: self.pricing_mode.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "pricing_mode",
+                    "pricing_mode was not specified but it is required when building PricingPlan",
+                )
+            })?,
+            update_date_time: self.update_date_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "update_date_time",
+                    "update_date_time was not specified but it is required when building PricingPlan",
+                )
+            })?,
+            update_reason: self.update_reason.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "update_reason",
+                    "update_reason was not specified but it is required when building PricingPlan",
+                )
+            })?,
+        })
     }
 }

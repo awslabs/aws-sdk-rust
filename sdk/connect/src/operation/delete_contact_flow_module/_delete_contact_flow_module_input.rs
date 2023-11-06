@@ -34,6 +34,7 @@ pub struct DeleteContactFlowModuleInputBuilder {
 }
 impl DeleteContactFlowModuleInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteContactFlowModuleInputBuilder {
         &self.instance_id
     }
     /// <p>The identifier of the flow module.</p>
+    /// This field is required.
     pub fn contact_flow_module_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_flow_module_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl DeleteContactFlowModuleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_contact_flow_module::DeleteContactFlowModuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_contact_flow_module::DeleteContactFlowModuleInput {
             instance_id: self.instance_id,

@@ -10,8 +10,10 @@ pub struct RemoveEndpointsInput {
 }
 impl RemoveEndpointsInput {
     /// <p>The identifiers of the endpoints that you want to remove.</p>
-    pub fn endpoint_identifiers(&self) -> ::std::option::Option<&[crate::types::EndpointIdentifier]> {
-        self.endpoint_identifiers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.endpoint_identifiers.is_none()`.
+    pub fn endpoint_identifiers(&self) -> &[crate::types::EndpointIdentifier] {
+        self.endpoint_identifiers.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
     pub fn endpoint_group_arn(&self) -> ::std::option::Option<&str> {
@@ -54,6 +56,7 @@ impl RemoveEndpointsInputBuilder {
         &self.endpoint_identifiers
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
+    /// This field is required.
     pub fn endpoint_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_group_arn = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +73,7 @@ impl RemoveEndpointsInputBuilder {
     /// Consumes the builder and constructs a [`RemoveEndpointsInput`](crate::operation::remove_endpoints::RemoveEndpointsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::remove_endpoints::RemoveEndpointsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::remove_endpoints::RemoveEndpointsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::remove_endpoints::RemoveEndpointsInput {
             endpoint_identifiers: self.endpoint_identifiers,
             endpoint_group_arn: self.endpoint_group_arn,

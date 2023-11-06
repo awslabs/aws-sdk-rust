@@ -8,9 +8,9 @@ pub struct GetManagedResourceOutput {
     /// <p>The name of the resource.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A collection of key-value pairs that indicate whether resources are active in Availability Zones or not. The key name is the Availability Zone where the resource is deployed. The value is 1 or 0.</p>
-    pub applied_weights: ::std::option::Option<::std::collections::HashMap<::std::string::String, f32>>,
+    pub applied_weights: ::std::collections::HashMap<::std::string::String, f32>,
     /// <p>The zonal shifts that are currently active for a resource. </p>
-    pub zonal_shifts: ::std::option::Option<::std::vec::Vec<crate::types::ZonalShiftInResource>>,
+    pub zonal_shifts: ::std::vec::Vec<crate::types::ZonalShiftInResource>,
     _request_id: Option<String>,
 }
 impl GetManagedResourceOutput {
@@ -23,12 +23,13 @@ impl GetManagedResourceOutput {
         self.name.as_deref()
     }
     /// <p>A collection of key-value pairs that indicate whether resources are active in Availability Zones or not. The key name is the Availability Zone where the resource is deployed. The value is 1 or 0.</p>
-    pub fn applied_weights(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, f32>> {
-        self.applied_weights.as_ref()
+    pub fn applied_weights(&self) -> &::std::collections::HashMap<::std::string::String, f32> {
+        &self.applied_weights
     }
     /// <p>The zonal shifts that are currently active for a resource. </p>
-    pub fn zonal_shifts(&self) -> ::std::option::Option<&[crate::types::ZonalShiftInResource]> {
-        self.zonal_shifts.as_deref()
+    pub fn zonal_shifts(&self) -> &[crate::types::ZonalShiftInResource] {
+        use std::ops::Deref;
+        self.zonal_shifts.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetManagedResourceOutput {
@@ -132,13 +133,29 @@ impl GetManagedResourceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetManagedResourceOutput`](crate::operation::get_managed_resource::GetManagedResourceOutput).
-    pub fn build(self) -> crate::operation::get_managed_resource::GetManagedResourceOutput {
-        crate::operation::get_managed_resource::GetManagedResourceOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`applied_weights`](crate::operation::get_managed_resource::builders::GetManagedResourceOutputBuilder::applied_weights)
+    /// - [`zonal_shifts`](crate::operation::get_managed_resource::builders::GetManagedResourceOutputBuilder::zonal_shifts)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_managed_resource::GetManagedResourceOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_managed_resource::GetManagedResourceOutput {
             arn: self.arn,
             name: self.name,
-            applied_weights: self.applied_weights,
-            zonal_shifts: self.zonal_shifts,
+            applied_weights: self.applied_weights.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "applied_weights",
+                    "applied_weights was not specified but it is required when building GetManagedResourceOutput",
+                )
+            })?,
+            zonal_shifts: self.zonal_shifts.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "zonal_shifts",
+                    "zonal_shifts was not specified but it is required when building GetManagedResourceOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

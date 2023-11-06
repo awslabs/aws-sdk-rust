@@ -27,6 +27,7 @@ pub struct DeleteRecordingConfigurationInputBuilder {
 }
 impl DeleteRecordingConfigurationInputBuilder {
     /// <p>ARN of the recording configuration to be deleted.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteRecordingConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_recording_configuration::DeleteRecordingConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_recording_configuration::DeleteRecordingConfigurationInput { arn: self.arn })
     }

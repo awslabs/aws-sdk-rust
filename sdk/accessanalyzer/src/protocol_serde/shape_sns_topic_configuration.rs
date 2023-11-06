@@ -2,7 +2,7 @@
 pub fn ser_sns_topic_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SnsTopicConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.topic_policy {
         object.key("topicPolicy").string(var_1.as_str());
     }

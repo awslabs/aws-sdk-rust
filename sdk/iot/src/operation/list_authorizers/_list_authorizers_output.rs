@@ -11,8 +11,10 @@ pub struct ListAuthorizersOutput {
 }
 impl ListAuthorizersOutput {
     /// <p>The authorizers.</p>
-    pub fn authorizers(&self) -> ::std::option::Option<&[crate::types::AuthorizerSummary]> {
-        self.authorizers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.authorizers.is_none()`.
+    pub fn authorizers(&self) -> &[crate::types::AuthorizerSummary] {
+        self.authorizers.as_deref().unwrap_or_default()
     }
     /// <p>A marker used to get the next set of results.</p>
     pub fn next_marker(&self) -> ::std::option::Option<&str> {

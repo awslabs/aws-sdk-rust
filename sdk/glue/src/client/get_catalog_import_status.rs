@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetCatalogImportStatus`](crate::operation::get_catalog_import_status::builders::GetCatalogImportStatusFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`catalog_id(impl Into<String>)`](crate::operation::get_catalog_import_status::builders::GetCatalogImportStatusFluentBuilder::catalog_id) / [`set_catalog_id(Option<String>)`](crate::operation::get_catalog_import_status::builders::GetCatalogImportStatusFluentBuilder::set_catalog_id): <p>The ID of the catalog to migrate. Currently, this should be the Amazon Web Services account ID.</p>
+    ///   - [`catalog_id(impl Into<String>)`](crate::operation::get_catalog_import_status::builders::GetCatalogImportStatusFluentBuilder::catalog_id) / [`set_catalog_id(Option<String>)`](crate::operation::get_catalog_import_status::builders::GetCatalogImportStatusFluentBuilder::set_catalog_id):<br>required: **false**<br><p>The ID of the catalog to migrate. Currently, this should be the Amazon Web Services account ID.</p><br>
     /// - On success, responds with [`GetCatalogImportStatusOutput`](crate::operation::get_catalog_import_status::GetCatalogImportStatusOutput) with field(s):
     ///   - [`import_status(Option<CatalogImportStatus>)`](crate::operation::get_catalog_import_status::GetCatalogImportStatusOutput::import_status): <p>The status of the specified catalog migration.</p>
     /// - On failure, responds with [`SdkError<GetCatalogImportStatusError>`](crate::operation::get_catalog_import_status::GetCatalogImportStatusError)

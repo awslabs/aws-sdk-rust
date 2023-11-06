@@ -82,6 +82,7 @@ pub struct S3ModelDataSourceBuilder {
 }
 impl S3ModelDataSourceBuilder {
     /// <p>Specifies the S3 path of ML model data to deploy.</p>
+    /// This field is required.
     pub fn s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_uri = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +99,7 @@ impl S3ModelDataSourceBuilder {
     /// <p>Specifies the type of ML model data to deploy.</p>
     /// <p>If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. SageMaker uses all objects that match the specified key name prefix as part of the ML model data to deploy. A valid key name prefix identified by <code>S3Uri</code> always ends with a forward slash (/).</p>
     /// <p>If you choose <code>S3Object</code>, <code>S3Uri</code> identifies an object that is the ML model data to deploy.</p>
+    /// This field is required.
     pub fn s3_data_type(mut self, input: crate::types::S3ModelDataType) -> Self {
         self.s3_data_type = ::std::option::Option::Some(input);
         self
@@ -134,6 +136,7 @@ impl S3ModelDataSourceBuilder {
     /// <li> <p>Ambiguous file names will result in model deployment failure. For example, if your uncompressed ML model consists of two S3 objects <code>s3://mybucket/model/weights</code> and <code>s3://mybucket/model/weights/part1</code> and you specify <code>s3://mybucket/model/</code> as the value of <code>S3Uri</code> and <code>S3Prefix</code> as the value of <code>S3DataType</code>, then it will result in name clash between <code>/opt/ml/model/weights</code> (a regular file) and <code>/opt/ml/model/weights/</code> (a directory).</p> </li>
     /// <li> <p>Do not organize the model artifacts in <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-folders.html">S3 console using folders</a>. When you create a folder in S3 console, S3 creates a 0-byte object with a key set to the folder name you provide. They key of the 0-byte object ends with a slash (/) which violates SageMaker restrictions on model artifact file names, leading to model deployment failure. </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn compression_type(mut self, input: crate::types::ModelCompressionType) -> Self {
         self.compression_type = ::std::option::Option::Some(input);
         self

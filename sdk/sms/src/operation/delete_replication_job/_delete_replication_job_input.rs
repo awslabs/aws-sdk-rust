@@ -27,6 +27,7 @@ pub struct DeleteReplicationJobInputBuilder {
 }
 impl DeleteReplicationJobInputBuilder {
     /// <p>The ID of the replication job.</p>
+    /// This field is required.
     pub fn replication_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_job_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteReplicationJobInputBuilder {
     /// Consumes the builder and constructs a [`DeleteReplicationJobInput`](crate::operation::delete_replication_job::DeleteReplicationJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_replication_job::DeleteReplicationJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_replication_job::DeleteReplicationJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_replication_job::DeleteReplicationJobInput {
             replication_job_id: self.replication_job_id,

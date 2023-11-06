@@ -69,28 +69,38 @@ impl GetEventPredictionMetadataOutput {
         self.detector_version_status.as_deref()
     }
     /// <p> A list of event variables that influenced the prediction scores. </p>
-    pub fn event_variables(&self) -> ::std::option::Option<&[crate::types::EventVariableSummary]> {
-        self.event_variables.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_variables.is_none()`.
+    pub fn event_variables(&self) -> &[crate::types::EventVariableSummary] {
+        self.event_variables.as_deref().unwrap_or_default()
     }
     /// <p> List of rules associated with the detector version that were used for evaluating variable values. </p>
-    pub fn rules(&self) -> ::std::option::Option<&[crate::types::EvaluatedRule]> {
-        self.rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
+    pub fn rules(&self) -> &[crate::types::EvaluatedRule] {
+        self.rules.as_deref().unwrap_or_default()
     }
     /// <p> The execution mode of the rule used for evaluating variable values. </p>
     pub fn rule_execution_mode(&self) -> ::std::option::Option<&crate::types::RuleExecutionMode> {
         self.rule_execution_mode.as_ref()
     }
     /// <p> The outcomes of the matched rule, based on the rule execution mode. </p>
-    pub fn outcomes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.outcomes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outcomes.is_none()`.
+    pub fn outcomes(&self) -> &[::std::string::String] {
+        self.outcomes.as_deref().unwrap_or_default()
     }
     /// <p> Model versions that were evaluated for generating predictions. </p>
-    pub fn evaluated_model_versions(&self) -> ::std::option::Option<&[crate::types::EvaluatedModelVersion]> {
-        self.evaluated_model_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.evaluated_model_versions.is_none()`.
+    pub fn evaluated_model_versions(&self) -> &[crate::types::EvaluatedModelVersion] {
+        self.evaluated_model_versions.as_deref().unwrap_or_default()
     }
     /// <p> External (Amazon SageMaker) models that were evaluated for generating predictions. </p>
-    pub fn evaluated_external_models(&self) -> ::std::option::Option<&[crate::types::EvaluatedExternalModel]> {
-        self.evaluated_external_models.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.evaluated_external_models.is_none()`.
+    pub fn evaluated_external_models(&self) -> &[crate::types::EvaluatedExternalModel] {
+        self.evaluated_external_models.as_deref().unwrap_or_default()
     }
     /// <p>The timestamp that defines when the prediction was generated. </p>
     pub fn prediction_timestamp(&self) -> ::std::option::Option<&str> {

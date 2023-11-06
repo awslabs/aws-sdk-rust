@@ -49,8 +49,10 @@ impl DataCaptureConfig {
         self.kms_key_id.as_deref()
     }
     /// <p>Specifies data Model Monitor will capture. You can configure whether to collect only input, only output, or both</p>
-    pub fn capture_options(&self) -> ::std::option::Option<&[crate::types::CaptureOption]> {
-        self.capture_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capture_options.is_none()`.
+    pub fn capture_options(&self) -> &[crate::types::CaptureOption] {
+        self.capture_options.as_deref().unwrap_or_default()
     }
     /// <p>Configuration specifying how to treat different headers. If no headers are specified SageMaker will by default base64 encode when capturing the data.</p>
     pub fn capture_content_type_header(&self) -> ::std::option::Option<&crate::types::CaptureContentTypeHeader> {
@@ -91,6 +93,7 @@ impl DataCaptureConfigBuilder {
         &self.enable_capture
     }
     /// <p>The percentage of requests SageMaker will capture. A lower value is recommended for Endpoints with high traffic.</p>
+    /// This field is required.
     pub fn initial_sampling_percentage(mut self, input: i32) -> Self {
         self.initial_sampling_percentage = ::std::option::Option::Some(input);
         self
@@ -105,6 +108,7 @@ impl DataCaptureConfigBuilder {
         &self.initial_sampling_percentage
     }
     /// <p>The Amazon S3 location used to capture the data.</p>
+    /// This field is required.
     pub fn destination_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_s3_uri = ::std::option::Option::Some(input.into());
         self

@@ -2,14 +2,14 @@
 pub fn ser_canary_schedule_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CanaryScheduleInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.expression {
-        object.key("Expression").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Expression").string(input.expression.as_str());
     }
-    if let Some(var_2) = &input.duration_in_seconds {
+    if let Some(var_1) = &input.duration_in_seconds {
         object.key("DurationInSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
     Ok(())

@@ -22,12 +22,16 @@ impl CommunicationTypeOptions {
         self.r#type.as_deref()
     }
     /// <p> A JSON-formatted list containing time ranges when support is available. </p>
-    pub fn supported_hours(&self) -> ::std::option::Option<&[crate::types::SupportedHour]> {
-        self.supported_hours.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_hours.is_none()`.
+    pub fn supported_hours(&self) -> &[crate::types::SupportedHour] {
+        self.supported_hours.as_deref().unwrap_or_default()
     }
     /// <p> A JSON-formatted list containing date and time ranges for periods without support </p>
-    pub fn dates_without_support(&self) -> ::std::option::Option<&[crate::types::DateInterval]> {
-        self.dates_without_support.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dates_without_support.is_none()`.
+    pub fn dates_without_support(&self) -> &[crate::types::DateInterval] {
+        self.dates_without_support.as_deref().unwrap_or_default()
     }
 }
 impl CommunicationTypeOptions {

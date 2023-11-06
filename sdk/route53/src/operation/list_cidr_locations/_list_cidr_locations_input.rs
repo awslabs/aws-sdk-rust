@@ -43,6 +43,7 @@ pub struct ListCidrLocationsInputBuilder {
 }
 impl ListCidrLocationsInputBuilder {
     /// <p>The CIDR collection ID.</p>
+    /// This field is required.
     pub fn collection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_id = ::std::option::Option::Some(input.into());
         self
@@ -90,7 +91,7 @@ impl ListCidrLocationsInputBuilder {
     /// Consumes the builder and constructs a [`ListCidrLocationsInput`](crate::operation::list_cidr_locations::ListCidrLocationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_cidr_locations::ListCidrLocationsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_cidr_locations::ListCidrLocationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_cidr_locations::ListCidrLocationsInput {
             collection_id: self.collection_id,
             next_token: self.next_token,

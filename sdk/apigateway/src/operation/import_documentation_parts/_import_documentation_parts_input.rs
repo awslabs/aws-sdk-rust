@@ -49,6 +49,7 @@ pub struct ImportDocumentationPartsInputBuilder {
 }
 impl ImportDocumentationPartsInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
+    /// This field is required.
     pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rest_api_id = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +92,7 @@ impl ImportDocumentationPartsInputBuilder {
         &self.fail_on_warnings
     }
     /// <p>Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI file, this is a JSON object.</p>
+    /// This field is required.
     pub fn body(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.body = ::std::option::Option::Some(input);
         self
@@ -109,7 +111,7 @@ impl ImportDocumentationPartsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::import_documentation_parts::ImportDocumentationPartsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::import_documentation_parts::ImportDocumentationPartsInput {
             rest_api_id: self.rest_api_id,

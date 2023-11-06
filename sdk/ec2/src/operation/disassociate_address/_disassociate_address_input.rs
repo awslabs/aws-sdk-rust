@@ -85,7 +85,7 @@ impl DisassociateAddressInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateAddressInput`](crate::operation::disassociate_address::DisassociateAddressInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disassociate_address::DisassociateAddressInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::disassociate_address::DisassociateAddressInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::disassociate_address::DisassociateAddressInput {
             association_id: self.association_id,

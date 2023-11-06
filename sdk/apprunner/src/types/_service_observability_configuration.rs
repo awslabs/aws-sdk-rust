@@ -39,6 +39,7 @@ pub struct ServiceObservabilityConfigurationBuilder {
 }
 impl ServiceObservabilityConfigurationBuilder {
     /// <p>When <code>true</code>, an observability configuration resource is associated with the service, and an <code>ObservabilityConfigurationArn</code> is specified.</p>
+    /// This field is required.
     pub fn observability_enabled(mut self, input: bool) -> Self {
         self.observability_enabled = ::std::option::Option::Some(input);
         self

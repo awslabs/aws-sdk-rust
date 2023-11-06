@@ -34,6 +34,7 @@ pub struct DeleteStorageLensConfigurationInputBuilder {
 }
 impl DeleteStorageLensConfigurationInputBuilder {
     /// <p>The ID of the S3 Storage Lens configuration.</p>
+    /// This field is required.
     pub fn config_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.config_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteStorageLensConfigurationInputBuilder {
         &self.config_id
     }
     /// <p>The account ID of the requester.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl DeleteStorageLensConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_storage_lens_configuration::DeleteStorageLensConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_storage_lens_configuration::DeleteStorageLensConfigurationInput {
             config_id: self.config_id,

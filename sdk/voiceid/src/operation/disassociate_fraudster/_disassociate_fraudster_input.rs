@@ -50,6 +50,7 @@ pub struct DisassociateFraudsterInputBuilder {
 }
 impl DisassociateFraudsterInputBuilder {
     /// <p>The identifier of the domain that contains the fraudster.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -64,6 +65,7 @@ impl DisassociateFraudsterInputBuilder {
         &self.domain_id
     }
     /// <p>The identifier of the watchlist that you want to disassociate from the fraudster.</p>
+    /// This field is required.
     pub fn watchlist_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.watchlist_id = ::std::option::Option::Some(input.into());
         self
@@ -78,6 +80,7 @@ impl DisassociateFraudsterInputBuilder {
         &self.watchlist_id
     }
     /// <p>The identifier of the fraudster to be disassociated from the watchlist.</p>
+    /// This field is required.
     pub fn fraudster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fraudster_id = ::std::option::Option::Some(input.into());
         self
@@ -94,7 +97,7 @@ impl DisassociateFraudsterInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateFraudsterInput`](crate::operation::disassociate_fraudster::DisassociateFraudsterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disassociate_fraudster::DisassociateFraudsterInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::disassociate_fraudster::DisassociateFraudsterInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::disassociate_fraudster::DisassociateFraudsterInput {
             domain_id: self.domain_id,

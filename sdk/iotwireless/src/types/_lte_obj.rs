@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LteObj {
     /// <p>Mobile Country Code.</p>
-    pub mcc: ::std::option::Option<i32>,
+    pub mcc: i32,
     /// <p>Mobile Network Code.</p>
-    pub mnc: ::std::option::Option<i32>,
+    pub mnc: i32,
     /// <p>E-UTRAN (Evolved Universal Terrestrial Radio Access Network) Cell Global Identifier.</p>
-    pub eutran_cid: ::std::option::Option<i32>,
+    pub eutran_cid: i32,
     /// <p>LTE tracking area code.</p>
     pub tac: ::std::option::Option<i32>,
     /// <p>LTE local identification (local ID) information.</p>
@@ -27,15 +27,15 @@ pub struct LteObj {
 }
 impl LteObj {
     /// <p>Mobile Country Code.</p>
-    pub fn mcc(&self) -> ::std::option::Option<i32> {
+    pub fn mcc(&self) -> i32 {
         self.mcc
     }
     /// <p>Mobile Network Code.</p>
-    pub fn mnc(&self) -> ::std::option::Option<i32> {
+    pub fn mnc(&self) -> i32 {
         self.mnc
     }
     /// <p>E-UTRAN (Evolved Universal Terrestrial Radio Access Network) Cell Global Identifier.</p>
-    pub fn eutran_cid(&self) -> ::std::option::Option<i32> {
+    pub fn eutran_cid(&self) -> i32 {
         self.eutran_cid
     }
     /// <p>LTE tracking area code.</p>
@@ -63,8 +63,10 @@ impl LteObj {
         self.nr_capable
     }
     /// <p>LTE object for network measurement reports.</p>
-    pub fn lte_nmr(&self) -> ::std::option::Option<&[crate::types::LteNmrObj]> {
-        self.lte_nmr.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lte_nmr.is_none()`.
+    pub fn lte_nmr(&self) -> &[crate::types::LteNmrObj] {
+        self.lte_nmr.as_deref().unwrap_or_default()
     }
 }
 impl LteObj {
@@ -91,6 +93,7 @@ pub struct LteObjBuilder {
 }
 impl LteObjBuilder {
     /// <p>Mobile Country Code.</p>
+    /// This field is required.
     pub fn mcc(mut self, input: i32) -> Self {
         self.mcc = ::std::option::Option::Some(input);
         self
@@ -105,6 +108,7 @@ impl LteObjBuilder {
         &self.mcc
     }
     /// <p>Mobile Network Code.</p>
+    /// This field is required.
     pub fn mnc(mut self, input: i32) -> Self {
         self.mnc = ::std::option::Option::Some(input);
         self
@@ -119,6 +123,7 @@ impl LteObjBuilder {
         &self.mnc
     }
     /// <p>E-UTRAN (Evolved Universal Terrestrial Radio Access Network) Cell Global Identifier.</p>
+    /// This field is required.
     pub fn eutran_cid(mut self, input: i32) -> Self {
         self.eutran_cid = ::std::option::Option::Some(input);
         self
@@ -237,11 +242,30 @@ impl LteObjBuilder {
         &self.lte_nmr
     }
     /// Consumes the builder and constructs a [`LteObj`](crate::types::LteObj).
-    pub fn build(self) -> crate::types::LteObj {
-        crate::types::LteObj {
-            mcc: self.mcc,
-            mnc: self.mnc,
-            eutran_cid: self.eutran_cid,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`mcc`](crate::types::builders::LteObjBuilder::mcc)
+    /// - [`mnc`](crate::types::builders::LteObjBuilder::mnc)
+    /// - [`eutran_cid`](crate::types::builders::LteObjBuilder::eutran_cid)
+    pub fn build(self) -> ::std::result::Result<crate::types::LteObj, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::LteObj {
+            mcc: self.mcc.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "mcc",
+                    "mcc was not specified but it is required when building LteObj",
+                )
+            })?,
+            mnc: self.mnc.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "mnc",
+                    "mnc was not specified but it is required when building LteObj",
+                )
+            })?,
+            eutran_cid: self.eutran_cid.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "eutran_cid",
+                    "eutran_cid was not specified but it is required when building LteObj",
+                )
+            })?,
             tac: self.tac,
             lte_local_id: self.lte_local_id,
             lte_timing_advance: self.lte_timing_advance,
@@ -249,6 +273,6 @@ impl LteObjBuilder {
             rsrq: self.rsrq,
             nr_capable: self.nr_capable.unwrap_or_default(),
             lte_nmr: self.lte_nmr,
-        }
+        })
     }
 }

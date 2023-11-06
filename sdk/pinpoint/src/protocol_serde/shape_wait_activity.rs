@@ -2,7 +2,7 @@
 pub fn ser_wait_activity(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WaitActivity,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.next_activity {
         object.key("NextActivity").string(var_1.as_str());
     }

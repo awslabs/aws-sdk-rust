@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeRetrainingScheduler`](crate::operation::describe_retraining_scheduler::builders::DescribeRetrainingSchedulerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`model_name(impl Into<String>)`](crate::operation::describe_retraining_scheduler::builders::DescribeRetrainingSchedulerFluentBuilder::model_name) / [`set_model_name(Option<String>)`](crate::operation::describe_retraining_scheduler::builders::DescribeRetrainingSchedulerFluentBuilder::set_model_name): <p>The name of the model that the retraining scheduler is attached to. </p>
+    ///   - [`model_name(impl Into<String>)`](crate::operation::describe_retraining_scheduler::builders::DescribeRetrainingSchedulerFluentBuilder::model_name) / [`set_model_name(Option<String>)`](crate::operation::describe_retraining_scheduler::builders::DescribeRetrainingSchedulerFluentBuilder::set_model_name):<br>required: **true**<br><p>The name of the model that the retraining scheduler is attached to. </p><br>
     /// - On success, responds with [`DescribeRetrainingSchedulerOutput`](crate::operation::describe_retraining_scheduler::DescribeRetrainingSchedulerOutput) with field(s):
     ///   - [`model_name(Option<String>)`](crate::operation::describe_retraining_scheduler::DescribeRetrainingSchedulerOutput::model_name): <p>The name of the model that the retraining scheduler is attached to. </p>
     ///   - [`model_arn(Option<String>)`](crate::operation::describe_retraining_scheduler::DescribeRetrainingSchedulerOutput::model_arn): <p>The ARN of the model that the retraining scheduler is attached to. </p>

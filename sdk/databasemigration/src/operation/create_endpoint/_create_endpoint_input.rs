@@ -128,8 +128,10 @@ impl CreateEndpointInput {
         self.kms_key_id.as_deref()
     }
     /// <p>One or more tags to be assigned to the endpoint.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) for the certificate.</p>
     pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
@@ -325,6 +327,7 @@ pub struct CreateEndpointInputBuilder {
 }
 impl CreateEndpointInputBuilder {
     /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen, or contain two consecutive hyphens.</p>
+    /// This field is required.
     pub fn endpoint_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_identifier = ::std::option::Option::Some(input.into());
         self
@@ -339,6 +342,7 @@ impl CreateEndpointInputBuilder {
         &self.endpoint_identifier
     }
     /// <p>The type of endpoint. Valid values are <code>source</code> and <code>target</code>.</p>
+    /// This field is required.
     pub fn endpoint_type(mut self, input: crate::types::ReplicationEndpointTypeValue) -> Self {
         self.endpoint_type = ::std::option::Option::Some(input);
         self
@@ -353,6 +357,7 @@ impl CreateEndpointInputBuilder {
         &self.endpoint_type
     }
     /// <p>The type of engine for the endpoint. Valid values, depending on the <code>EndpointType</code> value, include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"docdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and <code>"babelfish"</code>.</p>
+    /// This field is required.
     pub fn engine_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_name = ::std::option::Option::Some(input.into());
         self
@@ -850,7 +855,7 @@ impl CreateEndpointInputBuilder {
     /// Consumes the builder and constructs a [`CreateEndpointInput`](crate::operation::create_endpoint::CreateEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_endpoint::CreateEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_endpoint::CreateEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_endpoint::CreateEndpointInput {
             endpoint_identifier: self.endpoint_identifier,
             endpoint_type: self.endpoint_type,

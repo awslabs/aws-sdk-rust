@@ -105,7 +105,7 @@ pub fn de_list_message_move_tasks(
             s if s.matches("ListMessageMoveTasksResultEntry") /* Results com.amazonaws.sqs.synthetic#ListMessageMoveTasksOutput$Results */ =>  {
                 let var_1 =
                     Some(
-                        Result::<::std::vec::Vec<crate::types::ListMessageMoveTasksResultEntry>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<crate::types::ListMessageMoveTasksResultEntry>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_2 = builder.results.take().unwrap_or_default();
                             list_2.push(
                                 crate::protocol_serde::shape_list_message_move_tasks_result_entry::de_list_message_move_tasks_result_entry(&mut tag)

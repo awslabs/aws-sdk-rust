@@ -17,8 +17,10 @@ impl GetRecommendationSummariesInput {
     /// <p>The ID of the Amazon Web Services account for which to return recommendation summaries.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return recommendation summaries.</p>
     /// <p>Only one account ID can be specified per request.</p>
-    pub fn account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.account_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
+    pub fn account_ids(&self) -> &[::std::string::String] {
+        self.account_ids.as_deref().unwrap_or_default()
     }
     /// <p>The token to advance to the next page of recommendation summaries.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -108,7 +110,7 @@ impl GetRecommendationSummariesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_recommendation_summaries::GetRecommendationSummariesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_recommendation_summaries::GetRecommendationSummariesInput {
             account_ids: self.account_ids,

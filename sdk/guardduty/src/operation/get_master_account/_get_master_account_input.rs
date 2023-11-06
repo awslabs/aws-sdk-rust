@@ -28,6 +28,7 @@ pub struct GetMasterAccountInputBuilder {
 }
 impl GetMasterAccountInputBuilder {
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl GetMasterAccountInputBuilder {
     /// Consumes the builder and constructs a [`GetMasterAccountInput`](crate::operation::get_master_account::GetMasterAccountInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_master_account::GetMasterAccountInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_master_account::GetMasterAccountInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_master_account::GetMasterAccountInput {
             detector_id: self.detector_id,
         })

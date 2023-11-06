@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceFiles {
     /// <p>The location of the first file in Amazon S3.</p>
-    pub source1: ::std::option::Option<::std::string::String>,
+    pub source1: ::std::string::String,
     /// <p>The location of the second file in Amazon S3.</p>
     pub source2: ::std::option::Option<::std::string::String>,
 }
 impl SourceFiles {
     /// <p>The location of the first file in Amazon S3.</p>
-    pub fn source1(&self) -> ::std::option::Option<&str> {
-        self.source1.as_deref()
+    pub fn source1(&self) -> &str {
+        use std::ops::Deref;
+        self.source1.deref()
     }
     /// <p>The location of the second file in Amazon S3.</p>
     pub fn source2(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct SourceFilesBuilder {
 }
 impl SourceFilesBuilder {
     /// <p>The location of the first file in Amazon S3.</p>
+    /// This field is required.
     pub fn source1(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source1 = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl SourceFilesBuilder {
         &self.source2
     }
     /// Consumes the builder and constructs a [`SourceFiles`](crate::types::SourceFiles).
-    pub fn build(self) -> crate::types::SourceFiles {
-        crate::types::SourceFiles {
-            source1: self.source1,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`source1`](crate::types::builders::SourceFilesBuilder::source1)
+    pub fn build(self) -> ::std::result::Result<crate::types::SourceFiles, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SourceFiles {
+            source1: self.source1.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "source1",
+                    "source1 was not specified but it is required when building SourceFiles",
+                )
+            })?,
             source2: self.source2,
-        }
+        })
     }
 }

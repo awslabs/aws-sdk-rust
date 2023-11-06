@@ -37,12 +37,16 @@ impl CreateClusterSubnetGroupInput {
         self.description.as_deref()
     }
     /// <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        self.subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>A list of tag instances.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateClusterSubnetGroupInput {
@@ -70,6 +74,7 @@ impl CreateClusterSubnetGroupInputBuilder {
     /// <li> <p>Must be unique for all subnet groups that are created by your Amazon Web Services account.</p> </li>
     /// </ul>
     /// <p>Example: <code>examplesubnetgroup</code> </p>
+    /// This field is required.
     pub fn cluster_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_subnet_group_name = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +103,7 @@ impl CreateClusterSubnetGroupInputBuilder {
         &self.cluster_subnet_group_name
     }
     /// <p>A description for the subnet group.</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -156,7 +162,7 @@ impl CreateClusterSubnetGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupInput {
             cluster_subnet_group_name: self.cluster_subnet_group_name,

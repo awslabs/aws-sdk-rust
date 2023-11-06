@@ -116,8 +116,10 @@ impl LoadBalancerTlsCertificate {
         self.resource_type.as_ref()
     }
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The load balancer name where your SSL/TLS certificate is attached.</p>
     pub fn load_balancer_name(&self) -> ::std::option::Option<&str> {
@@ -136,8 +138,10 @@ impl LoadBalancerTlsCertificate {
         self.domain_name.as_deref()
     }
     /// <p>An array of LoadBalancerTlsCertificateDomainValidationRecord objects describing the records.</p>
-    pub fn domain_validation_records(&self) -> ::std::option::Option<&[crate::types::LoadBalancerTlsCertificateDomainValidationRecord]> {
-        self.domain_validation_records.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domain_validation_records.is_none()`.
+    pub fn domain_validation_records(&self) -> &[crate::types::LoadBalancerTlsCertificateDomainValidationRecord] {
+        self.domain_validation_records.as_deref().unwrap_or_default()
     }
     /// <p>The validation failure reason, if any, of the certificate.</p>
     /// <p>The following failure reasons are possible:</p>
@@ -198,8 +202,10 @@ impl LoadBalancerTlsCertificate {
         self.subject.as_deref()
     }
     /// <p>An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>) for the certificate.</p>
-    pub fn subject_alternative_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subject_alternative_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subject_alternative_names.is_none()`.
+    pub fn subject_alternative_names(&self) -> &[::std::string::String] {
+        self.subject_alternative_names.as_deref().unwrap_or_default()
     }
 }
 impl LoadBalancerTlsCertificate {

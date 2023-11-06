@@ -27,6 +27,7 @@ pub struct DeleteEnvironmentTemplateInputBuilder {
 }
 impl DeleteEnvironmentTemplateInputBuilder {
     /// <p>The name of the environment template to delete.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteEnvironmentTemplateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_environment_template::DeleteEnvironmentTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_environment_template::DeleteEnvironmentTemplateInput { name: self.name })
     }

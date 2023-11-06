@@ -4,31 +4,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GenerateEmbedUrlForAnonymousUserOutput {
     /// <p>The embed URL for the dashboard.</p>
-    pub embed_url: ::std::option::Option<::std::string::String>,
+    pub embed_url: ::std::string::String,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub request_id: ::std::option::Option<::std::string::String>,
+    pub request_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) to use for the anonymous Amazon QuickSight user.</p>
-    pub anonymous_user_arn: ::std::option::Option<::std::string::String>,
+    pub anonymous_user_arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl GenerateEmbedUrlForAnonymousUserOutput {
     /// <p>The embed URL for the dashboard.</p>
-    pub fn embed_url(&self) -> ::std::option::Option<&str> {
-        self.embed_url.as_deref()
+    pub fn embed_url(&self) -> &str {
+        use std::ops::Deref;
+        self.embed_url.deref()
     }
     /// <p>The HTTP status of the request.</p>
     pub fn status(&self) -> i32 {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
-        self.request_id.as_deref()
+    pub fn request_id(&self) -> &str {
+        use std::ops::Deref;
+        self.request_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) to use for the anonymous Amazon QuickSight user.</p>
-    pub fn anonymous_user_arn(&self) -> ::std::option::Option<&str> {
-        self.anonymous_user_arn.as_deref()
+    pub fn anonymous_user_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.anonymous_user_arn.deref()
     }
 }
 impl ::std::fmt::Debug for GenerateEmbedUrlForAnonymousUserOutput {
@@ -66,6 +69,7 @@ pub struct GenerateEmbedUrlForAnonymousUserOutputBuilder {
 }
 impl GenerateEmbedUrlForAnonymousUserOutputBuilder {
     /// <p>The embed URL for the dashboard.</p>
+    /// This field is required.
     pub fn embed_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.embed_url = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +84,7 @@ impl GenerateEmbedUrlForAnonymousUserOutputBuilder {
         &self.embed_url
     }
     /// <p>The HTTP status of the request.</p>
+    /// This field is required.
     pub fn status(mut self, input: i32) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -94,6 +99,7 @@ impl GenerateEmbedUrlForAnonymousUserOutputBuilder {
         &self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
+    /// This field is required.
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_id = ::std::option::Option::Some(input.into());
         self
@@ -108,6 +114,7 @@ impl GenerateEmbedUrlForAnonymousUserOutputBuilder {
         &self.request_id
     }
     /// <p>The Amazon Resource Name (ARN) to use for the anonymous Amazon QuickSight user.</p>
+    /// This field is required.
     pub fn anonymous_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anonymous_user_arn = ::std::option::Option::Some(input.into());
         self
@@ -131,14 +138,40 @@ impl GenerateEmbedUrlForAnonymousUserOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GenerateEmbedUrlForAnonymousUserOutput`](crate::operation::generate_embed_url_for_anonymous_user::GenerateEmbedUrlForAnonymousUserOutput).
-    pub fn build(self) -> crate::operation::generate_embed_url_for_anonymous_user::GenerateEmbedUrlForAnonymousUserOutput {
-        crate::operation::generate_embed_url_for_anonymous_user::GenerateEmbedUrlForAnonymousUserOutput {
-            embed_url: self.embed_url,
-            status: self.status.unwrap_or_default(),
-            request_id: self.request_id,
-            anonymous_user_arn: self.anonymous_user_arn,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`embed_url`](crate::operation::generate_embed_url_for_anonymous_user::builders::GenerateEmbedUrlForAnonymousUserOutputBuilder::embed_url)
+    /// - [`request_id`](crate::operation::generate_embed_url_for_anonymous_user::builders::GenerateEmbedUrlForAnonymousUserOutputBuilder::request_id)
+    /// - [`anonymous_user_arn`](crate::operation::generate_embed_url_for_anonymous_user::builders::GenerateEmbedUrlForAnonymousUserOutputBuilder::anonymous_user_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::generate_embed_url_for_anonymous_user::GenerateEmbedUrlForAnonymousUserOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::generate_embed_url_for_anonymous_user::GenerateEmbedUrlForAnonymousUserOutput {
+                embed_url: self.embed_url.ok_or_else(|| {
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
+                        "embed_url",
+                        "embed_url was not specified but it is required when building GenerateEmbedUrlForAnonymousUserOutput",
+                    )
+                })?,
+                status: self.status.unwrap_or_default(),
+                request_id: self.request_id.ok_or_else(|| {
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
+                        "request_id",
+                        "request_id was not specified but it is required when building GenerateEmbedUrlForAnonymousUserOutput",
+                    )
+                })?,
+                anonymous_user_arn: self.anonymous_user_arn.ok_or_else(|| {
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
+                        "anonymous_user_arn",
+                        "anonymous_user_arn was not specified but it is required when building GenerateEmbedUrlForAnonymousUserOutput",
+                    )
+                })?,
+                _request_id: self._request_id,
+            },
+        )
     }
 }
 impl ::std::fmt::Debug for GenerateEmbedUrlForAnonymousUserOutputBuilder {

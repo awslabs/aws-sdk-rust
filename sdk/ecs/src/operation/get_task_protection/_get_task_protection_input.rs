@@ -14,8 +14,10 @@ impl GetTaskProtectionInput {
         self.cluster.as_deref()
     }
     /// <p>A list of up to 100 task IDs or full ARN entries.</p>
-    pub fn tasks(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tasks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tasks.is_none()`.
+    pub fn tasks(&self) -> &[::std::string::String] {
+        self.tasks.as_deref().unwrap_or_default()
     }
 }
 impl GetTaskProtectionInput {
@@ -34,6 +36,7 @@ pub struct GetTaskProtectionInputBuilder {
 }
 impl GetTaskProtectionInputBuilder {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task sets exist in.</p>
+    /// This field is required.
     pub fn cluster(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +73,7 @@ impl GetTaskProtectionInputBuilder {
     /// Consumes the builder and constructs a [`GetTaskProtectionInput`](crate::operation::get_task_protection::GetTaskProtectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_task_protection::GetTaskProtectionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_task_protection::GetTaskProtectionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_task_protection::GetTaskProtectionInput {
             cluster: self.cluster,
             tasks: self.tasks,

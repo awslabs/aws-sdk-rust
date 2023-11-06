@@ -150,12 +150,16 @@ impl AwsRedshiftClusterDetails {
         self.cluster_identifier.as_deref()
     }
     /// <p>The nodes in the cluster.</p>
-    pub fn cluster_nodes(&self) -> ::std::option::Option<&[crate::types::AwsRedshiftClusterClusterNode]> {
-        self.cluster_nodes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cluster_nodes.is_none()`.
+    pub fn cluster_nodes(&self) -> &[crate::types::AwsRedshiftClusterClusterNode] {
+        self.cluster_nodes.as_deref().unwrap_or_default()
     }
     /// <p>The list of cluster parameter groups that are associated with this cluster.</p>
-    pub fn cluster_parameter_groups(&self) -> ::std::option::Option<&[crate::types::AwsRedshiftClusterClusterParameterGroup]> {
-        self.cluster_parameter_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cluster_parameter_groups.is_none()`.
+    pub fn cluster_parameter_groups(&self) -> &[crate::types::AwsRedshiftClusterClusterParameterGroup] {
+        self.cluster_parameter_groups.as_deref().unwrap_or_default()
     }
     /// <p>The public key for the cluster.</p>
     pub fn cluster_public_key(&self) -> ::std::option::Option<&str> {
@@ -166,8 +170,10 @@ impl AwsRedshiftClusterDetails {
         self.cluster_revision_number.as_deref()
     }
     /// <p>A list of cluster security groups that are associated with the cluster.</p>
-    pub fn cluster_security_groups(&self) -> ::std::option::Option<&[crate::types::AwsRedshiftClusterClusterSecurityGroup]> {
-        self.cluster_security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cluster_security_groups.is_none()`.
+    pub fn cluster_security_groups(&self) -> &[crate::types::AwsRedshiftClusterClusterSecurityGroup] {
+        self.cluster_security_groups.as_deref().unwrap_or_default()
     }
     /// <p>Information about the destination Region and retention period for the cross-Region snapshot copy.</p>
     pub fn cluster_snapshot_copy_status(&self) -> ::std::option::Option<&crate::types::AwsRedshiftClusterClusterSnapshotCopyStatus> {
@@ -193,8 +199,10 @@ impl AwsRedshiftClusterDetails {
         self.db_name.as_deref()
     }
     /// <p>List of time windows during which maintenance was deferred.</p>
-    pub fn deferred_maintenance_windows(&self) -> ::std::option::Option<&[crate::types::AwsRedshiftClusterDeferredMaintenanceWindow]> {
-        self.deferred_maintenance_windows.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.deferred_maintenance_windows.is_none()`.
+    pub fn deferred_maintenance_windows(&self) -> &[crate::types::AwsRedshiftClusterDeferredMaintenanceWindow] {
+        self.deferred_maintenance_windows.as_deref().unwrap_or_default()
     }
     /// <p>Information about the status of the Elastic IP (EIP) address.</p>
     pub fn elastic_ip_status(&self) -> ::std::option::Option<&crate::types::AwsRedshiftClusterElasticIpStatus> {
@@ -231,8 +239,10 @@ impl AwsRedshiftClusterDetails {
         self.hsm_status.as_ref()
     }
     /// <p>A list of IAM roles that the cluster can use to access other Amazon Web Services services.</p>
-    pub fn iam_roles(&self) -> ::std::option::Option<&[crate::types::AwsRedshiftClusterIamRole]> {
-        self.iam_roles.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.iam_roles.is_none()`.
+    pub fn iam_roles(&self) -> &[crate::types::AwsRedshiftClusterIamRole] {
+        self.iam_roles.as_deref().unwrap_or_default()
     }
     /// <p>The identifier of the KMS encryption key that is used to encrypt data in the cluster.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
@@ -267,8 +277,10 @@ impl AwsRedshiftClusterDetails {
         self.number_of_nodes
     }
     /// <p>A list of cluster operations that are waiting to start.</p>
-    pub fn pending_actions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.pending_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pending_actions.is_none()`.
+    pub fn pending_actions(&self) -> &[::std::string::String] {
+        self.pending_actions.as_deref().unwrap_or_default()
     }
     /// <p>A list of changes to the cluster that are currently pending.</p>
     pub fn pending_modified_values(&self) -> ::std::option::Option<&crate::types::AwsRedshiftClusterPendingModifiedValues> {
@@ -309,8 +321,10 @@ impl AwsRedshiftClusterDetails {
         self.vpc_id.as_deref()
     }
     /// <p>The list of VPC security groups that the cluster belongs to, if the cluster is in a VPC.</p>
-    pub fn vpc_security_groups(&self) -> ::std::option::Option<&[crate::types::AwsRedshiftClusterVpcSecurityGroup]> {
-        self.vpc_security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_groups.is_none()`.
+    pub fn vpc_security_groups(&self) -> &[crate::types::AwsRedshiftClusterVpcSecurityGroup] {
+        self.vpc_security_groups.as_deref().unwrap_or_default()
     }
     /// <p>Information about the logging status of the cluster.</p>
     pub fn logging_status(&self) -> ::std::option::Option<&crate::types::AwsRedshiftClusterLoggingStatus> {

@@ -92,6 +92,7 @@ pub struct GetNetworkResourceCountsInputBuilder {
 }
 impl GetNetworkResourceCountsInputBuilder {
     /// <p>The ID of the global network.</p>
+    /// This field is required.
     pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_network_id = ::std::option::Option::Some(input.into());
         self
@@ -218,7 +219,7 @@ impl GetNetworkResourceCountsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_network_resource_counts::GetNetworkResourceCountsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_network_resource_counts::GetNetworkResourceCountsInput {
             global_network_id: self.global_network_id,

@@ -2,29 +2,30 @@
 pub fn ser_response_headers_policy_xss_protection(
     input: &crate::types::ResponseHeadersPolicyXssProtection,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.r#override {
+    {
         let mut inner_writer = scope.start_el("Override").finish();
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.r#override).encode());
+    }
+    {
+        let mut inner_writer = scope.start_el("Protection").finish();
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.protection).encode());
+    }
+    if let Some(var_1) = &input.mode_block {
+        let mut inner_writer = scope.start_el("ModeBlock").finish();
         inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_1).encode());
     }
-    if let Some(var_2) = &input.protection {
-        let mut inner_writer = scope.start_el("Protection").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_2).encode());
-    }
-    if let Some(var_3) = &input.mode_block {
-        let mut inner_writer = scope.start_el("ModeBlock").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_3).encode());
-    }
-    if let Some(var_4) = &input.report_uri {
+    if let Some(var_2) = &input.report_uri {
         let mut inner_writer = scope.start_el("ReportUri").finish();
-        inner_writer.data(var_4.as_str());
+        inner_writer.data(var_2.as_str());
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_response_headers_policy_xss_protection(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::ResponseHeadersPolicyXssProtection, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -33,6 +34,36 @@ pub fn de_response_headers_policy_xss_protection(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Override") /* Override com.amazonaws.cloudfront#ResponseHeadersPolicyXSSProtection$Override */ =>  {
+                let var_3 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.cloudfront#boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_override(var_3);
+            }
+            ,
+            s if s.matches("Protection") /* Protection com.amazonaws.cloudfront#ResponseHeadersPolicyXSSProtection$Protection */ =>  {
+                let var_4 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.cloudfront#boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_protection(var_4);
+            }
+            ,
+            s if s.matches("ModeBlock") /* ModeBlock com.amazonaws.cloudfront#ResponseHeadersPolicyXSSProtection$ModeBlock */ =>  {
                 let var_5 =
                     Some(
                          {
@@ -44,41 +75,11 @@ pub fn de_response_headers_policy_xss_protection(
                         ?
                     )
                 ;
-                builder = builder.set_override(var_5);
-            }
-            ,
-            s if s.matches("Protection") /* Protection com.amazonaws.cloudfront#ResponseHeadersPolicyXSSProtection$Protection */ =>  {
-                let var_6 =
-                    Some(
-                         {
-                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.cloudfront#boolean`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_protection(var_6);
-            }
-            ,
-            s if s.matches("ModeBlock") /* ModeBlock com.amazonaws.cloudfront#ResponseHeadersPolicyXSSProtection$ModeBlock */ =>  {
-                let var_7 =
-                    Some(
-                         {
-                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.cloudfront#boolean`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_mode_block(var_7);
+                builder = builder.set_mode_block(var_5);
             }
             ,
             s if s.matches("ReportUri") /* ReportUri com.amazonaws.cloudfront#ResponseHeadersPolicyXSSProtection$ReportUri */ =>  {
-                let var_8 =
+                let var_6 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -87,11 +88,13 @@ pub fn de_response_headers_policy_xss_protection(
                         ?
                     )
                 ;
-                builder = builder.set_report_uri(var_8);
+                builder = builder.set_report_uri(var_6);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::response_headers_policy_xss_protection_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

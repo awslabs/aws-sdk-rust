@@ -11,8 +11,10 @@ pub struct ListTestGridSessionsOutput {
 }
 impl ListTestGridSessionsOutput {
     /// <p>The sessions that match the criteria in a <code>ListTestGridSessionsRequest</code>. </p>
-    pub fn test_grid_sessions(&self) -> ::std::option::Option<&[crate::types::TestGridSession]> {
-        self.test_grid_sessions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.test_grid_sessions.is_none()`.
+    pub fn test_grid_sessions(&self) -> &[crate::types::TestGridSession] {
+        self.test_grid_sessions.as_deref().unwrap_or_default()
     }
     /// <p>Pagination token.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

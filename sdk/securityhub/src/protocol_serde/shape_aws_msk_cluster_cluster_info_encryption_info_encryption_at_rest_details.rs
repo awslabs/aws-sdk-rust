@@ -2,7 +2,7 @@
 pub fn ser_aws_msk_cluster_cluster_info_encryption_info_encryption_at_rest_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsMskClusterClusterInfoEncryptionInfoEncryptionAtRestDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.data_volume_kms_key_id {
         object.key("DataVolumeKMSKeyId").string(var_1.as_str());
     }

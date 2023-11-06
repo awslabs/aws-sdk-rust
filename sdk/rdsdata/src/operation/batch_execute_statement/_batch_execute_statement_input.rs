@@ -62,8 +62,10 @@ impl BatchExecuteStatementInput {
     /// </ul> <note>
     /// <p>Array parameters are not supported.</p>
     /// </note>
-    pub fn parameter_sets(&self) -> ::std::option::Option<&[::std::vec::Vec<crate::types::SqlParameter>]> {
-        self.parameter_sets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameter_sets.is_none()`.
+    pub fn parameter_sets(&self) -> &[::std::vec::Vec<crate::types::SqlParameter>] {
+        self.parameter_sets.as_deref().unwrap_or_default()
     }
     /// <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p>
     /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
@@ -92,6 +94,7 @@ pub struct BatchExecuteStatementInputBuilder {
 }
 impl BatchExecuteStatementInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -107,6 +110,7 @@ impl BatchExecuteStatementInputBuilder {
     }
     /// <p>The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
     /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
+    /// This field is required.
     pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_arn = ::std::option::Option::Some(input.into());
         self
@@ -123,6 +127,7 @@ impl BatchExecuteStatementInputBuilder {
         &self.secret_arn
     }
     /// <p>The SQL statement to run. Don't include a semicolon (;) at the end of the SQL statement.</p>
+    /// This field is required.
     pub fn sql(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sql = ::std::option::Option::Some(input.into());
         self
@@ -231,7 +236,7 @@ impl BatchExecuteStatementInputBuilder {
     /// Consumes the builder and constructs a [`BatchExecuteStatementInput`](crate::operation::batch_execute_statement::BatchExecuteStatementInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_execute_statement::BatchExecuteStatementInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_execute_statement::BatchExecuteStatementInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_execute_statement::BatchExecuteStatementInput {
             resource_arn: self.resource_arn,

@@ -126,7 +126,7 @@ impl ListBuildBatchesInputBuilder {
     /// Consumes the builder and constructs a [`ListBuildBatchesInput`](crate::operation::list_build_batches::ListBuildBatchesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_build_batches::ListBuildBatchesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_build_batches::ListBuildBatchesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_build_batches::ListBuildBatchesInput {
             filter: self.filter,
             max_results: self.max_results,

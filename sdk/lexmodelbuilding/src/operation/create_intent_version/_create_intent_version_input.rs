@@ -34,6 +34,7 @@ pub struct CreateIntentVersionInputBuilder {
 }
 impl CreateIntentVersionInputBuilder {
     /// <p>The name of the intent that you want to create a new version of. The name is case sensitive. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl CreateIntentVersionInputBuilder {
     /// Consumes the builder and constructs a [`CreateIntentVersionInput`](crate::operation::create_intent_version::CreateIntentVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_intent_version::CreateIntentVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_intent_version::CreateIntentVersionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_intent_version::CreateIntentVersionInput {
             name: self.name,

@@ -15,8 +15,10 @@ impl GetInsightSelectorsOutput {
         self.trail_arn.as_deref()
     }
     /// <p>A JSON string that contains the insight types you want to log on a trail. In this release, <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code> are supported as insight types.</p>
-    pub fn insight_selectors(&self) -> ::std::option::Option<&[crate::types::InsightSelector]> {
-        self.insight_selectors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.insight_selectors.is_none()`.
+    pub fn insight_selectors(&self) -> &[crate::types::InsightSelector] {
+        self.insight_selectors.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetInsightSelectorsOutput {

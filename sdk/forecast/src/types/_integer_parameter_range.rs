@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IntegerParameterRange {
     /// <p>The name of the hyperparameter to tune.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The maximum tunable value of the hyperparameter.</p>
-    pub max_value: ::std::option::Option<i32>,
+    pub max_value: i32,
     /// <p>The minimum tunable value of the hyperparameter.</p>
-    pub min_value: ::std::option::Option<i32>,
+    pub min_value: i32,
     /// <p>The scale that hyperparameter tuning uses to search the hyperparameter range. Valid values:</p>
     /// <dl>
     /// <dt>
@@ -44,15 +44,16 @@ pub struct IntegerParameterRange {
 }
 impl IntegerParameterRange {
     /// <p>The name of the hyperparameter to tune.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The maximum tunable value of the hyperparameter.</p>
-    pub fn max_value(&self) -> ::std::option::Option<i32> {
+    pub fn max_value(&self) -> i32 {
         self.max_value
     }
     /// <p>The minimum tunable value of the hyperparameter.</p>
-    pub fn min_value(&self) -> ::std::option::Option<i32> {
+    pub fn min_value(&self) -> i32 {
         self.min_value
     }
     /// <p>The scale that hyperparameter tuning uses to search the hyperparameter range. Valid values:</p>
@@ -107,6 +108,7 @@ pub struct IntegerParameterRangeBuilder {
 }
 impl IntegerParameterRangeBuilder {
     /// <p>The name of the hyperparameter to tune.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -121,6 +123,7 @@ impl IntegerParameterRangeBuilder {
         &self.name
     }
     /// <p>The maximum tunable value of the hyperparameter.</p>
+    /// This field is required.
     pub fn max_value(mut self, input: i32) -> Self {
         self.max_value = ::std::option::Option::Some(input);
         self
@@ -135,6 +138,7 @@ impl IntegerParameterRangeBuilder {
         &self.max_value
     }
     /// <p>The minimum tunable value of the hyperparameter.</p>
+    /// This field is required.
     pub fn min_value(mut self, input: i32) -> Self {
         self.min_value = ::std::option::Option::Some(input);
         self
@@ -250,12 +254,31 @@ impl IntegerParameterRangeBuilder {
         &self.scaling_type
     }
     /// Consumes the builder and constructs a [`IntegerParameterRange`](crate::types::IntegerParameterRange).
-    pub fn build(self) -> crate::types::IntegerParameterRange {
-        crate::types::IntegerParameterRange {
-            name: self.name,
-            max_value: self.max_value,
-            min_value: self.min_value,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::IntegerParameterRangeBuilder::name)
+    /// - [`max_value`](crate::types::builders::IntegerParameterRangeBuilder::max_value)
+    /// - [`min_value`](crate::types::builders::IntegerParameterRangeBuilder::min_value)
+    pub fn build(self) -> ::std::result::Result<crate::types::IntegerParameterRange, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::IntegerParameterRange {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building IntegerParameterRange",
+                )
+            })?,
+            max_value: self.max_value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "max_value",
+                    "max_value was not specified but it is required when building IntegerParameterRange",
+                )
+            })?,
+            min_value: self.min_value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "min_value",
+                    "min_value was not specified but it is required when building IntegerParameterRange",
+                )
+            })?,
             scaling_type: self.scaling_type,
-        }
+        })
     }
 }

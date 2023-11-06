@@ -17,8 +17,10 @@ impl DateTimeDefaultValues {
         self.dynamic_value.as_ref()
     }
     /// <p>The static values of the <code>DataTimeDefaultValues</code>.</p>
-    pub fn static_values(&self) -> ::std::option::Option<&[::aws_smithy_types::DateTime]> {
-        self.static_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.static_values.is_none()`.
+    pub fn static_values(&self) -> &[::aws_smithy_types::DateTime] {
+        self.static_values.as_deref().unwrap_or_default()
     }
     /// <p>The rolling date of the <code>DataTimeDefaultValues</code>. The date is determined from the dataset based on input expression.</p>
     pub fn rolling_date(&self) -> ::std::option::Option<&crate::types::RollingDateConfiguration> {

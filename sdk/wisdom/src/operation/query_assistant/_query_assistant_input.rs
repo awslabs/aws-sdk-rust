@@ -58,6 +58,7 @@ pub struct QueryAssistantInputBuilder {
 }
 impl QueryAssistantInputBuilder {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// This field is required.
     pub fn assistant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assistant_id = ::std::option::Option::Some(input.into());
         self
@@ -72,6 +73,7 @@ impl QueryAssistantInputBuilder {
         &self.assistant_id
     }
     /// <p>The text to search for.</p>
+    /// This field is required.
     pub fn query_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_text = ::std::option::Option::Some(input.into());
         self
@@ -116,7 +118,7 @@ impl QueryAssistantInputBuilder {
     /// Consumes the builder and constructs a [`QueryAssistantInput`](crate::operation::query_assistant::QueryAssistantInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::query_assistant::QueryAssistantInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::query_assistant::QueryAssistantInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::query_assistant::QueryAssistantInput {
             assistant_id: self.assistant_id,
             query_text: self.query_text,

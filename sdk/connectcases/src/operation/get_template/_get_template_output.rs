@@ -4,11 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTemplateOutput {
     /// <p>A unique identifier of a template.</p>
-    pub template_id: ::std::option::Option<::std::string::String>,
+    pub template_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
-    pub template_arn: ::std::option::Option<::std::string::String>,
+    pub template_arn: ::std::string::String,
     /// <p>The name of the template.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>A brief description of the template.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Configuration of layouts associated to the template.</p>
@@ -18,21 +18,24 @@ pub struct GetTemplateOutput {
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
     /// <p>The status of the template.</p>
-    pub status: ::std::option::Option<crate::types::TemplateStatus>,
+    pub status: crate::types::TemplateStatus,
     _request_id: Option<String>,
 }
 impl GetTemplateOutput {
     /// <p>A unique identifier of a template.</p>
-    pub fn template_id(&self) -> ::std::option::Option<&str> {
-        self.template_id.as_deref()
+    pub fn template_id(&self) -> &str {
+        use std::ops::Deref;
+        self.template_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
-    pub fn template_arn(&self) -> ::std::option::Option<&str> {
-        self.template_arn.as_deref()
+    pub fn template_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.template_arn.deref()
     }
     /// <p>The name of the template.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>A brief description of the template.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -43,16 +46,18 @@ impl GetTemplateOutput {
         self.layout_configuration.as_ref()
     }
     /// <p>A list of fields that must contain a value for a case to be successfully created with this template.</p>
-    pub fn required_fields(&self) -> ::std::option::Option<&[crate::types::RequiredField]> {
-        self.required_fields.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.required_fields.is_none()`.
+    pub fn required_fields(&self) -> &[crate::types::RequiredField] {
+        self.required_fields.as_deref().unwrap_or_default()
     }
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>> {
         self.tags.as_ref()
     }
     /// <p>The status of the template.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::TemplateStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::TemplateStatus {
+        &self.status
     }
 }
 impl ::aws_http::request_id::RequestId for GetTemplateOutput {
@@ -83,6 +88,7 @@ pub struct GetTemplateOutputBuilder {
 }
 impl GetTemplateOutputBuilder {
     /// <p>A unique identifier of a template.</p>
+    /// This field is required.
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_id = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +103,7 @@ impl GetTemplateOutputBuilder {
         &self.template_id
     }
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
+    /// This field is required.
     pub fn template_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_arn = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +118,7 @@ impl GetTemplateOutputBuilder {
         &self.template_arn
     }
     /// <p>The name of the template.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -198,6 +206,7 @@ impl GetTemplateOutputBuilder {
         &self.tags
     }
     /// <p>The status of the template.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::TemplateStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -221,17 +230,42 @@ impl GetTemplateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetTemplateOutput`](crate::operation::get_template::GetTemplateOutput).
-    pub fn build(self) -> crate::operation::get_template::GetTemplateOutput {
-        crate::operation::get_template::GetTemplateOutput {
-            template_id: self.template_id,
-            template_arn: self.template_arn,
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`template_id`](crate::operation::get_template::builders::GetTemplateOutputBuilder::template_id)
+    /// - [`template_arn`](crate::operation::get_template::builders::GetTemplateOutputBuilder::template_arn)
+    /// - [`name`](crate::operation::get_template::builders::GetTemplateOutputBuilder::name)
+    /// - [`status`](crate::operation::get_template::builders::GetTemplateOutputBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_template::GetTemplateOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_template::GetTemplateOutput {
+            template_id: self.template_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "template_id",
+                    "template_id was not specified but it is required when building GetTemplateOutput",
+                )
+            })?,
+            template_arn: self.template_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "template_arn",
+                    "template_arn was not specified but it is required when building GetTemplateOutput",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building GetTemplateOutput",
+                )
+            })?,
             description: self.description,
             layout_configuration: self.layout_configuration,
             required_fields: self.required_fields,
             tags: self.tags,
-            status: self.status,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building GetTemplateOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

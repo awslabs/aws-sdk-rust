@@ -97,10 +97,10 @@ pub fn de_modify_client_properties_http_response(
 
 pub fn ser_modify_client_properties_input(
     input: &crate::operation::modify_client_properties::ModifyClientPropertiesInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_modify_client_properties_input::ser_modify_client_properties_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

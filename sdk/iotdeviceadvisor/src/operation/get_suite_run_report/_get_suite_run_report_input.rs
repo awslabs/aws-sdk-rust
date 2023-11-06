@@ -34,6 +34,7 @@ pub struct GetSuiteRunReportInputBuilder {
 }
 impl GetSuiteRunReportInputBuilder {
     /// <p>Suite definition ID of the test suite.</p>
+    /// This field is required.
     pub fn suite_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.suite_definition_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetSuiteRunReportInputBuilder {
         &self.suite_definition_id
     }
     /// <p>Suite run ID of the test suite run.</p>
+    /// This field is required.
     pub fn suite_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.suite_run_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl GetSuiteRunReportInputBuilder {
     /// Consumes the builder and constructs a [`GetSuiteRunReportInput`](crate::operation::get_suite_run_report::GetSuiteRunReportInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_suite_run_report::GetSuiteRunReportInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_suite_run_report::GetSuiteRunReportInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_suite_run_report::GetSuiteRunReportInput {
             suite_definition_id: self.suite_definition_id,
             suite_run_id: self.suite_run_id,

@@ -34,6 +34,7 @@ pub struct CreateConnectionOutputBuilder {
 }
 impl CreateConnectionOutputBuilder {
     /// <p>A description of the App Runner connection that's created by this request.</p>
+    /// This field is required.
     pub fn connection(mut self, input: crate::types::Connection) -> Self {
         self.connection = ::std::option::Option::Some(input);
         self

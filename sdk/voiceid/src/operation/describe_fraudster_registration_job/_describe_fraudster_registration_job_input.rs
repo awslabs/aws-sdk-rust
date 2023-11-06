@@ -34,6 +34,7 @@ pub struct DescribeFraudsterRegistrationJobInputBuilder {
 }
 impl DescribeFraudsterRegistrationJobInputBuilder {
     /// <p>The identifier of the domain that contains the fraudster registration job.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeFraudsterRegistrationJobInputBuilder {
         &self.domain_id
     }
     /// <p>The identifier of the fraudster registration job you are describing.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl DescribeFraudsterRegistrationJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_fraudster_registration_job::DescribeFraudsterRegistrationJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_fraudster_registration_job::DescribeFraudsterRegistrationJobInput {

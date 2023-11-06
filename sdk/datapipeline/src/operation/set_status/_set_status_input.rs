@@ -17,8 +17,10 @@ impl SetStatusInput {
         self.pipeline_id.as_deref()
     }
     /// <p>The IDs of the objects. The corresponding objects can be either physical or components, but not a mix of both types.</p>
-    pub fn object_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.object_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.object_ids.is_none()`.
+    pub fn object_ids(&self) -> &[::std::string::String] {
+        self.object_ids.as_deref().unwrap_or_default()
     }
     /// <p>The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.</p>
     pub fn status(&self) -> ::std::option::Option<&str> {
@@ -42,6 +44,7 @@ pub struct SetStatusInputBuilder {
 }
 impl SetStatusInputBuilder {
     /// <p>The ID of the pipeline that contains the objects.</p>
+    /// This field is required.
     pub fn pipeline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +79,7 @@ impl SetStatusInputBuilder {
         &self.object_ids
     }
     /// <p>The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.</p>
+    /// This field is required.
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
         self
@@ -90,7 +94,7 @@ impl SetStatusInputBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`SetStatusInput`](crate::operation::set_status::SetStatusInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::set_status::SetStatusInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::set_status::SetStatusInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::set_status::SetStatusInput {
             pipeline_id: self.pipeline_id,
             object_ids: self.object_ids,

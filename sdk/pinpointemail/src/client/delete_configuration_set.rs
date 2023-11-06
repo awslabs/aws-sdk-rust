@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteConfigurationSet`](crate::operation::delete_configuration_set::builders::DeleteConfigurationSetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`configuration_set_name(impl Into<String>)`](crate::operation::delete_configuration_set::builders::DeleteConfigurationSetFluentBuilder::configuration_set_name) / [`set_configuration_set_name(Option<String>)`](crate::operation::delete_configuration_set::builders::DeleteConfigurationSetFluentBuilder::set_configuration_set_name): <p>The name of the configuration set that you want to delete.</p>
+    ///   - [`configuration_set_name(impl Into<String>)`](crate::operation::delete_configuration_set::builders::DeleteConfigurationSetFluentBuilder::configuration_set_name) / [`set_configuration_set_name(Option<String>)`](crate::operation::delete_configuration_set::builders::DeleteConfigurationSetFluentBuilder::set_configuration_set_name):<br>required: **true**<br><p>The name of the configuration set that you want to delete.</p><br>
     /// - On success, responds with [`DeleteConfigurationSetOutput`](crate::operation::delete_configuration_set::DeleteConfigurationSetOutput)
     /// - On failure, responds with [`SdkError<DeleteConfigurationSetError>`](crate::operation::delete_configuration_set::DeleteConfigurationSetError)
     pub fn delete_configuration_set(&self) -> crate::operation::delete_configuration_set::builders::DeleteConfigurationSetFluentBuilder {

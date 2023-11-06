@@ -7,7 +7,7 @@ pub struct DescribeTagsOutput {
     /// <p>If the request included a <code>Marker</code>, the response returns that value in this field.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Returns tags associated with the file system as an array of <code>Tag</code> objects. </p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::vec::Vec<crate::types::Tag>,
     /// <p>If a value is present, there are more tags to return. In a subsequent request, you can provide the value of <code>NextMarker</code> as the value of the <code>Marker</code> parameter in your next request to retrieve the next set of tags.</p>
     pub next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -18,8 +18,9 @@ impl DescribeTagsOutput {
         self.marker.as_deref()
     }
     /// <p>Returns tags associated with the file system as an array of <code>Tag</code> objects. </p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        use std::ops::Deref;
+        self.tags.deref()
     }
     /// <p>If a value is present, there are more tags to return. In a subsequent request, you can provide the value of <code>NextMarker</code> as the value of the <code>Marker</code> parameter in your next request to retrieve the next set of tags.</p>
     pub fn next_marker(&self) -> ::std::option::Option<&str> {
@@ -106,12 +107,21 @@ impl DescribeTagsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeTagsOutput`](crate::operation::describe_tags::DescribeTagsOutput).
-    pub fn build(self) -> crate::operation::describe_tags::DescribeTagsOutput {
-        crate::operation::describe_tags::DescribeTagsOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`tags`](crate::operation::describe_tags::builders::DescribeTagsOutputBuilder::tags)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_tags::DescribeTagsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_tags::DescribeTagsOutput {
             marker: self.marker,
-            tags: self.tags,
+            tags: self.tags.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "tags",
+                    "tags was not specified but it is required when building DescribeTagsOutput",
+                )
+            })?,
             next_marker: self.next_marker,
             _request_id: self._request_id,
-        }
+        })
     }
 }

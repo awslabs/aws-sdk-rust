@@ -20,25 +20,35 @@ pub struct ScatterPlotCategoricallyAggregatedFieldWells {
 impl ScatterPlotCategoricallyAggregatedFieldWells {
     /// <p>The x-axis field well of a scatter plot.</p>
     /// <p>The x-axis is aggregated by category.</p>
-    pub fn x_axis(&self) -> ::std::option::Option<&[crate::types::MeasureField]> {
-        self.x_axis.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.x_axis.is_none()`.
+    pub fn x_axis(&self) -> &[crate::types::MeasureField] {
+        self.x_axis.as_deref().unwrap_or_default()
     }
     /// <p>The y-axis field well of a scatter plot.</p>
     /// <p>The y-axis is aggregated by category.</p>
-    pub fn y_axis(&self) -> ::std::option::Option<&[crate::types::MeasureField]> {
-        self.y_axis.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.y_axis.is_none()`.
+    pub fn y_axis(&self) -> &[crate::types::MeasureField] {
+        self.y_axis.as_deref().unwrap_or_default()
     }
     /// <p>The category field well of a scatter plot.</p>
-    pub fn category(&self) -> ::std::option::Option<&[crate::types::DimensionField]> {
-        self.category.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.category.is_none()`.
+    pub fn category(&self) -> &[crate::types::DimensionField] {
+        self.category.as_deref().unwrap_or_default()
     }
     /// <p>The size field well of a scatter plot.</p>
-    pub fn size(&self) -> ::std::option::Option<&[crate::types::MeasureField]> {
-        self.size.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.size.is_none()`.
+    pub fn size(&self) -> &[crate::types::MeasureField] {
+        self.size.as_deref().unwrap_or_default()
     }
     /// <p>The label field well of a scatter plot.</p>
-    pub fn label(&self) -> ::std::option::Option<&[crate::types::DimensionField]> {
-        self.label.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.label.is_none()`.
+    pub fn label(&self) -> &[crate::types::DimensionField] {
+        self.label.as_deref().unwrap_or_default()
     }
 }
 impl ScatterPlotCategoricallyAggregatedFieldWells {

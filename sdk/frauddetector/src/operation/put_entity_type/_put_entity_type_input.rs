@@ -20,8 +20,10 @@ impl PutEntityTypeInput {
         self.description.as_deref()
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl PutEntityTypeInput {
@@ -41,6 +43,7 @@ pub struct PutEntityTypeInputBuilder {
 }
 impl PutEntityTypeInputBuilder {
     /// <p>The name of the entity type.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -91,7 +94,7 @@ impl PutEntityTypeInputBuilder {
     /// Consumes the builder and constructs a [`PutEntityTypeInput`](crate::operation::put_entity_type::PutEntityTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_entity_type::PutEntityTypeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_entity_type::PutEntityTypeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_entity_type::PutEntityTypeInput {
             name: self.name,
             description: self.description,

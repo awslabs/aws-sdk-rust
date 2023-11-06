@@ -44,8 +44,10 @@ impl RevokeSecurityGroupIngressInput {
         self.group_name.as_deref()
     }
     /// <p>The sets of IP permissions. You can't specify a source security group and a CIDR IP address range in the same set of permissions.</p>
-    pub fn ip_permissions(&self) -> ::std::option::Option<&[crate::types::IpPermission]> {
-        self.ip_permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ip_permissions.is_none()`.
+    pub fn ip_permissions(&self) -> &[crate::types::IpPermission] {
+        self.ip_permissions.as_deref().unwrap_or_default()
     }
     /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). Use <code>-1</code> to specify all.</p>
     pub fn ip_protocol(&self) -> ::std::option::Option<&str> {
@@ -68,8 +70,10 @@ impl RevokeSecurityGroupIngressInput {
         self.dry_run
     }
     /// <p>The IDs of the security group rules.</p>
-    pub fn security_group_rule_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_rule_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_rule_ids.is_none()`.
+    pub fn security_group_rule_ids(&self) -> &[::std::string::String] {
+        self.security_group_rule_ids.as_deref().unwrap_or_default()
     }
 }
 impl RevokeSecurityGroupIngressInput {
@@ -267,7 +271,7 @@ impl RevokeSecurityGroupIngressInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::revoke_security_group_ingress::RevokeSecurityGroupIngressInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::revoke_security_group_ingress::RevokeSecurityGroupIngressInput {
             cidr_ip: self.cidr_ip,

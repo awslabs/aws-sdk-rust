@@ -51,6 +51,7 @@ pub struct UpdateDeviceStatusInputBuilder {
 }
 impl UpdateDeviceStatusInputBuilder {
     /// <p>A valid access token that Amazon Cognito issued to the user whose device status you want to update.</p>
+    /// This field is required.
     pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_token = ::std::option::Option::Some(input.into());
         self
@@ -65,6 +66,7 @@ impl UpdateDeviceStatusInputBuilder {
         &self.access_token
     }
     /// <p>The device key.</p>
+    /// This field is required.
     pub fn device_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_key = ::std::option::Option::Some(input.into());
         self
@@ -95,7 +97,8 @@ impl UpdateDeviceStatusInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDeviceStatusInput`](crate::operation::update_device_status::UpdateDeviceStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_device_status::UpdateDeviceStatusInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_device_status::UpdateDeviceStatusInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_device_status::UpdateDeviceStatusInput {
             access_token: self.access_token,
             device_key: self.device_key,

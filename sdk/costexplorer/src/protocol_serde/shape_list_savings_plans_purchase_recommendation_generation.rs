@@ -37,8 +37,8 @@ pub fn de_list_savings_plans_purchase_recommendation_generation_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidNextTokenException" => crate::operation::list_savings_plans_purchase_recommendation_generation::ListSavingsPlansPurchaseRecommendationGenerationError::InvalidNextTokenException({
@@ -53,8 +53,8 @@ pub fn de_list_savings_plans_purchase_recommendation_generation_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "LimitExceededException" => crate::operation::list_savings_plans_purchase_recommendation_generation::ListSavingsPlansPurchaseRecommendationGenerationError::LimitExceededException({
@@ -69,8 +69,8 @@ pub fn de_list_savings_plans_purchase_recommendation_generation_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::list_savings_plans_purchase_recommendation_generation::ListSavingsPlansPurchaseRecommendationGenerationError::generic(generic)
@@ -97,12 +97,12 @@ pub fn de_list_savings_plans_purchase_recommendation_generation_http_response(
 
 pub fn ser_list_savings_plans_purchase_recommendation_generation_input(
     input: &crate::operation::list_savings_plans_purchase_recommendation_generation::ListSavingsPlansPurchaseRecommendationGenerationInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_list_savings_plans_purchase_recommendation_generation_input::ser_list_savings_plans_purchase_recommendation_generation_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_list_savings_plans_purchase_recommendation_generation(

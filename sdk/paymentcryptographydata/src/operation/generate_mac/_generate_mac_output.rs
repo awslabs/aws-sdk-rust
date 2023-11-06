@@ -4,25 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GenerateMacOutput {
     /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses for MAC generation.</p>
-    pub key_arn: ::std::option::Option<::std::string::String>,
+    pub key_arn: ::std::string::String,
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
-    pub key_check_value: ::std::option::Option<::std::string::String>,
+    pub key_check_value: ::std::string::String,
     /// <p>The MAC cryptogram generated within Amazon Web Services Payment Cryptography.</p>
-    pub mac: ::std::option::Option<::std::string::String>,
+    pub mac: ::std::string::String,
     _request_id: Option<String>,
 }
 impl GenerateMacOutput {
     /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses for MAC generation.</p>
-    pub fn key_arn(&self) -> ::std::option::Option<&str> {
-        self.key_arn.as_deref()
+    pub fn key_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.key_arn.deref()
     }
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
-    pub fn key_check_value(&self) -> ::std::option::Option<&str> {
-        self.key_check_value.as_deref()
+    pub fn key_check_value(&self) -> &str {
+        use std::ops::Deref;
+        self.key_check_value.deref()
     }
     /// <p>The MAC cryptogram generated within Amazon Web Services Payment Cryptography.</p>
-    pub fn mac(&self) -> ::std::option::Option<&str> {
-        self.mac.as_deref()
+    pub fn mac(&self) -> &str {
+        use std::ops::Deref;
+        self.mac.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GenerateMacOutput {
@@ -48,6 +51,7 @@ pub struct GenerateMacOutputBuilder {
 }
 impl GenerateMacOutputBuilder {
     /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses for MAC generation.</p>
+    /// This field is required.
     pub fn key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_arn = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +66,7 @@ impl GenerateMacOutputBuilder {
         &self.key_arn
     }
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
+    /// This field is required.
     pub fn key_check_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_check_value = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +81,7 @@ impl GenerateMacOutputBuilder {
         &self.key_check_value
     }
     /// <p>The MAC cryptogram generated within Amazon Web Services Payment Cryptography.</p>
+    /// This field is required.
     pub fn mac(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mac = ::std::option::Option::Some(input.into());
         self
@@ -99,12 +105,31 @@ impl GenerateMacOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GenerateMacOutput`](crate::operation::generate_mac::GenerateMacOutput).
-    pub fn build(self) -> crate::operation::generate_mac::GenerateMacOutput {
-        crate::operation::generate_mac::GenerateMacOutput {
-            key_arn: self.key_arn,
-            key_check_value: self.key_check_value,
-            mac: self.mac,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key_arn`](crate::operation::generate_mac::builders::GenerateMacOutputBuilder::key_arn)
+    /// - [`key_check_value`](crate::operation::generate_mac::builders::GenerateMacOutputBuilder::key_check_value)
+    /// - [`mac`](crate::operation::generate_mac::builders::GenerateMacOutputBuilder::mac)
+    pub fn build(self) -> ::std::result::Result<crate::operation::generate_mac::GenerateMacOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::generate_mac::GenerateMacOutput {
+            key_arn: self.key_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "key_arn",
+                    "key_arn was not specified but it is required when building GenerateMacOutput",
+                )
+            })?,
+            key_check_value: self.key_check_value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "key_check_value",
+                    "key_check_value was not specified but it is required when building GenerateMacOutput",
+                )
+            })?,
+            mac: self.mac.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "mac",
+                    "mac was not specified but it is required when building GenerateMacOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

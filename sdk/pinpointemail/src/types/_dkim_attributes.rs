@@ -35,8 +35,10 @@ impl DkimAttributes {
         self.status.as_ref()
     }
     /// <p>A set of unique strings that you use to create a set of CNAME records that you add to the DNS configuration for your domain. When Amazon Pinpoint detects these records in the DNS configuration for your domain, the DKIM authentication process is complete. Amazon Pinpoint usually detects these records within about 72 hours of adding them to the DNS configuration for your domain.</p>
-    pub fn tokens(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tokens.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tokens.is_none()`.
+    pub fn tokens(&self) -> &[::std::string::String] {
+        self.tokens.as_deref().unwrap_or_default()
     }
 }
 impl DkimAttributes {

@@ -59,6 +59,7 @@ pub struct PutBucketRequestPaymentInputBuilder {
 }
 impl PutBucketRequestPaymentInputBuilder {
     /// <p>The bucket name.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -107,6 +108,7 @@ impl PutBucketRequestPaymentInputBuilder {
         &self.checksum_algorithm
     }
     /// <p>Container for Payer.</p>
+    /// This field is required.
     pub fn request_payment_configuration(mut self, input: crate::types::RequestPaymentConfiguration) -> Self {
         self.request_payment_configuration = ::std::option::Option::Some(input);
         self
@@ -139,7 +141,7 @@ impl PutBucketRequestPaymentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_bucket_request_payment::PutBucketRequestPaymentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_bucket_request_payment::PutBucketRequestPaymentInput {
             bucket: self.bucket,

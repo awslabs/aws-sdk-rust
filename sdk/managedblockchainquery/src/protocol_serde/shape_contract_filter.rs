@@ -2,15 +2,15 @@
 pub fn ser_contract_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ContractFilter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.network {
-        object.key("network").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("network").string(input.network.as_str());
     }
-    if let Some(var_2) = &input.token_standard {
-        object.key("tokenStandard").string(var_2.as_str());
+    {
+        object.key("tokenStandard").string(input.token_standard.as_str());
     }
-    if let Some(var_3) = &input.deployer_address {
-        object.key("deployerAddress").string(var_3.as_str());
+    {
+        object.key("deployerAddress").string(input.deployer_address.as_str());
     }
     Ok(())
 }

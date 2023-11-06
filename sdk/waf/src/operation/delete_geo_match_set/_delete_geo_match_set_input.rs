@@ -34,6 +34,7 @@ pub struct DeleteGeoMatchSetInputBuilder {
 }
 impl DeleteGeoMatchSetInputBuilder {
     /// <p>The <code>GeoMatchSetID</code> of the <code>GeoMatchSet</code> that you want to delete. <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
+    /// This field is required.
     pub fn geo_match_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.geo_match_set_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteGeoMatchSetInputBuilder {
         &self.geo_match_set_id
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    /// This field is required.
     pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_token = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DeleteGeoMatchSetInputBuilder {
     /// Consumes the builder and constructs a [`DeleteGeoMatchSetInput`](crate::operation::delete_geo_match_set::DeleteGeoMatchSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_geo_match_set::DeleteGeoMatchSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_geo_match_set::DeleteGeoMatchSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_geo_match_set::DeleteGeoMatchSetInput {
             geo_match_set_id: self.geo_match_set_id,
             change_token: self.change_token,

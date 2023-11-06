@@ -122,12 +122,16 @@ impl StartBuildBatchInput {
         self.project_name.as_deref()
     }
     /// <p>An array of <code>ProjectSource</code> objects that override the secondary sources defined in the batch build project.</p>
-    pub fn secondary_sources_override(&self) -> ::std::option::Option<&[crate::types::ProjectSource]> {
-        self.secondary_sources_override.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secondary_sources_override.is_none()`.
+    pub fn secondary_sources_override(&self) -> &[crate::types::ProjectSource] {
+        self.secondary_sources_override.as_deref().unwrap_or_default()
     }
     /// <p>An array of <code>ProjectSourceVersion</code> objects that override the secondary source versions in the batch build project.</p>
-    pub fn secondary_sources_version_override(&self) -> ::std::option::Option<&[crate::types::ProjectSourceVersion]> {
-        self.secondary_sources_version_override.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secondary_sources_version_override.is_none()`.
+    pub fn secondary_sources_version_override(&self) -> &[crate::types::ProjectSourceVersion] {
+        self.secondary_sources_version_override.as_deref().unwrap_or_default()
     }
     /// <p>The version of the batch build input to be built, for this build only. If not specified, the latest version is used. If specified, the contents depends on the source provider:</p>
     /// <dl>
@@ -166,12 +170,16 @@ impl StartBuildBatchInput {
         self.artifacts_override.as_ref()
     }
     /// <p>An array of <code>ProjectArtifacts</code> objects that override the secondary artifacts defined in the batch build project.</p>
-    pub fn secondary_artifacts_override(&self) -> ::std::option::Option<&[crate::types::ProjectArtifacts]> {
-        self.secondary_artifacts_override.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secondary_artifacts_override.is_none()`.
+    pub fn secondary_artifacts_override(&self) -> &[crate::types::ProjectArtifacts] {
+        self.secondary_artifacts_override.as_deref().unwrap_or_default()
     }
     /// <p>An array of <code>EnvironmentVariable</code> objects that override, or add to, the environment variables defined in the batch build project.</p>
-    pub fn environment_variables_override(&self) -> ::std::option::Option<&[crate::types::EnvironmentVariable]> {
-        self.environment_variables_override.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.environment_variables_override.is_none()`.
+    pub fn environment_variables_override(&self) -> &[crate::types::EnvironmentVariable] {
+        self.environment_variables_override.as_deref().unwrap_or_default()
     }
     /// <p>The source input type that overrides the source input defined in the batch build project.</p>
     pub fn source_type_override(&self) -> ::std::option::Option<&crate::types::SourceType> {
@@ -337,6 +345,7 @@ pub struct StartBuildBatchInputBuilder {
 }
 impl StartBuildBatchInputBuilder {
     /// <p>The name of the project.</p>
+    /// This field is required.
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
         self
@@ -950,7 +959,7 @@ impl StartBuildBatchInputBuilder {
     /// Consumes the builder and constructs a [`StartBuildBatchInput`](crate::operation::start_build_batch::StartBuildBatchInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_build_batch::StartBuildBatchInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_build_batch::StartBuildBatchInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_build_batch::StartBuildBatchInput {
             project_name: self.project_name,
             secondary_sources_override: self.secondary_sources_override,

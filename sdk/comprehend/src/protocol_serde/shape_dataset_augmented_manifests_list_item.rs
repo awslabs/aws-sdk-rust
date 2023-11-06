@@ -2,27 +2,27 @@
 pub fn ser_dataset_augmented_manifests_list_item(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DatasetAugmentedManifestsListItem,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.attribute_names {
-        let mut array_2 = object.key("AttributeNames").start_array();
-        for item_3 in var_1 {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        let mut array_1 = object.key("AttributeNames").start_array();
+        for item_2 in &input.attribute_names {
             {
-                array_2.value().string(item_3.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
-    if let Some(var_4) = &input.s3_uri {
-        object.key("S3Uri").string(var_4.as_str());
+    {
+        object.key("S3Uri").string(input.s3_uri.as_str());
     }
-    if let Some(var_5) = &input.annotation_data_s3_uri {
-        object.key("AnnotationDataS3Uri").string(var_5.as_str());
+    if let Some(var_3) = &input.annotation_data_s3_uri {
+        object.key("AnnotationDataS3Uri").string(var_3.as_str());
     }
-    if let Some(var_6) = &input.source_documents_s3_uri {
-        object.key("SourceDocumentsS3Uri").string(var_6.as_str());
+    if let Some(var_4) = &input.source_documents_s3_uri {
+        object.key("SourceDocumentsS3Uri").string(var_4.as_str());
     }
-    if let Some(var_7) = &input.document_type {
-        object.key("DocumentType").string(var_7.as_str());
+    if let Some(var_5) = &input.document_type {
+        object.key("DocumentType").string(var_5.as_str());
     }
     Ok(())
 }

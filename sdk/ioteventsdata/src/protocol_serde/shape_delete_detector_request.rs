@@ -2,15 +2,15 @@
 pub fn ser_delete_detector_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DeleteDetectorRequest,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.message_id {
-        object.key("messageId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("messageId").string(input.message_id.as_str());
     }
-    if let Some(var_2) = &input.detector_model_name {
-        object.key("detectorModelName").string(var_2.as_str());
+    {
+        object.key("detectorModelName").string(input.detector_model_name.as_str());
     }
-    if let Some(var_3) = &input.key_value {
-        object.key("keyValue").string(var_3.as_str());
+    if let Some(var_1) = &input.key_value {
+        object.key("keyValue").string(var_1.as_str());
     }
     Ok(())
 }

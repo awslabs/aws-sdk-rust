@@ -34,6 +34,7 @@ pub struct DescribeJobInputBuilder {
 }
 impl DescribeJobInputBuilder {
     /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeJobInputBuilder {
         &self.account_id
     }
     /// <p>The ID for the job whose information you want to retrieve.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,7 @@ impl DescribeJobInputBuilder {
         &self.job_id
     }
     /// Consumes the builder and constructs a [`DescribeJobInput`](crate::operation::describe_job::DescribeJobInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_job::DescribeJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_job::DescribeJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_job::DescribeJobInput {
             account_id: self.account_id,
             job_id: self.job_id,

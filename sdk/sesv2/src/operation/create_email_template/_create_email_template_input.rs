@@ -35,6 +35,7 @@ pub struct CreateEmailTemplateInputBuilder {
 }
 impl CreateEmailTemplateInputBuilder {
     /// <p>The name of the template.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl CreateEmailTemplateInputBuilder {
         &self.template_name
     }
     /// <p>The content of the email template, composed of a subject line, an HTML part, and a text-only part.</p>
+    /// This field is required.
     pub fn template_content(mut self, input: crate::types::EmailTemplateContent) -> Self {
         self.template_content = ::std::option::Option::Some(input);
         self
@@ -65,7 +67,7 @@ impl CreateEmailTemplateInputBuilder {
     /// Consumes the builder and constructs a [`CreateEmailTemplateInput`](crate::operation::create_email_template::CreateEmailTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_email_template::CreateEmailTemplateInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_email_template::CreateEmailTemplateInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_email_template::CreateEmailTemplateInput {
             template_name: self.template_name,

@@ -33,8 +33,10 @@ impl CreateWorkteamInput {
     /// <p>Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private workforces created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC identity provider (IdP) use <code>OidcMemberDefinition</code>. Do not provide input for both of these parameters in a single request.</p>
     /// <p>For workforces created using Amazon Cognito, private work teams correspond to Amazon Cognito <i>user groups</i> within the user pool used to create a workforce. All of the <code>CognitoMemberDefinition</code> objects that make up the member definition must have the same <code>ClientId</code> and <code>UserPool</code> values. To add a Amazon Cognito user group to an existing worker pool, see <code>Adding groups to a User Pool</code>. For more information about user pools, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon Cognito User Pools</a>.</p>
     /// <p>For workforces created using your own OIDC IdP, specify the user groups that you want to include in your private work team in <code>OidcMemberDefinition</code> by listing those groups in <code>Groups</code>.</p>
-    pub fn member_definitions(&self) -> ::std::option::Option<&[crate::types::MemberDefinition]> {
-        self.member_definitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.member_definitions.is_none()`.
+    pub fn member_definitions(&self) -> &[crate::types::MemberDefinition] {
+        self.member_definitions.as_deref().unwrap_or_default()
     }
     /// <p>A description of the work team.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -46,8 +48,10 @@ impl CreateWorkteamInput {
     }
     /// <p>An array of key-value pairs.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html">Resource Tag</a> and <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using Cost Allocation Tags</a> in the <i> Amazon Web Services Billing and Cost Management User Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateWorkteamInput {
@@ -70,6 +74,7 @@ pub struct CreateWorkteamInputBuilder {
 }
 impl CreateWorkteamInputBuilder {
     /// <p>The name of the work team. Use this name to identify the work team.</p>
+    /// This field is required.
     pub fn workteam_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workteam_name = ::std::option::Option::Some(input.into());
         self
@@ -127,6 +132,7 @@ impl CreateWorkteamInputBuilder {
         &self.member_definitions
     }
     /// <p>A description of the work team.</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -180,7 +186,7 @@ impl CreateWorkteamInputBuilder {
     /// Consumes the builder and constructs a [`CreateWorkteamInput`](crate::operation::create_workteam::CreateWorkteamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_workteam::CreateWorkteamInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_workteam::CreateWorkteamInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_workteam::CreateWorkteamInput {
             workteam_name: self.workteam_name,
             workforce_name: self.workforce_name,

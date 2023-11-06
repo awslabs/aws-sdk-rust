@@ -2,7 +2,7 @@
 pub fn ser_create_integration_association_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_integration_association::CreateIntegrationAssociationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.integration_arn {
         object.key("IntegrationArn").string(var_1.as_str());
     }

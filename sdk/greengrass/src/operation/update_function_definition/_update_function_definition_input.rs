@@ -34,6 +34,7 @@ pub struct UpdateFunctionDefinitionInputBuilder {
 }
 impl UpdateFunctionDefinitionInputBuilder {
     /// The ID of the Lambda function definition.
+    /// This field is required.
     pub fn function_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_definition_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl UpdateFunctionDefinitionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_function_definition::UpdateFunctionDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_function_definition::UpdateFunctionDefinitionInput {
             function_definition_id: self.function_definition_id,

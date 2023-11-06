@@ -28,6 +28,7 @@ pub struct GetMessageInsightsInputBuilder {
 }
 impl GetMessageInsightsInputBuilder {
     /// <p> A <code>MessageId</code> is a unique identifier for a message, and is returned when sending emails through Amazon SES. </p>
+    /// This field is required.
     pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_id = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,8 @@ impl GetMessageInsightsInputBuilder {
     /// Consumes the builder and constructs a [`GetMessageInsightsInput`](crate::operation::get_message_insights::GetMessageInsightsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_message_insights::GetMessageInsightsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_message_insights::GetMessageInsightsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_message_insights::GetMessageInsightsInput { message_id: self.message_id })
     }
 }

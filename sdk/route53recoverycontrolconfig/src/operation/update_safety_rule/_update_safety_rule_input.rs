@@ -65,7 +65,7 @@ impl UpdateSafetyRuleInputBuilder {
     /// Consumes the builder and constructs a [`UpdateSafetyRuleInput`](crate::operation::update_safety_rule::UpdateSafetyRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_safety_rule::UpdateSafetyRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_safety_rule::UpdateSafetyRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_safety_rule::UpdateSafetyRuleInput {
             assertion_rule_update: self.assertion_rule_update,
             gating_rule_update: self.gating_rule_update,

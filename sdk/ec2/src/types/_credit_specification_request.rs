@@ -31,6 +31,7 @@ pub struct CreditSpecificationRequestBuilder {
 impl CreditSpecificationRequestBuilder {
     /// <p>The credit option for CPU usage of a T instance.</p>
     /// <p>Valid values: <code>standard</code> | <code>unlimited</code> </p>
+    /// This field is required.
     pub fn cpu_credits(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cpu_credits = ::std::option::Option::Some(input.into());
         self

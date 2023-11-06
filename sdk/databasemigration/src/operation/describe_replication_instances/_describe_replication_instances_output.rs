@@ -16,8 +16,10 @@ impl DescribeReplicationInstancesOutput {
         self.marker.as_deref()
     }
     /// <p>The replication instances described.</p>
-    pub fn replication_instances(&self) -> ::std::option::Option<&[crate::types::ReplicationInstance]> {
-        self.replication_instances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_instances.is_none()`.
+    pub fn replication_instances(&self) -> &[crate::types::ReplicationInstance] {
+        self.replication_instances.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeReplicationInstancesOutput {

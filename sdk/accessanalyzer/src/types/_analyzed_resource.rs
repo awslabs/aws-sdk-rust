@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalyzedResource {
     /// <p>The ARN of the resource that was analyzed.</p>
-    pub resource_arn: ::std::option::Option<::std::string::String>,
+    pub resource_arn: ::std::string::String,
     /// <p>The type of the resource that was analyzed.</p>
-    pub resource_type: ::std::option::Option<crate::types::ResourceType>,
+    pub resource_type: crate::types::ResourceType,
     /// <p>The time at which the finding was created.</p>
-    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The time at which the resource was analyzed.</p>
-    pub analyzed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub analyzed_at: ::aws_smithy_types::DateTime,
     /// <p>The time at which the finding was updated.</p>
-    pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub updated_at: ::aws_smithy_types::DateTime,
     /// <p>Indicates whether the policy that generated the finding grants public access to the resource.</p>
-    pub is_public: ::std::option::Option<bool>,
+    pub is_public: bool,
     /// <p>The actions that an external principal is granted permission to use by the policy that generated the finding.</p>
     pub actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.</p>
@@ -23,50 +23,56 @@ pub struct AnalyzedResource {
     /// <p>The current status of the finding generated from the analyzed resource.</p>
     pub status: ::std::option::Option<crate::types::FindingStatus>,
     /// <p>The Amazon Web Services account ID that owns the resource.</p>
-    pub resource_owner_account: ::std::option::Option<::std::string::String>,
+    pub resource_owner_account: ::std::string::String,
     /// <p>An error message.</p>
     pub error: ::std::option::Option<::std::string::String>,
 }
 impl AnalyzedResource {
     /// <p>The ARN of the resource that was analyzed.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
-        self.resource_arn.as_deref()
+    pub fn resource_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_arn.deref()
     }
     /// <p>The type of the resource that was analyzed.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
-        self.resource_type.as_ref()
+    pub fn resource_type(&self) -> &crate::types::ResourceType {
+        &self.resource_type
     }
     /// <p>The time at which the finding was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_at.as_ref()
+    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_at
     }
     /// <p>The time at which the resource was analyzed.</p>
-    pub fn analyzed_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.analyzed_at.as_ref()
+    pub fn analyzed_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.analyzed_at
     }
     /// <p>The time at which the finding was updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.updated_at.as_ref()
+    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.updated_at
     }
     /// <p>Indicates whether the policy that generated the finding grants public access to the resource.</p>
-    pub fn is_public(&self) -> ::std::option::Option<bool> {
+    pub fn is_public(&self) -> bool {
         self.is_public
     }
     /// <p>The actions that an external principal is granted permission to use by the policy that generated the finding.</p>
-    pub fn actions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
+    pub fn actions(&self) -> &[::std::string::String] {
+        self.actions.as_deref().unwrap_or_default()
     }
     /// <p>Indicates how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.</p>
-    pub fn shared_via(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.shared_via.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.shared_via.is_none()`.
+    pub fn shared_via(&self) -> &[::std::string::String] {
+        self.shared_via.as_deref().unwrap_or_default()
     }
     /// <p>The current status of the finding generated from the analyzed resource.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::FindingStatus> {
         self.status.as_ref()
     }
     /// <p>The Amazon Web Services account ID that owns the resource.</p>
-    pub fn resource_owner_account(&self) -> ::std::option::Option<&str> {
-        self.resource_owner_account.as_deref()
+    pub fn resource_owner_account(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_owner_account.deref()
     }
     /// <p>An error message.</p>
     pub fn error(&self) -> ::std::option::Option<&str> {
@@ -98,6 +104,7 @@ pub struct AnalyzedResourceBuilder {
 }
 impl AnalyzedResourceBuilder {
     /// <p>The ARN of the resource that was analyzed.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +119,7 @@ impl AnalyzedResourceBuilder {
         &self.resource_arn
     }
     /// <p>The type of the resource that was analyzed.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
@@ -126,6 +134,7 @@ impl AnalyzedResourceBuilder {
         &self.resource_type
     }
     /// <p>The time at which the finding was created.</p>
+    /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
@@ -140,6 +149,7 @@ impl AnalyzedResourceBuilder {
         &self.created_at
     }
     /// <p>The time at which the resource was analyzed.</p>
+    /// This field is required.
     pub fn analyzed_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.analyzed_at = ::std::option::Option::Some(input);
         self
@@ -154,6 +164,7 @@ impl AnalyzedResourceBuilder {
         &self.analyzed_at
     }
     /// <p>The time at which the finding was updated.</p>
+    /// This field is required.
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
@@ -168,6 +179,7 @@ impl AnalyzedResourceBuilder {
         &self.updated_at
     }
     /// <p>Indicates whether the policy that generated the finding grants public access to the resource.</p>
+    /// This field is required.
     pub fn is_public(mut self, input: bool) -> Self {
         self.is_public = ::std::option::Option::Some(input);
         self
@@ -236,6 +248,7 @@ impl AnalyzedResourceBuilder {
         &self.status
     }
     /// <p>The Amazon Web Services account ID that owns the resource.</p>
+    /// This field is required.
     pub fn resource_owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_owner_account = ::std::option::Option::Some(input.into());
         self
@@ -264,19 +277,62 @@ impl AnalyzedResourceBuilder {
         &self.error
     }
     /// Consumes the builder and constructs a [`AnalyzedResource`](crate::types::AnalyzedResource).
-    pub fn build(self) -> crate::types::AnalyzedResource {
-        crate::types::AnalyzedResource {
-            resource_arn: self.resource_arn,
-            resource_type: self.resource_type,
-            created_at: self.created_at,
-            analyzed_at: self.analyzed_at,
-            updated_at: self.updated_at,
-            is_public: self.is_public,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource_arn`](crate::types::builders::AnalyzedResourceBuilder::resource_arn)
+    /// - [`resource_type`](crate::types::builders::AnalyzedResourceBuilder::resource_type)
+    /// - [`created_at`](crate::types::builders::AnalyzedResourceBuilder::created_at)
+    /// - [`analyzed_at`](crate::types::builders::AnalyzedResourceBuilder::analyzed_at)
+    /// - [`updated_at`](crate::types::builders::AnalyzedResourceBuilder::updated_at)
+    /// - [`is_public`](crate::types::builders::AnalyzedResourceBuilder::is_public)
+    /// - [`resource_owner_account`](crate::types::builders::AnalyzedResourceBuilder::resource_owner_account)
+    pub fn build(self) -> ::std::result::Result<crate::types::AnalyzedResource, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AnalyzedResource {
+            resource_arn: self.resource_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "resource_arn",
+                    "resource_arn was not specified but it is required when building AnalyzedResource",
+                )
+            })?,
+            resource_type: self.resource_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "resource_type",
+                    "resource_type was not specified but it is required when building AnalyzedResource",
+                )
+            })?,
+            created_at: self.created_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_at",
+                    "created_at was not specified but it is required when building AnalyzedResource",
+                )
+            })?,
+            analyzed_at: self.analyzed_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "analyzed_at",
+                    "analyzed_at was not specified but it is required when building AnalyzedResource",
+                )
+            })?,
+            updated_at: self.updated_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "updated_at",
+                    "updated_at was not specified but it is required when building AnalyzedResource",
+                )
+            })?,
+            is_public: self.is_public.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "is_public",
+                    "is_public was not specified but it is required when building AnalyzedResource",
+                )
+            })?,
             actions: self.actions,
             shared_via: self.shared_via,
             status: self.status,
-            resource_owner_account: self.resource_owner_account,
+            resource_owner_account: self.resource_owner_account.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "resource_owner_account",
+                    "resource_owner_account was not specified but it is required when building AnalyzedResource",
+                )
+            })?,
             error: self.error,
-        }
+        })
     }
 }

@@ -41,6 +41,7 @@ pub struct ListPublishingDestinationsInputBuilder {
 }
 impl ListPublishingDestinationsInputBuilder {
     /// <p>The ID of the detector to retrieve publishing destinations for.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListPublishingDestinationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_publishing_destinations::ListPublishingDestinationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_publishing_destinations::ListPublishingDestinationsInput {
             detector_id: self.detector_id,

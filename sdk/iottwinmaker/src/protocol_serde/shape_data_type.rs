@@ -2,36 +2,36 @@
 pub fn ser_data_type(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataType,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.r#type {
-        object.key("type").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("type").string(input.r#type.as_str());
     }
-    if let Some(var_2) = &input.nested_type {
+    if let Some(var_1) = &input.nested_type {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("nestedType").start_object();
-        crate::protocol_serde::shape_data_type::ser_data_type(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("nestedType").start_object();
+        crate::protocol_serde::shape_data_type::ser_data_type(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.allowed_values {
-        let mut array_5 = object.key("allowedValues").start_array();
-        for item_6 in var_4 {
+    if let Some(var_3) = &input.allowed_values {
+        let mut array_4 = object.key("allowedValues").start_array();
+        for item_5 in var_3 {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_data_value::ser_data_value(&mut object_7, item_6)?;
-                object_7.finish();
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_data_value::ser_data_value(&mut object_6, item_5)?;
+                object_6.finish();
             }
         }
-        array_5.finish();
+        array_4.finish();
     }
-    if let Some(var_8) = &input.unit_of_measure {
-        object.key("unitOfMeasure").string(var_8.as_str());
+    if let Some(var_7) = &input.unit_of_measure {
+        object.key("unitOfMeasure").string(var_7.as_str());
     }
-    if let Some(var_9) = &input.relationship {
+    if let Some(var_8) = &input.relationship {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("relationship").start_object();
-        crate::protocol_serde::shape_relationship::ser_relationship(&mut object_10, var_9)?;
-        object_10.finish();
+        let mut object_9 = object.key("relationship").start_object();
+        crate::protocol_serde::shape_relationship::ser_relationship(&mut object_9, var_8)?;
+        object_9.finish();
     }
     Ok(())
 }
@@ -84,7 +84,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::data_type_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

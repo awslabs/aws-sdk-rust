@@ -34,8 +34,10 @@ impl DescribeContributorInsightsOutput {
         self.index_name.as_deref()
     }
     /// <p>List of names of the associated contributor insights rules.</p>
-    pub fn contributor_insights_rule_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.contributor_insights_rule_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.contributor_insights_rule_list.is_none()`.
+    pub fn contributor_insights_rule_list(&self) -> &[::std::string::String] {
+        self.contributor_insights_rule_list.as_deref().unwrap_or_default()
     }
     /// <p>Current status of contributor insights.</p>
     pub fn contributor_insights_status(&self) -> ::std::option::Option<&crate::types::ContributorInsightsStatus> {

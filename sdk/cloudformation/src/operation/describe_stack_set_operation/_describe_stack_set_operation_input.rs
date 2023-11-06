@@ -51,6 +51,7 @@ pub struct DescribeStackSetOperationInputBuilder {
 }
 impl DescribeStackSetOperationInputBuilder {
     /// <p>The name or the unique stack ID of the stack set for the stack operation.</p>
+    /// This field is required.
     pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_set_name = ::std::option::Option::Some(input.into());
         self
@@ -65,6 +66,7 @@ impl DescribeStackSetOperationInputBuilder {
         &self.stack_set_name
     }
     /// <p>The unique ID of the stack set operation.</p>
+    /// This field is required.
     pub fn operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operation_id = ::std::option::Option::Some(input.into());
         self
@@ -112,7 +114,7 @@ impl DescribeStackSetOperationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_stack_set_operation::DescribeStackSetOperationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_stack_set_operation::DescribeStackSetOperationInput {
             stack_set_name: self.stack_set_name,

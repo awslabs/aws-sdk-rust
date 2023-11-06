@@ -4,33 +4,35 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetContactOutput {
     /// <p>The ARN of the contact or escalation plan.</p>
-    pub contact_arn: ::std::option::Option<::std::string::String>,
+    pub contact_arn: ::std::string::String,
     /// <p>The alias of the contact or escalation plan. The alias is unique and identifiable.</p>
-    pub alias: ::std::option::Option<::std::string::String>,
+    pub alias: ::std::string::String,
     /// <p>The full name of the contact or escalation plan.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of contact, either <code>PERSONAL</code> or <code>ESCALATION</code>.</p>
-    pub r#type: ::std::option::Option<crate::types::ContactType>,
+    pub r#type: crate::types::ContactType,
     /// <p>Details about the specific timing or stages and targets of the escalation plan or engagement plan.</p>
     pub plan: ::std::option::Option<crate::types::Plan>,
     _request_id: Option<String>,
 }
 impl GetContactOutput {
     /// <p>The ARN of the contact or escalation plan.</p>
-    pub fn contact_arn(&self) -> ::std::option::Option<&str> {
-        self.contact_arn.as_deref()
+    pub fn contact_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.contact_arn.deref()
     }
     /// <p>The alias of the contact or escalation plan. The alias is unique and identifiable.</p>
-    pub fn alias(&self) -> ::std::option::Option<&str> {
-        self.alias.as_deref()
+    pub fn alias(&self) -> &str {
+        use std::ops::Deref;
+        self.alias.deref()
     }
     /// <p>The full name of the contact or escalation plan.</p>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
     /// <p>The type of contact, either <code>PERSONAL</code> or <code>ESCALATION</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ContactType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::ContactType {
+        &self.r#type
     }
     /// <p>Details about the specific timing or stages and targets of the escalation plan or engagement plan.</p>
     pub fn plan(&self) -> ::std::option::Option<&crate::types::Plan> {
@@ -62,6 +64,7 @@ pub struct GetContactOutputBuilder {
 }
 impl GetContactOutputBuilder {
     /// <p>The ARN of the contact or escalation plan.</p>
+    /// This field is required.
     pub fn contact_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_arn = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +79,7 @@ impl GetContactOutputBuilder {
         &self.contact_arn
     }
     /// <p>The alias of the contact or escalation plan. The alias is unique and identifiable.</p>
+    /// This field is required.
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +108,7 @@ impl GetContactOutputBuilder {
         &self.display_name
     }
     /// <p>The type of contact, either <code>PERSONAL</code> or <code>ESCALATION</code>.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::ContactType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -118,6 +123,7 @@ impl GetContactOutputBuilder {
         &self.r#type
     }
     /// <p>Details about the specific timing or stages and targets of the escalation plan or engagement plan.</p>
+    /// This field is required.
     pub fn plan(mut self, input: crate::types::Plan) -> Self {
         self.plan = ::std::option::Option::Some(input);
         self
@@ -141,14 +147,33 @@ impl GetContactOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetContactOutput`](crate::operation::get_contact::GetContactOutput).
-    pub fn build(self) -> crate::operation::get_contact::GetContactOutput {
-        crate::operation::get_contact::GetContactOutput {
-            contact_arn: self.contact_arn,
-            alias: self.alias,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`contact_arn`](crate::operation::get_contact::builders::GetContactOutputBuilder::contact_arn)
+    /// - [`alias`](crate::operation::get_contact::builders::GetContactOutputBuilder::alias)
+    /// - [`r#type`](crate::operation::get_contact::builders::GetContactOutputBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_contact::GetContactOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_contact::GetContactOutput {
+            contact_arn: self.contact_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "contact_arn",
+                    "contact_arn was not specified but it is required when building GetContactOutput",
+                )
+            })?,
+            alias: self.alias.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "alias",
+                    "alias was not specified but it is required when building GetContactOutput",
+                )
+            })?,
             display_name: self.display_name,
-            r#type: self.r#type,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building GetContactOutput",
+                )
+            })?,
             plan: self.plan,
             _request_id: self._request_id,
-        }
+        })
     }
 }

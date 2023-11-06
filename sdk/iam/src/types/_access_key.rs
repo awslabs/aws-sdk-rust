@@ -8,32 +8,35 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AccessKey {
     /// <p>The name of the IAM user that the access key is associated with.</p>
-    pub user_name: ::std::option::Option<::std::string::String>,
+    pub user_name: ::std::string::String,
     /// <p>The ID for this access key.</p>
-    pub access_key_id: ::std::option::Option<::std::string::String>,
+    pub access_key_id: ::std::string::String,
     /// <p>The status of the access key. <code>Active</code> means that the key is valid for API calls, while <code>Inactive</code> means it is not. </p>
-    pub status: ::std::option::Option<crate::types::StatusType>,
+    pub status: crate::types::StatusType,
     /// <p>The secret key used to sign requests.</p>
-    pub secret_access_key: ::std::option::Option<::std::string::String>,
+    pub secret_access_key: ::std::string::String,
     /// <p>The date when the access key was created.</p>
     pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AccessKey {
     /// <p>The name of the IAM user that the access key is associated with.</p>
-    pub fn user_name(&self) -> ::std::option::Option<&str> {
-        self.user_name.as_deref()
+    pub fn user_name(&self) -> &str {
+        use std::ops::Deref;
+        self.user_name.deref()
     }
     /// <p>The ID for this access key.</p>
-    pub fn access_key_id(&self) -> ::std::option::Option<&str> {
-        self.access_key_id.as_deref()
+    pub fn access_key_id(&self) -> &str {
+        use std::ops::Deref;
+        self.access_key_id.deref()
     }
     /// <p>The status of the access key. <code>Active</code> means that the key is valid for API calls, while <code>Inactive</code> means it is not. </p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::StatusType> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::StatusType {
+        &self.status
     }
     /// <p>The secret key used to sign requests.</p>
-    pub fn secret_access_key(&self) -> ::std::option::Option<&str> {
-        self.secret_access_key.as_deref()
+    pub fn secret_access_key(&self) -> &str {
+        use std::ops::Deref;
+        self.secret_access_key.deref()
     }
     /// <p>The date when the access key was created.</p>
     pub fn create_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -70,6 +73,7 @@ pub struct AccessKeyBuilder {
 }
 impl AccessKeyBuilder {
     /// <p>The name of the IAM user that the access key is associated with.</p>
+    /// This field is required.
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +88,7 @@ impl AccessKeyBuilder {
         &self.user_name
     }
     /// <p>The ID for this access key.</p>
+    /// This field is required.
     pub fn access_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_key_id = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +103,7 @@ impl AccessKeyBuilder {
         &self.access_key_id
     }
     /// <p>The status of the access key. <code>Active</code> means that the key is valid for API calls, while <code>Inactive</code> means it is not. </p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::StatusType) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -112,6 +118,7 @@ impl AccessKeyBuilder {
         &self.status
     }
     /// <p>The secret key used to sign requests.</p>
+    /// This field is required.
     pub fn secret_access_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_access_key = ::std::option::Option::Some(input.into());
         self
@@ -140,14 +147,39 @@ impl AccessKeyBuilder {
         &self.create_date
     }
     /// Consumes the builder and constructs a [`AccessKey`](crate::types::AccessKey).
-    pub fn build(self) -> crate::types::AccessKey {
-        crate::types::AccessKey {
-            user_name: self.user_name,
-            access_key_id: self.access_key_id,
-            status: self.status,
-            secret_access_key: self.secret_access_key,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`user_name`](crate::types::builders::AccessKeyBuilder::user_name)
+    /// - [`access_key_id`](crate::types::builders::AccessKeyBuilder::access_key_id)
+    /// - [`status`](crate::types::builders::AccessKeyBuilder::status)
+    /// - [`secret_access_key`](crate::types::builders::AccessKeyBuilder::secret_access_key)
+    pub fn build(self) -> ::std::result::Result<crate::types::AccessKey, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AccessKey {
+            user_name: self.user_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "user_name",
+                    "user_name was not specified but it is required when building AccessKey",
+                )
+            })?,
+            access_key_id: self.access_key_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "access_key_id",
+                    "access_key_id was not specified but it is required when building AccessKey",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building AccessKey",
+                )
+            })?,
+            secret_access_key: self.secret_access_key.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "secret_access_key",
+                    "secret_access_key was not specified but it is required when building AccessKey",
+                )
+            })?,
             create_date: self.create_date,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for AccessKeyBuilder {

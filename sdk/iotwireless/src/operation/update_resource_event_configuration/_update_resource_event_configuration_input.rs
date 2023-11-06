@@ -76,6 +76,7 @@ pub struct UpdateResourceEventConfigurationInputBuilder {
 }
 impl UpdateResourceEventConfigurationInputBuilder {
     /// <p>Resource identifier to opt in for event messaging.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +91,7 @@ impl UpdateResourceEventConfigurationInputBuilder {
         &self.identifier
     }
     /// <p>Identifier type of the particular resource identifier for event configuration.</p>
+    /// This field is required.
     pub fn identifier_type(mut self, input: crate::types::IdentifierType) -> Self {
         self.identifier_type = ::std::option::Option::Some(input);
         self
@@ -192,7 +194,7 @@ impl UpdateResourceEventConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_resource_event_configuration::UpdateResourceEventConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_resource_event_configuration::UpdateResourceEventConfigurationInput {

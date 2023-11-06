@@ -4,9 +4,9 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_sampling_rules::builders::GetSamplingRulesFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::operation::get_sampling_rules::builders::GetSamplingRulesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_sampling_rules::builders::GetSamplingRulesFluentBuilder::set_next_token): <p>Pagination token.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::get_sampling_rules::builders::GetSamplingRulesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_sampling_rules::builders::GetSamplingRulesFluentBuilder::set_next_token):<br>required: **false**<br><p>Pagination token.</p><br>
     /// - On success, responds with [`GetSamplingRulesOutput`](crate::operation::get_sampling_rules::GetSamplingRulesOutput) with field(s):
-    ///   - [`sampling_rule_records(Option<Vec<SamplingRuleRecord>>)`](crate::operation::get_sampling_rules::GetSamplingRulesOutput::sampling_rule_records): <p>Rule definitions and metadata.</p>
+    ///   - [`sampling_rule_records(Option<Vec::<SamplingRuleRecord>>)`](crate::operation::get_sampling_rules::GetSamplingRulesOutput::sampling_rule_records): <p>Rule definitions and metadata.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_sampling_rules::GetSamplingRulesOutput::next_token): <p>Pagination token.</p>
     /// - On failure, responds with [`SdkError<GetSamplingRulesError>`](crate::operation::get_sampling_rules::GetSamplingRulesError)
     pub fn get_sampling_rules(&self) -> crate::operation::get_sampling_rules::builders::GetSamplingRulesFluentBuilder {

@@ -2,21 +2,21 @@
 pub fn ser_snapshot_file(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SnapshotFile,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.sheet_selections {
-        let mut array_2 = object.key("SheetSelections").start_array();
-        for item_3 in var_1 {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        let mut array_1 = object.key("SheetSelections").start_array();
+        for item_2 in &input.sheet_selections {
             {
                 #[allow(unused_mut)]
-                let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_snapshot_file_sheet_selection::ser_snapshot_file_sheet_selection(&mut object_4, item_3)?;
-                object_4.finish();
+                let mut object_3 = array_1.value().start_object();
+                crate::protocol_serde::shape_snapshot_file_sheet_selection::ser_snapshot_file_sheet_selection(&mut object_3, item_2)?;
+                object_3.finish();
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
-    if let Some(var_5) = &input.format_type {
-        object.key("FormatType").string(var_5.as_str());
+    {
+        object.key("FormatType").string(input.format_type.as_str());
     }
     Ok(())
 }
@@ -58,7 +58,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::snapshot_file_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

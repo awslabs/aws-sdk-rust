@@ -27,6 +27,7 @@ pub struct GetCustomEntityTypeInputBuilder {
 }
 impl GetCustomEntityTypeInputBuilder {
     /// <p>The name of the custom pattern that you want to retrieve.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetCustomEntityTypeInputBuilder {
     /// Consumes the builder and constructs a [`GetCustomEntityTypeInput`](crate::operation::get_custom_entity_type::GetCustomEntityTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_custom_entity_type::GetCustomEntityTypeInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_custom_entity_type::GetCustomEntityTypeInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_custom_entity_type::GetCustomEntityTypeInput { name: self.name })
     }

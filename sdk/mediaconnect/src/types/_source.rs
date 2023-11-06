@@ -61,8 +61,10 @@ impl Source {
         self.ingest_port
     }
     /// The media streams that are associated with the source, and the parameters for those associations.
-    pub fn media_stream_source_configurations(&self) -> ::std::option::Option<&[crate::types::MediaStreamSourceConfiguration]> {
-        self.media_stream_source_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.media_stream_source_configurations.is_none()`.
+    pub fn media_stream_source_configurations(&self) -> &[crate::types::MediaStreamSourceConfiguration] {
+        self.media_stream_source_configurations.as_deref().unwrap_or_default()
     }
     /// The name of the source.
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -233,6 +235,7 @@ impl SourceBuilder {
         &self.media_stream_source_configurations
     }
     /// The name of the source.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -275,6 +278,7 @@ impl SourceBuilder {
         &self.sender_ip_address
     }
     /// The ARN of the source.
+    /// This field is required.
     pub fn source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_arn = ::std::option::Option::Some(input.into());
         self

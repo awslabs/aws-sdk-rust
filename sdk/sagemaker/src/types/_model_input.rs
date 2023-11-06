@@ -28,6 +28,7 @@ pub struct ModelInputBuilder {
 }
 impl ModelInputBuilder {
     /// <p>The input configuration object for the model.</p>
+    /// This field is required.
     pub fn data_input_config(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_input_config = ::std::option::Option::Some(input.into());
         self

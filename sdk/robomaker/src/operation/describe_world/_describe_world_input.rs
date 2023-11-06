@@ -27,6 +27,7 @@ pub struct DescribeWorldInputBuilder {
 }
 impl DescribeWorldInputBuilder {
     /// <p>The Amazon Resource Name (arn) of the world you want to describe.</p>
+    /// This field is required.
     pub fn world(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.world = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeWorldInputBuilder {
     /// Consumes the builder and constructs a [`DescribeWorldInput`](crate::operation::describe_world::DescribeWorldInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_world::DescribeWorldInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_world::DescribeWorldInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_world::DescribeWorldInput { world: self.world })
     }
 }

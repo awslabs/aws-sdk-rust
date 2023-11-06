@@ -27,6 +27,7 @@ pub struct DeleteApprovalRuleTemplateInputBuilder {
 }
 impl DeleteApprovalRuleTemplateInputBuilder {
     /// <p>The name of the approval rule template to delete.</p>
+    /// This field is required.
     pub fn approval_rule_template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.approval_rule_template_name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteApprovalRuleTemplateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateInput {
             approval_rule_template_name: self.approval_rule_template_name,

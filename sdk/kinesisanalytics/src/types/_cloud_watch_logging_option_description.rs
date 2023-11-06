@@ -7,9 +7,9 @@ pub struct CloudWatchLoggingOptionDescription {
     /// <p>ID of the CloudWatch logging option description.</p>
     pub cloud_watch_logging_option_id: ::std::option::Option<::std::string::String>,
     /// <p>ARN of the CloudWatch log to receive application messages.</p>
-    pub log_stream_arn: ::std::option::Option<::std::string::String>,
+    pub log_stream_arn: ::std::string::String,
     /// <p>IAM ARN of the role to use to send application messages. Note: To write application messages to CloudWatch, the IAM role used must have the <code>PutLogEvents</code> policy action enabled.</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
 }
 impl CloudWatchLoggingOptionDescription {
     /// <p>ID of the CloudWatch logging option description.</p>
@@ -17,12 +17,14 @@ impl CloudWatchLoggingOptionDescription {
         self.cloud_watch_logging_option_id.as_deref()
     }
     /// <p>ARN of the CloudWatch log to receive application messages.</p>
-    pub fn log_stream_arn(&self) -> ::std::option::Option<&str> {
-        self.log_stream_arn.as_deref()
+    pub fn log_stream_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.log_stream_arn.deref()
     }
     /// <p>IAM ARN of the role to use to send application messages. Note: To write application messages to CloudWatch, the IAM role used must have the <code>PutLogEvents</code> policy action enabled.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
 }
 impl CloudWatchLoggingOptionDescription {
@@ -56,6 +58,7 @@ impl CloudWatchLoggingOptionDescriptionBuilder {
         &self.cloud_watch_logging_option_id
     }
     /// <p>ARN of the CloudWatch log to receive application messages.</p>
+    /// This field is required.
     pub fn log_stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_stream_arn = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +73,7 @@ impl CloudWatchLoggingOptionDescriptionBuilder {
         &self.log_stream_arn
     }
     /// <p>IAM ARN of the role to use to send application messages. Note: To write application messages to CloudWatch, the IAM role used must have the <code>PutLogEvents</code> policy action enabled.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +88,24 @@ impl CloudWatchLoggingOptionDescriptionBuilder {
         &self.role_arn
     }
     /// Consumes the builder and constructs a [`CloudWatchLoggingOptionDescription`](crate::types::CloudWatchLoggingOptionDescription).
-    pub fn build(self) -> crate::types::CloudWatchLoggingOptionDescription {
-        crate::types::CloudWatchLoggingOptionDescription {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`log_stream_arn`](crate::types::builders::CloudWatchLoggingOptionDescriptionBuilder::log_stream_arn)
+    /// - [`role_arn`](crate::types::builders::CloudWatchLoggingOptionDescriptionBuilder::role_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::CloudWatchLoggingOptionDescription, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CloudWatchLoggingOptionDescription {
             cloud_watch_logging_option_id: self.cloud_watch_logging_option_id,
-            log_stream_arn: self.log_stream_arn,
-            role_arn: self.role_arn,
-        }
+            log_stream_arn: self.log_stream_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "log_stream_arn",
+                    "log_stream_arn was not specified but it is required when building CloudWatchLoggingOptionDescription",
+                )
+            })?,
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building CloudWatchLoggingOptionDescription",
+                )
+            })?,
+        })
     }
 }

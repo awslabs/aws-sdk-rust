@@ -31,8 +31,10 @@ impl ServiceConfiguration {
         self.cpu
     }
     /// <p> The container configurations within a task of an Amazon ECS service. </p>
-    pub fn container_configurations(&self) -> ::std::option::Option<&[crate::types::ContainerConfiguration]> {
-        self.container_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.container_configurations.is_none()`.
+    pub fn container_configurations(&self) -> &[crate::types::ContainerConfiguration] {
+        self.container_configurations.as_deref().unwrap_or_default()
     }
     /// <p> Describes the Auto Scaling configuration methods for an Amazon ECS service. This affects the generated recommendations. For example, if Auto Scaling is configured on a service’s CPU, then Compute Optimizer doesn’t generate CPU size recommendations. </p>
     /// <p>The Auto Scaling configuration methods include:</p>

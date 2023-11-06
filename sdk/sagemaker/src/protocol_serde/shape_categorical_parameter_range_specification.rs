@@ -2,7 +2,7 @@
 pub fn ser_categorical_parameter_range_specification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CategoricalParameterRangeSpecification,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.values {
         let mut array_2 = object.key("Values").start_array();
         for item_3 in var_1 {
@@ -43,7 +43,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::categorical_parameter_range_specification_correct_errors(builder).build(),
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -23,24 +23,32 @@ impl TrafficMirrorFilter {
         self.traffic_mirror_filter_id.as_deref()
     }
     /// <p>Information about the ingress rules that are associated with the Traffic Mirror filter.</p>
-    pub fn ingress_filter_rules(&self) -> ::std::option::Option<&[crate::types::TrafficMirrorFilterRule]> {
-        self.ingress_filter_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ingress_filter_rules.is_none()`.
+    pub fn ingress_filter_rules(&self) -> &[crate::types::TrafficMirrorFilterRule] {
+        self.ingress_filter_rules.as_deref().unwrap_or_default()
     }
     /// <p>Information about the egress rules that are associated with the Traffic Mirror filter.</p>
-    pub fn egress_filter_rules(&self) -> ::std::option::Option<&[crate::types::TrafficMirrorFilterRule]> {
-        self.egress_filter_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.egress_filter_rules.is_none()`.
+    pub fn egress_filter_rules(&self) -> &[crate::types::TrafficMirrorFilterRule] {
+        self.egress_filter_rules.as_deref().unwrap_or_default()
     }
     /// <p>The network service traffic that is associated with the Traffic Mirror filter.</p>
-    pub fn network_services(&self) -> ::std::option::Option<&[crate::types::TrafficMirrorNetworkService]> {
-        self.network_services.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_services.is_none()`.
+    pub fn network_services(&self) -> &[crate::types::TrafficMirrorNetworkService] {
+        self.network_services.as_deref().unwrap_or_default()
     }
     /// <p>The description of the Traffic Mirror filter.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The tags assigned to the Traffic Mirror filter.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl TrafficMirrorFilter {

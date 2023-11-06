@@ -34,6 +34,7 @@ pub struct DeleteAccessPolicyInputBuilder {
 }
 impl DeleteAccessPolicyInputBuilder {
     /// <p>The ID of the access policy to be deleted.</p>
+    /// This field is required.
     pub fn access_policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_policy_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,8 @@ impl DeleteAccessPolicyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAccessPolicyInput`](crate::operation::delete_access_policy::DeleteAccessPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_access_policy::DeleteAccessPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_access_policy::DeleteAccessPolicyInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_access_policy::DeleteAccessPolicyInput {
             access_policy_id: self.access_policy_id,
             client_token: self.client_token,

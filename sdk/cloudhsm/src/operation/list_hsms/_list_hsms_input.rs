@@ -41,7 +41,7 @@ impl ListHsmsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListHsmsInput`](crate::operation::list_hsms::ListHsmsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_hsms::ListHsmsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_hsms::ListHsmsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_hsms::ListHsmsInput { next_token: self.next_token })
     }
 }

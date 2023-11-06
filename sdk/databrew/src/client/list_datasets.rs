@@ -4,10 +4,10 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::set_max_results): <p>The maximum number of results to return in this request. </p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::set_next_token): <p>The token returned by a previous call to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in this request. </p><br>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token returned by a previous call to retrieve the next set of results.</p><br>
     /// - On success, responds with [`ListDatasetsOutput`](crate::operation::list_datasets::ListDatasetsOutput) with field(s):
-    ///   - [`datasets(Option<Vec<Dataset>>)`](crate::operation::list_datasets::ListDatasetsOutput::datasets): <p>A list of datasets that are defined.</p>
+    ///   - [`datasets(Vec::<Dataset>)`](crate::operation::list_datasets::ListDatasetsOutput::datasets): <p>A list of datasets that are defined.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_datasets::ListDatasetsOutput::next_token): <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListDatasetsError>`](crate::operation::list_datasets::ListDatasetsError)
     pub fn list_datasets(&self) -> crate::operation::list_datasets::builders::ListDatasetsFluentBuilder {

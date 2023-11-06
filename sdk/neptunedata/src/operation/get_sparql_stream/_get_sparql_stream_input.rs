@@ -162,7 +162,7 @@ impl GetSparqlStreamInputBuilder {
     /// Consumes the builder and constructs a [`GetSparqlStreamInput`](crate::operation::get_sparql_stream::GetSparqlStreamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_sparql_stream::GetSparqlStreamInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_sparql_stream::GetSparqlStreamInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_sparql_stream::GetSparqlStreamInput {
             limit: self.limit,
             iterator_type: self.iterator_type,

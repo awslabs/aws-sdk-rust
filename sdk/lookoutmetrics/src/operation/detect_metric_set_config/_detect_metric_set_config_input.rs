@@ -34,6 +34,7 @@ pub struct DetectMetricSetConfigInputBuilder {
 }
 impl DetectMetricSetConfigInputBuilder {
     /// <p>An anomaly detector ARN.</p>
+    /// This field is required.
     pub fn anomaly_detector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_detector_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DetectMetricSetConfigInputBuilder {
         &self.anomaly_detector_arn
     }
     /// <p>A data source.</p>
+    /// This field is required.
     pub fn auto_detection_metric_source(mut self, input: crate::types::AutoDetectionMetricSource) -> Self {
         self.auto_detection_metric_source = ::std::option::Option::Some(input);
         self
@@ -64,7 +66,7 @@ impl DetectMetricSetConfigInputBuilder {
     /// Consumes the builder and constructs a [`DetectMetricSetConfigInput`](crate::operation::detect_metric_set_config::DetectMetricSetConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::detect_metric_set_config::DetectMetricSetConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::detect_metric_set_config::DetectMetricSetConfigInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::detect_metric_set_config::DetectMetricSetConfigInput {
             anomaly_detector_arn: self.anomaly_detector_arn,

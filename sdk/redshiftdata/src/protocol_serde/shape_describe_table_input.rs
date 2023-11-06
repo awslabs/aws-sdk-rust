@@ -2,7 +2,7 @@
 pub fn ser_describe_table_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_table::DescribeTableInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cluster_identifier {
         object.key("ClusterIdentifier").string(var_1.as_str());
     }
@@ -27,14 +27,14 @@ pub fn ser_describe_table_input(
     if let Some(var_8) = &input.next_token {
         object.key("NextToken").string(var_8.as_str());
     }
-    if input.max_results != 0 {
+    if let Some(var_9) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.max_results).into()),
+            ::aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
-    if let Some(var_9) = &input.workgroup_name {
-        object.key("WorkgroupName").string(var_9.as_str());
+    if let Some(var_10) = &input.workgroup_name {
+        object.key("WorkgroupName").string(var_10.as_str());
     }
     Ok(())
 }

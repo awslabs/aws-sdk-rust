@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FilterListConfiguration {
     /// <p>The match operator that is used to determine if a filter should be applied.</p>
-    pub match_operator: ::std::option::Option<crate::types::CategoryFilterMatchOperator>,
+    pub match_operator: crate::types::CategoryFilterMatchOperator,
     /// <p>The list of category values for the filter.</p>
     pub category_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Select all of the values. Null is not the assigned value of select all.</p>
@@ -23,12 +23,14 @@ pub struct FilterListConfiguration {
 }
 impl FilterListConfiguration {
     /// <p>The match operator that is used to determine if a filter should be applied.</p>
-    pub fn match_operator(&self) -> ::std::option::Option<&crate::types::CategoryFilterMatchOperator> {
-        self.match_operator.as_ref()
+    pub fn match_operator(&self) -> &crate::types::CategoryFilterMatchOperator {
+        &self.match_operator
     }
     /// <p>The list of category values for the filter.</p>
-    pub fn category_values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.category_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.category_values.is_none()`.
+    pub fn category_values(&self) -> &[::std::string::String] {
+        self.category_values.as_deref().unwrap_or_default()
     }
     /// <p>Select all of the values. Null is not the assigned value of select all.</p>
     /// <ul>
@@ -65,6 +67,7 @@ pub struct FilterListConfigurationBuilder {
 }
 impl FilterListConfigurationBuilder {
     /// <p>The match operator that is used to determine if a filter should be applied.</p>
+    /// This field is required.
     pub fn match_operator(mut self, input: crate::types::CategoryFilterMatchOperator) -> Self {
         self.match_operator = ::std::option::Option::Some(input);
         self
@@ -151,12 +154,19 @@ impl FilterListConfigurationBuilder {
         &self.null_option
     }
     /// Consumes the builder and constructs a [`FilterListConfiguration`](crate::types::FilterListConfiguration).
-    pub fn build(self) -> crate::types::FilterListConfiguration {
-        crate::types::FilterListConfiguration {
-            match_operator: self.match_operator,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`match_operator`](crate::types::builders::FilterListConfigurationBuilder::match_operator)
+    pub fn build(self) -> ::std::result::Result<crate::types::FilterListConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::FilterListConfiguration {
+            match_operator: self.match_operator.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "match_operator",
+                    "match_operator was not specified but it is required when building FilterListConfiguration",
+                )
+            })?,
             category_values: self.category_values,
             select_all_options: self.select_all_options,
             null_option: self.null_option,
-        }
+        })
     }
 }

@@ -62,6 +62,7 @@ pub struct ListQueriesInputBuilder {
 }
 impl ListQueriesInputBuilder {
     /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which queries were run.</p>
+    /// This field is required.
     pub fn event_data_store(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_data_store = ::std::option::Option::Some(input.into());
         self
@@ -146,7 +147,7 @@ impl ListQueriesInputBuilder {
         &self.query_status
     }
     /// Consumes the builder and constructs a [`ListQueriesInput`](crate::operation::list_queries::ListQueriesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_queries::ListQueriesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_queries::ListQueriesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_queries::ListQueriesInput {
             event_data_store: self.event_data_store,
             next_token: self.next_token,

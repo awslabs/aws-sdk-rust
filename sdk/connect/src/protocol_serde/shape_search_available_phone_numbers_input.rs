@@ -2,27 +2,30 @@
 pub fn ser_search_available_phone_numbers_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.max_results {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    if let Some(var_1) = &input.instance_id {
+        object.key("InstanceId").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.next_token {
-        object.key("NextToken").string(var_2.as_str());
+    if let Some(var_3) = &input.next_token {
+        object.key("NextToken").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.phone_number_country_code {
-        object.key("PhoneNumberCountryCode").string(var_3.as_str());
+    if let Some(var_4) = &input.phone_number_country_code {
+        object.key("PhoneNumberCountryCode").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.phone_number_prefix {
-        object.key("PhoneNumberPrefix").string(var_4.as_str());
+    if let Some(var_5) = &input.phone_number_prefix {
+        object.key("PhoneNumberPrefix").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.phone_number_type {
-        object.key("PhoneNumberType").string(var_5.as_str());
+    if let Some(var_6) = &input.phone_number_type {
+        object.key("PhoneNumberType").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.target_arn {
-        object.key("TargetArn").string(var_6.as_str());
+    if let Some(var_7) = &input.target_arn {
+        object.key("TargetArn").string(var_7.as_str());
     }
     Ok(())
 }

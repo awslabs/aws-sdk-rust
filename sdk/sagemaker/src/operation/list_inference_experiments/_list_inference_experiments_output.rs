@@ -11,8 +11,10 @@ pub struct ListInferenceExperimentsOutput {
 }
 impl ListInferenceExperimentsOutput {
     /// <p>List of inference experiments.</p>
-    pub fn inference_experiments(&self) -> ::std::option::Option<&[crate::types::InferenceExperimentSummary]> {
-        self.inference_experiments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inference_experiments.is_none()`.
+    pub fn inference_experiments(&self) -> &[crate::types::InferenceExperimentSummary] {
+        self.inference_experiments.as_deref().unwrap_or_default()
     }
     /// <p>The token to use when calling the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

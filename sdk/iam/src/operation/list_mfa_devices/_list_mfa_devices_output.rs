@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMfaDevicesOutput {
     /// <p>A list of MFA devices.</p>
-    pub mfa_devices: ::std::option::Option<::std::vec::Vec<crate::types::MfaDevice>>,
+    pub mfa_devices: ::std::vec::Vec<crate::types::MfaDevice>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
@@ -14,8 +14,9 @@ pub struct ListMfaDevicesOutput {
 }
 impl ListMfaDevicesOutput {
     /// <p>A list of MFA devices.</p>
-    pub fn mfa_devices(&self) -> ::std::option::Option<&[crate::types::MfaDevice]> {
-        self.mfa_devices.as_deref()
+    pub fn mfa_devices(&self) -> &[crate::types::MfaDevice] {
+        use std::ops::Deref;
+        self.mfa_devices.deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub fn is_truncated(&self) -> bool {
@@ -106,12 +107,21 @@ impl ListMfaDevicesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListMfaDevicesOutput`](crate::operation::list_mfa_devices::ListMfaDevicesOutput).
-    pub fn build(self) -> crate::operation::list_mfa_devices::ListMfaDevicesOutput {
-        crate::operation::list_mfa_devices::ListMfaDevicesOutput {
-            mfa_devices: self.mfa_devices,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`mfa_devices`](crate::operation::list_mfa_devices::builders::ListMfaDevicesOutputBuilder::mfa_devices)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_mfa_devices::ListMfaDevicesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_mfa_devices::ListMfaDevicesOutput {
+            mfa_devices: self.mfa_devices.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "mfa_devices",
+                    "mfa_devices was not specified but it is required when building ListMfaDevicesOutput",
+                )
+            })?,
             is_truncated: self.is_truncated.unwrap_or_default(),
             marker: self.marker,
             _request_id: self._request_id,
-        }
+        })
     }
 }

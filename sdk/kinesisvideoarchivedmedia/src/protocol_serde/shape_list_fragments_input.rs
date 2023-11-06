@@ -2,7 +2,7 @@
 pub fn ser_list_fragments_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_fragments::ListFragmentsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.fragment_selector {
         #[allow(unused_mut)]
         let mut object_2 = object.key("FragmentSelector").start_object();

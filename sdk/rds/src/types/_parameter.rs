@@ -70,8 +70,10 @@ impl Parameter {
         self.apply_method.as_ref()
     }
     /// <p>The valid DB engine modes.</p>
-    pub fn supported_engine_modes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.supported_engine_modes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_engine_modes.is_none()`.
+    pub fn supported_engine_modes(&self) -> &[::std::string::String] {
+        self.supported_engine_modes.as_deref().unwrap_or_default()
     }
 }
 impl Parameter {

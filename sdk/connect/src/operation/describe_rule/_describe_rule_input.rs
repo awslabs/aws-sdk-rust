@@ -34,6 +34,7 @@ pub struct DescribeRuleInputBuilder {
 }
 impl DescribeRuleInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeRuleInputBuilder {
         &self.instance_id
     }
     /// <p>A unique identifier for the rule.</p>
+    /// This field is required.
     pub fn rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_id = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,9 @@ impl DescribeRuleInputBuilder {
         &self.rule_id
     }
     /// Consumes the builder and constructs a [`DescribeRuleInput`](crate::operation::describe_rule::DescribeRuleInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_rule::DescribeRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_rule::DescribeRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_rule::DescribeRuleInput {
             instance_id: self.instance_id,
             rule_id: self.rule_id,

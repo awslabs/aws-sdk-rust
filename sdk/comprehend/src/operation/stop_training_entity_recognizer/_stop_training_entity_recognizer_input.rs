@@ -27,6 +27,7 @@ pub struct StopTrainingEntityRecognizerInputBuilder {
 }
 impl StopTrainingEntityRecognizerInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer currently being trained.</p>
+    /// This field is required.
     pub fn entity_recognizer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_recognizer_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl StopTrainingEntityRecognizerInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_training_entity_recognizer::StopTrainingEntityRecognizerInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::stop_training_entity_recognizer::StopTrainingEntityRecognizerInput {
             entity_recognizer_arn: self.entity_recognizer_arn,

@@ -56,8 +56,10 @@ impl GetMaintenanceWindowTaskOutput {
         self.window_task_id.as_deref()
     }
     /// <p>The targets where the task should run.</p>
-    pub fn targets(&self) -> ::std::option::Option<&[crate::types::Target]> {
-        self.targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
+    pub fn targets(&self) -> &[crate::types::Target] {
+        self.targets.as_deref().unwrap_or_default()
     }
     /// <p>The resource that the task used during execution. For <code>RUN_COMMAND</code> and <code>AUTOMATION</code> task types, the value of <code>TaskArn</code> is the SSM document name/ARN. For <code>LAMBDA</code> tasks, the value is the function name/ARN. For <code>STEP_FUNCTIONS</code> tasks, the value is the state machine ARN.</p>
     pub fn task_arn(&self) -> ::std::option::Option<&str> {

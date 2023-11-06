@@ -21,8 +21,10 @@ impl StorageConnector {
         self.resource_identifier.as_deref()
     }
     /// <p>The names of the domains for the account.</p>
-    pub fn domains(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.domains.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domains.is_none()`.
+    pub fn domains(&self) -> &[::std::string::String] {
+        self.domains.as_deref().unwrap_or_default()
     }
 }
 impl StorageConnector {
@@ -42,6 +44,7 @@ pub struct StorageConnectorBuilder {
 }
 impl StorageConnectorBuilder {
     /// <p>The type of storage connector.</p>
+    /// This field is required.
     pub fn connector_type(mut self, input: crate::types::StorageConnectorType) -> Self {
         self.connector_type = ::std::option::Option::Some(input);
         self

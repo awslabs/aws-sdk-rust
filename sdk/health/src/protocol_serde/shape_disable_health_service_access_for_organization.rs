@@ -36,8 +36,8 @@ pub fn de_disable_health_service_access_for_organization_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationError::generic(generic)
@@ -63,6 +63,6 @@ pub fn de_disable_health_service_access_for_organization_http_response(
 
 pub fn ser_disable_health_service_access_for_organization_input(
     _input: &crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
-    Ok(::aws_smithy_http::body::SdkBody::from("{}"))
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+    Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }

@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FilterExpression {
     /// <p>The expression which includes condition names followed by substitution variables, possibly grouped and combined with other conditions. For example, "(starts_with :prefix1 or starts_with :prefix2) and (ends_with :suffix1 or ends_with :suffix2)". Substitution variables should start with ':' symbol.</p>
-    pub expression: ::std::option::Option<::std::string::String>,
+    pub expression: ::std::string::String,
     /// <p>The map of substitution variable names to their values used in this filter expression.</p>
-    pub values_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub values_map: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
 }
 impl FilterExpression {
     /// <p>The expression which includes condition names followed by substitution variables, possibly grouped and combined with other conditions. For example, "(starts_with :prefix1 or starts_with :prefix2) and (ends_with :suffix1 or ends_with :suffix2)". Substitution variables should start with ':' symbol.</p>
-    pub fn expression(&self) -> ::std::option::Option<&str> {
-        self.expression.as_deref()
+    pub fn expression(&self) -> &str {
+        use std::ops::Deref;
+        self.expression.deref()
     }
     /// <p>The map of substitution variable names to their values used in this filter expression.</p>
-    pub fn values_map(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
-        self.values_map.as_ref()
+    pub fn values_map(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+        &self.values_map
     }
 }
 impl FilterExpression {
@@ -35,6 +36,7 @@ pub struct FilterExpressionBuilder {
 }
 impl FilterExpressionBuilder {
     /// <p>The expression which includes condition names followed by substitution variables, possibly grouped and combined with other conditions. For example, "(starts_with :prefix1 or starts_with :prefix2) and (ends_with :suffix1 or ends_with :suffix2)". Substitution variables should start with ':' symbol.</p>
+    /// This field is required.
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expression = ::std::option::Option::Some(input.into());
         self
@@ -69,10 +71,23 @@ impl FilterExpressionBuilder {
         &self.values_map
     }
     /// Consumes the builder and constructs a [`FilterExpression`](crate::types::FilterExpression).
-    pub fn build(self) -> crate::types::FilterExpression {
-        crate::types::FilterExpression {
-            expression: self.expression,
-            values_map: self.values_map,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`expression`](crate::types::builders::FilterExpressionBuilder::expression)
+    /// - [`values_map`](crate::types::builders::FilterExpressionBuilder::values_map)
+    pub fn build(self) -> ::std::result::Result<crate::types::FilterExpression, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::FilterExpression {
+            expression: self.expression.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "expression",
+                    "expression was not specified but it is required when building FilterExpression",
+                )
+            })?,
+            values_map: self.values_map.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "values_map",
+                    "values_map was not specified but it is required when building FilterExpression",
+                )
+            })?,
+        })
     }
 }

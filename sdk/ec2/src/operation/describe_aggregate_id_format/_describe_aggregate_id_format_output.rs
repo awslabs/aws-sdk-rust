@@ -15,8 +15,10 @@ impl DescribeAggregateIdFormatOutput {
         self.use_long_ids_aggregated
     }
     /// <p>Information about each resource's ID format.</p>
-    pub fn statuses(&self) -> ::std::option::Option<&[crate::types::IdFormat]> {
-        self.statuses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.statuses.is_none()`.
+    pub fn statuses(&self) -> &[crate::types::IdFormat] {
+        self.statuses.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeAggregateIdFormatOutput {

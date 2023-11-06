@@ -34,6 +34,7 @@ pub struct GetImpersonationRoleInputBuilder {
 }
 impl GetImpersonationRoleInputBuilder {
     /// <p>The WorkMail organization from which to retrieve the impersonation role.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetImpersonationRoleInputBuilder {
         &self.organization_id
     }
     /// <p>The impersonation role ID to retrieve.</p>
+    /// This field is required.
     pub fn impersonation_role_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.impersonation_role_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl GetImpersonationRoleInputBuilder {
     /// Consumes the builder and constructs a [`GetImpersonationRoleInput`](crate::operation::get_impersonation_role::GetImpersonationRoleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_impersonation_role::GetImpersonationRoleInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_impersonation_role::GetImpersonationRoleInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_impersonation_role::GetImpersonationRoleInput {
             organization_id: self.organization_id,

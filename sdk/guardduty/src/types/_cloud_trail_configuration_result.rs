@@ -28,6 +28,7 @@ pub struct CloudTrailConfigurationResultBuilder {
 }
 impl CloudTrailConfigurationResultBuilder {
     /// <p>Describes whether CloudTrail is enabled as a data source for the detector.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::DataSourceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self

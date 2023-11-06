@@ -34,6 +34,7 @@ pub struct DeleteSubscriptionFilterInputBuilder {
 }
 impl DeleteSubscriptionFilterInputBuilder {
     /// <p>The name of the log group.</p>
+    /// This field is required.
     pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteSubscriptionFilterInputBuilder {
         &self.log_group_name
     }
     /// <p>The name of the subscription filter.</p>
+    /// This field is required.
     pub fn filter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter_name = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl DeleteSubscriptionFilterInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_subscription_filter::DeleteSubscriptionFilterInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_subscription_filter::DeleteSubscriptionFilterInput {
             log_group_name: self.log_group_name,

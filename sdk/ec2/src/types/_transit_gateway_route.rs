@@ -31,8 +31,10 @@ impl TransitGatewayRoute {
         self.transit_gateway_route_table_announcement_id.as_deref()
     }
     /// <p>The attachments.</p>
-    pub fn transit_gateway_attachments(&self) -> ::std::option::Option<&[crate::types::TransitGatewayRouteAttachment]> {
-        self.transit_gateway_attachments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.transit_gateway_attachments.is_none()`.
+    pub fn transit_gateway_attachments(&self) -> &[crate::types::TransitGatewayRouteAttachment] {
+        self.transit_gateway_attachments.as_deref().unwrap_or_default()
     }
     /// <p>The route type.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::TransitGatewayRouteType> {

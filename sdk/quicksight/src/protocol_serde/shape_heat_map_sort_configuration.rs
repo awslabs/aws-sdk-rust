@@ -2,7 +2,7 @@
 pub fn ser_heat_map_sort_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HeatMapSortConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.heat_map_row_sort {
         let mut array_2 = object.key("HeatMapRowSort").start_array();
         for item_3 in var_1 {

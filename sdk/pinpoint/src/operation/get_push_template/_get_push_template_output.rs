@@ -34,6 +34,7 @@ pub struct GetPushTemplateOutputBuilder {
 }
 impl GetPushTemplateOutputBuilder {
     /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
+    /// This field is required.
     pub fn push_notification_template_response(mut self, input: crate::types::PushNotificationTemplateResponse) -> Self {
         self.push_notification_template_response = ::std::option::Option::Some(input);
         self

@@ -28,6 +28,7 @@ pub struct CreateTransitGatewayConnectRequestOptionsBuilder {
 }
 impl CreateTransitGatewayConnectRequestOptionsBuilder {
     /// <p>The tunnel protocol.</p>
+    /// This field is required.
     pub fn protocol(mut self, input: crate::types::ProtocolValue) -> Self {
         self.protocol = ::std::option::Option::Some(input);
         self

@@ -75,8 +75,10 @@ impl ApplicationInstance {
         self.tags.as_ref()
     }
     /// <p>The application's state.</p>
-    pub fn runtime_context_states(&self) -> ::std::option::Option<&[crate::types::ReportedRuntimeContextState]> {
-        self.runtime_context_states.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.runtime_context_states.is_none()`.
+    pub fn runtime_context_states(&self) -> &[crate::types::ReportedRuntimeContextState] {
+        self.runtime_context_states.as_deref().unwrap_or_default()
     }
 }
 impl ApplicationInstance {

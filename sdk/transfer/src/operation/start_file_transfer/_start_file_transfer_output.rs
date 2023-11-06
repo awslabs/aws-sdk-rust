@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartFileTransferOutput {
     /// <p>Returns the unique identifier for the file transfer.</p>
-    pub transfer_id: ::std::option::Option<::std::string::String>,
+    pub transfer_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl StartFileTransferOutput {
     /// <p>Returns the unique identifier for the file transfer.</p>
-    pub fn transfer_id(&self) -> ::std::option::Option<&str> {
-        self.transfer_id.as_deref()
+    pub fn transfer_id(&self) -> &str {
+        use std::ops::Deref;
+        self.transfer_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for StartFileTransferOutput {
@@ -34,6 +35,7 @@ pub struct StartFileTransferOutputBuilder {
 }
 impl StartFileTransferOutputBuilder {
     /// <p>Returns the unique identifier for the file transfer.</p>
+    /// This field is required.
     pub fn transfer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transfer_id = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,19 @@ impl StartFileTransferOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartFileTransferOutput`](crate::operation::start_file_transfer::StartFileTransferOutput).
-    pub fn build(self) -> crate::operation::start_file_transfer::StartFileTransferOutput {
-        crate::operation::start_file_transfer::StartFileTransferOutput {
-            transfer_id: self.transfer_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`transfer_id`](crate::operation::start_file_transfer::builders::StartFileTransferOutputBuilder::transfer_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::start_file_transfer::StartFileTransferOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::start_file_transfer::StartFileTransferOutput {
+            transfer_id: self.transfer_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "transfer_id",
+                    "transfer_id was not specified but it is required when building StartFileTransferOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

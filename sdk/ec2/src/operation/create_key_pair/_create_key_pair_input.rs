@@ -33,8 +33,10 @@ impl CreateKeyPairInput {
         self.key_type.as_ref()
     }
     /// <p>The tags to apply to the new key pair.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
     /// <p>The format of the key pair.</p>
     /// <p>Default: <code>pem</code> </p>
@@ -62,6 +64,7 @@ pub struct CreateKeyPairInputBuilder {
 impl CreateKeyPairInputBuilder {
     /// <p>A unique name for the key pair.</p>
     /// <p>Constraints: Up to 255 ASCII characters</p>
+    /// This field is required.
     pub fn key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_name = ::std::option::Option::Some(input.into());
         self
@@ -148,7 +151,7 @@ impl CreateKeyPairInputBuilder {
     /// Consumes the builder and constructs a [`CreateKeyPairInput`](crate::operation::create_key_pair::CreateKeyPairInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_key_pair::CreateKeyPairInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_key_pair::CreateKeyPairInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_key_pair::CreateKeyPairInput {
             key_name: self.key_name,
             dry_run: self.dry_run,

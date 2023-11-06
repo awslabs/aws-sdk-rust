@@ -41,6 +41,7 @@ pub struct CreatePlayerSessionInputBuilder {
 }
 impl CreatePlayerSessionInputBuilder {
     /// <p>A unique identifier for the game session to add a player to.</p>
+    /// This field is required.
     pub fn game_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_session_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl CreatePlayerSessionInputBuilder {
         &self.game_session_id
     }
     /// <p>A unique identifier for a player. Player IDs are developer-defined.</p>
+    /// This field is required.
     pub fn player_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.player_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +87,7 @@ impl CreatePlayerSessionInputBuilder {
     /// Consumes the builder and constructs a [`CreatePlayerSessionInput`](crate::operation::create_player_session::CreatePlayerSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_player_session::CreatePlayerSessionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_player_session::CreatePlayerSessionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_player_session::CreatePlayerSessionInput {
             game_session_id: self.game_session_id,

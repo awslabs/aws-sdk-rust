@@ -28,6 +28,7 @@ pub struct GetUpgradeStatusInputBuilder {
 }
 impl GetUpgradeStatusInputBuilder {
     /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl GetUpgradeStatusInputBuilder {
     /// Consumes the builder and constructs a [`GetUpgradeStatusInput`](crate::operation::get_upgrade_status::GetUpgradeStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_upgrade_status::GetUpgradeStatusInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_upgrade_status::GetUpgradeStatusInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_upgrade_status::GetUpgradeStatusInput {
             domain_name: self.domain_name,
         })

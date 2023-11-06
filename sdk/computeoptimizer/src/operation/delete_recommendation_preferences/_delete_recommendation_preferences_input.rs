@@ -28,8 +28,10 @@ impl DeleteRecommendationPreferencesInput {
         self.scope.as_ref()
     }
     /// <p>The name of the recommendation preference to delete.</p>
-    pub fn recommendation_preference_names(&self) -> ::std::option::Option<&[crate::types::RecommendationPreferenceName]> {
-        self.recommendation_preference_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recommendation_preference_names.is_none()`.
+    pub fn recommendation_preference_names(&self) -> &[crate::types::RecommendationPreferenceName] {
+        self.recommendation_preference_names.as_deref().unwrap_or_default()
     }
 }
 impl DeleteRecommendationPreferencesInput {
@@ -52,6 +54,7 @@ impl DeleteRecommendationPreferencesInputBuilder {
     /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p> <note>
     /// <p>The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p>
     /// </note>
+    /// This field is required.
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
@@ -116,7 +119,7 @@ impl DeleteRecommendationPreferencesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesInput {

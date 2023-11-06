@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DirectKafkaSource {
     /// <p>The name of the data store.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>Specifies the streaming options.</p>
     pub streaming_options: ::std::option::Option<crate::types::KafkaStreamingSourceOptions>,
     /// <p>The amount of time to spend processing each micro batch.</p>
@@ -17,8 +17,9 @@ pub struct DirectKafkaSource {
 }
 impl DirectKafkaSource {
     /// <p>The name of the data store.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>Specifies the streaming options.</p>
     pub fn streaming_options(&self) -> ::std::option::Option<&crate::types::KafkaStreamingSourceOptions> {
@@ -56,6 +57,7 @@ pub struct DirectKafkaSourceBuilder {
 }
 impl DirectKafkaSourceBuilder {
     /// <p>The name of the data store.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -126,13 +128,20 @@ impl DirectKafkaSourceBuilder {
         &self.data_preview_options
     }
     /// Consumes the builder and constructs a [`DirectKafkaSource`](crate::types::DirectKafkaSource).
-    pub fn build(self) -> crate::types::DirectKafkaSource {
-        crate::types::DirectKafkaSource {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::DirectKafkaSourceBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::DirectKafkaSource, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DirectKafkaSource {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DirectKafkaSource",
+                )
+            })?,
             streaming_options: self.streaming_options,
             window_size: self.window_size,
             detect_schema: self.detect_schema,
             data_preview_options: self.data_preview_options,
-        }
+        })
     }
 }

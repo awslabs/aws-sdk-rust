@@ -3,14 +3,14 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetFleet`](crate::operation::get_fleet::builders::GetFleetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`fleet_id(impl Into<String>)`](crate::operation::get_fleet::builders::GetFleetFluentBuilder::fleet_id) / [`set_fleet_id(Option<String>)`](crate::operation::get_fleet::builders::GetFleetFluentBuilder::set_fleet_id): <p> The ID of the fleet to retrieve information about. </p>
+    ///   - [`fleet_id(impl Into<String>)`](crate::operation::get_fleet::builders::GetFleetFluentBuilder::fleet_id) / [`set_fleet_id(Option<String>)`](crate::operation::get_fleet::builders::GetFleetFluentBuilder::set_fleet_id):<br>required: **true**<br><p> The ID of the fleet to retrieve information about. </p><br>
     /// - On success, responds with [`GetFleetOutput`](crate::operation::get_fleet::GetFleetOutput) with field(s):
-    ///   - [`id(Option<String>)`](crate::operation::get_fleet::GetFleetOutput::id): <p> The ID of the fleet.</p>
-    ///   - [`arn(Option<String>)`](crate::operation::get_fleet::GetFleetOutput::arn): <p> The Amazon Resource Name (ARN) of the fleet. </p>
+    ///   - [`id(String)`](crate::operation::get_fleet::GetFleetOutput::id): <p> The ID of the fleet.</p>
+    ///   - [`arn(String)`](crate::operation::get_fleet::GetFleetOutput::arn): <p> The Amazon Resource Name (ARN) of the fleet. </p>
     ///   - [`description(Option<String>)`](crate::operation::get_fleet::GetFleetOutput::description): <p> A brief description of the fleet. </p>
-    ///   - [`signal_catalog_arn(Option<String>)`](crate::operation::get_fleet::GetFleetOutput::signal_catalog_arn): <p> The ARN of a signal catalog associated with the fleet. </p>
-    ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_fleet::GetFleetOutput::creation_time): <p> The time the fleet was created in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
-    ///   - [`last_modification_time(Option<DateTime>)`](crate::operation::get_fleet::GetFleetOutput::last_modification_time): <p> The time the fleet was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
+    ///   - [`signal_catalog_arn(String)`](crate::operation::get_fleet::GetFleetOutput::signal_catalog_arn): <p> The ARN of a signal catalog associated with the fleet. </p>
+    ///   - [`creation_time(DateTime)`](crate::operation::get_fleet::GetFleetOutput::creation_time): <p> The time the fleet was created in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
+    ///   - [`last_modification_time(DateTime)`](crate::operation::get_fleet::GetFleetOutput::last_modification_time): <p> The time the fleet was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     /// - On failure, responds with [`SdkError<GetFleetError>`](crate::operation::get_fleet::GetFleetError)
     pub fn get_fleet(&self) -> crate::operation::get_fleet::builders::GetFleetFluentBuilder {
         crate::operation::get_fleet::builders::GetFleetFluentBuilder::new(self.handle.clone())

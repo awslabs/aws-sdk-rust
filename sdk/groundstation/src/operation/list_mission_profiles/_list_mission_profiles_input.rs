@@ -65,7 +65,7 @@ impl ListMissionProfilesInputBuilder {
     /// Consumes the builder and constructs a [`ListMissionProfilesInput`](crate::operation::list_mission_profiles::ListMissionProfilesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_mission_profiles::ListMissionProfilesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_mission_profiles::ListMissionProfilesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_mission_profiles::ListMissionProfilesInput {
             max_results: self.max_results,

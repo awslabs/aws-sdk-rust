@@ -41,6 +41,7 @@ pub struct DescribeAccountCustomizationInputBuilder {
 }
 impl DescribeAccountCustomizationInputBuilder {
     /// <p>The ID for the Amazon Web Services account that you want to describe Amazon QuickSight customizations for.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl DescribeAccountCustomizationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_account_customization::DescribeAccountCustomizationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_account_customization::DescribeAccountCustomizationInput {
             aws_account_id: self.aws_account_id,

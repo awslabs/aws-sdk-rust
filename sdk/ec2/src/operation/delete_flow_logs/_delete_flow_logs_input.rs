@@ -16,8 +16,10 @@ impl DeleteFlowLogsInput {
     }
     /// <p>One or more flow log IDs.</p>
     /// <p>Constraint: Maximum of 1000 flow log IDs.</p>
-    pub fn flow_log_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.flow_log_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.flow_log_ids.is_none()`.
+    pub fn flow_log_ids(&self) -> &[::std::string::String] {
+        self.flow_log_ids.as_deref().unwrap_or_default()
     }
 }
 impl DeleteFlowLogsInput {
@@ -75,7 +77,7 @@ impl DeleteFlowLogsInputBuilder {
     /// Consumes the builder and constructs a [`DeleteFlowLogsInput`](crate::operation::delete_flow_logs::DeleteFlowLogsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_flow_logs::DeleteFlowLogsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_flow_logs::DeleteFlowLogsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_flow_logs::DeleteFlowLogsInput {
             dry_run: self.dry_run,
             flow_log_ids: self.flow_log_ids,

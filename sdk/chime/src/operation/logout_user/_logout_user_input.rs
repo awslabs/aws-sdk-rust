@@ -34,6 +34,7 @@ pub struct LogoutUserInputBuilder {
 }
 impl LogoutUserInputBuilder {
     /// <p>The Amazon Chime account ID.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl LogoutUserInputBuilder {
         &self.account_id
     }
     /// <p>The user ID.</p>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,7 @@ impl LogoutUserInputBuilder {
         &self.user_id
     }
     /// Consumes the builder and constructs a [`LogoutUserInput`](crate::operation::logout_user::LogoutUserInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::logout_user::LogoutUserInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::logout_user::LogoutUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::logout_user::LogoutUserInput {
             account_id: self.account_id,
             user_id: self.user_id,

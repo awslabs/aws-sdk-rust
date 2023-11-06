@@ -5,23 +5,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Collaboration {
     /// <p>The unique ID for the collaboration.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The unique ARN for the collaboration.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>A human-readable identifier provided by the collaboration owner. Display names are not unique.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>A description of the collaboration provided by the collaboration owner.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The identifier used to reference members of the collaboration. Currently only supports Amazon Web Services account ID.</p>
-    pub creator_account_id: ::std::option::Option<::std::string::String>,
+    pub creator_account_id: ::std::string::String,
     /// <p>A display name of the collaboration creator.</p>
-    pub creator_display_name: ::std::option::Option<::std::string::String>,
+    pub creator_display_name: ::std::string::String,
     /// <p>The time when the collaboration was created.</p>
-    pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub create_time: ::aws_smithy_types::DateTime,
     /// <p>The time the collaboration metadata was last updated.</p>
-    pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub update_time: ::aws_smithy_types::DateTime,
     /// <p>The status of a member in a collaboration.</p>
-    pub member_status: ::std::option::Option<crate::types::MemberStatus>,
+    pub member_status: crate::types::MemberStatus,
     /// <p>The unique ID for your membership within the collaboration.</p>
     pub membership_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ARN for your membership within the collaboration.</p>
@@ -29,44 +29,49 @@ pub struct Collaboration {
     /// <p>The settings for client-side encryption for cryptographic computing.</p>
     pub data_encryption_metadata: ::std::option::Option<crate::types::DataEncryptionMetadata>,
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
-    pub query_log_status: ::std::option::Option<crate::types::CollaborationQueryLogStatus>,
+    pub query_log_status: crate::types::CollaborationQueryLogStatus,
 }
 impl Collaboration {
     /// <p>The unique ID for the collaboration.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The unique ARN for the collaboration.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>A human-readable identifier provided by the collaboration owner. Display names are not unique.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>A description of the collaboration provided by the collaboration owner.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The identifier used to reference members of the collaboration. Currently only supports Amazon Web Services account ID.</p>
-    pub fn creator_account_id(&self) -> ::std::option::Option<&str> {
-        self.creator_account_id.as_deref()
+    pub fn creator_account_id(&self) -> &str {
+        use std::ops::Deref;
+        self.creator_account_id.deref()
     }
     /// <p>A display name of the collaboration creator.</p>
-    pub fn creator_display_name(&self) -> ::std::option::Option<&str> {
-        self.creator_display_name.as_deref()
+    pub fn creator_display_name(&self) -> &str {
+        use std::ops::Deref;
+        self.creator_display_name.deref()
     }
     /// <p>The time when the collaboration was created.</p>
-    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.create_time.as_ref()
+    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.create_time
     }
     /// <p>The time the collaboration metadata was last updated.</p>
-    pub fn update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.update_time.as_ref()
+    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.update_time
     }
     /// <p>The status of a member in a collaboration.</p>
-    pub fn member_status(&self) -> ::std::option::Option<&crate::types::MemberStatus> {
-        self.member_status.as_ref()
+    pub fn member_status(&self) -> &crate::types::MemberStatus {
+        &self.member_status
     }
     /// <p>The unique ID for your membership within the collaboration.</p>
     pub fn membership_id(&self) -> ::std::option::Option<&str> {
@@ -81,8 +86,8 @@ impl Collaboration {
         self.data_encryption_metadata.as_ref()
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
-    pub fn query_log_status(&self) -> ::std::option::Option<&crate::types::CollaborationQueryLogStatus> {
-        self.query_log_status.as_ref()
+    pub fn query_log_status(&self) -> &crate::types::CollaborationQueryLogStatus {
+        &self.query_log_status
     }
 }
 impl Collaboration {
@@ -112,6 +117,7 @@ pub struct CollaborationBuilder {
 }
 impl CollaborationBuilder {
     /// <p>The unique ID for the collaboration.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +132,7 @@ impl CollaborationBuilder {
         &self.id
     }
     /// <p>The unique ARN for the collaboration.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -140,6 +147,7 @@ impl CollaborationBuilder {
         &self.arn
     }
     /// <p>A human-readable identifier provided by the collaboration owner. Display names are not unique.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -168,6 +176,7 @@ impl CollaborationBuilder {
         &self.description
     }
     /// <p>The identifier used to reference members of the collaboration. Currently only supports Amazon Web Services account ID.</p>
+    /// This field is required.
     pub fn creator_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creator_account_id = ::std::option::Option::Some(input.into());
         self
@@ -182,6 +191,7 @@ impl CollaborationBuilder {
         &self.creator_account_id
     }
     /// <p>A display name of the collaboration creator.</p>
+    /// This field is required.
     pub fn creator_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creator_display_name = ::std::option::Option::Some(input.into());
         self
@@ -196,6 +206,7 @@ impl CollaborationBuilder {
         &self.creator_display_name
     }
     /// <p>The time when the collaboration was created.</p>
+    /// This field is required.
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
         self
@@ -210,6 +221,7 @@ impl CollaborationBuilder {
         &self.create_time
     }
     /// <p>The time the collaboration metadata was last updated.</p>
+    /// This field is required.
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
         self
@@ -224,6 +236,7 @@ impl CollaborationBuilder {
         &self.update_time
     }
     /// <p>The status of a member in a collaboration.</p>
+    /// This field is required.
     pub fn member_status(mut self, input: crate::types::MemberStatus) -> Self {
         self.member_status = ::std::option::Option::Some(input);
         self
@@ -280,6 +293,7 @@ impl CollaborationBuilder {
         &self.data_encryption_metadata
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
+    /// This field is required.
     pub fn query_log_status(mut self, input: crate::types::CollaborationQueryLogStatus) -> Self {
         self.query_log_status = ::std::option::Option::Some(input);
         self
@@ -294,21 +308,76 @@ impl CollaborationBuilder {
         &self.query_log_status
     }
     /// Consumes the builder and constructs a [`Collaboration`](crate::types::Collaboration).
-    pub fn build(self) -> crate::types::Collaboration {
-        crate::types::Collaboration {
-            id: self.id,
-            arn: self.arn,
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::CollaborationBuilder::id)
+    /// - [`arn`](crate::types::builders::CollaborationBuilder::arn)
+    /// - [`name`](crate::types::builders::CollaborationBuilder::name)
+    /// - [`creator_account_id`](crate::types::builders::CollaborationBuilder::creator_account_id)
+    /// - [`creator_display_name`](crate::types::builders::CollaborationBuilder::creator_display_name)
+    /// - [`create_time`](crate::types::builders::CollaborationBuilder::create_time)
+    /// - [`update_time`](crate::types::builders::CollaborationBuilder::update_time)
+    /// - [`member_status`](crate::types::builders::CollaborationBuilder::member_status)
+    /// - [`query_log_status`](crate::types::builders::CollaborationBuilder::query_log_status)
+    pub fn build(self) -> ::std::result::Result<crate::types::Collaboration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Collaboration {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building Collaboration",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building Collaboration",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building Collaboration",
+                )
+            })?,
             description: self.description,
-            creator_account_id: self.creator_account_id,
-            creator_display_name: self.creator_display_name,
-            create_time: self.create_time,
-            update_time: self.update_time,
-            member_status: self.member_status,
+            creator_account_id: self.creator_account_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "creator_account_id",
+                    "creator_account_id was not specified but it is required when building Collaboration",
+                )
+            })?,
+            creator_display_name: self.creator_display_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "creator_display_name",
+                    "creator_display_name was not specified but it is required when building Collaboration",
+                )
+            })?,
+            create_time: self.create_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "create_time",
+                    "create_time was not specified but it is required when building Collaboration",
+                )
+            })?,
+            update_time: self.update_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "update_time",
+                    "update_time was not specified but it is required when building Collaboration",
+                )
+            })?,
+            member_status: self.member_status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "member_status",
+                    "member_status was not specified but it is required when building Collaboration",
+                )
+            })?,
             membership_id: self.membership_id,
             membership_arn: self.membership_arn,
             data_encryption_metadata: self.data_encryption_metadata,
-            query_log_status: self.query_log_status,
-        }
+            query_log_status: self.query_log_status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "query_log_status",
+                    "query_log_status was not specified but it is required when building Collaboration",
+                )
+            })?,
+        })
     }
 }

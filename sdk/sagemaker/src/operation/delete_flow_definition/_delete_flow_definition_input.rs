@@ -27,6 +27,7 @@ pub struct DeleteFlowDefinitionInputBuilder {
 }
 impl DeleteFlowDefinitionInputBuilder {
     /// <p>The name of the flow definition you are deleting.</p>
+    /// This field is required.
     pub fn flow_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_definition_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteFlowDefinitionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteFlowDefinitionInput`](crate::operation::delete_flow_definition::DeleteFlowDefinitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_flow_definition::DeleteFlowDefinitionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_flow_definition::DeleteFlowDefinitionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_flow_definition::DeleteFlowDefinitionInput {
             flow_definition_name: self.flow_definition_name,

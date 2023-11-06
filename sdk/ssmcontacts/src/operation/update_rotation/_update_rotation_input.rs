@@ -24,8 +24,10 @@ impl UpdateRotationInput {
     }
     /// <p>The Amazon Resource Names (ARNs) of the contacts to include in the updated rotation. </p>
     /// <p>The order in which you list the contacts is their shift order in the rotation schedule.</p>
-    pub fn contact_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.contact_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.contact_ids.is_none()`.
+    pub fn contact_ids(&self) -> &[::std::string::String] {
+        self.contact_ids.as_deref().unwrap_or_default()
     }
     /// <p>The date and time the rotation goes into effect.</p>
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -61,6 +63,7 @@ pub struct UpdateRotationInputBuilder {
 }
 impl UpdateRotationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the rotation to update.</p>
+    /// This field is required.
     pub fn rotation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rotation_id = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +135,7 @@ impl UpdateRotationInputBuilder {
         &self.time_zone_id
     }
     /// <p>Information about how long the updated rotation lasts before restarting at the beginning of the shift order.</p>
+    /// This field is required.
     pub fn recurrence(mut self, input: crate::types::RecurrenceSettings) -> Self {
         self.recurrence = ::std::option::Option::Some(input);
         self
@@ -148,7 +152,7 @@ impl UpdateRotationInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRotationInput`](crate::operation::update_rotation::UpdateRotationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_rotation::UpdateRotationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_rotation::UpdateRotationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_rotation::UpdateRotationInput {
             rotation_id: self.rotation_id,
             contact_ids: self.contact_ids,

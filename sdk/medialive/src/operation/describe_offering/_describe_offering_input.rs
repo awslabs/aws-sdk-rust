@@ -28,6 +28,7 @@ pub struct DescribeOfferingInputBuilder {
 }
 impl DescribeOfferingInputBuilder {
     /// Unique offering ID, e.g. '87654321'
+    /// This field is required.
     pub fn offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.offering_id = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl DescribeOfferingInputBuilder {
     /// Consumes the builder and constructs a [`DescribeOfferingInput`](crate::operation::describe_offering::DescribeOfferingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_offering::DescribeOfferingInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_offering::DescribeOfferingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_offering::DescribeOfferingInput {
             offering_id: self.offering_id,
         })

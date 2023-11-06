@@ -118,6 +118,7 @@ pub struct UpdateComponentInputBuilder {
 }
 impl UpdateComponentInputBuilder {
     /// <p>The name of the component to update.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -144,6 +145,7 @@ impl UpdateComponentInputBuilder {
     /// <p>In this mode, the component is deployed and updated with the new <code>serviceSpec</code>, <code>templateSource</code>, and/or <code>type</code> that you provide. Only requested parameters are updated.</p>
     /// </dd>
     /// </dl>
+    /// This field is required.
     pub fn deployment_type(mut self, input: crate::types::ComponentDeploymentUpdateType) -> Self {
         self.deployment_type = ::std::option::Option::Some(input);
         self
@@ -274,7 +276,7 @@ impl UpdateComponentInputBuilder {
     /// Consumes the builder and constructs a [`UpdateComponentInput`](crate::operation::update_component::UpdateComponentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_component::UpdateComponentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_component::UpdateComponentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_component::UpdateComponentInput {
             name: self.name,
             deployment_type: self.deployment_type,

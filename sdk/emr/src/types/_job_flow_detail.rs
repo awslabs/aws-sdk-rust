@@ -10,9 +10,9 @@ pub struct JobFlowDetail {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The location in Amazon S3 where log files for the job are stored.</p>
     pub log_uri: ::std::option::Option<::std::string::String>,
-    /// <p>The KMS key used for encrypting log files. This attribute is only available with Amazon EMR 5.30.0 and later, excluding 6.0.0.</p>
+    /// <p>The KMS key used for encrypting log files. This attribute is only available with Amazon EMR 5.30.0 and higher, excluding 6.0.0.</p>
     pub log_encryption_kms_key_id: ::std::option::Option<::std::string::String>,
-    /// <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use <code>CustomAmiID</code>.</p>
+    /// <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and higher, <code>ReleaseLabel</code> is used. To specify a custom AMI, use <code>CustomAmiID</code>.</p>
     pub ami_version: ::std::option::Option<::std::string::String>,
     /// <p>Describes the execution status of the job flow.</p>
     pub execution_status_detail: ::std::option::Option<crate::types::JobFlowExecutionStatusDetail>,
@@ -33,7 +33,7 @@ pub struct JobFlowDetail {
     pub service_role: ::std::option::Option<::std::string::String>,
     /// <p>An IAM role for automatic scaling policies. The default role is <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides a way for the automatic scaling feature to get the required permissions it needs to launch and terminate Amazon EC2 instances in an instance group.</p>
     pub auto_scaling_role: ::std::option::Option<::std::string::String>,
-    /// <p>The way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available only in Amazon EMR releases 4.1.0 and later, and is the default for releases of Amazon EMR earlier than 5.1.0.</p>
+    /// <p>The way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is only available with Amazon EMR 5.1.0 and higher and is the default for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available only in Amazon EMR releases 4.1.0 and higher, and is the default for releases of Amazon EMR earlier than 5.1.0.</p>
     pub scale_down_behavior: ::std::option::Option<crate::types::ScaleDownBehavior>,
 }
 impl JobFlowDetail {
@@ -49,11 +49,11 @@ impl JobFlowDetail {
     pub fn log_uri(&self) -> ::std::option::Option<&str> {
         self.log_uri.as_deref()
     }
-    /// <p>The KMS key used for encrypting log files. This attribute is only available with Amazon EMR 5.30.0 and later, excluding 6.0.0.</p>
+    /// <p>The KMS key used for encrypting log files. This attribute is only available with Amazon EMR 5.30.0 and higher, excluding 6.0.0.</p>
     pub fn log_encryption_kms_key_id(&self) -> ::std::option::Option<&str> {
         self.log_encryption_kms_key_id.as_deref()
     }
-    /// <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use <code>CustomAmiID</code>.</p>
+    /// <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and higher, <code>ReleaseLabel</code> is used. To specify a custom AMI, use <code>CustomAmiID</code>.</p>
     pub fn ami_version(&self) -> ::std::option::Option<&str> {
         self.ami_version.as_deref()
     }
@@ -66,16 +66,22 @@ impl JobFlowDetail {
         self.instances.as_ref()
     }
     /// <p>A list of steps run by the job flow.</p>
-    pub fn steps(&self) -> ::std::option::Option<&[crate::types::StepDetail]> {
-        self.steps.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.steps.is_none()`.
+    pub fn steps(&self) -> &[crate::types::StepDetail] {
+        self.steps.as_deref().unwrap_or_default()
     }
     /// <p>A list of the bootstrap actions run by the job flow.</p>
-    pub fn bootstrap_actions(&self) -> ::std::option::Option<&[crate::types::BootstrapActionDetail]> {
-        self.bootstrap_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bootstrap_actions.is_none()`.
+    pub fn bootstrap_actions(&self) -> &[crate::types::BootstrapActionDetail] {
+        self.bootstrap_actions.as_deref().unwrap_or_default()
     }
     /// <p>A list of strings set by third-party software when the job flow is launched. If you are not using third-party software to manage the job flow, this value is empty.</p>
-    pub fn supported_products(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.supported_products.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_products.is_none()`.
+    pub fn supported_products(&self) -> &[::std::string::String] {
+        self.supported_products.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated with the cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform Amazon EMR cluster actions that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform Amazon EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p>
     /// <p>The default value is <code>true</code> if a value is not provided when creating a cluster using the Amazon EMR API <code>RunJobFlow</code> command, the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or the Amazon Web Services Management Console.</p>
@@ -94,7 +100,7 @@ impl JobFlowDetail {
     pub fn auto_scaling_role(&self) -> ::std::option::Option<&str> {
         self.auto_scaling_role.as_deref()
     }
-    /// <p>The way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available only in Amazon EMR releases 4.1.0 and later, and is the default for releases of Amazon EMR earlier than 5.1.0.</p>
+    /// <p>The way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is only available with Amazon EMR 5.1.0 and higher and is the default for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available only in Amazon EMR releases 4.1.0 and higher, and is the default for releases of Amazon EMR earlier than 5.1.0.</p>
     pub fn scale_down_behavior(&self) -> ::std::option::Option<&crate::types::ScaleDownBehavior> {
         self.scale_down_behavior.as_ref()
     }
@@ -128,6 +134,7 @@ pub struct JobFlowDetailBuilder {
 }
 impl JobFlowDetailBuilder {
     /// <p>The job flow identifier.</p>
+    /// This field is required.
     pub fn job_flow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_flow_id = ::std::option::Option::Some(input.into());
         self
@@ -142,6 +149,7 @@ impl JobFlowDetailBuilder {
         &self.job_flow_id
     }
     /// <p>The name of the job flow.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -169,35 +177,36 @@ impl JobFlowDetailBuilder {
     pub fn get_log_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.log_uri
     }
-    /// <p>The KMS key used for encrypting log files. This attribute is only available with Amazon EMR 5.30.0 and later, excluding 6.0.0.</p>
+    /// <p>The KMS key used for encrypting log files. This attribute is only available with Amazon EMR 5.30.0 and higher, excluding 6.0.0.</p>
     pub fn log_encryption_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_encryption_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The KMS key used for encrypting log files. This attribute is only available with Amazon EMR 5.30.0 and later, excluding 6.0.0.</p>
+    /// <p>The KMS key used for encrypting log files. This attribute is only available with Amazon EMR 5.30.0 and higher, excluding 6.0.0.</p>
     pub fn set_log_encryption_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_encryption_kms_key_id = input;
         self
     }
-    /// <p>The KMS key used for encrypting log files. This attribute is only available with Amazon EMR 5.30.0 and later, excluding 6.0.0.</p>
+    /// <p>The KMS key used for encrypting log files. This attribute is only available with Amazon EMR 5.30.0 and higher, excluding 6.0.0.</p>
     pub fn get_log_encryption_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.log_encryption_kms_key_id
     }
-    /// <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use <code>CustomAmiID</code>.</p>
+    /// <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and higher, <code>ReleaseLabel</code> is used. To specify a custom AMI, use <code>CustomAmiID</code>.</p>
     pub fn ami_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ami_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use <code>CustomAmiID</code>.</p>
+    /// <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and higher, <code>ReleaseLabel</code> is used. To specify a custom AMI, use <code>CustomAmiID</code>.</p>
     pub fn set_ami_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ami_version = input;
         self
     }
-    /// <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use <code>CustomAmiID</code>.</p>
+    /// <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and higher, <code>ReleaseLabel</code> is used. To specify a custom AMI, use <code>CustomAmiID</code>.</p>
     pub fn get_ami_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.ami_version
     }
     /// <p>Describes the execution status of the job flow.</p>
+    /// This field is required.
     pub fn execution_status_detail(mut self, input: crate::types::JobFlowExecutionStatusDetail) -> Self {
         self.execution_status_detail = ::std::option::Option::Some(input);
         self
@@ -212,6 +221,7 @@ impl JobFlowDetailBuilder {
         &self.execution_status_detail
     }
     /// <p>Describes the Amazon EC2 instances of the job flow.</p>
+    /// This field is required.
     pub fn instances(mut self, input: crate::types::JobFlowInstancesDetail) -> Self {
         self.instances = ::std::option::Option::Some(input);
         self
@@ -344,17 +354,17 @@ impl JobFlowDetailBuilder {
     pub fn get_auto_scaling_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.auto_scaling_role
     }
-    /// <p>The way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available only in Amazon EMR releases 4.1.0 and later, and is the default for releases of Amazon EMR earlier than 5.1.0.</p>
+    /// <p>The way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is only available with Amazon EMR 5.1.0 and higher and is the default for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available only in Amazon EMR releases 4.1.0 and higher, and is the default for releases of Amazon EMR earlier than 5.1.0.</p>
     pub fn scale_down_behavior(mut self, input: crate::types::ScaleDownBehavior) -> Self {
         self.scale_down_behavior = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available only in Amazon EMR releases 4.1.0 and later, and is the default for releases of Amazon EMR earlier than 5.1.0.</p>
+    /// <p>The way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is only available with Amazon EMR 5.1.0 and higher and is the default for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available only in Amazon EMR releases 4.1.0 and higher, and is the default for releases of Amazon EMR earlier than 5.1.0.</p>
     pub fn set_scale_down_behavior(mut self, input: ::std::option::Option<crate::types::ScaleDownBehavior>) -> Self {
         self.scale_down_behavior = input;
         self
     }
-    /// <p>The way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available only in Amazon EMR releases 4.1.0 and later, and is the default for releases of Amazon EMR earlier than 5.1.0.</p>
+    /// <p>The way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is only available with Amazon EMR 5.1.0 and higher and is the default for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available only in Amazon EMR releases 4.1.0 and higher, and is the default for releases of Amazon EMR earlier than 5.1.0.</p>
     pub fn get_scale_down_behavior(&self) -> &::std::option::Option<crate::types::ScaleDownBehavior> {
         &self.scale_down_behavior
     }

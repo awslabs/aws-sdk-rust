@@ -2,17 +2,17 @@
 pub fn ser_historical_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HistoricalOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.budget_adjustment_period {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
         object.key("BudgetAdjustmentPeriod").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+            ::aws_smithy_types::Number::NegInt((input.budget_adjustment_period).into()),
         );
     }
-    if let Some(var_2) = &input.look_back_available_periods {
+    if let Some(var_1) = &input.look_back_available_periods {
         object.key("LookBackAvailablePeriods").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
     Ok(())
@@ -57,7 +57,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::historical_options_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

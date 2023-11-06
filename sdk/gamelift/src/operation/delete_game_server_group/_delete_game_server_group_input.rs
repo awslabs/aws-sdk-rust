@@ -44,6 +44,7 @@ pub struct DeleteGameServerGroupInputBuilder {
 }
 impl DeleteGameServerGroupInputBuilder {
     /// <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
+    /// This field is required.
     pub fn game_server_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_server_group_name = ::std::option::Option::Some(input.into());
         self
@@ -89,7 +90,7 @@ impl DeleteGameServerGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteGameServerGroupInput`](crate::operation::delete_game_server_group::DeleteGameServerGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_game_server_group::DeleteGameServerGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_game_server_group::DeleteGameServerGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_game_server_group::DeleteGameServerGroupInput {
             game_server_group_name: self.game_server_group_name,

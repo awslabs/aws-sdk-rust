@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetStage`](crate::operation::get_stage::builders::GetStageFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`api_id(impl Into<String>)`](crate::operation::get_stage::builders::GetStageFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::get_stage::builders::GetStageFluentBuilder::set_api_id): <p>The API identifier.</p>
-    ///   - [`stage_name(impl Into<String>)`](crate::operation::get_stage::builders::GetStageFluentBuilder::stage_name) / [`set_stage_name(Option<String>)`](crate::operation::get_stage::builders::GetStageFluentBuilder::set_stage_name): <p>The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
+    ///   - [`api_id(impl Into<String>)`](crate::operation::get_stage::builders::GetStageFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::get_stage::builders::GetStageFluentBuilder::set_api_id):<br>required: **true**<br><p>The API identifier.</p><br>
+    ///   - [`stage_name(impl Into<String>)`](crate::operation::get_stage::builders::GetStageFluentBuilder::stage_name) / [`set_stage_name(Option<String>)`](crate::operation::get_stage::builders::GetStageFluentBuilder::set_stage_name):<br>required: **true**<br><p>The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p><br>
     /// - On success, responds with [`GetStageOutput`](crate::operation::get_stage::GetStageOutput) with field(s):
     ///   - [`access_log_settings(Option<AccessLogSettings>)`](crate::operation::get_stage::GetStageOutput::access_log_settings): <p>Settings for logging access in this stage.</p>
     ///   - [`api_gateway_managed(Option<bool>)`](crate::operation::get_stage::GetStageOutput::api_gateway_managed): <p>Specifies whether a stage is managed by API Gateway. If you created an API using quick create, the $default stage is managed by API Gateway. You can't modify the $default stage.</p>
@@ -16,10 +16,10 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::get_stage::GetStageOutput::description): <p>The description of the stage.</p>
     ///   - [`last_deployment_status_message(Option<String>)`](crate::operation::get_stage::GetStageOutput::last_deployment_status_message): <p>Describes the status of the last deployment of a stage. Supported only for stages with autoDeploy enabled.</p>
     ///   - [`last_updated_date(Option<DateTime>)`](crate::operation::get_stage::GetStageOutput::last_updated_date): <p>The timestamp when the stage was last updated.</p>
-    ///   - [`route_settings(Option<HashMap<String, RouteSettings>>)`](crate::operation::get_stage::GetStageOutput::route_settings): <p>Route settings for the stage, by routeKey.</p>
+    ///   - [`route_settings(Option<HashMap::<String, RouteSettings>>)`](crate::operation::get_stage::GetStageOutput::route_settings): <p>Route settings for the stage, by routeKey.</p>
     ///   - [`stage_name(Option<String>)`](crate::operation::get_stage::GetStageOutput::stage_name): <p>The name of the stage.</p>
-    ///   - [`stage_variables(Option<HashMap<String, String>>)`](crate::operation::get_stage::GetStageOutput::stage_variables): <p>A map that defines the stage variables for a stage resource. Variable names can have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_stage::GetStageOutput::tags): <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    ///   - [`stage_variables(Option<HashMap::<String, String>>)`](crate::operation::get_stage::GetStageOutput::stage_variables): <p>A map that defines the stage variables for a stage resource. Variable names can have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_stage::GetStageOutput::tags): <p>The collection of tags. Each tag element is associated with a given resource.</p>
     /// - On failure, responds with [`SdkError<GetStageError>`](crate::operation::get_stage::GetStageError)
     pub fn get_stage(&self) -> crate::operation::get_stage::builders::GetStageFluentBuilder {
         crate::operation::get_stage::builders::GetStageFluentBuilder::new(self.handle.clone())

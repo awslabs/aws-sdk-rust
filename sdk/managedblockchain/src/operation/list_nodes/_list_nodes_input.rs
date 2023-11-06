@@ -57,6 +57,7 @@ pub struct ListNodesInputBuilder {
 }
 impl ListNodesInputBuilder {
     /// <p>The unique identifier of the network for which to list nodes.</p>
+    /// This field is required.
     pub fn network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_id = ::std::option::Option::Some(input.into());
         self
@@ -130,7 +131,7 @@ impl ListNodesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListNodesInput`](crate::operation::list_nodes::ListNodesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_nodes::ListNodesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_nodes::ListNodesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_nodes::ListNodesInput {
             network_id: self.network_id,
             member_id: self.member_id,

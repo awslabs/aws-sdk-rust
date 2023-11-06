@@ -14,12 +14,16 @@ pub struct DescribePoolsInput {
 }
 impl DescribePoolsInput {
     /// <p>The unique identifier of pools to find. This is an array of strings that can be either the PoolId or PoolArn.</p>
-    pub fn pool_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.pool_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pool_ids.is_none()`.
+    pub fn pool_ids(&self) -> &[::std::string::String] {
+        self.pool_ids.as_deref().unwrap_or_default()
     }
     /// <p>An array of PoolFilter objects to filter the results.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::PoolFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::PoolFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -118,7 +122,7 @@ impl DescribePoolsInputBuilder {
     /// Consumes the builder and constructs a [`DescribePoolsInput`](crate::operation::describe_pools::DescribePoolsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_pools::DescribePoolsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_pools::DescribePoolsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_pools::DescribePoolsInput {
             pool_ids: self.pool_ids,
             filters: self.filters,

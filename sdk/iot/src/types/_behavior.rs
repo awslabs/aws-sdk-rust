@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Behavior {
     /// <p>The name you've given to the behavior.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>What is measured by the behavior.</p>
     pub metric: ::std::option::Option<::std::string::String>,
     /// <p>The dimension for a metric in your behavior. For example, using a <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric to only MQTT topics where the name matches the pattern specified in the dimension. This can't be used with custom metrics.</p>
@@ -19,8 +19,9 @@ pub struct Behavior {
 }
 impl Behavior {
     /// <p>The name you've given to the behavior.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>What is measured by the behavior.</p>
     pub fn metric(&self) -> ::std::option::Option<&str> {
@@ -60,6 +61,7 @@ pub struct BehaviorBuilder {
 }
 impl BehaviorBuilder {
     /// <p>The name you've given to the behavior.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -136,13 +138,20 @@ impl BehaviorBuilder {
         &self.suppress_alerts
     }
     /// Consumes the builder and constructs a [`Behavior`](crate::types::Behavior).
-    pub fn build(self) -> crate::types::Behavior {
-        crate::types::Behavior {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::BehaviorBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::Behavior, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Behavior {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building Behavior",
+                )
+            })?,
             metric: self.metric,
             metric_dimension: self.metric_dimension,
             criteria: self.criteria,
             suppress_alerts: self.suppress_alerts,
-        }
+        })
     }
 }

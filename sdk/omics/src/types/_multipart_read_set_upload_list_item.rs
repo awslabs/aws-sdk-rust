@@ -5,19 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultipartReadSetUploadListItem {
     /// <p> The sequence store ID used for the multipart upload. </p>
-    pub sequence_store_id: ::std::option::Option<::std::string::String>,
+    pub sequence_store_id: ::std::string::String,
     /// <p> The ID for the initiated multipart upload. </p>
-    pub upload_id: ::std::option::Option<::std::string::String>,
+    pub upload_id: ::std::string::String,
     /// <p> The type of file the read set originated from. </p>
-    pub source_file_type: ::std::option::Option<crate::types::FileType>,
+    pub source_file_type: crate::types::FileType,
     /// <p> The read set source's subject ID. </p>
-    pub subject_id: ::std::option::Option<::std::string::String>,
+    pub subject_id: ::std::string::String,
     /// <p> The read set source's sample ID. </p>
-    pub sample_id: ::std::option::Option<::std::string::String>,
+    pub sample_id: ::std::string::String,
     /// <p> The source of an uploaded part. </p>
-    pub generated_from: ::std::option::Option<::std::string::String>,
+    pub generated_from: ::std::string::String,
     /// <p> The source's reference ARN. </p>
-    pub reference_arn: ::std::option::Option<::std::string::String>,
+    pub reference_arn: ::std::string::String,
     /// <p> The name of a read set. </p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The description of a read set. </p>
@@ -25,36 +25,42 @@ pub struct MultipartReadSetUploadListItem {
     /// <p> Any tags you wish to add to a read set. </p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p> The time stamp for when a direct upload was created. </p>
-    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_time: ::aws_smithy_types::DateTime,
 }
 impl MultipartReadSetUploadListItem {
     /// <p> The sequence store ID used for the multipart upload. </p>
-    pub fn sequence_store_id(&self) -> ::std::option::Option<&str> {
-        self.sequence_store_id.as_deref()
+    pub fn sequence_store_id(&self) -> &str {
+        use std::ops::Deref;
+        self.sequence_store_id.deref()
     }
     /// <p> The ID for the initiated multipart upload. </p>
-    pub fn upload_id(&self) -> ::std::option::Option<&str> {
-        self.upload_id.as_deref()
+    pub fn upload_id(&self) -> &str {
+        use std::ops::Deref;
+        self.upload_id.deref()
     }
     /// <p> The type of file the read set originated from. </p>
-    pub fn source_file_type(&self) -> ::std::option::Option<&crate::types::FileType> {
-        self.source_file_type.as_ref()
+    pub fn source_file_type(&self) -> &crate::types::FileType {
+        &self.source_file_type
     }
     /// <p> The read set source's subject ID. </p>
-    pub fn subject_id(&self) -> ::std::option::Option<&str> {
-        self.subject_id.as_deref()
+    pub fn subject_id(&self) -> &str {
+        use std::ops::Deref;
+        self.subject_id.deref()
     }
     /// <p> The read set source's sample ID. </p>
-    pub fn sample_id(&self) -> ::std::option::Option<&str> {
-        self.sample_id.as_deref()
+    pub fn sample_id(&self) -> &str {
+        use std::ops::Deref;
+        self.sample_id.deref()
     }
     /// <p> The source of an uploaded part. </p>
-    pub fn generated_from(&self) -> ::std::option::Option<&str> {
-        self.generated_from.as_deref()
+    pub fn generated_from(&self) -> &str {
+        use std::ops::Deref;
+        self.generated_from.deref()
     }
     /// <p> The source's reference ARN. </p>
-    pub fn reference_arn(&self) -> ::std::option::Option<&str> {
-        self.reference_arn.as_deref()
+    pub fn reference_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.reference_arn.deref()
     }
     /// <p> The name of a read set. </p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -69,8 +75,8 @@ impl MultipartReadSetUploadListItem {
         self.tags.as_ref()
     }
     /// <p> The time stamp for when a direct upload was created. </p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_time.as_ref()
+    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_time
     }
 }
 impl MultipartReadSetUploadListItem {
@@ -98,6 +104,7 @@ pub struct MultipartReadSetUploadListItemBuilder {
 }
 impl MultipartReadSetUploadListItemBuilder {
     /// <p> The sequence store ID used for the multipart upload. </p>
+    /// This field is required.
     pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_store_id = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +119,7 @@ impl MultipartReadSetUploadListItemBuilder {
         &self.sequence_store_id
     }
     /// <p> The ID for the initiated multipart upload. </p>
+    /// This field is required.
     pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upload_id = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +134,7 @@ impl MultipartReadSetUploadListItemBuilder {
         &self.upload_id
     }
     /// <p> The type of file the read set originated from. </p>
+    /// This field is required.
     pub fn source_file_type(mut self, input: crate::types::FileType) -> Self {
         self.source_file_type = ::std::option::Option::Some(input);
         self
@@ -140,6 +149,7 @@ impl MultipartReadSetUploadListItemBuilder {
         &self.source_file_type
     }
     /// <p> The read set source's subject ID. </p>
+    /// This field is required.
     pub fn subject_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subject_id = ::std::option::Option::Some(input.into());
         self
@@ -154,6 +164,7 @@ impl MultipartReadSetUploadListItemBuilder {
         &self.subject_id
     }
     /// <p> The read set source's sample ID. </p>
+    /// This field is required.
     pub fn sample_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sample_id = ::std::option::Option::Some(input.into());
         self
@@ -168,6 +179,7 @@ impl MultipartReadSetUploadListItemBuilder {
         &self.sample_id
     }
     /// <p> The source of an uploaded part. </p>
+    /// This field is required.
     pub fn generated_from(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.generated_from = ::std::option::Option::Some(input.into());
         self
@@ -182,6 +194,7 @@ impl MultipartReadSetUploadListItemBuilder {
         &self.generated_from
     }
     /// <p> The source's reference ARN. </p>
+    /// This field is required.
     pub fn reference_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reference_arn = ::std::option::Option::Some(input.into());
         self
@@ -244,6 +257,7 @@ impl MultipartReadSetUploadListItemBuilder {
         &self.tags
     }
     /// <p> The time stamp for when a direct upload was created. </p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -258,19 +272,68 @@ impl MultipartReadSetUploadListItemBuilder {
         &self.creation_time
     }
     /// Consumes the builder and constructs a [`MultipartReadSetUploadListItem`](crate::types::MultipartReadSetUploadListItem).
-    pub fn build(self) -> crate::types::MultipartReadSetUploadListItem {
-        crate::types::MultipartReadSetUploadListItem {
-            sequence_store_id: self.sequence_store_id,
-            upload_id: self.upload_id,
-            source_file_type: self.source_file_type,
-            subject_id: self.subject_id,
-            sample_id: self.sample_id,
-            generated_from: self.generated_from,
-            reference_arn: self.reference_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`sequence_store_id`](crate::types::builders::MultipartReadSetUploadListItemBuilder::sequence_store_id)
+    /// - [`upload_id`](crate::types::builders::MultipartReadSetUploadListItemBuilder::upload_id)
+    /// - [`source_file_type`](crate::types::builders::MultipartReadSetUploadListItemBuilder::source_file_type)
+    /// - [`subject_id`](crate::types::builders::MultipartReadSetUploadListItemBuilder::subject_id)
+    /// - [`sample_id`](crate::types::builders::MultipartReadSetUploadListItemBuilder::sample_id)
+    /// - [`generated_from`](crate::types::builders::MultipartReadSetUploadListItemBuilder::generated_from)
+    /// - [`reference_arn`](crate::types::builders::MultipartReadSetUploadListItemBuilder::reference_arn)
+    /// - [`creation_time`](crate::types::builders::MultipartReadSetUploadListItemBuilder::creation_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::MultipartReadSetUploadListItem, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::MultipartReadSetUploadListItem {
+            sequence_store_id: self.sequence_store_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "sequence_store_id",
+                    "sequence_store_id was not specified but it is required when building MultipartReadSetUploadListItem",
+                )
+            })?,
+            upload_id: self.upload_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "upload_id",
+                    "upload_id was not specified but it is required when building MultipartReadSetUploadListItem",
+                )
+            })?,
+            source_file_type: self.source_file_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "source_file_type",
+                    "source_file_type was not specified but it is required when building MultipartReadSetUploadListItem",
+                )
+            })?,
+            subject_id: self.subject_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "subject_id",
+                    "subject_id was not specified but it is required when building MultipartReadSetUploadListItem",
+                )
+            })?,
+            sample_id: self.sample_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "sample_id",
+                    "sample_id was not specified but it is required when building MultipartReadSetUploadListItem",
+                )
+            })?,
+            generated_from: self.generated_from.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "generated_from",
+                    "generated_from was not specified but it is required when building MultipartReadSetUploadListItem",
+                )
+            })?,
+            reference_arn: self.reference_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "reference_arn",
+                    "reference_arn was not specified but it is required when building MultipartReadSetUploadListItem",
+                )
+            })?,
             name: self.name,
             description: self.description,
             tags: self.tags,
-            creation_time: self.creation_time,
-        }
+            creation_time: self.creation_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "creation_time",
+                    "creation_time was not specified but it is required when building MultipartReadSetUploadListItem",
+                )
+            })?,
+        })
     }
 }

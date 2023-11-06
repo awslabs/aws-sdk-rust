@@ -14,8 +14,10 @@ impl BatchPutGeofenceInput {
         self.collection_name.as_deref()
     }
     /// <p>The batch of geofences to be stored in a geofence collection.</p>
-    pub fn entries(&self) -> ::std::option::Option<&[crate::types::BatchPutGeofenceRequestEntry]> {
-        self.entries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entries.is_none()`.
+    pub fn entries(&self) -> &[crate::types::BatchPutGeofenceRequestEntry] {
+        self.entries.as_deref().unwrap_or_default()
     }
 }
 impl BatchPutGeofenceInput {
@@ -34,6 +36,7 @@ pub struct BatchPutGeofenceInputBuilder {
 }
 impl BatchPutGeofenceInputBuilder {
     /// <p>The geofence collection storing the geofences.</p>
+    /// This field is required.
     pub fn collection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_name = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +73,7 @@ impl BatchPutGeofenceInputBuilder {
     /// Consumes the builder and constructs a [`BatchPutGeofenceInput`](crate::operation::batch_put_geofence::BatchPutGeofenceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_put_geofence::BatchPutGeofenceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_put_geofence::BatchPutGeofenceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_put_geofence::BatchPutGeofenceInput {
             collection_name: self.collection_name,
             entries: self.entries,

@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PartitionIndex {
     /// <p>The keys for the partition index.</p>
-    pub keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub keys: ::std::vec::Vec<::std::string::String>,
     /// <p>The name of the partition index.</p>
-    pub index_name: ::std::option::Option<::std::string::String>,
+    pub index_name: ::std::string::String,
 }
 impl PartitionIndex {
     /// <p>The keys for the partition index.</p>
-    pub fn keys(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.keys.as_deref()
+    pub fn keys(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.keys.deref()
     }
     /// <p>The name of the partition index.</p>
-    pub fn index_name(&self) -> ::std::option::Option<&str> {
-        self.index_name.as_deref()
+    pub fn index_name(&self) -> &str {
+        use std::ops::Deref;
+        self.index_name.deref()
     }
 }
 impl PartitionIndex {
@@ -55,6 +57,7 @@ impl PartitionIndexBuilder {
         &self.keys
     }
     /// <p>The name of the partition index.</p>
+    /// This field is required.
     pub fn index_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_name = ::std::option::Option::Some(input.into());
         self
@@ -69,10 +72,23 @@ impl PartitionIndexBuilder {
         &self.index_name
     }
     /// Consumes the builder and constructs a [`PartitionIndex`](crate::types::PartitionIndex).
-    pub fn build(self) -> crate::types::PartitionIndex {
-        crate::types::PartitionIndex {
-            keys: self.keys,
-            index_name: self.index_name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`keys`](crate::types::builders::PartitionIndexBuilder::keys)
+    /// - [`index_name`](crate::types::builders::PartitionIndexBuilder::index_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::PartitionIndex, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PartitionIndex {
+            keys: self.keys.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "keys",
+                    "keys was not specified but it is required when building PartitionIndex",
+                )
+            })?,
+            index_name: self.index_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "index_name",
+                    "index_name was not specified but it is required when building PartitionIndex",
+                )
+            })?,
+        })
     }
 }

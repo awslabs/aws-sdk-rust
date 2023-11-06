@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IntentClassificationTestResultItem {
     /// <p>The name of the intent.</p>
-    pub intent_name: ::std::option::Option<::std::string::String>,
+    pub intent_name: ::std::string::String,
     /// <p>Indicates whether the conversation involves multiple turns or not.</p>
     pub multi_turn_conversation: bool,
     /// <p>The result of the intent classification test.</p>
@@ -13,8 +13,9 @@ pub struct IntentClassificationTestResultItem {
 }
 impl IntentClassificationTestResultItem {
     /// <p>The name of the intent.</p>
-    pub fn intent_name(&self) -> ::std::option::Option<&str> {
-        self.intent_name.as_deref()
+    pub fn intent_name(&self) -> &str {
+        use std::ops::Deref;
+        self.intent_name.deref()
     }
     /// <p>Indicates whether the conversation involves multiple turns or not.</p>
     pub fn multi_turn_conversation(&self) -> bool {
@@ -42,6 +43,7 @@ pub struct IntentClassificationTestResultItemBuilder {
 }
 impl IntentClassificationTestResultItemBuilder {
     /// <p>The name of the intent.</p>
+    /// This field is required.
     pub fn intent_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.intent_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +58,7 @@ impl IntentClassificationTestResultItemBuilder {
         &self.intent_name
     }
     /// <p>Indicates whether the conversation involves multiple turns or not.</p>
+    /// This field is required.
     pub fn multi_turn_conversation(mut self, input: bool) -> Self {
         self.multi_turn_conversation = ::std::option::Option::Some(input);
         self
@@ -70,6 +73,7 @@ impl IntentClassificationTestResultItemBuilder {
         &self.multi_turn_conversation
     }
     /// <p>The result of the intent classification test.</p>
+    /// This field is required.
     pub fn result_counts(mut self, input: crate::types::IntentClassificationTestResultItemCounts) -> Self {
         self.result_counts = ::std::option::Option::Some(input);
         self
@@ -84,11 +88,18 @@ impl IntentClassificationTestResultItemBuilder {
         &self.result_counts
     }
     /// Consumes the builder and constructs a [`IntentClassificationTestResultItem`](crate::types::IntentClassificationTestResultItem).
-    pub fn build(self) -> crate::types::IntentClassificationTestResultItem {
-        crate::types::IntentClassificationTestResultItem {
-            intent_name: self.intent_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`intent_name`](crate::types::builders::IntentClassificationTestResultItemBuilder::intent_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::IntentClassificationTestResultItem, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::IntentClassificationTestResultItem {
+            intent_name: self.intent_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "intent_name",
+                    "intent_name was not specified but it is required when building IntentClassificationTestResultItem",
+                )
+            })?,
             multi_turn_conversation: self.multi_turn_conversation.unwrap_or_default(),
             result_counts: self.result_counts,
-        }
+        })
     }
 }

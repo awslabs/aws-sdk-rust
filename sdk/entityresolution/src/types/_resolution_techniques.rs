@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResolutionTechniques {
     /// <p>The type of matching. There are two types of matching: <code>RULE_MATCHING</code> and <code>ML_MATCHING</code>.</p>
-    pub resolution_type: ::std::option::Option<crate::types::ResolutionType>,
+    pub resolution_type: crate::types::ResolutionType,
     /// <p>An object which defines the list of matching rules to run and has a field <code>Rules</code>, which is a list of rule objects.</p>
     pub rule_based_properties: ::std::option::Option<crate::types::RuleBasedProperties>,
     /// <p>The properties of the provider service.</p>
@@ -13,8 +13,8 @@ pub struct ResolutionTechniques {
 }
 impl ResolutionTechniques {
     /// <p>The type of matching. There are two types of matching: <code>RULE_MATCHING</code> and <code>ML_MATCHING</code>.</p>
-    pub fn resolution_type(&self) -> ::std::option::Option<&crate::types::ResolutionType> {
-        self.resolution_type.as_ref()
+    pub fn resolution_type(&self) -> &crate::types::ResolutionType {
+        &self.resolution_type
     }
     /// <p>An object which defines the list of matching rules to run and has a field <code>Rules</code>, which is a list of rule objects.</p>
     pub fn rule_based_properties(&self) -> ::std::option::Option<&crate::types::RuleBasedProperties> {
@@ -42,6 +42,7 @@ pub struct ResolutionTechniquesBuilder {
 }
 impl ResolutionTechniquesBuilder {
     /// <p>The type of matching. There are two types of matching: <code>RULE_MATCHING</code> and <code>ML_MATCHING</code>.</p>
+    /// This field is required.
     pub fn resolution_type(mut self, input: crate::types::ResolutionType) -> Self {
         self.resolution_type = ::std::option::Option::Some(input);
         self
@@ -84,11 +85,18 @@ impl ResolutionTechniquesBuilder {
         &self.provider_properties
     }
     /// Consumes the builder and constructs a [`ResolutionTechniques`](crate::types::ResolutionTechniques).
-    pub fn build(self) -> crate::types::ResolutionTechniques {
-        crate::types::ResolutionTechniques {
-            resolution_type: self.resolution_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resolution_type`](crate::types::builders::ResolutionTechniquesBuilder::resolution_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::ResolutionTechniques, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ResolutionTechniques {
+            resolution_type: self.resolution_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "resolution_type",
+                    "resolution_type was not specified but it is required when building ResolutionTechniques",
+                )
+            })?,
             rule_based_properties: self.rule_based_properties,
             provider_properties: self.provider_properties,
-        }
+        })
     }
 }

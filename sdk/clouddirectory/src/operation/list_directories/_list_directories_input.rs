@@ -85,7 +85,7 @@ impl ListDirectoriesInputBuilder {
     /// Consumes the builder and constructs a [`ListDirectoriesInput`](crate::operation::list_directories::ListDirectoriesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_directories::ListDirectoriesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_directories::ListDirectoriesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_directories::ListDirectoriesInput {
             next_token: self.next_token,
             max_results: self.max_results,

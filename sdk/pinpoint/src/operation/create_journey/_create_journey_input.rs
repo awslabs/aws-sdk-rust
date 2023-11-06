@@ -34,6 +34,7 @@ pub struct CreateJourneyInputBuilder {
 }
 impl CreateJourneyInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl CreateJourneyInputBuilder {
         &self.application_id
     }
     /// <p>Specifies the configuration and other settings for a journey.</p>
+    /// This field is required.
     pub fn write_journey_request(mut self, input: crate::types::WriteJourneyRequest) -> Self {
         self.write_journey_request = ::std::option::Option::Some(input);
         self
@@ -64,7 +66,7 @@ impl CreateJourneyInputBuilder {
     /// Consumes the builder and constructs a [`CreateJourneyInput`](crate::operation::create_journey::CreateJourneyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_journey::CreateJourneyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_journey::CreateJourneyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_journey::CreateJourneyInput {
             application_id: self.application_id,
             write_journey_request: self.write_journey_request,

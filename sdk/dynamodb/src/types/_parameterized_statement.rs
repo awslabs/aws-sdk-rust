@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParameterizedStatement {
     /// <p> A PartiQL statment that uses parameters. </p>
-    pub statement: ::std::option::Option<::std::string::String>,
+    pub statement: ::std::string::String,
     /// <p> The parameter values. </p>
     pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::AttributeValue>>,
     /// <p>An optional parameter that returns the item attributes for a PartiQL <code>ParameterizedStatement</code> operation that failed a condition check.</p>
@@ -14,12 +14,15 @@ pub struct ParameterizedStatement {
 }
 impl ParameterizedStatement {
     /// <p> A PartiQL statment that uses parameters. </p>
-    pub fn statement(&self) -> ::std::option::Option<&str> {
-        self.statement.as_deref()
+    pub fn statement(&self) -> &str {
+        use std::ops::Deref;
+        self.statement.deref()
     }
     /// <p> The parameter values. </p>
-    pub fn parameters(&self) -> ::std::option::Option<&[crate::types::AttributeValue]> {
-        self.parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
+    pub fn parameters(&self) -> &[crate::types::AttributeValue] {
+        self.parameters.as_deref().unwrap_or_default()
     }
     /// <p>An optional parameter that returns the item attributes for a PartiQL <code>ParameterizedStatement</code> operation that failed a condition check.</p>
     /// <p>There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No read capacity units are consumed.</p>
@@ -44,6 +47,7 @@ pub struct ParameterizedStatementBuilder {
 }
 impl ParameterizedStatementBuilder {
     /// <p> A PartiQL statment that uses parameters. </p>
+    /// This field is required.
     pub fn statement(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.statement = ::std::option::Option::Some(input.into());
         self
@@ -98,11 +102,18 @@ impl ParameterizedStatementBuilder {
         &self.return_values_on_condition_check_failure
     }
     /// Consumes the builder and constructs a [`ParameterizedStatement`](crate::types::ParameterizedStatement).
-    pub fn build(self) -> crate::types::ParameterizedStatement {
-        crate::types::ParameterizedStatement {
-            statement: self.statement,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`statement`](crate::types::builders::ParameterizedStatementBuilder::statement)
+    pub fn build(self) -> ::std::result::Result<crate::types::ParameterizedStatement, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ParameterizedStatement {
+            statement: self.statement.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "statement",
+                    "statement was not specified but it is required when building ParameterizedStatement",
+                )
+            })?,
             parameters: self.parameters,
             return_values_on_condition_check_failure: self.return_values_on_condition_check_failure,
-        }
+        })
     }
 }

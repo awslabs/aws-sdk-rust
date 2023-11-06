@@ -55,6 +55,7 @@ impl PutRoomSkillParameterInputBuilder {
         &self.room_arn
     }
     /// <p>The ARN of the skill associated with the room skill parameter. Required.</p>
+    /// This field is required.
     pub fn skill_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.skill_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl PutRoomSkillParameterInputBuilder {
         &self.skill_id
     }
     /// <p>The updated room skill parameter. Required.</p>
+    /// This field is required.
     pub fn room_skill_parameter(mut self, input: crate::types::RoomSkillParameter) -> Self {
         self.room_skill_parameter = ::std::option::Option::Some(input);
         self
@@ -85,7 +87,7 @@ impl PutRoomSkillParameterInputBuilder {
     /// Consumes the builder and constructs a [`PutRoomSkillParameterInput`](crate::operation::put_room_skill_parameter::PutRoomSkillParameterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_room_skill_parameter::PutRoomSkillParameterInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_room_skill_parameter::PutRoomSkillParameterInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_room_skill_parameter::PutRoomSkillParameterInput {
             room_arn: self.room_arn,

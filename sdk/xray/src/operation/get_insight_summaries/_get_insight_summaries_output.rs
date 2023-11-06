@@ -11,8 +11,10 @@ pub struct GetInsightSummariesOutput {
 }
 impl GetInsightSummariesOutput {
     /// <p>The summary of each insight within the group matching the provided filters. The summary contains the InsightID, start and end time, the root cause service, the root cause and client impact statistics, the top anomalous services, and the status of the insight.</p>
-    pub fn insight_summaries(&self) -> ::std::option::Option<&[crate::types::InsightSummary]> {
-        self.insight_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.insight_summaries.is_none()`.
+    pub fn insight_summaries(&self) -> &[crate::types::InsightSummary] {
+        self.insight_summaries.as_deref().unwrap_or_default()
     }
     /// <p>Pagination token.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

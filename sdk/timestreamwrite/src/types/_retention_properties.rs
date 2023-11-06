@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RetentionProperties {
     /// <p>The duration for which data must be stored in the memory store. </p>
-    pub memory_store_retention_period_in_hours: ::std::option::Option<i64>,
+    pub memory_store_retention_period_in_hours: i64,
     /// <p>The duration for which data must be stored in the magnetic store. </p>
-    pub magnetic_store_retention_period_in_days: ::std::option::Option<i64>,
+    pub magnetic_store_retention_period_in_days: i64,
 }
 impl RetentionProperties {
     /// <p>The duration for which data must be stored in the memory store. </p>
-    pub fn memory_store_retention_period_in_hours(&self) -> ::std::option::Option<i64> {
+    pub fn memory_store_retention_period_in_hours(&self) -> i64 {
         self.memory_store_retention_period_in_hours
     }
     /// <p>The duration for which data must be stored in the magnetic store. </p>
-    pub fn magnetic_store_retention_period_in_days(&self) -> ::std::option::Option<i64> {
+    pub fn magnetic_store_retention_period_in_days(&self) -> i64 {
         self.magnetic_store_retention_period_in_days
     }
 }
@@ -35,6 +35,7 @@ pub struct RetentionPropertiesBuilder {
 }
 impl RetentionPropertiesBuilder {
     /// <p>The duration for which data must be stored in the memory store. </p>
+    /// This field is required.
     pub fn memory_store_retention_period_in_hours(mut self, input: i64) -> Self {
         self.memory_store_retention_period_in_hours = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl RetentionPropertiesBuilder {
         &self.memory_store_retention_period_in_hours
     }
     /// <p>The duration for which data must be stored in the magnetic store. </p>
+    /// This field is required.
     pub fn magnetic_store_retention_period_in_days(mut self, input: i64) -> Self {
         self.magnetic_store_retention_period_in_days = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl RetentionPropertiesBuilder {
         &self.magnetic_store_retention_period_in_days
     }
     /// Consumes the builder and constructs a [`RetentionProperties`](crate::types::RetentionProperties).
-    pub fn build(self) -> crate::types::RetentionProperties {
-        crate::types::RetentionProperties {
-            memory_store_retention_period_in_hours: self.memory_store_retention_period_in_hours,
-            magnetic_store_retention_period_in_days: self.magnetic_store_retention_period_in_days,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`memory_store_retention_period_in_hours`](crate::types::builders::RetentionPropertiesBuilder::memory_store_retention_period_in_hours)
+    /// - [`magnetic_store_retention_period_in_days`](crate::types::builders::RetentionPropertiesBuilder::magnetic_store_retention_period_in_days)
+    pub fn build(self) -> ::std::result::Result<crate::types::RetentionProperties, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RetentionProperties {
+            memory_store_retention_period_in_hours: self.memory_store_retention_period_in_hours.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "memory_store_retention_period_in_hours",
+                    "memory_store_retention_period_in_hours was not specified but it is required when building RetentionProperties",
+                )
+            })?,
+            magnetic_store_retention_period_in_days: self.magnetic_store_retention_period_in_days.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "magnetic_store_retention_period_in_days",
+                    "magnetic_store_retention_period_in_days was not specified but it is required when building RetentionProperties",
+                )
+            })?,
+        })
     }
 }

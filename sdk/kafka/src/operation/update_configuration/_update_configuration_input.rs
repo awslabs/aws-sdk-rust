@@ -49,6 +49,7 @@ pub struct UpdateConfigurationInputBuilder {
 }
 impl UpdateConfigurationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -81,6 +82,7 @@ impl UpdateConfigurationInputBuilder {
     /// </filename> file. When using the API, you must ensure that the contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>
     /// server.properties
     /// </filename> can be in plaintext.</p>
+    /// This field is required.
     pub fn server_properties(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.server_properties = ::std::option::Option::Some(input);
         self
@@ -105,7 +107,7 @@ impl UpdateConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`UpdateConfigurationInput`](crate::operation::update_configuration::UpdateConfigurationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_configuration::UpdateConfigurationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_configuration::UpdateConfigurationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_configuration::UpdateConfigurationInput {
             arn: self.arn,

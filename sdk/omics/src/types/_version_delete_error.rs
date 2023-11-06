@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VersionDeleteError {
     /// <p> The name given to an annotation store version. </p>
-    pub version_name: ::std::option::Option<::std::string::String>,
+    pub version_name: ::std::string::String,
     /// <p> The message explaining the error in annotation store deletion. </p>
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
 }
 impl VersionDeleteError {
     /// <p> The name given to an annotation store version. </p>
-    pub fn version_name(&self) -> ::std::option::Option<&str> {
-        self.version_name.as_deref()
+    pub fn version_name(&self) -> &str {
+        use std::ops::Deref;
+        self.version_name.deref()
     }
     /// <p> The message explaining the error in annotation store deletion. </p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        use std::ops::Deref;
+        self.message.deref()
     }
 }
 impl VersionDeleteError {
@@ -35,6 +37,7 @@ pub struct VersionDeleteErrorBuilder {
 }
 impl VersionDeleteErrorBuilder {
     /// <p> The name given to an annotation store version. </p>
+    /// This field is required.
     pub fn version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl VersionDeleteErrorBuilder {
         &self.version_name
     }
     /// <p> The message explaining the error in annotation store deletion. </p>
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl VersionDeleteErrorBuilder {
         &self.message
     }
     /// Consumes the builder and constructs a [`VersionDeleteError`](crate::types::VersionDeleteError).
-    pub fn build(self) -> crate::types::VersionDeleteError {
-        crate::types::VersionDeleteError {
-            version_name: self.version_name,
-            message: self.message,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`version_name`](crate::types::builders::VersionDeleteErrorBuilder::version_name)
+    /// - [`message`](crate::types::builders::VersionDeleteErrorBuilder::message)
+    pub fn build(self) -> ::std::result::Result<crate::types::VersionDeleteError, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::VersionDeleteError {
+            version_name: self.version_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "version_name",
+                    "version_name was not specified but it is required when building VersionDeleteError",
+                )
+            })?,
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building VersionDeleteError",
+                )
+            })?,
+        })
     }
 }

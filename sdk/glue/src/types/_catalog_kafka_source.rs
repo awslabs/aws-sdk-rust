@@ -5,15 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CatalogKafkaSource {
     /// <p>The name of the data store.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The amount of time to spend processing each micro batch.</p>
     pub window_size: ::std::option::Option<i32>,
     /// <p>Whether to automatically determine the schema from the incoming data.</p>
     pub detect_schema: ::std::option::Option<bool>,
     /// <p>The name of the table in the database to read from.</p>
-    pub table: ::std::option::Option<::std::string::String>,
+    pub table: ::std::string::String,
     /// <p>The name of the database to read from.</p>
-    pub database: ::std::option::Option<::std::string::String>,
+    pub database: ::std::string::String,
     /// <p>Specifies the streaming options.</p>
     pub streaming_options: ::std::option::Option<crate::types::KafkaStreamingSourceOptions>,
     /// <p>Specifies options related to data preview for viewing a sample of your data.</p>
@@ -21,8 +21,9 @@ pub struct CatalogKafkaSource {
 }
 impl CatalogKafkaSource {
     /// <p>The name of the data store.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The amount of time to spend processing each micro batch.</p>
     pub fn window_size(&self) -> ::std::option::Option<i32> {
@@ -33,12 +34,14 @@ impl CatalogKafkaSource {
         self.detect_schema
     }
     /// <p>The name of the table in the database to read from.</p>
-    pub fn table(&self) -> ::std::option::Option<&str> {
-        self.table.as_deref()
+    pub fn table(&self) -> &str {
+        use std::ops::Deref;
+        self.table.deref()
     }
     /// <p>The name of the database to read from.</p>
-    pub fn database(&self) -> ::std::option::Option<&str> {
-        self.database.as_deref()
+    pub fn database(&self) -> &str {
+        use std::ops::Deref;
+        self.database.deref()
     }
     /// <p>Specifies the streaming options.</p>
     pub fn streaming_options(&self) -> ::std::option::Option<&crate::types::KafkaStreamingSourceOptions> {
@@ -70,6 +73,7 @@ pub struct CatalogKafkaSourceBuilder {
 }
 impl CatalogKafkaSourceBuilder {
     /// <p>The name of the data store.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +116,7 @@ impl CatalogKafkaSourceBuilder {
         &self.detect_schema
     }
     /// <p>The name of the table in the database to read from.</p>
+    /// This field is required.
     pub fn table(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +131,7 @@ impl CatalogKafkaSourceBuilder {
         &self.table
     }
     /// <p>The name of the database to read from.</p>
+    /// This field is required.
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database = ::std::option::Option::Some(input.into());
         self
@@ -168,15 +174,34 @@ impl CatalogKafkaSourceBuilder {
         &self.data_preview_options
     }
     /// Consumes the builder and constructs a [`CatalogKafkaSource`](crate::types::CatalogKafkaSource).
-    pub fn build(self) -> crate::types::CatalogKafkaSource {
-        crate::types::CatalogKafkaSource {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::CatalogKafkaSourceBuilder::name)
+    /// - [`table`](crate::types::builders::CatalogKafkaSourceBuilder::table)
+    /// - [`database`](crate::types::builders::CatalogKafkaSourceBuilder::database)
+    pub fn build(self) -> ::std::result::Result<crate::types::CatalogKafkaSource, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CatalogKafkaSource {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CatalogKafkaSource",
+                )
+            })?,
             window_size: self.window_size,
             detect_schema: self.detect_schema,
-            table: self.table,
-            database: self.database,
+            table: self.table.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "table",
+                    "table was not specified but it is required when building CatalogKafkaSource",
+                )
+            })?,
+            database: self.database.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "database",
+                    "database was not specified but it is required when building CatalogKafkaSource",
+                )
+            })?,
             streaming_options: self.streaming_options,
             data_preview_options: self.data_preview_options,
-        }
+        })
     }
 }

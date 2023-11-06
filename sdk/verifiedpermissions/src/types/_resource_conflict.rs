@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceConflict {
     /// <p>The unique identifier of the resource involved in a conflict.</p>
-    pub resource_id: ::std::option::Option<::std::string::String>,
+    pub resource_id: ::std::string::String,
     /// <p>The type of the resource involved in a conflict.</p>
-    pub resource_type: ::std::option::Option<crate::types::ResourceType>,
+    pub resource_type: crate::types::ResourceType,
 }
 impl ResourceConflict {
     /// <p>The unique identifier of the resource involved in a conflict.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
-        self.resource_id.as_deref()
+    pub fn resource_id(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_id.deref()
     }
     /// <p>The type of the resource involved in a conflict.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
-        self.resource_type.as_ref()
+    pub fn resource_type(&self) -> &crate::types::ResourceType {
+        &self.resource_type
     }
 }
 impl ResourceConflict {
@@ -35,6 +36,7 @@ pub struct ResourceConflictBuilder {
 }
 impl ResourceConflictBuilder {
     /// <p>The unique identifier of the resource involved in a conflict.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl ResourceConflictBuilder {
         &self.resource_id
     }
     /// <p>The type of the resource involved in a conflict.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,23 @@ impl ResourceConflictBuilder {
         &self.resource_type
     }
     /// Consumes the builder and constructs a [`ResourceConflict`](crate::types::ResourceConflict).
-    pub fn build(self) -> crate::types::ResourceConflict {
-        crate::types::ResourceConflict {
-            resource_id: self.resource_id,
-            resource_type: self.resource_type,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource_id`](crate::types::builders::ResourceConflictBuilder::resource_id)
+    /// - [`resource_type`](crate::types::builders::ResourceConflictBuilder::resource_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::ResourceConflict, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ResourceConflict {
+            resource_id: self.resource_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "resource_id",
+                    "resource_id was not specified but it is required when building ResourceConflict",
+                )
+            })?,
+            resource_type: self.resource_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "resource_type",
+                    "resource_type was not specified but it is required when building ResourceConflict",
+                )
+            })?,
+        })
     }
 }

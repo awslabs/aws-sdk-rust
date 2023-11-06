@@ -15,8 +15,10 @@ impl BatchAssociateScramSecretOutput {
         self.cluster_arn.as_deref()
     }
     /// <p>List of errors when associating secrets to cluster.</p>
-    pub fn unprocessed_scram_secrets(&self) -> ::std::option::Option<&[crate::types::UnprocessedScramSecret]> {
-        self.unprocessed_scram_secrets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unprocessed_scram_secrets.is_none()`.
+    pub fn unprocessed_scram_secrets(&self) -> &[crate::types::UnprocessedScramSecret] {
+        self.unprocessed_scram_secrets.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchAssociateScramSecretOutput {

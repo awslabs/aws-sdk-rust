@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MemberUser {
     /// <p>The identifier of the user you want to map to a group.</p>
-    pub user_id: ::std::option::Option<::std::string::String>,
+    pub user_id: ::std::string::String,
 }
 impl MemberUser {
     /// <p>The identifier of the user you want to map to a group.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
-        self.user_id.as_deref()
+    pub fn user_id(&self) -> &str {
+        use std::ops::Deref;
+        self.user_id.deref()
     }
 }
 impl MemberUser {
@@ -28,6 +29,7 @@ pub struct MemberUserBuilder {
 }
 impl MemberUserBuilder {
     /// <p>The identifier of the user you want to map to a group.</p>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl MemberUserBuilder {
         &self.user_id
     }
     /// Consumes the builder and constructs a [`MemberUser`](crate::types::MemberUser).
-    pub fn build(self) -> crate::types::MemberUser {
-        crate::types::MemberUser { user_id: self.user_id }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`user_id`](crate::types::builders::MemberUserBuilder::user_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::MemberUser, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::MemberUser {
+            user_id: self.user_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "user_id",
+                    "user_id was not specified but it is required when building MemberUser",
+                )
+            })?,
+        })
     }
 }

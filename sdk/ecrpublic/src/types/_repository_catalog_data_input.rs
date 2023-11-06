@@ -47,8 +47,10 @@ impl RepositoryCatalogDataInput {
     /// <li> <p> <code>x86</code> </p> </li>
     /// <li> <p> <code>x86-64</code> </p> </li>
     /// </ul>
-    pub fn architectures(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.architectures.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.architectures.is_none()`.
+    pub fn architectures(&self) -> &[::std::string::String] {
+        self.architectures.as_deref().unwrap_or_default()
     }
     /// <p>The operating systems that the images in the repository are compatible with. On the Amazon ECR Public Gallery, the following supported operating systems appear as badges on the repository and are used as search filters.</p> <note>
     /// <p>If an unsupported tag is added to your repository catalog data, it's associated with the repository and can be retrieved using the API but isn't discoverable in the Amazon ECR Public Gallery.</p>
@@ -57,8 +59,10 @@ impl RepositoryCatalogDataInput {
     /// <li> <p> <code>Linux</code> </p> </li>
     /// <li> <p> <code>Windows</code> </p> </li>
     /// </ul>
-    pub fn operating_systems(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.operating_systems.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.operating_systems.is_none()`.
+    pub fn operating_systems(&self) -> &[::std::string::String] {
+        self.operating_systems.as_deref().unwrap_or_default()
     }
     /// <p>The base64-encoded repository logo payload.</p> <note>
     /// <p>The repository logo is only publicly visible in the Amazon ECR Public Gallery for verified accounts.</p>

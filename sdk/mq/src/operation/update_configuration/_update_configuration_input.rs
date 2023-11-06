@@ -42,6 +42,7 @@ pub struct UpdateConfigurationInputBuilder {
 }
 impl UpdateConfigurationInputBuilder {
     /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
+    /// This field is required.
     pub fn configuration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl UpdateConfigurationInputBuilder {
         &self.configuration_id
     }
     /// <p>Amazon MQ for Active MQ: The base64-encoded XML configuration. Amazon MQ for RabbitMQ: the base64-encoded Cuttlefish configuration.</p>
+    /// This field is required.
     pub fn data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data = ::std::option::Option::Some(input.into());
         self
@@ -86,7 +88,7 @@ impl UpdateConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`UpdateConfigurationInput`](crate::operation::update_configuration::UpdateConfigurationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_configuration::UpdateConfigurationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_configuration::UpdateConfigurationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_configuration::UpdateConfigurationInput {
             configuration_id: self.configuration_id,

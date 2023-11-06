@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageConfiguration {
     /// <p>The image URI.</p>
-    pub image_uri: ::std::option::Option<::std::string::String>,
+    pub image_uri: ::std::string::String,
     /// <p>The SHA256 digest of the image URI. This indicates which specific image the application is configured for. The image digest doesn't exist until an application has started.</p>
     pub resolved_image_digest: ::std::option::Option<::std::string::String>,
 }
 impl ImageConfiguration {
     /// <p>The image URI.</p>
-    pub fn image_uri(&self) -> ::std::option::Option<&str> {
-        self.image_uri.as_deref()
+    pub fn image_uri(&self) -> &str {
+        use std::ops::Deref;
+        self.image_uri.deref()
     }
     /// <p>The SHA256 digest of the image URI. This indicates which specific image the application is configured for. The image digest doesn't exist until an application has started.</p>
     pub fn resolved_image_digest(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct ImageConfigurationBuilder {
 }
 impl ImageConfigurationBuilder {
     /// <p>The image URI.</p>
+    /// This field is required.
     pub fn image_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_uri = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl ImageConfigurationBuilder {
         &self.resolved_image_digest
     }
     /// Consumes the builder and constructs a [`ImageConfiguration`](crate::types::ImageConfiguration).
-    pub fn build(self) -> crate::types::ImageConfiguration {
-        crate::types::ImageConfiguration {
-            image_uri: self.image_uri,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`image_uri`](crate::types::builders::ImageConfigurationBuilder::image_uri)
+    pub fn build(self) -> ::std::result::Result<crate::types::ImageConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ImageConfiguration {
+            image_uri: self.image_uri.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "image_uri",
+                    "image_uri was not specified but it is required when building ImageConfiguration",
+                )
+            })?,
             resolved_image_digest: self.resolved_image_digest,
-        }
+        })
     }
 }

@@ -4,19 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLaunchConfigurationTemplatesInput {
     /// <p>Request to filter Launch Configuration Templates list by Launch Configuration Template ID.</p>
-    pub launch_configuration_template_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub launch_configuration_template_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Maximum results to be returned in DescribeLaunchConfigurationTemplates.</p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>Next pagination token returned from DescribeLaunchConfigurationTemplates.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeLaunchConfigurationTemplatesInput {
     /// <p>Request to filter Launch Configuration Templates list by Launch Configuration Template ID.</p>
-    pub fn launch_configuration_template_i_ds(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.launch_configuration_template_i_ds.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.launch_configuration_template_ids.is_none()`.
+    pub fn launch_configuration_template_ids(&self) -> &[::std::string::String] {
+        self.launch_configuration_template_ids.as_deref().unwrap_or_default()
     }
     /// <p>Maximum results to be returned in DescribeLaunchConfigurationTemplates.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>Next pagination token returned from DescribeLaunchConfigurationTemplates.</p>
@@ -35,30 +37,30 @@ impl DescribeLaunchConfigurationTemplatesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLaunchConfigurationTemplatesInputBuilder {
-    pub(crate) launch_configuration_template_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) launch_configuration_template_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeLaunchConfigurationTemplatesInputBuilder {
-    /// Appends an item to `launch_configuration_template_i_ds`.
+    /// Appends an item to `launch_configuration_template_ids`.
     ///
-    /// To override the contents of this collection use [`set_launch_configuration_template_i_ds`](Self::set_launch_configuration_template_i_ds).
+    /// To override the contents of this collection use [`set_launch_configuration_template_ids`](Self::set_launch_configuration_template_ids).
     ///
     /// <p>Request to filter Launch Configuration Templates list by Launch Configuration Template ID.</p>
-    pub fn launch_configuration_template_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.launch_configuration_template_i_ds.unwrap_or_default();
+    pub fn launch_configuration_template_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.launch_configuration_template_ids.unwrap_or_default();
         v.push(input.into());
-        self.launch_configuration_template_i_ds = ::std::option::Option::Some(v);
+        self.launch_configuration_template_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>Request to filter Launch Configuration Templates list by Launch Configuration Template ID.</p>
-    pub fn set_launch_configuration_template_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.launch_configuration_template_i_ds = input;
+    pub fn set_launch_configuration_template_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.launch_configuration_template_ids = input;
         self
     }
     /// <p>Request to filter Launch Configuration Templates list by Launch Configuration Template ID.</p>
-    pub fn get_launch_configuration_template_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.launch_configuration_template_i_ds
+    pub fn get_launch_configuration_template_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.launch_configuration_template_ids
     }
     /// <p>Maximum results to be returned in DescribeLaunchConfigurationTemplates.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -93,12 +95,12 @@ impl DescribeLaunchConfigurationTemplatesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_launch_configuration_templates::DescribeLaunchConfigurationTemplatesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_launch_configuration_templates::DescribeLaunchConfigurationTemplatesInput {
-                launch_configuration_template_i_ds: self.launch_configuration_template_i_ds,
-                max_results: self.max_results.unwrap_or_default(),
+                launch_configuration_template_ids: self.launch_configuration_template_ids,
+                max_results: self.max_results,
                 next_token: self.next_token,
             },
         )

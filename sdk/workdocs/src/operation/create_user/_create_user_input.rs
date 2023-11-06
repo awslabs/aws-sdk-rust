@@ -112,6 +112,7 @@ impl CreateUserInputBuilder {
         &self.organization_id
     }
     /// <p>The login name of the user.</p>
+    /// This field is required.
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self
@@ -140,6 +141,7 @@ impl CreateUserInputBuilder {
         &self.email_address
     }
     /// <p>The given name of the user.</p>
+    /// This field is required.
     pub fn given_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.given_name = ::std::option::Option::Some(input.into());
         self
@@ -154,6 +156,7 @@ impl CreateUserInputBuilder {
         &self.given_name
     }
     /// <p>The surname of the user.</p>
+    /// This field is required.
     pub fn surname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.surname = ::std::option::Option::Some(input.into());
         self
@@ -168,6 +171,7 @@ impl CreateUserInputBuilder {
         &self.surname
     }
     /// <p>The password of the user.</p>
+    /// This field is required.
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
         self
@@ -224,7 +228,7 @@ impl CreateUserInputBuilder {
         &self.authentication_token
     }
     /// Consumes the builder and constructs a [`CreateUserInput`](crate::operation::create_user::CreateUserInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_user::CreateUserInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_user::CreateUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_user::CreateUserInput {
             organization_id: self.organization_id,
             username: self.username,

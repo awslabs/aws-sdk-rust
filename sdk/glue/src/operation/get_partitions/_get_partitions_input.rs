@@ -240,6 +240,7 @@ impl GetPartitionsInputBuilder {
         &self.catalog_id
     }
     /// <p>The name of the catalog database where the partitions reside.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -254,6 +255,7 @@ impl GetPartitionsInputBuilder {
         &self.database_name
     }
     /// <p>The name of the partitions' table.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -572,7 +574,7 @@ impl GetPartitionsInputBuilder {
     /// Consumes the builder and constructs a [`GetPartitionsInput`](crate::operation::get_partitions::GetPartitionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_partitions::GetPartitionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_partitions::GetPartitionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_partitions::GetPartitionsInput {
             catalog_id: self.catalog_id,
             database_name: self.database_name,

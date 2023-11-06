@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutAssetPropertyValueEntry {
     /// <p>The user specified ID for the entry. You can use this ID to identify which entries failed.</p>
-    pub entry_id: ::std::option::Option<::std::string::String>,
+    pub entry_id: ::std::string::String,
     /// <p>The ID of the asset to update.</p>
     pub asset_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the asset property for this entry.</p>
@@ -13,12 +13,13 @@ pub struct PutAssetPropertyValueEntry {
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub property_alias: ::std::option::Option<::std::string::String>,
     /// <p>The list of property values to upload. You can specify up to 10 <code>propertyValues</code> array elements. </p>
-    pub property_values: ::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyValue>>,
+    pub property_values: ::std::vec::Vec<crate::types::AssetPropertyValue>,
 }
 impl PutAssetPropertyValueEntry {
     /// <p>The user specified ID for the entry. You can use this ID to identify which entries failed.</p>
-    pub fn entry_id(&self) -> ::std::option::Option<&str> {
-        self.entry_id.as_deref()
+    pub fn entry_id(&self) -> &str {
+        use std::ops::Deref;
+        self.entry_id.deref()
     }
     /// <p>The ID of the asset to update.</p>
     pub fn asset_id(&self) -> ::std::option::Option<&str> {
@@ -33,8 +34,9 @@ impl PutAssetPropertyValueEntry {
         self.property_alias.as_deref()
     }
     /// <p>The list of property values to upload. You can specify up to 10 <code>propertyValues</code> array elements. </p>
-    pub fn property_values(&self) -> ::std::option::Option<&[crate::types::AssetPropertyValue]> {
-        self.property_values.as_deref()
+    pub fn property_values(&self) -> &[crate::types::AssetPropertyValue] {
+        use std::ops::Deref;
+        self.property_values.deref()
     }
 }
 impl PutAssetPropertyValueEntry {
@@ -56,6 +58,7 @@ pub struct PutAssetPropertyValueEntryBuilder {
 }
 impl PutAssetPropertyValueEntryBuilder {
     /// <p>The user specified ID for the entry. You can use this ID to identify which entries failed.</p>
+    /// This field is required.
     pub fn entry_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entry_id = ::std::option::Option::Some(input.into());
         self
@@ -132,13 +135,26 @@ impl PutAssetPropertyValueEntryBuilder {
         &self.property_values
     }
     /// Consumes the builder and constructs a [`PutAssetPropertyValueEntry`](crate::types::PutAssetPropertyValueEntry).
-    pub fn build(self) -> crate::types::PutAssetPropertyValueEntry {
-        crate::types::PutAssetPropertyValueEntry {
-            entry_id: self.entry_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`entry_id`](crate::types::builders::PutAssetPropertyValueEntryBuilder::entry_id)
+    /// - [`property_values`](crate::types::builders::PutAssetPropertyValueEntryBuilder::property_values)
+    pub fn build(self) -> ::std::result::Result<crate::types::PutAssetPropertyValueEntry, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PutAssetPropertyValueEntry {
+            entry_id: self.entry_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "entry_id",
+                    "entry_id was not specified but it is required when building PutAssetPropertyValueEntry",
+                )
+            })?,
             asset_id: self.asset_id,
             property_id: self.property_id,
             property_alias: self.property_alias,
-            property_values: self.property_values,
-        }
+            property_values: self.property_values.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "property_values",
+                    "property_values was not specified but it is required when building PutAssetPropertyValueEntry",
+                )
+            })?,
+        })
     }
 }

@@ -63,6 +63,7 @@ pub struct CreatePresetInputBuilder {
 }
 impl CreatePresetInputBuilder {
     /// <p>The name of the preset. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +92,7 @@ impl CreatePresetInputBuilder {
         &self.description
     }
     /// <p>The container type for the output file. Valid values include <code>flac</code>, <code>flv</code>, <code>fmp4</code>, <code>gif</code>, <code>mp3</code>, <code>mp4</code>, <code>mpg</code>, <code>mxf</code>, <code>oga</code>, <code>ogg</code>, <code>ts</code>, and <code>webm</code>.</p>
+    /// This field is required.
     pub fn container(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container = ::std::option::Option::Some(input.into());
         self
@@ -147,7 +149,9 @@ impl CreatePresetInputBuilder {
         &self.thumbnails
     }
     /// Consumes the builder and constructs a [`CreatePresetInput`](crate::operation::create_preset::CreatePresetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_preset::CreatePresetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_preset::CreatePresetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_preset::CreatePresetInput {
             name: self.name,
             description: self.description,

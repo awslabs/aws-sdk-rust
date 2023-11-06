@@ -44,8 +44,10 @@ impl CreateConnectorInput {
         self.logging_role.as_deref()
     }
     /// <p>Key-value pairs that can be used to group and search for connectors. Tags are metadata attached to connectors for any purpose.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>A structure that contains the parameters for an SFTP connector object.</p>
     pub fn sftp_config(&self) -> ::std::option::Option<&crate::types::SftpConnectorConfig> {
@@ -72,6 +74,7 @@ pub struct CreateConnectorInputBuilder {
 }
 impl CreateConnectorInputBuilder {
     /// <p>The URL of the partner's AS2 or SFTP endpoint.</p>
+    /// This field is required.
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +108,7 @@ impl CreateConnectorInputBuilder {
     /// <p>If you are using Basic authentication for your AS2 connector, the access role requires the <code>secretsmanager:GetSecretValue</code> permission for the secret. If the secret is encrypted using a customer-managed key instead of the Amazon Web Services managed key in Secrets Manager, then the role also needs the <code>kms:Decrypt</code> permission for that key.</p>
     /// <p> <b>For SFTP connectors</b> </p>
     /// <p>Make sure that the access role provides read and write access to the parent directory of the file location that's used in the <code>StartFileTransfer</code> request. Additionally, make sure that the role provides <code>secretsmanager:GetSecretValue</code> permission to Secrets Manager.</p>
+    /// This field is required.
     pub fn access_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_role = ::std::option::Option::Some(input.into());
         self
@@ -179,7 +183,7 @@ impl CreateConnectorInputBuilder {
     /// Consumes the builder and constructs a [`CreateConnectorInput`](crate::operation::create_connector::CreateConnectorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_connector::CreateConnectorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_connector::CreateConnectorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_connector::CreateConnectorInput {
             url: self.url,
             as2_config: self.as2_config,

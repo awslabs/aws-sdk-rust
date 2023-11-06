@@ -59,8 +59,10 @@ impl TransformFilterCriteria {
     }
     /// <p>Filters on datasets with a specific schema. The <code>Map
     /// <column, type></column,></code> object is an array of key-value pairs representing the schema this transform accepts, where <code>Column</code> is the name of a column, and <code>Type</code> is the type of the data such as an integer or string. Has an upper bound of 100 columns.</p>
-    pub fn schema(&self) -> ::std::option::Option<&[crate::types::SchemaColumn]> {
-        self.schema.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.schema.is_none()`.
+    pub fn schema(&self) -> &[crate::types::SchemaColumn] {
+        self.schema.as_deref().unwrap_or_default()
     }
 }
 impl TransformFilterCriteria {

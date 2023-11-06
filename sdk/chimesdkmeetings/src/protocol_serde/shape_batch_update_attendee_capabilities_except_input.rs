@@ -2,7 +2,7 @@
 pub fn ser_batch_update_attendee_capabilities_except_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::batch_update_attendee_capabilities_except::BatchUpdateAttendeeCapabilitiesExceptInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.capabilities {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Capabilities").start_object();

@@ -27,6 +27,7 @@ pub struct DeleteBackupInputBuilder {
 }
 impl DeleteBackupInputBuilder {
     /// <p>The ARN associated with the backup.</p>
+    /// This field is required.
     pub fn backup_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_arn = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,9 @@ impl DeleteBackupInputBuilder {
         &self.backup_arn
     }
     /// Consumes the builder and constructs a [`DeleteBackupInput`](crate::operation::delete_backup::DeleteBackupInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_backup::DeleteBackupInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_backup::DeleteBackupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_backup::DeleteBackupInput { backup_arn: self.backup_arn })
     }
 }

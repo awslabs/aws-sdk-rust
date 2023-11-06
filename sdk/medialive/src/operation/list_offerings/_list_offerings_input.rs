@@ -275,7 +275,7 @@ impl ListOfferingsInputBuilder {
     /// Consumes the builder and constructs a [`ListOfferingsInput`](crate::operation::list_offerings::ListOfferingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_offerings::ListOfferingsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_offerings::ListOfferingsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_offerings::ListOfferingsInput {
             channel_class: self.channel_class,
             channel_configuration: self.channel_configuration,

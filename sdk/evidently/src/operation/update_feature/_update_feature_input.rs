@@ -40,13 +40,17 @@ impl UpdateFeatureInput {
         self.description.as_deref()
     }
     /// <p>To update variation configurations for this feature, or add new ones, specify this structure. In this array, include any variations that you want to add or update. If the array includes a variation name that already exists for this feature, it is updated. If it includes a new variation name, it is added as a new variation.</p>
-    pub fn add_or_update_variations(&self) -> ::std::option::Option<&[crate::types::VariationConfig]> {
-        self.add_or_update_variations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_or_update_variations.is_none()`.
+    pub fn add_or_update_variations(&self) -> &[crate::types::VariationConfig] {
+        self.add_or_update_variations.as_deref().unwrap_or_default()
     }
     /// <p>Removes a variation from the feature. If the variation you specify doesn't exist, then this makes no change and does not report an error.</p>
     /// <p>This operation fails if you try to remove a variation that is part of an ongoing launch or experiment.</p>
-    pub fn remove_variations(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.remove_variations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove_variations.is_none()`.
+    pub fn remove_variations(&self) -> &[::std::string::String] {
+        self.remove_variations.as_deref().unwrap_or_default()
     }
     /// <p>The name of the variation to use as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
     pub fn default_variation(&self) -> ::std::option::Option<&str> {
@@ -80,6 +84,7 @@ pub struct UpdateFeatureInputBuilder {
 }
 impl UpdateFeatureInputBuilder {
     /// <p>The name or ARN of the project that contains the feature to be updated.</p>
+    /// This field is required.
     pub fn project(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project = ::std::option::Option::Some(input.into());
         self
@@ -94,6 +99,7 @@ impl UpdateFeatureInputBuilder {
         &self.project
     }
     /// <p>The name of the feature to be updated.</p>
+    /// This field is required.
     pub fn feature(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature = ::std::option::Option::Some(input.into());
         self
@@ -225,7 +231,7 @@ impl UpdateFeatureInputBuilder {
     /// Consumes the builder and constructs a [`UpdateFeatureInput`](crate::operation::update_feature::UpdateFeatureInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_feature::UpdateFeatureInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_feature::UpdateFeatureInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_feature::UpdateFeatureInput {
             project: self.project,
             feature: self.feature,

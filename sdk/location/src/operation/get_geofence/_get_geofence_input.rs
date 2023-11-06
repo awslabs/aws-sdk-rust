@@ -34,6 +34,7 @@ pub struct GetGeofenceInputBuilder {
 }
 impl GetGeofenceInputBuilder {
     /// <p>The geofence collection storing the target geofence.</p>
+    /// This field is required.
     pub fn collection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetGeofenceInputBuilder {
         &self.collection_name
     }
     /// <p>The geofence you're retrieving details for.</p>
+    /// This field is required.
     pub fn geofence_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.geofence_id = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,7 @@ impl GetGeofenceInputBuilder {
         &self.geofence_id
     }
     /// Consumes the builder and constructs a [`GetGeofenceInput`](crate::operation::get_geofence::GetGeofenceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_geofence::GetGeofenceInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_geofence::GetGeofenceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_geofence::GetGeofenceInput {
             collection_name: self.collection_name,
             geofence_id: self.geofence_id,

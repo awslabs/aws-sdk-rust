@@ -12,8 +12,10 @@ pub struct ListAppsInput {
 }
 impl ListAppsInput {
     /// <p>The unique application IDs.</p>
-    pub fn app_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.app_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.app_ids.is_none()`.
+    pub fn app_ids(&self) -> &[::std::string::String] {
+        self.app_ids.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -89,7 +91,7 @@ impl ListAppsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListAppsInput`](crate::operation::list_apps::ListAppsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_apps::ListAppsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_apps::ListAppsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_apps::ListAppsInput {
             app_ids: self.app_ids,
             next_token: self.next_token,

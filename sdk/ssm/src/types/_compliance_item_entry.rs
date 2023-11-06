@@ -9,9 +9,9 @@ pub struct ComplianceItemEntry {
     /// <p>The title of the compliance item. For example, if the compliance item is a Windows patch, the title could be the title of the KB article for the patch; for example: Security Update for Active Directory Federation Services. </p>
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>The severity of the compliance status. Severity can be one of the following: Critical, High, Medium, Low, Informational, Unspecified.</p>
-    pub severity: ::std::option::Option<crate::types::ComplianceSeverity>,
+    pub severity: crate::types::ComplianceSeverity,
     /// <p>The status of the compliance item. An item is either COMPLIANT or NON_COMPLIANT.</p>
-    pub status: ::std::option::Option<crate::types::ComplianceStatus>,
+    pub status: crate::types::ComplianceStatus,
     /// <p>A "Key": "Value" tag combination for the compliance item.</p>
     pub details: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -25,12 +25,12 @@ impl ComplianceItemEntry {
         self.title.as_deref()
     }
     /// <p>The severity of the compliance status. Severity can be one of the following: Critical, High, Medium, Low, Informational, Unspecified.</p>
-    pub fn severity(&self) -> ::std::option::Option<&crate::types::ComplianceSeverity> {
-        self.severity.as_ref()
+    pub fn severity(&self) -> &crate::types::ComplianceSeverity {
+        &self.severity
     }
     /// <p>The status of the compliance item. An item is either COMPLIANT or NON_COMPLIANT.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ComplianceStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::ComplianceStatus {
+        &self.status
     }
     /// <p>A "Key": "Value" tag combination for the compliance item.</p>
     pub fn details(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -84,6 +84,7 @@ impl ComplianceItemEntryBuilder {
         &self.title
     }
     /// <p>The severity of the compliance status. Severity can be one of the following: Critical, High, Medium, Low, Informational, Unspecified.</p>
+    /// This field is required.
     pub fn severity(mut self, input: crate::types::ComplianceSeverity) -> Self {
         self.severity = ::std::option::Option::Some(input);
         self
@@ -98,6 +99,7 @@ impl ComplianceItemEntryBuilder {
         &self.severity
     }
     /// <p>The status of the compliance item. An item is either COMPLIANT or NON_COMPLIANT.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::ComplianceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -132,13 +134,26 @@ impl ComplianceItemEntryBuilder {
         &self.details
     }
     /// Consumes the builder and constructs a [`ComplianceItemEntry`](crate::types::ComplianceItemEntry).
-    pub fn build(self) -> crate::types::ComplianceItemEntry {
-        crate::types::ComplianceItemEntry {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`severity`](crate::types::builders::ComplianceItemEntryBuilder::severity)
+    /// - [`status`](crate::types::builders::ComplianceItemEntryBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::ComplianceItemEntry, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ComplianceItemEntry {
             id: self.id,
             title: self.title,
-            severity: self.severity,
-            status: self.status,
+            severity: self.severity.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "severity",
+                    "severity was not specified but it is required when building ComplianceItemEntry",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building ComplianceItemEntry",
+                )
+            })?,
             details: self.details,
-        }
+        })
     }
 }

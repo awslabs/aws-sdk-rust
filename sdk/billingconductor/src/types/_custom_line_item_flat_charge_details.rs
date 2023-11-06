@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomLineItemFlatChargeDetails {
     /// <p>The custom line item's fixed charge value in USD.</p>
-    pub charge_value: ::std::option::Option<f64>,
+    pub charge_value: f64,
 }
 impl CustomLineItemFlatChargeDetails {
     /// <p>The custom line item's fixed charge value in USD.</p>
-    pub fn charge_value(&self) -> ::std::option::Option<f64> {
+    pub fn charge_value(&self) -> f64 {
         self.charge_value
     }
 }
@@ -28,6 +28,7 @@ pub struct CustomLineItemFlatChargeDetailsBuilder {
 }
 impl CustomLineItemFlatChargeDetailsBuilder {
     /// <p>The custom line item's fixed charge value in USD.</p>
+    /// This field is required.
     pub fn charge_value(mut self, input: f64) -> Self {
         self.charge_value = ::std::option::Option::Some(input);
         self
@@ -42,9 +43,16 @@ impl CustomLineItemFlatChargeDetailsBuilder {
         &self.charge_value
     }
     /// Consumes the builder and constructs a [`CustomLineItemFlatChargeDetails`](crate::types::CustomLineItemFlatChargeDetails).
-    pub fn build(self) -> crate::types::CustomLineItemFlatChargeDetails {
-        crate::types::CustomLineItemFlatChargeDetails {
-            charge_value: self.charge_value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`charge_value`](crate::types::builders::CustomLineItemFlatChargeDetailsBuilder::charge_value)
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomLineItemFlatChargeDetails, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CustomLineItemFlatChargeDetails {
+            charge_value: self.charge_value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "charge_value",
+                    "charge_value was not specified but it is required when building CustomLineItemFlatChargeDetails",
+                )
+            })?,
+        })
     }
 }

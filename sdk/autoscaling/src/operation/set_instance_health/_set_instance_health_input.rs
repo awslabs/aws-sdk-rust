@@ -43,6 +43,7 @@ pub struct SetInstanceHealthInputBuilder {
 }
 impl SetInstanceHealthInputBuilder {
     /// <p>The ID of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +58,7 @@ impl SetInstanceHealthInputBuilder {
         &self.instance_id
     }
     /// <p>The health status of the instance. Set to <code>Healthy</code> to have the instance remain in service. Set to <code>Unhealthy</code> to have the instance be out of service. Amazon EC2 Auto Scaling terminates and replaces the unhealthy instance.</p>
+    /// This field is required.
     pub fn health_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.health_status = ::std::option::Option::Some(input.into());
         self
@@ -90,7 +92,7 @@ impl SetInstanceHealthInputBuilder {
     /// Consumes the builder and constructs a [`SetInstanceHealthInput`](crate::operation::set_instance_health::SetInstanceHealthInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::set_instance_health::SetInstanceHealthInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::set_instance_health::SetInstanceHealthInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::set_instance_health::SetInstanceHealthInput {
             instance_id: self.instance_id,
             health_status: self.health_status,

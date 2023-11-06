@@ -16,8 +16,10 @@ impl CreateKeyPairInput {
     }
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateKeyPairInput {
@@ -36,6 +38,7 @@ pub struct CreateKeyPairInputBuilder {
 }
 impl CreateKeyPairInputBuilder {
     /// <p>The name for your new key pair.</p>
+    /// This field is required.
     pub fn key_pair_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_pair_name = ::std::option::Option::Some(input.into());
         self
@@ -75,7 +78,7 @@ impl CreateKeyPairInputBuilder {
     /// Consumes the builder and constructs a [`CreateKeyPairInput`](crate::operation::create_key_pair::CreateKeyPairInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_key_pair::CreateKeyPairInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_key_pair::CreateKeyPairInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_key_pair::CreateKeyPairInput {
             key_pair_name: self.key_pair_name,
             tags: self.tags,

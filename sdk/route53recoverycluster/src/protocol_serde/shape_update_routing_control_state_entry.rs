@@ -2,12 +2,12 @@
 pub fn ser_update_routing_control_state_entry(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateRoutingControlStateEntry,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.routing_control_arn {
-        object.key("RoutingControlArn").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("RoutingControlArn").string(input.routing_control_arn.as_str());
     }
-    if let Some(var_2) = &input.routing_control_state {
-        object.key("RoutingControlState").string(var_2.as_str());
+    {
+        object.key("RoutingControlState").string(input.routing_control_state.as_str());
     }
     Ok(())
 }

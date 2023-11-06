@@ -86,8 +86,10 @@ impl CreateProfileInput {
         self.meeting_room_configuration.as_ref()
     }
     /// <p>The tags for the profile.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateProfileInput {
@@ -118,6 +120,7 @@ pub struct CreateProfileInputBuilder {
 }
 impl CreateProfileInputBuilder {
     /// <p>The name of a room profile.</p>
+    /// This field is required.
     pub fn profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_name = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +135,7 @@ impl CreateProfileInputBuilder {
         &self.profile_name
     }
     /// <p>The time zone used by a room profile.</p>
+    /// This field is required.
     pub fn timezone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timezone = ::std::option::Option::Some(input.into());
         self
@@ -146,6 +150,7 @@ impl CreateProfileInputBuilder {
         &self.timezone
     }
     /// <p>The valid address for the room.</p>
+    /// This field is required.
     pub fn address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.address = ::std::option::Option::Some(input.into());
         self
@@ -160,6 +165,7 @@ impl CreateProfileInputBuilder {
         &self.address
     }
     /// <p>The distance unit to be used by devices in the profile.</p>
+    /// This field is required.
     pub fn distance_unit(mut self, input: crate::types::DistanceUnit) -> Self {
         self.distance_unit = ::std::option::Option::Some(input);
         self
@@ -174,6 +180,7 @@ impl CreateProfileInputBuilder {
         &self.distance_unit
     }
     /// <p>The temperature unit to be used by devices in the profile.</p>
+    /// This field is required.
     pub fn temperature_unit(mut self, input: crate::types::TemperatureUnit) -> Self {
         self.temperature_unit = ::std::option::Option::Some(input);
         self
@@ -188,6 +195,7 @@ impl CreateProfileInputBuilder {
         &self.temperature_unit
     }
     /// <p>A wake word for Alexa, Echo, Amazon, or a computer.</p>
+    /// This field is required.
     pub fn wake_word(mut self, input: crate::types::WakeWord) -> Self {
         self.wake_word = ::std::option::Option::Some(input);
         self
@@ -322,7 +330,7 @@ impl CreateProfileInputBuilder {
     /// Consumes the builder and constructs a [`CreateProfileInput`](crate::operation::create_profile::CreateProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_profile::CreateProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_profile::CreateProfileInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_profile::CreateProfileInput {
             profile_name: self.profile_name,
             timezone: self.timezone,

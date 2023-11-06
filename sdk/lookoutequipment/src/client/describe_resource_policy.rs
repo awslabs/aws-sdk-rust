@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeResourcePolicy`](crate::operation::describe_resource_policy::builders::DescribeResourcePolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::operation::describe_resource_policy::builders::DescribeResourcePolicyFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::describe_resource_policy::builders::DescribeResourcePolicyFluentBuilder::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource that is associated with the resource policy.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::operation::describe_resource_policy::builders::DescribeResourcePolicyFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::describe_resource_policy::builders::DescribeResourcePolicyFluentBuilder::set_resource_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the resource that is associated with the resource policy.</p><br>
     /// - On success, responds with [`DescribeResourcePolicyOutput`](crate::operation::describe_resource_policy::DescribeResourcePolicyOutput) with field(s):
     ///   - [`policy_revision_id(Option<String>)`](crate::operation::describe_resource_policy::DescribeResourcePolicyOutput::policy_revision_id): <p>A unique identifier for a revision of the resource policy.</p>
     ///   - [`resource_policy(Option<String>)`](crate::operation::describe_resource_policy::DescribeResourcePolicyOutput::resource_policy): <p>The resource policy in a JSON-formatted string.</p>

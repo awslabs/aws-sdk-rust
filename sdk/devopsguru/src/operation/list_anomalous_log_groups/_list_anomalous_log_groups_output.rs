@@ -4,21 +4,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAnomalousLogGroupsOutput {
     /// <p> The ID of the insight containing the log groups. </p>
-    pub insight_id: ::std::option::Option<::std::string::String>,
+    pub insight_id: ::std::string::String,
     /// <p> The list of Amazon CloudWatch log groups that are related to an insight. </p>
-    pub anomalous_log_groups: ::std::option::Option<::std::vec::Vec<crate::types::AnomalousLogGroup>>,
+    pub anomalous_log_groups: ::std::vec::Vec<crate::types::AnomalousLogGroup>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAnomalousLogGroupsOutput {
     /// <p> The ID of the insight containing the log groups. </p>
-    pub fn insight_id(&self) -> ::std::option::Option<&str> {
-        self.insight_id.as_deref()
+    pub fn insight_id(&self) -> &str {
+        use std::ops::Deref;
+        self.insight_id.deref()
     }
     /// <p> The list of Amazon CloudWatch log groups that are related to an insight. </p>
-    pub fn anomalous_log_groups(&self) -> ::std::option::Option<&[crate::types::AnomalousLogGroup]> {
-        self.anomalous_log_groups.as_deref()
+    pub fn anomalous_log_groups(&self) -> &[crate::types::AnomalousLogGroup] {
+        use std::ops::Deref;
+        self.anomalous_log_groups.deref()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -48,6 +50,7 @@ pub struct ListAnomalousLogGroupsOutputBuilder {
 }
 impl ListAnomalousLogGroupsOutputBuilder {
     /// <p> The ID of the insight containing the log groups. </p>
+    /// This field is required.
     pub fn insight_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.insight_id = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +108,30 @@ impl ListAnomalousLogGroupsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAnomalousLogGroupsOutput`](crate::operation::list_anomalous_log_groups::ListAnomalousLogGroupsOutput).
-    pub fn build(self) -> crate::operation::list_anomalous_log_groups::ListAnomalousLogGroupsOutput {
-        crate::operation::list_anomalous_log_groups::ListAnomalousLogGroupsOutput {
-            insight_id: self.insight_id,
-            anomalous_log_groups: self.anomalous_log_groups,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`insight_id`](crate::operation::list_anomalous_log_groups::builders::ListAnomalousLogGroupsOutputBuilder::insight_id)
+    /// - [`anomalous_log_groups`](crate::operation::list_anomalous_log_groups::builders::ListAnomalousLogGroupsOutputBuilder::anomalous_log_groups)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_anomalous_log_groups::ListAnomalousLogGroupsOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_anomalous_log_groups::ListAnomalousLogGroupsOutput {
+            insight_id: self.insight_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "insight_id",
+                    "insight_id was not specified but it is required when building ListAnomalousLogGroupsOutput",
+                )
+            })?,
+            anomalous_log_groups: self.anomalous_log_groups.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "anomalous_log_groups",
+                    "anomalous_log_groups was not specified but it is required when building ListAnomalousLogGroupsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

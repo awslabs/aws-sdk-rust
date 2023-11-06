@@ -28,6 +28,7 @@ pub struct DescribeLocationEfsInputBuilder {
 }
 impl DescribeLocationEfsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Amazon EFS file system location that you want information about.</p>
+    /// This field is required.
     pub fn location_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_arn = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl DescribeLocationEfsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeLocationEfsInput`](crate::operation::describe_location_efs::DescribeLocationEfsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_location_efs::DescribeLocationEfsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_location_efs::DescribeLocationEfsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_location_efs::DescribeLocationEfsInput {
             location_arn: self.location_arn,

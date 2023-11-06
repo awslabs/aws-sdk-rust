@@ -41,6 +41,7 @@ pub struct UpdateConfiguredTableAnalysisRuleInputBuilder {
 }
 impl UpdateConfiguredTableAnalysisRuleInputBuilder {
     /// <p>The unique identifier for the configured table that the analysis rule applies to. Currently accepts the configured table ID.</p>
+    /// This field is required.
     pub fn configured_table_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configured_table_identifier = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateConfiguredTableAnalysisRuleInputBuilder {
         &self.configured_table_identifier
     }
     /// <p>The analysis rule type to be updated. Configured table analysis rules are uniquely identified by their configured table identifier and analysis rule type.</p>
+    /// This field is required.
     pub fn analysis_rule_type(mut self, input: crate::types::ConfiguredTableAnalysisRuleType) -> Self {
         self.analysis_rule_type = ::std::option::Option::Some(input);
         self
@@ -69,6 +71,7 @@ impl UpdateConfiguredTableAnalysisRuleInputBuilder {
         &self.analysis_rule_type
     }
     /// <p>The new analysis rule policy for the configured table analysis rule.</p>
+    /// This field is required.
     pub fn analysis_rule_policy(mut self, input: crate::types::ConfiguredTableAnalysisRulePolicy) -> Self {
         self.analysis_rule_policy = ::std::option::Option::Some(input);
         self
@@ -87,7 +90,7 @@ impl UpdateConfiguredTableAnalysisRuleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_configured_table_analysis_rule::UpdateConfiguredTableAnalysisRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_configured_table_analysis_rule::UpdateConfiguredTableAnalysisRuleInput {

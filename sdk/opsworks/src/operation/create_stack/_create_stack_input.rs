@@ -255,6 +255,7 @@ pub struct CreateStackInputBuilder {
 }
 impl CreateStackInputBuilder {
     /// <p>The stack name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -271,6 +272,7 @@ impl CreateStackInputBuilder {
     /// <p>The stack's AWS region, such as <code>ap-south-1</code>. For more information about Amazon regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p> <note>
     /// <p>In the AWS CLI, this API maps to the <code>--stack-region</code> parameter. If the <code>--stack-region</code> parameter and the AWS CLI common parameter <code>--region</code> are set to the same value, the stack uses a <i>regional</i> endpoint. If the <code>--stack-region</code> parameter is not set, but the AWS CLI <code>--region</code> parameter is, this also results in a stack with a <i>regional</i> endpoint. However, if the <code>--region</code> parameter is set to <code>us-east-1</code>, and the <code>--stack-region</code> parameter is set to one of the following, then the stack uses a legacy or <i>classic</i> region: <code>us-west-1, us-west-2, sa-east-1, eu-central-1, eu-west-1, ap-northeast-1, ap-southeast-1, ap-southeast-2</code>. In this case, the actual API endpoint of the stack is in <code>us-east-1</code>. Only the preceding regions are supported as classic regions in the <code>us-east-1</code> API endpoint. Because it is a best practice to choose the regional endpoint that is closest to where you manage AWS, we recommend that you use regional endpoints for new stacks. The AWS CLI common <code>--region</code> parameter always specifies a regional API endpoint; it cannot be used to specify a classic AWS OpsWorks Stacks region.</p>
     /// </note>
+    /// This field is required.
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
         self
@@ -359,6 +361,7 @@ impl CreateStackInputBuilder {
         &self.attributes
     }
     /// <p>The stack's AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks Stacks to work with AWS resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an existing IAM role. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
+    /// This field is required.
     pub fn service_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -373,6 +376,7 @@ impl CreateStackInputBuilder {
         &self.service_role_arn
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
+    /// This field is required.
     pub fn default_instance_profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_instance_profile_arn = ::std::option::Option::Some(input.into());
         self
@@ -683,7 +687,7 @@ impl CreateStackInputBuilder {
         &self.agent_version
     }
     /// Consumes the builder and constructs a [`CreateStackInput`](crate::operation::create_stack::CreateStackInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_stack::CreateStackInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_stack::CreateStackInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_stack::CreateStackInput {
             name: self.name,
             region: self.region,

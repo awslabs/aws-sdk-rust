@@ -11,8 +11,10 @@ pub struct ListLabelingJobsOutput {
 }
 impl ListLabelingJobsOutput {
     /// <p>An array of <code>LabelingJobSummary</code> objects, each describing a labeling job.</p>
-    pub fn labeling_job_summary_list(&self) -> ::std::option::Option<&[crate::types::LabelingJobSummary]> {
-        self.labeling_job_summary_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.labeling_job_summary_list.is_none()`.
+    pub fn labeling_job_summary_list(&self) -> &[crate::types::LabelingJobSummary] {
+        self.labeling_job_summary_list.as_deref().unwrap_or_default()
     }
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of labeling jobs, use it in the subsequent request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConversationLevelResultDetail {
     /// <p>The success or failure of the streaming of the conversation.</p>
-    pub end_to_end_result: ::std::option::Option<crate::types::TestResultMatchStatus>,
+    pub end_to_end_result: crate::types::TestResultMatchStatus,
     /// <p>The speech transcription success or failure details of the conversation.</p>
     pub speech_transcription_result: ::std::option::Option<crate::types::TestResultMatchStatus>,
 }
 impl ConversationLevelResultDetail {
     /// <p>The success or failure of the streaming of the conversation.</p>
-    pub fn end_to_end_result(&self) -> ::std::option::Option<&crate::types::TestResultMatchStatus> {
-        self.end_to_end_result.as_ref()
+    pub fn end_to_end_result(&self) -> &crate::types::TestResultMatchStatus {
+        &self.end_to_end_result
     }
     /// <p>The speech transcription success or failure details of the conversation.</p>
     pub fn speech_transcription_result(&self) -> ::std::option::Option<&crate::types::TestResultMatchStatus> {
@@ -35,6 +35,7 @@ pub struct ConversationLevelResultDetailBuilder {
 }
 impl ConversationLevelResultDetailBuilder {
     /// <p>The success or failure of the streaming of the conversation.</p>
+    /// This field is required.
     pub fn end_to_end_result(mut self, input: crate::types::TestResultMatchStatus) -> Self {
         self.end_to_end_result = ::std::option::Option::Some(input);
         self
@@ -63,10 +64,17 @@ impl ConversationLevelResultDetailBuilder {
         &self.speech_transcription_result
     }
     /// Consumes the builder and constructs a [`ConversationLevelResultDetail`](crate::types::ConversationLevelResultDetail).
-    pub fn build(self) -> crate::types::ConversationLevelResultDetail {
-        crate::types::ConversationLevelResultDetail {
-            end_to_end_result: self.end_to_end_result,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`end_to_end_result`](crate::types::builders::ConversationLevelResultDetailBuilder::end_to_end_result)
+    pub fn build(self) -> ::std::result::Result<crate::types::ConversationLevelResultDetail, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ConversationLevelResultDetail {
+            end_to_end_result: self.end_to_end_result.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "end_to_end_result",
+                    "end_to_end_result was not specified but it is required when building ConversationLevelResultDetail",
+                )
+            })?,
             speech_transcription_result: self.speech_transcription_result,
-        }
+        })
     }
 }

@@ -2,7 +2,7 @@
 pub fn ser_revoke_invitation_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::revoke_invitation::RevokeInvitationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.user_arn {
         object.key("UserArn").string(var_1.as_str());
     }

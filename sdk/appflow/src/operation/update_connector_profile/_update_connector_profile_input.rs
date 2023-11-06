@@ -52,6 +52,7 @@ pub struct UpdateConnectorProfileInputBuilder {
 }
 impl UpdateConnectorProfileInputBuilder {
     /// <p> The name of the connector profile and is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
+    /// This field is required.
     pub fn connector_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_profile_name = ::std::option::Option::Some(input.into());
         self
@@ -66,6 +67,7 @@ impl UpdateConnectorProfileInputBuilder {
         &self.connector_profile_name
     }
     /// <p> Indicates the connection mode and if it is public or private. </p>
+    /// This field is required.
     pub fn connection_mode(mut self, input: crate::types::ConnectionMode) -> Self {
         self.connection_mode = ::std::option::Option::Some(input);
         self
@@ -80,6 +82,7 @@ impl UpdateConnectorProfileInputBuilder {
         &self.connection_mode
     }
     /// <p> Defines the connector-specific profile configuration and credentials. </p>
+    /// This field is required.
     pub fn connector_profile_config(mut self, input: crate::types::ConnectorProfileConfig) -> Self {
         self.connector_profile_config = ::std::option::Option::Some(input);
         self
@@ -116,8 +119,10 @@ impl UpdateConnectorProfileInputBuilder {
     /// Consumes the builder and constructs a [`UpdateConnectorProfileInput`](crate::operation::update_connector_profile::UpdateConnectorProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_connector_profile::UpdateConnectorProfileInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::update_connector_profile::UpdateConnectorProfileInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::update_connector_profile::UpdateConnectorProfileInput {
             connector_profile_name: self.connector_profile_name,
             connection_mode: self.connection_mode,

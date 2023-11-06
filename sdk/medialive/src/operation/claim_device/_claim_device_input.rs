@@ -42,7 +42,7 @@ impl ClaimDeviceInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`ClaimDeviceInput`](crate::operation::claim_device::ClaimDeviceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::claim_device::ClaimDeviceInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::claim_device::ClaimDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::claim_device::ClaimDeviceInput { id: self.id })
     }
 }

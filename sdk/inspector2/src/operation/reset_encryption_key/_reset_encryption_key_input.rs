@@ -34,6 +34,7 @@ pub struct ResetEncryptionKeyInputBuilder {
 }
 impl ResetEncryptionKeyInputBuilder {
     /// <p>The scan type the key encrypts.</p>
+    /// This field is required.
     pub fn scan_type(mut self, input: crate::types::ScanType) -> Self {
         self.scan_type = ::std::option::Option::Some(input);
         self
@@ -48,6 +49,7 @@ impl ResetEncryptionKeyInputBuilder {
         &self.scan_type
     }
     /// <p>The resource type the key encrypts.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
@@ -64,7 +66,8 @@ impl ResetEncryptionKeyInputBuilder {
     /// Consumes the builder and constructs a [`ResetEncryptionKeyInput`](crate::operation::reset_encryption_key::ResetEncryptionKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::reset_encryption_key::ResetEncryptionKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::reset_encryption_key::ResetEncryptionKeyInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::reset_encryption_key::ResetEncryptionKeyInput {
             scan_type: self.scan_type,
             resource_type: self.resource_type,

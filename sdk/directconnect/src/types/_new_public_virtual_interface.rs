@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NewPublicVirtualInterface {
     /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
-    pub virtual_interface_name: ::std::option::Option<::std::string::String>,
+    pub virtual_interface_name: ::std::string::String,
     /// <p>The ID of the VLAN.</p>
     pub vlan: i32,
     /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
@@ -26,8 +26,9 @@ pub struct NewPublicVirtualInterface {
 }
 impl NewPublicVirtualInterface {
     /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
-    pub fn virtual_interface_name(&self) -> ::std::option::Option<&str> {
-        self.virtual_interface_name.as_deref()
+    pub fn virtual_interface_name(&self) -> &str {
+        use std::ops::Deref;
+        self.virtual_interface_name.deref()
     }
     /// <p>The ID of the VLAN.</p>
     pub fn vlan(&self) -> i32 {
@@ -55,12 +56,16 @@ impl NewPublicVirtualInterface {
         self.address_family.as_ref()
     }
     /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
-    pub fn route_filter_prefixes(&self) -> ::std::option::Option<&[crate::types::RouteFilterPrefix]> {
-        self.route_filter_prefixes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.route_filter_prefixes.is_none()`.
+    pub fn route_filter_prefixes(&self) -> &[crate::types::RouteFilterPrefix] {
+        self.route_filter_prefixes.as_deref().unwrap_or_default()
     }
     /// <p>The tags associated with the public virtual interface.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl NewPublicVirtualInterface {
@@ -86,6 +91,7 @@ pub struct NewPublicVirtualInterfaceBuilder {
 }
 impl NewPublicVirtualInterfaceBuilder {
     /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
+    /// This field is required.
     pub fn virtual_interface_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_interface_name = ::std::option::Option::Some(input.into());
         self
@@ -100,6 +106,7 @@ impl NewPublicVirtualInterfaceBuilder {
         &self.virtual_interface_name
     }
     /// <p>The ID of the VLAN.</p>
+    /// This field is required.
     pub fn vlan(mut self, input: i32) -> Self {
         self.vlan = ::std::option::Option::Some(input);
         self
@@ -115,6 +122,7 @@ impl NewPublicVirtualInterfaceBuilder {
     }
     /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
     /// <p>The valid values are 1-2147483647.</p>
+    /// This field is required.
     pub fn asn(mut self, input: i32) -> Self {
         self.asn = ::std::option::Option::Some(input);
         self
@@ -227,9 +235,16 @@ impl NewPublicVirtualInterfaceBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`NewPublicVirtualInterface`](crate::types::NewPublicVirtualInterface).
-    pub fn build(self) -> crate::types::NewPublicVirtualInterface {
-        crate::types::NewPublicVirtualInterface {
-            virtual_interface_name: self.virtual_interface_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`virtual_interface_name`](crate::types::builders::NewPublicVirtualInterfaceBuilder::virtual_interface_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::NewPublicVirtualInterface, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::NewPublicVirtualInterface {
+            virtual_interface_name: self.virtual_interface_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "virtual_interface_name",
+                    "virtual_interface_name was not specified but it is required when building NewPublicVirtualInterface",
+                )
+            })?,
             vlan: self.vlan.unwrap_or_default(),
             asn: self.asn.unwrap_or_default(),
             auth_key: self.auth_key,
@@ -238,6 +253,6 @@ impl NewPublicVirtualInterfaceBuilder {
             address_family: self.address_family,
             route_filter_prefixes: self.route_filter_prefixes,
             tags: self.tags,
-        }
+        })
     }
 }

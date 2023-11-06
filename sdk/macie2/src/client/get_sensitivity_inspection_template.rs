@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSensitivityInspectionTemplate`](crate::operation::get_sensitivity_inspection_template::builders::GetSensitivityInspectionTemplateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_sensitivity_inspection_template::builders::GetSensitivityInspectionTemplateFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_sensitivity_inspection_template::builders::GetSensitivityInspectionTemplateFluentBuilder::set_id): <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_sensitivity_inspection_template::builders::GetSensitivityInspectionTemplateFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_sensitivity_inspection_template::builders::GetSensitivityInspectionTemplateFluentBuilder::set_id):<br>required: **true**<br><p>The unique identifier for the Amazon Macie resource that the request applies to.</p><br>
     /// - On success, responds with [`GetSensitivityInspectionTemplateOutput`](crate::operation::get_sensitivity_inspection_template::GetSensitivityInspectionTemplateOutput) with field(s):
     ///   - [`description(Option<String>)`](crate::operation::get_sensitivity_inspection_template::GetSensitivityInspectionTemplateOutput::description): <p>The custom description of the template.</p>
     ///   - [`excludes(Option<SensitivityInspectionTemplateExcludes>)`](crate::operation::get_sensitivity_inspection_template::GetSensitivityInspectionTemplateOutput::excludes): <p>The managed data identifiers that are explicitly excluded (not used) when analyzing data.</p>

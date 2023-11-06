@@ -49,6 +49,7 @@ impl Ec2CreateRouteTableActionBuilder {
         &self.description
     }
     /// <p>Information about the ID of a VPC.</p>
+    /// This field is required.
     pub fn vpc_id(mut self, input: crate::types::ActionTarget) -> Self {
         self.vpc_id = ::std::option::Option::Some(input);
         self

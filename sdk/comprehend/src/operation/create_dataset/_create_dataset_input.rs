@@ -44,8 +44,10 @@ impl CreateDatasetInput {
         self.client_request_token.as_deref()
     }
     /// <p>Tags for the dataset.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateDatasetInput {
@@ -69,6 +71,7 @@ pub struct CreateDatasetInputBuilder {
 }
 impl CreateDatasetInputBuilder {
     /// <p>The Amazon Resource Number (ARN) of the flywheel of the flywheel to receive the data.</p>
+    /// This field is required.
     pub fn flywheel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flywheel_arn = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +86,7 @@ impl CreateDatasetInputBuilder {
         &self.flywheel_arn
     }
     /// <p>Name of the dataset.</p>
+    /// This field is required.
     pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_name = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +129,7 @@ impl CreateDatasetInputBuilder {
         &self.description
     }
     /// <p>Information about the input data configuration. The type of input data varies based on the format of the input and whether the data is for a classifier model or an entity recognition model.</p>
+    /// This field is required.
     pub fn input_data_config(mut self, input: crate::types::DatasetInputDataConfig) -> Self {
         self.input_data_config = ::std::option::Option::Some(input);
         self
@@ -175,7 +180,7 @@ impl CreateDatasetInputBuilder {
     /// Consumes the builder and constructs a [`CreateDatasetInput`](crate::operation::create_dataset::CreateDatasetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_dataset::CreateDatasetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_dataset::CreateDatasetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_dataset::CreateDatasetInput {
             flywheel_arn: self.flywheel_arn,
             dataset_name: self.dataset_name,

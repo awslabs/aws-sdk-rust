@@ -16,12 +16,16 @@ impl UpdateDirectConnectGatewayAssociationInput {
         self.association_id.as_deref()
     }
     /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway.</p>
-    pub fn add_allowed_prefixes_to_direct_connect_gateway(&self) -> ::std::option::Option<&[crate::types::RouteFilterPrefix]> {
-        self.add_allowed_prefixes_to_direct_connect_gateway.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_allowed_prefixes_to_direct_connect_gateway.is_none()`.
+    pub fn add_allowed_prefixes_to_direct_connect_gateway(&self) -> &[crate::types::RouteFilterPrefix] {
+        self.add_allowed_prefixes_to_direct_connect_gateway.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon VPC prefixes to no longer advertise to the Direct Connect gateway.</p>
-    pub fn remove_allowed_prefixes_to_direct_connect_gateway(&self) -> ::std::option::Option<&[crate::types::RouteFilterPrefix]> {
-        self.remove_allowed_prefixes_to_direct_connect_gateway.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove_allowed_prefixes_to_direct_connect_gateway.is_none()`.
+    pub fn remove_allowed_prefixes_to_direct_connect_gateway(&self) -> &[crate::types::RouteFilterPrefix] {
+        self.remove_allowed_prefixes_to_direct_connect_gateway.as_deref().unwrap_or_default()
     }
 }
 impl UpdateDirectConnectGatewayAssociationInput {
@@ -105,7 +109,7 @@ impl UpdateDirectConnectGatewayAssociationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_direct_connect_gateway_association::UpdateDirectConnectGatewayAssociationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_direct_connect_gateway_association::UpdateDirectConnectGatewayAssociationInput {

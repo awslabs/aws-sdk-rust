@@ -11,8 +11,10 @@ pub struct DescribeVolumesModificationsOutput {
 }
 impl DescribeVolumesModificationsOutput {
     /// <p>Information about the volume modifications.</p>
-    pub fn volumes_modifications(&self) -> ::std::option::Option<&[crate::types::VolumeModification]> {
-        self.volumes_modifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volumes_modifications.is_none()`.
+    pub fn volumes_modifications(&self) -> &[crate::types::VolumeModification] {
+        self.volumes_modifications.as_deref().unwrap_or_default()
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> if there are no more items to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

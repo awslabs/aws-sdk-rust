@@ -24,8 +24,10 @@ impl TranslateDocumentInput {
     /// <p>The name of a terminology list file to add to the translation job. This file provides source terms and the desired translation for each term. A terminology list can contain a maximum of 256 terms. You can use one custom terminology resource in your translation request.</p>
     /// <p>Use the <code>ListTerminologies</code> operation to get the available terminology lists.</p>
     /// <p>For more information about custom terminology lists, see <a href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom terminology</a>.</p>
-    pub fn terminology_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.terminology_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.terminology_names.is_none()`.
+    pub fn terminology_names(&self) -> &[::std::string::String] {
+        self.terminology_names.as_deref().unwrap_or_default()
     }
     /// <p>The language code for the language of the source text. Do not use <code>auto</code>, because <code>TranslateDocument</code> does not support language auto-detection. For a list of supported language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
     pub fn source_language_code(&self) -> ::std::option::Option<&str> {
@@ -59,6 +61,7 @@ pub struct TranslateDocumentInputBuilder {
 }
 impl TranslateDocumentInputBuilder {
     /// <p>The content and content type for the document to be translated. The document size must not exceed 100 KB.</p>
+    /// This field is required.
     pub fn document(mut self, input: crate::types::Document) -> Self {
         self.document = ::std::option::Option::Some(input);
         self
@@ -99,6 +102,7 @@ impl TranslateDocumentInputBuilder {
         &self.terminology_names
     }
     /// <p>The language code for the language of the source text. Do not use <code>auto</code>, because <code>TranslateDocument</code> does not support language auto-detection. For a list of supported language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
+    /// This field is required.
     pub fn source_language_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_language_code = ::std::option::Option::Some(input.into());
         self
@@ -113,6 +117,7 @@ impl TranslateDocumentInputBuilder {
         &self.source_language_code
     }
     /// <p>The language code requested for the translated document. For a list of supported language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
+    /// This field is required.
     pub fn target_language_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_language_code = ::std::option::Option::Some(input.into());
         self
@@ -143,7 +148,7 @@ impl TranslateDocumentInputBuilder {
     /// Consumes the builder and constructs a [`TranslateDocumentInput`](crate::operation::translate_document::TranslateDocumentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::translate_document::TranslateDocumentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::translate_document::TranslateDocumentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::translate_document::TranslateDocumentInput {
             document: self.document,
             terminology_names: self.terminology_names,

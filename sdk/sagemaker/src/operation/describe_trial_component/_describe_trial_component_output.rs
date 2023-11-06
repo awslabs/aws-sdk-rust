@@ -119,16 +119,20 @@ impl DescribeTrialComponentOutput {
         self.metadata_properties.as_ref()
     }
     /// <p>The metrics for the component.</p>
-    pub fn metrics(&self) -> ::std::option::Option<&[crate::types::TrialComponentMetricSummary]> {
-        self.metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metrics.is_none()`.
+    pub fn metrics(&self) -> &[crate::types::TrialComponentMetricSummary] {
+        self.metrics.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
     pub fn lineage_group_arn(&self) -> ::std::option::Option<&str> {
         self.lineage_group_arn.as_deref()
     }
     /// <p>A list of ARNs and, if applicable, job types for multiple sources of an experiment run.</p>
-    pub fn sources(&self) -> ::std::option::Option<&[crate::types::TrialComponentSource]> {
-        self.sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
+    pub fn sources(&self) -> &[crate::types::TrialComponentSource] {
+        self.sources.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeTrialComponentOutput {

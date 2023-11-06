@@ -70,6 +70,7 @@ pub struct GetResourceConfigHistoryInputBuilder {
 }
 impl GetResourceConfigHistoryInputBuilder {
     /// <p>The resource type.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
@@ -84,6 +85,7 @@ impl GetResourceConfigHistoryInputBuilder {
         &self.resource_type
     }
     /// <p>The ID of the resource (for example., <code>sg-xxxxxx</code>).</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -172,7 +174,7 @@ impl GetResourceConfigHistoryInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resource_config_history::GetResourceConfigHistoryInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_resource_config_history::GetResourceConfigHistoryInput {
             resource_type: self.resource_type,

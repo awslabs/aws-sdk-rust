@@ -43,12 +43,16 @@ impl DbEngineVersion {
         self.db_engine_version_description.as_deref()
     }
     /// <p>A list of engine versions that this database engine version can be upgraded to.</p>
-    pub fn valid_upgrade_target(&self) -> ::std::option::Option<&[crate::types::UpgradeTarget]> {
-        self.valid_upgrade_target.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.valid_upgrade_target.is_none()`.
+    pub fn valid_upgrade_target(&self) -> &[crate::types::UpgradeTarget] {
+        self.valid_upgrade_target.as_deref().unwrap_or_default()
     }
     /// <p>The types of logs that the database engine has available for export to Amazon CloudWatch Logs.</p>
-    pub fn exportable_log_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.exportable_log_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exportable_log_types.is_none()`.
+    pub fn exportable_log_types(&self) -> &[::std::string::String] {
+        self.exportable_log_types.as_deref().unwrap_or_default()
     }
     /// <p>A value that indicates whether the engine version supports exporting the log types specified by <code>ExportableLogTypes</code> to CloudWatch Logs.</p>
     pub fn supports_log_exports_to_cloudwatch_logs(&self) -> ::std::option::Option<bool> {

@@ -69,6 +69,7 @@ pub struct CreateAlertInputBuilder {
 }
 impl CreateAlertInputBuilder {
     /// <p>The name of the alert.</p>
+    /// This field is required.
     pub fn alert_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alert_name = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +112,7 @@ impl CreateAlertInputBuilder {
         &self.alert_description
     }
     /// <p>The ARN of the detector to which the alert is attached.</p>
+    /// This field is required.
     pub fn anomaly_detector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_detector_arn = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +127,7 @@ impl CreateAlertInputBuilder {
         &self.anomaly_detector_arn
     }
     /// <p>Action that will be triggered when there is an alert.</p>
+    /// This field is required.
     pub fn action(mut self, input: crate::types::Action) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
@@ -173,7 +176,7 @@ impl CreateAlertInputBuilder {
         &self.alert_filters
     }
     /// Consumes the builder and constructs a [`CreateAlertInput`](crate::operation::create_alert::CreateAlertInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_alert::CreateAlertInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_alert::CreateAlertInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_alert::CreateAlertInput {
             alert_name: self.alert_name,
             alert_sensitivity_threshold: self.alert_sensitivity_threshold,

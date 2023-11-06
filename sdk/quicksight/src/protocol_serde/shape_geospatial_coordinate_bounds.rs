@@ -2,29 +2,29 @@
 pub fn ser_geospatial_coordinate_bounds(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GeospatialCoordinateBounds,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.north {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
         object.key("North").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_1).into()),
+            ::aws_smithy_types::Number::Float((input.north).into()),
         );
     }
-    if let Some(var_2) = &input.south {
+    {
         object.key("South").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_2).into()),
+            ::aws_smithy_types::Number::Float((input.south).into()),
         );
     }
-    if let Some(var_3) = &input.west {
+    {
         object.key("West").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_3).into()),
+            ::aws_smithy_types::Number::Float((input.west).into()),
         );
     }
-    if let Some(var_4) = &input.east {
+    {
         object.key("East").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_4).into()),
+            ::aws_smithy_types::Number::Float((input.east).into()),
         );
     }
     Ok(())
@@ -71,7 +71,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::geospatial_coordinate_bounds_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

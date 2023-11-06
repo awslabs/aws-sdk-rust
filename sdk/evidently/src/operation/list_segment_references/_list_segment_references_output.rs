@@ -11,8 +11,10 @@ pub struct ListSegmentReferencesOutput {
 }
 impl ListSegmentReferencesOutput {
     /// <p>An array of structures, where each structure contains information about one experiment or launch that uses this segment. </p>
-    pub fn referenced_by(&self) -> ::std::option::Option<&[crate::types::RefResource]> {
-        self.referenced_by.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.referenced_by.is_none()`.
+    pub fn referenced_by(&self) -> &[crate::types::RefResource] {
+        self.referenced_by.as_deref().unwrap_or_default()
     }
     /// <p>The token to use in a subsequent <code>ListSegmentReferences</code> operation to return the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -2,15 +2,15 @@
 pub fn ser_s3_reference(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::S3Reference,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.bucket {
-        object.key("bucket").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("bucket").string(input.bucket.as_str());
     }
-    if let Some(var_2) = &input.key {
-        object.key("key").string(var_2.as_str());
+    {
+        object.key("key").string(input.key.as_str());
     }
-    if let Some(var_3) = &input.object_version {
-        object.key("objectVersion").string(var_3.as_str());
+    if let Some(var_1) = &input.object_version {
+        object.key("objectVersion").string(var_1.as_str());
     }
     Ok(())
 }

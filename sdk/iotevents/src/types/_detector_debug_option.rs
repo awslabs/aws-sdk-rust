@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectorDebugOption {
     /// <p>The name of the detector model.</p>
-    pub detector_model_name: ::std::option::Option<::std::string::String>,
+    pub detector_model_name: ::std::string::String,
     /// <p>The value of the input attribute key used to create the detector (the instance of the detector model).</p>
     pub key_value: ::std::option::Option<::std::string::String>,
 }
 impl DetectorDebugOption {
     /// <p>The name of the detector model.</p>
-    pub fn detector_model_name(&self) -> ::std::option::Option<&str> {
-        self.detector_model_name.as_deref()
+    pub fn detector_model_name(&self) -> &str {
+        use std::ops::Deref;
+        self.detector_model_name.deref()
     }
     /// <p>The value of the input attribute key used to create the detector (the instance of the detector model).</p>
     pub fn key_value(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct DetectorDebugOptionBuilder {
 }
 impl DetectorDebugOptionBuilder {
     /// <p>The name of the detector model.</p>
+    /// This field is required.
     pub fn detector_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_model_name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl DetectorDebugOptionBuilder {
         &self.key_value
     }
     /// Consumes the builder and constructs a [`DetectorDebugOption`](crate::types::DetectorDebugOption).
-    pub fn build(self) -> crate::types::DetectorDebugOption {
-        crate::types::DetectorDebugOption {
-            detector_model_name: self.detector_model_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`detector_model_name`](crate::types::builders::DetectorDebugOptionBuilder::detector_model_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::DetectorDebugOption, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DetectorDebugOption {
+            detector_model_name: self.detector_model_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "detector_model_name",
+                    "detector_model_name was not specified but it is required when building DetectorDebugOption",
+                )
+            })?,
             key_value: self.key_value,
-        }
+        })
     }
 }

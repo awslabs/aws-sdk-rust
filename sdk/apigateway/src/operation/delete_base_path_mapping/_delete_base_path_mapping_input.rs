@@ -37,6 +37,7 @@ pub struct DeleteBasePathMappingInputBuilder {
 }
 impl DeleteBasePathMappingInputBuilder {
     /// <p>The domain name of the BasePathMapping resource to delete.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -52,6 +53,7 @@ impl DeleteBasePathMappingInputBuilder {
     }
     /// <p>The base path name of the BasePathMapping resource to delete.</p>
     /// <p>To specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
+    /// This field is required.
     pub fn base_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.base_path = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +72,7 @@ impl DeleteBasePathMappingInputBuilder {
     /// Consumes the builder and constructs a [`DeleteBasePathMappingInput`](crate::operation::delete_base_path_mapping::DeleteBasePathMappingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_base_path_mapping::DeleteBasePathMappingInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_base_path_mapping::DeleteBasePathMappingInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_base_path_mapping::DeleteBasePathMappingInput {
             domain_name: self.domain_name,

@@ -2,7 +2,7 @@
 pub fn ser_response_headers_policy_cors_config(
     input: &crate::types::ResponseHeadersPolicyCorsConfig,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_1) = &input.access_control_allow_origins {
@@ -26,29 +26,30 @@ pub fn ser_response_headers_policy_cors_config(
             inner_writer,
         )?
     }
-    if let Some(var_4) = &input.access_control_allow_credentials {
+    {
         let mut inner_writer = scope.start_el("AccessControlAllowCredentials").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_4).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.access_control_allow_credentials).encode());
     }
-    if let Some(var_5) = &input.access_control_expose_headers {
+    if let Some(var_4) = &input.access_control_expose_headers {
         let inner_writer = scope.start_el("AccessControlExposeHeaders");
         crate::protocol_serde::shape_response_headers_policy_access_control_expose_headers::ser_response_headers_policy_access_control_expose_headers(
-            var_5,
+            var_4,
             inner_writer,
         )?
     }
-    if let Some(var_6) = &input.access_control_max_age_sec {
+    if let Some(var_5) = &input.access_control_max_age_sec {
         let mut inner_writer = scope.start_el("AccessControlMaxAgeSec").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_6).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_5).encode());
     }
-    if let Some(var_7) = &input.origin_override {
+    {
         let mut inner_writer = scope.start_el("OriginOverride").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_7).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.origin_override).encode());
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_response_headers_policy_cors_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::ResponseHeadersPolicyCorsConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -57,37 +58,37 @@ pub fn de_response_headers_policy_cors_config(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("AccessControlAllowOrigins") /* AccessControlAllowOrigins com.amazonaws.cloudfront#ResponseHeadersPolicyCorsConfig$AccessControlAllowOrigins */ =>  {
-                let var_8 =
+                let var_6 =
                     Some(
                         crate::protocol_serde::shape_response_headers_policy_access_control_allow_origins::de_response_headers_policy_access_control_allow_origins(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_access_control_allow_origins(var_8);
+                builder = builder.set_access_control_allow_origins(var_6);
             }
             ,
             s if s.matches("AccessControlAllowHeaders") /* AccessControlAllowHeaders com.amazonaws.cloudfront#ResponseHeadersPolicyCorsConfig$AccessControlAllowHeaders */ =>  {
-                let var_9 =
+                let var_7 =
                     Some(
                         crate::protocol_serde::shape_response_headers_policy_access_control_allow_headers::de_response_headers_policy_access_control_allow_headers(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_access_control_allow_headers(var_9);
+                builder = builder.set_access_control_allow_headers(var_7);
             }
             ,
             s if s.matches("AccessControlAllowMethods") /* AccessControlAllowMethods com.amazonaws.cloudfront#ResponseHeadersPolicyCorsConfig$AccessControlAllowMethods */ =>  {
-                let var_10 =
+                let var_8 =
                     Some(
                         crate::protocol_serde::shape_response_headers_policy_access_control_allow_methods::de_response_headers_policy_access_control_allow_methods(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_access_control_allow_methods(var_10);
+                builder = builder.set_access_control_allow_methods(var_8);
             }
             ,
             s if s.matches("AccessControlAllowCredentials") /* AccessControlAllowCredentials com.amazonaws.cloudfront#ResponseHeadersPolicyCorsConfig$AccessControlAllowCredentials */ =>  {
-                let var_11 =
+                let var_9 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -98,21 +99,21 @@ pub fn de_response_headers_policy_cors_config(
                         ?
                     )
                 ;
-                builder = builder.set_access_control_allow_credentials(var_11);
+                builder = builder.set_access_control_allow_credentials(var_9);
             }
             ,
             s if s.matches("AccessControlExposeHeaders") /* AccessControlExposeHeaders com.amazonaws.cloudfront#ResponseHeadersPolicyCorsConfig$AccessControlExposeHeaders */ =>  {
-                let var_12 =
+                let var_10 =
                     Some(
                         crate::protocol_serde::shape_response_headers_policy_access_control_expose_headers::de_response_headers_policy_access_control_expose_headers(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_access_control_expose_headers(var_12);
+                builder = builder.set_access_control_expose_headers(var_10);
             }
             ,
             s if s.matches("AccessControlMaxAgeSec") /* AccessControlMaxAgeSec com.amazonaws.cloudfront#ResponseHeadersPolicyCorsConfig$AccessControlMaxAgeSec */ =>  {
-                let var_13 =
+                let var_11 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -123,11 +124,11 @@ pub fn de_response_headers_policy_cors_config(
                         ?
                     )
                 ;
-                builder = builder.set_access_control_max_age_sec(var_13);
+                builder = builder.set_access_control_max_age_sec(var_11);
             }
             ,
             s if s.matches("OriginOverride") /* OriginOverride com.amazonaws.cloudfront#ResponseHeadersPolicyCorsConfig$OriginOverride */ =>  {
-                let var_14 =
+                let var_12 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -138,11 +139,13 @@ pub fn de_response_headers_policy_cors_config(
                         ?
                     )
                 ;
-                builder = builder.set_origin_override(var_14);
+                builder = builder.set_origin_override(var_12);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::response_headers_policy_cors_config_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

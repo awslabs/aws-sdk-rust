@@ -76,16 +76,20 @@ impl UpdateProvisionedProductInput {
         self.path_name.as_deref()
     }
     /// <p>The new parameters.</p>
-    pub fn provisioning_parameters(&self) -> ::std::option::Option<&[crate::types::UpdateProvisioningParameter]> {
-        self.provisioning_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provisioning_parameters.is_none()`.
+    pub fn provisioning_parameters(&self) -> &[crate::types::UpdateProvisioningParameter] {
+        self.provisioning_parameters.as_deref().unwrap_or_default()
     }
     /// <p>An object that contains information about the provisioning preferences for a stack set.</p>
     pub fn provisioning_preferences(&self) -> ::std::option::Option<&crate::types::UpdateProvisioningPreferences> {
         self.provisioning_preferences.as_ref()
     }
     /// <p>One or more tags. Requires the product to have <code>RESOURCE_UPDATE</code> constraint with <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow tag updates.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The idempotency token that uniquely identifies the provisioning update request.</p>
     pub fn update_token(&self) -> ::std::option::Option<&str> {
@@ -311,6 +315,7 @@ impl UpdateProvisionedProductInputBuilder {
         &self.tags
     }
     /// <p>The idempotency token that uniquely identifies the provisioning update request.</p>
+    /// This field is required.
     pub fn update_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.update_token = ::std::option::Option::Some(input.into());
         self
@@ -329,7 +334,7 @@ impl UpdateProvisionedProductInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_provisioned_product::UpdateProvisionedProductInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_provisioned_product::UpdateProvisionedProductInput {
             accept_language: self.accept_language,

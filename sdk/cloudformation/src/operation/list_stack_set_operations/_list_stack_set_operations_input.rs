@@ -58,6 +58,7 @@ pub struct ListStackSetOperationsInputBuilder {
 }
 impl ListStackSetOperationsInputBuilder {
     /// <p>The name or unique ID of the stack set that you want to get operation summaries for.</p>
+    /// This field is required.
     pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_set_name = ::std::option::Option::Some(input.into());
         self
@@ -133,7 +134,7 @@ impl ListStackSetOperationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_stack_set_operations::ListStackSetOperationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_stack_set_operations::ListStackSetOperationsInput {
             stack_set_name: self.stack_set_name,

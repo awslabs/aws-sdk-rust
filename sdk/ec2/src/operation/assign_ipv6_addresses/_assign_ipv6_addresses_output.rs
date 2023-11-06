@@ -13,12 +13,16 @@ pub struct AssignIpv6AddressesOutput {
 }
 impl AssignIpv6AddressesOutput {
     /// <p>The new IPv6 addresses assigned to the network interface. Existing IPv6 addresses that were assigned to the network interface before the request are not included.</p>
-    pub fn assigned_ipv6_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.assigned_ipv6_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.assigned_ipv6_addresses.is_none()`.
+    pub fn assigned_ipv6_addresses(&self) -> &[::std::string::String] {
+        self.assigned_ipv6_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The IPv6 prefixes that are assigned to the network interface.</p>
-    pub fn assigned_ipv6_prefixes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.assigned_ipv6_prefixes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.assigned_ipv6_prefixes.is_none()`.
+    pub fn assigned_ipv6_prefixes(&self) -> &[::std::string::String] {
+        self.assigned_ipv6_prefixes.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the network interface.</p>
     pub fn network_interface_id(&self) -> ::std::option::Option<&str> {

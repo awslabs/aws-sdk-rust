@@ -5,68 +5,76 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Grant {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
-    pub grant_arn: ::std::option::Option<::std::string::String>,
+    pub grant_arn: ::std::string::String,
     /// <p>Grant name.</p>
-    pub grant_name: ::std::option::Option<::std::string::String>,
+    pub grant_name: ::std::string::String,
     /// <p>Parent ARN.</p>
-    pub parent_arn: ::std::option::Option<::std::string::String>,
+    pub parent_arn: ::std::string::String,
     /// <p>License ARN.</p>
-    pub license_arn: ::std::option::Option<::std::string::String>,
+    pub license_arn: ::std::string::String,
     /// <p>The grantee principal ARN.</p>
-    pub grantee_principal_arn: ::std::option::Option<::std::string::String>,
+    pub grantee_principal_arn: ::std::string::String,
     /// <p>Home Region of the grant.</p>
-    pub home_region: ::std::option::Option<::std::string::String>,
+    pub home_region: ::std::string::String,
     /// <p>Grant status.</p>
-    pub grant_status: ::std::option::Option<crate::types::GrantStatus>,
+    pub grant_status: crate::types::GrantStatus,
     /// <p>Grant status reason.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>Grant version.</p>
-    pub version: ::std::option::Option<::std::string::String>,
+    pub version: ::std::string::String,
     /// <p>Granted operations.</p>
-    pub granted_operations: ::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>>,
+    pub granted_operations: ::std::vec::Vec<crate::types::AllowedOperation>,
     /// <p>The options specified for the grant.</p>
     pub options: ::std::option::Option<crate::types::Options>,
 }
 impl Grant {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
-    pub fn grant_arn(&self) -> ::std::option::Option<&str> {
-        self.grant_arn.as_deref()
+    pub fn grant_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.grant_arn.deref()
     }
     /// <p>Grant name.</p>
-    pub fn grant_name(&self) -> ::std::option::Option<&str> {
-        self.grant_name.as_deref()
+    pub fn grant_name(&self) -> &str {
+        use std::ops::Deref;
+        self.grant_name.deref()
     }
     /// <p>Parent ARN.</p>
-    pub fn parent_arn(&self) -> ::std::option::Option<&str> {
-        self.parent_arn.as_deref()
+    pub fn parent_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.parent_arn.deref()
     }
     /// <p>License ARN.</p>
-    pub fn license_arn(&self) -> ::std::option::Option<&str> {
-        self.license_arn.as_deref()
+    pub fn license_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.license_arn.deref()
     }
     /// <p>The grantee principal ARN.</p>
-    pub fn grantee_principal_arn(&self) -> ::std::option::Option<&str> {
-        self.grantee_principal_arn.as_deref()
+    pub fn grantee_principal_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.grantee_principal_arn.deref()
     }
     /// <p>Home Region of the grant.</p>
-    pub fn home_region(&self) -> ::std::option::Option<&str> {
-        self.home_region.as_deref()
+    pub fn home_region(&self) -> &str {
+        use std::ops::Deref;
+        self.home_region.deref()
     }
     /// <p>Grant status.</p>
-    pub fn grant_status(&self) -> ::std::option::Option<&crate::types::GrantStatus> {
-        self.grant_status.as_ref()
+    pub fn grant_status(&self) -> &crate::types::GrantStatus {
+        &self.grant_status
     }
     /// <p>Grant status reason.</p>
     pub fn status_reason(&self) -> ::std::option::Option<&str> {
         self.status_reason.as_deref()
     }
     /// <p>Grant version.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
-        self.version.as_deref()
+    pub fn version(&self) -> &str {
+        use std::ops::Deref;
+        self.version.deref()
     }
     /// <p>Granted operations.</p>
-    pub fn granted_operations(&self) -> ::std::option::Option<&[crate::types::AllowedOperation]> {
-        self.granted_operations.as_deref()
+    pub fn granted_operations(&self) -> &[crate::types::AllowedOperation] {
+        use std::ops::Deref;
+        self.granted_operations.deref()
     }
     /// <p>The options specified for the grant.</p>
     pub fn options(&self) -> ::std::option::Option<&crate::types::Options> {
@@ -98,6 +106,7 @@ pub struct GrantBuilder {
 }
 impl GrantBuilder {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
+    /// This field is required.
     pub fn grant_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grant_arn = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +121,7 @@ impl GrantBuilder {
         &self.grant_arn
     }
     /// <p>Grant name.</p>
+    /// This field is required.
     pub fn grant_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grant_name = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +136,7 @@ impl GrantBuilder {
         &self.grant_name
     }
     /// <p>Parent ARN.</p>
+    /// This field is required.
     pub fn parent_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_arn = ::std::option::Option::Some(input.into());
         self
@@ -140,6 +151,7 @@ impl GrantBuilder {
         &self.parent_arn
     }
     /// <p>License ARN.</p>
+    /// This field is required.
     pub fn license_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_arn = ::std::option::Option::Some(input.into());
         self
@@ -154,6 +166,7 @@ impl GrantBuilder {
         &self.license_arn
     }
     /// <p>The grantee principal ARN.</p>
+    /// This field is required.
     pub fn grantee_principal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grantee_principal_arn = ::std::option::Option::Some(input.into());
         self
@@ -168,6 +181,7 @@ impl GrantBuilder {
         &self.grantee_principal_arn
     }
     /// <p>Home Region of the grant.</p>
+    /// This field is required.
     pub fn home_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.home_region = ::std::option::Option::Some(input.into());
         self
@@ -182,6 +196,7 @@ impl GrantBuilder {
         &self.home_region
     }
     /// <p>Grant status.</p>
+    /// This field is required.
     pub fn grant_status(mut self, input: crate::types::GrantStatus) -> Self {
         self.grant_status = ::std::option::Option::Some(input);
         self
@@ -210,6 +225,7 @@ impl GrantBuilder {
         &self.status_reason
     }
     /// <p>Grant version.</p>
+    /// This field is required.
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
         self
@@ -258,19 +274,74 @@ impl GrantBuilder {
         &self.options
     }
     /// Consumes the builder and constructs a [`Grant`](crate::types::Grant).
-    pub fn build(self) -> crate::types::Grant {
-        crate::types::Grant {
-            grant_arn: self.grant_arn,
-            grant_name: self.grant_name,
-            parent_arn: self.parent_arn,
-            license_arn: self.license_arn,
-            grantee_principal_arn: self.grantee_principal_arn,
-            home_region: self.home_region,
-            grant_status: self.grant_status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`grant_arn`](crate::types::builders::GrantBuilder::grant_arn)
+    /// - [`grant_name`](crate::types::builders::GrantBuilder::grant_name)
+    /// - [`parent_arn`](crate::types::builders::GrantBuilder::parent_arn)
+    /// - [`license_arn`](crate::types::builders::GrantBuilder::license_arn)
+    /// - [`grantee_principal_arn`](crate::types::builders::GrantBuilder::grantee_principal_arn)
+    /// - [`home_region`](crate::types::builders::GrantBuilder::home_region)
+    /// - [`grant_status`](crate::types::builders::GrantBuilder::grant_status)
+    /// - [`version`](crate::types::builders::GrantBuilder::version)
+    /// - [`granted_operations`](crate::types::builders::GrantBuilder::granted_operations)
+    pub fn build(self) -> ::std::result::Result<crate::types::Grant, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Grant {
+            grant_arn: self.grant_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "grant_arn",
+                    "grant_arn was not specified but it is required when building Grant",
+                )
+            })?,
+            grant_name: self.grant_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "grant_name",
+                    "grant_name was not specified but it is required when building Grant",
+                )
+            })?,
+            parent_arn: self.parent_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "parent_arn",
+                    "parent_arn was not specified but it is required when building Grant",
+                )
+            })?,
+            license_arn: self.license_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "license_arn",
+                    "license_arn was not specified but it is required when building Grant",
+                )
+            })?,
+            grantee_principal_arn: self.grantee_principal_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "grantee_principal_arn",
+                    "grantee_principal_arn was not specified but it is required when building Grant",
+                )
+            })?,
+            home_region: self.home_region.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "home_region",
+                    "home_region was not specified but it is required when building Grant",
+                )
+            })?,
+            grant_status: self.grant_status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "grant_status",
+                    "grant_status was not specified but it is required when building Grant",
+                )
+            })?,
             status_reason: self.status_reason,
-            version: self.version,
-            granted_operations: self.granted_operations,
+            version: self.version.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "version",
+                    "version was not specified but it is required when building Grant",
+                )
+            })?,
+            granted_operations: self.granted_operations.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "granted_operations",
+                    "granted_operations was not specified but it is required when building Grant",
+                )
+            })?,
             options: self.options,
-        }
+        })
     }
 }

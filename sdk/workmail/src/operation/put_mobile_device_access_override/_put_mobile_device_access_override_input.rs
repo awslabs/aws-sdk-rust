@@ -65,6 +65,7 @@ pub struct PutMobileDeviceAccessOverrideInputBuilder {
 }
 impl PutMobileDeviceAccessOverrideInputBuilder {
     /// <p>Identifies the WorkMail organization for which you create the override.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +85,7 @@ impl PutMobileDeviceAccessOverrideInputBuilder {
     /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
     /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
@@ -108,6 +110,7 @@ impl PutMobileDeviceAccessOverrideInputBuilder {
         &self.user_id
     }
     /// <p>The mobile device for which you create the override. <code>DeviceId</code> is case insensitive.</p>
+    /// This field is required.
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_id = ::std::option::Option::Some(input.into());
         self
@@ -122,6 +125,7 @@ impl PutMobileDeviceAccessOverrideInputBuilder {
         &self.device_id
     }
     /// <p>The effect of the override, <code>ALLOW</code> or <code>DENY</code>.</p>
+    /// This field is required.
     pub fn effect(mut self, input: crate::types::MobileDeviceAccessRuleEffect) -> Self {
         self.effect = ::std::option::Option::Some(input);
         self
@@ -154,7 +158,7 @@ impl PutMobileDeviceAccessOverrideInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideInput {
             organization_id: self.organization_id,

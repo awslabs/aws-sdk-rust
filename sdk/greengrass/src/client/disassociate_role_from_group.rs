@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DisassociateRoleFromGroup`](crate::operation::disassociate_role_from_group::builders::DisassociateRoleFromGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`group_id(impl Into<String>)`](crate::operation::disassociate_role_from_group::builders::DisassociateRoleFromGroupFluentBuilder::group_id) / [`set_group_id(Option<String>)`](crate::operation::disassociate_role_from_group::builders::DisassociateRoleFromGroupFluentBuilder::set_group_id): The ID of the Greengrass group.
+    ///   - [`group_id(impl Into<String>)`](crate::operation::disassociate_role_from_group::builders::DisassociateRoleFromGroupFluentBuilder::group_id) / [`set_group_id(Option<String>)`](crate::operation::disassociate_role_from_group::builders::DisassociateRoleFromGroupFluentBuilder::set_group_id):<br>required: **true**<br>The ID of the Greengrass group.<br>
     /// - On success, responds with [`DisassociateRoleFromGroupOutput`](crate::operation::disassociate_role_from_group::DisassociateRoleFromGroupOutput) with field(s):
     ///   - [`disassociated_at(Option<String>)`](crate::operation::disassociate_role_from_group::DisassociateRoleFromGroupOutput::disassociated_at): The time, in milliseconds since the epoch, when the role was disassociated from the group.
     /// - On failure, responds with [`SdkError<DisassociateRoleFromGroupError>`](crate::operation::disassociate_role_from_group::DisassociateRoleFromGroupError)

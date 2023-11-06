@@ -19,24 +19,30 @@ pub struct BarChartSortConfiguration {
 }
 impl BarChartSortConfiguration {
     /// <p>The sort configuration of category fields.</p>
-    pub fn category_sort(&self) -> ::std::option::Option<&[crate::types::FieldSortOptions]> {
-        self.category_sort.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.category_sort.is_none()`.
+    pub fn category_sort(&self) -> &[crate::types::FieldSortOptions] {
+        self.category_sort.as_deref().unwrap_or_default()
     }
     /// <p>The limit on the number of categories displayed in a bar chart.</p>
     pub fn category_items_limit(&self) -> ::std::option::Option<&crate::types::ItemsLimitConfiguration> {
         self.category_items_limit.as_ref()
     }
     /// <p>The sort configuration of color fields in a bar chart.</p>
-    pub fn color_sort(&self) -> ::std::option::Option<&[crate::types::FieldSortOptions]> {
-        self.color_sort.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.color_sort.is_none()`.
+    pub fn color_sort(&self) -> &[crate::types::FieldSortOptions] {
+        self.color_sort.as_deref().unwrap_or_default()
     }
     /// <p>The limit on the number of values displayed in a bar chart.</p>
     pub fn color_items_limit(&self) -> ::std::option::Option<&crate::types::ItemsLimitConfiguration> {
         self.color_items_limit.as_ref()
     }
     /// <p>The sort configuration of the small multiples field.</p>
-    pub fn small_multiples_sort(&self) -> ::std::option::Option<&[crate::types::FieldSortOptions]> {
-        self.small_multiples_sort.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.small_multiples_sort.is_none()`.
+    pub fn small_multiples_sort(&self) -> &[crate::types::FieldSortOptions] {
+        self.small_multiples_sort.as_deref().unwrap_or_default()
     }
     /// <p>The limit on the number of small multiples panels that are displayed.</p>
     pub fn small_multiples_limit_configuration(&self) -> ::std::option::Option<&crate::types::ItemsLimitConfiguration> {

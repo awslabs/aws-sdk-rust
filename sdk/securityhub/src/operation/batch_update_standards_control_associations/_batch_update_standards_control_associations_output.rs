@@ -9,8 +9,10 @@ pub struct BatchUpdateStandardsControlAssociationsOutput {
 }
 impl BatchUpdateStandardsControlAssociationsOutput {
     /// <p> A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) whose enablement status in a specified standard couldn't be updated. </p>
-    pub fn unprocessed_association_updates(&self) -> ::std::option::Option<&[crate::types::UnprocessedStandardsControlAssociationUpdate]> {
-        self.unprocessed_association_updates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unprocessed_association_updates.is_none()`.
+    pub fn unprocessed_association_updates(&self) -> &[crate::types::UnprocessedStandardsControlAssociationUpdate] {
+        self.unprocessed_association_updates.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchUpdateStandardsControlAssociationsOutput {

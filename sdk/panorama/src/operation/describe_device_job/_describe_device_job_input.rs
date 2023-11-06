@@ -27,6 +27,7 @@ pub struct DescribeDeviceJobInputBuilder {
 }
 impl DescribeDeviceJobInputBuilder {
     /// <p>The job's ID.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeDeviceJobInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDeviceJobInput`](crate::operation::describe_device_job::DescribeDeviceJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_device_job::DescribeDeviceJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_device_job::DescribeDeviceJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_device_job::DescribeDeviceJobInput { job_id: self.job_id })
     }
 }

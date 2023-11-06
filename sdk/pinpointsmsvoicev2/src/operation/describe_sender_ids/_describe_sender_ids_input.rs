@@ -14,12 +14,16 @@ pub struct DescribeSenderIdsInput {
 }
 impl DescribeSenderIdsInput {
     /// <p>An array of SenderIdAndCountry objects to search for.</p>
-    pub fn sender_ids(&self) -> ::std::option::Option<&[crate::types::SenderIdAndCountry]> {
-        self.sender_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sender_ids.is_none()`.
+    pub fn sender_ids(&self) -> &[crate::types::SenderIdAndCountry] {
+        self.sender_ids.as_deref().unwrap_or_default()
     }
     /// <p>An array of SenderIdFilter objects to filter the results.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::SenderIdFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::SenderIdFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -118,7 +122,7 @@ impl DescribeSenderIdsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSenderIdsInput`](crate::operation::describe_sender_ids::DescribeSenderIdsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_sender_ids::DescribeSenderIdsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_sender_ids::DescribeSenderIdsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_sender_ids::DescribeSenderIdsInput {
             sender_ids: self.sender_ids,
             filters: self.filters,

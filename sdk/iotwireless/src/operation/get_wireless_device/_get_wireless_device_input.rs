@@ -34,6 +34,7 @@ pub struct GetWirelessDeviceInputBuilder {
 }
 impl GetWirelessDeviceInputBuilder {
     /// <p>The identifier of the wireless device to get.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetWirelessDeviceInputBuilder {
         &self.identifier
     }
     /// <p>The type of identifier used in <code>identifier</code>.</p>
+    /// This field is required.
     pub fn identifier_type(mut self, input: crate::types::WirelessDeviceIdType) -> Self {
         self.identifier_type = ::std::option::Option::Some(input);
         self
@@ -64,7 +66,7 @@ impl GetWirelessDeviceInputBuilder {
     /// Consumes the builder and constructs a [`GetWirelessDeviceInput`](crate::operation::get_wireless_device::GetWirelessDeviceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_wireless_device::GetWirelessDeviceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_wireless_device::GetWirelessDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_wireless_device::GetWirelessDeviceInput {
             identifier: self.identifier,
             identifier_type: self.identifier_type,

@@ -35,6 +35,7 @@ pub struct ConnectionDrainingBuilder {
 }
 impl ConnectionDrainingBuilder {
     /// <p>Specifies whether connection draining is enabled for the load balancer.</p>
+    /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self

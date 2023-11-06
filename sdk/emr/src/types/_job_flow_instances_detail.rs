@@ -53,8 +53,10 @@ impl JobFlowInstancesDetail {
         self.instance_count
     }
     /// <p>Details about the instance groups in a cluster.</p>
-    pub fn instance_groups(&self) -> ::std::option::Option<&[crate::types::InstanceGroupDetail]> {
-        self.instance_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_groups.is_none()`.
+    pub fn instance_groups(&self) -> &[crate::types::InstanceGroupDetail] {
+        self.instance_groups.as_deref().unwrap_or_default()
     }
     /// <p>An approximation of the cost of the cluster, represented in m1.small/hours. This value is increased one time for every hour that an m1.small instance runs. Larger instances are weighted more heavily, so an Amazon EC2 instance that is roughly four times more expensive would result in the normalized instance hours being increased incrementally four times. This result is only an approximation and does not reflect the actual billing rate.</p>
     pub fn normalized_instance_hours(&self) -> ::std::option::Option<i32> {
@@ -112,6 +114,7 @@ pub struct JobFlowInstancesDetailBuilder {
 }
 impl JobFlowInstancesDetailBuilder {
     /// <p>The Amazon EC2 master node instance type.</p>
+    /// This field is required.
     pub fn master_instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_instance_type = ::std::option::Option::Some(input.into());
         self
@@ -154,6 +157,7 @@ impl JobFlowInstancesDetailBuilder {
         &self.master_instance_id
     }
     /// <p>The Amazon EC2 core and task node instance type.</p>
+    /// This field is required.
     pub fn slave_instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.slave_instance_type = ::std::option::Option::Some(input.into());
         self
@@ -168,6 +172,7 @@ impl JobFlowInstancesDetailBuilder {
         &self.slave_instance_type
     }
     /// <p>The number of Amazon EC2 instances in the cluster. If the value is 1, the same instance serves as both the master and core and task node. If the value is greater than 1, one instance is the master node and all others are core and task nodes.</p>
+    /// This field is required.
     pub fn instance_count(mut self, input: i32) -> Self {
         self.instance_count = ::std::option::Option::Some(input);
         self

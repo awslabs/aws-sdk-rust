@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AppSyncRuntime {
     /// <p>The <code>name</code> of the runtime to use. Currently, the only allowed value is <code>APPSYNC_JS</code>.</p>
-    pub name: ::std::option::Option<crate::types::RuntimeName>,
+    pub name: crate::types::RuntimeName,
     /// <p>The <code>version</code> of the runtime to use. Currently, the only allowed version is <code>1.0.0</code>.</p>
-    pub runtime_version: ::std::option::Option<::std::string::String>,
+    pub runtime_version: ::std::string::String,
 }
 impl AppSyncRuntime {
     /// <p>The <code>name</code> of the runtime to use. Currently, the only allowed value is <code>APPSYNC_JS</code>.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::RuntimeName> {
-        self.name.as_ref()
+    pub fn name(&self) -> &crate::types::RuntimeName {
+        &self.name
     }
     /// <p>The <code>version</code> of the runtime to use. Currently, the only allowed version is <code>1.0.0</code>.</p>
-    pub fn runtime_version(&self) -> ::std::option::Option<&str> {
-        self.runtime_version.as_deref()
+    pub fn runtime_version(&self) -> &str {
+        use std::ops::Deref;
+        self.runtime_version.deref()
     }
 }
 impl AppSyncRuntime {
@@ -35,6 +36,7 @@ pub struct AppSyncRuntimeBuilder {
 }
 impl AppSyncRuntimeBuilder {
     /// <p>The <code>name</code> of the runtime to use. Currently, the only allowed value is <code>APPSYNC_JS</code>.</p>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::RuntimeName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -49,6 +51,7 @@ impl AppSyncRuntimeBuilder {
         &self.name
     }
     /// <p>The <code>version</code> of the runtime to use. Currently, the only allowed version is <code>1.0.0</code>.</p>
+    /// This field is required.
     pub fn runtime_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.runtime_version = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +66,23 @@ impl AppSyncRuntimeBuilder {
         &self.runtime_version
     }
     /// Consumes the builder and constructs a [`AppSyncRuntime`](crate::types::AppSyncRuntime).
-    pub fn build(self) -> crate::types::AppSyncRuntime {
-        crate::types::AppSyncRuntime {
-            name: self.name,
-            runtime_version: self.runtime_version,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::AppSyncRuntimeBuilder::name)
+    /// - [`runtime_version`](crate::types::builders::AppSyncRuntimeBuilder::runtime_version)
+    pub fn build(self) -> ::std::result::Result<crate::types::AppSyncRuntime, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AppSyncRuntime {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building AppSyncRuntime",
+                )
+            })?,
+            runtime_version: self.runtime_version.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "runtime_version",
+                    "runtime_version was not specified but it is required when building AppSyncRuntime",
+                )
+            })?,
+        })
     }
 }

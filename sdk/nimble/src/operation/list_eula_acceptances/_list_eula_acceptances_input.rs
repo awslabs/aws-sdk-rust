@@ -12,8 +12,10 @@ pub struct ListEulaAcceptancesInput {
 }
 impl ListEulaAcceptancesInput {
     /// <p>The list of EULA IDs that have been previously accepted.</p>
-    pub fn eula_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.eula_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.eula_ids.is_none()`.
+    pub fn eula_ids(&self) -> &[::std::string::String] {
+        self.eula_ids.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -75,6 +77,7 @@ impl ListEulaAcceptancesInputBuilder {
         &self.next_token
     }
     /// <p>The studio ID. </p>
+    /// This field is required.
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
         self
@@ -91,7 +94,7 @@ impl ListEulaAcceptancesInputBuilder {
     /// Consumes the builder and constructs a [`ListEulaAcceptancesInput`](crate::operation::list_eula_acceptances::ListEulaAcceptancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_eula_acceptances::ListEulaAcceptancesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_eula_acceptances::ListEulaAcceptancesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_eula_acceptances::ListEulaAcceptancesInput {
             eula_ids: self.eula_ids,

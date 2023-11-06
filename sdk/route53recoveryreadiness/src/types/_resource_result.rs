@@ -63,6 +63,7 @@ impl ResourceResultBuilder {
         &self.component_id
     }
     /// <p>The time (UTC) that the resource was last checked for readiness, in ISO-8601 format.</p>
+    /// This field is required.
     pub fn last_checked_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_checked_timestamp = ::std::option::Option::Some(input);
         self
@@ -77,6 +78,7 @@ impl ResourceResultBuilder {
         &self.last_checked_timestamp
     }
     /// <p>The readiness of a resource.</p>
+    /// This field is required.
     pub fn readiness(mut self, input: crate::types::Readiness) -> Self {
         self.readiness = ::std::option::Option::Some(input);
         self

@@ -22,19 +22,13 @@ pub(crate) fn reflens_list_schedules_output_next_token(
 pub(crate) fn lens_list_schedule_groups_output_schedule_groups(
     input: crate::operation::list_schedule_groups::ListScheduleGroupsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ScheduleGroupSummary>> {
-    let input = match input.schedule_groups {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.schedule_groups;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_schedules_output_schedules(
     input: crate::operation::list_schedules::ListSchedulesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ScheduleSummary>> {
-    let input = match input.schedules {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.schedules;
     ::std::option::Option::Some(input)
 }

@@ -34,6 +34,7 @@ pub struct AdminDisableProviderForUserInputBuilder {
 }
 impl AdminDisableProviderForUserInputBuilder {
     /// <p>The user pool ID for the user pool.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl AdminDisableProviderForUserInputBuilder {
         &self.user_pool_id
     }
     /// <p>The user to be disabled.</p>
+    /// This field is required.
     pub fn user(mut self, input: crate::types::ProviderUserIdentifierType) -> Self {
         self.user = ::std::option::Option::Some(input);
         self
@@ -66,7 +68,7 @@ impl AdminDisableProviderForUserInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserInput {
             user_pool_id: self.user_pool_id,

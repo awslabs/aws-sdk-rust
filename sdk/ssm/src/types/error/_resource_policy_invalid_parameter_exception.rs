@@ -12,8 +12,10 @@ pub struct ResourcePolicyInvalidParameterException {
 }
 impl ResourcePolicyInvalidParameterException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn parameter_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.parameter_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameter_names.is_none()`.
+    pub fn parameter_names(&self) -> &[::std::string::String] {
+        self.parameter_names.as_deref().unwrap_or_default()
     }
 }
 impl ResourcePolicyInvalidParameterException {

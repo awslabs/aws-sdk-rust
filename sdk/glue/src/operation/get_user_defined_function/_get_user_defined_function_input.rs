@@ -55,6 +55,7 @@ impl GetUserDefinedFunctionInputBuilder {
         &self.catalog_id
     }
     /// <p>The name of the catalog database where the function is located.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl GetUserDefinedFunctionInputBuilder {
         &self.database_name
     }
     /// <p>The name of the function.</p>
+    /// This field is required.
     pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_name = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +89,7 @@ impl GetUserDefinedFunctionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_user_defined_function::GetUserDefinedFunctionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_user_defined_function::GetUserDefinedFunctionInput {
             catalog_id: self.catalog_id,

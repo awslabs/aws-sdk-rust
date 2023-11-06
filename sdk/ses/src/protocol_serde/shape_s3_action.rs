@@ -3,7 +3,7 @@
 pub fn ser_s3_action(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::S3Action,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("TopicArn");
     if let Some(var_2) = &input.topic_arn {
@@ -11,22 +11,23 @@ pub fn ser_s3_action(
     }
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("BucketName");
-    if let Some(var_4) = &input.bucket_name {
-        scope_3.string(var_4);
+    {
+        scope_3.string(&input.bucket_name);
     }
     #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("ObjectKeyPrefix");
-    if let Some(var_6) = &input.object_key_prefix {
-        scope_5.string(var_6);
+    let mut scope_4 = writer.prefix("ObjectKeyPrefix");
+    if let Some(var_5) = &input.object_key_prefix {
+        scope_4.string(var_5);
     }
     #[allow(unused_mut)]
-    let mut scope_7 = writer.prefix("KmsKeyArn");
-    if let Some(var_8) = &input.kms_key_arn {
-        scope_7.string(var_8);
+    let mut scope_6 = writer.prefix("KmsKeyArn");
+    if let Some(var_7) = &input.kms_key_arn {
+        scope_6.string(var_7);
     }
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_s3_action(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::S3Action, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -35,6 +36,19 @@ pub fn de_s3_action(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("TopicArn") /* TopicArn com.amazonaws.ses#S3Action$TopicArn */ =>  {
+                let var_8 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_topic_arn(var_8);
+            }
+            ,
+            s if s.matches("BucketName") /* BucketName com.amazonaws.ses#S3Action$BucketName */ =>  {
                 let var_9 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -44,10 +58,10 @@ pub fn de_s3_action(
                         ?
                     )
                 ;
-                builder = builder.set_topic_arn(var_9);
+                builder = builder.set_bucket_name(var_9);
             }
             ,
-            s if s.matches("BucketName") /* BucketName com.amazonaws.ses#S3Action$BucketName */ =>  {
+            s if s.matches("ObjectKeyPrefix") /* ObjectKeyPrefix com.amazonaws.ses#S3Action$ObjectKeyPrefix */ =>  {
                 let var_10 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -57,10 +71,10 @@ pub fn de_s3_action(
                         ?
                     )
                 ;
-                builder = builder.set_bucket_name(var_10);
+                builder = builder.set_object_key_prefix(var_10);
             }
             ,
-            s if s.matches("ObjectKeyPrefix") /* ObjectKeyPrefix com.amazonaws.ses#S3Action$ObjectKeyPrefix */ =>  {
+            s if s.matches("KmsKeyArn") /* KmsKeyArn com.amazonaws.ses#S3Action$KmsKeyArn */ =>  {
                 let var_11 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -70,24 +84,13 @@ pub fn de_s3_action(
                         ?
                     )
                 ;
-                builder = builder.set_object_key_prefix(var_11);
-            }
-            ,
-            s if s.matches("KmsKeyArn") /* KmsKeyArn com.amazonaws.ses#S3Action$KmsKeyArn */ =>  {
-                let var_12 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_kms_key_arn(var_12);
+                builder = builder.set_kms_key_arn(var_11);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::s3_action_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

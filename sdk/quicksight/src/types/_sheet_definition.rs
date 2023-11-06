@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SheetDefinition {
     /// <p>The unique identifier of a sheet.</p>
-    pub sheet_id: ::std::option::Option<::std::string::String>,
+    pub sheet_id: ::std::string::String,
     /// <p>The title of the sheet.</p>
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>A description of the sheet.</p>
@@ -36,8 +36,9 @@ pub struct SheetDefinition {
 }
 impl SheetDefinition {
     /// <p>The unique identifier of a sheet.</p>
-    pub fn sheet_id(&self) -> ::std::option::Option<&str> {
-        self.sheet_id.as_deref()
+    pub fn sheet_id(&self) -> &str {
+        use std::ops::Deref;
+        self.sheet_id.deref()
     }
     /// <p>The title of the sheet.</p>
     pub fn title(&self) -> ::std::option::Option<&str> {
@@ -53,30 +54,42 @@ impl SheetDefinition {
     }
     /// <p>The list of parameter controls that are on a sheet.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-controls.html">Using a Control with a Parameter in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-    pub fn parameter_controls(&self) -> ::std::option::Option<&[crate::types::ParameterControl]> {
-        self.parameter_controls.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameter_controls.is_none()`.
+    pub fn parameter_controls(&self) -> &[crate::types::ParameterControl] {
+        self.parameter_controls.as_deref().unwrap_or_default()
     }
     /// <p>The list of filter controls that are on a sheet.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/filter-controls.html">Adding filter controls to analysis sheets</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-    pub fn filter_controls(&self) -> ::std::option::Option<&[crate::types::FilterControl]> {
-        self.filter_controls.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filter_controls.is_none()`.
+    pub fn filter_controls(&self) -> &[crate::types::FilterControl] {
+        self.filter_controls.as_deref().unwrap_or_default()
     }
     /// <p>A list of the visuals that are on a sheet. Visual placement is determined by the layout of the sheet.</p>
-    pub fn visuals(&self) -> ::std::option::Option<&[crate::types::Visual]> {
-        self.visuals.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.visuals.is_none()`.
+    pub fn visuals(&self) -> &[crate::types::Visual] {
+        self.visuals.as_deref().unwrap_or_default()
     }
     /// <p>The text boxes that are on a sheet.</p>
-    pub fn text_boxes(&self) -> ::std::option::Option<&[crate::types::SheetTextBox]> {
-        self.text_boxes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.text_boxes.is_none()`.
+    pub fn text_boxes(&self) -> &[crate::types::SheetTextBox] {
+        self.text_boxes.as_deref().unwrap_or_default()
     }
     /// <p>Layouts define how the components of a sheet are arranged.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/types-of-layout.html">Types of layout</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-    pub fn layouts(&self) -> ::std::option::Option<&[crate::types::Layout]> {
-        self.layouts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.layouts.is_none()`.
+    pub fn layouts(&self) -> &[crate::types::Layout] {
+        self.layouts.as_deref().unwrap_or_default()
     }
     /// <p>The control layouts of the sheet.</p>
-    pub fn sheet_control_layouts(&self) -> ::std::option::Option<&[crate::types::SheetControlLayout]> {
-        self.sheet_control_layouts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sheet_control_layouts.is_none()`.
+    pub fn sheet_control_layouts(&self) -> &[crate::types::SheetControlLayout] {
+        self.sheet_control_layouts.as_deref().unwrap_or_default()
     }
     /// <p>The layout content type of the sheet. Choose one of the following options:</p>
     /// <ul>
@@ -112,6 +125,7 @@ pub struct SheetDefinitionBuilder {
 }
 impl SheetDefinitionBuilder {
     /// <p>The unique identifier of a sheet.</p>
+    /// This field is required.
     pub fn sheet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sheet_id = ::std::option::Option::Some(input.into());
         self
@@ -323,9 +337,16 @@ impl SheetDefinitionBuilder {
         &self.content_type
     }
     /// Consumes the builder and constructs a [`SheetDefinition`](crate::types::SheetDefinition).
-    pub fn build(self) -> crate::types::SheetDefinition {
-        crate::types::SheetDefinition {
-            sheet_id: self.sheet_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`sheet_id`](crate::types::builders::SheetDefinitionBuilder::sheet_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::SheetDefinition, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SheetDefinition {
+            sheet_id: self.sheet_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "sheet_id",
+                    "sheet_id was not specified but it is required when building SheetDefinition",
+                )
+            })?,
             title: self.title,
             description: self.description,
             name: self.name,
@@ -336,6 +357,6 @@ impl SheetDefinitionBuilder {
             layouts: self.layouts,
             sheet_control_layouts: self.sheet_control_layouts,
             content_type: self.content_type,
-        }
+        })
     }
 }

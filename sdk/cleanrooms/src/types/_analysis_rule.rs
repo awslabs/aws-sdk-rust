@@ -5,38 +5,40 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalysisRule {
     /// <p>The unique ID for the associated collaboration.</p>
-    pub collaboration_id: ::std::option::Option<::std::string::String>,
+    pub collaboration_id: ::std::string::String,
     /// <p>The type of analysis rule.</p>
-    pub r#type: ::std::option::Option<crate::types::AnalysisRuleType>,
+    pub r#type: crate::types::AnalysisRuleType,
     /// <p>The name for the analysis rule.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The time the analysis rule was created.</p>
-    pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub create_time: ::aws_smithy_types::DateTime,
     /// <p>The time the analysis rule was last updated.</p>
-    pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub update_time: ::aws_smithy_types::DateTime,
     /// <p>A policy that describes the associated data usage limitations.</p>
     pub policy: ::std::option::Option<crate::types::AnalysisRulePolicy>,
 }
 impl AnalysisRule {
     /// <p>The unique ID for the associated collaboration.</p>
-    pub fn collaboration_id(&self) -> ::std::option::Option<&str> {
-        self.collaboration_id.as_deref()
+    pub fn collaboration_id(&self) -> &str {
+        use std::ops::Deref;
+        self.collaboration_id.deref()
     }
     /// <p>The type of analysis rule.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::AnalysisRuleType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::AnalysisRuleType {
+        &self.r#type
     }
     /// <p>The name for the analysis rule.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The time the analysis rule was created.</p>
-    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.create_time.as_ref()
+    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.create_time
     }
     /// <p>The time the analysis rule was last updated.</p>
-    pub fn update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.update_time.as_ref()
+    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.update_time
     }
     /// <p>A policy that describes the associated data usage limitations.</p>
     pub fn policy(&self) -> ::std::option::Option<&crate::types::AnalysisRulePolicy> {
@@ -63,6 +65,7 @@ pub struct AnalysisRuleBuilder {
 }
 impl AnalysisRuleBuilder {
     /// <p>The unique ID for the associated collaboration.</p>
+    /// This field is required.
     pub fn collaboration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collaboration_id = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +80,7 @@ impl AnalysisRuleBuilder {
         &self.collaboration_id
     }
     /// <p>The type of analysis rule.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::AnalysisRuleType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -91,6 +95,7 @@ impl AnalysisRuleBuilder {
         &self.r#type
     }
     /// <p>The name for the analysis rule.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +110,7 @@ impl AnalysisRuleBuilder {
         &self.name
     }
     /// <p>The time the analysis rule was created.</p>
+    /// This field is required.
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
         self
@@ -119,6 +125,7 @@ impl AnalysisRuleBuilder {
         &self.create_time
     }
     /// <p>The time the analysis rule was last updated.</p>
+    /// This field is required.
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
         self
@@ -133,6 +140,7 @@ impl AnalysisRuleBuilder {
         &self.update_time
     }
     /// <p>A policy that describes the associated data usage limitations.</p>
+    /// This field is required.
     pub fn policy(mut self, input: crate::types::AnalysisRulePolicy) -> Self {
         self.policy = ::std::option::Option::Some(input);
         self
@@ -147,14 +155,45 @@ impl AnalysisRuleBuilder {
         &self.policy
     }
     /// Consumes the builder and constructs a [`AnalysisRule`](crate::types::AnalysisRule).
-    pub fn build(self) -> crate::types::AnalysisRule {
-        crate::types::AnalysisRule {
-            collaboration_id: self.collaboration_id,
-            r#type: self.r#type,
-            name: self.name,
-            create_time: self.create_time,
-            update_time: self.update_time,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`collaboration_id`](crate::types::builders::AnalysisRuleBuilder::collaboration_id)
+    /// - [`r#type`](crate::types::builders::AnalysisRuleBuilder::r#type)
+    /// - [`name`](crate::types::builders::AnalysisRuleBuilder::name)
+    /// - [`create_time`](crate::types::builders::AnalysisRuleBuilder::create_time)
+    /// - [`update_time`](crate::types::builders::AnalysisRuleBuilder::update_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::AnalysisRule, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AnalysisRule {
+            collaboration_id: self.collaboration_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "collaboration_id",
+                    "collaboration_id was not specified but it is required when building AnalysisRule",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building AnalysisRule",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building AnalysisRule",
+                )
+            })?,
+            create_time: self.create_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "create_time",
+                    "create_time was not specified but it is required when building AnalysisRule",
+                )
+            })?,
+            update_time: self.update_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "update_time",
+                    "update_time was not specified but it is required when building AnalysisRule",
+                )
+            })?,
             policy: self.policy,
-        }
+        })
     }
 }

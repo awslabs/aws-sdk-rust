@@ -31,6 +31,7 @@ pub struct DeleteCacheSubnetGroupInputBuilder {
 impl DeleteCacheSubnetGroupInputBuilder {
     /// <p>The name of the cache subnet group to delete.</p>
     /// <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p>
+    /// This field is required.
     pub fn cache_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_subnet_group_name = ::std::option::Option::Some(input.into());
         self
@@ -51,7 +52,7 @@ impl DeleteCacheSubnetGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_cache_subnet_group::DeleteCacheSubnetGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_cache_subnet_group::DeleteCacheSubnetGroupInput {
             cache_subnet_group_name: self.cache_subnet_group_name,

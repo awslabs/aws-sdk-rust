@@ -34,6 +34,7 @@ pub struct UpdateStageInputBuilder {
 }
 impl UpdateStageInputBuilder {
     /// <p>ARN of the stage to be updated.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +63,7 @@ impl UpdateStageInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`UpdateStageInput`](crate::operation::update_stage::UpdateStageInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_stage::UpdateStageInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_stage::UpdateStageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_stage::UpdateStageInput {
             arn: self.arn,
             name: self.name,

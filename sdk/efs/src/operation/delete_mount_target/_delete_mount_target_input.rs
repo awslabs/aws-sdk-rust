@@ -28,6 +28,7 @@ pub struct DeleteMountTargetInputBuilder {
 }
 impl DeleteMountTargetInputBuilder {
     /// <p>The ID of the mount target to delete (String).</p>
+    /// This field is required.
     pub fn mount_target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mount_target_id = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl DeleteMountTargetInputBuilder {
     /// Consumes the builder and constructs a [`DeleteMountTargetInput`](crate::operation::delete_mount_target::DeleteMountTargetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_mount_target::DeleteMountTargetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_mount_target::DeleteMountTargetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_mount_target::DeleteMountTargetInput {
             mount_target_id: self.mount_target_id,
         })

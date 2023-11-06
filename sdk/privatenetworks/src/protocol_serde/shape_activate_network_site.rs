@@ -35,11 +35,10 @@ pub fn de_activate_network_site_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::activate_network_site::ActivateNetworkSiteError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::activate_network_site::ActivateNetworkSiteError::ResourceNotFoundException({
@@ -50,11 +49,10 @@ pub fn de_activate_network_site_http_error(
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::activate_network_site::ActivateNetworkSiteError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::activate_network_site::ActivateNetworkSiteError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::activate_network_site::ActivateNetworkSiteError::ValidationException({
@@ -65,11 +63,10 @@ pub fn de_activate_network_site_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::activate_network_site::ActivateNetworkSiteError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::activate_network_site::ActivateNetworkSiteError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::activate_network_site::ActivateNetworkSiteError::generic(generic),
@@ -97,12 +94,12 @@ pub fn de_activate_network_site_http_response(
 
 pub fn ser_activate_network_site_input(
     input: &crate::operation::activate_network_site::ActivateNetworkSiteInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_activate_network_site_input::ser_activate_network_site_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_activate_network_site(

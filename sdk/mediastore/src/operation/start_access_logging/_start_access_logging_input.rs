@@ -27,6 +27,7 @@ pub struct StartAccessLoggingInputBuilder {
 }
 impl StartAccessLoggingInputBuilder {
     /// <p>The name of the container that you want to start access logging on.</p>
+    /// This field is required.
     pub fn container_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,8 @@ impl StartAccessLoggingInputBuilder {
     /// Consumes the builder and constructs a [`StartAccessLoggingInput`](crate::operation::start_access_logging::StartAccessLoggingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_access_logging::StartAccessLoggingInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_access_logging::StartAccessLoggingInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::start_access_logging::StartAccessLoggingInput {
             container_name: self.container_name,
         })

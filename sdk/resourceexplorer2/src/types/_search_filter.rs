@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SearchFilter {
     /// <p>The string that contains the search keywords, prefixes, and operators to control the results that can be returned by a <code>Search</code> operation. For more details, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/APIReference/about-query-syntax.html">Search query syntax</a>.</p>
-    pub filter_string: ::std::option::Option<::std::string::String>,
+    pub filter_string: ::std::string::String,
 }
 impl SearchFilter {
     /// <p>The string that contains the search keywords, prefixes, and operators to control the results that can be returned by a <code>Search</code> operation. For more details, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/APIReference/about-query-syntax.html">Search query syntax</a>.</p>
-    pub fn filter_string(&self) -> ::std::option::Option<&str> {
-        self.filter_string.as_deref()
+    pub fn filter_string(&self) -> &str {
+        use std::ops::Deref;
+        self.filter_string.deref()
     }
 }
 impl ::std::fmt::Debug for SearchFilter {
@@ -35,6 +36,7 @@ pub struct SearchFilterBuilder {
 }
 impl SearchFilterBuilder {
     /// <p>The string that contains the search keywords, prefixes, and operators to control the results that can be returned by a <code>Search</code> operation. For more details, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/APIReference/about-query-syntax.html">Search query syntax</a>.</p>
+    /// This field is required.
     pub fn filter_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter_string = ::std::option::Option::Some(input.into());
         self
@@ -49,10 +51,17 @@ impl SearchFilterBuilder {
         &self.filter_string
     }
     /// Consumes the builder and constructs a [`SearchFilter`](crate::types::SearchFilter).
-    pub fn build(self) -> crate::types::SearchFilter {
-        crate::types::SearchFilter {
-            filter_string: self.filter_string,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`filter_string`](crate::types::builders::SearchFilterBuilder::filter_string)
+    pub fn build(self) -> ::std::result::Result<crate::types::SearchFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SearchFilter {
+            filter_string: self.filter_string.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "filter_string",
+                    "filter_string was not specified but it is required when building SearchFilter",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for SearchFilterBuilder {

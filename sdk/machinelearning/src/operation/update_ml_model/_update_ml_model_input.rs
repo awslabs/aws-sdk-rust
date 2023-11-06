@@ -43,6 +43,7 @@ pub struct UpdateMlModelInputBuilder {
 }
 impl UpdateMlModelInputBuilder {
     /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
+    /// This field is required.
     pub fn ml_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ml_model_id = ::std::option::Option::Some(input.into());
         self
@@ -90,7 +91,7 @@ impl UpdateMlModelInputBuilder {
     /// Consumes the builder and constructs a [`UpdateMlModelInput`](crate::operation::update_ml_model::UpdateMlModelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_ml_model::UpdateMlModelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_ml_model::UpdateMlModelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_ml_model::UpdateMlModelInput {
             ml_model_id: self.ml_model_id,
             ml_model_name: self.ml_model_name,

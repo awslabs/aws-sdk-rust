@@ -2,12 +2,12 @@
 pub fn ser_data_set_reference(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataSetReference,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.data_set_placeholder {
-        object.key("DataSetPlaceholder").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("DataSetPlaceholder").string(input.data_set_placeholder.as_str());
     }
-    if let Some(var_2) = &input.data_set_arn {
-        object.key("DataSetArn").string(var_2.as_str());
+    {
+        object.key("DataSetArn").string(input.data_set_arn.as_str());
     }
     Ok(())
 }

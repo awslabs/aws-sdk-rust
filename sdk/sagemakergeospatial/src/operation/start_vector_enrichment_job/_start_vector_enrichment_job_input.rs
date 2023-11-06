@@ -69,6 +69,7 @@ pub struct StartVectorEnrichmentJobInputBuilder {
 }
 impl StartVectorEnrichmentJobInputBuilder {
     /// <p>The name of the Vector Enrichment job.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +112,7 @@ impl StartVectorEnrichmentJobInputBuilder {
         &self.kms_key_id
     }
     /// <p>Input configuration information for the Vector Enrichment job.</p>
+    /// This field is required.
     pub fn input_config(mut self, input: crate::types::VectorEnrichmentJobInputConfig) -> Self {
         self.input_config = ::std::option::Option::Some(input);
         self
@@ -125,6 +127,7 @@ impl StartVectorEnrichmentJobInputBuilder {
         &self.input_config
     }
     /// <p>An object containing information about the job configuration.</p>
+    /// This field is required.
     pub fn job_config(mut self, input: crate::types::VectorEnrichmentJobConfig) -> Self {
         self.job_config = ::std::option::Option::Some(input);
         self
@@ -139,6 +142,7 @@ impl StartVectorEnrichmentJobInputBuilder {
         &self.job_config
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
+    /// This field is required.
     pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -177,7 +181,7 @@ impl StartVectorEnrichmentJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_vector_enrichment_job::StartVectorEnrichmentJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_vector_enrichment_job::StartVectorEnrichmentJobInput {
             name: self.name,

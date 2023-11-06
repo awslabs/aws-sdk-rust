@@ -34,6 +34,7 @@ pub struct EnableImageBlockPublicAccessInputBuilder {
 }
 impl EnableImageBlockPublicAccessInputBuilder {
     /// <p>Specify <code>block-new-sharing</code> to enable block public access for AMIs at the account level in the specified Region. This will block any attempt to publicly share your AMIs in the specified Region.</p>
+    /// This field is required.
     pub fn image_block_public_access_state(mut self, input: crate::types::ImageBlockPublicAccessEnabledState) -> Self {
         self.image_block_public_access_state = ::std::option::Option::Some(input);
         self
@@ -66,7 +67,7 @@ impl EnableImageBlockPublicAccessInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable_image_block_public_access::EnableImageBlockPublicAccessInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::enable_image_block_public_access::EnableImageBlockPublicAccessInput {
             image_block_public_access_state: self.image_block_public_access_state,

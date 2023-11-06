@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTargetsFilter {
     /// <p>The name of the attribute you want to use to filter the returned targets.</p>
-    pub name: ::std::option::Option<crate::types::ListTargetsFilterName>,
+    pub name: crate::types::ListTargetsFilterName,
     /// <p>The value of the attribute you want to use to filter the returned targets. For example, if you specify <code>SNS</code> for the Target type, you could specify an Amazon Resource Name (ARN) for a topic as the value.</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
 }
 impl ListTargetsFilter {
     /// <p>The name of the attribute you want to use to filter the returned targets.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::ListTargetsFilterName> {
-        self.name.as_ref()
+    pub fn name(&self) -> &crate::types::ListTargetsFilterName {
+        &self.name
     }
     /// <p>The value of the attribute you want to use to filter the returned targets. For example, if you specify <code>SNS</code> for the Target type, you could specify an Amazon Resource Name (ARN) for a topic as the value.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
 }
 impl ListTargetsFilter {
@@ -35,6 +36,7 @@ pub struct ListTargetsFilterBuilder {
 }
 impl ListTargetsFilterBuilder {
     /// <p>The name of the attribute you want to use to filter the returned targets.</p>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::ListTargetsFilterName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -49,6 +51,7 @@ impl ListTargetsFilterBuilder {
         &self.name
     }
     /// <p>The value of the attribute you want to use to filter the returned targets. For example, if you specify <code>SNS</code> for the Target type, you could specify an Amazon Resource Name (ARN) for a topic as the value.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +66,23 @@ impl ListTargetsFilterBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`ListTargetsFilter`](crate::types::ListTargetsFilter).
-    pub fn build(self) -> crate::types::ListTargetsFilter {
-        crate::types::ListTargetsFilter {
-            name: self.name,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::ListTargetsFilterBuilder::name)
+    /// - [`value`](crate::types::builders::ListTargetsFilterBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::ListTargetsFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ListTargetsFilter {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ListTargetsFilter",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building ListTargetsFilter",
+                )
+            })?,
+        })
     }
 }

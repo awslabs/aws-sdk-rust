@@ -5,16 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIdentityNotificationAttributesOutput {
     /// <p>A map of Identity to IdentityNotificationAttributes.</p>
-    pub notification_attributes:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IdentityNotificationAttributes>>,
+    pub notification_attributes: ::std::collections::HashMap<::std::string::String, crate::types::IdentityNotificationAttributes>,
     _request_id: Option<String>,
 }
 impl GetIdentityNotificationAttributesOutput {
     /// <p>A map of Identity to IdentityNotificationAttributes.</p>
-    pub fn notification_attributes(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::IdentityNotificationAttributes>> {
-        self.notification_attributes.as_ref()
+    pub fn notification_attributes(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::IdentityNotificationAttributes> {
+        &self.notification_attributes
     }
 }
 impl ::aws_http::request_id::RequestId for GetIdentityNotificationAttributesOutput {
@@ -77,10 +74,24 @@ impl GetIdentityNotificationAttributesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetIdentityNotificationAttributesOutput`](crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributesOutput).
-    pub fn build(self) -> crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributesOutput {
-        crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributesOutput {
-            notification_attributes: self.notification_attributes,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`notification_attributes`](crate::operation::get_identity_notification_attributes::builders::GetIdentityNotificationAttributesOutputBuilder::notification_attributes)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributesOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributesOutput {
+                notification_attributes: self.notification_attributes.ok_or_else(|| {
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
+                        "notification_attributes",
+                        "notification_attributes was not specified but it is required when building GetIdentityNotificationAttributesOutput",
+                    )
+                })?,
+                _request_id: self._request_id,
+            },
+        )
     }
 }

@@ -55,6 +55,7 @@ pub struct CreateExtensionAssociationInputBuilder {
 }
 impl CreateExtensionAssociationInputBuilder {
     /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
+    /// This field is required.
     pub fn extension_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.extension_identifier = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +84,7 @@ impl CreateExtensionAssociationInputBuilder {
         &self.extension_version_number
     }
     /// <p>The ARN of an application, configuration profile, or environment.</p>
+    /// This field is required.
     pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_identifier = ::std::option::Option::Some(input.into());
         self
@@ -141,7 +143,7 @@ impl CreateExtensionAssociationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_extension_association::CreateExtensionAssociationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_extension_association::CreateExtensionAssociationInput {
             extension_identifier: self.extension_identifier,

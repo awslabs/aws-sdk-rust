@@ -27,6 +27,7 @@ pub struct DescribeContextInputBuilder {
 }
 impl DescribeContextInputBuilder {
     /// <p>The name of the context to describe.</p>
+    /// This field is required.
     pub fn context_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.context_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeContextInputBuilder {
     /// Consumes the builder and constructs a [`DescribeContextInput`](crate::operation::describe_context::DescribeContextInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_context::DescribeContextInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_context::DescribeContextInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_context::DescribeContextInput {
             context_name: self.context_name,
         })

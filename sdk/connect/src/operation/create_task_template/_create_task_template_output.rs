@@ -4,19 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTaskTemplateOutput {
     /// <p>The identifier of the task template resource.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) for the task template resource.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateTaskTemplateOutput {
     /// <p>The identifier of the task template resource.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the task template resource.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateTaskTemplateOutput {
@@ -41,6 +43,7 @@ pub struct CreateTaskTemplateOutputBuilder {
 }
 impl CreateTaskTemplateOutputBuilder {
     /// <p>The identifier of the task template resource.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl CreateTaskTemplateOutputBuilder {
         &self.id
     }
     /// <p>The Amazon Resource Name (ARN) for the task template resource.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -78,11 +82,27 @@ impl CreateTaskTemplateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateTaskTemplateOutput`](crate::operation::create_task_template::CreateTaskTemplateOutput).
-    pub fn build(self) -> crate::operation::create_task_template::CreateTaskTemplateOutput {
-        crate::operation::create_task_template::CreateTaskTemplateOutput {
-            id: self.id,
-            arn: self.arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::create_task_template::builders::CreateTaskTemplateOutputBuilder::id)
+    /// - [`arn`](crate::operation::create_task_template::builders::CreateTaskTemplateOutputBuilder::arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_task_template::CreateTaskTemplateOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_task_template::CreateTaskTemplateOutput {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building CreateTaskTemplateOutput",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building CreateTaskTemplateOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

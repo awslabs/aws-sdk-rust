@@ -52,6 +52,7 @@ pub struct ListDevicePositionsInputBuilder {
 }
 impl ListDevicePositionsInputBuilder {
     /// <p>The tracker resource containing the requested devices.</p>
+    /// This field is required.
     pub fn tracker_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tracker_name = ::std::option::Option::Some(input.into());
         self
@@ -116,7 +117,7 @@ impl ListDevicePositionsInputBuilder {
     /// Consumes the builder and constructs a [`ListDevicePositionsInput`](crate::operation::list_device_positions::ListDevicePositionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_device_positions::ListDevicePositionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_device_positions::ListDevicePositionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_device_positions::ListDevicePositionsInput {
             tracker_name: self.tracker_name,

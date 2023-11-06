@@ -34,6 +34,7 @@ pub struct CreateApprovalRuleTemplateOutputBuilder {
 }
 impl CreateApprovalRuleTemplateOutputBuilder {
     /// <p>The content and structure of the created approval rule template.</p>
+    /// This field is required.
     pub fn approval_rule_template(mut self, input: crate::types::ApprovalRuleTemplate) -> Self {
         self.approval_rule_template = ::std::option::Option::Some(input);
         self

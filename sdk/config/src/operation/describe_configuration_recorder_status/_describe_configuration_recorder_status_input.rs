@@ -9,8 +9,10 @@ pub struct DescribeConfigurationRecorderStatusInput {
 }
 impl DescribeConfigurationRecorderStatusInput {
     /// <p>The name(s) of the configuration recorder. If the name is not specified, the action returns the current status of all the configuration recorders associated with the account.</p>
-    pub fn configuration_recorder_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.configuration_recorder_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configuration_recorder_names.is_none()`.
+    pub fn configuration_recorder_names(&self) -> &[::std::string::String] {
+        self.configuration_recorder_names.as_deref().unwrap_or_default()
     }
 }
 impl DescribeConfigurationRecorderStatusInput {
@@ -52,7 +54,7 @@ impl DescribeConfigurationRecorderStatusInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_configuration_recorder_status::DescribeConfigurationRecorderStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_configuration_recorder_status::DescribeConfigurationRecorderStatusInput {

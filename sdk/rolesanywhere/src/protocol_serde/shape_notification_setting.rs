@@ -2,21 +2,21 @@
 pub fn ser_notification_setting(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NotificationSetting,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.enabled {
-        object.key("enabled").boolean(*var_1);
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("enabled").boolean(input.enabled);
     }
-    if let Some(var_2) = &input.event {
-        object.key("event").string(var_2.as_str());
+    {
+        object.key("event").string(input.event.as_str());
     }
-    if let Some(var_3) = &input.threshold {
+    if let Some(var_1) = &input.threshold {
         object.key("threshold").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_4) = &input.channel {
-        object.key("channel").string(var_4.as_str());
+    if let Some(var_2) = &input.channel {
+        object.key("channel").string(var_2.as_str());
     }
     Ok(())
 }

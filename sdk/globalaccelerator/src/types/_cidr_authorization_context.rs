@@ -6,18 +6,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CidrAuthorizationContext {
     /// <p>The plain-text authorization message for the prefix and account.</p>
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
     /// <p>The signed authorization message for the prefix and account.</p>
-    pub signature: ::std::option::Option<::std::string::String>,
+    pub signature: ::std::string::String,
 }
 impl CidrAuthorizationContext {
     /// <p>The plain-text authorization message for the prefix and account.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        use std::ops::Deref;
+        self.message.deref()
     }
     /// <p>The signed authorization message for the prefix and account.</p>
-    pub fn signature(&self) -> ::std::option::Option<&str> {
-        self.signature.as_deref()
+    pub fn signature(&self) -> &str {
+        use std::ops::Deref;
+        self.signature.deref()
     }
 }
 impl CidrAuthorizationContext {
@@ -36,6 +38,7 @@ pub struct CidrAuthorizationContextBuilder {
 }
 impl CidrAuthorizationContextBuilder {
     /// <p>The plain-text authorization message for the prefix and account.</p>
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -50,6 +53,7 @@ impl CidrAuthorizationContextBuilder {
         &self.message
     }
     /// <p>The signed authorization message for the prefix and account.</p>
+    /// This field is required.
     pub fn signature(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signature = ::std::option::Option::Some(input.into());
         self
@@ -64,10 +68,23 @@ impl CidrAuthorizationContextBuilder {
         &self.signature
     }
     /// Consumes the builder and constructs a [`CidrAuthorizationContext`](crate::types::CidrAuthorizationContext).
-    pub fn build(self) -> crate::types::CidrAuthorizationContext {
-        crate::types::CidrAuthorizationContext {
-            message: self.message,
-            signature: self.signature,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`message`](crate::types::builders::CidrAuthorizationContextBuilder::message)
+    /// - [`signature`](crate::types::builders::CidrAuthorizationContextBuilder::signature)
+    pub fn build(self) -> ::std::result::Result<crate::types::CidrAuthorizationContext, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CidrAuthorizationContext {
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building CidrAuthorizationContext",
+                )
+            })?,
+            signature: self.signature.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "signature",
+                    "signature was not specified but it is required when building CidrAuthorizationContext",
+                )
+            })?,
+        })
     }
 }

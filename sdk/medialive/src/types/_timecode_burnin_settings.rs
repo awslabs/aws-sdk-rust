@@ -42,6 +42,7 @@ pub struct TimecodeBurninSettingsBuilder {
 }
 impl TimecodeBurninSettingsBuilder {
     /// Choose a timecode burn-in font size
+    /// This field is required.
     pub fn font_size(mut self, input: crate::types::TimecodeBurninFontSize) -> Self {
         self.font_size = ::std::option::Option::Some(input);
         self
@@ -56,6 +57,7 @@ impl TimecodeBurninSettingsBuilder {
         &self.font_size
     }
     /// Choose a timecode burn-in output position
+    /// This field is required.
     pub fn position(mut self, input: crate::types::TimecodeBurninPosition) -> Self {
         self.position = ::std::option::Option::Some(input);
         self

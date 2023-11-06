@@ -9,8 +9,10 @@ pub struct ContainsPiiEntitiesOutput {
 }
 impl ContainsPiiEntitiesOutput {
     /// <p>The labels used in the document being analyzed. Individual labels represent personally identifiable information (PII) entity types.</p>
-    pub fn labels(&self) -> ::std::option::Option<&[crate::types::EntityLabel]> {
-        self.labels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.labels.is_none()`.
+    pub fn labels(&self) -> &[crate::types::EntityLabel] {
+        self.labels.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ContainsPiiEntitiesOutput {

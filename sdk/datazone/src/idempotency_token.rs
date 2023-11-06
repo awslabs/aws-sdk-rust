@@ -32,7 +32,7 @@ pub(crate) fn uuid_v4(input: u128) -> String {
     out
 }
 
-/// IdempotencyTokenProvider generates idempotency tokens for idempotency API requests
+/// IdempotencyTokenProvider generates idempotency tokens for idempotent API requests
 ///
 /// Generally, customers will not need to interact with this at all. A sensible default will be
 /// provided automatically during config construction. However, if you need deterministic behavior

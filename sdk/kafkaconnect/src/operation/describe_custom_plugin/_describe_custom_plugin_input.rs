@@ -27,6 +27,7 @@ pub struct DescribeCustomPluginInputBuilder {
 }
 impl DescribeCustomPluginInputBuilder {
     /// <p>Returns information about a custom plugin.</p>
+    /// This field is required.
     pub fn custom_plugin_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_plugin_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeCustomPluginInputBuilder {
     /// Consumes the builder and constructs a [`DescribeCustomPluginInput`](crate::operation::describe_custom_plugin::DescribeCustomPluginInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_custom_plugin::DescribeCustomPluginInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_custom_plugin::DescribeCustomPluginInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_custom_plugin::DescribeCustomPluginInput {
             custom_plugin_arn: self.custom_plugin_arn,

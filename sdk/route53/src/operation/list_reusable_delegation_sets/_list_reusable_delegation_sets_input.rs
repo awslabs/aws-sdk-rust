@@ -77,7 +77,7 @@ impl ListReusableDelegationSetsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_reusable_delegation_sets::ListReusableDelegationSetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_reusable_delegation_sets::ListReusableDelegationSetsInput {
             marker: self.marker,

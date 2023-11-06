@@ -8,24 +8,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreationInfo {
     /// <p>Specifies the POSIX user ID to apply to the <code>RootDirectory</code>. Accepts values from 0 to 2^32 (4294967295).</p>
-    pub owner_uid: ::std::option::Option<i64>,
+    pub owner_uid: i64,
     /// <p>Specifies the POSIX group ID to apply to the <code>RootDirectory</code>. Accepts values from 0 to 2^32 (4294967295).</p>
-    pub owner_gid: ::std::option::Option<i64>,
+    pub owner_gid: i64,
     /// <p>Specifies the POSIX permissions to apply to the <code>RootDirectory</code>, in the format of an octal number representing the file's mode bits.</p>
-    pub permissions: ::std::option::Option<::std::string::String>,
+    pub permissions: ::std::string::String,
 }
 impl CreationInfo {
     /// <p>Specifies the POSIX user ID to apply to the <code>RootDirectory</code>. Accepts values from 0 to 2^32 (4294967295).</p>
-    pub fn owner_uid(&self) -> ::std::option::Option<i64> {
+    pub fn owner_uid(&self) -> i64 {
         self.owner_uid
     }
     /// <p>Specifies the POSIX group ID to apply to the <code>RootDirectory</code>. Accepts values from 0 to 2^32 (4294967295).</p>
-    pub fn owner_gid(&self) -> ::std::option::Option<i64> {
+    pub fn owner_gid(&self) -> i64 {
         self.owner_gid
     }
     /// <p>Specifies the POSIX permissions to apply to the <code>RootDirectory</code>, in the format of an octal number representing the file's mode bits.</p>
-    pub fn permissions(&self) -> ::std::option::Option<&str> {
-        self.permissions.as_deref()
+    pub fn permissions(&self) -> &str {
+        use std::ops::Deref;
+        self.permissions.deref()
     }
 }
 impl CreationInfo {
@@ -45,6 +46,7 @@ pub struct CreationInfoBuilder {
 }
 impl CreationInfoBuilder {
     /// <p>Specifies the POSIX user ID to apply to the <code>RootDirectory</code>. Accepts values from 0 to 2^32 (4294967295).</p>
+    /// This field is required.
     pub fn owner_uid(mut self, input: i64) -> Self {
         self.owner_uid = ::std::option::Option::Some(input);
         self
@@ -59,6 +61,7 @@ impl CreationInfoBuilder {
         &self.owner_uid
     }
     /// <p>Specifies the POSIX group ID to apply to the <code>RootDirectory</code>. Accepts values from 0 to 2^32 (4294967295).</p>
+    /// This field is required.
     pub fn owner_gid(mut self, input: i64) -> Self {
         self.owner_gid = ::std::option::Option::Some(input);
         self
@@ -73,6 +76,7 @@ impl CreationInfoBuilder {
         &self.owner_gid
     }
     /// <p>Specifies the POSIX permissions to apply to the <code>RootDirectory</code>, in the format of an octal number representing the file's mode bits.</p>
+    /// This field is required.
     pub fn permissions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permissions = ::std::option::Option::Some(input.into());
         self
@@ -87,11 +91,30 @@ impl CreationInfoBuilder {
         &self.permissions
     }
     /// Consumes the builder and constructs a [`CreationInfo`](crate::types::CreationInfo).
-    pub fn build(self) -> crate::types::CreationInfo {
-        crate::types::CreationInfo {
-            owner_uid: self.owner_uid,
-            owner_gid: self.owner_gid,
-            permissions: self.permissions,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`owner_uid`](crate::types::builders::CreationInfoBuilder::owner_uid)
+    /// - [`owner_gid`](crate::types::builders::CreationInfoBuilder::owner_gid)
+    /// - [`permissions`](crate::types::builders::CreationInfoBuilder::permissions)
+    pub fn build(self) -> ::std::result::Result<crate::types::CreationInfo, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CreationInfo {
+            owner_uid: self.owner_uid.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "owner_uid",
+                    "owner_uid was not specified but it is required when building CreationInfo",
+                )
+            })?,
+            owner_gid: self.owner_gid.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "owner_gid",
+                    "owner_gid was not specified but it is required when building CreationInfo",
+                )
+            })?,
+            permissions: self.permissions.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "permissions",
+                    "permissions was not specified but it is required when building CreationInfo",
+                )
+            })?,
+        })
     }
 }

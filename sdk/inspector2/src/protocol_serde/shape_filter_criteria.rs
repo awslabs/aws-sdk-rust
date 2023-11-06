@@ -2,7 +2,7 @@
 pub fn ser_filter_criteria(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FilterCriteria,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.finding_arn {
         let mut array_2 = object.key("findingArn").start_array();
         for item_3 in var_1 {

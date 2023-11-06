@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeDataset`](crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`dataset_arn(impl Into<String>)`](crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder::dataset_arn) / [`set_dataset_arn(Option<String>)`](crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder::set_dataset_arn): <p>The ARN of the dataset.</p>
+    ///   - [`dataset_arn(impl Into<String>)`](crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder::dataset_arn) / [`set_dataset_arn(Option<String>)`](crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder::set_dataset_arn):<br>required: **true**<br><p>The ARN of the dataset.</p><br>
     /// - On success, responds with [`DescribeDatasetOutput`](crate::operation::describe_dataset::DescribeDatasetOutput) with field(s):
     ///   - [`dataset_properties(Option<DatasetProperties>)`](crate::operation::describe_dataset::DescribeDatasetOutput::dataset_properties): <p>The dataset properties.</p>
     /// - On failure, responds with [`SdkError<DescribeDatasetError>`](crate::operation::describe_dataset::DescribeDatasetError)

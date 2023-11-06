@@ -9,8 +9,10 @@ pub struct DescribeSmbFileSharesInput {
 }
 impl DescribeSmbFileSharesInput {
     /// <p>An array containing the Amazon Resource Name (ARN) of each file share to be described.</p>
-    pub fn file_share_arn_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.file_share_arn_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.file_share_arn_list.is_none()`.
+    pub fn file_share_arn_list(&self) -> &[::std::string::String] {
+        self.file_share_arn_list.as_deref().unwrap_or_default()
     }
 }
 impl DescribeSmbFileSharesInput {
@@ -50,7 +52,7 @@ impl DescribeSmbFileSharesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSmbFileSharesInput`](crate::operation::describe_smb_file_shares::DescribeSmbFileSharesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_smb_file_shares::DescribeSmbFileSharesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_smb_file_shares::DescribeSmbFileSharesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_smb_file_shares::DescribeSmbFileSharesInput {
             file_share_arn_list: self.file_share_arn_list,

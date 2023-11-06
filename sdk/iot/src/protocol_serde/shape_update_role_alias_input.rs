@@ -2,7 +2,7 @@
 pub fn ser_update_role_alias_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_role_alias::UpdateRoleAliasInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.credential_duration_seconds {
         object.key("credentialDurationSeconds").number(
             #[allow(clippy::useless_conversion)]

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteAppInstanceBot`](crate::operation::delete_app_instance_bot::builders::DeleteAppInstanceBotFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_instance_bot_arn(impl Into<String>)`](crate::operation::delete_app_instance_bot::builders::DeleteAppInstanceBotFluentBuilder::app_instance_bot_arn) / [`set_app_instance_bot_arn(Option<String>)`](crate::operation::delete_app_instance_bot::builders::DeleteAppInstanceBotFluentBuilder::set_app_instance_bot_arn): <p>The ARN of the <code>AppInstanceBot</code> being deleted.</p>
+    ///   - [`app_instance_bot_arn(impl Into<String>)`](crate::operation::delete_app_instance_bot::builders::DeleteAppInstanceBotFluentBuilder::app_instance_bot_arn) / [`set_app_instance_bot_arn(Option<String>)`](crate::operation::delete_app_instance_bot::builders::DeleteAppInstanceBotFluentBuilder::set_app_instance_bot_arn):<br>required: **true**<br><p>The ARN of the <code>AppInstanceBot</code> being deleted.</p><br>
     /// - On success, responds with [`DeleteAppInstanceBotOutput`](crate::operation::delete_app_instance_bot::DeleteAppInstanceBotOutput)
     /// - On failure, responds with [`SdkError<DeleteAppInstanceBotError>`](crate::operation::delete_app_instance_bot::DeleteAppInstanceBotError)
     pub fn delete_app_instance_bot(&self) -> crate::operation::delete_app_instance_bot::builders::DeleteAppInstanceBotFluentBuilder {

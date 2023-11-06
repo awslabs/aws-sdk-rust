@@ -35,6 +35,7 @@ pub struct UpdateControlPanelInputBuilder {
 }
 impl UpdateControlPanelInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
+    /// This field is required.
     pub fn control_panel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_panel_arn = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl UpdateControlPanelInputBuilder {
         &self.control_panel_arn
     }
     /// <p>The name of the control panel.</p>
+    /// This field is required.
     pub fn control_panel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_panel_name = ::std::option::Option::Some(input.into());
         self
@@ -65,7 +67,8 @@ impl UpdateControlPanelInputBuilder {
     /// Consumes the builder and constructs a [`UpdateControlPanelInput`](crate::operation::update_control_panel::UpdateControlPanelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_control_panel::UpdateControlPanelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_control_panel::UpdateControlPanelInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_control_panel::UpdateControlPanelInput {
             control_panel_arn: self.control_panel_arn,
             control_panel_name: self.control_panel_name,

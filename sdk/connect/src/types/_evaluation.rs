@@ -5,62 +5,64 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Evaluation {
     /// <p>A unique identifier for the contact evaluation.</p>
-    pub evaluation_id: ::std::option::Option<::std::string::String>,
+    pub evaluation_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
-    pub evaluation_arn: ::std::option::Option<::std::string::String>,
+    pub evaluation_arn: ::std::string::String,
     /// <p>Metadata about the contact evaluation.</p>
     pub metadata: ::std::option::Option<crate::types::EvaluationMetadata>,
     /// <p>A map of question identifiers to answer value.</p>
-    pub answers: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EvaluationAnswerOutput>>,
+    pub answers: ::std::collections::HashMap<::std::string::String, crate::types::EvaluationAnswerOutput>,
     /// <p>A map of question identifiers to note value.</p>
-    pub notes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EvaluationNote>>,
+    pub notes: ::std::collections::HashMap<::std::string::String, crate::types::EvaluationNote>,
     /// <p>The status of the contact evaluation.</p>
-    pub status: ::std::option::Option<crate::types::EvaluationStatus>,
+    pub status: crate::types::EvaluationStatus,
     /// <p>A map of item (section or question) identifiers to score value.</p>
     pub scores: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EvaluationScore>>,
     /// <p>The timestamp for when the evaluation was created.</p>
-    pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_time: ::aws_smithy_types::DateTime,
     /// <p>The timestamp for when the evaluation was last updated.</p>
-    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub last_modified_time: ::aws_smithy_types::DateTime,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl Evaluation {
     /// <p>A unique identifier for the contact evaluation.</p>
-    pub fn evaluation_id(&self) -> ::std::option::Option<&str> {
-        self.evaluation_id.as_deref()
+    pub fn evaluation_id(&self) -> &str {
+        use std::ops::Deref;
+        self.evaluation_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
-    pub fn evaluation_arn(&self) -> ::std::option::Option<&str> {
-        self.evaluation_arn.as_deref()
+    pub fn evaluation_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.evaluation_arn.deref()
     }
     /// <p>Metadata about the contact evaluation.</p>
     pub fn metadata(&self) -> ::std::option::Option<&crate::types::EvaluationMetadata> {
         self.metadata.as_ref()
     }
     /// <p>A map of question identifiers to answer value.</p>
-    pub fn answers(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::EvaluationAnswerOutput>> {
-        self.answers.as_ref()
+    pub fn answers(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::EvaluationAnswerOutput> {
+        &self.answers
     }
     /// <p>A map of question identifiers to note value.</p>
-    pub fn notes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::EvaluationNote>> {
-        self.notes.as_ref()
+    pub fn notes(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::EvaluationNote> {
+        &self.notes
     }
     /// <p>The status of the contact evaluation.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::EvaluationStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::EvaluationStatus {
+        &self.status
     }
     /// <p>A map of item (section or question) identifiers to score value.</p>
     pub fn scores(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::EvaluationScore>> {
         self.scores.as_ref()
     }
     /// <p>The timestamp for when the evaluation was created.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_time.as_ref()
+    pub fn created_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_time
     }
     /// <p>The timestamp for when the evaluation was last updated.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.last_modified_time.as_ref()
+    pub fn last_modified_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.last_modified_time
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -91,6 +93,7 @@ pub struct EvaluationBuilder {
 }
 impl EvaluationBuilder {
     /// <p>A unique identifier for the contact evaluation.</p>
+    /// This field is required.
     pub fn evaluation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_id = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +108,7 @@ impl EvaluationBuilder {
         &self.evaluation_id
     }
     /// <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
+    /// This field is required.
     pub fn evaluation_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_arn = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +123,7 @@ impl EvaluationBuilder {
         &self.evaluation_arn
     }
     /// <p>Metadata about the contact evaluation.</p>
+    /// This field is required.
     pub fn metadata(mut self, input: crate::types::EvaluationMetadata) -> Self {
         self.metadata = ::std::option::Option::Some(input);
         self
@@ -179,6 +184,7 @@ impl EvaluationBuilder {
         &self.notes
     }
     /// <p>The status of the contact evaluation.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::EvaluationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -216,6 +222,7 @@ impl EvaluationBuilder {
         &self.scores
     }
     /// <p>The timestamp for when the evaluation was created.</p>
+    /// This field is required.
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
         self
@@ -230,6 +237,7 @@ impl EvaluationBuilder {
         &self.created_time
     }
     /// <p>The timestamp for when the evaluation was last updated.</p>
+    /// This field is required.
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
         self
@@ -264,18 +272,61 @@ impl EvaluationBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`Evaluation`](crate::types::Evaluation).
-    pub fn build(self) -> crate::types::Evaluation {
-        crate::types::Evaluation {
-            evaluation_id: self.evaluation_id,
-            evaluation_arn: self.evaluation_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`evaluation_id`](crate::types::builders::EvaluationBuilder::evaluation_id)
+    /// - [`evaluation_arn`](crate::types::builders::EvaluationBuilder::evaluation_arn)
+    /// - [`answers`](crate::types::builders::EvaluationBuilder::answers)
+    /// - [`notes`](crate::types::builders::EvaluationBuilder::notes)
+    /// - [`status`](crate::types::builders::EvaluationBuilder::status)
+    /// - [`created_time`](crate::types::builders::EvaluationBuilder::created_time)
+    /// - [`last_modified_time`](crate::types::builders::EvaluationBuilder::last_modified_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::Evaluation, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Evaluation {
+            evaluation_id: self.evaluation_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "evaluation_id",
+                    "evaluation_id was not specified but it is required when building Evaluation",
+                )
+            })?,
+            evaluation_arn: self.evaluation_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "evaluation_arn",
+                    "evaluation_arn was not specified but it is required when building Evaluation",
+                )
+            })?,
             metadata: self.metadata,
-            answers: self.answers,
-            notes: self.notes,
-            status: self.status,
+            answers: self.answers.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "answers",
+                    "answers was not specified but it is required when building Evaluation",
+                )
+            })?,
+            notes: self.notes.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "notes",
+                    "notes was not specified but it is required when building Evaluation",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building Evaluation",
+                )
+            })?,
             scores: self.scores,
-            created_time: self.created_time,
-            last_modified_time: self.last_modified_time,
+            created_time: self.created_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_time",
+                    "created_time was not specified but it is required when building Evaluation",
+                )
+            })?,
+            last_modified_time: self.last_modified_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "last_modified_time",
+                    "last_modified_time was not specified but it is required when building Evaluation",
+                )
+            })?,
             tags: self.tags,
-        }
+        })
     }
 }

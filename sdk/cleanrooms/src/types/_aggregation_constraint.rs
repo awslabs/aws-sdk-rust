@@ -5,24 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AggregationConstraint {
     /// <p>Column in aggregation constraint for which there must be a minimum number of distinct values in an output row for it to be in the query output.</p>
-    pub column_name: ::std::option::Option<::std::string::String>,
+    pub column_name: ::std::string::String,
     /// <p>The minimum number of distinct values that an output row must be an aggregation of. Minimum threshold of distinct values for a specified column that must exist in an output row for it to be in the query output.</p>
-    pub minimum: ::std::option::Option<i32>,
+    pub minimum: i32,
     /// <p>The type of aggregation the constraint allows. The only valid value is currently `COUNT_DISTINCT`.</p>
-    pub r#type: ::std::option::Option<crate::types::AggregationType>,
+    pub r#type: crate::types::AggregationType,
 }
 impl AggregationConstraint {
     /// <p>Column in aggregation constraint for which there must be a minimum number of distinct values in an output row for it to be in the query output.</p>
-    pub fn column_name(&self) -> ::std::option::Option<&str> {
-        self.column_name.as_deref()
+    pub fn column_name(&self) -> &str {
+        use std::ops::Deref;
+        self.column_name.deref()
     }
     /// <p>The minimum number of distinct values that an output row must be an aggregation of. Minimum threshold of distinct values for a specified column that must exist in an output row for it to be in the query output.</p>
-    pub fn minimum(&self) -> ::std::option::Option<i32> {
+    pub fn minimum(&self) -> i32 {
         self.minimum
     }
     /// <p>The type of aggregation the constraint allows. The only valid value is currently `COUNT_DISTINCT`.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::AggregationType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::AggregationType {
+        &self.r#type
     }
 }
 impl AggregationConstraint {
@@ -42,6 +43,7 @@ pub struct AggregationConstraintBuilder {
 }
 impl AggregationConstraintBuilder {
     /// <p>Column in aggregation constraint for which there must be a minimum number of distinct values in an output row for it to be in the query output.</p>
+    /// This field is required.
     pub fn column_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.column_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +58,7 @@ impl AggregationConstraintBuilder {
         &self.column_name
     }
     /// <p>The minimum number of distinct values that an output row must be an aggregation of. Minimum threshold of distinct values for a specified column that must exist in an output row for it to be in the query output.</p>
+    /// This field is required.
     pub fn minimum(mut self, input: i32) -> Self {
         self.minimum = ::std::option::Option::Some(input);
         self
@@ -70,6 +73,7 @@ impl AggregationConstraintBuilder {
         &self.minimum
     }
     /// <p>The type of aggregation the constraint allows. The only valid value is currently `COUNT_DISTINCT`.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::AggregationType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -84,11 +88,30 @@ impl AggregationConstraintBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`AggregationConstraint`](crate::types::AggregationConstraint).
-    pub fn build(self) -> crate::types::AggregationConstraint {
-        crate::types::AggregationConstraint {
-            column_name: self.column_name,
-            minimum: self.minimum,
-            r#type: self.r#type,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`column_name`](crate::types::builders::AggregationConstraintBuilder::column_name)
+    /// - [`minimum`](crate::types::builders::AggregationConstraintBuilder::minimum)
+    /// - [`r#type`](crate::types::builders::AggregationConstraintBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::AggregationConstraint, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AggregationConstraint {
+            column_name: self.column_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "column_name",
+                    "column_name was not specified but it is required when building AggregationConstraint",
+                )
+            })?,
+            minimum: self.minimum.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "minimum",
+                    "minimum was not specified but it is required when building AggregationConstraint",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building AggregationConstraint",
+                )
+            })?,
+        })
     }
 }

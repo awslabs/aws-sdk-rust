@@ -2,7 +2,7 @@
 pub fn ser_criterion_additional_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CriterionAdditionalProperties,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.eq {
         let mut array_2 = object.key("eq").start_array();
         for item_3 in var_1 {
@@ -73,10 +73,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "eq" => {
-                            builder = builder.set_eq(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                            builder = builder.set_eq(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         "eqExactMatch" => {
-                            builder = builder.set_eq_exact_match(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                            builder = builder.set_eq_exact_match(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         "gt" => {
                             builder = builder.set_gt(
@@ -107,7 +107,7 @@ where
                             );
                         }
                         "neq" => {
-                            builder = builder.set_neq(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                            builder = builder.set_neq(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

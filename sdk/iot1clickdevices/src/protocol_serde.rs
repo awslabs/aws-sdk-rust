@@ -79,21 +79,17 @@ pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_update_device_state_input;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_device_description;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_device_event;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_device_method;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___map_of__string;
-
 pub(crate) mod shape_device_description;
 
 pub(crate) mod shape_device_method;
+
+pub(crate) mod shape_list_of_device_description;
+
+pub(crate) mod shape_list_of_device_event;
+
+pub(crate) mod shape_list_of_device_method;
+
+pub(crate) mod shape_map_of_string;
 
 pub(crate) mod shape_device_attributes;
 

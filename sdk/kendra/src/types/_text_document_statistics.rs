@@ -35,6 +35,7 @@ pub struct TextDocumentStatisticsBuilder {
 }
 impl TextDocumentStatisticsBuilder {
     /// <p>The number of text documents indexed.</p>
+    /// This field is required.
     pub fn indexed_text_documents_count(mut self, input: i32) -> Self {
         self.indexed_text_documents_count = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl TextDocumentStatisticsBuilder {
         &self.indexed_text_documents_count
     }
     /// <p>The total size, in bytes, of the indexed documents.</p>
+    /// This field is required.
     pub fn indexed_text_bytes(mut self, input: i64) -> Self {
         self.indexed_text_bytes = ::std::option::Option::Some(input);
         self

@@ -34,6 +34,7 @@ pub struct DescribeIdentityProviderInputBuilder {
 }
 impl DescribeIdentityProviderInputBuilder {
     /// <p>The user pool ID.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeIdentityProviderInputBuilder {
         &self.user_pool_id
     }
     /// <p>The IdP name.</p>
+    /// This field is required.
     pub fn provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider_name = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl DescribeIdentityProviderInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_identity_provider::DescribeIdentityProviderInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_identity_provider::DescribeIdentityProviderInput {
             user_pool_id: self.user_pool_id,

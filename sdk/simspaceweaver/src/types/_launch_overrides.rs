@@ -9,8 +9,10 @@ pub struct LaunchOverrides {
 }
 impl LaunchOverrides {
     /// <p>App launch commands and command line parameters that override the launch command configured in the simulation schema.</p>
-    pub fn launch_commands(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.launch_commands.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.launch_commands.is_none()`.
+    pub fn launch_commands(&self) -> &[::std::string::String] {
+        self.launch_commands.as_deref().unwrap_or_default()
     }
 }
 impl LaunchOverrides {

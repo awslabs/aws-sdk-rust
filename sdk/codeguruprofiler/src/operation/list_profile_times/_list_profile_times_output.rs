@@ -5,15 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListProfileTimesOutput {
     /// <p>The list of start times of the available profiles for the aggregation period in the specified time range. </p>
-    pub profile_times: ::std::option::Option<::std::vec::Vec<crate::types::ProfileTime>>,
+    pub profile_times: ::std::vec::Vec<crate::types::ProfileTime>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListProfileTimes</code> request. When the results of a <code>ListProfileTimes</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListProfileTimesOutput {
     /// <p>The list of start times of the available profiles for the aggregation period in the specified time range. </p>
-    pub fn profile_times(&self) -> ::std::option::Option<&[crate::types::ProfileTime]> {
-        self.profile_times.as_deref()
+    pub fn profile_times(&self) -> &[crate::types::ProfileTime] {
+        use std::ops::Deref;
+        self.profile_times.deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListProfileTimes</code> request. When the results of a <code>ListProfileTimes</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -85,11 +86,20 @@ impl ListProfileTimesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListProfileTimesOutput`](crate::operation::list_profile_times::ListProfileTimesOutput).
-    pub fn build(self) -> crate::operation::list_profile_times::ListProfileTimesOutput {
-        crate::operation::list_profile_times::ListProfileTimesOutput {
-            profile_times: self.profile_times,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`profile_times`](crate::operation::list_profile_times::builders::ListProfileTimesOutputBuilder::profile_times)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_profile_times::ListProfileTimesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_profile_times::ListProfileTimesOutput {
+            profile_times: self.profile_times.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "profile_times",
+                    "profile_times was not specified but it is required when building ListProfileTimesOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

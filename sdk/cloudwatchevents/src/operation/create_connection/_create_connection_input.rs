@@ -48,6 +48,7 @@ pub struct CreateConnectionInputBuilder {
 }
 impl CreateConnectionInputBuilder {
     /// <p>The name for the connection to create.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl CreateConnectionInputBuilder {
         &self.description
     }
     /// <p>The type of authorization to use for the connection.</p>
+    /// This field is required.
     pub fn authorization_type(mut self, input: crate::types::ConnectionAuthorizationType) -> Self {
         self.authorization_type = ::std::option::Option::Some(input);
         self
@@ -90,6 +92,7 @@ impl CreateConnectionInputBuilder {
         &self.authorization_type
     }
     /// <p>A <code>CreateConnectionAuthRequestParameters</code> object that contains the authorization parameters to use to authorize with the endpoint. </p>
+    /// This field is required.
     pub fn auth_parameters(mut self, input: crate::types::CreateConnectionAuthRequestParameters) -> Self {
         self.auth_parameters = ::std::option::Option::Some(input);
         self
@@ -106,7 +109,7 @@ impl CreateConnectionInputBuilder {
     /// Consumes the builder and constructs a [`CreateConnectionInput`](crate::operation::create_connection::CreateConnectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_connection::CreateConnectionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_connection::CreateConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_connection::CreateConnectionInput {
             name: self.name,
             description: self.description,

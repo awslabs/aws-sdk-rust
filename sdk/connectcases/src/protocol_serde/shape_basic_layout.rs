@@ -2,7 +2,7 @@
 pub fn ser_basic_layout(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BasicLayout,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.top_panel {
         #[allow(unused_mut)]
         let mut object_2 = object.key("topPanel").start_object();

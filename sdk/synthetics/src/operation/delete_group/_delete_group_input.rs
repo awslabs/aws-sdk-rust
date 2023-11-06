@@ -27,6 +27,7 @@ pub struct DeleteGroupInputBuilder {
 }
 impl DeleteGroupInputBuilder {
     /// <p>Specifies which group to delete. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
+    /// This field is required.
     pub fn group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_identifier = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl DeleteGroupInputBuilder {
         &self.group_identifier
     }
     /// Consumes the builder and constructs a [`DeleteGroupInput`](crate::operation::delete_group::DeleteGroupInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_group::DeleteGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_group::DeleteGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_group::DeleteGroupInput {
             group_identifier: self.group_identifier,
         })

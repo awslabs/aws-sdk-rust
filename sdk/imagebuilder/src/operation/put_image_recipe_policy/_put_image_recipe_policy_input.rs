@@ -34,6 +34,7 @@ pub struct PutImageRecipePolicyInputBuilder {
 }
 impl PutImageRecipePolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the image recipe that this policy should be applied to.</p>
+    /// This field is required.
     pub fn image_recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_recipe_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl PutImageRecipePolicyInputBuilder {
         &self.image_recipe_arn
     }
     /// <p>The policy to apply.</p>
+    /// This field is required.
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl PutImageRecipePolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutImageRecipePolicyInput`](crate::operation::put_image_recipe_policy::PutImageRecipePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_image_recipe_policy::PutImageRecipePolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_image_recipe_policy::PutImageRecipePolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_image_recipe_policy::PutImageRecipePolicyInput {
             image_recipe_arn: self.image_recipe_arn,

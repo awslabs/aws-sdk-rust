@@ -2,51 +2,51 @@
 pub fn ser_rule_based_matching_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RuleBasedMatchingRequest,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.enabled {
-        object.key("Enabled").boolean(*var_1);
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Enabled").boolean(input.enabled);
     }
-    if let Some(var_2) = &input.matching_rules {
-        let mut array_3 = object.key("MatchingRules").start_array();
-        for item_4 in var_2 {
+    if let Some(var_1) = &input.matching_rules {
+        let mut array_2 = object.key("MatchingRules").start_array();
+        for item_3 in var_1 {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_matching_rule::ser_matching_rule(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_matching_rule::ser_matching_rule(&mut object_4, item_3)?;
+                object_4.finish();
             }
         }
-        array_3.finish();
+        array_2.finish();
     }
-    if let Some(var_6) = &input.max_allowed_rule_level_for_merging {
+    if let Some(var_5) = &input.max_allowed_rule_level_for_merging {
         object.key("MaxAllowedRuleLevelForMerging").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
+        );
+    }
+    if let Some(var_6) = &input.max_allowed_rule_level_for_matching {
+        object.key("MaxAllowedRuleLevelForMatching").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if let Some(var_7) = &input.max_allowed_rule_level_for_matching {
-        object.key("MaxAllowedRuleLevelForMatching").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_7).into()),
-        );
-    }
-    if let Some(var_8) = &input.attribute_types_selector {
+    if let Some(var_7) = &input.attribute_types_selector {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("AttributeTypesSelector").start_object();
-        crate::protocol_serde::shape_attribute_types_selector::ser_attribute_types_selector(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_8 = object.key("AttributeTypesSelector").start_object();
+        crate::protocol_serde::shape_attribute_types_selector::ser_attribute_types_selector(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_10) = &input.conflict_resolution {
+    if let Some(var_9) = &input.conflict_resolution {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("ConflictResolution").start_object();
-        crate::protocol_serde::shape_conflict_resolution::ser_conflict_resolution(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_10 = object.key("ConflictResolution").start_object();
+        crate::protocol_serde::shape_conflict_resolution::ser_conflict_resolution(&mut object_10, var_9)?;
+        object_10.finish();
     }
-    if let Some(var_12) = &input.exporting_config {
+    if let Some(var_11) = &input.exporting_config {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("ExportingConfig").start_object();
-        crate::protocol_serde::shape_exporting_config::ser_exporting_config(&mut object_13, var_12)?;
-        object_13.finish();
+        let mut object_12 = object.key("ExportingConfig").start_object();
+        crate::protocol_serde::shape_exporting_config::ser_exporting_config(&mut object_12, var_11)?;
+        object_12.finish();
     }
     Ok(())
 }

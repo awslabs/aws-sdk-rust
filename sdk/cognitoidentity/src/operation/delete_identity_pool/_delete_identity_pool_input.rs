@@ -28,6 +28,7 @@ pub struct DeleteIdentityPoolInputBuilder {
 }
 impl DeleteIdentityPoolInputBuilder {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
+    /// This field is required.
     pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,8 @@ impl DeleteIdentityPoolInputBuilder {
     /// Consumes the builder and constructs a [`DeleteIdentityPoolInput`](crate::operation::delete_identity_pool::DeleteIdentityPoolInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_identity_pool::DeleteIdentityPoolInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_identity_pool::DeleteIdentityPoolInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_identity_pool::DeleteIdentityPoolInput {
             identity_pool_id: self.identity_pool_id,
         })

@@ -17,8 +17,10 @@ impl ContainerDistributionConfiguration {
         self.description.as_deref()
     }
     /// <p>Tags that are attached to the container distribution configuration.</p>
-    pub fn container_tags(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.container_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.container_tags.is_none()`.
+    pub fn container_tags(&self) -> &[::std::string::String] {
+        self.container_tags.as_deref().unwrap_or_default()
     }
     /// <p>The destination repository for the container distribution configuration.</p>
     pub fn target_repository(&self) -> ::std::option::Option<&crate::types::TargetContainerRepository> {
@@ -76,6 +78,7 @@ impl ContainerDistributionConfigurationBuilder {
         &self.container_tags
     }
     /// <p>The destination repository for the container distribution configuration.</p>
+    /// This field is required.
     pub fn target_repository(mut self, input: crate::types::TargetContainerRepository) -> Self {
         self.target_repository = ::std::option::Option::Some(input);
         self

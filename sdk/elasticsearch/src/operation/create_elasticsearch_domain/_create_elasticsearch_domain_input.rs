@@ -100,8 +100,10 @@ impl CreateElasticsearchDomainInput {
         self.auto_tune_options.as_ref()
     }
     /// <p>A list of <code>Tag</code> added during domain creation.</p>
-    pub fn tag_list(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tag_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_list.is_none()`.
+    pub fn tag_list(&self) -> &[crate::types::Tag] {
+        self.tag_list.as_deref().unwrap_or_default()
     }
 }
 impl CreateElasticsearchDomainInput {
@@ -134,6 +136,7 @@ pub struct CreateElasticsearchDomainInputBuilder {
 }
 impl CreateElasticsearchDomainInputBuilder {
     /// <p>The name of the Elasticsearch domain that you are creating. Domain names are unique across the domains owned by an account within an AWS region. Domain names must start with a lowercase letter and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -392,7 +395,7 @@ impl CreateElasticsearchDomainInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_elasticsearch_domain::CreateElasticsearchDomainInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_elasticsearch_domain::CreateElasticsearchDomainInput {
             domain_name: self.domain_name,

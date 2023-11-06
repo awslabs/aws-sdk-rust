@@ -2,7 +2,7 @@
 pub fn ser_describe_jobs_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_jobs::DescribeJobsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.account_id {
         object.key("accountID").string(var_1.as_str());
     }
@@ -12,14 +12,14 @@ pub fn ser_describe_jobs_input(
         crate::protocol_serde::shape_describe_jobs_request_filters::ser_describe_jobs_request_filters(&mut object_3, var_2)?;
         object_3.finish();
     }
-    if input.max_results != 0 {
+    if let Some(var_4) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.max_results).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_4) = &input.next_token {
-        object.key("nextToken").string(var_4.as_str());
+    if let Some(var_5) = &input.next_token {
+        object.key("nextToken").string(var_5.as_str());
     }
     Ok(())
 }

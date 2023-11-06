@@ -28,6 +28,7 @@ pub struct DeleteJobQueueInputBuilder {
 }
 impl DeleteJobQueueInputBuilder {
     /// <p>The short name or full Amazon Resource Name (ARN) of the queue to delete.</p>
+    /// This field is required.
     pub fn job_queue(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_queue = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl DeleteJobQueueInputBuilder {
     /// Consumes the builder and constructs a [`DeleteJobQueueInput`](crate::operation::delete_job_queue::DeleteJobQueueInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_job_queue::DeleteJobQueueInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_job_queue::DeleteJobQueueInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_job_queue::DeleteJobQueueInput { job_queue: self.job_queue })
     }
 }

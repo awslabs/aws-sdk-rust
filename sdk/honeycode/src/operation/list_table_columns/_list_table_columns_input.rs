@@ -48,6 +48,7 @@ pub struct ListTableColumnsInputBuilder {
 impl ListTableColumnsInputBuilder {
     /// <p>The ID of the workbook that contains the table whose columns are being retrieved.</p>
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    /// This field is required.
     pub fn workbook_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workbook_id = ::std::option::Option::Some(input.into());
         self
@@ -65,6 +66,7 @@ impl ListTableColumnsInputBuilder {
     }
     /// <p>The ID of the table whose columns are being retrieved.</p>
     /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    /// This field is required.
     pub fn table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_id = ::std::option::Option::Some(input.into());
         self
@@ -100,7 +102,7 @@ impl ListTableColumnsInputBuilder {
     /// Consumes the builder and constructs a [`ListTableColumnsInput`](crate::operation::list_table_columns::ListTableColumnsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_table_columns::ListTableColumnsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_table_columns::ListTableColumnsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_table_columns::ListTableColumnsInput {
             workbook_id: self.workbook_id,
             table_id: self.table_id,

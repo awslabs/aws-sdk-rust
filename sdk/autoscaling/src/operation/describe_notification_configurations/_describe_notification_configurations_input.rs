@@ -12,8 +12,10 @@ pub struct DescribeNotificationConfigurationsInput {
 }
 impl DescribeNotificationConfigurationsInput {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.auto_scaling_group_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auto_scaling_group_names.is_none()`.
+    pub fn auto_scaling_group_names(&self) -> &[::std::string::String] {
+        self.auto_scaling_group_names.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -93,7 +95,7 @@ impl DescribeNotificationConfigurationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_notification_configurations::DescribeNotificationConfigurationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_notification_configurations::DescribeNotificationConfigurationsInput {

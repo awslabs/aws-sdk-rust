@@ -32,8 +32,10 @@ impl UpdateApplicationComponentConfigInput {
         self.strategy_option.as_ref()
     }
     /// <p> The list of source code configurations to update for the application component. </p>
-    pub fn source_code_list(&self) -> ::std::option::Option<&[crate::types::SourceCode]> {
-        self.source_code_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_code_list.is_none()`.
+    pub fn source_code_list(&self) -> &[crate::types::SourceCode] {
+        self.source_code_list.as_deref().unwrap_or_default()
     }
     /// <p> Database credentials. </p>
     pub fn secrets_manager_key(&self) -> ::std::option::Option<&str> {
@@ -82,6 +84,7 @@ pub struct UpdateApplicationComponentConfigInputBuilder {
 }
 impl UpdateApplicationComponentConfigInputBuilder {
     /// <p> The ID of the application component. The ID is unique within an AWS account. </p>
+    /// This field is required.
     pub fn application_component_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_component_id = ::std::option::Option::Some(input.into());
         self
@@ -190,7 +193,7 @@ impl UpdateApplicationComponentConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_application_component_config::UpdateApplicationComponentConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_application_component_config::UpdateApplicationComponentConfigInput {

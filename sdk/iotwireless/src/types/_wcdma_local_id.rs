@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WcdmaLocalId {
     /// <p>WCDMA UTRA Absolute RF Channel Number downlink.</p>
-    pub uarfcndl: ::std::option::Option<i32>,
+    pub uarfcndl: i32,
     /// <p>Primary Scrambling Code.</p>
-    pub psc: ::std::option::Option<i32>,
+    pub psc: i32,
 }
 impl WcdmaLocalId {
     /// <p>WCDMA UTRA Absolute RF Channel Number downlink.</p>
-    pub fn uarfcndl(&self) -> ::std::option::Option<i32> {
+    pub fn uarfcndl(&self) -> i32 {
         self.uarfcndl
     }
     /// <p>Primary Scrambling Code.</p>
-    pub fn psc(&self) -> ::std::option::Option<i32> {
+    pub fn psc(&self) -> i32 {
         self.psc
     }
 }
@@ -35,6 +35,7 @@ pub struct WcdmaLocalIdBuilder {
 }
 impl WcdmaLocalIdBuilder {
     /// <p>WCDMA UTRA Absolute RF Channel Number downlink.</p>
+    /// This field is required.
     pub fn uarfcndl(mut self, input: i32) -> Self {
         self.uarfcndl = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl WcdmaLocalIdBuilder {
         &self.uarfcndl
     }
     /// <p>Primary Scrambling Code.</p>
+    /// This field is required.
     pub fn psc(mut self, input: i32) -> Self {
         self.psc = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl WcdmaLocalIdBuilder {
         &self.psc
     }
     /// Consumes the builder and constructs a [`WcdmaLocalId`](crate::types::WcdmaLocalId).
-    pub fn build(self) -> crate::types::WcdmaLocalId {
-        crate::types::WcdmaLocalId {
-            uarfcndl: self.uarfcndl,
-            psc: self.psc,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`uarfcndl`](crate::types::builders::WcdmaLocalIdBuilder::uarfcndl)
+    /// - [`psc`](crate::types::builders::WcdmaLocalIdBuilder::psc)
+    pub fn build(self) -> ::std::result::Result<crate::types::WcdmaLocalId, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::WcdmaLocalId {
+            uarfcndl: self.uarfcndl.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "uarfcndl",
+                    "uarfcndl was not specified but it is required when building WcdmaLocalId",
+                )
+            })?,
+            psc: self.psc.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "psc",
+                    "psc was not specified but it is required when building WcdmaLocalId",
+                )
+            })?,
+        })
     }
 }

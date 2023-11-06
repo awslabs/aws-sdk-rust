@@ -48,6 +48,7 @@ pub struct NotifyApplicationStateInputBuilder {
 }
 impl NotifyApplicationStateInputBuilder {
     /// <p>The configurationId in Application Discovery Service that uniquely identifies the grouped application.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl NotifyApplicationStateInputBuilder {
         &self.application_id
     }
     /// <p>Status of the application - Not Started, In-Progress, Complete.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::ApplicationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -106,8 +108,10 @@ impl NotifyApplicationStateInputBuilder {
     /// Consumes the builder and constructs a [`NotifyApplicationStateInput`](crate::operation::notify_application_state::NotifyApplicationStateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::notify_application_state::NotifyApplicationStateInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::notify_application_state::NotifyApplicationStateInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::notify_application_state::NotifyApplicationStateInput {
             application_id: self.application_id,
             status: self.status,

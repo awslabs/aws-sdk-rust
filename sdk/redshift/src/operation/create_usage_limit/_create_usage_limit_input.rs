@@ -44,8 +44,10 @@ impl CreateUsageLimitInput {
         self.breach_action.as_ref()
     }
     /// <p>A list of tag instances.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateUsageLimitInput {
@@ -69,6 +71,7 @@ pub struct CreateUsageLimitInputBuilder {
 }
 impl CreateUsageLimitInputBuilder {
     /// <p>The identifier of the cluster that you want to limit usage.</p>
+    /// This field is required.
     pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +86,7 @@ impl CreateUsageLimitInputBuilder {
         &self.cluster_identifier
     }
     /// <p>The Amazon Redshift feature that you want to limit.</p>
+    /// This field is required.
     pub fn feature_type(mut self, input: crate::types::UsageLimitFeatureType) -> Self {
         self.feature_type = ::std::option::Option::Some(input);
         self
@@ -97,6 +101,7 @@ impl CreateUsageLimitInputBuilder {
         &self.feature_type
     }
     /// <p>The type of limit. Depending on the feature type, this can be based on a time duration or data size. If <code>FeatureType</code> is <code>spectrum</code>, then <code>LimitType</code> must be <code>data-scanned</code>. If <code>FeatureType</code> is <code>concurrency-scaling</code>, then <code>LimitType</code> must be <code>time</code>. If <code>FeatureType</code> is <code>cross-region-datasharing</code>, then <code>LimitType</code> must be <code>data-scanned</code>. </p>
+    /// This field is required.
     pub fn limit_type(mut self, input: crate::types::UsageLimitLimitType) -> Self {
         self.limit_type = ::std::option::Option::Some(input);
         self
@@ -111,6 +116,7 @@ impl CreateUsageLimitInputBuilder {
         &self.limit_type
     }
     /// <p>The limit amount. If time-based, this amount is in minutes. If data-based, this amount is in terabytes (TB). The value must be a positive number. </p>
+    /// This field is required.
     pub fn amount(mut self, input: i64) -> Self {
         self.amount = ::std::option::Option::Some(input);
         self
@@ -175,7 +181,7 @@ impl CreateUsageLimitInputBuilder {
     /// Consumes the builder and constructs a [`CreateUsageLimitInput`](crate::operation::create_usage_limit::CreateUsageLimitInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_usage_limit::CreateUsageLimitInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_usage_limit::CreateUsageLimitInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_usage_limit::CreateUsageLimitInput {
             cluster_identifier: self.cluster_identifier,
             feature_type: self.feature_type,

@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetTargetNameMap {
     /// <p>The identifier of the inventory asset.</p>
-    pub asset_id: ::std::option::Option<::std::string::String>,
+    pub asset_id: ::std::string::String,
     /// <p>The target name in the asset target name map.</p>
-    pub target_name: ::std::option::Option<::std::string::String>,
+    pub target_name: ::std::string::String,
 }
 impl AssetTargetNameMap {
     /// <p>The identifier of the inventory asset.</p>
-    pub fn asset_id(&self) -> ::std::option::Option<&str> {
-        self.asset_id.as_deref()
+    pub fn asset_id(&self) -> &str {
+        use std::ops::Deref;
+        self.asset_id.deref()
     }
     /// <p>The target name in the asset target name map.</p>
-    pub fn target_name(&self) -> ::std::option::Option<&str> {
-        self.target_name.as_deref()
+    pub fn target_name(&self) -> &str {
+        use std::ops::Deref;
+        self.target_name.deref()
     }
 }
 impl AssetTargetNameMap {
@@ -35,6 +37,7 @@ pub struct AssetTargetNameMapBuilder {
 }
 impl AssetTargetNameMapBuilder {
     /// <p>The identifier of the inventory asset.</p>
+    /// This field is required.
     pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl AssetTargetNameMapBuilder {
         &self.asset_id
     }
     /// <p>The target name in the asset target name map.</p>
+    /// This field is required.
     pub fn target_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl AssetTargetNameMapBuilder {
         &self.target_name
     }
     /// Consumes the builder and constructs a [`AssetTargetNameMap`](crate::types::AssetTargetNameMap).
-    pub fn build(self) -> crate::types::AssetTargetNameMap {
-        crate::types::AssetTargetNameMap {
-            asset_id: self.asset_id,
-            target_name: self.target_name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`asset_id`](crate::types::builders::AssetTargetNameMapBuilder::asset_id)
+    /// - [`target_name`](crate::types::builders::AssetTargetNameMapBuilder::target_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::AssetTargetNameMap, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AssetTargetNameMap {
+            asset_id: self.asset_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "asset_id",
+                    "asset_id was not specified but it is required when building AssetTargetNameMap",
+                )
+            })?,
+            target_name: self.target_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "target_name",
+                    "target_name was not specified but it is required when building AssetTargetNameMap",
+                )
+            })?,
+        })
     }
 }

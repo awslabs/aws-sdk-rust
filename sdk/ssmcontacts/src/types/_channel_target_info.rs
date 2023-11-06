@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChannelTargetInfo {
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
-    pub contact_channel_id: ::std::option::Option<::std::string::String>,
+    pub contact_channel_id: ::std::string::String,
     /// <p>The number of minutes to wait to retry sending engagement in the case the engagement initially fails.</p>
     pub retry_interval_in_minutes: ::std::option::Option<i32>,
 }
 impl ChannelTargetInfo {
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
-    pub fn contact_channel_id(&self) -> ::std::option::Option<&str> {
-        self.contact_channel_id.as_deref()
+    pub fn contact_channel_id(&self) -> &str {
+        use std::ops::Deref;
+        self.contact_channel_id.deref()
     }
     /// <p>The number of minutes to wait to retry sending engagement in the case the engagement initially fails.</p>
     pub fn retry_interval_in_minutes(&self) -> ::std::option::Option<i32> {
@@ -35,6 +36,7 @@ pub struct ChannelTargetInfoBuilder {
 }
 impl ChannelTargetInfoBuilder {
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
+    /// This field is required.
     pub fn contact_channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_channel_id = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl ChannelTargetInfoBuilder {
         &self.retry_interval_in_minutes
     }
     /// Consumes the builder and constructs a [`ChannelTargetInfo`](crate::types::ChannelTargetInfo).
-    pub fn build(self) -> crate::types::ChannelTargetInfo {
-        crate::types::ChannelTargetInfo {
-            contact_channel_id: self.contact_channel_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`contact_channel_id`](crate::types::builders::ChannelTargetInfoBuilder::contact_channel_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::ChannelTargetInfo, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ChannelTargetInfo {
+            contact_channel_id: self.contact_channel_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "contact_channel_id",
+                    "contact_channel_id was not specified but it is required when building ChannelTargetInfo",
+                )
+            })?,
             retry_interval_in_minutes: self.retry_interval_in_minutes,
-        }
+        })
     }
 }

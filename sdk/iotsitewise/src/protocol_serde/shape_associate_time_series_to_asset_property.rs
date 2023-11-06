@@ -32,11 +32,10 @@ pub fn de_associate_time_series_to_asset_property_http_error(
                     )
                     .map_err(crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::conflicting_operation_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -49,11 +48,10 @@ pub fn de_associate_time_series_to_asset_property_http_error(
                     output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output)
                         .map_err(crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::internal_failure_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -66,11 +64,10 @@ pub fn de_associate_time_series_to_asset_property_http_error(
                     output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output)
                         .map_err(crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::invalid_request_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -84,11 +81,10 @@ pub fn de_associate_time_series_to_asset_property_http_error(
                         crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                             .map_err(crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::resource_not_found_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -101,11 +97,10 @@ pub fn de_associate_time_series_to_asset_property_http_error(
                     output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                         .map_err(crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::throttling_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -133,7 +128,7 @@ pub fn de_associate_time_series_to_asset_property_http_response(
 
 pub fn ser_associate_time_series_to_asset_property_input(
     input: &crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_associate_time_series_to_asset_property_input::ser_associate_time_series_to_asset_property_input(
@@ -141,5 +136,5 @@ pub fn ser_associate_time_series_to_asset_property_input(
         input,
     )?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

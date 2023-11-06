@@ -27,6 +27,7 @@ pub struct GetSolNetworkPackageInputBuilder {
 }
 impl GetSolNetworkPackageInputBuilder {
     /// <p>ID of the network service descriptor in the network package.</p>
+    /// This field is required.
     pub fn nsd_info_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nsd_info_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetSolNetworkPackageInputBuilder {
     /// Consumes the builder and constructs a [`GetSolNetworkPackageInput`](crate::operation::get_sol_network_package::GetSolNetworkPackageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_sol_network_package::GetSolNetworkPackageInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_sol_network_package::GetSolNetworkPackageInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_sol_network_package::GetSolNetworkPackageInput {
             nsd_info_id: self.nsd_info_id,

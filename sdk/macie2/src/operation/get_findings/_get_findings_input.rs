@@ -10,8 +10,10 @@ pub struct GetFindingsInput {
 }
 impl GetFindingsInput {
     /// <p>An array of strings that lists the unique identifiers for the findings to retrieve. You can specify as many as 50 unique identifiers in this array.</p>
-    pub fn finding_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.finding_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.finding_ids.is_none()`.
+    pub fn finding_ids(&self) -> &[::std::string::String] {
+        self.finding_ids.as_deref().unwrap_or_default()
     }
     /// <p>The criteria for sorting the results of the request.</p>
     pub fn sort_criteria(&self) -> ::std::option::Option<&crate::types::SortCriteria> {
@@ -68,7 +70,7 @@ impl GetFindingsInputBuilder {
         &self.sort_criteria
     }
     /// Consumes the builder and constructs a [`GetFindingsInput`](crate::operation::get_findings::GetFindingsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_findings::GetFindingsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_findings::GetFindingsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_findings::GetFindingsInput {
             finding_ids: self.finding_ids,
             sort_criteria: self.sort_criteria,

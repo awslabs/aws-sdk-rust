@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PreviewAgentsOutput {
     /// <p>The resulting list of agents.</p>
-    pub agent_previews: ::std::option::Option<::std::vec::Vec<crate::types::AgentPreview>>,
+    pub agent_previews: ::std::vec::Vec<crate::types::AgentPreview>,
     /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl PreviewAgentsOutput {
     /// <p>The resulting list of agents.</p>
-    pub fn agent_previews(&self) -> ::std::option::Option<&[crate::types::AgentPreview]> {
-        self.agent_previews.as_deref()
+    pub fn agent_previews(&self) -> &[crate::types::AgentPreview] {
+        use std::ops::Deref;
+        self.agent_previews.deref()
     }
     /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl PreviewAgentsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PreviewAgentsOutput`](crate::operation::preview_agents::PreviewAgentsOutput).
-    pub fn build(self) -> crate::operation::preview_agents::PreviewAgentsOutput {
-        crate::operation::preview_agents::PreviewAgentsOutput {
-            agent_previews: self.agent_previews,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`agent_previews`](crate::operation::preview_agents::builders::PreviewAgentsOutputBuilder::agent_previews)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::preview_agents::PreviewAgentsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::preview_agents::PreviewAgentsOutput {
+            agent_previews: self.agent_previews.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "agent_previews",
+                    "agent_previews was not specified but it is required when building PreviewAgentsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

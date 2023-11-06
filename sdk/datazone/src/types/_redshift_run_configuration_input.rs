@@ -7,7 +7,7 @@ pub struct RedshiftRunConfigurationInput {
     /// <p>The data access role included in the configuration details of the Amazon Redshift data source.</p>
     pub data_access_role: ::std::option::Option<::std::string::String>,
     /// <p>The relational filger configurations included in the configuration details of the Amazon Redshift data source.</p>
-    pub relational_filter_configurations: ::std::option::Option<::std::vec::Vec<crate::types::RelationalFilterConfiguration>>,
+    pub relational_filter_configurations: ::std::vec::Vec<crate::types::RelationalFilterConfiguration>,
     /// <p>The details of the credentials required to access an Amazon Redshift cluster.</p>
     pub redshift_credential_configuration: ::std::option::Option<crate::types::RedshiftCredentialConfiguration>,
     /// <p>The details of the Amazon Redshift storage as part of the configuration of an Amazon Redshift data source run.</p>
@@ -19,8 +19,9 @@ impl RedshiftRunConfigurationInput {
         self.data_access_role.as_deref()
     }
     /// <p>The relational filger configurations included in the configuration details of the Amazon Redshift data source.</p>
-    pub fn relational_filter_configurations(&self) -> ::std::option::Option<&[crate::types::RelationalFilterConfiguration]> {
-        self.relational_filter_configurations.as_deref()
+    pub fn relational_filter_configurations(&self) -> &[crate::types::RelationalFilterConfiguration] {
+        use std::ops::Deref;
+        self.relational_filter_configurations.deref()
     }
     /// <p>The details of the credentials required to access an Amazon Redshift cluster.</p>
     pub fn redshift_credential_configuration(&self) -> ::std::option::Option<&crate::types::RedshiftCredentialConfiguration> {
@@ -86,6 +87,7 @@ impl RedshiftRunConfigurationInputBuilder {
         &self.relational_filter_configurations
     }
     /// <p>The details of the credentials required to access an Amazon Redshift cluster.</p>
+    /// This field is required.
     pub fn redshift_credential_configuration(mut self, input: crate::types::RedshiftCredentialConfiguration) -> Self {
         self.redshift_credential_configuration = ::std::option::Option::Some(input);
         self
@@ -100,6 +102,7 @@ impl RedshiftRunConfigurationInputBuilder {
         &self.redshift_credential_configuration
     }
     /// <p>The details of the Amazon Redshift storage as part of the configuration of an Amazon Redshift data source run.</p>
+    /// This field is required.
     pub fn redshift_storage(mut self, input: crate::types::RedshiftStorage) -> Self {
         self.redshift_storage = ::std::option::Option::Some(input);
         self
@@ -114,12 +117,19 @@ impl RedshiftRunConfigurationInputBuilder {
         &self.redshift_storage
     }
     /// Consumes the builder and constructs a [`RedshiftRunConfigurationInput`](crate::types::RedshiftRunConfigurationInput).
-    pub fn build(self) -> crate::types::RedshiftRunConfigurationInput {
-        crate::types::RedshiftRunConfigurationInput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`relational_filter_configurations`](crate::types::builders::RedshiftRunConfigurationInputBuilder::relational_filter_configurations)
+    pub fn build(self) -> ::std::result::Result<crate::types::RedshiftRunConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RedshiftRunConfigurationInput {
             data_access_role: self.data_access_role,
-            relational_filter_configurations: self.relational_filter_configurations,
+            relational_filter_configurations: self.relational_filter_configurations.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "relational_filter_configurations",
+                    "relational_filter_configurations was not specified but it is required when building RedshiftRunConfigurationInput",
+                )
+            })?,
             redshift_credential_configuration: self.redshift_credential_configuration,
             redshift_storage: self.redshift_storage,
-        }
+        })
     }
 }

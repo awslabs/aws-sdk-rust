@@ -2,39 +2,39 @@
 pub fn ser_top_bottom_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TopBottomFilter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.filter_id {
-        object.key("FilterId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("FilterId").string(input.filter_id.as_str());
     }
-    if let Some(var_2) = &input.column {
+    if let Some(var_1) = &input.column {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("Column").start_object();
-        crate::protocol_serde::shape_column_identifier::ser_column_identifier(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("Column").start_object();
+        crate::protocol_serde::shape_column_identifier::ser_column_identifier(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.limit {
+    if let Some(var_3) = &input.limit {
         object.key("Limit").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_5) = &input.aggregation_sort_configurations {
-        let mut array_6 = object.key("AggregationSortConfigurations").start_array();
-        for item_7 in var_5 {
+    {
+        let mut array_4 = object.key("AggregationSortConfigurations").start_array();
+        for item_5 in &input.aggregation_sort_configurations {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_aggregation_sort_configuration::ser_aggregation_sort_configuration(&mut object_8, item_7)?;
-                object_8.finish();
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_aggregation_sort_configuration::ser_aggregation_sort_configuration(&mut object_6, item_5)?;
+                object_6.finish();
             }
         }
-        array_6.finish();
+        array_4.finish();
     }
-    if let Some(var_9) = &input.time_granularity {
-        object.key("TimeGranularity").string(var_9.as_str());
+    if let Some(var_7) = &input.time_granularity {
+        object.key("TimeGranularity").string(var_7.as_str());
     }
-    if let Some(var_10) = &input.parameter_name {
-        object.key("ParameterName").string(var_10.as_str());
+    if let Some(var_8) = &input.parameter_name {
+        object.key("ParameterName").string(var_8.as_str());
     }
     Ok(())
 }
@@ -100,7 +100,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::top_bottom_filter_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

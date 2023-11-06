@@ -30,16 +30,22 @@ impl CreateDecoderManifestInput {
         self.model_manifest_arn.as_deref()
     }
     /// <p> A list of information about signal decoders. </p>
-    pub fn signal_decoders(&self) -> ::std::option::Option<&[crate::types::SignalDecoder]> {
-        self.signal_decoders.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.signal_decoders.is_none()`.
+    pub fn signal_decoders(&self) -> &[crate::types::SignalDecoder] {
+        self.signal_decoders.as_deref().unwrap_or_default()
     }
     /// <p> A list of information about available network interfaces. </p>
-    pub fn network_interfaces(&self) -> ::std::option::Option<&[crate::types::NetworkInterface]> {
-        self.network_interfaces.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_interfaces.is_none()`.
+    pub fn network_interfaces(&self) -> &[crate::types::NetworkInterface] {
+        self.network_interfaces.as_deref().unwrap_or_default()
     }
     /// <p>Metadata that can be used to manage the decoder manifest.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateDecoderManifestInput {
@@ -62,6 +68,7 @@ pub struct CreateDecoderManifestInputBuilder {
 }
 impl CreateDecoderManifestInputBuilder {
     /// <p> The unique name of the decoder manifest to create.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +97,7 @@ impl CreateDecoderManifestInputBuilder {
         &self.description
     }
     /// <p> The Amazon Resource Name (ARN) of the vehicle model (model manifest). </p>
+    /// This field is required.
     pub fn model_manifest_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_manifest_arn = ::std::option::Option::Some(input.into());
         self
@@ -166,7 +174,7 @@ impl CreateDecoderManifestInputBuilder {
     /// Consumes the builder and constructs a [`CreateDecoderManifestInput`](crate::operation::create_decoder_manifest::CreateDecoderManifestInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_decoder_manifest::CreateDecoderManifestInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_decoder_manifest::CreateDecoderManifestInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_decoder_manifest::CreateDecoderManifestInput {
             name: self.name,

@@ -9,7 +9,7 @@ pub struct CopyAction {
     /// <p>Resource types that are able to be transitioned to cold storage are listed in the "Lifecycle to cold storage" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
     pub lifecycle: ::std::option::Option<crate::types::Lifecycle>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies the destination backup vault for the copied backup. For example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
-    pub destination_backup_vault_arn: ::std::option::Option<::std::string::String>,
+    pub destination_backup_vault_arn: ::std::string::String,
 }
 impl CopyAction {
     /// <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p>
@@ -19,8 +19,9 @@ impl CopyAction {
         self.lifecycle.as_ref()
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies the destination backup vault for the copied backup. For example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
-    pub fn destination_backup_vault_arn(&self) -> ::std::option::Option<&str> {
-        self.destination_backup_vault_arn.as_deref()
+    pub fn destination_backup_vault_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.destination_backup_vault_arn.deref()
     }
 }
 impl CopyAction {
@@ -59,6 +60,7 @@ impl CopyActionBuilder {
         &self.lifecycle
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies the destination backup vault for the copied backup. For example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+    /// This field is required.
     pub fn destination_backup_vault_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_backup_vault_arn = ::std::option::Option::Some(input.into());
         self
@@ -73,10 +75,17 @@ impl CopyActionBuilder {
         &self.destination_backup_vault_arn
     }
     /// Consumes the builder and constructs a [`CopyAction`](crate::types::CopyAction).
-    pub fn build(self) -> crate::types::CopyAction {
-        crate::types::CopyAction {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`destination_backup_vault_arn`](crate::types::builders::CopyActionBuilder::destination_backup_vault_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::CopyAction, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CopyAction {
             lifecycle: self.lifecycle,
-            destination_backup_vault_arn: self.destination_backup_vault_arn,
-        }
+            destination_backup_vault_arn: self.destination_backup_vault_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "destination_backup_vault_arn",
+                    "destination_backup_vault_arn was not specified but it is required when building CopyAction",
+                )
+            })?,
+        })
     }
 }

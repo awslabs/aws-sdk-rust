@@ -28,6 +28,7 @@ pub struct RestrictionsBuilder {
 }
 impl RestrictionsBuilder {
     /// <p>A complex type that controls the countries in which your content is distributed. CloudFront determines the location of your users using <code>MaxMind</code> GeoIP databases.</p>
+    /// This field is required.
     pub fn geo_restriction(mut self, input: crate::types::GeoRestriction) -> Self {
         self.geo_restriction = ::std::option::Option::Some(input);
         self

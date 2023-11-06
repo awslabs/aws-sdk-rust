@@ -34,6 +34,7 @@ pub struct DeleteAccessControlConfigurationInputBuilder {
 }
 impl DeleteAccessControlConfigurationInputBuilder {
     /// <p>The identifier of the index for an access control configuration.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteAccessControlConfigurationInputBuilder {
         &self.index_id
     }
     /// <p>The identifier of the access control configuration you want to delete.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl DeleteAccessControlConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_access_control_configuration::DeleteAccessControlConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_access_control_configuration::DeleteAccessControlConfigurationInput {

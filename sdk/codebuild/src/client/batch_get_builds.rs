@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchGetBuilds`](crate::operation::batch_get_builds::builders::BatchGetBuildsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`ids(impl Into<String>)`](crate::operation::batch_get_builds::builders::BatchGetBuildsFluentBuilder::ids) / [`set_ids(Option<Vec<String>>)`](crate::operation::batch_get_builds::builders::BatchGetBuildsFluentBuilder::set_ids): <p>The IDs of the builds.</p>
+    ///   - [`ids(impl Into<String>)`](crate::operation::batch_get_builds::builders::BatchGetBuildsFluentBuilder::ids) / [`set_ids(Option<Vec::<String>>)`](crate::operation::batch_get_builds::builders::BatchGetBuildsFluentBuilder::set_ids):<br>required: **true**<br><p>The IDs of the builds.</p><br>
     /// - On success, responds with [`BatchGetBuildsOutput`](crate::operation::batch_get_builds::BatchGetBuildsOutput) with field(s):
-    ///   - [`builds(Option<Vec<Build>>)`](crate::operation::batch_get_builds::BatchGetBuildsOutput::builds): <p>Information about the requested builds.</p>
-    ///   - [`builds_not_found(Option<Vec<String>>)`](crate::operation::batch_get_builds::BatchGetBuildsOutput::builds_not_found): <p>The IDs of builds for which information could not be found.</p>
+    ///   - [`builds(Option<Vec::<Build>>)`](crate::operation::batch_get_builds::BatchGetBuildsOutput::builds): <p>Information about the requested builds.</p>
+    ///   - [`builds_not_found(Option<Vec::<String>>)`](crate::operation::batch_get_builds::BatchGetBuildsOutput::builds_not_found): <p>The IDs of builds for which information could not be found.</p>
     /// - On failure, responds with [`SdkError<BatchGetBuildsError>`](crate::operation::batch_get_builds::BatchGetBuildsError)
     pub fn batch_get_builds(&self) -> crate::operation::batch_get_builds::builders::BatchGetBuildsFluentBuilder {
         crate::operation::batch_get_builds::builders::BatchGetBuildsFluentBuilder::new(self.handle.clone())

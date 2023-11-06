@@ -181,6 +181,7 @@ impl StartCallAnalyticsStreamTranscriptionInputBuilder {
     /// <p>Specify the language code that represents the language spoken in your audio.</p>
     /// <p>If you're unsure of the language spoken in your audio, consider using <code>IdentifyLanguage</code> to enable automatic language identification.</p>
     /// <p>For a list of languages supported with streaming Call Analytics, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
+    /// This field is required.
     pub fn language_code(mut self, input: crate::types::CallAnalyticsLanguageCode) -> Self {
         self.language_code = ::std::option::Option::Some(input);
         self
@@ -199,6 +200,7 @@ impl StartCallAnalyticsStreamTranscriptionInputBuilder {
         &self.language_code
     }
     /// <p>The sample rate of the input audio (in hertz). Low-quality audio, such as telephone audio, is typically around 8,000 Hz. High-quality audio typically ranges from 16,000 Hz to 48,000 Hz. Note that the sample rate you specify must match that of your audio.</p>
+    /// This field is required.
     pub fn media_sample_rate_hertz(mut self, input: i32) -> Self {
         self.media_sample_rate_hertz = ::std::option::Option::Some(input);
         self
@@ -219,6 +221,7 @@ impl StartCallAnalyticsStreamTranscriptionInputBuilder {
     /// <li> <p>PCM (only signed 16-bit little-endian audio formats, which does not include WAV)</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a>.</p>
+    /// This field is required.
     pub fn media_encoding(mut self, input: crate::types::MediaEncoding) -> Self {
         self.media_encoding = ::std::option::Option::Some(input);
         self
@@ -283,6 +286,7 @@ impl StartCallAnalyticsStreamTranscriptionInputBuilder {
     }
     /// <p>An encoded stream of audio blobs. Audio streams are encoded as either HTTP/2 or WebSocket data frames.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html">Transcribing streaming audio</a>.</p>
+    /// This field is required.
     pub fn audio_stream(
         mut self,
         input: ::aws_smithy_http::event_stream::EventStreamSender<crate::types::AudioStream, crate::types::error::AudioStreamError>,
@@ -473,11 +477,13 @@ impl StartCallAnalyticsStreamTranscriptionInputBuilder {
         &self.pii_entity_types
     }
     /// Consumes the builder and constructs a [`StartCallAnalyticsStreamTranscriptionInput`](crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`audio_stream`](crate::operation::start_call_analytics_stream_transcription::builders::StartCallAnalyticsStreamTranscriptionInputBuilder::audio_stream)
     pub fn build(
         self,
     ) -> ::std::result::Result<
         crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionInput {
@@ -487,7 +493,7 @@ impl StartCallAnalyticsStreamTranscriptionInputBuilder {
                 vocabulary_name: self.vocabulary_name,
                 session_id: self.session_id,
                 audio_stream: self.audio_stream.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "audio_stream",
                         "audio_stream was not specified but it is required when building StartCallAnalyticsStreamTranscriptionInput",
                     )

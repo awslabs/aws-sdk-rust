@@ -8,8 +8,10 @@ pub struct DeleteDashboardsInput {
 }
 impl DeleteDashboardsInput {
     /// <p>The dashboards to be deleted. This parameter is required.</p>
-    pub fn dashboard_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.dashboard_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dashboard_names.is_none()`.
+    pub fn dashboard_names(&self) -> &[::std::string::String] {
+        self.dashboard_names.as_deref().unwrap_or_default()
     }
 }
 impl DeleteDashboardsInput {
@@ -49,7 +51,7 @@ impl DeleteDashboardsInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDashboardsInput`](crate::operation::delete_dashboards::DeleteDashboardsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_dashboards::DeleteDashboardsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_dashboards::DeleteDashboardsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_dashboards::DeleteDashboardsInput {
             dashboard_names: self.dashboard_names,
         })

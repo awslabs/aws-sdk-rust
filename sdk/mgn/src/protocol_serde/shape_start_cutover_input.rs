@@ -2,11 +2,11 @@
 pub fn ser_start_cutover_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_cutover::StartCutoverInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.account_id {
         object.key("accountID").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.source_server_i_ds {
+    if let Some(var_2) = &input.source_server_ids {
         let mut array_3 = object.key("sourceServerIDs").start_array();
         for item_4 in var_2 {
             {

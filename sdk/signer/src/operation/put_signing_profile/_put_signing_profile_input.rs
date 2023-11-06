@@ -69,6 +69,7 @@ pub struct PutSigningProfileInputBuilder {
 }
 impl PutSigningProfileInputBuilder {
     /// <p>The name of the signing profile to be created.</p>
+    /// This field is required.
     pub fn profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_name = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +112,7 @@ impl PutSigningProfileInputBuilder {
         &self.signature_validity_period
     }
     /// <p>The ID of the signing platform to be created.</p>
+    /// This field is required.
     pub fn platform_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform_id = ::std::option::Option::Some(input.into());
         self
@@ -188,7 +190,7 @@ impl PutSigningProfileInputBuilder {
     /// Consumes the builder and constructs a [`PutSigningProfileInput`](crate::operation::put_signing_profile::PutSigningProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_signing_profile::PutSigningProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_signing_profile::PutSigningProfileInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_signing_profile::PutSigningProfileInput {
             profile_name: self.profile_name,
             signing_material: self.signing_material,

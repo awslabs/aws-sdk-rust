@@ -55,12 +55,16 @@ impl GetPropertyValueHistoryInput {
         self.component_type_id.as_deref()
     }
     /// <p>A list of properties whose value histories the request retrieves.</p>
-    pub fn selected_properties(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.selected_properties.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.selected_properties.is_none()`.
+    pub fn selected_properties(&self) -> &[::std::string::String] {
+        self.selected_properties.as_deref().unwrap_or_default()
     }
     /// <p>A list of objects that filter the property value history request.</p>
-    pub fn property_filters(&self) -> ::std::option::Option<&[crate::types::PropertyFilter]> {
-        self.property_filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.property_filters.is_none()`.
+    pub fn property_filters(&self) -> &[crate::types::PropertyFilter] {
+        self.property_filters.as_deref().unwrap_or_default()
     }
     /// <p>The date and time of the earliest property value to return.</p>
     #[deprecated(note = "This field is deprecated and will throw an error in the future. Use startTime instead.")]
@@ -128,6 +132,7 @@ pub struct GetPropertyValueHistoryInputBuilder {
 }
 impl GetPropertyValueHistoryInputBuilder {
     /// <p>The ID of the workspace.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -355,7 +360,7 @@ impl GetPropertyValueHistoryInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_property_value_history::GetPropertyValueHistoryInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_property_value_history::GetPropertyValueHistoryInput {
             workspace_id: self.workspace_id,

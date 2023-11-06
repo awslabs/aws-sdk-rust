@@ -28,6 +28,7 @@ pub struct CreateDistributionWithTagsInputBuilder {
 }
 impl CreateDistributionWithTagsInputBuilder {
     /// <p>The distribution's configuration information.</p>
+    /// This field is required.
     pub fn distribution_config_with_tags(mut self, input: crate::types::DistributionConfigWithTags) -> Self {
         self.distribution_config_with_tags = ::std::option::Option::Some(input);
         self
@@ -46,7 +47,7 @@ impl CreateDistributionWithTagsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_distribution_with_tags::CreateDistributionWithTagsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_distribution_with_tags::CreateDistributionWithTagsInput {
             distribution_config_with_tags: self.distribution_config_with_tags,

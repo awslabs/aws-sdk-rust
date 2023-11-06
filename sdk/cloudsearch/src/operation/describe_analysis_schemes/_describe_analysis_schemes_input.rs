@@ -17,8 +17,10 @@ impl DescribeAnalysisSchemesInput {
         self.domain_name.as_deref()
     }
     /// <p>The analysis schemes you want to describe.</p>
-    pub fn analysis_scheme_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.analysis_scheme_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.analysis_scheme_names.is_none()`.
+    pub fn analysis_scheme_names(&self) -> &[::std::string::String] {
+        self.analysis_scheme_names.as_deref().unwrap_or_default()
     }
     /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
     pub fn deployed(&self) -> ::std::option::Option<bool> {
@@ -42,6 +44,7 @@ pub struct DescribeAnalysisSchemesInputBuilder {
 }
 impl DescribeAnalysisSchemesInputBuilder {
     /// <p>The name of the domain you want to describe.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -94,7 +97,7 @@ impl DescribeAnalysisSchemesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesInput {
             domain_name: self.domain_name,

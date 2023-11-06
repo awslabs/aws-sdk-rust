@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetService`](crate::operation::get_service::builders::GetServiceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`service_identifier(impl Into<String>)`](crate::operation::get_service::builders::GetServiceFluentBuilder::service_identifier) / [`set_service_identifier(Option<String>)`](crate::operation::get_service::builders::GetServiceFluentBuilder::set_service_identifier): <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    ///   - [`service_identifier(impl Into<String>)`](crate::operation::get_service::builders::GetServiceFluentBuilder::service_identifier) / [`set_service_identifier(Option<String>)`](crate::operation::get_service::builders::GetServiceFluentBuilder::set_service_identifier):<br>required: **true**<br><p>The ID or Amazon Resource Name (ARN) of the service.</p><br>
     /// - On success, responds with [`GetServiceOutput`](crate::operation::get_service::GetServiceOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_service::GetServiceOutput::id): <p>The ID of the service.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_service::GetServiceOutput::name): <p>The name of the service.</p>

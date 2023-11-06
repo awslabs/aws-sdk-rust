@@ -41,6 +41,7 @@ pub struct GetCoreNetworkPolicyInputBuilder {
 }
 impl GetCoreNetworkPolicyInputBuilder {
     /// <p>The ID of a core network.</p>
+    /// This field is required.
     pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_network_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl GetCoreNetworkPolicyInputBuilder {
     /// Consumes the builder and constructs a [`GetCoreNetworkPolicyInput`](crate::operation::get_core_network_policy::GetCoreNetworkPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_core_network_policy::GetCoreNetworkPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_core_network_policy::GetCoreNetworkPolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_core_network_policy::GetCoreNetworkPolicyInput {
             core_network_id: self.core_network_id,

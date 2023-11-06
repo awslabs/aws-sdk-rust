@@ -34,6 +34,7 @@ impl DeleteCacheSecurityGroupInputBuilder {
     /// <p>The name of the cache security group to delete.</p> <note>
     /// <p>You cannot delete the default security group.</p>
     /// </note>
+    /// This field is required.
     pub fn cache_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_security_group_name = ::std::option::Option::Some(input.into());
         self
@@ -56,7 +57,7 @@ impl DeleteCacheSecurityGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_cache_security_group::DeleteCacheSecurityGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_cache_security_group::DeleteCacheSecurityGroupInput {
             cache_security_group_name: self.cache_security_group_name,

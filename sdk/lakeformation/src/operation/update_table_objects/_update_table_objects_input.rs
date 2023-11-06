@@ -32,8 +32,10 @@ impl UpdateTableObjectsInput {
         self.transaction_id.as_deref()
     }
     /// <p>A list of <code>WriteOperation</code> objects that define an object to add to or delete from the manifest for a governed table.</p>
-    pub fn write_operations(&self) -> ::std::option::Option<&[crate::types::WriteOperation]> {
-        self.write_operations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.write_operations.is_none()`.
+    pub fn write_operations(&self) -> &[crate::types::WriteOperation] {
+        self.write_operations.as_deref().unwrap_or_default()
     }
 }
 impl UpdateTableObjectsInput {
@@ -69,6 +71,7 @@ impl UpdateTableObjectsInputBuilder {
         &self.catalog_id
     }
     /// <p>The database containing the governed table to update.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +86,7 @@ impl UpdateTableObjectsInputBuilder {
         &self.database_name
     }
     /// <p>The governed table to update.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -133,7 +137,8 @@ impl UpdateTableObjectsInputBuilder {
     /// Consumes the builder and constructs a [`UpdateTableObjectsInput`](crate::operation::update_table_objects::UpdateTableObjectsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_table_objects::UpdateTableObjectsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_table_objects::UpdateTableObjectsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_table_objects::UpdateTableObjectsInput {
             catalog_id: self.catalog_id,
             database_name: self.database_name,

@@ -2,7 +2,7 @@
 pub fn ser_code_gen_configuration_node(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CodeGenConfigurationNode,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.athena_connector_source {
         #[allow(unused_mut)]
         let mut object_2 = object.key("AthenaConnectorSource").start_object();

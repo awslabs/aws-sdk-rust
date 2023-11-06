@@ -34,8 +34,10 @@ impl CreateEndpointAccessInput {
         self.subnet_group_name.as_deref()
     }
     /// <p>The security group that defines the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.</p>
-    pub fn vpc_security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.vpc_security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_group_ids.is_none()`.
+    pub fn vpc_security_group_ids(&self) -> &[::std::string::String] {
+        self.vpc_security_group_ids.as_deref().unwrap_or_default()
     }
 }
 impl CreateEndpointAccessInput {
@@ -86,6 +88,7 @@ impl CreateEndpointAccessInputBuilder {
     }
     /// <p>The Redshift-managed VPC endpoint name.</p>
     /// <p>An endpoint name must contain 1-30 characters. Valid characters are A-Z, a-z, 0-9, and hyphen(-). The first character must be a letter. The name can't contain two consecutive hyphens or end with a hyphen.</p>
+    /// This field is required.
     pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_name = ::std::option::Option::Some(input.into());
         self
@@ -102,6 +105,7 @@ impl CreateEndpointAccessInputBuilder {
         &self.endpoint_name
     }
     /// <p>The subnet group from which Amazon Redshift chooses the subnet to deploy the endpoint.</p>
+    /// This field is required.
     pub fn subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_group_name = ::std::option::Option::Some(input.into());
         self
@@ -138,7 +142,7 @@ impl CreateEndpointAccessInputBuilder {
     /// Consumes the builder and constructs a [`CreateEndpointAccessInput`](crate::operation::create_endpoint_access::CreateEndpointAccessInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_endpoint_access::CreateEndpointAccessInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_endpoint_access::CreateEndpointAccessInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_endpoint_access::CreateEndpointAccessInput {
             cluster_identifier: self.cluster_identifier,

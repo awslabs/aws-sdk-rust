@@ -17,8 +17,10 @@ impl GetHypervisorPropertyMappingsOutput {
         self.hypervisor_arn.as_deref()
     }
     /// <p>This is a display of the mappings of on-premises VMware tags to the Amazon Web Services tags.</p>
-    pub fn vmware_to_aws_tag_mappings(&self) -> ::std::option::Option<&[crate::types::VmwareToAwsTagMapping]> {
-        self.vmware_to_aws_tag_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vmware_to_aws_tag_mappings.is_none()`.
+    pub fn vmware_to_aws_tag_mappings(&self) -> &[crate::types::VmwareToAwsTagMapping] {
+        self.vmware_to_aws_tag_mappings.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role.</p>
     pub fn iam_role_arn(&self) -> ::std::option::Option<&str> {

@@ -48,6 +48,7 @@ impl PutEncryptionConfigurationInputBuilder {
         &self.kms_key_id
     }
     /// <p>The type of encryption. Choose <code>KMS_BASED_ENCRYPTION</code> to use a KMS key or <code>FLEETWISE_DEFAULT_ENCRYPTION</code> to use an Amazon Web Services managed key.</p>
+    /// This field is required.
     pub fn encryption_type(mut self, input: crate::types::EncryptionType) -> Self {
         self.encryption_type = ::std::option::Option::Some(input);
         self
@@ -66,7 +67,7 @@ impl PutEncryptionConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_encryption_configuration::PutEncryptionConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_encryption_configuration::PutEncryptionConfigurationInput {
             kms_key_id: self.kms_key_id,

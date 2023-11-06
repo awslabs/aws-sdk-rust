@@ -11,8 +11,10 @@ pub struct ListResolversByFunctionOutput {
 }
 impl ListResolversByFunctionOutput {
     /// <p>The list of resolvers.</p>
-    pub fn resolvers(&self) -> ::std::option::Option<&[crate::types::Resolver]> {
-        self.resolvers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resolvers.is_none()`.
+    pub fn resolvers(&self) -> &[crate::types::Resolver] {
+        self.resolvers.as_deref().unwrap_or_default()
     }
     /// <p>An identifier that you can use to return the next set of items in the list.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

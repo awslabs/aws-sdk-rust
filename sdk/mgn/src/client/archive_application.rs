@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ArchiveApplication`](crate::operation::archive_application::builders::ArchiveApplicationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::operation::archive_application::builders::ArchiveApplicationFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::archive_application::builders::ArchiveApplicationFluentBuilder::set_application_id): <p>Application ID.</p>
-    ///   - [`account_id(impl Into<String>)`](crate::operation::archive_application::builders::ArchiveApplicationFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::archive_application::builders::ArchiveApplicationFluentBuilder::set_account_id): <p>Account ID.</p>
+    ///   - [`application_id(impl Into<String>)`](crate::operation::archive_application::builders::ArchiveApplicationFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::archive_application::builders::ArchiveApplicationFluentBuilder::set_application_id):<br>required: **true**<br><p>Application ID.</p><br>
+    ///   - [`account_id(impl Into<String>)`](crate::operation::archive_application::builders::ArchiveApplicationFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::archive_application::builders::ArchiveApplicationFluentBuilder::set_account_id):<br>required: **false**<br><p>Account ID.</p><br>
     /// - On success, responds with [`ArchiveApplicationOutput`](crate::operation::archive_application::ArchiveApplicationOutput) with field(s):
     ///   - [`application_id(Option<String>)`](crate::operation::archive_application::ArchiveApplicationOutput::application_id): <p>Application ID.</p>
     ///   - [`arn(Option<String>)`](crate::operation::archive_application::ArchiveApplicationOutput::arn): <p>Application ARN.</p>
@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`application_aggregated_status(Option<ApplicationAggregatedStatus>)`](crate::operation::archive_application::ArchiveApplicationOutput::application_aggregated_status): <p>Application aggregated status.</p>
     ///   - [`creation_date_time(Option<String>)`](crate::operation::archive_application::ArchiveApplicationOutput::creation_date_time): <p>Application creation dateTime.</p>
     ///   - [`last_modified_date_time(Option<String>)`](crate::operation::archive_application::ArchiveApplicationOutput::last_modified_date_time): <p>Application last modified dateTime.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::archive_application::ArchiveApplicationOutput::tags): <p>Application tags.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::archive_application::ArchiveApplicationOutput::tags): <p>Application tags.</p>
     ///   - [`wave_id(Option<String>)`](crate::operation::archive_application::ArchiveApplicationOutput::wave_id): <p>Application wave ID.</p>
     /// - On failure, responds with [`SdkError<ArchiveApplicationError>`](crate::operation::archive_application::ArchiveApplicationError)
     pub fn archive_application(&self) -> crate::operation::archive_application::builders::ArchiveApplicationFluentBuilder {

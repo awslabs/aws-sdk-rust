@@ -15,8 +15,10 @@ impl BatchDetectKeyPhrasesItemResult {
         self.index
     }
     /// <p>One or more <code>KeyPhrase</code> objects, one for each key phrase detected in the document.</p>
-    pub fn key_phrases(&self) -> ::std::option::Option<&[crate::types::KeyPhrase]> {
-        self.key_phrases.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.key_phrases.is_none()`.
+    pub fn key_phrases(&self) -> &[crate::types::KeyPhrase] {
+        self.key_phrases.as_deref().unwrap_or_default()
     }
 }
 impl BatchDetectKeyPhrasesItemResult {

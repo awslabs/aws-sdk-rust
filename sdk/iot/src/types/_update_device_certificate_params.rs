@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDeviceCertificateParams {
     /// <p>The action that you want to apply to the device certificate. The only supported value is <code>DEACTIVATE</code>.</p>
-    pub action: ::std::option::Option<crate::types::DeviceCertificateUpdateAction>,
+    pub action: crate::types::DeviceCertificateUpdateAction,
 }
 impl UpdateDeviceCertificateParams {
     /// <p>The action that you want to apply to the device certificate. The only supported value is <code>DEACTIVATE</code>.</p>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::DeviceCertificateUpdateAction> {
-        self.action.as_ref()
+    pub fn action(&self) -> &crate::types::DeviceCertificateUpdateAction {
+        &self.action
     }
 }
 impl UpdateDeviceCertificateParams {
@@ -28,6 +28,7 @@ pub struct UpdateDeviceCertificateParamsBuilder {
 }
 impl UpdateDeviceCertificateParamsBuilder {
     /// <p>The action that you want to apply to the device certificate. The only supported value is <code>DEACTIVATE</code>.</p>
+    /// This field is required.
     pub fn action(mut self, input: crate::types::DeviceCertificateUpdateAction) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,16 @@ impl UpdateDeviceCertificateParamsBuilder {
         &self.action
     }
     /// Consumes the builder and constructs a [`UpdateDeviceCertificateParams`](crate::types::UpdateDeviceCertificateParams).
-    pub fn build(self) -> crate::types::UpdateDeviceCertificateParams {
-        crate::types::UpdateDeviceCertificateParams { action: self.action }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`action`](crate::types::builders::UpdateDeviceCertificateParamsBuilder::action)
+    pub fn build(self) -> ::std::result::Result<crate::types::UpdateDeviceCertificateParams, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::UpdateDeviceCertificateParams {
+            action: self.action.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "action",
+                    "action was not specified but it is required when building UpdateDeviceCertificateParams",
+                )
+            })?,
+        })
     }
 }

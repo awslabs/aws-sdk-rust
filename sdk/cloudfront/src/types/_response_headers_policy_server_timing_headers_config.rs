@@ -6,13 +6,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicyServerTimingHeadersConfig {
     /// <p>A Boolean that determines whether CloudFront adds the <code>Server-Timing</code> header to HTTP responses that it sends in response to requests that match a cache behavior that's associated with this response headers policy.</p>
-    pub enabled: ::std::option::Option<bool>,
+    pub enabled: bool,
     /// <p>A number 0–100 (inclusive) that specifies the percentage of responses that you want CloudFront to add the <code>Server-Timing</code> header to. When you set the sampling rate to 100, CloudFront adds the <code>Server-Timing</code> header to the HTTP response for every request that matches the cache behavior that this response headers policy is attached to. When you set it to 50, CloudFront adds the header to 50% of the responses for requests that match the cache behavior. You can set the sampling rate to any number 0–100 with up to four decimal places.</p>
     pub sampling_rate: ::std::option::Option<f64>,
 }
 impl ResponseHeadersPolicyServerTimingHeadersConfig {
     /// <p>A Boolean that determines whether CloudFront adds the <code>Server-Timing</code> header to HTTP responses that it sends in response to requests that match a cache behavior that's associated with this response headers policy.</p>
-    pub fn enabled(&self) -> ::std::option::Option<bool> {
+    pub fn enabled(&self) -> bool {
         self.enabled
     }
     /// <p>A number 0–100 (inclusive) that specifies the percentage of responses that you want CloudFront to add the <code>Server-Timing</code> header to. When you set the sampling rate to 100, CloudFront adds the <code>Server-Timing</code> header to the HTTP response for every request that matches the cache behavior that this response headers policy is attached to. When you set it to 50, CloudFront adds the header to 50% of the responses for requests that match the cache behavior. You can set the sampling rate to any number 0–100 with up to four decimal places.</p>
@@ -36,6 +36,7 @@ pub struct ResponseHeadersPolicyServerTimingHeadersConfigBuilder {
 }
 impl ResponseHeadersPolicyServerTimingHeadersConfigBuilder {
     /// <p>A Boolean that determines whether CloudFront adds the <code>Server-Timing</code> header to HTTP responses that it sends in response to requests that match a cache behavior that's associated with this response headers policy.</p>
+    /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
@@ -64,10 +65,19 @@ impl ResponseHeadersPolicyServerTimingHeadersConfigBuilder {
         &self.sampling_rate
     }
     /// Consumes the builder and constructs a [`ResponseHeadersPolicyServerTimingHeadersConfig`](crate::types::ResponseHeadersPolicyServerTimingHeadersConfig).
-    pub fn build(self) -> crate::types::ResponseHeadersPolicyServerTimingHeadersConfig {
-        crate::types::ResponseHeadersPolicyServerTimingHeadersConfig {
-            enabled: self.enabled,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`enabled`](crate::types::builders::ResponseHeadersPolicyServerTimingHeadersConfigBuilder::enabled)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::ResponseHeadersPolicyServerTimingHeadersConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ResponseHeadersPolicyServerTimingHeadersConfig {
+            enabled: self.enabled.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "enabled",
+                    "enabled was not specified but it is required when building ResponseHeadersPolicyServerTimingHeadersConfig",
+                )
+            })?,
             sampling_rate: self.sampling_rate,
-        }
+        })
     }
 }

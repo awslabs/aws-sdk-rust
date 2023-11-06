@@ -15,20 +15,28 @@ pub struct LaunchPermissionConfiguration {
 }
 impl LaunchPermissionConfiguration {
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn user_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.user_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_ids.is_none()`.
+    pub fn user_ids(&self) -> &[::std::string::String] {
+        self.user_ids.as_deref().unwrap_or_default()
     }
     /// <p>The name of the group.</p>
-    pub fn user_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.user_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_groups.is_none()`.
+    pub fn user_groups(&self) -> &[::std::string::String] {
+        self.user_groups.as_deref().unwrap_or_default()
     }
     /// <p>The ARN for an Amazon Web Services Organization that you want to share your AMI with. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What is Organizations?</a>.</p>
-    pub fn organization_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.organization_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.organization_arns.is_none()`.
+    pub fn organization_arns(&self) -> &[::std::string::String] {
+        self.organization_arns.as_deref().unwrap_or_default()
     }
     /// <p>The ARN for an Organizations organizational unit (OU) that you want to share your AMI with. For more information about key concepts for Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html">Organizations terminology and concepts</a>.</p>
-    pub fn organizational_unit_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.organizational_unit_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.organizational_unit_arns.is_none()`.
+    pub fn organizational_unit_arns(&self) -> &[::std::string::String] {
+        self.organizational_unit_arns.as_deref().unwrap_or_default()
     }
 }
 impl LaunchPermissionConfiguration {

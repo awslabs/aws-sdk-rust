@@ -2,7 +2,7 @@
 pub fn ser_confirm_sign_up_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::confirm_sign_up::ConfirmSignUpInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.client_id {
         object.key("ClientId").string(var_1.as_str());
     }

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AmazonTranscribeCallAnalyticsProcessorConfiguration {
     /// <p>The language code in the configuration.</p>
-    pub language_code: ::std::option::Option<crate::types::CallAnalyticsLanguageCode>,
+    pub language_code: crate::types::CallAnalyticsLanguageCode,
     /// <p>Specifies the name of the custom vocabulary to use when processing a transcription. Note that vocabulary names are case sensitive.</p>
     /// <p>If the language of the specified custom vocabulary doesn't match the language identified in your media, the custom vocabulary is not applied to your transcription.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom vocabularies</a> in the <i>Amazon Transcribe Developer Guide</i>.</p>
@@ -55,8 +55,8 @@ pub struct AmazonTranscribeCallAnalyticsProcessorConfiguration {
 }
 impl AmazonTranscribeCallAnalyticsProcessorConfiguration {
     /// <p>The language code in the configuration.</p>
-    pub fn language_code(&self) -> ::std::option::Option<&crate::types::CallAnalyticsLanguageCode> {
-        self.language_code.as_ref()
+    pub fn language_code(&self) -> &crate::types::CallAnalyticsLanguageCode {
+        &self.language_code
     }
     /// <p>Specifies the name of the custom vocabulary to use when processing a transcription. Note that vocabulary names are case sensitive.</p>
     /// <p>If the language of the specified custom vocabulary doesn't match the language identified in your media, the custom vocabulary is not applied to your transcription.</p>
@@ -125,8 +125,10 @@ impl AmazonTranscribeCallAnalyticsProcessorConfiguration {
         self.post_call_analytics_settings.as_ref()
     }
     /// <p>By default, all <code>CategoryEvents</code> are sent to the insights target. If this parameter is specified, only included categories are sent to the insights target. </p>
-    pub fn call_analytics_stream_categories(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.call_analytics_stream_categories.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.call_analytics_stream_categories.is_none()`.
+    pub fn call_analytics_stream_categories(&self) -> &[::std::string::String] {
+        self.call_analytics_stream_categories.as_deref().unwrap_or_default()
     }
 }
 impl AmazonTranscribeCallAnalyticsProcessorConfiguration {
@@ -156,6 +158,7 @@ pub struct AmazonTranscribeCallAnalyticsProcessorConfigurationBuilder {
 }
 impl AmazonTranscribeCallAnalyticsProcessorConfigurationBuilder {
     /// <p>The language code in the configuration.</p>
+    /// This field is required.
     pub fn language_code(mut self, input: crate::types::CallAnalyticsLanguageCode) -> Self {
         self.language_code = ::std::option::Option::Some(input);
         self
@@ -410,9 +413,19 @@ impl AmazonTranscribeCallAnalyticsProcessorConfigurationBuilder {
         &self.call_analytics_stream_categories
     }
     /// Consumes the builder and constructs a [`AmazonTranscribeCallAnalyticsProcessorConfiguration`](crate::types::AmazonTranscribeCallAnalyticsProcessorConfiguration).
-    pub fn build(self) -> crate::types::AmazonTranscribeCallAnalyticsProcessorConfiguration {
-        crate::types::AmazonTranscribeCallAnalyticsProcessorConfiguration {
-            language_code: self.language_code,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`language_code`](crate::types::builders::AmazonTranscribeCallAnalyticsProcessorConfigurationBuilder::language_code)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::AmazonTranscribeCallAnalyticsProcessorConfiguration, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::types::AmazonTranscribeCallAnalyticsProcessorConfiguration {
+            language_code: self.language_code.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "language_code",
+                    "language_code was not specified but it is required when building AmazonTranscribeCallAnalyticsProcessorConfiguration",
+                )
+            })?,
             vocabulary_name: self.vocabulary_name,
             vocabulary_filter_name: self.vocabulary_filter_name,
             vocabulary_filter_method: self.vocabulary_filter_method,
@@ -425,6 +438,6 @@ impl AmazonTranscribeCallAnalyticsProcessorConfigurationBuilder {
             filter_partial_results: self.filter_partial_results.unwrap_or_default(),
             post_call_analytics_settings: self.post_call_analytics_settings,
             call_analytics_stream_categories: self.call_analytics_stream_categories,
-        }
+        })
     }
 }

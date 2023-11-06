@@ -11,8 +11,10 @@ pub struct GetIntentVersionsOutput {
 }
 impl GetIntentVersionsOutput {
     /// <p>An array of <code>IntentMetadata</code> objects, one for each numbered version of the intent plus one for the <code>$LATEST</code> version.</p>
-    pub fn intents(&self) -> ::std::option::Option<&[crate::types::IntentMetadata]> {
-        self.intents.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.intents.is_none()`.
+    pub fn intents(&self) -> &[crate::types::IntentMetadata] {
+        self.intents.as_deref().unwrap_or_default()
     }
     /// <p>A pagination token for fetching the next page of intent versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

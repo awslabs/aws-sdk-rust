@@ -2,7 +2,7 @@
 pub fn ser_video_overlay_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VideoOverlayInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.file_input {
         object.key("fileInput").string(var_1.as_str());
     }
@@ -51,9 +51,7 @@ where
                         }
                         "inputClippings" => {
                             builder = builder.set_input_clippings(
-                                crate::protocol_serde::shape___list_of_video_overlay_input_clipping::de___list_of_video_overlay_input_clipping(
-                                    tokens,
-                                )?,
+                                crate::protocol_serde::shape_list_of_video_overlay_input_clipping::de_list_of_video_overlay_input_clipping(tokens)?,
                             );
                         }
                         "timecodeSource" => {

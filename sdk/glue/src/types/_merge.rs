@@ -5,30 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Merge {
     /// <p>The name of the transform node.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The data inputs identified by their node names.</p>
-    pub inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub inputs: ::std::vec::Vec<::std::string::String>,
     /// <p>The source <code>DynamicFrame</code> that will be merged with a staging <code>DynamicFrame</code>.</p>
-    pub source: ::std::option::Option<::std::string::String>,
+    pub source: ::std::string::String,
     /// <p>The list of primary key fields to match records from the source and staging dynamic frames.</p>
-    pub primary_keys: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
+    pub primary_keys: ::std::vec::Vec<::std::vec::Vec<::std::string::String>>,
 }
 impl Merge {
     /// <p>The name of the transform node.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn inputs(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.inputs.as_deref()
+    pub fn inputs(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.inputs.deref()
     }
     /// <p>The source <code>DynamicFrame</code> that will be merged with a staging <code>DynamicFrame</code>.</p>
-    pub fn source(&self) -> ::std::option::Option<&str> {
-        self.source.as_deref()
+    pub fn source(&self) -> &str {
+        use std::ops::Deref;
+        self.source.deref()
     }
     /// <p>The list of primary key fields to match records from the source and staging dynamic frames.</p>
-    pub fn primary_keys(&self) -> ::std::option::Option<&[::std::vec::Vec<::std::string::String>]> {
-        self.primary_keys.as_deref()
+    pub fn primary_keys(&self) -> &[::std::vec::Vec<::std::string::String>] {
+        use std::ops::Deref;
+        self.primary_keys.deref()
     }
 }
 impl Merge {
@@ -49,6 +53,7 @@ pub struct MergeBuilder {
 }
 impl MergeBuilder {
     /// <p>The name of the transform node.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +88,7 @@ impl MergeBuilder {
         &self.inputs
     }
     /// <p>The source <code>DynamicFrame</code> that will be merged with a staging <code>DynamicFrame</code>.</p>
+    /// This field is required.
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source = ::std::option::Option::Some(input.into());
         self
@@ -117,12 +123,37 @@ impl MergeBuilder {
         &self.primary_keys
     }
     /// Consumes the builder and constructs a [`Merge`](crate::types::Merge).
-    pub fn build(self) -> crate::types::Merge {
-        crate::types::Merge {
-            name: self.name,
-            inputs: self.inputs,
-            source: self.source,
-            primary_keys: self.primary_keys,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::MergeBuilder::name)
+    /// - [`inputs`](crate::types::builders::MergeBuilder::inputs)
+    /// - [`source`](crate::types::builders::MergeBuilder::source)
+    /// - [`primary_keys`](crate::types::builders::MergeBuilder::primary_keys)
+    pub fn build(self) -> ::std::result::Result<crate::types::Merge, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Merge {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building Merge",
+                )
+            })?,
+            inputs: self.inputs.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "inputs",
+                    "inputs was not specified but it is required when building Merge",
+                )
+            })?,
+            source: self.source.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "source",
+                    "source was not specified but it is required when building Merge",
+                )
+            })?,
+            primary_keys: self.primary_keys.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "primary_keys",
+                    "primary_keys was not specified but it is required when building Merge",
+                )
+            })?,
+        })
     }
 }

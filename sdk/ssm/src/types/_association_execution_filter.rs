@@ -5,24 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociationExecutionFilter {
     /// <p>The key value used in the request.</p>
-    pub key: ::std::option::Option<crate::types::AssociationExecutionFilterKey>,
+    pub key: crate::types::AssociationExecutionFilterKey,
     /// <p>The value specified for the key.</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
     /// <p>The filter type specified in the request.</p>
-    pub r#type: ::std::option::Option<crate::types::AssociationFilterOperatorType>,
+    pub r#type: crate::types::AssociationFilterOperatorType,
 }
 impl AssociationExecutionFilter {
     /// <p>The key value used in the request.</p>
-    pub fn key(&self) -> ::std::option::Option<&crate::types::AssociationExecutionFilterKey> {
-        self.key.as_ref()
+    pub fn key(&self) -> &crate::types::AssociationExecutionFilterKey {
+        &self.key
     }
     /// <p>The value specified for the key.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
     /// <p>The filter type specified in the request.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::AssociationFilterOperatorType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::AssociationFilterOperatorType {
+        &self.r#type
     }
 }
 impl AssociationExecutionFilter {
@@ -42,6 +43,7 @@ pub struct AssociationExecutionFilterBuilder {
 }
 impl AssociationExecutionFilterBuilder {
     /// <p>The key value used in the request.</p>
+    /// This field is required.
     pub fn key(mut self, input: crate::types::AssociationExecutionFilterKey) -> Self {
         self.key = ::std::option::Option::Some(input);
         self
@@ -56,6 +58,7 @@ impl AssociationExecutionFilterBuilder {
         &self.key
     }
     /// <p>The value specified for the key.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +73,7 @@ impl AssociationExecutionFilterBuilder {
         &self.value
     }
     /// <p>The filter type specified in the request.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::AssociationFilterOperatorType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -84,11 +88,30 @@ impl AssociationExecutionFilterBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`AssociationExecutionFilter`](crate::types::AssociationExecutionFilter).
-    pub fn build(self) -> crate::types::AssociationExecutionFilter {
-        crate::types::AssociationExecutionFilter {
-            key: self.key,
-            value: self.value,
-            r#type: self.r#type,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key`](crate::types::builders::AssociationExecutionFilterBuilder::key)
+    /// - [`value`](crate::types::builders::AssociationExecutionFilterBuilder::value)
+    /// - [`r#type`](crate::types::builders::AssociationExecutionFilterBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::AssociationExecutionFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AssociationExecutionFilter {
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building AssociationExecutionFilter",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building AssociationExecutionFilter",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building AssociationExecutionFilter",
+                )
+            })?,
+        })
     }
 }

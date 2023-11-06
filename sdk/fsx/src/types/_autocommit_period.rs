@@ -50,6 +50,7 @@ pub struct AutocommitPeriodBuilder {
 }
 impl AutocommitPeriodBuilder {
     /// <p>Defines the type of time for the autocommit period of a file in an FSx for ONTAP SnapLock volume. Setting this value to <code>NONE</code> disables autocommit. The default value is <code>NONE</code>. </p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::AutocommitPeriodType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self

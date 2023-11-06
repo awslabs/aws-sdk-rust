@@ -2,15 +2,15 @@
 pub fn ser_dashboard_visual_id(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DashboardVisualId,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.dashboard_id {
-        object.key("DashboardId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("DashboardId").string(input.dashboard_id.as_str());
     }
-    if let Some(var_2) = &input.sheet_id {
-        object.key("SheetId").string(var_2.as_str());
+    {
+        object.key("SheetId").string(input.sheet_id.as_str());
     }
-    if let Some(var_3) = &input.visual_id {
-        object.key("VisualId").string(var_3.as_str());
+    {
+        object.key("VisualId").string(input.visual_id.as_str());
     }
     Ok(())
 }

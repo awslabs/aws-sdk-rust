@@ -41,6 +41,7 @@ pub struct GetDeploymentInputBuilder {
 }
 impl GetDeploymentInputBuilder {
     /// <p>The ID of the application that includes the deployment you want to get. </p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl GetDeploymentInputBuilder {
         &self.application_id
     }
     /// <p>The ID of the environment that includes the deployment you want to get. </p>
+    /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl GetDeploymentInputBuilder {
         &self.environment_id
     }
     /// <p>The sequence number of the deployment.</p>
+    /// This field is required.
     pub fn deployment_number(mut self, input: i32) -> Self {
         self.deployment_number = ::std::option::Option::Some(input);
         self
@@ -85,7 +88,7 @@ impl GetDeploymentInputBuilder {
     /// Consumes the builder and constructs a [`GetDeploymentInput`](crate::operation::get_deployment::GetDeploymentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_deployment::GetDeploymentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_deployment::GetDeploymentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_deployment::GetDeploymentInput {
             application_id: self.application_id,
             environment_id: self.environment_id,

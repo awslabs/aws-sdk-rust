@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSpaceOutput {
     /// <p>The name of the space.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The friendly name of the space displayed to users of the space in Amazon CodeCatalyst.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteSpaceOutput {
     /// <p>The name of the space.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The friendly name of the space displayed to users of the space in Amazon CodeCatalyst.</p>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
@@ -41,6 +42,7 @@ pub struct DeleteSpaceOutputBuilder {
 }
 impl DeleteSpaceOutputBuilder {
     /// <p>The name of the space.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -78,11 +80,18 @@ impl DeleteSpaceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteSpaceOutput`](crate::operation::delete_space::DeleteSpaceOutput).
-    pub fn build(self) -> crate::operation::delete_space::DeleteSpaceOutput {
-        crate::operation::delete_space::DeleteSpaceOutput {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::delete_space::builders::DeleteSpaceOutputBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_space::DeleteSpaceOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_space::DeleteSpaceOutput {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DeleteSpaceOutput",
+                )
+            })?,
             display_name: self.display_name,
             _request_id: self._request_id,
-        }
+        })
     }
 }

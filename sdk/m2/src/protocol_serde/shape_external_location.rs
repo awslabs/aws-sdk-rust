@@ -2,13 +2,13 @@
 pub fn ser_external_location(
     object_4: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ExternalLocation,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::ExternalLocation::S3Location(inner) => {
             object_4.key("s3Location").string(inner.as_str());
         }
         crate::types::ExternalLocation::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "ExternalLocation",
             ))
         }

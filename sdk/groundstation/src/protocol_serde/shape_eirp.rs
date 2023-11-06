@@ -2,15 +2,15 @@
 pub fn ser_eirp(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Eirp,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.value {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
         object.key("value").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_1).into()),
+            ::aws_smithy_types::Number::Float((input.value).into()),
         );
     }
-    if let Some(var_2) = &input.units {
-        object.key("units").string(var_2.as_str());
+    {
+        object.key("units").string(input.units.as_str());
     }
     Ok(())
 }
@@ -51,7 +51,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::eirp_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

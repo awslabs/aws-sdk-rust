@@ -62,6 +62,7 @@ pub struct UpdateThesaurusInputBuilder {
 }
 impl UpdateThesaurusInputBuilder {
     /// <p>The identifier of the thesaurus you want to update.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +91,7 @@ impl UpdateThesaurusInputBuilder {
         &self.name
     }
     /// <p>The identifier of the index for the thesaurus.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self
@@ -148,7 +150,7 @@ impl UpdateThesaurusInputBuilder {
     /// Consumes the builder and constructs a [`UpdateThesaurusInput`](crate::operation::update_thesaurus::UpdateThesaurusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_thesaurus::UpdateThesaurusInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_thesaurus::UpdateThesaurusInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_thesaurus::UpdateThesaurusInput {
             id: self.id,
             name: self.name,

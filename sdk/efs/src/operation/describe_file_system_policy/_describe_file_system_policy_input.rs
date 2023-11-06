@@ -27,6 +27,7 @@ pub struct DescribeFileSystemPolicyInputBuilder {
 }
 impl DescribeFileSystemPolicyInputBuilder {
     /// <p>Specifies which EFS file system to retrieve the <code>FileSystemPolicy</code> for.</p>
+    /// This field is required.
     pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeFileSystemPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_file_system_policy::DescribeFileSystemPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_file_system_policy::DescribeFileSystemPolicyInput {
             file_system_id: self.file_system_id,

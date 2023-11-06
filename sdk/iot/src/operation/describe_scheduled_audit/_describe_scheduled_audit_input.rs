@@ -27,6 +27,7 @@ pub struct DescribeScheduledAuditInputBuilder {
 }
 impl DescribeScheduledAuditInputBuilder {
     /// <p>The name of the scheduled audit whose information you want to get.</p>
+    /// This field is required.
     pub fn scheduled_audit_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduled_audit_name = ::std::option::Option::Some(input.into());
         self
@@ -43,8 +44,10 @@ impl DescribeScheduledAuditInputBuilder {
     /// Consumes the builder and constructs a [`DescribeScheduledAuditInput`](crate::operation::describe_scheduled_audit::DescribeScheduledAuditInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_scheduled_audit::DescribeScheduledAuditInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_scheduled_audit::DescribeScheduledAuditInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_scheduled_audit::DescribeScheduledAuditInput {
             scheduled_audit_name: self.scheduled_audit_name,
         })

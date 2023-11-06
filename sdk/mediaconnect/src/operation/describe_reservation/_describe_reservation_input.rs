@@ -27,6 +27,7 @@ pub struct DescribeReservationInputBuilder {
 }
 impl DescribeReservationInputBuilder {
     /// The Amazon Resource Name (ARN) of the reservation.
+    /// This field is required.
     pub fn reservation_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reservation_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeReservationInputBuilder {
     /// Consumes the builder and constructs a [`DescribeReservationInput`](crate::operation::describe_reservation::DescribeReservationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_reservation::DescribeReservationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_reservation::DescribeReservationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_reservation::DescribeReservationInput {
             reservation_arn: self.reservation_arn,

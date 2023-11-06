@@ -28,6 +28,7 @@ pub struct DeleteConfigurationSetTrackingOptionsInputBuilder {
 }
 impl DeleteConfigurationSetTrackingOptionsInputBuilder {
     /// <p>The name of the configuration set.</p>
+    /// This field is required.
     pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl DeleteConfigurationSetTrackingOptionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_configuration_set_tracking_options::DeleteConfigurationSetTrackingOptionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_configuration_set_tracking_options::DeleteConfigurationSetTrackingOptionsInput {

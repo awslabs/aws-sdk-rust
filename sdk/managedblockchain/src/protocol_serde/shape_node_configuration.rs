@@ -2,21 +2,21 @@
 pub fn ser_node_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NodeConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.instance_type {
-        object.key("InstanceType").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("InstanceType").string(input.instance_type.as_str());
     }
-    if let Some(var_2) = &input.availability_zone {
-        object.key("AvailabilityZone").string(var_2.as_str());
+    if let Some(var_1) = &input.availability_zone {
+        object.key("AvailabilityZone").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.log_publishing_configuration {
+    if let Some(var_2) = &input.log_publishing_configuration {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("LogPublishingConfiguration").start_object();
-        crate::protocol_serde::shape_node_log_publishing_configuration::ser_node_log_publishing_configuration(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_3 = object.key("LogPublishingConfiguration").start_object();
+        crate::protocol_serde::shape_node_log_publishing_configuration::ser_node_log_publishing_configuration(&mut object_3, var_2)?;
+        object_3.finish();
     }
-    if let Some(var_5) = &input.state_db {
-        object.key("StateDB").string(var_5.as_str());
+    if let Some(var_4) = &input.state_db {
+        object.key("StateDB").string(var_4.as_str());
     }
     Ok(())
 }

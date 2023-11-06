@@ -15,8 +15,10 @@ impl ListLabelGroupsOutput {
         self.next_token.as_deref()
     }
     /// <p> A summary of the label groups. </p>
-    pub fn label_group_summaries(&self) -> ::std::option::Option<&[crate::types::LabelGroupSummary]> {
-        self.label_group_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.label_group_summaries.is_none()`.
+    pub fn label_group_summaries(&self) -> &[crate::types::LabelGroupSummary] {
+        self.label_group_summaries.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListLabelGroupsOutput {

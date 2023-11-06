@@ -38,6 +38,7 @@ pub struct DeleteStreamInputBuilder {
 }
 impl DeleteStreamInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the stream that you want to delete. </p>
+    /// This field is required.
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_arn = ::std::option::Option::Some(input.into());
         self
@@ -72,7 +73,9 @@ impl DeleteStreamInputBuilder {
         &self.current_version
     }
     /// Consumes the builder and constructs a [`DeleteStreamInput`](crate::operation::delete_stream::DeleteStreamInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_stream::DeleteStreamInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_stream::DeleteStreamInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_stream::DeleteStreamInput {
             stream_arn: self.stream_arn,
             current_version: self.current_version,

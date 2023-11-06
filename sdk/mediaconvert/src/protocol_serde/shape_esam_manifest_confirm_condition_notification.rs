@@ -2,7 +2,7 @@
 pub fn ser_esam_manifest_confirm_condition_notification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EsamManifestConfirmConditionNotification,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.mcc_xml {
         object.key("mccXml").string(var_1.as_str());
     }

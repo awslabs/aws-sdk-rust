@@ -2,12 +2,12 @@
 pub fn ser_stream_specification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StreamSpecification,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.stream_enabled {
-        object.key("StreamEnabled").boolean(*var_1);
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("StreamEnabled").boolean(input.stream_enabled);
     }
-    if let Some(var_2) = &input.stream_view_type {
-        object.key("StreamViewType").string(var_2.as_str());
+    if let Some(var_1) = &input.stream_view_type {
+        object.key("StreamViewType").string(var_1.as_str());
     }
     Ok(())
 }
@@ -47,7 +47,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::stream_specification_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

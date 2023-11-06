@@ -27,6 +27,7 @@ pub struct DisassociateThirdPartyFirewallInputBuilder {
 }
 impl DisassociateThirdPartyFirewallInputBuilder {
     /// <p>The name of the third-party firewall vendor.</p>
+    /// This field is required.
     pub fn third_party_firewall(mut self, input: crate::types::ThirdPartyFirewall) -> Self {
         self.third_party_firewall = ::std::option::Option::Some(input);
         self
@@ -45,7 +46,7 @@ impl DisassociateThirdPartyFirewallInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_third_party_firewall::DisassociateThirdPartyFirewallInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_third_party_firewall::DisassociateThirdPartyFirewallInput {
             third_party_firewall: self.third_party_firewall,

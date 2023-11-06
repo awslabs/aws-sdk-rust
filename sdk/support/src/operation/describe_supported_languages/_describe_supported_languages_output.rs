@@ -9,8 +9,10 @@ pub struct DescribeSupportedLanguagesOutput {
 }
 impl DescribeSupportedLanguagesOutput {
     /// <p> A JSON-formatted array that contains the available ISO 639-1 language codes. </p>
-    pub fn supported_languages(&self) -> ::std::option::Option<&[crate::types::SupportedLanguage]> {
-        self.supported_languages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_languages.is_none()`.
+    pub fn supported_languages(&self) -> &[crate::types::SupportedLanguage] {
+        self.supported_languages.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeSupportedLanguagesOutput {

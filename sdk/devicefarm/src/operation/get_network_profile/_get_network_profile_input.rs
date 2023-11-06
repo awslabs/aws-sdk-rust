@@ -27,6 +27,7 @@ pub struct GetNetworkProfileInputBuilder {
 }
 impl GetNetworkProfileInputBuilder {
     /// <p>The ARN of the network profile to return information about.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetNetworkProfileInputBuilder {
     /// Consumes the builder and constructs a [`GetNetworkProfileInput`](crate::operation::get_network_profile::GetNetworkProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_network_profile::GetNetworkProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_network_profile::GetNetworkProfileInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_network_profile::GetNetworkProfileInput { arn: self.arn })
     }
 }

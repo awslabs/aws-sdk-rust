@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConversationLevelTestResults {
     /// <p>The item list in the test set results data at the conversation level.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::ConversationLevelTestResultItem>>,
+    pub items: ::std::vec::Vec<crate::types::ConversationLevelTestResultItem>,
 }
 impl ConversationLevelTestResults {
     /// <p>The item list in the test set results data at the conversation level.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::ConversationLevelTestResultItem]> {
-        self.items.as_deref()
+    pub fn items(&self) -> &[crate::types::ConversationLevelTestResultItem] {
+        use std::ops::Deref;
+        self.items.deref()
     }
 }
 impl ConversationLevelTestResults {
@@ -48,7 +49,16 @@ impl ConversationLevelTestResultsBuilder {
         &self.items
     }
     /// Consumes the builder and constructs a [`ConversationLevelTestResults`](crate::types::ConversationLevelTestResults).
-    pub fn build(self) -> crate::types::ConversationLevelTestResults {
-        crate::types::ConversationLevelTestResults { items: self.items }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`items`](crate::types::builders::ConversationLevelTestResultsBuilder::items)
+    pub fn build(self) -> ::std::result::Result<crate::types::ConversationLevelTestResults, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ConversationLevelTestResults {
+            items: self.items.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "items",
+                    "items was not specified but it is required when building ConversationLevelTestResults",
+                )
+            })?,
+        })
     }
 }

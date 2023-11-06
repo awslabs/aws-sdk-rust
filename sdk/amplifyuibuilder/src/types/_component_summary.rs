@@ -5,36 +5,41 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComponentSummary {
     /// <p>The unique ID of the Amplify app associated with the component.</p>
-    pub app_id: ::std::option::Option<::std::string::String>,
+    pub app_id: ::std::string::String,
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
-    pub environment_name: ::std::option::Option<::std::string::String>,
+    pub environment_name: ::std::string::String,
     /// <p>The unique ID of the component.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The name of the component.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The component type.</p>
-    pub component_type: ::std::option::Option<::std::string::String>,
+    pub component_type: ::std::string::String,
 }
 impl ComponentSummary {
     /// <p>The unique ID of the Amplify app associated with the component.</p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
-        self.app_id.as_deref()
+    pub fn app_id(&self) -> &str {
+        use std::ops::Deref;
+        self.app_id.deref()
     }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
-    pub fn environment_name(&self) -> ::std::option::Option<&str> {
-        self.environment_name.as_deref()
+    pub fn environment_name(&self) -> &str {
+        use std::ops::Deref;
+        self.environment_name.deref()
     }
     /// <p>The unique ID of the component.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The name of the component.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The component type.</p>
-    pub fn component_type(&self) -> ::std::option::Option<&str> {
-        self.component_type.as_deref()
+    pub fn component_type(&self) -> &str {
+        use std::ops::Deref;
+        self.component_type.deref()
     }
 }
 impl ComponentSummary {
@@ -56,6 +61,7 @@ pub struct ComponentSummaryBuilder {
 }
 impl ComponentSummaryBuilder {
     /// <p>The unique ID of the Amplify app associated with the component.</p>
+    /// This field is required.
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +76,7 @@ impl ComponentSummaryBuilder {
         &self.app_id
     }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
+    /// This field is required.
     pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +91,7 @@ impl ComponentSummaryBuilder {
         &self.environment_name
     }
     /// <p>The unique ID of the component.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +106,7 @@ impl ComponentSummaryBuilder {
         &self.id
     }
     /// <p>The name of the component.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +121,7 @@ impl ComponentSummaryBuilder {
         &self.name
     }
     /// <p>The component type.</p>
+    /// This field is required.
     pub fn component_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_type = ::std::option::Option::Some(input.into());
         self
@@ -126,13 +136,44 @@ impl ComponentSummaryBuilder {
         &self.component_type
     }
     /// Consumes the builder and constructs a [`ComponentSummary`](crate::types::ComponentSummary).
-    pub fn build(self) -> crate::types::ComponentSummary {
-        crate::types::ComponentSummary {
-            app_id: self.app_id,
-            environment_name: self.environment_name,
-            id: self.id,
-            name: self.name,
-            component_type: self.component_type,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`app_id`](crate::types::builders::ComponentSummaryBuilder::app_id)
+    /// - [`environment_name`](crate::types::builders::ComponentSummaryBuilder::environment_name)
+    /// - [`id`](crate::types::builders::ComponentSummaryBuilder::id)
+    /// - [`name`](crate::types::builders::ComponentSummaryBuilder::name)
+    /// - [`component_type`](crate::types::builders::ComponentSummaryBuilder::component_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::ComponentSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ComponentSummary {
+            app_id: self.app_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "app_id",
+                    "app_id was not specified but it is required when building ComponentSummary",
+                )
+            })?,
+            environment_name: self.environment_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "environment_name",
+                    "environment_name was not specified but it is required when building ComponentSummary",
+                )
+            })?,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building ComponentSummary",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ComponentSummary",
+                )
+            })?,
+            component_type: self.component_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "component_type",
+                    "component_type was not specified but it is required when building ComponentSummary",
+                )
+            })?,
+        })
     }
 }

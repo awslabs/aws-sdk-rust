@@ -21,8 +21,10 @@ impl CallbackStepMetadata {
         self.sqs_queue_url.as_deref()
     }
     /// <p>A list of the output parameters of the callback step.</p>
-    pub fn output_parameters(&self) -> ::std::option::Option<&[crate::types::OutputParameter]> {
-        self.output_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_parameters.is_none()`.
+    pub fn output_parameters(&self) -> &[crate::types::OutputParameter] {
+        self.output_parameters.as_deref().unwrap_or_default()
     }
 }
 impl CallbackStepMetadata {

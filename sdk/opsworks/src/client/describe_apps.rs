@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeApps`](crate::operation::describe_apps::builders::DescribeAppsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`stack_id(impl Into<String>)`](crate::operation::describe_apps::builders::DescribeAppsFluentBuilder::stack_id) / [`set_stack_id(Option<String>)`](crate::operation::describe_apps::builders::DescribeAppsFluentBuilder::set_stack_id): <p>The app stack ID. If you use this parameter, <code>DescribeApps</code> returns a description of the apps in the specified stack.</p>
-    ///   - [`app_ids(impl Into<String>)`](crate::operation::describe_apps::builders::DescribeAppsFluentBuilder::app_ids) / [`set_app_ids(Option<Vec<String>>)`](crate::operation::describe_apps::builders::DescribeAppsFluentBuilder::set_app_ids): <p>An array of app IDs for the apps to be described. If you use this parameter, <code>DescribeApps</code> returns a description of the specified apps. Otherwise, it returns a description of every app.</p>
+    ///   - [`stack_id(impl Into<String>)`](crate::operation::describe_apps::builders::DescribeAppsFluentBuilder::stack_id) / [`set_stack_id(Option<String>)`](crate::operation::describe_apps::builders::DescribeAppsFluentBuilder::set_stack_id):<br>required: **false**<br><p>The app stack ID. If you use this parameter, <code>DescribeApps</code> returns a description of the apps in the specified stack.</p><br>
+    ///   - [`app_ids(impl Into<String>)`](crate::operation::describe_apps::builders::DescribeAppsFluentBuilder::app_ids) / [`set_app_ids(Option<Vec::<String>>)`](crate::operation::describe_apps::builders::DescribeAppsFluentBuilder::set_app_ids):<br>required: **false**<br><p>An array of app IDs for the apps to be described. If you use this parameter, <code>DescribeApps</code> returns a description of the specified apps. Otherwise, it returns a description of every app.</p><br>
     /// - On success, responds with [`DescribeAppsOutput`](crate::operation::describe_apps::DescribeAppsOutput) with field(s):
-    ///   - [`apps(Option<Vec<App>>)`](crate::operation::describe_apps::DescribeAppsOutput::apps): <p>An array of <code>App</code> objects that describe the specified apps. </p>
+    ///   - [`apps(Option<Vec::<App>>)`](crate::operation::describe_apps::DescribeAppsOutput::apps): <p>An array of <code>App</code> objects that describe the specified apps. </p>
     /// - On failure, responds with [`SdkError<DescribeAppsError>`](crate::operation::describe_apps::DescribeAppsError)
     pub fn describe_apps(&self) -> crate::operation::describe_apps::builders::DescribeAppsFluentBuilder {
         crate::operation::describe_apps::builders::DescribeAppsFluentBuilder::new(self.handle.clone())

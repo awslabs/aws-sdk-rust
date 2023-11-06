@@ -66,6 +66,7 @@ pub struct PutBucketPolicyInputBuilder {
 }
 impl PutBucketPolicyInputBuilder {
     /// <p>The name of the bucket.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -128,6 +129,7 @@ impl PutBucketPolicyInputBuilder {
         &self.confirm_remove_self_bucket_access
     }
     /// <p>The bucket policy as a JSON document.</p>
+    /// This field is required.
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
         self
@@ -158,7 +160,7 @@ impl PutBucketPolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutBucketPolicyInput`](crate::operation::put_bucket_policy::PutBucketPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_bucket_policy::PutBucketPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_bucket_policy::PutBucketPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_bucket_policy::PutBucketPolicyInput {
             bucket: self.bucket,
             content_md5: self.content_md5,

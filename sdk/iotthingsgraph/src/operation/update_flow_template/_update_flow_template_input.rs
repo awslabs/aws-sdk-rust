@@ -49,6 +49,7 @@ impl UpdateFlowTemplateInputBuilder {
     /// <p>The ID of the workflow to be updated.</p>
     /// <p>The ID should be in the following format.</p>
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -67,6 +68,7 @@ impl UpdateFlowTemplateInputBuilder {
         &self.id
     }
     /// <p>The <code>DefinitionDocument</code> that contains the updated workflow definition.</p>
+    /// This field is required.
     pub fn definition(mut self, input: crate::types::DefinitionDocument) -> Self {
         self.definition = ::std::option::Option::Some(input);
         self
@@ -100,7 +102,8 @@ impl UpdateFlowTemplateInputBuilder {
     /// Consumes the builder and constructs a [`UpdateFlowTemplateInput`](crate::operation::update_flow_template::UpdateFlowTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_flow_template::UpdateFlowTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_flow_template::UpdateFlowTemplateInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_flow_template::UpdateFlowTemplateInput {
             id: self.id,
             definition: self.definition,

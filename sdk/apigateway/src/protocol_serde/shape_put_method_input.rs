@@ -2,7 +2,7 @@
 pub fn ser_put_method_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_method::PutMethodInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.api_key_required {
         object.key("apiKeyRequired").boolean(*var_1);
     }

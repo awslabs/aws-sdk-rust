@@ -5,21 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RetentionConfiguration {
     /// <p>The name of the retention configuration object.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>Number of days Config stores your historical information.</p> <note>
     /// <p>Currently, only applicable to the configuration item history.</p>
     /// </note>
-    pub retention_period_in_days: ::std::option::Option<i32>,
+    pub retention_period_in_days: i32,
 }
 impl RetentionConfiguration {
     /// <p>The name of the retention configuration object.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>Number of days Config stores your historical information.</p> <note>
     /// <p>Currently, only applicable to the configuration item history.</p>
     /// </note>
-    pub fn retention_period_in_days(&self) -> ::std::option::Option<i32> {
+    pub fn retention_period_in_days(&self) -> i32 {
         self.retention_period_in_days
     }
 }
@@ -39,6 +40,7 @@ pub struct RetentionConfigurationBuilder {
 }
 impl RetentionConfigurationBuilder {
     /// <p>The name of the retention configuration object.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +57,7 @@ impl RetentionConfigurationBuilder {
     /// <p>Number of days Config stores your historical information.</p> <note>
     /// <p>Currently, only applicable to the configuration item history.</p>
     /// </note>
+    /// This field is required.
     pub fn retention_period_in_days(mut self, input: i32) -> Self {
         self.retention_period_in_days = ::std::option::Option::Some(input);
         self
@@ -73,10 +76,23 @@ impl RetentionConfigurationBuilder {
         &self.retention_period_in_days
     }
     /// Consumes the builder and constructs a [`RetentionConfiguration`](crate::types::RetentionConfiguration).
-    pub fn build(self) -> crate::types::RetentionConfiguration {
-        crate::types::RetentionConfiguration {
-            name: self.name,
-            retention_period_in_days: self.retention_period_in_days,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::RetentionConfigurationBuilder::name)
+    /// - [`retention_period_in_days`](crate::types::builders::RetentionConfigurationBuilder::retention_period_in_days)
+    pub fn build(self) -> ::std::result::Result<crate::types::RetentionConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RetentionConfiguration {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building RetentionConfiguration",
+                )
+            })?,
+            retention_period_in_days: self.retention_period_in_days.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "retention_period_in_days",
+                    "retention_period_in_days was not specified but it is required when building RetentionConfiguration",
+                )
+            })?,
+        })
     }
 }

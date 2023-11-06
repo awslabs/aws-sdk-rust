@@ -96,6 +96,7 @@ impl UpdatePortfolioShareInputBuilder {
         &self.accept_language
     }
     /// <p>The unique identifier of the portfolio for which the share will be updated.</p>
+    /// This field is required.
     pub fn portfolio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portfolio_id = ::std::option::Option::Some(input.into());
         self
@@ -168,7 +169,7 @@ impl UpdatePortfolioShareInputBuilder {
     /// Consumes the builder and constructs a [`UpdatePortfolioShareInput`](crate::operation::update_portfolio_share::UpdatePortfolioShareInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_portfolio_share::UpdatePortfolioShareInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_portfolio_share::UpdatePortfolioShareInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_portfolio_share::UpdatePortfolioShareInput {
             accept_language: self.accept_language,

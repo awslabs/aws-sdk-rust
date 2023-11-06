@@ -40,8 +40,10 @@ impl CreateFirewallInput {
         self.vpc_id.as_deref()
     }
     /// <p>The public subnets to use for your Network Firewall firewalls. Each subnet must belong to a different Availability Zone in the VPC. Network Firewall creates a firewall endpoint in each subnet. </p>
-    pub fn subnet_mappings(&self) -> ::std::option::Option<&[crate::types::SubnetMapping]> {
-        self.subnet_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_mappings.is_none()`.
+    pub fn subnet_mappings(&self) -> &[crate::types::SubnetMapping] {
+        self.subnet_mappings.as_deref().unwrap_or_default()
     }
     /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates that the firewall is protected against deletion. Use this setting to protect against accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
     pub fn delete_protection(&self) -> ::std::option::Option<bool> {
@@ -60,8 +62,10 @@ impl CreateFirewallInput {
         self.description.as_deref()
     }
     /// <p>The key:value pairs to associate with the resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>A complex type that contains settings for encryption of your firewall resources.</p>
     pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
@@ -92,6 +96,7 @@ pub struct CreateFirewallInputBuilder {
 }
 impl CreateFirewallInputBuilder {
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
+    /// This field is required.
     pub fn firewall_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_name = ::std::option::Option::Some(input.into());
         self
@@ -106,6 +111,7 @@ impl CreateFirewallInputBuilder {
         &self.firewall_name
     }
     /// <p>The Amazon Resource Name (ARN) of the <code>FirewallPolicy</code> that you want to use for the firewall.</p>
+    /// This field is required.
     pub fn firewall_policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_policy_arn = ::std::option::Option::Some(input.into());
         self
@@ -121,6 +127,7 @@ impl CreateFirewallInputBuilder {
     }
     /// <p>The unique identifier of the VPC where Network Firewall should create the firewall. </p>
     /// <p>You can't change this setting after you create the firewall. </p>
+    /// This field is required.
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
         self
@@ -249,7 +256,7 @@ impl CreateFirewallInputBuilder {
     /// Consumes the builder and constructs a [`CreateFirewallInput`](crate::operation::create_firewall::CreateFirewallInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_firewall::CreateFirewallInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_firewall::CreateFirewallInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_firewall::CreateFirewallInput {
             firewall_name: self.firewall_name,
             firewall_policy_arn: self.firewall_policy_arn,

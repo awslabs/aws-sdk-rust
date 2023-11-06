@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateEventIntegration`](crate::operation::update_event_integration::builders::UpdateEventIntegrationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::update_event_integration::builders::UpdateEventIntegrationFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_event_integration::builders::UpdateEventIntegrationFluentBuilder::set_name): <p>The name of the event integration.</p>
-    ///   - [`description(impl Into<String>)`](crate::operation::update_event_integration::builders::UpdateEventIntegrationFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_event_integration::builders::UpdateEventIntegrationFluentBuilder::set_description): <p>The description of the event integration.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::update_event_integration::builders::UpdateEventIntegrationFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_event_integration::builders::UpdateEventIntegrationFluentBuilder::set_name):<br>required: **true**<br><p>The name of the event integration.</p><br>
+    ///   - [`description(impl Into<String>)`](crate::operation::update_event_integration::builders::UpdateEventIntegrationFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_event_integration::builders::UpdateEventIntegrationFluentBuilder::set_description):<br>required: **false**<br><p>The description of the event integration.</p><br>
     /// - On success, responds with [`UpdateEventIntegrationOutput`](crate::operation::update_event_integration::UpdateEventIntegrationOutput)
     /// - On failure, responds with [`SdkError<UpdateEventIntegrationError>`](crate::operation::update_event_integration::UpdateEventIntegrationError)
     pub fn update_event_integration(&self) -> crate::operation::update_event_integration::builders::UpdateEventIntegrationFluentBuilder {

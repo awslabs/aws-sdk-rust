@@ -34,6 +34,7 @@ pub struct DeleteCarrierGatewayInputBuilder {
 }
 impl DeleteCarrierGatewayInputBuilder {
     /// <p>The ID of the carrier gateway.</p>
+    /// This field is required.
     pub fn carrier_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.carrier_gateway_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl DeleteCarrierGatewayInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCarrierGatewayInput`](crate::operation::delete_carrier_gateway::DeleteCarrierGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_carrier_gateway::DeleteCarrierGatewayInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_carrier_gateway::DeleteCarrierGatewayInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_carrier_gateway::DeleteCarrierGatewayInput {
             carrier_gateway_id: self.carrier_gateway_id,

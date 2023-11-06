@@ -27,6 +27,7 @@ pub struct GetManagedScalingPolicyInputBuilder {
 }
 impl GetManagedScalingPolicyInputBuilder {
     /// <p>Specifies the ID of the cluster for which the managed scaling policy will be fetched. </p>
+    /// This field is required.
     pub fn cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetManagedScalingPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_managed_scaling_policy::GetManagedScalingPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_managed_scaling_policy::GetManagedScalingPolicyInput { cluster_id: self.cluster_id })
     }

@@ -2,7 +2,7 @@
 pub fn ser_delete_attributes_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_attributes::DeleteAttributesInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cluster {
         object.key("cluster").string(var_1.as_str());
     }

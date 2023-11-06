@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTagsForResourceOutput {
     /// <p>One or more tags.</p>
-    pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tag_list: ::std::vec::Vec<crate::types::Tag>,
     _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>One or more tags.</p>
-    pub fn tag_list(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tag_list.as_deref()
+    pub fn tag_list(&self) -> &[crate::types::Tag] {
+        use std::ops::Deref;
+        self.tag_list.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListTagsForResourceOutput {
@@ -63,10 +64,20 @@ impl ListTagsForResourceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::operation::list_tags_for_resource::ListTagsForResourceOutput).
-    pub fn build(self) -> crate::operation::list_tags_for_resource::ListTagsForResourceOutput {
-        crate::operation::list_tags_for_resource::ListTagsForResourceOutput {
-            tag_list: self.tag_list,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`tag_list`](crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder::tag_list)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_tags_for_resource::ListTagsForResourceOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_tags_for_resource::ListTagsForResourceOutput {
+            tag_list: self.tag_list.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "tag_list",
+                    "tag_list was not specified but it is required when building ListTagsForResourceOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

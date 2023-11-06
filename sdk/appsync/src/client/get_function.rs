@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetFunction`](crate::operation::get_function::builders::GetFunctionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`api_id(impl Into<String>)`](crate::operation::get_function::builders::GetFunctionFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::get_function::builders::GetFunctionFluentBuilder::set_api_id): <p>The GraphQL API ID.</p>
-    ///   - [`function_id(impl Into<String>)`](crate::operation::get_function::builders::GetFunctionFluentBuilder::function_id) / [`set_function_id(Option<String>)`](crate::operation::get_function::builders::GetFunctionFluentBuilder::set_function_id): <p>The <code>Function</code> ID.</p>
+    ///   - [`api_id(impl Into<String>)`](crate::operation::get_function::builders::GetFunctionFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::get_function::builders::GetFunctionFluentBuilder::set_api_id):<br>required: **true**<br><p>The GraphQL API ID.</p><br>
+    ///   - [`function_id(impl Into<String>)`](crate::operation::get_function::builders::GetFunctionFluentBuilder::function_id) / [`set_function_id(Option<String>)`](crate::operation::get_function::builders::GetFunctionFluentBuilder::set_function_id):<br>required: **true**<br><p>The <code>Function</code> ID.</p><br>
     /// - On success, responds with [`GetFunctionOutput`](crate::operation::get_function::GetFunctionOutput) with field(s):
     ///   - [`function_configuration(Option<FunctionConfiguration>)`](crate::operation::get_function::GetFunctionOutput::function_configuration): <p>The <code>Function</code> object.</p>
     /// - On failure, responds with [`SdkError<GetFunctionError>`](crate::operation::get_function::GetFunctionError)

@@ -108,7 +108,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::contact_information_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -119,42 +121,42 @@ where
 pub fn ser_contact_information(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ContactInformation,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.full_name {
-        object.key("FullName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("FullName").string(input.full_name.as_str());
     }
-    if let Some(var_2) = &input.address_line1 {
-        object.key("AddressLine1").string(var_2.as_str());
+    {
+        object.key("AddressLine1").string(input.address_line1.as_str());
     }
-    if let Some(var_3) = &input.address_line2 {
-        object.key("AddressLine2").string(var_3.as_str());
+    if let Some(var_1) = &input.address_line2 {
+        object.key("AddressLine2").string(var_1.as_str());
     }
-    if let Some(var_4) = &input.address_line3 {
-        object.key("AddressLine3").string(var_4.as_str());
+    if let Some(var_2) = &input.address_line3 {
+        object.key("AddressLine3").string(var_2.as_str());
     }
-    if let Some(var_5) = &input.city {
-        object.key("City").string(var_5.as_str());
+    {
+        object.key("City").string(input.city.as_str());
     }
-    if let Some(var_6) = &input.state_or_region {
-        object.key("StateOrRegion").string(var_6.as_str());
+    if let Some(var_3) = &input.state_or_region {
+        object.key("StateOrRegion").string(var_3.as_str());
     }
-    if let Some(var_7) = &input.district_or_county {
-        object.key("DistrictOrCounty").string(var_7.as_str());
+    if let Some(var_4) = &input.district_or_county {
+        object.key("DistrictOrCounty").string(var_4.as_str());
     }
-    if let Some(var_8) = &input.postal_code {
-        object.key("PostalCode").string(var_8.as_str());
+    {
+        object.key("PostalCode").string(input.postal_code.as_str());
     }
-    if let Some(var_9) = &input.country_code {
-        object.key("CountryCode").string(var_9.as_str());
+    {
+        object.key("CountryCode").string(input.country_code.as_str());
     }
-    if let Some(var_10) = &input.phone_number {
-        object.key("PhoneNumber").string(var_10.as_str());
+    {
+        object.key("PhoneNumber").string(input.phone_number.as_str());
     }
-    if let Some(var_11) = &input.company_name {
-        object.key("CompanyName").string(var_11.as_str());
+    if let Some(var_5) = &input.company_name {
+        object.key("CompanyName").string(var_5.as_str());
     }
-    if let Some(var_12) = &input.website_url {
-        object.key("WebsiteUrl").string(var_12.as_str());
+    if let Some(var_6) = &input.website_url {
+        object.key("WebsiteUrl").string(var_6.as_str());
     }
     Ok(())
 }

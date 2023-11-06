@@ -65,8 +65,10 @@ impl InstanceSnapshot {
         self.resource_type.as_ref()
     }
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The state the snapshot is in.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::InstanceSnapshotState> {
@@ -79,8 +81,10 @@ impl InstanceSnapshot {
         self.progress.as_deref()
     }
     /// <p>An array of disk objects containing information about all block storage disks.</p>
-    pub fn from_attached_disks(&self) -> ::std::option::Option<&[crate::types::Disk]> {
-        self.from_attached_disks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.from_attached_disks.is_none()`.
+    pub fn from_attached_disks(&self) -> &[crate::types::Disk] {
+        self.from_attached_disks.as_deref().unwrap_or_default()
     }
     /// <p>The instance from which the snapshot was created.</p>
     pub fn from_instance_name(&self) -> ::std::option::Option<&str> {

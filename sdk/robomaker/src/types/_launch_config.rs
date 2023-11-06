@@ -41,8 +41,10 @@ impl LaunchConfig {
     }
     /// <p>If you've specified <code>General</code> as the value for your <code>RobotSoftwareSuite</code>, you can use this field to specify a list of commands for your container image.</p>
     /// <p>If you've specified <code>SimulationRuntime</code> as the value for your <code>SimulationSoftwareSuite</code>, you can use this field to specify a list of commands for your container image.</p>
-    pub fn command(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.command.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.command.is_none()`.
+    pub fn command(&self) -> &[::std::string::String] {
+        self.command.as_deref().unwrap_or_default()
     }
 }
 impl LaunchConfig {

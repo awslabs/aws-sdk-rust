@@ -89,20 +89,26 @@ impl PortInfo {
     /// <li> <p>To allow the IP addresses <code>192.0.2.0</code> to <code>192.0.2.255</code>, specify <code>192.0.2.0/24</code>.</p> </li>
     /// </ul>
     /// <p>For more information about CIDR block notation, see <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless Inter-Domain Routing</a> on <i>Wikipedia</i>.</p>
-    pub fn cidrs(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cidrs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cidrs.is_none()`.
+    pub fn cidrs(&self) -> &[::std::string::String] {
+        self.cidrs.as_deref().unwrap_or_default()
     }
     /// <p>The IPv6 address, or range of IPv6 addresses (in CIDR notation) that are allowed to connect to an instance through the ports, and the protocol. Only devices with an IPv6 address can connect to an instance through IPv6; otherwise, IPv4 should be used.</p> <note>
     /// <p>The <code>cidrs</code> parameter lists the IPv4 addresses that are allowed to connect to an instance.</p>
     /// </note>
     /// <p>For more information about CIDR block notation, see <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless Inter-Domain Routing</a> on <i>Wikipedia</i>.</p>
-    pub fn ipv6_cidrs(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ipv6_cidrs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv6_cidrs.is_none()`.
+    pub fn ipv6_cidrs(&self) -> &[::std::string::String] {
+        self.ipv6_cidrs.as_deref().unwrap_or_default()
     }
     /// <p>An alias that defines access for a preconfigured range of IP addresses.</p>
     /// <p>The only alias currently supported is <code>lightsail-connect</code>, which allows IP addresses of the browser-based RDP/SSH client in the Lightsail console to connect to your instance.</p>
-    pub fn cidr_list_aliases(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cidr_list_aliases.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cidr_list_aliases.is_none()`.
+    pub fn cidr_list_aliases(&self) -> &[::std::string::String] {
+        self.cidr_list_aliases.as_deref().unwrap_or_default()
     }
 }
 impl PortInfo {

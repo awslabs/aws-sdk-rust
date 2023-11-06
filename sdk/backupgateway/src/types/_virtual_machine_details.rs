@@ -45,8 +45,10 @@ impl VirtualMachineDetails {
         self.last_backup_date.as_ref()
     }
     /// <p>These are the details of the VMware tags associated with the specified virtual machine.</p>
-    pub fn vmware_tags(&self) -> ::std::option::Option<&[crate::types::VmwareTag]> {
-        self.vmware_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vmware_tags.is_none()`.
+    pub fn vmware_tags(&self) -> &[crate::types::VmwareTag] {
+        self.vmware_tags.as_deref().unwrap_or_default()
     }
 }
 impl VirtualMachineDetails {

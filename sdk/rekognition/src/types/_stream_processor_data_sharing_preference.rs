@@ -28,6 +28,7 @@ pub struct StreamProcessorDataSharingPreferenceBuilder {
 }
 impl StreamProcessorDataSharingPreferenceBuilder {
     /// <p> If this option is set to true, you choose to share data with Rekognition to improve model performance. </p>
+    /// This field is required.
     pub fn opt_in(mut self, input: bool) -> Self {
         self.opt_in = ::std::option::Option::Some(input);
         self

@@ -69,16 +69,20 @@ impl AwsEc2VpnConnectionDetails {
         self.category.as_deref()
     }
     /// <p>Information about the VPN tunnel.</p>
-    pub fn vgw_telemetry(&self) -> ::std::option::Option<&[crate::types::AwsEc2VpnConnectionVgwTelemetryDetails]> {
-        self.vgw_telemetry.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vgw_telemetry.is_none()`.
+    pub fn vgw_telemetry(&self) -> &[crate::types::AwsEc2VpnConnectionVgwTelemetryDetails] {
+        self.vgw_telemetry.as_deref().unwrap_or_default()
     }
     /// <p>The VPN connection options.</p>
     pub fn options(&self) -> ::std::option::Option<&crate::types::AwsEc2VpnConnectionOptionsDetails> {
         self.options.as_ref()
     }
     /// <p>The static routes that are associated with the VPN connection.</p>
-    pub fn routes(&self) -> ::std::option::Option<&[crate::types::AwsEc2VpnConnectionRoutesDetails]> {
-        self.routes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.routes.is_none()`.
+    pub fn routes(&self) -> &[crate::types::AwsEc2VpnConnectionRoutesDetails] {
+        self.routes.as_deref().unwrap_or_default()
     }
     /// <p>The identifier of the transit gateway that is associated with the VPN connection.</p>
     pub fn transit_gateway_id(&self) -> ::std::option::Option<&str> {

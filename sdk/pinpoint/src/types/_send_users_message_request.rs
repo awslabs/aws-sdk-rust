@@ -76,6 +76,7 @@ impl SendUsersMessageRequestBuilder {
         &self.context
     }
     /// <p>The settings and content for the default message and any default messages that you defined for specific channels.</p>
+    /// This field is required.
     pub fn message_configuration(mut self, input: crate::types::DirectMessageConfiguration) -> Self {
         self.message_configuration = ::std::option::Option::Some(input);
         self

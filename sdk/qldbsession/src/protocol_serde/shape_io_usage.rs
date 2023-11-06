@@ -15,14 +15,14 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ReadIOs" => {
-                            builder = builder.set_read_i_os(
+                            builder = builder.set_read_ios(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i64::try_from)
                                     .transpose()?,
                             );
                         }
                         "WriteIOs" => {
-                            builder = builder.set_write_i_os(
+                            builder = builder.set_write_ios(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i64::try_from)
                                     .transpose()?,

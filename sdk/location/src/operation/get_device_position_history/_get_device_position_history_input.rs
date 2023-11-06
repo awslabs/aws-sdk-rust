@@ -82,6 +82,7 @@ pub struct GetDevicePositionHistoryInputBuilder {
 }
 impl GetDevicePositionHistoryInputBuilder {
     /// <p>The tracker resource receiving the request for the device position history.</p>
+    /// This field is required.
     pub fn tracker_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tracker_name = ::std::option::Option::Some(input.into());
         self
@@ -96,6 +97,7 @@ impl GetDevicePositionHistoryInputBuilder {
         &self.tracker_name
     }
     /// <p>The device whose position history you want to retrieve.</p>
+    /// This field is required.
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_id = ::std::option::Option::Some(input.into());
         self
@@ -200,7 +202,7 @@ impl GetDevicePositionHistoryInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_device_position_history::GetDevicePositionHistoryInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_device_position_history::GetDevicePositionHistoryInput {
             tracker_name: self.tracker_name,

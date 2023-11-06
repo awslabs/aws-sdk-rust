@@ -2,7 +2,7 @@
 pub fn ser_workflow_step_output_union(
     object_5: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WorkflowStepOutputUnion,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::WorkflowStepOutputUnion::IntegerValue(inner) => {
             object_5.key("integerValue").number(
@@ -23,7 +23,7 @@ pub fn ser_workflow_step_output_union(
             array_1.finish();
         }
         crate::types::WorkflowStepOutputUnion::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "WorkflowStepOutputUnion",
             ))
         }
@@ -44,23 +44,32 @@ where
             match tokens.next().transpose()? {
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                    let key = key.to_unescaped()?;
+                    if key == "__type" {
+                        ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                        continue;
+                    }
                     if variant.is_some() {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
                             "encountered mixed variants in union",
                         ));
                     }
-                    variant = match key.to_unescaped()?.as_ref() {
+                    variant = match key.as_ref() {
                         "integerValue" => Some(crate::types::WorkflowStepOutputUnion::IntegerValue(
                             ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                 .map(i32::try_from)
                                 .transpose()?
-                                .unwrap_or_default(),
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'integerValue' cannot be null")
+                                })?,
                         )),
                         "stringValue" => Some(crate::types::WorkflowStepOutputUnion::StringValue(
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                 .transpose()?
-                                .unwrap_or_default(),
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'stringValue' cannot be null")
+                                })?,
                         )),
                         "listOfStringValue" => Some(crate::types::WorkflowStepOutputUnion::ListOfStringValue(
                             crate::protocol_serde::shape_string_list::de_string_list(tokens)?.ok_or_else(|| {

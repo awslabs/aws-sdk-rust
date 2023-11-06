@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteFaq`](crate::operation::delete_faq::builders::DeleteFaqFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::delete_faq::builders::DeleteFaqFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_faq::builders::DeleteFaqFluentBuilder::set_id): <p>The identifier of the FAQ you want to remove.</p>
-    ///   - [`index_id(impl Into<String>)`](crate::operation::delete_faq::builders::DeleteFaqFluentBuilder::index_id) / [`set_index_id(Option<String>)`](crate::operation::delete_faq::builders::DeleteFaqFluentBuilder::set_index_id): <p>The identifier of the index for the FAQ.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::delete_faq::builders::DeleteFaqFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_faq::builders::DeleteFaqFluentBuilder::set_id):<br>required: **true**<br><p>The identifier of the FAQ you want to remove.</p><br>
+    ///   - [`index_id(impl Into<String>)`](crate::operation::delete_faq::builders::DeleteFaqFluentBuilder::index_id) / [`set_index_id(Option<String>)`](crate::operation::delete_faq::builders::DeleteFaqFluentBuilder::set_index_id):<br>required: **true**<br><p>The identifier of the index for the FAQ.</p><br>
     /// - On success, responds with [`DeleteFaqOutput`](crate::operation::delete_faq::DeleteFaqOutput)
     /// - On failure, responds with [`SdkError<DeleteFaqError>`](crate::operation::delete_faq::DeleteFaqError)
     pub fn delete_faq(&self) -> crate::operation::delete_faq::builders::DeleteFaqFluentBuilder {

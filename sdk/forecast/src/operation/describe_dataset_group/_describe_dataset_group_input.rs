@@ -27,6 +27,7 @@ pub struct DescribeDatasetGroupInputBuilder {
 }
 impl DescribeDatasetGroupInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
+    /// This field is required.
     pub fn dataset_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_group_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeDatasetGroupInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDatasetGroupInput`](crate::operation::describe_dataset_group::DescribeDatasetGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_dataset_group::DescribeDatasetGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_dataset_group::DescribeDatasetGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_dataset_group::DescribeDatasetGroupInput {
             dataset_group_arn: self.dataset_group_arn,

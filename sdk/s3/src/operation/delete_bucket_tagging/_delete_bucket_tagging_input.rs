@@ -34,6 +34,7 @@ pub struct DeleteBucketTaggingInputBuilder {
 }
 impl DeleteBucketTaggingInputBuilder {
     /// <p>The bucket that has the tag set to be removed.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl DeleteBucketTaggingInputBuilder {
     /// Consumes the builder and constructs a [`DeleteBucketTaggingInput`](crate::operation::delete_bucket_tagging::DeleteBucketTaggingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_bucket_tagging::DeleteBucketTaggingInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_bucket_tagging::DeleteBucketTaggingInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_bucket_tagging::DeleteBucketTaggingInput {
             bucket: self.bucket,

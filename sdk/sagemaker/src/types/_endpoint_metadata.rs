@@ -49,6 +49,7 @@ pub struct EndpointMetadataBuilder {
 }
 impl EndpointMetadataBuilder {
     /// <p>The name of the endpoint.</p>
+    /// This field is required.
     pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_name = ::std::option::Option::Some(input.into());
         self

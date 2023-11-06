@@ -79,8 +79,10 @@ impl UpdateMaintenanceWindowTaskInput {
     /// <p>The targets (either managed nodes or tags) to modify. Managed nodes are specified using the format <code>Key=instanceids,Values=instanceID_1,instanceID_2</code>. Tags are specified using the format <code> Key=tag_name,Values=tag_value</code>. </p> <note>
     /// <p>One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task, targets are optional for other maintenance window task types (Automation, Lambda, and Step Functions). For more information about running tasks that don't specify targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering maintenance window tasks without targets</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// </note>
-    pub fn targets(&self) -> ::std::option::Option<&[crate::types::Target]> {
-        self.targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
+    pub fn targets(&self) -> &[crate::types::Target] {
+        self.targets.as_deref().unwrap_or_default()
     }
     /// <p>The task ARN to modify.</p>
     pub fn task_arn(&self) -> ::std::option::Option<&str> {
@@ -218,6 +220,7 @@ pub struct UpdateMaintenanceWindowTaskInputBuilder {
 }
 impl UpdateMaintenanceWindowTaskInputBuilder {
     /// <p>The maintenance window ID that contains the task to modify.</p>
+    /// This field is required.
     pub fn window_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.window_id = ::std::option::Option::Some(input.into());
         self
@@ -232,6 +235,7 @@ impl UpdateMaintenanceWindowTaskInputBuilder {
         &self.window_id
     }
     /// <p>The task ID to modify.</p>
+    /// This field is required.
     pub fn window_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.window_task_id = ::std::option::Option::Some(input.into());
         self
@@ -557,7 +561,7 @@ impl UpdateMaintenanceWindowTaskInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_maintenance_window_task::UpdateMaintenanceWindowTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_maintenance_window_task::UpdateMaintenanceWindowTaskInput {
             window_id: self.window_id,

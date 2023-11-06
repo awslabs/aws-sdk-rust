@@ -21,8 +21,10 @@ impl QuestionMetric {
         self.risk.as_ref()
     }
     /// <p>The best practices, or choices, that have been identified as contributing to risk in a question.</p>
-    pub fn best_practices(&self) -> ::std::option::Option<&[crate::types::BestPractice]> {
-        self.best_practices.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.best_practices.is_none()`.
+    pub fn best_practices(&self) -> &[crate::types::BestPractice] {
+        self.best_practices.as_deref().unwrap_or_default()
     }
 }
 impl QuestionMetric {

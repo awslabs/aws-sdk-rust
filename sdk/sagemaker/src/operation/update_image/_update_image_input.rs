@@ -16,8 +16,10 @@ pub struct UpdateImageInput {
 }
 impl UpdateImageInput {
     /// <p>A list of properties to delete. Only the <code>Description</code> and <code>DisplayName</code> properties can be deleted.</p>
-    pub fn delete_properties(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.delete_properties.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.delete_properties.is_none()`.
+    pub fn delete_properties(&self) -> &[::std::string::String] {
+        self.delete_properties.as_deref().unwrap_or_default()
     }
     /// <p>The new description for the image.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -103,6 +105,7 @@ impl UpdateImageInputBuilder {
         &self.display_name
     }
     /// <p>The name of the image to update.</p>
+    /// This field is required.
     pub fn image_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_name = ::std::option::Option::Some(input.into());
         self
@@ -131,7 +134,7 @@ impl UpdateImageInputBuilder {
         &self.role_arn
     }
     /// Consumes the builder and constructs a [`UpdateImageInput`](crate::operation::update_image::UpdateImageInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_image::UpdateImageInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_image::UpdateImageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_image::UpdateImageInput {
             delete_properties: self.delete_properties,
             description: self.description,

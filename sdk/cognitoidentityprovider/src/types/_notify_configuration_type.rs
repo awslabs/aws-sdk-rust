@@ -9,7 +9,7 @@ pub struct NotifyConfigurationType {
     /// <p>The destination to which the receiver of an email should reply to.</p>
     pub reply_to: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the identity that is associated with the sending authorization policy. This identity permits Amazon Cognito to send for the email address specified in the <code>From</code> parameter.</p>
-    pub source_arn: ::std::option::Option<::std::string::String>,
+    pub source_arn: ::std::string::String,
     /// <p>Email template used when a detected risk event is blocked.</p>
     pub block_email: ::std::option::Option<crate::types::NotifyEmailType>,
     /// <p>The email template used when a detected risk event is allowed.</p>
@@ -27,8 +27,9 @@ impl NotifyConfigurationType {
         self.reply_to.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the identity that is associated with the sending authorization policy. This identity permits Amazon Cognito to send for the email address specified in the <code>From</code> parameter.</p>
-    pub fn source_arn(&self) -> ::std::option::Option<&str> {
-        self.source_arn.as_deref()
+    pub fn source_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.source_arn.deref()
     }
     /// <p>Email template used when a detected risk event is blocked.</p>
     pub fn block_email(&self) -> ::std::option::Option<&crate::types::NotifyEmailType> {
@@ -91,6 +92,7 @@ impl NotifyConfigurationTypeBuilder {
         &self.reply_to
     }
     /// <p>The Amazon Resource Name (ARN) of the identity that is associated with the sending authorization policy. This identity permits Amazon Cognito to send for the email address specified in the <code>From</code> parameter.</p>
+    /// This field is required.
     pub fn source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_arn = ::std::option::Option::Some(input.into());
         self
@@ -147,14 +149,21 @@ impl NotifyConfigurationTypeBuilder {
         &self.mfa_email
     }
     /// Consumes the builder and constructs a [`NotifyConfigurationType`](crate::types::NotifyConfigurationType).
-    pub fn build(self) -> crate::types::NotifyConfigurationType {
-        crate::types::NotifyConfigurationType {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`source_arn`](crate::types::builders::NotifyConfigurationTypeBuilder::source_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::NotifyConfigurationType, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::NotifyConfigurationType {
             from: self.from,
             reply_to: self.reply_to,
-            source_arn: self.source_arn,
+            source_arn: self.source_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "source_arn",
+                    "source_arn was not specified but it is required when building NotifyConfigurationType",
+                )
+            })?,
             block_email: self.block_email,
             no_action_email: self.no_action_email,
             mfa_email: self.mfa_email,
-        }
+        })
     }
 }

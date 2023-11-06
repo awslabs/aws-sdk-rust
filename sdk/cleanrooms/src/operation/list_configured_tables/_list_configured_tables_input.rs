@@ -64,7 +64,7 @@ impl ListConfiguredTablesInputBuilder {
     /// Consumes the builder and constructs a [`ListConfiguredTablesInput`](crate::operation::list_configured_tables::ListConfiguredTablesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_configured_tables::ListConfiguredTablesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_configured_tables::ListConfiguredTablesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_configured_tables::ListConfiguredTablesInput {
             next_token: self.next_token,

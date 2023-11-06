@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateOriginAccessControl`](crate::operation::create_origin_access_control::builders::CreateOriginAccessControlFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`origin_access_control_config(OriginAccessControlConfig)`](crate::operation::create_origin_access_control::builders::CreateOriginAccessControlFluentBuilder::origin_access_control_config) / [`set_origin_access_control_config(Option<OriginAccessControlConfig>)`](crate::operation::create_origin_access_control::builders::CreateOriginAccessControlFluentBuilder::set_origin_access_control_config): <p>Contains the origin access control.</p>
+    ///   - [`origin_access_control_config(OriginAccessControlConfig)`](crate::operation::create_origin_access_control::builders::CreateOriginAccessControlFluentBuilder::origin_access_control_config) / [`set_origin_access_control_config(Option<OriginAccessControlConfig>)`](crate::operation::create_origin_access_control::builders::CreateOriginAccessControlFluentBuilder::set_origin_access_control_config):<br>required: **true**<br><p>Contains the origin access control.</p><br>
     /// - On success, responds with [`CreateOriginAccessControlOutput`](crate::operation::create_origin_access_control::CreateOriginAccessControlOutput) with field(s):
     ///   - [`origin_access_control(Option<OriginAccessControl>)`](crate::operation::create_origin_access_control::CreateOriginAccessControlOutput::origin_access_control): <p>Contains an origin access control.</p>
     ///   - [`location(Option<String>)`](crate::operation::create_origin_access_control::CreateOriginAccessControlOutput::location): <p>The URL of the origin access control.</p>

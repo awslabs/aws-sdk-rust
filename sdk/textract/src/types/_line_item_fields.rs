@@ -9,8 +9,10 @@ pub struct LineItemFields {
 }
 impl LineItemFields {
     /// <p>ExpenseFields used to show information from detected lines on a table.</p>
-    pub fn line_item_expense_fields(&self) -> ::std::option::Option<&[crate::types::ExpenseField]> {
-        self.line_item_expense_fields.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.line_item_expense_fields.is_none()`.
+    pub fn line_item_expense_fields(&self) -> &[crate::types::ExpenseField] {
+        self.line_item_expense_fields.as_deref().unwrap_or_default()
     }
 }
 impl LineItemFields {

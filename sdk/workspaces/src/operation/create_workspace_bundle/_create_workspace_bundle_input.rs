@@ -48,8 +48,10 @@ impl CreateWorkspaceBundleInput {
     /// <p>The tags associated with the bundle.</p> <note>
     /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
     /// </note>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateWorkspaceBundleInput {
@@ -73,6 +75,7 @@ pub struct CreateWorkspaceBundleInputBuilder {
 }
 impl CreateWorkspaceBundleInputBuilder {
     /// <p>The name of the bundle.</p>
+    /// This field is required.
     pub fn bundle_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bundle_name = ::std::option::Option::Some(input.into());
         self
@@ -87,6 +90,7 @@ impl CreateWorkspaceBundleInputBuilder {
         &self.bundle_name
     }
     /// <p>The description of the bundle.</p>
+    /// This field is required.
     pub fn bundle_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bundle_description = ::std::option::Option::Some(input.into());
         self
@@ -101,6 +105,7 @@ impl CreateWorkspaceBundleInputBuilder {
         &self.bundle_description
     }
     /// <p>The identifier of the image that is used to create the bundle.</p>
+    /// This field is required.
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_id = ::std::option::Option::Some(input.into());
         self
@@ -115,6 +120,7 @@ impl CreateWorkspaceBundleInputBuilder {
         &self.image_id
     }
     /// <p>Describes the compute type of the bundle.</p>
+    /// This field is required.
     pub fn compute_type(mut self, input: crate::types::ComputeType) -> Self {
         self.compute_type = ::std::option::Option::Some(input);
         self
@@ -129,6 +135,7 @@ impl CreateWorkspaceBundleInputBuilder {
         &self.compute_type
     }
     /// <p>Describes the user volume for a WorkSpace bundle.</p>
+    /// This field is required.
     pub fn user_storage(mut self, input: crate::types::UserStorage) -> Self {
         self.user_storage = ::std::option::Option::Some(input);
         self
@@ -185,7 +192,7 @@ impl CreateWorkspaceBundleInputBuilder {
     /// Consumes the builder and constructs a [`CreateWorkspaceBundleInput`](crate::operation::create_workspace_bundle::CreateWorkspaceBundleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_workspace_bundle::CreateWorkspaceBundleInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_workspace_bundle::CreateWorkspaceBundleInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_workspace_bundle::CreateWorkspaceBundleInput {
             bundle_name: self.bundle_name,

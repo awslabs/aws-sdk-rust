@@ -27,6 +27,7 @@ pub struct DisassociateGatewayFromServerInputBuilder {
 }
 impl DisassociateGatewayFromServerInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the gateway to disassociate.</p>
+    /// This field is required.
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DisassociateGatewayFromServerInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_gateway_from_server::DisassociateGatewayFromServerInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_gateway_from_server::DisassociateGatewayFromServerInput {
             gateway_arn: self.gateway_arn,

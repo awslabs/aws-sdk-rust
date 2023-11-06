@@ -28,6 +28,7 @@ pub struct GetBulkPublishDetailsInputBuilder {
 }
 impl GetBulkPublishDetailsInputBuilder {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+    /// This field is required.
     pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl GetBulkPublishDetailsInputBuilder {
     /// Consumes the builder and constructs a [`GetBulkPublishDetailsInput`](crate::operation::get_bulk_publish_details::GetBulkPublishDetailsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_bulk_publish_details::GetBulkPublishDetailsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_bulk_publish_details::GetBulkPublishDetailsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_bulk_publish_details::GetBulkPublishDetailsInput {
             identity_pool_id: self.identity_pool_id,

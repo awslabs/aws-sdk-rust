@@ -41,6 +41,7 @@ pub struct ListAttributeGroupsForApplicationInputBuilder {
 }
 impl ListAttributeGroupsForApplicationInputBuilder {
     /// <p>The name or ID of the application.</p>
+    /// This field is required.
     pub fn application(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListAttributeGroupsForApplicationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_attribute_groups_for_application::ListAttributeGroupsForApplicationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_attribute_groups_for_application::ListAttributeGroupsForApplicationInput {

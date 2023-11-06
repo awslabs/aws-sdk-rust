@@ -34,6 +34,7 @@ pub struct CreateSmsSandboxPhoneNumberInputBuilder {
 }
 impl CreateSmsSandboxPhoneNumberInputBuilder {
     /// <p>The destination phone number to verify. On verification, Amazon SNS adds this phone number to the list of verified phone numbers that you can send SMS messages to.</p>
+    /// This field is required.
     pub fn phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl CreateSmsSandboxPhoneNumberInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_sms_sandbox_phone_number::CreateSmsSandboxPhoneNumberInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_sms_sandbox_phone_number::CreateSmsSandboxPhoneNumberInput {
             phone_number: self.phone_number,

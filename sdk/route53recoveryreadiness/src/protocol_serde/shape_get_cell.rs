@@ -138,10 +138,10 @@ pub(crate) fn de_get_cell(
                     );
                 }
                 "cells" => {
-                    builder = builder.set_cells(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                    builder = builder.set_cells(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                 }
                 "parentReadinessScopes" => {
-                    builder = builder.set_parent_readiness_scopes(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                    builder = builder.set_parent_readiness_scopes(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                 }
                 "tags" => {
                     builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);

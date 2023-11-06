@@ -2,18 +2,18 @@
 pub fn ser_custom_action_set_parameters_operation(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CustomActionSetParametersOperation,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.parameter_value_configurations {
-        let mut array_2 = object.key("ParameterValueConfigurations").start_array();
-        for item_3 in var_1 {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        let mut array_1 = object.key("ParameterValueConfigurations").start_array();
+        for item_2 in &input.parameter_value_configurations {
             {
                 #[allow(unused_mut)]
-                let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_set_parameter_value_configuration::ser_set_parameter_value_configuration(&mut object_4, item_3)?;
-                object_4.finish();
+                let mut object_3 = array_1.value().start_object();
+                crate::protocol_serde::shape_set_parameter_value_configuration::ser_set_parameter_value_configuration(&mut object_3, item_2)?;
+                object_3.finish();
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
     Ok(())
 }
@@ -50,7 +50,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::custom_action_set_parameters_operation_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

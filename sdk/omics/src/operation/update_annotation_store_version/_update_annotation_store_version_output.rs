@@ -4,55 +4,60 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAnnotationStoreVersionOutput {
     /// <p> The annotation store ID. </p>
-    pub store_id: ::std::option::Option<::std::string::String>,
+    pub store_id: ::std::string::String,
     /// <p> The annotation store version ID. </p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p> The status of an annotation store version. </p>
-    pub status: ::std::option::Option<crate::types::VersionStatus>,
+    pub status: crate::types::VersionStatus,
     /// <p> The name of an annotation store. </p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p> The name of an annotation store version. </p>
-    pub version_name: ::std::option::Option<::std::string::String>,
+    pub version_name: ::std::string::String,
     /// <p> The description of an annotation store version. </p>
-    pub description: ::std::option::Option<::std::string::String>,
+    pub description: ::std::string::String,
     /// <p> The time stamp for when an annotation store version was created. </p>
-    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_time: ::aws_smithy_types::DateTime,
     /// <p> The time stamp for when an annotation store version was updated. </p>
-    pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub update_time: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
 impl UpdateAnnotationStoreVersionOutput {
     /// <p> The annotation store ID. </p>
-    pub fn store_id(&self) -> ::std::option::Option<&str> {
-        self.store_id.as_deref()
+    pub fn store_id(&self) -> &str {
+        use std::ops::Deref;
+        self.store_id.deref()
     }
     /// <p> The annotation store version ID. </p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p> The status of an annotation store version. </p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::VersionStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::VersionStatus {
+        &self.status
     }
     /// <p> The name of an annotation store. </p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p> The name of an annotation store version. </p>
-    pub fn version_name(&self) -> ::std::option::Option<&str> {
-        self.version_name.as_deref()
+    pub fn version_name(&self) -> &str {
+        use std::ops::Deref;
+        self.version_name.deref()
     }
     /// <p> The description of an annotation store version. </p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
-        self.description.as_deref()
+    pub fn description(&self) -> &str {
+        use std::ops::Deref;
+        self.description.deref()
     }
     /// <p> The time stamp for when an annotation store version was created. </p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_time.as_ref()
+    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_time
     }
     /// <p> The time stamp for when an annotation store version was updated. </p>
-    pub fn update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.update_time.as_ref()
+    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.update_time
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateAnnotationStoreVersionOutput {
@@ -83,6 +88,7 @@ pub struct UpdateAnnotationStoreVersionOutputBuilder {
 }
 impl UpdateAnnotationStoreVersionOutputBuilder {
     /// <p> The annotation store ID. </p>
+    /// This field is required.
     pub fn store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.store_id = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +103,7 @@ impl UpdateAnnotationStoreVersionOutputBuilder {
         &self.store_id
     }
     /// <p> The annotation store version ID. </p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +118,7 @@ impl UpdateAnnotationStoreVersionOutputBuilder {
         &self.id
     }
     /// <p> The status of an annotation store version. </p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::VersionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -125,6 +133,7 @@ impl UpdateAnnotationStoreVersionOutputBuilder {
         &self.status
     }
     /// <p> The name of an annotation store. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -139,6 +148,7 @@ impl UpdateAnnotationStoreVersionOutputBuilder {
         &self.name
     }
     /// <p> The name of an annotation store version. </p>
+    /// This field is required.
     pub fn version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_name = ::std::option::Option::Some(input.into());
         self
@@ -153,6 +163,7 @@ impl UpdateAnnotationStoreVersionOutputBuilder {
         &self.version_name
     }
     /// <p> The description of an annotation store version. </p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -167,6 +178,7 @@ impl UpdateAnnotationStoreVersionOutputBuilder {
         &self.description
     }
     /// <p> The time stamp for when an annotation store version was created. </p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -181,6 +193,7 @@ impl UpdateAnnotationStoreVersionOutputBuilder {
         &self.creation_time
     }
     /// <p> The time stamp for when an annotation store version was updated. </p>
+    /// This field is required.
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
         self
@@ -204,17 +217,71 @@ impl UpdateAnnotationStoreVersionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateAnnotationStoreVersionOutput`](crate::operation::update_annotation_store_version::UpdateAnnotationStoreVersionOutput).
-    pub fn build(self) -> crate::operation::update_annotation_store_version::UpdateAnnotationStoreVersionOutput {
-        crate::operation::update_annotation_store_version::UpdateAnnotationStoreVersionOutput {
-            store_id: self.store_id,
-            id: self.id,
-            status: self.status,
-            name: self.name,
-            version_name: self.version_name,
-            description: self.description,
-            creation_time: self.creation_time,
-            update_time: self.update_time,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`store_id`](crate::operation::update_annotation_store_version::builders::UpdateAnnotationStoreVersionOutputBuilder::store_id)
+    /// - [`id`](crate::operation::update_annotation_store_version::builders::UpdateAnnotationStoreVersionOutputBuilder::id)
+    /// - [`status`](crate::operation::update_annotation_store_version::builders::UpdateAnnotationStoreVersionOutputBuilder::status)
+    /// - [`name`](crate::operation::update_annotation_store_version::builders::UpdateAnnotationStoreVersionOutputBuilder::name)
+    /// - [`version_name`](crate::operation::update_annotation_store_version::builders::UpdateAnnotationStoreVersionOutputBuilder::version_name)
+    /// - [`description`](crate::operation::update_annotation_store_version::builders::UpdateAnnotationStoreVersionOutputBuilder::description)
+    /// - [`creation_time`](crate::operation::update_annotation_store_version::builders::UpdateAnnotationStoreVersionOutputBuilder::creation_time)
+    /// - [`update_time`](crate::operation::update_annotation_store_version::builders::UpdateAnnotationStoreVersionOutputBuilder::update_time)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_annotation_store_version::UpdateAnnotationStoreVersionOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::update_annotation_store_version::UpdateAnnotationStoreVersionOutput {
+            store_id: self.store_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "store_id",
+                    "store_id was not specified but it is required when building UpdateAnnotationStoreVersionOutput",
+                )
+            })?,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building UpdateAnnotationStoreVersionOutput",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building UpdateAnnotationStoreVersionOutput",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building UpdateAnnotationStoreVersionOutput",
+                )
+            })?,
+            version_name: self.version_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "version_name",
+                    "version_name was not specified but it is required when building UpdateAnnotationStoreVersionOutput",
+                )
+            })?,
+            description: self.description.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "description",
+                    "description was not specified but it is required when building UpdateAnnotationStoreVersionOutput",
+                )
+            })?,
+            creation_time: self.creation_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "creation_time",
+                    "creation_time was not specified but it is required when building UpdateAnnotationStoreVersionOutput",
+                )
+            })?,
+            update_time: self.update_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "update_time",
+                    "update_time was not specified but it is required when building UpdateAnnotationStoreVersionOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -42,6 +42,7 @@ pub struct ModelSummaryBuilder {
 }
 impl ModelSummaryBuilder {
     /// <p>The name of the model that you want a summary for.</p>
+    /// This field is required.
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl ModelSummaryBuilder {
         &self.model_name
     }
     /// <p>The Amazon Resource Name (ARN) of the model.</p>
+    /// This field is required.
     pub fn model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_arn = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl ModelSummaryBuilder {
         &self.model_arn
     }
     /// <p>A timestamp that indicates when the model was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self

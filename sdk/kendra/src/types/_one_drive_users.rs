@@ -11,8 +11,10 @@ pub struct OneDriveUsers {
 }
 impl OneDriveUsers {
     /// <p>A list of users whose documents should be indexed. Specify the user names in email format, for example, <code>username@tenantdomain</code>. If you need to index the documents of more than 100 users, use the <code>OneDriveUserS3Path</code> field to specify the location of a file containing a list of users.</p>
-    pub fn one_drive_user_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.one_drive_user_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.one_drive_user_list.is_none()`.
+    pub fn one_drive_user_list(&self) -> &[::std::string::String] {
+        self.one_drive_user_list.as_deref().unwrap_or_default()
     }
     /// <p>The S3 bucket location of a file containing a list of users whose documents should be indexed.</p>
     pub fn one_drive_user_s3_path(&self) -> ::std::option::Option<&crate::types::S3Path> {

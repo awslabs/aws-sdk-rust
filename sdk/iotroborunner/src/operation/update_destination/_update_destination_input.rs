@@ -48,6 +48,7 @@ pub struct UpdateDestinationInputBuilder {
 }
 impl UpdateDestinationInputBuilder {
     /// Destination ARN.
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,7 @@ impl UpdateDestinationInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDestinationInput`](crate::operation::update_destination::UpdateDestinationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_destination::UpdateDestinationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_destination::UpdateDestinationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_destination::UpdateDestinationInput {
             id: self.id,
             name: self.name,

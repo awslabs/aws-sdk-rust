@@ -2,7 +2,7 @@
 pub fn ser_aws_redshift_cluster_resize_info(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsRedshiftClusterResizeInfo,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.allow_cancel_resize {
         object.key("AllowCancelResize").boolean(*var_1);
     }

@@ -2,7 +2,7 @@
 pub fn ser_report_frequency(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ReportFrequency,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.value {
         object.key("value").number(
             #[allow(clippy::useless_conversion)]

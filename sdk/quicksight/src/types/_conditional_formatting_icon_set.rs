@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ConditionalFormattingIconSet {
     /// <p>The expression that determines the formatting configuration for the icon set.</p>
-    pub expression: ::std::option::Option<::std::string::String>,
+    pub expression: ::std::string::String,
     /// <p>Determines the icon set type.</p>
     pub icon_set_type: ::std::option::Option<crate::types::ConditionalFormattingIconSetType>,
 }
 impl ConditionalFormattingIconSet {
     /// <p>The expression that determines the formatting configuration for the icon set.</p>
-    pub fn expression(&self) -> ::std::option::Option<&str> {
-        self.expression.as_deref()
+    pub fn expression(&self) -> &str {
+        use std::ops::Deref;
+        self.expression.deref()
     }
     /// <p>Determines the icon set type.</p>
     pub fn icon_set_type(&self) -> ::std::option::Option<&crate::types::ConditionalFormattingIconSetType> {
@@ -43,6 +44,7 @@ pub struct ConditionalFormattingIconSetBuilder {
 }
 impl ConditionalFormattingIconSetBuilder {
     /// <p>The expression that determines the formatting configuration for the icon set.</p>
+    /// This field is required.
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expression = ::std::option::Option::Some(input.into());
         self
@@ -71,11 +73,18 @@ impl ConditionalFormattingIconSetBuilder {
         &self.icon_set_type
     }
     /// Consumes the builder and constructs a [`ConditionalFormattingIconSet`](crate::types::ConditionalFormattingIconSet).
-    pub fn build(self) -> crate::types::ConditionalFormattingIconSet {
-        crate::types::ConditionalFormattingIconSet {
-            expression: self.expression,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`expression`](crate::types::builders::ConditionalFormattingIconSetBuilder::expression)
+    pub fn build(self) -> ::std::result::Result<crate::types::ConditionalFormattingIconSet, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ConditionalFormattingIconSet {
+            expression: self.expression.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "expression",
+                    "expression was not specified but it is required when building ConditionalFormattingIconSet",
+                )
+            })?,
             icon_set_type: self.icon_set_type,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for ConditionalFormattingIconSetBuilder {

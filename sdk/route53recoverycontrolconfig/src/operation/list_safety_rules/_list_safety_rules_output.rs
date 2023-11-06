@@ -15,8 +15,10 @@ impl ListSafetyRulesOutput {
         self.next_token.as_deref()
     }
     /// <p>The list of safety rules in a control panel.</p>
-    pub fn safety_rules(&self) -> ::std::option::Option<&[crate::types::Rule]> {
-        self.safety_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.safety_rules.is_none()`.
+    pub fn safety_rules(&self) -> &[crate::types::Rule] {
+        self.safety_rules.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListSafetyRulesOutput {

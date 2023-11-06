@@ -34,6 +34,7 @@ pub struct DeleteAvailabilityConfigurationInputBuilder {
 }
 impl DeleteAvailabilityConfigurationInputBuilder {
     /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be deleted.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteAvailabilityConfigurationInputBuilder {
         &self.organization_id
     }
     /// <p>The domain for which the <code>AvailabilityConfiguration</code> will be deleted.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl DeleteAvailabilityConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_availability_configuration::DeleteAvailabilityConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_availability_configuration::DeleteAvailabilityConfigurationInput {

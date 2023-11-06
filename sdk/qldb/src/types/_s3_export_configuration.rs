@@ -6,7 +6,7 @@
 pub struct S3ExportConfiguration {
     /// <p>The Amazon S3 bucket name in which a journal export job writes the journal contents.</p>
     /// <p>The bucket name must comply with the Amazon S3 bucket naming conventions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket Restrictions and Limitations</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-    pub bucket: ::std::option::Option<::std::string::String>,
+    pub bucket: ::std::string::String,
     /// <p>The prefix for the Amazon S3 bucket in which a journal export job writes the journal contents.</p>
     /// <p>The prefix must comply with Amazon S3 key naming rules and restrictions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html">Object Key and Metadata</a> in the <i>Amazon S3 Developer Guide</i>.</p>
     /// <p>The following are examples of valid <code>Prefix</code> values:</p>
@@ -15,15 +15,16 @@ pub struct S3ExportConfiguration {
     /// <li> <p> <code>JournalExports</code> </p> </li>
     /// <li> <p> <code>My:Tests/</code> </p> </li>
     /// </ul>
-    pub prefix: ::std::option::Option<::std::string::String>,
+    pub prefix: ::std::string::String,
     /// <p>The encryption settings that are used by a journal export job to write data in an Amazon S3 bucket.</p>
     pub encryption_configuration: ::std::option::Option<crate::types::S3EncryptionConfiguration>,
 }
 impl S3ExportConfiguration {
     /// <p>The Amazon S3 bucket name in which a journal export job writes the journal contents.</p>
     /// <p>The bucket name must comply with the Amazon S3 bucket naming conventions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket Restrictions and Limitations</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
-        self.bucket.as_deref()
+    pub fn bucket(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket.deref()
     }
     /// <p>The prefix for the Amazon S3 bucket in which a journal export job writes the journal contents.</p>
     /// <p>The prefix must comply with Amazon S3 key naming rules and restrictions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html">Object Key and Metadata</a> in the <i>Amazon S3 Developer Guide</i>.</p>
@@ -33,8 +34,9 @@ impl S3ExportConfiguration {
     /// <li> <p> <code>JournalExports</code> </p> </li>
     /// <li> <p> <code>My:Tests/</code> </p> </li>
     /// </ul>
-    pub fn prefix(&self) -> ::std::option::Option<&str> {
-        self.prefix.as_deref()
+    pub fn prefix(&self) -> &str {
+        use std::ops::Deref;
+        self.prefix.deref()
     }
     /// <p>The encryption settings that are used by a journal export job to write data in an Amazon S3 bucket.</p>
     pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::S3EncryptionConfiguration> {
@@ -59,6 +61,7 @@ pub struct S3ExportConfigurationBuilder {
 impl S3ExportConfigurationBuilder {
     /// <p>The Amazon S3 bucket name in which a journal export job writes the journal contents.</p>
     /// <p>The bucket name must comply with the Amazon S3 bucket naming conventions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket Restrictions and Limitations</a> in the <i>Amazon S3 Developer Guide</i>.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -82,6 +85,7 @@ impl S3ExportConfigurationBuilder {
     /// <li> <p> <code>JournalExports</code> </p> </li>
     /// <li> <p> <code>My:Tests/</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix = ::std::option::Option::Some(input.into());
         self
@@ -110,6 +114,7 @@ impl S3ExportConfigurationBuilder {
         &self.prefix
     }
     /// <p>The encryption settings that are used by a journal export job to write data in an Amazon S3 bucket.</p>
+    /// This field is required.
     pub fn encryption_configuration(mut self, input: crate::types::S3EncryptionConfiguration) -> Self {
         self.encryption_configuration = ::std::option::Option::Some(input);
         self
@@ -124,11 +129,24 @@ impl S3ExportConfigurationBuilder {
         &self.encryption_configuration
     }
     /// Consumes the builder and constructs a [`S3ExportConfiguration`](crate::types::S3ExportConfiguration).
-    pub fn build(self) -> crate::types::S3ExportConfiguration {
-        crate::types::S3ExportConfiguration {
-            bucket: self.bucket,
-            prefix: self.prefix,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bucket`](crate::types::builders::S3ExportConfigurationBuilder::bucket)
+    /// - [`prefix`](crate::types::builders::S3ExportConfigurationBuilder::prefix)
+    pub fn build(self) -> ::std::result::Result<crate::types::S3ExportConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::S3ExportConfiguration {
+            bucket: self.bucket.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "bucket",
+                    "bucket was not specified but it is required when building S3ExportConfiguration",
+                )
+            })?,
+            prefix: self.prefix.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "prefix",
+                    "prefix was not specified but it is required when building S3ExportConfiguration",
+                )
+            })?,
             encryption_configuration: self.encryption_configuration,
-        }
+        })
     }
 }

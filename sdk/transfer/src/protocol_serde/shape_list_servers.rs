@@ -25,11 +25,10 @@ pub fn de_list_servers_http_error(
                 output = crate::protocol_serde::shape_internal_service_error::de_internal_service_error_json_err(_response_body, output)
                     .map_err(crate::operation::list_servers::ListServersError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_service_error_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_servers::ListServersError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InvalidNextTokenException" => crate::operation::list_servers::ListServersError::InvalidNextTokenException({
@@ -40,11 +39,10 @@ pub fn de_list_servers_http_error(
                 output = crate::protocol_serde::shape_invalid_next_token_exception::de_invalid_next_token_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_servers::ListServersError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_next_token_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_servers::ListServersError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InvalidRequestException" => crate::operation::list_servers::ListServersError::InvalidRequestException({
@@ -55,11 +53,10 @@ pub fn de_list_servers_http_error(
                 output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_servers::ListServersError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_request_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_servers::ListServersError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::list_servers::ListServersError::ServiceUnavailableException({
@@ -94,18 +91,20 @@ pub fn de_list_servers_http_response(
         output = crate::protocol_serde::shape_list_servers::de_list_servers(_response_body, output)
             .map_err(crate::operation::list_servers::ListServersError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::list_servers_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::list_servers::ListServersError::unhandled)?
     })
 }
 
 pub fn ser_list_servers_input(
     input: &crate::operation::list_servers::ListServersInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_list_servers_input::ser_list_servers_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_list_servers(

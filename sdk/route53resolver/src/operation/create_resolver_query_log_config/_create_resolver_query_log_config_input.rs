@@ -36,8 +36,10 @@ impl CreateResolverQueryLogConfigInput {
         self.creator_request_id.as_deref()
     }
     /// <p>A list of the tag keys and values that you want to associate with the query logging configuration.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateResolverQueryLogConfigInput {
@@ -58,6 +60,7 @@ pub struct CreateResolverQueryLogConfigInputBuilder {
 }
 impl CreateResolverQueryLogConfigInputBuilder {
     /// <p>The name that you want to give the query logging configuration.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +80,7 @@ impl CreateResolverQueryLogConfigInputBuilder {
     /// <li> <p> <b>CloudWatch Logs log group</b>: </p> <p> <code>arn:aws:logs:us-west-1:123456789012:log-group:/mystack-testgroup-12ABC1AB12A1:*</code> </p> </li>
     /// <li> <p> <b>Kinesis Data Firehose delivery stream</b>:</p> <p> <code>arn:aws:kinesis:us-east-2:0123456789:stream/my_stream_name</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_arn = ::std::option::Option::Some(input.into());
         self
@@ -101,6 +105,7 @@ impl CreateResolverQueryLogConfigInputBuilder {
         &self.destination_arn
     }
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
+    /// This field is required.
     pub fn creator_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creator_request_id = ::std::option::Option::Some(input.into());
         self
@@ -139,7 +144,7 @@ impl CreateResolverQueryLogConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_resolver_query_log_config::CreateResolverQueryLogConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_resolver_query_log_config::CreateResolverQueryLogConfigInput {
             name: self.name,

@@ -49,6 +49,7 @@ impl UpdateRegistryInputBuilder {
         &self.description
     }
     /// <p>The name of the registry.</p>
+    /// This field is required.
     pub fn registry_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_name = ::std::option::Option::Some(input.into());
         self
@@ -65,7 +66,7 @@ impl UpdateRegistryInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRegistryInput`](crate::operation::update_registry::UpdateRegistryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_registry::UpdateRegistryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_registry::UpdateRegistryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_registry::UpdateRegistryInput {
             description: self.description,
             registry_name: self.registry_name,

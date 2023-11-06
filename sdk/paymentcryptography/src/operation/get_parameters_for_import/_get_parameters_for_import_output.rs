@@ -4,37 +4,40 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetParametersForImportOutput {
     /// <p>The wrapping key certificate of the wrapping key for use within the TR-34 key block. The certificate expires in 7 days.</p>
-    pub wrapping_key_certificate: ::std::option::Option<::std::string::String>,
+    pub wrapping_key_certificate: ::std::string::String,
     /// <p>The Amazon Web Services Payment Cryptography certificate chain that signed the wrapping key certificate. This is the root certificate authority (CA) within your service account.</p>
-    pub wrapping_key_certificate_chain: ::std::option::Option<::std::string::String>,
+    pub wrapping_key_certificate_chain: ::std::string::String,
     /// <p>The algorithm of the wrapping key for use within TR-34 key block. <code>RSA_2048</code> is the only wrapping key algorithm allowed.</p>
-    pub wrapping_key_algorithm: ::std::option::Option<crate::types::KeyAlgorithm>,
+    pub wrapping_key_algorithm: crate::types::KeyAlgorithm,
     /// <p>The import token to initiate key import into Amazon Web Services Payment Cryptography. The import token expires after 7 days. You can use the same import token to import multiple keys to the same service account.</p>
-    pub import_token: ::std::option::Option<::std::string::String>,
+    pub import_token: ::std::string::String,
     /// <p>The validity period of the import token.</p>
-    pub parameters_valid_until_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub parameters_valid_until_timestamp: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
 impl GetParametersForImportOutput {
     /// <p>The wrapping key certificate of the wrapping key for use within the TR-34 key block. The certificate expires in 7 days.</p>
-    pub fn wrapping_key_certificate(&self) -> ::std::option::Option<&str> {
-        self.wrapping_key_certificate.as_deref()
+    pub fn wrapping_key_certificate(&self) -> &str {
+        use std::ops::Deref;
+        self.wrapping_key_certificate.deref()
     }
     /// <p>The Amazon Web Services Payment Cryptography certificate chain that signed the wrapping key certificate. This is the root certificate authority (CA) within your service account.</p>
-    pub fn wrapping_key_certificate_chain(&self) -> ::std::option::Option<&str> {
-        self.wrapping_key_certificate_chain.as_deref()
+    pub fn wrapping_key_certificate_chain(&self) -> &str {
+        use std::ops::Deref;
+        self.wrapping_key_certificate_chain.deref()
     }
     /// <p>The algorithm of the wrapping key for use within TR-34 key block. <code>RSA_2048</code> is the only wrapping key algorithm allowed.</p>
-    pub fn wrapping_key_algorithm(&self) -> ::std::option::Option<&crate::types::KeyAlgorithm> {
-        self.wrapping_key_algorithm.as_ref()
+    pub fn wrapping_key_algorithm(&self) -> &crate::types::KeyAlgorithm {
+        &self.wrapping_key_algorithm
     }
     /// <p>The import token to initiate key import into Amazon Web Services Payment Cryptography. The import token expires after 7 days. You can use the same import token to import multiple keys to the same service account.</p>
-    pub fn import_token(&self) -> ::std::option::Option<&str> {
-        self.import_token.as_deref()
+    pub fn import_token(&self) -> &str {
+        use std::ops::Deref;
+        self.import_token.deref()
     }
     /// <p>The validity period of the import token.</p>
-    pub fn parameters_valid_until_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.parameters_valid_until_timestamp.as_ref()
+    pub fn parameters_valid_until_timestamp(&self) -> &::aws_smithy_types::DateTime {
+        &self.parameters_valid_until_timestamp
     }
 }
 impl ::std::fmt::Debug for GetParametersForImportOutput {
@@ -74,6 +77,7 @@ pub struct GetParametersForImportOutputBuilder {
 }
 impl GetParametersForImportOutputBuilder {
     /// <p>The wrapping key certificate of the wrapping key for use within the TR-34 key block. The certificate expires in 7 days.</p>
+    /// This field is required.
     pub fn wrapping_key_certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.wrapping_key_certificate = ::std::option::Option::Some(input.into());
         self
@@ -88,6 +92,7 @@ impl GetParametersForImportOutputBuilder {
         &self.wrapping_key_certificate
     }
     /// <p>The Amazon Web Services Payment Cryptography certificate chain that signed the wrapping key certificate. This is the root certificate authority (CA) within your service account.</p>
+    /// This field is required.
     pub fn wrapping_key_certificate_chain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.wrapping_key_certificate_chain = ::std::option::Option::Some(input.into());
         self
@@ -102,6 +107,7 @@ impl GetParametersForImportOutputBuilder {
         &self.wrapping_key_certificate_chain
     }
     /// <p>The algorithm of the wrapping key for use within TR-34 key block. <code>RSA_2048</code> is the only wrapping key algorithm allowed.</p>
+    /// This field is required.
     pub fn wrapping_key_algorithm(mut self, input: crate::types::KeyAlgorithm) -> Self {
         self.wrapping_key_algorithm = ::std::option::Option::Some(input);
         self
@@ -116,6 +122,7 @@ impl GetParametersForImportOutputBuilder {
         &self.wrapping_key_algorithm
     }
     /// <p>The import token to initiate key import into Amazon Web Services Payment Cryptography. The import token expires after 7 days. You can use the same import token to import multiple keys to the same service account.</p>
+    /// This field is required.
     pub fn import_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.import_token = ::std::option::Option::Some(input.into());
         self
@@ -130,6 +137,7 @@ impl GetParametersForImportOutputBuilder {
         &self.import_token
     }
     /// <p>The validity period of the import token.</p>
+    /// This field is required.
     pub fn parameters_valid_until_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.parameters_valid_until_timestamp = ::std::option::Option::Some(input);
         self
@@ -153,15 +161,51 @@ impl GetParametersForImportOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetParametersForImportOutput`](crate::operation::get_parameters_for_import::GetParametersForImportOutput).
-    pub fn build(self) -> crate::operation::get_parameters_for_import::GetParametersForImportOutput {
-        crate::operation::get_parameters_for_import::GetParametersForImportOutput {
-            wrapping_key_certificate: self.wrapping_key_certificate,
-            wrapping_key_certificate_chain: self.wrapping_key_certificate_chain,
-            wrapping_key_algorithm: self.wrapping_key_algorithm,
-            import_token: self.import_token,
-            parameters_valid_until_timestamp: self.parameters_valid_until_timestamp,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`wrapping_key_certificate`](crate::operation::get_parameters_for_import::builders::GetParametersForImportOutputBuilder::wrapping_key_certificate)
+    /// - [`wrapping_key_certificate_chain`](crate::operation::get_parameters_for_import::builders::GetParametersForImportOutputBuilder::wrapping_key_certificate_chain)
+    /// - [`wrapping_key_algorithm`](crate::operation::get_parameters_for_import::builders::GetParametersForImportOutputBuilder::wrapping_key_algorithm)
+    /// - [`import_token`](crate::operation::get_parameters_for_import::builders::GetParametersForImportOutputBuilder::import_token)
+    /// - [`parameters_valid_until_timestamp`](crate::operation::get_parameters_for_import::builders::GetParametersForImportOutputBuilder::parameters_valid_until_timestamp)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_parameters_for_import::GetParametersForImportOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::get_parameters_for_import::GetParametersForImportOutput {
+            wrapping_key_certificate: self.wrapping_key_certificate.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "wrapping_key_certificate",
+                    "wrapping_key_certificate was not specified but it is required when building GetParametersForImportOutput",
+                )
+            })?,
+            wrapping_key_certificate_chain: self.wrapping_key_certificate_chain.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "wrapping_key_certificate_chain",
+                    "wrapping_key_certificate_chain was not specified but it is required when building GetParametersForImportOutput",
+                )
+            })?,
+            wrapping_key_algorithm: self.wrapping_key_algorithm.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "wrapping_key_algorithm",
+                    "wrapping_key_algorithm was not specified but it is required when building GetParametersForImportOutput",
+                )
+            })?,
+            import_token: self.import_token.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "import_token",
+                    "import_token was not specified but it is required when building GetParametersForImportOutput",
+                )
+            })?,
+            parameters_valid_until_timestamp: self.parameters_valid_until_timestamp.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "parameters_valid_until_timestamp",
+                    "parameters_valid_until_timestamp was not specified but it is required when building GetParametersForImportOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for GetParametersForImportOutputBuilder {

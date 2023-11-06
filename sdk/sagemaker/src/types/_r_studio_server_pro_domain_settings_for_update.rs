@@ -49,6 +49,7 @@ pub struct RStudioServerProDomainSettingsForUpdateBuilder {
 }
 impl RStudioServerProDomainSettingsForUpdateBuilder {
     /// <p>The execution role for the <code>RStudioServerPro</code> Domain-level app.</p>
+    /// This field is required.
     pub fn domain_execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_execution_role_arn = ::std::option::Option::Some(input.into());
         self

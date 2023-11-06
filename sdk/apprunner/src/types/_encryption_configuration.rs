@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EncryptionConfiguration {
     /// <p>The ARN of the KMS key that's used for encryption.</p>
-    pub kms_key: ::std::option::Option<::std::string::String>,
+    pub kms_key: ::std::string::String,
 }
 impl EncryptionConfiguration {
     /// <p>The ARN of the KMS key that's used for encryption.</p>
-    pub fn kms_key(&self) -> ::std::option::Option<&str> {
-        self.kms_key.as_deref()
+    pub fn kms_key(&self) -> &str {
+        use std::ops::Deref;
+        self.kms_key.deref()
     }
 }
 impl EncryptionConfiguration {
@@ -28,6 +29,7 @@ pub struct EncryptionConfigurationBuilder {
 }
 impl EncryptionConfigurationBuilder {
     /// <p>The ARN of the KMS key that's used for encryption.</p>
+    /// This field is required.
     pub fn kms_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl EncryptionConfigurationBuilder {
         &self.kms_key
     }
     /// Consumes the builder and constructs a [`EncryptionConfiguration`](crate::types::EncryptionConfiguration).
-    pub fn build(self) -> crate::types::EncryptionConfiguration {
-        crate::types::EncryptionConfiguration { kms_key: self.kms_key }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`kms_key`](crate::types::builders::EncryptionConfigurationBuilder::kms_key)
+    pub fn build(self) -> ::std::result::Result<crate::types::EncryptionConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EncryptionConfiguration {
+            kms_key: self.kms_key.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "kms_key",
+                    "kms_key was not specified but it is required when building EncryptionConfiguration",
+                )
+            })?,
+        })
     }
 }

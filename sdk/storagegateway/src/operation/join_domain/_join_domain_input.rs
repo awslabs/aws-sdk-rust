@@ -33,8 +33,10 @@ impl JoinDomainInput {
         self.organizational_unit.as_deref()
     }
     /// <p>List of IPv4 addresses, NetBIOS names, or host names of your domain server. If you need to specify the port number include it after the colon (“:”). For example, <code>mydc.mydomain.com:389</code>.</p>
-    pub fn domain_controllers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.domain_controllers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domain_controllers.is_none()`.
+    pub fn domain_controllers(&self) -> &[::std::string::String] {
+        self.domain_controllers.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the time in seconds, in which the <code>JoinDomain</code> operation must complete. The default is 20 seconds.</p>
     pub fn timeout_in_seconds(&self) -> ::std::option::Option<i32> {
@@ -83,6 +85,7 @@ pub struct JoinDomainInputBuilder {
 }
 impl JoinDomainInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// This field is required.
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_arn = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +100,7 @@ impl JoinDomainInputBuilder {
         &self.gateway_arn
     }
     /// <p>The name of the domain that you want the gateway to join.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -159,6 +163,7 @@ impl JoinDomainInputBuilder {
         &self.timeout_in_seconds
     }
     /// <p>Sets the user name of user who has permission to add the gateway to the Active Directory domain. The domain user account should be enabled to join computers to the domain. For example, you can use the domain administrator account or an account with delegated permissions to join computers to the domain.</p>
+    /// This field is required.
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self
@@ -173,6 +178,7 @@ impl JoinDomainInputBuilder {
         &self.user_name
     }
     /// <p>Sets the password of the user who has permission to add the gateway to the Active Directory domain.</p>
+    /// This field is required.
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
         self
@@ -187,7 +193,7 @@ impl JoinDomainInputBuilder {
         &self.password
     }
     /// Consumes the builder and constructs a [`JoinDomainInput`](crate::operation::join_domain::JoinDomainInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::join_domain::JoinDomainInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::join_domain::JoinDomainInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::join_domain::JoinDomainInput {
             gateway_arn: self.gateway_arn,
             domain_name: self.domain_name,

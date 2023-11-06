@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecommendationDisruptionCompliance {
     /// <p>The expected compliance status after applying the recommended configuration change.</p>
-    pub expected_compliance_status: ::std::option::Option<crate::types::ComplianceStatus>,
+    pub expected_compliance_status: crate::types::ComplianceStatus,
     /// <p>The expected RTO after applying the recommended configuration change.</p>
     pub expected_rto_in_secs: i32,
     /// <p>The expected Recovery Time Objective (RTO) description after applying the recommended configuration change.</p>
@@ -17,8 +17,8 @@ pub struct RecommendationDisruptionCompliance {
 }
 impl RecommendationDisruptionCompliance {
     /// <p>The expected compliance status after applying the recommended configuration change.</p>
-    pub fn expected_compliance_status(&self) -> ::std::option::Option<&crate::types::ComplianceStatus> {
-        self.expected_compliance_status.as_ref()
+    pub fn expected_compliance_status(&self) -> &crate::types::ComplianceStatus {
+        &self.expected_compliance_status
     }
     /// <p>The expected RTO after applying the recommended configuration change.</p>
     pub fn expected_rto_in_secs(&self) -> i32 {
@@ -56,6 +56,7 @@ pub struct RecommendationDisruptionComplianceBuilder {
 }
 impl RecommendationDisruptionComplianceBuilder {
     /// <p>The expected compliance status after applying the recommended configuration change.</p>
+    /// This field is required.
     pub fn expected_compliance_status(mut self, input: crate::types::ComplianceStatus) -> Self {
         self.expected_compliance_status = ::std::option::Option::Some(input);
         self
@@ -126,13 +127,20 @@ impl RecommendationDisruptionComplianceBuilder {
         &self.expected_rpo_description
     }
     /// Consumes the builder and constructs a [`RecommendationDisruptionCompliance`](crate::types::RecommendationDisruptionCompliance).
-    pub fn build(self) -> crate::types::RecommendationDisruptionCompliance {
-        crate::types::RecommendationDisruptionCompliance {
-            expected_compliance_status: self.expected_compliance_status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`expected_compliance_status`](crate::types::builders::RecommendationDisruptionComplianceBuilder::expected_compliance_status)
+    pub fn build(self) -> ::std::result::Result<crate::types::RecommendationDisruptionCompliance, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RecommendationDisruptionCompliance {
+            expected_compliance_status: self.expected_compliance_status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "expected_compliance_status",
+                    "expected_compliance_status was not specified but it is required when building RecommendationDisruptionCompliance",
+                )
+            })?,
             expected_rto_in_secs: self.expected_rto_in_secs.unwrap_or_default(),
             expected_rto_description: self.expected_rto_description,
             expected_rpo_in_secs: self.expected_rpo_in_secs.unwrap_or_default(),
             expected_rpo_description: self.expected_rpo_description,
-        }
+        })
     }
 }

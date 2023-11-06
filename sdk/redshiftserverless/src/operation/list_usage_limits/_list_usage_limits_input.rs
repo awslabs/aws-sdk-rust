@@ -106,7 +106,7 @@ impl ListUsageLimitsInputBuilder {
     /// Consumes the builder and constructs a [`ListUsageLimitsInput`](crate::operation::list_usage_limits::ListUsageLimitsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_usage_limits::ListUsageLimitsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_usage_limits::ListUsageLimitsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_usage_limits::ListUsageLimitsInput {
             resource_arn: self.resource_arn,
             usage_type: self.usage_type,

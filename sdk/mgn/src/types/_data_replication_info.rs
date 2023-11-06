@@ -29,8 +29,10 @@ impl DataReplicationInfo {
         self.eta_date_time.as_deref()
     }
     /// <p>Request to query disks replicated.</p>
-    pub fn replicated_disks(&self) -> ::std::option::Option<&[crate::types::DataReplicationInfoReplicatedDisk]> {
-        self.replicated_disks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replicated_disks.is_none()`.
+    pub fn replicated_disks(&self) -> &[crate::types::DataReplicationInfoReplicatedDisk] {
+        self.replicated_disks.as_deref().unwrap_or_default()
     }
     /// <p>Request to query the data replication state.</p>
     pub fn data_replication_state(&self) -> ::std::option::Option<&crate::types::DataReplicationState> {

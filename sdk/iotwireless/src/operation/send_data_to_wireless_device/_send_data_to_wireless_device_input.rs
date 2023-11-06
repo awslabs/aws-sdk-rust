@@ -48,6 +48,7 @@ pub struct SendDataToWirelessDeviceInputBuilder {
 }
 impl SendDataToWirelessDeviceInputBuilder {
     /// <p>The ID of the wireless device to receive the data.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl SendDataToWirelessDeviceInputBuilder {
         &self.id
     }
     /// <p>The transmit mode to use to send data to the wireless device. Can be: <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge mode).</p>
+    /// This field is required.
     pub fn transmit_mode(mut self, input: i32) -> Self {
         self.transmit_mode = ::std::option::Option::Some(input);
         self
@@ -76,6 +78,7 @@ impl SendDataToWirelessDeviceInputBuilder {
         &self.transmit_mode
     }
     /// <p>The binary to be sent to the end device, encoded in base64.</p>
+    /// This field is required.
     pub fn payload_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.payload_data = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +111,7 @@ impl SendDataToWirelessDeviceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::send_data_to_wireless_device::SendDataToWirelessDeviceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::send_data_to_wireless_device::SendDataToWirelessDeviceInput {
             id: self.id,

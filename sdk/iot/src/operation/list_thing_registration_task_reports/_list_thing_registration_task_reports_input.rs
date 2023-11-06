@@ -48,6 +48,7 @@ pub struct ListThingRegistrationTaskReportsInputBuilder {
 }
 impl ListThingRegistrationTaskReportsInputBuilder {
     /// <p>The id of the task.</p>
+    /// This field is required.
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl ListThingRegistrationTaskReportsInputBuilder {
         &self.task_id
     }
     /// <p>The type of task report.</p>
+    /// This field is required.
     pub fn report_type(mut self, input: crate::types::ReportType) -> Self {
         self.report_type = ::std::option::Option::Some(input);
         self
@@ -108,7 +110,7 @@ impl ListThingRegistrationTaskReportsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsInput {

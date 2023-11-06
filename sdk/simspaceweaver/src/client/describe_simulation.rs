@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeSimulation`](crate::operation::describe_simulation::builders::DescribeSimulationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`simulation(impl Into<String>)`](crate::operation::describe_simulation::builders::DescribeSimulationFluentBuilder::simulation) / [`set_simulation(Option<String>)`](crate::operation::describe_simulation::builders::DescribeSimulationFluentBuilder::set_simulation): <p>The name of the simulation.</p>
+    ///   - [`simulation(impl Into<String>)`](crate::operation::describe_simulation::builders::DescribeSimulationFluentBuilder::simulation) / [`set_simulation(Option<String>)`](crate::operation::describe_simulation::builders::DescribeSimulationFluentBuilder::set_simulation):<br>required: **true**<br><p>The name of the simulation.</p><br>
     /// - On success, responds with [`DescribeSimulationOutput`](crate::operation::describe_simulation::DescribeSimulationOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::describe_simulation::DescribeSimulationOutput::name): <p>The name of the simulation.</p>
     ///   - [`execution_id(Option<String>)`](crate::operation::describe_simulation::DescribeSimulationOutput::execution_id): <p>A universally unique identifier (UUID) for this simulation.</p>

@@ -15,8 +15,10 @@ impl DescribeConditionalForwardersInput {
         self.directory_id.as_deref()
     }
     /// <p>The fully qualified domain names (FQDN) of the remote domains for which to get the list of associated conditional forwarders. If this member is null, all conditional forwarders are returned.</p>
-    pub fn remote_domain_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.remote_domain_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remote_domain_names.is_none()`.
+    pub fn remote_domain_names(&self) -> &[::std::string::String] {
+        self.remote_domain_names.as_deref().unwrap_or_default()
     }
 }
 impl DescribeConditionalForwardersInput {
@@ -35,6 +37,7 @@ pub struct DescribeConditionalForwardersInputBuilder {
 }
 impl DescribeConditionalForwardersInputBuilder {
     /// <p>The directory ID for which to get the list of associated conditional forwarders.</p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self
@@ -73,7 +76,7 @@ impl DescribeConditionalForwardersInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_conditional_forwarders::DescribeConditionalForwardersInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_conditional_forwarders::DescribeConditionalForwardersInput {
             directory_id: self.directory_id,

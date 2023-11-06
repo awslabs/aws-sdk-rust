@@ -34,6 +34,7 @@ pub struct GetEnabledControlOutputBuilder {
 }
 impl GetEnabledControlOutputBuilder {
     /// <p> Information about the enabled control. </p>
+    /// This field is required.
     pub fn enabled_control_details(mut self, input: crate::types::EnabledControlDetails) -> Self {
         self.enabled_control_details = ::std::option::Option::Some(input);
         self

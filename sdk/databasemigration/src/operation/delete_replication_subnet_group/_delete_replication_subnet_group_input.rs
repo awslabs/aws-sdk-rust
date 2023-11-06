@@ -28,6 +28,7 @@ pub struct DeleteReplicationSubnetGroupInputBuilder {
 }
 impl DeleteReplicationSubnetGroupInputBuilder {
     /// <p>The subnet group name of the replication instance.</p>
+    /// This field is required.
     pub fn replication_subnet_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_subnet_group_identifier = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl DeleteReplicationSubnetGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_replication_subnet_group::DeleteReplicationSubnetGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_replication_subnet_group::DeleteReplicationSubnetGroupInput {
             replication_subnet_group_identifier: self.replication_subnet_group_identifier,

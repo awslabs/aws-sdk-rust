@@ -41,6 +41,7 @@ pub struct UpdateBrokerCountInputBuilder {
 }
 impl UpdateBrokerCountInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    /// This field is required.
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateBrokerCountInputBuilder {
         &self.cluster_arn
     }
     /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
+    /// This field is required.
     pub fn current_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_version = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl UpdateBrokerCountInputBuilder {
         &self.current_version
     }
     /// <p>The number of broker nodes that you want the cluster to have after this operation completes successfully.</p>
+    /// This field is required.
     pub fn target_number_of_broker_nodes(mut self, input: i32) -> Self {
         self.target_number_of_broker_nodes = ::std::option::Option::Some(input);
         self
@@ -85,7 +88,7 @@ impl UpdateBrokerCountInputBuilder {
     /// Consumes the builder and constructs a [`UpdateBrokerCountInput`](crate::operation::update_broker_count::UpdateBrokerCountInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_broker_count::UpdateBrokerCountInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_broker_count::UpdateBrokerCountInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_broker_count::UpdateBrokerCountInput {
             cluster_arn: self.cluster_arn,
             current_version: self.current_version,

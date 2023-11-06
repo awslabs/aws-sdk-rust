@@ -20,8 +20,10 @@ impl UntagResourceInput {
         self.resource_arn.as_deref()
     }
     /// <p>The metadata assigned to an Amazon RDS Performance Insights resource consisting of a key-value pair.</p>
-    pub fn tag_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tag_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_keys.is_none()`.
+    pub fn tag_keys(&self) -> &[::std::string::String] {
+        self.tag_keys.as_deref().unwrap_or_default()
     }
 }
 impl UntagResourceInput {
@@ -41,6 +43,7 @@ pub struct UntagResourceInputBuilder {
 }
 impl UntagResourceInputBuilder {
     /// <p>List the tags for the Amazon Web Services service for which Performance Insights returns metrics. Valid value is <code>RDS</code>.</p>
+    /// This field is required.
     pub fn service_type(mut self, input: crate::types::ServiceType) -> Self {
         self.service_type = ::std::option::Option::Some(input);
         self
@@ -55,6 +58,7 @@ impl UntagResourceInputBuilder {
         &self.service_type
     }
     /// <p>The Amazon RDS Performance Insights resource that the tags are added to. This value is an Amazon Resource Name (ARN). For information about creating an ARN, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"> Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -91,7 +95,7 @@ impl UntagResourceInputBuilder {
     /// Consumes the builder and constructs a [`UntagResourceInput`](crate::operation::untag_resource::UntagResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::untag_resource::UntagResourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::untag_resource::UntagResourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::untag_resource::UntagResourceInput {
             service_type: self.service_type,
             resource_arn: self.resource_arn,

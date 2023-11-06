@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetOrganizationsAccessReportOutput {
     /// <p>The status of the job.</p>
-    pub job_status: ::std::option::Option<crate::types::JobStatusType>,
+    pub job_status: crate::types::JobStatusType,
     /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the report job was created.</p>
-    pub job_creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub job_creation_date: ::aws_smithy_types::DateTime,
     /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the generated report job was completed or failed.</p>
     /// <p>This field is null if the job is still in progress, as indicated by a job status value of <code>IN_PROGRESS</code>.</p>
     pub job_completion_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -27,12 +27,12 @@ pub struct GetOrganizationsAccessReportOutput {
 }
 impl GetOrganizationsAccessReportOutput {
     /// <p>The status of the job.</p>
-    pub fn job_status(&self) -> ::std::option::Option<&crate::types::JobStatusType> {
-        self.job_status.as_ref()
+    pub fn job_status(&self) -> &crate::types::JobStatusType {
+        &self.job_status
     }
     /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the report job was created.</p>
-    pub fn job_creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.job_creation_date.as_ref()
+    pub fn job_creation_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.job_creation_date
     }
     /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the generated report job was completed or failed.</p>
     /// <p>This field is null if the job is still in progress, as indicated by a job status value of <code>IN_PROGRESS</code>.</p>
@@ -48,8 +48,10 @@ impl GetOrganizationsAccessReportOutput {
         self.number_of_services_not_accessed
     }
     /// <p>An&nbsp;object that contains details about the most recent attempt to access the service.</p>
-    pub fn access_details(&self) -> ::std::option::Option<&[crate::types::AccessDetail]> {
-        self.access_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.access_details.is_none()`.
+    pub fn access_details(&self) -> &[crate::types::AccessDetail] {
+        self.access_details.as_deref().unwrap_or_default()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub fn is_truncated(&self) -> bool {
@@ -94,6 +96,7 @@ pub struct GetOrganizationsAccessReportOutputBuilder {
 }
 impl GetOrganizationsAccessReportOutputBuilder {
     /// <p>The status of the job.</p>
+    /// This field is required.
     pub fn job_status(mut self, input: crate::types::JobStatusType) -> Self {
         self.job_status = ::std::option::Option::Some(input);
         self
@@ -108,6 +111,7 @@ impl GetOrganizationsAccessReportOutputBuilder {
         &self.job_status
     }
     /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the report job was created.</p>
+    /// This field is required.
     pub fn job_creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.job_creation_date = ::std::option::Option::Some(input);
         self
@@ -241,10 +245,28 @@ impl GetOrganizationsAccessReportOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetOrganizationsAccessReportOutput`](crate::operation::get_organizations_access_report::GetOrganizationsAccessReportOutput).
-    pub fn build(self) -> crate::operation::get_organizations_access_report::GetOrganizationsAccessReportOutput {
-        crate::operation::get_organizations_access_report::GetOrganizationsAccessReportOutput {
-            job_status: self.job_status,
-            job_creation_date: self.job_creation_date,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`job_status`](crate::operation::get_organizations_access_report::builders::GetOrganizationsAccessReportOutputBuilder::job_status)
+    /// - [`job_creation_date`](crate::operation::get_organizations_access_report::builders::GetOrganizationsAccessReportOutputBuilder::job_creation_date)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_organizations_access_report::GetOrganizationsAccessReportOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::get_organizations_access_report::GetOrganizationsAccessReportOutput {
+            job_status: self.job_status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "job_status",
+                    "job_status was not specified but it is required when building GetOrganizationsAccessReportOutput",
+                )
+            })?,
+            job_creation_date: self.job_creation_date.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "job_creation_date",
+                    "job_creation_date was not specified but it is required when building GetOrganizationsAccessReportOutput",
+                )
+            })?,
             job_completion_date: self.job_completion_date,
             number_of_services_accessible: self.number_of_services_accessible,
             number_of_services_not_accessed: self.number_of_services_not_accessed,
@@ -253,6 +275,6 @@ impl GetOrganizationsAccessReportOutputBuilder {
             marker: self.marker,
             error_details: self.error_details,
             _request_id: self._request_id,
-        }
+        })
     }
 }

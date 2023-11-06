@@ -29,8 +29,10 @@ impl SuiteDefinitionInformation {
         self.suite_definition_name.as_deref()
     }
     /// <p>Specifies the devices that are under test for the test suite.</p>
-    pub fn default_devices(&self) -> ::std::option::Option<&[crate::types::DeviceUnderTest]> {
-        self.default_devices.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.default_devices.is_none()`.
+    pub fn default_devices(&self) -> &[crate::types::DeviceUnderTest] {
+        self.default_devices.as_deref().unwrap_or_default()
     }
     /// <p>Specifies if the test suite is intended for qualification.</p>
     pub fn intended_for_qualification(&self) -> ::std::option::Option<bool> {

@@ -2,7 +2,7 @@
 pub fn ser_aws_network_firewall_firewall_subnet_mappings_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsNetworkFirewallFirewallSubnetMappingsDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.subnet_id {
         object.key("SubnetId").string(var_1.as_str());
     }

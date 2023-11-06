@@ -11,8 +11,10 @@ pub struct ListModelPackagingJobsOutput {
 }
 impl ListModelPackagingJobsOutput {
     /// <p> A list of the model packaging jobs created for the specified Amazon Lookout for Vision project. </p>
-    pub fn model_packaging_jobs(&self) -> ::std::option::Option<&[crate::types::ModelPackagingJobMetadata]> {
-        self.model_packaging_jobs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.model_packaging_jobs.is_none()`.
+    pub fn model_packaging_jobs(&self) -> &[crate::types::ModelPackagingJobMetadata] {
+        self.model_packaging_jobs.as_deref().unwrap_or_default()
     }
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

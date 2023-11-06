@@ -27,6 +27,7 @@ pub struct GetMediaPipelineKinesisVideoStreamPoolInputBuilder {
 }
 impl GetMediaPipelineKinesisVideoStreamPoolInputBuilder {
     /// <p>The ID of the video stream pool.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetMediaPipelineKinesisVideoStreamPoolInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_media_pipeline_kinesis_video_stream_pool::GetMediaPipelineKinesisVideoStreamPoolInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_media_pipeline_kinesis_video_stream_pool::GetMediaPipelineKinesisVideoStreamPoolInput {

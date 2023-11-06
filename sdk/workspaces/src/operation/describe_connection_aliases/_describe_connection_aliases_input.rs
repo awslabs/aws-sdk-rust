@@ -14,8 +14,10 @@ pub struct DescribeConnectionAliasesInput {
 }
 impl DescribeConnectionAliasesInput {
     /// <p>The identifiers of the connection aliases to describe.</p>
-    pub fn alias_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.alias_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alias_ids.is_none()`.
+    pub fn alias_ids(&self) -> &[::std::string::String] {
+        self.alias_ids.as_deref().unwrap_or_default()
     }
     /// <p>The identifier of the directory associated with the connection alias.</p>
     pub fn resource_id(&self) -> ::std::option::Option<&str> {
@@ -114,7 +116,7 @@ impl DescribeConnectionAliasesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_connection_aliases::DescribeConnectionAliasesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_connection_aliases::DescribeConnectionAliasesInput {
             alias_ids: self.alias_ids,

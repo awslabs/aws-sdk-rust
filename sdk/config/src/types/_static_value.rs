@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StaticValue {
     /// <p>A list of values. For example, the ARN of the assumed role. </p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::vec::Vec<::std::string::String>,
 }
 impl StaticValue {
     /// <p>A list of values. For example, the ARN of the assumed role. </p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    pub fn values(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.values.deref()
     }
 }
 impl StaticValue {
@@ -48,7 +49,16 @@ impl StaticValueBuilder {
         &self.values
     }
     /// Consumes the builder and constructs a [`StaticValue`](crate::types::StaticValue).
-    pub fn build(self) -> crate::types::StaticValue {
-        crate::types::StaticValue { values: self.values }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`values`](crate::types::builders::StaticValueBuilder::values)
+    pub fn build(self) -> ::std::result::Result<crate::types::StaticValue, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::StaticValue {
+            values: self.values.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "values",
+                    "values was not specified but it is required when building StaticValue",
+                )
+            })?,
+        })
     }
 }

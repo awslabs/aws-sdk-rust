@@ -15,7 +15,7 @@ pub struct ParametersInCacheKeyAndForwardedToOrigin {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-policy-compressed-objects">Compression support</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>If you set this value to <code>true</code>, and this cache behavior also has an origin request policy attached, do not include the <code>Accept-Encoding</code> header in the origin request policy. CloudFront always includes the <code>Accept-Encoding</code> header in origin requests when the value of this field is <code>true</code>, so including this header in an origin request policy has no effect.</p>
     /// <p>If both of these fields are <code>false</code>, then CloudFront treats the <code>Accept-Encoding</code> header the same as any other HTTP header in the viewer request. By default, it's not included in the cache key and it's not included in origin requests. In this case, you can manually add <code>Accept-Encoding</code> to the headers whitelist like any other HTTP header.</p>
-    pub enable_accept_encoding_gzip: ::std::option::Option<bool>,
+    pub enable_accept_encoding_gzip: bool,
     /// <p>A flag that can affect whether the <code>Accept-Encoding</code> HTTP header is included in the cache key and included in requests that CloudFront sends to the origin.</p>
     /// <p>This field is related to the <code>EnableAcceptEncodingGzip</code> field. If one or both of these fields is <code>true</code> <i>and</i> the viewer request includes the <code>Accept-Encoding</code> header, then CloudFront does the following:</p>
     /// <ul>
@@ -45,7 +45,7 @@ impl ParametersInCacheKeyAndForwardedToOrigin {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-policy-compressed-objects">Compression support</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>If you set this value to <code>true</code>, and this cache behavior also has an origin request policy attached, do not include the <code>Accept-Encoding</code> header in the origin request policy. CloudFront always includes the <code>Accept-Encoding</code> header in origin requests when the value of this field is <code>true</code>, so including this header in an origin request policy has no effect.</p>
     /// <p>If both of these fields are <code>false</code>, then CloudFront treats the <code>Accept-Encoding</code> header the same as any other HTTP header in the viewer request. By default, it's not included in the cache key and it's not included in origin requests. In this case, you can manually add <code>Accept-Encoding</code> to the headers whitelist like any other HTTP header.</p>
-    pub fn enable_accept_encoding_gzip(&self) -> ::std::option::Option<bool> {
+    pub fn enable_accept_encoding_gzip(&self) -> bool {
         self.enable_accept_encoding_gzip
     }
     /// <p>A flag that can affect whether the <code>Accept-Encoding</code> HTTP header is included in the cache key and included in requests that CloudFront sends to the origin.</p>
@@ -102,6 +102,7 @@ impl ParametersInCacheKeyAndForwardedToOriginBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-policy-compressed-objects">Compression support</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>If you set this value to <code>true</code>, and this cache behavior also has an origin request policy attached, do not include the <code>Accept-Encoding</code> header in the origin request policy. CloudFront always includes the <code>Accept-Encoding</code> header in origin requests when the value of this field is <code>true</code>, so including this header in an origin request policy has no effect.</p>
     /// <p>If both of these fields are <code>false</code>, then CloudFront treats the <code>Accept-Encoding</code> header the same as any other HTTP header in the viewer request. By default, it's not included in the cache key and it's not included in origin requests. In this case, you can manually add <code>Accept-Encoding</code> to the headers whitelist like any other HTTP header.</p>
+    /// This field is required.
     pub fn enable_accept_encoding_gzip(mut self, input: bool) -> Self {
         self.enable_accept_encoding_gzip = ::std::option::Option::Some(input);
         self
@@ -175,6 +176,7 @@ impl ParametersInCacheKeyAndForwardedToOriginBuilder {
         &self.enable_accept_encoding_brotli
     }
     /// <p>An object that determines whether any HTTP headers (and if so, which headers) are included in the cache key and in requests that CloudFront sends to the origin.</p>
+    /// This field is required.
     pub fn headers_config(mut self, input: crate::types::CachePolicyHeadersConfig) -> Self {
         self.headers_config = ::std::option::Option::Some(input);
         self
@@ -189,6 +191,7 @@ impl ParametersInCacheKeyAndForwardedToOriginBuilder {
         &self.headers_config
     }
     /// <p>An object that determines whether any cookies in viewer requests (and if so, which cookies) are included in the cache key and in requests that CloudFront sends to the origin.</p>
+    /// This field is required.
     pub fn cookies_config(mut self, input: crate::types::CachePolicyCookiesConfig) -> Self {
         self.cookies_config = ::std::option::Option::Some(input);
         self
@@ -203,6 +206,7 @@ impl ParametersInCacheKeyAndForwardedToOriginBuilder {
         &self.cookies_config
     }
     /// <p>An object that determines whether any URL query strings in viewer requests (and if so, which query strings) are included in the cache key and in requests that CloudFront sends to the origin.</p>
+    /// This field is required.
     pub fn query_strings_config(mut self, input: crate::types::CachePolicyQueryStringsConfig) -> Self {
         self.query_strings_config = ::std::option::Option::Some(input);
         self
@@ -217,13 +221,22 @@ impl ParametersInCacheKeyAndForwardedToOriginBuilder {
         &self.query_strings_config
     }
     /// Consumes the builder and constructs a [`ParametersInCacheKeyAndForwardedToOrigin`](crate::types::ParametersInCacheKeyAndForwardedToOrigin).
-    pub fn build(self) -> crate::types::ParametersInCacheKeyAndForwardedToOrigin {
-        crate::types::ParametersInCacheKeyAndForwardedToOrigin {
-            enable_accept_encoding_gzip: self.enable_accept_encoding_gzip,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`enable_accept_encoding_gzip`](crate::types::builders::ParametersInCacheKeyAndForwardedToOriginBuilder::enable_accept_encoding_gzip)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::ParametersInCacheKeyAndForwardedToOrigin, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ParametersInCacheKeyAndForwardedToOrigin {
+            enable_accept_encoding_gzip: self.enable_accept_encoding_gzip.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "enable_accept_encoding_gzip",
+                    "enable_accept_encoding_gzip was not specified but it is required when building ParametersInCacheKeyAndForwardedToOrigin",
+                )
+            })?,
             enable_accept_encoding_brotli: self.enable_accept_encoding_brotli,
             headers_config: self.headers_config,
             cookies_config: self.cookies_config,
             query_strings_config: self.query_strings_config,
-        }
+        })
     }
 }

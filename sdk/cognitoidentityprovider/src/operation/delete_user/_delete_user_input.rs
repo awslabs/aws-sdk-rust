@@ -35,6 +35,7 @@ pub struct DeleteUserInputBuilder {
 }
 impl DeleteUserInputBuilder {
     /// <p>A valid access token that Amazon Cognito issued to the user whose user profile you want to delete.</p>
+    /// This field is required.
     pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_token = ::std::option::Option::Some(input.into());
         self
@@ -49,7 +50,7 @@ impl DeleteUserInputBuilder {
         &self.access_token
     }
     /// Consumes the builder and constructs a [`DeleteUserInput`](crate::operation::delete_user::DeleteUserInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_user::DeleteUserInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_user::DeleteUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_user::DeleteUserInput {
             access_token: self.access_token,
         })

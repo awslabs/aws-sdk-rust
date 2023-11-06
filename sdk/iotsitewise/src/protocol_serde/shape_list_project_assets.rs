@@ -26,11 +26,10 @@ pub fn de_list_project_assets_http_error(
                 output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_project_assets::ListProjectAssetsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_failure_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_project_assets::ListProjectAssetsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InvalidRequestException" => crate::operation::list_project_assets::ListProjectAssetsError::InvalidRequestException({
@@ -41,11 +40,10 @@ pub fn de_list_project_assets_http_error(
                 output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_project_assets::ListProjectAssetsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_request_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_project_assets::ListProjectAssetsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::list_project_assets::ListProjectAssetsError::ThrottlingException({
@@ -56,11 +54,10 @@ pub fn de_list_project_assets_http_error(
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_project_assets::ListProjectAssetsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_project_assets::ListProjectAssetsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::list_project_assets::ListProjectAssetsError::generic(generic),
@@ -80,7 +77,9 @@ pub fn de_list_project_assets_http_response(
         output = crate::protocol_serde::shape_list_project_assets::de_list_project_assets(_response_body, output)
             .map_err(crate::operation::list_project_assets::ListProjectAssetsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::list_project_assets_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::list_project_assets::ListProjectAssetsError::unhandled)?
     })
 }
 
@@ -97,7 +96,7 @@ pub(crate) fn de_list_project_assets(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "assetIds" => {
-                    builder = builder.set_asset_ids(crate::protocol_serde::shape_asset_i_ds::de_asset_i_ds(tokens)?);
+                    builder = builder.set_asset_ids(crate::protocol_serde::shape_asset_ids::de_asset_ids(tokens)?);
                 }
                 "nextToken" => {
                     builder = builder.set_next_token(

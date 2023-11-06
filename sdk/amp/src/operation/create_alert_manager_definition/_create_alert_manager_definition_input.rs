@@ -42,6 +42,7 @@ pub struct CreateAlertManagerDefinitionInputBuilder {
 }
 impl CreateAlertManagerDefinitionInputBuilder {
     /// The ID of the workspace in which to create the alert manager definition.
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl CreateAlertManagerDefinitionInputBuilder {
         &self.workspace_id
     }
     /// The alert manager definition data.
+    /// This field is required.
     pub fn data(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.data = ::std::option::Option::Some(input);
         self
@@ -88,7 +90,7 @@ impl CreateAlertManagerDefinitionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_alert_manager_definition::CreateAlertManagerDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_alert_manager_definition::CreateAlertManagerDefinitionInput {
             workspace_id: self.workspace_id,

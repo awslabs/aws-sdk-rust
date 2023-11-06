@@ -5,16 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIdentityVerificationAttributesOutput {
     /// <p>A map of Identities to IdentityVerificationAttributes objects.</p>
-    pub verification_attributes:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IdentityVerificationAttributes>>,
+    pub verification_attributes: ::std::collections::HashMap<::std::string::String, crate::types::IdentityVerificationAttributes>,
     _request_id: Option<String>,
 }
 impl GetIdentityVerificationAttributesOutput {
     /// <p>A map of Identities to IdentityVerificationAttributes objects.</p>
-    pub fn verification_attributes(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::IdentityVerificationAttributes>> {
-        self.verification_attributes.as_ref()
+    pub fn verification_attributes(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::IdentityVerificationAttributes> {
+        &self.verification_attributes
     }
 }
 impl ::aws_http::request_id::RequestId for GetIdentityVerificationAttributesOutput {
@@ -77,10 +74,24 @@ impl GetIdentityVerificationAttributesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetIdentityVerificationAttributesOutput`](crate::operation::get_identity_verification_attributes::GetIdentityVerificationAttributesOutput).
-    pub fn build(self) -> crate::operation::get_identity_verification_attributes::GetIdentityVerificationAttributesOutput {
-        crate::operation::get_identity_verification_attributes::GetIdentityVerificationAttributesOutput {
-            verification_attributes: self.verification_attributes,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`verification_attributes`](crate::operation::get_identity_verification_attributes::builders::GetIdentityVerificationAttributesOutputBuilder::verification_attributes)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_identity_verification_attributes::GetIdentityVerificationAttributesOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::get_identity_verification_attributes::GetIdentityVerificationAttributesOutput {
+                verification_attributes: self.verification_attributes.ok_or_else(|| {
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
+                        "verification_attributes",
+                        "verification_attributes was not specified but it is required when building GetIdentityVerificationAttributesOutput",
+                    )
+                })?,
+                _request_id: self._request_id,
+            },
+        )
     }
 }

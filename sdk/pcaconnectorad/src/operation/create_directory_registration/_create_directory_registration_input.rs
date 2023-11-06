@@ -41,6 +41,7 @@ pub struct CreateDirectoryRegistrationInputBuilder {
 }
 impl CreateDirectoryRegistrationInputBuilder {
     /// <p> The identifier of the Active Directory.</p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self
@@ -93,7 +94,7 @@ impl CreateDirectoryRegistrationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_directory_registration::CreateDirectoryRegistrationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_directory_registration::CreateDirectoryRegistrationInput {
             directory_id: self.directory_id,

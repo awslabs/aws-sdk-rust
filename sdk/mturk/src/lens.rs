@@ -19,8 +19,8 @@ pub(crate) fn reflens_list_bonus_payments_output_next_token(
     ::std::option::Option::Some(input)
 }
 
-pub(crate) fn reflens_list_hi_ts_output_next_token(
-    input: &crate::operation::list_hi_ts::ListHiTsOutput,
+pub(crate) fn reflens_list_hits_output_next_token(
+    input: &crate::operation::list_hits::ListHiTsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -29,8 +29,8 @@ pub(crate) fn reflens_list_hi_ts_output_next_token(
     ::std::option::Option::Some(input)
 }
 
-pub(crate) fn reflens_list_hi_ts_for_qualification_type_output_next_token(
-    input: &crate::operation::list_hi_ts_for_qualification_type::ListHiTsForQualificationTypeOutput,
+pub(crate) fn reflens_list_hits_for_qualification_type_output_next_token(
+    input: &crate::operation::list_hits_for_qualification_type::ListHiTsForQualificationTypeOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -69,8 +69,8 @@ pub(crate) fn reflens_list_review_policy_results_for_hit_output_next_token(
     ::std::option::Option::Some(input)
 }
 
-pub(crate) fn reflens_list_reviewable_hi_ts_output_next_token(
-    input: &crate::operation::list_reviewable_hi_ts::ListReviewableHiTsOutput,
+pub(crate) fn reflens_list_reviewable_hits_output_next_token(
+    input: &crate::operation::list_reviewable_hits::ListReviewableHiTsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,

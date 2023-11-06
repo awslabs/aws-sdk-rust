@@ -48,28 +48,40 @@ impl ModifyVpcEndpointServiceConfigurationInput {
         self.acceptance_required
     }
     /// <p>The Amazon Resource Names (ARNs) of Network Load Balancers to add to your service configuration.</p>
-    pub fn add_network_load_balancer_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.add_network_load_balancer_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_network_load_balancer_arns.is_none()`.
+    pub fn add_network_load_balancer_arns(&self) -> &[::std::string::String] {
+        self.add_network_load_balancer_arns.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Names (ARNs) of Network Load Balancers to remove from your service configuration.</p>
-    pub fn remove_network_load_balancer_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.remove_network_load_balancer_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove_network_load_balancer_arns.is_none()`.
+    pub fn remove_network_load_balancer_arns(&self) -> &[::std::string::String] {
+        self.remove_network_load_balancer_arns.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Names (ARNs) of Gateway Load Balancers to add to your service configuration.</p>
-    pub fn add_gateway_load_balancer_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.add_gateway_load_balancer_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_gateway_load_balancer_arns.is_none()`.
+    pub fn add_gateway_load_balancer_arns(&self) -> &[::std::string::String] {
+        self.add_gateway_load_balancer_arns.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Names (ARNs) of Gateway Load Balancers to remove from your service configuration.</p>
-    pub fn remove_gateway_load_balancer_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.remove_gateway_load_balancer_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove_gateway_load_balancer_arns.is_none()`.
+    pub fn remove_gateway_load_balancer_arns(&self) -> &[::std::string::String] {
+        self.remove_gateway_load_balancer_arns.as_deref().unwrap_or_default()
     }
     /// <p>The IP address types to add to your service configuration.</p>
-    pub fn add_supported_ip_address_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.add_supported_ip_address_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_supported_ip_address_types.is_none()`.
+    pub fn add_supported_ip_address_types(&self) -> &[::std::string::String] {
+        self.add_supported_ip_address_types.as_deref().unwrap_or_default()
     }
     /// <p>The IP address types to remove from your service configuration.</p>
-    pub fn remove_supported_ip_address_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.remove_supported_ip_address_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove_supported_ip_address_types.is_none()`.
+    pub fn remove_supported_ip_address_types(&self) -> &[::std::string::String] {
+        self.remove_supported_ip_address_types.as_deref().unwrap_or_default()
     }
 }
 impl ModifyVpcEndpointServiceConfigurationInput {
@@ -111,6 +123,7 @@ impl ModifyVpcEndpointServiceConfigurationInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the service.</p>
+    /// This field is required.
     pub fn service_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_id = ::std::option::Option::Some(input.into());
         self
@@ -291,7 +304,7 @@ impl ModifyVpcEndpointServiceConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_vpc_endpoint_service_configuration::ModifyVpcEndpointServiceConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::modify_vpc_endpoint_service_configuration::ModifyVpcEndpointServiceConfigurationInput {

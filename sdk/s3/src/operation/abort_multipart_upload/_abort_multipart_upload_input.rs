@@ -61,6 +61,7 @@ impl AbortMultipartUploadInputBuilder {
     /// <p>The bucket name to which the upload was taking place. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -79,6 +80,7 @@ impl AbortMultipartUploadInputBuilder {
         &self.bucket
     }
     /// <p>Key of the object for which the multipart upload was initiated.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -93,6 +95,7 @@ impl AbortMultipartUploadInputBuilder {
         &self.key
     }
     /// <p>Upload ID that identifies the multipart upload.</p>
+    /// This field is required.
     pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upload_id = ::std::option::Option::Some(input.into());
         self
@@ -137,7 +140,7 @@ impl AbortMultipartUploadInputBuilder {
     /// Consumes the builder and constructs a [`AbortMultipartUploadInput`](crate::operation::abort_multipart_upload::AbortMultipartUploadInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::abort_multipart_upload::AbortMultipartUploadInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::abort_multipart_upload::AbortMultipartUploadInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::abort_multipart_upload::AbortMultipartUploadInput {
             bucket: self.bucket,

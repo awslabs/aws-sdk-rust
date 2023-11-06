@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListStreamKeysOutput {
     /// <p>List of stream keys.</p>
-    pub stream_keys: ::std::option::Option<::std::vec::Vec<crate::types::StreamKeySummary>>,
+    pub stream_keys: ::std::vec::Vec<crate::types::StreamKeySummary>,
     /// <p>If there are more stream keys than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListStreamKeysOutput {
     /// <p>List of stream keys.</p>
-    pub fn stream_keys(&self) -> ::std::option::Option<&[crate::types::StreamKeySummary]> {
-        self.stream_keys.as_deref()
+    pub fn stream_keys(&self) -> &[crate::types::StreamKeySummary] {
+        use std::ops::Deref;
+        self.stream_keys.deref()
     }
     /// <p>If there are more stream keys than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ListStreamKeysOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListStreamKeysOutput`](crate::operation::list_stream_keys::ListStreamKeysOutput).
-    pub fn build(self) -> crate::operation::list_stream_keys::ListStreamKeysOutput {
-        crate::operation::list_stream_keys::ListStreamKeysOutput {
-            stream_keys: self.stream_keys,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`stream_keys`](crate::operation::list_stream_keys::builders::ListStreamKeysOutputBuilder::stream_keys)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_stream_keys::ListStreamKeysOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_stream_keys::ListStreamKeysOutput {
+            stream_keys: self.stream_keys.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "stream_keys",
+                    "stream_keys was not specified but it is required when building ListStreamKeysOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

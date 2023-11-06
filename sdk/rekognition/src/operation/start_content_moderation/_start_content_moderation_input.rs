@@ -55,6 +55,7 @@ pub struct StartContentModerationInputBuilder {
 }
 impl StartContentModerationInputBuilder {
     /// <p>The video in which you want to detect inappropriate, unwanted, or offensive content. The video must be stored in an Amazon S3 bucket.</p>
+    /// This field is required.
     pub fn video(mut self, input: crate::types::Video) -> Self {
         self.video = ::std::option::Option::Some(input);
         self
@@ -127,8 +128,10 @@ impl StartContentModerationInputBuilder {
     /// Consumes the builder and constructs a [`StartContentModerationInput`](crate::operation::start_content_moderation::StartContentModerationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_content_moderation::StartContentModerationInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::start_content_moderation::StartContentModerationInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::start_content_moderation::StartContentModerationInput {
             video: self.video,
             min_confidence: self.min_confidence,

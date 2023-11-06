@@ -20,8 +20,10 @@ impl GetServersInput {
         self.max_results
     }
     /// <p>The server addresses.</p>
-    pub fn vm_server_address_list(&self) -> ::std::option::Option<&[crate::types::VmServerAddress]> {
-        self.vm_server_address_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vm_server_address_list.is_none()`.
+    pub fn vm_server_address_list(&self) -> &[crate::types::VmServerAddress] {
+        self.vm_server_address_list.as_deref().unwrap_or_default()
     }
 }
 impl GetServersInput {
@@ -89,7 +91,7 @@ impl GetServersInputBuilder {
         &self.vm_server_address_list
     }
     /// Consumes the builder and constructs a [`GetServersInput`](crate::operation::get_servers::GetServersInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_servers::GetServersInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_servers::GetServersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_servers::GetServersInput {
             next_token: self.next_token,
             max_results: self.max_results,

@@ -70,6 +70,7 @@ impl LustreLogCreateConfigurationBuilder {
     /// <li> <p> <code>WARN_ERROR</code> - both warning events and error events are logged.</p> </li>
     /// <li> <p> <code>DISABLED</code> - logging of data repository events is turned off.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn level(mut self, input: crate::types::LustreAccessAuditLogLevel) -> Self {
         self.level = ::std::option::Option::Some(input);
         self

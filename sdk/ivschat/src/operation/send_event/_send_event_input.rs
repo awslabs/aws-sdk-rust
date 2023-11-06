@@ -41,6 +41,7 @@ pub struct SendEventInputBuilder {
 }
 impl SendEventInputBuilder {
     /// <p>Identifier of the room to which the event will be sent. Currently this must be an ARN.</p>
+    /// This field is required.
     pub fn room_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.room_identifier = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl SendEventInputBuilder {
         &self.room_identifier
     }
     /// <p>Application-defined name of the event to send to clients.</p>
+    /// This field is required.
     pub fn event_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_name = ::std::option::Option::Some(input.into());
         self
@@ -89,7 +91,7 @@ impl SendEventInputBuilder {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`SendEventInput`](crate::operation::send_event::SendEventInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::send_event::SendEventInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::send_event::SendEventInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_event::SendEventInput {
             room_identifier: self.room_identifier,
             event_name: self.event_name,

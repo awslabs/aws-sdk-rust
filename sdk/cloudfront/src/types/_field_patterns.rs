@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FieldPatterns {
     /// <p>The number of field-level encryption field patterns.</p>
-    pub quantity: ::std::option::Option<i32>,
+    pub quantity: i32,
     /// <p>An array of the field-level encryption field patterns.</p>
     pub items: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl FieldPatterns {
     /// <p>The number of field-level encryption field patterns.</p>
-    pub fn quantity(&self) -> ::std::option::Option<i32> {
+    pub fn quantity(&self) -> i32 {
         self.quantity
     }
     /// <p>An array of the field-level encryption field patterns.</p>
-    pub fn items(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[::std::string::String] {
+        self.items.as_deref().unwrap_or_default()
     }
 }
 impl FieldPatterns {
@@ -35,6 +37,7 @@ pub struct FieldPatternsBuilder {
 }
 impl FieldPatternsBuilder {
     /// <p>The number of field-level encryption field patterns.</p>
+    /// This field is required.
     pub fn quantity(mut self, input: i32) -> Self {
         self.quantity = ::std::option::Option::Some(input);
         self
@@ -69,10 +72,17 @@ impl FieldPatternsBuilder {
         &self.items
     }
     /// Consumes the builder and constructs a [`FieldPatterns`](crate::types::FieldPatterns).
-    pub fn build(self) -> crate::types::FieldPatterns {
-        crate::types::FieldPatterns {
-            quantity: self.quantity,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`quantity`](crate::types::builders::FieldPatternsBuilder::quantity)
+    pub fn build(self) -> ::std::result::Result<crate::types::FieldPatterns, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::FieldPatterns {
+            quantity: self.quantity.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "quantity",
+                    "quantity was not specified but it is required when building FieldPatterns",
+                )
+            })?,
             items: self.items,
-        }
+        })
     }
 }

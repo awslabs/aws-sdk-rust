@@ -34,6 +34,7 @@ pub struct NotifyAppValidationOutputInputBuilder {
 }
 impl NotifyAppValidationOutputInputBuilder {
     /// <p>The ID of the application.</p>
+    /// This field is required.
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl NotifyAppValidationOutputInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::notify_app_validation_output::NotifyAppValidationOutputInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::notify_app_validation_output::NotifyAppValidationOutputInput {
             app_id: self.app_id,

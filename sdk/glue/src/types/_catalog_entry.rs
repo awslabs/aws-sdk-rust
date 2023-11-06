@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CatalogEntry {
     /// <p>The database in which the table metadata resides.</p>
-    pub database_name: ::std::option::Option<::std::string::String>,
+    pub database_name: ::std::string::String,
     /// <p>The name of the table in question.</p>
-    pub table_name: ::std::option::Option<::std::string::String>,
+    pub table_name: ::std::string::String,
 }
 impl CatalogEntry {
     /// <p>The database in which the table metadata resides.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
-        self.database_name.as_deref()
+    pub fn database_name(&self) -> &str {
+        use std::ops::Deref;
+        self.database_name.deref()
     }
     /// <p>The name of the table in question.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
-        self.table_name.as_deref()
+    pub fn table_name(&self) -> &str {
+        use std::ops::Deref;
+        self.table_name.deref()
     }
 }
 impl CatalogEntry {
@@ -35,6 +37,7 @@ pub struct CatalogEntryBuilder {
 }
 impl CatalogEntryBuilder {
     /// <p>The database in which the table metadata resides.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl CatalogEntryBuilder {
         &self.database_name
     }
     /// <p>The name of the table in question.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl CatalogEntryBuilder {
         &self.table_name
     }
     /// Consumes the builder and constructs a [`CatalogEntry`](crate::types::CatalogEntry).
-    pub fn build(self) -> crate::types::CatalogEntry {
-        crate::types::CatalogEntry {
-            database_name: self.database_name,
-            table_name: self.table_name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`database_name`](crate::types::builders::CatalogEntryBuilder::database_name)
+    /// - [`table_name`](crate::types::builders::CatalogEntryBuilder::table_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::CatalogEntry, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CatalogEntry {
+            database_name: self.database_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "database_name",
+                    "database_name was not specified but it is required when building CatalogEntry",
+                )
+            })?,
+            table_name: self.table_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "table_name",
+                    "table_name was not specified but it is required when building CatalogEntry",
+                )
+            })?,
+        })
     }
 }

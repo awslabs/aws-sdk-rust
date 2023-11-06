@@ -7,12 +7,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserGroupResolutionConfiguration {
     /// <p>The identity store provider (mode) you want to use to get users and groups. IAM Identity Center is currently the only available mode. Your users and groups must exist in an IAM Identity Center identity source in order to use this mode.</p>
-    pub user_group_resolution_mode: ::std::option::Option<crate::types::UserGroupResolutionMode>,
+    pub user_group_resolution_mode: crate::types::UserGroupResolutionMode,
 }
 impl UserGroupResolutionConfiguration {
     /// <p>The identity store provider (mode) you want to use to get users and groups. IAM Identity Center is currently the only available mode. Your users and groups must exist in an IAM Identity Center identity source in order to use this mode.</p>
-    pub fn user_group_resolution_mode(&self) -> ::std::option::Option<&crate::types::UserGroupResolutionMode> {
-        self.user_group_resolution_mode.as_ref()
+    pub fn user_group_resolution_mode(&self) -> &crate::types::UserGroupResolutionMode {
+        &self.user_group_resolution_mode
     }
 }
 impl UserGroupResolutionConfiguration {
@@ -30,6 +30,7 @@ pub struct UserGroupResolutionConfigurationBuilder {
 }
 impl UserGroupResolutionConfigurationBuilder {
     /// <p>The identity store provider (mode) you want to use to get users and groups. IAM Identity Center is currently the only available mode. Your users and groups must exist in an IAM Identity Center identity source in order to use this mode.</p>
+    /// This field is required.
     pub fn user_group_resolution_mode(mut self, input: crate::types::UserGroupResolutionMode) -> Self {
         self.user_group_resolution_mode = ::std::option::Option::Some(input);
         self
@@ -44,9 +45,16 @@ impl UserGroupResolutionConfigurationBuilder {
         &self.user_group_resolution_mode
     }
     /// Consumes the builder and constructs a [`UserGroupResolutionConfiguration`](crate::types::UserGroupResolutionConfiguration).
-    pub fn build(self) -> crate::types::UserGroupResolutionConfiguration {
-        crate::types::UserGroupResolutionConfiguration {
-            user_group_resolution_mode: self.user_group_resolution_mode,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`user_group_resolution_mode`](crate::types::builders::UserGroupResolutionConfigurationBuilder::user_group_resolution_mode)
+    pub fn build(self) -> ::std::result::Result<crate::types::UserGroupResolutionConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::UserGroupResolutionConfiguration {
+            user_group_resolution_mode: self.user_group_resolution_mode.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "user_group_resolution_mode",
+                    "user_group_resolution_mode was not specified but it is required when building UserGroupResolutionConfiguration",
+                )
+            })?,
+        })
     }
 }

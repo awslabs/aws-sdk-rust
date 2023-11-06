@@ -11,8 +11,10 @@ pub struct ListEntityRecognizerSummariesOutput {
 }
 impl ListEntityRecognizerSummariesOutput {
     /// <p>The list entity recognizer summaries.</p>
-    pub fn entity_recognizer_summaries_list(&self) -> ::std::option::Option<&[crate::types::EntityRecognizerSummary]> {
-        self.entity_recognizer_summaries_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entity_recognizer_summaries_list.is_none()`.
+    pub fn entity_recognizer_summaries_list(&self) -> &[crate::types::EntityRecognizerSummary] {
+        self.entity_recognizer_summaries_list.as_deref().unwrap_or_default()
     }
     /// <p>Identifies the next page of results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

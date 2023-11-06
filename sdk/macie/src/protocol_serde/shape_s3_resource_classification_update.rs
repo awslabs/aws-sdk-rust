@@ -2,18 +2,18 @@
 pub fn ser_s3_resource_classification_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::S3ResourceClassificationUpdate,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.bucket_name {
-        object.key("bucketName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("bucketName").string(input.bucket_name.as_str());
     }
-    if let Some(var_2) = &input.prefix {
-        object.key("prefix").string(var_2.as_str());
+    if let Some(var_1) = &input.prefix {
+        object.key("prefix").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.classification_type_update {
+    if let Some(var_2) = &input.classification_type_update {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("classificationTypeUpdate").start_object();
-        crate::protocol_serde::shape_classification_type_update::ser_classification_type_update(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_3 = object.key("classificationTypeUpdate").start_object();
+        crate::protocol_serde::shape_classification_type_update::ser_classification_type_update(&mut object_3, var_2)?;
+        object_3.finish();
     }
     Ok(())
 }

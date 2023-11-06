@@ -28,6 +28,7 @@ pub struct CancelContactInputBuilder {
 }
 impl CancelContactInputBuilder {
     /// <p>UUID of a contact.</p>
+    /// This field is required.
     pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_id = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl CancelContactInputBuilder {
     /// Consumes the builder and constructs a [`CancelContactInput`](crate::operation::cancel_contact::CancelContactInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_contact::CancelContactInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::cancel_contact::CancelContactInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_contact::CancelContactInput { contact_id: self.contact_id })
     }
 }

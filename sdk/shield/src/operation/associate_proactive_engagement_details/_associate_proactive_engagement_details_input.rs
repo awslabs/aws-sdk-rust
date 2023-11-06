@@ -14,8 +14,10 @@ impl AssociateProactiveEngagementDetailsInput {
     /// <p>To enable proactive engagement, the contact list must include at least one phone number.</p> <note>
     /// <p>The contacts that you provide here replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it here. </p>
     /// </note>
-    pub fn emergency_contact_list(&self) -> ::std::option::Option<&[crate::types::EmergencyContact]> {
-        self.emergency_contact_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.emergency_contact_list.is_none()`.
+    pub fn emergency_contact_list(&self) -> &[crate::types::EmergencyContact] {
+        self.emergency_contact_list.as_deref().unwrap_or_default()
     }
 }
 impl AssociateProactiveEngagementDetailsInput {
@@ -66,7 +68,7 @@ impl AssociateProactiveEngagementDetailsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_proactive_engagement_details::AssociateProactiveEngagementDetailsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::associate_proactive_engagement_details::AssociateProactiveEngagementDetailsInput {

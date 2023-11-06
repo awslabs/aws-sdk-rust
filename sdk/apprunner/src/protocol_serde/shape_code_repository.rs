@@ -2,24 +2,24 @@
 pub fn ser_code_repository(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CodeRepository,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.repository_url {
-        object.key("RepositoryUrl").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("RepositoryUrl").string(input.repository_url.as_str());
     }
-    if let Some(var_2) = &input.source_code_version {
+    if let Some(var_1) = &input.source_code_version {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("SourceCodeVersion").start_object();
-        crate::protocol_serde::shape_source_code_version::ser_source_code_version(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("SourceCodeVersion").start_object();
+        crate::protocol_serde::shape_source_code_version::ser_source_code_version(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.code_configuration {
+    if let Some(var_3) = &input.code_configuration {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("CodeConfiguration").start_object();
-        crate::protocol_serde::shape_code_configuration::ser_code_configuration(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("CodeConfiguration").start_object();
+        crate::protocol_serde::shape_code_configuration::ser_code_configuration(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_6) = &input.source_directory {
-        object.key("SourceDirectory").string(var_6.as_str());
+    if let Some(var_5) = &input.source_directory {
+        object.key("SourceDirectory").string(var_5.as_str());
     }
     Ok(())
 }
@@ -70,7 +70,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::code_repository_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

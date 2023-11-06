@@ -106,7 +106,7 @@ impl ListSuiteRunsInputBuilder {
     /// Consumes the builder and constructs a [`ListSuiteRunsInput`](crate::operation::list_suite_runs::ListSuiteRunsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_suite_runs::ListSuiteRunsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_suite_runs::ListSuiteRunsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_suite_runs::ListSuiteRunsInput {
             suite_definition_id: self.suite_definition_id,
             suite_definition_version: self.suite_definition_version,

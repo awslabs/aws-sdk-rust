@@ -41,6 +41,7 @@ pub struct GetLendingAnalysisInputBuilder {
 }
 impl GetLendingAnalysisInputBuilder {
     /// <p>A unique identifier for the lending or text-detection job. The <code>JobId</code> is returned from <code>StartLendingAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,8 @@ impl GetLendingAnalysisInputBuilder {
     /// Consumes the builder and constructs a [`GetLendingAnalysisInput`](crate::operation::get_lending_analysis::GetLendingAnalysisInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_lending_analysis::GetLendingAnalysisInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_lending_analysis::GetLendingAnalysisInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_lending_analysis::GetLendingAnalysisInput {
             job_id: self.job_id,
             max_results: self.max_results,

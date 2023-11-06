@@ -103,12 +103,16 @@ impl RecordDetail {
         self.path_id.as_deref()
     }
     /// <p>The errors that occurred.</p>
-    pub fn record_errors(&self) -> ::std::option::Option<&[crate::types::RecordError]> {
-        self.record_errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.record_errors.is_none()`.
+    pub fn record_errors(&self) -> &[crate::types::RecordError] {
+        self.record_errors.as_deref().unwrap_or_default()
     }
     /// <p>One or more tags.</p>
-    pub fn record_tags(&self) -> ::std::option::Option<&[crate::types::RecordTag]> {
-        self.record_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.record_tags.is_none()`.
+    pub fn record_tags(&self) -> &[crate::types::RecordTag] {
+        self.record_tags.as_deref().unwrap_or_default()
     }
     /// <p>The ARN of the launch role associated with the provisioned product.</p>
     pub fn launch_role_arn(&self) -> ::std::option::Option<&str> {

@@ -6,7 +6,7 @@ pub struct ListExtensibleSourceServersInput {
     /// <p>The Id of the staging Account to retrieve extensible source servers from.</p>
     pub staging_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of extensible source servers to retrieve.</p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>The token of the next extensible source server to retrieve.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
@@ -16,7 +16,7 @@ impl ListExtensibleSourceServersInput {
         self.staging_account_id.as_deref()
     }
     /// <p>The maximum number of extensible source servers to retrieve.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token of the next extensible source server to retrieve.</p>
@@ -41,6 +41,7 @@ pub struct ListExtensibleSourceServersInputBuilder {
 }
 impl ListExtensibleSourceServersInputBuilder {
     /// <p>The Id of the staging Account to retrieve extensible source servers from.</p>
+    /// This field is required.
     pub fn staging_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.staging_account_id = ::std::option::Option::Some(input.into());
         self
@@ -87,11 +88,11 @@ impl ListExtensibleSourceServersInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_extensible_source_servers::ListExtensibleSourceServersInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_extensible_source_servers::ListExtensibleSourceServersInput {
             staging_account_id: self.staging_account_id,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
         })
     }

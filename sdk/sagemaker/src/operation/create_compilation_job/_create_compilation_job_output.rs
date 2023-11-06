@@ -43,6 +43,7 @@ impl CreateCompilationJobOutputBuilder {
     /// <ul>
     /// <li> <p> <code>CompilationJobArn</code>: The Amazon Resource Name (ARN) of the compiled job.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn compilation_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compilation_job_arn = ::std::option::Option::Some(input.into());
         self

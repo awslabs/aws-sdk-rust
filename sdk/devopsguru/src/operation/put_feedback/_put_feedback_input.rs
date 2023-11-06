@@ -41,7 +41,7 @@ impl PutFeedbackInputBuilder {
         &self.insight_feedback
     }
     /// Consumes the builder and constructs a [`PutFeedbackInput`](crate::operation::put_feedback::PutFeedbackInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_feedback::PutFeedbackInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_feedback::PutFeedbackInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_feedback::PutFeedbackInput {
             insight_feedback: self.insight_feedback,
         })

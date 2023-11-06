@@ -34,6 +34,7 @@ pub struct DeleteExtensionInputBuilder {
 }
 impl DeleteExtensionInputBuilder {
     /// <p>The name, ID, or Amazon Resource Name (ARN) of the extension you want to delete.</p>
+    /// This field is required.
     pub fn extension_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.extension_identifier = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl DeleteExtensionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteExtensionInput`](crate::operation::delete_extension::DeleteExtensionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_extension::DeleteExtensionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_extension::DeleteExtensionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_extension::DeleteExtensionInput {
             extension_identifier: self.extension_identifier,
             version_number: self.version_number,

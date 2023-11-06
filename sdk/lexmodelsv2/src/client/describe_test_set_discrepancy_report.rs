@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeTestSetDiscrepancyReport`](crate::operation::describe_test_set_discrepancy_report::builders::DescribeTestSetDiscrepancyReportFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`test_set_discrepancy_report_id(impl Into<String>)`](crate::operation::describe_test_set_discrepancy_report::builders::DescribeTestSetDiscrepancyReportFluentBuilder::test_set_discrepancy_report_id) / [`set_test_set_discrepancy_report_id(Option<String>)`](crate::operation::describe_test_set_discrepancy_report::builders::DescribeTestSetDiscrepancyReportFluentBuilder::set_test_set_discrepancy_report_id): <p>The unique identifier of the test set discrepancy report.</p>
+    ///   - [`test_set_discrepancy_report_id(impl Into<String>)`](crate::operation::describe_test_set_discrepancy_report::builders::DescribeTestSetDiscrepancyReportFluentBuilder::test_set_discrepancy_report_id) / [`set_test_set_discrepancy_report_id(Option<String>)`](crate::operation::describe_test_set_discrepancy_report::builders::DescribeTestSetDiscrepancyReportFluentBuilder::set_test_set_discrepancy_report_id):<br>required: **true**<br><p>The unique identifier of the test set discrepancy report.</p><br>
     /// - On success, responds with [`DescribeTestSetDiscrepancyReportOutput`](crate::operation::describe_test_set_discrepancy_report::DescribeTestSetDiscrepancyReportOutput) with field(s):
     ///   - [`test_set_discrepancy_report_id(Option<String>)`](crate::operation::describe_test_set_discrepancy_report::DescribeTestSetDiscrepancyReportOutput::test_set_discrepancy_report_id): <p>The unique identifier of the test set discrepancy report to describe.</p>
     ///   - [`test_set_id(Option<String>)`](crate::operation::describe_test_set_discrepancy_report::DescribeTestSetDiscrepancyReportOutput::test_set_id): <p>The test set Id for the test set discrepancy report.</p>
@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`last_updated_data_time(Option<DateTime>)`](crate::operation::describe_test_set_discrepancy_report::DescribeTestSetDiscrepancyReportOutput::last_updated_data_time): <p>The date and time of the last update for the test set discrepancy report.</p>
     ///   - [`test_set_discrepancy_top_errors(Option<TestSetDiscrepancyErrors>)`](crate::operation::describe_test_set_discrepancy_report::DescribeTestSetDiscrepancyReportOutput::test_set_discrepancy_top_errors): <p>The top 200 error results from the test set discrepancy report.</p>
     ///   - [`test_set_discrepancy_raw_output_url(Option<String>)`](crate::operation::describe_test_set_discrepancy_report::DescribeTestSetDiscrepancyReportOutput::test_set_discrepancy_raw_output_url): <p>Pre-signed Amazon S3 URL to download the test set discrepancy report.</p>
-    ///   - [`failure_reasons(Option<Vec<String>>)`](crate::operation::describe_test_set_discrepancy_report::DescribeTestSetDiscrepancyReportOutput::failure_reasons): <p>The failure report for the test set discrepancy report generation action.</p>
+    ///   - [`failure_reasons(Option<Vec::<String>>)`](crate::operation::describe_test_set_discrepancy_report::DescribeTestSetDiscrepancyReportOutput::failure_reasons): <p>The failure report for the test set discrepancy report generation action.</p>
     /// - On failure, responds with [`SdkError<DescribeTestSetDiscrepancyReportError>`](crate::operation::describe_test_set_discrepancy_report::DescribeTestSetDiscrepancyReportError)
     pub fn describe_test_set_discrepancy_report(
         &self,

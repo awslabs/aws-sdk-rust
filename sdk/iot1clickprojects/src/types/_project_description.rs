@@ -7,13 +7,13 @@ pub struct ProjectDescription {
     /// <p>The ARN of the project.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project for which to obtain information from.</p>
-    pub project_name: ::std::option::Option<::std::string::String>,
+    pub project_name: ::std::string::String,
     /// <p>The description of the project.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The date when the project was originally created, in UNIX epoch time format.</p>
-    pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_date: ::aws_smithy_types::DateTime,
     /// <p>The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
-    pub updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub updated_date: ::aws_smithy_types::DateTime,
     /// <p>An object describing the project's placement specifications.</p>
     pub placement_template: ::std::option::Option<crate::types::PlacementTemplate>,
     /// <p>The tags (metadata key/value pairs) associated with the project.</p>
@@ -25,20 +25,21 @@ impl ProjectDescription {
         self.arn.as_deref()
     }
     /// <p>The name of the project for which to obtain information from.</p>
-    pub fn project_name(&self) -> ::std::option::Option<&str> {
-        self.project_name.as_deref()
+    pub fn project_name(&self) -> &str {
+        use std::ops::Deref;
+        self.project_name.deref()
     }
     /// <p>The description of the project.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The date when the project was originally created, in UNIX epoch time format.</p>
-    pub fn created_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_date.as_ref()
+    pub fn created_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_date
     }
     /// <p>The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
-    pub fn updated_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.updated_date.as_ref()
+    pub fn updated_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.updated_date
     }
     /// <p>An object describing the project's placement specifications.</p>
     pub fn placement_template(&self) -> ::std::option::Option<&crate::types::PlacementTemplate> {
@@ -84,6 +85,7 @@ impl ProjectDescriptionBuilder {
         &self.arn
     }
     /// <p>The name of the project for which to obtain information from.</p>
+    /// This field is required.
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +114,7 @@ impl ProjectDescriptionBuilder {
         &self.description
     }
     /// <p>The date when the project was originally created, in UNIX epoch time format.</p>
+    /// This field is required.
     pub fn created_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_date = ::std::option::Option::Some(input);
         self
@@ -126,6 +129,7 @@ impl ProjectDescriptionBuilder {
         &self.created_date
     }
     /// <p>The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
+    /// This field is required.
     pub fn updated_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_date = ::std::option::Option::Some(input);
         self
@@ -174,15 +178,34 @@ impl ProjectDescriptionBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`ProjectDescription`](crate::types::ProjectDescription).
-    pub fn build(self) -> crate::types::ProjectDescription {
-        crate::types::ProjectDescription {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`project_name`](crate::types::builders::ProjectDescriptionBuilder::project_name)
+    /// - [`created_date`](crate::types::builders::ProjectDescriptionBuilder::created_date)
+    /// - [`updated_date`](crate::types::builders::ProjectDescriptionBuilder::updated_date)
+    pub fn build(self) -> ::std::result::Result<crate::types::ProjectDescription, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ProjectDescription {
             arn: self.arn,
-            project_name: self.project_name,
+            project_name: self.project_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "project_name",
+                    "project_name was not specified but it is required when building ProjectDescription",
+                )
+            })?,
             description: self.description,
-            created_date: self.created_date,
-            updated_date: self.updated_date,
+            created_date: self.created_date.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_date",
+                    "created_date was not specified but it is required when building ProjectDescription",
+                )
+            })?,
+            updated_date: self.updated_date.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "updated_date",
+                    "updated_date was not specified but it is required when building ProjectDescription",
+                )
+            })?,
             placement_template: self.placement_template,
             tags: self.tags,
-        }
+        })
     }
 }

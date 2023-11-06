@@ -27,6 +27,7 @@ pub struct DeactivateAnomalyDetectorInputBuilder {
 }
 impl DeactivateAnomalyDetectorInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+    /// This field is required.
     pub fn anomaly_detector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_detector_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeactivateAnomalyDetectorInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deactivate_anomaly_detector::DeactivateAnomalyDetectorInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::deactivate_anomaly_detector::DeactivateAnomalyDetectorInput {
             anomaly_detector_arn: self.anomaly_detector_arn,

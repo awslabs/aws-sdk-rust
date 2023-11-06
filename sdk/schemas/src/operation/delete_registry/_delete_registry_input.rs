@@ -27,6 +27,7 @@ pub struct DeleteRegistryInputBuilder {
 }
 impl DeleteRegistryInputBuilder {
     /// <p>The name of the registry.</p>
+    /// This field is required.
     pub fn registry_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteRegistryInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRegistryInput`](crate::operation::delete_registry::DeleteRegistryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_registry::DeleteRegistryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_registry::DeleteRegistryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_registry::DeleteRegistryInput {
             registry_name: self.registry_name,
         })

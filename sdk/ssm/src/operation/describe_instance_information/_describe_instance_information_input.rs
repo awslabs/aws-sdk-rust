@@ -18,12 +18,16 @@ impl DescribeInstanceInformationInput {
     /// <p>This is a legacy method. We recommend that you don't use this method. Instead, use the <code>Filters</code> data type. <code>Filters</code> enables you to return node information by filtering based on tags applied to managed nodes.</p> <note>
     /// <p>Attempting to use <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an exception error. </p>
     /// </note>
-    pub fn instance_information_filter_list(&self) -> ::std::option::Option<&[crate::types::InstanceInformationFilter]> {
-        self.instance_information_filter_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_information_filter_list.is_none()`.
+    pub fn instance_information_filter_list(&self) -> &[crate::types::InstanceInformationFilter] {
+        self.instance_information_filter_list.as_deref().unwrap_or_default()
     }
     /// <p>One or more filters. Use a filter to return a more specific list of managed nodes. You can filter based on tags applied to your managed nodes. Tag filters can't be combined with other filter types. Use this <code>Filters</code> data type instead of <code>InstanceInformationFilterList</code>, which is deprecated.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::InstanceInformationStringFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::InstanceInformationStringFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results. The default value is 10 items. </p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -133,7 +137,7 @@ impl DescribeInstanceInformationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_instance_information::DescribeInstanceInformationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_instance_information::DescribeInstanceInformationInput {
             instance_information_filter_list: self.instance_information_filter_list,

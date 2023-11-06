@@ -41,6 +41,7 @@ pub struct ListDataSetsInputBuilder {
 }
 impl ListDataSetsInputBuilder {
     /// <p>The Amazon Web Services account ID.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl ListDataSetsInputBuilder {
     /// Consumes the builder and constructs a [`ListDataSetsInput`](crate::operation::list_data_sets::ListDataSetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_data_sets::ListDataSetsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_data_sets::ListDataSetsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_data_sets::ListDataSetsInput {
             aws_account_id: self.aws_account_id,
             next_token: self.next_token,

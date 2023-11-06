@@ -17,24 +17,34 @@ pub struct ClosedDays {
 }
 impl ClosedDays {
     /// <p>Rules for the Email channel.</p>
-    pub fn email(&self) -> ::std::option::Option<&[crate::types::ClosedDaysRule]> {
-        self.email.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.email.is_none()`.
+    pub fn email(&self) -> &[crate::types::ClosedDaysRule] {
+        self.email.as_deref().unwrap_or_default()
     }
     /// <p>Rules for the SMS channel.</p>
-    pub fn sms(&self) -> ::std::option::Option<&[crate::types::ClosedDaysRule]> {
-        self.sms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sms.is_none()`.
+    pub fn sms(&self) -> &[crate::types::ClosedDaysRule] {
+        self.sms.as_deref().unwrap_or_default()
     }
     /// <p>Rules for the Push channel.</p>
-    pub fn push(&self) -> ::std::option::Option<&[crate::types::ClosedDaysRule]> {
-        self.push.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.push.is_none()`.
+    pub fn push(&self) -> &[crate::types::ClosedDaysRule] {
+        self.push.as_deref().unwrap_or_default()
     }
     /// <p>Rules for the Voice channel.</p>
-    pub fn voice(&self) -> ::std::option::Option<&[crate::types::ClosedDaysRule]> {
-        self.voice.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.voice.is_none()`.
+    pub fn voice(&self) -> &[crate::types::ClosedDaysRule] {
+        self.voice.as_deref().unwrap_or_default()
     }
     /// <p>Rules for the Custom channel.</p>
-    pub fn custom(&self) -> ::std::option::Option<&[crate::types::ClosedDaysRule]> {
-        self.custom.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom.is_none()`.
+    pub fn custom(&self) -> &[crate::types::ClosedDaysRule] {
+        self.custom.as_deref().unwrap_or_default()
     }
 }
 impl ClosedDays {

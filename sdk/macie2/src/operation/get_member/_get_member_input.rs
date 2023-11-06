@@ -27,6 +27,7 @@ pub struct GetMemberInputBuilder {
 }
 impl GetMemberInputBuilder {
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetMemberInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetMemberInput`](crate::operation::get_member::GetMemberInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_member::GetMemberInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_member::GetMemberInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_member::GetMemberInput { id: self.id })
     }
 }

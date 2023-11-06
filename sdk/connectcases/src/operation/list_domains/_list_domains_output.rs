@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDomainsOutput {
     /// <p>The Cases domain.</p>
-    pub domains: ::std::option::Option<::std::vec::Vec<crate::types::DomainSummary>>,
+    pub domains: ::std::vec::Vec<crate::types::DomainSummary>,
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListDomainsOutput {
     /// <p>The Cases domain.</p>
-    pub fn domains(&self) -> ::std::option::Option<&[crate::types::DomainSummary]> {
-        self.domains.as_deref()
+    pub fn domains(&self) -> &[crate::types::DomainSummary] {
+        use std::ops::Deref;
+        self.domains.deref()
     }
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,18 @@ impl ListDomainsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDomainsOutput`](crate::operation::list_domains::ListDomainsOutput).
-    pub fn build(self) -> crate::operation::list_domains::ListDomainsOutput {
-        crate::operation::list_domains::ListDomainsOutput {
-            domains: self.domains,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`domains`](crate::operation::list_domains::builders::ListDomainsOutputBuilder::domains)
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_domains::ListDomainsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_domains::ListDomainsOutput {
+            domains: self.domains.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "domains",
+                    "domains was not specified but it is required when building ListDomainsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

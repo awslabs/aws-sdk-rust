@@ -34,12 +34,16 @@ impl UpdateModelPackageInput {
         self.customer_metadata_properties.as_ref()
     }
     /// <p>The metadata properties associated with the model package versions to remove.</p>
-    pub fn customer_metadata_properties_to_remove(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.customer_metadata_properties_to_remove.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.customer_metadata_properties_to_remove.is_none()`.
+    pub fn customer_metadata_properties_to_remove(&self) -> &[::std::string::String] {
+        self.customer_metadata_properties_to_remove.as_deref().unwrap_or_default()
     }
     /// <p>An array of additional Inference Specification objects to be added to the existing array additional Inference Specification. Total number of additional Inference Specifications can not exceed 15. Each additional Inference Specification specifies artifacts based on this model package that can be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts.</p>
-    pub fn additional_inference_specifications_to_add(&self) -> ::std::option::Option<&[crate::types::AdditionalInferenceSpecificationDefinition]> {
-        self.additional_inference_specifications_to_add.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_inference_specifications_to_add.is_none()`.
+    pub fn additional_inference_specifications_to_add(&self) -> &[crate::types::AdditionalInferenceSpecificationDefinition] {
+        self.additional_inference_specifications_to_add.as_deref().unwrap_or_default()
     }
 }
 impl UpdateModelPackageInput {
@@ -63,6 +67,7 @@ pub struct UpdateModelPackageInputBuilder {
 }
 impl UpdateModelPackageInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the model package.</p>
+    /// This field is required.
     pub fn model_package_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_arn = ::std::option::Option::Some(input.into());
         self
@@ -181,7 +186,8 @@ impl UpdateModelPackageInputBuilder {
     /// Consumes the builder and constructs a [`UpdateModelPackageInput`](crate::operation::update_model_package::UpdateModelPackageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_model_package::UpdateModelPackageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_model_package::UpdateModelPackageInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_model_package::UpdateModelPackageInput {
             model_package_arn: self.model_package_arn,
             model_approval_status: self.model_approval_status,

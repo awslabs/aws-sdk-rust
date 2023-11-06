@@ -4,47 +4,51 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetProviderServiceOutput {
     /// <p>The name of the provider. This name is typically the company name.</p>
-    pub provider_name: ::std::option::Option<::std::string::String>,
+    pub provider_name: ::std::string::String,
     /// <p>The name of the product that the provider service provides. </p>
-    pub provider_service_name: ::std::option::Option<::std::string::String>,
+    pub provider_service_name: ::std::string::String,
     /// <p>The display name of the provider service.</p>
-    pub provider_service_display_name: ::std::option::Option<::std::string::String>,
+    pub provider_service_display_name: ::std::string::String,
     /// <p>The type of provider service.</p>
-    pub provider_service_type: ::std::option::Option<crate::types::ServiceType>,
+    pub provider_service_type: crate::types::ServiceType,
     /// <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the provider service.</p>
-    pub provider_service_arn: ::std::option::Option<::std::string::String>,
+    pub provider_service_arn: ::std::string::String,
     /// <p>The definition of the provider configuration.</p>
     pub provider_configuration_definition: ::std::option::Option<::aws_smithy_types::Document>,
     /// <p>The required configuration fields to use with the provider service.</p>
     pub provider_endpoint_configuration: ::std::option::Option<crate::types::ProviderEndpointConfiguration>,
     /// <p>Specifies whether output data from the provider is anonymized. A value of <code>TRUE</code> means the output will be anonymized and you can't relate the data that comes back from the provider to the identifying input. A value of <code>FALSE</code> means the output won't be anonymized and you can relate the data that comes back from the provider to your source data. </p>
-    pub anonymized_output: ::std::option::Option<bool>,
+    pub anonymized_output: bool,
     /// <p>The definition of the provider entity output.</p>
-    pub provider_entity_output_definition: ::std::option::Option<::aws_smithy_types::Document>,
+    pub provider_entity_output_definition: ::aws_smithy_types::Document,
     /// <p>The Amazon Web Services accounts and the S3 permissions that are required by some providers to create an S3 bucket for intermediate data storage.</p>
     pub provider_intermediate_data_access_configuration: ::std::option::Option<crate::types::ProviderIntermediateDataAccessConfiguration>,
     _request_id: Option<String>,
 }
 impl GetProviderServiceOutput {
     /// <p>The name of the provider. This name is typically the company name.</p>
-    pub fn provider_name(&self) -> ::std::option::Option<&str> {
-        self.provider_name.as_deref()
+    pub fn provider_name(&self) -> &str {
+        use std::ops::Deref;
+        self.provider_name.deref()
     }
     /// <p>The name of the product that the provider service provides. </p>
-    pub fn provider_service_name(&self) -> ::std::option::Option<&str> {
-        self.provider_service_name.as_deref()
+    pub fn provider_service_name(&self) -> &str {
+        use std::ops::Deref;
+        self.provider_service_name.deref()
     }
     /// <p>The display name of the provider service.</p>
-    pub fn provider_service_display_name(&self) -> ::std::option::Option<&str> {
-        self.provider_service_display_name.as_deref()
+    pub fn provider_service_display_name(&self) -> &str {
+        use std::ops::Deref;
+        self.provider_service_display_name.deref()
     }
     /// <p>The type of provider service.</p>
-    pub fn provider_service_type(&self) -> ::std::option::Option<&crate::types::ServiceType> {
-        self.provider_service_type.as_ref()
+    pub fn provider_service_type(&self) -> &crate::types::ServiceType {
+        &self.provider_service_type
     }
     /// <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the provider service.</p>
-    pub fn provider_service_arn(&self) -> ::std::option::Option<&str> {
-        self.provider_service_arn.as_deref()
+    pub fn provider_service_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.provider_service_arn.deref()
     }
     /// <p>The definition of the provider configuration.</p>
     pub fn provider_configuration_definition(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
@@ -55,12 +59,12 @@ impl GetProviderServiceOutput {
         self.provider_endpoint_configuration.as_ref()
     }
     /// <p>Specifies whether output data from the provider is anonymized. A value of <code>TRUE</code> means the output will be anonymized and you can't relate the data that comes back from the provider to the identifying input. A value of <code>FALSE</code> means the output won't be anonymized and you can relate the data that comes back from the provider to your source data. </p>
-    pub fn anonymized_output(&self) -> ::std::option::Option<bool> {
+    pub fn anonymized_output(&self) -> bool {
         self.anonymized_output
     }
     /// <p>The definition of the provider entity output.</p>
-    pub fn provider_entity_output_definition(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
-        self.provider_entity_output_definition.as_ref()
+    pub fn provider_entity_output_definition(&self) -> &::aws_smithy_types::Document {
+        &self.provider_entity_output_definition
     }
     /// <p>The Amazon Web Services accounts and the S3 permissions that are required by some providers to create an S3 bucket for intermediate data storage.</p>
     pub fn provider_intermediate_data_access_configuration(
@@ -99,6 +103,7 @@ pub struct GetProviderServiceOutputBuilder {
 }
 impl GetProviderServiceOutputBuilder {
     /// <p>The name of the provider. This name is typically the company name.</p>
+    /// This field is required.
     pub fn provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider_name = ::std::option::Option::Some(input.into());
         self
@@ -113,6 +118,7 @@ impl GetProviderServiceOutputBuilder {
         &self.provider_name
     }
     /// <p>The name of the product that the provider service provides. </p>
+    /// This field is required.
     pub fn provider_service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider_service_name = ::std::option::Option::Some(input.into());
         self
@@ -127,6 +133,7 @@ impl GetProviderServiceOutputBuilder {
         &self.provider_service_name
     }
     /// <p>The display name of the provider service.</p>
+    /// This field is required.
     pub fn provider_service_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider_service_display_name = ::std::option::Option::Some(input.into());
         self
@@ -141,6 +148,7 @@ impl GetProviderServiceOutputBuilder {
         &self.provider_service_display_name
     }
     /// <p>The type of provider service.</p>
+    /// This field is required.
     pub fn provider_service_type(mut self, input: crate::types::ServiceType) -> Self {
         self.provider_service_type = ::std::option::Option::Some(input);
         self
@@ -155,6 +163,7 @@ impl GetProviderServiceOutputBuilder {
         &self.provider_service_type
     }
     /// <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the provider service.</p>
+    /// This field is required.
     pub fn provider_service_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider_service_arn = ::std::option::Option::Some(input.into());
         self
@@ -183,6 +192,7 @@ impl GetProviderServiceOutputBuilder {
         &self.provider_configuration_definition
     }
     /// <p>The required configuration fields to use with the provider service.</p>
+    /// This field is required.
     pub fn provider_endpoint_configuration(mut self, input: crate::types::ProviderEndpointConfiguration) -> Self {
         self.provider_endpoint_configuration = ::std::option::Option::Some(input);
         self
@@ -197,6 +207,7 @@ impl GetProviderServiceOutputBuilder {
         &self.provider_endpoint_configuration
     }
     /// <p>Specifies whether output data from the provider is anonymized. A value of <code>TRUE</code> means the output will be anonymized and you can't relate the data that comes back from the provider to the identifying input. A value of <code>FALSE</code> means the output won't be anonymized and you can relate the data that comes back from the provider to your source data. </p>
+    /// This field is required.
     pub fn anonymized_output(mut self, input: bool) -> Self {
         self.anonymized_output = ::std::option::Option::Some(input);
         self
@@ -211,6 +222,7 @@ impl GetProviderServiceOutputBuilder {
         &self.anonymized_output
     }
     /// <p>The definition of the provider entity output.</p>
+    /// This field is required.
     pub fn provider_entity_output_definition(mut self, input: ::aws_smithy_types::Document) -> Self {
         self.provider_entity_output_definition = ::std::option::Option::Some(input);
         self
@@ -253,19 +265,65 @@ impl GetProviderServiceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetProviderServiceOutput`](crate::operation::get_provider_service::GetProviderServiceOutput).
-    pub fn build(self) -> crate::operation::get_provider_service::GetProviderServiceOutput {
-        crate::operation::get_provider_service::GetProviderServiceOutput {
-            provider_name: self.provider_name,
-            provider_service_name: self.provider_service_name,
-            provider_service_display_name: self.provider_service_display_name,
-            provider_service_type: self.provider_service_type,
-            provider_service_arn: self.provider_service_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`provider_name`](crate::operation::get_provider_service::builders::GetProviderServiceOutputBuilder::provider_name)
+    /// - [`provider_service_name`](crate::operation::get_provider_service::builders::GetProviderServiceOutputBuilder::provider_service_name)
+    /// - [`provider_service_display_name`](crate::operation::get_provider_service::builders::GetProviderServiceOutputBuilder::provider_service_display_name)
+    /// - [`provider_service_type`](crate::operation::get_provider_service::builders::GetProviderServiceOutputBuilder::provider_service_type)
+    /// - [`provider_service_arn`](crate::operation::get_provider_service::builders::GetProviderServiceOutputBuilder::provider_service_arn)
+    /// - [`anonymized_output`](crate::operation::get_provider_service::builders::GetProviderServiceOutputBuilder::anonymized_output)
+    /// - [`provider_entity_output_definition`](crate::operation::get_provider_service::builders::GetProviderServiceOutputBuilder::provider_entity_output_definition)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_provider_service::GetProviderServiceOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_provider_service::GetProviderServiceOutput {
+            provider_name: self.provider_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "provider_name",
+                    "provider_name was not specified but it is required when building GetProviderServiceOutput",
+                )
+            })?,
+            provider_service_name: self.provider_service_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "provider_service_name",
+                    "provider_service_name was not specified but it is required when building GetProviderServiceOutput",
+                )
+            })?,
+            provider_service_display_name: self.provider_service_display_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "provider_service_display_name",
+                    "provider_service_display_name was not specified but it is required when building GetProviderServiceOutput",
+                )
+            })?,
+            provider_service_type: self.provider_service_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "provider_service_type",
+                    "provider_service_type was not specified but it is required when building GetProviderServiceOutput",
+                )
+            })?,
+            provider_service_arn: self.provider_service_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "provider_service_arn",
+                    "provider_service_arn was not specified but it is required when building GetProviderServiceOutput",
+                )
+            })?,
             provider_configuration_definition: self.provider_configuration_definition,
             provider_endpoint_configuration: self.provider_endpoint_configuration,
-            anonymized_output: self.anonymized_output,
-            provider_entity_output_definition: self.provider_entity_output_definition,
+            anonymized_output: self.anonymized_output.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "anonymized_output",
+                    "anonymized_output was not specified but it is required when building GetProviderServiceOutput",
+                )
+            })?,
+            provider_entity_output_definition: self.provider_entity_output_definition.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "provider_entity_output_definition",
+                    "provider_entity_output_definition was not specified but it is required when building GetProviderServiceOutput",
+                )
+            })?,
             provider_intermediate_data_access_configuration: self.provider_intermediate_data_access_configuration,
             _request_id: self._request_id,
-        }
+        })
     }
 }

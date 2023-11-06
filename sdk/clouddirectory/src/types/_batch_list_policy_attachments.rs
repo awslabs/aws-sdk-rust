@@ -42,6 +42,7 @@ pub struct BatchListPolicyAttachmentsBuilder {
 }
 impl BatchListPolicyAttachmentsBuilder {
     /// <p>The reference that identifies the policy object.</p>
+    /// This field is required.
     pub fn policy_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.policy_reference = ::std::option::Option::Some(input);
         self

@@ -49,6 +49,7 @@ pub struct ProcessingInputBuilder {
 }
 impl ProcessingInputBuilder {
     /// <p>The name for the processing job input.</p>
+    /// This field is required.
     pub fn input_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_name = ::std::option::Option::Some(input.into());
         self

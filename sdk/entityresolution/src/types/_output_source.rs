@@ -5,26 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputSource {
     /// <p>The S3 path to which Entity Resolution will write the output table.</p>
-    pub output_s3_path: ::std::option::Option<::std::string::String>,
+    pub output_s3_path: ::std::string::String,
     /// <p>Customer KMS ARN for encryption at rest. If not provided, system will use an Entity Resolution managed KMS key.</p>
     pub kms_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>OutputAttribute</code> objects, each of which have the fields <code>Name</code> and <code>Hashed</code>. Each of these objects selects a column to be included in the output table, and whether the values of the column should be hashed.</p>
-    pub output: ::std::option::Option<::std::vec::Vec<crate::types::OutputAttribute>>,
+    pub output: ::std::vec::Vec<crate::types::OutputAttribute>,
     /// <p>Normalizes the attributes defined in the schema in the input data. For example, if an attribute has an <code>AttributeType</code> of <code>PHONE_NUMBER</code>, and the data in the input table is in a format of 1234567890, Entity Resolution will normalize this field in the output to (123)-456-7890.</p>
     pub apply_normalization: ::std::option::Option<bool>,
 }
 impl OutputSource {
     /// <p>The S3 path to which Entity Resolution will write the output table.</p>
-    pub fn output_s3_path(&self) -> ::std::option::Option<&str> {
-        self.output_s3_path.as_deref()
+    pub fn output_s3_path(&self) -> &str {
+        use std::ops::Deref;
+        self.output_s3_path.deref()
     }
     /// <p>Customer KMS ARN for encryption at rest. If not provided, system will use an Entity Resolution managed KMS key.</p>
     pub fn kms_arn(&self) -> ::std::option::Option<&str> {
         self.kms_arn.as_deref()
     }
     /// <p>A list of <code>OutputAttribute</code> objects, each of which have the fields <code>Name</code> and <code>Hashed</code>. Each of these objects selects a column to be included in the output table, and whether the values of the column should be hashed.</p>
-    pub fn output(&self) -> ::std::option::Option<&[crate::types::OutputAttribute]> {
-        self.output.as_deref()
+    pub fn output(&self) -> &[crate::types::OutputAttribute] {
+        use std::ops::Deref;
+        self.output.deref()
     }
     /// <p>Normalizes the attributes defined in the schema in the input data. For example, if an attribute has an <code>AttributeType</code> of <code>PHONE_NUMBER</code>, and the data in the input table is in a format of 1234567890, Entity Resolution will normalize this field in the output to (123)-456-7890.</p>
     pub fn apply_normalization(&self) -> ::std::option::Option<bool> {
@@ -49,6 +51,7 @@ pub struct OutputSourceBuilder {
 }
 impl OutputSourceBuilder {
     /// <p>The S3 path to which Entity Resolution will write the output table.</p>
+    /// This field is required.
     pub fn output_s3_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_s3_path = ::std::option::Option::Some(input.into());
         self
@@ -111,12 +114,25 @@ impl OutputSourceBuilder {
         &self.apply_normalization
     }
     /// Consumes the builder and constructs a [`OutputSource`](crate::types::OutputSource).
-    pub fn build(self) -> crate::types::OutputSource {
-        crate::types::OutputSource {
-            output_s3_path: self.output_s3_path,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`output_s3_path`](crate::types::builders::OutputSourceBuilder::output_s3_path)
+    /// - [`output`](crate::types::builders::OutputSourceBuilder::output)
+    pub fn build(self) -> ::std::result::Result<crate::types::OutputSource, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::OutputSource {
+            output_s3_path: self.output_s3_path.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "output_s3_path",
+                    "output_s3_path was not specified but it is required when building OutputSource",
+                )
+            })?,
             kms_arn: self.kms_arn,
-            output: self.output,
+            output: self.output.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "output",
+                    "output was not specified but it is required when building OutputSource",
+                )
+            })?,
             apply_normalization: self.apply_normalization,
-        }
+        })
     }
 }

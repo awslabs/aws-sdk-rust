@@ -50,11 +50,10 @@ pub fn de_start_failback_launch_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::start_failback_launch::StartFailbackLaunchError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ServiceQuotaExceededException" => crate::operation::start_failback_launch::StartFailbackLaunchError::ServiceQuotaExceededException({
@@ -90,11 +89,10 @@ pub fn de_start_failback_launch_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::start_failback_launch::StartFailbackLaunchError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "UninitializedAccountException" => crate::operation::start_failback_launch::StartFailbackLaunchError::UninitializedAccountException({
@@ -153,12 +151,12 @@ pub fn de_start_failback_launch_http_response(
 
 pub fn ser_start_failback_launch_input(
     input: &crate::operation::start_failback_launch::StartFailbackLaunchInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_start_failback_launch_input::ser_start_failback_launch_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_start_failback_launch(

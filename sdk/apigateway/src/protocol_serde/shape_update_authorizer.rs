@@ -143,12 +143,12 @@ pub fn de_update_authorizer_http_response(
 
 pub fn ser_update_authorizer_input(
     input: &crate::operation::update_authorizer::UpdateAuthorizerInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_update_authorizer_input::ser_update_authorizer_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_update_authorizer(
@@ -219,7 +219,7 @@ pub(crate) fn de_update_authorizer(
                     );
                 }
                 "providerARNs" => {
-                    builder = builder.set_provider_ar_ns(crate::protocol_serde::shape_list_of_ar_ns::de_list_of_ar_ns(tokens)?);
+                    builder = builder.set_provider_arns(crate::protocol_serde::shape_list_of_arns::de_list_of_arns(tokens)?);
                 }
                 "type" => {
                     builder = builder.set_type(

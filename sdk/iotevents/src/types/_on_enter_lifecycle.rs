@@ -9,8 +9,10 @@ pub struct OnEnterLifecycle {
 }
 impl OnEnterLifecycle {
     /// <p>Specifies the actions that are performed when the state is entered and the <code>condition</code> is <code>TRUE</code>.</p>
-    pub fn events(&self) -> ::std::option::Option<&[crate::types::Event]> {
-        self.events.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.events.is_none()`.
+    pub fn events(&self) -> &[crate::types::Event] {
+        self.events.as_deref().unwrap_or_default()
     }
 }
 impl OnEnterLifecycle {

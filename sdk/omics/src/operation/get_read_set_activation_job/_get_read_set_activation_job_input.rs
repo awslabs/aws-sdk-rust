@@ -34,6 +34,7 @@ pub struct GetReadSetActivationJobInputBuilder {
 }
 impl GetReadSetActivationJobInputBuilder {
     /// <p>The job's ID.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetReadSetActivationJobInputBuilder {
         &self.id
     }
     /// <p>The job's sequence store ID.</p>
+    /// This field is required.
     pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_store_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl GetReadSetActivationJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_read_set_activation_job::GetReadSetActivationJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_read_set_activation_job::GetReadSetActivationJobInput {
             id: self.id,

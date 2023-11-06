@@ -120,6 +120,7 @@ pub struct CreateFirewallRuleInputBuilder {
 }
 impl CreateFirewallRuleInputBuilder {
     /// <p>A unique string that identifies the request and that allows you to retry failed requests without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
+    /// This field is required.
     pub fn creator_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creator_request_id = ::std::option::Option::Some(input.into());
         self
@@ -134,6 +135,7 @@ impl CreateFirewallRuleInputBuilder {
         &self.creator_request_id
     }
     /// <p>The unique identifier of the firewall rule group where you want to create the rule. </p>
+    /// This field is required.
     pub fn firewall_rule_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_rule_group_id = ::std::option::Option::Some(input.into());
         self
@@ -148,6 +150,7 @@ impl CreateFirewallRuleInputBuilder {
         &self.firewall_rule_group_id
     }
     /// <p>The ID of the domain list that you want to use in the rule. </p>
+    /// This field is required.
     pub fn firewall_domain_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_domain_list_id = ::std::option::Option::Some(input.into());
         self
@@ -163,6 +166,7 @@ impl CreateFirewallRuleInputBuilder {
     }
     /// <p>The setting that determines the processing order of the rule in the rule group. DNS Firewall processes the rules in a rule group by order of priority, starting from the lowest setting.</p>
     /// <p>You must specify a unique priority for each rule in a rule group. To make it easier to insert rules later, leave space between the numbers, for example, use 100, 200, and so on. You can change the priority setting for the rules in a rule group at any time.</p>
+    /// This field is required.
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
         self
@@ -184,6 +188,7 @@ impl CreateFirewallRuleInputBuilder {
     /// <li> <p> <code>ALERT</code> - Permit the request and send metrics and logs to Cloud Watch.</p> </li>
     /// <li> <p> <code>BLOCK</code> - Disallow the request. This option requires additional details in the rule's <code>BlockResponse</code>. </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn action(mut self, input: crate::types::Action) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
@@ -291,6 +296,7 @@ impl CreateFirewallRuleInputBuilder {
         &self.block_override_ttl
     }
     /// <p>A name that lets you identify the rule in the rule group.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -307,7 +313,8 @@ impl CreateFirewallRuleInputBuilder {
     /// Consumes the builder and constructs a [`CreateFirewallRuleInput`](crate::operation::create_firewall_rule::CreateFirewallRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_firewall_rule::CreateFirewallRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_firewall_rule::CreateFirewallRuleInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_firewall_rule::CreateFirewallRuleInput {
             creator_request_id: self.creator_request_id,
             firewall_rule_group_id: self.firewall_rule_group_id,

@@ -4,25 +4,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateUploadUrlOutput {
     /// <p>A pre-signed S3 URL. You can upload the code file you want to scan and add the required <code>requestHeaders</code> using any HTTP client.</p>
-    pub s3_url: ::std::option::Option<::std::string::String>,
+    pub s3_url: ::std::string::String,
     /// <p>A set of key-value pairs that contain the required headers when uploading your resource.</p>
-    pub request_headers: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub request_headers: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     /// <p>The identifier for the uploaded code resource. </p>
-    pub code_artifact_id: ::std::option::Option<::std::string::String>,
+    pub code_artifact_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateUploadUrlOutput {
     /// <p>A pre-signed S3 URL. You can upload the code file you want to scan and add the required <code>requestHeaders</code> using any HTTP client.</p>
-    pub fn s3_url(&self) -> ::std::option::Option<&str> {
-        self.s3_url.as_deref()
+    pub fn s3_url(&self) -> &str {
+        use std::ops::Deref;
+        self.s3_url.deref()
     }
     /// <p>A set of key-value pairs that contain the required headers when uploading your resource.</p>
-    pub fn request_headers(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
-        self.request_headers.as_ref()
+    pub fn request_headers(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+        &self.request_headers
     }
     /// <p>The identifier for the uploaded code resource. </p>
-    pub fn code_artifact_id(&self) -> ::std::option::Option<&str> {
-        self.code_artifact_id.as_deref()
+    pub fn code_artifact_id(&self) -> &str {
+        use std::ops::Deref;
+        self.code_artifact_id.deref()
     }
 }
 impl ::std::fmt::Debug for CreateUploadUrlOutput {
@@ -58,6 +60,7 @@ pub struct CreateUploadUrlOutputBuilder {
 }
 impl CreateUploadUrlOutputBuilder {
     /// <p>A pre-signed S3 URL. You can upload the code file you want to scan and add the required <code>requestHeaders</code> using any HTTP client.</p>
+    /// This field is required.
     pub fn s3_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_url = ::std::option::Option::Some(input.into());
         self
@@ -99,6 +102,7 @@ impl CreateUploadUrlOutputBuilder {
         &self.request_headers
     }
     /// <p>The identifier for the uploaded code resource. </p>
+    /// This field is required.
     pub fn code_artifact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code_artifact_id = ::std::option::Option::Some(input.into());
         self
@@ -122,13 +126,34 @@ impl CreateUploadUrlOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateUploadUrlOutput`](crate::operation::create_upload_url::CreateUploadUrlOutput).
-    pub fn build(self) -> crate::operation::create_upload_url::CreateUploadUrlOutput {
-        crate::operation::create_upload_url::CreateUploadUrlOutput {
-            s3_url: self.s3_url,
-            request_headers: self.request_headers,
-            code_artifact_id: self.code_artifact_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`s3_url`](crate::operation::create_upload_url::builders::CreateUploadUrlOutputBuilder::s3_url)
+    /// - [`request_headers`](crate::operation::create_upload_url::builders::CreateUploadUrlOutputBuilder::request_headers)
+    /// - [`code_artifact_id`](crate::operation::create_upload_url::builders::CreateUploadUrlOutputBuilder::code_artifact_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_upload_url::CreateUploadUrlOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_upload_url::CreateUploadUrlOutput {
+            s3_url: self.s3_url.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "s3_url",
+                    "s3_url was not specified but it is required when building CreateUploadUrlOutput",
+                )
+            })?,
+            request_headers: self.request_headers.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "request_headers",
+                    "request_headers was not specified but it is required when building CreateUploadUrlOutput",
+                )
+            })?,
+            code_artifact_id: self.code_artifact_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "code_artifact_id",
+                    "code_artifact_id was not specified but it is required when building CreateUploadUrlOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for CreateUploadUrlOutputBuilder {

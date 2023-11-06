@@ -27,6 +27,7 @@ pub struct TerminateSessionInputBuilder {
 }
 impl TerminateSessionInputBuilder {
     /// <p>The ID of the session to terminate.</p>
+    /// This field is required.
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl TerminateSessionInputBuilder {
     /// Consumes the builder and constructs a [`TerminateSessionInput`](crate::operation::terminate_session::TerminateSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::terminate_session::TerminateSessionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::terminate_session::TerminateSessionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::terminate_session::TerminateSessionInput { session_id: self.session_id })
     }
 }

@@ -2,7 +2,7 @@
 pub fn ser_multiplex_statmux_video_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MultiplexStatmuxVideoSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.maximum_bitrate {
         object.key("maximumBitrate").number(
             #[allow(clippy::useless_conversion)]

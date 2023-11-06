@@ -41,6 +41,7 @@ pub struct GetAuthorizationTokenInputBuilder {
 }
 impl GetAuthorizationTokenInputBuilder {
     /// <p> The name of the domain that is in scope for the generated authorization token. </p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl GetAuthorizationTokenInputBuilder {
     /// Consumes the builder and constructs a [`GetAuthorizationTokenInput`](crate::operation::get_authorization_token::GetAuthorizationTokenInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_authorization_token::GetAuthorizationTokenInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_authorization_token::GetAuthorizationTokenInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_authorization_token::GetAuthorizationTokenInput {
             domain: self.domain,

@@ -34,6 +34,7 @@ pub struct DeleteApiMappingInputBuilder {
 }
 impl DeleteApiMappingInputBuilder {
     /// <p>The API mapping identifier.</p>
+    /// This field is required.
     pub fn api_mapping_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_mapping_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteApiMappingInputBuilder {
         &self.api_mapping_id
     }
     /// <p>The domain name.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DeleteApiMappingInputBuilder {
     /// Consumes the builder and constructs a [`DeleteApiMappingInput`](crate::operation::delete_api_mapping::DeleteApiMappingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_api_mapping::DeleteApiMappingInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_api_mapping::DeleteApiMappingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_api_mapping::DeleteApiMappingInput {
             api_mapping_id: self.api_mapping_id,
             domain_name: self.domain_name,

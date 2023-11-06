@@ -5,20 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ColorScale {
     /// <p>Determines the list of colors that are applied to the visual.</p>
-    pub colors: ::std::option::Option<::std::vec::Vec<crate::types::DataColor>>,
+    pub colors: ::std::vec::Vec<crate::types::DataColor>,
     /// <p>Determines the color fill type.</p>
-    pub color_fill_type: ::std::option::Option<crate::types::ColorFillType>,
+    pub color_fill_type: crate::types::ColorFillType,
     /// <p>Determines the color that is applied to null values.</p>
     pub null_value_color: ::std::option::Option<crate::types::DataColor>,
 }
 impl ColorScale {
     /// <p>Determines the list of colors that are applied to the visual.</p>
-    pub fn colors(&self) -> ::std::option::Option<&[crate::types::DataColor]> {
-        self.colors.as_deref()
+    pub fn colors(&self) -> &[crate::types::DataColor] {
+        use std::ops::Deref;
+        self.colors.deref()
     }
     /// <p>Determines the color fill type.</p>
-    pub fn color_fill_type(&self) -> ::std::option::Option<&crate::types::ColorFillType> {
-        self.color_fill_type.as_ref()
+    pub fn color_fill_type(&self) -> &crate::types::ColorFillType {
+        &self.color_fill_type
     }
     /// <p>Determines the color that is applied to null values.</p>
     pub fn null_value_color(&self) -> ::std::option::Option<&crate::types::DataColor> {
@@ -62,6 +63,7 @@ impl ColorScaleBuilder {
         &self.colors
     }
     /// <p>Determines the color fill type.</p>
+    /// This field is required.
     pub fn color_fill_type(mut self, input: crate::types::ColorFillType) -> Self {
         self.color_fill_type = ::std::option::Option::Some(input);
         self
@@ -90,11 +92,24 @@ impl ColorScaleBuilder {
         &self.null_value_color
     }
     /// Consumes the builder and constructs a [`ColorScale`](crate::types::ColorScale).
-    pub fn build(self) -> crate::types::ColorScale {
-        crate::types::ColorScale {
-            colors: self.colors,
-            color_fill_type: self.color_fill_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`colors`](crate::types::builders::ColorScaleBuilder::colors)
+    /// - [`color_fill_type`](crate::types::builders::ColorScaleBuilder::color_fill_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::ColorScale, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ColorScale {
+            colors: self.colors.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "colors",
+                    "colors was not specified but it is required when building ColorScale",
+                )
+            })?,
+            color_fill_type: self.color_fill_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "color_fill_type",
+                    "color_fill_type was not specified but it is required when building ColorScale",
+                )
+            })?,
             null_value_color: self.null_value_color,
-        }
+        })
     }
 }

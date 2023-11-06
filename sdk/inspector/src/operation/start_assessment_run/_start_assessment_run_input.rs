@@ -34,6 +34,7 @@ pub struct StartAssessmentRunInputBuilder {
 }
 impl StartAssessmentRunInputBuilder {
     /// <p>The ARN of the assessment template of the assessment run that you want to start.</p>
+    /// This field is required.
     pub fn assessment_template_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_template_arn = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,8 @@ impl StartAssessmentRunInputBuilder {
     /// Consumes the builder and constructs a [`StartAssessmentRunInput`](crate::operation::start_assessment_run::StartAssessmentRunInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_assessment_run::StartAssessmentRunInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_assessment_run::StartAssessmentRunInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::start_assessment_run::StartAssessmentRunInput {
             assessment_template_arn: self.assessment_template_arn,
             assessment_run_name: self.assessment_run_name,

@@ -27,6 +27,7 @@ pub struct DeleteAssessmentTargetInputBuilder {
 }
 impl DeleteAssessmentTargetInputBuilder {
     /// <p>The ARN that specifies the assessment target that you want to delete.</p>
+    /// This field is required.
     pub fn assessment_target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_target_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,8 +44,10 @@ impl DeleteAssessmentTargetInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAssessmentTargetInput`](crate::operation::delete_assessment_target::DeleteAssessmentTargetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_assessment_target::DeleteAssessmentTargetInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_assessment_target::DeleteAssessmentTargetInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_assessment_target::DeleteAssessmentTargetInput {
             assessment_target_arn: self.assessment_target_arn,
         })

@@ -2,7 +2,7 @@
 pub fn ser_add_attachments_to_set_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::add_attachments_to_set::AddAttachmentsToSetInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.attachment_set_id {
         object.key("attachmentSetId").string(var_1.as_str());
     }

@@ -27,6 +27,7 @@ pub struct StopServerInputBuilder {
 }
 impl StopServerInputBuilder {
     /// <p>A system-assigned unique identifier for a server that you stopped.</p>
+    /// This field is required.
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl StopServerInputBuilder {
         &self.server_id
     }
     /// Consumes the builder and constructs a [`StopServerInput`](crate::operation::stop_server::StopServerInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::stop_server::StopServerInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_server::StopServerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_server::StopServerInput { server_id: self.server_id })
     }
 }

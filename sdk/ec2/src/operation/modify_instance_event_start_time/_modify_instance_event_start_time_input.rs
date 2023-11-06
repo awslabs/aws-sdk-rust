@@ -62,6 +62,7 @@ impl ModifyInstanceEventStartTimeInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the instance with the scheduled event.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl ModifyInstanceEventStartTimeInputBuilder {
         &self.instance_id
     }
     /// <p>The ID of the event whose date and time you are modifying.</p>
+    /// This field is required.
     pub fn instance_event_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_event_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +92,7 @@ impl ModifyInstanceEventStartTimeInputBuilder {
         &self.instance_event_id
     }
     /// <p>The new date and time when the event will take place.</p>
+    /// This field is required.
     pub fn not_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.not_before = ::std::option::Option::Some(input);
         self
@@ -108,7 +111,7 @@ impl ModifyInstanceEventStartTimeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_instance_event_start_time::ModifyInstanceEventStartTimeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_instance_event_start_time::ModifyInstanceEventStartTimeInput {
             dry_run: self.dry_run,

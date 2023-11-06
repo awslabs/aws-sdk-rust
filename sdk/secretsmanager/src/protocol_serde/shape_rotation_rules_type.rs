@@ -56,7 +56,7 @@ where
 pub fn ser_rotation_rules_type(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RotationRulesType,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.automatically_after_days {
         object.key("AutomaticallyAfterDays").number(
             #[allow(clippy::useless_conversion)]

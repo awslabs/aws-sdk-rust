@@ -5,24 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecuteStatementRequest {
     /// <p>Specifies the transaction ID of the request.</p>
-    pub transaction_id: ::std::option::Option<::std::string::String>,
+    pub transaction_id: ::std::string::String,
     /// <p>Specifies the statement of the request.</p>
-    pub statement: ::std::option::Option<::std::string::String>,
+    pub statement: ::std::string::String,
     /// <p>Specifies the parameters for the parameterized statement in the request.</p>
     pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::ValueHolder>>,
 }
 impl ExecuteStatementRequest {
     /// <p>Specifies the transaction ID of the request.</p>
-    pub fn transaction_id(&self) -> ::std::option::Option<&str> {
-        self.transaction_id.as_deref()
+    pub fn transaction_id(&self) -> &str {
+        use std::ops::Deref;
+        self.transaction_id.deref()
     }
     /// <p>Specifies the statement of the request.</p>
-    pub fn statement(&self) -> ::std::option::Option<&str> {
-        self.statement.as_deref()
+    pub fn statement(&self) -> &str {
+        use std::ops::Deref;
+        self.statement.deref()
     }
     /// <p>Specifies the parameters for the parameterized statement in the request.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&[crate::types::ValueHolder]> {
-        self.parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
+    pub fn parameters(&self) -> &[crate::types::ValueHolder] {
+        self.parameters.as_deref().unwrap_or_default()
     }
 }
 impl ExecuteStatementRequest {
@@ -42,6 +46,7 @@ pub struct ExecuteStatementRequestBuilder {
 }
 impl ExecuteStatementRequestBuilder {
     /// <p>Specifies the transaction ID of the request.</p>
+    /// This field is required.
     pub fn transaction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transaction_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +61,7 @@ impl ExecuteStatementRequestBuilder {
         &self.transaction_id
     }
     /// <p>Specifies the statement of the request.</p>
+    /// This field is required.
     pub fn statement(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.statement = ::std::option::Option::Some(input.into());
         self
@@ -90,11 +96,24 @@ impl ExecuteStatementRequestBuilder {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`ExecuteStatementRequest`](crate::types::ExecuteStatementRequest).
-    pub fn build(self) -> crate::types::ExecuteStatementRequest {
-        crate::types::ExecuteStatementRequest {
-            transaction_id: self.transaction_id,
-            statement: self.statement,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`transaction_id`](crate::types::builders::ExecuteStatementRequestBuilder::transaction_id)
+    /// - [`statement`](crate::types::builders::ExecuteStatementRequestBuilder::statement)
+    pub fn build(self) -> ::std::result::Result<crate::types::ExecuteStatementRequest, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ExecuteStatementRequest {
+            transaction_id: self.transaction_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "transaction_id",
+                    "transaction_id was not specified but it is required when building ExecuteStatementRequest",
+                )
+            })?,
+            statement: self.statement.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "statement",
+                    "statement was not specified but it is required when building ExecuteStatementRequest",
+                )
+            })?,
             parameters: self.parameters,
-        }
+        })
     }
 }

@@ -34,6 +34,7 @@ pub struct GetSecurityPolicyInputBuilder {
 }
 impl GetSecurityPolicyInputBuilder {
     /// <p>The type of security policy.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::SecurityPolicyType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -48,6 +49,7 @@ impl GetSecurityPolicyInputBuilder {
         &self.r#type
     }
     /// <p>The name of the security policy.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl GetSecurityPolicyInputBuilder {
     /// Consumes the builder and constructs a [`GetSecurityPolicyInput`](crate::operation::get_security_policy::GetSecurityPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_security_policy::GetSecurityPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_security_policy::GetSecurityPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_security_policy::GetSecurityPolicyInput {
             r#type: self.r#type,
             name: self.name,

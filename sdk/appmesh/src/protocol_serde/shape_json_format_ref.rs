@@ -2,12 +2,12 @@
 pub fn ser_json_format_ref(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::JsonFormatRef,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.key {
-        object.key("key").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("key").string(input.key.as_str());
     }
-    if let Some(var_2) = &input.value {
-        object.key("value").string(var_2.as_str());
+    {
+        object.key("value").string(input.value.as_str());
     }
     Ok(())
 }
@@ -51,7 +51,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::json_format_ref_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

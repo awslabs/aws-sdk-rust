@@ -5,18 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExpirationSettings {
     /// <p>The period in days after which an <code>AppInstanceUser</code> will be automatically deleted.</p>
-    pub expiration_days: ::std::option::Option<i32>,
+    pub expiration_days: i32,
     /// <p>Specifies the conditions under which an <code>AppInstanceUser</code> will expire.</p>
-    pub expiration_criterion: ::std::option::Option<crate::types::ExpirationCriterion>,
+    pub expiration_criterion: crate::types::ExpirationCriterion,
 }
 impl ExpirationSettings {
     /// <p>The period in days after which an <code>AppInstanceUser</code> will be automatically deleted.</p>
-    pub fn expiration_days(&self) -> ::std::option::Option<i32> {
+    pub fn expiration_days(&self) -> i32 {
         self.expiration_days
     }
     /// <p>Specifies the conditions under which an <code>AppInstanceUser</code> will expire.</p>
-    pub fn expiration_criterion(&self) -> ::std::option::Option<&crate::types::ExpirationCriterion> {
-        self.expiration_criterion.as_ref()
+    pub fn expiration_criterion(&self) -> &crate::types::ExpirationCriterion {
+        &self.expiration_criterion
     }
 }
 impl ExpirationSettings {
@@ -35,6 +35,7 @@ pub struct ExpirationSettingsBuilder {
 }
 impl ExpirationSettingsBuilder {
     /// <p>The period in days after which an <code>AppInstanceUser</code> will be automatically deleted.</p>
+    /// This field is required.
     pub fn expiration_days(mut self, input: i32) -> Self {
         self.expiration_days = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl ExpirationSettingsBuilder {
         &self.expiration_days
     }
     /// <p>Specifies the conditions under which an <code>AppInstanceUser</code> will expire.</p>
+    /// This field is required.
     pub fn expiration_criterion(mut self, input: crate::types::ExpirationCriterion) -> Self {
         self.expiration_criterion = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl ExpirationSettingsBuilder {
         &self.expiration_criterion
     }
     /// Consumes the builder and constructs a [`ExpirationSettings`](crate::types::ExpirationSettings).
-    pub fn build(self) -> crate::types::ExpirationSettings {
-        crate::types::ExpirationSettings {
-            expiration_days: self.expiration_days,
-            expiration_criterion: self.expiration_criterion,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`expiration_days`](crate::types::builders::ExpirationSettingsBuilder::expiration_days)
+    /// - [`expiration_criterion`](crate::types::builders::ExpirationSettingsBuilder::expiration_criterion)
+    pub fn build(self) -> ::std::result::Result<crate::types::ExpirationSettings, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ExpirationSettings {
+            expiration_days: self.expiration_days.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "expiration_days",
+                    "expiration_days was not specified but it is required when building ExpirationSettings",
+                )
+            })?,
+            expiration_criterion: self.expiration_criterion.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "expiration_criterion",
+                    "expiration_criterion was not specified but it is required when building ExpirationSettings",
+                )
+            })?,
+        })
     }
 }

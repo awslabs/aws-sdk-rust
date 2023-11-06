@@ -41,6 +41,7 @@ pub struct DeleteMlEndpointInputBuilder {
 }
 impl DeleteMlEndpointInputBuilder {
     /// <p>The unique identifier of the inference endpoint.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl DeleteMlEndpointInputBuilder {
     /// Consumes the builder and constructs a [`DeleteMlEndpointInput`](crate::operation::delete_ml_endpoint::DeleteMlEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_ml_endpoint::DeleteMlEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_ml_endpoint::DeleteMlEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_ml_endpoint::DeleteMlEndpointInput {
             id: self.id,
             neptune_iam_role_arn: self.neptune_iam_role_arn,

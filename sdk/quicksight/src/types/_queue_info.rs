@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueueInfo {
     /// <p>The ID of the queued ingestion.</p>
-    pub waiting_on_ingestion: ::std::option::Option<::std::string::String>,
+    pub waiting_on_ingestion: ::std::string::String,
     /// <p>The ID of the ongoing ingestion. The queued ingestion is waiting for the ongoing ingestion to complete.</p>
-    pub queued_ingestion: ::std::option::Option<::std::string::String>,
+    pub queued_ingestion: ::std::string::String,
 }
 impl QueueInfo {
     /// <p>The ID of the queued ingestion.</p>
-    pub fn waiting_on_ingestion(&self) -> ::std::option::Option<&str> {
-        self.waiting_on_ingestion.as_deref()
+    pub fn waiting_on_ingestion(&self) -> &str {
+        use std::ops::Deref;
+        self.waiting_on_ingestion.deref()
     }
     /// <p>The ID of the ongoing ingestion. The queued ingestion is waiting for the ongoing ingestion to complete.</p>
-    pub fn queued_ingestion(&self) -> ::std::option::Option<&str> {
-        self.queued_ingestion.as_deref()
+    pub fn queued_ingestion(&self) -> &str {
+        use std::ops::Deref;
+        self.queued_ingestion.deref()
     }
 }
 impl QueueInfo {
@@ -35,6 +37,7 @@ pub struct QueueInfoBuilder {
 }
 impl QueueInfoBuilder {
     /// <p>The ID of the queued ingestion.</p>
+    /// This field is required.
     pub fn waiting_on_ingestion(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.waiting_on_ingestion = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl QueueInfoBuilder {
         &self.waiting_on_ingestion
     }
     /// <p>The ID of the ongoing ingestion. The queued ingestion is waiting for the ongoing ingestion to complete.</p>
+    /// This field is required.
     pub fn queued_ingestion(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queued_ingestion = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl QueueInfoBuilder {
         &self.queued_ingestion
     }
     /// Consumes the builder and constructs a [`QueueInfo`](crate::types::QueueInfo).
-    pub fn build(self) -> crate::types::QueueInfo {
-        crate::types::QueueInfo {
-            waiting_on_ingestion: self.waiting_on_ingestion,
-            queued_ingestion: self.queued_ingestion,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`waiting_on_ingestion`](crate::types::builders::QueueInfoBuilder::waiting_on_ingestion)
+    /// - [`queued_ingestion`](crate::types::builders::QueueInfoBuilder::queued_ingestion)
+    pub fn build(self) -> ::std::result::Result<crate::types::QueueInfo, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::QueueInfo {
+            waiting_on_ingestion: self.waiting_on_ingestion.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "waiting_on_ingestion",
+                    "waiting_on_ingestion was not specified but it is required when building QueueInfo",
+                )
+            })?,
+            queued_ingestion: self.queued_ingestion.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "queued_ingestion",
+                    "queued_ingestion was not specified but it is required when building QueueInfo",
+                )
+            })?,
+        })
     }
 }

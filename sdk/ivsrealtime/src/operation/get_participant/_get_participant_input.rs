@@ -41,6 +41,7 @@ pub struct GetParticipantInputBuilder {
 }
 impl GetParticipantInputBuilder {
     /// <p>Stage ARN.</p>
+    /// This field is required.
     pub fn stage_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl GetParticipantInputBuilder {
         &self.stage_arn
     }
     /// <p>ID of a session within the stage.</p>
+    /// This field is required.
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl GetParticipantInputBuilder {
         &self.session_id
     }
     /// <p>Unique identifier for the participant. This is assigned by IVS and returned by <code>CreateParticipantToken</code>.</p>
+    /// This field is required.
     pub fn participant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.participant_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +88,7 @@ impl GetParticipantInputBuilder {
     /// Consumes the builder and constructs a [`GetParticipantInput`](crate::operation::get_participant::GetParticipantInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_participant::GetParticipantInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_participant::GetParticipantInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_participant::GetParticipantInput {
             stage_arn: self.stage_arn,
             session_id: self.session_id,

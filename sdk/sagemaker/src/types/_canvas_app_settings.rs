@@ -31,8 +31,10 @@ impl CanvasAppSettings {
         self.workspace_settings.as_ref()
     }
     /// <p>The settings for connecting to an external data source with OAuth.</p>
-    pub fn identity_provider_o_auth_settings(&self) -> ::std::option::Option<&[crate::types::IdentityProviderOAuthSetting]> {
-        self.identity_provider_o_auth_settings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.identity_provider_o_auth_settings.is_none()`.
+    pub fn identity_provider_o_auth_settings(&self) -> &[crate::types::IdentityProviderOAuthSetting] {
+        self.identity_provider_o_auth_settings.as_deref().unwrap_or_default()
     }
     /// <p>The settings for document querying.</p>
     pub fn kendra_settings(&self) -> ::std::option::Option<&crate::types::KendraSettings> {

@@ -30,28 +30,36 @@ impl CreateNetworkAnalyzerConfigurationInput {
         self.trace_content.as_ref()
     }
     /// <p>Wireless device resources to add to the network analyzer configuration. Provide the <code>WirelessDeviceId</code> of the resource to add in the input array.</p>
-    pub fn wireless_devices(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.wireless_devices.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.wireless_devices.is_none()`.
+    pub fn wireless_devices(&self) -> &[::std::string::String] {
+        self.wireless_devices.as_deref().unwrap_or_default()
     }
     /// <p>Wireless gateway resources to add to the network analyzer configuration. Provide the <code>WirelessGatewayId</code> of the resource to add in the input array.</p>
-    pub fn wireless_gateways(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.wireless_gateways.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.wireless_gateways.is_none()`.
+    pub fn wireless_gateways(&self) -> &[::std::string::String] {
+        self.wireless_gateways.as_deref().unwrap_or_default()
     }
     /// <p>The description of the new resource.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.</p>
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
     /// <p>Multicast Group resources to add to the network analyzer configruation. Provide the <code>MulticastGroupId</code> of the resource to add in the input array.</p>
-    pub fn multicast_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.multicast_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.multicast_groups.is_none()`.
+    pub fn multicast_groups(&self) -> &[::std::string::String] {
+        self.multicast_groups.as_deref().unwrap_or_default()
     }
 }
 impl CreateNetworkAnalyzerConfigurationInput {
@@ -76,6 +84,7 @@ pub struct CreateNetworkAnalyzerConfigurationInputBuilder {
 }
 impl CreateNetworkAnalyzerConfigurationInputBuilder {
     /// <p>Name of the network analyzer configuration.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -216,7 +225,7 @@ impl CreateNetworkAnalyzerConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_network_analyzer_configuration::CreateNetworkAnalyzerConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_network_analyzer_configuration::CreateNetworkAnalyzerConfigurationInput {

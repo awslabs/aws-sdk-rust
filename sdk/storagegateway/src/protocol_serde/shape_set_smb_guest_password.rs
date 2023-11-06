@@ -78,12 +78,12 @@ pub fn de_set_smb_guest_password_http_response(
 
 pub fn ser_set_smb_guest_password_input(
     input: &crate::operation::set_smb_guest_password::SetSmbGuestPasswordInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_set_smb_guest_password_input::ser_set_smb_guest_password_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_set_smb_guest_password(

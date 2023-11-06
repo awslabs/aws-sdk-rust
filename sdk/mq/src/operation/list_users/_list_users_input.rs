@@ -41,6 +41,7 @@ pub struct ListUsersInputBuilder {
 }
 impl ListUsersInputBuilder {
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
+    /// This field is required.
     pub fn broker_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.broker_id = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +84,7 @@ impl ListUsersInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListUsersInput`](crate::operation::list_users::ListUsersInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_users::ListUsersInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_users::ListUsersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_users::ListUsersInput {
             broker_id: self.broker_id,
             max_results: self.max_results,

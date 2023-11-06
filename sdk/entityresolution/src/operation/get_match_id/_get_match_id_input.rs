@@ -42,6 +42,7 @@ pub struct GetMatchIdInputBuilder {
 }
 impl GetMatchIdInputBuilder {
     /// <p>The name of the workflow.</p>
+    /// This field is required.
     pub fn workflow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_name = ::std::option::Option::Some(input.into());
         self
@@ -76,7 +77,7 @@ impl GetMatchIdInputBuilder {
         &self.record
     }
     /// Consumes the builder and constructs a [`GetMatchIdInput`](crate::operation::get_match_id::GetMatchIdInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_match_id::GetMatchIdInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_match_id::GetMatchIdInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_match_id::GetMatchIdInput {
             workflow_name: self.workflow_name,
             record: self.record,

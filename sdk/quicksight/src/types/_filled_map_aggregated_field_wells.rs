@@ -11,12 +11,16 @@ pub struct FilledMapAggregatedFieldWells {
 }
 impl FilledMapAggregatedFieldWells {
     /// <p>The aggregated location field well of the filled map. Values are grouped by location fields.</p>
-    pub fn geospatial(&self) -> ::std::option::Option<&[crate::types::DimensionField]> {
-        self.geospatial.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.geospatial.is_none()`.
+    pub fn geospatial(&self) -> &[crate::types::DimensionField] {
+        self.geospatial.as_deref().unwrap_or_default()
     }
     /// <p>The aggregated color field well of a filled map. Values are aggregated based on location fields.</p>
-    pub fn values(&self) -> ::std::option::Option<&[crate::types::MeasureField]> {
-        self.values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
+    pub fn values(&self) -> &[crate::types::MeasureField] {
+        self.values.as_deref().unwrap_or_default()
     }
 }
 impl FilledMapAggregatedFieldWells {

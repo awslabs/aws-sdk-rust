@@ -27,6 +27,7 @@ pub struct GetVpceConfigurationInputBuilder {
 }
 impl GetVpceConfigurationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to describe.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetVpceConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`GetVpceConfigurationInput`](crate::operation::get_vpce_configuration::GetVpceConfigurationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_vpce_configuration::GetVpceConfigurationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_vpce_configuration::GetVpceConfigurationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_vpce_configuration::GetVpceConfigurationInput { arn: self.arn })
     }

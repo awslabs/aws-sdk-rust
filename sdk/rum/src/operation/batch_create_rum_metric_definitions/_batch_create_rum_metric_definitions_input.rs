@@ -28,8 +28,10 @@ impl BatchCreateRumMetricDefinitionsInput {
         self.destination_arn.as_deref()
     }
     /// <p>An array of structures which define the metrics that you want to send.</p>
-    pub fn metric_definitions(&self) -> ::std::option::Option<&[crate::types::MetricDefinitionRequest]> {
-        self.metric_definitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_definitions.is_none()`.
+    pub fn metric_definitions(&self) -> &[crate::types::MetricDefinitionRequest] {
+        self.metric_definitions.as_deref().unwrap_or_default()
     }
 }
 impl BatchCreateRumMetricDefinitionsInput {
@@ -50,6 +52,7 @@ pub struct BatchCreateRumMetricDefinitionsInputBuilder {
 }
 impl BatchCreateRumMetricDefinitionsInputBuilder {
     /// <p>The name of the CloudWatch RUM app monitor that is to send the metrics.</p>
+    /// This field is required.
     pub fn app_monitor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_monitor_name = ::std::option::Option::Some(input.into());
         self
@@ -64,6 +67,7 @@ impl BatchCreateRumMetricDefinitionsInputBuilder {
         &self.app_monitor_name
     }
     /// <p>The destination to send the metrics to. Valid values are <code>CloudWatch</code> and <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently experiment that will receive the metrics and an IAM role that has permission to write to the experiment.</p>
+    /// This field is required.
     pub fn destination(mut self, input: crate::types::MetricDestination) -> Self {
         self.destination = ::std::option::Option::Some(input);
         self
@@ -119,7 +123,7 @@ impl BatchCreateRumMetricDefinitionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_create_rum_metric_definitions::BatchCreateRumMetricDefinitionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::batch_create_rum_metric_definitions::BatchCreateRumMetricDefinitionsInput {

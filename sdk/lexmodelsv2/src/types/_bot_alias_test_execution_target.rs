@@ -5,24 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BotAliasTestExecutionTarget {
     /// <p>The bot Id of the bot alias used in the test set execution.</p>
-    pub bot_id: ::std::option::Option<::std::string::String>,
+    pub bot_id: ::std::string::String,
     /// <p>The bot alias Id of the bot alias used in the test set execution.</p>
-    pub bot_alias_id: ::std::option::Option<::std::string::String>,
+    pub bot_alias_id: ::std::string::String,
     /// <p>The locale Id of the bot alias used in the test set execution.</p>
-    pub locale_id: ::std::option::Option<::std::string::String>,
+    pub locale_id: ::std::string::String,
 }
 impl BotAliasTestExecutionTarget {
     /// <p>The bot Id of the bot alias used in the test set execution.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
-        self.bot_id.as_deref()
+    pub fn bot_id(&self) -> &str {
+        use std::ops::Deref;
+        self.bot_id.deref()
     }
     /// <p>The bot alias Id of the bot alias used in the test set execution.</p>
-    pub fn bot_alias_id(&self) -> ::std::option::Option<&str> {
-        self.bot_alias_id.as_deref()
+    pub fn bot_alias_id(&self) -> &str {
+        use std::ops::Deref;
+        self.bot_alias_id.deref()
     }
     /// <p>The locale Id of the bot alias used in the test set execution.</p>
-    pub fn locale_id(&self) -> ::std::option::Option<&str> {
-        self.locale_id.as_deref()
+    pub fn locale_id(&self) -> &str {
+        use std::ops::Deref;
+        self.locale_id.deref()
     }
 }
 impl BotAliasTestExecutionTarget {
@@ -42,6 +45,7 @@ pub struct BotAliasTestExecutionTargetBuilder {
 }
 impl BotAliasTestExecutionTargetBuilder {
     /// <p>The bot Id of the bot alias used in the test set execution.</p>
+    /// This field is required.
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +60,7 @@ impl BotAliasTestExecutionTargetBuilder {
         &self.bot_id
     }
     /// <p>The bot alias Id of the bot alias used in the test set execution.</p>
+    /// This field is required.
     pub fn bot_alias_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_alias_id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +75,7 @@ impl BotAliasTestExecutionTargetBuilder {
         &self.bot_alias_id
     }
     /// <p>The locale Id of the bot alias used in the test set execution.</p>
+    /// This field is required.
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +90,30 @@ impl BotAliasTestExecutionTargetBuilder {
         &self.locale_id
     }
     /// Consumes the builder and constructs a [`BotAliasTestExecutionTarget`](crate::types::BotAliasTestExecutionTarget).
-    pub fn build(self) -> crate::types::BotAliasTestExecutionTarget {
-        crate::types::BotAliasTestExecutionTarget {
-            bot_id: self.bot_id,
-            bot_alias_id: self.bot_alias_id,
-            locale_id: self.locale_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bot_id`](crate::types::builders::BotAliasTestExecutionTargetBuilder::bot_id)
+    /// - [`bot_alias_id`](crate::types::builders::BotAliasTestExecutionTargetBuilder::bot_alias_id)
+    /// - [`locale_id`](crate::types::builders::BotAliasTestExecutionTargetBuilder::locale_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::BotAliasTestExecutionTarget, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::BotAliasTestExecutionTarget {
+            bot_id: self.bot_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "bot_id",
+                    "bot_id was not specified but it is required when building BotAliasTestExecutionTarget",
+                )
+            })?,
+            bot_alias_id: self.bot_alias_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "bot_alias_id",
+                    "bot_alias_id was not specified but it is required when building BotAliasTestExecutionTarget",
+                )
+            })?,
+            locale_id: self.locale_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "locale_id",
+                    "locale_id was not specified but it is required when building BotAliasTestExecutionTarget",
+                )
+            })?,
+        })
     }
 }

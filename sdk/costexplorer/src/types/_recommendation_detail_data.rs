@@ -177,8 +177,10 @@ impl RecommendationDetailData {
         self.estimated_average_coverage.as_deref()
     }
     /// <p>The related hourly cost, coverage, and utilization metrics over the lookback period.</p>
-    pub fn metrics_over_lookback_period(&self) -> ::std::option::Option<&[crate::types::RecommendationDetailHourlyMetrics]> {
-        self.metrics_over_lookback_period.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metrics_over_lookback_period.is_none()`.
+    pub fn metrics_over_lookback_period(&self) -> &[crate::types::RecommendationDetailHourlyMetrics] {
+        self.metrics_over_lookback_period.as_deref().unwrap_or_default()
     }
 }
 impl RecommendationDetailData {

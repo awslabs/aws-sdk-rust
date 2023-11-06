@@ -11,8 +11,10 @@ pub struct GetFindingHistoryOutput {
 }
 impl GetFindingHistoryOutput {
     /// <p> A list of events that altered the specified finding during the specified time period. </p>
-    pub fn records(&self) -> ::std::option::Option<&[crate::types::FindingHistoryRecord]> {
-        self.records.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.records.is_none()`.
+    pub fn records(&self) -> &[crate::types::FindingHistoryRecord] {
+        self.records.as_deref().unwrap_or_default()
     }
     /// <p> A token for pagination purposes. Provide this token in the subsequent request to <code>GetFindingsHistory</code> to get up to an additional 100 results of history for the same finding that you specified in your initial request. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

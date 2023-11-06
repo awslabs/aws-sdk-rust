@@ -46,6 +46,7 @@ pub struct ListStateMachineAliasesInputBuilder {
 impl ListStateMachineAliasesInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the state machine for which you want to list aliases.</p>
     /// <p>If you specify a state machine version ARN, this API returns a list of aliases for that version.</p>
+    /// This field is required.
     pub fn state_machine_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_machine_arn = ::std::option::Option::Some(input.into());
         self
@@ -97,7 +98,7 @@ impl ListStateMachineAliasesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_state_machine_aliases::ListStateMachineAliasesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_state_machine_aliases::ListStateMachineAliasesInput {
             state_machine_arn: self.state_machine_arn,

@@ -15,8 +15,10 @@ impl ListRegexPatternSetsOutput {
         self.next_marker.as_deref()
     }
     /// <p>An array of <code>RegexPatternSetSummary</code> objects.</p>
-    pub fn regex_pattern_sets(&self) -> ::std::option::Option<&[crate::types::RegexPatternSetSummary]> {
-        self.regex_pattern_sets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regex_pattern_sets.is_none()`.
+    pub fn regex_pattern_sets(&self) -> &[crate::types::RegexPatternSetSummary] {
+        self.regex_pattern_sets.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListRegexPatternSetsOutput {

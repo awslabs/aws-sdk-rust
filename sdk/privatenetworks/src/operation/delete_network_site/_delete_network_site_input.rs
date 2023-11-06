@@ -34,6 +34,7 @@ pub struct DeleteNetworkSiteInputBuilder {
 }
 impl DeleteNetworkSiteInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
+    /// This field is required.
     pub fn network_site_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_site_arn = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl DeleteNetworkSiteInputBuilder {
     /// Consumes the builder and constructs a [`DeleteNetworkSiteInput`](crate::operation::delete_network_site::DeleteNetworkSiteInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_network_site::DeleteNetworkSiteInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_network_site::DeleteNetworkSiteInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_network_site::DeleteNetworkSiteInput {
             network_site_arn: self.network_site_arn,
             client_token: self.client_token,

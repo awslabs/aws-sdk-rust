@@ -22,8 +22,10 @@ impl DescribeConfigurationSetOutput {
         self.configuration_set.as_ref()
     }
     /// <p>A list of event destinations associated with the configuration set. </p>
-    pub fn event_destinations(&self) -> ::std::option::Option<&[crate::types::EventDestination]> {
-        self.event_destinations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_destinations.is_none()`.
+    pub fn event_destinations(&self) -> &[crate::types::EventDestination] {
+        self.event_destinations.as_deref().unwrap_or_default()
     }
     /// <p>The name of the custom open and click tracking domain associated with the configuration set.</p>
     pub fn tracking_options(&self) -> ::std::option::Option<&crate::types::TrackingOptions> {

@@ -27,6 +27,7 @@ pub struct DeleteSolNetworkInstanceInputBuilder {
 }
 impl DeleteSolNetworkInstanceInputBuilder {
     /// <p>Network instance ID.</p>
+    /// This field is required.
     pub fn ns_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ns_instance_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteSolNetworkInstanceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceInput {
             ns_instance_id: self.ns_instance_id,

@@ -35,6 +35,7 @@ pub struct ListInstanceGroupsInputBuilder {
 }
 impl ListInstanceGroupsInputBuilder {
     /// <p>The identifier of the cluster for which to list the instance groups.</p>
+    /// This field is required.
     pub fn cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_id = ::std::option::Option::Some(input.into());
         self
@@ -65,7 +66,8 @@ impl ListInstanceGroupsInputBuilder {
     /// Consumes the builder and constructs a [`ListInstanceGroupsInput`](crate::operation::list_instance_groups::ListInstanceGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_instance_groups::ListInstanceGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_instance_groups::ListInstanceGroupsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_instance_groups::ListInstanceGroupsInput {
             cluster_id: self.cluster_id,
             marker: self.marker,

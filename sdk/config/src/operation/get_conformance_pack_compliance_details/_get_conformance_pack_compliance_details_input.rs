@@ -48,6 +48,7 @@ pub struct GetConformancePackComplianceDetailsInputBuilder {
 }
 impl GetConformancePackComplianceDetailsInputBuilder {
     /// <p>Name of the conformance pack.</p>
+    /// This field is required.
     pub fn conformance_pack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.conformance_pack_name = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +109,7 @@ impl GetConformancePackComplianceDetailsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_conformance_pack_compliance_details::GetConformancePackComplianceDetailsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_conformance_pack_compliance_details::GetConformancePackComplianceDetailsInput {

@@ -2,7 +2,7 @@
 pub fn ser_format_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FormatOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.json {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Json").start_object();

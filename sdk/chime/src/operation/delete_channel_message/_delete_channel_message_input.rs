@@ -41,6 +41,7 @@ pub struct DeleteChannelMessageInputBuilder {
 }
 impl DeleteChannelMessageInputBuilder {
     /// <p>The ARN of the channel.</p>
+    /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DeleteChannelMessageInputBuilder {
         &self.channel_arn
     }
     /// <p>The ID of the message being deleted.</p>
+    /// This field is required.
     pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +87,7 @@ impl DeleteChannelMessageInputBuilder {
     /// Consumes the builder and constructs a [`DeleteChannelMessageInput`](crate::operation::delete_channel_message::DeleteChannelMessageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_channel_message::DeleteChannelMessageInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_channel_message::DeleteChannelMessageInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_channel_message::DeleteChannelMessageInput {
             channel_arn: self.channel_arn,

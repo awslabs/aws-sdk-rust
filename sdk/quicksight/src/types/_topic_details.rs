@@ -21,8 +21,10 @@ impl TopicDetails {
         self.description.as_deref()
     }
     /// <p>The data sets that the topic is associated with.</p>
-    pub fn data_sets(&self) -> ::std::option::Option<&[crate::types::DatasetMetadata]> {
-        self.data_sets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_sets.is_none()`.
+    pub fn data_sets(&self) -> &[crate::types::DatasetMetadata] {
+        self.data_sets.as_deref().unwrap_or_default()
     }
 }
 impl TopicDetails {

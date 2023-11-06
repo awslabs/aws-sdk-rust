@@ -6,11 +6,11 @@ pub struct GetTagsOutput {
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub next_page_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags that match your request.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub tags: ::std::vec::Vec<::std::string::String>,
     /// <p>The number of query results that Amazon Web Services returns at a time.</p>
-    pub return_size: ::std::option::Option<i32>,
+    pub return_size: i32,
     /// <p>The total number of query results.</p>
-    pub total_size: ::std::option::Option<i32>,
+    pub total_size: i32,
     _request_id: Option<String>,
 }
 impl GetTagsOutput {
@@ -19,15 +19,16 @@ impl GetTagsOutput {
         self.next_page_token.as_deref()
     }
     /// <p>The tags that match your request.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tags.as_deref()
+    pub fn tags(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.tags.deref()
     }
     /// <p>The number of query results that Amazon Web Services returns at a time.</p>
-    pub fn return_size(&self) -> ::std::option::Option<i32> {
+    pub fn return_size(&self) -> i32 {
         self.return_size
     }
     /// <p>The total number of query results.</p>
-    pub fn total_size(&self) -> ::std::option::Option<i32> {
+    pub fn total_size(&self) -> i32 {
         self.total_size
     }
 }
@@ -89,6 +90,7 @@ impl GetTagsOutputBuilder {
         &self.tags
     }
     /// <p>The number of query results that Amazon Web Services returns at a time.</p>
+    /// This field is required.
     pub fn return_size(mut self, input: i32) -> Self {
         self.return_size = ::std::option::Option::Some(input);
         self
@@ -103,6 +105,7 @@ impl GetTagsOutputBuilder {
         &self.return_size
     }
     /// <p>The total number of query results.</p>
+    /// This field is required.
     pub fn total_size(mut self, input: i32) -> Self {
         self.total_size = ::std::option::Option::Some(input);
         self
@@ -126,13 +129,32 @@ impl GetTagsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetTagsOutput`](crate::operation::get_tags::GetTagsOutput).
-    pub fn build(self) -> crate::operation::get_tags::GetTagsOutput {
-        crate::operation::get_tags::GetTagsOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`tags`](crate::operation::get_tags::builders::GetTagsOutputBuilder::tags)
+    /// - [`return_size`](crate::operation::get_tags::builders::GetTagsOutputBuilder::return_size)
+    /// - [`total_size`](crate::operation::get_tags::builders::GetTagsOutputBuilder::total_size)
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_tags::GetTagsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_tags::GetTagsOutput {
             next_page_token: self.next_page_token,
-            tags: self.tags,
-            return_size: self.return_size,
-            total_size: self.total_size,
+            tags: self.tags.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "tags",
+                    "tags was not specified but it is required when building GetTagsOutput",
+                )
+            })?,
+            return_size: self.return_size.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "return_size",
+                    "return_size was not specified but it is required when building GetTagsOutput",
+                )
+            })?,
+            total_size: self.total_size.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "total_size",
+                    "total_size was not specified but it is required when building GetTagsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

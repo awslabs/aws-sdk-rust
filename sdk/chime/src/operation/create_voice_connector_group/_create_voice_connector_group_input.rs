@@ -14,8 +14,10 @@ impl CreateVoiceConnectorGroupInput {
         self.name.as_deref()
     }
     /// <p>The Amazon Chime Voice Connectors to route inbound calls to.</p>
-    pub fn voice_connector_items(&self) -> ::std::option::Option<&[crate::types::VoiceConnectorItem]> {
-        self.voice_connector_items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.voice_connector_items.is_none()`.
+    pub fn voice_connector_items(&self) -> &[crate::types::VoiceConnectorItem] {
+        self.voice_connector_items.as_deref().unwrap_or_default()
     }
 }
 impl CreateVoiceConnectorGroupInput {
@@ -34,6 +36,7 @@ pub struct CreateVoiceConnectorGroupInputBuilder {
 }
 impl CreateVoiceConnectorGroupInputBuilder {
     /// <p>The name of the Amazon Chime Voice Connector group.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -72,7 +75,7 @@ impl CreateVoiceConnectorGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_voice_connector_group::CreateVoiceConnectorGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_voice_connector_group::CreateVoiceConnectorGroupInput {
             name: self.name,

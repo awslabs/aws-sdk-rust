@@ -84,6 +84,7 @@ pub struct ListProfileTimesInputBuilder {
 }
 impl ListProfileTimesInputBuilder {
     /// <p>The name of the profiling group.</p>
+    /// This field is required.
     pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profiling_group_name = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +99,7 @@ impl ListProfileTimesInputBuilder {
         &self.profiling_group_name
     }
     /// <p>The start time of the time range from which to list the profiles.</p>
+    /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
@@ -112,6 +114,7 @@ impl ListProfileTimesInputBuilder {
         &self.start_time
     }
     /// <p>The end time of the time range from which to list the profiles.</p>
+    /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
@@ -131,6 +134,7 @@ impl ListProfileTimesInputBuilder {
     /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
     /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn period(mut self, input: crate::types::AggregationPeriod) -> Self {
         self.period = ::std::option::Option::Some(input);
         self
@@ -205,7 +209,7 @@ impl ListProfileTimesInputBuilder {
     /// Consumes the builder and constructs a [`ListProfileTimesInput`](crate::operation::list_profile_times::ListProfileTimesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_profile_times::ListProfileTimesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_profile_times::ListProfileTimesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_profile_times::ListProfileTimesInput {
             profiling_group_name: self.profiling_group_name,
             start_time: self.start_time,

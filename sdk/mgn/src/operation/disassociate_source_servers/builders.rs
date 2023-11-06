@@ -10,7 +10,7 @@ impl DisassociateSourceServersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::disassociate_source_servers::DisassociateSourceServersOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::disassociate_source_servers::DisassociateSourceServersError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl DisassociateSourceServersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_source_servers::DisassociateSourceServersOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::disassociate_source_servers::DisassociateSourceServersError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::disassociate_source_servers::DisassociateSourceServers::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -86,20 +89,15 @@ impl DisassociateSourceServersFluentBuilder {
         crate::operation::disassociate_source_servers::DisassociateSourceServers::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::disassociate_source_servers::DisassociateSourceServersOutput,
-            crate::operation::disassociate_source_servers::DisassociateSourceServersError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_source_servers::DisassociateSourceServersError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::disassociate_source_servers::DisassociateSourceServersOutput,
+        crate::operation::disassociate_source_servers::DisassociateSourceServersError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -126,21 +124,21 @@ impl DisassociateSourceServersFluentBuilder {
     }
     /// Appends an item to `sourceServerIDs`.
     ///
-    /// To override the contents of this collection use [`set_source_server_i_ds`](Self::set_source_server_i_ds).
+    /// To override the contents of this collection use [`set_source_server_ids`](Self::set_source_server_ids).
     ///
     /// <p>Source server IDs list.</p>
-    pub fn source_server_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.source_server_i_ds(input.into());
+    pub fn source_server_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.source_server_ids(input.into());
         self
     }
     /// <p>Source server IDs list.</p>
-    pub fn set_source_server_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inner = self.inner.set_source_server_i_ds(input);
+    pub fn set_source_server_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_source_server_ids(input);
         self
     }
     /// <p>Source server IDs list.</p>
-    pub fn get_source_server_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        self.inner.get_source_server_i_ds()
+    pub fn get_source_server_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_source_server_ids()
     }
     /// <p>Account ID.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

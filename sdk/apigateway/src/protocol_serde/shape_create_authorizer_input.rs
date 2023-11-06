@@ -2,7 +2,7 @@
 pub fn ser_create_authorizer_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_authorizer::CreateAuthorizerInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.auth_type {
         object.key("authType").string(var_1.as_str());
     }
@@ -27,7 +27,7 @@ pub fn ser_create_authorizer_input(
     if let Some(var_7) = &input.name {
         object.key("name").string(var_7.as_str());
     }
-    if let Some(var_8) = &input.provider_ar_ns {
+    if let Some(var_8) = &input.provider_arns {
         let mut array_9 = object.key("providerARNs").start_array();
         for item_10 in var_8 {
             {

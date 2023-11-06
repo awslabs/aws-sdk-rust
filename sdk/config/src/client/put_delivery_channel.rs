@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PutDeliveryChannel`](crate::operation::put_delivery_channel::builders::PutDeliveryChannelFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`delivery_channel(DeliveryChannel)`](crate::operation::put_delivery_channel::builders::PutDeliveryChannelFluentBuilder::delivery_channel) / [`set_delivery_channel(Option<DeliveryChannel>)`](crate::operation::put_delivery_channel::builders::PutDeliveryChannelFluentBuilder::set_delivery_channel): <p>The configuration delivery channel object that delivers the configuration information to an Amazon S3 bucket and to an Amazon SNS topic.</p>
+    ///   - [`delivery_channel(DeliveryChannel)`](crate::operation::put_delivery_channel::builders::PutDeliveryChannelFluentBuilder::delivery_channel) / [`set_delivery_channel(Option<DeliveryChannel>)`](crate::operation::put_delivery_channel::builders::PutDeliveryChannelFluentBuilder::set_delivery_channel):<br>required: **true**<br><p>The configuration delivery channel object that delivers the configuration information to an Amazon S3 bucket and to an Amazon SNS topic.</p><br>
     /// - On success, responds with [`PutDeliveryChannelOutput`](crate::operation::put_delivery_channel::PutDeliveryChannelOutput)
     /// - On failure, responds with [`SdkError<PutDeliveryChannelError>`](crate::operation::put_delivery_channel::PutDeliveryChannelError)
     pub fn put_delivery_channel(&self) -> crate::operation::put_delivery_channel::builders::PutDeliveryChannelFluentBuilder {

@@ -48,6 +48,7 @@ pub struct ListDiscoveredResourcesInputBuilder {
 }
 impl ListDiscoveredResourcesInputBuilder {
     /// <p>The name of the ProgressUpdateStream.</p>
+    /// This field is required.
     pub fn progress_update_stream(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.progress_update_stream = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl ListDiscoveredResourcesInputBuilder {
         &self.progress_update_stream
     }
     /// <p>The name of the MigrationTask. <i>Do not store personal data in this field.</i> </p>
+    /// This field is required.
     pub fn migration_task_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.migration_task_name = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +110,7 @@ impl ListDiscoveredResourcesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_discovered_resources::ListDiscoveredResourcesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_discovered_resources::ListDiscoveredResourcesInput {
             progress_update_stream: self.progress_update_stream,

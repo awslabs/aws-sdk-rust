@@ -43,6 +43,7 @@ pub struct GetDeviceInputBuilder {
 }
 impl GetDeviceInputBuilder {
     /// <p>The device key.</p>
+    /// This field is required.
     pub fn device_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_key = ::std::option::Option::Some(input.into());
         self
@@ -71,7 +72,7 @@ impl GetDeviceInputBuilder {
         &self.access_token
     }
     /// Consumes the builder and constructs a [`GetDeviceInput`](crate::operation::get_device::GetDeviceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_device::GetDeviceInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_device::GetDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_device::GetDeviceInput {
             device_key: self.device_key,
             access_token: self.access_token,

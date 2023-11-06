@@ -14,8 +14,10 @@ impl DescribeAppsInput {
         self.stack_id.as_deref()
     }
     /// <p>An array of app IDs for the apps to be described. If you use this parameter, <code>DescribeApps</code> returns a description of the specified apps. Otherwise, it returns a description of every app.</p>
-    pub fn app_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.app_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.app_ids.is_none()`.
+    pub fn app_ids(&self) -> &[::std::string::String] {
+        self.app_ids.as_deref().unwrap_or_default()
     }
 }
 impl DescribeAppsInput {
@@ -68,7 +70,9 @@ impl DescribeAppsInputBuilder {
         &self.app_ids
     }
     /// Consumes the builder and constructs a [`DescribeAppsInput`](crate::operation::describe_apps::DescribeAppsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_apps::DescribeAppsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_apps::DescribeAppsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_apps::DescribeAppsInput {
             stack_id: self.stack_id,
             app_ids: self.app_ids,

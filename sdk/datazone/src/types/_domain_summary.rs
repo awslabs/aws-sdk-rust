@@ -5,56 +5,60 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DomainSummary {
     /// <p>The ID of the Amazon DataZone domain.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>A name of an Amazon DataZone domain.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>A description of an Amazon DataZone domain.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Amazon DataZone domain.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The identifier of the Amazon Web Services account that manages the domain.</p>
-    pub managed_account_id: ::std::option::Option<::std::string::String>,
+    pub managed_account_id: ::std::string::String,
     /// <p>The status of the Amazon DataZone domain.</p>
-    pub status: ::std::option::Option<crate::types::DomainStatus>,
+    pub status: crate::types::DomainStatus,
     /// <p>The data portal URL for the Amazon DataZone domain.</p>
     pub portal_url: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp of when a Amazon DataZone domain was created.</p>
-    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_at: ::aws_smithy_types::DateTime,
     /// <p>A timestamp of when a Amazon DataZone domain was last updated.</p>
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DomainSummary {
     /// <p>The ID of the Amazon DataZone domain.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>A name of an Amazon DataZone domain.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>A description of an Amazon DataZone domain.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The ARN of the Amazon DataZone domain.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The identifier of the Amazon Web Services account that manages the domain.</p>
-    pub fn managed_account_id(&self) -> ::std::option::Option<&str> {
-        self.managed_account_id.as_deref()
+    pub fn managed_account_id(&self) -> &str {
+        use std::ops::Deref;
+        self.managed_account_id.deref()
     }
     /// <p>The status of the Amazon DataZone domain.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::DomainStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::DomainStatus {
+        &self.status
     }
     /// <p>The data portal URL for the Amazon DataZone domain.</p>
     pub fn portal_url(&self) -> ::std::option::Option<&str> {
         self.portal_url.as_deref()
     }
     /// <p>A timestamp of when a Amazon DataZone domain was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_at.as_ref()
+    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_at
     }
     /// <p>A timestamp of when a Amazon DataZone domain was last updated.</p>
     pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -99,6 +103,7 @@ pub struct DomainSummaryBuilder {
 }
 impl DomainSummaryBuilder {
     /// <p>The ID of the Amazon DataZone domain.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -113,6 +118,7 @@ impl DomainSummaryBuilder {
         &self.id
     }
     /// <p>A name of an Amazon DataZone domain.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -141,6 +147,7 @@ impl DomainSummaryBuilder {
         &self.description
     }
     /// <p>The ARN of the Amazon DataZone domain.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -155,6 +162,7 @@ impl DomainSummaryBuilder {
         &self.arn
     }
     /// <p>The identifier of the Amazon Web Services account that manages the domain.</p>
+    /// This field is required.
     pub fn managed_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.managed_account_id = ::std::option::Option::Some(input.into());
         self
@@ -169,6 +177,7 @@ impl DomainSummaryBuilder {
         &self.managed_account_id
     }
     /// <p>The status of the Amazon DataZone domain.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::DomainStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -197,6 +206,7 @@ impl DomainSummaryBuilder {
         &self.portal_url
     }
     /// <p>A timestamp of when a Amazon DataZone domain was created.</p>
+    /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
@@ -225,18 +235,55 @@ impl DomainSummaryBuilder {
         &self.last_updated_at
     }
     /// Consumes the builder and constructs a [`DomainSummary`](crate::types::DomainSummary).
-    pub fn build(self) -> crate::types::DomainSummary {
-        crate::types::DomainSummary {
-            id: self.id,
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::DomainSummaryBuilder::id)
+    /// - [`name`](crate::types::builders::DomainSummaryBuilder::name)
+    /// - [`arn`](crate::types::builders::DomainSummaryBuilder::arn)
+    /// - [`managed_account_id`](crate::types::builders::DomainSummaryBuilder::managed_account_id)
+    /// - [`status`](crate::types::builders::DomainSummaryBuilder::status)
+    /// - [`created_at`](crate::types::builders::DomainSummaryBuilder::created_at)
+    pub fn build(self) -> ::std::result::Result<crate::types::DomainSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DomainSummary {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building DomainSummary",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DomainSummary",
+                )
+            })?,
             description: self.description,
-            arn: self.arn,
-            managed_account_id: self.managed_account_id,
-            status: self.status,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building DomainSummary",
+                )
+            })?,
+            managed_account_id: self.managed_account_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "managed_account_id",
+                    "managed_account_id was not specified but it is required when building DomainSummary",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building DomainSummary",
+                )
+            })?,
             portal_url: self.portal_url,
-            created_at: self.created_at,
+            created_at: self.created_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_at",
+                    "created_at was not specified but it is required when building DomainSummary",
+                )
+            })?,
             last_updated_at: self.last_updated_at,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for DomainSummaryBuilder {

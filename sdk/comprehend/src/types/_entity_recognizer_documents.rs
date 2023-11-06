@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EntityRecognizerDocuments {
     /// <p> Specifies the Amazon S3 location where the training documents for an entity recognizer are located. The URI must be in the same Region as the API endpoint that you are calling.</p>
-    pub s3_uri: ::std::option::Option<::std::string::String>,
+    pub s3_uri: ::std::string::String,
     /// <p> Specifies the Amazon S3 location where the test documents for an entity recognizer are located. The URI must be in the same Amazon Web Services Region as the API endpoint that you are calling.</p>
     pub test_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p> Specifies how the text in an input file should be processed. This is optional, and the default is ONE_DOC_PER_LINE. ONE_DOC_PER_FILE - Each file is considered a separate document. Use this option when you are processing large documents, such as newspaper articles or scientific papers. ONE_DOC_PER_LINE - Each line in a file is considered a separate document. Use this option when you are processing many short documents, such as text messages.</p>
@@ -13,8 +13,9 @@ pub struct EntityRecognizerDocuments {
 }
 impl EntityRecognizerDocuments {
     /// <p> Specifies the Amazon S3 location where the training documents for an entity recognizer are located. The URI must be in the same Region as the API endpoint that you are calling.</p>
-    pub fn s3_uri(&self) -> ::std::option::Option<&str> {
-        self.s3_uri.as_deref()
+    pub fn s3_uri(&self) -> &str {
+        use std::ops::Deref;
+        self.s3_uri.deref()
     }
     /// <p> Specifies the Amazon S3 location where the test documents for an entity recognizer are located. The URI must be in the same Amazon Web Services Region as the API endpoint that you are calling.</p>
     pub fn test_s3_uri(&self) -> ::std::option::Option<&str> {
@@ -42,6 +43,7 @@ pub struct EntityRecognizerDocumentsBuilder {
 }
 impl EntityRecognizerDocumentsBuilder {
     /// <p> Specifies the Amazon S3 location where the training documents for an entity recognizer are located. The URI must be in the same Region as the API endpoint that you are calling.</p>
+    /// This field is required.
     pub fn s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_uri = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +86,18 @@ impl EntityRecognizerDocumentsBuilder {
         &self.input_format
     }
     /// Consumes the builder and constructs a [`EntityRecognizerDocuments`](crate::types::EntityRecognizerDocuments).
-    pub fn build(self) -> crate::types::EntityRecognizerDocuments {
-        crate::types::EntityRecognizerDocuments {
-            s3_uri: self.s3_uri,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`s3_uri`](crate::types::builders::EntityRecognizerDocumentsBuilder::s3_uri)
+    pub fn build(self) -> ::std::result::Result<crate::types::EntityRecognizerDocuments, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EntityRecognizerDocuments {
+            s3_uri: self.s3_uri.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "s3_uri",
+                    "s3_uri was not specified but it is required when building EntityRecognizerDocuments",
+                )
+            })?,
             test_s3_uri: self.test_s3_uri,
             input_format: self.input_format,
-        }
+        })
     }
 }

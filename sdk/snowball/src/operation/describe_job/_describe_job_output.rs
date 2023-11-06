@@ -15,8 +15,10 @@ impl DescribeJobOutput {
         self.job_metadata.as_ref()
     }
     /// <p>Information about a specific job part (in the case of an export job), including shipping information, job status, and other important metadata.</p>
-    pub fn sub_job_metadata(&self) -> ::std::option::Option<&[crate::types::JobMetadata]> {
-        self.sub_job_metadata.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sub_job_metadata.is_none()`.
+    pub fn sub_job_metadata(&self) -> &[crate::types::JobMetadata] {
+        self.sub_job_metadata.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeJobOutput {

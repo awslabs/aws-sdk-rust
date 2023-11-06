@@ -105,7 +105,7 @@ impl DescribeProductInputBuilder {
     /// Consumes the builder and constructs a [`DescribeProductInput`](crate::operation::describe_product::DescribeProductInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_product::DescribeProductInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_product::DescribeProductInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_product::DescribeProductInput {
             accept_language: self.accept_language,
             id: self.id,

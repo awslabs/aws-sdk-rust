@@ -34,6 +34,7 @@ pub struct GetPriceListFileUrlInputBuilder {
 }
 impl GetPriceListFileUrlInputBuilder {
     /// <p>The unique identifier that maps to where your Price List files are located. <code>PriceListArn</code> can be obtained from the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html">ListPriceLists</a> response. </p>
+    /// This field is required.
     pub fn price_list_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.price_list_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetPriceListFileUrlInputBuilder {
         &self.price_list_arn
     }
     /// <p>The format that you want to retrieve your Price List files in. The <code>FileFormat</code> can be obtained from the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html">ListPriceLists</a> response. </p>
+    /// This field is required.
     pub fn file_format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_format = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl GetPriceListFileUrlInputBuilder {
     /// Consumes the builder and constructs a [`GetPriceListFileUrlInput`](crate::operation::get_price_list_file_url::GetPriceListFileUrlInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_price_list_file_url::GetPriceListFileUrlInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_price_list_file_url::GetPriceListFileUrlInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_price_list_file_url::GetPriceListFileUrlInput {
             price_list_arn: self.price_list_arn,

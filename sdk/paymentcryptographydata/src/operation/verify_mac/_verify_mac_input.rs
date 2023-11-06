@@ -66,6 +66,7 @@ pub struct VerifyMacInputBuilder {
 }
 impl VerifyMacInputBuilder {
     /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses to verify MAC data.</p>
+    /// This field is required.
     pub fn key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_identifier = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +81,7 @@ impl VerifyMacInputBuilder {
         &self.key_identifier
     }
     /// <p>The data on for which MAC is under verification.</p>
+    /// This field is required.
     pub fn message_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_data = ::std::option::Option::Some(input.into());
         self
@@ -94,6 +96,7 @@ impl VerifyMacInputBuilder {
         &self.message_data
     }
     /// <p>The MAC being verified.</p>
+    /// This field is required.
     pub fn mac(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mac = ::std::option::Option::Some(input.into());
         self
@@ -108,6 +111,7 @@ impl VerifyMacInputBuilder {
         &self.mac
     }
     /// <p>The attributes and data values to use for MAC verification within Amazon Web Services Payment Cryptography.</p>
+    /// This field is required.
     pub fn verification_attributes(mut self, input: crate::types::MacAttributes) -> Self {
         self.verification_attributes = ::std::option::Option::Some(input);
         self
@@ -136,7 +140,7 @@ impl VerifyMacInputBuilder {
         &self.mac_length
     }
     /// Consumes the builder and constructs a [`VerifyMacInput`](crate::operation::verify_mac::VerifyMacInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::verify_mac::VerifyMacInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::verify_mac::VerifyMacInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::verify_mac::VerifyMacInput {
             key_identifier: self.key_identifier,
             message_data: self.message_data,

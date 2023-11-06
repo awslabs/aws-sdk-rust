@@ -42,6 +42,7 @@ pub struct PutContainerPolicyInputBuilder {
 }
 impl PutContainerPolicyInputBuilder {
     /// <p>The name of the container.</p>
+    /// This field is required.
     pub fn container_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_name = ::std::option::Option::Some(input.into());
         self
@@ -60,6 +61,7 @@ impl PutContainerPolicyInputBuilder {
     /// <li> <p>One <code>Version</code> tag</p> </li>
     /// <li> <p>One <code>Statement</code> tag that contains the standard tags for the policy.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
         self
@@ -84,7 +86,8 @@ impl PutContainerPolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutContainerPolicyInput`](crate::operation::put_container_policy::PutContainerPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_container_policy::PutContainerPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_container_policy::PutContainerPolicyInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::put_container_policy::PutContainerPolicyInput {
             container_name: self.container_name,
             policy: self.policy,

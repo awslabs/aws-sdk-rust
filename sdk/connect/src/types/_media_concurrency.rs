@@ -5,25 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MediaConcurrency {
     /// <p>The channels that agents can handle in the Contact Control Panel (CCP).</p>
-    pub channel: ::std::option::Option<crate::types::Channel>,
+    pub channel: crate::types::Channel,
     /// <p>The number of contacts an agent can have on a channel simultaneously.</p>
     /// <p>Valid Range for <code>VOICE</code>: Minimum value of 1. Maximum value of 1.</p>
     /// <p>Valid Range for <code>CHAT</code>: Minimum value of 1. Maximum value of 10.</p>
     /// <p>Valid Range for <code>TASK</code>: Minimum value of 1. Maximum value of 10.</p>
-    pub concurrency: ::std::option::Option<i32>,
+    pub concurrency: i32,
     /// <p>Defines the cross-channel routing behavior for each channel that is enabled for this Routing Profile. For example, this allows you to offer an agent a different contact from another channel when they are currently working with a contact from a Voice channel.</p>
     pub cross_channel_behavior: ::std::option::Option<crate::types::CrossChannelBehavior>,
 }
 impl MediaConcurrency {
     /// <p>The channels that agents can handle in the Contact Control Panel (CCP).</p>
-    pub fn channel(&self) -> ::std::option::Option<&crate::types::Channel> {
-        self.channel.as_ref()
+    pub fn channel(&self) -> &crate::types::Channel {
+        &self.channel
     }
     /// <p>The number of contacts an agent can have on a channel simultaneously.</p>
     /// <p>Valid Range for <code>VOICE</code>: Minimum value of 1. Maximum value of 1.</p>
     /// <p>Valid Range for <code>CHAT</code>: Minimum value of 1. Maximum value of 10.</p>
     /// <p>Valid Range for <code>TASK</code>: Minimum value of 1. Maximum value of 10.</p>
-    pub fn concurrency(&self) -> ::std::option::Option<i32> {
+    pub fn concurrency(&self) -> i32 {
         self.concurrency
     }
     /// <p>Defines the cross-channel routing behavior for each channel that is enabled for this Routing Profile. For example, this allows you to offer an agent a different contact from another channel when they are currently working with a contact from a Voice channel.</p>
@@ -48,6 +48,7 @@ pub struct MediaConcurrencyBuilder {
 }
 impl MediaConcurrencyBuilder {
     /// <p>The channels that agents can handle in the Contact Control Panel (CCP).</p>
+    /// This field is required.
     pub fn channel(mut self, input: crate::types::Channel) -> Self {
         self.channel = ::std::option::Option::Some(input);
         self
@@ -65,6 +66,7 @@ impl MediaConcurrencyBuilder {
     /// <p>Valid Range for <code>VOICE</code>: Minimum value of 1. Maximum value of 1.</p>
     /// <p>Valid Range for <code>CHAT</code>: Minimum value of 1. Maximum value of 10.</p>
     /// <p>Valid Range for <code>TASK</code>: Minimum value of 1. Maximum value of 10.</p>
+    /// This field is required.
     pub fn concurrency(mut self, input: i32) -> Self {
         self.concurrency = ::std::option::Option::Some(input);
         self
@@ -99,11 +101,24 @@ impl MediaConcurrencyBuilder {
         &self.cross_channel_behavior
     }
     /// Consumes the builder and constructs a [`MediaConcurrency`](crate::types::MediaConcurrency).
-    pub fn build(self) -> crate::types::MediaConcurrency {
-        crate::types::MediaConcurrency {
-            channel: self.channel,
-            concurrency: self.concurrency,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`channel`](crate::types::builders::MediaConcurrencyBuilder::channel)
+    /// - [`concurrency`](crate::types::builders::MediaConcurrencyBuilder::concurrency)
+    pub fn build(self) -> ::std::result::Result<crate::types::MediaConcurrency, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::MediaConcurrency {
+            channel: self.channel.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "channel",
+                    "channel was not specified but it is required when building MediaConcurrency",
+                )
+            })?,
+            concurrency: self.concurrency.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "concurrency",
+                    "concurrency was not specified but it is required when building MediaConcurrency",
+                )
+            })?,
             cross_channel_behavior: self.cross_channel_behavior,
-        }
+        })
     }
 }

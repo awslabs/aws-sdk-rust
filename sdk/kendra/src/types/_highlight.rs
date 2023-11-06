@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Highlight {
     /// <p>The zero-based location in the response string where the highlight starts.</p>
-    pub begin_offset: ::std::option::Option<i32>,
+    pub begin_offset: i32,
     /// <p>The zero-based location in the response string where the highlight ends.</p>
-    pub end_offset: ::std::option::Option<i32>,
+    pub end_offset: i32,
     /// <p>Indicates whether the response is the best response. True if this is the best response; otherwise, false.</p>
     pub top_answer: bool,
     /// <p>The highlight type. </p>
@@ -15,11 +15,11 @@ pub struct Highlight {
 }
 impl Highlight {
     /// <p>The zero-based location in the response string where the highlight starts.</p>
-    pub fn begin_offset(&self) -> ::std::option::Option<i32> {
+    pub fn begin_offset(&self) -> i32 {
         self.begin_offset
     }
     /// <p>The zero-based location in the response string where the highlight ends.</p>
-    pub fn end_offset(&self) -> ::std::option::Option<i32> {
+    pub fn end_offset(&self) -> i32 {
         self.end_offset
     }
     /// <p>Indicates whether the response is the best response. True if this is the best response; otherwise, false.</p>
@@ -49,6 +49,7 @@ pub struct HighlightBuilder {
 }
 impl HighlightBuilder {
     /// <p>The zero-based location in the response string where the highlight starts.</p>
+    /// This field is required.
     pub fn begin_offset(mut self, input: i32) -> Self {
         self.begin_offset = ::std::option::Option::Some(input);
         self
@@ -63,6 +64,7 @@ impl HighlightBuilder {
         &self.begin_offset
     }
     /// <p>The zero-based location in the response string where the highlight ends.</p>
+    /// This field is required.
     pub fn end_offset(mut self, input: i32) -> Self {
         self.end_offset = ::std::option::Option::Some(input);
         self
@@ -105,12 +107,25 @@ impl HighlightBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`Highlight`](crate::types::Highlight).
-    pub fn build(self) -> crate::types::Highlight {
-        crate::types::Highlight {
-            begin_offset: self.begin_offset,
-            end_offset: self.end_offset,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`begin_offset`](crate::types::builders::HighlightBuilder::begin_offset)
+    /// - [`end_offset`](crate::types::builders::HighlightBuilder::end_offset)
+    pub fn build(self) -> ::std::result::Result<crate::types::Highlight, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Highlight {
+            begin_offset: self.begin_offset.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "begin_offset",
+                    "begin_offset was not specified but it is required when building Highlight",
+                )
+            })?,
+            end_offset: self.end_offset.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "end_offset",
+                    "end_offset was not specified but it is required when building Highlight",
+                )
+            })?,
             top_answer: self.top_answer.unwrap_or_default(),
             r#type: self.r#type,
-        }
+        })
     }
 }

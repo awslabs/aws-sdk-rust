@@ -34,6 +34,7 @@ pub struct DeleteWorkteamOutputBuilder {
 }
 impl DeleteWorkteamOutputBuilder {
     /// <p>Returns <code>true</code> if the work team was successfully deleted; otherwise, returns <code>false</code>.</p>
+    /// This field is required.
     pub fn success(mut self, input: bool) -> Self {
         self.success = ::std::option::Option::Some(input);
         self

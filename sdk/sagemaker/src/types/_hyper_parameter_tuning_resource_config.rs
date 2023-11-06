@@ -61,8 +61,10 @@ impl HyperParameterTuningResourceConfig {
     /// <p>A list containing the configuration(s) for one or more resources for processing hyperparameter jobs. These resources include compute instances and storage volumes to use in model training jobs launched by hyperparameter tuning jobs. The <code>AllocationStrategy</code> controls the order in which multiple configurations provided in <code>InstanceConfigs</code> are used.</p> <note>
     /// <p>If you only want to use a single instance configuration inside the <code>HyperParameterTuningResourceConfig</code> API, do not provide a value for <code>InstanceConfigs</code>. Instead, use <code>InstanceType</code>, <code>VolumeSizeInGB</code> and <code>InstanceCount</code>. If you use <code>InstanceConfigs</code>, do not provide values for <code>InstanceType</code>, <code>VolumeSizeInGB</code> or <code>InstanceCount</code>.</p>
     /// </note>
-    pub fn instance_configs(&self) -> ::std::option::Option<&[crate::types::HyperParameterTuningInstanceConfig]> {
-        self.instance_configs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_configs.is_none()`.
+    pub fn instance_configs(&self) -> &[crate::types::HyperParameterTuningInstanceConfig] {
+        self.instance_configs.as_deref().unwrap_or_default()
     }
 }
 impl HyperParameterTuningResourceConfig {

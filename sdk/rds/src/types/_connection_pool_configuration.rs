@@ -66,8 +66,10 @@ impl ConnectionPoolConfiguration {
     }
     /// <p>Each item in the list represents a class of SQL operations that normally cause all later statements in a session using a proxy to be pinned to the same underlying database connection. Including an item in the list exempts that class of SQL operations from the pinning behavior.</p>
     /// <p>Default: no session pinning filters</p>
-    pub fn session_pinning_filters(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.session_pinning_filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.session_pinning_filters.is_none()`.
+    pub fn session_pinning_filters(&self) -> &[::std::string::String] {
+        self.session_pinning_filters.as_deref().unwrap_or_default()
     }
     /// <p>One or more SQL statements for the proxy to run when opening each new database connection. Typically used with <code>SET</code> statements to make sure that each connection has identical settings such as time zone and character set. For multiple statements, use semicolons as the separator. You can also include multiple variables in a single <code>SET</code> statement, such as <code>SET x=1, y=2</code>.</p>
     /// <p>Default: no initialization query</p>

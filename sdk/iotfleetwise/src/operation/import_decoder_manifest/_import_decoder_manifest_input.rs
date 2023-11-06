@@ -14,8 +14,10 @@ impl ImportDecoderManifestInput {
         self.name.as_deref()
     }
     /// <p> The file to load into an Amazon Web Services account. </p>
-    pub fn network_file_definitions(&self) -> ::std::option::Option<&[crate::types::NetworkFileDefinition]> {
-        self.network_file_definitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_file_definitions.is_none()`.
+    pub fn network_file_definitions(&self) -> &[crate::types::NetworkFileDefinition] {
+        self.network_file_definitions.as_deref().unwrap_or_default()
     }
 }
 impl ImportDecoderManifestInput {
@@ -34,6 +36,7 @@ pub struct ImportDecoderManifestInputBuilder {
 }
 impl ImportDecoderManifestInputBuilder {
     /// <p> The name of the decoder manifest to import. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +73,7 @@ impl ImportDecoderManifestInputBuilder {
     /// Consumes the builder and constructs a [`ImportDecoderManifestInput`](crate::operation::import_decoder_manifest::ImportDecoderManifestInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::import_decoder_manifest::ImportDecoderManifestInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::import_decoder_manifest::ImportDecoderManifestInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::import_decoder_manifest::ImportDecoderManifestInput {
             name: self.name,

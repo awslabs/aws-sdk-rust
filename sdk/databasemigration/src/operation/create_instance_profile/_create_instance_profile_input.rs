@@ -40,8 +40,10 @@ impl CreateInstanceProfileInput {
         self.publicly_accessible
     }
     /// <p>One or more tags to be assigned to the instance profile.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the network type for the instance profile. A value of <code>IPV4</code> represents an instance profile with IPv4 network type and only supports IPv4 addressing. A value of <code>IPV6</code> represents an instance profile with IPv6 network type and only supports IPv6 addressing. A value of <code>DUAL</code> represents an instance profile with dual network type that supports IPv4 and IPv6 addressing.</p>
     pub fn network_type(&self) -> ::std::option::Option<&str> {
@@ -60,8 +62,10 @@ impl CreateInstanceProfileInput {
         self.subnet_group_identifier.as_deref()
     }
     /// <p>Specifies the VPC security group names to be used with the instance profile. The VPC security group must work with the VPC containing the instance profile.</p>
-    pub fn vpc_security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.vpc_security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_groups.is_none()`.
+    pub fn vpc_security_groups(&self) -> &[::std::string::String] {
+        self.vpc_security_groups.as_deref().unwrap_or_default()
     }
 }
 impl CreateInstanceProfileInput {
@@ -233,7 +237,7 @@ impl CreateInstanceProfileInputBuilder {
     /// Consumes the builder and constructs a [`CreateInstanceProfileInput`](crate::operation::create_instance_profile::CreateInstanceProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_instance_profile::CreateInstanceProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_instance_profile::CreateInstanceProfileInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_instance_profile::CreateInstanceProfileInput {
             availability_zone: self.availability_zone,

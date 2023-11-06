@@ -34,6 +34,7 @@ pub struct MarkAsArchivedInputBuilder {
 }
 impl MarkAsArchivedInputBuilder {
     /// <p>Mark as archived by Source Server ID.</p>
+    /// This field is required.
     pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl MarkAsArchivedInputBuilder {
     /// Consumes the builder and constructs a [`MarkAsArchivedInput`](crate::operation::mark_as_archived::MarkAsArchivedInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::mark_as_archived::MarkAsArchivedInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::mark_as_archived::MarkAsArchivedInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::mark_as_archived::MarkAsArchivedInput {
             source_server_id: self.source_server_id,
             account_id: self.account_id,

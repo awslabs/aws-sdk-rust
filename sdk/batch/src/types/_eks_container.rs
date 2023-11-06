@@ -42,27 +42,35 @@ impl EksContainer {
     }
     /// <p>The entrypoint for the container. This isn't run within a shell. If this isn't specified, the <code>ENTRYPOINT</code> of the container image is used. Environment variable references are expanded using the container's environment.</p>
     /// <p>If the referenced environment variable doesn't exist, the reference in the command isn't changed. For example, if the reference is to "<code>$(NAME1)</code>" and the <code>NAME1</code> environment variable doesn't exist, the command string will remain "<code>$(NAME1)</code>." <code>$$</code> is replaced with <code>$</code> and the resulting string isn't expanded. For example, <code>$$(VAR_NAME)</code> will be passed as <code>$(VAR_NAME)</code> whether or not the <code>VAR_NAME</code> environment variable exists. The entrypoint can't be updated. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#entrypoint">ENTRYPOINT</a> in the <i>Dockerfile reference</i> and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a command and arguments for a container</a> and <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/#entrypoint">Entrypoint</a> in the <i>Kubernetes documentation</i>.</p>
-    pub fn command(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.command.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.command.is_none()`.
+    pub fn command(&self) -> &[::std::string::String] {
+        self.command.as_deref().unwrap_or_default()
     }
     /// <p>An array of arguments to the entrypoint. If this isn't specified, the <code>CMD</code> of the container image is used. This corresponds to the <code>args</code> member in the <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/#entrypoint">Entrypoint</a> portion of the <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/">Pod</a> in Kubernetes. Environment variable references are expanded using the container's environment.</p>
     /// <p>If the referenced environment variable doesn't exist, the reference in the command isn't changed. For example, if the reference is to "<code>$(NAME1)</code>" and the <code>NAME1</code> environment variable doesn't exist, the command string will remain "<code>$(NAME1)</code>." <code>$$</code> is replaced with <code>$</code>, and the resulting string isn't expanded. For example, <code>$$(VAR_NAME)</code> is passed as <code>$(VAR_NAME)</code> whether or not the <code>VAR_NAME</code> environment variable exists. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the <i>Dockerfile reference</i> and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a command and arguments for a pod</a> in the <i>Kubernetes documentation</i>.</p>
-    pub fn args(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.args.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.args.is_none()`.
+    pub fn args(&self) -> &[::std::string::String] {
+        self.args.as_deref().unwrap_or_default()
     }
     /// <p>The environment variables to pass to a container.</p> <note>
     /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
     /// </note>
-    pub fn env(&self) -> ::std::option::Option<&[crate::types::EksContainerEnvironmentVariable]> {
-        self.env.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.env.is_none()`.
+    pub fn env(&self) -> &[crate::types::EksContainerEnvironmentVariable] {
+        self.env.as_deref().unwrap_or_default()
     }
     /// <p>The type and amount of resources to assign to a container. The supported resources include <code>memory</code>, <code>cpu</code>, and <code>nvidia.com/gpu</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/">Resource management for pods and containers</a> in the <i>Kubernetes documentation</i>.</p>
     pub fn resources(&self) -> ::std::option::Option<&crate::types::EksContainerResourceRequirements> {
         self.resources.as_ref()
     }
     /// <p>The volume mounts for the container. Batch supports <code>emptyDir</code>, <code>hostPath</code>, and <code>secret</code> volume types. For more information about volumes and volume mounts in Kubernetes, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/">Volumes</a> in the <i>Kubernetes documentation</i>.</p>
-    pub fn volume_mounts(&self) -> ::std::option::Option<&[crate::types::EksContainerVolumeMount]> {
-        self.volume_mounts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volume_mounts.is_none()`.
+    pub fn volume_mounts(&self) -> &[crate::types::EksContainerVolumeMount] {
+        self.volume_mounts.as_deref().unwrap_or_default()
     }
     /// <p>The security context for a job. For more information, see <a href="https://kubernetes.io/docs/tasks/configure-pod-container/security-context/">Configure a security context for a pod or container</a> in the <i>Kubernetes documentation</i>.</p>
     pub fn security_context(&self) -> ::std::option::Option<&crate::types::EksContainerSecurityContext> {
@@ -106,6 +114,7 @@ impl EksContainerBuilder {
         &self.name
     }
     /// <p>The Docker image used to start the container.</p>
+    /// This field is required.
     pub fn image(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image = ::std::option::Option::Some(input.into());
         self

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeCopyJob`](crate::operation::describe_copy_job::builders::DescribeCopyJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`copy_job_id(impl Into<String>)`](crate::operation::describe_copy_job::builders::DescribeCopyJobFluentBuilder::copy_job_id) / [`set_copy_job_id(Option<String>)`](crate::operation::describe_copy_job::builders::DescribeCopyJobFluentBuilder::set_copy_job_id): <p>Uniquely identifies a copy job.</p>
+    ///   - [`copy_job_id(impl Into<String>)`](crate::operation::describe_copy_job::builders::DescribeCopyJobFluentBuilder::copy_job_id) / [`set_copy_job_id(Option<String>)`](crate::operation::describe_copy_job::builders::DescribeCopyJobFluentBuilder::set_copy_job_id):<br>required: **true**<br><p>Uniquely identifies a copy job.</p><br>
     /// - On success, responds with [`DescribeCopyJobOutput`](crate::operation::describe_copy_job::DescribeCopyJobOutput) with field(s):
     ///   - [`copy_job(Option<CopyJob>)`](crate::operation::describe_copy_job::DescribeCopyJobOutput::copy_job): <p>Contains detailed information about a copy job.</p>
     /// - On failure, responds with [`SdkError<DescribeCopyJobError>`](crate::operation::describe_copy_job::DescribeCopyJobError)

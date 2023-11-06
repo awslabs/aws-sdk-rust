@@ -2,7 +2,7 @@
 pub fn ser_arc_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ArcOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.arc_thickness {
         object.key("ArcThickness").string(var_1.as_str());
     }

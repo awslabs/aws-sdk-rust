@@ -101,6 +101,7 @@ pub struct UpdateDestinationInputBuilder {
 }
 impl UpdateDestinationInputBuilder {
     /// <p>The name of the delivery stream.</p>
+    /// This field is required.
     pub fn delivery_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delivery_stream_name = ::std::option::Option::Some(input.into());
         self
@@ -115,6 +116,7 @@ impl UpdateDestinationInputBuilder {
         &self.delivery_stream_name
     }
     /// <p>Obtain this value from the <code>VersionId</code> result of <code>DeliveryStreamDescription</code>. This value is required, and helps the service perform conditional operations. For example, if there is an interleaving update and this value is null, then the update destination fails. After the update is successful, the <code>VersionId</code> value is updated. The service then performs a merge of the old configuration with the new configuration.</p>
+    /// This field is required.
     pub fn current_delivery_stream_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_delivery_stream_version_id = ::std::option::Option::Some(input.into());
         self
@@ -129,6 +131,7 @@ impl UpdateDestinationInputBuilder {
         &self.current_delivery_stream_version_id
     }
     /// <p>The ID of the destination.</p>
+    /// This field is required.
     pub fn destination_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_id = ::std::option::Option::Some(input.into());
         self
@@ -268,7 +271,7 @@ impl UpdateDestinationInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDestinationInput`](crate::operation::update_destination::UpdateDestinationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_destination::UpdateDestinationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_destination::UpdateDestinationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_destination::UpdateDestinationInput {
             delivery_stream_name: self.delivery_stream_name,
             current_delivery_stream_version_id: self.current_delivery_stream_version_id,

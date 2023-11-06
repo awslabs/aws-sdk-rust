@@ -27,6 +27,7 @@ pub struct GetImageRecipePolicyInputBuilder {
 }
 impl GetImageRecipePolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the image recipe whose policy you want to retrieve.</p>
+    /// This field is required.
     pub fn image_recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_recipe_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetImageRecipePolicyInputBuilder {
     /// Consumes the builder and constructs a [`GetImageRecipePolicyInput`](crate::operation::get_image_recipe_policy::GetImageRecipePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_image_recipe_policy::GetImageRecipePolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_image_recipe_policy::GetImageRecipePolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_image_recipe_policy::GetImageRecipePolicyInput {
             image_recipe_arn: self.image_recipe_arn,

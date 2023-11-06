@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteWirelessGatewayTask`](crate::operation::delete_wireless_gateway_task::builders::DeleteWirelessGatewayTaskFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::delete_wireless_gateway_task::builders::DeleteWirelessGatewayTaskFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_wireless_gateway_task::builders::DeleteWirelessGatewayTaskFluentBuilder::set_id): <p>The ID of the resource to delete.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::delete_wireless_gateway_task::builders::DeleteWirelessGatewayTaskFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_wireless_gateway_task::builders::DeleteWirelessGatewayTaskFluentBuilder::set_id):<br>required: **true**<br><p>The ID of the resource to delete.</p><br>
     /// - On success, responds with [`DeleteWirelessGatewayTaskOutput`](crate::operation::delete_wireless_gateway_task::DeleteWirelessGatewayTaskOutput)
     /// - On failure, responds with [`SdkError<DeleteWirelessGatewayTaskError>`](crate::operation::delete_wireless_gateway_task::DeleteWirelessGatewayTaskError)
     pub fn delete_wireless_gateway_task(&self) -> crate::operation::delete_wireless_gateway_task::builders::DeleteWirelessGatewayTaskFluentBuilder {

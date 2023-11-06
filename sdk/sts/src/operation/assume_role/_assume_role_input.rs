@@ -71,8 +71,10 @@ impl AssumeRoleInput {
     /// <p>An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and session tags into a packed binary format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your request are to the upper size limit.</p>
     /// </note>
     /// <p>Passing policies to this operation returns new temporary credentials. The resulting session's permissions are the intersection of the role's identity-based policy and the session policies. You can use the role's temporary credentials in subsequent Amazon Web Services API calls to access resources in the account that owns the role. You cannot use session policies to grant more permissions than those allowed by the identity-based policy of the role that is being assumed. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session Policies</a> in the <i>IAM User Guide</i>.</p>
-    pub fn policy_arns(&self) -> ::std::option::Option<&[crate::types::PolicyDescriptorType]> {
-        self.policy_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_arns.is_none()`.
+    pub fn policy_arns(&self) -> &[crate::types::PolicyDescriptorType] {
+        self.policy_arns.as_deref().unwrap_or_default()
     }
     /// <p>An IAM policy in JSON format that you want to use as an inline session policy.</p>
     /// <p>This parameter is optional. Passing policies to this operation returns new temporary credentials. The resulting session's permissions are the intersection of the role's identity-based policy and the session policies. You can use the role's temporary credentials in subsequent Amazon Web Services API calls to access resources in the account that owns the role. You cannot use session policies to grant more permissions than those allowed by the identity-based policy of the role that is being assumed. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session Policies</a> in the <i>IAM User Guide</i>.</p>
@@ -97,14 +99,18 @@ impl AssumeRoleInput {
     /// <p>You can pass a session tag with the same key as a tag that is already attached to the role. When you do, session tags override a role tag with the same key. </p>
     /// <p>Tag key–value pairs are not case sensitive, but case is preserved. This means that you cannot have separate <code>Department</code> and <code>department</code> tag keys. Assume that the role has the <code>Department</code>=<code>Marketing</code> tag and you pass the <code>department</code>=<code>engineering</code> session tag. <code>Department</code> and <code>department</code> are not saved as separate tags, and the session tag passed in the request takes precedence over the role tag.</p>
     /// <p>Additionally, if you used temporary credentials to perform this operation, the new session inherits any transitive session tags from the calling session. If you pass a session tag with the same key as an inherited tag, the operation fails. To view the inherited tags for a session, see the CloudTrail logs. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html#id_session-tags_ctlogs">Viewing Session Tags in CloudTrail</a> in the <i>IAM User Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>A list of keys for session tags that you want to set as transitive. If you set a tag key as transitive, the corresponding key and value passes to subsequent sessions in a role chain. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html#id_session-tags_role-chaining">Chaining Roles with Session Tags</a> in the <i>IAM User Guide</i>.</p>
     /// <p>This parameter is optional. When you set session tags as transitive, the session policy and session tags packed binary limit is not affected.</p>
     /// <p>If you choose not to specify a transitive tag key, then no tags are passed from this session to any subsequent sessions.</p>
-    pub fn transitive_tag_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.transitive_tag_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.transitive_tag_keys.is_none()`.
+    pub fn transitive_tag_keys(&self) -> &[::std::string::String] {
+        self.transitive_tag_keys.as_deref().unwrap_or_default()
     }
     /// <p>A unique identifier that might be required when you assume a role in another account. If the administrator of the account to which the role belongs provided you with an external ID, then provide that value in the <code>ExternalId</code> parameter. This value can be any string, such as a passphrase or account number. A cross-account role is usually set up to trust everyone in an account. Therefore, the administrator of the trusting account might send an external ID to the administrator of the trusted account. That way, only someone with the ID can assume the role, rather than everyone in the account. For more information about the external ID, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How to Use an External ID When Granting Access to Your Amazon Web Services Resources to a Third Party</a> in the <i>IAM User Guide</i>.</p>
     /// <p>The regex used to validate this parameter is a string of characters consisting of upper- and lower-case alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
@@ -128,8 +134,10 @@ impl AssumeRoleInput {
         self.source_identity.as_deref()
     }
     /// <p>Reserved for future use.</p>
-    pub fn provided_contexts(&self) -> ::std::option::Option<&[crate::types::ProvidedContext]> {
-        self.provided_contexts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provided_contexts.is_none()`.
+    pub fn provided_contexts(&self) -> &[crate::types::ProvidedContext] {
+        self.provided_contexts.as_deref().unwrap_or_default()
     }
 }
 impl AssumeRoleInput {
@@ -158,6 +166,7 @@ pub struct AssumeRoleInputBuilder {
 }
 impl AssumeRoleInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the role to assume.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -174,6 +183,7 @@ impl AssumeRoleInputBuilder {
     /// <p>An identifier for the assumed role session.</p>
     /// <p>Use the role session name to uniquely identify a session when the same role is assumed by different principals or for different reasons. In cross-account scenarios, the role session name is visible to, and can be logged by the account that owns the role. The role session name is also used in the ARN of the assumed role principal. This means that subsequent cross-account API requests that use the temporary security credentials will expose the role session name to the external account in their CloudTrail logs.</p>
     /// <p>The regex used to validate this parameter is a string of characters consisting of upper- and lower-case alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-</p>
+    /// This field is required.
     pub fn role_session_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_session_name = ::std::option::Option::Some(input.into());
         self
@@ -431,7 +441,7 @@ impl AssumeRoleInputBuilder {
         &self.provided_contexts
     }
     /// Consumes the builder and constructs a [`AssumeRoleInput`](crate::operation::assume_role::AssumeRoleInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::assume_role::AssumeRoleInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::assume_role::AssumeRoleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::assume_role::AssumeRoleInput {
             role_arn: self.role_arn,
             role_session_name: self.role_session_name,

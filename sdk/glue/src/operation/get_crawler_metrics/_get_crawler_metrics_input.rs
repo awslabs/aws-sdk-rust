@@ -12,8 +12,10 @@ pub struct GetCrawlerMetricsInput {
 }
 impl GetCrawlerMetricsInput {
     /// <p>A list of the names of crawlers about which to retrieve metrics.</p>
-    pub fn crawler_name_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.crawler_name_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.crawler_name_list.is_none()`.
+    pub fn crawler_name_list(&self) -> &[::std::string::String] {
+        self.crawler_name_list.as_deref().unwrap_or_default()
     }
     /// <p>The maximum size of a list to return.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -91,7 +93,7 @@ impl GetCrawlerMetricsInputBuilder {
     /// Consumes the builder and constructs a [`GetCrawlerMetricsInput`](crate::operation::get_crawler_metrics::GetCrawlerMetricsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_crawler_metrics::GetCrawlerMetricsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_crawler_metrics::GetCrawlerMetricsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_crawler_metrics::GetCrawlerMetricsInput {
             crawler_name_list: self.crawler_name_list,
             max_results: self.max_results,

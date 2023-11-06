@@ -2,7 +2,7 @@
 pub fn ser_verify_card_validation_data_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::verify_card_validation_data::VerifyCardValidationDataInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.key_identifier {
         object.key("KeyIdentifier").string(var_1.as_str());
     }

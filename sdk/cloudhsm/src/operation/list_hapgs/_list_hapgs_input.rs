@@ -41,7 +41,7 @@ impl ListHapgsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListHapgsInput`](crate::operation::list_hapgs::ListHapgsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_hapgs::ListHapgsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_hapgs::ListHapgsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_hapgs::ListHapgsInput { next_token: self.next_token })
     }
 }

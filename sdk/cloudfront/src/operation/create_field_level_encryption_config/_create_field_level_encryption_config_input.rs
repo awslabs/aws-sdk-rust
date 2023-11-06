@@ -27,6 +27,7 @@ pub struct CreateFieldLevelEncryptionConfigInputBuilder {
 }
 impl CreateFieldLevelEncryptionConfigInputBuilder {
     /// <p>The request to create a new field-level encryption configuration.</p>
+    /// This field is required.
     pub fn field_level_encryption_config(mut self, input: crate::types::FieldLevelEncryptionConfig) -> Self {
         self.field_level_encryption_config = ::std::option::Option::Some(input);
         self
@@ -45,7 +46,7 @@ impl CreateFieldLevelEncryptionConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigInput {

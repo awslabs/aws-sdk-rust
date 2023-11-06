@@ -34,6 +34,7 @@ pub struct GetReadSetImportJobInputBuilder {
 }
 impl GetReadSetImportJobInputBuilder {
     /// <p>The job's ID.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetReadSetImportJobInputBuilder {
         &self.id
     }
     /// <p>The job's sequence store ID.</p>
+    /// This field is required.
     pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_store_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl GetReadSetImportJobInputBuilder {
     /// Consumes the builder and constructs a [`GetReadSetImportJobInput`](crate::operation::get_read_set_import_job::GetReadSetImportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_read_set_import_job::GetReadSetImportJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_read_set_import_job::GetReadSetImportJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_read_set_import_job::GetReadSetImportJobInput {
             id: self.id,

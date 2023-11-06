@@ -27,6 +27,7 @@ pub struct WithdrawByoipCidrInputBuilder {
 }
 impl WithdrawByoipCidrInputBuilder {
     /// <p>The address range, in CIDR notation.</p>
+    /// This field is required.
     pub fn cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cidr = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl WithdrawByoipCidrInputBuilder {
     /// Consumes the builder and constructs a [`WithdrawByoipCidrInput`](crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrInput { cidr: self.cidr })
     }
 }

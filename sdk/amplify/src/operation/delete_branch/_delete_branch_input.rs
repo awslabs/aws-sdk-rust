@@ -35,6 +35,7 @@ pub struct DeleteBranchInputBuilder {
 }
 impl DeleteBranchInputBuilder {
     /// <p> The unique ID for an Amplify app. </p>
+    /// This field is required.
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl DeleteBranchInputBuilder {
         &self.app_id
     }
     /// <p> The name for the branch. </p>
+    /// This field is required.
     pub fn branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch_name = ::std::option::Option::Some(input.into());
         self
@@ -63,7 +65,9 @@ impl DeleteBranchInputBuilder {
         &self.branch_name
     }
     /// Consumes the builder and constructs a [`DeleteBranchInput`](crate::operation::delete_branch::DeleteBranchInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_branch::DeleteBranchInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_branch::DeleteBranchInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_branch::DeleteBranchInput {
             app_id: self.app_id,
             branch_name: self.branch_name,

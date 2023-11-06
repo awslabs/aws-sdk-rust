@@ -34,6 +34,7 @@ pub struct GrantAccessInputBuilder {
 }
 impl GrantAccessInputBuilder {
     /// <p>The instance's AWS OpsWorks Stacks ID.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +63,7 @@ impl GrantAccessInputBuilder {
         &self.valid_for_in_minutes
     }
     /// Consumes the builder and constructs a [`GrantAccessInput`](crate::operation::grant_access::GrantAccessInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::grant_access::GrantAccessInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::grant_access::GrantAccessInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::grant_access::GrantAccessInput {
             instance_id: self.instance_id,
             valid_for_in_minutes: self.valid_for_in_minutes,

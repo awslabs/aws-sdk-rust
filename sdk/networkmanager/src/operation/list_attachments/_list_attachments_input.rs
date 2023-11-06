@@ -148,7 +148,7 @@ impl ListAttachmentsInputBuilder {
     /// Consumes the builder and constructs a [`ListAttachmentsInput`](crate::operation::list_attachments::ListAttachmentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_attachments::ListAttachmentsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_attachments::ListAttachmentsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_attachments::ListAttachmentsInput {
             core_network_id: self.core_network_id,
             attachment_type: self.attachment_type,

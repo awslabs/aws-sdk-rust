@@ -92,8 +92,10 @@ impl UpdateAppInput {
         self.basic_auth_credentials.as_deref()
     }
     /// <p> The custom redirect and rewrite rules for an Amplify app. </p>
-    pub fn custom_rules(&self) -> ::std::option::Option<&[crate::types::CustomRule]> {
-        self.custom_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_rules.is_none()`.
+    pub fn custom_rules(&self) -> &[crate::types::CustomRule] {
+        self.custom_rules.as_deref().unwrap_or_default()
     }
     /// <p> The build specification (build spec) for an Amplify app. </p>
     pub fn build_spec(&self) -> ::std::option::Option<&str> {
@@ -108,8 +110,10 @@ impl UpdateAppInput {
         self.enable_auto_branch_creation
     }
     /// <p> Describes the automated branch creation glob patterns for an Amplify app. </p>
-    pub fn auto_branch_creation_patterns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.auto_branch_creation_patterns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auto_branch_creation_patterns.is_none()`.
+    pub fn auto_branch_creation_patterns(&self) -> &[::std::string::String] {
+        self.auto_branch_creation_patterns.as_deref().unwrap_or_default()
     }
     /// <p> The automated branch creation configuration for an Amplify app. </p>
     pub fn auto_branch_creation_config(&self) -> ::std::option::Option<&crate::types::AutoBranchCreationConfig> {
@@ -193,6 +197,7 @@ pub struct UpdateAppInputBuilder {
 }
 impl UpdateAppInputBuilder {
     /// <p> The unique ID for an Amplify app. </p>
+    /// This field is required.
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
         self
@@ -505,7 +510,7 @@ impl UpdateAppInputBuilder {
         &self.access_token
     }
     /// Consumes the builder and constructs a [`UpdateAppInput`](crate::operation::update_app::UpdateAppInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_app::UpdateAppInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_app::UpdateAppInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_app::UpdateAppInput {
             app_id: self.app_id,
             name: self.name,

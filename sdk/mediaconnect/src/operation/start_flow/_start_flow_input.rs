@@ -27,6 +27,7 @@ pub struct StartFlowInputBuilder {
 }
 impl StartFlowInputBuilder {
     /// The ARN of the flow that you want to start.
+    /// This field is required.
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_arn = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl StartFlowInputBuilder {
         &self.flow_arn
     }
     /// Consumes the builder and constructs a [`StartFlowInput`](crate::operation::start_flow::StartFlowInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_flow::StartFlowInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_flow::StartFlowInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_flow::StartFlowInput { flow_arn: self.flow_arn })
     }
 }

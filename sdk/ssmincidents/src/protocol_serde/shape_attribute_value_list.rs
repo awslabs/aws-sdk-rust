@@ -2,7 +2,7 @@
 pub fn ser_attribute_value_list(
     object_1: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AttributeValueList,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::AttributeValueList::StringValues(inner) => {
             let mut array_1 = object_1.key("stringValues").start_array();
@@ -26,7 +26,7 @@ pub fn ser_attribute_value_list(
             array_3.finish();
         }
         crate::types::AttributeValueList::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "AttributeValueList",
             ))
         }

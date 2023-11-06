@@ -27,6 +27,7 @@ pub struct DescribeCompanyNetworkConfigurationInputBuilder {
 }
 impl DescribeCompanyNetworkConfigurationInputBuilder {
     /// <p>The ARN of the fleet.</p>
+    /// This field is required.
     pub fn fleet_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeCompanyNetworkConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_company_network_configuration::DescribeCompanyNetworkConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_company_network_configuration::DescribeCompanyNetworkConfigurationInput { fleet_arn: self.fleet_arn },

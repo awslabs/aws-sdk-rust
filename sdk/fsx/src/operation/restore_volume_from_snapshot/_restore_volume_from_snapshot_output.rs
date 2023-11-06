@@ -21,8 +21,10 @@ impl RestoreVolumeFromSnapshotOutput {
         self.lifecycle.as_ref()
     }
     /// <p>A list of administrative actions for the file system that are in process or waiting to be processed. Administrative actions describe changes to the Amazon FSx system.</p>
-    pub fn administrative_actions(&self) -> ::std::option::Option<&[crate::types::AdministrativeAction]> {
-        self.administrative_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.administrative_actions.is_none()`.
+    pub fn administrative_actions(&self) -> &[crate::types::AdministrativeAction] {
+        self.administrative_actions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for RestoreVolumeFromSnapshotOutput {

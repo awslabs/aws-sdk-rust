@@ -5,20 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateError {
     /// <p>The error code.</p>
-    pub code: ::std::option::Option<i32>,
+    pub code: i32,
     /// <p>The message for this error.</p>
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
     /// <p>Specifies which permission update caused the error.</p>
     pub caused_by: ::std::option::Option<crate::types::UpdateInstruction>,
 }
 impl UpdateError {
     /// <p>The error code.</p>
-    pub fn code(&self) -> ::std::option::Option<i32> {
+    pub fn code(&self) -> i32 {
         self.code
     }
     /// <p>The message for this error.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        use std::ops::Deref;
+        self.message.deref()
     }
     /// <p>Specifies which permission update caused the error.</p>
     pub fn caused_by(&self) -> ::std::option::Option<&crate::types::UpdateInstruction> {
@@ -42,6 +43,7 @@ pub struct UpdateErrorBuilder {
 }
 impl UpdateErrorBuilder {
     /// <p>The error code.</p>
+    /// This field is required.
     pub fn code(mut self, input: i32) -> Self {
         self.code = ::std::option::Option::Some(input);
         self
@@ -56,6 +58,7 @@ impl UpdateErrorBuilder {
         &self.code
     }
     /// <p>The message for this error.</p>
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +73,7 @@ impl UpdateErrorBuilder {
         &self.message
     }
     /// <p>Specifies which permission update caused the error.</p>
+    /// This field is required.
     pub fn caused_by(mut self, input: crate::types::UpdateInstruction) -> Self {
         self.caused_by = ::std::option::Option::Some(input);
         self
@@ -84,11 +88,24 @@ impl UpdateErrorBuilder {
         &self.caused_by
     }
     /// Consumes the builder and constructs a [`UpdateError`](crate::types::UpdateError).
-    pub fn build(self) -> crate::types::UpdateError {
-        crate::types::UpdateError {
-            code: self.code,
-            message: self.message,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`code`](crate::types::builders::UpdateErrorBuilder::code)
+    /// - [`message`](crate::types::builders::UpdateErrorBuilder::message)
+    pub fn build(self) -> ::std::result::Result<crate::types::UpdateError, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::UpdateError {
+            code: self.code.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "code",
+                    "code was not specified but it is required when building UpdateError",
+                )
+            })?,
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building UpdateError",
+                )
+            })?,
             caused_by: self.caused_by,
-        }
+        })
     }
 }

@@ -25,11 +25,8 @@ pub fn de_list_schemas_http_error(
                 output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_schemas::ListSchemasError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::bad_request_exception_correct_errors(output).build()
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ForbiddenException" => crate::operation::list_schemas::ListSchemasError::ForbiddenException({
@@ -40,11 +37,8 @@ pub fn de_list_schemas_http_error(
                 output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_schemas::ListSchemasError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::forbidden_exception_correct_errors(output).build()
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerErrorException" => crate::operation::list_schemas::ListSchemasError::InternalServerErrorException({
@@ -56,11 +50,8 @@ pub fn de_list_schemas_http_error(
                     crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(_response_body, output)
                         .map_err(crate::operation::list_schemas::ListSchemasError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_error_exception_correct_errors(output).build()
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::list_schemas::ListSchemasError::ServiceUnavailableException({
@@ -72,11 +63,8 @@ pub fn de_list_schemas_http_error(
                     crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
                         .map_err(crate::operation::list_schemas::ListSchemasError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::service_unavailable_exception_correct_errors(output).build()
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "UnauthorizedException" => crate::operation::list_schemas::ListSchemasError::UnauthorizedException({
@@ -87,11 +75,8 @@ pub fn de_list_schemas_http_error(
                 output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_schemas::ListSchemasError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::unauthorized_exception_correct_errors(output).build()
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::list_schemas::ListSchemasError::generic(generic),
@@ -133,9 +118,7 @@ pub(crate) fn de_list_schemas(
                     );
                 }
                 "Schemas" => {
-                    builder = builder.set_schemas(crate::protocol_serde::shape___list_of_schema_summary::de___list_of_schema_summary(
-                        tokens,
-                    )?);
+                    builder = builder.set_schemas(crate::protocol_serde::shape_list_of_schema_summary::de_list_of_schema_summary(tokens)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

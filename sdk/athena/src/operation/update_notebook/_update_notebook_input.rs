@@ -59,6 +59,7 @@ pub struct UpdateNotebookInputBuilder {
 }
 impl UpdateNotebookInputBuilder {
     /// <p>The ID of the notebook to update.</p>
+    /// This field is required.
     pub fn notebook_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_id = ::std::option::Option::Some(input.into());
         self
@@ -73,6 +74,7 @@ impl UpdateNotebookInputBuilder {
         &self.notebook_id
     }
     /// <p>The updated content for the notebook.</p>
+    /// This field is required.
     pub fn payload(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.payload = ::std::option::Option::Some(input.into());
         self
@@ -87,6 +89,7 @@ impl UpdateNotebookInputBuilder {
         &self.payload
     }
     /// <p>The notebook content type. Currently, the only valid type is <code>IPYNB</code>.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::NotebookType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -137,7 +140,7 @@ impl UpdateNotebookInputBuilder {
     /// Consumes the builder and constructs a [`UpdateNotebookInput`](crate::operation::update_notebook::UpdateNotebookInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_notebook::UpdateNotebookInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_notebook::UpdateNotebookInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_notebook::UpdateNotebookInput {
             notebook_id: self.notebook_id,
             payload: self.payload,

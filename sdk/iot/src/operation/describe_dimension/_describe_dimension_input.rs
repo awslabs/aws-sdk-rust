@@ -27,6 +27,7 @@ pub struct DescribeDimensionInputBuilder {
 }
 impl DescribeDimensionInputBuilder {
     /// <p>The unique identifier for the dimension.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeDimensionInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDimensionInput`](crate::operation::describe_dimension::DescribeDimensionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_dimension::DescribeDimensionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_dimension::DescribeDimensionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_dimension::DescribeDimensionInput { name: self.name })
     }
 }

@@ -2,7 +2,7 @@
 pub fn ser_topic_replication(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TopicReplication,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.copy_access_control_lists_for_topics {
         object.key("copyAccessControlListsForTopics").boolean(*var_1);
     }
@@ -61,14 +61,12 @@ where
                                 builder.set_detect_and_copy_new_topics(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "topicsToExclude" => {
-                            builder = builder.set_topics_to_exclude(
-                                crate::protocol_serde::shape___list_of__string_max249::de___list_of__string_max249(tokens)?,
-                            );
+                            builder =
+                                builder.set_topics_to_exclude(crate::protocol_serde::shape_list_of_string_max249::de_list_of_string_max249(tokens)?);
                         }
                         "topicsToReplicate" => {
-                            builder = builder.set_topics_to_replicate(
-                                crate::protocol_serde::shape___list_of__string_max249::de___list_of__string_max249(tokens)?,
-                            );
+                            builder = builder
+                                .set_topics_to_replicate(crate::protocol_serde::shape_list_of_string_max249::de_list_of_string_max249(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
@@ -80,7 +78,7 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::topic_replication_correct_errors(builder).build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

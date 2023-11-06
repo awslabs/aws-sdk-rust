@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AdminForgetDevice`](crate::operation::admin_forget_device::builders::AdminForgetDeviceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`user_pool_id(impl Into<String>)`](crate::operation::admin_forget_device::builders::AdminForgetDeviceFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::admin_forget_device::builders::AdminForgetDeviceFluentBuilder::set_user_pool_id): <p>The user pool ID.</p>
-    ///   - [`username(impl Into<String>)`](crate::operation::admin_forget_device::builders::AdminForgetDeviceFluentBuilder::username) / [`set_username(Option<String>)`](crate::operation::admin_forget_device::builders::AdminForgetDeviceFluentBuilder::set_username): <p>The user name.</p>
-    ///   - [`device_key(impl Into<String>)`](crate::operation::admin_forget_device::builders::AdminForgetDeviceFluentBuilder::device_key) / [`set_device_key(Option<String>)`](crate::operation::admin_forget_device::builders::AdminForgetDeviceFluentBuilder::set_device_key): <p>The device key.</p>
+    ///   - [`user_pool_id(impl Into<String>)`](crate::operation::admin_forget_device::builders::AdminForgetDeviceFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::admin_forget_device::builders::AdminForgetDeviceFluentBuilder::set_user_pool_id):<br>required: **true**<br><p>The user pool ID.</p><br>
+    ///   - [`username(impl Into<String>)`](crate::operation::admin_forget_device::builders::AdminForgetDeviceFluentBuilder::username) / [`set_username(Option<String>)`](crate::operation::admin_forget_device::builders::AdminForgetDeviceFluentBuilder::set_username):<br>required: **true**<br><p>The user name.</p><br>
+    ///   - [`device_key(impl Into<String>)`](crate::operation::admin_forget_device::builders::AdminForgetDeviceFluentBuilder::device_key) / [`set_device_key(Option<String>)`](crate::operation::admin_forget_device::builders::AdminForgetDeviceFluentBuilder::set_device_key):<br>required: **true**<br><p>The device key.</p><br>
     /// - On success, responds with [`AdminForgetDeviceOutput`](crate::operation::admin_forget_device::AdminForgetDeviceOutput)
     /// - On failure, responds with [`SdkError<AdminForgetDeviceError>`](crate::operation::admin_forget_device::AdminForgetDeviceError)
     pub fn admin_forget_device(&self) -> crate::operation::admin_forget_device::builders::AdminForgetDeviceFluentBuilder {

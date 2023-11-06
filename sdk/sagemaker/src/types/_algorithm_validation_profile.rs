@@ -43,6 +43,7 @@ pub struct AlgorithmValidationProfileBuilder {
 }
 impl AlgorithmValidationProfileBuilder {
     /// <p>The name of the profile for the algorithm. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
+    /// This field is required.
     pub fn profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_name = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +58,7 @@ impl AlgorithmValidationProfileBuilder {
         &self.profile_name
     }
     /// <p>The <code>TrainingJobDefinition</code> object that describes the training job that SageMaker runs to validate your algorithm.</p>
+    /// This field is required.
     pub fn training_job_definition(mut self, input: crate::types::TrainingJobDefinition) -> Self {
         self.training_job_definition = ::std::option::Option::Some(input);
         self

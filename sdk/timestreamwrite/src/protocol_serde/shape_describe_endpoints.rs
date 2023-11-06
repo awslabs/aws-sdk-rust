@@ -26,11 +26,10 @@ pub fn de_describe_endpoints_http_error(
                 output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
                     .map_err(crate::operation::describe_endpoints::DescribeEndpointsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::describe_endpoints::DescribeEndpointsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::describe_endpoints::DescribeEndpointsError::ThrottlingException({
@@ -41,11 +40,10 @@ pub fn de_describe_endpoints_http_error(
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::describe_endpoints::DescribeEndpointsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::describe_endpoints::DescribeEndpointsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::describe_endpoints::DescribeEndpointsError::ValidationException({
@@ -56,11 +54,10 @@ pub fn de_describe_endpoints_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::describe_endpoints::DescribeEndpointsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::describe_endpoints::DescribeEndpointsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::describe_endpoints::DescribeEndpointsError::generic(generic),
@@ -80,14 +77,16 @@ pub fn de_describe_endpoints_http_response(
         output = crate::protocol_serde::shape_describe_endpoints::de_describe_endpoints(_response_body, output)
             .map_err(crate::operation::describe_endpoints::DescribeEndpointsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::describe_endpoints_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::describe_endpoints::DescribeEndpointsError::unhandled)?
     })
 }
 
 pub fn ser_describe_endpoints_input(
     _input: &crate::operation::describe_endpoints::DescribeEndpointsInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
-    Ok(::aws_smithy_http::body::SdkBody::from("{}"))
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+    Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }
 
 pub(crate) fn de_describe_endpoints(

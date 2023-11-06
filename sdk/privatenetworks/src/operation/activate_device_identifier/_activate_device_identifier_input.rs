@@ -34,6 +34,7 @@ pub struct ActivateDeviceIdentifierInputBuilder {
 }
 impl ActivateDeviceIdentifierInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the device identifier.</p>
+    /// This field is required.
     pub fn device_identifier_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_identifier_arn = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl ActivateDeviceIdentifierInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::activate_device_identifier::ActivateDeviceIdentifierInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::activate_device_identifier::ActivateDeviceIdentifierInput {
             device_identifier_arn: self.device_identifier_arn,

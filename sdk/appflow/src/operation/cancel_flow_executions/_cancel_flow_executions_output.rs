@@ -9,8 +9,10 @@ pub struct CancelFlowExecutionsOutput {
 }
 impl CancelFlowExecutionsOutput {
     /// <p>The IDs of runs that Amazon AppFlow couldn't cancel. These runs might be ineligible for canceling because they haven't started yet or have already completed.</p>
-    pub fn invalid_executions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.invalid_executions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.invalid_executions.is_none()`.
+    pub fn invalid_executions(&self) -> &[::std::string::String] {
+        self.invalid_executions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for CancelFlowExecutionsOutput {

@@ -34,6 +34,7 @@ pub struct DeleteDetectorVersionInputBuilder {
 }
 impl DeleteDetectorVersionInputBuilder {
     /// <p>The ID of the parent detector for the detector version to delete.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteDetectorVersionInputBuilder {
         &self.detector_id
     }
     /// <p>The ID of the detector version to delete.</p>
+    /// This field is required.
     pub fn detector_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_version_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DeleteDetectorVersionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDetectorVersionInput`](crate::operation::delete_detector_version::DeleteDetectorVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_detector_version::DeleteDetectorVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_detector_version::DeleteDetectorVersionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_detector_version::DeleteDetectorVersionInput {
             detector_id: self.detector_id,

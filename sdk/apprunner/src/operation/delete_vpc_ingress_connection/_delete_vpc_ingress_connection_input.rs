@@ -27,6 +27,7 @@ pub struct DeleteVpcIngressConnectionInputBuilder {
 }
 impl DeleteVpcIngressConnectionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the App Runner VPC Ingress Connection that you want to delete.</p>
+    /// This field is required.
     pub fn vpc_ingress_connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_ingress_connection_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteVpcIngressConnectionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_vpc_ingress_connection::DeleteVpcIngressConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_vpc_ingress_connection::DeleteVpcIngressConnectionInput {
             vpc_ingress_connection_arn: self.vpc_ingress_connection_arn,

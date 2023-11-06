@@ -28,6 +28,7 @@ pub struct DeleteHsmConfigurationInputBuilder {
 }
 impl DeleteHsmConfigurationInputBuilder {
     /// <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
+    /// This field is required.
     pub fn hsm_configuration_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hsm_configuration_identifier = ::std::option::Option::Some(input.into());
         self
@@ -44,8 +45,10 @@ impl DeleteHsmConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`DeleteHsmConfigurationInput`](crate::operation::delete_hsm_configuration::DeleteHsmConfigurationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_hsm_configuration::DeleteHsmConfigurationInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_hsm_configuration::DeleteHsmConfigurationInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_hsm_configuration::DeleteHsmConfigurationInput {
             hsm_configuration_identifier: self.hsm_configuration_identifier,
         })

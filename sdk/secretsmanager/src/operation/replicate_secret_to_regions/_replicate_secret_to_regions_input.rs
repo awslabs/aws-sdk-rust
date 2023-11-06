@@ -16,8 +16,10 @@ impl ReplicateSecretToRegionsInput {
         self.secret_id.as_deref()
     }
     /// <p>A list of Regions in which to replicate the secret.</p>
-    pub fn add_replica_regions(&self) -> ::std::option::Option<&[crate::types::ReplicaRegionType]> {
-        self.add_replica_regions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_replica_regions.is_none()`.
+    pub fn add_replica_regions(&self) -> &[crate::types::ReplicaRegionType] {
+        self.add_replica_regions.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether to overwrite a secret with the same name in the destination Region. By default, secrets aren't overwritten.</p>
     pub fn force_overwrite_replica_secret(&self) -> ::std::option::Option<bool> {
@@ -41,6 +43,7 @@ pub struct ReplicateSecretToRegionsInputBuilder {
 }
 impl ReplicateSecretToRegionsInputBuilder {
     /// <p>The ARN or name of the secret to replicate.</p>
+    /// This field is required.
     pub fn secret_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_id = ::std::option::Option::Some(input.into());
         self
@@ -93,7 +96,7 @@ impl ReplicateSecretToRegionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::replicate_secret_to_regions::ReplicateSecretToRegionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::replicate_secret_to_regions::ReplicateSecretToRegionsInput {
             secret_id: self.secret_id,

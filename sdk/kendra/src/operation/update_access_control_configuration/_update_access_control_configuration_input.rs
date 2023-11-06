@@ -34,12 +34,16 @@ impl UpdateAccessControlConfigurationInput {
         self.description.as_deref()
     }
     /// <p>Information you want to update on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
-    pub fn access_control_list(&self) -> ::std::option::Option<&[crate::types::Principal]> {
-        self.access_control_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.access_control_list.is_none()`.
+    pub fn access_control_list(&self) -> &[crate::types::Principal] {
+        self.access_control_list.as_deref().unwrap_or_default()
     }
     /// <p>The updated list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
-    pub fn hierarchical_access_control_list(&self) -> ::std::option::Option<&[crate::types::HierarchicalPrincipal]> {
-        self.hierarchical_access_control_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hierarchical_access_control_list.is_none()`.
+    pub fn hierarchical_access_control_list(&self) -> &[crate::types::HierarchicalPrincipal] {
+        self.hierarchical_access_control_list.as_deref().unwrap_or_default()
     }
 }
 impl UpdateAccessControlConfigurationInput {
@@ -62,6 +66,7 @@ pub struct UpdateAccessControlConfigurationInputBuilder {
 }
 impl UpdateAccessControlConfigurationInputBuilder {
     /// <p>The identifier of the index for an access control configuration.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +81,7 @@ impl UpdateAccessControlConfigurationInputBuilder {
         &self.index_id
     }
     /// <p>The identifier of the access control configuration you want to update.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -165,7 +171,7 @@ impl UpdateAccessControlConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_access_control_configuration::UpdateAccessControlConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_access_control_configuration::UpdateAccessControlConfigurationInput {

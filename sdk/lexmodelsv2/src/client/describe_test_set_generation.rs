@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeTestSetGeneration`](crate::operation::describe_test_set_generation::builders::DescribeTestSetGenerationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`test_set_generation_id(impl Into<String>)`](crate::operation::describe_test_set_generation::builders::DescribeTestSetGenerationFluentBuilder::test_set_generation_id) / [`set_test_set_generation_id(Option<String>)`](crate::operation::describe_test_set_generation::builders::DescribeTestSetGenerationFluentBuilder::set_test_set_generation_id): <p>The unique identifier of the test set generation.</p>
+    ///   - [`test_set_generation_id(impl Into<String>)`](crate::operation::describe_test_set_generation::builders::DescribeTestSetGenerationFluentBuilder::test_set_generation_id) / [`set_test_set_generation_id(Option<String>)`](crate::operation::describe_test_set_generation::builders::DescribeTestSetGenerationFluentBuilder::set_test_set_generation_id):<br>required: **true**<br><p>The unique identifier of the test set generation.</p><br>
     /// - On success, responds with [`DescribeTestSetGenerationOutput`](crate::operation::describe_test_set_generation::DescribeTestSetGenerationOutput) with field(s):
     ///   - [`test_set_generation_id(Option<String>)`](crate::operation::describe_test_set_generation::DescribeTestSetGenerationOutput::test_set_generation_id): <p>The unique identifier of the test set generation.</p>
     ///   - [`test_set_generation_status(Option<TestSetGenerationStatus>)`](crate::operation::describe_test_set_generation::DescribeTestSetGenerationOutput::test_set_generation_status): <p>The status for the test set generation.</p>
-    ///   - [`failure_reasons(Option<Vec<String>>)`](crate::operation::describe_test_set_generation::DescribeTestSetGenerationOutput::failure_reasons): <p>The reasons the test set generation failed.</p>
+    ///   - [`failure_reasons(Option<Vec::<String>>)`](crate::operation::describe_test_set_generation::DescribeTestSetGenerationOutput::failure_reasons): <p>The reasons the test set generation failed.</p>
     ///   - [`test_set_id(Option<String>)`](crate::operation::describe_test_set_generation::DescribeTestSetGenerationOutput::test_set_id): <p>The unique identifier for the test set created for the generated test set.</p>
     ///   - [`test_set_name(Option<String>)`](crate::operation::describe_test_set_generation::DescribeTestSetGenerationOutput::test_set_name): <p>The test set name for the generated test set.</p>
     ///   - [`description(Option<String>)`](crate::operation::describe_test_set_generation::DescribeTestSetGenerationOutput::description): <p>The test set description for the test set generation.</p>

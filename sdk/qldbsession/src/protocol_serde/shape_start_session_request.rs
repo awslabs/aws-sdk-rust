@@ -2,9 +2,9 @@
 pub fn ser_start_session_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StartSessionRequest,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.ledger_name {
-        object.key("LedgerName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("LedgerName").string(input.ledger_name.as_str());
     }
     Ok(())
 }

@@ -15,8 +15,10 @@ impl RetryStrategy {
         self.attempts
     }
     /// <p>Array of up to 5 objects that specify the conditions where jobs are retried or failed. If this parameter is specified, then the <code>attempts</code> parameter must also be specified. If none of the listed conditions match, then the job is retried.</p>
-    pub fn evaluate_on_exit(&self) -> ::std::option::Option<&[crate::types::EvaluateOnExit]> {
-        self.evaluate_on_exit.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.evaluate_on_exit.is_none()`.
+    pub fn evaluate_on_exit(&self) -> &[crate::types::EvaluateOnExit] {
+        self.evaluate_on_exit.as_deref().unwrap_or_default()
     }
 }
 impl RetryStrategy {

@@ -36,12 +36,9 @@ pub fn de_describe_replication_configuration_templates_http_error(
                                                 .map_err(|_|crate::operation::describe_replication_configuration_templates::DescribeReplicationConfigurationTemplatesError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::internal_server_exception_correct_errors(output).build().map_err(crate::operation::describe_replication_configuration_templates::DescribeReplicationConfigurationTemplatesError::unhandled)?
                 }
             ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::describe_replication_configuration_templates::DescribeReplicationConfigurationTemplatesError::ResourceNotFoundException({
@@ -56,8 +53,8 @@ pub fn de_describe_replication_configuration_templates_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ThrottlingException" => crate::operation::describe_replication_configuration_templates::DescribeReplicationConfigurationTemplatesError::ThrottlingException({
@@ -72,12 +69,9 @@ pub fn de_describe_replication_configuration_templates_http_error(
                                                 .map_err(|_|crate::operation::describe_replication_configuration_templates::DescribeReplicationConfigurationTemplatesError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::throttling_exception_correct_errors(output).build().map_err(crate::operation::describe_replication_configuration_templates::DescribeReplicationConfigurationTemplatesError::unhandled)?
                 }
             ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
             tmp
         }),
         "UninitializedAccountException" => crate::operation::describe_replication_configuration_templates::DescribeReplicationConfigurationTemplatesError::UninitializedAccountException({
@@ -92,8 +86,8 @@ pub fn de_describe_replication_configuration_templates_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ValidationException" => crate::operation::describe_replication_configuration_templates::DescribeReplicationConfigurationTemplatesError::ValidationException({
@@ -108,8 +102,8 @@ pub fn de_describe_replication_configuration_templates_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::describe_replication_configuration_templates::DescribeReplicationConfigurationTemplatesError::generic(generic)
@@ -142,7 +136,7 @@ pub fn de_describe_replication_configuration_templates_http_response(
 
 pub fn ser_describe_replication_configuration_templates_input(
     input: &crate::operation::describe_replication_configuration_templates::DescribeReplicationConfigurationTemplatesInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_describe_replication_configuration_templates_input::ser_describe_replication_configuration_templates_input(
@@ -150,7 +144,7 @@ pub fn ser_describe_replication_configuration_templates_input(
         input,
     )?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_describe_replication_configuration_templates(

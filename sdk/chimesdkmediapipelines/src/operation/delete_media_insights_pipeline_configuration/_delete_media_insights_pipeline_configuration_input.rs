@@ -28,6 +28,7 @@ pub struct DeleteMediaInsightsPipelineConfigurationInputBuilder {
 }
 impl DeleteMediaInsightsPipelineConfigurationInputBuilder {
     /// <p>The unique identifier of the resource to be deleted. Valid values include the name and ARN of the media insights pipeline configuration.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl DeleteMediaInsightsPipelineConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationInput {

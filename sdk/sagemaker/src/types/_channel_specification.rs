@@ -33,18 +33,24 @@ impl ChannelSpecification {
         self.is_required
     }
     /// <p>The supported MIME types for the data.</p>
-    pub fn supported_content_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.supported_content_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_content_types.is_none()`.
+    pub fn supported_content_types(&self) -> &[::std::string::String] {
+        self.supported_content_types.as_deref().unwrap_or_default()
     }
     /// <p>The allowed compression types, if data compression is used.</p>
-    pub fn supported_compression_types(&self) -> ::std::option::Option<&[crate::types::CompressionType]> {
-        self.supported_compression_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_compression_types.is_none()`.
+    pub fn supported_compression_types(&self) -> &[crate::types::CompressionType] {
+        self.supported_compression_types.as_deref().unwrap_or_default()
     }
     /// <p>The allowed input mode, either FILE or PIPE.</p>
     /// <p>In FILE mode, Amazon SageMaker copies the data from the input source onto the local Amazon Elastic Block Store (Amazon EBS) volumes before starting your training algorithm. This is the most commonly used input mode.</p>
     /// <p>In PIPE mode, Amazon SageMaker streams input data from the source directly to your algorithm without using the EBS volume.</p>
-    pub fn supported_input_modes(&self) -> ::std::option::Option<&[crate::types::TrainingInputMode]> {
-        self.supported_input_modes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_input_modes.is_none()`.
+    pub fn supported_input_modes(&self) -> &[crate::types::TrainingInputMode] {
+        self.supported_input_modes.as_deref().unwrap_or_default()
     }
 }
 impl ChannelSpecification {
@@ -67,6 +73,7 @@ pub struct ChannelSpecificationBuilder {
 }
 impl ChannelSpecificationBuilder {
     /// <p>The name of the channel.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

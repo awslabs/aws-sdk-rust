@@ -57,8 +57,10 @@ pub struct CreateInstancesFromSnapshotInput {
 }
 impl CreateInstancesFromSnapshotInput {
     /// <p>The names for your new instances.</p>
-    pub fn instance_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.instance_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_names.is_none()`.
+    pub fn instance_names(&self) -> &[::std::string::String] {
+        self.instance_names.as_deref().unwrap_or_default()
     }
     /// <p>An object containing information about one or more disk mappings.</p>
     pub fn attached_disk_mapping(
@@ -94,12 +96,16 @@ impl CreateInstancesFromSnapshotInput {
     }
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>An array of objects representing the add-ons to enable for the new instance.</p>
-    pub fn add_ons(&self) -> ::std::option::Option<&[crate::types::AddOnRequest]> {
-        self.add_ons.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_ons.is_none()`.
+    pub fn add_ons(&self) -> &[crate::types::AddOnRequest] {
+        self.add_ons.as_deref().unwrap_or_default()
     }
     /// <p>The IP address type for the instance.</p>
     /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
@@ -209,6 +215,7 @@ impl CreateInstancesFromSnapshotInputBuilder {
         &self.attached_disk_mapping
     }
     /// <p>The Availability Zone where you want to create your instances. Use the following formatting: <code>us-east-2a</code> (case sensitive). You can get a list of Availability Zones by using the <a href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a> operation. Be sure to add the <code>include Availability Zones</code> parameter to your request.</p>
+    /// This field is required.
     pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
@@ -249,6 +256,7 @@ impl CreateInstancesFromSnapshotInputBuilder {
         &self.instance_snapshot_name
     }
     /// <p>The bundle of specification information for your virtual private server (or <i>instance</i>), including the pricing plan (e.g., <code>micro_1_0</code>).</p>
+    /// This field is required.
     pub fn bundle_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bundle_id = ::std::option::Option::Some(input.into());
         self
@@ -454,7 +462,7 @@ impl CreateInstancesFromSnapshotInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotInput {
             instance_names: self.instance_names,

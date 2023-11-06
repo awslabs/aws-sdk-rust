@@ -2,7 +2,7 @@
 pub fn ser_baseline_override(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BaselineOverride,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.operating_system {
         object.key("OperatingSystem").string(var_1.as_str());
     }

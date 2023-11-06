@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SqlAlias {
     /// <p>A table, or a column in a table.</p>
-    pub from: ::std::option::Option<::std::string::String>,
+    pub from: ::std::string::String,
     /// <p>A temporary name given to a table, or a column in a table.</p>
-    pub alias: ::std::option::Option<::std::string::String>,
+    pub alias: ::std::string::String,
 }
 impl SqlAlias {
     /// <p>A table, or a column in a table.</p>
-    pub fn from(&self) -> ::std::option::Option<&str> {
-        self.from.as_deref()
+    pub fn from(&self) -> &str {
+        use std::ops::Deref;
+        self.from.deref()
     }
     /// <p>A temporary name given to a table, or a column in a table.</p>
-    pub fn alias(&self) -> ::std::option::Option<&str> {
-        self.alias.as_deref()
+    pub fn alias(&self) -> &str {
+        use std::ops::Deref;
+        self.alias.deref()
     }
 }
 impl SqlAlias {
@@ -35,6 +37,7 @@ pub struct SqlAliasBuilder {
 }
 impl SqlAliasBuilder {
     /// <p>A table, or a column in a table.</p>
+    /// This field is required.
     pub fn from(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.from = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl SqlAliasBuilder {
         &self.from
     }
     /// <p>A temporary name given to a table, or a column in a table.</p>
+    /// This field is required.
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl SqlAliasBuilder {
         &self.alias
     }
     /// Consumes the builder and constructs a [`SqlAlias`](crate::types::SqlAlias).
-    pub fn build(self) -> crate::types::SqlAlias {
-        crate::types::SqlAlias {
-            from: self.from,
-            alias: self.alias,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`from`](crate::types::builders::SqlAliasBuilder::from)
+    /// - [`alias`](crate::types::builders::SqlAliasBuilder::alias)
+    pub fn build(self) -> ::std::result::Result<crate::types::SqlAlias, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SqlAlias {
+            from: self.from.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "from",
+                    "from was not specified but it is required when building SqlAlias",
+                )
+            })?,
+            alias: self.alias.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "alias",
+                    "alias was not specified but it is required when building SqlAlias",
+                )
+            })?,
+        })
     }
 }

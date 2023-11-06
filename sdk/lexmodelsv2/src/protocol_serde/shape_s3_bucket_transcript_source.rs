@@ -51,7 +51,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::s3_bucket_transcript_source_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -62,27 +66,27 @@ where
 pub fn ser_s3_bucket_transcript_source(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::S3BucketTranscriptSource,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.s3_bucket_name {
-        object.key("s3BucketName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("s3BucketName").string(input.s3_bucket_name.as_str());
     }
-    if let Some(var_2) = &input.path_format {
+    if let Some(var_1) = &input.path_format {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("pathFormat").start_object();
-        crate::protocol_serde::shape_path_format::ser_path_format(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("pathFormat").start_object();
+        crate::protocol_serde::shape_path_format::ser_path_format(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.transcript_format {
-        object.key("transcriptFormat").string(var_4.as_str());
+    {
+        object.key("transcriptFormat").string(input.transcript_format.as_str());
     }
-    if let Some(var_5) = &input.transcript_filter {
+    if let Some(var_3) = &input.transcript_filter {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("transcriptFilter").start_object();
-        crate::protocol_serde::shape_transcript_filter::ser_transcript_filter(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_4 = object.key("transcriptFilter").start_object();
+        crate::protocol_serde::shape_transcript_filter::ser_transcript_filter(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_7) = &input.kms_key_arn {
-        object.key("kmsKeyArn").string(var_7.as_str());
+    if let Some(var_5) = &input.kms_key_arn {
+        object.key("kmsKeyArn").string(var_5.as_str());
     }
     Ok(())
 }

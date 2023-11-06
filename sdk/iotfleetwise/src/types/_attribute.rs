@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Attribute {
     /// <p>The fully qualified name of the attribute. For example, the fully qualified name of an attribute might be <code>Vehicle.Body.Engine.Type</code>.</p>
-    pub fully_qualified_name: ::std::option::Option<::std::string::String>,
+    pub fully_qualified_name: ::std::string::String,
     /// <p>The specified data type of the attribute. </p>
-    pub data_type: ::std::option::Option<crate::types::NodeDataType>,
+    pub data_type: crate::types::NodeDataType,
     /// <p>A brief description of the attribute.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The scientific unit for the attribute.</p>
@@ -30,12 +30,13 @@ pub struct Attribute {
 }
 impl Attribute {
     /// <p>The fully qualified name of the attribute. For example, the fully qualified name of an attribute might be <code>Vehicle.Body.Engine.Type</code>.</p>
-    pub fn fully_qualified_name(&self) -> ::std::option::Option<&str> {
-        self.fully_qualified_name.as_deref()
+    pub fn fully_qualified_name(&self) -> &str {
+        use std::ops::Deref;
+        self.fully_qualified_name.deref()
     }
     /// <p>The specified data type of the attribute. </p>
-    pub fn data_type(&self) -> ::std::option::Option<&crate::types::NodeDataType> {
-        self.data_type.as_ref()
+    pub fn data_type(&self) -> &crate::types::NodeDataType {
+        &self.data_type
     }
     /// <p>A brief description of the attribute.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -46,8 +47,10 @@ impl Attribute {
         self.unit.as_deref()
     }
     /// <p>A list of possible values an attribute can be assigned.</p>
-    pub fn allowed_values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.allowed_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_values.is_none()`.
+    pub fn allowed_values(&self) -> &[::std::string::String] {
+        self.allowed_values.as_deref().unwrap_or_default()
     }
     /// <p>The specified possible minimum value of the attribute.</p>
     pub fn min(&self) -> ::std::option::Option<f64> {
@@ -100,6 +103,7 @@ pub struct AttributeBuilder {
 }
 impl AttributeBuilder {
     /// <p>The fully qualified name of the attribute. For example, the fully qualified name of an attribute might be <code>Vehicle.Body.Engine.Type</code>.</p>
+    /// This field is required.
     pub fn fully_qualified_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fully_qualified_name = ::std::option::Option::Some(input.into());
         self
@@ -114,6 +118,7 @@ impl AttributeBuilder {
         &self.fully_qualified_name
     }
     /// <p>The specified data type of the attribute. </p>
+    /// This field is required.
     pub fn data_type(mut self, input: crate::types::NodeDataType) -> Self {
         self.data_type = ::std::option::Option::Some(input);
         self
@@ -263,10 +268,23 @@ impl AttributeBuilder {
         &self.comment
     }
     /// Consumes the builder and constructs a [`Attribute`](crate::types::Attribute).
-    pub fn build(self) -> crate::types::Attribute {
-        crate::types::Attribute {
-            fully_qualified_name: self.fully_qualified_name,
-            data_type: self.data_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`fully_qualified_name`](crate::types::builders::AttributeBuilder::fully_qualified_name)
+    /// - [`data_type`](crate::types::builders::AttributeBuilder::data_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::Attribute, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Attribute {
+            fully_qualified_name: self.fully_qualified_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "fully_qualified_name",
+                    "fully_qualified_name was not specified but it is required when building Attribute",
+                )
+            })?,
+            data_type: self.data_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "data_type",
+                    "data_type was not specified but it is required when building Attribute",
+                )
+            })?,
             description: self.description,
             unit: self.unit,
             allowed_values: self.allowed_values,
@@ -276,6 +294,6 @@ impl AttributeBuilder {
             default_value: self.default_value,
             deprecation_message: self.deprecation_message,
             comment: self.comment,
-        }
+        })
     }
 }

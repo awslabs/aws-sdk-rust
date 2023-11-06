@@ -36,16 +36,22 @@ impl PerformanceInsightsMetricsDetail {
         self.metric_query.as_ref()
     }
     /// <p> For more information, see <code> <a href="https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_PerformanceInsightsReferenceData.html">PerformanceInsightsReferenceData</a> </code>. </p>
-    pub fn reference_data(&self) -> ::std::option::Option<&[crate::types::PerformanceInsightsReferenceData]> {
-        self.reference_data.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reference_data.is_none()`.
+    pub fn reference_data(&self) -> &[crate::types::PerformanceInsightsReferenceData] {
+        self.reference_data.as_deref().unwrap_or_default()
     }
     /// <p>The metric statistics during the anomalous period detected by DevOps Guru;</p>
-    pub fn stats_at_anomaly(&self) -> ::std::option::Option<&[crate::types::PerformanceInsightsStat]> {
-        self.stats_at_anomaly.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stats_at_anomaly.is_none()`.
+    pub fn stats_at_anomaly(&self) -> &[crate::types::PerformanceInsightsStat] {
+        self.stats_at_anomaly.as_deref().unwrap_or_default()
     }
     /// <p>Typical metric statistics that are not considered anomalous. When DevOps Guru analyzes metrics, it compares them to <code>StatsAtBaseline</code> to help determine if they are anomalous.</p>
-    pub fn stats_at_baseline(&self) -> ::std::option::Option<&[crate::types::PerformanceInsightsStat]> {
-        self.stats_at_baseline.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stats_at_baseline.is_none()`.
+    pub fn stats_at_baseline(&self) -> &[crate::types::PerformanceInsightsStat] {
+        self.stats_at_baseline.as_deref().unwrap_or_default()
     }
 }
 impl PerformanceInsightsMetricsDetail {

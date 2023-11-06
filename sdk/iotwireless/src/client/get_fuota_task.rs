@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetFuotaTask`](crate::operation::get_fuota_task::builders::GetFuotaTaskFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_fuota_task::builders::GetFuotaTaskFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_fuota_task::builders::GetFuotaTaskFluentBuilder::set_id): <p>The ID of a FUOTA task.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_fuota_task::builders::GetFuotaTaskFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_fuota_task::builders::GetFuotaTaskFluentBuilder::set_id):<br>required: **true**<br><p>The ID of a FUOTA task.</p><br>
     /// - On success, responds with [`GetFuotaTaskOutput`](crate::operation::get_fuota_task::GetFuotaTaskOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::get_fuota_task::GetFuotaTaskOutput::arn): <p>The arn of a FUOTA task.</p>
     ///   - [`id(Option<String>)`](crate::operation::get_fuota_task::GetFuotaTaskOutput::id): <p>The ID of a FUOTA task.</p>

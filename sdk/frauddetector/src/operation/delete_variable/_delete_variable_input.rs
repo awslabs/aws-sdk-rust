@@ -27,6 +27,7 @@ pub struct DeleteVariableInputBuilder {
 }
 impl DeleteVariableInputBuilder {
     /// <p>The name of the variable to delete.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteVariableInputBuilder {
     /// Consumes the builder and constructs a [`DeleteVariableInput`](crate::operation::delete_variable::DeleteVariableInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_variable::DeleteVariableInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_variable::DeleteVariableInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_variable::DeleteVariableInput { name: self.name })
     }
 }

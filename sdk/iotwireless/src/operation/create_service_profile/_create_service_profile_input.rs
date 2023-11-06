@@ -22,8 +22,10 @@ impl CreateServiceProfileInput {
         self.lo_ra_wan.as_ref()
     }
     /// <p>The tags to attach to the new service profile. Tags are metadata that you can use to manage a resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
@@ -112,7 +114,7 @@ impl CreateServiceProfileInputBuilder {
     /// Consumes the builder and constructs a [`CreateServiceProfileInput`](crate::operation::create_service_profile::CreateServiceProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_service_profile::CreateServiceProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_service_profile::CreateServiceProfileInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_service_profile::CreateServiceProfileInput {
             name: self.name,

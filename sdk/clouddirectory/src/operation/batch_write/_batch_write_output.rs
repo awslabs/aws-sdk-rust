@@ -9,8 +9,10 @@ pub struct BatchWriteOutput {
 }
 impl BatchWriteOutput {
     /// <p>A list of all the responses for each batch write.</p>
-    pub fn responses(&self) -> ::std::option::Option<&[crate::types::BatchWriteOperationResponse]> {
-        self.responses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.responses.is_none()`.
+    pub fn responses(&self) -> &[crate::types::BatchWriteOperationResponse] {
+        self.responses.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchWriteOutput {

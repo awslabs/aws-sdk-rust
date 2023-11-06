@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AudioConcatenationConfiguration {
     /// <p>Enables or disables the configuration object.</p>
-    pub state: ::std::option::Option<crate::types::AudioArtifactsConcatenationState>,
+    pub state: crate::types::AudioArtifactsConcatenationState,
 }
 impl AudioConcatenationConfiguration {
     /// <p>Enables or disables the configuration object.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::AudioArtifactsConcatenationState> {
-        self.state.as_ref()
+    pub fn state(&self) -> &crate::types::AudioArtifactsConcatenationState {
+        &self.state
     }
 }
 impl AudioConcatenationConfiguration {
@@ -28,6 +28,7 @@ pub struct AudioConcatenationConfigurationBuilder {
 }
 impl AudioConcatenationConfigurationBuilder {
     /// <p>Enables or disables the configuration object.</p>
+    /// This field is required.
     pub fn state(mut self, input: crate::types::AudioArtifactsConcatenationState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,16 @@ impl AudioConcatenationConfigurationBuilder {
         &self.state
     }
     /// Consumes the builder and constructs a [`AudioConcatenationConfiguration`](crate::types::AudioConcatenationConfiguration).
-    pub fn build(self) -> crate::types::AudioConcatenationConfiguration {
-        crate::types::AudioConcatenationConfiguration { state: self.state }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`state`](crate::types::builders::AudioConcatenationConfigurationBuilder::state)
+    pub fn build(self) -> ::std::result::Result<crate::types::AudioConcatenationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AudioConcatenationConfiguration {
+            state: self.state.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "state",
+                    "state was not specified but it is required when building AudioConcatenationConfiguration",
+                )
+            })?,
+        })
     }
 }

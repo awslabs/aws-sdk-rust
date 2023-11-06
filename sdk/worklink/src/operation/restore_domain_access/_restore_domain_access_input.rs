@@ -34,6 +34,7 @@ pub struct RestoreDomainAccessInputBuilder {
 }
 impl RestoreDomainAccessInputBuilder {
     /// <p>The ARN of the fleet.</p>
+    /// This field is required.
     pub fn fleet_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl RestoreDomainAccessInputBuilder {
         &self.fleet_arn
     }
     /// <p>The name of the domain.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl RestoreDomainAccessInputBuilder {
     /// Consumes the builder and constructs a [`RestoreDomainAccessInput`](crate::operation::restore_domain_access::RestoreDomainAccessInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::restore_domain_access::RestoreDomainAccessInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::restore_domain_access::RestoreDomainAccessInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::restore_domain_access::RestoreDomainAccessInput {
             fleet_arn: self.fleet_arn,

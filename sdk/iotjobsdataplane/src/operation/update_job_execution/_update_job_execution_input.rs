@@ -83,6 +83,7 @@ pub struct UpdateJobExecutionInputBuilder {
 }
 impl UpdateJobExecutionInputBuilder {
     /// <p>The unique identifier assigned to this job when it was created.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +98,7 @@ impl UpdateJobExecutionInputBuilder {
         &self.job_id
     }
     /// <p>The name of the thing associated with the device.</p>
+    /// This field is required.
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_name = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +113,7 @@ impl UpdateJobExecutionInputBuilder {
         &self.thing_name
     }
     /// <p>The new status for the job execution (IN_PROGRESS, FAILED, SUCCESS, or REJECTED). This must be specified on every update.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::JobExecutionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -224,7 +227,8 @@ impl UpdateJobExecutionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateJobExecutionInput`](crate::operation::update_job_execution::UpdateJobExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_job_execution::UpdateJobExecutionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_job_execution::UpdateJobExecutionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_job_execution::UpdateJobExecutionInput {
             job_id: self.job_id,
             thing_name: self.thing_name,

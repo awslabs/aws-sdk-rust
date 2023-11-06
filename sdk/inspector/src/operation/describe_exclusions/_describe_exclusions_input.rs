@@ -10,8 +10,10 @@ pub struct DescribeExclusionsInput {
 }
 impl DescribeExclusionsInput {
     /// <p>The list of ARNs that specify the exclusions that you want to describe.</p>
-    pub fn exclusion_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.exclusion_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclusion_arns.is_none()`.
+    pub fn exclusion_arns(&self) -> &[::std::string::String] {
+        self.exclusion_arns.as_deref().unwrap_or_default()
     }
     /// <p>The locale into which you want to translate the exclusion's title, description, and recommendation.</p>
     pub fn locale(&self) -> ::std::option::Option<&crate::types::Locale> {
@@ -70,7 +72,7 @@ impl DescribeExclusionsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeExclusionsInput`](crate::operation::describe_exclusions::DescribeExclusionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_exclusions::DescribeExclusionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_exclusions::DescribeExclusionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_exclusions::DescribeExclusionsInput {
             exclusion_arns: self.exclusion_arns,
             locale: self.locale,

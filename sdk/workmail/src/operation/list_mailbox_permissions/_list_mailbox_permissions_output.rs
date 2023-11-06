@@ -11,8 +11,10 @@ pub struct ListMailboxPermissionsOutput {
 }
 impl ListMailboxPermissionsOutput {
     /// <p>One page of the user, group, or resource mailbox permissions.</p>
-    pub fn permissions(&self) -> ::std::option::Option<&[crate::types::Permission]> {
-        self.permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permissions.is_none()`.
+    pub fn permissions(&self) -> &[crate::types::Permission] {
+        self.permissions.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. The value is "null" when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

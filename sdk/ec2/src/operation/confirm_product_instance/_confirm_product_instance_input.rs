@@ -41,6 +41,7 @@ pub struct ConfirmProductInstanceInputBuilder {
 }
 impl ConfirmProductInstanceInputBuilder {
     /// <p>The ID of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl ConfirmProductInstanceInputBuilder {
         &self.instance_id
     }
     /// <p>The product code. This must be a product code that you own.</p>
+    /// This field is required.
     pub fn product_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_code = ::std::option::Option::Some(input.into());
         self
@@ -85,8 +87,10 @@ impl ConfirmProductInstanceInputBuilder {
     /// Consumes the builder and constructs a [`ConfirmProductInstanceInput`](crate::operation::confirm_product_instance::ConfirmProductInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::confirm_product_instance::ConfirmProductInstanceInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::confirm_product_instance::ConfirmProductInstanceInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::confirm_product_instance::ConfirmProductInstanceInput {
             instance_id: self.instance_id,
             product_code: self.product_code,

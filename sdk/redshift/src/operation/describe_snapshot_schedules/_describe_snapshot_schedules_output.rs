@@ -11,8 +11,10 @@ pub struct DescribeSnapshotSchedulesOutput {
 }
 impl DescribeSnapshotSchedulesOutput {
     /// <p>A list of SnapshotSchedules.</p>
-    pub fn snapshot_schedules(&self) -> ::std::option::Option<&[crate::types::SnapshotSchedule]> {
-        self.snapshot_schedules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.snapshot_schedules.is_none()`.
+    pub fn snapshot_schedules(&self) -> &[crate::types::SnapshotSchedule] {
+        self.snapshot_schedules.as_deref().unwrap_or_default()
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>marker</code> parameter and retrying the command. If the <code>marker</code> field is empty, all response records have been retrieved for the request.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

@@ -8,8 +8,10 @@ pub struct BatchDetectDominantLanguageInput {
 }
 impl BatchDetectDominantLanguageInput {
     /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. Each document should contain at least 20 characters. The maximum size of each document is 5 KB.</p>
-    pub fn text_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.text_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.text_list.is_none()`.
+    pub fn text_list(&self) -> &[::std::string::String] {
+        self.text_list.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for BatchDetectDominantLanguageInput {
@@ -58,7 +60,7 @@ impl BatchDetectDominantLanguageInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_detect_dominant_language::BatchDetectDominantLanguageInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_detect_dominant_language::BatchDetectDominantLanguageInput { text_list: self.text_list })
     }

@@ -71,16 +71,20 @@ impl Component {
         self.platform.as_ref()
     }
     /// <p>The operating system (OS) version supported by the component. If the OS information is available, Image Builder performs a prefix match against the base image OS version during image recipe creation.</p>
-    pub fn supported_os_versions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.supported_os_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_os_versions.is_none()`.
+    pub fn supported_os_versions(&self) -> &[::std::string::String] {
+        self.supported_os_versions.as_deref().unwrap_or_default()
     }
     /// <p>Describes the current status of the component. This is used for components that are no longer active.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::ComponentState> {
         self.state.as_ref()
     }
     /// <p>Contains parameter details for each of the parameters that the component document defined for the component.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&[crate::types::ComponentParameterDetail]> {
-        self.parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
+    pub fn parameters(&self) -> &[crate::types::ComponentParameterDetail] {
+        self.parameters.as_deref().unwrap_or_default()
     }
     /// <p>The owner of the component.</p>
     pub fn owner(&self) -> ::std::option::Option<&str> {

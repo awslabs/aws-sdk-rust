@@ -34,6 +34,7 @@ pub struct GetRateBasedRuleManagedKeysInputBuilder {
 }
 impl GetRateBasedRuleManagedKeysInputBuilder {
     /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> for which you want to get a list of <code>ManagedKeys</code>. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
+    /// This field is required.
     pub fn rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl GetRateBasedRuleManagedKeysInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysInput {
             rule_id: self.rule_id,

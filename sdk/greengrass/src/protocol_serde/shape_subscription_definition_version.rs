@@ -2,7 +2,7 @@
 pub fn ser_subscription_definition_version(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SubscriptionDefinitionVersion,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.subscriptions {
         let mut array_2 = object.key("Subscriptions").start_array();
         for item_3 in var_1 {
@@ -34,8 +34,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Subscriptions" => {
-                            builder =
-                                builder.set_subscriptions(crate::protocol_serde::shape___list_of_subscription::de___list_of_subscription(tokens)?);
+                            builder = builder.set_subscriptions(crate::protocol_serde::shape_list_of_subscription::de_list_of_subscription(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -27,6 +27,7 @@ pub struct DetectEntitiesV2InputBuilder {
 }
 impl DetectEntitiesV2InputBuilder {
     /// <p>A UTF-8 string containing the clinical content being examined for entities.</p>
+    /// This field is required.
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DetectEntitiesV2InputBuilder {
     /// Consumes the builder and constructs a [`DetectEntitiesV2Input`](crate::operation::detect_entities_v2::DetectEntitiesV2Input).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::detect_entities_v2::DetectEntitiesV2Input, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::detect_entities_v2::DetectEntitiesV2Input, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::detect_entities_v2::DetectEntitiesV2Input { text: self.text })
     }
 }

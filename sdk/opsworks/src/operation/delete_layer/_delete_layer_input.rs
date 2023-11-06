@@ -27,6 +27,7 @@ pub struct DeleteLayerInputBuilder {
 }
 impl DeleteLayerInputBuilder {
     /// <p>The layer ID.</p>
+    /// This field is required.
     pub fn layer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.layer_id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl DeleteLayerInputBuilder {
         &self.layer_id
     }
     /// Consumes the builder and constructs a [`DeleteLayerInput`](crate::operation::delete_layer::DeleteLayerInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_layer::DeleteLayerInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_layer::DeleteLayerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_layer::DeleteLayerInput { layer_id: self.layer_id })
     }
 }

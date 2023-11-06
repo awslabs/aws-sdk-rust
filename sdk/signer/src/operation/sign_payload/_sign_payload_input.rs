@@ -48,6 +48,7 @@ pub struct SignPayloadInputBuilder {
 }
 impl SignPayloadInputBuilder {
     /// <p>The name of the signing profile.</p>
+    /// This field is required.
     pub fn profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl SignPayloadInputBuilder {
         &self.profile_owner
     }
     /// <p>Specifies the object digest (hash) to sign.</p>
+    /// This field is required.
     pub fn payload(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.payload = ::std::option::Option::Some(input);
         self
@@ -90,6 +92,7 @@ impl SignPayloadInputBuilder {
         &self.payload
     }
     /// <p>Payload content type</p>
+    /// This field is required.
     pub fn payload_format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.payload_format = ::std::option::Option::Some(input.into());
         self
@@ -104,7 +107,7 @@ impl SignPayloadInputBuilder {
         &self.payload_format
     }
     /// Consumes the builder and constructs a [`SignPayloadInput`](crate::operation::sign_payload::SignPayloadInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::sign_payload::SignPayloadInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::sign_payload::SignPayloadInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::sign_payload::SignPayloadInput {
             profile_name: self.profile_name,
             profile_owner: self.profile_owner,

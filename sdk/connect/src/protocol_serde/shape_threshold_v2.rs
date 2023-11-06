@@ -2,7 +2,7 @@
 pub fn ser_threshold_v2(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ThresholdV2,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.comparison {
         object.key("Comparison").string(var_1.as_str());
     }

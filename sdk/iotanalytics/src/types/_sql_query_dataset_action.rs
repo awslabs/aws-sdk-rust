@@ -5,18 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SqlQueryDatasetAction {
     /// <p>A SQL query string.</p>
-    pub sql_query: ::std::option::Option<::std::string::String>,
+    pub sql_query: ::std::string::String,
     /// <p>Prefilters applied to message data.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::QueryFilter>>,
 }
 impl SqlQueryDatasetAction {
     /// <p>A SQL query string.</p>
-    pub fn sql_query(&self) -> ::std::option::Option<&str> {
-        self.sql_query.as_deref()
+    pub fn sql_query(&self) -> &str {
+        use std::ops::Deref;
+        self.sql_query.deref()
     }
     /// <p>Prefilters applied to message data.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::QueryFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::QueryFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
 }
 impl SqlQueryDatasetAction {
@@ -35,6 +38,7 @@ pub struct SqlQueryDatasetActionBuilder {
 }
 impl SqlQueryDatasetActionBuilder {
     /// <p>A SQL query string.</p>
+    /// This field is required.
     pub fn sql_query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sql_query = ::std::option::Option::Some(input.into());
         self
@@ -69,10 +73,17 @@ impl SqlQueryDatasetActionBuilder {
         &self.filters
     }
     /// Consumes the builder and constructs a [`SqlQueryDatasetAction`](crate::types::SqlQueryDatasetAction).
-    pub fn build(self) -> crate::types::SqlQueryDatasetAction {
-        crate::types::SqlQueryDatasetAction {
-            sql_query: self.sql_query,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`sql_query`](crate::types::builders::SqlQueryDatasetActionBuilder::sql_query)
+    pub fn build(self) -> ::std::result::Result<crate::types::SqlQueryDatasetAction, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SqlQueryDatasetAction {
+            sql_query: self.sql_query.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "sql_query",
+                    "sql_query was not specified but it is required when building SqlQueryDatasetAction",
+                )
+            })?,
             filters: self.filters,
-        }
+        })
     }
 }

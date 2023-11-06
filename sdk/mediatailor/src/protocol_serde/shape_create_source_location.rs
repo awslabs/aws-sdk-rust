@@ -37,12 +37,12 @@ pub fn de_create_source_location_http_response(
 
 pub fn ser_create_source_location_input(
     input: &crate::operation::create_source_location::CreateSourceLocationInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_source_location_input::ser_create_source_location_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_create_source_location(
@@ -91,7 +91,7 @@ pub(crate) fn de_create_source_location(
                 }
                 "SegmentDeliveryConfigurations" => {
                     builder = builder.set_segment_delivery_configurations(
-                        crate::protocol_serde::shape___list_of_segment_delivery_configuration::de___list_of_segment_delivery_configuration(tokens)?,
+                        crate::protocol_serde::shape_list_of_segment_delivery_configuration::de_list_of_segment_delivery_configuration(tokens)?,
                     );
                 }
                 "SourceLocationName" => {
@@ -102,7 +102,7 @@ pub(crate) fn de_create_source_location(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape___map_of__string::de___map_of__string(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

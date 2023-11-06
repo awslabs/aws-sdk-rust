@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Distribution {
     /// <p>The Amazon Web Services Region where the traffic is distributed.</p>
-    pub region: ::std::option::Option<::std::string::String>,
+    pub region: ::std::string::String,
     /// <p>The percentage of the traffic that is distributed, in increments of 10.</p>
     pub percentage: i32,
 }
 impl Distribution {
     /// <p>The Amazon Web Services Region where the traffic is distributed.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
-        self.region.as_deref()
+    pub fn region(&self) -> &str {
+        use std::ops::Deref;
+        self.region.deref()
     }
     /// <p>The percentage of the traffic that is distributed, in increments of 10.</p>
     pub fn percentage(&self) -> i32 {
@@ -35,6 +36,7 @@ pub struct DistributionBuilder {
 }
 impl DistributionBuilder {
     /// <p>The Amazon Web Services Region where the traffic is distributed.</p>
+    /// This field is required.
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl DistributionBuilder {
         &self.region
     }
     /// <p>The percentage of the traffic that is distributed, in increments of 10.</p>
+    /// This field is required.
     pub fn percentage(mut self, input: i32) -> Self {
         self.percentage = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,17 @@ impl DistributionBuilder {
         &self.percentage
     }
     /// Consumes the builder and constructs a [`Distribution`](crate::types::Distribution).
-    pub fn build(self) -> crate::types::Distribution {
-        crate::types::Distribution {
-            region: self.region,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`region`](crate::types::builders::DistributionBuilder::region)
+    pub fn build(self) -> ::std::result::Result<crate::types::Distribution, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Distribution {
+            region: self.region.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "region",
+                    "region was not specified but it is required when building Distribution",
+                )
+            })?,
             percentage: self.percentage.unwrap_or_default(),
-        }
+        })
     }
 }

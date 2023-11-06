@@ -35,6 +35,7 @@ pub struct ShadowModelVariantConfigBuilder {
 }
 impl ShadowModelVariantConfigBuilder {
     /// <p>The name of the shadow variant.</p>
+    /// This field is required.
     pub fn shadow_model_variant_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shadow_model_variant_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl ShadowModelVariantConfigBuilder {
         &self.shadow_model_variant_name
     }
     /// <p> The percentage of inference requests that Amazon SageMaker replicates from the production variant to the shadow variant. </p>
+    /// This field is required.
     pub fn sampling_percentage(mut self, input: i32) -> Self {
         self.sampling_percentage = ::std::option::Option::Some(input);
         self

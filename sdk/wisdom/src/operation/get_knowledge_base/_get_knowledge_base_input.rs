@@ -27,6 +27,7 @@ pub struct GetKnowledgeBaseInputBuilder {
 }
 impl GetKnowledgeBaseInputBuilder {
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// This field is required.
     pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.knowledge_base_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetKnowledgeBaseInputBuilder {
     /// Consumes the builder and constructs a [`GetKnowledgeBaseInput`](crate::operation::get_knowledge_base::GetKnowledgeBaseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_knowledge_base::GetKnowledgeBaseInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_knowledge_base::GetKnowledgeBaseInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_knowledge_base::GetKnowledgeBaseInput {
             knowledge_base_id: self.knowledge_base_id,
         })

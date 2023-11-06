@@ -88,6 +88,7 @@ impl PutRecommendationPreferencesInputBuilder {
     /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p> <note>
     /// <p>The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p>
     /// </note>
+    /// This field is required.
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
@@ -204,7 +205,7 @@ impl PutRecommendationPreferencesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_recommendation_preferences::PutRecommendationPreferencesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_recommendation_preferences::PutRecommendationPreferencesInput {
             resource_type: self.resource_type,

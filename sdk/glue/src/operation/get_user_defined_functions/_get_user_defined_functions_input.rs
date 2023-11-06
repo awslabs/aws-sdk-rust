@@ -83,6 +83,7 @@ impl GetUserDefinedFunctionsInputBuilder {
         &self.database_name
     }
     /// <p>An optional function-name pattern string that filters the function definitions returned.</p>
+    /// This field is required.
     pub fn pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pattern = ::std::option::Option::Some(input.into());
         self
@@ -129,7 +130,7 @@ impl GetUserDefinedFunctionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_user_defined_functions::GetUserDefinedFunctionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_user_defined_functions::GetUserDefinedFunctionsInput {
             catalog_id: self.catalog_id,

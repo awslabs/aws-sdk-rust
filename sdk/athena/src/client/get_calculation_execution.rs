@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetCalculationExecution`](crate::operation::get_calculation_execution::builders::GetCalculationExecutionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`calculation_execution_id(impl Into<String>)`](crate::operation::get_calculation_execution::builders::GetCalculationExecutionFluentBuilder::calculation_execution_id) / [`set_calculation_execution_id(Option<String>)`](crate::operation::get_calculation_execution::builders::GetCalculationExecutionFluentBuilder::set_calculation_execution_id): <p>The calculation execution UUID.</p>
+    ///   - [`calculation_execution_id(impl Into<String>)`](crate::operation::get_calculation_execution::builders::GetCalculationExecutionFluentBuilder::calculation_execution_id) / [`set_calculation_execution_id(Option<String>)`](crate::operation::get_calculation_execution::builders::GetCalculationExecutionFluentBuilder::set_calculation_execution_id):<br>required: **true**<br><p>The calculation execution UUID.</p><br>
     /// - On success, responds with [`GetCalculationExecutionOutput`](crate::operation::get_calculation_execution::GetCalculationExecutionOutput) with field(s):
     ///   - [`calculation_execution_id(Option<String>)`](crate::operation::get_calculation_execution::GetCalculationExecutionOutput::calculation_execution_id): <p>The calculation execution UUID.</p>
     ///   - [`session_id(Option<String>)`](crate::operation::get_calculation_execution::GetCalculationExecutionOutput::session_id): <p>The session ID that the calculation ran in.</p>

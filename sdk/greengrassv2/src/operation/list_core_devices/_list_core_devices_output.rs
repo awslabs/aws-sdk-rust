@@ -11,8 +11,10 @@ pub struct ListCoreDevicesOutput {
 }
 impl ListCoreDevicesOutput {
     /// <p>A list that summarizes each core device.</p>
-    pub fn core_devices(&self) -> ::std::option::Option<&[crate::types::CoreDevice]> {
-        self.core_devices.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.core_devices.is_none()`.
+    pub fn core_devices(&self) -> &[crate::types::CoreDevice] {
+        self.core_devices.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

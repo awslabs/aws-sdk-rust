@@ -10,7 +10,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomErrorResponse {
     /// <p>The HTTP status code for which you want to specify a custom error page and/or a caching duration.</p>
-    pub error_code: ::std::option::Option<i32>,
+    pub error_code: i32,
     /// <p>The path to the custom error page that you want CloudFront to return to a viewer when your origin returns the HTTP status code specified by <code>ErrorCode</code>, for example, <code>/4xx-errors/403-forbidden.html</code>. If you want to store your objects and your custom error pages in different locations, your distribution must include a cache behavior for which the following is true:</p>
     /// <ul>
     /// <li> <p>The value of <code>PathPattern</code> matches the path to your custom error messages. For example, suppose you saved custom error pages for 4xx errors in an Amazon S3 bucket in a directory named <code>/4xx-errors</code>. Your distribution must include a cache behavior for which the path pattern routes requests for your custom error pages to that location, for example, <code>/4xx-errors/*</code>.</p> </li>
@@ -33,7 +33,7 @@ pub struct CustomErrorResponse {
 }
 impl CustomErrorResponse {
     /// <p>The HTTP status code for which you want to specify a custom error page and/or a caching duration.</p>
-    pub fn error_code(&self) -> ::std::option::Option<i32> {
+    pub fn error_code(&self) -> i32 {
         self.error_code
     }
     /// <p>The path to the custom error page that you want CloudFront to return to a viewer when your origin returns the HTTP status code specified by <code>ErrorCode</code>, for example, <code>/4xx-errors/403-forbidden.html</code>. If you want to store your objects and your custom error pages in different locations, your distribution must include a cache behavior for which the following is true:</p>
@@ -80,6 +80,7 @@ pub struct CustomErrorResponseBuilder {
 }
 impl CustomErrorResponseBuilder {
     /// <p>The HTTP status code for which you want to specify a custom error page and/or a caching duration.</p>
+    /// This field is required.
     pub fn error_code(mut self, input: i32) -> Self {
         self.error_code = ::std::option::Option::Some(input);
         self
@@ -175,12 +176,19 @@ impl CustomErrorResponseBuilder {
         &self.error_caching_min_ttl
     }
     /// Consumes the builder and constructs a [`CustomErrorResponse`](crate::types::CustomErrorResponse).
-    pub fn build(self) -> crate::types::CustomErrorResponse {
-        crate::types::CustomErrorResponse {
-            error_code: self.error_code,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`error_code`](crate::types::builders::CustomErrorResponseBuilder::error_code)
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomErrorResponse, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CustomErrorResponse {
+            error_code: self.error_code.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "error_code",
+                    "error_code was not specified but it is required when building CustomErrorResponse",
+                )
+            })?,
             response_page_path: self.response_page_path,
             response_code: self.response_code,
             error_caching_min_ttl: self.error_caching_min_ttl,
-        }
+        })
     }
 }

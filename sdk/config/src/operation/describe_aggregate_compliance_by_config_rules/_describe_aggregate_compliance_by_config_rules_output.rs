@@ -11,8 +11,10 @@ pub struct DescribeAggregateComplianceByConfigRulesOutput {
 }
 impl DescribeAggregateComplianceByConfigRulesOutput {
     /// <p>Returns a list of AggregateComplianceByConfigRule object.</p>
-    pub fn aggregate_compliance_by_config_rules(&self) -> ::std::option::Option<&[crate::types::AggregateComplianceByConfigRule]> {
-        self.aggregate_compliance_by_config_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aggregate_compliance_by_config_rules.is_none()`.
+    pub fn aggregate_compliance_by_config_rules(&self) -> &[crate::types::AggregateComplianceByConfigRule] {
+        self.aggregate_compliance_by_config_rules.as_deref().unwrap_or_default()
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

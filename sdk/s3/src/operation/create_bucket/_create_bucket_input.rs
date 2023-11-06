@@ -112,6 +112,7 @@ impl CreateBucketInputBuilder {
         &self.acl
     }
     /// <p>The name of the bucket to create.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -250,7 +251,9 @@ impl CreateBucketInputBuilder {
         &self.object_ownership
     }
     /// Consumes the builder and constructs a [`CreateBucketInput`](crate::operation::create_bucket::CreateBucketInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_bucket::CreateBucketInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_bucket::CreateBucketInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_bucket::CreateBucketInput {
             acl: self.acl,
             bucket: self.bucket,

@@ -4,25 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetChannelPolicyOutput {
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
-    pub channel_group_name: ::std::option::Option<::std::string::String>,
+    pub channel_group_name: ::std::string::String,
     /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group.</p>
-    pub channel_name: ::std::option::Option<::std::string::String>,
+    pub channel_name: ::std::string::String,
     /// <p>The policy assigned to the channel.</p>
-    pub policy: ::std::option::Option<::std::string::String>,
+    pub policy: ::std::string::String,
     _request_id: Option<String>,
 }
 impl GetChannelPolicyOutput {
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
-    pub fn channel_group_name(&self) -> ::std::option::Option<&str> {
-        self.channel_group_name.as_deref()
+    pub fn channel_group_name(&self) -> &str {
+        use std::ops::Deref;
+        self.channel_group_name.deref()
     }
     /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group.</p>
-    pub fn channel_name(&self) -> ::std::option::Option<&str> {
-        self.channel_name.as_deref()
+    pub fn channel_name(&self) -> &str {
+        use std::ops::Deref;
+        self.channel_name.deref()
     }
     /// <p>The policy assigned to the channel.</p>
-    pub fn policy(&self) -> ::std::option::Option<&str> {
-        self.policy.as_deref()
+    pub fn policy(&self) -> &str {
+        use std::ops::Deref;
+        self.policy.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetChannelPolicyOutput {
@@ -48,6 +51,7 @@ pub struct GetChannelPolicyOutputBuilder {
 }
 impl GetChannelPolicyOutputBuilder {
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
+    /// This field is required.
     pub fn channel_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_group_name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +66,7 @@ impl GetChannelPolicyOutputBuilder {
         &self.channel_group_name
     }
     /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group.</p>
+    /// This field is required.
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +81,7 @@ impl GetChannelPolicyOutputBuilder {
         &self.channel_name
     }
     /// <p>The policy assigned to the channel.</p>
+    /// This field is required.
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
         self
@@ -99,12 +105,33 @@ impl GetChannelPolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetChannelPolicyOutput`](crate::operation::get_channel_policy::GetChannelPolicyOutput).
-    pub fn build(self) -> crate::operation::get_channel_policy::GetChannelPolicyOutput {
-        crate::operation::get_channel_policy::GetChannelPolicyOutput {
-            channel_group_name: self.channel_group_name,
-            channel_name: self.channel_name,
-            policy: self.policy,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`channel_group_name`](crate::operation::get_channel_policy::builders::GetChannelPolicyOutputBuilder::channel_group_name)
+    /// - [`channel_name`](crate::operation::get_channel_policy::builders::GetChannelPolicyOutputBuilder::channel_name)
+    /// - [`policy`](crate::operation::get_channel_policy::builders::GetChannelPolicyOutputBuilder::policy)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_channel_policy::GetChannelPolicyOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_channel_policy::GetChannelPolicyOutput {
+            channel_group_name: self.channel_group_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "channel_group_name",
+                    "channel_group_name was not specified but it is required when building GetChannelPolicyOutput",
+                )
+            })?,
+            channel_name: self.channel_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "channel_name",
+                    "channel_name was not specified but it is required when building GetChannelPolicyOutput",
+                )
+            })?,
+            policy: self.policy.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "policy",
+                    "policy was not specified but it is required when building GetChannelPolicyOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

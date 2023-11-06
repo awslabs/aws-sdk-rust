@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduleLambdaFunctionDecisionAttributes {
     /// <p>A string that identifies the Lambda function execution in the event history.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The name, or ARN, of the Lambda function to schedule.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The data attached to the event that the decider can use in subsequent workflow tasks. This data isn't sent to the Lambda task.</p>
     pub control: ::std::option::Option<::std::string::String>,
     /// <p>The optional input data to be supplied to the Lambda function.</p>
@@ -18,12 +18,14 @@ pub struct ScheduleLambdaFunctionDecisionAttributes {
 }
 impl ScheduleLambdaFunctionDecisionAttributes {
     /// <p>A string that identifies the Lambda function execution in the event history.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The name, or ARN, of the Lambda function to schedule.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The data attached to the event that the decider can use in subsequent workflow tasks. This data isn't sent to the Lambda task.</p>
     pub fn control(&self) -> ::std::option::Option<&str> {
@@ -58,6 +60,7 @@ pub struct ScheduleLambdaFunctionDecisionAttributesBuilder {
 }
 impl ScheduleLambdaFunctionDecisionAttributesBuilder {
     /// <p>A string that identifies the Lambda function execution in the event history.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -72,6 +75,7 @@ impl ScheduleLambdaFunctionDecisionAttributesBuilder {
         &self.id
     }
     /// <p>The name, or ARN, of the Lambda function to schedule.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -131,13 +135,28 @@ impl ScheduleLambdaFunctionDecisionAttributesBuilder {
         &self.start_to_close_timeout
     }
     /// Consumes the builder and constructs a [`ScheduleLambdaFunctionDecisionAttributes`](crate::types::ScheduleLambdaFunctionDecisionAttributes).
-    pub fn build(self) -> crate::types::ScheduleLambdaFunctionDecisionAttributes {
-        crate::types::ScheduleLambdaFunctionDecisionAttributes {
-            id: self.id,
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::ScheduleLambdaFunctionDecisionAttributesBuilder::id)
+    /// - [`name`](crate::types::builders::ScheduleLambdaFunctionDecisionAttributesBuilder::name)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::ScheduleLambdaFunctionDecisionAttributes, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ScheduleLambdaFunctionDecisionAttributes {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building ScheduleLambdaFunctionDecisionAttributes",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ScheduleLambdaFunctionDecisionAttributes",
+                )
+            })?,
             control: self.control,
             input: self.input,
             start_to_close_timeout: self.start_to_close_timeout,
-        }
+        })
     }
 }

@@ -20,8 +20,10 @@ impl UpdateRuleGroupInput {
     /// <p>An array of <code>RuleGroupUpdate</code> objects that you want to insert into or delete from a <code>RuleGroup</code>.</p>
     /// <p>You can only insert <code>REGULAR</code> rules into a rule group.</p>
     /// <p> <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
-    pub fn updates(&self) -> ::std::option::Option<&[crate::types::RuleGroupUpdate]> {
-        self.updates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.updates.is_none()`.
+    pub fn updates(&self) -> &[crate::types::RuleGroupUpdate] {
+        self.updates.as_deref().unwrap_or_default()
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(&self) -> ::std::option::Option<&str> {
@@ -45,6 +47,7 @@ pub struct UpdateRuleGroupInputBuilder {
 }
 impl UpdateRuleGroupInputBuilder {
     /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to update. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
+    /// This field is required.
     pub fn rule_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_group_id = ::std::option::Option::Some(input.into());
         self
@@ -85,6 +88,7 @@ impl UpdateRuleGroupInputBuilder {
         &self.updates
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    /// This field is required.
     pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_token = ::std::option::Option::Some(input.into());
         self
@@ -101,7 +105,7 @@ impl UpdateRuleGroupInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRuleGroupInput`](crate::operation::update_rule_group::UpdateRuleGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_rule_group::UpdateRuleGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_rule_group::UpdateRuleGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_rule_group::UpdateRuleGroupInput {
             rule_group_id: self.rule_group_id,
             updates: self.updates,

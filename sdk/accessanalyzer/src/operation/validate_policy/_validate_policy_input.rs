@@ -108,6 +108,7 @@ impl ValidatePolicyInputBuilder {
         &self.next_token
     }
     /// <p>The JSON policy document to use as the content for the policy.</p>
+    /// This field is required.
     pub fn policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_document = ::std::option::Option::Some(input.into());
         self
@@ -123,6 +124,7 @@ impl ValidatePolicyInputBuilder {
     }
     /// <p>The type of policy to validate. Identity policies grant permissions to IAM principals. Identity policies include managed and inline policies for IAM roles, users, and groups. They also include service-control policies (SCPs) that are attached to an Amazon Web Services organization, organizational unit (OU), or an account.</p>
     /// <p>Resource policies grant permissions on Amazon Web Services resources. Resource policies include trust policies for IAM roles and bucket policies for Amazon S3 buckets. You can provide a generic input such as identity policy or resource policy or a specific input such as managed policy or Amazon S3 bucket policy. </p>
+    /// This field is required.
     pub fn policy_type(mut self, input: crate::types::PolicyType) -> Self {
         self.policy_type = ::std::option::Option::Some(input);
         self
@@ -158,7 +160,7 @@ impl ValidatePolicyInputBuilder {
     /// Consumes the builder and constructs a [`ValidatePolicyInput`](crate::operation::validate_policy::ValidatePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::validate_policy::ValidatePolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::validate_policy::ValidatePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::validate_policy::ValidatePolicyInput {
             locale: self.locale,
             max_results: self.max_results,

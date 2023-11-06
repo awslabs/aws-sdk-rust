@@ -27,6 +27,7 @@ pub struct DescribeClusterInputBuilder {
 }
 impl DescribeClusterInputBuilder {
     /// <p>The name of the cluster to describe.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeClusterInputBuilder {
     /// Consumes the builder and constructs a [`DescribeClusterInput`](crate::operation::describe_cluster::DescribeClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_cluster::DescribeClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_cluster::DescribeClusterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_cluster::DescribeClusterInput { name: self.name })
     }
 }

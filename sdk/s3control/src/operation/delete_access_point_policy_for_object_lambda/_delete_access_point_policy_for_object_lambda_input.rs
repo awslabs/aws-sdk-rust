@@ -34,6 +34,7 @@ pub struct DeleteAccessPointPolicyForObjectLambdaInputBuilder {
 }
 impl DeleteAccessPointPolicyForObjectLambdaInputBuilder {
     /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteAccessPointPolicyForObjectLambdaInputBuilder {
         &self.account_id
     }
     /// <p>The name of the Object Lambda Access Point you want to delete the policy for.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl DeleteAccessPointPolicyForObjectLambdaInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_access_point_policy_for_object_lambda::DeleteAccessPointPolicyForObjectLambdaInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_access_point_policy_for_object_lambda::DeleteAccessPointPolicyForObjectLambdaInput {

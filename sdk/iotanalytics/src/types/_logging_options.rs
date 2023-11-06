@@ -5,20 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoggingOptions {
     /// <p>The ARN of the role that grants permission to IoT Analytics to perform logging.</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
     /// <p>The logging level. Currently, only ERROR is supported.</p>
-    pub level: ::std::option::Option<crate::types::LoggingLevel>,
+    pub level: crate::types::LoggingLevel,
     /// <p>If true, logging is enabled for IoT Analytics.</p>
     pub enabled: bool,
 }
 impl LoggingOptions {
     /// <p>The ARN of the role that grants permission to IoT Analytics to perform logging.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
     /// <p>The logging level. Currently, only ERROR is supported.</p>
-    pub fn level(&self) -> ::std::option::Option<&crate::types::LoggingLevel> {
-        self.level.as_ref()
+    pub fn level(&self) -> &crate::types::LoggingLevel {
+        &self.level
     }
     /// <p>If true, logging is enabled for IoT Analytics.</p>
     pub fn enabled(&self) -> bool {
@@ -42,6 +43,7 @@ pub struct LoggingOptionsBuilder {
 }
 impl LoggingOptionsBuilder {
     /// <p>The ARN of the role that grants permission to IoT Analytics to perform logging.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +58,7 @@ impl LoggingOptionsBuilder {
         &self.role_arn
     }
     /// <p>The logging level. Currently, only ERROR is supported.</p>
+    /// This field is required.
     pub fn level(mut self, input: crate::types::LoggingLevel) -> Self {
         self.level = ::std::option::Option::Some(input);
         self
@@ -70,6 +73,7 @@ impl LoggingOptionsBuilder {
         &self.level
     }
     /// <p>If true, logging is enabled for IoT Analytics.</p>
+    /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
@@ -84,11 +88,24 @@ impl LoggingOptionsBuilder {
         &self.enabled
     }
     /// Consumes the builder and constructs a [`LoggingOptions`](crate::types::LoggingOptions).
-    pub fn build(self) -> crate::types::LoggingOptions {
-        crate::types::LoggingOptions {
-            role_arn: self.role_arn,
-            level: self.level,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`role_arn`](crate::types::builders::LoggingOptionsBuilder::role_arn)
+    /// - [`level`](crate::types::builders::LoggingOptionsBuilder::level)
+    pub fn build(self) -> ::std::result::Result<crate::types::LoggingOptions, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::LoggingOptions {
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building LoggingOptions",
+                )
+            })?,
+            level: self.level.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "level",
+                    "level was not specified but it is required when building LoggingOptions",
+                )
+            })?,
             enabled: self.enabled.unwrap_or_default(),
-        }
+        })
     }
 }

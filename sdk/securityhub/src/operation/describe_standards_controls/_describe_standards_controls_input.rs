@@ -43,6 +43,7 @@ pub struct DescribeStandardsControlsInputBuilder {
 }
 impl DescribeStandardsControlsInputBuilder {
     /// <p>The ARN of a resource that represents your subscription to a supported standard. To get the subscription ARNs of the standards you have enabled, use the <code>GetEnabledStandards</code> operation.</p>
+    /// This field is required.
     pub fn standards_subscription_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.standards_subscription_arn = ::std::option::Option::Some(input.into());
         self
@@ -92,7 +93,7 @@ impl DescribeStandardsControlsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_standards_controls::DescribeStandardsControlsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_standards_controls::DescribeStandardsControlsInput {
             standards_subscription_arn: self.standards_subscription_arn,

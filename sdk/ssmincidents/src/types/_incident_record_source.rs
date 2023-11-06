@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IncidentRecordSource {
     /// <p>The principal that started the incident.</p>
-    pub created_by: ::std::option::Option<::std::string::String>,
+    pub created_by: ::std::string::String,
     /// <p>The service principal that assumed the role specified in <code>createdBy</code>. If no service principal assumed the role this will be left blank.</p>
     pub invoked_by: ::std::option::Option<::std::string::String>,
     /// <p>The resource that caused the incident to be created.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The service that started the incident. This can be manually created from Incident Manager, automatically created using an Amazon CloudWatch alarm, or Amazon EventBridge event.</p>
-    pub source: ::std::option::Option<::std::string::String>,
+    pub source: ::std::string::String,
 }
 impl IncidentRecordSource {
     /// <p>The principal that started the incident.</p>
-    pub fn created_by(&self) -> ::std::option::Option<&str> {
-        self.created_by.as_deref()
+    pub fn created_by(&self) -> &str {
+        use std::ops::Deref;
+        self.created_by.deref()
     }
     /// <p>The service principal that assumed the role specified in <code>createdBy</code>. If no service principal assumed the role this will be left blank.</p>
     pub fn invoked_by(&self) -> ::std::option::Option<&str> {
@@ -27,8 +28,9 @@ impl IncidentRecordSource {
         self.resource_arn.as_deref()
     }
     /// <p>The service that started the incident. This can be manually created from Incident Manager, automatically created using an Amazon CloudWatch alarm, or Amazon EventBridge event.</p>
-    pub fn source(&self) -> ::std::option::Option<&str> {
-        self.source.as_deref()
+    pub fn source(&self) -> &str {
+        use std::ops::Deref;
+        self.source.deref()
     }
 }
 impl IncidentRecordSource {
@@ -49,6 +51,7 @@ pub struct IncidentRecordSourceBuilder {
 }
 impl IncidentRecordSourceBuilder {
     /// <p>The principal that started the incident.</p>
+    /// This field is required.
     pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +94,7 @@ impl IncidentRecordSourceBuilder {
         &self.resource_arn
     }
     /// <p>The service that started the incident. This can be manually created from Incident Manager, automatically created using an Amazon CloudWatch alarm, or Amazon EventBridge event.</p>
+    /// This field is required.
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +109,25 @@ impl IncidentRecordSourceBuilder {
         &self.source
     }
     /// Consumes the builder and constructs a [`IncidentRecordSource`](crate::types::IncidentRecordSource).
-    pub fn build(self) -> crate::types::IncidentRecordSource {
-        crate::types::IncidentRecordSource {
-            created_by: self.created_by,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`created_by`](crate::types::builders::IncidentRecordSourceBuilder::created_by)
+    /// - [`source`](crate::types::builders::IncidentRecordSourceBuilder::source)
+    pub fn build(self) -> ::std::result::Result<crate::types::IncidentRecordSource, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::IncidentRecordSource {
+            created_by: self.created_by.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_by",
+                    "created_by was not specified but it is required when building IncidentRecordSource",
+                )
+            })?,
             invoked_by: self.invoked_by,
             resource_arn: self.resource_arn,
-            source: self.source,
-        }
+            source: self.source.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "source",
+                    "source was not specified but it is required when building IncidentRecordSource",
+                )
+            })?,
+        })
     }
 }

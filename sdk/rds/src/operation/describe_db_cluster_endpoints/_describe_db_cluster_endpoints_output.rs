@@ -15,8 +15,10 @@ impl DescribeDbClusterEndpointsOutput {
         self.marker.as_deref()
     }
     /// <p>Contains the details of the endpoints associated with the cluster and matching any filter conditions.</p>
-    pub fn db_cluster_endpoints(&self) -> ::std::option::Option<&[crate::types::DbClusterEndpoint]> {
-        self.db_cluster_endpoints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_cluster_endpoints.is_none()`.
+    pub fn db_cluster_endpoints(&self) -> &[crate::types::DbClusterEndpoint] {
+        self.db_cluster_endpoints.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeDbClusterEndpointsOutput {

@@ -2,7 +2,7 @@
 pub fn ser_on_device_service_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OnDeviceServiceConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.nfs_on_device_service {
         #[allow(unused_mut)]
         let mut object_2 = object.key("NFSOnDeviceService").start_object();

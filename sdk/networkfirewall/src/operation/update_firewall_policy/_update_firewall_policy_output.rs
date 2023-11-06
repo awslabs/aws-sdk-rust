@@ -5,7 +5,7 @@
 pub struct UpdateFirewallPolicyOutput {
     /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request. </p>
     /// <p>To make changes to the policy, you provide the token in your request. Network Firewall uses the token to ensure that the policy hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall policy again to get a current copy of it with current token. Reapply your changes as needed, then try the operation again using the new token. </p>
-    pub update_token: ::std::option::Option<::std::string::String>,
+    pub update_token: ::std::string::String,
     /// <p>The high-level properties of a firewall policy. This, along with the <code>FirewallPolicy</code>, define the policy. You can retrieve all objects for a firewall policy by calling <code>DescribeFirewallPolicy</code>. </p>
     pub firewall_policy_response: ::std::option::Option<crate::types::FirewallPolicyResponse>,
     _request_id: Option<String>,
@@ -13,8 +13,9 @@ pub struct UpdateFirewallPolicyOutput {
 impl UpdateFirewallPolicyOutput {
     /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request. </p>
     /// <p>To make changes to the policy, you provide the token in your request. Network Firewall uses the token to ensure that the policy hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall policy again to get a current copy of it with current token. Reapply your changes as needed, then try the operation again using the new token. </p>
-    pub fn update_token(&self) -> ::std::option::Option<&str> {
-        self.update_token.as_deref()
+    pub fn update_token(&self) -> &str {
+        use std::ops::Deref;
+        self.update_token.deref()
     }
     /// <p>The high-level properties of a firewall policy. This, along with the <code>FirewallPolicy</code>, define the policy. You can retrieve all objects for a firewall policy by calling <code>DescribeFirewallPolicy</code>. </p>
     pub fn firewall_policy_response(&self) -> ::std::option::Option<&crate::types::FirewallPolicyResponse> {
@@ -44,6 +45,7 @@ pub struct UpdateFirewallPolicyOutputBuilder {
 impl UpdateFirewallPolicyOutputBuilder {
     /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request. </p>
     /// <p>To make changes to the policy, you provide the token in your request. Network Firewall uses the token to ensure that the policy hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall policy again to get a current copy of it with current token. Reapply your changes as needed, then try the operation again using the new token. </p>
+    /// This field is required.
     pub fn update_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.update_token = ::std::option::Option::Some(input.into());
         self
@@ -60,6 +62,7 @@ impl UpdateFirewallPolicyOutputBuilder {
         &self.update_token
     }
     /// <p>The high-level properties of a firewall policy. This, along with the <code>FirewallPolicy</code>, define the policy. You can retrieve all objects for a firewall policy by calling <code>DescribeFirewallPolicy</code>. </p>
+    /// This field is required.
     pub fn firewall_policy_response(mut self, input: crate::types::FirewallPolicyResponse) -> Self {
         self.firewall_policy_response = ::std::option::Option::Some(input);
         self
@@ -83,11 +86,21 @@ impl UpdateFirewallPolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateFirewallPolicyOutput`](crate::operation::update_firewall_policy::UpdateFirewallPolicyOutput).
-    pub fn build(self) -> crate::operation::update_firewall_policy::UpdateFirewallPolicyOutput {
-        crate::operation::update_firewall_policy::UpdateFirewallPolicyOutput {
-            update_token: self.update_token,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`update_token`](crate::operation::update_firewall_policy::builders::UpdateFirewallPolicyOutputBuilder::update_token)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_firewall_policy::UpdateFirewallPolicyOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_firewall_policy::UpdateFirewallPolicyOutput {
+            update_token: self.update_token.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "update_token",
+                    "update_token was not specified but it is required when building UpdateFirewallPolicyOutput",
+                )
+            })?,
             firewall_policy_response: self.firewall_policy_response,
             _request_id: self._request_id,
-        }
+        })
     }
 }

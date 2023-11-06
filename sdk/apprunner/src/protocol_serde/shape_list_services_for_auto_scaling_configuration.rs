@@ -36,8 +36,8 @@ pub fn de_list_services_for_auto_scaling_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidRequestException" => crate::operation::list_services_for_auto_scaling_configuration::ListServicesForAutoScalingConfigurationError::InvalidRequestException({
@@ -52,8 +52,8 @@ pub fn de_list_services_for_auto_scaling_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::list_services_for_auto_scaling_configuration::ListServicesForAutoScalingConfigurationError::ResourceNotFoundException({
@@ -68,8 +68,8 @@ pub fn de_list_services_for_auto_scaling_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::list_services_for_auto_scaling_configuration::ListServicesForAutoScalingConfigurationError::generic(generic)
@@ -95,13 +95,15 @@ pub fn de_list_services_for_auto_scaling_configuration_http_response(
         )
         .map_err(crate::operation::list_services_for_auto_scaling_configuration::ListServicesForAutoScalingConfigurationError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::list_services_for_auto_scaling_configuration_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::list_services_for_auto_scaling_configuration::ListServicesForAutoScalingConfigurationError::unhandled)?
     })
 }
 
 pub fn ser_list_services_for_auto_scaling_configuration_input(
     input: &crate::operation::list_services_for_auto_scaling_configuration::ListServicesForAutoScalingConfigurationInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_list_services_for_auto_scaling_configuration_input::ser_list_services_for_auto_scaling_configuration_input(
@@ -109,7 +111,7 @@ pub fn ser_list_services_for_auto_scaling_configuration_input(
         input,
     )?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_list_services_for_auto_scaling_configuration(

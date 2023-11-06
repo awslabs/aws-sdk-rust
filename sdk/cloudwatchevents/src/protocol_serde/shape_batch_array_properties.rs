@@ -2,7 +2,7 @@
 pub fn ser_batch_array_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BatchArrayProperties,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.size != 0 {
         object.key("Size").number(
             #[allow(clippy::useless_conversion)]

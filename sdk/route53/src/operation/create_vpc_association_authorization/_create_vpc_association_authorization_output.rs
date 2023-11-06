@@ -5,15 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVpcAssociationAuthorizationOutput {
     /// <p>The ID of the hosted zone that you authorized associating a VPC with.</p>
-    pub hosted_zone_id: ::std::option::Option<::std::string::String>,
+    pub hosted_zone_id: ::std::string::String,
     /// <p>The VPC that you authorized associating with a hosted zone.</p>
     pub vpc: ::std::option::Option<crate::types::Vpc>,
     _request_id: Option<String>,
 }
 impl CreateVpcAssociationAuthorizationOutput {
     /// <p>The ID of the hosted zone that you authorized associating a VPC with.</p>
-    pub fn hosted_zone_id(&self) -> ::std::option::Option<&str> {
-        self.hosted_zone_id.as_deref()
+    pub fn hosted_zone_id(&self) -> &str {
+        use std::ops::Deref;
+        self.hosted_zone_id.deref()
     }
     /// <p>The VPC that you authorized associating with a hosted zone.</p>
     pub fn vpc(&self) -> ::std::option::Option<&crate::types::Vpc> {
@@ -42,6 +43,7 @@ pub struct CreateVpcAssociationAuthorizationOutputBuilder {
 }
 impl CreateVpcAssociationAuthorizationOutputBuilder {
     /// <p>The ID of the hosted zone that you authorized associating a VPC with.</p>
+    /// This field is required.
     pub fn hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hosted_zone_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +58,7 @@ impl CreateVpcAssociationAuthorizationOutputBuilder {
         &self.hosted_zone_id
     }
     /// <p>The VPC that you authorized associating with a hosted zone.</p>
+    /// This field is required.
     pub fn vpc(mut self, input: crate::types::Vpc) -> Self {
         self.vpc = ::std::option::Option::Some(input);
         self
@@ -79,11 +82,25 @@ impl CreateVpcAssociationAuthorizationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateVpcAssociationAuthorizationOutput`](crate::operation::create_vpc_association_authorization::CreateVpcAssociationAuthorizationOutput).
-    pub fn build(self) -> crate::operation::create_vpc_association_authorization::CreateVpcAssociationAuthorizationOutput {
-        crate::operation::create_vpc_association_authorization::CreateVpcAssociationAuthorizationOutput {
-            hosted_zone_id: self.hosted_zone_id,
-            vpc: self.vpc,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`hosted_zone_id`](crate::operation::create_vpc_association_authorization::builders::CreateVpcAssociationAuthorizationOutputBuilder::hosted_zone_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_vpc_association_authorization::CreateVpcAssociationAuthorizationOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::create_vpc_association_authorization::CreateVpcAssociationAuthorizationOutput {
+                hosted_zone_id: self.hosted_zone_id.ok_or_else(|| {
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
+                        "hosted_zone_id",
+                        "hosted_zone_id was not specified but it is required when building CreateVpcAssociationAuthorizationOutput",
+                    )
+                })?,
+                vpc: self.vpc,
+                _request_id: self._request_id,
+            },
+        )
     }
 }

@@ -41,6 +41,7 @@ pub struct UpdateConnectorInputBuilder {
 }
 impl UpdateConnectorInputBuilder {
     /// <p>The target capacity.</p>
+    /// This field is required.
     pub fn capacity(mut self, input: crate::types::CapacityUpdate) -> Self {
         self.capacity = ::std::option::Option::Some(input);
         self
@@ -55,6 +56,7 @@ impl UpdateConnectorInputBuilder {
         &self.capacity
     }
     /// <p>The Amazon Resource Name (ARN) of the connector that you want to update.</p>
+    /// This field is required.
     pub fn connector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_arn = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl UpdateConnectorInputBuilder {
         &self.connector_arn
     }
     /// <p>The current version of the connector that you want to update.</p>
+    /// This field is required.
     pub fn current_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_version = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +88,7 @@ impl UpdateConnectorInputBuilder {
     /// Consumes the builder and constructs a [`UpdateConnectorInput`](crate::operation::update_connector::UpdateConnectorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_connector::UpdateConnectorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_connector::UpdateConnectorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_connector::UpdateConnectorInput {
             capacity: self.capacity,
             connector_arn: self.connector_arn,

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSbomExport`](crate::operation::get_sbom_export::builders::GetSbomExportFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`report_id(impl Into<String>)`](crate::operation::get_sbom_export::builders::GetSbomExportFluentBuilder::report_id) / [`set_report_id(Option<String>)`](crate::operation::get_sbom_export::builders::GetSbomExportFluentBuilder::set_report_id): <p>The report ID of the SBOM export to get details for.</p>
+    ///   - [`report_id(impl Into<String>)`](crate::operation::get_sbom_export::builders::GetSbomExportFluentBuilder::report_id) / [`set_report_id(Option<String>)`](crate::operation::get_sbom_export::builders::GetSbomExportFluentBuilder::set_report_id):<br>required: **true**<br><p>The report ID of the SBOM export to get details for.</p><br>
     /// - On success, responds with [`GetSbomExportOutput`](crate::operation::get_sbom_export::GetSbomExportOutput) with field(s):
     ///   - [`report_id(Option<String>)`](crate::operation::get_sbom_export::GetSbomExportOutput::report_id): <p>The report ID of the software bill of materials (SBOM) report.</p>
     ///   - [`format(Option<SbomReportFormat>)`](crate::operation::get_sbom_export::GetSbomExportOutput::format): <p>The format of the software bill of materials (SBOM) report.</p>

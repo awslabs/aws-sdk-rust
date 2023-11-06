@@ -2,8 +2,8 @@
 pub fn ser_start_failback_launch_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_failback_launch::StartFailbackLaunchInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.recovery_instance_i_ds {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    if let Some(var_1) = &input.recovery_instance_ids {
         let mut array_2 = object.key("recoveryInstanceIDs").start_array();
         for item_3 in var_1 {
             {

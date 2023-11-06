@@ -9,8 +9,10 @@ pub struct DescribeTagsInput {
 }
 impl DescribeTagsInput {
     /// <p>The names of the load balancers.</p>
-    pub fn load_balancer_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.load_balancer_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.load_balancer_names.is_none()`.
+    pub fn load_balancer_names(&self) -> &[::std::string::String] {
+        self.load_balancer_names.as_deref().unwrap_or_default()
     }
 }
 impl DescribeTagsInput {
@@ -48,7 +50,9 @@ impl DescribeTagsInputBuilder {
         &self.load_balancer_names
     }
     /// Consumes the builder and constructs a [`DescribeTagsInput`](crate::operation::describe_tags::DescribeTagsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_tags::DescribeTagsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_tags::DescribeTagsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_tags::DescribeTagsInput {
             load_balancer_names: self.load_balancer_names,
         })

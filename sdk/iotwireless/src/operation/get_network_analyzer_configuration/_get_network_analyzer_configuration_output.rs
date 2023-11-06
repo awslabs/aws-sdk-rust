@@ -25,12 +25,16 @@ impl GetNetworkAnalyzerConfigurationOutput {
         self.trace_content.as_ref()
     }
     /// <p>List of wireless gateway resources that have been added to the network analyzer configuration.</p>
-    pub fn wireless_devices(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.wireless_devices.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.wireless_devices.is_none()`.
+    pub fn wireless_devices(&self) -> &[::std::string::String] {
+        self.wireless_devices.as_deref().unwrap_or_default()
     }
     /// <p>List of wireless gateway resources that have been added to the network analyzer configuration.</p>
-    pub fn wireless_gateways(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.wireless_gateways.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.wireless_gateways.is_none()`.
+    pub fn wireless_gateways(&self) -> &[::std::string::String] {
+        self.wireless_gateways.as_deref().unwrap_or_default()
     }
     /// <p>The description of the new resource.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -45,8 +49,10 @@ impl GetNetworkAnalyzerConfigurationOutput {
         self.name.as_deref()
     }
     /// <p>List of multicast group resources that have been added to the network analyzer configuration.</p>
-    pub fn multicast_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.multicast_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.multicast_groups.is_none()`.
+    pub fn multicast_groups(&self) -> &[::std::string::String] {
+        self.multicast_groups.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetNetworkAnalyzerConfigurationOutput {

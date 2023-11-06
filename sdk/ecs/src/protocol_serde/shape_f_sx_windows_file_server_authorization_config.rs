@@ -2,12 +2,12 @@
 pub fn ser_f_sx_windows_file_server_authorization_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FSxWindowsFileServerAuthorizationConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.credentials_parameter {
-        object.key("credentialsParameter").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("credentialsParameter").string(input.credentials_parameter.as_str());
     }
-    if let Some(var_2) = &input.domain {
-        object.key("domain").string(var_2.as_str());
+    {
+        object.key("domain").string(input.domain.as_str());
     }
     Ok(())
 }
@@ -51,7 +51,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::f_sx_windows_file_server_authorization_config_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

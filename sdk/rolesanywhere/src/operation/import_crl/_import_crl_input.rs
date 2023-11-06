@@ -28,8 +28,10 @@ impl ImportCrlInput {
         self.enabled
     }
     /// <p>A list of tags to attach to the certificate revocation list (CRL).</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The ARN of the TrustAnchor the certificate revocation list (CRL) will provide revocation for.</p>
     pub fn trust_anchor_arn(&self) -> ::std::option::Option<&str> {
@@ -55,6 +57,7 @@ pub struct ImportCrlInputBuilder {
 }
 impl ImportCrlInputBuilder {
     /// <p>The name of the certificate revocation list (CRL).</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +72,7 @@ impl ImportCrlInputBuilder {
         &self.name
     }
     /// <p>The x509 v3 specified certificate revocation list (CRL).</p>
+    /// This field is required.
     pub fn crl_data(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.crl_data = ::std::option::Option::Some(input);
         self
@@ -117,6 +121,7 @@ impl ImportCrlInputBuilder {
         &self.tags
     }
     /// <p>The ARN of the TrustAnchor the certificate revocation list (CRL) will provide revocation for.</p>
+    /// This field is required.
     pub fn trust_anchor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trust_anchor_arn = ::std::option::Option::Some(input.into());
         self
@@ -131,7 +136,7 @@ impl ImportCrlInputBuilder {
         &self.trust_anchor_arn
     }
     /// Consumes the builder and constructs a [`ImportCrlInput`](crate::operation::import_crl::ImportCrlInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::import_crl::ImportCrlInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::import_crl::ImportCrlInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::import_crl::ImportCrlInput {
             name: self.name,
             crl_data: self.crl_data,

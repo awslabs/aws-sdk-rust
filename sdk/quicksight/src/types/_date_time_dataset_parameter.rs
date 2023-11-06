@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DateTimeDatasetParameter {
     /// <p>An identifier for the parameter that is created in the dataset.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The name of the date time parameter that is created in the dataset.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The value type of the dataset parameter. Valid values are <code>single value</code> or <code>multi value</code>.</p>
-    pub value_type: ::std::option::Option<crate::types::DatasetParameterValueType>,
+    pub value_type: crate::types::DatasetParameterValueType,
     /// <p>The time granularity of the date time parameter.</p>
     pub time_granularity: ::std::option::Option<crate::types::TimeGranularity>,
     /// <p>A list of default values for a given date time parameter. This structure only accepts static values.</p>
@@ -17,16 +17,18 @@ pub struct DateTimeDatasetParameter {
 }
 impl DateTimeDatasetParameter {
     /// <p>An identifier for the parameter that is created in the dataset.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The name of the date time parameter that is created in the dataset.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The value type of the dataset parameter. Valid values are <code>single value</code> or <code>multi value</code>.</p>
-    pub fn value_type(&self) -> ::std::option::Option<&crate::types::DatasetParameterValueType> {
-        self.value_type.as_ref()
+    pub fn value_type(&self) -> &crate::types::DatasetParameterValueType {
+        &self.value_type
     }
     /// <p>The time granularity of the date time parameter.</p>
     pub fn time_granularity(&self) -> ::std::option::Option<&crate::types::TimeGranularity> {
@@ -56,6 +58,7 @@ pub struct DateTimeDatasetParameterBuilder {
 }
 impl DateTimeDatasetParameterBuilder {
     /// <p>An identifier for the parameter that is created in the dataset.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +73,7 @@ impl DateTimeDatasetParameterBuilder {
         &self.id
     }
     /// <p>The name of the date time parameter that is created in the dataset.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +88,7 @@ impl DateTimeDatasetParameterBuilder {
         &self.name
     }
     /// <p>The value type of the dataset parameter. Valid values are <code>single value</code> or <code>multi value</code>.</p>
+    /// This field is required.
     pub fn value_type(mut self, input: crate::types::DatasetParameterValueType) -> Self {
         self.value_type = ::std::option::Option::Some(input);
         self
@@ -126,13 +131,32 @@ impl DateTimeDatasetParameterBuilder {
         &self.default_values
     }
     /// Consumes the builder and constructs a [`DateTimeDatasetParameter`](crate::types::DateTimeDatasetParameter).
-    pub fn build(self) -> crate::types::DateTimeDatasetParameter {
-        crate::types::DateTimeDatasetParameter {
-            id: self.id,
-            name: self.name,
-            value_type: self.value_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::DateTimeDatasetParameterBuilder::id)
+    /// - [`name`](crate::types::builders::DateTimeDatasetParameterBuilder::name)
+    /// - [`value_type`](crate::types::builders::DateTimeDatasetParameterBuilder::value_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::DateTimeDatasetParameter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DateTimeDatasetParameter {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building DateTimeDatasetParameter",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DateTimeDatasetParameter",
+                )
+            })?,
+            value_type: self.value_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "value_type",
+                    "value_type was not specified but it is required when building DateTimeDatasetParameter",
+                )
+            })?,
             time_granularity: self.time_granularity,
             default_values: self.default_values,
-        }
+        })
     }
 }

@@ -286,13 +286,17 @@ impl DescribeInstancesInput {
     /// <li> <p> <code>virtualization-type</code> - The virtualization type of the instance (<code>paravirtual</code> | <code>hvm</code>).</p> </li>
     /// <li> <p> <code>vpc-id</code> - The ID of the VPC that the instance is running in.</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The instance IDs.</p>
     /// <p>Default: Describes all your instances.</p>
-    pub fn instance_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.instance_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_ids.is_none()`.
+    pub fn instance_ids(&self) -> &[::std::string::String] {
+        self.instance_ids.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -819,7 +823,7 @@ impl DescribeInstancesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeInstancesInput`](crate::operation::describe_instances::DescribeInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_instances::DescribeInstancesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_instances::DescribeInstancesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_instances::DescribeInstancesInput {
             filters: self.filters,
             instance_ids: self.instance_ids,

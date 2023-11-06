@@ -4,25 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartJobRunOutput {
     /// <p>This output displays the application ID on which the job run was submitted.</p>
-    pub application_id: ::std::option::Option<::std::string::String>,
+    pub application_id: ::std::string::String,
     /// <p>The output contains the ID of the started job run.</p>
-    pub job_run_id: ::std::option::Option<::std::string::String>,
+    pub job_run_id: ::std::string::String,
     /// <p>This output displays the ARN of the job run..</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl StartJobRunOutput {
     /// <p>This output displays the application ID on which the job run was submitted.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
-        self.application_id.as_deref()
+    pub fn application_id(&self) -> &str {
+        use std::ops::Deref;
+        self.application_id.deref()
     }
     /// <p>The output contains the ID of the started job run.</p>
-    pub fn job_run_id(&self) -> ::std::option::Option<&str> {
-        self.job_run_id.as_deref()
+    pub fn job_run_id(&self) -> &str {
+        use std::ops::Deref;
+        self.job_run_id.deref()
     }
     /// <p>This output displays the ARN of the job run..</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for StartJobRunOutput {
@@ -48,6 +51,7 @@ pub struct StartJobRunOutputBuilder {
 }
 impl StartJobRunOutputBuilder {
     /// <p>This output displays the application ID on which the job run was submitted.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +66,7 @@ impl StartJobRunOutputBuilder {
         &self.application_id
     }
     /// <p>The output contains the ID of the started job run.</p>
+    /// This field is required.
     pub fn job_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_run_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +81,7 @@ impl StartJobRunOutputBuilder {
         &self.job_run_id
     }
     /// <p>This output displays the ARN of the job run..</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -99,12 +105,33 @@ impl StartJobRunOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartJobRunOutput`](crate::operation::start_job_run::StartJobRunOutput).
-    pub fn build(self) -> crate::operation::start_job_run::StartJobRunOutput {
-        crate::operation::start_job_run::StartJobRunOutput {
-            application_id: self.application_id,
-            job_run_id: self.job_run_id,
-            arn: self.arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`application_id`](crate::operation::start_job_run::builders::StartJobRunOutputBuilder::application_id)
+    /// - [`job_run_id`](crate::operation::start_job_run::builders::StartJobRunOutputBuilder::job_run_id)
+    /// - [`arn`](crate::operation::start_job_run::builders::StartJobRunOutputBuilder::arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::start_job_run::StartJobRunOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::start_job_run::StartJobRunOutput {
+            application_id: self.application_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "application_id",
+                    "application_id was not specified but it is required when building StartJobRunOutput",
+                )
+            })?,
+            job_run_id: self.job_run_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "job_run_id",
+                    "job_run_id was not specified but it is required when building StartJobRunOutput",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building StartJobRunOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -2,7 +2,7 @@
 pub fn ser_suspended_state(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SuspendedState,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.dynamic_scaling_in_suspended {
         object.key("DynamicScalingInSuspended").boolean(*var_1);
     }

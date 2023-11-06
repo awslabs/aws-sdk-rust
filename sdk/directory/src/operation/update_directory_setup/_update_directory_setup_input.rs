@@ -48,6 +48,7 @@ pub struct UpdateDirectorySetupInputBuilder {
 }
 impl UpdateDirectorySetupInputBuilder {
     /// <p> The identifier of the directory on which you want to perform the update. </p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl UpdateDirectorySetupInputBuilder {
         &self.directory_id
     }
     /// <p> The type of update that needs to be performed on the directory. For example, OS. </p>
+    /// This field is required.
     pub fn update_type(mut self, input: crate::types::UpdateType) -> Self {
         self.update_type = ::std::option::Option::Some(input);
         self
@@ -106,7 +108,7 @@ impl UpdateDirectorySetupInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDirectorySetupInput`](crate::operation::update_directory_setup::UpdateDirectorySetupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_directory_setup::UpdateDirectorySetupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_directory_setup::UpdateDirectorySetupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_directory_setup::UpdateDirectorySetupInput {
             directory_id: self.directory_id,

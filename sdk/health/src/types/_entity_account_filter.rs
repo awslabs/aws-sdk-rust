@@ -7,7 +7,7 @@ pub struct EntityAccountFilter {
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>
     /// <p> <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>
-    pub event_arn: ::std::option::Option<::std::string::String>,
+    pub event_arn: ::std::string::String,
     /// <p>The 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of entity status codes.</p>
@@ -17,16 +17,19 @@ impl EntityAccountFilter {
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>
     /// <p> <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>
-    pub fn event_arn(&self) -> ::std::option::Option<&str> {
-        self.event_arn.as_deref()
+    pub fn event_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.event_arn.deref()
     }
     /// <p>The 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
     pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
     /// <p>A list of entity status codes.</p>
-    pub fn status_codes(&self) -> ::std::option::Option<&[crate::types::EntityStatusCode]> {
-        self.status_codes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.status_codes.is_none()`.
+    pub fn status_codes(&self) -> &[crate::types::EntityStatusCode] {
+        self.status_codes.as_deref().unwrap_or_default()
     }
 }
 impl EntityAccountFilter {
@@ -48,6 +51,7 @@ impl EntityAccountFilterBuilder {
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>
     /// <p> <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>
+    /// This field is required.
     pub fn event_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_arn = ::std::option::Option::Some(input.into());
         self
@@ -100,11 +104,18 @@ impl EntityAccountFilterBuilder {
         &self.status_codes
     }
     /// Consumes the builder and constructs a [`EntityAccountFilter`](crate::types::EntityAccountFilter).
-    pub fn build(self) -> crate::types::EntityAccountFilter {
-        crate::types::EntityAccountFilter {
-            event_arn: self.event_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`event_arn`](crate::types::builders::EntityAccountFilterBuilder::event_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::EntityAccountFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EntityAccountFilter {
+            event_arn: self.event_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "event_arn",
+                    "event_arn was not specified but it is required when building EntityAccountFilter",
+                )
+            })?,
             aws_account_id: self.aws_account_id,
             status_codes: self.status_codes,
-        }
+        })
     }
 }

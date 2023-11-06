@@ -27,6 +27,7 @@ pub struct GetDestinationInputBuilder {
 }
 impl GetDestinationInputBuilder {
     /// <p>The name of the resource to get.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetDestinationInputBuilder {
     /// Consumes the builder and constructs a [`GetDestinationInput`](crate::operation::get_destination::GetDestinationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_destination::GetDestinationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_destination::GetDestinationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_destination::GetDestinationInput { name: self.name })
     }
 }

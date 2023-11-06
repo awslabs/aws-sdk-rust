@@ -34,6 +34,7 @@ pub struct ListTagsInputBuilder {
 }
 impl ListTagsInputBuilder {
     /// <p>The name of the DAX resource to which the tags belong.</p>
+    /// This field is required.
     pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +63,7 @@ impl ListTagsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListTagsInput`](crate::operation::list_tags::ListTagsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_tags::ListTagsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_tags::ListTagsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_tags::ListTagsInput {
             resource_name: self.resource_name,
             next_token: self.next_token,

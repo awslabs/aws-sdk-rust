@@ -6,7 +6,7 @@ pub struct ListPageResolutionsOutput {
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about the resolution for an engagement.</p>
-    pub page_resolutions: ::std::option::Option<::std::vec::Vec<crate::types::ResolutionContact>>,
+    pub page_resolutions: ::std::vec::Vec<crate::types::ResolutionContact>,
     _request_id: Option<String>,
 }
 impl ListPageResolutionsOutput {
@@ -15,8 +15,9 @@ impl ListPageResolutionsOutput {
         self.next_token.as_deref()
     }
     /// <p>Information about the resolution for an engagement.</p>
-    pub fn page_resolutions(&self) -> ::std::option::Option<&[crate::types::ResolutionContact]> {
-        self.page_resolutions.as_deref()
+    pub fn page_resolutions(&self) -> &[crate::types::ResolutionContact] {
+        use std::ops::Deref;
+        self.page_resolutions.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListPageResolutionsOutput {
@@ -84,11 +85,21 @@ impl ListPageResolutionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListPageResolutionsOutput`](crate::operation::list_page_resolutions::ListPageResolutionsOutput).
-    pub fn build(self) -> crate::operation::list_page_resolutions::ListPageResolutionsOutput {
-        crate::operation::list_page_resolutions::ListPageResolutionsOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`page_resolutions`](crate::operation::list_page_resolutions::builders::ListPageResolutionsOutputBuilder::page_resolutions)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_page_resolutions::ListPageResolutionsOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_page_resolutions::ListPageResolutionsOutput {
             next_token: self.next_token,
-            page_resolutions: self.page_resolutions,
+            page_resolutions: self.page_resolutions.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "page_resolutions",
+                    "page_resolutions was not specified but it is required when building ListPageResolutionsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

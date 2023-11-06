@@ -43,6 +43,7 @@ pub struct AdminDeleteUserInputBuilder {
 }
 impl AdminDeleteUserInputBuilder {
     /// <p>The user pool ID for the user pool where you want to delete the user.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +58,7 @@ impl AdminDeleteUserInputBuilder {
         &self.user_pool_id
     }
     /// <p>The user name of the user you want to delete.</p>
+    /// This field is required.
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self
@@ -73,7 +75,7 @@ impl AdminDeleteUserInputBuilder {
     /// Consumes the builder and constructs a [`AdminDeleteUserInput`](crate::operation::admin_delete_user::AdminDeleteUserInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::admin_delete_user::AdminDeleteUserInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::admin_delete_user::AdminDeleteUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::admin_delete_user::AdminDeleteUserInput {
             user_pool_id: self.user_pool_id,
             username: self.username,

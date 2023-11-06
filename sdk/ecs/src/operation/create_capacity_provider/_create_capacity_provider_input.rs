@@ -40,8 +40,10 @@ impl CreateCapacityProviderInput {
     /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateCapacityProviderInput {
@@ -61,6 +63,7 @@ pub struct CreateCapacityProviderInputBuilder {
 }
 impl CreateCapacityProviderInputBuilder {
     /// <p>The name of the capacity provider. Up to 255 characters are allowed. They include letters (both upper and lowercase letters), numbers, underscores (_), and hyphens (-). The name can't be prefixed with "<code>aws</code>", "<code>ecs</code>", or "<code>fargate</code>".</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -75,6 +78,7 @@ impl CreateCapacityProviderInputBuilder {
         &self.name
     }
     /// <p>The details of the Auto Scaling group for the capacity provider.</p>
+    /// This field is required.
     pub fn auto_scaling_group_provider(mut self, input: crate::types::AutoScalingGroupProvider) -> Self {
         self.auto_scaling_group_provider = ::std::option::Option::Some(input);
         self
@@ -141,8 +145,10 @@ impl CreateCapacityProviderInputBuilder {
     /// Consumes the builder and constructs a [`CreateCapacityProviderInput`](crate::operation::create_capacity_provider::CreateCapacityProviderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_capacity_provider::CreateCapacityProviderInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_capacity_provider::CreateCapacityProviderInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_capacity_provider::CreateCapacityProviderInput {
             name: self.name,
             auto_scaling_group_provider: self.auto_scaling_group_provider,

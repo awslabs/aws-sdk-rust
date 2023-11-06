@@ -15,8 +15,10 @@ impl MetricKeyDataPoints {
         self.key.as_ref()
     }
     /// <p>An array of timestamp-value pairs, representing measurements over a period of time.</p>
-    pub fn data_points(&self) -> ::std::option::Option<&[crate::types::DataPoint]> {
-        self.data_points.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_points.is_none()`.
+    pub fn data_points(&self) -> &[crate::types::DataPoint] {
+        self.data_points.as_deref().unwrap_or_default()
     }
 }
 impl MetricKeyDataPoints {

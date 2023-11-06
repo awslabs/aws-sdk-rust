@@ -34,6 +34,7 @@ pub struct DeleteLakeFormationOptInInputBuilder {
 }
 impl DeleteLakeFormationOptInInputBuilder {
     /// <p>The Lake Formation principal. Supported principals are IAM users or IAM roles.</p>
+    /// This field is required.
     pub fn principal(mut self, input: crate::types::DataLakePrincipal) -> Self {
         self.principal = ::std::option::Option::Some(input);
         self
@@ -48,6 +49,7 @@ impl DeleteLakeFormationOptInInputBuilder {
         &self.principal
     }
     /// <p>A structure for the resource.</p>
+    /// This field is required.
     pub fn resource(mut self, input: crate::types::Resource) -> Self {
         self.resource = ::std::option::Option::Some(input);
         self
@@ -66,7 +68,7 @@ impl DeleteLakeFormationOptInInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_lake_formation_opt_in::DeleteLakeFormationOptInInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_lake_formation_opt_in::DeleteLakeFormationOptInInput {
             principal: self.principal,

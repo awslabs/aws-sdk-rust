@@ -27,6 +27,7 @@ pub struct StopSolutionVersionCreationInputBuilder {
 }
 impl StopSolutionVersionCreationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the solution version you want to stop creating.</p>
+    /// This field is required.
     pub fn solution_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.solution_version_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl StopSolutionVersionCreationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_solution_version_creation::StopSolutionVersionCreationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::stop_solution_version_creation::StopSolutionVersionCreationInput {
             solution_version_arn: self.solution_version_arn,

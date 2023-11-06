@@ -233,7 +233,7 @@ impl UpdateJobFromSourceControlInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_job_from_source_control::UpdateJobFromSourceControlInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_job_from_source_control::UpdateJobFromSourceControlInput {
             job_name: self.job_name,

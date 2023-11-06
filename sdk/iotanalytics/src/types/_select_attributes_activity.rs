@@ -5,20 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SelectAttributesActivity {
     /// <p>The name of the <code>selectAttributes</code> activity.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>A list of the attributes to select from the message.</p>
-    pub attributes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub attributes: ::std::vec::Vec<::std::string::String>,
     /// <p>The next activity in the pipeline.</p>
     pub next: ::std::option::Option<::std::string::String>,
 }
 impl SelectAttributesActivity {
     /// <p>The name of the <code>selectAttributes</code> activity.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>A list of the attributes to select from the message.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.attributes.as_deref()
+    pub fn attributes(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.attributes.deref()
     }
     /// <p>The next activity in the pipeline.</p>
     pub fn next(&self) -> ::std::option::Option<&str> {
@@ -42,6 +44,7 @@ pub struct SelectAttributesActivityBuilder {
 }
 impl SelectAttributesActivityBuilder {
     /// <p>The name of the <code>selectAttributes</code> activity.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -90,11 +93,24 @@ impl SelectAttributesActivityBuilder {
         &self.next
     }
     /// Consumes the builder and constructs a [`SelectAttributesActivity`](crate::types::SelectAttributesActivity).
-    pub fn build(self) -> crate::types::SelectAttributesActivity {
-        crate::types::SelectAttributesActivity {
-            name: self.name,
-            attributes: self.attributes,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::SelectAttributesActivityBuilder::name)
+    /// - [`attributes`](crate::types::builders::SelectAttributesActivityBuilder::attributes)
+    pub fn build(self) -> ::std::result::Result<crate::types::SelectAttributesActivity, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SelectAttributesActivity {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building SelectAttributesActivity",
+                )
+            })?,
+            attributes: self.attributes.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "attributes",
+                    "attributes was not specified but it is required when building SelectAttributesActivity",
+                )
+            })?,
             next: self.next,
-        }
+        })
     }
 }

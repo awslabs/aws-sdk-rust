@@ -145,6 +145,7 @@ impl CreateRunGroupInputBuilder {
         &self.tags
     }
     /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
+    /// This field is required.
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_id = ::std::option::Option::Some(input.into());
         self
@@ -175,7 +176,7 @@ impl CreateRunGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateRunGroupInput`](crate::operation::create_run_group::CreateRunGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_run_group::CreateRunGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_run_group::CreateRunGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_run_group::CreateRunGroupInput {
             name: self.name,
             max_cpus: self.max_cpus,

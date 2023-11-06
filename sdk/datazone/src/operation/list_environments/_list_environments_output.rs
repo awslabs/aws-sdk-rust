@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEnvironmentsOutput {
     /// <p>The results of the <code>ListEnvironments</code> action.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentSummary>>,
+    pub items: ::std::vec::Vec<crate::types::EnvironmentSummary>,
     /// <p>When the number of environments is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of environments, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListEnvironments</code> to list the next set of environments.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListEnvironmentsOutput {
     /// <p>The results of the <code>ListEnvironments</code> action.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::EnvironmentSummary]> {
-        self.items.as_deref()
+    pub fn items(&self) -> &[crate::types::EnvironmentSummary] {
+        use std::ops::Deref;
+        self.items.deref()
     }
     /// <p>When the number of environments is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of environments, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListEnvironments</code> to list the next set of environments.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ListEnvironmentsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListEnvironmentsOutput`](crate::operation::list_environments::ListEnvironmentsOutput).
-    pub fn build(self) -> crate::operation::list_environments::ListEnvironmentsOutput {
-        crate::operation::list_environments::ListEnvironmentsOutput {
-            items: self.items,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`items`](crate::operation::list_environments::builders::ListEnvironmentsOutputBuilder::items)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_environments::ListEnvironmentsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_environments::ListEnvironmentsOutput {
+            items: self.items.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "items",
+                    "items was not specified but it is required when building ListEnvironmentsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

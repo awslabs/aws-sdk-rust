@@ -8,8 +8,10 @@ pub struct DeleteInvitationsInput {
 }
 impl DeleteInvitationsInput {
     /// <p>An array that lists Amazon Web Services account IDs, one for each account that sent an invitation to delete.</p>
-    pub fn account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.account_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
+    pub fn account_ids(&self) -> &[::std::string::String] {
+        self.account_ids.as_deref().unwrap_or_default()
     }
 }
 impl DeleteInvitationsInput {
@@ -49,7 +51,7 @@ impl DeleteInvitationsInputBuilder {
     /// Consumes the builder and constructs a [`DeleteInvitationsInput`](crate::operation::delete_invitations::DeleteInvitationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_invitations::DeleteInvitationsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_invitations::DeleteInvitationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_invitations::DeleteInvitationsInput {
             account_ids: self.account_ids,
         })

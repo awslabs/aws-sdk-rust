@@ -2,7 +2,7 @@
 pub fn ser_describe_scaling_plans_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_scaling_plans::DescribeScalingPlansInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.scaling_plan_names {
         let mut array_2 = object.key("ScalingPlanNames").start_array();
         for item_3 in var_1 {

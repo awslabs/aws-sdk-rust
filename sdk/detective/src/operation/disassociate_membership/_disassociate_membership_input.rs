@@ -30,6 +30,7 @@ pub struct DisassociateMembershipInputBuilder {
 impl DisassociateMembershipInputBuilder {
     /// <p>The ARN of the behavior graph to remove the member account from.</p>
     /// <p>The member account's member status in the behavior graph must be <code>ENABLED</code>.</p>
+    /// This field is required.
     pub fn graph_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.graph_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,7 +49,7 @@ impl DisassociateMembershipInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateMembershipInput`](crate::operation::disassociate_membership::DisassociateMembershipInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disassociate_membership::DisassociateMembershipInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::disassociate_membership::DisassociateMembershipInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::disassociate_membership::DisassociateMembershipInput { graph_arn: self.graph_arn })
     }

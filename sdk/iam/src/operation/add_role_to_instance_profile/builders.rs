@@ -10,7 +10,7 @@ impl AddRoleToInstanceProfileInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::add_role_to_instance_profile::AddRoleToInstanceProfileOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::add_role_to_instance_profile::AddRoleToInstanceProfileError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -75,12 +75,15 @@ impl AddRoleToInstanceProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_role_to_instance_profile::AddRoleToInstanceProfileOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::add_role_to_instance_profile::AddRoleToInstanceProfileError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::add_role_to_instance_profile::AddRoleToInstanceProfile::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -89,20 +92,15 @@ impl AddRoleToInstanceProfileFluentBuilder {
         crate::operation::add_role_to_instance_profile::AddRoleToInstanceProfile::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::add_role_to_instance_profile::AddRoleToInstanceProfileOutput,
-            crate::operation::add_role_to_instance_profile::AddRoleToInstanceProfileError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::add_role_to_instance_profile::AddRoleToInstanceProfileError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::add_role_to_instance_profile::AddRoleToInstanceProfileOutput,
+        crate::operation::add_role_to_instance_profile::AddRoleToInstanceProfileError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

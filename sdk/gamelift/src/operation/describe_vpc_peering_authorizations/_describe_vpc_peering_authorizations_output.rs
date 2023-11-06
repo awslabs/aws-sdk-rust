@@ -9,8 +9,10 @@ pub struct DescribeVpcPeeringAuthorizationsOutput {
 }
 impl DescribeVpcPeeringAuthorizationsOutput {
     /// <p>A collection of objects that describe all valid VPC peering operations for the current Amazon Web Services account.</p>
-    pub fn vpc_peering_authorizations(&self) -> ::std::option::Option<&[crate::types::VpcPeeringAuthorization]> {
-        self.vpc_peering_authorizations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_peering_authorizations.is_none()`.
+    pub fn vpc_peering_authorizations(&self) -> &[crate::types::VpcPeeringAuthorization] {
+        self.vpc_peering_authorizations.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeVpcPeeringAuthorizationsOutput {

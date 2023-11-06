@@ -2,7 +2,7 @@
 pub fn ser_table_row_conditional_formatting(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TableRowConditionalFormatting,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.background_color {
         #[allow(unused_mut)]
         let mut object_2 = object.key("BackgroundColor").start_object();

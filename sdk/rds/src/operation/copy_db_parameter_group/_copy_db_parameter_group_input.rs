@@ -51,8 +51,10 @@ impl CopyDbParameterGroupInput {
         self.target_db_parameter_group_description.as_deref()
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CopyDbParameterGroupInput {
@@ -77,6 +79,7 @@ impl CopyDbParameterGroupInputBuilder {
     /// <ul>
     /// <li> <p>Must specify a valid DB parameter group.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn source_db_parameter_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_db_parameter_group_identifier = ::std::option::Option::Some(input.into());
         self
@@ -107,6 +110,7 @@ impl CopyDbParameterGroupInputBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>my-db-parameter-group</code> </p>
+    /// This field is required.
     pub fn target_db_parameter_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_db_parameter_group_identifier = ::std::option::Option::Some(input.into());
         self
@@ -137,6 +141,7 @@ impl CopyDbParameterGroupInputBuilder {
         &self.target_db_parameter_group_identifier
     }
     /// <p>A description for the copied DB parameter group.</p>
+    /// This field is required.
     pub fn target_db_parameter_group_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_db_parameter_group_description = ::std::option::Option::Some(input.into());
         self
@@ -173,7 +178,7 @@ impl CopyDbParameterGroupInputBuilder {
     /// Consumes the builder and constructs a [`CopyDbParameterGroupInput`](crate::operation::copy_db_parameter_group::CopyDbParameterGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::copy_db_parameter_group::CopyDbParameterGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::copy_db_parameter_group::CopyDbParameterGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::copy_db_parameter_group::CopyDbParameterGroupInput {
             source_db_parameter_group_identifier: self.source_db_parameter_group_identifier,

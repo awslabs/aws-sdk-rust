@@ -27,6 +27,7 @@ pub struct DeleteModelPackageGroupInputBuilder {
 }
 impl DeleteModelPackageGroupInputBuilder {
     /// <p>The name of the model group to delete.</p>
+    /// This field is required.
     pub fn model_package_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_group_name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteModelPackageGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_model_package_group::DeleteModelPackageGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_model_package_group::DeleteModelPackageGroupInput {
             model_package_group_name: self.model_package_group_name,

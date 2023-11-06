@@ -65,8 +65,10 @@ impl CreateInstanceInput {
         self.stack_id.as_deref()
     }
     /// <p>An array that contains the instance's layer IDs.</p>
-    pub fn layer_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.layer_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.layer_ids.is_none()`.
+    pub fn layer_ids(&self) -> &[::std::string::String] {
+        self.layer_ids.as_deref().unwrap_or_default()
     }
     /// <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the currently supported types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The parameter values that you use to specify the various types are in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
     pub fn instance_type(&self) -> ::std::option::Option<&str> {
@@ -125,8 +127,10 @@ impl CreateInstanceInput {
         self.root_device_type.as_ref()
     }
     /// <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block devices. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device Mapping</a>. Note that block device mappings are not supported for custom AMIs.</p>
-    pub fn block_device_mappings(&self) -> ::std::option::Option<&[crate::types::BlockDeviceMapping]> {
-        self.block_device_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.block_device_mappings.is_none()`.
+    pub fn block_device_mappings(&self) -> &[crate::types::BlockDeviceMapping] {
+        self.block_device_mappings.as_deref().unwrap_or_default()
     }
     /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
     /// <p>We strongly recommend using the default value of <code>true</code> to ensure that your instances have the latest security updates.</p>
@@ -184,6 +188,7 @@ pub struct CreateInstanceInputBuilder {
 }
 impl CreateInstanceInputBuilder {
     /// <p>The stack ID.</p>
+    /// This field is required.
     pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_id = ::std::option::Option::Some(input.into());
         self
@@ -218,6 +223,7 @@ impl CreateInstanceInputBuilder {
         &self.layer_ids
     }
     /// <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the currently supported types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The parameter values that you use to specify the various types are in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
+    /// This field is required.
     pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
@@ -507,7 +513,7 @@ impl CreateInstanceInputBuilder {
     /// Consumes the builder and constructs a [`CreateInstanceInput`](crate::operation::create_instance::CreateInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_instance::CreateInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_instance::CreateInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_instance::CreateInstanceInput {
             stack_id: self.stack_id,
             layer_ids: self.layer_ids,

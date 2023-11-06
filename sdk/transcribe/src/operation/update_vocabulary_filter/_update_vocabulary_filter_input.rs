@@ -26,8 +26,10 @@ impl UpdateVocabularyFilterInput {
     /// <p>Use this parameter if you want to update your custom vocabulary filter by including all desired terms, as comma-separated values, within your request. The other option for updating your vocabulary filter is to save your entries in a text file and upload them to an Amazon S3 bucket, then specify the location of your file using the <code>VocabularyFilterFileUri</code> parameter.</p>
     /// <p>Note that if you include <code>Words</code> in your request, you cannot use <code>VocabularyFilterFileUri</code>; you must choose one or the other.</p>
     /// <p>Each language has a character set that contains all allowed characters for that specific language. If you use unsupported characters, your custom vocabulary filter request fails. Refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a> to get the character set for your language.</p>
-    pub fn words(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.words.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.words.is_none()`.
+    pub fn words(&self) -> &[::std::string::String] {
+        self.words.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon S3 location of the text file that contains your custom vocabulary filter terms. The URI must be located in the same Amazon Web Services Region as the resource you're calling.</p>
     /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-filter-file.txt</code> </p>
@@ -60,6 +62,7 @@ pub struct UpdateVocabularyFilterInputBuilder {
 }
 impl UpdateVocabularyFilterInputBuilder {
     /// <p>The name of the custom vocabulary filter you want to update. Custom vocabulary filter names are case sensitive.</p>
+    /// This field is required.
     pub fn vocabulary_filter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vocabulary_filter_name = ::std::option::Option::Some(input.into());
         self
@@ -142,8 +145,10 @@ impl UpdateVocabularyFilterInputBuilder {
     /// Consumes the builder and constructs a [`UpdateVocabularyFilterInput`](crate::operation::update_vocabulary_filter::UpdateVocabularyFilterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_vocabulary_filter::UpdateVocabularyFilterInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::update_vocabulary_filter::UpdateVocabularyFilterInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::update_vocabulary_filter::UpdateVocabularyFilterInput {
             vocabulary_filter_name: self.vocabulary_filter_name,
             words: self.words,

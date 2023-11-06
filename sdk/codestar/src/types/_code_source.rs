@@ -28,6 +28,7 @@ pub struct CodeSourceBuilder {
 }
 impl CodeSourceBuilder {
     /// <p>Information about the Amazon S3 location where the source code files provided with the project request are stored. </p>
+    /// This field is required.
     pub fn s3(mut self, input: crate::types::S3Location) -> Self {
         self.s3 = ::std::option::Option::Some(input);
         self

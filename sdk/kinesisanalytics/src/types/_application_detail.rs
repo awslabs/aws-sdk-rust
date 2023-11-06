@@ -8,13 +8,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationDetail {
     /// <p>Name of the application.</p>
-    pub application_name: ::std::option::Option<::std::string::String>,
+    pub application_name: ::std::string::String,
     /// <p>Description of the application.</p>
     pub application_description: ::std::option::Option<::std::string::String>,
     /// <p>ARN of the application.</p>
-    pub application_arn: ::std::option::Option<::std::string::String>,
+    pub application_arn: ::std::string::String,
     /// <p>Status of the application.</p>
-    pub application_status: ::std::option::Option<crate::types::ApplicationStatus>,
+    pub application_status: crate::types::ApplicationStatus,
     /// <p>Time stamp when the application version was created.</p>
     pub create_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Time stamp when the application was last updated.</p>
@@ -30,24 +30,26 @@ pub struct ApplicationDetail {
     /// <p>Returns the application code that you provided to perform data analysis on any of the in-application streams in your application.</p>
     pub application_code: ::std::option::Option<::std::string::String>,
     /// <p>Provides the current application version.</p>
-    pub application_version_id: ::std::option::Option<i64>,
+    pub application_version_id: i64,
 }
 impl ApplicationDetail {
     /// <p>Name of the application.</p>
-    pub fn application_name(&self) -> ::std::option::Option<&str> {
-        self.application_name.as_deref()
+    pub fn application_name(&self) -> &str {
+        use std::ops::Deref;
+        self.application_name.deref()
     }
     /// <p>Description of the application.</p>
     pub fn application_description(&self) -> ::std::option::Option<&str> {
         self.application_description.as_deref()
     }
     /// <p>ARN of the application.</p>
-    pub fn application_arn(&self) -> ::std::option::Option<&str> {
-        self.application_arn.as_deref()
+    pub fn application_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.application_arn.deref()
     }
     /// <p>Status of the application.</p>
-    pub fn application_status(&self) -> ::std::option::Option<&crate::types::ApplicationStatus> {
-        self.application_status.as_ref()
+    pub fn application_status(&self) -> &crate::types::ApplicationStatus {
+        &self.application_status
     }
     /// <p>Time stamp when the application version was created.</p>
     pub fn create_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -58,27 +60,35 @@ impl ApplicationDetail {
         self.last_update_timestamp.as_ref()
     }
     /// <p>Describes the application input configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>. </p>
-    pub fn input_descriptions(&self) -> ::std::option::Option<&[crate::types::InputDescription]> {
-        self.input_descriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_descriptions.is_none()`.
+    pub fn input_descriptions(&self) -> &[crate::types::InputDescription] {
+        self.input_descriptions.as_deref().unwrap_or_default()
     }
     /// <p>Describes the application output configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>. </p>
-    pub fn output_descriptions(&self) -> ::std::option::Option<&[crate::types::OutputDescription]> {
-        self.output_descriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_descriptions.is_none()`.
+    pub fn output_descriptions(&self) -> &[crate::types::OutputDescription] {
+        self.output_descriptions.as_deref().unwrap_or_default()
     }
     /// <p>Describes reference data sources configured for the application. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>. </p>
-    pub fn reference_data_source_descriptions(&self) -> ::std::option::Option<&[crate::types::ReferenceDataSourceDescription]> {
-        self.reference_data_source_descriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reference_data_source_descriptions.is_none()`.
+    pub fn reference_data_source_descriptions(&self) -> &[crate::types::ReferenceDataSourceDescription] {
+        self.reference_data_source_descriptions.as_deref().unwrap_or_default()
     }
     /// <p>Describes the CloudWatch log streams that are configured to receive application messages. For more information about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon CloudWatch Logs</a>. </p>
-    pub fn cloud_watch_logging_option_descriptions(&self) -> ::std::option::Option<&[crate::types::CloudWatchLoggingOptionDescription]> {
-        self.cloud_watch_logging_option_descriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_watch_logging_option_descriptions.is_none()`.
+    pub fn cloud_watch_logging_option_descriptions(&self) -> &[crate::types::CloudWatchLoggingOptionDescription] {
+        self.cloud_watch_logging_option_descriptions.as_deref().unwrap_or_default()
     }
     /// <p>Returns the application code that you provided to perform data analysis on any of the in-application streams in your application.</p>
     pub fn application_code(&self) -> ::std::option::Option<&str> {
         self.application_code.as_deref()
     }
     /// <p>Provides the current application version.</p>
-    pub fn application_version_id(&self) -> ::std::option::Option<i64> {
+    pub fn application_version_id(&self) -> i64 {
         self.application_version_id
     }
 }
@@ -108,6 +118,7 @@ pub struct ApplicationDetailBuilder {
 }
 impl ApplicationDetailBuilder {
     /// <p>Name of the application.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
@@ -136,6 +147,7 @@ impl ApplicationDetailBuilder {
         &self.application_description
     }
     /// <p>ARN of the application.</p>
+    /// This field is required.
     pub fn application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_arn = ::std::option::Option::Some(input.into());
         self
@@ -150,6 +162,7 @@ impl ApplicationDetailBuilder {
         &self.application_arn
     }
     /// <p>Status of the application.</p>
+    /// This field is required.
     pub fn application_status(mut self, input: crate::types::ApplicationStatus) -> Self {
         self.application_status = ::std::option::Option::Some(input);
         self
@@ -294,6 +307,7 @@ impl ApplicationDetailBuilder {
         &self.application_code
     }
     /// <p>Provides the current application version.</p>
+    /// This field is required.
     pub fn application_version_id(mut self, input: i64) -> Self {
         self.application_version_id = ::std::option::Option::Some(input);
         self
@@ -308,12 +322,32 @@ impl ApplicationDetailBuilder {
         &self.application_version_id
     }
     /// Consumes the builder and constructs a [`ApplicationDetail`](crate::types::ApplicationDetail).
-    pub fn build(self) -> crate::types::ApplicationDetail {
-        crate::types::ApplicationDetail {
-            application_name: self.application_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`application_name`](crate::types::builders::ApplicationDetailBuilder::application_name)
+    /// - [`application_arn`](crate::types::builders::ApplicationDetailBuilder::application_arn)
+    /// - [`application_status`](crate::types::builders::ApplicationDetailBuilder::application_status)
+    /// - [`application_version_id`](crate::types::builders::ApplicationDetailBuilder::application_version_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::ApplicationDetail, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ApplicationDetail {
+            application_name: self.application_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "application_name",
+                    "application_name was not specified but it is required when building ApplicationDetail",
+                )
+            })?,
             application_description: self.application_description,
-            application_arn: self.application_arn,
-            application_status: self.application_status,
+            application_arn: self.application_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "application_arn",
+                    "application_arn was not specified but it is required when building ApplicationDetail",
+                )
+            })?,
+            application_status: self.application_status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "application_status",
+                    "application_status was not specified but it is required when building ApplicationDetail",
+                )
+            })?,
             create_timestamp: self.create_timestamp,
             last_update_timestamp: self.last_update_timestamp,
             input_descriptions: self.input_descriptions,
@@ -321,7 +355,12 @@ impl ApplicationDetailBuilder {
             reference_data_source_descriptions: self.reference_data_source_descriptions,
             cloud_watch_logging_option_descriptions: self.cloud_watch_logging_option_descriptions,
             application_code: self.application_code,
-            application_version_id: self.application_version_id,
-        }
+            application_version_id: self.application_version_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "application_version_id",
+                    "application_version_id was not specified but it is required when building ApplicationDetail",
+                )
+            })?,
+        })
     }
 }

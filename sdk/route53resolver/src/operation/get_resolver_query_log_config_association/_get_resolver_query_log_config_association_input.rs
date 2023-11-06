@@ -27,6 +27,7 @@ pub struct GetResolverQueryLogConfigAssociationInputBuilder {
 }
 impl GetResolverQueryLogConfigAssociationInputBuilder {
     /// <p>The ID of the Resolver query logging configuration association that you want to get information about.</p>
+    /// This field is required.
     pub fn resolver_query_log_config_association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolver_query_log_config_association_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetResolverQueryLogConfigAssociationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resolver_query_log_config_association::GetResolverQueryLogConfigAssociationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_resolver_query_log_config_association::GetResolverQueryLogConfigAssociationInput {

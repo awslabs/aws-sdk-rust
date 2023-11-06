@@ -2,12 +2,12 @@
 pub fn ser_entity_persona_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EntityPersonaConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.entity_id {
-        object.key("EntityId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("EntityId").string(input.entity_id.as_str());
     }
-    if let Some(var_2) = &input.persona {
-        object.key("Persona").string(var_2.as_str());
+    {
+        object.key("Persona").string(input.persona.as_str());
     }
     Ok(())
 }

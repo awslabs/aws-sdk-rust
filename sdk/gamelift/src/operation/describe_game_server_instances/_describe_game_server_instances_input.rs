@@ -18,8 +18,10 @@ impl DescribeGameServerInstancesInput {
         self.game_server_group_name.as_deref()
     }
     /// <p>The Amazon EC2 instance IDs that you want to retrieve status on. Amazon EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>. To retrieve all instances in the game server group, leave this parameter empty. </p>
-    pub fn instance_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.instance_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_ids.is_none()`.
+    pub fn instance_ids(&self) -> &[::std::string::String] {
+        self.instance_ids.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub fn limit(&self) -> ::std::option::Option<i32> {
@@ -48,6 +50,7 @@ pub struct DescribeGameServerInstancesInputBuilder {
 }
 impl DescribeGameServerInstancesInputBuilder {
     /// <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
+    /// This field is required.
     pub fn game_server_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_server_group_name = ::std::option::Option::Some(input.into());
         self
@@ -114,7 +117,7 @@ impl DescribeGameServerInstancesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_game_server_instances::DescribeGameServerInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_game_server_instances::DescribeGameServerInstancesInput {
             game_server_group_name: self.game_server_group_name,

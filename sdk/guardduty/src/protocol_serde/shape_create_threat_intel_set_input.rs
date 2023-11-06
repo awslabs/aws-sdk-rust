@@ -2,7 +2,7 @@
 pub fn ser_create_threat_intel_set_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_threat_intel_set::CreateThreatIntelSetInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.activate {
         object.key("activate").boolean(*var_1);
     }

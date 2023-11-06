@@ -124,6 +124,7 @@ impl AssociateVpcCidrBlockInputBuilder {
         &self.cidr_block
     }
     /// <p>The ID of the VPC.</p>
+    /// This field is required.
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
         self
@@ -247,7 +248,7 @@ impl AssociateVpcCidrBlockInputBuilder {
     /// Consumes the builder and constructs a [`AssociateVpcCidrBlockInput`](crate::operation::associate_vpc_cidr_block::AssociateVpcCidrBlockInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_vpc_cidr_block::AssociateVpcCidrBlockInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::associate_vpc_cidr_block::AssociateVpcCidrBlockInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::associate_vpc_cidr_block::AssociateVpcCidrBlockInput {
             amazon_provided_ipv6_cidr_block: self.amazon_provided_ipv6_cidr_block,

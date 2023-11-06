@@ -34,6 +34,7 @@ pub struct GetMailDomainInputBuilder {
 }
 impl GetMailDomainInputBuilder {
     /// <p>The WorkMail organization for which the domain is retrieved.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetMailDomainInputBuilder {
         &self.organization_id
     }
     /// <p>The domain from which you want to retrieve details.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl GetMailDomainInputBuilder {
     /// Consumes the builder and constructs a [`GetMailDomainInput`](crate::operation::get_mail_domain::GetMailDomainInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_mail_domain::GetMailDomainInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_mail_domain::GetMailDomainInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_mail_domain::GetMailDomainInput {
             organization_id: self.organization_id,
             domain_name: self.domain_name,

@@ -55,8 +55,10 @@ impl CreateNotebookInstanceInput {
         self.subnet_id.as_deref()
     }
     /// <p>The VPC security group IDs, in the form sg-xxxxxxxx. The security groups must be for the same VPC as specified in the subnet. </p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p> When you send any requests to Amazon Web Services resources from the notebook instance, SageMaker assumes this role to perform tasks on your behalf. You must grant this role necessary permissions so SageMaker can perform these tasks. The policy must allow the SageMaker service principal (sagemaker.amazonaws.com) permissions to assume this role. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p> <note>
     /// <p>To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
@@ -69,8 +71,10 @@ impl CreateNotebookInstanceInput {
         self.kms_key_id.as_deref()
     }
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The name of a lifecycle configuration to associate with the notebook instance. For information about lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional) Customize a Notebook Instance</a>.</p>
     pub fn lifecycle_config_name(&self) -> ::std::option::Option<&str> {
@@ -86,16 +90,20 @@ impl CreateNotebookInstanceInput {
         self.volume_size_in_gb
     }
     /// <p>A list of Elastic Inference (EI) instance types to associate with this notebook instance. Currently, only one instance type can be associated with a notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
-    pub fn accelerator_types(&self) -> ::std::option::Option<&[crate::types::NotebookInstanceAcceleratorType]> {
-        self.accelerator_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accelerator_types.is_none()`.
+    pub fn accelerator_types(&self) -> &[crate::types::NotebookInstanceAcceleratorType] {
+        self.accelerator_types.as_deref().unwrap_or_default()
     }
     /// <p>A Git repository to associate with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
     pub fn default_code_repository(&self) -> ::std::option::Option<&str> {
         self.default_code_repository.as_deref()
     }
     /// <p>An array of up to three Git repositories to associate with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
-    pub fn additional_code_repositories(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.additional_code_repositories.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_code_repositories.is_none()`.
+    pub fn additional_code_repositories(&self) -> &[::std::string::String] {
+        self.additional_code_repositories.as_deref().unwrap_or_default()
     }
     /// <p>Whether root access is enabled or disabled for users of the notebook instance. The default value is <code>Enabled</code>.</p> <note>
     /// <p>Lifecycle configurations need root access to be able to set up a notebook instance. Because of this, lifecycle configurations associated with a notebook instance always run with root access even if you disable root access for users.</p>
@@ -142,6 +150,7 @@ pub struct CreateNotebookInstanceInputBuilder {
 }
 impl CreateNotebookInstanceInputBuilder {
     /// <p>The name of the new notebook instance.</p>
+    /// This field is required.
     pub fn notebook_instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_instance_name = ::std::option::Option::Some(input.into());
         self
@@ -156,6 +165,7 @@ impl CreateNotebookInstanceInputBuilder {
         &self.notebook_instance_name
     }
     /// <p>The type of ML compute instance to launch for the notebook instance.</p>
+    /// This field is required.
     pub fn instance_type(mut self, input: crate::types::InstanceType) -> Self {
         self.instance_type = ::std::option::Option::Some(input);
         self
@@ -206,6 +216,7 @@ impl CreateNotebookInstanceInputBuilder {
     /// <p> When you send any requests to Amazon Web Services resources from the notebook instance, SageMaker assumes this role to perform tasks on your behalf. You must grant this role necessary permissions so SageMaker can perform these tasks. The policy must allow the SageMaker service principal (sagemaker.amazonaws.com) permissions to assume this role. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p> <note>
     /// <p>To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
     /// </note>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -410,8 +421,10 @@ impl CreateNotebookInstanceInputBuilder {
     /// Consumes the builder and constructs a [`CreateNotebookInstanceInput`](crate::operation::create_notebook_instance::CreateNotebookInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_notebook_instance::CreateNotebookInstanceInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_notebook_instance::CreateNotebookInstanceInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_notebook_instance::CreateNotebookInstanceInput {
             notebook_instance_name: self.notebook_instance_name,
             instance_type: self.instance_type,

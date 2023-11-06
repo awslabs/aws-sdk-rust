@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTagsForStreamOutput {
     /// <p>A list of tags associated with <code>StreamName</code>, starting with the first tag after <code>ExclusiveStartTagKey</code> and up to the specified <code>Limit</code>. </p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::vec::Vec<crate::types::Tag>,
     /// <p>If set to <code>true</code>, more tags are available. To request additional tags, set <code>ExclusiveStartTagKey</code> to the key of the last tag returned.</p>
-    pub has_more_tags: ::std::option::Option<bool>,
+    pub has_more_tags: bool,
     _request_id: Option<String>,
 }
 impl ListTagsForStreamOutput {
     /// <p>A list of tags associated with <code>StreamName</code>, starting with the first tag after <code>ExclusiveStartTagKey</code> and up to the specified <code>Limit</code>. </p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        use std::ops::Deref;
+        self.tags.deref()
     }
     /// <p>If set to <code>true</code>, more tags are available. To request additional tags, set <code>ExclusiveStartTagKey</code> to the key of the last tag returned.</p>
-    pub fn has_more_tags(&self) -> ::std::option::Option<bool> {
+    pub fn has_more_tags(&self) -> bool {
         self.has_more_tags
     }
 }
@@ -62,6 +63,7 @@ impl ListTagsForStreamOutputBuilder {
         &self.tags
     }
     /// <p>If set to <code>true</code>, more tags are available. To request additional tags, set <code>ExclusiveStartTagKey</code> to the key of the last tag returned.</p>
+    /// This field is required.
     pub fn has_more_tags(mut self, input: bool) -> Self {
         self.has_more_tags = ::std::option::Option::Some(input);
         self
@@ -85,11 +87,27 @@ impl ListTagsForStreamOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListTagsForStreamOutput`](crate::operation::list_tags_for_stream::ListTagsForStreamOutput).
-    pub fn build(self) -> crate::operation::list_tags_for_stream::ListTagsForStreamOutput {
-        crate::operation::list_tags_for_stream::ListTagsForStreamOutput {
-            tags: self.tags,
-            has_more_tags: self.has_more_tags,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`tags`](crate::operation::list_tags_for_stream::builders::ListTagsForStreamOutputBuilder::tags)
+    /// - [`has_more_tags`](crate::operation::list_tags_for_stream::builders::ListTagsForStreamOutputBuilder::has_more_tags)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_tags_for_stream::ListTagsForStreamOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_tags_for_stream::ListTagsForStreamOutput {
+            tags: self.tags.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "tags",
+                    "tags was not specified but it is required when building ListTagsForStreamOutput",
+                )
+            })?,
+            has_more_tags: self.has_more_tags.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "has_more_tags",
+                    "has_more_tags was not specified but it is required when building ListTagsForStreamOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

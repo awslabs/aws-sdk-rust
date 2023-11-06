@@ -123,7 +123,7 @@ pub(crate) fn de_list_classification_scopes(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "classificationScopes" => {
                     builder = builder.set_classification_scopes(
-                        crate::protocol_serde::shape___list_of_classification_scope_summary::de___list_of_classification_scope_summary(tokens)?,
+                        crate::protocol_serde::shape_list_of_classification_scope_summary::de_list_of_classification_scope_summary(tokens)?,
                     );
                 }
                 "nextToken" => {

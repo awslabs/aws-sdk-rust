@@ -2,7 +2,7 @@
 pub fn ser_sheet_controls_option(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SheetControlsOption,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.visibility_state {
         object.key("VisibilityState").string(var_1.as_str());
     }

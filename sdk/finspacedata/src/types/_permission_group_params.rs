@@ -17,8 +17,10 @@ impl PermissionGroupParams {
         self.permission_group_id.as_deref()
     }
     /// <p>List of resource permissions.</p>
-    pub fn dataset_permissions(&self) -> ::std::option::Option<&[crate::types::ResourcePermission]> {
-        self.dataset_permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dataset_permissions.is_none()`.
+    pub fn dataset_permissions(&self) -> &[crate::types::ResourcePermission] {
+        self.dataset_permissions.as_deref().unwrap_or_default()
     }
 }
 impl PermissionGroupParams {

@@ -41,6 +41,7 @@ pub struct MergePullRequestByFastForwardInputBuilder {
 }
 impl MergePullRequestByFastForwardInputBuilder {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
+    /// This field is required.
     pub fn pull_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pull_request_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl MergePullRequestByFastForwardInputBuilder {
         &self.pull_request_id
     }
     /// <p>The name of the repository where the pull request was created.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +89,7 @@ impl MergePullRequestByFastForwardInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardInput {
             pull_request_id: self.pull_request_id,

@@ -9,8 +9,10 @@ pub struct GetAuthorizationTokenOutput {
 }
 impl GetAuthorizationTokenOutput {
     /// <p>A list of authorization token data objects that correspond to the <code>registryIds</code> values in the request.</p>
-    pub fn authorization_data(&self) -> ::std::option::Option<&[crate::types::AuthorizationData]> {
-        self.authorization_data.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.authorization_data.is_none()`.
+    pub fn authorization_data(&self) -> &[crate::types::AuthorizationData] {
+        self.authorization_data.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetAuthorizationTokenOutput {

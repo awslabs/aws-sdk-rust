@@ -4,7 +4,7 @@
  */
 
 /// Smithy retry classifiers.
-pub mod classifier;
+pub mod classifiers;
 
 /// Smithy retry strategies.
 pub mod strategy;
@@ -15,30 +15,29 @@ mod token_bucket;
 use aws_smithy_types::config_bag::{Storable, StoreReplace};
 use std::fmt;
 
-pub use client_rate_limiter::{ClientRateLimiter, ClientRateLimiterRuntimePlugin};
-pub use token_bucket::{TokenBucket, TokenBucketRuntimePlugin};
+pub use client_rate_limiter::ClientRateLimiter;
+pub use token_bucket::TokenBucket;
 
 #[doc(hidden)]
 pub use client_rate_limiter::ClientRateLimiterPartition;
-#[doc(hidden)]
-pub use token_bucket::TokenBucketPartition;
+use std::borrow::Cow;
 
 #[doc(hidden)]
 #[non_exhaustive]
 #[derive(Clone, Debug, Hash, PartialEq, Eq)]
 pub struct RetryPartition {
-    inner: &'static str,
+    name: Cow<'static, str>,
 }
 
 impl RetryPartition {
-    pub fn new(name: &'static str) -> Self {
-        Self { inner: name }
+    pub fn new(name: impl Into<Cow<'static, str>>) -> Self {
+        Self { name: name.into() }
     }
 }
 
 impl fmt::Display for RetryPartition {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "{}", self.inner)
+        f.write_str(&self.name)
     }
 }
 

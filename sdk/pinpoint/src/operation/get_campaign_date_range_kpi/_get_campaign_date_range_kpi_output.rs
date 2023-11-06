@@ -34,6 +34,7 @@ pub struct GetCampaignDateRangeKpiOutputBuilder {
 }
 impl GetCampaignDateRangeKpiOutputBuilder {
     /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to a campaign, and provides information about that query.</p>
+    /// This field is required.
     pub fn campaign_date_range_kpi_response(mut self, input: crate::types::CampaignDateRangeKpiResponse) -> Self {
         self.campaign_date_range_kpi_response = ::std::option::Option::Some(input);
         self

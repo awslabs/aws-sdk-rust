@@ -35,6 +35,7 @@ pub struct ListBucketIntelligentTieringConfigurationsInputBuilder {
 }
 impl ListBucketIntelligentTieringConfigurationsInputBuilder {
     /// <p>The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -67,7 +68,7 @@ impl ListBucketIntelligentTieringConfigurationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_bucket_intelligent_tiering_configurations::ListBucketIntelligentTieringConfigurationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_bucket_intelligent_tiering_configurations::ListBucketIntelligentTieringConfigurationsInput {

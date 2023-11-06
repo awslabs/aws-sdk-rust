@@ -53,12 +53,16 @@ impl Entity {
         self.r#type.as_ref()
     }
     /// <p>Contextual information for the entity.</p>
-    pub fn traits(&self) -> ::std::option::Option<&[crate::types::Trait]> {
-        self.traits.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.traits.is_none()`.
+    pub fn traits(&self) -> &[crate::types::Trait] {
+        self.traits.as_deref().unwrap_or_default()
     }
     /// <p> The extracted attributes that relate to this entity.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&[crate::types::Attribute]> {
-        self.attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
+    pub fn attributes(&self) -> &[crate::types::Attribute] {
+        self.attributes.as_deref().unwrap_or_default()
     }
 }
 impl Entity {

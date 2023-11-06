@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDetector`](crate::operation::get_detector::builders::GetDetectorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`detector_id(impl Into<String>)`](crate::operation::get_detector::builders::GetDetectorFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::get_detector::builders::GetDetectorFluentBuilder::set_detector_id): <p>The unique ID of the detector that you want to get.</p>
+    ///   - [`detector_id(impl Into<String>)`](crate::operation::get_detector::builders::GetDetectorFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::get_detector::builders::GetDetectorFluentBuilder::set_detector_id):<br>required: **true**<br><p>The unique ID of the detector that you want to get.</p><br>
     /// - On success, responds with [`GetDetectorOutput`](crate::operation::get_detector::GetDetectorOutput) with field(s):
     ///   - [`created_at(Option<String>)`](crate::operation::get_detector::GetDetectorOutput::created_at): <p>The timestamp of when the detector was created.</p>
     ///   - [`finding_publishing_frequency(Option<FindingPublishingFrequency>)`](crate::operation::get_detector::GetDetectorOutput::finding_publishing_frequency): <p>The publishing frequency of the finding.</p>
@@ -11,8 +11,8 @@ impl super::Client {
     ///   - [`status(Option<DetectorStatus>)`](crate::operation::get_detector::GetDetectorOutput::status): <p>The detector status.</p>
     ///   - [`updated_at(Option<String>)`](crate::operation::get_detector::GetDetectorOutput::updated_at): <p>The last-updated timestamp for the detector.</p>
     ///   - [`data_sources(Option<DataSourceConfigurationsResult>)`](crate::operation::get_detector::GetDetectorOutput::data_sources): <p>Describes which data sources are enabled for the detector.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_detector::GetDetectorOutput::tags): <p>The tags of the detector resource.</p>
-    ///   - [`features(Option<Vec<DetectorFeatureConfigurationResult>>)`](crate::operation::get_detector::GetDetectorOutput::features): <p>Describes the features that have been enabled for the detector.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_detector::GetDetectorOutput::tags): <p>The tags of the detector resource.</p>
+    ///   - [`features(Option<Vec::<DetectorFeatureConfigurationResult>>)`](crate::operation::get_detector::GetDetectorOutput::features): <p>Describes the features that have been enabled for the detector.</p>
     /// - On failure, responds with [`SdkError<GetDetectorError>`](crate::operation::get_detector::GetDetectorError)
     pub fn get_detector(&self) -> crate::operation::get_detector::builders::GetDetectorFluentBuilder {
         crate::operation::get_detector::builders::GetDetectorFluentBuilder::new(self.handle.clone())

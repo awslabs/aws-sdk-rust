@@ -2,24 +2,24 @@
 pub fn ser_stage(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Stage,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.duration_in_minutes {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
         object.key("DurationInMinutes").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+            ::aws_smithy_types::Number::NegInt((input.duration_in_minutes).into()),
         );
     }
-    if let Some(var_2) = &input.targets {
-        let mut array_3 = object.key("Targets").start_array();
-        for item_4 in var_2 {
+    {
+        let mut array_1 = object.key("Targets").start_array();
+        for item_2 in &input.targets {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_target::ser_target(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_3 = array_1.value().start_object();
+                crate::protocol_serde::shape_target::ser_target(&mut object_3, item_2)?;
+                object_3.finish();
             }
         }
-        array_3.finish();
+        array_1.finish();
     }
     Ok(())
 }
@@ -59,7 +59,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::stage_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

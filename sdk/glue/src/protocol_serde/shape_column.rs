@@ -2,25 +2,25 @@
 pub fn ser_column(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Column,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("Name").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.r#type {
-        object.key("Type").string(var_2.as_str());
+    if let Some(var_1) = &input.r#type {
+        object.key("Type").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.comment {
-        object.key("Comment").string(var_3.as_str());
+    if let Some(var_2) = &input.comment {
+        object.key("Comment").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.parameters {
+    if let Some(var_3) = &input.parameters {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("Parameters").start_object();
-        for (key_6, value_7) in var_4 {
+        let mut object_4 = object.key("Parameters").start_object();
+        for (key_5, value_6) in var_3 {
             {
-                object_5.key(key_6.as_str()).string(value_7.as_str());
+                object_4.key(key_5.as_str()).string(value_6.as_str());
             }
         }
-        object_5.finish();
+        object_4.finish();
     }
     Ok(())
 }
@@ -74,7 +74,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::column_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

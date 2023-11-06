@@ -75,7 +75,7 @@ impl ListHealthChecksInputBuilder {
     /// Consumes the builder and constructs a [`ListHealthChecksInput`](crate::operation::list_health_checks::ListHealthChecksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_health_checks::ListHealthChecksInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_health_checks::ListHealthChecksInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_health_checks::ListHealthChecksInput {
             marker: self.marker,
             max_items: self.max_items,

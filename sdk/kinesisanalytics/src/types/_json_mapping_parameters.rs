@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JsonMappingParameters {
     /// <p>Path to the top-level parent that contains the records.</p>
-    pub record_row_path: ::std::option::Option<::std::string::String>,
+    pub record_row_path: ::std::string::String,
 }
 impl JsonMappingParameters {
     /// <p>Path to the top-level parent that contains the records.</p>
-    pub fn record_row_path(&self) -> ::std::option::Option<&str> {
-        self.record_row_path.as_deref()
+    pub fn record_row_path(&self) -> &str {
+        use std::ops::Deref;
+        self.record_row_path.deref()
     }
 }
 impl JsonMappingParameters {
@@ -28,6 +29,7 @@ pub struct JsonMappingParametersBuilder {
 }
 impl JsonMappingParametersBuilder {
     /// <p>Path to the top-level parent that contains the records.</p>
+    /// This field is required.
     pub fn record_row_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.record_row_path = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl JsonMappingParametersBuilder {
         &self.record_row_path
     }
     /// Consumes the builder and constructs a [`JsonMappingParameters`](crate::types::JsonMappingParameters).
-    pub fn build(self) -> crate::types::JsonMappingParameters {
-        crate::types::JsonMappingParameters {
-            record_row_path: self.record_row_path,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`record_row_path`](crate::types::builders::JsonMappingParametersBuilder::record_row_path)
+    pub fn build(self) -> ::std::result::Result<crate::types::JsonMappingParameters, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::JsonMappingParameters {
+            record_row_path: self.record_row_path.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "record_row_path",
+                    "record_row_path was not specified but it is required when building JsonMappingParameters",
+                )
+            })?,
+        })
     }
 }

@@ -5,27 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ServiceTemplateVersion {
     /// <p>The name of the version of a service template.</p>
-    pub template_name: ::std::option::Option<::std::string::String>,
+    pub template_name: ::std::string::String,
     /// <p>The latest major version that's associated with the version of a service template.</p>
-    pub major_version: ::std::option::Option<::std::string::String>,
+    pub major_version: ::std::string::String,
     /// <p>The minor version of a service template.</p>
-    pub minor_version: ::std::option::Option<::std::string::String>,
+    pub minor_version: ::std::string::String,
     /// <p>The recommended minor version of the service template.</p>
     pub recommended_minor_version: ::std::option::Option<::std::string::String>,
     /// <p>The service template version status.</p>
-    pub status: ::std::option::Option<crate::types::TemplateVersionStatus>,
+    pub status: crate::types::TemplateVersionStatus,
     /// <p>A service template version status message.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>A description of the version of a service template.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the version of a service template.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The time when the version of a service template was created.</p>
-    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The time when the version of a service template was last modified.</p>
-    pub last_modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub last_modified_at: ::aws_smithy_types::DateTime,
     /// <p>An array of compatible environment template names for the major version of a service template.</p>
-    pub compatible_environment_templates: ::std::option::Option<::std::vec::Vec<crate::types::CompatibleEnvironmentTemplate>>,
+    pub compatible_environment_templates: ::std::vec::Vec<crate::types::CompatibleEnvironmentTemplate>,
     /// <p>The schema of the version of a service template.</p>
     pub schema: ::std::option::Option<::std::string::String>,
     /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p>
@@ -34,24 +34,27 @@ pub struct ServiceTemplateVersion {
 }
 impl ServiceTemplateVersion {
     /// <p>The name of the version of a service template.</p>
-    pub fn template_name(&self) -> ::std::option::Option<&str> {
-        self.template_name.as_deref()
+    pub fn template_name(&self) -> &str {
+        use std::ops::Deref;
+        self.template_name.deref()
     }
     /// <p>The latest major version that's associated with the version of a service template.</p>
-    pub fn major_version(&self) -> ::std::option::Option<&str> {
-        self.major_version.as_deref()
+    pub fn major_version(&self) -> &str {
+        use std::ops::Deref;
+        self.major_version.deref()
     }
     /// <p>The minor version of a service template.</p>
-    pub fn minor_version(&self) -> ::std::option::Option<&str> {
-        self.minor_version.as_deref()
+    pub fn minor_version(&self) -> &str {
+        use std::ops::Deref;
+        self.minor_version.deref()
     }
     /// <p>The recommended minor version of the service template.</p>
     pub fn recommended_minor_version(&self) -> ::std::option::Option<&str> {
         self.recommended_minor_version.as_deref()
     }
     /// <p>The service template version status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::TemplateVersionStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::TemplateVersionStatus {
+        &self.status
     }
     /// <p>A service template version status message.</p>
     pub fn status_message(&self) -> ::std::option::Option<&str> {
@@ -62,20 +65,22 @@ impl ServiceTemplateVersion {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the version of a service template.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The time when the version of a service template was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_at.as_ref()
+    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_at
     }
     /// <p>The time when the version of a service template was last modified.</p>
-    pub fn last_modified_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.last_modified_at.as_ref()
+    pub fn last_modified_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.last_modified_at
     }
     /// <p>An array of compatible environment template names for the major version of a service template.</p>
-    pub fn compatible_environment_templates(&self) -> ::std::option::Option<&[crate::types::CompatibleEnvironmentTemplate]> {
-        self.compatible_environment_templates.as_deref()
+    pub fn compatible_environment_templates(&self) -> &[crate::types::CompatibleEnvironmentTemplate] {
+        use std::ops::Deref;
+        self.compatible_environment_templates.deref()
     }
     /// <p>The schema of the version of a service template.</p>
     pub fn schema(&self) -> ::std::option::Option<&str> {
@@ -83,8 +88,10 @@ impl ServiceTemplateVersion {
     }
     /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p>
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
-    pub fn supported_component_sources(&self) -> ::std::option::Option<&[crate::types::ServiceTemplateSupportedComponentSourceType]> {
-        self.supported_component_sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_component_sources.is_none()`.
+    pub fn supported_component_sources(&self) -> &[crate::types::ServiceTemplateSupportedComponentSourceType] {
+        self.supported_component_sources.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for ServiceTemplateVersion {
@@ -133,6 +140,7 @@ pub struct ServiceTemplateVersionBuilder {
 }
 impl ServiceTemplateVersionBuilder {
     /// <p>The name of the version of a service template.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
@@ -147,6 +155,7 @@ impl ServiceTemplateVersionBuilder {
         &self.template_name
     }
     /// <p>The latest major version that's associated with the version of a service template.</p>
+    /// This field is required.
     pub fn major_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.major_version = ::std::option::Option::Some(input.into());
         self
@@ -161,6 +170,7 @@ impl ServiceTemplateVersionBuilder {
         &self.major_version
     }
     /// <p>The minor version of a service template.</p>
+    /// This field is required.
     pub fn minor_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.minor_version = ::std::option::Option::Some(input.into());
         self
@@ -189,6 +199,7 @@ impl ServiceTemplateVersionBuilder {
         &self.recommended_minor_version
     }
     /// <p>The service template version status.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::TemplateVersionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -231,6 +242,7 @@ impl ServiceTemplateVersionBuilder {
         &self.description
     }
     /// <p>The Amazon Resource Name (ARN) of the version of a service template.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -245,6 +257,7 @@ impl ServiceTemplateVersionBuilder {
         &self.arn
     }
     /// <p>The time when the version of a service template was created.</p>
+    /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
@@ -259,6 +272,7 @@ impl ServiceTemplateVersionBuilder {
         &self.created_at
     }
     /// <p>The time when the version of a service template was last modified.</p>
+    /// This field is required.
     pub fn last_modified_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_at = ::std::option::Option::Some(input);
         self
@@ -338,22 +352,71 @@ impl ServiceTemplateVersionBuilder {
         &self.supported_component_sources
     }
     /// Consumes the builder and constructs a [`ServiceTemplateVersion`](crate::types::ServiceTemplateVersion).
-    pub fn build(self) -> crate::types::ServiceTemplateVersion {
-        crate::types::ServiceTemplateVersion {
-            template_name: self.template_name,
-            major_version: self.major_version,
-            minor_version: self.minor_version,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`template_name`](crate::types::builders::ServiceTemplateVersionBuilder::template_name)
+    /// - [`major_version`](crate::types::builders::ServiceTemplateVersionBuilder::major_version)
+    /// - [`minor_version`](crate::types::builders::ServiceTemplateVersionBuilder::minor_version)
+    /// - [`status`](crate::types::builders::ServiceTemplateVersionBuilder::status)
+    /// - [`arn`](crate::types::builders::ServiceTemplateVersionBuilder::arn)
+    /// - [`created_at`](crate::types::builders::ServiceTemplateVersionBuilder::created_at)
+    /// - [`last_modified_at`](crate::types::builders::ServiceTemplateVersionBuilder::last_modified_at)
+    /// - [`compatible_environment_templates`](crate::types::builders::ServiceTemplateVersionBuilder::compatible_environment_templates)
+    pub fn build(self) -> ::std::result::Result<crate::types::ServiceTemplateVersion, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ServiceTemplateVersion {
+            template_name: self.template_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "template_name",
+                    "template_name was not specified but it is required when building ServiceTemplateVersion",
+                )
+            })?,
+            major_version: self.major_version.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "major_version",
+                    "major_version was not specified but it is required when building ServiceTemplateVersion",
+                )
+            })?,
+            minor_version: self.minor_version.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "minor_version",
+                    "minor_version was not specified but it is required when building ServiceTemplateVersion",
+                )
+            })?,
             recommended_minor_version: self.recommended_minor_version,
-            status: self.status,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building ServiceTemplateVersion",
+                )
+            })?,
             status_message: self.status_message,
             description: self.description,
-            arn: self.arn,
-            created_at: self.created_at,
-            last_modified_at: self.last_modified_at,
-            compatible_environment_templates: self.compatible_environment_templates,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building ServiceTemplateVersion",
+                )
+            })?,
+            created_at: self.created_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_at",
+                    "created_at was not specified but it is required when building ServiceTemplateVersion",
+                )
+            })?,
+            last_modified_at: self.last_modified_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "last_modified_at",
+                    "last_modified_at was not specified but it is required when building ServiceTemplateVersion",
+                )
+            })?,
+            compatible_environment_templates: self.compatible_environment_templates.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "compatible_environment_templates",
+                    "compatible_environment_templates was not specified but it is required when building ServiceTemplateVersion",
+                )
+            })?,
             schema: self.schema,
             supported_component_sources: self.supported_component_sources,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for ServiceTemplateVersionBuilder {

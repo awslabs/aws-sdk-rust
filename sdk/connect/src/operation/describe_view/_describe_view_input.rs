@@ -34,6 +34,7 @@ pub struct DescribeViewInputBuilder {
 }
 impl DescribeViewInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeViewInputBuilder {
         &self.instance_id
     }
     /// <p>The ViewId of the view. This must be an ARN for Amazon Web Services managed views.</p>
+    /// This field is required.
     pub fn view_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.view_id = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,9 @@ impl DescribeViewInputBuilder {
         &self.view_id
     }
     /// Consumes the builder and constructs a [`DescribeViewInput`](crate::operation::describe_view::DescribeViewInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_view::DescribeViewInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_view::DescribeViewInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_view::DescribeViewInput {
             instance_id: self.instance_id,
             view_id: self.view_id,

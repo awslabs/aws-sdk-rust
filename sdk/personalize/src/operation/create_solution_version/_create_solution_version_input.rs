@@ -30,8 +30,10 @@ impl CreateSolutionVersionInput {
         self.training_mode.as_ref()
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the solution version.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateSolutionVersionInput {
@@ -66,6 +68,7 @@ impl CreateSolutionVersionInputBuilder {
         &self.name
     }
     /// <p>The Amazon Resource Name (ARN) of the solution containing the training configuration information.</p>
+    /// This field is required.
     pub fn solution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.solution_arn = ::std::option::Option::Some(input.into());
         self
@@ -122,7 +125,7 @@ impl CreateSolutionVersionInputBuilder {
     /// Consumes the builder and constructs a [`CreateSolutionVersionInput`](crate::operation::create_solution_version::CreateSolutionVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_solution_version::CreateSolutionVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_solution_version::CreateSolutionVersionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_solution_version::CreateSolutionVersionInput {
             name: self.name,

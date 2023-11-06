@@ -27,6 +27,7 @@ pub struct GetControlInputBuilder {
 }
 impl GetControlInputBuilder {
     /// <p> The identifier for the control. </p>
+    /// This field is required.
     pub fn control_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetControlInputBuilder {
         &self.control_id
     }
     /// Consumes the builder and constructs a [`GetControlInput`](crate::operation::get_control::GetControlInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_control::GetControlInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_control::GetControlInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_control::GetControlInput { control_id: self.control_id })
     }
 }

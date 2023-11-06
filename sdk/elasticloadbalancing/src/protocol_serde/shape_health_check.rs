@@ -3,47 +3,48 @@
 pub fn ser_health_check(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::HealthCheck,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Target");
-    if let Some(var_2) = &input.target {
-        scope_1.string(var_2);
+    {
+        scope_1.string(&input.target);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("Interval");
-    if let Some(var_4) = &input.interval {
+    let mut scope_2 = writer.prefix("Interval");
+    {
+        scope_2.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((input.interval).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_3 = writer.prefix("Timeout");
+    {
         scope_3.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+            ::aws_smithy_types::Number::NegInt((input.timeout).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("Timeout");
-    if let Some(var_6) = &input.timeout {
+    let mut scope_4 = writer.prefix("UnhealthyThreshold");
+    {
+        scope_4.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((input.unhealthy_threshold).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_5 = writer.prefix("HealthyThreshold");
+    {
         scope_5.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_6).into()),
-        );
-    }
-    #[allow(unused_mut)]
-    let mut scope_7 = writer.prefix("UnhealthyThreshold");
-    if let Some(var_8) = &input.unhealthy_threshold {
-        scope_7.number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_8).into()),
-        );
-    }
-    #[allow(unused_mut)]
-    let mut scope_9 = writer.prefix("HealthyThreshold");
-    if let Some(var_10) = &input.healthy_threshold {
-        scope_9.number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_10).into()),
+            ::aws_smithy_types::Number::NegInt((input.healthy_threshold).into()),
         );
     }
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_health_check(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::HealthCheck, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -52,7 +53,7 @@ pub fn de_health_check(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Target") /* Target com.amazonaws.elasticloadbalancing#HealthCheck$Target */ =>  {
-                let var_11 =
+                let var_6 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -61,11 +62,11 @@ pub fn de_health_check(
                         ?
                     )
                 ;
-                builder = builder.set_target(var_11);
+                builder = builder.set_target(var_6);
             }
             ,
             s if s.matches("Interval") /* Interval com.amazonaws.elasticloadbalancing#HealthCheck$Interval */ =>  {
-                let var_12 =
+                let var_7 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -76,11 +77,11 @@ pub fn de_health_check(
                         ?
                     )
                 ;
-                builder = builder.set_interval(var_12);
+                builder = builder.set_interval(var_7);
             }
             ,
             s if s.matches("Timeout") /* Timeout com.amazonaws.elasticloadbalancing#HealthCheck$Timeout */ =>  {
-                let var_13 =
+                let var_8 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -91,11 +92,11 @@ pub fn de_health_check(
                         ?
                     )
                 ;
-                builder = builder.set_timeout(var_13);
+                builder = builder.set_timeout(var_8);
             }
             ,
             s if s.matches("UnhealthyThreshold") /* UnhealthyThreshold com.amazonaws.elasticloadbalancing#HealthCheck$UnhealthyThreshold */ =>  {
-                let var_14 =
+                let var_9 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -106,11 +107,11 @@ pub fn de_health_check(
                         ?
                     )
                 ;
-                builder = builder.set_unhealthy_threshold(var_14);
+                builder = builder.set_unhealthy_threshold(var_9);
             }
             ,
             s if s.matches("HealthyThreshold") /* HealthyThreshold com.amazonaws.elasticloadbalancing#HealthCheck$HealthyThreshold */ =>  {
-                let var_15 =
+                let var_10 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -121,11 +122,13 @@ pub fn de_health_check(
                         ?
                     )
                 ;
-                builder = builder.set_healthy_threshold(var_15);
+                builder = builder.set_healthy_threshold(var_10);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::health_check_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

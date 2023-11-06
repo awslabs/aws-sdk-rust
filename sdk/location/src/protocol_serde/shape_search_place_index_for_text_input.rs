@@ -2,7 +2,7 @@
 pub fn ser_search_place_index_for_text_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::search_place_index_for_text::SearchPlaceIndexForTextInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.bias_position {
         let mut array_2 = object.key("BiasPosition").start_array();
         for item_3 in var_1 {
@@ -48,14 +48,14 @@ pub fn ser_search_place_index_for_text_input(
     if let Some(var_13) = &input.language {
         object.key("Language").string(var_13.as_str());
     }
-    if input.max_results != 0 {
+    if let Some(var_14) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.max_results).into()),
+            ::aws_smithy_types::Number::NegInt((*var_14).into()),
         );
     }
-    if let Some(var_14) = &input.text {
-        object.key("Text").string(var_14.as_str());
+    if let Some(var_15) = &input.text {
+        object.key("Text").string(var_15.as_str());
     }
     Ok(())
 }

@@ -117,182 +117,252 @@ pub struct AutomationRulesFindingFilters {
 impl AutomationRulesFindingFilters {
     /// <p> The Amazon Resource Name (ARN) for a third-party product that generated a finding in Security Hub. </p>
     /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
-    pub fn product_arn(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.product_arn.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.product_arn.is_none()`.
+    pub fn product_arn(&self) -> &[crate::types::StringFilter] {
+        self.product_arn.as_deref().unwrap_or_default()
     }
     /// <p> The Amazon Web Services account ID in which a finding was generated. </p>
     /// <p> Array Members: Minimum number of 1 item. Maximum number of 100 items. </p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.aws_account_id.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aws_account_id.is_none()`.
+    pub fn aws_account_id(&self) -> &[crate::types::StringFilter] {
+        self.aws_account_id.as_deref().unwrap_or_default()
     }
     /// <p> The product-specific identifier for a finding. </p>
     /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
-    pub fn id(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.id.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.id.is_none()`.
+    pub fn id(&self) -> &[crate::types::StringFilter] {
+        self.id.as_deref().unwrap_or_default()
     }
     /// <p> The identifier for the solution-specific component that generated a finding. </p>
     /// <p> Array Members: Minimum number of 1 item. Maximum number of 100 items. </p>
-    pub fn generator_id(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.generator_id.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.generator_id.is_none()`.
+    pub fn generator_id(&self) -> &[crate::types::StringFilter] {
+        self.generator_id.as_deref().unwrap_or_default()
     }
     /// <p> One or more finding types in the format of namespace/category/classifier that classify a finding. For a list of namespaces, classifiers, and categories, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format-type-taxonomy.html">Types taxonomy for ASFF</a> in the <i>Security Hub User Guide</i>.</p>
     /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
-    pub fn r#type(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.r#type.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.r#type.is_none()`.
+    pub fn r#type(&self) -> &[crate::types::StringFilter] {
+        self.r#type.as_deref().unwrap_or_default()
     }
     /// <p> A timestamp that indicates when the potential security issue captured by a finding was first observed by the security findings product. </p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
-    pub fn first_observed_at(&self) -> ::std::option::Option<&[crate::types::DateFilter]> {
-        self.first_observed_at.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.first_observed_at.is_none()`.
+    pub fn first_observed_at(&self) -> &[crate::types::DateFilter] {
+        self.first_observed_at.as_deref().unwrap_or_default()
     }
     /// <p> A timestamp that indicates when the potential security issue captured by a finding was most recently observed by the security findings product. </p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
-    pub fn last_observed_at(&self) -> ::std::option::Option<&[crate::types::DateFilter]> {
-        self.last_observed_at.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.last_observed_at.is_none()`.
+    pub fn last_observed_at(&self) -> &[crate::types::DateFilter] {
+        self.last_observed_at.as_deref().unwrap_or_default()
     }
     /// <p> A timestamp that indicates when this finding record was created. </p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
-    pub fn created_at(&self) -> ::std::option::Option<&[crate::types::DateFilter]> {
-        self.created_at.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.created_at.is_none()`.
+    pub fn created_at(&self) -> &[crate::types::DateFilter] {
+        self.created_at.as_deref().unwrap_or_default()
     }
     /// <p> A timestamp that indicates when the finding record was most recently updated. </p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
-    pub fn updated_at(&self) -> ::std::option::Option<&[crate::types::DateFilter]> {
-        self.updated_at.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.updated_at.is_none()`.
+    pub fn updated_at(&self) -> &[crate::types::DateFilter] {
+        self.updated_at.as_deref().unwrap_or_default()
     }
     /// <p>The likelihood that a finding accurately identifies the behavior or issue that it was intended to identify. <code>Confidence</code> is scored on a 0–100 basis using a ratio scale. A value of <code>0</code> means 0 percent confidence, and a value of <code>100</code> means 100 percent confidence. For example, a data exfiltration detection based on a statistical deviation of network traffic has low confidence because an actual exfiltration hasn't been verified. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-confidence">Confidence</a> in the <i>Security Hub User Guide</i>.</p>
     /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
-    pub fn confidence(&self) -> ::std::option::Option<&[crate::types::NumberFilter]> {
-        self.confidence.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.confidence.is_none()`.
+    pub fn confidence(&self) -> &[crate::types::NumberFilter] {
+        self.confidence.as_deref().unwrap_or_default()
     }
     /// <p> The level of importance that is assigned to the resources that are associated with a finding. <code>Criticality</code> is scored on a 0–100 basis, using a ratio scale that supports only full integers. A score of <code>0</code> means that the underlying resources have no criticality, and a score of <code>100</code> is reserved for the most critical resources. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-criticality">Criticality</a> in the <i>Security Hub User Guide</i>.</p>
     /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
-    pub fn criticality(&self) -> ::std::option::Option<&[crate::types::NumberFilter]> {
-        self.criticality.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.criticality.is_none()`.
+    pub fn criticality(&self) -> &[crate::types::NumberFilter] {
+        self.criticality.as_deref().unwrap_or_default()
     }
     /// <p> A finding's title. </p>
     /// <p> Array Members: Minimum number of 1 item. Maximum number of 100 items. </p>
-    pub fn title(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.title.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.title.is_none()`.
+    pub fn title(&self) -> &[crate::types::StringFilter] {
+        self.title.as_deref().unwrap_or_default()
     }
     /// <p> A finding's description. </p>
     /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
-    pub fn description(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.description.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.description.is_none()`.
+    pub fn description(&self) -> &[crate::types::StringFilter] {
+        self.description.as_deref().unwrap_or_default()
     }
     /// <p> Provides a URL that links to a page about the current finding in the finding product. </p>
     /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
-    pub fn source_url(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.source_url.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_url.is_none()`.
+    pub fn source_url(&self) -> &[crate::types::StringFilter] {
+        self.source_url.as_deref().unwrap_or_default()
     }
     /// <p> Provides the name of the product that generated the finding. For control-based findings, the product name is Security Hub. </p>
     /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
-    pub fn product_name(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.product_name.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.product_name.is_none()`.
+    pub fn product_name(&self) -> &[crate::types::StringFilter] {
+        self.product_name.as_deref().unwrap_or_default()
     }
     /// <p> The name of the company for the product that generated the finding. For control-based findings, the company is Amazon Web Services. </p>
     /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
-    pub fn company_name(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.company_name.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.company_name.is_none()`.
+    pub fn company_name(&self) -> &[crate::types::StringFilter] {
+        self.company_name.as_deref().unwrap_or_default()
     }
     /// <p> The severity value of the finding. </p>
     /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
-    pub fn severity_label(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.severity_label.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.severity_label.is_none()`.
+    pub fn severity_label(&self) -> &[crate::types::StringFilter] {
+        self.severity_label.as_deref().unwrap_or_default()
     }
     /// <p> The type of resource that the finding pertains to. </p>
     /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
-    pub fn resource_type(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.resource_type.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_type.is_none()`.
+    pub fn resource_type(&self) -> &[crate::types::StringFilter] {
+        self.resource_type.as_deref().unwrap_or_default()
     }
     /// <p> The identifier for the given resource type. For Amazon Web Services resources that are identified by Amazon Resource Names (ARNs), this is the ARN. For Amazon Web Services resources that lack ARNs, this is the identifier as defined by the Amazon Web Service that created the resource. For non-Amazon Web Services resources, this is a unique identifier that is associated with the resource. </p>
     /// <p> Array Members: Minimum number of 1 item. Maximum number of 100 items. </p>
-    pub fn resource_id(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.resource_id.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_id.is_none()`.
+    pub fn resource_id(&self) -> &[crate::types::StringFilter] {
+        self.resource_id.as_deref().unwrap_or_default()
     }
     /// <p> The partition in which the resource that the finding pertains to is located. A partition is a group of Amazon Web Services Regions. Each Amazon Web Services account is scoped to one partition. </p>
     /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
-    pub fn resource_partition(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.resource_partition.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_partition.is_none()`.
+    pub fn resource_partition(&self) -> &[crate::types::StringFilter] {
+        self.resource_partition.as_deref().unwrap_or_default()
     }
     /// <p> The Amazon Web Services Region where the resource that a finding pertains to is located. </p>
     /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
-    pub fn resource_region(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.resource_region.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_region.is_none()`.
+    pub fn resource_region(&self) -> &[crate::types::StringFilter] {
+        self.resource_region.as_deref().unwrap_or_default()
     }
     /// <p> A list of Amazon Web Services tags associated with a resource at the time the finding was processed. </p>
     /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
-    pub fn resource_tags(&self) -> ::std::option::Option<&[crate::types::MapFilter]> {
-        self.resource_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_tags.is_none()`.
+    pub fn resource_tags(&self) -> &[crate::types::MapFilter] {
+        self.resource_tags.as_deref().unwrap_or_default()
     }
     /// <p> Custom fields and values about the resource that a finding pertains to. </p>
     /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
-    pub fn resource_details_other(&self) -> ::std::option::Option<&[crate::types::MapFilter]> {
-        self.resource_details_other.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_details_other.is_none()`.
+    pub fn resource_details_other(&self) -> &[crate::types::MapFilter] {
+        self.resource_details_other.as_deref().unwrap_or_default()
     }
     /// <p> The result of a security check. This field is only used for findings generated from controls. </p>
     /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
-    pub fn compliance_status(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.compliance_status.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compliance_status.is_none()`.
+    pub fn compliance_status(&self) -> &[crate::types::StringFilter] {
+        self.compliance_status.as_deref().unwrap_or_default()
     }
     /// <p> The security control ID for which a finding was generated. Security control IDs are the same across standards.</p>
     /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
-    pub fn compliance_security_control_id(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.compliance_security_control_id.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compliance_security_control_id.is_none()`.
+    pub fn compliance_security_control_id(&self) -> &[crate::types::StringFilter] {
+        self.compliance_security_control_id.as_deref().unwrap_or_default()
     }
     /// <p>The unique identifier of a standard in which a control is enabled. This field consists of the resource portion of the Amazon Resource Name (ARN) returned for a standard in the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a> API response.</p>
     /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
-    pub fn compliance_associated_standards_id(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.compliance_associated_standards_id.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compliance_associated_standards_id.is_none()`.
+    pub fn compliance_associated_standards_id(&self) -> &[crate::types::StringFilter] {
+        self.compliance_associated_standards_id.as_deref().unwrap_or_default()
     }
     /// <p> Provides the veracity of a finding. </p>
     /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
-    pub fn verification_state(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.verification_state.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.verification_state.is_none()`.
+    pub fn verification_state(&self) -> &[crate::types::StringFilter] {
+        self.verification_state.as_deref().unwrap_or_default()
     }
     /// <p> Provides information about the status of the investigation into a finding. </p>
     /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
-    pub fn workflow_status(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.workflow_status.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.workflow_status.is_none()`.
+    pub fn workflow_status(&self) -> &[crate::types::StringFilter] {
+        self.workflow_status.as_deref().unwrap_or_default()
     }
     /// <p> Provides the current state of a finding. </p>
     /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
-    pub fn record_state(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.record_state.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.record_state.is_none()`.
+    pub fn record_state(&self) -> &[crate::types::StringFilter] {
+        self.record_state.as_deref().unwrap_or_default()
     }
     /// <p> The ARN for the product that generated a related finding. </p>
     /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
-    pub fn related_findings_product_arn(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.related_findings_product_arn.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.related_findings_product_arn.is_none()`.
+    pub fn related_findings_product_arn(&self) -> &[crate::types::StringFilter] {
+        self.related_findings_product_arn.as_deref().unwrap_or_default()
     }
     /// <p> The product-generated identifier for a related finding. </p>
     /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
-    pub fn related_findings_id(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.related_findings_id.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.related_findings_id.is_none()`.
+    pub fn related_findings_id(&self) -> &[crate::types::StringFilter] {
+        self.related_findings_id.as_deref().unwrap_or_default()
     }
     /// <p> The text of a user-defined note that's added to a finding. </p>
     /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
-    pub fn note_text(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.note_text.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.note_text.is_none()`.
+    pub fn note_text(&self) -> &[crate::types::StringFilter] {
+        self.note_text.as_deref().unwrap_or_default()
     }
     /// <p> The timestamp of when the note was updated. Uses the date-time format specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>. </p>
     /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
-    pub fn note_updated_at(&self) -> ::std::option::Option<&[crate::types::DateFilter]> {
-        self.note_updated_at.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.note_updated_at.is_none()`.
+    pub fn note_updated_at(&self) -> &[crate::types::DateFilter] {
+        self.note_updated_at.as_deref().unwrap_or_default()
     }
     /// <p> The principal that created a note. </p>
     /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
-    pub fn note_updated_by(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.note_updated_by.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.note_updated_by.is_none()`.
+    pub fn note_updated_by(&self) -> &[crate::types::StringFilter] {
+        self.note_updated_by.as_deref().unwrap_or_default()
     }
     /// <p> A list of user-defined name and value string pairs added to a finding. </p>
     /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
-    pub fn user_defined_fields(&self) -> ::std::option::Option<&[crate::types::MapFilter]> {
-        self.user_defined_fields.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_defined_fields.is_none()`.
+    pub fn user_defined_fields(&self) -> &[crate::types::MapFilter] {
+        self.user_defined_fields.as_deref().unwrap_or_default()
     }
 }
 impl AutomationRulesFindingFilters {

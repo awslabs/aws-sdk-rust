@@ -28,6 +28,7 @@ pub struct DescribeDomainConfigInputBuilder {
 }
 impl DescribeDomainConfigInputBuilder {
     /// <p>Name of the OpenSearch Service domain configuration that you want to describe.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl DescribeDomainConfigInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDomainConfigInput`](crate::operation::describe_domain_config::DescribeDomainConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_domain_config::DescribeDomainConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_domain_config::DescribeDomainConfigInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_domain_config::DescribeDomainConfigInput {
             domain_name: self.domain_name,

@@ -15,8 +15,10 @@ impl ListPhoneNumbersV2Output {
         self.next_token.as_deref()
     }
     /// <p>Information about phone numbers that have been claimed to your Amazon Connect instances or traffic distribution groups.</p>
-    pub fn list_phone_numbers_summary_list(&self) -> ::std::option::Option<&[crate::types::ListPhoneNumbersSummary]> {
-        self.list_phone_numbers_summary_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.list_phone_numbers_summary_list.is_none()`.
+    pub fn list_phone_numbers_summary_list(&self) -> &[crate::types::ListPhoneNumbersSummary] {
+        self.list_phone_numbers_summary_list.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListPhoneNumbersV2Output {

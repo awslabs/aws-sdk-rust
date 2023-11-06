@@ -15,8 +15,10 @@ impl UpdateUsagePlanInput {
         self.usage_plan_id.as_deref()
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn patch_operations(&self) -> ::std::option::Option<&[crate::types::PatchOperation]> {
-        self.patch_operations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.patch_operations.is_none()`.
+    pub fn patch_operations(&self) -> &[crate::types::PatchOperation] {
+        self.patch_operations.as_deref().unwrap_or_default()
     }
 }
 impl UpdateUsagePlanInput {
@@ -35,6 +37,7 @@ pub struct UpdateUsagePlanInputBuilder {
 }
 impl UpdateUsagePlanInputBuilder {
     /// <p>The Id of the to-be-updated usage plan.</p>
+    /// This field is required.
     pub fn usage_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.usage_plan_id = ::std::option::Option::Some(input.into());
         self
@@ -71,7 +74,7 @@ impl UpdateUsagePlanInputBuilder {
     /// Consumes the builder and constructs a [`UpdateUsagePlanInput`](crate::operation::update_usage_plan::UpdateUsagePlanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_usage_plan::UpdateUsagePlanInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_usage_plan::UpdateUsagePlanInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_usage_plan::UpdateUsagePlanInput {
             usage_plan_id: self.usage_plan_id,
             patch_operations: self.patch_operations,

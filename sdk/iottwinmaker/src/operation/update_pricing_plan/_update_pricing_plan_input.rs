@@ -14,8 +14,10 @@ impl UpdatePricingPlanInput {
         self.pricing_mode.as_ref()
     }
     /// <p>The bundle names.</p>
-    pub fn bundle_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.bundle_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bundle_names.is_none()`.
+    pub fn bundle_names(&self) -> &[::std::string::String] {
+        self.bundle_names.as_deref().unwrap_or_default()
     }
 }
 impl UpdatePricingPlanInput {
@@ -34,6 +36,7 @@ pub struct UpdatePricingPlanInputBuilder {
 }
 impl UpdatePricingPlanInputBuilder {
     /// <p>The pricing mode.</p>
+    /// This field is required.
     pub fn pricing_mode(mut self, input: crate::types::PricingMode) -> Self {
         self.pricing_mode = ::std::option::Option::Some(input);
         self
@@ -70,7 +73,7 @@ impl UpdatePricingPlanInputBuilder {
     /// Consumes the builder and constructs a [`UpdatePricingPlanInput`](crate::operation::update_pricing_plan::UpdatePricingPlanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_pricing_plan::UpdatePricingPlanInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_pricing_plan::UpdatePricingPlanInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_pricing_plan::UpdatePricingPlanInput {
             pricing_mode: self.pricing_mode,
             bundle_names: self.bundle_names,

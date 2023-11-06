@@ -26,8 +26,10 @@ impl CreateWorkspaceImageInput {
         self.workspace_id.as_deref()
     }
     /// <p>The tags that you want to add to the new WorkSpace image. To add tags when you're creating the image, you must create an IAM policy that grants your IAM user permission to use <code>workspaces:CreateTags</code>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateWorkspaceImageInput {
@@ -48,6 +50,7 @@ pub struct CreateWorkspaceImageInputBuilder {
 }
 impl CreateWorkspaceImageInputBuilder {
     /// <p>The name of the new WorkSpace image.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl CreateWorkspaceImageInputBuilder {
         &self.name
     }
     /// <p>The description of the new WorkSpace image.</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +80,7 @@ impl CreateWorkspaceImageInputBuilder {
         &self.description
     }
     /// <p>The identifier of the source WorkSpace</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -112,7 +117,7 @@ impl CreateWorkspaceImageInputBuilder {
     /// Consumes the builder and constructs a [`CreateWorkspaceImageInput`](crate::operation::create_workspace_image::CreateWorkspaceImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_workspace_image::CreateWorkspaceImageInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_workspace_image::CreateWorkspaceImageInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_workspace_image::CreateWorkspaceImageInput {
             name: self.name,

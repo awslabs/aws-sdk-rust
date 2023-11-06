@@ -2,36 +2,36 @@
 pub fn ser_scheduled_split_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ScheduledSplitConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.start_time {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
         object
             .key("startTime")
-            .date_time(var_1, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(&input.start_time, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_2) = &input.group_weights {
+    {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("groupWeights").start_object();
-        for (key_4, value_5) in var_2 {
+        let mut object_1 = object.key("groupWeights").start_object();
+        for (key_2, value_3) in &input.group_weights {
             {
-                object_3.key(key_4.as_str()).number(
+                object_1.key(key_2.as_str()).number(
                     #[allow(clippy::useless_conversion)]
-                    ::aws_smithy_types::Number::NegInt((*value_5).into()),
+                    ::aws_smithy_types::Number::NegInt((*value_3).into()),
                 );
             }
         }
-        object_3.finish();
+        object_1.finish();
     }
-    if let Some(var_6) = &input.segment_overrides {
-        let mut array_7 = object.key("segmentOverrides").start_array();
-        for item_8 in var_6 {
+    if let Some(var_4) = &input.segment_overrides {
+        let mut array_5 = object.key("segmentOverrides").start_array();
+        for item_6 in var_4 {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_segment_override::ser_segment_override(&mut object_9, item_8)?;
-                object_9.finish();
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_segment_override::ser_segment_override(&mut object_7, item_6)?;
+                object_7.finish();
             }
         }
-        array_7.finish();
+        array_5.finish();
     }
     Ok(())
 }

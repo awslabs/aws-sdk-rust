@@ -5,30 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct InforNexusConnectorProfileCredentials {
     /// <p> The Access Key portion of the credentials. </p>
-    pub access_key_id: ::std::option::Option<::std::string::String>,
+    pub access_key_id: ::std::string::String,
     /// <p> The identifier for the user. </p>
-    pub user_id: ::std::option::Option<::std::string::String>,
+    pub user_id: ::std::string::String,
     /// <p> The secret key used to sign requests. </p>
-    pub secret_access_key: ::std::option::Option<::std::string::String>,
+    pub secret_access_key: ::std::string::String,
     /// <p> The encryption keys used to encrypt data. </p>
-    pub datakey: ::std::option::Option<::std::string::String>,
+    pub datakey: ::std::string::String,
 }
 impl InforNexusConnectorProfileCredentials {
     /// <p> The Access Key portion of the credentials. </p>
-    pub fn access_key_id(&self) -> ::std::option::Option<&str> {
-        self.access_key_id.as_deref()
+    pub fn access_key_id(&self) -> &str {
+        use std::ops::Deref;
+        self.access_key_id.deref()
     }
     /// <p> The identifier for the user. </p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
-        self.user_id.as_deref()
+    pub fn user_id(&self) -> &str {
+        use std::ops::Deref;
+        self.user_id.deref()
     }
     /// <p> The secret key used to sign requests. </p>
-    pub fn secret_access_key(&self) -> ::std::option::Option<&str> {
-        self.secret_access_key.as_deref()
+    pub fn secret_access_key(&self) -> &str {
+        use std::ops::Deref;
+        self.secret_access_key.deref()
     }
     /// <p> The encryption keys used to encrypt data. </p>
-    pub fn datakey(&self) -> ::std::option::Option<&str> {
-        self.datakey.as_deref()
+    pub fn datakey(&self) -> &str {
+        use std::ops::Deref;
+        self.datakey.deref()
     }
 }
 impl ::std::fmt::Debug for InforNexusConnectorProfileCredentials {
@@ -59,6 +63,7 @@ pub struct InforNexusConnectorProfileCredentialsBuilder {
 }
 impl InforNexusConnectorProfileCredentialsBuilder {
     /// <p> The Access Key portion of the credentials. </p>
+    /// This field is required.
     pub fn access_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_key_id = ::std::option::Option::Some(input.into());
         self
@@ -73,6 +78,7 @@ impl InforNexusConnectorProfileCredentialsBuilder {
         &self.access_key_id
     }
     /// <p> The identifier for the user. </p>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
@@ -87,6 +93,7 @@ impl InforNexusConnectorProfileCredentialsBuilder {
         &self.user_id
     }
     /// <p> The secret key used to sign requests. </p>
+    /// This field is required.
     pub fn secret_access_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_access_key = ::std::option::Option::Some(input.into());
         self
@@ -101,6 +108,7 @@ impl InforNexusConnectorProfileCredentialsBuilder {
         &self.secret_access_key
     }
     /// <p> The encryption keys used to encrypt data. </p>
+    /// This field is required.
     pub fn datakey(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datakey = ::std::option::Option::Some(input.into());
         self
@@ -115,13 +123,40 @@ impl InforNexusConnectorProfileCredentialsBuilder {
         &self.datakey
     }
     /// Consumes the builder and constructs a [`InforNexusConnectorProfileCredentials`](crate::types::InforNexusConnectorProfileCredentials).
-    pub fn build(self) -> crate::types::InforNexusConnectorProfileCredentials {
-        crate::types::InforNexusConnectorProfileCredentials {
-            access_key_id: self.access_key_id,
-            user_id: self.user_id,
-            secret_access_key: self.secret_access_key,
-            datakey: self.datakey,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`access_key_id`](crate::types::builders::InforNexusConnectorProfileCredentialsBuilder::access_key_id)
+    /// - [`user_id`](crate::types::builders::InforNexusConnectorProfileCredentialsBuilder::user_id)
+    /// - [`secret_access_key`](crate::types::builders::InforNexusConnectorProfileCredentialsBuilder::secret_access_key)
+    /// - [`datakey`](crate::types::builders::InforNexusConnectorProfileCredentialsBuilder::datakey)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::InforNexusConnectorProfileCredentials, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::InforNexusConnectorProfileCredentials {
+            access_key_id: self.access_key_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "access_key_id",
+                    "access_key_id was not specified but it is required when building InforNexusConnectorProfileCredentials",
+                )
+            })?,
+            user_id: self.user_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "user_id",
+                    "user_id was not specified but it is required when building InforNexusConnectorProfileCredentials",
+                )
+            })?,
+            secret_access_key: self.secret_access_key.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "secret_access_key",
+                    "secret_access_key was not specified but it is required when building InforNexusConnectorProfileCredentials",
+                )
+            })?,
+            datakey: self.datakey.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "datakey",
+                    "datakey was not specified but it is required when building InforNexusConnectorProfileCredentials",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for InforNexusConnectorProfileCredentialsBuilder {

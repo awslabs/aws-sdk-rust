@@ -10,7 +10,7 @@ impl DisassociateVpcCidrBlockInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::disassociate_vpc_cidr_block::DisassociateVpcCidrBlockOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::disassociate_vpc_cidr_block::DisassociateVpcCidrBlockError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -73,12 +73,15 @@ impl DisassociateVpcCidrBlockFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_vpc_cidr_block::DisassociateVpcCidrBlockOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::disassociate_vpc_cidr_block::DisassociateVpcCidrBlockError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::disassociate_vpc_cidr_block::DisassociateVpcCidrBlock::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -87,20 +90,15 @@ impl DisassociateVpcCidrBlockFluentBuilder {
         crate::operation::disassociate_vpc_cidr_block::DisassociateVpcCidrBlock::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::disassociate_vpc_cidr_block::DisassociateVpcCidrBlockOutput,
-            crate::operation::disassociate_vpc_cidr_block::DisassociateVpcCidrBlockError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_vpc_cidr_block::DisassociateVpcCidrBlockError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::disassociate_vpc_cidr_block::DisassociateVpcCidrBlockOutput,
+        crate::operation::disassociate_vpc_cidr_block::DisassociateVpcCidrBlockError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

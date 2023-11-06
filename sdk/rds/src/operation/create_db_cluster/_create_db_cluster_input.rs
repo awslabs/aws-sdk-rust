@@ -341,8 +341,10 @@ impl CreateDbClusterInput {
     /// <p>A list of Availability Zones (AZs) where DB instances in the DB cluster can be created.</p>
     /// <p>For information on Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html">Choosing the Regions and Availability Zones</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
-    pub fn availability_zones(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.availability_zones.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
+    pub fn availability_zones(&self) -> &[::std::string::String] {
+        self.availability_zones.as_deref().unwrap_or_default()
     }
     /// <p>The number of days for which automated backups are retained.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -387,8 +389,10 @@ impl CreateDbClusterInput {
     }
     /// <p>A list of EC2 VPC security groups to associate with this DB cluster.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub fn vpc_security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.vpc_security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_group_ids.is_none()`.
+    pub fn vpc_security_group_ids(&self) -> &[::std::string::String] {
+        self.vpc_security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>A DB subnet group to associate with this DB cluster.</p>
     /// <p>This setting is required to create a Multi-AZ DB cluster.</p>
@@ -500,8 +504,10 @@ impl CreateDbClusterInput {
     }
     /// <p>Tags to assign to the DB cluster.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether the DB cluster is encrypted.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -563,8 +569,10 @@ impl CreateDbClusterInput {
     /// </ul>
     /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn enable_cloudwatch_logs_exports(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.enable_cloudwatch_logs_exports.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enable_cloudwatch_logs_exports.is_none()`.
+    pub fn enable_cloudwatch_logs_exports(&self) -> &[::std::string::String] {
+        self.enable_cloudwatch_logs_exports.as_deref().unwrap_or_default()
     }
     /// <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.</p>
     /// <p>The <code>serverless</code> engine mode only applies for Aurora Serverless v1 DB clusters.</p>
@@ -935,6 +943,7 @@ impl CreateDbClusterInputBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster1</code> </p>
+    /// This field is required.
     pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_identifier = ::std::option::Option::Some(input.into());
         self
@@ -1057,6 +1066,7 @@ impl CreateDbClusterInputBuilder {
     /// <p>The database engine to use for this DB cluster.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     /// <p>Valid Values: <code>aurora-mysql | aurora-postgresql | mysql | postgres</code> </p>
+    /// This field is required.
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
         self
@@ -2257,7 +2267,7 @@ impl CreateDbClusterInputBuilder {
     /// Consumes the builder and constructs a [`CreateDbClusterInput`](crate::operation::create_db_cluster::CreateDbClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_db_cluster::CreateDbClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_db_cluster::CreateDbClusterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_db_cluster::CreateDbClusterInput {
             availability_zones: self.availability_zones,
             backup_retention_period: self.backup_retention_period,

@@ -2,7 +2,7 @@
 pub fn ser_aws_ec2_instance_metadata_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEc2InstanceMetadataOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.http_endpoint {
         object.key("HttpEndpoint").string(var_1.as_str());
     }

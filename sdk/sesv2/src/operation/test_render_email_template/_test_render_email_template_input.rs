@@ -35,6 +35,7 @@ pub struct TestRenderEmailTemplateInputBuilder {
 }
 impl TestRenderEmailTemplateInputBuilder {
     /// <p>The name of the template.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl TestRenderEmailTemplateInputBuilder {
         &self.template_name
     }
     /// <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
+    /// This field is required.
     pub fn template_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_data = ::std::option::Option::Some(input.into());
         self
@@ -67,7 +69,7 @@ impl TestRenderEmailTemplateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::test_render_email_template::TestRenderEmailTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::test_render_email_template::TestRenderEmailTemplateInput {
             template_name: self.template_name,

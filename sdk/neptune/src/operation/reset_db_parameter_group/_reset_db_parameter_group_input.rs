@@ -32,8 +32,10 @@ impl ResetDbParameterGroupInput {
     }
     /// <p>To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and <code>ResetAllParameters</code> parameters. To reset specific parameters, provide a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single request.</p>
     /// <p>Valid Values (for Apply method): <code>pending-reboot</code> </p>
-    pub fn parameters(&self) -> ::std::option::Option<&[crate::types::Parameter]> {
-        self.parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
+    pub fn parameters(&self) -> &[crate::types::Parameter] {
+        self.parameters.as_deref().unwrap_or_default()
     }
 }
 impl ResetDbParameterGroupInput {
@@ -57,6 +59,7 @@ impl ResetDbParameterGroupInputBuilder {
     /// <ul>
     /// <li> <p>Must match the name of an existing DBParameterGroup.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn db_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_parameter_group_name = ::std::option::Option::Some(input.into());
         self
@@ -121,7 +124,7 @@ impl ResetDbParameterGroupInputBuilder {
     /// Consumes the builder and constructs a [`ResetDbParameterGroupInput`](crate::operation::reset_db_parameter_group::ResetDbParameterGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::reset_db_parameter_group::ResetDbParameterGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::reset_db_parameter_group::ResetDbParameterGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::reset_db_parameter_group::ResetDbParameterGroupInput {
             db_parameter_group_name: self.db_parameter_group_name,

@@ -41,6 +41,7 @@ pub struct ListMonitoringAlertsInputBuilder {
 }
 impl ListMonitoringAlertsInputBuilder {
     /// <p>The name of a monitoring schedule.</p>
+    /// This field is required.
     pub fn monitoring_schedule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitoring_schedule_name = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl ListMonitoringAlertsInputBuilder {
     /// Consumes the builder and constructs a [`ListMonitoringAlertsInput`](crate::operation::list_monitoring_alerts::ListMonitoringAlertsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_monitoring_alerts::ListMonitoringAlertsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_monitoring_alerts::ListMonitoringAlertsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_monitoring_alerts::ListMonitoringAlertsInput {
             monitoring_schedule_name: self.monitoring_schedule_name,

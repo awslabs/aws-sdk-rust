@@ -41,6 +41,7 @@ pub struct GetEvidenceFolderInputBuilder {
 }
 impl GetEvidenceFolderInputBuilder {
     /// <p> The unique identifier for the assessment. </p>
+    /// This field is required.
     pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl GetEvidenceFolderInputBuilder {
         &self.assessment_id
     }
     /// <p> The unique identifier for the control set. </p>
+    /// This field is required.
     pub fn control_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_set_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl GetEvidenceFolderInputBuilder {
         &self.control_set_id
     }
     /// <p> The unique identifier for the folder that the evidence is stored in. </p>
+    /// This field is required.
     pub fn evidence_folder_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evidence_folder_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +88,7 @@ impl GetEvidenceFolderInputBuilder {
     /// Consumes the builder and constructs a [`GetEvidenceFolderInput`](crate::operation::get_evidence_folder::GetEvidenceFolderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_evidence_folder::GetEvidenceFolderInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_evidence_folder::GetEvidenceFolderInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_evidence_folder::GetEvidenceFolderInput {
             assessment_id: self.assessment_id,
             control_set_id: self.control_set_id,

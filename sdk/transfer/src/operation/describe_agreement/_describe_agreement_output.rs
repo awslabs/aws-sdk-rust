@@ -34,6 +34,7 @@ pub struct DescribeAgreementOutputBuilder {
 }
 impl DescribeAgreementOutputBuilder {
     /// <p>The details for the specified agreement, returned as a <code>DescribedAgreement</code> object.</p>
+    /// This field is required.
     pub fn agreement(mut self, input: crate::types::DescribedAgreement) -> Self {
         self.agreement = ::std::option::Option::Some(input);
         self

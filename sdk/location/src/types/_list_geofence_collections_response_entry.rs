@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListGeofenceCollectionsResponseEntry {
     /// <p>The name of the geofence collection.</p>
-    pub collection_name: ::std::option::Option<::std::string::String>,
+    pub collection_name: ::std::string::String,
     /// <p>The description for the geofence collection</p>
-    pub description: ::std::option::Option<::std::string::String>,
+    pub description: ::std::string::String,
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
     pub pricing_plan: ::std::option::Option<crate::types::PricingPlan>,
@@ -15,18 +15,20 @@ pub struct ListGeofenceCollectionsResponseEntry {
     #[deprecated(note = "Deprecated. Unused.", since = "2022-02-01")]
     pub pricing_plan_data_source: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub create_time: ::aws_smithy_types::DateTime,
     /// <p>Specifies a timestamp for when the resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub update_time: ::aws_smithy_types::DateTime,
 }
 impl ListGeofenceCollectionsResponseEntry {
     /// <p>The name of the geofence collection.</p>
-    pub fn collection_name(&self) -> ::std::option::Option<&str> {
-        self.collection_name.as_deref()
+    pub fn collection_name(&self) -> &str {
+        use std::ops::Deref;
+        self.collection_name.deref()
     }
     /// <p>The description for the geofence collection</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
-        self.description.as_deref()
+    pub fn description(&self) -> &str {
+        use std::ops::Deref;
+        self.description.deref()
     }
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
@@ -39,12 +41,12 @@ impl ListGeofenceCollectionsResponseEntry {
         self.pricing_plan_data_source.as_deref()
     }
     /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.create_time.as_ref()
+    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.create_time
     }
     /// <p>Specifies a timestamp for when the resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub fn update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.update_time.as_ref()
+    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.update_time
     }
 }
 impl ListGeofenceCollectionsResponseEntry {
@@ -67,6 +69,7 @@ pub struct ListGeofenceCollectionsResponseEntryBuilder {
 }
 impl ListGeofenceCollectionsResponseEntryBuilder {
     /// <p>The name of the geofence collection.</p>
+    /// This field is required.
     pub fn collection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_name = ::std::option::Option::Some(input.into());
         self
@@ -81,6 +84,7 @@ impl ListGeofenceCollectionsResponseEntryBuilder {
         &self.collection_name
     }
     /// <p>The description for the geofence collection</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -129,6 +133,7 @@ impl ListGeofenceCollectionsResponseEntryBuilder {
         &self.pricing_plan_data_source
     }
     /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
+    /// This field is required.
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
         self
@@ -143,6 +148,7 @@ impl ListGeofenceCollectionsResponseEntryBuilder {
         &self.create_time
     }
     /// <p>Specifies a timestamp for when the resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
+    /// This field is required.
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
         self
@@ -157,14 +163,41 @@ impl ListGeofenceCollectionsResponseEntryBuilder {
         &self.update_time
     }
     /// Consumes the builder and constructs a [`ListGeofenceCollectionsResponseEntry`](crate::types::ListGeofenceCollectionsResponseEntry).
-    pub fn build(self) -> crate::types::ListGeofenceCollectionsResponseEntry {
-        crate::types::ListGeofenceCollectionsResponseEntry {
-            collection_name: self.collection_name,
-            description: self.description,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`collection_name`](crate::types::builders::ListGeofenceCollectionsResponseEntryBuilder::collection_name)
+    /// - [`description`](crate::types::builders::ListGeofenceCollectionsResponseEntryBuilder::description)
+    /// - [`create_time`](crate::types::builders::ListGeofenceCollectionsResponseEntryBuilder::create_time)
+    /// - [`update_time`](crate::types::builders::ListGeofenceCollectionsResponseEntryBuilder::update_time)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::ListGeofenceCollectionsResponseEntry, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ListGeofenceCollectionsResponseEntry {
+            collection_name: self.collection_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "collection_name",
+                    "collection_name was not specified but it is required when building ListGeofenceCollectionsResponseEntry",
+                )
+            })?,
+            description: self.description.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "description",
+                    "description was not specified but it is required when building ListGeofenceCollectionsResponseEntry",
+                )
+            })?,
             pricing_plan: self.pricing_plan,
             pricing_plan_data_source: self.pricing_plan_data_source,
-            create_time: self.create_time,
-            update_time: self.update_time,
-        }
+            create_time: self.create_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "create_time",
+                    "create_time was not specified but it is required when building ListGeofenceCollectionsResponseEntry",
+                )
+            })?,
+            update_time: self.update_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "update_time",
+                    "update_time was not specified but it is required when building ListGeofenceCollectionsResponseEntry",
+                )
+            })?,
+        })
     }
 }

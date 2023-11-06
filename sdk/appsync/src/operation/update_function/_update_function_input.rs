@@ -106,6 +106,7 @@ pub struct UpdateFunctionInputBuilder {
 }
 impl UpdateFunctionInputBuilder {
     /// <p>The GraphQL API ID.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -120,6 +121,7 @@ impl UpdateFunctionInputBuilder {
         &self.api_id
     }
     /// <p>The <code>Function</code> name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -148,6 +150,7 @@ impl UpdateFunctionInputBuilder {
         &self.description
     }
     /// <p>The function ID.</p>
+    /// This field is required.
     pub fn function_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_id = ::std::option::Option::Some(input.into());
         self
@@ -162,6 +165,7 @@ impl UpdateFunctionInputBuilder {
         &self.function_id
     }
     /// <p>The <code>Function</code> <code>DataSource</code> name.</p>
+    /// This field is required.
     pub fn data_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_name = ::std::option::Option::Some(input.into());
         self
@@ -279,7 +283,7 @@ impl UpdateFunctionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateFunctionInput`](crate::operation::update_function::UpdateFunctionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_function::UpdateFunctionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_function::UpdateFunctionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_function::UpdateFunctionInput {
             api_id: self.api_id,
             name: self.name,

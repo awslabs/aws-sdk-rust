@@ -48,6 +48,7 @@ pub struct CreateMembershipInputBuilder {
 }
 impl CreateMembershipInputBuilder {
     /// <p>The unique ID for the associated collaboration.</p>
+    /// This field is required.
     pub fn collaboration_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collaboration_identifier = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl CreateMembershipInputBuilder {
         &self.collaboration_identifier
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
+    /// This field is required.
     pub fn query_log_status(mut self, input: crate::types::MembershipQueryLogStatus) -> Self {
         self.query_log_status = ::std::option::Option::Some(input);
         self
@@ -115,7 +117,7 @@ impl CreateMembershipInputBuilder {
     /// Consumes the builder and constructs a [`CreateMembershipInput`](crate::operation::create_membership::CreateMembershipInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_membership::CreateMembershipInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_membership::CreateMembershipInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_membership::CreateMembershipInput {
             collaboration_identifier: self.collaboration_identifier,
             query_log_status: self.query_log_status,

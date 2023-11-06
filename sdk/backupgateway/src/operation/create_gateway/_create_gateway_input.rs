@@ -26,8 +26,10 @@ impl CreateGatewayInput {
         self.gateway_type.as_ref()
     }
     /// <p>A list of up to 50 tags to assign to the gateway. Each tag is a key-value pair.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateGatewayInput {
@@ -48,6 +50,7 @@ pub struct CreateGatewayInputBuilder {
 }
 impl CreateGatewayInputBuilder {
     /// <p>The activation key of the created gateway.</p>
+    /// This field is required.
     pub fn activation_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.activation_key = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl CreateGatewayInputBuilder {
         &self.activation_key
     }
     /// <p>The display name of the created gateway.</p>
+    /// This field is required.
     pub fn gateway_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_display_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +80,7 @@ impl CreateGatewayInputBuilder {
         &self.gateway_display_name
     }
     /// <p>The type of created gateway.</p>
+    /// This field is required.
     pub fn gateway_type(mut self, input: crate::types::GatewayType) -> Self {
         self.gateway_type = ::std::option::Option::Some(input);
         self
@@ -112,7 +117,7 @@ impl CreateGatewayInputBuilder {
     /// Consumes the builder and constructs a [`CreateGatewayInput`](crate::operation::create_gateway::CreateGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_gateway::CreateGatewayInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_gateway::CreateGatewayInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_gateway::CreateGatewayInput {
             activation_key: self.activation_key,
             gateway_display_name: self.gateway_display_name,

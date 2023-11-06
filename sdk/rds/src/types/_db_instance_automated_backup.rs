@@ -183,8 +183,10 @@ impl DbInstanceAutomatedBackup {
         self.db_instance_automated_backups_arn.as_deref()
     }
     /// <p>The list of replications to different Amazon Web Services Regions associated with the automated backup.</p>
-    pub fn db_instance_automated_backups_replications(&self) -> ::std::option::Option<&[crate::types::DbInstanceAutomatedBackupsReplication]> {
-        self.db_instance_automated_backups_replications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_instance_automated_backups_replications.is_none()`.
+    pub fn db_instance_automated_backups_replications(&self) -> &[crate::types::DbInstanceAutomatedBackupsReplication] {
+        self.db_instance_automated_backups_replications.as_deref().unwrap_or_default()
     }
     /// <p>The location where automated backups are stored: Amazon Web Services Outposts or the Amazon Web Services Region.</p>
     pub fn backup_target(&self) -> ::std::option::Option<&str> {

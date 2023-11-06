@@ -34,6 +34,7 @@ pub struct DeleteFeatureInputBuilder {
 }
 impl DeleteFeatureInputBuilder {
     /// <p>The name or ARN of the project that contains the feature to delete.</p>
+    /// This field is required.
     pub fn project(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteFeatureInputBuilder {
         &self.project
     }
     /// <p>The name of the feature to delete.</p>
+    /// This field is required.
     pub fn feature(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DeleteFeatureInputBuilder {
     /// Consumes the builder and constructs a [`DeleteFeatureInput`](crate::operation::delete_feature::DeleteFeatureInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_feature::DeleteFeatureInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_feature::DeleteFeatureInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_feature::DeleteFeatureInput {
             project: self.project,
             feature: self.feature,

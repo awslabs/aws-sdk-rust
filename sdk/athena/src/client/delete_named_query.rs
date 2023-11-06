@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteNamedQuery`](crate::operation::delete_named_query::builders::DeleteNamedQueryFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`named_query_id(impl Into<String>)`](crate::operation::delete_named_query::builders::DeleteNamedQueryFluentBuilder::named_query_id) / [`set_named_query_id(Option<String>)`](crate::operation::delete_named_query::builders::DeleteNamedQueryFluentBuilder::set_named_query_id): <p>The unique ID of the query to delete.</p>
+    ///   - [`named_query_id(impl Into<String>)`](crate::operation::delete_named_query::builders::DeleteNamedQueryFluentBuilder::named_query_id) / [`set_named_query_id(Option<String>)`](crate::operation::delete_named_query::builders::DeleteNamedQueryFluentBuilder::set_named_query_id):<br>required: **true**<br><p>The unique ID of the query to delete.</p><br>
     /// - On success, responds with [`DeleteNamedQueryOutput`](crate::operation::delete_named_query::DeleteNamedQueryOutput)
     /// - On failure, responds with [`SdkError<DeleteNamedQueryError>`](crate::operation::delete_named_query::DeleteNamedQueryError)
     pub fn delete_named_query(&self) -> crate::operation::delete_named_query::builders::DeleteNamedQueryFluentBuilder {

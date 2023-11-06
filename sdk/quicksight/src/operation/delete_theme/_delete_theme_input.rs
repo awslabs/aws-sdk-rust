@@ -43,6 +43,7 @@ pub struct DeleteThemeInputBuilder {
 }
 impl DeleteThemeInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the theme that you're deleting.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +58,7 @@ impl DeleteThemeInputBuilder {
         &self.aws_account_id
     }
     /// <p>An ID for the theme that you want to delete.</p>
+    /// This field is required.
     pub fn theme_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.theme_id = ::std::option::Option::Some(input.into());
         self
@@ -88,7 +90,7 @@ impl DeleteThemeInputBuilder {
         &self.version_number
     }
     /// Consumes the builder and constructs a [`DeleteThemeInput`](crate::operation::delete_theme::DeleteThemeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_theme::DeleteThemeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_theme::DeleteThemeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_theme::DeleteThemeInput {
             aws_account_id: self.aws_account_id,
             theme_id: self.theme_id,

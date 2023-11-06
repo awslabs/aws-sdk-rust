@@ -27,7 +27,7 @@ pub struct ByteMatchTuple {
     /// <p>For example, suppose the value of <code>Type</code> is <code>HEADER</code> and the value of <code>Data</code> is <code>User-Agent</code>. If you want to search the <code>User-Agent</code> header for the value <code>BadBot</code>, you base64-encode <code>BadBot</code> using MIME base64-encoding and include the resulting value, <code>QmFkQm90</code>, in the value of <code>TargetString</code>.</p>
     /// <p> <b>If you're using the AWS CLI or one of the AWS SDKs</b> </p>
     /// <p>The value that you want AWS WAF to search for. The SDK automatically base64 encodes the value.</p>
-    pub target_string: ::std::option::Option<::aws_smithy_types::Blob>,
+    pub target_string: ::aws_smithy_types::Blob,
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>FieldToMatch</code> before inspecting it for a match.</p>
     /// <p>You can only specify a single type of TextTransformation.</p>
     /// <p> <b>CMD_LINE</b> </p>
@@ -66,7 +66,7 @@ pub struct ByteMatchTuple {
     /// <p>Use this option to decode a URL-encoded value.</p>
     /// <p> <b>NONE</b> </p>
     /// <p>Specify <code>NONE</code> if you don't want to perform any text transformations.</p>
-    pub text_transformation: ::std::option::Option<crate::types::TextTransformation>,
+    pub text_transformation: crate::types::TextTransformation,
     /// <p>Within the portion of a web request that you want to search (for example, in the query string, if any), specify where you want AWS WAF to search. Valid values include the following:</p>
     /// <p> <b>CONTAINS</b> </p>
     /// <p>The specified part of the web request must include the value of <code>TargetString</code>, but the location doesn't matter.</p>
@@ -84,7 +84,7 @@ pub struct ByteMatchTuple {
     /// <p>The value of <code>TargetString</code> must appear at the beginning of the specified part of the web request.</p>
     /// <p> <b>ENDS_WITH</b> </p>
     /// <p>The value of <code>TargetString</code> must appear at the end of the specified part of the web request.</p>
-    pub positional_constraint: ::std::option::Option<crate::types::PositionalConstraint>,
+    pub positional_constraint: crate::types::PositionalConstraint,
 }
 impl ByteMatchTuple {
     /// <p>The part of a web request that you want AWS WAF to search, such as a specified header or a query string. For more information, see <code>FieldToMatch</code>.</p>
@@ -108,8 +108,8 @@ impl ByteMatchTuple {
     /// <p>For example, suppose the value of <code>Type</code> is <code>HEADER</code> and the value of <code>Data</code> is <code>User-Agent</code>. If you want to search the <code>User-Agent</code> header for the value <code>BadBot</code>, you base64-encode <code>BadBot</code> using MIME base64-encoding and include the resulting value, <code>QmFkQm90</code>, in the value of <code>TargetString</code>.</p>
     /// <p> <b>If you're using the AWS CLI or one of the AWS SDKs</b> </p>
     /// <p>The value that you want AWS WAF to search for. The SDK automatically base64 encodes the value.</p>
-    pub fn target_string(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
-        self.target_string.as_ref()
+    pub fn target_string(&self) -> &::aws_smithy_types::Blob {
+        &self.target_string
     }
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>FieldToMatch</code> before inspecting it for a match.</p>
     /// <p>You can only specify a single type of TextTransformation.</p>
@@ -149,8 +149,8 @@ impl ByteMatchTuple {
     /// <p>Use this option to decode a URL-encoded value.</p>
     /// <p> <b>NONE</b> </p>
     /// <p>Specify <code>NONE</code> if you don't want to perform any text transformations.</p>
-    pub fn text_transformation(&self) -> ::std::option::Option<&crate::types::TextTransformation> {
-        self.text_transformation.as_ref()
+    pub fn text_transformation(&self) -> &crate::types::TextTransformation {
+        &self.text_transformation
     }
     /// <p>Within the portion of a web request that you want to search (for example, in the query string, if any), specify where you want AWS WAF to search. Valid values include the following:</p>
     /// <p> <b>CONTAINS</b> </p>
@@ -169,8 +169,8 @@ impl ByteMatchTuple {
     /// <p>The value of <code>TargetString</code> must appear at the beginning of the specified part of the web request.</p>
     /// <p> <b>ENDS_WITH</b> </p>
     /// <p>The value of <code>TargetString</code> must appear at the end of the specified part of the web request.</p>
-    pub fn positional_constraint(&self) -> ::std::option::Option<&crate::types::PositionalConstraint> {
-        self.positional_constraint.as_ref()
+    pub fn positional_constraint(&self) -> &crate::types::PositionalConstraint {
+        &self.positional_constraint
     }
 }
 impl ByteMatchTuple {
@@ -191,6 +191,7 @@ pub struct ByteMatchTupleBuilder {
 }
 impl ByteMatchTupleBuilder {
     /// <p>The part of a web request that you want AWS WAF to search, such as a specified header or a query string. For more information, see <code>FieldToMatch</code>.</p>
+    /// This field is required.
     pub fn field_to_match(mut self, input: crate::types::FieldToMatch) -> Self {
         self.field_to_match = ::std::option::Option::Some(input);
         self
@@ -221,6 +222,7 @@ impl ByteMatchTupleBuilder {
     /// <p>For example, suppose the value of <code>Type</code> is <code>HEADER</code> and the value of <code>Data</code> is <code>User-Agent</code>. If you want to search the <code>User-Agent</code> header for the value <code>BadBot</code>, you base64-encode <code>BadBot</code> using MIME base64-encoding and include the resulting value, <code>QmFkQm90</code>, in the value of <code>TargetString</code>.</p>
     /// <p> <b>If you're using the AWS CLI or one of the AWS SDKs</b> </p>
     /// <p>The value that you want AWS WAF to search for. The SDK automatically base64 encodes the value.</p>
+    /// This field is required.
     pub fn target_string(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.target_string = ::std::option::Option::Some(input);
         self
@@ -304,6 +306,7 @@ impl ByteMatchTupleBuilder {
     /// <p>Use this option to decode a URL-encoded value.</p>
     /// <p> <b>NONE</b> </p>
     /// <p>Specify <code>NONE</code> if you don't want to perform any text transformations.</p>
+    /// This field is required.
     pub fn text_transformation(mut self, input: crate::types::TextTransformation) -> Self {
         self.text_transformation = ::std::option::Option::Some(input);
         self
@@ -408,6 +411,7 @@ impl ByteMatchTupleBuilder {
     /// <p>The value of <code>TargetString</code> must appear at the beginning of the specified part of the web request.</p>
     /// <p> <b>ENDS_WITH</b> </p>
     /// <p>The value of <code>TargetString</code> must appear at the end of the specified part of the web request.</p>
+    /// This field is required.
     pub fn positional_constraint(mut self, input: crate::types::PositionalConstraint) -> Self {
         self.positional_constraint = ::std::option::Option::Some(input);
         self
@@ -454,12 +458,31 @@ impl ByteMatchTupleBuilder {
         &self.positional_constraint
     }
     /// Consumes the builder and constructs a [`ByteMatchTuple`](crate::types::ByteMatchTuple).
-    pub fn build(self) -> crate::types::ByteMatchTuple {
-        crate::types::ByteMatchTuple {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`target_string`](crate::types::builders::ByteMatchTupleBuilder::target_string)
+    /// - [`text_transformation`](crate::types::builders::ByteMatchTupleBuilder::text_transformation)
+    /// - [`positional_constraint`](crate::types::builders::ByteMatchTupleBuilder::positional_constraint)
+    pub fn build(self) -> ::std::result::Result<crate::types::ByteMatchTuple, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ByteMatchTuple {
             field_to_match: self.field_to_match,
-            target_string: self.target_string,
-            text_transformation: self.text_transformation,
-            positional_constraint: self.positional_constraint,
-        }
+            target_string: self.target_string.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "target_string",
+                    "target_string was not specified but it is required when building ByteMatchTuple",
+                )
+            })?,
+            text_transformation: self.text_transformation.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "text_transformation",
+                    "text_transformation was not specified but it is required when building ByteMatchTuple",
+                )
+            })?,
+            positional_constraint: self.positional_constraint.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "positional_constraint",
+                    "positional_constraint was not specified but it is required when building ByteMatchTuple",
+                )
+            })?,
+        })
     }
 }

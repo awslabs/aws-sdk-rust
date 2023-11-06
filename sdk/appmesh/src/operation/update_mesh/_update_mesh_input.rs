@@ -41,6 +41,7 @@ pub struct UpdateMeshInputBuilder {
 }
 impl UpdateMeshInputBuilder {
     /// <p>The name of the service mesh to update.</p>
+    /// This field is required.
     pub fn mesh_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mesh_name = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +84,7 @@ impl UpdateMeshInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateMeshInput`](crate::operation::update_mesh::UpdateMeshInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_mesh::UpdateMeshInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_mesh::UpdateMeshInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_mesh::UpdateMeshInput {
             mesh_name: self.mesh_name,
             spec: self.spec,

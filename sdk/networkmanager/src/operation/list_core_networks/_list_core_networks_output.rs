@@ -11,8 +11,10 @@ pub struct ListCoreNetworksOutput {
 }
 impl ListCoreNetworksOutput {
     /// <p>Describes the list of core networks.</p>
-    pub fn core_networks(&self) -> ::std::option::Option<&[crate::types::CoreNetworkSummary]> {
-        self.core_networks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.core_networks.is_none()`.
+    pub fn core_networks(&self) -> &[crate::types::CoreNetworkSummary] {
+        self.core_networks.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

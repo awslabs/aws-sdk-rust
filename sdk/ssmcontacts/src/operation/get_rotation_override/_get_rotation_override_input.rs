@@ -34,6 +34,7 @@ pub struct GetRotationOverrideInputBuilder {
 }
 impl GetRotationOverrideInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the overridden rotation to retrieve information about.</p>
+    /// This field is required.
     pub fn rotation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rotation_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetRotationOverrideInputBuilder {
         &self.rotation_id
     }
     /// <p>The Amazon Resource Name (ARN) of the on-call rotation override to retrieve information about.</p>
+    /// This field is required.
     pub fn rotation_override_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rotation_override_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl GetRotationOverrideInputBuilder {
     /// Consumes the builder and constructs a [`GetRotationOverrideInput`](crate::operation::get_rotation_override::GetRotationOverrideInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_rotation_override::GetRotationOverrideInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_rotation_override::GetRotationOverrideInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_rotation_override::GetRotationOverrideInput {
             rotation_id: self.rotation_id,

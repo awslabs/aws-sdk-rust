@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMonitorsOutput {
     /// <p>A list of monitors.</p>
-    pub monitors: ::std::option::Option<::std::vec::Vec<crate::types::Monitor>>,
+    pub monitors: ::std::vec::Vec<crate::types::Monitor>,
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListMonitorsOutput {
     /// <p>A list of monitors.</p>
-    pub fn monitors(&self) -> ::std::option::Option<&[crate::types::Monitor]> {
-        self.monitors.as_deref()
+    pub fn monitors(&self) -> &[crate::types::Monitor] {
+        use std::ops::Deref;
+        self.monitors.deref()
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ListMonitorsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListMonitorsOutput`](crate::operation::list_monitors::ListMonitorsOutput).
-    pub fn build(self) -> crate::operation::list_monitors::ListMonitorsOutput {
-        crate::operation::list_monitors::ListMonitorsOutput {
-            monitors: self.monitors,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`monitors`](crate::operation::list_monitors::builders::ListMonitorsOutputBuilder::monitors)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_monitors::ListMonitorsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_monitors::ListMonitorsOutput {
+            monitors: self.monitors.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "monitors",
+                    "monitors was not specified but it is required when building ListMonitorsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -2,7 +2,7 @@
 pub fn ser_message(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Message,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.plain_text_message {
         #[allow(unused_mut)]
         let mut object_2 = object.key("plainTextMessage").start_object();

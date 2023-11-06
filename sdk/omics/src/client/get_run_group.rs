@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetRunGroup`](crate::operation::get_run_group::builders::GetRunGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_run_group::builders::GetRunGroupFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_run_group::builders::GetRunGroupFluentBuilder::set_id): <p>The group's ID.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_run_group::builders::GetRunGroupFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_run_group::builders::GetRunGroupFluentBuilder::set_id):<br>required: **true**<br><p>The group's ID.</p><br>
     /// - On success, responds with [`GetRunGroupOutput`](crate::operation::get_run_group::GetRunGroupOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::get_run_group::GetRunGroupOutput::arn): <p>The group's ARN.</p>
     ///   - [`id(Option<String>)`](crate::operation::get_run_group::GetRunGroupOutput::id): <p>The group's ID.</p>
@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`max_runs(Option<i32>)`](crate::operation::get_run_group::GetRunGroupOutput::max_runs): <p>The maximum number of concurrent runs for the group.</p>
     ///   - [`max_duration(Option<i32>)`](crate::operation::get_run_group::GetRunGroupOutput::max_duration): <p>The group's maximum run time in minutes.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_run_group::GetRunGroupOutput::creation_time): <p>When the group was created.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_run_group::GetRunGroupOutput::tags): <p>The group's tags.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_run_group::GetRunGroupOutput::tags): <p>The group's tags.</p>
     ///   - [`max_gpus(Option<i32>)`](crate::operation::get_run_group::GetRunGroupOutput::max_gpus): <p> The maximum GPUs that can be used by a run group. </p>
     /// - On failure, responds with [`SdkError<GetRunGroupError>`](crate::operation::get_run_group::GetRunGroupError)
     pub fn get_run_group(&self) -> crate::operation::get_run_group::builders::GetRunGroupFluentBuilder {

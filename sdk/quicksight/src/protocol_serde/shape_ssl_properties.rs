@@ -2,7 +2,7 @@
 pub fn ser_ssl_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SslProperties,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.disable_ssl {
         object.key("DisableSsl").boolean(input.disable_ssl);
     }

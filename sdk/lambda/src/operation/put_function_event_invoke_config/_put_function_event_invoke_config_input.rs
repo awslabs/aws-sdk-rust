@@ -90,6 +90,7 @@ impl PutFunctionEventInvokeConfigInputBuilder {
     /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    /// This field is required.
     pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_name = ::std::option::Option::Some(input.into());
         self
@@ -199,7 +200,7 @@ impl PutFunctionEventInvokeConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigInput {
             function_name: self.function_name,

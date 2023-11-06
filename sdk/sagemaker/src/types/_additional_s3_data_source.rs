@@ -42,6 +42,7 @@ pub struct AdditionalS3DataSourceBuilder {
 }
 impl AdditionalS3DataSourceBuilder {
     /// <p>The data type of the additional data source that you specify for use in inference or training. </p>
+    /// This field is required.
     pub fn s3_data_type(mut self, input: crate::types::AdditionalS3DataSourceDataType) -> Self {
         self.s3_data_type = ::std::option::Option::Some(input);
         self
@@ -56,6 +57,7 @@ impl AdditionalS3DataSourceBuilder {
         &self.s3_data_type
     }
     /// <p>The uniform resource identifier (URI) used to identify an additional data source used in inference or training.</p>
+    /// This field is required.
     pub fn s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_uri = ::std::option::Option::Some(input.into());
         self

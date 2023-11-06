@@ -55,6 +55,7 @@ impl DeleteStudioMemberInputBuilder {
         &self.client_token
     }
     /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
+    /// This field is required.
     pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl DeleteStudioMemberInputBuilder {
         &self.principal_id
     }
     /// <p>The studio ID. </p>
+    /// This field is required.
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +87,8 @@ impl DeleteStudioMemberInputBuilder {
     /// Consumes the builder and constructs a [`DeleteStudioMemberInput`](crate::operation::delete_studio_member::DeleteStudioMemberInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_studio_member::DeleteStudioMemberInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_studio_member::DeleteStudioMemberInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_studio_member::DeleteStudioMemberInput {
             client_token: self.client_token,
             principal_id: self.principal_id,

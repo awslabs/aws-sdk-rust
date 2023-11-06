@@ -41,6 +41,7 @@ pub struct DescribeRepositoryInputBuilder {
 }
 impl DescribeRepositoryInputBuilder {
     /// <p> The name of the domain that contains the repository to describe. </p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl DescribeRepositoryInputBuilder {
         &self.domain_owner
     }
     /// <p> A string that specifies the name of the requested repository. </p>
+    /// This field is required.
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +87,7 @@ impl DescribeRepositoryInputBuilder {
     /// Consumes the builder and constructs a [`DescribeRepositoryInput`](crate::operation::describe_repository::DescribeRepositoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_repository::DescribeRepositoryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_repository::DescribeRepositoryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_repository::DescribeRepositoryInput {
             domain: self.domain,
             domain_owner: self.domain_owner,

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3DestinationProperties {
     /// <p> The Amazon S3 bucket name in which Amazon AppFlow places the transferred data. </p>
-    pub bucket_name: ::std::option::Option<::std::string::String>,
+    pub bucket_name: ::std::string::String,
     /// <p> The object key for the destination bucket in which Amazon AppFlow places the files. </p>
     pub bucket_prefix: ::std::option::Option<::std::string::String>,
     /// <p> The configuration that determines how Amazon AppFlow should format the flow output data when Amazon S3 is used as the destination. </p>
@@ -13,8 +13,9 @@ pub struct S3DestinationProperties {
 }
 impl S3DestinationProperties {
     /// <p> The Amazon S3 bucket name in which Amazon AppFlow places the transferred data. </p>
-    pub fn bucket_name(&self) -> ::std::option::Option<&str> {
-        self.bucket_name.as_deref()
+    pub fn bucket_name(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket_name.deref()
     }
     /// <p> The object key for the destination bucket in which Amazon AppFlow places the files. </p>
     pub fn bucket_prefix(&self) -> ::std::option::Option<&str> {
@@ -42,6 +43,7 @@ pub struct S3DestinationPropertiesBuilder {
 }
 impl S3DestinationPropertiesBuilder {
     /// <p> The Amazon S3 bucket name in which Amazon AppFlow places the transferred data. </p>
+    /// This field is required.
     pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_name = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +86,18 @@ impl S3DestinationPropertiesBuilder {
         &self.s3_output_format_config
     }
     /// Consumes the builder and constructs a [`S3DestinationProperties`](crate::types::S3DestinationProperties).
-    pub fn build(self) -> crate::types::S3DestinationProperties {
-        crate::types::S3DestinationProperties {
-            bucket_name: self.bucket_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bucket_name`](crate::types::builders::S3DestinationPropertiesBuilder::bucket_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::S3DestinationProperties, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::S3DestinationProperties {
+            bucket_name: self.bucket_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "bucket_name",
+                    "bucket_name was not specified but it is required when building S3DestinationProperties",
+                )
+            })?,
             bucket_prefix: self.bucket_prefix,
             s3_output_format_config: self.s3_output_format_config,
-        }
+        })
     }
 }

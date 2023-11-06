@@ -27,6 +27,7 @@ pub struct StopBulkDeploymentInputBuilder {
 }
 impl StopBulkDeploymentInputBuilder {
     /// The ID of the bulk deployment.
+    /// This field is required.
     pub fn bulk_deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bulk_deployment_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,8 @@ impl StopBulkDeploymentInputBuilder {
     /// Consumes the builder and constructs a [`StopBulkDeploymentInput`](crate::operation::stop_bulk_deployment::StopBulkDeploymentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_bulk_deployment::StopBulkDeploymentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_bulk_deployment::StopBulkDeploymentInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::stop_bulk_deployment::StopBulkDeploymentInput {
             bulk_deployment_id: self.bulk_deployment_id,
         })

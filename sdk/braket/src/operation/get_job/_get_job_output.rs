@@ -4,15 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetJobOutput {
     /// <p>The status of the Amazon Braket job.</p>
-    pub status: ::std::option::Option<crate::types::JobPrimaryStatus>,
+    pub status: crate::types::JobPrimaryStatus,
     /// <p>The ARN of the Amazon Braket job.</p>
-    pub job_arn: ::std::option::Option<::std::string::String>,
+    pub job_arn: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output resources to the s3 buckets of a user.</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
     /// <p>A description of the reason why an Amazon Braket job failed, if it failed.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon Braket job.</p>
-    pub job_name: ::std::option::Option<::std::string::String>,
+    pub job_name: ::std::string::String,
     /// <p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of the traiing job. The values are set with a string of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of th hyperparameter.</p>
     pub hyper_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A list of parameters that specify the name and type of input data and where it is located.</p>
@@ -28,7 +28,7 @@ pub struct GetJobOutput {
     /// <p>The resource instances to use while running the hybrid job on Amazon Braket.</p>
     pub instance_config: ::std::option::Option<crate::types::InstanceConfig>,
     /// <p>The date and time that the Amazon Braket job was created.</p>
-    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The date and time that the Amazon Braket job was started.</p>
     pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the Amazon Braket job ended.</p>
@@ -47,32 +47,37 @@ pub struct GetJobOutput {
 }
 impl GetJobOutput {
     /// <p>The status of the Amazon Braket job.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::JobPrimaryStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::JobPrimaryStatus {
+        &self.status
     }
     /// <p>The ARN of the Amazon Braket job.</p>
-    pub fn job_arn(&self) -> ::std::option::Option<&str> {
-        self.job_arn.as_deref()
+    pub fn job_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.job_arn.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output resources to the s3 buckets of a user.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
     /// <p>A description of the reason why an Amazon Braket job failed, if it failed.</p>
     pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
     /// <p>The name of the Amazon Braket job.</p>
-    pub fn job_name(&self) -> ::std::option::Option<&str> {
-        self.job_name.as_deref()
+    pub fn job_name(&self) -> &str {
+        use std::ops::Deref;
+        self.job_name.deref()
     }
     /// <p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of the traiing job. The values are set with a string of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of th hyperparameter.</p>
     pub fn hyper_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.hyper_parameters.as_ref()
     }
     /// <p>A list of parameters that specify the name and type of input data and where it is located.</p>
-    pub fn input_data_config(&self) -> ::std::option::Option<&[crate::types::InputFileConfig]> {
-        self.input_data_config.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_data_config.is_none()`.
+    pub fn input_data_config(&self) -> &[crate::types::InputFileConfig] {
+        self.input_data_config.as_deref().unwrap_or_default()
     }
     /// <p>The path to the S3 location where job artifacts are stored and the encryption key used to store them there.</p>
     pub fn output_data_config(&self) -> ::std::option::Option<&crate::types::JobOutputDataConfig> {
@@ -95,8 +100,8 @@ impl GetJobOutput {
         self.instance_config.as_ref()
     }
     /// <p>The date and time that the Amazon Braket job was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_at.as_ref()
+    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_at
     }
     /// <p>The date and time that the Amazon Braket job was started.</p>
     pub fn started_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -115,8 +120,10 @@ impl GetJobOutput {
         self.device_config.as_ref()
     }
     /// <p>Details about the type and time events occurred related to the Amazon Braket job.</p>
-    pub fn events(&self) -> ::std::option::Option<&[crate::types::JobEventDetails]> {
-        self.events.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.events.is_none()`.
+    pub fn events(&self) -> &[crate::types::JobEventDetails] {
+        self.events.as_deref().unwrap_or_default()
     }
     /// <p>A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -167,6 +174,7 @@ pub struct GetJobOutputBuilder {
 }
 impl GetJobOutputBuilder {
     /// <p>The status of the Amazon Braket job.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::JobPrimaryStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -181,6 +189,7 @@ impl GetJobOutputBuilder {
         &self.status
     }
     /// <p>The ARN of the Amazon Braket job.</p>
+    /// This field is required.
     pub fn job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_arn = ::std::option::Option::Some(input.into());
         self
@@ -195,6 +204,7 @@ impl GetJobOutputBuilder {
         &self.job_arn
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output resources to the s3 buckets of a user.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -223,6 +233,7 @@ impl GetJobOutputBuilder {
         &self.failure_reason
     }
     /// <p>The name of the Amazon Braket job.</p>
+    /// This field is required.
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name = ::std::option::Option::Some(input.into());
         self
@@ -284,6 +295,7 @@ impl GetJobOutputBuilder {
         &self.input_data_config
     }
     /// <p>The path to the S3 location where job artifacts are stored and the encryption key used to store them there.</p>
+    /// This field is required.
     pub fn output_data_config(mut self, input: crate::types::JobOutputDataConfig) -> Self {
         self.output_data_config = ::std::option::Option::Some(input);
         self
@@ -326,6 +338,7 @@ impl GetJobOutputBuilder {
         &self.checkpoint_config
     }
     /// <p>Definition of the Amazon Braket job created. Specifies the container image the job uses, information about the Python scripts used for entry and training, and the user-defined metrics used to evaluation the job.</p>
+    /// This field is required.
     pub fn algorithm_specification(mut self, input: crate::types::AlgorithmSpecification) -> Self {
         self.algorithm_specification = ::std::option::Option::Some(input);
         self
@@ -340,6 +353,7 @@ impl GetJobOutputBuilder {
         &self.algorithm_specification
     }
     /// <p>The resource instances to use while running the hybrid job on Amazon Braket.</p>
+    /// This field is required.
     pub fn instance_config(mut self, input: crate::types::InstanceConfig) -> Self {
         self.instance_config = ::std::option::Option::Some(input);
         self
@@ -354,6 +368,7 @@ impl GetJobOutputBuilder {
         &self.instance_config
     }
     /// <p>The date and time that the Amazon Braket job was created.</p>
+    /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
@@ -487,13 +502,39 @@ impl GetJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetJobOutput`](crate::operation::get_job::GetJobOutput).
-    pub fn build(self) -> crate::operation::get_job::GetJobOutput {
-        crate::operation::get_job::GetJobOutput {
-            status: self.status,
-            job_arn: self.job_arn,
-            role_arn: self.role_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::operation::get_job::builders::GetJobOutputBuilder::status)
+    /// - [`job_arn`](crate::operation::get_job::builders::GetJobOutputBuilder::job_arn)
+    /// - [`role_arn`](crate::operation::get_job::builders::GetJobOutputBuilder::role_arn)
+    /// - [`job_name`](crate::operation::get_job::builders::GetJobOutputBuilder::job_name)
+    /// - [`created_at`](crate::operation::get_job::builders::GetJobOutputBuilder::created_at)
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_job::GetJobOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_job::GetJobOutput {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building GetJobOutput",
+                )
+            })?,
+            job_arn: self.job_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "job_arn",
+                    "job_arn was not specified but it is required when building GetJobOutput",
+                )
+            })?,
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building GetJobOutput",
+                )
+            })?,
             failure_reason: self.failure_reason,
-            job_name: self.job_name,
+            job_name: self.job_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "job_name",
+                    "job_name was not specified but it is required when building GetJobOutput",
+                )
+            })?,
             hyper_parameters: self.hyper_parameters,
             input_data_config: self.input_data_config,
             output_data_config: self.output_data_config,
@@ -501,7 +542,12 @@ impl GetJobOutputBuilder {
             checkpoint_config: self.checkpoint_config,
             algorithm_specification: self.algorithm_specification,
             instance_config: self.instance_config,
-            created_at: self.created_at,
+            created_at: self.created_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_at",
+                    "created_at was not specified but it is required when building GetJobOutput",
+                )
+            })?,
             started_at: self.started_at,
             ended_at: self.ended_at,
             billable_duration: self.billable_duration,
@@ -510,6 +556,6 @@ impl GetJobOutputBuilder {
             tags: self.tags,
             queue_info: self.queue_info,
             _request_id: self._request_id,
-        }
+        })
     }
 }

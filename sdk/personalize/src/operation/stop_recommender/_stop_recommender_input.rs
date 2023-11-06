@@ -27,6 +27,7 @@ pub struct StopRecommenderInputBuilder {
 }
 impl StopRecommenderInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the recommender to stop.</p>
+    /// This field is required.
     pub fn recommender_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommender_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl StopRecommenderInputBuilder {
     /// Consumes the builder and constructs a [`StopRecommenderInput`](crate::operation::stop_recommender::StopRecommenderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_recommender::StopRecommenderInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_recommender::StopRecommenderInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_recommender::StopRecommenderInput {
             recommender_arn: self.recommender_arn,
         })

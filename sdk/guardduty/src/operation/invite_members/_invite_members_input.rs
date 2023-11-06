@@ -18,8 +18,10 @@ impl InviteMembersInput {
         self.detector_id.as_deref()
     }
     /// <p>A list of account IDs of the accounts that you want to invite to GuardDuty as members.</p>
-    pub fn account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.account_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
+    pub fn account_ids(&self) -> &[::std::string::String] {
+        self.account_ids.as_deref().unwrap_or_default()
     }
     /// <p>A Boolean value that specifies whether you want to disable email notification to the accounts that you are inviting to GuardDuty as members.</p>
     pub fn disable_email_notification(&self) -> ::std::option::Option<bool> {
@@ -48,6 +50,7 @@ pub struct InviteMembersInputBuilder {
 }
 impl InviteMembersInputBuilder {
     /// <p>The unique ID of the detector of the GuardDuty account that you want to invite members with.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
@@ -112,7 +115,7 @@ impl InviteMembersInputBuilder {
     /// Consumes the builder and constructs a [`InviteMembersInput`](crate::operation::invite_members::InviteMembersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::invite_members::InviteMembersInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::invite_members::InviteMembersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::invite_members::InviteMembersInput {
             detector_id: self.detector_id,
             account_ids: self.account_ids,

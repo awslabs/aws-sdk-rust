@@ -147,7 +147,7 @@ pub use crate::types::_http_action::HttpActionBuilder;
 
 pub use crate::types::_http_authorization::HttpAuthorizationBuilder;
 
-pub use crate::types::_sig_v4_authorization::SigV4AuthorizationBuilder;
+pub use crate::types::_sigv4_authorization::SigV4AuthorizationBuilder;
 
 pub use crate::types::_http_action_header::HttpActionHeaderBuilder;
 
@@ -199,7 +199,7 @@ pub use crate::types::_sns_action::SnsActionBuilder;
 
 pub use crate::types::_lambda_action::LambdaActionBuilder;
 
-pub use crate::types::_dynamo_d_bv2_action::DynamoDBv2ActionBuilder;
+pub use crate::types::_dynamo_dbv2_action::DynamoDBv2ActionBuilder;
 
 pub use crate::types::_put_item_input::PutItemInputBuilder;
 

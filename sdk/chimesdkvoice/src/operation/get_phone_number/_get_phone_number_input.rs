@@ -34,6 +34,7 @@ pub struct GetPhoneNumberInputBuilder {
 }
 impl GetPhoneNumberInputBuilder {
     /// <p>The phone number ID.</p>
+    /// This field is required.
     pub fn phone_number_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number_id = ::std::option::Option::Some(input.into());
         self
@@ -50,7 +51,7 @@ impl GetPhoneNumberInputBuilder {
     /// Consumes the builder and constructs a [`GetPhoneNumberInput`](crate::operation::get_phone_number::GetPhoneNumberInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_phone_number::GetPhoneNumberInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_phone_number::GetPhoneNumberInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_phone_number::GetPhoneNumberInput {
             phone_number_id: self.phone_number_id,
         })

@@ -34,6 +34,7 @@ pub struct AssociateResourceInputBuilder {
 }
 impl AssociateResourceInputBuilder {
     /// <p>Specifies the group. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
+    /// This field is required.
     pub fn group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_identifier = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl AssociateResourceInputBuilder {
         &self.group_identifier
     }
     /// <p>The ARN of the canary that you want to associate with the specified group.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl AssociateResourceInputBuilder {
     /// Consumes the builder and constructs a [`AssociateResourceInput`](crate::operation::associate_resource::AssociateResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_resource::AssociateResourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::associate_resource::AssociateResourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::associate_resource::AssociateResourceInput {
             group_identifier: self.group_identifier,
             resource_arn: self.resource_arn,

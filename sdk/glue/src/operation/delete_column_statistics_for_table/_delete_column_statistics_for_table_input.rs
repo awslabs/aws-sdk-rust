@@ -62,6 +62,7 @@ impl DeleteColumnStatisticsForTableInputBuilder {
         &self.catalog_id
     }
     /// <p>The name of the catalog database where the partitions reside.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl DeleteColumnStatisticsForTableInputBuilder {
         &self.database_name
     }
     /// <p>The name of the partitions' table.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +92,7 @@ impl DeleteColumnStatisticsForTableInputBuilder {
         &self.table_name
     }
     /// <p>The name of the column.</p>
+    /// This field is required.
     pub fn column_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.column_name = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +111,7 @@ impl DeleteColumnStatisticsForTableInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_column_statistics_for_table::DeleteColumnStatisticsForTableInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_column_statistics_for_table::DeleteColumnStatisticsForTableInput {

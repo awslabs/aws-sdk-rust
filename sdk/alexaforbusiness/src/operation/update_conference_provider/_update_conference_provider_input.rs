@@ -55,6 +55,7 @@ pub struct UpdateConferenceProviderInputBuilder {
 }
 impl UpdateConferenceProviderInputBuilder {
     /// <p>The ARN of the conference provider.</p>
+    /// This field is required.
     pub fn conference_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.conference_provider_arn = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl UpdateConferenceProviderInputBuilder {
         &self.conference_provider_arn
     }
     /// <p>The type of the conference provider.</p>
+    /// This field is required.
     pub fn conference_provider_type(mut self, input: crate::types::ConferenceProviderType) -> Self {
         self.conference_provider_type = ::std::option::Option::Some(input);
         self
@@ -111,6 +113,7 @@ impl UpdateConferenceProviderInputBuilder {
         &self.pstn_dial_in
     }
     /// <p>The meeting settings for the conference provider.</p>
+    /// This field is required.
     pub fn meeting_setting(mut self, input: crate::types::MeetingSetting) -> Self {
         self.meeting_setting = ::std::option::Option::Some(input);
         self
@@ -129,7 +132,7 @@ impl UpdateConferenceProviderInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_conference_provider::UpdateConferenceProviderInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_conference_provider::UpdateConferenceProviderInput {
             conference_provider_arn: self.conference_provider_arn,

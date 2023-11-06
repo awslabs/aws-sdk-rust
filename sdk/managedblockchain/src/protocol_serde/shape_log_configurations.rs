@@ -2,7 +2,7 @@
 pub fn ser_log_configurations(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LogConfigurations,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cloudwatch {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Cloudwatch").start_object();

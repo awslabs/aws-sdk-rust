@@ -78,6 +78,7 @@ impl PutEncryptionConfigInputBuilder {
         &self.key_id
     }
     /// <p>The type of encryption. Set to <code>KMS</code> to use your own key for encryption. Set to <code>NONE</code> for default encryption.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::EncryptionType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -94,7 +95,7 @@ impl PutEncryptionConfigInputBuilder {
     /// Consumes the builder and constructs a [`PutEncryptionConfigInput`](crate::operation::put_encryption_config::PutEncryptionConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_encryption_config::PutEncryptionConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_encryption_config::PutEncryptionConfigInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_encryption_config::PutEncryptionConfigInput {
             key_id: self.key_id,

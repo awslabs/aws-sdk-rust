@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetTrigger`](crate::operation::get_trigger::builders::GetTriggerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::get_trigger::builders::GetTriggerFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_trigger::builders::GetTriggerFluentBuilder::set_name): <p>The name of the trigger to retrieve.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::get_trigger::builders::GetTriggerFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_trigger::builders::GetTriggerFluentBuilder::set_name):<br>required: **true**<br><p>The name of the trigger to retrieve.</p><br>
     /// - On success, responds with [`GetTriggerOutput`](crate::operation::get_trigger::GetTriggerOutput) with field(s):
     ///   - [`trigger(Option<Trigger>)`](crate::operation::get_trigger::GetTriggerOutput::trigger): <p>The requested trigger definition.</p>
     /// - On failure, responds with [`SdkError<GetTriggerError>`](crate::operation::get_trigger::GetTriggerError)

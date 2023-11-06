@@ -41,16 +41,16 @@ fn rewrite_url_encoded_body(input: &str) -> String {
 }
 
 pub(crate) fn try_url_encoded_form_equivalent(
-    actual: &str,
     expected: &str,
+    actual: &str,
 ) -> Result<(), ProtocolTestFailure> {
-    let actual = rewrite_url_encoded_body(actual);
     let expected = rewrite_url_encoded_body(expected);
+    let actual = rewrite_url_encoded_body(actual);
     if actual == expected {
         Ok(())
     } else {
         Err(ProtocolTestFailure::BodyDidNotMatch {
-            comparison: pretty_comparison(&actual, &expected),
+            comparison: pretty_comparison(&expected, &actual),
             hint: "".into(),
         })
     }
@@ -71,14 +71,14 @@ mod tests {
         );
 
         assert!(try_url_encoded_form_equivalent(
-            "Action=Something&Version=test&Property=foo",
             "Action=Something&Version=test&Property=bar",
+            "Action=Something&Version=test&Property=foo",
         )
         .is_err());
 
         assert!(try_url_encoded_form_equivalent(
-            "Action=Something&Version=test&WrongProperty=foo",
             "Action=Something&Version=test&Property=foo",
+            "Action=Something&Version=test&WrongProperty=foo",
         )
         .is_err());
 
@@ -86,15 +86,15 @@ mod tests {
             Ok(()),
             try_url_encoded_form_equivalent(
                 "Action=Something&Version=test\
-                &SomeMap.1.key=foo\
-                &SomeMap.1.value=Foo\
-                &SomeMap.2.key=bar\
-                &SomeMap.2.value=Bar",
-                "Action=Something&Version=test\
                 &SomeMap.1.key=bar\
                 &SomeMap.1.value=Bar\
                 &SomeMap.2.key=foo\
                 &SomeMap.2.value=Foo",
+                "Action=Something&Version=test\
+                &SomeMap.1.key=foo\
+                &SomeMap.1.value=Foo\
+                &SomeMap.2.key=bar\
+                &SomeMap.2.value=Bar",
             )
         );
     }

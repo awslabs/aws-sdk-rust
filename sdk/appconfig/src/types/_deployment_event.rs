@@ -39,8 +39,10 @@ impl DeploymentEvent {
         self.description.as_deref()
     }
     /// <p>The list of extensions that were invoked as part of the deployment.</p>
-    pub fn action_invocations(&self) -> ::std::option::Option<&[crate::types::ActionInvocation]> {
-        self.action_invocations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.action_invocations.is_none()`.
+    pub fn action_invocations(&self) -> &[crate::types::ActionInvocation] {
+        self.action_invocations.as_deref().unwrap_or_default()
     }
     /// <p>The date and time the event occurred.</p>
     pub fn occurred_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

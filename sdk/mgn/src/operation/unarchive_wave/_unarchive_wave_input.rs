@@ -34,6 +34,7 @@ pub struct UnarchiveWaveInputBuilder {
 }
 impl UnarchiveWaveInputBuilder {
     /// <p>Wave ID.</p>
+    /// This field is required.
     pub fn wave_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.wave_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl UnarchiveWaveInputBuilder {
     /// Consumes the builder and constructs a [`UnarchiveWaveInput`](crate::operation::unarchive_wave::UnarchiveWaveInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::unarchive_wave::UnarchiveWaveInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::unarchive_wave::UnarchiveWaveInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::unarchive_wave::UnarchiveWaveInput {
             wave_id: self.wave_id,
             account_id: self.account_id,

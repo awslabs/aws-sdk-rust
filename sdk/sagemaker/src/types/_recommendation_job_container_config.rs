@@ -59,8 +59,10 @@ impl RecommendationJobContainerConfig {
         self.nearest_model_name.as_deref()
     }
     /// <p>A list of the instance types that are used to generate inferences in real-time.</p>
-    pub fn supported_instance_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.supported_instance_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_instance_types.is_none()`.
+    pub fn supported_instance_types(&self) -> &[::std::string::String] {
+        self.supported_instance_types.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the name and shape of the expected data inputs for your trained model with a JSON dictionary form. This field is used for optimizing your model using SageMaker Neo. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_InputConfig.html#sagemaker-Type-InputConfig-DataInputConfig">DataInputConfig</a>.</p>
     pub fn data_input_config(&self) -> ::std::option::Option<&str> {
@@ -71,8 +73,10 @@ impl RecommendationJobContainerConfig {
         self.supported_endpoint_type.as_ref()
     }
     /// <p>The supported MIME types for the output data.</p>
-    pub fn supported_response_mime_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.supported_response_mime_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_response_mime_types.is_none()`.
+    pub fn supported_response_mime_types(&self) -> &[::std::string::String] {
+        self.supported_response_mime_types.as_deref().unwrap_or_default()
     }
 }
 impl RecommendationJobContainerConfig {

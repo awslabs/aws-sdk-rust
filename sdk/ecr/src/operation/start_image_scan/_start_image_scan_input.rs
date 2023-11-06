@@ -55,6 +55,7 @@ impl StartImageScanInputBuilder {
         &self.registry_id
     }
     /// <p>The name of the repository that contains the images to scan.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl StartImageScanInputBuilder {
         &self.repository_name
     }
     /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
+    /// This field is required.
     pub fn image_id(mut self, input: crate::types::ImageIdentifier) -> Self {
         self.image_id = ::std::option::Option::Some(input);
         self
@@ -85,7 +87,7 @@ impl StartImageScanInputBuilder {
     /// Consumes the builder and constructs a [`StartImageScanInput`](crate::operation::start_image_scan::StartImageScanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_image_scan::StartImageScanInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_image_scan::StartImageScanInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_image_scan::StartImageScanInput {
             registry_id: self.registry_id,
             repository_name: self.repository_name,

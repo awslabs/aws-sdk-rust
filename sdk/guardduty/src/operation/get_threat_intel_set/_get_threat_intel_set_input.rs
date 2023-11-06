@@ -34,6 +34,7 @@ pub struct GetThreatIntelSetInputBuilder {
 }
 impl GetThreatIntelSetInputBuilder {
     /// <p>The unique ID of the detector that the threatIntelSet is associated with.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetThreatIntelSetInputBuilder {
         &self.detector_id
     }
     /// <p>The unique ID of the threatIntelSet that you want to get.</p>
+    /// This field is required.
     pub fn threat_intel_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.threat_intel_set_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl GetThreatIntelSetInputBuilder {
     /// Consumes the builder and constructs a [`GetThreatIntelSetInput`](crate::operation::get_threat_intel_set::GetThreatIntelSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_threat_intel_set::GetThreatIntelSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_threat_intel_set::GetThreatIntelSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_threat_intel_set::GetThreatIntelSetInput {
             detector_id: self.detector_id,
             threat_intel_set_id: self.threat_intel_set_id,

@@ -55,6 +55,7 @@ impl DetachInternetGatewayInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the internet gateway.</p>
+    /// This field is required.
     pub fn internet_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.internet_gateway_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl DetachInternetGatewayInputBuilder {
         &self.internet_gateway_id
     }
     /// <p>The ID of the VPC.</p>
+    /// This field is required.
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +87,7 @@ impl DetachInternetGatewayInputBuilder {
     /// Consumes the builder and constructs a [`DetachInternetGatewayInput`](crate::operation::detach_internet_gateway::DetachInternetGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::detach_internet_gateway::DetachInternetGatewayInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::detach_internet_gateway::DetachInternetGatewayInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::detach_internet_gateway::DetachInternetGatewayInput {
             dry_run: self.dry_run,

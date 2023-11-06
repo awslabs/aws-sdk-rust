@@ -11,8 +11,10 @@ pub struct ListReplacePermissionAssociationsWorkOutput {
 }
 impl ListReplacePermissionAssociationsWorkOutput {
     /// <p>An array of data structures that provide details of the matching work IDs.</p>
-    pub fn replace_permission_associations_works(&self) -> ::std::option::Option<&[crate::types::ReplacePermissionAssociationsWork]> {
-        self.replace_permission_associations_works.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replace_permission_associations_works.is_none()`.
+    pub fn replace_permission_associations_works(&self) -> &[crate::types::ReplacePermissionAssociationsWork] {
+        self.replace_permission_associations_works.as_deref().unwrap_or_default()
     }
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

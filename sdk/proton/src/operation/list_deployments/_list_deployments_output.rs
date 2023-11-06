@@ -6,7 +6,7 @@ pub struct ListDeploymentsOutput {
     /// <p>A token that indicates the location of the next deployment in the array of deployment, after the current requested list of deployment.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of deployment with summary data.</p>
-    pub deployments: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentSummary>>,
+    pub deployments: ::std::vec::Vec<crate::types::DeploymentSummary>,
     _request_id: Option<String>,
 }
 impl ListDeploymentsOutput {
@@ -15,8 +15,9 @@ impl ListDeploymentsOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of deployment with summary data.</p>
-    pub fn deployments(&self) -> ::std::option::Option<&[crate::types::DeploymentSummary]> {
-        self.deployments.as_deref()
+    pub fn deployments(&self) -> &[crate::types::DeploymentSummary] {
+        use std::ops::Deref;
+        self.deployments.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListDeploymentsOutput {
@@ -84,11 +85,20 @@ impl ListDeploymentsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDeploymentsOutput`](crate::operation::list_deployments::ListDeploymentsOutput).
-    pub fn build(self) -> crate::operation::list_deployments::ListDeploymentsOutput {
-        crate::operation::list_deployments::ListDeploymentsOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`deployments`](crate::operation::list_deployments::builders::ListDeploymentsOutputBuilder::deployments)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_deployments::ListDeploymentsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_deployments::ListDeploymentsOutput {
             next_token: self.next_token,
-            deployments: self.deployments,
+            deployments: self.deployments.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "deployments",
+                    "deployments was not specified but it is required when building ListDeploymentsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

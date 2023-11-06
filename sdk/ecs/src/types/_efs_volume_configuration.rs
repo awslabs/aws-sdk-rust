@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EfsVolumeConfiguration {
     /// <p>The Amazon EFS file system ID to use.</p>
-    pub file_system_id: ::std::option::Option<::std::string::String>,
+    pub file_system_id: ::std::string::String,
     /// <p>The directory within the Amazon EFS file system to mount as the root directory inside the host. If this parameter is omitted, the root of the Amazon EFS volume will be used. Specifying <code>/</code> will have the same effect as omitting this parameter.</p> <important>
     /// <p>If an EFS access point is specified in the <code>authorizationConfig</code>, the root directory parameter must either be omitted or set to <code>/</code> which will enforce the path set on the EFS access point.</p>
     /// </important>
@@ -19,8 +19,9 @@ pub struct EfsVolumeConfiguration {
 }
 impl EfsVolumeConfiguration {
     /// <p>The Amazon EFS file system ID to use.</p>
-    pub fn file_system_id(&self) -> ::std::option::Option<&str> {
-        self.file_system_id.as_deref()
+    pub fn file_system_id(&self) -> &str {
+        use std::ops::Deref;
+        self.file_system_id.deref()
     }
     /// <p>The directory within the Amazon EFS file system to mount as the root directory inside the host. If this parameter is omitted, the root of the Amazon EFS volume will be used. Specifying <code>/</code> will have the same effect as omitting this parameter.</p> <important>
     /// <p>If an EFS access point is specified in the <code>authorizationConfig</code>, the root directory parameter must either be omitted or set to <code>/</code> which will enforce the path set on the EFS access point.</p>
@@ -60,6 +61,7 @@ pub struct EfsVolumeConfigurationBuilder {
 }
 impl EfsVolumeConfigurationBuilder {
     /// <p>The Amazon EFS file system ID to use.</p>
+    /// This field is required.
     pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
@@ -136,13 +138,20 @@ impl EfsVolumeConfigurationBuilder {
         &self.authorization_config
     }
     /// Consumes the builder and constructs a [`EfsVolumeConfiguration`](crate::types::EfsVolumeConfiguration).
-    pub fn build(self) -> crate::types::EfsVolumeConfiguration {
-        crate::types::EfsVolumeConfiguration {
-            file_system_id: self.file_system_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`file_system_id`](crate::types::builders::EfsVolumeConfigurationBuilder::file_system_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::EfsVolumeConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EfsVolumeConfiguration {
+            file_system_id: self.file_system_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "file_system_id",
+                    "file_system_id was not specified but it is required when building EfsVolumeConfiguration",
+                )
+            })?,
             root_directory: self.root_directory,
             transit_encryption: self.transit_encryption,
             transit_encryption_port: self.transit_encryption_port,
             authorization_config: self.authorization_config,
-        }
+        })
     }
 }

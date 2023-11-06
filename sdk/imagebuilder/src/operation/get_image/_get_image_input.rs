@@ -27,6 +27,7 @@ pub struct GetImageInputBuilder {
 }
 impl GetImageInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the image that you want to get.</p>
+    /// This field is required.
     pub fn image_build_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_build_version_arn = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetImageInputBuilder {
         &self.image_build_version_arn
     }
     /// Consumes the builder and constructs a [`GetImageInput`](crate::operation::get_image::GetImageInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_image::GetImageInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_image::GetImageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_image::GetImageInput {
             image_build_version_arn: self.image_build_version_arn,
         })

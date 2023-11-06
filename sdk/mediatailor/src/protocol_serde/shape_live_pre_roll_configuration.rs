@@ -49,7 +49,7 @@ where
 pub fn ser_live_pre_roll_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LivePreRollConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ad_decision_server_url {
         object.key("AdDecisionServerUrl").string(var_1.as_str());
     }

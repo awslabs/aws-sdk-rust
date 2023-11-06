@@ -12,8 +12,10 @@ pub struct DescribeDbLogFilesOutput {
 }
 impl DescribeDbLogFilesOutput {
     /// <p>The DB log files returned.</p>
-    pub fn describe_db_log_files(&self) -> ::std::option::Option<&[crate::types::DescribeDbLogFilesDetails]> {
-        self.describe_db_log_files.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.describe_db_log_files.is_none()`.
+    pub fn describe_db_log_files(&self) -> &[crate::types::DescribeDbLogFilesDetails] {
+        self.describe_db_log_files.as_deref().unwrap_or_default()
     }
     /// <p>A pagination token that can be used in a later <code>DescribeDBLogFiles</code> request.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

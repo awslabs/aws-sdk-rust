@@ -2,7 +2,7 @@
 pub fn ser_add_tags_to_certificate_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::add_tags_to_certificate::AddTagsToCertificateInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.certificate_arn {
         object.key("CertificateArn").string(var_1.as_str());
     }

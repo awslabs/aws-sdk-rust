@@ -27,6 +27,7 @@ pub struct DeleteSourceNetworkInputBuilder {
 }
 impl DeleteSourceNetworkInputBuilder {
     /// <p>ID of the Source Network to delete.</p>
+    /// This field is required.
     pub fn source_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_network_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteSourceNetworkInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSourceNetworkInput`](crate::operation::delete_source_network::DeleteSourceNetworkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_source_network::DeleteSourceNetworkInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_source_network::DeleteSourceNetworkInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_source_network::DeleteSourceNetworkInput {
             source_network_id: self.source_network_id,

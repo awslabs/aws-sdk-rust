@@ -44,6 +44,7 @@ pub struct DeletePermissionInputBuilder {
 impl DeletePermissionInputBuilder {
     /// <p>The Amazon Resource Number (ARN) of the private CA that issued the permissions. You can find the CA's ARN by calling the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. This must have the following form: </p>
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
+    /// This field is required.
     pub fn certificate_authority_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_authority_arn = ::std::option::Option::Some(input.into());
         self
@@ -60,6 +61,7 @@ impl DeletePermissionInputBuilder {
         &self.certificate_authority_arn
     }
     /// <p>The Amazon Web Services service or identity that will have its CA permissions revoked. At this time, the only valid service principal is <code>acm.amazonaws.com</code> </p>
+    /// This field is required.
     pub fn principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal = ::std::option::Option::Some(input.into());
         self
@@ -90,7 +92,7 @@ impl DeletePermissionInputBuilder {
     /// Consumes the builder and constructs a [`DeletePermissionInput`](crate::operation::delete_permission::DeletePermissionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_permission::DeletePermissionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_permission::DeletePermissionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_permission::DeletePermissionInput {
             certificate_authority_arn: self.certificate_authority_arn,
             principal: self.principal,

@@ -42,6 +42,7 @@ pub struct DescribeChannelModeratedByAppInstanceUserInputBuilder {
 }
 impl DescribeChannelModeratedByAppInstanceUserInputBuilder {
     /// <p>The ARN of the moderated channel.</p>
+    /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl DescribeChannelModeratedByAppInstanceUserInputBuilder {
         &self.channel_arn
     }
     /// <p>The ARN of the user or bot in the moderated channel.</p>
+    /// This field is required.
     pub fn app_instance_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_user_arn = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl DescribeChannelModeratedByAppInstanceUserInputBuilder {
         &self.app_instance_user_arn
     }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
+    /// This field is required.
     pub fn chime_bearer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.chime_bearer = ::std::option::Option::Some(input.into());
         self
@@ -88,7 +91,7 @@ impl DescribeChannelModeratedByAppInstanceUserInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_channel_moderated_by_app_instance_user::DescribeChannelModeratedByAppInstanceUserInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_channel_moderated_by_app_instance_user::DescribeChannelModeratedByAppInstanceUserInput {

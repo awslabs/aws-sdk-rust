@@ -56,6 +56,7 @@ pub struct DataCaptureConfigSummaryBuilder {
 }
 impl DataCaptureConfigSummaryBuilder {
     /// <p>Whether data capture is enabled or disabled.</p>
+    /// This field is required.
     pub fn enable_capture(mut self, input: bool) -> Self {
         self.enable_capture = ::std::option::Option::Some(input);
         self
@@ -70,6 +71,7 @@ impl DataCaptureConfigSummaryBuilder {
         &self.enable_capture
     }
     /// <p>Whether data capture is currently functional.</p>
+    /// This field is required.
     pub fn capture_status(mut self, input: crate::types::CaptureStatus) -> Self {
         self.capture_status = ::std::option::Option::Some(input);
         self
@@ -84,6 +86,7 @@ impl DataCaptureConfigSummaryBuilder {
         &self.capture_status
     }
     /// <p>The percentage of requests being captured by your Endpoint.</p>
+    /// This field is required.
     pub fn current_sampling_percentage(mut self, input: i32) -> Self {
         self.current_sampling_percentage = ::std::option::Option::Some(input);
         self
@@ -98,6 +101,7 @@ impl DataCaptureConfigSummaryBuilder {
         &self.current_sampling_percentage
     }
     /// <p>The Amazon S3 location being used to capture the data.</p>
+    /// This field is required.
     pub fn destination_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_s3_uri = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +116,7 @@ impl DataCaptureConfigSummaryBuilder {
         &self.destination_s3_uri
     }
     /// <p>The KMS key being used to encrypt the data in Amazon S3.</p>
+    /// This field is required.
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
         self

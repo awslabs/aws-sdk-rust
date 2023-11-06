@@ -20,8 +20,10 @@ pub struct CreateProgramInput {
 }
 impl CreateProgramInput {
     /// <p>The ad break configuration settings.</p>
-    pub fn ad_breaks(&self) -> ::std::option::Option<&[crate::types::AdBreak]> {
-        self.ad_breaks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ad_breaks.is_none()`.
+    pub fn ad_breaks(&self) -> &[crate::types::AdBreak] {
+        self.ad_breaks.as_deref().unwrap_or_default()
     }
     /// <p>The name of the channel for this Program.</p>
     pub fn channel_name(&self) -> ::std::option::Option<&str> {
@@ -89,6 +91,7 @@ impl CreateProgramInputBuilder {
         &self.ad_breaks
     }
     /// <p>The name of the channel for this Program.</p>
+    /// This field is required.
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_name = ::std::option::Option::Some(input.into());
         self
@@ -117,6 +120,7 @@ impl CreateProgramInputBuilder {
         &self.live_source_name
     }
     /// <p>The name of the Program.</p>
+    /// This field is required.
     pub fn program_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.program_name = ::std::option::Option::Some(input.into());
         self
@@ -131,6 +135,7 @@ impl CreateProgramInputBuilder {
         &self.program_name
     }
     /// <p>The schedule configuration settings.</p>
+    /// This field is required.
     pub fn schedule_configuration(mut self, input: crate::types::ScheduleConfiguration) -> Self {
         self.schedule_configuration = ::std::option::Option::Some(input);
         self
@@ -145,6 +150,7 @@ impl CreateProgramInputBuilder {
         &self.schedule_configuration
     }
     /// <p>The name of the source location.</p>
+    /// This field is required.
     pub fn source_location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_location_name = ::std::option::Option::Some(input.into());
         self
@@ -175,7 +181,7 @@ impl CreateProgramInputBuilder {
     /// Consumes the builder and constructs a [`CreateProgramInput`](crate::operation::create_program::CreateProgramInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_program::CreateProgramInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_program::CreateProgramInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_program::CreateProgramInput {
             ad_breaks: self.ad_breaks,
             channel_name: self.channel_name,

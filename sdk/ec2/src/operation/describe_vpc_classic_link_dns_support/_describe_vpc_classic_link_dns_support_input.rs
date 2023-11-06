@@ -20,8 +20,10 @@ impl DescribeVpcClassicLinkDnsSupportInput {
         self.next_token.as_deref()
     }
     /// <p>The IDs of the VPCs.</p>
-    pub fn vpc_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.vpc_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_ids.is_none()`.
+    pub fn vpc_ids(&self) -> &[::std::string::String] {
+        self.vpc_ids.as_deref().unwrap_or_default()
     }
 }
 impl DescribeVpcClassicLinkDnsSupportInput {
@@ -93,7 +95,7 @@ impl DescribeVpcClassicLinkDnsSupportInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_vpc_classic_link_dns_support::DescribeVpcClassicLinkDnsSupportInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_vpc_classic_link_dns_support::DescribeVpcClassicLinkDnsSupportInput {

@@ -138,6 +138,7 @@ impl RouteResponseBuilder {
         &self.route_response_id
     }
     /// <p>Represents the route response key of a route response.</p>
+    /// This field is required.
     pub fn route_response_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_response_key = ::std::option::Option::Some(input.into());
         self

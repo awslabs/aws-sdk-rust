@@ -42,6 +42,7 @@ pub struct UpdateWebhookInputBuilder {
 }
 impl UpdateWebhookInputBuilder {
     /// <p> The unique ID for a webhook. </p>
+    /// This field is required.
     pub fn webhook_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.webhook_id = ::std::option::Option::Some(input.into());
         self
@@ -86,7 +87,7 @@ impl UpdateWebhookInputBuilder {
     /// Consumes the builder and constructs a [`UpdateWebhookInput`](crate::operation::update_webhook::UpdateWebhookInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_webhook::UpdateWebhookInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_webhook::UpdateWebhookInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_webhook::UpdateWebhookInput {
             webhook_id: self.webhook_id,
             branch_name: self.branch_name,

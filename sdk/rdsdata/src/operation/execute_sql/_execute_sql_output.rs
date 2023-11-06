@@ -10,8 +10,10 @@ pub struct ExecuteSqlOutput {
 }
 impl ExecuteSqlOutput {
     /// <p>The results of the SQL statement or statements.</p>
-    pub fn sql_statement_results(&self) -> ::std::option::Option<&[crate::types::SqlStatementResult]> {
-        self.sql_statement_results.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sql_statement_results.is_none()`.
+    pub fn sql_statement_results(&self) -> &[crate::types::SqlStatementResult] {
+        self.sql_statement_results.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ExecuteSqlOutput {

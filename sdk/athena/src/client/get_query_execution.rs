@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetQueryExecution`](crate::operation::get_query_execution::builders::GetQueryExecutionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`query_execution_id(impl Into<String>)`](crate::operation::get_query_execution::builders::GetQueryExecutionFluentBuilder::query_execution_id) / [`set_query_execution_id(Option<String>)`](crate::operation::get_query_execution::builders::GetQueryExecutionFluentBuilder::set_query_execution_id): <p>The unique ID of the query execution.</p>
+    ///   - [`query_execution_id(impl Into<String>)`](crate::operation::get_query_execution::builders::GetQueryExecutionFluentBuilder::query_execution_id) / [`set_query_execution_id(Option<String>)`](crate::operation::get_query_execution::builders::GetQueryExecutionFluentBuilder::set_query_execution_id):<br>required: **true**<br><p>The unique ID of the query execution.</p><br>
     /// - On success, responds with [`GetQueryExecutionOutput`](crate::operation::get_query_execution::GetQueryExecutionOutput) with field(s):
     ///   - [`query_execution(Option<QueryExecution>)`](crate::operation::get_query_execution::GetQueryExecutionOutput::query_execution): <p>Information about the query execution.</p>
     /// - On failure, responds with [`SdkError<GetQueryExecutionError>`](crate::operation::get_query_execution::GetQueryExecutionError)

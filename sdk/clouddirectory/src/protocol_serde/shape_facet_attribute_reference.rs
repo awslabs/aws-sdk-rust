@@ -2,12 +2,12 @@
 pub fn ser_facet_attribute_reference(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FacetAttributeReference,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.target_facet_name {
-        object.key("TargetFacetName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("TargetFacetName").string(input.target_facet_name.as_str());
     }
-    if let Some(var_2) = &input.target_attribute_name {
-        object.key("TargetAttributeName").string(var_2.as_str());
+    {
+        object.key("TargetAttributeName").string(input.target_attribute_name.as_str());
     }
     Ok(())
 }
@@ -51,7 +51,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::facet_attribute_reference_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

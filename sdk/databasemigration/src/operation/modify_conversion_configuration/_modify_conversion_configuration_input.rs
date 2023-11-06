@@ -34,6 +34,7 @@ pub struct ModifyConversionConfigurationInputBuilder {
 }
 impl ModifyConversionConfigurationInputBuilder {
     /// <p>The migration project name or Amazon Resource Name (ARN).</p>
+    /// This field is required.
     pub fn migration_project_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.migration_project_identifier = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl ModifyConversionConfigurationInputBuilder {
         &self.migration_project_identifier
     }
     /// <p>The new conversion configuration.</p>
+    /// This field is required.
     pub fn conversion_configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.conversion_configuration = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl ModifyConversionConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_conversion_configuration::ModifyConversionConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_conversion_configuration::ModifyConversionConfigurationInput {
             migration_project_identifier: self.migration_project_identifier,

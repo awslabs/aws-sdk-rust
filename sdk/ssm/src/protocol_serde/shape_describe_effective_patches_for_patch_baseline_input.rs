@@ -2,7 +2,7 @@
 pub fn ser_describe_effective_patches_for_patch_baseline_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.baseline_id {
         object.key("BaselineId").string(var_1.as_str());
     }

@@ -2,37 +2,37 @@
 pub fn ser_custom_connector_destination_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CustomConnectorDestinationProperties,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.entity_name {
-        object.key("entityName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("entityName").string(input.entity_name.as_str());
     }
-    if let Some(var_2) = &input.error_handling_config {
+    if let Some(var_1) = &input.error_handling_config {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("errorHandlingConfig").start_object();
-        crate::protocol_serde::shape_error_handling_config::ser_error_handling_config(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("errorHandlingConfig").start_object();
+        crate::protocol_serde::shape_error_handling_config::ser_error_handling_config(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.write_operation_type {
-        object.key("writeOperationType").string(var_4.as_str());
+    if let Some(var_3) = &input.write_operation_type {
+        object.key("writeOperationType").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.id_field_names {
-        let mut array_6 = object.key("idFieldNames").start_array();
-        for item_7 in var_5 {
+    if let Some(var_4) = &input.id_field_names {
+        let mut array_5 = object.key("idFieldNames").start_array();
+        for item_6 in var_4 {
             {
-                array_6.value().string(item_7.as_str());
+                array_5.value().string(item_6.as_str());
             }
         }
-        array_6.finish();
+        array_5.finish();
     }
-    if let Some(var_8) = &input.custom_properties {
+    if let Some(var_7) = &input.custom_properties {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("customProperties").start_object();
-        for (key_10, value_11) in var_8 {
+        let mut object_8 = object.key("customProperties").start_object();
+        for (key_9, value_10) in var_7 {
             {
-                object_9.key(key_10.as_str()).string(value_11.as_str());
+                object_8.key(key_9.as_str()).string(value_10.as_str());
             }
         }
-        object_9.finish();
+        object_8.finish();
     }
     Ok(())
 }
@@ -86,7 +86,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::custom_connector_destination_properties_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

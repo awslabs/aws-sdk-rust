@@ -30,8 +30,10 @@ impl CreateTableInput {
         self.table_input.as_ref()
     }
     /// <p>A list of partition indexes, <code>PartitionIndex</code> structures, to create in the table.</p>
-    pub fn partition_indexes(&self) -> ::std::option::Option<&[crate::types::PartitionIndex]> {
-        self.partition_indexes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.partition_indexes.is_none()`.
+    pub fn partition_indexes(&self) -> &[crate::types::PartitionIndex] {
+        self.partition_indexes.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the transaction.</p>
     pub fn transaction_id(&self) -> ::std::option::Option<&str> {
@@ -76,6 +78,7 @@ impl CreateTableInputBuilder {
         &self.catalog_id
     }
     /// <p>The catalog database in which to create the new table. For Hive compatibility, this name is entirely lowercase.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl CreateTableInputBuilder {
         &self.database_name
     }
     /// <p>The <code>TableInput</code> object that defines the metadata table to create in the catalog.</p>
+    /// This field is required.
     pub fn table_input(mut self, input: crate::types::TableInput) -> Self {
         self.table_input = ::std::option::Option::Some(input);
         self
@@ -152,7 +156,7 @@ impl CreateTableInputBuilder {
         &self.open_table_format_input
     }
     /// Consumes the builder and constructs a [`CreateTableInput`](crate::operation::create_table::CreateTableInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_table::CreateTableInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_table::CreateTableInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_table::CreateTableInput {
             catalog_id: self.catalog_id,
             database_name: self.database_name,

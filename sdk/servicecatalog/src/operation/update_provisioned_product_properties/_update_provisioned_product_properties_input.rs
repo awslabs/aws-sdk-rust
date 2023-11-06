@@ -92,6 +92,7 @@ impl UpdateProvisionedProductPropertiesInputBuilder {
         &self.accept_language
     }
     /// <p>The identifier of the provisioned product.</p>
+    /// This field is required.
     pub fn provisioned_product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioned_product_id = ::std::option::Option::Some(input.into());
         self
@@ -143,6 +144,7 @@ impl UpdateProvisionedProductPropertiesInputBuilder {
         &self.provisioned_product_properties
     }
     /// <p>The idempotency token that uniquely identifies the provisioning product update request.</p>
+    /// This field is required.
     pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.idempotency_token = ::std::option::Option::Some(input.into());
         self
@@ -161,7 +163,7 @@ impl UpdateProvisionedProductPropertiesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesInput {

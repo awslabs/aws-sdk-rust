@@ -15,8 +15,10 @@ impl PutProjectEventsOutput {
         self.failed_event_count
     }
     /// <p>A structure that contains Evidently's response to the sent events, including an event ID and error codes, if any.</p>
-    pub fn event_results(&self) -> ::std::option::Option<&[crate::types::PutProjectEventsResultEntry]> {
-        self.event_results.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_results.is_none()`.
+    pub fn event_results(&self) -> &[crate::types::PutProjectEventsResultEntry] {
+        self.event_results.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for PutProjectEventsOutput {

@@ -17,24 +17,32 @@ pub struct ApplicationUpdate {
 }
 impl ApplicationUpdate {
     /// <p>Describes application input configuration updates.</p>
-    pub fn input_updates(&self) -> ::std::option::Option<&[crate::types::InputUpdate]> {
-        self.input_updates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_updates.is_none()`.
+    pub fn input_updates(&self) -> &[crate::types::InputUpdate] {
+        self.input_updates.as_deref().unwrap_or_default()
     }
     /// <p>Describes application code updates.</p>
     pub fn application_code_update(&self) -> ::std::option::Option<&str> {
         self.application_code_update.as_deref()
     }
     /// <p>Describes application output configuration updates.</p>
-    pub fn output_updates(&self) -> ::std::option::Option<&[crate::types::OutputUpdate]> {
-        self.output_updates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_updates.is_none()`.
+    pub fn output_updates(&self) -> &[crate::types::OutputUpdate] {
+        self.output_updates.as_deref().unwrap_or_default()
     }
     /// <p>Describes application reference data source updates.</p>
-    pub fn reference_data_source_updates(&self) -> ::std::option::Option<&[crate::types::ReferenceDataSourceUpdate]> {
-        self.reference_data_source_updates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reference_data_source_updates.is_none()`.
+    pub fn reference_data_source_updates(&self) -> &[crate::types::ReferenceDataSourceUpdate] {
+        self.reference_data_source_updates.as_deref().unwrap_or_default()
     }
     /// <p>Describes application CloudWatch logging option updates.</p>
-    pub fn cloud_watch_logging_option_updates(&self) -> ::std::option::Option<&[crate::types::CloudWatchLoggingOptionUpdate]> {
-        self.cloud_watch_logging_option_updates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_watch_logging_option_updates.is_none()`.
+    pub fn cloud_watch_logging_option_updates(&self) -> &[crate::types::CloudWatchLoggingOptionUpdate] {
+        self.cloud_watch_logging_option_updates.as_deref().unwrap_or_default()
     }
 }
 impl ApplicationUpdate {

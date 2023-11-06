@@ -14,8 +14,10 @@ impl UpdateRelationalDatabaseParametersInput {
         self.relational_database_name.as_deref()
     }
     /// <p>The database parameters to update.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&[crate::types::RelationalDatabaseParameter]> {
-        self.parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
+    pub fn parameters(&self) -> &[crate::types::RelationalDatabaseParameter] {
+        self.parameters.as_deref().unwrap_or_default()
     }
 }
 impl UpdateRelationalDatabaseParametersInput {
@@ -34,6 +36,7 @@ pub struct UpdateRelationalDatabaseParametersInputBuilder {
 }
 impl UpdateRelationalDatabaseParametersInputBuilder {
     /// <p>The name of your database for which to update parameters.</p>
+    /// This field is required.
     pub fn relational_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.relational_database_name = ::std::option::Option::Some(input.into());
         self
@@ -72,7 +75,7 @@ impl UpdateRelationalDatabaseParametersInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_relational_database_parameters::UpdateRelationalDatabaseParametersInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_relational_database_parameters::UpdateRelationalDatabaseParametersInput {

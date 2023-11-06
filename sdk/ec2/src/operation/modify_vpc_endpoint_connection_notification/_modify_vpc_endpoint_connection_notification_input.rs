@@ -26,8 +26,10 @@ impl ModifyVpcEndpointConnectionNotificationInput {
         self.connection_notification_arn.as_deref()
     }
     /// <p>The events for the endpoint. Valid values are <code>Accept</code>, <code>Connect</code>, <code>Delete</code>, and <code>Reject</code>.</p>
-    pub fn connection_events(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.connection_events.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connection_events.is_none()`.
+    pub fn connection_events(&self) -> &[::std::string::String] {
+        self.connection_events.as_deref().unwrap_or_default()
     }
 }
 impl ModifyVpcEndpointConnectionNotificationInput {
@@ -62,6 +64,7 @@ impl ModifyVpcEndpointConnectionNotificationInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the notification.</p>
+    /// This field is required.
     pub fn connection_notification_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_notification_id = ::std::option::Option::Some(input.into());
         self
@@ -114,7 +117,7 @@ impl ModifyVpcEndpointConnectionNotificationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotificationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotificationInput {

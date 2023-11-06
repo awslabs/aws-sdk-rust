@@ -27,6 +27,7 @@ pub struct DescribeForecastExportJobInputBuilder {
 }
 impl DescribeForecastExportJobInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the forecast export job.</p>
+    /// This field is required.
     pub fn forecast_export_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.forecast_export_job_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeForecastExportJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_forecast_export_job::DescribeForecastExportJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_forecast_export_job::DescribeForecastExportJobInput {
             forecast_export_job_arn: self.forecast_export_job_arn,

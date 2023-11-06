@@ -35,6 +35,7 @@ pub struct KernelSpecBuilder {
 }
 impl KernelSpecBuilder {
     /// <p>The name of the Jupyter kernel in the image. This value is case sensitive.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

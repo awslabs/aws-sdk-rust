@@ -41,6 +41,7 @@ pub struct ListControlsInputBuilder {
 }
 impl ListControlsInputBuilder {
     /// <p> The type of control, such as a standard control or a custom control. </p>
+    /// This field is required.
     pub fn control_type(mut self, input: crate::types::ControlType) -> Self {
         self.control_type = ::std::option::Option::Some(input);
         self
@@ -83,7 +84,9 @@ impl ListControlsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListControlsInput`](crate::operation::list_controls::ListControlsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_controls::ListControlsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_controls::ListControlsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_controls::ListControlsInput {
             control_type: self.control_type,
             next_token: self.next_token,

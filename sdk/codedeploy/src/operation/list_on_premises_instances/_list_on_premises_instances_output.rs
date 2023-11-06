@@ -12,8 +12,10 @@ pub struct ListOnPremisesInstancesOutput {
 }
 impl ListOnPremisesInstancesOutput {
     /// <p>The list of matching on-premises instance names.</p>
-    pub fn instance_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.instance_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_names.is_none()`.
+    pub fn instance_names(&self) -> &[::std::string::String] {
+        self.instance_names.as_deref().unwrap_or_default()
     }
     /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list on-premises instances call to return the next set of on-premises instances in the list.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

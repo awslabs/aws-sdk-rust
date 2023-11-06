@@ -2,7 +2,7 @@
 pub fn ser_lambda_linux_process_params(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LambdaLinuxProcessParams,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.isolation_mode {
         object.key("isolationMode").string(var_1.as_str());
     }

@@ -34,6 +34,7 @@ pub struct DisassociateFileSystemInputBuilder {
 }
 impl DisassociateFileSystemInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the file system association to be deleted.</p>
+    /// This field is required.
     pub fn file_system_association_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_association_arn = ::std::option::Option::Some(input.into());
         self
@@ -64,8 +65,10 @@ impl DisassociateFileSystemInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateFileSystemInput`](crate::operation::disassociate_file_system::DisassociateFileSystemInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disassociate_file_system::DisassociateFileSystemInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_file_system::DisassociateFileSystemInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::disassociate_file_system::DisassociateFileSystemInput {
             file_system_association_arn: self.file_system_association_arn,
             force_delete: self.force_delete,

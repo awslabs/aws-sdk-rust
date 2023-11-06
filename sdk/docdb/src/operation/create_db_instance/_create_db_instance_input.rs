@@ -89,8 +89,10 @@ impl CreateDbInstanceInput {
         self.auto_minor_version_upgrade
     }
     /// <p>The tags to be assigned to the instance. You can assign up to 10 tags to an instance.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The identifier of the cluster that the instance will belong to.</p>
     pub fn db_cluster_identifier(&self) -> ::std::option::Option<&str> {
@@ -150,6 +152,7 @@ impl CreateDbInstanceInputBuilder {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>mydbinstance</code> </p>
+    /// This field is required.
     pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_identifier = ::std::option::Option::Some(input.into());
         self
@@ -178,6 +181,7 @@ impl CreateDbInstanceInputBuilder {
         &self.db_instance_identifier
     }
     /// <p>The compute and memory capacity of the instance; for example, <code>db.r5.large</code>. </p>
+    /// This field is required.
     pub fn db_instance_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_class = ::std::option::Option::Some(input.into());
         self
@@ -193,6 +197,7 @@ impl CreateDbInstanceInputBuilder {
     }
     /// <p>The name of the database engine to be used for this instance.</p>
     /// <p>Valid value: <code>docdb</code> </p>
+    /// This field is required.
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
         self
@@ -292,6 +297,7 @@ impl CreateDbInstanceInputBuilder {
         &self.tags
     }
     /// <p>The identifier of the cluster that the instance will belong to.</p>
+    /// This field is required.
     pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_identifier = ::std::option::Option::Some(input.into());
         self
@@ -376,7 +382,7 @@ impl CreateDbInstanceInputBuilder {
     /// Consumes the builder and constructs a [`CreateDbInstanceInput`](crate::operation::create_db_instance::CreateDbInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_db_instance::CreateDbInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_db_instance::CreateDbInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_db_instance::CreateDbInstanceInput {
             db_instance_identifier: self.db_instance_identifier,
             db_instance_class: self.db_instance_class,

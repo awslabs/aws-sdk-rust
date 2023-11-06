@@ -2,7 +2,7 @@
 pub fn ser_box_plot_style_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BoxPlotStyleOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.fill_style {
         object.key("FillStyle").string(var_1.as_str());
     }

@@ -5,30 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PlacementSummary {
     /// <p>The name of the project containing the placement.</p>
-    pub project_name: ::std::option::Option<::std::string::String>,
+    pub project_name: ::std::string::String,
     /// <p>The name of the placement being summarized.</p>
-    pub placement_name: ::std::option::Option<::std::string::String>,
+    pub placement_name: ::std::string::String,
     /// <p>The date when the placement was originally created, in UNIX epoch time format.</p>
-    pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_date: ::aws_smithy_types::DateTime,
     /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
-    pub updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub updated_date: ::aws_smithy_types::DateTime,
 }
 impl PlacementSummary {
     /// <p>The name of the project containing the placement.</p>
-    pub fn project_name(&self) -> ::std::option::Option<&str> {
-        self.project_name.as_deref()
+    pub fn project_name(&self) -> &str {
+        use std::ops::Deref;
+        self.project_name.deref()
     }
     /// <p>The name of the placement being summarized.</p>
-    pub fn placement_name(&self) -> ::std::option::Option<&str> {
-        self.placement_name.as_deref()
+    pub fn placement_name(&self) -> &str {
+        use std::ops::Deref;
+        self.placement_name.deref()
     }
     /// <p>The date when the placement was originally created, in UNIX epoch time format.</p>
-    pub fn created_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_date.as_ref()
+    pub fn created_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_date
     }
     /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
-    pub fn updated_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.updated_date.as_ref()
+    pub fn updated_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.updated_date
     }
 }
 impl PlacementSummary {
@@ -49,6 +51,7 @@ pub struct PlacementSummaryBuilder {
 }
 impl PlacementSummaryBuilder {
     /// <p>The name of the project containing the placement.</p>
+    /// This field is required.
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +66,7 @@ impl PlacementSummaryBuilder {
         &self.project_name
     }
     /// <p>The name of the placement being summarized.</p>
+    /// This field is required.
     pub fn placement_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.placement_name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +81,7 @@ impl PlacementSummaryBuilder {
         &self.placement_name
     }
     /// <p>The date when the placement was originally created, in UNIX epoch time format.</p>
+    /// This field is required.
     pub fn created_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_date = ::std::option::Option::Some(input);
         self
@@ -91,6 +96,7 @@ impl PlacementSummaryBuilder {
         &self.created_date
     }
     /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
+    /// This field is required.
     pub fn updated_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_date = ::std::option::Option::Some(input);
         self
@@ -105,12 +111,37 @@ impl PlacementSummaryBuilder {
         &self.updated_date
     }
     /// Consumes the builder and constructs a [`PlacementSummary`](crate::types::PlacementSummary).
-    pub fn build(self) -> crate::types::PlacementSummary {
-        crate::types::PlacementSummary {
-            project_name: self.project_name,
-            placement_name: self.placement_name,
-            created_date: self.created_date,
-            updated_date: self.updated_date,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`project_name`](crate::types::builders::PlacementSummaryBuilder::project_name)
+    /// - [`placement_name`](crate::types::builders::PlacementSummaryBuilder::placement_name)
+    /// - [`created_date`](crate::types::builders::PlacementSummaryBuilder::created_date)
+    /// - [`updated_date`](crate::types::builders::PlacementSummaryBuilder::updated_date)
+    pub fn build(self) -> ::std::result::Result<crate::types::PlacementSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PlacementSummary {
+            project_name: self.project_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "project_name",
+                    "project_name was not specified but it is required when building PlacementSummary",
+                )
+            })?,
+            placement_name: self.placement_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "placement_name",
+                    "placement_name was not specified but it is required when building PlacementSummary",
+                )
+            })?,
+            created_date: self.created_date.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_date",
+                    "created_date was not specified but it is required when building PlacementSummary",
+                )
+            })?,
+            updated_date: self.updated_date.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "updated_date",
+                    "updated_date was not specified but it is required when building PlacementSummary",
+                )
+            })?,
+        })
     }
 }

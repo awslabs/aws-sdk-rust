@@ -46,6 +46,7 @@ pub struct UpdateEmailIdentityPolicyInputBuilder {
 }
 impl UpdateEmailIdentityPolicyInputBuilder {
     /// <p>The email identity.</p>
+    /// This field is required.
     pub fn email_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_identity = ::std::option::Option::Some(input.into());
         self
@@ -61,6 +62,7 @@ impl UpdateEmailIdentityPolicyInputBuilder {
     }
     /// <p>The name of the policy.</p>
     /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
+    /// This field is required.
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
         self
@@ -78,6 +80,7 @@ impl UpdateEmailIdentityPolicyInputBuilder {
     }
     /// <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
     /// <p> For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer Guide</a>.</p>
+    /// This field is required.
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
         self
@@ -98,7 +101,7 @@ impl UpdateEmailIdentityPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_email_identity_policy::UpdateEmailIdentityPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_email_identity_policy::UpdateEmailIdentityPolicyInput {
             email_identity: self.email_identity,

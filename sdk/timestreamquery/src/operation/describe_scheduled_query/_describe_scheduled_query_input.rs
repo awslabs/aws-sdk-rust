@@ -27,6 +27,7 @@ pub struct DescribeScheduledQueryInputBuilder {
 }
 impl DescribeScheduledQueryInputBuilder {
     /// <p>The ARN of the scheduled query.</p>
+    /// This field is required.
     pub fn scheduled_query_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduled_query_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,8 +44,10 @@ impl DescribeScheduledQueryInputBuilder {
     /// Consumes the builder and constructs a [`DescribeScheduledQueryInput`](crate::operation::describe_scheduled_query::DescribeScheduledQueryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_scheduled_query::DescribeScheduledQueryInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_scheduled_query::DescribeScheduledQueryInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_scheduled_query::DescribeScheduledQueryInput {
             scheduled_query_arn: self.scheduled_query_arn,
         })

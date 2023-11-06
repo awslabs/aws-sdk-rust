@@ -30,8 +30,10 @@ pub struct AwsElbv2LoadBalancerDetails {
 }
 impl AwsElbv2LoadBalancerDetails {
     /// <p>The Availability Zones for the load balancer.</p>
-    pub fn availability_zones(&self) -> ::std::option::Option<&[crate::types::AvailabilityZone]> {
-        self.availability_zones.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
+    pub fn availability_zones(&self) -> &[crate::types::AvailabilityZone] {
+        self.availability_zones.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the Amazon Route 53 hosted zone associated with the load balancer.</p>
     pub fn canonical_hosted_zone_id(&self) -> ::std::option::Option<&str> {
@@ -55,8 +57,10 @@ impl AwsElbv2LoadBalancerDetails {
         self.scheme.as_deref()
     }
     /// <p>The IDs of the security groups for the load balancer.</p>
-    pub fn security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
+    pub fn security_groups(&self) -> &[::std::string::String] {
+        self.security_groups.as_deref().unwrap_or_default()
     }
     /// <p>The state of the load balancer.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::LoadBalancerState> {
@@ -71,8 +75,10 @@ impl AwsElbv2LoadBalancerDetails {
         self.vpc_id.as_deref()
     }
     /// <p>Attributes of the load balancer.</p>
-    pub fn load_balancer_attributes(&self) -> ::std::option::Option<&[crate::types::AwsElbv2LoadBalancerAttribute]> {
-        self.load_balancer_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.load_balancer_attributes.is_none()`.
+    pub fn load_balancer_attributes(&self) -> &[crate::types::AwsElbv2LoadBalancerAttribute] {
+        self.load_balancer_attributes.as_deref().unwrap_or_default()
     }
 }
 impl AwsElbv2LoadBalancerDetails {

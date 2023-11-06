@@ -15,8 +15,10 @@ impl PostLaunchActionsStatus {
         self.ssm_agent_discovery_datetime.as_deref()
     }
     /// <p>List of Post Launch Action status.</p>
-    pub fn post_launch_actions_launch_status_list(&self) -> ::std::option::Option<&[crate::types::JobPostLaunchActionsLaunchStatus]> {
-        self.post_launch_actions_launch_status_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.post_launch_actions_launch_status_list.is_none()`.
+    pub fn post_launch_actions_launch_status_list(&self) -> &[crate::types::JobPostLaunchActionsLaunchStatus] {
+        self.post_launch_actions_launch_status_list.as_deref().unwrap_or_default()
     }
 }
 impl PostLaunchActionsStatus {

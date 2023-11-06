@@ -5,38 +5,42 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DirectJdbcSource {
     /// <p>The name of the JDBC source connection.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The database of the JDBC source connection.</p>
-    pub database: ::std::option::Option<::std::string::String>,
+    pub database: ::std::string::String,
     /// <p>The table of the JDBC source connection.</p>
-    pub table: ::std::option::Option<::std::string::String>,
+    pub table: ::std::string::String,
     /// <p>The connection name of the JDBC source.</p>
-    pub connection_name: ::std::option::Option<::std::string::String>,
+    pub connection_name: ::std::string::String,
     /// <p>The connection type of the JDBC source.</p>
-    pub connection_type: ::std::option::Option<crate::types::JdbcConnectionType>,
+    pub connection_type: crate::types::JdbcConnectionType,
     /// <p>The temp directory of the JDBC Redshift source.</p>
     pub redshift_tmp_dir: ::std::option::Option<::std::string::String>,
 }
 impl DirectJdbcSource {
     /// <p>The name of the JDBC source connection.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The database of the JDBC source connection.</p>
-    pub fn database(&self) -> ::std::option::Option<&str> {
-        self.database.as_deref()
+    pub fn database(&self) -> &str {
+        use std::ops::Deref;
+        self.database.deref()
     }
     /// <p>The table of the JDBC source connection.</p>
-    pub fn table(&self) -> ::std::option::Option<&str> {
-        self.table.as_deref()
+    pub fn table(&self) -> &str {
+        use std::ops::Deref;
+        self.table.deref()
     }
     /// <p>The connection name of the JDBC source.</p>
-    pub fn connection_name(&self) -> ::std::option::Option<&str> {
-        self.connection_name.as_deref()
+    pub fn connection_name(&self) -> &str {
+        use std::ops::Deref;
+        self.connection_name.deref()
     }
     /// <p>The connection type of the JDBC source.</p>
-    pub fn connection_type(&self) -> ::std::option::Option<&crate::types::JdbcConnectionType> {
-        self.connection_type.as_ref()
+    pub fn connection_type(&self) -> &crate::types::JdbcConnectionType {
+        &self.connection_type
     }
     /// <p>The temp directory of the JDBC Redshift source.</p>
     pub fn redshift_tmp_dir(&self) -> ::std::option::Option<&str> {
@@ -63,6 +67,7 @@ pub struct DirectJdbcSourceBuilder {
 }
 impl DirectJdbcSourceBuilder {
     /// <p>The name of the JDBC source connection.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +82,7 @@ impl DirectJdbcSourceBuilder {
         &self.name
     }
     /// <p>The database of the JDBC source connection.</p>
+    /// This field is required.
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +97,7 @@ impl DirectJdbcSourceBuilder {
         &self.database
     }
     /// <p>The table of the JDBC source connection.</p>
+    /// This field is required.
     pub fn table(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +112,7 @@ impl DirectJdbcSourceBuilder {
         &self.table
     }
     /// <p>The connection name of the JDBC source.</p>
+    /// This field is required.
     pub fn connection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_name = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +127,7 @@ impl DirectJdbcSourceBuilder {
         &self.connection_name
     }
     /// <p>The connection type of the JDBC source.</p>
+    /// This field is required.
     pub fn connection_type(mut self, input: crate::types::JdbcConnectionType) -> Self {
         self.connection_type = ::std::option::Option::Some(input);
         self
@@ -147,14 +156,45 @@ impl DirectJdbcSourceBuilder {
         &self.redshift_tmp_dir
     }
     /// Consumes the builder and constructs a [`DirectJdbcSource`](crate::types::DirectJdbcSource).
-    pub fn build(self) -> crate::types::DirectJdbcSource {
-        crate::types::DirectJdbcSource {
-            name: self.name,
-            database: self.database,
-            table: self.table,
-            connection_name: self.connection_name,
-            connection_type: self.connection_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::DirectJdbcSourceBuilder::name)
+    /// - [`database`](crate::types::builders::DirectJdbcSourceBuilder::database)
+    /// - [`table`](crate::types::builders::DirectJdbcSourceBuilder::table)
+    /// - [`connection_name`](crate::types::builders::DirectJdbcSourceBuilder::connection_name)
+    /// - [`connection_type`](crate::types::builders::DirectJdbcSourceBuilder::connection_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::DirectJdbcSource, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DirectJdbcSource {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DirectJdbcSource",
+                )
+            })?,
+            database: self.database.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "database",
+                    "database was not specified but it is required when building DirectJdbcSource",
+                )
+            })?,
+            table: self.table.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "table",
+                    "table was not specified but it is required when building DirectJdbcSource",
+                )
+            })?,
+            connection_name: self.connection_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "connection_name",
+                    "connection_name was not specified but it is required when building DirectJdbcSource",
+                )
+            })?,
+            connection_type: self.connection_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "connection_type",
+                    "connection_type was not specified but it is required when building DirectJdbcSource",
+                )
+            })?,
             redshift_tmp_dir: self.redshift_tmp_dir,
-        }
+        })
     }
 }

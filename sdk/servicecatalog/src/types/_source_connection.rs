@@ -49,6 +49,7 @@ impl SourceConnectionBuilder {
         &self.r#type
     }
     /// <p>The connection details based on the connection <code>Type</code>. </p>
+    /// This field is required.
     pub fn connection_parameters(mut self, input: crate::types::SourceConnectionParameters) -> Self {
         self.connection_parameters = ::std::option::Option::Some(input);
         self

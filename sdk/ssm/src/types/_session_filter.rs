@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SessionFilter {
     /// <p>The name of the filter.</p>
-    pub key: ::std::option::Option<crate::types::SessionFilterKey>,
+    pub key: crate::types::SessionFilterKey,
     /// <p>The filter value. Valid values for each filter key are as follows:</p>
     /// <ul>
     /// <li> <p>InvokedAfter: Specify a timestamp to limit your results. For example, specify 2018-08-29T00:00:00Z to see sessions that started August 29, 2018, and later.</p> </li>
@@ -23,12 +23,12 @@ pub struct SessionFilter {
     /// </ul> </li>
     /// <li> <p>SessionId: Specify a session ID to return details about the session.</p> </li>
     /// </ul>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
 }
 impl SessionFilter {
     /// <p>The name of the filter.</p>
-    pub fn key(&self) -> ::std::option::Option<&crate::types::SessionFilterKey> {
-        self.key.as_ref()
+    pub fn key(&self) -> &crate::types::SessionFilterKey {
+        &self.key
     }
     /// <p>The filter value. Valid values for each filter key are as follows:</p>
     /// <ul>
@@ -47,8 +47,9 @@ impl SessionFilter {
     /// </ul> </li>
     /// <li> <p>SessionId: Specify a session ID to return details about the session.</p> </li>
     /// </ul>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
 }
 impl SessionFilter {
@@ -67,6 +68,7 @@ pub struct SessionFilterBuilder {
 }
 impl SessionFilterBuilder {
     /// <p>The name of the filter.</p>
+    /// This field is required.
     pub fn key(mut self, input: crate::types::SessionFilterKey) -> Self {
         self.key = ::std::option::Option::Some(input);
         self
@@ -97,6 +99,7 @@ impl SessionFilterBuilder {
     /// </ul> </li>
     /// <li> <p>SessionId: Specify a session ID to return details about the session.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -143,10 +146,23 @@ impl SessionFilterBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`SessionFilter`](crate::types::SessionFilter).
-    pub fn build(self) -> crate::types::SessionFilter {
-        crate::types::SessionFilter {
-            key: self.key,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key`](crate::types::builders::SessionFilterBuilder::key)
+    /// - [`value`](crate::types::builders::SessionFilterBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::SessionFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SessionFilter {
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building SessionFilter",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building SessionFilter",
+                )
+            })?,
+        })
     }
 }

@@ -63,6 +63,7 @@ impl ListChildrenInputBuilder {
     /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li>
     /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn parent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_id = ::std::option::Option::Some(input.into());
         self
@@ -87,6 +88,7 @@ impl ListChildrenInputBuilder {
         &self.parent_id
     }
     /// <p>Filters the output to include only the specified child type.</p>
+    /// This field is required.
     pub fn child_type(mut self, input: crate::types::ChildType) -> Self {
         self.child_type = ::std::option::Option::Some(input);
         self
@@ -129,7 +131,9 @@ impl ListChildrenInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListChildrenInput`](crate::operation::list_children::ListChildrenInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_children::ListChildrenInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_children::ListChildrenInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_children::ListChildrenInput {
             parent_id: self.parent_id,
             child_type: self.child_type,

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteProfile`](crate::operation::delete_profile::builders::DeleteProfileFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`profile_arn(impl Into<String>)`](crate::operation::delete_profile::builders::DeleteProfileFluentBuilder::profile_arn) / [`set_profile_arn(Option<String>)`](crate::operation::delete_profile::builders::DeleteProfileFluentBuilder::set_profile_arn): <p>The ARN of the room profile to delete. Required.</p>
+    ///   - [`profile_arn(impl Into<String>)`](crate::operation::delete_profile::builders::DeleteProfileFluentBuilder::profile_arn) / [`set_profile_arn(Option<String>)`](crate::operation::delete_profile::builders::DeleteProfileFluentBuilder::set_profile_arn):<br>required: **false**<br><p>The ARN of the room profile to delete. Required.</p><br>
     /// - On success, responds with [`DeleteProfileOutput`](crate::operation::delete_profile::DeleteProfileOutput)
     /// - On failure, responds with [`SdkError<DeleteProfileError>`](crate::operation::delete_profile::DeleteProfileError)
     #[deprecated(note = "Alexa For Business is no longer supported")]

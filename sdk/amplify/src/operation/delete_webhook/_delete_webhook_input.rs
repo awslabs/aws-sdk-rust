@@ -28,6 +28,7 @@ pub struct DeleteWebhookInputBuilder {
 }
 impl DeleteWebhookInputBuilder {
     /// <p> The unique ID for a webhook. </p>
+    /// This field is required.
     pub fn webhook_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.webhook_id = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl DeleteWebhookInputBuilder {
     /// Consumes the builder and constructs a [`DeleteWebhookInput`](crate::operation::delete_webhook::DeleteWebhookInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_webhook::DeleteWebhookInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_webhook::DeleteWebhookInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_webhook::DeleteWebhookInput { webhook_id: self.webhook_id })
     }
 }

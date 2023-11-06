@@ -34,6 +34,7 @@ pub struct StartProjectSessionInputBuilder {
 }
 impl StartProjectSessionInputBuilder {
     /// <p>The name of the project to act upon.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl StartProjectSessionInputBuilder {
     /// Consumes the builder and constructs a [`StartProjectSessionInput`](crate::operation::start_project_session::StartProjectSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_project_session::StartProjectSessionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_project_session::StartProjectSessionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_project_session::StartProjectSessionInput {
             name: self.name,

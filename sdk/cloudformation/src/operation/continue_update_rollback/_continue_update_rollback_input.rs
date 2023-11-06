@@ -41,8 +41,10 @@ impl ContinueUpdateRollbackInput {
     /// <p>To skip resources that are part of nested stacks, use the following format: <code>NestedStackName.ResourceLogicalID</code>. If you want to specify the logical ID of a stack resource (<code>Type: AWS::CloudFormation::Stack</code>) in the <code>ResourcesToSkip</code> list, then its corresponding embedded stack must be in one of the following states: <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or <code>DELETE_FAILED</code>.</p> <note>
     /// <p>Don't confuse a child stack's name with its corresponding logical ID defined in the parent stack. For an example of a continue update rollback operation with nested stacks, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks">Using ResourcesToSkip to recover a nested stacks hierarchy</a>.</p>
     /// </note>
-    pub fn resources_to_skip(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resources_to_skip.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources_to_skip.is_none()`.
+    pub fn resources_to_skip(&self) -> &[::std::string::String] {
+        self.resources_to_skip.as_deref().unwrap_or_default()
     }
     /// <p>A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to continue the rollback to a stack with the same name. You might retry <code>ContinueUpdateRollback</code> requests to ensure that CloudFormation successfully received them.</p>
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
@@ -69,6 +71,7 @@ impl ContinueUpdateRollbackInputBuilder {
     /// <p>The name or the unique ID of the stack that you want to continue rolling back.</p> <note>
     /// <p>Don't specify the name of a nested stack (a stack that was created by using the <code>AWS::CloudFormation::Stack</code> resource). Instead, use this operation on the parent stack (the stack that contains the <code>AWS::CloudFormation::Stack</code> resource).</p>
     /// </note>
+    /// This field is required.
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_name = ::std::option::Option::Some(input.into());
         self
@@ -158,8 +161,10 @@ impl ContinueUpdateRollbackInputBuilder {
     /// Consumes the builder and constructs a [`ContinueUpdateRollbackInput`](crate::operation::continue_update_rollback::ContinueUpdateRollbackInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::continue_update_rollback::ContinueUpdateRollbackInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::continue_update_rollback::ContinueUpdateRollbackInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::continue_update_rollback::ContinueUpdateRollbackInput {
             stack_name: self.stack_name,
             role_arn: self.role_arn,

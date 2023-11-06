@@ -35,6 +35,7 @@ pub struct DeleteIndexFieldInputBuilder {
 }
 impl DeleteIndexFieldInputBuilder {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl DeleteIndexFieldInputBuilder {
         &self.domain_name
     }
     /// <p>The name of the index field your want to remove from the domain's indexing options.</p>
+    /// This field is required.
     pub fn index_field_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_field_name = ::std::option::Option::Some(input.into());
         self
@@ -65,7 +67,7 @@ impl DeleteIndexFieldInputBuilder {
     /// Consumes the builder and constructs a [`DeleteIndexFieldInput`](crate::operation::delete_index_field::DeleteIndexFieldInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_index_field::DeleteIndexFieldInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_index_field::DeleteIndexFieldInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_index_field::DeleteIndexFieldInput {
             domain_name: self.domain_name,
             index_field_name: self.index_field_name,

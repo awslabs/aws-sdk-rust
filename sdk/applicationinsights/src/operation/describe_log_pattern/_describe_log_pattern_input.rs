@@ -48,6 +48,7 @@ pub struct DescribeLogPatternInputBuilder {
 }
 impl DescribeLogPatternInputBuilder {
     /// <p>The name of the resource group.</p>
+    /// This field is required.
     pub fn resource_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_group_name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl DescribeLogPatternInputBuilder {
         &self.resource_group_name
     }
     /// <p>The name of the log pattern set.</p>
+    /// This field is required.
     pub fn pattern_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pattern_set_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl DescribeLogPatternInputBuilder {
         &self.pattern_set_name
     }
     /// <p>The name of the log pattern.</p>
+    /// This field is required.
     pub fn pattern_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pattern_name = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +109,8 @@ impl DescribeLogPatternInputBuilder {
     /// Consumes the builder and constructs a [`DescribeLogPatternInput`](crate::operation::describe_log_pattern::DescribeLogPatternInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_log_pattern::DescribeLogPatternInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_log_pattern::DescribeLogPatternInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::describe_log_pattern::DescribeLogPatternInput {
             resource_group_name: self.resource_group_name,
             pattern_set_name: self.pattern_set_name,

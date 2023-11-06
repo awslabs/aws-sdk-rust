@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteRunGroup`](crate::operation::delete_run_group::builders::DeleteRunGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::delete_run_group::builders::DeleteRunGroupFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_run_group::builders::DeleteRunGroupFluentBuilder::set_id): <p>The run group's ID.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::delete_run_group::builders::DeleteRunGroupFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_run_group::builders::DeleteRunGroupFluentBuilder::set_id):<br>required: **true**<br><p>The run group's ID.</p><br>
     /// - On success, responds with [`DeleteRunGroupOutput`](crate::operation::delete_run_group::DeleteRunGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteRunGroupError>`](crate::operation::delete_run_group::DeleteRunGroupError)
     pub fn delete_run_group(&self) -> crate::operation::delete_run_group::builders::DeleteRunGroupFluentBuilder {

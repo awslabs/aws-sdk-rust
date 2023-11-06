@@ -78,6 +78,7 @@ impl ListAccountsInputBuilder {
         &self.max_results
     }
     /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>IAM Identity Center OIDC API Reference Guide</i>.</p>
+    /// This field is required.
     pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_token = ::std::option::Option::Some(input.into());
         self
@@ -92,7 +93,9 @@ impl ListAccountsInputBuilder {
         &self.access_token
     }
     /// Consumes the builder and constructs a [`ListAccountsInput`](crate::operation::list_accounts::ListAccountsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_accounts::ListAccountsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_accounts::ListAccountsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_accounts::ListAccountsInput {
             next_token: self.next_token,
             max_results: self.max_results,

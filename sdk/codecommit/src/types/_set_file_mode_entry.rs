@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetFileModeEntry {
     /// <p>The full path to the file, including the name of the file.</p>
-    pub file_path: ::std::option::Option<::std::string::String>,
+    pub file_path: ::std::string::String,
     /// <p>The file mode for the file.</p>
-    pub file_mode: ::std::option::Option<crate::types::FileModeTypeEnum>,
+    pub file_mode: crate::types::FileModeTypeEnum,
 }
 impl SetFileModeEntry {
     /// <p>The full path to the file, including the name of the file.</p>
-    pub fn file_path(&self) -> ::std::option::Option<&str> {
-        self.file_path.as_deref()
+    pub fn file_path(&self) -> &str {
+        use std::ops::Deref;
+        self.file_path.deref()
     }
     /// <p>The file mode for the file.</p>
-    pub fn file_mode(&self) -> ::std::option::Option<&crate::types::FileModeTypeEnum> {
-        self.file_mode.as_ref()
+    pub fn file_mode(&self) -> &crate::types::FileModeTypeEnum {
+        &self.file_mode
     }
 }
 impl SetFileModeEntry {
@@ -35,6 +36,7 @@ pub struct SetFileModeEntryBuilder {
 }
 impl SetFileModeEntryBuilder {
     /// <p>The full path to the file, including the name of the file.</p>
+    /// This field is required.
     pub fn file_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_path = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl SetFileModeEntryBuilder {
         &self.file_path
     }
     /// <p>The file mode for the file.</p>
+    /// This field is required.
     pub fn file_mode(mut self, input: crate::types::FileModeTypeEnum) -> Self {
         self.file_mode = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,23 @@ impl SetFileModeEntryBuilder {
         &self.file_mode
     }
     /// Consumes the builder and constructs a [`SetFileModeEntry`](crate::types::SetFileModeEntry).
-    pub fn build(self) -> crate::types::SetFileModeEntry {
-        crate::types::SetFileModeEntry {
-            file_path: self.file_path,
-            file_mode: self.file_mode,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`file_path`](crate::types::builders::SetFileModeEntryBuilder::file_path)
+    /// - [`file_mode`](crate::types::builders::SetFileModeEntryBuilder::file_mode)
+    pub fn build(self) -> ::std::result::Result<crate::types::SetFileModeEntry, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SetFileModeEntry {
+            file_path: self.file_path.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "file_path",
+                    "file_path was not specified but it is required when building SetFileModeEntry",
+                )
+            })?,
+            file_mode: self.file_mode.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "file_mode",
+                    "file_mode was not specified but it is required when building SetFileModeEntry",
+                )
+            })?,
+        })
     }
 }

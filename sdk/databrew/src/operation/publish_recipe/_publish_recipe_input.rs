@@ -48,6 +48,7 @@ impl PublishRecipeInputBuilder {
         &self.description
     }
     /// <p>The name of the recipe to be published.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl PublishRecipeInputBuilder {
     /// Consumes the builder and constructs a [`PublishRecipeInput`](crate::operation::publish_recipe::PublishRecipeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::publish_recipe::PublishRecipeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::publish_recipe::PublishRecipeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::publish_recipe::PublishRecipeInput {
             description: self.description,
             name: self.name,

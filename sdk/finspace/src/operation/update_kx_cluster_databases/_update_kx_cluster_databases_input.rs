@@ -28,8 +28,10 @@ impl UpdateKxClusterDatabasesInput {
         self.client_token.as_deref()
     }
     /// <p> The structure of databases mounted on the cluster.</p>
-    pub fn databases(&self) -> ::std::option::Option<&[crate::types::KxDatabaseConfiguration]> {
-        self.databases.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.databases.is_none()`.
+    pub fn databases(&self) -> &[crate::types::KxDatabaseConfiguration] {
+        self.databases.as_deref().unwrap_or_default()
     }
     /// <p> The configuration that allows you to choose how you want to update the databases on a cluster. </p>
     pub fn deployment_configuration(&self) -> ::std::option::Option<&crate::types::KxDeploymentConfiguration> {
@@ -55,6 +57,7 @@ pub struct UpdateKxClusterDatabasesInputBuilder {
 }
 impl UpdateKxClusterDatabasesInputBuilder {
     /// <p>The unique identifier of a kdb environment.</p>
+    /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +72,7 @@ impl UpdateKxClusterDatabasesInputBuilder {
         &self.environment_id
     }
     /// <p>A unique name for the cluster that you want to modify.</p>
+    /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
@@ -135,7 +139,7 @@ impl UpdateKxClusterDatabasesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesInput {
             environment_id: self.environment_id,

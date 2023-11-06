@@ -11,8 +11,10 @@ pub struct DescribeConnectClientAddInsOutput {
 }
 impl DescribeConnectClientAddInsOutput {
     /// <p>Information about client add-ins.</p>
-    pub fn add_ins(&self) -> ::std::option::Option<&[crate::types::ConnectClientAddIn]> {
-        self.add_ins.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_ins.is_none()`.
+    pub fn add_ins(&self) -> &[crate::types::ConnectClientAddIn] {
+        self.add_ins.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

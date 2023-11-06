@@ -15,8 +15,10 @@ impl CreateEmailIdentityInput {
         self.email_identity.as_deref()
     }
     /// <p>An array of objects that define the tags (keys and values) that you want to associate with the email identity.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateEmailIdentityInput {
@@ -35,6 +37,7 @@ pub struct CreateEmailIdentityInputBuilder {
 }
 impl CreateEmailIdentityInputBuilder {
     /// <p>The email address or domain that you want to verify.</p>
+    /// This field is required.
     pub fn email_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_identity = ::std::option::Option::Some(input.into());
         self
@@ -71,7 +74,7 @@ impl CreateEmailIdentityInputBuilder {
     /// Consumes the builder and constructs a [`CreateEmailIdentityInput`](crate::operation::create_email_identity::CreateEmailIdentityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_email_identity::CreateEmailIdentityInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_email_identity::CreateEmailIdentityInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_email_identity::CreateEmailIdentityInput {
             email_identity: self.email_identity,

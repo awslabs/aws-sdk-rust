@@ -27,6 +27,7 @@ pub struct SetTextMessageSpendLimitOverrideInputBuilder {
 }
 impl SetTextMessageSpendLimitOverrideInputBuilder {
     /// <p>The new monthly limit to enforce on text messages.</p>
+    /// This field is required.
     pub fn monthly_limit(mut self, input: i64) -> Self {
         self.monthly_limit = ::std::option::Option::Some(input);
         self
@@ -45,7 +46,7 @@ impl SetTextMessageSpendLimitOverrideInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_text_message_spend_limit_override::SetTextMessageSpendLimitOverrideInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::set_text_message_spend_limit_override::SetTextMessageSpendLimitOverrideInput {

@@ -39,6 +39,7 @@ pub struct CreateGroupInputBuilder {
 impl CreateGroupInputBuilder {
     /// <p>The name for the group. It can include any Unicode characters.</p>
     /// <p>The names for all groups in your account, across all Regions, must be unique.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -78,7 +79,7 @@ impl CreateGroupInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateGroupInput`](crate::operation::create_group::CreateGroupInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_group::CreateGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_group::CreateGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_group::CreateGroupInput {
             name: self.name,
             tags: self.tags,

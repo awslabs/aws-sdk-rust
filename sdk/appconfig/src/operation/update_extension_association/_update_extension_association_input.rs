@@ -34,6 +34,7 @@ pub struct UpdateExtensionAssociationInputBuilder {
 }
 impl UpdateExtensionAssociationInputBuilder {
     /// <p>The system-generated ID for the association.</p>
+    /// This field is required.
     pub fn extension_association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.extension_association_id = ::std::option::Option::Some(input.into());
         self
@@ -72,7 +73,7 @@ impl UpdateExtensionAssociationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_extension_association::UpdateExtensionAssociationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_extension_association::UpdateExtensionAssociationInput {
             extension_association_id: self.extension_association_id,

@@ -27,6 +27,7 @@ pub struct DescribeStackSummaryInputBuilder {
 }
 impl DescribeStackSummaryInputBuilder {
     /// <p>The stack ID.</p>
+    /// This field is required.
     pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeStackSummaryInputBuilder {
     /// Consumes the builder and constructs a [`DescribeStackSummaryInput`](crate::operation::describe_stack_summary::DescribeStackSummaryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_stack_summary::DescribeStackSummaryInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_stack_summary::DescribeStackSummaryInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_stack_summary::DescribeStackSummaryInput { stack_id: self.stack_id })
     }

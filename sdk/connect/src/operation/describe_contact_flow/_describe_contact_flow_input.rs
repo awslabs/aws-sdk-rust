@@ -34,6 +34,7 @@ pub struct DescribeContactFlowInputBuilder {
 }
 impl DescribeContactFlowInputBuilder {
     /// <p>The identifier of the Amazon Connect instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeContactFlowInputBuilder {
         &self.instance_id
     }
     /// <p>The identifier of the flow.</p>
+    /// This field is required.
     pub fn contact_flow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_flow_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DescribeContactFlowInputBuilder {
     /// Consumes the builder and constructs a [`DescribeContactFlowInput`](crate::operation::describe_contact_flow::DescribeContactFlowInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_contact_flow::DescribeContactFlowInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_contact_flow::DescribeContactFlowInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_contact_flow::DescribeContactFlowInput {
             instance_id: self.instance_id,

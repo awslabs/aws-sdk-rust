@@ -14,8 +14,10 @@ impl BatchGetCollaborationAnalysisTemplateInput {
         self.collaboration_identifier.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) associated with the analysis template within a collaboration.</p>
-    pub fn analysis_template_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.analysis_template_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.analysis_template_arns.is_none()`.
+    pub fn analysis_template_arns(&self) -> &[::std::string::String] {
+        self.analysis_template_arns.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetCollaborationAnalysisTemplateInput {
@@ -34,6 +36,7 @@ pub struct BatchGetCollaborationAnalysisTemplateInputBuilder {
 }
 impl BatchGetCollaborationAnalysisTemplateInputBuilder {
     /// <p>A unique identifier for the collaboration that the analysis templates belong to. Currently accepts collaboration ID.</p>
+    /// This field is required.
     pub fn collaboration_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collaboration_identifier = ::std::option::Option::Some(input.into());
         self
@@ -72,7 +75,7 @@ impl BatchGetCollaborationAnalysisTemplateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_collaboration_analysis_template::BatchGetCollaborationAnalysisTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::batch_get_collaboration_analysis_template::BatchGetCollaborationAnalysisTemplateInput {

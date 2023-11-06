@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetJob`](crate::operation::get_job::builders::GetJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::set_arn): <p>The job's ARN.</p>
+    ///   - [`arn(impl Into<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::set_arn):<br>required: **true**<br><p>The job's ARN.</p><br>
     /// - On success, responds with [`GetJobOutput`](crate::operation::get_job::GetJobOutput) with field(s):
     ///   - [`job(Option<Job>)`](crate::operation::get_job::GetJobOutput::job): <p>An object that contains information about the requested job.</p>
     /// - On failure, responds with [`SdkError<GetJobError>`](crate::operation::get_job::GetJobError)

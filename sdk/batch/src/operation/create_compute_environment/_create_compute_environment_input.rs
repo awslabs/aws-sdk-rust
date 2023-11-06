@@ -103,6 +103,7 @@ pub struct CreateComputeEnvironmentInputBuilder {
 }
 impl CreateComputeEnvironmentInputBuilder {
     /// <p>The name for your compute environment. It can be up to 128 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
+    /// This field is required.
     pub fn compute_environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compute_environment_name = ::std::option::Option::Some(input.into());
         self
@@ -117,6 +118,7 @@ impl CreateComputeEnvironmentInputBuilder {
         &self.compute_environment_name
     }
     /// <p>The type of the compute environment: <code>MANAGED</code> or <code>UNMANAGED</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the <i>Batch User Guide</i>.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::CeType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -264,7 +266,7 @@ impl CreateComputeEnvironmentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_compute_environment::CreateComputeEnvironmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_compute_environment::CreateComputeEnvironmentInput {
             compute_environment_name: self.compute_environment_name,

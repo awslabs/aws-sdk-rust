@@ -2,7 +2,7 @@
 pub fn ser_deployment_io_t_job_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DeploymentIoTJobConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.job_executions_rollout_config {
         #[allow(unused_mut)]
         let mut object_2 = object.key("jobExecutionsRolloutConfig").start_object();

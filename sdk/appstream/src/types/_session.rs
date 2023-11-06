@@ -24,6 +24,8 @@ pub struct Session {
     pub authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
     /// <p>The network details for the streaming session.</p>
     pub network_access_configuration: ::std::option::Option<crate::types::NetworkAccessConfiguration>,
+    /// <p>The identifier for the instance hosting the session.</p>
+    pub instance_id: ::std::option::Option<::std::string::String>,
 }
 impl Session {
     /// <p>The identifier of the streaming session.</p>
@@ -66,6 +68,10 @@ impl Session {
     pub fn network_access_configuration(&self) -> ::std::option::Option<&crate::types::NetworkAccessConfiguration> {
         self.network_access_configuration.as_ref()
     }
+    /// <p>The identifier for the instance hosting the session.</p>
+    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
 }
 impl Session {
     /// Creates a new builder-style object to manufacture [`Session`](crate::types::Session).
@@ -88,9 +94,11 @@ pub struct SessionBuilder {
     pub(crate) max_expiration_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
     pub(crate) network_access_configuration: ::std::option::Option<crate::types::NetworkAccessConfiguration>,
+    pub(crate) instance_id: ::std::option::Option<::std::string::String>,
 }
 impl SessionBuilder {
     /// <p>The identifier of the streaming session.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +113,7 @@ impl SessionBuilder {
         &self.id
     }
     /// <p>The identifier of the user for whom the session was created.</p>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +128,7 @@ impl SessionBuilder {
         &self.user_id
     }
     /// <p>The name of the stack for the streaming session.</p>
+    /// This field is required.
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_name = ::std::option::Option::Some(input.into());
         self
@@ -133,6 +143,7 @@ impl SessionBuilder {
         &self.stack_name
     }
     /// <p>The name of the fleet for the streaming session.</p>
+    /// This field is required.
     pub fn fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_name = ::std::option::Option::Some(input.into());
         self
@@ -147,6 +158,7 @@ impl SessionBuilder {
         &self.fleet_name
     }
     /// <p>The current state of the streaming session.</p>
+    /// This field is required.
     pub fn state(mut self, input: crate::types::SessionState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
@@ -230,6 +242,20 @@ impl SessionBuilder {
     pub fn get_network_access_configuration(&self) -> &::std::option::Option<crate::types::NetworkAccessConfiguration> {
         &self.network_access_configuration
     }
+    /// <p>The identifier for the instance hosting the session.</p>
+    pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.instance_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier for the instance hosting the session.</p>
+    pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.instance_id = input;
+        self
+    }
+    /// <p>The identifier for the instance hosting the session.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// Consumes the builder and constructs a [`Session`](crate::types::Session).
     pub fn build(self) -> crate::types::Session {
         crate::types::Session {
@@ -243,6 +269,7 @@ impl SessionBuilder {
             max_expiration_time: self.max_expiration_time,
             authentication_type: self.authentication_type,
             network_access_configuration: self.network_access_configuration,
+            instance_id: self.instance_id,
         }
     }
 }

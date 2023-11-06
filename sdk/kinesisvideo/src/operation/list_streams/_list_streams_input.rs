@@ -83,7 +83,7 @@ impl ListStreamsInputBuilder {
         &self.stream_name_condition
     }
     /// Consumes the builder and constructs a [`ListStreamsInput`](crate::operation::list_streams::ListStreamsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_streams::ListStreamsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_streams::ListStreamsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_streams::ListStreamsInput {
             max_results: self.max_results,
             next_token: self.next_token,

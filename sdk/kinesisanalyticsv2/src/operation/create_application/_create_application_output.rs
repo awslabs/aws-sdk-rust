@@ -34,6 +34,7 @@ pub struct CreateApplicationOutputBuilder {
 }
 impl CreateApplicationOutputBuilder {
     /// <p>In response to your <code>CreateApplication</code> request, Kinesis Data Analytics returns a response with details of the application it created.</p>
+    /// This field is required.
     pub fn application_detail(mut self, input: crate::types::ApplicationDetail) -> Self {
         self.application_detail = ::std::option::Option::Some(input);
         self

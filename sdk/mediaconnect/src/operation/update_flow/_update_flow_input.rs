@@ -42,6 +42,7 @@ pub struct UpdateFlowInputBuilder {
 }
 impl UpdateFlowInputBuilder {
     /// The flow that you want to update.
+    /// This field is required.
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_arn = ::std::option::Option::Some(input.into());
         self
@@ -84,7 +85,7 @@ impl UpdateFlowInputBuilder {
         &self.maintenance
     }
     /// Consumes the builder and constructs a [`UpdateFlowInput`](crate::operation::update_flow::UpdateFlowInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_flow::UpdateFlowInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_flow::UpdateFlowInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_flow::UpdateFlowInput {
             flow_arn: self.flow_arn,
             source_failover_config: self.source_failover_config,

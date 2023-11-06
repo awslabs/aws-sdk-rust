@@ -6,7 +6,7 @@ pub struct CreateParticipantTokenInput {
     /// <p>ARN of the stage to which this token is scoped.</p>
     pub stage_arn: ::std::option::Option<::std::string::String>,
     /// <p>Duration (in minutes), after which the token expires. Default: 720 (12 hours).</p>
-    pub duration: i32,
+    pub duration: ::std::option::Option<i32>,
     /// <p>Name that can be specified to help identify the token. This can be any UTF-8 encoded text. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i> </p>
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>Application-provided attributes to encode into the token and attach to a stage. Map keys and values can contain UTF-8 encoded text. The maximum length of this field is 1 KB total. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i> </p>
@@ -20,7 +20,7 @@ impl CreateParticipantTokenInput {
         self.stage_arn.as_deref()
     }
     /// <p>Duration (in minutes), after which the token expires. Default: 720 (12 hours).</p>
-    pub fn duration(&self) -> i32 {
+    pub fn duration(&self) -> ::std::option::Option<i32> {
         self.duration
     }
     /// <p>Name that can be specified to help identify the token. This can be any UTF-8 encoded text. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i> </p>
@@ -32,8 +32,10 @@ impl CreateParticipantTokenInput {
         self.attributes.as_ref()
     }
     /// <p>Set of capabilities that the user is allowed to perform in the stage. Default: <code>PUBLISH, SUBSCRIBE</code>.</p>
-    pub fn capabilities(&self) -> ::std::option::Option<&[crate::types::ParticipantTokenCapability]> {
-        self.capabilities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capabilities.is_none()`.
+    pub fn capabilities(&self) -> &[crate::types::ParticipantTokenCapability] {
+        self.capabilities.as_deref().unwrap_or_default()
     }
 }
 impl CreateParticipantTokenInput {
@@ -55,6 +57,7 @@ pub struct CreateParticipantTokenInputBuilder {
 }
 impl CreateParticipantTokenInputBuilder {
     /// <p>ARN of the stage to which this token is scoped.</p>
+    /// This field is required.
     pub fn stage_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_arn = ::std::option::Option::Some(input.into());
         self
@@ -139,11 +142,13 @@ impl CreateParticipantTokenInputBuilder {
     /// Consumes the builder and constructs a [`CreateParticipantTokenInput`](crate::operation::create_participant_token::CreateParticipantTokenInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_participant_token::CreateParticipantTokenInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_participant_token::CreateParticipantTokenInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_participant_token::CreateParticipantTokenInput {
             stage_arn: self.stage_arn,
-            duration: self.duration.unwrap_or_default(),
+            duration: self.duration,
             user_id: self.user_id,
             attributes: self.attributes,
             capabilities: self.capabilities,

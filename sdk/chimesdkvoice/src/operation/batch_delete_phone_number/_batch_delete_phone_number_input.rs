@@ -8,8 +8,10 @@ pub struct BatchDeletePhoneNumberInput {
 }
 impl BatchDeletePhoneNumberInput {
     /// <p>List of phone number IDs.</p>
-    pub fn phone_number_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.phone_number_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phone_number_ids.is_none()`.
+    pub fn phone_number_ids(&self) -> &[::std::string::String] {
+        self.phone_number_ids.as_deref().unwrap_or_default()
     }
 }
 impl BatchDeletePhoneNumberInput {
@@ -51,7 +53,7 @@ impl BatchDeletePhoneNumberInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_delete_phone_number::BatchDeletePhoneNumberInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_delete_phone_number::BatchDeletePhoneNumberInput {
             phone_number_ids: self.phone_number_ids,

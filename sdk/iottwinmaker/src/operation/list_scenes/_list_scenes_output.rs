@@ -11,8 +11,10 @@ pub struct ListScenesOutput {
 }
 impl ListScenesOutput {
     /// <p>A list of objects that contain information about the scenes.</p>
-    pub fn scene_summaries(&self) -> ::std::option::Option<&[crate::types::SceneSummary]> {
-        self.scene_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scene_summaries.is_none()`.
+    pub fn scene_summaries(&self) -> &[crate::types::SceneSummary] {
+        self.scene_summaries.as_deref().unwrap_or_default()
     }
     /// <p>The string that specifies the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

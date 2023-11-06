@@ -41,6 +41,7 @@ pub struct AddRoleToDbClusterInputBuilder {
 }
 impl AddRoleToDbClusterInputBuilder {
     /// <p>The name of the DB cluster to associate the IAM role with.</p>
+    /// This field is required.
     pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_identifier = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl AddRoleToDbClusterInputBuilder {
         &self.db_cluster_identifier
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with the Aurora DB cluster, for example <code>arn:aws:iam::123456789012:role/AuroraAccessRole</code>.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +87,7 @@ impl AddRoleToDbClusterInputBuilder {
     /// Consumes the builder and constructs a [`AddRoleToDbClusterInput`](crate::operation::add_role_to_db_cluster::AddRoleToDbClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::add_role_to_db_cluster::AddRoleToDbClusterInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::add_role_to_db_cluster::AddRoleToDbClusterInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::add_role_to_db_cluster::AddRoleToDbClusterInput {
             db_cluster_identifier: self.db_cluster_identifier,

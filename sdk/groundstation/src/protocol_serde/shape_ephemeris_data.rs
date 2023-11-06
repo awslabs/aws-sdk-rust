@@ -2,7 +2,7 @@
 pub fn ser_ephemeris_data(
     object_3: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EphemerisData,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::EphemerisData::Tle(inner) => {
             #[allow(unused_mut)]
@@ -17,7 +17,7 @@ pub fn ser_ephemeris_data(
             object_2.finish();
         }
         crate::types::EphemerisData::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("EphemerisData"))
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("EphemerisData"))
         }
     }
     Ok(())

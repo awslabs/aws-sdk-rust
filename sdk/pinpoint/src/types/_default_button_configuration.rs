@@ -91,6 +91,7 @@ impl DefaultButtonConfigurationBuilder {
         &self.border_radius
     }
     /// <p>Action triggered by the button.</p>
+    /// This field is required.
     pub fn button_action(mut self, input: crate::types::ButtonAction) -> Self {
         self.button_action = ::std::option::Option::Some(input);
         self
@@ -119,6 +120,7 @@ impl DefaultButtonConfigurationBuilder {
         &self.link
     }
     /// <p>Button text.</p>
+    /// This field is required.
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text = ::std::option::Option::Some(input.into());
         self

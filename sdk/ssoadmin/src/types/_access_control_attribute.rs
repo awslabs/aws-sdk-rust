@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessControlAttribute {
     /// <p>The name of the attribute associated with your identities in your identity source. This is used to map a specified attribute in your identity source with an attribute in IAM Identity Center.</p>
-    pub key: ::std::option::Option<::std::string::String>,
+    pub key: ::std::string::String,
     /// <p>The value used for mapping a specified attribute to an identity source.</p>
     pub value: ::std::option::Option<crate::types::AccessControlAttributeValue>,
 }
 impl AccessControlAttribute {
     /// <p>The name of the attribute associated with your identities in your identity source. This is used to map a specified attribute in your identity source with an attribute in IAM Identity Center.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
-        self.key.as_deref()
+    pub fn key(&self) -> &str {
+        use std::ops::Deref;
+        self.key.deref()
     }
     /// <p>The value used for mapping a specified attribute to an identity source.</p>
     pub fn value(&self) -> ::std::option::Option<&crate::types::AccessControlAttributeValue> {
@@ -35,6 +36,7 @@ pub struct AccessControlAttributeBuilder {
 }
 impl AccessControlAttributeBuilder {
     /// <p>The name of the attribute associated with your identities in your identity source. This is used to map a specified attribute in your identity source with an attribute in IAM Identity Center.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl AccessControlAttributeBuilder {
         &self.key
     }
     /// <p>The value used for mapping a specified attribute to an identity source.</p>
+    /// This field is required.
     pub fn value(mut self, input: crate::types::AccessControlAttributeValue) -> Self {
         self.value = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,17 @@ impl AccessControlAttributeBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`AccessControlAttribute`](crate::types::AccessControlAttribute).
-    pub fn build(self) -> crate::types::AccessControlAttribute {
-        crate::types::AccessControlAttribute {
-            key: self.key,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key`](crate::types::builders::AccessControlAttributeBuilder::key)
+    pub fn build(self) -> ::std::result::Result<crate::types::AccessControlAttribute, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AccessControlAttribute {
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building AccessControlAttribute",
+                )
+            })?,
             value: self.value,
-        }
+        })
     }
 }

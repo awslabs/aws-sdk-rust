@@ -17,12 +17,16 @@ impl SourceDocument {
         self.document_id.as_deref()
     }
     /// <p>The document fields/attributes used for a query suggestion.</p>
-    pub fn suggestion_attributes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.suggestion_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.suggestion_attributes.is_none()`.
+    pub fn suggestion_attributes(&self) -> &[::std::string::String] {
+        self.suggestion_attributes.as_deref().unwrap_or_default()
     }
     /// <p>The additional fields/attributes to include in the response. You can use additional fields to provide extra information in the response. Additional fields are not used to based suggestions on.</p>
-    pub fn additional_attributes(&self) -> ::std::option::Option<&[crate::types::DocumentAttribute]> {
-        self.additional_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_attributes.is_none()`.
+    pub fn additional_attributes(&self) -> &[crate::types::DocumentAttribute] {
+        self.additional_attributes.as_deref().unwrap_or_default()
     }
 }
 impl SourceDocument {

@@ -130,7 +130,7 @@ impl DiscoverInputSchemaInputBuilder {
     /// Consumes the builder and constructs a [`DiscoverInputSchemaInput`](crate::operation::discover_input_schema::DiscoverInputSchemaInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::discover_input_schema::DiscoverInputSchemaInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::discover_input_schema::DiscoverInputSchemaInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::discover_input_schema::DiscoverInputSchemaInput {
             resource_arn: self.resource_arn,

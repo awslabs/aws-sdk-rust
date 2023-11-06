@@ -28,6 +28,7 @@ pub struct FlushApiCacheInputBuilder {
 }
 impl FlushApiCacheInputBuilder {
     /// <p>The API ID.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl FlushApiCacheInputBuilder {
     /// Consumes the builder and constructs a [`FlushApiCacheInput`](crate::operation::flush_api_cache::FlushApiCacheInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::flush_api_cache::FlushApiCacheInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::flush_api_cache::FlushApiCacheInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::flush_api_cache::FlushApiCacheInput { api_id: self.api_id })
     }
 }

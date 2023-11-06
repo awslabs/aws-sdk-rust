@@ -26,11 +26,10 @@ pub fn de_update_certificate_http_error(
                 output = crate::protocol_serde::shape_internal_service_error::de_internal_service_error_json_err(_response_body, output)
                     .map_err(crate::operation::update_certificate::UpdateCertificateError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_service_error_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_certificate::UpdateCertificateError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InvalidRequestException" => crate::operation::update_certificate::UpdateCertificateError::InvalidRequestException({
@@ -41,11 +40,10 @@ pub fn de_update_certificate_http_error(
                 output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_certificate::UpdateCertificateError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_request_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_certificate::UpdateCertificateError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::update_certificate::UpdateCertificateError::ResourceNotFoundException({
@@ -56,11 +54,10 @@ pub fn de_update_certificate_http_error(
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_certificate::UpdateCertificateError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_certificate::UpdateCertificateError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::update_certificate::UpdateCertificateError::ServiceUnavailableException({
@@ -111,18 +108,20 @@ pub fn de_update_certificate_http_response(
         output = crate::protocol_serde::shape_update_certificate::de_update_certificate(_response_body, output)
             .map_err(crate::operation::update_certificate::UpdateCertificateError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::update_certificate_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::update_certificate::UpdateCertificateError::unhandled)?
     })
 }
 
 pub fn ser_update_certificate_input(
     input: &crate::operation::update_certificate::UpdateCertificateInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_update_certificate_input::ser_update_certificate_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_update_certificate(

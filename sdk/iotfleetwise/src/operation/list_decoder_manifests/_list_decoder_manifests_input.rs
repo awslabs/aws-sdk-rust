@@ -90,7 +90,7 @@ impl ListDecoderManifestsInputBuilder {
     /// Consumes the builder and constructs a [`ListDecoderManifestsInput`](crate::operation::list_decoder_manifests::ListDecoderManifestsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_decoder_manifests::ListDecoderManifestsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_decoder_manifests::ListDecoderManifestsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_decoder_manifests::ListDecoderManifestsInput {
             model_manifest_arn: self.model_manifest_arn,

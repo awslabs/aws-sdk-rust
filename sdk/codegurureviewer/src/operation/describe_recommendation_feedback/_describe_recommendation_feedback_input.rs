@@ -43,6 +43,7 @@ pub struct DescribeRecommendationFeedbackInputBuilder {
 }
 impl DescribeRecommendationFeedbackInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
+    /// This field is required.
     pub fn code_review_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code_review_arn = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +58,7 @@ impl DescribeRecommendationFeedbackInputBuilder {
         &self.code_review_arn
     }
     /// <p>The recommendation ID that can be used to track the provided recommendations and then to collect the feedback.</p>
+    /// This field is required.
     pub fn recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommendation_id = ::std::option::Option::Some(input.into());
         self
@@ -92,7 +94,7 @@ impl DescribeRecommendationFeedbackInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_recommendation_feedback::DescribeRecommendationFeedbackInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_recommendation_feedback::DescribeRecommendationFeedbackInput {
             code_review_arn: self.code_review_arn,

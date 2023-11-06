@@ -27,6 +27,7 @@ pub struct GetDatastoreInputBuilder {
 }
 impl GetDatastoreInputBuilder {
     /// <p>The data store identifier.</p>
+    /// This field is required.
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,9 @@ impl GetDatastoreInputBuilder {
         &self.datastore_id
     }
     /// Consumes the builder and constructs a [`GetDatastoreInput`](crate::operation::get_datastore::GetDatastoreInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_datastore::GetDatastoreInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_datastore::GetDatastoreInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_datastore::GetDatastoreInput {
             datastore_id: self.datastore_id,
         })

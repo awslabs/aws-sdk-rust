@@ -9,8 +9,10 @@ pub struct SnapshotDestinationConfiguration {
 }
 impl SnapshotDestinationConfiguration {
     /// <p> A list of <code>SnapshotS3DestinationConfiguration</code> objects that contain Amazon S3 destination configurations. This structure can hold a maximum of 1 <code>S3DestinationConfiguration</code>. </p>
-    pub fn s3_destinations(&self) -> ::std::option::Option<&[crate::types::SnapshotS3DestinationConfiguration]> {
-        self.s3_destinations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.s3_destinations.is_none()`.
+    pub fn s3_destinations(&self) -> &[crate::types::SnapshotS3DestinationConfiguration] {
+        self.s3_destinations.as_deref().unwrap_or_default()
     }
 }
 impl SnapshotDestinationConfiguration {

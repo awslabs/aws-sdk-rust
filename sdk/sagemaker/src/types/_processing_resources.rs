@@ -28,6 +28,7 @@ pub struct ProcessingResourcesBuilder {
 }
 impl ProcessingResourcesBuilder {
     /// <p>The configuration for the resources in a cluster used to run the processing job.</p>
+    /// This field is required.
     pub fn cluster_config(mut self, input: crate::types::ProcessingClusterConfig) -> Self {
         self.cluster_config = ::std::option::Option::Some(input);
         self

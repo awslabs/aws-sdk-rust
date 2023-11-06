@@ -63,6 +63,7 @@ pub struct ListTaskTemplatesInputBuilder {
 }
 impl ListTaskTemplatesInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -147,7 +148,7 @@ impl ListTaskTemplatesInputBuilder {
     /// Consumes the builder and constructs a [`ListTaskTemplatesInput`](crate::operation::list_task_templates::ListTaskTemplatesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_task_templates::ListTaskTemplatesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_task_templates::ListTaskTemplatesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_task_templates::ListTaskTemplatesInput {
             instance_id: self.instance_id,
             next_token: self.next_token,

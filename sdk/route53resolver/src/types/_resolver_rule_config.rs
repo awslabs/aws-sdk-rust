@@ -17,8 +17,10 @@ impl ResolverRuleConfig {
         self.name.as_deref()
     }
     /// <p>For DNS queries that originate in your VPC, the new IP addresses that you want to route outbound DNS queries to.</p>
-    pub fn target_ips(&self) -> ::std::option::Option<&[crate::types::TargetAddress]> {
-        self.target_ips.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_ips.is_none()`.
+    pub fn target_ips(&self) -> &[crate::types::TargetAddress] {
+        self.target_ips.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the new outbound Resolver endpoint that you want to use to route DNS queries to the IP addresses that you specify in <code>TargetIps</code>.</p>
     pub fn resolver_endpoint_id(&self) -> ::std::option::Option<&str> {

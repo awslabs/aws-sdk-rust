@@ -48,6 +48,7 @@ pub struct StartMetadataModelExportAsScriptInputBuilder {
 }
 impl StartMetadataModelExportAsScriptInputBuilder {
     /// <p>The migration project name or Amazon Resource Name (ARN).</p>
+    /// This field is required.
     pub fn migration_project_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.migration_project_identifier = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl StartMetadataModelExportAsScriptInputBuilder {
         &self.migration_project_identifier
     }
     /// <p>A value that specifies the database objects to export.</p>
+    /// This field is required.
     pub fn selection_rules(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.selection_rules = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl StartMetadataModelExportAsScriptInputBuilder {
         &self.selection_rules
     }
     /// <p>Whether to export the metadata model from the source or the target.</p>
+    /// This field is required.
     pub fn origin(mut self, input: crate::types::OriginTypeValue) -> Self {
         self.origin = ::std::option::Option::Some(input);
         self
@@ -108,7 +111,7 @@ impl StartMetadataModelExportAsScriptInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_metadata_model_export_as_script::StartMetadataModelExportAsScriptInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::start_metadata_model_export_as_script::StartMetadataModelExportAsScriptInput {

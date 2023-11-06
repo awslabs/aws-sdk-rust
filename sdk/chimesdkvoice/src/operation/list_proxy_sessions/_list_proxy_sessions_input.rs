@@ -48,6 +48,7 @@ pub struct ListProxySessionsInputBuilder {
 }
 impl ListProxySessionsInputBuilder {
     /// <p>The Voice Connector ID.</p>
+    /// This field is required.
     pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_id = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,7 @@ impl ListProxySessionsInputBuilder {
     /// Consumes the builder and constructs a [`ListProxySessionsInput`](crate::operation::list_proxy_sessions::ListProxySessionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_proxy_sessions::ListProxySessionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_proxy_sessions::ListProxySessionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_proxy_sessions::ListProxySessionsInput {
             voice_connector_id: self.voice_connector_id,
             status: self.status,

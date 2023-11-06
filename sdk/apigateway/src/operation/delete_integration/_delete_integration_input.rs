@@ -42,6 +42,7 @@ pub struct DeleteIntegrationInputBuilder {
 }
 impl DeleteIntegrationInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
+    /// This field is required.
     pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rest_api_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl DeleteIntegrationInputBuilder {
         &self.rest_api_id
     }
     /// <p>Specifies a delete integration request's resource identifier.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl DeleteIntegrationInputBuilder {
         &self.resource_id
     }
     /// <p>Specifies a delete integration request's HTTP method.</p>
+    /// This field is required.
     pub fn http_method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.http_method = ::std::option::Option::Some(input.into());
         self
@@ -86,7 +89,7 @@ impl DeleteIntegrationInputBuilder {
     /// Consumes the builder and constructs a [`DeleteIntegrationInput`](crate::operation::delete_integration::DeleteIntegrationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_integration::DeleteIntegrationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_integration::DeleteIntegrationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_integration::DeleteIntegrationInput {
             rest_api_id: self.rest_api_id,
             resource_id: self.resource_id,

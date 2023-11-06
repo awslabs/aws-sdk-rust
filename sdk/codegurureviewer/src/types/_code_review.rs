@@ -107,8 +107,10 @@ impl CodeReview {
         self.metrics.as_ref()
     }
     /// <p>The types of analysis performed during a repository analysis or a pull request review. You can specify either <code>Security</code>, <code>CodeQuality</code>, or both.</p>
-    pub fn analysis_types(&self) -> ::std::option::Option<&[crate::types::AnalysisType]> {
-        self.analysis_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.analysis_types.is_none()`.
+    pub fn analysis_types(&self) -> &[crate::types::AnalysisType] {
+        self.analysis_types.as_deref().unwrap_or_default()
     }
     /// <p>The state of the <code>aws-codeguru-reviewer.yml</code> configuration file that allows the configuration of the CodeGuru Reviewer analysis. The file either exists, doesn't exist, or exists with errors at the root directory of your repository.</p>
     pub fn config_file_state(&self) -> ::std::option::Option<&crate::types::ConfigFileState> {

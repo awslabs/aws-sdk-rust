@@ -15,7 +15,7 @@ pub struct WorkflowExecutionTerminatedEventAttributes {
     /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
     /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
     /// </ul>
-    pub child_policy: ::std::option::Option<crate::types::ChildPolicy>,
+    pub child_policy: crate::types::ChildPolicy,
     /// <p>If set, indicates that the workflow execution was automatically terminated, and specifies the cause. This happens if the parent workflow execution times out or is terminated and the child policy is set to terminate child executions.</p>
     pub cause: ::std::option::Option<crate::types::WorkflowExecutionTerminatedCause>,
 }
@@ -35,8 +35,8 @@ impl WorkflowExecutionTerminatedEventAttributes {
     /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
     /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
     /// </ul>
-    pub fn child_policy(&self) -> ::std::option::Option<&crate::types::ChildPolicy> {
-        self.child_policy.as_ref()
+    pub fn child_policy(&self) -> &crate::types::ChildPolicy {
+        &self.child_policy
     }
     /// <p>If set, indicates that the workflow execution was automatically terminated, and specifies the cause. This happens if the parent workflow execution times out or is terminated and the child policy is set to terminate child executions.</p>
     pub fn cause(&self) -> ::std::option::Option<&crate::types::WorkflowExecutionTerminatedCause> {
@@ -95,6 +95,7 @@ impl WorkflowExecutionTerminatedEventAttributesBuilder {
     /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
     /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn child_policy(mut self, input: crate::types::ChildPolicy) -> Self {
         self.child_policy = ::std::option::Option::Some(input);
         self
@@ -135,12 +136,21 @@ impl WorkflowExecutionTerminatedEventAttributesBuilder {
         &self.cause
     }
     /// Consumes the builder and constructs a [`WorkflowExecutionTerminatedEventAttributes`](crate::types::WorkflowExecutionTerminatedEventAttributes).
-    pub fn build(self) -> crate::types::WorkflowExecutionTerminatedEventAttributes {
-        crate::types::WorkflowExecutionTerminatedEventAttributes {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`child_policy`](crate::types::builders::WorkflowExecutionTerminatedEventAttributesBuilder::child_policy)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::WorkflowExecutionTerminatedEventAttributes, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::WorkflowExecutionTerminatedEventAttributes {
             reason: self.reason,
             details: self.details,
-            child_policy: self.child_policy,
+            child_policy: self.child_policy.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "child_policy",
+                    "child_policy was not specified but it is required when building WorkflowExecutionTerminatedEventAttributes",
+                )
+            })?,
             cause: self.cause,
-        }
+        })
     }
 }

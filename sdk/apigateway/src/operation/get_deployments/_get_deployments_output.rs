@@ -12,8 +12,10 @@ pub struct GetDeploymentsOutput {
 }
 impl GetDeploymentsOutput {
     /// <p>The current page of elements from this collection.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::Deployment]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[crate::types::Deployment] {
+        self.items.as_deref().unwrap_or_default()
     }
     /// <p>The current pagination position in the paged result set.</p>
     pub fn position(&self) -> ::std::option::Option<&str> {

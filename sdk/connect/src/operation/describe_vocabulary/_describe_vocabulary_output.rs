@@ -34,6 +34,7 @@ pub struct DescribeVocabularyOutputBuilder {
 }
 impl DescribeVocabularyOutputBuilder {
     /// <p>A list of specific words that you want Contact Lens for Amazon Connect to recognize in your audio input. They are generally domain-specific words and phrases, words that Contact Lens is not recognizing, or proper nouns.</p>
+    /// This field is required.
     pub fn vocabulary(mut self, input: crate::types::Vocabulary) -> Self {
         self.vocabulary = ::std::option::Option::Some(input);
         self

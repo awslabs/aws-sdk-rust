@@ -6,7 +6,7 @@
 pub struct Nameserver {
     /// <p>The fully qualified host name of the name server.</p>
     /// <p>Constraint: Maximum 255 characters</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>Glue IP address of a name server entry. Glue IP addresses are required only when the name of the name server is a subdomain of the domain. For example, if your domain is example.com and the name server for the domain is ns.example.com, you need to specify the IP address for ns.example.com.</p>
     /// <p>Constraints: The list can contain only one IPv4 and one IPv6 address.</p>
     pub glue_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -14,13 +14,16 @@ pub struct Nameserver {
 impl Nameserver {
     /// <p>The fully qualified host name of the name server.</p>
     /// <p>Constraint: Maximum 255 characters</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>Glue IP address of a name server entry. Glue IP addresses are required only when the name of the name server is a subdomain of the domain. For example, if your domain is example.com and the name server for the domain is ns.example.com, you need to specify the IP address for ns.example.com.</p>
     /// <p>Constraints: The list can contain only one IPv4 and one IPv6 address.</p>
-    pub fn glue_ips(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.glue_ips.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.glue_ips.is_none()`.
+    pub fn glue_ips(&self) -> &[::std::string::String] {
+        self.glue_ips.as_deref().unwrap_or_default()
     }
 }
 impl Nameserver {
@@ -40,6 +43,7 @@ pub struct NameserverBuilder {
 impl NameserverBuilder {
     /// <p>The fully qualified host name of the name server.</p>
     /// <p>Constraint: Maximum 255 characters</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -79,10 +83,17 @@ impl NameserverBuilder {
         &self.glue_ips
     }
     /// Consumes the builder and constructs a [`Nameserver`](crate::types::Nameserver).
-    pub fn build(self) -> crate::types::Nameserver {
-        crate::types::Nameserver {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::NameserverBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::Nameserver, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Nameserver {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building Nameserver",
+                )
+            })?,
             glue_ips: self.glue_ips,
-        }
+        })
     }
 }

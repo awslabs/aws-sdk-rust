@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetPortalServiceProviderMetadata`](crate::operation::get_portal_service_provider_metadata::builders::GetPortalServiceProviderMetadataFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`portal_arn(impl Into<String>)`](crate::operation::get_portal_service_provider_metadata::builders::GetPortalServiceProviderMetadataFluentBuilder::portal_arn) / [`set_portal_arn(Option<String>)`](crate::operation::get_portal_service_provider_metadata::builders::GetPortalServiceProviderMetadataFluentBuilder::set_portal_arn): <p>The ARN of the web portal.</p>
+    ///   - [`portal_arn(impl Into<String>)`](crate::operation::get_portal_service_provider_metadata::builders::GetPortalServiceProviderMetadataFluentBuilder::portal_arn) / [`set_portal_arn(Option<String>)`](crate::operation::get_portal_service_provider_metadata::builders::GetPortalServiceProviderMetadataFluentBuilder::set_portal_arn):<br>required: **true**<br><p>The ARN of the web portal.</p><br>
     /// - On success, responds with [`GetPortalServiceProviderMetadataOutput`](crate::operation::get_portal_service_provider_metadata::GetPortalServiceProviderMetadataOutput) with field(s):
-    ///   - [`portal_arn(Option<String>)`](crate::operation::get_portal_service_provider_metadata::GetPortalServiceProviderMetadataOutput::portal_arn): <p>The ARN of the web portal.</p>
+    ///   - [`portal_arn(String)`](crate::operation::get_portal_service_provider_metadata::GetPortalServiceProviderMetadataOutput::portal_arn): <p>The ARN of the web portal.</p>
     ///   - [`service_provider_saml_metadata(Option<String>)`](crate::operation::get_portal_service_provider_metadata::GetPortalServiceProviderMetadataOutput::service_provider_saml_metadata): <p>The service provider SAML metadata.</p>
     /// - On failure, responds with [`SdkError<GetPortalServiceProviderMetadataError>`](crate::operation::get_portal_service_provider_metadata::GetPortalServiceProviderMetadataError)
     pub fn get_portal_service_provider_metadata(

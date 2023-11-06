@@ -2,7 +2,7 @@
 pub fn ser_log_source_resource(
     object_7: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LogSourceResource,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::LogSourceResource::AwsLogSource(inner) => {
             #[allow(unused_mut)]
@@ -17,7 +17,7 @@ pub fn ser_log_source_resource(
             object_2.finish();
         }
         crate::types::LogSourceResource::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "LogSourceResource",
             ))
         }
@@ -38,12 +38,17 @@ where
             match tokens.next().transpose()? {
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                    let key = key.to_unescaped()?;
+                    if key == "__type" {
+                        ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                        continue;
+                    }
                     if variant.is_some() {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
                             "encountered mixed variants in union",
                         ));
                     }
-                    variant = match key.to_unescaped()?.as_ref() {
+                    variant = match key.as_ref() {
                         "awsLogSource" => Some(crate::types::LogSourceResource::AwsLogSource(
                             crate::protocol_serde::shape_aws_log_source_resource::de_aws_log_source_resource(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'awsLogSource' cannot be null")

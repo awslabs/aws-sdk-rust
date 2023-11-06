@@ -71,8 +71,10 @@ impl CreateDirectoryInput {
         self.vpc_settings.as_ref()
     }
     /// <p>The tags to be assigned to the Simple AD directory.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for CreateDirectoryInput {
@@ -109,6 +111,7 @@ pub struct CreateDirectoryInputBuilder {
 }
 impl CreateDirectoryInputBuilder {
     /// <p>The fully qualified name for the directory, such as <code>corp.example.com</code>.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -150,6 +153,7 @@ impl CreateDirectoryInputBuilder {
     /// <li> <p>Numbers and upper case and special characters (?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s])</p> </li>
     /// </ul>
     /// <p>For additional information about how Active Directory passwords are enforced, see <a href="https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements">Password must meet complexity requirements</a> on the Microsoft website.</p>
+    /// This field is required.
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
         self
@@ -204,6 +208,7 @@ impl CreateDirectoryInputBuilder {
         &self.description
     }
     /// <p>The size of the directory.</p>
+    /// This field is required.
     pub fn size(mut self, input: crate::types::DirectorySize) -> Self {
         self.size = ::std::option::Option::Some(input);
         self
@@ -254,7 +259,7 @@ impl CreateDirectoryInputBuilder {
     /// Consumes the builder and constructs a [`CreateDirectoryInput`](crate::operation::create_directory::CreateDirectoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_directory::CreateDirectoryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_directory::CreateDirectoryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_directory::CreateDirectoryInput {
             name: self.name,
             short_name: self.short_name,

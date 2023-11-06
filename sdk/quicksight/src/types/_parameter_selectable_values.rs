@@ -11,8 +11,10 @@ pub struct ParameterSelectableValues {
 }
 impl ParameterSelectableValues {
     /// <p>The values that are used in <code>ParameterSelectableValues</code>.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
+    pub fn values(&self) -> &[::std::string::String] {
+        self.values.as_deref().unwrap_or_default()
     }
     /// <p>The column identifier that fetches values from the data set.</p>
     pub fn link_to_data_set_column(&self) -> ::std::option::Option<&crate::types::ColumnIdentifier> {

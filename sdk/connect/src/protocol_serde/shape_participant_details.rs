@@ -2,9 +2,9 @@
 pub fn ser_participant_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ParticipantDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.display_name {
-        object.key("DisplayName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("DisplayName").string(input.display_name.as_str());
     }
     Ok(())
 }

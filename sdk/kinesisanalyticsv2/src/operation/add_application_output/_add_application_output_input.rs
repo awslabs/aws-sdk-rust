@@ -41,6 +41,7 @@ pub struct AddApplicationOutputInputBuilder {
 }
 impl AddApplicationOutputInputBuilder {
     /// <p>The name of the application to which you want to add the output configuration.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl AddApplicationOutputInputBuilder {
         &self.application_name
     }
     /// <p>The version of the application to which you want to add the output configuration. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
+    /// This field is required.
     pub fn current_application_version_id(mut self, input: i64) -> Self {
         self.current_application_version_id = ::std::option::Option::Some(input);
         self
@@ -69,6 +71,7 @@ impl AddApplicationOutputInputBuilder {
         &self.current_application_version_id
     }
     /// <p>An array of objects, each describing one output configuration. In the output configuration, you specify the name of an in-application stream, a destination (that is, a Kinesis data stream, a Kinesis Data Firehose delivery stream, or an Amazon Lambda function), and record the formation to use when writing to the destination.</p>
+    /// This field is required.
     pub fn output(mut self, input: crate::types::Output) -> Self {
         self.output = ::std::option::Option::Some(input);
         self
@@ -85,7 +88,7 @@ impl AddApplicationOutputInputBuilder {
     /// Consumes the builder and constructs a [`AddApplicationOutputInput`](crate::operation::add_application_output::AddApplicationOutputInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::add_application_output::AddApplicationOutputInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::add_application_output::AddApplicationOutputInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::add_application_output::AddApplicationOutputInput {
             application_name: self.application_name,

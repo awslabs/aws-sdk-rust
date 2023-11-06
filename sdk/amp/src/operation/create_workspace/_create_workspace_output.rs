@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateWorkspaceOutput {
     /// The generated ID of the workspace that was just created.
-    pub workspace_id: ::std::option::Option<::std::string::String>,
+    pub workspace_id: ::std::string::String,
     /// The ARN of the workspace that was just created.
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// The status of the workspace that was just created (usually CREATING).
     pub status: ::std::option::Option<crate::types::WorkspaceStatus>,
     /// The tags of this workspace.
@@ -16,12 +16,14 @@ pub struct CreateWorkspaceOutput {
 }
 impl CreateWorkspaceOutput {
     /// The generated ID of the workspace that was just created.
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
-        self.workspace_id.as_deref()
+    pub fn workspace_id(&self) -> &str {
+        use std::ops::Deref;
+        self.workspace_id.deref()
     }
     /// The ARN of the workspace that was just created.
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// The status of the workspace that was just created (usually CREATING).
     pub fn status(&self) -> ::std::option::Option<&crate::types::WorkspaceStatus> {
@@ -56,6 +58,7 @@ pub struct CreateWorkspaceOutputBuilder {
 }
 impl CreateWorkspaceOutputBuilder {
     /// The generated ID of the workspace that was just created.
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +73,7 @@ impl CreateWorkspaceOutputBuilder {
         &self.workspace_id
     }
     /// The ARN of the workspace that was just created.
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +88,7 @@ impl CreateWorkspaceOutputBuilder {
         &self.arn
     }
     /// The status of the workspace that was just created (usually CREATING).
+    /// This field is required.
     pub fn status(mut self, input: crate::types::WorkspaceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -127,13 +132,28 @@ impl CreateWorkspaceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateWorkspaceOutput`](crate::operation::create_workspace::CreateWorkspaceOutput).
-    pub fn build(self) -> crate::operation::create_workspace::CreateWorkspaceOutput {
-        crate::operation::create_workspace::CreateWorkspaceOutput {
-            workspace_id: self.workspace_id,
-            arn: self.arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workspace_id`](crate::operation::create_workspace::builders::CreateWorkspaceOutputBuilder::workspace_id)
+    /// - [`arn`](crate::operation::create_workspace::builders::CreateWorkspaceOutputBuilder::arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_workspace::CreateWorkspaceOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_workspace::CreateWorkspaceOutput {
+            workspace_id: self.workspace_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "workspace_id",
+                    "workspace_id was not specified but it is required when building CreateWorkspaceOutput",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building CreateWorkspaceOutput",
+                )
+            })?,
             status: self.status,
             tags: self.tags,
             _request_id: self._request_id,
-        }
+        })
     }
 }

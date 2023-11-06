@@ -27,6 +27,7 @@ pub struct DescribeMonitorInputBuilder {
 }
 impl DescribeMonitorInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the monitor resource to describe.</p>
+    /// This field is required.
     pub fn monitor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitor_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeMonitorInputBuilder {
     /// Consumes the builder and constructs a [`DescribeMonitorInput`](crate::operation::describe_monitor::DescribeMonitorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_monitor::DescribeMonitorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_monitor::DescribeMonitorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_monitor::DescribeMonitorInput {
             monitor_arn: self.monitor_arn,
         })

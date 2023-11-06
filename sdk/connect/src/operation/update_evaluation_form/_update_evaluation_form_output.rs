@@ -4,21 +4,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateEvaluationFormOutput {
     /// <p>The unique identifier for the evaluation form.</p>
-    pub evaluation_form_id: ::std::option::Option<::std::string::String>,
+    pub evaluation_form_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
-    pub evaluation_form_arn: ::std::option::Option<::std::string::String>,
+    pub evaluation_form_arn: ::std::string::String,
     /// <p>The version of the updated evaluation form resource.</p>
     pub evaluation_form_version: i32,
     _request_id: Option<String>,
 }
 impl UpdateEvaluationFormOutput {
     /// <p>The unique identifier for the evaluation form.</p>
-    pub fn evaluation_form_id(&self) -> ::std::option::Option<&str> {
-        self.evaluation_form_id.as_deref()
+    pub fn evaluation_form_id(&self) -> &str {
+        use std::ops::Deref;
+        self.evaluation_form_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
-    pub fn evaluation_form_arn(&self) -> ::std::option::Option<&str> {
-        self.evaluation_form_arn.as_deref()
+    pub fn evaluation_form_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.evaluation_form_arn.deref()
     }
     /// <p>The version of the updated evaluation form resource.</p>
     pub fn evaluation_form_version(&self) -> i32 {
@@ -48,6 +50,7 @@ pub struct UpdateEvaluationFormOutputBuilder {
 }
 impl UpdateEvaluationFormOutputBuilder {
     /// <p>The unique identifier for the evaluation form.</p>
+    /// This field is required.
     pub fn evaluation_form_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_form_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl UpdateEvaluationFormOutputBuilder {
         &self.evaluation_form_id
     }
     /// <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
+    /// This field is required.
     pub fn evaluation_form_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_form_arn = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +80,7 @@ impl UpdateEvaluationFormOutputBuilder {
         &self.evaluation_form_arn
     }
     /// <p>The version of the updated evaluation form resource.</p>
+    /// This field is required.
     pub fn evaluation_form_version(mut self, input: i32) -> Self {
         self.evaluation_form_version = ::std::option::Option::Some(input);
         self
@@ -99,12 +104,28 @@ impl UpdateEvaluationFormOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateEvaluationFormOutput`](crate::operation::update_evaluation_form::UpdateEvaluationFormOutput).
-    pub fn build(self) -> crate::operation::update_evaluation_form::UpdateEvaluationFormOutput {
-        crate::operation::update_evaluation_form::UpdateEvaluationFormOutput {
-            evaluation_form_id: self.evaluation_form_id,
-            evaluation_form_arn: self.evaluation_form_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`evaluation_form_id`](crate::operation::update_evaluation_form::builders::UpdateEvaluationFormOutputBuilder::evaluation_form_id)
+    /// - [`evaluation_form_arn`](crate::operation::update_evaluation_form::builders::UpdateEvaluationFormOutputBuilder::evaluation_form_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_evaluation_form::UpdateEvaluationFormOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_evaluation_form::UpdateEvaluationFormOutput {
+            evaluation_form_id: self.evaluation_form_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "evaluation_form_id",
+                    "evaluation_form_id was not specified but it is required when building UpdateEvaluationFormOutput",
+                )
+            })?,
+            evaluation_form_arn: self.evaluation_form_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "evaluation_form_arn",
+                    "evaluation_form_arn was not specified but it is required when building UpdateEvaluationFormOutput",
+                )
+            })?,
             evaluation_form_version: self.evaluation_form_version.unwrap_or_default(),
             _request_id: self._request_id,
-        }
+        })
     }
 }

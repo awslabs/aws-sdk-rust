@@ -83,7 +83,7 @@ impl ListMembersInputBuilder {
         &self.only_associated
     }
     /// Consumes the builder and constructs a [`ListMembersInput`](crate::operation::list_members::ListMembersInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_members::ListMembersInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_members::ListMembersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_members::ListMembersInput {
             max_results: self.max_results,
             next_token: self.next_token,

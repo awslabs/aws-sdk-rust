@@ -27,6 +27,7 @@ pub struct ValidateMatchmakingRuleSetInputBuilder {
 }
 impl ValidateMatchmakingRuleSetInputBuilder {
     /// <p>A collection of matchmaking rules to validate, formatted as a JSON string.</p>
+    /// This field is required.
     pub fn rule_set_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_set_body = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl ValidateMatchmakingRuleSetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetInput {
             rule_set_body: self.rule_set_body,

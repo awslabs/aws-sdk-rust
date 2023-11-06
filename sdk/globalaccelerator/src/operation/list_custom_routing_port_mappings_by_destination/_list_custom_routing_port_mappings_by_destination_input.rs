@@ -50,6 +50,7 @@ pub struct ListCustomRoutingPortMappingsByDestinationInputBuilder {
 }
 impl ListCustomRoutingPortMappingsByDestinationInputBuilder {
     /// <p>The ID for the virtual private cloud (VPC) subnet.</p>
+    /// This field is required.
     pub fn endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_id = ::std::option::Option::Some(input.into());
         self
@@ -64,6 +65,7 @@ impl ListCustomRoutingPortMappingsByDestinationInputBuilder {
         &self.endpoint_id
     }
     /// <p>The endpoint IP address in a virtual private cloud (VPC) subnet for which you want to receive back port mappings.</p>
+    /// This field is required.
     pub fn destination_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_address = ::std::option::Option::Some(input.into());
         self
@@ -110,7 +112,7 @@ impl ListCustomRoutingPortMappingsByDestinationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_custom_routing_port_mappings_by_destination::ListCustomRoutingPortMappingsByDestinationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_custom_routing_port_mappings_by_destination::ListCustomRoutingPortMappingsByDestinationInput {

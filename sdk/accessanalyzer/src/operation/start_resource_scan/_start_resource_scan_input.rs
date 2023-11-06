@@ -42,6 +42,7 @@ pub struct StartResourceScanInputBuilder {
 }
 impl StartResourceScanInputBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to use to scan the policies applied to the specified resource.</p>
+    /// This field is required.
     pub fn analyzer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analyzer_arn = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl StartResourceScanInputBuilder {
         &self.analyzer_arn
     }
     /// <p>The ARN of the resource to scan.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -86,7 +88,7 @@ impl StartResourceScanInputBuilder {
     /// Consumes the builder and constructs a [`StartResourceScanInput`](crate::operation::start_resource_scan::StartResourceScanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_resource_scan::StartResourceScanInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_resource_scan::StartResourceScanInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_resource_scan::StartResourceScanInput {
             analyzer_arn: self.analyzer_arn,
             resource_arn: self.resource_arn,

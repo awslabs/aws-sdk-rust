@@ -58,16 +58,22 @@ impl CreateUserInput {
         self.profile_url.as_deref()
     }
     /// <p>A list of <code>Email</code> objects containing email addresses associated with the user.</p>
-    pub fn emails(&self) -> ::std::option::Option<&[crate::types::Email]> {
-        self.emails.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.emails.is_none()`.
+    pub fn emails(&self) -> &[crate::types::Email] {
+        self.emails.as_deref().unwrap_or_default()
     }
     /// <p>A list of <code>Address</code> objects containing addresses associated with the user.</p>
-    pub fn addresses(&self) -> ::std::option::Option<&[crate::types::Address]> {
-        self.addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.addresses.is_none()`.
+    pub fn addresses(&self) -> &[crate::types::Address] {
+        self.addresses.as_deref().unwrap_or_default()
     }
     /// <p>A list of <code>PhoneNumber</code> objects containing phone numbers associated with the user.</p>
-    pub fn phone_numbers(&self) -> ::std::option::Option<&[crate::types::PhoneNumber]> {
-        self.phone_numbers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phone_numbers.is_none()`.
+    pub fn phone_numbers(&self) -> &[crate::types::PhoneNumber] {
+        self.phone_numbers.as_deref().unwrap_or_default()
     }
     /// <p>A string indicating the type of user. Possible values are left unspecified. The value can vary based on your specific use case.</p>
     pub fn user_type(&self) -> ::std::option::Option<&str> {
@@ -138,6 +144,7 @@ pub struct CreateUserInputBuilder {
 }
 impl CreateUserInputBuilder {
     /// <p>The globally unique identifier for the identity store.</p>
+    /// This field is required.
     pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_store_id = ::std::option::Option::Some(input.into());
         self
@@ -352,7 +359,7 @@ impl CreateUserInputBuilder {
         &self.timezone
     }
     /// Consumes the builder and constructs a [`CreateUserInput`](crate::operation::create_user::CreateUserInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_user::CreateUserInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_user::CreateUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_user::CreateUserInput {
             identity_store_id: self.identity_store_id,
             user_name: self.user_name,

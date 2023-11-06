@@ -6,11 +6,15 @@
 pub enum AutoMlProblemTypeConfig {
     /// <p>Settings used to configure an AutoML job V2 for the image classification problem type.</p>
     ImageClassificationJobConfig(crate::types::ImageClassificationJobConfig),
-    /// <p>Settings used to configure an AutoML job V2 for a tabular problem type (regression, classification).</p>
+    /// <p>Settings used to configure an AutoML job V2 for the tabular problem type (regression, classification).</p>
     TabularJobConfig(crate::types::TabularJobConfig),
     /// <p>Settings used to configure an AutoML job V2 for the text classification problem type.</p>
     TextClassificationJobConfig(crate::types::TextClassificationJobConfig),
-    /// <p>Settings used to configure an AutoML job V2 for a time-series forecasting problem type.</p>
+    /// <p>Settings used to configure an AutoML job V2 for the text generation (LLMs fine-tuning) problem type.</p> <note>
+    /// <p>The text generation models that support fine-tuning in Autopilot are currently accessible exclusively in regions supported by Canvas. Refer to the documentation of Canvas for the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/canvas.html">full list of its supported Regions</a>.</p>
+    /// </note>
+    TextGenerationJobConfig(crate::types::TextGenerationJobConfig),
+    /// <p>Settings used to configure an AutoML job V2 for the time-series forecasting problem type.</p>
     TimeSeriesForecastingJobConfig(crate::types::TimeSeriesForecastingJobConfig),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
@@ -61,6 +65,19 @@ impl AutoMlProblemTypeConfig {
     /// Returns true if this is a [`TextClassificationJobConfig`](crate::types::AutoMlProblemTypeConfig::TextClassificationJobConfig).
     pub fn is_text_classification_job_config(&self) -> bool {
         self.as_text_classification_job_config().is_ok()
+    }
+    /// Tries to convert the enum instance into [`TextGenerationJobConfig`](crate::types::AutoMlProblemTypeConfig::TextGenerationJobConfig), extracting the inner [`TextGenerationJobConfig`](crate::types::TextGenerationJobConfig).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_text_generation_job_config(&self) -> ::std::result::Result<&crate::types::TextGenerationJobConfig, &Self> {
+        if let AutoMlProblemTypeConfig::TextGenerationJobConfig(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`TextGenerationJobConfig`](crate::types::AutoMlProblemTypeConfig::TextGenerationJobConfig).
+    pub fn is_text_generation_job_config(&self) -> bool {
+        self.as_text_generation_job_config().is_ok()
     }
     /// Tries to convert the enum instance into [`TimeSeriesForecastingJobConfig`](crate::types::AutoMlProblemTypeConfig::TimeSeriesForecastingJobConfig), extracting the inner [`TimeSeriesForecastingJobConfig`](crate::types::TimeSeriesForecastingJobConfig).
     /// Returns `Err(&Self)` if it can't be converted.

@@ -27,6 +27,7 @@ pub struct DescribeGameSessionPlacementInputBuilder {
 }
 impl DescribeGameSessionPlacementInputBuilder {
     /// <p>A unique identifier for a game session placement to retrieve.</p>
+    /// This field is required.
     pub fn placement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.placement_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeGameSessionPlacementInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_game_session_placement::DescribeGameSessionPlacementInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_game_session_placement::DescribeGameSessionPlacementInput {
             placement_id: self.placement_id,

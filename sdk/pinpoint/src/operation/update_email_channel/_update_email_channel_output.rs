@@ -34,6 +34,7 @@ pub struct UpdateEmailChannelOutputBuilder {
 }
 impl UpdateEmailChannelOutputBuilder {
     /// <p>Provides information about the status and settings of the email channel for an application.</p>
+    /// This field is required.
     pub fn email_channel_response(mut self, input: crate::types::EmailChannelResponse) -> Self {
         self.email_channel_response = ::std::option::Option::Some(input);
         self

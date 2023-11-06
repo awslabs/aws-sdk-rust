@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CdmaLocalId {
     /// <p>Pseudo-noise offset, which is a characteristic of the signal from a cell on a radio tower.</p>
-    pub pn_offset: ::std::option::Option<i32>,
+    pub pn_offset: i32,
     /// <p>CDMA channel information.</p>
-    pub cdma_channel: ::std::option::Option<i32>,
+    pub cdma_channel: i32,
 }
 impl CdmaLocalId {
     /// <p>Pseudo-noise offset, which is a characteristic of the signal from a cell on a radio tower.</p>
-    pub fn pn_offset(&self) -> ::std::option::Option<i32> {
+    pub fn pn_offset(&self) -> i32 {
         self.pn_offset
     }
     /// <p>CDMA channel information.</p>
-    pub fn cdma_channel(&self) -> ::std::option::Option<i32> {
+    pub fn cdma_channel(&self) -> i32 {
         self.cdma_channel
     }
 }
@@ -35,6 +35,7 @@ pub struct CdmaLocalIdBuilder {
 }
 impl CdmaLocalIdBuilder {
     /// <p>Pseudo-noise offset, which is a characteristic of the signal from a cell on a radio tower.</p>
+    /// This field is required.
     pub fn pn_offset(mut self, input: i32) -> Self {
         self.pn_offset = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl CdmaLocalIdBuilder {
         &self.pn_offset
     }
     /// <p>CDMA channel information.</p>
+    /// This field is required.
     pub fn cdma_channel(mut self, input: i32) -> Self {
         self.cdma_channel = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl CdmaLocalIdBuilder {
         &self.cdma_channel
     }
     /// Consumes the builder and constructs a [`CdmaLocalId`](crate::types::CdmaLocalId).
-    pub fn build(self) -> crate::types::CdmaLocalId {
-        crate::types::CdmaLocalId {
-            pn_offset: self.pn_offset,
-            cdma_channel: self.cdma_channel,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`pn_offset`](crate::types::builders::CdmaLocalIdBuilder::pn_offset)
+    /// - [`cdma_channel`](crate::types::builders::CdmaLocalIdBuilder::cdma_channel)
+    pub fn build(self) -> ::std::result::Result<crate::types::CdmaLocalId, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CdmaLocalId {
+            pn_offset: self.pn_offset.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "pn_offset",
+                    "pn_offset was not specified but it is required when building CdmaLocalId",
+                )
+            })?,
+            cdma_channel: self.cdma_channel.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "cdma_channel",
+                    "cdma_channel was not specified but it is required when building CdmaLocalId",
+                )
+            })?,
+        })
     }
 }

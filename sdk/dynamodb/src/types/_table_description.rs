@@ -133,8 +133,10 @@ impl TableDescription {
     /// <li> <p> <code>AttributeName</code> - The name of the attribute.</p> </li>
     /// <li> <p> <code>AttributeType</code> - The data type for the attribute.</p> </li>
     /// </ul>
-    pub fn attribute_definitions(&self) -> ::std::option::Option<&[crate::types::AttributeDefinition]> {
-        self.attribute_definitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attribute_definitions.is_none()`.
+    pub fn attribute_definitions(&self) -> &[crate::types::AttributeDefinition] {
+        self.attribute_definitions.as_deref().unwrap_or_default()
     }
     /// <p>The name of the table.</p>
     pub fn table_name(&self) -> ::std::option::Option<&str> {
@@ -153,8 +155,10 @@ impl TableDescription {
     /// </note> </li>
     /// </ul>
     /// <p>For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    pub fn key_schema(&self) -> ::std::option::Option<&[crate::types::KeySchemaElement]> {
-        self.key_schema.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.key_schema.is_none()`.
+    pub fn key_schema(&self) -> &[crate::types::KeySchemaElement] {
+        self.key_schema.as_deref().unwrap_or_default()
     }
     /// <p>The current state of the table:</p>
     /// <ul>
@@ -215,8 +219,10 @@ impl TableDescription {
     /// <li> <p> <code>ItemCount</code> - Represents the number of items in the index. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p> </li>
     /// </ul>
     /// <p>If the table is in the <code>DELETING</code> state, no information about indexes will be returned.</p>
-    pub fn local_secondary_indexes(&self) -> ::std::option::Option<&[crate::types::LocalSecondaryIndexDescription]> {
-        self.local_secondary_indexes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.local_secondary_indexes.is_none()`.
+    pub fn local_secondary_indexes(&self) -> &[crate::types::LocalSecondaryIndexDescription] {
+        self.local_secondary_indexes.as_deref().unwrap_or_default()
     }
     /// <p>The global secondary indexes, if any, on the table. Each index is scoped to a given partition key value. Each element is composed of:</p>
     /// <ul>
@@ -245,8 +251,10 @@ impl TableDescription {
     /// <li> <p> <code>ProvisionedThroughput</code> - The provisioned throughput settings for the global secondary index, consisting of read and write capacity units, along with data about increases and decreases. </p> </li>
     /// </ul>
     /// <p>If the table is in the <code>DELETING</code> state, no information about indexes will be returned.</p>
-    pub fn global_secondary_indexes(&self) -> ::std::option::Option<&[crate::types::GlobalSecondaryIndexDescription]> {
-        self.global_secondary_indexes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.global_secondary_indexes.is_none()`.
+    pub fn global_secondary_indexes(&self) -> &[crate::types::GlobalSecondaryIndexDescription] {
+        self.global_secondary_indexes.as_deref().unwrap_or_default()
     }
     /// <p>The current DynamoDB Streams configuration for the table.</p>
     pub fn stream_specification(&self) -> ::std::option::Option<&crate::types::StreamSpecification> {
@@ -271,8 +279,10 @@ impl TableDescription {
         self.global_table_version.as_deref()
     }
     /// <p>Represents replicas of the table.</p>
-    pub fn replicas(&self) -> ::std::option::Option<&[crate::types::ReplicaDescription]> {
-        self.replicas.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replicas.is_none()`.
+    pub fn replicas(&self) -> &[crate::types::ReplicaDescription] {
+        self.replicas.as_deref().unwrap_or_default()
     }
     /// <p>Contains details for the restore.</p>
     pub fn restore_summary(&self) -> ::std::option::Option<&crate::types::RestoreSummary> {

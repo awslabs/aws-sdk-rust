@@ -80,6 +80,7 @@ pub struct TestIdentityProviderInputBuilder {
 }
 impl TestIdentityProviderInputBuilder {
     /// <p>A system-assigned identifier for a specific server. That server's user authentication method is tested with a user name and password.</p>
+    /// This field is required.
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_id = ::std::option::Option::Some(input.into());
         self
@@ -143,6 +144,7 @@ impl TestIdentityProviderInputBuilder {
         &self.source_ip
     }
     /// <p>The name of the account to be tested.</p>
+    /// This field is required.
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self
@@ -173,7 +175,7 @@ impl TestIdentityProviderInputBuilder {
     /// Consumes the builder and constructs a [`TestIdentityProviderInput`](crate::operation::test_identity_provider::TestIdentityProviderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::test_identity_provider::TestIdentityProviderInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::test_identity_provider::TestIdentityProviderInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::test_identity_provider::TestIdentityProviderInput {
             server_id: self.server_id,

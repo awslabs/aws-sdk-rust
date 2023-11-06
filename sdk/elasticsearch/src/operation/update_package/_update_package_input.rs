@@ -49,6 +49,7 @@ pub struct UpdatePackageInputBuilder {
 }
 impl UpdatePackageInputBuilder {
     /// <p>Unique identifier for the package.</p>
+    /// This field is required.
     pub fn package_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl UpdatePackageInputBuilder {
         &self.package_id
     }
     /// <p>The S3 location for importing the package specified as <code>S3BucketName</code> and <code>S3Key</code></p>
+    /// This field is required.
     pub fn package_source(mut self, input: crate::types::PackageSource) -> Self {
         self.package_source = ::std::option::Option::Some(input);
         self
@@ -107,7 +109,7 @@ impl UpdatePackageInputBuilder {
     /// Consumes the builder and constructs a [`UpdatePackageInput`](crate::operation::update_package::UpdatePackageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_package::UpdatePackageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_package::UpdatePackageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_package::UpdatePackageInput {
             package_id: self.package_id,
             package_source: self.package_source,

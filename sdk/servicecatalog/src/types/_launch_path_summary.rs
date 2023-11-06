@@ -19,12 +19,16 @@ impl LaunchPathSummary {
         self.id.as_deref()
     }
     /// <p>The constraints on the portfolio-product relationship.</p>
-    pub fn constraint_summaries(&self) -> ::std::option::Option<&[crate::types::ConstraintSummary]> {
-        self.constraint_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.constraint_summaries.is_none()`.
+    pub fn constraint_summaries(&self) -> &[crate::types::ConstraintSummary] {
+        self.constraint_summaries.as_deref().unwrap_or_default()
     }
     /// <p>The tags associated with this product path.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The name of the portfolio that contains the product. </p>
     pub fn name(&self) -> ::std::option::Option<&str> {

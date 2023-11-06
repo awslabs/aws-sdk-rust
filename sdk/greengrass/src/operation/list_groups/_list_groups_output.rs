@@ -11,8 +11,10 @@ pub struct ListGroupsOutput {
 }
 impl ListGroupsOutput {
     /// Information about a group.
-    pub fn groups(&self) -> ::std::option::Option<&[crate::types::GroupInformation]> {
-        self.groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
+    pub fn groups(&self) -> &[crate::types::GroupInformation] {
+        self.groups.as_deref().unwrap_or_default()
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub fn next_token(&self) -> ::std::option::Option<&str> {

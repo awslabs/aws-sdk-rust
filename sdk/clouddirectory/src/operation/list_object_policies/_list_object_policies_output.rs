@@ -11,8 +11,10 @@ pub struct ListObjectPoliciesOutput {
 }
 impl ListObjectPoliciesOutput {
     /// <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the object.</p>
-    pub fn attached_policy_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.attached_policy_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attached_policy_ids.is_none()`.
+    pub fn attached_policy_ids(&self) -> &[::std::string::String] {
+        self.attached_policy_ids.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

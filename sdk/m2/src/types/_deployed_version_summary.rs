@@ -5,20 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeployedVersionSummary {
     /// <p>The version of the deployed application.</p>
-    pub application_version: ::std::option::Option<i32>,
+    pub application_version: i32,
     /// <p>The status of the deployment.</p>
-    pub status: ::std::option::Option<crate::types::DeploymentLifecycle>,
+    pub status: crate::types::DeploymentLifecycle,
     /// <p>The reason for the reported status.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
 }
 impl DeployedVersionSummary {
     /// <p>The version of the deployed application.</p>
-    pub fn application_version(&self) -> ::std::option::Option<i32> {
+    pub fn application_version(&self) -> i32 {
         self.application_version
     }
     /// <p>The status of the deployment.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::DeploymentLifecycle> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::DeploymentLifecycle {
+        &self.status
     }
     /// <p>The reason for the reported status.</p>
     pub fn status_reason(&self) -> ::std::option::Option<&str> {
@@ -42,6 +42,7 @@ pub struct DeployedVersionSummaryBuilder {
 }
 impl DeployedVersionSummaryBuilder {
     /// <p>The version of the deployed application.</p>
+    /// This field is required.
     pub fn application_version(mut self, input: i32) -> Self {
         self.application_version = ::std::option::Option::Some(input);
         self
@@ -56,6 +57,7 @@ impl DeployedVersionSummaryBuilder {
         &self.application_version
     }
     /// <p>The status of the deployment.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::DeploymentLifecycle) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -84,11 +86,24 @@ impl DeployedVersionSummaryBuilder {
         &self.status_reason
     }
     /// Consumes the builder and constructs a [`DeployedVersionSummary`](crate::types::DeployedVersionSummary).
-    pub fn build(self) -> crate::types::DeployedVersionSummary {
-        crate::types::DeployedVersionSummary {
-            application_version: self.application_version,
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`application_version`](crate::types::builders::DeployedVersionSummaryBuilder::application_version)
+    /// - [`status`](crate::types::builders::DeployedVersionSummaryBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::DeployedVersionSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DeployedVersionSummary {
+            application_version: self.application_version.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "application_version",
+                    "application_version was not specified but it is required when building DeployedVersionSummary",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building DeployedVersionSummary",
+                )
+            })?,
             status_reason: self.status_reason,
-        }
+        })
     }
 }

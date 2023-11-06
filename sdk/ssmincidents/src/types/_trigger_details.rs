@@ -5,26 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TriggerDetails {
     /// <p>Identifies the service that sourced the event. All events sourced from within Amazon Web Services begin with "<code>aws.</code>" Customer-generated events can have any value here, as long as it doesn't begin with "<code>aws.</code>" We recommend the use of Java package-name style reverse domain-name strings. </p>
-    pub source: ::std::option::Option<::std::string::String>,
+    pub source: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the source that detected the incident.</p>
     pub trigger_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time that the incident was detected.</p>
-    pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub timestamp: ::aws_smithy_types::DateTime,
     /// <p>Raw data passed from either Amazon EventBridge, Amazon CloudWatch, or Incident Manager when an incident is created.</p>
     pub raw_data: ::std::option::Option<::std::string::String>,
 }
 impl TriggerDetails {
     /// <p>Identifies the service that sourced the event. All events sourced from within Amazon Web Services begin with "<code>aws.</code>" Customer-generated events can have any value here, as long as it doesn't begin with "<code>aws.</code>" We recommend the use of Java package-name style reverse domain-name strings. </p>
-    pub fn source(&self) -> ::std::option::Option<&str> {
-        self.source.as_deref()
+    pub fn source(&self) -> &str {
+        use std::ops::Deref;
+        self.source.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the source that detected the incident.</p>
     pub fn trigger_arn(&self) -> ::std::option::Option<&str> {
         self.trigger_arn.as_deref()
     }
     /// <p>The time that the incident was detected.</p>
-    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.timestamp.as_ref()
+    pub fn timestamp(&self) -> &::aws_smithy_types::DateTime {
+        &self.timestamp
     }
     /// <p>Raw data passed from either Amazon EventBridge, Amazon CloudWatch, or Incident Manager when an incident is created.</p>
     pub fn raw_data(&self) -> ::std::option::Option<&str> {
@@ -49,6 +50,7 @@ pub struct TriggerDetailsBuilder {
 }
 impl TriggerDetailsBuilder {
     /// <p>Identifies the service that sourced the event. All events sourced from within Amazon Web Services begin with "<code>aws.</code>" Customer-generated events can have any value here, as long as it doesn't begin with "<code>aws.</code>" We recommend the use of Java package-name style reverse domain-name strings. </p>
+    /// This field is required.
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +79,7 @@ impl TriggerDetailsBuilder {
         &self.trigger_arn
     }
     /// <p>The time that the incident was detected.</p>
+    /// This field is required.
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
         self
@@ -105,12 +108,25 @@ impl TriggerDetailsBuilder {
         &self.raw_data
     }
     /// Consumes the builder and constructs a [`TriggerDetails`](crate::types::TriggerDetails).
-    pub fn build(self) -> crate::types::TriggerDetails {
-        crate::types::TriggerDetails {
-            source: self.source,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`source`](crate::types::builders::TriggerDetailsBuilder::source)
+    /// - [`timestamp`](crate::types::builders::TriggerDetailsBuilder::timestamp)
+    pub fn build(self) -> ::std::result::Result<crate::types::TriggerDetails, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TriggerDetails {
+            source: self.source.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "source",
+                    "source was not specified but it is required when building TriggerDetails",
+                )
+            })?,
             trigger_arn: self.trigger_arn,
-            timestamp: self.timestamp,
+            timestamp: self.timestamp.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "timestamp",
+                    "timestamp was not specified but it is required when building TriggerDetails",
+                )
+            })?,
             raw_data: self.raw_data,
-        }
+        })
     }
 }

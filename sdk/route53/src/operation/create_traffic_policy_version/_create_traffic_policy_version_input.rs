@@ -42,6 +42,7 @@ pub struct CreateTrafficPolicyVersionInputBuilder {
 }
 impl CreateTrafficPolicyVersionInputBuilder {
     /// <p>The ID of the traffic policy for which you want to create a new version.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl CreateTrafficPolicyVersionInputBuilder {
         &self.id
     }
     /// <p>The definition of this version of the traffic policy, in JSON format. You specified the JSON in the <code>CreateTrafficPolicyVersion</code> request. For more information about the JSON format, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateTrafficPolicy.html">CreateTrafficPolicy</a>.</p>
+    /// This field is required.
     pub fn document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document = ::std::option::Option::Some(input.into());
         self
@@ -88,7 +90,7 @@ impl CreateTrafficPolicyVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_traffic_policy_version::CreateTrafficPolicyVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_traffic_policy_version::CreateTrafficPolicyVersionInput {
             id: self.id,

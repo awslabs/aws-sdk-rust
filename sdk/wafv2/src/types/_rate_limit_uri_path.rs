@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RateLimitUriPath {
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the transformed component contents. </p>
-    pub text_transformations: ::std::option::Option<::std::vec::Vec<crate::types::TextTransformation>>,
+    pub text_transformations: ::std::vec::Vec<crate::types::TextTransformation>,
 }
 impl RateLimitUriPath {
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the transformed component contents. </p>
-    pub fn text_transformations(&self) -> ::std::option::Option<&[crate::types::TextTransformation]> {
-        self.text_transformations.as_deref()
+    pub fn text_transformations(&self) -> &[crate::types::TextTransformation] {
+        use std::ops::Deref;
+        self.text_transformations.deref()
     }
 }
 impl RateLimitUriPath {
@@ -48,9 +49,16 @@ impl RateLimitUriPathBuilder {
         &self.text_transformations
     }
     /// Consumes the builder and constructs a [`RateLimitUriPath`](crate::types::RateLimitUriPath).
-    pub fn build(self) -> crate::types::RateLimitUriPath {
-        crate::types::RateLimitUriPath {
-            text_transformations: self.text_transformations,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`text_transformations`](crate::types::builders::RateLimitUriPathBuilder::text_transformations)
+    pub fn build(self) -> ::std::result::Result<crate::types::RateLimitUriPath, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RateLimitUriPath {
+            text_transformations: self.text_transformations.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "text_transformations",
+                    "text_transformations was not specified but it is required when building RateLimitUriPath",
+                )
+            })?,
+        })
     }
 }

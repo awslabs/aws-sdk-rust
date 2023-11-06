@@ -2,7 +2,7 @@
 pub fn ser_wireless_connection(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WirelessConnection,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.is_wifi_enabled {
         object.key("IsWifiEnabled").boolean(input.is_wifi_enabled);
     }

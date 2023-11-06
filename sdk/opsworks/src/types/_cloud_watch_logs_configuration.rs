@@ -15,8 +15,10 @@ impl CloudWatchLogsConfiguration {
         self.enabled
     }
     /// <p>A list of configuration options for CloudWatch Logs.</p>
-    pub fn log_streams(&self) -> ::std::option::Option<&[crate::types::CloudWatchLogsLogStream]> {
-        self.log_streams.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_streams.is_none()`.
+    pub fn log_streams(&self) -> &[crate::types::CloudWatchLogsLogStream] {
+        self.log_streams.as_deref().unwrap_or_default()
     }
 }
 impl CloudWatchLogsConfiguration {

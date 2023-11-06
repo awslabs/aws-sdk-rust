@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateScheduleOutput {
     /// <p>The Amazon Resource Name (ARN) of the schedule.</p>
-    pub schedule_arn: ::std::option::Option<::std::string::String>,
+    pub schedule_arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateScheduleOutput {
     /// <p>The Amazon Resource Name (ARN) of the schedule.</p>
-    pub fn schedule_arn(&self) -> ::std::option::Option<&str> {
-        self.schedule_arn.as_deref()
+    pub fn schedule_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.schedule_arn.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateScheduleOutput {
@@ -34,6 +35,7 @@ pub struct CreateScheduleOutputBuilder {
 }
 impl CreateScheduleOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the schedule.</p>
+    /// This field is required.
     pub fn schedule_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule_arn = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,19 @@ impl CreateScheduleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateScheduleOutput`](crate::operation::create_schedule::CreateScheduleOutput).
-    pub fn build(self) -> crate::operation::create_schedule::CreateScheduleOutput {
-        crate::operation::create_schedule::CreateScheduleOutput {
-            schedule_arn: self.schedule_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`schedule_arn`](crate::operation::create_schedule::builders::CreateScheduleOutputBuilder::schedule_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_schedule::CreateScheduleOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_schedule::CreateScheduleOutput {
+            schedule_arn: self.schedule_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "schedule_arn",
+                    "schedule_arn was not specified but it is required when building CreateScheduleOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

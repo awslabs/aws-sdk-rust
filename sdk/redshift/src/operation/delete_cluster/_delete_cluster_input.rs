@@ -92,6 +92,7 @@ impl DeleteClusterInputBuilder {
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
@@ -197,7 +198,7 @@ impl DeleteClusterInputBuilder {
     /// Consumes the builder and constructs a [`DeleteClusterInput`](crate::operation::delete_cluster::DeleteClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_cluster::DeleteClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_cluster::DeleteClusterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_cluster::DeleteClusterInput {
             cluster_identifier: self.cluster_identifier,
             skip_final_cluster_snapshot: self.skip_final_cluster_snapshot,

@@ -34,6 +34,7 @@ pub struct DeleteBucketLifecycleInputBuilder {
 }
 impl DeleteBucketLifecycleInputBuilder {
     /// <p>The bucket name of the lifecycle to delete.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl DeleteBucketLifecycleInputBuilder {
     /// Consumes the builder and constructs a [`DeleteBucketLifecycleInput`](crate::operation::delete_bucket_lifecycle::DeleteBucketLifecycleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_bucket_lifecycle::DeleteBucketLifecycleInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_bucket_lifecycle::DeleteBucketLifecycleInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_bucket_lifecycle::DeleteBucketLifecycleInput {
             bucket: self.bucket,

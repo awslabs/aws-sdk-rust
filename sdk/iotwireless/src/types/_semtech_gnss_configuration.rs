@@ -5,18 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SemtechGnssConfiguration {
     /// <p>The status indicating whether the solver is enabled.</p>
-    pub status: ::std::option::Option<crate::types::PositionConfigurationStatus>,
+    pub status: crate::types::PositionConfigurationStatus,
     /// <p>Whether forward error correction is enabled.</p>
-    pub fec: ::std::option::Option<crate::types::PositionConfigurationFec>,
+    pub fec: crate::types::PositionConfigurationFec,
 }
 impl SemtechGnssConfiguration {
     /// <p>The status indicating whether the solver is enabled.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::PositionConfigurationStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::PositionConfigurationStatus {
+        &self.status
     }
     /// <p>Whether forward error correction is enabled.</p>
-    pub fn fec(&self) -> ::std::option::Option<&crate::types::PositionConfigurationFec> {
-        self.fec.as_ref()
+    pub fn fec(&self) -> &crate::types::PositionConfigurationFec {
+        &self.fec
     }
 }
 impl SemtechGnssConfiguration {
@@ -35,6 +35,7 @@ pub struct SemtechGnssConfigurationBuilder {
 }
 impl SemtechGnssConfigurationBuilder {
     /// <p>The status indicating whether the solver is enabled.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::PositionConfigurationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl SemtechGnssConfigurationBuilder {
         &self.status
     }
     /// <p>Whether forward error correction is enabled.</p>
+    /// This field is required.
     pub fn fec(mut self, input: crate::types::PositionConfigurationFec) -> Self {
         self.fec = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl SemtechGnssConfigurationBuilder {
         &self.fec
     }
     /// Consumes the builder and constructs a [`SemtechGnssConfiguration`](crate::types::SemtechGnssConfiguration).
-    pub fn build(self) -> crate::types::SemtechGnssConfiguration {
-        crate::types::SemtechGnssConfiguration {
-            status: self.status,
-            fec: self.fec,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::types::builders::SemtechGnssConfigurationBuilder::status)
+    /// - [`fec`](crate::types::builders::SemtechGnssConfigurationBuilder::fec)
+    pub fn build(self) -> ::std::result::Result<crate::types::SemtechGnssConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SemtechGnssConfiguration {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building SemtechGnssConfiguration",
+                )
+            })?,
+            fec: self.fec.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "fec",
+                    "fec was not specified but it is required when building SemtechGnssConfiguration",
+                )
+            })?,
+        })
     }
 }

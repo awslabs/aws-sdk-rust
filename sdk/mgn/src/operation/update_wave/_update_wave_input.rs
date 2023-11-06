@@ -48,6 +48,7 @@ pub struct UpdateWaveInputBuilder {
 }
 impl UpdateWaveInputBuilder {
     /// <p>Wave ID.</p>
+    /// This field is required.
     pub fn wave_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.wave_id = ::std::option::Option::Some(input.into());
         self
@@ -104,7 +105,7 @@ impl UpdateWaveInputBuilder {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`UpdateWaveInput`](crate::operation::update_wave::UpdateWaveInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_wave::UpdateWaveInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_wave::UpdateWaveInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_wave::UpdateWaveInput {
             wave_id: self.wave_id,
             name: self.name,

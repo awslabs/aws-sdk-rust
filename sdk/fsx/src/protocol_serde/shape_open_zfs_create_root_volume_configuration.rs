@@ -2,8 +2,8 @@
 pub fn ser_open_zfs_create_root_volume_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OpenZfsCreateRootVolumeConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.record_size_ki_b {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    if let Some(var_1) = &input.record_size_kib {
         object.key("RecordSizeKiB").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_1).into()),

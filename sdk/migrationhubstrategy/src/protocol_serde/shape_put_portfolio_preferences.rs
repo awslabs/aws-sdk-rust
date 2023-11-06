@@ -32,11 +32,10 @@ pub fn de_put_portfolio_preferences_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::put_portfolio_preferences::PutPortfolioPreferencesError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::put_portfolio_preferences::PutPortfolioPreferencesError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ConflictException" => crate::operation::put_portfolio_preferences::PutPortfolioPreferencesError::ConflictException({
@@ -47,11 +46,10 @@ pub fn de_put_portfolio_preferences_http_error(
                 output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
                     .map_err(crate::operation::put_portfolio_preferences::PutPortfolioPreferencesError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::conflict_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::put_portfolio_preferences::PutPortfolioPreferencesError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerException" => crate::operation::put_portfolio_preferences::PutPortfolioPreferencesError::InternalServerException({
@@ -122,10 +120,10 @@ pub fn de_put_portfolio_preferences_http_response(
 
 pub fn ser_put_portfolio_preferences_input(
     input: &crate::operation::put_portfolio_preferences::PutPortfolioPreferencesInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_put_portfolio_preferences_input::ser_put_portfolio_preferences_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

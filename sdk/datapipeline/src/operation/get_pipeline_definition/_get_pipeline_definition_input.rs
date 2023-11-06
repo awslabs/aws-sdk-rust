@@ -35,6 +35,7 @@ pub struct GetPipelineDefinitionInputBuilder {
 }
 impl GetPipelineDefinitionInputBuilder {
     /// <p>The ID of the pipeline.</p>
+    /// This field is required.
     pub fn pipeline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_id = ::std::option::Option::Some(input.into());
         self
@@ -65,7 +66,7 @@ impl GetPipelineDefinitionInputBuilder {
     /// Consumes the builder and constructs a [`GetPipelineDefinitionInput`](crate::operation::get_pipeline_definition::GetPipelineDefinitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_pipeline_definition::GetPipelineDefinitionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_pipeline_definition::GetPipelineDefinitionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_pipeline_definition::GetPipelineDefinitionInput {
             pipeline_id: self.pipeline_id,

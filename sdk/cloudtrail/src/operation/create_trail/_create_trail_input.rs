@@ -111,8 +111,10 @@ impl CreateTrailInput {
         self.is_organization_trail
     }
     /// <p>A list of tags.</p>
-    pub fn tags_list(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags_list.is_none()`.
+    pub fn tags_list(&self) -> &[crate::types::Tag] {
+        self.tags_list.as_deref().unwrap_or_default()
     }
 }
 impl CreateTrailInput {
@@ -148,6 +150,7 @@ impl CreateTrailInputBuilder {
     /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
     /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -176,6 +179,7 @@ impl CreateTrailInputBuilder {
         &self.name
     }
     /// <p>Specifies the name of the Amazon S3 bucket designated for publishing log files. See <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3 Bucket Naming Requirements</a>.</p>
+    /// This field is required.
     pub fn s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket_name = ::std::option::Option::Some(input.into());
         self
@@ -369,7 +373,7 @@ impl CreateTrailInputBuilder {
         &self.tags_list
     }
     /// Consumes the builder and constructs a [`CreateTrailInput`](crate::operation::create_trail::CreateTrailInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_trail::CreateTrailInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_trail::CreateTrailInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_trail::CreateTrailInput {
             name: self.name,
             s3_bucket_name: self.s3_bucket_name,

@@ -34,6 +34,7 @@ pub struct DeleteKeywordInputBuilder {
 }
 impl DeleteKeywordInputBuilder {
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, PoolId or PoolArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn and <code>DescribePools</code> to find the values of PoolId and PoolArn.</p>
+    /// This field is required.
     pub fn origination_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origination_identity = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteKeywordInputBuilder {
         &self.origination_identity
     }
     /// <p>The keyword to delete.</p>
+    /// This field is required.
     pub fn keyword(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.keyword = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DeleteKeywordInputBuilder {
     /// Consumes the builder and constructs a [`DeleteKeywordInput`](crate::operation::delete_keyword::DeleteKeywordInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_keyword::DeleteKeywordInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_keyword::DeleteKeywordInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_keyword::DeleteKeywordInput {
             origination_identity: self.origination_identity,
             keyword: self.keyword,

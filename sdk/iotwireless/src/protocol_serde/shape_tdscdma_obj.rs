@@ -2,66 +2,66 @@
 pub fn ser_tdscdma_obj(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TdscdmaObj,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.mcc {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
         object.key("Mcc").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((input.mcc).into()),
+        );
+    }
+    {
+        object.key("Mnc").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((input.mnc).into()),
+        );
+    }
+    if let Some(var_1) = &input.lac {
+        object.key("Lac").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_2) = &input.mnc {
-        object.key("Mnc").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
-        );
-    }
-    if let Some(var_3) = &input.lac {
-        object.key("Lac").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
-        );
-    }
-    if let Some(var_4) = &input.utran_cid {
+    {
         object.key("UtranCid").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((input.utran_cid).into()),
+        );
+    }
+    if let Some(var_2) = &input.tdscdma_local_id {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("TdscdmaLocalId").start_object();
+        crate::protocol_serde::shape_tdscdma_local_id::ser_tdscdma_local_id(&mut object_3, var_2)?;
+        object_3.finish();
+    }
+    if let Some(var_4) = &input.tdscdma_timing_advance {
+        object.key("TdscdmaTimingAdvance").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_5) = &input.tdscdma_local_id {
-        #[allow(unused_mut)]
-        let mut object_6 = object.key("TdscdmaLocalId").start_object();
-        crate::protocol_serde::shape_tdscdma_local_id::ser_tdscdma_local_id(&mut object_6, var_5)?;
-        object_6.finish();
-    }
-    if let Some(var_7) = &input.tdscdma_timing_advance {
-        object.key("TdscdmaTimingAdvance").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_7).into()),
-        );
-    }
-    if let Some(var_8) = &input.rscp {
+    if let Some(var_5) = &input.rscp {
         object.key("Rscp").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_8).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_9) = &input.path_loss {
+    if let Some(var_6) = &input.path_loss {
         object.key("PathLoss").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_9).into()),
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if let Some(var_10) = &input.tdscdma_nmr {
-        let mut array_11 = object.key("TdscdmaNmr").start_array();
-        for item_12 in var_10 {
+    if let Some(var_7) = &input.tdscdma_nmr {
+        let mut array_8 = object.key("TdscdmaNmr").start_array();
+        for item_9 in var_7 {
             {
                 #[allow(unused_mut)]
-                let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_tdscdma_nmr_obj::ser_tdscdma_nmr_obj(&mut object_13, item_12)?;
-                object_13.finish();
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_tdscdma_nmr_obj::ser_tdscdma_nmr_obj(&mut object_10, item_9)?;
+                object_10.finish();
             }
         }
-        array_11.finish();
+        array_8.finish();
     }
     Ok(())
 }

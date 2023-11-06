@@ -84,18 +84,24 @@ impl CreateSimulationJobInput {
         self.failure_behavior.as_ref()
     }
     /// <p>The robot application to use in the simulation job.</p>
-    pub fn robot_applications(&self) -> ::std::option::Option<&[crate::types::RobotApplicationConfig]> {
-        self.robot_applications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.robot_applications.is_none()`.
+    pub fn robot_applications(&self) -> &[crate::types::RobotApplicationConfig] {
+        self.robot_applications.as_deref().unwrap_or_default()
     }
     /// <p>The simulation application to use in the simulation job.</p>
-    pub fn simulation_applications(&self) -> ::std::option::Option<&[crate::types::SimulationApplicationConfig]> {
-        self.simulation_applications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.simulation_applications.is_none()`.
+    pub fn simulation_applications(&self) -> &[crate::types::SimulationApplicationConfig] {
+        self.simulation_applications.as_deref().unwrap_or_default()
     }
     /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note>
     /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects. </p>
     /// </note>
-    pub fn data_sources(&self) -> ::std::option::Option<&[crate::types::DataSourceConfig]> {
-        self.data_sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_sources.is_none()`.
+    pub fn data_sources(&self) -> &[crate::types::DataSourceConfig] {
+        self.data_sources.as_deref().unwrap_or_default()
     }
     /// <p>A map that contains tag keys and tag values that are attached to the simulation job.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -178,6 +184,7 @@ impl CreateSimulationJobInputBuilder {
         &self.logging_config
     }
     /// <p>The maximum simulation job duration in seconds (up to 14 days or 1,209,600 seconds. When <code>maxJobDurationInSeconds</code> is reached, the simulation job will status will transition to <code>Completed</code>.</p>
+    /// This field is required.
     pub fn max_job_duration_in_seconds(mut self, input: i64) -> Self {
         self.max_job_duration_in_seconds = ::std::option::Option::Some(input);
         self
@@ -192,6 +199,7 @@ impl CreateSimulationJobInputBuilder {
         &self.max_job_duration_in_seconds
     }
     /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job. </p>
+    /// This field is required.
     pub fn iam_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_role = ::std::option::Option::Some(input.into());
         self
@@ -378,7 +386,7 @@ impl CreateSimulationJobInputBuilder {
     /// Consumes the builder and constructs a [`CreateSimulationJobInput`](crate::operation::create_simulation_job::CreateSimulationJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_simulation_job::CreateSimulationJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_simulation_job::CreateSimulationJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_simulation_job::CreateSimulationJobInput {
             client_request_token: self.client_request_token,

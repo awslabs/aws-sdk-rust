@@ -38,6 +38,7 @@ pub struct CreateSinkInputBuilder {
 }
 impl CreateSinkInputBuilder {
     /// <p>A name for the sink.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -78,7 +79,7 @@ impl CreateSinkInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateSinkInput`](crate::operation::create_sink::CreateSinkInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_sink::CreateSinkInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_sink::CreateSinkInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_sink::CreateSinkInput {
             name: self.name,
             tags: self.tags,

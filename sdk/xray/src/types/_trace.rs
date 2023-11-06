@@ -27,8 +27,10 @@ impl Trace {
         self.limit_exceeded
     }
     /// <p>Segment documents for the segments and subsegments that comprise the trace.</p>
-    pub fn segments(&self) -> ::std::option::Option<&[crate::types::Segment]> {
-        self.segments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.segments.is_none()`.
+    pub fn segments(&self) -> &[crate::types::Segment] {
+        self.segments.as_deref().unwrap_or_default()
     }
 }
 impl Trace {

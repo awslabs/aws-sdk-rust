@@ -34,6 +34,7 @@ pub struct GetProfileInputBuilder {
 }
 impl GetProfileInputBuilder {
     /// <p>The profile ARN.</p>
+    /// This field is required.
     pub fn profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_arn = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +63,7 @@ impl GetProfileInputBuilder {
         &self.profile_version
     }
     /// Consumes the builder and constructs a [`GetProfileInput`](crate::operation::get_profile::GetProfileInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_profile::GetProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_profile::GetProfileInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_profile::GetProfileInput {
             profile_arn: self.profile_arn,
             profile_version: self.profile_version,

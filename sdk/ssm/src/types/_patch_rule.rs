@@ -58,6 +58,7 @@ pub struct PatchRuleBuilder {
 }
 impl PatchRuleBuilder {
     /// <p>The patch filter group that defines the criteria for the rule.</p>
+    /// This field is required.
     pub fn patch_filter_group(mut self, input: crate::types::PatchFilterGroup) -> Self {
         self.patch_filter_group = ::std::option::Option::Some(input);
         self

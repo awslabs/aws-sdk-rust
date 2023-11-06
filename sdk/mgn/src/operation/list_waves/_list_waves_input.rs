@@ -6,7 +6,7 @@ pub struct ListWavesInput {
     /// <p>Waves list filters.</p>
     pub filters: ::std::option::Option<crate::types::ListWavesRequestFilters>,
     /// <p>Maximum results to return when listing waves.</p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>Request next token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Request account ID.</p>
@@ -18,7 +18,7 @@ impl ListWavesInput {
         self.filters.as_ref()
     }
     /// <p>Maximum results to return when listing waves.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>Request next token.</p>
@@ -104,10 +104,10 @@ impl ListWavesInputBuilder {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`ListWavesInput`](crate::operation::list_waves::ListWavesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_waves::ListWavesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_waves::ListWavesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_waves::ListWavesInput {
             filters: self.filters,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
             account_id: self.account_id,
         })

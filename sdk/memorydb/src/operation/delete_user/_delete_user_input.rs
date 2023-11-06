@@ -27,6 +27,7 @@ pub struct DeleteUserInputBuilder {
 }
 impl DeleteUserInputBuilder {
     /// <p>The name of the user to delete</p>
+    /// This field is required.
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl DeleteUserInputBuilder {
         &self.user_name
     }
     /// Consumes the builder and constructs a [`DeleteUserInput`](crate::operation::delete_user::DeleteUserInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_user::DeleteUserInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_user::DeleteUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_user::DeleteUserInput { user_name: self.user_name })
     }
 }

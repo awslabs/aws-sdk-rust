@@ -76,6 +76,7 @@ pub struct StartJobRunInputBuilder {
 }
 impl StartJobRunInputBuilder {
     /// <p>The ID of the application on which to run the job.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +91,7 @@ impl StartJobRunInputBuilder {
         &self.application_id
     }
     /// <p>The client idempotency token of the job run to start. Its value must be unique for each request.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +106,7 @@ impl StartJobRunInputBuilder {
         &self.client_token
     }
     /// <p>The execution role ARN for the job run.</p>
+    /// This field is required.
     pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -194,7 +197,7 @@ impl StartJobRunInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`StartJobRunInput`](crate::operation::start_job_run::StartJobRunInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_job_run::StartJobRunInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_job_run::StartJobRunInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_job_run::StartJobRunInput {
             application_id: self.application_id,
             client_token: self.client_token,

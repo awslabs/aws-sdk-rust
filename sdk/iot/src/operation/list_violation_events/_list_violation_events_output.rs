@@ -11,8 +11,10 @@ pub struct ListViolationEventsOutput {
 }
 impl ListViolationEventsOutput {
     /// <p>The security profile violation alerts issued for this account during the given time period, potentially filtered by security profile, behavior violated, or thing (device) violating.</p>
-    pub fn violation_events(&self) -> ::std::option::Option<&[crate::types::ViolationEvent]> {
-        self.violation_events.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.violation_events.is_none()`.
+    pub fn violation_events(&self) -> &[crate::types::ViolationEvent] {
+        self.violation_events.as_deref().unwrap_or_default()
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

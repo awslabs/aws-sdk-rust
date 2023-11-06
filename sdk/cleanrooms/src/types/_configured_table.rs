@@ -5,38 +5,41 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfiguredTable {
     /// <p>The unique ID for the configured table.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The unique ARN for the configured table.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>A name for the configured table.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>A description for the configured table.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Glue table that this configured table represents.</p>
     pub table_reference: ::std::option::Option<crate::types::TableReference>,
     /// <p>The time the configured table was created.</p>
-    pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub create_time: ::aws_smithy_types::DateTime,
     /// <p>The time the configured table was last updated</p>
-    pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub update_time: ::aws_smithy_types::DateTime,
     /// <p>The types of analysis rules associated with this configured table. Currently, only one analysis rule may be associated with a configured table.</p>
-    pub analysis_rule_types: ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableAnalysisRuleType>>,
+    pub analysis_rule_types: ::std::vec::Vec<crate::types::ConfiguredTableAnalysisRuleType>,
     /// <p>The analysis method for the configured table. The only valid value is currently `DIRECT_QUERY`.</p>
-    pub analysis_method: ::std::option::Option<crate::types::AnalysisMethod>,
+    pub analysis_method: crate::types::AnalysisMethod,
     /// <p>The columns within the underlying Glue table that can be utilized within collaborations.</p>
-    pub allowed_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub allowed_columns: ::std::vec::Vec<::std::string::String>,
 }
 impl ConfiguredTable {
     /// <p>The unique ID for the configured table.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The unique ARN for the configured table.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>A name for the configured table.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>A description for the configured table.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -47,24 +50,26 @@ impl ConfiguredTable {
         self.table_reference.as_ref()
     }
     /// <p>The time the configured table was created.</p>
-    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.create_time.as_ref()
+    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.create_time
     }
     /// <p>The time the configured table was last updated</p>
-    pub fn update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.update_time.as_ref()
+    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.update_time
     }
     /// <p>The types of analysis rules associated with this configured table. Currently, only one analysis rule may be associated with a configured table.</p>
-    pub fn analysis_rule_types(&self) -> ::std::option::Option<&[crate::types::ConfiguredTableAnalysisRuleType]> {
-        self.analysis_rule_types.as_deref()
+    pub fn analysis_rule_types(&self) -> &[crate::types::ConfiguredTableAnalysisRuleType] {
+        use std::ops::Deref;
+        self.analysis_rule_types.deref()
     }
     /// <p>The analysis method for the configured table. The only valid value is currently `DIRECT_QUERY`.</p>
-    pub fn analysis_method(&self) -> ::std::option::Option<&crate::types::AnalysisMethod> {
-        self.analysis_method.as_ref()
+    pub fn analysis_method(&self) -> &crate::types::AnalysisMethod {
+        &self.analysis_method
     }
     /// <p>The columns within the underlying Glue table that can be utilized within collaborations.</p>
-    pub fn allowed_columns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.allowed_columns.as_deref()
+    pub fn allowed_columns(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.allowed_columns.deref()
     }
 }
 impl ConfiguredTable {
@@ -91,6 +96,7 @@ pub struct ConfiguredTableBuilder {
 }
 impl ConfiguredTableBuilder {
     /// <p>The unique ID for the configured table.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +111,7 @@ impl ConfiguredTableBuilder {
         &self.id
     }
     /// <p>The unique ARN for the configured table.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +126,7 @@ impl ConfiguredTableBuilder {
         &self.arn
     }
     /// <p>A name for the configured table.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -147,6 +155,7 @@ impl ConfiguredTableBuilder {
         &self.description
     }
     /// <p>The Glue table that this configured table represents.</p>
+    /// This field is required.
     pub fn table_reference(mut self, input: crate::types::TableReference) -> Self {
         self.table_reference = ::std::option::Option::Some(input);
         self
@@ -161,6 +170,7 @@ impl ConfiguredTableBuilder {
         &self.table_reference
     }
     /// <p>The time the configured table was created.</p>
+    /// This field is required.
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
         self
@@ -175,6 +185,7 @@ impl ConfiguredTableBuilder {
         &self.create_time
     }
     /// <p>The time the configured table was last updated</p>
+    /// This field is required.
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
         self
@@ -209,6 +220,7 @@ impl ConfiguredTableBuilder {
         &self.analysis_rule_types
     }
     /// <p>The analysis method for the configured table. The only valid value is currently `DIRECT_QUERY`.</p>
+    /// This field is required.
     pub fn analysis_method(mut self, input: crate::types::AnalysisMethod) -> Self {
         self.analysis_method = ::std::option::Option::Some(input);
         self
@@ -243,18 +255,67 @@ impl ConfiguredTableBuilder {
         &self.allowed_columns
     }
     /// Consumes the builder and constructs a [`ConfiguredTable`](crate::types::ConfiguredTable).
-    pub fn build(self) -> crate::types::ConfiguredTable {
-        crate::types::ConfiguredTable {
-            id: self.id,
-            arn: self.arn,
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::ConfiguredTableBuilder::id)
+    /// - [`arn`](crate::types::builders::ConfiguredTableBuilder::arn)
+    /// - [`name`](crate::types::builders::ConfiguredTableBuilder::name)
+    /// - [`create_time`](crate::types::builders::ConfiguredTableBuilder::create_time)
+    /// - [`update_time`](crate::types::builders::ConfiguredTableBuilder::update_time)
+    /// - [`analysis_rule_types`](crate::types::builders::ConfiguredTableBuilder::analysis_rule_types)
+    /// - [`analysis_method`](crate::types::builders::ConfiguredTableBuilder::analysis_method)
+    /// - [`allowed_columns`](crate::types::builders::ConfiguredTableBuilder::allowed_columns)
+    pub fn build(self) -> ::std::result::Result<crate::types::ConfiguredTable, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ConfiguredTable {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building ConfiguredTable",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building ConfiguredTable",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ConfiguredTable",
+                )
+            })?,
             description: self.description,
             table_reference: self.table_reference,
-            create_time: self.create_time,
-            update_time: self.update_time,
-            analysis_rule_types: self.analysis_rule_types,
-            analysis_method: self.analysis_method,
-            allowed_columns: self.allowed_columns,
-        }
+            create_time: self.create_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "create_time",
+                    "create_time was not specified but it is required when building ConfiguredTable",
+                )
+            })?,
+            update_time: self.update_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "update_time",
+                    "update_time was not specified but it is required when building ConfiguredTable",
+                )
+            })?,
+            analysis_rule_types: self.analysis_rule_types.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "analysis_rule_types",
+                    "analysis_rule_types was not specified but it is required when building ConfiguredTable",
+                )
+            })?,
+            analysis_method: self.analysis_method.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "analysis_method",
+                    "analysis_method was not specified but it is required when building ConfiguredTable",
+                )
+            })?,
+            allowed_columns: self.allowed_columns.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "allowed_columns",
+                    "allowed_columns was not specified but it is required when building ConfiguredTable",
+                )
+            })?,
+        })
     }
 }

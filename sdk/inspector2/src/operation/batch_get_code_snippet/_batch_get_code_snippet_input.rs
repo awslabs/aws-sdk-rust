@@ -8,8 +8,10 @@ pub struct BatchGetCodeSnippetInput {
 }
 impl BatchGetCodeSnippetInput {
     /// <p>An array of finding ARNs for the findings you want to retrieve code snippets from.</p>
-    pub fn finding_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.finding_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.finding_arns.is_none()`.
+    pub fn finding_arns(&self) -> &[::std::string::String] {
+        self.finding_arns.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetCodeSnippetInput {
@@ -49,7 +51,7 @@ impl BatchGetCodeSnippetInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetCodeSnippetInput`](crate::operation::batch_get_code_snippet::BatchGetCodeSnippetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_get_code_snippet::BatchGetCodeSnippetInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_get_code_snippet::BatchGetCodeSnippetInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_get_code_snippet::BatchGetCodeSnippetInput {
             finding_arns: self.finding_arns,

@@ -154,7 +154,7 @@ pub(crate) fn de_list_input_security_groups(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "inputSecurityGroups" => {
                     builder = builder.set_input_security_groups(
-                        crate::protocol_serde::shape___list_of_input_security_group::de___list_of_input_security_group(tokens)?,
+                        crate::protocol_serde::shape_list_of_input_security_group::de_list_of_input_security_group(tokens)?,
                     );
                 }
                 "nextToken" => {

@@ -69,6 +69,7 @@ impl ListGroupResourcesInputBuilder {
         &self.max_results
     }
     /// <p>Specifies the group to return information for. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
+    /// This field is required.
     pub fn group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_identifier = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,8 @@ impl ListGroupResourcesInputBuilder {
     /// Consumes the builder and constructs a [`ListGroupResourcesInput`](crate::operation::list_group_resources::ListGroupResourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_group_resources::ListGroupResourcesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_group_resources::ListGroupResourcesInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_group_resources::ListGroupResourcesInput {
             next_token: self.next_token,
             max_results: self.max_results,

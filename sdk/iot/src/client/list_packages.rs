@@ -4,10 +4,10 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_packages::builders::ListPackagesFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::operation::list_packages::builders::ListPackagesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_packages::builders::ListPackagesFluentBuilder::set_max_results): <p>The maximum number of results returned at one time.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_packages::builders::ListPackagesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_packages::builders::ListPackagesFluentBuilder::set_next_token): <p>The token for the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::operation::list_packages::builders::ListPackagesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_packages::builders::ListPackagesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results returned at one time.</p><br>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_packages::builders::ListPackagesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_packages::builders::ListPackagesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results.</p><br>
     /// - On success, responds with [`ListPackagesOutput`](crate::operation::list_packages::ListPackagesOutput) with field(s):
-    ///   - [`package_summaries(Option<Vec<PackageSummary>>)`](crate::operation::list_packages::ListPackagesOutput::package_summaries): <p>The software package summary.</p>
+    ///   - [`package_summaries(Option<Vec::<PackageSummary>>)`](crate::operation::list_packages::ListPackagesOutput::package_summaries): <p>The software package summary.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_packages::ListPackagesOutput::next_token): <p>The token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListPackagesError>`](crate::operation::list_packages::ListPackagesError)
     pub fn list_packages(&self) -> crate::operation::list_packages::builders::ListPackagesFluentBuilder {

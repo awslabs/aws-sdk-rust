@@ -82,7 +82,7 @@ impl UpdateRegionSettingsInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRegionSettingsInput`](crate::operation::update_region_settings::UpdateRegionSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_region_settings::UpdateRegionSettingsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_region_settings::UpdateRegionSettingsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_region_settings::UpdateRegionSettingsInput {
             resource_type_opt_in_preference: self.resource_type_opt_in_preference,

@@ -32,11 +32,10 @@ pub fn de_cancel_batch_prediction_job_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::cancel_batch_prediction_job::CancelBatchPredictionJobError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::cancel_batch_prediction_job::CancelBatchPredictionJobError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerException" => crate::operation::cancel_batch_prediction_job::CancelBatchPredictionJobError::InternalServerException({
@@ -47,11 +46,10 @@ pub fn de_cancel_batch_prediction_job_http_error(
                 output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
                     .map_err(crate::operation::cancel_batch_prediction_job::CancelBatchPredictionJobError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::cancel_batch_prediction_job::CancelBatchPredictionJobError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::cancel_batch_prediction_job::CancelBatchPredictionJobError::ResourceNotFoundException({
@@ -62,11 +60,10 @@ pub fn de_cancel_batch_prediction_job_http_error(
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::cancel_batch_prediction_job::CancelBatchPredictionJobError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::cancel_batch_prediction_job::CancelBatchPredictionJobError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::cancel_batch_prediction_job::CancelBatchPredictionJobError::ThrottlingException({
@@ -77,11 +74,10 @@ pub fn de_cancel_batch_prediction_job_http_error(
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::cancel_batch_prediction_job::CancelBatchPredictionJobError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::cancel_batch_prediction_job::CancelBatchPredictionJobError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::cancel_batch_prediction_job::CancelBatchPredictionJobError::ValidationException({
@@ -92,11 +88,10 @@ pub fn de_cancel_batch_prediction_job_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::cancel_batch_prediction_job::CancelBatchPredictionJobError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::cancel_batch_prediction_job::CancelBatchPredictionJobError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::cancel_batch_prediction_job::CancelBatchPredictionJobError::generic(generic),
@@ -122,10 +117,10 @@ pub fn de_cancel_batch_prediction_job_http_response(
 
 pub fn ser_cancel_batch_prediction_job_input(
     input: &crate::operation::cancel_batch_prediction_job::CancelBatchPredictionJobInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_cancel_batch_prediction_job_input::ser_cancel_batch_prediction_job_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

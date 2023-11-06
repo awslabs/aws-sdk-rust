@@ -34,6 +34,7 @@ pub struct DeleteDomainEntryInputBuilder {
 }
 impl DeleteDomainEntryInputBuilder {
     /// <p>The name of the domain entry to delete.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteDomainEntryInputBuilder {
         &self.domain_name
     }
     /// <p>An array of key-value pairs containing information about your domain entries.</p>
+    /// This field is required.
     pub fn domain_entry(mut self, input: crate::types::DomainEntry) -> Self {
         self.domain_entry = ::std::option::Option::Some(input);
         self
@@ -64,7 +66,7 @@ impl DeleteDomainEntryInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDomainEntryInput`](crate::operation::delete_domain_entry::DeleteDomainEntryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_domain_entry::DeleteDomainEntryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_domain_entry::DeleteDomainEntryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_domain_entry::DeleteDomainEntryInput {
             domain_name: self.domain_name,
             domain_entry: self.domain_entry,

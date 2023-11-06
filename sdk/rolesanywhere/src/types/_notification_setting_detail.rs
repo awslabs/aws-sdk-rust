@@ -6,9 +6,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotificationSettingDetail {
     /// <p>Indicates whether the notification setting is enabled.</p>
-    pub enabled: ::std::option::Option<bool>,
+    pub enabled: bool,
     /// <p>The event to which this notification setting is applied.</p>
-    pub event: ::std::option::Option<crate::types::NotificationEvent>,
+    pub event: crate::types::NotificationEvent,
     /// <p>The number of days before a notification event.</p>
     pub threshold: ::std::option::Option<i32>,
     /// <p>The specified channel of notification. IAM Roles Anywhere uses CloudWatch metrics, EventBridge, and Health Dashboard to notify for an event.</p> <note>
@@ -20,12 +20,12 @@ pub struct NotificationSettingDetail {
 }
 impl NotificationSettingDetail {
     /// <p>Indicates whether the notification setting is enabled.</p>
-    pub fn enabled(&self) -> ::std::option::Option<bool> {
+    pub fn enabled(&self) -> bool {
         self.enabled
     }
     /// <p>The event to which this notification setting is applied.</p>
-    pub fn event(&self) -> ::std::option::Option<&crate::types::NotificationEvent> {
-        self.event.as_ref()
+    pub fn event(&self) -> &crate::types::NotificationEvent {
+        &self.event
     }
     /// <p>The number of days before a notification event.</p>
     pub fn threshold(&self) -> ::std::option::Option<i32> {
@@ -61,6 +61,7 @@ pub struct NotificationSettingDetailBuilder {
 }
 impl NotificationSettingDetailBuilder {
     /// <p>Indicates whether the notification setting is enabled.</p>
+    /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
@@ -75,6 +76,7 @@ impl NotificationSettingDetailBuilder {
         &self.enabled
     }
     /// <p>The event to which this notification setting is applied.</p>
+    /// This field is required.
     pub fn event(mut self, input: crate::types::NotificationEvent) -> Self {
         self.event = ::std::option::Option::Some(input);
         self
@@ -137,13 +139,26 @@ impl NotificationSettingDetailBuilder {
         &self.configured_by
     }
     /// Consumes the builder and constructs a [`NotificationSettingDetail`](crate::types::NotificationSettingDetail).
-    pub fn build(self) -> crate::types::NotificationSettingDetail {
-        crate::types::NotificationSettingDetail {
-            enabled: self.enabled,
-            event: self.event,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`enabled`](crate::types::builders::NotificationSettingDetailBuilder::enabled)
+    /// - [`event`](crate::types::builders::NotificationSettingDetailBuilder::event)
+    pub fn build(self) -> ::std::result::Result<crate::types::NotificationSettingDetail, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::NotificationSettingDetail {
+            enabled: self.enabled.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "enabled",
+                    "enabled was not specified but it is required when building NotificationSettingDetail",
+                )
+            })?,
+            event: self.event.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "event",
+                    "event was not specified but it is required when building NotificationSettingDetail",
+                )
+            })?,
             threshold: self.threshold,
             channel: self.channel,
             configured_by: self.configured_by,
-        }
+        })
     }
 }

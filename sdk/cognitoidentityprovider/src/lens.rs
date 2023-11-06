@@ -122,20 +122,14 @@ pub(crate) fn lens_list_groups_output_groups(
 pub(crate) fn lens_list_identity_providers_output_providers(
     input: crate::operation::list_identity_providers::ListIdentityProvidersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ProviderDescription>> {
-    let input = match input.providers {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.providers;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_resource_servers_output_resource_servers(
     input: crate::operation::list_resource_servers::ListResourceServersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ResourceServerType>> {
-    let input = match input.resource_servers {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.resource_servers;
     ::std::option::Option::Some(input)
 }
 

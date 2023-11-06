@@ -7,7 +7,7 @@ pub struct DescribeTapesInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to describe. If this parameter is not specified, Tape gateway returns a description of all virtual tapes associated with the specified gateway.</p>
-    pub tape_ar_ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub tape_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A marker value, obtained in a previous call to <code>DescribeTapes</code>. This marker indicates which page of results to retrieve.</p>
     /// <p>If not specified, the first page of results is retrieved.</p>
     pub marker: ::std::option::Option<::std::string::String>,
@@ -22,8 +22,10 @@ impl DescribeTapesInput {
         self.gateway_arn.as_deref()
     }
     /// <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to describe. If this parameter is not specified, Tape gateway returns a description of all virtual tapes associated with the specified gateway.</p>
-    pub fn tape_ar_ns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tape_ar_ns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tape_arns.is_none()`.
+    pub fn tape_arns(&self) -> &[::std::string::String] {
+        self.tape_arns.as_deref().unwrap_or_default()
     }
     /// <p>A marker value, obtained in a previous call to <code>DescribeTapes</code>. This marker indicates which page of results to retrieve.</p>
     /// <p>If not specified, the first page of results is retrieved.</p>
@@ -49,12 +51,13 @@ impl DescribeTapesInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTapesInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tape_ar_ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) tape_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,
 }
 impl DescribeTapesInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// This field is required.
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_arn = ::std::option::Option::Some(input.into());
         self
@@ -68,25 +71,25 @@ impl DescribeTapesInputBuilder {
     pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.gateway_arn
     }
-    /// Appends an item to `tape_ar_ns`.
+    /// Appends an item to `tape_arns`.
     ///
-    /// To override the contents of this collection use [`set_tape_ar_ns`](Self::set_tape_ar_ns).
+    /// To override the contents of this collection use [`set_tape_arns`](Self::set_tape_arns).
     ///
     /// <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to describe. If this parameter is not specified, Tape gateway returns a description of all virtual tapes associated with the specified gateway.</p>
-    pub fn tape_ar_ns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.tape_ar_ns.unwrap_or_default();
+    pub fn tape_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.tape_arns.unwrap_or_default();
         v.push(input.into());
-        self.tape_ar_ns = ::std::option::Option::Some(v);
+        self.tape_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to describe. If this parameter is not specified, Tape gateway returns a description of all virtual tapes associated with the specified gateway.</p>
-    pub fn set_tape_ar_ns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.tape_ar_ns = input;
+    pub fn set_tape_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.tape_arns = input;
         self
     }
     /// <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to describe. If this parameter is not specified, Tape gateway returns a description of all virtual tapes associated with the specified gateway.</p>
-    pub fn get_tape_ar_ns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.tape_ar_ns
+    pub fn get_tape_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tape_arns
     }
     /// <p>A marker value, obtained in a previous call to <code>DescribeTapes</code>. This marker indicates which page of results to retrieve.</p>
     /// <p>If not specified, the first page of results is retrieved.</p>
@@ -128,10 +131,10 @@ impl DescribeTapesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTapesInput`](crate::operation::describe_tapes::DescribeTapesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_tapes::DescribeTapesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_tapes::DescribeTapesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_tapes::DescribeTapesInput {
             gateway_arn: self.gateway_arn,
-            tape_ar_ns: self.tape_ar_ns,
+            tape_arns: self.tape_arns,
             marker: self.marker,
             limit: self.limit,
         })

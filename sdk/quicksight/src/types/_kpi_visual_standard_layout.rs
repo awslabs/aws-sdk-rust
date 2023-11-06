@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KpiVisualStandardLayout {
     /// <p>The standard layout type.</p>
-    pub r#type: ::std::option::Option<crate::types::KpiVisualStandardLayoutType>,
+    pub r#type: crate::types::KpiVisualStandardLayoutType,
 }
 impl KpiVisualStandardLayout {
     /// <p>The standard layout type.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::KpiVisualStandardLayoutType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::KpiVisualStandardLayoutType {
+        &self.r#type
     }
 }
 impl KpiVisualStandardLayout {
@@ -28,6 +28,7 @@ pub struct KpiVisualStandardLayoutBuilder {
 }
 impl KpiVisualStandardLayoutBuilder {
     /// <p>The standard layout type.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::KpiVisualStandardLayoutType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,16 @@ impl KpiVisualStandardLayoutBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`KpiVisualStandardLayout`](crate::types::KpiVisualStandardLayout).
-    pub fn build(self) -> crate::types::KpiVisualStandardLayout {
-        crate::types::KpiVisualStandardLayout { r#type: self.r#type }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::KpiVisualStandardLayoutBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::KpiVisualStandardLayout, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::KpiVisualStandardLayout {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building KpiVisualStandardLayout",
+                )
+            })?,
+        })
     }
 }

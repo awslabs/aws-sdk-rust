@@ -27,6 +27,7 @@ pub struct DeletePoolInputBuilder {
 }
 impl DeletePoolInputBuilder {
     /// <p>The PoolId or PoolArn of the pool to delete. You can use <code>DescribePools</code> to find the values for PoolId and PoolArn .</p>
+    /// This field is required.
     pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pool_id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl DeletePoolInputBuilder {
         &self.pool_id
     }
     /// Consumes the builder and constructs a [`DeletePoolInput`](crate::operation::delete_pool::DeletePoolInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_pool::DeletePoolInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_pool::DeletePoolInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_pool::DeletePoolInput { pool_id: self.pool_id })
     }
 }

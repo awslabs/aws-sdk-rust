@@ -11,8 +11,10 @@ pub struct ListDeviceResourcesOutput {
 }
 impl ListDeviceResourcesOutput {
     /// <p>A structure defining the resource's type, Amazon Resource Name (ARN), and ID.</p>
-    pub fn resources(&self) -> ::std::option::Option<&[crate::types::ResourceSummary]> {
-        self.resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
+    pub fn resources(&self) -> &[crate::types::ResourceSummary] {
+        self.resources.as_deref().unwrap_or_default()
     }
     /// <p>A pagination token to continue to the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

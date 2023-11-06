@@ -15,8 +15,10 @@ impl CancelSpotInstanceRequestsInput {
         self.dry_run
     }
     /// <p>The IDs of the Spot Instance requests.</p>
-    pub fn spot_instance_request_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.spot_instance_request_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.spot_instance_request_ids.is_none()`.
+    pub fn spot_instance_request_ids(&self) -> &[::std::string::String] {
+        self.spot_instance_request_ids.as_deref().unwrap_or_default()
     }
 }
 impl CancelSpotInstanceRequestsInput {
@@ -73,7 +75,7 @@ impl CancelSpotInstanceRequestsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_spot_instance_requests::CancelSpotInstanceRequestsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::cancel_spot_instance_requests::CancelSpotInstanceRequestsInput {
             dry_run: self.dry_run,

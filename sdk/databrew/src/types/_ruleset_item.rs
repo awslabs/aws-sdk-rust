@@ -17,7 +17,7 @@ pub struct RulesetItem {
     /// <p>The modification date and time of the ruleset.</p>
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the ruleset.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) for the ruleset.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The number of rules that are defined in the ruleset.</p>
@@ -25,7 +25,7 @@ pub struct RulesetItem {
     /// <p>Metadata tags that have been applied to the ruleset.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is associated with.</p>
-    pub target_arn: ::std::option::Option<::std::string::String>,
+    pub target_arn: ::std::string::String,
 }
 impl RulesetItem {
     /// <p>The ID of the Amazon Web Services account that owns the ruleset.</p>
@@ -53,8 +53,9 @@ impl RulesetItem {
         self.last_modified_date.as_ref()
     }
     /// <p>The name of the ruleset.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the ruleset.</p>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
@@ -69,8 +70,9 @@ impl RulesetItem {
         self.tags.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is associated with.</p>
-    pub fn target_arn(&self) -> ::std::option::Option<&str> {
-        self.target_arn.as_deref()
+    pub fn target_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.target_arn.deref()
     }
 }
 impl RulesetItem {
@@ -182,6 +184,7 @@ impl RulesetItemBuilder {
         &self.last_modified_date
     }
     /// <p>The name of the ruleset.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -244,6 +247,7 @@ impl RulesetItemBuilder {
         &self.tags
     }
     /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is associated with.</p>
+    /// This field is required.
     pub fn target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_arn = ::std::option::Option::Some(input.into());
         self
@@ -258,19 +262,32 @@ impl RulesetItemBuilder {
         &self.target_arn
     }
     /// Consumes the builder and constructs a [`RulesetItem`](crate::types::RulesetItem).
-    pub fn build(self) -> crate::types::RulesetItem {
-        crate::types::RulesetItem {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::RulesetItemBuilder::name)
+    /// - [`target_arn`](crate::types::builders::RulesetItemBuilder::target_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::RulesetItem, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RulesetItem {
             account_id: self.account_id,
             created_by: self.created_by,
             create_date: self.create_date,
             description: self.description,
             last_modified_by: self.last_modified_by,
             last_modified_date: self.last_modified_date,
-            name: self.name,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building RulesetItem",
+                )
+            })?,
             resource_arn: self.resource_arn,
             rule_count: self.rule_count.unwrap_or_default(),
             tags: self.tags,
-            target_arn: self.target_arn,
-        }
+            target_arn: self.target_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "target_arn",
+                    "target_arn was not specified but it is required when building RulesetItem",
+                )
+            })?,
+        })
     }
 }

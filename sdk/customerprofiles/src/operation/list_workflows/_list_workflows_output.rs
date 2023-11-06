@@ -11,8 +11,10 @@ pub struct ListWorkflowsOutput {
 }
 impl ListWorkflowsOutput {
     /// <p>List containing workflow details.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::ListWorkflowsItem]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[crate::types::ListWorkflowsItem] {
+        self.items.as_deref().unwrap_or_default()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

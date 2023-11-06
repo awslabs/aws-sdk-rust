@@ -11,8 +11,10 @@ pub struct DescribeUsageReportSubscriptionsOutput {
 }
 impl DescribeUsageReportSubscriptionsOutput {
     /// <p>Information about the usage report subscription.</p>
-    pub fn usage_report_subscriptions(&self) -> ::std::option::Option<&[crate::types::UsageReportSubscription]> {
-        self.usage_report_subscriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.usage_report_subscriptions.is_none()`.
+    pub fn usage_report_subscriptions(&self) -> &[crate::types::UsageReportSubscription] {
+        self.usage_report_subscriptions.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

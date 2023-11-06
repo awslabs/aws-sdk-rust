@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContributionAnalysisDefault {
     /// <p>The measure field that is used in the contribution analysis.</p>
-    pub measure_field_id: ::std::option::Option<::std::string::String>,
+    pub measure_field_id: ::std::string::String,
     /// <p>The dimensions columns that are used in the contribution analysis, usually a list of <code>ColumnIdentifiers</code>.</p>
-    pub contributor_dimensions: ::std::option::Option<::std::vec::Vec<crate::types::ColumnIdentifier>>,
+    pub contributor_dimensions: ::std::vec::Vec<crate::types::ColumnIdentifier>,
 }
 impl ContributionAnalysisDefault {
     /// <p>The measure field that is used in the contribution analysis.</p>
-    pub fn measure_field_id(&self) -> ::std::option::Option<&str> {
-        self.measure_field_id.as_deref()
+    pub fn measure_field_id(&self) -> &str {
+        use std::ops::Deref;
+        self.measure_field_id.deref()
     }
     /// <p>The dimensions columns that are used in the contribution analysis, usually a list of <code>ColumnIdentifiers</code>.</p>
-    pub fn contributor_dimensions(&self) -> ::std::option::Option<&[crate::types::ColumnIdentifier]> {
-        self.contributor_dimensions.as_deref()
+    pub fn contributor_dimensions(&self) -> &[crate::types::ColumnIdentifier] {
+        use std::ops::Deref;
+        self.contributor_dimensions.deref()
     }
 }
 impl ContributionAnalysisDefault {
@@ -35,6 +37,7 @@ pub struct ContributionAnalysisDefaultBuilder {
 }
 impl ContributionAnalysisDefaultBuilder {
     /// <p>The measure field that is used in the contribution analysis.</p>
+    /// This field is required.
     pub fn measure_field_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.measure_field_id = ::std::option::Option::Some(input.into());
         self
@@ -69,10 +72,23 @@ impl ContributionAnalysisDefaultBuilder {
         &self.contributor_dimensions
     }
     /// Consumes the builder and constructs a [`ContributionAnalysisDefault`](crate::types::ContributionAnalysisDefault).
-    pub fn build(self) -> crate::types::ContributionAnalysisDefault {
-        crate::types::ContributionAnalysisDefault {
-            measure_field_id: self.measure_field_id,
-            contributor_dimensions: self.contributor_dimensions,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`measure_field_id`](crate::types::builders::ContributionAnalysisDefaultBuilder::measure_field_id)
+    /// - [`contributor_dimensions`](crate::types::builders::ContributionAnalysisDefaultBuilder::contributor_dimensions)
+    pub fn build(self) -> ::std::result::Result<crate::types::ContributionAnalysisDefault, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ContributionAnalysisDefault {
+            measure_field_id: self.measure_field_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "measure_field_id",
+                    "measure_field_id was not specified but it is required when building ContributionAnalysisDefault",
+                )
+            })?,
+            contributor_dimensions: self.contributor_dimensions.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "contributor_dimensions",
+                    "contributor_dimensions was not specified but it is required when building ContributionAnalysisDefault",
+                )
+            })?,
+        })
     }
 }

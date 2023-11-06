@@ -34,6 +34,7 @@ pub struct DeletePrefetchScheduleInputBuilder {
 }
 impl DeletePrefetchScheduleInputBuilder {
     /// <p>The name of the prefetch schedule. If the action is successful, the service sends back an HTTP 204 response with an empty HTTP body.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeletePrefetchScheduleInputBuilder {
         &self.name
     }
     /// <p>The name of the playback configuration for this prefetch schedule.</p>
+    /// This field is required.
     pub fn playback_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.playback_configuration_name = ::std::option::Option::Some(input.into());
         self
@@ -64,8 +66,10 @@ impl DeletePrefetchScheduleInputBuilder {
     /// Consumes the builder and constructs a [`DeletePrefetchScheduleInput`](crate::operation::delete_prefetch_schedule::DeletePrefetchScheduleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_prefetch_schedule::DeletePrefetchScheduleInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_prefetch_schedule::DeletePrefetchScheduleInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_prefetch_schedule::DeletePrefetchScheduleInput {
             name: self.name,
             playback_configuration_name: self.playback_configuration_name,

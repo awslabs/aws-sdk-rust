@@ -27,6 +27,7 @@ pub struct DeleteStateMachineVersionInputBuilder {
 }
 impl DeleteStateMachineVersionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the state machine version to delete.</p>
+    /// This field is required.
     pub fn state_machine_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_machine_version_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteStateMachineVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_state_machine_version::DeleteStateMachineVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_state_machine_version::DeleteStateMachineVersionInput {
             state_machine_version_arn: self.state_machine_version_arn,

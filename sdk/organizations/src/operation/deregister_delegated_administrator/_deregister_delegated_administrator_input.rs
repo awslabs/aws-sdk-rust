@@ -36,6 +36,7 @@ pub struct DeregisterDelegatedAdministratorInputBuilder {
 }
 impl DeregisterDelegatedAdministratorInputBuilder {
     /// <p>The account ID number of the member account in the organization that you want to deregister as a delegated administrator.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -51,6 +52,7 @@ impl DeregisterDelegatedAdministratorInputBuilder {
     }
     /// <p>The service principal name of an Amazon Web Services service for which the account is a delegated administrator.</p>
     /// <p>Delegated administrator privileges are revoked for only the specified Amazon Web Services service from the member account. If the specified service is the only service for which the member account is a delegated administrator, the operation also revokes Organizations read action permissions.</p>
+    /// This field is required.
     pub fn service_principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_principal = ::std::option::Option::Some(input.into());
         self
@@ -71,7 +73,7 @@ impl DeregisterDelegatedAdministratorInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_delegated_administrator::DeregisterDelegatedAdministratorInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::deregister_delegated_administrator::DeregisterDelegatedAdministratorInput {

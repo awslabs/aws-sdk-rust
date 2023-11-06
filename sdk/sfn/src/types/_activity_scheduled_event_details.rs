@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ActivityScheduledEventDetails {
     /// <p>The Amazon Resource Name (ARN) of the scheduled activity.</p>
-    pub resource: ::std::option::Option<::std::string::String>,
+    pub resource: ::std::string::String,
     /// <p>The JSON data input to the activity task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub input: ::std::option::Option<::std::string::String>,
     /// <p>Contains details about the input for an execution history event.</p>
@@ -17,8 +17,9 @@ pub struct ActivityScheduledEventDetails {
 }
 impl ActivityScheduledEventDetails {
     /// <p>The Amazon Resource Name (ARN) of the scheduled activity.</p>
-    pub fn resource(&self) -> ::std::option::Option<&str> {
-        self.resource.as_deref()
+    pub fn resource(&self) -> &str {
+        use std::ops::Deref;
+        self.resource.deref()
     }
     /// <p>The JSON data input to the activity task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn input(&self) -> ::std::option::Option<&str> {
@@ -67,6 +68,7 @@ pub struct ActivityScheduledEventDetailsBuilder {
 }
 impl ActivityScheduledEventDetailsBuilder {
     /// <p>The Amazon Resource Name (ARN) of the scheduled activity.</p>
+    /// This field is required.
     pub fn resource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource = ::std::option::Option::Some(input.into());
         self
@@ -137,14 +139,21 @@ impl ActivityScheduledEventDetailsBuilder {
         &self.heartbeat_in_seconds
     }
     /// Consumes the builder and constructs a [`ActivityScheduledEventDetails`](crate::types::ActivityScheduledEventDetails).
-    pub fn build(self) -> crate::types::ActivityScheduledEventDetails {
-        crate::types::ActivityScheduledEventDetails {
-            resource: self.resource,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource`](crate::types::builders::ActivityScheduledEventDetailsBuilder::resource)
+    pub fn build(self) -> ::std::result::Result<crate::types::ActivityScheduledEventDetails, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ActivityScheduledEventDetails {
+            resource: self.resource.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "resource",
+                    "resource was not specified but it is required when building ActivityScheduledEventDetails",
+                )
+            })?,
             input: self.input,
             input_details: self.input_details,
             timeout_in_seconds: self.timeout_in_seconds,
             heartbeat_in_seconds: self.heartbeat_in_seconds,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for ActivityScheduledEventDetailsBuilder {

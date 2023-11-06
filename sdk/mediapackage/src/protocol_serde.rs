@@ -95,21 +95,6 @@ pub(crate) mod shape_update_channel_input;
 
 pub(crate) mod shape_update_origin_endpoint_input;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of__string;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_channel;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_harvest_job;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_origin_endpoint;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___map_of__string;
-
 pub(crate) mod shape_authorization;
 
 pub(crate) mod shape_cmaf_package;
@@ -126,20 +111,21 @@ pub(crate) mod shape_hls_package;
 
 pub(crate) mod shape_ingress_access_logs;
 
+pub(crate) mod shape_list_of_channel;
+
+pub(crate) mod shape_list_of_harvest_job;
+
+pub(crate) mod shape_list_of_origin_endpoint;
+
+pub(crate) mod shape_list_of_string;
+
+pub(crate) mod shape_map_of_string;
+
 pub(crate) mod shape_mss_package;
 
 pub(crate) mod shape_s3_destination;
 
 pub(crate) mod shape_tags;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of__period_triggers_element;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_hls_manifest;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_ingest_endpoint;
 
 pub(crate) mod shape_ad_triggers;
 
@@ -154,6 +140,12 @@ pub(crate) mod shape_harvest_job;
 pub(crate) mod shape_hls_encryption;
 
 pub(crate) mod shape_hls_manifest_create_or_update_parameters;
+
+pub(crate) mod shape_list_of_hls_manifest;
+
+pub(crate) mod shape_list_of_ingest_endpoint;
+
+pub(crate) mod shape_list_of_period_triggers_element;
 
 pub(crate) mod shape_mss_encryption;
 

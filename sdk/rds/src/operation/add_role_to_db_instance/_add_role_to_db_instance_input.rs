@@ -41,6 +41,7 @@ pub struct AddRoleToDbInstanceInputBuilder {
 }
 impl AddRoleToDbInstanceInputBuilder {
     /// <p>The name of the DB instance to associate the IAM role with.</p>
+    /// This field is required.
     pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_identifier = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl AddRoleToDbInstanceInputBuilder {
         &self.db_instance_identifier
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with the DB instance, for example <code>arn:aws:iam::123456789012:role/AccessRole</code>.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl AddRoleToDbInstanceInputBuilder {
         &self.role_arn
     }
     /// <p>The name of the feature for the DB instance that the IAM role is to be associated with. For information about supported feature names, see <code>DBEngineVersion</code>.</p>
+    /// This field is required.
     pub fn feature_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_name = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +88,7 @@ impl AddRoleToDbInstanceInputBuilder {
     /// Consumes the builder and constructs a [`AddRoleToDbInstanceInput`](crate::operation::add_role_to_db_instance::AddRoleToDbInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::add_role_to_db_instance::AddRoleToDbInstanceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::add_role_to_db_instance::AddRoleToDbInstanceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::add_role_to_db_instance::AddRoleToDbInstanceInput {
             db_instance_identifier: self.db_instance_identifier,

@@ -18,8 +18,10 @@ impl DescribeVtlDevicesOutput {
         self.gateway_arn.as_deref()
     }
     /// <p>An array of VTL device objects composed of the Amazon Resource Name (ARN) of the VTL devices.</p>
-    pub fn vtl_devices(&self) -> ::std::option::Option<&[crate::types::VtlDevice]> {
-        self.vtl_devices.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vtl_devices.is_none()`.
+    pub fn vtl_devices(&self) -> &[crate::types::VtlDevice] {
+        self.vtl_devices.as_deref().unwrap_or_default()
     }
     /// <p>An opaque string that indicates the position at which the VTL devices that were fetched for description ended. Use the marker in your next request to fetch the next set of VTL devices in the list. If there are no more VTL devices to describe, this field does not appear in the response.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

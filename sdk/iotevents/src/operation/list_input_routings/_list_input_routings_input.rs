@@ -41,6 +41,7 @@ pub struct ListInputRoutingsInputBuilder {
 }
 impl ListInputRoutingsInputBuilder {
     /// <p> The identifer of the routed input. </p>
+    /// This field is required.
     pub fn input_identifier(mut self, input: crate::types::InputIdentifier) -> Self {
         self.input_identifier = ::std::option::Option::Some(input);
         self
@@ -85,7 +86,7 @@ impl ListInputRoutingsInputBuilder {
     /// Consumes the builder and constructs a [`ListInputRoutingsInput`](crate::operation::list_input_routings::ListInputRoutingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_input_routings::ListInputRoutingsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_input_routings::ListInputRoutingsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_input_routings::ListInputRoutingsInput {
             input_identifier: self.input_identifier,
             max_results: self.max_results,

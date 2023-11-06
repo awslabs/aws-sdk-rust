@@ -2,39 +2,39 @@
 pub fn ser_replica_settings_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ReplicaSettingsUpdate,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.region_name {
-        object.key("RegionName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("RegionName").string(input.region_name.as_str());
     }
-    if let Some(var_2) = &input.replica_provisioned_read_capacity_units {
+    if let Some(var_1) = &input.replica_provisioned_read_capacity_units {
         object.key("ReplicaProvisionedReadCapacityUnits").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_3) = &input.replica_provisioned_read_capacity_auto_scaling_settings_update {
+    if let Some(var_2) = &input.replica_provisioned_read_capacity_auto_scaling_settings_update {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("ReplicaProvisionedReadCapacityAutoScalingSettingsUpdate").start_object();
-        crate::protocol_serde::shape_auto_scaling_settings_update::ser_auto_scaling_settings_update(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_3 = object.key("ReplicaProvisionedReadCapacityAutoScalingSettingsUpdate").start_object();
+        crate::protocol_serde::shape_auto_scaling_settings_update::ser_auto_scaling_settings_update(&mut object_3, var_2)?;
+        object_3.finish();
     }
-    if let Some(var_5) = &input.replica_global_secondary_index_settings_update {
-        let mut array_6 = object.key("ReplicaGlobalSecondaryIndexSettingsUpdate").start_array();
-        for item_7 in var_5 {
+    if let Some(var_4) = &input.replica_global_secondary_index_settings_update {
+        let mut array_5 = object.key("ReplicaGlobalSecondaryIndexSettingsUpdate").start_array();
+        for item_6 in var_4 {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
+                let mut object_7 = array_5.value().start_object();
                 crate::protocol_serde::shape_replica_global_secondary_index_settings_update::ser_replica_global_secondary_index_settings_update(
-                    &mut object_8,
-                    item_7,
+                    &mut object_7,
+                    item_6,
                 )?;
-                object_8.finish();
+                object_7.finish();
             }
         }
-        array_6.finish();
+        array_5.finish();
     }
-    if let Some(var_9) = &input.replica_table_class {
-        object.key("ReplicaTableClass").string(var_9.as_str());
+    if let Some(var_8) = &input.replica_table_class {
+        object.key("ReplicaTableClass").string(var_8.as_str());
     }
     Ok(())
 }

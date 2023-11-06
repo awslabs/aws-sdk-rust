@@ -20,8 +20,10 @@ impl CreateResourceDefinitionVersionInput {
         self.resource_definition_id.as_deref()
     }
     /// A list of resources.
-    pub fn resources(&self) -> ::std::option::Option<&[crate::types::Resource]> {
-        self.resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
+    pub fn resources(&self) -> &[crate::types::Resource] {
+        self.resources.as_deref().unwrap_or_default()
     }
 }
 impl CreateResourceDefinitionVersionInput {
@@ -55,6 +57,7 @@ impl CreateResourceDefinitionVersionInputBuilder {
         &self.amzn_client_token
     }
     /// The ID of the resource definition.
+    /// This field is required.
     pub fn resource_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_definition_id = ::std::option::Option::Some(input.into());
         self
@@ -93,7 +96,7 @@ impl CreateResourceDefinitionVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_resource_definition_version::CreateResourceDefinitionVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_resource_definition_version::CreateResourceDefinitionVersionInput {

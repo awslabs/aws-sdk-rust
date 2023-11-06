@@ -76,6 +76,7 @@ impl WindowsAuditLogConfigurationBuilder {
     /// <li> <p> <code>SUCCESS_AND_FAILURE</code> - both successful attempts and failed attempts to access files or folders are logged.</p> </li>
     /// <li> <p> <code>DISABLED</code> - access auditing of files and folders is turned off.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn file_access_audit_log_level(mut self, input: crate::types::WindowsAccessAuditLogLevel) -> Self {
         self.file_access_audit_log_level = ::std::option::Option::Some(input);
         self
@@ -108,6 +109,7 @@ impl WindowsAuditLogConfigurationBuilder {
     /// <li> <p> <code>SUCCESS_AND_FAILURE</code> - both successful attempts and failed attempts to access file shares are logged.</p> </li>
     /// <li> <p> <code>DISABLED</code> - access auditing of file shares is turned off.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn file_share_access_audit_log_level(mut self, input: crate::types::WindowsAccessAuditLogLevel) -> Self {
         self.file_share_access_audit_log_level = ::std::option::Option::Some(input);
         self

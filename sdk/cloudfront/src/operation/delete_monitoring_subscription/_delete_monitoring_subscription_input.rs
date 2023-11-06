@@ -27,6 +27,7 @@ pub struct DeleteMonitoringSubscriptionInputBuilder {
 }
 impl DeleteMonitoringSubscriptionInputBuilder {
     /// <p>The ID of the distribution that you are disabling metrics for.</p>
+    /// This field is required.
     pub fn distribution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.distribution_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteMonitoringSubscriptionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionInput {
             distribution_id: self.distribution_id,

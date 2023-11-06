@@ -12,7 +12,7 @@ pub struct ManagedResourceSummary {
     /// <p>The name of the managed resource.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zones that a resource is deployed in.</p>
-    pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub availability_zones: ::std::vec::Vec<::std::string::String>,
 }
 impl ManagedResourceSummary {
     /// <p>The Amazon Resource Name (ARN) for the managed resource.</p>
@@ -24,8 +24,9 @@ impl ManagedResourceSummary {
         self.name.as_deref()
     }
     /// <p>The Availability Zones that a resource is deployed in.</p>
-    pub fn availability_zones(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.availability_zones.as_deref()
+    pub fn availability_zones(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.availability_zones.deref()
     }
 }
 impl ManagedResourceSummary {
@@ -93,11 +94,18 @@ impl ManagedResourceSummaryBuilder {
         &self.availability_zones
     }
     /// Consumes the builder and constructs a [`ManagedResourceSummary`](crate::types::ManagedResourceSummary).
-    pub fn build(self) -> crate::types::ManagedResourceSummary {
-        crate::types::ManagedResourceSummary {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`availability_zones`](crate::types::builders::ManagedResourceSummaryBuilder::availability_zones)
+    pub fn build(self) -> ::std::result::Result<crate::types::ManagedResourceSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ManagedResourceSummary {
             arn: self.arn,
             name: self.name,
-            availability_zones: self.availability_zones,
-        }
+            availability_zones: self.availability_zones.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "availability_zones",
+                    "availability_zones was not specified but it is required when building ManagedResourceSummary",
+                )
+            })?,
+        })
     }
 }

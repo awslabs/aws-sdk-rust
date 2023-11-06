@@ -62,8 +62,10 @@ impl UpdatePackageVersionsStatusInput {
         self.package.as_deref()
     }
     /// <p> An array of strings that specify the versions of the package with the statuses to update. </p>
-    pub fn versions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.versions.is_none()`.
+    pub fn versions(&self) -> &[::std::string::String] {
+        self.versions.as_deref().unwrap_or_default()
     }
     /// <p> A map of package versions and package version revisions. The map <code>key</code> is the package version (for example, <code>3.5.2</code>), and the map <code>value</code> is the package version revision. </p>
     pub fn version_revisions(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -102,6 +104,7 @@ pub struct UpdatePackageVersionsStatusInputBuilder {
 }
 impl UpdatePackageVersionsStatusInputBuilder {
     /// <p> The name of the domain that contains the repository that contains the package versions with a status to be updated. </p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -130,6 +133,7 @@ impl UpdatePackageVersionsStatusInputBuilder {
         &self.domain_owner
     }
     /// <p> The repository that contains the package versions with the status you want to update. </p>
+    /// This field is required.
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository = ::std::option::Option::Some(input.into());
         self
@@ -144,6 +148,7 @@ impl UpdatePackageVersionsStatusInputBuilder {
         &self.repository
     }
     /// <p> A format that specifies the type of the package with the statuses to update. </p>
+    /// This field is required.
     pub fn format(mut self, input: crate::types::PackageFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
         self
@@ -190,6 +195,7 @@ impl UpdatePackageVersionsStatusInputBuilder {
         &self.namespace
     }
     /// <p> The name of the package with the version statuses to update. </p>
+    /// This field is required.
     pub fn package(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package = ::std::option::Option::Some(input.into());
         self
@@ -265,6 +271,7 @@ impl UpdatePackageVersionsStatusInputBuilder {
         &self.expected_status
     }
     /// <p> The status you want to change the package version status to. </p>
+    /// This field is required.
     pub fn target_status(mut self, input: crate::types::PackageVersionStatus) -> Self {
         self.target_status = ::std::option::Option::Some(input);
         self
@@ -283,7 +290,7 @@ impl UpdatePackageVersionsStatusInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_package_versions_status::UpdatePackageVersionsStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_package_versions_status::UpdatePackageVersionsStatusInput {
             domain: self.domain,

@@ -104,7 +104,7 @@ impl ListQueuesInputBuilder {
         &self.order
     }
     /// Consumes the builder and constructs a [`ListQueuesInput`](crate::operation::list_queues::ListQueuesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_queues::ListQueuesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_queues::ListQueuesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_queues::ListQueuesInput {
             list_by: self.list_by,
             max_results: self.max_results,

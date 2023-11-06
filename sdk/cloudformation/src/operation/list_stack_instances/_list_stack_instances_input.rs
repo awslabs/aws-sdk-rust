@@ -37,8 +37,10 @@ impl ListStackInstancesInput {
         self.max_results
     }
     /// <p>The filter to apply to stack instances</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::StackInstanceFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::StackInstanceFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The name of the Amazon Web Services account that you want to list stack instances for.</p>
     pub fn stack_instance_account(&self) -> ::std::option::Option<&str> {
@@ -79,6 +81,7 @@ pub struct ListStackInstancesInputBuilder {
 }
 impl ListStackInstancesInputBuilder {
     /// <p>The name or unique ID of the stack set that you want to list stack instances for.</p>
+    /// This field is required.
     pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_set_name = ::std::option::Option::Some(input.into());
         self
@@ -200,7 +203,8 @@ impl ListStackInstancesInputBuilder {
     /// Consumes the builder and constructs a [`ListStackInstancesInput`](crate::operation::list_stack_instances::ListStackInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_stack_instances::ListStackInstancesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_stack_instances::ListStackInstancesInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_stack_instances::ListStackInstancesInput {
             stack_set_name: self.stack_set_name,
             next_token: self.next_token,

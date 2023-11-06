@@ -96,6 +96,7 @@ impl ImportAsProvisionedProductInputBuilder {
         &self.accept_language
     }
     /// <p>The product identifier.</p>
+    /// This field is required.
     pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_id = ::std::option::Option::Some(input.into());
         self
@@ -110,6 +111,7 @@ impl ImportAsProvisionedProductInputBuilder {
         &self.product_id
     }
     /// <p>The identifier of the provisioning artifact.</p>
+    /// This field is required.
     pub fn provisioning_artifact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioning_artifact_id = ::std::option::Option::Some(input.into());
         self
@@ -124,6 +126,7 @@ impl ImportAsProvisionedProductInputBuilder {
         &self.provisioning_artifact_id
     }
     /// <p>The user-friendly name of the provisioned product. The value must be unique for the Amazon Web Services account. The name cannot be updated after the product is provisioned. </p>
+    /// This field is required.
     pub fn provisioned_product_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioned_product_name = ::std::option::Option::Some(input.into());
         self
@@ -138,6 +141,7 @@ impl ImportAsProvisionedProductInputBuilder {
         &self.provisioned_product_name
     }
     /// <p>The unique identifier of the resource to be imported. It only currently supports CloudFormation stack IDs.</p>
+    /// This field is required.
     pub fn physical_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.physical_id = ::std::option::Option::Some(input.into());
         self
@@ -152,6 +156,7 @@ impl ImportAsProvisionedProductInputBuilder {
         &self.physical_id
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
+    /// This field is required.
     pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.idempotency_token = ::std::option::Option::Some(input.into());
         self
@@ -170,7 +175,7 @@ impl ImportAsProvisionedProductInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::import_as_provisioned_product::ImportAsProvisionedProductInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::import_as_provisioned_product::ImportAsProvisionedProductInput {
             accept_language: self.accept_language,

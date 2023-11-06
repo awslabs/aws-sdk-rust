@@ -48,7 +48,7 @@ pub fn de_get_account_limit_http_response(
         output = crate::protocol_serde::shape_get_account_limit::de_get_account_limit(_response_body, output)
             .map_err(crate::operation::get_account_limit::GetAccountLimitError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::get_account_limit_output_correct_errors(output).build()
     })
 }
 

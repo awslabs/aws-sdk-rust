@@ -20,7 +20,7 @@ pub struct UsernameConfigurationType {
     /// <p>Enables case insensitivity for all username input. For example, when this option is set to <code>False</code>, users can sign in using <code>username</code>, <code>USERNAME</code>, or <code>UserName</code>. This option also enables both <code>preferred_username</code> and <code>email</code> alias to be case insensitive, in addition to the <code>username</code> attribute.</p>
     /// </dd>
     /// </dl>
-    pub case_sensitive: ::std::option::Option<bool>,
+    pub case_sensitive: bool,
 }
 impl UsernameConfigurationType {
     /// <p>Specifies whether user name case sensitivity will be applied for all users in the user pool through Amazon Cognito APIs. For most use cases, set case sensitivity to <code>False</code> (case insensitive) as a best practice. When usernames and email addresses are case insensitive, users can sign in as the same user when they enter a different capitalization of their user name.</p>
@@ -39,7 +39,7 @@ impl UsernameConfigurationType {
     /// <p>Enables case insensitivity for all username input. For example, when this option is set to <code>False</code>, users can sign in using <code>username</code>, <code>USERNAME</code>, or <code>UserName</code>. This option also enables both <code>preferred_username</code> and <code>email</code> alias to be case insensitive, in addition to the <code>username</code> attribute.</p>
     /// </dd>
     /// </dl>
-    pub fn case_sensitive(&self) -> ::std::option::Option<bool> {
+    pub fn case_sensitive(&self) -> bool {
         self.case_sensitive
     }
 }
@@ -73,6 +73,7 @@ impl UsernameConfigurationTypeBuilder {
     /// <p>Enables case insensitivity for all username input. For example, when this option is set to <code>False</code>, users can sign in using <code>username</code>, <code>USERNAME</code>, or <code>UserName</code>. This option also enables both <code>preferred_username</code> and <code>email</code> alias to be case insensitive, in addition to the <code>username</code> attribute.</p>
     /// </dd>
     /// </dl>
+    /// This field is required.
     pub fn case_sensitive(mut self, input: bool) -> Self {
         self.case_sensitive = ::std::option::Option::Some(input);
         self
@@ -117,9 +118,16 @@ impl UsernameConfigurationTypeBuilder {
         &self.case_sensitive
     }
     /// Consumes the builder and constructs a [`UsernameConfigurationType`](crate::types::UsernameConfigurationType).
-    pub fn build(self) -> crate::types::UsernameConfigurationType {
-        crate::types::UsernameConfigurationType {
-            case_sensitive: self.case_sensitive,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`case_sensitive`](crate::types::builders::UsernameConfigurationTypeBuilder::case_sensitive)
+    pub fn build(self) -> ::std::result::Result<crate::types::UsernameConfigurationType, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::UsernameConfigurationType {
+            case_sensitive: self.case_sensitive.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "case_sensitive",
+                    "case_sensitive was not specified but it is required when building UsernameConfigurationType",
+                )
+            })?,
+        })
     }
 }

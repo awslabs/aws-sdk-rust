@@ -46,8 +46,10 @@ impl CreateVariableInput {
         self.variable_type.as_deref()
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateVariableInput {
@@ -71,6 +73,7 @@ pub struct CreateVariableInputBuilder {
 }
 impl CreateVariableInputBuilder {
     /// <p>The name of the variable.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -85,6 +88,7 @@ impl CreateVariableInputBuilder {
         &self.name
     }
     /// <p>The data type of the variable.</p>
+    /// This field is required.
     pub fn data_type(mut self, input: crate::types::DataType) -> Self {
         self.data_type = ::std::option::Option::Some(input);
         self
@@ -99,6 +103,7 @@ impl CreateVariableInputBuilder {
         &self.data_type
     }
     /// <p>The source of the data.</p>
+    /// This field is required.
     pub fn data_source(mut self, input: crate::types::DataSource) -> Self {
         self.data_source = ::std::option::Option::Some(input);
         self
@@ -113,6 +118,7 @@ impl CreateVariableInputBuilder {
         &self.data_source
     }
     /// <p>The default value for the variable when no value is received.</p>
+    /// This field is required.
     pub fn default_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_value = ::std::option::Option::Some(input.into());
         self
@@ -180,7 +186,7 @@ impl CreateVariableInputBuilder {
     /// Consumes the builder and constructs a [`CreateVariableInput`](crate::operation::create_variable::CreateVariableInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_variable::CreateVariableInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_variable::CreateVariableInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_variable::CreateVariableInput {
             name: self.name,
             data_type: self.data_type,

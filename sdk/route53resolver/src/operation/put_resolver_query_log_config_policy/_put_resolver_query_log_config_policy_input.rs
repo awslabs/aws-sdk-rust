@@ -46,6 +46,7 @@ pub struct PutResolverQueryLogConfigPolicyInputBuilder {
 }
 impl PutResolverQueryLogConfigPolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the account that you want to share rules with.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -66,6 +67,7 @@ impl PutResolverQueryLogConfigPolicyInputBuilder {
     /// <li> <p> <code>route53resolver:ListResolverQueryLogConfigs</code> </p> </li>
     /// </ul>
     /// <p>In the <code>Resource</code> section of the statement, you specify the ARNs for the query logging configurations that you want to share with the account that you specified in <code>Arn</code>. </p>
+    /// This field is required.
     pub fn resolver_query_log_config_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolver_query_log_config_policy = ::std::option::Option::Some(input.into());
         self
@@ -96,7 +98,7 @@ impl PutResolverQueryLogConfigPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_resolver_query_log_config_policy::PutResolverQueryLogConfigPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::put_resolver_query_log_config_policy::PutResolverQueryLogConfigPolicyInput {

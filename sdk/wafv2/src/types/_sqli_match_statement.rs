@@ -7,7 +7,7 @@ pub struct SqliMatchStatement {
     /// <p>The part of the web request that you want WAF to inspect. </p>
     pub field_to_match: ::std::option::Option<crate::types::FieldToMatch>,
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the transformed component contents. </p>
-    pub text_transformations: ::std::option::Option<::std::vec::Vec<crate::types::TextTransformation>>,
+    pub text_transformations: ::std::vec::Vec<crate::types::TextTransformation>,
     /// <p>The sensitivity that you want WAF to use to inspect for SQL injection attacks. </p>
     /// <p> <code>HIGH</code> detects more attacks, but might generate more false positives, especially if your web requests frequently contain unusual strings. For information about identifying and mitigating false positives, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/web-acl-testing.html">Testing and tuning</a> in the <i>WAF Developer Guide</i>.</p>
     /// <p> <code>LOW</code> is generally a better choice for resources that already have other protections against SQL injection attacks or that have a low tolerance for false positives. </p>
@@ -20,8 +20,9 @@ impl SqliMatchStatement {
         self.field_to_match.as_ref()
     }
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the transformed component contents. </p>
-    pub fn text_transformations(&self) -> ::std::option::Option<&[crate::types::TextTransformation]> {
-        self.text_transformations.as_deref()
+    pub fn text_transformations(&self) -> &[crate::types::TextTransformation] {
+        use std::ops::Deref;
+        self.text_transformations.deref()
     }
     /// <p>The sensitivity that you want WAF to use to inspect for SQL injection attacks. </p>
     /// <p> <code>HIGH</code> detects more attacks, but might generate more false positives, especially if your web requests frequently contain unusual strings. For information about identifying and mitigating false positives, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/web-acl-testing.html">Testing and tuning</a> in the <i>WAF Developer Guide</i>.</p>
@@ -48,6 +49,7 @@ pub struct SqliMatchStatementBuilder {
 }
 impl SqliMatchStatementBuilder {
     /// <p>The part of the web request that you want WAF to inspect. </p>
+    /// This field is required.
     pub fn field_to_match(mut self, input: crate::types::FieldToMatch) -> Self {
         self.field_to_match = ::std::option::Option::Some(input);
         self
@@ -105,11 +107,18 @@ impl SqliMatchStatementBuilder {
         &self.sensitivity_level
     }
     /// Consumes the builder and constructs a [`SqliMatchStatement`](crate::types::SqliMatchStatement).
-    pub fn build(self) -> crate::types::SqliMatchStatement {
-        crate::types::SqliMatchStatement {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`text_transformations`](crate::types::builders::SqliMatchStatementBuilder::text_transformations)
+    pub fn build(self) -> ::std::result::Result<crate::types::SqliMatchStatement, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SqliMatchStatement {
             field_to_match: self.field_to_match,
-            text_transformations: self.text_transformations,
+            text_transformations: self.text_transformations.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "text_transformations",
+                    "text_transformations was not specified but it is required when building SqliMatchStatement",
+                )
+            })?,
             sensitivity_level: self.sensitivity_level,
-        }
+        })
     }
 }

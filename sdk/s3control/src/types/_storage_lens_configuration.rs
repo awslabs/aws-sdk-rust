@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StorageLensConfiguration {
     /// <p>A container for the Amazon S3 Storage Lens configuration ID.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>A container for all the account-level configurations of your S3 Storage Lens configuration.</p>
     pub account_level: ::std::option::Option<crate::types::AccountLevel>,
     /// <p>A container for what is included in this configuration. This container can only be valid if there is no <code>Exclude</code> container submitted, and it's not empty. </p>
@@ -23,8 +23,9 @@ pub struct StorageLensConfiguration {
 }
 impl StorageLensConfiguration {
     /// <p>A container for the Amazon S3 Storage Lens configuration ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>A container for all the account-level configurations of your S3 Storage Lens configuration.</p>
     pub fn account_level(&self) -> ::std::option::Option<&crate::types::AccountLevel> {
@@ -77,6 +78,7 @@ pub struct StorageLensConfigurationBuilder {
 }
 impl StorageLensConfigurationBuilder {
     /// <p>A container for the Amazon S3 Storage Lens configuration ID.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +93,7 @@ impl StorageLensConfigurationBuilder {
         &self.id
     }
     /// <p>A container for all the account-level configurations of your S3 Storage Lens configuration.</p>
+    /// This field is required.
     pub fn account_level(mut self, input: crate::types::AccountLevel) -> Self {
         self.account_level = ::std::option::Option::Some(input);
         self
@@ -147,6 +150,7 @@ impl StorageLensConfigurationBuilder {
         &self.data_export
     }
     /// <p>A container for whether the S3 Storage Lens configuration is enabled.</p>
+    /// This field is required.
     pub fn is_enabled(mut self, input: bool) -> Self {
         self.is_enabled = ::std::option::Option::Some(input);
         self
@@ -189,9 +193,16 @@ impl StorageLensConfigurationBuilder {
         &self.storage_lens_arn
     }
     /// Consumes the builder and constructs a [`StorageLensConfiguration`](crate::types::StorageLensConfiguration).
-    pub fn build(self) -> crate::types::StorageLensConfiguration {
-        crate::types::StorageLensConfiguration {
-            id: self.id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::StorageLensConfigurationBuilder::id)
+    pub fn build(self) -> ::std::result::Result<crate::types::StorageLensConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::StorageLensConfiguration {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building StorageLensConfiguration",
+                )
+            })?,
             account_level: self.account_level,
             include: self.include,
             exclude: self.exclude,
@@ -199,6 +210,6 @@ impl StorageLensConfigurationBuilder {
             is_enabled: self.is_enabled.unwrap_or_default(),
             aws_org: self.aws_org,
             storage_lens_arn: self.storage_lens_arn,
-        }
+        })
     }
 }

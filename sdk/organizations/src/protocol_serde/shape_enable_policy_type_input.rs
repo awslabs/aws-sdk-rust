@@ -2,7 +2,7 @@
 pub fn ser_enable_policy_type_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::enable_policy_type::EnablePolicyTypeInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.root_id {
         object.key("RootId").string(var_1.as_str());
     }

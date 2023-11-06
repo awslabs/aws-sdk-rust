@@ -65,8 +65,10 @@ impl RequestPhoneNumberOutput {
         self.message_type.as_ref()
     }
     /// <p>Indicates if the phone number will be used for text messages, voice messages or both. </p>
-    pub fn number_capabilities(&self) -> ::std::option::Option<&[crate::types::NumberCapability]> {
-        self.number_capabilities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.number_capabilities.is_none()`.
+    pub fn number_capabilities(&self) -> &[crate::types::NumberCapability] {
+        self.number_capabilities.as_deref().unwrap_or_default()
     }
     /// <p>The type of number that was released.</p>
     pub fn number_type(&self) -> ::std::option::Option<&crate::types::RequestableNumberType> {
@@ -101,8 +103,10 @@ impl RequestPhoneNumberOutput {
         self.pool_id.as_deref()
     }
     /// <p>An array of key and value pair tags that are associated with the phone number.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The time when the phone number was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

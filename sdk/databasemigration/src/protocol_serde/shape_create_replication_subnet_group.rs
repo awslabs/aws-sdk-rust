@@ -56,7 +56,7 @@ pub fn de_create_replication_subnet_group_http_error(
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ReplicationSubnetGroupDoesNotCoverEnoughAZsBuilder::default();
-                    output = crate::protocol_serde::shape_replication_subnet_group_does_not_cover_enough_a_zs::de_replication_subnet_group_does_not_cover_enough_a_zs_json_err(_response_body, output).map_err(crate::operation::create_replication_subnet_group::CreateReplicationSubnetGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_replication_subnet_group_does_not_cover_enough_azs::de_replication_subnet_group_does_not_cover_enough_azs_json_err(_response_body, output).map_err(crate::operation::create_replication_subnet_group::CreateReplicationSubnetGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -142,12 +142,12 @@ pub fn de_create_replication_subnet_group_http_response(
 
 pub fn ser_create_replication_subnet_group_input(
     input: &crate::operation::create_replication_subnet_group::CreateReplicationSubnetGroupInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_replication_subnet_group_input::ser_create_replication_subnet_group_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_create_replication_subnet_group(

@@ -48,6 +48,7 @@ pub struct VoteOnProposalInputBuilder {
 }
 impl VoteOnProposalInputBuilder {
     /// <p> The unique identifier of the network. </p>
+    /// This field is required.
     pub fn network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl VoteOnProposalInputBuilder {
         &self.network_id
     }
     /// <p> The unique identifier of the proposal. </p>
+    /// This field is required.
     pub fn proposal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.proposal_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl VoteOnProposalInputBuilder {
         &self.proposal_id
     }
     /// <p>The unique identifier of the member casting the vote. </p>
+    /// This field is required.
     pub fn voter_member_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voter_member_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl VoteOnProposalInputBuilder {
         &self.voter_member_id
     }
     /// <p> The value of the vote. </p>
+    /// This field is required.
     pub fn vote(mut self, input: crate::types::VoteValue) -> Self {
         self.vote = ::std::option::Option::Some(input);
         self
@@ -106,7 +110,7 @@ impl VoteOnProposalInputBuilder {
     /// Consumes the builder and constructs a [`VoteOnProposalInput`](crate::operation::vote_on_proposal::VoteOnProposalInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::vote_on_proposal::VoteOnProposalInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::vote_on_proposal::VoteOnProposalInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::vote_on_proposal::VoteOnProposalInput {
             network_id: self.network_id,
             proposal_id: self.proposal_id,

@@ -2,7 +2,7 @@
 pub fn ser_aws_s3_object_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsS3ObjectDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.last_modified {
         object.key("LastModified").string(var_1.as_str());
     }

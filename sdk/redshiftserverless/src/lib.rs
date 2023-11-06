@@ -32,8 +32,8 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = "0.56.1"
-//! aws-sdk-redshiftserverless = "0.34.0"
+//! aws-config = "0.57.1"
+//! aws-sdk-redshiftserverless = "0.35.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -150,14 +150,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`DeleteResourcePolicy`](crate::operation::delete_resource_policy) operation has
-/// a [`Client::delete_resource_policy`], function which returns a builder for that operation.
+/// For example, the [`CreateCustomDomainAssociation`](crate::operation::create_custom_domain_association) operation has
+/// a [`Client::create_custom_domain_association`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.delete_resource_policy()
-///     .resource_arn("example")
+/// let result = client.create_custom_domain_association()
+///     .workgroup_name("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -187,11 +187,15 @@ pub mod primitives;
 /// Data structures used by operation inputs/outputs.
 pub mod types;
 
+mod auth_plugin;
+
 pub(crate) mod protocol_serde;
 
 mod serialization_settings;
 
 mod lens;
+
+mod serde_util;
 
 mod endpoint_lib;
 

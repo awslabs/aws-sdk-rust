@@ -2,7 +2,7 @@
 pub fn ser_update_records_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_records::UpdateRecordsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.device_id {
         object.key("DeviceId").string(var_1.as_str());
     }

@@ -27,6 +27,7 @@ pub struct DescribeCodeReviewInputBuilder {
 }
 impl DescribeCodeReviewInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
+    /// This field is required.
     pub fn code_review_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code_review_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,8 @@ impl DescribeCodeReviewInputBuilder {
     /// Consumes the builder and constructs a [`DescribeCodeReviewInput`](crate::operation::describe_code_review::DescribeCodeReviewInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_code_review::DescribeCodeReviewInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_code_review::DescribeCodeReviewInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::describe_code_review::DescribeCodeReviewInput {
             code_review_arn: self.code_review_arn,
         })

@@ -25,8 +25,10 @@ impl EstimateTemplateCostInput {
         self.template_url.as_deref()
     }
     /// <p>A list of <code>Parameter</code> structures that specify input parameters.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&[crate::types::Parameter]> {
-        self.parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
+    pub fn parameters(&self) -> &[crate::types::Parameter] {
+        self.parameters.as_deref().unwrap_or_default()
     }
 }
 impl EstimateTemplateCostInput {
@@ -102,7 +104,7 @@ impl EstimateTemplateCostInputBuilder {
     /// Consumes the builder and constructs a [`EstimateTemplateCostInput`](crate::operation::estimate_template_cost::EstimateTemplateCostInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::estimate_template_cost::EstimateTemplateCostInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::estimate_template_cost::EstimateTemplateCostInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::estimate_template_cost::EstimateTemplateCostInput {
             template_body: self.template_body,

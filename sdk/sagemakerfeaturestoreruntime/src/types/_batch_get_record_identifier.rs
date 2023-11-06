@@ -17,12 +17,16 @@ impl BatchGetRecordIdentifier {
         self.feature_group_name.as_deref()
     }
     /// <p>The value for a list of record identifiers in string format.</p>
-    pub fn record_identifiers_value_as_string(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.record_identifiers_value_as_string.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.record_identifiers_value_as_string.is_none()`.
+    pub fn record_identifiers_value_as_string(&self) -> &[::std::string::String] {
+        self.record_identifiers_value_as_string.as_deref().unwrap_or_default()
     }
     /// <p>List of names of Features to be retrieved. If not specified, the latest value for all the Features are returned.</p>
-    pub fn feature_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.feature_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.feature_names.is_none()`.
+    pub fn feature_names(&self) -> &[::std::string::String] {
+        self.feature_names.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetRecordIdentifier {
@@ -42,6 +46,7 @@ pub struct BatchGetRecordIdentifierBuilder {
 }
 impl BatchGetRecordIdentifierBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code> containing the records you are retrieving in a batch.</p>
+    /// This field is required.
     pub fn feature_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_group_name = ::std::option::Option::Some(input.into());
         self

@@ -34,6 +34,7 @@ pub struct GetDirectoryOutputBuilder {
 }
 impl GetDirectoryOutputBuilder {
     /// <p>Metadata about the directory.</p>
+    /// This field is required.
     pub fn directory(mut self, input: crate::types::Directory) -> Self {
         self.directory = ::std::option::Option::Some(input);
         self

@@ -5,20 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportReadSetDetail {
     /// <p>The set's ID.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The set's status.</p>
-    pub status: ::std::option::Option<crate::types::ReadSetExportJobItemStatus>,
+    pub status: crate::types::ReadSetExportJobItemStatus,
     /// <p>The set's status message.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
 }
 impl ExportReadSetDetail {
     /// <p>The set's ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The set's status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ReadSetExportJobItemStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::ReadSetExportJobItemStatus {
+        &self.status
     }
     /// <p>The set's status message.</p>
     pub fn status_message(&self) -> ::std::option::Option<&str> {
@@ -42,6 +43,7 @@ pub struct ExportReadSetDetailBuilder {
 }
 impl ExportReadSetDetailBuilder {
     /// <p>The set's ID.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +58,7 @@ impl ExportReadSetDetailBuilder {
         &self.id
     }
     /// <p>The set's status.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::ReadSetExportJobItemStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -84,11 +87,24 @@ impl ExportReadSetDetailBuilder {
         &self.status_message
     }
     /// Consumes the builder and constructs a [`ExportReadSetDetail`](crate::types::ExportReadSetDetail).
-    pub fn build(self) -> crate::types::ExportReadSetDetail {
-        crate::types::ExportReadSetDetail {
-            id: self.id,
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::ExportReadSetDetailBuilder::id)
+    /// - [`status`](crate::types::builders::ExportReadSetDetailBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::ExportReadSetDetail, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ExportReadSetDetail {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building ExportReadSetDetail",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building ExportReadSetDetail",
+                )
+            })?,
             status_message: self.status_message,
-        }
+        })
     }
 }

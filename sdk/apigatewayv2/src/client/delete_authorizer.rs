@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteAuthorizer`](crate::operation::delete_authorizer::builders::DeleteAuthorizerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`api_id(impl Into<String>)`](crate::operation::delete_authorizer::builders::DeleteAuthorizerFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::delete_authorizer::builders::DeleteAuthorizerFluentBuilder::set_api_id): <p>The API identifier.</p>
-    ///   - [`authorizer_id(impl Into<String>)`](crate::operation::delete_authorizer::builders::DeleteAuthorizerFluentBuilder::authorizer_id) / [`set_authorizer_id(Option<String>)`](crate::operation::delete_authorizer::builders::DeleteAuthorizerFluentBuilder::set_authorizer_id): <p>The authorizer identifier.</p>
+    ///   - [`api_id(impl Into<String>)`](crate::operation::delete_authorizer::builders::DeleteAuthorizerFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::delete_authorizer::builders::DeleteAuthorizerFluentBuilder::set_api_id):<br>required: **true**<br><p>The API identifier.</p><br>
+    ///   - [`authorizer_id(impl Into<String>)`](crate::operation::delete_authorizer::builders::DeleteAuthorizerFluentBuilder::authorizer_id) / [`set_authorizer_id(Option<String>)`](crate::operation::delete_authorizer::builders::DeleteAuthorizerFluentBuilder::set_authorizer_id):<br>required: **true**<br><p>The authorizer identifier.</p><br>
     /// - On success, responds with [`DeleteAuthorizerOutput`](crate::operation::delete_authorizer::DeleteAuthorizerOutput)
     /// - On failure, responds with [`SdkError<DeleteAuthorizerError>`](crate::operation::delete_authorizer::DeleteAuthorizerError)
     pub fn delete_authorizer(&self) -> crate::operation::delete_authorizer::builders::DeleteAuthorizerFluentBuilder {

@@ -2,7 +2,7 @@
 pub fn ser_activate_gateway_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::activate_gateway::ActivateGatewayInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.activation_key {
         object.key("ActivationKey").string(var_1.as_str());
     }

@@ -25,8 +25,10 @@ impl ResetClusterParameterGroupInput {
     }
     /// <p>An array of names of parameters to be reset. If <i>ResetAllParameters</i> option is not used, then at least one parameter name must be supplied. </p>
     /// <p>Constraints: A maximum of 20 parameters can be reset in a single request.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&[crate::types::Parameter]> {
-        self.parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
+    pub fn parameters(&self) -> &[crate::types::Parameter] {
+        self.parameters.as_deref().unwrap_or_default()
     }
 }
 impl ResetClusterParameterGroupInput {
@@ -46,6 +48,7 @@ pub struct ResetClusterParameterGroupInputBuilder {
 }
 impl ResetClusterParameterGroupInputBuilder {
     /// <p>The name of the cluster parameter group to be reset.</p>
+    /// This field is required.
     pub fn parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_group_name = ::std::option::Option::Some(input.into());
         self
@@ -104,7 +107,7 @@ impl ResetClusterParameterGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupInput {
             parameter_group_name: self.parameter_group_name,

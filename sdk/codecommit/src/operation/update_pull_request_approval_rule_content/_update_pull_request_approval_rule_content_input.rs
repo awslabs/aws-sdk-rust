@@ -70,6 +70,7 @@ pub struct UpdatePullRequestApprovalRuleContentInputBuilder {
 }
 impl UpdatePullRequestApprovalRuleContentInputBuilder {
     /// <p>The system-generated ID of the pull request.</p>
+    /// This field is required.
     pub fn pull_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pull_request_id = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +85,7 @@ impl UpdatePullRequestApprovalRuleContentInputBuilder {
         &self.pull_request_id
     }
     /// <p>The name of the approval rule you want to update.</p>
+    /// This field is required.
     pub fn approval_rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.approval_rule_name = ::std::option::Option::Some(input.into());
         self
@@ -123,6 +125,7 @@ impl UpdatePullRequestApprovalRuleContentInputBuilder {
     /// </ul>
     /// <p>For more information about IAM ARNs, wildcards, and formats, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
     /// </note>
+    /// This field is required.
     pub fn new_rule_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.new_rule_content = ::std::option::Option::Some(input.into());
         self
@@ -163,7 +166,7 @@ impl UpdatePullRequestApprovalRuleContentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentInput {

@@ -2,7 +2,7 @@
 pub fn ser_attach_load_balancer_tls_certificate_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::attach_load_balancer_tls_certificate::AttachLoadBalancerTlsCertificateInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.load_balancer_name {
         object.key("loadBalancerName").string(var_1.as_str());
     }

@@ -6,7 +6,7 @@ pub struct ListCollaborationsOutput {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The list of collaborations.</p>
-    pub collaboration_list: ::std::option::Option<::std::vec::Vec<crate::types::CollaborationSummary>>,
+    pub collaboration_list: ::std::vec::Vec<crate::types::CollaborationSummary>,
     _request_id: Option<String>,
 }
 impl ListCollaborationsOutput {
@@ -15,8 +15,9 @@ impl ListCollaborationsOutput {
         self.next_token.as_deref()
     }
     /// <p>The list of collaborations.</p>
-    pub fn collaboration_list(&self) -> ::std::option::Option<&[crate::types::CollaborationSummary]> {
-        self.collaboration_list.as_deref()
+    pub fn collaboration_list(&self) -> &[crate::types::CollaborationSummary] {
+        use std::ops::Deref;
+        self.collaboration_list.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListCollaborationsOutput {
@@ -84,11 +85,21 @@ impl ListCollaborationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListCollaborationsOutput`](crate::operation::list_collaborations::ListCollaborationsOutput).
-    pub fn build(self) -> crate::operation::list_collaborations::ListCollaborationsOutput {
-        crate::operation::list_collaborations::ListCollaborationsOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`collaboration_list`](crate::operation::list_collaborations::builders::ListCollaborationsOutputBuilder::collaboration_list)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_collaborations::ListCollaborationsOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_collaborations::ListCollaborationsOutput {
             next_token: self.next_token,
-            collaboration_list: self.collaboration_list,
+            collaboration_list: self.collaboration_list.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "collaboration_list",
+                    "collaboration_list was not specified but it is required when building ListCollaborationsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

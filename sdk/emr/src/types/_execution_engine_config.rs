@@ -49,6 +49,7 @@ pub struct ExecutionEngineConfigBuilder {
 }
 impl ExecutionEngineConfigBuilder {
     /// <p>The unique identifier of the execution engine. For an Amazon EMR cluster, this is the cluster ID.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

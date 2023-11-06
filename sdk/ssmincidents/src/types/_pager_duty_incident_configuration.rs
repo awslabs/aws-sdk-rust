@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PagerDutyIncidentConfiguration {
     /// <p>The ID of the PagerDuty service that the response plan associates with an incident when it launches.</p>
-    pub service_id: ::std::option::Option<::std::string::String>,
+    pub service_id: ::std::string::String,
 }
 impl PagerDutyIncidentConfiguration {
     /// <p>The ID of the PagerDuty service that the response plan associates with an incident when it launches.</p>
-    pub fn service_id(&self) -> ::std::option::Option<&str> {
-        self.service_id.as_deref()
+    pub fn service_id(&self) -> &str {
+        use std::ops::Deref;
+        self.service_id.deref()
     }
 }
 impl PagerDutyIncidentConfiguration {
@@ -28,6 +29,7 @@ pub struct PagerDutyIncidentConfigurationBuilder {
 }
 impl PagerDutyIncidentConfigurationBuilder {
     /// <p>The ID of the PagerDuty service that the response plan associates with an incident when it launches.</p>
+    /// This field is required.
     pub fn service_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_id = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl PagerDutyIncidentConfigurationBuilder {
         &self.service_id
     }
     /// Consumes the builder and constructs a [`PagerDutyIncidentConfiguration`](crate::types::PagerDutyIncidentConfiguration).
-    pub fn build(self) -> crate::types::PagerDutyIncidentConfiguration {
-        crate::types::PagerDutyIncidentConfiguration { service_id: self.service_id }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`service_id`](crate::types::builders::PagerDutyIncidentConfigurationBuilder::service_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::PagerDutyIncidentConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PagerDutyIncidentConfiguration {
+            service_id: self.service_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "service_id",
+                    "service_id was not specified but it is required when building PagerDutyIncidentConfiguration",
+                )
+            })?,
+        })
     }
 }

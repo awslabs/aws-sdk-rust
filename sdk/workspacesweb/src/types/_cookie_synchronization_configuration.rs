@@ -5,18 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CookieSynchronizationConfiguration {
     /// <p>The list of cookie specifications that are allowed to be synchronized to the remote browser.</p>
-    pub allowlist: ::std::option::Option<::std::vec::Vec<crate::types::CookieSpecification>>,
+    pub allowlist: ::std::vec::Vec<crate::types::CookieSpecification>,
     /// <p>The list of cookie specifications that are blocked from being synchronized to the remote browser.</p>
     pub blocklist: ::std::option::Option<::std::vec::Vec<crate::types::CookieSpecification>>,
 }
 impl CookieSynchronizationConfiguration {
     /// <p>The list of cookie specifications that are allowed to be synchronized to the remote browser.</p>
-    pub fn allowlist(&self) -> ::std::option::Option<&[crate::types::CookieSpecification]> {
-        self.allowlist.as_deref()
+    pub fn allowlist(&self) -> &[crate::types::CookieSpecification] {
+        use std::ops::Deref;
+        self.allowlist.deref()
     }
     /// <p>The list of cookie specifications that are blocked from being synchronized to the remote browser.</p>
-    pub fn blocklist(&self) -> ::std::option::Option<&[crate::types::CookieSpecification]> {
-        self.blocklist.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.blocklist.is_none()`.
+    pub fn blocklist(&self) -> &[crate::types::CookieSpecification] {
+        self.blocklist.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for CookieSynchronizationConfiguration {
@@ -83,11 +86,18 @@ impl CookieSynchronizationConfigurationBuilder {
         &self.blocklist
     }
     /// Consumes the builder and constructs a [`CookieSynchronizationConfiguration`](crate::types::CookieSynchronizationConfiguration).
-    pub fn build(self) -> crate::types::CookieSynchronizationConfiguration {
-        crate::types::CookieSynchronizationConfiguration {
-            allowlist: self.allowlist,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`allowlist`](crate::types::builders::CookieSynchronizationConfigurationBuilder::allowlist)
+    pub fn build(self) -> ::std::result::Result<crate::types::CookieSynchronizationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CookieSynchronizationConfiguration {
+            allowlist: self.allowlist.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "allowlist",
+                    "allowlist was not specified but it is required when building CookieSynchronizationConfiguration",
+                )
+            })?,
             blocklist: self.blocklist,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for CookieSynchronizationConfigurationBuilder {

@@ -26,8 +26,10 @@ impl StepScalingPolicyConfiguration {
     }
     /// <p>A set of adjustments that enable you to scale based on the size of the alarm breach.</p>
     /// <p>At least one step adjustment is required if you are adding a new step scaling policy configuration.</p>
-    pub fn step_adjustments(&self) -> ::std::option::Option<&[crate::types::StepAdjustment]> {
-        self.step_adjustments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.step_adjustments.is_none()`.
+    pub fn step_adjustments(&self) -> &[crate::types::StepAdjustment] {
+        self.step_adjustments.as_deref().unwrap_or_default()
     }
     /// <p>The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>. For example, suppose that you create a step scaling policy to scale out an Amazon ECS service by 25 percent and you specify a <code>MinAdjustmentMagnitude</code> of 2. If the service has 4 tasks and the scaling policy is performed, 25 percent of 4 is 1. However, because you specified a <code>MinAdjustmentMagnitude</code> of 2, Application Auto Scaling scales out the service by 2 tasks.</p>
     pub fn min_adjustment_magnitude(&self) -> ::std::option::Option<i32> {

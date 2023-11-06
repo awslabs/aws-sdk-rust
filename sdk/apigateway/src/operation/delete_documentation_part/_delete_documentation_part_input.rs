@@ -35,6 +35,7 @@ pub struct DeleteDocumentationPartInputBuilder {
 }
 impl DeleteDocumentationPartInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
+    /// This field is required.
     pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rest_api_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl DeleteDocumentationPartInputBuilder {
         &self.rest_api_id
     }
     /// <p>The identifier of the to-be-deleted documentation part.</p>
+    /// This field is required.
     pub fn documentation_part_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.documentation_part_id = ::std::option::Option::Some(input.into());
         self
@@ -67,7 +69,7 @@ impl DeleteDocumentationPartInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_documentation_part::DeleteDocumentationPartInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_documentation_part::DeleteDocumentationPartInput {
             rest_api_id: self.rest_api_id,

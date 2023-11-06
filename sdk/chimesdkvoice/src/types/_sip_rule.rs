@@ -43,8 +43,10 @@ impl SipRule {
         self.trigger_value.as_deref()
     }
     /// <p>The target SIP media application and other details, such as priority and AWS Region, to be specified in the SIP rule. Only one SIP rule per AWS Region can be provided.</p>
-    pub fn target_applications(&self) -> ::std::option::Option<&[crate::types::SipRuleTargetApplication]> {
-        self.target_applications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_applications.is_none()`.
+    pub fn target_applications(&self) -> &[crate::types::SipRuleTargetApplication] {
+        self.target_applications.as_deref().unwrap_or_default()
     }
     /// <p>The time at which the SIP rule was created, in ISO 8601 format.</p>
     pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

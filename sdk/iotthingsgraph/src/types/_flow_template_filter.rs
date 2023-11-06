@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FlowTemplateFilter {
     /// <p>The name of the search filter field.</p>
-    pub name: ::std::option::Option<crate::types::FlowTemplateFilterName>,
+    pub name: crate::types::FlowTemplateFilterName,
     /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
-    pub value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub value: ::std::vec::Vec<::std::string::String>,
 }
 impl FlowTemplateFilter {
     /// <p>The name of the search filter field.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::FlowTemplateFilterName> {
-        self.name.as_ref()
+    pub fn name(&self) -> &crate::types::FlowTemplateFilterName {
+        &self.name
     }
     /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
-    pub fn value(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.value.as_deref()
+    pub fn value(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.value.deref()
     }
 }
 impl FlowTemplateFilter {
@@ -35,6 +36,7 @@ pub struct FlowTemplateFilterBuilder {
 }
 impl FlowTemplateFilterBuilder {
     /// <p>The name of the search filter field.</p>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::FlowTemplateFilterName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -69,10 +71,23 @@ impl FlowTemplateFilterBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`FlowTemplateFilter`](crate::types::FlowTemplateFilter).
-    pub fn build(self) -> crate::types::FlowTemplateFilter {
-        crate::types::FlowTemplateFilter {
-            name: self.name,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::FlowTemplateFilterBuilder::name)
+    /// - [`value`](crate::types::builders::FlowTemplateFilterBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::FlowTemplateFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::FlowTemplateFilter {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building FlowTemplateFilter",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building FlowTemplateFilter",
+                )
+            })?,
+        })
     }
 }

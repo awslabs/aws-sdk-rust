@@ -41,6 +41,7 @@ pub struct GetOutpostInstanceTypesInputBuilder {
 }
 impl GetOutpostInstanceTypesInputBuilder {
     /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
+    /// This field is required.
     pub fn outpost_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outpost_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl GetOutpostInstanceTypesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_outpost_instance_types::GetOutpostInstanceTypesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_outpost_instance_types::GetOutpostInstanceTypesInput {
             outpost_id: self.outpost_id,

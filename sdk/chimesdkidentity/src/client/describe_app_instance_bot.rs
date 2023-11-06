@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeAppInstanceBot`](crate::operation::describe_app_instance_bot::builders::DescribeAppInstanceBotFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_instance_bot_arn(impl Into<String>)`](crate::operation::describe_app_instance_bot::builders::DescribeAppInstanceBotFluentBuilder::app_instance_bot_arn) / [`set_app_instance_bot_arn(Option<String>)`](crate::operation::describe_app_instance_bot::builders::DescribeAppInstanceBotFluentBuilder::set_app_instance_bot_arn): <p>The ARN of the <code>AppInstanceBot</code>.</p>
+    ///   - [`app_instance_bot_arn(impl Into<String>)`](crate::operation::describe_app_instance_bot::builders::DescribeAppInstanceBotFluentBuilder::app_instance_bot_arn) / [`set_app_instance_bot_arn(Option<String>)`](crate::operation::describe_app_instance_bot::builders::DescribeAppInstanceBotFluentBuilder::set_app_instance_bot_arn):<br>required: **true**<br><p>The ARN of the <code>AppInstanceBot</code>.</p><br>
     /// - On success, responds with [`DescribeAppInstanceBotOutput`](crate::operation::describe_app_instance_bot::DescribeAppInstanceBotOutput) with field(s):
     ///   - [`app_instance_bot(Option<AppInstanceBot>)`](crate::operation::describe_app_instance_bot::DescribeAppInstanceBotOutput::app_instance_bot): <p>The detials of the <code>AppInstanceBot</code>.</p>
     /// - On failure, responds with [`SdkError<DescribeAppInstanceBotError>`](crate::operation::describe_app_instance_bot::DescribeAppInstanceBotError)

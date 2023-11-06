@@ -34,6 +34,7 @@ pub struct CreateParameterGroupInputBuilder {
 }
 impl CreateParameterGroupInputBuilder {
     /// <p>The name of the parameter group to apply to all of the clusters in this replication group.</p>
+    /// This field is required.
     pub fn parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_group_name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl CreateParameterGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateParameterGroupInput`](crate::operation::create_parameter_group::CreateParameterGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_parameter_group::CreateParameterGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_parameter_group::CreateParameterGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_parameter_group::CreateParameterGroupInput {
             parameter_group_name: self.parameter_group_name,

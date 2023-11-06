@@ -2,7 +2,7 @@
 pub fn ser_register_application_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::register_application::RegisterApplicationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.application_id {
         object.key("ApplicationId").string(var_1.as_str());
     }
@@ -21,30 +21,33 @@ pub fn ser_register_application_input(
         }
         array_4.finish();
     }
-    if let Some(var_7) = &input.instances {
-        let mut array_8 = object.key("Instances").start_array();
-        for item_9 in var_7 {
+    if let Some(var_7) = &input.database_arn {
+        object.key("DatabaseArn").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.instances {
+        let mut array_9 = object.key("Instances").start_array();
+        for item_10 in var_8 {
             {
-                array_8.value().string(item_9.as_str());
+                array_9.value().string(item_10.as_str());
             }
         }
-        array_8.finish();
+        array_9.finish();
     }
-    if let Some(var_10) = &input.sap_instance_number {
-        object.key("SapInstanceNumber").string(var_10.as_str());
+    if let Some(var_11) = &input.sap_instance_number {
+        object.key("SapInstanceNumber").string(var_11.as_str());
     }
-    if let Some(var_11) = &input.sid {
-        object.key("Sid").string(var_11.as_str());
+    if let Some(var_12) = &input.sid {
+        object.key("Sid").string(var_12.as_str());
     }
-    if let Some(var_12) = &input.tags {
+    if let Some(var_13) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("Tags").start_object();
-        for (key_14, value_15) in var_12 {
+        let mut object_14 = object.key("Tags").start_object();
+        for (key_15, value_16) in var_13 {
             {
-                object_13.key(key_14.as_str()).string(value_15.as_str());
+                object_14.key(key_15.as_str()).string(value_16.as_str());
             }
         }
-        object_13.finish();
+        object_14.finish();
     }
     Ok(())
 }

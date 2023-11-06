@@ -2,7 +2,7 @@
 pub fn ser_get_ml_transform_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_ml_transform::GetMlTransformInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.transform_id {
         object.key("TransformId").string(var_1.as_str());
     }

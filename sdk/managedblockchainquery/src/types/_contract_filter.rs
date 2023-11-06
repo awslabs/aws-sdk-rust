@@ -5,24 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContractFilter {
     /// <p>The blockchain network of the contract.</p>
-    pub network: ::std::option::Option<crate::types::QueryNetwork>,
+    pub network: crate::types::QueryNetwork,
     /// <p>The container for the token standard.</p>
-    pub token_standard: ::std::option::Option<crate::types::QueryTokenStandard>,
+    pub token_standard: crate::types::QueryTokenStandard,
     /// <p>The network address of the deployer.</p>
-    pub deployer_address: ::std::option::Option<::std::string::String>,
+    pub deployer_address: ::std::string::String,
 }
 impl ContractFilter {
     /// <p>The blockchain network of the contract.</p>
-    pub fn network(&self) -> ::std::option::Option<&crate::types::QueryNetwork> {
-        self.network.as_ref()
+    pub fn network(&self) -> &crate::types::QueryNetwork {
+        &self.network
     }
     /// <p>The container for the token standard.</p>
-    pub fn token_standard(&self) -> ::std::option::Option<&crate::types::QueryTokenStandard> {
-        self.token_standard.as_ref()
+    pub fn token_standard(&self) -> &crate::types::QueryTokenStandard {
+        &self.token_standard
     }
     /// <p>The network address of the deployer.</p>
-    pub fn deployer_address(&self) -> ::std::option::Option<&str> {
-        self.deployer_address.as_deref()
+    pub fn deployer_address(&self) -> &str {
+        use std::ops::Deref;
+        self.deployer_address.deref()
     }
 }
 impl ContractFilter {
@@ -42,6 +43,7 @@ pub struct ContractFilterBuilder {
 }
 impl ContractFilterBuilder {
     /// <p>The blockchain network of the contract.</p>
+    /// This field is required.
     pub fn network(mut self, input: crate::types::QueryNetwork) -> Self {
         self.network = ::std::option::Option::Some(input);
         self
@@ -56,6 +58,7 @@ impl ContractFilterBuilder {
         &self.network
     }
     /// <p>The container for the token standard.</p>
+    /// This field is required.
     pub fn token_standard(mut self, input: crate::types::QueryTokenStandard) -> Self {
         self.token_standard = ::std::option::Option::Some(input);
         self
@@ -70,6 +73,7 @@ impl ContractFilterBuilder {
         &self.token_standard
     }
     /// <p>The network address of the deployer.</p>
+    /// This field is required.
     pub fn deployer_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployer_address = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +88,30 @@ impl ContractFilterBuilder {
         &self.deployer_address
     }
     /// Consumes the builder and constructs a [`ContractFilter`](crate::types::ContractFilter).
-    pub fn build(self) -> crate::types::ContractFilter {
-        crate::types::ContractFilter {
-            network: self.network,
-            token_standard: self.token_standard,
-            deployer_address: self.deployer_address,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`network`](crate::types::builders::ContractFilterBuilder::network)
+    /// - [`token_standard`](crate::types::builders::ContractFilterBuilder::token_standard)
+    /// - [`deployer_address`](crate::types::builders::ContractFilterBuilder::deployer_address)
+    pub fn build(self) -> ::std::result::Result<crate::types::ContractFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ContractFilter {
+            network: self.network.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "network",
+                    "network was not specified but it is required when building ContractFilter",
+                )
+            })?,
+            token_standard: self.token_standard.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "token_standard",
+                    "token_standard was not specified but it is required when building ContractFilter",
+                )
+            })?,
+            deployer_address: self.deployer_address.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "deployer_address",
+                    "deployer_address was not specified but it is required when building ContractFilter",
+                )
+            })?,
+        })
     }
 }

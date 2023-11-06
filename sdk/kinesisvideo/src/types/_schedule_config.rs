@@ -8,18 +8,19 @@
 pub struct ScheduleConfig {
     /// <p>The Quartz cron expression that takes care of scheduling jobs to record from the camera, or local media file, onto the Edge Agent. If the <code>ScheduleExpression</code> is not provided for the <code>RecorderConfig</code>, then the Edge Agent will always be set to recording mode.</p>
     /// <p>For more information about Quartz, refer to the <a href="http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html"> <i>Cron Trigger Tutorial</i> </a> page to understand the valid expressions and its use.</p>
-    pub schedule_expression: ::std::option::Option<::std::string::String>,
+    pub schedule_expression: ::std::string::String,
     /// <p>The total duration to record the media. If the <code>ScheduleExpression</code> attribute is provided, then the <code>DurationInSeconds</code> attribute should also be specified.</p>
-    pub duration_in_seconds: ::std::option::Option<i32>,
+    pub duration_in_seconds: i32,
 }
 impl ScheduleConfig {
     /// <p>The Quartz cron expression that takes care of scheduling jobs to record from the camera, or local media file, onto the Edge Agent. If the <code>ScheduleExpression</code> is not provided for the <code>RecorderConfig</code>, then the Edge Agent will always be set to recording mode.</p>
     /// <p>For more information about Quartz, refer to the <a href="http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html"> <i>Cron Trigger Tutorial</i> </a> page to understand the valid expressions and its use.</p>
-    pub fn schedule_expression(&self) -> ::std::option::Option<&str> {
-        self.schedule_expression.as_deref()
+    pub fn schedule_expression(&self) -> &str {
+        use std::ops::Deref;
+        self.schedule_expression.deref()
     }
     /// <p>The total duration to record the media. If the <code>ScheduleExpression</code> attribute is provided, then the <code>DurationInSeconds</code> attribute should also be specified.</p>
-    pub fn duration_in_seconds(&self) -> ::std::option::Option<i32> {
+    pub fn duration_in_seconds(&self) -> i32 {
         self.duration_in_seconds
     }
 }
@@ -40,6 +41,7 @@ pub struct ScheduleConfigBuilder {
 impl ScheduleConfigBuilder {
     /// <p>The Quartz cron expression that takes care of scheduling jobs to record from the camera, or local media file, onto the Edge Agent. If the <code>ScheduleExpression</code> is not provided for the <code>RecorderConfig</code>, then the Edge Agent will always be set to recording mode.</p>
     /// <p>For more information about Quartz, refer to the <a href="http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html"> <i>Cron Trigger Tutorial</i> </a> page to understand the valid expressions and its use.</p>
+    /// This field is required.
     pub fn schedule_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule_expression = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +58,7 @@ impl ScheduleConfigBuilder {
         &self.schedule_expression
     }
     /// <p>The total duration to record the media. If the <code>ScheduleExpression</code> attribute is provided, then the <code>DurationInSeconds</code> attribute should also be specified.</p>
+    /// This field is required.
     pub fn duration_in_seconds(mut self, input: i32) -> Self {
         self.duration_in_seconds = ::std::option::Option::Some(input);
         self
@@ -70,10 +73,23 @@ impl ScheduleConfigBuilder {
         &self.duration_in_seconds
     }
     /// Consumes the builder and constructs a [`ScheduleConfig`](crate::types::ScheduleConfig).
-    pub fn build(self) -> crate::types::ScheduleConfig {
-        crate::types::ScheduleConfig {
-            schedule_expression: self.schedule_expression,
-            duration_in_seconds: self.duration_in_seconds,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`schedule_expression`](crate::types::builders::ScheduleConfigBuilder::schedule_expression)
+    /// - [`duration_in_seconds`](crate::types::builders::ScheduleConfigBuilder::duration_in_seconds)
+    pub fn build(self) -> ::std::result::Result<crate::types::ScheduleConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ScheduleConfig {
+            schedule_expression: self.schedule_expression.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "schedule_expression",
+                    "schedule_expression was not specified but it is required when building ScheduleConfig",
+                )
+            })?,
+            duration_in_seconds: self.duration_in_seconds.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "duration_in_seconds",
+                    "duration_in_seconds was not specified but it is required when building ScheduleConfig",
+                )
+            })?,
+        })
     }
 }

@@ -55,6 +55,7 @@ impl IngressGatewayBridgeBuilder {
         &self.instance_id
     }
     /// The maximum expected bitrate (in bps) of the ingress bridge.
+    /// This field is required.
     pub fn max_bitrate(mut self, input: i32) -> Self {
         self.max_bitrate = ::std::option::Option::Some(input);
         self
@@ -69,6 +70,7 @@ impl IngressGatewayBridgeBuilder {
         &self.max_bitrate
     }
     /// The maximum number of outputs on the ingress bridge.
+    /// This field is required.
     pub fn max_outputs(mut self, input: i32) -> Self {
         self.max_outputs = ::std::option::Option::Some(input);
         self

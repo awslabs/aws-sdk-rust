@@ -39,8 +39,10 @@ impl DestinationFieldProperties {
         self.is_defaulted_on_create
     }
     /// <p> A list of supported write operations. For each write operation listed, this field can be used in <code>idFieldNames</code> when that write operation is present as a destination option. </p>
-    pub fn supported_write_operations(&self) -> ::std::option::Option<&[crate::types::WriteOperationType]> {
-        self.supported_write_operations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_write_operations.is_none()`.
+    pub fn supported_write_operations(&self) -> &[crate::types::WriteOperationType] {
+        self.supported_write_operations.as_deref().unwrap_or_default()
     }
 }
 impl DestinationFieldProperties {

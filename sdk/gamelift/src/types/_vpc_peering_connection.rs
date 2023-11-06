@@ -11,7 +11,7 @@ pub struct VpcPeeringConnection {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift fleet resource for this connection. </p>
     pub fleet_arn: ::std::option::Option<::std::string::String>,
     /// <p>CIDR block of IPv4 addresses assigned to the VPC peering connection for the GameLift VPC. The peered VPC also has an IPv4 CIDR block associated with it; these blocks cannot overlap or the peering connection cannot be created. </p>
-    pub ip_v4_cidr_block: ::std::option::Option<::std::string::String>,
+    pub ipv4_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier that is automatically assigned to the connection record. This ID is referenced in VPC peering connection events, and is used when deleting a connection.</p>
     pub vpc_peering_connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The status information about the connection. Status indicates if a connection is pending, successful, or failed.</p>
@@ -31,8 +31,8 @@ impl VpcPeeringConnection {
         self.fleet_arn.as_deref()
     }
     /// <p>CIDR block of IPv4 addresses assigned to the VPC peering connection for the GameLift VPC. The peered VPC also has an IPv4 CIDR block associated with it; these blocks cannot overlap or the peering connection cannot be created. </p>
-    pub fn ip_v4_cidr_block(&self) -> ::std::option::Option<&str> {
-        self.ip_v4_cidr_block.as_deref()
+    pub fn ipv4_cidr_block(&self) -> ::std::option::Option<&str> {
+        self.ipv4_cidr_block.as_deref()
     }
     /// <p>A unique identifier that is automatically assigned to the connection record. This ID is referenced in VPC peering connection events, and is used when deleting a connection.</p>
     pub fn vpc_peering_connection_id(&self) -> ::std::option::Option<&str> {
@@ -64,7 +64,7 @@ impl VpcPeeringConnection {
 pub struct VpcPeeringConnectionBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) ip_v4_cidr_block: ::std::option::Option<::std::string::String>,
+    pub(crate) ipv4_cidr_block: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_peering_connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::VpcPeeringConnectionStatus>,
     pub(crate) peer_vpc_id: ::std::option::Option<::std::string::String>,
@@ -100,18 +100,18 @@ impl VpcPeeringConnectionBuilder {
         &self.fleet_arn
     }
     /// <p>CIDR block of IPv4 addresses assigned to the VPC peering connection for the GameLift VPC. The peered VPC also has an IPv4 CIDR block associated with it; these blocks cannot overlap or the peering connection cannot be created. </p>
-    pub fn ip_v4_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.ip_v4_cidr_block = ::std::option::Option::Some(input.into());
+    pub fn ipv4_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ipv4_cidr_block = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>CIDR block of IPv4 addresses assigned to the VPC peering connection for the GameLift VPC. The peered VPC also has an IPv4 CIDR block associated with it; these blocks cannot overlap or the peering connection cannot be created. </p>
-    pub fn set_ip_v4_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_v4_cidr_block = input;
+    pub fn set_ipv4_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ipv4_cidr_block = input;
         self
     }
     /// <p>CIDR block of IPv4 addresses assigned to the VPC peering connection for the GameLift VPC. The peered VPC also has an IPv4 CIDR block associated with it; these blocks cannot overlap or the peering connection cannot be created. </p>
-    pub fn get_ip_v4_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
-        &self.ip_v4_cidr_block
+    pub fn get_ipv4_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv4_cidr_block
     }
     /// <p>A unique identifier that is automatically assigned to the connection record. This ID is referenced in VPC peering connection events, and is used when deleting a connection.</p>
     pub fn vpc_peering_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -174,7 +174,7 @@ impl VpcPeeringConnectionBuilder {
         crate::types::VpcPeeringConnection {
             fleet_id: self.fleet_id,
             fleet_arn: self.fleet_arn,
-            ip_v4_cidr_block: self.ip_v4_cidr_block,
+            ipv4_cidr_block: self.ipv4_cidr_block,
             vpc_peering_connection_id: self.vpc_peering_connection_id,
             status: self.status,
             peer_vpc_id: self.peer_vpc_id,

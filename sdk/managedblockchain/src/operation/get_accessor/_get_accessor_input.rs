@@ -27,6 +27,7 @@ pub struct GetAccessorInputBuilder {
 }
 impl GetAccessorInputBuilder {
     /// <p>The unique identifier of the accessor.</p>
+    /// This field is required.
     pub fn accessor_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accessor_id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetAccessorInputBuilder {
         &self.accessor_id
     }
     /// Consumes the builder and constructs a [`GetAccessorInput`](crate::operation::get_accessor::GetAccessorInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_accessor::GetAccessorInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_accessor::GetAccessorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_accessor::GetAccessorInput {
             accessor_id: self.accessor_id,
         })

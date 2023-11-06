@@ -2,7 +2,7 @@
 pub fn ser_encoder_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EncoderSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.audio_descriptions {
         let mut array_2 = object.key("audioDescriptions").start_array();
         for item_3 in var_1 {
@@ -125,7 +125,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "audioDescriptions" => {
                             builder = builder.set_audio_descriptions(
-                                crate::protocol_serde::shape___list_of_audio_description::de___list_of_audio_description(tokens)?,
+                                crate::protocol_serde::shape_list_of_audio_description::de_list_of_audio_description(tokens)?,
                             );
                         }
                         "availBlanking" => {
@@ -140,7 +140,7 @@ where
                         }
                         "captionDescriptions" => {
                             builder = builder.set_caption_descriptions(
-                                crate::protocol_serde::shape___list_of_caption_description::de___list_of_caption_description(tokens)?,
+                                crate::protocol_serde::shape_list_of_caption_description::de_list_of_caption_description(tokens)?,
                             );
                         }
                         "featureActivations" => {
@@ -161,15 +161,14 @@ where
                                 .set_nielsen_configuration(crate::protocol_serde::shape_nielsen_configuration::de_nielsen_configuration(tokens)?);
                         }
                         "outputGroups" => {
-                            builder =
-                                builder.set_output_groups(crate::protocol_serde::shape___list_of_output_group::de___list_of_output_group(tokens)?);
+                            builder = builder.set_output_groups(crate::protocol_serde::shape_list_of_output_group::de_list_of_output_group(tokens)?);
                         }
                         "timecodeConfig" => {
                             builder = builder.set_timecode_config(crate::protocol_serde::shape_timecode_config::de_timecode_config(tokens)?);
                         }
                         "videoDescriptions" => {
                             builder = builder.set_video_descriptions(
-                                crate::protocol_serde::shape___list_of_video_description::de___list_of_video_description(tokens)?,
+                                crate::protocol_serde::shape_list_of_video_description::de_list_of_video_description(tokens)?,
                             );
                         }
                         "thumbnailConfiguration" => {
@@ -187,7 +186,7 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::encoder_settings_correct_errors(builder).build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

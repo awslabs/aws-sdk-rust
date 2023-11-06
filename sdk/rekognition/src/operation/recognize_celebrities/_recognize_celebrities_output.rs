@@ -18,12 +18,16 @@ pub struct RecognizeCelebritiesOutput {
 }
 impl RecognizeCelebritiesOutput {
     /// <p>Details about each celebrity found in the image. Amazon Rekognition can detect a maximum of 64 celebrities in an image. Each celebrity object includes the following attributes: <code>Face</code>, <code>Confidence</code>, <code>Emotions</code>, <code>Landmarks</code>, <code>Pose</code>, <code>Quality</code>, <code>Smile</code>, <code>Id</code>, <code>KnownGender</code>, <code>MatchConfidence</code>, <code>Name</code>, <code>Urls</code>.</p>
-    pub fn celebrity_faces(&self) -> ::std::option::Option<&[crate::types::Celebrity]> {
-        self.celebrity_faces.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.celebrity_faces.is_none()`.
+    pub fn celebrity_faces(&self) -> &[crate::types::Celebrity] {
+        self.celebrity_faces.as_deref().unwrap_or_default()
     }
     /// <p>Details about each unrecognized face in the image.</p>
-    pub fn unrecognized_faces(&self) -> ::std::option::Option<&[crate::types::ComparedFace]> {
-        self.unrecognized_faces.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unrecognized_faces.is_none()`.
+    pub fn unrecognized_faces(&self) -> &[crate::types::ComparedFace] {
+        self.unrecognized_faces.as_deref().unwrap_or_default()
     }
     /// <note>
     /// <p>Support for estimating image orientation using the the OrientationCorrection field has ceased as of August 2021. Any returned values for this field included in an API response will always be NULL.</p>

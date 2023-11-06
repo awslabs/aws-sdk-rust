@@ -9,8 +9,10 @@ pub struct AwsWafv2CustomRequestHandlingDetails {
 }
 impl AwsWafv2CustomRequestHandlingDetails {
     /// <p> The HTTP headers to insert into the request. </p>
-    pub fn insert_headers(&self) -> ::std::option::Option<&[crate::types::AwsWafv2CustomHttpHeader]> {
-        self.insert_headers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.insert_headers.is_none()`.
+    pub fn insert_headers(&self) -> &[crate::types::AwsWafv2CustomHttpHeader] {
+        self.insert_headers.as_deref().unwrap_or_default()
     }
 }
 impl AwsWafv2CustomRequestHandlingDetails {

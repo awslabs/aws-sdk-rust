@@ -12,8 +12,10 @@ pub struct ListPipelineExecutionsOutput {
 }
 impl ListPipelineExecutionsOutput {
     /// <p>A list of executions in the history of a pipeline.</p>
-    pub fn pipeline_execution_summaries(&self) -> ::std::option::Option<&[crate::types::PipelineExecutionSummary]> {
-        self.pipeline_execution_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pipeline_execution_summaries.is_none()`.
+    pub fn pipeline_execution_summaries(&self) -> &[crate::types::PipelineExecutionSummary] {
+        self.pipeline_execution_summaries.as_deref().unwrap_or_default()
     }
     /// <p>A token that can be used in the next <code>ListPipelineExecutions</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

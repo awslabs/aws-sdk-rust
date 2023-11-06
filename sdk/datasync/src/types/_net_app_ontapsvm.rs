@@ -52,8 +52,10 @@ impl NetAppOntapsvm {
         self.cifs_share_count
     }
     /// <p>The data transfer protocols (such as NFS) configured for the SVM.</p>
-    pub fn enabled_protocols(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.enabled_protocols.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enabled_protocols.is_none()`.
+    pub fn enabled_protocols(&self) -> &[::std::string::String] {
+        self.enabled_protocols.as_deref().unwrap_or_default()
     }
     /// <p>The storage space that's being used in the SVM.</p>
     pub fn total_capacity_used(&self) -> ::std::option::Option<i64> {
@@ -72,8 +74,10 @@ impl NetAppOntapsvm {
         self.max_p95_performance.as_ref()
     }
     /// <p>The Amazon Web Services storage services that DataSync Discovery recommends for the SVM. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-understand-recommendations.html">Recommendations provided by DataSync Discovery</a>.</p>
-    pub fn recommendations(&self) -> ::std::option::Option<&[crate::types::Recommendation]> {
-        self.recommendations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recommendations.is_none()`.
+    pub fn recommendations(&self) -> &[crate::types::Recommendation] {
+        self.recommendations.as_deref().unwrap_or_default()
     }
     /// <p>The number of NFS volumes in the SVM.</p>
     pub fn nfs_exported_volumes(&self) -> ::std::option::Option<i64> {

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetBundleImportJobVpcConnectionOverrideParameters {
     /// <p>The ID of the VPC Connection to apply overrides to.</p>
-    pub vpc_connection_id: ::std::option::Option<::std::string::String>,
+    pub vpc_connection_id: ::std::string::String,
     /// <p>A new name for the VPC connection.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A list of new subnet IDs for the VPC connection you are importing. This field is required if you are importing the VPC connection from another Amazon Web Services account or Region.</p>
@@ -19,24 +19,31 @@ pub struct AssetBundleImportJobVpcConnectionOverrideParameters {
 }
 impl AssetBundleImportJobVpcConnectionOverrideParameters {
     /// <p>The ID of the VPC Connection to apply overrides to.</p>
-    pub fn vpc_connection_id(&self) -> ::std::option::Option<&str> {
-        self.vpc_connection_id.as_deref()
+    pub fn vpc_connection_id(&self) -> &str {
+        use std::ops::Deref;
+        self.vpc_connection_id.deref()
     }
     /// <p>A new name for the VPC connection.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A list of new subnet IDs for the VPC connection you are importing. This field is required if you are importing the VPC connection from another Amazon Web Services account or Region.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        self.subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>A new security group ID for the VPC connection you are importing. This field is required if you are importing the VPC connection from another Amazon Web Services account or Region.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>An optional override of DNS resolvers to be used by the VPC connection.</p>
-    pub fn dns_resolvers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.dns_resolvers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dns_resolvers.is_none()`.
+    pub fn dns_resolvers(&self) -> &[::std::string::String] {
+        self.dns_resolvers.as_deref().unwrap_or_default()
     }
     /// <p>An optional override of the role ARN to be used by the VPC connection.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
@@ -63,6 +70,7 @@ pub struct AssetBundleImportJobVpcConnectionOverrideParametersBuilder {
 }
 impl AssetBundleImportJobVpcConnectionOverrideParametersBuilder {
     /// <p>The ID of the VPC Connection to apply overrides to.</p>
+    /// This field is required.
     pub fn vpc_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_connection_id = ::std::option::Option::Some(input.into());
         self
@@ -165,14 +173,24 @@ impl AssetBundleImportJobVpcConnectionOverrideParametersBuilder {
         &self.role_arn
     }
     /// Consumes the builder and constructs a [`AssetBundleImportJobVpcConnectionOverrideParameters`](crate::types::AssetBundleImportJobVpcConnectionOverrideParameters).
-    pub fn build(self) -> crate::types::AssetBundleImportJobVpcConnectionOverrideParameters {
-        crate::types::AssetBundleImportJobVpcConnectionOverrideParameters {
-            vpc_connection_id: self.vpc_connection_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`vpc_connection_id`](crate::types::builders::AssetBundleImportJobVpcConnectionOverrideParametersBuilder::vpc_connection_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::AssetBundleImportJobVpcConnectionOverrideParameters, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::types::AssetBundleImportJobVpcConnectionOverrideParameters {
+            vpc_connection_id: self.vpc_connection_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "vpc_connection_id",
+                    "vpc_connection_id was not specified but it is required when building AssetBundleImportJobVpcConnectionOverrideParameters",
+                )
+            })?,
             name: self.name,
             subnet_ids: self.subnet_ids,
             security_group_ids: self.security_group_ids,
             dns_resolvers: self.dns_resolvers,
             role_arn: self.role_arn,
-        }
+        })
     }
 }

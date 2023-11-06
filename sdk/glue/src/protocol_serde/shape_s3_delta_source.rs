@@ -2,46 +2,46 @@
 pub fn ser_s3_delta_source(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::S3DeltaSource,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("Name").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.paths {
-        let mut array_3 = object.key("Paths").start_array();
-        for item_4 in var_2 {
+    {
+        let mut array_1 = object.key("Paths").start_array();
+        for item_2 in &input.paths {
             {
-                array_3.value().string(item_4.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_3.finish();
+        array_1.finish();
     }
-    if let Some(var_5) = &input.additional_delta_options {
+    if let Some(var_3) = &input.additional_delta_options {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("AdditionalDeltaOptions").start_object();
-        for (key_7, value_8) in var_5 {
+        let mut object_4 = object.key("AdditionalDeltaOptions").start_object();
+        for (key_5, value_6) in var_3 {
             {
-                object_6.key(key_7.as_str()).string(value_8.as_str());
+                object_4.key(key_5.as_str()).string(value_6.as_str());
             }
         }
-        object_6.finish();
+        object_4.finish();
     }
-    if let Some(var_9) = &input.additional_options {
+    if let Some(var_7) = &input.additional_options {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("AdditionalOptions").start_object();
-        crate::protocol_serde::shape_s3_direct_source_additional_options::ser_s3_direct_source_additional_options(&mut object_10, var_9)?;
-        object_10.finish();
+        let mut object_8 = object.key("AdditionalOptions").start_object();
+        crate::protocol_serde::shape_s3_direct_source_additional_options::ser_s3_direct_source_additional_options(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_11) = &input.output_schemas {
-        let mut array_12 = object.key("OutputSchemas").start_array();
-        for item_13 in var_11 {
+    if let Some(var_9) = &input.output_schemas {
+        let mut array_10 = object.key("OutputSchemas").start_array();
+        for item_11 in var_9 {
             {
                 #[allow(unused_mut)]
-                let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_glue_schema::ser_glue_schema(&mut object_14, item_13)?;
-                object_14.finish();
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_glue_schema::ser_glue_schema(&mut object_12, item_11)?;
+                object_12.finish();
             }
         }
-        array_12.finish();
+        array_10.finish();
     }
     Ok(())
 }
@@ -94,7 +94,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::s3_delta_source_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

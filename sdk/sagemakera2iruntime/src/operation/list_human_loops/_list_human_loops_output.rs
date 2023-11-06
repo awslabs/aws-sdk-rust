@@ -11,8 +11,10 @@ pub struct ListHumanLoopsOutput {
 }
 impl ListHumanLoopsOutput {
     /// <p>An array of objects that contain information about the human loops.</p>
-    pub fn human_loop_summaries(&self) -> ::std::option::Option<&[crate::types::HumanLoopSummary]> {
-        self.human_loop_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.human_loop_summaries.is_none()`.
+    pub fn human_loop_summaries(&self) -> &[crate::types::HumanLoopSummary] {
+        self.human_loop_summaries.as_deref().unwrap_or_default()
     }
     /// <p>A token to display the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

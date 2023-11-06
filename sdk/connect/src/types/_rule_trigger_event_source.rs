@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleTriggerEventSource {
     /// <p>The name of the event source.</p>
-    pub event_source_name: ::std::option::Option<crate::types::EventSourceName>,
+    pub event_source_name: crate::types::EventSourceName,
     /// <p>The identifier for the integration association.</p>
     pub integration_association_id: ::std::option::Option<::std::string::String>,
 }
 impl RuleTriggerEventSource {
     /// <p>The name of the event source.</p>
-    pub fn event_source_name(&self) -> ::std::option::Option<&crate::types::EventSourceName> {
-        self.event_source_name.as_ref()
+    pub fn event_source_name(&self) -> &crate::types::EventSourceName {
+        &self.event_source_name
     }
     /// <p>The identifier for the integration association.</p>
     pub fn integration_association_id(&self) -> ::std::option::Option<&str> {
@@ -35,6 +35,7 @@ pub struct RuleTriggerEventSourceBuilder {
 }
 impl RuleTriggerEventSourceBuilder {
     /// <p>The name of the event source.</p>
+    /// This field is required.
     pub fn event_source_name(mut self, input: crate::types::EventSourceName) -> Self {
         self.event_source_name = ::std::option::Option::Some(input);
         self
@@ -63,10 +64,17 @@ impl RuleTriggerEventSourceBuilder {
         &self.integration_association_id
     }
     /// Consumes the builder and constructs a [`RuleTriggerEventSource`](crate::types::RuleTriggerEventSource).
-    pub fn build(self) -> crate::types::RuleTriggerEventSource {
-        crate::types::RuleTriggerEventSource {
-            event_source_name: self.event_source_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`event_source_name`](crate::types::builders::RuleTriggerEventSourceBuilder::event_source_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::RuleTriggerEventSource, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RuleTriggerEventSource {
+            event_source_name: self.event_source_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "event_source_name",
+                    "event_source_name was not specified but it is required when building RuleTriggerEventSource",
+                )
+            })?,
             integration_association_id: self.integration_association_id,
-        }
+        })
     }
 }

@@ -65,10 +65,10 @@ pub mod list_assignments_for_hit;
 pub mod list_bonus_payments;
 
 /// Types for the `ListHITs` operation.
-pub mod list_hi_ts;
+pub mod list_hits;
 
 /// Types for the `ListHITsForQualificationType` operation.
-pub mod list_hi_ts_for_qualification_type;
+pub mod list_hits_for_qualification_type;
 
 /// Types for the `ListQualificationRequests` operation.
 pub mod list_qualification_requests;
@@ -80,7 +80,7 @@ pub mod list_qualification_types;
 pub mod list_review_policy_results_for_hit;
 
 /// Types for the `ListReviewableHITs` operation.
-pub mod list_reviewable_hi_ts;
+pub mod list_reviewable_hits;
 
 /// Types for the `ListWorkerBlocks` operation.
 pub mod list_worker_blocks;

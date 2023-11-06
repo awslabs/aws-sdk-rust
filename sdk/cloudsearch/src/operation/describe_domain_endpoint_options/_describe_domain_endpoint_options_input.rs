@@ -35,6 +35,7 @@ pub struct DescribeDomainEndpointOptionsInputBuilder {
 }
 impl DescribeDomainEndpointOptionsInputBuilder {
     /// <p>A string that represents the name of a domain.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -67,7 +68,7 @@ impl DescribeDomainEndpointOptionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_domain_endpoint_options::DescribeDomainEndpointOptionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_domain_endpoint_options::DescribeDomainEndpointOptionsInput {
             domain_name: self.domain_name,

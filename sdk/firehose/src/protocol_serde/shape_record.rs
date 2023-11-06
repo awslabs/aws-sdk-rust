@@ -2,9 +2,9 @@
 pub fn ser_record(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Record,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.data {
-        object.key("Data").string_unchecked(&::aws_smithy_types::base64::encode(var_1));
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Data").string_unchecked(&::aws_smithy_types::base64::encode(&input.data));
     }
     Ok(())
 }

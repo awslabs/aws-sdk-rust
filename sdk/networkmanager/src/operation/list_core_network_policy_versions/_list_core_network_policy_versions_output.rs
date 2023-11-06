@@ -11,8 +11,10 @@ pub struct ListCoreNetworkPolicyVersionsOutput {
 }
 impl ListCoreNetworkPolicyVersionsOutput {
     /// <p>Describes core network policy versions.</p>
-    pub fn core_network_policy_versions(&self) -> ::std::option::Option<&[crate::types::CoreNetworkPolicyVersion]> {
-        self.core_network_policy_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.core_network_policy_versions.is_none()`.
+    pub fn core_network_policy_versions(&self) -> &[crate::types::CoreNetworkPolicyVersion] {
+        self.core_network_policy_versions.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

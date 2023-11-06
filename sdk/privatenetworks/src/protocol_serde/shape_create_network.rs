@@ -30,11 +30,10 @@ pub fn de_create_network_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_network::CreateNetworkError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "LimitExceededException" => crate::operation::create_network::CreateNetworkError::LimitExceededException({
@@ -45,11 +44,10 @@ pub fn de_create_network_http_error(
                 output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_network::CreateNetworkError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::limit_exceeded_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_network::CreateNetworkError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::create_network::CreateNetworkError::ValidationException({
@@ -60,11 +58,10 @@ pub fn de_create_network_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_network::CreateNetworkError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_network::CreateNetworkError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::create_network::CreateNetworkError::generic(generic),
@@ -83,18 +80,18 @@ pub fn de_create_network_http_response(
         output = crate::protocol_serde::shape_create_network::de_create_network(_response_body, output)
             .map_err(crate::operation::create_network::CreateNetworkError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::create_network_output_correct_errors(output).build()
     })
 }
 
 pub fn ser_create_network_input(
     input: &crate::operation::create_network::CreateNetworkInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_network_input::ser_create_network_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_create_network(

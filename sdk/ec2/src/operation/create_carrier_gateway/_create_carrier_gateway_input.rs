@@ -18,8 +18,10 @@ impl CreateCarrierGatewayInput {
         self.vpc_id.as_deref()
     }
     /// <p>The tags to associate with the carrier gateway.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -48,6 +50,7 @@ pub struct CreateCarrierGatewayInputBuilder {
 }
 impl CreateCarrierGatewayInputBuilder {
     /// <p>The ID of the VPC to associate with the carrier gateway.</p>
+    /// This field is required.
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
         self
@@ -112,7 +115,7 @@ impl CreateCarrierGatewayInputBuilder {
     /// Consumes the builder and constructs a [`CreateCarrierGatewayInput`](crate::operation::create_carrier_gateway::CreateCarrierGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_carrier_gateway::CreateCarrierGatewayInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_carrier_gateway::CreateCarrierGatewayInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_carrier_gateway::CreateCarrierGatewayInput {
             vpc_id: self.vpc_id,

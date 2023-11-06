@@ -42,6 +42,7 @@ pub struct DvbNitSettingsBuilder {
 }
 impl DvbNitSettingsBuilder {
     /// The numeric value placed in the Network Information Table (NIT).
+    /// This field is required.
     pub fn network_id(mut self, input: i32) -> Self {
         self.network_id = ::std::option::Option::Some(input);
         self
@@ -56,6 +57,7 @@ impl DvbNitSettingsBuilder {
         &self.network_id
     }
     /// The network name text placed in the networkNameDescriptor inside the Network Information Table. Maximum length is 256 characters.
+    /// This field is required.
     pub fn network_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_name = ::std::option::Option::Some(input.into());
         self

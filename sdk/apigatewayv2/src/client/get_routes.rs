@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetRoutes`](crate::operation::get_routes::builders::GetRoutesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`api_id(impl Into<String>)`](crate::operation::get_routes::builders::GetRoutesFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::get_routes::builders::GetRoutesFluentBuilder::set_api_id): <p>The API identifier.</p>
-    ///   - [`max_results(impl Into<String>)`](crate::operation::get_routes::builders::GetRoutesFluentBuilder::max_results) / [`set_max_results(Option<String>)`](crate::operation::get_routes::builders::GetRoutesFluentBuilder::set_max_results): <p>The maximum number of elements to be returned for this resource.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::get_routes::builders::GetRoutesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_routes::builders::GetRoutesFluentBuilder::set_next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
+    ///   - [`api_id(impl Into<String>)`](crate::operation::get_routes::builders::GetRoutesFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::get_routes::builders::GetRoutesFluentBuilder::set_api_id):<br>required: **true**<br><p>The API identifier.</p><br>
+    ///   - [`max_results(impl Into<String>)`](crate::operation::get_routes::builders::GetRoutesFluentBuilder::max_results) / [`set_max_results(Option<String>)`](crate::operation::get_routes::builders::GetRoutesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of elements to be returned for this resource.</p><br>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::get_routes::builders::GetRoutesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_routes::builders::GetRoutesFluentBuilder::set_next_token):<br>required: **false**<br><p>The next page of elements from this collection. Not valid for the last element of the collection.</p><br>
     /// - On success, responds with [`GetRoutesOutput`](crate::operation::get_routes::GetRoutesOutput) with field(s):
-    ///   - [`items(Option<Vec<Route>>)`](crate::operation::get_routes::GetRoutesOutput::items): <p>The elements from this collection.</p>
+    ///   - [`items(Option<Vec::<Route>>)`](crate::operation::get_routes::GetRoutesOutput::items): <p>The elements from this collection.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_routes::GetRoutesOutput::next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
     /// - On failure, responds with [`SdkError<GetRoutesError>`](crate::operation::get_routes::GetRoutesError)
     pub fn get_routes(&self) -> crate::operation::get_routes::builders::GetRoutesFluentBuilder {

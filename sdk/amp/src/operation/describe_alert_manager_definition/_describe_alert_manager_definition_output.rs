@@ -35,6 +35,7 @@ pub struct DescribeAlertManagerDefinitionOutputBuilder {
 }
 impl DescribeAlertManagerDefinitionOutputBuilder {
     /// The properties of the selected workspace's alert manager definition.
+    /// This field is required.
     pub fn alert_manager_definition(mut self, input: crate::types::AlertManagerDefinitionDescription) -> Self {
         self.alert_manager_definition = ::std::option::Option::Some(input);
         self

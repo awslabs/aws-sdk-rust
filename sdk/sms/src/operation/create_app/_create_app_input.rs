@@ -34,12 +34,16 @@ impl CreateAppInput {
         self.client_token.as_deref()
     }
     /// <p>The server groups to include in the application.</p>
-    pub fn server_groups(&self) -> ::std::option::Option<&[crate::types::ServerGroup]> {
-        self.server_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.server_groups.is_none()`.
+    pub fn server_groups(&self) -> &[crate::types::ServerGroup] {
+        self.server_groups.as_deref().unwrap_or_default()
     }
     /// <p>The tags to be associated with the application.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateAppInput {
@@ -158,7 +162,7 @@ impl CreateAppInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateAppInput`](crate::operation::create_app::CreateAppInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_app::CreateAppInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_app::CreateAppInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_app::CreateAppInput {
             name: self.name,
             description: self.description,

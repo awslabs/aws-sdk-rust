@@ -48,6 +48,7 @@ pub struct CreateCustomPluginInputBuilder {
 }
 impl CreateCustomPluginInputBuilder {
     /// <p>The type of the plugin file.</p>
+    /// This field is required.
     pub fn content_type(mut self, input: crate::types::CustomPluginContentType) -> Self {
         self.content_type = ::std::option::Option::Some(input);
         self
@@ -76,6 +77,7 @@ impl CreateCustomPluginInputBuilder {
         &self.description
     }
     /// <p>Information about the location of a custom plugin.</p>
+    /// This field is required.
     pub fn location(mut self, input: crate::types::CustomPluginLocation) -> Self {
         self.location = ::std::option::Option::Some(input);
         self
@@ -90,6 +92,7 @@ impl CreateCustomPluginInputBuilder {
         &self.location
     }
     /// <p>The name of the custom plugin.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +109,8 @@ impl CreateCustomPluginInputBuilder {
     /// Consumes the builder and constructs a [`CreateCustomPluginInput`](crate::operation::create_custom_plugin::CreateCustomPluginInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_custom_plugin::CreateCustomPluginInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_custom_plugin::CreateCustomPluginInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_custom_plugin::CreateCustomPluginInput {
             content_type: self.content_type,
             description: self.description,

@@ -53,8 +53,10 @@ impl UpdateClusterInput {
         self.description.as_deref()
     }
     /// <p>The SecurityGroupIds to update</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
     /// <p>Valid values for <code>ddd</code> are:</p>
@@ -140,6 +142,7 @@ pub struct UpdateClusterInputBuilder {
 }
 impl UpdateClusterInputBuilder {
     /// <p>The name of the cluster to update</p>
+    /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
@@ -377,7 +380,7 @@ impl UpdateClusterInputBuilder {
     /// Consumes the builder and constructs a [`UpdateClusterInput`](crate::operation::update_cluster::UpdateClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_cluster::UpdateClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_cluster::UpdateClusterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_cluster::UpdateClusterInput {
             cluster_name: self.cluster_name,
             description: self.description,

@@ -2,18 +2,20 @@
 pub fn ser_trusted_certificate_public_key(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TrustedCertificatePublicKey,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.key_attributes {
         #[allow(unused_mut)]
         let mut object_2 = object.key("KeyAttributes").start_object();
         crate::protocol_serde::shape_key_attributes::ser_key_attributes(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.public_key_certificate {
-        object.key("PublicKeyCertificate").string(var_3.as_str());
+    {
+        object.key("PublicKeyCertificate").string(input.public_key_certificate.as_str());
     }
-    if let Some(var_4) = &input.certificate_authority_public_key_identifier {
-        object.key("CertificateAuthorityPublicKeyIdentifier").string(var_4.as_str());
+    {
+        object
+            .key("CertificateAuthorityPublicKeyIdentifier")
+            .string(input.certificate_authority_public_key_identifier.as_str());
     }
     Ok(())
 }

@@ -552,10 +552,7 @@ pub(crate) fn lens_list_bots_output_lex_bots(
 pub(crate) fn lens_list_contact_evaluations_output_evaluation_summary_list(
     input: crate::operation::list_contact_evaluations::ListContactEvaluationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::EvaluationSummary>> {
-    let input = match input.evaluation_summary_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.evaluation_summary_list;
     ::std::option::Option::Some(input)
 }
 
@@ -592,30 +589,21 @@ pub(crate) fn lens_list_contact_references_output_reference_summary_list(
 pub(crate) fn lens_list_default_vocabularies_output_default_vocabulary_list(
     input: crate::operation::list_default_vocabularies::ListDefaultVocabulariesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DefaultVocabulary>> {
-    let input = match input.default_vocabulary_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.default_vocabulary_list;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_evaluation_form_versions_output_evaluation_form_version_summary_list(
     input: crate::operation::list_evaluation_form_versions::ListEvaluationFormVersionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormVersionSummary>> {
-    let input = match input.evaluation_form_version_summary_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.evaluation_form_version_summary_list;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_evaluation_forms_output_evaluation_form_summary_list(
     input: crate::operation::list_evaluation_forms::ListEvaluationFormsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormSummary>> {
-    let input = match input.evaluation_form_summary_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.evaluation_form_summary_list;
     ::std::option::Option::Some(input)
 }
 
@@ -772,10 +760,7 @@ pub(crate) fn lens_list_routing_profiles_output_routing_profile_summary_list(
 pub(crate) fn lens_list_rules_output_rule_summary_list(
     input: crate::operation::list_rules::ListRulesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RuleSummary>> {
-    let input = match input.rule_summary_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.rule_summary_list;
     ::std::option::Option::Some(input)
 }
 

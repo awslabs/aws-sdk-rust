@@ -6,11 +6,19 @@
 pub struct ComputeCapacity {
     /// <p>The desired number of streaming instances.</p>
     pub desired_instances: ::std::option::Option<i32>,
+    /// <p>The desired number of user sessions for a multi-session fleet. This is not allowed for single-session fleets.</p>
+    /// <p>When you create a fleet, you must set either the DesiredSessions or DesiredInstances attribute, based on the type of fleet you create. You can’t define both attributes or leave both attributes blank.</p>
+    pub desired_sessions: ::std::option::Option<i32>,
 }
 impl ComputeCapacity {
     /// <p>The desired number of streaming instances.</p>
     pub fn desired_instances(&self) -> ::std::option::Option<i32> {
         self.desired_instances
+    }
+    /// <p>The desired number of user sessions for a multi-session fleet. This is not allowed for single-session fleets.</p>
+    /// <p>When you create a fleet, you must set either the DesiredSessions or DesiredInstances attribute, based on the type of fleet you create. You can’t define both attributes or leave both attributes blank.</p>
+    pub fn desired_sessions(&self) -> ::std::option::Option<i32> {
+        self.desired_sessions
     }
 }
 impl ComputeCapacity {
@@ -25,6 +33,7 @@ impl ComputeCapacity {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComputeCapacityBuilder {
     pub(crate) desired_instances: ::std::option::Option<i32>,
+    pub(crate) desired_sessions: ::std::option::Option<i32>,
 }
 impl ComputeCapacityBuilder {
     /// <p>The desired number of streaming instances.</p>
@@ -41,10 +50,28 @@ impl ComputeCapacityBuilder {
     pub fn get_desired_instances(&self) -> &::std::option::Option<i32> {
         &self.desired_instances
     }
+    /// <p>The desired number of user sessions for a multi-session fleet. This is not allowed for single-session fleets.</p>
+    /// <p>When you create a fleet, you must set either the DesiredSessions or DesiredInstances attribute, based on the type of fleet you create. You can’t define both attributes or leave both attributes blank.</p>
+    pub fn desired_sessions(mut self, input: i32) -> Self {
+        self.desired_sessions = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The desired number of user sessions for a multi-session fleet. This is not allowed for single-session fleets.</p>
+    /// <p>When you create a fleet, you must set either the DesiredSessions or DesiredInstances attribute, based on the type of fleet you create. You can’t define both attributes or leave both attributes blank.</p>
+    pub fn set_desired_sessions(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.desired_sessions = input;
+        self
+    }
+    /// <p>The desired number of user sessions for a multi-session fleet. This is not allowed for single-session fleets.</p>
+    /// <p>When you create a fleet, you must set either the DesiredSessions or DesiredInstances attribute, based on the type of fleet you create. You can’t define both attributes or leave both attributes blank.</p>
+    pub fn get_desired_sessions(&self) -> &::std::option::Option<i32> {
+        &self.desired_sessions
+    }
     /// Consumes the builder and constructs a [`ComputeCapacity`](crate::types::ComputeCapacity).
     pub fn build(self) -> crate::types::ComputeCapacity {
         crate::types::ComputeCapacity {
             desired_instances: self.desired_instances,
+            desired_sessions: self.desired_sessions,
         }
     }
 }

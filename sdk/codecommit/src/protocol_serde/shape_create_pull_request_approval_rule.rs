@@ -333,18 +333,18 @@ pub fn de_create_pull_request_approval_rule_http_response(
         output = crate::protocol_serde::shape_create_pull_request_approval_rule::de_create_pull_request_approval_rule(_response_body, output)
             .map_err(crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::create_pull_request_approval_rule_output_correct_errors(output).build()
     })
 }
 
 pub fn ser_create_pull_request_approval_rule_input(
     input: &crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_pull_request_approval_rule_input::ser_create_pull_request_approval_rule_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_create_pull_request_approval_rule(

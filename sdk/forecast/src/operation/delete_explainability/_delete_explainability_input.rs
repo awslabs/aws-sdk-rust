@@ -27,6 +27,7 @@ pub struct DeleteExplainabilityInputBuilder {
 }
 impl DeleteExplainabilityInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Explainability resource to delete.</p>
+    /// This field is required.
     pub fn explainability_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.explainability_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteExplainabilityInputBuilder {
     /// Consumes the builder and constructs a [`DeleteExplainabilityInput`](crate::operation::delete_explainability::DeleteExplainabilityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_explainability::DeleteExplainabilityInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_explainability::DeleteExplainabilityInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_explainability::DeleteExplainabilityInput {
             explainability_arn: self.explainability_arn,

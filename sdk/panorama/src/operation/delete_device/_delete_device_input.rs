@@ -27,6 +27,7 @@ pub struct DeleteDeviceInputBuilder {
 }
 impl DeleteDeviceInputBuilder {
     /// <p>The device's ID.</p>
+    /// This field is required.
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,9 @@ impl DeleteDeviceInputBuilder {
         &self.device_id
     }
     /// Consumes the builder and constructs a [`DeleteDeviceInput`](crate::operation::delete_device::DeleteDeviceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_device::DeleteDeviceInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_device::DeleteDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_device::DeleteDeviceInput { device_id: self.device_id })
     }
 }

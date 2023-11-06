@@ -49,6 +49,7 @@ pub struct SavingsPlansUtilizationByTimeBuilder {
 }
 impl SavingsPlansUtilizationByTimeBuilder {
     /// <p>The time period of the request. </p>
+    /// This field is required.
     pub fn time_period(mut self, input: crate::types::DateInterval) -> Self {
         self.time_period = ::std::option::Option::Some(input);
         self
@@ -63,6 +64,7 @@ impl SavingsPlansUtilizationByTimeBuilder {
         &self.time_period
     }
     /// <p>A ratio of your effectiveness of using existing Savings Plans to apply to workloads that are Savings Plans eligible.</p>
+    /// This field is required.
     pub fn utilization(mut self, input: crate::types::SavingsPlansUtilization) -> Self {
         self.utilization = ::std::option::Option::Some(input);
         self

@@ -13,8 +13,10 @@ pub struct DescribeLoadBalancersInput {
 }
 impl DescribeLoadBalancersInput {
     /// <p>The names of the load balancers.</p>
-    pub fn load_balancer_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.load_balancer_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.load_balancer_names.is_none()`.
+    pub fn load_balancer_names(&self) -> &[::std::string::String] {
+        self.load_balancer_names.as_deref().unwrap_or_default()
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {
@@ -92,7 +94,7 @@ impl DescribeLoadBalancersInputBuilder {
     /// Consumes the builder and constructs a [`DescribeLoadBalancersInput`](crate::operation::describe_load_balancers::DescribeLoadBalancersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_load_balancers::DescribeLoadBalancersInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_load_balancers::DescribeLoadBalancersInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_load_balancers::DescribeLoadBalancersInput {
             load_balancer_names: self.load_balancer_names,

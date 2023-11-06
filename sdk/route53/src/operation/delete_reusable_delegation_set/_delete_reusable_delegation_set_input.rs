@@ -28,6 +28,7 @@ pub struct DeleteReusableDelegationSetInputBuilder {
 }
 impl DeleteReusableDelegationSetInputBuilder {
     /// <p>The ID of the reusable delegation set that you want to delete.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl DeleteReusableDelegationSetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetInput { id: self.id })
     }

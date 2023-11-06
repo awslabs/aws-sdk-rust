@@ -16,8 +16,10 @@ pub struct SameSheetTargetVisualConfiguration {
 }
 impl SameSheetTargetVisualConfiguration {
     /// <p>A list of the target visual IDs that are located in the same sheet of the analysis.</p>
-    pub fn target_visuals(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.target_visuals.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_visuals.is_none()`.
+    pub fn target_visuals(&self) -> &[::std::string::String] {
+        self.target_visuals.as_deref().unwrap_or_default()
     }
     /// <p>The options that choose the target visual in the same sheet.</p>
     /// <p>Valid values are defined as follows:</p>

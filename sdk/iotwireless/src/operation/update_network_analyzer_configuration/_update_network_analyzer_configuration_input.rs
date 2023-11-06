@@ -32,32 +32,44 @@ impl UpdateNetworkAnalyzerConfigurationInput {
         self.trace_content.as_ref()
     }
     /// <p>Wireless device resources to add to the network analyzer configuration. Provide the <code>WirelessDeviceId</code> of the resource to add in the input array.</p>
-    pub fn wireless_devices_to_add(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.wireless_devices_to_add.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.wireless_devices_to_add.is_none()`.
+    pub fn wireless_devices_to_add(&self) -> &[::std::string::String] {
+        self.wireless_devices_to_add.as_deref().unwrap_or_default()
     }
     /// <p>Wireless device resources to remove from the network analyzer configuration. Provide the <code>WirelessDeviceId</code> of the resources to remove in the input array.</p>
-    pub fn wireless_devices_to_remove(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.wireless_devices_to_remove.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.wireless_devices_to_remove.is_none()`.
+    pub fn wireless_devices_to_remove(&self) -> &[::std::string::String] {
+        self.wireless_devices_to_remove.as_deref().unwrap_or_default()
     }
     /// <p>Wireless gateway resources to add to the network analyzer configuration. Provide the <code>WirelessGatewayId</code> of the resource to add in the input array.</p>
-    pub fn wireless_gateways_to_add(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.wireless_gateways_to_add.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.wireless_gateways_to_add.is_none()`.
+    pub fn wireless_gateways_to_add(&self) -> &[::std::string::String] {
+        self.wireless_gateways_to_add.as_deref().unwrap_or_default()
     }
     /// <p>Wireless gateway resources to remove from the network analyzer configuration. Provide the <code>WirelessGatewayId</code> of the resources to remove in the input array.</p>
-    pub fn wireless_gateways_to_remove(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.wireless_gateways_to_remove.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.wireless_gateways_to_remove.is_none()`.
+    pub fn wireless_gateways_to_remove(&self) -> &[::std::string::String] {
+        self.wireless_gateways_to_remove.as_deref().unwrap_or_default()
     }
     /// <p>The description of the new resource.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Multicast group resources to add to the network analyzer configuration. Provide the <code>MulticastGroupId</code> of the resource to add in the input array.</p>
-    pub fn multicast_groups_to_add(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.multicast_groups_to_add.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.multicast_groups_to_add.is_none()`.
+    pub fn multicast_groups_to_add(&self) -> &[::std::string::String] {
+        self.multicast_groups_to_add.as_deref().unwrap_or_default()
     }
     /// <p>Multicast group resources to remove from the network analyzer configuration. Provide the <code>MulticastGroupId</code> of the resource to remove in the input array.</p>
-    pub fn multicast_groups_to_remove(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.multicast_groups_to_remove.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.multicast_groups_to_remove.is_none()`.
+    pub fn multicast_groups_to_remove(&self) -> &[::std::string::String] {
+        self.multicast_groups_to_remove.as_deref().unwrap_or_default()
     }
 }
 impl UpdateNetworkAnalyzerConfigurationInput {
@@ -83,6 +95,7 @@ pub struct UpdateNetworkAnalyzerConfigurationInputBuilder {
 }
 impl UpdateNetworkAnalyzerConfigurationInputBuilder {
     /// <p>Name of the network analyzer configuration.</p>
+    /// This field is required.
     pub fn configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_name = ::std::option::Option::Some(input.into());
         self
@@ -249,7 +262,7 @@ impl UpdateNetworkAnalyzerConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_network_analyzer_configuration::UpdateNetworkAnalyzerConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_network_analyzer_configuration::UpdateNetworkAnalyzerConfigurationInput {

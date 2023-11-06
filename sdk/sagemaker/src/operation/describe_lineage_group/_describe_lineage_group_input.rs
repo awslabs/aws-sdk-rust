@@ -27,6 +27,7 @@ pub struct DescribeLineageGroupInputBuilder {
 }
 impl DescribeLineageGroupInputBuilder {
     /// <p>The name of the lineage group.</p>
+    /// This field is required.
     pub fn lineage_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lineage_group_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeLineageGroupInputBuilder {
     /// Consumes the builder and constructs a [`DescribeLineageGroupInput`](crate::operation::describe_lineage_group::DescribeLineageGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_lineage_group::DescribeLineageGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_lineage_group::DescribeLineageGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_lineage_group::DescribeLineageGroupInput {
             lineage_group_name: self.lineage_group_name,

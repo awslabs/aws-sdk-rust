@@ -27,6 +27,7 @@ pub struct CreateAppInputBuilder {
 }
 impl CreateAppInputBuilder {
     /// <p>Specifies the display name of an application and the tags to associate with the application.</p>
+    /// This field is required.
     pub fn create_application_request(mut self, input: crate::types::CreateApplicationRequest) -> Self {
         self.create_application_request = ::std::option::Option::Some(input);
         self
@@ -41,7 +42,7 @@ impl CreateAppInputBuilder {
         &self.create_application_request
     }
     /// Consumes the builder and constructs a [`CreateAppInput`](crate::operation::create_app::CreateAppInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_app::CreateAppInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_app::CreateAppInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_app::CreateAppInput {
             create_application_request: self.create_application_request,
         })

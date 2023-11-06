@@ -17,9 +17,11 @@ pub struct DescribeAffectedEntitiesForOrganizationInput {
 }
 impl DescribeAffectedEntitiesForOrganizationInput {
     /// <p>A JSON set of elements including the <code>awsAccountId</code> and the <code>eventArn</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.organization_entity_filters.is_none()`.
     #[deprecated(note = "This property is deprecated, use organizationEntityAccountFilters instead.")]
-    pub fn organization_entity_filters(&self) -> ::std::option::Option<&[crate::types::EventAccountFilter]> {
-        self.organization_entity_filters.as_deref()
+    pub fn organization_entity_filters(&self) -> &[crate::types::EventAccountFilter] {
+        self.organization_entity_filters.as_deref().unwrap_or_default()
     }
     /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
     pub fn locale(&self) -> ::std::option::Option<&str> {
@@ -34,8 +36,10 @@ impl DescribeAffectedEntitiesForOrganizationInput {
         self.max_results
     }
     /// <p>A JSON set of elements including the <code>awsAccountId</code>, <code>eventArn</code> and a set of <code>statusCodes</code>.</p>
-    pub fn organization_entity_account_filters(&self) -> ::std::option::Option<&[crate::types::EntityAccountFilter]> {
-        self.organization_entity_account_filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.organization_entity_account_filters.is_none()`.
+    pub fn organization_entity_account_filters(&self) -> &[crate::types::EntityAccountFilter] {
+        self.organization_entity_account_filters.as_deref().unwrap_or_default()
     }
 }
 impl DescribeAffectedEntitiesForOrganizationInput {
@@ -149,7 +153,7 @@ impl DescribeAffectedEntitiesForOrganizationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_affected_entities_for_organization::DescribeAffectedEntitiesForOrganizationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_affected_entities_for_organization::DescribeAffectedEntitiesForOrganizationInput {

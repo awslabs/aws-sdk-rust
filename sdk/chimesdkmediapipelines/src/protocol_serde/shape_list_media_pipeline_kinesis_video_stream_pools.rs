@@ -36,8 +36,8 @@ pub fn de_list_media_pipeline_kinesis_video_stream_pools_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ForbiddenException" => crate::operation::list_media_pipeline_kinesis_video_stream_pools::ListMediaPipelineKinesisVideoStreamPoolsError::ForbiddenException({
@@ -52,8 +52,8 @@ pub fn de_list_media_pipeline_kinesis_video_stream_pools_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ResourceLimitExceededException" => crate::operation::list_media_pipeline_kinesis_video_stream_pools::ListMediaPipelineKinesisVideoStreamPoolsError::ResourceLimitExceededException({
@@ -68,8 +68,8 @@ pub fn de_list_media_pipeline_kinesis_video_stream_pools_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ServiceFailureException" => crate::operation::list_media_pipeline_kinesis_video_stream_pools::ListMediaPipelineKinesisVideoStreamPoolsError::ServiceFailureException({
@@ -84,8 +84,8 @@ pub fn de_list_media_pipeline_kinesis_video_stream_pools_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::list_media_pipeline_kinesis_video_stream_pools::ListMediaPipelineKinesisVideoStreamPoolsError::ServiceUnavailableException({
@@ -100,8 +100,8 @@ pub fn de_list_media_pipeline_kinesis_video_stream_pools_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ThrottledClientException" => crate::operation::list_media_pipeline_kinesis_video_stream_pools::ListMediaPipelineKinesisVideoStreamPoolsError::ThrottledClientException({
@@ -116,8 +116,8 @@ pub fn de_list_media_pipeline_kinesis_video_stream_pools_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "UnauthorizedClientException" => crate::operation::list_media_pipeline_kinesis_video_stream_pools::ListMediaPipelineKinesisVideoStreamPoolsError::UnauthorizedClientException({
@@ -132,8 +132,8 @@ pub fn de_list_media_pipeline_kinesis_video_stream_pools_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::list_media_pipeline_kinesis_video_stream_pools::ListMediaPipelineKinesisVideoStreamPoolsError::generic(generic)

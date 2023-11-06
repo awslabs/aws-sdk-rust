@@ -49,8 +49,10 @@ impl CreateProvisionedProductPlanInput {
         self.plan_type.as_ref()
     }
     /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
-    pub fn notification_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.notification_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notification_arns.is_none()`.
+    pub fn notification_arns(&self) -> &[::std::string::String] {
+        self.notification_arns.as_deref().unwrap_or_default()
     }
     /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>.</p>
     pub fn path_id(&self) -> ::std::option::Option<&str> {
@@ -69,8 +71,10 @@ impl CreateProvisionedProductPlanInput {
         self.provisioning_artifact_id.as_deref()
     }
     /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
-    pub fn provisioning_parameters(&self) -> ::std::option::Option<&[crate::types::UpdateProvisioningParameter]> {
-        self.provisioning_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provisioning_parameters.is_none()`.
+    pub fn provisioning_parameters(&self) -> &[crate::types::UpdateProvisioningParameter] {
+        self.provisioning_parameters.as_deref().unwrap_or_default()
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     pub fn idempotency_token(&self) -> ::std::option::Option<&str> {
@@ -78,8 +82,10 @@ impl CreateProvisionedProductPlanInput {
     }
     /// <p>One or more tags.</p>
     /// <p>If the plan is for an existing provisioned product, the product must have a <code>RESOURCE_UPDATE</code> constraint with <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow tag updates.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateProvisionedProductPlanInput {
@@ -133,6 +139,7 @@ impl CreateProvisionedProductPlanInputBuilder {
         &self.accept_language
     }
     /// <p>The name of the plan.</p>
+    /// This field is required.
     pub fn plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.plan_name = ::std::option::Option::Some(input.into());
         self
@@ -147,6 +154,7 @@ impl CreateProvisionedProductPlanInputBuilder {
         &self.plan_name
     }
     /// <p>The plan type.</p>
+    /// This field is required.
     pub fn plan_type(mut self, input: crate::types::ProvisionedProductPlanType) -> Self {
         self.plan_type = ::std::option::Option::Some(input);
         self
@@ -195,6 +203,7 @@ impl CreateProvisionedProductPlanInputBuilder {
         &self.path_id
     }
     /// <p>The product identifier.</p>
+    /// This field is required.
     pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_id = ::std::option::Option::Some(input.into());
         self
@@ -209,6 +218,7 @@ impl CreateProvisionedProductPlanInputBuilder {
         &self.product_id
     }
     /// <p>A user-friendly name for the provisioned product. This value must be unique for the Amazon Web Services account and cannot be updated after the product is provisioned.</p>
+    /// This field is required.
     pub fn provisioned_product_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioned_product_name = ::std::option::Option::Some(input.into());
         self
@@ -223,6 +233,7 @@ impl CreateProvisionedProductPlanInputBuilder {
         &self.provisioned_product_name
     }
     /// <p>The identifier of the provisioning artifact.</p>
+    /// This field is required.
     pub fn provisioning_artifact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioning_artifact_id = ::std::option::Option::Some(input.into());
         self
@@ -257,6 +268,7 @@ impl CreateProvisionedProductPlanInputBuilder {
         &self.provisioning_parameters
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
+    /// This field is required.
     pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.idempotency_token = ::std::option::Option::Some(input.into());
         self
@@ -298,7 +310,7 @@ impl CreateProvisionedProductPlanInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_provisioned_product_plan::CreateProvisionedProductPlanInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_provisioned_product_plan::CreateProvisionedProductPlanInput {
             accept_language: self.accept_language,

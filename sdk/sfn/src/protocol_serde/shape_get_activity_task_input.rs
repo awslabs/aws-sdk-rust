@@ -2,7 +2,7 @@
 pub fn ser_get_activity_task_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_activity_task::GetActivityTaskInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.activity_arn {
         object.key("activityArn").string(var_1.as_str());
     }

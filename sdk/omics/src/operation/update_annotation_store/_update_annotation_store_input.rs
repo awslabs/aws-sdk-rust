@@ -34,6 +34,7 @@ pub struct UpdateAnnotationStoreInputBuilder {
 }
 impl UpdateAnnotationStoreInputBuilder {
     /// <p>A name for the store.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl UpdateAnnotationStoreInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAnnotationStoreInput`](crate::operation::update_annotation_store::UpdateAnnotationStoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_annotation_store::UpdateAnnotationStoreInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_annotation_store::UpdateAnnotationStoreInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_annotation_store::UpdateAnnotationStoreInput {
             name: self.name,

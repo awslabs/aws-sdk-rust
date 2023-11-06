@@ -49,6 +49,7 @@ pub struct RegisterDeviceInputBuilder {
 }
 impl RegisterDeviceInputBuilder {
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. Here, the ID of the pool that the identity belongs to.</p>
+    /// This field is required.
     pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl RegisterDeviceInputBuilder {
         &self.identity_pool_id
     }
     /// <p>The unique ID for this identity.</p>
+    /// This field is required.
     pub fn identity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_id = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +79,7 @@ impl RegisterDeviceInputBuilder {
         &self.identity_id
     }
     /// <p>The SNS platform type (e.g. GCM, SDM, APNS, APNS_SANDBOX).</p>
+    /// This field is required.
     pub fn platform(mut self, input: crate::types::Platform) -> Self {
         self.platform = ::std::option::Option::Some(input);
         self
@@ -91,6 +94,7 @@ impl RegisterDeviceInputBuilder {
         &self.platform
     }
     /// <p>The push token.</p>
+    /// This field is required.
     pub fn token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.token = ::std::option::Option::Some(input.into());
         self
@@ -107,7 +111,7 @@ impl RegisterDeviceInputBuilder {
     /// Consumes the builder and constructs a [`RegisterDeviceInput`](crate::operation::register_device::RegisterDeviceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_device::RegisterDeviceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::register_device::RegisterDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_device::RegisterDeviceInput {
             identity_pool_id: self.identity_pool_id,
             identity_id: self.identity_id,

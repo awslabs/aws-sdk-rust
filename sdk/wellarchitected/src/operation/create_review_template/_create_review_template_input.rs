@@ -30,8 +30,10 @@ impl CreateReviewTemplateInput {
         self.description.as_deref()
     }
     /// <p>Lenses applied to the review template.</p>
-    pub fn lenses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.lenses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lenses.is_none()`.
+    pub fn lenses(&self) -> &[::std::string::String] {
+        self.lenses.as_deref().unwrap_or_default()
     }
     /// <p>The notes associated with the workload.</p>
     /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
@@ -70,6 +72,7 @@ pub struct CreateReviewTemplateInputBuilder {
 }
 impl CreateReviewTemplateInputBuilder {
     /// <p>Name of the review template.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +87,7 @@ impl CreateReviewTemplateInputBuilder {
         &self.template_name
     }
     /// <p>The review template description.</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -158,6 +162,7 @@ impl CreateReviewTemplateInputBuilder {
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
+    /// This field is required.
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
@@ -180,7 +185,7 @@ impl CreateReviewTemplateInputBuilder {
     /// Consumes the builder and constructs a [`CreateReviewTemplateInput`](crate::operation::create_review_template::CreateReviewTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_review_template::CreateReviewTemplateInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_review_template::CreateReviewTemplateInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_review_template::CreateReviewTemplateInput {
             template_name: self.template_name,

@@ -3,7 +3,7 @@
 pub fn ser_metric_math_anomaly_detector(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::MetricMathAnomalyDetector,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("MetricDataQueries");
     if let Some(var_2) = &input.metric_data_queries {
@@ -18,6 +18,7 @@ pub fn ser_metric_math_anomaly_detector(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_metric_math_anomaly_detector(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::MetricMathAnomalyDetector, ::aws_smithy_xml::decode::XmlDecodeError> {

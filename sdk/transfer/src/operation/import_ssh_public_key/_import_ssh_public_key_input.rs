@@ -43,6 +43,7 @@ pub struct ImportSshPublicKeyInputBuilder {
 }
 impl ImportSshPublicKeyInputBuilder {
     /// <p>A system-assigned unique identifier for a server.</p>
+    /// This field is required.
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_id = ::std::option::Option::Some(input.into());
         self
@@ -58,6 +59,7 @@ impl ImportSshPublicKeyInputBuilder {
     }
     /// <p>The public key portion of an SSH key pair.</p>
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
+    /// This field is required.
     pub fn ssh_public_key_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssh_public_key_body = ::std::option::Option::Some(input.into());
         self
@@ -74,6 +76,7 @@ impl ImportSshPublicKeyInputBuilder {
         &self.ssh_public_key_body
     }
     /// <p>The name of the Transfer Family user that is assigned to one or more servers.</p>
+    /// This field is required.
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self
@@ -90,7 +93,7 @@ impl ImportSshPublicKeyInputBuilder {
     /// Consumes the builder and constructs a [`ImportSshPublicKeyInput`](crate::operation::import_ssh_public_key::ImportSshPublicKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::import_ssh_public_key::ImportSshPublicKeyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::import_ssh_public_key::ImportSshPublicKeyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::import_ssh_public_key::ImportSshPublicKeyInput {
             server_id: self.server_id,

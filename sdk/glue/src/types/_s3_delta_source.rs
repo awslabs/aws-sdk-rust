@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3DeltaSource {
     /// <p>The name of the Delta Lake source.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>A list of the Amazon S3 paths to read from.</p>
-    pub paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub paths: ::std::vec::Vec<::std::string::String>,
     /// <p>Specifies additional connection options.</p>
     pub additional_delta_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Specifies additional options for the connector.</p>
@@ -17,12 +17,14 @@ pub struct S3DeltaSource {
 }
 impl S3DeltaSource {
     /// <p>The name of the Delta Lake source.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>A list of the Amazon S3 paths to read from.</p>
-    pub fn paths(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.paths.as_deref()
+    pub fn paths(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.paths.deref()
     }
     /// <p>Specifies additional connection options.</p>
     pub fn additional_delta_options(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -33,8 +35,10 @@ impl S3DeltaSource {
         self.additional_options.as_ref()
     }
     /// <p>Specifies the data schema for the Delta Lake source.</p>
-    pub fn output_schemas(&self) -> ::std::option::Option<&[crate::types::GlueSchema]> {
-        self.output_schemas.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_schemas.is_none()`.
+    pub fn output_schemas(&self) -> &[crate::types::GlueSchema] {
+        self.output_schemas.as_deref().unwrap_or_default()
     }
 }
 impl S3DeltaSource {
@@ -56,6 +60,7 @@ pub struct S3DeltaSourceBuilder {
 }
 impl S3DeltaSourceBuilder {
     /// <p>The name of the Delta Lake source.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -151,13 +156,26 @@ impl S3DeltaSourceBuilder {
         &self.output_schemas
     }
     /// Consumes the builder and constructs a [`S3DeltaSource`](crate::types::S3DeltaSource).
-    pub fn build(self) -> crate::types::S3DeltaSource {
-        crate::types::S3DeltaSource {
-            name: self.name,
-            paths: self.paths,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::S3DeltaSourceBuilder::name)
+    /// - [`paths`](crate::types::builders::S3DeltaSourceBuilder::paths)
+    pub fn build(self) -> ::std::result::Result<crate::types::S3DeltaSource, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::S3DeltaSource {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building S3DeltaSource",
+                )
+            })?,
+            paths: self.paths.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "paths",
+                    "paths was not specified but it is required when building S3DeltaSource",
+                )
+            })?,
             additional_delta_options: self.additional_delta_options,
             additional_options: self.additional_options,
             output_schemas: self.output_schemas,
-        }
+        })
     }
 }

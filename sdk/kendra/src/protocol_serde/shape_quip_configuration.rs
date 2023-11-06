@@ -2,12 +2,12 @@
 pub fn ser_quip_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::QuipConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.domain {
-        object.key("Domain").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Domain").string(input.domain.as_str());
     }
-    if let Some(var_2) = &input.secret_arn {
-        object.key("SecretArn").string(var_2.as_str());
+    {
+        object.key("SecretArn").string(input.secret_arn.as_str());
     }
     if input.crawl_file_comments {
         object.key("CrawlFileComments").boolean(input.crawl_file_comments);
@@ -18,74 +18,74 @@ pub fn ser_quip_configuration(
     if input.crawl_attachments {
         object.key("CrawlAttachments").boolean(input.crawl_attachments);
     }
-    if let Some(var_3) = &input.folder_ids {
-        let mut array_4 = object.key("FolderIds").start_array();
-        for item_5 in var_3 {
+    if let Some(var_1) = &input.folder_ids {
+        let mut array_2 = object.key("FolderIds").start_array();
+        for item_3 in var_1 {
             {
-                array_4.value().string(item_5.as_str());
+                array_2.value().string(item_3.as_str());
             }
         }
-        array_4.finish();
+        array_2.finish();
     }
-    if let Some(var_6) = &input.thread_field_mappings {
-        let mut array_7 = object.key("ThreadFieldMappings").start_array();
-        for item_8 in var_6 {
-            {
-                #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_9, item_8)?;
-                object_9.finish();
-            }
-        }
-        array_7.finish();
-    }
-    if let Some(var_10) = &input.message_field_mappings {
-        let mut array_11 = object.key("MessageFieldMappings").start_array();
-        for item_12 in var_10 {
+    if let Some(var_4) = &input.thread_field_mappings {
+        let mut array_5 = object.key("ThreadFieldMappings").start_array();
+        for item_6 in var_4 {
             {
                 #[allow(unused_mut)]
-                let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_13, item_12)?;
-                object_13.finish();
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_7, item_6)?;
+                object_7.finish();
             }
         }
-        array_11.finish();
+        array_5.finish();
     }
-    if let Some(var_14) = &input.attachment_field_mappings {
-        let mut array_15 = object.key("AttachmentFieldMappings").start_array();
-        for item_16 in var_14 {
+    if let Some(var_8) = &input.message_field_mappings {
+        let mut array_9 = object.key("MessageFieldMappings").start_array();
+        for item_10 in var_8 {
             {
                 #[allow(unused_mut)]
-                let mut object_17 = array_15.value().start_object();
-                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_17, item_16)?;
-                object_17.finish();
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_11, item_10)?;
+                object_11.finish();
             }
         }
-        array_15.finish();
+        array_9.finish();
     }
-    if let Some(var_18) = &input.inclusion_patterns {
-        let mut array_19 = object.key("InclusionPatterns").start_array();
-        for item_20 in var_18 {
+    if let Some(var_12) = &input.attachment_field_mappings {
+        let mut array_13 = object.key("AttachmentFieldMappings").start_array();
+        for item_14 in var_12 {
             {
-                array_19.value().string(item_20.as_str());
+                #[allow(unused_mut)]
+                let mut object_15 = array_13.value().start_object();
+                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_15, item_14)?;
+                object_15.finish();
             }
         }
-        array_19.finish();
+        array_13.finish();
     }
-    if let Some(var_21) = &input.exclusion_patterns {
-        let mut array_22 = object.key("ExclusionPatterns").start_array();
-        for item_23 in var_21 {
+    if let Some(var_16) = &input.inclusion_patterns {
+        let mut array_17 = object.key("InclusionPatterns").start_array();
+        for item_18 in var_16 {
             {
-                array_22.value().string(item_23.as_str());
+                array_17.value().string(item_18.as_str());
             }
         }
-        array_22.finish();
+        array_17.finish();
     }
-    if let Some(var_24) = &input.vpc_configuration {
+    if let Some(var_19) = &input.exclusion_patterns {
+        let mut array_20 = object.key("ExclusionPatterns").start_array();
+        for item_21 in var_19 {
+            {
+                array_20.value().string(item_21.as_str());
+            }
+        }
+        array_20.finish();
+    }
+    if let Some(var_22) = &input.vpc_configuration {
         #[allow(unused_mut)]
-        let mut object_25 = object.key("VpcConfiguration").start_object();
-        crate::protocol_serde::shape_data_source_vpc_configuration::ser_data_source_vpc_configuration(&mut object_25, var_24)?;
-        object_25.finish();
+        let mut object_23 = object.key("VpcConfiguration").start_object();
+        crate::protocol_serde::shape_data_source_vpc_configuration::ser_data_source_vpc_configuration(&mut object_23, var_22)?;
+        object_23.finish();
     }
     Ok(())
 }
@@ -179,7 +179,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::quip_configuration_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

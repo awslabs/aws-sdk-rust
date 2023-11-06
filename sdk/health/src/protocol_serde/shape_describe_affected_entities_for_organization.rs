@@ -90,7 +90,7 @@ pub fn de_describe_affected_entities_for_organization_http_response(
 
 pub fn ser_describe_affected_entities_for_organization_input(
     input: &crate::operation::describe_affected_entities_for_organization::DescribeAffectedEntitiesForOrganizationInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_describe_affected_entities_for_organization_input::ser_describe_affected_entities_for_organization_input(
@@ -98,7 +98,7 @@ pub fn ser_describe_affected_entities_for_organization_input(
         input,
     )?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_describe_affected_entities_for_organization(

@@ -5,36 +5,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct EnvironmentProfileSummary {
     /// <p>The identifier of the environment profile.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The identifier of the Amazon DataZone domain in which the environment profile exists.</p>
-    pub domain_id: ::std::option::Option<::std::string::String>,
+    pub domain_id: ::std::string::String,
     /// <p>The identifier of an Amazon Web Services account in which an environment profile exists.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region in which an environment profile exists.</p>
     pub aws_account_region: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon DataZone user who created the environment profile.</p>
-    pub created_by: ::std::option::Option<::std::string::String>,
+    pub created_by: ::std::string::String,
     /// <p>The timestamp of when an environment profile was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the environment profile was updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the environment profile.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The description of the environment profile.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of a blueprint with which an environment profile is created.</p>
-    pub environment_blueprint_id: ::std::option::Option<::std::string::String>,
+    pub environment_blueprint_id: ::std::string::String,
     /// <p>The identifier of a project in which an environment profile exists.</p>
     pub project_id: ::std::option::Option<::std::string::String>,
 }
 impl EnvironmentProfileSummary {
     /// <p>The identifier of the environment profile.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The identifier of the Amazon DataZone domain in which the environment profile exists.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
-        self.domain_id.as_deref()
+    pub fn domain_id(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_id.deref()
     }
     /// <p>The identifier of an Amazon Web Services account in which an environment profile exists.</p>
     pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
@@ -45,8 +47,9 @@ impl EnvironmentProfileSummary {
         self.aws_account_region.as_deref()
     }
     /// <p>The Amazon DataZone user who created the environment profile.</p>
-    pub fn created_by(&self) -> ::std::option::Option<&str> {
-        self.created_by.as_deref()
+    pub fn created_by(&self) -> &str {
+        use std::ops::Deref;
+        self.created_by.deref()
     }
     /// <p>The timestamp of when an environment profile was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -57,16 +60,18 @@ impl EnvironmentProfileSummary {
         self.updated_at.as_ref()
     }
     /// <p>The name of the environment profile.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The description of the environment profile.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The identifier of a blueprint with which an environment profile is created.</p>
-    pub fn environment_blueprint_id(&self) -> ::std::option::Option<&str> {
-        self.environment_blueprint_id.as_deref()
+    pub fn environment_blueprint_id(&self) -> &str {
+        use std::ops::Deref;
+        self.environment_blueprint_id.deref()
     }
     /// <p>The identifier of a project in which an environment profile exists.</p>
     pub fn project_id(&self) -> ::std::option::Option<&str> {
@@ -115,6 +120,7 @@ pub struct EnvironmentProfileSummaryBuilder {
 }
 impl EnvironmentProfileSummaryBuilder {
     /// <p>The identifier of the environment profile.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -129,6 +135,7 @@ impl EnvironmentProfileSummaryBuilder {
         &self.id
     }
     /// <p>The identifier of the Amazon DataZone domain in which the environment profile exists.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -171,6 +178,7 @@ impl EnvironmentProfileSummaryBuilder {
         &self.aws_account_region
     }
     /// <p>The Amazon DataZone user who created the environment profile.</p>
+    /// This field is required.
     pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by = ::std::option::Option::Some(input.into());
         self
@@ -213,6 +221,7 @@ impl EnvironmentProfileSummaryBuilder {
         &self.updated_at
     }
     /// <p>The name of the environment profile.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -241,6 +250,7 @@ impl EnvironmentProfileSummaryBuilder {
         &self.description
     }
     /// <p>The identifier of a blueprint with which an environment profile is created.</p>
+    /// This field is required.
     pub fn environment_blueprint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_blueprint_id = ::std::option::Option::Some(input.into());
         self
@@ -269,20 +279,51 @@ impl EnvironmentProfileSummaryBuilder {
         &self.project_id
     }
     /// Consumes the builder and constructs a [`EnvironmentProfileSummary`](crate::types::EnvironmentProfileSummary).
-    pub fn build(self) -> crate::types::EnvironmentProfileSummary {
-        crate::types::EnvironmentProfileSummary {
-            id: self.id,
-            domain_id: self.domain_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::EnvironmentProfileSummaryBuilder::id)
+    /// - [`domain_id`](crate::types::builders::EnvironmentProfileSummaryBuilder::domain_id)
+    /// - [`created_by`](crate::types::builders::EnvironmentProfileSummaryBuilder::created_by)
+    /// - [`name`](crate::types::builders::EnvironmentProfileSummaryBuilder::name)
+    /// - [`environment_blueprint_id`](crate::types::builders::EnvironmentProfileSummaryBuilder::environment_blueprint_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::EnvironmentProfileSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EnvironmentProfileSummary {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building EnvironmentProfileSummary",
+                )
+            })?,
+            domain_id: self.domain_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "domain_id",
+                    "domain_id was not specified but it is required when building EnvironmentProfileSummary",
+                )
+            })?,
             aws_account_id: self.aws_account_id,
             aws_account_region: self.aws_account_region,
-            created_by: self.created_by,
+            created_by: self.created_by.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_by",
+                    "created_by was not specified but it is required when building EnvironmentProfileSummary",
+                )
+            })?,
             created_at: self.created_at,
             updated_at: self.updated_at,
-            name: self.name,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building EnvironmentProfileSummary",
+                )
+            })?,
             description: self.description,
-            environment_blueprint_id: self.environment_blueprint_id,
+            environment_blueprint_id: self.environment_blueprint_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "environment_blueprint_id",
+                    "environment_blueprint_id was not specified but it is required when building EnvironmentProfileSummary",
+                )
+            })?,
             project_id: self.project_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for EnvironmentProfileSummaryBuilder {

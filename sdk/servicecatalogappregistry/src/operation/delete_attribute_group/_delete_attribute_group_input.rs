@@ -27,6 +27,7 @@ pub struct DeleteAttributeGroupInputBuilder {
 }
 impl DeleteAttributeGroupInputBuilder {
     /// <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
+    /// This field is required.
     pub fn attribute_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_group = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteAttributeGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAttributeGroupInput`](crate::operation::delete_attribute_group::DeleteAttributeGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_attribute_group::DeleteAttributeGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_attribute_group::DeleteAttributeGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_attribute_group::DeleteAttributeGroupInput {
             attribute_group: self.attribute_group,

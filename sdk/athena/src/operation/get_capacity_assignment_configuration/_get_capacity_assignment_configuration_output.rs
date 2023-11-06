@@ -34,6 +34,7 @@ pub struct GetCapacityAssignmentConfigurationOutputBuilder {
 }
 impl GetCapacityAssignmentConfigurationOutputBuilder {
     /// <p>The requested capacity assignment configuration for the specified capacity reservation.</p>
+    /// This field is required.
     pub fn capacity_assignment_configuration(mut self, input: crate::types::CapacityAssignmentConfiguration) -> Self {
         self.capacity_assignment_configuration = ::std::option::Option::Some(input);
         self

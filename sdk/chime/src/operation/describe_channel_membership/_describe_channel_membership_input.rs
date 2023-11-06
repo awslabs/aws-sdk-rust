@@ -41,6 +41,7 @@ pub struct DescribeChannelMembershipInputBuilder {
 }
 impl DescribeChannelMembershipInputBuilder {
     /// <p>The ARN of the channel.</p>
+    /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DescribeChannelMembershipInputBuilder {
         &self.channel_arn
     }
     /// <p>The ARN of the member.</p>
+    /// This field is required.
     pub fn member_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_arn = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +89,7 @@ impl DescribeChannelMembershipInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_channel_membership::DescribeChannelMembershipInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_channel_membership::DescribeChannelMembershipInput {
             channel_arn: self.channel_arn,

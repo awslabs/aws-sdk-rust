@@ -61,7 +61,7 @@ where
                             builder = builder.set_service_ids(crate::protocol_serde::shape_service_ids::de_service_ids(tokens)?);
                         }
                         "ResourceARNs" => {
-                            builder = builder.set_resource_ar_ns(crate::protocol_serde::shape_trace_resource_ar_ns::de_trace_resource_ar_ns(tokens)?);
+                            builder = builder.set_resource_arns(crate::protocol_serde::shape_trace_resource_arns::de_trace_resource_arns(tokens)?);
                         }
                         "InstanceIds" => {
                             builder = builder.set_instance_ids(crate::protocol_serde::shape_trace_instance_ids::de_trace_instance_ids(tokens)?);

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDomainName`](crate::operation::get_domain_name::builders::GetDomainNameFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_name(impl Into<String>)`](crate::operation::get_domain_name::builders::GetDomainNameFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::get_domain_name::builders::GetDomainNameFluentBuilder::set_domain_name): <p>The domain name.</p>
+    ///   - [`domain_name(impl Into<String>)`](crate::operation::get_domain_name::builders::GetDomainNameFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::get_domain_name::builders::GetDomainNameFluentBuilder::set_domain_name):<br>required: **true**<br><p>The domain name.</p><br>
     /// - On success, responds with [`GetDomainNameOutput`](crate::operation::get_domain_name::GetDomainNameOutput) with field(s):
     ///   - [`domain_name_config(Option<DomainNameConfig>)`](crate::operation::get_domain_name::GetDomainNameOutput::domain_name_config): <p>The configuration for the <code>DomainName</code>.</p>
     /// - On failure, responds with [`SdkError<GetDomainNameError>`](crate::operation::get_domain_name::GetDomainNameError)

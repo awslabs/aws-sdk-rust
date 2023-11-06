@@ -48,6 +48,7 @@ pub struct AttachVolumeInputBuilder {
 }
 impl AttachVolumeInputBuilder {
     /// <p>The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>
+    /// This field is required.
     pub fn device(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl AttachVolumeInputBuilder {
         &self.device
     }
     /// <p>The ID of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl AttachVolumeInputBuilder {
         &self.instance_id
     }
     /// <p>The ID of the EBS volume. The volume and instance must be within the same Availability Zone.</p>
+    /// This field is required.
     pub fn volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_id = ::std::option::Option::Some(input.into());
         self
@@ -104,7 +107,9 @@ impl AttachVolumeInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`AttachVolumeInput`](crate::operation::attach_volume::AttachVolumeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::attach_volume::AttachVolumeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::attach_volume::AttachVolumeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::attach_volume::AttachVolumeInput {
             device: self.device,
             instance_id: self.instance_id,

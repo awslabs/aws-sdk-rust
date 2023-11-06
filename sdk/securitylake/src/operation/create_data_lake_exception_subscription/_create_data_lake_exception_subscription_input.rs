@@ -41,6 +41,7 @@ pub struct CreateDataLakeExceptionSubscriptionInputBuilder {
 }
 impl CreateDataLakeExceptionSubscriptionInputBuilder {
     /// <p>The subscription protocol to which exception notifications are posted.</p>
+    /// This field is required.
     pub fn subscription_protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_protocol = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl CreateDataLakeExceptionSubscriptionInputBuilder {
         &self.subscription_protocol
     }
     /// <p>The Amazon Web Services account where you want to receive exception notifications.</p>
+    /// This field is required.
     pub fn notification_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notification_endpoint = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +89,7 @@ impl CreateDataLakeExceptionSubscriptionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_data_lake_exception_subscription::CreateDataLakeExceptionSubscriptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_data_lake_exception_subscription::CreateDataLakeExceptionSubscriptionInput {

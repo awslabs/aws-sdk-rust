@@ -64,7 +64,7 @@ impl ListUserSettingsInputBuilder {
     /// Consumes the builder and constructs a [`ListUserSettingsInput`](crate::operation::list_user_settings::ListUserSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_user_settings::ListUserSettingsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_user_settings::ListUserSettingsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_user_settings::ListUserSettingsInput {
             next_token: self.next_token,
             max_results: self.max_results,

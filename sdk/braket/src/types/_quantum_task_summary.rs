@@ -5,19 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QuantumTaskSummary {
     /// <p>The ARN of the task.</p>
-    pub quantum_task_arn: ::std::option::Option<::std::string::String>,
+    pub quantum_task_arn: ::std::string::String,
     /// <p>The status of the task.</p>
-    pub status: ::std::option::Option<crate::types::QuantumTaskStatus>,
+    pub status: crate::types::QuantumTaskStatus,
     /// <p>The ARN of the device the task ran on.</p>
-    pub device_arn: ::std::option::Option<::std::string::String>,
+    pub device_arn: ::std::string::String,
     /// <p>The shots used for the task.</p>
-    pub shots: ::std::option::Option<i64>,
+    pub shots: i64,
     /// <p>The S3 bucket where the task result file is stored..</p>
-    pub output_s3_bucket: ::std::option::Option<::std::string::String>,
+    pub output_s3_bucket: ::std::string::String,
     /// <p>The folder in the S3 bucket where the task result file is stored.</p>
-    pub output_s3_directory: ::std::option::Option<::std::string::String>,
+    pub output_s3_directory: ::std::string::String,
     /// <p>The time at which the task was created.</p>
-    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The time at which the task finished.</p>
     pub ended_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Displays the key, value pairs of tags associated with this quantum task.</p>
@@ -25,32 +25,36 @@ pub struct QuantumTaskSummary {
 }
 impl QuantumTaskSummary {
     /// <p>The ARN of the task.</p>
-    pub fn quantum_task_arn(&self) -> ::std::option::Option<&str> {
-        self.quantum_task_arn.as_deref()
+    pub fn quantum_task_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.quantum_task_arn.deref()
     }
     /// <p>The status of the task.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::QuantumTaskStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::QuantumTaskStatus {
+        &self.status
     }
     /// <p>The ARN of the device the task ran on.</p>
-    pub fn device_arn(&self) -> ::std::option::Option<&str> {
-        self.device_arn.as_deref()
+    pub fn device_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.device_arn.deref()
     }
     /// <p>The shots used for the task.</p>
-    pub fn shots(&self) -> ::std::option::Option<i64> {
+    pub fn shots(&self) -> i64 {
         self.shots
     }
     /// <p>The S3 bucket where the task result file is stored..</p>
-    pub fn output_s3_bucket(&self) -> ::std::option::Option<&str> {
-        self.output_s3_bucket.as_deref()
+    pub fn output_s3_bucket(&self) -> &str {
+        use std::ops::Deref;
+        self.output_s3_bucket.deref()
     }
     /// <p>The folder in the S3 bucket where the task result file is stored.</p>
-    pub fn output_s3_directory(&self) -> ::std::option::Option<&str> {
-        self.output_s3_directory.as_deref()
+    pub fn output_s3_directory(&self) -> &str {
+        use std::ops::Deref;
+        self.output_s3_directory.deref()
     }
     /// <p>The time at which the task was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_at.as_ref()
+    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_at
     }
     /// <p>The time at which the task finished.</p>
     pub fn ended_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -84,6 +88,7 @@ pub struct QuantumTaskSummaryBuilder {
 }
 impl QuantumTaskSummaryBuilder {
     /// <p>The ARN of the task.</p>
+    /// This field is required.
     pub fn quantum_task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.quantum_task_arn = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +103,7 @@ impl QuantumTaskSummaryBuilder {
         &self.quantum_task_arn
     }
     /// <p>The status of the task.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::QuantumTaskStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -112,6 +118,7 @@ impl QuantumTaskSummaryBuilder {
         &self.status
     }
     /// <p>The ARN of the device the task ran on.</p>
+    /// This field is required.
     pub fn device_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_arn = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +133,7 @@ impl QuantumTaskSummaryBuilder {
         &self.device_arn
     }
     /// <p>The shots used for the task.</p>
+    /// This field is required.
     pub fn shots(mut self, input: i64) -> Self {
         self.shots = ::std::option::Option::Some(input);
         self
@@ -140,6 +148,7 @@ impl QuantumTaskSummaryBuilder {
         &self.shots
     }
     /// <p>The S3 bucket where the task result file is stored..</p>
+    /// This field is required.
     pub fn output_s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_s3_bucket = ::std::option::Option::Some(input.into());
         self
@@ -154,6 +163,7 @@ impl QuantumTaskSummaryBuilder {
         &self.output_s3_bucket
     }
     /// <p>The folder in the S3 bucket where the task result file is stored.</p>
+    /// This field is required.
     pub fn output_s3_directory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_s3_directory = ::std::option::Option::Some(input.into());
         self
@@ -168,6 +178,7 @@ impl QuantumTaskSummaryBuilder {
         &self.output_s3_directory
     }
     /// <p>The time at which the task was created.</p>
+    /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
@@ -216,17 +227,60 @@ impl QuantumTaskSummaryBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`QuantumTaskSummary`](crate::types::QuantumTaskSummary).
-    pub fn build(self) -> crate::types::QuantumTaskSummary {
-        crate::types::QuantumTaskSummary {
-            quantum_task_arn: self.quantum_task_arn,
-            status: self.status,
-            device_arn: self.device_arn,
-            shots: self.shots,
-            output_s3_bucket: self.output_s3_bucket,
-            output_s3_directory: self.output_s3_directory,
-            created_at: self.created_at,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`quantum_task_arn`](crate::types::builders::QuantumTaskSummaryBuilder::quantum_task_arn)
+    /// - [`status`](crate::types::builders::QuantumTaskSummaryBuilder::status)
+    /// - [`device_arn`](crate::types::builders::QuantumTaskSummaryBuilder::device_arn)
+    /// - [`shots`](crate::types::builders::QuantumTaskSummaryBuilder::shots)
+    /// - [`output_s3_bucket`](crate::types::builders::QuantumTaskSummaryBuilder::output_s3_bucket)
+    /// - [`output_s3_directory`](crate::types::builders::QuantumTaskSummaryBuilder::output_s3_directory)
+    /// - [`created_at`](crate::types::builders::QuantumTaskSummaryBuilder::created_at)
+    pub fn build(self) -> ::std::result::Result<crate::types::QuantumTaskSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::QuantumTaskSummary {
+            quantum_task_arn: self.quantum_task_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "quantum_task_arn",
+                    "quantum_task_arn was not specified but it is required when building QuantumTaskSummary",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building QuantumTaskSummary",
+                )
+            })?,
+            device_arn: self.device_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "device_arn",
+                    "device_arn was not specified but it is required when building QuantumTaskSummary",
+                )
+            })?,
+            shots: self.shots.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "shots",
+                    "shots was not specified but it is required when building QuantumTaskSummary",
+                )
+            })?,
+            output_s3_bucket: self.output_s3_bucket.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "output_s3_bucket",
+                    "output_s3_bucket was not specified but it is required when building QuantumTaskSummary",
+                )
+            })?,
+            output_s3_directory: self.output_s3_directory.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "output_s3_directory",
+                    "output_s3_directory was not specified but it is required when building QuantumTaskSummary",
+                )
+            })?,
+            created_at: self.created_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_at",
+                    "created_at was not specified but it is required when building QuantumTaskSummary",
+                )
+            })?,
             ended_at: self.ended_at,
             tags: self.tags,
-        }
+        })
     }
 }

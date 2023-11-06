@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScanningRepositoryFilter {
     /// <p>The filter to use when scanning.</p>
-    pub filter: ::std::option::Option<::std::string::String>,
+    pub filter: ::std::string::String,
     /// <p>The type associated with the filter.</p>
-    pub filter_type: ::std::option::Option<crate::types::ScanningRepositoryFilterType>,
+    pub filter_type: crate::types::ScanningRepositoryFilterType,
 }
 impl ScanningRepositoryFilter {
     /// <p>The filter to use when scanning.</p>
-    pub fn filter(&self) -> ::std::option::Option<&str> {
-        self.filter.as_deref()
+    pub fn filter(&self) -> &str {
+        use std::ops::Deref;
+        self.filter.deref()
     }
     /// <p>The type associated with the filter.</p>
-    pub fn filter_type(&self) -> ::std::option::Option<&crate::types::ScanningRepositoryFilterType> {
-        self.filter_type.as_ref()
+    pub fn filter_type(&self) -> &crate::types::ScanningRepositoryFilterType {
+        &self.filter_type
     }
 }
 impl ScanningRepositoryFilter {
@@ -35,6 +36,7 @@ pub struct ScanningRepositoryFilterBuilder {
 }
 impl ScanningRepositoryFilterBuilder {
     /// <p>The filter to use when scanning.</p>
+    /// This field is required.
     pub fn filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl ScanningRepositoryFilterBuilder {
         &self.filter
     }
     /// <p>The type associated with the filter.</p>
+    /// This field is required.
     pub fn filter_type(mut self, input: crate::types::ScanningRepositoryFilterType) -> Self {
         self.filter_type = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,23 @@ impl ScanningRepositoryFilterBuilder {
         &self.filter_type
     }
     /// Consumes the builder and constructs a [`ScanningRepositoryFilter`](crate::types::ScanningRepositoryFilter).
-    pub fn build(self) -> crate::types::ScanningRepositoryFilter {
-        crate::types::ScanningRepositoryFilter {
-            filter: self.filter,
-            filter_type: self.filter_type,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`filter`](crate::types::builders::ScanningRepositoryFilterBuilder::filter)
+    /// - [`filter_type`](crate::types::builders::ScanningRepositoryFilterBuilder::filter_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::ScanningRepositoryFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ScanningRepositoryFilter {
+            filter: self.filter.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "filter",
+                    "filter was not specified but it is required when building ScanningRepositoryFilter",
+                )
+            })?,
+            filter_type: self.filter_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "filter_type",
+                    "filter_type was not specified but it is required when building ScanningRepositoryFilter",
+                )
+            })?,
+        })
     }
 }

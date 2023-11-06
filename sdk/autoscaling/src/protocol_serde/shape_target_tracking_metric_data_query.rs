@@ -3,7 +3,7 @@
 pub fn ser_target_tracking_metric_data_query(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::TargetTrackingMetricDataQuery,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Id");
     if let Some(var_2) = &input.id {
@@ -32,6 +32,7 @@ pub fn ser_target_tracking_metric_data_query(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_target_tracking_metric_data_query(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::TargetTrackingMetricDataQuery, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -106,5 +107,5 @@ pub fn de_target_tracking_metric_data_query(
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::target_tracking_metric_data_query_correct_errors(builder).build())
 }

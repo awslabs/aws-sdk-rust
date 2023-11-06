@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetFunctionDefinition`](crate::operation::get_function_definition::builders::GetFunctionDefinitionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`function_definition_id(impl Into<String>)`](crate::operation::get_function_definition::builders::GetFunctionDefinitionFluentBuilder::function_definition_id) / [`set_function_definition_id(Option<String>)`](crate::operation::get_function_definition::builders::GetFunctionDefinitionFluentBuilder::set_function_definition_id): The ID of the Lambda function definition.
+    ///   - [`function_definition_id(impl Into<String>)`](crate::operation::get_function_definition::builders::GetFunctionDefinitionFluentBuilder::function_definition_id) / [`set_function_definition_id(Option<String>)`](crate::operation::get_function_definition::builders::GetFunctionDefinitionFluentBuilder::set_function_definition_id):<br>required: **true**<br>The ID of the Lambda function definition.<br>
     /// - On success, responds with [`GetFunctionDefinitionOutput`](crate::operation::get_function_definition::GetFunctionDefinitionOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::get_function_definition::GetFunctionDefinitionOutput::arn): The ARN of the definition.
     ///   - [`creation_timestamp(Option<String>)`](crate::operation::get_function_definition::GetFunctionDefinitionOutput::creation_timestamp): The time, in milliseconds since the epoch, when the definition was created.
@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`latest_version(Option<String>)`](crate::operation::get_function_definition::GetFunctionDefinitionOutput::latest_version): The ID of the latest version associated with the definition.
     ///   - [`latest_version_arn(Option<String>)`](crate::operation::get_function_definition::GetFunctionDefinitionOutput::latest_version_arn): The ARN of the latest version associated with the definition.
     ///   - [`name(Option<String>)`](crate::operation::get_function_definition::GetFunctionDefinitionOutput::name): The name of the definition.
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_function_definition::GetFunctionDefinitionOutput::tags): Tag(s) attached to the resource arn.
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_function_definition::GetFunctionDefinitionOutput::tags): Tag(s) attached to the resource arn.
     /// - On failure, responds with [`SdkError<GetFunctionDefinitionError>`](crate::operation::get_function_definition::GetFunctionDefinitionError)
     pub fn get_function_definition(&self) -> crate::operation::get_function_definition::builders::GetFunctionDefinitionFluentBuilder {
         crate::operation::get_function_definition::builders::GetFunctionDefinitionFluentBuilder::new(self.handle.clone())

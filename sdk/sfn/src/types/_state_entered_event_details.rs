@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StateEnteredEventDetails {
     /// <p>The name of the state.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The string that contains the JSON input data for the state. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub input: ::std::option::Option<::std::string::String>,
     /// <p>Contains details about the input for an execution history event.</p>
@@ -13,8 +13,9 @@ pub struct StateEnteredEventDetails {
 }
 impl StateEnteredEventDetails {
     /// <p>The name of the state.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The string that contains the JSON input data for the state. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn input(&self) -> ::std::option::Option<&str> {
@@ -51,6 +52,7 @@ pub struct StateEnteredEventDetailsBuilder {
 }
 impl StateEnteredEventDetailsBuilder {
     /// <p>The name of the state.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -93,12 +95,19 @@ impl StateEnteredEventDetailsBuilder {
         &self.input_details
     }
     /// Consumes the builder and constructs a [`StateEnteredEventDetails`](crate::types::StateEnteredEventDetails).
-    pub fn build(self) -> crate::types::StateEnteredEventDetails {
-        crate::types::StateEnteredEventDetails {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::StateEnteredEventDetailsBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::StateEnteredEventDetails, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::StateEnteredEventDetails {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building StateEnteredEventDetails",
+                )
+            })?,
             input: self.input,
             input_details: self.input_details,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for StateEnteredEventDetailsBuilder {

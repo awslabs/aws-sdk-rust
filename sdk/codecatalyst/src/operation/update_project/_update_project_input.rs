@@ -41,6 +41,7 @@ pub struct UpdateProjectInputBuilder {
 }
 impl UpdateProjectInputBuilder {
     /// <p>The name of the space.</p>
+    /// This field is required.
     pub fn space_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.space_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateProjectInputBuilder {
         &self.space_name
     }
     /// <p>The name of the project.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +87,7 @@ impl UpdateProjectInputBuilder {
     /// Consumes the builder and constructs a [`UpdateProjectInput`](crate::operation::update_project::UpdateProjectInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_project::UpdateProjectInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_project::UpdateProjectInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_project::UpdateProjectInput {
             space_name: self.space_name,
             name: self.name,

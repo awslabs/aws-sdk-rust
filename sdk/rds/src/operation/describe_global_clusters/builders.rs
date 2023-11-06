@@ -10,7 +10,7 @@ impl DescribeGlobalClustersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_global_clusters::DescribeGlobalClustersOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::describe_global_clusters::DescribeGlobalClustersError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -75,12 +75,15 @@ impl DescribeGlobalClustersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_global_clusters::DescribeGlobalClustersOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::describe_global_clusters::DescribeGlobalClustersError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::describe_global_clusters::DescribeGlobalClusters::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -89,20 +92,15 @@ impl DescribeGlobalClustersFluentBuilder {
         crate::operation::describe_global_clusters::DescribeGlobalClusters::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::describe_global_clusters::DescribeGlobalClustersOutput,
-            crate::operation::describe_global_clusters::DescribeGlobalClustersError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::describe_global_clusters::DescribeGlobalClustersError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::describe_global_clusters::DescribeGlobalClustersOutput,
+        crate::operation::describe_global_clusters::DescribeGlobalClustersError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -115,7 +113,7 @@ impl DescribeGlobalClustersFluentBuilder {
     }
     /// Create a paginator for this request
     ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_global_clusters::paginator::DescribeGlobalClustersPaginator::send) which returns a `Stream`.
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_global_clusters::paginator::DescribeGlobalClustersPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
     pub fn into_paginator(self) -> crate::operation::describe_global_clusters::paginator::DescribeGlobalClustersPaginator {
         crate::operation::describe_global_clusters::paginator::DescribeGlobalClustersPaginator::new(self.handle, self.inner)
     }

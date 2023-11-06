@@ -6,18 +6,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UsageAllocation {
     /// <p>The total quantity allocated to this bucket of usage.</p>
-    pub allocated_usage_quantity: ::std::option::Option<i32>,
+    pub allocated_usage_quantity: i32,
     /// <p>The set of tags that define the bucket of usage. For the bucket of items with no tags, this parameter can be left out.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl UsageAllocation {
     /// <p>The total quantity allocated to this bucket of usage.</p>
-    pub fn allocated_usage_quantity(&self) -> ::std::option::Option<i32> {
+    pub fn allocated_usage_quantity(&self) -> i32 {
         self.allocated_usage_quantity
     }
     /// <p>The set of tags that define the bucket of usage. For the bucket of items with no tags, this parameter can be left out.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl UsageAllocation {
@@ -36,6 +38,7 @@ pub struct UsageAllocationBuilder {
 }
 impl UsageAllocationBuilder {
     /// <p>The total quantity allocated to this bucket of usage.</p>
+    /// This field is required.
     pub fn allocated_usage_quantity(mut self, input: i32) -> Self {
         self.allocated_usage_quantity = ::std::option::Option::Some(input);
         self
@@ -70,10 +73,17 @@ impl UsageAllocationBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`UsageAllocation`](crate::types::UsageAllocation).
-    pub fn build(self) -> crate::types::UsageAllocation {
-        crate::types::UsageAllocation {
-            allocated_usage_quantity: self.allocated_usage_quantity,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`allocated_usage_quantity`](crate::types::builders::UsageAllocationBuilder::allocated_usage_quantity)
+    pub fn build(self) -> ::std::result::Result<crate::types::UsageAllocation, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::UsageAllocation {
+            allocated_usage_quantity: self.allocated_usage_quantity.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "allocated_usage_quantity",
+                    "allocated_usage_quantity was not specified but it is required when building UsageAllocation",
+                )
+            })?,
             tags: self.tags,
-        }
+        })
     }
 }

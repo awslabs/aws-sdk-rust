@@ -48,6 +48,7 @@ pub struct RemoveLayerVersionPermissionInputBuilder {
 }
 impl RemoveLayerVersionPermissionInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
+    /// This field is required.
     pub fn layer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.layer_name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl RemoveLayerVersionPermissionInputBuilder {
         &self.layer_name
     }
     /// <p>The version number.</p>
+    /// This field is required.
     pub fn version_number(mut self, input: i64) -> Self {
         self.version_number = ::std::option::Option::Some(input);
         self
@@ -76,6 +78,7 @@ impl RemoveLayerVersionPermissionInputBuilder {
         &self.version_number
     }
     /// <p>The identifier that was specified when the statement was added.</p>
+    /// This field is required.
     pub fn statement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.statement_id = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +111,7 @@ impl RemoveLayerVersionPermissionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionInput {
             layer_name: self.layer_name,

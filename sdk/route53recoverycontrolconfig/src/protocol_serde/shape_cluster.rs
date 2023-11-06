@@ -23,7 +23,7 @@ where
                         }
                         "ClusterEndpoints" => {
                             builder = builder.set_cluster_endpoints(
-                                crate::protocol_serde::shape___list_of_cluster_endpoint::de___list_of_cluster_endpoint(tokens)?,
+                                crate::protocol_serde::shape_list_of_cluster_endpoint::de_list_of_cluster_endpoint(tokens)?,
                             );
                         }
                         "Name" => {

@@ -26,8 +26,10 @@ impl BatchGetPartitionInput {
         self.table_name.as_deref()
     }
     /// <p>A list of partition values identifying the partitions to retrieve.</p>
-    pub fn partitions_to_get(&self) -> ::std::option::Option<&[crate::types::PartitionValueList]> {
-        self.partitions_to_get.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.partitions_to_get.is_none()`.
+    pub fn partitions_to_get(&self) -> &[crate::types::PartitionValueList] {
+        self.partitions_to_get.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetPartitionInput {
@@ -62,6 +64,7 @@ impl BatchGetPartitionInputBuilder {
         &self.catalog_id
     }
     /// <p>The name of the catalog database where the partitions reside.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +79,7 @@ impl BatchGetPartitionInputBuilder {
         &self.database_name
     }
     /// <p>The name of the partitions' table.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -112,7 +116,7 @@ impl BatchGetPartitionInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetPartitionInput`](crate::operation::batch_get_partition::BatchGetPartitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_get_partition::BatchGetPartitionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_get_partition::BatchGetPartitionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_get_partition::BatchGetPartitionInput {
             catalog_id: self.catalog_id,
             database_name: self.database_name,

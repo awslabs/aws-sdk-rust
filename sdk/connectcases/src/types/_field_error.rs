@@ -5,20 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FieldError {
     /// <p>The field identifier that caused the error.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The error code from getting a field.</p>
-    pub error_code: ::std::option::Option<::std::string::String>,
+    pub error_code: ::std::string::String,
     /// <p>The error message from getting a field.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl FieldError {
     /// <p>The field identifier that caused the error.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The error code from getting a field.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
-        self.error_code.as_deref()
+    pub fn error_code(&self) -> &str {
+        use std::ops::Deref;
+        self.error_code.deref()
     }
     /// <p>The error message from getting a field.</p>
     pub fn message(&self) -> ::std::option::Option<&str> {
@@ -42,6 +44,7 @@ pub struct FieldErrorBuilder {
 }
 impl FieldErrorBuilder {
     /// <p>The field identifier that caused the error.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl FieldErrorBuilder {
         &self.id
     }
     /// <p>The error code from getting a field.</p>
+    /// This field is required.
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +88,24 @@ impl FieldErrorBuilder {
         &self.message
     }
     /// Consumes the builder and constructs a [`FieldError`](crate::types::FieldError).
-    pub fn build(self) -> crate::types::FieldError {
-        crate::types::FieldError {
-            id: self.id,
-            error_code: self.error_code,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::FieldErrorBuilder::id)
+    /// - [`error_code`](crate::types::builders::FieldErrorBuilder::error_code)
+    pub fn build(self) -> ::std::result::Result<crate::types::FieldError, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::FieldError {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building FieldError",
+                )
+            })?,
+            error_code: self.error_code.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "error_code",
+                    "error_code was not specified but it is required when building FieldError",
+                )
+            })?,
             message: self.message,
-        }
+        })
     }
 }

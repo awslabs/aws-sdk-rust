@@ -50,8 +50,10 @@ impl CreateCaseInput {
         self.communication_body.as_deref()
     }
     /// <p>A list of email addresses that Amazon Web Services Support copies on case correspondence. Amazon Web Services Support identifies the account that creates the case when you specify your Amazon Web Services credentials in an HTTP POST method or use the <a href="http://aws.amazon.com/tools/">Amazon Web Services SDKs</a>. </p>
-    pub fn cc_email_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cc_email_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cc_email_addresses.is_none()`.
+    pub fn cc_email_addresses(&self) -> &[::std::string::String] {
+        self.cc_email_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     pub fn language(&self) -> ::std::option::Option<&str> {
@@ -89,6 +91,7 @@ pub struct CreateCaseInputBuilder {
 }
 impl CreateCaseInputBuilder {
     /// <p>The title of the support case. The title appears in the <b>Subject</b> field on the Amazon Web Services Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
+    /// This field is required.
     pub fn subject(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subject = ::std::option::Option::Some(input.into());
         self
@@ -154,6 +157,7 @@ impl CreateCaseInputBuilder {
         &self.category_code
     }
     /// <p>The communication body text that describes the issue. This text appears in the <b>Description</b> field on the Amazon Web Services Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
+    /// This field is required.
     pub fn communication_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.communication_body = ::std::option::Option::Some(input.into());
         self
@@ -230,7 +234,7 @@ impl CreateCaseInputBuilder {
         &self.attachment_set_id
     }
     /// Consumes the builder and constructs a [`CreateCaseInput`](crate::operation::create_case::CreateCaseInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_case::CreateCaseInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_case::CreateCaseInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_case::CreateCaseInput {
             subject: self.subject,
             service_code: self.service_code,

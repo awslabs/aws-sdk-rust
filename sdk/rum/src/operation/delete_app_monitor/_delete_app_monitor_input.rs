@@ -27,6 +27,7 @@ pub struct DeleteAppMonitorInputBuilder {
 }
 impl DeleteAppMonitorInputBuilder {
     /// <p>The name of the app monitor to delete.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteAppMonitorInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAppMonitorInput`](crate::operation::delete_app_monitor::DeleteAppMonitorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_app_monitor::DeleteAppMonitorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_app_monitor::DeleteAppMonitorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_app_monitor::DeleteAppMonitorInput { name: self.name })
     }
 }

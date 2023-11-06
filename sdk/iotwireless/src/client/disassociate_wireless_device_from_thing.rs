@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DisassociateWirelessDeviceFromThing`](crate::operation::disassociate_wireless_device_from_thing::builders::DisassociateWirelessDeviceFromThingFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::disassociate_wireless_device_from_thing::builders::DisassociateWirelessDeviceFromThingFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::disassociate_wireless_device_from_thing::builders::DisassociateWirelessDeviceFromThingFluentBuilder::set_id): <p>The ID of the resource to update.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::disassociate_wireless_device_from_thing::builders::DisassociateWirelessDeviceFromThingFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::disassociate_wireless_device_from_thing::builders::DisassociateWirelessDeviceFromThingFluentBuilder::set_id):<br>required: **true**<br><p>The ID of the resource to update.</p><br>
     /// - On success, responds with [`DisassociateWirelessDeviceFromThingOutput`](crate::operation::disassociate_wireless_device_from_thing::DisassociateWirelessDeviceFromThingOutput)
     /// - On failure, responds with [`SdkError<DisassociateWirelessDeviceFromThingError>`](crate::operation::disassociate_wireless_device_from_thing::DisassociateWirelessDeviceFromThingError)
     pub fn disassociate_wireless_device_from_thing(

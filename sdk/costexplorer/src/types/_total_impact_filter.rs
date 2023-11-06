@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TotalImpactFilter {
     /// <p>The comparing value that's used in the filter. </p>
-    pub numeric_operator: ::std::option::Option<crate::types::NumericOperator>,
+    pub numeric_operator: crate::types::NumericOperator,
     /// <p>The lower bound dollar value that's used in the filter. </p>
     pub start_value: f64,
     /// <p>The upper bound dollar value that's used in the filter. </p>
@@ -13,8 +13,8 @@ pub struct TotalImpactFilter {
 }
 impl TotalImpactFilter {
     /// <p>The comparing value that's used in the filter. </p>
-    pub fn numeric_operator(&self) -> ::std::option::Option<&crate::types::NumericOperator> {
-        self.numeric_operator.as_ref()
+    pub fn numeric_operator(&self) -> &crate::types::NumericOperator {
+        &self.numeric_operator
     }
     /// <p>The lower bound dollar value that's used in the filter. </p>
     pub fn start_value(&self) -> f64 {
@@ -42,6 +42,7 @@ pub struct TotalImpactFilterBuilder {
 }
 impl TotalImpactFilterBuilder {
     /// <p>The comparing value that's used in the filter. </p>
+    /// This field is required.
     pub fn numeric_operator(mut self, input: crate::types::NumericOperator) -> Self {
         self.numeric_operator = ::std::option::Option::Some(input);
         self
@@ -56,6 +57,7 @@ impl TotalImpactFilterBuilder {
         &self.numeric_operator
     }
     /// <p>The lower bound dollar value that's used in the filter. </p>
+    /// This field is required.
     pub fn start_value(mut self, input: f64) -> Self {
         self.start_value = ::std::option::Option::Some(input);
         self
@@ -84,11 +86,18 @@ impl TotalImpactFilterBuilder {
         &self.end_value
     }
     /// Consumes the builder and constructs a [`TotalImpactFilter`](crate::types::TotalImpactFilter).
-    pub fn build(self) -> crate::types::TotalImpactFilter {
-        crate::types::TotalImpactFilter {
-            numeric_operator: self.numeric_operator,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`numeric_operator`](crate::types::builders::TotalImpactFilterBuilder::numeric_operator)
+    pub fn build(self) -> ::std::result::Result<crate::types::TotalImpactFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TotalImpactFilter {
+            numeric_operator: self.numeric_operator.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "numeric_operator",
+                    "numeric_operator was not specified but it is required when building TotalImpactFilter",
+                )
+            })?,
             start_value: self.start_value.unwrap_or_default(),
             end_value: self.end_value.unwrap_or_default(),
-        }
+        })
     }
 }

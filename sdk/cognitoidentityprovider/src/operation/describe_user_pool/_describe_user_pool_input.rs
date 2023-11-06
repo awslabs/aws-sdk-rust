@@ -28,6 +28,7 @@ pub struct DescribeUserPoolInputBuilder {
 }
 impl DescribeUserPoolInputBuilder {
     /// <p>The user pool ID for the user pool you want to describe.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl DescribeUserPoolInputBuilder {
     /// Consumes the builder and constructs a [`DescribeUserPoolInput`](crate::operation::describe_user_pool::DescribeUserPoolInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_user_pool::DescribeUserPoolInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_user_pool::DescribeUserPoolInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_user_pool::DescribeUserPoolInput {
             user_pool_id: self.user_pool_id,
         })

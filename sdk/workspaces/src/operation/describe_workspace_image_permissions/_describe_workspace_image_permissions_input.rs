@@ -41,6 +41,7 @@ pub struct DescribeWorkspaceImagePermissionsInputBuilder {
 }
 impl DescribeWorkspaceImagePermissionsInputBuilder {
     /// <p>The identifier of the image.</p>
+    /// This field is required.
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl DescribeWorkspaceImagePermissionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_workspace_image_permissions::DescribeWorkspaceImagePermissionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_workspace_image_permissions::DescribeWorkspaceImagePermissionsInput {

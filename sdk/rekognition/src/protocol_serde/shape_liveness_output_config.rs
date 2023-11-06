@@ -2,12 +2,12 @@
 pub fn ser_liveness_output_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LivenessOutputConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.s3_bucket {
-        object.key("S3Bucket").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("S3Bucket").string(input.s3_bucket.as_str());
     }
-    if let Some(var_2) = &input.s3_key_prefix {
-        object.key("S3KeyPrefix").string(var_2.as_str());
+    if let Some(var_1) = &input.s3_key_prefix {
+        object.key("S3KeyPrefix").string(var_1.as_str());
     }
     Ok(())
 }

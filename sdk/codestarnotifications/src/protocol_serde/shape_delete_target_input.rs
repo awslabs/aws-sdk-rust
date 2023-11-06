@@ -2,7 +2,7 @@
 pub fn ser_delete_target_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_target::DeleteTargetInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.force_unsubscribe_all {
         object.key("ForceUnsubscribeAll").boolean(*var_1);
     }

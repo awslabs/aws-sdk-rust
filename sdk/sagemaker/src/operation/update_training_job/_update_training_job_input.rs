@@ -22,8 +22,10 @@ impl UpdateTrainingJobInput {
         self.profiler_config.as_ref()
     }
     /// <p>Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.</p>
-    pub fn profiler_rule_configurations(&self) -> ::std::option::Option<&[crate::types::ProfilerRuleConfiguration]> {
-        self.profiler_rule_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.profiler_rule_configurations.is_none()`.
+    pub fn profiler_rule_configurations(&self) -> &[crate::types::ProfilerRuleConfiguration] {
+        self.profiler_rule_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The training job <code>ResourceConfig</code> to update warm pool retention length.</p>
     pub fn resource_config(&self) -> ::std::option::Option<&crate::types::ResourceConfigForUpdate> {
@@ -48,6 +50,7 @@ pub struct UpdateTrainingJobInputBuilder {
 }
 impl UpdateTrainingJobInputBuilder {
     /// <p>The name of a training job to update the Debugger profiling configuration.</p>
+    /// This field is required.
     pub fn training_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.training_job_name = ::std::option::Option::Some(input.into());
         self
@@ -115,7 +118,7 @@ impl UpdateTrainingJobInputBuilder {
     /// Consumes the builder and constructs a [`UpdateTrainingJobInput`](crate::operation::update_training_job::UpdateTrainingJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_training_job::UpdateTrainingJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_training_job::UpdateTrainingJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_training_job::UpdateTrainingJobInput {
             training_job_name: self.training_job_name,
             profiler_config: self.profiler_config,

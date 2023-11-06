@@ -28,6 +28,7 @@ pub struct CancelInputDeviceTransferInputBuilder {
 }
 impl CancelInputDeviceTransferInputBuilder {
     /// The unique ID of the input device to cancel. For example, hd-123456789abcdef.
+    /// This field is required.
     pub fn input_device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_device_id = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl CancelInputDeviceTransferInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_input_device_transfer::CancelInputDeviceTransferInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::cancel_input_device_transfer::CancelInputDeviceTransferInput {
             input_device_id: self.input_device_id,

@@ -50,6 +50,7 @@ pub struct ModifyVerifiedAccessInstanceLoggingConfigurationInputBuilder {
 }
 impl ModifyVerifiedAccessInstanceLoggingConfigurationInputBuilder {
     /// <p>The ID of the Verified Access instance.</p>
+    /// This field is required.
     pub fn verified_access_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.verified_access_instance_id = ::std::option::Option::Some(input.into());
         self
@@ -64,6 +65,7 @@ impl ModifyVerifiedAccessInstanceLoggingConfigurationInputBuilder {
         &self.verified_access_instance_id
     }
     /// <p>The configuration options for Verified Access instances.</p>
+    /// This field is required.
     pub fn access_logs(mut self, input: crate::types::VerifiedAccessLogOptions) -> Self {
         self.access_logs = ::std::option::Option::Some(input);
         self
@@ -110,7 +112,7 @@ impl ModifyVerifiedAccessInstanceLoggingConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_verified_access_instance_logging_configuration::ModifyVerifiedAccessInstanceLoggingConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::modify_verified_access_instance_logging_configuration::ModifyVerifiedAccessInstanceLoggingConfigurationInput {

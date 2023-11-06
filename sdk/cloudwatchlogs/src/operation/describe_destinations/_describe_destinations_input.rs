@@ -85,7 +85,7 @@ impl DescribeDestinationsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDestinationsInput`](crate::operation::describe_destinations::DescribeDestinationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_destinations::DescribeDestinationsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_destinations::DescribeDestinationsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_destinations::DescribeDestinationsInput {
             destination_name_prefix: self.destination_name_prefix,

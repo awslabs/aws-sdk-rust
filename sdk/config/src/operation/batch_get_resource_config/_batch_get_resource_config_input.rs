@@ -8,8 +8,10 @@ pub struct BatchGetResourceConfigInput {
 }
 impl BatchGetResourceConfigInput {
     /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID.</p>
-    pub fn resource_keys(&self) -> ::std::option::Option<&[crate::types::ResourceKey]> {
-        self.resource_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_keys.is_none()`.
+    pub fn resource_keys(&self) -> &[crate::types::ResourceKey] {
+        self.resource_keys.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetResourceConfigInput {
@@ -51,7 +53,7 @@ impl BatchGetResourceConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_resource_config::BatchGetResourceConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_get_resource_config::BatchGetResourceConfigInput {
             resource_keys: self.resource_keys,

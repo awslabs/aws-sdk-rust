@@ -26,16 +26,20 @@ impl CreateTransitGatewayVpcAttachmentInput {
         self.vpc_id.as_deref()
     }
     /// <p>The IDs of one or more subnets. You can specify only one subnet per Availability Zone. You must specify at least one subnet, but we recommend that you specify two subnets for better availability. The transit gateway uses one IP address from each specified subnet.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        self.subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>The VPC attachment options.</p>
     pub fn options(&self) -> ::std::option::Option<&crate::types::CreateTransitGatewayVpcAttachmentRequestOptions> {
         self.options.as_ref()
     }
     /// <p>The tags to apply to the VPC attachment.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -62,6 +66,7 @@ pub struct CreateTransitGatewayVpcAttachmentInputBuilder {
 }
 impl CreateTransitGatewayVpcAttachmentInputBuilder {
     /// <p>The ID of the transit gateway.</p>
+    /// This field is required.
     pub fn transit_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +81,7 @@ impl CreateTransitGatewayVpcAttachmentInputBuilder {
         &self.transit_gateway_id
     }
     /// <p>The ID of the VPC.</p>
+    /// This field is required.
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
         self
@@ -162,7 +168,7 @@ impl CreateTransitGatewayVpcAttachmentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_transit_gateway_vpc_attachment::CreateTransitGatewayVpcAttachmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_transit_gateway_vpc_attachment::CreateTransitGatewayVpcAttachmentInput {

@@ -6,7 +6,7 @@ pub struct ListPolicyStoresOutput {
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The list of policy stores in the account.</p>
-    pub policy_stores: ::std::option::Option<::std::vec::Vec<crate::types::PolicyStoreItem>>,
+    pub policy_stores: ::std::vec::Vec<crate::types::PolicyStoreItem>,
     _request_id: Option<String>,
 }
 impl ListPolicyStoresOutput {
@@ -15,8 +15,9 @@ impl ListPolicyStoresOutput {
         self.next_token.as_deref()
     }
     /// <p>The list of policy stores in the account.</p>
-    pub fn policy_stores(&self) -> ::std::option::Option<&[crate::types::PolicyStoreItem]> {
-        self.policy_stores.as_deref()
+    pub fn policy_stores(&self) -> &[crate::types::PolicyStoreItem] {
+        use std::ops::Deref;
+        self.policy_stores.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListPolicyStoresOutput {
@@ -84,11 +85,20 @@ impl ListPolicyStoresOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListPolicyStoresOutput`](crate::operation::list_policy_stores::ListPolicyStoresOutput).
-    pub fn build(self) -> crate::operation::list_policy_stores::ListPolicyStoresOutput {
-        crate::operation::list_policy_stores::ListPolicyStoresOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`policy_stores`](crate::operation::list_policy_stores::builders::ListPolicyStoresOutputBuilder::policy_stores)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_policy_stores::ListPolicyStoresOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_policy_stores::ListPolicyStoresOutput {
             next_token: self.next_token,
-            policy_stores: self.policy_stores,
+            policy_stores: self.policy_stores.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "policy_stores",
+                    "policy_stores was not specified but it is required when building ListPolicyStoresOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

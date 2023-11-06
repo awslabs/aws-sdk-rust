@@ -42,6 +42,7 @@ pub struct DescribeSpeakerInputBuilder {
 }
 impl DescribeSpeakerInputBuilder {
     /// <p>The identifier of the domain that contains the speaker.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl DescribeSpeakerInputBuilder {
         &self.domain_id
     }
     /// <p>The identifier of the speaker you are describing.</p>
+    /// This field is required.
     pub fn speaker_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.speaker_id = ::std::option::Option::Some(input.into());
         self
@@ -72,7 +74,7 @@ impl DescribeSpeakerInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSpeakerInput`](crate::operation::describe_speaker::DescribeSpeakerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_speaker::DescribeSpeakerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_speaker::DescribeSpeakerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_speaker::DescribeSpeakerInput {
             domain_id: self.domain_id,
             speaker_id: self.speaker_id,

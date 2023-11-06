@@ -5,23 +5,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TelephonySettings {
     /// <p>Allows or denies inbound calling.</p>
-    pub inbound_calling: ::std::option::Option<bool>,
+    pub inbound_calling: bool,
     /// <p>Allows or denies outbound calling.</p>
-    pub outbound_calling: ::std::option::Option<bool>,
+    pub outbound_calling: bool,
     /// <p>Allows or denies SMS messaging.</p>
-    pub sms: ::std::option::Option<bool>,
+    pub sms: bool,
 }
 impl TelephonySettings {
     /// <p>Allows or denies inbound calling.</p>
-    pub fn inbound_calling(&self) -> ::std::option::Option<bool> {
+    pub fn inbound_calling(&self) -> bool {
         self.inbound_calling
     }
     /// <p>Allows or denies outbound calling.</p>
-    pub fn outbound_calling(&self) -> ::std::option::Option<bool> {
+    pub fn outbound_calling(&self) -> bool {
         self.outbound_calling
     }
     /// <p>Allows or denies SMS messaging.</p>
-    pub fn sms(&self) -> ::std::option::Option<bool> {
+    pub fn sms(&self) -> bool {
         self.sms
     }
 }
@@ -42,6 +42,7 @@ pub struct TelephonySettingsBuilder {
 }
 impl TelephonySettingsBuilder {
     /// <p>Allows or denies inbound calling.</p>
+    /// This field is required.
     pub fn inbound_calling(mut self, input: bool) -> Self {
         self.inbound_calling = ::std::option::Option::Some(input);
         self
@@ -56,6 +57,7 @@ impl TelephonySettingsBuilder {
         &self.inbound_calling
     }
     /// <p>Allows or denies outbound calling.</p>
+    /// This field is required.
     pub fn outbound_calling(mut self, input: bool) -> Self {
         self.outbound_calling = ::std::option::Option::Some(input);
         self
@@ -70,6 +72,7 @@ impl TelephonySettingsBuilder {
         &self.outbound_calling
     }
     /// <p>Allows or denies SMS messaging.</p>
+    /// This field is required.
     pub fn sms(mut self, input: bool) -> Self {
         self.sms = ::std::option::Option::Some(input);
         self
@@ -84,11 +87,30 @@ impl TelephonySettingsBuilder {
         &self.sms
     }
     /// Consumes the builder and constructs a [`TelephonySettings`](crate::types::TelephonySettings).
-    pub fn build(self) -> crate::types::TelephonySettings {
-        crate::types::TelephonySettings {
-            inbound_calling: self.inbound_calling,
-            outbound_calling: self.outbound_calling,
-            sms: self.sms,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`inbound_calling`](crate::types::builders::TelephonySettingsBuilder::inbound_calling)
+    /// - [`outbound_calling`](crate::types::builders::TelephonySettingsBuilder::outbound_calling)
+    /// - [`sms`](crate::types::builders::TelephonySettingsBuilder::sms)
+    pub fn build(self) -> ::std::result::Result<crate::types::TelephonySettings, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TelephonySettings {
+            inbound_calling: self.inbound_calling.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "inbound_calling",
+                    "inbound_calling was not specified but it is required when building TelephonySettings",
+                )
+            })?,
+            outbound_calling: self.outbound_calling.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "outbound_calling",
+                    "outbound_calling was not specified but it is required when building TelephonySettings",
+                )
+            })?,
+            sms: self.sms.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "sms",
+                    "sms was not specified but it is required when building TelephonySettings",
+                )
+            })?,
+        })
     }
 }

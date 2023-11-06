@@ -3,25 +3,26 @@
 pub fn ser_document_suggester_options(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::DocumentSuggesterOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("SourceField");
-    if let Some(var_2) = &input.source_field {
-        scope_1.string(var_2);
+    {
+        scope_1.string(&input.source_field);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("FuzzyMatching");
-    if let Some(var_4) = &input.fuzzy_matching {
-        scope_3.string(var_4.as_str());
+    let mut scope_2 = writer.prefix("FuzzyMatching");
+    if let Some(var_3) = &input.fuzzy_matching {
+        scope_2.string(var_3.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("SortExpression");
-    if let Some(var_6) = &input.sort_expression {
-        scope_5.string(var_6);
+    let mut scope_4 = writer.prefix("SortExpression");
+    if let Some(var_5) = &input.sort_expression {
+        scope_4.string(var_5);
     }
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_document_suggester_options(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::DocumentSuggesterOptions, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -30,7 +31,7 @@ pub fn de_document_suggester_options(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("SourceField") /* SourceField com.amazonaws.cloudsearch#DocumentSuggesterOptions$SourceField */ =>  {
-                let var_7 =
+                let var_6 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -39,11 +40,11 @@ pub fn de_document_suggester_options(
                         ?
                     )
                 ;
-                builder = builder.set_source_field(var_7);
+                builder = builder.set_source_field(var_6);
             }
             ,
             s if s.matches("FuzzyMatching") /* FuzzyMatching com.amazonaws.cloudsearch#DocumentSuggesterOptions$FuzzyMatching */ =>  {
-                let var_8 =
+                let var_7 =
                     Some(
                         Result::<crate::types::SuggesterFuzzyMatching, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::SuggesterFuzzyMatching::from(
@@ -53,11 +54,11 @@ pub fn de_document_suggester_options(
                         ?
                     )
                 ;
-                builder = builder.set_fuzzy_matching(var_8);
+                builder = builder.set_fuzzy_matching(var_7);
             }
             ,
             s if s.matches("SortExpression") /* SortExpression com.amazonaws.cloudsearch#DocumentSuggesterOptions$SortExpression */ =>  {
-                let var_9 =
+                let var_8 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -66,11 +67,13 @@ pub fn de_document_suggester_options(
                         ?
                     )
                 ;
-                builder = builder.set_sort_expression(var_9);
+                builder = builder.set_sort_expression(var_8);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::document_suggester_options_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

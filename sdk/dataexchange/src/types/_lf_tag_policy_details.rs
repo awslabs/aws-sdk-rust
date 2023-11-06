@@ -5,20 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LfTagPolicyDetails {
     /// <p>The identifier for the AWS Glue Data Catalog.</p>
-    pub catalog_id: ::std::option::Option<::std::string::String>,
+    pub catalog_id: ::std::string::String,
     /// <p>The resource type for which the LF-tag policy applies.</p>
-    pub resource_type: ::std::option::Option<crate::types::LfResourceType>,
+    pub resource_type: crate::types::LfResourceType,
     /// <p>Details for the Lake Formation Resources included in the LF-tag policy.</p>
     pub resource_details: ::std::option::Option<crate::types::LfResourceDetails>,
 }
 impl LfTagPolicyDetails {
     /// <p>The identifier for the AWS Glue Data Catalog.</p>
-    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
-        self.catalog_id.as_deref()
+    pub fn catalog_id(&self) -> &str {
+        use std::ops::Deref;
+        self.catalog_id.deref()
     }
     /// <p>The resource type for which the LF-tag policy applies.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::LfResourceType> {
-        self.resource_type.as_ref()
+    pub fn resource_type(&self) -> &crate::types::LfResourceType {
+        &self.resource_type
     }
     /// <p>Details for the Lake Formation Resources included in the LF-tag policy.</p>
     pub fn resource_details(&self) -> ::std::option::Option<&crate::types::LfResourceDetails> {
@@ -42,6 +43,7 @@ pub struct LfTagPolicyDetailsBuilder {
 }
 impl LfTagPolicyDetailsBuilder {
     /// <p>The identifier for the AWS Glue Data Catalog.</p>
+    /// This field is required.
     pub fn catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.catalog_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +58,7 @@ impl LfTagPolicyDetailsBuilder {
         &self.catalog_id
     }
     /// <p>The resource type for which the LF-tag policy applies.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: crate::types::LfResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
@@ -70,6 +73,7 @@ impl LfTagPolicyDetailsBuilder {
         &self.resource_type
     }
     /// <p>Details for the Lake Formation Resources included in the LF-tag policy.</p>
+    /// This field is required.
     pub fn resource_details(mut self, input: crate::types::LfResourceDetails) -> Self {
         self.resource_details = ::std::option::Option::Some(input);
         self
@@ -84,11 +88,24 @@ impl LfTagPolicyDetailsBuilder {
         &self.resource_details
     }
     /// Consumes the builder and constructs a [`LfTagPolicyDetails`](crate::types::LfTagPolicyDetails).
-    pub fn build(self) -> crate::types::LfTagPolicyDetails {
-        crate::types::LfTagPolicyDetails {
-            catalog_id: self.catalog_id,
-            resource_type: self.resource_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`catalog_id`](crate::types::builders::LfTagPolicyDetailsBuilder::catalog_id)
+    /// - [`resource_type`](crate::types::builders::LfTagPolicyDetailsBuilder::resource_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::LfTagPolicyDetails, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::LfTagPolicyDetails {
+            catalog_id: self.catalog_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "catalog_id",
+                    "catalog_id was not specified but it is required when building LfTagPolicyDetails",
+                )
+            })?,
+            resource_type: self.resource_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "resource_type",
+                    "resource_type was not specified but it is required when building LfTagPolicyDetails",
+                )
+            })?,
             resource_details: self.resource_details,
-        }
+        })
     }
 }

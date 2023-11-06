@@ -45,8 +45,10 @@ impl CreateEventSubscriptionInput {
         self.source_type.as_deref()
     }
     /// <p> A list of event categories for a <code>SourceType</code> that you want to subscribe to. </p>
-    pub fn event_categories(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.event_categories.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_categories.is_none()`.
+    pub fn event_categories(&self) -> &[::std::string::String] {
+        self.event_categories.as_deref().unwrap_or_default()
     }
     /// <p>The list of identifiers of the event sources for which events are returned. If not specified, then all sources are included in the response. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
     /// <p>Constraints:</p>
@@ -57,16 +59,20 @@ impl CreateEventSubscriptionInput {
     /// <li> <p>If the source type is a parameter group, a <code>DBParameterGroupName</code> must be provided.</p> </li>
     /// <li> <p>If the source type is a snapshot, a <code>DBSnapshotIdentifier</code> must be provided.</p> </li>
     /// </ul>
-    pub fn source_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.source_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_ids.is_none()`.
+    pub fn source_ids(&self) -> &[::std::string::String] {
+        self.source_ids.as_deref().unwrap_or_default()
     }
     /// <p> A Boolean value; set to <code>true</code> to activate the subscription, set to <code>false</code> to create the subscription but not active it. </p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>The tags to be assigned to the event subscription.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateEventSubscriptionInput {
@@ -91,6 +97,7 @@ pub struct CreateEventSubscriptionInputBuilder {
 impl CreateEventSubscriptionInputBuilder {
     /// <p>The name of the subscription.</p>
     /// <p>Constraints: The name must be fewer than 255 characters.</p>
+    /// This field is required.
     pub fn subscription_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_name = ::std::option::Option::Some(input.into());
         self
@@ -107,6 +114,7 @@ impl CreateEventSubscriptionInputBuilder {
         &self.subscription_name
     }
     /// <p>The Amazon Resource Name (ARN) of the SNS topic created for event notification. Amazon SNS creates the ARN when you create a topic and subscribe to it.</p>
+    /// This field is required.
     pub fn sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sns_topic_arn = ::std::option::Option::Some(input.into());
         self
@@ -240,7 +248,7 @@ impl CreateEventSubscriptionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_event_subscription::CreateEventSubscriptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_event_subscription::CreateEventSubscriptionInput {
             subscription_name: self.subscription_name,

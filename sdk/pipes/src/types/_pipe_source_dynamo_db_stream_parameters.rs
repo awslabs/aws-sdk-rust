@@ -19,7 +19,7 @@ pub struct PipeSourceDynamoDbStreamParameters {
     /// <p>(Streams only) The number of batches to process concurrently from each shard. The default value is 1.</p>
     pub parallelization_factor: ::std::option::Option<i32>,
     /// <p>(Streams only) The position in a stream from which to start reading.</p>
-    pub starting_position: ::std::option::Option<crate::types::DynamoDbStreamStartPosition>,
+    pub starting_position: crate::types::DynamoDbStreamStartPosition,
 }
 impl PipeSourceDynamoDbStreamParameters {
     /// <p>The maximum number of records to include in each batch.</p>
@@ -51,8 +51,8 @@ impl PipeSourceDynamoDbStreamParameters {
         self.parallelization_factor
     }
     /// <p>(Streams only) The position in a stream from which to start reading.</p>
-    pub fn starting_position(&self) -> ::std::option::Option<&crate::types::DynamoDbStreamStartPosition> {
-        self.starting_position.as_ref()
+    pub fn starting_position(&self) -> &crate::types::DynamoDbStreamStartPosition {
+        &self.starting_position
     }
 }
 impl PipeSourceDynamoDbStreamParameters {
@@ -175,6 +175,7 @@ impl PipeSourceDynamoDbStreamParametersBuilder {
         &self.parallelization_factor
     }
     /// <p>(Streams only) The position in a stream from which to start reading.</p>
+    /// This field is required.
     pub fn starting_position(mut self, input: crate::types::DynamoDbStreamStartPosition) -> Self {
         self.starting_position = ::std::option::Option::Some(input);
         self
@@ -189,8 +190,10 @@ impl PipeSourceDynamoDbStreamParametersBuilder {
         &self.starting_position
     }
     /// Consumes the builder and constructs a [`PipeSourceDynamoDbStreamParameters`](crate::types::PipeSourceDynamoDbStreamParameters).
-    pub fn build(self) -> crate::types::PipeSourceDynamoDbStreamParameters {
-        crate::types::PipeSourceDynamoDbStreamParameters {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`starting_position`](crate::types::builders::PipeSourceDynamoDbStreamParametersBuilder::starting_position)
+    pub fn build(self) -> ::std::result::Result<crate::types::PipeSourceDynamoDbStreamParameters, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PipeSourceDynamoDbStreamParameters {
             batch_size: self.batch_size,
             dead_letter_config: self.dead_letter_config,
             on_partial_batch_item_failure: self.on_partial_batch_item_failure,
@@ -198,7 +201,12 @@ impl PipeSourceDynamoDbStreamParametersBuilder {
             maximum_record_age_in_seconds: self.maximum_record_age_in_seconds,
             maximum_retry_attempts: self.maximum_retry_attempts,
             parallelization_factor: self.parallelization_factor,
-            starting_position: self.starting_position,
-        }
+            starting_position: self.starting_position.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "starting_position",
+                    "starting_position was not specified but it is required when building PipeSourceDynamoDbStreamParameters",
+                )
+            })?,
+        })
     }
 }

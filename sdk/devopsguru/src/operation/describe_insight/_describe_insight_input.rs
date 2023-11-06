@@ -34,6 +34,7 @@ pub struct DescribeInsightInputBuilder {
 }
 impl DescribeInsightInputBuilder {
     /// <p> The ID of the insight. </p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl DescribeInsightInputBuilder {
     /// Consumes the builder and constructs a [`DescribeInsightInput`](crate::operation::describe_insight::DescribeInsightInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_insight::DescribeInsightInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_insight::DescribeInsightInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_insight::DescribeInsightInput {
             id: self.id,
             account_id: self.account_id,

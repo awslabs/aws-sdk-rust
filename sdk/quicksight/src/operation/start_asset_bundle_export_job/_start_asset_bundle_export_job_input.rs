@@ -47,8 +47,10 @@ impl StartAssetBundleExportJobInput {
     /// <li> <p> <code>VPCConnection</code> </p> </li>
     /// </ul>
     /// <p>The API caller must have the necessary permissions in their IAM role to access each resource before the resources can be exported.</p>
-    pub fn resource_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_arns.is_none()`.
+    pub fn resource_arns(&self) -> &[::std::string::String] {
+        self.resource_arns.as_deref().unwrap_or_default()
     }
     /// <p>A Boolean that determines whether all dependencies of each resource ARN are recursively exported with the job. For example, say you provided a Dashboard ARN to the <code>ResourceArns</code> parameter. If you set <code>IncludeAllDependencies</code> to <code>TRUE</code>, any theme, dataset, and data source resource that is a dependency of the dashboard is also exported.</p>
     pub fn include_all_dependencies(&self) -> ::std::option::Option<bool> {
@@ -87,6 +89,7 @@ pub struct StartAssetBundleExportJobInputBuilder {
 }
 impl StartAssetBundleExportJobInputBuilder {
     /// <p>The ID of the Amazon Web Services account to export assets from.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -101,6 +104,7 @@ impl StartAssetBundleExportJobInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID of the job. This ID is unique while the job is running. After the job is completed, you can reuse this ID for another job.</p>
+    /// This field is required.
     pub fn asset_bundle_export_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_bundle_export_job_id = ::std::option::Option::Some(input.into());
         self
@@ -179,6 +183,7 @@ impl StartAssetBundleExportJobInputBuilder {
         &self.include_all_dependencies
     }
     /// <p>The export data format.</p>
+    /// This field is required.
     pub fn export_format(mut self, input: crate::types::AssetBundleExportFormat) -> Self {
         self.export_format = ::std::option::Option::Some(input);
         self
@@ -222,7 +227,7 @@ impl StartAssetBundleExportJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJobInput {
             aws_account_id: self.aws_account_id,

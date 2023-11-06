@@ -34,6 +34,7 @@ pub struct PutLifecyclePolicyInputBuilder {
 }
 impl PutLifecyclePolicyInputBuilder {
     /// <p>The name of the container that you want to assign the object lifecycle policy to.</p>
+    /// This field is required.
     pub fn container_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl PutLifecyclePolicyInputBuilder {
         &self.container_name
     }
     /// <p>The object lifecycle policy to apply to the container.</p>
+    /// This field is required.
     pub fn lifecycle_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lifecycle_policy = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,8 @@ impl PutLifecyclePolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutLifecyclePolicyInput`](crate::operation::put_lifecycle_policy::PutLifecyclePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_lifecycle_policy::PutLifecyclePolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_lifecycle_policy::PutLifecyclePolicyInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::put_lifecycle_policy::PutLifecyclePolicyInput {
             container_name: self.container_name,
             lifecycle_policy: self.lifecycle_policy,

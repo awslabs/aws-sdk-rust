@@ -27,6 +27,7 @@ pub struct DeregisterVolumeInputBuilder {
 }
 impl DeregisterVolumeInputBuilder {
     /// <p>The AWS OpsWorks Stacks volume ID, which is the GUID that AWS OpsWorks Stacks assigned to the instance when you registered the volume with the stack, not the Amazon EC2 volume ID.</p>
+    /// This field is required.
     pub fn volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeregisterVolumeInputBuilder {
     /// Consumes the builder and constructs a [`DeregisterVolumeInput`](crate::operation::deregister_volume::DeregisterVolumeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::deregister_volume::DeregisterVolumeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::deregister_volume::DeregisterVolumeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::deregister_volume::DeregisterVolumeInput { volume_id: self.volume_id })
     }
 }

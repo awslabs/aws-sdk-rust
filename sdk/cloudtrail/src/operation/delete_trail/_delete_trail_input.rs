@@ -28,6 +28,7 @@ pub struct DeleteTrailInputBuilder {
 }
 impl DeleteTrailInputBuilder {
     /// <p>Specifies the name or the CloudTrail ARN of the trail to be deleted. The following is the format of a trail ARN. <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +43,7 @@ impl DeleteTrailInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`DeleteTrailInput`](crate::operation::delete_trail::DeleteTrailInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_trail::DeleteTrailInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_trail::DeleteTrailInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_trail::DeleteTrailInput { name: self.name })
     }
 }

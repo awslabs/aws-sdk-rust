@@ -27,6 +27,7 @@ pub struct GetMediaPipelineInputBuilder {
 }
 impl GetMediaPipelineInputBuilder {
     /// <p>The ID of the pipeline that you want to get.</p>
+    /// This field is required.
     pub fn media_pipeline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.media_pipeline_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetMediaPipelineInputBuilder {
     /// Consumes the builder and constructs a [`GetMediaPipelineInput`](crate::operation::get_media_pipeline::GetMediaPipelineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_media_pipeline::GetMediaPipelineInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_media_pipeline::GetMediaPipelineInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_media_pipeline::GetMediaPipelineInput {
             media_pipeline_id: self.media_pipeline_id,
         })

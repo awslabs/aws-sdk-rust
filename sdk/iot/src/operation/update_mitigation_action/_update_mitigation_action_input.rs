@@ -41,6 +41,7 @@ pub struct UpdateMitigationActionInputBuilder {
 }
 impl UpdateMitigationActionInputBuilder {
     /// <p>The friendly name for the mitigation action. You cannot change the name by using <code>UpdateMitigationAction</code>. Instead, you must delete and recreate the mitigation action with the new name.</p>
+    /// This field is required.
     pub fn action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_name = ::std::option::Option::Some(input.into());
         self
@@ -85,8 +86,10 @@ impl UpdateMitigationActionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateMitigationActionInput`](crate::operation::update_mitigation_action::UpdateMitigationActionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_mitigation_action::UpdateMitigationActionInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::update_mitigation_action::UpdateMitigationActionInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::update_mitigation_action::UpdateMitigationActionInput {
             action_name: self.action_name,
             role_arn: self.role_arn,

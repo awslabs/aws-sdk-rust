@@ -27,6 +27,7 @@ pub struct StopAssessmentInputBuilder {
 }
 impl StopAssessmentInputBuilder {
     /// <p> The <code>assessmentId</code> returned by <code>StartAssessment</code>. </p>
+    /// This field is required.
     pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl StopAssessmentInputBuilder {
     /// Consumes the builder and constructs a [`StopAssessmentInput`](crate::operation::stop_assessment::StopAssessmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_assessment::StopAssessmentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_assessment::StopAssessmentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_assessment::StopAssessmentInput {
             assessment_id: self.assessment_id,
         })

@@ -26,8 +26,10 @@ impl ListResolverRuleAssociationsInput {
     /// <p>An optional specification to return a subset of Resolver rules, such as Resolver rules that are associated with the same VPC ID.</p> <note>
     /// <p>If you submit a second or subsequent <code>ListResolverRuleAssociations</code> request and specify the <code>NextToken</code> parameter, you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
     /// </note>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
 }
 impl ListResolverRuleAssociationsInput {
@@ -108,7 +110,7 @@ impl ListResolverRuleAssociationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resolver_rule_associations::ListResolverRuleAssociationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_resolver_rule_associations::ListResolverRuleAssociationsInput {
             max_results: self.max_results,

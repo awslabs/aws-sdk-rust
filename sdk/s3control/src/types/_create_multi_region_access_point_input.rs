@@ -5,17 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateMultiRegionAccessPointInput {
     /// <p>The name of the Multi-Region Access Point associated with this request.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>This data type is not supported for Amazon S3 on Outposts.</p>
     pub public_access_block: ::std::option::Option<crate::types::PublicAccessBlockConfiguration>,
     /// <p>The buckets in different Regions that are associated with the Multi-Region Access Point.</p>
-    pub regions: ::std::option::Option<::std::vec::Vec<crate::types::Region>>,
+    pub regions: ::std::vec::Vec<crate::types::Region>,
 }
 impl CreateMultiRegionAccessPointInput {
     /// <p>The name of the Multi-Region Access Point associated with this request.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>This data type is not supported for Amazon S3 on Outposts.</p>
@@ -23,8 +24,9 @@ impl CreateMultiRegionAccessPointInput {
         self.public_access_block.as_ref()
     }
     /// <p>The buckets in different Regions that are associated with the Multi-Region Access Point.</p>
-    pub fn regions(&self) -> ::std::option::Option<&[crate::types::Region]> {
-        self.regions.as_deref()
+    pub fn regions(&self) -> &[crate::types::Region] {
+        use std::ops::Deref;
+        self.regions.deref()
     }
 }
 impl CreateMultiRegionAccessPointInput {
@@ -44,6 +46,7 @@ pub struct CreateMultiRegionAccessPointInputBuilder {
 }
 impl CreateMultiRegionAccessPointInputBuilder {
     /// <p>The name of the Multi-Region Access Point associated with this request.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -95,11 +98,24 @@ impl CreateMultiRegionAccessPointInputBuilder {
         &self.regions
     }
     /// Consumes the builder and constructs a [`CreateMultiRegionAccessPointInput`](crate::types::CreateMultiRegionAccessPointInput).
-    pub fn build(self) -> crate::types::CreateMultiRegionAccessPointInput {
-        crate::types::CreateMultiRegionAccessPointInput {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::CreateMultiRegionAccessPointInputBuilder::name)
+    /// - [`regions`](crate::types::builders::CreateMultiRegionAccessPointInputBuilder::regions)
+    pub fn build(self) -> ::std::result::Result<crate::types::CreateMultiRegionAccessPointInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CreateMultiRegionAccessPointInput {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CreateMultiRegionAccessPointInput",
+                )
+            })?,
             public_access_block: self.public_access_block,
-            regions: self.regions,
-        }
+            regions: self.regions.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "regions",
+                    "regions was not specified but it is required when building CreateMultiRegionAccessPointInput",
+                )
+            })?,
+        })
     }
 }

@@ -17,12 +17,16 @@ impl UnassignIpv6AddressesOutput {
         self.network_interface_id.as_deref()
     }
     /// <p>The IPv6 addresses that have been unassigned from the network interface.</p>
-    pub fn unassigned_ipv6_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.unassigned_ipv6_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unassigned_ipv6_addresses.is_none()`.
+    pub fn unassigned_ipv6_addresses(&self) -> &[::std::string::String] {
+        self.unassigned_ipv6_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The IPv4 prefixes that have been unassigned from the network interface.</p>
-    pub fn unassigned_ipv6_prefixes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.unassigned_ipv6_prefixes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unassigned_ipv6_prefixes.is_none()`.
+    pub fn unassigned_ipv6_prefixes(&self) -> &[::std::string::String] {
+        self.unassigned_ipv6_prefixes.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for UnassignIpv6AddressesOutput {

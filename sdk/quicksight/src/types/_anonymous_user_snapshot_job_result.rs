@@ -9,8 +9,10 @@ pub struct AnonymousUserSnapshotJobResult {
 }
 impl AnonymousUserSnapshotJobResult {
     /// <p>A list of <code>SnapshotJobResultFileGroup</code> objects that contain information on the files that are requested during a <code>StartDashboardSnapshotJob</code> API call. If the job succeeds, these objects contain the location where the snapshot artifacts are stored. If the job fails, the objects contain information about the error that caused the job to fail.</p>
-    pub fn file_groups(&self) -> ::std::option::Option<&[crate::types::SnapshotJobResultFileGroup]> {
-        self.file_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.file_groups.is_none()`.
+    pub fn file_groups(&self) -> &[crate::types::SnapshotJobResultFileGroup] {
+        self.file_groups.as_deref().unwrap_or_default()
     }
 }
 impl AnonymousUserSnapshotJobResult {

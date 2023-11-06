@@ -42,6 +42,7 @@ pub struct ListUserPoolClientsInputBuilder {
 }
 impl ListUserPoolClientsInputBuilder {
     /// <p>The user pool ID for the user pool where you want to list user pool clients.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -86,7 +87,7 @@ impl ListUserPoolClientsInputBuilder {
     /// Consumes the builder and constructs a [`ListUserPoolClientsInput`](crate::operation::list_user_pool_clients::ListUserPoolClientsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_user_pool_clients::ListUserPoolClientsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_user_pool_clients::ListUserPoolClientsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_user_pool_clients::ListUserPoolClientsInput {
             user_pool_id: self.user_pool_id,

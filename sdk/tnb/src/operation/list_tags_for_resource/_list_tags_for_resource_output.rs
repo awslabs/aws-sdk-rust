@@ -4,13 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
-        self.tags.as_ref()
+    pub fn tags(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+        &self.tags
     }
 }
 impl ::std::fmt::Debug for ListTagsForResourceOutput {
@@ -71,11 +71,21 @@ impl ListTagsForResourceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::operation::list_tags_for_resource::ListTagsForResourceOutput).
-    pub fn build(self) -> crate::operation::list_tags_for_resource::ListTagsForResourceOutput {
-        crate::operation::list_tags_for_resource::ListTagsForResourceOutput {
-            tags: self.tags,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`tags`](crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder::tags)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_tags_for_resource::ListTagsForResourceOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_tags_for_resource::ListTagsForResourceOutput {
+            tags: self.tags.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "tags",
+                    "tags was not specified but it is required when building ListTagsForResourceOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for ListTagsForResourceOutputBuilder {

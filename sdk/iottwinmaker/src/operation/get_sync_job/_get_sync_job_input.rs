@@ -40,6 +40,7 @@ impl GetSyncJobInputBuilder {
     /// <p>The sync source.</p> <note>
     /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>
     /// </note>
+    /// This field is required.
     pub fn sync_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sync_source = ::std::option::Option::Some(input.into());
         self
@@ -72,7 +73,7 @@ impl GetSyncJobInputBuilder {
         &self.workspace_id
     }
     /// Consumes the builder and constructs a [`GetSyncJobInput`](crate::operation::get_sync_job::GetSyncJobInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_sync_job::GetSyncJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_sync_job::GetSyncJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_sync_job::GetSyncJobInput {
             sync_source: self.sync_source,
             workspace_id: self.workspace_id,

@@ -60,6 +60,7 @@ pub struct ExecuteSqlInputBuilder {
 }
 impl ExecuteSqlInputBuilder {
     /// <p>The ARN of the Aurora Serverless DB cluster.</p>
+    /// This field is required.
     pub fn db_cluster_or_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_or_instance_arn = ::std::option::Option::Some(input.into());
         self
@@ -75,6 +76,7 @@ impl ExecuteSqlInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
     /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
+    /// This field is required.
     pub fn aws_secret_store_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_secret_store_arn = ::std::option::Option::Some(input.into());
         self
@@ -92,6 +94,7 @@ impl ExecuteSqlInputBuilder {
     }
     /// <p>One or more SQL statements to run on the DB cluster.</p>
     /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted, including data definition, data manipulation, and commit statements. </p>
+    /// This field is required.
     pub fn sql_statements(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sql_statements = ::std::option::Option::Some(input.into());
         self
@@ -136,7 +139,7 @@ impl ExecuteSqlInputBuilder {
         &self.schema
     }
     /// Consumes the builder and constructs a [`ExecuteSqlInput`](crate::operation::execute_sql::ExecuteSqlInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::execute_sql::ExecuteSqlInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::execute_sql::ExecuteSqlInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::execute_sql::ExecuteSqlInput {
             db_cluster_or_instance_arn: self.db_cluster_or_instance_arn,
             aws_secret_store_arn: self.aws_secret_store_arn,

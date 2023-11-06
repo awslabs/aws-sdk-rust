@@ -106,7 +106,7 @@ impl ListTransactionsInputBuilder {
     /// Consumes the builder and constructs a [`ListTransactionsInput`](crate::operation::list_transactions::ListTransactionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_transactions::ListTransactionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_transactions::ListTransactionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_transactions::ListTransactionsInput {
             catalog_id: self.catalog_id,
             status_filter: self.status_filter,

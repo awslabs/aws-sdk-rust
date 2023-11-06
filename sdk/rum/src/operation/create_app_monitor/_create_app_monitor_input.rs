@@ -76,6 +76,7 @@ pub struct CreateAppMonitorInputBuilder {
 }
 impl CreateAppMonitorInputBuilder {
     /// <p>A name for the app monitor.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +91,7 @@ impl CreateAppMonitorInputBuilder {
         &self.name
     }
     /// <p>The top-level internet domain name for which your application has administrative authority.</p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -189,7 +191,7 @@ impl CreateAppMonitorInputBuilder {
     /// Consumes the builder and constructs a [`CreateAppMonitorInput`](crate::operation::create_app_monitor::CreateAppMonitorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_app_monitor::CreateAppMonitorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_app_monitor::CreateAppMonitorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_app_monitor::CreateAppMonitorInput {
             name: self.name,
             domain: self.domain,

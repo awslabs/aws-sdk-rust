@@ -18,8 +18,10 @@ impl ListIdentitiesOutput {
         self.identity_pool_id.as_deref()
     }
     /// <p>An object containing a set of identities and associated mappings.</p>
-    pub fn identities(&self) -> ::std::option::Option<&[crate::types::IdentityDescription]> {
-        self.identities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.identities.is_none()`.
+    pub fn identities(&self) -> &[crate::types::IdentityDescription] {
+        self.identities.as_deref().unwrap_or_default()
     }
     /// <p>A pagination token.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

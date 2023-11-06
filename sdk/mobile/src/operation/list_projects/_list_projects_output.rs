@@ -12,8 +12,10 @@ pub struct ListProjectsOutput {
 }
 impl ListProjectsOutput {
     /// <p> List of projects. </p>
-    pub fn projects(&self) -> ::std::option::Option<&[crate::types::ProjectSummary]> {
-        self.projects.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.projects.is_none()`.
+    pub fn projects(&self) -> &[crate::types::ProjectSummary] {
+        self.projects.as_deref().unwrap_or_default()
     }
     /// <p> Pagination token. Set to null to start listing records from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more entries. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

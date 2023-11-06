@@ -30,6 +30,7 @@ pub struct DescribePolicyInputBuilder {
 impl DescribePolicyInputBuilder {
     /// <p>The unique identifier (ID) of the policy that you want details about. You can get the ID from the <code>ListPolicies</code> or <code>ListPoliciesForTarget</code> operations.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
+    /// This field is required.
     pub fn policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_id = ::std::option::Option::Some(input.into());
         self
@@ -48,7 +49,7 @@ impl DescribePolicyInputBuilder {
     /// Consumes the builder and constructs a [`DescribePolicyInput`](crate::operation::describe_policy::DescribePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_policy::DescribePolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_policy::DescribePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_policy::DescribePolicyInput { policy_id: self.policy_id })
     }
 }

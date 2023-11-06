@@ -65,6 +65,7 @@ pub struct UpdateInstanceMetadataOptionsInputBuilder {
 }
 impl UpdateInstanceMetadataOptionsInputBuilder {
     /// <p>The name of the instance for which to update metadata parameters.</p>
+    /// This field is required.
     pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_name = ::std::option::Option::Some(input.into());
         self
@@ -154,7 +155,7 @@ impl UpdateInstanceMetadataOptionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_instance_metadata_options::UpdateInstanceMetadataOptionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_instance_metadata_options::UpdateInstanceMetadataOptionsInput {
             instance_name: self.instance_name,

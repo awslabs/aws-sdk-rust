@@ -27,6 +27,7 @@ pub struct DeleteCrossAccountAuthorizationInputBuilder {
 }
 impl DeleteCrossAccountAuthorizationInputBuilder {
     /// <p>The cross-account authorization.</p>
+    /// This field is required.
     pub fn cross_account_authorization(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cross_account_authorization = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteCrossAccountAuthorizationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationInput {

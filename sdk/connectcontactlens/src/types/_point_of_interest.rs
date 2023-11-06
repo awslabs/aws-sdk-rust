@@ -35,6 +35,7 @@ pub struct PointOfInterestBuilder {
 }
 impl PointOfInterestBuilder {
     /// <p>The beginning offset in milliseconds where the category rule was detected.</p>
+    /// This field is required.
     pub fn begin_offset_millis(mut self, input: i32) -> Self {
         self.begin_offset_millis = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl PointOfInterestBuilder {
         &self.begin_offset_millis
     }
     /// <p>The ending offset in milliseconds where the category rule was detected.</p>
+    /// This field is required.
     pub fn end_offset_millis(mut self, input: i32) -> Self {
         self.end_offset_millis = ::std::option::Option::Some(input);
         self

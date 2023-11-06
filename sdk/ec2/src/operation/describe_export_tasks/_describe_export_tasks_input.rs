@@ -10,12 +10,16 @@ pub struct DescribeExportTasksInput {
 }
 impl DescribeExportTasksInput {
     /// <p>The export task IDs.</p>
-    pub fn export_task_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.export_task_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.export_task_ids.is_none()`.
+    pub fn export_task_ids(&self) -> &[::std::string::String] {
+        self.export_task_ids.as_deref().unwrap_or_default()
     }
     /// <p>the filters for the export tasks.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
 }
 impl DescribeExportTasksInput {
@@ -76,7 +80,7 @@ impl DescribeExportTasksInputBuilder {
     /// Consumes the builder and constructs a [`DescribeExportTasksInput`](crate::operation::describe_export_tasks::DescribeExportTasksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_export_tasks::DescribeExportTasksInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_export_tasks::DescribeExportTasksInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_export_tasks::DescribeExportTasksInput {
             export_task_ids: self.export_task_ids,

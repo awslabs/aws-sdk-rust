@@ -41,6 +41,7 @@ pub struct ListCertificatesInputBuilder {
 }
 impl ListCertificatesInputBuilder {
     /// <p>The identifier of the directory.</p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl ListCertificatesInputBuilder {
     /// Consumes the builder and constructs a [`ListCertificatesInput`](crate::operation::list_certificates::ListCertificatesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_certificates::ListCertificatesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_certificates::ListCertificatesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_certificates::ListCertificatesInput {
             directory_id: self.directory_id,
             next_token: self.next_token,

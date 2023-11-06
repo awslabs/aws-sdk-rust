@@ -38,6 +38,7 @@ pub struct ChangeResourceRecordSetsOutputBuilder {
 impl ChangeResourceRecordSetsOutputBuilder {
     /// <p>A complex type that contains information about changes made to your hosted zone.</p>
     /// <p>This element contains an ID that you use when performing a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a> action to get detailed information about the change.</p>
+    /// This field is required.
     pub fn change_info(mut self, input: crate::types::ChangeInfo) -> Self {
         self.change_info = ::std::option::Option::Some(input);
         self

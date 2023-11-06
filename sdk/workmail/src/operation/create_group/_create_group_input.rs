@@ -41,6 +41,7 @@ pub struct CreateGroupInputBuilder {
 }
 impl CreateGroupInputBuilder {
     /// <p>The organization under which the group is to be created.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl CreateGroupInputBuilder {
         &self.organization_id
     }
     /// <p>The name of the group.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +85,7 @@ impl CreateGroupInputBuilder {
         &self.hidden_from_global_address_list
     }
     /// Consumes the builder and constructs a [`CreateGroupInput`](crate::operation::create_group::CreateGroupInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_group::CreateGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_group::CreateGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_group::CreateGroupInput {
             organization_id: self.organization_id,
             name: self.name,

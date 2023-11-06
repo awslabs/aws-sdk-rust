@@ -2,51 +2,51 @@
 pub fn ser_fsx_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FsxConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.file_system_id {
-        object.key("FileSystemId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("FileSystemId").string(input.file_system_id.as_str());
     }
-    if let Some(var_2) = &input.file_system_type {
-        object.key("FileSystemType").string(var_2.as_str());
+    {
+        object.key("FileSystemType").string(input.file_system_type.as_str());
     }
-    if let Some(var_3) = &input.vpc_configuration {
+    if let Some(var_1) = &input.vpc_configuration {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("VpcConfiguration").start_object();
-        crate::protocol_serde::shape_data_source_vpc_configuration::ser_data_source_vpc_configuration(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_2 = object.key("VpcConfiguration").start_object();
+        crate::protocol_serde::shape_data_source_vpc_configuration::ser_data_source_vpc_configuration(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_5) = &input.secret_arn {
-        object.key("SecretArn").string(var_5.as_str());
+    if let Some(var_3) = &input.secret_arn {
+        object.key("SecretArn").string(var_3.as_str());
     }
-    if let Some(var_6) = &input.inclusion_patterns {
-        let mut array_7 = object.key("InclusionPatterns").start_array();
-        for item_8 in var_6 {
+    if let Some(var_4) = &input.inclusion_patterns {
+        let mut array_5 = object.key("InclusionPatterns").start_array();
+        for item_6 in var_4 {
             {
-                array_7.value().string(item_8.as_str());
+                array_5.value().string(item_6.as_str());
             }
         }
-        array_7.finish();
+        array_5.finish();
     }
-    if let Some(var_9) = &input.exclusion_patterns {
-        let mut array_10 = object.key("ExclusionPatterns").start_array();
-        for item_11 in var_9 {
+    if let Some(var_7) = &input.exclusion_patterns {
+        let mut array_8 = object.key("ExclusionPatterns").start_array();
+        for item_9 in var_7 {
             {
-                array_10.value().string(item_11.as_str());
+                array_8.value().string(item_9.as_str());
             }
         }
-        array_10.finish();
+        array_8.finish();
     }
-    if let Some(var_12) = &input.field_mappings {
-        let mut array_13 = object.key("FieldMappings").start_array();
-        for item_14 in var_12 {
+    if let Some(var_10) = &input.field_mappings {
+        let mut array_11 = object.key("FieldMappings").start_array();
+        for item_12 in var_10 {
             {
                 #[allow(unused_mut)]
-                let mut object_15 = array_13.value().start_object();
-                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_15, item_14)?;
-                object_15.finish();
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_13, item_12)?;
+                object_13.finish();
             }
         }
-        array_13.finish();
+        array_11.finish();
     }
     Ok(())
 }
@@ -121,7 +121,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::fsx_configuration_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

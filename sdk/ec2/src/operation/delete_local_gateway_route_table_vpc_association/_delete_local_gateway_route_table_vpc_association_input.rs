@@ -36,6 +36,7 @@ pub struct DeleteLocalGatewayRouteTableVpcAssociationInputBuilder {
 }
 impl DeleteLocalGatewayRouteTableVpcAssociationInputBuilder {
     /// <p>The ID of the association.</p>
+    /// This field is required.
     pub fn local_gateway_route_table_vpc_association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_gateway_route_table_vpc_association_id = ::std::option::Option::Some(input.into());
         self
@@ -68,7 +69,7 @@ impl DeleteLocalGatewayRouteTableVpcAssociationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_local_gateway_route_table_vpc_association::DeleteLocalGatewayRouteTableVpcAssociationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_local_gateway_route_table_vpc_association::DeleteLocalGatewayRouteTableVpcAssociationInput {

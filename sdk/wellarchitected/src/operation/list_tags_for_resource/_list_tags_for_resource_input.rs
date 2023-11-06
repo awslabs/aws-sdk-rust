@@ -27,6 +27,7 @@ pub struct ListTagsForResourceInputBuilder {
 }
 impl ListTagsForResourceInputBuilder {
     /// <p>The ARN for the workload.</p>
+    /// This field is required.
     pub fn workload_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workload_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl ListTagsForResourceInputBuilder {
     /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::operation::list_tags_for_resource::ListTagsForResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_tags_for_resource::ListTagsForResourceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_tags_for_resource::ListTagsForResourceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_tags_for_resource::ListTagsForResourceInput {
             workload_arn: self.workload_arn,

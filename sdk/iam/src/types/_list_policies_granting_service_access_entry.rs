@@ -18,8 +18,10 @@ impl ListPoliciesGrantingServiceAccessEntry {
         self.service_namespace.as_deref()
     }
     /// <p>The&nbsp;<code>PoliciesGrantingServiceAccess</code> object that contains details about the policy.</p>
-    pub fn policies(&self) -> ::std::option::Option<&[crate::types::PolicyGrantingServiceAccess]> {
-        self.policies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policies.is_none()`.
+    pub fn policies(&self) -> &[crate::types::PolicyGrantingServiceAccess] {
+        self.policies.as_deref().unwrap_or_default()
     }
 }
 impl ListPoliciesGrantingServiceAccessEntry {

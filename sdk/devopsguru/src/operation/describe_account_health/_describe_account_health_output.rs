@@ -10,7 +10,7 @@ pub struct DescribeAccountHealthOutput {
     /// <p> An integer that specifies the number of metrics that have been analyzed in your Amazon Web Services account. </p>
     pub metrics_analyzed: i32,
     /// <p>The number of Amazon DevOps Guru resource analysis hours billed to the current Amazon Web Services account in the last hour. </p>
-    pub resource_hours: ::std::option::Option<i64>,
+    pub resource_hours: i64,
     /// <p> Number of resources that DevOps Guru is monitoring in your Amazon Web Services account. </p>
     pub analyzed_resource_count: ::std::option::Option<i64>,
     _request_id: Option<String>,
@@ -29,7 +29,7 @@ impl DescribeAccountHealthOutput {
         self.metrics_analyzed
     }
     /// <p>The number of Amazon DevOps Guru resource analysis hours billed to the current Amazon Web Services account in the last hour. </p>
-    pub fn resource_hours(&self) -> ::std::option::Option<i64> {
+    pub fn resource_hours(&self) -> i64 {
         self.resource_hours
     }
     /// <p> Number of resources that DevOps Guru is monitoring in your Amazon Web Services account. </p>
@@ -62,6 +62,7 @@ pub struct DescribeAccountHealthOutputBuilder {
 }
 impl DescribeAccountHealthOutputBuilder {
     /// <p> An integer that specifies the number of open reactive insights in your Amazon Web Services account. </p>
+    /// This field is required.
     pub fn open_reactive_insights(mut self, input: i32) -> Self {
         self.open_reactive_insights = ::std::option::Option::Some(input);
         self
@@ -76,6 +77,7 @@ impl DescribeAccountHealthOutputBuilder {
         &self.open_reactive_insights
     }
     /// <p> An integer that specifies the number of open proactive insights in your Amazon Web Services account. </p>
+    /// This field is required.
     pub fn open_proactive_insights(mut self, input: i32) -> Self {
         self.open_proactive_insights = ::std::option::Option::Some(input);
         self
@@ -90,6 +92,7 @@ impl DescribeAccountHealthOutputBuilder {
         &self.open_proactive_insights
     }
     /// <p> An integer that specifies the number of metrics that have been analyzed in your Amazon Web Services account. </p>
+    /// This field is required.
     pub fn metrics_analyzed(mut self, input: i32) -> Self {
         self.metrics_analyzed = ::std::option::Option::Some(input);
         self
@@ -104,6 +107,7 @@ impl DescribeAccountHealthOutputBuilder {
         &self.metrics_analyzed
     }
     /// <p>The number of Amazon DevOps Guru resource analysis hours billed to the current Amazon Web Services account in the last hour. </p>
+    /// This field is required.
     pub fn resource_hours(mut self, input: i64) -> Self {
         self.resource_hours = ::std::option::Option::Some(input);
         self
@@ -141,14 +145,24 @@ impl DescribeAccountHealthOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAccountHealthOutput`](crate::operation::describe_account_health::DescribeAccountHealthOutput).
-    pub fn build(self) -> crate::operation::describe_account_health::DescribeAccountHealthOutput {
-        crate::operation::describe_account_health::DescribeAccountHealthOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource_hours`](crate::operation::describe_account_health::builders::DescribeAccountHealthOutputBuilder::resource_hours)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_account_health::DescribeAccountHealthOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_account_health::DescribeAccountHealthOutput {
             open_reactive_insights: self.open_reactive_insights.unwrap_or_default(),
             open_proactive_insights: self.open_proactive_insights.unwrap_or_default(),
             metrics_analyzed: self.metrics_analyzed.unwrap_or_default(),
-            resource_hours: self.resource_hours,
+            resource_hours: self.resource_hours.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "resource_hours",
+                    "resource_hours was not specified but it is required when building DescribeAccountHealthOutput",
+                )
+            })?,
             analyzed_resource_count: self.analyzed_resource_count,
             _request_id: self._request_id,
-        }
+        })
     }
 }

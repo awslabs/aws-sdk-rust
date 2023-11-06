@@ -15,8 +15,10 @@ impl ListTlsInspectionConfigurationsOutput {
         self.next_token.as_deref()
     }
     /// <p>The TLS inspection configuration metadata objects that you've defined. Depending on your setting for max results and the number of TLS inspection configurations, this might not be the full list.</p>
-    pub fn tls_inspection_configurations(&self) -> ::std::option::Option<&[crate::types::TlsInspectionConfigurationMetadata]> {
-        self.tls_inspection_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tls_inspection_configurations.is_none()`.
+    pub fn tls_inspection_configurations(&self) -> &[crate::types::TlsInspectionConfigurationMetadata] {
+        self.tls_inspection_configurations.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListTlsInspectionConfigurationsOutput {

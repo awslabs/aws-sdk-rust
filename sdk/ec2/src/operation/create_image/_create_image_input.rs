@@ -32,8 +32,10 @@ pub struct CreateImageInput {
 }
 impl CreateImageInput {
     /// <p>The block device mappings. This parameter cannot be used to modify the encryption status of existing volumes or snapshots. To create an AMI with encrypted snapshots, use the <code>CopyImage</code> action.</p>
-    pub fn block_device_mappings(&self) -> ::std::option::Option<&[crate::types::BlockDeviceMapping]> {
-        self.block_device_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.block_device_mappings.is_none()`.
+    pub fn block_device_mappings(&self) -> &[crate::types::BlockDeviceMapping] {
+        self.block_device_mappings.as_deref().unwrap_or_default()
     }
     /// <p>A description for the new image.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -68,8 +70,10 @@ impl CreateImageInput {
     /// </ul>
     /// <p>If you specify other values for <code>ResourceType</code>, the request fails.</p>
     /// <p>To tag an AMI or snapshot after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>. </p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
 }
 impl CreateImageInput {
@@ -141,6 +145,7 @@ impl CreateImageInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -156,6 +161,7 @@ impl CreateImageInputBuilder {
     }
     /// <p>A name for the new image.</p>
     /// <p>Constraints: 3-128 alphanumeric characters, parentheses (()), square brackets ([]), spaces ( ), periods (.), slashes (/), dashes (-), single quotes ('), at-signs (@), or underscores(_)</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -239,7 +245,7 @@ impl CreateImageInputBuilder {
         &self.tag_specifications
     }
     /// Consumes the builder and constructs a [`CreateImageInput`](crate::operation::create_image::CreateImageInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_image::CreateImageInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_image::CreateImageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_image::CreateImageInput {
             block_device_mappings: self.block_device_mappings,
             description: self.description,

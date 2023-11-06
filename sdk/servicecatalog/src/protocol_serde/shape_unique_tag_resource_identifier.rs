@@ -2,7 +2,7 @@
 pub fn ser_unique_tag_resource_identifier(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UniqueTagResourceIdentifier,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.key {
         object.key("Key").string(var_1.as_str());
     }

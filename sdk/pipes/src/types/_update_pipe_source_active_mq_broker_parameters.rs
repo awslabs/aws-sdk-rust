@@ -42,6 +42,7 @@ pub struct UpdatePipeSourceActiveMqBrokerParametersBuilder {
 }
 impl UpdatePipeSourceActiveMqBrokerParametersBuilder {
     /// <p>The credentials needed to access the resource.</p>
+    /// This field is required.
     pub fn credentials(mut self, input: crate::types::MqBrokerAccessCredentials) -> Self {
         self.credentials = ::std::option::Option::Some(input);
         self

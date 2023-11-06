@@ -10,7 +10,7 @@ impl ListApplicationsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_applications::ListApplicationsOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::list_applications::ListApplicationsError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl ListApplicationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_applications::ListApplicationsOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::list_applications::ListApplicationsError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::list_applications::ListApplications::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -86,20 +89,15 @@ impl ListApplicationsFluentBuilder {
         crate::operation::list_applications::ListApplications::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::list_applications::ListApplicationsOutput,
-            crate::operation::list_applications::ListApplicationsError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::list_applications::ListApplicationsError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::list_applications::ListApplicationsOutput,
+        crate::operation::list_applications::ListApplicationsError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -112,7 +110,7 @@ impl ListApplicationsFluentBuilder {
     }
     /// Create a paginator for this request
     ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_applications::paginator::ListApplicationsPaginator::send) which returns a `Stream`.
+    /// Paginators are used by calling [`send().await`](crate::operation::list_applications::paginator::ListApplicationsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
     pub fn into_paginator(self) -> crate::operation::list_applications::paginator::ListApplicationsPaginator {
         crate::operation::list_applications::paginator::ListApplicationsPaginator::new(self.handle, self.inner)
     }
@@ -143,5 +141,23 @@ impl ListApplicationsFluentBuilder {
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
+    }
+    /// Appends an item to `Filters`.
+    ///
+    /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+    ///
+    /// <p>The filter of name, value, and operator.</p>
+    pub fn filters(mut self, input: crate::types::Filter) -> Self {
+        self.inner = self.inner.filters(input);
+        self
+    }
+    /// <p>The filter of name, value, and operator.</p>
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
+        self.inner = self.inner.set_filters(input);
+        self
+    }
+    /// <p>The filter of name, value, and operator.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
     }
 }

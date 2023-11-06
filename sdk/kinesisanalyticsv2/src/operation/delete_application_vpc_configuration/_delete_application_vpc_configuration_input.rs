@@ -48,6 +48,7 @@ pub struct DeleteApplicationVpcConfigurationInputBuilder {
 }
 impl DeleteApplicationVpcConfigurationInputBuilder {
     /// <p>The name of an existing application.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl DeleteApplicationVpcConfigurationInputBuilder {
         &self.current_application_version_id
     }
     /// <p>The ID of the VPC configuration to delete.</p>
+    /// This field is required.
     pub fn vpc_configuration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_configuration_id = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +110,7 @@ impl DeleteApplicationVpcConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_application_vpc_configuration::DeleteApplicationVpcConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_application_vpc_configuration::DeleteApplicationVpcConfigurationInput {

@@ -48,6 +48,7 @@ pub struct PublishSchemaInputBuilder {
 }
 impl PublishSchemaInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that is associated with the development schema. For more information, see <code>arns</code>.</p>
+    /// This field is required.
     pub fn development_schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.development_schema_arn = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl PublishSchemaInputBuilder {
         &self.development_schema_arn
     }
     /// <p>The major version under which the schema will be published. Schemas have both a major and minor version associated with them.</p>
+    /// This field is required.
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +108,7 @@ impl PublishSchemaInputBuilder {
     /// Consumes the builder and constructs a [`PublishSchemaInput`](crate::operation::publish_schema::PublishSchemaInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::publish_schema::PublishSchemaInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::publish_schema::PublishSchemaInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::publish_schema::PublishSchemaInput {
             development_schema_arn: self.development_schema_arn,
             version: self.version,

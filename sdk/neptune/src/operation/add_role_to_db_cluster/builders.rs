@@ -10,7 +10,7 @@ impl AddRoleToDbClusterInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::add_role_to_db_cluster::AddRoleToDbClusterOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::add_role_to_db_cluster::AddRoleToDBClusterError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl AddRoleToDBClusterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_role_to_db_cluster::AddRoleToDbClusterOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::add_role_to_db_cluster::AddRoleToDBClusterError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::add_role_to_db_cluster::AddRoleToDBCluster::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -86,20 +89,15 @@ impl AddRoleToDBClusterFluentBuilder {
         crate::operation::add_role_to_db_cluster::AddRoleToDBCluster::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::add_role_to_db_cluster::AddRoleToDbClusterOutput,
-            crate::operation::add_role_to_db_cluster::AddRoleToDBClusterError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::add_role_to_db_cluster::AddRoleToDBClusterError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::add_role_to_db_cluster::AddRoleToDbClusterOutput,
+        crate::operation::add_role_to_db_cluster::AddRoleToDBClusterError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -138,17 +136,17 @@ impl AddRoleToDBClusterFluentBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role_arn()
     }
-    /// <p>The name of the feature for the Neptune DB cluster that the IAM role is to be associated with. For the list of supported feature names, see <a href="neptune/latest/userguide/api-other-apis.html#DBEngineVersion">DBEngineVersion</a>.</p>
+    /// <p>The name of the feature for the Neptune DB cluster that the IAM role is to be associated with. For the list of supported feature names, see <code>DBEngineVersion</code>.</p>
     pub fn feature_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.feature_name(input.into());
         self
     }
-    /// <p>The name of the feature for the Neptune DB cluster that the IAM role is to be associated with. For the list of supported feature names, see <a href="neptune/latest/userguide/api-other-apis.html#DBEngineVersion">DBEngineVersion</a>.</p>
+    /// <p>The name of the feature for the Neptune DB cluster that the IAM role is to be associated with. For the list of supported feature names, see <code>DBEngineVersion</code>.</p>
     pub fn set_feature_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_feature_name(input);
         self
     }
-    /// <p>The name of the feature for the Neptune DB cluster that the IAM role is to be associated with. For the list of supported feature names, see <a href="neptune/latest/userguide/api-other-apis.html#DBEngineVersion">DBEngineVersion</a>.</p>
+    /// <p>The name of the feature for the Neptune DB cluster that the IAM role is to be associated with. For the list of supported feature names, see <code>DBEngineVersion</code>.</p>
     pub fn get_feature_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_feature_name()
     }

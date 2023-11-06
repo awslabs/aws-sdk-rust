@@ -8,8 +8,10 @@ pub struct BatchGetTriggersInput {
 }
 impl BatchGetTriggersInput {
     /// <p>A list of trigger names, which may be the names returned from the <code>ListTriggers</code> operation.</p>
-    pub fn trigger_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.trigger_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.trigger_names.is_none()`.
+    pub fn trigger_names(&self) -> &[::std::string::String] {
+        self.trigger_names.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetTriggersInput {
@@ -49,7 +51,7 @@ impl BatchGetTriggersInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetTriggersInput`](crate::operation::batch_get_triggers::BatchGetTriggersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_get_triggers::BatchGetTriggersInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_get_triggers::BatchGetTriggersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_get_triggers::BatchGetTriggersInput {
             trigger_names: self.trigger_names,
         })

@@ -34,6 +34,7 @@ pub struct RestoreKeyOutputBuilder {
 }
 impl RestoreKeyOutputBuilder {
     /// <p>The key material of the restored key. The <code>KeyState</code> will change to <code>CREATE_COMPLETE</code> and value for <code>DeletePendingTimestamp</code> gets removed. </p>
+    /// This field is required.
     pub fn key(mut self, input: crate::types::Key) -> Self {
         self.key = ::std::option::Option::Some(input);
         self

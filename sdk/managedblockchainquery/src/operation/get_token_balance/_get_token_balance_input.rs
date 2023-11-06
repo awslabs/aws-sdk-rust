@@ -45,6 +45,7 @@ pub struct GetTokenBalanceInputBuilder {
 }
 impl GetTokenBalanceInputBuilder {
     /// <p>The container for the identifier for the token, including the unique token ID and its blockchain network.</p>
+    /// This field is required.
     pub fn token_identifier(mut self, input: crate::types::TokenIdentifier) -> Self {
         self.token_identifier = ::std::option::Option::Some(input);
         self
@@ -59,6 +60,7 @@ impl GetTokenBalanceInputBuilder {
         &self.token_identifier
     }
     /// <p>The container for the identifier for the owner.</p>
+    /// This field is required.
     pub fn owner_identifier(mut self, input: crate::types::OwnerIdentifier) -> Self {
         self.owner_identifier = ::std::option::Option::Some(input);
         self
@@ -95,7 +97,7 @@ impl GetTokenBalanceInputBuilder {
     /// Consumes the builder and constructs a [`GetTokenBalanceInput`](crate::operation::get_token_balance::GetTokenBalanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_token_balance::GetTokenBalanceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_token_balance::GetTokenBalanceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_token_balance::GetTokenBalanceInput {
             token_identifier: self.token_identifier,
             owner_identifier: self.owner_identifier,

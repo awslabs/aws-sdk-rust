@@ -21,8 +21,10 @@ impl ListWorkersWithQualificationTypeOutput {
         self.num_results
     }
     /// <p> The list of Qualification elements returned by this call. </p>
-    pub fn qualifications(&self) -> ::std::option::Option<&[crate::types::Qualification]> {
-        self.qualifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.qualifications.is_none()`.
+    pub fn qualifications(&self) -> &[crate::types::Qualification] {
+        self.qualifications.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListWorkersWithQualificationTypeOutput {

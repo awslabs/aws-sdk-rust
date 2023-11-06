@@ -28,8 +28,10 @@ impl UpdateExperimentTemplateInput {
         self.description.as_deref()
     }
     /// <p>The stop conditions for the experiment.</p>
-    pub fn stop_conditions(&self) -> ::std::option::Option<&[crate::types::UpdateExperimentTemplateStopConditionInput]> {
-        self.stop_conditions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stop_conditions.is_none()`.
+    pub fn stop_conditions(&self) -> &[crate::types::UpdateExperimentTemplateStopConditionInput] {
+        self.stop_conditions.as_deref().unwrap_or_default()
     }
     /// <p>The targets for the experiment.</p>
     pub fn targets(
@@ -74,6 +76,7 @@ pub struct UpdateExperimentTemplateInputBuilder {
 }
 impl UpdateExperimentTemplateInputBuilder {
     /// <p>The ID of the experiment template.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -207,7 +210,7 @@ impl UpdateExperimentTemplateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_experiment_template::UpdateExperimentTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_experiment_template::UpdateExperimentTemplateInput {
             id: self.id,

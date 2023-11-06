@@ -7,7 +7,7 @@ pub struct Action {
     /// <p>Write to a DynamoDB table.</p>
     pub dynamo_db: ::std::option::Option<crate::types::DynamoDbAction>,
     /// <p>Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows you to write each attribute in an MQTT message payload into a separate DynamoDB column.</p>
-    pub dynamo_d_bv2: ::std::option::Option<crate::types::DynamoDBv2Action>,
+    pub dynamo_dbv2: ::std::option::Option<crate::types::DynamoDBv2Action>,
     /// <p>Invoke a Lambda function.</p>
     pub lambda: ::std::option::Option<crate::types::LambdaAction>,
     /// <p>Publish to an Amazon SNS topic.</p>
@@ -59,8 +59,8 @@ impl Action {
         self.dynamo_db.as_ref()
     }
     /// <p>Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows you to write each attribute in an MQTT message payload into a separate DynamoDB column.</p>
-    pub fn dynamo_d_bv2(&self) -> ::std::option::Option<&crate::types::DynamoDBv2Action> {
-        self.dynamo_d_bv2.as_ref()
+    pub fn dynamo_dbv2(&self) -> ::std::option::Option<&crate::types::DynamoDBv2Action> {
+        self.dynamo_dbv2.as_ref()
     }
     /// <p>Invoke a Lambda function.</p>
     pub fn lambda(&self) -> ::std::option::Option<&crate::types::LambdaAction> {
@@ -161,7 +161,7 @@ impl Action {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActionBuilder {
     pub(crate) dynamo_db: ::std::option::Option<crate::types::DynamoDbAction>,
-    pub(crate) dynamo_d_bv2: ::std::option::Option<crate::types::DynamoDBv2Action>,
+    pub(crate) dynamo_dbv2: ::std::option::Option<crate::types::DynamoDBv2Action>,
     pub(crate) lambda: ::std::option::Option<crate::types::LambdaAction>,
     pub(crate) sns: ::std::option::Option<crate::types::SnsAction>,
     pub(crate) sqs: ::std::option::Option<crate::types::SqsAction>,
@@ -200,18 +200,18 @@ impl ActionBuilder {
         &self.dynamo_db
     }
     /// <p>Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows you to write each attribute in an MQTT message payload into a separate DynamoDB column.</p>
-    pub fn dynamo_d_bv2(mut self, input: crate::types::DynamoDBv2Action) -> Self {
-        self.dynamo_d_bv2 = ::std::option::Option::Some(input);
+    pub fn dynamo_dbv2(mut self, input: crate::types::DynamoDBv2Action) -> Self {
+        self.dynamo_dbv2 = ::std::option::Option::Some(input);
         self
     }
     /// <p>Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows you to write each attribute in an MQTT message payload into a separate DynamoDB column.</p>
-    pub fn set_dynamo_d_bv2(mut self, input: ::std::option::Option<crate::types::DynamoDBv2Action>) -> Self {
-        self.dynamo_d_bv2 = input;
+    pub fn set_dynamo_dbv2(mut self, input: ::std::option::Option<crate::types::DynamoDBv2Action>) -> Self {
+        self.dynamo_dbv2 = input;
         self
     }
     /// <p>Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows you to write each attribute in an MQTT message payload into a separate DynamoDB column.</p>
-    pub fn get_dynamo_d_bv2(&self) -> &::std::option::Option<crate::types::DynamoDBv2Action> {
-        &self.dynamo_d_bv2
+    pub fn get_dynamo_dbv2(&self) -> &::std::option::Option<crate::types::DynamoDBv2Action> {
+        &self.dynamo_dbv2
     }
     /// <p>Invoke a Lambda function.</p>
     pub fn lambda(mut self, input: crate::types::LambdaAction) -> Self {
@@ -517,7 +517,7 @@ impl ActionBuilder {
     pub fn build(self) -> crate::types::Action {
         crate::types::Action {
             dynamo_db: self.dynamo_db,
-            dynamo_d_bv2: self.dynamo_d_bv2,
+            dynamo_dbv2: self.dynamo_dbv2,
             lambda: self.lambda,
             sns: self.sns,
             sqs: self.sqs,

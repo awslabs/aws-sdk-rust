@@ -6,7 +6,7 @@ pub struct ListWorkflowStepGroupsInput {
     /// <p>The pagination token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results that can be returned.</p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>The ID of the migration workflow.</p>
     pub workflow_id: ::std::option::Option<::std::string::String>,
 }
@@ -16,7 +16,7 @@ impl ListWorkflowStepGroupsInput {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results that can be returned.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The ID of the migration workflow.</p>
@@ -69,6 +69,7 @@ impl ListWorkflowStepGroupsInputBuilder {
         &self.max_results
     }
     /// <p>The ID of the migration workflow.</p>
+    /// This field is required.
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_id = ::std::option::Option::Some(input.into());
         self
@@ -87,11 +88,11 @@ impl ListWorkflowStepGroupsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_workflow_step_groups::ListWorkflowStepGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_workflow_step_groups::ListWorkflowStepGroupsInput {
             next_token: self.next_token,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             workflow_id: self.workflow_id,
         })
     }

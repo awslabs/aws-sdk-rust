@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteAccountSubscription`](crate::operation::delete_account_subscription::builders::DeleteAccountSubscriptionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`aws_account_id(impl Into<String>)`](crate::operation::delete_account_subscription::builders::DeleteAccountSubscriptionFluentBuilder::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::operation::delete_account_subscription::builders::DeleteAccountSubscriptionFluentBuilder::set_aws_account_id): <p>The Amazon Web Services account ID of the account that you want to delete.</p>
+    ///   - [`aws_account_id(impl Into<String>)`](crate::operation::delete_account_subscription::builders::DeleteAccountSubscriptionFluentBuilder::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::operation::delete_account_subscription::builders::DeleteAccountSubscriptionFluentBuilder::set_aws_account_id):<br>required: **true**<br><p>The Amazon Web Services account ID of the account that you want to delete.</p><br>
     /// - On success, responds with [`DeleteAccountSubscriptionOutput`](crate::operation::delete_account_subscription::DeleteAccountSubscriptionOutput) with field(s):
     ///   - [`request_id(Option<String>)`](crate::operation::delete_account_subscription::DeleteAccountSubscriptionOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::delete_account_subscription::DeleteAccountSubscriptionOutput::status): <p>The HTTP status of the request.</p>

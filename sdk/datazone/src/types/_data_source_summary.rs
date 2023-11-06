@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DataSourceSummary {
     /// <p>The ID of the Amazon DataZone domain in which the data source exists.</p>
-    pub domain_id: ::std::option::Option<::std::string::String>,
+    pub domain_id: ::std::string::String,
     /// <p>The ID of the environment in which the data source exists.</p>
-    pub environment_id: ::std::option::Option<::std::string::String>,
+    pub environment_id: ::std::string::String,
     /// <p>The ID of the data source.</p>
-    pub data_source_id: ::std::option::Option<::std::string::String>,
+    pub data_source_id: ::std::string::String,
     /// <p>The name of the data source.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The type of the data source.</p>
-    pub r#type: ::std::option::Option<::std::string::String>,
+    pub r#type: ::std::string::String,
     /// <p>The status of the data source.</p>
-    pub status: ::std::option::Option<crate::types::DataSourceStatus>,
+    pub status: crate::types::DataSourceStatus,
     /// <p>Specifies whether the data source is enabled.</p>
     pub enable_setting: ::std::option::Option<crate::types::EnableSetting>,
     /// <p>The details of the schedule of the data source runs.</p>
@@ -35,28 +35,33 @@ pub struct DataSourceSummary {
 }
 impl DataSourceSummary {
     /// <p>The ID of the Amazon DataZone domain in which the data source exists.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
-        self.domain_id.as_deref()
+    pub fn domain_id(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_id.deref()
     }
     /// <p>The ID of the environment in which the data source exists.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
-        self.environment_id.as_deref()
+    pub fn environment_id(&self) -> &str {
+        use std::ops::Deref;
+        self.environment_id.deref()
     }
     /// <p>The ID of the data source.</p>
-    pub fn data_source_id(&self) -> ::std::option::Option<&str> {
-        self.data_source_id.as_deref()
+    pub fn data_source_id(&self) -> &str {
+        use std::ops::Deref;
+        self.data_source_id.deref()
     }
     /// <p>The name of the data source.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The type of the data source.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
-        self.r#type.as_deref()
+    pub fn r#type(&self) -> &str {
+        use std::ops::Deref;
+        self.r#type.deref()
     }
     /// <p>The status of the data source.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::DataSourceStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::DataSourceStatus {
+        &self.status
     }
     /// <p>Specifies whether the data source is enabled.</p>
     pub fn enable_setting(&self) -> ::std::option::Option<&crate::types::EnableSetting> {
@@ -139,6 +144,7 @@ pub struct DataSourceSummaryBuilder {
 }
 impl DataSourceSummaryBuilder {
     /// <p>The ID of the Amazon DataZone domain in which the data source exists.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -153,6 +159,7 @@ impl DataSourceSummaryBuilder {
         &self.domain_id
     }
     /// <p>The ID of the environment in which the data source exists.</p>
+    /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
@@ -167,6 +174,7 @@ impl DataSourceSummaryBuilder {
         &self.environment_id
     }
     /// <p>The ID of the data source.</p>
+    /// This field is required.
     pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_id = ::std::option::Option::Some(input.into());
         self
@@ -181,6 +189,7 @@ impl DataSourceSummaryBuilder {
         &self.data_source_id
     }
     /// <p>The name of the data source.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -195,6 +204,7 @@ impl DataSourceSummaryBuilder {
         &self.name
     }
     /// <p>The type of the data source.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
@@ -209,6 +219,7 @@ impl DataSourceSummaryBuilder {
         &self.r#type
     }
     /// <p>The status of the data source.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::DataSourceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -335,14 +346,51 @@ impl DataSourceSummaryBuilder {
         &self.updated_at
     }
     /// Consumes the builder and constructs a [`DataSourceSummary`](crate::types::DataSourceSummary).
-    pub fn build(self) -> crate::types::DataSourceSummary {
-        crate::types::DataSourceSummary {
-            domain_id: self.domain_id,
-            environment_id: self.environment_id,
-            data_source_id: self.data_source_id,
-            name: self.name,
-            r#type: self.r#type,
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`domain_id`](crate::types::builders::DataSourceSummaryBuilder::domain_id)
+    /// - [`environment_id`](crate::types::builders::DataSourceSummaryBuilder::environment_id)
+    /// - [`data_source_id`](crate::types::builders::DataSourceSummaryBuilder::data_source_id)
+    /// - [`name`](crate::types::builders::DataSourceSummaryBuilder::name)
+    /// - [`r#type`](crate::types::builders::DataSourceSummaryBuilder::r#type)
+    /// - [`status`](crate::types::builders::DataSourceSummaryBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::DataSourceSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DataSourceSummary {
+            domain_id: self.domain_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "domain_id",
+                    "domain_id was not specified but it is required when building DataSourceSummary",
+                )
+            })?,
+            environment_id: self.environment_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "environment_id",
+                    "environment_id was not specified but it is required when building DataSourceSummary",
+                )
+            })?,
+            data_source_id: self.data_source_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "data_source_id",
+                    "data_source_id was not specified but it is required when building DataSourceSummary",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DataSourceSummary",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building DataSourceSummary",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building DataSourceSummary",
+                )
+            })?,
             enable_setting: self.enable_setting,
             schedule: self.schedule,
             last_run_status: self.last_run_status,
@@ -351,7 +399,7 @@ impl DataSourceSummaryBuilder {
             last_run_asset_count: self.last_run_asset_count,
             created_at: self.created_at,
             updated_at: self.updated_at,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for DataSourceSummaryBuilder {

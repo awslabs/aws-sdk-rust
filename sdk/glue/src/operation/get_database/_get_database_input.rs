@@ -48,6 +48,7 @@ impl GetDatabaseInputBuilder {
         &self.catalog_id
     }
     /// <p>The name of the database to retrieve. For Hive compatibility, this should be all lowercase.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +63,7 @@ impl GetDatabaseInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`GetDatabaseInput`](crate::operation::get_database::GetDatabaseInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_database::GetDatabaseInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_database::GetDatabaseInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_database::GetDatabaseInput {
             catalog_id: self.catalog_id,
             name: self.name,

@@ -41,6 +41,7 @@ pub struct GetIntegrationResponseInputBuilder {
 }
 impl GetIntegrationResponseInputBuilder {
     /// <p>The API identifier.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl GetIntegrationResponseInputBuilder {
         &self.api_id
     }
     /// <p>The integration ID.</p>
+    /// This field is required.
     pub fn integration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.integration_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl GetIntegrationResponseInputBuilder {
         &self.integration_id
     }
     /// <p>The integration response ID.</p>
+    /// This field is required.
     pub fn integration_response_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.integration_response_id = ::std::option::Option::Some(input.into());
         self
@@ -85,8 +88,10 @@ impl GetIntegrationResponseInputBuilder {
     /// Consumes the builder and constructs a [`GetIntegrationResponseInput`](crate::operation::get_integration_response::GetIntegrationResponseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_integration_response::GetIntegrationResponseInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::get_integration_response::GetIntegrationResponseInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::get_integration_response::GetIntegrationResponseInput {
             api_id: self.api_id,
             integration_id: self.integration_id,

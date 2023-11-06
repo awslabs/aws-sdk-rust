@@ -50,6 +50,7 @@ pub struct UpdateRoomInputBuilder {
 }
 impl UpdateRoomInputBuilder {
     /// <p>The Amazon Chime account ID.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -64,6 +65,7 @@ impl UpdateRoomInputBuilder {
         &self.account_id
     }
     /// <p>The room ID.</p>
+    /// This field is required.
     pub fn room_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.room_id = ::std::option::Option::Some(input.into());
         self
@@ -92,7 +94,7 @@ impl UpdateRoomInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`UpdateRoomInput`](crate::operation::update_room::UpdateRoomInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_room::UpdateRoomInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_room::UpdateRoomInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_room::UpdateRoomInput {
             account_id: self.account_id,
             room_id: self.room_id,

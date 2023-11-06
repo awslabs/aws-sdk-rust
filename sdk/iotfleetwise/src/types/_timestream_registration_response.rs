@@ -5,26 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimestreamRegistrationResponse {
     /// <p>The name of the Timestream database.</p>
-    pub timestream_database_name: ::std::option::Option<::std::string::String>,
+    pub timestream_database_name: ::std::string::String,
     /// <p>The name of the Timestream database table.</p>
-    pub timestream_table_name: ::std::option::Option<::std::string::String>,
+    pub timestream_table_name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the Timestream database.</p>
     pub timestream_database_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Timestream database table.</p>
     pub timestream_table_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of registering your Amazon Timestream resources. The status can be one of <code>REGISTRATION_SUCCESS</code>, <code>REGISTRATION_PENDING</code>, <code>REGISTRATION_FAILURE</code>.</p>
-    pub registration_status: ::std::option::Option<crate::types::RegistrationStatus>,
+    pub registration_status: crate::types::RegistrationStatus,
     /// <p>A message associated with a registration error.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl TimestreamRegistrationResponse {
     /// <p>The name of the Timestream database.</p>
-    pub fn timestream_database_name(&self) -> ::std::option::Option<&str> {
-        self.timestream_database_name.as_deref()
+    pub fn timestream_database_name(&self) -> &str {
+        use std::ops::Deref;
+        self.timestream_database_name.deref()
     }
     /// <p>The name of the Timestream database table.</p>
-    pub fn timestream_table_name(&self) -> ::std::option::Option<&str> {
-        self.timestream_table_name.as_deref()
+    pub fn timestream_table_name(&self) -> &str {
+        use std::ops::Deref;
+        self.timestream_table_name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Timestream database.</p>
     pub fn timestream_database_arn(&self) -> ::std::option::Option<&str> {
@@ -35,8 +37,8 @@ impl TimestreamRegistrationResponse {
         self.timestream_table_arn.as_deref()
     }
     /// <p>The status of registering your Amazon Timestream resources. The status can be one of <code>REGISTRATION_SUCCESS</code>, <code>REGISTRATION_PENDING</code>, <code>REGISTRATION_FAILURE</code>.</p>
-    pub fn registration_status(&self) -> ::std::option::Option<&crate::types::RegistrationStatus> {
-        self.registration_status.as_ref()
+    pub fn registration_status(&self) -> &crate::types::RegistrationStatus {
+        &self.registration_status
     }
     /// <p>A message associated with a registration error.</p>
     pub fn error_message(&self) -> ::std::option::Option<&str> {
@@ -63,6 +65,7 @@ pub struct TimestreamRegistrationResponseBuilder {
 }
 impl TimestreamRegistrationResponseBuilder {
     /// <p>The name of the Timestream database.</p>
+    /// This field is required.
     pub fn timestream_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timestream_database_name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +80,7 @@ impl TimestreamRegistrationResponseBuilder {
         &self.timestream_database_name
     }
     /// <p>The name of the Timestream database table.</p>
+    /// This field is required.
     pub fn timestream_table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timestream_table_name = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +123,7 @@ impl TimestreamRegistrationResponseBuilder {
         &self.timestream_table_arn
     }
     /// <p>The status of registering your Amazon Timestream resources. The status can be one of <code>REGISTRATION_SUCCESS</code>, <code>REGISTRATION_PENDING</code>, <code>REGISTRATION_FAILURE</code>.</p>
+    /// This field is required.
     pub fn registration_status(mut self, input: crate::types::RegistrationStatus) -> Self {
         self.registration_status = ::std::option::Option::Some(input);
         self
@@ -147,14 +152,33 @@ impl TimestreamRegistrationResponseBuilder {
         &self.error_message
     }
     /// Consumes the builder and constructs a [`TimestreamRegistrationResponse`](crate::types::TimestreamRegistrationResponse).
-    pub fn build(self) -> crate::types::TimestreamRegistrationResponse {
-        crate::types::TimestreamRegistrationResponse {
-            timestream_database_name: self.timestream_database_name,
-            timestream_table_name: self.timestream_table_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`timestream_database_name`](crate::types::builders::TimestreamRegistrationResponseBuilder::timestream_database_name)
+    /// - [`timestream_table_name`](crate::types::builders::TimestreamRegistrationResponseBuilder::timestream_table_name)
+    /// - [`registration_status`](crate::types::builders::TimestreamRegistrationResponseBuilder::registration_status)
+    pub fn build(self) -> ::std::result::Result<crate::types::TimestreamRegistrationResponse, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TimestreamRegistrationResponse {
+            timestream_database_name: self.timestream_database_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "timestream_database_name",
+                    "timestream_database_name was not specified but it is required when building TimestreamRegistrationResponse",
+                )
+            })?,
+            timestream_table_name: self.timestream_table_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "timestream_table_name",
+                    "timestream_table_name was not specified but it is required when building TimestreamRegistrationResponse",
+                )
+            })?,
             timestream_database_arn: self.timestream_database_arn,
             timestream_table_arn: self.timestream_table_arn,
-            registration_status: self.registration_status,
+            registration_status: self.registration_status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "registration_status",
+                    "registration_status was not specified but it is required when building TimestreamRegistrationResponse",
+                )
+            })?,
             error_message: self.error_message,
-        }
+        })
     }
 }

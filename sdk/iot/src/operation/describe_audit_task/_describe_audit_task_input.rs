@@ -27,6 +27,7 @@ pub struct DescribeAuditTaskInputBuilder {
 }
 impl DescribeAuditTaskInputBuilder {
     /// <p>The ID of the audit whose information you want to get.</p>
+    /// This field is required.
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeAuditTaskInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAuditTaskInput`](crate::operation::describe_audit_task::DescribeAuditTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_audit_task::DescribeAuditTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_audit_task::DescribeAuditTaskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_audit_task::DescribeAuditTaskInput { task_id: self.task_id })
     }
 }

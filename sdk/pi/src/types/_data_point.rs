@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataPoint {
     /// <p>The time, in epoch format, associated with a particular <code>Value</code>.</p>
-    pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub timestamp: ::aws_smithy_types::DateTime,
     /// <p>The actual value associated with a particular <code>Timestamp</code>.</p>
-    pub value: ::std::option::Option<f64>,
+    pub value: f64,
 }
 impl DataPoint {
     /// <p>The time, in epoch format, associated with a particular <code>Value</code>.</p>
-    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.timestamp.as_ref()
+    pub fn timestamp(&self) -> &::aws_smithy_types::DateTime {
+        &self.timestamp
     }
     /// <p>The actual value associated with a particular <code>Timestamp</code>.</p>
-    pub fn value(&self) -> ::std::option::Option<f64> {
+    pub fn value(&self) -> f64 {
         self.value
     }
 }
@@ -35,6 +35,7 @@ pub struct DataPointBuilder {
 }
 impl DataPointBuilder {
     /// <p>The time, in epoch format, associated with a particular <code>Value</code>.</p>
+    /// This field is required.
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl DataPointBuilder {
         &self.timestamp
     }
     /// <p>The actual value associated with a particular <code>Timestamp</code>.</p>
+    /// This field is required.
     pub fn value(mut self, input: f64) -> Self {
         self.value = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl DataPointBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`DataPoint`](crate::types::DataPoint).
-    pub fn build(self) -> crate::types::DataPoint {
-        crate::types::DataPoint {
-            timestamp: self.timestamp,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`timestamp`](crate::types::builders::DataPointBuilder::timestamp)
+    /// - [`value`](crate::types::builders::DataPointBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::DataPoint, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DataPoint {
+            timestamp: self.timestamp.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "timestamp",
+                    "timestamp was not specified but it is required when building DataPoint",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building DataPoint",
+                )
+            })?,
+        })
     }
 }

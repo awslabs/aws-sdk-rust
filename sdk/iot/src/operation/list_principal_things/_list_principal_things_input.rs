@@ -70,6 +70,7 @@ impl ListPrincipalThingsInputBuilder {
         &self.max_results
     }
     /// <p>The principal.</p>
+    /// This field is required.
     pub fn principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal = ::std::option::Option::Some(input.into());
         self
@@ -86,7 +87,7 @@ impl ListPrincipalThingsInputBuilder {
     /// Consumes the builder and constructs a [`ListPrincipalThingsInput`](crate::operation::list_principal_things::ListPrincipalThingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_principal_things::ListPrincipalThingsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_principal_things::ListPrincipalThingsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_principal_things::ListPrincipalThingsInput {
             next_token: self.next_token,

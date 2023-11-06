@@ -6,18 +6,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSolFunctionInstanceMetadata {
     /// <p>The date that the resource was created.</p>
-    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The date that the resource was last modified.</p>
-    pub last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub last_modified: ::aws_smithy_types::DateTime,
 }
 impl GetSolFunctionInstanceMetadata {
     /// <p>The date that the resource was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_at.as_ref()
+    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_at
     }
     /// <p>The date that the resource was last modified.</p>
-    pub fn last_modified(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.last_modified.as_ref()
+    pub fn last_modified(&self) -> &::aws_smithy_types::DateTime {
+        &self.last_modified
     }
 }
 impl GetSolFunctionInstanceMetadata {
@@ -36,6 +36,7 @@ pub struct GetSolFunctionInstanceMetadataBuilder {
 }
 impl GetSolFunctionInstanceMetadataBuilder {
     /// <p>The date that the resource was created.</p>
+    /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
@@ -50,6 +51,7 @@ impl GetSolFunctionInstanceMetadataBuilder {
         &self.created_at
     }
     /// <p>The date that the resource was last modified.</p>
+    /// This field is required.
     pub fn last_modified(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified = ::std::option::Option::Some(input);
         self
@@ -64,10 +66,23 @@ impl GetSolFunctionInstanceMetadataBuilder {
         &self.last_modified
     }
     /// Consumes the builder and constructs a [`GetSolFunctionInstanceMetadata`](crate::types::GetSolFunctionInstanceMetadata).
-    pub fn build(self) -> crate::types::GetSolFunctionInstanceMetadata {
-        crate::types::GetSolFunctionInstanceMetadata {
-            created_at: self.created_at,
-            last_modified: self.last_modified,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`created_at`](crate::types::builders::GetSolFunctionInstanceMetadataBuilder::created_at)
+    /// - [`last_modified`](crate::types::builders::GetSolFunctionInstanceMetadataBuilder::last_modified)
+    pub fn build(self) -> ::std::result::Result<crate::types::GetSolFunctionInstanceMetadata, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::GetSolFunctionInstanceMetadata {
+            created_at: self.created_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_at",
+                    "created_at was not specified but it is required when building GetSolFunctionInstanceMetadata",
+                )
+            })?,
+            last_modified: self.last_modified.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "last_modified",
+                    "last_modified was not specified but it is required when building GetSolFunctionInstanceMetadata",
+                )
+            })?,
+        })
     }
 }

@@ -120,7 +120,7 @@ impl ListServiceQuotaIncreaseRequestsInTemplateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_service_quota_increase_requests_in_template::ListServiceQuotaIncreaseRequestsInTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_service_quota_increase_requests_in_template::ListServiceQuotaIncreaseRequestsInTemplateInput {

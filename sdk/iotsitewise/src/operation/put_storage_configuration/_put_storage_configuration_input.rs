@@ -74,6 +74,7 @@ impl PutStorageConfigurationInputBuilder {
     /// <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li>
     /// <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn storage_type(mut self, input: crate::types::StorageType) -> Self {
         self.storage_type = ::std::option::Option::Some(input);
         self
@@ -163,7 +164,7 @@ impl PutStorageConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_storage_configuration::PutStorageConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_storage_configuration::PutStorageConfigurationInput {
             storage_type: self.storage_type,

@@ -62,6 +62,7 @@ pub struct CreateExperienceInputBuilder {
 }
 impl CreateExperienceInputBuilder {
     /// <p>A name for your Amazon Kendra experience.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl CreateExperienceInputBuilder {
         &self.name
     }
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self
@@ -148,7 +150,7 @@ impl CreateExperienceInputBuilder {
     /// Consumes the builder and constructs a [`CreateExperienceInput`](crate::operation::create_experience::CreateExperienceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_experience::CreateExperienceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_experience::CreateExperienceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_experience::CreateExperienceInput {
             name: self.name,
             index_id: self.index_id,

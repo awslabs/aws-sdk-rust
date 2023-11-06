@@ -35,6 +35,7 @@ pub struct ConfigureHealthCheckInputBuilder {
 }
 impl ConfigureHealthCheckInputBuilder {
     /// <p>The name of the load balancer.</p>
+    /// This field is required.
     pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl ConfigureHealthCheckInputBuilder {
         &self.load_balancer_name
     }
     /// <p>The configuration information.</p>
+    /// This field is required.
     pub fn health_check(mut self, input: crate::types::HealthCheck) -> Self {
         self.health_check = ::std::option::Option::Some(input);
         self
@@ -65,7 +67,7 @@ impl ConfigureHealthCheckInputBuilder {
     /// Consumes the builder and constructs a [`ConfigureHealthCheckInput`](crate::operation::configure_health_check::ConfigureHealthCheckInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::configure_health_check::ConfigureHealthCheckInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::configure_health_check::ConfigureHealthCheckInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::configure_health_check::ConfigureHealthCheckInput {
             load_balancer_name: self.load_balancer_name,

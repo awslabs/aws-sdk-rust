@@ -12,8 +12,10 @@ pub struct ListThingTypesOutput {
 }
 impl ListThingTypesOutput {
     /// <p>The thing types.</p>
-    pub fn thing_types(&self) -> ::std::option::Option<&[crate::types::ThingTypeDefinition]> {
-        self.thing_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.thing_types.is_none()`.
+    pub fn thing_types(&self) -> &[crate::types::ThingTypeDefinition] {
+        self.thing_types.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of results. Will not be returned if operation has returned all results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

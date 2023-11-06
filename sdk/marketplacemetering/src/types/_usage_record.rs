@@ -7,11 +7,11 @@
 pub struct UsageRecord {
     /// <p>Timestamp, in UTC, for which the usage is being reported.</p>
     /// <p>Your application can meter usage for up to one hour in the past. Make sure the <code>timestamp</code> value is not before the start of the software usage.</p>
-    pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub timestamp: ::aws_smithy_types::DateTime,
     /// <p>The <code>CustomerIdentifier</code> is obtained through the <code>ResolveCustomer</code> operation and represents an individual buyer in your application.</p>
-    pub customer_identifier: ::std::option::Option<::std::string::String>,
+    pub customer_identifier: ::std::string::String,
     /// <p>During the process of registering a product on AWS Marketplace, dimensions are specified. These represent different units of value in your application.</p>
-    pub dimension: ::std::option::Option<::std::string::String>,
+    pub dimension: ::std::string::String,
     /// <p>The quantity of usage consumed by the customer for the given dimension and time. Defaults to <code>0</code> if not specified.</p>
     pub quantity: ::std::option::Option<i32>,
     /// <p>The set of <code>UsageAllocations</code> to submit. The sum of all <code>UsageAllocation</code> quantities must equal the Quantity of the <code>UsageRecord</code>.</p>
@@ -20,24 +20,28 @@ pub struct UsageRecord {
 impl UsageRecord {
     /// <p>Timestamp, in UTC, for which the usage is being reported.</p>
     /// <p>Your application can meter usage for up to one hour in the past. Make sure the <code>timestamp</code> value is not before the start of the software usage.</p>
-    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.timestamp.as_ref()
+    pub fn timestamp(&self) -> &::aws_smithy_types::DateTime {
+        &self.timestamp
     }
     /// <p>The <code>CustomerIdentifier</code> is obtained through the <code>ResolveCustomer</code> operation and represents an individual buyer in your application.</p>
-    pub fn customer_identifier(&self) -> ::std::option::Option<&str> {
-        self.customer_identifier.as_deref()
+    pub fn customer_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.customer_identifier.deref()
     }
     /// <p>During the process of registering a product on AWS Marketplace, dimensions are specified. These represent different units of value in your application.</p>
-    pub fn dimension(&self) -> ::std::option::Option<&str> {
-        self.dimension.as_deref()
+    pub fn dimension(&self) -> &str {
+        use std::ops::Deref;
+        self.dimension.deref()
     }
     /// <p>The quantity of usage consumed by the customer for the given dimension and time. Defaults to <code>0</code> if not specified.</p>
     pub fn quantity(&self) -> ::std::option::Option<i32> {
         self.quantity
     }
     /// <p>The set of <code>UsageAllocations</code> to submit. The sum of all <code>UsageAllocation</code> quantities must equal the Quantity of the <code>UsageRecord</code>.</p>
-    pub fn usage_allocations(&self) -> ::std::option::Option<&[crate::types::UsageAllocation]> {
-        self.usage_allocations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.usage_allocations.is_none()`.
+    pub fn usage_allocations(&self) -> &[crate::types::UsageAllocation] {
+        self.usage_allocations.as_deref().unwrap_or_default()
     }
 }
 impl UsageRecord {
@@ -60,6 +64,7 @@ pub struct UsageRecordBuilder {
 impl UsageRecordBuilder {
     /// <p>Timestamp, in UTC, for which the usage is being reported.</p>
     /// <p>Your application can meter usage for up to one hour in the past. Make sure the <code>timestamp</code> value is not before the start of the software usage.</p>
+    /// This field is required.
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
         self
@@ -76,6 +81,7 @@ impl UsageRecordBuilder {
         &self.timestamp
     }
     /// <p>The <code>CustomerIdentifier</code> is obtained through the <code>ResolveCustomer</code> operation and represents an individual buyer in your application.</p>
+    /// This field is required.
     pub fn customer_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_identifier = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +96,7 @@ impl UsageRecordBuilder {
         &self.customer_identifier
     }
     /// <p>During the process of registering a product on AWS Marketplace, dimensions are specified. These represent different units of value in your application.</p>
+    /// This field is required.
     pub fn dimension(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dimension = ::std::option::Option::Some(input.into());
         self
@@ -138,13 +145,32 @@ impl UsageRecordBuilder {
         &self.usage_allocations
     }
     /// Consumes the builder and constructs a [`UsageRecord`](crate::types::UsageRecord).
-    pub fn build(self) -> crate::types::UsageRecord {
-        crate::types::UsageRecord {
-            timestamp: self.timestamp,
-            customer_identifier: self.customer_identifier,
-            dimension: self.dimension,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`timestamp`](crate::types::builders::UsageRecordBuilder::timestamp)
+    /// - [`customer_identifier`](crate::types::builders::UsageRecordBuilder::customer_identifier)
+    /// - [`dimension`](crate::types::builders::UsageRecordBuilder::dimension)
+    pub fn build(self) -> ::std::result::Result<crate::types::UsageRecord, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::UsageRecord {
+            timestamp: self.timestamp.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "timestamp",
+                    "timestamp was not specified but it is required when building UsageRecord",
+                )
+            })?,
+            customer_identifier: self.customer_identifier.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "customer_identifier",
+                    "customer_identifier was not specified but it is required when building UsageRecord",
+                )
+            })?,
+            dimension: self.dimension.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "dimension",
+                    "dimension was not specified but it is required when building UsageRecord",
+                )
+            })?,
             quantity: self.quantity,
             usage_allocations: self.usage_allocations,
-        }
+        })
     }
 }

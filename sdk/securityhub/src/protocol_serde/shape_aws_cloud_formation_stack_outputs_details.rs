@@ -2,7 +2,7 @@
 pub fn ser_aws_cloud_formation_stack_outputs_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsCloudFormationStackOutputsDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.description {
         object.key("Description").string(var_1.as_str());
     }

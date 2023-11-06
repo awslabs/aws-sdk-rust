@@ -57,8 +57,10 @@ impl CreateWorkflowOutput {
         self.workflow_inputs.as_ref()
     }
     /// <p>The servers on which a step will be run.</p>
-    pub fn step_targets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.step_targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.step_targets.is_none()`.
+    pub fn step_targets(&self) -> &[::std::string::String] {
+        self.step_targets.as_deref().unwrap_or_default()
     }
     /// <p>The status of the migration workflow.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::MigrationWorkflowStatusEnum> {

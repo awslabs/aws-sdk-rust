@@ -49,6 +49,7 @@ impl StandardHlsSettingsBuilder {
         &self.audio_rendition_sets
     }
     /// Settings information for the .m3u8 container
+    /// This field is required.
     pub fn m3u8_settings(mut self, input: crate::types::M3u8Settings) -> Self {
         self.m3u8_settings = ::std::option::Option::Some(input);
         self

@@ -2,12 +2,12 @@
 pub fn ser_ssm_document(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SsmDocument,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.action_name {
-        object.key("actionName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("actionName").string(input.action_name.as_str());
     }
-    if let Some(var_2) = &input.ssm_document_name {
-        object.key("ssmDocumentName").string(var_2.as_str());
+    {
+        object.key("ssmDocumentName").string(input.ssm_document_name.as_str());
     }
     if input.timeout_seconds != 0 {
         object.key("timeoutSeconds").number(
@@ -15,40 +15,40 @@ pub fn ser_ssm_document(
             ::aws_smithy_types::Number::NegInt((input.timeout_seconds).into()),
         );
     }
-    if let Some(var_3) = &input.must_succeed_for_cutover {
-        object.key("mustSucceedForCutover").boolean(*var_3);
+    if let Some(var_1) = &input.must_succeed_for_cutover {
+        object.key("mustSucceedForCutover").boolean(*var_1);
     }
-    if let Some(var_4) = &input.parameters {
+    if let Some(var_2) = &input.parameters {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("parameters").start_object();
-        for (key_6, value_7) in var_4 {
+        let mut object_3 = object.key("parameters").start_object();
+        for (key_4, value_5) in var_2 {
             {
-                let mut array_8 = object_5.key(key_6.as_str()).start_array();
-                for item_9 in value_7 {
+                let mut array_6 = object_3.key(key_4.as_str()).start_array();
+                for item_7 in value_5 {
                     {
                         #[allow(unused_mut)]
-                        let mut object_10 = array_8.value().start_object();
-                        crate::protocol_serde::shape_ssm_parameter_store_parameter::ser_ssm_parameter_store_parameter(&mut object_10, item_9)?;
-                        object_10.finish();
+                        let mut object_8 = array_6.value().start_object();
+                        crate::protocol_serde::shape_ssm_parameter_store_parameter::ser_ssm_parameter_store_parameter(&mut object_8, item_7)?;
+                        object_8.finish();
                     }
                 }
-                array_8.finish();
+                array_6.finish();
             }
         }
-        object_5.finish();
+        object_3.finish();
     }
-    if let Some(var_11) = &input.external_parameters {
+    if let Some(var_9) = &input.external_parameters {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("externalParameters").start_object();
-        for (key_13, value_14) in var_11 {
+        let mut object_10 = object.key("externalParameters").start_object();
+        for (key_11, value_12) in var_9 {
             {
                 #[allow(unused_mut)]
-                let mut object_15 = object_12.key(key_13.as_str()).start_object();
-                crate::protocol_serde::shape_ssm_external_parameter::ser_ssm_external_parameter(&mut object_15, value_14)?;
-                object_15.finish();
+                let mut object_13 = object_10.key(key_11.as_str()).start_object();
+                crate::protocol_serde::shape_ssm_external_parameter::ser_ssm_external_parameter(&mut object_13, value_12)?;
+                object_13.finish();
             }
         }
-        object_12.finish();
+        object_10.finish();
     }
     Ok(())
 }
@@ -112,7 +112,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::ssm_document_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

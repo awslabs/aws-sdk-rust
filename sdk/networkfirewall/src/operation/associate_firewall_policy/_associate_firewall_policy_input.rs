@@ -110,6 +110,7 @@ impl AssociateFirewallPolicyInputBuilder {
         &self.firewall_name
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
+    /// This field is required.
     pub fn firewall_policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_policy_arn = ::std::option::Option::Some(input.into());
         self
@@ -128,7 +129,7 @@ impl AssociateFirewallPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_firewall_policy::AssociateFirewallPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::associate_firewall_policy::AssociateFirewallPolicyInput {
             update_token: self.update_token,

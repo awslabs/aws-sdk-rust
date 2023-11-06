@@ -34,6 +34,7 @@ pub struct DescribeRobotApplicationInputBuilder {
 }
 impl DescribeRobotApplicationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the robot application.</p>
+    /// This field is required.
     pub fn application(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl DescribeRobotApplicationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_robot_application::DescribeRobotApplicationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_robot_application::DescribeRobotApplicationInput {
             application: self.application,

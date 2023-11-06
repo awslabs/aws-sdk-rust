@@ -42,6 +42,7 @@ pub struct SetStackPolicyInputBuilder {
 }
 impl SetStackPolicyInputBuilder {
     /// <p>The name or unique stack ID that you want to associate a policy with.</p>
+    /// This field is required.
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_name = ::std::option::Option::Some(input.into());
         self
@@ -86,7 +87,7 @@ impl SetStackPolicyInputBuilder {
     /// Consumes the builder and constructs a [`SetStackPolicyInput`](crate::operation::set_stack_policy::SetStackPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::set_stack_policy::SetStackPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::set_stack_policy::SetStackPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::set_stack_policy::SetStackPolicyInput {
             stack_name: self.stack_name,
             stack_policy_body: self.stack_policy_body,

@@ -66,6 +66,7 @@ pub struct UpdateChannelInputBuilder {
 }
 impl UpdateChannelInputBuilder {
     /// <p>The ARN of the channel.</p>
+    /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +81,7 @@ impl UpdateChannelInputBuilder {
         &self.channel_arn
     }
     /// <p>The name of the channel.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -94,6 +96,7 @@ impl UpdateChannelInputBuilder {
         &self.name
     }
     /// <p>The mode of the update request.</p>
+    /// This field is required.
     pub fn mode(mut self, input: crate::types::ChannelMode) -> Self {
         self.mode = ::std::option::Option::Some(input);
         self
@@ -138,7 +141,7 @@ impl UpdateChannelInputBuilder {
     /// Consumes the builder and constructs a [`UpdateChannelInput`](crate::operation::update_channel::UpdateChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_channel::UpdateChannelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_channel::UpdateChannelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_channel::UpdateChannelInput {
             channel_arn: self.channel_arn,
             name: self.name,

@@ -34,6 +34,7 @@ pub struct DeleteGlossaryInputBuilder {
 }
 impl DeleteGlossaryInputBuilder {
     /// <p>The ID of the Amazon DataZone domain in which the business glossary is deleted.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteGlossaryInputBuilder {
         &self.domain_identifier
     }
     /// <p>The ID of the business glossary that is deleted.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DeleteGlossaryInputBuilder {
     /// Consumes the builder and constructs a [`DeleteGlossaryInput`](crate::operation::delete_glossary::DeleteGlossaryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_glossary::DeleteGlossaryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_glossary::DeleteGlossaryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_glossary::DeleteGlossaryInput {
             domain_identifier: self.domain_identifier,
             identifier: self.identifier,

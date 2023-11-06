@@ -11,12 +11,16 @@ pub struct AssetItemAdditionalAttributes {
 }
 impl AssetItemAdditionalAttributes {
     /// <p>The forms included in the additional attributes of an inventory asset.</p>
-    pub fn forms_output(&self) -> ::std::option::Option<&[crate::types::FormOutput]> {
-        self.forms_output.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.forms_output.is_none()`.
+    pub fn forms_output(&self) -> &[crate::types::FormOutput] {
+        self.forms_output.as_deref().unwrap_or_default()
     }
     /// <p>The read-only forms included in the additional attributes of an inventory asset.</p>
-    pub fn read_only_forms_output(&self) -> ::std::option::Option<&[crate::types::FormOutput]> {
-        self.read_only_forms_output.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.read_only_forms_output.is_none()`.
+    pub fn read_only_forms_output(&self) -> &[crate::types::FormOutput] {
+        self.read_only_forms_output.as_deref().unwrap_or_default()
     }
 }
 impl AssetItemAdditionalAttributes {

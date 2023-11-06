@@ -47,8 +47,10 @@ impl FileSystemAssociationInfo {
         self.gateway_arn.as_deref()
     }
     /// <p>A list of up to 50 tags assigned to the SMB file share, sorted alphabetically by key name. Each tag is a key-value pair.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The refresh cache information for the file share or FSx file systems.</p>
     pub fn cache_attributes(&self) -> ::std::option::Option<&crate::types::CacheAttributes> {
@@ -61,8 +63,10 @@ impl FileSystemAssociationInfo {
         self.endpoint_network_configuration.as_ref()
     }
     /// <p>An array containing the FileSystemAssociationStatusDetail data type, which provides detailed information on file system association status.</p>
-    pub fn file_system_association_status_details(&self) -> ::std::option::Option<&[crate::types::FileSystemAssociationStatusDetail]> {
-        self.file_system_association_status_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.file_system_association_status_details.is_none()`.
+    pub fn file_system_association_status_details(&self) -> &[crate::types::FileSystemAssociationStatusDetail] {
+        self.file_system_association_status_details.as_deref().unwrap_or_default()
     }
 }
 impl FileSystemAssociationInfo {

@@ -40,8 +40,10 @@ impl CreateEnvironmentTemplateInput {
     }
     /// <p>An optional list of metadata items that you can associate with the Proton environment template. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for CreateEnvironmentTemplateInput {
@@ -76,6 +78,7 @@ pub struct CreateEnvironmentTemplateInputBuilder {
 }
 impl CreateEnvironmentTemplateInputBuilder {
     /// <p>The name of the environment template.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -173,7 +176,7 @@ impl CreateEnvironmentTemplateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_environment_template::CreateEnvironmentTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_environment_template::CreateEnvironmentTemplateInput {
             name: self.name,

@@ -4,43 +4,46 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSourceRepositoryOutput {
     /// <p>The name of the space.</p>
-    pub space_name: ::std::option::Option<::std::string::String>,
+    pub space_name: ::std::string::String,
     /// <p>The name of the project in the space.</p>
-    pub project_name: ::std::option::Option<::std::string::String>,
+    pub project_name: ::std::string::String,
     /// <p>The name of the source repository.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The description of the source repository.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The time the source repository was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-    pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub last_updated_time: ::aws_smithy_types::DateTime,
     /// <p>The time the source repository was created, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-    pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_time: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
 impl GetSourceRepositoryOutput {
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> ::std::option::Option<&str> {
-        self.space_name.as_deref()
+    pub fn space_name(&self) -> &str {
+        use std::ops::Deref;
+        self.space_name.deref()
     }
     /// <p>The name of the project in the space.</p>
-    pub fn project_name(&self) -> ::std::option::Option<&str> {
-        self.project_name.as_deref()
+    pub fn project_name(&self) -> &str {
+        use std::ops::Deref;
+        self.project_name.deref()
     }
     /// <p>The name of the source repository.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The description of the source repository.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The time the source repository was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.last_updated_time.as_ref()
+    pub fn last_updated_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.last_updated_time
     }
     /// <p>The time the source repository was created, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_time.as_ref()
+    pub fn created_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_time
     }
 }
 impl ::aws_http::request_id::RequestId for GetSourceRepositoryOutput {
@@ -69,6 +72,7 @@ pub struct GetSourceRepositoryOutputBuilder {
 }
 impl GetSourceRepositoryOutputBuilder {
     /// <p>The name of the space.</p>
+    /// This field is required.
     pub fn space_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.space_name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +87,7 @@ impl GetSourceRepositoryOutputBuilder {
         &self.space_name
     }
     /// <p>The name of the project in the space.</p>
+    /// This field is required.
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +102,7 @@ impl GetSourceRepositoryOutputBuilder {
         &self.project_name
     }
     /// <p>The name of the source repository.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +131,7 @@ impl GetSourceRepositoryOutputBuilder {
         &self.description
     }
     /// <p>The time the source repository was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
+    /// This field is required.
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
         self
@@ -139,6 +146,7 @@ impl GetSourceRepositoryOutputBuilder {
         &self.last_updated_time
     }
     /// <p>The time the source repository was created, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
+    /// This field is required.
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
         self
@@ -162,15 +170,49 @@ impl GetSourceRepositoryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetSourceRepositoryOutput`](crate::operation::get_source_repository::GetSourceRepositoryOutput).
-    pub fn build(self) -> crate::operation::get_source_repository::GetSourceRepositoryOutput {
-        crate::operation::get_source_repository::GetSourceRepositoryOutput {
-            space_name: self.space_name,
-            project_name: self.project_name,
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`space_name`](crate::operation::get_source_repository::builders::GetSourceRepositoryOutputBuilder::space_name)
+    /// - [`project_name`](crate::operation::get_source_repository::builders::GetSourceRepositoryOutputBuilder::project_name)
+    /// - [`name`](crate::operation::get_source_repository::builders::GetSourceRepositoryOutputBuilder::name)
+    /// - [`last_updated_time`](crate::operation::get_source_repository::builders::GetSourceRepositoryOutputBuilder::last_updated_time)
+    /// - [`created_time`](crate::operation::get_source_repository::builders::GetSourceRepositoryOutputBuilder::created_time)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_source_repository::GetSourceRepositoryOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_source_repository::GetSourceRepositoryOutput {
+            space_name: self.space_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "space_name",
+                    "space_name was not specified but it is required when building GetSourceRepositoryOutput",
+                )
+            })?,
+            project_name: self.project_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "project_name",
+                    "project_name was not specified but it is required when building GetSourceRepositoryOutput",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building GetSourceRepositoryOutput",
+                )
+            })?,
             description: self.description,
-            last_updated_time: self.last_updated_time,
-            created_time: self.created_time,
+            last_updated_time: self.last_updated_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "last_updated_time",
+                    "last_updated_time was not specified but it is required when building GetSourceRepositoryOutput",
+                )
+            })?,
+            created_time: self.created_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_time",
+                    "created_time was not specified but it is required when building GetSourceRepositoryOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

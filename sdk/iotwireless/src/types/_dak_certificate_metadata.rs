@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DakCertificateMetadata {
     /// <p>The certificate ID for the DAK.</p>
-    pub certificate_id: ::std::option::Option<::std::string::String>,
+    pub certificate_id: ::std::string::String,
     /// <p>The maximum number of signatures that the DAK can sign. A value of <code>-1</code> indicates that there's no device limit.</p>
     pub max_allowed_signature: ::std::option::Option<i32>,
     /// <p>Whether factory support has been enabled.</p>
@@ -17,8 +17,9 @@ pub struct DakCertificateMetadata {
 }
 impl DakCertificateMetadata {
     /// <p>The certificate ID for the DAK.</p>
-    pub fn certificate_id(&self) -> ::std::option::Option<&str> {
-        self.certificate_id.as_deref()
+    pub fn certificate_id(&self) -> &str {
+        use std::ops::Deref;
+        self.certificate_id.deref()
     }
     /// <p>The maximum number of signatures that the DAK can sign. A value of <code>-1</code> indicates that there's no device limit.</p>
     pub fn max_allowed_signature(&self) -> ::std::option::Option<i32> {
@@ -56,6 +57,7 @@ pub struct DakCertificateMetadataBuilder {
 }
 impl DakCertificateMetadataBuilder {
     /// <p>The certificate ID for the DAK.</p>
+    /// This field is required.
     pub fn certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_id = ::std::option::Option::Some(input.into());
         self
@@ -126,13 +128,20 @@ impl DakCertificateMetadataBuilder {
         &self.device_type_id
     }
     /// Consumes the builder and constructs a [`DakCertificateMetadata`](crate::types::DakCertificateMetadata).
-    pub fn build(self) -> crate::types::DakCertificateMetadata {
-        crate::types::DakCertificateMetadata {
-            certificate_id: self.certificate_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`certificate_id`](crate::types::builders::DakCertificateMetadataBuilder::certificate_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::DakCertificateMetadata, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DakCertificateMetadata {
+            certificate_id: self.certificate_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "certificate_id",
+                    "certificate_id was not specified but it is required when building DakCertificateMetadata",
+                )
+            })?,
             max_allowed_signature: self.max_allowed_signature,
             factory_support: self.factory_support,
             ap_id: self.ap_id,
             device_type_id: self.device_type_id,
-        }
+        })
     }
 }

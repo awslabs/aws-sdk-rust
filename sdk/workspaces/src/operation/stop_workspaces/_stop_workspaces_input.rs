@@ -8,8 +8,10 @@ pub struct StopWorkspacesInput {
 }
 impl StopWorkspacesInput {
     /// <p>The WorkSpaces to stop. You can specify up to 25 WorkSpaces.</p>
-    pub fn stop_workspace_requests(&self) -> ::std::option::Option<&[crate::types::StopRequest]> {
-        self.stop_workspace_requests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stop_workspace_requests.is_none()`.
+    pub fn stop_workspace_requests(&self) -> &[crate::types::StopRequest] {
+        self.stop_workspace_requests.as_deref().unwrap_or_default()
     }
 }
 impl StopWorkspacesInput {
@@ -49,7 +51,7 @@ impl StopWorkspacesInputBuilder {
     /// Consumes the builder and constructs a [`StopWorkspacesInput`](crate::operation::stop_workspaces::StopWorkspacesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_workspaces::StopWorkspacesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_workspaces::StopWorkspacesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_workspaces::StopWorkspacesInput {
             stop_workspace_requests: self.stop_workspace_requests,
         })

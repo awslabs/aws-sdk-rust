@@ -5,15 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OriginEndpointListConfiguration {
     /// <p>The Amazon Resource Name (ARN) associated with the resource.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
-    pub channel_group_name: ::std::option::Option<::std::string::String>,
+    pub channel_group_name: ::std::string::String,
     /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. </p>
-    pub channel_name: ::std::option::Option<::std::string::String>,
+    pub channel_name: ::std::string::String,
     /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel. </p>
-    pub origin_endpoint_name: ::std::option::Option<::std::string::String>,
+    pub origin_endpoint_name: ::std::string::String,
     /// <p>The type of container attached to this origin endpoint. A container type is a file format that encapsulates one or more media streams, such as audio and video, into a single file. </p>
-    pub container_type: ::std::option::Option<crate::types::ContainerType>,
+    pub container_type: crate::types::ContainerType,
     /// <p>Any descriptive information that you want to add to the origin endpoint for future identification purposes.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the origin endpoint was created.</p>
@@ -27,24 +27,28 @@ pub struct OriginEndpointListConfiguration {
 }
 impl OriginEndpointListConfiguration {
     /// <p>The Amazon Resource Name (ARN) associated with the resource.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
-    pub fn channel_group_name(&self) -> ::std::option::Option<&str> {
-        self.channel_group_name.as_deref()
+    pub fn channel_group_name(&self) -> &str {
+        use std::ops::Deref;
+        self.channel_group_name.deref()
     }
     /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. </p>
-    pub fn channel_name(&self) -> ::std::option::Option<&str> {
-        self.channel_name.as_deref()
+    pub fn channel_name(&self) -> &str {
+        use std::ops::Deref;
+        self.channel_name.deref()
     }
     /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel. </p>
-    pub fn origin_endpoint_name(&self) -> ::std::option::Option<&str> {
-        self.origin_endpoint_name.as_deref()
+    pub fn origin_endpoint_name(&self) -> &str {
+        use std::ops::Deref;
+        self.origin_endpoint_name.deref()
     }
     /// <p>The type of container attached to this origin endpoint. A container type is a file format that encapsulates one or more media streams, such as audio and video, into a single file. </p>
-    pub fn container_type(&self) -> ::std::option::Option<&crate::types::ContainerType> {
-        self.container_type.as_ref()
+    pub fn container_type(&self) -> &crate::types::ContainerType {
+        &self.container_type
     }
     /// <p>Any descriptive information that you want to add to the origin endpoint for future identification purposes.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -59,12 +63,16 @@ impl OriginEndpointListConfiguration {
         self.modified_at.as_ref()
     }
     /// <p>An HTTP live streaming (HLS) manifest configuration.</p>
-    pub fn hls_manifests(&self) -> ::std::option::Option<&[crate::types::ListHlsManifestConfiguration]> {
-        self.hls_manifests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hls_manifests.is_none()`.
+    pub fn hls_manifests(&self) -> &[crate::types::ListHlsManifestConfiguration] {
+        self.hls_manifests.as_deref().unwrap_or_default()
     }
     /// <p>A low-latency HLS manifest configuration.</p>
-    pub fn low_latency_hls_manifests(&self) -> ::std::option::Option<&[crate::types::ListLowLatencyHlsManifestConfiguration]> {
-        self.low_latency_hls_manifests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.low_latency_hls_manifests.is_none()`.
+    pub fn low_latency_hls_manifests(&self) -> &[crate::types::ListLowLatencyHlsManifestConfiguration] {
+        self.low_latency_hls_manifests.as_deref().unwrap_or_default()
     }
 }
 impl OriginEndpointListConfiguration {
@@ -91,6 +99,7 @@ pub struct OriginEndpointListConfigurationBuilder {
 }
 impl OriginEndpointListConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) associated with the resource.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +114,7 @@ impl OriginEndpointListConfigurationBuilder {
         &self.arn
     }
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
+    /// This field is required.
     pub fn channel_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_group_name = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +129,7 @@ impl OriginEndpointListConfigurationBuilder {
         &self.channel_group_name
     }
     /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. </p>
+    /// This field is required.
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_name = ::std::option::Option::Some(input.into());
         self
@@ -133,6 +144,7 @@ impl OriginEndpointListConfigurationBuilder {
         &self.channel_name
     }
     /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel. </p>
+    /// This field is required.
     pub fn origin_endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origin_endpoint_name = ::std::option::Option::Some(input.into());
         self
@@ -147,6 +159,7 @@ impl OriginEndpointListConfigurationBuilder {
         &self.origin_endpoint_name
     }
     /// <p>The type of container attached to this origin endpoint. A container type is a file format that encapsulates one or more media streams, such as audio and video, into a single file. </p>
+    /// This field is required.
     pub fn container_type(mut self, input: crate::types::ContainerType) -> Self {
         self.container_type = ::std::option::Option::Some(input);
         self
@@ -246,18 +259,49 @@ impl OriginEndpointListConfigurationBuilder {
         &self.low_latency_hls_manifests
     }
     /// Consumes the builder and constructs a [`OriginEndpointListConfiguration`](crate::types::OriginEndpointListConfiguration).
-    pub fn build(self) -> crate::types::OriginEndpointListConfiguration {
-        crate::types::OriginEndpointListConfiguration {
-            arn: self.arn,
-            channel_group_name: self.channel_group_name,
-            channel_name: self.channel_name,
-            origin_endpoint_name: self.origin_endpoint_name,
-            container_type: self.container_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::OriginEndpointListConfigurationBuilder::arn)
+    /// - [`channel_group_name`](crate::types::builders::OriginEndpointListConfigurationBuilder::channel_group_name)
+    /// - [`channel_name`](crate::types::builders::OriginEndpointListConfigurationBuilder::channel_name)
+    /// - [`origin_endpoint_name`](crate::types::builders::OriginEndpointListConfigurationBuilder::origin_endpoint_name)
+    /// - [`container_type`](crate::types::builders::OriginEndpointListConfigurationBuilder::container_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::OriginEndpointListConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::OriginEndpointListConfiguration {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building OriginEndpointListConfiguration",
+                )
+            })?,
+            channel_group_name: self.channel_group_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "channel_group_name",
+                    "channel_group_name was not specified but it is required when building OriginEndpointListConfiguration",
+                )
+            })?,
+            channel_name: self.channel_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "channel_name",
+                    "channel_name was not specified but it is required when building OriginEndpointListConfiguration",
+                )
+            })?,
+            origin_endpoint_name: self.origin_endpoint_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "origin_endpoint_name",
+                    "origin_endpoint_name was not specified but it is required when building OriginEndpointListConfiguration",
+                )
+            })?,
+            container_type: self.container_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "container_type",
+                    "container_type was not specified but it is required when building OriginEndpointListConfiguration",
+                )
+            })?,
             description: self.description,
             created_at: self.created_at,
             modified_at: self.modified_at,
             hls_manifests: self.hls_manifests,
             low_latency_hls_manifests: self.low_latency_hls_manifests,
-        }
+        })
     }
 }

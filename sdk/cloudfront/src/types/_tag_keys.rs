@@ -9,8 +9,10 @@ pub struct TagKeys {
 }
 impl TagKeys {
     /// <p>A complex type that contains <code>Tag</code> key elements.</p>
-    pub fn items(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[::std::string::String] {
+        self.items.as_deref().unwrap_or_default()
     }
 }
 impl TagKeys {

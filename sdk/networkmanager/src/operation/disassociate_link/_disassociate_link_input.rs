@@ -41,6 +41,7 @@ pub struct DisassociateLinkInputBuilder {
 }
 impl DisassociateLinkInputBuilder {
     /// <p>The ID of the global network.</p>
+    /// This field is required.
     pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_network_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DisassociateLinkInputBuilder {
         &self.global_network_id
     }
     /// <p>The ID of the device.</p>
+    /// This field is required.
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl DisassociateLinkInputBuilder {
         &self.device_id
     }
     /// <p>The ID of the link.</p>
+    /// This field is required.
     pub fn link_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.link_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +88,7 @@ impl DisassociateLinkInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateLinkInput`](crate::operation::disassociate_link::DisassociateLinkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disassociate_link::DisassociateLinkInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::disassociate_link::DisassociateLinkInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::disassociate_link::DisassociateLinkInput {
             global_network_id: self.global_network_id,
             device_id: self.device_id,

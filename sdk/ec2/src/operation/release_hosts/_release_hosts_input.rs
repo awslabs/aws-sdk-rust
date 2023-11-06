@@ -8,8 +8,10 @@ pub struct ReleaseHostsInput {
 }
 impl ReleaseHostsInput {
     /// <p>The IDs of the Dedicated Hosts to release.</p>
-    pub fn host_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.host_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.host_ids.is_none()`.
+    pub fn host_ids(&self) -> &[::std::string::String] {
+        self.host_ids.as_deref().unwrap_or_default()
     }
 }
 impl ReleaseHostsInput {
@@ -47,7 +49,9 @@ impl ReleaseHostsInputBuilder {
         &self.host_ids
     }
     /// Consumes the builder and constructs a [`ReleaseHostsInput`](crate::operation::release_hosts::ReleaseHostsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::release_hosts::ReleaseHostsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::release_hosts::ReleaseHostsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::release_hosts::ReleaseHostsInput { host_ids: self.host_ids })
     }
 }

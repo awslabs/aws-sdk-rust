@@ -27,6 +27,7 @@ pub struct StopMeetingTranscriptionInputBuilder {
 }
 impl StopMeetingTranscriptionInputBuilder {
     /// <p>The unique ID of the meeting for which you stop transcription.</p>
+    /// This field is required.
     pub fn meeting_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.meeting_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl StopMeetingTranscriptionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_meeting_transcription::StopMeetingTranscriptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::stop_meeting_transcription::StopMeetingTranscriptionInput { meeting_id: self.meeting_id })
     }

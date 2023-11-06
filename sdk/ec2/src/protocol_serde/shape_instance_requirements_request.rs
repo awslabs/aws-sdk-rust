@@ -3,7 +3,7 @@
 pub fn ser_instance_requirements_request(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::InstanceRequirementsRequest,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("VCpuCount");
     if let Some(var_2) = &input.v_cpu_count {
@@ -11,8 +11,8 @@ pub fn ser_instance_requirements_request(
     }
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("MemoryMiB");
-    if let Some(var_4) = &input.memory_mi_b {
-        crate::protocol_serde::shape_memory_mi_b_request::ser_memory_mi_b_request(scope_3, var_4)?;
+    if let Some(var_4) = &input.memory_mib {
+        crate::protocol_serde::shape_memory_mib_request::ser_memory_mib_request(scope_3, var_4)?;
     }
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("CpuManufacturer");
@@ -27,8 +27,8 @@ pub fn ser_instance_requirements_request(
     }
     #[allow(unused_mut)]
     let mut scope_10 = writer.prefix("MemoryGiBPerVCpu");
-    if let Some(var_11) = &input.memory_gi_b_per_v_cpu {
-        crate::protocol_serde::shape_memory_gi_b_per_v_cpu_request::ser_memory_gi_b_per_v_cpu_request(scope_10, var_11)?;
+    if let Some(var_11) = &input.memory_gib_per_v_cpu {
+        crate::protocol_serde::shape_memory_gib_per_v_cpu_request::ser_memory_gib_per_v_cpu_request(scope_10, var_11)?;
     }
     #[allow(unused_mut)]
     let mut scope_12 = writer.prefix("ExcludedInstanceType");
@@ -154,8 +154,8 @@ pub fn ser_instance_requirements_request(
     }
     #[allow(unused_mut)]
     let mut scope_62 = writer.prefix("AcceleratorTotalMemoryMiB");
-    if let Some(var_63) = &input.accelerator_total_memory_mi_b {
-        crate::protocol_serde::shape_accelerator_total_memory_mi_b_request::ser_accelerator_total_memory_mi_b_request(scope_62, var_63)?;
+    if let Some(var_63) = &input.accelerator_total_memory_mib {
+        crate::protocol_serde::shape_accelerator_total_memory_mib_request::ser_accelerator_total_memory_mib_request(scope_62, var_63)?;
     }
     #[allow(unused_mut)]
     let mut scope_64 = writer.prefix("NetworkBandwidthGbps");

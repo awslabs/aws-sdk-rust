@@ -10,7 +10,7 @@ pub struct ConfigurationSet {
     /// <li> <p>Contain only letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
     /// <li> <p>Contain 64 characters or fewer.</p> </li>
     /// </ul>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
 }
 impl ConfigurationSet {
     /// <p>The name of the configuration set. The name must meet the following requirements:</p>
@@ -18,8 +18,9 @@ impl ConfigurationSet {
     /// <li> <p>Contain only letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
     /// <li> <p>Contain 64 characters or fewer.</p> </li>
     /// </ul>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
 }
 impl ConfigurationSet {
@@ -41,6 +42,7 @@ impl ConfigurationSetBuilder {
     /// <li> <p>Contain only letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
     /// <li> <p>Contain 64 characters or fewer.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -63,7 +65,16 @@ impl ConfigurationSetBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`ConfigurationSet`](crate::types::ConfigurationSet).
-    pub fn build(self) -> crate::types::ConfigurationSet {
-        crate::types::ConfigurationSet { name: self.name }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::ConfigurationSetBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::ConfigurationSet, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ConfigurationSet {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ConfigurationSet",
+                )
+            })?,
+        })
     }
 }

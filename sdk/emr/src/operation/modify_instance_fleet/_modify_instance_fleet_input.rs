@@ -34,6 +34,7 @@ pub struct ModifyInstanceFleetInputBuilder {
 }
 impl ModifyInstanceFleetInputBuilder {
     /// <p>The unique identifier of the cluster.</p>
+    /// This field is required.
     pub fn cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl ModifyInstanceFleetInputBuilder {
         &self.cluster_id
     }
     /// <p>The configuration parameters of the instance fleet.</p>
+    /// This field is required.
     pub fn instance_fleet(mut self, input: crate::types::InstanceFleetModifyConfig) -> Self {
         self.instance_fleet = ::std::option::Option::Some(input);
         self
@@ -64,7 +66,7 @@ impl ModifyInstanceFleetInputBuilder {
     /// Consumes the builder and constructs a [`ModifyInstanceFleetInput`](crate::operation::modify_instance_fleet::ModifyInstanceFleetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_instance_fleet::ModifyInstanceFleetInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::modify_instance_fleet::ModifyInstanceFleetInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::modify_instance_fleet::ModifyInstanceFleetInput {
             cluster_id: self.cluster_id,

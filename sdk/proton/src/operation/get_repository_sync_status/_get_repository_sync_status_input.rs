@@ -48,6 +48,7 @@ pub struct GetRepositorySyncStatusInputBuilder {
 }
 impl GetRepositorySyncStatusInputBuilder {
     /// <p>The repository name.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl GetRepositorySyncStatusInputBuilder {
         &self.repository_name
     }
     /// <p>The repository provider.</p>
+    /// This field is required.
     pub fn repository_provider(mut self, input: crate::types::RepositoryProvider) -> Self {
         self.repository_provider = ::std::option::Option::Some(input);
         self
@@ -76,6 +78,7 @@ impl GetRepositorySyncStatusInputBuilder {
         &self.repository_provider
     }
     /// <p>The repository branch.</p>
+    /// This field is required.
     pub fn branch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl GetRepositorySyncStatusInputBuilder {
         &self.branch
     }
     /// <p>The repository sync type.</p>
+    /// This field is required.
     pub fn sync_type(mut self, input: crate::types::SyncType) -> Self {
         self.sync_type = ::std::option::Option::Some(input);
         self
@@ -108,7 +112,7 @@ impl GetRepositorySyncStatusInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_repository_sync_status::GetRepositorySyncStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_repository_sync_status::GetRepositorySyncStatusInput {
             repository_name: self.repository_name,

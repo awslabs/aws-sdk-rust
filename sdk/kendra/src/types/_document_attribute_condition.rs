@@ -9,10 +9,10 @@ pub struct DocumentAttributeCondition {
     /// <p>The identifier of the document attribute used for the condition.</p>
     /// <p>For example, 'Source_URI' could be an identifier for the attribute or metadata field that contains source URIs associated with the documents.</p>
     /// <p>Amazon Kendra currently does not support <code>_document_body</code> as an attribute key used for the condition.</p>
-    pub condition_document_attribute_key: ::std::option::Option<::std::string::String>,
+    pub condition_document_attribute_key: ::std::string::String,
     /// <p>The condition operator.</p>
     /// <p>For example, you can use 'Contains' to partially match a string.</p>
-    pub operator: ::std::option::Option<crate::types::ConditionOperator>,
+    pub operator: crate::types::ConditionOperator,
     /// <p>The value used by the operator.</p>
     /// <p>For example, you can specify the value 'financial' for strings in the 'Source_URI' field that partially match or contain this value.</p>
     pub condition_on_value: ::std::option::Option<crate::types::DocumentAttributeValue>,
@@ -21,13 +21,14 @@ impl DocumentAttributeCondition {
     /// <p>The identifier of the document attribute used for the condition.</p>
     /// <p>For example, 'Source_URI' could be an identifier for the attribute or metadata field that contains source URIs associated with the documents.</p>
     /// <p>Amazon Kendra currently does not support <code>_document_body</code> as an attribute key used for the condition.</p>
-    pub fn condition_document_attribute_key(&self) -> ::std::option::Option<&str> {
-        self.condition_document_attribute_key.as_deref()
+    pub fn condition_document_attribute_key(&self) -> &str {
+        use std::ops::Deref;
+        self.condition_document_attribute_key.deref()
     }
     /// <p>The condition operator.</p>
     /// <p>For example, you can use 'Contains' to partially match a string.</p>
-    pub fn operator(&self) -> ::std::option::Option<&crate::types::ConditionOperator> {
-        self.operator.as_ref()
+    pub fn operator(&self) -> &crate::types::ConditionOperator {
+        &self.operator
     }
     /// <p>The value used by the operator.</p>
     /// <p>For example, you can specify the value 'financial' for strings in the 'Source_URI' field that partially match or contain this value.</p>
@@ -54,6 +55,7 @@ impl DocumentAttributeConditionBuilder {
     /// <p>The identifier of the document attribute used for the condition.</p>
     /// <p>For example, 'Source_URI' could be an identifier for the attribute or metadata field that contains source URIs associated with the documents.</p>
     /// <p>Amazon Kendra currently does not support <code>_document_body</code> as an attribute key used for the condition.</p>
+    /// This field is required.
     pub fn condition_document_attribute_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.condition_document_attribute_key = ::std::option::Option::Some(input.into());
         self
@@ -73,6 +75,7 @@ impl DocumentAttributeConditionBuilder {
     }
     /// <p>The condition operator.</p>
     /// <p>For example, you can use 'Contains' to partially match a string.</p>
+    /// This field is required.
     pub fn operator(mut self, input: crate::types::ConditionOperator) -> Self {
         self.operator = ::std::option::Option::Some(input);
         self
@@ -106,11 +109,24 @@ impl DocumentAttributeConditionBuilder {
         &self.condition_on_value
     }
     /// Consumes the builder and constructs a [`DocumentAttributeCondition`](crate::types::DocumentAttributeCondition).
-    pub fn build(self) -> crate::types::DocumentAttributeCondition {
-        crate::types::DocumentAttributeCondition {
-            condition_document_attribute_key: self.condition_document_attribute_key,
-            operator: self.operator,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`condition_document_attribute_key`](crate::types::builders::DocumentAttributeConditionBuilder::condition_document_attribute_key)
+    /// - [`operator`](crate::types::builders::DocumentAttributeConditionBuilder::operator)
+    pub fn build(self) -> ::std::result::Result<crate::types::DocumentAttributeCondition, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DocumentAttributeCondition {
+            condition_document_attribute_key: self.condition_document_attribute_key.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "condition_document_attribute_key",
+                    "condition_document_attribute_key was not specified but it is required when building DocumentAttributeCondition",
+                )
+            })?,
+            operator: self.operator.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "operator",
+                    "operator was not specified but it is required when building DocumentAttributeCondition",
+                )
+            })?,
             condition_on_value: self.condition_on_value,
-        }
+        })
     }
 }

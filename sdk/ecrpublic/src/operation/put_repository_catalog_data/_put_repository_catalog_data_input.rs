@@ -55,6 +55,7 @@ impl PutRepositoryCatalogDataInputBuilder {
         &self.registry_id
     }
     /// <p>The name of the repository to create or update the catalog data for.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl PutRepositoryCatalogDataInputBuilder {
         &self.repository_name
     }
     /// <p>An object containing the catalog data for a repository. This data is publicly visible in the Amazon ECR Public Gallery.</p>
+    /// This field is required.
     pub fn catalog_data(mut self, input: crate::types::RepositoryCatalogDataInput) -> Self {
         self.catalog_data = ::std::option::Option::Some(input);
         self
@@ -87,7 +89,7 @@ impl PutRepositoryCatalogDataInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_repository_catalog_data::PutRepositoryCatalogDataInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_repository_catalog_data::PutRepositoryCatalogDataInput {
             registry_id: self.registry_id,

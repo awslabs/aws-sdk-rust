@@ -2,89 +2,90 @@
 pub fn ser_cache_behavior(
     input: &crate::types::CacheBehavior,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.path_pattern {
+    {
         let mut inner_writer = scope.start_el("PathPattern").finish();
-        inner_writer.data(var_1.as_str());
+        inner_writer.data(input.path_pattern.as_str());
     }
-    if let Some(var_2) = &input.target_origin_id {
+    {
         let mut inner_writer = scope.start_el("TargetOriginId").finish();
-        inner_writer.data(var_2.as_str());
+        inner_writer.data(input.target_origin_id.as_str());
     }
-    if let Some(var_3) = &input.trusted_signers {
+    if let Some(var_1) = &input.trusted_signers {
         let inner_writer = scope.start_el("TrustedSigners");
-        crate::protocol_serde::shape_trusted_signers::ser_trusted_signers(var_3, inner_writer)?
+        crate::protocol_serde::shape_trusted_signers::ser_trusted_signers(var_1, inner_writer)?
     }
-    if let Some(var_4) = &input.trusted_key_groups {
+    if let Some(var_2) = &input.trusted_key_groups {
         let inner_writer = scope.start_el("TrustedKeyGroups");
-        crate::protocol_serde::shape_trusted_key_groups::ser_trusted_key_groups(var_4, inner_writer)?
+        crate::protocol_serde::shape_trusted_key_groups::ser_trusted_key_groups(var_2, inner_writer)?
     }
-    if let Some(var_5) = &input.viewer_protocol_policy {
+    {
         let mut inner_writer = scope.start_el("ViewerProtocolPolicy").finish();
-        inner_writer.data(var_5.as_str());
+        inner_writer.data(input.viewer_protocol_policy.as_str());
     }
-    if let Some(var_6) = &input.allowed_methods {
+    if let Some(var_3) = &input.allowed_methods {
         let inner_writer = scope.start_el("AllowedMethods");
-        crate::protocol_serde::shape_allowed_methods::ser_allowed_methods(var_6, inner_writer)?
+        crate::protocol_serde::shape_allowed_methods::ser_allowed_methods(var_3, inner_writer)?
     }
-    if let Some(var_7) = &input.smooth_streaming {
+    if let Some(var_4) = &input.smooth_streaming {
         let mut inner_writer = scope.start_el("SmoothStreaming").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_7).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_4).encode());
     }
-    if let Some(var_8) = &input.compress {
+    if let Some(var_5) = &input.compress {
         let mut inner_writer = scope.start_el("Compress").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_8).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_5).encode());
     }
-    if let Some(var_9) = &input.lambda_function_associations {
+    if let Some(var_6) = &input.lambda_function_associations {
         let inner_writer = scope.start_el("LambdaFunctionAssociations");
-        crate::protocol_serde::shape_lambda_function_associations::ser_lambda_function_associations(var_9, inner_writer)?
+        crate::protocol_serde::shape_lambda_function_associations::ser_lambda_function_associations(var_6, inner_writer)?
     }
-    if let Some(var_10) = &input.function_associations {
+    if let Some(var_7) = &input.function_associations {
         let inner_writer = scope.start_el("FunctionAssociations");
-        crate::protocol_serde::shape_function_associations::ser_function_associations(var_10, inner_writer)?
+        crate::protocol_serde::shape_function_associations::ser_function_associations(var_7, inner_writer)?
     }
-    if let Some(var_11) = &input.field_level_encryption_id {
+    if let Some(var_8) = &input.field_level_encryption_id {
         let mut inner_writer = scope.start_el("FieldLevelEncryptionId").finish();
+        inner_writer.data(var_8.as_str());
+    }
+    if let Some(var_9) = &input.realtime_log_config_arn {
+        let mut inner_writer = scope.start_el("RealtimeLogConfigArn").finish();
+        inner_writer.data(var_9.as_str());
+    }
+    if let Some(var_10) = &input.cache_policy_id {
+        let mut inner_writer = scope.start_el("CachePolicyId").finish();
+        inner_writer.data(var_10.as_str());
+    }
+    if let Some(var_11) = &input.origin_request_policy_id {
+        let mut inner_writer = scope.start_el("OriginRequestPolicyId").finish();
         inner_writer.data(var_11.as_str());
     }
-    if let Some(var_12) = &input.realtime_log_config_arn {
-        let mut inner_writer = scope.start_el("RealtimeLogConfigArn").finish();
+    if let Some(var_12) = &input.response_headers_policy_id {
+        let mut inner_writer = scope.start_el("ResponseHeadersPolicyId").finish();
         inner_writer.data(var_12.as_str());
     }
-    if let Some(var_13) = &input.cache_policy_id {
-        let mut inner_writer = scope.start_el("CachePolicyId").finish();
-        inner_writer.data(var_13.as_str());
-    }
-    if let Some(var_14) = &input.origin_request_policy_id {
-        let mut inner_writer = scope.start_el("OriginRequestPolicyId").finish();
-        inner_writer.data(var_14.as_str());
-    }
-    if let Some(var_15) = &input.response_headers_policy_id {
-        let mut inner_writer = scope.start_el("ResponseHeadersPolicyId").finish();
-        inner_writer.data(var_15.as_str());
-    }
-    if let Some(var_16) = &input.forwarded_values {
+    if let Some(var_13) = &input.forwarded_values {
         let inner_writer = scope.start_el("ForwardedValues");
-        crate::protocol_serde::shape_forwarded_values::ser_forwarded_values(var_16, inner_writer)?
+        crate::protocol_serde::shape_forwarded_values::ser_forwarded_values(var_13, inner_writer)?
     }
-    if let Some(var_17) = &input.min_ttl {
+    if let Some(var_14) = &input.min_ttl {
         let mut inner_writer = scope.start_el("MinTTL").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_17).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_14).encode());
     }
-    if let Some(var_18) = &input.default_ttl {
+    if let Some(var_15) = &input.default_ttl {
         let mut inner_writer = scope.start_el("DefaultTTL").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_18).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_15).encode());
     }
-    if let Some(var_19) = &input.max_ttl {
+    if let Some(var_16) = &input.max_ttl {
         let mut inner_writer = scope.start_el("MaxTTL").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_19).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_16).encode());
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_cache_behavior(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::CacheBehavior, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -93,7 +94,7 @@ pub fn de_cache_behavior(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("PathPattern") /* PathPattern com.amazonaws.cloudfront#CacheBehavior$PathPattern */ =>  {
-                let var_20 =
+                let var_17 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -102,11 +103,11 @@ pub fn de_cache_behavior(
                         ?
                     )
                 ;
-                builder = builder.set_path_pattern(var_20);
+                builder = builder.set_path_pattern(var_17);
             }
             ,
             s if s.matches("TargetOriginId") /* TargetOriginId com.amazonaws.cloudfront#CacheBehavior$TargetOriginId */ =>  {
-                let var_21 =
+                let var_18 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -115,31 +116,31 @@ pub fn de_cache_behavior(
                         ?
                     )
                 ;
-                builder = builder.set_target_origin_id(var_21);
+                builder = builder.set_target_origin_id(var_18);
             }
             ,
             s if s.matches("TrustedSigners") /* TrustedSigners com.amazonaws.cloudfront#CacheBehavior$TrustedSigners */ =>  {
-                let var_22 =
+                let var_19 =
                     Some(
                         crate::protocol_serde::shape_trusted_signers::de_trusted_signers(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_trusted_signers(var_22);
+                builder = builder.set_trusted_signers(var_19);
             }
             ,
             s if s.matches("TrustedKeyGroups") /* TrustedKeyGroups com.amazonaws.cloudfront#CacheBehavior$TrustedKeyGroups */ =>  {
-                let var_23 =
+                let var_20 =
                     Some(
                         crate::protocol_serde::shape_trusted_key_groups::de_trusted_key_groups(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_trusted_key_groups(var_23);
+                builder = builder.set_trusted_key_groups(var_20);
             }
             ,
             s if s.matches("ViewerProtocolPolicy") /* ViewerProtocolPolicy com.amazonaws.cloudfront#CacheBehavior$ViewerProtocolPolicy */ =>  {
-                let var_24 =
+                let var_21 =
                     Some(
                         Result::<crate::types::ViewerProtocolPolicy, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::ViewerProtocolPolicy::from(
@@ -149,21 +150,21 @@ pub fn de_cache_behavior(
                         ?
                     )
                 ;
-                builder = builder.set_viewer_protocol_policy(var_24);
+                builder = builder.set_viewer_protocol_policy(var_21);
             }
             ,
             s if s.matches("AllowedMethods") /* AllowedMethods com.amazonaws.cloudfront#CacheBehavior$AllowedMethods */ =>  {
-                let var_25 =
+                let var_22 =
                     Some(
                         crate::protocol_serde::shape_allowed_methods::de_allowed_methods(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_allowed_methods(var_25);
+                builder = builder.set_allowed_methods(var_22);
             }
             ,
             s if s.matches("SmoothStreaming") /* SmoothStreaming com.amazonaws.cloudfront#CacheBehavior$SmoothStreaming */ =>  {
-                let var_26 =
+                let var_23 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -174,11 +175,11 @@ pub fn de_cache_behavior(
                         ?
                     )
                 ;
-                builder = builder.set_smooth_streaming(var_26);
+                builder = builder.set_smooth_streaming(var_23);
             }
             ,
             s if s.matches("Compress") /* Compress com.amazonaws.cloudfront#CacheBehavior$Compress */ =>  {
-                let var_27 =
+                let var_24 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -189,30 +190,69 @@ pub fn de_cache_behavior(
                         ?
                     )
                 ;
-                builder = builder.set_compress(var_27);
+                builder = builder.set_compress(var_24);
             }
             ,
             s if s.matches("LambdaFunctionAssociations") /* LambdaFunctionAssociations com.amazonaws.cloudfront#CacheBehavior$LambdaFunctionAssociations */ =>  {
-                let var_28 =
+                let var_25 =
                     Some(
                         crate::protocol_serde::shape_lambda_function_associations::de_lambda_function_associations(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_lambda_function_associations(var_28);
+                builder = builder.set_lambda_function_associations(var_25);
             }
             ,
             s if s.matches("FunctionAssociations") /* FunctionAssociations com.amazonaws.cloudfront#CacheBehavior$FunctionAssociations */ =>  {
-                let var_29 =
+                let var_26 =
                     Some(
                         crate::protocol_serde::shape_function_associations::de_function_associations(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_function_associations(var_29);
+                builder = builder.set_function_associations(var_26);
             }
             ,
             s if s.matches("FieldLevelEncryptionId") /* FieldLevelEncryptionId com.amazonaws.cloudfront#CacheBehavior$FieldLevelEncryptionId */ =>  {
+                let var_27 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_field_level_encryption_id(var_27);
+            }
+            ,
+            s if s.matches("RealtimeLogConfigArn") /* RealtimeLogConfigArn com.amazonaws.cloudfront#CacheBehavior$RealtimeLogConfigArn */ =>  {
+                let var_28 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_realtime_log_config_arn(var_28);
+            }
+            ,
+            s if s.matches("CachePolicyId") /* CachePolicyId com.amazonaws.cloudfront#CacheBehavior$CachePolicyId */ =>  {
+                let var_29 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_cache_policy_id(var_29);
+            }
+            ,
+            s if s.matches("OriginRequestPolicyId") /* OriginRequestPolicyId com.amazonaws.cloudfront#CacheBehavior$OriginRequestPolicyId */ =>  {
                 let var_30 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -222,10 +262,10 @@ pub fn de_cache_behavior(
                         ?
                     )
                 ;
-                builder = builder.set_field_level_encryption_id(var_30);
+                builder = builder.set_origin_request_policy_id(var_30);
             }
             ,
-            s if s.matches("RealtimeLogConfigArn") /* RealtimeLogConfigArn com.amazonaws.cloudfront#CacheBehavior$RealtimeLogConfigArn */ =>  {
+            s if s.matches("ResponseHeadersPolicyId") /* ResponseHeadersPolicyId com.amazonaws.cloudfront#CacheBehavior$ResponseHeadersPolicyId */ =>  {
                 let var_31 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -235,60 +275,21 @@ pub fn de_cache_behavior(
                         ?
                     )
                 ;
-                builder = builder.set_realtime_log_config_arn(var_31);
-            }
-            ,
-            s if s.matches("CachePolicyId") /* CachePolicyId com.amazonaws.cloudfront#CacheBehavior$CachePolicyId */ =>  {
-                let var_32 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_cache_policy_id(var_32);
-            }
-            ,
-            s if s.matches("OriginRequestPolicyId") /* OriginRequestPolicyId com.amazonaws.cloudfront#CacheBehavior$OriginRequestPolicyId */ =>  {
-                let var_33 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_origin_request_policy_id(var_33);
-            }
-            ,
-            s if s.matches("ResponseHeadersPolicyId") /* ResponseHeadersPolicyId com.amazonaws.cloudfront#CacheBehavior$ResponseHeadersPolicyId */ =>  {
-                let var_34 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_response_headers_policy_id(var_34);
+                builder = builder.set_response_headers_policy_id(var_31);
             }
             ,
             s if s.matches("ForwardedValues") /* ForwardedValues com.amazonaws.cloudfront#CacheBehavior$ForwardedValues */ =>  {
-                let var_35 =
+                let var_32 =
                     Some(
                         crate::protocol_serde::shape_forwarded_values::de_forwarded_values(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_forwarded_values(var_35);
+                builder = builder.set_forwarded_values(var_32);
             }
             ,
             s if s.matches("MinTTL") /* MinTTL com.amazonaws.cloudfront#CacheBehavior$MinTTL */ =>  {
-                let var_36 =
+                let var_33 =
                     Some(
                          {
                             <i64 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -299,11 +300,11 @@ pub fn de_cache_behavior(
                         ?
                     )
                 ;
-                builder = builder.set_min_ttl(var_36);
+                builder = builder.set_min_ttl(var_33);
             }
             ,
             s if s.matches("DefaultTTL") /* DefaultTTL com.amazonaws.cloudfront#CacheBehavior$DefaultTTL */ =>  {
-                let var_37 =
+                let var_34 =
                     Some(
                          {
                             <i64 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -314,11 +315,11 @@ pub fn de_cache_behavior(
                         ?
                     )
                 ;
-                builder = builder.set_default_ttl(var_37);
+                builder = builder.set_default_ttl(var_34);
             }
             ,
             s if s.matches("MaxTTL") /* MaxTTL com.amazonaws.cloudfront#CacheBehavior$MaxTTL */ =>  {
-                let var_38 =
+                let var_35 =
                     Some(
                          {
                             <i64 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -329,11 +330,13 @@ pub fn de_cache_behavior(
                         ?
                     )
                 ;
-                builder = builder.set_max_ttl(var_38);
+                builder = builder.set_max_ttl(var_35);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::cache_behavior_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

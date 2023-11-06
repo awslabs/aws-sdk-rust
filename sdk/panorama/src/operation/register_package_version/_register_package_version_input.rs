@@ -12,7 +12,7 @@ pub struct RegisterPackageVersionInput {
     /// <p>A patch version.</p>
     pub patch_version: ::std::option::Option<::std::string::String>,
     /// <p>Whether to mark the new version as the latest version.</p>
-    pub mark_latest: bool,
+    pub mark_latest: ::std::option::Option<bool>,
 }
 impl RegisterPackageVersionInput {
     /// <p>An owner account.</p>
@@ -32,7 +32,7 @@ impl RegisterPackageVersionInput {
         self.patch_version.as_deref()
     }
     /// <p>Whether to mark the new version as the latest version.</p>
-    pub fn mark_latest(&self) -> bool {
+    pub fn mark_latest(&self) -> ::std::option::Option<bool> {
         self.mark_latest
     }
 }
@@ -69,6 +69,7 @@ impl RegisterPackageVersionInputBuilder {
         &self.owner_account
     }
     /// <p>A package ID.</p>
+    /// This field is required.
     pub fn package_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +84,7 @@ impl RegisterPackageVersionInputBuilder {
         &self.package_id
     }
     /// <p>A package version.</p>
+    /// This field is required.
     pub fn package_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_version = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +99,7 @@ impl RegisterPackageVersionInputBuilder {
         &self.package_version
     }
     /// <p>A patch version.</p>
+    /// This field is required.
     pub fn patch_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.patch_version = ::std::option::Option::Some(input.into());
         self
@@ -127,14 +130,16 @@ impl RegisterPackageVersionInputBuilder {
     /// Consumes the builder and constructs a [`RegisterPackageVersionInput`](crate::operation::register_package_version::RegisterPackageVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_package_version::RegisterPackageVersionInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::register_package_version::RegisterPackageVersionInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::register_package_version::RegisterPackageVersionInput {
             owner_account: self.owner_account,
             package_id: self.package_id,
             package_version: self.package_version,
             patch_version: self.patch_version,
-            mark_latest: self.mark_latest.unwrap_or_default(),
+            mark_latest: self.mark_latest,
         })
     }
 }

@@ -78,10 +78,10 @@ pub fn de_disable_organization_admin_account_http_response(
 
 pub fn ser_disable_organization_admin_account_input(
     input: &crate::operation::disable_organization_admin_account::DisableOrganizationAdminAccountInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_disable_organization_admin_account_input::ser_disable_organization_admin_account_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

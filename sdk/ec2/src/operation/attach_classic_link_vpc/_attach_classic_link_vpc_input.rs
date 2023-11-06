@@ -18,8 +18,10 @@ impl AttachClassicLinkVpcInput {
         self.dry_run
     }
     /// <p>The IDs of the security groups. You cannot specify security groups from a different VPC.</p>
-    pub fn groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
+    pub fn groups(&self) -> &[::std::string::String] {
+        self.groups.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the EC2-Classic instance.</p>
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
@@ -82,6 +84,7 @@ impl AttachClassicLinkVpcInputBuilder {
         &self.groups
     }
     /// <p>The ID of the EC2-Classic instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -96,6 +99,7 @@ impl AttachClassicLinkVpcInputBuilder {
         &self.instance_id
     }
     /// <p>The ID of the ClassicLink-enabled VPC.</p>
+    /// This field is required.
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
         self
@@ -112,7 +116,7 @@ impl AttachClassicLinkVpcInputBuilder {
     /// Consumes the builder and constructs a [`AttachClassicLinkVpcInput`](crate::operation::attach_classic_link_vpc::AttachClassicLinkVpcInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::attach_classic_link_vpc::AttachClassicLinkVpcInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::attach_classic_link_vpc::AttachClassicLinkVpcInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::attach_classic_link_vpc::AttachClassicLinkVpcInput {
             dry_run: self.dry_run,

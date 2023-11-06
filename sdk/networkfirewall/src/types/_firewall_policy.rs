@@ -10,11 +10,11 @@ pub struct FirewallPolicy {
     /// <p>The actions to take on a packet if it doesn't match any of the stateless rules in the policy. If you want non-matching packets to be forwarded for stateful inspection, specify <code>aws:forward_to_sfe</code>. </p>
     /// <p>You must specify one of the standard actions: <code>aws:pass</code>, <code>aws:drop</code>, or <code>aws:forward_to_sfe</code>. In addition, you can specify custom actions that are compatible with your standard section choice.</p>
     /// <p>For example, you could specify <code>["aws:pass"]</code> or you could specify <code>["aws:pass", “customActionName”]</code>. For information about compatibility, see the custom action descriptions under <code>CustomAction</code>.</p>
-    pub stateless_default_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub stateless_default_actions: ::std::vec::Vec<::std::string::String>,
     /// <p>The actions to take on a fragmented UDP packet if it doesn't match any of the stateless rules in the policy. Network Firewall only manages UDP packet fragments and silently drops packet fragments for other protocols. If you want non-matching fragmented UDP packets to be forwarded for stateful inspection, specify <code>aws:forward_to_sfe</code>. </p>
     /// <p>You must specify one of the standard actions: <code>aws:pass</code>, <code>aws:drop</code>, or <code>aws:forward_to_sfe</code>. In addition, you can specify custom actions that are compatible with your standard section choice.</p>
     /// <p>For example, you could specify <code>["aws:pass"]</code> or you could specify <code>["aws:pass", “customActionName”]</code>. For information about compatibility, see the custom action descriptions under <code>CustomAction</code>.</p>
-    pub stateless_fragment_default_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub stateless_fragment_default_actions: ::std::vec::Vec<::std::string::String>,
     /// <p>The custom action definitions that are available for use in the firewall policy's <code>StatelessDefaultActions</code> setting. You name each custom action that you define, and then you can use it by name in your default actions specifications.</p>
     pub stateless_custom_actions: ::std::option::Option<::std::vec::Vec<crate::types::CustomAction>>,
     /// <p>References to the stateful rule groups that are used in the policy. These define the inspection criteria in stateful rules. </p>
@@ -38,28 +38,36 @@ pub struct FirewallPolicy {
 }
 impl FirewallPolicy {
     /// <p>References to the stateless rule groups that are used in the policy. These define the matching criteria in stateless rules. </p>
-    pub fn stateless_rule_group_references(&self) -> ::std::option::Option<&[crate::types::StatelessRuleGroupReference]> {
-        self.stateless_rule_group_references.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stateless_rule_group_references.is_none()`.
+    pub fn stateless_rule_group_references(&self) -> &[crate::types::StatelessRuleGroupReference] {
+        self.stateless_rule_group_references.as_deref().unwrap_or_default()
     }
     /// <p>The actions to take on a packet if it doesn't match any of the stateless rules in the policy. If you want non-matching packets to be forwarded for stateful inspection, specify <code>aws:forward_to_sfe</code>. </p>
     /// <p>You must specify one of the standard actions: <code>aws:pass</code>, <code>aws:drop</code>, or <code>aws:forward_to_sfe</code>. In addition, you can specify custom actions that are compatible with your standard section choice.</p>
     /// <p>For example, you could specify <code>["aws:pass"]</code> or you could specify <code>["aws:pass", “customActionName”]</code>. For information about compatibility, see the custom action descriptions under <code>CustomAction</code>.</p>
-    pub fn stateless_default_actions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.stateless_default_actions.as_deref()
+    pub fn stateless_default_actions(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.stateless_default_actions.deref()
     }
     /// <p>The actions to take on a fragmented UDP packet if it doesn't match any of the stateless rules in the policy. Network Firewall only manages UDP packet fragments and silently drops packet fragments for other protocols. If you want non-matching fragmented UDP packets to be forwarded for stateful inspection, specify <code>aws:forward_to_sfe</code>. </p>
     /// <p>You must specify one of the standard actions: <code>aws:pass</code>, <code>aws:drop</code>, or <code>aws:forward_to_sfe</code>. In addition, you can specify custom actions that are compatible with your standard section choice.</p>
     /// <p>For example, you could specify <code>["aws:pass"]</code> or you could specify <code>["aws:pass", “customActionName”]</code>. For information about compatibility, see the custom action descriptions under <code>CustomAction</code>.</p>
-    pub fn stateless_fragment_default_actions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.stateless_fragment_default_actions.as_deref()
+    pub fn stateless_fragment_default_actions(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.stateless_fragment_default_actions.deref()
     }
     /// <p>The custom action definitions that are available for use in the firewall policy's <code>StatelessDefaultActions</code> setting. You name each custom action that you define, and then you can use it by name in your default actions specifications.</p>
-    pub fn stateless_custom_actions(&self) -> ::std::option::Option<&[crate::types::CustomAction]> {
-        self.stateless_custom_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stateless_custom_actions.is_none()`.
+    pub fn stateless_custom_actions(&self) -> &[crate::types::CustomAction] {
+        self.stateless_custom_actions.as_deref().unwrap_or_default()
     }
     /// <p>References to the stateful rule groups that are used in the policy. These define the inspection criteria in stateful rules. </p>
-    pub fn stateful_rule_group_references(&self) -> ::std::option::Option<&[crate::types::StatefulRuleGroupReference]> {
-        self.stateful_rule_group_references.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stateful_rule_group_references.is_none()`.
+    pub fn stateful_rule_group_references(&self) -> &[crate::types::StatefulRuleGroupReference] {
+        self.stateful_rule_group_references.as_deref().unwrap_or_default()
     }
     /// <p>The default actions to take on a packet that doesn't match any stateful rules. The stateful default action is optional, and is only valid when using the strict rule order.</p>
     /// <p>Valid values of the stateful default action:</p>
@@ -70,8 +78,10 @@ impl FirewallPolicy {
     /// <li> <p>aws:alert_established</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html#suricata-strict-rule-evaluation-order.html">Strict evaluation order</a> in the <i>Network Firewall Developer Guide</i>. </p>
-    pub fn stateful_default_actions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.stateful_default_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stateful_default_actions.is_none()`.
+    pub fn stateful_default_actions(&self) -> &[::std::string::String] {
+        self.stateful_default_actions.as_deref().unwrap_or_default()
     }
     /// <p>Additional options governing how Network Firewall handles stateful rules. The stateful rule groups that you use in your policy must have stateful rule options settings that are compatible with these settings.</p>
     pub fn stateful_engine_options(&self) -> ::std::option::Option<&crate::types::StatefulEngineOptions> {
@@ -313,17 +323,30 @@ impl FirewallPolicyBuilder {
         &self.policy_variables
     }
     /// Consumes the builder and constructs a [`FirewallPolicy`](crate::types::FirewallPolicy).
-    pub fn build(self) -> crate::types::FirewallPolicy {
-        crate::types::FirewallPolicy {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`stateless_default_actions`](crate::types::builders::FirewallPolicyBuilder::stateless_default_actions)
+    /// - [`stateless_fragment_default_actions`](crate::types::builders::FirewallPolicyBuilder::stateless_fragment_default_actions)
+    pub fn build(self) -> ::std::result::Result<crate::types::FirewallPolicy, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::FirewallPolicy {
             stateless_rule_group_references: self.stateless_rule_group_references,
-            stateless_default_actions: self.stateless_default_actions,
-            stateless_fragment_default_actions: self.stateless_fragment_default_actions,
+            stateless_default_actions: self.stateless_default_actions.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "stateless_default_actions",
+                    "stateless_default_actions was not specified but it is required when building FirewallPolicy",
+                )
+            })?,
+            stateless_fragment_default_actions: self.stateless_fragment_default_actions.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "stateless_fragment_default_actions",
+                    "stateless_fragment_default_actions was not specified but it is required when building FirewallPolicy",
+                )
+            })?,
             stateless_custom_actions: self.stateless_custom_actions,
             stateful_rule_group_references: self.stateful_rule_group_references,
             stateful_default_actions: self.stateful_default_actions,
             stateful_engine_options: self.stateful_engine_options,
             tls_inspection_configuration_arn: self.tls_inspection_configuration_arn,
             policy_variables: self.policy_variables,
-        }
+        })
     }
 }

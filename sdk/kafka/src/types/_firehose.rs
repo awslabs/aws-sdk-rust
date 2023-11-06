@@ -48,6 +48,7 @@ impl FirehoseBuilder {
         &self.delivery_stream
     }
     #[allow(missing_docs)] // documentation missing in model
+    /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self

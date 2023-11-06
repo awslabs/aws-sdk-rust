@@ -11,8 +11,10 @@ pub struct ListActionsOutput {
 }
 impl ListActionsOutput {
     /// <p>The actions.</p>
-    pub fn actions(&self) -> ::std::option::Option<&[crate::types::ActionSummary]> {
-        self.actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
+    pub fn actions(&self) -> &[crate::types::ActionSummary] {
+        self.actions.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

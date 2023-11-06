@@ -27,6 +27,7 @@ pub struct GetBackupPlanFromJsonInputBuilder {
 }
 impl GetBackupPlanFromJsonInputBuilder {
     /// <p>A customer-supplied backup plan document in JSON format.</p>
+    /// This field is required.
     pub fn backup_plan_template_json(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_plan_template_json = ::std::option::Option::Some(input.into());
         self
@@ -43,8 +44,10 @@ impl GetBackupPlanFromJsonInputBuilder {
     /// Consumes the builder and constructs a [`GetBackupPlanFromJsonInput`](crate::operation::get_backup_plan_from_json::GetBackupPlanFromJsonInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_backup_plan_from_json::GetBackupPlanFromJsonInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::get_backup_plan_from_json::GetBackupPlanFromJsonInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::get_backup_plan_from_json::GetBackupPlanFromJsonInput {
             backup_plan_template_json: self.backup_plan_template_json,
         })

@@ -41,6 +41,7 @@ pub struct UpdateSegmentInputBuilder {
 }
 impl UpdateSegmentInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateSegmentInputBuilder {
         &self.application_id
     }
     /// <p>The unique identifier for the segment.</p>
+    /// This field is required.
     pub fn segment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.segment_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl UpdateSegmentInputBuilder {
         &self.segment_id
     }
     /// <p>Specifies the configuration, dimension, and other settings for a segment. A WriteSegmentRequest object can include a Dimensions object or a SegmentGroups object, but not both.</p>
+    /// This field is required.
     pub fn write_segment_request(mut self, input: crate::types::WriteSegmentRequest) -> Self {
         self.write_segment_request = ::std::option::Option::Some(input);
         self
@@ -85,7 +88,7 @@ impl UpdateSegmentInputBuilder {
     /// Consumes the builder and constructs a [`UpdateSegmentInput`](crate::operation::update_segment::UpdateSegmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_segment::UpdateSegmentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_segment::UpdateSegmentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_segment::UpdateSegmentInput {
             application_id: self.application_id,
             segment_id: self.segment_id,

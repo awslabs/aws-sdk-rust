@@ -31,8 +31,8 @@ pub fn de_batch_disassociate_service_action_from_provisioning_artifact_http_erro
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::batch_disassociate_service_action_from_provisioning_artifact::BatchDisassociateServiceActionFromProvisioningArtifactError::generic(generic)
@@ -59,12 +59,12 @@ pub fn de_batch_disassociate_service_action_from_provisioning_artifact_http_resp
 
 pub fn ser_batch_disassociate_service_action_from_provisioning_artifact_input(
     input: &crate::operation::batch_disassociate_service_action_from_provisioning_artifact::BatchDisassociateServiceActionFromProvisioningArtifactInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_batch_disassociate_service_action_from_provisioning_artifact_input::ser_batch_disassociate_service_action_from_provisioning_artifact_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_batch_disassociate_service_action_from_provisioning_artifact(value: &[u8], mut builder: crate::operation::batch_disassociate_service_action_from_provisioning_artifact::builders::BatchDisassociateServiceActionFromProvisioningArtifactOutputBuilder) -> Result<crate::operation::batch_disassociate_service_action_from_provisioning_artifact::builders::BatchDisassociateServiceActionFromProvisioningArtifactOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>{

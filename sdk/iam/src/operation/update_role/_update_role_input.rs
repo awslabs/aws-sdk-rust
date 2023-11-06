@@ -43,6 +43,7 @@ pub struct UpdateRoleInputBuilder {
 }
 impl UpdateRoleInputBuilder {
     /// <p>The name of the role that you want to modify.</p>
+    /// This field is required.
     pub fn role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_name = ::std::option::Option::Some(input.into());
         self
@@ -88,7 +89,7 @@ impl UpdateRoleInputBuilder {
         &self.max_session_duration
     }
     /// Consumes the builder and constructs a [`UpdateRoleInput`](crate::operation::update_role::UpdateRoleInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_role::UpdateRoleInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_role::UpdateRoleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_role::UpdateRoleInput {
             role_name: self.role_name,
             description: self.description,

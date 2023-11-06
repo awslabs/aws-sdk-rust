@@ -85,7 +85,7 @@ impl RetryBuildBatchInputBuilder {
     /// Consumes the builder and constructs a [`RetryBuildBatchInput`](crate::operation::retry_build_batch::RetryBuildBatchInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::retry_build_batch::RetryBuildBatchInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::retry_build_batch::RetryBuildBatchInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::retry_build_batch::RetryBuildBatchInput {
             id: self.id,
             idempotency_token: self.idempotency_token,

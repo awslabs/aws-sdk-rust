@@ -11,8 +11,10 @@ pub struct AvailableCapacity {
 }
 impl AvailableCapacity {
     /// <p>The number of instances that can be launched onto the Dedicated Host depending on the host's available capacity. For Dedicated Hosts that support multiple instance types, this parameter represents the number of instances for each instance size that is supported on the host.</p>
-    pub fn available_instance_capacity(&self) -> ::std::option::Option<&[crate::types::InstanceCapacity]> {
-        self.available_instance_capacity.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.available_instance_capacity.is_none()`.
+    pub fn available_instance_capacity(&self) -> &[crate::types::InstanceCapacity] {
+        self.available_instance_capacity.as_deref().unwrap_or_default()
     }
     /// <p>The number of vCPUs available for launching instances onto the Dedicated Host.</p>
     pub fn available_v_cpus(&self) -> ::std::option::Option<i32> {

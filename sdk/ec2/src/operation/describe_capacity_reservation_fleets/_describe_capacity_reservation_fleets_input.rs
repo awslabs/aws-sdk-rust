@@ -22,8 +22,10 @@ pub struct DescribeCapacityReservationFleetsInput {
 }
 impl DescribeCapacityReservationFleetsInput {
     /// <p>The IDs of the Capacity Reservation Fleets to describe.</p>
-    pub fn capacity_reservation_fleet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.capacity_reservation_fleet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capacity_reservation_fleet_ids.is_none()`.
+    pub fn capacity_reservation_fleet_ids(&self) -> &[::std::string::String] {
+        self.capacity_reservation_fleet_ids.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -40,8 +42,10 @@ impl DescribeCapacityReservationFleetsInput {
     /// <li> <p> <code>tenancy</code> - The tenancy of the Fleet (<code>default</code> | <code>dedicated</code>).</p> </li>
     /// <li> <p> <code>allocation-strategy</code> - The allocation strategy used by the Fleet. Only <code>prioritized</code> is supported.</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -171,7 +175,7 @@ impl DescribeCapacityReservationFleetsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_capacity_reservation_fleets::DescribeCapacityReservationFleetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_capacity_reservation_fleets::DescribeCapacityReservationFleetsInput {

@@ -14,8 +14,10 @@ impl BatchEvaluateGeofencesInput {
         self.collection_name.as_deref()
     }
     /// <p>Contains device details for each device to be evaluated against the given geofence collection.</p>
-    pub fn device_position_updates(&self) -> ::std::option::Option<&[crate::types::DevicePositionUpdate]> {
-        self.device_position_updates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.device_position_updates.is_none()`.
+    pub fn device_position_updates(&self) -> &[crate::types::DevicePositionUpdate] {
+        self.device_position_updates.as_deref().unwrap_or_default()
     }
 }
 impl BatchEvaluateGeofencesInput {
@@ -34,6 +36,7 @@ pub struct BatchEvaluateGeofencesInputBuilder {
 }
 impl BatchEvaluateGeofencesInputBuilder {
     /// <p>The geofence collection used in evaluating the position of devices against its geofences.</p>
+    /// This field is required.
     pub fn collection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_name = ::std::option::Option::Some(input.into());
         self
@@ -70,8 +73,10 @@ impl BatchEvaluateGeofencesInputBuilder {
     /// Consumes the builder and constructs a [`BatchEvaluateGeofencesInput`](crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesInput {
             collection_name: self.collection_name,
             device_position_updates: self.device_position_updates,

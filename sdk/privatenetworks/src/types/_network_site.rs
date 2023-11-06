@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkSite {
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
-    pub network_site_arn: ::std::option::Option<::std::string::String>,
+    pub network_site_arn: ::std::string::String,
     /// <p>The name of the network site.</p>
-    pub network_site_name: ::std::option::Option<::std::string::String>,
+    pub network_site_name: ::std::string::String,
     /// <p>The description of the network site.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The status of the network site.</p>
-    pub status: ::std::option::Option<crate::types::NetworkSiteStatus>,
+    pub status: crate::types::NetworkSiteStatus,
     /// <p>The status reason of the network site.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the network to which the network site belongs.</p>
-    pub network_arn: ::std::option::Option<::std::string::String>,
+    pub network_arn: ::std::string::String,
     /// <p>The pending plan of the network site.</p>
     pub pending_plan: ::std::option::Option<crate::types::SitePlan>,
     /// <p>The current plan of the network site.</p>
@@ -29,28 +29,31 @@ pub struct NetworkSite {
 }
 impl NetworkSite {
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
-    pub fn network_site_arn(&self) -> ::std::option::Option<&str> {
-        self.network_site_arn.as_deref()
+    pub fn network_site_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.network_site_arn.deref()
     }
     /// <p>The name of the network site.</p>
-    pub fn network_site_name(&self) -> ::std::option::Option<&str> {
-        self.network_site_name.as_deref()
+    pub fn network_site_name(&self) -> &str {
+        use std::ops::Deref;
+        self.network_site_name.deref()
     }
     /// <p>The description of the network site.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The status of the network site.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::NetworkSiteStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::NetworkSiteStatus {
+        &self.status
     }
     /// <p>The status reason of the network site.</p>
     pub fn status_reason(&self) -> ::std::option::Option<&str> {
         self.status_reason.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the network to which the network site belongs.</p>
-    pub fn network_arn(&self) -> ::std::option::Option<&str> {
-        self.network_arn.as_deref()
+    pub fn network_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.network_arn.deref()
     }
     /// <p>The pending plan of the network site.</p>
     pub fn pending_plan(&self) -> ::std::option::Option<&crate::types::SitePlan> {
@@ -98,6 +101,7 @@ pub struct NetworkSiteBuilder {
 }
 impl NetworkSiteBuilder {
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
+    /// This field is required.
     pub fn network_site_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_site_arn = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +116,7 @@ impl NetworkSiteBuilder {
         &self.network_site_arn
     }
     /// <p>The name of the network site.</p>
+    /// This field is required.
     pub fn network_site_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_site_name = ::std::option::Option::Some(input.into());
         self
@@ -140,6 +145,7 @@ impl NetworkSiteBuilder {
         &self.description
     }
     /// <p>The status of the network site.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::NetworkSiteStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -168,6 +174,7 @@ impl NetworkSiteBuilder {
         &self.status_reason
     }
     /// <p>The Amazon Resource Name (ARN) of the network to which the network site belongs.</p>
+    /// This field is required.
     pub fn network_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_arn = ::std::option::Option::Some(input.into());
         self
@@ -252,19 +259,44 @@ impl NetworkSiteBuilder {
         &self.availability_zone_id
     }
     /// Consumes the builder and constructs a [`NetworkSite`](crate::types::NetworkSite).
-    pub fn build(self) -> crate::types::NetworkSite {
-        crate::types::NetworkSite {
-            network_site_arn: self.network_site_arn,
-            network_site_name: self.network_site_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`network_site_arn`](crate::types::builders::NetworkSiteBuilder::network_site_arn)
+    /// - [`network_site_name`](crate::types::builders::NetworkSiteBuilder::network_site_name)
+    /// - [`status`](crate::types::builders::NetworkSiteBuilder::status)
+    /// - [`network_arn`](crate::types::builders::NetworkSiteBuilder::network_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::NetworkSite, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::NetworkSite {
+            network_site_arn: self.network_site_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "network_site_arn",
+                    "network_site_arn was not specified but it is required when building NetworkSite",
+                )
+            })?,
+            network_site_name: self.network_site_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "network_site_name",
+                    "network_site_name was not specified but it is required when building NetworkSite",
+                )
+            })?,
             description: self.description,
-            status: self.status,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building NetworkSite",
+                )
+            })?,
             status_reason: self.status_reason,
-            network_arn: self.network_arn,
+            network_arn: self.network_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "network_arn",
+                    "network_arn was not specified but it is required when building NetworkSite",
+                )
+            })?,
             pending_plan: self.pending_plan,
             current_plan: self.current_plan,
             created_at: self.created_at,
             availability_zone: self.availability_zone,
             availability_zone_id: self.availability_zone_id,
-        }
+        })
     }
 }

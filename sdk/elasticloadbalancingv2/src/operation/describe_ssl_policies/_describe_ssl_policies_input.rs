@@ -14,8 +14,10 @@ pub struct DescribeSslPoliciesInput {
 }
 impl DescribeSslPoliciesInput {
     /// <p>The names of the policies.</p>
-    pub fn names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.names.is_none()`.
+    pub fn names(&self) -> &[::std::string::String] {
+        self.names.as_deref().unwrap_or_default()
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {
@@ -112,7 +114,7 @@ impl DescribeSslPoliciesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSslPoliciesInput`](crate::operation::describe_ssl_policies::DescribeSslPoliciesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_ssl_policies::DescribeSslPoliciesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_ssl_policies::DescribeSslPoliciesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_ssl_policies::DescribeSslPoliciesInput {
             names: self.names,

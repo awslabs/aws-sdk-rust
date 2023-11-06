@@ -33,8 +33,10 @@ impl PolicyComplianceDetail {
         self.member_account.as_deref()
     }
     /// <p>An array of resources that aren't protected by the WAF or Shield Advanced policy or that aren't in compliance with the security group policy.</p>
-    pub fn violators(&self) -> ::std::option::Option<&[crate::types::ComplianceViolator]> {
-        self.violators.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.violators.is_none()`.
+    pub fn violators(&self) -> &[crate::types::ComplianceViolator] {
+        self.violators.as_deref().unwrap_or_default()
     }
     /// <p>Indicates if over 100 resources are noncompliant with the Firewall Manager policy.</p>
     pub fn evaluation_limit_exceeded(&self) -> bool {

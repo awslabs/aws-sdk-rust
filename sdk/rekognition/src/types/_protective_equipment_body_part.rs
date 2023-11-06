@@ -21,8 +21,10 @@ impl ProtectiveEquipmentBodyPart {
         self.confidence
     }
     /// <p>An array of Personal Protective Equipment items detected around a body part.</p>
-    pub fn equipment_detections(&self) -> ::std::option::Option<&[crate::types::EquipmentDetection]> {
-        self.equipment_detections.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.equipment_detections.is_none()`.
+    pub fn equipment_detections(&self) -> &[crate::types::EquipmentDetection] {
+        self.equipment_detections.as_deref().unwrap_or_default()
     }
 }
 impl ProtectiveEquipmentBodyPart {

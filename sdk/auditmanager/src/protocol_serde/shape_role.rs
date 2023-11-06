@@ -2,12 +2,12 @@
 pub fn ser_role(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Role,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.role_type {
-        object.key("roleType").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("roleType").string(input.role_type.as_str());
     }
-    if let Some(var_2) = &input.role_arn {
-        object.key("roleArn").string(var_2.as_str());
+    {
+        object.key("roleArn").string(input.role_arn.as_str());
     }
     Ok(())
 }
@@ -51,7 +51,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::role_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

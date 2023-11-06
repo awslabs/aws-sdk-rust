@@ -48,6 +48,7 @@ pub struct ListDicomImportJobsInputBuilder {
 }
 impl ListDicomImportJobsInputBuilder {
     /// <p>The data store identifier.</p>
+    /// This field is required.
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_id = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,7 @@ impl ListDicomImportJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListDicomImportJobsInput`](crate::operation::list_dicom_import_jobs::ListDicomImportJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_dicom_import_jobs::ListDicomImportJobsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_dicom_import_jobs::ListDicomImportJobsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_dicom_import_jobs::ListDicomImportJobsInput {
             datastore_id: self.datastore_id,

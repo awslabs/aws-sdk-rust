@@ -104,7 +104,7 @@ impl GetModelsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetModelsInput`](crate::operation::get_models::GetModelsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_models::GetModelsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_models::GetModelsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_models::GetModelsInput {
             model_id: self.model_id,
             model_type: self.model_type,

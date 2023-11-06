@@ -2,7 +2,7 @@
 pub fn ser_small_multiples_axis_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SmallMultiplesAxisProperties,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.scale {
         object.key("Scale").string(var_1.as_str());
     }

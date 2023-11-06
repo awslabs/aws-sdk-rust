@@ -2,24 +2,24 @@
 pub fn ser_network_interface(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NetworkInterface,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.interface_id {
-        object.key("interfaceId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("interfaceId").string(input.interface_id.as_str());
     }
-    if let Some(var_2) = &input.r#type {
-        object.key("type").string(var_2.as_str());
+    {
+        object.key("type").string(input.r#type.as_str());
     }
-    if let Some(var_3) = &input.can_interface {
+    if let Some(var_1) = &input.can_interface {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("canInterface").start_object();
-        crate::protocol_serde::shape_can_interface::ser_can_interface(&mut object_4, var_3)?;
+        let mut object_2 = object.key("canInterface").start_object();
+        crate::protocol_serde::shape_can_interface::ser_can_interface(&mut object_2, var_1)?;
+        object_2.finish();
+    }
+    if let Some(var_3) = &input.obd_interface {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("obdInterface").start_object();
+        crate::protocol_serde::shape_obd_interface::ser_obd_interface(&mut object_4, var_3)?;
         object_4.finish();
-    }
-    if let Some(var_5) = &input.obd_interface {
-        #[allow(unused_mut)]
-        let mut object_6 = object.key("obdInterface").start_object();
-        crate::protocol_serde::shape_obd_interface::ser_obd_interface(&mut object_6, var_5)?;
-        object_6.finish();
     }
     Ok(())
 }
@@ -69,7 +69,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::network_interface_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

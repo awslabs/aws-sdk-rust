@@ -3,20 +3,20 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetEntity`](crate::operation::get_entity::builders::GetEntityFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`workspace_id(impl Into<String>)`](crate::operation::get_entity::builders::GetEntityFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::get_entity::builders::GetEntityFluentBuilder::set_workspace_id): <p>The ID of the workspace.</p>
-    ///   - [`entity_id(impl Into<String>)`](crate::operation::get_entity::builders::GetEntityFluentBuilder::entity_id) / [`set_entity_id(Option<String>)`](crate::operation::get_entity::builders::GetEntityFluentBuilder::set_entity_id): <p>The ID of the entity.</p>
+    ///   - [`workspace_id(impl Into<String>)`](crate::operation::get_entity::builders::GetEntityFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::get_entity::builders::GetEntityFluentBuilder::set_workspace_id):<br>required: **true**<br><p>The ID of the workspace.</p><br>
+    ///   - [`entity_id(impl Into<String>)`](crate::operation::get_entity::builders::GetEntityFluentBuilder::entity_id) / [`set_entity_id(Option<String>)`](crate::operation::get_entity::builders::GetEntityFluentBuilder::set_entity_id):<br>required: **true**<br><p>The ID of the entity.</p><br>
     /// - On success, responds with [`GetEntityOutput`](crate::operation::get_entity::GetEntityOutput) with field(s):
-    ///   - [`entity_id(Option<String>)`](crate::operation::get_entity::GetEntityOutput::entity_id): <p>The ID of the entity.</p>
-    ///   - [`entity_name(Option<String>)`](crate::operation::get_entity::GetEntityOutput::entity_name): <p>The name of the entity.</p>
-    ///   - [`arn(Option<String>)`](crate::operation::get_entity::GetEntityOutput::arn): <p>The ARN of the entity.</p>
+    ///   - [`entity_id(String)`](crate::operation::get_entity::GetEntityOutput::entity_id): <p>The ID of the entity.</p>
+    ///   - [`entity_name(String)`](crate::operation::get_entity::GetEntityOutput::entity_name): <p>The name of the entity.</p>
+    ///   - [`arn(String)`](crate::operation::get_entity::GetEntityOutput::arn): <p>The ARN of the entity.</p>
     ///   - [`status(Option<Status>)`](crate::operation::get_entity::GetEntityOutput::status): <p>The current status of the entity.</p>
-    ///   - [`workspace_id(Option<String>)`](crate::operation::get_entity::GetEntityOutput::workspace_id): <p>The ID of the workspace.</p>
+    ///   - [`workspace_id(String)`](crate::operation::get_entity::GetEntityOutput::workspace_id): <p>The ID of the workspace.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_entity::GetEntityOutput::description): <p>The description of the entity.</p>
-    ///   - [`components(Option<HashMap<String, ComponentResponse>>)`](crate::operation::get_entity::GetEntityOutput::components): <p>An object that maps strings to the components in the entity. Each string in the mapping must be unique to this object.</p>
-    ///   - [`parent_entity_id(Option<String>)`](crate::operation::get_entity::GetEntityOutput::parent_entity_id): <p>The ID of the parent entity for this entity.</p>
-    ///   - [`has_child_entities(Option<bool>)`](crate::operation::get_entity::GetEntityOutput::has_child_entities): <p>A Boolean value that specifies whether the entity has associated child entities.</p>
-    ///   - [`creation_date_time(Option<DateTime>)`](crate::operation::get_entity::GetEntityOutput::creation_date_time): <p>The date and time when the entity was created.</p>
-    ///   - [`update_date_time(Option<DateTime>)`](crate::operation::get_entity::GetEntityOutput::update_date_time): <p>The date and time when the entity was last updated.</p>
+    ///   - [`components(Option<HashMap::<String, ComponentResponse>>)`](crate::operation::get_entity::GetEntityOutput::components): <p>An object that maps strings to the components in the entity. Each string in the mapping must be unique to this object.</p>
+    ///   - [`parent_entity_id(String)`](crate::operation::get_entity::GetEntityOutput::parent_entity_id): <p>The ID of the parent entity for this entity.</p>
+    ///   - [`has_child_entities(bool)`](crate::operation::get_entity::GetEntityOutput::has_child_entities): <p>A Boolean value that specifies whether the entity has associated child entities.</p>
+    ///   - [`creation_date_time(DateTime)`](crate::operation::get_entity::GetEntityOutput::creation_date_time): <p>The date and time when the entity was created.</p>
+    ///   - [`update_date_time(DateTime)`](crate::operation::get_entity::GetEntityOutput::update_date_time): <p>The date and time when the entity was last updated.</p>
     ///   - [`sync_source(Option<String>)`](crate::operation::get_entity::GetEntityOutput::sync_source): <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
     /// - On failure, responds with [`SdkError<GetEntityError>`](crate::operation::get_entity::GetEntityError)
     pub fn get_entity(&self) -> crate::operation::get_entity::builders::GetEntityFluentBuilder {

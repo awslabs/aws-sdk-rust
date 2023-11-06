@@ -27,6 +27,7 @@ pub struct DeleteConfiguredTableInputBuilder {
 }
 impl DeleteConfiguredTableInputBuilder {
     /// <p>The unique ID for the configured table to delete.</p>
+    /// This field is required.
     pub fn configured_table_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configured_table_identifier = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteConfiguredTableInputBuilder {
     /// Consumes the builder and constructs a [`DeleteConfiguredTableInput`](crate::operation::delete_configured_table::DeleteConfiguredTableInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_configured_table::DeleteConfiguredTableInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_configured_table::DeleteConfiguredTableInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_configured_table::DeleteConfiguredTableInput {
             configured_table_identifier: self.configured_table_identifier,

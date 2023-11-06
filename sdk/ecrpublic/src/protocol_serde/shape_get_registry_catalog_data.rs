@@ -74,14 +74,14 @@ pub fn de_get_registry_catalog_data_http_response(
         output = crate::protocol_serde::shape_get_registry_catalog_data::de_get_registry_catalog_data(_response_body, output)
             .map_err(crate::operation::get_registry_catalog_data::GetRegistryCatalogDataError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::get_registry_catalog_data_output_correct_errors(output).build()
     })
 }
 
 pub fn ser_get_registry_catalog_data_input(
     _input: &crate::operation::get_registry_catalog_data::GetRegistryCatalogDataInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
-    Ok(::aws_smithy_http::body::SdkBody::from("{}"))
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+    Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }
 
 pub(crate) fn de_get_registry_catalog_data(

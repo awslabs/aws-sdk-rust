@@ -114,6 +114,7 @@ pub struct UpdateDeviceInputBuilder {
 }
 impl UpdateDeviceInputBuilder {
     /// <p>The ID of the global network.</p>
+    /// This field is required.
     pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_network_id = ::std::option::Option::Some(input.into());
         self
@@ -128,6 +129,7 @@ impl UpdateDeviceInputBuilder {
         &self.global_network_id
     }
     /// <p>The ID of the device.</p>
+    /// This field is required.
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_id = ::std::option::Option::Some(input.into());
         self
@@ -266,7 +268,9 @@ impl UpdateDeviceInputBuilder {
         &self.site_id
     }
     /// Consumes the builder and constructs a [`UpdateDeviceInput`](crate::operation::update_device::UpdateDeviceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_device::UpdateDeviceInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_device::UpdateDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_device::UpdateDeviceInput {
             global_network_id: self.global_network_id,
             device_id: self.device_id,

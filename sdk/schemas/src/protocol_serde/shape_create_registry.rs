@@ -25,11 +25,8 @@ pub fn de_create_registry_http_error(
                 output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_registry::CreateRegistryError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::bad_request_exception_correct_errors(output).build()
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ConflictException" => crate::operation::create_registry::CreateRegistryError::ConflictException({
@@ -40,11 +37,8 @@ pub fn de_create_registry_http_error(
                 output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_registry::CreateRegistryError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::conflict_exception_correct_errors(output).build()
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ForbiddenException" => crate::operation::create_registry::CreateRegistryError::ForbiddenException({
@@ -55,11 +49,8 @@ pub fn de_create_registry_http_error(
                 output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_registry::CreateRegistryError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::forbidden_exception_correct_errors(output).build()
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerErrorException" => crate::operation::create_registry::CreateRegistryError::InternalServerErrorException({
@@ -71,11 +62,8 @@ pub fn de_create_registry_http_error(
                     crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(_response_body, output)
                         .map_err(crate::operation::create_registry::CreateRegistryError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_error_exception_correct_errors(output).build()
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::create_registry::CreateRegistryError::ServiceUnavailableException({
@@ -87,11 +75,8 @@ pub fn de_create_registry_http_error(
                     crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
                         .map_err(crate::operation::create_registry::CreateRegistryError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::service_unavailable_exception_correct_errors(output).build()
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "UnauthorizedException" => crate::operation::create_registry::CreateRegistryError::UnauthorizedException({
@@ -102,11 +87,8 @@ pub fn de_create_registry_http_error(
                 output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_registry::CreateRegistryError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::unauthorized_exception_correct_errors(output).build()
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::create_registry::CreateRegistryError::generic(generic),
@@ -131,12 +113,12 @@ pub fn de_create_registry_http_response(
 
 pub fn ser_create_registry_input(
     input: &crate::operation::create_registry::CreateRegistryInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_registry_input::ser_create_registry_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_create_registry(

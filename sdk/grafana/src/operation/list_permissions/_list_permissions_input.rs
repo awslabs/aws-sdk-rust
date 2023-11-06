@@ -132,6 +132,7 @@ impl ListPermissionsInputBuilder {
         &self.group_id
     }
     /// <p>The ID of the workspace to list permissions for. This parameter is required.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -148,7 +149,7 @@ impl ListPermissionsInputBuilder {
     /// Consumes the builder and constructs a [`ListPermissionsInput`](crate::operation::list_permissions::ListPermissionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_permissions::ListPermissionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_permissions::ListPermissionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_permissions::ListPermissionsInput {
             max_results: self.max_results,
             next_token: self.next_token,

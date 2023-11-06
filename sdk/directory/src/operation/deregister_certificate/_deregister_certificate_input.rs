@@ -34,6 +34,7 @@ pub struct DeregisterCertificateInputBuilder {
 }
 impl DeregisterCertificateInputBuilder {
     /// <p>The identifier of the directory.</p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeregisterCertificateInputBuilder {
         &self.directory_id
     }
     /// <p>The identifier of the certificate.</p>
+    /// This field is required.
     pub fn certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DeregisterCertificateInputBuilder {
     /// Consumes the builder and constructs a [`DeregisterCertificateInput`](crate::operation::deregister_certificate::DeregisterCertificateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::deregister_certificate::DeregisterCertificateInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::deregister_certificate::DeregisterCertificateInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::deregister_certificate::DeregisterCertificateInput {
             directory_id: self.directory_id,

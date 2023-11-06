@@ -14,8 +14,10 @@ impl DisassociatePhoneNumbersFromVoiceConnectorGroupInput {
         self.voice_connector_group_id.as_deref()
     }
     /// <p>List of phone numbers, in E.164 format.</p>
-    pub fn e164_phone_numbers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.e164_phone_numbers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.e164_phone_numbers.is_none()`.
+    pub fn e164_phone_numbers(&self) -> &[::std::string::String] {
+        self.e164_phone_numbers.as_deref().unwrap_or_default()
     }
 }
 impl DisassociatePhoneNumbersFromVoiceConnectorGroupInput {
@@ -36,6 +38,7 @@ pub struct DisassociatePhoneNumbersFromVoiceConnectorGroupInputBuilder {
 }
 impl DisassociatePhoneNumbersFromVoiceConnectorGroupInputBuilder {
     /// <p>The Amazon Chime Voice Connector group ID.</p>
+    /// This field is required.
     pub fn voice_connector_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_group_id = ::std::option::Option::Some(input.into());
         self
@@ -74,7 +77,7 @@ impl DisassociatePhoneNumbersFromVoiceConnectorGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_phone_numbers_from_voice_connector_group::DisassociatePhoneNumbersFromVoiceConnectorGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_phone_numbers_from_voice_connector_group::DisassociatePhoneNumbersFromVoiceConnectorGroupInput {

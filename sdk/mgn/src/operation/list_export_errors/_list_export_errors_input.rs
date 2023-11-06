@@ -7,7 +7,7 @@ pub struct ListExportErrorsInput {
     /// <p>List export errors request export id.</p>
     pub export_id: ::std::option::Option<::std::string::String>,
     /// <p>List export errors request max results.</p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>List export errors request next token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
@@ -17,7 +17,7 @@ impl ListExportErrorsInput {
         self.export_id.as_deref()
     }
     /// <p>List export errors request max results.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>List export errors request next token.</p>
@@ -42,6 +42,7 @@ pub struct ListExportErrorsInputBuilder {
 }
 impl ListExportErrorsInputBuilder {
     /// <p>List export errors request export id.</p>
+    /// This field is required.
     pub fn export_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.export_id = ::std::option::Option::Some(input.into());
         self
@@ -86,10 +87,10 @@ impl ListExportErrorsInputBuilder {
     /// Consumes the builder and constructs a [`ListExportErrorsInput`](crate::operation::list_export_errors::ListExportErrorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_export_errors::ListExportErrorsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_export_errors::ListExportErrorsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_export_errors::ListExportErrorsInput {
             export_id: self.export_id,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
         })
     }

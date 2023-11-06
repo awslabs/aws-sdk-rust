@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Spigot {
     /// <p>The name of the transform node.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The data inputs identified by their node names.</p>
-    pub inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub inputs: ::std::vec::Vec<::std::string::String>,
     /// <p>A path in Amazon S3 where the transform will write a subset of records from the dataset to a JSON file in an Amazon S3 bucket.</p>
-    pub path: ::std::option::Option<::std::string::String>,
+    pub path: ::std::string::String,
     /// <p>Specifies a number of records to write starting from the beginning of the dataset.</p>
     pub topk: ::std::option::Option<i32>,
     /// <p>The probability (a decimal value with a maximum value of 1) of picking any given record. A value of 1 indicates that each row read from the dataset should be included in the sample output.</p>
@@ -17,16 +17,19 @@ pub struct Spigot {
 }
 impl Spigot {
     /// <p>The name of the transform node.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn inputs(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.inputs.as_deref()
+    pub fn inputs(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.inputs.deref()
     }
     /// <p>A path in Amazon S3 where the transform will write a subset of records from the dataset to a JSON file in an Amazon S3 bucket.</p>
-    pub fn path(&self) -> ::std::option::Option<&str> {
-        self.path.as_deref()
+    pub fn path(&self) -> &str {
+        use std::ops::Deref;
+        self.path.deref()
     }
     /// <p>Specifies a number of records to write starting from the beginning of the dataset.</p>
     pub fn topk(&self) -> ::std::option::Option<i32> {
@@ -56,6 +59,7 @@ pub struct SpigotBuilder {
 }
 impl SpigotBuilder {
     /// <p>The name of the transform node.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +94,7 @@ impl SpigotBuilder {
         &self.inputs
     }
     /// <p>A path in Amazon S3 where the transform will write a subset of records from the dataset to a JSON file in an Amazon S3 bucket.</p>
+    /// This field is required.
     pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path = ::std::option::Option::Some(input.into());
         self
@@ -132,13 +137,32 @@ impl SpigotBuilder {
         &self.prob
     }
     /// Consumes the builder and constructs a [`Spigot`](crate::types::Spigot).
-    pub fn build(self) -> crate::types::Spigot {
-        crate::types::Spigot {
-            name: self.name,
-            inputs: self.inputs,
-            path: self.path,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::SpigotBuilder::name)
+    /// - [`inputs`](crate::types::builders::SpigotBuilder::inputs)
+    /// - [`path`](crate::types::builders::SpigotBuilder::path)
+    pub fn build(self) -> ::std::result::Result<crate::types::Spigot, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Spigot {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building Spigot",
+                )
+            })?,
+            inputs: self.inputs.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "inputs",
+                    "inputs was not specified but it is required when building Spigot",
+                )
+            })?,
+            path: self.path.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "path",
+                    "path was not specified but it is required when building Spigot",
+                )
+            })?,
             topk: self.topk,
             prob: self.prob,
-        }
+        })
     }
 }

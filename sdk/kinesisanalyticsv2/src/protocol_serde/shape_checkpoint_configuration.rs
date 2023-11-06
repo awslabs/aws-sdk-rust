@@ -2,23 +2,23 @@
 pub fn ser_checkpoint_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CheckpointConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.configuration_type {
-        object.key("ConfigurationType").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("ConfigurationType").string(input.configuration_type.as_str());
     }
-    if let Some(var_2) = &input.checkpointing_enabled {
-        object.key("CheckpointingEnabled").boolean(*var_2);
+    if let Some(var_1) = &input.checkpointing_enabled {
+        object.key("CheckpointingEnabled").boolean(*var_1);
     }
-    if let Some(var_3) = &input.checkpoint_interval {
+    if let Some(var_2) = &input.checkpoint_interval {
         object.key("CheckpointInterval").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_4) = &input.min_pause_between_checkpoints {
+    if let Some(var_3) = &input.min_pause_between_checkpoints {
         object.key("MinPauseBetweenCheckpoints").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
     Ok(())

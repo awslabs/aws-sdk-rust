@@ -35,6 +35,7 @@ pub struct ExpressionStatusBuilder {
 }
 impl ExpressionStatusBuilder {
     /// <p>The expression that is evaluated for sorting while processing a search request.</p>
+    /// This field is required.
     pub fn options(mut self, input: crate::types::Expression) -> Self {
         self.options = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl ExpressionStatusBuilder {
         &self.options
     }
     /// <p>The status of domain configuration option.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self

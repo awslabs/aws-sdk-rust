@@ -2,7 +2,7 @@
 pub fn ser_update_audit_stream_configuration_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_audit_stream_configuration::UpdateAuditStreamConfigurationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.audit_stream_arn {
         object.key("AuditStreamArn").string(var_1.as_str());
     }

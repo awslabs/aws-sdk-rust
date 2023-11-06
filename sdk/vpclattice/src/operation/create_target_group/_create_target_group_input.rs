@@ -55,6 +55,7 @@ pub struct CreateTargetGroupInputBuilder {
 }
 impl CreateTargetGroupInputBuilder {
     /// <p>The name of the target group. The name must be unique within the account. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl CreateTargetGroupInputBuilder {
         &self.name
     }
     /// <p>The type of target group.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::TargetGroupType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -133,7 +135,7 @@ impl CreateTargetGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateTargetGroupInput`](crate::operation::create_target_group::CreateTargetGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_target_group::CreateTargetGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_target_group::CreateTargetGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_target_group::CreateTargetGroupInput {
             name: self.name,
             r#type: self.r#type,

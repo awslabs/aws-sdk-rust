@@ -37,6 +37,7 @@ pub struct TagResourceInputBuilder {
 impl TagResourceInputBuilder {
     /// <p>The Amazon Resource Name (ARN) to which you want to add the tags. For example:</p>
     /// <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -78,7 +79,7 @@ impl TagResourceInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`TagResourceInput`](crate::operation::tag_resource::TagResourceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::tag_resource::TagResourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::tag_resource::TagResourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::tag_resource::TagResourceInput {
             resource_arn: self.resource_arn,
             tags: self.tags,

@@ -53,12 +53,16 @@ impl GetApplicationOutput {
         self.application_source_config.as_ref()
     }
     /// <p>The events that the application subscribes.</p>
-    pub fn subscriptions(&self) -> ::std::option::Option<&[crate::types::Subscription]> {
-        self.subscriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subscriptions.is_none()`.
+    pub fn subscriptions(&self) -> &[crate::types::Subscription] {
+        self.subscriptions.as_deref().unwrap_or_default()
     }
     /// <p>The events that the application publishes.</p>
-    pub fn publications(&self) -> ::std::option::Option<&[crate::types::Publication]> {
-        self.publications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.publications.is_none()`.
+    pub fn publications(&self) -> &[crate::types::Publication] {
+        self.publications.as_deref().unwrap_or_default()
     }
     /// <p>The created time of the Application.</p>
     pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

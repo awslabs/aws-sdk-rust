@@ -27,6 +27,7 @@ pub struct DeleteSchemaMappingInputBuilder {
 }
 impl DeleteSchemaMappingInputBuilder {
     /// <p>The name of the schema to delete.</p>
+    /// This field is required.
     pub fn schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteSchemaMappingInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSchemaMappingInput`](crate::operation::delete_schema_mapping::DeleteSchemaMappingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_schema_mapping::DeleteSchemaMappingInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_schema_mapping::DeleteSchemaMappingInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_schema_mapping::DeleteSchemaMappingInput {
             schema_name: self.schema_name,

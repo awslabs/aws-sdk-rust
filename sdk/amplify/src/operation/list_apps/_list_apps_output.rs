@@ -5,15 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAppsOutput {
     /// <p> A list of Amplify apps. </p>
-    pub apps: ::std::option::Option<::std::vec::Vec<crate::types::App>>,
+    pub apps: ::std::vec::Vec<crate::types::App>,
     /// <p> A pagination token. Set to null to start listing apps from start. If non-null, the pagination token is returned in a result. Pass its value in here to list more projects. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAppsOutput {
     /// <p> A list of Amplify apps. </p>
-    pub fn apps(&self) -> ::std::option::Option<&[crate::types::App]> {
-        self.apps.as_deref()
+    pub fn apps(&self) -> &[crate::types::App] {
+        use std::ops::Deref;
+        self.apps.deref()
     }
     /// <p> A pagination token. Set to null to start listing apps from start. If non-null, the pagination token is returned in a result. Pass its value in here to list more projects. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -85,11 +86,18 @@ impl ListAppsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAppsOutput`](crate::operation::list_apps::ListAppsOutput).
-    pub fn build(self) -> crate::operation::list_apps::ListAppsOutput {
-        crate::operation::list_apps::ListAppsOutput {
-            apps: self.apps,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`apps`](crate::operation::list_apps::builders::ListAppsOutputBuilder::apps)
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_apps::ListAppsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_apps::ListAppsOutput {
+            apps: self.apps.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "apps",
+                    "apps was not specified but it is required when building ListAppsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

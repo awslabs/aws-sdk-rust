@@ -11,12 +11,16 @@ pub struct BatchGetLifecyclePolicyOutput {
 }
 impl BatchGetLifecyclePolicyOutput {
     /// <p>A list of lifecycle policies matched to the input policy name and policy type.</p>
-    pub fn lifecycle_policy_details(&self) -> ::std::option::Option<&[crate::types::LifecyclePolicyDetail]> {
-        self.lifecycle_policy_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lifecycle_policy_details.is_none()`.
+    pub fn lifecycle_policy_details(&self) -> &[crate::types::LifecyclePolicyDetail] {
+        self.lifecycle_policy_details.as_deref().unwrap_or_default()
     }
     /// <p>A list of lifecycle policy names and policy types for which retrieval failed.</p>
-    pub fn lifecycle_policy_error_details(&self) -> ::std::option::Option<&[crate::types::LifecyclePolicyErrorDetail]> {
-        self.lifecycle_policy_error_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lifecycle_policy_error_details.is_none()`.
+    pub fn lifecycle_policy_error_details(&self) -> &[crate::types::LifecyclePolicyErrorDetail] {
+        self.lifecycle_policy_error_details.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchGetLifecyclePolicyOutput {

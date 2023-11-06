@@ -48,6 +48,7 @@ pub struct PutBucketAnalyticsConfigurationInputBuilder {
 }
 impl PutBucketAnalyticsConfigurationInputBuilder {
     /// <p>The name of the bucket to which an analytics configuration is stored.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl PutBucketAnalyticsConfigurationInputBuilder {
         &self.bucket
     }
     /// <p>The ID that identifies the analytics configuration.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl PutBucketAnalyticsConfigurationInputBuilder {
         &self.id
     }
     /// <p>The configuration and any analyses for the analytics filter.</p>
+    /// This field is required.
     pub fn analytics_configuration(mut self, input: crate::types::AnalyticsConfiguration) -> Self {
         self.analytics_configuration = ::std::option::Option::Some(input);
         self
@@ -108,7 +111,7 @@ impl PutBucketAnalyticsConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_bucket_analytics_configuration::PutBucketAnalyticsConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::put_bucket_analytics_configuration::PutBucketAnalyticsConfigurationInput {

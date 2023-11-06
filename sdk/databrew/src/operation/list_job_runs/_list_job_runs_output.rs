@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListJobRunsOutput {
     /// <p>A list of job runs that have occurred for the specified job.</p>
-    pub job_runs: ::std::option::Option<::std::vec::Vec<crate::types::JobRun>>,
+    pub job_runs: ::std::vec::Vec<crate::types::JobRun>,
     /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListJobRunsOutput {
     /// <p>A list of job runs that have occurred for the specified job.</p>
-    pub fn job_runs(&self) -> ::std::option::Option<&[crate::types::JobRun]> {
-        self.job_runs.as_deref()
+    pub fn job_runs(&self) -> &[crate::types::JobRun] {
+        use std::ops::Deref;
+        self.job_runs.deref()
     }
     /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ListJobRunsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListJobRunsOutput`](crate::operation::list_job_runs::ListJobRunsOutput).
-    pub fn build(self) -> crate::operation::list_job_runs::ListJobRunsOutput {
-        crate::operation::list_job_runs::ListJobRunsOutput {
-            job_runs: self.job_runs,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`job_runs`](crate::operation::list_job_runs::builders::ListJobRunsOutputBuilder::job_runs)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_job_runs::ListJobRunsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_job_runs::ListJobRunsOutput {
+            job_runs: self.job_runs.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "job_runs",
+                    "job_runs was not specified but it is required when building ListJobRunsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

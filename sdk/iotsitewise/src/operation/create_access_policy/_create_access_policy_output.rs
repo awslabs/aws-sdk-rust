@@ -4,21 +4,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAccessPolicyOutput {
     /// <p>The ID of the access policy.</p>
-    pub access_policy_id: ::std::option::Option<::std::string::String>,
+    pub access_policy_id: ::std::string::String,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code> </p>
-    pub access_policy_arn: ::std::option::Option<::std::string::String>,
+    pub access_policy_arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateAccessPolicyOutput {
     /// <p>The ID of the access policy.</p>
-    pub fn access_policy_id(&self) -> ::std::option::Option<&str> {
-        self.access_policy_id.as_deref()
+    pub fn access_policy_id(&self) -> &str {
+        use std::ops::Deref;
+        self.access_policy_id.deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code> </p>
-    pub fn access_policy_arn(&self) -> ::std::option::Option<&str> {
-        self.access_policy_arn.as_deref()
+    pub fn access_policy_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.access_policy_arn.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateAccessPolicyOutput {
@@ -43,6 +45,7 @@ pub struct CreateAccessPolicyOutputBuilder {
 }
 impl CreateAccessPolicyOutputBuilder {
     /// <p>The ID of the access policy.</p>
+    /// This field is required.
     pub fn access_policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_policy_id = ::std::option::Option::Some(input.into());
         self
@@ -58,6 +61,7 @@ impl CreateAccessPolicyOutputBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code> </p>
+    /// This field is required.
     pub fn access_policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_policy_arn = ::std::option::Option::Some(input.into());
         self
@@ -83,11 +87,27 @@ impl CreateAccessPolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateAccessPolicyOutput`](crate::operation::create_access_policy::CreateAccessPolicyOutput).
-    pub fn build(self) -> crate::operation::create_access_policy::CreateAccessPolicyOutput {
-        crate::operation::create_access_policy::CreateAccessPolicyOutput {
-            access_policy_id: self.access_policy_id,
-            access_policy_arn: self.access_policy_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`access_policy_id`](crate::operation::create_access_policy::builders::CreateAccessPolicyOutputBuilder::access_policy_id)
+    /// - [`access_policy_arn`](crate::operation::create_access_policy::builders::CreateAccessPolicyOutputBuilder::access_policy_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_access_policy::CreateAccessPolicyOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_access_policy::CreateAccessPolicyOutput {
+            access_policy_id: self.access_policy_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "access_policy_id",
+                    "access_policy_id was not specified but it is required when building CreateAccessPolicyOutput",
+                )
+            })?,
+            access_policy_arn: self.access_policy_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "access_policy_arn",
+                    "access_policy_arn was not specified but it is required when building CreateAccessPolicyOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

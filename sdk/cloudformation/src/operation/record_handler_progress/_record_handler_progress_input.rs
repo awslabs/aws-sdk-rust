@@ -69,6 +69,7 @@ pub struct RecordHandlerProgressInputBuilder {
 }
 impl RecordHandlerProgressInputBuilder {
     /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
+    /// This field is required.
     pub fn bearer_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bearer_token = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +84,7 @@ impl RecordHandlerProgressInputBuilder {
         &self.bearer_token
     }
     /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
+    /// This field is required.
     pub fn operation_status(mut self, input: crate::types::OperationStatus) -> Self {
         self.operation_status = ::std::option::Option::Some(input);
         self
@@ -169,7 +171,7 @@ impl RecordHandlerProgressInputBuilder {
     /// Consumes the builder and constructs a [`RecordHandlerProgressInput`](crate::operation::record_handler_progress::RecordHandlerProgressInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::record_handler_progress::RecordHandlerProgressInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::record_handler_progress::RecordHandlerProgressInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::record_handler_progress::RecordHandlerProgressInput {
             bearer_token: self.bearer_token,

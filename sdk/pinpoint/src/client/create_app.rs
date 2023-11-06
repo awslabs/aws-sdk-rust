@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateApp`](crate::operation::create_app::builders::CreateAppFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`create_application_request(CreateApplicationRequest)`](crate::operation::create_app::builders::CreateAppFluentBuilder::create_application_request) / [`set_create_application_request(Option<CreateApplicationRequest>)`](crate::operation::create_app::builders::CreateAppFluentBuilder::set_create_application_request): <p>Specifies the display name of an application and the tags to associate with the application.</p>
+    ///   - [`create_application_request(CreateApplicationRequest)`](crate::operation::create_app::builders::CreateAppFluentBuilder::create_application_request) / [`set_create_application_request(Option<CreateApplicationRequest>)`](crate::operation::create_app::builders::CreateAppFluentBuilder::set_create_application_request):<br>required: **true**<br><p>Specifies the display name of an application and the tags to associate with the application.</p><br>
     /// - On success, responds with [`CreateAppOutput`](crate::operation::create_app::CreateAppOutput) with field(s):
     ///   - [`application_response(Option<ApplicationResponse>)`](crate::operation::create_app::CreateAppOutput::application_response): <p>Provides information about an application.</p>
     /// - On failure, responds with [`SdkError<CreateAppError>`](crate::operation::create_app::CreateAppError)

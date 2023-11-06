@@ -8,8 +8,10 @@ pub struct DescribeConfigurationsInput {
 }
 impl DescribeConfigurationsInput {
     /// <p>One or more configuration IDs.</p>
-    pub fn configuration_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.configuration_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configuration_ids.is_none()`.
+    pub fn configuration_ids(&self) -> &[::std::string::String] {
+        self.configuration_ids.as_deref().unwrap_or_default()
     }
 }
 impl DescribeConfigurationsInput {
@@ -49,7 +51,7 @@ impl DescribeConfigurationsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeConfigurationsInput`](crate::operation::describe_configurations::DescribeConfigurationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_configurations::DescribeConfigurationsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_configurations::DescribeConfigurationsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_configurations::DescribeConfigurationsInput {
             configuration_ids: self.configuration_ids,

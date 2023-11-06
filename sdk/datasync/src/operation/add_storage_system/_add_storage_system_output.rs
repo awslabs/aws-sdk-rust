@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddStorageSystemOutput {
     /// <p>The ARN of the on-premises storage system that you can use with DataSync Discovery.</p>
-    pub storage_system_arn: ::std::option::Option<::std::string::String>,
+    pub storage_system_arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl AddStorageSystemOutput {
     /// <p>The ARN of the on-premises storage system that you can use with DataSync Discovery.</p>
-    pub fn storage_system_arn(&self) -> ::std::option::Option<&str> {
-        self.storage_system_arn.as_deref()
+    pub fn storage_system_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.storage_system_arn.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for AddStorageSystemOutput {
@@ -34,6 +35,7 @@ pub struct AddStorageSystemOutputBuilder {
 }
 impl AddStorageSystemOutputBuilder {
     /// <p>The ARN of the on-premises storage system that you can use with DataSync Discovery.</p>
+    /// This field is required.
     pub fn storage_system_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_system_arn = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,19 @@ impl AddStorageSystemOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AddStorageSystemOutput`](crate::operation::add_storage_system::AddStorageSystemOutput).
-    pub fn build(self) -> crate::operation::add_storage_system::AddStorageSystemOutput {
-        crate::operation::add_storage_system::AddStorageSystemOutput {
-            storage_system_arn: self.storage_system_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`storage_system_arn`](crate::operation::add_storage_system::builders::AddStorageSystemOutputBuilder::storage_system_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::add_storage_system::AddStorageSystemOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::add_storage_system::AddStorageSystemOutput {
+            storage_system_arn: self.storage_system_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "storage_system_arn",
+                    "storage_system_arn was not specified but it is required when building AddStorageSystemOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -62,6 +62,7 @@ impl ProvisionPublicIpv4PoolCidrInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the IPAM pool you would like to use to allocate this CIDR.</p>
+    /// This field is required.
     pub fn ipam_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl ProvisionPublicIpv4PoolCidrInputBuilder {
         &self.ipam_pool_id
     }
     /// <p>The ID of the public IPv4 pool you would like to use for this CIDR.</p>
+    /// This field is required.
     pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pool_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +92,7 @@ impl ProvisionPublicIpv4PoolCidrInputBuilder {
         &self.pool_id
     }
     /// <p>The netmask length of the CIDR you would like to allocate to the public IPv4 pool.</p>
+    /// This field is required.
     pub fn netmask_length(mut self, input: i32) -> Self {
         self.netmask_length = ::std::option::Option::Some(input);
         self
@@ -108,7 +111,7 @@ impl ProvisionPublicIpv4PoolCidrInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::provision_public_ipv4_pool_cidr::ProvisionPublicIpv4PoolCidrInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::provision_public_ipv4_pool_cidr::ProvisionPublicIpv4PoolCidrInput {
             dry_run: self.dry_run,

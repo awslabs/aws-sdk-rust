@@ -35,8 +35,10 @@ impl ListRecommendedIntentsOutput {
         self.bot_recommendation_id.as_deref()
     }
     /// <p>Summary information for the intents that meet the filter criteria specified in the request. The length of the list is specified in the maxResults parameter of the request. If there are more intents available, the nextToken field contains a token to get the next page of results.</p>
-    pub fn summary_list(&self) -> ::std::option::Option<&[crate::types::RecommendedIntentSummary]> {
-        self.summary_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.summary_list.is_none()`.
+    pub fn summary_list(&self) -> &[crate::types::RecommendedIntentSummary] {
+        self.summary_list.as_deref().unwrap_or_default()
     }
     /// <p>A token that indicates whether there are more results to return in a response to the ListRecommendedIntents operation. If the nextToken field is present, you send the contents as the nextToken parameter of a ListRecommendedIntents operation request to get the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

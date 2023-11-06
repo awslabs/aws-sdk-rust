@@ -2,24 +2,24 @@
 pub fn ser_integer_parameter_range(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IntegerParameterRange,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("Name").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.max_value {
+    {
         object.key("MaxValue").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((input.max_value).into()),
         );
     }
-    if let Some(var_3) = &input.min_value {
+    {
         object.key("MinValue").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((input.min_value).into()),
         );
     }
-    if let Some(var_4) = &input.scaling_type {
-        object.key("ScalingType").string(var_4.as_str());
+    if let Some(var_1) = &input.scaling_type {
+        object.key("ScalingType").string(var_1.as_str());
     }
     Ok(())
 }
@@ -77,7 +77,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::integer_parameter_range_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

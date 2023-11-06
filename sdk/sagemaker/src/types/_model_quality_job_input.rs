@@ -70,6 +70,7 @@ impl ModelQualityJobInputBuilder {
         &self.batch_transform_input
     }
     /// <p>The ground truth label provided for the model.</p>
+    /// This field is required.
     pub fn ground_truth_s3_input(mut self, input: crate::types::MonitoringGroundTruthS3Input) -> Self {
         self.ground_truth_s3_input = ::std::option::Option::Some(input);
         self

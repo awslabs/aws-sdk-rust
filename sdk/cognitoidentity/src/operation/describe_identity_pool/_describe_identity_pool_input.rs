@@ -28,6 +28,7 @@ pub struct DescribeIdentityPoolInputBuilder {
 }
 impl DescribeIdentityPoolInputBuilder {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
+    /// This field is required.
     pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl DescribeIdentityPoolInputBuilder {
     /// Consumes the builder and constructs a [`DescribeIdentityPoolInput`](crate::operation::describe_identity_pool::DescribeIdentityPoolInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_identity_pool::DescribeIdentityPoolInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_identity_pool::DescribeIdentityPoolInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_identity_pool::DescribeIdentityPoolInput {
             identity_pool_id: self.identity_pool_id,

@@ -35,6 +35,7 @@ pub struct CodeBuilder {
 }
 impl CodeBuilder {
     /// <p>The location where the source code files provided with the project request are stored. AWS CodeStar retrieves the files during project creation.</p>
+    /// This field is required.
     pub fn source(mut self, input: crate::types::CodeSource) -> Self {
         self.source = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl CodeBuilder {
         &self.source
     }
     /// <p>The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit or GitHub. After AWS CodeStar provisions the new repository, the source code files provided with the project request are placed in the repository.</p>
+    /// This field is required.
     pub fn destination(mut self, input: crate::types::CodeDestination) -> Self {
         self.destination = ::std::option::Option::Some(input);
         self

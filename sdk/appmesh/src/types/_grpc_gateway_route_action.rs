@@ -35,6 +35,7 @@ pub struct GrpcGatewayRouteActionBuilder {
 }
 impl GrpcGatewayRouteActionBuilder {
     /// <p>An object that represents the target that traffic is routed to when a request matches the gateway route.</p>
+    /// This field is required.
     pub fn target(mut self, input: crate::types::GatewayRouteTarget) -> Self {
         self.target = ::std::option::Option::Some(input);
         self

@@ -32,16 +32,20 @@ impl CreateJobInput {
         self.input.as_ref()
     }
     /// <p>A section of the request body that provides information about the files that are being transcoded.</p>
-    pub fn inputs(&self) -> ::std::option::Option<&[crate::types::JobInput]> {
-        self.inputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inputs.is_none()`.
+    pub fn inputs(&self) -> &[crate::types::JobInput] {
+        self.inputs.as_deref().unwrap_or_default()
     }
     /// <p> A section of the request body that provides information about the transcoded (target) file. We strongly recommend that you use the <code>Outputs</code> syntax instead of the <code>Output</code> syntax. </p>
     pub fn output(&self) -> ::std::option::Option<&crate::types::CreateJobOutput> {
         self.output.as_ref()
     }
     /// <p> A section of the request body that provides information about the transcoded (target) files. We recommend that you use the <code>Outputs</code> syntax instead of the <code>Output</code> syntax. </p>
-    pub fn outputs(&self) -> ::std::option::Option<&[crate::types::CreateJobOutput]> {
-        self.outputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outputs.is_none()`.
+    pub fn outputs(&self) -> &[crate::types::CreateJobOutput] {
+        self.outputs.as_deref().unwrap_or_default()
     }
     /// <p>The value, if any, that you want Elastic Transcoder to prepend to the names of all files that this job creates, including output files, thumbnails, and playlists.</p>
     pub fn output_key_prefix(&self) -> ::std::option::Option<&str> {
@@ -49,8 +53,10 @@ impl CreateJobInput {
     }
     /// <p>If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is fmp4 (Fragmented MP4) or ts (MPEG-TS), Playlists contains information about the master playlists that you want Elastic Transcoder to create.</p>
     /// <p>The maximum number of master playlists in a job is 30.</p>
-    pub fn playlists(&self) -> ::std::option::Option<&[crate::types::CreateJobPlaylist]> {
-        self.playlists.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.playlists.is_none()`.
+    pub fn playlists(&self) -> &[crate::types::CreateJobPlaylist] {
+        self.playlists.as_deref().unwrap_or_default()
     }
     /// <p>User-defined metadata that you want to associate with an Elastic Transcoder job. You specify metadata in <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code> pairs per job. Elastic Transcoder does not guarantee that <code>key/value</code> pairs are returned in the same order in which you specify them.</p>
     pub fn user_metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -79,6 +85,7 @@ pub struct CreateJobInputBuilder {
 }
 impl CreateJobInputBuilder {
     /// <p>The <code>Id</code> of the pipeline that you want Elastic Transcoder to use for transcoding. The pipeline determines several settings, including the Amazon S3 bucket from which Elastic Transcoder gets the files to transcode and the bucket into which Elastic Transcoder puts the transcoded files.</p>
+    /// This field is required.
     pub fn pipeline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_id = ::std::option::Option::Some(input.into());
         self
@@ -221,7 +228,7 @@ impl CreateJobInputBuilder {
         &self.user_metadata
     }
     /// Consumes the builder and constructs a [`CreateJobInput`](crate::operation::create_job::CreateJobInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_job::CreateJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_job::CreateJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_job::CreateJobInput {
             pipeline_id: self.pipeline_id,
             input: self.input,

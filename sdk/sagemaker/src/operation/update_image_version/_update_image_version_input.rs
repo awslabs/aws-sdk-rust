@@ -57,12 +57,16 @@ impl UpdateImageVersionInput {
         self.version
     }
     /// <p>A list of aliases to add.</p>
-    pub fn aliases_to_add(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.aliases_to_add.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aliases_to_add.is_none()`.
+    pub fn aliases_to_add(&self) -> &[::std::string::String] {
+        self.aliases_to_add.as_deref().unwrap_or_default()
     }
     /// <p>A list of aliases to delete.</p>
-    pub fn aliases_to_delete(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.aliases_to_delete.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aliases_to_delete.is_none()`.
+    pub fn aliases_to_delete(&self) -> &[::std::string::String] {
+        self.aliases_to_delete.as_deref().unwrap_or_default()
     }
     /// <p>The availability of the image version specified by the maintainer.</p>
     /// <ul>
@@ -134,6 +138,7 @@ pub struct UpdateImageVersionInputBuilder {
 }
 impl UpdateImageVersionInputBuilder {
     /// <p>The name of the image.</p>
+    /// This field is required.
     pub fn image_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_name = ::std::option::Option::Some(input.into());
         self
@@ -361,7 +366,8 @@ impl UpdateImageVersionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateImageVersionInput`](crate::operation::update_image_version::UpdateImageVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_image_version::UpdateImageVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_image_version::UpdateImageVersionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_image_version::UpdateImageVersionInput {
             image_name: self.image_name,
             alias: self.alias,

@@ -50,6 +50,7 @@ pub struct GetEmailTemplateInputBuilder {
 }
 impl GetEmailTemplateInputBuilder {
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
@@ -104,7 +105,7 @@ impl GetEmailTemplateInputBuilder {
     /// Consumes the builder and constructs a [`GetEmailTemplateInput`](crate::operation::get_email_template::GetEmailTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_email_template::GetEmailTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_email_template::GetEmailTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_email_template::GetEmailTemplateInput {
             template_name: self.template_name,
             version: self.version,

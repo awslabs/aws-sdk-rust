@@ -52,7 +52,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::action_type_identifier_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -63,18 +65,18 @@ where
 pub fn ser_action_type_identifier(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ActionTypeIdentifier,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.category {
-        object.key("category").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("category").string(input.category.as_str());
     }
-    if let Some(var_2) = &input.owner {
-        object.key("owner").string(var_2.as_str());
+    {
+        object.key("owner").string(input.owner.as_str());
     }
-    if let Some(var_3) = &input.provider {
-        object.key("provider").string(var_3.as_str());
+    {
+        object.key("provider").string(input.provider.as_str());
     }
-    if let Some(var_4) = &input.version {
-        object.key("version").string(var_4.as_str());
+    {
+        object.key("version").string(input.version.as_str());
     }
     Ok(())
 }

@@ -34,6 +34,7 @@ pub struct GenerateMobileSdkReleaseUrlInputBuilder {
 }
 impl GenerateMobileSdkReleaseUrlInputBuilder {
     /// <p>The device platform.</p>
+    /// This field is required.
     pub fn platform(mut self, input: crate::types::Platform) -> Self {
         self.platform = ::std::option::Option::Some(input);
         self
@@ -48,6 +49,7 @@ impl GenerateMobileSdkReleaseUrlInputBuilder {
         &self.platform
     }
     /// <p>The release version. For the latest available version, specify <code>LATEST</code>.</p>
+    /// This field is required.
     pub fn release_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.release_version = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl GenerateMobileSdkReleaseUrlInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::generate_mobile_sdk_release_url::GenerateMobileSdkReleaseUrlInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::generate_mobile_sdk_release_url::GenerateMobileSdkReleaseUrlInput {
             platform: self.platform,

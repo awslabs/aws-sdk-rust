@@ -27,6 +27,7 @@ pub struct DescribeBrokerInputBuilder {
 }
 impl DescribeBrokerInputBuilder {
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
+    /// This field is required.
     pub fn broker_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.broker_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeBrokerInputBuilder {
     /// Consumes the builder and constructs a [`DescribeBrokerInput`](crate::operation::describe_broker::DescribeBrokerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_broker::DescribeBrokerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_broker::DescribeBrokerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_broker::DescribeBrokerInput { broker_id: self.broker_id })
     }
 }

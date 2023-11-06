@@ -51,8 +51,10 @@ impl CreateAuthorizerInput {
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether IoT validates the token signature in an authorization request.</p>
     pub fn signing_disabled(&self) -> ::std::option::Option<bool> {
@@ -86,6 +88,7 @@ pub struct CreateAuthorizerInputBuilder {
 }
 impl CreateAuthorizerInputBuilder {
     /// <p>The authorizer name.</p>
+    /// This field is required.
     pub fn authorizer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorizer_name = ::std::option::Option::Some(input.into());
         self
@@ -100,6 +103,7 @@ impl CreateAuthorizerInputBuilder {
         &self.authorizer_name
     }
     /// <p>The ARN of the authorizer's Lambda function.</p>
+    /// This field is required.
     pub fn authorizer_function_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorizer_function_arn = ::std::option::Option::Some(input.into());
         self
@@ -234,7 +238,7 @@ impl CreateAuthorizerInputBuilder {
     /// Consumes the builder and constructs a [`CreateAuthorizerInput`](crate::operation::create_authorizer::CreateAuthorizerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_authorizer::CreateAuthorizerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_authorizer::CreateAuthorizerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_authorizer::CreateAuthorizerInput {
             authorizer_name: self.authorizer_name,
             authorizer_function_arn: self.authorizer_function_arn,

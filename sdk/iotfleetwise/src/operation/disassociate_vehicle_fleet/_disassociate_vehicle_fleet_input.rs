@@ -34,6 +34,7 @@ pub struct DisassociateVehicleFleetInputBuilder {
 }
 impl DisassociateVehicleFleetInputBuilder {
     /// <p> The unique ID of the vehicle to disassociate from the fleet.</p>
+    /// This field is required.
     pub fn vehicle_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vehicle_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DisassociateVehicleFleetInputBuilder {
         &self.vehicle_name
     }
     /// <p> The unique ID of a fleet. </p>
+    /// This field is required.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl DisassociateVehicleFleetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetInput {
             vehicle_name: self.vehicle_name,

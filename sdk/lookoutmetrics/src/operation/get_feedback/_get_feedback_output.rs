@@ -11,8 +11,10 @@ pub struct GetFeedbackOutput {
 }
 impl GetFeedbackOutput {
     /// <p>Feedback for an anomalous metric.</p>
-    pub fn anomaly_group_time_series_feedback(&self) -> ::std::option::Option<&[crate::types::TimeSeriesFeedback]> {
-        self.anomaly_group_time_series_feedback.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.anomaly_group_time_series_feedback.is_none()`.
+    pub fn anomaly_group_time_series_feedback(&self) -> &[crate::types::TimeSeriesFeedback] {
+        self.anomaly_group_time_series_feedback.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token that's included if more results are available.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

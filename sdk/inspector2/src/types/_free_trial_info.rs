@@ -5,30 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FreeTrialInfo {
     /// <p>The type of scan covered by the Amazon Inspector free trail.</p>
-    pub r#type: ::std::option::Option<crate::types::FreeTrialType>,
+    pub r#type: crate::types::FreeTrialType,
     /// <p>The date and time that the Amazon Inspector free trail started for a given account.</p>
-    pub start: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub start: ::aws_smithy_types::DateTime,
     /// <p>The date and time that the Amazon Inspector free trail ends for a given account.</p>
-    pub end: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub end: ::aws_smithy_types::DateTime,
     /// <p>The order to sort results by.</p>
-    pub status: ::std::option::Option<crate::types::FreeTrialStatus>,
+    pub status: crate::types::FreeTrialStatus,
 }
 impl FreeTrialInfo {
     /// <p>The type of scan covered by the Amazon Inspector free trail.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::FreeTrialType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::FreeTrialType {
+        &self.r#type
     }
     /// <p>The date and time that the Amazon Inspector free trail started for a given account.</p>
-    pub fn start(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.start.as_ref()
+    pub fn start(&self) -> &::aws_smithy_types::DateTime {
+        &self.start
     }
     /// <p>The date and time that the Amazon Inspector free trail ends for a given account.</p>
-    pub fn end(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.end.as_ref()
+    pub fn end(&self) -> &::aws_smithy_types::DateTime {
+        &self.end
     }
     /// <p>The order to sort results by.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::FreeTrialStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::FreeTrialStatus {
+        &self.status
     }
 }
 impl FreeTrialInfo {
@@ -49,6 +49,7 @@ pub struct FreeTrialInfoBuilder {
 }
 impl FreeTrialInfoBuilder {
     /// <p>The type of scan covered by the Amazon Inspector free trail.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::FreeTrialType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -63,6 +64,7 @@ impl FreeTrialInfoBuilder {
         &self.r#type
     }
     /// <p>The date and time that the Amazon Inspector free trail started for a given account.</p>
+    /// This field is required.
     pub fn start(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start = ::std::option::Option::Some(input);
         self
@@ -77,6 +79,7 @@ impl FreeTrialInfoBuilder {
         &self.start
     }
     /// <p>The date and time that the Amazon Inspector free trail ends for a given account.</p>
+    /// This field is required.
     pub fn end(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end = ::std::option::Option::Some(input);
         self
@@ -91,6 +94,7 @@ impl FreeTrialInfoBuilder {
         &self.end
     }
     /// <p>The order to sort results by.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::FreeTrialStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -105,12 +109,37 @@ impl FreeTrialInfoBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`FreeTrialInfo`](crate::types::FreeTrialInfo).
-    pub fn build(self) -> crate::types::FreeTrialInfo {
-        crate::types::FreeTrialInfo {
-            r#type: self.r#type,
-            start: self.start,
-            end: self.end,
-            status: self.status,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::FreeTrialInfoBuilder::r#type)
+    /// - [`start`](crate::types::builders::FreeTrialInfoBuilder::start)
+    /// - [`end`](crate::types::builders::FreeTrialInfoBuilder::end)
+    /// - [`status`](crate::types::builders::FreeTrialInfoBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::FreeTrialInfo, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::FreeTrialInfo {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building FreeTrialInfo",
+                )
+            })?,
+            start: self.start.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "start",
+                    "start was not specified but it is required when building FreeTrialInfo",
+                )
+            })?,
+            end: self.end.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "end",
+                    "end was not specified but it is required when building FreeTrialInfo",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building FreeTrialInfo",
+                )
+            })?,
+        })
     }
 }

@@ -157,6 +157,7 @@ pub struct ListFindingsInputBuilder {
 }
 impl ListFindingsInputBuilder {
     /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to list.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
@@ -380,7 +381,9 @@ impl ListFindingsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListFindingsInput`](crate::operation::list_findings::ListFindingsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_findings::ListFindingsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_findings::ListFindingsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_findings::ListFindingsInput {
             detector_id: self.detector_id,
             finding_criteria: self.finding_criteria,

@@ -11,8 +11,10 @@ pub struct DescribeNetworkInsightsAccessScopeAnalysesOutput {
 }
 impl DescribeNetworkInsightsAccessScopeAnalysesOutput {
     /// <p>The Network Access Scope analyses.</p>
-    pub fn network_insights_access_scope_analyses(&self) -> ::std::option::Option<&[crate::types::NetworkInsightsAccessScopeAnalysis]> {
-        self.network_insights_access_scope_analyses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_insights_access_scope_analyses.is_none()`.
+    pub fn network_insights_access_scope_analyses(&self) -> &[crate::types::NetworkInsightsAccessScopeAnalysis] {
+        self.network_insights_access_scope_analyses.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

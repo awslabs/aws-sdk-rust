@@ -9,17 +9,18 @@
 //! Interceptor for handling Smithy `@httpChecksum` request checksumming with AWS SigV4
 
 use aws_http::content_encoding::{AwsChunkedBody, AwsChunkedBodyOptions};
-use aws_runtime::auth::sigv4::SigV4OperationSigningConfig;
+use aws_runtime::auth::SigV4OperationSigningConfig;
 use aws_sigv4::http_request::SignableBody;
 use aws_smithy_checksums::ChecksumAlgorithm;
 use aws_smithy_checksums::{body::calculate, http::HttpChecksum};
-use aws_smithy_http::body::{BoxBody, SdkBody};
-use aws_smithy_http::operation::error::BuildError;
 use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::interceptors::context::{BeforeSerializationInterceptorContextRef, BeforeTransmitInterceptorContextMut, Input};
-use aws_smithy_runtime_api::client::interceptors::Interceptor;
+use aws_smithy_runtime_api::client::interceptors::Intercept;
+use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
+use aws_smithy_types::body::SdkBody;
 use aws_smithy_types::config_bag::{ConfigBag, Layer, Storable, StoreReplace};
+use aws_smithy_types::error::operation::BuildError;
 use http::HeaderValue;
 use http_body::Body;
 use std::{fmt, mem};
@@ -71,7 +72,7 @@ impl<AP> RequestChecksumInterceptor<AP> {
     }
 }
 
-impl<AP> Interceptor for RequestChecksumInterceptor<AP>
+impl<AP> Intercept for RequestChecksumInterceptor<AP>
 where
     AP: Fn(&Input) -> Result<Option<ChecksumAlgorithm>, BoxError> + Send + Sync,
 {
@@ -114,11 +115,7 @@ where
     }
 }
 
-fn add_checksum_for_request_body(
-    request: &mut http::request::Request<SdkBody>,
-    checksum_algorithm: ChecksumAlgorithm,
-    cfg: &mut ConfigBag,
-) -> Result<(), BoxError> {
+fn add_checksum_for_request_body(request: &mut HttpRequest, checksum_algorithm: ChecksumAlgorithm, cfg: &mut ConfigBag) -> Result<(), BoxError> {
     match request.body().bytes() {
         // Body is in-memory: read it and insert the checksum as a header.
         Some(data) => {
@@ -142,7 +139,7 @@ fn add_checksum_for_request_body(
 }
 
 fn wrap_streaming_request_body_in_checksum_calculating_body(
-    request: &mut http::request::Request<SdkBody>,
+    request: &mut HttpRequest,
     checksum_algorithm: ChecksumAlgorithm,
 ) -> Result<(), BuildError> {
     let original_body_size = request
@@ -162,7 +159,7 @@ fn wrap_streaming_request_body_in_checksum_calculating_body(
 
             let body = AwsChunkedBody::new(body, aws_chunked_body_options);
 
-            SdkBody::from_dyn(BoxBody::new(body))
+            SdkBody::from_body_0_4(body)
         })
     };
 
@@ -172,8 +169,7 @@ fn wrap_streaming_request_body_in_checksum_calculating_body(
 
     headers.insert(
         http::header::HeaderName::from_static("x-amz-trailer"),
-        // Convert into a `HeaderName` and then into a `HeaderValue`
-        http::header::HeaderName::from(checksum_algorithm).into(),
+        checksum_algorithm.into_impl().header_name(),
     );
 
     headers.insert(http::header::CONTENT_LENGTH, HeaderValue::from(encoded_content_length));
@@ -197,9 +193,10 @@ fn wrap_streaming_request_body_in_checksum_calculating_body(
 mod tests {
     use crate::http_request_checksum::wrap_streaming_request_body_in_checksum_calculating_body;
     use aws_smithy_checksums::ChecksumAlgorithm;
-    use aws_smithy_http::body::SdkBody;
-    use aws_smithy_http::byte_stream::ByteStream;
+    use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
     use aws_smithy_types::base64;
+    use aws_smithy_types::body::SdkBody;
+    use aws_smithy_types::byte_stream::ByteStream;
     use bytes::BytesMut;
     use http_body::Body;
     use tempfile::NamedTempFile;
@@ -208,8 +205,10 @@ mod tests {
     async fn test_checksum_body_is_retryable() {
         let input_text = "Hello world";
         let chunk_len_hex = format!("{:X}", input_text.len());
-        let mut request = http::Request::builder()
+        let mut request: HttpRequest = http::Request::builder()
             .body(SdkBody::retryable(move || SdkBody::from(input_text)))
+            .unwrap()
+            .try_into()
             .unwrap();
 
         // ensure original SdkBody is retryable
@@ -246,9 +245,7 @@ mod tests {
         }
         let crc32c_checksum = crc32c_checksum.finalize();
 
-        let mut request = http::Request::builder()
-            .body(ByteStream::read_from().path(&file).buffer_size(1024).build().await.unwrap().into_inner())
-            .unwrap();
+        let mut request = HttpRequest::new(ByteStream::read_from().path(&file).buffer_size(1024).build().await.unwrap().into_inner());
 
         // ensure original SdkBody is retryable
         assert!(request.body().try_clone().is_some());

@@ -35,6 +35,7 @@ pub struct DescribeWorkspaceOutputBuilder {
 }
 impl DescribeWorkspaceOutputBuilder {
     /// The properties of the selected workspace.
+    /// This field is required.
     pub fn workspace(mut self, input: crate::types::WorkspaceDescription) -> Self {
         self.workspace = ::std::option::Option::Some(input);
         self

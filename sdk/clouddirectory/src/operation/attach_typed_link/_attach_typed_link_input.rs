@@ -32,8 +32,10 @@ impl AttachTypedLinkInput {
         self.typed_link_facet.as_ref()
     }
     /// <p>A set of attributes that are associated with the typed link.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&[crate::types::AttributeNameAndValue]> {
-        self.attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
+    pub fn attributes(&self) -> &[crate::types::AttributeNameAndValue] {
+        self.attributes.as_deref().unwrap_or_default()
     }
 }
 impl AttachTypedLinkInput {
@@ -55,6 +57,7 @@ pub struct AttachTypedLinkInputBuilder {
 }
 impl AttachTypedLinkInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the directory where you want to attach the typed link.</p>
+    /// This field is required.
     pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +72,7 @@ impl AttachTypedLinkInputBuilder {
         &self.directory_arn
     }
     /// <p>Identifies the source object that the typed link will attach to.</p>
+    /// This field is required.
     pub fn source_object_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.source_object_reference = ::std::option::Option::Some(input);
         self
@@ -83,6 +87,7 @@ impl AttachTypedLinkInputBuilder {
         &self.source_object_reference
     }
     /// <p>Identifies the target object that the typed link will attach to.</p>
+    /// This field is required.
     pub fn target_object_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.target_object_reference = ::std::option::Option::Some(input);
         self
@@ -97,6 +102,7 @@ impl AttachTypedLinkInputBuilder {
         &self.target_object_reference
     }
     /// <p>Identifies the typed link facet that is associated with the typed link.</p>
+    /// This field is required.
     pub fn typed_link_facet(mut self, input: crate::types::TypedLinkSchemaAndFacetName) -> Self {
         self.typed_link_facet = ::std::option::Option::Some(input);
         self
@@ -133,7 +139,7 @@ impl AttachTypedLinkInputBuilder {
     /// Consumes the builder and constructs a [`AttachTypedLinkInput`](crate::operation::attach_typed_link::AttachTypedLinkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::attach_typed_link::AttachTypedLinkInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::attach_typed_link::AttachTypedLinkInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::attach_typed_link::AttachTypedLinkInput {
             directory_arn: self.directory_arn,
             source_object_reference: self.source_object_reference,

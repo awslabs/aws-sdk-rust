@@ -27,6 +27,7 @@ pub struct DescribeDataQualityJobDefinitionInputBuilder {
 }
 impl DescribeDataQualityJobDefinitionInputBuilder {
     /// <p>The name of the data quality monitoring job definition to describe.</p>
+    /// This field is required.
     pub fn job_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_definition_name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeDataQualityJobDefinitionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_data_quality_job_definition::DescribeDataQualityJobDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_data_quality_job_definition::DescribeDataQualityJobDefinitionInput {

@@ -27,6 +27,7 @@ pub struct DeleteRecommenderInputBuilder {
 }
 impl DeleteRecommenderInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the recommender to delete.</p>
+    /// This field is required.
     pub fn recommender_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommender_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteRecommenderInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRecommenderInput`](crate::operation::delete_recommender::DeleteRecommenderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_recommender::DeleteRecommenderInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_recommender::DeleteRecommenderInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_recommender::DeleteRecommenderInput {
             recommender_arn: self.recommender_arn,
         })

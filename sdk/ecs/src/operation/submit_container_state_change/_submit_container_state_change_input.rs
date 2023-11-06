@@ -50,8 +50,10 @@ impl SubmitContainerStateChangeInput {
         self.reason.as_deref()
     }
     /// <p>The network bindings of the container.</p>
-    pub fn network_bindings(&self) -> ::std::option::Option<&[crate::types::NetworkBinding]> {
-        self.network_bindings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_bindings.is_none()`.
+    pub fn network_bindings(&self) -> &[crate::types::NetworkBinding] {
+        self.network_bindings.as_deref().unwrap_or_default()
     }
 }
 impl SubmitContainerStateChangeInput {
@@ -198,7 +200,7 @@ impl SubmitContainerStateChangeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::submit_container_state_change::SubmitContainerStateChangeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::submit_container_state_change::SubmitContainerStateChangeInput {
             cluster: self.cluster,

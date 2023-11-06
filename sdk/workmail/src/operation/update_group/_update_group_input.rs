@@ -53,6 +53,7 @@ pub struct UpdateGroupInputBuilder {
 }
 impl UpdateGroupInputBuilder {
     /// <p>The identifier for the organization under which the group exists.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -73,6 +74,7 @@ impl UpdateGroupInputBuilder {
     /// <li> <p>Email address: group@domain.tld</p> </li>
     /// <li> <p>Group name: group</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
         self
@@ -113,7 +115,7 @@ impl UpdateGroupInputBuilder {
         &self.hidden_from_global_address_list
     }
     /// Consumes the builder and constructs a [`UpdateGroupInput`](crate::operation::update_group::UpdateGroupInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_group::UpdateGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_group::UpdateGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_group::UpdateGroupInput {
             organization_id: self.organization_id,
             group_id: self.group_id,

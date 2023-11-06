@@ -245,6 +245,6 @@ mod test {
     fn real_environment() {
         let provider = EnvironmentVariableCredentialsProvider::new();
         // we don't know what's in the env, just make sure it doesn't crash.
-        let _ = provider.provide_credentials();
+        let _fut = provider.provide_credentials();
     }
 }

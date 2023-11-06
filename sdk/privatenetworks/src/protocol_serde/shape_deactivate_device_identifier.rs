@@ -35,11 +35,10 @@ pub fn de_deactivate_device_identifier_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::deactivate_device_identifier::DeactivateDeviceIdentifierError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::deactivate_device_identifier::DeactivateDeviceIdentifierError::ResourceNotFoundException({
@@ -50,11 +49,10 @@ pub fn de_deactivate_device_identifier_http_error(
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::deactivate_device_identifier::DeactivateDeviceIdentifierError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::deactivate_device_identifier::DeactivateDeviceIdentifierError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::deactivate_device_identifier::DeactivateDeviceIdentifierError::ValidationException({
@@ -65,11 +63,10 @@ pub fn de_deactivate_device_identifier_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::deactivate_device_identifier::DeactivateDeviceIdentifierError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::deactivate_device_identifier::DeactivateDeviceIdentifierError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::deactivate_device_identifier::DeactivateDeviceIdentifierError::generic(generic),
@@ -91,18 +88,18 @@ pub fn de_deactivate_device_identifier_http_response(
         output = crate::protocol_serde::shape_deactivate_device_identifier::de_deactivate_device_identifier(_response_body, output)
             .map_err(crate::operation::deactivate_device_identifier::DeactivateDeviceIdentifierError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::deactivate_device_identifier_output_correct_errors(output).build()
     })
 }
 
 pub fn ser_deactivate_device_identifier_input(
     input: &crate::operation::deactivate_device_identifier::DeactivateDeviceIdentifierInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_deactivate_device_identifier_input::ser_deactivate_device_identifier_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_deactivate_device_identifier(

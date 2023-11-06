@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchStatementRequest {
     /// <p> A valid PartiQL statement. </p>
-    pub statement: ::std::option::Option<::std::string::String>,
+    pub statement: ::std::string::String,
     /// <p> The parameters associated with a PartiQL statement in the batch request. </p>
     pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::AttributeValue>>,
     /// <p> The read consistency of the PartiQL batch request. </p>
@@ -16,12 +16,15 @@ pub struct BatchStatementRequest {
 }
 impl BatchStatementRequest {
     /// <p> A valid PartiQL statement. </p>
-    pub fn statement(&self) -> ::std::option::Option<&str> {
-        self.statement.as_deref()
+    pub fn statement(&self) -> &str {
+        use std::ops::Deref;
+        self.statement.deref()
     }
     /// <p> The parameters associated with a PartiQL statement in the batch request. </p>
-    pub fn parameters(&self) -> ::std::option::Option<&[crate::types::AttributeValue]> {
-        self.parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
+    pub fn parameters(&self) -> &[crate::types::AttributeValue] {
+        self.parameters.as_deref().unwrap_or_default()
     }
     /// <p> The read consistency of the PartiQL batch request. </p>
     pub fn consistent_read(&self) -> ::std::option::Option<bool> {
@@ -51,6 +54,7 @@ pub struct BatchStatementRequestBuilder {
 }
 impl BatchStatementRequestBuilder {
     /// <p> A valid PartiQL statement. </p>
+    /// This field is required.
     pub fn statement(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.statement = ::std::option::Option::Some(input.into());
         self
@@ -119,12 +123,19 @@ impl BatchStatementRequestBuilder {
         &self.return_values_on_condition_check_failure
     }
     /// Consumes the builder and constructs a [`BatchStatementRequest`](crate::types::BatchStatementRequest).
-    pub fn build(self) -> crate::types::BatchStatementRequest {
-        crate::types::BatchStatementRequest {
-            statement: self.statement,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`statement`](crate::types::builders::BatchStatementRequestBuilder::statement)
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchStatementRequest, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::BatchStatementRequest {
+            statement: self.statement.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "statement",
+                    "statement was not specified but it is required when building BatchStatementRequest",
+                )
+            })?,
             parameters: self.parameters,
             consistent_read: self.consistent_read,
             return_values_on_condition_check_failure: self.return_values_on_condition_check_failure,
-        }
+        })
     }
 }

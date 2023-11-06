@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteDevicePositionHistoryError {
     /// <p>The ID of the device for this position.</p>
-    pub device_id: ::std::option::Option<::std::string::String>,
+    pub device_id: ::std::string::String,
     /// <p>Contains the batch request error details associated with the request.</p>
     pub error: ::std::option::Option<crate::types::BatchItemError>,
 }
 impl BatchDeleteDevicePositionHistoryError {
     /// <p>The ID of the device for this position.</p>
-    pub fn device_id(&self) -> ::std::option::Option<&str> {
-        self.device_id.as_deref()
+    pub fn device_id(&self) -> &str {
+        use std::ops::Deref;
+        self.device_id.deref()
     }
     /// <p>Contains the batch request error details associated with the request.</p>
     pub fn error(&self) -> ::std::option::Option<&crate::types::BatchItemError> {
@@ -35,6 +36,7 @@ pub struct BatchDeleteDevicePositionHistoryErrorBuilder {
 }
 impl BatchDeleteDevicePositionHistoryErrorBuilder {
     /// <p>The ID of the device for this position.</p>
+    /// This field is required.
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl BatchDeleteDevicePositionHistoryErrorBuilder {
         &self.device_id
     }
     /// <p>Contains the batch request error details associated with the request.</p>
+    /// This field is required.
     pub fn error(mut self, input: crate::types::BatchItemError) -> Self {
         self.error = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,19 @@ impl BatchDeleteDevicePositionHistoryErrorBuilder {
         &self.error
     }
     /// Consumes the builder and constructs a [`BatchDeleteDevicePositionHistoryError`](crate::types::BatchDeleteDevicePositionHistoryError).
-    pub fn build(self) -> crate::types::BatchDeleteDevicePositionHistoryError {
-        crate::types::BatchDeleteDevicePositionHistoryError {
-            device_id: self.device_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`device_id`](crate::types::builders::BatchDeleteDevicePositionHistoryErrorBuilder::device_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::BatchDeleteDevicePositionHistoryError, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::BatchDeleteDevicePositionHistoryError {
+            device_id: self.device_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "device_id",
+                    "device_id was not specified but it is required when building BatchDeleteDevicePositionHistoryError",
+                )
+            })?,
             error: self.error,
-        }
+        })
     }
 }

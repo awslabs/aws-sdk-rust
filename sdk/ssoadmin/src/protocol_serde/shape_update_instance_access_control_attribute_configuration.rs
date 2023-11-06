@@ -33,8 +33,8 @@ pub fn de_update_instance_access_control_attribute_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ConflictException" => crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfigurationError::ConflictException({
@@ -49,8 +49,8 @@ pub fn de_update_instance_access_control_attribute_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InternalServerException" => crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfigurationError::InternalServerException({
@@ -65,8 +65,8 @@ pub fn de_update_instance_access_control_attribute_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfigurationError::ResourceNotFoundException({
@@ -81,8 +81,8 @@ pub fn de_update_instance_access_control_attribute_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ThrottlingException" => crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfigurationError::ThrottlingException({
@@ -97,8 +97,8 @@ pub fn de_update_instance_access_control_attribute_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ValidationException" => crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfigurationError::ValidationException({
@@ -113,8 +113,8 @@ pub fn de_update_instance_access_control_attribute_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfigurationError::generic(generic)
@@ -140,10 +140,10 @@ pub fn de_update_instance_access_control_attribute_configuration_http_response(
 
 pub fn ser_update_instance_access_control_attribute_configuration_input(
     input: &crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfigurationInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_update_instance_access_control_attribute_configuration_input::ser_update_instance_access_control_attribute_configuration_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

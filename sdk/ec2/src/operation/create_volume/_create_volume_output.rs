@@ -42,8 +42,10 @@ pub struct CreateVolumeOutput {
 }
 impl CreateVolumeOutput {
     /// <p>Information about the volume attachments.</p>
-    pub fn attachments(&self) -> ::std::option::Option<&[crate::types::VolumeAttachment]> {
-        self.attachments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attachments.is_none()`.
+    pub fn attachments(&self) -> &[crate::types::VolumeAttachment] {
+        self.attachments.as_deref().unwrap_or_default()
     }
     /// <p>The Availability Zone for the volume.</p>
     pub fn availability_zone(&self) -> ::std::option::Option<&str> {
@@ -86,8 +88,10 @@ impl CreateVolumeOutput {
         self.iops
     }
     /// <p>Any tags assigned to the volume.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The volume type.</p>
     pub fn volume_type(&self) -> ::std::option::Option<&crate::types::VolumeType> {

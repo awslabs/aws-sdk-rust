@@ -34,6 +34,7 @@ pub struct DeleteAssociationInputBuilder {
 }
 impl DeleteAssociationInputBuilder {
     /// <p>The ARN of the source.</p>
+    /// This field is required.
     pub fn source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteAssociationInputBuilder {
         &self.source_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
+    /// This field is required.
     pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_arn = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DeleteAssociationInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAssociationInput`](crate::operation::delete_association::DeleteAssociationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_association::DeleteAssociationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_association::DeleteAssociationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_association::DeleteAssociationInput {
             source_arn: self.source_arn,
             destination_arn: self.destination_arn,

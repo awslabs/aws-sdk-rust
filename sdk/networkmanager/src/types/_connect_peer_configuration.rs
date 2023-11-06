@@ -25,16 +25,20 @@ impl ConnectPeerConfiguration {
         self.peer_address.as_deref()
     }
     /// <p>The inside IP addresses used for a Connect peer configuration.</p>
-    pub fn inside_cidr_blocks(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.inside_cidr_blocks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inside_cidr_blocks.is_none()`.
+    pub fn inside_cidr_blocks(&self) -> &[::std::string::String] {
+        self.inside_cidr_blocks.as_deref().unwrap_or_default()
     }
     /// <p>The protocol used for a Connect peer configuration.</p>
     pub fn protocol(&self) -> ::std::option::Option<&crate::types::TunnelProtocol> {
         self.protocol.as_ref()
     }
     /// <p>The Connect peer BGP configurations.</p>
-    pub fn bgp_configurations(&self) -> ::std::option::Option<&[crate::types::ConnectPeerBgpConfiguration]> {
-        self.bgp_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bgp_configurations.is_none()`.
+    pub fn bgp_configurations(&self) -> &[crate::types::ConnectPeerBgpConfiguration] {
+        self.bgp_configurations.as_deref().unwrap_or_default()
     }
 }
 impl ConnectPeerConfiguration {

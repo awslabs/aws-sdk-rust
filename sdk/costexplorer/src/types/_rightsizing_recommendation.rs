@@ -39,8 +39,10 @@ impl RightsizingRecommendation {
         self.terminate_recommendation_detail.as_ref()
     }
     /// <p>The list of possible reasons why the recommendation is generated, such as under- or over-utilization of specific metrics (for example, CPU, Memory, Network). </p>
-    pub fn finding_reason_codes(&self) -> ::std::option::Option<&[crate::types::FindingReasonCode]> {
-        self.finding_reason_codes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.finding_reason_codes.is_none()`.
+    pub fn finding_reason_codes(&self) -> &[crate::types::FindingReasonCode] {
+        self.finding_reason_codes.as_deref().unwrap_or_default()
     }
 }
 impl RightsizingRecommendation {

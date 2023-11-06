@@ -6,9 +6,9 @@ pub struct GetEncryptionConfigurationOutput {
     /// <p>The ID of the KMS key that is used for encryption.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The encryption status.</p>
-    pub encryption_status: ::std::option::Option<crate::types::EncryptionStatus>,
+    pub encryption_status: crate::types::EncryptionStatus,
     /// <p>The type of encryption. Set to <code>KMS_BASED_ENCRYPTION</code> to use an KMS key that you own and manage. Set to <code>FLEETWISE_DEFAULT_ENCRYPTION</code> to use an Amazon Web Services managed key that is owned by the Amazon Web Services IoT FleetWise service account.</p>
-    pub encryption_type: ::std::option::Option<crate::types::EncryptionType>,
+    pub encryption_type: crate::types::EncryptionType,
     /// <p>The error message that describes why encryption settings couldn't be configured, if applicable.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>The time when encryption was configured in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
@@ -23,12 +23,12 @@ impl GetEncryptionConfigurationOutput {
         self.kms_key_id.as_deref()
     }
     /// <p>The encryption status.</p>
-    pub fn encryption_status(&self) -> ::std::option::Option<&crate::types::EncryptionStatus> {
-        self.encryption_status.as_ref()
+    pub fn encryption_status(&self) -> &crate::types::EncryptionStatus {
+        &self.encryption_status
     }
     /// <p>The type of encryption. Set to <code>KMS_BASED_ENCRYPTION</code> to use an KMS key that you own and manage. Set to <code>FLEETWISE_DEFAULT_ENCRYPTION</code> to use an Amazon Web Services managed key that is owned by the Amazon Web Services IoT FleetWise service account.</p>
-    pub fn encryption_type(&self) -> ::std::option::Option<&crate::types::EncryptionType> {
-        self.encryption_type.as_ref()
+    pub fn encryption_type(&self) -> &crate::types::EncryptionType {
+        &self.encryption_type
     }
     /// <p>The error message that describes why encryption settings couldn't be configured, if applicable.</p>
     pub fn error_message(&self) -> ::std::option::Option<&str> {
@@ -83,6 +83,7 @@ impl GetEncryptionConfigurationOutputBuilder {
         &self.kms_key_id
     }
     /// <p>The encryption status.</p>
+    /// This field is required.
     pub fn encryption_status(mut self, input: crate::types::EncryptionStatus) -> Self {
         self.encryption_status = ::std::option::Option::Some(input);
         self
@@ -97,6 +98,7 @@ impl GetEncryptionConfigurationOutputBuilder {
         &self.encryption_status
     }
     /// <p>The type of encryption. Set to <code>KMS_BASED_ENCRYPTION</code> to use an KMS key that you own and manage. Set to <code>FLEETWISE_DEFAULT_ENCRYPTION</code> to use an Amazon Web Services managed key that is owned by the Amazon Web Services IoT FleetWise service account.</p>
+    /// This field is required.
     pub fn encryption_type(mut self, input: crate::types::EncryptionType) -> Self {
         self.encryption_type = ::std::option::Option::Some(input);
         self
@@ -162,15 +164,33 @@ impl GetEncryptionConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetEncryptionConfigurationOutput`](crate::operation::get_encryption_configuration::GetEncryptionConfigurationOutput).
-    pub fn build(self) -> crate::operation::get_encryption_configuration::GetEncryptionConfigurationOutput {
-        crate::operation::get_encryption_configuration::GetEncryptionConfigurationOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`encryption_status`](crate::operation::get_encryption_configuration::builders::GetEncryptionConfigurationOutputBuilder::encryption_status)
+    /// - [`encryption_type`](crate::operation::get_encryption_configuration::builders::GetEncryptionConfigurationOutputBuilder::encryption_type)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_encryption_configuration::GetEncryptionConfigurationOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::get_encryption_configuration::GetEncryptionConfigurationOutput {
             kms_key_id: self.kms_key_id,
-            encryption_status: self.encryption_status,
-            encryption_type: self.encryption_type,
+            encryption_status: self.encryption_status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "encryption_status",
+                    "encryption_status was not specified but it is required when building GetEncryptionConfigurationOutput",
+                )
+            })?,
+            encryption_type: self.encryption_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "encryption_type",
+                    "encryption_type was not specified but it is required when building GetEncryptionConfigurationOutput",
+                )
+            })?,
             error_message: self.error_message,
             creation_time: self.creation_time,
             last_modification_time: self.last_modification_time,
             _request_id: self._request_id,
-        }
+        })
     }
 }

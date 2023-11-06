@@ -7,9 +7,9 @@ pub struct BatchCreateRumMetricDefinitionsError {
     /// <p>The metric definition that caused this error.</p>
     pub metric_definition: ::std::option::Option<crate::types::MetricDefinitionRequest>,
     /// <p>The error code.</p>
-    pub error_code: ::std::option::Option<::std::string::String>,
+    pub error_code: ::std::string::String,
     /// <p>The error message for this metric definition.</p>
-    pub error_message: ::std::option::Option<::std::string::String>,
+    pub error_message: ::std::string::String,
 }
 impl BatchCreateRumMetricDefinitionsError {
     /// <p>The metric definition that caused this error.</p>
@@ -17,12 +17,14 @@ impl BatchCreateRumMetricDefinitionsError {
         self.metric_definition.as_ref()
     }
     /// <p>The error code.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
-        self.error_code.as_deref()
+    pub fn error_code(&self) -> &str {
+        use std::ops::Deref;
+        self.error_code.deref()
     }
     /// <p>The error message for this metric definition.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
-        self.error_message.as_deref()
+    pub fn error_message(&self) -> &str {
+        use std::ops::Deref;
+        self.error_message.deref()
     }
 }
 impl BatchCreateRumMetricDefinitionsError {
@@ -42,6 +44,7 @@ pub struct BatchCreateRumMetricDefinitionsErrorBuilder {
 }
 impl BatchCreateRumMetricDefinitionsErrorBuilder {
     /// <p>The metric definition that caused this error.</p>
+    /// This field is required.
     pub fn metric_definition(mut self, input: crate::types::MetricDefinitionRequest) -> Self {
         self.metric_definition = ::std::option::Option::Some(input);
         self
@@ -56,6 +59,7 @@ impl BatchCreateRumMetricDefinitionsErrorBuilder {
         &self.metric_definition
     }
     /// <p>The error code.</p>
+    /// This field is required.
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +74,7 @@ impl BatchCreateRumMetricDefinitionsErrorBuilder {
         &self.error_code
     }
     /// <p>The error message for this metric definition.</p>
+    /// This field is required.
     pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +89,26 @@ impl BatchCreateRumMetricDefinitionsErrorBuilder {
         &self.error_message
     }
     /// Consumes the builder and constructs a [`BatchCreateRumMetricDefinitionsError`](crate::types::BatchCreateRumMetricDefinitionsError).
-    pub fn build(self) -> crate::types::BatchCreateRumMetricDefinitionsError {
-        crate::types::BatchCreateRumMetricDefinitionsError {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`error_code`](crate::types::builders::BatchCreateRumMetricDefinitionsErrorBuilder::error_code)
+    /// - [`error_message`](crate::types::builders::BatchCreateRumMetricDefinitionsErrorBuilder::error_message)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::BatchCreateRumMetricDefinitionsError, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::BatchCreateRumMetricDefinitionsError {
             metric_definition: self.metric_definition,
-            error_code: self.error_code,
-            error_message: self.error_message,
-        }
+            error_code: self.error_code.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "error_code",
+                    "error_code was not specified but it is required when building BatchCreateRumMetricDefinitionsError",
+                )
+            })?,
+            error_message: self.error_message.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "error_message",
+                    "error_message was not specified but it is required when building BatchCreateRumMetricDefinitionsError",
+                )
+            })?,
+        })
     }
 }

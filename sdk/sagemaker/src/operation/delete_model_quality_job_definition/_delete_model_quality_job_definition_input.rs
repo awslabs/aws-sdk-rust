@@ -27,6 +27,7 @@ pub struct DeleteModelQualityJobDefinitionInputBuilder {
 }
 impl DeleteModelQualityJobDefinitionInputBuilder {
     /// <p>The name of the model quality monitoring job definition to delete.</p>
+    /// This field is required.
     pub fn job_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_definition_name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteModelQualityJobDefinitionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_model_quality_job_definition::DeleteModelQualityJobDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_model_quality_job_definition::DeleteModelQualityJobDefinitionInput {

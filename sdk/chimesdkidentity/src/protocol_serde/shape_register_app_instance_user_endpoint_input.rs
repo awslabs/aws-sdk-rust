@@ -2,7 +2,7 @@
 pub fn ser_register_app_instance_user_endpoint_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.allow_messages {
         object.key("AllowMessages").string(var_1.as_str());
     }

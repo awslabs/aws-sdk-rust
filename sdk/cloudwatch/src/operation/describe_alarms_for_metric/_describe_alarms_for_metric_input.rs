@@ -36,8 +36,10 @@ impl DescribeAlarmsForMetricInput {
         self.extended_statistic.as_deref()
     }
     /// <p>The dimensions associated with the metric. If the metric has any associated dimensions, you must specify them in order for the call to succeed.</p>
-    pub fn dimensions(&self) -> ::std::option::Option<&[crate::types::Dimension]> {
-        self.dimensions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimensions.is_none()`.
+    pub fn dimensions(&self) -> &[crate::types::Dimension] {
+        self.dimensions.as_deref().unwrap_or_default()
     }
     /// <p>The period, in seconds, over which the statistic is applied.</p>
     pub fn period(&self) -> ::std::option::Option<i32> {
@@ -69,6 +71,7 @@ pub struct DescribeAlarmsForMetricInputBuilder {
 }
 impl DescribeAlarmsForMetricInputBuilder {
     /// <p>The name of the metric.</p>
+    /// This field is required.
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +86,7 @@ impl DescribeAlarmsForMetricInputBuilder {
         &self.metric_name
     }
     /// <p>The namespace of the metric.</p>
+    /// This field is required.
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
         self
@@ -177,7 +181,7 @@ impl DescribeAlarmsForMetricInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricInput {
             metric_name: self.metric_name,

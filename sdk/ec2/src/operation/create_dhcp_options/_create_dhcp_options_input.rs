@@ -12,12 +12,16 @@ pub struct CreateDhcpOptionsInput {
 }
 impl CreateDhcpOptionsInput {
     /// <p>A DHCP configuration option.</p>
-    pub fn dhcp_configurations(&self) -> ::std::option::Option<&[crate::types::NewDhcpConfiguration]> {
-        self.dhcp_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dhcp_configurations.is_none()`.
+    pub fn dhcp_configurations(&self) -> &[crate::types::NewDhcpConfiguration] {
+        self.dhcp_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The tags to assign to the DHCP option.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -97,7 +101,7 @@ impl CreateDhcpOptionsInputBuilder {
     /// Consumes the builder and constructs a [`CreateDhcpOptionsInput`](crate::operation::create_dhcp_options::CreateDhcpOptionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_dhcp_options::CreateDhcpOptionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_dhcp_options::CreateDhcpOptionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_dhcp_options::CreateDhcpOptionsInput {
             dhcp_configurations: self.dhcp_configurations,
             tag_specifications: self.tag_specifications,

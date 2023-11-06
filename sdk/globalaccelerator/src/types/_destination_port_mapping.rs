@@ -27,8 +27,10 @@ impl DestinationPortMapping {
         self.accelerator_arn.as_deref()
     }
     /// <p>The IP address/port combinations (sockets) that map to a given destination socket address.</p>
-    pub fn accelerator_socket_addresses(&self) -> ::std::option::Option<&[crate::types::SocketAddress]> {
-        self.accelerator_socket_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accelerator_socket_addresses.is_none()`.
+    pub fn accelerator_socket_addresses(&self) -> &[crate::types::SocketAddress] {
+        self.accelerator_socket_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
     pub fn endpoint_group_arn(&self) -> ::std::option::Option<&str> {

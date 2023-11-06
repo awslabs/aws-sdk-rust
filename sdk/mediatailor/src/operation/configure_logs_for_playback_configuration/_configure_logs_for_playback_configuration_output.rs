@@ -41,6 +41,7 @@ pub struct ConfigureLogsForPlaybackConfigurationOutputBuilder {
 }
 impl ConfigureLogsForPlaybackConfigurationOutputBuilder {
     /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account.</p>
+    /// This field is required.
     pub fn percent_enabled(mut self, input: i32) -> Self {
         self.percent_enabled = ::std::option::Option::Some(input);
         self

@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SsekmsEncryption {
     /// <p>Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric encryption customer managed key to use for encrypting generated manifest objects.</p>
-    pub key_id: ::std::option::Option<::std::string::String>,
+    pub key_id: ::std::string::String,
 }
 impl SsekmsEncryption {
     /// <p>Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric encryption customer managed key to use for encrypting generated manifest objects.</p>
-    pub fn key_id(&self) -> ::std::option::Option<&str> {
-        self.key_id.as_deref()
+    pub fn key_id(&self) -> &str {
+        use std::ops::Deref;
+        self.key_id.deref()
     }
 }
 impl SsekmsEncryption {
@@ -28,6 +29,7 @@ pub struct SsekmsEncryptionBuilder {
 }
 impl SsekmsEncryptionBuilder {
     /// <p>Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric encryption customer managed key to use for encrypting generated manifest objects.</p>
+    /// This field is required.
     pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_id = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl SsekmsEncryptionBuilder {
         &self.key_id
     }
     /// Consumes the builder and constructs a [`SsekmsEncryption`](crate::types::SsekmsEncryption).
-    pub fn build(self) -> crate::types::SsekmsEncryption {
-        crate::types::SsekmsEncryption { key_id: self.key_id }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key_id`](crate::types::builders::SsekmsEncryptionBuilder::key_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::SsekmsEncryption, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SsekmsEncryption {
+            key_id: self.key_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "key_id",
+                    "key_id was not specified but it is required when building SsekmsEncryption",
+                )
+            })?,
+        })
     }
 }

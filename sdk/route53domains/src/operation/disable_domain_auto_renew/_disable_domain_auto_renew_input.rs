@@ -27,6 +27,7 @@ pub struct DisableDomainAutoRenewInputBuilder {
 }
 impl DisableDomainAutoRenewInputBuilder {
     /// <p>The name of the domain that you want to disable automatic renewal for.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DisableDomainAutoRenewInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_domain_auto_renew::DisableDomainAutoRenewInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disable_domain_auto_renew::DisableDomainAutoRenewInput {
             domain_name: self.domain_name,

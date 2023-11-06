@@ -7,7 +7,7 @@ pub struct AssetBundleExportJobDataSetOverrideProperties {
     /// <p>The ARN of the specific <code>DataSet</code> resource whose override properties are configured in this structure.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>DataSet</code> resource properties to generate variables for in the returned CloudFormation template.</p>
-    pub properties: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobDataSetPropertyToOverride>>,
+    pub properties: ::std::vec::Vec<crate::types::AssetBundleExportJobDataSetPropertyToOverride>,
 }
 impl AssetBundleExportJobDataSetOverrideProperties {
     /// <p>The ARN of the specific <code>DataSet</code> resource whose override properties are configured in this structure.</p>
@@ -15,8 +15,9 @@ impl AssetBundleExportJobDataSetOverrideProperties {
         self.arn.as_deref()
     }
     /// <p>A list of <code>DataSet</code> resource properties to generate variables for in the returned CloudFormation template.</p>
-    pub fn properties(&self) -> ::std::option::Option<&[crate::types::AssetBundleExportJobDataSetPropertyToOverride]> {
-        self.properties.as_deref()
+    pub fn properties(&self) -> &[crate::types::AssetBundleExportJobDataSetPropertyToOverride] {
+        use std::ops::Deref;
+        self.properties.deref()
     }
 }
 impl AssetBundleExportJobDataSetOverrideProperties {
@@ -72,10 +73,19 @@ impl AssetBundleExportJobDataSetOverridePropertiesBuilder {
         &self.properties
     }
     /// Consumes the builder and constructs a [`AssetBundleExportJobDataSetOverrideProperties`](crate::types::AssetBundleExportJobDataSetOverrideProperties).
-    pub fn build(self) -> crate::types::AssetBundleExportJobDataSetOverrideProperties {
-        crate::types::AssetBundleExportJobDataSetOverrideProperties {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`properties`](crate::types::builders::AssetBundleExportJobDataSetOverridePropertiesBuilder::properties)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::AssetBundleExportJobDataSetOverrideProperties, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AssetBundleExportJobDataSetOverrideProperties {
             arn: self.arn,
-            properties: self.properties,
-        }
+            properties: self.properties.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "properties",
+                    "properties was not specified but it is required when building AssetBundleExportJobDataSetOverrideProperties",
+                )
+            })?,
+        })
     }
 }

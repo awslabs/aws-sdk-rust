@@ -153,20 +153,22 @@ pub fn de_disable_directory_http_response(
         output = crate::protocol_serde::shape_disable_directory::de_disable_directory(_response_body, output)
             .map_err(crate::operation::disable_directory::DisableDirectoryError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::disable_directory_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::disable_directory::DisableDirectoryError::unhandled)?
     })
 }
 
 pub fn ser_disable_directory_headers(
     input: &crate::operation::disable_directory::DisableDirectoryInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.directory_arn {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "directory_arn",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )

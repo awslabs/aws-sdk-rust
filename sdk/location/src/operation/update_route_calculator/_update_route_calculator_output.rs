@@ -4,31 +4,33 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRouteCalculatorOutput {
     /// <p>The name of the updated route calculator resource.</p>
-    pub calculator_name: ::std::option::Option<::std::string::String>,
+    pub calculator_name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the updated route calculator resource. Used to specify a resource across AWS.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route- calculator/ExampleCalculator</code> </p> </li>
     /// </ul>
-    pub calculator_arn: ::std::option::Option<::std::string::String>,
+    pub calculator_arn: ::std::string::String,
     /// <p>The timestamp for when the route calculator was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub update_time: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
 impl UpdateRouteCalculatorOutput {
     /// <p>The name of the updated route calculator resource.</p>
-    pub fn calculator_name(&self) -> ::std::option::Option<&str> {
-        self.calculator_name.as_deref()
+    pub fn calculator_name(&self) -> &str {
+        use std::ops::Deref;
+        self.calculator_name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the updated route calculator resource. Used to specify a resource across AWS.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route- calculator/ExampleCalculator</code> </p> </li>
     /// </ul>
-    pub fn calculator_arn(&self) -> ::std::option::Option<&str> {
-        self.calculator_arn.as_deref()
+    pub fn calculator_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.calculator_arn.deref()
     }
     /// <p>The timestamp for when the route calculator was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.update_time.as_ref()
+    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.update_time
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateRouteCalculatorOutput {
@@ -54,6 +56,7 @@ pub struct UpdateRouteCalculatorOutputBuilder {
 }
 impl UpdateRouteCalculatorOutputBuilder {
     /// <p>The name of the updated route calculator resource.</p>
+    /// This field is required.
     pub fn calculator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.calculator_name = ::std::option::Option::Some(input.into());
         self
@@ -71,6 +74,7 @@ impl UpdateRouteCalculatorOutputBuilder {
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route- calculator/ExampleCalculator</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn calculator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.calculator_arn = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +95,7 @@ impl UpdateRouteCalculatorOutputBuilder {
         &self.calculator_arn
     }
     /// <p>The timestamp for when the route calculator was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// This field is required.
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
         self
@@ -114,12 +119,34 @@ impl UpdateRouteCalculatorOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateRouteCalculatorOutput`](crate::operation::update_route_calculator::UpdateRouteCalculatorOutput).
-    pub fn build(self) -> crate::operation::update_route_calculator::UpdateRouteCalculatorOutput {
-        crate::operation::update_route_calculator::UpdateRouteCalculatorOutput {
-            calculator_name: self.calculator_name,
-            calculator_arn: self.calculator_arn,
-            update_time: self.update_time,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`calculator_name`](crate::operation::update_route_calculator::builders::UpdateRouteCalculatorOutputBuilder::calculator_name)
+    /// - [`calculator_arn`](crate::operation::update_route_calculator::builders::UpdateRouteCalculatorOutputBuilder::calculator_arn)
+    /// - [`update_time`](crate::operation::update_route_calculator::builders::UpdateRouteCalculatorOutputBuilder::update_time)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_route_calculator::UpdateRouteCalculatorOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_route_calculator::UpdateRouteCalculatorOutput {
+            calculator_name: self.calculator_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "calculator_name",
+                    "calculator_name was not specified but it is required when building UpdateRouteCalculatorOutput",
+                )
+            })?,
+            calculator_arn: self.calculator_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "calculator_arn",
+                    "calculator_arn was not specified but it is required when building UpdateRouteCalculatorOutput",
+                )
+            })?,
+            update_time: self.update_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "update_time",
+                    "update_time was not specified but it is required when building UpdateRouteCalculatorOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

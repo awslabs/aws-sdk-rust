@@ -48,6 +48,7 @@ pub struct UpdateThemeAliasInputBuilder {
 }
 impl UpdateThemeAliasInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the theme alias that you're updating.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl UpdateThemeAliasInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID for the theme.</p>
+    /// This field is required.
     pub fn theme_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.theme_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl UpdateThemeAliasInputBuilder {
         &self.theme_id
     }
     /// <p>The name of the theme alias that you want to update.</p>
+    /// This field is required.
     pub fn alias_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl UpdateThemeAliasInputBuilder {
         &self.alias_name
     }
     /// <p>The version number of the theme that the alias should reference.</p>
+    /// This field is required.
     pub fn theme_version_number(mut self, input: i64) -> Self {
         self.theme_version_number = ::std::option::Option::Some(input);
         self
@@ -106,7 +110,7 @@ impl UpdateThemeAliasInputBuilder {
     /// Consumes the builder and constructs a [`UpdateThemeAliasInput`](crate::operation::update_theme_alias::UpdateThemeAliasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_theme_alias::UpdateThemeAliasInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_theme_alias::UpdateThemeAliasInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_theme_alias::UpdateThemeAliasInput {
             aws_account_id: self.aws_account_id,
             theme_id: self.theme_id,

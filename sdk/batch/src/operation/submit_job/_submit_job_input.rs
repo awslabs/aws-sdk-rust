@@ -64,8 +64,10 @@ impl SubmitJobInput {
         self.array_properties.as_ref()
     }
     /// <p>A list of dependencies for the job. A job can depend upon a maximum of 20 jobs. You can specify a <code>SEQUENTIAL</code> type dependency without specifying a job ID for array jobs so that each child array job completes sequentially, starting at index 0. You can also specify an <code>N_TO_N</code> type dependency with a job ID for array jobs. In that case, each index child of this job must wait for the corresponding index child of each dependency to complete before it can begin.</p>
-    pub fn depends_on(&self) -> ::std::option::Option<&[crate::types::JobDependency]> {
-        self.depends_on.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.depends_on.is_none()`.
+    pub fn depends_on(&self) -> &[crate::types::JobDependency] {
+        self.depends_on.as_deref().unwrap_or_default()
     }
     /// <p>The job definition used by this job. This value can be one of <code>definition-name</code>, <code>definition-name:revision</code>, or the Amazon Resource Name (ARN) for the job definition, with or without the revision (<code>arn:aws:batch:<i>region</i>:<i>account</i>:job-definition/<i>definition-name</i>:<i>revision</i> </code>, or <code>arn:aws:batch:<i>region</i>:<i>account</i>:job-definition/<i>definition-name</i> </code>).</p>
     /// <p>If the revision is not specified, then the latest active revision is used.</p>
@@ -136,6 +138,7 @@ pub struct SubmitJobInputBuilder {
 }
 impl SubmitJobInputBuilder {
     /// <p>The name of the job. It can be up to 128 letters long. The first character must be alphanumeric, can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
+    /// This field is required.
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name = ::std::option::Option::Some(input.into());
         self
@@ -150,6 +153,7 @@ impl SubmitJobInputBuilder {
         &self.job_name
     }
     /// <p>The job queue where the job is submitted. You can specify either the name or the Amazon Resource Name (ARN) of the queue.</p>
+    /// This field is required.
     pub fn job_queue(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_queue = ::std::option::Option::Some(input.into());
         self
@@ -233,6 +237,7 @@ impl SubmitJobInputBuilder {
     }
     /// <p>The job definition used by this job. This value can be one of <code>definition-name</code>, <code>definition-name:revision</code>, or the Amazon Resource Name (ARN) for the job definition, with or without the revision (<code>arn:aws:batch:<i>region</i>:<i>account</i>:job-definition/<i>definition-name</i>:<i>revision</i> </code>, or <code>arn:aws:batch:<i>region</i>:<i>account</i>:job-definition/<i>definition-name</i> </code>).</p>
     /// <p>If the revision is not specified, then the latest active revision is used.</p>
+    /// This field is required.
     pub fn job_definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_definition = ::std::option::Option::Some(input.into());
         self
@@ -379,7 +384,7 @@ impl SubmitJobInputBuilder {
         &self.eks_properties_override
     }
     /// Consumes the builder and constructs a [`SubmitJobInput`](crate::operation::submit_job::SubmitJobInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::submit_job::SubmitJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::submit_job::SubmitJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::submit_job::SubmitJobInput {
             job_name: self.job_name,
             job_queue: self.job_queue,

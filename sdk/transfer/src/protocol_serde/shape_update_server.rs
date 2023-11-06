@@ -40,11 +40,10 @@ pub fn de_update_server_http_error(
                 output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_server::UpdateServerError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::conflict_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_server::UpdateServerError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServiceError" => crate::operation::update_server::UpdateServerError::InternalServiceError({
@@ -55,11 +54,10 @@ pub fn de_update_server_http_error(
                 output = crate::protocol_serde::shape_internal_service_error::de_internal_service_error_json_err(_response_body, output)
                     .map_err(crate::operation::update_server::UpdateServerError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_service_error_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_server::UpdateServerError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InvalidRequestException" => crate::operation::update_server::UpdateServerError::InvalidRequestException({
@@ -70,11 +68,10 @@ pub fn de_update_server_http_error(
                 output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_server::UpdateServerError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_request_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_server::UpdateServerError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceExistsException" => crate::operation::update_server::UpdateServerError::ResourceExistsException({
@@ -85,11 +82,10 @@ pub fn de_update_server_http_error(
                 output = crate::protocol_serde::shape_resource_exists_exception::de_resource_exists_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_server::UpdateServerError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_exists_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_server::UpdateServerError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::update_server::UpdateServerError::ResourceNotFoundException({
@@ -100,11 +96,10 @@ pub fn de_update_server_http_error(
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_server::UpdateServerError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_server::UpdateServerError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::update_server::UpdateServerError::ServiceUnavailableException({
@@ -154,18 +149,20 @@ pub fn de_update_server_http_response(
         output = crate::protocol_serde::shape_update_server::de_update_server(_response_body, output)
             .map_err(crate::operation::update_server::UpdateServerError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::update_server_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::update_server::UpdateServerError::unhandled)?
     })
 }
 
 pub fn ser_update_server_input(
     input: &crate::operation::update_server::UpdateServerInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_update_server_input::ser_update_server_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_update_server(

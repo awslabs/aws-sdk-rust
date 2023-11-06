@@ -9,7 +9,7 @@ pub struct StoredQuery {
     /// <p>Amazon Resource Name (ARN) of the query. For example, arn:partition:service:region:account-id:resource-type/resource-name/resource-id.</p>
     pub query_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the query.</p>
-    pub query_name: ::std::option::Option<::std::string::String>,
+    pub query_name: ::std::string::String,
     /// <p>A unique description for the query.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The expression of the query. For example, <code>SELECT resourceId, resourceType, supplementaryConfiguration.BucketVersioningConfiguration.status WHERE resourceType = 'AWS::S3::Bucket' AND supplementaryConfiguration.BucketVersioningConfiguration.status = 'Off'.</code> </p>
@@ -25,8 +25,9 @@ impl StoredQuery {
         self.query_arn.as_deref()
     }
     /// <p>The name of the query.</p>
-    pub fn query_name(&self) -> ::std::option::Option<&str> {
-        self.query_name.as_deref()
+    pub fn query_name(&self) -> &str {
+        use std::ops::Deref;
+        self.query_name.deref()
     }
     /// <p>A unique description for the query.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -84,6 +85,7 @@ impl StoredQueryBuilder {
         &self.query_arn
     }
     /// <p>The name of the query.</p>
+    /// This field is required.
     pub fn query_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_name = ::std::option::Option::Some(input.into());
         self
@@ -126,13 +128,20 @@ impl StoredQueryBuilder {
         &self.expression
     }
     /// Consumes the builder and constructs a [`StoredQuery`](crate::types::StoredQuery).
-    pub fn build(self) -> crate::types::StoredQuery {
-        crate::types::StoredQuery {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`query_name`](crate::types::builders::StoredQueryBuilder::query_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::StoredQuery, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::StoredQuery {
             query_id: self.query_id,
             query_arn: self.query_arn,
-            query_name: self.query_name,
+            query_name: self.query_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "query_name",
+                    "query_name was not specified but it is required when building StoredQuery",
+                )
+            })?,
             description: self.description,
             expression: self.expression,
-        }
+        })
     }
 }

@@ -41,6 +41,7 @@ pub struct ListApplicationSnapshotsInputBuilder {
 }
 impl ListApplicationSnapshotsInputBuilder {
     /// <p>The name of an existing application.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListApplicationSnapshotsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_application_snapshots::ListApplicationSnapshotsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_application_snapshots::ListApplicationSnapshotsInput {
             application_name: self.application_name,

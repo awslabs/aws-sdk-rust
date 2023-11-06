@@ -34,6 +34,7 @@ pub struct GetProtectedQueryOutputBuilder {
 }
 impl GetProtectedQueryOutputBuilder {
     /// <p>The query processing metadata.</p>
+    /// This field is required.
     pub fn protected_query(mut self, input: crate::types::ProtectedQuery) -> Self {
         self.protected_query = ::std::option::Option::Some(input);
         self

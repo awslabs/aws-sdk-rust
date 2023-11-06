@@ -48,6 +48,7 @@ pub struct GetIceServerConfigInputBuilder {
 }
 impl GetIceServerConfigInputBuilder {
     /// <p>The ARN of the signaling channel to be used for the peer-to-peer connection between configured peers. </p>
+    /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,7 @@ impl GetIceServerConfigInputBuilder {
     /// Consumes the builder and constructs a [`GetIceServerConfigInput`](crate::operation::get_ice_server_config::GetIceServerConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_ice_server_config::GetIceServerConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_ice_server_config::GetIceServerConfigInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_ice_server_config::GetIceServerConfigInput {
             channel_arn: self.channel_arn,

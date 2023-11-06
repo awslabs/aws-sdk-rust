@@ -49,6 +49,7 @@ impl UpdateVpcLinkInputBuilder {
         &self.name
     }
     /// <p>The ID of the VPC link.</p>
+    /// This field is required.
     pub fn vpc_link_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_link_id = ::std::option::Option::Some(input.into());
         self
@@ -65,7 +66,7 @@ impl UpdateVpcLinkInputBuilder {
     /// Consumes the builder and constructs a [`UpdateVpcLinkInput`](crate::operation::update_vpc_link::UpdateVpcLinkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_vpc_link::UpdateVpcLinkInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_vpc_link::UpdateVpcLinkInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_vpc_link::UpdateVpcLinkInput {
             name: self.name,
             vpc_link_id: self.vpc_link_id,

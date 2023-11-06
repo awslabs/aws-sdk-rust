@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchDisassociateUserStack`](crate::operation::batch_disassociate_user_stack::builders::BatchDisassociateUserStackFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`user_stack_associations(UserStackAssociation)`](crate::operation::batch_disassociate_user_stack::builders::BatchDisassociateUserStackFluentBuilder::user_stack_associations) / [`set_user_stack_associations(Option<Vec<UserStackAssociation>>)`](crate::operation::batch_disassociate_user_stack::builders::BatchDisassociateUserStackFluentBuilder::set_user_stack_associations): <p>The list of UserStackAssociation objects.</p>
+    ///   - [`user_stack_associations(UserStackAssociation)`](crate::operation::batch_disassociate_user_stack::builders::BatchDisassociateUserStackFluentBuilder::user_stack_associations) / [`set_user_stack_associations(Option<Vec::<UserStackAssociation>>)`](crate::operation::batch_disassociate_user_stack::builders::BatchDisassociateUserStackFluentBuilder::set_user_stack_associations):<br>required: **true**<br><p>The list of UserStackAssociation objects.</p><br>
     /// - On success, responds with [`BatchDisassociateUserStackOutput`](crate::operation::batch_disassociate_user_stack::BatchDisassociateUserStackOutput) with field(s):
-    ///   - [`errors(Option<Vec<UserStackAssociationError>>)`](crate::operation::batch_disassociate_user_stack::BatchDisassociateUserStackOutput::errors): <p>The list of UserStackAssociationError objects.</p>
+    ///   - [`errors(Option<Vec::<UserStackAssociationError>>)`](crate::operation::batch_disassociate_user_stack::BatchDisassociateUserStackOutput::errors): <p>The list of UserStackAssociationError objects.</p>
     /// - On failure, responds with [`SdkError<BatchDisassociateUserStackError>`](crate::operation::batch_disassociate_user_stack::BatchDisassociateUserStackError)
     pub fn batch_disassociate_user_stack(
         &self,

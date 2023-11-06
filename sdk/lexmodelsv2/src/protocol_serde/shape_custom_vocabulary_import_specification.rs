@@ -45,7 +45,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::custom_vocabulary_import_specification_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -56,15 +60,15 @@ where
 pub fn ser_custom_vocabulary_import_specification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CustomVocabularyImportSpecification,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.bot_id {
-        object.key("botId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("botId").string(input.bot_id.as_str());
     }
-    if let Some(var_2) = &input.bot_version {
-        object.key("botVersion").string(var_2.as_str());
+    {
+        object.key("botVersion").string(input.bot_version.as_str());
     }
-    if let Some(var_3) = &input.locale_id {
-        object.key("localeId").string(var_3.as_str());
+    {
+        object.key("localeId").string(input.locale_id.as_str());
     }
     Ok(())
 }

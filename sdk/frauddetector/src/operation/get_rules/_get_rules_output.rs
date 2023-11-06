@@ -11,8 +11,10 @@ pub struct GetRulesOutput {
 }
 impl GetRulesOutput {
     /// <p>The details of the requested rule.</p>
-    pub fn rule_details(&self) -> ::std::option::Option<&[crate::types::RuleDetail]> {
-        self.rule_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rule_details.is_none()`.
+    pub fn rule_details(&self) -> &[crate::types::RuleDetail] {
+        self.rule_details.as_deref().unwrap_or_default()
     }
     /// <p>The next page token to be used in subsequent requests.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

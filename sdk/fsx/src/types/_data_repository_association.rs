@@ -135,8 +135,10 @@ impl DataRepositoryAssociation {
         self.s3.as_ref()
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -155,8 +157,10 @@ impl DataRepositoryAssociation {
         self.file_cache_path.as_deref()
     }
     /// <p>For Amazon File Cache, a list of NFS Exports that will be linked with an NFS data repository association. All the subdirectories must be on a single NFS file system. The Export paths are in the format <code>/exportpath1</code>. To use this parameter, you must configure <code>DataRepositoryPath</code> as the domain name of the NFS file system. The NFS file system domain name in effect is the root of the subdirectories. Note that <code>DataRepositorySubdirectories</code> is not supported for S3 data repositories.</p>
-    pub fn data_repository_subdirectories(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.data_repository_subdirectories.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_repository_subdirectories.is_none()`.
+    pub fn data_repository_subdirectories(&self) -> &[::std::string::String] {
+        self.data_repository_subdirectories.as_deref().unwrap_or_default()
     }
     /// <p>The configuration for an NFS data repository linked to an Amazon File Cache resource with a data repository association.</p>
     pub fn nfs(&self) -> ::std::option::Option<&crate::types::NfsDataRepositoryConfiguration> {

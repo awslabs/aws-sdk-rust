@@ -11,8 +11,10 @@ pub struct DescribeMaintenanceWindowsOutput {
 }
 impl DescribeMaintenanceWindowsOutput {
     /// <p>Information about the maintenance windows.</p>
-    pub fn window_identities(&self) -> ::std::option::Option<&[crate::types::MaintenanceWindowIdentity]> {
-        self.window_identities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.window_identities.is_none()`.
+    pub fn window_identities(&self) -> &[crate::types::MaintenanceWindowIdentity] {
+        self.window_identities.as_deref().unwrap_or_default()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

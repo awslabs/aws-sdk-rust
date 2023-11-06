@@ -32,8 +32,10 @@ impl CreateDomainInput {
         self.client_token.as_deref()
     }
     /// <p>A list of tags you want added to the domain.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for CreateDomainInput {
@@ -66,6 +68,7 @@ pub struct CreateDomainInputBuilder {
 }
 impl CreateDomainInputBuilder {
     /// <p>The name of the domain.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -94,6 +97,7 @@ impl CreateDomainInputBuilder {
         &self.description
     }
     /// <p>The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side encryption of your data. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid"> Amazon Connect Voice ID encryption at rest</a> for more details on how the KMS key is used. </p>
+    /// This field is required.
     pub fn server_side_encryption_configuration(mut self, input: crate::types::ServerSideEncryptionConfiguration) -> Self {
         self.server_side_encryption_configuration = ::std::option::Option::Some(input);
         self
@@ -142,7 +146,9 @@ impl CreateDomainInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateDomainInput`](crate::operation::create_domain::CreateDomainInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_domain::CreateDomainInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_domain::CreateDomainInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_domain::CreateDomainInput {
             name: self.name,
             description: self.description,

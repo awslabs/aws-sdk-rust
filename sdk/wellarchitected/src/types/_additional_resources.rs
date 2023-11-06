@@ -16,8 +16,10 @@ impl AdditionalResources {
         self.r#type.as_ref()
     }
     /// <p>The URLs for additional resources, either helpful resources or improvement plans, for a custom lens. Up to five additional URLs can be specified.</p>
-    pub fn content(&self) -> ::std::option::Option<&[crate::types::ChoiceContent]> {
-        self.content.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.content.is_none()`.
+    pub fn content(&self) -> &[crate::types::ChoiceContent] {
+        self.content.as_deref().unwrap_or_default()
     }
 }
 impl AdditionalResources {

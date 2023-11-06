@@ -70,8 +70,10 @@ impl CreateEnvironmentInput {
         self.tier.as_ref()
     }
     /// <p>Specifies the tags applied to resources in the environment.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The name of the application version to deploy.</p>
     /// <p>Default: If not specified, Elastic Beanstalk attempts to deploy the sample application.</p>
@@ -97,12 +99,16 @@ impl CreateEnvironmentInput {
         self.platform_arn.as_deref()
     }
     /// <p>If specified, AWS Elastic Beanstalk sets the specified configuration options to the requested value in the configuration set for the new environment. These override the values obtained from the solution stack or the configuration template.</p>
-    pub fn option_settings(&self) -> ::std::option::Option<&[crate::types::ConfigurationOptionSetting]> {
-        self.option_settings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.option_settings.is_none()`.
+    pub fn option_settings(&self) -> &[crate::types::ConfigurationOptionSetting] {
+        self.option_settings.as_deref().unwrap_or_default()
     }
     /// <p>A list of custom user-defined configuration options to remove from the configuration set for this new environment.</p>
-    pub fn options_to_remove(&self) -> ::std::option::Option<&[crate::types::OptionSpecification]> {
-        self.options_to_remove.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.options_to_remove.is_none()`.
+    pub fn options_to_remove(&self) -> &[crate::types::OptionSpecification] {
+        self.options_to_remove.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's operations role. If specified, Elastic Beanstalk uses the operations role for permissions to downstream services during this call and during subsequent calls acting on this environment. To specify an operations role, you must have the <code>iam:PassRole</code> permission for the role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
     pub fn operations_role(&self) -> ::std::option::Option<&str> {
@@ -137,6 +143,7 @@ pub struct CreateEnvironmentInputBuilder {
 }
 impl CreateEnvironmentInputBuilder {
     /// <p>The name of the application that is associated with this environment.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
@@ -380,7 +387,7 @@ impl CreateEnvironmentInputBuilder {
     /// Consumes the builder and constructs a [`CreateEnvironmentInput`](crate::operation::create_environment::CreateEnvironmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_environment::CreateEnvironmentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_environment::CreateEnvironmentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_environment::CreateEnvironmentInput {
             application_name: self.application_name,
             environment_name: self.environment_name,

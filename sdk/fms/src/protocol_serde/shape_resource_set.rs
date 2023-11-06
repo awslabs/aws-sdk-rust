@@ -68,7 +68,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::resource_set_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -79,35 +81,35 @@ where
 pub fn ser_resource_set(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ResourceSet,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.id {
         object.key("Id").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.name {
-        object.key("Name").string(var_2.as_str());
+    {
+        object.key("Name").string(input.name.as_str());
     }
-    if let Some(var_3) = &input.description {
-        object.key("Description").string(var_3.as_str());
+    if let Some(var_2) = &input.description {
+        object.key("Description").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.update_token {
-        object.key("UpdateToken").string(var_4.as_str());
+    if let Some(var_3) = &input.update_token {
+        object.key("UpdateToken").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.resource_type_list {
-        let mut array_6 = object.key("ResourceTypeList").start_array();
-        for item_7 in var_5 {
+    {
+        let mut array_4 = object.key("ResourceTypeList").start_array();
+        for item_5 in &input.resource_type_list {
             {
-                array_6.value().string(item_7.as_str());
+                array_4.value().string(item_5.as_str());
             }
         }
-        array_6.finish();
+        array_4.finish();
     }
-    if let Some(var_8) = &input.last_update_time {
+    if let Some(var_6) = &input.last_update_time {
         object
             .key("LastUpdateTime")
-            .date_time(var_8, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_6, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_9) = &input.resource_set_status {
-        object.key("ResourceSetStatus").string(var_9.as_str());
+    if let Some(var_7) = &input.resource_set_status {
+        object.key("ResourceSetStatus").string(var_7.as_str());
     }
     Ok(())
 }

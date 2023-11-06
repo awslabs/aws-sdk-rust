@@ -27,6 +27,7 @@ pub struct DeleteOptOutListInputBuilder {
 }
 impl DeleteOptOutListInputBuilder {
     /// <p>The OptOutListName or OptOutListArn of the OptOutList to delete. You can use <code>DescribeOptOutLists</code> to find the values for OptOutListName and OptOutListArn.</p>
+    /// This field is required.
     pub fn opt_out_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.opt_out_list_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteOptOutListInputBuilder {
     /// Consumes the builder and constructs a [`DeleteOptOutListInput`](crate::operation::delete_opt_out_list::DeleteOptOutListInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_opt_out_list::DeleteOptOutListInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_opt_out_list::DeleteOptOutListInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_opt_out_list::DeleteOptOutListInput {
             opt_out_list_name: self.opt_out_list_name,
         })

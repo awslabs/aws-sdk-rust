@@ -11,8 +11,10 @@ pub struct TableExcerpt {
 }
 impl TableExcerpt {
     /// <p>A list of rows in the table excerpt.</p>
-    pub fn rows(&self) -> ::std::option::Option<&[crate::types::TableRow]> {
-        self.rows.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rows.is_none()`.
+    pub fn rows(&self) -> &[crate::types::TableRow] {
+        self.rows.as_deref().unwrap_or_default()
     }
     /// <p>A count of the number of rows in the original table within the document.</p>
     pub fn total_number_of_rows(&self) -> ::std::option::Option<i32> {

@@ -142,10 +142,7 @@ pub(crate) fn reflens_search_organization_insights_output_next_token(
 pub(crate) fn lens_list_events_output_events(
     input: crate::operation::list_events::ListEventsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Event>> {
-    let input = match input.events {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.events;
     ::std::option::Option::Some(input)
 }
 

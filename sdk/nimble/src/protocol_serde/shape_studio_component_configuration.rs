@@ -2,7 +2,7 @@
 pub fn ser_studio_component_configuration(
     object_2: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StudioComponentConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::StudioComponentConfiguration::ActiveDirectoryConfiguration(inner) => {
             #[allow(unused_mut)]
@@ -29,7 +29,7 @@ pub fn ser_studio_component_configuration(
             object_4.finish();
         }
         crate::types::StudioComponentConfiguration::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "StudioComponentConfiguration",
             ))
         }
@@ -50,12 +50,17 @@ where
             match tokens.next().transpose()? {
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                    let key = key.to_unescaped()?;
+                    if key == "__type" {
+                        ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                        continue;
+                    }
                     if variant.is_some() {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
                             "encountered mixed variants in union",
                         ));
                     }
-                    variant = match key.to_unescaped()?.as_ref() {
+                    variant = match key.as_ref() {
                         "activeDirectoryConfiguration" => Some(crate::types::StudioComponentConfiguration::ActiveDirectoryConfiguration(
                             crate::protocol_serde::shape_active_directory_configuration::de_active_directory_configuration(tokens)?.ok_or_else(
                                 || {

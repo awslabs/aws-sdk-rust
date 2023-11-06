@@ -6,7 +6,7 @@ pub struct ListWorkflowsOutput {
     /// <p> <code>ListWorkflows</code> returns the <code>NextToken</code> parameter in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional workflows.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Returns the <code>Arn</code>, <code>WorkflowId</code>, and <code>Description</code> for each workflow.</p>
-    pub workflows: ::std::option::Option<::std::vec::Vec<crate::types::ListedWorkflow>>,
+    pub workflows: ::std::vec::Vec<crate::types::ListedWorkflow>,
     _request_id: Option<String>,
 }
 impl ListWorkflowsOutput {
@@ -15,8 +15,9 @@ impl ListWorkflowsOutput {
         self.next_token.as_deref()
     }
     /// <p>Returns the <code>Arn</code>, <code>WorkflowId</code>, and <code>Description</code> for each workflow.</p>
-    pub fn workflows(&self) -> ::std::option::Option<&[crate::types::ListedWorkflow]> {
-        self.workflows.as_deref()
+    pub fn workflows(&self) -> &[crate::types::ListedWorkflow] {
+        use std::ops::Deref;
+        self.workflows.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListWorkflowsOutput {
@@ -84,11 +85,20 @@ impl ListWorkflowsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListWorkflowsOutput`](crate::operation::list_workflows::ListWorkflowsOutput).
-    pub fn build(self) -> crate::operation::list_workflows::ListWorkflowsOutput {
-        crate::operation::list_workflows::ListWorkflowsOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workflows`](crate::operation::list_workflows::builders::ListWorkflowsOutputBuilder::workflows)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_workflows::ListWorkflowsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_workflows::ListWorkflowsOutput {
             next_token: self.next_token,
-            workflows: self.workflows,
+            workflows: self.workflows.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "workflows",
+                    "workflows was not specified but it is required when building ListWorkflowsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -6,10 +6,11 @@
 
 //! Maintain a cache of discovered endpoints
 
+use aws_smithy_async::future::BoxFuture;
 use aws_smithy_async::rt::sleep::{AsyncSleep, SharedAsyncSleep};
 use aws_smithy_async::time::SharedTimeSource;
-use aws_smithy_client::erase::boxclone::BoxFuture;
-use aws_smithy_http::endpoint::{ResolveEndpoint, ResolveEndpointError};
+use aws_smithy_runtime_api::box_error::BoxError;
+use aws_smithy_runtime_api::client::endpoint::{EndpointFuture, EndpointResolverParams, ResolveEndpoint};
 use aws_smithy_types::endpoint::Endpoint;
 use std::fmt::{Debug, Formatter};
 use std::future::Future;
@@ -21,9 +22,9 @@ use tokio::sync::oneshot::{Receiver, Sender};
 /// Endpoint reloader
 #[must_use]
 pub struct ReloadEndpoint {
-    loader: Box<dyn Fn() -> BoxFuture<(Endpoint, SystemTime), ResolveEndpointError> + Send + Sync>,
+    loader: Box<dyn Fn() -> BoxFuture<'static, (Endpoint, SystemTime), BoxError> + Send + Sync>,
     endpoint: Arc<Mutex<Option<ExpiringEndpoint>>>,
-    error: Arc<Mutex<Option<ResolveEndpointError>>>,
+    error: Arc<Mutex<Option<BoxError>>>,
     rx: Receiver<()>,
     sleep: SharedAsyncSleep,
     time: SharedTimeSource,
@@ -72,14 +73,14 @@ impl ReloadEndpoint {
 
 #[derive(Debug, Clone)]
 pub(crate) struct EndpointCache {
-    error: Arc<Mutex<Option<ResolveEndpointError>>>,
+    error: Arc<Mutex<Option<BoxError>>>,
     endpoint: Arc<Mutex<Option<ExpiringEndpoint>>>,
     // When the sender is dropped, this allows the reload loop to stop
     _drop_guard: Arc<Sender<()>>,
 }
 
-impl<T> ResolveEndpoint<T> for EndpointCache {
-    fn resolve_endpoint(&self, _params: &T) -> aws_smithy_http::endpoint::Result {
+impl ResolveEndpoint for EndpointCache {
+    fn resolve_endpoint<'a>(&'a self, _params: &'a EndpointResolverParams) -> EndpointFuture<'a> {
         self.resolve_endpoint()
     }
 }
@@ -104,9 +105,9 @@ pub(crate) async fn create_cache<F>(
     loader_fn: impl Fn() -> F + Send + Sync + 'static,
     sleep: SharedAsyncSleep,
     time: SharedTimeSource,
-) -> Result<(EndpointCache, ReloadEndpoint), ResolveEndpointError>
+) -> Result<(EndpointCache, ReloadEndpoint), BoxError>
 where
-    F: Future<Output = Result<(Endpoint, SystemTime), ResolveEndpointError>> + Send + 'static,
+    F: Future<Output = Result<(Endpoint, SystemTime), BoxError>> + Send + 'static,
 {
     let error_holder = Arc::new(Mutex::new(None));
     let endpoint_holder = Arc::new(Mutex::new(None));
@@ -128,20 +129,18 @@ where
     reloader.reload_once().await;
     // if we didn't successfully get an endpoint, bail out so the client knows
     // configuration failed to work
-    cache.resolve_endpoint()?;
+    cache.resolve_endpoint().await?;
     Ok((cache, reloader))
 }
 
 impl EndpointCache {
-    fn resolve_endpoint(&self) -> aws_smithy_http::endpoint::Result {
+    fn resolve_endpoint(&self) -> EndpointFuture<'_> {
         tracing::trace!("resolving endpoint from endpoint discovery cache");
-        self.endpoint.lock().unwrap().as_ref().map(|e| e.endpoint.clone()).ok_or_else(|| {
-            self.error
-                .lock()
-                .unwrap()
-                .take()
-                .unwrap_or_else(|| ResolveEndpointError::message("no endpoint loaded"))
-        })
+        let ep = self.endpoint.lock().unwrap().as_ref().map(|e| e.endpoint.clone()).ok_or_else(|| {
+            let error: Option<BoxError> = self.error.lock().unwrap().take();
+            error.unwrap_or_else(|| "Failed to resolve endpoint".into())
+        });
+        EndpointFuture::ready(ep)
     }
 }
 
@@ -190,13 +189,13 @@ mod test {
         )
         .await
         .expect("returns an endpoint");
-        assert_eq!(cache.resolve_endpoint().expect("ok").url(), "http://foo.com/1");
+        assert_eq!(cache.resolve_endpoint().await.expect("ok").url(), "http://foo.com/1");
         // 120 second buffer
         reloader.reload_increment(expiry - Duration::from_secs(240)).await;
-        assert_eq!(cache.resolve_endpoint().expect("ok").url(), "http://foo.com/1");
+        assert_eq!(cache.resolve_endpoint().await.expect("ok").url(), "http://foo.com/1");
 
         reloader.reload_increment(expiry).await;
-        assert_eq!(cache.resolve_endpoint().expect("ok").url(), "http://foo.com/2");
+        assert_eq!(cache.resolve_endpoint().await.expect("ok").url(), "http://foo.com/2");
     }
 
     #[tokio::test]
@@ -221,18 +220,18 @@ mod test {
         // expiry occurs after 2 sleeps
         // t = 0
         assert_eq!(gate.expect_sleep().await.duration(), Duration::from_secs(60));
-        assert_eq!(cache.resolve_endpoint().unwrap().url(), "http://foo.com/1");
+        assert_eq!(cache.resolve_endpoint().await.unwrap().url(), "http://foo.com/1");
         // t = 60
 
         let sleep = gate.expect_sleep().await;
         // we're still holding the drop guard, so we haven't expired yet.
-        assert_eq!(cache.resolve_endpoint().unwrap().url(), "http://foo.com/1");
+        assert_eq!(cache.resolve_endpoint().await.unwrap().url(), "http://foo.com/1");
         assert_eq!(sleep.duration(), Duration::from_secs(60));
         sleep.allow_progress();
         // t = 120
 
         let sleep = gate.expect_sleep().await;
-        assert_eq!(cache.resolve_endpoint().unwrap().url(), "http://foo.com/2");
+        assert_eq!(cache.resolve_endpoint().await.unwrap().url(), "http://foo.com/2");
         sleep.allow_progress();
 
         let sleep = gate.expect_sleep().await;

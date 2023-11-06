@@ -69,6 +69,7 @@ pub struct CreateListenerInputBuilder {
 }
 impl CreateListenerInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    /// This field is required.
     pub fn service_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_identifier = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +84,7 @@ impl CreateListenerInputBuilder {
         &self.service_identifier
     }
     /// <p>The name of the listener. A listener name must be unique within a service. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +99,7 @@ impl CreateListenerInputBuilder {
         &self.name
     }
     /// <p>The listener protocol HTTP or HTTPS.</p>
+    /// This field is required.
     pub fn protocol(mut self, input: crate::types::ListenerProtocol) -> Self {
         self.protocol = ::std::option::Option::Some(input);
         self
@@ -125,6 +128,7 @@ impl CreateListenerInputBuilder {
         &self.port
     }
     /// <p>The action for the default rule. Each listener has a default rule. Each rule consists of a priority, one or more actions, and one or more conditions. The default rule is the rule that's used if no other rules match. Each rule must include exactly one of the following types of actions: <code>forward </code>or <code>fixed-response</code>, and it must be the last action to be performed. </p>
+    /// This field is required.
     pub fn default_action(mut self, input: crate::types::RuleAction) -> Self {
         self.default_action = ::std::option::Option::Some(input);
         self
@@ -175,7 +179,7 @@ impl CreateListenerInputBuilder {
     /// Consumes the builder and constructs a [`CreateListenerInput`](crate::operation::create_listener::CreateListenerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_listener::CreateListenerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_listener::CreateListenerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_listener::CreateListenerInput {
             service_identifier: self.service_identifier,
             name: self.name,

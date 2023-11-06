@@ -49,6 +49,7 @@ pub struct JourneyRunResponseBuilder {
 }
 impl JourneyRunResponseBuilder {
     /// <p>The time when the journey run was created or scheduled, in ISO 8601 format.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_time = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl JourneyRunResponseBuilder {
         &self.creation_time
     }
     /// <p>The last time the journey run was updated, in ISO 8601 format..</p>
+    /// This field is required.
     pub fn last_update_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_update_time = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +79,7 @@ impl JourneyRunResponseBuilder {
         &self.last_update_time
     }
     /// <p>The unique identifier for the run.</p>
+    /// This field is required.
     pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.run_id = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +94,7 @@ impl JourneyRunResponseBuilder {
         &self.run_id
     }
     /// <p>The current status of the journey run.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::JourneyRunStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self

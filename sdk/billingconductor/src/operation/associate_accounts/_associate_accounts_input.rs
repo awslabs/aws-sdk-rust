@@ -14,8 +14,10 @@ impl AssociateAccountsInput {
         self.arn.as_deref()
     }
     /// <p> The associating array of account IDs. </p>
-    pub fn account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.account_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
+    pub fn account_ids(&self) -> &[::std::string::String] {
+        self.account_ids.as_deref().unwrap_or_default()
     }
 }
 impl AssociateAccountsInput {
@@ -34,6 +36,7 @@ pub struct AssociateAccountsInputBuilder {
 }
 impl AssociateAccountsInputBuilder {
     /// <p> The Amazon Resource Name (ARN) of the billing group that associates the array of account IDs. </p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +73,7 @@ impl AssociateAccountsInputBuilder {
     /// Consumes the builder and constructs a [`AssociateAccountsInput`](crate::operation::associate_accounts::AssociateAccountsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_accounts::AssociateAccountsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::associate_accounts::AssociateAccountsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::associate_accounts::AssociateAccountsInput {
             arn: self.arn,
             account_ids: self.account_ids,

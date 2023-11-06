@@ -27,6 +27,7 @@ pub struct CancelClusterInputBuilder {
 }
 impl CancelClusterInputBuilder {
     /// <p>The 39-character ID for the cluster that you want to cancel, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    /// This field is required.
     pub fn cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl CancelClusterInputBuilder {
     /// Consumes the builder and constructs a [`CancelClusterInput`](crate::operation::cancel_cluster::CancelClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_cluster::CancelClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::cancel_cluster::CancelClusterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_cluster::CancelClusterInput { cluster_id: self.cluster_id })
     }
 }

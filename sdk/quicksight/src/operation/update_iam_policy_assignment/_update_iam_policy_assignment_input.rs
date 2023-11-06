@@ -72,6 +72,7 @@ pub struct UpdateIamPolicyAssignmentInputBuilder {
 }
 impl UpdateIamPolicyAssignmentInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the IAM policy assignment. </p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -86,6 +87,7 @@ impl UpdateIamPolicyAssignmentInputBuilder {
         &self.aws_account_id
     }
     /// <p>The name of the assignment, also called a rule. The name must be unique within the Amazon Web Services account.</p>
+    /// This field is required.
     pub fn assignment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assignment_name = ::std::option::Option::Some(input.into());
         self
@@ -100,6 +102,7 @@ impl UpdateIamPolicyAssignmentInputBuilder {
         &self.assignment_name
     }
     /// <p>The namespace of the assignment.</p>
+    /// This field is required.
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
         self
@@ -186,7 +189,7 @@ impl UpdateIamPolicyAssignmentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_iam_policy_assignment::UpdateIamPolicyAssignmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_iam_policy_assignment::UpdateIamPolicyAssignmentInput {
             aws_account_id: self.aws_account_id,

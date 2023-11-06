@@ -2,51 +2,51 @@
 pub fn ser_execute_statement_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::execute_statement::ExecuteStatementInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.continue_after_timeout {
-        object.key("continueAfterTimeout").boolean(input.continue_after_timeout);
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    if let Some(var_1) = &input.continue_after_timeout {
+        object.key("continueAfterTimeout").boolean(*var_1);
     }
-    if let Some(var_1) = &input.database {
-        object.key("database").string(var_1.as_str());
+    if let Some(var_2) = &input.database {
+        object.key("database").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.format_records_as {
-        object.key("formatRecordsAs").string(var_2.as_str());
+    if let Some(var_3) = &input.format_records_as {
+        object.key("formatRecordsAs").string(var_3.as_str());
     }
-    if input.include_result_metadata {
-        object.key("includeResultMetadata").boolean(input.include_result_metadata);
+    if let Some(var_4) = &input.include_result_metadata {
+        object.key("includeResultMetadata").boolean(*var_4);
     }
-    if let Some(var_3) = &input.parameters {
-        let mut array_4 = object.key("parameters").start_array();
-        for item_5 in var_3 {
+    if let Some(var_5) = &input.parameters {
+        let mut array_6 = object.key("parameters").start_array();
+        for item_7 in var_5 {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_sql_parameter::ser_sql_parameter(&mut object_6, item_5)?;
-                object_6.finish();
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_sql_parameter::ser_sql_parameter(&mut object_8, item_7)?;
+                object_8.finish();
             }
         }
-        array_4.finish();
+        array_6.finish();
     }
-    if let Some(var_7) = &input.resource_arn {
-        object.key("resourceArn").string(var_7.as_str());
+    if let Some(var_9) = &input.resource_arn {
+        object.key("resourceArn").string(var_9.as_str());
     }
-    if let Some(var_8) = &input.result_set_options {
+    if let Some(var_10) = &input.result_set_options {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("resultSetOptions").start_object();
-        crate::protocol_serde::shape_result_set_options::ser_result_set_options(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_11 = object.key("resultSetOptions").start_object();
+        crate::protocol_serde::shape_result_set_options::ser_result_set_options(&mut object_11, var_10)?;
+        object_11.finish();
     }
-    if let Some(var_10) = &input.schema {
-        object.key("schema").string(var_10.as_str());
+    if let Some(var_12) = &input.schema {
+        object.key("schema").string(var_12.as_str());
     }
-    if let Some(var_11) = &input.secret_arn {
-        object.key("secretArn").string(var_11.as_str());
+    if let Some(var_13) = &input.secret_arn {
+        object.key("secretArn").string(var_13.as_str());
     }
-    if let Some(var_12) = &input.sql {
-        object.key("sql").string(var_12.as_str());
+    if let Some(var_14) = &input.sql {
+        object.key("sql").string(var_14.as_str());
     }
-    if let Some(var_13) = &input.transaction_id {
-        object.key("transactionId").string(var_13.as_str());
+    if let Some(var_15) = &input.transaction_id {
+        object.key("transactionId").string(var_15.as_str());
     }
     Ok(())
 }

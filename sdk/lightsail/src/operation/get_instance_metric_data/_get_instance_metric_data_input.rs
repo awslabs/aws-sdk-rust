@@ -86,8 +86,10 @@ impl GetInstanceMetricDataInput {
     /// <li> <p> <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your resources.</p> </li>
     /// <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>
     /// </ul>
-    pub fn statistics(&self) -> ::std::option::Option<&[crate::types::MetricStatistic]> {
-        self.statistics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.statistics.is_none()`.
+    pub fn statistics(&self) -> &[crate::types::MetricStatistic] {
+        self.statistics.as_deref().unwrap_or_default()
     }
 }
 impl GetInstanceMetricDataInput {
@@ -111,6 +113,7 @@ pub struct GetInstanceMetricDataInputBuilder {
 }
 impl GetInstanceMetricDataInputBuilder {
     /// <p>The name of the instance for which you want to get metrics data.</p>
+    /// This field is required.
     pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_name = ::std::option::Option::Some(input.into());
         self
@@ -137,6 +140,7 @@ impl GetInstanceMetricDataInputBuilder {
     /// <li> <p> <b> <code>StatusCheckFailed_System</code> </b> - Reports whether the instance passed or failed the system status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds) granularity.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
     /// <li> <p> <b> <code>MetadataNoToken</code> </b> - Reports the number of times that the instance metadata service was successfully accessed without a token. This metric determines if there are any processes accessing instance metadata by using Instance Metadata Service Version 1, which doesn't use a token. If all requests use token-backed sessions, such as Instance Metadata Service Version 2, then the value is 0.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn metric_name(mut self, input: crate::types::InstanceMetricName) -> Self {
         self.metric_name = ::std::option::Option::Some(input);
         self
@@ -176,6 +180,7 @@ impl GetInstanceMetricDataInputBuilder {
     }
     /// <p>The granularity, in seconds, of the returned data points.</p>
     /// <p>The <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and <code>StatusCheckFailed_System</code> instance metric data is available in 1-minute (60 seconds) granularity. All other instance metric data is available in 5-minute (300 seconds) granularity.</p>
+    /// This field is required.
     pub fn period(mut self, input: i32) -> Self {
         self.period = ::std::option::Option::Some(input);
         self
@@ -192,6 +197,7 @@ impl GetInstanceMetricDataInputBuilder {
         &self.period
     }
     /// <p>The start time of the time period.</p>
+    /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
@@ -206,6 +212,7 @@ impl GetInstanceMetricDataInputBuilder {
         &self.start_time
     }
     /// <p>The end time of the time period.</p>
+    /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
@@ -220,6 +227,7 @@ impl GetInstanceMetricDataInputBuilder {
         &self.end_time
     }
     /// <p>The unit for the metric data request. Valid units depend on the metric data being requested. For the valid units to specify with each available metric, see the <code>metricName</code> parameter.</p>
+    /// This field is required.
     pub fn unit(mut self, input: crate::types::MetricUnit) -> Self {
         self.unit = ::std::option::Option::Some(input);
         self
@@ -280,7 +288,7 @@ impl GetInstanceMetricDataInputBuilder {
     /// Consumes the builder and constructs a [`GetInstanceMetricDataInput`](crate::operation::get_instance_metric_data::GetInstanceMetricDataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_instance_metric_data::GetInstanceMetricDataInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_instance_metric_data::GetInstanceMetricDataInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_instance_metric_data::GetInstanceMetricDataInput {
             instance_name: self.instance_name,

@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WatchlistDetails {
     /// <p>The identifier of the default watchlist.</p>
-    pub default_watchlist_id: ::std::option::Option<::std::string::String>,
+    pub default_watchlist_id: ::std::string::String,
 }
 impl WatchlistDetails {
     /// <p>The identifier of the default watchlist.</p>
-    pub fn default_watchlist_id(&self) -> ::std::option::Option<&str> {
-        self.default_watchlist_id.as_deref()
+    pub fn default_watchlist_id(&self) -> &str {
+        use std::ops::Deref;
+        self.default_watchlist_id.deref()
     }
 }
 impl WatchlistDetails {
@@ -28,6 +29,7 @@ pub struct WatchlistDetailsBuilder {
 }
 impl WatchlistDetailsBuilder {
     /// <p>The identifier of the default watchlist.</p>
+    /// This field is required.
     pub fn default_watchlist_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_watchlist_id = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl WatchlistDetailsBuilder {
         &self.default_watchlist_id
     }
     /// Consumes the builder and constructs a [`WatchlistDetails`](crate::types::WatchlistDetails).
-    pub fn build(self) -> crate::types::WatchlistDetails {
-        crate::types::WatchlistDetails {
-            default_watchlist_id: self.default_watchlist_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`default_watchlist_id`](crate::types::builders::WatchlistDetailsBuilder::default_watchlist_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::WatchlistDetails, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::WatchlistDetails {
+            default_watchlist_id: self.default_watchlist_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "default_watchlist_id",
+                    "default_watchlist_id was not specified but it is required when building WatchlistDetails",
+                )
+            })?,
+        })
     }
 }

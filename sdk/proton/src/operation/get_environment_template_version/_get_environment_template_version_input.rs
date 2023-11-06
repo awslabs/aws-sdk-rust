@@ -41,6 +41,7 @@ pub struct GetEnvironmentTemplateVersionInputBuilder {
 }
 impl GetEnvironmentTemplateVersionInputBuilder {
     /// <p>The name of the environment template a version of which you want to get detailed data for.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl GetEnvironmentTemplateVersionInputBuilder {
         &self.template_name
     }
     /// <p>To get environment template major version detail data, include <code>major Version</code>.</p>
+    /// This field is required.
     pub fn major_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.major_version = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl GetEnvironmentTemplateVersionInputBuilder {
         &self.major_version
     }
     /// <p>To get environment template minor version detail data, include <code>minorVersion</code>.</p>
+    /// This field is required.
     pub fn minor_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.minor_version = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +90,7 @@ impl GetEnvironmentTemplateVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_environment_template_version::GetEnvironmentTemplateVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_environment_template_version::GetEnvironmentTemplateVersionInput {
             template_name: self.template_name,

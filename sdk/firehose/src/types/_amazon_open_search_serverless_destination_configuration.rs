@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AmazonOpenSearchServerlessDestinationConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Serverless offering for Amazon OpenSearch Service Configuration API and for indexing documents.</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
     /// <p>The endpoint to use when communicating with the collection in the Serverless offering for Amazon OpenSearch Service.</p>
     pub collection_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The Serverless offering for Amazon OpenSearch Service index name.</p>
-    pub index_name: ::std::option::Option<::std::string::String>,
+    pub index_name: ::std::string::String,
     /// <p>The buffering options. If no value is specified, the default values for AmazonopensearchserviceBufferingHints are used.</p>
     pub buffering_hints: ::std::option::Option<crate::types::AmazonOpenSearchServerlessBufferingHints>,
     /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to the Serverless offering for Amazon OpenSearch Service. The default value is 300 (5 minutes).</p>
@@ -27,16 +27,18 @@ pub struct AmazonOpenSearchServerlessDestinationConfiguration {
 }
 impl AmazonOpenSearchServerlessDestinationConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Serverless offering for Amazon OpenSearch Service Configuration API and for indexing documents.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
     /// <p>The endpoint to use when communicating with the collection in the Serverless offering for Amazon OpenSearch Service.</p>
     pub fn collection_endpoint(&self) -> ::std::option::Option<&str> {
         self.collection_endpoint.as_deref()
     }
     /// <p>The Serverless offering for Amazon OpenSearch Service index name.</p>
-    pub fn index_name(&self) -> ::std::option::Option<&str> {
-        self.index_name.as_deref()
+    pub fn index_name(&self) -> &str {
+        use std::ops::Deref;
+        self.index_name.deref()
     }
     /// <p>The buffering options. If no value is specified, the default values for AmazonopensearchserviceBufferingHints are used.</p>
     pub fn buffering_hints(&self) -> ::std::option::Option<&crate::types::AmazonOpenSearchServerlessBufferingHints> {
@@ -91,6 +93,7 @@ pub struct AmazonOpenSearchServerlessDestinationConfigurationBuilder {
 }
 impl AmazonOpenSearchServerlessDestinationConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Serverless offering for Amazon OpenSearch Service Configuration API and for indexing documents.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +122,7 @@ impl AmazonOpenSearchServerlessDestinationConfigurationBuilder {
         &self.collection_endpoint
     }
     /// <p>The Serverless offering for Amazon OpenSearch Service index name.</p>
+    /// This field is required.
     pub fn index_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_name = ::std::option::Option::Some(input.into());
         self
@@ -175,6 +179,7 @@ impl AmazonOpenSearchServerlessDestinationConfigurationBuilder {
         &self.s3_backup_mode
     }
     /// <p>Describes the configuration of a destination in Amazon S3.</p>
+    /// This field is required.
     pub fn s3_configuration(mut self, input: crate::types::S3DestinationConfiguration) -> Self {
         self.s3_configuration = ::std::option::Option::Some(input);
         self
@@ -231,11 +236,27 @@ impl AmazonOpenSearchServerlessDestinationConfigurationBuilder {
         &self.vpc_configuration
     }
     /// Consumes the builder and constructs a [`AmazonOpenSearchServerlessDestinationConfiguration`](crate::types::AmazonOpenSearchServerlessDestinationConfiguration).
-    pub fn build(self) -> crate::types::AmazonOpenSearchServerlessDestinationConfiguration {
-        crate::types::AmazonOpenSearchServerlessDestinationConfiguration {
-            role_arn: self.role_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`role_arn`](crate::types::builders::AmazonOpenSearchServerlessDestinationConfigurationBuilder::role_arn)
+    /// - [`index_name`](crate::types::builders::AmazonOpenSearchServerlessDestinationConfigurationBuilder::index_name)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::AmazonOpenSearchServerlessDestinationConfiguration, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::types::AmazonOpenSearchServerlessDestinationConfiguration {
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building AmazonOpenSearchServerlessDestinationConfiguration",
+                )
+            })?,
             collection_endpoint: self.collection_endpoint,
-            index_name: self.index_name,
+            index_name: self.index_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "index_name",
+                    "index_name was not specified but it is required when building AmazonOpenSearchServerlessDestinationConfiguration",
+                )
+            })?,
             buffering_hints: self.buffering_hints,
             retry_options: self.retry_options,
             s3_backup_mode: self.s3_backup_mode,
@@ -243,6 +264,6 @@ impl AmazonOpenSearchServerlessDestinationConfigurationBuilder {
             processing_configuration: self.processing_configuration,
             cloud_watch_logging_options: self.cloud_watch_logging_options,
             vpc_configuration: self.vpc_configuration,
-        }
+        })
     }
 }

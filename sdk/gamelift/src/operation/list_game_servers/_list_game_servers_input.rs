@@ -48,6 +48,7 @@ pub struct ListGameServersInputBuilder {
 }
 impl ListGameServersInputBuilder {
     /// <p>An identifier for the game server group to retrieve a list of game servers from. Use either the name or ARN value.</p>
+    /// This field is required.
     pub fn game_server_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_server_group_name = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,7 @@ impl ListGameServersInputBuilder {
     /// Consumes the builder and constructs a [`ListGameServersInput`](crate::operation::list_game_servers::ListGameServersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_game_servers::ListGameServersInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_game_servers::ListGameServersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_game_servers::ListGameServersInput {
             game_server_group_name: self.game_server_group_name,
             sort_order: self.sort_order,

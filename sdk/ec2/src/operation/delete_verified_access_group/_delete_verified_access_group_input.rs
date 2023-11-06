@@ -41,6 +41,7 @@ pub struct DeleteVerifiedAccessGroupInputBuilder {
 }
 impl DeleteVerifiedAccessGroupInputBuilder {
     /// <p>The ID of the Verified Access group.</p>
+    /// This field is required.
     pub fn verified_access_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.verified_access_group_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl DeleteVerifiedAccessGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_verified_access_group::DeleteVerifiedAccessGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_verified_access_group::DeleteVerifiedAccessGroupInput {
             verified_access_group_id: self.verified_access_group_id,

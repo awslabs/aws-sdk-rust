@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JsonFormatRef {
     /// <p>The specified key for the JSON.</p>
-    pub key: ::std::option::Option<::std::string::String>,
+    pub key: ::std::string::String,
     /// <p>The specified value for the JSON.</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
 }
 impl JsonFormatRef {
     /// <p>The specified key for the JSON.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
-        self.key.as_deref()
+    pub fn key(&self) -> &str {
+        use std::ops::Deref;
+        self.key.deref()
     }
     /// <p>The specified value for the JSON.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
 }
 impl JsonFormatRef {
@@ -35,6 +37,7 @@ pub struct JsonFormatRefBuilder {
 }
 impl JsonFormatRefBuilder {
     /// <p>The specified key for the JSON.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl JsonFormatRefBuilder {
         &self.key
     }
     /// <p>The specified value for the JSON.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl JsonFormatRefBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`JsonFormatRef`](crate::types::JsonFormatRef).
-    pub fn build(self) -> crate::types::JsonFormatRef {
-        crate::types::JsonFormatRef {
-            key: self.key,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key`](crate::types::builders::JsonFormatRefBuilder::key)
+    /// - [`value`](crate::types::builders::JsonFormatRefBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::JsonFormatRef, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::JsonFormatRef {
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building JsonFormatRef",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building JsonFormatRef",
+                )
+            })?,
+        })
     }
 }

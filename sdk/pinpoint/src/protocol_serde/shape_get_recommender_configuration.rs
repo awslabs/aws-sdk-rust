@@ -153,6 +153,6 @@ pub fn de_get_recommender_configuration_http_response(
             crate::protocol_serde::shape_get_recommender_configuration_output::de_recommender_configuration_response_payload(_response_body)?,
         );
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::get_recommender_configuration_output_correct_errors(output).build()
     })
 }

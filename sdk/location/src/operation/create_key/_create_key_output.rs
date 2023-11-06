@@ -4,37 +4,40 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateKeyOutput {
     /// <p>The key value/string of an API key. This value is used when making API calls to authorize the call. For example, see <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_GetMapGlyphs.html">GetMapGlyphs</a>.</p>
-    pub key: ::std::option::Option<::std::string::String>,
+    pub key: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) for the API key resource. Used when you need to specify a resource across all Amazon Web Services.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:key/ExampleKey</code> </p> </li>
     /// </ul>
-    pub key_arn: ::std::option::Option<::std::string::String>,
+    pub key_arn: ::std::string::String,
     /// <p>The name of the API key resource.</p>
-    pub key_name: ::std::option::Option<::std::string::String>,
+    pub key_name: ::std::string::String,
     /// <p>The timestamp for when the API key resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub create_time: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
 impl CreateKeyOutput {
     /// <p>The key value/string of an API key. This value is used when making API calls to authorize the call. For example, see <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_GetMapGlyphs.html">GetMapGlyphs</a>.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
-        self.key.as_deref()
+    pub fn key(&self) -> &str {
+        use std::ops::Deref;
+        self.key.deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the API key resource. Used when you need to specify a resource across all Amazon Web Services.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:key/ExampleKey</code> </p> </li>
     /// </ul>
-    pub fn key_arn(&self) -> ::std::option::Option<&str> {
-        self.key_arn.as_deref()
+    pub fn key_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.key_arn.deref()
     }
     /// <p>The name of the API key resource.</p>
-    pub fn key_name(&self) -> ::std::option::Option<&str> {
-        self.key_name.as_deref()
+    pub fn key_name(&self) -> &str {
+        use std::ops::Deref;
+        self.key_name.deref()
     }
     /// <p>The timestamp for when the API key resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.create_time.as_ref()
+    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.create_time
     }
 }
 impl ::std::fmt::Debug for CreateKeyOutput {
@@ -72,6 +75,7 @@ pub struct CreateKeyOutputBuilder {
 }
 impl CreateKeyOutputBuilder {
     /// <p>The key value/string of an API key. This value is used when making API calls to authorize the call. For example, see <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_GetMapGlyphs.html">GetMapGlyphs</a>.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -89,6 +93,7 @@ impl CreateKeyOutputBuilder {
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:key/ExampleKey</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_arn = ::std::option::Option::Some(input.into());
         self
@@ -109,6 +114,7 @@ impl CreateKeyOutputBuilder {
         &self.key_arn
     }
     /// <p>The name of the API key resource.</p>
+    /// This field is required.
     pub fn key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_name = ::std::option::Option::Some(input.into());
         self
@@ -123,6 +129,7 @@ impl CreateKeyOutputBuilder {
         &self.key_name
     }
     /// <p>The timestamp for when the API key resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// This field is required.
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
         self
@@ -146,14 +153,39 @@ impl CreateKeyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateKeyOutput`](crate::operation::create_key::CreateKeyOutput).
-    pub fn build(self) -> crate::operation::create_key::CreateKeyOutput {
-        crate::operation::create_key::CreateKeyOutput {
-            key: self.key,
-            key_arn: self.key_arn,
-            key_name: self.key_name,
-            create_time: self.create_time,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key`](crate::operation::create_key::builders::CreateKeyOutputBuilder::key)
+    /// - [`key_arn`](crate::operation::create_key::builders::CreateKeyOutputBuilder::key_arn)
+    /// - [`key_name`](crate::operation::create_key::builders::CreateKeyOutputBuilder::key_name)
+    /// - [`create_time`](crate::operation::create_key::builders::CreateKeyOutputBuilder::create_time)
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_key::CreateKeyOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_key::CreateKeyOutput {
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building CreateKeyOutput",
+                )
+            })?,
+            key_arn: self.key_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "key_arn",
+                    "key_arn was not specified but it is required when building CreateKeyOutput",
+                )
+            })?,
+            key_name: self.key_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "key_name",
+                    "key_name was not specified but it is required when building CreateKeyOutput",
+                )
+            })?,
+            create_time: self.create_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "create_time",
+                    "create_time was not specified but it is required when building CreateKeyOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for CreateKeyOutputBuilder {

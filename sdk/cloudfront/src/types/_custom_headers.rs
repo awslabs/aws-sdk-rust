@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomHeaders {
     /// <p>The number of custom headers, if any, for this distribution.</p>
-    pub quantity: ::std::option::Option<i32>,
+    pub quantity: i32,
     /// <p> <b>Optional</b>: A list that contains one <code>OriginCustomHeader</code> element for each custom header that you want CloudFront to forward to the origin. If Quantity is <code>0</code>, omit <code>Items</code>.</p>
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::OriginCustomHeader>>,
 }
 impl CustomHeaders {
     /// <p>The number of custom headers, if any, for this distribution.</p>
-    pub fn quantity(&self) -> ::std::option::Option<i32> {
+    pub fn quantity(&self) -> i32 {
         self.quantity
     }
     /// <p> <b>Optional</b>: A list that contains one <code>OriginCustomHeader</code> element for each custom header that you want CloudFront to forward to the origin. If Quantity is <code>0</code>, omit <code>Items</code>.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::OriginCustomHeader]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[crate::types::OriginCustomHeader] {
+        self.items.as_deref().unwrap_or_default()
     }
 }
 impl CustomHeaders {
@@ -35,6 +37,7 @@ pub struct CustomHeadersBuilder {
 }
 impl CustomHeadersBuilder {
     /// <p>The number of custom headers, if any, for this distribution.</p>
+    /// This field is required.
     pub fn quantity(mut self, input: i32) -> Self {
         self.quantity = ::std::option::Option::Some(input);
         self
@@ -69,10 +72,17 @@ impl CustomHeadersBuilder {
         &self.items
     }
     /// Consumes the builder and constructs a [`CustomHeaders`](crate::types::CustomHeaders).
-    pub fn build(self) -> crate::types::CustomHeaders {
-        crate::types::CustomHeaders {
-            quantity: self.quantity,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`quantity`](crate::types::builders::CustomHeadersBuilder::quantity)
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomHeaders, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CustomHeaders {
+            quantity: self.quantity.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "quantity",
+                    "quantity was not specified but it is required when building CustomHeaders",
+                )
+            })?,
             items: self.items,
-        }
+        })
     }
 }

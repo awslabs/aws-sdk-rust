@@ -2,7 +2,7 @@
 pub fn ser_component_run_with(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ComponentRunWith,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.posix_user {
         object.key("posixUser").string(var_1.as_str());
     }

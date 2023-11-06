@@ -49,6 +49,7 @@ pub struct CreateArchiveRuleInputBuilder {
 }
 impl CreateArchiveRuleInputBuilder {
     /// <p>The name of the created analyzer.</p>
+    /// This field is required.
     pub fn analyzer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analyzer_name = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl CreateArchiveRuleInputBuilder {
         &self.analyzer_name
     }
     /// <p>The name of the rule to create.</p>
+    /// This field is required.
     pub fn rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_name = ::std::option::Option::Some(input.into());
         self
@@ -113,7 +115,7 @@ impl CreateArchiveRuleInputBuilder {
     /// Consumes the builder and constructs a [`CreateArchiveRuleInput`](crate::operation::create_archive_rule::CreateArchiveRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_archive_rule::CreateArchiveRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_archive_rule::CreateArchiveRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_archive_rule::CreateArchiveRuleInput {
             analyzer_name: self.analyzer_name,
             rule_name: self.rule_name,

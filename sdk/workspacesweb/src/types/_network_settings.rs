@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkSettings {
     /// <p>The ARN of the network settings.</p>
-    pub network_settings_arn: ::std::option::Option<::std::string::String>,
+    pub network_settings_arn: ::std::string::String,
     /// <p>A list of web portal ARNs that this network settings is associated with.</p>
     pub associated_portal_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The VPC that streaming instances will connect to.</p>
@@ -17,24 +17,31 @@ pub struct NetworkSettings {
 }
 impl NetworkSettings {
     /// <p>The ARN of the network settings.</p>
-    pub fn network_settings_arn(&self) -> ::std::option::Option<&str> {
-        self.network_settings_arn.as_deref()
+    pub fn network_settings_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.network_settings_arn.deref()
     }
     /// <p>A list of web portal ARNs that this network settings is associated with.</p>
-    pub fn associated_portal_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.associated_portal_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_portal_arns.is_none()`.
+    pub fn associated_portal_arns(&self) -> &[::std::string::String] {
+        self.associated_portal_arns.as_deref().unwrap_or_default()
     }
     /// <p>The VPC that streaming instances will connect to.</p>
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
     /// <p>The subnets in which network interfaces are created to connect streaming instances to your VPC. At least two of these subnets must be in different availability zones.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        self.subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>One or more security groups used to control access from streaming instances to your VPC. </p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
 }
 impl NetworkSettings {
@@ -56,6 +63,7 @@ pub struct NetworkSettingsBuilder {
 }
 impl NetworkSettingsBuilder {
     /// <p>The ARN of the network settings.</p>
+    /// This field is required.
     pub fn network_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_settings_arn = ::std::option::Option::Some(input.into());
         self
@@ -144,13 +152,20 @@ impl NetworkSettingsBuilder {
         &self.security_group_ids
     }
     /// Consumes the builder and constructs a [`NetworkSettings`](crate::types::NetworkSettings).
-    pub fn build(self) -> crate::types::NetworkSettings {
-        crate::types::NetworkSettings {
-            network_settings_arn: self.network_settings_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`network_settings_arn`](crate::types::builders::NetworkSettingsBuilder::network_settings_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::NetworkSettings, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::NetworkSettings {
+            network_settings_arn: self.network_settings_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "network_settings_arn",
+                    "network_settings_arn was not specified but it is required when building NetworkSettings",
+                )
+            })?,
             associated_portal_arns: self.associated_portal_arns,
             vpc_id: self.vpc_id,
             subnet_ids: self.subnet_ids,
             security_group_ids: self.security_group_ids,
-        }
+        })
     }
 }

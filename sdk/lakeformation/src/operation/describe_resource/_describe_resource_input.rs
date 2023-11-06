@@ -27,6 +27,7 @@ pub struct DescribeResourceInputBuilder {
 }
 impl DescribeResourceInputBuilder {
     /// <p>The resource ARN.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeResourceInputBuilder {
     /// Consumes the builder and constructs a [`DescribeResourceInput`](crate::operation::describe_resource::DescribeResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_resource::DescribeResourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_resource::DescribeResourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_resource::DescribeResourceInput {
             resource_arn: self.resource_arn,
         })

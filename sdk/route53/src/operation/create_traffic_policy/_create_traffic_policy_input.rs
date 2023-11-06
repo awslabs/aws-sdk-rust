@@ -42,6 +42,7 @@ pub struct CreateTrafficPolicyInputBuilder {
 }
 impl CreateTrafficPolicyInputBuilder {
     /// <p>The name of the traffic policy.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl CreateTrafficPolicyInputBuilder {
         &self.name
     }
     /// <p>The definition of this traffic policy in JSON format. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic Policy Document Format</a>.</p>
+    /// This field is required.
     pub fn document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document = ::std::option::Option::Some(input.into());
         self
@@ -86,7 +88,7 @@ impl CreateTrafficPolicyInputBuilder {
     /// Consumes the builder and constructs a [`CreateTrafficPolicyInput`](crate::operation::create_traffic_policy::CreateTrafficPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_traffic_policy::CreateTrafficPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_traffic_policy::CreateTrafficPolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_traffic_policy::CreateTrafficPolicyInput {
             name: self.name,

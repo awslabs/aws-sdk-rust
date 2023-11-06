@@ -35,6 +35,7 @@ pub struct ListUniqueProblemsInputBuilder {
 }
 impl ListUniqueProblemsInputBuilder {
     /// <p>The unique problems' ARNs.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -65,7 +66,8 @@ impl ListUniqueProblemsInputBuilder {
     /// Consumes the builder and constructs a [`ListUniqueProblemsInput`](crate::operation::list_unique_problems::ListUniqueProblemsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_unique_problems::ListUniqueProblemsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_unique_problems::ListUniqueProblemsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_unique_problems::ListUniqueProblemsInput {
             arn: self.arn,
             next_token: self.next_token,

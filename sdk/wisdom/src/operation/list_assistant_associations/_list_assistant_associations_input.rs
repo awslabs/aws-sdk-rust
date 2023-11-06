@@ -69,6 +69,7 @@ impl ListAssistantAssociationsInputBuilder {
         &self.max_results
     }
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// This field is required.
     pub fn assistant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assistant_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListAssistantAssociationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_assistant_associations::ListAssistantAssociationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_assistant_associations::ListAssistantAssociationsInput {
             next_token: self.next_token,

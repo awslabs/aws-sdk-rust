@@ -34,6 +34,7 @@ pub struct PutAuthPolicyInputBuilder {
 }
 impl PutAuthPolicyInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the service network or service for which the policy is created.</p>
+    /// This field is required.
     pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_identifier = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl PutAuthPolicyInputBuilder {
         &self.resource_identifier
     }
     /// <p>The auth policy.</p>
+    /// This field is required.
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl PutAuthPolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutAuthPolicyInput`](crate::operation::put_auth_policy::PutAuthPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_auth_policy::PutAuthPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_auth_policy::PutAuthPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_auth_policy::PutAuthPolicyInput {
             resource_identifier: self.resource_identifier,
             policy: self.policy,

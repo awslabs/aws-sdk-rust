@@ -79,6 +79,7 @@ pub struct ScheduleRunInputBuilder {
 }
 impl ScheduleRunInputBuilder {
     /// <p>The ARN of the project for the run to be scheduled.</p>
+    /// This field is required.
     pub fn project_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_arn = ::std::option::Option::Some(input.into());
         self
@@ -152,6 +153,7 @@ impl ScheduleRunInputBuilder {
         &self.name
     }
     /// <p>Information about the test for the run to be scheduled.</p>
+    /// This field is required.
     pub fn test(mut self, input: crate::types::ScheduleRunTest) -> Self {
         self.test = ::std::option::Option::Some(input);
         self
@@ -194,7 +196,7 @@ impl ScheduleRunInputBuilder {
         &self.execution_configuration
     }
     /// Consumes the builder and constructs a [`ScheduleRunInput`](crate::operation::schedule_run::ScheduleRunInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::schedule_run::ScheduleRunInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::schedule_run::ScheduleRunInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::schedule_run::ScheduleRunInput {
             project_arn: self.project_arn,
             app_arn: self.app_arn,

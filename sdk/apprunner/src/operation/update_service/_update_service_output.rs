@@ -6,7 +6,7 @@ pub struct UpdateServiceOutput {
     /// <p>A description of the App Runner service updated by this request. All configuration values in the returned <code>Service</code> structure reflect configuration changes that are being applied by this request.</p>
     pub service: ::std::option::Option<crate::types::Service>,
     /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
-    pub operation_id: ::std::option::Option<::std::string::String>,
+    pub operation_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl UpdateServiceOutput {
@@ -15,8 +15,9 @@ impl UpdateServiceOutput {
         self.service.as_ref()
     }
     /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
-    pub fn operation_id(&self) -> ::std::option::Option<&str> {
-        self.operation_id.as_deref()
+    pub fn operation_id(&self) -> &str {
+        use std::ops::Deref;
+        self.operation_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateServiceOutput {
@@ -41,6 +42,7 @@ pub struct UpdateServiceOutputBuilder {
 }
 impl UpdateServiceOutputBuilder {
     /// <p>A description of the App Runner service updated by this request. All configuration values in the returned <code>Service</code> structure reflect configuration changes that are being applied by this request.</p>
+    /// This field is required.
     pub fn service(mut self, input: crate::types::Service) -> Self {
         self.service = ::std::option::Option::Some(input);
         self
@@ -55,6 +57,7 @@ impl UpdateServiceOutputBuilder {
         &self.service
     }
     /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
+    /// This field is required.
     pub fn operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operation_id = ::std::option::Option::Some(input.into());
         self
@@ -78,11 +81,20 @@ impl UpdateServiceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateServiceOutput`](crate::operation::update_service::UpdateServiceOutput).
-    pub fn build(self) -> crate::operation::update_service::UpdateServiceOutput {
-        crate::operation::update_service::UpdateServiceOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`operation_id`](crate::operation::update_service::builders::UpdateServiceOutputBuilder::operation_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_service::UpdateServiceOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_service::UpdateServiceOutput {
             service: self.service,
-            operation_id: self.operation_id,
+            operation_id: self.operation_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "operation_id",
+                    "operation_id was not specified but it is required when building UpdateServiceOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

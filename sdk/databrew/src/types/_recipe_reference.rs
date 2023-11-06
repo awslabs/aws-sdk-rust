@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecipeReference {
     /// <p>The name of the recipe.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The identifier for the version for the recipe. </p>
     pub recipe_version: ::std::option::Option<::std::string::String>,
 }
 impl RecipeReference {
     /// <p>The name of the recipe.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The identifier for the version for the recipe. </p>
     pub fn recipe_version(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct RecipeReferenceBuilder {
 }
 impl RecipeReferenceBuilder {
     /// <p>The name of the recipe.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl RecipeReferenceBuilder {
         &self.recipe_version
     }
     /// Consumes the builder and constructs a [`RecipeReference`](crate::types::RecipeReference).
-    pub fn build(self) -> crate::types::RecipeReference {
-        crate::types::RecipeReference {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::RecipeReferenceBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::RecipeReference, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RecipeReference {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building RecipeReference",
+                )
+            })?,
             recipe_version: self.recipe_version,
-        }
+        })
     }
 }

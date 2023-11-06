@@ -29,8 +29,10 @@ impl AlarmConfiguration {
         self.ignore_poll_alarm_failure
     }
     /// <p>A list of alarms configured for the deployment or deployment group. A maximum of 10 alarms can be added.</p>
-    pub fn alarms(&self) -> ::std::option::Option<&[crate::types::Alarm]> {
-        self.alarms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alarms.is_none()`.
+    pub fn alarms(&self) -> &[crate::types::Alarm] {
+        self.alarms.as_deref().unwrap_or_default()
     }
 }
 impl AlarmConfiguration {

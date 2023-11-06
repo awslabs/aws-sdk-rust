@@ -3,7 +3,7 @@
 pub fn ser_reservation_fleet_instance_specification(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::ReservationFleetInstanceSpecification,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("InstanceType");
     if let Some(var_2) = &input.instance_type {

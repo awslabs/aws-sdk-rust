@@ -4,10 +4,10 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::set_max_results): <p> Maximum number of records to list in a single response. </p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::set_next_token): <p> Pagination token. Set to null to start listing projects from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more projects. </p>
+    ///   - [`max_results(i32)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::set_max_results):<br>required: **false**<br><p> Maximum number of records to list in a single response. </p><br>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::set_next_token):<br>required: **false**<br><p> Pagination token. Set to null to start listing projects from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more projects. </p><br>
     /// - On success, responds with [`ListProjectsOutput`](crate::operation::list_projects::ListProjectsOutput) with field(s):
-    ///   - [`projects(Option<Vec<ProjectSummary>>)`](crate::operation::list_projects::ListProjectsOutput::projects): <p> List of projects. </p>
+    ///   - [`projects(Option<Vec::<ProjectSummary>>)`](crate::operation::list_projects::ListProjectsOutput::projects): <p> List of projects. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_projects::ListProjectsOutput::next_token): <p> Pagination token. Set to null to start listing records from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more entries. </p>
     /// - On failure, responds with [`SdkError<ListProjectsError>`](crate::operation::list_projects::ListProjectsError)
     pub fn list_projects(&self) -> crate::operation::list_projects::builders::ListProjectsFluentBuilder {

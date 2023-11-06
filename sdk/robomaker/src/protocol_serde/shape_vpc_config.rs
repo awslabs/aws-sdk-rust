@@ -2,24 +2,24 @@
 pub fn ser_vpc_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VpcConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.subnets {
-        let mut array_2 = object.key("subnets").start_array();
-        for item_3 in var_1 {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        let mut array_1 = object.key("subnets").start_array();
+        for item_2 in &input.subnets {
             {
-                array_2.value().string(item_3.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
-    if let Some(var_4) = &input.security_groups {
-        let mut array_5 = object.key("securityGroups").start_array();
-        for item_6 in var_4 {
+    if let Some(var_3) = &input.security_groups {
+        let mut array_4 = object.key("securityGroups").start_array();
+        for item_5 in var_3 {
             {
-                array_5.value().string(item_6.as_str());
+                array_4.value().string(item_5.as_str());
             }
         }
-        array_5.finish();
+        array_4.finish();
     }
     if input.assign_public_ip {
         object.key("assignPublicIp").boolean(input.assign_public_ip);
@@ -61,7 +61,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::vpc_config_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

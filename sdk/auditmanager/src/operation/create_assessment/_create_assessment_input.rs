@@ -36,8 +36,10 @@ impl CreateAssessmentInput {
         self.scope.as_ref()
     }
     /// <p> The list of roles for the assessment. </p>
-    pub fn roles(&self) -> ::std::option::Option<&[crate::types::Role]> {
-        self.roles.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.roles.is_none()`.
+    pub fn roles(&self) -> &[crate::types::Role] {
+        self.roles.as_deref().unwrap_or_default()
     }
     /// <p> The identifier for the framework that the assessment will be created from. </p>
     pub fn framework_id(&self) -> ::std::option::Option<&str> {
@@ -82,6 +84,7 @@ pub struct CreateAssessmentInputBuilder {
 }
 impl CreateAssessmentInputBuilder {
     /// <p> The name of the assessment to be created. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -110,6 +113,7 @@ impl CreateAssessmentInputBuilder {
         &self.description
     }
     /// <p> The assessment report storage destination for the assessment that's being created. </p>
+    /// This field is required.
     pub fn assessment_reports_destination(mut self, input: crate::types::AssessmentReportsDestination) -> Self {
         self.assessment_reports_destination = ::std::option::Option::Some(input);
         self
@@ -124,6 +128,7 @@ impl CreateAssessmentInputBuilder {
         &self.assessment_reports_destination
     }
     /// <p> The wrapper that contains the Amazon Web Services accounts and services that are in scope for the assessment. </p>
+    /// This field is required.
     pub fn scope(mut self, input: crate::types::Scope) -> Self {
         self.scope = ::std::option::Option::Some(input);
         self
@@ -158,6 +163,7 @@ impl CreateAssessmentInputBuilder {
         &self.roles
     }
     /// <p> The identifier for the framework that the assessment will be created from. </p>
+    /// This field is required.
     pub fn framework_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.framework_id = ::std::option::Option::Some(input.into());
         self
@@ -194,7 +200,7 @@ impl CreateAssessmentInputBuilder {
     /// Consumes the builder and constructs a [`CreateAssessmentInput`](crate::operation::create_assessment::CreateAssessmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_assessment::CreateAssessmentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_assessment::CreateAssessmentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_assessment::CreateAssessmentInput {
             name: self.name,
             description: self.description,

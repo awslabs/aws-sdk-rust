@@ -27,6 +27,7 @@ pub struct GetAssessmentFrameworkInputBuilder {
 }
 impl GetAssessmentFrameworkInputBuilder {
     /// <p> The identifier for the framework. </p>
+    /// This field is required.
     pub fn framework_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.framework_id = ::std::option::Option::Some(input.into());
         self
@@ -43,8 +44,10 @@ impl GetAssessmentFrameworkInputBuilder {
     /// Consumes the builder and constructs a [`GetAssessmentFrameworkInput`](crate::operation::get_assessment_framework::GetAssessmentFrameworkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_assessment_framework::GetAssessmentFrameworkInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::get_assessment_framework::GetAssessmentFrameworkInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::get_assessment_framework::GetAssessmentFrameworkInput {
             framework_id: self.framework_id,
         })

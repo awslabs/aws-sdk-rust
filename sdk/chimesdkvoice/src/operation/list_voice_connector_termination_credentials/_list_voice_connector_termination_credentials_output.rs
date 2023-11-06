@@ -9,8 +9,10 @@ pub struct ListVoiceConnectorTerminationCredentialsOutput {
 }
 impl ListVoiceConnectorTerminationCredentialsOutput {
     /// <p>A list of user names.</p>
-    pub fn usernames(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.usernames.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.usernames.is_none()`.
+    pub fn usernames(&self) -> &[::std::string::String] {
+        self.usernames.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListVoiceConnectorTerminationCredentialsOutput {

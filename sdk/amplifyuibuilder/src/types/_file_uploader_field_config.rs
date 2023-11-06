@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FileUploaderFieldConfig {
     /// <p>The access level to assign to the uploaded files in the Amazon S3 bucket where they are stored. The valid values for this property are <code>private</code>, <code>protected</code>, or <code>public</code>. For detailed information about the permissions associated with each access level, see <a href="https://docs.amplify.aws/lib/storage/configureaccess/q/platform/js/">File access levels</a> in the <i>Amplify documentation</i>.</p>
-    pub access_level: ::std::option::Option<crate::types::StorageAccessLevel>,
+    pub access_level: crate::types::StorageAccessLevel,
     /// <p>The file types that are allowed to be uploaded by the file uploader. Provide this information in an array of strings specifying the valid file extensions.</p>
-    pub accepted_file_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub accepted_file_types: ::std::vec::Vec<::std::string::String>,
     /// <p>Specifies whether to display or hide the image preview after selecting a file for upload. The default value is <code>true</code> to display the image preview.</p>
     pub show_thumbnails: ::std::option::Option<bool>,
     /// <p>Allows the file upload operation to be paused and resumed. The default value is <code>false</code>.</p>
@@ -20,12 +20,13 @@ pub struct FileUploaderFieldConfig {
 }
 impl FileUploaderFieldConfig {
     /// <p>The access level to assign to the uploaded files in the Amazon S3 bucket where they are stored. The valid values for this property are <code>private</code>, <code>protected</code>, or <code>public</code>. For detailed information about the permissions associated with each access level, see <a href="https://docs.amplify.aws/lib/storage/configureaccess/q/platform/js/">File access levels</a> in the <i>Amplify documentation</i>.</p>
-    pub fn access_level(&self) -> ::std::option::Option<&crate::types::StorageAccessLevel> {
-        self.access_level.as_ref()
+    pub fn access_level(&self) -> &crate::types::StorageAccessLevel {
+        &self.access_level
     }
     /// <p>The file types that are allowed to be uploaded by the file uploader. Provide this information in an array of strings specifying the valid file extensions.</p>
-    pub fn accepted_file_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.accepted_file_types.as_deref()
+    pub fn accepted_file_types(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.accepted_file_types.deref()
     }
     /// <p>Specifies whether to display or hide the image preview after selecting a file for upload. The default value is <code>true</code> to display the image preview.</p>
     pub fn show_thumbnails(&self) -> ::std::option::Option<bool> {
@@ -65,6 +66,7 @@ pub struct FileUploaderFieldConfigBuilder {
 }
 impl FileUploaderFieldConfigBuilder {
     /// <p>The access level to assign to the uploaded files in the Amazon S3 bucket where they are stored. The valid values for this property are <code>private</code>, <code>protected</code>, or <code>public</code>. For detailed information about the permissions associated with each access level, see <a href="https://docs.amplify.aws/lib/storage/configureaccess/q/platform/js/">File access levels</a> in the <i>Amplify documentation</i>.</p>
+    /// This field is required.
     pub fn access_level(mut self, input: crate::types::StorageAccessLevel) -> Self {
         self.access_level = ::std::option::Option::Some(input);
         self
@@ -158,14 +160,27 @@ impl FileUploaderFieldConfigBuilder {
         &self.max_size
     }
     /// Consumes the builder and constructs a [`FileUploaderFieldConfig`](crate::types::FileUploaderFieldConfig).
-    pub fn build(self) -> crate::types::FileUploaderFieldConfig {
-        crate::types::FileUploaderFieldConfig {
-            access_level: self.access_level,
-            accepted_file_types: self.accepted_file_types,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`access_level`](crate::types::builders::FileUploaderFieldConfigBuilder::access_level)
+    /// - [`accepted_file_types`](crate::types::builders::FileUploaderFieldConfigBuilder::accepted_file_types)
+    pub fn build(self) -> ::std::result::Result<crate::types::FileUploaderFieldConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::FileUploaderFieldConfig {
+            access_level: self.access_level.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "access_level",
+                    "access_level was not specified but it is required when building FileUploaderFieldConfig",
+                )
+            })?,
+            accepted_file_types: self.accepted_file_types.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "accepted_file_types",
+                    "accepted_file_types was not specified but it is required when building FileUploaderFieldConfig",
+                )
+            })?,
             show_thumbnails: self.show_thumbnails,
             is_resumable: self.is_resumable,
             max_file_count: self.max_file_count,
             max_size: self.max_size,
-        }
+        })
     }
 }

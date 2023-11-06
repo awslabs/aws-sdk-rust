@@ -27,6 +27,7 @@ pub struct DeleteDiskSnapshotInputBuilder {
 }
 impl DeleteDiskSnapshotInputBuilder {
     /// <p>The name of the disk snapshot you want to delete (e.g., <code>my-disk-snapshot</code>).</p>
+    /// This field is required.
     pub fn disk_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.disk_snapshot_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,8 @@ impl DeleteDiskSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDiskSnapshotInput`](crate::operation::delete_disk_snapshot::DeleteDiskSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_disk_snapshot::DeleteDiskSnapshotInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_disk_snapshot::DeleteDiskSnapshotInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_disk_snapshot::DeleteDiskSnapshotInput {
             disk_snapshot_name: self.disk_snapshot_name,
         })

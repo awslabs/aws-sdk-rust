@@ -28,6 +28,7 @@ pub struct GetEndpointAttributesInputBuilder {
 }
 impl GetEndpointAttributesInputBuilder {
     /// <p>EndpointArn for GetEndpointAttributes input.</p>
+    /// This field is required.
     pub fn endpoint_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_arn = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl GetEndpointAttributesInputBuilder {
     /// Consumes the builder and constructs a [`GetEndpointAttributesInput`](crate::operation::get_endpoint_attributes::GetEndpointAttributesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_endpoint_attributes::GetEndpointAttributesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_endpoint_attributes::GetEndpointAttributesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_endpoint_attributes::GetEndpointAttributesInput {
             endpoint_arn: self.endpoint_arn,

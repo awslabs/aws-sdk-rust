@@ -27,6 +27,7 @@ pub struct DeleteOutpostInputBuilder {
 }
 impl DeleteOutpostInputBuilder {
     /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
+    /// This field is required.
     pub fn outpost_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outpost_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteOutpostInputBuilder {
     /// Consumes the builder and constructs a [`DeleteOutpostInput`](crate::operation::delete_outpost::DeleteOutpostInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_outpost::DeleteOutpostInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_outpost::DeleteOutpostInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_outpost::DeleteOutpostInput { outpost_id: self.outpost_id })
     }
 }

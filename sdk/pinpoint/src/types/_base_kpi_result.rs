@@ -9,8 +9,10 @@ pub struct BaseKpiResult {
 }
 impl BaseKpiResult {
     /// <p>An array of objects that provides the results of a query that retrieved the data for a standard metric that applies to an application, campaign, or journey.</p>
-    pub fn rows(&self) -> ::std::option::Option<&[crate::types::ResultRow]> {
-        self.rows.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rows.is_none()`.
+    pub fn rows(&self) -> &[crate::types::ResultRow] {
+        self.rows.as_deref().unwrap_or_default()
     }
 }
 impl BaseKpiResult {

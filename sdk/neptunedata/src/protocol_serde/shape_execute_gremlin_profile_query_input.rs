@@ -2,7 +2,7 @@
 pub fn ser_execute_gremlin_profile_query_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.chop {
         object.key("profile.chop").number(
             #[allow(clippy::useless_conversion)]

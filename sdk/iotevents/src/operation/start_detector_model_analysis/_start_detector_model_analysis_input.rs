@@ -27,6 +27,7 @@ pub struct StartDetectorModelAnalysisInputBuilder {
 }
 impl StartDetectorModelAnalysisInputBuilder {
     /// <p>Information that defines how a detector operates.</p>
+    /// This field is required.
     pub fn detector_model_definition(mut self, input: crate::types::DetectorModelDefinition) -> Self {
         self.detector_model_definition = ::std::option::Option::Some(input);
         self
@@ -45,7 +46,7 @@ impl StartDetectorModelAnalysisInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_detector_model_analysis::StartDetectorModelAnalysisInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_detector_model_analysis::StartDetectorModelAnalysisInput {
             detector_model_definition: self.detector_model_definition,

@@ -27,6 +27,7 @@ pub struct GetSolFunctionPackageInputBuilder {
 }
 impl GetSolFunctionPackageInputBuilder {
     /// <p>ID of the function package.</p>
+    /// This field is required.
     pub fn vnf_pkg_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vnf_pkg_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetSolFunctionPackageInputBuilder {
     /// Consumes the builder and constructs a [`GetSolFunctionPackageInput`](crate::operation::get_sol_function_package::GetSolFunctionPackageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_sol_function_package::GetSolFunctionPackageInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_sol_function_package::GetSolFunctionPackageInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_sol_function_package::GetSolFunctionPackageInput { vnf_pkg_id: self.vnf_pkg_id })
     }

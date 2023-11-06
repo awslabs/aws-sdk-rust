@@ -75,6 +75,7 @@ impl DeleteProvisionedProductPlanInputBuilder {
         &self.accept_language
     }
     /// <p>The plan identifier.</p>
+    /// This field is required.
     pub fn plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.plan_id = ::std::option::Option::Some(input.into());
         self
@@ -107,7 +108,7 @@ impl DeleteProvisionedProductPlanInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_provisioned_product_plan::DeleteProvisionedProductPlanInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_provisioned_product_plan::DeleteProvisionedProductPlanInput {
             accept_language: self.accept_language,

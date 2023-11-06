@@ -41,6 +41,7 @@ pub struct DeleteKxClusterInputBuilder {
 }
 impl DeleteKxClusterInputBuilder {
     /// <p>A unique identifier for the kdb environment.</p>
+    /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DeleteKxClusterInputBuilder {
         &self.environment_id
     }
     /// <p>The name of the cluster that you want to delete.</p>
+    /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +87,7 @@ impl DeleteKxClusterInputBuilder {
     /// Consumes the builder and constructs a [`DeleteKxClusterInput`](crate::operation::delete_kx_cluster::DeleteKxClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_kx_cluster::DeleteKxClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_kx_cluster::DeleteKxClusterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_kx_cluster::DeleteKxClusterInput {
             environment_id: self.environment_id,
             cluster_name: self.cluster_name,

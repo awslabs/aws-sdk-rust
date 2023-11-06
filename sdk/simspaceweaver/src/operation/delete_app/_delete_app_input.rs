@@ -41,6 +41,7 @@ pub struct DeleteAppInputBuilder {
 }
 impl DeleteAppInputBuilder {
     /// <p>The name of the simulation of the app.</p>
+    /// This field is required.
     pub fn simulation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.simulation = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DeleteAppInputBuilder {
         &self.simulation
     }
     /// <p>The name of the domain of the app.</p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl DeleteAppInputBuilder {
         &self.domain
     }
     /// <p>The name of the app.</p>
+    /// This field is required.
     pub fn app(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +86,7 @@ impl DeleteAppInputBuilder {
         &self.app
     }
     /// Consumes the builder and constructs a [`DeleteAppInput`](crate::operation::delete_app::DeleteAppInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_app::DeleteAppInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_app::DeleteAppInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_app::DeleteAppInput {
             simulation: self.simulation,
             domain: self.domain,

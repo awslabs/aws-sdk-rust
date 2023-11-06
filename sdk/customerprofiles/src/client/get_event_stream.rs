@@ -3,16 +3,16 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetEventStream`](crate::operation::get_event_stream::builders::GetEventStreamFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_name(impl Into<String>)`](crate::operation::get_event_stream::builders::GetEventStreamFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::get_event_stream::builders::GetEventStreamFluentBuilder::set_domain_name): <p>The unique name of the domain.</p>
-    ///   - [`event_stream_name(impl Into<String>)`](crate::operation::get_event_stream::builders::GetEventStreamFluentBuilder::event_stream_name) / [`set_event_stream_name(Option<String>)`](crate::operation::get_event_stream::builders::GetEventStreamFluentBuilder::set_event_stream_name): <p>The name of the event stream provided during create operations.</p>
+    ///   - [`domain_name(impl Into<String>)`](crate::operation::get_event_stream::builders::GetEventStreamFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::get_event_stream::builders::GetEventStreamFluentBuilder::set_domain_name):<br>required: **true**<br><p>The unique name of the domain.</p><br>
+    ///   - [`event_stream_name(impl Into<String>)`](crate::operation::get_event_stream::builders::GetEventStreamFluentBuilder::event_stream_name) / [`set_event_stream_name(Option<String>)`](crate::operation::get_event_stream::builders::GetEventStreamFluentBuilder::set_event_stream_name):<br>required: **true**<br><p>The name of the event stream provided during create operations.</p><br>
     /// - On success, responds with [`GetEventStreamOutput`](crate::operation::get_event_stream::GetEventStreamOutput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::operation::get_event_stream::GetEventStreamOutput::domain_name): <p>The unique name of the domain.</p>
-    ///   - [`event_stream_arn(Option<String>)`](crate::operation::get_event_stream::GetEventStreamOutput::event_stream_arn): <p>A unique identifier for the event stream.</p>
-    ///   - [`created_at(Option<DateTime>)`](crate::operation::get_event_stream::GetEventStreamOutput::created_at): <p>The timestamp of when the export was created.</p>
-    ///   - [`state(Option<EventStreamState>)`](crate::operation::get_event_stream::GetEventStreamOutput::state): <p>The operational state of destination stream for export.</p>
+    ///   - [`domain_name(String)`](crate::operation::get_event_stream::GetEventStreamOutput::domain_name): <p>The unique name of the domain.</p>
+    ///   - [`event_stream_arn(String)`](crate::operation::get_event_stream::GetEventStreamOutput::event_stream_arn): <p>A unique identifier for the event stream.</p>
+    ///   - [`created_at(DateTime)`](crate::operation::get_event_stream::GetEventStreamOutput::created_at): <p>The timestamp of when the export was created.</p>
+    ///   - [`state(EventStreamState)`](crate::operation::get_event_stream::GetEventStreamOutput::state): <p>The operational state of destination stream for export.</p>
     ///   - [`stopped_since(Option<DateTime>)`](crate::operation::get_event_stream::GetEventStreamOutput::stopped_since): <p>The timestamp when the <code>State</code> changed to <code>STOPPED</code>.</p>
     ///   - [`destination_details(Option<EventStreamDestinationDetails>)`](crate::operation::get_event_stream::GetEventStreamOutput::destination_details): <p>Details regarding the Kinesis stream.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_event_stream::GetEventStreamOutput::tags): <p>The tags used to organize, track, or control access for this resource.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_event_stream::GetEventStreamOutput::tags): <p>The tags used to organize, track, or control access for this resource.</p>
     /// - On failure, responds with [`SdkError<GetEventStreamError>`](crate::operation::get_event_stream::GetEventStreamError)
     pub fn get_event_stream(&self) -> crate::operation::get_event_stream::builders::GetEventStreamFluentBuilder {
         crate::operation::get_event_stream::builders::GetEventStreamFluentBuilder::new(self.handle.clone())

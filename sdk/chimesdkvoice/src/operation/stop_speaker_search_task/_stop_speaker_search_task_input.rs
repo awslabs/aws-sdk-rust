@@ -34,6 +34,7 @@ pub struct StopSpeakerSearchTaskInputBuilder {
 }
 impl StopSpeakerSearchTaskInputBuilder {
     /// <p>The Voice Connector ID.</p>
+    /// This field is required.
     pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl StopSpeakerSearchTaskInputBuilder {
         &self.voice_connector_id
     }
     /// <p>The speaker search task ID.</p>
+    /// This field is required.
     pub fn speaker_search_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.speaker_search_task_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl StopSpeakerSearchTaskInputBuilder {
     /// Consumes the builder and constructs a [`StopSpeakerSearchTaskInput`](crate::operation::stop_speaker_search_task::StopSpeakerSearchTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_speaker_search_task::StopSpeakerSearchTaskInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::stop_speaker_search_task::StopSpeakerSearchTaskInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::stop_speaker_search_task::StopSpeakerSearchTaskInput {
             voice_connector_id: self.voice_connector_id,

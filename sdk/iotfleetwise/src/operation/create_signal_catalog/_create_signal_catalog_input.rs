@@ -22,12 +22,16 @@ impl CreateSignalCatalogInput {
         self.description.as_deref()
     }
     /// <p> A list of information about nodes, which are a general abstraction of signals. For more information, see the API data type.</p>
-    pub fn nodes(&self) -> ::std::option::Option<&[crate::types::Node]> {
-        self.nodes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.nodes.is_none()`.
+    pub fn nodes(&self) -> &[crate::types::Node] {
+        self.nodes.as_deref().unwrap_or_default()
     }
     /// <p>Metadata that can be used to manage the signal catalog.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateSignalCatalogInput {
@@ -48,6 +52,7 @@ pub struct CreateSignalCatalogInputBuilder {
 }
 impl CreateSignalCatalogInputBuilder {
     /// <p> The name of the signal catalog to create. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -118,7 +123,7 @@ impl CreateSignalCatalogInputBuilder {
     /// Consumes the builder and constructs a [`CreateSignalCatalogInput`](crate::operation::create_signal_catalog::CreateSignalCatalogInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_signal_catalog::CreateSignalCatalogInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_signal_catalog::CreateSignalCatalogInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_signal_catalog::CreateSignalCatalogInput {
             name: self.name,

@@ -74,6 +74,7 @@ pub struct PutIntegrationInputBuilder {
 }
 impl PutIntegrationInputBuilder {
     /// <p>The unique name of the domain.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -179,7 +180,7 @@ impl PutIntegrationInputBuilder {
     /// Consumes the builder and constructs a [`PutIntegrationInput`](crate::operation::put_integration::PutIntegrationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_integration::PutIntegrationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_integration::PutIntegrationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_integration::PutIntegrationInput {
             domain_name: self.domain_name,
             uri: self.uri,

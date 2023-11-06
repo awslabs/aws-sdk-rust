@@ -41,6 +41,7 @@ pub struct CreateClusterSnapshotInputBuilder {
 }
 impl CreateClusterSnapshotInputBuilder {
     /// <p>The arn of the Elastic DocumentDB cluster that the snapshot will be taken from.</p>
+    /// This field is required.
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl CreateClusterSnapshotInputBuilder {
         &self.cluster_arn
     }
     /// <p>The name of the Elastic DocumentDB snapshot.</p>
+    /// This field is required.
     pub fn snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_name = ::std::option::Option::Some(input.into());
         self
@@ -91,7 +93,7 @@ impl CreateClusterSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`CreateClusterSnapshotInput`](crate::operation::create_cluster_snapshot::CreateClusterSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_cluster_snapshot::CreateClusterSnapshotInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_cluster_snapshot::CreateClusterSnapshotInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_cluster_snapshot::CreateClusterSnapshotInput {
             cluster_arn: self.cluster_arn,

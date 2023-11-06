@@ -449,7 +449,7 @@ pub(crate) mod shape_reload_tables_input;
 
 pub(crate) mod shape_remove_tags_from_resource_input;
 
-pub(crate) mod shape_replication_subnet_group_does_not_cover_enough_a_zs;
+pub(crate) mod shape_replication_subnet_group_does_not_cover_enough_azs;
 
 pub(crate) mod shape_resource_already_exists_fault;
 

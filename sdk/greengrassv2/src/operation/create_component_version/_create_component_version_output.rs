@@ -6,11 +6,11 @@ pub struct CreateComponentVersionOutput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the component.</p>
-    pub component_name: ::std::option::Option<::std::string::String>,
+    pub component_name: ::std::string::String,
     /// <p>The version of the component.</p>
-    pub component_version: ::std::option::Option<::std::string::String>,
+    pub component_version: ::std::string::String,
     /// <p>The time at which the component was created, expressed in ISO 8601 format.</p>
-    pub creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_timestamp: ::aws_smithy_types::DateTime,
     /// <p>The status of the component version in IoT Greengrass V2. This status is different from the status of the component on a core device.</p>
     pub status: ::std::option::Option<crate::types::CloudComponentStatus>,
     _request_id: Option<String>,
@@ -21,16 +21,18 @@ impl CreateComponentVersionOutput {
         self.arn.as_deref()
     }
     /// <p>The name of the component.</p>
-    pub fn component_name(&self) -> ::std::option::Option<&str> {
-        self.component_name.as_deref()
+    pub fn component_name(&self) -> &str {
+        use std::ops::Deref;
+        self.component_name.deref()
     }
     /// <p>The version of the component.</p>
-    pub fn component_version(&self) -> ::std::option::Option<&str> {
-        self.component_version.as_deref()
+    pub fn component_version(&self) -> &str {
+        use std::ops::Deref;
+        self.component_version.deref()
     }
     /// <p>The time at which the component was created, expressed in ISO 8601 format.</p>
-    pub fn creation_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_timestamp.as_ref()
+    pub fn creation_timestamp(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_timestamp
     }
     /// <p>The status of the component version in IoT Greengrass V2. This status is different from the status of the component on a core device.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::CloudComponentStatus> {
@@ -76,6 +78,7 @@ impl CreateComponentVersionOutputBuilder {
         &self.arn
     }
     /// <p>The name of the component.</p>
+    /// This field is required.
     pub fn component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl CreateComponentVersionOutputBuilder {
         &self.component_name
     }
     /// <p>The version of the component.</p>
+    /// This field is required.
     pub fn component_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_version = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +108,7 @@ impl CreateComponentVersionOutputBuilder {
         &self.component_version
     }
     /// <p>The time at which the component was created, expressed in ISO 8601 format.</p>
+    /// This field is required.
     pub fn creation_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_timestamp = ::std::option::Option::Some(input);
         self
@@ -118,6 +123,7 @@ impl CreateComponentVersionOutputBuilder {
         &self.creation_timestamp
     }
     /// <p>The status of the component version in IoT Greengrass V2. This status is different from the status of the component on a core device.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::CloudComponentStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -141,14 +147,38 @@ impl CreateComponentVersionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateComponentVersionOutput`](crate::operation::create_component_version::CreateComponentVersionOutput).
-    pub fn build(self) -> crate::operation::create_component_version::CreateComponentVersionOutput {
-        crate::operation::create_component_version::CreateComponentVersionOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`component_name`](crate::operation::create_component_version::builders::CreateComponentVersionOutputBuilder::component_name)
+    /// - [`component_version`](crate::operation::create_component_version::builders::CreateComponentVersionOutputBuilder::component_version)
+    /// - [`creation_timestamp`](crate::operation::create_component_version::builders::CreateComponentVersionOutputBuilder::creation_timestamp)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_component_version::CreateComponentVersionOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::create_component_version::CreateComponentVersionOutput {
             arn: self.arn,
-            component_name: self.component_name,
-            component_version: self.component_version,
-            creation_timestamp: self.creation_timestamp,
+            component_name: self.component_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "component_name",
+                    "component_name was not specified but it is required when building CreateComponentVersionOutput",
+                )
+            })?,
+            component_version: self.component_version.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "component_version",
+                    "component_version was not specified but it is required when building CreateComponentVersionOutput",
+                )
+            })?,
+            creation_timestamp: self.creation_timestamp.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "creation_timestamp",
+                    "creation_timestamp was not specified but it is required when building CreateComponentVersionOutput",
+                )
+            })?,
             status: self.status,
             _request_id: self._request_id,
-        }
+        })
     }
 }

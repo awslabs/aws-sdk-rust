@@ -34,6 +34,7 @@ pub struct GetBotAliasInputBuilder {
 }
 impl GetBotAliasInputBuilder {
     /// <p>The name of the bot alias. The name is case sensitive.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetBotAliasInputBuilder {
         &self.name
     }
     /// <p>The name of the bot.</p>
+    /// This field is required.
     pub fn bot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_name = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,7 @@ impl GetBotAliasInputBuilder {
         &self.bot_name
     }
     /// Consumes the builder and constructs a [`GetBotAliasInput`](crate::operation::get_bot_alias::GetBotAliasInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_bot_alias::GetBotAliasInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_bot_alias::GetBotAliasInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_bot_alias::GetBotAliasInput {
             name: self.name,
             bot_name: self.bot_name,

@@ -64,8 +64,10 @@ impl CreateComponentInput {
     }
     /// <p>An optional list of metadata items that you can associate with the Proton component. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The client token for the created component.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -112,6 +114,7 @@ pub struct CreateComponentInputBuilder {
 }
 impl CreateComponentInputBuilder {
     /// <p>The customer-provided name of the component.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -184,6 +187,7 @@ impl CreateComponentInputBuilder {
     /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p> <note>
     /// <p>Components support a single IaC file, even if you use Terraform as your template language.</p>
     /// </note>
+    /// This field is required.
     pub fn template_file(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_file = ::std::option::Option::Some(input.into());
         self
@@ -202,6 +206,7 @@ impl CreateComponentInputBuilder {
         &self.template_file
     }
     /// <p>A path to a manifest file that lists the Infrastructure as Code (IaC) file, template language, and rendering engine for infrastructure that a custom component provisions.</p>
+    /// This field is required.
     pub fn manifest(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.manifest = ::std::option::Option::Some(input.into());
         self
@@ -269,7 +274,7 @@ impl CreateComponentInputBuilder {
     /// Consumes the builder and constructs a [`CreateComponentInput`](crate::operation::create_component::CreateComponentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_component::CreateComponentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_component::CreateComponentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_component::CreateComponentInput {
             name: self.name,
             description: self.description,

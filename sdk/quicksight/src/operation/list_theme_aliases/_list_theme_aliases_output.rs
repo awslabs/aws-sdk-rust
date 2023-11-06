@@ -15,8 +15,10 @@ pub struct ListThemeAliasesOutput {
 }
 impl ListThemeAliasesOutput {
     /// <p>A structure containing the list of the theme's aliases.</p>
-    pub fn theme_alias_list(&self) -> ::std::option::Option<&[crate::types::ThemeAlias]> {
-        self.theme_alias_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.theme_alias_list.is_none()`.
+    pub fn theme_alias_list(&self) -> &[crate::types::ThemeAlias] {
+        self.theme_alias_list.as_deref().unwrap_or_default()
     }
     /// <p>The HTTP status of the request.</p>
     pub fn status(&self) -> i32 {

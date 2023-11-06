@@ -2,7 +2,7 @@
 pub fn ser_put_default_encryption_configuration_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.encryption_type {
         object.key("encryptionType").string(var_1.as_str());
     }

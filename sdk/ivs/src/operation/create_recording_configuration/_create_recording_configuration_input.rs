@@ -12,7 +12,7 @@ pub struct CreateRecordingConfigurationInput {
     /// <p>A complex type that allows you to enable/disable the recording of thumbnails for a live session and modify the interval at which thumbnails are generated for the live session.</p>
     pub thumbnail_configuration: ::std::option::Option<crate::types::ThumbnailConfiguration>,
     /// <p>If a broadcast disconnects and then reconnects within the specified interval, the multiple streams will be considered a single broadcast and merged together. Default: 0.</p>
-    pub recording_reconnect_window_seconds: i32,
+    pub recording_reconnect_window_seconds: ::std::option::Option<i32>,
     /// <p>Object that describes which renditions should be recorded for a stream.</p>
     pub rendition_configuration: ::std::option::Option<crate::types::RenditionConfiguration>,
 }
@@ -34,7 +34,7 @@ impl CreateRecordingConfigurationInput {
         self.thumbnail_configuration.as_ref()
     }
     /// <p>If a broadcast disconnects and then reconnects within the specified interval, the multiple streams will be considered a single broadcast and merged together. Default: 0.</p>
-    pub fn recording_reconnect_window_seconds(&self) -> i32 {
+    pub fn recording_reconnect_window_seconds(&self) -> ::std::option::Option<i32> {
         self.recording_reconnect_window_seconds
     }
     /// <p>Object that describes which renditions should be recorded for a stream.</p>
@@ -76,6 +76,7 @@ impl CreateRecordingConfigurationInputBuilder {
         &self.name
     }
     /// <p>A complex type that contains a destination configuration for where recorded video will be stored.</p>
+    /// This field is required.
     pub fn destination_configuration(mut self, input: crate::types::DestinationConfiguration) -> Self {
         self.destination_configuration = ::std::option::Option::Some(input);
         self
@@ -156,14 +157,14 @@ impl CreateRecordingConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_recording_configuration::CreateRecordingConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_recording_configuration::CreateRecordingConfigurationInput {
             name: self.name,
             destination_configuration: self.destination_configuration,
             tags: self.tags,
             thumbnail_configuration: self.thumbnail_configuration,
-            recording_reconnect_window_seconds: self.recording_reconnect_window_seconds.unwrap_or_default(),
+            recording_reconnect_window_seconds: self.recording_reconnect_window_seconds,
             rendition_configuration: self.rendition_configuration,
         })
     }

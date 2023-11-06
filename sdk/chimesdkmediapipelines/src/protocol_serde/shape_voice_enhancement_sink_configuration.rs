@@ -2,7 +2,7 @@
 pub fn ser_voice_enhancement_sink_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VoiceEnhancementSinkConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.disabled {
         object.key("Disabled").boolean(input.disabled);
     }

@@ -7,20 +7,21 @@ pub struct EncryptionKey {
     /// <p>The ID used to identify the key. For an Amazon Web Services KMS key, you can use the key ID, the key ARN, or the alias ARN.</p> <note>
     /// <p>Aliases are recognized only in the account that created the KMS key. For cross-account actions, you can only use the key ID or key ARN to identify the key. Cross-account actions involve using the role from the other account (AccountB), so specifying the key ID will use the key from the other account (AccountB).</p>
     /// </note>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The type of encryption key, such as an Amazon Web Services KMS key. When creating or updating a pipeline, the value must be set to 'KMS'.</p>
-    pub r#type: ::std::option::Option<crate::types::EncryptionKeyType>,
+    pub r#type: crate::types::EncryptionKeyType,
 }
 impl EncryptionKey {
     /// <p>The ID used to identify the key. For an Amazon Web Services KMS key, you can use the key ID, the key ARN, or the alias ARN.</p> <note>
     /// <p>Aliases are recognized only in the account that created the KMS key. For cross-account actions, you can only use the key ID or key ARN to identify the key. Cross-account actions involve using the role from the other account (AccountB), so specifying the key ID will use the key from the other account (AccountB).</p>
     /// </note>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The type of encryption key, such as an Amazon Web Services KMS key. When creating or updating a pipeline, the value must be set to 'KMS'.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::EncryptionKeyType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::EncryptionKeyType {
+        &self.r#type
     }
 }
 impl EncryptionKey {
@@ -41,6 +42,7 @@ impl EncryptionKeyBuilder {
     /// <p>The ID used to identify the key. For an Amazon Web Services KMS key, you can use the key ID, the key ARN, or the alias ARN.</p> <note>
     /// <p>Aliases are recognized only in the account that created the KMS key. For cross-account actions, you can only use the key ID or key ARN to identify the key. Cross-account actions involve using the role from the other account (AccountB), so specifying the key ID will use the key from the other account (AccountB).</p>
     /// </note>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -59,6 +61,7 @@ impl EncryptionKeyBuilder {
         &self.id
     }
     /// <p>The type of encryption key, such as an Amazon Web Services KMS key. When creating or updating a pipeline, the value must be set to 'KMS'.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::EncryptionKeyType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -73,10 +76,23 @@ impl EncryptionKeyBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`EncryptionKey`](crate::types::EncryptionKey).
-    pub fn build(self) -> crate::types::EncryptionKey {
-        crate::types::EncryptionKey {
-            id: self.id,
-            r#type: self.r#type,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::EncryptionKeyBuilder::id)
+    /// - [`r#type`](crate::types::builders::EncryptionKeyBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::EncryptionKey, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EncryptionKey {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building EncryptionKey",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building EncryptionKey",
+                )
+            })?,
+        })
     }
 }

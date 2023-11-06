@@ -8,7 +8,7 @@ pub struct DetectAnomaliesInput {
     /// <p>The version of the model that you want to use.</p>
     pub model_version: ::std::option::Option<::std::string::String>,
     /// <p>The unencrypted image bytes that you want to analyze. </p>
-    pub body: ::aws_smithy_http::byte_stream::ByteStream,
+    pub body: ::aws_smithy_types::byte_stream::ByteStream,
     /// <p>The type of the image passed in <code>Body</code>. Valid values are <code>image/png</code> (PNG format images) and <code>image/jpeg</code> (JPG format images). </p>
     pub content_type: ::std::option::Option<::std::string::String>,
 }
@@ -22,7 +22,7 @@ impl DetectAnomaliesInput {
         self.model_version.as_deref()
     }
     /// <p>The unencrypted image bytes that you want to analyze. </p>
-    pub fn body(&self) -> &::aws_smithy_http::byte_stream::ByteStream {
+    pub fn body(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
         &self.body
     }
     /// <p>The type of the image passed in <code>Body</code>. Valid values are <code>image/png</code> (PNG format images) and <code>image/jpeg</code> (JPG format images). </p>
@@ -43,11 +43,12 @@ impl DetectAnomaliesInput {
 pub struct DetectAnomaliesInputBuilder {
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
     pub(crate) model_version: ::std::option::Option<::std::string::String>,
-    pub(crate) body: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
+    pub(crate) body: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,
     pub(crate) content_type: ::std::option::Option<::std::string::String>,
 }
 impl DetectAnomaliesInputBuilder {
     /// <p>The name of the project that contains the model version that you want to use.</p>
+    /// This field is required.
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl DetectAnomaliesInputBuilder {
         &self.project_name
     }
     /// <p>The version of the model that you want to use.</p>
+    /// This field is required.
     pub fn model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_version = ::std::option::Option::Some(input.into());
         self
@@ -76,20 +78,22 @@ impl DetectAnomaliesInputBuilder {
         &self.model_version
     }
     /// <p>The unencrypted image bytes that you want to analyze. </p>
-    pub fn body(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
+    /// This field is required.
+    pub fn body(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.body = ::std::option::Option::Some(input);
         self
     }
     /// <p>The unencrypted image bytes that you want to analyze. </p>
-    pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
+    pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.body = input;
         self
     }
     /// <p>The unencrypted image bytes that you want to analyze. </p>
-    pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         &self.body
     }
     /// <p>The type of the image passed in <code>Body</code>. Valid values are <code>image/png</code> (PNG format images) and <code>image/jpeg</code> (JPG format images). </p>
+    /// This field is required.
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +110,7 @@ impl DetectAnomaliesInputBuilder {
     /// Consumes the builder and constructs a [`DetectAnomaliesInput`](crate::operation::detect_anomalies::DetectAnomaliesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::detect_anomalies::DetectAnomaliesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::detect_anomalies::DetectAnomaliesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::detect_anomalies::DetectAnomaliesInput {
             project_name: self.project_name,
             model_version: self.model_version,

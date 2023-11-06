@@ -48,6 +48,7 @@ impl PutDataCatalogEncryptionSettingsInputBuilder {
         &self.catalog_id
     }
     /// <p>The security configuration to set.</p>
+    /// This field is required.
     pub fn data_catalog_encryption_settings(mut self, input: crate::types::DataCatalogEncryptionSettings) -> Self {
         self.data_catalog_encryption_settings = ::std::option::Option::Some(input);
         self
@@ -66,7 +67,7 @@ impl PutDataCatalogEncryptionSettingsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_data_catalog_encryption_settings::PutDataCatalogEncryptionSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::put_data_catalog_encryption_settings::PutDataCatalogEncryptionSettingsInput {

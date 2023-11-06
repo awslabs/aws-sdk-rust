@@ -87,12 +87,16 @@ impl StreamDescription {
         self.table_name.as_deref()
     }
     /// <p>The key attribute(s) of the stream's DynamoDB table.</p>
-    pub fn key_schema(&self) -> ::std::option::Option<&[crate::types::KeySchemaElement]> {
-        self.key_schema.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.key_schema.is_none()`.
+    pub fn key_schema(&self) -> &[crate::types::KeySchemaElement] {
+        self.key_schema.as_deref().unwrap_or_default()
     }
     /// <p>The shards that comprise the stream.</p>
-    pub fn shards(&self) -> ::std::option::Option<&[crate::types::Shard]> {
-        self.shards.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.shards.is_none()`.
+    pub fn shards(&self) -> &[crate::types::Shard] {
+        self.shards.as_deref().unwrap_or_default()
     }
     /// <p>The shard ID of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p>
     /// <p>If <code>LastEvaluatedShardId</code> is empty, then the "last page" of results has been processed and there is currently no more data to be retrieved.</p>

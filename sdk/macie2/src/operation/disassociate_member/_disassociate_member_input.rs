@@ -27,6 +27,7 @@ pub struct DisassociateMemberInputBuilder {
 }
 impl DisassociateMemberInputBuilder {
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DisassociateMemberInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateMemberInput`](crate::operation::disassociate_member::DisassociateMemberInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disassociate_member::DisassociateMemberInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::disassociate_member::DisassociateMemberInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::disassociate_member::DisassociateMemberInput { id: self.id })
     }
 }

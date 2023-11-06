@@ -28,6 +28,7 @@ pub struct DeleteCustomVerificationEmailTemplateInputBuilder {
 }
 impl DeleteCustomVerificationEmailTemplateInputBuilder {
     /// <p>The name of the custom verification email template to delete.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl DeleteCustomVerificationEmailTemplateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_custom_verification_email_template::DeleteCustomVerificationEmailTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_custom_verification_email_template::DeleteCustomVerificationEmailTemplateInput {

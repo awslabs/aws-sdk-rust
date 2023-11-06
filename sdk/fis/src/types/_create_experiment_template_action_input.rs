@@ -6,7 +6,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateExperimentTemplateActionInput {
     /// <p>The ID of the action. The format of the action ID is: aws:<i>service-name</i>:<i>action-type</i>.</p>
-    pub action_id: ::std::option::Option<::std::string::String>,
+    pub action_id: ::std::string::String,
     /// <p>A description for the action.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The parameters for the action, if applicable.</p>
@@ -18,8 +18,9 @@ pub struct CreateExperimentTemplateActionInput {
 }
 impl CreateExperimentTemplateActionInput {
     /// <p>The ID of the action. The format of the action ID is: aws:<i>service-name</i>:<i>action-type</i>.</p>
-    pub fn action_id(&self) -> ::std::option::Option<&str> {
-        self.action_id.as_deref()
+    pub fn action_id(&self) -> &str {
+        use std::ops::Deref;
+        self.action_id.deref()
     }
     /// <p>A description for the action.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -34,8 +35,10 @@ impl CreateExperimentTemplateActionInput {
         self.targets.as_ref()
     }
     /// <p>The name of the action that must be completed before the current action starts. Omit this parameter to run the action at the start of the experiment.</p>
-    pub fn start_after(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.start_after.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.start_after.is_none()`.
+    pub fn start_after(&self) -> &[::std::string::String] {
+        self.start_after.as_deref().unwrap_or_default()
     }
 }
 impl CreateExperimentTemplateActionInput {
@@ -57,6 +60,7 @@ pub struct CreateExperimentTemplateActionInputBuilder {
 }
 impl CreateExperimentTemplateActionInputBuilder {
     /// <p>The ID of the action. The format of the action ID is: aws:<i>service-name</i>:<i>action-type</i>.</p>
+    /// This field is required.
     pub fn action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_id = ::std::option::Option::Some(input.into());
         self
@@ -145,13 +149,20 @@ impl CreateExperimentTemplateActionInputBuilder {
         &self.start_after
     }
     /// Consumes the builder and constructs a [`CreateExperimentTemplateActionInput`](crate::types::CreateExperimentTemplateActionInput).
-    pub fn build(self) -> crate::types::CreateExperimentTemplateActionInput {
-        crate::types::CreateExperimentTemplateActionInput {
-            action_id: self.action_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`action_id`](crate::types::builders::CreateExperimentTemplateActionInputBuilder::action_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::CreateExperimentTemplateActionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CreateExperimentTemplateActionInput {
+            action_id: self.action_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "action_id",
+                    "action_id was not specified but it is required when building CreateExperimentTemplateActionInput",
+                )
+            })?,
             description: self.description,
             parameters: self.parameters,
             targets: self.targets,
             start_after: self.start_after,
-        }
+        })
     }
 }

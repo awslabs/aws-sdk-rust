@@ -41,6 +41,7 @@ pub struct DescribeEvaluationFormInputBuilder {
 }
 impl DescribeEvaluationFormInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DescribeEvaluationFormInputBuilder {
         &self.instance_id
     }
     /// <p>A unique identifier for the contact evaluation.</p>
+    /// This field is required.
     pub fn evaluation_form_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_form_id = ::std::option::Option::Some(input.into());
         self
@@ -85,8 +87,10 @@ impl DescribeEvaluationFormInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEvaluationFormInput`](crate::operation::describe_evaluation_form::DescribeEvaluationFormInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_evaluation_form::DescribeEvaluationFormInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_evaluation_form::DescribeEvaluationFormInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_evaluation_form::DescribeEvaluationFormInput {
             instance_id: self.instance_id,
             evaluation_form_id: self.evaluation_form_id,

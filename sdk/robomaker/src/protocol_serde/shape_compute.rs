@@ -2,7 +2,7 @@
 pub fn ser_compute(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Compute,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.simulation_unit_limit {
         object.key("simulationUnitLimit").number(
             #[allow(clippy::useless_conversion)]

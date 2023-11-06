@@ -27,6 +27,7 @@ pub struct GetOriginRequestPolicyConfigInputBuilder {
 }
 impl GetOriginRequestPolicyConfigInputBuilder {
     /// <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetOriginRequestPolicyConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_origin_request_policy_config::GetOriginRequestPolicyConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_origin_request_policy_config::GetOriginRequestPolicyConfigInput { id: self.id })
     }

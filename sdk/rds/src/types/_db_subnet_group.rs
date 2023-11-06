@@ -45,8 +45,10 @@ impl DbSubnetGroup {
         self.subnet_group_status.as_deref()
     }
     /// <p>Contains a list of <code>Subnet</code> elements.</p>
-    pub fn subnets(&self) -> ::std::option::Option<&[crate::types::Subnet]> {
-        self.subnets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnets.is_none()`.
+    pub fn subnets(&self) -> &[crate::types::Subnet] {
+        self.subnets.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) for the DB subnet group.</p>
     pub fn db_subnet_group_arn(&self) -> ::std::option::Option<&str> {
@@ -60,8 +62,10 @@ impl DbSubnetGroup {
     /// </ul>
     /// <p>A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn supported_network_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.supported_network_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_network_types.is_none()`.
+    pub fn supported_network_types(&self) -> &[::std::string::String] {
+        self.supported_network_types.as_deref().unwrap_or_default()
     }
 }
 impl DbSubnetGroup {

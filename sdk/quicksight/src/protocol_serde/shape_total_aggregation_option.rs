@@ -2,15 +2,15 @@
 pub fn ser_total_aggregation_option(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TotalAggregationOption,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.field_id {
-        object.key("FieldId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("FieldId").string(input.field_id.as_str());
     }
-    if let Some(var_2) = &input.total_aggregation_function {
+    if let Some(var_1) = &input.total_aggregation_function {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("TotalAggregationFunction").start_object();
-        crate::protocol_serde::shape_total_aggregation_function::ser_total_aggregation_function(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("TotalAggregationFunction").start_object();
+        crate::protocol_serde::shape_total_aggregation_function::ser_total_aggregation_function(&mut object_2, var_1)?;
+        object_2.finish();
     }
     Ok(())
 }
@@ -52,7 +52,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::total_aggregation_option_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -42,6 +42,7 @@ pub struct ResourceBuilder {
 }
 impl ResourceBuilder {
     /// The resource ID, used to refer to a resource in the Lambda function configuration. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl ResourceBuilder {
         &self.id
     }
     /// The descriptive resource name, which is displayed on the AWS IoT Greengrass console. Max length 128 characters with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl ResourceBuilder {
         &self.name
     }
     /// A container of data for all resource types.
+    /// This field is required.
     pub fn resource_data_container(mut self, input: crate::types::ResourceDataContainer) -> Self {
         self.resource_data_container = ::std::option::Option::Some(input);
         self

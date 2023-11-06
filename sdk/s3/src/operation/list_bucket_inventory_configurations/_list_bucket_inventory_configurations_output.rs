@@ -20,8 +20,10 @@ impl ListBucketInventoryConfigurationsOutput {
         self.continuation_token.as_deref()
     }
     /// <p>The list of inventory configurations for a bucket.</p>
-    pub fn inventory_configuration_list(&self) -> ::std::option::Option<&[crate::types::InventoryConfiguration]> {
-        self.inventory_configuration_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inventory_configuration_list.is_none()`.
+    pub fn inventory_configuration_list(&self) -> &[crate::types::InventoryConfiguration] {
+        self.inventory_configuration_list.as_deref().unwrap_or_default()
     }
     /// <p>Tells whether the returned list of inventory configurations is complete. A value of true indicates that the list is not complete and the NextContinuationToken is provided for a subsequent request.</p>
     pub fn is_truncated(&self) -> bool {

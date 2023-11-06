@@ -11,8 +11,10 @@ pub struct ListSchemaExtensionsOutput {
 }
 impl ListSchemaExtensionsOutput {
     /// <p>Information about the schema extensions applied to the directory.</p>
-    pub fn schema_extensions_info(&self) -> ::std::option::Option<&[crate::types::SchemaExtensionInfo]> {
-        self.schema_extensions_info.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.schema_extensions_info.is_none()`.
+    pub fn schema_extensions_info(&self) -> &[crate::types::SchemaExtensionInfo] {
+        self.schema_extensions_info.as_deref().unwrap_or_default()
     }
     /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>ListSchemaExtensions</code> to retrieve the next set of items.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -2,7 +2,7 @@
 pub fn ser_aws_dynamo_db_table_stream_specification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsDynamoDbTableStreamSpecification,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.stream_enabled {
         object.key("StreamEnabled").boolean(*var_1);
     }

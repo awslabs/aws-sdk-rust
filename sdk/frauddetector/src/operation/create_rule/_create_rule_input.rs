@@ -40,12 +40,16 @@ impl CreateRuleInput {
         self.language.as_ref()
     }
     /// <p>The outcome or outcomes returned when the rule expression matches.</p>
-    pub fn outcomes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.outcomes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outcomes.is_none()`.
+    pub fn outcomes(&self) -> &[::std::string::String] {
+        self.outcomes.as_deref().unwrap_or_default()
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for CreateRuleInput {
@@ -82,6 +86,7 @@ pub struct CreateRuleInputBuilder {
 }
 impl CreateRuleInputBuilder {
     /// <p>The rule ID.</p>
+    /// This field is required.
     pub fn rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_id = ::std::option::Option::Some(input.into());
         self
@@ -96,6 +101,7 @@ impl CreateRuleInputBuilder {
         &self.rule_id
     }
     /// <p>The detector ID for the rule's parent detector.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
@@ -124,6 +130,7 @@ impl CreateRuleInputBuilder {
         &self.description
     }
     /// <p>The rule expression.</p>
+    /// This field is required.
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expression = ::std::option::Option::Some(input.into());
         self
@@ -138,6 +145,7 @@ impl CreateRuleInputBuilder {
         &self.expression
     }
     /// <p>The language of the rule.</p>
+    /// This field is required.
     pub fn language(mut self, input: crate::types::Language) -> Self {
         self.language = ::std::option::Option::Some(input);
         self
@@ -192,7 +200,7 @@ impl CreateRuleInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateRuleInput`](crate::operation::create_rule::CreateRuleInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_rule::CreateRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_rule::CreateRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_rule::CreateRuleInput {
             rule_id: self.rule_id,
             detector_id: self.detector_id,

@@ -11,8 +11,10 @@ pub struct ListAnomalyDetectorsOutput {
 }
 impl ListAnomalyDetectorsOutput {
     /// <p>A list of anomaly detectors in the account in the current region.</p>
-    pub fn anomaly_detector_summary_list(&self) -> ::std::option::Option<&[crate::types::AnomalyDetectorSummary]> {
-        self.anomaly_detector_summary_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.anomaly_detector_summary_list.is_none()`.
+    pub fn anomaly_detector_summary_list(&self) -> &[crate::types::AnomalyDetectorSummary] {
+        self.anomaly_detector_summary_list.as_deref().unwrap_or_default()
     }
     /// <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use the token in the next request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -196,6 +196,20 @@ where
                                     .transpose()?,
                             );
                         }
+                        "EbsRootVolumeIops" => {
+                            builder = builder.set_ebs_root_volume_iops(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "EbsRootVolumeThroughput" => {
+                            builder = builder.set_ebs_root_volume_throughput(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

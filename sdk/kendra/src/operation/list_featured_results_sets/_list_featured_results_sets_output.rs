@@ -11,8 +11,10 @@ pub struct ListFeaturedResultsSetsOutput {
 }
 impl ListFeaturedResultsSetsOutput {
     /// <p>An array of summary information for one or more featured results sets.</p>
-    pub fn featured_results_set_summary_items(&self) -> ::std::option::Option<&[crate::types::FeaturedResultsSetSummary]> {
-        self.featured_results_set_summary_items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.featured_results_set_summary_items.is_none()`.
+    pub fn featured_results_set_summary_items(&self) -> &[crate::types::FeaturedResultsSetSummary] {
+        self.featured_results_set_summary_items.as_deref().unwrap_or_default()
     }
     /// <p>If the response is truncated, Amazon Kendra returns a pagination token in the response.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -12,11 +12,11 @@ pub struct UpdateChannelInput {
     /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable input resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/channel-types.html">Channel Types</a>.</p>
     pub r#type: ::std::option::Option<crate::types::ChannelType>,
     /// <p>Whether the channel is private (enabled for playback authorization).</p>
-    pub authorized: bool,
+    pub authorized: ::std::option::Option<bool>,
     /// <p>Recording-configuration ARN. If this is set to an empty string, recording is disabled. A value other than an empty string indicates that recording is enabled</p>
     pub recording_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.</p>
-    pub insecure_ingest: bool,
+    pub insecure_ingest: ::std::option::Option<bool>,
     /// <p>Optional transcode preset for the channel. This is selectable only for <code>ADVANCED_HD</code> and <code>ADVANCED_SD</code> channel types. For those channel types, the default <code>preset</code> is <code>HIGHER_BANDWIDTH_DELIVERY</code>. For other channel types (<code>BASIC</code> and <code>STANDARD</code>), <code>preset</code> is the empty string (<code>""</code>).</p>
     pub preset: ::std::option::Option<crate::types::TranscodePreset>,
 }
@@ -38,7 +38,7 @@ impl UpdateChannelInput {
         self.r#type.as_ref()
     }
     /// <p>Whether the channel is private (enabled for playback authorization).</p>
-    pub fn authorized(&self) -> bool {
+    pub fn authorized(&self) -> ::std::option::Option<bool> {
         self.authorized
     }
     /// <p>Recording-configuration ARN. If this is set to an empty string, recording is disabled. A value other than an empty string indicates that recording is enabled</p>
@@ -46,7 +46,7 @@ impl UpdateChannelInput {
         self.recording_configuration_arn.as_deref()
     }
     /// <p>Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.</p>
-    pub fn insecure_ingest(&self) -> bool {
+    pub fn insecure_ingest(&self) -> ::std::option::Option<bool> {
         self.insecure_ingest
     }
     /// <p>Optional transcode preset for the channel. This is selectable only for <code>ADVANCED_HD</code> and <code>ADVANCED_SD</code> channel types. For those channel types, the default <code>preset</code> is <code>HIGHER_BANDWIDTH_DELIVERY</code>. For other channel types (<code>BASIC</code> and <code>STANDARD</code>), <code>preset</code> is the empty string (<code>""</code>).</p>
@@ -76,6 +76,7 @@ pub struct UpdateChannelInputBuilder {
 }
 impl UpdateChannelInputBuilder {
     /// <p>ARN of the channel to be updated.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -190,15 +191,15 @@ impl UpdateChannelInputBuilder {
     /// Consumes the builder and constructs a [`UpdateChannelInput`](crate::operation::update_channel::UpdateChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_channel::UpdateChannelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_channel::UpdateChannelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_channel::UpdateChannelInput {
             arn: self.arn,
             name: self.name,
             latency_mode: self.latency_mode,
             r#type: self.r#type,
-            authorized: self.authorized.unwrap_or_default(),
+            authorized: self.authorized,
             recording_configuration_arn: self.recording_configuration_arn,
-            insecure_ingest: self.insecure_ingest.unwrap_or_default(),
+            insecure_ingest: self.insecure_ingest,
             preset: self.preset,
         })
     }

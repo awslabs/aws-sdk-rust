@@ -28,12 +28,16 @@ impl ModifyIpamResourceDiscoveryInput {
         self.description.as_deref()
     }
     /// <p>Add operating Regions to the resource discovery. Operating Regions are Amazon Web Services Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services Regions you select as operating Regions.</p>
-    pub fn add_operating_regions(&self) -> ::std::option::Option<&[crate::types::AddIpamOperatingRegion]> {
-        self.add_operating_regions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_operating_regions.is_none()`.
+    pub fn add_operating_regions(&self) -> &[crate::types::AddIpamOperatingRegion] {
+        self.add_operating_regions.as_deref().unwrap_or_default()
     }
     /// <p>Remove operating Regions.</p>
-    pub fn remove_operating_regions(&self) -> ::std::option::Option<&[crate::types::RemoveIpamOperatingRegion]> {
-        self.remove_operating_regions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove_operating_regions.is_none()`.
+    pub fn remove_operating_regions(&self) -> &[crate::types::RemoveIpamOperatingRegion] {
+        self.remove_operating_regions.as_deref().unwrap_or_default()
     }
 }
 impl ModifyIpamResourceDiscoveryInput {
@@ -69,6 +73,7 @@ impl ModifyIpamResourceDiscoveryInputBuilder {
         &self.dry_run
     }
     /// <p>A resource discovery ID.</p>
+    /// This field is required.
     pub fn ipam_resource_discovery_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_resource_discovery_id = ::std::option::Option::Some(input.into());
         self
@@ -141,7 +146,7 @@ impl ModifyIpamResourceDiscoveryInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_ipam_resource_discovery::ModifyIpamResourceDiscoveryInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_ipam_resource_discovery::ModifyIpamResourceDiscoveryInput {
             dry_run: self.dry_run,

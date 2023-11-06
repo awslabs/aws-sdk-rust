@@ -2,7 +2,7 @@
 pub fn ser_scte35_splice_insert(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Scte35SpliceInsert,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ad_avail_offset {
         object.key("adAvailOffset").number(
             #[allow(clippy::useless_conversion)]

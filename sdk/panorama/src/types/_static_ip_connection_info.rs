@@ -5,30 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StaticIpConnectionInfo {
     /// <p>The connection's IP address.</p>
-    pub ip_address: ::std::option::Option<::std::string::String>,
+    pub ip_address: ::std::string::String,
     /// <p>The connection's DNS mask.</p>
-    pub mask: ::std::option::Option<::std::string::String>,
+    pub mask: ::std::string::String,
     /// <p>The connection's DNS address.</p>
-    pub dns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub dns: ::std::vec::Vec<::std::string::String>,
     /// <p>The connection's default gateway.</p>
-    pub default_gateway: ::std::option::Option<::std::string::String>,
+    pub default_gateway: ::std::string::String,
 }
 impl StaticIpConnectionInfo {
     /// <p>The connection's IP address.</p>
-    pub fn ip_address(&self) -> ::std::option::Option<&str> {
-        self.ip_address.as_deref()
+    pub fn ip_address(&self) -> &str {
+        use std::ops::Deref;
+        self.ip_address.deref()
     }
     /// <p>The connection's DNS mask.</p>
-    pub fn mask(&self) -> ::std::option::Option<&str> {
-        self.mask.as_deref()
+    pub fn mask(&self) -> &str {
+        use std::ops::Deref;
+        self.mask.deref()
     }
     /// <p>The connection's DNS address.</p>
-    pub fn dns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.dns.as_deref()
+    pub fn dns(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.dns.deref()
     }
     /// <p>The connection's default gateway.</p>
-    pub fn default_gateway(&self) -> ::std::option::Option<&str> {
-        self.default_gateway.as_deref()
+    pub fn default_gateway(&self) -> &str {
+        use std::ops::Deref;
+        self.default_gateway.deref()
     }
 }
 impl StaticIpConnectionInfo {
@@ -49,6 +53,7 @@ pub struct StaticIpConnectionInfoBuilder {
 }
 impl StaticIpConnectionInfoBuilder {
     /// <p>The connection's IP address.</p>
+    /// This field is required.
     pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_address = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +68,7 @@ impl StaticIpConnectionInfoBuilder {
         &self.ip_address
     }
     /// <p>The connection's DNS mask.</p>
+    /// This field is required.
     pub fn mask(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mask = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +103,7 @@ impl StaticIpConnectionInfoBuilder {
         &self.dns
     }
     /// <p>The connection's default gateway.</p>
+    /// This field is required.
     pub fn default_gateway(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_gateway = ::std::option::Option::Some(input.into());
         self
@@ -111,12 +118,37 @@ impl StaticIpConnectionInfoBuilder {
         &self.default_gateway
     }
     /// Consumes the builder and constructs a [`StaticIpConnectionInfo`](crate::types::StaticIpConnectionInfo).
-    pub fn build(self) -> crate::types::StaticIpConnectionInfo {
-        crate::types::StaticIpConnectionInfo {
-            ip_address: self.ip_address,
-            mask: self.mask,
-            dns: self.dns,
-            default_gateway: self.default_gateway,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`ip_address`](crate::types::builders::StaticIpConnectionInfoBuilder::ip_address)
+    /// - [`mask`](crate::types::builders::StaticIpConnectionInfoBuilder::mask)
+    /// - [`dns`](crate::types::builders::StaticIpConnectionInfoBuilder::dns)
+    /// - [`default_gateway`](crate::types::builders::StaticIpConnectionInfoBuilder::default_gateway)
+    pub fn build(self) -> ::std::result::Result<crate::types::StaticIpConnectionInfo, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::StaticIpConnectionInfo {
+            ip_address: self.ip_address.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "ip_address",
+                    "ip_address was not specified but it is required when building StaticIpConnectionInfo",
+                )
+            })?,
+            mask: self.mask.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "mask",
+                    "mask was not specified but it is required when building StaticIpConnectionInfo",
+                )
+            })?,
+            dns: self.dns.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "dns",
+                    "dns was not specified but it is required when building StaticIpConnectionInfo",
+                )
+            })?,
+            default_gateway: self.default_gateway.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "default_gateway",
+                    "default_gateway was not specified but it is required when building StaticIpConnectionInfo",
+                )
+            })?,
+        })
     }
 }

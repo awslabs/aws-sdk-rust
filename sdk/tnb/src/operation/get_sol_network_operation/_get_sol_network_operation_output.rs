@@ -6,7 +6,7 @@ pub struct GetSolNetworkOperationOutput {
     /// <p>ID of this network operation occurrence.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Network operation ARN.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The state of the network operation.</p>
     pub operation_state: ::std::option::Option<crate::types::NsLcmOperationState>,
     /// <p>ID of the network operation instance.</p>
@@ -29,8 +29,9 @@ impl GetSolNetworkOperationOutput {
         self.id.as_deref()
     }
     /// <p>Network operation ARN.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The state of the network operation.</p>
     pub fn operation_state(&self) -> ::std::option::Option<&crate::types::NsLcmOperationState> {
@@ -53,8 +54,10 @@ impl GetSolNetworkOperationOutput {
         self.metadata.as_ref()
     }
     /// <p>All tasks associated with this operation occurrence.</p>
-    pub fn tasks(&self) -> ::std::option::Option<&[crate::types::GetSolNetworkOperationTaskDetails]> {
-        self.tasks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tasks.is_none()`.
+    pub fn tasks(&self) -> &[crate::types::GetSolNetworkOperationTaskDetails] {
+        self.tasks.as_deref().unwrap_or_default()
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -120,6 +123,7 @@ impl GetSolNetworkOperationOutputBuilder {
         &self.id
     }
     /// <p>Network operation ARN.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -253,10 +257,22 @@ impl GetSolNetworkOperationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetSolNetworkOperationOutput`](crate::operation::get_sol_network_operation::GetSolNetworkOperationOutput).
-    pub fn build(self) -> crate::operation::get_sol_network_operation::GetSolNetworkOperationOutput {
-        crate::operation::get_sol_network_operation::GetSolNetworkOperationOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::operation::get_sol_network_operation::builders::GetSolNetworkOperationOutputBuilder::arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_sol_network_operation::GetSolNetworkOperationOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::get_sol_network_operation::GetSolNetworkOperationOutput {
             id: self.id,
-            arn: self.arn,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building GetSolNetworkOperationOutput",
+                )
+            })?,
             operation_state: self.operation_state,
             ns_instance_id: self.ns_instance_id,
             lcm_operation_type: self.lcm_operation_type,
@@ -265,7 +281,7 @@ impl GetSolNetworkOperationOutputBuilder {
             tasks: self.tasks,
             tags: self.tags,
             _request_id: self._request_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for GetSolNetworkOperationOutputBuilder {

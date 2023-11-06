@@ -2,7 +2,7 @@
 pub fn ser_standards_control_association_id(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StandardsControlAssociationId,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.security_control_id {
         object.key("SecurityControlId").string(var_1.as_str());
     }
@@ -51,7 +51,7 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::standards_control_association_id_correct_errors(builder).build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

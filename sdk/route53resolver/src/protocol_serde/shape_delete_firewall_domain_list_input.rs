@@ -2,7 +2,7 @@
 pub fn ser_delete_firewall_domain_list_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_firewall_domain_list::DeleteFirewallDomainListInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.firewall_domain_list_id {
         object.key("FirewallDomainListId").string(var_1.as_str());
     }

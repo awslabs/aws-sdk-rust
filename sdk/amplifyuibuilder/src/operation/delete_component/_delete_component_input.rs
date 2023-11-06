@@ -41,6 +41,7 @@ pub struct DeleteComponentInputBuilder {
 }
 impl DeleteComponentInputBuilder {
     /// <p>The unique ID of the Amplify app associated with the component to delete.</p>
+    /// This field is required.
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DeleteComponentInputBuilder {
         &self.app_id
     }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
+    /// This field is required.
     pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl DeleteComponentInputBuilder {
         &self.environment_name
     }
     /// <p>The unique ID of the component to delete.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +88,7 @@ impl DeleteComponentInputBuilder {
     /// Consumes the builder and constructs a [`DeleteComponentInput`](crate::operation::delete_component::DeleteComponentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_component::DeleteComponentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_component::DeleteComponentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_component::DeleteComponentInput {
             app_id: self.app_id,
             environment_name: self.environment_name,

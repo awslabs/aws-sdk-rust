@@ -65,6 +65,7 @@ pub struct ListMobileDeviceAccessOverridesInputBuilder {
 }
 impl ListMobileDeviceAccessOverridesInputBuilder {
     /// <p>The WorkMail organization under which to list mobile device access overrides.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -154,7 +155,7 @@ impl ListMobileDeviceAccessOverridesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_mobile_device_access_overrides::ListMobileDeviceAccessOverridesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_mobile_device_access_overrides::ListMobileDeviceAccessOverridesInput {

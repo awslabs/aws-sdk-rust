@@ -35,6 +35,7 @@ pub struct FailoverConfigBuilder {
 }
 impl FailoverConfigBuilder {
     /// <p>The main Region of the endpoint.</p>
+    /// This field is required.
     pub fn primary(mut self, input: crate::types::Primary) -> Self {
         self.primary = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl FailoverConfigBuilder {
         &self.primary
     }
     /// <p>The Region that events are routed to when failover is triggered or event replication is enabled.</p>
+    /// This field is required.
     pub fn secondary(mut self, input: crate::types::Secondary) -> Self {
         self.secondary = ::std::option::Option::Some(input);
         self

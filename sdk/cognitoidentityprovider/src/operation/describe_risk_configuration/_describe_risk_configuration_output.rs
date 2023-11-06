@@ -34,6 +34,7 @@ pub struct DescribeRiskConfigurationOutputBuilder {
 }
 impl DescribeRiskConfigurationOutputBuilder {
     /// <p>The risk configuration.</p>
+    /// This field is required.
     pub fn risk_configuration(mut self, input: crate::types::RiskConfigurationType) -> Self {
         self.risk_configuration = ::std::option::Option::Some(input);
         self

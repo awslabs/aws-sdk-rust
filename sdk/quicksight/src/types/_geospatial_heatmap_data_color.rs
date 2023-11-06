@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GeospatialHeatmapDataColor {
     /// <p>The hex color to be used in the heatmap point style.</p>
-    pub color: ::std::option::Option<::std::string::String>,
+    pub color: ::std::string::String,
 }
 impl GeospatialHeatmapDataColor {
     /// <p>The hex color to be used in the heatmap point style.</p>
-    pub fn color(&self) -> ::std::option::Option<&str> {
-        self.color.as_deref()
+    pub fn color(&self) -> &str {
+        use std::ops::Deref;
+        self.color.deref()
     }
 }
 impl GeospatialHeatmapDataColor {
@@ -28,6 +29,7 @@ pub struct GeospatialHeatmapDataColorBuilder {
 }
 impl GeospatialHeatmapDataColorBuilder {
     /// <p>The hex color to be used in the heatmap point style.</p>
+    /// This field is required.
     pub fn color(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.color = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl GeospatialHeatmapDataColorBuilder {
         &self.color
     }
     /// Consumes the builder and constructs a [`GeospatialHeatmapDataColor`](crate::types::GeospatialHeatmapDataColor).
-    pub fn build(self) -> crate::types::GeospatialHeatmapDataColor {
-        crate::types::GeospatialHeatmapDataColor { color: self.color }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`color`](crate::types::builders::GeospatialHeatmapDataColorBuilder::color)
+    pub fn build(self) -> ::std::result::Result<crate::types::GeospatialHeatmapDataColor, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::GeospatialHeatmapDataColor {
+            color: self.color.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "color",
+                    "color was not specified but it is required when building GeospatialHeatmapDataColor",
+                )
+            })?,
+        })
     }
 }

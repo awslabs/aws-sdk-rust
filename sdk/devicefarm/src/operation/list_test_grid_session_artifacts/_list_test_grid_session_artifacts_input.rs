@@ -48,6 +48,7 @@ pub struct ListTestGridSessionArtifactsInputBuilder {
 }
 impl ListTestGridSessionArtifactsInputBuilder {
     /// <p>The ARN of a <code>TestGridSession</code>. </p>
+    /// This field is required.
     pub fn session_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_arn = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +109,7 @@ impl ListTestGridSessionArtifactsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_test_grid_session_artifacts::ListTestGridSessionArtifactsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_test_grid_session_artifacts::ListTestGridSessionArtifactsInput {
             session_arn: self.session_arn,

@@ -23,16 +23,20 @@ pub struct DeploymentTargets {
 }
 impl DeploymentTargets {
     /// <p>The names of one or more Amazon Web Services accounts for which you want to deploy stack set updates.</p>
-    pub fn accounts(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.accounts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accounts.is_none()`.
+    pub fn accounts(&self) -> &[::std::string::String] {
+        self.accounts.as_deref().unwrap_or_default()
     }
     /// <p>Returns the value of the <code>AccountsUrl</code> property.</p>
     pub fn accounts_url(&self) -> ::std::option::Option<&str> {
         self.accounts_url.as_deref()
     }
     /// <p>The organization root ID or organizational unit (OU) IDs to which StackSets deploys.</p>
-    pub fn organizational_unit_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.organizational_unit_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.organizational_unit_ids.is_none()`.
+    pub fn organizational_unit_ids(&self) -> &[::std::string::String] {
+        self.organizational_unit_ids.as_deref().unwrap_or_default()
     }
     /// <p>Limit deployment targets to individual accounts or include additional accounts with provided OUs.</p>
     /// <p>The following is a list of possible values for the <code>AccountFilterType</code> operation.</p>

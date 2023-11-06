@@ -55,6 +55,7 @@ impl DeleteStreamingSessionInputBuilder {
         &self.client_token
     }
     /// <p>The streaming session ID.</p>
+    /// This field is required.
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl DeleteStreamingSessionInputBuilder {
         &self.session_id
     }
     /// <p>The studio ID. </p>
+    /// This field is required.
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
         self
@@ -85,8 +87,10 @@ impl DeleteStreamingSessionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteStreamingSessionInput`](crate::operation::delete_streaming_session::DeleteStreamingSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_streaming_session::DeleteStreamingSessionInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_streaming_session::DeleteStreamingSessionInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_streaming_session::DeleteStreamingSessionInput {
             client_token: self.client_token,
             session_id: self.session_id,

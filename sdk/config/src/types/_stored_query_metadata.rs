@@ -5,26 +5,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StoredQueryMetadata {
     /// <p>The ID of the query. </p>
-    pub query_id: ::std::option::Option<::std::string::String>,
+    pub query_id: ::std::string::String,
     /// <p>Amazon Resource Name (ARN) of the query. For example, arn:partition:service:region:account-id:resource-type/resource-name/resource-id.</p>
-    pub query_arn: ::std::option::Option<::std::string::String>,
+    pub query_arn: ::std::string::String,
     /// <p>The name of the query.</p>
-    pub query_name: ::std::option::Option<::std::string::String>,
+    pub query_name: ::std::string::String,
     /// <p>A unique description for the query.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl StoredQueryMetadata {
     /// <p>The ID of the query. </p>
-    pub fn query_id(&self) -> ::std::option::Option<&str> {
-        self.query_id.as_deref()
+    pub fn query_id(&self) -> &str {
+        use std::ops::Deref;
+        self.query_id.deref()
     }
     /// <p>Amazon Resource Name (ARN) of the query. For example, arn:partition:service:region:account-id:resource-type/resource-name/resource-id.</p>
-    pub fn query_arn(&self) -> ::std::option::Option<&str> {
-        self.query_arn.as_deref()
+    pub fn query_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.query_arn.deref()
     }
     /// <p>The name of the query.</p>
-    pub fn query_name(&self) -> ::std::option::Option<&str> {
-        self.query_name.as_deref()
+    pub fn query_name(&self) -> &str {
+        use std::ops::Deref;
+        self.query_name.deref()
     }
     /// <p>A unique description for the query.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -49,6 +52,7 @@ pub struct StoredQueryMetadataBuilder {
 }
 impl StoredQueryMetadataBuilder {
     /// <p>The ID of the query. </p>
+    /// This field is required.
     pub fn query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +67,7 @@ impl StoredQueryMetadataBuilder {
         &self.query_id
     }
     /// <p>Amazon Resource Name (ARN) of the query. For example, arn:partition:service:region:account-id:resource-type/resource-name/resource-id.</p>
+    /// This field is required.
     pub fn query_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_arn = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +82,7 @@ impl StoredQueryMetadataBuilder {
         &self.query_arn
     }
     /// <p>The name of the query.</p>
+    /// This field is required.
     pub fn query_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_name = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +111,31 @@ impl StoredQueryMetadataBuilder {
         &self.description
     }
     /// Consumes the builder and constructs a [`StoredQueryMetadata`](crate::types::StoredQueryMetadata).
-    pub fn build(self) -> crate::types::StoredQueryMetadata {
-        crate::types::StoredQueryMetadata {
-            query_id: self.query_id,
-            query_arn: self.query_arn,
-            query_name: self.query_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`query_id`](crate::types::builders::StoredQueryMetadataBuilder::query_id)
+    /// - [`query_arn`](crate::types::builders::StoredQueryMetadataBuilder::query_arn)
+    /// - [`query_name`](crate::types::builders::StoredQueryMetadataBuilder::query_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::StoredQueryMetadata, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::StoredQueryMetadata {
+            query_id: self.query_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "query_id",
+                    "query_id was not specified but it is required when building StoredQueryMetadata",
+                )
+            })?,
+            query_arn: self.query_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "query_arn",
+                    "query_arn was not specified but it is required when building StoredQueryMetadata",
+                )
+            })?,
+            query_name: self.query_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "query_name",
+                    "query_name was not specified but it is required when building StoredQueryMetadata",
+                )
+            })?,
             description: self.description,
-        }
+        })
     }
 }

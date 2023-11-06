@@ -27,6 +27,7 @@ pub struct GetPortalInputBuilder {
 }
 impl GetPortalInputBuilder {
     /// <p>The ARN of the web portal.</p>
+    /// This field is required.
     pub fn portal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portal_arn = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetPortalInputBuilder {
         &self.portal_arn
     }
     /// Consumes the builder and constructs a [`GetPortalInput`](crate::operation::get_portal::GetPortalInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_portal::GetPortalInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_portal::GetPortalInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_portal::GetPortalInput { portal_arn: self.portal_arn })
     }
 }

@@ -41,6 +41,7 @@ pub struct ListModelPackagingJobsInputBuilder {
 }
 impl ListModelPackagingJobsInputBuilder {
     /// <p> The name of the project for which you want to list the model packaging jobs. </p>
+    /// This field is required.
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListModelPackagingJobsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_model_packaging_jobs::ListModelPackagingJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_model_packaging_jobs::ListModelPackagingJobsInput {
             project_name: self.project_name,

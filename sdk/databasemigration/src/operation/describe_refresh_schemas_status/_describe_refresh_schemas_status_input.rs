@@ -28,6 +28,7 @@ pub struct DescribeRefreshSchemasStatusInputBuilder {
 }
 impl DescribeRefreshSchemasStatusInputBuilder {
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
+    /// This field is required.
     pub fn endpoint_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_arn = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl DescribeRefreshSchemasStatusInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_refresh_schemas_status::DescribeRefreshSchemasStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_refresh_schemas_status::DescribeRefreshSchemasStatusInput {
             endpoint_arn: self.endpoint_arn,

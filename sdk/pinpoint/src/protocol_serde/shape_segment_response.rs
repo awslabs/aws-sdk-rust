@@ -89,7 +89,7 @@ where
                             );
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_map_of__string::de_map_of__string(tokens)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens)?);
                         }
                         "Version" => {
                             builder = builder.set_version(
@@ -108,7 +108,7 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::segment_response_correct_errors(builder).build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

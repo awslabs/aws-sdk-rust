@@ -35,8 +35,10 @@ impl UpdateRobotApplicationOutput {
         self.version.as_deref()
     }
     /// <p>The sources of the robot application.</p>
-    pub fn sources(&self) -> ::std::option::Option<&[crate::types::Source]> {
-        self.sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
+    pub fn sources(&self) -> &[crate::types::Source] {
+        self.sources.as_deref().unwrap_or_default()
     }
     /// <p>The robot software suite (ROS distribution) used by the robot application.</p>
     pub fn robot_software_suite(&self) -> ::std::option::Option<&crate::types::RobotSoftwareSuite> {

@@ -2,7 +2,7 @@
 pub fn ser_column_group(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ColumnGroup,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.geo_spatial_column_group {
         #[allow(unused_mut)]
         let mut object_2 = object.key("GeoSpatialColumnGroup").start_object();

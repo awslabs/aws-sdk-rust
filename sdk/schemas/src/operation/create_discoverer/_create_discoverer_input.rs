@@ -62,6 +62,7 @@ impl CreateDiscovererInputBuilder {
         &self.description
     }
     /// <p>The ARN of the event bus.</p>
+    /// This field is required.
     pub fn source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_arn = ::std::option::Option::Some(input.into());
         self
@@ -112,7 +113,7 @@ impl CreateDiscovererInputBuilder {
     /// Consumes the builder and constructs a [`CreateDiscovererInput`](crate::operation::create_discoverer::CreateDiscovererInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_discoverer::CreateDiscovererInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_discoverer::CreateDiscovererInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_discoverer::CreateDiscovererInput {
             description: self.description,
             source_arn: self.source_arn,

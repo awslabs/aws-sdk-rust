@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEnvironmentAccountConnectionsOutput {
     /// <p>An array of environment account connections with details that's returned by Proton. </p>
-    pub environment_account_connections: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentAccountConnectionSummary>>,
+    pub environment_account_connections: ::std::vec::Vec<crate::types::EnvironmentAccountConnectionSummary>,
     /// <p>A token that indicates the location of the next environment account connection in the array of environment account connections, after the current requested list of environment account connections.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListEnvironmentAccountConnectionsOutput {
     /// <p>An array of environment account connections with details that's returned by Proton. </p>
-    pub fn environment_account_connections(&self) -> ::std::option::Option<&[crate::types::EnvironmentAccountConnectionSummary]> {
-        self.environment_account_connections.as_deref()
+    pub fn environment_account_connections(&self) -> &[crate::types::EnvironmentAccountConnectionSummary] {
+        use std::ops::Deref;
+        self.environment_account_connections.deref()
     }
     /// <p>A token that indicates the location of the next environment account connection in the array of environment account connections, after the current requested list of environment account connections.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -87,11 +88,25 @@ impl ListEnvironmentAccountConnectionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListEnvironmentAccountConnectionsOutput`](crate::operation::list_environment_account_connections::ListEnvironmentAccountConnectionsOutput).
-    pub fn build(self) -> crate::operation::list_environment_account_connections::ListEnvironmentAccountConnectionsOutput {
-        crate::operation::list_environment_account_connections::ListEnvironmentAccountConnectionsOutput {
-            environment_account_connections: self.environment_account_connections,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`environment_account_connections`](crate::operation::list_environment_account_connections::builders::ListEnvironmentAccountConnectionsOutputBuilder::environment_account_connections)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_environment_account_connections::ListEnvironmentAccountConnectionsOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::list_environment_account_connections::ListEnvironmentAccountConnectionsOutput {
+                environment_account_connections: self.environment_account_connections.ok_or_else(|| {
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
+                        "environment_account_connections",
+                        "environment_account_connections was not specified but it is required when building ListEnvironmentAccountConnectionsOutput",
+                    )
+                })?,
+                next_token: self.next_token,
+                _request_id: self._request_id,
+            },
+        )
     }
 }

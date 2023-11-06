@@ -41,6 +41,7 @@ pub struct GetFileInputBuilder {
 }
 impl GetFileInputBuilder {
     /// <p>The name of the repository that contains the file.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl GetFileInputBuilder {
         &self.commit_specifier
     }
     /// <p>The fully qualified path to the file, including the full name and extension of the file. For example, /examples/file.md is the fully qualified path to a file named file.md in a folder named examples.</p>
+    /// This field is required.
     pub fn file_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_path = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +85,7 @@ impl GetFileInputBuilder {
         &self.file_path
     }
     /// Consumes the builder and constructs a [`GetFileInput`](crate::operation::get_file::GetFileInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_file::GetFileInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_file::GetFileInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_file::GetFileInput {
             repository_name: self.repository_name,
             commit_specifier: self.commit_specifier,

@@ -2,7 +2,7 @@
 pub fn ser_service_catalog_provisioning_update_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ServiceCatalogProvisioningUpdateDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.provisioning_artifact_id {
         object.key("ProvisioningArtifactId").string(var_1.as_str());
     }

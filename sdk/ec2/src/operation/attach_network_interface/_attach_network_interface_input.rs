@@ -63,6 +63,7 @@ pub struct AttachNetworkInterfaceInputBuilder {
 }
 impl AttachNetworkInterfaceInputBuilder {
     /// <p>The index of the device for the network interface attachment.</p>
+    /// This field is required.
     pub fn device_index(mut self, input: i32) -> Self {
         self.device_index = ::std::option::Option::Some(input);
         self
@@ -91,6 +92,7 @@ impl AttachNetworkInterfaceInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +107,7 @@ impl AttachNetworkInterfaceInputBuilder {
         &self.instance_id
     }
     /// <p>The ID of the network interface.</p>
+    /// This field is required.
     pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_interface_id = ::std::option::Option::Some(input.into());
         self
@@ -149,8 +152,10 @@ impl AttachNetworkInterfaceInputBuilder {
     /// Consumes the builder and constructs a [`AttachNetworkInterfaceInput`](crate::operation::attach_network_interface::AttachNetworkInterfaceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::attach_network_interface::AttachNetworkInterfaceInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::attach_network_interface::AttachNetworkInterfaceInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::attach_network_interface::AttachNetworkInterfaceInput {
             device_index: self.device_index,
             dry_run: self.dry_run,

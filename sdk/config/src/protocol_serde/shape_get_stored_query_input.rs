@@ -2,7 +2,7 @@
 pub fn ser_get_stored_query_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_stored_query::GetStoredQueryInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.query_name {
         object.key("QueryName").string(var_1.as_str());
     }

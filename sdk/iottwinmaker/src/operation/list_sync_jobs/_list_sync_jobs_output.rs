@@ -11,8 +11,10 @@ pub struct ListSyncJobsOutput {
 }
 impl ListSyncJobsOutput {
     /// <p>The listed SyncJob summaries.</p>
-    pub fn sync_job_summaries(&self) -> ::std::option::Option<&[crate::types::SyncJobSummary]> {
-        self.sync_job_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sync_job_summaries.is_none()`.
+    pub fn sync_job_summaries(&self) -> &[crate::types::SyncJobSummary] {
+        self.sync_job_summaries.as_deref().unwrap_or_default()
     }
     /// <p>The string that specifies the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

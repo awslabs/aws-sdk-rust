@@ -28,6 +28,7 @@ pub struct CodeHookSpecificationBuilder {
 }
 impl CodeHookSpecificationBuilder {
     /// <p>Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot.</p>
+    /// This field is required.
     pub fn lambda_code_hook(mut self, input: crate::types::LambdaCodeHook) -> Self {
         self.lambda_code_hook = ::std::option::Option::Some(input);
         self

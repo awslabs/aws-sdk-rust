@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDicomImportJobsOutput {
     /// <p>A list of job summaries.</p>
-    pub job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::DicomImportJobSummary>>,
+    pub job_summaries: ::std::vec::Vec<crate::types::DicomImportJobSummary>,
     /// <p>The pagination token used to retrieve the list of import jobs on the next page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListDicomImportJobsOutput {
     /// <p>A list of job summaries.</p>
-    pub fn job_summaries(&self) -> ::std::option::Option<&[crate::types::DicomImportJobSummary]> {
-        self.job_summaries.as_deref()
+    pub fn job_summaries(&self) -> &[crate::types::DicomImportJobSummary] {
+        use std::ops::Deref;
+        self.job_summaries.deref()
     }
     /// <p>The pagination token used to retrieve the list of import jobs on the next page.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,21 @@ impl ListDicomImportJobsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDicomImportJobsOutput`](crate::operation::list_dicom_import_jobs::ListDicomImportJobsOutput).
-    pub fn build(self) -> crate::operation::list_dicom_import_jobs::ListDicomImportJobsOutput {
-        crate::operation::list_dicom_import_jobs::ListDicomImportJobsOutput {
-            job_summaries: self.job_summaries,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`job_summaries`](crate::operation::list_dicom_import_jobs::builders::ListDicomImportJobsOutputBuilder::job_summaries)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_dicom_import_jobs::ListDicomImportJobsOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_dicom_import_jobs::ListDicomImportJobsOutput {
+            job_summaries: self.job_summaries.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "job_summaries",
+                    "job_summaries was not specified but it is required when building ListDicomImportJobsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

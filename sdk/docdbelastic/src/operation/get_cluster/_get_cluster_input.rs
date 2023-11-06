@@ -27,6 +27,7 @@ pub struct GetClusterInputBuilder {
 }
 impl GetClusterInputBuilder {
     /// <p>The arn of the Elastic DocumentDB cluster.</p>
+    /// This field is required.
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_arn = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetClusterInputBuilder {
         &self.cluster_arn
     }
     /// Consumes the builder and constructs a [`GetClusterInput`](crate::operation::get_cluster::GetClusterInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_cluster::GetClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_cluster::GetClusterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_cluster::GetClusterInput {
             cluster_arn: self.cluster_arn,
         })

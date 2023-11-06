@@ -10,7 +10,7 @@ impl RecognizeUtteranceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::recognize_utterance::RecognizeUtteranceOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::recognize_utterance::RecognizeUtteranceError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -93,12 +93,15 @@ impl RecognizeUtteranceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::recognize_utterance::RecognizeUtteranceOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::recognize_utterance::RecognizeUtteranceError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::recognize_utterance::RecognizeUtterance::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -107,20 +110,15 @@ impl RecognizeUtteranceFluentBuilder {
         crate::operation::recognize_utterance::RecognizeUtterance::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::recognize_utterance::RecognizeUtteranceOutput,
-            crate::operation::recognize_utterance::RecognizeUtteranceError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::recognize_utterance::RecognizeUtteranceError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::recognize_utterance::RecognizeUtteranceOutput,
+        crate::operation::recognize_utterance::RecognizeUtteranceError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -340,17 +338,17 @@ impl RecognizeUtteranceFluentBuilder {
         self.inner.get_response_content_type()
     }
     /// <p>User input in PCM or Opus audio format or text format as described in the <code>requestContentType</code> parameter.</p>
-    pub fn input_stream(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
+    pub fn input_stream(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.inner = self.inner.input_stream(input);
         self
     }
     /// <p>User input in PCM or Opus audio format or text format as described in the <code>requestContentType</code> parameter.</p>
-    pub fn set_input_stream(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
+    pub fn set_input_stream(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.inner = self.inner.set_input_stream(input);
         self
     }
     /// <p>User input in PCM or Opus audio format or text format as described in the <code>requestContentType</code> parameter.</p>
-    pub fn get_input_stream(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_input_stream(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         self.inner.get_input_stream()
     }
 }

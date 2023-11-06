@@ -27,6 +27,7 @@ pub struct StopMatchmakingInputBuilder {
 }
 impl StopMatchmakingInputBuilder {
     /// <p>A unique identifier for a matchmaking ticket.</p>
+    /// This field is required.
     pub fn ticket_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ticket_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl StopMatchmakingInputBuilder {
     /// Consumes the builder and constructs a [`StopMatchmakingInput`](crate::operation::stop_matchmaking::StopMatchmakingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_matchmaking::StopMatchmakingInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_matchmaking::StopMatchmakingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_matchmaking::StopMatchmakingInput { ticket_id: self.ticket_id })
     }
 }

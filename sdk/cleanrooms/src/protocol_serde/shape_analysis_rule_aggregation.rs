@@ -2,69 +2,69 @@
 pub fn ser_analysis_rule_aggregation(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AnalysisRuleAggregation,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.aggregate_columns {
-        let mut array_2 = object.key("aggregateColumns").start_array();
-        for item_3 in var_1 {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        let mut array_1 = object.key("aggregateColumns").start_array();
+        for item_2 in &input.aggregate_columns {
             {
                 #[allow(unused_mut)]
-                let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_aggregate_column::ser_aggregate_column(&mut object_4, item_3)?;
-                object_4.finish();
+                let mut object_3 = array_1.value().start_object();
+                crate::protocol_serde::shape_aggregate_column::ser_aggregate_column(&mut object_3, item_2)?;
+                object_3.finish();
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
-    if let Some(var_5) = &input.join_columns {
-        let mut array_6 = object.key("joinColumns").start_array();
-        for item_7 in var_5 {
+    {
+        let mut array_4 = object.key("joinColumns").start_array();
+        for item_5 in &input.join_columns {
             {
-                array_6.value().string(item_7.as_str());
+                array_4.value().string(item_5.as_str());
             }
         }
-        array_6.finish();
+        array_4.finish();
     }
-    if let Some(var_8) = &input.join_required {
-        object.key("joinRequired").string(var_8.as_str());
+    if let Some(var_6) = &input.join_required {
+        object.key("joinRequired").string(var_6.as_str());
     }
-    if let Some(var_9) = &input.allowed_join_operators {
-        let mut array_10 = object.key("allowedJoinOperators").start_array();
-        for item_11 in var_9 {
+    if let Some(var_7) = &input.allowed_join_operators {
+        let mut array_8 = object.key("allowedJoinOperators").start_array();
+        for item_9 in var_7 {
+            {
+                array_8.value().string(item_9.as_str());
+            }
+        }
+        array_8.finish();
+    }
+    {
+        let mut array_10 = object.key("dimensionColumns").start_array();
+        for item_11 in &input.dimension_columns {
             {
                 array_10.value().string(item_11.as_str());
             }
         }
         array_10.finish();
     }
-    if let Some(var_12) = &input.dimension_columns {
-        let mut array_13 = object.key("dimensionColumns").start_array();
-        for item_14 in var_12 {
+    {
+        let mut array_12 = object.key("scalarFunctions").start_array();
+        for item_13 in &input.scalar_functions {
             {
-                array_13.value().string(item_14.as_str());
+                array_12.value().string(item_13.as_str());
             }
         }
-        array_13.finish();
+        array_12.finish();
     }
-    if let Some(var_15) = &input.scalar_functions {
-        let mut array_16 = object.key("scalarFunctions").start_array();
-        for item_17 in var_15 {
-            {
-                array_16.value().string(item_17.as_str());
-            }
-        }
-        array_16.finish();
-    }
-    if let Some(var_18) = &input.output_constraints {
-        let mut array_19 = object.key("outputConstraints").start_array();
-        for item_20 in var_18 {
+    {
+        let mut array_14 = object.key("outputConstraints").start_array();
+        for item_15 in &input.output_constraints {
             {
                 #[allow(unused_mut)]
-                let mut object_21 = array_19.value().start_object();
-                crate::protocol_serde::shape_aggregation_constraint::ser_aggregation_constraint(&mut object_21, item_20)?;
-                object_21.finish();
+                let mut object_16 = array_14.value().start_object();
+                crate::protocol_serde::shape_aggregation_constraint::ser_aggregation_constraint(&mut object_16, item_15)?;
+                object_16.finish();
             }
         }
-        array_19.finish();
+        array_14.finish();
     }
     Ok(())
 }
@@ -127,7 +127,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::analysis_rule_aggregation_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

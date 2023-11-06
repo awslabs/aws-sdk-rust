@@ -9,7 +9,7 @@ pub struct TargetTrackingMetricStat {
     pub metric: ::std::option::Option<crate::types::TargetTrackingMetric>,
     /// <p>The statistic to return. It can include any CloudWatch statistic or extended statistic. For a list of valid values, see the table in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Statistic">Statistics</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
     /// <p>The most commonly used metric for scaling is <code>Average</code>.</p>
-    pub stat: ::std::option::Option<::std::string::String>,
+    pub stat: ::std::string::String,
     /// <p>The unit to use for the returned data points. For a complete list of the units that CloudWatch supports, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">MetricDatum</a> data type in the <i>Amazon CloudWatch API Reference</i>.</p>
     pub unit: ::std::option::Option<::std::string::String>,
 }
@@ -20,8 +20,9 @@ impl TargetTrackingMetricStat {
     }
     /// <p>The statistic to return. It can include any CloudWatch statistic or extended statistic. For a list of valid values, see the table in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Statistic">Statistics</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
     /// <p>The most commonly used metric for scaling is <code>Average</code>.</p>
-    pub fn stat(&self) -> ::std::option::Option<&str> {
-        self.stat.as_deref()
+    pub fn stat(&self) -> &str {
+        use std::ops::Deref;
+        self.stat.deref()
     }
     /// <p>The unit to use for the returned data points. For a complete list of the units that CloudWatch supports, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">MetricDatum</a> data type in the <i>Amazon CloudWatch API Reference</i>.</p>
     pub fn unit(&self) -> ::std::option::Option<&str> {
@@ -45,6 +46,7 @@ pub struct TargetTrackingMetricStatBuilder {
 }
 impl TargetTrackingMetricStatBuilder {
     /// <p>The CloudWatch metric to return, including the metric name, namespace, and dimensions. To get the exact metric name, namespace, and dimensions, inspect the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_Metric.html">Metric</a> object that is returned by a call to <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.</p>
+    /// This field is required.
     pub fn metric(mut self, input: crate::types::TargetTrackingMetric) -> Self {
         self.metric = ::std::option::Option::Some(input);
         self
@@ -60,6 +62,7 @@ impl TargetTrackingMetricStatBuilder {
     }
     /// <p>The statistic to return. It can include any CloudWatch statistic or extended statistic. For a list of valid values, see the table in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Statistic">Statistics</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
     /// <p>The most commonly used metric for scaling is <code>Average</code>.</p>
+    /// This field is required.
     pub fn stat(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stat = ::std::option::Option::Some(input.into());
         self
@@ -90,11 +93,18 @@ impl TargetTrackingMetricStatBuilder {
         &self.unit
     }
     /// Consumes the builder and constructs a [`TargetTrackingMetricStat`](crate::types::TargetTrackingMetricStat).
-    pub fn build(self) -> crate::types::TargetTrackingMetricStat {
-        crate::types::TargetTrackingMetricStat {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`stat`](crate::types::builders::TargetTrackingMetricStatBuilder::stat)
+    pub fn build(self) -> ::std::result::Result<crate::types::TargetTrackingMetricStat, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TargetTrackingMetricStat {
             metric: self.metric,
-            stat: self.stat,
+            stat: self.stat.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "stat",
+                    "stat was not specified but it is required when building TargetTrackingMetricStat",
+                )
+            })?,
             unit: self.unit,
-        }
+        })
     }
 }

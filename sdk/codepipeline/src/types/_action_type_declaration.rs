@@ -47,8 +47,10 @@ impl ActionTypeDeclaration {
         self.permissions.as_ref()
     }
     /// <p>The properties of the action type to be updated.</p>
-    pub fn properties(&self) -> ::std::option::Option<&[crate::types::ActionTypeProperty]> {
-        self.properties.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.properties.is_none()`.
+    pub fn properties(&self) -> &[crate::types::ActionTypeProperty] {
+        self.properties.as_deref().unwrap_or_default()
     }
     /// <p>The links associated with the action type to be updated.</p>
     pub fn urls(&self) -> ::std::option::Option<&crate::types::ActionTypeUrls> {
@@ -91,6 +93,7 @@ impl ActionTypeDeclarationBuilder {
         &self.description
     }
     /// <p>Information about the executor for an action type that was created with any supported integration model.</p>
+    /// This field is required.
     pub fn executor(mut self, input: crate::types::ActionTypeExecutor) -> Self {
         self.executor = ::std::option::Option::Some(input);
         self
@@ -105,6 +108,7 @@ impl ActionTypeDeclarationBuilder {
         &self.executor
     }
     /// <p>The action category, owner, provider, and version of the action type to be updated.</p>
+    /// This field is required.
     pub fn id(mut self, input: crate::types::ActionTypeIdentifier) -> Self {
         self.id = ::std::option::Option::Some(input);
         self
@@ -119,6 +123,7 @@ impl ActionTypeDeclarationBuilder {
         &self.id
     }
     /// <p>Details for the artifacts, such as application files, to be worked on by the action. For example, the minimum and maximum number of input artifacts allowed.</p>
+    /// This field is required.
     pub fn input_artifact_details(mut self, input: crate::types::ActionTypeArtifactDetails) -> Self {
         self.input_artifact_details = ::std::option::Option::Some(input);
         self
@@ -133,6 +138,7 @@ impl ActionTypeDeclarationBuilder {
         &self.input_artifact_details
     }
     /// <p>Details for the output artifacts, such as a built application, that are the result of the action. For example, the minimum and maximum number of output artifacts allowed.</p>
+    /// This field is required.
     pub fn output_artifact_details(mut self, input: crate::types::ActionTypeArtifactDetails) -> Self {
         self.output_artifact_details = ::std::option::Option::Some(input);
         self

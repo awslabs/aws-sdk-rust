@@ -44,6 +44,7 @@ pub struct AcceptDomainTransferFromAnotherAwsAccountInputBuilder {
 }
 impl AcceptDomainTransferFromAnotherAwsAccountInputBuilder {
     /// <p>The name of the domain that was specified when another Amazon Web Services account submitted a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a> request. </p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -58,6 +59,7 @@ impl AcceptDomainTransferFromAnotherAwsAccountInputBuilder {
         &self.domain_name
     }
     /// <p>The password that was returned by the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a> request. </p>
+    /// This field is required.
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
         self
@@ -76,7 +78,7 @@ impl AcceptDomainTransferFromAnotherAwsAccountInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::accept_domain_transfer_from_another_aws_account::AcceptDomainTransferFromAnotherAwsAccountInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::accept_domain_transfer_from_another_aws_account::AcceptDomainTransferFromAnotherAwsAccountInput {

@@ -55,6 +55,7 @@ pub struct CreateVariantStoreInputBuilder {
 }
 impl CreateVariantStoreInputBuilder {
     /// <p>The genome reference for the store's variants.</p>
+    /// This field is required.
     pub fn reference(mut self, input: crate::types::ReferenceItem) -> Self {
         self.reference = ::std::option::Option::Some(input);
         self
@@ -133,7 +134,8 @@ impl CreateVariantStoreInputBuilder {
     /// Consumes the builder and constructs a [`CreateVariantStoreInput`](crate::operation::create_variant_store::CreateVariantStoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_variant_store::CreateVariantStoreInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_variant_store::CreateVariantStoreInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_variant_store::CreateVariantStoreInput {
             reference: self.reference,
             name: self.name,

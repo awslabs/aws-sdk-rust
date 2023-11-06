@@ -8,7 +8,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeploymentAlarms {
     /// <p>One or more CloudWatch alarm names. Use a "," to separate the alarms.</p>
-    pub alarm_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub alarm_names: ::std::vec::Vec<::std::string::String>,
     /// <p>Determines whether to use the CloudWatch alarm option in the service deployment process.</p>
     pub enable: bool,
     /// <p>Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If rollback is used, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
@@ -16,8 +16,9 @@ pub struct DeploymentAlarms {
 }
 impl DeploymentAlarms {
     /// <p>One or more CloudWatch alarm names. Use a "," to separate the alarms.</p>
-    pub fn alarm_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.alarm_names.as_deref()
+    pub fn alarm_names(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.alarm_names.deref()
     }
     /// <p>Determines whether to use the CloudWatch alarm option in the service deployment process.</p>
     pub fn enable(&self) -> bool {
@@ -65,6 +66,7 @@ impl DeploymentAlarmsBuilder {
         &self.alarm_names
     }
     /// <p>Determines whether to use the CloudWatch alarm option in the service deployment process.</p>
+    /// This field is required.
     pub fn enable(mut self, input: bool) -> Self {
         self.enable = ::std::option::Option::Some(input);
         self
@@ -79,6 +81,7 @@ impl DeploymentAlarmsBuilder {
         &self.enable
     }
     /// <p>Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If rollback is used, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
+    /// This field is required.
     pub fn rollback(mut self, input: bool) -> Self {
         self.rollback = ::std::option::Option::Some(input);
         self
@@ -93,11 +96,18 @@ impl DeploymentAlarmsBuilder {
         &self.rollback
     }
     /// Consumes the builder and constructs a [`DeploymentAlarms`](crate::types::DeploymentAlarms).
-    pub fn build(self) -> crate::types::DeploymentAlarms {
-        crate::types::DeploymentAlarms {
-            alarm_names: self.alarm_names,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`alarm_names`](crate::types::builders::DeploymentAlarmsBuilder::alarm_names)
+    pub fn build(self) -> ::std::result::Result<crate::types::DeploymentAlarms, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DeploymentAlarms {
+            alarm_names: self.alarm_names.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "alarm_names",
+                    "alarm_names was not specified but it is required when building DeploymentAlarms",
+                )
+            })?,
             enable: self.enable.unwrap_or_default(),
             rollback: self.rollback.unwrap_or_default(),
-        }
+        })
     }
 }

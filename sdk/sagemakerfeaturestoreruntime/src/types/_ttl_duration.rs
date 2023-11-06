@@ -35,6 +35,7 @@ pub struct TtlDurationBuilder {
 }
 impl TtlDurationBuilder {
     /// <p> <code>TtlDuration</code> time unit.</p>
+    /// This field is required.
     pub fn unit(mut self, input: crate::types::TtlDurationUnit) -> Self {
         self.unit = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl TtlDurationBuilder {
         &self.unit
     }
     /// <p> <code>TtlDuration</code> time value.</p>
+    /// This field is required.
     pub fn value(mut self, input: i32) -> Self {
         self.value = ::std::option::Option::Some(input);
         self

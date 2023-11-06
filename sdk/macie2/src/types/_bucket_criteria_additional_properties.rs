@@ -21,8 +21,10 @@ pub struct BucketCriteriaAdditionalProperties {
 }
 impl BucketCriteriaAdditionalProperties {
     /// <p>The value for the property matches (equals) the specified value. If you specify multiple values, Amazon Macie uses OR logic to join the values.</p>
-    pub fn eq(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.eq.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.eq.is_none()`.
+    pub fn eq(&self) -> &[::std::string::String] {
+        self.eq.as_deref().unwrap_or_default()
     }
     /// <p>The value for the property is greater than the specified value.</p>
     pub fn gt(&self) -> ::std::option::Option<i64> {
@@ -41,8 +43,10 @@ impl BucketCriteriaAdditionalProperties {
         self.lte
     }
     /// <p>The value for the property doesn't match (doesn't equal) the specified value. If you specify multiple values, Amazon Macie uses OR logic to join the values.</p>
-    pub fn neq(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.neq.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.neq.is_none()`.
+    pub fn neq(&self) -> &[::std::string::String] {
+        self.neq.as_deref().unwrap_or_default()
     }
     /// <p>The name of the bucket begins with the specified value.</p>
     pub fn prefix(&self) -> ::std::option::Option<&str> {

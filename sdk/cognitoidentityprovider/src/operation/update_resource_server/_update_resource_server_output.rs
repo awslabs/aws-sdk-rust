@@ -34,6 +34,7 @@ pub struct UpdateResourceServerOutputBuilder {
 }
 impl UpdateResourceServerOutputBuilder {
     /// <p>The resource server.</p>
+    /// This field is required.
     pub fn resource_server(mut self, input: crate::types::ResourceServerType) -> Self {
         self.resource_server = ::std::option::Option::Some(input);
         self

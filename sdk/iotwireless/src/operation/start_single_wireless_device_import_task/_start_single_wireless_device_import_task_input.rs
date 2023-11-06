@@ -28,8 +28,10 @@ impl StartSingleWirelessDeviceImportTaskInput {
         self.device_name.as_deref()
     }
     /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The Sidewalk-related parameters for importing a single wireless device.</p>
     pub fn sidewalk(&self) -> ::std::option::Option<&crate::types::SidewalkSingleStartImportInfo> {
@@ -55,6 +57,7 @@ pub struct StartSingleWirelessDeviceImportTaskInputBuilder {
 }
 impl StartSingleWirelessDeviceImportTaskInputBuilder {
     /// <p>The name of the Sidewalk destination that describes the IoT rule to route messages from the device in the import task that will be onboarded to AWS IoT Wireless.</p>
+    /// This field is required.
     pub fn destination_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_name = ::std::option::Option::Some(input.into());
         self
@@ -117,6 +120,7 @@ impl StartSingleWirelessDeviceImportTaskInputBuilder {
         &self.tags
     }
     /// <p>The Sidewalk-related parameters for importing a single wireless device.</p>
+    /// This field is required.
     pub fn sidewalk(mut self, input: crate::types::SidewalkSingleStartImportInfo) -> Self {
         self.sidewalk = ::std::option::Option::Some(input);
         self
@@ -135,7 +139,7 @@ impl StartSingleWirelessDeviceImportTaskInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_single_wireless_device_import_task::StartSingleWirelessDeviceImportTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::start_single_wireless_device_import_task::StartSingleWirelessDeviceImportTaskInput {

@@ -2,7 +2,7 @@
 pub fn ser_list_template_actions_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_template_actions::ListTemplateActionsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.filters {
         #[allow(unused_mut)]
         let mut object_2 = object.key("filters").start_object();
@@ -12,14 +12,14 @@ pub fn ser_list_template_actions_input(
     if let Some(var_3) = &input.launch_configuration_template_id {
         object.key("launchConfigurationTemplateID").string(var_3.as_str());
     }
-    if input.max_results != 0 {
+    if let Some(var_4) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.max_results).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_4) = &input.next_token {
-        object.key("nextToken").string(var_4.as_str());
+    if let Some(var_5) = &input.next_token {
+        object.key("nextToken").string(var_5.as_str());
     }
     Ok(())
 }

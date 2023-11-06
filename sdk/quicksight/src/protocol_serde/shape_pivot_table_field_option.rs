@@ -2,15 +2,15 @@
 pub fn ser_pivot_table_field_option(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PivotTableFieldOption,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.field_id {
-        object.key("FieldId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("FieldId").string(input.field_id.as_str());
     }
-    if let Some(var_2) = &input.custom_label {
-        object.key("CustomLabel").string(var_2.as_str());
+    if let Some(var_1) = &input.custom_label {
+        object.key("CustomLabel").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.visibility {
-        object.key("Visibility").string(var_3.as_str());
+    if let Some(var_2) = &input.visibility {
+        object.key("Visibility").string(var_2.as_str());
     }
     Ok(())
 }
@@ -61,7 +61,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::pivot_table_field_option_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -41,6 +41,7 @@ pub struct RedactRoomMessageInputBuilder {
 }
 impl RedactRoomMessageInputBuilder {
     /// <p>The Amazon Chime account ID.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl RedactRoomMessageInputBuilder {
         &self.account_id
     }
     /// <p>The room ID.</p>
+    /// This field is required.
     pub fn room_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.room_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl RedactRoomMessageInputBuilder {
         &self.room_id
     }
     /// <p>The message ID.</p>
+    /// This field is required.
     pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +88,7 @@ impl RedactRoomMessageInputBuilder {
     /// Consumes the builder and constructs a [`RedactRoomMessageInput`](crate::operation::redact_room_message::RedactRoomMessageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::redact_room_message::RedactRoomMessageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::redact_room_message::RedactRoomMessageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::redact_room_message::RedactRoomMessageInput {
             account_id: self.account_id,
             room_id: self.room_id,

@@ -13,16 +13,22 @@ pub struct SqlApplicationConfigurationUpdate {
 }
 impl SqlApplicationConfigurationUpdate {
     /// <p>The array of <code>InputUpdate</code> objects describing the new input streams used by the application.</p>
-    pub fn input_updates(&self) -> ::std::option::Option<&[crate::types::InputUpdate]> {
-        self.input_updates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_updates.is_none()`.
+    pub fn input_updates(&self) -> &[crate::types::InputUpdate] {
+        self.input_updates.as_deref().unwrap_or_default()
     }
     /// <p>The array of <code>OutputUpdate</code> objects describing the new destination streams used by the application.</p>
-    pub fn output_updates(&self) -> ::std::option::Option<&[crate::types::OutputUpdate]> {
-        self.output_updates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_updates.is_none()`.
+    pub fn output_updates(&self) -> &[crate::types::OutputUpdate] {
+        self.output_updates.as_deref().unwrap_or_default()
     }
     /// <p>The array of <code>ReferenceDataSourceUpdate</code> objects describing the new reference data sources used by the application.</p>
-    pub fn reference_data_source_updates(&self) -> ::std::option::Option<&[crate::types::ReferenceDataSourceUpdate]> {
-        self.reference_data_source_updates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reference_data_source_updates.is_none()`.
+    pub fn reference_data_source_updates(&self) -> &[crate::types::ReferenceDataSourceUpdate] {
+        self.reference_data_source_updates.as_deref().unwrap_or_default()
     }
 }
 impl SqlApplicationConfigurationUpdate {

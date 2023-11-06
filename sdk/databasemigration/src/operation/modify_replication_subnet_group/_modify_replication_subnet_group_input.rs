@@ -21,8 +21,10 @@ impl ModifyReplicationSubnetGroupInput {
         self.replication_subnet_group_description.as_deref()
     }
     /// <p>A list of subnet IDs.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        self.subnet_ids.as_deref().unwrap_or_default()
     }
 }
 impl ModifyReplicationSubnetGroupInput {
@@ -42,6 +44,7 @@ pub struct ModifyReplicationSubnetGroupInputBuilder {
 }
 impl ModifyReplicationSubnetGroupInputBuilder {
     /// <p>The name of the replication instance subnet group.</p>
+    /// This field is required.
     pub fn replication_subnet_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_subnet_group_identifier = ::std::option::Option::Some(input.into());
         self
@@ -94,7 +97,7 @@ impl ModifyReplicationSubnetGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_replication_subnet_group::ModifyReplicationSubnetGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_replication_subnet_group::ModifyReplicationSubnetGroupInput {
             replication_subnet_group_identifier: self.replication_subnet_group_identifier,

@@ -59,6 +59,7 @@ pub struct AdminUpdateDeviceStatusInputBuilder {
 }
 impl AdminUpdateDeviceStatusInputBuilder {
     /// <p>The user pool ID.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -73,6 +74,7 @@ impl AdminUpdateDeviceStatusInputBuilder {
         &self.user_pool_id
     }
     /// <p>The user name.</p>
+    /// This field is required.
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self
@@ -87,6 +89,7 @@ impl AdminUpdateDeviceStatusInputBuilder {
         &self.username
     }
     /// <p>The device key.</p>
+    /// This field is required.
     pub fn device_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_key = ::std::option::Option::Some(input.into());
         self
@@ -119,7 +122,7 @@ impl AdminUpdateDeviceStatusInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::admin_update_device_status::AdminUpdateDeviceStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::admin_update_device_status::AdminUpdateDeviceStatusInput {
             user_pool_id: self.user_pool_id,

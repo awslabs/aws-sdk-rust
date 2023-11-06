@@ -2,7 +2,7 @@
 pub fn ser_create_channel_group_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_channel_group::CreateChannelGroupInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.channel_group_name {
         object.key("ChannelGroupName").string(var_1.as_str());
     }

@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTeamMembersOutput {
     /// <p>A list of team member objects for the project.</p>
-    pub team_members: ::std::option::Option<::std::vec::Vec<crate::types::TeamMember>>,
+    pub team_members: ::std::vec::Vec<crate::types::TeamMember>,
     /// <p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListTeamMembersOutput {
     /// <p>A list of team member objects for the project.</p>
-    pub fn team_members(&self) -> ::std::option::Option<&[crate::types::TeamMember]> {
-        self.team_members.as_deref()
+    pub fn team_members(&self) -> &[crate::types::TeamMember] {
+        use std::ops::Deref;
+        self.team_members.deref()
     }
     /// <p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ListTeamMembersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListTeamMembersOutput`](crate::operation::list_team_members::ListTeamMembersOutput).
-    pub fn build(self) -> crate::operation::list_team_members::ListTeamMembersOutput {
-        crate::operation::list_team_members::ListTeamMembersOutput {
-            team_members: self.team_members,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`team_members`](crate::operation::list_team_members::builders::ListTeamMembersOutputBuilder::team_members)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_team_members::ListTeamMembersOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_team_members::ListTeamMembersOutput {
+            team_members: self.team_members.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "team_members",
+                    "team_members was not specified but it is required when building ListTeamMembersOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -62,6 +62,7 @@ impl ModifyGlobalClusterInputBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing global cluster.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn global_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_cluster_identifier = ::std::option::Option::Some(input.into());
         self
@@ -126,7 +127,7 @@ impl ModifyGlobalClusterInputBuilder {
     /// Consumes the builder and constructs a [`ModifyGlobalClusterInput`](crate::operation::modify_global_cluster::ModifyGlobalClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_global_cluster::ModifyGlobalClusterInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::modify_global_cluster::ModifyGlobalClusterInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::modify_global_cluster::ModifyGlobalClusterInput {
             global_cluster_identifier: self.global_cluster_identifier,

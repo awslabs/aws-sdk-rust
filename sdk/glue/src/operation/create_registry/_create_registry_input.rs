@@ -41,6 +41,7 @@ pub struct CreateRegistryInputBuilder {
 }
 impl CreateRegistryInputBuilder {
     /// <p>Name of the registry to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark. No whitespace.</p>
+    /// This field is required.
     pub fn registry_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_name = ::std::option::Option::Some(input.into());
         self
@@ -91,7 +92,7 @@ impl CreateRegistryInputBuilder {
     /// Consumes the builder and constructs a [`CreateRegistryInput`](crate::operation::create_registry::CreateRegistryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_registry::CreateRegistryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_registry::CreateRegistryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_registry::CreateRegistryInput {
             registry_name: self.registry_name,
             description: self.description,

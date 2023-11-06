@@ -2,7 +2,7 @@
 pub fn ser_aws_code_build_project_logs_config_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsCodeBuildProjectLogsConfigDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cloud_watch_logs {
         #[allow(unused_mut)]
         let mut object_2 = object.key("CloudWatchLogs").start_object();

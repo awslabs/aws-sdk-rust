@@ -129,8 +129,10 @@ impl Deployment {
         self.updated_at.as_ref()
     }
     /// <p>The capacity provider strategy that the deployment is using.</p>
-    pub fn capacity_provider_strategy(&self) -> ::std::option::Option<&[crate::types::CapacityProviderStrategyItem]> {
-        self.capacity_provider_strategy.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capacity_provider_strategy.is_none()`.
+    pub fn capacity_provider_strategy(&self) -> &[crate::types::CapacityProviderStrategyItem] {
+        self.capacity_provider_strategy.as_deref().unwrap_or_default()
     }
     /// <p>The launch type the tasks in the service are using. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn launch_type(&self) -> ::std::option::Option<&crate::types::LaunchType> {
@@ -167,8 +169,10 @@ impl Deployment {
         self.service_connect_configuration.as_ref()
     }
     /// <p>The list of Service Connect resources that are associated with this deployment. Each list entry maps a discovery name to a Cloud Map service name.</p>
-    pub fn service_connect_resources(&self) -> ::std::option::Option<&[crate::types::ServiceConnectServiceResource]> {
-        self.service_connect_resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_connect_resources.is_none()`.
+    pub fn service_connect_resources(&self) -> &[crate::types::ServiceConnectServiceResource] {
+        self.service_connect_resources.as_deref().unwrap_or_default()
     }
 }
 impl Deployment {

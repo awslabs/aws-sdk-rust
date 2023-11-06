@@ -6,7 +6,7 @@
 pub struct Rule {
     /// <p>The name of the rule. </p>
     /// <p>If you change the name of a <code>Rule</code> after you create it and you want the rule's metric name to reflect the change, update the metric name in the rule's <code>VisibilityConfig</code> settings. WAF doesn't automatically update the metric name when you update the rule name. </p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>If you define more than one <code>Rule</code> in a <code>WebACL</code>, WAF evaluates each request against the <code>Rules</code> in order based on the value of <code>Priority</code>. WAF processes rules with lower priority first. The priorities don't need to be consecutive, but they must all be different.</p>
     pub priority: i32,
     /// <p>The WAF processing statement for the rule, for example <code>ByteMatchStatement</code> or <code>SizeConstraintStatement</code>. </p>
@@ -46,8 +46,9 @@ pub struct Rule {
 impl Rule {
     /// <p>The name of the rule. </p>
     /// <p>If you change the name of a <code>Rule</code> after you create it and you want the rule's metric name to reflect the change, update the metric name in the rule's <code>VisibilityConfig</code> settings. WAF doesn't automatically update the metric name when you update the rule name. </p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>If you define more than one <code>Rule</code> in a <code>WebACL</code>, WAF evaluates each request against the <code>Rules</code> in order based on the value of <code>Priority</code>. WAF processes rules with lower priority first. The priorities don't need to be consecutive, but they must all be different.</p>
     pub fn priority(&self) -> i32 {
@@ -84,8 +85,10 @@ impl Rule {
     /// <li> <p>Don't use the following reserved words in your label specification: <code>aws</code>, <code>waf</code>, <code>managed</code>, <code>rulegroup</code>, <code>webacl</code>, <code>regexpatternset</code>, or <code>ipset</code>.</p> </li>
     /// </ul>
     /// <p>For example, <code>myLabelName</code> or <code>nameSpace1:nameSpace2:myLabelName</code>. </p>
-    pub fn rule_labels(&self) -> ::std::option::Option<&[crate::types::Label]> {
-        self.rule_labels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rule_labels.is_none()`.
+    pub fn rule_labels(&self) -> &[crate::types::Label] {
+        self.rule_labels.as_deref().unwrap_or_default()
     }
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
     /// <p>If you change the name of a <code>Rule</code> after you create it and you want the rule's metric name to reflect the change, update the metric name as well. WAF doesn't automatically update the metric name. </p>
@@ -125,6 +128,7 @@ pub struct RuleBuilder {
 impl RuleBuilder {
     /// <p>The name of the rule. </p>
     /// <p>If you change the name of a <code>Rule</code> after you create it and you want the rule's metric name to reflect the change, update the metric name in the rule's <code>VisibilityConfig</code> settings. WAF doesn't automatically update the metric name when you update the rule name. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -141,6 +145,7 @@ impl RuleBuilder {
         &self.name
     }
     /// <p>If you define more than one <code>Rule</code> in a <code>WebACL</code>, WAF evaluates each request against the <code>Rules</code> in order based on the value of <code>Priority</code>. WAF processes rules with lower priority first. The priorities don't need to be consecutive, but they must all be different.</p>
+    /// This field is required.
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
         self
@@ -155,6 +160,7 @@ impl RuleBuilder {
         &self.priority
     }
     /// <p>The WAF processing statement for the rule, for example <code>ByteMatchStatement</code> or <code>SizeConstraintStatement</code>. </p>
+    /// This field is required.
     pub fn statement(mut self, input: crate::types::Statement) -> Self {
         self.statement = ::std::option::Option::Some(input);
         self
@@ -272,6 +278,7 @@ impl RuleBuilder {
     }
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
     /// <p>If you change the name of a <code>Rule</code> after you create it and you want the rule's metric name to reflect the change, update the metric name as well. WAF doesn't automatically update the metric name. </p>
+    /// This field is required.
     pub fn visibility_config(mut self, input: crate::types::VisibilityConfig) -> Self {
         self.visibility_config = ::std::option::Option::Some(input);
         self
@@ -316,9 +323,16 @@ impl RuleBuilder {
         &self.challenge_config
     }
     /// Consumes the builder and constructs a [`Rule`](crate::types::Rule).
-    pub fn build(self) -> crate::types::Rule {
-        crate::types::Rule {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::RuleBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::Rule, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Rule {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building Rule",
+                )
+            })?,
             priority: self.priority.unwrap_or_default(),
             statement: self.statement,
             action: self.action,
@@ -327,6 +341,6 @@ impl RuleBuilder {
             visibility_config: self.visibility_config,
             captcha_config: self.captcha_config,
             challenge_config: self.challenge_config,
-        }
+        })
     }
 }

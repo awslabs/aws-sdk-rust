@@ -27,6 +27,7 @@ pub struct ListMobileDeviceAccessRulesInputBuilder {
 }
 impl ListMobileDeviceAccessRulesInputBuilder {
     /// <p>The WorkMail organization for which to list the rules.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl ListMobileDeviceAccessRulesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_mobile_device_access_rules::ListMobileDeviceAccessRulesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_mobile_device_access_rules::ListMobileDeviceAccessRulesInput {
             organization_id: self.organization_id,

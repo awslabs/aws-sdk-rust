@@ -34,6 +34,7 @@ pub struct DescribeObservationInputBuilder {
 }
 impl DescribeObservationInputBuilder {
     /// <p>The ID of the observation.</p>
+    /// This field is required.
     pub fn observation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.observation_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl DescribeObservationInputBuilder {
     /// Consumes the builder and constructs a [`DescribeObservationInput`](crate::operation::describe_observation::DescribeObservationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_observation::DescribeObservationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_observation::DescribeObservationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_observation::DescribeObservationInput {
             observation_id: self.observation_id,

@@ -62,6 +62,7 @@ pub struct TransferContactInputBuilder {
 }
 impl TransferContactInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl TransferContactInputBuilder {
         &self.instance_id
     }
     /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
+    /// This field is required.
     pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_id = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +120,7 @@ impl TransferContactInputBuilder {
         &self.user_id
     }
     /// <p>The identifier of the flow.</p>
+    /// This field is required.
     pub fn contact_flow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_flow_id = ::std::option::Option::Some(input.into());
         self
@@ -148,7 +151,7 @@ impl TransferContactInputBuilder {
     /// Consumes the builder and constructs a [`TransferContactInput`](crate::operation::transfer_contact::TransferContactInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::transfer_contact::TransferContactInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::transfer_contact::TransferContactInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::transfer_contact::TransferContactInput {
             instance_id: self.instance_id,
             contact_id: self.contact_id,

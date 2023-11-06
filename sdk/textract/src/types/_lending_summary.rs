@@ -11,12 +11,16 @@ pub struct LendingSummary {
 }
 impl LendingSummary {
     /// <p>Contains an array of all DocumentGroup objects.</p>
-    pub fn document_groups(&self) -> ::std::option::Option<&[crate::types::DocumentGroup]> {
-        self.document_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.document_groups.is_none()`.
+    pub fn document_groups(&self) -> &[crate::types::DocumentGroup] {
+        self.document_groups.as_deref().unwrap_or_default()
     }
     /// <p>UndetectedDocumentTypes.</p>
-    pub fn undetected_document_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.undetected_document_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.undetected_document_types.is_none()`.
+    pub fn undetected_document_types(&self) -> &[::std::string::String] {
+        self.undetected_document_types.as_deref().unwrap_or_default()
     }
 }
 impl LendingSummary {

@@ -85,7 +85,7 @@ impl ListSolutionsInputBuilder {
     /// Consumes the builder and constructs a [`ListSolutionsInput`](crate::operation::list_solutions::ListSolutionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_solutions::ListSolutionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_solutions::ListSolutionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_solutions::ListSolutionsInput {
             dataset_group_arn: self.dataset_group_arn,
             next_token: self.next_token,

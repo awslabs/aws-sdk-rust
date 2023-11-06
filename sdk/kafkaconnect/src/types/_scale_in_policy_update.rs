@@ -28,6 +28,7 @@ pub struct ScaleInPolicyUpdateBuilder {
 }
 impl ScaleInPolicyUpdateBuilder {
     /// <p>The target CPU utilization percentage threshold at which you want connector scale in to be triggered.</p>
+    /// This field is required.
     pub fn cpu_utilization_percentage(mut self, input: i32) -> Self {
         self.cpu_utilization_percentage = ::std::option::Option::Some(input);
         self

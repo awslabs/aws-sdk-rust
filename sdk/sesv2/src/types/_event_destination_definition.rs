@@ -25,8 +25,10 @@ impl EventDestinationDefinition {
         self.enabled
     }
     /// <p>An array that specifies which events the Amazon SES API v2 should send to the destinations in this <code>EventDestinationDefinition</code>.</p>
-    pub fn matching_event_types(&self) -> ::std::option::Option<&[crate::types::EventType]> {
-        self.matching_event_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.matching_event_types.is_none()`.
+    pub fn matching_event_types(&self) -> &[crate::types::EventType] {
+        self.matching_event_types.as_deref().unwrap_or_default()
     }
     /// <p>An object that defines an Amazon Kinesis Data Firehose destination for email events. You can use Amazon Kinesis Data Firehose to stream data to other services, such as Amazon S3 and Amazon Redshift.</p>
     pub fn kinesis_firehose_destination(&self) -> ::std::option::Option<&crate::types::KinesisFirehoseDestination> {

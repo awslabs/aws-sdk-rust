@@ -48,12 +48,16 @@ impl CreateFlowInput {
         self.source_flow_config.as_ref()
     }
     /// <p> The configuration that controls how Amazon AppFlow places data in the destination connector. </p>
-    pub fn destination_flow_config_list(&self) -> ::std::option::Option<&[crate::types::DestinationFlowConfig]> {
-        self.destination_flow_config_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destination_flow_config_list.is_none()`.
+    pub fn destination_flow_config_list(&self) -> &[crate::types::DestinationFlowConfig] {
+        self.destination_flow_config_list.as_deref().unwrap_or_default()
     }
     /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
-    pub fn tasks(&self) -> ::std::option::Option<&[crate::types::Task]> {
-        self.tasks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tasks.is_none()`.
+    pub fn tasks(&self) -> &[crate::types::Task] {
+        self.tasks.as_deref().unwrap_or_default()
     }
     /// <p> The tags used to organize, track, or control access for your flow. </p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -94,6 +98,7 @@ pub struct CreateFlowInputBuilder {
 }
 impl CreateFlowInputBuilder {
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
+    /// This field is required.
     pub fn flow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_name = ::std::option::Option::Some(input.into());
         self
@@ -136,6 +141,7 @@ impl CreateFlowInputBuilder {
         &self.kms_arn
     }
     /// <p> The trigger settings that determine how and when the flow runs. </p>
+    /// This field is required.
     pub fn trigger_config(mut self, input: crate::types::TriggerConfig) -> Self {
         self.trigger_config = ::std::option::Option::Some(input);
         self
@@ -150,6 +156,7 @@ impl CreateFlowInputBuilder {
         &self.trigger_config
     }
     /// <p> The configuration that controls how Amazon AppFlow retrieves data from the source connector. </p>
+    /// This field is required.
     pub fn source_flow_config(mut self, input: crate::types::SourceFlowConfig) -> Self {
         self.source_flow_config = ::std::option::Option::Some(input);
         self
@@ -258,7 +265,7 @@ impl CreateFlowInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateFlowInput`](crate::operation::create_flow::CreateFlowInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_flow::CreateFlowInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_flow::CreateFlowInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_flow::CreateFlowInput {
             flow_name: self.flow_name,
             description: self.description,

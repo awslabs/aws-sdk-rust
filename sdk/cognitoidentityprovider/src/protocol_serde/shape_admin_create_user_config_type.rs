@@ -2,7 +2,7 @@
 pub fn ser_admin_create_user_config_type(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AdminCreateUserConfigType,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.allow_admin_create_user_only {
         object.key("AllowAdminCreateUserOnly").boolean(input.allow_admin_create_user_only);
     }

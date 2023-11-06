@@ -26,8 +26,10 @@ impl GetPartitionInput {
         self.table_name.as_deref()
     }
     /// <p>The values that define the partition.</p>
-    pub fn partition_values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.partition_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.partition_values.is_none()`.
+    pub fn partition_values(&self) -> &[::std::string::String] {
+        self.partition_values.as_deref().unwrap_or_default()
     }
 }
 impl GetPartitionInput {
@@ -62,6 +64,7 @@ impl GetPartitionInputBuilder {
         &self.catalog_id
     }
     /// <p>The name of the catalog database where the partition resides.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +79,7 @@ impl GetPartitionInputBuilder {
         &self.database_name
     }
     /// <p>The name of the partition's table.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -110,7 +114,9 @@ impl GetPartitionInputBuilder {
         &self.partition_values
     }
     /// Consumes the builder and constructs a [`GetPartitionInput`](crate::operation::get_partition::GetPartitionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_partition::GetPartitionInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_partition::GetPartitionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_partition::GetPartitionInput {
             catalog_id: self.catalog_id,
             database_name: self.database_name,

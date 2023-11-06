@@ -35,6 +35,7 @@ pub struct OutputS3ObjectBuilder {
 }
 impl OutputS3ObjectBuilder {
     /// <p>The bucket that contains the training output.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl OutputS3ObjectBuilder {
         &self.bucket
     }
     /// <p>The location of the training output in the bucket.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self

@@ -282,6 +282,7 @@ impl StageBuilder {
         &self.route_settings
     }
     /// <p>The name of the stage.</p>
+    /// This field is required.
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_name = ::std::option::Option::Some(input.into());
         self

@@ -27,6 +27,7 @@ pub struct DescribeTrackerInputBuilder {
 }
 impl DescribeTrackerInputBuilder {
     /// <p>The name of the tracker resource.</p>
+    /// This field is required.
     pub fn tracker_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tracker_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeTrackerInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTrackerInput`](crate::operation::describe_tracker::DescribeTrackerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_tracker::DescribeTrackerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_tracker::DescribeTrackerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_tracker::DescribeTrackerInput {
             tracker_name: self.tracker_name,
         })

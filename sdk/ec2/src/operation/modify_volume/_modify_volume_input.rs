@@ -119,6 +119,7 @@ impl ModifyVolumeInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the volume.</p>
+    /// This field is required.
     pub fn volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_id = ::std::option::Option::Some(input.into());
         self
@@ -257,7 +258,9 @@ impl ModifyVolumeInputBuilder {
         &self.multi_attach_enabled
     }
     /// Consumes the builder and constructs a [`ModifyVolumeInput`](crate::operation::modify_volume::ModifyVolumeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::modify_volume::ModifyVolumeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::modify_volume::ModifyVolumeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_volume::ModifyVolumeInput {
             dry_run: self.dry_run,
             volume_id: self.volume_id,

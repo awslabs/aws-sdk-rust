@@ -41,6 +41,7 @@ pub struct ListServiceInstanceProvisionedResourcesInputBuilder {
 }
 impl ListServiceInstanceProvisionedResourcesInputBuilder {
     /// <p>The name of the service that <code>serviceInstanceName</code> is associated to.</p>
+    /// This field is required.
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl ListServiceInstanceProvisionedResourcesInputBuilder {
         &self.service_name
     }
     /// <p>The name of the service instance whose provisioned resources you want.</p>
+    /// This field is required.
     pub fn service_instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_instance_name = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +89,7 @@ impl ListServiceInstanceProvisionedResourcesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_service_instance_provisioned_resources::ListServiceInstanceProvisionedResourcesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_service_instance_provisioned_resources::ListServiceInstanceProvisionedResourcesInput {

@@ -162,6 +162,7 @@ pub struct SetQueueAttributesInputBuilder {
 impl SetQueueAttributesInputBuilder {
     /// <p>The URL of the Amazon SQS queue whose attributes are set.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
+    /// This field is required.
     pub fn queue_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_url = ::std::option::Option::Some(input.into());
         self
@@ -389,7 +390,8 @@ impl SetQueueAttributesInputBuilder {
     /// Consumes the builder and constructs a [`SetQueueAttributesInput`](crate::operation::set_queue_attributes::SetQueueAttributesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::set_queue_attributes::SetQueueAttributesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::set_queue_attributes::SetQueueAttributesInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::set_queue_attributes::SetQueueAttributesInput {
             queue_url: self.queue_url,
             attributes: self.attributes,

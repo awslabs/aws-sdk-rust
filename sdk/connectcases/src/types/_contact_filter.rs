@@ -11,8 +11,10 @@ pub struct ContactFilter {
 }
 impl ContactFilter {
     /// <p>A list of channels to filter on for related items of type <code>Contact</code>.</p>
-    pub fn channel(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.channel.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.channel.is_none()`.
+    pub fn channel(&self) -> &[::std::string::String] {
+        self.channel.as_deref().unwrap_or_default()
     }
     /// <p>A unique identifier of a contact in Amazon Connect.</p>
     pub fn contact_arn(&self) -> ::std::option::Option<&str> {

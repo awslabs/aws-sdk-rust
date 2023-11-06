@@ -66,7 +66,7 @@ impl ListRescoreExecutionPlansInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_rescore_execution_plans::ListRescoreExecutionPlansInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_rescore_execution_plans::ListRescoreExecutionPlansInput {
             next_token: self.next_token,

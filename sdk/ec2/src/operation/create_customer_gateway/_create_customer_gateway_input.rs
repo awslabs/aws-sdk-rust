@@ -42,8 +42,10 @@ impl CreateCustomerGatewayInput {
         self.r#type.as_ref()
     }
     /// <p>The tags to apply to the customer gateway.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
     /// <p>A name for the customer gateway device.</p>
     /// <p>Length Constraints: Up to 255 characters.</p>
@@ -126,6 +128,7 @@ impl CreateCustomerGatewayInputBuilder {
         &self.certificate_arn
     }
     /// <p>The type of VPN connection that this customer gateway supports (<code>ipsec.1</code>).</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::GatewayType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -207,7 +210,7 @@ impl CreateCustomerGatewayInputBuilder {
     /// Consumes the builder and constructs a [`CreateCustomerGatewayInput`](crate::operation::create_customer_gateway::CreateCustomerGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_customer_gateway::CreateCustomerGatewayInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_customer_gateway::CreateCustomerGatewayInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_customer_gateway::CreateCustomerGatewayInput {
             bgp_asn: self.bgp_asn,

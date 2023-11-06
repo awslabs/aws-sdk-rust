@@ -36,6 +36,7 @@ pub struct CreateFlowTemplateInputBuilder {
 }
 impl CreateFlowTemplateInputBuilder {
     /// <p>The workflow <code>DefinitionDocument</code>.</p>
+    /// This field is required.
     pub fn definition(mut self, input: crate::types::DefinitionDocument) -> Self {
         self.definition = ::std::option::Option::Some(input);
         self
@@ -69,7 +70,8 @@ impl CreateFlowTemplateInputBuilder {
     /// Consumes the builder and constructs a [`CreateFlowTemplateInput`](crate::operation::create_flow_template::CreateFlowTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_flow_template::CreateFlowTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_flow_template::CreateFlowTemplateInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_flow_template::CreateFlowTemplateInput {
             definition: self.definition,
             compatible_namespace_version: self.compatible_namespace_version,

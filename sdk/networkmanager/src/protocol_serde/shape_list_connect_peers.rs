@@ -25,11 +25,10 @@ pub fn de_list_connect_peers_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_connect_peers::ListConnectPeersError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_connect_peers::ListConnectPeersError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerException" => crate::operation::list_connect_peers::ListConnectPeersError::InternalServerException({
@@ -47,11 +46,10 @@ pub fn de_list_connect_peers_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_connect_peers::ListConnectPeersError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::list_connect_peers::ListConnectPeersError::ThrottlingException({
@@ -69,11 +67,10 @@ pub fn de_list_connect_peers_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_connect_peers::ListConnectPeersError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::list_connect_peers::ListConnectPeersError::ValidationException({
@@ -84,11 +81,10 @@ pub fn de_list_connect_peers_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_connect_peers::ListConnectPeersError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_connect_peers::ListConnectPeersError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::list_connect_peers::ListConnectPeersError::generic(generic),

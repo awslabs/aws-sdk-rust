@@ -22,8 +22,10 @@ impl CreateMetricAttributionInput {
         self.dataset_group_arn.as_deref()
     }
     /// <p>A list of metric attributes for the metric attribution. Each metric attribute specifies an event type to track and a function. Available functions are <code>SUM()</code> or <code>SAMPLECOUNT()</code>. For SUM() functions, provide the dataset type (either Interactions or Items) and column to sum as a parameter. For example SUM(Items.PRICE).</p>
-    pub fn metrics(&self) -> ::std::option::Option<&[crate::types::MetricAttribute]> {
-        self.metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metrics.is_none()`.
+    pub fn metrics(&self) -> &[crate::types::MetricAttribute] {
+        self.metrics.as_deref().unwrap_or_default()
     }
     /// <p>The output configuration details for the metric attribution.</p>
     pub fn metrics_output_config(&self) -> ::std::option::Option<&crate::types::MetricAttributionOutput> {
@@ -48,6 +50,7 @@ pub struct CreateMetricAttributionInputBuilder {
 }
 impl CreateMetricAttributionInputBuilder {
     /// <p>A name for the metric attribution.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl CreateMetricAttributionInputBuilder {
         &self.name
     }
     /// <p>The Amazon Resource Name (ARN) of the destination dataset group for the metric attribution.</p>
+    /// This field is required.
     pub fn dataset_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_group_arn = ::std::option::Option::Some(input.into());
         self
@@ -96,6 +100,7 @@ impl CreateMetricAttributionInputBuilder {
         &self.metrics
     }
     /// <p>The output configuration details for the metric attribution.</p>
+    /// This field is required.
     pub fn metrics_output_config(mut self, input: crate::types::MetricAttributionOutput) -> Self {
         self.metrics_output_config = ::std::option::Option::Some(input);
         self
@@ -114,7 +119,7 @@ impl CreateMetricAttributionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_metric_attribution::CreateMetricAttributionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_metric_attribution::CreateMetricAttributionInput {
             name: self.name,

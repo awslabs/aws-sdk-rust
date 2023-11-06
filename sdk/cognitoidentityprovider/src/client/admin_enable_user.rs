@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AdminEnableUser`](crate::operation::admin_enable_user::builders::AdminEnableUserFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`user_pool_id(impl Into<String>)`](crate::operation::admin_enable_user::builders::AdminEnableUserFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::admin_enable_user::builders::AdminEnableUserFluentBuilder::set_user_pool_id): <p>The user pool ID for the user pool where you want to enable the user.</p>
-    ///   - [`username(impl Into<String>)`](crate::operation::admin_enable_user::builders::AdminEnableUserFluentBuilder::username) / [`set_username(Option<String>)`](crate::operation::admin_enable_user::builders::AdminEnableUserFluentBuilder::set_username): <p>The user name of the user you want to enable.</p>
+    ///   - [`user_pool_id(impl Into<String>)`](crate::operation::admin_enable_user::builders::AdminEnableUserFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::admin_enable_user::builders::AdminEnableUserFluentBuilder::set_user_pool_id):<br>required: **true**<br><p>The user pool ID for the user pool where you want to enable the user.</p><br>
+    ///   - [`username(impl Into<String>)`](crate::operation::admin_enable_user::builders::AdminEnableUserFluentBuilder::username) / [`set_username(Option<String>)`](crate::operation::admin_enable_user::builders::AdminEnableUserFluentBuilder::set_username):<br>required: **true**<br><p>The user name of the user you want to enable.</p><br>
     /// - On success, responds with [`AdminEnableUserOutput`](crate::operation::admin_enable_user::AdminEnableUserOutput)
     /// - On failure, responds with [`SdkError<AdminEnableUserError>`](crate::operation::admin_enable_user::AdminEnableUserError)
     pub fn admin_enable_user(&self) -> crate::operation::admin_enable_user::builders::AdminEnableUserFluentBuilder {

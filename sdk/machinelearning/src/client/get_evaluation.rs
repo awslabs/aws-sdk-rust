@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetEvaluation`](crate::operation::get_evaluation::builders::GetEvaluationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`evaluation_id(impl Into<String>)`](crate::operation::get_evaluation::builders::GetEvaluationFluentBuilder::evaluation_id) / [`set_evaluation_id(Option<String>)`](crate::operation::get_evaluation::builders::GetEvaluationFluentBuilder::set_evaluation_id): <p>The ID of the <code>Evaluation</code> to retrieve. The evaluation of each <code>MLModel</code> is recorded and cataloged. The ID provides the means to access the information. </p>
+    ///   - [`evaluation_id(impl Into<String>)`](crate::operation::get_evaluation::builders::GetEvaluationFluentBuilder::evaluation_id) / [`set_evaluation_id(Option<String>)`](crate::operation::get_evaluation::builders::GetEvaluationFluentBuilder::set_evaluation_id):<br>required: **true**<br><p>The ID of the <code>Evaluation</code> to retrieve. The evaluation of each <code>MLModel</code> is recorded and cataloged. The ID provides the means to access the information. </p><br>
     /// - On success, responds with [`GetEvaluationOutput`](crate::operation::get_evaluation::GetEvaluationOutput) with field(s):
     ///   - [`evaluation_id(Option<String>)`](crate::operation::get_evaluation::GetEvaluationOutput::evaluation_id): <p>The evaluation ID which is same as the <code>EvaluationId</code> in the request.</p>
     ///   - [`ml_model_id(Option<String>)`](crate::operation::get_evaluation::GetEvaluationOutput::ml_model_id): <p>The ID of the <code>MLModel</code> that was the focus of the evaluation.</p>

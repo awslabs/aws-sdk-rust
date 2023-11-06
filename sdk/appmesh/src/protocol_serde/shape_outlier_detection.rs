@@ -2,29 +2,29 @@
 pub fn ser_outlier_detection(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OutlierDetection,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.max_server_errors {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
         object.key("maxServerErrors").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+            ::aws_smithy_types::Number::NegInt((input.max_server_errors).into()),
         );
     }
-    if let Some(var_2) = &input.interval {
+    if let Some(var_1) = &input.interval {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("interval").start_object();
-        crate::protocol_serde::shape_duration::ser_duration(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("interval").start_object();
+        crate::protocol_serde::shape_duration::ser_duration(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.base_ejection_duration {
+    if let Some(var_3) = &input.base_ejection_duration {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("baseEjectionDuration").start_object();
-        crate::protocol_serde::shape_duration::ser_duration(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("baseEjectionDuration").start_object();
+        crate::protocol_serde::shape_duration::ser_duration(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_6) = &input.max_ejection_percent {
+    {
         object.key("maxEjectionPercent").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_6).into()),
+            ::aws_smithy_types::Number::NegInt((input.max_ejection_percent).into()),
         );
     }
     Ok(())
@@ -75,7 +75,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::outlier_detection_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

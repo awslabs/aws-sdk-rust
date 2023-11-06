@@ -59,6 +59,7 @@ pub struct StartResourceEvaluationInputBuilder {
 }
 impl StartResourceEvaluationInputBuilder {
     /// <p>Returns a <code>ResourceDetails</code> object.</p>
+    /// This field is required.
     pub fn resource_details(mut self, input: crate::types::ResourceDetails) -> Self {
         self.resource_details = ::std::option::Option::Some(input);
         self
@@ -87,6 +88,7 @@ impl StartResourceEvaluationInputBuilder {
         &self.evaluation_context
     }
     /// <p>The mode of an evaluation. The valid values for this API are <code>DETECTIVE</code> and <code>PROACTIVE</code>.</p>
+    /// This field is required.
     pub fn evaluation_mode(mut self, input: crate::types::EvaluationMode) -> Self {
         self.evaluation_mode = ::std::option::Option::Some(input);
         self
@@ -139,7 +141,7 @@ impl StartResourceEvaluationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_resource_evaluation::StartResourceEvaluationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_resource_evaluation::StartResourceEvaluationInput {
             resource_details: self.resource_details,

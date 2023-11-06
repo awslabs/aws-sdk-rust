@@ -27,6 +27,7 @@ pub struct DeleteQueryLoggingConfigInputBuilder {
 }
 impl DeleteQueryLoggingConfigInputBuilder {
     /// <p>The ID of the configuration that you want to delete. </p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteQueryLoggingConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_query_logging_config::DeleteQueryLoggingConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_query_logging_config::DeleteQueryLoggingConfigInput { id: self.id })
     }

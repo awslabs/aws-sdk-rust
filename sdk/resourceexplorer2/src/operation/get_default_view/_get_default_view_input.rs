@@ -18,7 +18,7 @@ impl GetDefaultViewInputBuilder {
     /// Consumes the builder and constructs a [`GetDefaultViewInput`](crate::operation::get_default_view::GetDefaultViewInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_default_view::GetDefaultViewInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_default_view::GetDefaultViewInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_default_view::GetDefaultViewInput {})
     }
 }

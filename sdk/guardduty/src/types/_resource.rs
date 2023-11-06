@@ -35,8 +35,10 @@ impl Resource {
         self.access_key_details.as_ref()
     }
     /// <p>Contains information on the S3 bucket.</p>
-    pub fn s3_bucket_details(&self) -> ::std::option::Option<&[crate::types::S3BucketDetail]> {
-        self.s3_bucket_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.s3_bucket_details.is_none()`.
+    pub fn s3_bucket_details(&self) -> &[crate::types::S3BucketDetail] {
+        self.s3_bucket_details.as_deref().unwrap_or_default()
     }
     /// <p>The information about the EC2 instance associated with the activity that prompted GuardDuty to generate a finding.</p>
     pub fn instance_details(&self) -> ::std::option::Option<&crate::types::InstanceDetails> {

@@ -89,6 +89,7 @@ impl StartSupportDataExportInputBuilder {
     /// <li><i>test_customer_support_contacts_data</i> An example data set containing static test data in the same format as customer_support_contacts_data</li>
     /// </ul>
     /// <p></p>
+    /// This field is required.
     pub fn data_set_type(mut self, input: crate::types::SupportDataSetType) -> Self {
         self.data_set_type = ::std::option::Option::Some(input);
         self
@@ -115,6 +116,7 @@ impl StartSupportDataExportInputBuilder {
         &self.data_set_type
     }
     /// <i>This target has been deprecated.</i> The start date from which to retrieve the data set in UTC. This parameter only affects the customer_support_contacts_data data set type.
+    /// This field is required.
     pub fn from_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.from_date = ::std::option::Option::Some(input);
         self
@@ -129,6 +131,7 @@ impl StartSupportDataExportInputBuilder {
         &self.from_date
     }
     /// <i>This target has been deprecated.</i> The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided AWS services.
+    /// This field is required.
     pub fn role_name_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_name_arn = ::std::option::Option::Some(input.into());
         self
@@ -143,6 +146,7 @@ impl StartSupportDataExportInputBuilder {
         &self.role_name_arn
     }
     /// <i>This target has been deprecated.</i> The name (friendly name, not ARN) of the destination S3 bucket.
+    /// This field is required.
     pub fn destination_s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_s3_bucket_name = ::std::option::Option::Some(input.into());
         self
@@ -171,6 +175,7 @@ impl StartSupportDataExportInputBuilder {
         &self.destination_s3_prefix
     }
     /// <i>This target has been deprecated.</i> Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an error has occurred.
+    /// This field is required.
     pub fn sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sns_topic_arn = ::std::option::Option::Some(input.into());
         self
@@ -216,7 +221,7 @@ impl StartSupportDataExportInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_support_data_export::StartSupportDataExportInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_support_data_export::StartSupportDataExportInput {
             data_set_type: self.data_set_type,

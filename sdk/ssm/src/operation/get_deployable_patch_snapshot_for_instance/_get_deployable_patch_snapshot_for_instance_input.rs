@@ -41,6 +41,7 @@ pub struct GetDeployablePatchSnapshotForInstanceInputBuilder {
 }
 impl GetDeployablePatchSnapshotForInstanceInputBuilder {
     /// <p>The ID of the managed node for which the appropriate patch snapshot should be retrieved.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl GetDeployablePatchSnapshotForInstanceInputBuilder {
         &self.instance_id
     }
     /// <p>The snapshot ID provided by the user when running <code>AWS-RunPatchBaseline</code>.</p>
+    /// This field is required.
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +89,7 @@ impl GetDeployablePatchSnapshotForInstanceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceInput {

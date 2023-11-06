@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteAction`](crate::operation::delete_action::builders::DeleteActionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`action_name(impl Into<String>)`](crate::operation::delete_action::builders::DeleteActionFluentBuilder::action_name) / [`set_action_name(Option<String>)`](crate::operation::delete_action::builders::DeleteActionFluentBuilder::set_action_name): <p>The name of the action to delete.</p>
+    ///   - [`action_name(impl Into<String>)`](crate::operation::delete_action::builders::DeleteActionFluentBuilder::action_name) / [`set_action_name(Option<String>)`](crate::operation::delete_action::builders::DeleteActionFluentBuilder::set_action_name):<br>required: **true**<br><p>The name of the action to delete.</p><br>
     /// - On success, responds with [`DeleteActionOutput`](crate::operation::delete_action::DeleteActionOutput) with field(s):
     ///   - [`action_arn(Option<String>)`](crate::operation::delete_action::DeleteActionOutput::action_arn): <p>The Amazon Resource Name (ARN) of the action.</p>
     /// - On failure, responds with [`SdkError<DeleteActionError>`](crate::operation::delete_action::DeleteActionError)

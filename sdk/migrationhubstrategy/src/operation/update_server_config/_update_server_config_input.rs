@@ -34,6 +34,7 @@ pub struct UpdateServerConfigInputBuilder {
 }
 impl UpdateServerConfigInputBuilder {
     /// <p> The ID of the server. </p>
+    /// This field is required.
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,8 @@ impl UpdateServerConfigInputBuilder {
     /// Consumes the builder and constructs a [`UpdateServerConfigInput`](crate::operation::update_server_config::UpdateServerConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_server_config::UpdateServerConfigInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_server_config::UpdateServerConfigInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_server_config::UpdateServerConfigInput {
             server_id: self.server_id,
             strategy_option: self.strategy_option,

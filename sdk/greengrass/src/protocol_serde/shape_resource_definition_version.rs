@@ -2,7 +2,7 @@
 pub fn ser_resource_definition_version(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ResourceDefinitionVersion,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.resources {
         let mut array_2 = object.key("Resources").start_array();
         for item_3 in var_1 {
@@ -34,7 +34,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Resources" => {
-                            builder = builder.set_resources(crate::protocol_serde::shape___list_of_resource::de___list_of_resource(tokens)?);
+                            builder = builder.set_resources(crate::protocol_serde::shape_list_of_resource::de_list_of_resource(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

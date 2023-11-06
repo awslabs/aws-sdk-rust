@@ -8,8 +8,10 @@ pub struct DescribeStacksInput {
 }
 impl DescribeStacksInput {
     /// <p>An array of stack IDs that specify the stacks to be described. If you omit this parameter, <code>DescribeStacks</code> returns a description of every stack.</p>
-    pub fn stack_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.stack_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stack_ids.is_none()`.
+    pub fn stack_ids(&self) -> &[::std::string::String] {
+        self.stack_ids.as_deref().unwrap_or_default()
     }
 }
 impl DescribeStacksInput {
@@ -49,7 +51,7 @@ impl DescribeStacksInputBuilder {
     /// Consumes the builder and constructs a [`DescribeStacksInput`](crate::operation::describe_stacks::DescribeStacksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_stacks::DescribeStacksInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_stacks::DescribeStacksInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_stacks::DescribeStacksInput { stack_ids: self.stack_ids })
     }
 }

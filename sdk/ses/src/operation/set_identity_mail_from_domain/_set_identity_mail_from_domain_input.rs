@@ -44,6 +44,7 @@ pub struct SetIdentityMailFromDomainInputBuilder {
 }
 impl SetIdentityMailFromDomainInputBuilder {
     /// <p>The verified identity.</p>
+    /// This field is required.
     pub fn identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity = ::std::option::Option::Some(input.into());
         self
@@ -93,7 +94,7 @@ impl SetIdentityMailFromDomainInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_identity_mail_from_domain::SetIdentityMailFromDomainInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::set_identity_mail_from_domain::SetIdentityMailFromDomainInput {
             identity: self.identity,

@@ -43,6 +43,7 @@ pub struct ListIngestionsInputBuilder {
 }
 impl ListIngestionsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
+    /// This field is required.
     pub fn app_bundle_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_bundle_identifier = ::std::option::Option::Some(input.into());
         self
@@ -90,7 +91,7 @@ impl ListIngestionsInputBuilder {
     /// Consumes the builder and constructs a [`ListIngestionsInput`](crate::operation::list_ingestions::ListIngestionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_ingestions::ListIngestionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_ingestions::ListIngestionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_ingestions::ListIngestionsInput {
             app_bundle_identifier: self.app_bundle_identifier,
             max_results: self.max_results,

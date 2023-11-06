@@ -34,6 +34,7 @@ pub struct DeleteResourceDataSyncInputBuilder {
 }
 impl DeleteResourceDataSyncInputBuilder {
     /// <p>The name of the configuration to delete.</p>
+    /// This field is required.
     pub fn sync_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sync_name = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl DeleteResourceDataSyncInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_resource_data_sync::DeleteResourceDataSyncInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_resource_data_sync::DeleteResourceDataSyncInput {
             sync_name: self.sync_name,

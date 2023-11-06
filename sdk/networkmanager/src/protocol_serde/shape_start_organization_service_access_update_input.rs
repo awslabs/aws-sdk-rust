@@ -2,7 +2,7 @@
 pub fn ser_start_organization_service_access_update_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_organization_service_access_update::StartOrganizationServiceAccessUpdateInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.action {
         object.key("Action").string(var_1.as_str());
     }

@@ -48,6 +48,7 @@ pub struct UpdateConnectClientAddInInputBuilder {
 }
 impl UpdateConnectClientAddInInputBuilder {
     /// <p>The identifier of the client add-in to update.</p>
+    /// This field is required.
     pub fn add_in_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.add_in_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl UpdateConnectClientAddInInputBuilder {
         &self.add_in_id
     }
     /// <p>The directory identifier for which the client add-in is configured.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +110,7 @@ impl UpdateConnectClientAddInInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_connect_client_add_in::UpdateConnectClientAddInInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_connect_client_add_in::UpdateConnectClientAddInInput {
             add_in_id: self.add_in_id,

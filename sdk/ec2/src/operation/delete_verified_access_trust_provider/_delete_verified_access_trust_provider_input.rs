@@ -41,6 +41,7 @@ pub struct DeleteVerifiedAccessTrustProviderInputBuilder {
 }
 impl DeleteVerifiedAccessTrustProviderInputBuilder {
     /// <p>The ID of the Verified Access trust provider.</p>
+    /// This field is required.
     pub fn verified_access_trust_provider_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.verified_access_trust_provider_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl DeleteVerifiedAccessTrustProviderInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_verified_access_trust_provider::DeleteVerifiedAccessTrustProviderInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_verified_access_trust_provider::DeleteVerifiedAccessTrustProviderInput {

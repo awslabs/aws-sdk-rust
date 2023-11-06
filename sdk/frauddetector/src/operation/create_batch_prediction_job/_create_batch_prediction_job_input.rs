@@ -52,8 +52,10 @@ impl CreateBatchPredictionJobInput {
         self.iam_role_arn.as_deref()
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateBatchPredictionJobInput {
@@ -78,6 +80,7 @@ pub struct CreateBatchPredictionJobInputBuilder {
 }
 impl CreateBatchPredictionJobInputBuilder {
     /// <p>The ID of the batch prediction job.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -92,6 +95,7 @@ impl CreateBatchPredictionJobInputBuilder {
         &self.job_id
     }
     /// <p>The Amazon S3 location of your training file.</p>
+    /// This field is required.
     pub fn input_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_path = ::std::option::Option::Some(input.into());
         self
@@ -106,6 +110,7 @@ impl CreateBatchPredictionJobInputBuilder {
         &self.input_path
     }
     /// <p>The Amazon S3 location of your output file.</p>
+    /// This field is required.
     pub fn output_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_path = ::std::option::Option::Some(input.into());
         self
@@ -120,6 +125,7 @@ impl CreateBatchPredictionJobInputBuilder {
         &self.output_path
     }
     /// <p>The name of the event type.</p>
+    /// This field is required.
     pub fn event_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_type_name = ::std::option::Option::Some(input.into());
         self
@@ -134,6 +140,7 @@ impl CreateBatchPredictionJobInputBuilder {
         &self.event_type_name
     }
     /// <p>The name of the detector.</p>
+    /// This field is required.
     pub fn detector_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_name = ::std::option::Option::Some(input.into());
         self
@@ -163,6 +170,7 @@ impl CreateBatchPredictionJobInputBuilder {
     }
     /// <p>The ARN of the IAM role to use for this job request.</p>
     /// <p>The IAM Role must have read permissions to your input S3 bucket and write permissions to your output S3 bucket. For more information about bucket permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html">User policy examples</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// This field is required.
     pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -203,7 +211,7 @@ impl CreateBatchPredictionJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_batch_prediction_job::CreateBatchPredictionJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_batch_prediction_job::CreateBatchPredictionJobInput {
             job_id: self.job_id,

@@ -26,8 +26,10 @@ impl PurchaseReservedNodesOfferingInput {
         self.node_count
     }
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl PurchaseReservedNodesOfferingInput {
@@ -48,6 +50,7 @@ pub struct PurchaseReservedNodesOfferingInputBuilder {
 }
 impl PurchaseReservedNodesOfferingInputBuilder {
     /// <p>The ID of the reserved node offering to purchase.</p>
+    /// This field is required.
     pub fn reserved_nodes_offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_nodes_offering_id = ::std::option::Option::Some(input.into());
         self
@@ -114,7 +117,7 @@ impl PurchaseReservedNodesOfferingInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::purchase_reserved_nodes_offering::PurchaseReservedNodesOfferingInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::purchase_reserved_nodes_offering::PurchaseReservedNodesOfferingInput {
             reserved_nodes_offering_id: self.reserved_nodes_offering_id,

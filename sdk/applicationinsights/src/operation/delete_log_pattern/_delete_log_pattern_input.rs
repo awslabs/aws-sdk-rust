@@ -41,6 +41,7 @@ pub struct DeleteLogPatternInputBuilder {
 }
 impl DeleteLogPatternInputBuilder {
     /// <p>The name of the resource group.</p>
+    /// This field is required.
     pub fn resource_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_group_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DeleteLogPatternInputBuilder {
         &self.resource_group_name
     }
     /// <p>The name of the log pattern set.</p>
+    /// This field is required.
     pub fn pattern_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pattern_set_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl DeleteLogPatternInputBuilder {
         &self.pattern_set_name
     }
     /// <p>The name of the log pattern.</p>
+    /// This field is required.
     pub fn pattern_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pattern_name = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +88,7 @@ impl DeleteLogPatternInputBuilder {
     /// Consumes the builder and constructs a [`DeleteLogPatternInput`](crate::operation::delete_log_pattern::DeleteLogPatternInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_log_pattern::DeleteLogPatternInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_log_pattern::DeleteLogPatternInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_log_pattern::DeleteLogPatternInput {
             resource_group_name: self.resource_group_name,
             pattern_set_name: self.pattern_set_name,

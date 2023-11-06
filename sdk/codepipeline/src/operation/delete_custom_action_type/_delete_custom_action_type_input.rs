@@ -42,6 +42,7 @@ pub struct DeleteCustomActionTypeInputBuilder {
 }
 impl DeleteCustomActionTypeInputBuilder {
     /// <p>The category of the custom action that you want to delete, such as source or deploy.</p>
+    /// This field is required.
     pub fn category(mut self, input: crate::types::ActionCategory) -> Self {
         self.category = ::std::option::Option::Some(input);
         self
@@ -56,6 +57,7 @@ impl DeleteCustomActionTypeInputBuilder {
         &self.category
     }
     /// <p>The provider of the service used in the custom action, such as CodeDeploy.</p>
+    /// This field is required.
     pub fn provider(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl DeleteCustomActionTypeInputBuilder {
         &self.provider
     }
     /// <p>The version of the custom action to delete.</p>
+    /// This field is required.
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
         self
@@ -88,7 +91,7 @@ impl DeleteCustomActionTypeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_custom_action_type::DeleteCustomActionTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_custom_action_type::DeleteCustomActionTypeInput {
             category: self.category,

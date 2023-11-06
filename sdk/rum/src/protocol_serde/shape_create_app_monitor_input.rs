@@ -2,7 +2,7 @@
 pub fn ser_create_app_monitor_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_app_monitor::CreateAppMonitorInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.app_monitor_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("AppMonitorConfiguration").start_object();

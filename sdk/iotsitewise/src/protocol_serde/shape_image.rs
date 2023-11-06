@@ -2,7 +2,7 @@
 pub fn ser_image(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Image,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.id {
         object.key("id").string(var_1.as_str());
     }

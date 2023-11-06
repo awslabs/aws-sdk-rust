@@ -125,7 +125,7 @@ impl ListRunsInputBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`ListRunsInput`](crate::operation::list_runs::ListRunsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_runs::ListRunsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_runs::ListRunsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_runs::ListRunsInput {
             name: self.name,
             run_group_id: self.run_group_id,

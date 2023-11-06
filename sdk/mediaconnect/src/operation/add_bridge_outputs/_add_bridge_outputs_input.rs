@@ -15,8 +15,10 @@ impl AddBridgeOutputsInput {
         self.bridge_arn.as_deref()
     }
     /// The outputs that you want to add to this bridge.
-    pub fn outputs(&self) -> ::std::option::Option<&[crate::types::AddBridgeOutputRequest]> {
-        self.outputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outputs.is_none()`.
+    pub fn outputs(&self) -> &[crate::types::AddBridgeOutputRequest] {
+        self.outputs.as_deref().unwrap_or_default()
     }
 }
 impl AddBridgeOutputsInput {
@@ -35,6 +37,7 @@ pub struct AddBridgeOutputsInputBuilder {
 }
 impl AddBridgeOutputsInputBuilder {
     /// The ARN of the bridge that you want to update.
+    /// This field is required.
     pub fn bridge_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bridge_arn = ::std::option::Option::Some(input.into());
         self
@@ -71,7 +74,7 @@ impl AddBridgeOutputsInputBuilder {
     /// Consumes the builder and constructs a [`AddBridgeOutputsInput`](crate::operation::add_bridge_outputs::AddBridgeOutputsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::add_bridge_outputs::AddBridgeOutputsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::add_bridge_outputs::AddBridgeOutputsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::add_bridge_outputs::AddBridgeOutputsInput {
             bridge_arn: self.bridge_arn,
             outputs: self.outputs,

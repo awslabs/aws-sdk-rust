@@ -47,11 +47,10 @@ pub fn de_put_launch_action_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::put_launch_action::PutLaunchActionError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::put_launch_action::PutLaunchActionError::ResourceNotFoundException({
@@ -84,11 +83,10 @@ pub fn de_put_launch_action_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::put_launch_action::PutLaunchActionError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "UninitializedAccountException" => crate::operation::put_launch_action::PutLaunchActionError::UninitializedAccountException({
@@ -144,12 +142,12 @@ pub fn de_put_launch_action_http_response(
 
 pub fn ser_put_launch_action_input(
     input: &crate::operation::put_launch_action::PutLaunchActionInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_put_launch_action_input::ser_put_launch_action_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_put_launch_action(

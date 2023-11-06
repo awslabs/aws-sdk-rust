@@ -34,6 +34,7 @@ pub struct CreateResiliencyPolicyOutputBuilder {
 }
 impl CreateResiliencyPolicyOutputBuilder {
     /// <p>The type of resiliency policy that was created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
+    /// This field is required.
     pub fn policy(mut self, input: crate::types::ResiliencyPolicy) -> Self {
         self.policy = ::std::option::Option::Some(input);
         self

@@ -21,8 +21,10 @@ impl ReplicateKeyOutput {
         self.replica_policy.as_deref()
     }
     /// <p>The tags on the new replica key. The value is a list of tag key and tag value pairs.</p>
-    pub fn replica_tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.replica_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replica_tags.is_none()`.
+    pub fn replica_tags(&self) -> &[crate::types::Tag] {
+        self.replica_tags.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ReplicateKeyOutput {

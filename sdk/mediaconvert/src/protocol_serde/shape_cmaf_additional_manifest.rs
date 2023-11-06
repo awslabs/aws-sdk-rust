@@ -2,7 +2,7 @@
 pub fn ser_cmaf_additional_manifest(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CmafAdditionalManifest,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.manifest_name_modifier {
         object.key("manifestNameModifier").string(var_1.as_str());
     }
@@ -41,8 +41,7 @@ where
                             );
                         }
                         "selectedOutputs" => {
-                            builder =
-                                builder.set_selected_outputs(crate::protocol_serde::shape___list_of__string_min1::de___list_of__string_min1(tokens)?);
+                            builder = builder.set_selected_outputs(crate::protocol_serde::shape_list_of_string_min1::de_list_of_string_min1(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

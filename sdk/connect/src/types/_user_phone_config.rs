@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserPhoneConfig {
     /// <p>The phone type.</p>
-    pub phone_type: ::std::option::Option<crate::types::PhoneType>,
+    pub phone_type: crate::types::PhoneType,
     /// <p>The Auto accept setting.</p>
     pub auto_accept: bool,
     /// <p>The After Call Work (ACW) timeout setting, in seconds.</p> <note>
@@ -17,8 +17,8 @@ pub struct UserPhoneConfig {
 }
 impl UserPhoneConfig {
     /// <p>The phone type.</p>
-    pub fn phone_type(&self) -> ::std::option::Option<&crate::types::PhoneType> {
-        self.phone_type.as_ref()
+    pub fn phone_type(&self) -> &crate::types::PhoneType {
+        &self.phone_type
     }
     /// <p>The Auto accept setting.</p>
     pub fn auto_accept(&self) -> bool {
@@ -53,6 +53,7 @@ pub struct UserPhoneConfigBuilder {
 }
 impl UserPhoneConfigBuilder {
     /// <p>The phone type.</p>
+    /// This field is required.
     pub fn phone_type(mut self, input: crate::types::PhoneType) -> Self {
         self.phone_type = ::std::option::Option::Some(input);
         self
@@ -115,12 +116,19 @@ impl UserPhoneConfigBuilder {
         &self.desk_phone_number
     }
     /// Consumes the builder and constructs a [`UserPhoneConfig`](crate::types::UserPhoneConfig).
-    pub fn build(self) -> crate::types::UserPhoneConfig {
-        crate::types::UserPhoneConfig {
-            phone_type: self.phone_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`phone_type`](crate::types::builders::UserPhoneConfigBuilder::phone_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::UserPhoneConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::UserPhoneConfig {
+            phone_type: self.phone_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "phone_type",
+                    "phone_type was not specified but it is required when building UserPhoneConfig",
+                )
+            })?,
             auto_accept: self.auto_accept.unwrap_or_default(),
             after_contact_work_time_limit: self.after_contact_work_time_limit.unwrap_or_default(),
             desk_phone_number: self.desk_phone_number,
-        }
+        })
     }
 }

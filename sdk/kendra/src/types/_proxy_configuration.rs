@@ -6,10 +6,10 @@
 pub struct ProxyConfiguration {
     /// <p>The name of the website host you want to connect to via a web proxy server.</p>
     /// <p>For example, the host name of https://a.example.com/page1.html is "a.example.com".</p>
-    pub host: ::std::option::Option<::std::string::String>,
+    pub host: ::std::string::String,
     /// <p>The port number of the website host you want to connect to via a web proxy server. </p>
     /// <p>For example, the port for https://a.example.com/page1.html is 443, the standard port for HTTPS.</p>
-    pub port: ::std::option::Option<i32>,
+    pub port: i32,
     /// <p>Your secret ARN, which you can create in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a> </p>
     /// <p>The credentials are optional. You use a secret if web proxy credentials are required to connect to a website host. Amazon Kendra currently support basic authentication to connect to a web proxy server. The secret stores your credentials.</p>
     pub credentials: ::std::option::Option<::std::string::String>,
@@ -17,12 +17,13 @@ pub struct ProxyConfiguration {
 impl ProxyConfiguration {
     /// <p>The name of the website host you want to connect to via a web proxy server.</p>
     /// <p>For example, the host name of https://a.example.com/page1.html is "a.example.com".</p>
-    pub fn host(&self) -> ::std::option::Option<&str> {
-        self.host.as_deref()
+    pub fn host(&self) -> &str {
+        use std::ops::Deref;
+        self.host.deref()
     }
     /// <p>The port number of the website host you want to connect to via a web proxy server. </p>
     /// <p>For example, the port for https://a.example.com/page1.html is 443, the standard port for HTTPS.</p>
-    pub fn port(&self) -> ::std::option::Option<i32> {
+    pub fn port(&self) -> i32 {
         self.port
     }
     /// <p>Your secret ARN, which you can create in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a> </p>
@@ -49,6 +50,7 @@ pub struct ProxyConfigurationBuilder {
 impl ProxyConfigurationBuilder {
     /// <p>The name of the website host you want to connect to via a web proxy server.</p>
     /// <p>For example, the host name of https://a.example.com/page1.html is "a.example.com".</p>
+    /// This field is required.
     pub fn host(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host = ::std::option::Option::Some(input.into());
         self
@@ -66,6 +68,7 @@ impl ProxyConfigurationBuilder {
     }
     /// <p>The port number of the website host you want to connect to via a web proxy server. </p>
     /// <p>For example, the port for https://a.example.com/page1.html is 443, the standard port for HTTPS.</p>
+    /// This field is required.
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
         self
@@ -99,11 +102,24 @@ impl ProxyConfigurationBuilder {
         &self.credentials
     }
     /// Consumes the builder and constructs a [`ProxyConfiguration`](crate::types::ProxyConfiguration).
-    pub fn build(self) -> crate::types::ProxyConfiguration {
-        crate::types::ProxyConfiguration {
-            host: self.host,
-            port: self.port,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`host`](crate::types::builders::ProxyConfigurationBuilder::host)
+    /// - [`port`](crate::types::builders::ProxyConfigurationBuilder::port)
+    pub fn build(self) -> ::std::result::Result<crate::types::ProxyConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ProxyConfiguration {
+            host: self.host.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "host",
+                    "host was not specified but it is required when building ProxyConfiguration",
+                )
+            })?,
+            port: self.port.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "port",
+                    "port was not specified but it is required when building ProxyConfiguration",
+                )
+            })?,
             credentials: self.credentials,
-        }
+        })
     }
 }

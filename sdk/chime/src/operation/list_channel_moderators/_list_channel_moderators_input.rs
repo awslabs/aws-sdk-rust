@@ -58,6 +58,7 @@ pub struct ListChannelModeratorsInputBuilder {
 }
 impl ListChannelModeratorsInputBuilder {
     /// <p>The ARN of the channel.</p>
+    /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self
@@ -116,7 +117,7 @@ impl ListChannelModeratorsInputBuilder {
     /// Consumes the builder and constructs a [`ListChannelModeratorsInput`](crate::operation::list_channel_moderators::ListChannelModeratorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_channel_moderators::ListChannelModeratorsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_channel_moderators::ListChannelModeratorsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_channel_moderators::ListChannelModeratorsInput {
             channel_arn: self.channel_arn,

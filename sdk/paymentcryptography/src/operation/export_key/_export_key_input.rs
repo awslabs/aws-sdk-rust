@@ -34,6 +34,7 @@ pub struct ExportKeyInputBuilder {
 }
 impl ExportKeyInputBuilder {
     /// <p>The key block format type, for example, TR-34 or TR-31, to use during key material export.</p>
+    /// This field is required.
     pub fn key_material(mut self, input: crate::types::ExportKeyMaterial) -> Self {
         self.key_material = ::std::option::Option::Some(input);
         self
@@ -48,6 +49,7 @@ impl ExportKeyInputBuilder {
         &self.key_material
     }
     /// <p>The <code>KeyARN</code> of the key under export from Amazon Web Services Payment Cryptography.</p>
+    /// This field is required.
     pub fn export_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.export_key_identifier = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,7 @@ impl ExportKeyInputBuilder {
         &self.export_key_identifier
     }
     /// Consumes the builder and constructs a [`ExportKeyInput`](crate::operation::export_key::ExportKeyInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::export_key::ExportKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::export_key::ExportKeyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::export_key::ExportKeyInput {
             key_material: self.key_material,
             export_key_identifier: self.export_key_identifier,

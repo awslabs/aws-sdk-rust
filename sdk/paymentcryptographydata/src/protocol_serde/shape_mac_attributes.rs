@@ -2,7 +2,7 @@
 pub fn ser_mac_attributes(
     object_2: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MacAttributes,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::MacAttributes::Algorithm(inner) => {
             object_2.key("Algorithm").string(inner.as_str());
@@ -32,7 +32,7 @@ pub fn ser_mac_attributes(
             object_4.finish();
         }
         crate::types::MacAttributes::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("MacAttributes"))
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("MacAttributes"))
         }
     }
     Ok(())

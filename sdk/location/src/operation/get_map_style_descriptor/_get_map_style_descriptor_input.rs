@@ -42,6 +42,7 @@ pub struct GetMapStyleDescriptorInputBuilder {
 }
 impl GetMapStyleDescriptorInputBuilder {
     /// <p>The map resource to retrieve the style descriptor from.</p>
+    /// This field is required.
     pub fn map_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.map_name = ::std::option::Option::Some(input.into());
         self
@@ -72,7 +73,7 @@ impl GetMapStyleDescriptorInputBuilder {
     /// Consumes the builder and constructs a [`GetMapStyleDescriptorInput`](crate::operation::get_map_style_descriptor::GetMapStyleDescriptorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_map_style_descriptor::GetMapStyleDescriptorInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_map_style_descriptor::GetMapStyleDescriptorInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_map_style_descriptor::GetMapStyleDescriptorInput {
             map_name: self.map_name,

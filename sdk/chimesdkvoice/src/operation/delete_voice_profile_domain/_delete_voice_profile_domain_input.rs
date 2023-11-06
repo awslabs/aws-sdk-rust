@@ -27,6 +27,7 @@ pub struct DeleteVoiceProfileDomainInputBuilder {
 }
 impl DeleteVoiceProfileDomainInputBuilder {
     /// <p>The voice profile domain ID.</p>
+    /// This field is required.
     pub fn voice_profile_domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_profile_domain_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteVoiceProfileDomainInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_voice_profile_domain::DeleteVoiceProfileDomainInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_voice_profile_domain::DeleteVoiceProfileDomainInput {
             voice_profile_domain_id: self.voice_profile_domain_id,

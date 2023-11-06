@@ -5,20 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetDestinationEntry {
     /// <p>The unique identifier for the asset.</p>
-    pub asset_id: ::std::option::Option<::std::string::String>,
+    pub asset_id: ::std::string::String,
     /// <p>The Amazon S3 bucket that is the destination for the asset.</p>
-    pub bucket: ::std::option::Option<::std::string::String>,
+    pub bucket: ::std::string::String,
     /// <p>The name of the object in Amazon S3 for the asset.</p>
     pub key: ::std::option::Option<::std::string::String>,
 }
 impl AssetDestinationEntry {
     /// <p>The unique identifier for the asset.</p>
-    pub fn asset_id(&self) -> ::std::option::Option<&str> {
-        self.asset_id.as_deref()
+    pub fn asset_id(&self) -> &str {
+        use std::ops::Deref;
+        self.asset_id.deref()
     }
     /// <p>The Amazon S3 bucket that is the destination for the asset.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
-        self.bucket.as_deref()
+    pub fn bucket(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket.deref()
     }
     /// <p>The name of the object in Amazon S3 for the asset.</p>
     pub fn key(&self) -> ::std::option::Option<&str> {
@@ -42,6 +44,7 @@ pub struct AssetDestinationEntryBuilder {
 }
 impl AssetDestinationEntryBuilder {
     /// <p>The unique identifier for the asset.</p>
+    /// This field is required.
     pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl AssetDestinationEntryBuilder {
         &self.asset_id
     }
     /// <p>The Amazon S3 bucket that is the destination for the asset.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +88,24 @@ impl AssetDestinationEntryBuilder {
         &self.key
     }
     /// Consumes the builder and constructs a [`AssetDestinationEntry`](crate::types::AssetDestinationEntry).
-    pub fn build(self) -> crate::types::AssetDestinationEntry {
-        crate::types::AssetDestinationEntry {
-            asset_id: self.asset_id,
-            bucket: self.bucket,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`asset_id`](crate::types::builders::AssetDestinationEntryBuilder::asset_id)
+    /// - [`bucket`](crate::types::builders::AssetDestinationEntryBuilder::bucket)
+    pub fn build(self) -> ::std::result::Result<crate::types::AssetDestinationEntry, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AssetDestinationEntry {
+            asset_id: self.asset_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "asset_id",
+                    "asset_id was not specified but it is required when building AssetDestinationEntry",
+                )
+            })?,
+            bucket: self.bucket.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "bucket",
+                    "bucket was not specified but it is required when building AssetDestinationEntry",
+                )
+            })?,
             key: self.key,
-        }
+        })
     }
 }

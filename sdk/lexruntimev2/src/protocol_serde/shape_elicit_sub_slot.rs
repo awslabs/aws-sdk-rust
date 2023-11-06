@@ -35,7 +35,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::elicit_sub_slot_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -46,15 +48,15 @@ where
 pub fn ser_elicit_sub_slot(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ElicitSubSlot,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("name").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.sub_slot_to_elicit {
+    if let Some(var_1) = &input.sub_slot_to_elicit {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("subSlotToElicit").start_object();
-        crate::protocol_serde::shape_elicit_sub_slot::ser_elicit_sub_slot(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("subSlotToElicit").start_object();
+        crate::protocol_serde::shape_elicit_sub_slot::ser_elicit_sub_slot(&mut object_2, var_1)?;
+        object_2.finish();
     }
     Ok(())
 }

@@ -25,7 +25,7 @@ pub struct AttackVectorDescription {
     /// <li> <p>UDS_REFLECTION</p> </li>
     /// <li> <p>MEMCACHED_REFLECTION</p> </li>
     /// </ul>
-    pub vector_type: ::std::option::Option<::std::string::String>,
+    pub vector_type: ::std::string::String,
 }
 impl AttackVectorDescription {
     /// <p>The attack type. Valid values:</p>
@@ -49,8 +49,9 @@ impl AttackVectorDescription {
     /// <li> <p>UDS_REFLECTION</p> </li>
     /// <li> <p>MEMCACHED_REFLECTION</p> </li>
     /// </ul>
-    pub fn vector_type(&self) -> ::std::option::Option<&str> {
-        self.vector_type.as_deref()
+    pub fn vector_type(&self) -> &str {
+        use std::ops::Deref;
+        self.vector_type.deref()
     }
 }
 impl AttackVectorDescription {
@@ -88,6 +89,7 @@ impl AttackVectorDescriptionBuilder {
     /// <li> <p>UDS_REFLECTION</p> </li>
     /// <li> <p>MEMCACHED_REFLECTION</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn vector_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vector_type = ::std::option::Option::Some(input.into());
         self
@@ -142,9 +144,16 @@ impl AttackVectorDescriptionBuilder {
         &self.vector_type
     }
     /// Consumes the builder and constructs a [`AttackVectorDescription`](crate::types::AttackVectorDescription).
-    pub fn build(self) -> crate::types::AttackVectorDescription {
-        crate::types::AttackVectorDescription {
-            vector_type: self.vector_type,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`vector_type`](crate::types::builders::AttackVectorDescriptionBuilder::vector_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::AttackVectorDescription, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AttackVectorDescription {
+            vector_type: self.vector_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "vector_type",
+                    "vector_type was not specified but it is required when building AttackVectorDescription",
+                )
+            })?,
+        })
     }
 }

@@ -2,7 +2,7 @@
 pub fn ser_aws_cloud_front_distribution_origin_custom_origin_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsCloudFrontDistributionOriginCustomOriginConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.http_port {
         object.key("HttpPort").number(
             #[allow(clippy::useless_conversion)]

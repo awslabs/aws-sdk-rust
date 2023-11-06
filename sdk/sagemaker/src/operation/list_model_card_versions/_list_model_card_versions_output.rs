@@ -11,8 +11,10 @@ pub struct ListModelCardVersionsOutput {
 }
 impl ListModelCardVersionsOutput {
     /// <p>The summaries of the listed versions of the model card.</p>
-    pub fn model_card_version_summary_list(&self) -> ::std::option::Option<&[crate::types::ModelCardVersionSummary]> {
-        self.model_card_version_summary_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.model_card_version_summary_list.is_none()`.
+    pub fn model_card_version_summary_list(&self) -> &[crate::types::ModelCardVersionSummary] {
+        self.model_card_version_summary_list.as_deref().unwrap_or_default()
     }
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of model card versions, use it in the subsequent request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

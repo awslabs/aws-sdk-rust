@@ -127,7 +127,7 @@ impl ListFlowDefinitionsInputBuilder {
     /// Consumes the builder and constructs a [`ListFlowDefinitionsInput`](crate::operation::list_flow_definitions::ListFlowDefinitionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_flow_definitions::ListFlowDefinitionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_flow_definitions::ListFlowDefinitionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_flow_definitions::ListFlowDefinitionsInput {
             creation_time_after: self.creation_time_after,

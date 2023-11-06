@@ -11,8 +11,10 @@ pub struct ListGlobalTablesOutput {
 }
 impl ListGlobalTablesOutput {
     /// <p>List of global table names.</p>
-    pub fn global_tables(&self) -> ::std::option::Option<&[crate::types::GlobalTable]> {
-        self.global_tables.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.global_tables.is_none()`.
+    pub fn global_tables(&self) -> &[crate::types::GlobalTable] {
+        self.global_tables.as_deref().unwrap_or_default()
     }
     /// <p>Last evaluated global table name.</p>
     pub fn last_evaluated_global_table_name(&self) -> ::std::option::Option<&str> {

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GoogleDriveConfiguration {
     /// <p>The Amazon Resource Name (ARN) of a Secrets Managersecret that contains the credentials required to connect to Google Drive. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-google-drive.html">Using a Google Workspace Drive data source</a>.</p>
-    pub secret_arn: ::std::option::Option<::std::string::String>,
+    pub secret_arn: ::std::string::String,
     /// <p>A list of regular expression patterns to include certain items in your Google Drive, including shared drives and users' My Drives. Items that match the patterns are included in the index. Items that don't match the patterns are excluded from the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't included in the index.</p>
     pub inclusion_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of regular expression patterns to exclude certain items in your Google Drive, including shared drives and users' My Drives. Items that match the patterns are excluded from the index. Items that don't match the patterns are included in the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't included in the index.</p>
@@ -22,33 +22,46 @@ pub struct GoogleDriveConfiguration {
 }
 impl GoogleDriveConfiguration {
     /// <p>The Amazon Resource Name (ARN) of a Secrets Managersecret that contains the credentials required to connect to Google Drive. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-google-drive.html">Using a Google Workspace Drive data source</a>.</p>
-    pub fn secret_arn(&self) -> ::std::option::Option<&str> {
-        self.secret_arn.as_deref()
+    pub fn secret_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.secret_arn.deref()
     }
     /// <p>A list of regular expression patterns to include certain items in your Google Drive, including shared drives and users' My Drives. Items that match the patterns are included in the index. Items that don't match the patterns are excluded from the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't included in the index.</p>
-    pub fn inclusion_patterns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.inclusion_patterns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inclusion_patterns.is_none()`.
+    pub fn inclusion_patterns(&self) -> &[::std::string::String] {
+        self.inclusion_patterns.as_deref().unwrap_or_default()
     }
     /// <p>A list of regular expression patterns to exclude certain items in your Google Drive, including shared drives and users' My Drives. Items that match the patterns are excluded from the index. Items that don't match the patterns are included in the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't included in the index.</p>
-    pub fn exclusion_patterns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.exclusion_patterns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclusion_patterns.is_none()`.
+    pub fn exclusion_patterns(&self) -> &[::std::string::String] {
+        self.exclusion_patterns.as_deref().unwrap_or_default()
     }
     /// <p>Maps Google Drive data source attributes or field names to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Google Drive fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Google Drive data source field names must exist in your Google Drive custom metadata.</p>
-    pub fn field_mappings(&self) -> ::std::option::Option<&[crate::types::DataSourceToIndexFieldMapping]> {
-        self.field_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.field_mappings.is_none()`.
+    pub fn field_mappings(&self) -> &[crate::types::DataSourceToIndexFieldMapping] {
+        self.field_mappings.as_deref().unwrap_or_default()
     }
     /// <p>A list of MIME types to exclude from the index. All documents matching the specified MIME type are excluded. </p>
     /// <p>For a list of MIME types, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-google-drive.html">Using a Google Workspace Drive data source</a>.</p>
-    pub fn exclude_mime_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.exclude_mime_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclude_mime_types.is_none()`.
+    pub fn exclude_mime_types(&self) -> &[::std::string::String] {
+        self.exclude_mime_types.as_deref().unwrap_or_default()
     }
     /// <p>A list of email addresses of the users. Documents owned by these users are excluded from the index. Documents shared with excluded users are indexed unless they are excluded in another way.</p>
-    pub fn exclude_user_accounts(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.exclude_user_accounts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclude_user_accounts.is_none()`.
+    pub fn exclude_user_accounts(&self) -> &[::std::string::String] {
+        self.exclude_user_accounts.as_deref().unwrap_or_default()
     }
     /// <p>A list of identifiers or shared drives to exclude from the index. All files and folders stored on the shared drive are excluded.</p>
-    pub fn exclude_shared_drives(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.exclude_shared_drives.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclude_shared_drives.is_none()`.
+    pub fn exclude_shared_drives(&self) -> &[::std::string::String] {
+        self.exclude_shared_drives.as_deref().unwrap_or_default()
     }
 }
 impl GoogleDriveConfiguration {
@@ -72,6 +85,7 @@ pub struct GoogleDriveConfigurationBuilder {
 }
 impl GoogleDriveConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) of a Secrets Managersecret that contains the credentials required to connect to Google Drive. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-google-drive.html">Using a Google Workspace Drive data source</a>.</p>
+    /// This field is required.
     pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_arn = ::std::option::Option::Some(input.into());
         self
@@ -209,15 +223,22 @@ impl GoogleDriveConfigurationBuilder {
         &self.exclude_shared_drives
     }
     /// Consumes the builder and constructs a [`GoogleDriveConfiguration`](crate::types::GoogleDriveConfiguration).
-    pub fn build(self) -> crate::types::GoogleDriveConfiguration {
-        crate::types::GoogleDriveConfiguration {
-            secret_arn: self.secret_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`secret_arn`](crate::types::builders::GoogleDriveConfigurationBuilder::secret_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::GoogleDriveConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::GoogleDriveConfiguration {
+            secret_arn: self.secret_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "secret_arn",
+                    "secret_arn was not specified but it is required when building GoogleDriveConfiguration",
+                )
+            })?,
             inclusion_patterns: self.inclusion_patterns,
             exclusion_patterns: self.exclusion_patterns,
             field_mappings: self.field_mappings,
             exclude_mime_types: self.exclude_mime_types,
             exclude_user_accounts: self.exclude_user_accounts,
             exclude_shared_drives: self.exclude_shared_drives,
-        }
+        })
     }
 }

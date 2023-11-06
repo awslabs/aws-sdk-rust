@@ -27,6 +27,7 @@ pub struct DeleteClassifierInputBuilder {
 }
 impl DeleteClassifierInputBuilder {
     /// <p>Name of the classifier to remove.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteClassifierInputBuilder {
     /// Consumes the builder and constructs a [`DeleteClassifierInput`](crate::operation::delete_classifier::DeleteClassifierInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_classifier::DeleteClassifierInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_classifier::DeleteClassifierInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_classifier::DeleteClassifierInput { name: self.name })
     }
 }

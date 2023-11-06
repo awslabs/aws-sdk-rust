@@ -28,6 +28,7 @@ pub struct DeleteEmailIdentityInputBuilder {
 }
 impl DeleteEmailIdentityInputBuilder {
     /// <p>The identity (that is, the email address or domain) that you want to delete from your Amazon Pinpoint account.</p>
+    /// This field is required.
     pub fn email_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_identity = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl DeleteEmailIdentityInputBuilder {
     /// Consumes the builder and constructs a [`DeleteEmailIdentityInput`](crate::operation::delete_email_identity::DeleteEmailIdentityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_email_identity::DeleteEmailIdentityInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_email_identity::DeleteEmailIdentityInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_email_identity::DeleteEmailIdentityInput {
             email_identity: self.email_identity,

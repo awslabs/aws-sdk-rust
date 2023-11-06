@@ -28,6 +28,7 @@ pub struct DeleteProfilingGroupInputBuilder {
 }
 impl DeleteProfilingGroupInputBuilder {
     /// <p>The name of the profiling group to delete.</p>
+    /// This field is required.
     pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profiling_group_name = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl DeleteProfilingGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteProfilingGroupInput`](crate::operation::delete_profiling_group::DeleteProfilingGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_profiling_group::DeleteProfilingGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_profiling_group::DeleteProfilingGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_profiling_group::DeleteProfilingGroupInput {
             profiling_group_name: self.profiling_group_name,

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`EnableLDAPS`](crate::operation::enable_ldaps::builders::EnableLDAPSFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`directory_id(impl Into<String>)`](crate::operation::enable_ldaps::builders::EnableLDAPSFluentBuilder::directory_id) / [`set_directory_id(Option<String>)`](crate::operation::enable_ldaps::builders::EnableLDAPSFluentBuilder::set_directory_id): <p>The identifier of the directory.</p>
-    ///   - [`r#type(LdapsType)`](crate::operation::enable_ldaps::builders::EnableLDAPSFluentBuilder::type) / [`set_type(Option<LdapsType>)`](crate::operation::enable_ldaps::builders::EnableLDAPSFluentBuilder::set_type): <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
+    ///   - [`directory_id(impl Into<String>)`](crate::operation::enable_ldaps::builders::EnableLDAPSFluentBuilder::directory_id) / [`set_directory_id(Option<String>)`](crate::operation::enable_ldaps::builders::EnableLDAPSFluentBuilder::set_directory_id):<br>required: **true**<br><p>The identifier of the directory.</p><br>
+    ///   - [`r#type(LdapsType)`](crate::operation::enable_ldaps::builders::EnableLDAPSFluentBuilder::type) / [`set_type(Option<LdapsType>)`](crate::operation::enable_ldaps::builders::EnableLDAPSFluentBuilder::set_type):<br>required: **true**<br><p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p><br>
     /// - On success, responds with [`EnableLdapsOutput`](crate::operation::enable_ldaps::EnableLdapsOutput)
     /// - On failure, responds with [`SdkError<EnableLDAPSError>`](crate::operation::enable_ldaps::EnableLDAPSError)
     pub fn enable_ldaps(&self) -> crate::operation::enable_ldaps::builders::EnableLDAPSFluentBuilder {

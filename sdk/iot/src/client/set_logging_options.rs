@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`SetLoggingOptions`](crate::operation::set_logging_options::builders::SetLoggingOptionsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`logging_options_payload(LoggingOptionsPayload)`](crate::operation::set_logging_options::builders::SetLoggingOptionsFluentBuilder::logging_options_payload) / [`set_logging_options_payload(Option<LoggingOptionsPayload>)`](crate::operation::set_logging_options::builders::SetLoggingOptionsFluentBuilder::set_logging_options_payload): <p>The logging options payload.</p>
+    ///   - [`logging_options_payload(LoggingOptionsPayload)`](crate::operation::set_logging_options::builders::SetLoggingOptionsFluentBuilder::logging_options_payload) / [`set_logging_options_payload(Option<LoggingOptionsPayload>)`](crate::operation::set_logging_options::builders::SetLoggingOptionsFluentBuilder::set_logging_options_payload):<br>required: **true**<br><p>The logging options payload.</p><br>
     /// - On success, responds with [`SetLoggingOptionsOutput`](crate::operation::set_logging_options::SetLoggingOptionsOutput)
     /// - On failure, responds with [`SdkError<SetLoggingOptionsError>`](crate::operation::set_logging_options::SetLoggingOptionsError)
     pub fn set_logging_options(&self) -> crate::operation::set_logging_options::builders::SetLoggingOptionsFluentBuilder {

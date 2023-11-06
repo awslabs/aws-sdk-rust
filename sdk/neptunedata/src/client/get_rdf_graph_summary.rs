@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetRDFGraphSummary`](crate::operation::get_rdf_graph_summary::builders::GetRDFGraphSummaryFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`mode(GraphSummaryType)`](crate::operation::get_rdf_graph_summary::builders::GetRDFGraphSummaryFluentBuilder::mode) / [`set_mode(Option<GraphSummaryType>)`](crate::operation::get_rdf_graph_summary::builders::GetRDFGraphSummaryFluentBuilder::set_mode): <p>Mode can take one of two values: <code>BASIC</code> (the default), and <code>DETAILED</code>.</p>
+    ///   - [`mode(GraphSummaryType)`](crate::operation::get_rdf_graph_summary::builders::GetRDFGraphSummaryFluentBuilder::mode) / [`set_mode(Option<GraphSummaryType>)`](crate::operation::get_rdf_graph_summary::builders::GetRDFGraphSummaryFluentBuilder::set_mode):<br>required: **false**<br><p>Mode can take one of two values: <code>BASIC</code> (the default), and <code>DETAILED</code>.</p><br>
     /// - On success, responds with [`GetRdfGraphSummaryOutput`](crate::operation::get_rdf_graph_summary::GetRdfGraphSummaryOutput) with field(s):
     ///   - [`status_code(Option<i32>)`](crate::operation::get_rdf_graph_summary::GetRdfGraphSummaryOutput::status_code): <p>The HTTP return code of the request. If the request succeeded, the code is 200.</p>
     ///   - [`payload(Option<RdfGraphSummaryValueMap>)`](crate::operation::get_rdf_graph_summary::GetRdfGraphSummaryOutput::payload): <p>Payload for an RDF graph summary response</p>

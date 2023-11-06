@@ -10,7 +10,7 @@ pub struct PutSourceServerActionInput {
     /// <p>Source server post migration custom action document identifier.</p>
     pub document_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Source server post migration custom action order.</p>
-    pub order: i32,
+    pub order: ::std::option::Option<i32>,
     /// <p>Source server post migration custom action ID.</p>
     pub action_id: ::std::option::Option<::std::string::String>,
     /// <p>Source server post migration custom action document version.</p>
@@ -18,7 +18,7 @@ pub struct PutSourceServerActionInput {
     /// <p>Source server post migration custom action active status.</p>
     pub active: ::std::option::Option<bool>,
     /// <p>Source server post migration custom action timeout in seconds.</p>
-    pub timeout_seconds: i32,
+    pub timeout_seconds: ::std::option::Option<i32>,
     /// <p>Source server post migration custom action must succeed for cutover.</p>
     pub must_succeed_for_cutover: ::std::option::Option<bool>,
     /// <p>Source server post migration custom action parameters.</p>
@@ -47,7 +47,7 @@ impl PutSourceServerActionInput {
         self.document_identifier.as_deref()
     }
     /// <p>Source server post migration custom action order.</p>
-    pub fn order(&self) -> i32 {
+    pub fn order(&self) -> ::std::option::Option<i32> {
         self.order
     }
     /// <p>Source server post migration custom action ID.</p>
@@ -63,7 +63,7 @@ impl PutSourceServerActionInput {
         self.active
     }
     /// <p>Source server post migration custom action timeout in seconds.</p>
-    pub fn timeout_seconds(&self) -> i32 {
+    pub fn timeout_seconds(&self) -> ::std::option::Option<i32> {
         self.timeout_seconds
     }
     /// <p>Source server post migration custom action must succeed for cutover.</p>
@@ -124,6 +124,7 @@ pub struct PutSourceServerActionInputBuilder {
 }
 impl PutSourceServerActionInputBuilder {
     /// <p>Source server ID.</p>
+    /// This field is required.
     pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
@@ -138,6 +139,7 @@ impl PutSourceServerActionInputBuilder {
         &self.source_server_id
     }
     /// <p>Source server post migration custom action name.</p>
+    /// This field is required.
     pub fn action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_name = ::std::option::Option::Some(input.into());
         self
@@ -152,6 +154,7 @@ impl PutSourceServerActionInputBuilder {
         &self.action_name
     }
     /// <p>Source server post migration custom action document identifier.</p>
+    /// This field is required.
     pub fn document_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_identifier = ::std::option::Option::Some(input.into());
         self
@@ -166,6 +169,7 @@ impl PutSourceServerActionInputBuilder {
         &self.document_identifier
     }
     /// <p>Source server post migration custom action order.</p>
+    /// This field is required.
     pub fn order(mut self, input: i32) -> Self {
         self.order = ::std::option::Option::Some(input);
         self
@@ -180,6 +184,7 @@ impl PutSourceServerActionInputBuilder {
         &self.order
     }
     /// <p>Source server post migration custom action ID.</p>
+    /// This field is required.
     pub fn action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_id = ::std::option::Option::Some(input.into());
         self
@@ -348,17 +353,17 @@ impl PutSourceServerActionInputBuilder {
     /// Consumes the builder and constructs a [`PutSourceServerActionInput`](crate::operation::put_source_server_action::PutSourceServerActionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_source_server_action::PutSourceServerActionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_source_server_action::PutSourceServerActionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_source_server_action::PutSourceServerActionInput {
             source_server_id: self.source_server_id,
             action_name: self.action_name,
             document_identifier: self.document_identifier,
-            order: self.order.unwrap_or_default(),
+            order: self.order,
             action_id: self.action_id,
             document_version: self.document_version,
             active: self.active,
-            timeout_seconds: self.timeout_seconds.unwrap_or_default(),
+            timeout_seconds: self.timeout_seconds,
             must_succeed_for_cutover: self.must_succeed_for_cutover,
             parameters: self.parameters,
             external_parameters: self.external_parameters,

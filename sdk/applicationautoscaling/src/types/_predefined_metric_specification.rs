@@ -6,7 +6,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PredefinedMetricSpecification {
     /// <p>The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Spot Fleets and ECS services.</p>
-    pub predefined_metric_type: ::std::option::Option<crate::types::MetricType>,
+    pub predefined_metric_type: crate::types::MetricType,
     /// <p>Identifies the resource associated with the metric type. You can't specify a resource label unless the metric type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Spot Fleet or ECS service.</p>
     /// <p>You create the resource label by appending the final portion of the load balancer ARN and the final portion of the target group ARN into a single value, separated by a forward slash (/). The format of the resource label is:</p>
     /// <p> <code>app/my-alb/778d41231b141a0f/targetgroup/my-alb-target-group/943f017f100becff</code>.</p>
@@ -30,8 +30,8 @@ pub struct PredefinedMetricSpecification {
 }
 impl PredefinedMetricSpecification {
     /// <p>The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Spot Fleets and ECS services.</p>
-    pub fn predefined_metric_type(&self) -> ::std::option::Option<&crate::types::MetricType> {
-        self.predefined_metric_type.as_ref()
+    pub fn predefined_metric_type(&self) -> &crate::types::MetricType {
+        &self.predefined_metric_type
     }
     /// <p>Identifies the resource associated with the metric type. You can't specify a resource label unless the metric type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Spot Fleet or ECS service.</p>
     /// <p>You create the resource label by appending the final portion of the load balancer ARN and the final portion of the target group ARN into a single value, separated by a forward slash (/). The format of the resource label is:</p>
@@ -72,6 +72,7 @@ pub struct PredefinedMetricSpecificationBuilder {
 }
 impl PredefinedMetricSpecificationBuilder {
     /// <p>The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Spot Fleets and ECS services.</p>
+    /// This field is required.
     pub fn predefined_metric_type(mut self, input: crate::types::MetricType) -> Self {
         self.predefined_metric_type = ::std::option::Option::Some(input);
         self
@@ -154,10 +155,17 @@ impl PredefinedMetricSpecificationBuilder {
         &self.resource_label
     }
     /// Consumes the builder and constructs a [`PredefinedMetricSpecification`](crate::types::PredefinedMetricSpecification).
-    pub fn build(self) -> crate::types::PredefinedMetricSpecification {
-        crate::types::PredefinedMetricSpecification {
-            predefined_metric_type: self.predefined_metric_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`predefined_metric_type`](crate::types::builders::PredefinedMetricSpecificationBuilder::predefined_metric_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::PredefinedMetricSpecification, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PredefinedMetricSpecification {
+            predefined_metric_type: self.predefined_metric_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "predefined_metric_type",
+                    "predefined_metric_type was not specified but it is required when building PredefinedMetricSpecification",
+                )
+            })?,
             resource_label: self.resource_label,
-        }
+        })
     }
 }

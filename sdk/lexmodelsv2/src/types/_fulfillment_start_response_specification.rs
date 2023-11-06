@@ -5,20 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FulfillmentStartResponseSpecification {
     /// <p>The delay between when the Lambda fulfillment function starts running and the start message is played. If the Lambda function returns before the delay is over, the start message isn't played.</p>
-    pub delay_in_seconds: ::std::option::Option<i32>,
+    pub delay_in_seconds: i32,
     /// <p>1 - 5 message groups that contain start messages. Amazon Lex chooses one of the messages to play to the user.</p>
-    pub message_groups: ::std::option::Option<::std::vec::Vec<crate::types::MessageGroup>>,
+    pub message_groups: ::std::vec::Vec<crate::types::MessageGroup>,
     /// <p>Determines whether the user can interrupt the start message while it is playing.</p>
     pub allow_interrupt: ::std::option::Option<bool>,
 }
 impl FulfillmentStartResponseSpecification {
     /// <p>The delay between when the Lambda fulfillment function starts running and the start message is played. If the Lambda function returns before the delay is over, the start message isn't played.</p>
-    pub fn delay_in_seconds(&self) -> ::std::option::Option<i32> {
+    pub fn delay_in_seconds(&self) -> i32 {
         self.delay_in_seconds
     }
     /// <p>1 - 5 message groups that contain start messages. Amazon Lex chooses one of the messages to play to the user.</p>
-    pub fn message_groups(&self) -> ::std::option::Option<&[crate::types::MessageGroup]> {
-        self.message_groups.as_deref()
+    pub fn message_groups(&self) -> &[crate::types::MessageGroup] {
+        use std::ops::Deref;
+        self.message_groups.deref()
     }
     /// <p>Determines whether the user can interrupt the start message while it is playing.</p>
     pub fn allow_interrupt(&self) -> ::std::option::Option<bool> {
@@ -42,6 +43,7 @@ pub struct FulfillmentStartResponseSpecificationBuilder {
 }
 impl FulfillmentStartResponseSpecificationBuilder {
     /// <p>The delay between when the Lambda fulfillment function starts running and the start message is played. If the Lambda function returns before the delay is over, the start message isn't played.</p>
+    /// This field is required.
     pub fn delay_in_seconds(mut self, input: i32) -> Self {
         self.delay_in_seconds = ::std::option::Option::Some(input);
         self
@@ -90,11 +92,26 @@ impl FulfillmentStartResponseSpecificationBuilder {
         &self.allow_interrupt
     }
     /// Consumes the builder and constructs a [`FulfillmentStartResponseSpecification`](crate::types::FulfillmentStartResponseSpecification).
-    pub fn build(self) -> crate::types::FulfillmentStartResponseSpecification {
-        crate::types::FulfillmentStartResponseSpecification {
-            delay_in_seconds: self.delay_in_seconds,
-            message_groups: self.message_groups,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`delay_in_seconds`](crate::types::builders::FulfillmentStartResponseSpecificationBuilder::delay_in_seconds)
+    /// - [`message_groups`](crate::types::builders::FulfillmentStartResponseSpecificationBuilder::message_groups)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::FulfillmentStartResponseSpecification, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::FulfillmentStartResponseSpecification {
+            delay_in_seconds: self.delay_in_seconds.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "delay_in_seconds",
+                    "delay_in_seconds was not specified but it is required when building FulfillmentStartResponseSpecification",
+                )
+            })?,
+            message_groups: self.message_groups.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "message_groups",
+                    "message_groups was not specified but it is required when building FulfillmentStartResponseSpecification",
+                )
+            })?,
             allow_interrupt: self.allow_interrupt,
-        }
+        })
     }
 }

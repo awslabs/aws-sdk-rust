@@ -34,6 +34,7 @@ pub struct GetInstanceUefiDataInputBuilder {
 }
 impl GetInstanceUefiDataInputBuilder {
     /// <p>The ID of the instance from which to retrieve the UEFI data.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl GetInstanceUefiDataInputBuilder {
     /// Consumes the builder and constructs a [`GetInstanceUefiDataInput`](crate::operation::get_instance_uefi_data::GetInstanceUefiDataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_instance_uefi_data::GetInstanceUefiDataInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_instance_uefi_data::GetInstanceUefiDataInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_instance_uefi_data::GetInstanceUefiDataInput {
             instance_id: self.instance_id,

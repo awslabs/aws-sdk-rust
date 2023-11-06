@@ -27,6 +27,7 @@ pub struct GetEnvironmentTemplateInputBuilder {
 }
 impl GetEnvironmentTemplateInputBuilder {
     /// <p>The name of the environment template that you want to get the detailed data for.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -43,8 +44,10 @@ impl GetEnvironmentTemplateInputBuilder {
     /// Consumes the builder and constructs a [`GetEnvironmentTemplateInput`](crate::operation::get_environment_template::GetEnvironmentTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_environment_template::GetEnvironmentTemplateInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::get_environment_template::GetEnvironmentTemplateInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::get_environment_template::GetEnvironmentTemplateInput { name: self.name })
     }
 }

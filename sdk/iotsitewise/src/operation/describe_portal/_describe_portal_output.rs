@@ -4,26 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePortalOutput {
     /// <p>The ID of the portal.</p>
-    pub portal_id: ::std::option::Option<::std::string::String>,
+    pub portal_id: ::std::string::String,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code> </p>
-    pub portal_arn: ::std::option::Option<::std::string::String>,
+    pub portal_arn: ::std::string::String,
     /// <p>The name of the portal.</p>
-    pub portal_name: ::std::option::Option<::std::string::String>,
+    pub portal_name: ::std::string::String,
     /// <p>The portal's description.</p>
     pub portal_description: ::std::option::Option<::std::string::String>,
     /// <p>The IAM Identity Center application generated client ID (used with IAM Identity Center APIs). IoT SiteWise includes <code>portalClientId</code> for only portals that use IAM Identity Center to authenticate users.</p>
-    pub portal_client_id: ::std::option::Option<::std::string::String>,
+    pub portal_client_id: ::std::string::String,
     /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
-    pub portal_start_url: ::std::option::Option<::std::string::String>,
+    pub portal_start_url: ::std::string::String,
     /// <p>The Amazon Web Services administrator's contact email address.</p>
-    pub portal_contact_email: ::std::option::Option<::std::string::String>,
+    pub portal_contact_email: ::std::string::String,
     /// <p>The current status of the portal, which contains a state and any error message.</p>
     pub portal_status: ::std::option::Option<crate::types::PortalStatus>,
     /// <p>The date the portal was created, in Unix epoch time.</p>
-    pub portal_creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub portal_creation_date: ::aws_smithy_types::DateTime,
     /// <p>The date the portal was last updated, in Unix epoch time.</p>
-    pub portal_last_update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub portal_last_update_date: ::aws_smithy_types::DateTime,
     /// <p>The portal's logo image, which is available at a URL.</p>
     pub portal_logo_image_location: ::std::option::Option<crate::types::ImageLocation>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
@@ -38,45 +38,51 @@ pub struct DescribePortalOutput {
 }
 impl DescribePortalOutput {
     /// <p>The ID of the portal.</p>
-    pub fn portal_id(&self) -> ::std::option::Option<&str> {
-        self.portal_id.as_deref()
+    pub fn portal_id(&self) -> &str {
+        use std::ops::Deref;
+        self.portal_id.deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code> </p>
-    pub fn portal_arn(&self) -> ::std::option::Option<&str> {
-        self.portal_arn.as_deref()
+    pub fn portal_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.portal_arn.deref()
     }
     /// <p>The name of the portal.</p>
-    pub fn portal_name(&self) -> ::std::option::Option<&str> {
-        self.portal_name.as_deref()
+    pub fn portal_name(&self) -> &str {
+        use std::ops::Deref;
+        self.portal_name.deref()
     }
     /// <p>The portal's description.</p>
     pub fn portal_description(&self) -> ::std::option::Option<&str> {
         self.portal_description.as_deref()
     }
     /// <p>The IAM Identity Center application generated client ID (used with IAM Identity Center APIs). IoT SiteWise includes <code>portalClientId</code> for only portals that use IAM Identity Center to authenticate users.</p>
-    pub fn portal_client_id(&self) -> ::std::option::Option<&str> {
-        self.portal_client_id.as_deref()
+    pub fn portal_client_id(&self) -> &str {
+        use std::ops::Deref;
+        self.portal_client_id.deref()
     }
     /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
-    pub fn portal_start_url(&self) -> ::std::option::Option<&str> {
-        self.portal_start_url.as_deref()
+    pub fn portal_start_url(&self) -> &str {
+        use std::ops::Deref;
+        self.portal_start_url.deref()
     }
     /// <p>The Amazon Web Services administrator's contact email address.</p>
-    pub fn portal_contact_email(&self) -> ::std::option::Option<&str> {
-        self.portal_contact_email.as_deref()
+    pub fn portal_contact_email(&self) -> &str {
+        use std::ops::Deref;
+        self.portal_contact_email.deref()
     }
     /// <p>The current status of the portal, which contains a state and any error message.</p>
     pub fn portal_status(&self) -> ::std::option::Option<&crate::types::PortalStatus> {
         self.portal_status.as_ref()
     }
     /// <p>The date the portal was created, in Unix epoch time.</p>
-    pub fn portal_creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.portal_creation_date.as_ref()
+    pub fn portal_creation_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.portal_creation_date
     }
     /// <p>The date the portal was last updated, in Unix epoch time.</p>
-    pub fn portal_last_update_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.portal_last_update_date.as_ref()
+    pub fn portal_last_update_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.portal_last_update_date
     }
     /// <p>The portal's logo image, which is available at a URL.</p>
     pub fn portal_logo_image_location(&self) -> ::std::option::Option<&crate::types::ImageLocation> {
@@ -134,6 +140,7 @@ pub struct DescribePortalOutputBuilder {
 }
 impl DescribePortalOutputBuilder {
     /// <p>The ID of the portal.</p>
+    /// This field is required.
     pub fn portal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portal_id = ::std::option::Option::Some(input.into());
         self
@@ -149,6 +156,7 @@ impl DescribePortalOutputBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code> </p>
+    /// This field is required.
     pub fn portal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portal_arn = ::std::option::Option::Some(input.into());
         self
@@ -165,6 +173,7 @@ impl DescribePortalOutputBuilder {
         &self.portal_arn
     }
     /// <p>The name of the portal.</p>
+    /// This field is required.
     pub fn portal_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portal_name = ::std::option::Option::Some(input.into());
         self
@@ -193,6 +202,7 @@ impl DescribePortalOutputBuilder {
         &self.portal_description
     }
     /// <p>The IAM Identity Center application generated client ID (used with IAM Identity Center APIs). IoT SiteWise includes <code>portalClientId</code> for only portals that use IAM Identity Center to authenticate users.</p>
+    /// This field is required.
     pub fn portal_client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portal_client_id = ::std::option::Option::Some(input.into());
         self
@@ -207,6 +217,7 @@ impl DescribePortalOutputBuilder {
         &self.portal_client_id
     }
     /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
+    /// This field is required.
     pub fn portal_start_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portal_start_url = ::std::option::Option::Some(input.into());
         self
@@ -221,6 +232,7 @@ impl DescribePortalOutputBuilder {
         &self.portal_start_url
     }
     /// <p>The Amazon Web Services administrator's contact email address.</p>
+    /// This field is required.
     pub fn portal_contact_email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portal_contact_email = ::std::option::Option::Some(input.into());
         self
@@ -235,6 +247,7 @@ impl DescribePortalOutputBuilder {
         &self.portal_contact_email
     }
     /// <p>The current status of the portal, which contains a state and any error message.</p>
+    /// This field is required.
     pub fn portal_status(mut self, input: crate::types::PortalStatus) -> Self {
         self.portal_status = ::std::option::Option::Some(input);
         self
@@ -249,6 +262,7 @@ impl DescribePortalOutputBuilder {
         &self.portal_status
     }
     /// <p>The date the portal was created, in Unix epoch time.</p>
+    /// This field is required.
     pub fn portal_creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.portal_creation_date = ::std::option::Option::Some(input);
         self
@@ -263,6 +277,7 @@ impl DescribePortalOutputBuilder {
         &self.portal_creation_date
     }
     /// <p>The date the portal was last updated, in Unix epoch time.</p>
+    /// This field is required.
     pub fn portal_last_update_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.portal_last_update_date = ::std::option::Option::Some(input);
         self
@@ -356,24 +371,75 @@ impl DescribePortalOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribePortalOutput`](crate::operation::describe_portal::DescribePortalOutput).
-    pub fn build(self) -> crate::operation::describe_portal::DescribePortalOutput {
-        crate::operation::describe_portal::DescribePortalOutput {
-            portal_id: self.portal_id,
-            portal_arn: self.portal_arn,
-            portal_name: self.portal_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`portal_id`](crate::operation::describe_portal::builders::DescribePortalOutputBuilder::portal_id)
+    /// - [`portal_arn`](crate::operation::describe_portal::builders::DescribePortalOutputBuilder::portal_arn)
+    /// - [`portal_name`](crate::operation::describe_portal::builders::DescribePortalOutputBuilder::portal_name)
+    /// - [`portal_client_id`](crate::operation::describe_portal::builders::DescribePortalOutputBuilder::portal_client_id)
+    /// - [`portal_start_url`](crate::operation::describe_portal::builders::DescribePortalOutputBuilder::portal_start_url)
+    /// - [`portal_contact_email`](crate::operation::describe_portal::builders::DescribePortalOutputBuilder::portal_contact_email)
+    /// - [`portal_creation_date`](crate::operation::describe_portal::builders::DescribePortalOutputBuilder::portal_creation_date)
+    /// - [`portal_last_update_date`](crate::operation::describe_portal::builders::DescribePortalOutputBuilder::portal_last_update_date)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_portal::DescribePortalOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_portal::DescribePortalOutput {
+            portal_id: self.portal_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "portal_id",
+                    "portal_id was not specified but it is required when building DescribePortalOutput",
+                )
+            })?,
+            portal_arn: self.portal_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "portal_arn",
+                    "portal_arn was not specified but it is required when building DescribePortalOutput",
+                )
+            })?,
+            portal_name: self.portal_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "portal_name",
+                    "portal_name was not specified but it is required when building DescribePortalOutput",
+                )
+            })?,
             portal_description: self.portal_description,
-            portal_client_id: self.portal_client_id,
-            portal_start_url: self.portal_start_url,
-            portal_contact_email: self.portal_contact_email,
+            portal_client_id: self.portal_client_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "portal_client_id",
+                    "portal_client_id was not specified but it is required when building DescribePortalOutput",
+                )
+            })?,
+            portal_start_url: self.portal_start_url.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "portal_start_url",
+                    "portal_start_url was not specified but it is required when building DescribePortalOutput",
+                )
+            })?,
+            portal_contact_email: self.portal_contact_email.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "portal_contact_email",
+                    "portal_contact_email was not specified but it is required when building DescribePortalOutput",
+                )
+            })?,
             portal_status: self.portal_status,
-            portal_creation_date: self.portal_creation_date,
-            portal_last_update_date: self.portal_last_update_date,
+            portal_creation_date: self.portal_creation_date.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "portal_creation_date",
+                    "portal_creation_date was not specified but it is required when building DescribePortalOutput",
+                )
+            })?,
+            portal_last_update_date: self.portal_last_update_date.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "portal_last_update_date",
+                    "portal_last_update_date was not specified but it is required when building DescribePortalOutput",
+                )
+            })?,
             portal_logo_image_location: self.portal_logo_image_location,
             role_arn: self.role_arn,
             portal_auth_mode: self.portal_auth_mode,
             notification_sender_email: self.notification_sender_email,
             alarms: self.alarms,
             _request_id: self._request_id,
-        }
+        })
     }
 }

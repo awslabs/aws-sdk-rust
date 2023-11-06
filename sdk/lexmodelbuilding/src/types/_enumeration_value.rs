@@ -11,18 +11,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnumerationValue {
     /// <p>The value of the slot type.</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
     /// <p>Additional values related to the slot type value.</p>
     pub synonyms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl EnumerationValue {
     /// <p>The value of the slot type.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
     /// <p>Additional values related to the slot type value.</p>
-    pub fn synonyms(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.synonyms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.synonyms.is_none()`.
+    pub fn synonyms(&self) -> &[::std::string::String] {
+        self.synonyms.as_deref().unwrap_or_default()
     }
 }
 impl EnumerationValue {
@@ -41,6 +44,7 @@ pub struct EnumerationValueBuilder {
 }
 impl EnumerationValueBuilder {
     /// <p>The value of the slot type.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -75,10 +79,17 @@ impl EnumerationValueBuilder {
         &self.synonyms
     }
     /// Consumes the builder and constructs a [`EnumerationValue`](crate::types::EnumerationValue).
-    pub fn build(self) -> crate::types::EnumerationValue {
-        crate::types::EnumerationValue {
-            value: self.value,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`value`](crate::types::builders::EnumerationValueBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::EnumerationValue, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EnumerationValue {
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building EnumerationValue",
+                )
+            })?,
             synonyms: self.synonyms,
-        }
+        })
     }
 }

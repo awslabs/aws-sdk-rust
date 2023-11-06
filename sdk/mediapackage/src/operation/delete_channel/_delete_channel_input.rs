@@ -27,6 +27,7 @@ pub struct DeleteChannelInputBuilder {
 }
 impl DeleteChannelInputBuilder {
     /// The ID of the Channel to delete.
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteChannelInputBuilder {
     /// Consumes the builder and constructs a [`DeleteChannelInput`](crate::operation::delete_channel::DeleteChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_channel::DeleteChannelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_channel::DeleteChannelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_channel::DeleteChannelInput { id: self.id })
     }
 }

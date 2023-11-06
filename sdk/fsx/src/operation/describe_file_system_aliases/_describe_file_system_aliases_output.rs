@@ -12,8 +12,10 @@ pub struct DescribeFileSystemAliasesOutput {
 }
 impl DescribeFileSystemAliasesOutput {
     /// <p>An array of one or more DNS aliases currently associated with the specified file system.</p>
-    pub fn aliases(&self) -> ::std::option::Option<&[crate::types::Alias]> {
-        self.aliases.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aliases.is_none()`.
+    pub fn aliases(&self) -> &[crate::types::Alias] {
+        self.aliases.as_deref().unwrap_or_default()
     }
     /// <p>Present if there are more DNS aliases than returned in the response (String). You can use the <code>NextToken</code> value in a later request to fetch additional descriptions. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

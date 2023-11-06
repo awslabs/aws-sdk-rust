@@ -34,6 +34,7 @@ pub struct AssociateSecurityKeyInputBuilder {
 }
 impl AssociateSecurityKeyInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl AssociateSecurityKeyInputBuilder {
         &self.instance_id
     }
     /// <p>A valid security key in PEM format.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl AssociateSecurityKeyInputBuilder {
     /// Consumes the builder and constructs a [`AssociateSecurityKeyInput`](crate::operation::associate_security_key::AssociateSecurityKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_security_key::AssociateSecurityKeyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::associate_security_key::AssociateSecurityKeyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::associate_security_key::AssociateSecurityKeyInput {
             instance_id: self.instance_id,

@@ -2,41 +2,41 @@
 pub fn ser_scheduled_trigger_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ScheduledTriggerProperties,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.schedule_expression {
-        object.key("scheduleExpression").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("scheduleExpression").string(input.schedule_expression.as_str());
     }
-    if let Some(var_2) = &input.data_pull_mode {
-        object.key("dataPullMode").string(var_2.as_str());
+    if let Some(var_1) = &input.data_pull_mode {
+        object.key("dataPullMode").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.schedule_start_time {
+    if let Some(var_2) = &input.schedule_start_time {
         object
             .key("scheduleStartTime")
-            .date_time(var_3, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_2, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_4) = &input.schedule_end_time {
+    if let Some(var_3) = &input.schedule_end_time {
         object
             .key("scheduleEndTime")
-            .date_time(var_4, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_3, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_5) = &input.timezone {
-        object.key("timezone").string(var_5.as_str());
+    if let Some(var_4) = &input.timezone {
+        object.key("timezone").string(var_4.as_str());
     }
-    if let Some(var_6) = &input.schedule_offset {
+    if let Some(var_5) = &input.schedule_offset {
         object.key("scheduleOffset").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_6).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_7) = &input.first_execution_from {
+    if let Some(var_6) = &input.first_execution_from {
         object
             .key("firstExecutionFrom")
-            .date_time(var_7, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_6, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_8) = &input.flow_error_deactivation_threshold {
+    if let Some(var_7) = &input.flow_error_deactivation_threshold {
         object.key("flowErrorDeactivationThreshold").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_8).into()),
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
     Ok(())
@@ -120,7 +120,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::scheduled_trigger_properties_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

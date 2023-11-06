@@ -6,9 +6,9 @@ pub struct GetAssetContractOutput {
     /// <p>Contains the blockchain address and network information about the contract.</p>
     pub contract_identifier: ::std::option::Option<crate::types::ContractIdentifier>,
     /// <p>The token standard of the contract requested.</p>
-    pub token_standard: ::std::option::Option<crate::types::QueryTokenStandard>,
+    pub token_standard: crate::types::QueryTokenStandard,
     /// <p>The address of the deployer of contract.</p>
-    pub deployer_address: ::std::option::Option<::std::string::String>,
+    pub deployer_address: ::std::string::String,
     /// <p>The metadata of the contract.</p>
     pub metadata: ::std::option::Option<crate::types::ContractMetadata>,
     _request_id: Option<String>,
@@ -19,12 +19,13 @@ impl GetAssetContractOutput {
         self.contract_identifier.as_ref()
     }
     /// <p>The token standard of the contract requested.</p>
-    pub fn token_standard(&self) -> ::std::option::Option<&crate::types::QueryTokenStandard> {
-        self.token_standard.as_ref()
+    pub fn token_standard(&self) -> &crate::types::QueryTokenStandard {
+        &self.token_standard
     }
     /// <p>The address of the deployer of contract.</p>
-    pub fn deployer_address(&self) -> ::std::option::Option<&str> {
-        self.deployer_address.as_deref()
+    pub fn deployer_address(&self) -> &str {
+        use std::ops::Deref;
+        self.deployer_address.deref()
     }
     /// <p>The metadata of the contract.</p>
     pub fn metadata(&self) -> ::std::option::Option<&crate::types::ContractMetadata> {
@@ -55,6 +56,7 @@ pub struct GetAssetContractOutputBuilder {
 }
 impl GetAssetContractOutputBuilder {
     /// <p>Contains the blockchain address and network information about the contract.</p>
+    /// This field is required.
     pub fn contract_identifier(mut self, input: crate::types::ContractIdentifier) -> Self {
         self.contract_identifier = ::std::option::Option::Some(input);
         self
@@ -69,6 +71,7 @@ impl GetAssetContractOutputBuilder {
         &self.contract_identifier
     }
     /// <p>The token standard of the contract requested.</p>
+    /// This field is required.
     pub fn token_standard(mut self, input: crate::types::QueryTokenStandard) -> Self {
         self.token_standard = ::std::option::Option::Some(input);
         self
@@ -83,6 +86,7 @@ impl GetAssetContractOutputBuilder {
         &self.token_standard
     }
     /// <p>The address of the deployer of contract.</p>
+    /// This field is required.
     pub fn deployer_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployer_address = ::std::option::Option::Some(input.into());
         self
@@ -120,13 +124,28 @@ impl GetAssetContractOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetAssetContractOutput`](crate::operation::get_asset_contract::GetAssetContractOutput).
-    pub fn build(self) -> crate::operation::get_asset_contract::GetAssetContractOutput {
-        crate::operation::get_asset_contract::GetAssetContractOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`token_standard`](crate::operation::get_asset_contract::builders::GetAssetContractOutputBuilder::token_standard)
+    /// - [`deployer_address`](crate::operation::get_asset_contract::builders::GetAssetContractOutputBuilder::deployer_address)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_asset_contract::GetAssetContractOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_asset_contract::GetAssetContractOutput {
             contract_identifier: self.contract_identifier,
-            token_standard: self.token_standard,
-            deployer_address: self.deployer_address,
+            token_standard: self.token_standard.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "token_standard",
+                    "token_standard was not specified but it is required when building GetAssetContractOutput",
+                )
+            })?,
+            deployer_address: self.deployer_address.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "deployer_address",
+                    "deployer_address was not specified but it is required when building GetAssetContractOutput",
+                )
+            })?,
             metadata: self.metadata,
             _request_id: self._request_id,
-        }
+        })
     }
 }

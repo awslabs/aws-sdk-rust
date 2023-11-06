@@ -34,8 +34,10 @@ impl CreateAnomalySubscriptionInput {
     /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
     /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
     /// </ul>
-    pub fn resource_tags(&self) -> ::std::option::Option<&[crate::types::ResourceTag]> {
-        self.resource_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_tags.is_none()`.
+    pub fn resource_tags(&self) -> &[crate::types::ResourceTag] {
+        self.resource_tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateAnomalySubscriptionInput {
@@ -54,6 +56,7 @@ pub struct CreateAnomalySubscriptionInputBuilder {
 }
 impl CreateAnomalySubscriptionInputBuilder {
     /// <p>The cost anomaly subscription object that you want to create. </p>
+    /// This field is required.
     pub fn anomaly_subscription(mut self, input: crate::types::AnomalySubscription) -> Self {
         self.anomaly_subscription = ::std::option::Option::Some(input);
         self
@@ -122,7 +125,7 @@ impl CreateAnomalySubscriptionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_anomaly_subscription::CreateAnomalySubscriptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_anomaly_subscription::CreateAnomalySubscriptionInput {
             anomaly_subscription: self.anomaly_subscription,

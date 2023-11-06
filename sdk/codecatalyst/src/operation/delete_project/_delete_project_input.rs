@@ -34,6 +34,7 @@ pub struct DeleteProjectInputBuilder {
 }
 impl DeleteProjectInputBuilder {
     /// <p>The name of the space.</p>
+    /// This field is required.
     pub fn space_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.space_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteProjectInputBuilder {
         &self.space_name
     }
     /// <p>The name of the project in the space. To retrieve a list of project names, use <code>ListProjects</code>.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DeleteProjectInputBuilder {
     /// Consumes the builder and constructs a [`DeleteProjectInput`](crate::operation::delete_project::DeleteProjectInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_project::DeleteProjectInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_project::DeleteProjectInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_project::DeleteProjectInput {
             space_name: self.space_name,
             name: self.name,

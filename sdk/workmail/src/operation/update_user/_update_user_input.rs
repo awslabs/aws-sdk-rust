@@ -176,6 +176,7 @@ pub struct UpdateUserInputBuilder {
 }
 impl UpdateUserInputBuilder {
     /// <p>The identifier for the organization under which the user exists.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -196,6 +197,7 @@ impl UpdateUserInputBuilder {
     /// <li> <p>Email address: user@domain.tld</p> </li>
     /// <li> <p>User name: user</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
@@ -435,7 +437,7 @@ impl UpdateUserInputBuilder {
         &self.office
     }
     /// Consumes the builder and constructs a [`UpdateUserInput`](crate::operation::update_user::UpdateUserInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_user::UpdateUserInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_user::UpdateUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_user::UpdateUserInput {
             organization_id: self.organization_id,
             user_id: self.user_id,

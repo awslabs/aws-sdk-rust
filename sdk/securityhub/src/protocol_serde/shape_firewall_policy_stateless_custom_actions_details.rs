@@ -2,7 +2,7 @@
 pub fn ser_firewall_policy_stateless_custom_actions_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FirewallPolicyStatelessCustomActionsDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.action_definition {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ActionDefinition").start_object();

@@ -182,8 +182,10 @@ impl UpdateServerInput {
     /// <li> <p>If <code>Protocol</code> includes <code>AS2</code>, then the <code>EndpointType</code> must be <code>VPC</code>, and domain must be Amazon S3.</p> </li>
     /// </ul>
     /// </note>
-    pub fn protocols(&self) -> ::std::option::Option<&[crate::types::Protocol]> {
-        self.protocols.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.protocols.is_none()`.
+    pub fn protocols(&self) -> &[crate::types::Protocol] {
+        self.protocols.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the name of the security policy that is attached to the server.</p>
     pub fn security_policy_name(&self) -> ::std::option::Option<&str> {
@@ -206,8 +208,10 @@ impl UpdateServerInput {
     /// <p>For example, <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code> </p>
     /// <p>If you have previously specified a log group for a server, you can clear it, and in effect turn off structured logging, by providing an empty value for this parameter in an <code>update-server</code> call. For example:</p>
     /// <p> <code>update-server --server-id s-1234567890abcdef0 --structured-log-destinations</code> </p>
-    pub fn structured_log_destinations(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.structured_log_destinations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.structured_log_destinations.is_none()`.
+    pub fn structured_log_destinations(&self) -> &[::std::string::String] {
+        self.structured_log_destinations.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for UpdateServerInput {
@@ -574,6 +578,7 @@ impl UpdateServerInputBuilder {
         &self.security_policy_name
     }
     /// <p>A system-assigned unique identifier for a server instance that the Transfer Family user is assigned to.</p>
+    /// This field is required.
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_id = ::std::option::Option::Some(input.into());
         self
@@ -646,7 +651,9 @@ impl UpdateServerInputBuilder {
         &self.structured_log_destinations
     }
     /// Consumes the builder and constructs a [`UpdateServerInput`](crate::operation::update_server::UpdateServerInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_server::UpdateServerInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_server::UpdateServerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_server::UpdateServerInput {
             certificate: self.certificate,
             protocol_details: self.protocol_details,

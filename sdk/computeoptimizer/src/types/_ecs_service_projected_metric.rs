@@ -30,16 +30,22 @@ impl EcsServiceProjectedMetric {
         self.name.as_ref()
     }
     /// <p> The timestamps of the projected metric. </p>
-    pub fn timestamps(&self) -> ::std::option::Option<&[::aws_smithy_types::DateTime]> {
-        self.timestamps.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.timestamps.is_none()`.
+    pub fn timestamps(&self) -> &[::aws_smithy_types::DateTime] {
+        self.timestamps.as_deref().unwrap_or_default()
     }
     /// <p> The upper bound values for the projected metric. </p>
-    pub fn upper_bound_values(&self) -> ::std::option::Option<&[f64]> {
-        self.upper_bound_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.upper_bound_values.is_none()`.
+    pub fn upper_bound_values(&self) -> &[f64] {
+        self.upper_bound_values.as_deref().unwrap_or_default()
     }
     /// <p> The lower bound values for the projected metric. </p>
-    pub fn lower_bound_values(&self) -> ::std::option::Option<&[f64]> {
-        self.lower_bound_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lower_bound_values.is_none()`.
+    pub fn lower_bound_values(&self) -> &[f64] {
+        self.lower_bound_values.as_deref().unwrap_or_default()
     }
 }
 impl EcsServiceProjectedMetric {

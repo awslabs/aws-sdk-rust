@@ -50,6 +50,7 @@ pub struct ListAssessmentControlInsightsByControlDomainInputBuilder {
 }
 impl ListAssessmentControlInsightsByControlDomainInputBuilder {
     /// <p>The unique identifier for the control domain. </p>
+    /// This field is required.
     pub fn control_domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_domain_id = ::std::option::Option::Some(input.into());
         self
@@ -64,6 +65,7 @@ impl ListAssessmentControlInsightsByControlDomainInputBuilder {
         &self.control_domain_id
     }
     /// <p>The unique identifier for the active assessment. </p>
+    /// This field is required.
     pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_id = ::std::option::Option::Some(input.into());
         self
@@ -110,7 +112,7 @@ impl ListAssessmentControlInsightsByControlDomainInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_assessment_control_insights_by_control_domain::ListAssessmentControlInsightsByControlDomainInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_assessment_control_insights_by_control_domain::ListAssessmentControlInsightsByControlDomainInput {

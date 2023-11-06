@@ -45,8 +45,10 @@ impl StorageType {
         self.storage_sub_type_name.as_deref()
     }
     /// <p>List of limits that are applicable for given storage type. </p>
-    pub fn storage_type_limits(&self) -> ::std::option::Option<&[crate::types::StorageTypeLimit]> {
-        self.storage_type_limits.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.storage_type_limits.is_none()`.
+    pub fn storage_type_limits(&self) -> &[crate::types::StorageTypeLimit] {
+        self.storage_type_limits.as_deref().unwrap_or_default()
     }
 }
 impl StorageType {

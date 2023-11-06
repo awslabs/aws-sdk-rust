@@ -36,8 +36,8 @@ pub fn de_delete_media_pipeline_kinesis_video_stream_pool_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ConflictException" => crate::operation::delete_media_pipeline_kinesis_video_stream_pool::DeleteMediaPipelineKinesisVideoStreamPoolError::ConflictException({
@@ -52,8 +52,8 @@ pub fn de_delete_media_pipeline_kinesis_video_stream_pool_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ForbiddenException" => crate::operation::delete_media_pipeline_kinesis_video_stream_pool::DeleteMediaPipelineKinesisVideoStreamPoolError::ForbiddenException({
@@ -68,8 +68,8 @@ pub fn de_delete_media_pipeline_kinesis_video_stream_pool_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NotFoundException" => crate::operation::delete_media_pipeline_kinesis_video_stream_pool::DeleteMediaPipelineKinesisVideoStreamPoolError::NotFoundException({
@@ -84,8 +84,8 @@ pub fn de_delete_media_pipeline_kinesis_video_stream_pool_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ServiceFailureException" => crate::operation::delete_media_pipeline_kinesis_video_stream_pool::DeleteMediaPipelineKinesisVideoStreamPoolError::ServiceFailureException({
@@ -100,8 +100,8 @@ pub fn de_delete_media_pipeline_kinesis_video_stream_pool_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::delete_media_pipeline_kinesis_video_stream_pool::DeleteMediaPipelineKinesisVideoStreamPoolError::ServiceUnavailableException({
@@ -116,8 +116,8 @@ pub fn de_delete_media_pipeline_kinesis_video_stream_pool_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ThrottledClientException" => crate::operation::delete_media_pipeline_kinesis_video_stream_pool::DeleteMediaPipelineKinesisVideoStreamPoolError::ThrottledClientException({
@@ -132,8 +132,8 @@ pub fn de_delete_media_pipeline_kinesis_video_stream_pool_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "UnauthorizedClientException" => crate::operation::delete_media_pipeline_kinesis_video_stream_pool::DeleteMediaPipelineKinesisVideoStreamPoolError::UnauthorizedClientException({
@@ -148,8 +148,8 @@ pub fn de_delete_media_pipeline_kinesis_video_stream_pool_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::delete_media_pipeline_kinesis_video_stream_pool::DeleteMediaPipelineKinesisVideoStreamPoolError::generic(generic)

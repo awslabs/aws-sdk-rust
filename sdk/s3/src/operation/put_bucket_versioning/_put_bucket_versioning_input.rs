@@ -66,6 +66,7 @@ pub struct PutBucketVersioningInputBuilder {
 }
 impl PutBucketVersioningInputBuilder {
     /// <p>The bucket name.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -128,6 +129,7 @@ impl PutBucketVersioningInputBuilder {
         &self.mfa
     }
     /// <p>Container for setting the versioning state.</p>
+    /// This field is required.
     pub fn versioning_configuration(mut self, input: crate::types::VersioningConfiguration) -> Self {
         self.versioning_configuration = ::std::option::Option::Some(input);
         self
@@ -158,7 +160,7 @@ impl PutBucketVersioningInputBuilder {
     /// Consumes the builder and constructs a [`PutBucketVersioningInput`](crate::operation::put_bucket_versioning::PutBucketVersioningInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_bucket_versioning::PutBucketVersioningInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_bucket_versioning::PutBucketVersioningInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_bucket_versioning::PutBucketVersioningInput {
             bucket: self.bucket,

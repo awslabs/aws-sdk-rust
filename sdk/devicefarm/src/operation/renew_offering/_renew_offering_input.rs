@@ -35,6 +35,7 @@ pub struct RenewOfferingInputBuilder {
 }
 impl RenewOfferingInputBuilder {
     /// <p>The ID of a request to renew an offering.</p>
+    /// This field is required.
     pub fn offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.offering_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl RenewOfferingInputBuilder {
         &self.offering_id
     }
     /// <p>The quantity requested in an offering renewal.</p>
+    /// This field is required.
     pub fn quantity(mut self, input: i32) -> Self {
         self.quantity = ::std::option::Option::Some(input);
         self
@@ -65,7 +67,7 @@ impl RenewOfferingInputBuilder {
     /// Consumes the builder and constructs a [`RenewOfferingInput`](crate::operation::renew_offering::RenewOfferingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::renew_offering::RenewOfferingInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::renew_offering::RenewOfferingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::renew_offering::RenewOfferingInput {
             offering_id: self.offering_id,
             quantity: self.quantity,

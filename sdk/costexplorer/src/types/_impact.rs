@@ -56,6 +56,7 @@ pub struct ImpactBuilder {
 }
 impl ImpactBuilder {
     /// <p>The maximum dollar value that's observed for an anomaly.</p>
+    /// This field is required.
     pub fn max_impact(mut self, input: f64) -> Self {
         self.max_impact = ::std::option::Option::Some(input);
         self

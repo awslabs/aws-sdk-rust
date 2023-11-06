@@ -48,6 +48,7 @@ pub struct DescribeConnectorEntityInputBuilder {
 }
 impl DescribeConnectorEntityInputBuilder {
     /// <p> The entity name for that connector. </p>
+    /// This field is required.
     pub fn connector_entity_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_entity_name = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +109,7 @@ impl DescribeConnectorEntityInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_connector_entity::DescribeConnectorEntityInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_connector_entity::DescribeConnectorEntityInput {
             connector_entity_name: self.connector_entity_name,

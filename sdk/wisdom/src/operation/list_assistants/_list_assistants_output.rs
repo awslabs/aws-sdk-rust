@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAssistantsOutput {
     /// <p>Information about the assistants.</p>
-    pub assistant_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AssistantSummary>>,
+    pub assistant_summaries: ::std::vec::Vec<crate::types::AssistantSummary>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAssistantsOutput {
     /// <p>Information about the assistants.</p>
-    pub fn assistant_summaries(&self) -> ::std::option::Option<&[crate::types::AssistantSummary]> {
-        self.assistant_summaries.as_deref()
+    pub fn assistant_summaries(&self) -> &[crate::types::AssistantSummary] {
+        use std::ops::Deref;
+        self.assistant_summaries.deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ListAssistantsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAssistantsOutput`](crate::operation::list_assistants::ListAssistantsOutput).
-    pub fn build(self) -> crate::operation::list_assistants::ListAssistantsOutput {
-        crate::operation::list_assistants::ListAssistantsOutput {
-            assistant_summaries: self.assistant_summaries,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`assistant_summaries`](crate::operation::list_assistants::builders::ListAssistantsOutputBuilder::assistant_summaries)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_assistants::ListAssistantsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_assistants::ListAssistantsOutput {
+            assistant_summaries: self.assistant_summaries.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "assistant_summaries",
+                    "assistant_summaries was not specified but it is required when building ListAssistantsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

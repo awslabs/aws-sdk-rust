@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RefreshTokenRequestBody {
     /// <p>The token to use to refresh a previously issued access token that might have expired.</p>
-    pub token: ::std::option::Option<::std::string::String>,
+    pub token: ::std::string::String,
     /// <p>The ID of the client to request the token from.</p>
     pub client_id: ::std::option::Option<::std::string::String>,
 }
 impl RefreshTokenRequestBody {
     /// <p>The token to use to refresh a previously issued access token that might have expired.</p>
-    pub fn token(&self) -> ::std::option::Option<&str> {
-        self.token.as_deref()
+    pub fn token(&self) -> &str {
+        use std::ops::Deref;
+        self.token.deref()
     }
     /// <p>The ID of the client to request the token from.</p>
     pub fn client_id(&self) -> ::std::option::Option<&str> {
@@ -43,6 +44,7 @@ pub struct RefreshTokenRequestBodyBuilder {
 }
 impl RefreshTokenRequestBodyBuilder {
     /// <p>The token to use to refresh a previously issued access token that might have expired.</p>
+    /// This field is required.
     pub fn token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.token = ::std::option::Option::Some(input.into());
         self
@@ -71,11 +73,18 @@ impl RefreshTokenRequestBodyBuilder {
         &self.client_id
     }
     /// Consumes the builder and constructs a [`RefreshTokenRequestBody`](crate::types::RefreshTokenRequestBody).
-    pub fn build(self) -> crate::types::RefreshTokenRequestBody {
-        crate::types::RefreshTokenRequestBody {
-            token: self.token,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`token`](crate::types::builders::RefreshTokenRequestBodyBuilder::token)
+    pub fn build(self) -> ::std::result::Result<crate::types::RefreshTokenRequestBody, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RefreshTokenRequestBody {
+            token: self.token.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "token",
+                    "token was not specified but it is required when building RefreshTokenRequestBody",
+                )
+            })?,
             client_id: self.client_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for RefreshTokenRequestBodyBuilder {

@@ -48,6 +48,7 @@ pub struct SearchSchemasInputBuilder {
 }
 impl SearchSchemasInputBuilder {
     /// <p>Specifying this limits the results to only schemas that include the provided keywords.</p>
+    /// This field is required.
     pub fn keywords(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.keywords = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +91,7 @@ impl SearchSchemasInputBuilder {
         &self.next_token
     }
     /// <p>The name of the registry.</p>
+    /// This field is required.
     pub fn registry_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_name = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +108,7 @@ impl SearchSchemasInputBuilder {
     /// Consumes the builder and constructs a [`SearchSchemasInput`](crate::operation::search_schemas::SearchSchemasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_schemas::SearchSchemasInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::search_schemas::SearchSchemasInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_schemas::SearchSchemasInput {
             keywords: self.keywords,
             limit: self.limit,

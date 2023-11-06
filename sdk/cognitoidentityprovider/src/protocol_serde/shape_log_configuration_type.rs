@@ -2,18 +2,18 @@
 pub fn ser_log_configuration_type(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LogConfigurationType,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.log_level {
-        object.key("LogLevel").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("LogLevel").string(input.log_level.as_str());
     }
-    if let Some(var_2) = &input.event_source {
-        object.key("EventSource").string(var_2.as_str());
+    {
+        object.key("EventSource").string(input.event_source.as_str());
     }
-    if let Some(var_3) = &input.cloud_watch_logs_configuration {
+    if let Some(var_1) = &input.cloud_watch_logs_configuration {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("CloudWatchLogsConfiguration").start_object();
-        crate::protocol_serde::shape_cloud_watch_logs_configuration_type::ser_cloud_watch_logs_configuration_type(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_2 = object.key("CloudWatchLogsConfiguration").start_object();
+        crate::protocol_serde::shape_cloud_watch_logs_configuration_type::ser_cloud_watch_logs_configuration_type(&mut object_2, var_1)?;
+        object_2.finish();
     }
     Ok(())
 }
@@ -62,7 +62,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::log_configuration_type_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

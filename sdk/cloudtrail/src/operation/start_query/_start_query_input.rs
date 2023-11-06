@@ -26,8 +26,10 @@ impl StartQueryInput {
         self.query_alias.as_deref()
     }
     /// <p> The query parameters for the specified <code>QueryAlias</code>. </p>
-    pub fn query_parameters(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.query_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.query_parameters.is_none()`.
+    pub fn query_parameters(&self) -> &[::std::string::String] {
+        self.query_parameters.as_deref().unwrap_or_default()
     }
 }
 impl StartQueryInput {
@@ -110,7 +112,7 @@ impl StartQueryInputBuilder {
         &self.query_parameters
     }
     /// Consumes the builder and constructs a [`StartQueryInput`](crate::operation::start_query::StartQueryInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_query::StartQueryInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_query::StartQueryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_query::StartQueryInput {
             query_statement: self.query_statement,
             delivery_s3_uri: self.delivery_s3_uri,

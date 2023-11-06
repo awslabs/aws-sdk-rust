@@ -6,7 +6,7 @@ pub struct ListServiceTemplateVersionsOutput {
     /// <p>A token that indicates the location of the next major or minor version in the array of major or minor versions of a service template, after the current requested list of service major or minor versions.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of major or minor versions of a service template with detail data.</p>
-    pub template_versions: ::std::option::Option<::std::vec::Vec<crate::types::ServiceTemplateVersionSummary>>,
+    pub template_versions: ::std::vec::Vec<crate::types::ServiceTemplateVersionSummary>,
     _request_id: Option<String>,
 }
 impl ListServiceTemplateVersionsOutput {
@@ -15,8 +15,9 @@ impl ListServiceTemplateVersionsOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of major or minor versions of a service template with detail data.</p>
-    pub fn template_versions(&self) -> ::std::option::Option<&[crate::types::ServiceTemplateVersionSummary]> {
-        self.template_versions.as_deref()
+    pub fn template_versions(&self) -> &[crate::types::ServiceTemplateVersionSummary] {
+        use std::ops::Deref;
+        self.template_versions.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListServiceTemplateVersionsOutput {
@@ -84,11 +85,23 @@ impl ListServiceTemplateVersionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListServiceTemplateVersionsOutput`](crate::operation::list_service_template_versions::ListServiceTemplateVersionsOutput).
-    pub fn build(self) -> crate::operation::list_service_template_versions::ListServiceTemplateVersionsOutput {
-        crate::operation::list_service_template_versions::ListServiceTemplateVersionsOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`template_versions`](crate::operation::list_service_template_versions::builders::ListServiceTemplateVersionsOutputBuilder::template_versions)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_service_template_versions::ListServiceTemplateVersionsOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_service_template_versions::ListServiceTemplateVersionsOutput {
             next_token: self.next_token,
-            template_versions: self.template_versions,
+            template_versions: self.template_versions.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "template_versions",
+                    "template_versions was not specified but it is required when building ListServiceTemplateVersionsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

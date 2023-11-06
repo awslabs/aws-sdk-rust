@@ -27,6 +27,7 @@ pub struct ResumeBatchLoadTaskInputBuilder {
 }
 impl ResumeBatchLoadTaskInputBuilder {
     /// <p>The ID of the batch load task to resume.</p>
+    /// This field is required.
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl ResumeBatchLoadTaskInputBuilder {
     /// Consumes the builder and constructs a [`ResumeBatchLoadTaskInput`](crate::operation::resume_batch_load_task::ResumeBatchLoadTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::resume_batch_load_task::ResumeBatchLoadTaskInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::resume_batch_load_task::ResumeBatchLoadTaskInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::resume_batch_load_task::ResumeBatchLoadTaskInput { task_id: self.task_id })
     }

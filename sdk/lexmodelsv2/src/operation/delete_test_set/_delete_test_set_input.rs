@@ -27,6 +27,7 @@ pub struct DeleteTestSetInputBuilder {
 }
 impl DeleteTestSetInputBuilder {
     /// <p>The test set Id of the test set to be deleted.</p>
+    /// This field is required.
     pub fn test_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.test_set_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteTestSetInputBuilder {
     /// Consumes the builder and constructs a [`DeleteTestSetInput`](crate::operation::delete_test_set::DeleteTestSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_test_set::DeleteTestSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_test_set::DeleteTestSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_test_set::DeleteTestSetInput {
             test_set_id: self.test_set_id,
         })

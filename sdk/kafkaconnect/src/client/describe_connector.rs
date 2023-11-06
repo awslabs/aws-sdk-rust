@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeConnector`](crate::operation::describe_connector::builders::DescribeConnectorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`connector_arn(impl Into<String>)`](crate::operation::describe_connector::builders::DescribeConnectorFluentBuilder::connector_arn) / [`set_connector_arn(Option<String>)`](crate::operation::describe_connector::builders::DescribeConnectorFluentBuilder::set_connector_arn): <p>The Amazon Resource Name (ARN) of the connector that you want to describe.</p>
+    ///   - [`connector_arn(impl Into<String>)`](crate::operation::describe_connector::builders::DescribeConnectorFluentBuilder::connector_arn) / [`set_connector_arn(Option<String>)`](crate::operation::describe_connector::builders::DescribeConnectorFluentBuilder::set_connector_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the connector that you want to describe.</p><br>
     /// - On success, responds with [`DescribeConnectorOutput`](crate::operation::describe_connector::DescribeConnectorOutput) with field(s):
     ///   - [`capacity(Option<CapacityDescription>)`](crate::operation::describe_connector::DescribeConnectorOutput::capacity): <p>Information about the capacity of the connector, whether it is auto scaled or provisioned.</p>
     ///   - [`connector_arn(Option<String>)`](crate::operation::describe_connector::DescribeConnectorOutput::connector_arn): <p>The Amazon Resource Name (ARN) of the connector.</p>
-    ///   - [`connector_configuration(Option<HashMap<String, String>>)`](crate::operation::describe_connector::DescribeConnectorOutput::connector_configuration): <p>A map of keys to values that represent the configuration for the connector.</p>
+    ///   - [`connector_configuration(Option<HashMap::<String, String>>)`](crate::operation::describe_connector::DescribeConnectorOutput::connector_configuration): <p>A map of keys to values that represent the configuration for the connector.</p>
     ///   - [`connector_description(Option<String>)`](crate::operation::describe_connector::DescribeConnectorOutput::connector_description): <p>A summary description of the connector.</p>
     ///   - [`connector_name(Option<String>)`](crate::operation::describe_connector::DescribeConnectorOutput::connector_name): <p>The name of the connector.</p>
     ///   - [`connector_state(Option<ConnectorState>)`](crate::operation::describe_connector::DescribeConnectorOutput::connector_state): <p>The state of the connector.</p>
@@ -18,7 +18,7 @@ impl super::Client {
     ///   - [`kafka_cluster_encryption_in_transit(Option<KafkaClusterEncryptionInTransitDescription>)`](crate::operation::describe_connector::DescribeConnectorOutput::kafka_cluster_encryption_in_transit): <p>Details of encryption in transit to the Apache Kafka cluster.</p>
     ///   - [`kafka_connect_version(Option<String>)`](crate::operation::describe_connector::DescribeConnectorOutput::kafka_connect_version): <p>The version of Kafka Connect. It has to be compatible with both the Apache Kafka cluster's version and the plugins.</p>
     ///   - [`log_delivery(Option<LogDeliveryDescription>)`](crate::operation::describe_connector::DescribeConnectorOutput::log_delivery): <p>Details about delivering logs to Amazon CloudWatch Logs.</p>
-    ///   - [`plugins(Option<Vec<PluginDescription>>)`](crate::operation::describe_connector::DescribeConnectorOutput::plugins): <p>Specifies which plugins were used for this connector.</p>
+    ///   - [`plugins(Option<Vec::<PluginDescription>>)`](crate::operation::describe_connector::DescribeConnectorOutput::plugins): <p>Specifies which plugins were used for this connector.</p>
     ///   - [`service_execution_role_arn(Option<String>)`](crate::operation::describe_connector::DescribeConnectorOutput::service_execution_role_arn): <p>The Amazon Resource Name (ARN) of the IAM role used by the connector to access Amazon Web Services resources.</p>
     ///   - [`worker_configuration(Option<WorkerConfigurationDescription>)`](crate::operation::describe_connector::DescribeConnectorOutput::worker_configuration): <p>Specifies which worker configuration was used for the connector.</p>
     ///   - [`state_description(Option<StateDescription>)`](crate::operation::describe_connector::DescribeConnectorOutput::state_description): <p>Details about the state of a connector.</p>

@@ -83,7 +83,7 @@ impl ListTunnelsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListTunnelsInput`](crate::operation::list_tunnels::ListTunnelsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_tunnels::ListTunnelsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_tunnels::ListTunnelsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_tunnels::ListTunnelsInput {
             thing_name: self.thing_name,
             max_results: self.max_results,

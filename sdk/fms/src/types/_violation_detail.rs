@@ -5,15 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ViolationDetail {
     /// <p>The ID of the Firewall Manager policy that the violation details were requested for.</p>
-    pub policy_id: ::std::option::Option<::std::string::String>,
+    pub policy_id: ::std::string::String,
     /// <p>The Amazon Web Services account that the violation details were requested for.</p>
-    pub member_account: ::std::option::Option<::std::string::String>,
+    pub member_account: ::std::string::String,
     /// <p>The resource ID that the violation details were requested for.</p>
-    pub resource_id: ::std::option::Option<::std::string::String>,
+    pub resource_id: ::std::string::String,
     /// <p>The resource type that the violation details were requested for.</p>
-    pub resource_type: ::std::option::Option<::std::string::String>,
+    pub resource_type: ::std::string::String,
     /// <p>List of violations for the requested resource.</p>
-    pub resource_violations: ::std::option::Option<::std::vec::Vec<crate::types::ResourceViolation>>,
+    pub resource_violations: ::std::vec::Vec<crate::types::ResourceViolation>,
     /// <p>The <code>ResourceTag</code> objects associated with the resource.</p>
     pub resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Brief description for the requested resource.</p>
@@ -21,28 +21,35 @@ pub struct ViolationDetail {
 }
 impl ViolationDetail {
     /// <p>The ID of the Firewall Manager policy that the violation details were requested for.</p>
-    pub fn policy_id(&self) -> ::std::option::Option<&str> {
-        self.policy_id.as_deref()
+    pub fn policy_id(&self) -> &str {
+        use std::ops::Deref;
+        self.policy_id.deref()
     }
     /// <p>The Amazon Web Services account that the violation details were requested for.</p>
-    pub fn member_account(&self) -> ::std::option::Option<&str> {
-        self.member_account.as_deref()
+    pub fn member_account(&self) -> &str {
+        use std::ops::Deref;
+        self.member_account.deref()
     }
     /// <p>The resource ID that the violation details were requested for.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
-        self.resource_id.as_deref()
+    pub fn resource_id(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_id.deref()
     }
     /// <p>The resource type that the violation details were requested for.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
-        self.resource_type.as_deref()
+    pub fn resource_type(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_type.deref()
     }
     /// <p>List of violations for the requested resource.</p>
-    pub fn resource_violations(&self) -> ::std::option::Option<&[crate::types::ResourceViolation]> {
-        self.resource_violations.as_deref()
+    pub fn resource_violations(&self) -> &[crate::types::ResourceViolation] {
+        use std::ops::Deref;
+        self.resource_violations.deref()
     }
     /// <p>The <code>ResourceTag</code> objects associated with the resource.</p>
-    pub fn resource_tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.resource_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_tags.is_none()`.
+    pub fn resource_tags(&self) -> &[crate::types::Tag] {
+        self.resource_tags.as_deref().unwrap_or_default()
     }
     /// <p>Brief description for the requested resource.</p>
     pub fn resource_description(&self) -> ::std::option::Option<&str> {
@@ -70,6 +77,7 @@ pub struct ViolationDetailBuilder {
 }
 impl ViolationDetailBuilder {
     /// <p>The ID of the Firewall Manager policy that the violation details were requested for.</p>
+    /// This field is required.
     pub fn policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_id = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +92,7 @@ impl ViolationDetailBuilder {
         &self.policy_id
     }
     /// <p>The Amazon Web Services account that the violation details were requested for.</p>
+    /// This field is required.
     pub fn member_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_account = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +107,7 @@ impl ViolationDetailBuilder {
         &self.member_account
     }
     /// <p>The resource ID that the violation details were requested for.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +122,7 @@ impl ViolationDetailBuilder {
         &self.resource_id
     }
     /// <p>The resource type that the violation details were requested for.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
@@ -180,15 +191,46 @@ impl ViolationDetailBuilder {
         &self.resource_description
     }
     /// Consumes the builder and constructs a [`ViolationDetail`](crate::types::ViolationDetail).
-    pub fn build(self) -> crate::types::ViolationDetail {
-        crate::types::ViolationDetail {
-            policy_id: self.policy_id,
-            member_account: self.member_account,
-            resource_id: self.resource_id,
-            resource_type: self.resource_type,
-            resource_violations: self.resource_violations,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`policy_id`](crate::types::builders::ViolationDetailBuilder::policy_id)
+    /// - [`member_account`](crate::types::builders::ViolationDetailBuilder::member_account)
+    /// - [`resource_id`](crate::types::builders::ViolationDetailBuilder::resource_id)
+    /// - [`resource_type`](crate::types::builders::ViolationDetailBuilder::resource_type)
+    /// - [`resource_violations`](crate::types::builders::ViolationDetailBuilder::resource_violations)
+    pub fn build(self) -> ::std::result::Result<crate::types::ViolationDetail, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ViolationDetail {
+            policy_id: self.policy_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "policy_id",
+                    "policy_id was not specified but it is required when building ViolationDetail",
+                )
+            })?,
+            member_account: self.member_account.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "member_account",
+                    "member_account was not specified but it is required when building ViolationDetail",
+                )
+            })?,
+            resource_id: self.resource_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "resource_id",
+                    "resource_id was not specified but it is required when building ViolationDetail",
+                )
+            })?,
+            resource_type: self.resource_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "resource_type",
+                    "resource_type was not specified but it is required when building ViolationDetail",
+                )
+            })?,
+            resource_violations: self.resource_violations.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "resource_violations",
+                    "resource_violations was not specified but it is required when building ViolationDetail",
+                )
+            })?,
             resource_tags: self.resource_tags,
             resource_description: self.resource_description,
-        }
+        })
     }
 }

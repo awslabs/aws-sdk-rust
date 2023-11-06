@@ -70,6 +70,7 @@ pub struct ListBackendJobsInputBuilder {
 }
 impl ListBackendJobsInputBuilder {
     /// <p>The app ID.</p>
+    /// This field is required.
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +85,7 @@ impl ListBackendJobsInputBuilder {
         &self.app_id
     }
     /// <p>The name of the backend environment.</p>
+    /// This field is required.
     pub fn backend_environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backend_environment_name = ::std::option::Option::Some(input.into());
         self
@@ -170,7 +172,7 @@ impl ListBackendJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListBackendJobsInput`](crate::operation::list_backend_jobs::ListBackendJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_backend_jobs::ListBackendJobsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_backend_jobs::ListBackendJobsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_backend_jobs::ListBackendJobsInput {
             app_id: self.app_id,
             backend_environment_name: self.backend_environment_name,

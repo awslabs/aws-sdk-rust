@@ -35,6 +35,7 @@ pub struct DeleteAppOutputBuilder {
 }
 impl DeleteAppOutputBuilder {
     /// <p> Represents the different branches of a repository for building, deploying, and hosting an Amplify app. </p>
+    /// This field is required.
     pub fn app(mut self, input: crate::types::App) -> Self {
         self.app = ::std::option::Option::Some(input);
         self

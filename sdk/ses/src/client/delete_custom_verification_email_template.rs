@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteCustomVerificationEmailTemplate`](crate::operation::delete_custom_verification_email_template::builders::DeleteCustomVerificationEmailTemplateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`template_name(impl Into<String>)`](crate::operation::delete_custom_verification_email_template::builders::DeleteCustomVerificationEmailTemplateFluentBuilder::template_name) / [`set_template_name(Option<String>)`](crate::operation::delete_custom_verification_email_template::builders::DeleteCustomVerificationEmailTemplateFluentBuilder::set_template_name): <p>The name of the custom verification email template to delete.</p>
+    ///   - [`template_name(impl Into<String>)`](crate::operation::delete_custom_verification_email_template::builders::DeleteCustomVerificationEmailTemplateFluentBuilder::template_name) / [`set_template_name(Option<String>)`](crate::operation::delete_custom_verification_email_template::builders::DeleteCustomVerificationEmailTemplateFluentBuilder::set_template_name):<br>required: **true**<br><p>The name of the custom verification email template to delete.</p><br>
     /// - On success, responds with [`DeleteCustomVerificationEmailTemplateOutput`](crate::operation::delete_custom_verification_email_template::DeleteCustomVerificationEmailTemplateOutput)
     /// - On failure, responds with [`SdkError<DeleteCustomVerificationEmailTemplateError>`](crate::operation::delete_custom_verification_email_template::DeleteCustomVerificationEmailTemplateError)
     pub fn delete_custom_verification_email_template(

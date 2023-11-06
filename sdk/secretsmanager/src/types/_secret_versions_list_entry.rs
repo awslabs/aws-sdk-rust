@@ -21,8 +21,10 @@ impl SecretVersionsListEntry {
         self.version_id.as_deref()
     }
     /// <p>An array of staging labels that are currently associated with this version of the secret.</p>
-    pub fn version_stages(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.version_stages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.version_stages.is_none()`.
+    pub fn version_stages(&self) -> &[::std::string::String] {
+        self.version_stages.as_deref().unwrap_or_default()
     }
     /// <p>The date that this version of the secret was last accessed. Note that the resolution of this field is at the date level and does not include the time.</p>
     pub fn last_accessed_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -33,8 +35,10 @@ impl SecretVersionsListEntry {
         self.created_date.as_ref()
     }
     /// <p>The KMS keys used to encrypt the secret version.</p>
-    pub fn kms_key_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.kms_key_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.kms_key_ids.is_none()`.
+    pub fn kms_key_ids(&self) -> &[::std::string::String] {
+        self.kms_key_ids.as_deref().unwrap_or_default()
     }
 }
 impl SecretVersionsListEntry {

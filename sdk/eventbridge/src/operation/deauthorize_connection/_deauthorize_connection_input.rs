@@ -27,6 +27,7 @@ pub struct DeauthorizeConnectionInputBuilder {
 }
 impl DeauthorizeConnectionInputBuilder {
     /// <p>The name of the connection to remove authorization from.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeauthorizeConnectionInputBuilder {
     /// Consumes the builder and constructs a [`DeauthorizeConnectionInput`](crate::operation::deauthorize_connection::DeauthorizeConnectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::deauthorize_connection::DeauthorizeConnectionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::deauthorize_connection::DeauthorizeConnectionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::deauthorize_connection::DeauthorizeConnectionInput { name: self.name })
     }

@@ -34,6 +34,7 @@ pub struct DescribeProvisioningTemplateVersionInputBuilder {
 }
 impl DescribeProvisioningTemplateVersionInputBuilder {
     /// <p>The template name.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeProvisioningTemplateVersionInputBuilder {
         &self.template_name
     }
     /// <p>The provisioning template version ID.</p>
+    /// This field is required.
     pub fn version_id(mut self, input: i32) -> Self {
         self.version_id = ::std::option::Option::Some(input);
         self
@@ -66,7 +68,7 @@ impl DescribeProvisioningTemplateVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_provisioning_template_version::DescribeProvisioningTemplateVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_provisioning_template_version::DescribeProvisioningTemplateVersionInput {

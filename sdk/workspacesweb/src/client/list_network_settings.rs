@@ -4,10 +4,10 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_network_settings::builders::ListNetworkSettingsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_network_settings::builders::ListNetworkSettingsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_network_settings::builders::ListNetworkSettingsFluentBuilder::set_next_token): <p>The pagination token used to retrieve the next page of results for this operation.</p>
-    ///   - [`max_results(i32)`](crate::operation::list_network_settings::builders::ListNetworkSettingsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_network_settings::builders::ListNetworkSettingsFluentBuilder::set_max_results): <p>The maximum number of results to be included in the next page.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_network_settings::builders::ListNetworkSettingsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_network_settings::builders::ListNetworkSettingsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token used to retrieve the next page of results for this operation.</p><br>
+    ///   - [`max_results(i32)`](crate::operation::list_network_settings::builders::ListNetworkSettingsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_network_settings::builders::ListNetworkSettingsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to be included in the next page.</p><br>
     /// - On success, responds with [`ListNetworkSettingsOutput`](crate::operation::list_network_settings::ListNetworkSettingsOutput) with field(s):
-    ///   - [`network_settings(Option<Vec<NetworkSettingsSummary>>)`](crate::operation::list_network_settings::ListNetworkSettingsOutput::network_settings): <p>The network settings.</p>
+    ///   - [`network_settings(Option<Vec::<NetworkSettingsSummary>>)`](crate::operation::list_network_settings::ListNetworkSettingsOutput::network_settings): <p>The network settings.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_network_settings::ListNetworkSettingsOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation.</p>
     /// - On failure, responds with [`SdkError<ListNetworkSettingsError>`](crate::operation::list_network_settings::ListNetworkSettingsError)
     pub fn list_network_settings(&self) -> crate::operation::list_network_settings::builders::ListNetworkSettingsFluentBuilder {

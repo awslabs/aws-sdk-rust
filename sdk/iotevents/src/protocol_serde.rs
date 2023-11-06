@@ -207,9 +207,9 @@ pub(crate) mod shape_analysis_result_locations;
 
 pub(crate) mod shape_attributes;
 
-pub(crate) mod shape_dynamo_d_bv2_action;
-
 pub(crate) mod shape_dynamo_db_action;
+
+pub(crate) mod shape_dynamo_dbv2_action;
 
 pub(crate) mod shape_email_configuration;
 

@@ -48,6 +48,7 @@ pub struct RestoreServerInputBuilder {
 }
 impl RestoreServerInputBuilder {
     /// <p> The ID of the backup that you want to use to restore a server. </p>
+    /// This field is required.
     pub fn backup_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl RestoreServerInputBuilder {
         &self.backup_id
     }
     /// <p> The name of the server that you want to restore. </p>
+    /// This field is required.
     pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_name = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +108,7 @@ impl RestoreServerInputBuilder {
     /// Consumes the builder and constructs a [`RestoreServerInput`](crate::operation::restore_server::RestoreServerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::restore_server::RestoreServerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::restore_server::RestoreServerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::restore_server::RestoreServerInput {
             backup_id: self.backup_id,
             server_name: self.server_name,

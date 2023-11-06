@@ -18,8 +18,10 @@ impl ValidationException {
         self.reason.as_ref()
     }
     /// <p>The field that caused the error.</p>
-    pub fn field_list(&self) -> ::std::option::Option<&[crate::types::ValidationExceptionField]> {
-        self.field_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.field_list.is_none()`.
+    pub fn field_list(&self) -> &[crate::types::ValidationExceptionField] {
+        self.field_list.as_deref().unwrap_or_default()
     }
 }
 impl ValidationException {

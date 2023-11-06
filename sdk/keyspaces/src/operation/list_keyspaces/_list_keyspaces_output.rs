@@ -6,7 +6,7 @@ pub struct ListKeyspacesOutput {
     /// <p>A token to specify where to start paginating. This is the <code>NextToken</code> from a previously truncated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of keyspaces.</p>
-    pub keyspaces: ::std::option::Option<::std::vec::Vec<crate::types::KeyspaceSummary>>,
+    pub keyspaces: ::std::vec::Vec<crate::types::KeyspaceSummary>,
     _request_id: Option<String>,
 }
 impl ListKeyspacesOutput {
@@ -15,8 +15,9 @@ impl ListKeyspacesOutput {
         self.next_token.as_deref()
     }
     /// <p>A list of keyspaces.</p>
-    pub fn keyspaces(&self) -> ::std::option::Option<&[crate::types::KeyspaceSummary]> {
-        self.keyspaces.as_deref()
+    pub fn keyspaces(&self) -> &[crate::types::KeyspaceSummary] {
+        use std::ops::Deref;
+        self.keyspaces.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListKeyspacesOutput {
@@ -84,11 +85,20 @@ impl ListKeyspacesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListKeyspacesOutput`](crate::operation::list_keyspaces::ListKeyspacesOutput).
-    pub fn build(self) -> crate::operation::list_keyspaces::ListKeyspacesOutput {
-        crate::operation::list_keyspaces::ListKeyspacesOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`keyspaces`](crate::operation::list_keyspaces::builders::ListKeyspacesOutputBuilder::keyspaces)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_keyspaces::ListKeyspacesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_keyspaces::ListKeyspacesOutput {
             next_token: self.next_token,
-            keyspaces: self.keyspaces,
+            keyspaces: self.keyspaces.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "keyspaces",
+                    "keyspaces was not specified but it is required when building ListKeyspacesOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

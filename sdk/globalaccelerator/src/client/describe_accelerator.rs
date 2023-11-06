@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeAccelerator`](crate::operation::describe_accelerator::builders::DescribeAcceleratorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`accelerator_arn(impl Into<String>)`](crate::operation::describe_accelerator::builders::DescribeAcceleratorFluentBuilder::accelerator_arn) / [`set_accelerator_arn(Option<String>)`](crate::operation::describe_accelerator::builders::DescribeAcceleratorFluentBuilder::set_accelerator_arn): <p>The Amazon Resource Name (ARN) of the accelerator to describe.</p>
+    ///   - [`accelerator_arn(impl Into<String>)`](crate::operation::describe_accelerator::builders::DescribeAcceleratorFluentBuilder::accelerator_arn) / [`set_accelerator_arn(Option<String>)`](crate::operation::describe_accelerator::builders::DescribeAcceleratorFluentBuilder::set_accelerator_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the accelerator to describe.</p><br>
     /// - On success, responds with [`DescribeAcceleratorOutput`](crate::operation::describe_accelerator::DescribeAcceleratorOutput) with field(s):
     ///   - [`accelerator(Option<Accelerator>)`](crate::operation::describe_accelerator::DescribeAcceleratorOutput::accelerator): <p>The description of the accelerator.</p>
     /// - On failure, responds with [`SdkError<DescribeAcceleratorError>`](crate::operation::describe_accelerator::DescribeAcceleratorError)

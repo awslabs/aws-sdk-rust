@@ -38,8 +38,10 @@ impl CreatePermissionSetInput {
         self.relay_state.as_deref()
     }
     /// <p>The tags to attach to the new <code>PermissionSet</code>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreatePermissionSetInput {
@@ -62,6 +64,7 @@ pub struct CreatePermissionSetInputBuilder {
 }
 impl CreatePermissionSetInputBuilder {
     /// <p>The name of the <code>PermissionSet</code>.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl CreatePermissionSetInputBuilder {
         &self.description
     }
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// This field is required.
     pub fn instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_arn = ::std::option::Option::Some(input.into());
         self
@@ -154,7 +158,7 @@ impl CreatePermissionSetInputBuilder {
     /// Consumes the builder and constructs a [`CreatePermissionSetInput`](crate::operation::create_permission_set::CreatePermissionSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_permission_set::CreatePermissionSetInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_permission_set::CreatePermissionSetInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_permission_set::CreatePermissionSetInput {
             name: self.name,

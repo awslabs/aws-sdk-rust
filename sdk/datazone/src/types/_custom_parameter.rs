@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CustomParameter {
     /// <p>The key name of the parameter.</p>
-    pub key_name: ::std::option::Option<::std::string::String>,
+    pub key_name: ::std::string::String,
     /// <p>The description of the parameter.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The filed type of the parameter.</p>
-    pub field_type: ::std::option::Option<::std::string::String>,
+    pub field_type: ::std::string::String,
     /// <p>The default value of the parameter.</p>
     pub default_value: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the parameter is editable.</p>
@@ -19,16 +19,18 @@ pub struct CustomParameter {
 }
 impl CustomParameter {
     /// <p>The key name of the parameter.</p>
-    pub fn key_name(&self) -> ::std::option::Option<&str> {
-        self.key_name.as_deref()
+    pub fn key_name(&self) -> &str {
+        use std::ops::Deref;
+        self.key_name.deref()
     }
     /// <p>The description of the parameter.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The filed type of the parameter.</p>
-    pub fn field_type(&self) -> ::std::option::Option<&str> {
-        self.field_type.as_deref()
+    pub fn field_type(&self) -> &str {
+        use std::ops::Deref;
+        self.field_type.deref()
     }
     /// <p>The default value of the parameter.</p>
     pub fn default_value(&self) -> ::std::option::Option<&str> {
@@ -75,6 +77,7 @@ pub struct CustomParameterBuilder {
 }
 impl CustomParameterBuilder {
     /// <p>The key name of the parameter.</p>
+    /// This field is required.
     pub fn key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_name = ::std::option::Option::Some(input.into());
         self
@@ -103,6 +106,7 @@ impl CustomParameterBuilder {
         &self.description
     }
     /// <p>The filed type of the parameter.</p>
+    /// This field is required.
     pub fn field_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.field_type = ::std::option::Option::Some(input.into());
         self
@@ -159,15 +163,28 @@ impl CustomParameterBuilder {
         &self.is_optional
     }
     /// Consumes the builder and constructs a [`CustomParameter`](crate::types::CustomParameter).
-    pub fn build(self) -> crate::types::CustomParameter {
-        crate::types::CustomParameter {
-            key_name: self.key_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key_name`](crate::types::builders::CustomParameterBuilder::key_name)
+    /// - [`field_type`](crate::types::builders::CustomParameterBuilder::field_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomParameter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CustomParameter {
+            key_name: self.key_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "key_name",
+                    "key_name was not specified but it is required when building CustomParameter",
+                )
+            })?,
             description: self.description,
-            field_type: self.field_type,
+            field_type: self.field_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "field_type",
+                    "field_type was not specified but it is required when building CustomParameter",
+                )
+            })?,
             default_value: self.default_value,
             is_editable: self.is_editable,
             is_optional: self.is_optional,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for CustomParameterBuilder {

@@ -61,6 +61,7 @@ impl CreateGroupInputBuilder {
     }
     /// <p>The name of the group to create. Do not include the path in this value.</p>
     /// <p>IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case. For example, you cannot create resources named both "MyResource" and "myresource".</p>
+    /// This field is required.
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_name = ::std::option::Option::Some(input.into());
         self
@@ -77,7 +78,7 @@ impl CreateGroupInputBuilder {
         &self.group_name
     }
     /// Consumes the builder and constructs a [`CreateGroupInput`](crate::operation::create_group::CreateGroupInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_group::CreateGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_group::CreateGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_group::CreateGroupInput {
             path: self.path,
             group_name: self.group_name,

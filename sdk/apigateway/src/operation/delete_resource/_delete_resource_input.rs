@@ -35,6 +35,7 @@ pub struct DeleteResourceInputBuilder {
 }
 impl DeleteResourceInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
+    /// This field is required.
     pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rest_api_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl DeleteResourceInputBuilder {
         &self.rest_api_id
     }
     /// <p>The identifier of the Resource resource.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -65,7 +67,7 @@ impl DeleteResourceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteResourceInput`](crate::operation::delete_resource::DeleteResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_resource::DeleteResourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_resource::DeleteResourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_resource::DeleteResourceInput {
             rest_api_id: self.rest_api_id,
             resource_id: self.resource_id,

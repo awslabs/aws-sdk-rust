@@ -12,8 +12,10 @@ pub struct DescribeDbClusterParametersOutput {
 }
 impl DescribeDbClusterParametersOutput {
     /// <p>Provides a list of parameters for the cluster parameter group.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&[crate::types::Parameter]> {
-        self.parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
+    pub fn parameters(&self) -> &[crate::types::Parameter] {
+        self.parameters.as_deref().unwrap_or_default()
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

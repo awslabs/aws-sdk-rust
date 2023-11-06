@@ -21,8 +21,10 @@ impl CreateBudgetInput {
         self.budget.as_ref()
     }
     /// <p>A notification that you want to associate with a budget. A budget can have up to five notifications, and each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and subscribers in your <code>CreateBudget</code> call, Amazon Web Services creates the notifications and subscribers for you.</p>
-    pub fn notifications_with_subscribers(&self) -> ::std::option::Option<&[crate::types::NotificationWithSubscribers]> {
-        self.notifications_with_subscribers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notifications_with_subscribers.is_none()`.
+    pub fn notifications_with_subscribers(&self) -> &[crate::types::NotificationWithSubscribers] {
+        self.notifications_with_subscribers.as_deref().unwrap_or_default()
     }
 }
 impl CreateBudgetInput {
@@ -42,6 +44,7 @@ pub struct CreateBudgetInputBuilder {
 }
 impl CreateBudgetInputBuilder {
     /// <p>The <code>accountId</code> that is associated with the budget.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl CreateBudgetInputBuilder {
         &self.account_id
     }
     /// <p>The budget object that you want to create.</p>
+    /// This field is required.
     pub fn budget(mut self, input: crate::types::Budget) -> Self {
         self.budget = ::std::option::Option::Some(input);
         self
@@ -93,7 +97,9 @@ impl CreateBudgetInputBuilder {
         &self.notifications_with_subscribers
     }
     /// Consumes the builder and constructs a [`CreateBudgetInput`](crate::operation::create_budget::CreateBudgetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_budget::CreateBudgetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_budget::CreateBudgetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_budget::CreateBudgetInput {
             account_id: self.account_id,
             budget: self.budget,

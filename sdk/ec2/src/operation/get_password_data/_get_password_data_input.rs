@@ -34,6 +34,7 @@ pub struct GetPasswordDataInputBuilder {
 }
 impl GetPasswordDataInputBuilder {
     /// <p>The ID of the Windows instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl GetPasswordDataInputBuilder {
     /// Consumes the builder and constructs a [`GetPasswordDataInput`](crate::operation::get_password_data::GetPasswordDataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_password_data::GetPasswordDataInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_password_data::GetPasswordDataInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_password_data::GetPasswordDataInput {
             instance_id: self.instance_id,
             dry_run: self.dry_run,

@@ -27,6 +27,7 @@ pub struct DeregisterClusterInputBuilder {
 }
 impl DeregisterClusterInputBuilder {
     /// <p>The name of the connected cluster to deregister.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeregisterClusterInputBuilder {
     /// Consumes the builder and constructs a [`DeregisterClusterInput`](crate::operation::deregister_cluster::DeregisterClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::deregister_cluster::DeregisterClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::deregister_cluster::DeregisterClusterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::deregister_cluster::DeregisterClusterInput { name: self.name })
     }
 }

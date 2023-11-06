@@ -12,8 +12,10 @@ pub struct DescribeTapeArchivesOutput {
 }
 impl DescribeTapeArchivesOutput {
     /// <p>An array of virtual tape objects in the virtual tape shelf (VTS). The description includes of the Amazon Resource Name (ARN) of the virtual tapes. The information returned includes the Amazon Resource Names (ARNs) of the tapes, size of the tapes, status of the tapes, progress of the description, and tape barcode.</p>
-    pub fn tape_archives(&self) -> ::std::option::Option<&[crate::types::TapeArchive]> {
-        self.tape_archives.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tape_archives.is_none()`.
+    pub fn tape_archives(&self) -> &[crate::types::TapeArchive] {
+        self.tape_archives.as_deref().unwrap_or_default()
     }
     /// <p>An opaque string that indicates the position at which the virtual tapes that were fetched for description ended. Use this marker in your next request to fetch the next set of virtual tapes in the virtual tape shelf (VTS). If there are no more virtual tapes to describe, this field does not appear in the response.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

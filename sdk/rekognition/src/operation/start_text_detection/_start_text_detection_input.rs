@@ -55,6 +55,7 @@ pub struct StartTextDetectionInputBuilder {
 }
 impl StartTextDetectionInputBuilder {
     /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
+    /// This field is required.
     pub fn video(mut self, input: crate::types::Video) -> Self {
         self.video = ::std::option::Option::Some(input);
         self
@@ -127,7 +128,8 @@ impl StartTextDetectionInputBuilder {
     /// Consumes the builder and constructs a [`StartTextDetectionInput`](crate::operation::start_text_detection::StartTextDetectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_text_detection::StartTextDetectionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_text_detection::StartTextDetectionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::start_text_detection::StartTextDetectionInput {
             video: self.video,
             client_request_token: self.client_request_token,

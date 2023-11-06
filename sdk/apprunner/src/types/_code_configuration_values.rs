@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CodeConfigurationValues {
     /// <p>A runtime environment type for building and running an App Runner service. It represents a programming language runtime.</p>
-    pub runtime: ::std::option::Option<crate::types::Runtime>,
+    pub runtime: crate::types::Runtime,
     /// <p>The command App Runner runs to build your application.</p>
     pub build_command: ::std::option::Option<::std::string::String>,
     /// <p>The command App Runner runs to start your application.</p>
@@ -25,8 +25,8 @@ pub struct CodeConfigurationValues {
 }
 impl CodeConfigurationValues {
     /// <p>A runtime environment type for building and running an App Runner service. It represents a programming language runtime.</p>
-    pub fn runtime(&self) -> ::std::option::Option<&crate::types::Runtime> {
-        self.runtime.as_ref()
+    pub fn runtime(&self) -> &crate::types::Runtime {
+        &self.runtime
     }
     /// <p>The command App Runner runs to build your application.</p>
     pub fn build_command(&self) -> ::std::option::Option<&str> {
@@ -87,6 +87,7 @@ pub struct CodeConfigurationValuesBuilder {
 }
 impl CodeConfigurationValuesBuilder {
     /// <p>A runtime environment type for building and running an App Runner service. It represents a programming language runtime.</p>
+    /// This field is required.
     pub fn runtime(mut self, input: crate::types::Runtime) -> Self {
         self.runtime = ::std::option::Option::Some(input);
         self
@@ -219,15 +220,22 @@ impl CodeConfigurationValuesBuilder {
         &self.runtime_environment_secrets
     }
     /// Consumes the builder and constructs a [`CodeConfigurationValues`](crate::types::CodeConfigurationValues).
-    pub fn build(self) -> crate::types::CodeConfigurationValues {
-        crate::types::CodeConfigurationValues {
-            runtime: self.runtime,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`runtime`](crate::types::builders::CodeConfigurationValuesBuilder::runtime)
+    pub fn build(self) -> ::std::result::Result<crate::types::CodeConfigurationValues, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CodeConfigurationValues {
+            runtime: self.runtime.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "runtime",
+                    "runtime was not specified but it is required when building CodeConfigurationValues",
+                )
+            })?,
             build_command: self.build_command,
             start_command: self.start_command,
             port: self.port,
             runtime_environment_variables: self.runtime_environment_variables,
             runtime_environment_secrets: self.runtime_environment_secrets,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for CodeConfigurationValuesBuilder {

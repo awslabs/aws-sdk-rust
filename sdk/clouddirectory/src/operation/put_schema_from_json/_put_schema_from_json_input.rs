@@ -34,6 +34,7 @@ pub struct PutSchemaFromJsonInputBuilder {
 }
 impl PutSchemaFromJsonInputBuilder {
     /// <p>The ARN of the schema to update.</p>
+    /// This field is required.
     pub fn schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl PutSchemaFromJsonInputBuilder {
         &self.schema_arn
     }
     /// <p>The replacement JSON schema.</p>
+    /// This field is required.
     pub fn document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl PutSchemaFromJsonInputBuilder {
     /// Consumes the builder and constructs a [`PutSchemaFromJsonInput`](crate::operation::put_schema_from_json::PutSchemaFromJsonInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_schema_from_json::PutSchemaFromJsonInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_schema_from_json::PutSchemaFromJsonInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_schema_from_json::PutSchemaFromJsonInput {
             schema_arn: self.schema_arn,
             document: self.document,

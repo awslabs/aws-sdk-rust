@@ -27,6 +27,7 @@ pub struct DeleteOrganizationConformancePackInputBuilder {
 }
 impl DeleteOrganizationConformancePackInputBuilder {
     /// <p>The name of organization conformance pack that you want to delete.</p>
+    /// This field is required.
     pub fn organization_conformance_pack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_conformance_pack_name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteOrganizationConformancePackInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_organization_conformance_pack::DeleteOrganizationConformancePackInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_organization_conformance_pack::DeleteOrganizationConformancePackInput {

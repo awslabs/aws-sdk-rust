@@ -2,7 +2,7 @@
 pub fn ser_processing_configuration(
     object_5: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ProcessingConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::ProcessingConfiguration::AuditLog(inner) => {
             #[allow(unused_mut)]
@@ -11,7 +11,7 @@ pub fn ser_processing_configuration(
             object_1.finish();
         }
         crate::types::ProcessingConfiguration::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "ProcessingConfiguration",
             ))
         }
@@ -32,12 +32,17 @@ where
             match tokens.next().transpose()? {
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                    let key = key.to_unescaped()?;
+                    if key == "__type" {
+                        ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                        continue;
+                    }
                     if variant.is_some() {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
                             "encountered mixed variants in union",
                         ));
                     }
-                    variant = match key.to_unescaped()?.as_ref() {
+                    variant = match key.as_ref() {
                         "auditLog" => Some(crate::types::ProcessingConfiguration::AuditLog(
                             crate::protocol_serde::shape_audit_log_processing_configuration::de_audit_log_processing_configuration(tokens)?
                                 .ok_or_else(|| {

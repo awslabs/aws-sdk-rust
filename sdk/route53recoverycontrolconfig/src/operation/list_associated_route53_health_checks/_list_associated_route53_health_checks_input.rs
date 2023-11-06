@@ -69,6 +69,7 @@ impl ListAssociatedRoute53HealthChecksInputBuilder {
         &self.next_token
     }
     /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
+    /// This field is required.
     pub fn routing_control_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.routing_control_arn = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListAssociatedRoute53HealthChecksInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_associated_route53_health_checks::ListAssociatedRoute53HealthChecksInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_associated_route53_health_checks::ListAssociatedRoute53HealthChecksInput {

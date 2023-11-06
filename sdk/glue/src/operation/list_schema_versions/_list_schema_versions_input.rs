@@ -53,6 +53,7 @@ impl ListSchemaVersionsInputBuilder {
     /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
     /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn schema_id(mut self, input: crate::types::SchemaId) -> Self {
         self.schema_id = ::std::option::Option::Some(input);
         self
@@ -105,7 +106,8 @@ impl ListSchemaVersionsInputBuilder {
     /// Consumes the builder and constructs a [`ListSchemaVersionsInput`](crate::operation::list_schema_versions::ListSchemaVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_schema_versions::ListSchemaVersionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_schema_versions::ListSchemaVersionsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_schema_versions::ListSchemaVersionsInput {
             schema_id: self.schema_id,
             max_results: self.max_results,

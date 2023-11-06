@@ -4,49 +4,53 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWorkspaceOutput {
     /// <p>The ID of the workspace.</p>
-    pub workspace_id: ::std::option::Option<::std::string::String>,
+    pub workspace_id: ::std::string::String,
     /// <p>The ARN of the workspace.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The description of the workspace.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the S3 bucket where resources associated with the workspace are stored.</p>
-    pub s3_location: ::std::option::Option<::std::string::String>,
+    pub s3_location: ::std::string::String,
     /// <p>The ARN of the execution role associated with the workspace.</p>
-    pub role: ::std::option::Option<::std::string::String>,
+    pub role: ::std::string::String,
     /// <p>The date and time when the workspace was created.</p>
-    pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_date_time: ::aws_smithy_types::DateTime,
     /// <p>The date and time when the workspace was last updated.</p>
-    pub update_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub update_date_time: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
 impl GetWorkspaceOutput {
     /// <p>The ID of the workspace.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
-        self.workspace_id.as_deref()
+    pub fn workspace_id(&self) -> &str {
+        use std::ops::Deref;
+        self.workspace_id.deref()
     }
     /// <p>The ARN of the workspace.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The description of the workspace.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The ARN of the S3 bucket where resources associated with the workspace are stored.</p>
-    pub fn s3_location(&self) -> ::std::option::Option<&str> {
-        self.s3_location.as_deref()
+    pub fn s3_location(&self) -> &str {
+        use std::ops::Deref;
+        self.s3_location.deref()
     }
     /// <p>The ARN of the execution role associated with the workspace.</p>
-    pub fn role(&self) -> ::std::option::Option<&str> {
-        self.role.as_deref()
+    pub fn role(&self) -> &str {
+        use std::ops::Deref;
+        self.role.deref()
     }
     /// <p>The date and time when the workspace was created.</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_date_time.as_ref()
+    pub fn creation_date_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_date_time
     }
     /// <p>The date and time when the workspace was last updated.</p>
-    pub fn update_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.update_date_time.as_ref()
+    pub fn update_date_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.update_date_time
     }
 }
 impl ::aws_http::request_id::RequestId for GetWorkspaceOutput {
@@ -76,6 +80,7 @@ pub struct GetWorkspaceOutputBuilder {
 }
 impl GetWorkspaceOutputBuilder {
     /// <p>The ID of the workspace.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +95,7 @@ impl GetWorkspaceOutputBuilder {
         &self.workspace_id
     }
     /// <p>The ARN of the workspace.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +124,7 @@ impl GetWorkspaceOutputBuilder {
         &self.description
     }
     /// <p>The ARN of the S3 bucket where resources associated with the workspace are stored.</p>
+    /// This field is required.
     pub fn s3_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_location = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +139,7 @@ impl GetWorkspaceOutputBuilder {
         &self.s3_location
     }
     /// <p>The ARN of the execution role associated with the workspace.</p>
+    /// This field is required.
     pub fn role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role = ::std::option::Option::Some(input.into());
         self
@@ -146,6 +154,7 @@ impl GetWorkspaceOutputBuilder {
         &self.role
     }
     /// <p>The date and time when the workspace was created.</p>
+    /// This field is required.
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
         self
@@ -160,6 +169,7 @@ impl GetWorkspaceOutputBuilder {
         &self.creation_date_time
     }
     /// <p>The date and time when the workspace was last updated.</p>
+    /// This field is required.
     pub fn update_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_date_time = ::std::option::Option::Some(input);
         self
@@ -183,16 +193,55 @@ impl GetWorkspaceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetWorkspaceOutput`](crate::operation::get_workspace::GetWorkspaceOutput).
-    pub fn build(self) -> crate::operation::get_workspace::GetWorkspaceOutput {
-        crate::operation::get_workspace::GetWorkspaceOutput {
-            workspace_id: self.workspace_id,
-            arn: self.arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workspace_id`](crate::operation::get_workspace::builders::GetWorkspaceOutputBuilder::workspace_id)
+    /// - [`arn`](crate::operation::get_workspace::builders::GetWorkspaceOutputBuilder::arn)
+    /// - [`s3_location`](crate::operation::get_workspace::builders::GetWorkspaceOutputBuilder::s3_location)
+    /// - [`role`](crate::operation::get_workspace::builders::GetWorkspaceOutputBuilder::role)
+    /// - [`creation_date_time`](crate::operation::get_workspace::builders::GetWorkspaceOutputBuilder::creation_date_time)
+    /// - [`update_date_time`](crate::operation::get_workspace::builders::GetWorkspaceOutputBuilder::update_date_time)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_workspace::GetWorkspaceOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_workspace::GetWorkspaceOutput {
+            workspace_id: self.workspace_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "workspace_id",
+                    "workspace_id was not specified but it is required when building GetWorkspaceOutput",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building GetWorkspaceOutput",
+                )
+            })?,
             description: self.description,
-            s3_location: self.s3_location,
-            role: self.role,
-            creation_date_time: self.creation_date_time,
-            update_date_time: self.update_date_time,
+            s3_location: self.s3_location.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "s3_location",
+                    "s3_location was not specified but it is required when building GetWorkspaceOutput",
+                )
+            })?,
+            role: self.role.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "role",
+                    "role was not specified but it is required when building GetWorkspaceOutput",
+                )
+            })?,
+            creation_date_time: self.creation_date_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "creation_date_time",
+                    "creation_date_time was not specified but it is required when building GetWorkspaceOutput",
+                )
+            })?,
+            update_date_time: self.update_date_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "update_date_time",
+                    "update_date_time was not specified but it is required when building GetWorkspaceOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

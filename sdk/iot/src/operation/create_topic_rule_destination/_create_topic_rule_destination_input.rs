@@ -27,6 +27,7 @@ pub struct CreateTopicRuleDestinationInputBuilder {
 }
 impl CreateTopicRuleDestinationInputBuilder {
     /// <p>The topic rule destination configuration.</p>
+    /// This field is required.
     pub fn destination_configuration(mut self, input: crate::types::TopicRuleDestinationConfiguration) -> Self {
         self.destination_configuration = ::std::option::Option::Some(input);
         self
@@ -45,7 +46,7 @@ impl CreateTopicRuleDestinationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_topic_rule_destination::CreateTopicRuleDestinationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_topic_rule_destination::CreateTopicRuleDestinationInput {
             destination_configuration: self.destination_configuration,

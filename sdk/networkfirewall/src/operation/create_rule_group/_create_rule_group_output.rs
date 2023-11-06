@@ -5,7 +5,7 @@
 pub struct CreateRuleGroupOutput {
     /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request. </p>
     /// <p>To make changes to the rule group, you provide the token in your request. Network Firewall uses the token to ensure that the rule group hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the rule group again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token. </p>
-    pub update_token: ::std::option::Option<::std::string::String>,
+    pub update_token: ::std::string::String,
     /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
     pub rule_group_response: ::std::option::Option<crate::types::RuleGroupResponse>,
     _request_id: Option<String>,
@@ -13,8 +13,9 @@ pub struct CreateRuleGroupOutput {
 impl CreateRuleGroupOutput {
     /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request. </p>
     /// <p>To make changes to the rule group, you provide the token in your request. Network Firewall uses the token to ensure that the rule group hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the rule group again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token. </p>
-    pub fn update_token(&self) -> ::std::option::Option<&str> {
-        self.update_token.as_deref()
+    pub fn update_token(&self) -> &str {
+        use std::ops::Deref;
+        self.update_token.deref()
     }
     /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
     pub fn rule_group_response(&self) -> ::std::option::Option<&crate::types::RuleGroupResponse> {
@@ -44,6 +45,7 @@ pub struct CreateRuleGroupOutputBuilder {
 impl CreateRuleGroupOutputBuilder {
     /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request. </p>
     /// <p>To make changes to the rule group, you provide the token in your request. Network Firewall uses the token to ensure that the rule group hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the rule group again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token. </p>
+    /// This field is required.
     pub fn update_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.update_token = ::std::option::Option::Some(input.into());
         self
@@ -60,6 +62,7 @@ impl CreateRuleGroupOutputBuilder {
         &self.update_token
     }
     /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
+    /// This field is required.
     pub fn rule_group_response(mut self, input: crate::types::RuleGroupResponse) -> Self {
         self.rule_group_response = ::std::option::Option::Some(input);
         self
@@ -83,11 +86,20 @@ impl CreateRuleGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateRuleGroupOutput`](crate::operation::create_rule_group::CreateRuleGroupOutput).
-    pub fn build(self) -> crate::operation::create_rule_group::CreateRuleGroupOutput {
-        crate::operation::create_rule_group::CreateRuleGroupOutput {
-            update_token: self.update_token,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`update_token`](crate::operation::create_rule_group::builders::CreateRuleGroupOutputBuilder::update_token)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_rule_group::CreateRuleGroupOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_rule_group::CreateRuleGroupOutput {
+            update_token: self.update_token.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "update_token",
+                    "update_token was not specified but it is required when building CreateRuleGroupOutput",
+                )
+            })?,
             rule_group_response: self.rule_group_response,
             _request_id: self._request_id,
-        }
+        })
     }
 }

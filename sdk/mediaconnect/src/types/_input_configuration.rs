@@ -42,6 +42,7 @@ pub struct InputConfigurationBuilder {
 }
 impl InputConfigurationBuilder {
     /// The IP address that the flow listens on for incoming content for a media stream.
+    /// This field is required.
     pub fn input_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_ip = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl InputConfigurationBuilder {
         &self.input_ip
     }
     /// The port that the flow listens on for an incoming media stream.
+    /// This field is required.
     pub fn input_port(mut self, input: i32) -> Self {
         self.input_port = ::std::option::Option::Some(input);
         self
@@ -70,6 +72,7 @@ impl InputConfigurationBuilder {
         &self.input_port
     }
     /// The VPC interface where the media stream comes in from.
+    /// This field is required.
     pub fn interface(mut self, input: crate::types::Interface) -> Self {
         self.interface = ::std::option::Option::Some(input);
         self

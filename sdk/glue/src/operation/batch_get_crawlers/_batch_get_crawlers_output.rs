@@ -11,12 +11,16 @@ pub struct BatchGetCrawlersOutput {
 }
 impl BatchGetCrawlersOutput {
     /// <p>A list of crawler definitions.</p>
-    pub fn crawlers(&self) -> ::std::option::Option<&[crate::types::Crawler]> {
-        self.crawlers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.crawlers.is_none()`.
+    pub fn crawlers(&self) -> &[crate::types::Crawler] {
+        self.crawlers.as_deref().unwrap_or_default()
     }
     /// <p>A list of names of crawlers that were not found.</p>
-    pub fn crawlers_not_found(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.crawlers_not_found.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.crawlers_not_found.is_none()`.
+    pub fn crawlers_not_found(&self) -> &[::std::string::String] {
+        self.crawlers_not_found.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchGetCrawlersOutput {

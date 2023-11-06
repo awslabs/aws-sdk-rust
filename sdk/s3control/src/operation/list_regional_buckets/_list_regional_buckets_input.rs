@@ -52,6 +52,7 @@ pub struct ListRegionalBucketsInputBuilder {
 }
 impl ListRegionalBucketsInputBuilder {
     /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -116,7 +117,7 @@ impl ListRegionalBucketsInputBuilder {
     /// Consumes the builder and constructs a [`ListRegionalBucketsInput`](crate::operation::list_regional_buckets::ListRegionalBucketsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_regional_buckets::ListRegionalBucketsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_regional_buckets::ListRegionalBucketsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_regional_buckets::ListRegionalBucketsInput {
             account_id: self.account_id,

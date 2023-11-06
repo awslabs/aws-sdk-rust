@@ -34,6 +34,7 @@ pub struct TagQueueInputBuilder {
 }
 impl TagQueueInputBuilder {
     /// <p>The URL of the queue.</p>
+    /// This field is required.
     pub fn queue_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_url = ::std::option::Option::Some(input.into());
         self
@@ -68,7 +69,7 @@ impl TagQueueInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`TagQueueInput`](crate::operation::tag_queue::TagQueueInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::tag_queue::TagQueueInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::tag_queue::TagQueueInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::tag_queue::TagQueueInput {
             queue_url: self.queue_url,
             tags: self.tags,

@@ -41,6 +41,10 @@ pub use crate::types::_vpc_security_group_membership::VpcSecurityGroupMembership
 
 pub use crate::types::_resource_policy::ResourcePolicy;
 
+pub use crate::types::_association::Association;
+
+mod _association;
+
 mod _config_parameter;
 
 mod _endpoint;

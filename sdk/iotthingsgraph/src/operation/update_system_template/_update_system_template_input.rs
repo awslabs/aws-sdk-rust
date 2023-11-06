@@ -49,6 +49,7 @@ impl UpdateSystemTemplateInputBuilder {
     /// <p>The ID of the system to be updated.</p>
     /// <p>The ID should be in the following format.</p>
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -67,6 +68,7 @@ impl UpdateSystemTemplateInputBuilder {
         &self.id
     }
     /// <p>The <code>DefinitionDocument</code> that contains the updated system definition.</p>
+    /// This field is required.
     pub fn definition(mut self, input: crate::types::DefinitionDocument) -> Self {
         self.definition = ::std::option::Option::Some(input);
         self
@@ -100,7 +102,7 @@ impl UpdateSystemTemplateInputBuilder {
     /// Consumes the builder and constructs a [`UpdateSystemTemplateInput`](crate::operation::update_system_template::UpdateSystemTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_system_template::UpdateSystemTemplateInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_system_template::UpdateSystemTemplateInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_system_template::UpdateSystemTemplateInput {
             id: self.id,

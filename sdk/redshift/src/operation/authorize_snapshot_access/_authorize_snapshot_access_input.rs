@@ -94,6 +94,7 @@ impl AuthorizeSnapshotAccessInputBuilder {
     }
     /// <p>The identifier of the Amazon Web Services account authorized to restore the specified snapshot.</p>
     /// <p>To share a snapshot with Amazon Web Services Support, specify amazon-redshift-support.</p>
+    /// This field is required.
     pub fn account_with_restore_access(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_with_restore_access = ::std::option::Option::Some(input.into());
         self
@@ -114,7 +115,7 @@ impl AuthorizeSnapshotAccessInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessInput {
             snapshot_identifier: self.snapshot_identifier,

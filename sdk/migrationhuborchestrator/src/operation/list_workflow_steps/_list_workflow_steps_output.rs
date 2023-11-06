@@ -6,7 +6,7 @@ pub struct ListWorkflowStepsOutput {
     /// <p>The pagination token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The summary of steps in a migration workflow.</p>
-    pub workflow_steps_summary: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepSummary>>,
+    pub workflow_steps_summary: ::std::vec::Vec<crate::types::WorkflowStepSummary>,
     _request_id: Option<String>,
 }
 impl ListWorkflowStepsOutput {
@@ -15,8 +15,9 @@ impl ListWorkflowStepsOutput {
         self.next_token.as_deref()
     }
     /// <p>The summary of steps in a migration workflow.</p>
-    pub fn workflow_steps_summary(&self) -> ::std::option::Option<&[crate::types::WorkflowStepSummary]> {
-        self.workflow_steps_summary.as_deref()
+    pub fn workflow_steps_summary(&self) -> &[crate::types::WorkflowStepSummary] {
+        use std::ops::Deref;
+        self.workflow_steps_summary.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListWorkflowStepsOutput {
@@ -84,11 +85,20 @@ impl ListWorkflowStepsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListWorkflowStepsOutput`](crate::operation::list_workflow_steps::ListWorkflowStepsOutput).
-    pub fn build(self) -> crate::operation::list_workflow_steps::ListWorkflowStepsOutput {
-        crate::operation::list_workflow_steps::ListWorkflowStepsOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workflow_steps_summary`](crate::operation::list_workflow_steps::builders::ListWorkflowStepsOutputBuilder::workflow_steps_summary)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_workflow_steps::ListWorkflowStepsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_workflow_steps::ListWorkflowStepsOutput {
             next_token: self.next_token,
-            workflow_steps_summary: self.workflow_steps_summary,
+            workflow_steps_summary: self.workflow_steps_summary.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "workflow_steps_summary",
+                    "workflow_steps_summary was not specified but it is required when building ListWorkflowStepsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

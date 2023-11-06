@@ -2,7 +2,7 @@
 pub fn ser_list_organization_insights_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_organization_insights::ListOrganizationInsightsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.account_ids {
         let mut array_2 = object.key("AccountIds").start_array();
         for item_3 in var_1 {

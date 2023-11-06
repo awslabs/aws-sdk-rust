@@ -53,6 +53,7 @@ pub struct ListBuildsForProjectInputBuilder {
 }
 impl ListBuildsForProjectInputBuilder {
     /// <p>The name of the CodeBuild project.</p>
+    /// This field is required.
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
         self
@@ -115,7 +116,7 @@ impl ListBuildsForProjectInputBuilder {
     /// Consumes the builder and constructs a [`ListBuildsForProjectInput`](crate::operation::list_builds_for_project::ListBuildsForProjectInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_builds_for_project::ListBuildsForProjectInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_builds_for_project::ListBuildsForProjectInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_builds_for_project::ListBuildsForProjectInput {
             project_name: self.project_name,

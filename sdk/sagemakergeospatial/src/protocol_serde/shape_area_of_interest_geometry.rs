@@ -2,7 +2,7 @@
 pub fn ser_area_of_interest_geometry(
     object_1: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AreaOfInterestGeometry,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::AreaOfInterestGeometry::PolygonGeometry(inner) => {
             #[allow(unused_mut)]
@@ -17,7 +17,7 @@ pub fn ser_area_of_interest_geometry(
             object_2.finish();
         }
         crate::types::AreaOfInterestGeometry::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "AreaOfInterestGeometry",
             ))
         }
@@ -38,12 +38,17 @@ where
             match tokens.next().transpose()? {
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                    let key = key.to_unescaped()?;
+                    if key == "__type" {
+                        ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                        continue;
+                    }
                     if variant.is_some() {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
                             "encountered mixed variants in union",
                         ));
                     }
-                    variant = match key.to_unescaped()?.as_ref() {
+                    variant = match key.as_ref() {
                         "PolygonGeometry" => Some(crate::types::AreaOfInterestGeometry::PolygonGeometry(
                             crate::protocol_serde::shape_polygon_geometry_input::de_polygon_geometry_input(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'PolygonGeometry' cannot be null")

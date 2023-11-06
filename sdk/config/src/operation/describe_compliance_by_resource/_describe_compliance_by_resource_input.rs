@@ -25,8 +25,10 @@ impl DescribeComplianceByResourceInput {
         self.resource_id.as_deref()
     }
     /// <p>Filters the results by compliance.</p>
-    pub fn compliance_types(&self) -> ::std::option::Option<&[crate::types::ComplianceType]> {
-        self.compliance_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compliance_types.is_none()`.
+    pub fn compliance_types(&self) -> &[crate::types::ComplianceType] {
+        self.compliance_types.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     pub fn limit(&self) -> ::std::option::Option<i32> {
@@ -136,7 +138,7 @@ impl DescribeComplianceByResourceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_compliance_by_resource::DescribeComplianceByResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_compliance_by_resource::DescribeComplianceByResourceInput {
             resource_type: self.resource_type,

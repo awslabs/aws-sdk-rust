@@ -15,8 +15,10 @@ impl ListSchemasOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of schema summaries.</p>
-    pub fn schemas(&self) -> ::std::option::Option<&[crate::types::SchemaSummary]> {
-        self.schemas.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.schemas.is_none()`.
+    pub fn schemas(&self) -> &[crate::types::SchemaSummary] {
+        self.schemas.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListSchemasOutput {

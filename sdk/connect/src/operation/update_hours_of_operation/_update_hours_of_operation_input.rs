@@ -38,8 +38,10 @@ impl UpdateHoursOfOperationInput {
         self.time_zone.as_deref()
     }
     /// <p>Configuration information of the hours of operation.</p>
-    pub fn config(&self) -> ::std::option::Option<&[crate::types::HoursOfOperationConfig]> {
-        self.config.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.config.is_none()`.
+    pub fn config(&self) -> &[crate::types::HoursOfOperationConfig] {
+        self.config.as_deref().unwrap_or_default()
     }
 }
 impl UpdateHoursOfOperationInput {
@@ -62,6 +64,7 @@ pub struct UpdateHoursOfOperationInputBuilder {
 }
 impl UpdateHoursOfOperationInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +79,7 @@ impl UpdateHoursOfOperationInputBuilder {
         &self.instance_id
     }
     /// <p>The identifier of the hours of operation.</p>
+    /// This field is required.
     pub fn hours_of_operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hours_of_operation_id = ::std::option::Option::Some(input.into());
         self
@@ -156,7 +160,7 @@ impl UpdateHoursOfOperationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_hours_of_operation::UpdateHoursOfOperationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_hours_of_operation::UpdateHoursOfOperationInput {
             instance_id: self.instance_id,

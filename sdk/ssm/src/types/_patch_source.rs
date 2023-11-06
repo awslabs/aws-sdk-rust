@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PatchSource {
     /// <p>The name specified to identify the patch source.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The specific operating system versions a patch repository applies to, such as "Ubuntu16.04", "AmazonLinux2016.09", "RedhatEnterpriseLinux7.2" or "Suse12.7". For lists of supported product values, see <code>PatchFilter</code>.</p>
-    pub products: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub products: ::std::vec::Vec<::std::string::String>,
     /// <p>The value of the yum repo configuration. For example:</p>
     /// <p> <code>[main]</code> </p>
     /// <p> <code>name=MyCustomRepository</code> </p>
@@ -15,16 +15,18 @@ pub struct PatchSource {
     /// <p> <code>enabled=1</code> </p> <note>
     /// <p>For information about other options available for your yum repository configuration, see <a href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a>.</p>
     /// </note>
-    pub configuration: ::std::option::Option<::std::string::String>,
+    pub configuration: ::std::string::String,
 }
 impl PatchSource {
     /// <p>The name specified to identify the patch source.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The specific operating system versions a patch repository applies to, such as "Ubuntu16.04", "AmazonLinux2016.09", "RedhatEnterpriseLinux7.2" or "Suse12.7". For lists of supported product values, see <code>PatchFilter</code>.</p>
-    pub fn products(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.products.as_deref()
+    pub fn products(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.products.deref()
     }
     /// <p>The value of the yum repo configuration. For example:</p>
     /// <p> <code>[main]</code> </p>
@@ -33,8 +35,9 @@ impl PatchSource {
     /// <p> <code>enabled=1</code> </p> <note>
     /// <p>For information about other options available for your yum repository configuration, see <a href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a>.</p>
     /// </note>
-    pub fn configuration(&self) -> ::std::option::Option<&str> {
-        self.configuration.as_deref()
+    pub fn configuration(&self) -> &str {
+        use std::ops::Deref;
+        self.configuration.deref()
     }
 }
 impl ::std::fmt::Debug for PatchSource {
@@ -63,6 +66,7 @@ pub struct PatchSourceBuilder {
 }
 impl PatchSourceBuilder {
     /// <p>The name specified to identify the patch source.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -103,6 +107,7 @@ impl PatchSourceBuilder {
     /// <p> <code>enabled=1</code> </p> <note>
     /// <p>For information about other options available for your yum repository configuration, see <a href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a>.</p>
     /// </note>
+    /// This field is required.
     pub fn configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration = ::std::option::Option::Some(input.into());
         self
@@ -129,12 +134,31 @@ impl PatchSourceBuilder {
         &self.configuration
     }
     /// Consumes the builder and constructs a [`PatchSource`](crate::types::PatchSource).
-    pub fn build(self) -> crate::types::PatchSource {
-        crate::types::PatchSource {
-            name: self.name,
-            products: self.products,
-            configuration: self.configuration,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::PatchSourceBuilder::name)
+    /// - [`products`](crate::types::builders::PatchSourceBuilder::products)
+    /// - [`configuration`](crate::types::builders::PatchSourceBuilder::configuration)
+    pub fn build(self) -> ::std::result::Result<crate::types::PatchSource, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PatchSource {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building PatchSource",
+                )
+            })?,
+            products: self.products.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "products",
+                    "products was not specified but it is required when building PatchSource",
+                )
+            })?,
+            configuration: self.configuration.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "configuration",
+                    "configuration was not specified but it is required when building PatchSource",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for PatchSourceBuilder {

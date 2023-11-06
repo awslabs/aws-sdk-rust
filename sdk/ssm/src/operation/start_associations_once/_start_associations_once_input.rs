@@ -8,8 +8,10 @@ pub struct StartAssociationsOnceInput {
 }
 impl StartAssociationsOnceInput {
     /// <p>The association IDs that you want to run immediately and only one time.</p>
-    pub fn association_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.association_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.association_ids.is_none()`.
+    pub fn association_ids(&self) -> &[::std::string::String] {
+        self.association_ids.as_deref().unwrap_or_default()
     }
 }
 impl StartAssociationsOnceInput {
@@ -49,7 +51,7 @@ impl StartAssociationsOnceInputBuilder {
     /// Consumes the builder and constructs a [`StartAssociationsOnceInput`](crate::operation::start_associations_once::StartAssociationsOnceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_associations_once::StartAssociationsOnceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_associations_once::StartAssociationsOnceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_associations_once::StartAssociationsOnceInput {
             association_ids: self.association_ids,

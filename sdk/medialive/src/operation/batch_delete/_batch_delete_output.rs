@@ -12,12 +12,16 @@ pub struct BatchDeleteOutput {
 }
 impl BatchDeleteOutput {
     /// List of failed operations
-    pub fn failed(&self) -> ::std::option::Option<&[crate::types::BatchFailedResultModel]> {
-        self.failed.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed.is_none()`.
+    pub fn failed(&self) -> &[crate::types::BatchFailedResultModel] {
+        self.failed.as_deref().unwrap_or_default()
     }
     /// List of successful operations
-    pub fn successful(&self) -> ::std::option::Option<&[crate::types::BatchSuccessfulResultModel]> {
-        self.successful.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.successful.is_none()`.
+    pub fn successful(&self) -> &[crate::types::BatchSuccessfulResultModel] {
+        self.successful.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchDeleteOutput {

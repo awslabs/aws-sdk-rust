@@ -27,6 +27,7 @@ pub struct SetVoiceMessageSpendLimitOverrideInputBuilder {
 }
 impl SetVoiceMessageSpendLimitOverrideInputBuilder {
     /// <p>The new monthly limit to enforce on voice messages.</p>
+    /// This field is required.
     pub fn monthly_limit(mut self, input: i64) -> Self {
         self.monthly_limit = ::std::option::Option::Some(input);
         self
@@ -45,7 +46,7 @@ impl SetVoiceMessageSpendLimitOverrideInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverrideInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverrideInput {

@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTargetsOutput {
     /// <p>Information about the targets.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::TargetSummary>>,
+    pub items: ::std::vec::Vec<crate::types::TargetSummary>,
     /// <p>If there are additional results, a pagination token for the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListTargetsOutput {
     /// <p>Information about the targets.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::TargetSummary]> {
-        self.items.as_deref()
+    pub fn items(&self) -> &[crate::types::TargetSummary] {
+        use std::ops::Deref;
+        self.items.deref()
     }
     /// <p>If there are additional results, a pagination token for the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,18 @@ impl ListTargetsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListTargetsOutput`](crate::operation::list_targets::ListTargetsOutput).
-    pub fn build(self) -> crate::operation::list_targets::ListTargetsOutput {
-        crate::operation::list_targets::ListTargetsOutput {
-            items: self.items,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`items`](crate::operation::list_targets::builders::ListTargetsOutputBuilder::items)
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_targets::ListTargetsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_targets::ListTargetsOutput {
+            items: self.items.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "items",
+                    "items was not specified but it is required when building ListTargetsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

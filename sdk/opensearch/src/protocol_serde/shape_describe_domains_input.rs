@@ -2,7 +2,7 @@
 pub fn ser_describe_domains_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_domains::DescribeDomainsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.domain_names {
         let mut array_2 = object.key("DomainNames").start_array();
         for item_3 in var_1 {

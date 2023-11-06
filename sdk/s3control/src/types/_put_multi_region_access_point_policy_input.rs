@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutMultiRegionAccessPointPolicyInput {
     /// <p>The name of the Multi-Region Access Point associated with the request.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The policy details for the <code>PutMultiRegionAccessPoint</code> request.</p>
-    pub policy: ::std::option::Option<::std::string::String>,
+    pub policy: ::std::string::String,
 }
 impl PutMultiRegionAccessPointPolicyInput {
     /// <p>The name of the Multi-Region Access Point associated with the request.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The policy details for the <code>PutMultiRegionAccessPoint</code> request.</p>
-    pub fn policy(&self) -> ::std::option::Option<&str> {
-        self.policy.as_deref()
+    pub fn policy(&self) -> &str {
+        use std::ops::Deref;
+        self.policy.deref()
     }
 }
 impl PutMultiRegionAccessPointPolicyInput {
@@ -35,6 +37,7 @@ pub struct PutMultiRegionAccessPointPolicyInputBuilder {
 }
 impl PutMultiRegionAccessPointPolicyInputBuilder {
     /// <p>The name of the Multi-Region Access Point associated with the request.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl PutMultiRegionAccessPointPolicyInputBuilder {
         &self.name
     }
     /// <p>The policy details for the <code>PutMultiRegionAccessPoint</code> request.</p>
+    /// This field is required.
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,25 @@ impl PutMultiRegionAccessPointPolicyInputBuilder {
         &self.policy
     }
     /// Consumes the builder and constructs a [`PutMultiRegionAccessPointPolicyInput`](crate::types::PutMultiRegionAccessPointPolicyInput).
-    pub fn build(self) -> crate::types::PutMultiRegionAccessPointPolicyInput {
-        crate::types::PutMultiRegionAccessPointPolicyInput {
-            name: self.name,
-            policy: self.policy,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::PutMultiRegionAccessPointPolicyInputBuilder::name)
+    /// - [`policy`](crate::types::builders::PutMultiRegionAccessPointPolicyInputBuilder::policy)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::PutMultiRegionAccessPointPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PutMultiRegionAccessPointPolicyInput {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building PutMultiRegionAccessPointPolicyInput",
+                )
+            })?,
+            policy: self.policy.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "policy",
+                    "policy was not specified but it is required when building PutMultiRegionAccessPointPolicyInput",
+                )
+            })?,
+        })
     }
 }

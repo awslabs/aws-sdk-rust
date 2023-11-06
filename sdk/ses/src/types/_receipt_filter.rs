@@ -11,7 +11,7 @@ pub struct ReceiptFilter {
     /// <li> <p>Start and end with a letter or number.</p> </li>
     /// <li> <p>Contain 64 characters or fewer.</p> </li>
     /// </ul>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>A structure that provides the IP addresses to block or allow, and whether to block or allow incoming mail from them.</p>
     pub ip_filter: ::std::option::Option<crate::types::ReceiptIpFilter>,
 }
@@ -22,8 +22,9 @@ impl ReceiptFilter {
     /// <li> <p>Start and end with a letter or number.</p> </li>
     /// <li> <p>Contain 64 characters or fewer.</p> </li>
     /// </ul>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>A structure that provides the IP addresses to block or allow, and whether to block or allow incoming mail from them.</p>
     pub fn ip_filter(&self) -> ::std::option::Option<&crate::types::ReceiptIpFilter> {
@@ -51,6 +52,7 @@ impl ReceiptFilterBuilder {
     /// <li> <p>Start and end with a letter or number.</p> </li>
     /// <li> <p>Contain 64 characters or fewer.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -75,6 +77,7 @@ impl ReceiptFilterBuilder {
         &self.name
     }
     /// <p>A structure that provides the IP addresses to block or allow, and whether to block or allow incoming mail from them.</p>
+    /// This field is required.
     pub fn ip_filter(mut self, input: crate::types::ReceiptIpFilter) -> Self {
         self.ip_filter = ::std::option::Option::Some(input);
         self
@@ -89,10 +92,17 @@ impl ReceiptFilterBuilder {
         &self.ip_filter
     }
     /// Consumes the builder and constructs a [`ReceiptFilter`](crate::types::ReceiptFilter).
-    pub fn build(self) -> crate::types::ReceiptFilter {
-        crate::types::ReceiptFilter {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::ReceiptFilterBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::ReceiptFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ReceiptFilter {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ReceiptFilter",
+                )
+            })?,
             ip_filter: self.ip_filter,
-        }
+        })
     }
 }

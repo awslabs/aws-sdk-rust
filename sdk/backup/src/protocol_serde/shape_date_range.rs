@@ -36,7 +36,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::date_range_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -47,16 +49,16 @@ where
 pub fn ser_date_range(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DateRange,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.from_date {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
         object
             .key("FromDate")
-            .date_time(var_1, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(&input.from_date, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_2) = &input.to_date {
+    {
         object
             .key("ToDate")
-            .date_time(var_2, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(&input.to_date, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }

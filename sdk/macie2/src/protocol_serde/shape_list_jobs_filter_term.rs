@@ -2,7 +2,7 @@
 pub fn ser_list_jobs_filter_term(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ListJobsFilterTerm,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.comparator {
         object.key("comparator").string(var_1.as_str());
     }

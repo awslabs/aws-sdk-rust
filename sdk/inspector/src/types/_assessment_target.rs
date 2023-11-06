@@ -5,36 +5,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssessmentTarget {
     /// <p>The ARN that specifies the Amazon Inspector assessment target.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The name of the Amazon Inspector assessment target.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The ARN that specifies the resource group that is associated with the assessment target.</p>
     pub resource_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the assessment target is created.</p>
-    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The time at which <code>UpdateAssessmentTarget</code> is called.</p>
-    pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub updated_at: ::aws_smithy_types::DateTime,
 }
 impl AssessmentTarget {
     /// <p>The ARN that specifies the Amazon Inspector assessment target.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The name of the Amazon Inspector assessment target.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The ARN that specifies the resource group that is associated with the assessment target.</p>
     pub fn resource_group_arn(&self) -> ::std::option::Option<&str> {
         self.resource_group_arn.as_deref()
     }
     /// <p>The time at which the assessment target is created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_at.as_ref()
+    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_at
     }
     /// <p>The time at which <code>UpdateAssessmentTarget</code> is called.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.updated_at.as_ref()
+    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.updated_at
     }
 }
 impl AssessmentTarget {
@@ -56,6 +58,7 @@ pub struct AssessmentTargetBuilder {
 }
 impl AssessmentTargetBuilder {
     /// <p>The ARN that specifies the Amazon Inspector assessment target.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +73,7 @@ impl AssessmentTargetBuilder {
         &self.arn
     }
     /// <p>The name of the Amazon Inspector assessment target.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +102,7 @@ impl AssessmentTargetBuilder {
         &self.resource_group_arn
     }
     /// <p>The time at which the assessment target is created.</p>
+    /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
@@ -112,6 +117,7 @@ impl AssessmentTargetBuilder {
         &self.created_at
     }
     /// <p>The time at which <code>UpdateAssessmentTarget</code> is called.</p>
+    /// This field is required.
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
@@ -126,13 +132,38 @@ impl AssessmentTargetBuilder {
         &self.updated_at
     }
     /// Consumes the builder and constructs a [`AssessmentTarget`](crate::types::AssessmentTarget).
-    pub fn build(self) -> crate::types::AssessmentTarget {
-        crate::types::AssessmentTarget {
-            arn: self.arn,
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::AssessmentTargetBuilder::arn)
+    /// - [`name`](crate::types::builders::AssessmentTargetBuilder::name)
+    /// - [`created_at`](crate::types::builders::AssessmentTargetBuilder::created_at)
+    /// - [`updated_at`](crate::types::builders::AssessmentTargetBuilder::updated_at)
+    pub fn build(self) -> ::std::result::Result<crate::types::AssessmentTarget, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AssessmentTarget {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building AssessmentTarget",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building AssessmentTarget",
+                )
+            })?,
             resource_group_arn: self.resource_group_arn,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
-        }
+            created_at: self.created_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_at",
+                    "created_at was not specified but it is required when building AssessmentTarget",
+                )
+            })?,
+            updated_at: self.updated_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "updated_at",
+                    "updated_at was not specified but it is required when building AssessmentTarget",
+                )
+            })?,
+        })
     }
 }

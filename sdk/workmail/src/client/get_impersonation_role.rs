@@ -3,14 +3,14 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetImpersonationRole`](crate::operation::get_impersonation_role::builders::GetImpersonationRoleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`organization_id(impl Into<String>)`](crate::operation::get_impersonation_role::builders::GetImpersonationRoleFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::get_impersonation_role::builders::GetImpersonationRoleFluentBuilder::set_organization_id): <p>The WorkMail organization from which to retrieve the impersonation role.</p>
-    ///   - [`impersonation_role_id(impl Into<String>)`](crate::operation::get_impersonation_role::builders::GetImpersonationRoleFluentBuilder::impersonation_role_id) / [`set_impersonation_role_id(Option<String>)`](crate::operation::get_impersonation_role::builders::GetImpersonationRoleFluentBuilder::set_impersonation_role_id): <p>The impersonation role ID to retrieve.</p>
+    ///   - [`organization_id(impl Into<String>)`](crate::operation::get_impersonation_role::builders::GetImpersonationRoleFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::get_impersonation_role::builders::GetImpersonationRoleFluentBuilder::set_organization_id):<br>required: **true**<br><p>The WorkMail organization from which to retrieve the impersonation role.</p><br>
+    ///   - [`impersonation_role_id(impl Into<String>)`](crate::operation::get_impersonation_role::builders::GetImpersonationRoleFluentBuilder::impersonation_role_id) / [`set_impersonation_role_id(Option<String>)`](crate::operation::get_impersonation_role::builders::GetImpersonationRoleFluentBuilder::set_impersonation_role_id):<br>required: **true**<br><p>The impersonation role ID to retrieve.</p><br>
     /// - On success, responds with [`GetImpersonationRoleOutput`](crate::operation::get_impersonation_role::GetImpersonationRoleOutput) with field(s):
     ///   - [`impersonation_role_id(Option<String>)`](crate::operation::get_impersonation_role::GetImpersonationRoleOutput::impersonation_role_id): <p>The impersonation role ID.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_impersonation_role::GetImpersonationRoleOutput::name): <p>The impersonation role name.</p>
     ///   - [`r#type(Option<ImpersonationRoleType>)`](crate::operation::get_impersonation_role::GetImpersonationRoleOutput::type): <p>The impersonation role type.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_impersonation_role::GetImpersonationRoleOutput::description): <p>The impersonation role description.</p>
-    ///   - [`rules(Option<Vec<ImpersonationRule>>)`](crate::operation::get_impersonation_role::GetImpersonationRoleOutput::rules): <p>The list of rules for the given impersonation role.</p>
+    ///   - [`rules(Option<Vec::<ImpersonationRule>>)`](crate::operation::get_impersonation_role::GetImpersonationRoleOutput::rules): <p>The list of rules for the given impersonation role.</p>
     ///   - [`date_created(Option<DateTime>)`](crate::operation::get_impersonation_role::GetImpersonationRoleOutput::date_created): <p>The date when the impersonation role was created.</p>
     ///   - [`date_modified(Option<DateTime>)`](crate::operation::get_impersonation_role::GetImpersonationRoleOutput::date_modified): <p>The date when the impersonation role was last modified.</p>
     /// - On failure, responds with [`SdkError<GetImpersonationRoleError>`](crate::operation::get_impersonation_role::GetImpersonationRoleError)

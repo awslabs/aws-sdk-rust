@@ -17,12 +17,16 @@ impl GetEventSelectorsOutput {
         self.trail_arn.as_deref()
     }
     /// <p>The event selectors that are configured for the trail.</p>
-    pub fn event_selectors(&self) -> ::std::option::Option<&[crate::types::EventSelector]> {
-        self.event_selectors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_selectors.is_none()`.
+    pub fn event_selectors(&self) -> &[crate::types::EventSelector] {
+        self.event_selectors.as_deref().unwrap_or_default()
     }
     /// <p> The advanced event selectors that are configured for the trail. </p>
-    pub fn advanced_event_selectors(&self) -> ::std::option::Option<&[crate::types::AdvancedEventSelector]> {
-        self.advanced_event_selectors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.advanced_event_selectors.is_none()`.
+    pub fn advanced_event_selectors(&self) -> &[crate::types::AdvancedEventSelector] {
+        self.advanced_event_selectors.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetEventSelectorsOutput {

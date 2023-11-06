@@ -34,6 +34,7 @@ pub struct PutDefaultEncryptionConfigurationInputBuilder {
 }
 impl PutDefaultEncryptionConfigurationInputBuilder {
     /// <p>The type of encryption used for the encryption configuration.</p>
+    /// This field is required.
     pub fn encryption_type(mut self, input: crate::types::EncryptionType) -> Self {
         self.encryption_type = ::std::option::Option::Some(input);
         self
@@ -66,7 +67,7 @@ impl PutDefaultEncryptionConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationInput {

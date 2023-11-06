@@ -31,12 +31,12 @@ pub fn de_create_vod_source_http_response(
 
 pub fn ser_create_vod_source_input(
     input: &crate::operation::create_vod_source::CreateVodSourceInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_vod_source_input::ser_create_vod_source_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_create_vod_source(
@@ -82,7 +82,7 @@ pub(crate) fn de_create_vod_source(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape___map_of__string::de___map_of__string(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens)?);
                 }
                 "VodSourceName" => {
                     builder = builder.set_vod_source_name(

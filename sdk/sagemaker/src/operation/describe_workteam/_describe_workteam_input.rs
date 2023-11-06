@@ -27,6 +27,7 @@ pub struct DescribeWorkteamInputBuilder {
 }
 impl DescribeWorkteamInputBuilder {
     /// <p>The name of the work team to return a description of.</p>
+    /// This field is required.
     pub fn workteam_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workteam_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeWorkteamInputBuilder {
     /// Consumes the builder and constructs a [`DescribeWorkteamInput`](crate::operation::describe_workteam::DescribeWorkteamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_workteam::DescribeWorkteamInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_workteam::DescribeWorkteamInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_workteam::DescribeWorkteamInput {
             workteam_name: self.workteam_name,
         })

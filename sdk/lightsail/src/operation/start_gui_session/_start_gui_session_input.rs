@@ -27,6 +27,7 @@ pub struct StartGuiSessionInputBuilder {
 }
 impl StartGuiSessionInputBuilder {
     /// <p>The resource name.</p>
+    /// This field is required.
     pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl StartGuiSessionInputBuilder {
     /// Consumes the builder and constructs a [`StartGuiSessionInput`](crate::operation::start_gui_session::StartGuiSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_gui_session::StartGuiSessionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_gui_session::StartGuiSessionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_gui_session::StartGuiSessionInput {
             resource_name: self.resource_name,
         })

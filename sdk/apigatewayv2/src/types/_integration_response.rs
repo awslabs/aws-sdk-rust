@@ -106,6 +106,7 @@ impl IntegrationResponseBuilder {
         &self.integration_response_id
     }
     /// <p>The integration response key.</p>
+    /// This field is required.
     pub fn integration_response_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.integration_response_key = ::std::option::Option::Some(input.into());
         self

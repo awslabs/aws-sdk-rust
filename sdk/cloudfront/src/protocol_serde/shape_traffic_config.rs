@@ -2,7 +2,7 @@
 pub fn ser_traffic_config(
     input: &crate::types::TrafficConfig,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_1) = &input.single_weight_config {
@@ -13,14 +13,15 @@ pub fn ser_traffic_config(
         let inner_writer = scope.start_el("SingleHeaderConfig");
         crate::protocol_serde::shape_continuous_deployment_single_header_config::ser_continuous_deployment_single_header_config(var_2, inner_writer)?
     }
-    if let Some(var_3) = &input.r#type {
+    {
         let mut inner_writer = scope.start_el("Type").finish();
-        inner_writer.data(var_3.as_str());
+        inner_writer.data(input.r#type.as_str());
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_traffic_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::TrafficConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -29,27 +30,27 @@ pub fn de_traffic_config(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("SingleWeightConfig") /* SingleWeightConfig com.amazonaws.cloudfront#TrafficConfig$SingleWeightConfig */ =>  {
-                let var_4 =
+                let var_3 =
                     Some(
                         crate::protocol_serde::shape_continuous_deployment_single_weight_config::de_continuous_deployment_single_weight_config(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_single_weight_config(var_4);
+                builder = builder.set_single_weight_config(var_3);
             }
             ,
             s if s.matches("SingleHeaderConfig") /* SingleHeaderConfig com.amazonaws.cloudfront#TrafficConfig$SingleHeaderConfig */ =>  {
-                let var_5 =
+                let var_4 =
                     Some(
                         crate::protocol_serde::shape_continuous_deployment_single_header_config::de_continuous_deployment_single_header_config(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_single_header_config(var_5);
+                builder = builder.set_single_header_config(var_4);
             }
             ,
             s if s.matches("Type") /* Type com.amazonaws.cloudfront#TrafficConfig$Type */ =>  {
-                let var_6 =
+                let var_5 =
                     Some(
                         Result::<crate::types::ContinuousDeploymentPolicyType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::ContinuousDeploymentPolicyType::from(
@@ -59,11 +60,13 @@ pub fn de_traffic_config(
                         ?
                     )
                 ;
-                builder = builder.set_type(var_6);
+                builder = builder.set_type(var_5);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::traffic_config_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

@@ -20,12 +20,16 @@ impl EnableEnhancedMonitoringOutput {
         self.stream_name.as_deref()
     }
     /// <p>Represents the current state of the metrics that are in the enhanced state before the operation.</p>
-    pub fn current_shard_level_metrics(&self) -> ::std::option::Option<&[crate::types::MetricsName]> {
-        self.current_shard_level_metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.current_shard_level_metrics.is_none()`.
+    pub fn current_shard_level_metrics(&self) -> &[crate::types::MetricsName] {
+        self.current_shard_level_metrics.as_deref().unwrap_or_default()
     }
     /// <p>Represents the list of all the metrics that would be in the enhanced state after the operation.</p>
-    pub fn desired_shard_level_metrics(&self) -> ::std::option::Option<&[crate::types::MetricsName]> {
-        self.desired_shard_level_metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.desired_shard_level_metrics.is_none()`.
+    pub fn desired_shard_level_metrics(&self) -> &[crate::types::MetricsName] {
+        self.desired_shard_level_metrics.as_deref().unwrap_or_default()
     }
     /// <p>The ARN of the stream.</p>
     pub fn stream_arn(&self) -> ::std::option::Option<&str> {

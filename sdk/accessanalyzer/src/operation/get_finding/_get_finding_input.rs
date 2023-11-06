@@ -35,6 +35,7 @@ pub struct GetFindingInputBuilder {
 }
 impl GetFindingInputBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> that generated the finding.</p>
+    /// This field is required.
     pub fn analyzer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analyzer_arn = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl GetFindingInputBuilder {
         &self.analyzer_arn
     }
     /// <p>The ID of the finding to retrieve.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -63,7 +65,7 @@ impl GetFindingInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetFindingInput`](crate::operation::get_finding::GetFindingInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_finding::GetFindingInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_finding::GetFindingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_finding::GetFindingInput {
             analyzer_arn: self.analyzer_arn,
             id: self.id,

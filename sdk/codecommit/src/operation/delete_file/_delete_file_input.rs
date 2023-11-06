@@ -76,6 +76,7 @@ pub struct DeleteFileInputBuilder {
 }
 impl DeleteFileInputBuilder {
     /// <p>The name of the repository that contains the file to delete.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +91,7 @@ impl DeleteFileInputBuilder {
         &self.repository_name
     }
     /// <p>The name of the branch where the commit that deletes the file is made.</p>
+    /// This field is required.
     pub fn branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch_name = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +106,7 @@ impl DeleteFileInputBuilder {
         &self.branch_name
     }
     /// <p>The fully qualified path to the file that to be deleted, including the full name and extension of that file. For example, /examples/file.md is a fully qualified path to a file named file.md in a folder named examples.</p>
+    /// This field is required.
     pub fn file_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_path = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +121,7 @@ impl DeleteFileInputBuilder {
         &self.file_path
     }
     /// <p>The ID of the commit that is the tip of the branch where you want to create the commit that deletes the file. This must be the HEAD commit for the branch. The commit that deletes the file is created from this commit ID.</p>
+    /// This field is required.
     pub fn parent_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_commit_id = ::std::option::Option::Some(input.into());
         self
@@ -188,7 +192,7 @@ impl DeleteFileInputBuilder {
         &self.email
     }
     /// Consumes the builder and constructs a [`DeleteFileInput`](crate::operation::delete_file::DeleteFileInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_file::DeleteFileInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_file::DeleteFileInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_file::DeleteFileInput {
             repository_name: self.repository_name,
             branch_name: self.branch_name,

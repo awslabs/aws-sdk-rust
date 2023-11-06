@@ -7,7 +7,7 @@ pub struct DescribedSecurityPolicy {
     /// <p>Specifies whether this policy enables Federal Information Processing Standards (FIPS).</p>
     pub fips: ::std::option::Option<bool>,
     /// <p>Specifies the name of the security policy that is attached to the server.</p>
-    pub security_policy_name: ::std::option::Option<::std::string::String>,
+    pub security_policy_name: ::std::string::String,
     /// <p>Specifies the enabled Secure Shell (SSH) cipher encryption algorithms in the security policy that is attached to the server.</p>
     pub ssh_ciphers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the enabled SSH key exchange (KEX) encryption algorithms in the security policy that is attached to the server.</p>
@@ -23,24 +23,33 @@ impl DescribedSecurityPolicy {
         self.fips
     }
     /// <p>Specifies the name of the security policy that is attached to the server.</p>
-    pub fn security_policy_name(&self) -> ::std::option::Option<&str> {
-        self.security_policy_name.as_deref()
+    pub fn security_policy_name(&self) -> &str {
+        use std::ops::Deref;
+        self.security_policy_name.deref()
     }
     /// <p>Specifies the enabled Secure Shell (SSH) cipher encryption algorithms in the security policy that is attached to the server.</p>
-    pub fn ssh_ciphers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ssh_ciphers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ssh_ciphers.is_none()`.
+    pub fn ssh_ciphers(&self) -> &[::std::string::String] {
+        self.ssh_ciphers.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the enabled SSH key exchange (KEX) encryption algorithms in the security policy that is attached to the server.</p>
-    pub fn ssh_kexs(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ssh_kexs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ssh_kexs.is_none()`.
+    pub fn ssh_kexs(&self) -> &[::std::string::String] {
+        self.ssh_kexs.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the enabled SSH message authentication code (MAC) encryption algorithms in the security policy that is attached to the server.</p>
-    pub fn ssh_macs(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ssh_macs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ssh_macs.is_none()`.
+    pub fn ssh_macs(&self) -> &[::std::string::String] {
+        self.ssh_macs.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the enabled Transport Layer Security (TLS) cipher encryption algorithms in the security policy that is attached to the server.</p>
-    pub fn tls_ciphers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tls_ciphers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tls_ciphers.is_none()`.
+    pub fn tls_ciphers(&self) -> &[::std::string::String] {
+        self.tls_ciphers.as_deref().unwrap_or_default()
     }
 }
 impl DescribedSecurityPolicy {
@@ -77,6 +86,7 @@ impl DescribedSecurityPolicyBuilder {
         &self.fips
     }
     /// <p>Specifies the name of the security policy that is attached to the server.</p>
+    /// This field is required.
     pub fn security_policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_policy_name = ::std::option::Option::Some(input.into());
         self
@@ -171,14 +181,21 @@ impl DescribedSecurityPolicyBuilder {
         &self.tls_ciphers
     }
     /// Consumes the builder and constructs a [`DescribedSecurityPolicy`](crate::types::DescribedSecurityPolicy).
-    pub fn build(self) -> crate::types::DescribedSecurityPolicy {
-        crate::types::DescribedSecurityPolicy {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`security_policy_name`](crate::types::builders::DescribedSecurityPolicyBuilder::security_policy_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::DescribedSecurityPolicy, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DescribedSecurityPolicy {
             fips: self.fips,
-            security_policy_name: self.security_policy_name,
+            security_policy_name: self.security_policy_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "security_policy_name",
+                    "security_policy_name was not specified but it is required when building DescribedSecurityPolicy",
+                )
+            })?,
             ssh_ciphers: self.ssh_ciphers,
             ssh_kexs: self.ssh_kexs,
             ssh_macs: self.ssh_macs,
             tls_ciphers: self.tls_ciphers,
-        }
+        })
     }
 }

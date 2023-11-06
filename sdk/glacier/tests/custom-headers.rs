@@ -5,16 +5,16 @@
 
 use aws_sdk_glacier::config::{Credentials, Region};
 use aws_sdk_glacier::primitives::ByteStream;
-use aws_smithy_client::test_connection::capture_request;
 use aws_smithy_protocol_test::{assert_ok, validate_headers};
+use aws_smithy_runtime::client::http::test_util::capture_request;
 
 #[tokio::test]
 async fn set_correct_headers() {
-    let (conn, handler) = capture_request(None);
+    let (http_client, handler) = capture_request(None);
     let conf = aws_sdk_glacier::Config::builder()
         .region(Region::new("us-east-1"))
         .credentials_provider(Credentials::for_tests())
-        .http_connector(conn)
+        .http_client(http_client)
         .build();
 
     let client = aws_sdk_glacier::Client::from_conf(conf);
@@ -42,11 +42,11 @@ async fn set_correct_headers() {
 
 #[tokio::test]
 async fn autofill_account_id() {
-    let (conn, handler) = capture_request(None);
+    let (http_client, handler) = capture_request(None);
     let conf = aws_sdk_glacier::Config::builder()
         .region(Region::new("us-east-1"))
         .credentials_provider(Credentials::for_tests())
-        .http_connector(conn)
+        .http_client(http_client)
         .build();
 
     let client = aws_sdk_glacier::Client::from_conf(conf);
@@ -58,18 +58,18 @@ async fn autofill_account_id() {
         .await;
     let req = handler.expect_request();
     assert_eq!(
-        "/-/vaults/vault/multipart-uploads/some%2Fupload%2Fid",
-        req.uri().path()
+        "https://glacier.us-east-1.amazonaws.com/-/vaults/vault/multipart-uploads/some%2Fupload%2Fid",
+        req.uri()
     );
 }
 
 #[tokio::test]
 async fn api_version_set() {
-    let (conn, handler) = capture_request(None);
+    let (http_client, handler) = capture_request(None);
     let conf = aws_sdk_glacier::Config::builder()
         .region(Region::new("us-east-1"))
         .credentials_provider(Credentials::for_tests())
-        .http_connector(conn)
+        .http_client(http_client)
         .build();
 
     let client = aws_sdk_glacier::Client::from_conf(conf);

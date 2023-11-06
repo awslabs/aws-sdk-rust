@@ -37,8 +37,10 @@ impl LoadBalancerTlsCertificateRenewalSummary {
         self.renewal_status.as_ref()
     }
     /// <p>Contains information about the validation of each domain name in the certificate, as it pertains to Lightsail's managed renewal. This is different from the initial validation that occurs as a result of the RequestCertificate request.</p>
-    pub fn domain_validation_options(&self) -> ::std::option::Option<&[crate::types::LoadBalancerTlsCertificateDomainValidationOption]> {
-        self.domain_validation_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domain_validation_options.is_none()`.
+    pub fn domain_validation_options(&self) -> &[crate::types::LoadBalancerTlsCertificateDomainValidationOption] {
+        self.domain_validation_options.as_deref().unwrap_or_default()
     }
 }
 impl LoadBalancerTlsCertificateRenewalSummary {

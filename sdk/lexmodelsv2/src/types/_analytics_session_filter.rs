@@ -34,7 +34,7 @@ pub struct AnalyticsSessionFilter {
     /// <li> <p> <code>OriginatingRequestId</code> – The identifier of the first request in a session.</p> </li>
     /// <li> <p> <code>IntentPath</code> – The order of intents taken in a session.</p> </li>
     /// </ul>
-    pub name: ::std::option::Option<crate::types::AnalyticsSessionFilterName>,
+    pub name: crate::types::AnalyticsSessionFilterName,
     /// <p>The operation by which to filter the category. The following operations are possible:</p>
     /// <ul>
     /// <li> <p> <code>CO</code> – Contains</p> </li>
@@ -55,9 +55,9 @@ pub struct AnalyticsSessionFilter {
     /// <li> <p> <code>OriginatingRequestId</code> – <code>EQ</code>.</p> </li>
     /// <li> <p> <code>IntentPath</code> – <code>EQ</code>.</p> </li>
     /// </ul>
-    pub operator: ::std::option::Option<crate::types::AnalyticsFilterOperator>,
+    pub operator: crate::types::AnalyticsFilterOperator,
     /// <p>An array containing the values of the category by which to apply the operator to filter the results. You can provide multiple values if the operator is <code>EQ</code> or <code>CO</code>. If you provide multiple values, you filter for results that equal/contain any of the values. For example, if the <code>name</code>, <code>operator</code>, and <code>values</code> fields are <code>Modality</code>, <code>EQ</code>, and <code>[Speech, Text]</code>, the operation filters for results where the modality was either <code>Speech</code> or <code>Text</code>.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::vec::Vec<::std::string::String>,
 }
 impl AnalyticsSessionFilter {
     /// <p>The category by which to filter the sessions. The descriptions for each option are as follows:</p>
@@ -73,8 +73,8 @@ impl AnalyticsSessionFilter {
     /// <li> <p> <code>OriginatingRequestId</code> – The identifier of the first request in a session.</p> </li>
     /// <li> <p> <code>IntentPath</code> – The order of intents taken in a session.</p> </li>
     /// </ul>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::AnalyticsSessionFilterName> {
-        self.name.as_ref()
+    pub fn name(&self) -> &crate::types::AnalyticsSessionFilterName {
+        &self.name
     }
     /// <p>The operation by which to filter the category. The following operations are possible:</p>
     /// <ul>
@@ -96,12 +96,13 @@ impl AnalyticsSessionFilter {
     /// <li> <p> <code>OriginatingRequestId</code> – <code>EQ</code>.</p> </li>
     /// <li> <p> <code>IntentPath</code> – <code>EQ</code>.</p> </li>
     /// </ul>
-    pub fn operator(&self) -> ::std::option::Option<&crate::types::AnalyticsFilterOperator> {
-        self.operator.as_ref()
+    pub fn operator(&self) -> &crate::types::AnalyticsFilterOperator {
+        &self.operator
     }
     /// <p>An array containing the values of the category by which to apply the operator to filter the results. You can provide multiple values if the operator is <code>EQ</code> or <code>CO</code>. If you provide multiple values, you filter for results that equal/contain any of the values. For example, if the <code>name</code>, <code>operator</code>, and <code>values</code> fields are <code>Modality</code>, <code>EQ</code>, and <code>[Speech, Text]</code>, the operation filters for results where the modality was either <code>Speech</code> or <code>Text</code>.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    pub fn values(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.values.deref()
     }
 }
 impl AnalyticsSessionFilter {
@@ -133,6 +134,7 @@ impl AnalyticsSessionFilterBuilder {
     /// <li> <p> <code>OriginatingRequestId</code> – The identifier of the first request in a session.</p> </li>
     /// <li> <p> <code>IntentPath</code> – The order of intents taken in a session.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::AnalyticsSessionFilterName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -190,6 +192,7 @@ impl AnalyticsSessionFilterBuilder {
     /// <li> <p> <code>OriginatingRequestId</code> – <code>EQ</code>.</p> </li>
     /// <li> <p> <code>IntentPath</code> – <code>EQ</code>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn operator(mut self, input: crate::types::AnalyticsFilterOperator) -> Self {
         self.operator = ::std::option::Option::Some(input);
         self
@@ -262,11 +265,30 @@ impl AnalyticsSessionFilterBuilder {
         &self.values
     }
     /// Consumes the builder and constructs a [`AnalyticsSessionFilter`](crate::types::AnalyticsSessionFilter).
-    pub fn build(self) -> crate::types::AnalyticsSessionFilter {
-        crate::types::AnalyticsSessionFilter {
-            name: self.name,
-            operator: self.operator,
-            values: self.values,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::AnalyticsSessionFilterBuilder::name)
+    /// - [`operator`](crate::types::builders::AnalyticsSessionFilterBuilder::operator)
+    /// - [`values`](crate::types::builders::AnalyticsSessionFilterBuilder::values)
+    pub fn build(self) -> ::std::result::Result<crate::types::AnalyticsSessionFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AnalyticsSessionFilter {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building AnalyticsSessionFilter",
+                )
+            })?,
+            operator: self.operator.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "operator",
+                    "operator was not specified but it is required when building AnalyticsSessionFilter",
+                )
+            })?,
+            values: self.values.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "values",
+                    "values was not specified but it is required when building AnalyticsSessionFilter",
+                )
+            })?,
+        })
     }
 }

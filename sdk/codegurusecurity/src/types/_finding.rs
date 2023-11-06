@@ -87,8 +87,10 @@ impl Finding {
         self.title.as_deref()
     }
     /// <p>One or more tags or categorizations that are associated with a detector. These tags are defined by type, programming language, or other classification such as maintainability or consistency.</p>
-    pub fn detector_tags(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.detector_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.detector_tags.is_none()`.
+    pub fn detector_tags(&self) -> &[::std::string::String] {
+        self.detector_tags.as_deref().unwrap_or_default()
     }
     /// <p>The identifier for the detector that detected the finding in your code. A detector is a defined rule based on industry standards and AWS best practices. </p>
     pub fn detector_id(&self) -> ::std::option::Option<&str> {

@@ -3,13 +3,13 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetFormType`](crate::operation::get_form_type::builders::GetFormTypeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_identifier(impl Into<String>)`](crate::operation::get_form_type::builders::GetFormTypeFluentBuilder::domain_identifier) / [`set_domain_identifier(Option<String>)`](crate::operation::get_form_type::builders::GetFormTypeFluentBuilder::set_domain_identifier): <p>The ID of the Amazon DataZone domain in which this metadata form type exists.</p>
-    ///   - [`form_type_identifier(impl Into<String>)`](crate::operation::get_form_type::builders::GetFormTypeFluentBuilder::form_type_identifier) / [`set_form_type_identifier(Option<String>)`](crate::operation::get_form_type::builders::GetFormTypeFluentBuilder::set_form_type_identifier): <p>The ID of the metadata form type.</p>
-    ///   - [`revision(impl Into<String>)`](crate::operation::get_form_type::builders::GetFormTypeFluentBuilder::revision) / [`set_revision(Option<String>)`](crate::operation::get_form_type::builders::GetFormTypeFluentBuilder::set_revision): <p>The revision of this metadata form type.</p>
+    ///   - [`domain_identifier(impl Into<String>)`](crate::operation::get_form_type::builders::GetFormTypeFluentBuilder::domain_identifier) / [`set_domain_identifier(Option<String>)`](crate::operation::get_form_type::builders::GetFormTypeFluentBuilder::set_domain_identifier):<br>required: **true**<br><p>The ID of the Amazon DataZone domain in which this metadata form type exists.</p><br>
+    ///   - [`form_type_identifier(impl Into<String>)`](crate::operation::get_form_type::builders::GetFormTypeFluentBuilder::form_type_identifier) / [`set_form_type_identifier(Option<String>)`](crate::operation::get_form_type::builders::GetFormTypeFluentBuilder::set_form_type_identifier):<br>required: **true**<br><p>The ID of the metadata form type.</p><br>
+    ///   - [`revision(impl Into<String>)`](crate::operation::get_form_type::builders::GetFormTypeFluentBuilder::revision) / [`set_revision(Option<String>)`](crate::operation::get_form_type::builders::GetFormTypeFluentBuilder::set_revision):<br>required: **false**<br><p>The revision of this metadata form type.</p><br>
     /// - On success, responds with [`GetFormTypeOutput`](crate::operation::get_form_type::GetFormTypeOutput) with field(s):
-    ///   - [`domain_id(Option<String>)`](crate::operation::get_form_type::GetFormTypeOutput::domain_id): <p>The ID of the Amazon DataZone domain in which this metadata form type exists.</p>
-    ///   - [`name(Option<String>)`](crate::operation::get_form_type::GetFormTypeOutput::name): <p>The name of the metadata form type.</p>
-    ///   - [`revision(Option<String>)`](crate::operation::get_form_type::GetFormTypeOutput::revision): <p>The revision of the metadata form type.</p>
+    ///   - [`domain_id(String)`](crate::operation::get_form_type::GetFormTypeOutput::domain_id): <p>The ID of the Amazon DataZone domain in which this metadata form type exists.</p>
+    ///   - [`name(String)`](crate::operation::get_form_type::GetFormTypeOutput::name): <p>The name of the metadata form type.</p>
+    ///   - [`revision(String)`](crate::operation::get_form_type::GetFormTypeOutput::revision): <p>The revision of the metadata form type.</p>
     ///   - [`model(Option<Model>)`](crate::operation::get_form_type::GetFormTypeOutput::model): <p>The model of the metadata form type.</p>
     ///   - [`owning_project_id(Option<String>)`](crate::operation::get_form_type::GetFormTypeOutput::owning_project_id): <p>The ID of the project that owns this metadata form type.</p>
     ///   - [`origin_domain_id(Option<String>)`](crate::operation::get_form_type::GetFormTypeOutput::origin_domain_id): <p>The ID of the Amazon DataZone domain in which the metadata form type was originally created.</p>
@@ -18,7 +18,7 @@ impl super::Client {
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_form_type::GetFormTypeOutput::created_at): <p>The timestamp of when this metadata form type was created.</p>
     ///   - [`created_by(Option<String>)`](crate::operation::get_form_type::GetFormTypeOutput::created_by): <p>The Amazon DataZone user who created this metadata form type.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_form_type::GetFormTypeOutput::description): <p>The description of the metadata form type.</p>
-    ///   - [`imports(Option<Vec<Import>>)`](crate::operation::get_form_type::GetFormTypeOutput::imports): <p>The imports of the metadata form type.</p>
+    ///   - [`imports(Option<Vec::<Import>>)`](crate::operation::get_form_type::GetFormTypeOutput::imports): <p>The imports of the metadata form type.</p>
     /// - On failure, responds with [`SdkError<GetFormTypeError>`](crate::operation::get_form_type::GetFormTypeError)
     pub fn get_form_type(&self) -> crate::operation::get_form_type::builders::GetFormTypeFluentBuilder {
         crate::operation::get_form_type::builders::GetFormTypeFluentBuilder::new(self.handle.clone())

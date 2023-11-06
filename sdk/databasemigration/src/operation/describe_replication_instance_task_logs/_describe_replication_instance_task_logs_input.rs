@@ -45,6 +45,7 @@ pub struct DescribeReplicationInstanceTaskLogsInputBuilder {
 }
 impl DescribeReplicationInstanceTaskLogsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+    /// This field is required.
     pub fn replication_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_instance_arn = ::std::option::Option::Some(input.into());
         self
@@ -97,7 +98,7 @@ impl DescribeReplicationInstanceTaskLogsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_replication_instance_task_logs::DescribeReplicationInstanceTaskLogsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_replication_instance_task_logs::DescribeReplicationInstanceTaskLogsInput {

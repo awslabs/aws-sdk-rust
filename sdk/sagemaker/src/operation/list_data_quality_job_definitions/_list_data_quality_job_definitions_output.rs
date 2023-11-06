@@ -11,8 +11,10 @@ pub struct ListDataQualityJobDefinitionsOutput {
 }
 impl ListDataQualityJobDefinitionsOutput {
     /// <p>A list of data quality monitoring job definitions.</p>
-    pub fn job_definition_summaries(&self) -> ::std::option::Option<&[crate::types::MonitoringJobDefinitionSummary]> {
-        self.job_definition_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_definition_summaries.is_none()`.
+    pub fn job_definition_summaries(&self) -> &[crate::types::MonitoringJobDefinitionSummary] {
+        self.job_definition_summaries.as_deref().unwrap_or_default()
     }
     /// <p>If the result of the previous <code>ListDataQualityJobDefinitions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of data quality monitoring job definitions, use the token in the next request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

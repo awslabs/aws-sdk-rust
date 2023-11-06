@@ -57,6 +57,7 @@ impl DescribeWorkflowTypeOutputBuilder {
     /// <li> <p> <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running.</p> </li>
     /// <li> <p> <code>DEPRECATED</code> – The type was deprecated using <code>DeprecateWorkflowType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new workflow executions of this type.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn type_info(mut self, input: crate::types::WorkflowTypeInfo) -> Self {
         self.type_info = ::std::option::Option::Some(input);
         self
@@ -81,6 +82,7 @@ impl DescribeWorkflowTypeOutputBuilder {
         &self.type_info
     }
     /// <p>Configuration settings of the workflow type registered through <code>RegisterWorkflowType</code> </p>
+    /// This field is required.
     pub fn configuration(mut self, input: crate::types::WorkflowTypeConfiguration) -> Self {
         self.configuration = ::std::option::Option::Some(input);
         self

@@ -6,7 +6,7 @@ pub struct ListDevicesInput {
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of devices to return in one page of results.</p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>The target column to be sorted on. Default column sort is CREATED_TIME.</p>
     pub sort_by: ::std::option::Option<crate::types::ListDevicesSortBy>,
     /// <p>The sorting order for the returned list. SortOrder is DESCENDING by default based on CREATED_TIME. Otherwise, SortOrder is ASCENDING.</p>
@@ -22,7 +22,7 @@ impl ListDevicesInput {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of devices to return in one page of results.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The target column to be sorted on. Default column sort is CREATED_TIME.</p>
@@ -146,10 +146,10 @@ impl ListDevicesInputBuilder {
         &self.device_aggregated_status_filter
     }
     /// Consumes the builder and constructs a [`ListDevicesInput`](crate::operation::list_devices::ListDevicesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_devices::ListDevicesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_devices::ListDevicesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_devices::ListDevicesInput {
             next_token: self.next_token,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             sort_by: self.sort_by,
             sort_order: self.sort_order,
             name_filter: self.name_filter,

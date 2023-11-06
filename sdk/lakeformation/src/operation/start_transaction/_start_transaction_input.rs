@@ -43,7 +43,7 @@ impl StartTransactionInputBuilder {
     /// Consumes the builder and constructs a [`StartTransactionInput`](crate::operation::start_transaction::StartTransactionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_transaction::StartTransactionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_transaction::StartTransactionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_transaction::StartTransactionInput {
             transaction_type: self.transaction_type,
         })

@@ -12,8 +12,10 @@ pub struct CreateJobForDevicesInput {
 }
 impl CreateJobForDevicesInput {
     /// <p>ID of target device.</p>
-    pub fn device_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.device_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.device_ids.is_none()`.
+    pub fn device_ids(&self) -> &[::std::string::String] {
+        self.device_ids.as_deref().unwrap_or_default()
     }
     /// <p>Configuration settings for a software update job.</p>
     pub fn device_job_config(&self) -> ::std::option::Option<&crate::types::DeviceJobConfig> {
@@ -75,6 +77,7 @@ impl CreateJobForDevicesInputBuilder {
         &self.device_job_config
     }
     /// <p>The type of job to run.</p>
+    /// This field is required.
     pub fn job_type(mut self, input: crate::types::JobType) -> Self {
         self.job_type = ::std::option::Option::Some(input);
         self
@@ -91,7 +94,7 @@ impl CreateJobForDevicesInputBuilder {
     /// Consumes the builder and constructs a [`CreateJobForDevicesInput`](crate::operation::create_job_for_devices::CreateJobForDevicesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_job_for_devices::CreateJobForDevicesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_job_for_devices::CreateJobForDevicesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_job_for_devices::CreateJobForDevicesInput {
             device_ids: self.device_ids,

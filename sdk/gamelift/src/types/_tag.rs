@@ -40,6 +40,7 @@ pub struct TagBuilder {
 }
 impl TagBuilder {
     /// <p>The key for a developer-defined key value pair for tagging an Amazon Web Services resource. </p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -54,6 +55,7 @@ impl TagBuilder {
         &self.key
     }
     /// <p>The value for a developer-defined key value pair for tagging an Amazon Web Services resource. </p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self

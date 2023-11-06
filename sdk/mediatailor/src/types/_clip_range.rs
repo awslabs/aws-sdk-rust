@@ -28,6 +28,7 @@ pub struct ClipRangeBuilder {
 }
 impl ClipRangeBuilder {
     /// <p>The end offset of the clip range, in milliseconds, starting from the beginning of the VOD source associated with the program.</p>
+    /// This field is required.
     pub fn end_offset_millis(mut self, input: i64) -> Self {
         self.end_offset_millis = ::std::option::Option::Some(input);
         self

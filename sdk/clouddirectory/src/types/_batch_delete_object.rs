@@ -28,6 +28,7 @@ pub struct BatchDeleteObjectBuilder {
 }
 impl BatchDeleteObjectBuilder {
     /// <p>The reference that identifies the object.</p>
+    /// This field is required.
     pub fn object_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.object_reference = ::std::option::Option::Some(input);
         self

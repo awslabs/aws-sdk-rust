@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListStateMachineVersionsOutput {
     /// <p>Versions for the state machine.</p>
-    pub state_machine_versions: ::std::option::Option<::std::vec::Vec<crate::types::StateMachineVersionListItem>>,
+    pub state_machine_versions: ::std::vec::Vec<crate::types::StateMachineVersionListItem>,
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListStateMachineVersionsOutput {
     /// <p>Versions for the state machine.</p>
-    pub fn state_machine_versions(&self) -> ::std::option::Option<&[crate::types::StateMachineVersionListItem]> {
-        self.state_machine_versions.as_deref()
+    pub fn state_machine_versions(&self) -> &[crate::types::StateMachineVersionListItem] {
+        use std::ops::Deref;
+        self.state_machine_versions.deref()
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,23 @@ impl ListStateMachineVersionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListStateMachineVersionsOutput`](crate::operation::list_state_machine_versions::ListStateMachineVersionsOutput).
-    pub fn build(self) -> crate::operation::list_state_machine_versions::ListStateMachineVersionsOutput {
-        crate::operation::list_state_machine_versions::ListStateMachineVersionsOutput {
-            state_machine_versions: self.state_machine_versions,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`state_machine_versions`](crate::operation::list_state_machine_versions::builders::ListStateMachineVersionsOutputBuilder::state_machine_versions)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_state_machine_versions::ListStateMachineVersionsOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_state_machine_versions::ListStateMachineVersionsOutput {
+            state_machine_versions: self.state_machine_versions.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "state_machine_versions",
+                    "state_machine_versions was not specified but it is required when building ListStateMachineVersionsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

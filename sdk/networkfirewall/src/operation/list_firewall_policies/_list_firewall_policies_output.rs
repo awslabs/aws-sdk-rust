@@ -15,8 +15,10 @@ impl ListFirewallPoliciesOutput {
         self.next_token.as_deref()
     }
     /// <p>The metadata for the firewall policies. Depending on your setting for max results and the number of firewall policies that you have, this might not be the full list. </p>
-    pub fn firewall_policies(&self) -> ::std::option::Option<&[crate::types::FirewallPolicyMetadata]> {
-        self.firewall_policies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.firewall_policies.is_none()`.
+    pub fn firewall_policies(&self) -> &[crate::types::FirewallPolicyMetadata] {
+        self.firewall_policies.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListFirewallPoliciesOutput {

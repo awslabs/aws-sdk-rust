@@ -2,7 +2,7 @@
 pub fn ser_tcp_route_match(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TcpRouteMatch,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.port {
         object.key("port").number(
             #[allow(clippy::useless_conversion)]

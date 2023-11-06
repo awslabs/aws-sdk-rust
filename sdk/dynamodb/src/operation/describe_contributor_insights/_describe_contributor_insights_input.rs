@@ -34,6 +34,7 @@ pub struct DescribeContributorInsightsInputBuilder {
 }
 impl DescribeContributorInsightsInputBuilder {
     /// <p>The name of the table to describe.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl DescribeContributorInsightsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_contributor_insights::DescribeContributorInsightsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_contributor_insights::DescribeContributorInsightsInput {
             table_name: self.table_name,

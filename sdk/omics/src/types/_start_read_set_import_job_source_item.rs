@@ -7,15 +7,15 @@ pub struct StartReadSetImportJobSourceItem {
     /// <p>The source files' location in Amazon S3.</p>
     pub source_files: ::std::option::Option<crate::types::SourceFiles>,
     /// <p>The source's file type.</p>
-    pub source_file_type: ::std::option::Option<crate::types::FileType>,
+    pub source_file_type: crate::types::FileType,
     /// <p>The source's subject ID.</p>
-    pub subject_id: ::std::option::Option<::std::string::String>,
+    pub subject_id: ::std::string::String,
     /// <p>The source's sample ID.</p>
-    pub sample_id: ::std::option::Option<::std::string::String>,
+    pub sample_id: ::std::string::String,
     /// <p>Where the source originated.</p>
     pub generated_from: ::std::option::Option<::std::string::String>,
     /// <p>The source's reference ARN.</p>
-    pub reference_arn: ::std::option::Option<::std::string::String>,
+    pub reference_arn: ::std::string::String,
     /// <p>The source's name.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The source's description.</p>
@@ -29,24 +29,27 @@ impl StartReadSetImportJobSourceItem {
         self.source_files.as_ref()
     }
     /// <p>The source's file type.</p>
-    pub fn source_file_type(&self) -> ::std::option::Option<&crate::types::FileType> {
-        self.source_file_type.as_ref()
+    pub fn source_file_type(&self) -> &crate::types::FileType {
+        &self.source_file_type
     }
     /// <p>The source's subject ID.</p>
-    pub fn subject_id(&self) -> ::std::option::Option<&str> {
-        self.subject_id.as_deref()
+    pub fn subject_id(&self) -> &str {
+        use std::ops::Deref;
+        self.subject_id.deref()
     }
     /// <p>The source's sample ID.</p>
-    pub fn sample_id(&self) -> ::std::option::Option<&str> {
-        self.sample_id.as_deref()
+    pub fn sample_id(&self) -> &str {
+        use std::ops::Deref;
+        self.sample_id.deref()
     }
     /// <p>Where the source originated.</p>
     pub fn generated_from(&self) -> ::std::option::Option<&str> {
         self.generated_from.as_deref()
     }
     /// <p>The source's reference ARN.</p>
-    pub fn reference_arn(&self) -> ::std::option::Option<&str> {
-        self.reference_arn.as_deref()
+    pub fn reference_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.reference_arn.deref()
     }
     /// <p>The source's name.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -84,6 +87,7 @@ pub struct StartReadSetImportJobSourceItemBuilder {
 }
 impl StartReadSetImportJobSourceItemBuilder {
     /// <p>The source files' location in Amazon S3.</p>
+    /// This field is required.
     pub fn source_files(mut self, input: crate::types::SourceFiles) -> Self {
         self.source_files = ::std::option::Option::Some(input);
         self
@@ -98,6 +102,7 @@ impl StartReadSetImportJobSourceItemBuilder {
         &self.source_files
     }
     /// <p>The source's file type.</p>
+    /// This field is required.
     pub fn source_file_type(mut self, input: crate::types::FileType) -> Self {
         self.source_file_type = ::std::option::Option::Some(input);
         self
@@ -112,6 +117,7 @@ impl StartReadSetImportJobSourceItemBuilder {
         &self.source_file_type
     }
     /// <p>The source's subject ID.</p>
+    /// This field is required.
     pub fn subject_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subject_id = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +132,7 @@ impl StartReadSetImportJobSourceItemBuilder {
         &self.subject_id
     }
     /// <p>The source's sample ID.</p>
+    /// This field is required.
     pub fn sample_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sample_id = ::std::option::Option::Some(input.into());
         self
@@ -154,6 +161,7 @@ impl StartReadSetImportJobSourceItemBuilder {
         &self.generated_from
     }
     /// <p>The source's reference ARN.</p>
+    /// This field is required.
     pub fn reference_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reference_arn = ::std::option::Option::Some(input.into());
         self
@@ -216,17 +224,42 @@ impl StartReadSetImportJobSourceItemBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`StartReadSetImportJobSourceItem`](crate::types::StartReadSetImportJobSourceItem).
-    pub fn build(self) -> crate::types::StartReadSetImportJobSourceItem {
-        crate::types::StartReadSetImportJobSourceItem {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`source_file_type`](crate::types::builders::StartReadSetImportJobSourceItemBuilder::source_file_type)
+    /// - [`subject_id`](crate::types::builders::StartReadSetImportJobSourceItemBuilder::subject_id)
+    /// - [`sample_id`](crate::types::builders::StartReadSetImportJobSourceItemBuilder::sample_id)
+    /// - [`reference_arn`](crate::types::builders::StartReadSetImportJobSourceItemBuilder::reference_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::StartReadSetImportJobSourceItem, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::StartReadSetImportJobSourceItem {
             source_files: self.source_files,
-            source_file_type: self.source_file_type,
-            subject_id: self.subject_id,
-            sample_id: self.sample_id,
+            source_file_type: self.source_file_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "source_file_type",
+                    "source_file_type was not specified but it is required when building StartReadSetImportJobSourceItem",
+                )
+            })?,
+            subject_id: self.subject_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "subject_id",
+                    "subject_id was not specified but it is required when building StartReadSetImportJobSourceItem",
+                )
+            })?,
+            sample_id: self.sample_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "sample_id",
+                    "sample_id was not specified but it is required when building StartReadSetImportJobSourceItem",
+                )
+            })?,
             generated_from: self.generated_from,
-            reference_arn: self.reference_arn,
+            reference_arn: self.reference_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "reference_arn",
+                    "reference_arn was not specified but it is required when building StartReadSetImportJobSourceItem",
+                )
+            })?,
             name: self.name,
             description: self.description,
             tags: self.tags,
-        }
+        })
     }
 }

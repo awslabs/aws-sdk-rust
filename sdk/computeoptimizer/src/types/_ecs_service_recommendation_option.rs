@@ -35,12 +35,16 @@ impl EcsServiceRecommendationOption {
         self.savings_opportunity.as_ref()
     }
     /// <p> An array of objects that describe the projected utilization metrics of the Amazon ECS service recommendation option. </p>
-    pub fn projected_utilization_metrics(&self) -> ::std::option::Option<&[crate::types::EcsServiceProjectedUtilizationMetric]> {
-        self.projected_utilization_metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.projected_utilization_metrics.is_none()`.
+    pub fn projected_utilization_metrics(&self) -> &[crate::types::EcsServiceProjectedUtilizationMetric] {
+        self.projected_utilization_metrics.as_deref().unwrap_or_default()
     }
     /// <p> The CPU and memory size recommendations for the containers within the task of your Amazon ECS service. </p>
-    pub fn container_recommendations(&self) -> ::std::option::Option<&[crate::types::ContainerRecommendation]> {
-        self.container_recommendations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.container_recommendations.is_none()`.
+    pub fn container_recommendations(&self) -> &[crate::types::ContainerRecommendation] {
+        self.container_recommendations.as_deref().unwrap_or_default()
     }
 }
 impl EcsServiceRecommendationOption {

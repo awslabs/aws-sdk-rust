@@ -7,7 +7,7 @@ pub struct Alias {
     /// <p>A friendly name that you can use to refer to a key. The value must begin with <code>alias/</code>.</p> <important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
     /// </important>
-    pub alias_name: ::std::option::Option<::std::string::String>,
+    pub alias_name: ::std::string::String,
     /// <p>The <code>KeyARN</code> of the key associated with the alias.</p>
     pub key_arn: ::std::option::Option<::std::string::String>,
 }
@@ -15,8 +15,9 @@ impl Alias {
     /// <p>A friendly name that you can use to refer to a key. The value must begin with <code>alias/</code>.</p> <important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
     /// </important>
-    pub fn alias_name(&self) -> ::std::option::Option<&str> {
-        self.alias_name.as_deref()
+    pub fn alias_name(&self) -> &str {
+        use std::ops::Deref;
+        self.alias_name.deref()
     }
     /// <p>The <code>KeyARN</code> of the key associated with the alias.</p>
     pub fn key_arn(&self) -> ::std::option::Option<&str> {
@@ -41,6 +42,7 @@ impl AliasBuilder {
     /// <p>A friendly name that you can use to refer to a key. The value must begin with <code>alias/</code>.</p> <important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
     /// </important>
+    /// This field is required.
     pub fn alias_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias_name = ::std::option::Option::Some(input.into());
         self
@@ -73,10 +75,17 @@ impl AliasBuilder {
         &self.key_arn
     }
     /// Consumes the builder and constructs a [`Alias`](crate::types::Alias).
-    pub fn build(self) -> crate::types::Alias {
-        crate::types::Alias {
-            alias_name: self.alias_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`alias_name`](crate::types::builders::AliasBuilder::alias_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::Alias, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Alias {
+            alias_name: self.alias_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "alias_name",
+                    "alias_name was not specified but it is required when building Alias",
+                )
+            })?,
             key_arn: self.key_arn,
-        }
+        })
     }
 }

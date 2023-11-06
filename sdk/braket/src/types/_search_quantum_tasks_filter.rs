@@ -5,24 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchQuantumTasksFilter {
     /// <p>The name of the device used for the task.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The values to use for the filter.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::vec::Vec<::std::string::String>,
     /// <p>An operator to use in the filter.</p>
-    pub operator: ::std::option::Option<crate::types::SearchQuantumTasksFilterOperator>,
+    pub operator: crate::types::SearchQuantumTasksFilterOperator,
 }
 impl SearchQuantumTasksFilter {
     /// <p>The name of the device used for the task.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The values to use for the filter.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    pub fn values(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.values.deref()
     }
     /// <p>An operator to use in the filter.</p>
-    pub fn operator(&self) -> ::std::option::Option<&crate::types::SearchQuantumTasksFilterOperator> {
-        self.operator.as_ref()
+    pub fn operator(&self) -> &crate::types::SearchQuantumTasksFilterOperator {
+        &self.operator
     }
 }
 impl SearchQuantumTasksFilter {
@@ -42,6 +44,7 @@ pub struct SearchQuantumTasksFilterBuilder {
 }
 impl SearchQuantumTasksFilterBuilder {
     /// <p>The name of the device used for the task.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +79,7 @@ impl SearchQuantumTasksFilterBuilder {
         &self.values
     }
     /// <p>An operator to use in the filter.</p>
+    /// This field is required.
     pub fn operator(mut self, input: crate::types::SearchQuantumTasksFilterOperator) -> Self {
         self.operator = ::std::option::Option::Some(input);
         self
@@ -90,11 +94,30 @@ impl SearchQuantumTasksFilterBuilder {
         &self.operator
     }
     /// Consumes the builder and constructs a [`SearchQuantumTasksFilter`](crate::types::SearchQuantumTasksFilter).
-    pub fn build(self) -> crate::types::SearchQuantumTasksFilter {
-        crate::types::SearchQuantumTasksFilter {
-            name: self.name,
-            values: self.values,
-            operator: self.operator,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::SearchQuantumTasksFilterBuilder::name)
+    /// - [`values`](crate::types::builders::SearchQuantumTasksFilterBuilder::values)
+    /// - [`operator`](crate::types::builders::SearchQuantumTasksFilterBuilder::operator)
+    pub fn build(self) -> ::std::result::Result<crate::types::SearchQuantumTasksFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SearchQuantumTasksFilter {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building SearchQuantumTasksFilter",
+                )
+            })?,
+            values: self.values.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "values",
+                    "values was not specified but it is required when building SearchQuantumTasksFilter",
+                )
+            })?,
+            operator: self.operator.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "operator",
+                    "operator was not specified but it is required when building SearchQuantumTasksFilter",
+                )
+            })?,
+        })
     }
 }

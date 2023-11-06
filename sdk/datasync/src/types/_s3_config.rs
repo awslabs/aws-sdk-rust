@@ -6,12 +6,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Config {
     /// <p>The ARN of the IAM role for accessing the S3 bucket. </p>
-    pub bucket_access_role_arn: ::std::option::Option<::std::string::String>,
+    pub bucket_access_role_arn: ::std::string::String,
 }
 impl S3Config {
     /// <p>The ARN of the IAM role for accessing the S3 bucket. </p>
-    pub fn bucket_access_role_arn(&self) -> ::std::option::Option<&str> {
-        self.bucket_access_role_arn.as_deref()
+    pub fn bucket_access_role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket_access_role_arn.deref()
     }
 }
 impl S3Config {
@@ -29,6 +30,7 @@ pub struct S3ConfigBuilder {
 }
 impl S3ConfigBuilder {
     /// <p>The ARN of the IAM role for accessing the S3 bucket. </p>
+    /// This field is required.
     pub fn bucket_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_access_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,9 +45,16 @@ impl S3ConfigBuilder {
         &self.bucket_access_role_arn
     }
     /// Consumes the builder and constructs a [`S3Config`](crate::types::S3Config).
-    pub fn build(self) -> crate::types::S3Config {
-        crate::types::S3Config {
-            bucket_access_role_arn: self.bucket_access_role_arn,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bucket_access_role_arn`](crate::types::builders::S3ConfigBuilder::bucket_access_role_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::S3Config, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::S3Config {
+            bucket_access_role_arn: self.bucket_access_role_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "bucket_access_role_arn",
+                    "bucket_access_role_arn was not specified but it is required when building S3Config",
+                )
+            })?,
+        })
     }
 }

@@ -35,6 +35,7 @@ pub struct UpdateAppOutputBuilder {
 }
 impl UpdateAppOutputBuilder {
     /// <p> Represents the updated Amplify app. </p>
+    /// This field is required.
     pub fn app(mut self, input: crate::types::App) -> Self {
         self.app = ::std::option::Option::Some(input);
         self

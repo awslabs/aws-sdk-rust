@@ -9,37 +9,10 @@
 #![allow(dead_code)]
 
 use crate::client::retries::RetryPartition;
-use aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin;
 use aws_smithy_runtime_api::{builder, builder_methods, builder_struct};
-use aws_smithy_types::config_bag::{FrozenLayer, Layer, Storable, StoreReplace};
 use std::sync::{Arc, Mutex};
 use std::time::Duration;
 use tracing::debug;
-
-/// A [`RuntimePlugin`] to provide a client rate limiter, usable by a retry strategy.
-#[non_exhaustive]
-#[derive(Debug)]
-pub struct ClientRateLimiterRuntimePlugin {
-    rate_limiter: ClientRateLimiter,
-}
-
-impl ClientRateLimiterRuntimePlugin {
-    /// Create a new [`ClientRateLimiterRuntimePlugin`].
-    pub fn new(seconds_since_unix_epoch: f64) -> Self {
-        Self {
-            rate_limiter: ClientRateLimiter::new(seconds_since_unix_epoch),
-        }
-    }
-}
-
-impl RuntimePlugin for ClientRateLimiterRuntimePlugin {
-    fn config(&self) -> Option<FrozenLayer> {
-        let mut cfg = Layer::new("client rate limiter");
-        cfg.store_put(self.rate_limiter.clone());
-
-        Some(cfg.freeze())
-    }
-}
 
 #[doc(hidden)]
 #[non_exhaustive]
@@ -102,10 +75,6 @@ pub(crate) enum RequestReason {
     Retry,
     RetryTimeout,
     InitialRequest,
-}
-
-impl Storable for ClientRateLimiter {
-    type Storer = StoreReplace<Self>;
 }
 
 impl ClientRateLimiter {

@@ -2,7 +2,7 @@
 pub fn ser_aws_efs_access_point_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEfsAccessPointDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.access_point_id {
         object.key("AccessPointId").string(var_1.as_str());
     }

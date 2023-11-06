@@ -2,12 +2,12 @@
 pub fn ser_repository_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RepositoryInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.repository_name {
-        object.key("repositoryName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("repositoryName").string(input.repository_name.as_str());
     }
-    if let Some(var_2) = &input.branch_name {
-        object.key("branchName").string(var_2.as_str());
+    if let Some(var_1) = &input.branch_name {
+        object.key("branchName").string(var_1.as_str());
     }
     Ok(())
 }

@@ -27,6 +27,7 @@ pub struct GetDataQualityResultInputBuilder {
 }
 impl GetDataQualityResultInputBuilder {
     /// <p>A unique result ID for the data quality result.</p>
+    /// This field is required.
     pub fn result_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.result_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetDataQualityResultInputBuilder {
     /// Consumes the builder and constructs a [`GetDataQualityResultInput`](crate::operation::get_data_quality_result::GetDataQualityResultInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_data_quality_result::GetDataQualityResultInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_data_quality_result::GetDataQualityResultInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_data_quality_result::GetDataQualityResultInput { result_id: self.result_id })
     }

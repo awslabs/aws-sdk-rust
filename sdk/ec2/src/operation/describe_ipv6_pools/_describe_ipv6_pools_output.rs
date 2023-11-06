@@ -11,8 +11,10 @@ pub struct DescribeIpv6PoolsOutput {
 }
 impl DescribeIpv6PoolsOutput {
     /// <p>Information about the IPv6 address pools.</p>
-    pub fn ipv6_pools(&self) -> ::std::option::Option<&[crate::types::Ipv6Pool]> {
-        self.ipv6_pools.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv6_pools.is_none()`.
+    pub fn ipv6_pools(&self) -> &[crate::types::Ipv6Pool] {
+        self.ipv6_pools.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -219,7 +219,7 @@ impl ListTypeVersionsInputBuilder {
     /// Consumes the builder and constructs a [`ListTypeVersionsInput`](crate::operation::list_type_versions::ListTypeVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_type_versions::ListTypeVersionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_type_versions::ListTypeVersionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_type_versions::ListTypeVersionsInput {
             r#type: self.r#type,
             type_name: self.type_name,

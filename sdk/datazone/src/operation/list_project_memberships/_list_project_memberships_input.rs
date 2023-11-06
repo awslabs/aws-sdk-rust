@@ -62,6 +62,7 @@ pub struct ListProjectMembershipsInputBuilder {
 }
 impl ListProjectMembershipsInputBuilder {
     /// <p>The identifier of the Amazon DataZone domain in which you want to list project memberships.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl ListProjectMembershipsInputBuilder {
         &self.domain_identifier
     }
     /// <p>The identifier of the project whose memberships you want to list.</p>
+    /// This field is required.
     pub fn project_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_identifier = ::std::option::Option::Some(input.into());
         self
@@ -148,8 +150,10 @@ impl ListProjectMembershipsInputBuilder {
     /// Consumes the builder and constructs a [`ListProjectMembershipsInput`](crate::operation::list_project_memberships::ListProjectMembershipsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_project_memberships::ListProjectMembershipsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::list_project_memberships::ListProjectMembershipsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::list_project_memberships::ListProjectMembershipsInput {
             domain_identifier: self.domain_identifier,
             project_identifier: self.project_identifier,

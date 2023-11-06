@@ -137,7 +137,7 @@ impl ListTaskDefinitionsInputBuilder {
     /// Consumes the builder and constructs a [`ListTaskDefinitionsInput`](crate::operation::list_task_definitions::ListTaskDefinitionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_task_definitions::ListTaskDefinitionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_task_definitions::ListTaskDefinitionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_task_definitions::ListTaskDefinitionsInput {
             family_prefix: self.family_prefix,

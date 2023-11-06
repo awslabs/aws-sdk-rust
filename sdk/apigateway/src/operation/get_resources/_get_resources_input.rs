@@ -27,8 +27,10 @@ impl GetResourcesInput {
         self.limit
     }
     /// <p>A query parameter used to retrieve the specified resources embedded in the returned Resources resource in the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the request supports only retrieval of the embedded Method resources this way. The query parameter value must be a single-valued list and contain the <code>"methods"</code> string. For example, <code>GET /restapis/{restapi_id}/resources?embed=methods</code>.</p>
-    pub fn embed(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.embed.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.embed.is_none()`.
+    pub fn embed(&self) -> &[::std::string::String] {
+        self.embed.as_deref().unwrap_or_default()
     }
 }
 impl GetResourcesInput {
@@ -49,6 +51,7 @@ pub struct GetResourcesInputBuilder {
 }
 impl GetResourcesInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
+    /// This field is required.
     pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rest_api_id = ::std::option::Option::Some(input.into());
         self
@@ -111,7 +114,9 @@ impl GetResourcesInputBuilder {
         &self.embed
     }
     /// Consumes the builder and constructs a [`GetResourcesInput`](crate::operation::get_resources::GetResourcesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_resources::GetResourcesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_resources::GetResourcesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_resources::GetResourcesInput {
             rest_api_id: self.rest_api_id,
             position: self.position,

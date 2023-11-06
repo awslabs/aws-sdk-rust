@@ -34,6 +34,7 @@ pub struct RejectAssignmentInputBuilder {
 }
 impl RejectAssignmentInputBuilder {
     /// <p> The ID of the assignment. The assignment must correspond to a HIT created by the Requester. </p>
+    /// This field is required.
     pub fn assignment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assignment_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl RejectAssignmentInputBuilder {
         &self.assignment_id
     }
     /// <p> A message for the Worker, which the Worker can see in the Status section of the web site. </p>
+    /// This field is required.
     pub fn requester_feedback(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.requester_feedback = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl RejectAssignmentInputBuilder {
     /// Consumes the builder and constructs a [`RejectAssignmentInput`](crate::operation::reject_assignment::RejectAssignmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::reject_assignment::RejectAssignmentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::reject_assignment::RejectAssignmentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::reject_assignment::RejectAssignmentInput {
             assignment_id: self.assignment_id,
             requester_feedback: self.requester_feedback,

@@ -2,7 +2,7 @@
 pub fn ser_timeout_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TimeoutConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.max_lifetime_timeout_minutes {
         object.key("maxLifetimeTimeoutMinutes").number(
             #[allow(clippy::useless_conversion)]

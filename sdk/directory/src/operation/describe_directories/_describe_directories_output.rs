@@ -14,8 +14,10 @@ pub struct DescribeDirectoriesOutput {
 impl DescribeDirectoriesOutput {
     /// <p>The list of <code>DirectoryDescription</code> objects that were retrieved.</p>
     /// <p>It is possible that this list contains less than the number of items specified in the <code>Limit</code> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
-    pub fn directory_descriptions(&self) -> ::std::option::Option<&[crate::types::DirectoryDescription]> {
-        self.directory_descriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.directory_descriptions.is_none()`.
+    pub fn directory_descriptions(&self) -> &[crate::types::DirectoryDescription] {
+        self.directory_descriptions.as_deref().unwrap_or_default()
     }
     /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeDirectories</code> to retrieve the next set of items.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

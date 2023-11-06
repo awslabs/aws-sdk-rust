@@ -2,7 +2,7 @@
 pub fn ser_vpc_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VpcOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.ipv6_support {
         object.key("Ipv6Support").boolean(input.ipv6_support);
     }

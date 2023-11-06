@@ -27,6 +27,7 @@ pub struct DescribeGlobalTableInputBuilder {
 }
 impl DescribeGlobalTableInputBuilder {
     /// <p>The name of the global table.</p>
+    /// This field is required.
     pub fn global_table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_table_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeGlobalTableInputBuilder {
     /// Consumes the builder and constructs a [`DescribeGlobalTableInput`](crate::operation::describe_global_table::DescribeGlobalTableInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_global_table::DescribeGlobalTableInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_global_table::DescribeGlobalTableInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_global_table::DescribeGlobalTableInput {
             global_table_name: self.global_table_name,

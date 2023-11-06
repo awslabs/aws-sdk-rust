@@ -34,6 +34,7 @@ pub struct UpdateApplicationSettingsInputBuilder {
 }
 impl UpdateApplicationSettingsInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateApplicationSettingsInputBuilder {
         &self.application_id
     }
     /// <p>Specifies the default settings for an application.</p>
+    /// This field is required.
     pub fn write_application_settings_request(mut self, input: crate::types::WriteApplicationSettingsRequest) -> Self {
         self.write_application_settings_request = ::std::option::Option::Some(input);
         self
@@ -66,7 +68,7 @@ impl UpdateApplicationSettingsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_application_settings::UpdateApplicationSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_application_settings::UpdateApplicationSettingsInput {
             application_id: self.application_id,

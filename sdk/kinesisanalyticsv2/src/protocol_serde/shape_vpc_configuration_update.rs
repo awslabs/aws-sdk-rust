@@ -2,27 +2,27 @@
 pub fn ser_vpc_configuration_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VpcConfigurationUpdate,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.vpc_configuration_id {
-        object.key("VpcConfigurationId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("VpcConfigurationId").string(input.vpc_configuration_id.as_str());
     }
-    if let Some(var_2) = &input.subnet_id_updates {
-        let mut array_3 = object.key("SubnetIdUpdates").start_array();
-        for item_4 in var_2 {
+    if let Some(var_1) = &input.subnet_id_updates {
+        let mut array_2 = object.key("SubnetIdUpdates").start_array();
+        for item_3 in var_1 {
             {
-                array_3.value().string(item_4.as_str());
+                array_2.value().string(item_3.as_str());
             }
         }
-        array_3.finish();
+        array_2.finish();
     }
-    if let Some(var_5) = &input.security_group_id_updates {
-        let mut array_6 = object.key("SecurityGroupIdUpdates").start_array();
-        for item_7 in var_5 {
+    if let Some(var_4) = &input.security_group_id_updates {
+        let mut array_5 = object.key("SecurityGroupIdUpdates").start_array();
+        for item_6 in var_4 {
             {
-                array_6.value().string(item_7.as_str());
+                array_5.value().string(item_6.as_str());
             }
         }
-        array_6.finish();
+        array_5.finish();
     }
     Ok(())
 }

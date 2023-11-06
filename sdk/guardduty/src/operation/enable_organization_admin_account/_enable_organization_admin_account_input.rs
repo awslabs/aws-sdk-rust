@@ -27,6 +27,7 @@ pub struct EnableOrganizationAdminAccountInputBuilder {
 }
 impl EnableOrganizationAdminAccountInputBuilder {
     /// <p>The Amazon Web Services account ID for the organization account to be enabled as a GuardDuty delegated administrator.</p>
+    /// This field is required.
     pub fn admin_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_account_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl EnableOrganizationAdminAccountInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable_organization_admin_account::EnableOrganizationAdminAccountInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::enable_organization_admin_account::EnableOrganizationAdminAccountInput {
             admin_account_id: self.admin_account_id,

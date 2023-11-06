@@ -34,6 +34,7 @@ pub struct RejectQualificationRequestInputBuilder {
 }
 impl RejectQualificationRequestInputBuilder {
     /// <p> The ID of the Qualification request, as returned by the <code>ListQualificationRequests</code> operation. </p>
+    /// This field is required.
     pub fn qualification_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.qualification_request_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl RejectQualificationRequestInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reject_qualification_request::RejectQualificationRequestInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::reject_qualification_request::RejectQualificationRequestInput {
             qualification_request_id: self.qualification_request_id,

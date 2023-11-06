@@ -75,8 +75,10 @@ impl Instance {
         self.instance_type.as_deref()
     }
     /// <p>The list of Amazon EBS volumes that are attached to this instance.</p>
-    pub fn ebs_volumes(&self) -> ::std::option::Option<&[crate::types::EbsVolume]> {
-        self.ebs_volumes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ebs_volumes.is_none()`.
+    pub fn ebs_volumes(&self) -> &[crate::types::EbsVolume] {
+        self.ebs_volumes.as_deref().unwrap_or_default()
     }
 }
 impl Instance {

@@ -20,8 +20,10 @@ pub struct DescribeClientVpnEndpointsInput {
 }
 impl DescribeClientVpnEndpointsInput {
     /// <p>The ID of the Client VPN endpoint.</p>
-    pub fn client_vpn_endpoint_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.client_vpn_endpoint_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.client_vpn_endpoint_ids.is_none()`.
+    pub fn client_vpn_endpoint_ids(&self) -> &[::std::string::String] {
+        self.client_vpn_endpoint_ids.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another request with the nextToken value.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -36,8 +38,10 @@ impl DescribeClientVpnEndpointsInput {
     /// <li> <p> <code>endpoint-id</code> - The ID of the Client VPN endpoint.</p> </li>
     /// <li> <p> <code>transport-protocol</code> - The transport protocol (<code>tcp</code> | <code>udp</code>).</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -161,7 +165,7 @@ impl DescribeClientVpnEndpointsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_client_vpn_endpoints::DescribeClientVpnEndpointsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_client_vpn_endpoints::DescribeClientVpnEndpointsInput {
             client_vpn_endpoint_ids: self.client_vpn_endpoint_ids,

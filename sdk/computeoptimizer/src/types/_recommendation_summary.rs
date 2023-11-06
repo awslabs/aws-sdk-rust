@@ -19,8 +19,10 @@ pub struct RecommendationSummary {
 }
 impl RecommendationSummary {
     /// <p>An array of objects that describe a recommendation summary.</p>
-    pub fn summaries(&self) -> ::std::option::Option<&[crate::types::Summary]> {
-        self.summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.summaries.is_none()`.
+    pub fn summaries(&self) -> &[crate::types::Summary] {
+        self.summaries.as_deref().unwrap_or_default()
     }
     /// <p>The resource type that the recommendation summary applies to.</p>
     pub fn recommendation_resource_type(&self) -> ::std::option::Option<&crate::types::RecommendationSourceType> {
@@ -39,8 +41,10 @@ impl RecommendationSummary {
         self.current_performance_risk_ratings.as_ref()
     }
     /// <p> An array of objects that describes the estimated monthly saving amounts for the instances running on the specified <code>inferredWorkloadTypes</code>. The array contains the top five savings opportunites for the instances that run inferred workload types. </p>
-    pub fn inferred_workload_savings(&self) -> ::std::option::Option<&[crate::types::InferredWorkloadSaving]> {
-        self.inferred_workload_savings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inferred_workload_savings.is_none()`.
+    pub fn inferred_workload_savings(&self) -> &[crate::types::InferredWorkloadSaving] {
+        self.inferred_workload_savings.as_deref().unwrap_or_default()
     }
 }
 impl RecommendationSummary {

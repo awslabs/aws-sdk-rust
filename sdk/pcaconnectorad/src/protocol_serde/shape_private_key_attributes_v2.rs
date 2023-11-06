@@ -2,24 +2,24 @@
 pub fn ser_private_key_attributes_v2(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PrivateKeyAttributesV2,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.minimal_key_length {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
         object.key("MinimalKeyLength").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+            ::aws_smithy_types::Number::NegInt((input.minimal_key_length).into()),
         );
     }
-    if let Some(var_2) = &input.key_spec {
-        object.key("KeySpec").string(var_2.as_str());
+    {
+        object.key("KeySpec").string(input.key_spec.as_str());
     }
-    if let Some(var_3) = &input.crypto_providers {
-        let mut array_4 = object.key("CryptoProviders").start_array();
-        for item_5 in var_3 {
+    if let Some(var_1) = &input.crypto_providers {
+        let mut array_2 = object.key("CryptoProviders").start_array();
+        for item_3 in var_1 {
             {
-                array_4.value().string(item_5.as_str());
+                array_2.value().string(item_3.as_str());
             }
         }
-        array_4.finish();
+        array_2.finish();
     }
     Ok(())
 }
@@ -67,7 +67,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::private_key_attributes_v2_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

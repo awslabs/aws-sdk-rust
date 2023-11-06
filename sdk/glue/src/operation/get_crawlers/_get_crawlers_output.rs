@@ -11,8 +11,10 @@ pub struct GetCrawlersOutput {
 }
 impl GetCrawlersOutput {
     /// <p>A list of crawler metadata.</p>
-    pub fn crawlers(&self) -> ::std::option::Option<&[crate::types::Crawler]> {
-        self.crawlers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.crawlers.is_none()`.
+    pub fn crawlers(&self) -> &[crate::types::Crawler] {
+        self.crawlers.as_deref().unwrap_or_default()
     }
     /// <p>A continuation token, if the returned list has not reached the end of those defined in this customer account.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

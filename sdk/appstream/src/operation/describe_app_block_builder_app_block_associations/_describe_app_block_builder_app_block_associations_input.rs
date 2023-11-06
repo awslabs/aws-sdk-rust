@@ -109,7 +109,7 @@ impl DescribeAppBlockBuilderAppBlockAssociationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_app_block_builder_app_block_associations::DescribeAppBlockBuilderAppBlockAssociationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_app_block_builder_app_block_associations::DescribeAppBlockBuilderAppBlockAssociationsInput {

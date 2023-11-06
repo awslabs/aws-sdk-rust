@@ -2,27 +2,27 @@
 pub fn ser_state(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::State,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.state_name {
-        object.key("stateName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("stateName").string(input.state_name.as_str());
     }
-    if let Some(var_2) = &input.on_input {
+    if let Some(var_1) = &input.on_input {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("onInput").start_object();
-        crate::protocol_serde::shape_on_input_lifecycle::ser_on_input_lifecycle(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("onInput").start_object();
+        crate::protocol_serde::shape_on_input_lifecycle::ser_on_input_lifecycle(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.on_enter {
+    if let Some(var_3) = &input.on_enter {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("onEnter").start_object();
-        crate::protocol_serde::shape_on_enter_lifecycle::ser_on_enter_lifecycle(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("onEnter").start_object();
+        crate::protocol_serde::shape_on_enter_lifecycle::ser_on_enter_lifecycle(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_6) = &input.on_exit {
+    if let Some(var_5) = &input.on_exit {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("onExit").start_object();
-        crate::protocol_serde::shape_on_exit_lifecycle::ser_on_exit_lifecycle(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_6 = object.key("onExit").start_object();
+        crate::protocol_serde::shape_on_exit_lifecycle::ser_on_exit_lifecycle(&mut object_6, var_5)?;
+        object_6.finish();
     }
     Ok(())
 }
@@ -68,7 +68,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::state_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

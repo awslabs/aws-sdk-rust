@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchJobsOutput {
     /// <p>An array of <code>JobSummary</code> objects for devices that match the specified filter values.</p>
-    pub jobs: ::std::option::Option<::std::vec::Vec<crate::types::JobSummary>>,
+    pub jobs: ::std::vec::Vec<crate::types::JobSummary>,
     /// <p>A token used for pagination of results, or <code>null</code> if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl SearchJobsOutput {
     /// <p>An array of <code>JobSummary</code> objects for devices that match the specified filter values.</p>
-    pub fn jobs(&self) -> ::std::option::Option<&[crate::types::JobSummary]> {
-        self.jobs.as_deref()
+    pub fn jobs(&self) -> &[crate::types::JobSummary] {
+        use std::ops::Deref;
+        self.jobs.deref()
     }
     /// <p>A token used for pagination of results, or <code>null</code> if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,18 @@ impl SearchJobsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SearchJobsOutput`](crate::operation::search_jobs::SearchJobsOutput).
-    pub fn build(self) -> crate::operation::search_jobs::SearchJobsOutput {
-        crate::operation::search_jobs::SearchJobsOutput {
-            jobs: self.jobs,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`jobs`](crate::operation::search_jobs::builders::SearchJobsOutputBuilder::jobs)
+    pub fn build(self) -> ::std::result::Result<crate::operation::search_jobs::SearchJobsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::search_jobs::SearchJobsOutput {
+            jobs: self.jobs.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "jobs",
+                    "jobs was not specified but it is required when building SearchJobsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

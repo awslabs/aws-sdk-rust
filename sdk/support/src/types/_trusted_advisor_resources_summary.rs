@@ -49,6 +49,7 @@ pub struct TrustedAdvisorResourcesSummaryBuilder {
 }
 impl TrustedAdvisorResourcesSummaryBuilder {
     /// <p>The number of Amazon Web Services resources that were analyzed by the Trusted Advisor check.</p>
+    /// This field is required.
     pub fn resources_processed(mut self, input: i64) -> Self {
         self.resources_processed = ::std::option::Option::Some(input);
         self
@@ -63,6 +64,7 @@ impl TrustedAdvisorResourcesSummaryBuilder {
         &self.resources_processed
     }
     /// <p>The number of Amazon Web Services resources that were flagged (listed) by the Trusted Advisor check.</p>
+    /// This field is required.
     pub fn resources_flagged(mut self, input: i64) -> Self {
         self.resources_flagged = ::std::option::Option::Some(input);
         self
@@ -77,6 +79,7 @@ impl TrustedAdvisorResourcesSummaryBuilder {
         &self.resources_flagged
     }
     /// <p>The number of Amazon Web Services resources ignored by Trusted Advisor because information was unavailable.</p>
+    /// This field is required.
     pub fn resources_ignored(mut self, input: i64) -> Self {
         self.resources_ignored = ::std::option::Option::Some(input);
         self
@@ -91,6 +94,7 @@ impl TrustedAdvisorResourcesSummaryBuilder {
         &self.resources_ignored
     }
     /// <p>The number of Amazon Web Services resources ignored by Trusted Advisor because they were marked as suppressed by the user.</p>
+    /// This field is required.
     pub fn resources_suppressed(mut self, input: i64) -> Self {
         self.resources_suppressed = ::std::option::Option::Some(input);
         self

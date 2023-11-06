@@ -34,6 +34,7 @@ pub struct CreateMeshOutputBuilder {
 }
 impl CreateMeshOutputBuilder {
     /// <p>The full description of your service mesh following the create call.</p>
+    /// This field is required.
     pub fn mesh(mut self, input: crate::types::MeshData) -> Self {
         self.mesh = ::std::option::Option::Some(input);
         self

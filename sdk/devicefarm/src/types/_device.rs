@@ -147,8 +147,10 @@ impl Device {
         self.fleet_name.as_deref()
     }
     /// <p>The instances that belong to this device.</p>
-    pub fn instances(&self) -> ::std::option::Option<&[crate::types::DeviceInstance]> {
-        self.instances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instances.is_none()`.
+    pub fn instances(&self) -> &[crate::types::DeviceInstance] {
+        self.instances.as_deref().unwrap_or_default()
     }
     /// <p>Indicates how likely a device is available for a test run. Currently available in the <code>ListDevices</code> and GetDevice API methods.</p>
     pub fn availability(&self) -> ::std::option::Option<&crate::types::DeviceAvailability> {

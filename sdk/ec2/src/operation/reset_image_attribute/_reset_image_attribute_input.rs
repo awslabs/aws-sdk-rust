@@ -42,6 +42,7 @@ pub struct ResetImageAttributeInputBuilder {
 }
 impl ResetImageAttributeInputBuilder {
     /// <p>The attribute to reset (currently you can only reset the launch permission attribute).</p>
+    /// This field is required.
     pub fn attribute(mut self, input: crate::types::ResetImageAttributeName) -> Self {
         self.attribute = ::std::option::Option::Some(input);
         self
@@ -56,6 +57,7 @@ impl ResetImageAttributeInputBuilder {
         &self.attribute
     }
     /// <p>The ID of the AMI.</p>
+    /// This field is required.
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_id = ::std::option::Option::Some(input.into());
         self
@@ -86,7 +88,7 @@ impl ResetImageAttributeInputBuilder {
     /// Consumes the builder and constructs a [`ResetImageAttributeInput`](crate::operation::reset_image_attribute::ResetImageAttributeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::reset_image_attribute::ResetImageAttributeInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::reset_image_attribute::ResetImageAttributeInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::reset_image_attribute::ResetImageAttributeInput {
             attribute: self.attribute,

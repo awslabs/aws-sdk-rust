@@ -62,7 +62,7 @@ impl ListLedgersInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListLedgersInput`](crate::operation::list_ledgers::ListLedgersInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_ledgers::ListLedgersInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_ledgers::ListLedgersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_ledgers::ListLedgersInput {
             max_results: self.max_results,
             next_token: self.next_token,

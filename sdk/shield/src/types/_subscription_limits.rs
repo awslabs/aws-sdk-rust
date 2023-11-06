@@ -35,6 +35,7 @@ pub struct SubscriptionLimitsBuilder {
 }
 impl SubscriptionLimitsBuilder {
     /// <p>Limits settings on protections for your subscription. </p>
+    /// This field is required.
     pub fn protection_limits(mut self, input: crate::types::ProtectionLimits) -> Self {
         self.protection_limits = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl SubscriptionLimitsBuilder {
         &self.protection_limits
     }
     /// <p>Limits settings on protection groups for your subscription. </p>
+    /// This field is required.
     pub fn protection_group_limits(mut self, input: crate::types::ProtectionGroupLimits) -> Self {
         self.protection_group_limits = ::std::option::Option::Some(input);
         self

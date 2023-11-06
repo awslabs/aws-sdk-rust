@@ -33,6 +33,7 @@ impl PutRetentionConfigurationInputBuilder {
     /// <p>Number of days Config stores your historical information.</p> <note>
     /// <p>Currently, only applicable to the configuration item history.</p>
     /// </note>
+    /// This field is required.
     pub fn retention_period_in_days(mut self, input: i32) -> Self {
         self.retention_period_in_days = ::std::option::Option::Some(input);
         self
@@ -55,7 +56,7 @@ impl PutRetentionConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_retention_configuration::PutRetentionConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_retention_configuration::PutRetentionConfigurationInput {
             retention_period_in_days: self.retention_period_in_days,

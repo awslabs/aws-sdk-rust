@@ -27,6 +27,7 @@ pub struct DisconnectCustomKeyStoreInputBuilder {
 }
 impl DisconnectCustomKeyStoreInputBuilder {
     /// <p>Enter the ID of the custom key store you want to disconnect. To find the ID of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
+    /// This field is required.
     pub fn custom_key_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_key_store_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DisconnectCustomKeyStoreInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disconnect_custom_key_store::DisconnectCustomKeyStoreInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disconnect_custom_key_store::DisconnectCustomKeyStoreInput {
             custom_key_store_id: self.custom_key_store_id,

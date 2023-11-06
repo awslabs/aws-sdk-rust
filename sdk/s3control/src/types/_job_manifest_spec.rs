@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobManifestSpec {
     /// <p>Indicates which of the available formats the specified manifest uses.</p>
-    pub format: ::std::option::Option<crate::types::JobManifestFormat>,
+    pub format: crate::types::JobManifestFormat,
     /// <p>If the specified manifest object is in the <code>S3BatchOperations_CSV_20180820</code> format, this element describes which columns contain the required data.</p>
     pub fields: ::std::option::Option<::std::vec::Vec<crate::types::JobManifestFieldName>>,
 }
 impl JobManifestSpec {
     /// <p>Indicates which of the available formats the specified manifest uses.</p>
-    pub fn format(&self) -> ::std::option::Option<&crate::types::JobManifestFormat> {
-        self.format.as_ref()
+    pub fn format(&self) -> &crate::types::JobManifestFormat {
+        &self.format
     }
     /// <p>If the specified manifest object is in the <code>S3BatchOperations_CSV_20180820</code> format, this element describes which columns contain the required data.</p>
-    pub fn fields(&self) -> ::std::option::Option<&[crate::types::JobManifestFieldName]> {
-        self.fields.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fields.is_none()`.
+    pub fn fields(&self) -> &[crate::types::JobManifestFieldName] {
+        self.fields.as_deref().unwrap_or_default()
     }
 }
 impl JobManifestSpec {
@@ -35,6 +37,7 @@ pub struct JobManifestSpecBuilder {
 }
 impl JobManifestSpecBuilder {
     /// <p>Indicates which of the available formats the specified manifest uses.</p>
+    /// This field is required.
     pub fn format(mut self, input: crate::types::JobManifestFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
         self
@@ -69,10 +72,17 @@ impl JobManifestSpecBuilder {
         &self.fields
     }
     /// Consumes the builder and constructs a [`JobManifestSpec`](crate::types::JobManifestSpec).
-    pub fn build(self) -> crate::types::JobManifestSpec {
-        crate::types::JobManifestSpec {
-            format: self.format,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`format`](crate::types::builders::JobManifestSpecBuilder::format)
+    pub fn build(self) -> ::std::result::Result<crate::types::JobManifestSpec, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::JobManifestSpec {
+            format: self.format.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "format",
+                    "format was not specified but it is required when building JobManifestSpec",
+                )
+            })?,
             fields: self.fields,
-        }
+        })
     }
 }

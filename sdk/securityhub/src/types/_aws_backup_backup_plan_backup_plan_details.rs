@@ -17,12 +17,16 @@ impl AwsBackupBackupPlanBackupPlanDetails {
         self.backup_plan_name.as_deref()
     }
     /// <p>A list of backup options for each resource type. </p>
-    pub fn advanced_backup_settings(&self) -> ::std::option::Option<&[crate::types::AwsBackupBackupPlanAdvancedBackupSettingsDetails]> {
-        self.advanced_backup_settings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.advanced_backup_settings.is_none()`.
+    pub fn advanced_backup_settings(&self) -> &[crate::types::AwsBackupBackupPlanAdvancedBackupSettingsDetails] {
+        self.advanced_backup_settings.as_deref().unwrap_or_default()
     }
     /// <p>An array of <code>BackupRule</code> objects, each of which specifies a scheduled task that is used to back up a selection of resources. </p>
-    pub fn backup_plan_rule(&self) -> ::std::option::Option<&[crate::types::AwsBackupBackupPlanRuleDetails]> {
-        self.backup_plan_rule.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.backup_plan_rule.is_none()`.
+    pub fn backup_plan_rule(&self) -> &[crate::types::AwsBackupBackupPlanRuleDetails] {
+        self.backup_plan_rule.as_deref().unwrap_or_default()
     }
 }
 impl AwsBackupBackupPlanBackupPlanDetails {

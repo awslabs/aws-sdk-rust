@@ -9,8 +9,10 @@ pub struct GetEntitiesOutput {
 }
 impl GetEntitiesOutput {
     /// <p>An array of descriptions for the specified entities.</p>
-    pub fn descriptions(&self) -> ::std::option::Option<&[crate::types::EntityDescription]> {
-        self.descriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.descriptions.is_none()`.
+    pub fn descriptions(&self) -> &[crate::types::EntityDescription] {
+        self.descriptions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetEntitiesOutput {

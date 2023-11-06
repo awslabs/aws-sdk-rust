@@ -99,16 +99,20 @@ impl GetCampaignOutput {
         self.priority
     }
     /// <p> Information about a list of signals to collect data on. </p>
-    pub fn signals_to_collect(&self) -> ::std::option::Option<&[crate::types::SignalInformation]> {
-        self.signals_to_collect.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.signals_to_collect.is_none()`.
+    pub fn signals_to_collect(&self) -> &[crate::types::SignalInformation] {
+        self.signals_to_collect.as_deref().unwrap_or_default()
     }
     /// <p> Information about the data collection scheme associated with the campaign. </p>
     pub fn collection_scheme(&self) -> ::std::option::Option<&crate::types::CollectionScheme> {
         self.collection_scheme.as_ref()
     }
     /// <p> A list of vehicle attributes associated with the campaign. </p>
-    pub fn data_extra_dimensions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.data_extra_dimensions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_extra_dimensions.is_none()`.
+    pub fn data_extra_dimensions(&self) -> &[::std::string::String] {
+        self.data_extra_dimensions.as_deref().unwrap_or_default()
     }
     /// <p> The time the campaign was created in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -121,8 +125,10 @@ impl GetCampaignOutput {
     /// <p>The destination where the campaign sends data. You can choose to send data to be stored in Amazon S3 or Amazon Timestream.</p>
     /// <p>Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such as data lakes, centralized data storage, data processing pipelines, and analytics. </p>
     /// <p>You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data so that you can identify trends and patterns.</p>
-    pub fn data_destination_configs(&self) -> ::std::option::Option<&[crate::types::DataDestinationConfig]> {
-        self.data_destination_configs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_destination_configs.is_none()`.
+    pub fn data_destination_configs(&self) -> &[crate::types::DataDestinationConfig] {
+        self.data_destination_configs.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetCampaignOutput {

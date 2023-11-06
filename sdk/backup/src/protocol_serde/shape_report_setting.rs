@@ -2,18 +2,18 @@
 pub fn ser_report_setting(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ReportSetting,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.report_template {
-        object.key("ReportTemplate").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("ReportTemplate").string(input.report_template.as_str());
     }
-    if let Some(var_2) = &input.framework_arns {
-        let mut array_3 = object.key("FrameworkArns").start_array();
-        for item_4 in var_2 {
+    if let Some(var_1) = &input.framework_arns {
+        let mut array_2 = object.key("FrameworkArns").start_array();
+        for item_3 in var_1 {
             {
-                array_3.value().string(item_4.as_str());
+                array_2.value().string(item_3.as_str());
             }
         }
-        array_3.finish();
+        array_2.finish();
     }
     if input.number_of_frameworks != 0 {
         object.key("NumberOfFrameworks").number(
@@ -21,32 +21,32 @@ pub fn ser_report_setting(
             ::aws_smithy_types::Number::NegInt((input.number_of_frameworks).into()),
         );
     }
-    if let Some(var_5) = &input.accounts {
-        let mut array_6 = object.key("Accounts").start_array();
-        for item_7 in var_5 {
+    if let Some(var_4) = &input.accounts {
+        let mut array_5 = object.key("Accounts").start_array();
+        for item_6 in var_4 {
             {
-                array_6.value().string(item_7.as_str());
+                array_5.value().string(item_6.as_str());
             }
         }
-        array_6.finish();
+        array_5.finish();
     }
-    if let Some(var_8) = &input.organization_units {
-        let mut array_9 = object.key("OrganizationUnits").start_array();
-        for item_10 in var_8 {
+    if let Some(var_7) = &input.organization_units {
+        let mut array_8 = object.key("OrganizationUnits").start_array();
+        for item_9 in var_7 {
             {
-                array_9.value().string(item_10.as_str());
+                array_8.value().string(item_9.as_str());
             }
         }
-        array_9.finish();
+        array_8.finish();
     }
-    if let Some(var_11) = &input.regions {
-        let mut array_12 = object.key("Regions").start_array();
-        for item_13 in var_11 {
+    if let Some(var_10) = &input.regions {
+        let mut array_11 = object.key("Regions").start_array();
+        for item_12 in var_10 {
             {
-                array_12.value().string(item_13.as_str());
+                array_11.value().string(item_12.as_str());
             }
         }
-        array_12.finish();
+        array_11.finish();
     }
     Ok(())
 }
@@ -102,7 +102,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::report_setting_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -12,6 +12,8 @@ pub struct DomainConfig {
     pub ebs_options: ::std::option::Option<crate::types::EbsOptionsStatus>,
     /// <p>Specifies the access policies for the domain.</p>
     pub access_policies: ::std::option::Option<crate::types::AccessPoliciesStatus>,
+    /// <p>The type of IP addresses supported by the endpoint for the domain.</p>
+    pub ip_address_type: ::std::option::Option<crate::types::IpAddressTypeStatus>,
     /// <p>DEPRECATED. Container for parameters required to configure automated snapshots of domain indexes.</p>
     pub snapshot_options: ::std::option::Option<crate::types::SnapshotOptionsStatus>,
     /// <p>The current VPC options for the domain and the status of any updates to their configuration.</p>
@@ -55,6 +57,10 @@ impl DomainConfig {
     /// <p>Specifies the access policies for the domain.</p>
     pub fn access_policies(&self) -> ::std::option::Option<&crate::types::AccessPoliciesStatus> {
         self.access_policies.as_ref()
+    }
+    /// <p>The type of IP addresses supported by the endpoint for the domain.</p>
+    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressTypeStatus> {
+        self.ip_address_type.as_ref()
     }
     /// <p>DEPRECATED. Container for parameters required to configure automated snapshots of domain indexes.</p>
     pub fn snapshot_options(&self) -> ::std::option::Option<&crate::types::SnapshotOptionsStatus> {
@@ -124,6 +130,7 @@ pub struct DomainConfigBuilder {
     pub(crate) cluster_config: ::std::option::Option<crate::types::ClusterConfigStatus>,
     pub(crate) ebs_options: ::std::option::Option<crate::types::EbsOptionsStatus>,
     pub(crate) access_policies: ::std::option::Option<crate::types::AccessPoliciesStatus>,
+    pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressTypeStatus>,
     pub(crate) snapshot_options: ::std::option::Option<crate::types::SnapshotOptionsStatus>,
     pub(crate) vpc_options: ::std::option::Option<crate::types::VpcDerivedInfoStatus>,
     pub(crate) cognito_options: ::std::option::Option<crate::types::CognitoOptionsStatus>,
@@ -194,6 +201,20 @@ impl DomainConfigBuilder {
     /// <p>Specifies the access policies for the domain.</p>
     pub fn get_access_policies(&self) -> &::std::option::Option<crate::types::AccessPoliciesStatus> {
         &self.access_policies
+    }
+    /// <p>The type of IP addresses supported by the endpoint for the domain.</p>
+    pub fn ip_address_type(mut self, input: crate::types::IpAddressTypeStatus) -> Self {
+        self.ip_address_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of IP addresses supported by the endpoint for the domain.</p>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressTypeStatus>) -> Self {
+        self.ip_address_type = input;
+        self
+    }
+    /// <p>The type of IP addresses supported by the endpoint for the domain.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressTypeStatus> {
+        &self.ip_address_type
     }
     /// <p>DEPRECATED. Container for parameters required to configure automated snapshots of domain indexes.</p>
     pub fn snapshot_options(mut self, input: crate::types::SnapshotOptionsStatus) -> Self {
@@ -384,6 +405,7 @@ impl DomainConfigBuilder {
             cluster_config: self.cluster_config,
             ebs_options: self.ebs_options,
             access_policies: self.access_policies,
+            ip_address_type: self.ip_address_type,
             snapshot_options: self.snapshot_options,
             vpc_options: self.vpc_options,
             cognito_options: self.cognito_options,

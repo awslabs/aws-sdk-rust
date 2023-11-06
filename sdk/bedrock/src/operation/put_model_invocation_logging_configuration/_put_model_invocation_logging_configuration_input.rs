@@ -27,6 +27,7 @@ pub struct PutModelInvocationLoggingConfigurationInputBuilder {
 }
 impl PutModelInvocationLoggingConfigurationInputBuilder {
     /// <p>The logging configuration values to set.</p>
+    /// This field is required.
     pub fn logging_config(mut self, input: crate::types::LoggingConfig) -> Self {
         self.logging_config = ::std::option::Option::Some(input);
         self
@@ -45,7 +46,7 @@ impl PutModelInvocationLoggingConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_model_invocation_logging_configuration::PutModelInvocationLoggingConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::put_model_invocation_logging_configuration::PutModelInvocationLoggingConfigurationInput {

@@ -37,8 +37,10 @@ pub struct ServiceConfiguration {
 }
 impl ServiceConfiguration {
     /// <p>The type of service.</p>
-    pub fn service_type(&self) -> ::std::option::Option<&[crate::types::ServiceTypeDetail]> {
-        self.service_type.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_type.is_none()`.
+    pub fn service_type(&self) -> &[crate::types::ServiceTypeDetail] {
+        self.service_type.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the service.</p>
     pub fn service_id(&self) -> ::std::option::Option<&str> {
@@ -53,8 +55,10 @@ impl ServiceConfiguration {
         self.service_state.as_ref()
     }
     /// <p>The Availability Zones in which the service is available.</p>
-    pub fn availability_zones(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.availability_zones.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
+    pub fn availability_zones(&self) -> &[::std::string::String] {
+        self.availability_zones.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether requests from other Amazon Web Services accounts to create an endpoint to the service must first be accepted.</p>
     pub fn acceptance_required(&self) -> ::std::option::Option<bool> {
@@ -65,20 +69,28 @@ impl ServiceConfiguration {
         self.manages_vpc_endpoints
     }
     /// <p>The Amazon Resource Names (ARNs) of the Network Load Balancers for the service.</p>
-    pub fn network_load_balancer_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.network_load_balancer_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_load_balancer_arns.is_none()`.
+    pub fn network_load_balancer_arns(&self) -> &[::std::string::String] {
+        self.network_load_balancer_arns.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Names (ARNs) of the Gateway Load Balancers for the service.</p>
-    pub fn gateway_load_balancer_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.gateway_load_balancer_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.gateway_load_balancer_arns.is_none()`.
+    pub fn gateway_load_balancer_arns(&self) -> &[::std::string::String] {
+        self.gateway_load_balancer_arns.as_deref().unwrap_or_default()
     }
     /// <p>The supported IP address types.</p>
-    pub fn supported_ip_address_types(&self) -> ::std::option::Option<&[crate::types::ServiceConnectivityType]> {
-        self.supported_ip_address_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_ip_address_types.is_none()`.
+    pub fn supported_ip_address_types(&self) -> &[crate::types::ServiceConnectivityType] {
+        self.supported_ip_address_types.as_deref().unwrap_or_default()
     }
     /// <p>The DNS names for the service.</p>
-    pub fn base_endpoint_dns_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.base_endpoint_dns_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.base_endpoint_dns_names.is_none()`.
+    pub fn base_endpoint_dns_names(&self) -> &[::std::string::String] {
+        self.base_endpoint_dns_names.as_deref().unwrap_or_default()
     }
     /// <p>The private DNS name for the service.</p>
     pub fn private_dns_name(&self) -> ::std::option::Option<&str> {
@@ -93,8 +105,10 @@ impl ServiceConfiguration {
         self.payer_responsibility.as_ref()
     }
     /// <p>The tags assigned to the service.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ServiceConfiguration {

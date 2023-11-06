@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobSummary {
     /// <p>The ID of the job.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The unique name that helps identify the job request.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The status of the bulk import job can be one of following values.</p>
     /// <ul>
     /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li>
@@ -17,16 +17,18 @@ pub struct JobSummary {
     /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
     /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
     /// </ul>
-    pub status: ::std::option::Option<crate::types::JobStatus>,
+    pub status: crate::types::JobStatus,
 }
 impl JobSummary {
     /// <p>The ID of the job.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The unique name that helps identify the job request.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The status of the bulk import job can be one of following values.</p>
     /// <ul>
@@ -37,8 +39,8 @@ impl JobSummary {
     /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
     /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::JobStatus {
+        &self.status
     }
 }
 impl JobSummary {
@@ -58,6 +60,7 @@ pub struct JobSummaryBuilder {
 }
 impl JobSummaryBuilder {
     /// <p>The ID of the job.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -72,6 +75,7 @@ impl JobSummaryBuilder {
         &self.id
     }
     /// <p>The unique name that helps identify the job request.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -94,6 +98,7 @@ impl JobSummaryBuilder {
     /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
     /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::JobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -124,11 +129,30 @@ impl JobSummaryBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`JobSummary`](crate::types::JobSummary).
-    pub fn build(self) -> crate::types::JobSummary {
-        crate::types::JobSummary {
-            id: self.id,
-            name: self.name,
-            status: self.status,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::JobSummaryBuilder::id)
+    /// - [`name`](crate::types::builders::JobSummaryBuilder::name)
+    /// - [`status`](crate::types::builders::JobSummaryBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::JobSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::JobSummary {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building JobSummary",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building JobSummary",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building JobSummary",
+                )
+            })?,
+        })
     }
 }

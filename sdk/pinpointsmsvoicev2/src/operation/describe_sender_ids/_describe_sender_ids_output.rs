@@ -11,8 +11,10 @@ pub struct DescribeSenderIdsOutput {
 }
 impl DescribeSenderIdsOutput {
     /// <p>An array of SernderIdInformation objects that contain the details for the requested SenderIds.</p>
-    pub fn sender_ids(&self) -> ::std::option::Option<&[crate::types::SenderIdInformation]> {
-        self.sender_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sender_ids.is_none()`.
+    pub fn sender_ids(&self) -> &[crate::types::SenderIdInformation] {
+        self.sender_ids.as_deref().unwrap_or_default()
     }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

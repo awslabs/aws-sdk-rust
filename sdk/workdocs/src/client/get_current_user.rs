@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetCurrentUser`](crate::operation::get_current_user::builders::GetCurrentUserFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`authentication_token(impl Into<String>)`](crate::operation::get_current_user::builders::GetCurrentUserFluentBuilder::authentication_token) / [`set_authentication_token(Option<String>)`](crate::operation::get_current_user::builders::GetCurrentUserFluentBuilder::set_authentication_token): <p>Amazon WorkDocs authentication token.</p>
+    ///   - [`authentication_token(impl Into<String>)`](crate::operation::get_current_user::builders::GetCurrentUserFluentBuilder::authentication_token) / [`set_authentication_token(Option<String>)`](crate::operation::get_current_user::builders::GetCurrentUserFluentBuilder::set_authentication_token):<br>required: **true**<br><p>Amazon WorkDocs authentication token.</p><br>
     /// - On success, responds with [`GetCurrentUserOutput`](crate::operation::get_current_user::GetCurrentUserOutput) with field(s):
     ///   - [`user(Option<User>)`](crate::operation::get_current_user::GetCurrentUserOutput::user): <p>Metadata of the user.</p>
     /// - On failure, responds with [`SdkError<GetCurrentUserError>`](crate::operation::get_current_user::GetCurrentUserError)

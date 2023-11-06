@@ -101,6 +101,7 @@ impl ListChannelMembershipsForAppInstanceUserInputBuilder {
         &self.next_token
     }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
+    /// This field is required.
     pub fn chime_bearer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.chime_bearer = ::std::option::Option::Some(input.into());
         self
@@ -119,7 +120,7 @@ impl ListChannelMembershipsForAppInstanceUserInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserInput {

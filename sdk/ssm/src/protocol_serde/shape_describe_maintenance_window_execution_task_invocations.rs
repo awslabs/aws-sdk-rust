@@ -33,8 +33,8 @@ pub fn de_describe_maintenance_window_execution_task_invocations_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InternalServerError" => crate::operation::describe_maintenance_window_execution_task_invocations::DescribeMaintenanceWindowExecutionTaskInvocationsError::InternalServerError({
@@ -49,8 +49,8 @@ pub fn de_describe_maintenance_window_execution_task_invocations_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::describe_maintenance_window_execution_task_invocations::DescribeMaintenanceWindowExecutionTaskInvocationsError::generic(generic)
@@ -77,12 +77,12 @@ pub fn de_describe_maintenance_window_execution_task_invocations_http_response(
 
 pub fn ser_describe_maintenance_window_execution_task_invocations_input(
     input: &crate::operation::describe_maintenance_window_execution_task_invocations::DescribeMaintenanceWindowExecutionTaskInvocationsInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_describe_maintenance_window_execution_task_invocations_input::ser_describe_maintenance_window_execution_task_invocations_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_describe_maintenance_window_execution_task_invocations(value: &[u8], mut builder: crate::operation::describe_maintenance_window_execution_task_invocations::builders::DescribeMaintenanceWindowExecutionTaskInvocationsOutputBuilder) -> Result<crate::operation::describe_maintenance_window_execution_task_invocations::builders::DescribeMaintenanceWindowExecutionTaskInvocationsOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>{

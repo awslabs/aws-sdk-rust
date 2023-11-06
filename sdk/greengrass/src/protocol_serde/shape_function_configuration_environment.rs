@@ -2,7 +2,7 @@
 pub fn ser_function_configuration_environment(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FunctionConfigurationEnvironment,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.access_sysfs {
         object.key("AccessSysfs").boolean(*var_1);
     }
@@ -62,11 +62,11 @@ where
                         }
                         "ResourceAccessPolicies" => {
                             builder = builder.set_resource_access_policies(
-                                crate::protocol_serde::shape___list_of_resource_access_policy::de___list_of_resource_access_policy(tokens)?,
+                                crate::protocol_serde::shape_list_of_resource_access_policy::de_list_of_resource_access_policy(tokens)?,
                             );
                         }
                         "Variables" => {
-                            builder = builder.set_variables(crate::protocol_serde::shape___map_of__string::de___map_of__string(tokens)?);
+                            builder = builder.set_variables(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -2,27 +2,27 @@
 pub fn ser_conditional_branch(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ConditionalBranch,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("name").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.condition {
+    if let Some(var_1) = &input.condition {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("condition").start_object();
-        crate::protocol_serde::shape_condition::ser_condition(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("condition").start_object();
+        crate::protocol_serde::shape_condition::ser_condition(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.next_step {
+    if let Some(var_3) = &input.next_step {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("nextStep").start_object();
-        crate::protocol_serde::shape_dialog_state::ser_dialog_state(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("nextStep").start_object();
+        crate::protocol_serde::shape_dialog_state::ser_dialog_state(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_6) = &input.response {
+    if let Some(var_5) = &input.response {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("response").start_object();
-        crate::protocol_serde::shape_response_specification::ser_response_specification(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_6 = object.key("response").start_object();
+        crate::protocol_serde::shape_response_specification::ser_response_specification(&mut object_6, var_5)?;
+        object_6.finish();
     }
     Ok(())
 }
@@ -68,7 +68,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::conditional_branch_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

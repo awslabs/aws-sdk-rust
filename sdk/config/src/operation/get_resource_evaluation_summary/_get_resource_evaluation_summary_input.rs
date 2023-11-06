@@ -27,6 +27,7 @@ pub struct GetResourceEvaluationSummaryInputBuilder {
 }
 impl GetResourceEvaluationSummaryInputBuilder {
     /// <p>The unique <code>ResourceEvaluationId</code> of Amazon Web Services resource execution for which you want to retrieve the evaluation summary.</p>
+    /// This field is required.
     pub fn resource_evaluation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_evaluation_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetResourceEvaluationSummaryInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resource_evaluation_summary::GetResourceEvaluationSummaryInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_resource_evaluation_summary::GetResourceEvaluationSummaryInput {
             resource_evaluation_id: self.resource_evaluation_id,

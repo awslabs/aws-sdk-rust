@@ -45,7 +45,7 @@ where
 pub fn ser_cost_estimation_resource_collection_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CostEstimationResourceCollectionFilter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cloud_formation {
         #[allow(unused_mut)]
         let mut object_2 = object.key("CloudFormation").start_object();

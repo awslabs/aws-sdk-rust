@@ -11,8 +11,10 @@ pub struct DescribeEndpointAuthorizationOutput {
 }
 impl DescribeEndpointAuthorizationOutput {
     /// <p>The authorizations to an endpoint.</p>
-    pub fn endpoint_authorization_list(&self) -> ::std::option::Option<&[crate::types::EndpointAuthorization]> {
-        self.endpoint_authorization_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.endpoint_authorization_list.is_none()`.
+    pub fn endpoint_authorization_list(&self) -> &[crate::types::EndpointAuthorization] {
+        self.endpoint_authorization_list.as_deref().unwrap_or_default()
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeEndpointAuthorization</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

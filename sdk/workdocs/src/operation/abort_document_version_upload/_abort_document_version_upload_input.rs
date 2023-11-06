@@ -64,6 +64,7 @@ impl AbortDocumentVersionUploadInputBuilder {
         &self.authentication_token
     }
     /// <p>The ID of the document.</p>
+    /// This field is required.
     pub fn document_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_id = ::std::option::Option::Some(input.into());
         self
@@ -78,6 +79,7 @@ impl AbortDocumentVersionUploadInputBuilder {
         &self.document_id
     }
     /// <p>The ID of the version.</p>
+    /// This field is required.
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_id = ::std::option::Option::Some(input.into());
         self
@@ -96,7 +98,7 @@ impl AbortDocumentVersionUploadInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::abort_document_version_upload::AbortDocumentVersionUploadInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::abort_document_version_upload::AbortDocumentVersionUploadInput {
             authentication_token: self.authentication_token,

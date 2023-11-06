@@ -27,6 +27,7 @@ pub struct StopInferenceSchedulerInputBuilder {
 }
 impl StopInferenceSchedulerInputBuilder {
     /// <p>The name of the inference scheduler to be stopped. </p>
+    /// This field is required.
     pub fn inference_scheduler_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inference_scheduler_name = ::std::option::Option::Some(input.into());
         self
@@ -43,8 +44,10 @@ impl StopInferenceSchedulerInputBuilder {
     /// Consumes the builder and constructs a [`StopInferenceSchedulerInput`](crate::operation::stop_inference_scheduler::StopInferenceSchedulerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_inference_scheduler::StopInferenceSchedulerInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::stop_inference_scheduler::StopInferenceSchedulerInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::stop_inference_scheduler::StopInferenceSchedulerInput {
             inference_scheduler_name: self.inference_scheduler_name,
         })

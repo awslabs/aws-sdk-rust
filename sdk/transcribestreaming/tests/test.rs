@@ -13,8 +13,8 @@ use aws_sdk_transcribestreaming::types::{
     AudioEvent, AudioStream, LanguageCode, MediaEncoding, TranscriptResultStream,
 };
 use aws_sdk_transcribestreaming::{Client, Config};
-use aws_smithy_client::dvr::{Event, ReplayingConnection};
 use aws_smithy_eventstream::frame::{DecodedFrame, HeaderValue, Message, MessageFrameDecoder};
+use aws_smithy_runtime::client::http::test_util::dvr::{Event, ReplayingClient};
 use bytes::BufMut;
 use futures_core::Stream;
 use std::collections::{BTreeMap, BTreeSet};
@@ -98,14 +98,14 @@ async fn start_request(
     region: &'static str,
     events_json: &str,
     input_stream: impl Stream<Item = Result<AudioStream, AudioStreamError>> + Send + Sync + 'static,
-) -> (ReplayingConnection, StartStreamTranscriptionOutput) {
+) -> (ReplayingClient, StartStreamTranscriptionOutput) {
     let events: Vec<Event> = serde_json::from_str(events_json).unwrap();
-    let replayer = ReplayingConnection::new(events);
+    let replayer = ReplayingClient::new(events);
 
     let region = Region::from_static(region);
     let config = Config::builder()
         .region(region)
-        .http_connector(replayer.clone())
+        .http_client(replayer.clone())
         .credentials_provider(Credentials::for_tests())
         .build();
     let client = Client::from_conf(config);

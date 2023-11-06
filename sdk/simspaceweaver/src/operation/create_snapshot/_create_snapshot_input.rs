@@ -36,6 +36,7 @@ pub struct CreateSnapshotInputBuilder {
 }
 impl CreateSnapshotInputBuilder {
     /// <p>The name of the simulation.</p>
+    /// This field is required.
     pub fn simulation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.simulation = ::std::option::Option::Some(input.into());
         self
@@ -51,6 +52,7 @@ impl CreateSnapshotInputBuilder {
     }
     /// <p>The Amazon S3 bucket and optional folder (object key prefix) where SimSpace Weaver creates the snapshot file.</p>
     /// <p>The Amazon S3 bucket must be in the same Amazon Web Services Region as the simulation.</p>
+    /// This field is required.
     pub fn destination(mut self, input: crate::types::S3Destination) -> Self {
         self.destination = ::std::option::Option::Some(input);
         self
@@ -69,7 +71,7 @@ impl CreateSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`CreateSnapshotInput`](crate::operation::create_snapshot::CreateSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_snapshot::CreateSnapshotInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_snapshot::CreateSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_snapshot::CreateSnapshotInput {
             simulation: self.simulation,
             destination: self.destination,

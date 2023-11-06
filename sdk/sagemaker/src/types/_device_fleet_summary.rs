@@ -49,6 +49,7 @@ pub struct DeviceFleetSummaryBuilder {
 }
 impl DeviceFleetSummaryBuilder {
     /// <p>Amazon Resource Name (ARN) of the device fleet.</p>
+    /// This field is required.
     pub fn device_fleet_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_fleet_arn = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl DeviceFleetSummaryBuilder {
         &self.device_fleet_arn
     }
     /// <p>Name of the device fleet.</p>
+    /// This field is required.
     pub fn device_fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_fleet_name = ::std::option::Option::Some(input.into());
         self

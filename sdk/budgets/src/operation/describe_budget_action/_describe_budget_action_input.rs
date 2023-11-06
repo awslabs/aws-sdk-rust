@@ -41,6 +41,7 @@ pub struct DescribeBudgetActionInputBuilder {
 }
 impl DescribeBudgetActionInputBuilder {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DescribeBudgetActionInputBuilder {
         &self.account_id
     }
     /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
+    /// This field is required.
     pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.budget_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl DescribeBudgetActionInputBuilder {
         &self.budget_name
     }
     /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
+    /// This field is required.
     pub fn action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +88,7 @@ impl DescribeBudgetActionInputBuilder {
     /// Consumes the builder and constructs a [`DescribeBudgetActionInput`](crate::operation::describe_budget_action::DescribeBudgetActionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_budget_action::DescribeBudgetActionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_budget_action::DescribeBudgetActionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_budget_action::DescribeBudgetActionInput {
             account_id: self.account_id,

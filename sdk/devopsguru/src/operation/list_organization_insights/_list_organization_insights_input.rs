@@ -24,12 +24,16 @@ impl ListOrganizationInsightsInput {
         self.max_results
     }
     /// <p>The ID of the Amazon Web Services account. </p>
-    pub fn account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.account_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
+    pub fn account_ids(&self) -> &[::std::string::String] {
+        self.account_ids.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the organizational unit.</p>
-    pub fn organizational_unit_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.organizational_unit_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.organizational_unit_ids.is_none()`.
+    pub fn organizational_unit_ids(&self) -> &[::std::string::String] {
+        self.organizational_unit_ids.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -55,6 +59,7 @@ pub struct ListOrganizationInsightsInputBuilder {
 }
 impl ListOrganizationInsightsInputBuilder {
     /// <p> A filter used by <code>ListInsights</code> to specify which insights to return. </p>
+    /// This field is required.
     pub fn status_filter(mut self, input: crate::types::ListInsightsStatusFilter) -> Self {
         self.status_filter = ::std::option::Option::Some(input);
         self
@@ -141,7 +146,7 @@ impl ListOrganizationInsightsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_organization_insights::ListOrganizationInsightsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_organization_insights::ListOrganizationInsightsInput {
             status_filter: self.status_filter,

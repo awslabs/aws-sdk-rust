@@ -2,7 +2,7 @@
 pub fn ser_m2ts_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::M2tsSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.absent_input_audio_behavior {
         object.key("absentInputAudioBehavior").string(var_1.as_str());
     }

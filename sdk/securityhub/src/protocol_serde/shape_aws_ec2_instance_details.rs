@@ -2,14 +2,14 @@
 pub fn ser_aws_ec2_instance_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEc2InstanceDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.r#type {
         object.key("Type").string(var_1.as_str());
     }
     if let Some(var_2) = &input.image_id {
         object.key("ImageId").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.ip_v4_addresses {
+    if let Some(var_3) = &input.ipv4_addresses {
         let mut array_4 = object.key("IpV4Addresses").start_array();
         for item_5 in var_3 {
             {
@@ -18,7 +18,7 @@ pub fn ser_aws_ec2_instance_details(
         }
         array_4.finish();
     }
-    if let Some(var_6) = &input.ip_v6_addresses {
+    if let Some(var_6) = &input.ipv6_addresses {
         let mut array_7 = object.key("IpV6Addresses").start_array();
         for item_8 in var_6 {
             {
@@ -106,10 +106,10 @@ where
                                 );
                             }
                             "IpV4Addresses" => {
-                                builder = builder.set_ip_v4_addresses(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                                builder = builder.set_ipv4_addresses(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
                             }
                             "IpV6Addresses" => {
-                                builder = builder.set_ip_v6_addresses(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                                builder = builder.set_ipv6_addresses(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
                             }
                             "KeyName" => {
                                 builder = builder.set_key_name(

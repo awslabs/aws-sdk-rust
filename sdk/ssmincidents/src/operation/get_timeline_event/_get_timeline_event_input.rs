@@ -34,6 +34,7 @@ pub struct GetTimelineEventInputBuilder {
 }
 impl GetTimelineEventInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
+    /// This field is required.
     pub fn incident_record_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.incident_record_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetTimelineEventInputBuilder {
         &self.incident_record_arn
     }
     /// <p>The ID of the event. You can get an event's ID when you create it, or by using <code>ListTimelineEvents</code>.</p>
+    /// This field is required.
     pub fn event_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl GetTimelineEventInputBuilder {
     /// Consumes the builder and constructs a [`GetTimelineEventInput`](crate::operation::get_timeline_event::GetTimelineEventInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_timeline_event::GetTimelineEventInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_timeline_event::GetTimelineEventInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_timeline_event::GetTimelineEventInput {
             incident_record_arn: self.incident_record_arn,
             event_id: self.event_id,

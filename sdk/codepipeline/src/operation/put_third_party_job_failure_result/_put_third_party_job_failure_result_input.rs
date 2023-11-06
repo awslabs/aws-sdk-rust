@@ -42,6 +42,7 @@ pub struct PutThirdPartyJobFailureResultInputBuilder {
 }
 impl PutThirdPartyJobFailureResultInputBuilder {
     /// <p>The ID of the job that failed. This is the same ID returned from <code>PollForThirdPartyJobs</code>.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl PutThirdPartyJobFailureResultInputBuilder {
         &self.job_id
     }
     /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl PutThirdPartyJobFailureResultInputBuilder {
         &self.client_token
     }
     /// <p>Represents information about failure details.</p>
+    /// This field is required.
     pub fn failure_details(mut self, input: crate::types::FailureDetails) -> Self {
         self.failure_details = ::std::option::Option::Some(input);
         self
@@ -88,7 +91,7 @@ impl PutThirdPartyJobFailureResultInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_third_party_job_failure_result::PutThirdPartyJobFailureResultInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_third_party_job_failure_result::PutThirdPartyJobFailureResultInput {
             job_id: self.job_id,

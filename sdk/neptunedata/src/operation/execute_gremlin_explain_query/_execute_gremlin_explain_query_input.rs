@@ -27,6 +27,7 @@ pub struct ExecuteGremlinExplainQueryInputBuilder {
 }
 impl ExecuteGremlinExplainQueryInputBuilder {
     /// <p>The Gremlin explain query string.</p>
+    /// This field is required.
     pub fn gremlin_query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gremlin_query = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl ExecuteGremlinExplainQueryInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryInput {
             gremlin_query: self.gremlin_query,

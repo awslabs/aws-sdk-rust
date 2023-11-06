@@ -17,8 +17,10 @@ impl DescribeDataProvidersOutput {
         self.marker.as_deref()
     }
     /// <p>A description of data providers.</p>
-    pub fn data_providers(&self) -> ::std::option::Option<&[crate::types::DataProvider]> {
-        self.data_providers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_providers.is_none()`.
+    pub fn data_providers(&self) -> &[crate::types::DataProvider] {
+        self.data_providers.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeDataProvidersOutput {

@@ -2,21 +2,21 @@
 pub fn ser_database_input_definition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DatabaseInputDefinition,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.glue_connection_name {
-        object.key("GlueConnectionName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("GlueConnectionName").string(input.glue_connection_name.as_str());
     }
-    if let Some(var_2) = &input.database_table_name {
-        object.key("DatabaseTableName").string(var_2.as_str());
+    if let Some(var_1) = &input.database_table_name {
+        object.key("DatabaseTableName").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.temp_directory {
+    if let Some(var_2) = &input.temp_directory {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("TempDirectory").start_object();
-        crate::protocol_serde::shape_s3_location::ser_s3_location(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_3 = object.key("TempDirectory").start_object();
+        crate::protocol_serde::shape_s3_location::ser_s3_location(&mut object_3, var_2)?;
+        object_3.finish();
     }
-    if let Some(var_5) = &input.query_string {
-        object.key("QueryString").string(var_5.as_str());
+    if let Some(var_4) = &input.query_string {
+        object.key("QueryString").string(var_4.as_str());
     }
     Ok(())
 }
@@ -70,7 +70,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::database_input_definition_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

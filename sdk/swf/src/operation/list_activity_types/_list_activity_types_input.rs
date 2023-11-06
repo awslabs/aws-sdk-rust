@@ -64,6 +64,7 @@ pub struct ListActivityTypesInputBuilder {
 }
 impl ListActivityTypesInputBuilder {
     /// <p>The name of the domain in which the activity types have been registered.</p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -92,6 +93,7 @@ impl ListActivityTypesInputBuilder {
         &self.name
     }
     /// <p>Specifies the registration status of the activity types to list.</p>
+    /// This field is required.
     pub fn registration_status(mut self, input: crate::types::RegistrationStatus) -> Self {
         self.registration_status = ::std::option::Option::Some(input);
         self
@@ -153,7 +155,7 @@ impl ListActivityTypesInputBuilder {
     /// Consumes the builder and constructs a [`ListActivityTypesInput`](crate::operation::list_activity_types::ListActivityTypesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_activity_types::ListActivityTypesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_activity_types::ListActivityTypesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_activity_types::ListActivityTypesInput {
             domain: self.domain,
             name: self.name,

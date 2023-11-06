@@ -11,8 +11,10 @@ pub struct GetRecommendationsOutput {
 }
 impl GetRecommendationsOutput {
     /// <p>A list of recommendations sorted in descending order by prediction score. There can be a maximum of 500 items in the list.</p>
-    pub fn item_list(&self) -> ::std::option::Option<&[crate::types::PredictedItem]> {
-        self.item_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.item_list.is_none()`.
+    pub fn item_list(&self) -> &[crate::types::PredictedItem] {
+        self.item_list.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the recommendation.</p>
     pub fn recommendation_id(&self) -> ::std::option::Option<&str> {

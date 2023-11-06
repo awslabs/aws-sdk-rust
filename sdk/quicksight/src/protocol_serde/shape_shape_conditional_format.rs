@@ -2,7 +2,7 @@
 pub fn ser_shape_conditional_format(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ShapeConditionalFormat,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.background_color {
         #[allow(unused_mut)]
         let mut object_2 = object.key("BackgroundColor").start_object();
@@ -42,7 +42,7 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::shape_conditional_format_correct_errors(builder).build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

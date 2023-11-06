@@ -27,8 +27,10 @@ impl Threat {
         self.item_count
     }
     /// <p>Provides information about the file paths that were affected by the threat. </p>
-    pub fn file_paths(&self) -> ::std::option::Option<&[crate::types::FilePaths]> {
-        self.file_paths.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.file_paths.is_none()`.
+    pub fn file_paths(&self) -> &[crate::types::FilePaths] {
+        self.file_paths.as_deref().unwrap_or_default()
     }
 }
 impl Threat {

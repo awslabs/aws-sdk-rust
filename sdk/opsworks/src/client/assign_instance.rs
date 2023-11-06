@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AssignInstance`](crate::operation::assign_instance::builders::AssignInstanceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_id(impl Into<String>)`](crate::operation::assign_instance::builders::AssignInstanceFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::assign_instance::builders::AssignInstanceFluentBuilder::set_instance_id): <p>The instance ID.</p>
-    ///   - [`layer_ids(impl Into<String>)`](crate::operation::assign_instance::builders::AssignInstanceFluentBuilder::layer_ids) / [`set_layer_ids(Option<Vec<String>>)`](crate::operation::assign_instance::builders::AssignInstanceFluentBuilder::set_layer_ids): <p>The layer ID, which must correspond to a custom layer. You cannot assign a registered instance to a built-in layer.</p>
+    ///   - [`instance_id(impl Into<String>)`](crate::operation::assign_instance::builders::AssignInstanceFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::assign_instance::builders::AssignInstanceFluentBuilder::set_instance_id):<br>required: **true**<br><p>The instance ID.</p><br>
+    ///   - [`layer_ids(impl Into<String>)`](crate::operation::assign_instance::builders::AssignInstanceFluentBuilder::layer_ids) / [`set_layer_ids(Option<Vec::<String>>)`](crate::operation::assign_instance::builders::AssignInstanceFluentBuilder::set_layer_ids):<br>required: **true**<br><p>The layer ID, which must correspond to a custom layer. You cannot assign a registered instance to a built-in layer.</p><br>
     /// - On success, responds with [`AssignInstanceOutput`](crate::operation::assign_instance::AssignInstanceOutput)
     /// - On failure, responds with [`SdkError<AssignInstanceError>`](crate::operation::assign_instance::AssignInstanceError)
     pub fn assign_instance(&self) -> crate::operation::assign_instance::builders::AssignInstanceFluentBuilder {

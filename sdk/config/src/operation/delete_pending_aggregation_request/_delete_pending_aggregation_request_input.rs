@@ -34,6 +34,7 @@ pub struct DeletePendingAggregationRequestInputBuilder {
 }
 impl DeletePendingAggregationRequestInputBuilder {
     /// <p>The 12-digit account ID of the account requesting to aggregate data.</p>
+    /// This field is required.
     pub fn requester_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.requester_account_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeletePendingAggregationRequestInputBuilder {
         &self.requester_account_id
     }
     /// <p>The region requesting to aggregate data.</p>
+    /// This field is required.
     pub fn requester_aws_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.requester_aws_region = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl DeletePendingAggregationRequestInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_pending_aggregation_request::DeletePendingAggregationRequestInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_pending_aggregation_request::DeletePendingAggregationRequestInput {

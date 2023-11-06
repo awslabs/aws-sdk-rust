@@ -28,8 +28,10 @@ impl StartAnnotationImportJobInput {
         self.role_arn.as_deref()
     }
     /// <p>Items to import.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::AnnotationImportItemSource]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[crate::types::AnnotationImportItemSource] {
+        self.items.as_deref().unwrap_or_default()
     }
     /// <p> The name of the annotation store version. </p>
     pub fn version_name(&self) -> ::std::option::Option<&str> {
@@ -69,6 +71,7 @@ pub struct StartAnnotationImportJobInputBuilder {
 }
 impl StartAnnotationImportJobInputBuilder {
     /// <p>A destination annotation store for the job.</p>
+    /// This field is required.
     pub fn destination_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +86,7 @@ impl StartAnnotationImportJobInputBuilder {
         &self.destination_name
     }
     /// <p>A service role for the job.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -190,7 +194,7 @@ impl StartAnnotationImportJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_annotation_import_job::StartAnnotationImportJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_annotation_import_job::StartAnnotationImportJobInput {
             destination_name: self.destination_name,

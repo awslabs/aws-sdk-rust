@@ -27,6 +27,7 @@ pub struct GetMediaInsightsPipelineConfigurationInputBuilder {
 }
 impl GetMediaInsightsPipelineConfigurationInputBuilder {
     /// <p>The unique identifier of the requested resource. Valid values include the name and ARN of the media insights pipeline configuration.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetMediaInsightsPipelineConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_media_insights_pipeline_configuration::GetMediaInsightsPipelineConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_media_insights_pipeline_configuration::GetMediaInsightsPipelineConfigurationInput { identifier: self.identifier },

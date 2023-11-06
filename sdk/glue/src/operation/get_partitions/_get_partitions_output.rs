@@ -11,8 +11,10 @@ pub struct GetPartitionsOutput {
 }
 impl GetPartitionsOutput {
     /// <p>A list of requested partitions.</p>
-    pub fn partitions(&self) -> ::std::option::Option<&[crate::types::Partition]> {
-        self.partitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.partitions.is_none()`.
+    pub fn partitions(&self) -> &[crate::types::Partition] {
+        self.partitions.as_deref().unwrap_or_default()
     }
     /// <p>A continuation token, if the returned list of partitions does not include the last one.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -27,6 +27,7 @@ pub struct DeleteListInputBuilder {
 }
 impl DeleteListInputBuilder {
     /// <p> The name of the list to delete. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl DeleteListInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`DeleteListInput`](crate::operation::delete_list::DeleteListInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_list::DeleteListInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_list::DeleteListInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_list::DeleteListInput { name: self.name })
     }
 }

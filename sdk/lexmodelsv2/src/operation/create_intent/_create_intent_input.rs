@@ -58,8 +58,10 @@ impl CreateIntentInput {
     }
     /// <p>An array of strings that a user might say to signal the intent. For example, "I want a pizza", or "I want a {PizzaSize} pizza". </p>
     /// <p>In an utterance, slot names are enclosed in curly braces ("{", "}") to indicate where they should be displayed in the utterance shown to the user.. </p>
-    pub fn sample_utterances(&self) -> ::std::option::Option<&[crate::types::SampleUtterance]> {
-        self.sample_utterances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sample_utterances.is_none()`.
+    pub fn sample_utterances(&self) -> &[crate::types::SampleUtterance] {
+        self.sample_utterances.as_deref().unwrap_or_default()
     }
     /// <p>Specifies that Amazon Lex invokes the alias Lambda function for each user input. You can invoke this Lambda function to personalize user interaction.</p>
     /// <p>For example, suppose that your bot determines that the user's name is John. You Lambda function might retrieve John's information from a backend database and prepopulate some of the values. For example, if you find that John is gluten intolerant, you might set the corresponding intent slot, <code>glutenIntolerant</code> to <code>true</code>. You might find John's phone number and set the corresponding session attribute.</p>
@@ -84,14 +86,18 @@ impl CreateIntentInput {
     /// <p>A context can be automatically activated using the <code>outputContexts</code> property or it can be set at runtime.</p>
     /// <p> For example, if there are two intents with different input contexts that respond to the same utterances, only the intent with the active context will respond.</p>
     /// <p>An intent may have up to 5 input contexts. If an intent has multiple input contexts, all of the contexts must be active to consider the intent.</p>
-    pub fn input_contexts(&self) -> ::std::option::Option<&[crate::types::InputContext]> {
-        self.input_contexts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_contexts.is_none()`.
+    pub fn input_contexts(&self) -> &[crate::types::InputContext] {
+        self.input_contexts.as_deref().unwrap_or_default()
     }
     /// <p>A lists of contexts that the intent activates when it is fulfilled.</p>
     /// <p>You can use an output context to indicate the intents that Amazon Lex should consider for the next turn of the conversation with a customer. </p>
     /// <p>When you use the <code>outputContextsList</code> property, all of the contexts specified in the list are activated when the intent is fulfilled. You can set up to 10 output contexts. You can also set the number of conversation turns that the context should be active, or the length of time that the context should be active.</p>
-    pub fn output_contexts(&self) -> ::std::option::Option<&[crate::types::OutputContext]> {
-        self.output_contexts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_contexts.is_none()`.
+    pub fn output_contexts(&self) -> &[crate::types::OutputContext] {
+        self.output_contexts.as_deref().unwrap_or_default()
     }
     /// <p>Configuration information required to use the <code>AMAZON.KendraSearchIntent</code> intent to connect to an Amazon Kendra index. The <code>AMAZON.KendraSearchIntent</code> intent is called when Amazon Lex can't determine another intent to invoke.</p>
     pub fn kendra_configuration(&self) -> ::std::option::Option<&crate::types::KendraConfiguration> {
@@ -143,6 +149,7 @@ pub struct CreateIntentInputBuilder {
 }
 impl CreateIntentInputBuilder {
     /// <p>The name of the intent. Intent names must be unique in the locale that contains the intent and cannot match the name of any built-in intent.</p>
+    /// This field is required.
     pub fn intent_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.intent_name = ::std::option::Option::Some(input.into());
         self
@@ -342,6 +349,7 @@ impl CreateIntentInputBuilder {
         &self.kendra_configuration
     }
     /// <p>The identifier of the bot associated with this intent.</p>
+    /// This field is required.
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
         self
@@ -356,6 +364,7 @@ impl CreateIntentInputBuilder {
         &self.bot_id
     }
     /// <p>The version of the bot associated with this intent.</p>
+    /// This field is required.
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
         self
@@ -370,6 +379,7 @@ impl CreateIntentInputBuilder {
         &self.bot_version
     }
     /// <p>The identifier of the language and locale where this intent is used. All of the bots, slot types, and slots used by the intent must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// This field is required.
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
         self
@@ -398,7 +408,9 @@ impl CreateIntentInputBuilder {
         &self.initial_response_setting
     }
     /// Consumes the builder and constructs a [`CreateIntentInput`](crate::operation::create_intent::CreateIntentInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_intent::CreateIntentInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_intent::CreateIntentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_intent::CreateIntentInput {
             intent_name: self.intent_name,
             description: self.description,

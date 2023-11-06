@@ -28,6 +28,7 @@ pub struct VolumeDetailBuilder {
 }
 impl VolumeDetailBuilder {
     /// <p>The size of the volume, in GiB.</p>
+    /// This field is required.
     pub fn size(mut self, input: i64) -> Self {
         self.size = ::std::option::Option::Some(input);
         self

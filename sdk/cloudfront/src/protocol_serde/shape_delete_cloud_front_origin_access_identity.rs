@@ -34,8 +34,8 @@ pub fn de_delete_cloud_front_origin_access_identity_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "CloudFrontOriginAccessIdentityInUse" => crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityError::CloudFrontOriginAccessIdentityInUse({
@@ -50,8 +50,8 @@ pub fn de_delete_cloud_front_origin_access_identity_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidIfMatchVersion" => crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityError::InvalidIfMatchVersion({
@@ -66,8 +66,8 @@ pub fn de_delete_cloud_front_origin_access_identity_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NoSuchCloudFrontOriginAccessIdentity" => crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityError::NoSuchCloudFrontOriginAccessIdentity({
@@ -82,8 +82,8 @@ pub fn de_delete_cloud_front_origin_access_identity_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "PreconditionFailed" => crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityError::PreconditionFailed({
@@ -98,8 +98,8 @@ pub fn de_delete_cloud_front_origin_access_identity_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityError::generic(generic)
@@ -127,13 +127,13 @@ pub fn de_delete_cloud_front_origin_access_identity_http_response(
 pub fn ser_delete_cloud_front_origin_access_identity_headers(
     input: &crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.if_match {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "if_match",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )

@@ -49,16 +49,20 @@ pub struct CreateClassificationJobInput {
 }
 impl CreateClassificationJobInput {
     /// <p>An array of unique identifiers, one for each allow list for the job to use when it analyzes data.</p>
-    pub fn allow_list_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.allow_list_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allow_list_ids.is_none()`.
+    pub fn allow_list_ids(&self) -> &[::std::string::String] {
+        self.allow_list_ids.as_deref().unwrap_or_default()
     }
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
     /// <p>An array of unique identifiers, one for each custom data identifier for the job to use when it analyzes data. To use only managed data identifiers, don't specify a value for this property and specify a value other than NONE for the managedDataIdentifierSelector property.</p>
-    pub fn custom_data_identifier_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.custom_data_identifier_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_data_identifier_ids.is_none()`.
+    pub fn custom_data_identifier_ids(&self) -> &[::std::string::String] {
+        self.custom_data_identifier_ids.as_deref().unwrap_or_default()
     }
     /// <p>A custom description of the job. The description can contain as many as 200 characters.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -79,8 +83,10 @@ impl CreateClassificationJobInput {
     }
     /// <p>An array of unique identifiers, one for each managed data identifier for the job to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type that you specify for the job (managedDataIdentifierSelector).</p>
     /// <p>To retrieve a list of valid values for this property, use the ListManagedDataIdentifiers operation.</p>
-    pub fn managed_data_identifier_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.managed_data_identifier_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.managed_data_identifier_ids.is_none()`.
+    pub fn managed_data_identifier_ids(&self) -> &[::std::string::String] {
+        self.managed_data_identifier_ids.as_deref().unwrap_or_default()
     }
     /// <p>The selection type to apply when determining which managed data identifiers the job uses to analyze data. Valid values are:</p>
     /// <ul>
@@ -165,6 +171,7 @@ impl CreateClassificationJobInputBuilder {
         &self.allow_list_ids
     }
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -234,6 +241,7 @@ impl CreateClassificationJobInputBuilder {
     /// <li><p>ONE_TIME - Run the job only once. If you specify this value, don't specify a value for the scheduleFrequency property.</p></li>
     /// <li><p>SCHEDULED - Run the job on a daily, weekly, or monthly basis. If you specify this value, use the scheduleFrequency property to define the recurrence pattern for the job.</p></li>
     /// </ul>
+    /// This field is required.
     pub fn job_type(mut self, input: crate::types::JobType) -> Self {
         self.job_type = ::std::option::Option::Some(input);
         self
@@ -323,6 +331,7 @@ impl CreateClassificationJobInputBuilder {
         &self.managed_data_identifier_selector
     }
     /// <p>A custom name for the job. The name can contain as many as 500 characters.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -337,6 +346,7 @@ impl CreateClassificationJobInputBuilder {
         &self.name
     }
     /// <p>The S3 buckets that contain the objects to analyze, and the scope of that analysis.</p>
+    /// This field is required.
     pub fn s3_job_definition(mut self, input: crate::types::S3JobDefinition) -> Self {
         self.s3_job_definition = ::std::option::Option::Some(input);
         self
@@ -406,7 +416,7 @@ impl CreateClassificationJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_classification_job::CreateClassificationJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_classification_job::CreateClassificationJobInput {
             allow_list_ids: self.allow_list_ids,

@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SplunkDestinationConfiguration {
     /// <p>The HTTP Event Collector (HEC) endpoint to which Kinesis Data Firehose sends your data.</p>
-    pub hec_endpoint: ::std::option::Option<::std::string::String>,
+    pub hec_endpoint: ::std::string::String,
     /// <p>This type can be either "Raw" or "Event."</p>
-    pub hec_endpoint_type: ::std::option::Option<crate::types::HecEndpointType>,
+    pub hec_endpoint_type: crate::types::HecEndpointType,
     /// <p>This is a GUID that you obtain from your Splunk cluster when you create a new HEC endpoint.</p>
-    pub hec_token: ::std::option::Option<::std::string::String>,
+    pub hec_token: ::std::string::String,
     /// <p>The amount of time that Kinesis Data Firehose waits to receive an acknowledgment from Splunk after it sends it data. At the end of the timeout period, Kinesis Data Firehose either tries to send the data again or considers it an error, based on your retry settings.</p>
     pub hec_acknowledgment_timeout_in_seconds: ::std::option::Option<i32>,
     /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver data to Splunk, or if it doesn't receive an acknowledgment of receipt from Splunk.</p>
@@ -26,16 +26,18 @@ pub struct SplunkDestinationConfiguration {
 }
 impl SplunkDestinationConfiguration {
     /// <p>The HTTP Event Collector (HEC) endpoint to which Kinesis Data Firehose sends your data.</p>
-    pub fn hec_endpoint(&self) -> ::std::option::Option<&str> {
-        self.hec_endpoint.as_deref()
+    pub fn hec_endpoint(&self) -> &str {
+        use std::ops::Deref;
+        self.hec_endpoint.deref()
     }
     /// <p>This type can be either "Raw" or "Event."</p>
-    pub fn hec_endpoint_type(&self) -> ::std::option::Option<&crate::types::HecEndpointType> {
-        self.hec_endpoint_type.as_ref()
+    pub fn hec_endpoint_type(&self) -> &crate::types::HecEndpointType {
+        &self.hec_endpoint_type
     }
     /// <p>This is a GUID that you obtain from your Splunk cluster when you create a new HEC endpoint.</p>
-    pub fn hec_token(&self) -> ::std::option::Option<&str> {
-        self.hec_token.as_deref()
+    pub fn hec_token(&self) -> &str {
+        use std::ops::Deref;
+        self.hec_token.deref()
     }
     /// <p>The amount of time that Kinesis Data Firehose waits to receive an acknowledgment from Splunk after it sends it data. At the end of the timeout period, Kinesis Data Firehose either tries to send the data again or considers it an error, based on your retry settings.</p>
     pub fn hec_acknowledgment_timeout_in_seconds(&self) -> ::std::option::Option<i32> {
@@ -86,6 +88,7 @@ pub struct SplunkDestinationConfigurationBuilder {
 }
 impl SplunkDestinationConfigurationBuilder {
     /// <p>The HTTP Event Collector (HEC) endpoint to which Kinesis Data Firehose sends your data.</p>
+    /// This field is required.
     pub fn hec_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hec_endpoint = ::std::option::Option::Some(input.into());
         self
@@ -100,6 +103,7 @@ impl SplunkDestinationConfigurationBuilder {
         &self.hec_endpoint
     }
     /// <p>This type can be either "Raw" or "Event."</p>
+    /// This field is required.
     pub fn hec_endpoint_type(mut self, input: crate::types::HecEndpointType) -> Self {
         self.hec_endpoint_type = ::std::option::Option::Some(input);
         self
@@ -114,6 +118,7 @@ impl SplunkDestinationConfigurationBuilder {
         &self.hec_endpoint_type
     }
     /// <p>This is a GUID that you obtain from your Splunk cluster when you create a new HEC endpoint.</p>
+    /// This field is required.
     pub fn hec_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hec_token = ::std::option::Option::Some(input.into());
         self
@@ -173,6 +178,7 @@ impl SplunkDestinationConfigurationBuilder {
         &self.s3_backup_mode
     }
     /// <p>The configuration for the backup Amazon S3 location.</p>
+    /// This field is required.
     pub fn s3_configuration(mut self, input: crate::types::S3DestinationConfiguration) -> Self {
         self.s3_configuration = ::std::option::Option::Some(input);
         self
@@ -215,17 +221,36 @@ impl SplunkDestinationConfigurationBuilder {
         &self.cloud_watch_logging_options
     }
     /// Consumes the builder and constructs a [`SplunkDestinationConfiguration`](crate::types::SplunkDestinationConfiguration).
-    pub fn build(self) -> crate::types::SplunkDestinationConfiguration {
-        crate::types::SplunkDestinationConfiguration {
-            hec_endpoint: self.hec_endpoint,
-            hec_endpoint_type: self.hec_endpoint_type,
-            hec_token: self.hec_token,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`hec_endpoint`](crate::types::builders::SplunkDestinationConfigurationBuilder::hec_endpoint)
+    /// - [`hec_endpoint_type`](crate::types::builders::SplunkDestinationConfigurationBuilder::hec_endpoint_type)
+    /// - [`hec_token`](crate::types::builders::SplunkDestinationConfigurationBuilder::hec_token)
+    pub fn build(self) -> ::std::result::Result<crate::types::SplunkDestinationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SplunkDestinationConfiguration {
+            hec_endpoint: self.hec_endpoint.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "hec_endpoint",
+                    "hec_endpoint was not specified but it is required when building SplunkDestinationConfiguration",
+                )
+            })?,
+            hec_endpoint_type: self.hec_endpoint_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "hec_endpoint_type",
+                    "hec_endpoint_type was not specified but it is required when building SplunkDestinationConfiguration",
+                )
+            })?,
+            hec_token: self.hec_token.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "hec_token",
+                    "hec_token was not specified but it is required when building SplunkDestinationConfiguration",
+                )
+            })?,
             hec_acknowledgment_timeout_in_seconds: self.hec_acknowledgment_timeout_in_seconds,
             retry_options: self.retry_options,
             s3_backup_mode: self.s3_backup_mode,
             s3_configuration: self.s3_configuration,
             processing_configuration: self.processing_configuration,
             cloud_watch_logging_options: self.cloud_watch_logging_options,
-        }
+        })
     }
 }

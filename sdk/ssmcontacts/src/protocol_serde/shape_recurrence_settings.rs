@@ -2,7 +2,7 @@
 pub fn ser_recurrence_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RecurrenceSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.monthly_settings {
         let mut array_2 = object.key("MonthlySettings").start_array();
         for item_3 in var_1 {
@@ -39,35 +39,35 @@ pub fn ser_recurrence_settings(
         }
         array_10.finish();
     }
-    if let Some(var_13) = &input.number_of_on_calls {
+    {
         object.key("NumberOfOnCalls").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_13).into()),
+            ::aws_smithy_types::Number::NegInt((input.number_of_on_calls).into()),
         );
     }
-    if let Some(var_14) = &input.shift_coverages {
+    if let Some(var_13) = &input.shift_coverages {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("ShiftCoverages").start_object();
-        for (key_16, value_17) in var_14 {
+        let mut object_14 = object.key("ShiftCoverages").start_object();
+        for (key_15, value_16) in var_13 {
             {
-                let mut array_18 = object_15.key(key_16.as_str()).start_array();
-                for item_19 in value_17 {
+                let mut array_17 = object_14.key(key_15.as_str()).start_array();
+                for item_18 in value_16 {
                     {
                         #[allow(unused_mut)]
-                        let mut object_20 = array_18.value().start_object();
-                        crate::protocol_serde::shape_coverage_time::ser_coverage_time(&mut object_20, item_19)?;
-                        object_20.finish();
+                        let mut object_19 = array_17.value().start_object();
+                        crate::protocol_serde::shape_coverage_time::ser_coverage_time(&mut object_19, item_18)?;
+                        object_19.finish();
                     }
                 }
-                array_18.finish();
+                array_17.finish();
             }
         }
-        object_15.finish();
+        object_14.finish();
     }
-    if let Some(var_21) = &input.recurrence_multiplier {
+    {
         object.key("RecurrenceMultiplier").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_21).into()),
+            ::aws_smithy_types::Number::NegInt((input.recurrence_multiplier).into()),
         );
     }
     Ok(())
@@ -124,7 +124,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::recurrence_settings_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

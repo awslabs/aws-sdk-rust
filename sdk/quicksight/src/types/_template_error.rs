@@ -21,8 +21,10 @@ impl TemplateError {
         self.message.as_deref()
     }
     /// <p>An error path that shows which entities caused the template error.</p>
-    pub fn violated_entities(&self) -> ::std::option::Option<&[crate::types::Entity]> {
-        self.violated_entities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.violated_entities.is_none()`.
+    pub fn violated_entities(&self) -> &[crate::types::Entity] {
+        self.violated_entities.as_deref().unwrap_or_default()
     }
 }
 impl TemplateError {

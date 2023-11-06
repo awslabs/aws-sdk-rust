@@ -27,6 +27,7 @@ pub struct DisassociateFirewallRuleGroupInputBuilder {
 }
 impl DisassociateFirewallRuleGroupInputBuilder {
     /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>. </p>
+    /// This field is required.
     pub fn firewall_rule_group_association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_rule_group_association_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DisassociateFirewallRuleGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_firewall_rule_group::DisassociateFirewallRuleGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_firewall_rule_group::DisassociateFirewallRuleGroupInput {
             firewall_rule_group_association_id: self.firewall_rule_group_association_id,

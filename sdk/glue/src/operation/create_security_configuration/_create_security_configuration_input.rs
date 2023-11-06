@@ -34,6 +34,7 @@ pub struct CreateSecurityConfigurationInputBuilder {
 }
 impl CreateSecurityConfigurationInputBuilder {
     /// <p>The name for the new security configuration.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl CreateSecurityConfigurationInputBuilder {
         &self.name
     }
     /// <p>The encryption configuration for the new security configuration.</p>
+    /// This field is required.
     pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
         self.encryption_configuration = ::std::option::Option::Some(input);
         self
@@ -66,7 +68,7 @@ impl CreateSecurityConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_security_configuration::CreateSecurityConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_security_configuration::CreateSecurityConfigurationInput {
             name: self.name,

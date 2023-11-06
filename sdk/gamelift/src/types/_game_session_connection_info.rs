@@ -61,8 +61,10 @@ impl GameSessionConnectionInfo {
         self.port
     }
     /// <p>A collection of player session IDs, one for each player ID that was included in the original matchmaking request. </p>
-    pub fn matched_player_sessions(&self) -> ::std::option::Option<&[crate::types::MatchedPlayerSession]> {
-        self.matched_player_sessions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.matched_player_sessions.is_none()`.
+    pub fn matched_player_sessions(&self) -> &[crate::types::MatchedPlayerSession] {
+        self.matched_player_sessions.as_deref().unwrap_or_default()
     }
 }
 impl GameSessionConnectionInfo {

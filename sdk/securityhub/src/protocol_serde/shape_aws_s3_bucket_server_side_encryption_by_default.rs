@@ -2,7 +2,7 @@
 pub fn ser_aws_s3_bucket_server_side_encryption_by_default(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsS3BucketServerSideEncryptionByDefault,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.sse_algorithm {
         object.key("SSEAlgorithm").string(var_1.as_str());
     }

@@ -106,7 +106,7 @@ impl ListConnectPeersInputBuilder {
     /// Consumes the builder and constructs a [`ListConnectPeersInput`](crate::operation::list_connect_peers::ListConnectPeersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_connect_peers::ListConnectPeersInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_connect_peers::ListConnectPeersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_connect_peers::ListConnectPeersInput {
             core_network_id: self.core_network_id,
             connect_attachment_id: self.connect_attachment_id,

@@ -27,6 +27,7 @@ pub struct GetGatewayInputBuilder {
 }
 impl GetGatewayInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the gateway.</p>
+    /// This field is required.
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_arn = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetGatewayInputBuilder {
         &self.gateway_arn
     }
     /// Consumes the builder and constructs a [`GetGatewayInput`](crate::operation::get_gateway::GetGatewayInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_gateway::GetGatewayInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_gateway::GetGatewayInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_gateway::GetGatewayInput {
             gateway_arn: self.gateway_arn,
         })

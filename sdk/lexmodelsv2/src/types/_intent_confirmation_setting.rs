@@ -115,6 +115,7 @@ pub struct IntentConfirmationSettingBuilder {
 impl IntentConfirmationSettingBuilder {
     /// <p>Prompts the user to confirm the intent. This question should have a yes or no answer.</p>
     /// <p>Amazon Lex uses this prompt to ensure that the user acknowledges that the intent is ready for fulfillment. For example, with the <code>OrderPizza</code> intent, you might want to confirm that the order is correct before placing it. For other intents, such as intents that simply respond to user questions, you might not need to ask the user for confirmation before providing the information. </p>
+    /// This field is required.
     pub fn prompt_specification(mut self, input: crate::types::PromptSpecification) -> Self {
         self.prompt_specification = ::std::option::Option::Some(input);
         self

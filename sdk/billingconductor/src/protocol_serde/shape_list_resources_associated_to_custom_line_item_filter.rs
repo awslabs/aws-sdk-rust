@@ -2,7 +2,7 @@
 pub fn ser_list_resources_associated_to_custom_line_item_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ListResourcesAssociatedToCustomLineItemFilter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.relationship {
         object.key("Relationship").string(var_1.as_str());
     }

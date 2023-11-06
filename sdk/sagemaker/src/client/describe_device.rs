@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeDevice`](crate::operation::describe_device::builders::DescribeDeviceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::operation::describe_device::builders::DescribeDeviceFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_device::builders::DescribeDeviceFluentBuilder::set_next_token): <p>Next token of device description.</p>
-    ///   - [`device_name(impl Into<String>)`](crate::operation::describe_device::builders::DescribeDeviceFluentBuilder::device_name) / [`set_device_name(Option<String>)`](crate::operation::describe_device::builders::DescribeDeviceFluentBuilder::set_device_name): <p>The unique ID of the device.</p>
-    ///   - [`device_fleet_name(impl Into<String>)`](crate::operation::describe_device::builders::DescribeDeviceFluentBuilder::device_fleet_name) / [`set_device_fleet_name(Option<String>)`](crate::operation::describe_device::builders::DescribeDeviceFluentBuilder::set_device_fleet_name): <p>The name of the fleet the devices belong to.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::describe_device::builders::DescribeDeviceFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_device::builders::DescribeDeviceFluentBuilder::set_next_token):<br>required: **false**<br><p>Next token of device description.</p><br>
+    ///   - [`device_name(impl Into<String>)`](crate::operation::describe_device::builders::DescribeDeviceFluentBuilder::device_name) / [`set_device_name(Option<String>)`](crate::operation::describe_device::builders::DescribeDeviceFluentBuilder::set_device_name):<br>required: **true**<br><p>The unique ID of the device.</p><br>
+    ///   - [`device_fleet_name(impl Into<String>)`](crate::operation::describe_device::builders::DescribeDeviceFluentBuilder::device_fleet_name) / [`set_device_fleet_name(Option<String>)`](crate::operation::describe_device::builders::DescribeDeviceFluentBuilder::set_device_fleet_name):<br>required: **true**<br><p>The name of the fleet the devices belong to.</p><br>
     /// - On success, responds with [`DescribeDeviceOutput`](crate::operation::describe_device::DescribeDeviceOutput) with field(s):
     ///   - [`device_arn(Option<String>)`](crate::operation::describe_device::DescribeDeviceOutput::device_arn): <p>The Amazon Resource Name (ARN) of the device.</p>
     ///   - [`device_name(Option<String>)`](crate::operation::describe_device::DescribeDeviceOutput::device_name): <p>The unique identifier of the device.</p>
@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`iot_thing_name(Option<String>)`](crate::operation::describe_device::DescribeDeviceOutput::iot_thing_name): <p>The Amazon Web Services Internet of Things (IoT) object thing name associated with the device.</p>
     ///   - [`registration_time(Option<DateTime>)`](crate::operation::describe_device::DescribeDeviceOutput::registration_time): <p>The timestamp of the last registration or de-reregistration.</p>
     ///   - [`latest_heartbeat(Option<DateTime>)`](crate::operation::describe_device::DescribeDeviceOutput::latest_heartbeat): <p>The last heartbeat received from the device.</p>
-    ///   - [`models(Option<Vec<EdgeModel>>)`](crate::operation::describe_device::DescribeDeviceOutput::models): <p>Models on the device.</p>
+    ///   - [`models(Option<Vec::<EdgeModel>>)`](crate::operation::describe_device::DescribeDeviceOutput::models): <p>Models on the device.</p>
     ///   - [`max_models(Option<i32>)`](crate::operation::describe_device::DescribeDeviceOutput::max_models): <p>The maximum number of models.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_device::DescribeDeviceOutput::next_token): <p>The response from the last list when returning a list large enough to need tokening.</p>
     ///   - [`agent_version(Option<String>)`](crate::operation::describe_device::DescribeDeviceOutput::agent_version): <p>Edge Manager agent version.</p>

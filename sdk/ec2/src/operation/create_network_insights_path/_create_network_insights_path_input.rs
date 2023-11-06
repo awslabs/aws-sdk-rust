@@ -52,8 +52,10 @@ impl CreateNetworkInsightsPathInput {
         self.destination_port
     }
     /// <p>The tags to add to the path.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -125,6 +127,7 @@ impl CreateNetworkInsightsPathInputBuilder {
         &self.destination_ip
     }
     /// <p>The ID or ARN of the source. If the resource is in another account, you must specify an ARN.</p>
+    /// This field is required.
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source = ::std::option::Option::Some(input.into());
         self
@@ -153,6 +156,7 @@ impl CreateNetworkInsightsPathInputBuilder {
         &self.destination
     }
     /// <p>The protocol.</p>
+    /// This field is required.
     pub fn protocol(mut self, input: crate::types::Protocol) -> Self {
         self.protocol = ::std::option::Option::Some(input);
         self
@@ -215,6 +219,7 @@ impl CreateNetworkInsightsPathInputBuilder {
         &self.dry_run
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -261,7 +266,7 @@ impl CreateNetworkInsightsPathInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_network_insights_path::CreateNetworkInsightsPathInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_network_insights_path::CreateNetworkInsightsPathInput {
             source_ip: self.source_ip,

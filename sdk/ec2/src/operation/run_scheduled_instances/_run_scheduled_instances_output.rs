@@ -10,8 +10,10 @@ pub struct RunScheduledInstancesOutput {
 }
 impl RunScheduledInstancesOutput {
     /// <p>The IDs of the newly launched instances.</p>
-    pub fn instance_id_set(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.instance_id_set.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_id_set.is_none()`.
+    pub fn instance_id_set(&self) -> &[::std::string::String] {
+        self.instance_id_set.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for RunScheduledInstancesOutput {

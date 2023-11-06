@@ -9,8 +9,10 @@ pub struct BatchPutMessageOutput {
 }
 impl BatchPutMessageOutput {
     /// <p>A list of any errors encountered when sending the messages.</p>
-    pub fn batch_put_message_error_entries(&self) -> ::std::option::Option<&[crate::types::BatchPutMessageErrorEntry]> {
-        self.batch_put_message_error_entries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.batch_put_message_error_entries.is_none()`.
+    pub fn batch_put_message_error_entries(&self) -> &[crate::types::BatchPutMessageErrorEntry] {
+        self.batch_put_message_error_entries.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchPutMessageOutput {

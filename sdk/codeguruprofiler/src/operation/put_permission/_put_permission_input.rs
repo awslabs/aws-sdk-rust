@@ -23,8 +23,10 @@ impl PutPermissionInput {
         self.action_group.as_ref()
     }
     /// <p> A list ARNs for the roles and users you want to grant access to the profiling group. Wildcards are not are supported in the ARNs. </p>
-    pub fn principals(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.principals.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.principals.is_none()`.
+    pub fn principals(&self) -> &[::std::string::String] {
+        self.principals.as_deref().unwrap_or_default()
     }
     /// <p> A universally unique identifier (UUID) for the revision of the policy you are adding to the profiling group. Do not specify this when you add permissions to a profiling group for the first time. If a policy already exists on the profiling group, you must specify the <code>revisionId</code>. </p>
     pub fn revision_id(&self) -> ::std::option::Option<&str> {
@@ -49,6 +51,7 @@ pub struct PutPermissionInputBuilder {
 }
 impl PutPermissionInputBuilder {
     /// <p>The name of the profiling group to grant access to.</p>
+    /// This field is required.
     pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profiling_group_name = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +66,7 @@ impl PutPermissionInputBuilder {
         &self.profiling_group_name
     }
     /// <p> Specifies an action group that contains permissions to add to a profiling group resource. One action group is supported, <code>agentPermissions</code>, which grants permission to perform actions required by the profiling agent, <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions. </p>
+    /// This field is required.
     pub fn action_group(mut self, input: crate::types::ActionGroup) -> Self {
         self.action_group = ::std::option::Option::Some(input);
         self
@@ -113,7 +117,7 @@ impl PutPermissionInputBuilder {
     /// Consumes the builder and constructs a [`PutPermissionInput`](crate::operation::put_permission::PutPermissionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_permission::PutPermissionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_permission::PutPermissionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_permission::PutPermissionInput {
             profiling_group_name: self.profiling_group_name,
             action_group: self.action_group,

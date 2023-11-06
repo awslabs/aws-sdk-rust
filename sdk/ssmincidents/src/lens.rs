@@ -62,59 +62,41 @@ pub(crate) fn reflens_list_timeline_events_output_next_token(
 pub(crate) fn lens_get_resource_policies_output_resource_policies(
     input: crate::operation::get_resource_policies::GetResourcePoliciesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ResourcePolicy>> {
-    let input = match input.resource_policies {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.resource_policies;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_incident_records_output_incident_record_summaries(
     input: crate::operation::list_incident_records::ListIncidentRecordsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::IncidentRecordSummary>> {
-    let input = match input.incident_record_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.incident_record_summaries;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_related_items_output_related_items(
     input: crate::operation::list_related_items::ListRelatedItemsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RelatedItem>> {
-    let input = match input.related_items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.related_items;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_replication_sets_output_replication_set_arns(
     input: crate::operation::list_replication_sets::ListReplicationSetsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
-    let input = match input.replication_set_arns {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.replication_set_arns;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_response_plans_output_response_plan_summaries(
     input: crate::operation::list_response_plans::ListResponsePlansOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ResponsePlanSummary>> {
-    let input = match input.response_plan_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.response_plan_summaries;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_timeline_events_output_event_summaries(
     input: crate::operation::list_timeline_events::ListTimelineEventsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::EventSummary>> {
-    let input = match input.event_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.event_summaries;
     ::std::option::Option::Some(input)
 }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteRetrainingScheduler`](crate::operation::delete_retraining_scheduler::builders::DeleteRetrainingSchedulerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`model_name(impl Into<String>)`](crate::operation::delete_retraining_scheduler::builders::DeleteRetrainingSchedulerFluentBuilder::model_name) / [`set_model_name(Option<String>)`](crate::operation::delete_retraining_scheduler::builders::DeleteRetrainingSchedulerFluentBuilder::set_model_name): <p>The name of the model whose retraining scheduler you want to delete. </p>
+    ///   - [`model_name(impl Into<String>)`](crate::operation::delete_retraining_scheduler::builders::DeleteRetrainingSchedulerFluentBuilder::model_name) / [`set_model_name(Option<String>)`](crate::operation::delete_retraining_scheduler::builders::DeleteRetrainingSchedulerFluentBuilder::set_model_name):<br>required: **true**<br><p>The name of the model whose retraining scheduler you want to delete. </p><br>
     /// - On success, responds with [`DeleteRetrainingSchedulerOutput`](crate::operation::delete_retraining_scheduler::DeleteRetrainingSchedulerOutput)
     /// - On failure, responds with [`SdkError<DeleteRetrainingSchedulerError>`](crate::operation::delete_retraining_scheduler::DeleteRetrainingSchedulerError)
     pub fn delete_retraining_scheduler(&self) -> crate::operation::delete_retraining_scheduler::builders::DeleteRetrainingSchedulerFluentBuilder {

@@ -3,7 +3,7 @@
 pub fn ser_create_verified_access_endpoint_eni_options(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::CreateVerifiedAccessEndpointEniOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("NetworkInterfaceId");
     if let Some(var_2) = &input.network_interface_id {

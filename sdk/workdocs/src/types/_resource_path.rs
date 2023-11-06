@@ -9,8 +9,10 @@ pub struct ResourcePath {
 }
 impl ResourcePath {
     /// <p>The components of the resource path.</p>
-    pub fn components(&self) -> ::std::option::Option<&[crate::types::ResourcePathComponent]> {
-        self.components.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.components.is_none()`.
+    pub fn components(&self) -> &[crate::types::ResourcePathComponent] {
+        self.components.as_deref().unwrap_or_default()
     }
 }
 impl ResourcePath {

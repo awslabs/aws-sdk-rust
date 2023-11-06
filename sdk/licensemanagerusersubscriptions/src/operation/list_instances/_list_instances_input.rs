@@ -20,8 +20,10 @@ impl ListInstancesInput {
         self.next_token.as_deref()
     }
     /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
 }
 impl ListInstancesInput {
@@ -91,7 +93,7 @@ impl ListInstancesInputBuilder {
     /// Consumes the builder and constructs a [`ListInstancesInput`](crate::operation::list_instances::ListInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_instances::ListInstancesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_instances::ListInstancesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_instances::ListInstancesInput {
             max_results: self.max_results,
             next_token: self.next_token,

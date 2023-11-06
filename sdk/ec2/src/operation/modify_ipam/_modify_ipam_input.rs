@@ -30,12 +30,16 @@ impl ModifyIpamInput {
     }
     /// <p>Choose the operating Regions for the IPAM. Operating Regions are Amazon Web Services Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services Regions you select as operating Regions.</p>
     /// <p>For more information about operating Regions, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    pub fn add_operating_regions(&self) -> ::std::option::Option<&[crate::types::AddIpamOperatingRegion]> {
-        self.add_operating_regions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_operating_regions.is_none()`.
+    pub fn add_operating_regions(&self) -> &[crate::types::AddIpamOperatingRegion] {
+        self.add_operating_regions.as_deref().unwrap_or_default()
     }
     /// <p>The operating Regions to remove.</p>
-    pub fn remove_operating_regions(&self) -> ::std::option::Option<&[crate::types::RemoveIpamOperatingRegion]> {
-        self.remove_operating_regions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove_operating_regions.is_none()`.
+    pub fn remove_operating_regions(&self) -> &[crate::types::RemoveIpamOperatingRegion] {
+        self.remove_operating_regions.as_deref().unwrap_or_default()
     }
 }
 impl ModifyIpamInput {
@@ -71,6 +75,7 @@ impl ModifyIpamInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the IPAM you want to modify.</p>
+    /// This field is required.
     pub fn ipam_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_id = ::std::option::Option::Some(input.into());
         self
@@ -142,7 +147,7 @@ impl ModifyIpamInputBuilder {
         &self.remove_operating_regions
     }
     /// Consumes the builder and constructs a [`ModifyIpamInput`](crate::operation::modify_ipam::ModifyIpamInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::modify_ipam::ModifyIpamInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_ipam::ModifyIpamInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_ipam::ModifyIpamInput {
             dry_run: self.dry_run,
             ipam_id: self.ipam_id,

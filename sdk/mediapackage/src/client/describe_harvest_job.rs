@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeHarvestJob`](crate::operation::describe_harvest_job::builders::DescribeHarvestJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::describe_harvest_job::builders::DescribeHarvestJobFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::describe_harvest_job::builders::DescribeHarvestJobFluentBuilder::set_id): The ID of the HarvestJob.
+    ///   - [`id(impl Into<String>)`](crate::operation::describe_harvest_job::builders::DescribeHarvestJobFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::describe_harvest_job::builders::DescribeHarvestJobFluentBuilder::set_id):<br>required: **true**<br>The ID of the HarvestJob.<br>
     /// - On success, responds with [`DescribeHarvestJobOutput`](crate::operation::describe_harvest_job::DescribeHarvestJobOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::describe_harvest_job::DescribeHarvestJobOutput::arn): The Amazon Resource Name (ARN) assigned to the HarvestJob.
     ///   - [`channel_id(Option<String>)`](crate::operation::describe_harvest_job::DescribeHarvestJobOutput::channel_id): The ID of the Channel that the HarvestJob will harvest from.

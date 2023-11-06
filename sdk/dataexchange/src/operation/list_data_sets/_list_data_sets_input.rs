@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDataSetsInput {
     /// <p>The maximum number of results returned by a single call.</p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers).</p>
@@ -12,7 +12,7 @@ pub struct ListDataSetsInput {
 }
 impl ListDataSetsInput {
     /// <p>The maximum number of results returned by a single call.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
@@ -85,9 +85,9 @@ impl ListDataSetsInputBuilder {
     /// Consumes the builder and constructs a [`ListDataSetsInput`](crate::operation::list_data_sets::ListDataSetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_data_sets::ListDataSetsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_data_sets::ListDataSetsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_data_sets::ListDataSetsInput {
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
             origin: self.origin,
         })

@@ -11,8 +11,10 @@ pub struct ListIdentityProviderConfigsOutput {
 }
 impl ListIdentityProviderConfigsOutput {
     /// <p>The identity provider configurations for the cluster.</p>
-    pub fn identity_provider_configs(&self) -> ::std::option::Option<&[crate::types::IdentityProviderConfig]> {
-        self.identity_provider_configs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.identity_provider_configs.is_none()`.
+    pub fn identity_provider_configs(&self) -> &[crate::types::IdentityProviderConfig] {
+        self.identity_provider_configs.as_deref().unwrap_or_default()
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListIdentityProviderConfigsResponse</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

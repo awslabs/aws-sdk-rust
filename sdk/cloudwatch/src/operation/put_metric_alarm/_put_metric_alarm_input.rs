@@ -196,8 +196,10 @@ impl PutMetricAlarmInput {
     /// <li> <p> <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i> </code> </p> </li>
     /// <li> <p> <code>arn:aws:ssm-incidents::<i>account-id</i>:responseplan/<i>response-plan-name</i> </code> </p> </li>
     /// </ul>
-    pub fn ok_actions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ok_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ok_actions.is_none()`.
+    pub fn ok_actions(&self) -> &[::std::string::String] {
+        self.ok_actions.as_deref().unwrap_or_default()
     }
     /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN). Valid values:</p>
     /// <p> <b>EC2 actions:</b> </p>
@@ -224,8 +226,10 @@ impl PutMetricAlarmInput {
     /// <li> <p> <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i> </code> </p> </li>
     /// <li> <p> <code>arn:aws:ssm-incidents::<i>account-id</i>:responseplan/<i>response-plan-name</i> </code> </p> </li>
     /// </ul>
-    pub fn alarm_actions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.alarm_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alarm_actions.is_none()`.
+    pub fn alarm_actions(&self) -> &[::std::string::String] {
+        self.alarm_actions.as_deref().unwrap_or_default()
     }
     /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN). Valid values:</p>
     /// <p> <b>EC2 actions:</b> </p>
@@ -252,8 +256,10 @@ impl PutMetricAlarmInput {
     /// <li> <p> <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i> </code> </p> </li>
     /// <li> <p> <code>arn:aws:ssm-incidents::<i>account-id</i>:responseplan/<i>response-plan-name</i> </code> </p> </li>
     /// </ul>
-    pub fn insufficient_data_actions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.insufficient_data_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.insufficient_data_actions.is_none()`.
+    pub fn insufficient_data_actions(&self) -> &[::std::string::String] {
+        self.insufficient_data_actions.as_deref().unwrap_or_default()
     }
     /// <p>The name for the metric associated with the alarm. For each <code>PutMetricAlarm</code> operation, you must specify either <code>MetricName</code> or a <code>Metrics</code> array.</p>
     /// <p>If you are creating an alarm based on a math expression, you cannot specify this parameter, or any of the <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters. Instead, you specify all this information in the <code>Metrics</code> array.</p>
@@ -288,8 +294,10 @@ impl PutMetricAlarmInput {
         self.extended_statistic.as_deref()
     }
     /// <p>The dimensions for the metric specified in <code>MetricName</code>.</p>
-    pub fn dimensions(&self) -> ::std::option::Option<&[crate::types::Dimension]> {
-        self.dimensions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimensions.is_none()`.
+    pub fn dimensions(&self) -> &[crate::types::Dimension] {
+        self.dimensions.as_deref().unwrap_or_default()
     }
     /// <p>The length, in seconds, used each time the metric specified in <code>MetricName</code> is evaluated. Valid values are 10, 30, and any multiple of 60.</p>
     /// <p> <code>Period</code> is required for alarms based on static thresholds. If you are creating an alarm based on a metric math expression, you specify the period for each metric within the objects in the <code>Metrics</code> array.</p>
@@ -340,14 +348,18 @@ impl PutMetricAlarmInput {
     /// <p>Each item in the <code>Metrics</code> array either retrieves a metric or performs a math expression.</p>
     /// <p>One item in the <code>Metrics</code> array is the expression that the alarm watches. You designate this expression by setting <code>ReturnData</code> to true for this object in the array. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p>
     /// <p>If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>, <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the same operation. Instead, you retrieve the metrics you are using in your math expression as part of the <code>Metrics</code> array.</p>
-    pub fn metrics(&self) -> ::std::option::Option<&[crate::types::MetricDataQuery]> {
-        self.metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metrics.is_none()`.
+    pub fn metrics(&self) -> &[crate::types::MetricDataQuery] {
+        self.metrics.as_deref().unwrap_or_default()
     }
     /// <p>A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an alarm. To be able to associate tags with the alarm when you create the alarm, you must have the <code>cloudwatch:TagResource</code> permission.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
     /// <p>If you are using this operation to update an existing alarm, any tags you specify in this parameter are ignored. To change the tags of an existing alarm, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>If this is an alarm based on an anomaly detection model, make this value match the ID of the <code>ANOMALY_DETECTION_BAND</code> function.</p>
     /// <p>For an example of how to use this parameter, see the <b>Anomaly Detection Model Alarm</b> example on this page.</p>
@@ -393,6 +405,7 @@ pub struct PutMetricAlarmInputBuilder {
 impl PutMetricAlarmInputBuilder {
     /// <p>The name for the alarm. This name must be unique within the Region.</p>
     /// <p>The name must contain only UTF-8 characters, and can't contain ASCII control characters</p>
+    /// This field is required.
     pub fn alarm_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alarm_name = ::std::option::Option::Some(input.into());
         self
@@ -884,6 +897,7 @@ impl PutMetricAlarmInputBuilder {
     }
     /// <p>The number of periods over which data is compared to the specified threshold. If you are setting an alarm that requires that a number of consecutive data points be breaching to trigger the alarm, this value specifies that number. If you are setting an "M out of N" alarm, this value is the N.</p>
     /// <p>An alarm's total current evaluation period can be no longer than one day, so this number multiplied by <code>Period</code> cannot be more than 86,400 seconds.</p>
+    /// This field is required.
     pub fn evaluation_periods(mut self, input: i32) -> Self {
         self.evaluation_periods = ::std::option::Option::Some(input);
         self
@@ -932,6 +946,7 @@ impl PutMetricAlarmInputBuilder {
     }
     /// <p> The arithmetic operation to use when comparing the specified statistic and threshold. The specified statistic value is used as the first operand.</p>
     /// <p>The values <code>LessThanLowerOrGreaterThanUpperThreshold</code>, <code>LessThanLowerThreshold</code>, and <code>GreaterThanUpperThreshold</code> are used only for alarms based on anomaly detection models.</p>
+    /// This field is required.
     pub fn comparison_operator(mut self, input: crate::types::ComparisonOperator) -> Self {
         self.comparison_operator = ::std::option::Option::Some(input);
         self
@@ -1065,7 +1080,7 @@ impl PutMetricAlarmInputBuilder {
     /// Consumes the builder and constructs a [`PutMetricAlarmInput`](crate::operation::put_metric_alarm::PutMetricAlarmInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_metric_alarm::PutMetricAlarmInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_metric_alarm::PutMetricAlarmInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_metric_alarm::PutMetricAlarmInput {
             alarm_name: self.alarm_name,
             alarm_description: self.alarm_description,

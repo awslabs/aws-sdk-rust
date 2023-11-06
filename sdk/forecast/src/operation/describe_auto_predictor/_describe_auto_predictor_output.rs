@@ -71,8 +71,10 @@ impl DescribeAutoPredictorOutput {
         self.forecast_horizon
     }
     /// <p>The forecast types used during predictor training. Default value is ["0.1","0.5","0.9"].</p>
-    pub fn forecast_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.forecast_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.forecast_types.is_none()`.
+    pub fn forecast_types(&self) -> &[::std::string::String] {
+        self.forecast_types.as_deref().unwrap_or_default()
     }
     /// <p>The frequency of predictions in a forecast.</p>
     /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "Y" indicates every year and "5min" indicates every five minutes.</p>
@@ -80,12 +82,16 @@ impl DescribeAutoPredictorOutput {
         self.forecast_frequency.as_deref()
     }
     /// <p>An array of dimension (field) names that specify the attributes used to group your time series.</p>
-    pub fn forecast_dimensions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.forecast_dimensions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.forecast_dimensions.is_none()`.
+    pub fn forecast_dimensions(&self) -> &[::std::string::String] {
+        self.forecast_dimensions.as_deref().unwrap_or_default()
     }
     /// <p>An array of the ARNs of the dataset import jobs used to import training data for the predictor.</p>
-    pub fn dataset_import_job_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.dataset_import_job_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dataset_import_job_arns.is_none()`.
+    pub fn dataset_import_job_arns(&self) -> &[::std::string::String] {
+        self.dataset_import_job_arns.as_deref().unwrap_or_default()
     }
     /// <p>The data configuration for your dataset group and any additional datasets.</p>
     pub fn data_config(&self) -> ::std::option::Option<&crate::types::DataConfig> {

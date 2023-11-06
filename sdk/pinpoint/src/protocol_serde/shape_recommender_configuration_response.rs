@@ -30,7 +30,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Attributes" => {
-                            builder = builder.set_attributes(crate::protocol_serde::shape_map_of__string::de_map_of__string(tokens)?);
+                            builder = builder.set_attributes(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens)?);
                         }
                         "CreationDate" => {
                             builder = builder.set_creation_date(
@@ -119,7 +119,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::recommender_configuration_response_correct_errors(builder).build(),
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

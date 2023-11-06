@@ -34,6 +34,7 @@ pub struct UpdateVirtualRouterOutputBuilder {
 }
 impl UpdateVirtualRouterOutputBuilder {
     /// <p>A full description of the virtual router that was updated.</p>
+    /// This field is required.
     pub fn virtual_router(mut self, input: crate::types::VirtualRouterData) -> Self {
         self.virtual_router = ::std::option::Option::Some(input);
         self

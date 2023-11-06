@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PolygonGeometryInput {
     /// <p>Coordinates representing a Polygon based on the <a href="https://www.rfc-editor.org/rfc/rfc7946#section-3.1.6">GeoJson spec</a>.</p>
-    pub coordinates: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<f64>>>>,
+    pub coordinates: ::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<f64>>>,
 }
 impl PolygonGeometryInput {
     /// <p>Coordinates representing a Polygon based on the <a href="https://www.rfc-editor.org/rfc/rfc7946#section-3.1.6">GeoJson spec</a>.</p>
-    pub fn coordinates(&self) -> ::std::option::Option<&[::std::vec::Vec<::std::vec::Vec<f64>>]> {
-        self.coordinates.as_deref()
+    pub fn coordinates(&self) -> &[::std::vec::Vec<::std::vec::Vec<f64>>] {
+        use std::ops::Deref;
+        self.coordinates.deref()
     }
 }
 impl PolygonGeometryInput {
@@ -48,9 +49,16 @@ impl PolygonGeometryInputBuilder {
         &self.coordinates
     }
     /// Consumes the builder and constructs a [`PolygonGeometryInput`](crate::types::PolygonGeometryInput).
-    pub fn build(self) -> crate::types::PolygonGeometryInput {
-        crate::types::PolygonGeometryInput {
-            coordinates: self.coordinates,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`coordinates`](crate::types::builders::PolygonGeometryInputBuilder::coordinates)
+    pub fn build(self) -> ::std::result::Result<crate::types::PolygonGeometryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PolygonGeometryInput {
+            coordinates: self.coordinates.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "coordinates",
+                    "coordinates was not specified but it is required when building PolygonGeometryInput",
+                )
+            })?,
+        })
     }
 }

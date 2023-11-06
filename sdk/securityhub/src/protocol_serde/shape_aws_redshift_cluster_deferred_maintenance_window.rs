@@ -2,7 +2,7 @@
 pub fn ser_aws_redshift_cluster_deferred_maintenance_window(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsRedshiftClusterDeferredMaintenanceWindow,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.defer_maintenance_end_time {
         object.key("DeferMaintenanceEndTime").string(var_1.as_str());
     }

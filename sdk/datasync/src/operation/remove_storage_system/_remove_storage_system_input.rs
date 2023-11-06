@@ -27,6 +27,7 @@ pub struct RemoveStorageSystemInputBuilder {
 }
 impl RemoveStorageSystemInputBuilder {
     /// <p>Specifies the Amazon Resource Name (ARN) of the storage system that you want to permanently remove from DataSync Discovery.</p>
+    /// This field is required.
     pub fn storage_system_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_system_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl RemoveStorageSystemInputBuilder {
     /// Consumes the builder and constructs a [`RemoveStorageSystemInput`](crate::operation::remove_storage_system::RemoveStorageSystemInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::remove_storage_system::RemoveStorageSystemInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::remove_storage_system::RemoveStorageSystemInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::remove_storage_system::RemoveStorageSystemInput {
             storage_system_arn: self.storage_system_arn,

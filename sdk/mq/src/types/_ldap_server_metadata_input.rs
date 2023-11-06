@@ -31,8 +31,10 @@ pub struct LdapServerMetadataInput {
 }
 impl LdapServerMetadataInput {
     /// <p>Specifies the location of the LDAP server such as Directory Service for Microsoft Active Directory. Optional failover server.</p>
-    pub fn hosts(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.hosts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hosts.is_none()`.
+    pub fn hosts(&self) -> &[::std::string::String] {
+        self.hosts.as_deref().unwrap_or_default()
     }
     /// <p>The distinguished name of the node in the directory information tree (DIT) to search for roles or groups. For example, ou=group, ou=corp, dc=corp, dc=example, dc=com.</p>
     pub fn role_base(&self) -> ::std::option::Option<&str> {
@@ -120,6 +122,7 @@ impl LdapServerMetadataInputBuilder {
         &self.hosts
     }
     /// <p>The distinguished name of the node in the directory information tree (DIT) to search for roles or groups. For example, ou=group, ou=corp, dc=corp, dc=example, dc=com.</p>
+    /// This field is required.
     pub fn role_base(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_base = ::std::option::Option::Some(input.into());
         self
@@ -148,6 +151,7 @@ impl LdapServerMetadataInputBuilder {
         &self.role_name
     }
     /// <p>The LDAP search filter used to find roles within the roleBase. The distinguished name of the user matched by userSearchMatching is substituted into the {0} placeholder in the search filter. The client's username is substituted into the {1} placeholder. For example, if you set this option to (member=uid={1})for the user janedoe, the search filter becomes (member=uid=janedoe) after string substitution. It matches all role entries that have a member attribute equal to uid=janedoe under the subtree selected by the roleBase.</p>
+    /// This field is required.
     pub fn role_search_matching(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_search_matching = ::std::option::Option::Some(input.into());
         self
@@ -176,6 +180,7 @@ impl LdapServerMetadataInputBuilder {
         &self.role_search_subtree
     }
     /// <p>Service account password. A service account is an account in your LDAP server that has access to initiate a connection. For example, cn=admin,dc=corp, dc=example, dc=com.</p>
+    /// This field is required.
     pub fn service_account_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_account_password = ::std::option::Option::Some(input.into());
         self
@@ -190,6 +195,7 @@ impl LdapServerMetadataInputBuilder {
         &self.service_account_password
     }
     /// <p>Service account username. A service account is an account in your LDAP server that has access to initiate a connection. For example, cn=admin,dc=corp, dc=example, dc=com.</p>
+    /// This field is required.
     pub fn service_account_username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_account_username = ::std::option::Option::Some(input.into());
         self
@@ -204,6 +210,7 @@ impl LdapServerMetadataInputBuilder {
         &self.service_account_username
     }
     /// <p>Select a particular subtree of the directory information tree (DIT) to search for user entries. The subtree is specified by a DN, which specifies the base node of the subtree. For example, by setting this option to ou=Users,ou=corp, dc=corp, dc=example, dc=com, the search for user entries is restricted to the subtree beneath ou=Users, ou=corp, dc=corp, dc=example, dc=com.</p>
+    /// This field is required.
     pub fn user_base(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_base = ::std::option::Option::Some(input.into());
         self
@@ -232,6 +239,7 @@ impl LdapServerMetadataInputBuilder {
         &self.user_role_name
     }
     /// <p>The LDAP search filter used to find users within the userBase. The client's username is substituted into the {0} placeholder in the search filter. For example, if this option is set to (uid={0}) and the received username is janedoe, the search filter becomes (uid=janedoe) after string substitution. It will result in matching an entry like uid=janedoe, ou=Users,ou=corp, dc=corp, dc=example, dc=com.</p>
+    /// This field is required.
     pub fn user_search_matching(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_search_matching = ::std::option::Option::Some(input.into());
         self

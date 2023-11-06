@@ -11,8 +11,10 @@ pub struct ListPipesOutput {
 }
 impl ListPipesOutput {
     /// <p>The pipes returned by the call.</p>
-    pub fn pipes(&self) -> ::std::option::Option<&[crate::types::Pipe]> {
-        self.pipes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pipes.is_none()`.
+    pub fn pipes(&self) -> &[crate::types::Pipe] {
+        self.pipes.as_deref().unwrap_or_default()
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

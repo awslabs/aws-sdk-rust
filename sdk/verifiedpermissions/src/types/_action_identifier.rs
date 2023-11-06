@@ -7,18 +7,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ActionIdentifier {
     /// <p>The type of an action.</p>
-    pub action_type: ::std::option::Option<::std::string::String>,
+    pub action_type: ::std::string::String,
     /// <p>The ID of an action.</p>
-    pub action_id: ::std::option::Option<::std::string::String>,
+    pub action_id: ::std::string::String,
 }
 impl ActionIdentifier {
     /// <p>The type of an action.</p>
-    pub fn action_type(&self) -> ::std::option::Option<&str> {
-        self.action_type.as_deref()
+    pub fn action_type(&self) -> &str {
+        use std::ops::Deref;
+        self.action_type.deref()
     }
     /// <p>The ID of an action.</p>
-    pub fn action_id(&self) -> ::std::option::Option<&str> {
-        self.action_id.as_deref()
+    pub fn action_id(&self) -> &str {
+        use std::ops::Deref;
+        self.action_id.deref()
     }
 }
 impl ::std::fmt::Debug for ActionIdentifier {
@@ -45,6 +47,7 @@ pub struct ActionIdentifierBuilder {
 }
 impl ActionIdentifierBuilder {
     /// <p>The type of an action.</p>
+    /// This field is required.
     pub fn action_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_type = ::std::option::Option::Some(input.into());
         self
@@ -59,6 +62,7 @@ impl ActionIdentifierBuilder {
         &self.action_type
     }
     /// <p>The ID of an action.</p>
+    /// This field is required.
     pub fn action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_id = ::std::option::Option::Some(input.into());
         self
@@ -73,11 +77,24 @@ impl ActionIdentifierBuilder {
         &self.action_id
     }
     /// Consumes the builder and constructs a [`ActionIdentifier`](crate::types::ActionIdentifier).
-    pub fn build(self) -> crate::types::ActionIdentifier {
-        crate::types::ActionIdentifier {
-            action_type: self.action_type,
-            action_id: self.action_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`action_type`](crate::types::builders::ActionIdentifierBuilder::action_type)
+    /// - [`action_id`](crate::types::builders::ActionIdentifierBuilder::action_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::ActionIdentifier, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ActionIdentifier {
+            action_type: self.action_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "action_type",
+                    "action_type was not specified but it is required when building ActionIdentifier",
+                )
+            })?,
+            action_id: self.action_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "action_id",
+                    "action_id was not specified but it is required when building ActionIdentifier",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for ActionIdentifierBuilder {

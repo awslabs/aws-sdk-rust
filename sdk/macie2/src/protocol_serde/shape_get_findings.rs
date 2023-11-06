@@ -147,12 +147,12 @@ pub fn de_get_findings_http_response(
 
 pub fn ser_get_findings_input(
     input: &crate::operation::get_findings::GetFindingsInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_get_findings_input::ser_get_findings_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_get_findings(
@@ -167,7 +167,7 @@ pub(crate) fn de_get_findings(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "findings" => {
-                    builder = builder.set_findings(crate::protocol_serde::shape___list_of_finding::de___list_of_finding(tokens)?);
+                    builder = builder.set_findings(crate::protocol_serde::shape_list_of_finding::de_list_of_finding(tokens)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

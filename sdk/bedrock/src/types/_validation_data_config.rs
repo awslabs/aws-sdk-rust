@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidationDataConfig {
     /// <p>Information about the validators.</p>
-    pub validators: ::std::option::Option<::std::vec::Vec<crate::types::Validator>>,
+    pub validators: ::std::vec::Vec<crate::types::Validator>,
 }
 impl ValidationDataConfig {
     /// <p>Information about the validators.</p>
-    pub fn validators(&self) -> ::std::option::Option<&[crate::types::Validator]> {
-        self.validators.as_deref()
+    pub fn validators(&self) -> &[crate::types::Validator] {
+        use std::ops::Deref;
+        self.validators.deref()
     }
 }
 impl ValidationDataConfig {
@@ -48,7 +49,16 @@ impl ValidationDataConfigBuilder {
         &self.validators
     }
     /// Consumes the builder and constructs a [`ValidationDataConfig`](crate::types::ValidationDataConfig).
-    pub fn build(self) -> crate::types::ValidationDataConfig {
-        crate::types::ValidationDataConfig { validators: self.validators }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`validators`](crate::types::builders::ValidationDataConfigBuilder::validators)
+    pub fn build(self) -> ::std::result::Result<crate::types::ValidationDataConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ValidationDataConfig {
+            validators: self.validators.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "validators",
+                    "validators was not specified but it is required when building ValidationDataConfig",
+                )
+            })?,
+        })
     }
 }

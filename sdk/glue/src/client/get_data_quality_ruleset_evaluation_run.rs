@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDataQualityRulesetEvaluationRun`](crate::operation::get_data_quality_ruleset_evaluation_run::builders::GetDataQualityRulesetEvaluationRunFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`run_id(impl Into<String>)`](crate::operation::get_data_quality_ruleset_evaluation_run::builders::GetDataQualityRulesetEvaluationRunFluentBuilder::run_id) / [`set_run_id(Option<String>)`](crate::operation::get_data_quality_ruleset_evaluation_run::builders::GetDataQualityRulesetEvaluationRunFluentBuilder::set_run_id): <p>The unique run identifier associated with this run.</p>
+    ///   - [`run_id(impl Into<String>)`](crate::operation::get_data_quality_ruleset_evaluation_run::builders::GetDataQualityRulesetEvaluationRunFluentBuilder::run_id) / [`set_run_id(Option<String>)`](crate::operation::get_data_quality_ruleset_evaluation_run::builders::GetDataQualityRulesetEvaluationRunFluentBuilder::set_run_id):<br>required: **true**<br><p>The unique run identifier associated with this run.</p><br>
     /// - On success, responds with [`GetDataQualityRulesetEvaluationRunOutput`](crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunOutput) with field(s):
     ///   - [`run_id(Option<String>)`](crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunOutput::run_id): <p>The unique run identifier associated with this run.</p>
     ///   - [`data_source(Option<DataSource>)`](crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunOutput::data_source): <p>The data source (an Glue table) associated with this evaluation run.</p>
@@ -17,9 +17,9 @@ impl super::Client {
     ///   - [`last_modified_on(Option<DateTime>)`](crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunOutput::last_modified_on): <p>A timestamp. The last point in time when this data quality rule recommendation run was modified.</p>
     ///   - [`completed_on(Option<DateTime>)`](crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunOutput::completed_on): <p>The date and time when this run was completed.</p>
     ///   - [`execution_time(i32)`](crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunOutput::execution_time): <p>The amount of time (in seconds) that the run consumed resources.</p>
-    ///   - [`ruleset_names(Option<Vec<String>>)`](crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunOutput::ruleset_names): <p>A list of ruleset names for the run.</p>
-    ///   - [`result_ids(Option<Vec<String>>)`](crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunOutput::result_ids): <p>A list of result IDs for the data quality results for the run.</p>
-    ///   - [`additional_data_sources(Option<HashMap<String, DataSource>>)`](crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunOutput::additional_data_sources): <p>A map of reference strings to additional data sources you can specify for an evaluation run.</p>
+    ///   - [`ruleset_names(Option<Vec::<String>>)`](crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunOutput::ruleset_names): <p>A list of ruleset names for the run.</p>
+    ///   - [`result_ids(Option<Vec::<String>>)`](crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunOutput::result_ids): <p>A list of result IDs for the data quality results for the run.</p>
+    ///   - [`additional_data_sources(Option<HashMap::<String, DataSource>>)`](crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunOutput::additional_data_sources): <p>A map of reference strings to additional data sources you can specify for an evaluation run.</p>
     /// - On failure, responds with [`SdkError<GetDataQualityRulesetEvaluationRunError>`](crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunError)
     pub fn get_data_quality_ruleset_evaluation_run(
         &self,

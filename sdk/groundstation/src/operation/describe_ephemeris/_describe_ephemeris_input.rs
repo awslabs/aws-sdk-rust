@@ -27,6 +27,7 @@ pub struct DescribeEphemerisInputBuilder {
 }
 impl DescribeEphemerisInputBuilder {
     /// <p>The AWS Ground Station ephemeris ID.</p>
+    /// This field is required.
     pub fn ephemeris_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ephemeris_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeEphemerisInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEphemerisInput`](crate::operation::describe_ephemeris::DescribeEphemerisInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_ephemeris::DescribeEphemerisInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_ephemeris::DescribeEphemerisInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_ephemeris::DescribeEphemerisInput {
             ephemeris_id: self.ephemeris_id,
         })

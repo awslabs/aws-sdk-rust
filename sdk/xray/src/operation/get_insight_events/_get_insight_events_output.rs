@@ -11,8 +11,10 @@ pub struct GetInsightEventsOutput {
 }
 impl GetInsightEventsOutput {
     /// <p>A detailed description of the event. This includes the time of the event, client and root cause impact statistics, and the top anomalous service at the time of the event.</p>
-    pub fn insight_events(&self) -> ::std::option::Option<&[crate::types::InsightEvent]> {
-        self.insight_events.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.insight_events.is_none()`.
+    pub fn insight_events(&self) -> &[crate::types::InsightEvent] {
+        self.insight_events.as_deref().unwrap_or_default()
     }
     /// <p>Use this token to retrieve the next page of insight events.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

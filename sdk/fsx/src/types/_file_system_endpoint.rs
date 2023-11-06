@@ -15,8 +15,10 @@ impl FileSystemEndpoint {
         self.dns_name.as_deref()
     }
     /// <p>IP addresses of the file system endpoint.</p>
-    pub fn ip_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ip_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ip_addresses.is_none()`.
+    pub fn ip_addresses(&self) -> &[::std::string::String] {
+        self.ip_addresses.as_deref().unwrap_or_default()
     }
 }
 impl FileSystemEndpoint {

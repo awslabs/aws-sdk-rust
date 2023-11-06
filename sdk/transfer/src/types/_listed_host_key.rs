@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListedHostKey {
     /// <p>The unique Amazon Resource Name (ARN) of the host key.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>A unique identifier for the host key.</p>
     pub host_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The public key fingerprint, which is a short sequence of bytes used to identify the longer public key.</p>
@@ -26,8 +26,9 @@ pub struct ListedHostKey {
 }
 impl ListedHostKey {
     /// <p>The unique Amazon Resource Name (ARN) of the host key.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>A unique identifier for the host key.</p>
     pub fn host_key_id(&self) -> ::std::option::Option<&str> {
@@ -77,6 +78,7 @@ pub struct ListedHostKeyBuilder {
 }
 impl ListedHostKeyBuilder {
     /// <p>The unique Amazon Resource Name (ARN) of the host key.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -182,14 +184,21 @@ impl ListedHostKeyBuilder {
         &self.date_imported
     }
     /// Consumes the builder and constructs a [`ListedHostKey`](crate::types::ListedHostKey).
-    pub fn build(self) -> crate::types::ListedHostKey {
-        crate::types::ListedHostKey {
-            arn: self.arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::ListedHostKeyBuilder::arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::ListedHostKey, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ListedHostKey {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building ListedHostKey",
+                )
+            })?,
             host_key_id: self.host_key_id,
             fingerprint: self.fingerprint,
             description: self.description,
             r#type: self.r#type,
             date_imported: self.date_imported,
-        }
+        })
     }
 }

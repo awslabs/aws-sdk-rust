@@ -49,6 +49,7 @@ pub struct MessageResponseBuilder {
 }
 impl MessageResponseBuilder {
     /// <p>The unique identifier for the application that was used to send the message.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self

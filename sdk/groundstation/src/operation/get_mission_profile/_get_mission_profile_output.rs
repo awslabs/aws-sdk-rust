@@ -60,8 +60,10 @@ impl GetMissionProfileOutput {
         self.minimum_viable_contact_duration_seconds
     }
     /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
-    pub fn dataflow_edges(&self) -> ::std::option::Option<&[::std::vec::Vec<::std::string::String>]> {
-        self.dataflow_edges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dataflow_edges.is_none()`.
+    pub fn dataflow_edges(&self) -> &[::std::vec::Vec<::std::string::String>] {
+        self.dataflow_edges.as_deref().unwrap_or_default()
     }
     /// <p>ARN of a tracking <code>Config</code>.</p>
     pub fn tracking_config_arn(&self) -> ::std::option::Option<&str> {

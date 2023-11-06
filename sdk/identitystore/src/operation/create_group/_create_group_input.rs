@@ -50,6 +50,7 @@ pub struct CreateGroupInputBuilder {
 }
 impl CreateGroupInputBuilder {
     /// <p>The globally unique identifier for the identity store.</p>
+    /// This field is required.
     pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_store_id = ::std::option::Option::Some(input.into());
         self
@@ -92,7 +93,7 @@ impl CreateGroupInputBuilder {
         &self.description
     }
     /// Consumes the builder and constructs a [`CreateGroupInput`](crate::operation::create_group::CreateGroupInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_group::CreateGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_group::CreateGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_group::CreateGroupInput {
             identity_store_id: self.identity_store_id,
             display_name: self.display_name,

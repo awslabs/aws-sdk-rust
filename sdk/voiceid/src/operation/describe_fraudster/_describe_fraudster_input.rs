@@ -42,6 +42,7 @@ pub struct DescribeFraudsterInputBuilder {
 }
 impl DescribeFraudsterInputBuilder {
     /// <p>The identifier of the domain that contains the fraudster.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl DescribeFraudsterInputBuilder {
         &self.domain_id
     }
     /// <p>The identifier of the fraudster you are describing.</p>
+    /// This field is required.
     pub fn fraudster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fraudster_id = ::std::option::Option::Some(input.into());
         self
@@ -72,7 +74,7 @@ impl DescribeFraudsterInputBuilder {
     /// Consumes the builder and constructs a [`DescribeFraudsterInput`](crate::operation::describe_fraudster::DescribeFraudsterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_fraudster::DescribeFraudsterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_fraudster::DescribeFraudsterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_fraudster::DescribeFraudsterInput {
             domain_id: self.domain_id,
             fraudster_id: self.fraudster_id,

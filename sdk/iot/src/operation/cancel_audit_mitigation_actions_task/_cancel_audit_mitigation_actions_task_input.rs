@@ -27,6 +27,7 @@ pub struct CancelAuditMitigationActionsTaskInputBuilder {
 }
 impl CancelAuditMitigationActionsTaskInputBuilder {
     /// <p>The unique identifier for the task that you want to cancel. </p>
+    /// This field is required.
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl CancelAuditMitigationActionsTaskInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskInput { task_id: self.task_id },

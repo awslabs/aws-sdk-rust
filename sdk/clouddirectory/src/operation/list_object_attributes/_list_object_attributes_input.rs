@@ -62,6 +62,7 @@ pub struct ListObjectAttributesInputBuilder {
 }
 impl ListObjectAttributesInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
+    /// This field is required.
     pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl ListObjectAttributesInputBuilder {
         &self.directory_arn
     }
     /// <p>The reference that identifies the object whose attributes will be listed.</p>
+    /// This field is required.
     pub fn object_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.object_reference = ::std::option::Option::Some(input);
         self
@@ -148,7 +150,7 @@ impl ListObjectAttributesInputBuilder {
     /// Consumes the builder and constructs a [`ListObjectAttributesInput`](crate::operation::list_object_attributes::ListObjectAttributesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_object_attributes::ListObjectAttributesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_object_attributes::ListObjectAttributesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_object_attributes::ListObjectAttributesInput {
             directory_arn: self.directory_arn,

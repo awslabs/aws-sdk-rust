@@ -27,6 +27,7 @@ pub struct DeleteCallAnalyticsJobInputBuilder {
 }
 impl DeleteCallAnalyticsJobInputBuilder {
     /// <p>The name of the Call Analytics job you want to delete. Job names are case sensitive.</p>
+    /// This field is required.
     pub fn call_analytics_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.call_analytics_job_name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteCallAnalyticsJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_call_analytics_job::DeleteCallAnalyticsJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_call_analytics_job::DeleteCallAnalyticsJobInput {
             call_analytics_job_name: self.call_analytics_job_name,

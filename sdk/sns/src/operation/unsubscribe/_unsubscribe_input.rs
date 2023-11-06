@@ -28,6 +28,7 @@ pub struct UnsubscribeInputBuilder {
 }
 impl UnsubscribeInputBuilder {
     /// <p>The ARN of the subscription to be deleted.</p>
+    /// This field is required.
     pub fn subscription_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_arn = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +43,7 @@ impl UnsubscribeInputBuilder {
         &self.subscription_arn
     }
     /// Consumes the builder and constructs a [`UnsubscribeInput`](crate::operation::unsubscribe::UnsubscribeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::unsubscribe::UnsubscribeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::unsubscribe::UnsubscribeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::unsubscribe::UnsubscribeInput {
             subscription_arn: self.subscription_arn,
         })

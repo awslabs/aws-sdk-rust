@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EntityFilter {
     /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code> </p>
-    pub event_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub event_arns: ::std::vec::Vec<::std::string::String>,
     /// <p>A list of entity ARNs (unique identifiers).</p>
     pub entity_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of IDs for affected entities.</p>
@@ -21,30 +21,41 @@ pub struct EntityFilter {
 }
 impl EntityFilter {
     /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code> </p>
-    pub fn event_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.event_arns.as_deref()
+    pub fn event_arns(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.event_arns.deref()
     }
     /// <p>A list of entity ARNs (unique identifiers).</p>
-    pub fn entity_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.entity_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entity_arns.is_none()`.
+    pub fn entity_arns(&self) -> &[::std::string::String] {
+        self.entity_arns.as_deref().unwrap_or_default()
     }
     /// <p>A list of IDs for affected entities.</p>
-    pub fn entity_values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.entity_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entity_values.is_none()`.
+    pub fn entity_values(&self) -> &[::std::string::String] {
+        self.entity_values.as_deref().unwrap_or_default()
     }
     /// <p>A list of the most recent dates and times that the entity was updated.</p>
-    pub fn last_updated_times(&self) -> ::std::option::Option<&[crate::types::DateTimeRange]> {
-        self.last_updated_times.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.last_updated_times.is_none()`.
+    pub fn last_updated_times(&self) -> &[crate::types::DateTimeRange] {
+        self.last_updated_times.as_deref().unwrap_or_default()
     }
     /// <p>A map of entity tags attached to the affected entity.</p> <note>
     /// <p>Currently, the <code>tags</code> property isn't supported.</p>
     /// </note>
-    pub fn tags(&self) -> ::std::option::Option<&[::std::collections::HashMap<::std::string::String, ::std::string::String>]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[::std::collections::HashMap<::std::string::String, ::std::string::String>] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>A list of entity status codes (<code>IMPAIRED</code>, <code>UNIMPAIRED</code>, or <code>UNKNOWN</code>).</p>
-    pub fn status_codes(&self) -> ::std::option::Option<&[crate::types::EntityStatusCode]> {
-        self.status_codes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.status_codes.is_none()`.
+    pub fn status_codes(&self) -> &[crate::types::EntityStatusCode] {
+        self.status_codes.as_deref().unwrap_or_default()
     }
 }
 impl EntityFilter {
@@ -196,14 +207,21 @@ impl EntityFilterBuilder {
         &self.status_codes
     }
     /// Consumes the builder and constructs a [`EntityFilter`](crate::types::EntityFilter).
-    pub fn build(self) -> crate::types::EntityFilter {
-        crate::types::EntityFilter {
-            event_arns: self.event_arns,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`event_arns`](crate::types::builders::EntityFilterBuilder::event_arns)
+    pub fn build(self) -> ::std::result::Result<crate::types::EntityFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EntityFilter {
+            event_arns: self.event_arns.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "event_arns",
+                    "event_arns was not specified but it is required when building EntityFilter",
+                )
+            })?,
             entity_arns: self.entity_arns,
             entity_values: self.entity_values,
             last_updated_times: self.last_updated_times,
             tags: self.tags,
             status_codes: self.status_codes,
-        }
+        })
     }
 }

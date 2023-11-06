@@ -34,6 +34,7 @@ pub struct GetIntegrationInputBuilder {
 }
 impl GetIntegrationInputBuilder {
     /// <p>The API identifier.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetIntegrationInputBuilder {
         &self.api_id
     }
     /// <p>The integration ID.</p>
+    /// This field is required.
     pub fn integration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.integration_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl GetIntegrationInputBuilder {
     /// Consumes the builder and constructs a [`GetIntegrationInput`](crate::operation::get_integration::GetIntegrationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_integration::GetIntegrationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_integration::GetIntegrationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_integration::GetIntegrationInput {
             api_id: self.api_id,
             integration_id: self.integration_id,

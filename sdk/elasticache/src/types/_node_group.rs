@@ -39,8 +39,10 @@ impl NodeGroup {
         self.slots.as_deref()
     }
     /// <p>A list containing information about individual nodes within the node group (shard).</p>
-    pub fn node_group_members(&self) -> ::std::option::Option<&[crate::types::NodeGroupMember]> {
-        self.node_group_members.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.node_group_members.is_none()`.
+    pub fn node_group_members(&self) -> &[crate::types::NodeGroupMember] {
+        self.node_group_members.as_deref().unwrap_or_default()
     }
 }
 impl NodeGroup {

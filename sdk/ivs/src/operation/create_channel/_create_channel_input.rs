@@ -10,13 +10,13 @@ pub struct CreateChannelInput {
     /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable input resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/channel-types.html">Channel Types</a>.</p>
     pub r#type: ::std::option::Option<crate::types::ChannelType>,
     /// <p>Whether the channel is private (enabled for playback authorization). Default: <code>false</code>.</p>
-    pub authorized: bool,
+    pub authorized: ::std::option::Option<bool>,
     /// <p>Recording-configuration ARN. Default: "" (empty string, recording is disabled).</p>
     pub recording_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.</p>
-    pub insecure_ingest: bool,
+    pub insecure_ingest: ::std::option::Option<bool>,
     /// <p>Optional transcode preset for the channel. This is selectable only for <code>ADVANCED_HD</code> and <code>ADVANCED_SD</code> channel types. For those channel types, the default <code>preset</code> is <code>HIGHER_BANDWIDTH_DELIVERY</code>. For other channel types (<code>BASIC</code> and <code>STANDARD</code>), <code>preset</code> is the empty string (<code>""</code>).</p>
     pub preset: ::std::option::Option<crate::types::TranscodePreset>,
 }
@@ -34,7 +34,7 @@ impl CreateChannelInput {
         self.r#type.as_ref()
     }
     /// <p>Whether the channel is private (enabled for playback authorization). Default: <code>false</code>.</p>
-    pub fn authorized(&self) -> bool {
+    pub fn authorized(&self) -> ::std::option::Option<bool> {
         self.authorized
     }
     /// <p>Recording-configuration ARN. Default: "" (empty string, recording is disabled).</p>
@@ -46,7 +46,7 @@ impl CreateChannelInput {
         self.tags.as_ref()
     }
     /// <p>Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.</p>
-    pub fn insecure_ingest(&self) -> bool {
+    pub fn insecure_ingest(&self) -> ::std::option::Option<bool> {
         self.insecure_ingest
     }
     /// <p>Optional transcode preset for the channel. This is selectable only for <code>ADVANCED_HD</code> and <code>ADVANCED_SD</code> channel types. For those channel types, the default <code>preset</code> is <code>HIGHER_BANDWIDTH_DELIVERY</code>. For other channel types (<code>BASIC</code> and <code>STANDARD</code>), <code>preset</code> is the empty string (<code>""</code>).</p>
@@ -196,15 +196,15 @@ impl CreateChannelInputBuilder {
     /// Consumes the builder and constructs a [`CreateChannelInput`](crate::operation::create_channel::CreateChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_channel::CreateChannelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_channel::CreateChannelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_channel::CreateChannelInput {
             name: self.name,
             latency_mode: self.latency_mode,
             r#type: self.r#type,
-            authorized: self.authorized.unwrap_or_default(),
+            authorized: self.authorized,
             recording_configuration_arn: self.recording_configuration_arn,
             tags: self.tags,
-            insecure_ingest: self.insecure_ingest.unwrap_or_default(),
+            insecure_ingest: self.insecure_ingest,
             preset: self.preset,
         })
     }

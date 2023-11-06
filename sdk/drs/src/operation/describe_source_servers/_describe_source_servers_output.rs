@@ -11,8 +11,10 @@ pub struct DescribeSourceServersOutput {
 }
 impl DescribeSourceServersOutput {
     /// <p>An array of Source Servers.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::SourceServer]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[crate::types::SourceServer] {
+        self.items.as_deref().unwrap_or_default()
     }
     /// <p>The token of the next Source Server to retrieve.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

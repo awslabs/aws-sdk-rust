@@ -2,7 +2,7 @@
 pub fn ser_associate_instance_storage_config_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::associate_instance_storage_config::AssociateInstanceStorageConfigInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.resource_type {
         object.key("ResourceType").string(var_1.as_str());
     }

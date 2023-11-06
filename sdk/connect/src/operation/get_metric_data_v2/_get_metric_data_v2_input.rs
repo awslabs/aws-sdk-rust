@@ -434,14 +434,18 @@ impl GetMetricDataV2Input {
     /// <li> <p> <b>Filter keys</b>: A maximum of 5 filter keys are supported in a single request. Valid filter keys: <code>QUEUE</code> | <code>ROUTING_PROFILE</code> | <code>AGENT</code> | <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>FEATURE</code> </p> </li>
     /// <li> <p> <b>Filter values</b>: A maximum of 100 filter values are supported in a single request. VOICE, CHAT, and TASK are valid <code>filterValue</code> for the CHANNEL filter key. They do not count towards limitation of 100 filter values. For example, a GetMetricDataV2 request can filter by 50 queues, 35 agents, and 15 routing profiles for a total of 100 filter values, along with 3 channel filters. </p> <p> <code>contact_lens_conversational_analytics</code> is a valid filterValue for the <code>FEATURE</code> filter key. It is available only to contacts analyzed by Contact Lens conversational analytics.</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::FilterV2]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::FilterV2] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The grouping applied to the metrics that are returned. For example, when results are grouped by queue, the metrics returned are grouped by queue. The values that are returned apply to the metrics for each queue. They are not aggregated for all queues.</p>
     /// <p>If no grouping is specified, a summary of all metrics is returned.</p>
     /// <p>Valid grouping keys: <code>QUEUE</code> | <code>ROUTING_PROFILE</code> | <code>AGENT</code> | <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> </p>
-    pub fn groupings(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.groupings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groupings.is_none()`.
+    pub fn groupings(&self) -> &[::std::string::String] {
+        self.groupings.as_deref().unwrap_or_default()
     }
     /// <p>The metrics to retrieve. Specify the name, groupings, and filters for each metric. The following historical metrics are available. For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical metrics definitions</a> in the <i>Amazon Connect Administrator's Guide</i>.</p>
     /// <dl>
@@ -782,8 +786,10 @@ impl GetMetricDataV2Input {
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile</p>
     /// </dd>
     /// </dl>
-    pub fn metrics(&self) -> ::std::option::Option<&[crate::types::MetricV2]> {
-        self.metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metrics.is_none()`.
+    pub fn metrics(&self) -> &[crate::types::MetricV2] {
+        self.metrics.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -817,6 +823,7 @@ pub struct GetMetricDataV2InputBuilder {
 }
 impl GetMetricDataV2InputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the resource. This includes the <code>instanceId</code> an Amazon Connect instance.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -831,6 +838,7 @@ impl GetMetricDataV2InputBuilder {
         &self.resource_arn
     }
     /// <p>The timestamp, in UNIX Epoch time format, at which to start the reporting interval for the retrieval of historical metrics data. The time must be before the end time timestamp. The start and end time depends on the <code>IntervalPeriod</code> selected. By default the time range between start and end time is 35 days. Historical metrics are available for 3 months.</p>
+    /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
@@ -845,6 +853,7 @@ impl GetMetricDataV2InputBuilder {
         &self.start_time
     }
     /// <p>The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the retrieval of historical metrics data. The time must be later than the start time timestamp. It cannot be later than the current timestamp.</p>
+    /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
@@ -2064,7 +2073,7 @@ impl GetMetricDataV2InputBuilder {
     /// Consumes the builder and constructs a [`GetMetricDataV2Input`](crate::operation::get_metric_data_v2::GetMetricDataV2Input).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_metric_data_v2::GetMetricDataV2Input, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_metric_data_v2::GetMetricDataV2Input, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_metric_data_v2::GetMetricDataV2Input {
             resource_arn: self.resource_arn,
             start_time: self.start_time,

@@ -21,8 +21,10 @@ impl NotificationConfig {
         self.notification_arn.as_deref()
     }
     /// <p>The different events for which you can receive notifications. To learn more about these events, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring Systems Manager status changes using Amazon SNS notifications</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn notification_events(&self) -> ::std::option::Option<&[crate::types::NotificationEvent]> {
-        self.notification_events.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notification_events.is_none()`.
+    pub fn notification_events(&self) -> &[crate::types::NotificationEvent] {
+        self.notification_events.as_deref().unwrap_or_default()
     }
     /// <p>The type of notification.</p>
     /// <ul>

@@ -41,6 +41,7 @@ pub struct ListRecoveryPointsByLegalHoldInputBuilder {
 }
 impl ListRecoveryPointsByLegalHoldInputBuilder {
     /// <p>This is the ID of the legal hold.</p>
+    /// This field is required.
     pub fn legal_hold_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.legal_hold_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListRecoveryPointsByLegalHoldInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldInput {
             legal_hold_id: self.legal_hold_id,

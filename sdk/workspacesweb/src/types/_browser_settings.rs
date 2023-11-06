@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct BrowserSettings {
     /// <p>The ARN of the browser settings.</p>
-    pub browser_settings_arn: ::std::option::Option<::std::string::String>,
+    pub browser_settings_arn: ::std::string::String,
     /// <p>A list of web portal ARNs that this browser settings is associated with.</p>
     pub associated_portal_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all streaming sessions.</p>
@@ -13,12 +13,15 @@ pub struct BrowserSettings {
 }
 impl BrowserSettings {
     /// <p>The ARN of the browser settings.</p>
-    pub fn browser_settings_arn(&self) -> ::std::option::Option<&str> {
-        self.browser_settings_arn.as_deref()
+    pub fn browser_settings_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.browser_settings_arn.deref()
     }
     /// <p>A list of web portal ARNs that this browser settings is associated with.</p>
-    pub fn associated_portal_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.associated_portal_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_portal_arns.is_none()`.
+    pub fn associated_portal_arns(&self) -> &[::std::string::String] {
+        self.associated_portal_arns.as_deref().unwrap_or_default()
     }
     /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all streaming sessions.</p>
     pub fn browser_policy(&self) -> ::std::option::Option<&str> {
@@ -51,6 +54,7 @@ pub struct BrowserSettingsBuilder {
 }
 impl BrowserSettingsBuilder {
     /// <p>The ARN of the browser settings.</p>
+    /// This field is required.
     pub fn browser_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.browser_settings_arn = ::std::option::Option::Some(input.into());
         self
@@ -99,12 +103,19 @@ impl BrowserSettingsBuilder {
         &self.browser_policy
     }
     /// Consumes the builder and constructs a [`BrowserSettings`](crate::types::BrowserSettings).
-    pub fn build(self) -> crate::types::BrowserSettings {
-        crate::types::BrowserSettings {
-            browser_settings_arn: self.browser_settings_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`browser_settings_arn`](crate::types::builders::BrowserSettingsBuilder::browser_settings_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::BrowserSettings, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::BrowserSettings {
+            browser_settings_arn: self.browser_settings_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "browser_settings_arn",
+                    "browser_settings_arn was not specified but it is required when building BrowserSettings",
+                )
+            })?,
             associated_portal_arns: self.associated_portal_arns,
             browser_policy: self.browser_policy,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for BrowserSettingsBuilder {

@@ -5,15 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DistributionSummary {
     /// <p>The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The ARN (Amazon Resource Name) for the distribution. For example: <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where <code>123456789012</code> is your Amazon Web Services account ID.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The current status of the distribution. When the status is <code>Deployed</code>, the distribution's information is propagated to all CloudFront edge locations.</p>
-    pub status: ::std::option::Option<::std::string::String>,
+    pub status: ::std::string::String,
     /// <p>The date and time the distribution was last modified.</p>
-    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub last_modified_time: ::aws_smithy_types::DateTime,
     /// <p>The domain name that corresponds to the distribution, for example, <code>d111111abcdef8.cloudfront.net</code>.</p>
-    pub domain_name: ::std::option::Option<::std::string::String>,
+    pub domain_name: ::std::string::String,
     /// <p>A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution.</p>
     pub aliases: ::std::option::Option<crate::types::Aliases>,
     /// <p>A complex type that contains information about origins for this distribution.</p>
@@ -27,47 +27,51 @@ pub struct DistributionSummary {
     /// <p>A complex type that contains zero or more <code>CustomErrorResponses</code> elements.</p>
     pub custom_error_responses: ::std::option::Option<crate::types::CustomErrorResponses>,
     /// <p>The comment originally specified when this distribution was created.</p>
-    pub comment: ::std::option::Option<::std::string::String>,
+    pub comment: ::std::string::String,
     /// <p>A complex type that contains information about price class for this streaming distribution.</p>
-    pub price_class: ::std::option::Option<crate::types::PriceClass>,
+    pub price_class: crate::types::PriceClass,
     /// <p>Whether the distribution is enabled to accept user requests for content.</p>
-    pub enabled: ::std::option::Option<bool>,
+    pub enabled: bool,
     /// <p>A complex type that determines the distribution's SSL/TLS configuration for communicating with viewers.</p>
     pub viewer_certificate: ::std::option::Option<crate::types::ViewerCertificate>,
     /// <p>A complex type that identifies ways in which you want to restrict distribution of your content.</p>
     pub restrictions: ::std::option::Option<crate::types::Restrictions>,
     /// <p>The Web ACL Id (if any) associated with the distribution.</p>
-    pub web_acl_id: ::std::option::Option<::std::string::String>,
+    pub web_acl_id: ::std::string::String,
     /// <p>Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is <code>http2</code>. Viewers that don't support <code>HTTP/2</code> will automatically use an earlier version.</p>
-    pub http_version: ::std::option::Option<crate::types::HttpVersion>,
+    pub http_version: crate::types::HttpVersion,
     /// <p>Whether CloudFront responds to IPv6 DNS requests with an IPv6 address for your distribution.</p>
-    pub is_ipv6_enabled: ::std::option::Option<bool>,
+    pub is_ipv6_enabled: bool,
     /// <p>Amazon Web Services services in China customers must file for an Internet Content Provider (ICP) recordal if they want to serve content publicly on an alternate domain name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal provides the ICP recordal status for CNAMEs associated with distributions.</p>
     /// <p>For more information about ICP recordals, see <a href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html"> Signup, Accounts, and Credentials</a> in <i>Getting Started with Amazon Web Services services in China</i>.</p>
     pub alias_icp_recordals: ::std::option::Option<::std::vec::Vec<crate::types::AliasIcpRecordal>>,
     /// <p>Whether the primary distribution has a staging distribution enabled.</p>
-    pub staging: ::std::option::Option<bool>,
+    pub staging: bool,
 }
 impl DistributionSummary {
     /// <p>The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The ARN (Amazon Resource Name) for the distribution. For example: <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where <code>123456789012</code> is your Amazon Web Services account ID.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The current status of the distribution. When the status is <code>Deployed</code>, the distribution's information is propagated to all CloudFront edge locations.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
-        self.status.as_deref()
+    pub fn status(&self) -> &str {
+        use std::ops::Deref;
+        self.status.deref()
     }
     /// <p>The date and time the distribution was last modified.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.last_modified_time.as_ref()
+    pub fn last_modified_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.last_modified_time
     }
     /// <p>The domain name that corresponds to the distribution, for example, <code>d111111abcdef8.cloudfront.net</code>.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
-        self.domain_name.as_deref()
+    pub fn domain_name(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_name.deref()
     }
     /// <p>A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution.</p>
     pub fn aliases(&self) -> ::std::option::Option<&crate::types::Aliases> {
@@ -94,15 +98,16 @@ impl DistributionSummary {
         self.custom_error_responses.as_ref()
     }
     /// <p>The comment originally specified when this distribution was created.</p>
-    pub fn comment(&self) -> ::std::option::Option<&str> {
-        self.comment.as_deref()
+    pub fn comment(&self) -> &str {
+        use std::ops::Deref;
+        self.comment.deref()
     }
     /// <p>A complex type that contains information about price class for this streaming distribution.</p>
-    pub fn price_class(&self) -> ::std::option::Option<&crate::types::PriceClass> {
-        self.price_class.as_ref()
+    pub fn price_class(&self) -> &crate::types::PriceClass {
+        &self.price_class
     }
     /// <p>Whether the distribution is enabled to accept user requests for content.</p>
-    pub fn enabled(&self) -> ::std::option::Option<bool> {
+    pub fn enabled(&self) -> bool {
         self.enabled
     }
     /// <p>A complex type that determines the distribution's SSL/TLS configuration for communicating with viewers.</p>
@@ -114,24 +119,27 @@ impl DistributionSummary {
         self.restrictions.as_ref()
     }
     /// <p>The Web ACL Id (if any) associated with the distribution.</p>
-    pub fn web_acl_id(&self) -> ::std::option::Option<&str> {
-        self.web_acl_id.as_deref()
+    pub fn web_acl_id(&self) -> &str {
+        use std::ops::Deref;
+        self.web_acl_id.deref()
     }
     /// <p>Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is <code>http2</code>. Viewers that don't support <code>HTTP/2</code> will automatically use an earlier version.</p>
-    pub fn http_version(&self) -> ::std::option::Option<&crate::types::HttpVersion> {
-        self.http_version.as_ref()
+    pub fn http_version(&self) -> &crate::types::HttpVersion {
+        &self.http_version
     }
     /// <p>Whether CloudFront responds to IPv6 DNS requests with an IPv6 address for your distribution.</p>
-    pub fn is_ipv6_enabled(&self) -> ::std::option::Option<bool> {
+    pub fn is_ipv6_enabled(&self) -> bool {
         self.is_ipv6_enabled
     }
     /// <p>Amazon Web Services services in China customers must file for an Internet Content Provider (ICP) recordal if they want to serve content publicly on an alternate domain name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal provides the ICP recordal status for CNAMEs associated with distributions.</p>
     /// <p>For more information about ICP recordals, see <a href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html"> Signup, Accounts, and Credentials</a> in <i>Getting Started with Amazon Web Services services in China</i>.</p>
-    pub fn alias_icp_recordals(&self) -> ::std::option::Option<&[crate::types::AliasIcpRecordal]> {
-        self.alias_icp_recordals.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alias_icp_recordals.is_none()`.
+    pub fn alias_icp_recordals(&self) -> &[crate::types::AliasIcpRecordal] {
+        self.alias_icp_recordals.as_deref().unwrap_or_default()
     }
     /// <p>Whether the primary distribution has a staging distribution enabled.</p>
-    pub fn staging(&self) -> ::std::option::Option<bool> {
+    pub fn staging(&self) -> bool {
         self.staging
     }
 }
@@ -170,6 +178,7 @@ pub struct DistributionSummaryBuilder {
 }
 impl DistributionSummaryBuilder {
     /// <p>The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -184,6 +193,7 @@ impl DistributionSummaryBuilder {
         &self.id
     }
     /// <p>The ARN (Amazon Resource Name) for the distribution. For example: <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where <code>123456789012</code> is your Amazon Web Services account ID.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -198,6 +208,7 @@ impl DistributionSummaryBuilder {
         &self.arn
     }
     /// <p>The current status of the distribution. When the status is <code>Deployed</code>, the distribution's information is propagated to all CloudFront edge locations.</p>
+    /// This field is required.
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
         self
@@ -212,6 +223,7 @@ impl DistributionSummaryBuilder {
         &self.status
     }
     /// <p>The date and time the distribution was last modified.</p>
+    /// This field is required.
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
         self
@@ -226,6 +238,7 @@ impl DistributionSummaryBuilder {
         &self.last_modified_time
     }
     /// <p>The domain name that corresponds to the distribution, for example, <code>d111111abcdef8.cloudfront.net</code>.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -240,6 +253,7 @@ impl DistributionSummaryBuilder {
         &self.domain_name
     }
     /// <p>A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution.</p>
+    /// This field is required.
     pub fn aliases(mut self, input: crate::types::Aliases) -> Self {
         self.aliases = ::std::option::Option::Some(input);
         self
@@ -254,6 +268,7 @@ impl DistributionSummaryBuilder {
         &self.aliases
     }
     /// <p>A complex type that contains information about origins for this distribution.</p>
+    /// This field is required.
     pub fn origins(mut self, input: crate::types::Origins) -> Self {
         self.origins = ::std::option::Option::Some(input);
         self
@@ -282,6 +297,7 @@ impl DistributionSummaryBuilder {
         &self.origin_groups
     }
     /// <p>A complex type that describes the default cache behavior if you don't specify a <code>CacheBehavior</code> element or if files don't match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You must create exactly one default cache behavior.</p>
+    /// This field is required.
     pub fn default_cache_behavior(mut self, input: crate::types::DefaultCacheBehavior) -> Self {
         self.default_cache_behavior = ::std::option::Option::Some(input);
         self
@@ -296,6 +312,7 @@ impl DistributionSummaryBuilder {
         &self.default_cache_behavior
     }
     /// <p>A complex type that contains zero or more <code>CacheBehavior</code> elements.</p>
+    /// This field is required.
     pub fn cache_behaviors(mut self, input: crate::types::CacheBehaviors) -> Self {
         self.cache_behaviors = ::std::option::Option::Some(input);
         self
@@ -310,6 +327,7 @@ impl DistributionSummaryBuilder {
         &self.cache_behaviors
     }
     /// <p>A complex type that contains zero or more <code>CustomErrorResponses</code> elements.</p>
+    /// This field is required.
     pub fn custom_error_responses(mut self, input: crate::types::CustomErrorResponses) -> Self {
         self.custom_error_responses = ::std::option::Option::Some(input);
         self
@@ -324,6 +342,7 @@ impl DistributionSummaryBuilder {
         &self.custom_error_responses
     }
     /// <p>The comment originally specified when this distribution was created.</p>
+    /// This field is required.
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment = ::std::option::Option::Some(input.into());
         self
@@ -338,6 +357,7 @@ impl DistributionSummaryBuilder {
         &self.comment
     }
     /// <p>A complex type that contains information about price class for this streaming distribution.</p>
+    /// This field is required.
     pub fn price_class(mut self, input: crate::types::PriceClass) -> Self {
         self.price_class = ::std::option::Option::Some(input);
         self
@@ -352,6 +372,7 @@ impl DistributionSummaryBuilder {
         &self.price_class
     }
     /// <p>Whether the distribution is enabled to accept user requests for content.</p>
+    /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
@@ -366,6 +387,7 @@ impl DistributionSummaryBuilder {
         &self.enabled
     }
     /// <p>A complex type that determines the distribution's SSL/TLS configuration for communicating with viewers.</p>
+    /// This field is required.
     pub fn viewer_certificate(mut self, input: crate::types::ViewerCertificate) -> Self {
         self.viewer_certificate = ::std::option::Option::Some(input);
         self
@@ -380,6 +402,7 @@ impl DistributionSummaryBuilder {
         &self.viewer_certificate
     }
     /// <p>A complex type that identifies ways in which you want to restrict distribution of your content.</p>
+    /// This field is required.
     pub fn restrictions(mut self, input: crate::types::Restrictions) -> Self {
         self.restrictions = ::std::option::Option::Some(input);
         self
@@ -394,6 +417,7 @@ impl DistributionSummaryBuilder {
         &self.restrictions
     }
     /// <p>The Web ACL Id (if any) associated with the distribution.</p>
+    /// This field is required.
     pub fn web_acl_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.web_acl_id = ::std::option::Option::Some(input.into());
         self
@@ -408,6 +432,7 @@ impl DistributionSummaryBuilder {
         &self.web_acl_id
     }
     /// <p>Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is <code>http2</code>. Viewers that don't support <code>HTTP/2</code> will automatically use an earlier version.</p>
+    /// This field is required.
     pub fn http_version(mut self, input: crate::types::HttpVersion) -> Self {
         self.http_version = ::std::option::Option::Some(input);
         self
@@ -422,6 +447,7 @@ impl DistributionSummaryBuilder {
         &self.http_version
     }
     /// <p>Whether CloudFront responds to IPv6 DNS requests with an IPv6 address for your distribution.</p>
+    /// This field is required.
     pub fn is_ipv6_enabled(mut self, input: bool) -> Self {
         self.is_ipv6_enabled = ::std::option::Option::Some(input);
         self
@@ -459,6 +485,7 @@ impl DistributionSummaryBuilder {
         &self.alias_icp_recordals
     }
     /// <p>Whether the primary distribution has a staging distribution enabled.</p>
+    /// This field is required.
     pub fn staging(mut self, input: bool) -> Self {
         self.staging = ::std::option::Option::Some(input);
         self
@@ -473,29 +500,102 @@ impl DistributionSummaryBuilder {
         &self.staging
     }
     /// Consumes the builder and constructs a [`DistributionSummary`](crate::types::DistributionSummary).
-    pub fn build(self) -> crate::types::DistributionSummary {
-        crate::types::DistributionSummary {
-            id: self.id,
-            arn: self.arn,
-            status: self.status,
-            last_modified_time: self.last_modified_time,
-            domain_name: self.domain_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::DistributionSummaryBuilder::id)
+    /// - [`arn`](crate::types::builders::DistributionSummaryBuilder::arn)
+    /// - [`status`](crate::types::builders::DistributionSummaryBuilder::status)
+    /// - [`last_modified_time`](crate::types::builders::DistributionSummaryBuilder::last_modified_time)
+    /// - [`domain_name`](crate::types::builders::DistributionSummaryBuilder::domain_name)
+    /// - [`comment`](crate::types::builders::DistributionSummaryBuilder::comment)
+    /// - [`price_class`](crate::types::builders::DistributionSummaryBuilder::price_class)
+    /// - [`enabled`](crate::types::builders::DistributionSummaryBuilder::enabled)
+    /// - [`web_acl_id`](crate::types::builders::DistributionSummaryBuilder::web_acl_id)
+    /// - [`http_version`](crate::types::builders::DistributionSummaryBuilder::http_version)
+    /// - [`is_ipv6_enabled`](crate::types::builders::DistributionSummaryBuilder::is_ipv6_enabled)
+    /// - [`staging`](crate::types::builders::DistributionSummaryBuilder::staging)
+    pub fn build(self) -> ::std::result::Result<crate::types::DistributionSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DistributionSummary {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building DistributionSummary",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building DistributionSummary",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building DistributionSummary",
+                )
+            })?,
+            last_modified_time: self.last_modified_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "last_modified_time",
+                    "last_modified_time was not specified but it is required when building DistributionSummary",
+                )
+            })?,
+            domain_name: self.domain_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "domain_name",
+                    "domain_name was not specified but it is required when building DistributionSummary",
+                )
+            })?,
             aliases: self.aliases,
             origins: self.origins,
             origin_groups: self.origin_groups,
             default_cache_behavior: self.default_cache_behavior,
             cache_behaviors: self.cache_behaviors,
             custom_error_responses: self.custom_error_responses,
-            comment: self.comment,
-            price_class: self.price_class,
-            enabled: self.enabled,
+            comment: self.comment.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "comment",
+                    "comment was not specified but it is required when building DistributionSummary",
+                )
+            })?,
+            price_class: self.price_class.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "price_class",
+                    "price_class was not specified but it is required when building DistributionSummary",
+                )
+            })?,
+            enabled: self.enabled.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "enabled",
+                    "enabled was not specified but it is required when building DistributionSummary",
+                )
+            })?,
             viewer_certificate: self.viewer_certificate,
             restrictions: self.restrictions,
-            web_acl_id: self.web_acl_id,
-            http_version: self.http_version,
-            is_ipv6_enabled: self.is_ipv6_enabled,
+            web_acl_id: self.web_acl_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "web_acl_id",
+                    "web_acl_id was not specified but it is required when building DistributionSummary",
+                )
+            })?,
+            http_version: self.http_version.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "http_version",
+                    "http_version was not specified but it is required when building DistributionSummary",
+                )
+            })?,
+            is_ipv6_enabled: self.is_ipv6_enabled.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "is_ipv6_enabled",
+                    "is_ipv6_enabled was not specified but it is required when building DistributionSummary",
+                )
+            })?,
             alias_icp_recordals: self.alias_icp_recordals,
-            staging: self.staging,
-        }
+            staging: self.staging.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "staging",
+                    "staging was not specified but it is required when building DistributionSummary",
+                )
+            })?,
+        })
     }
 }

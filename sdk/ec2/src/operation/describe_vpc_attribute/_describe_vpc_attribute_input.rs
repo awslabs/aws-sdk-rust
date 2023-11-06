@@ -41,6 +41,7 @@ pub struct DescribeVpcAttributeInputBuilder {
 }
 impl DescribeVpcAttributeInputBuilder {
     /// <p>The VPC attribute.</p>
+    /// This field is required.
     pub fn attribute(mut self, input: crate::types::VpcAttributeName) -> Self {
         self.attribute = ::std::option::Option::Some(input);
         self
@@ -55,6 +56,7 @@ impl DescribeVpcAttributeInputBuilder {
         &self.attribute
     }
     /// <p>The ID of the VPC.</p>
+    /// This field is required.
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +87,7 @@ impl DescribeVpcAttributeInputBuilder {
     /// Consumes the builder and constructs a [`DescribeVpcAttributeInput`](crate::operation::describe_vpc_attribute::DescribeVpcAttributeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_vpc_attribute::DescribeVpcAttributeInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_vpc_attribute::DescribeVpcAttributeInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_vpc_attribute::DescribeVpcAttributeInput {
             attribute: self.attribute,

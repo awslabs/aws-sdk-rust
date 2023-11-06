@@ -27,6 +27,7 @@ pub struct DescribeLocationAzureBlobInputBuilder {
 }
 impl DescribeLocationAzureBlobInputBuilder {
     /// <p>Specifies the Amazon Resource Name (ARN) of your Azure Blob Storage transfer location.</p>
+    /// This field is required.
     pub fn location_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeLocationAzureBlobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_location_azure_blob::DescribeLocationAzureBlobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_location_azure_blob::DescribeLocationAzureBlobInput {
             location_arn: self.location_arn,

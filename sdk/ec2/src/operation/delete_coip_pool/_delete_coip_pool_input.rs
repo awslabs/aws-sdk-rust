@@ -34,6 +34,7 @@ pub struct DeleteCoipPoolInputBuilder {
 }
 impl DeleteCoipPoolInputBuilder {
     /// <p>The ID of the CoIP pool that you want to delete. </p>
+    /// This field is required.
     pub fn coip_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.coip_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl DeleteCoipPoolInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCoipPoolInput`](crate::operation::delete_coip_pool::DeleteCoipPoolInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_coip_pool::DeleteCoipPoolInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_coip_pool::DeleteCoipPoolInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_coip_pool::DeleteCoipPoolInput {
             coip_pool_id: self.coip_pool_id,
             dry_run: self.dry_run,

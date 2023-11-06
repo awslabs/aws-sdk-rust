@@ -64,7 +64,7 @@ impl DescribeAccountLimitsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAccountLimitsInput`](crate::operation::describe_account_limits::DescribeAccountLimitsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_account_limits::DescribeAccountLimitsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_account_limits::DescribeAccountLimitsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_account_limits::DescribeAccountLimitsInput {
             marker: self.marker,

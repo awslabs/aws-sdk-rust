@@ -27,6 +27,7 @@ pub struct DeleteCertificateInputBuilder {
 }
 impl DeleteCertificateInputBuilder {
     /// <p>The identifier of the certificate object that you are deleting.</p>
+    /// This field is required.
     pub fn certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteCertificateInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCertificateInput`](crate::operation::delete_certificate::DeleteCertificateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_certificate::DeleteCertificateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_certificate::DeleteCertificateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_certificate::DeleteCertificateInput {
             certificate_id: self.certificate_id,
         })

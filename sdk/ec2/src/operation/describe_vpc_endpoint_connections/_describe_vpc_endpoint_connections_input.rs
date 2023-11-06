@@ -32,8 +32,10 @@ impl DescribeVpcEndpointConnectionsInput {
     /// <li> <p> <code>vpc-endpoint-state</code> - The state of the endpoint (<code>pendingAcceptance</code> | <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code> | <code>rejected</code> | <code>failed</code>).</p> </li>
     /// <li> <p> <code>vpc-endpoint-id</code> - The ID of the endpoint.</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of results to return for the request in a single page. The remaining results of the initial request can be seen by sending another request with the returned <code>NextToken</code> value. This value can be between 5 and 1,000; if <code>MaxResults</code> is given a value larger than 1,000, only 1,000 results are returned.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -149,7 +151,7 @@ impl DescribeVpcEndpointConnectionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_vpc_endpoint_connections::DescribeVpcEndpointConnectionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_vpc_endpoint_connections::DescribeVpcEndpointConnectionsInput {
             dry_run: self.dry_run,

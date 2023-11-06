@@ -55,6 +55,7 @@ pub struct ExecuteGremlinProfileQueryInputBuilder {
 }
 impl ExecuteGremlinProfileQueryInputBuilder {
     /// <p>The Gremlin query string to profile.</p>
+    /// This field is required.
     pub fn gremlin_query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gremlin_query = ::std::option::Option::Some(input.into());
         self
@@ -129,7 +130,7 @@ impl ExecuteGremlinProfileQueryInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryInput {
             gremlin_query: self.gremlin_query,

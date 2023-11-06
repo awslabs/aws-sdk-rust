@@ -12,8 +12,10 @@ pub struct DescribeRecommendationExportJobsOutput {
 }
 impl DescribeRecommendationExportJobsOutput {
     /// <p>An array of objects that describe recommendation export jobs.</p>
-    pub fn recommendation_export_jobs(&self) -> ::std::option::Option<&[crate::types::RecommendationExportJob]> {
-        self.recommendation_export_jobs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recommendation_export_jobs.is_none()`.
+    pub fn recommendation_export_jobs(&self) -> &[crate::types::RecommendationExportJob] {
+        self.recommendation_export_jobs.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to advance to the next page of export jobs.</p>
     /// <p>This value is null when there are no more pages of export jobs to return.</p>

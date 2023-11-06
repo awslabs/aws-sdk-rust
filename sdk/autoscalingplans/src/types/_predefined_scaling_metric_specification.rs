@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PredefinedScalingMetricSpecification {
     /// <p>The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Auto Scaling groups, Spot Fleet requests, and ECS services.</p>
-    pub predefined_scaling_metric_type: ::std::option::Option<crate::types::ScalingMetricType>,
+    pub predefined_scaling_metric_type: crate::types::ScalingMetricType,
     /// <p>Identifies the resource associated with the metric type. You can't specify a resource label unless the metric type is <code>ALBRequestCountPerTarget</code> and there is a target group for an Application Load Balancer attached to the Auto Scaling group, Spot Fleet request, or ECS service.</p>
     /// <p>You create the resource label by appending the final portion of the load balancer ARN and the final portion of the target group ARN into a single value, separated by a forward slash (/). The format is app/<load-balancer-name>
     /// /
@@ -39,8 +39,8 @@ pub struct PredefinedScalingMetricSpecification {
 }
 impl PredefinedScalingMetricSpecification {
     /// <p>The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Auto Scaling groups, Spot Fleet requests, and ECS services.</p>
-    pub fn predefined_scaling_metric_type(&self) -> ::std::option::Option<&crate::types::ScalingMetricType> {
-        self.predefined_scaling_metric_type.as_ref()
+    pub fn predefined_scaling_metric_type(&self) -> &crate::types::ScalingMetricType {
+        &self.predefined_scaling_metric_type
     }
     /// <p>Identifies the resource associated with the metric type. You can't specify a resource label unless the metric type is <code>ALBRequestCountPerTarget</code> and there is a target group for an Application Load Balancer attached to the Auto Scaling group, Spot Fleet request, or ECS service.</p>
     /// <p>You create the resource label by appending the final portion of the load balancer ARN and the final portion of the target group ARN into a single value, separated by a forward slash (/). The format is app/<load-balancer-name>
@@ -91,6 +91,7 @@ pub struct PredefinedScalingMetricSpecificationBuilder {
 }
 impl PredefinedScalingMetricSpecificationBuilder {
     /// <p>The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Auto Scaling groups, Spot Fleet requests, and ECS services.</p>
+    /// This field is required.
     pub fn predefined_scaling_metric_type(mut self, input: crate::types::ScalingMetricType) -> Self {
         self.predefined_scaling_metric_type = ::std::option::Option::Some(input);
         self
@@ -203,10 +204,19 @@ impl PredefinedScalingMetricSpecificationBuilder {
         &self.resource_label
     }
     /// Consumes the builder and constructs a [`PredefinedScalingMetricSpecification`](crate::types::PredefinedScalingMetricSpecification).
-    pub fn build(self) -> crate::types::PredefinedScalingMetricSpecification {
-        crate::types::PredefinedScalingMetricSpecification {
-            predefined_scaling_metric_type: self.predefined_scaling_metric_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`predefined_scaling_metric_type`](crate::types::builders::PredefinedScalingMetricSpecificationBuilder::predefined_scaling_metric_type)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::PredefinedScalingMetricSpecification, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PredefinedScalingMetricSpecification {
+            predefined_scaling_metric_type: self.predefined_scaling_metric_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "predefined_scaling_metric_type",
+                    "predefined_scaling_metric_type was not specified but it is required when building PredefinedScalingMetricSpecification",
+                )
+            })?,
             resource_label: self.resource_label,
-        }
+        })
     }
 }

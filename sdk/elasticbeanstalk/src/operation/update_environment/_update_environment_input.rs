@@ -79,12 +79,16 @@ impl UpdateEnvironmentInput {
         self.platform_arn.as_deref()
     }
     /// <p>If specified, AWS Elastic Beanstalk updates the configuration set associated with the running environment and sets the specified configuration options to the requested value.</p>
-    pub fn option_settings(&self) -> ::std::option::Option<&[crate::types::ConfigurationOptionSetting]> {
-        self.option_settings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.option_settings.is_none()`.
+    pub fn option_settings(&self) -> &[crate::types::ConfigurationOptionSetting] {
+        self.option_settings.as_deref().unwrap_or_default()
     }
     /// <p>A list of custom user-defined configuration options to remove from the configuration set for this environment.</p>
-    pub fn options_to_remove(&self) -> ::std::option::Option<&[crate::types::OptionSpecification]> {
-        self.options_to_remove.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.options_to_remove.is_none()`.
+    pub fn options_to_remove(&self) -> &[crate::types::OptionSpecification] {
+        self.options_to_remove.as_deref().unwrap_or_default()
     }
 }
 impl UpdateEnvironmentInput {
@@ -307,7 +311,7 @@ impl UpdateEnvironmentInputBuilder {
     /// Consumes the builder and constructs a [`UpdateEnvironmentInput`](crate::operation::update_environment::UpdateEnvironmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_environment::UpdateEnvironmentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_environment::UpdateEnvironmentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_environment::UpdateEnvironmentInput {
             application_name: self.application_name,
             environment_id: self.environment_id,

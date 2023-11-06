@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Page {
     /// <p>The Amazon Resource Name (ARN) of the page to the contact channel.</p>
-    pub page_arn: ::std::option::Option<::std::string::String>,
+    pub page_arn: ::std::string::String,
     /// <p>The ARN of the engagement that this page is part of.</p>
-    pub engagement_arn: ::std::option::Option<::std::string::String>,
+    pub engagement_arn: ::std::string::String,
     /// <p>The ARN of the contact that Incident Manager is engaging.</p>
-    pub contact_arn: ::std::option::Option<::std::string::String>,
+    pub contact_arn: ::std::string::String,
     /// <p>The user that started the engagement.</p>
-    pub sender: ::std::option::Option<::std::string::String>,
+    pub sender: ::std::string::String,
     /// <p>The ARN of the incident that's engaging the contact channel.</p>
     pub incident_id: ::std::option::Option<::std::string::String>,
     /// <p>The time that Incident Manager engaged the contact channel.</p>
@@ -23,20 +23,24 @@ pub struct Page {
 }
 impl Page {
     /// <p>The Amazon Resource Name (ARN) of the page to the contact channel.</p>
-    pub fn page_arn(&self) -> ::std::option::Option<&str> {
-        self.page_arn.as_deref()
+    pub fn page_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.page_arn.deref()
     }
     /// <p>The ARN of the engagement that this page is part of.</p>
-    pub fn engagement_arn(&self) -> ::std::option::Option<&str> {
-        self.engagement_arn.as_deref()
+    pub fn engagement_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.engagement_arn.deref()
     }
     /// <p>The ARN of the contact that Incident Manager is engaging.</p>
-    pub fn contact_arn(&self) -> ::std::option::Option<&str> {
-        self.contact_arn.as_deref()
+    pub fn contact_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.contact_arn.deref()
     }
     /// <p>The user that started the engagement.</p>
-    pub fn sender(&self) -> ::std::option::Option<&str> {
-        self.sender.as_deref()
+    pub fn sender(&self) -> &str {
+        use std::ops::Deref;
+        self.sender.deref()
     }
     /// <p>The ARN of the incident that's engaging the contact channel.</p>
     pub fn incident_id(&self) -> ::std::option::Option<&str> {
@@ -77,6 +81,7 @@ pub struct PageBuilder {
 }
 impl PageBuilder {
     /// <p>The Amazon Resource Name (ARN) of the page to the contact channel.</p>
+    /// This field is required.
     pub fn page_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.page_arn = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +96,7 @@ impl PageBuilder {
         &self.page_arn
     }
     /// <p>The ARN of the engagement that this page is part of.</p>
+    /// This field is required.
     pub fn engagement_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engagement_arn = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +111,7 @@ impl PageBuilder {
         &self.engagement_arn
     }
     /// <p>The ARN of the contact that Incident Manager is engaging.</p>
+    /// This field is required.
     pub fn contact_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_arn = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +126,7 @@ impl PageBuilder {
         &self.contact_arn
     }
     /// <p>The user that started the engagement.</p>
+    /// This field is required.
     pub fn sender(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sender = ::std::option::Option::Some(input.into());
         self
@@ -189,16 +197,41 @@ impl PageBuilder {
         &self.read_time
     }
     /// Consumes the builder and constructs a [`Page`](crate::types::Page).
-    pub fn build(self) -> crate::types::Page {
-        crate::types::Page {
-            page_arn: self.page_arn,
-            engagement_arn: self.engagement_arn,
-            contact_arn: self.contact_arn,
-            sender: self.sender,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`page_arn`](crate::types::builders::PageBuilder::page_arn)
+    /// - [`engagement_arn`](crate::types::builders::PageBuilder::engagement_arn)
+    /// - [`contact_arn`](crate::types::builders::PageBuilder::contact_arn)
+    /// - [`sender`](crate::types::builders::PageBuilder::sender)
+    pub fn build(self) -> ::std::result::Result<crate::types::Page, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Page {
+            page_arn: self.page_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "page_arn",
+                    "page_arn was not specified but it is required when building Page",
+                )
+            })?,
+            engagement_arn: self.engagement_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "engagement_arn",
+                    "engagement_arn was not specified but it is required when building Page",
+                )
+            })?,
+            contact_arn: self.contact_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "contact_arn",
+                    "contact_arn was not specified but it is required when building Page",
+                )
+            })?,
+            sender: self.sender.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "sender",
+                    "sender was not specified but it is required when building Page",
+                )
+            })?,
             incident_id: self.incident_id,
             sent_time: self.sent_time,
             delivery_time: self.delivery_time,
             read_time: self.read_time,
-        }
+        })
     }
 }

@@ -2,7 +2,7 @@
 pub fn ser_journey_limits(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::JourneyLimits,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.daily_cap {
         object.key("DailyCap").number(
             #[allow(clippy::useless_conversion)]

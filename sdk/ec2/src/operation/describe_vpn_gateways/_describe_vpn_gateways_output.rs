@@ -10,8 +10,10 @@ pub struct DescribeVpnGatewaysOutput {
 }
 impl DescribeVpnGatewaysOutput {
     /// <p>Information about one or more virtual private gateways.</p>
-    pub fn vpn_gateways(&self) -> ::std::option::Option<&[crate::types::VpnGateway]> {
-        self.vpn_gateways.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpn_gateways.is_none()`.
+    pub fn vpn_gateways(&self) -> &[crate::types::VpnGateway] {
+        self.vpn_gateways.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeVpnGatewaysOutput {

@@ -20,8 +20,10 @@ impl ImportInstanceInput {
         self.description.as_deref()
     }
     /// <p>The disk image.</p>
-    pub fn disk_images(&self) -> ::std::option::Option<&[crate::types::DiskImage]> {
-        self.disk_images.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.disk_images.is_none()`.
+    pub fn disk_images(&self) -> &[crate::types::DiskImage] {
+        self.disk_images.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -117,6 +119,7 @@ impl ImportInstanceInputBuilder {
         &self.launch_specification
     }
     /// <p>The instance operating system.</p>
+    /// This field is required.
     pub fn platform(mut self, input: crate::types::PlatformValues) -> Self {
         self.platform = ::std::option::Option::Some(input);
         self
@@ -133,7 +136,7 @@ impl ImportInstanceInputBuilder {
     /// Consumes the builder and constructs a [`ImportInstanceInput`](crate::operation::import_instance::ImportInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::import_instance::ImportInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::import_instance::ImportInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::import_instance::ImportInstanceInput {
             description: self.description,
             disk_images: self.disk_images,

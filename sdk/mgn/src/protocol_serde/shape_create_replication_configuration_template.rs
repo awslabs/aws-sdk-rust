@@ -102,13 +102,15 @@ pub fn de_create_replication_configuration_template_http_response(
         )
         .map_err(crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplateError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::create_replication_configuration_template_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplateError::unhandled)?
     })
 }
 
 pub fn ser_create_replication_configuration_template_input(
     input: &crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplateInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_replication_configuration_template_input::ser_create_replication_configuration_template_input(
@@ -116,7 +118,7 @@ pub fn ser_create_replication_configuration_template_input(
         input,
     )?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_create_replication_configuration_template(
@@ -206,8 +208,8 @@ pub(crate) fn de_create_replication_configuration_template(
                     );
                 }
                 "replicationServersSecurityGroupsIDs" => {
-                    builder = builder.set_replication_servers_security_groups_i_ds(
-                        crate::protocol_serde::shape_replication_servers_security_groups_i_ds::de_replication_servers_security_groups_i_ds(tokens)?,
+                    builder = builder.set_replication_servers_security_groups_ids(
+                        crate::protocol_serde::shape_replication_servers_security_groups_ids::de_replication_servers_security_groups_ids(tokens)?,
                     );
                 }
                 "stagingAreaSubnetId" => {

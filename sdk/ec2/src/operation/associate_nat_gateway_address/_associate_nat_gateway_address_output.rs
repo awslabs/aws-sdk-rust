@@ -15,8 +15,10 @@ impl AssociateNatGatewayAddressOutput {
         self.nat_gateway_id.as_deref()
     }
     /// <p>The IP addresses.</p>
-    pub fn nat_gateway_addresses(&self) -> ::std::option::Option<&[crate::types::NatGatewayAddress]> {
-        self.nat_gateway_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.nat_gateway_addresses.is_none()`.
+    pub fn nat_gateway_addresses(&self) -> &[crate::types::NatGatewayAddress] {
+        self.nat_gateway_addresses.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for AssociateNatGatewayAddressOutput {

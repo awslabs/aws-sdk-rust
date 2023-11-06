@@ -40,8 +40,10 @@ impl UpdateApplicationInput {
         self.run_configuration_update.as_ref()
     }
     /// <p>Describes application Amazon CloudWatch logging option updates. You can only update existing CloudWatch logging options with this action. To add a new CloudWatch logging option, use <code>AddApplicationCloudWatchLoggingOption</code>.</p>
-    pub fn cloud_watch_logging_option_updates(&self) -> ::std::option::Option<&[crate::types::CloudWatchLoggingOptionUpdate]> {
-        self.cloud_watch_logging_option_updates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_watch_logging_option_updates.is_none()`.
+    pub fn cloud_watch_logging_option_updates(&self) -> &[crate::types::CloudWatchLoggingOptionUpdate] {
+        self.cloud_watch_logging_option_updates.as_deref().unwrap_or_default()
     }
     /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
     pub fn conditional_token(&self) -> ::std::option::Option<&str> {
@@ -69,6 +71,7 @@ pub struct UpdateApplicationInputBuilder {
 }
 impl UpdateApplicationInputBuilder {
     /// <p>The name of the application to update.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
@@ -178,7 +181,7 @@ impl UpdateApplicationInputBuilder {
     /// Consumes the builder and constructs a [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_application::UpdateApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_application::UpdateApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_application::UpdateApplicationInput {
             application_name: self.application_name,
             current_application_version_id: self.current_application_version_id,

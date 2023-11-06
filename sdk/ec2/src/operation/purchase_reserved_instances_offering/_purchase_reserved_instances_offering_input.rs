@@ -56,6 +56,7 @@ pub struct PurchaseReservedInstancesOfferingInputBuilder {
 }
 impl PurchaseReservedInstancesOfferingInputBuilder {
     /// <p>The number of Reserved Instances to purchase.</p>
+    /// This field is required.
     pub fn instance_count(mut self, input: i32) -> Self {
         self.instance_count = ::std::option::Option::Some(input);
         self
@@ -70,6 +71,7 @@ impl PurchaseReservedInstancesOfferingInputBuilder {
         &self.instance_count
     }
     /// <p>The ID of the Reserved Instance offering to purchase.</p>
+    /// This field is required.
     pub fn reserved_instances_offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_instances_offering_id = ::std::option::Option::Some(input.into());
         self
@@ -130,7 +132,7 @@ impl PurchaseReservedInstancesOfferingInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::purchase_reserved_instances_offering::PurchaseReservedInstancesOfferingInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::purchase_reserved_instances_offering::PurchaseReservedInstancesOfferingInput {

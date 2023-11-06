@@ -9,8 +9,10 @@ pub struct ClusterHealth {
 }
 impl ClusterHealth {
     /// <p>An object representing the health issues of your local Amazon EKS cluster on an Amazon Web Services Outpost.</p>
-    pub fn issues(&self) -> ::std::option::Option<&[crate::types::ClusterIssue]> {
-        self.issues.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.issues.is_none()`.
+    pub fn issues(&self) -> &[crate::types::ClusterIssue] {
+        self.issues.as_deref().unwrap_or_default()
     }
 }
 impl ClusterHealth {

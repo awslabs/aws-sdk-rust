@@ -11,8 +11,10 @@ pub struct ListTrailsOutput {
 }
 impl ListTrailsOutput {
     /// <p>Returns the name, ARN, and home Region of trails in the current account.</p>
-    pub fn trails(&self) -> ::std::option::Option<&[crate::types::TrailInfo]> {
-        self.trails.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.trails.is_none()`.
+    pub fn trails(&self) -> &[crate::types::TrailInfo] {
+        self.trails.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to get the next page of results after a previous API call. If the token does not appear, there are no more results to return. The token must be passed in with the same parameters as the previous call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

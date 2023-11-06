@@ -27,8 +27,10 @@ impl CreateFunctionDefinitionVersionInput {
         self.function_definition_id.as_deref()
     }
     /// A list of Lambda functions in this function definition version.
-    pub fn functions(&self) -> ::std::option::Option<&[crate::types::Function]> {
-        self.functions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.functions.is_none()`.
+    pub fn functions(&self) -> &[crate::types::Function] {
+        self.functions.as_deref().unwrap_or_default()
     }
 }
 impl CreateFunctionDefinitionVersionInput {
@@ -77,6 +79,7 @@ impl CreateFunctionDefinitionVersionInputBuilder {
         &self.default_config
     }
     /// The ID of the Lambda function definition.
+    /// This field is required.
     pub fn function_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_definition_id = ::std::option::Option::Some(input.into());
         self
@@ -115,7 +118,7 @@ impl CreateFunctionDefinitionVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_function_definition_version::CreateFunctionDefinitionVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_function_definition_version::CreateFunctionDefinitionVersionInput {

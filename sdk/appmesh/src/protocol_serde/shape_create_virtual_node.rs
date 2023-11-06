@@ -158,16 +158,16 @@ pub fn de_create_virtual_node_http_response(
             _response_body,
         )?);
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::create_virtual_node_output_correct_errors(output).build()
     })
 }
 
 pub fn ser_create_virtual_node_input(
     input: &crate::operation::create_virtual_node::CreateVirtualNodeInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_virtual_node_input::ser_create_virtual_node_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

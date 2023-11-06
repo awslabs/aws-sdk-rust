@@ -34,6 +34,7 @@ pub struct GetResourcesSummaryOutputBuilder {
 }
 impl GetResourcesSummaryOutputBuilder {
     /// <p>Summary counts of each Proton resource type.</p>
+    /// This field is required.
     pub fn counts(mut self, input: crate::types::CountsSummary) -> Self {
         self.counts = ::std::option::Option::Some(input);
         self

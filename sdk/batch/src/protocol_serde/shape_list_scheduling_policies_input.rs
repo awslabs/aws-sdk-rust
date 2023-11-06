@@ -2,7 +2,7 @@
 pub fn ser_list_scheduling_policies_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_scheduling_policies::ListSchedulingPoliciesInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]

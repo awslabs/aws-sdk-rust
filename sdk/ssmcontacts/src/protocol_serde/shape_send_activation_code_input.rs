@@ -2,7 +2,7 @@
 pub fn ser_send_activation_code_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::send_activation_code::SendActivationCodeInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.contact_channel_id {
         object.key("ContactChannelId").string(var_1.as_str());
     }

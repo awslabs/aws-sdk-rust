@@ -11,8 +11,10 @@ pub struct GetListElementsOutput {
 }
 impl GetListElementsOutput {
     /// <p> The list elements. </p>
-    pub fn elements(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.elements.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.elements.is_none()`.
+    pub fn elements(&self) -> &[::std::string::String] {
+        self.elements.as_deref().unwrap_or_default()
     }
     /// <p> The next page token. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

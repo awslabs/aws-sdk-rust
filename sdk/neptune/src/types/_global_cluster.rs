@@ -58,8 +58,10 @@ impl GlobalCluster {
         self.deletion_protection
     }
     /// <p>A list of cluster ARNs and instance ARNs for all the DB clusters that are part of the global database.</p>
-    pub fn global_cluster_members(&self) -> ::std::option::Option<&[crate::types::GlobalClusterMember]> {
-        self.global_cluster_members.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.global_cluster_members.is_none()`.
+    pub fn global_cluster_members(&self) -> &[crate::types::GlobalClusterMember] {
+        self.global_cluster_members.as_deref().unwrap_or_default()
     }
 }
 impl GlobalCluster {

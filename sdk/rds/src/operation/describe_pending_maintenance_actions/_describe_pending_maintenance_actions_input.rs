@@ -31,8 +31,10 @@ impl DescribePendingMaintenanceActionsInput {
     /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes pending maintenance actions for the DB clusters identified by these ARNs.</p> </li>
     /// <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs. The results list only includes pending maintenance actions for the DB instances identified by these ARNs.</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>An optional pagination token provided by a previous <code>DescribePendingMaintenanceActions</code> request. If this parameter is specified, the response includes only records beyond the marker, up to a number of records specified by <code>MaxRecords</code>.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {
@@ -150,7 +152,7 @@ impl DescribePendingMaintenanceActionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsInput {

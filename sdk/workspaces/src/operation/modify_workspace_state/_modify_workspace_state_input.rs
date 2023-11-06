@@ -34,6 +34,7 @@ pub struct ModifyWorkspaceStateInputBuilder {
 }
 impl ModifyWorkspaceStateInputBuilder {
     /// <p>The identifier of the WorkSpace.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl ModifyWorkspaceStateInputBuilder {
         &self.workspace_id
     }
     /// <p>The WorkSpace state.</p>
+    /// This field is required.
     pub fn workspace_state(mut self, input: crate::types::TargetWorkspaceState) -> Self {
         self.workspace_state = ::std::option::Option::Some(input);
         self
@@ -64,7 +66,7 @@ impl ModifyWorkspaceStateInputBuilder {
     /// Consumes the builder and constructs a [`ModifyWorkspaceStateInput`](crate::operation::modify_workspace_state::ModifyWorkspaceStateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_workspace_state::ModifyWorkspaceStateInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::modify_workspace_state::ModifyWorkspaceStateInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::modify_workspace_state::ModifyWorkspaceStateInput {
             workspace_id: self.workspace_id,

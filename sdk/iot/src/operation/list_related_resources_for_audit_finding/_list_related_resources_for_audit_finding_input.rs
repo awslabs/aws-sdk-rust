@@ -41,6 +41,7 @@ pub struct ListRelatedResourcesForAuditFindingInputBuilder {
 }
 impl ListRelatedResourcesForAuditFindingInputBuilder {
     /// <p>The finding Id.</p>
+    /// This field is required.
     pub fn finding_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.finding_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListRelatedResourcesForAuditFindingInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingInput {

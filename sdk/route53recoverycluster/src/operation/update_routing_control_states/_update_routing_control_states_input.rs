@@ -11,13 +11,17 @@ pub struct UpdateRoutingControlStatesInput {
 }
 impl UpdateRoutingControlStatesInput {
     /// <p>A set of routing control entries that you want to update.</p>
-    pub fn update_routing_control_state_entries(&self) -> ::std::option::Option<&[crate::types::UpdateRoutingControlStateEntry]> {
-        self.update_routing_control_state_entries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.update_routing_control_state_entries.is_none()`.
+    pub fn update_routing_control_state_entries(&self) -> &[crate::types::UpdateRoutingControlStateEntry] {
+        self.update_routing_control_state_entries.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating routing control states. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
-    pub fn safety_rules_to_override(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.safety_rules_to_override.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.safety_rules_to_override.is_none()`.
+    pub fn safety_rules_to_override(&self) -> &[::std::string::String] {
+        self.safety_rules_to_override.as_deref().unwrap_or_default()
     }
 }
 impl UpdateRoutingControlStatesInput {
@@ -86,7 +90,7 @@ impl UpdateRoutingControlStatesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_routing_control_states::UpdateRoutingControlStatesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_routing_control_states::UpdateRoutingControlStatesInput {
             update_routing_control_state_entries: self.update_routing_control_state_entries,

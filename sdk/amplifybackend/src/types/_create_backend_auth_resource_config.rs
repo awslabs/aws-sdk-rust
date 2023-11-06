@@ -49,6 +49,7 @@ pub struct CreateBackendAuthResourceConfigBuilder {
 }
 impl CreateBackendAuthResourceConfigBuilder {
     /// <p>Defines whether you want to configure only authentication or both authentication and authorization settings.</p>
+    /// This field is required.
     pub fn auth_resources(mut self, input: crate::types::AuthResources) -> Self {
         self.auth_resources = ::std::option::Option::Some(input);
         self
@@ -77,6 +78,7 @@ impl CreateBackendAuthResourceConfigBuilder {
         &self.identity_pool_configs
     }
     /// <p>Defines the service name to use when configuring an authentication resource in your Amplify project.</p>
+    /// This field is required.
     pub fn service(mut self, input: crate::types::Service) -> Self {
         self.service = ::std::option::Option::Some(input);
         self
@@ -91,6 +93,7 @@ impl CreateBackendAuthResourceConfigBuilder {
         &self.service
     }
     /// <p>Describes authentication configuration for the Amazon Cognito user pool, provisioned as a part of your auth resource in the Amplify project.</p>
+    /// This field is required.
     pub fn user_pool_configs(mut self, input: crate::types::CreateBackendAuthUserPoolConfig) -> Self {
         self.user_pool_configs = ::std::option::Option::Some(input);
         self

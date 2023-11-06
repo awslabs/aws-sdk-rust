@@ -55,6 +55,7 @@ pub struct ReplaceTransitGatewayRouteInputBuilder {
 }
 impl ReplaceTransitGatewayRouteInputBuilder {
     /// <p>The CIDR range used for the destination match. Routing decisions are based on the most specific match.</p>
+    /// This field is required.
     pub fn destination_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_cidr_block = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl ReplaceTransitGatewayRouteInputBuilder {
         &self.destination_cidr_block
     }
     /// <p>The ID of the route table.</p>
+    /// This field is required.
     pub fn transit_gateway_route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_route_table_id = ::std::option::Option::Some(input.into());
         self
@@ -129,7 +131,7 @@ impl ReplaceTransitGatewayRouteInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::replace_transit_gateway_route::ReplaceTransitGatewayRouteInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::replace_transit_gateway_route::ReplaceTransitGatewayRouteInput {
             destination_cidr_block: self.destination_cidr_block,

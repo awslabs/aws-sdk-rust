@@ -46,7 +46,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::zonal_statistics_config_input_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -57,30 +61,30 @@ where
 pub fn ser_zonal_statistics_config_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ZonalStatisticsConfigInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.zone_s3_path {
-        object.key("ZoneS3Path").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("ZoneS3Path").string(input.zone_s3_path.as_str());
     }
-    if let Some(var_2) = &input.statistics {
-        let mut array_3 = object.key("Statistics").start_array();
-        for item_4 in var_2 {
+    {
+        let mut array_1 = object.key("Statistics").start_array();
+        for item_2 in &input.statistics {
             {
-                array_3.value().string(item_4.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_3.finish();
+        array_1.finish();
     }
-    if let Some(var_5) = &input.target_bands {
-        let mut array_6 = object.key("TargetBands").start_array();
-        for item_7 in var_5 {
+    if let Some(var_3) = &input.target_bands {
+        let mut array_4 = object.key("TargetBands").start_array();
+        for item_5 in var_3 {
             {
-                array_6.value().string(item_7.as_str());
+                array_4.value().string(item_5.as_str());
             }
         }
-        array_6.finish();
+        array_4.finish();
     }
-    if let Some(var_8) = &input.zone_s3_path_kms_key_id {
-        object.key("ZoneS3PathKmsKeyId").string(var_8.as_str());
+    if let Some(var_6) = &input.zone_s3_path_kms_key_id {
+        object.key("ZoneS3PathKmsKeyId").string(var_6.as_str());
     }
     Ok(())
 }

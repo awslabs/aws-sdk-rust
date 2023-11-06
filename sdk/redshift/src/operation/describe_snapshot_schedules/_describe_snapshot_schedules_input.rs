@@ -26,12 +26,16 @@ impl DescribeSnapshotSchedulesInput {
         self.schedule_identifier.as_deref()
     }
     /// <p>The key value for a snapshot schedule tag.</p>
-    pub fn tag_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tag_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_keys.is_none()`.
+    pub fn tag_keys(&self) -> &[::std::string::String] {
+        self.tag_keys.as_deref().unwrap_or_default()
     }
     /// <p>The value corresponding to the key of the snapshot schedule tag.</p>
-    pub fn tag_values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tag_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_values.is_none()`.
+    pub fn tag_values(&self) -> &[::std::string::String] {
+        self.tag_values.as_deref().unwrap_or_default()
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>marker</code> parameter and retrying the command. If the <code>marker</code> field is empty, all response records have been retrieved for the request.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {
@@ -162,7 +166,7 @@ impl DescribeSnapshotSchedulesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_snapshot_schedules::DescribeSnapshotSchedulesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_snapshot_schedules::DescribeSnapshotSchedulesInput {
             cluster_identifier: self.cluster_identifier,

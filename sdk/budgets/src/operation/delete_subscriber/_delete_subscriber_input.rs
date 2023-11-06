@@ -49,6 +49,7 @@ pub struct DeleteSubscriberInputBuilder {
 }
 impl DeleteSubscriberInputBuilder {
     /// <p>The <code>accountId</code> that is associated with the budget whose subscriber you want to delete.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl DeleteSubscriberInputBuilder {
         &self.account_id
     }
     /// <p>The name of the budget whose subscriber you want to delete.</p>
+    /// This field is required.
     pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.budget_name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +79,7 @@ impl DeleteSubscriberInputBuilder {
         &self.budget_name
     }
     /// <p>The notification whose subscriber you want to delete.</p>
+    /// This field is required.
     pub fn notification(mut self, input: crate::types::Notification) -> Self {
         self.notification = ::std::option::Option::Some(input);
         self
@@ -91,6 +94,7 @@ impl DeleteSubscriberInputBuilder {
         &self.notification
     }
     /// <p>The subscriber that you want to delete.</p>
+    /// This field is required.
     pub fn subscriber(mut self, input: crate::types::Subscriber) -> Self {
         self.subscriber = ::std::option::Option::Some(input);
         self
@@ -107,7 +111,7 @@ impl DeleteSubscriberInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSubscriberInput`](crate::operation::delete_subscriber::DeleteSubscriberInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_subscriber::DeleteSubscriberInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_subscriber::DeleteSubscriberInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_subscriber::DeleteSubscriberInput {
             account_id: self.account_id,
             budget_name: self.budget_name,

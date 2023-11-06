@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Entity {
     /// <p>The entity type.</p>
-    pub entity_type: ::std::option::Option<::std::string::String>,
+    pub entity_type: ::std::string::String,
     /// <p>The entity ID. If you do not know the <code>entityId</code>, you can pass <code>unknown</code>, which is areserved string literal.</p>
-    pub entity_id: ::std::option::Option<::std::string::String>,
+    pub entity_id: ::std::string::String,
 }
 impl Entity {
     /// <p>The entity type.</p>
-    pub fn entity_type(&self) -> ::std::option::Option<&str> {
-        self.entity_type.as_deref()
+    pub fn entity_type(&self) -> &str {
+        use std::ops::Deref;
+        self.entity_type.deref()
     }
     /// <p>The entity ID. If you do not know the <code>entityId</code>, you can pass <code>unknown</code>, which is areserved string literal.</p>
-    pub fn entity_id(&self) -> ::std::option::Option<&str> {
-        self.entity_id.as_deref()
+    pub fn entity_id(&self) -> &str {
+        use std::ops::Deref;
+        self.entity_id.deref()
     }
 }
 impl ::std::fmt::Debug for Entity {
@@ -43,6 +45,7 @@ pub struct EntityBuilder {
 }
 impl EntityBuilder {
     /// <p>The entity type.</p>
+    /// This field is required.
     pub fn entity_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_type = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +60,7 @@ impl EntityBuilder {
         &self.entity_type
     }
     /// <p>The entity ID. If you do not know the <code>entityId</code>, you can pass <code>unknown</code>, which is areserved string literal.</p>
+    /// This field is required.
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
         self
@@ -71,11 +75,24 @@ impl EntityBuilder {
         &self.entity_id
     }
     /// Consumes the builder and constructs a [`Entity`](crate::types::Entity).
-    pub fn build(self) -> crate::types::Entity {
-        crate::types::Entity {
-            entity_type: self.entity_type,
-            entity_id: self.entity_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`entity_type`](crate::types::builders::EntityBuilder::entity_type)
+    /// - [`entity_id`](crate::types::builders::EntityBuilder::entity_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::Entity, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Entity {
+            entity_type: self.entity_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "entity_type",
+                    "entity_type was not specified but it is required when building Entity",
+                )
+            })?,
+            entity_id: self.entity_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "entity_id",
+                    "entity_id was not specified but it is required when building Entity",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for EntityBuilder {

@@ -17,8 +17,10 @@ impl ComplianceStringFilter {
         self.key.as_deref()
     }
     /// <p>The value for which to search.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
+    pub fn values(&self) -> &[::std::string::String] {
+        self.values.as_deref().unwrap_or_default()
     }
     /// <p>The type of comparison that should be performed for the value: Equal, NotEqual, BeginWith, LessThan, or GreaterThan.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ComplianceQueryOperatorType> {

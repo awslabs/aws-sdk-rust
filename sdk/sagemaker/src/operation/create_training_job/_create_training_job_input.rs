@@ -92,8 +92,10 @@ impl CreateTrainingJobInput {
     /// <p>Algorithms can accept input data from one or more channels. For example, an algorithm might have two channels of input data, <code>training_data</code> and <code>validation_data</code>. The configuration for each channel provides the S3, EFS, or FSx location where the input data is stored. It also provides information about the stored data: the MIME type, compression method, and whether the data is wrapped in RecordIO format. </p>
     /// <p>Depending on the input mode that the algorithm supports, SageMaker either copies input data files from an S3 bucket to a local directory in the Docker container, or makes it available as input streams. For example, if you specify an EFS location, input data files are available as input streams. They do not need to be downloaded.</p>
     /// <p>Your input must be in the same Amazon Web Services region as your training job.</p>
-    pub fn input_data_config(&self) -> ::std::option::Option<&[crate::types::Channel]> {
-        self.input_data_config.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_data_config.is_none()`.
+    pub fn input_data_config(&self) -> &[crate::types::Channel] {
+        self.input_data_config.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the path to the S3 location where you want to store model artifacts. SageMaker creates subfolders for the artifacts. </p>
     pub fn output_data_config(&self) -> ::std::option::Option<&crate::types::OutputDataConfig> {
@@ -114,8 +116,10 @@ impl CreateTrainingJobInput {
         self.stopping_condition.as_ref()
     }
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers within a training cluster for distributed training. If you enable network isolation for training jobs that are configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
     pub fn enable_network_isolation(&self) -> ::std::option::Option<bool> {
@@ -139,8 +143,10 @@ impl CreateTrainingJobInput {
         self.debug_hook_config.as_ref()
     }
     /// <p>Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.</p>
-    pub fn debug_rule_configurations(&self) -> ::std::option::Option<&[crate::types::DebugRuleConfiguration]> {
-        self.debug_rule_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.debug_rule_configurations.is_none()`.
+    pub fn debug_rule_configurations(&self) -> &[crate::types::DebugRuleConfiguration] {
+        self.debug_rule_configurations.as_deref().unwrap_or_default()
     }
     /// <p>Configuration of storage locations for the Amazon SageMaker Debugger TensorBoard output data.</p>
     pub fn tensor_board_output_config(&self) -> ::std::option::Option<&crate::types::TensorBoardOutputConfig> {
@@ -160,8 +166,10 @@ impl CreateTrainingJobInput {
         self.profiler_config.as_ref()
     }
     /// <p>Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.</p>
-    pub fn profiler_rule_configurations(&self) -> ::std::option::Option<&[crate::types::ProfilerRuleConfiguration]> {
-        self.profiler_rule_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.profiler_rule_configurations.is_none()`.
+    pub fn profiler_rule_configurations(&self) -> &[crate::types::ProfilerRuleConfiguration] {
+        self.profiler_rule_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The environment variables to set in the Docker container.</p>
     pub fn environment(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -208,6 +216,7 @@ pub struct CreateTrainingJobInputBuilder {
 }
 impl CreateTrainingJobInputBuilder {
     /// <p>The name of the training job. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account. </p>
+    /// This field is required.
     pub fn training_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.training_job_name = ::std::option::Option::Some(input.into());
         self
@@ -258,6 +267,7 @@ impl CreateTrainingJobInputBuilder {
         &self.hyper_parameters
     }
     /// <p>The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about providing your own algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>. </p>
+    /// This field is required.
     pub fn algorithm_specification(mut self, input: crate::types::AlgorithmSpecification) -> Self {
         self.algorithm_specification = ::std::option::Option::Some(input);
         self
@@ -275,6 +285,7 @@ impl CreateTrainingJobInputBuilder {
     /// <p>During model training, SageMaker needs your permission to read input data from an S3 bucket, download a Docker image that contains training code, write model artifacts to an S3 bucket, write logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch. You grant permissions for all of these tasks to an IAM role. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p> <note>
     /// <p>To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
     /// </note>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -324,6 +335,7 @@ impl CreateTrainingJobInputBuilder {
         &self.input_data_config
     }
     /// <p>Specifies the path to the S3 location where you want to store model artifacts. SageMaker creates subfolders for the artifacts. </p>
+    /// This field is required.
     pub fn output_data_config(mut self, input: crate::types::OutputDataConfig) -> Self {
         self.output_data_config = ::std::option::Option::Some(input);
         self
@@ -339,6 +351,7 @@ impl CreateTrainingJobInputBuilder {
     }
     /// <p>The resources, including the ML compute instances and ML storage volumes, to use for model training. </p>
     /// <p>ML storage volumes store model artifacts and incremental states. Training algorithms might also use ML storage volumes for scratch space. If you want SageMaker to use the ML storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p>
+    /// This field is required.
     pub fn resource_config(mut self, input: crate::types::ResourceConfig) -> Self {
         self.resource_config = ::std::option::Option::Some(input);
         self
@@ -370,6 +383,7 @@ impl CreateTrainingJobInputBuilder {
     }
     /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
     /// <p>To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p>
+    /// This field is required.
     pub fn stopping_condition(mut self, input: crate::types::StoppingCondition) -> Self {
         self.stopping_condition = ::std::option::Option::Some(input);
         self
@@ -618,7 +632,7 @@ impl CreateTrainingJobInputBuilder {
     /// Consumes the builder and constructs a [`CreateTrainingJobInput`](crate::operation::create_training_job::CreateTrainingJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_training_job::CreateTrainingJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_training_job::CreateTrainingJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_training_job::CreateTrainingJobInput {
             training_job_name: self.training_job_name,
             hyper_parameters: self.hyper_parameters,

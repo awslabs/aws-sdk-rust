@@ -11,8 +11,10 @@ pub struct GetIpamPoolAllocationsOutput {
 }
 impl GetIpamPoolAllocationsOutput {
     /// <p>The IPAM pool allocations you want information on.</p>
-    pub fn ipam_pool_allocations(&self) -> ::std::option::Option<&[crate::types::IpamPoolAllocation]> {
-        self.ipam_pool_allocations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipam_pool_allocations.is_none()`.
+    pub fn ipam_pool_allocations(&self) -> &[crate::types::IpamPoolAllocation] {
+        self.ipam_pool_allocations.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

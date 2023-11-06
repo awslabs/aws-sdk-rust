@@ -29,7 +29,7 @@ pub struct TraceSummary {
     /// <p>Service IDs from the trace's segment documents.</p>
     pub service_ids: ::std::option::Option<::std::vec::Vec<crate::types::ServiceId>>,
     /// <p>A list of resource ARNs for any resource corresponding to the trace segments.</p>
-    pub resource_ar_ns: ::std::option::Option<::std::vec::Vec<crate::types::ResourceArnDetail>>,
+    pub resource_arns: ::std::option::Option<::std::vec::Vec<crate::types::ResourceArnDetail>>,
     /// <p>A list of EC2 instance IDs for any instance corresponding to the trace segments.</p>
     pub instance_ids: ::std::option::Option<::std::vec::Vec<crate::types::InstanceIdDetail>>,
     /// <p>A list of Availability Zones for any zone corresponding to the trace segments.</p>
@@ -91,40 +91,56 @@ impl TraceSummary {
         self.annotations.as_ref()
     }
     /// <p>Users from the trace's segment documents.</p>
-    pub fn users(&self) -> ::std::option::Option<&[crate::types::TraceUser]> {
-        self.users.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.users.is_none()`.
+    pub fn users(&self) -> &[crate::types::TraceUser] {
+        self.users.as_deref().unwrap_or_default()
     }
     /// <p>Service IDs from the trace's segment documents.</p>
-    pub fn service_ids(&self) -> ::std::option::Option<&[crate::types::ServiceId]> {
-        self.service_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_ids.is_none()`.
+    pub fn service_ids(&self) -> &[crate::types::ServiceId] {
+        self.service_ids.as_deref().unwrap_or_default()
     }
     /// <p>A list of resource ARNs for any resource corresponding to the trace segments.</p>
-    pub fn resource_ar_ns(&self) -> ::std::option::Option<&[crate::types::ResourceArnDetail]> {
-        self.resource_ar_ns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_arns.is_none()`.
+    pub fn resource_arns(&self) -> &[crate::types::ResourceArnDetail] {
+        self.resource_arns.as_deref().unwrap_or_default()
     }
     /// <p>A list of EC2 instance IDs for any instance corresponding to the trace segments.</p>
-    pub fn instance_ids(&self) -> ::std::option::Option<&[crate::types::InstanceIdDetail]> {
-        self.instance_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_ids.is_none()`.
+    pub fn instance_ids(&self) -> &[crate::types::InstanceIdDetail] {
+        self.instance_ids.as_deref().unwrap_or_default()
     }
     /// <p>A list of Availability Zones for any zone corresponding to the trace segments.</p>
-    pub fn availability_zones(&self) -> ::std::option::Option<&[crate::types::AvailabilityZoneDetail]> {
-        self.availability_zones.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
+    pub fn availability_zones(&self) -> &[crate::types::AvailabilityZoneDetail] {
+        self.availability_zones.as_deref().unwrap_or_default()
     }
     /// <p>The root of a trace.</p>
     pub fn entry_point(&self) -> ::std::option::Option<&crate::types::ServiceId> {
         self.entry_point.as_ref()
     }
     /// <p>A collection of FaultRootCause structures corresponding to the trace segments.</p>
-    pub fn fault_root_causes(&self) -> ::std::option::Option<&[crate::types::FaultRootCause]> {
-        self.fault_root_causes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fault_root_causes.is_none()`.
+    pub fn fault_root_causes(&self) -> &[crate::types::FaultRootCause] {
+        self.fault_root_causes.as_deref().unwrap_or_default()
     }
     /// <p>A collection of ErrorRootCause structures corresponding to the trace segments.</p>
-    pub fn error_root_causes(&self) -> ::std::option::Option<&[crate::types::ErrorRootCause]> {
-        self.error_root_causes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.error_root_causes.is_none()`.
+    pub fn error_root_causes(&self) -> &[crate::types::ErrorRootCause] {
+        self.error_root_causes.as_deref().unwrap_or_default()
     }
     /// <p>A collection of ResponseTimeRootCause structures corresponding to the trace segments.</p>
-    pub fn response_time_root_causes(&self) -> ::std::option::Option<&[crate::types::ResponseTimeRootCause]> {
-        self.response_time_root_causes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.response_time_root_causes.is_none()`.
+    pub fn response_time_root_causes(&self) -> &[crate::types::ResponseTimeRootCause] {
+        self.response_time_root_causes.as_deref().unwrap_or_default()
     }
     /// <p>The revision number of a trace.</p>
     pub fn revision(&self) -> i32 {
@@ -159,7 +175,7 @@ pub struct TraceSummaryBuilder {
         ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ValueWithServiceIds>>>,
     pub(crate) users: ::std::option::Option<::std::vec::Vec<crate::types::TraceUser>>,
     pub(crate) service_ids: ::std::option::Option<::std::vec::Vec<crate::types::ServiceId>>,
-    pub(crate) resource_ar_ns: ::std::option::Option<::std::vec::Vec<crate::types::ResourceArnDetail>>,
+    pub(crate) resource_arns: ::std::option::Option<::std::vec::Vec<crate::types::ResourceArnDetail>>,
     pub(crate) instance_ids: ::std::option::Option<::std::vec::Vec<crate::types::InstanceIdDetail>>,
     pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZoneDetail>>,
     pub(crate) entry_point: ::std::option::Option<crate::types::ServiceId>,
@@ -361,25 +377,25 @@ impl TraceSummaryBuilder {
     pub fn get_service_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceId>> {
         &self.service_ids
     }
-    /// Appends an item to `resource_ar_ns`.
+    /// Appends an item to `resource_arns`.
     ///
-    /// To override the contents of this collection use [`set_resource_ar_ns`](Self::set_resource_ar_ns).
+    /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
     ///
     /// <p>A list of resource ARNs for any resource corresponding to the trace segments.</p>
-    pub fn resource_ar_ns(mut self, input: crate::types::ResourceArnDetail) -> Self {
-        let mut v = self.resource_ar_ns.unwrap_or_default();
+    pub fn resource_arns(mut self, input: crate::types::ResourceArnDetail) -> Self {
+        let mut v = self.resource_arns.unwrap_or_default();
         v.push(input);
-        self.resource_ar_ns = ::std::option::Option::Some(v);
+        self.resource_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of resource ARNs for any resource corresponding to the trace segments.</p>
-    pub fn set_resource_ar_ns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceArnDetail>>) -> Self {
-        self.resource_ar_ns = input;
+    pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceArnDetail>>) -> Self {
+        self.resource_arns = input;
         self
     }
     /// <p>A list of resource ARNs for any resource corresponding to the trace segments.</p>
-    pub fn get_resource_ar_ns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceArnDetail>> {
-        &self.resource_ar_ns
+    pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceArnDetail>> {
+        &self.resource_arns
     }
     /// Appends an item to `instance_ids`.
     ///
@@ -538,7 +554,7 @@ impl TraceSummaryBuilder {
             annotations: self.annotations,
             users: self.users,
             service_ids: self.service_ids,
-            resource_ar_ns: self.resource_ar_ns,
+            resource_arns: self.resource_arns,
             instance_ids: self.instance_ids,
             availability_zones: self.availability_zones,
             entry_point: self.entry_point,

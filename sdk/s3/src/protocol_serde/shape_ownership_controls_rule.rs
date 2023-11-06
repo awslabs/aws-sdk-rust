@@ -2,17 +2,18 @@
 pub fn ser_ownership_controls_rule(
     input: &crate::types::OwnershipControlsRule,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.object_ownership {
+    {
         let mut inner_writer = scope.start_el("ObjectOwnership").finish();
-        inner_writer.data(var_1.as_str());
+        inner_writer.data(input.object_ownership.as_str());
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_ownership_controls_rule(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::OwnershipControlsRule, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -21,7 +22,7 @@ pub fn de_ownership_controls_rule(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ObjectOwnership") /* ObjectOwnership com.amazonaws.s3#OwnershipControlsRule$ObjectOwnership */ =>  {
-                let var_2 =
+                let var_1 =
                     Some(
                         Result::<crate::types::ObjectOwnership, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::ObjectOwnership::from(
@@ -31,11 +32,13 @@ pub fn de_ownership_controls_rule(
                         ?
                     )
                 ;
-                builder = builder.set_object_ownership(var_2);
+                builder = builder.set_object_ownership(var_1);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::ownership_controls_rule_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

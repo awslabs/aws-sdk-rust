@@ -9,8 +9,10 @@ pub struct DescribeLagsOutput {
 }
 impl DescribeLagsOutput {
     /// <p>The LAGs.</p>
-    pub fn lags(&self) -> ::std::option::Option<&[crate::types::Lag]> {
-        self.lags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lags.is_none()`.
+    pub fn lags(&self) -> &[crate::types::Lag] {
+        self.lags.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeLagsOutput {

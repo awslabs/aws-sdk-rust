@@ -4,49 +4,53 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSiteOutput {
     /// Site ARN.
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// Filters access by the site's identifier
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// Human friendly name of the resource.
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
-    pub country_code: ::std::option::Option<::std::string::String>,
+    pub country_code: ::std::string::String,
     /// A high-level description of the site.
     pub description: ::std::option::Option<::std::string::String>,
     /// Timestamp at which the resource was created.
-    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_at: ::aws_smithy_types::DateTime,
     /// Timestamp at which the resource was last updated.
-    pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub updated_at: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
 impl GetSiteOutput {
     /// Site ARN.
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// Filters access by the site's identifier
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// Human friendly name of the resource.
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
-    pub fn country_code(&self) -> ::std::option::Option<&str> {
-        self.country_code.as_deref()
+    pub fn country_code(&self) -> &str {
+        use std::ops::Deref;
+        self.country_code.deref()
     }
     /// A high-level description of the site.
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// Timestamp at which the resource was created.
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_at.as_ref()
+    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_at
     }
     /// Timestamp at which the resource was last updated.
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.updated_at.as_ref()
+    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.updated_at
     }
 }
 impl ::aws_http::request_id::RequestId for GetSiteOutput {
@@ -76,6 +80,7 @@ pub struct GetSiteOutputBuilder {
 }
 impl GetSiteOutputBuilder {
     /// Site ARN.
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +95,7 @@ impl GetSiteOutputBuilder {
         &self.arn
     }
     /// Filters access by the site's identifier
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +110,7 @@ impl GetSiteOutputBuilder {
         &self.id
     }
     /// Human friendly name of the resource.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +125,7 @@ impl GetSiteOutputBuilder {
         &self.name
     }
     /// A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
+    /// This field is required.
     pub fn country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.country_code = ::std::option::Option::Some(input.into());
         self
@@ -146,6 +154,7 @@ impl GetSiteOutputBuilder {
         &self.description
     }
     /// Timestamp at which the resource was created.
+    /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
@@ -160,6 +169,7 @@ impl GetSiteOutputBuilder {
         &self.created_at
     }
     /// Timestamp at which the resource was last updated.
+    /// This field is required.
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
@@ -183,16 +193,53 @@ impl GetSiteOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetSiteOutput`](crate::operation::get_site::GetSiteOutput).
-    pub fn build(self) -> crate::operation::get_site::GetSiteOutput {
-        crate::operation::get_site::GetSiteOutput {
-            arn: self.arn,
-            id: self.id,
-            name: self.name,
-            country_code: self.country_code,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::operation::get_site::builders::GetSiteOutputBuilder::arn)
+    /// - [`id`](crate::operation::get_site::builders::GetSiteOutputBuilder::id)
+    /// - [`name`](crate::operation::get_site::builders::GetSiteOutputBuilder::name)
+    /// - [`country_code`](crate::operation::get_site::builders::GetSiteOutputBuilder::country_code)
+    /// - [`created_at`](crate::operation::get_site::builders::GetSiteOutputBuilder::created_at)
+    /// - [`updated_at`](crate::operation::get_site::builders::GetSiteOutputBuilder::updated_at)
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_site::GetSiteOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_site::GetSiteOutput {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building GetSiteOutput",
+                )
+            })?,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building GetSiteOutput",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building GetSiteOutput",
+                )
+            })?,
+            country_code: self.country_code.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "country_code",
+                    "country_code was not specified but it is required when building GetSiteOutput",
+                )
+            })?,
             description: self.description,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
+            created_at: self.created_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_at",
+                    "created_at was not specified but it is required when building GetSiteOutput",
+                )
+            })?,
+            updated_at: self.updated_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "updated_at",
+                    "updated_at was not specified but it is required when building GetSiteOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

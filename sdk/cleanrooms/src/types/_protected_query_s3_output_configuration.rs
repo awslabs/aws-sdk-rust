@@ -5,20 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProtectedQueryS3OutputConfiguration {
     /// <p>Intended file format of the result.</p>
-    pub result_format: ::std::option::Option<crate::types::ResultFormat>,
+    pub result_format: crate::types::ResultFormat,
     /// <p>The S3 bucket to unload the protected query results.</p>
-    pub bucket: ::std::option::Option<::std::string::String>,
+    pub bucket: ::std::string::String,
     /// <p>The S3 prefix to unload the protected query results.</p>
     pub key_prefix: ::std::option::Option<::std::string::String>,
 }
 impl ProtectedQueryS3OutputConfiguration {
     /// <p>Intended file format of the result.</p>
-    pub fn result_format(&self) -> ::std::option::Option<&crate::types::ResultFormat> {
-        self.result_format.as_ref()
+    pub fn result_format(&self) -> &crate::types::ResultFormat {
+        &self.result_format
     }
     /// <p>The S3 bucket to unload the protected query results.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
-        self.bucket.as_deref()
+    pub fn bucket(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket.deref()
     }
     /// <p>The S3 prefix to unload the protected query results.</p>
     pub fn key_prefix(&self) -> ::std::option::Option<&str> {
@@ -42,6 +43,7 @@ pub struct ProtectedQueryS3OutputConfigurationBuilder {
 }
 impl ProtectedQueryS3OutputConfigurationBuilder {
     /// <p>Intended file format of the result.</p>
+    /// This field is required.
     pub fn result_format(mut self, input: crate::types::ResultFormat) -> Self {
         self.result_format = ::std::option::Option::Some(input);
         self
@@ -56,6 +58,7 @@ impl ProtectedQueryS3OutputConfigurationBuilder {
         &self.result_format
     }
     /// <p>The S3 bucket to unload the protected query results.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +87,24 @@ impl ProtectedQueryS3OutputConfigurationBuilder {
         &self.key_prefix
     }
     /// Consumes the builder and constructs a [`ProtectedQueryS3OutputConfiguration`](crate::types::ProtectedQueryS3OutputConfiguration).
-    pub fn build(self) -> crate::types::ProtectedQueryS3OutputConfiguration {
-        crate::types::ProtectedQueryS3OutputConfiguration {
-            result_format: self.result_format,
-            bucket: self.bucket,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`result_format`](crate::types::builders::ProtectedQueryS3OutputConfigurationBuilder::result_format)
+    /// - [`bucket`](crate::types::builders::ProtectedQueryS3OutputConfigurationBuilder::bucket)
+    pub fn build(self) -> ::std::result::Result<crate::types::ProtectedQueryS3OutputConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ProtectedQueryS3OutputConfiguration {
+            result_format: self.result_format.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "result_format",
+                    "result_format was not specified but it is required when building ProtectedQueryS3OutputConfiguration",
+                )
+            })?,
+            bucket: self.bucket.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "bucket",
+                    "bucket was not specified but it is required when building ProtectedQueryS3OutputConfiguration",
+                )
+            })?,
             key_prefix: self.key_prefix,
-        }
+        })
     }
 }

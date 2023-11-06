@@ -94,6 +94,7 @@ pub struct CreateResourceInputBuilder {
 }
 impl CreateResourceInputBuilder {
     /// <p>The name of the resource type.</p>
+    /// This field is required.
     pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_name = ::std::option::Option::Some(input.into());
         self
@@ -174,6 +175,7 @@ impl CreateResourceInputBuilder {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate">Composing the desired state of the resource</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
     /// <p>For more information about the properties of a specific resource, refer to the related topic for the resource in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Resource and property types reference</a> in the <i>CloudFormation Users Guide</i>.</p>
+    /// This field is required.
     pub fn desired_state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.desired_state = ::std::option::Option::Some(input.into());
         self
@@ -208,7 +210,7 @@ impl CreateResourceInputBuilder {
     /// Consumes the builder and constructs a [`CreateResourceInput`](crate::operation::create_resource::CreateResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_resource::CreateResourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_resource::CreateResourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_resource::CreateResourceInput {
             type_name: self.type_name,
             type_version_id: self.type_version_id,

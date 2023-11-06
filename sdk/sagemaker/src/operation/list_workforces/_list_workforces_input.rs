@@ -127,7 +127,7 @@ impl ListWorkforcesInputBuilder {
     /// Consumes the builder and constructs a [`ListWorkforcesInput`](crate::operation::list_workforces::ListWorkforcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_workforces::ListWorkforcesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_workforces::ListWorkforcesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_workforces::ListWorkforcesInput {
             sort_by: self.sort_by,
             sort_order: self.sort_order,

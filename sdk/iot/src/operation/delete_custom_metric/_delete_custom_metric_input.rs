@@ -27,6 +27,7 @@ pub struct DeleteCustomMetricInputBuilder {
 }
 impl DeleteCustomMetricInputBuilder {
     /// <p> The name of the custom metric. </p>
+    /// This field is required.
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,8 @@ impl DeleteCustomMetricInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCustomMetricInput`](crate::operation::delete_custom_metric::DeleteCustomMetricInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_custom_metric::DeleteCustomMetricInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_custom_metric::DeleteCustomMetricInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_custom_metric::DeleteCustomMetricInput {
             metric_name: self.metric_name,
         })

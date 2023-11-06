@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricPolicyRule {
     /// <p>A path or file name that defines which objects to include in the group. Wildcards (*) are acceptable.</p>
-    pub object_group: ::std::option::Option<::std::string::String>,
+    pub object_group: ::std::string::String,
     /// <p>A name that allows you to refer to the object group.</p>
-    pub object_group_name: ::std::option::Option<::std::string::String>,
+    pub object_group_name: ::std::string::String,
 }
 impl MetricPolicyRule {
     /// <p>A path or file name that defines which objects to include in the group. Wildcards (*) are acceptable.</p>
-    pub fn object_group(&self) -> ::std::option::Option<&str> {
-        self.object_group.as_deref()
+    pub fn object_group(&self) -> &str {
+        use std::ops::Deref;
+        self.object_group.deref()
     }
     /// <p>A name that allows you to refer to the object group.</p>
-    pub fn object_group_name(&self) -> ::std::option::Option<&str> {
-        self.object_group_name.as_deref()
+    pub fn object_group_name(&self) -> &str {
+        use std::ops::Deref;
+        self.object_group_name.deref()
     }
 }
 impl MetricPolicyRule {
@@ -35,6 +37,7 @@ pub struct MetricPolicyRuleBuilder {
 }
 impl MetricPolicyRuleBuilder {
     /// <p>A path or file name that defines which objects to include in the group. Wildcards (*) are acceptable.</p>
+    /// This field is required.
     pub fn object_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_group = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl MetricPolicyRuleBuilder {
         &self.object_group
     }
     /// <p>A name that allows you to refer to the object group.</p>
+    /// This field is required.
     pub fn object_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_group_name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl MetricPolicyRuleBuilder {
         &self.object_group_name
     }
     /// Consumes the builder and constructs a [`MetricPolicyRule`](crate::types::MetricPolicyRule).
-    pub fn build(self) -> crate::types::MetricPolicyRule {
-        crate::types::MetricPolicyRule {
-            object_group: self.object_group,
-            object_group_name: self.object_group_name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`object_group`](crate::types::builders::MetricPolicyRuleBuilder::object_group)
+    /// - [`object_group_name`](crate::types::builders::MetricPolicyRuleBuilder::object_group_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::MetricPolicyRule, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::MetricPolicyRule {
+            object_group: self.object_group.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "object_group",
+                    "object_group was not specified but it is required when building MetricPolicyRule",
+                )
+            })?,
+            object_group_name: self.object_group_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "object_group_name",
+                    "object_group_name was not specified but it is required when building MetricPolicyRule",
+                )
+            })?,
+        })
     }
 }

@@ -11,12 +11,16 @@ pub struct ShareDetails {
 }
 impl ShareDetails {
     /// <p>List of accounts for whom the operation succeeded.</p>
-    pub fn successful_shares(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.successful_shares.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.successful_shares.is_none()`.
+    pub fn successful_shares(&self) -> &[::std::string::String] {
+        self.successful_shares.as_deref().unwrap_or_default()
     }
     /// <p>List of errors.</p>
-    pub fn share_errors(&self) -> ::std::option::Option<&[crate::types::ShareError]> {
-        self.share_errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.share_errors.is_none()`.
+    pub fn share_errors(&self) -> &[crate::types::ShareError] {
+        self.share_errors.as_deref().unwrap_or_default()
     }
 }
 impl ShareDetails {

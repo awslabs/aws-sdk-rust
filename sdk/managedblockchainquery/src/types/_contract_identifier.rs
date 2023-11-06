@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContractIdentifier {
     /// <p>The blockchain network of the contract.</p>
-    pub network: ::std::option::Option<crate::types::QueryNetwork>,
+    pub network: crate::types::QueryNetwork,
     /// <p>Container for the blockchain address about a contract.</p>
-    pub contract_address: ::std::option::Option<::std::string::String>,
+    pub contract_address: ::std::string::String,
 }
 impl ContractIdentifier {
     /// <p>The blockchain network of the contract.</p>
-    pub fn network(&self) -> ::std::option::Option<&crate::types::QueryNetwork> {
-        self.network.as_ref()
+    pub fn network(&self) -> &crate::types::QueryNetwork {
+        &self.network
     }
     /// <p>Container for the blockchain address about a contract.</p>
-    pub fn contract_address(&self) -> ::std::option::Option<&str> {
-        self.contract_address.as_deref()
+    pub fn contract_address(&self) -> &str {
+        use std::ops::Deref;
+        self.contract_address.deref()
     }
 }
 impl ContractIdentifier {
@@ -35,6 +36,7 @@ pub struct ContractIdentifierBuilder {
 }
 impl ContractIdentifierBuilder {
     /// <p>The blockchain network of the contract.</p>
+    /// This field is required.
     pub fn network(mut self, input: crate::types::QueryNetwork) -> Self {
         self.network = ::std::option::Option::Some(input);
         self
@@ -49,6 +51,7 @@ impl ContractIdentifierBuilder {
         &self.network
     }
     /// <p>Container for the blockchain address about a contract.</p>
+    /// This field is required.
     pub fn contract_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contract_address = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +66,23 @@ impl ContractIdentifierBuilder {
         &self.contract_address
     }
     /// Consumes the builder and constructs a [`ContractIdentifier`](crate::types::ContractIdentifier).
-    pub fn build(self) -> crate::types::ContractIdentifier {
-        crate::types::ContractIdentifier {
-            network: self.network,
-            contract_address: self.contract_address,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`network`](crate::types::builders::ContractIdentifierBuilder::network)
+    /// - [`contract_address`](crate::types::builders::ContractIdentifierBuilder::contract_address)
+    pub fn build(self) -> ::std::result::Result<crate::types::ContractIdentifier, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ContractIdentifier {
+            network: self.network.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "network",
+                    "network was not specified but it is required when building ContractIdentifier",
+                )
+            })?,
+            contract_address: self.contract_address.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "contract_address",
+                    "contract_address was not specified but it is required when building ContractIdentifier",
+                )
+            })?,
+        })
     }
 }

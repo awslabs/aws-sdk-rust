@@ -4,13 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetEnvironmentBlueprintOutput {
     /// <p>The ID of this Amazon DataZone blueprint.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The name of this Amazon DataZone blueprint.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The description of this Amazon DataZone blueprint.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The provider of this Amazon DataZone blueprint.</p>
-    pub provider: ::std::option::Option<::std::string::String>,
+    pub provider: ::std::string::String,
     /// <p>The provisioning properties of this Amazon DataZone blueprint.</p>
     pub provisioning_properties: ::std::option::Option<crate::types::ProvisioningProperties>,
     /// <p>The deployment properties of this Amazon DataZone blueprint.</p>
@@ -27,20 +27,23 @@ pub struct GetEnvironmentBlueprintOutput {
 }
 impl GetEnvironmentBlueprintOutput {
     /// <p>The ID of this Amazon DataZone blueprint.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The name of this Amazon DataZone blueprint.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The description of this Amazon DataZone blueprint.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The provider of this Amazon DataZone blueprint.</p>
-    pub fn provider(&self) -> ::std::option::Option<&str> {
-        self.provider.as_deref()
+    pub fn provider(&self) -> &str {
+        use std::ops::Deref;
+        self.provider.deref()
     }
     /// <p>The provisioning properties of this Amazon DataZone blueprint.</p>
     pub fn provisioning_properties(&self) -> ::std::option::Option<&crate::types::ProvisioningProperties> {
@@ -51,12 +54,16 @@ impl GetEnvironmentBlueprintOutput {
         self.deployment_properties.as_ref()
     }
     /// <p>The user parameters of this blueprint.</p>
-    pub fn user_parameters(&self) -> ::std::option::Option<&[crate::types::CustomParameter]> {
-        self.user_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_parameters.is_none()`.
+    pub fn user_parameters(&self) -> &[crate::types::CustomParameter] {
+        self.user_parameters.as_deref().unwrap_or_default()
     }
     /// <p>The glossary terms attached to this Amazon DataZone blueprint.</p>
-    pub fn glossary_terms(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.glossary_terms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.glossary_terms.is_none()`.
+    pub fn glossary_terms(&self) -> &[::std::string::String] {
+        self.glossary_terms.as_deref().unwrap_or_default()
     }
     /// <p>A timestamp of when this blueprint was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -114,6 +121,7 @@ pub struct GetEnvironmentBlueprintOutputBuilder {
 }
 impl GetEnvironmentBlueprintOutputBuilder {
     /// <p>The ID of this Amazon DataZone blueprint.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -128,6 +136,7 @@ impl GetEnvironmentBlueprintOutputBuilder {
         &self.id
     }
     /// <p>The name of this Amazon DataZone blueprint.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -156,6 +165,7 @@ impl GetEnvironmentBlueprintOutputBuilder {
         &self.description
     }
     /// <p>The provider of this Amazon DataZone blueprint.</p>
+    /// This field is required.
     pub fn provider(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider = ::std::option::Option::Some(input.into());
         self
@@ -170,6 +180,7 @@ impl GetEnvironmentBlueprintOutputBuilder {
         &self.provider
     }
     /// <p>The provisioning properties of this Amazon DataZone blueprint.</p>
+    /// This field is required.
     pub fn provisioning_properties(mut self, input: crate::types::ProvisioningProperties) -> Self {
         self.provisioning_properties = ::std::option::Option::Some(input);
         self
@@ -275,12 +286,36 @@ impl GetEnvironmentBlueprintOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetEnvironmentBlueprintOutput`](crate::operation::get_environment_blueprint::GetEnvironmentBlueprintOutput).
-    pub fn build(self) -> crate::operation::get_environment_blueprint::GetEnvironmentBlueprintOutput {
-        crate::operation::get_environment_blueprint::GetEnvironmentBlueprintOutput {
-            id: self.id,
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::get_environment_blueprint::builders::GetEnvironmentBlueprintOutputBuilder::id)
+    /// - [`name`](crate::operation::get_environment_blueprint::builders::GetEnvironmentBlueprintOutputBuilder::name)
+    /// - [`provider`](crate::operation::get_environment_blueprint::builders::GetEnvironmentBlueprintOutputBuilder::provider)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_environment_blueprint::GetEnvironmentBlueprintOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::get_environment_blueprint::GetEnvironmentBlueprintOutput {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building GetEnvironmentBlueprintOutput",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building GetEnvironmentBlueprintOutput",
+                )
+            })?,
             description: self.description,
-            provider: self.provider,
+            provider: self.provider.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "provider",
+                    "provider was not specified but it is required when building GetEnvironmentBlueprintOutput",
+                )
+            })?,
             provisioning_properties: self.provisioning_properties,
             deployment_properties: self.deployment_properties,
             user_parameters: self.user_parameters,
@@ -288,7 +323,7 @@ impl GetEnvironmentBlueprintOutputBuilder {
             created_at: self.created_at,
             updated_at: self.updated_at,
             _request_id: self._request_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for GetEnvironmentBlueprintOutputBuilder {

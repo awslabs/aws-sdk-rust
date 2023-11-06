@@ -41,6 +41,7 @@ pub struct DescribeVolumeAttributeInputBuilder {
 }
 impl DescribeVolumeAttributeInputBuilder {
     /// <p>The attribute of the volume. This parameter is required.</p>
+    /// This field is required.
     pub fn attribute(mut self, input: crate::types::VolumeAttributeName) -> Self {
         self.attribute = ::std::option::Option::Some(input);
         self
@@ -55,6 +56,7 @@ impl DescribeVolumeAttributeInputBuilder {
         &self.attribute
     }
     /// <p>The ID of the volume.</p>
+    /// This field is required.
     pub fn volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +89,7 @@ impl DescribeVolumeAttributeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_volume_attribute::DescribeVolumeAttributeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_volume_attribute::DescribeVolumeAttributeInput {
             attribute: self.attribute,

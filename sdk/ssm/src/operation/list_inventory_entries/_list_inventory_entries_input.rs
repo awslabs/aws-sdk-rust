@@ -24,8 +24,10 @@ impl ListInventoryEntriesInput {
         self.type_name.as_deref()
     }
     /// <p>One or more filters. Use a filter to return a more specific list of results.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::InventoryFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::InventoryFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -55,6 +57,7 @@ pub struct ListInventoryEntriesInputBuilder {
 }
 impl ListInventoryEntriesInputBuilder {
     /// <p>The managed node ID for which you want inventory information.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +72,7 @@ impl ListInventoryEntriesInputBuilder {
         &self.instance_id
     }
     /// <p>The type of inventory item for which you want information.</p>
+    /// This field is required.
     pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_name = ::std::option::Option::Some(input.into());
         self
@@ -133,7 +137,7 @@ impl ListInventoryEntriesInputBuilder {
     /// Consumes the builder and constructs a [`ListInventoryEntriesInput`](crate::operation::list_inventory_entries::ListInventoryEntriesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_inventory_entries::ListInventoryEntriesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_inventory_entries::ListInventoryEntriesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_inventory_entries::ListInventoryEntriesInput {
             instance_id: self.instance_id,

@@ -53,6 +53,7 @@ pub struct DisableSsoInputBuilder {
 }
 impl DisableSsoInputBuilder {
     /// <p>The identifier of the directory for which to disable single-sign on.</p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self
@@ -98,7 +99,7 @@ impl DisableSsoInputBuilder {
         &self.password
     }
     /// Consumes the builder and constructs a [`DisableSsoInput`](crate::operation::disable_sso::DisableSsoInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::disable_sso::DisableSsoInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::disable_sso::DisableSsoInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::disable_sso::DisableSsoInput {
             directory_id: self.directory_id,
             user_name: self.user_name,

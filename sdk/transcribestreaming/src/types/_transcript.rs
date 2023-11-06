@@ -10,8 +10,10 @@ pub struct Transcript {
 }
 impl Transcript {
     /// <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
-    pub fn results(&self) -> ::std::option::Option<&[crate::types::Result]> {
-        self.results.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.results.is_none()`.
+    pub fn results(&self) -> &[crate::types::Result] {
+        self.results.as_deref().unwrap_or_default()
     }
 }
 impl Transcript {

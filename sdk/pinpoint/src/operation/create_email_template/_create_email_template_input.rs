@@ -34,6 +34,7 @@ pub struct CreateEmailTemplateInputBuilder {
 }
 impl CreateEmailTemplateInputBuilder {
     /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
+    /// This field is required.
     pub fn email_template_request(mut self, input: crate::types::EmailTemplateRequest) -> Self {
         self.email_template_request = ::std::option::Option::Some(input);
         self
@@ -48,6 +49,7 @@ impl CreateEmailTemplateInputBuilder {
         &self.email_template_request
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl CreateEmailTemplateInputBuilder {
     /// Consumes the builder and constructs a [`CreateEmailTemplateInput`](crate::operation::create_email_template::CreateEmailTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_email_template::CreateEmailTemplateInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_email_template::CreateEmailTemplateInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_email_template::CreateEmailTemplateInput {
             email_template_request: self.email_template_request,

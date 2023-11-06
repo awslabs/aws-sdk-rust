@@ -27,6 +27,7 @@ pub struct StopPhiDetectionJobInputBuilder {
 }
 impl StopPhiDetectionJobInputBuilder {
     /// <p>The identifier of the PHI detection job to stop.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl StopPhiDetectionJobInputBuilder {
     /// Consumes the builder and constructs a [`StopPhiDetectionJobInput`](crate::operation::stop_phi_detection_job::StopPhiDetectionJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_phi_detection_job::StopPhiDetectionJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::stop_phi_detection_job::StopPhiDetectionJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::stop_phi_detection_job::StopPhiDetectionJobInput { job_id: self.job_id })
     }

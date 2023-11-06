@@ -41,6 +41,7 @@ pub struct GetQueryResultsInputBuilder {
 }
 impl GetQueryResultsInputBuilder {
     /// <p>The unique ID of the query execution.</p>
+    /// This field is required.
     pub fn query_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_execution_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl GetQueryResultsInputBuilder {
     /// Consumes the builder and constructs a [`GetQueryResultsInput`](crate::operation::get_query_results::GetQueryResultsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_query_results::GetQueryResultsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_query_results::GetQueryResultsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_query_results::GetQueryResultsInput {
             query_execution_id: self.query_execution_id,
             next_token: self.next_token,

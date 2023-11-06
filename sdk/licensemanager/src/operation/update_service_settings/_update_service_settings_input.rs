@@ -106,7 +106,7 @@ impl UpdateServiceSettingsInputBuilder {
     /// Consumes the builder and constructs a [`UpdateServiceSettingsInput`](crate::operation::update_service_settings::UpdateServiceSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_service_settings::UpdateServiceSettingsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_service_settings::UpdateServiceSettingsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_service_settings::UpdateServiceSettingsInput {
             s3_bucket_arn: self.s3_bucket_arn,

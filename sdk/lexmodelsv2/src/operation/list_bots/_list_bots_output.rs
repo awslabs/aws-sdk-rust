@@ -11,8 +11,10 @@ pub struct ListBotsOutput {
 }
 impl ListBotsOutput {
     /// <p>Summary information for the bots that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more bots available, the <code>nextToken</code> field contains a token to the next page of results.</p>
-    pub fn bot_summaries(&self) -> ::std::option::Option<&[crate::types::BotSummary]> {
-        self.bot_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bot_summaries.is_none()`.
+    pub fn bot_summaries(&self) -> &[crate::types::BotSummary] {
+        self.bot_summaries.as_deref().unwrap_or_default()
     }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBots</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBots</code> operation request to get the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

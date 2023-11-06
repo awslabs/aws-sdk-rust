@@ -61,8 +61,10 @@ impl CallAnalyticsJobSettings {
     /// <p>Including language options can improve the accuracy of language identification.</p>
     /// <p>For a list of languages supported with Call Analytics, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
     /// <p>To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>), your media file must be encoded at a sample rate of 16,000 Hz or higher.</p>
-    pub fn language_options(&self) -> ::std::option::Option<&[crate::types::LanguageCode]> {
-        self.language_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.language_options.is_none()`.
+    pub fn language_options(&self) -> &[crate::types::LanguageCode] {
+        self.language_options.as_deref().unwrap_or_default()
     }
     /// <p>If using automatic language identification in your request and you want to apply a custom language model, a custom vocabulary, or a custom vocabulary filter, include <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>, <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).</p>
     /// <p> <code>LanguageIdSettings</code> supports two to five language codes. Each language code you include can have an associated custom language model, custom vocabulary, and custom vocabulary filter. The language codes that you specify must match the languages of the associated custom language models, custom vocabularies, and custom vocabulary filters.</p>

@@ -27,6 +27,7 @@ pub struct StartServerInputBuilder {
 }
 impl StartServerInputBuilder {
     /// <p>A system-assigned unique identifier for a server that you start.</p>
+    /// This field is required.
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl StartServerInputBuilder {
         &self.server_id
     }
     /// Consumes the builder and constructs a [`StartServerInput`](crate::operation::start_server::StartServerInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_server::StartServerInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_server::StartServerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_server::StartServerInput { server_id: self.server_id })
     }
 }

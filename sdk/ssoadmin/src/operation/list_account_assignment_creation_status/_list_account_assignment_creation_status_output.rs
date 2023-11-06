@@ -11,8 +11,10 @@ pub struct ListAccountAssignmentCreationStatusOutput {
 }
 impl ListAccountAssignmentCreationStatusOutput {
     /// <p>The status object for the account assignment creation operation.</p>
-    pub fn account_assignments_creation_status(&self) -> ::std::option::Option<&[crate::types::AccountAssignmentOperationStatusMetadata]> {
-        self.account_assignments_creation_status.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_assignments_creation_status.is_none()`.
+    pub fn account_assignments_creation_status(&self) -> &[crate::types::AccountAssignmentOperationStatusMetadata] {
+        self.account_assignments_creation_status.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -27,6 +27,7 @@ pub struct StartWorkflowInputBuilder {
 }
 impl StartWorkflowInputBuilder {
     /// <p>The ID of the migration workflow.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl StartWorkflowInputBuilder {
     /// Consumes the builder and constructs a [`StartWorkflowInput`](crate::operation::start_workflow::StartWorkflowInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_workflow::StartWorkflowInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_workflow::StartWorkflowInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_workflow::StartWorkflowInput { id: self.id })
     }
 }

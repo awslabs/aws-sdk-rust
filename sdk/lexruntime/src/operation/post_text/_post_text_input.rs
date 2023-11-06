@@ -66,8 +66,10 @@ impl PostTextInput {
     }
     /// <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request,</p>
     /// <p>If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared.</p>
-    pub fn active_contexts(&self) -> ::std::option::Option<&[crate::types::ActiveContext]> {
-        self.active_contexts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.active_contexts.is_none()`.
+    pub fn active_contexts(&self) -> &[crate::types::ActiveContext] {
+        self.active_contexts.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for PostTextInput {
@@ -104,6 +106,7 @@ pub struct PostTextInputBuilder {
 }
 impl PostTextInputBuilder {
     /// <p>The name of the Amazon Lex bot.</p>
+    /// This field is required.
     pub fn bot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_name = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +121,7 @@ impl PostTextInputBuilder {
         &self.bot_name
     }
     /// <p>The alias of the Amazon Lex bot.</p>
+    /// This field is required.
     pub fn bot_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_alias = ::std::option::Option::Some(input.into());
         self
@@ -139,6 +143,7 @@ impl PostTextInputBuilder {
     /// <li> <p>If you want the same user to be able to have two independent conversations on two different devices, choose a device-specific identifier.</p> </li>
     /// <li> <p>A user can't have two independent conversations with two different versions of the same bot. For example, a user can't have a conversation with the PROD and BETA versions of the same bot. If you anticipate that a user will need to have conversation with two different versions, for example, while testing, include the bot alias in the user ID to separate the two conversations.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
@@ -230,6 +235,7 @@ impl PostTextInputBuilder {
         &self.request_attributes
     }
     /// <p>The text that the user entered (Amazon Lex interprets this text).</p>
+    /// This field is required.
     pub fn input_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_text = ::std::option::Option::Some(input.into());
         self
@@ -267,7 +273,7 @@ impl PostTextInputBuilder {
         &self.active_contexts
     }
     /// Consumes the builder and constructs a [`PostTextInput`](crate::operation::post_text::PostTextInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::post_text::PostTextInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::post_text::PostTextInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::post_text::PostTextInput {
             bot_name: self.bot_name,
             bot_alias: self.bot_alias,

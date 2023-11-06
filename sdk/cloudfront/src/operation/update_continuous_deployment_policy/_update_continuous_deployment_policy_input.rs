@@ -41,6 +41,7 @@ pub struct UpdateContinuousDeploymentPolicyInputBuilder {
 }
 impl UpdateContinuousDeploymentPolicyInputBuilder {
     /// <p>The continuous deployment policy configuration.</p>
+    /// This field is required.
     pub fn continuous_deployment_policy_config(mut self, input: crate::types::ContinuousDeploymentPolicyConfig) -> Self {
         self.continuous_deployment_policy_config = ::std::option::Option::Some(input);
         self
@@ -55,6 +56,7 @@ impl UpdateContinuousDeploymentPolicyInputBuilder {
         &self.continuous_deployment_policy_config
     }
     /// <p>The identifier of the continuous deployment policy that you are updating.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +89,7 @@ impl UpdateContinuousDeploymentPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyInput {

@@ -11,8 +11,10 @@ pub struct DescribeNodeConfigurationOptionsOutput {
 }
 impl DescribeNodeConfigurationOptionsOutput {
     /// <p>A list of valid node configurations.</p>
-    pub fn node_configuration_option_list(&self) -> ::std::option::Option<&[crate::types::NodeConfigurationOption]> {
-        self.node_configuration_option_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.node_configuration_option_list.is_none()`.
+    pub fn node_configuration_option_list(&self) -> &[crate::types::NodeConfigurationOption] {
+        self.node_configuration_option_list.as_deref().unwrap_or_default()
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

@@ -23,8 +23,10 @@ impl AdminDeleteUserAttributesInput {
     }
     /// <p>An array of strings representing the user attribute names you want to delete.</p>
     /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
-    pub fn user_attribute_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.user_attribute_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_attribute_names.is_none()`.
+    pub fn user_attribute_names(&self) -> &[::std::string::String] {
+        self.user_attribute_names.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for AdminDeleteUserAttributesInput {
@@ -53,6 +55,7 @@ pub struct AdminDeleteUserAttributesInputBuilder {
 }
 impl AdminDeleteUserAttributesInputBuilder {
     /// <p>The user pool ID for the user pool where you want to delete user attributes.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -67,6 +70,7 @@ impl AdminDeleteUserAttributesInputBuilder {
         &self.user_pool_id
     }
     /// <p>The user name of the user from which you would like to delete attributes.</p>
+    /// This field is required.
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +112,7 @@ impl AdminDeleteUserAttributesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::admin_delete_user_attributes::AdminDeleteUserAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::admin_delete_user_attributes::AdminDeleteUserAttributesInput {
             user_pool_id: self.user_pool_id,

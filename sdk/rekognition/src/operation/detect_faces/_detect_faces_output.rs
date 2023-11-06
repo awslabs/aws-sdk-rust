@@ -13,8 +13,10 @@ pub struct DetectFacesOutput {
 }
 impl DetectFacesOutput {
     /// <p>Details of each face found in the image. </p>
-    pub fn face_details(&self) -> ::std::option::Option<&[crate::types::FaceDetail]> {
-        self.face_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.face_details.is_none()`.
+    pub fn face_details(&self) -> &[crate::types::FaceDetail] {
+        self.face_details.as_deref().unwrap_or_default()
     }
     /// <p>The value of <code>OrientationCorrection</code> is always null.</p>
     /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>

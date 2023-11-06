@@ -10,8 +10,10 @@ pub struct StartMetricStreamsInput {
 impl StartMetricStreamsInput {
     /// <p>The array of the names of metric streams to start streaming.</p>
     /// <p>This is an "all or nothing" operation. If you do not have permission to access all of the metric streams that you list here, then none of the streams that you list in the operation will start streaming.</p>
-    pub fn names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.names.is_none()`.
+    pub fn names(&self) -> &[::std::string::String] {
+        self.names.as_deref().unwrap_or_default()
     }
 }
 impl StartMetricStreamsInput {
@@ -54,7 +56,8 @@ impl StartMetricStreamsInputBuilder {
     /// Consumes the builder and constructs a [`StartMetricStreamsInput`](crate::operation::start_metric_streams::StartMetricStreamsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_metric_streams::StartMetricStreamsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_metric_streams::StartMetricStreamsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::start_metric_streams::StartMetricStreamsInput { names: self.names })
     }
 }

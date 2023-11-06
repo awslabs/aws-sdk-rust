@@ -27,6 +27,7 @@ pub struct DeleteInsightInputBuilder {
 }
 impl DeleteInsightInputBuilder {
     /// <p>The ARN of the insight to delete.</p>
+    /// This field is required.
     pub fn insight_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.insight_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteInsightInputBuilder {
     /// Consumes the builder and constructs a [`DeleteInsightInput`](crate::operation::delete_insight::DeleteInsightInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_insight::DeleteInsightInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_insight::DeleteInsightInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_insight::DeleteInsightInput {
             insight_arn: self.insight_arn,
         })

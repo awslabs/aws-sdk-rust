@@ -8,8 +8,10 @@ pub struct BatchCreateVehicleInput {
 }
 impl BatchCreateVehicleInput {
     /// <p> A list of information about each vehicle to create. For more information, see the API data type.</p>
-    pub fn vehicles(&self) -> ::std::option::Option<&[crate::types::CreateVehicleRequestItem]> {
-        self.vehicles.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vehicles.is_none()`.
+    pub fn vehicles(&self) -> &[crate::types::CreateVehicleRequestItem] {
+        self.vehicles.as_deref().unwrap_or_default()
     }
 }
 impl BatchCreateVehicleInput {
@@ -49,7 +51,8 @@ impl BatchCreateVehicleInputBuilder {
     /// Consumes the builder and constructs a [`BatchCreateVehicleInput`](crate::operation::batch_create_vehicle::BatchCreateVehicleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_create_vehicle::BatchCreateVehicleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_create_vehicle::BatchCreateVehicleInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::batch_create_vehicle::BatchCreateVehicleInput { vehicles: self.vehicles })
     }
 }

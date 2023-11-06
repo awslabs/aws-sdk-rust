@@ -2,7 +2,7 @@
 pub fn ser_severity(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Severity,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.product {
         object.key("Product").number(
             #[allow(clippy::useless_conversion)]

@@ -55,6 +55,7 @@ pub struct UpdateLifecyclePolicyInputBuilder {
 }
 impl UpdateLifecyclePolicyInputBuilder {
     /// <p>The identifier of the lifecycle policy.</p>
+    /// This field is required.
     pub fn policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_id = ::std::option::Option::Some(input.into());
         self
@@ -127,7 +128,7 @@ impl UpdateLifecyclePolicyInputBuilder {
     /// Consumes the builder and constructs a [`UpdateLifecyclePolicyInput`](crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyInput {
             policy_id: self.policy_id,

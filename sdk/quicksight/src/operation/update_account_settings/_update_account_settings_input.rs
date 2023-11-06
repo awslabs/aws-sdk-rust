@@ -48,6 +48,7 @@ pub struct UpdateAccountSettingsInputBuilder {
 }
 impl UpdateAccountSettingsInputBuilder {
     /// <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight settings that you want to list.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl UpdateAccountSettingsInputBuilder {
         &self.aws_account_id
     }
     /// <p>The default namespace for this Amazon Web Services account. Currently, the default is <code>default</code>. IAM users that register for the first time with Amazon QuickSight provide an email address that becomes associated with the default namespace. </p>
+    /// This field is required.
     pub fn default_namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_namespace = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +108,7 @@ impl UpdateAccountSettingsInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAccountSettingsInput`](crate::operation::update_account_settings::UpdateAccountSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_account_settings::UpdateAccountSettingsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_account_settings::UpdateAccountSettingsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_account_settings::UpdateAccountSettingsInput {
             aws_account_id: self.aws_account_id,

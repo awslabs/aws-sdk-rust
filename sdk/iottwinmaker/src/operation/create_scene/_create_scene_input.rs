@@ -36,8 +36,10 @@ impl CreateSceneInput {
         self.description.as_deref()
     }
     /// <p>A list of capabilities that the scene uses to render itself.</p>
-    pub fn capabilities(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.capabilities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capabilities.is_none()`.
+    pub fn capabilities(&self) -> &[::std::string::String] {
+        self.capabilities.as_deref().unwrap_or_default()
     }
     /// <p>Metadata that you can use to manage the scene.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -69,6 +71,7 @@ pub struct CreateSceneInputBuilder {
 }
 impl CreateSceneInputBuilder {
     /// <p>The ID of the workspace that contains the scene.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +86,7 @@ impl CreateSceneInputBuilder {
         &self.workspace_id
     }
     /// <p>The ID of the scene.</p>
+    /// This field is required.
     pub fn scene_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scene_id = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +101,7 @@ impl CreateSceneInputBuilder {
         &self.scene_id
     }
     /// <p>The relative path that specifies the location of the content definition file.</p>
+    /// This field is required.
     pub fn content_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_location = ::std::option::Option::Some(input.into());
         self
@@ -192,7 +197,7 @@ impl CreateSceneInputBuilder {
         &self.scene_metadata
     }
     /// Consumes the builder and constructs a [`CreateSceneInput`](crate::operation::create_scene::CreateSceneInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_scene::CreateSceneInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_scene::CreateSceneInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_scene::CreateSceneInput {
             workspace_id: self.workspace_id,
             scene_id: self.scene_id,

@@ -66,7 +66,7 @@ impl ListCrossAccountAuthorizationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_cross_account_authorizations::ListCrossAccountAuthorizationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_cross_account_authorizations::ListCrossAccountAuthorizationsInput {
             max_results: self.max_results,

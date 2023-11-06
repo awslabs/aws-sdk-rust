@@ -36,6 +36,7 @@ pub struct GetCloudFormationTemplateInputBuilder {
 }
 impl GetCloudFormationTemplateInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -51,6 +52,7 @@ impl GetCloudFormationTemplateInputBuilder {
     }
     /// <p>The UUID returned by CreateCloudFormationTemplate.</p>
     /// <p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
+    /// This field is required.
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_id = ::std::option::Option::Some(input.into());
         self
@@ -71,7 +73,7 @@ impl GetCloudFormationTemplateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_cloud_formation_template::GetCloudFormationTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_cloud_formation_template::GetCloudFormationTemplateInput {
             application_id: self.application_id,

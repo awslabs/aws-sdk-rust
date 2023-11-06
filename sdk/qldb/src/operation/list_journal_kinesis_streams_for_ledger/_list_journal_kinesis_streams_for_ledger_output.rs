@@ -14,8 +14,10 @@ pub struct ListJournalKinesisStreamsForLedgerOutput {
 }
 impl ListJournalKinesisStreamsForLedgerOutput {
     /// <p>The QLDB journal streams that are currently associated with the given ledger.</p>
-    pub fn streams(&self) -> ::std::option::Option<&[crate::types::JournalKinesisStreamDescription]> {
-        self.streams.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.streams.is_none()`.
+    pub fn streams(&self) -> &[crate::types::JournalKinesisStreamDescription] {
+        self.streams.as_deref().unwrap_or_default()
     }
     /// <ul>
     /// <li> <p>If <code>NextToken</code> is empty, the last page of results has been processed and there are no more results to be retrieved.</p> </li>

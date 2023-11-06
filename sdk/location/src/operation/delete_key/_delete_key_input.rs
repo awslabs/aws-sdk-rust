@@ -27,6 +27,7 @@ pub struct DeleteKeyInputBuilder {
 }
 impl DeleteKeyInputBuilder {
     /// <p>The name of the API key to delete.</p>
+    /// This field is required.
     pub fn key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_name = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl DeleteKeyInputBuilder {
         &self.key_name
     }
     /// Consumes the builder and constructs a [`DeleteKeyInput`](crate::operation::delete_key::DeleteKeyInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_key::DeleteKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_key::DeleteKeyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_key::DeleteKeyInput { key_name: self.key_name })
     }
 }

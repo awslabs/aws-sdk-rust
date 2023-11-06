@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDataQualityResultsOutput {
     /// <p>A list of <code>DataQualityResultDescription</code> objects.</p>
-    pub results: ::std::option::Option<::std::vec::Vec<crate::types::DataQualityResultDescription>>,
+    pub results: ::std::vec::Vec<crate::types::DataQualityResultDescription>,
     /// <p>A pagination token, if more results are available.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListDataQualityResultsOutput {
     /// <p>A list of <code>DataQualityResultDescription</code> objects.</p>
-    pub fn results(&self) -> ::std::option::Option<&[crate::types::DataQualityResultDescription]> {
-        self.results.as_deref()
+    pub fn results(&self) -> &[crate::types::DataQualityResultDescription] {
+        use std::ops::Deref;
+        self.results.deref()
     }
     /// <p>A pagination token, if more results are available.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,23 @@ impl ListDataQualityResultsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDataQualityResultsOutput`](crate::operation::list_data_quality_results::ListDataQualityResultsOutput).
-    pub fn build(self) -> crate::operation::list_data_quality_results::ListDataQualityResultsOutput {
-        crate::operation::list_data_quality_results::ListDataQualityResultsOutput {
-            results: self.results,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`results`](crate::operation::list_data_quality_results::builders::ListDataQualityResultsOutputBuilder::results)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_data_quality_results::ListDataQualityResultsOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_data_quality_results::ListDataQualityResultsOutput {
+            results: self.results.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "results",
+                    "results was not specified but it is required when building ListDataQualityResultsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

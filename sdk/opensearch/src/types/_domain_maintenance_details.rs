@@ -4,25 +4,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainMaintenanceDetails {
-    /// <p>Id of the requested action.</p>
+    /// <p>The ID of the requested action.</p>
     pub maintenance_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the domain.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the action.</p>
     pub action: ::std::option::Option<crate::types::MaintenanceType>,
-    /// <p>Id of the data node.</p>
+    /// <p>The ID of the data node.</p>
     pub node_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the action.</p>
     pub status: ::std::option::Option<crate::types::MaintenanceStatus>,
-    /// <p>The status message of the action.</p>
+    /// <p>The status message for the action.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
-    /// <p>Contains time at which action created.</p>
+    /// <p>The time at which the action was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Contains time at which action updated.</p>
+    /// <p>The time at which the action was updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DomainMaintenanceDetails {
-    /// <p>Id of the requested action.</p>
+    /// <p>The ID of the requested action.</p>
     pub fn maintenance_id(&self) -> ::std::option::Option<&str> {
         self.maintenance_id.as_deref()
     }
@@ -34,7 +34,7 @@ impl DomainMaintenanceDetails {
     pub fn action(&self) -> ::std::option::Option<&crate::types::MaintenanceType> {
         self.action.as_ref()
     }
-    /// <p>Id of the data node.</p>
+    /// <p>The ID of the data node.</p>
     pub fn node_id(&self) -> ::std::option::Option<&str> {
         self.node_id.as_deref()
     }
@@ -42,15 +42,15 @@ impl DomainMaintenanceDetails {
     pub fn status(&self) -> ::std::option::Option<&crate::types::MaintenanceStatus> {
         self.status.as_ref()
     }
-    /// <p>The status message of the action.</p>
+    /// <p>The status message for the action.</p>
     pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
-    /// <p>Contains time at which action created.</p>
+    /// <p>The time at which the action was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>Contains time at which action updated.</p>
+    /// <p>The time at which the action was updated.</p>
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
@@ -76,17 +76,17 @@ pub struct DomainMaintenanceDetailsBuilder {
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DomainMaintenanceDetailsBuilder {
-    /// <p>Id of the requested action.</p>
+    /// <p>The ID of the requested action.</p>
     pub fn maintenance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.maintenance_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Id of the requested action.</p>
+    /// <p>The ID of the requested action.</p>
     pub fn set_maintenance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.maintenance_id = input;
         self
     }
-    /// <p>Id of the requested action.</p>
+    /// <p>The ID of the requested action.</p>
     pub fn get_maintenance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.maintenance_id
     }
@@ -118,17 +118,17 @@ impl DomainMaintenanceDetailsBuilder {
     pub fn get_action(&self) -> &::std::option::Option<crate::types::MaintenanceType> {
         &self.action
     }
-    /// <p>Id of the data node.</p>
+    /// <p>The ID of the data node.</p>
     pub fn node_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Id of the data node.</p>
+    /// <p>The ID of the data node.</p>
     pub fn set_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_id = input;
         self
     }
-    /// <p>Id of the data node.</p>
+    /// <p>The ID of the data node.</p>
     pub fn get_node_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.node_id
     }
@@ -146,45 +146,45 @@ impl DomainMaintenanceDetailsBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::MaintenanceStatus> {
         &self.status
     }
-    /// <p>The status message of the action.</p>
+    /// <p>The status message for the action.</p>
     pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The status message of the action.</p>
+    /// <p>The status message for the action.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
-    /// <p>The status message of the action.</p>
+    /// <p>The status message for the action.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_message
     }
-    /// <p>Contains time at which action created.</p>
+    /// <p>The time at which the action was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains time at which action created.</p>
+    /// <p>The time at which the action was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
-    /// <p>Contains time at which action created.</p>
+    /// <p>The time at which the action was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
-    /// <p>Contains time at which action updated.</p>
+    /// <p>The time at which the action was updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains time at which action updated.</p>
+    /// <p>The time at which the action was updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
-    /// <p>Contains time at which action updated.</p>
+    /// <p>The time at which the action was updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }

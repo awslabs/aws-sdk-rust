@@ -73,11 +73,10 @@ pub fn de_delete_configured_table_http_error(
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::delete_configured_table::DeleteConfiguredTableError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::delete_configured_table::DeleteConfiguredTableError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::delete_configured_table::DeleteConfiguredTableError::ThrottlingException({

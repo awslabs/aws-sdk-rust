@@ -131,6 +131,7 @@ pub struct CreateCanaryInputBuilder {
 impl CreateCanaryInputBuilder {
     /// <p>The name for this canary. Be sure to give it a descriptive name that distinguishes it from other canaries in your account.</p>
     /// <p>Do not include secrets or proprietary information in your canary names. The canary name makes up part of the canary ARN, and the ARN is included in outbound calls over the internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/servicelens_canaries_security.html">Security Considerations for Synthetics Canaries</a>.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -147,6 +148,7 @@ impl CreateCanaryInputBuilder {
         &self.name
     }
     /// <p>A structure that includes the entry point from which the canary should start running your script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included. </p>
+    /// This field is required.
     pub fn code(mut self, input: crate::types::CanaryCodeInput) -> Self {
         self.code = ::std::option::Option::Some(input);
         self
@@ -161,6 +163,7 @@ impl CreateCanaryInputBuilder {
         &self.code
     }
     /// <p>The location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary. Artifacts include the log file, screenshots, and HAR files. The name of the S3 bucket can't include a period (.).</p>
+    /// This field is required.
     pub fn artifact_s3_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.artifact_s3_location = ::std::option::Option::Some(input.into());
         self
@@ -184,6 +187,7 @@ impl CreateCanaryInputBuilder {
     /// <li> <p> <code>logs:CreateLogStream</code> </p> </li>
     /// <li> <p> <code>logs:PutLogEvents</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -216,6 +220,7 @@ impl CreateCanaryInputBuilder {
         &self.execution_role_arn
     }
     /// <p>A structure that contains information about how often the canary is to run and when these test runs are to stop.</p>
+    /// This field is required.
     pub fn schedule(mut self, input: crate::types::CanaryScheduleInput) -> Self {
         self.schedule = ::std::option::Option::Some(input);
         self
@@ -278,6 +283,7 @@ impl CreateCanaryInputBuilder {
         &self.failure_retention_period_in_days
     }
     /// <p>Specifies the runtime version to use for the canary. For a list of valid runtime versions and more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.</p>
+    /// This field is required.
     pub fn runtime_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.runtime_version = ::std::option::Option::Some(input.into());
         self
@@ -343,7 +349,9 @@ impl CreateCanaryInputBuilder {
         &self.artifact_config
     }
     /// Consumes the builder and constructs a [`CreateCanaryInput`](crate::operation::create_canary::CreateCanaryInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_canary::CreateCanaryInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_canary::CreateCanaryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_canary::CreateCanaryInput {
             name: self.name,
             code: self.code,

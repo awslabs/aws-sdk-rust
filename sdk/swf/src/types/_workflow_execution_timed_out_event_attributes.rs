@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkflowExecutionTimedOutEventAttributes {
     /// <p>The type of timeout that caused this event.</p>
-    pub timeout_type: ::std::option::Option<crate::types::WorkflowExecutionTimeoutType>,
+    pub timeout_type: crate::types::WorkflowExecutionTimeoutType,
     /// <p>The policy used for the child workflow executions of this workflow execution.</p>
     /// <p>The supported child policies are:</p>
     /// <ul>
@@ -13,12 +13,12 @@ pub struct WorkflowExecutionTimedOutEventAttributes {
     /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
     /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
     /// </ul>
-    pub child_policy: ::std::option::Option<crate::types::ChildPolicy>,
+    pub child_policy: crate::types::ChildPolicy,
 }
 impl WorkflowExecutionTimedOutEventAttributes {
     /// <p>The type of timeout that caused this event.</p>
-    pub fn timeout_type(&self) -> ::std::option::Option<&crate::types::WorkflowExecutionTimeoutType> {
-        self.timeout_type.as_ref()
+    pub fn timeout_type(&self) -> &crate::types::WorkflowExecutionTimeoutType {
+        &self.timeout_type
     }
     /// <p>The policy used for the child workflow executions of this workflow execution.</p>
     /// <p>The supported child policies are:</p>
@@ -27,8 +27,8 @@ impl WorkflowExecutionTimedOutEventAttributes {
     /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
     /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
     /// </ul>
-    pub fn child_policy(&self) -> ::std::option::Option<&crate::types::ChildPolicy> {
-        self.child_policy.as_ref()
+    pub fn child_policy(&self) -> &crate::types::ChildPolicy {
+        &self.child_policy
     }
 }
 impl WorkflowExecutionTimedOutEventAttributes {
@@ -47,6 +47,7 @@ pub struct WorkflowExecutionTimedOutEventAttributesBuilder {
 }
 impl WorkflowExecutionTimedOutEventAttributesBuilder {
     /// <p>The type of timeout that caused this event.</p>
+    /// This field is required.
     pub fn timeout_type(mut self, input: crate::types::WorkflowExecutionTimeoutType) -> Self {
         self.timeout_type = ::std::option::Option::Some(input);
         self
@@ -67,6 +68,7 @@ impl WorkflowExecutionTimedOutEventAttributesBuilder {
     /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
     /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn child_policy(mut self, input: crate::types::ChildPolicy) -> Self {
         self.child_policy = ::std::option::Option::Some(input);
         self
@@ -93,10 +95,25 @@ impl WorkflowExecutionTimedOutEventAttributesBuilder {
         &self.child_policy
     }
     /// Consumes the builder and constructs a [`WorkflowExecutionTimedOutEventAttributes`](crate::types::WorkflowExecutionTimedOutEventAttributes).
-    pub fn build(self) -> crate::types::WorkflowExecutionTimedOutEventAttributes {
-        crate::types::WorkflowExecutionTimedOutEventAttributes {
-            timeout_type: self.timeout_type,
-            child_policy: self.child_policy,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`timeout_type`](crate::types::builders::WorkflowExecutionTimedOutEventAttributesBuilder::timeout_type)
+    /// - [`child_policy`](crate::types::builders::WorkflowExecutionTimedOutEventAttributesBuilder::child_policy)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::WorkflowExecutionTimedOutEventAttributes, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::WorkflowExecutionTimedOutEventAttributes {
+            timeout_type: self.timeout_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "timeout_type",
+                    "timeout_type was not specified but it is required when building WorkflowExecutionTimedOutEventAttributes",
+                )
+            })?,
+            child_policy: self.child_policy.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "child_policy",
+                    "child_policy was not specified but it is required when building WorkflowExecutionTimedOutEventAttributes",
+                )
+            })?,
+        })
     }
 }

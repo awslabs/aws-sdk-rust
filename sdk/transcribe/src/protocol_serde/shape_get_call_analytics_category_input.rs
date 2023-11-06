@@ -2,7 +2,7 @@
 pub fn ser_get_call_analytics_category_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_call_analytics_category::GetCallAnalyticsCategoryInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.category_name {
         object.key("CategoryName").string(var_1.as_str());
     }

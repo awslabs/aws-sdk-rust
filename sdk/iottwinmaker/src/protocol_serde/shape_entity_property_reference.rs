@@ -2,7 +2,7 @@
 pub fn ser_entity_property_reference(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EntityPropertyReference,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.component_name {
         object.key("componentName").string(var_1.as_str());
     }
@@ -19,8 +19,8 @@ pub fn ser_entity_property_reference(
     if let Some(var_6) = &input.entity_id {
         object.key("entityId").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.property_name {
-        object.key("propertyName").string(var_7.as_str());
+    {
+        object.key("propertyName").string(input.property_name.as_str());
     }
     Ok(())
 }
@@ -75,7 +75,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::entity_property_reference_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

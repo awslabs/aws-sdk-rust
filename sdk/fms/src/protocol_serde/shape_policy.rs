@@ -100,7 +100,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::policy_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -111,45 +113,45 @@ where
 pub fn ser_policy(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Policy,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.policy_id {
         object.key("PolicyId").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.policy_name {
-        object.key("PolicyName").string(var_2.as_str());
+    {
+        object.key("PolicyName").string(input.policy_name.as_str());
     }
-    if let Some(var_3) = &input.policy_update_token {
-        object.key("PolicyUpdateToken").string(var_3.as_str());
+    if let Some(var_2) = &input.policy_update_token {
+        object.key("PolicyUpdateToken").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.security_service_policy_data {
+    if let Some(var_3) = &input.security_service_policy_data {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("SecurityServicePolicyData").start_object();
-        crate::protocol_serde::shape_security_service_policy_data::ser_security_service_policy_data(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("SecurityServicePolicyData").start_object();
+        crate::protocol_serde::shape_security_service_policy_data::ser_security_service_policy_data(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_6) = &input.resource_type {
-        object.key("ResourceType").string(var_6.as_str());
+    {
+        object.key("ResourceType").string(input.resource_type.as_str());
     }
-    if let Some(var_7) = &input.resource_type_list {
-        let mut array_8 = object.key("ResourceTypeList").start_array();
-        for item_9 in var_7 {
+    if let Some(var_5) = &input.resource_type_list {
+        let mut array_6 = object.key("ResourceTypeList").start_array();
+        for item_7 in var_5 {
             {
-                array_8.value().string(item_9.as_str());
+                array_6.value().string(item_7.as_str());
             }
         }
-        array_8.finish();
+        array_6.finish();
     }
-    if let Some(var_10) = &input.resource_tags {
-        let mut array_11 = object.key("ResourceTags").start_array();
-        for item_12 in var_10 {
+    if let Some(var_8) = &input.resource_tags {
+        let mut array_9 = object.key("ResourceTags").start_array();
+        for item_10 in var_8 {
             {
                 #[allow(unused_mut)]
-                let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_resource_tag::ser_resource_tag(&mut object_13, item_12)?;
-                object_13.finish();
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_resource_tag::ser_resource_tag(&mut object_11, item_10)?;
+                object_11.finish();
             }
         }
-        array_11.finish();
+        array_9.finish();
     }
     {
         object.key("ExcludeResourceTags").boolean(input.exclude_resource_tags);
@@ -162,52 +164,52 @@ pub fn ser_policy(
             .key("DeleteUnusedFMManagedResources")
             .boolean(input.delete_unused_fm_managed_resources);
     }
-    if let Some(var_14) = &input.include_map {
+    if let Some(var_12) = &input.include_map {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("IncludeMap").start_object();
-        for (key_16, value_17) in var_14 {
+        let mut object_13 = object.key("IncludeMap").start_object();
+        for (key_14, value_15) in var_12 {
             {
-                let mut array_18 = object_15.key(key_16.as_str()).start_array();
-                for item_19 in value_17 {
+                let mut array_16 = object_13.key(key_14.as_str()).start_array();
+                for item_17 in value_15 {
                     {
-                        array_18.value().string(item_19.as_str());
+                        array_16.value().string(item_17.as_str());
                     }
                 }
-                array_18.finish();
+                array_16.finish();
             }
         }
-        object_15.finish();
+        object_13.finish();
     }
-    if let Some(var_20) = &input.exclude_map {
+    if let Some(var_18) = &input.exclude_map {
         #[allow(unused_mut)]
-        let mut object_21 = object.key("ExcludeMap").start_object();
-        for (key_22, value_23) in var_20 {
+        let mut object_19 = object.key("ExcludeMap").start_object();
+        for (key_20, value_21) in var_18 {
             {
-                let mut array_24 = object_21.key(key_22.as_str()).start_array();
-                for item_25 in value_23 {
+                let mut array_22 = object_19.key(key_20.as_str()).start_array();
+                for item_23 in value_21 {
                     {
-                        array_24.value().string(item_25.as_str());
+                        array_22.value().string(item_23.as_str());
                     }
                 }
-                array_24.finish();
+                array_22.finish();
             }
         }
-        object_21.finish();
+        object_19.finish();
     }
-    if let Some(var_26) = &input.resource_set_ids {
-        let mut array_27 = object.key("ResourceSetIds").start_array();
-        for item_28 in var_26 {
+    if let Some(var_24) = &input.resource_set_ids {
+        let mut array_25 = object.key("ResourceSetIds").start_array();
+        for item_26 in var_24 {
             {
-                array_27.value().string(item_28.as_str());
+                array_25.value().string(item_26.as_str());
             }
         }
-        array_27.finish();
+        array_25.finish();
     }
-    if let Some(var_29) = &input.policy_description {
-        object.key("PolicyDescription").string(var_29.as_str());
+    if let Some(var_27) = &input.policy_description {
+        object.key("PolicyDescription").string(var_27.as_str());
     }
-    if let Some(var_30) = &input.policy_status {
-        object.key("PolicyStatus").string(var_30.as_str());
+    if let Some(var_28) = &input.policy_status {
+        object.key("PolicyStatus").string(var_28.as_str());
     }
     Ok(())
 }

@@ -35,6 +35,7 @@ pub struct GetTrafficPolicyInputBuilder {
 }
 impl GetTrafficPolicyInputBuilder {
     /// <p>The ID of the traffic policy that you want to get information about.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl GetTrafficPolicyInputBuilder {
         &self.id
     }
     /// <p>The version number of the traffic policy that you want to get information about.</p>
+    /// This field is required.
     pub fn version(mut self, input: i32) -> Self {
         self.version = ::std::option::Option::Some(input);
         self
@@ -65,7 +67,7 @@ impl GetTrafficPolicyInputBuilder {
     /// Consumes the builder and constructs a [`GetTrafficPolicyInput`](crate::operation::get_traffic_policy::GetTrafficPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_traffic_policy::GetTrafficPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_traffic_policy::GetTrafficPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_traffic_policy::GetTrafficPolicyInput {
             id: self.id,
             version: self.version,

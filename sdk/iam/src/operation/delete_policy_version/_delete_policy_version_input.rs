@@ -41,6 +41,7 @@ pub struct DeletePolicyVersionInputBuilder {
 impl DeletePolicyVersionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the IAM policy from which you want to delete a version.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// This field is required.
     pub fn policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_arn = ::std::option::Option::Some(input.into());
         self
@@ -59,6 +60,7 @@ impl DeletePolicyVersionInputBuilder {
     /// <p>The policy version to delete.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consists of the lowercase letter 'v' followed by one or two digits, and optionally followed by a period '.' and a string of letters and digits.</p>
     /// <p>For more information about managed policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed policies</a> in the <i>IAM User Guide</i>.</p>
+    /// This field is required.
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_id = ::std::option::Option::Some(input.into());
         self
@@ -79,7 +81,7 @@ impl DeletePolicyVersionInputBuilder {
     /// Consumes the builder and constructs a [`DeletePolicyVersionInput`](crate::operation::delete_policy_version::DeletePolicyVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_policy_version::DeletePolicyVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_policy_version::DeletePolicyVersionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_policy_version::DeletePolicyVersionInput {
             policy_arn: self.policy_arn,

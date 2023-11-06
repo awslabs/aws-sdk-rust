@@ -2,7 +2,7 @@
 pub fn ser_aws_app_sync_graph_ql_api_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsAppSyncGraphQlApiDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.api_id {
         object.key("ApiId").string(var_1.as_str());
     }

@@ -11,8 +11,10 @@ pub struct GetInventoryOutput {
 }
 impl GetInventoryOutput {
     /// <p>Collection of inventory entities such as a collection of managed node inventory. </p>
-    pub fn entities(&self) -> ::std::option::Option<&[crate::types::InventoryResultEntity]> {
-        self.entities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entities.is_none()`.
+    pub fn entities(&self) -> &[crate::types::InventoryResultEntity] {
+        self.entities.as_deref().unwrap_or_default()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

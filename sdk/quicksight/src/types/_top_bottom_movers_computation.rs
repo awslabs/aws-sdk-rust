@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TopBottomMoversComputation {
     /// <p>The ID for a computation.</p>
-    pub computation_id: ::std::option::Option<::std::string::String>,
+    pub computation_id: ::std::string::String,
     /// <p>The name of a computation.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The time field that is used in a computation.</p>
@@ -23,12 +23,13 @@ pub struct TopBottomMoversComputation {
     /// <li> <p>TOP: Top movers computation.</p> </li>
     /// <li> <p>BOTTOM: Bottom movers computation.</p> </li>
     /// </ul>
-    pub r#type: ::std::option::Option<crate::types::TopBottomComputationType>,
+    pub r#type: crate::types::TopBottomComputationType,
 }
 impl TopBottomMoversComputation {
     /// <p>The ID for a computation.</p>
-    pub fn computation_id(&self) -> ::std::option::Option<&str> {
-        self.computation_id.as_deref()
+    pub fn computation_id(&self) -> &str {
+        use std::ops::Deref;
+        self.computation_id.deref()
     }
     /// <p>The name of a computation.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -59,8 +60,8 @@ impl TopBottomMoversComputation {
     /// <li> <p>TOP: Top movers computation.</p> </li>
     /// <li> <p>BOTTOM: Bottom movers computation.</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::TopBottomComputationType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::TopBottomComputationType {
+        &self.r#type
     }
 }
 impl TopBottomMoversComputation {
@@ -85,6 +86,7 @@ pub struct TopBottomMoversComputationBuilder {
 }
 impl TopBottomMoversComputationBuilder {
     /// <p>The ID for a computation.</p>
+    /// This field is required.
     pub fn computation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.computation_id = ::std::option::Option::Some(input.into());
         self
@@ -187,6 +189,7 @@ impl TopBottomMoversComputationBuilder {
     /// <li> <p>TOP: Top movers computation.</p> </li>
     /// <li> <p>BOTTOM: Bottom movers computation.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::TopBottomComputationType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -209,16 +212,29 @@ impl TopBottomMoversComputationBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`TopBottomMoversComputation`](crate::types::TopBottomMoversComputation).
-    pub fn build(self) -> crate::types::TopBottomMoversComputation {
-        crate::types::TopBottomMoversComputation {
-            computation_id: self.computation_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`computation_id`](crate::types::builders::TopBottomMoversComputationBuilder::computation_id)
+    /// - [`r#type`](crate::types::builders::TopBottomMoversComputationBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::TopBottomMoversComputation, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TopBottomMoversComputation {
+            computation_id: self.computation_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "computation_id",
+                    "computation_id was not specified but it is required when building TopBottomMoversComputation",
+                )
+            })?,
             name: self.name,
             time: self.time,
             category: self.category,
             value: self.value,
             mover_size: self.mover_size,
             sort_order: self.sort_order,
-            r#type: self.r#type,
-        }
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building TopBottomMoversComputation",
+                )
+            })?,
+        })
     }
 }

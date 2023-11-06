@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribePlacement`](crate::operation::describe_placement::builders::DescribePlacementFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`placement_name(impl Into<String>)`](crate::operation::describe_placement::builders::DescribePlacementFluentBuilder::placement_name) / [`set_placement_name(Option<String>)`](crate::operation::describe_placement::builders::DescribePlacementFluentBuilder::set_placement_name): <p>The name of the placement within a project.</p>
-    ///   - [`project_name(impl Into<String>)`](crate::operation::describe_placement::builders::DescribePlacementFluentBuilder::project_name) / [`set_project_name(Option<String>)`](crate::operation::describe_placement::builders::DescribePlacementFluentBuilder::set_project_name): <p>The project containing the placement to be described.</p>
+    ///   - [`placement_name(impl Into<String>)`](crate::operation::describe_placement::builders::DescribePlacementFluentBuilder::placement_name) / [`set_placement_name(Option<String>)`](crate::operation::describe_placement::builders::DescribePlacementFluentBuilder::set_placement_name):<br>required: **true**<br><p>The name of the placement within a project.</p><br>
+    ///   - [`project_name(impl Into<String>)`](crate::operation::describe_placement::builders::DescribePlacementFluentBuilder::project_name) / [`set_project_name(Option<String>)`](crate::operation::describe_placement::builders::DescribePlacementFluentBuilder::set_project_name):<br>required: **true**<br><p>The project containing the placement to be described.</p><br>
     /// - On success, responds with [`DescribePlacementOutput`](crate::operation::describe_placement::DescribePlacementOutput) with field(s):
     ///   - [`placement(Option<PlacementDescription>)`](crate::operation::describe_placement::DescribePlacementOutput::placement): <p>An object describing the placement.</p>
     /// - On failure, responds with [`SdkError<DescribePlacementError>`](crate::operation::describe_placement::DescribePlacementError)

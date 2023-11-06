@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MagneticStoreWriteProperties {
     /// <p>A flag to enable magnetic store writes.</p>
-    pub enable_magnetic_store_writes: ::std::option::Option<bool>,
+    pub enable_magnetic_store_writes: bool,
     /// <p>The location to write error reports for records rejected asynchronously during magnetic store writes.</p>
     pub magnetic_store_rejected_data_location: ::std::option::Option<crate::types::MagneticStoreRejectedDataLocation>,
 }
 impl MagneticStoreWriteProperties {
     /// <p>A flag to enable magnetic store writes.</p>
-    pub fn enable_magnetic_store_writes(&self) -> ::std::option::Option<bool> {
+    pub fn enable_magnetic_store_writes(&self) -> bool {
         self.enable_magnetic_store_writes
     }
     /// <p>The location to write error reports for records rejected asynchronously during magnetic store writes.</p>
@@ -35,6 +35,7 @@ pub struct MagneticStoreWritePropertiesBuilder {
 }
 impl MagneticStoreWritePropertiesBuilder {
     /// <p>A flag to enable magnetic store writes.</p>
+    /// This field is required.
     pub fn enable_magnetic_store_writes(mut self, input: bool) -> Self {
         self.enable_magnetic_store_writes = ::std::option::Option::Some(input);
         self
@@ -66,10 +67,17 @@ impl MagneticStoreWritePropertiesBuilder {
         &self.magnetic_store_rejected_data_location
     }
     /// Consumes the builder and constructs a [`MagneticStoreWriteProperties`](crate::types::MagneticStoreWriteProperties).
-    pub fn build(self) -> crate::types::MagneticStoreWriteProperties {
-        crate::types::MagneticStoreWriteProperties {
-            enable_magnetic_store_writes: self.enable_magnetic_store_writes,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`enable_magnetic_store_writes`](crate::types::builders::MagneticStoreWritePropertiesBuilder::enable_magnetic_store_writes)
+    pub fn build(self) -> ::std::result::Result<crate::types::MagneticStoreWriteProperties, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::MagneticStoreWriteProperties {
+            enable_magnetic_store_writes: self.enable_magnetic_store_writes.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "enable_magnetic_store_writes",
+                    "enable_magnetic_store_writes was not specified but it is required when building MagneticStoreWriteProperties",
+                )
+            })?,
             magnetic_store_rejected_data_location: self.magnetic_store_rejected_data_location,
-        }
+        })
     }
 }

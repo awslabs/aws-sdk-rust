@@ -27,6 +27,7 @@ pub struct DeleteFilterInputBuilder {
 }
 impl DeleteFilterInputBuilder {
     /// <p>The Amazon Resource Number (ARN) of the filter to be deleted.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,9 @@ impl DeleteFilterInputBuilder {
         &self.arn
     }
     /// Consumes the builder and constructs a [`DeleteFilterInput`](crate::operation::delete_filter::DeleteFilterInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_filter::DeleteFilterInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_filter::DeleteFilterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_filter::DeleteFilterInput { arn: self.arn })
     }
 }

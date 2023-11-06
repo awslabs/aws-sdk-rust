@@ -41,6 +41,7 @@ pub struct DescribeRefreshScheduleInputBuilder {
 }
 impl DescribeRefreshScheduleInputBuilder {
     /// <p>The Amazon Web Services account ID.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DescribeRefreshScheduleInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID of the dataset.</p>
+    /// This field is required.
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl DescribeRefreshScheduleInputBuilder {
         &self.data_set_id
     }
     /// <p>The ID of the refresh schedule.</p>
+    /// This field is required.
     pub fn schedule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +90,7 @@ impl DescribeRefreshScheduleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_refresh_schedule::DescribeRefreshScheduleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_refresh_schedule::DescribeRefreshScheduleInput {
             aws_account_id: self.aws_account_id,

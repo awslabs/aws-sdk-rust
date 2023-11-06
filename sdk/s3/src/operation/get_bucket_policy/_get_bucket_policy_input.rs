@@ -40,6 +40,7 @@ impl GetBucketPolicyInputBuilder {
     /// <p>The bucket name for which to get the bucket policy.</p>
     /// <p>To use this API operation against an access point, provide the alias of the access point in place of the bucket name.</p>
     /// <p>To use this API operation against an Object Lambda access point, provide the alias of the Object Lambda access point in place of the bucket name. If the Object Lambda access point alias in a request is not valid, the error code <code>InvalidAccessPointAliasError</code> is returned. For more information about <code>InvalidAccessPointAliasError</code>, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List of Error Codes</a>.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -74,7 +75,7 @@ impl GetBucketPolicyInputBuilder {
     /// Consumes the builder and constructs a [`GetBucketPolicyInput`](crate::operation::get_bucket_policy::GetBucketPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_bucket_policy::GetBucketPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_bucket_policy::GetBucketPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_bucket_policy::GetBucketPolicyInput {
             bucket: self.bucket,
             expected_bucket_owner: self.expected_bucket_owner,

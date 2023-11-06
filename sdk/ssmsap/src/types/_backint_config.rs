@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BackintConfig {
     /// <p>AWS service for your database backup.</p>
-    pub backint_mode: ::std::option::Option<crate::types::BackintMode>,
+    pub backint_mode: crate::types::BackintMode,
     /// <p></p>
-    pub ensure_no_backup_in_process: ::std::option::Option<bool>,
+    pub ensure_no_backup_in_process: bool,
 }
 impl BackintConfig {
     /// <p>AWS service for your database backup.</p>
-    pub fn backint_mode(&self) -> ::std::option::Option<&crate::types::BackintMode> {
-        self.backint_mode.as_ref()
+    pub fn backint_mode(&self) -> &crate::types::BackintMode {
+        &self.backint_mode
     }
     /// <p></p>
-    pub fn ensure_no_backup_in_process(&self) -> ::std::option::Option<bool> {
+    pub fn ensure_no_backup_in_process(&self) -> bool {
         self.ensure_no_backup_in_process
     }
 }
@@ -35,6 +35,7 @@ pub struct BackintConfigBuilder {
 }
 impl BackintConfigBuilder {
     /// <p>AWS service for your database backup.</p>
+    /// This field is required.
     pub fn backint_mode(mut self, input: crate::types::BackintMode) -> Self {
         self.backint_mode = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl BackintConfigBuilder {
         &self.backint_mode
     }
     /// <p></p>
+    /// This field is required.
     pub fn ensure_no_backup_in_process(mut self, input: bool) -> Self {
         self.ensure_no_backup_in_process = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl BackintConfigBuilder {
         &self.ensure_no_backup_in_process
     }
     /// Consumes the builder and constructs a [`BackintConfig`](crate::types::BackintConfig).
-    pub fn build(self) -> crate::types::BackintConfig {
-        crate::types::BackintConfig {
-            backint_mode: self.backint_mode,
-            ensure_no_backup_in_process: self.ensure_no_backup_in_process,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`backint_mode`](crate::types::builders::BackintConfigBuilder::backint_mode)
+    /// - [`ensure_no_backup_in_process`](crate::types::builders::BackintConfigBuilder::ensure_no_backup_in_process)
+    pub fn build(self) -> ::std::result::Result<crate::types::BackintConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::BackintConfig {
+            backint_mode: self.backint_mode.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "backint_mode",
+                    "backint_mode was not specified but it is required when building BackintConfig",
+                )
+            })?,
+            ensure_no_backup_in_process: self.ensure_no_backup_in_process.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "ensure_no_backup_in_process",
+                    "ensure_no_backup_in_process was not specified but it is required when building BackintConfig",
+                )
+            })?,
+        })
     }
 }

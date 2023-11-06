@@ -69,6 +69,7 @@ pub struct GetDifferencesInputBuilder {
 }
 impl GetDifferencesInputBuilder {
     /// <p>The name of the repository where you want to get differences.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +98,7 @@ impl GetDifferencesInputBuilder {
         &self.before_commit_specifier
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit.</p>
+    /// This field is required.
     pub fn after_commit_specifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.after_commit_specifier = ::std::option::Option::Some(input.into());
         self
@@ -169,7 +171,7 @@ impl GetDifferencesInputBuilder {
     /// Consumes the builder and constructs a [`GetDifferencesInput`](crate::operation::get_differences::GetDifferencesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_differences::GetDifferencesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_differences::GetDifferencesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_differences::GetDifferencesInput {
             repository_name: self.repository_name,
             before_commit_specifier: self.before_commit_specifier,

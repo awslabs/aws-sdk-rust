@@ -35,6 +35,7 @@ pub struct BotAliasLocaleSettingsBuilder {
 }
 impl BotAliasLocaleSettingsBuilder {
     /// <p>Determines whether the locale is enabled for the bot. If the value is <code>false</code>, the locale isn't available for use.</p>
+    /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self

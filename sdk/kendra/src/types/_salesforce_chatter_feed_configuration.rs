@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SalesforceChatterFeedConfiguration {
     /// <p>The name of the column in the Salesforce FeedItem table that contains the content to index. Typically this is the <code>Body</code> column.</p>
-    pub document_data_field_name: ::std::option::Option<::std::string::String>,
+    pub document_data_field_name: ::std::string::String,
     /// <p>The name of the column in the Salesforce FeedItem table that contains the title of the document. This is typically the <code>Title</code> column.</p>
     pub document_title_field_name: ::std::option::Option<::std::string::String>,
     /// <p>Maps fields from a Salesforce chatter feed into Amazon Kendra index fields.</p>
@@ -15,20 +15,25 @@ pub struct SalesforceChatterFeedConfiguration {
 }
 impl SalesforceChatterFeedConfiguration {
     /// <p>The name of the column in the Salesforce FeedItem table that contains the content to index. Typically this is the <code>Body</code> column.</p>
-    pub fn document_data_field_name(&self) -> ::std::option::Option<&str> {
-        self.document_data_field_name.as_deref()
+    pub fn document_data_field_name(&self) -> &str {
+        use std::ops::Deref;
+        self.document_data_field_name.deref()
     }
     /// <p>The name of the column in the Salesforce FeedItem table that contains the title of the document. This is typically the <code>Title</code> column.</p>
     pub fn document_title_field_name(&self) -> ::std::option::Option<&str> {
         self.document_title_field_name.as_deref()
     }
     /// <p>Maps fields from a Salesforce chatter feed into Amazon Kendra index fields.</p>
-    pub fn field_mappings(&self) -> ::std::option::Option<&[crate::types::DataSourceToIndexFieldMapping]> {
-        self.field_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.field_mappings.is_none()`.
+    pub fn field_mappings(&self) -> &[crate::types::DataSourceToIndexFieldMapping] {
+        self.field_mappings.as_deref().unwrap_or_default()
     }
     /// <p>Filters the documents in the feed based on status of the user. When you specify <code>ACTIVE_USERS</code> only documents from users who have an active account are indexed. When you specify <code>STANDARD_USER</code> only documents for Salesforce standard users are documented. You can specify both.</p>
-    pub fn include_filter_types(&self) -> ::std::option::Option<&[crate::types::SalesforceChatterFeedIncludeFilterType]> {
-        self.include_filter_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.include_filter_types.is_none()`.
+    pub fn include_filter_types(&self) -> &[crate::types::SalesforceChatterFeedIncludeFilterType] {
+        self.include_filter_types.as_deref().unwrap_or_default()
     }
 }
 impl SalesforceChatterFeedConfiguration {
@@ -49,6 +54,7 @@ pub struct SalesforceChatterFeedConfigurationBuilder {
 }
 impl SalesforceChatterFeedConfigurationBuilder {
     /// <p>The name of the column in the Salesforce FeedItem table that contains the content to index. Typically this is the <code>Body</code> column.</p>
+    /// This field is required.
     pub fn document_data_field_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_data_field_name = ::std::option::Option::Some(input.into());
         self
@@ -120,12 +126,19 @@ impl SalesforceChatterFeedConfigurationBuilder {
         &self.include_filter_types
     }
     /// Consumes the builder and constructs a [`SalesforceChatterFeedConfiguration`](crate::types::SalesforceChatterFeedConfiguration).
-    pub fn build(self) -> crate::types::SalesforceChatterFeedConfiguration {
-        crate::types::SalesforceChatterFeedConfiguration {
-            document_data_field_name: self.document_data_field_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`document_data_field_name`](crate::types::builders::SalesforceChatterFeedConfigurationBuilder::document_data_field_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::SalesforceChatterFeedConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SalesforceChatterFeedConfiguration {
+            document_data_field_name: self.document_data_field_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "document_data_field_name",
+                    "document_data_field_name was not specified but it is required when building SalesforceChatterFeedConfiguration",
+                )
+            })?,
             document_title_field_name: self.document_title_field_name,
             field_mappings: self.field_mappings,
             include_filter_types: self.include_filter_types,
-        }
+        })
     }
 }

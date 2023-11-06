@@ -52,6 +52,7 @@ pub struct AttachDiskInputBuilder {
 }
 impl AttachDiskInputBuilder {
     /// <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+    /// This field is required.
     pub fn disk_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.disk_name = ::std::option::Option::Some(input.into());
         self
@@ -66,6 +67,7 @@ impl AttachDiskInputBuilder {
         &self.disk_name
     }
     /// <p>The name of the Lightsail instance where you want to utilize the storage disk.</p>
+    /// This field is required.
     pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_name = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +82,7 @@ impl AttachDiskInputBuilder {
         &self.instance_name
     }
     /// <p>The disk path to expose to the instance (e.g., <code>/dev/xvdf</code>).</p>
+    /// This field is required.
     pub fn disk_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.disk_path = ::std::option::Option::Some(input.into());
         self
@@ -114,7 +117,7 @@ impl AttachDiskInputBuilder {
         &self.auto_mounting
     }
     /// Consumes the builder and constructs a [`AttachDiskInput`](crate::operation::attach_disk::AttachDiskInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::attach_disk::AttachDiskInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::attach_disk::AttachDiskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::attach_disk::AttachDiskInput {
             disk_name: self.disk_name,
             instance_name: self.instance_name,

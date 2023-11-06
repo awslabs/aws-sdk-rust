@@ -81,6 +81,7 @@ pub struct StartNetworkResourceUpdateInputBuilder {
 }
 impl StartNetworkResourceUpdateInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
+    /// This field is required.
     pub fn network_resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -100,6 +101,7 @@ impl StartNetworkResourceUpdateInputBuilder {
     /// <li> <p> <code>RETURN</code> - Submits a request to return a radio unit that you no longer need. We provide a shipping label that you can use for the return process.</p> </li>
     /// <li> <p> <code>COMMITMENT</code> - Submits a request to change or renew the commitment period. If you choose this value, then you must set <a href="https://docs.aws.amazon.com/private-networks/latest/APIReference/API_StartNetworkResourceUpdate.html#privatenetworks-StartNetworkResourceUpdate-request-commitmentConfiguration"> <code>commitmentConfiguration</code> </a>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn update_type(mut self, input: crate::types::UpdateType) -> Self {
         self.update_type = ::std::option::Option::Some(input);
         self
@@ -194,7 +196,7 @@ impl StartNetworkResourceUpdateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_network_resource_update::StartNetworkResourceUpdateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_network_resource_update::StartNetworkResourceUpdateInput {
             network_resource_arn: self.network_resource_arn,

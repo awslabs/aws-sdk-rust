@@ -35,8 +35,10 @@ impl DescribeModelOutput {
         self.primary_container.as_ref()
     }
     /// <p>The containers in the inference pipeline.</p>
-    pub fn containers(&self) -> ::std::option::Option<&[crate::types::ContainerDefinition]> {
-        self.containers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.containers.is_none()`.
+    pub fn containers(&self) -> &[crate::types::ContainerDefinition] {
+        self.containers.as_deref().unwrap_or_default()
     }
     /// <p>Specifies details of how containers in a multi-container endpoint are called.</p>
     pub fn inference_execution_config(&self) -> ::std::option::Option<&crate::types::InferenceExecutionConfig> {
@@ -97,6 +99,7 @@ pub struct DescribeModelOutputBuilder {
 }
 impl DescribeModelOutputBuilder {
     /// <p>Name of the SageMaker model.</p>
+    /// This field is required.
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_name = ::std::option::Option::Some(input.into());
         self
@@ -159,6 +162,7 @@ impl DescribeModelOutputBuilder {
         &self.inference_execution_config
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the model.</p>
+    /// This field is required.
     pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -187,6 +191,7 @@ impl DescribeModelOutputBuilder {
         &self.vpc_config
     }
     /// <p>A timestamp that shows when the model was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -201,6 +206,7 @@ impl DescribeModelOutputBuilder {
         &self.creation_time
     }
     /// <p>The Amazon Resource Name (ARN) of the model.</p>
+    /// This field is required.
     pub fn model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_arn = ::std::option::Option::Some(input.into());
         self

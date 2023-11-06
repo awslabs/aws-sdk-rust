@@ -65,18 +65,24 @@ impl DescribeResizeOutput {
     }
     /// <p>The names of tables that have been completely imported .</p>
     /// <p>Valid Values: List of table names.</p>
-    pub fn import_tables_completed(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.import_tables_completed.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.import_tables_completed.is_none()`.
+    pub fn import_tables_completed(&self) -> &[::std::string::String] {
+        self.import_tables_completed.as_deref().unwrap_or_default()
     }
     /// <p>The names of tables that are being currently imported.</p>
     /// <p>Valid Values: List of table names.</p>
-    pub fn import_tables_in_progress(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.import_tables_in_progress.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.import_tables_in_progress.is_none()`.
+    pub fn import_tables_in_progress(&self) -> &[::std::string::String] {
+        self.import_tables_in_progress.as_deref().unwrap_or_default()
     }
     /// <p>The names of tables that have not been yet imported.</p>
     /// <p>Valid Values: List of table names</p>
-    pub fn import_tables_not_started(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.import_tables_not_started.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.import_tables_not_started.is_none()`.
+    pub fn import_tables_not_started(&self) -> &[::std::string::String] {
+        self.import_tables_not_started.as_deref().unwrap_or_default()
     }
     /// <p>The average rate of the resize operation over the last few minutes, measured in megabytes per second. After the resize operation completes, this value shows the average rate of the entire resize operation.</p>
     pub fn avg_resize_rate_in_mega_bytes_per_second(&self) -> ::std::option::Option<f64> {

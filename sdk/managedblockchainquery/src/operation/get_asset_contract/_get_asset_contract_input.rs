@@ -27,6 +27,7 @@ pub struct GetAssetContractInputBuilder {
 }
 impl GetAssetContractInputBuilder {
     /// <p>Contains the blockchain address and network information about the contract.</p>
+    /// This field is required.
     pub fn contract_identifier(mut self, input: crate::types::ContractIdentifier) -> Self {
         self.contract_identifier = ::std::option::Option::Some(input);
         self
@@ -43,7 +44,7 @@ impl GetAssetContractInputBuilder {
     /// Consumes the builder and constructs a [`GetAssetContractInput`](crate::operation::get_asset_contract::GetAssetContractInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_asset_contract::GetAssetContractInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_asset_contract::GetAssetContractInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_asset_contract::GetAssetContractInput {
             contract_identifier: self.contract_identifier,
         })

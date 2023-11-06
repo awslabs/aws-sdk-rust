@@ -35,6 +35,7 @@ pub struct TrialComponentSourceBuilder {
 }
 impl TrialComponentSourceBuilder {
     /// <p>The source Amazon Resource Name (ARN).</p>
+    /// This field is required.
     pub fn source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_arn = ::std::option::Option::Some(input.into());
         self

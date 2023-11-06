@@ -219,6 +219,7 @@ pub struct CreateEnvironmentInputBuilder {
 }
 impl CreateEnvironmentInputBuilder {
     /// <p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -233,6 +234,7 @@ impl CreateEnvironmentInputBuilder {
         &self.name
     }
     /// <p>The Amazon Resource Name (ARN) of the execution role for your environment. An execution role is an Amazon Web Services Identity and Access Management (IAM) role that grants MWAA permission to access Amazon Web Services services and resources used by your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution role</a>.</p>
+    /// This field is required.
     pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -247,6 +249,7 @@ impl CreateEnvironmentInputBuilder {
         &self.execution_role_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are stored. For example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket for Amazon MWAA</a>.</p>
+    /// This field is required.
     pub fn source_bucket_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_bucket_arn = ::std::option::Option::Some(input.into());
         self
@@ -261,6 +264,7 @@ impl CreateEnvironmentInputBuilder {
         &self.source_bucket_arn
     }
     /// <p>The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding or updating DAGs</a>.</p>
+    /// This field is required.
     pub fn dag_s3_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dag_s3_path = ::std::option::Option::Some(input.into());
         self
@@ -275,6 +279,7 @@ impl CreateEnvironmentInputBuilder {
         &self.dag_s3_path
     }
     /// <p>The VPC networking components used to secure and enable network traffic between the Amazon Web Services resources for your environment. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon MWAA</a>.</p>
+    /// This field is required.
     pub fn network_configuration(mut self, input: crate::types::NetworkConfiguration) -> Self {
         self.network_configuration = ::std::option::Option::Some(input);
         self
@@ -574,7 +579,7 @@ impl CreateEnvironmentInputBuilder {
     /// Consumes the builder and constructs a [`CreateEnvironmentInput`](crate::operation::create_environment::CreateEnvironmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_environment::CreateEnvironmentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_environment::CreateEnvironmentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_environment::CreateEnvironmentInput {
             name: self.name,
             execution_role_arn: self.execution_role_arn,

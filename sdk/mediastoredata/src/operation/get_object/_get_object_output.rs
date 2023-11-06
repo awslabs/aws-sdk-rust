@@ -4,7 +4,7 @@
 #[derive(::std::fmt::Debug)]
 pub struct GetObjectOutput {
     /// <p>The bytes of the object. </p>
-    pub body: ::aws_smithy_http::byte_stream::ByteStream,
+    pub body: ::aws_smithy_types::byte_stream::ByteStream,
     /// <p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP spec at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
     /// <p>Headers with a custom user-defined value are also accepted.</p>
     pub cache_control: ::std::option::Option<::std::string::String>,
@@ -24,7 +24,7 @@ pub struct GetObjectOutput {
 }
 impl GetObjectOutput {
     /// <p>The bytes of the object. </p>
-    pub fn body(&self) -> &::aws_smithy_http::byte_stream::ByteStream {
+    pub fn body(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
         &self.body
     }
     /// <p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP spec at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
@@ -73,7 +73,7 @@ impl GetObjectOutput {
 #[non_exhaustive]
 #[derive(::std::default::Default, ::std::fmt::Debug)]
 pub struct GetObjectOutputBuilder {
-    pub(crate) body: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
+    pub(crate) body: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,
     pub(crate) cache_control: ::std::option::Option<::std::string::String>,
     pub(crate) content_range: ::std::option::Option<::std::string::String>,
     pub(crate) content_length: ::std::option::Option<i64>,
@@ -85,17 +85,17 @@ pub struct GetObjectOutputBuilder {
 }
 impl GetObjectOutputBuilder {
     /// <p>The bytes of the object. </p>
-    pub fn body(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
+    pub fn body(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.body = ::std::option::Option::Some(input);
         self
     }
     /// <p>The bytes of the object. </p>
-    pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
+    pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.body = input;
         self
     }
     /// <p>The bytes of the object. </p>
-    pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         &self.body
     }
     /// <p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP spec at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
@@ -186,6 +186,7 @@ impl GetObjectOutputBuilder {
         &self.last_modified
     }
     /// <p>The HTML status code of the request. Status codes ranging from 200 to 299 indicate success. All other status codes indicate the type of error that occurred.</p>
+    /// This field is required.
     pub fn status_code(mut self, input: i32) -> Self {
         self.status_code = ::std::option::Option::Some(input);
         self

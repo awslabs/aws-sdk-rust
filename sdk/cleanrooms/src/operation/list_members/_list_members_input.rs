@@ -41,6 +41,7 @@ pub struct ListMembersInputBuilder {
 }
 impl ListMembersInputBuilder {
     /// <p>The identifier of the collaboration in which the members are listed.</p>
+    /// This field is required.
     pub fn collaboration_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collaboration_identifier = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +84,7 @@ impl ListMembersInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListMembersInput`](crate::operation::list_members::ListMembersInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_members::ListMembersInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_members::ListMembersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_members::ListMembersInput {
             collaboration_identifier: self.collaboration_identifier,
             next_token: self.next_token,

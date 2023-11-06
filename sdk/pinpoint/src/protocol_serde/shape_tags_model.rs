@@ -15,7 +15,7 @@ pub(crate) fn de_tags_model_payload(input: &[u8]) -> Result<crate::types::TagsMo
 pub fn ser_tags_model(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TagsModel,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.tags {
         #[allow(unused_mut)]
         let mut object_2 = object.key("tags").start_object();
@@ -45,7 +45,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_map_of__string::de_map_of__string(tokens)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
@@ -57,7 +57,7 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::tags_model_correct_errors(builder).build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

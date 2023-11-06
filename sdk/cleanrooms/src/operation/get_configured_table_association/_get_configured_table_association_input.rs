@@ -34,6 +34,7 @@ pub struct GetConfiguredTableAssociationInputBuilder {
 }
 impl GetConfiguredTableAssociationInputBuilder {
     /// <p>The unique ID for the configured table association to retrieve. Currently accepts the configured table ID.</p>
+    /// This field is required.
     pub fn configured_table_association_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configured_table_association_identifier = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetConfiguredTableAssociationInputBuilder {
         &self.configured_table_association_identifier
     }
     /// <p>A unique identifier for the membership that the configured table association belongs to. Currently accepts the membership ID.</p>
+    /// This field is required.
     pub fn membership_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.membership_identifier = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl GetConfiguredTableAssociationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_configured_table_association::GetConfiguredTableAssociationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_configured_table_association::GetConfiguredTableAssociationInput {
             configured_table_association_identifier: self.configured_table_association_identifier,

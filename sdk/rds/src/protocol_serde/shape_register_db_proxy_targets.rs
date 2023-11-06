@@ -116,7 +116,7 @@ pub fn de_register_db_proxy_targets_http_error(
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InsufficientAvailableIPsInSubnetFaultBuilder::default();
-                    output = crate::protocol_serde::shape_insufficient_available_i_ps_in_subnet_fault::de_insufficient_available_i_ps_in_subnet_fault_xml_err(_response_body, output).map_err(crate::operation::register_db_proxy_targets::RegisterDBProxyTargetsError::unhandled)?;
+                    output = crate::protocol_serde::shape_insufficient_available_ips_in_subnet_fault::de_insufficient_available_ips_in_subnet_fault_xml_err(_response_body, output).map_err(crate::operation::register_db_proxy_targets::RegisterDBProxyTargetsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };

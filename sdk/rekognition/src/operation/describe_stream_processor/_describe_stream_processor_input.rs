@@ -27,6 +27,7 @@ pub struct DescribeStreamProcessorInputBuilder {
 }
 impl DescribeStreamProcessorInputBuilder {
     /// <p>Name of the stream processor for which you want information.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeStreamProcessorInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_stream_processor::DescribeStreamProcessorInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_stream_processor::DescribeStreamProcessorInput { name: self.name })
     }

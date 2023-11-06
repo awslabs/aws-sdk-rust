@@ -37,6 +37,7 @@ pub struct PurchaseReservedNodeOfferingInputBuilder {
 }
 impl PurchaseReservedNodeOfferingInputBuilder {
     /// <p>The unique identifier of the reserved node offering you want to purchase.</p>
+    /// This field is required.
     pub fn reserved_node_offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_node_offering_id = ::std::option::Option::Some(input.into());
         self
@@ -72,7 +73,7 @@ impl PurchaseReservedNodeOfferingInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingInput {
             reserved_node_offering_id: self.reserved_node_offering_id,

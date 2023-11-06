@@ -2,7 +2,7 @@
 pub fn ser_word_cloud_aggregated_field_wells(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WordCloudAggregatedFieldWells,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.group_by {
         let mut array_2 = object.key("GroupBy").start_array();
         for item_3 in var_1 {

@@ -129,7 +129,7 @@ impl DescribeBrokerInstanceOptionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_broker_instance_options::DescribeBrokerInstanceOptionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_broker_instance_options::DescribeBrokerInstanceOptionsInput {
             engine_type: self.engine_type,

@@ -85,8 +85,10 @@ impl ListMetricAttributionsInputBuilder {
     /// Consumes the builder and constructs a [`ListMetricAttributionsInput`](crate::operation::list_metric_attributions::ListMetricAttributionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_metric_attributions::ListMetricAttributionsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::list_metric_attributions::ListMetricAttributionsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::list_metric_attributions::ListMetricAttributionsInput {
             dataset_group_arn: self.dataset_group_arn,
             next_token: self.next_token,

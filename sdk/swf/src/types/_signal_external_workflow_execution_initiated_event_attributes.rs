@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SignalExternalWorkflowExecutionInitiatedEventAttributes {
     /// <p>The <code>workflowId</code> of the external workflow execution.</p>
-    pub workflow_id: ::std::option::Option<::std::string::String>,
+    pub workflow_id: ::std::string::String,
     /// <p>The <code>runId</code> of the external workflow execution to send the signal to.</p>
     pub run_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the signal.</p>
-    pub signal_name: ::std::option::Option<::std::string::String>,
+    pub signal_name: ::std::string::String,
     /// <p>The input provided to the signal.</p>
     pub input: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>SignalExternalWorkflowExecution</code> decision for this signal. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
@@ -19,16 +19,18 @@ pub struct SignalExternalWorkflowExecutionInitiatedEventAttributes {
 }
 impl SignalExternalWorkflowExecutionInitiatedEventAttributes {
     /// <p>The <code>workflowId</code> of the external workflow execution.</p>
-    pub fn workflow_id(&self) -> ::std::option::Option<&str> {
-        self.workflow_id.as_deref()
+    pub fn workflow_id(&self) -> &str {
+        use std::ops::Deref;
+        self.workflow_id.deref()
     }
     /// <p>The <code>runId</code> of the external workflow execution to send the signal to.</p>
     pub fn run_id(&self) -> ::std::option::Option<&str> {
         self.run_id.as_deref()
     }
     /// <p>The name of the signal.</p>
-    pub fn signal_name(&self) -> ::std::option::Option<&str> {
-        self.signal_name.as_deref()
+    pub fn signal_name(&self) -> &str {
+        use std::ops::Deref;
+        self.signal_name.deref()
     }
     /// <p>The input provided to the signal.</p>
     pub fn input(&self) -> ::std::option::Option<&str> {
@@ -63,6 +65,7 @@ pub struct SignalExternalWorkflowExecutionInitiatedEventAttributesBuilder {
 }
 impl SignalExternalWorkflowExecutionInitiatedEventAttributesBuilder {
     /// <p>The <code>workflowId</code> of the external workflow execution.</p>
+    /// This field is required.
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_id = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +94,7 @@ impl SignalExternalWorkflowExecutionInitiatedEventAttributesBuilder {
         &self.run_id
     }
     /// <p>The name of the signal.</p>
+    /// This field is required.
     pub fn signal_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signal_name = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +123,7 @@ impl SignalExternalWorkflowExecutionInitiatedEventAttributesBuilder {
         &self.input
     }
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>SignalExternalWorkflowExecution</code> decision for this signal. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    /// This field is required.
     pub fn decision_task_completed_event_id(mut self, input: i64) -> Self {
         self.decision_task_completed_event_id = ::std::option::Option::Some(input);
         self
@@ -147,14 +152,30 @@ impl SignalExternalWorkflowExecutionInitiatedEventAttributesBuilder {
         &self.control
     }
     /// Consumes the builder and constructs a [`SignalExternalWorkflowExecutionInitiatedEventAttributes`](crate::types::SignalExternalWorkflowExecutionInitiatedEventAttributes).
-    pub fn build(self) -> crate::types::SignalExternalWorkflowExecutionInitiatedEventAttributes {
-        crate::types::SignalExternalWorkflowExecutionInitiatedEventAttributes {
-            workflow_id: self.workflow_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workflow_id`](crate::types::builders::SignalExternalWorkflowExecutionInitiatedEventAttributesBuilder::workflow_id)
+    /// - [`signal_name`](crate::types::builders::SignalExternalWorkflowExecutionInitiatedEventAttributesBuilder::signal_name)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::SignalExternalWorkflowExecutionInitiatedEventAttributes, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::types::SignalExternalWorkflowExecutionInitiatedEventAttributes {
+            workflow_id: self.workflow_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "workflow_id",
+                    "workflow_id was not specified but it is required when building SignalExternalWorkflowExecutionInitiatedEventAttributes",
+                )
+            })?,
             run_id: self.run_id,
-            signal_name: self.signal_name,
+            signal_name: self.signal_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "signal_name",
+                    "signal_name was not specified but it is required when building SignalExternalWorkflowExecutionInitiatedEventAttributes",
+                )
+            })?,
             input: self.input,
             decision_task_completed_event_id: self.decision_task_completed_event_id.unwrap_or_default(),
             control: self.control,
-        }
+        })
     }
 }

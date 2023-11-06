@@ -48,6 +48,7 @@ pub struct ListAnomalyGroupSummariesInputBuilder {
 }
 impl ListAnomalyGroupSummariesInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+    /// This field is required.
     pub fn anomaly_detector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_detector_arn = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl ListAnomalyGroupSummariesInputBuilder {
         &self.anomaly_detector_arn
     }
     /// <p>The minimum severity score for inclusion in the output.</p>
+    /// This field is required.
     pub fn sensitivity_threshold(mut self, input: i32) -> Self {
         self.sensitivity_threshold = ::std::option::Option::Some(input);
         self
@@ -108,7 +110,7 @@ impl ListAnomalyGroupSummariesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_anomaly_group_summaries::ListAnomalyGroupSummariesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_anomaly_group_summaries::ListAnomalyGroupSummariesInput {
             anomaly_detector_arn: self.anomaly_detector_arn,

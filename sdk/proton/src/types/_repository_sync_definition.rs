@@ -5,30 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RepositorySyncDefinition {
     /// <p>The resource that is synced to.</p>
-    pub target: ::std::option::Option<::std::string::String>,
+    pub target: ::std::string::String,
     /// <p>The resource that is synced from.</p>
-    pub parent: ::std::option::Option<::std::string::String>,
+    pub parent: ::std::string::String,
     /// <p>The repository branch.</p>
-    pub branch: ::std::option::Option<::std::string::String>,
+    pub branch: ::std::string::String,
     /// <p>The directory in the repository.</p>
-    pub directory: ::std::option::Option<::std::string::String>,
+    pub directory: ::std::string::String,
 }
 impl RepositorySyncDefinition {
     /// <p>The resource that is synced to.</p>
-    pub fn target(&self) -> ::std::option::Option<&str> {
-        self.target.as_deref()
+    pub fn target(&self) -> &str {
+        use std::ops::Deref;
+        self.target.deref()
     }
     /// <p>The resource that is synced from.</p>
-    pub fn parent(&self) -> ::std::option::Option<&str> {
-        self.parent.as_deref()
+    pub fn parent(&self) -> &str {
+        use std::ops::Deref;
+        self.parent.deref()
     }
     /// <p>The repository branch.</p>
-    pub fn branch(&self) -> ::std::option::Option<&str> {
-        self.branch.as_deref()
+    pub fn branch(&self) -> &str {
+        use std::ops::Deref;
+        self.branch.deref()
     }
     /// <p>The directory in the repository.</p>
-    pub fn directory(&self) -> ::std::option::Option<&str> {
-        self.directory.as_deref()
+    pub fn directory(&self) -> &str {
+        use std::ops::Deref;
+        self.directory.deref()
     }
 }
 impl RepositorySyncDefinition {
@@ -49,6 +53,7 @@ pub struct RepositorySyncDefinitionBuilder {
 }
 impl RepositorySyncDefinitionBuilder {
     /// <p>The resource that is synced to.</p>
+    /// This field is required.
     pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +68,7 @@ impl RepositorySyncDefinitionBuilder {
         &self.target
     }
     /// <p>The resource that is synced from.</p>
+    /// This field is required.
     pub fn parent(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +83,7 @@ impl RepositorySyncDefinitionBuilder {
         &self.parent
     }
     /// <p>The repository branch.</p>
+    /// This field is required.
     pub fn branch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +98,7 @@ impl RepositorySyncDefinitionBuilder {
         &self.branch
     }
     /// <p>The directory in the repository.</p>
+    /// This field is required.
     pub fn directory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +113,37 @@ impl RepositorySyncDefinitionBuilder {
         &self.directory
     }
     /// Consumes the builder and constructs a [`RepositorySyncDefinition`](crate::types::RepositorySyncDefinition).
-    pub fn build(self) -> crate::types::RepositorySyncDefinition {
-        crate::types::RepositorySyncDefinition {
-            target: self.target,
-            parent: self.parent,
-            branch: self.branch,
-            directory: self.directory,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`target`](crate::types::builders::RepositorySyncDefinitionBuilder::target)
+    /// - [`parent`](crate::types::builders::RepositorySyncDefinitionBuilder::parent)
+    /// - [`branch`](crate::types::builders::RepositorySyncDefinitionBuilder::branch)
+    /// - [`directory`](crate::types::builders::RepositorySyncDefinitionBuilder::directory)
+    pub fn build(self) -> ::std::result::Result<crate::types::RepositorySyncDefinition, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RepositorySyncDefinition {
+            target: self.target.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "target",
+                    "target was not specified but it is required when building RepositorySyncDefinition",
+                )
+            })?,
+            parent: self.parent.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "parent",
+                    "parent was not specified but it is required when building RepositorySyncDefinition",
+                )
+            })?,
+            branch: self.branch.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "branch",
+                    "branch was not specified but it is required when building RepositorySyncDefinition",
+                )
+            })?,
+            directory: self.directory.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "directory",
+                    "directory was not specified but it is required when building RepositorySyncDefinition",
+                )
+            })?,
+        })
     }
 }

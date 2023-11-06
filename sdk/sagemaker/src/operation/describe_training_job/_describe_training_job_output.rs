@@ -277,8 +277,10 @@ impl DescribeTrainingJobOutput {
         self.role_arn.as_deref()
     }
     /// <p>An array of <code>Channel</code> objects that describes each data input channel. </p>
-    pub fn input_data_config(&self) -> ::std::option::Option<&[crate::types::Channel]> {
-        self.input_data_config.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_data_config.is_none()`.
+    pub fn input_data_config(&self) -> &[crate::types::Channel] {
+        self.input_data_config.as_deref().unwrap_or_default()
     }
     /// <p>The S3 path where model artifacts that you configured when creating the job are stored. SageMaker creates subfolders for model artifacts. </p>
     pub fn output_data_config(&self) -> ::std::option::Option<&crate::types::OutputDataConfig> {
@@ -314,12 +316,16 @@ impl DescribeTrainingJobOutput {
         self.last_modified_time.as_ref()
     }
     /// <p>A history of all of the secondary statuses that the training job has transitioned through.</p>
-    pub fn secondary_status_transitions(&self) -> ::std::option::Option<&[crate::types::SecondaryStatusTransition]> {
-        self.secondary_status_transitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secondary_status_transitions.is_none()`.
+    pub fn secondary_status_transitions(&self) -> &[crate::types::SecondaryStatusTransition] {
+        self.secondary_status_transitions.as_deref().unwrap_or_default()
     }
     /// <p>A collection of <code>MetricData</code> objects that specify the names, values, and dates and times that the training algorithm emitted to Amazon CloudWatch.</p>
-    pub fn final_metric_data_list(&self) -> ::std::option::Option<&[crate::types::MetricData]> {
-        self.final_metric_data_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.final_metric_data_list.is_none()`.
+    pub fn final_metric_data_list(&self) -> &[crate::types::MetricData] {
+        self.final_metric_data_list.as_deref().unwrap_or_default()
     }
     /// <p>If you want to allow inbound or outbound network calls, except for calls between peers within a training cluster for distributed training, choose <code>True</code>. If you enable network isolation for training jobs that are configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
     pub fn enable_network_isolation(&self) -> ::std::option::Option<bool> {
@@ -361,28 +367,36 @@ impl DescribeTrainingJobOutput {
         self.experiment_config.as_ref()
     }
     /// <p>Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.</p>
-    pub fn debug_rule_configurations(&self) -> ::std::option::Option<&[crate::types::DebugRuleConfiguration]> {
-        self.debug_rule_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.debug_rule_configurations.is_none()`.
+    pub fn debug_rule_configurations(&self) -> &[crate::types::DebugRuleConfiguration] {
+        self.debug_rule_configurations.as_deref().unwrap_or_default()
     }
     /// <p>Configuration of storage locations for the Amazon SageMaker Debugger TensorBoard output data.</p>
     pub fn tensor_board_output_config(&self) -> ::std::option::Option<&crate::types::TensorBoardOutputConfig> {
         self.tensor_board_output_config.as_ref()
     }
     /// <p>Evaluation status of Amazon SageMaker Debugger rules for debugging on a training job.</p>
-    pub fn debug_rule_evaluation_statuses(&self) -> ::std::option::Option<&[crate::types::DebugRuleEvaluationStatus]> {
-        self.debug_rule_evaluation_statuses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.debug_rule_evaluation_statuses.is_none()`.
+    pub fn debug_rule_evaluation_statuses(&self) -> &[crate::types::DebugRuleEvaluationStatus] {
+        self.debug_rule_evaluation_statuses.as_deref().unwrap_or_default()
     }
     /// <p>Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and storage paths.</p>
     pub fn profiler_config(&self) -> ::std::option::Option<&crate::types::ProfilerConfig> {
         self.profiler_config.as_ref()
     }
     /// <p>Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.</p>
-    pub fn profiler_rule_configurations(&self) -> ::std::option::Option<&[crate::types::ProfilerRuleConfiguration]> {
-        self.profiler_rule_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.profiler_rule_configurations.is_none()`.
+    pub fn profiler_rule_configurations(&self) -> &[crate::types::ProfilerRuleConfiguration] {
+        self.profiler_rule_configurations.as_deref().unwrap_or_default()
     }
     /// <p>Evaluation status of Amazon SageMaker Debugger rules for profiling on a training job.</p>
-    pub fn profiler_rule_evaluation_statuses(&self) -> ::std::option::Option<&[crate::types::ProfilerRuleEvaluationStatus]> {
-        self.profiler_rule_evaluation_statuses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.profiler_rule_evaluation_statuses.is_none()`.
+    pub fn profiler_rule_evaluation_statuses(&self) -> &[crate::types::ProfilerRuleEvaluationStatus] {
+        self.profiler_rule_evaluation_statuses.as_deref().unwrap_or_default()
     }
     /// <p>Profiling status of a training job.</p>
     pub fn profiling_status(&self) -> ::std::option::Option<&crate::types::ProfilingStatus> {
@@ -462,6 +476,7 @@ pub struct DescribeTrainingJobOutputBuilder {
 }
 impl DescribeTrainingJobOutputBuilder {
     /// <p> Name of the model training job. </p>
+    /// This field is required.
     pub fn training_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.training_job_name = ::std::option::Option::Some(input.into());
         self
@@ -476,6 +491,7 @@ impl DescribeTrainingJobOutputBuilder {
         &self.training_job_name
     }
     /// <p>The Amazon Resource Name (ARN) of the training job.</p>
+    /// This field is required.
     pub fn training_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.training_job_arn = ::std::option::Option::Some(input.into());
         self
@@ -532,6 +548,7 @@ impl DescribeTrainingJobOutputBuilder {
         &self.auto_ml_job_arn
     }
     /// <p>Information about the Amazon S3 location that is configured for storing model artifacts. </p>
+    /// This field is required.
     pub fn model_artifacts(mut self, input: crate::types::ModelArtifacts) -> Self {
         self.model_artifacts = ::std::option::Option::Some(input);
         self
@@ -555,6 +572,7 @@ impl DescribeTrainingJobOutputBuilder {
     /// <li> <p> <code>Stopped</code> - The training job has stopped.</p> </li>
     /// </ul>
     /// <p>For more detailed information, see <code>SecondaryStatus</code>. </p>
+    /// This field is required.
     pub fn training_job_status(mut self, input: crate::types::TrainingJobStatus) -> Self {
         self.training_job_status = ::std::option::Option::Some(input);
         self
@@ -644,6 +662,7 @@ impl DescribeTrainingJobOutputBuilder {
     /// <li> <p> <code>PreparingTraining</code> </p> </li>
     /// <li> <p> <code>DownloadingTrainingImage</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn secondary_status(mut self, input: crate::types::SecondaryStatus) -> Self {
         self.secondary_status = ::std::option::Option::Some(input);
         self
@@ -813,6 +832,7 @@ impl DescribeTrainingJobOutputBuilder {
         &self.hyper_parameters
     }
     /// <p>Information about the algorithm used for training, and algorithm metadata. </p>
+    /// This field is required.
     pub fn algorithm_specification(mut self, input: crate::types::AlgorithmSpecification) -> Self {
         self.algorithm_specification = ::std::option::Option::Some(input);
         self
@@ -875,6 +895,7 @@ impl DescribeTrainingJobOutputBuilder {
         &self.output_data_config
     }
     /// <p>Resources, including ML compute instances and ML storage volumes, that are configured for model training. </p>
+    /// This field is required.
     pub fn resource_config(mut self, input: crate::types::ResourceConfig) -> Self {
         self.resource_config = ::std::option::Option::Some(input);
         self
@@ -904,6 +925,7 @@ impl DescribeTrainingJobOutputBuilder {
     }
     /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
     /// <p>To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p>
+    /// This field is required.
     pub fn stopping_condition(mut self, input: crate::types::StoppingCondition) -> Self {
         self.stopping_condition = ::std::option::Option::Some(input);
         self
@@ -920,6 +942,7 @@ impl DescribeTrainingJobOutputBuilder {
         &self.stopping_condition
     }
     /// <p>A timestamp that indicates when the training job was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self

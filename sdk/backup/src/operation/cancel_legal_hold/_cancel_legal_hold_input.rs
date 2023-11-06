@@ -41,6 +41,7 @@ pub struct CancelLegalHoldInputBuilder {
 }
 impl CancelLegalHoldInputBuilder {
     /// <p>Legal hold ID required to remove the specified legal hold on a recovery point.</p>
+    /// This field is required.
     pub fn legal_hold_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.legal_hold_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl CancelLegalHoldInputBuilder {
         &self.legal_hold_id
     }
     /// <p>String describing the reason for removing the legal hold.</p>
+    /// This field is required.
     pub fn cancel_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cancel_description = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +87,7 @@ impl CancelLegalHoldInputBuilder {
     /// Consumes the builder and constructs a [`CancelLegalHoldInput`](crate::operation::cancel_legal_hold::CancelLegalHoldInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_legal_hold::CancelLegalHoldInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::cancel_legal_hold::CancelLegalHoldInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_legal_hold::CancelLegalHoldInput {
             legal_hold_id: self.legal_hold_id,
             cancel_description: self.cancel_description,

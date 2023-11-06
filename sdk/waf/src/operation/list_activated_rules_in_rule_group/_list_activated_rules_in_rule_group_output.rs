@@ -15,8 +15,10 @@ impl ListActivatedRulesInRuleGroupOutput {
         self.next_marker.as_deref()
     }
     /// <p>An array of <code>ActivatedRules</code> objects.</p>
-    pub fn activated_rules(&self) -> ::std::option::Option<&[crate::types::ActivatedRule]> {
-        self.activated_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.activated_rules.is_none()`.
+    pub fn activated_rules(&self) -> &[crate::types::ActivatedRule] {
+        self.activated_rules.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListActivatedRulesInRuleGroupOutput {

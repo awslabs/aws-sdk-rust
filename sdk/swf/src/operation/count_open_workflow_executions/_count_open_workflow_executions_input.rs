@@ -67,6 +67,7 @@ pub struct CountOpenWorkflowExecutionsInputBuilder {
 }
 impl CountOpenWorkflowExecutionsInputBuilder {
     /// <p>The name of the domain containing the workflow executions to count.</p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -81,6 +82,7 @@ impl CountOpenWorkflowExecutionsInputBuilder {
         &self.domain
     }
     /// <p>Specifies the start time criteria that workflow executions must meet in order to be counted.</p>
+    /// This field is required.
     pub fn start_time_filter(mut self, input: crate::types::ExecutionTimeFilter) -> Self {
         self.start_time_filter = ::std::option::Option::Some(input);
         self
@@ -159,7 +161,7 @@ impl CountOpenWorkflowExecutionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::count_open_workflow_executions::CountOpenWorkflowExecutionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::count_open_workflow_executions::CountOpenWorkflowExecutionsInput {
             domain: self.domain,

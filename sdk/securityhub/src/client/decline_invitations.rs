@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeclineInvitations`](crate::operation::decline_invitations::builders::DeclineInvitationsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_ids(impl Into<String>)`](crate::operation::decline_invitations::builders::DeclineInvitationsFluentBuilder::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::operation::decline_invitations::builders::DeclineInvitationsFluentBuilder::set_account_ids): <p>The list of prospective member account IDs for which to decline an invitation.</p>
+    ///   - [`account_ids(impl Into<String>)`](crate::operation::decline_invitations::builders::DeclineInvitationsFluentBuilder::account_ids) / [`set_account_ids(Option<Vec::<String>>)`](crate::operation::decline_invitations::builders::DeclineInvitationsFluentBuilder::set_account_ids):<br>required: **true**<br><p>The list of prospective member account IDs for which to decline an invitation.</p><br>
     /// - On success, responds with [`DeclineInvitationsOutput`](crate::operation::decline_invitations::DeclineInvitationsOutput) with field(s):
-    ///   - [`unprocessed_accounts(Option<Vec<Result>>)`](crate::operation::decline_invitations::DeclineInvitationsOutput::unprocessed_accounts): <p>The list of Amazon Web Services accounts that were not processed. For each account, the list includes the account ID and the email address.</p>
+    ///   - [`unprocessed_accounts(Option<Vec::<Result>>)`](crate::operation::decline_invitations::DeclineInvitationsOutput::unprocessed_accounts): <p>The list of Amazon Web Services accounts that were not processed. For each account, the list includes the account ID and the email address.</p>
     /// - On failure, responds with [`SdkError<DeclineInvitationsError>`](crate::operation::decline_invitations::DeclineInvitationsError)
     pub fn decline_invitations(&self) -> crate::operation::decline_invitations::builders::DeclineInvitationsFluentBuilder {
         crate::operation::decline_invitations::builders::DeclineInvitationsFluentBuilder::new(self.handle.clone())

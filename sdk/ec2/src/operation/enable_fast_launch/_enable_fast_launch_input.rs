@@ -62,6 +62,7 @@ pub struct EnableFastLaunchInputBuilder {
 }
 impl EnableFastLaunchInputBuilder {
     /// <p>The ID of the image for which you’re enabling faster launching.</p>
+    /// This field is required.
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_id = ::std::option::Option::Some(input.into());
         self
@@ -148,7 +149,7 @@ impl EnableFastLaunchInputBuilder {
     /// Consumes the builder and constructs a [`EnableFastLaunchInput`](crate::operation::enable_fast_launch::EnableFastLaunchInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::enable_fast_launch::EnableFastLaunchInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::enable_fast_launch::EnableFastLaunchInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::enable_fast_launch::EnableFastLaunchInput {
             image_id: self.image_id,
             resource_type: self.resource_type,

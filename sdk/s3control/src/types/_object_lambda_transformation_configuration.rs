@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ObjectLambdaTransformationConfiguration {
     /// <p>A container for the action of an Object Lambda Access Point configuration. Valid inputs are <code>GetObject</code>, <code>ListObjects</code>, <code>HeadObject</code>, and <code>ListObjectsV2</code>.</p>
-    pub actions: ::std::option::Option<::std::vec::Vec<crate::types::ObjectLambdaTransformationConfigurationAction>>,
+    pub actions: ::std::vec::Vec<crate::types::ObjectLambdaTransformationConfigurationAction>,
     /// <p>A container for the content transformation of an Object Lambda Access Point configuration.</p>
     pub content_transformation: ::std::option::Option<crate::types::ObjectLambdaContentTransformation>,
 }
 impl ObjectLambdaTransformationConfiguration {
     /// <p>A container for the action of an Object Lambda Access Point configuration. Valid inputs are <code>GetObject</code>, <code>ListObjects</code>, <code>HeadObject</code>, and <code>ListObjectsV2</code>.</p>
-    pub fn actions(&self) -> ::std::option::Option<&[crate::types::ObjectLambdaTransformationConfigurationAction]> {
-        self.actions.as_deref()
+    pub fn actions(&self) -> &[crate::types::ObjectLambdaTransformationConfigurationAction] {
+        use std::ops::Deref;
+        self.actions.deref()
     }
     /// <p>A container for the content transformation of an Object Lambda Access Point configuration.</p>
     pub fn content_transformation(&self) -> ::std::option::Option<&crate::types::ObjectLambdaContentTransformation> {
@@ -55,6 +56,7 @@ impl ObjectLambdaTransformationConfigurationBuilder {
         &self.actions
     }
     /// <p>A container for the content transformation of an Object Lambda Access Point configuration.</p>
+    /// This field is required.
     pub fn content_transformation(mut self, input: crate::types::ObjectLambdaContentTransformation) -> Self {
         self.content_transformation = ::std::option::Option::Some(input);
         self
@@ -69,10 +71,19 @@ impl ObjectLambdaTransformationConfigurationBuilder {
         &self.content_transformation
     }
     /// Consumes the builder and constructs a [`ObjectLambdaTransformationConfiguration`](crate::types::ObjectLambdaTransformationConfiguration).
-    pub fn build(self) -> crate::types::ObjectLambdaTransformationConfiguration {
-        crate::types::ObjectLambdaTransformationConfiguration {
-            actions: self.actions,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`actions`](crate::types::builders::ObjectLambdaTransformationConfigurationBuilder::actions)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::ObjectLambdaTransformationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ObjectLambdaTransformationConfiguration {
+            actions: self.actions.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "actions",
+                    "actions was not specified but it is required when building ObjectLambdaTransformationConfiguration",
+                )
+            })?,
             content_transformation: self.content_transformation,
-        }
+        })
     }
 }

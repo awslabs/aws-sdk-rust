@@ -15,8 +15,10 @@ impl ListNotebookInstanceLifecycleConfigsOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of <code>NotebookInstanceLifecycleConfiguration</code> objects, each listing a lifecycle configuration.</p>
-    pub fn notebook_instance_lifecycle_configs(&self) -> ::std::option::Option<&[crate::types::NotebookInstanceLifecycleConfigSummary]> {
-        self.notebook_instance_lifecycle_configs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notebook_instance_lifecycle_configs.is_none()`.
+    pub fn notebook_instance_lifecycle_configs(&self) -> &[crate::types::NotebookInstanceLifecycleConfigSummary] {
+        self.notebook_instance_lifecycle_configs.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListNotebookInstanceLifecycleConfigsOutput {

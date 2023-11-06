@@ -42,6 +42,7 @@ pub struct CreateDeploymentInputBuilder {
 }
 impl CreateDeploymentInputBuilder {
     /// <p> The unique ID for an Amplify app. </p>
+    /// This field is required.
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl CreateDeploymentInputBuilder {
         &self.app_id
     }
     /// <p> The name for the branch, for the job. </p>
+    /// This field is required.
     pub fn branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch_name = ::std::option::Option::Some(input.into());
         self
@@ -92,7 +94,7 @@ impl CreateDeploymentInputBuilder {
     /// Consumes the builder and constructs a [`CreateDeploymentInput`](crate::operation::create_deployment::CreateDeploymentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_deployment::CreateDeploymentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_deployment::CreateDeploymentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_deployment::CreateDeploymentInput {
             app_id: self.app_id,
             branch_name: self.branch_name,

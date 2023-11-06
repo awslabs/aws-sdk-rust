@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteMethod`](crate::operation::delete_method::builders::DeleteMethodFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`rest_api_id(impl Into<String>)`](crate::operation::delete_method::builders::DeleteMethodFluentBuilder::rest_api_id) / [`set_rest_api_id(Option<String>)`](crate::operation::delete_method::builders::DeleteMethodFluentBuilder::set_rest_api_id): <p>The string identifier of the associated RestApi.</p>
-    ///   - [`resource_id(impl Into<String>)`](crate::operation::delete_method::builders::DeleteMethodFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::delete_method::builders::DeleteMethodFluentBuilder::set_resource_id): <p>The Resource identifier for the Method resource.</p>
-    ///   - [`http_method(impl Into<String>)`](crate::operation::delete_method::builders::DeleteMethodFluentBuilder::http_method) / [`set_http_method(Option<String>)`](crate::operation::delete_method::builders::DeleteMethodFluentBuilder::set_http_method): <p>The HTTP verb of the Method resource.</p>
+    ///   - [`rest_api_id(impl Into<String>)`](crate::operation::delete_method::builders::DeleteMethodFluentBuilder::rest_api_id) / [`set_rest_api_id(Option<String>)`](crate::operation::delete_method::builders::DeleteMethodFluentBuilder::set_rest_api_id):<br>required: **true**<br><p>The string identifier of the associated RestApi.</p><br>
+    ///   - [`resource_id(impl Into<String>)`](crate::operation::delete_method::builders::DeleteMethodFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::delete_method::builders::DeleteMethodFluentBuilder::set_resource_id):<br>required: **true**<br><p>The Resource identifier for the Method resource.</p><br>
+    ///   - [`http_method(impl Into<String>)`](crate::operation::delete_method::builders::DeleteMethodFluentBuilder::http_method) / [`set_http_method(Option<String>)`](crate::operation::delete_method::builders::DeleteMethodFluentBuilder::set_http_method):<br>required: **true**<br><p>The HTTP verb of the Method resource.</p><br>
     /// - On success, responds with [`DeleteMethodOutput`](crate::operation::delete_method::DeleteMethodOutput)
     /// - On failure, responds with [`SdkError<DeleteMethodError>`](crate::operation::delete_method::DeleteMethodError)
     pub fn delete_method(&self) -> crate::operation::delete_method::builders::DeleteMethodFluentBuilder {

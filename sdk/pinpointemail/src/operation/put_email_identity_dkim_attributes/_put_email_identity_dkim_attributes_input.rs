@@ -37,6 +37,7 @@ pub struct PutEmailIdentityDkimAttributesInputBuilder {
 }
 impl PutEmailIdentityDkimAttributesInputBuilder {
     /// <p>The email identity that you want to change the DKIM settings for.</p>
+    /// This field is required.
     pub fn email_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_identity = ::std::option::Option::Some(input.into());
         self
@@ -72,7 +73,7 @@ impl PutEmailIdentityDkimAttributesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_email_identity_dkim_attributes::PutEmailIdentityDkimAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::put_email_identity_dkim_attributes::PutEmailIdentityDkimAttributesInput {

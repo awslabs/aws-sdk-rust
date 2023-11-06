@@ -2,7 +2,7 @@
 pub fn ser_update_pipe_source_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdatePipeSourceParameters,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.filter_criteria {
         #[allow(unused_mut)]
         let mut object_2 = object.key("FilterCriteria").start_object();

@@ -10,12 +10,12 @@ pub struct BuildArtifacts {
     /// <p>You can use this hash along with a checksum tool to confirm file integrity and authenticity.</p> <note>
     /// <p>This value is available only if the build project's <code>packaging</code> value is set to <code>ZIP</code>.</p>
     /// </note>
-    pub sha256sum: ::std::option::Option<::std::string::String>,
+    pub sha256_sum: ::std::option::Option<::std::string::String>,
     /// <p>The MD5 hash of the build artifact.</p>
     /// <p>You can use this hash along with a checksum tool to confirm file integrity and authenticity.</p> <note>
     /// <p>This value is available only if the build project's <code>packaging</code> value is set to <code>ZIP</code>.</p>
     /// </note>
-    pub md5sum: ::std::option::Option<::std::string::String>,
+    pub md5_sum: ::std::option::Option<::std::string::String>,
     /// <p> If this flag is set, a name specified in the buildspec file overrides the artifact name. The name specified in a buildspec file is calculated at build time and uses the Shell Command Language. For example, you can append a date and time to your artifact name so that it is always unique. </p>
     pub override_artifact_name: ::std::option::Option<bool>,
     /// <p> Information that tells you if encryption for build artifacts is disabled. </p>
@@ -62,15 +62,15 @@ impl BuildArtifacts {
     /// <p>You can use this hash along with a checksum tool to confirm file integrity and authenticity.</p> <note>
     /// <p>This value is available only if the build project's <code>packaging</code> value is set to <code>ZIP</code>.</p>
     /// </note>
-    pub fn sha256sum(&self) -> ::std::option::Option<&str> {
-        self.sha256sum.as_deref()
+    pub fn sha256_sum(&self) -> ::std::option::Option<&str> {
+        self.sha256_sum.as_deref()
     }
     /// <p>The MD5 hash of the build artifact.</p>
     /// <p>You can use this hash along with a checksum tool to confirm file integrity and authenticity.</p> <note>
     /// <p>This value is available only if the build project's <code>packaging</code> value is set to <code>ZIP</code>.</p>
     /// </note>
-    pub fn md5sum(&self) -> ::std::option::Option<&str> {
-        self.md5sum.as_deref()
+    pub fn md5_sum(&self) -> ::std::option::Option<&str> {
+        self.md5_sum.as_deref()
     }
     /// <p> If this flag is set, a name specified in the buildspec file overrides the artifact name. The name specified in a buildspec file is calculated at build time and uses the Shell Command Language. For example, you can append a date and time to your artifact name so that it is always unique. </p>
     pub fn override_artifact_name(&self) -> ::std::option::Option<bool> {
@@ -129,8 +129,8 @@ impl BuildArtifacts {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BuildArtifactsBuilder {
     pub(crate) location: ::std::option::Option<::std::string::String>,
-    pub(crate) sha256sum: ::std::option::Option<::std::string::String>,
-    pub(crate) md5sum: ::std::option::Option<::std::string::String>,
+    pub(crate) sha256_sum: ::std::option::Option<::std::string::String>,
+    pub(crate) md5_sum: ::std::option::Option<::std::string::String>,
     pub(crate) override_artifact_name: ::std::option::Option<bool>,
     pub(crate) encryption_disabled: ::std::option::Option<bool>,
     pub(crate) artifact_identifier: ::std::option::Option<::std::string::String>,
@@ -155,47 +155,47 @@ impl BuildArtifactsBuilder {
     /// <p>You can use this hash along with a checksum tool to confirm file integrity and authenticity.</p> <note>
     /// <p>This value is available only if the build project's <code>packaging</code> value is set to <code>ZIP</code>.</p>
     /// </note>
-    pub fn sha256sum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.sha256sum = ::std::option::Option::Some(input.into());
+    pub fn sha256_sum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.sha256_sum = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The SHA-256 hash of the build artifact.</p>
     /// <p>You can use this hash along with a checksum tool to confirm file integrity and authenticity.</p> <note>
     /// <p>This value is available only if the build project's <code>packaging</code> value is set to <code>ZIP</code>.</p>
     /// </note>
-    pub fn set_sha256sum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sha256sum = input;
+    pub fn set_sha256_sum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.sha256_sum = input;
         self
     }
     /// <p>The SHA-256 hash of the build artifact.</p>
     /// <p>You can use this hash along with a checksum tool to confirm file integrity and authenticity.</p> <note>
     /// <p>This value is available only if the build project's <code>packaging</code> value is set to <code>ZIP</code>.</p>
     /// </note>
-    pub fn get_sha256sum(&self) -> &::std::option::Option<::std::string::String> {
-        &self.sha256sum
+    pub fn get_sha256_sum(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sha256_sum
     }
     /// <p>The MD5 hash of the build artifact.</p>
     /// <p>You can use this hash along with a checksum tool to confirm file integrity and authenticity.</p> <note>
     /// <p>This value is available only if the build project's <code>packaging</code> value is set to <code>ZIP</code>.</p>
     /// </note>
-    pub fn md5sum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.md5sum = ::std::option::Option::Some(input.into());
+    pub fn md5_sum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.md5_sum = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The MD5 hash of the build artifact.</p>
     /// <p>You can use this hash along with a checksum tool to confirm file integrity and authenticity.</p> <note>
     /// <p>This value is available only if the build project's <code>packaging</code> value is set to <code>ZIP</code>.</p>
     /// </note>
-    pub fn set_md5sum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.md5sum = input;
+    pub fn set_md5_sum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.md5_sum = input;
         self
     }
     /// <p>The MD5 hash of the build artifact.</p>
     /// <p>You can use this hash along with a checksum tool to confirm file integrity and authenticity.</p> <note>
     /// <p>This value is available only if the build project's <code>packaging</code> value is set to <code>ZIP</code>.</p>
     /// </note>
-    pub fn get_md5sum(&self) -> &::std::option::Option<::std::string::String> {
-        &self.md5sum
+    pub fn get_md5_sum(&self) -> &::std::option::Option<::std::string::String> {
+        &self.md5_sum
     }
     /// <p> If this flag is set, a name specified in the buildspec file overrides the artifact name. The name specified in a buildspec file is calculated at build time and uses the Shell Command Language. For example, you can append a date and time to your artifact name so that it is always unique. </p>
     pub fn override_artifact_name(mut self, input: bool) -> Self {
@@ -341,8 +341,8 @@ impl BuildArtifactsBuilder {
     pub fn build(self) -> crate::types::BuildArtifacts {
         crate::types::BuildArtifacts {
             location: self.location,
-            sha256sum: self.sha256sum,
-            md5sum: self.md5sum,
+            sha256_sum: self.sha256_sum,
+            md5_sum: self.md5_sum,
             override_artifact_name: self.override_artifact_name,
             encryption_disabled: self.encryption_disabled,
             artifact_identifier: self.artifact_identifier,

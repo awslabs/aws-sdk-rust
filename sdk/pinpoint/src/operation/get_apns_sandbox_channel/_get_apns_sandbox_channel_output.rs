@@ -34,6 +34,7 @@ pub struct GetApnsSandboxChannelOutputBuilder {
 }
 impl GetApnsSandboxChannelOutputBuilder {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
+    /// This field is required.
     pub fn apns_sandbox_channel_response(mut self, input: crate::types::ApnsSandboxChannelResponse) -> Self {
         self.apns_sandbox_channel_response = ::std::option::Option::Some(input);
         self

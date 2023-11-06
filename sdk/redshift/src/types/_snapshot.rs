@@ -164,8 +164,10 @@ impl Snapshot {
         self.encrypted_with_hsm
     }
     /// <p>A list of the Amazon Web Services accounts authorized to restore the snapshot. Returns <code>null</code> if no accounts are authorized. Visible only to the snapshot owner. </p>
-    pub fn accounts_with_restore_access(&self) -> ::std::option::Option<&[crate::types::AccountWithRestoreAccess]> {
-        self.accounts_with_restore_access.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accounts_with_restore_access.is_none()`.
+    pub fn accounts_with_restore_access(&self) -> &[crate::types::AccountWithRestoreAccess] {
+        self.accounts_with_restore_access.as_deref().unwrap_or_default()
     }
     /// <p>For manual snapshots, the Amazon Web Services account used to create or copy the snapshot. For automatic snapshots, the owner of the cluster. The owner can perform all snapshot actions, such as sharing a manual snapshot.</p>
     pub fn owner_account(&self) -> ::std::option::Option<&str> {
@@ -200,12 +202,16 @@ impl Snapshot {
         self.source_region.as_deref()
     }
     /// <p>The list of tags for the cluster snapshot.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The list of node types that this cluster snapshot is able to restore into.</p>
-    pub fn restorable_node_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.restorable_node_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.restorable_node_types.is_none()`.
+    pub fn restorable_node_types(&self) -> &[::std::string::String] {
+        self.restorable_node_types.as_deref().unwrap_or_default()
     }
     /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
     /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>

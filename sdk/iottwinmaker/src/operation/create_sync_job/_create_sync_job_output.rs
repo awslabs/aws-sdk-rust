@@ -4,25 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSyncJobOutput {
     /// <p>The SyncJob ARN.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The date and time for the SyncJob creation.</p>
-    pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_date_time: ::aws_smithy_types::DateTime,
     /// <p>The SyncJob response state.</p>
-    pub state: ::std::option::Option<crate::types::SyncJobState>,
+    pub state: crate::types::SyncJobState,
     _request_id: Option<String>,
 }
 impl CreateSyncJobOutput {
     /// <p>The SyncJob ARN.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The date and time for the SyncJob creation.</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_date_time.as_ref()
+    pub fn creation_date_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_date_time
     }
     /// <p>The SyncJob response state.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::SyncJobState> {
-        self.state.as_ref()
+    pub fn state(&self) -> &crate::types::SyncJobState {
+        &self.state
     }
 }
 impl ::aws_http::request_id::RequestId for CreateSyncJobOutput {
@@ -48,6 +49,7 @@ pub struct CreateSyncJobOutputBuilder {
 }
 impl CreateSyncJobOutputBuilder {
     /// <p>The SyncJob ARN.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +64,7 @@ impl CreateSyncJobOutputBuilder {
         &self.arn
     }
     /// <p>The date and time for the SyncJob creation.</p>
+    /// This field is required.
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
         self
@@ -76,6 +79,7 @@ impl CreateSyncJobOutputBuilder {
         &self.creation_date_time
     }
     /// <p>The SyncJob response state.</p>
+    /// This field is required.
     pub fn state(mut self, input: crate::types::SyncJobState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
@@ -99,12 +103,33 @@ impl CreateSyncJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateSyncJobOutput`](crate::operation::create_sync_job::CreateSyncJobOutput).
-    pub fn build(self) -> crate::operation::create_sync_job::CreateSyncJobOutput {
-        crate::operation::create_sync_job::CreateSyncJobOutput {
-            arn: self.arn,
-            creation_date_time: self.creation_date_time,
-            state: self.state,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::operation::create_sync_job::builders::CreateSyncJobOutputBuilder::arn)
+    /// - [`creation_date_time`](crate::operation::create_sync_job::builders::CreateSyncJobOutputBuilder::creation_date_time)
+    /// - [`state`](crate::operation::create_sync_job::builders::CreateSyncJobOutputBuilder::state)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_sync_job::CreateSyncJobOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_sync_job::CreateSyncJobOutput {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building CreateSyncJobOutput",
+                )
+            })?,
+            creation_date_time: self.creation_date_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "creation_date_time",
+                    "creation_date_time was not specified but it is required when building CreateSyncJobOutput",
+                )
+            })?,
+            state: self.state.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "state",
+                    "state was not specified but it is required when building CreateSyncJobOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

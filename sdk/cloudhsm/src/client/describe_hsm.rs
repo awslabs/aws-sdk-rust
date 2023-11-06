@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeHsm`](crate::operation::describe_hsm::builders::DescribeHsmFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`hsm_arn(impl Into<String>)`](crate::operation::describe_hsm::builders::DescribeHsmFluentBuilder::hsm_arn) / [`set_hsm_arn(Option<String>)`](crate::operation::describe_hsm::builders::DescribeHsmFluentBuilder::set_hsm_arn): <p>The ARN of the HSM. Either the <code>HsmArn</code> or the <code>SerialNumber</code> parameter must be specified.</p>
-    ///   - [`hsm_serial_number(impl Into<String>)`](crate::operation::describe_hsm::builders::DescribeHsmFluentBuilder::hsm_serial_number) / [`set_hsm_serial_number(Option<String>)`](crate::operation::describe_hsm::builders::DescribeHsmFluentBuilder::set_hsm_serial_number): <p>The serial number of the HSM. Either the <code>HsmArn</code> or the <code>HsmSerialNumber</code> parameter must be specified.</p>
+    ///   - [`hsm_arn(impl Into<String>)`](crate::operation::describe_hsm::builders::DescribeHsmFluentBuilder::hsm_arn) / [`set_hsm_arn(Option<String>)`](crate::operation::describe_hsm::builders::DescribeHsmFluentBuilder::set_hsm_arn):<br>required: **false**<br><p>The ARN of the HSM. Either the <code>HsmArn</code> or the <code>SerialNumber</code> parameter must be specified.</p><br>
+    ///   - [`hsm_serial_number(impl Into<String>)`](crate::operation::describe_hsm::builders::DescribeHsmFluentBuilder::hsm_serial_number) / [`set_hsm_serial_number(Option<String>)`](crate::operation::describe_hsm::builders::DescribeHsmFluentBuilder::set_hsm_serial_number):<br>required: **false**<br><p>The serial number of the HSM. Either the <code>HsmArn</code> or the <code>HsmSerialNumber</code> parameter must be specified.</p><br>
     /// - On success, responds with [`DescribeHsmOutput`](crate::operation::describe_hsm::DescribeHsmOutput) with field(s):
     ///   - [`hsm_arn(Option<String>)`](crate::operation::describe_hsm::DescribeHsmOutput::hsm_arn): <p>The ARN of the HSM.</p>
     ///   - [`status(Option<HsmStatus>)`](crate::operation::describe_hsm::DescribeHsmOutput::status): <p>The status of the HSM.</p>
@@ -26,7 +26,7 @@ impl super::Client {
     ///   - [`ssh_key_last_updated(Option<String>)`](crate::operation::describe_hsm::DescribeHsmOutput::ssh_key_last_updated): <p>The date and time that the SSH key was last updated.</p>
     ///   - [`server_cert_uri(Option<String>)`](crate::operation::describe_hsm::DescribeHsmOutput::server_cert_uri): <p>The URI of the certificate server.</p>
     ///   - [`server_cert_last_updated(Option<String>)`](crate::operation::describe_hsm::DescribeHsmOutput::server_cert_last_updated): <p>The date and time that the server certificate was last updated.</p>
-    ///   - [`partitions(Option<Vec<String>>)`](crate::operation::describe_hsm::DescribeHsmOutput::partitions): <p>The list of partitions on the HSM.</p>
+    ///   - [`partitions(Option<Vec::<String>>)`](crate::operation::describe_hsm::DescribeHsmOutput::partitions): <p>The list of partitions on the HSM.</p>
     /// - On failure, responds with [`SdkError<DescribeHsmError>`](crate::operation::describe_hsm::DescribeHsmError)
     #[deprecated(note = "This API is deprecated.")]
     pub fn describe_hsm(&self) -> crate::operation::describe_hsm::builders::DescribeHsmFluentBuilder {

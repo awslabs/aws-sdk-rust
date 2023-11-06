@@ -75,6 +75,7 @@ pub struct CreateFindingsFilterInputBuilder {
 }
 impl CreateFindingsFilterInputBuilder {
     /// <p>The action to perform on findings that match the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
+    /// This field is required.
     pub fn action(mut self, input: crate::types::FindingsFilterAction) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
@@ -120,6 +121,7 @@ impl CreateFindingsFilterInputBuilder {
         &self.description
     }
     /// <p>The criteria to use to filter findings.</p>
+    /// This field is required.
     pub fn finding_criteria(mut self, input: crate::types::FindingCriteria) -> Self {
         self.finding_criteria = ::std::option::Option::Some(input);
         self
@@ -135,6 +137,7 @@ impl CreateFindingsFilterInputBuilder {
     }
     /// <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p>
     /// <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -190,7 +193,7 @@ impl CreateFindingsFilterInputBuilder {
     /// Consumes the builder and constructs a [`CreateFindingsFilterInput`](crate::operation::create_findings_filter::CreateFindingsFilterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_findings_filter::CreateFindingsFilterInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_findings_filter::CreateFindingsFilterInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_findings_filter::CreateFindingsFilterInput {
             action: self.action,

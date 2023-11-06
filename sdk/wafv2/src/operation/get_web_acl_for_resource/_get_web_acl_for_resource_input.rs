@@ -54,6 +54,7 @@ impl GetWebAclForResourceInputBuilder {
     /// <li> <p>For an App Runner service: <code>arn:<i>partition</i>:apprunner:<i>region</i>:<i>account-id</i>:service/<i>apprunner-service-name</i>/<i>apprunner-service-id</i> </code> </p> </li>
     /// <li> <p>For an Amazon Web Services Verified Access instance: <code>arn:<i>partition</i>:ec2:<i>region</i>:<i>account-id</i>:verified-access-instance/<i>instance-id</i> </code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -88,7 +89,7 @@ impl GetWebAclForResourceInputBuilder {
     /// Consumes the builder and constructs a [`GetWebAclForResourceInput`](crate::operation::get_web_acl_for_resource::GetWebAclForResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_web_acl_for_resource::GetWebAclForResourceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_web_acl_for_resource::GetWebAclForResourceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_web_acl_for_resource::GetWebAclForResourceInput {
             resource_arn: self.resource_arn,

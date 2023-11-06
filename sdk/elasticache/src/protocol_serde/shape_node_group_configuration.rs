@@ -3,7 +3,7 @@
 pub fn ser_node_group_configuration(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::NodeGroupConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("NodeGroupId");
     if let Some(var_2) = &input.node_group_id {
@@ -57,6 +57,7 @@ pub fn ser_node_group_configuration(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_node_group_configuration(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::NodeGroupConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {

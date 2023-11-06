@@ -60,8 +60,10 @@ impl ModifyInstanceProfileInput {
         self.subnet_group_identifier.as_deref()
     }
     /// <p>Specifies the VPC security groups to be used with the instance profile. The VPC security group must work with the VPC containing the instance profile.</p>
-    pub fn vpc_security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.vpc_security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_groups.is_none()`.
+    pub fn vpc_security_groups(&self) -> &[::std::string::String] {
+        self.vpc_security_groups.as_deref().unwrap_or_default()
     }
 }
 impl ModifyInstanceProfileInput {
@@ -87,6 +89,7 @@ pub struct ModifyInstanceProfileInputBuilder {
 }
 impl ModifyInstanceProfileInputBuilder {
     /// <p>The identifier of the instance profile. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen, or contain two consecutive hyphens.</p>
+    /// This field is required.
     pub fn instance_profile_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_profile_identifier = ::std::option::Option::Some(input.into());
         self
@@ -227,7 +230,7 @@ impl ModifyInstanceProfileInputBuilder {
     /// Consumes the builder and constructs a [`ModifyInstanceProfileInput`](crate::operation::modify_instance_profile::ModifyInstanceProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_instance_profile::ModifyInstanceProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::modify_instance_profile::ModifyInstanceProfileInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::modify_instance_profile::ModifyInstanceProfileInput {
             instance_profile_identifier: self.instance_profile_identifier,

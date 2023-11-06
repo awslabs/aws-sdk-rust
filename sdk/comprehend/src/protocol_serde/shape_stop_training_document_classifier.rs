@@ -113,10 +113,10 @@ pub fn de_stop_training_document_classifier_http_response(
 
 pub fn ser_stop_training_document_classifier_input(
     input: &crate::operation::stop_training_document_classifier::StopTrainingDocumentClassifierInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_stop_training_document_classifier_input::ser_stop_training_document_classifier_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

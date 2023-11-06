@@ -34,6 +34,7 @@ pub struct GetObjectMetadataInputBuilder {
 }
 impl GetObjectMetadataInputBuilder {
     /// Backup job id for the in-progress backup.
+    /// This field is required.
     pub fn storage_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_job_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetObjectMetadataInputBuilder {
         &self.storage_job_id
     }
     /// Object token.
+    /// This field is required.
     pub fn object_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_token = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl GetObjectMetadataInputBuilder {
     /// Consumes the builder and constructs a [`GetObjectMetadataInput`](crate::operation::get_object_metadata::GetObjectMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_object_metadata::GetObjectMetadataInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_object_metadata::GetObjectMetadataInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_object_metadata::GetObjectMetadataInput {
             storage_job_id: self.storage_job_id,
             object_token: self.object_token,

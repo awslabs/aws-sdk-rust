@@ -55,6 +55,7 @@ pub struct GetAggregateDiscoveredResourceCountsInputBuilder {
 }
 impl GetAggregateDiscoveredResourceCountsInputBuilder {
     /// <p>The name of the configuration aggregator.</p>
+    /// This field is required.
     pub fn configuration_aggregator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_aggregator_name = ::std::option::Option::Some(input.into());
         self
@@ -129,7 +130,7 @@ impl GetAggregateDiscoveredResourceCountsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsInput {

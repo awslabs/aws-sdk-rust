@@ -27,6 +27,7 @@ pub struct DeleteImageInputBuilder {
 }
 impl DeleteImageInputBuilder {
     /// <p>The name of the image.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl DeleteImageInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`DeleteImageInput`](crate::operation::delete_image::DeleteImageInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_image::DeleteImageInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_image::DeleteImageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_image::DeleteImageInput { name: self.name })
     }
 }

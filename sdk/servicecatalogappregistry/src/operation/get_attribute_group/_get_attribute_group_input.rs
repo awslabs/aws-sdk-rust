@@ -27,6 +27,7 @@ pub struct GetAttributeGroupInputBuilder {
 }
 impl GetAttributeGroupInputBuilder {
     /// <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
+    /// This field is required.
     pub fn attribute_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_group = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetAttributeGroupInputBuilder {
     /// Consumes the builder and constructs a [`GetAttributeGroupInput`](crate::operation::get_attribute_group::GetAttributeGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_attribute_group::GetAttributeGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_attribute_group::GetAttributeGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_attribute_group::GetAttributeGroupInput {
             attribute_group: self.attribute_group,
         })

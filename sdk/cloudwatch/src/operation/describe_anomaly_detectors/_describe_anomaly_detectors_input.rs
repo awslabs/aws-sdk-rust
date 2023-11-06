@@ -36,12 +36,16 @@ impl DescribeAnomalyDetectorsInput {
         self.metric_name.as_deref()
     }
     /// <p>Limits the results to only the anomaly detection models that are associated with the specified metric dimensions. If there are multiple metrics that have these dimensions and have anomaly detection models associated, they're all returned.</p>
-    pub fn dimensions(&self) -> ::std::option::Option<&[crate::types::Dimension]> {
-        self.dimensions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimensions.is_none()`.
+    pub fn dimensions(&self) -> &[crate::types::Dimension] {
+        self.dimensions.as_deref().unwrap_or_default()
     }
     /// <p>The anomaly detector types to request when using <code>DescribeAnomalyDetectorsInput</code>. If empty, defaults to <code>SINGLE_METRIC</code>.</p>
-    pub fn anomaly_detector_types(&self) -> ::std::option::Option<&[crate::types::AnomalyDetectorType]> {
-        self.anomaly_detector_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.anomaly_detector_types.is_none()`.
+    pub fn anomaly_detector_types(&self) -> &[crate::types::AnomalyDetectorType] {
+        self.anomaly_detector_types.as_deref().unwrap_or_default()
     }
 }
 impl DescribeAnomalyDetectorsInput {
@@ -167,7 +171,7 @@ impl DescribeAnomalyDetectorsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsInput {
             next_token: self.next_token,

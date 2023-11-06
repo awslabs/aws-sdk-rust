@@ -14,8 +14,10 @@ pub struct ListImagesInRecycleBinInput {
 }
 impl ListImagesInRecycleBinInput {
     /// <p>The IDs of the AMIs to list. Omit this parameter to list all of the AMIs that are in the Recycle Bin. You can specify up to 20 IDs in a single request.</p>
-    pub fn image_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.image_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_ids.is_none()`.
+    pub fn image_ids(&self) -> &[::std::string::String] {
+        self.image_ids.as_deref().unwrap_or_default()
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -114,7 +116,7 @@ impl ListImagesInRecycleBinInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_images_in_recycle_bin::ListImagesInRecycleBinInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_images_in_recycle_bin::ListImagesInRecycleBinInput {
             image_ids: self.image_ids,

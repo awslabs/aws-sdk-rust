@@ -14,8 +14,10 @@ impl ModifyLoadBalancerAttributesInput {
         self.load_balancer_arn.as_deref()
     }
     /// <p>The load balancer attributes.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&[crate::types::LoadBalancerAttribute]> {
-        self.attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
+    pub fn attributes(&self) -> &[crate::types::LoadBalancerAttribute] {
+        self.attributes.as_deref().unwrap_or_default()
     }
 }
 impl ModifyLoadBalancerAttributesInput {
@@ -34,6 +36,7 @@ pub struct ModifyLoadBalancerAttributesInputBuilder {
 }
 impl ModifyLoadBalancerAttributesInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
+    /// This field is required.
     pub fn load_balancer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_arn = ::std::option::Option::Some(input.into());
         self
@@ -72,7 +75,7 @@ impl ModifyLoadBalancerAttributesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesInput {
             load_balancer_arn: self.load_balancer_arn,

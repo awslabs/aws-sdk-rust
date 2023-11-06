@@ -43,6 +43,7 @@ pub struct ListSignalCatalogNodesInputBuilder {
 }
 impl ListSignalCatalogNodesInputBuilder {
     /// <p> The name of the signal catalog to list information about. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -92,7 +93,7 @@ impl ListSignalCatalogNodesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_signal_catalog_nodes::ListSignalCatalogNodesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_signal_catalog_nodes::ListSignalCatalogNodesInput {
             name: self.name,

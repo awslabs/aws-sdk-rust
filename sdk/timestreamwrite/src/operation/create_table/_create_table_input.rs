@@ -30,8 +30,10 @@ impl CreateTableInput {
         self.retention_properties.as_ref()
     }
     /// <p> A list of key-value pairs to label the table. </p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Contains properties to set on the table when enabling magnetic store writes.</p>
     pub fn magnetic_store_write_properties(&self) -> ::std::option::Option<&crate::types::MagneticStoreWriteProperties> {
@@ -62,6 +64,7 @@ pub struct CreateTableInputBuilder {
 }
 impl CreateTableInputBuilder {
     /// <p>The name of the Timestream database.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +79,7 @@ impl CreateTableInputBuilder {
         &self.database_name
     }
     /// <p>The name of the Timestream table.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -152,7 +156,7 @@ impl CreateTableInputBuilder {
         &self.schema
     }
     /// Consumes the builder and constructs a [`CreateTableInput`](crate::operation::create_table::CreateTableInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_table::CreateTableInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_table::CreateTableInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_table::CreateTableInput {
             database_name: self.database_name,
             table_name: self.table_name,

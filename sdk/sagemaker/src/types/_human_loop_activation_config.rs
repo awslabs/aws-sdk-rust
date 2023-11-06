@@ -28,6 +28,7 @@ pub struct HumanLoopActivationConfigBuilder {
 }
 impl HumanLoopActivationConfigBuilder {
     /// <p>Container structure for defining under what conditions SageMaker creates a human loop.</p>
+    /// This field is required.
     pub fn human_loop_activation_conditions_config(mut self, input: crate::types::HumanLoopActivationConditionsConfig) -> Self {
         self.human_loop_activation_conditions_config = ::std::option::Option::Some(input);
         self

@@ -42,6 +42,7 @@ pub struct MetricsSourceBuilder {
 }
 impl MetricsSourceBuilder {
     /// <p>The metric source content type.</p>
+    /// This field is required.
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +71,7 @@ impl MetricsSourceBuilder {
         &self.content_digest
     }
     /// <p>The S3 URI for the metrics source.</p>
+    /// This field is required.
     pub fn s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_uri = ::std::option::Option::Some(input.into());
         self

@@ -12,8 +12,10 @@ pub struct LookupEventsOutput {
 }
 impl LookupEventsOutput {
     /// <p>A list of events returned based on the lookup attributes specified and the CloudTrail event. The events list is sorted by time. The most recent event is listed first.</p>
-    pub fn events(&self) -> ::std::option::Option<&[crate::types::Event]> {
-        self.events.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.events.is_none()`.
+    pub fn events(&self) -> &[crate::types::Event] {
+        self.events.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to get the next page of results after a previous API call. If the token does not appear, there are no more results to return. The token must be passed in with the same parameters as the previous call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

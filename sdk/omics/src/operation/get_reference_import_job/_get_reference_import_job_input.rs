@@ -34,6 +34,7 @@ pub struct GetReferenceImportJobInputBuilder {
 }
 impl GetReferenceImportJobInputBuilder {
     /// <p>The job's ID.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetReferenceImportJobInputBuilder {
         &self.id
     }
     /// <p>The job's reference store ID.</p>
+    /// This field is required.
     pub fn reference_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reference_store_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl GetReferenceImportJobInputBuilder {
     /// Consumes the builder and constructs a [`GetReferenceImportJobInput`](crate::operation::get_reference_import_job::GetReferenceImportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_reference_import_job::GetReferenceImportJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_reference_import_job::GetReferenceImportJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_reference_import_job::GetReferenceImportJobInput {
             id: self.id,

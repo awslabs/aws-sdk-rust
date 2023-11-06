@@ -10,8 +10,10 @@ pub struct UpdateRecordsOutput {
 }
 impl UpdateRecordsOutput {
     /// A list of records that have been updated.
-    pub fn records(&self) -> ::std::option::Option<&[crate::types::Record]> {
-        self.records.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.records.is_none()`.
+    pub fn records(&self) -> &[crate::types::Record] {
+        self.records.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateRecordsOutput {

@@ -48,6 +48,7 @@ impl DeleteStorageVirtualMachineInputBuilder {
         &self.client_request_token
     }
     /// <p>The ID of the SVM that you want to delete.</p>
+    /// This field is required.
     pub fn storage_virtual_machine_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_virtual_machine_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl DeleteStorageVirtualMachineInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_storage_virtual_machine::DeleteStorageVirtualMachineInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_storage_virtual_machine::DeleteStorageVirtualMachineInput {
             client_request_token: self.client_request_token,

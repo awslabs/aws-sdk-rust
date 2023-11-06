@@ -28,6 +28,7 @@ pub struct StartInputDeviceInputBuilder {
 }
 impl StartInputDeviceInputBuilder {
     /// The unique ID of the input device to reboot. For example, hd-123456789abcdef.
+    /// This field is required.
     pub fn input_device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_device_id = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl StartInputDeviceInputBuilder {
     /// Consumes the builder and constructs a [`StartInputDeviceInput`](crate::operation::start_input_device::StartInputDeviceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_input_device::StartInputDeviceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_input_device::StartInputDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_input_device::StartInputDeviceInput {
             input_device_id: self.input_device_id,
         })

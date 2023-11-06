@@ -76,6 +76,7 @@ impl UpdateTableInputBuilder {
         &self.catalog_id
     }
     /// <p>The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +91,7 @@ impl UpdateTableInputBuilder {
         &self.database_name
     }
     /// <p>An updated <code>TableInput</code> object to define the metadata table in the catalog.</p>
+    /// This field is required.
     pub fn table_input(mut self, input: crate::types::TableInput) -> Self {
         self.table_input = ::std::option::Option::Some(input);
         self
@@ -146,7 +148,7 @@ impl UpdateTableInputBuilder {
         &self.version_id
     }
     /// Consumes the builder and constructs a [`UpdateTableInput`](crate::operation::update_table::UpdateTableInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_table::UpdateTableInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_table::UpdateTableInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_table::UpdateTableInput {
             catalog_id: self.catalog_id,
             database_name: self.database_name,

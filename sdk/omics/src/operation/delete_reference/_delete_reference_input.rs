@@ -34,6 +34,7 @@ pub struct DeleteReferenceInputBuilder {
 }
 impl DeleteReferenceInputBuilder {
     /// <p>The reference's ID.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteReferenceInputBuilder {
         &self.id
     }
     /// <p>The reference's store ID.</p>
+    /// This field is required.
     pub fn reference_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reference_store_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DeleteReferenceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteReferenceInput`](crate::operation::delete_reference::DeleteReferenceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_reference::DeleteReferenceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_reference::DeleteReferenceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_reference::DeleteReferenceInput {
             id: self.id,
             reference_store_id: self.reference_store_id,

@@ -4,31 +4,33 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteImageSetOutput {
     /// <p>The data store identifier.</p>
-    pub datastore_id: ::std::option::Option<::std::string::String>,
+    pub datastore_id: ::std::string::String,
     /// <p>The image set identifier.</p>
-    pub image_set_id: ::std::option::Option<::std::string::String>,
+    pub image_set_id: ::std::string::String,
     /// <p>The image set state.</p>
-    pub image_set_state: ::std::option::Option<crate::types::ImageSetState>,
+    pub image_set_state: crate::types::ImageSetState,
     /// <p>The image set workflow status.</p>
-    pub image_set_workflow_status: ::std::option::Option<crate::types::ImageSetWorkflowStatus>,
+    pub image_set_workflow_status: crate::types::ImageSetWorkflowStatus,
     _request_id: Option<String>,
 }
 impl DeleteImageSetOutput {
     /// <p>The data store identifier.</p>
-    pub fn datastore_id(&self) -> ::std::option::Option<&str> {
-        self.datastore_id.as_deref()
+    pub fn datastore_id(&self) -> &str {
+        use std::ops::Deref;
+        self.datastore_id.deref()
     }
     /// <p>The image set identifier.</p>
-    pub fn image_set_id(&self) -> ::std::option::Option<&str> {
-        self.image_set_id.as_deref()
+    pub fn image_set_id(&self) -> &str {
+        use std::ops::Deref;
+        self.image_set_id.deref()
     }
     /// <p>The image set state.</p>
-    pub fn image_set_state(&self) -> ::std::option::Option<&crate::types::ImageSetState> {
-        self.image_set_state.as_ref()
+    pub fn image_set_state(&self) -> &crate::types::ImageSetState {
+        &self.image_set_state
     }
     /// <p>The image set workflow status.</p>
-    pub fn image_set_workflow_status(&self) -> ::std::option::Option<&crate::types::ImageSetWorkflowStatus> {
-        self.image_set_workflow_status.as_ref()
+    pub fn image_set_workflow_status(&self) -> &crate::types::ImageSetWorkflowStatus {
+        &self.image_set_workflow_status
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteImageSetOutput {
@@ -55,6 +57,7 @@ pub struct DeleteImageSetOutputBuilder {
 }
 impl DeleteImageSetOutputBuilder {
     /// <p>The data store identifier.</p>
+    /// This field is required.
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +72,7 @@ impl DeleteImageSetOutputBuilder {
         &self.datastore_id
     }
     /// <p>The image set identifier.</p>
+    /// This field is required.
     pub fn image_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_set_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +87,7 @@ impl DeleteImageSetOutputBuilder {
         &self.image_set_id
     }
     /// <p>The image set state.</p>
+    /// This field is required.
     pub fn image_set_state(mut self, input: crate::types::ImageSetState) -> Self {
         self.image_set_state = ::std::option::Option::Some(input);
         self
@@ -97,6 +102,7 @@ impl DeleteImageSetOutputBuilder {
         &self.image_set_state
     }
     /// <p>The image set workflow status.</p>
+    /// This field is required.
     pub fn image_set_workflow_status(mut self, input: crate::types::ImageSetWorkflowStatus) -> Self {
         self.image_set_workflow_status = ::std::option::Option::Some(input);
         self
@@ -120,13 +126,40 @@ impl DeleteImageSetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteImageSetOutput`](crate::operation::delete_image_set::DeleteImageSetOutput).
-    pub fn build(self) -> crate::operation::delete_image_set::DeleteImageSetOutput {
-        crate::operation::delete_image_set::DeleteImageSetOutput {
-            datastore_id: self.datastore_id,
-            image_set_id: self.image_set_id,
-            image_set_state: self.image_set_state,
-            image_set_workflow_status: self.image_set_workflow_status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`datastore_id`](crate::operation::delete_image_set::builders::DeleteImageSetOutputBuilder::datastore_id)
+    /// - [`image_set_id`](crate::operation::delete_image_set::builders::DeleteImageSetOutputBuilder::image_set_id)
+    /// - [`image_set_state`](crate::operation::delete_image_set::builders::DeleteImageSetOutputBuilder::image_set_state)
+    /// - [`image_set_workflow_status`](crate::operation::delete_image_set::builders::DeleteImageSetOutputBuilder::image_set_workflow_status)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_image_set::DeleteImageSetOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_image_set::DeleteImageSetOutput {
+            datastore_id: self.datastore_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "datastore_id",
+                    "datastore_id was not specified but it is required when building DeleteImageSetOutput",
+                )
+            })?,
+            image_set_id: self.image_set_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "image_set_id",
+                    "image_set_id was not specified but it is required when building DeleteImageSetOutput",
+                )
+            })?,
+            image_set_state: self.image_set_state.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "image_set_state",
+                    "image_set_state was not specified but it is required when building DeleteImageSetOutput",
+                )
+            })?,
+            image_set_workflow_status: self.image_set_workflow_status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "image_set_workflow_status",
+                    "image_set_workflow_status was not specified but it is required when building DeleteImageSetOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

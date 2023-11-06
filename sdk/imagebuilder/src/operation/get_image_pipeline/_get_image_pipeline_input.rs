@@ -27,6 +27,7 @@ pub struct GetImagePipelineInputBuilder {
 }
 impl GetImagePipelineInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to retrieve.</p>
+    /// This field is required.
     pub fn image_pipeline_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_pipeline_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetImagePipelineInputBuilder {
     /// Consumes the builder and constructs a [`GetImagePipelineInput`](crate::operation::get_image_pipeline::GetImagePipelineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_image_pipeline::GetImagePipelineInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_image_pipeline::GetImagePipelineInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_image_pipeline::GetImagePipelineInput {
             image_pipeline_arn: self.image_pipeline_arn,
         })

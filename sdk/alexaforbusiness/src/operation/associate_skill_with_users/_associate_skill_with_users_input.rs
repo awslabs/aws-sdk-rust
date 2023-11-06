@@ -27,6 +27,7 @@ pub struct AssociateSkillWithUsersInputBuilder {
 }
 impl AssociateSkillWithUsersInputBuilder {
     /// <p>The private skill ID you want to make available to enrolled users.</p>
+    /// This field is required.
     pub fn skill_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.skill_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl AssociateSkillWithUsersInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_skill_with_users::AssociateSkillWithUsersInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::associate_skill_with_users::AssociateSkillWithUsersInput { skill_id: self.skill_id })
     }

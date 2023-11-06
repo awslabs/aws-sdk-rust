@@ -37,6 +37,7 @@ pub struct AddPrefixListEntryBuilder {
 }
 impl AddPrefixListEntryBuilder {
     /// <p>The CIDR block.</p>
+    /// This field is required.
     pub fn cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cidr = ::std::option::Option::Some(input.into());
         self

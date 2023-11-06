@@ -2,7 +2,7 @@
 pub fn ser_update_script_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_script::UpdateScriptInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.script_id {
         object.key("ScriptId").string(var_1.as_str());
     }

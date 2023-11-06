@@ -2,11 +2,11 @@
 pub fn ser_disassociate_applications_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::disassociate_applications::DisassociateApplicationsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.account_id {
         object.key("accountID").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.application_i_ds {
+    if let Some(var_2) = &input.application_ids {
         let mut array_3 = object.key("applicationIDs").start_array();
         for item_4 in var_2 {
             {

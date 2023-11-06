@@ -55,6 +55,7 @@ pub struct CreateLifecyclePolicyInputBuilder {
 }
 impl CreateLifecyclePolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
+    /// This field is required.
     pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl CreateLifecyclePolicyInputBuilder {
         &self.execution_role_arn
     }
     /// <p>A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are supported.</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +85,7 @@ impl CreateLifecyclePolicyInputBuilder {
         &self.description
     }
     /// <p>The desired activation state of the lifecycle policy after creation.</p>
+    /// This field is required.
     pub fn state(mut self, input: crate::types::SettablePolicyStateValues) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
@@ -97,6 +100,7 @@ impl CreateLifecyclePolicyInputBuilder {
         &self.state
     }
     /// <p>The configuration details of the lifecycle policy.</p>
+    /// This field is required.
     pub fn policy_details(mut self, input: crate::types::PolicyDetails) -> Self {
         self.policy_details = ::std::option::Option::Some(input);
         self
@@ -133,7 +137,7 @@ impl CreateLifecyclePolicyInputBuilder {
     /// Consumes the builder and constructs a [`CreateLifecyclePolicyInput`](crate::operation::create_lifecycle_policy::CreateLifecyclePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_lifecycle_policy::CreateLifecyclePolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_lifecycle_policy::CreateLifecyclePolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_lifecycle_policy::CreateLifecyclePolicyInput {
             execution_role_arn: self.execution_role_arn,

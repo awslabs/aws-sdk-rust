@@ -48,6 +48,7 @@ pub struct ListBuiltInSlotTypesInputBuilder {
 }
 impl ListBuiltInSlotTypesInputBuilder {
     /// <p>The identifier of the language and locale of the slot types to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// This field is required.
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,7 @@ impl ListBuiltInSlotTypesInputBuilder {
     /// Consumes the builder and constructs a [`ListBuiltInSlotTypesInput`](crate::operation::list_built_in_slot_types::ListBuiltInSlotTypesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_built_in_slot_types::ListBuiltInSlotTypesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_built_in_slot_types::ListBuiltInSlotTypesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_built_in_slot_types::ListBuiltInSlotTypesInput {
             locale_id: self.locale_id,

@@ -34,6 +34,7 @@ pub struct UpdateNamespaceOutputBuilder {
 }
 impl UpdateNamespaceOutputBuilder {
     /// <p>A list of tag instances.</p>
+    /// This field is required.
     pub fn namespace(mut self, input: crate::types::Namespace) -> Self {
         self.namespace = ::std::option::Option::Some(input);
         self

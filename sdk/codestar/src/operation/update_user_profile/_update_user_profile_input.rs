@@ -58,6 +58,7 @@ pub struct UpdateUserProfileInputBuilder {
 }
 impl UpdateUserProfileInputBuilder {
     /// <p>The name that will be displayed as the friendly name for the user in AWS CodeStar.</p>
+    /// This field is required.
     pub fn user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_arn = ::std::option::Option::Some(input.into());
         self
@@ -116,7 +117,7 @@ impl UpdateUserProfileInputBuilder {
     /// Consumes the builder and constructs a [`UpdateUserProfileInput`](crate::operation::update_user_profile::UpdateUserProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_user_profile::UpdateUserProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_user_profile::UpdateUserProfileInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_user_profile::UpdateUserProfileInput {
             user_arn: self.user_arn,
             display_name: self.display_name,

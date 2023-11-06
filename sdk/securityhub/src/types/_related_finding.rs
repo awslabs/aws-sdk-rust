@@ -35,6 +35,7 @@ pub struct RelatedFindingBuilder {
 }
 impl RelatedFindingBuilder {
     /// <p>The ARN of the product that generated a related finding.</p>
+    /// This field is required.
     pub fn product_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_arn = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl RelatedFindingBuilder {
         &self.product_arn
     }
     /// <p>The product-generated identifier for a related finding.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

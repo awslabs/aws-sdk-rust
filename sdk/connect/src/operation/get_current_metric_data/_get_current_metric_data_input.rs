@@ -154,8 +154,10 @@ impl GetCurrentMetricDataInput {
     /// <li> <p>If you group by <code>ROUTING_PROFILE</code>, you must include either a queue or routing profile filter. In addition, a routing profile filter is required for metrics <code>CONTACTS_SCHEDULED</code>, <code>CONTACTS_IN_QUEUE</code>, and <code> OLDEST_CONTACT_AGE</code>.</p> </li>
     /// <li> <p>If no <code>Grouping</code> is included in the request, a summary of metrics is returned.</p> </li>
     /// </ul>
-    pub fn groupings(&self) -> ::std::option::Option<&[crate::types::Grouping]> {
-        self.groupings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groupings.is_none()`.
+    pub fn groupings(&self) -> &[crate::types::Grouping] {
+        self.groupings.as_deref().unwrap_or_default()
     }
     /// <p>The metrics to retrieve. Specify the name and unit for each metric. The following metrics are available. For a description of all the metrics, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     /// <dl>
@@ -255,8 +257,10 @@ impl GetCurrentMetricDataInput {
     /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#availability-real-time">Availability</a> </p>
     /// </dd>
     /// </dl>
-    pub fn current_metrics(&self) -> ::std::option::Option<&[crate::types::CurrentMetric]> {
-        self.current_metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.current_metrics.is_none()`.
+    pub fn current_metrics(&self) -> &[crate::types::CurrentMetric] {
+        self.current_metrics.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must use the same request parameters as the request that generated the token.</p>
@@ -272,8 +276,10 @@ impl GetCurrentMetricDataInput {
     /// <ul>
     /// <li> <p>Sorting on <code>SLOTS_ACTIVE</code> and <code>SLOTS_AVAILABLE</code> is not supported.</p> </li>
     /// </ul>
-    pub fn sort_criteria(&self) -> ::std::option::Option<&[crate::types::CurrentMetricSortCriteria]> {
-        self.sort_criteria.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sort_criteria.is_none()`.
+    pub fn sort_criteria(&self) -> &[crate::types::CurrentMetricSortCriteria] {
+        self.sort_criteria.as_deref().unwrap_or_default()
     }
 }
 impl GetCurrentMetricDataInput {
@@ -297,6 +303,7 @@ pub struct GetCurrentMetricDataInputBuilder {
 }
 impl GetCurrentMetricDataInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -318,6 +325,7 @@ impl GetCurrentMetricDataInputBuilder {
     /// </ul>
     /// <p>Metric data is retrieved only for the resources associated with the queues or routing profiles, and by any channels included in the filter. (You cannot filter by both queue AND routing profile.) You can include both resource IDs and resource ARNs in the same request. </p>
     /// <p>Currently tagging is only supported on the resources that are passed in the filter.</p>
+    /// This field is required.
     pub fn filters(mut self, input: crate::types::Filters) -> Self {
         self.filters = ::std::option::Option::Some(input);
         self
@@ -757,7 +765,7 @@ impl GetCurrentMetricDataInputBuilder {
     /// Consumes the builder and constructs a [`GetCurrentMetricDataInput`](crate::operation::get_current_metric_data::GetCurrentMetricDataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_current_metric_data::GetCurrentMetricDataInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_current_metric_data::GetCurrentMetricDataInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_current_metric_data::GetCurrentMetricDataInput {
             instance_id: self.instance_id,

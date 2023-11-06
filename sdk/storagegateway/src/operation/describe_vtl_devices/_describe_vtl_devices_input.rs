@@ -9,7 +9,7 @@ pub struct DescribeVtlDevicesInput {
     /// <p>An array of strings, where each string represents the Amazon Resource Name (ARN) of a VTL device.</p> <note>
     /// <p>All of the specified VTL devices must be from the same gateway. If no VTL devices are specified, the result will contain all devices on the specified gateway.</p>
     /// </note>
-    pub vtl_device_ar_ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub vtl_device_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An opaque string that indicates the position at which to begin describing the VTL devices.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Specifies that the number of VTL devices described be limited to the specified number.</p>
@@ -23,8 +23,10 @@ impl DescribeVtlDevicesInput {
     /// <p>An array of strings, where each string represents the Amazon Resource Name (ARN) of a VTL device.</p> <note>
     /// <p>All of the specified VTL devices must be from the same gateway. If no VTL devices are specified, the result will contain all devices on the specified gateway.</p>
     /// </note>
-    pub fn vtl_device_ar_ns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.vtl_device_ar_ns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vtl_device_arns.is_none()`.
+    pub fn vtl_device_arns(&self) -> &[::std::string::String] {
+        self.vtl_device_arns.as_deref().unwrap_or_default()
     }
     /// <p>An opaque string that indicates the position at which to begin describing the VTL devices.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {
@@ -47,12 +49,13 @@ impl DescribeVtlDevicesInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVtlDevicesInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) vtl_device_ar_ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) vtl_device_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,
 }
 impl DescribeVtlDevicesInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// This field is required.
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_arn = ::std::option::Option::Some(input.into());
         self
@@ -66,31 +69,31 @@ impl DescribeVtlDevicesInputBuilder {
     pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.gateway_arn
     }
-    /// Appends an item to `vtl_device_ar_ns`.
+    /// Appends an item to `vtl_device_arns`.
     ///
-    /// To override the contents of this collection use [`set_vtl_device_ar_ns`](Self::set_vtl_device_ar_ns).
+    /// To override the contents of this collection use [`set_vtl_device_arns`](Self::set_vtl_device_arns).
     ///
     /// <p>An array of strings, where each string represents the Amazon Resource Name (ARN) of a VTL device.</p> <note>
     /// <p>All of the specified VTL devices must be from the same gateway. If no VTL devices are specified, the result will contain all devices on the specified gateway.</p>
     /// </note>
-    pub fn vtl_device_ar_ns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.vtl_device_ar_ns.unwrap_or_default();
+    pub fn vtl_device_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.vtl_device_arns.unwrap_or_default();
         v.push(input.into());
-        self.vtl_device_ar_ns = ::std::option::Option::Some(v);
+        self.vtl_device_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of strings, where each string represents the Amazon Resource Name (ARN) of a VTL device.</p> <note>
     /// <p>All of the specified VTL devices must be from the same gateway. If no VTL devices are specified, the result will contain all devices on the specified gateway.</p>
     /// </note>
-    pub fn set_vtl_device_ar_ns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.vtl_device_ar_ns = input;
+    pub fn set_vtl_device_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.vtl_device_arns = input;
         self
     }
     /// <p>An array of strings, where each string represents the Amazon Resource Name (ARN) of a VTL device.</p> <note>
     /// <p>All of the specified VTL devices must be from the same gateway. If no VTL devices are specified, the result will contain all devices on the specified gateway.</p>
     /// </note>
-    pub fn get_vtl_device_ar_ns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.vtl_device_ar_ns
+    pub fn get_vtl_device_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.vtl_device_arns
     }
     /// <p>An opaque string that indicates the position at which to begin describing the VTL devices.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -123,10 +126,11 @@ impl DescribeVtlDevicesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeVtlDevicesInput`](crate::operation::describe_vtl_devices::DescribeVtlDevicesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_vtl_devices::DescribeVtlDevicesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_vtl_devices::DescribeVtlDevicesInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::describe_vtl_devices::DescribeVtlDevicesInput {
             gateway_arn: self.gateway_arn,
-            vtl_device_ar_ns: self.vtl_device_ar_ns,
+            vtl_device_arns: self.vtl_device_arns,
             marker: self.marker,
             limit: self.limit,
         })

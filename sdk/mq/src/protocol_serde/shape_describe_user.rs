@@ -120,7 +120,7 @@ pub(crate) fn de_describe_user(
                     builder = builder.set_console_access(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "groups" => {
-                    builder = builder.set_groups(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                    builder = builder.set_groups(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                 }
                 "pending" => {
                     builder = builder.set_pending(crate::protocol_serde::shape_user_pending_changes::de_user_pending_changes(tokens)?);

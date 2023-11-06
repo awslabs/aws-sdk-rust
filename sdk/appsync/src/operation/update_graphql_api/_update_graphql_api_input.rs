@@ -53,8 +53,10 @@ impl UpdateGraphqlApiInput {
         self.open_id_connect_config.as_ref()
     }
     /// <p>A list of additional authentication providers for the <code>GraphqlApi</code> API.</p>
-    pub fn additional_authentication_providers(&self) -> ::std::option::Option<&[crate::types::AdditionalAuthenticationProvider]> {
-        self.additional_authentication_providers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_authentication_providers.is_none()`.
+    pub fn additional_authentication_providers(&self) -> &[crate::types::AdditionalAuthenticationProvider] {
+        self.additional_authentication_providers.as_deref().unwrap_or_default()
     }
     /// <p>A flag indicating whether to use X-Ray tracing for the <code>GraphqlApi</code>.</p>
     pub fn xray_enabled(&self) -> ::std::option::Option<bool> {
@@ -99,6 +101,7 @@ pub struct UpdateGraphqlApiInputBuilder {
 }
 impl UpdateGraphqlApiInputBuilder {
     /// <p>The API ID.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -113,6 +116,7 @@ impl UpdateGraphqlApiInputBuilder {
         &self.api_id
     }
     /// <p>The new name for the <code>GraphqlApi</code> object.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -267,7 +271,7 @@ impl UpdateGraphqlApiInputBuilder {
     /// Consumes the builder and constructs a [`UpdateGraphqlApiInput`](crate::operation::update_graphql_api::UpdateGraphqlApiInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_graphql_api::UpdateGraphqlApiInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_graphql_api::UpdateGraphqlApiInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_graphql_api::UpdateGraphqlApiInput {
             api_id: self.api_id,
             name: self.name,

@@ -59,6 +59,7 @@ pub struct GetScalingConfigurationRecommendationInputBuilder {
 }
 impl GetScalingConfigurationRecommendationInputBuilder {
     /// <p>The name of a previously completed Inference Recommender job.</p>
+    /// This field is required.
     pub fn inference_recommendations_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inference_recommendations_job_name = ::std::option::Option::Some(input.into());
         self
@@ -139,7 +140,7 @@ impl GetScalingConfigurationRecommendationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_scaling_configuration_recommendation::GetScalingConfigurationRecommendationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_scaling_configuration_recommendation::GetScalingConfigurationRecommendationInput {

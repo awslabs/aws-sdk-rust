@@ -4,25 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TranslatePinDataOutput {
     /// <p>The ougoing encrypted PIN block data after tranlation.</p>
-    pub pin_block: ::std::option::Option<::std::string::String>,
+    pub pin_block: ::std::string::String,
     /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses to encrypt outgoing PIN block data after translation.</p>
-    pub key_arn: ::std::option::Option<::std::string::String>,
+    pub key_arn: ::std::string::String,
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
-    pub key_check_value: ::std::option::Option<::std::string::String>,
+    pub key_check_value: ::std::string::String,
     _request_id: Option<String>,
 }
 impl TranslatePinDataOutput {
     /// <p>The ougoing encrypted PIN block data after tranlation.</p>
-    pub fn pin_block(&self) -> ::std::option::Option<&str> {
-        self.pin_block.as_deref()
+    pub fn pin_block(&self) -> &str {
+        use std::ops::Deref;
+        self.pin_block.deref()
     }
     /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses to encrypt outgoing PIN block data after translation.</p>
-    pub fn key_arn(&self) -> ::std::option::Option<&str> {
-        self.key_arn.as_deref()
+    pub fn key_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.key_arn.deref()
     }
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
-    pub fn key_check_value(&self) -> ::std::option::Option<&str> {
-        self.key_check_value.as_deref()
+    pub fn key_check_value(&self) -> &str {
+        use std::ops::Deref;
+        self.key_check_value.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for TranslatePinDataOutput {
@@ -48,6 +51,7 @@ pub struct TranslatePinDataOutputBuilder {
 }
 impl TranslatePinDataOutputBuilder {
     /// <p>The ougoing encrypted PIN block data after tranlation.</p>
+    /// This field is required.
     pub fn pin_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pin_block = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +66,7 @@ impl TranslatePinDataOutputBuilder {
         &self.pin_block
     }
     /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses to encrypt outgoing PIN block data after translation.</p>
+    /// This field is required.
     pub fn key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_arn = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +81,7 @@ impl TranslatePinDataOutputBuilder {
         &self.key_arn
     }
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
+    /// This field is required.
     pub fn key_check_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_check_value = ::std::option::Option::Some(input.into());
         self
@@ -99,12 +105,33 @@ impl TranslatePinDataOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`TranslatePinDataOutput`](crate::operation::translate_pin_data::TranslatePinDataOutput).
-    pub fn build(self) -> crate::operation::translate_pin_data::TranslatePinDataOutput {
-        crate::operation::translate_pin_data::TranslatePinDataOutput {
-            pin_block: self.pin_block,
-            key_arn: self.key_arn,
-            key_check_value: self.key_check_value,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`pin_block`](crate::operation::translate_pin_data::builders::TranslatePinDataOutputBuilder::pin_block)
+    /// - [`key_arn`](crate::operation::translate_pin_data::builders::TranslatePinDataOutputBuilder::key_arn)
+    /// - [`key_check_value`](crate::operation::translate_pin_data::builders::TranslatePinDataOutputBuilder::key_check_value)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::translate_pin_data::TranslatePinDataOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::translate_pin_data::TranslatePinDataOutput {
+            pin_block: self.pin_block.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "pin_block",
+                    "pin_block was not specified but it is required when building TranslatePinDataOutput",
+                )
+            })?,
+            key_arn: self.key_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "key_arn",
+                    "key_arn was not specified but it is required when building TranslatePinDataOutput",
+                )
+            })?,
+            key_check_value: self.key_check_value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "key_check_value",
+                    "key_check_value was not specified but it is required when building TranslatePinDataOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

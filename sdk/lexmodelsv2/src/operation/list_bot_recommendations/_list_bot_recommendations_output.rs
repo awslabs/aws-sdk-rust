@@ -29,8 +29,10 @@ impl ListBotRecommendationsOutput {
         self.locale_id.as_deref()
     }
     /// <p>Summary information for the bot recommendations that meet the filter specified in this request. The length of the list is specified in the maxResults parameter of the request. If there are more bot recommendations available, the nextToken field contains a token to get the next page of results.</p>
-    pub fn bot_recommendation_summaries(&self) -> ::std::option::Option<&[crate::types::BotRecommendationSummary]> {
-        self.bot_recommendation_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bot_recommendation_summaries.is_none()`.
+    pub fn bot_recommendation_summaries(&self) -> &[crate::types::BotRecommendationSummary] {
+        self.bot_recommendation_summaries.as_deref().unwrap_or_default()
     }
     /// <p>A token that indicates whether there are more results to return in a response to the ListBotRecommendations operation. If the nextToken field is present, you send the contents as the nextToken parameter of a ListBotRecommendations operation request to get the next page of results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

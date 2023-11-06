@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventFilter {
     /// <p>The source of the events.</p>
-    pub source: ::std::option::Option<::std::string::String>,
+    pub source: ::std::string::String,
 }
 impl EventFilter {
     /// <p>The source of the events.</p>
-    pub fn source(&self) -> ::std::option::Option<&str> {
-        self.source.as_deref()
+    pub fn source(&self) -> &str {
+        use std::ops::Deref;
+        self.source.deref()
     }
 }
 impl EventFilter {
@@ -28,6 +29,7 @@ pub struct EventFilterBuilder {
 }
 impl EventFilterBuilder {
     /// <p>The source of the events.</p>
+    /// This field is required.
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl EventFilterBuilder {
         &self.source
     }
     /// Consumes the builder and constructs a [`EventFilter`](crate::types::EventFilter).
-    pub fn build(self) -> crate::types::EventFilter {
-        crate::types::EventFilter { source: self.source }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`source`](crate::types::builders::EventFilterBuilder::source)
+    pub fn build(self) -> ::std::result::Result<crate::types::EventFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EventFilter {
+            source: self.source.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "source",
+                    "source was not specified but it is required when building EventFilter",
+                )
+            })?,
+        })
     }
 }

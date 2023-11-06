@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CancelQuery`](crate::operation::cancel_query::builders::CancelQueryFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`query_id(impl Into<String>)`](crate::operation::cancel_query::builders::CancelQueryFluentBuilder::query_id) / [`set_query_id(Option<String>)`](crate::operation::cancel_query::builders::CancelQueryFluentBuilder::set_query_id): <p> The ID of the query that needs to be cancelled. <code>QueryID</code> is returned as part of the query result. </p>
+    ///   - [`query_id(impl Into<String>)`](crate::operation::cancel_query::builders::CancelQueryFluentBuilder::query_id) / [`set_query_id(Option<String>)`](crate::operation::cancel_query::builders::CancelQueryFluentBuilder::set_query_id):<br>required: **true**<br><p> The ID of the query that needs to be cancelled. <code>QueryID</code> is returned as part of the query result. </p><br>
     /// - On success, responds with [`CancelQueryOutput`](crate::operation::cancel_query::CancelQueryOutput) with field(s):
     ///   - [`cancellation_message(Option<String>)`](crate::operation::cancel_query::CancelQueryOutput::cancellation_message): <p> A <code>CancellationMessage</code> is returned when a <code>CancelQuery</code> request for the query specified by <code>QueryId</code> has already been issued. </p>
     /// - On failure, responds with [`SdkError<CancelQueryError>`](crate::operation::cancel_query::CancelQueryError)

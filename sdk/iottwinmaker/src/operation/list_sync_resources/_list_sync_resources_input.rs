@@ -41,8 +41,10 @@ impl ListSyncResourcesInput {
     /// <li> <p>Filter with ResourceType and ResourceId</p> </li>
     /// <li> <p>Filter with ResourceType and ExternalId</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::SyncResourceFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::SyncResourceFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of results to return at one time. The default is 50.</p>
     /// <p>Valid Range: Minimum value of 0. Maximum value of 200.</p>
@@ -73,6 +75,7 @@ pub struct ListSyncResourcesInputBuilder {
 }
 impl ListSyncResourcesInputBuilder {
     /// <p>The ID of the workspace that contains the sync job.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -89,6 +92,7 @@ impl ListSyncResourcesInputBuilder {
     /// <p>The sync source.</p> <note>
     /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>
     /// </note>
+    /// This field is required.
     pub fn sync_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sync_source = ::std::option::Option::Some(input.into());
         self
@@ -178,7 +182,7 @@ impl ListSyncResourcesInputBuilder {
     /// Consumes the builder and constructs a [`ListSyncResourcesInput`](crate::operation::list_sync_resources::ListSyncResourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_sync_resources::ListSyncResourcesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_sync_resources::ListSyncResourcesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_sync_resources::ListSyncResourcesInput {
             workspace_id: self.workspace_id,
             sync_source: self.sync_source,

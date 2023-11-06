@@ -34,6 +34,7 @@ pub struct DescribeFeatureMetadataInputBuilder {
 }
 impl DescribeFeatureMetadataInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the feature group containing the feature.</p>
+    /// This field is required.
     pub fn feature_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_group_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeFeatureMetadataInputBuilder {
         &self.feature_group_name
     }
     /// <p>The name of the feature.</p>
+    /// This field is required.
     pub fn feature_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_name = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl DescribeFeatureMetadataInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_feature_metadata::DescribeFeatureMetadataInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_feature_metadata::DescribeFeatureMetadataInput {
             feature_group_name: self.feature_group_name,

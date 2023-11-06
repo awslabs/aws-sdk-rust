@@ -69,6 +69,7 @@ impl ListSubscriptionDefinitionVersionsInputBuilder {
         &self.next_token
     }
     /// The ID of the subscription definition.
+    /// This field is required.
     pub fn subscription_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_definition_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListSubscriptionDefinitionVersionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_subscription_definition_versions::ListSubscriptionDefinitionVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_subscription_definition_versions::ListSubscriptionDefinitionVersionsInput {

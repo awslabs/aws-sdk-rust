@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeProgram`](crate::operation::describe_program::builders::DescribeProgramFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`channel_name(impl Into<String>)`](crate::operation::describe_program::builders::DescribeProgramFluentBuilder::channel_name) / [`set_channel_name(Option<String>)`](crate::operation::describe_program::builders::DescribeProgramFluentBuilder::set_channel_name): <p>The name of the channel associated with this Program.</p>
-    ///   - [`program_name(impl Into<String>)`](crate::operation::describe_program::builders::DescribeProgramFluentBuilder::program_name) / [`set_program_name(Option<String>)`](crate::operation::describe_program::builders::DescribeProgramFluentBuilder::set_program_name): <p>The name of the program.</p>
+    ///   - [`channel_name(impl Into<String>)`](crate::operation::describe_program::builders::DescribeProgramFluentBuilder::channel_name) / [`set_channel_name(Option<String>)`](crate::operation::describe_program::builders::DescribeProgramFluentBuilder::set_channel_name):<br>required: **true**<br><p>The name of the channel associated with this Program.</p><br>
+    ///   - [`program_name(impl Into<String>)`](crate::operation::describe_program::builders::DescribeProgramFluentBuilder::program_name) / [`set_program_name(Option<String>)`](crate::operation::describe_program::builders::DescribeProgramFluentBuilder::set_program_name):<br>required: **true**<br><p>The name of the program.</p><br>
     /// - On success, responds with [`DescribeProgramOutput`](crate::operation::describe_program::DescribeProgramOutput) with field(s):
-    ///   - [`ad_breaks(Option<Vec<AdBreak>>)`](crate::operation::describe_program::DescribeProgramOutput::ad_breaks): <p>The ad break configuration settings.</p>
+    ///   - [`ad_breaks(Option<Vec::<AdBreak>>)`](crate::operation::describe_program::DescribeProgramOutput::ad_breaks): <p>The ad break configuration settings.</p>
     ///   - [`arn(Option<String>)`](crate::operation::describe_program::DescribeProgramOutput::arn): <p>The ARN of the program.</p>
     ///   - [`channel_name(Option<String>)`](crate::operation::describe_program::DescribeProgramOutput::channel_name): <p>The name of the channel that the program belongs to.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_program::DescribeProgramOutput::creation_time): <p>The timestamp of when the program was created.</p>

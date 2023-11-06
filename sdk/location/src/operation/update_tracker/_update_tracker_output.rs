@@ -4,31 +4,33 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTrackerOutput {
     /// <p>The name of the updated tracker resource.</p>
-    pub tracker_name: ::std::option::Option<::std::string::String>,
+    pub tracker_name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the updated tracker resource. Used to specify a resource across AWS.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
     /// </ul>
-    pub tracker_arn: ::std::option::Option<::std::string::String>,
+    pub tracker_arn: ::std::string::String,
     /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub update_time: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
 impl UpdateTrackerOutput {
     /// <p>The name of the updated tracker resource.</p>
-    pub fn tracker_name(&self) -> ::std::option::Option<&str> {
-        self.tracker_name.as_deref()
+    pub fn tracker_name(&self) -> &str {
+        use std::ops::Deref;
+        self.tracker_name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the updated tracker resource. Used to specify a resource across AWS.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
     /// </ul>
-    pub fn tracker_arn(&self) -> ::std::option::Option<&str> {
-        self.tracker_arn.as_deref()
+    pub fn tracker_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.tracker_arn.deref()
     }
     /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.update_time.as_ref()
+    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.update_time
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateTrackerOutput {
@@ -54,6 +56,7 @@ pub struct UpdateTrackerOutputBuilder {
 }
 impl UpdateTrackerOutputBuilder {
     /// <p>The name of the updated tracker resource.</p>
+    /// This field is required.
     pub fn tracker_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tracker_name = ::std::option::Option::Some(input.into());
         self
@@ -71,6 +74,7 @@ impl UpdateTrackerOutputBuilder {
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn tracker_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tracker_arn = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +95,7 @@ impl UpdateTrackerOutputBuilder {
         &self.tracker_arn
     }
     /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// This field is required.
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
         self
@@ -114,12 +119,33 @@ impl UpdateTrackerOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateTrackerOutput`](crate::operation::update_tracker::UpdateTrackerOutput).
-    pub fn build(self) -> crate::operation::update_tracker::UpdateTrackerOutput {
-        crate::operation::update_tracker::UpdateTrackerOutput {
-            tracker_name: self.tracker_name,
-            tracker_arn: self.tracker_arn,
-            update_time: self.update_time,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`tracker_name`](crate::operation::update_tracker::builders::UpdateTrackerOutputBuilder::tracker_name)
+    /// - [`tracker_arn`](crate::operation::update_tracker::builders::UpdateTrackerOutputBuilder::tracker_arn)
+    /// - [`update_time`](crate::operation::update_tracker::builders::UpdateTrackerOutputBuilder::update_time)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_tracker::UpdateTrackerOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_tracker::UpdateTrackerOutput {
+            tracker_name: self.tracker_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "tracker_name",
+                    "tracker_name was not specified but it is required when building UpdateTrackerOutput",
+                )
+            })?,
+            tracker_arn: self.tracker_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "tracker_arn",
+                    "tracker_arn was not specified but it is required when building UpdateTrackerOutput",
+                )
+            })?,
+            update_time: self.update_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "update_time",
+                    "update_time was not specified but it is required when building UpdateTrackerOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

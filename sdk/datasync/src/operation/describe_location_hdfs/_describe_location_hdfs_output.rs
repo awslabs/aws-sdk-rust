@@ -39,8 +39,10 @@ impl DescribeLocationHdfsOutput {
         self.location_uri.as_deref()
     }
     /// <p>The NameNode that manage the HDFS namespace. </p>
-    pub fn name_nodes(&self) -> ::std::option::Option<&[crate::types::HdfsNameNode]> {
-        self.name_nodes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.name_nodes.is_none()`.
+    pub fn name_nodes(&self) -> &[crate::types::HdfsNameNode] {
+        self.name_nodes.as_deref().unwrap_or_default()
     }
     /// <p>The size of the data blocks to write into the HDFS cluster. </p>
     pub fn block_size(&self) -> ::std::option::Option<i32> {
@@ -71,8 +73,10 @@ impl DescribeLocationHdfsOutput {
         self.kerberos_principal.as_deref()
     }
     /// <p>The ARNs of the agents that are used to connect to the HDFS cluster. </p>
-    pub fn agent_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.agent_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agent_arns.is_none()`.
+    pub fn agent_arns(&self) -> &[::std::string::String] {
+        self.agent_arns.as_deref().unwrap_or_default()
     }
     /// <p>The time that the HDFS location was created.</p>
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

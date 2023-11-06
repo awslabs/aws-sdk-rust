@@ -35,8 +35,10 @@ impl AgentInfo {
         self.host_name.as_deref()
     }
     /// <p>Network details about the host where the agent or collector resides.</p>
-    pub fn agent_network_info_list(&self) -> ::std::option::Option<&[crate::types::AgentNetworkInfo]> {
-        self.agent_network_info_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agent_network_info_list.is_none()`.
+    pub fn agent_network_info_list(&self) -> &[crate::types::AgentNetworkInfo] {
+        self.agent_network_info_list.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the connector.</p>
     pub fn connector_id(&self) -> ::std::option::Option<&str> {

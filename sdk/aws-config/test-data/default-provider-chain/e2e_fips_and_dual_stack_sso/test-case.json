@@ -1,0 +1,12 @@
+{
+  "name": "e2e_fips_and_dual_stack_sso",
+  "docs": "end to end SSO test with FIPS and dual stack enabled",
+  "result": {
+    "Ok": {
+      "access_key_id": "ASIARCORRECT",
+      "secret_access_key": "secretkeycorrect",
+      "session_token": "tokencorrect",
+      "expiry": 1234567890
+    }
+  }
+}

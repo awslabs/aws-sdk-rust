@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EntityRecognizerAnnotations {
     /// <p> Specifies the Amazon S3 location where the annotations for an entity recognizer are located. The URI must be in the same Region as the API endpoint that you are calling.</p>
-    pub s3_uri: ::std::option::Option<::std::string::String>,
+    pub s3_uri: ::std::string::String,
     /// <p> Specifies the Amazon S3 location where the test annotations for an entity recognizer are located. The URI must be in the same Region as the API endpoint that you are calling.</p>
     pub test_s3_uri: ::std::option::Option<::std::string::String>,
 }
 impl EntityRecognizerAnnotations {
     /// <p> Specifies the Amazon S3 location where the annotations for an entity recognizer are located. The URI must be in the same Region as the API endpoint that you are calling.</p>
-    pub fn s3_uri(&self) -> ::std::option::Option<&str> {
-        self.s3_uri.as_deref()
+    pub fn s3_uri(&self) -> &str {
+        use std::ops::Deref;
+        self.s3_uri.deref()
     }
     /// <p> Specifies the Amazon S3 location where the test annotations for an entity recognizer are located. The URI must be in the same Region as the API endpoint that you are calling.</p>
     pub fn test_s3_uri(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct EntityRecognizerAnnotationsBuilder {
 }
 impl EntityRecognizerAnnotationsBuilder {
     /// <p> Specifies the Amazon S3 location where the annotations for an entity recognizer are located. The URI must be in the same Region as the API endpoint that you are calling.</p>
+    /// This field is required.
     pub fn s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_uri = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl EntityRecognizerAnnotationsBuilder {
         &self.test_s3_uri
     }
     /// Consumes the builder and constructs a [`EntityRecognizerAnnotations`](crate::types::EntityRecognizerAnnotations).
-    pub fn build(self) -> crate::types::EntityRecognizerAnnotations {
-        crate::types::EntityRecognizerAnnotations {
-            s3_uri: self.s3_uri,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`s3_uri`](crate::types::builders::EntityRecognizerAnnotationsBuilder::s3_uri)
+    pub fn build(self) -> ::std::result::Result<crate::types::EntityRecognizerAnnotations, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EntityRecognizerAnnotations {
+            s3_uri: self.s3_uri.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "s3_uri",
+                    "s3_uri was not specified but it is required when building EntityRecognizerAnnotations",
+                )
+            })?,
             test_s3_uri: self.test_s3_uri,
-        }
+        })
     }
 }

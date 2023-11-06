@@ -97,8 +97,10 @@ impl RegisterJobDefinitionInput {
     /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to <code>EC2</code>. To run the job on Fargate resources, specify <code>FARGATE</code>.</p> <note>
     /// <p>If the job runs on Amazon EKS resources, then you must not specify <code>platformCapabilities</code>.</p>
     /// </note>
-    pub fn platform_capabilities(&self) -> ::std::option::Option<&[crate::types::PlatformCapability]> {
-        self.platform_capabilities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.platform_capabilities.is_none()`.
+    pub fn platform_capabilities(&self) -> &[crate::types::PlatformCapability] {
+        self.platform_capabilities.as_deref().unwrap_or_default()
     }
     /// <p>An object with various properties that are specific to Amazon EKS based jobs. This must not be specified for Amazon ECS based job definitions.</p>
     pub fn eks_properties(&self) -> ::std::option::Option<&crate::types::EksProperties> {
@@ -131,6 +133,7 @@ pub struct RegisterJobDefinitionInputBuilder {
 }
 impl RegisterJobDefinitionInputBuilder {
     /// <p>The name of the job definition to register. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
+    /// This field is required.
     pub fn job_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_definition_name = ::std::option::Option::Some(input.into());
         self
@@ -147,6 +150,7 @@ impl RegisterJobDefinitionInputBuilder {
     /// <p>The type of job definition. For more information about multi-node parallel jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p> <note>
     /// <p>If the job is run on Fargate resources, then <code>multinode</code> isn't supported.</p>
     /// </note>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::JobDefinitionType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -358,7 +362,7 @@ impl RegisterJobDefinitionInputBuilder {
     /// Consumes the builder and constructs a [`RegisterJobDefinitionInput`](crate::operation::register_job_definition::RegisterJobDefinitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_job_definition::RegisterJobDefinitionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::register_job_definition::RegisterJobDefinitionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::register_job_definition::RegisterJobDefinitionInput {
             job_definition_name: self.job_definition_name,

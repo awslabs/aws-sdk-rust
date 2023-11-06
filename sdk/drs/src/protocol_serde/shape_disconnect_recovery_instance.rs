@@ -65,11 +65,10 @@ pub fn de_disconnect_recovery_instance_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::disconnect_recovery_instance::DisconnectRecoveryInstanceError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::disconnect_recovery_instance::DisconnectRecoveryInstanceError::ResourceNotFoundException({
@@ -102,11 +101,10 @@ pub fn de_disconnect_recovery_instance_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::disconnect_recovery_instance::DisconnectRecoveryInstanceError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "UninitializedAccountException" => {
@@ -152,10 +150,10 @@ pub fn de_disconnect_recovery_instance_http_response(
 
 pub fn ser_disconnect_recovery_instance_input(
     input: &crate::operation::disconnect_recovery_instance::DisconnectRecoveryInstanceInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_disconnect_recovery_instance_input::ser_disconnect_recovery_instance_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

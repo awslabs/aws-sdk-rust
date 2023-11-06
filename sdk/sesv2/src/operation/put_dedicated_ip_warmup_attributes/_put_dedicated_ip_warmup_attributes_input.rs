@@ -35,6 +35,7 @@ pub struct PutDedicatedIpWarmupAttributesInputBuilder {
 }
 impl PutDedicatedIpWarmupAttributesInputBuilder {
     /// <p>The dedicated IP address that you want to update the warm-up attributes for.</p>
+    /// This field is required.
     pub fn ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl PutDedicatedIpWarmupAttributesInputBuilder {
         &self.ip
     }
     /// <p>The warm-up percentage that you want to associate with the dedicated IP address.</p>
+    /// This field is required.
     pub fn warmup_percentage(mut self, input: i32) -> Self {
         self.warmup_percentage = ::std::option::Option::Some(input);
         self
@@ -67,7 +69,7 @@ impl PutDedicatedIpWarmupAttributesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_dedicated_ip_warmup_attributes::PutDedicatedIpWarmupAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::put_dedicated_ip_warmup_attributes::PutDedicatedIpWarmupAttributesInput {

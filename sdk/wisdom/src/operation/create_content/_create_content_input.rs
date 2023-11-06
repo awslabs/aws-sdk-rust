@@ -76,6 +76,7 @@ pub struct CreateContentInputBuilder {
 }
 impl CreateContentInputBuilder {
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// This field is required.
     pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.knowledge_base_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +91,7 @@ impl CreateContentInputBuilder {
         &self.knowledge_base_id
     }
     /// <p>The name of the content. Each piece of content in a knowledge base must have a unique name. You can retrieve a piece of content using only its knowledge base and its name with the <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_SearchContent.html">SearchContent</a> API.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -152,6 +154,7 @@ impl CreateContentInputBuilder {
         &self.metadata
     }
     /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.</p>
+    /// This field is required.
     pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upload_id = ::std::option::Option::Some(input.into());
         self
@@ -202,7 +205,7 @@ impl CreateContentInputBuilder {
     /// Consumes the builder and constructs a [`CreateContentInput`](crate::operation::create_content::CreateContentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_content::CreateContentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_content::CreateContentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_content::CreateContentInput {
             knowledge_base_id: self.knowledge_base_id,
             name: self.name,

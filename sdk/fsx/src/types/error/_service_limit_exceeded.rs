@@ -62,6 +62,7 @@ pub struct ServiceLimitExceededBuilder {
 }
 impl ServiceLimitExceededBuilder {
     /// <p>Enumeration of the service limit that was exceeded. </p>
+    /// This field is required.
     pub fn limit(mut self, input: crate::types::ServiceLimit) -> Self {
         self.limit = ::std::option::Option::Some(input);
         self

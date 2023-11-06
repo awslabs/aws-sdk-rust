@@ -35,6 +35,7 @@ pub struct DescribeBudgetInputBuilder {
 }
 impl DescribeBudgetInputBuilder {
     /// <p>The <code>accountId</code> that is associated with the budget that you want a description of.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl DescribeBudgetInputBuilder {
         &self.account_id
     }
     /// <p>The name of the budget that you want a description of.</p>
+    /// This field is required.
     pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.budget_name = ::std::option::Option::Some(input.into());
         self
@@ -65,7 +67,7 @@ impl DescribeBudgetInputBuilder {
     /// Consumes the builder and constructs a [`DescribeBudgetInput`](crate::operation::describe_budget::DescribeBudgetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_budget::DescribeBudgetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_budget::DescribeBudgetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_budget::DescribeBudgetInput {
             account_id: self.account_id,
             budget_name: self.budget_name,

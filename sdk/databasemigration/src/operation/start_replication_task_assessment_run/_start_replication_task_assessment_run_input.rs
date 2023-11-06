@@ -70,15 +70,19 @@ impl StartReplicationTaskAssessmentRunInput {
     /// <p>You can't set a value for <code>IncludeOnly</code> if you also set a value for <code>Exclude</code> in the API operation. </p>
     /// <p>To identify the names of the default individual assessments that DMS supports for the associated migration task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own <code>ReplicationTaskArn</code> request parameter.</p>
     /// </note>
-    pub fn include_only(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.include_only.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.include_only.is_none()`.
+    pub fn include_only(&self) -> &[::std::string::String] {
+        self.include_only.as_deref().unwrap_or_default()
     }
     /// <p>Space-separated list of names for specific individual assessments that you want to exclude. These names come from the default list of individual assessments that DMS supports for the associated migration task. This task is specified by <code>ReplicationTaskArn</code>.</p> <note>
     /// <p>You can't set a value for <code>Exclude</code> if you also set a value for <code>IncludeOnly</code> in the API operation.</p>
     /// <p>To identify the names of the default individual assessments that DMS supports for the associated migration task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own <code>ReplicationTaskArn</code> request parameter.</p>
     /// </note>
-    pub fn exclude(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.exclude.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclude.is_none()`.
+    pub fn exclude(&self) -> &[::std::string::String] {
+        self.exclude.as_deref().unwrap_or_default()
     }
 }
 impl StartReplicationTaskAssessmentRunInput {
@@ -104,6 +108,7 @@ pub struct StartReplicationTaskAssessmentRunInputBuilder {
 }
 impl StartReplicationTaskAssessmentRunInputBuilder {
     /// <p>Amazon Resource Name (ARN) of the migration task associated with the premigration assessment run that you want to start.</p>
+    /// This field is required.
     pub fn replication_task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_task_arn = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +123,7 @@ impl StartReplicationTaskAssessmentRunInputBuilder {
         &self.replication_task_arn
     }
     /// <p>ARN of the service role needed to start the assessment run. The role must allow the <code>iam:PassRole</code> action.</p>
+    /// This field is required.
     pub fn service_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_access_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +138,7 @@ impl StartReplicationTaskAssessmentRunInputBuilder {
         &self.service_access_role_arn
     }
     /// <p>Amazon S3 bucket where you want DMS to store the results of this assessment run.</p>
+    /// This field is required.
     pub fn result_location_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.result_location_bucket = ::std::option::Option::Some(input.into());
         self
@@ -200,6 +207,7 @@ impl StartReplicationTaskAssessmentRunInputBuilder {
         &self.result_kms_key_arn
     }
     /// <p>Unique name to identify the assessment run.</p>
+    /// This field is required.
     pub fn assessment_run_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_run_name = ::std::option::Option::Some(input.into());
         self
@@ -276,7 +284,7 @@ impl StartReplicationTaskAssessmentRunInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunInput {

@@ -34,6 +34,7 @@ pub struct DeletePullThroughCacheRuleInputBuilder {
 }
 impl DeletePullThroughCacheRuleInputBuilder {
     /// <p>The Amazon ECR repository prefix associated with the pull through cache rule to delete.</p>
+    /// This field is required.
     pub fn ecr_repository_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ecr_repository_prefix = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl DeletePullThroughCacheRuleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleInput {
             ecr_repository_prefix: self.ecr_repository_prefix,

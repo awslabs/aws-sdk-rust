@@ -69,6 +69,7 @@ pub struct ListAssociatedAssetsInputBuilder {
 }
 impl ListAssociatedAssetsInputBuilder {
     /// <p>The ID of the asset to query.</p>
+    /// This field is required.
     pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_id = ::std::option::Option::Some(input.into());
         self
@@ -162,7 +163,7 @@ impl ListAssociatedAssetsInputBuilder {
     /// Consumes the builder and constructs a [`ListAssociatedAssetsInput`](crate::operation::list_associated_assets::ListAssociatedAssetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_associated_assets::ListAssociatedAssetsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_associated_assets::ListAssociatedAssetsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_associated_assets::ListAssociatedAssetsInput {
             asset_id: self.asset_id,

@@ -2,7 +2,7 @@
 pub fn ser_wait_time(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WaitTime,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.wait_for {
         object.key("WaitFor").string(var_1.as_str());
     }

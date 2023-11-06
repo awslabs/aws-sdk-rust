@@ -14,8 +14,10 @@ impl PutInventoryInput {
         self.instance_id.as_deref()
     }
     /// <p>The inventory items that you want to add or update on managed nodes.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::InventoryItem]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[crate::types::InventoryItem] {
+        self.items.as_deref().unwrap_or_default()
     }
 }
 impl PutInventoryInput {
@@ -34,6 +36,7 @@ pub struct PutInventoryInputBuilder {
 }
 impl PutInventoryInputBuilder {
     /// <p>An managed node ID where you want to add or update inventory items.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -68,7 +71,9 @@ impl PutInventoryInputBuilder {
         &self.items
     }
     /// Consumes the builder and constructs a [`PutInventoryInput`](crate::operation::put_inventory::PutInventoryInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_inventory::PutInventoryInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::put_inventory::PutInventoryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_inventory::PutInventoryInput {
             instance_id: self.instance_id,
             items: self.items,

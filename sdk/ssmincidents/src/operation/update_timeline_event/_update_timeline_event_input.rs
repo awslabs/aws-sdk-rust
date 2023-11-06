@@ -48,8 +48,10 @@ impl UpdateTimelineEventInput {
     /// <p>Updates all existing references in a <code>TimelineEvent</code>. A reference is an Amazon Web Services resource involved or associated with the incident. To specify a reference, enter its Amazon Resource Name (ARN). You can also specify a related item associated with that resource. For example, to specify an Amazon DynamoDB (DynamoDB) table as a resource, use its ARN. You can also specify an Amazon CloudWatch metric associated with the DynamoDB table as a related item.</p> <important>
     /// <p>This update action overrides all existing references. If you want to keep existing references, you must specify them in the call. If you don't, this action removes any existing references and enters only new references.</p>
     /// </important>
-    pub fn event_references(&self) -> ::std::option::Option<&[crate::types::EventReference]> {
-        self.event_references.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_references.is_none()`.
+    pub fn event_references(&self) -> &[crate::types::EventReference] {
+        self.event_references.as_deref().unwrap_or_default()
     }
 }
 impl UpdateTimelineEventInput {
@@ -87,6 +89,7 @@ impl UpdateTimelineEventInputBuilder {
         &self.client_token
     }
     /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
+    /// This field is required.
     pub fn incident_record_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.incident_record_arn = ::std::option::Option::Some(input.into());
         self
@@ -101,6 +104,7 @@ impl UpdateTimelineEventInputBuilder {
         &self.incident_record_arn
     }
     /// <p>The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID.</p>
+    /// This field is required.
     pub fn event_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_id = ::std::option::Option::Some(input.into());
         self
@@ -185,7 +189,7 @@ impl UpdateTimelineEventInputBuilder {
     /// Consumes the builder and constructs a [`UpdateTimelineEventInput`](crate::operation::update_timeline_event::UpdateTimelineEventInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_timeline_event::UpdateTimelineEventInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_timeline_event::UpdateTimelineEventInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_timeline_event::UpdateTimelineEventInput {
             client_token: self.client_token,

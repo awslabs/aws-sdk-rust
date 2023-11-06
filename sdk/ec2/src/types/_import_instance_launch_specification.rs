@@ -37,12 +37,16 @@ impl ImportInstanceLaunchSpecification {
         self.architecture.as_ref()
     }
     /// <p>The security group IDs.</p>
-    pub fn group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_ids.is_none()`.
+    pub fn group_ids(&self) -> &[::std::string::String] {
+        self.group_ids.as_deref().unwrap_or_default()
     }
     /// <p>The security group names.</p>
-    pub fn group_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.group_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_names.is_none()`.
+    pub fn group_names(&self) -> &[::std::string::String] {
+        self.group_names.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
     pub fn instance_initiated_shutdown_behavior(&self) -> ::std::option::Option<&crate::types::ShutdownBehavior> {

@@ -41,6 +41,7 @@ pub struct DisassociateTrunkInterfaceInputBuilder {
 }
 impl DisassociateTrunkInterfaceInputBuilder {
     /// <p>The ID of the association</p>
+    /// This field is required.
     pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl DisassociateTrunkInterfaceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_trunk_interface::DisassociateTrunkInterfaceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_trunk_interface::DisassociateTrunkInterfaceInput {
             association_id: self.association_id,

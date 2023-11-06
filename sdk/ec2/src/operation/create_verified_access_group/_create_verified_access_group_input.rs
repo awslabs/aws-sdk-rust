@@ -32,8 +32,10 @@ impl CreateVerifiedAccessGroupInput {
         self.policy_document.as_deref()
     }
     /// <p>The tags to assign to the Verified Access group.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
     /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -69,6 +71,7 @@ pub struct CreateVerifiedAccessGroupInputBuilder {
 }
 impl CreateVerifiedAccessGroupInputBuilder {
     /// <p>The ID of the Verified Access instance.</p>
+    /// This field is required.
     pub fn verified_access_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.verified_access_instance_id = ::std::option::Option::Some(input.into());
         self
@@ -177,7 +180,7 @@ impl CreateVerifiedAccessGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_verified_access_group::CreateVerifiedAccessGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_verified_access_group::CreateVerifiedAccessGroupInput {
             verified_access_instance_id: self.verified_access_instance_id,

@@ -2,7 +2,7 @@
 pub fn ser_active_directory_identity_provider(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ActiveDirectoryIdentityProvider,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.directory_id {
         object.key("DirectoryId").string(var_1.as_str());
     }

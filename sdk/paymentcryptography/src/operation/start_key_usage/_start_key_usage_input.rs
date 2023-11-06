@@ -27,6 +27,7 @@ pub struct StartKeyUsageInputBuilder {
 }
 impl StartKeyUsageInputBuilder {
     /// <p>The <code>KeyArn</code> of the key.</p>
+    /// This field is required.
     pub fn key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_identifier = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl StartKeyUsageInputBuilder {
     /// Consumes the builder and constructs a [`StartKeyUsageInput`](crate::operation::start_key_usage::StartKeyUsageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_key_usage::StartKeyUsageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_key_usage::StartKeyUsageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_key_usage::StartKeyUsageInput {
             key_identifier: self.key_identifier,
         })

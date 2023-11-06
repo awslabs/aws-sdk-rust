@@ -42,6 +42,7 @@ pub struct GetRecordsInputBuilder {
 }
 impl GetRecordsInputBuilder {
     /// <p>The position in the shard from which you want to start sequentially reading data records. A shard iterator specifies this position using the sequence number of a data record in the shard.</p>
+    /// This field is required.
     pub fn shard_iterator(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shard_iterator = ::std::option::Option::Some(input.into());
         self
@@ -84,7 +85,7 @@ impl GetRecordsInputBuilder {
         &self.stream_arn
     }
     /// Consumes the builder and constructs a [`GetRecordsInput`](crate::operation::get_records::GetRecordsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_records::GetRecordsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_records::GetRecordsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_records::GetRecordsInput {
             shard_iterator: self.shard_iterator,
             limit: self.limit,

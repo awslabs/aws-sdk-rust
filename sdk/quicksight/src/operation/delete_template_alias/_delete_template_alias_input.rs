@@ -41,6 +41,7 @@ pub struct DeleteTemplateAliasInputBuilder {
 }
 impl DeleteTemplateAliasInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the item to delete.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DeleteTemplateAliasInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID for the template that the specified alias is for.</p>
+    /// This field is required.
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl DeleteTemplateAliasInputBuilder {
         &self.template_id
     }
     /// <p>The name for the template alias. To delete a specific alias, you delete the version that the alias points to. You can specify the alias name, or specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. </p>
+    /// This field is required.
     pub fn alias_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias_name = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +88,7 @@ impl DeleteTemplateAliasInputBuilder {
     /// Consumes the builder and constructs a [`DeleteTemplateAliasInput`](crate::operation::delete_template_alias::DeleteTemplateAliasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_template_alias::DeleteTemplateAliasInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_template_alias::DeleteTemplateAliasInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_template_alias::DeleteTemplateAliasInput {
             aws_account_id: self.aws_account_id,

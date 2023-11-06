@@ -39,8 +39,10 @@ impl SendBulkEmailInput {
         self.from_email_address_identity_arn.as_deref()
     }
     /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply.</p>
-    pub fn reply_to_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.reply_to_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reply_to_addresses.is_none()`.
+    pub fn reply_to_addresses(&self) -> &[::std::string::String] {
+        self.reply_to_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The address that you want bounce and complaint notifications to be sent to.</p>
     pub fn feedback_forwarding_email_address(&self) -> ::std::option::Option<&str> {
@@ -53,16 +55,20 @@ impl SendBulkEmailInput {
         self.feedback_forwarding_email_address_identity_arn.as_deref()
     }
     /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
-    pub fn default_email_tags(&self) -> ::std::option::Option<&[crate::types::MessageTag]> {
-        self.default_email_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.default_email_tags.is_none()`.
+    pub fn default_email_tags(&self) -> &[crate::types::MessageTag] {
+        self.default_email_tags.as_deref().unwrap_or_default()
     }
     /// <p>An object that contains the body of the message. You can specify a template message.</p>
     pub fn default_content(&self) -> ::std::option::Option<&crate::types::BulkEmailContent> {
         self.default_content.as_ref()
     }
     /// <p>The list of bulk email entry objects.</p>
-    pub fn bulk_email_entries(&self) -> ::std::option::Option<&[crate::types::BulkEmailEntry]> {
-        self.bulk_email_entries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bulk_email_entries.is_none()`.
+    pub fn bulk_email_entries(&self) -> &[crate::types::BulkEmailEntry] {
+        self.bulk_email_entries.as_deref().unwrap_or_default()
     }
     /// <p>The name of the configuration set to use when sending the email.</p>
     pub fn configuration_set_name(&self) -> ::std::option::Option<&str> {
@@ -200,6 +206,7 @@ impl SendBulkEmailInputBuilder {
         &self.default_email_tags
     }
     /// <p>An object that contains the body of the message. You can specify a template message.</p>
+    /// This field is required.
     pub fn default_content(mut self, input: crate::types::BulkEmailContent) -> Self {
         self.default_content = ::std::option::Option::Some(input);
         self
@@ -250,7 +257,7 @@ impl SendBulkEmailInputBuilder {
     /// Consumes the builder and constructs a [`SendBulkEmailInput`](crate::operation::send_bulk_email::SendBulkEmailInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::send_bulk_email::SendBulkEmailInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::send_bulk_email::SendBulkEmailInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_bulk_email::SendBulkEmailInput {
             from_email_address: self.from_email_address,
             from_email_address_identity_arn: self.from_email_address_identity_arn,

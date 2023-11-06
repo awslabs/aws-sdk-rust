@@ -11,8 +11,10 @@ pub struct ListDataSourceSyncJobsOutput {
 }
 impl ListDataSourceSyncJobsOutput {
     /// <p>A history of synchronization jobs for the data source connector.</p>
-    pub fn history(&self) -> ::std::option::Option<&[crate::types::DataSourceSyncJob]> {
-        self.history.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.history.is_none()`.
+    pub fn history(&self) -> &[crate::types::DataSourceSyncJob] {
+        self.history.as_deref().unwrap_or_default()
     }
     /// <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of jobs.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

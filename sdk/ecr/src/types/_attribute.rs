@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Attribute {
     /// <p>The attribute key.</p>
-    pub key: ::std::option::Option<::std::string::String>,
+    pub key: ::std::string::String,
     /// <p>The value assigned to the attribute key.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl Attribute {
     /// <p>The attribute key.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
-        self.key.as_deref()
+    pub fn key(&self) -> &str {
+        use std::ops::Deref;
+        self.key.deref()
     }
     /// <p>The value assigned to the attribute key.</p>
     pub fn value(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct AttributeBuilder {
 }
 impl AttributeBuilder {
     /// <p>The attribute key.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl AttributeBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`Attribute`](crate::types::Attribute).
-    pub fn build(self) -> crate::types::Attribute {
-        crate::types::Attribute {
-            key: self.key,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key`](crate::types::builders::AttributeBuilder::key)
+    pub fn build(self) -> ::std::result::Result<crate::types::Attribute, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Attribute {
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building Attribute",
+                )
+            })?,
             value: self.value,
-        }
+        })
     }
 }

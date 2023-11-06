@@ -34,6 +34,7 @@ pub struct ProvideAnomalyFeedbackInputBuilder {
 }
 impl ProvideAnomalyFeedbackInputBuilder {
     /// <p>A cost anomaly ID. </p>
+    /// This field is required.
     pub fn anomaly_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl ProvideAnomalyFeedbackInputBuilder {
         &self.anomaly_id
     }
     /// <p>Describes whether the cost anomaly was a planned activity or you considered it an anomaly. </p>
+    /// This field is required.
     pub fn feedback(mut self, input: crate::types::AnomalyFeedbackType) -> Self {
         self.feedback = ::std::option::Option::Some(input);
         self
@@ -64,8 +66,10 @@ impl ProvideAnomalyFeedbackInputBuilder {
     /// Consumes the builder and constructs a [`ProvideAnomalyFeedbackInput`](crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackInput {
             anomaly_id: self.anomaly_id,
             feedback: self.feedback,

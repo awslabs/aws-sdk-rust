@@ -81,8 +81,10 @@ impl VerifiedAccessEndpoint {
         self.device_validation_domain.as_deref()
     }
     /// <p>The IDs of the security groups for the endpoint.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>The load balancer details if creating the Amazon Web Services Verified Access endpoint as <code>load-balancer</code>type.</p>
     pub fn load_balancer_options(&self) -> ::std::option::Option<&crate::types::VerifiedAccessEndpointLoadBalancerOptions> {
@@ -113,8 +115,10 @@ impl VerifiedAccessEndpoint {
         self.deletion_time.as_deref()
     }
     /// <p>The tags.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p> Describes the options in use for server side encryption. </p>
     pub fn sse_specification(&self) -> ::std::option::Option<&crate::types::VerifiedAccessSseSpecificationResponse> {

@@ -17,8 +17,10 @@ impl ReloadReplicationTablesInput {
         self.replication_config_arn.as_deref()
     }
     /// <p>The list of tables to reload.</p>
-    pub fn tables_to_reload(&self) -> ::std::option::Option<&[crate::types::TableToReload]> {
-        self.tables_to_reload.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tables_to_reload.is_none()`.
+    pub fn tables_to_reload(&self) -> &[crate::types::TableToReload] {
+        self.tables_to_reload.as_deref().unwrap_or_default()
     }
     /// <p>Options for reload. Specify <code>data-reload</code> to reload the data and re-validate it if validation is enabled. Specify <code>validate-only</code> to re-validate the table. This option applies only when validation is enabled for the replication. </p>
     pub fn reload_option(&self) -> ::std::option::Option<&crate::types::ReloadOptionValue> {
@@ -42,6 +44,7 @@ pub struct ReloadReplicationTablesInputBuilder {
 }
 impl ReloadReplicationTablesInputBuilder {
     /// <p>The Amazon Resource Name of the replication config for which to reload tables.</p>
+    /// This field is required.
     pub fn replication_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_config_arn = ::std::option::Option::Some(input.into());
         self
@@ -94,7 +97,7 @@ impl ReloadReplicationTablesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reload_replication_tables::ReloadReplicationTablesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::reload_replication_tables::ReloadReplicationTablesInput {
             replication_config_arn: self.replication_config_arn,

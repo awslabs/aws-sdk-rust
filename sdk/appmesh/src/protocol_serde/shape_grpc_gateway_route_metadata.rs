@@ -2,18 +2,18 @@
 pub fn ser_grpc_gateway_route_metadata(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GrpcGatewayRouteMetadata,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("name").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.invert {
-        object.key("invert").boolean(*var_2);
+    if let Some(var_1) = &input.invert {
+        object.key("invert").boolean(*var_1);
     }
-    if let Some(var_3) = &input.r#match {
+    if let Some(var_2) = &input.r#match {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("match").start_object();
-        crate::protocol_serde::shape_grpc_metadata_match_method::ser_grpc_metadata_match_method(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_3 = object.key("match").start_object();
+        crate::protocol_serde::shape_grpc_metadata_match_method::ser_grpc_metadata_match_method(&mut object_3, var_2)?;
+        object_3.finish();
     }
     Ok(())
 }
@@ -58,7 +58,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::grpc_gateway_route_metadata_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

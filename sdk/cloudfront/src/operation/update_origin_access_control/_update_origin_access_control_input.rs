@@ -41,6 +41,7 @@ pub struct UpdateOriginAccessControlInputBuilder {
 }
 impl UpdateOriginAccessControlInputBuilder {
     /// <p>An origin access control.</p>
+    /// This field is required.
     pub fn origin_access_control_config(mut self, input: crate::types::OriginAccessControlConfig) -> Self {
         self.origin_access_control_config = ::std::option::Option::Some(input);
         self
@@ -55,6 +56,7 @@ impl UpdateOriginAccessControlInputBuilder {
         &self.origin_access_control_config
     }
     /// <p>The unique identifier of the origin access control that you are updating.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +89,7 @@ impl UpdateOriginAccessControlInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_origin_access_control::UpdateOriginAccessControlInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_origin_access_control::UpdateOriginAccessControlInput {
             origin_access_control_config: self.origin_access_control_config,

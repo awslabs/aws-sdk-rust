@@ -15,8 +15,10 @@ impl DisableAvailabilityZonesForLoadBalancerInput {
         self.load_balancer_name.as_deref()
     }
     /// <p>The Availability Zones.</p>
-    pub fn availability_zones(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.availability_zones.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
+    pub fn availability_zones(&self) -> &[::std::string::String] {
+        self.availability_zones.as_deref().unwrap_or_default()
     }
 }
 impl DisableAvailabilityZonesForLoadBalancerInput {
@@ -36,6 +38,7 @@ pub struct DisableAvailabilityZonesForLoadBalancerInputBuilder {
 }
 impl DisableAvailabilityZonesForLoadBalancerInputBuilder {
     /// <p>The name of the load balancer.</p>
+    /// This field is required.
     pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
@@ -74,7 +77,7 @@ impl DisableAvailabilityZonesForLoadBalancerInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_availability_zones_for_load_balancer::DisableAvailabilityZonesForLoadBalancerInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::disable_availability_zones_for_load_balancer::DisableAvailabilityZonesForLoadBalancerInput {

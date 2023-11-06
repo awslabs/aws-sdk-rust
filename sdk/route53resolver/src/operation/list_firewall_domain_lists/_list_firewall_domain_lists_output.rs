@@ -17,8 +17,10 @@ impl ListFirewallDomainListsOutput {
     }
     /// <p>A list of the domain lists that you have defined. </p>
     /// <p>This might be a partial list of the domain lists that you've defined. For information, see <code>MaxResults</code>. </p>
-    pub fn firewall_domain_lists(&self) -> ::std::option::Option<&[crate::types::FirewallDomainListMetadata]> {
-        self.firewall_domain_lists.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.firewall_domain_lists.is_none()`.
+    pub fn firewall_domain_lists(&self) -> &[crate::types::FirewallDomainListMetadata] {
+        self.firewall_domain_lists.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListFirewallDomainListsOutput {

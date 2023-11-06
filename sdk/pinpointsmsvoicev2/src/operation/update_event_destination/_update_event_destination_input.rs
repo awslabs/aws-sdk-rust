@@ -32,8 +32,10 @@ impl UpdateEventDestinationInput {
         self.enabled
     }
     /// <p>An array of event types that determine which events to log.</p>
-    pub fn matching_event_types(&self) -> ::std::option::Option<&[crate::types::EventType]> {
-        self.matching_event_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.matching_event_types.is_none()`.
+    pub fn matching_event_types(&self) -> &[crate::types::EventType] {
+        self.matching_event_types.as_deref().unwrap_or_default()
     }
     /// <p>An object that contains information about an event destination that sends data to CloudWatch Logs.</p>
     pub fn cloud_watch_logs_destination(&self) -> ::std::option::Option<&crate::types::CloudWatchLogsDestination> {
@@ -69,6 +71,7 @@ pub struct UpdateEventDestinationInputBuilder {
 }
 impl UpdateEventDestinationInputBuilder {
     /// <p>The configuration set to update with the new event destination. Valid values for this can be the ConfigurationSetName or ConfigurationSetArn.</p>
+    /// This field is required.
     pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +86,7 @@ impl UpdateEventDestinationInputBuilder {
         &self.configuration_set_name
     }
     /// <p>The name to use for the event destination.</p>
+    /// This field is required.
     pub fn event_destination_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_destination_name = ::std::option::Option::Some(input.into());
         self
@@ -175,8 +179,10 @@ impl UpdateEventDestinationInputBuilder {
     /// Consumes the builder and constructs a [`UpdateEventDestinationInput`](crate::operation::update_event_destination::UpdateEventDestinationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_event_destination::UpdateEventDestinationInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::update_event_destination::UpdateEventDestinationInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::update_event_destination::UpdateEventDestinationInput {
             configuration_set_name: self.configuration_set_name,
             event_destination_name: self.event_destination_name,

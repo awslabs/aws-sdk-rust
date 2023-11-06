@@ -2,21 +2,21 @@
 pub fn ser_trail(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Trail,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.cloud_trail_arn {
-        object.key("cloudTrailArn").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("cloudTrailArn").string(input.cloud_trail_arn.as_str());
     }
-    if let Some(var_2) = &input.regions {
-        let mut array_3 = object.key("regions").start_array();
-        for item_4 in var_2 {
+    if let Some(var_1) = &input.regions {
+        let mut array_2 = object.key("regions").start_array();
+        for item_3 in var_1 {
             {
-                array_3.value().string(item_4.as_str());
+                array_2.value().string(item_3.as_str());
             }
         }
-        array_3.finish();
+        array_2.finish();
     }
-    if let Some(var_5) = &input.all_regions {
-        object.key("allRegions").boolean(*var_5);
+    if let Some(var_4) = &input.all_regions {
+        object.key("allRegions").boolean(*var_4);
     }
     Ok(())
 }

@@ -16,8 +16,10 @@ impl DescribeCacheSubnetGroupsOutput {
         self.marker.as_deref()
     }
     /// <p>A list of cache subnet groups. Each element in the list contains detailed information about one group.</p>
-    pub fn cache_subnet_groups(&self) -> ::std::option::Option<&[crate::types::CacheSubnetGroup]> {
-        self.cache_subnet_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cache_subnet_groups.is_none()`.
+    pub fn cache_subnet_groups(&self) -> &[crate::types::CacheSubnetGroup] {
+        self.cache_subnet_groups.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeCacheSubnetGroupsOutput {

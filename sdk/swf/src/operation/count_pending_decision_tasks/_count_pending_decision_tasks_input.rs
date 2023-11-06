@@ -34,6 +34,7 @@ pub struct CountPendingDecisionTasksInputBuilder {
 }
 impl CountPendingDecisionTasksInputBuilder {
     /// <p>The name of the domain that contains the task list.</p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl CountPendingDecisionTasksInputBuilder {
         &self.domain
     }
     /// <p>The name of the task list.</p>
+    /// This field is required.
     pub fn task_list(mut self, input: crate::types::TaskList) -> Self {
         self.task_list = ::std::option::Option::Some(input);
         self
@@ -66,7 +68,7 @@ impl CountPendingDecisionTasksInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::count_pending_decision_tasks::CountPendingDecisionTasksInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::count_pending_decision_tasks::CountPendingDecisionTasksInput {
             domain: self.domain,

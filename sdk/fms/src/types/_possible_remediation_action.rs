@@ -7,7 +7,7 @@ pub struct PossibleRemediationAction {
     /// <p>A description of the list of remediation actions.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ordered list of remediation actions.</p>
-    pub ordered_remediation_actions: ::std::option::Option<::std::vec::Vec<crate::types::RemediationActionWithOrder>>,
+    pub ordered_remediation_actions: ::std::vec::Vec<crate::types::RemediationActionWithOrder>,
     /// <p>Information about whether an action is taken by default.</p>
     pub is_default_action: bool,
 }
@@ -17,8 +17,9 @@ impl PossibleRemediationAction {
         self.description.as_deref()
     }
     /// <p>The ordered list of remediation actions.</p>
-    pub fn ordered_remediation_actions(&self) -> ::std::option::Option<&[crate::types::RemediationActionWithOrder]> {
-        self.ordered_remediation_actions.as_deref()
+    pub fn ordered_remediation_actions(&self) -> &[crate::types::RemediationActionWithOrder] {
+        use std::ops::Deref;
+        self.ordered_remediation_actions.deref()
     }
     /// <p>Information about whether an action is taken by default.</p>
     pub fn is_default_action(&self) -> bool {
@@ -93,11 +94,18 @@ impl PossibleRemediationActionBuilder {
         &self.is_default_action
     }
     /// Consumes the builder and constructs a [`PossibleRemediationAction`](crate::types::PossibleRemediationAction).
-    pub fn build(self) -> crate::types::PossibleRemediationAction {
-        crate::types::PossibleRemediationAction {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`ordered_remediation_actions`](crate::types::builders::PossibleRemediationActionBuilder::ordered_remediation_actions)
+    pub fn build(self) -> ::std::result::Result<crate::types::PossibleRemediationAction, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PossibleRemediationAction {
             description: self.description,
-            ordered_remediation_actions: self.ordered_remediation_actions,
+            ordered_remediation_actions: self.ordered_remediation_actions.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "ordered_remediation_actions",
+                    "ordered_remediation_actions was not specified but it is required when building PossibleRemediationAction",
+                )
+            })?,
             is_default_action: self.is_default_action.unwrap_or_default(),
-        }
+        })
     }
 }

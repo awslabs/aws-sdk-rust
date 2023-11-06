@@ -11,8 +11,10 @@ pub struct TableSortConfiguration {
 }
 impl TableSortConfiguration {
     /// <p>The field sort options for rows in the table.</p>
-    pub fn row_sort(&self) -> ::std::option::Option<&[crate::types::FieldSortOptions]> {
-        self.row_sort.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.row_sort.is_none()`.
+    pub fn row_sort(&self) -> &[crate::types::FieldSortOptions] {
+        self.row_sort.as_deref().unwrap_or_default()
     }
     /// <p>The pagination configuration (page size, page number) for the table.</p>
     pub fn pagination_configuration(&self) -> ::std::option::Option<&crate::types::PaginationConfiguration> {

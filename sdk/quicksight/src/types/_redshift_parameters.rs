@@ -9,7 +9,7 @@ pub struct RedshiftParameters {
     /// <p>Port. This field can be blank if the <code>ClusterId</code> is provided.</p>
     pub port: i32,
     /// <p>Database.</p>
-    pub database: ::std::option::Option<::std::string::String>,
+    pub database: ::std::string::String,
     /// <p>Cluster ID. This field can be blank if the <code>Host</code> and <code>Port</code> are provided.</p>
     pub cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>An optional parameter that uses IAM authentication to grant Amazon QuickSight access to your cluster. This parameter can be used instead of <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html">DataSourceCredentials</a>.</p>
@@ -25,8 +25,9 @@ impl RedshiftParameters {
         self.port
     }
     /// <p>Database.</p>
-    pub fn database(&self) -> ::std::option::Option<&str> {
-        self.database.as_deref()
+    pub fn database(&self) -> &str {
+        use std::ops::Deref;
+        self.database.deref()
     }
     /// <p>Cluster ID. This field can be blank if the <code>Host</code> and <code>Port</code> are provided.</p>
     pub fn cluster_id(&self) -> ::std::option::Option<&str> {
@@ -84,6 +85,7 @@ impl RedshiftParametersBuilder {
         &self.port
     }
     /// <p>Database.</p>
+    /// This field is required.
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database = ::std::option::Option::Some(input.into());
         self
@@ -126,13 +128,20 @@ impl RedshiftParametersBuilder {
         &self.iam_parameters
     }
     /// Consumes the builder and constructs a [`RedshiftParameters`](crate::types::RedshiftParameters).
-    pub fn build(self) -> crate::types::RedshiftParameters {
-        crate::types::RedshiftParameters {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`database`](crate::types::builders::RedshiftParametersBuilder::database)
+    pub fn build(self) -> ::std::result::Result<crate::types::RedshiftParameters, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RedshiftParameters {
             host: self.host,
             port: self.port.unwrap_or_default(),
-            database: self.database,
+            database: self.database.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "database",
+                    "database was not specified but it is required when building RedshiftParameters",
+                )
+            })?,
             cluster_id: self.cluster_id,
             iam_parameters: self.iam_parameters,
-        }
+        })
     }
 }

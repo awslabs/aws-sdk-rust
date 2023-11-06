@@ -2,7 +2,7 @@
 pub fn ser_export_data_source(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ExportDataSource,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.metrics_data_source {
         #[allow(unused_mut)]
         let mut object_2 = object.key("MetricsDataSource").start_object();

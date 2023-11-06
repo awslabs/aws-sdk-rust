@@ -36,7 +36,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::date_range_filter_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -47,16 +49,16 @@ where
 pub fn ser_date_range_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DateRangeFilter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.start_date_time {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
         object
             .key("startDateTime")
-            .date_time(var_1, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(&input.start_date_time, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_2) = &input.end_date_time {
+    {
         object
             .key("endDateTime")
-            .date_time(var_2, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(&input.end_date_time, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }

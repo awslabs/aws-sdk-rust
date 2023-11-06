@@ -34,6 +34,7 @@ pub struct GetJobOutputBuilder {
 }
 impl GetJobOutputBuilder {
     /// <p> Describes an execution job for an Amplify app. </p>
+    /// This field is required.
     pub fn job(mut self, input: crate::types::Job) -> Self {
         self.job = ::std::option::Option::Some(input);
         self

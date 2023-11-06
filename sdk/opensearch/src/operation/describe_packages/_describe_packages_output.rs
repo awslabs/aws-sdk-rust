@@ -12,8 +12,10 @@ pub struct DescribePackagesOutput {
 }
 impl DescribePackagesOutput {
     /// <p>Basic information about a package.</p>
-    pub fn package_details_list(&self) -> ::std::option::Option<&[crate::types::PackageDetails]> {
-        self.package_details_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.package_details_list.is_none()`.
+    pub fn package_details_list(&self) -> &[crate::types::PackageDetails] {
+        self.package_details_list.as_deref().unwrap_or_default()
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

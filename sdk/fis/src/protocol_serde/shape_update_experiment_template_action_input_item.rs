@@ -2,7 +2,7 @@
 pub fn ser_update_experiment_template_action_input_item(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateExperimentTemplateActionInputItem,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.action_id {
         object.key("actionId").string(var_1.as_str());
     }

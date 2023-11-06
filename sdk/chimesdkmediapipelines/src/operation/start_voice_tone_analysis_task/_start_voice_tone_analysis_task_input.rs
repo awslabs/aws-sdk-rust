@@ -61,6 +61,7 @@ pub struct StartVoiceToneAnalysisTaskInputBuilder {
 }
 impl StartVoiceToneAnalysisTaskInputBuilder {
     /// <p>The unique identifier of the resource to be updated. Valid values include the ID and ARN of the media insights pipeline.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -75,6 +76,7 @@ impl StartVoiceToneAnalysisTaskInputBuilder {
         &self.identifier
     }
     /// <p>The language code.</p>
+    /// This field is required.
     pub fn language_code(mut self, input: crate::types::VoiceAnalyticsLanguageCode) -> Self {
         self.language_code = ::std::option::Option::Some(input);
         self
@@ -126,7 +128,7 @@ impl StartVoiceToneAnalysisTaskInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskInput {
             identifier: self.identifier,

@@ -37,6 +37,7 @@ pub struct DeregisterRobotInputBuilder {
 }
 impl DeregisterRobotInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    /// This field is required.
     pub fn fleet(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet = ::std::option::Option::Some(input.into());
         self
@@ -51,6 +52,7 @@ impl DeregisterRobotInputBuilder {
         &self.fleet
     }
     /// <p>The Amazon Resource Name (ARN) of the robot.</p>
+    /// This field is required.
     pub fn robot(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.robot = ::std::option::Option::Some(input.into());
         self
@@ -67,7 +69,7 @@ impl DeregisterRobotInputBuilder {
     /// Consumes the builder and constructs a [`DeregisterRobotInput`](crate::operation::deregister_robot::DeregisterRobotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::deregister_robot::DeregisterRobotInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::deregister_robot::DeregisterRobotInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::deregister_robot::DeregisterRobotInput {
             fleet: self.fleet,
             robot: self.robot,

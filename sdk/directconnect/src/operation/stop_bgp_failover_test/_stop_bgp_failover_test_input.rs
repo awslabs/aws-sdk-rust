@@ -27,6 +27,7 @@ pub struct StopBgpFailoverTestInputBuilder {
 }
 impl StopBgpFailoverTestInputBuilder {
     /// <p>The ID of the virtual interface you no longer want to test.</p>
+    /// This field is required.
     pub fn virtual_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_interface_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl StopBgpFailoverTestInputBuilder {
     /// Consumes the builder and constructs a [`StopBgpFailoverTestInput`](crate::operation::stop_bgp_failover_test::StopBgpFailoverTestInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_bgp_failover_test::StopBgpFailoverTestInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::stop_bgp_failover_test::StopBgpFailoverTestInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::stop_bgp_failover_test::StopBgpFailoverTestInput {
             virtual_interface_id: self.virtual_interface_id,

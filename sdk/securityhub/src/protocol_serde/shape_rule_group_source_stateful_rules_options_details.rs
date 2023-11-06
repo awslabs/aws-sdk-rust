@@ -2,7 +2,7 @@
 pub fn ser_rule_group_source_stateful_rules_options_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RuleGroupSourceStatefulRulesOptionsDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.keyword {
         object.key("Keyword").string(var_1.as_str());
     }

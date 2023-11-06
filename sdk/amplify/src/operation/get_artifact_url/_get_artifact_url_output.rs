@@ -5,19 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetArtifactUrlOutput {
     /// <p> The unique ID for an artifact. </p>
-    pub artifact_id: ::std::option::Option<::std::string::String>,
+    pub artifact_id: ::std::string::String,
     /// <p> The presigned URL for the artifact. </p>
-    pub artifact_url: ::std::option::Option<::std::string::String>,
+    pub artifact_url: ::std::string::String,
     _request_id: Option<String>,
 }
 impl GetArtifactUrlOutput {
     /// <p> The unique ID for an artifact. </p>
-    pub fn artifact_id(&self) -> ::std::option::Option<&str> {
-        self.artifact_id.as_deref()
+    pub fn artifact_id(&self) -> &str {
+        use std::ops::Deref;
+        self.artifact_id.deref()
     }
     /// <p> The presigned URL for the artifact. </p>
-    pub fn artifact_url(&self) -> ::std::option::Option<&str> {
-        self.artifact_url.as_deref()
+    pub fn artifact_url(&self) -> &str {
+        use std::ops::Deref;
+        self.artifact_url.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetArtifactUrlOutput {
@@ -42,6 +44,7 @@ pub struct GetArtifactUrlOutputBuilder {
 }
 impl GetArtifactUrlOutputBuilder {
     /// <p> The unique ID for an artifact. </p>
+    /// This field is required.
     pub fn artifact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.artifact_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl GetArtifactUrlOutputBuilder {
         &self.artifact_id
     }
     /// <p> The presigned URL for the artifact. </p>
+    /// This field is required.
     pub fn artifact_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.artifact_url = ::std::option::Option::Some(input.into());
         self
@@ -79,11 +83,26 @@ impl GetArtifactUrlOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetArtifactUrlOutput`](crate::operation::get_artifact_url::GetArtifactUrlOutput).
-    pub fn build(self) -> crate::operation::get_artifact_url::GetArtifactUrlOutput {
-        crate::operation::get_artifact_url::GetArtifactUrlOutput {
-            artifact_id: self.artifact_id,
-            artifact_url: self.artifact_url,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`artifact_id`](crate::operation::get_artifact_url::builders::GetArtifactUrlOutputBuilder::artifact_id)
+    /// - [`artifact_url`](crate::operation::get_artifact_url::builders::GetArtifactUrlOutputBuilder::artifact_url)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_artifact_url::GetArtifactUrlOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_artifact_url::GetArtifactUrlOutput {
+            artifact_id: self.artifact_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "artifact_id",
+                    "artifact_id was not specified but it is required when building GetArtifactUrlOutput",
+                )
+            })?,
+            artifact_url: self.artifact_url.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "artifact_url",
+                    "artifact_url was not specified but it is required when building GetArtifactUrlOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

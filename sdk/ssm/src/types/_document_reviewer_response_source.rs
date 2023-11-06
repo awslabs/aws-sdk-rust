@@ -33,8 +33,10 @@ impl DocumentReviewerResponseSource {
         self.review_status.as_ref()
     }
     /// <p>The comment entered by a reviewer as part of their document review response.</p>
-    pub fn comment(&self) -> ::std::option::Option<&[crate::types::DocumentReviewCommentSource]> {
-        self.comment.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.comment.is_none()`.
+    pub fn comment(&self) -> &[crate::types::DocumentReviewCommentSource] {
+        self.comment.as_deref().unwrap_or_default()
     }
     /// <p>The user in your organization assigned to review a document request.</p>
     pub fn reviewer(&self) -> ::std::option::Option<&str> {

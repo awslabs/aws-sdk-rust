@@ -15,8 +15,10 @@ impl ListIdentityProvidersOutput {
         self.next_token.as_deref()
     }
     /// <p>The identity providers.</p>
-    pub fn identity_providers(&self) -> ::std::option::Option<&[crate::types::IdentityProviderSummary]> {
-        self.identity_providers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.identity_providers.is_none()`.
+    pub fn identity_providers(&self) -> &[crate::types::IdentityProviderSummary] {
+        self.identity_providers.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListIdentityProvidersOutput {

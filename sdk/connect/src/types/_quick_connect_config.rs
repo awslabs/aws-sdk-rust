@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QuickConnectConfig {
     /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE). </p>
-    pub quick_connect_type: ::std::option::Option<crate::types::QuickConnectType>,
+    pub quick_connect_type: crate::types::QuickConnectType,
     /// <p>The user configuration. This is required only if QuickConnectType is USER.</p>
     pub user_config: ::std::option::Option<crate::types::UserQuickConnectConfig>,
     /// <p>The queue configuration. This is required only if QuickConnectType is QUEUE.</p>
@@ -15,8 +15,8 @@ pub struct QuickConnectConfig {
 }
 impl QuickConnectConfig {
     /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE). </p>
-    pub fn quick_connect_type(&self) -> ::std::option::Option<&crate::types::QuickConnectType> {
-        self.quick_connect_type.as_ref()
+    pub fn quick_connect_type(&self) -> &crate::types::QuickConnectType {
+        &self.quick_connect_type
     }
     /// <p>The user configuration. This is required only if QuickConnectType is USER.</p>
     pub fn user_config(&self) -> ::std::option::Option<&crate::types::UserQuickConnectConfig> {
@@ -49,6 +49,7 @@ pub struct QuickConnectConfigBuilder {
 }
 impl QuickConnectConfigBuilder {
     /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE). </p>
+    /// This field is required.
     pub fn quick_connect_type(mut self, input: crate::types::QuickConnectType) -> Self {
         self.quick_connect_type = ::std::option::Option::Some(input);
         self
@@ -105,12 +106,19 @@ impl QuickConnectConfigBuilder {
         &self.phone_config
     }
     /// Consumes the builder and constructs a [`QuickConnectConfig`](crate::types::QuickConnectConfig).
-    pub fn build(self) -> crate::types::QuickConnectConfig {
-        crate::types::QuickConnectConfig {
-            quick_connect_type: self.quick_connect_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`quick_connect_type`](crate::types::builders::QuickConnectConfigBuilder::quick_connect_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::QuickConnectConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::QuickConnectConfig {
+            quick_connect_type: self.quick_connect_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "quick_connect_type",
+                    "quick_connect_type was not specified but it is required when building QuickConnectConfig",
+                )
+            })?,
             user_config: self.user_config,
             queue_config: self.queue_config,
             phone_config: self.phone_config,
-        }
+        })
     }
 }

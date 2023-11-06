@@ -35,6 +35,7 @@ pub struct GetAnalyzedResourceInputBuilder {
 }
 impl GetAnalyzedResourceInputBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve information from.</p>
+    /// This field is required.
     pub fn analyzer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analyzer_arn = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl GetAnalyzedResourceInputBuilder {
         &self.analyzer_arn
     }
     /// <p>The ARN of the resource to retrieve information about.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -65,7 +67,7 @@ impl GetAnalyzedResourceInputBuilder {
     /// Consumes the builder and constructs a [`GetAnalyzedResourceInput`](crate::operation::get_analyzed_resource::GetAnalyzedResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_analyzed_resource::GetAnalyzedResourceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_analyzed_resource::GetAnalyzedResourceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_analyzed_resource::GetAnalyzedResourceInput {
             analyzer_arn: self.analyzer_arn,

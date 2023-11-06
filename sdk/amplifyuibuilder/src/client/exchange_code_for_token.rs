@@ -3,12 +3,12 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ExchangeCodeForToken`](crate::operation::exchange_code_for_token::builders::ExchangeCodeForTokenFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`provider(TokenProviders)`](crate::operation::exchange_code_for_token::builders::ExchangeCodeForTokenFluentBuilder::provider) / [`set_provider(Option<TokenProviders>)`](crate::operation::exchange_code_for_token::builders::ExchangeCodeForTokenFluentBuilder::set_provider): <p>The third-party provider for the token. The only valid value is <code>figma</code>.</p>
-    ///   - [`request(ExchangeCodeForTokenRequestBody)`](crate::operation::exchange_code_for_token::builders::ExchangeCodeForTokenFluentBuilder::request) / [`set_request(Option<ExchangeCodeForTokenRequestBody>)`](crate::operation::exchange_code_for_token::builders::ExchangeCodeForTokenFluentBuilder::set_request): <p>Describes the configuration of the request.</p>
+    ///   - [`provider(TokenProviders)`](crate::operation::exchange_code_for_token::builders::ExchangeCodeForTokenFluentBuilder::provider) / [`set_provider(Option<TokenProviders>)`](crate::operation::exchange_code_for_token::builders::ExchangeCodeForTokenFluentBuilder::set_provider):<br>required: **true**<br><p>The third-party provider for the token. The only valid value is <code>figma</code>.</p><br>
+    ///   - [`request(ExchangeCodeForTokenRequestBody)`](crate::operation::exchange_code_for_token::builders::ExchangeCodeForTokenFluentBuilder::request) / [`set_request(Option<ExchangeCodeForTokenRequestBody>)`](crate::operation::exchange_code_for_token::builders::ExchangeCodeForTokenFluentBuilder::set_request):<br>required: **true**<br><p>Describes the configuration of the request.</p><br>
     /// - On success, responds with [`ExchangeCodeForTokenOutput`](crate::operation::exchange_code_for_token::ExchangeCodeForTokenOutput) with field(s):
-    ///   - [`access_token(Option<String>)`](crate::operation::exchange_code_for_token::ExchangeCodeForTokenOutput::access_token): <p>The access token.</p>
-    ///   - [`expires_in(Option<i32>)`](crate::operation::exchange_code_for_token::ExchangeCodeForTokenOutput::expires_in): <p>The date and time when the new access token expires.</p>
-    ///   - [`refresh_token(Option<String>)`](crate::operation::exchange_code_for_token::ExchangeCodeForTokenOutput::refresh_token): <p>The token to use to refresh a previously issued access token that might have expired.</p>
+    ///   - [`access_token(String)`](crate::operation::exchange_code_for_token::ExchangeCodeForTokenOutput::access_token): <p>The access token.</p>
+    ///   - [`expires_in(i32)`](crate::operation::exchange_code_for_token::ExchangeCodeForTokenOutput::expires_in): <p>The date and time when the new access token expires.</p>
+    ///   - [`refresh_token(String)`](crate::operation::exchange_code_for_token::ExchangeCodeForTokenOutput::refresh_token): <p>The token to use to refresh a previously issued access token that might have expired.</p>
     /// - On failure, responds with [`SdkError<ExchangeCodeForTokenError>`](crate::operation::exchange_code_for_token::ExchangeCodeForTokenError)
     pub fn exchange_code_for_token(&self) -> crate::operation::exchange_code_for_token::builders::ExchangeCodeForTokenFluentBuilder {
         crate::operation::exchange_code_for_token::builders::ExchangeCodeForTokenFluentBuilder::new(self.handle.clone())

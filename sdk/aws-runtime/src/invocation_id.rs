@@ -3,16 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use aws_smithy_runtime_api::box_error::BoxError;
-use aws_smithy_runtime_api::client::interceptors::context::BeforeTransmitInterceptorContextMut;
-use aws_smithy_runtime_api::client::interceptors::Interceptor;
-use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
-use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreReplace};
-use fastrand::Rng;
-use http::{HeaderName, HeaderValue};
 use std::fmt::Debug;
 use std::sync::{Arc, Mutex};
 
+use fastrand::Rng;
+use http::{HeaderName, HeaderValue};
+
+use aws_smithy_runtime_api::box_error::BoxError;
+use aws_smithy_runtime_api::client::interceptors::context::BeforeTransmitInterceptorContextMut;
+use aws_smithy_runtime_api::client::interceptors::Intercept;
+use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
+use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreReplace};
 #[cfg(feature = "test-util")]
 pub use test_util::{NoInvocationIdGenerator, PredefinedInvocationIdGenerator};
 
@@ -92,7 +93,7 @@ impl InvocationIdInterceptor {
     }
 }
 
-impl Interceptor for InvocationIdInterceptor {
+impl Intercept for InvocationIdInterceptor {
     fn name(&self) -> &'static str {
         "InvocationIdInterceptor"
     }
@@ -151,8 +152,9 @@ impl Storable for InvocationId {
 
 #[cfg(feature = "test-util")]
 mod test_util {
-    use super::*;
     use std::sync::{Arc, Mutex};
+
+    use super::*;
 
     impl InvocationId {
         /// Create a new invocation ID from a `&'static str`.
@@ -212,20 +214,20 @@ mod test_util {
 
 #[cfg(test)]
 mod tests {
-    use super::*;
-    use aws_smithy_http::body::SdkBody;
     use aws_smithy_runtime_api::client::interceptors::context::{
         BeforeTransmitInterceptorContextMut, Input, InterceptorContext,
     };
-    use aws_smithy_runtime_api::client::interceptors::Interceptor;
+    use aws_smithy_runtime_api::client::interceptors::Intercept;
+    use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
     use aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder;
-    use aws_smithy_types::config_bag::{ConfigBag, Layer};
-    use http::HeaderValue;
+    use aws_smithy_types::config_bag::ConfigBag;
+
+    use super::*;
 
     fn expect_header<'a>(
         context: &'a BeforeTransmitInterceptorContextMut<'_>,
         header_name: &str,
-    ) -> &'a HeaderValue {
+    ) -> &'a str {
         context.request().headers().get(header_name).unwrap()
     }
 
@@ -234,7 +236,7 @@ mod tests {
         let rc = RuntimeComponentsBuilder::for_tests().build().unwrap();
         let mut ctx = InterceptorContext::new(Input::doesnt_matter());
         ctx.enter_serialization_phase();
-        ctx.set_request(http::Request::builder().body(SdkBody::empty()).unwrap());
+        ctx.set_request(HttpRequest::empty());
         let _ = ctx.take_input();
         ctx.enter_before_transmit_phase();
 
@@ -258,10 +260,11 @@ mod tests {
     #[cfg(feature = "test-util")]
     #[test]
     fn custom_id_generator() {
+        use aws_smithy_types::config_bag::Layer;
         let rc = RuntimeComponentsBuilder::for_tests().build().unwrap();
         let mut ctx = InterceptorContext::new(Input::doesnt_matter());
         ctx.enter_serialization_phase();
-        ctx.set_request(http::Request::builder().body(SdkBody::empty()).unwrap());
+        ctx.set_request(HttpRequest::empty());
         let _ = ctx.take_input();
         ctx.enter_before_transmit_phase();
 

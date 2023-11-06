@@ -45,8 +45,10 @@ impl Object {
         self.e_tag.as_deref()
     }
     /// <p>The algorithm that was used to create a checksum of the object.</p>
-    pub fn checksum_algorithm(&self) -> ::std::option::Option<&[crate::types::ChecksumAlgorithm]> {
-        self.checksum_algorithm.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.checksum_algorithm.is_none()`.
+    pub fn checksum_algorithm(&self) -> &[crate::types::ChecksumAlgorithm] {
+        self.checksum_algorithm.as_deref().unwrap_or_default()
     }
     /// <p>Size in bytes of the object</p>
     pub fn size(&self) -> i64 {

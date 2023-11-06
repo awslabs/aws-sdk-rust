@@ -75,8 +75,10 @@ impl CreateReplicationInstanceInput {
         self.replication_instance_class.as_deref()
     }
     /// <p> Specifies the VPC security group to be used with the replication instance. The VPC security group must work with the VPC containing the replication instance. </p>
-    pub fn vpc_security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.vpc_security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_group_ids.is_none()`.
+    pub fn vpc_security_group_ids(&self) -> &[::std::string::String] {
+        self.vpc_security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>The Availability Zone where the replication instance will be created. The default value is a random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region, for example: <code>us-east-1d</code>.</p>
     pub fn availability_zone(&self) -> ::std::option::Option<&str> {
@@ -109,8 +111,10 @@ impl CreateReplicationInstanceInput {
         self.auto_minor_version_upgrade
     }
     /// <p>One or more tags to be assigned to the replication instance.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>An KMS key identifier that is used to encrypt the data on the replication instance.</p>
     /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.</p>
@@ -172,6 +176,7 @@ impl CreateReplicationInstanceInputBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>myrepinstance</code> </p>
+    /// This field is required.
     pub fn replication_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_instance_identifier = ::std::option::Option::Some(input.into());
         self
@@ -215,6 +220,7 @@ impl CreateReplicationInstanceInputBuilder {
     }
     /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
     /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.Types.html "> Choosing the right DMS replication instance</a>; and, <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_BestPractices.SizingReplicationInstance.html">Selecting the best size for a replication instance</a>. </p>
+    /// This field is required.
     pub fn replication_instance_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_instance_class = ::std::option::Option::Some(input.into());
         self
@@ -453,7 +459,7 @@ impl CreateReplicationInstanceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_replication_instance::CreateReplicationInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_replication_instance::CreateReplicationInstanceInput {
             replication_instance_identifier: self.replication_instance_identifier,

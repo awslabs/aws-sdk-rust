@@ -37,16 +37,22 @@ impl RdfGraphSummary {
         self.num_classes
     }
     /// <p>A list of the classes in the graph.</p>
-    pub fn classes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.classes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.classes.is_none()`.
+    pub fn classes(&self) -> &[::std::string::String] {
+        self.classes.as_deref().unwrap_or_default()
     }
     /// <p>"A list of predicates in the graph, along with the predicate counts.</p>
-    pub fn predicates(&self) -> ::std::option::Option<&[::std::collections::HashMap<::std::string::String, i64>]> {
-        self.predicates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.predicates.is_none()`.
+    pub fn predicates(&self) -> &[::std::collections::HashMap<::std::string::String, i64>] {
+        self.predicates.as_deref().unwrap_or_default()
     }
     /// <p>This field is only present when the request mode is <code>DETAILED</code>. It contains a list of subject structures.</p>
-    pub fn subject_structures(&self) -> ::std::option::Option<&[crate::types::SubjectStructure]> {
-        self.subject_structures.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subject_structures.is_none()`.
+    pub fn subject_structures(&self) -> &[crate::types::SubjectStructure] {
+        self.subject_structures.as_deref().unwrap_or_default()
     }
 }
 impl RdfGraphSummary {

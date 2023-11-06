@@ -57,6 +57,7 @@ pub struct CopyDistributionInputBuilder {
 }
 impl CopyDistributionInputBuilder {
     /// <p>The identifier of the primary distribution whose configuration you are copying. To get a distribution ID, use <code>ListDistributions</code>.</p>
+    /// This field is required.
     pub fn primary_distribution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.primary_distribution_id = ::std::option::Option::Some(input.into());
         self
@@ -99,6 +100,7 @@ impl CopyDistributionInputBuilder {
         &self.if_match
     }
     /// <p>A value that uniquely identifies a request to create a resource. This helps to prevent CloudFront from creating a duplicate resource if you accidentally resubmit an identical request.</p>
+    /// This field is required.
     pub fn caller_reference(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.caller_reference = ::std::option::Option::Some(input.into());
         self
@@ -132,7 +134,7 @@ impl CopyDistributionInputBuilder {
     /// Consumes the builder and constructs a [`CopyDistributionInput`](crate::operation::copy_distribution::CopyDistributionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::copy_distribution::CopyDistributionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::copy_distribution::CopyDistributionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::copy_distribution::CopyDistributionInput {
             primary_distribution_id: self.primary_distribution_id,
             staging: self.staging,

@@ -15,8 +15,10 @@ impl Warning {
         self.error_code.as_deref()
     }
     /// <p>A list of the pages that the warning applies to.</p>
-    pub fn pages(&self) -> ::std::option::Option<&[i32]> {
-        self.pages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pages.is_none()`.
+    pub fn pages(&self) -> &[i32] {
+        self.pages.as_deref().unwrap_or_default()
     }
 }
 impl Warning {

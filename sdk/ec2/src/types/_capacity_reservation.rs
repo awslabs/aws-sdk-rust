@@ -163,8 +163,10 @@ impl CapacityReservation {
         self.create_date.as_ref()
     }
     /// <p>Any tags assigned to the Capacity Reservation.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost on which the Capacity Reservation was created.</p>
     pub fn outpost_arn(&self) -> ::std::option::Option<&str> {
@@ -179,8 +181,10 @@ impl CapacityReservation {
         self.placement_group_arn.as_deref()
     }
     /// <p>Information about instance capacity usage.</p>
-    pub fn capacity_allocations(&self) -> ::std::option::Option<&[crate::types::CapacityAllocation]> {
-        self.capacity_allocations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capacity_allocations.is_none()`.
+    pub fn capacity_allocations(&self) -> &[crate::types::CapacityAllocation] {
+        self.capacity_allocations.as_deref().unwrap_or_default()
     }
 }
 impl CapacityReservation {

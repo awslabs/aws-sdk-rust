@@ -11,8 +11,10 @@ pub struct ListProgressUpdateStreamsOutput {
 }
 impl ListProgressUpdateStreamsOutput {
     /// <p>List of progress update streams up to the max number of results passed in the input.</p>
-    pub fn progress_update_stream_summary_list(&self) -> ::std::option::Option<&[crate::types::ProgressUpdateStreamSummary]> {
-        self.progress_update_stream_summary_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.progress_update_stream_summary_list.is_none()`.
+    pub fn progress_update_stream_summary_list(&self) -> &[crate::types::ProgressUpdateStreamSummary] {
+        self.progress_update_stream_summary_list.as_deref().unwrap_or_default()
     }
     /// <p>If there are more streams created than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

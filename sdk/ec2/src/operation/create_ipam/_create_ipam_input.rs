@@ -26,12 +26,16 @@ impl CreateIpamInput {
     }
     /// <p>The operating Regions for the IPAM. Operating Regions are Amazon Web Services Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services Regions you select as operating Regions. </p>
     /// <p>For more information about operating Regions, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
-    pub fn operating_regions(&self) -> ::std::option::Option<&[crate::types::AddIpamOperatingRegion]> {
-        self.operating_regions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.operating_regions.is_none()`.
+    pub fn operating_regions(&self) -> &[crate::types::AddIpamOperatingRegion] {
+        self.operating_regions.as_deref().unwrap_or_default()
     }
     /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -142,7 +146,7 @@ impl CreateIpamInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateIpamInput`](crate::operation::create_ipam::CreateIpamInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_ipam::CreateIpamInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_ipam::CreateIpamInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_ipam::CreateIpamInput {
             dry_run: self.dry_run,
             description: self.description,

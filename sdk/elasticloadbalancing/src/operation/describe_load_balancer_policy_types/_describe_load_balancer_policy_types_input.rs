@@ -9,8 +9,10 @@ pub struct DescribeLoadBalancerPolicyTypesInput {
 }
 impl DescribeLoadBalancerPolicyTypesInput {
     /// <p>The names of the policy types. If no names are specified, describes all policy types defined by Elastic Load Balancing.</p>
-    pub fn policy_type_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.policy_type_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_type_names.is_none()`.
+    pub fn policy_type_names(&self) -> &[::std::string::String] {
+        self.policy_type_names.as_deref().unwrap_or_default()
     }
 }
 impl DescribeLoadBalancerPolicyTypesInput {
@@ -52,7 +54,7 @@ impl DescribeLoadBalancerPolicyTypesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesInput {

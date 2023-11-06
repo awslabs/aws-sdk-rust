@@ -12,13 +12,17 @@ pub struct CreateWorkspacesOutput {
 }
 impl CreateWorkspacesOutput {
     /// <p>Information about the WorkSpaces that could not be created.</p>
-    pub fn failed_requests(&self) -> ::std::option::Option<&[crate::types::FailedCreateWorkspaceRequest]> {
-        self.failed_requests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_requests.is_none()`.
+    pub fn failed_requests(&self) -> &[crate::types::FailedCreateWorkspaceRequest] {
+        self.failed_requests.as_deref().unwrap_or_default()
     }
     /// <p>Information about the WorkSpaces that were created.</p>
     /// <p>Because this operation is asynchronous, the identifier returned is not immediately available for use with other operations. For example, if you call <code>DescribeWorkspaces</code> before the WorkSpace is created, the information returned can be incomplete.</p>
-    pub fn pending_requests(&self) -> ::std::option::Option<&[crate::types::Workspace]> {
-        self.pending_requests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pending_requests.is_none()`.
+    pub fn pending_requests(&self) -> &[crate::types::Workspace] {
+        self.pending_requests.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateWorkspacesOutput {

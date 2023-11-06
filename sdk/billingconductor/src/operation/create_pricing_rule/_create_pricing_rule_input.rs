@@ -140,6 +140,7 @@ impl CreatePricingRuleInputBuilder {
         &self.client_token
     }
     /// <p> The pricing rule name. The names must be unique to each pricing rule. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -168,6 +169,7 @@ impl CreatePricingRuleInputBuilder {
         &self.description
     }
     /// <p> The scope of pricing rule that indicates if it's globally applicable, or it's service-specific. </p>
+    /// This field is required.
     pub fn scope(mut self, input: crate::types::PricingRuleScope) -> Self {
         self.scope = ::std::option::Option::Some(input);
         self
@@ -182,6 +184,7 @@ impl CreatePricingRuleInputBuilder {
         &self.scope
     }
     /// <p> The type of pricing rule. </p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::PricingRuleType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -308,7 +311,7 @@ impl CreatePricingRuleInputBuilder {
     /// Consumes the builder and constructs a [`CreatePricingRuleInput`](crate::operation::create_pricing_rule::CreatePricingRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_pricing_rule::CreatePricingRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_pricing_rule::CreatePricingRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_pricing_rule::CreatePricingRuleInput {
             client_token: self.client_token,
             name: self.name,

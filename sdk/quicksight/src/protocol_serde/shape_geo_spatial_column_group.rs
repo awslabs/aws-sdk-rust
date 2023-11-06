@@ -2,21 +2,21 @@
 pub fn ser_geo_spatial_column_group(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GeoSpatialColumnGroup,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("Name").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.country_code {
-        object.key("CountryCode").string(var_2.as_str());
+    if let Some(var_1) = &input.country_code {
+        object.key("CountryCode").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.columns {
-        let mut array_4 = object.key("Columns").start_array();
-        for item_5 in var_3 {
+    {
+        let mut array_2 = object.key("Columns").start_array();
+        for item_3 in &input.columns {
             {
-                array_4.value().string(item_5.as_str());
+                array_2.value().string(item_3.as_str());
             }
         }
-        array_4.finish();
+        array_2.finish();
     }
     Ok(())
 }
@@ -63,7 +63,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::geo_spatial_column_group_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

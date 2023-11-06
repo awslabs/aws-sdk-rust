@@ -21,8 +21,10 @@ impl Computer {
         self.computer_name.as_deref()
     }
     /// <p>An array of <code>Attribute</code> objects containing the LDAP attributes that belong to the computer account.</p>
-    pub fn computer_attributes(&self) -> ::std::option::Option<&[crate::types::Attribute]> {
-        self.computer_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.computer_attributes.is_none()`.
+    pub fn computer_attributes(&self) -> &[crate::types::Attribute] {
+        self.computer_attributes.as_deref().unwrap_or_default()
     }
 }
 impl Computer {

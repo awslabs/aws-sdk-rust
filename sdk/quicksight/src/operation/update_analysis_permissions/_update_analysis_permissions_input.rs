@@ -22,12 +22,16 @@ impl UpdateAnalysisPermissionsInput {
         self.analysis_id.as_deref()
     }
     /// <p>A structure that describes the permissions to add and the principal to add them to.</p>
-    pub fn grant_permissions(&self) -> ::std::option::Option<&[crate::types::ResourcePermission]> {
-        self.grant_permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.grant_permissions.is_none()`.
+    pub fn grant_permissions(&self) -> &[crate::types::ResourcePermission] {
+        self.grant_permissions.as_deref().unwrap_or_default()
     }
     /// <p>A structure that describes the permissions to remove and the principal to remove them from.</p>
-    pub fn revoke_permissions(&self) -> ::std::option::Option<&[crate::types::ResourcePermission]> {
-        self.revoke_permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.revoke_permissions.is_none()`.
+    pub fn revoke_permissions(&self) -> &[crate::types::ResourcePermission] {
+        self.revoke_permissions.as_deref().unwrap_or_default()
     }
 }
 impl UpdateAnalysisPermissionsInput {
@@ -48,6 +52,7 @@ pub struct UpdateAnalysisPermissionsInputBuilder {
 }
 impl UpdateAnalysisPermissionsInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the analysis whose permissions you're updating. You must be using the Amazon Web Services account that the analysis is in.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +67,7 @@ impl UpdateAnalysisPermissionsInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID of the analysis whose permissions you're updating. The ID is part of the analysis URL.</p>
+    /// This field is required.
     pub fn analysis_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analysis_id = ::std::option::Option::Some(input.into());
         self
@@ -120,7 +126,7 @@ impl UpdateAnalysisPermissionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_analysis_permissions::UpdateAnalysisPermissionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_analysis_permissions::UpdateAnalysisPermissionsInput {
             aws_account_id: self.aws_account_id,

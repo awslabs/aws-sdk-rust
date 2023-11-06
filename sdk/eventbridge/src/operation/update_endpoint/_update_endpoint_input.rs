@@ -34,8 +34,10 @@ impl UpdateEndpointInput {
         self.replication_config.as_ref()
     }
     /// <p>Define event buses used for replication.</p>
-    pub fn event_buses(&self) -> ::std::option::Option<&[crate::types::EndpointEventBus]> {
-        self.event_buses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_buses.is_none()`.
+    pub fn event_buses(&self) -> &[crate::types::EndpointEventBus] {
+        self.event_buses.as_deref().unwrap_or_default()
     }
     /// <p>The ARN of the role used by event replication for this request.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
@@ -62,6 +64,7 @@ pub struct UpdateEndpointInputBuilder {
 }
 impl UpdateEndpointInputBuilder {
     /// <p>The name of the endpoint you want to update.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -154,7 +157,7 @@ impl UpdateEndpointInputBuilder {
     /// Consumes the builder and constructs a [`UpdateEndpointInput`](crate::operation::update_endpoint::UpdateEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_endpoint::UpdateEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_endpoint::UpdateEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_endpoint::UpdateEndpointInput {
             name: self.name,
             description: self.description,

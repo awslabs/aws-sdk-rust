@@ -31,8 +31,10 @@ impl UpdateEndpointGroupInput {
         self.endpoint_group_arn.as_deref()
     }
     /// <p>The list of endpoint objects. A resource must be valid and active when you add it as an endpoint.</p>
-    pub fn endpoint_configurations(&self) -> ::std::option::Option<&[crate::types::EndpointConfiguration]> {
-        self.endpoint_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.endpoint_configurations.is_none()`.
+    pub fn endpoint_configurations(&self) -> &[crate::types::EndpointConfiguration] {
+        self.endpoint_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The percentage of traffic to send to an Amazon Web Services Region. Additional traffic is distributed to other endpoint groups for this listener. </p>
     /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
@@ -62,8 +64,10 @@ impl UpdateEndpointGroupInput {
     }
     /// <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group. For example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html"> Overriding listener ports</a> in the <i>Global Accelerator Developer Guide</i>.</p>
-    pub fn port_overrides(&self) -> ::std::option::Option<&[crate::types::PortOverride]> {
-        self.port_overrides.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.port_overrides.is_none()`.
+    pub fn port_overrides(&self) -> &[crate::types::PortOverride] {
+        self.port_overrides.as_deref().unwrap_or_default()
     }
 }
 impl UpdateEndpointGroupInput {
@@ -89,6 +93,7 @@ pub struct UpdateEndpointGroupInputBuilder {
 }
 impl UpdateEndpointGroupInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
+    /// This field is required.
     pub fn endpoint_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_group_arn = ::std::option::Option::Some(input.into());
         self
@@ -238,7 +243,7 @@ impl UpdateEndpointGroupInputBuilder {
     /// Consumes the builder and constructs a [`UpdateEndpointGroupInput`](crate::operation::update_endpoint_group::UpdateEndpointGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_endpoint_group::UpdateEndpointGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_endpoint_group::UpdateEndpointGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_endpoint_group::UpdateEndpointGroupInput {
             endpoint_group_arn: self.endpoint_group_arn,

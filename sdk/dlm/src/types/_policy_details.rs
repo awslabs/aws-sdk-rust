@@ -32,21 +32,29 @@ impl PolicyDetails {
         self.policy_type.as_ref()
     }
     /// <p> <b>[Snapshot policies only]</b> The target resource type for snapshot and AMI lifecycle policies. Use <code>VOLUME </code>to create snapshots of individual volumes or use <code>INSTANCE</code> to create multi-volume snapshots from the volumes for an instance.</p>
-    pub fn resource_types(&self) -> ::std::option::Option<&[crate::types::ResourceTypeValues]> {
-        self.resource_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_types.is_none()`.
+    pub fn resource_types(&self) -> &[crate::types::ResourceTypeValues] {
+        self.resource_types.as_deref().unwrap_or_default()
     }
     /// <p> <b>[Snapshot and AMI policies only]</b> The location of the resources to backup. If the source resources are located in an Amazon Web Services Region, specify <code>CLOUD</code>. If the source resources are located on an Outpost in your account, specify <code>OUTPOST</code>.</p>
     /// <p>If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up all resources of the specified type with matching target tags across all of the Outposts in your account.</p>
-    pub fn resource_locations(&self) -> ::std::option::Option<&[crate::types::ResourceLocationValues]> {
-        self.resource_locations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_locations.is_none()`.
+    pub fn resource_locations(&self) -> &[crate::types::ResourceLocationValues] {
+        self.resource_locations.as_deref().unwrap_or_default()
     }
     /// <p> <b>[Snapshot and AMI policies only]</b> The single tag that identifies targeted resources for this policy.</p>
-    pub fn target_tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.target_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_tags.is_none()`.
+    pub fn target_tags(&self) -> &[crate::types::Tag] {
+        self.target_tags.as_deref().unwrap_or_default()
     }
     /// <p> <b>[Snapshot and AMI policies only]</b> The schedules of policy-defined actions for snapshot and AMI lifecycle policies. A policy can have up to four schedules—one mandatory schedule and up to three optional schedules.</p>
-    pub fn schedules(&self) -> ::std::option::Option<&[crate::types::Schedule]> {
-        self.schedules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.schedules.is_none()`.
+    pub fn schedules(&self) -> &[crate::types::Schedule] {
+        self.schedules.as_deref().unwrap_or_default()
     }
     /// <p> <b>[Snapshot and AMI policies only]</b> A set of optional parameters for snapshot and AMI lifecycle policies. </p> <note>
     /// <p>If you are modifying a policy that was created or previously modified using the Amazon Data Lifecycle Manager console, then you must include this parameter and specify either the default values or the new values that you require. You can't omit this parameter or set its values to null.</p>
@@ -59,8 +67,10 @@ impl PolicyDetails {
         self.event_source.as_ref()
     }
     /// <p> <b>[Event-based policies only]</b> The actions to be performed when the event-based policy is activated. You can specify only one action per policy.</p>
-    pub fn actions(&self) -> ::std::option::Option<&[crate::types::Action]> {
-        self.actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
+    pub fn actions(&self) -> &[crate::types::Action] {
+        self.actions.as_deref().unwrap_or_default()
     }
 }
 impl PolicyDetails {

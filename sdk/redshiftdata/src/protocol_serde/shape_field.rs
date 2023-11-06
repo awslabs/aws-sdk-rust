@@ -12,34 +12,49 @@ where
             match tokens.next().transpose()? {
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                    let key = key.to_unescaped()?;
+                    if key == "__type" {
+                        ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                        continue;
+                    }
                     if variant.is_some() {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
                             "encountered mixed variants in union",
                         ));
                     }
-                    variant = match key.to_unescaped()?.as_ref() {
+                    variant = match key.as_ref() {
                         "isNull" => Some(crate::types::Field::IsNull(
-                            ::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?.unwrap_or_default(),
+                            ::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'isNull' cannot be null")
+                            })?,
                         )),
                         "booleanValue" => Some(crate::types::Field::BooleanValue(
-                            ::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?.unwrap_or_default(),
+                            ::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'booleanValue' cannot be null")
+                            })?,
                         )),
                         "longValue" => Some(crate::types::Field::LongValue(
                             ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                 .map(i64::try_from)
                                 .transpose()?
-                                .unwrap_or_default(),
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'longValue' cannot be null")
+                                })?,
                         )),
                         "doubleValue" => Some(crate::types::Field::DoubleValue(
                             ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                 .map(|v| v.to_f64_lossy())
-                                .unwrap_or_default(),
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'doubleValue' cannot be null")
+                                })?,
                         )),
                         "stringValue" => Some(crate::types::Field::StringValue(
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                 .transpose()?
-                                .unwrap_or_default(),
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'stringValue' cannot be null")
+                                })?,
                         )),
                         "blobValue" => Some(crate::types::Field::BlobValue(
                             ::aws_smithy_json::deserialize::token::expect_blob_or_null(tokens.next())?.ok_or_else(|| {

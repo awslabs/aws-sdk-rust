@@ -36,6 +36,7 @@ pub struct UpdateCodeRepositoryInputBuilder {
 }
 impl UpdateCodeRepositoryInputBuilder {
     /// <p>The name of the Git repository to update.</p>
+    /// This field is required.
     pub fn code_repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code_repository_name = ::std::option::Option::Some(input.into());
         self
@@ -69,7 +70,7 @@ impl UpdateCodeRepositoryInputBuilder {
     /// Consumes the builder and constructs a [`UpdateCodeRepositoryInput`](crate::operation::update_code_repository::UpdateCodeRepositoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_code_repository::UpdateCodeRepositoryInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_code_repository::UpdateCodeRepositoryInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_code_repository::UpdateCodeRepositoryInput {
             code_repository_name: self.code_repository_name,

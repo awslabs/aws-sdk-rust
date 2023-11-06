@@ -17,8 +17,10 @@ impl DescribeProvisionedProductPlanOutput {
         self.provisioned_product_plan_details.as_ref()
     }
     /// <p>Information about the resource changes that will occur when the plan is executed.</p>
-    pub fn resource_changes(&self) -> ::std::option::Option<&[crate::types::ResourceChange]> {
-        self.resource_changes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_changes.is_none()`.
+    pub fn resource_changes(&self) -> &[crate::types::ResourceChange] {
+        self.resource_changes.as_deref().unwrap_or_default()
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub fn next_page_token(&self) -> ::std::option::Option<&str> {

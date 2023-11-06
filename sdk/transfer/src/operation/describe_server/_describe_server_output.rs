@@ -34,6 +34,7 @@ pub struct DescribeServerOutputBuilder {
 }
 impl DescribeServerOutputBuilder {
     /// <p>An array containing the properties of a server with the <code>ServerID</code> you specified.</p>
+    /// This field is required.
     pub fn server(mut self, input: crate::types::DescribedServer) -> Self {
         self.server = ::std::option::Option::Some(input);
         self

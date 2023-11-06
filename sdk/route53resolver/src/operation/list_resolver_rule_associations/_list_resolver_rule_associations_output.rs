@@ -21,8 +21,10 @@ impl ListResolverRuleAssociationsOutput {
         self.max_results
     }
     /// <p>The associations that were created between Resolver rules and VPCs using the current Amazon Web Services account, and that match the specified filters, if any.</p>
-    pub fn resolver_rule_associations(&self) -> ::std::option::Option<&[crate::types::ResolverRuleAssociation]> {
-        self.resolver_rule_associations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resolver_rule_associations.is_none()`.
+    pub fn resolver_rule_associations(&self) -> &[crate::types::ResolverRuleAssociation] {
+        self.resolver_rule_associations.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListResolverRuleAssociationsOutput {

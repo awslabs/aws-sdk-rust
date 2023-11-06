@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartBatchJobOutput {
     /// <p>The unique identifier of this execution of the batch job.</p>
-    pub execution_id: ::std::option::Option<::std::string::String>,
+    pub execution_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl StartBatchJobOutput {
     /// <p>The unique identifier of this execution of the batch job.</p>
-    pub fn execution_id(&self) -> ::std::option::Option<&str> {
-        self.execution_id.as_deref()
+    pub fn execution_id(&self) -> &str {
+        use std::ops::Deref;
+        self.execution_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for StartBatchJobOutput {
@@ -34,6 +35,7 @@ pub struct StartBatchJobOutputBuilder {
 }
 impl StartBatchJobOutputBuilder {
     /// <p>The unique identifier of this execution of the batch job.</p>
+    /// This field is required.
     pub fn execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_id = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,19 @@ impl StartBatchJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartBatchJobOutput`](crate::operation::start_batch_job::StartBatchJobOutput).
-    pub fn build(self) -> crate::operation::start_batch_job::StartBatchJobOutput {
-        crate::operation::start_batch_job::StartBatchJobOutput {
-            execution_id: self.execution_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`execution_id`](crate::operation::start_batch_job::builders::StartBatchJobOutputBuilder::execution_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::start_batch_job::StartBatchJobOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::start_batch_job::StartBatchJobOutput {
+            execution_id: self.execution_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "execution_id",
+                    "execution_id was not specified but it is required when building StartBatchJobOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

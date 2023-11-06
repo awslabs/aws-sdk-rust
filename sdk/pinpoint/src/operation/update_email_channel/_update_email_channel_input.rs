@@ -34,6 +34,7 @@ pub struct UpdateEmailChannelInputBuilder {
 }
 impl UpdateEmailChannelInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateEmailChannelInputBuilder {
         &self.application_id
     }
     /// <p>Specifies the status and settings of the email channel for an application.</p>
+    /// This field is required.
     pub fn email_channel_request(mut self, input: crate::types::EmailChannelRequest) -> Self {
         self.email_channel_request = ::std::option::Option::Some(input);
         self
@@ -64,7 +66,8 @@ impl UpdateEmailChannelInputBuilder {
     /// Consumes the builder and constructs a [`UpdateEmailChannelInput`](crate::operation::update_email_channel::UpdateEmailChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_email_channel::UpdateEmailChannelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_email_channel::UpdateEmailChannelInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_email_channel::UpdateEmailChannelInput {
             application_id: self.application_id,
             email_channel_request: self.email_channel_request,

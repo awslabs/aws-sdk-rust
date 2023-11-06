@@ -50,6 +50,7 @@ pub struct PutDestinationInputBuilder {
 }
 impl PutDestinationInputBuilder {
     /// <p>A name for the destination.</p>
+    /// This field is required.
     pub fn destination_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_name = ::std::option::Option::Some(input.into());
         self
@@ -64,6 +65,7 @@ impl PutDestinationInputBuilder {
         &self.destination_name
     }
     /// <p>The ARN of an Amazon Kinesis stream to which to deliver matching log events.</p>
+    /// This field is required.
     pub fn target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_arn = ::std::option::Option::Some(input.into());
         self
@@ -78,6 +80,7 @@ impl PutDestinationInputBuilder {
         &self.target_arn
     }
     /// <p>The ARN of an IAM role that grants CloudWatch Logs permissions to call the Amazon Kinesis <code>PutRecord</code> operation on the destination stream.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -117,7 +120,7 @@ impl PutDestinationInputBuilder {
     /// Consumes the builder and constructs a [`PutDestinationInput`](crate::operation::put_destination::PutDestinationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_destination::PutDestinationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_destination::PutDestinationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_destination::PutDestinationInput {
             destination_name: self.destination_name,
             target_arn: self.target_arn,

@@ -34,6 +34,7 @@ pub struct StartFuotaTaskInputBuilder {
 }
 impl StartFuotaTaskInputBuilder {
     /// <p>The ID of a FUOTA task.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl StartFuotaTaskInputBuilder {
     /// Consumes the builder and constructs a [`StartFuotaTaskInput`](crate::operation::start_fuota_task::StartFuotaTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_fuota_task::StartFuotaTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_fuota_task::StartFuotaTaskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_fuota_task::StartFuotaTaskInput {
             id: self.id,
             lo_ra_wan: self.lo_ra_wan,

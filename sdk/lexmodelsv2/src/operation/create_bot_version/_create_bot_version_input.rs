@@ -45,6 +45,7 @@ pub struct CreateBotVersionInputBuilder {
 }
 impl CreateBotVersionInputBuilder {
     /// <p>The identifier of the bot to create the version for.</p>
+    /// This field is required.
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
         self
@@ -104,7 +105,7 @@ impl CreateBotVersionInputBuilder {
     /// Consumes the builder and constructs a [`CreateBotVersionInput`](crate::operation::create_bot_version::CreateBotVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_bot_version::CreateBotVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_bot_version::CreateBotVersionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_bot_version::CreateBotVersionInput {
             bot_id: self.bot_id,
             description: self.description,

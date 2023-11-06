@@ -34,6 +34,7 @@ pub struct DescribeUserProfileInputBuilder {
 }
 impl DescribeUserProfileInputBuilder {
     /// <p>The domain ID.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeUserProfileInputBuilder {
         &self.domain_id
     }
     /// <p>The user profile name. This value is not case sensitive.</p>
+    /// This field is required.
     pub fn user_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_profile_name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DescribeUserProfileInputBuilder {
     /// Consumes the builder and constructs a [`DescribeUserProfileInput`](crate::operation::describe_user_profile::DescribeUserProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_user_profile::DescribeUserProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_user_profile::DescribeUserProfileInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_user_profile::DescribeUserProfileInput {
             domain_id: self.domain_id,

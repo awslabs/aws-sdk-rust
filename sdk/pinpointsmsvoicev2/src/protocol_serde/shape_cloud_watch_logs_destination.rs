@@ -2,12 +2,12 @@
 pub fn ser_cloud_watch_logs_destination(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CloudWatchLogsDestination,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.iam_role_arn {
-        object.key("IamRoleArn").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("IamRoleArn").string(input.iam_role_arn.as_str());
     }
-    if let Some(var_2) = &input.log_group_arn {
-        object.key("LogGroupArn").string(var_2.as_str());
+    {
+        object.key("LogGroupArn").string(input.log_group_arn.as_str());
     }
     Ok(())
 }
@@ -51,7 +51,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::cloud_watch_logs_destination_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

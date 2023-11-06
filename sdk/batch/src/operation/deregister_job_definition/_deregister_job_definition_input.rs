@@ -27,6 +27,7 @@ pub struct DeregisterJobDefinitionInputBuilder {
 }
 impl DeregisterJobDefinitionInputBuilder {
     /// <p>The name and revision (<code>name:revision</code>) or full Amazon Resource Name (ARN) of the job definition to deregister.</p>
+    /// This field is required.
     pub fn job_definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_definition = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeregisterJobDefinitionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_job_definition::DeregisterJobDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::deregister_job_definition::DeregisterJobDefinitionInput {
             job_definition: self.job_definition,

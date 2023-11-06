@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SipAddress {
     /// <p>The URI for the SIP address.</p>
-    pub uri: ::std::option::Option<::std::string::String>,
+    pub uri: ::std::string::String,
     /// <p>The type of the SIP address.</p>
-    pub r#type: ::std::option::Option<crate::types::SipType>,
+    pub r#type: crate::types::SipType,
 }
 impl SipAddress {
     /// <p>The URI for the SIP address.</p>
-    pub fn uri(&self) -> ::std::option::Option<&str> {
-        self.uri.as_deref()
+    pub fn uri(&self) -> &str {
+        use std::ops::Deref;
+        self.uri.deref()
     }
     /// <p>The type of the SIP address.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::SipType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::SipType {
+        &self.r#type
     }
 }
 impl ::std::fmt::Debug for SipAddress {
@@ -43,6 +44,7 @@ pub struct SipAddressBuilder {
 }
 impl SipAddressBuilder {
     /// <p>The URI for the SIP address.</p>
+    /// This field is required.
     pub fn uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.uri = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +59,7 @@ impl SipAddressBuilder {
         &self.uri
     }
     /// <p>The type of the SIP address.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::SipType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -71,11 +74,24 @@ impl SipAddressBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`SipAddress`](crate::types::SipAddress).
-    pub fn build(self) -> crate::types::SipAddress {
-        crate::types::SipAddress {
-            uri: self.uri,
-            r#type: self.r#type,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`uri`](crate::types::builders::SipAddressBuilder::uri)
+    /// - [`r#type`](crate::types::builders::SipAddressBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::SipAddress, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SipAddress {
+            uri: self.uri.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "uri",
+                    "uri was not specified but it is required when building SipAddress",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building SipAddress",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for SipAddressBuilder {

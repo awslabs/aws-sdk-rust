@@ -27,6 +27,7 @@ pub struct CancelDeploymentInputBuilder {
 }
 impl CancelDeploymentInputBuilder {
     /// <p>The ID of the deployment.</p>
+    /// This field is required.
     pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl CancelDeploymentInputBuilder {
     /// Consumes the builder and constructs a [`CancelDeploymentInput`](crate::operation::cancel_deployment::CancelDeploymentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_deployment::CancelDeploymentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::cancel_deployment::CancelDeploymentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_deployment::CancelDeploymentInput {
             deployment_id: self.deployment_id,
         })

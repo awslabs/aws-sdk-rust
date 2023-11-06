@@ -27,6 +27,7 @@ pub struct ListSupportedPhoneNumberCountriesInputBuilder {
 }
 impl ListSupportedPhoneNumberCountriesInputBuilder {
     /// <p>The phone number product type.</p>
+    /// This field is required.
     pub fn product_type(mut self, input: crate::types::PhoneNumberProductType) -> Self {
         self.product_type = ::std::option::Option::Some(input);
         self
@@ -45,7 +46,7 @@ impl ListSupportedPhoneNumberCountriesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_supported_phone_number_countries::ListSupportedPhoneNumberCountriesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_supported_phone_number_countries::ListSupportedPhoneNumberCountriesInput {

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteIpAccessSettings`](crate::operation::delete_ip_access_settings::builders::DeleteIpAccessSettingsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`ip_access_settings_arn(impl Into<String>)`](crate::operation::delete_ip_access_settings::builders::DeleteIpAccessSettingsFluentBuilder::ip_access_settings_arn) / [`set_ip_access_settings_arn(Option<String>)`](crate::operation::delete_ip_access_settings::builders::DeleteIpAccessSettingsFluentBuilder::set_ip_access_settings_arn): <p>The ARN of the IP access settings.</p>
+    ///   - [`ip_access_settings_arn(impl Into<String>)`](crate::operation::delete_ip_access_settings::builders::DeleteIpAccessSettingsFluentBuilder::ip_access_settings_arn) / [`set_ip_access_settings_arn(Option<String>)`](crate::operation::delete_ip_access_settings::builders::DeleteIpAccessSettingsFluentBuilder::set_ip_access_settings_arn):<br>required: **true**<br><p>The ARN of the IP access settings.</p><br>
     /// - On success, responds with [`DeleteIpAccessSettingsOutput`](crate::operation::delete_ip_access_settings::DeleteIpAccessSettingsOutput)
     /// - On failure, responds with [`SdkError<DeleteIpAccessSettingsError>`](crate::operation::delete_ip_access_settings::DeleteIpAccessSettingsError)
     pub fn delete_ip_access_settings(&self) -> crate::operation::delete_ip_access_settings::builders::DeleteIpAccessSettingsFluentBuilder {

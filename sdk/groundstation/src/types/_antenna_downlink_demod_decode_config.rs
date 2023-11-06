@@ -42,6 +42,7 @@ pub struct AntennaDownlinkDemodDecodeConfigBuilder {
 }
 impl AntennaDownlinkDemodDecodeConfigBuilder {
     /// <p>Information about the spectral <code>Config</code>.</p>
+    /// This field is required.
     pub fn spectrum_config(mut self, input: crate::types::SpectrumConfig) -> Self {
         self.spectrum_config = ::std::option::Option::Some(input);
         self
@@ -56,6 +57,7 @@ impl AntennaDownlinkDemodDecodeConfigBuilder {
         &self.spectrum_config
     }
     /// <p>Information about the demodulation <code>Config</code>.</p>
+    /// This field is required.
     pub fn demodulation_config(mut self, input: crate::types::DemodulationConfig) -> Self {
         self.demodulation_config = ::std::option::Option::Some(input);
         self
@@ -70,6 +72,7 @@ impl AntennaDownlinkDemodDecodeConfigBuilder {
         &self.demodulation_config
     }
     /// <p>Information about the decode <code>Config</code>.</p>
+    /// This field is required.
     pub fn decode_config(mut self, input: crate::types::DecodeConfig) -> Self {
         self.decode_config = ::std::option::Option::Some(input);
         self

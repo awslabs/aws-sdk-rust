@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3CatalogHudiSource {
     /// <p>The name of the Hudi data source.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The name of the database to read from.</p>
-    pub database: ::std::option::Option<::std::string::String>,
+    pub database: ::std::string::String,
     /// <p>The name of the table in the database to read from.</p>
-    pub table: ::std::option::Option<::std::string::String>,
+    pub table: ::std::string::String,
     /// <p>Specifies additional connection options.</p>
     pub additional_hudi_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Specifies the data schema for the Hudi source.</p>
@@ -17,24 +17,29 @@ pub struct S3CatalogHudiSource {
 }
 impl S3CatalogHudiSource {
     /// <p>The name of the Hudi data source.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The name of the database to read from.</p>
-    pub fn database(&self) -> ::std::option::Option<&str> {
-        self.database.as_deref()
+    pub fn database(&self) -> &str {
+        use std::ops::Deref;
+        self.database.deref()
     }
     /// <p>The name of the table in the database to read from.</p>
-    pub fn table(&self) -> ::std::option::Option<&str> {
-        self.table.as_deref()
+    pub fn table(&self) -> &str {
+        use std::ops::Deref;
+        self.table.deref()
     }
     /// <p>Specifies additional connection options.</p>
     pub fn additional_hudi_options(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.additional_hudi_options.as_ref()
     }
     /// <p>Specifies the data schema for the Hudi source.</p>
-    pub fn output_schemas(&self) -> ::std::option::Option<&[crate::types::GlueSchema]> {
-        self.output_schemas.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_schemas.is_none()`.
+    pub fn output_schemas(&self) -> &[crate::types::GlueSchema] {
+        self.output_schemas.as_deref().unwrap_or_default()
     }
 }
 impl S3CatalogHudiSource {
@@ -56,6 +61,7 @@ pub struct S3CatalogHudiSourceBuilder {
 }
 impl S3CatalogHudiSourceBuilder {
     /// <p>The name of the Hudi data source.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +76,7 @@ impl S3CatalogHudiSourceBuilder {
         &self.name
     }
     /// <p>The name of the database to read from.</p>
+    /// This field is required.
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +91,7 @@ impl S3CatalogHudiSourceBuilder {
         &self.database
     }
     /// <p>The name of the table in the database to read from.</p>
+    /// This field is required.
     pub fn table(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table = ::std::option::Option::Some(input.into());
         self
@@ -145,13 +153,32 @@ impl S3CatalogHudiSourceBuilder {
         &self.output_schemas
     }
     /// Consumes the builder and constructs a [`S3CatalogHudiSource`](crate::types::S3CatalogHudiSource).
-    pub fn build(self) -> crate::types::S3CatalogHudiSource {
-        crate::types::S3CatalogHudiSource {
-            name: self.name,
-            database: self.database,
-            table: self.table,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::S3CatalogHudiSourceBuilder::name)
+    /// - [`database`](crate::types::builders::S3CatalogHudiSourceBuilder::database)
+    /// - [`table`](crate::types::builders::S3CatalogHudiSourceBuilder::table)
+    pub fn build(self) -> ::std::result::Result<crate::types::S3CatalogHudiSource, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::S3CatalogHudiSource {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building S3CatalogHudiSource",
+                )
+            })?,
+            database: self.database.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "database",
+                    "database was not specified but it is required when building S3CatalogHudiSource",
+                )
+            })?,
+            table: self.table.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "table",
+                    "table was not specified but it is required when building S3CatalogHudiSource",
+                )
+            })?,
             additional_hudi_options: self.additional_hudi_options,
             output_schemas: self.output_schemas,
-        }
+        })
     }
 }

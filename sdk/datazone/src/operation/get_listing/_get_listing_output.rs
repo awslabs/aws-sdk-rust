@@ -4,11 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetListingOutput {
     /// <p></p>
-    pub domain_id: ::std::option::Option<::std::string::String>,
+    pub domain_id: ::std::string::String,
     /// <p></p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p></p>
-    pub listing_revision: ::std::option::Option<::std::string::String>,
+    pub listing_revision: ::std::string::String,
     /// <p></p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the listing was updated.</p>
@@ -29,16 +29,19 @@ pub struct GetListingOutput {
 }
 impl GetListingOutput {
     /// <p></p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
-        self.domain_id.as_deref()
+    pub fn domain_id(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_id.deref()
     }
     /// <p></p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p></p>
-    pub fn listing_revision(&self) -> ::std::option::Option<&str> {
-        self.listing_revision.as_deref()
+    pub fn listing_revision(&self) -> &str {
+        use std::ops::Deref;
+        self.listing_revision.deref()
     }
     /// <p></p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -122,6 +125,7 @@ pub struct GetListingOutputBuilder {
 }
 impl GetListingOutputBuilder {
     /// <p></p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -136,6 +140,7 @@ impl GetListingOutputBuilder {
         &self.domain_id
     }
     /// <p></p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -150,6 +155,7 @@ impl GetListingOutputBuilder {
         &self.id
     }
     /// <p></p>
+    /// This field is required.
     pub fn listing_revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.listing_revision = ::std::option::Option::Some(input.into());
         self
@@ -285,11 +291,30 @@ impl GetListingOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetListingOutput`](crate::operation::get_listing::GetListingOutput).
-    pub fn build(self) -> crate::operation::get_listing::GetListingOutput {
-        crate::operation::get_listing::GetListingOutput {
-            domain_id: self.domain_id,
-            id: self.id,
-            listing_revision: self.listing_revision,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`domain_id`](crate::operation::get_listing::builders::GetListingOutputBuilder::domain_id)
+    /// - [`id`](crate::operation::get_listing::builders::GetListingOutputBuilder::id)
+    /// - [`listing_revision`](crate::operation::get_listing::builders::GetListingOutputBuilder::listing_revision)
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_listing::GetListingOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_listing::GetListingOutput {
+            domain_id: self.domain_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "domain_id",
+                    "domain_id was not specified but it is required when building GetListingOutput",
+                )
+            })?,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building GetListingOutput",
+                )
+            })?,
+            listing_revision: self.listing_revision.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "listing_revision",
+                    "listing_revision was not specified but it is required when building GetListingOutput",
+                )
+            })?,
             created_at: self.created_at,
             updated_at: self.updated_at,
             created_by: self.created_by,
@@ -299,7 +324,7 @@ impl GetListingOutputBuilder {
             description: self.description,
             status: self.status,
             _request_id: self._request_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for GetListingOutputBuilder {

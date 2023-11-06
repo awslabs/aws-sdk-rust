@@ -107,7 +107,9 @@ pub fn de_delete_message_batch_http_response(
         output = crate::protocol_serde::shape_delete_message_batch::de_delete_message_batch(_response_body, output)
             .map_err(crate::operation::delete_message_batch::DeleteMessageBatchError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::delete_message_batch_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::delete_message_batch::DeleteMessageBatchError::unhandled)?
     })
 }
 
@@ -141,7 +143,7 @@ pub fn de_delete_message_batch(
             s if s.matches("DeleteMessageBatchResultEntry") /* Successful com.amazonaws.sqs.synthetic#DeleteMessageBatchOutput$Successful */ =>  {
                 let var_1 =
                     Some(
-                        Result::<::std::vec::Vec<crate::types::DeleteMessageBatchResultEntry>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<crate::types::DeleteMessageBatchResultEntry>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_2 = builder.successful.take().unwrap_or_default();
                             list_2.push(
                                 crate::protocol_serde::shape_delete_message_batch_result_entry::de_delete_message_batch_result_entry(&mut tag)
@@ -158,7 +160,7 @@ pub fn de_delete_message_batch(
             s if s.matches("BatchResultErrorEntry") /* Failed com.amazonaws.sqs.synthetic#DeleteMessageBatchOutput$Failed */ =>  {
                 let var_3 =
                     Some(
-                        Result::<::std::vec::Vec<crate::types::BatchResultErrorEntry>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<crate::types::BatchResultErrorEntry>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_4 = builder.failed.take().unwrap_or_default();
                             list_4.push(
                                 crate::protocol_serde::shape_batch_result_error_entry::de_batch_result_error_entry(&mut tag)

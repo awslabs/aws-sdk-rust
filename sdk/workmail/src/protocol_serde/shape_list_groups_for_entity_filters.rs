@@ -2,7 +2,7 @@
 pub fn ser_list_groups_for_entity_filters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ListGroupsForEntityFilters,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.group_name_prefix {
         object.key("GroupNamePrefix").string(var_1.as_str());
     }

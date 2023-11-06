@@ -48,6 +48,7 @@ impl DisassociateSkillFromSkillGroupInputBuilder {
         &self.skill_group_arn
     }
     /// <p>The ARN of a skill group to associate to a skill.</p>
+    /// This field is required.
     pub fn skill_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.skill_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl DisassociateSkillFromSkillGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_skill_from_skill_group::DisassociateSkillFromSkillGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_skill_from_skill_group::DisassociateSkillFromSkillGroupInput {

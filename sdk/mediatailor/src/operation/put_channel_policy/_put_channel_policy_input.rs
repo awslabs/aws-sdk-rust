@@ -34,6 +34,7 @@ pub struct PutChannelPolicyInputBuilder {
 }
 impl PutChannelPolicyInputBuilder {
     /// <p>The channel name associated with this Channel Policy.</p>
+    /// This field is required.
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl PutChannelPolicyInputBuilder {
         &self.channel_name
     }
     /// <p>Adds an IAM role that determines the permissions of your channel.</p>
+    /// This field is required.
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl PutChannelPolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutChannelPolicyInput`](crate::operation::put_channel_policy::PutChannelPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_channel_policy::PutChannelPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_channel_policy::PutChannelPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_channel_policy::PutChannelPolicyInput {
             channel_name: self.channel_name,
             policy: self.policy,

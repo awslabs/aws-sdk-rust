@@ -34,6 +34,7 @@ pub struct EnableTrustAnchorOutputBuilder {
 }
 impl EnableTrustAnchorOutputBuilder {
     /// <p>The state of the trust anchor after a read or write operation. </p>
+    /// This field is required.
     pub fn trust_anchor(mut self, input: crate::types::TrustAnchorDetail) -> Self {
         self.trust_anchor = ::std::option::Option::Some(input);
         self

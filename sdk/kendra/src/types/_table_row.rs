@@ -9,8 +9,10 @@ pub struct TableRow {
 }
 impl TableRow {
     /// <p>A list of table cells in a row.</p>
-    pub fn cells(&self) -> ::std::option::Option<&[crate::types::TableCell]> {
-        self.cells.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cells.is_none()`.
+    pub fn cells(&self) -> &[crate::types::TableCell] {
+        self.cells.as_deref().unwrap_or_default()
     }
 }
 impl TableRow {

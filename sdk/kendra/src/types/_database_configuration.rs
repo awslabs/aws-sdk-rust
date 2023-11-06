@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatabaseConfiguration {
     /// <p>The type of database engine that runs the database.</p>
-    pub database_engine_type: ::std::option::Option<crate::types::DatabaseEngineType>,
+    pub database_engine_type: crate::types::DatabaseEngineType,
     /// <p>Configuration information that's required to connect to a database.</p>
     pub connection_configuration: ::std::option::Option<crate::types::ConnectionConfiguration>,
     /// <p>Provides the configuration information to connect to an Amazon VPC.</p>
@@ -19,8 +19,8 @@ pub struct DatabaseConfiguration {
 }
 impl DatabaseConfiguration {
     /// <p>The type of database engine that runs the database.</p>
-    pub fn database_engine_type(&self) -> ::std::option::Option<&crate::types::DatabaseEngineType> {
-        self.database_engine_type.as_ref()
+    pub fn database_engine_type(&self) -> &crate::types::DatabaseEngineType {
+        &self.database_engine_type
     }
     /// <p>Configuration information that's required to connect to a database.</p>
     pub fn connection_configuration(&self) -> ::std::option::Option<&crate::types::ConnectionConfiguration> {
@@ -63,6 +63,7 @@ pub struct DatabaseConfigurationBuilder {
 }
 impl DatabaseConfigurationBuilder {
     /// <p>The type of database engine that runs the database.</p>
+    /// This field is required.
     pub fn database_engine_type(mut self, input: crate::types::DatabaseEngineType) -> Self {
         self.database_engine_type = ::std::option::Option::Some(input);
         self
@@ -77,6 +78,7 @@ impl DatabaseConfigurationBuilder {
         &self.database_engine_type
     }
     /// <p>Configuration information that's required to connect to a database.</p>
+    /// This field is required.
     pub fn connection_configuration(mut self, input: crate::types::ConnectionConfiguration) -> Self {
         self.connection_configuration = ::std::option::Option::Some(input);
         self
@@ -105,6 +107,7 @@ impl DatabaseConfigurationBuilder {
         &self.vpc_configuration
     }
     /// <p>Information about where the index should get the document information from the database.</p>
+    /// This field is required.
     pub fn column_configuration(mut self, input: crate::types::ColumnConfiguration) -> Self {
         self.column_configuration = ::std::option::Option::Some(input);
         self
@@ -147,14 +150,21 @@ impl DatabaseConfigurationBuilder {
         &self.sql_configuration
     }
     /// Consumes the builder and constructs a [`DatabaseConfiguration`](crate::types::DatabaseConfiguration).
-    pub fn build(self) -> crate::types::DatabaseConfiguration {
-        crate::types::DatabaseConfiguration {
-            database_engine_type: self.database_engine_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`database_engine_type`](crate::types::builders::DatabaseConfigurationBuilder::database_engine_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::DatabaseConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DatabaseConfiguration {
+            database_engine_type: self.database_engine_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "database_engine_type",
+                    "database_engine_type was not specified but it is required when building DatabaseConfiguration",
+                )
+            })?,
             connection_configuration: self.connection_configuration,
             vpc_configuration: self.vpc_configuration,
             column_configuration: self.column_configuration,
             acl_configuration: self.acl_configuration,
             sql_configuration: self.sql_configuration,
-        }
+        })
     }
 }

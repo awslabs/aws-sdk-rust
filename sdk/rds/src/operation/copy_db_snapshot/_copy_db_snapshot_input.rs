@@ -94,8 +94,10 @@ impl CopyDbSnapshotInput {
         self.kms_key_id.as_deref()
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether to copy all tags from the source DB snapshot to the target DB snapshot. By default, tags aren't copied.</p>
     pub fn copy_tags(&self) -> ::std::option::Option<bool> {
@@ -164,6 +166,7 @@ impl CopyDbSnapshotInputBuilder {
     /// </ul>
     /// <p>Example: <code>rds:mydb-2012-04-02-00-01</code> </p>
     /// <p>Example: <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20130805</code> </p>
+    /// This field is required.
     pub fn source_db_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_db_snapshot_identifier = ::std::option::Option::Some(input.into());
         self
@@ -206,6 +209,7 @@ impl CopyDbSnapshotInputBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>my-db-snapshot</code> </p>
+    /// This field is required.
     pub fn target_db_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_db_snapshot_identifier = ::std::option::Option::Some(input.into());
         self
@@ -393,7 +397,7 @@ impl CopyDbSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`CopyDbSnapshotInput`](crate::operation::copy_db_snapshot::CopyDbSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::copy_db_snapshot::CopyDbSnapshotInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::copy_db_snapshot::CopyDbSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::copy_db_snapshot::CopyDbSnapshotInput {
             source_db_snapshot_identifier: self.source_db_snapshot_identifier,
             target_db_snapshot_identifier: self.target_db_snapshot_identifier,

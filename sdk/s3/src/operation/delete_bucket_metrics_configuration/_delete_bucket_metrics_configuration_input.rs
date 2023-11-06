@@ -41,6 +41,7 @@ pub struct DeleteBucketMetricsConfigurationInputBuilder {
 }
 impl DeleteBucketMetricsConfigurationInputBuilder {
     /// <p>The name of the bucket containing the metrics configuration to delete.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DeleteBucketMetricsConfigurationInputBuilder {
         &self.bucket
     }
     /// <p>The ID used to identify the metrics configuration. The ID has a 64 character limit and can only contain letters, numbers, periods, dashes, and underscores.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +89,7 @@ impl DeleteBucketMetricsConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_bucket_metrics_configuration::DeleteBucketMetricsConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_bucket_metrics_configuration::DeleteBucketMetricsConfigurationInput {

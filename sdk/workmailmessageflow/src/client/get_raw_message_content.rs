@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetRawMessageContent`](crate::operation::get_raw_message_content::builders::GetRawMessageContentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`message_id(impl Into<String>)`](crate::operation::get_raw_message_content::builders::GetRawMessageContentFluentBuilder::message_id) / [`set_message_id(Option<String>)`](crate::operation::get_raw_message_content::builders::GetRawMessageContentFluentBuilder::set_message_id): <p>The identifier of the email message to retrieve.</p>
+    ///   - [`message_id(impl Into<String>)`](crate::operation::get_raw_message_content::builders::GetRawMessageContentFluentBuilder::message_id) / [`set_message_id(Option<String>)`](crate::operation::get_raw_message_content::builders::GetRawMessageContentFluentBuilder::set_message_id):<br>required: **true**<br><p>The identifier of the email message to retrieve.</p><br>
     /// - On success, responds with [`GetRawMessageContentOutput`](crate::operation::get_raw_message_content::GetRawMessageContentOutput) with field(s):
     ///   - [`message_content(ByteStream)`](crate::operation::get_raw_message_content::GetRawMessageContentOutput::message_content): <p>The raw content of the email message, in MIME format.</p>
     /// - On failure, responds with [`SdkError<GetRawMessageContentError>`](crate::operation::get_raw_message_content::GetRawMessageContentError)

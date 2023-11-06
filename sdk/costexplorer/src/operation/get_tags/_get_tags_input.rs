@@ -133,8 +133,10 @@ impl GetTagsInput {
     /// </ul>
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     /// <p>When you use <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&[crate::types::SortDefinition]> {
-        self.sort_by.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sort_by.is_none()`.
+    pub fn sort_by(&self) -> &[crate::types::SortDefinition] {
+        self.sort_by.as_deref().unwrap_or_default()
     }
     /// <p>This field is only used when SortBy is provided in the request. The maximum number of objects that are returned for this request. If MaxResults isn't specified with SortBy, the request returns 1000 results as the default value for this parameter.</p>
     /// <p>For <code>GetTags</code>, MaxResults has an upper quota of 1000.</p>
@@ -181,6 +183,7 @@ impl GetTagsInputBuilder {
         &self.search_string
     }
     /// <p>The start and end dates for retrieving the dimension values. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
+    /// This field is required.
     pub fn time_period(mut self, input: crate::types::DateInterval) -> Self {
         self.time_period = ::std::option::Option::Some(input);
         self
@@ -418,7 +421,7 @@ impl GetTagsInputBuilder {
         &self.next_page_token
     }
     /// Consumes the builder and constructs a [`GetTagsInput`](crate::operation::get_tags::GetTagsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_tags::GetTagsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_tags::GetTagsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_tags::GetTagsInput {
             search_string: self.search_string,
             time_period: self.time_period,

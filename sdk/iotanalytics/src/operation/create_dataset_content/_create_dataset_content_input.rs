@@ -34,6 +34,7 @@ pub struct CreateDatasetContentInputBuilder {
 }
 impl CreateDatasetContentInputBuilder {
     /// <p>The name of the dataset.</p>
+    /// This field is required.
     pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl CreateDatasetContentInputBuilder {
     /// Consumes the builder and constructs a [`CreateDatasetContentInput`](crate::operation::create_dataset_content::CreateDatasetContentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_dataset_content::CreateDatasetContentInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_dataset_content::CreateDatasetContentInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_dataset_content::CreateDatasetContentInput {
             dataset_name: self.dataset_name,

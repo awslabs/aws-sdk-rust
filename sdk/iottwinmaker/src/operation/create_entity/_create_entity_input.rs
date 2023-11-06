@@ -69,6 +69,7 @@ pub struct CreateEntityInputBuilder {
 }
 impl CreateEntityInputBuilder {
     /// <p>The ID of the workspace that contains the entity.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +98,7 @@ impl CreateEntityInputBuilder {
         &self.entity_id
     }
     /// <p>The name of the entity.</p>
+    /// This field is required.
     pub fn entity_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_name = ::std::option::Option::Some(input.into());
         self
@@ -182,7 +184,9 @@ impl CreateEntityInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateEntityInput`](crate::operation::create_entity::CreateEntityInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_entity::CreateEntityInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_entity::CreateEntityInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_entity::CreateEntityInput {
             workspace_id: self.workspace_id,
             entity_id: self.entity_id,

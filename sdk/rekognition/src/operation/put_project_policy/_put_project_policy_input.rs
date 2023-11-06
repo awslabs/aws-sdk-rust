@@ -48,6 +48,7 @@ pub struct PutProjectPolicyInputBuilder {
 }
 impl PutProjectPolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the project that the project policy is attached to.</p>
+    /// This field is required.
     pub fn project_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_arn = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl PutProjectPolicyInputBuilder {
         &self.project_arn
     }
     /// <p>A name for the policy.</p>
+    /// This field is required.
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +92,7 @@ impl PutProjectPolicyInputBuilder {
         &self.policy_revision_id
     }
     /// <p>A resource policy to add to the model. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON policy reference</a>. </p>
+    /// This field is required.
     pub fn policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_document = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +109,7 @@ impl PutProjectPolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutProjectPolicyInput`](crate::operation::put_project_policy::PutProjectPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_project_policy::PutProjectPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_project_policy::PutProjectPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_project_policy::PutProjectPolicyInput {
             project_arn: self.project_arn,
             policy_name: self.policy_name,

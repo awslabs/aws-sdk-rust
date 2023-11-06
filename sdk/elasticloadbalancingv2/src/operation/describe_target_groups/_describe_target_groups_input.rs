@@ -20,12 +20,16 @@ impl DescribeTargetGroupsInput {
         self.load_balancer_arn.as_deref()
     }
     /// <p>The Amazon Resource Names (ARN) of the target groups.</p>
-    pub fn target_group_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.target_group_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_group_arns.is_none()`.
+    pub fn target_group_arns(&self) -> &[::std::string::String] {
+        self.target_group_arns.as_deref().unwrap_or_default()
     }
     /// <p>The names of the target groups.</p>
-    pub fn names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.names.is_none()`.
+    pub fn names(&self) -> &[::std::string::String] {
+        self.names.as_deref().unwrap_or_default()
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {
@@ -139,7 +143,7 @@ impl DescribeTargetGroupsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTargetGroupsInput`](crate::operation::describe_target_groups::DescribeTargetGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_target_groups::DescribeTargetGroupsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_target_groups::DescribeTargetGroupsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_target_groups::DescribeTargetGroupsInput {
             load_balancer_arn: self.load_balancer_arn,

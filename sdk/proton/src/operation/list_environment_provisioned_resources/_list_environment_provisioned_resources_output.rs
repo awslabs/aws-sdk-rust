@@ -6,7 +6,7 @@ pub struct ListEnvironmentProvisionedResourcesOutput {
     /// <p>A token that indicates the location of the next environment provisioned resource in the array of provisioned resources, after the current requested list of environment provisioned resources.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of environment provisioned resources.</p>
-    pub provisioned_resources: ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedResource>>,
+    pub provisioned_resources: ::std::vec::Vec<crate::types::ProvisionedResource>,
     _request_id: Option<String>,
 }
 impl ListEnvironmentProvisionedResourcesOutput {
@@ -15,8 +15,9 @@ impl ListEnvironmentProvisionedResourcesOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of environment provisioned resources.</p>
-    pub fn provisioned_resources(&self) -> ::std::option::Option<&[crate::types::ProvisionedResource]> {
-        self.provisioned_resources.as_deref()
+    pub fn provisioned_resources(&self) -> &[crate::types::ProvisionedResource] {
+        use std::ops::Deref;
+        self.provisioned_resources.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListEnvironmentProvisionedResourcesOutput {
@@ -84,11 +85,25 @@ impl ListEnvironmentProvisionedResourcesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListEnvironmentProvisionedResourcesOutput`](crate::operation::list_environment_provisioned_resources::ListEnvironmentProvisionedResourcesOutput).
-    pub fn build(self) -> crate::operation::list_environment_provisioned_resources::ListEnvironmentProvisionedResourcesOutput {
-        crate::operation::list_environment_provisioned_resources::ListEnvironmentProvisionedResourcesOutput {
-            next_token: self.next_token,
-            provisioned_resources: self.provisioned_resources,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`provisioned_resources`](crate::operation::list_environment_provisioned_resources::builders::ListEnvironmentProvisionedResourcesOutputBuilder::provisioned_resources)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_environment_provisioned_resources::ListEnvironmentProvisionedResourcesOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::list_environment_provisioned_resources::ListEnvironmentProvisionedResourcesOutput {
+                next_token: self.next_token,
+                provisioned_resources: self.provisioned_resources.ok_or_else(|| {
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
+                        "provisioned_resources",
+                        "provisioned_resources was not specified but it is required when building ListEnvironmentProvisionedResourcesOutput",
+                    )
+                })?,
+                _request_id: self._request_id,
+            },
+        )
     }
 }

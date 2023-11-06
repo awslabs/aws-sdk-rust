@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetTemplateStepGroup`](crate::operation::get_template_step_group::builders::GetTemplateStepGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`template_id(impl Into<String>)`](crate::operation::get_template_step_group::builders::GetTemplateStepGroupFluentBuilder::template_id) / [`set_template_id(Option<String>)`](crate::operation::get_template_step_group::builders::GetTemplateStepGroupFluentBuilder::set_template_id): <p>The ID of the template.</p>
-    ///   - [`id(impl Into<String>)`](crate::operation::get_template_step_group::builders::GetTemplateStepGroupFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_template_step_group::builders::GetTemplateStepGroupFluentBuilder::set_id): <p>The ID of the step group.</p>
+    ///   - [`template_id(impl Into<String>)`](crate::operation::get_template_step_group::builders::GetTemplateStepGroupFluentBuilder::template_id) / [`set_template_id(Option<String>)`](crate::operation::get_template_step_group::builders::GetTemplateStepGroupFluentBuilder::set_template_id):<br>required: **true**<br><p>The ID of the template.</p><br>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_template_step_group::builders::GetTemplateStepGroupFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_template_step_group::builders::GetTemplateStepGroupFluentBuilder::set_id):<br>required: **true**<br><p>The ID of the step group.</p><br>
     /// - On success, responds with [`GetTemplateStepGroupOutput`](crate::operation::get_template_step_group::GetTemplateStepGroupOutput) with field(s):
     ///   - [`template_id(Option<String>)`](crate::operation::get_template_step_group::GetTemplateStepGroupOutput::template_id): <p>The ID of the template.</p>
     ///   - [`id(Option<String>)`](crate::operation::get_template_step_group::GetTemplateStepGroupOutput::id): <p>The ID of the step group.</p>
@@ -13,9 +13,9 @@ impl super::Client {
     ///   - [`status(Option<StepGroupStatus>)`](crate::operation::get_template_step_group::GetTemplateStepGroupOutput::status): <p>The status of the step group.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_template_step_group::GetTemplateStepGroupOutput::creation_time): <p>The time at which the step group was created.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::get_template_step_group::GetTemplateStepGroupOutput::last_modified_time): <p>The time at which the step group was last modified.</p>
-    ///   - [`tools(Option<Vec<Tool>>)`](crate::operation::get_template_step_group::GetTemplateStepGroupOutput::tools): <p>List of AWS services utilized in a migration workflow.</p>
-    ///   - [`previous(Option<Vec<String>>)`](crate::operation::get_template_step_group::GetTemplateStepGroupOutput::previous): <p>The previous step group.</p>
-    ///   - [`next(Option<Vec<String>>)`](crate::operation::get_template_step_group::GetTemplateStepGroupOutput::next): <p>The next step group.</p>
+    ///   - [`tools(Option<Vec::<Tool>>)`](crate::operation::get_template_step_group::GetTemplateStepGroupOutput::tools): <p>List of AWS services utilized in a migration workflow.</p>
+    ///   - [`previous(Option<Vec::<String>>)`](crate::operation::get_template_step_group::GetTemplateStepGroupOutput::previous): <p>The previous step group.</p>
+    ///   - [`next(Option<Vec::<String>>)`](crate::operation::get_template_step_group::GetTemplateStepGroupOutput::next): <p>The next step group.</p>
     /// - On failure, responds with [`SdkError<GetTemplateStepGroupError>`](crate::operation::get_template_step_group::GetTemplateStepGroupError)
     pub fn get_template_step_group(&self) -> crate::operation::get_template_step_group::builders::GetTemplateStepGroupFluentBuilder {
         crate::operation::get_template_step_group::builders::GetTemplateStepGroupFluentBuilder::new(self.handle.clone())

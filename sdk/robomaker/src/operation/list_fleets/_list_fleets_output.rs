@@ -14,8 +14,10 @@ pub struct ListFleetsOutput {
 }
 impl ListFleetsOutput {
     /// <p>A list of fleet details meeting the request criteria.</p>
-    pub fn fleet_details(&self) -> ::std::option::Option<&[crate::types::Fleet]> {
-        self.fleet_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fleet_details.is_none()`.
+    pub fn fleet_details(&self) -> &[crate::types::Fleet] {
+        self.fleet_details.as_deref().unwrap_or_default()
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListFleets</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

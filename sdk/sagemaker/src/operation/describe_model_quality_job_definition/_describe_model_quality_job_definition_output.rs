@@ -104,6 +104,7 @@ pub struct DescribeModelQualityJobDefinitionOutputBuilder {
 }
 impl DescribeModelQualityJobDefinitionOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the model quality job.</p>
+    /// This field is required.
     pub fn job_definition_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_definition_arn = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +119,7 @@ impl DescribeModelQualityJobDefinitionOutputBuilder {
         &self.job_definition_arn
     }
     /// <p>The name of the quality job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
+    /// This field is required.
     pub fn job_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_definition_name = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +134,7 @@ impl DescribeModelQualityJobDefinitionOutputBuilder {
         &self.job_definition_name
     }
     /// <p>The time at which the model quality job was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -160,6 +163,7 @@ impl DescribeModelQualityJobDefinitionOutputBuilder {
         &self.model_quality_baseline_config
     }
     /// <p>Configures the model quality job to run a specified Docker container image.</p>
+    /// This field is required.
     pub fn model_quality_app_specification(mut self, input: crate::types::ModelQualityAppSpecification) -> Self {
         self.model_quality_app_specification = ::std::option::Option::Some(input);
         self
@@ -174,6 +178,7 @@ impl DescribeModelQualityJobDefinitionOutputBuilder {
         &self.model_quality_app_specification
     }
     /// <p>Inputs for the model quality job.</p>
+    /// This field is required.
     pub fn model_quality_job_input(mut self, input: crate::types::ModelQualityJobInput) -> Self {
         self.model_quality_job_input = ::std::option::Option::Some(input);
         self
@@ -188,6 +193,7 @@ impl DescribeModelQualityJobDefinitionOutputBuilder {
         &self.model_quality_job_input
     }
     /// <p>The output configuration for monitoring jobs.</p>
+    /// This field is required.
     pub fn model_quality_job_output_config(mut self, input: crate::types::MonitoringOutputConfig) -> Self {
         self.model_quality_job_output_config = ::std::option::Option::Some(input);
         self
@@ -202,6 +208,7 @@ impl DescribeModelQualityJobDefinitionOutputBuilder {
         &self.model_quality_job_output_config
     }
     /// <p>Identifies the resources to deploy for a monitoring job.</p>
+    /// This field is required.
     pub fn job_resources(mut self, input: crate::types::MonitoringResources) -> Self {
         self.job_resources = ::std::option::Option::Some(input);
         self
@@ -230,6 +237,7 @@ impl DescribeModelQualityJobDefinitionOutputBuilder {
         &self.network_config
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self

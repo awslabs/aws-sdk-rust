@@ -27,6 +27,7 @@ pub struct StopSimulationInputBuilder {
 }
 impl StopSimulationInputBuilder {
     /// <p>The name of the simulation.</p>
+    /// This field is required.
     pub fn simulation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.simulation = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl StopSimulationInputBuilder {
     /// Consumes the builder and constructs a [`StopSimulationInput`](crate::operation::stop_simulation::StopSimulationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_simulation::StopSimulationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_simulation::StopSimulationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_simulation::StopSimulationInput { simulation: self.simulation })
     }
 }

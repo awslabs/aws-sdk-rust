@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTapeArchivesInput {
     /// <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to describe.</p>
-    pub tape_ar_ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub tape_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An opaque string that indicates the position at which to begin describing virtual tapes.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Specifies that the number of virtual tapes described be limited to the specified number.</p>
@@ -13,8 +13,10 @@ pub struct DescribeTapeArchivesInput {
 }
 impl DescribeTapeArchivesInput {
     /// <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to describe.</p>
-    pub fn tape_ar_ns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tape_ar_ns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tape_arns.is_none()`.
+    pub fn tape_arns(&self) -> &[::std::string::String] {
+        self.tape_arns.as_deref().unwrap_or_default()
     }
     /// <p>An opaque string that indicates the position at which to begin describing virtual tapes.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {
@@ -36,30 +38,30 @@ impl DescribeTapeArchivesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTapeArchivesInputBuilder {
-    pub(crate) tape_ar_ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) tape_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,
 }
 impl DescribeTapeArchivesInputBuilder {
-    /// Appends an item to `tape_ar_ns`.
+    /// Appends an item to `tape_arns`.
     ///
-    /// To override the contents of this collection use [`set_tape_ar_ns`](Self::set_tape_ar_ns).
+    /// To override the contents of this collection use [`set_tape_arns`](Self::set_tape_arns).
     ///
     /// <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to describe.</p>
-    pub fn tape_ar_ns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.tape_ar_ns.unwrap_or_default();
+    pub fn tape_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.tape_arns.unwrap_or_default();
         v.push(input.into());
-        self.tape_ar_ns = ::std::option::Option::Some(v);
+        self.tape_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to describe.</p>
-    pub fn set_tape_ar_ns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.tape_ar_ns = input;
+    pub fn set_tape_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.tape_arns = input;
         self
     }
     /// <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to describe.</p>
-    pub fn get_tape_ar_ns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.tape_ar_ns
+    pub fn get_tape_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tape_arns
     }
     /// <p>An opaque string that indicates the position at which to begin describing virtual tapes.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -92,10 +94,10 @@ impl DescribeTapeArchivesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTapeArchivesInput`](crate::operation::describe_tape_archives::DescribeTapeArchivesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_tape_archives::DescribeTapeArchivesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_tape_archives::DescribeTapeArchivesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_tape_archives::DescribeTapeArchivesInput {
-            tape_ar_ns: self.tape_ar_ns,
+            tape_arns: self.tape_arns,
             marker: self.marker,
             limit: self.limit,
         })

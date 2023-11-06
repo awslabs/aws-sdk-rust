@@ -36,8 +36,10 @@ impl GetParametersByPathInput {
     /// <p>The following <code>Key</code> values are supported for <code>GetParametersByPath</code>: <code>Type</code>, <code>KeyId</code>, and <code>Label</code>.</p>
     /// <p>The following <code>Key</code> values aren't supported for <code>GetParametersByPath</code>: <code>tag</code>, <code>DataType</code>, <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p>
     /// </note>
-    pub fn parameter_filters(&self) -> ::std::option::Option<&[crate::types::ParameterStringFilter]> {
-        self.parameter_filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameter_filters.is_none()`.
+    pub fn parameter_filters(&self) -> &[crate::types::ParameterStringFilter] {
+        self.parameter_filters.as_deref().unwrap_or_default()
     }
     /// <p>Retrieve all parameters in a hierarchy with their value decrypted.</p>
     pub fn with_decryption(&self) -> ::std::option::Option<bool> {
@@ -72,6 +74,7 @@ pub struct GetParametersByPathInputBuilder {
 }
 impl GetParametersByPathInputBuilder {
     /// <p>The hierarchy for the parameter. Hierarchies start with a forward slash (/). The hierarchy is the parameter name except the last part of the parameter. For the API call to succeed, the last part of the parameter name can't be in the path. A parameter name hierarchy can have a maximum of 15 levels. Here is an example of a hierarchy: <code>/Finance/Prod/IAD/WinServ2016/license33 </code> </p>
+    /// This field is required.
     pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path = ::std::option::Option::Some(input.into());
         self
@@ -179,7 +182,7 @@ impl GetParametersByPathInputBuilder {
     /// Consumes the builder and constructs a [`GetParametersByPathInput`](crate::operation::get_parameters_by_path::GetParametersByPathInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_parameters_by_path::GetParametersByPathInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_parameters_by_path::GetParametersByPathInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_parameters_by_path::GetParametersByPathInput {
             path: self.path,

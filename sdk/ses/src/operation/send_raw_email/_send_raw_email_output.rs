@@ -5,13 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendRawEmailOutput {
     /// <p>The unique message identifier returned from the <code>SendRawEmail</code> action. </p>
-    pub message_id: ::std::option::Option<::std::string::String>,
+    pub message_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl SendRawEmailOutput {
     /// <p>The unique message identifier returned from the <code>SendRawEmail</code> action. </p>
-    pub fn message_id(&self) -> ::std::option::Option<&str> {
-        self.message_id.as_deref()
+    pub fn message_id(&self) -> &str {
+        use std::ops::Deref;
+        self.message_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for SendRawEmailOutput {
@@ -35,6 +36,7 @@ pub struct SendRawEmailOutputBuilder {
 }
 impl SendRawEmailOutputBuilder {
     /// <p>The unique message identifier returned from the <code>SendRawEmail</code> action. </p>
+    /// This field is required.
     pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_id = ::std::option::Option::Some(input.into());
         self
@@ -58,10 +60,19 @@ impl SendRawEmailOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SendRawEmailOutput`](crate::operation::send_raw_email::SendRawEmailOutput).
-    pub fn build(self) -> crate::operation::send_raw_email::SendRawEmailOutput {
-        crate::operation::send_raw_email::SendRawEmailOutput {
-            message_id: self.message_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`message_id`](crate::operation::send_raw_email::builders::SendRawEmailOutputBuilder::message_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::send_raw_email::SendRawEmailOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::send_raw_email::SendRawEmailOutput {
+            message_id: self.message_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "message_id",
+                    "message_id was not specified but it is required when building SendRawEmailOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

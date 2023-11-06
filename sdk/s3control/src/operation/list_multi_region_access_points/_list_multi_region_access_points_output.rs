@@ -11,8 +11,10 @@ pub struct ListMultiRegionAccessPointsOutput {
 }
 impl ListMultiRegionAccessPointsOutput {
     /// <p>The list of Multi-Region Access Points associated with the user.</p>
-    pub fn access_points(&self) -> ::std::option::Option<&[crate::types::MultiRegionAccessPointReport]> {
-        self.access_points.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.access_points.is_none()`.
+    pub fn access_points(&self) -> &[crate::types::MultiRegionAccessPointReport] {
+        self.access_points.as_deref().unwrap_or_default()
     }
     /// <p>If the specified bucket has more Multi-Region Access Points than can be returned in one call to this action, this field contains a continuation token. You can use this token tin subsequent calls to this action to retrieve additional Multi-Region Access Points.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

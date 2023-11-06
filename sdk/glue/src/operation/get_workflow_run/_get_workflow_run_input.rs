@@ -41,6 +41,7 @@ pub struct GetWorkflowRunInputBuilder {
 }
 impl GetWorkflowRunInputBuilder {
     /// <p>Name of the workflow being run.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl GetWorkflowRunInputBuilder {
         &self.name
     }
     /// <p>The ID of the workflow run.</p>
+    /// This field is required.
     pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.run_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +87,7 @@ impl GetWorkflowRunInputBuilder {
     /// Consumes the builder and constructs a [`GetWorkflowRunInput`](crate::operation::get_workflow_run::GetWorkflowRunInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_workflow_run::GetWorkflowRunInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_workflow_run::GetWorkflowRunInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_workflow_run::GetWorkflowRunInput {
             name: self.name,
             run_id: self.run_id,

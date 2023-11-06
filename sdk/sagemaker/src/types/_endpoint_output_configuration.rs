@@ -56,6 +56,7 @@ pub struct EndpointOutputConfigurationBuilder {
 }
 impl EndpointOutputConfigurationBuilder {
     /// <p>The name of the endpoint made during a recommendation job.</p>
+    /// This field is required.
     pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +71,7 @@ impl EndpointOutputConfigurationBuilder {
         &self.endpoint_name
     }
     /// <p>The name of the production variant (deployed model) made during a recommendation job.</p>
+    /// This field is required.
     pub fn variant_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.variant_name = ::std::option::Option::Some(input.into());
         self

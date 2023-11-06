@@ -50,8 +50,10 @@ impl CreateEdgePackagingJobInput {
         self.resource_key.as_deref()
     }
     /// <p>Creates tags for the packaging job.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateEdgePackagingJobInput {
@@ -76,6 +78,7 @@ pub struct CreateEdgePackagingJobInputBuilder {
 }
 impl CreateEdgePackagingJobInputBuilder {
     /// <p>The name of the edge packaging job.</p>
+    /// This field is required.
     pub fn edge_packaging_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_packaging_job_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl CreateEdgePackagingJobInputBuilder {
         &self.edge_packaging_job_name
     }
     /// <p>The name of the SageMaker Neo compilation job that will be used to locate model artifacts for packaging.</p>
+    /// This field is required.
     pub fn compilation_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compilation_job_name = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +108,7 @@ impl CreateEdgePackagingJobInputBuilder {
         &self.compilation_job_name
     }
     /// <p>The name of the model.</p>
+    /// This field is required.
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_name = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +123,7 @@ impl CreateEdgePackagingJobInputBuilder {
         &self.model_name
     }
     /// <p>The version of the model.</p>
+    /// This field is required.
     pub fn model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_version = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +138,7 @@ impl CreateEdgePackagingJobInputBuilder {
         &self.model_version
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to download and upload the model, and to contact SageMaker Neo.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -146,6 +153,7 @@ impl CreateEdgePackagingJobInputBuilder {
         &self.role_arn
     }
     /// <p>Provides information about the output location for the packaged model.</p>
+    /// This field is required.
     pub fn output_config(mut self, input: crate::types::EdgeOutputConfig) -> Self {
         self.output_config = ::std::option::Option::Some(input);
         self
@@ -198,7 +206,7 @@ impl CreateEdgePackagingJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_edge_packaging_job::CreateEdgePackagingJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_edge_packaging_job::CreateEdgePackagingJobInput {
             edge_packaging_job_name: self.edge_packaging_job_name,

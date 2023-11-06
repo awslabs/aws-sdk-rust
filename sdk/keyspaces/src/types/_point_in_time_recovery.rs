@@ -10,7 +10,7 @@ pub struct PointInTimeRecovery {
     /// <li> <p> <code>status=ENABLED</code> </p> </li>
     /// <li> <p> <code>status=DISABLED</code> </p> </li>
     /// </ul>
-    pub status: ::std::option::Option<crate::types::PointInTimeRecoveryStatus>,
+    pub status: crate::types::PointInTimeRecoveryStatus,
 }
 impl PointInTimeRecovery {
     /// <p>The options are:</p>
@@ -18,8 +18,8 @@ impl PointInTimeRecovery {
     /// <li> <p> <code>status=ENABLED</code> </p> </li>
     /// <li> <p> <code>status=DISABLED</code> </p> </li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::PointInTimeRecoveryStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::PointInTimeRecoveryStatus {
+        &self.status
     }
 }
 impl PointInTimeRecovery {
@@ -41,6 +41,7 @@ impl PointInTimeRecoveryBuilder {
     /// <li> <p> <code>status=ENABLED</code> </p> </li>
     /// <li> <p> <code>status=DISABLED</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::PointInTimeRecoveryStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -63,7 +64,16 @@ impl PointInTimeRecoveryBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`PointInTimeRecovery`](crate::types::PointInTimeRecovery).
-    pub fn build(self) -> crate::types::PointInTimeRecovery {
-        crate::types::PointInTimeRecovery { status: self.status }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::types::builders::PointInTimeRecoveryBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::PointInTimeRecovery, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PointInTimeRecovery {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building PointInTimeRecovery",
+                )
+            })?,
+        })
     }
 }

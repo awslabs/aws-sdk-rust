@@ -34,6 +34,7 @@ pub struct StartImageBuilderInputBuilder {
 }
 impl StartImageBuilderInputBuilder {
     /// <p>The name of the image builder.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl StartImageBuilderInputBuilder {
     /// Consumes the builder and constructs a [`StartImageBuilderInput`](crate::operation::start_image_builder::StartImageBuilderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_image_builder::StartImageBuilderInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_image_builder::StartImageBuilderInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_image_builder::StartImageBuilderInput {
             name: self.name,
             appstream_agent_version: self.appstream_agent_version,

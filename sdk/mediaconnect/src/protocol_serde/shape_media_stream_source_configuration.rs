@@ -23,7 +23,7 @@ where
                         }
                         "inputConfigurations" => {
                             builder = builder.set_input_configurations(
-                                crate::protocol_serde::shape___list_of_input_configuration::de___list_of_input_configuration(tokens)?,
+                                crate::protocol_serde::shape_list_of_input_configuration::de_list_of_input_configuration(tokens)?,
                             );
                         }
                         "mediaStreamName" => {
@@ -43,7 +43,7 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::media_stream_source_configuration_correct_errors(builder).build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

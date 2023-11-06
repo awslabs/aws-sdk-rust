@@ -13,6 +13,7 @@
 /// # let applicationtype = unimplemented!();
 /// match applicationtype {
 ///     ApplicationType::Hana => { /* ... */ },
+///     ApplicationType::SapAbap => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -42,6 +43,8 @@
 pub enum ApplicationType {
     #[allow(missing_docs)] // documentation missing in model
     Hana,
+    #[allow(missing_docs)] // documentation missing in model
+    SapAbap,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -49,6 +52,7 @@ impl ::std::convert::From<&str> for ApplicationType {
     fn from(s: &str) -> Self {
         match s {
             "HANA" => ApplicationType::Hana,
+            "SAP_ABAP" => ApplicationType::SapAbap,
             other => ApplicationType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -65,12 +69,13 @@ impl ApplicationType {
     pub fn as_str(&self) -> &str {
         match self {
             ApplicationType::Hana => "HANA",
+            ApplicationType::SapAbap => "SAP_ABAP",
             ApplicationType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["HANA"]
+        &["HANA", "SAP_ABAP"]
     }
 }
 impl ::std::convert::AsRef<str> for ApplicationType {

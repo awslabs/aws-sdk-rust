@@ -12,8 +12,10 @@ pub struct ListGitHubAccountTokenNamesOutput {
 }
 impl ListGitHubAccountTokenNamesOutput {
     /// <p>A list of names of connections to GitHub accounts.</p>
-    pub fn token_name_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.token_name_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.token_name_list.is_none()`.
+    pub fn token_name_list(&self) -> &[::std::string::String] {
+        self.token_name_list.as_deref().unwrap_or_default()
     }
     /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent <code>ListGitHubAccountTokenNames</code> call to return the next set of names in the list. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

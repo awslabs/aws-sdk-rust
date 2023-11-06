@@ -28,11 +28,10 @@ pub fn de_create_access_preview_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_access_preview::CreateAccessPreviewError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_access_preview::CreateAccessPreviewError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ConflictException" => crate::operation::create_access_preview::CreateAccessPreviewError::ConflictException({
@@ -43,11 +42,10 @@ pub fn de_create_access_preview_http_error(
                 output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_access_preview::CreateAccessPreviewError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::conflict_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_access_preview::CreateAccessPreviewError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerException" => crate::operation::create_access_preview::CreateAccessPreviewError::InternalServerException({
@@ -65,11 +63,10 @@ pub fn de_create_access_preview_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_access_preview::CreateAccessPreviewError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::create_access_preview::CreateAccessPreviewError::ResourceNotFoundException({
@@ -80,11 +77,10 @@ pub fn de_create_access_preview_http_error(
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_access_preview::CreateAccessPreviewError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_access_preview::CreateAccessPreviewError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ServiceQuotaExceededException" => crate::operation::create_access_preview::CreateAccessPreviewError::ServiceQuotaExceededException({
@@ -98,11 +94,10 @@ pub fn de_create_access_preview_http_error(
                 )
                 .map_err(crate::operation::create_access_preview::CreateAccessPreviewError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::service_quota_exceeded_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_access_preview::CreateAccessPreviewError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::create_access_preview::CreateAccessPreviewError::ThrottlingException({
@@ -120,11 +115,10 @@ pub fn de_create_access_preview_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_access_preview::CreateAccessPreviewError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::create_access_preview::CreateAccessPreviewError::ValidationException({
@@ -135,11 +129,10 @@ pub fn de_create_access_preview_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_access_preview::CreateAccessPreviewError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_access_preview::CreateAccessPreviewError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::create_access_preview::CreateAccessPreviewError::generic(generic),
@@ -161,18 +154,20 @@ pub fn de_create_access_preview_http_response(
         output = crate::protocol_serde::shape_create_access_preview::de_create_access_preview(_response_body, output)
             .map_err(crate::operation::create_access_preview::CreateAccessPreviewError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::create_access_preview_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::create_access_preview::CreateAccessPreviewError::unhandled)?
     })
 }
 
 pub fn ser_create_access_preview_input(
     input: &crate::operation::create_access_preview::CreateAccessPreviewInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_access_preview_input::ser_create_access_preview_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_create_access_preview(

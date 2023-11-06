@@ -33,6 +33,7 @@ impl GetLatestConfigurationInputBuilder {
     /// <p>Token describing the current state of the configuration session. To obtain a token, first call the <code>StartConfigurationSession</code> API. Note that every call to <code>GetLatestConfiguration</code> will return a new <code>ConfigurationToken</code> (<code>NextPollConfigurationToken</code> in the response) and <i>must</i> be provided to subsequent <code>GetLatestConfiguration</code> API calls.</p> <important>
     /// <p>This token should only be used once. To support long poll use cases, the token is valid for up to 24 hours. If a <code>GetLatestConfiguration</code> call uses an expired token, the system returns <code>BadRequestException</code>.</p>
     /// </important>
+    /// This field is required.
     pub fn configuration_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_token = ::std::option::Option::Some(input.into());
         self
@@ -53,8 +54,10 @@ impl GetLatestConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`GetLatestConfigurationInput`](crate::operation::get_latest_configuration::GetLatestConfigurationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_latest_configuration::GetLatestConfigurationInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::get_latest_configuration::GetLatestConfigurationInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::get_latest_configuration::GetLatestConfigurationInput {
             configuration_token: self.configuration_token,
         })

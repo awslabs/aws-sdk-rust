@@ -20,8 +20,10 @@ pub struct AwsS3BucketNotificationConfigurationDetail {
 }
 impl AwsS3BucketNotificationConfigurationDetail {
     /// <p>The list of events that trigger a notification.</p>
-    pub fn events(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.events.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.events.is_none()`.
+    pub fn events(&self) -> &[::std::string::String] {
+        self.events.as_deref().unwrap_or_default()
     }
     /// <p>The filters that determine which S3 buckets generate notifications.</p>
     pub fn filter(&self) -> ::std::option::Option<&crate::types::AwsS3BucketNotificationConfigurationFilter> {

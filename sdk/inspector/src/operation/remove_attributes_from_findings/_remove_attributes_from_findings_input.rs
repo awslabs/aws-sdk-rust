@@ -10,12 +10,16 @@ pub struct RemoveAttributesFromFindingsInput {
 }
 impl RemoveAttributesFromFindingsInput {
     /// <p>The ARNs that specify the findings that you want to remove attributes from.</p>
-    pub fn finding_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.finding_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.finding_arns.is_none()`.
+    pub fn finding_arns(&self) -> &[::std::string::String] {
+        self.finding_arns.as_deref().unwrap_or_default()
     }
     /// <p>The array of attribute keys that you want to remove from specified findings.</p>
-    pub fn attribute_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.attribute_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attribute_keys.is_none()`.
+    pub fn attribute_keys(&self) -> &[::std::string::String] {
+        self.attribute_keys.as_deref().unwrap_or_default()
     }
 }
 impl RemoveAttributesFromFindingsInput {
@@ -78,7 +82,7 @@ impl RemoveAttributesFromFindingsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_attributes_from_findings::RemoveAttributesFromFindingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::remove_attributes_from_findings::RemoveAttributesFromFindingsInput {
             finding_arns: self.finding_arns,

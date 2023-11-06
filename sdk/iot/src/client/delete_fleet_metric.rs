@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteFleetMetric`](crate::operation::delete_fleet_metric::builders::DeleteFleetMetricFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`metric_name(impl Into<String>)`](crate::operation::delete_fleet_metric::builders::DeleteFleetMetricFluentBuilder::metric_name) / [`set_metric_name(Option<String>)`](crate::operation::delete_fleet_metric::builders::DeleteFleetMetricFluentBuilder::set_metric_name): <p>The name of the fleet metric to delete.</p>
-    ///   - [`expected_version(i64)`](crate::operation::delete_fleet_metric::builders::DeleteFleetMetricFluentBuilder::expected_version) / [`set_expected_version(Option<i64>)`](crate::operation::delete_fleet_metric::builders::DeleteFleetMetricFluentBuilder::set_expected_version): <p>The expected version of the fleet metric to delete.</p>
+    ///   - [`metric_name(impl Into<String>)`](crate::operation::delete_fleet_metric::builders::DeleteFleetMetricFluentBuilder::metric_name) / [`set_metric_name(Option<String>)`](crate::operation::delete_fleet_metric::builders::DeleteFleetMetricFluentBuilder::set_metric_name):<br>required: **true**<br><p>The name of the fleet metric to delete.</p><br>
+    ///   - [`expected_version(i64)`](crate::operation::delete_fleet_metric::builders::DeleteFleetMetricFluentBuilder::expected_version) / [`set_expected_version(Option<i64>)`](crate::operation::delete_fleet_metric::builders::DeleteFleetMetricFluentBuilder::set_expected_version):<br>required: **false**<br><p>The expected version of the fleet metric to delete.</p><br>
     /// - On success, responds with [`DeleteFleetMetricOutput`](crate::operation::delete_fleet_metric::DeleteFleetMetricOutput)
     /// - On failure, responds with [`SdkError<DeleteFleetMetricError>`](crate::operation::delete_fleet_metric::DeleteFleetMetricError)
     pub fn delete_fleet_metric(&self) -> crate::operation::delete_fleet_metric::builders::DeleteFleetMetricFluentBuilder {

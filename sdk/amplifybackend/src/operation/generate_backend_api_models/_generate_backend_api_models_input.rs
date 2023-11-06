@@ -42,6 +42,7 @@ pub struct GenerateBackendApiModelsInputBuilder {
 }
 impl GenerateBackendApiModelsInputBuilder {
     /// <p>The app ID.</p>
+    /// This field is required.
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl GenerateBackendApiModelsInputBuilder {
         &self.app_id
     }
     /// <p>The name of the backend environment.</p>
+    /// This field is required.
     pub fn backend_environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backend_environment_name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl GenerateBackendApiModelsInputBuilder {
         &self.backend_environment_name
     }
     /// <p>The name of this resource.</p>
+    /// This field is required.
     pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self
@@ -88,7 +91,7 @@ impl GenerateBackendApiModelsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::generate_backend_api_models::GenerateBackendApiModelsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::generate_backend_api_models::GenerateBackendApiModelsInput {
             app_id: self.app_id,

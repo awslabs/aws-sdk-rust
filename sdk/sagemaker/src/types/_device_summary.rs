@@ -53,8 +53,10 @@ impl DeviceSummary {
         self.latest_heartbeat.as_ref()
     }
     /// <p>Models on the device.</p>
-    pub fn models(&self) -> ::std::option::Option<&[crate::types::EdgeModelSummary]> {
-        self.models.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.models.is_none()`.
+    pub fn models(&self) -> &[crate::types::EdgeModelSummary] {
+        self.models.as_deref().unwrap_or_default()
     }
     /// <p>Edge Manager agent version.</p>
     pub fn agent_version(&self) -> ::std::option::Option<&str> {
@@ -84,6 +86,7 @@ pub struct DeviceSummaryBuilder {
 }
 impl DeviceSummaryBuilder {
     /// <p>The unique identifier of the device.</p>
+    /// This field is required.
     pub fn device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_name = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +101,7 @@ impl DeviceSummaryBuilder {
         &self.device_name
     }
     /// <p>Amazon Resource Name (ARN) of the device.</p>
+    /// This field is required.
     pub fn device_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_arn = ::std::option::Option::Some(input.into());
         self

@@ -39,8 +39,10 @@ impl BundleDetails {
         self.icon_url.as_deref()
     }
     /// <p> Developer desktop or mobile app or website platforms. </p>
-    pub fn available_platforms(&self) -> ::std::option::Option<&[crate::types::Platform]> {
-        self.available_platforms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.available_platforms.is_none()`.
+    pub fn available_platforms(&self) -> &[crate::types::Platform] {
+        self.available_platforms.as_deref().unwrap_or_default()
     }
 }
 impl BundleDetails {

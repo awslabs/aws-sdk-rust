@@ -30,8 +30,10 @@ impl ListMetricsInput {
         self.metric_name.as_deref()
     }
     /// <p>The dimensions to filter against. Only the dimensions that match exactly will be returned.</p>
-    pub fn dimensions(&self) -> ::std::option::Option<&[crate::types::DimensionFilter]> {
-        self.dimensions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimensions.is_none()`.
+    pub fn dimensions(&self) -> &[crate::types::DimensionFilter] {
+        self.dimensions.as_deref().unwrap_or_default()
     }
     /// <p>The token returned by a previous call to indicate that there is more data available.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -183,7 +185,7 @@ impl ListMetricsInputBuilder {
         &self.owning_account
     }
     /// Consumes the builder and constructs a [`ListMetricsInput`](crate::operation::list_metrics::ListMetricsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_metrics::ListMetricsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_metrics::ListMetricsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_metrics::ListMetricsInput {
             namespace: self.namespace,
             metric_name: self.metric_name,

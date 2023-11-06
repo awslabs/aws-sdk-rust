@@ -21,12 +21,16 @@ impl Metrics {
         self.rmse
     }
     /// <p>An array of weighted quantile losses. Quantiles divide a probability distribution into regions of equal probability. The distribution in this case is the loss function.</p>
-    pub fn weighted_quantile_losses(&self) -> ::std::option::Option<&[crate::types::WeightedQuantileLoss]> {
-        self.weighted_quantile_losses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.weighted_quantile_losses.is_none()`.
+    pub fn weighted_quantile_losses(&self) -> &[crate::types::WeightedQuantileLoss] {
+        self.weighted_quantile_losses.as_deref().unwrap_or_default()
     }
     /// <p> Provides detailed error metrics for each forecast type. Metrics include root-mean square-error (RMSE), mean absolute percentage error (MAPE), mean absolute scaled error (MASE), and weighted average percentage error (WAPE). </p>
-    pub fn error_metrics(&self) -> ::std::option::Option<&[crate::types::ErrorMetric]> {
-        self.error_metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.error_metrics.is_none()`.
+    pub fn error_metrics(&self) -> &[crate::types::ErrorMetric] {
+        self.error_metrics.as_deref().unwrap_or_default()
     }
     /// <p>The average value of all weighted quantile losses.</p>
     pub fn average_weighted_quantile_loss(&self) -> ::std::option::Option<f64> {

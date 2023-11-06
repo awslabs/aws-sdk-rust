@@ -2,7 +2,7 @@
 pub fn ser_code_signing_policies(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CodeSigningPolicies,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.untrusted_artifact_on_deployment {
         object.key("UntrustedArtifactOnDeployment").string(var_1.as_str());
     }

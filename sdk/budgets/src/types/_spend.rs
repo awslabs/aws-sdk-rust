@@ -15,18 +15,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Spend {
     /// <p>The cost or usage amount that's associated with a budget forecast, actual spend, or budget threshold.</p>
-    pub amount: ::std::option::Option<::std::string::String>,
+    pub amount: ::std::string::String,
     /// <p>The unit of measurement that's used for the budget forecast, actual spend, or budget threshold.</p>
-    pub unit: ::std::option::Option<::std::string::String>,
+    pub unit: ::std::string::String,
 }
 impl Spend {
     /// <p>The cost or usage amount that's associated with a budget forecast, actual spend, or budget threshold.</p>
-    pub fn amount(&self) -> ::std::option::Option<&str> {
-        self.amount.as_deref()
+    pub fn amount(&self) -> &str {
+        use std::ops::Deref;
+        self.amount.deref()
     }
     /// <p>The unit of measurement that's used for the budget forecast, actual spend, or budget threshold.</p>
-    pub fn unit(&self) -> ::std::option::Option<&str> {
-        self.unit.as_deref()
+    pub fn unit(&self) -> &str {
+        use std::ops::Deref;
+        self.unit.deref()
     }
 }
 impl Spend {
@@ -45,6 +47,7 @@ pub struct SpendBuilder {
 }
 impl SpendBuilder {
     /// <p>The cost or usage amount that's associated with a budget forecast, actual spend, or budget threshold.</p>
+    /// This field is required.
     pub fn amount(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.amount = ::std::option::Option::Some(input.into());
         self
@@ -59,6 +62,7 @@ impl SpendBuilder {
         &self.amount
     }
     /// <p>The unit of measurement that's used for the budget forecast, actual spend, or budget threshold.</p>
+    /// This field is required.
     pub fn unit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.unit = ::std::option::Option::Some(input.into());
         self
@@ -73,10 +77,23 @@ impl SpendBuilder {
         &self.unit
     }
     /// Consumes the builder and constructs a [`Spend`](crate::types::Spend).
-    pub fn build(self) -> crate::types::Spend {
-        crate::types::Spend {
-            amount: self.amount,
-            unit: self.unit,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`amount`](crate::types::builders::SpendBuilder::amount)
+    /// - [`unit`](crate::types::builders::SpendBuilder::unit)
+    pub fn build(self) -> ::std::result::Result<crate::types::Spend, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Spend {
+            amount: self.amount.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "amount",
+                    "amount was not specified but it is required when building Spend",
+                )
+            })?,
+            unit: self.unit.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "unit",
+                    "unit was not specified but it is required when building Spend",
+                )
+            })?,
+        })
     }
 }

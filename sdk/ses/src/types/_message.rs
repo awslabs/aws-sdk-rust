@@ -35,6 +35,7 @@ pub struct MessageBuilder {
 }
 impl MessageBuilder {
     /// <p>The subject of the message: A short summary of the content, which appears in the recipient's inbox.</p>
+    /// This field is required.
     pub fn subject(mut self, input: crate::types::Content) -> Self {
         self.subject = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl MessageBuilder {
         &self.subject
     }
     /// <p>The message body.</p>
+    /// This field is required.
     pub fn body(mut self, input: crate::types::Body) -> Self {
         self.body = ::std::option::Option::Some(input);
         self

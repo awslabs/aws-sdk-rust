@@ -2,7 +2,7 @@
 pub fn ser_delete_profile_key_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_profile_key::DeleteProfileKeyInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.key_name {
         object.key("KeyName").string(var_1.as_str());
     }

@@ -13,7 +13,7 @@ pub struct UploadArchiveInput {
     /// <p>The SHA256 tree hash of the data being uploaded.</p>
     pub checksum: ::std::option::Option<::std::string::String>,
     /// <p>The data to upload.</p>
-    pub body: ::aws_smithy_http::byte_stream::ByteStream,
+    pub body: ::aws_smithy_types::byte_stream::ByteStream,
 }
 impl UploadArchiveInput {
     /// <p>The name of the vault.</p>
@@ -33,7 +33,7 @@ impl UploadArchiveInput {
         self.checksum.as_deref()
     }
     /// <p>The data to upload.</p>
-    pub fn body(&self) -> &::aws_smithy_http::byte_stream::ByteStream {
+    pub fn body(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
         &self.body
     }
 }
@@ -57,10 +57,11 @@ pub struct UploadArchiveInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) archive_description: ::std::option::Option<::std::string::String>,
     pub(crate) checksum: ::std::option::Option<::std::string::String>,
-    pub(crate) body: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
+    pub(crate) body: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,
 }
 impl UploadArchiveInputBuilder {
     /// <p>The name of the vault.</p>
+    /// This field is required.
     pub fn vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vault_name = ::std::option::Option::Some(input.into());
         self
@@ -75,6 +76,7 @@ impl UploadArchiveInputBuilder {
         &self.vault_name
     }
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -117,23 +119,23 @@ impl UploadArchiveInputBuilder {
         &self.checksum
     }
     /// <p>The data to upload.</p>
-    pub fn body(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
+    pub fn body(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.body = ::std::option::Option::Some(input);
         self
     }
     /// <p>The data to upload.</p>
-    pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
+    pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.body = input;
         self
     }
     /// <p>The data to upload.</p>
-    pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         &self.body
     }
     /// Consumes the builder and constructs a [`UploadArchiveInput`](crate::operation::upload_archive::UploadArchiveInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::upload_archive::UploadArchiveInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::upload_archive::UploadArchiveInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::upload_archive::UploadArchiveInput {
             vault_name: self.vault_name,
             account_id: self.account_id,

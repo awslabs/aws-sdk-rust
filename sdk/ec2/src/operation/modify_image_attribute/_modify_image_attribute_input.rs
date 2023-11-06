@@ -57,16 +57,22 @@ impl ModifyImageAttributeInput {
         self.operation_type.as_ref()
     }
     /// <p>Not supported.</p>
-    pub fn product_codes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.product_codes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.product_codes.is_none()`.
+    pub fn product_codes(&self) -> &[::std::string::String] {
+        self.product_codes.as_deref().unwrap_or_default()
     }
     /// <p>The user groups. This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
-    pub fn user_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.user_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_groups.is_none()`.
+    pub fn user_groups(&self) -> &[::std::string::String] {
+        self.user_groups.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Web Services account IDs. This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
-    pub fn user_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.user_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_ids.is_none()`.
+    pub fn user_ids(&self) -> &[::std::string::String] {
+        self.user_ids.as_deref().unwrap_or_default()
     }
     /// <p>The value of the attribute being modified. This parameter can be used only when the <code>Attribute</code> parameter is <code>description</code> or <code>imdsSupport</code>.</p>
     pub fn value(&self) -> ::std::option::Option<&str> {
@@ -77,12 +83,16 @@ impl ModifyImageAttributeInput {
         self.dry_run
     }
     /// <p>The Amazon Resource Name (ARN) of an organization. This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
-    pub fn organization_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.organization_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.organization_arns.is_none()`.
+    pub fn organization_arns(&self) -> &[::std::string::String] {
+        self.organization_arns.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of an organizational unit (OU). This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
-    pub fn organizational_unit_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.organizational_unit_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.organizational_unit_arns.is_none()`.
+    pub fn organizational_unit_arns(&self) -> &[::std::string::String] {
+        self.organizational_unit_arns.as_deref().unwrap_or_default()
     }
     /// <p>Set to <code>v2.0</code> to indicate that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p> <important>
     /// <p>Do not use this parameter unless your AMI software supports IMDSv2. After you set the value to <code>v2.0</code>, you can't undo it. The only way to “reset” your AMI is to create a new AMI from the underlying snapshot.</p>
@@ -149,6 +159,7 @@ impl ModifyImageAttributeInputBuilder {
         &self.description
     }
     /// <p>The ID of the AMI.</p>
+    /// This field is required.
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_id = ::std::option::Option::Some(input.into());
         self
@@ -341,7 +352,7 @@ impl ModifyImageAttributeInputBuilder {
     /// Consumes the builder and constructs a [`ModifyImageAttributeInput`](crate::operation::modify_image_attribute::ModifyImageAttributeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_image_attribute::ModifyImageAttributeInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::modify_image_attribute::ModifyImageAttributeInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::modify_image_attribute::ModifyImageAttributeInput {
             attribute: self.attribute,

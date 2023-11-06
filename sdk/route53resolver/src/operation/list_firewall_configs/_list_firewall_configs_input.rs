@@ -74,7 +74,7 @@ impl ListFirewallConfigsInputBuilder {
     /// Consumes the builder and constructs a [`ListFirewallConfigsInput`](crate::operation::list_firewall_configs::ListFirewallConfigsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_firewall_configs::ListFirewallConfigsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_firewall_configs::ListFirewallConfigsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_firewall_configs::ListFirewallConfigsInput {
             max_results: self.max_results,

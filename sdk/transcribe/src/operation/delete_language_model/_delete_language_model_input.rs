@@ -27,6 +27,7 @@ pub struct DeleteLanguageModelInputBuilder {
 }
 impl DeleteLanguageModelInputBuilder {
     /// <p>The name of the custom language model you want to delete. Model names are case sensitive.</p>
+    /// This field is required.
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteLanguageModelInputBuilder {
     /// Consumes the builder and constructs a [`DeleteLanguageModelInput`](crate::operation::delete_language_model::DeleteLanguageModelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_language_model::DeleteLanguageModelInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_language_model::DeleteLanguageModelInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_language_model::DeleteLanguageModelInput { model_name: self.model_name })
     }

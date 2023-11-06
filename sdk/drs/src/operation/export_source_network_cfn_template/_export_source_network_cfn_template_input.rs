@@ -27,6 +27,7 @@ pub struct ExportSourceNetworkCfnTemplateInputBuilder {
 }
 impl ExportSourceNetworkCfnTemplateInputBuilder {
     /// <p>The Source Network ID to export its CloudFormation template to an S3 bucket.</p>
+    /// This field is required.
     pub fn source_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_network_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl ExportSourceNetworkCfnTemplateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::export_source_network_cfn_template::ExportSourceNetworkCfnTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::export_source_network_cfn_template::ExportSourceNetworkCfnTemplateInput {

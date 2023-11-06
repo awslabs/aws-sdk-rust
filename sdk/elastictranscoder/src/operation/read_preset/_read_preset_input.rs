@@ -28,6 +28,7 @@ pub struct ReadPresetInputBuilder {
 }
 impl ReadPresetInputBuilder {
     /// <p>The identifier of the preset for which you want to get detailed information.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +43,7 @@ impl ReadPresetInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`ReadPresetInput`](crate::operation::read_preset::ReadPresetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::read_preset::ReadPresetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::read_preset::ReadPresetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::read_preset::ReadPresetInput { id: self.id })
     }
 }

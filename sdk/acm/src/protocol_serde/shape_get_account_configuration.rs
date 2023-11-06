@@ -79,8 +79,8 @@ pub fn de_get_account_configuration_http_response(
 
 pub fn ser_get_account_configuration_input(
     _input: &crate::operation::get_account_configuration::GetAccountConfigurationInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
-    Ok(::aws_smithy_http::body::SdkBody::from("{}"))
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+    Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }
 
 pub(crate) fn de_get_account_configuration(

@@ -57,6 +57,7 @@ impl ModifyDefaultCreditSpecificationInputBuilder {
         &self.dry_run
     }
     /// <p>The instance family.</p>
+    /// This field is required.
     pub fn instance_family(mut self, input: crate::types::UnlimitedSupportedInstanceFamily) -> Self {
         self.instance_family = ::std::option::Option::Some(input);
         self
@@ -72,6 +73,7 @@ impl ModifyDefaultCreditSpecificationInputBuilder {
     }
     /// <p>The credit option for CPU usage of the instance family.</p>
     /// <p>Valid Values: <code>standard</code> | <code>unlimited</code> </p>
+    /// This field is required.
     pub fn cpu_credits(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cpu_credits = ::std::option::Option::Some(input.into());
         self
@@ -92,7 +94,7 @@ impl ModifyDefaultCreditSpecificationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_default_credit_specification::ModifyDefaultCreditSpecificationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::modify_default_credit_specification::ModifyDefaultCreditSpecificationInput {

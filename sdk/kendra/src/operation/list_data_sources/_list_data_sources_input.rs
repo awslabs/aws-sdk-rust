@@ -41,6 +41,7 @@ pub struct ListDataSourcesInputBuilder {
 }
 impl ListDataSourcesInputBuilder {
     /// <p>The identifier of the index used with one or more data source connectors.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl ListDataSourcesInputBuilder {
     /// Consumes the builder and constructs a [`ListDataSourcesInput`](crate::operation::list_data_sources::ListDataSourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_data_sources::ListDataSourcesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_data_sources::ListDataSourcesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_data_sources::ListDataSourcesInput {
             index_id: self.index_id,
             next_token: self.next_token,

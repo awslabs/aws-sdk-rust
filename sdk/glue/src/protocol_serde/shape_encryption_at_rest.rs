@@ -38,7 +38,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::encryption_at_rest_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -49,12 +51,12 @@ where
 pub fn ser_encryption_at_rest(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EncryptionAtRest,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.catalog_encryption_mode {
-        object.key("CatalogEncryptionMode").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("CatalogEncryptionMode").string(input.catalog_encryption_mode.as_str());
     }
-    if let Some(var_2) = &input.sse_aws_kms_key_id {
-        object.key("SseAwsKmsKeyId").string(var_2.as_str());
+    if let Some(var_1) = &input.sse_aws_kms_key_id {
+        object.key("SseAwsKmsKeyId").string(var_1.as_str());
     }
     Ok(())
 }

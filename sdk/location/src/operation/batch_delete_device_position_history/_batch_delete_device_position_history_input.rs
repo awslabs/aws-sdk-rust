@@ -20,8 +20,10 @@ impl BatchDeleteDevicePositionHistoryInput {
     /// <ul>
     /// <li> <p>For example, for two devices: <code>“DeviceIds” : [DeviceId1,DeviceId2]</code> </p> </li>
     /// </ul>
-    pub fn device_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.device_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.device_ids.is_none()`.
+    pub fn device_ids(&self) -> &[::std::string::String] {
+        self.device_ids.as_deref().unwrap_or_default()
     }
 }
 impl BatchDeleteDevicePositionHistoryInput {
@@ -40,6 +42,7 @@ pub struct BatchDeleteDevicePositionHistoryInputBuilder {
 }
 impl BatchDeleteDevicePositionHistoryInputBuilder {
     /// <p>The name of the tracker resource to delete the device position history from.</p>
+    /// This field is required.
     pub fn tracker_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tracker_name = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +90,7 @@ impl BatchDeleteDevicePositionHistoryInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryInput {

@@ -43,6 +43,7 @@ pub struct ListInstancesInputBuilder {
 }
 impl ListInstancesInputBuilder {
     /// <p>The ID of the service that you want to list instances for.</p>
+    /// This field is required.
     pub fn service_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_id = ::std::option::Option::Some(input.into());
         self
@@ -90,7 +91,7 @@ impl ListInstancesInputBuilder {
     /// Consumes the builder and constructs a [`ListInstancesInput`](crate::operation::list_instances::ListInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_instances::ListInstancesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_instances::ListInstancesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_instances::ListInstancesInput {
             service_id: self.service_id,
             next_token: self.next_token,

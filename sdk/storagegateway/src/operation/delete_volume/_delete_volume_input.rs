@@ -28,6 +28,7 @@ pub struct DeleteVolumeInputBuilder {
 }
 impl DeleteVolumeInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes.</p>
+    /// This field is required.
     pub fn volume_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_arn = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +43,9 @@ impl DeleteVolumeInputBuilder {
         &self.volume_arn
     }
     /// Consumes the builder and constructs a [`DeleteVolumeInput`](crate::operation::delete_volume::DeleteVolumeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_volume::DeleteVolumeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_volume::DeleteVolumeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_volume::DeleteVolumeInput { volume_arn: self.volume_arn })
     }
 }

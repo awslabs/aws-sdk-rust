@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetTrustAnchor`](crate::operation::get_trust_anchor::builders::GetTrustAnchorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`trust_anchor_id(impl Into<String>)`](crate::operation::get_trust_anchor::builders::GetTrustAnchorFluentBuilder::trust_anchor_id) / [`set_trust_anchor_id(Option<String>)`](crate::operation::get_trust_anchor::builders::GetTrustAnchorFluentBuilder::set_trust_anchor_id): <p>The unique identifier of the trust anchor.</p>
+    ///   - [`trust_anchor_id(impl Into<String>)`](crate::operation::get_trust_anchor::builders::GetTrustAnchorFluentBuilder::trust_anchor_id) / [`set_trust_anchor_id(Option<String>)`](crate::operation::get_trust_anchor::builders::GetTrustAnchorFluentBuilder::set_trust_anchor_id):<br>required: **true**<br><p>The unique identifier of the trust anchor.</p><br>
     /// - On success, responds with [`GetTrustAnchorOutput`](crate::operation::get_trust_anchor::GetTrustAnchorOutput) with field(s):
     ///   - [`trust_anchor(Option<TrustAnchorDetail>)`](crate::operation::get_trust_anchor::GetTrustAnchorOutput::trust_anchor): <p>The state of the trust anchor after a read or write operation. </p>
     /// - On failure, responds with [`SdkError<GetTrustAnchorError>`](crate::operation::get_trust_anchor::GetTrustAnchorError)

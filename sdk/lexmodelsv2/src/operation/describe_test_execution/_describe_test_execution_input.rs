@@ -27,6 +27,7 @@ pub struct DescribeTestExecutionInputBuilder {
 }
 impl DescribeTestExecutionInputBuilder {
     /// <p>The execution Id of the test set execution.</p>
+    /// This field is required.
     pub fn test_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.test_execution_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeTestExecutionInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTestExecutionInput`](crate::operation::describe_test_execution::DescribeTestExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_test_execution::DescribeTestExecutionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_test_execution::DescribeTestExecutionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_test_execution::DescribeTestExecutionInput {
             test_execution_id: self.test_execution_id,

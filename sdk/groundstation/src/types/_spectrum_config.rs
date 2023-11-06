@@ -52,6 +52,7 @@ pub struct SpectrumConfigBuilder {
 }
 impl SpectrumConfigBuilder {
     /// <p>Center frequency of a spectral <code>Config</code>. Valid values are between 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to 2120 MHz for uplink.</p>
+    /// This field is required.
     pub fn center_frequency(mut self, input: crate::types::Frequency) -> Self {
         self.center_frequency = ::std::option::Option::Some(input);
         self
@@ -71,6 +72,7 @@ impl SpectrumConfigBuilder {
     /// <li> <p>For <code>AntennaDownlinkconfig</code> valid values are between 10 kHz to 54 MHz.</p> </li>
     /// <li> <p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn bandwidth(mut self, input: crate::types::FrequencyBandwidth) -> Self {
         self.bandwidth = ::std::option::Option::Some(input);
         self

@@ -41,6 +41,7 @@ pub struct ListTagsInputBuilder {
 }
 impl ListTagsInputBuilder {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the type of resource. Valid targets for <code>ListTags</code> are recovery points, backup plans, and backup vaults.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +84,7 @@ impl ListTagsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListTagsInput`](crate::operation::list_tags::ListTagsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_tags::ListTagsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_tags::ListTagsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_tags::ListTagsInput {
             resource_arn: self.resource_arn,
             next_token: self.next_token,

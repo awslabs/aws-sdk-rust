@@ -27,6 +27,7 @@ pub struct DeleteRelationalDatabaseSnapshotInputBuilder {
 }
 impl DeleteRelationalDatabaseSnapshotInputBuilder {
     /// <p>The name of the database snapshot that you are deleting.</p>
+    /// This field is required.
     pub fn relational_database_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.relational_database_snapshot_name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteRelationalDatabaseSnapshotInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_relational_database_snapshot::DeleteRelationalDatabaseSnapshotInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_relational_database_snapshot::DeleteRelationalDatabaseSnapshotInput {

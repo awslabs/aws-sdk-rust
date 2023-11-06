@@ -22,8 +22,10 @@ impl CreateConnectionInput {
         self.connection_name.as_deref()
     }
     /// <p>The key-value pair to use when tagging the resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the host associated with the connection to be created.</p>
     pub fn host_arn(&self) -> ::std::option::Option<&str> {
@@ -62,6 +64,7 @@ impl CreateConnectionInputBuilder {
         &self.provider_type
     }
     /// <p>The name of the connection to be created.</p>
+    /// This field is required.
     pub fn connection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_name = ::std::option::Option::Some(input.into());
         self
@@ -112,7 +115,7 @@ impl CreateConnectionInputBuilder {
     /// Consumes the builder and constructs a [`CreateConnectionInput`](crate::operation::create_connection::CreateConnectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_connection::CreateConnectionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_connection::CreateConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_connection::CreateConnectionInput {
             provider_type: self.provider_type,
             connection_name: self.connection_name,

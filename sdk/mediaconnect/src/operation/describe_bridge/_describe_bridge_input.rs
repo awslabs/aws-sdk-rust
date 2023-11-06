@@ -27,6 +27,7 @@ pub struct DescribeBridgeInputBuilder {
 }
 impl DescribeBridgeInputBuilder {
     /// The ARN of the bridge that you want to describe.
+    /// This field is required.
     pub fn bridge_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bridge_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeBridgeInputBuilder {
     /// Consumes the builder and constructs a [`DescribeBridgeInput`](crate::operation::describe_bridge::DescribeBridgeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_bridge::DescribeBridgeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_bridge::DescribeBridgeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_bridge::DescribeBridgeInput { bridge_arn: self.bridge_arn })
     }
 }

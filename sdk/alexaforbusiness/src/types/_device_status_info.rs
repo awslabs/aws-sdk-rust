@@ -13,8 +13,10 @@ pub struct DeviceStatusInfo {
 }
 impl DeviceStatusInfo {
     /// <p>One or more device status detail descriptions.</p>
-    pub fn device_status_details(&self) -> ::std::option::Option<&[crate::types::DeviceStatusDetail]> {
-        self.device_status_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.device_status_details.is_none()`.
+    pub fn device_status_details(&self) -> &[crate::types::DeviceStatusDetail] {
+        self.device_status_details.as_deref().unwrap_or_default()
     }
     /// <p>The latest available information about the connection status of a device. </p>
     pub fn connection_status(&self) -> ::std::option::Option<&crate::types::ConnectionStatus> {

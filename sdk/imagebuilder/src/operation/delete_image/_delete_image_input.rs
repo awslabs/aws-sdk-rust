@@ -27,6 +27,7 @@ pub struct DeleteImageInputBuilder {
 }
 impl DeleteImageInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Image Builder image resource to delete.</p>
+    /// This field is required.
     pub fn image_build_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_build_version_arn = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl DeleteImageInputBuilder {
         &self.image_build_version_arn
     }
     /// Consumes the builder and constructs a [`DeleteImageInput`](crate::operation::delete_image::DeleteImageInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_image::DeleteImageInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_image::DeleteImageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_image::DeleteImageInput {
             image_build_version_arn: self.image_build_version_arn,
         })

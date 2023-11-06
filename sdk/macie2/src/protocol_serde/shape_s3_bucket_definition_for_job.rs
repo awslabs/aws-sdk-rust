@@ -2,7 +2,7 @@
 pub fn ser_s3_bucket_definition_for_job(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::S3BucketDefinitionForJob,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.account_id {
         object.key("accountId").string(var_1.as_str());
     }
@@ -41,7 +41,7 @@ where
                             );
                         }
                         "buckets" => {
-                            builder = builder.set_buckets(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                            builder = builder.set_buckets(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
@@ -53,7 +53,7 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::s3_bucket_definition_for_job_correct_errors(builder).build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

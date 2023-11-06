@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BundleInformation {
     /// <p>The bundle names.</p>
-    pub bundle_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub bundle_names: ::std::vec::Vec<::std::string::String>,
     /// <p>The pricing tier.</p>
     pub pricing_tier: ::std::option::Option<crate::types::PricingTier>,
 }
 impl BundleInformation {
     /// <p>The bundle names.</p>
-    pub fn bundle_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.bundle_names.as_deref()
+    pub fn bundle_names(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.bundle_names.deref()
     }
     /// <p>The pricing tier.</p>
     pub fn pricing_tier(&self) -> ::std::option::Option<&crate::types::PricingTier> {
@@ -69,10 +70,17 @@ impl BundleInformationBuilder {
         &self.pricing_tier
     }
     /// Consumes the builder and constructs a [`BundleInformation`](crate::types::BundleInformation).
-    pub fn build(self) -> crate::types::BundleInformation {
-        crate::types::BundleInformation {
-            bundle_names: self.bundle_names,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bundle_names`](crate::types::builders::BundleInformationBuilder::bundle_names)
+    pub fn build(self) -> ::std::result::Result<crate::types::BundleInformation, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::BundleInformation {
+            bundle_names: self.bundle_names.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "bundle_names",
+                    "bundle_names was not specified but it is required when building BundleInformation",
+                )
+            })?,
             pricing_tier: self.pricing_tier,
-        }
+        })
     }
 }

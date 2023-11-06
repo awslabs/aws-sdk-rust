@@ -27,6 +27,7 @@ pub struct GetServiceProfileInputBuilder {
 }
 impl GetServiceProfileInputBuilder {
     /// <p>The ID of the resource to get.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetServiceProfileInputBuilder {
     /// Consumes the builder and constructs a [`GetServiceProfileInput`](crate::operation::get_service_profile::GetServiceProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_service_profile::GetServiceProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_service_profile::GetServiceProfileInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_service_profile::GetServiceProfileInput { id: self.id })
     }
 }

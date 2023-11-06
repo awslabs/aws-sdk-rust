@@ -55,6 +55,7 @@ pub struct CreateLogPatternInputBuilder {
 }
 impl CreateLogPatternInputBuilder {
     /// <p>The name of the resource group.</p>
+    /// This field is required.
     pub fn resource_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_group_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl CreateLogPatternInputBuilder {
         &self.resource_group_name
     }
     /// <p>The name of the log pattern set.</p>
+    /// This field is required.
     pub fn pattern_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pattern_set_name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +85,7 @@ impl CreateLogPatternInputBuilder {
         &self.pattern_set_name
     }
     /// <p>The name of the log pattern.</p>
+    /// This field is required.
     pub fn pattern_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pattern_name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +100,7 @@ impl CreateLogPatternInputBuilder {
         &self.pattern_name
     }
     /// <p>The log pattern. The pattern must be DFA compatible. Patterns that utilize forward lookahead or backreference constructions are not supported.</p>
+    /// This field is required.
     pub fn pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pattern = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +115,7 @@ impl CreateLogPatternInputBuilder {
         &self.pattern
     }
     /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank. Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns. </p>
+    /// This field is required.
     pub fn rank(mut self, input: i32) -> Self {
         self.rank = ::std::option::Option::Some(input);
         self
@@ -127,7 +132,7 @@ impl CreateLogPatternInputBuilder {
     /// Consumes the builder and constructs a [`CreateLogPatternInput`](crate::operation::create_log_pattern::CreateLogPatternInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_log_pattern::CreateLogPatternInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_log_pattern::CreateLogPatternInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_log_pattern::CreateLogPatternInput {
             resource_group_name: self.resource_group_name,
             pattern_set_name: self.pattern_set_name,

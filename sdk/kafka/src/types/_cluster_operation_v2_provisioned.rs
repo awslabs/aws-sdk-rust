@@ -15,8 +15,10 @@ pub struct ClusterOperationV2Provisioned {
 }
 impl ClusterOperationV2Provisioned {
     /// <p>Steps completed during the operation.</p>
-    pub fn operation_steps(&self) -> ::std::option::Option<&[crate::types::ClusterOperationStep]> {
-        self.operation_steps.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.operation_steps.is_none()`.
+    pub fn operation_steps(&self) -> &[crate::types::ClusterOperationStep] {
+        self.operation_steps.as_deref().unwrap_or_default()
     }
     /// <p>Information about cluster attributes before a cluster is updated.</p>
     pub fn source_cluster_info(&self) -> ::std::option::Option<&crate::types::MutableClusterInfo> {

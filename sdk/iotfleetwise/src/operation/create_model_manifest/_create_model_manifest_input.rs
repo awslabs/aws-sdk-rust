@@ -24,16 +24,20 @@ impl CreateModelManifestInput {
         self.description.as_deref()
     }
     /// <p> A list of nodes, which are a general abstraction of signals. </p>
-    pub fn nodes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.nodes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.nodes.is_none()`.
+    pub fn nodes(&self) -> &[::std::string::String] {
+        self.nodes.as_deref().unwrap_or_default()
     }
     /// <p> The Amazon Resource Name (ARN) of a signal catalog. </p>
     pub fn signal_catalog_arn(&self) -> ::std::option::Option<&str> {
         self.signal_catalog_arn.as_deref()
     }
     /// <p>Metadata that can be used to manage the vehicle model.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateModelManifestInput {
@@ -55,6 +59,7 @@ pub struct CreateModelManifestInputBuilder {
 }
 impl CreateModelManifestInputBuilder {
     /// <p> The name of the vehicle model to create.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -103,6 +108,7 @@ impl CreateModelManifestInputBuilder {
         &self.nodes
     }
     /// <p> The Amazon Resource Name (ARN) of a signal catalog. </p>
+    /// This field is required.
     pub fn signal_catalog_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signal_catalog_arn = ::std::option::Option::Some(input.into());
         self
@@ -139,7 +145,7 @@ impl CreateModelManifestInputBuilder {
     /// Consumes the builder and constructs a [`CreateModelManifestInput`](crate::operation::create_model_manifest::CreateModelManifestInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_model_manifest::CreateModelManifestInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_model_manifest::CreateModelManifestInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_model_manifest::CreateModelManifestInput {
             name: self.name,

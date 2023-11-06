@@ -15,8 +15,10 @@ impl LineSeriesAxisDisplayOptions {
         self.axis_options.as_ref()
     }
     /// <p>The configuration options that determine how missing data is treated during the rendering of a line chart.</p>
-    pub fn missing_data_configurations(&self) -> ::std::option::Option<&[crate::types::MissingDataConfiguration]> {
-        self.missing_data_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.missing_data_configurations.is_none()`.
+    pub fn missing_data_configurations(&self) -> &[crate::types::MissingDataConfiguration] {
+        self.missing_data_configurations.as_deref().unwrap_or_default()
     }
 }
 impl LineSeriesAxisDisplayOptions {

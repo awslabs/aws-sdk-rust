@@ -9,8 +9,10 @@ pub struct DeleteVolumeOpenZfsConfiguration {
 }
 impl DeleteVolumeOpenZfsConfiguration {
     /// <p>To delete the volume's child volumes, snapshots, and clones, use the string <code>DELETE_CHILD_VOLUMES_AND_SNAPSHOTS</code>.</p>
-    pub fn options(&self) -> ::std::option::Option<&[crate::types::DeleteOpenZfsVolumeOption]> {
-        self.options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.options.is_none()`.
+    pub fn options(&self) -> &[crate::types::DeleteOpenZfsVolumeOption] {
+        self.options.as_deref().unwrap_or_default()
     }
 }
 impl DeleteVolumeOpenZfsConfiguration {

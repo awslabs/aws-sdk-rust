@@ -16,12 +16,16 @@ impl UpdateLicenseSpecificationsForResourceInput {
         self.resource_arn.as_deref()
     }
     /// <p>ARNs of the license configurations to add.</p>
-    pub fn add_license_specifications(&self) -> ::std::option::Option<&[crate::types::LicenseSpecification]> {
-        self.add_license_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_license_specifications.is_none()`.
+    pub fn add_license_specifications(&self) -> &[crate::types::LicenseSpecification] {
+        self.add_license_specifications.as_deref().unwrap_or_default()
     }
     /// <p>ARNs of the license configurations to remove.</p>
-    pub fn remove_license_specifications(&self) -> ::std::option::Option<&[crate::types::LicenseSpecification]> {
-        self.remove_license_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove_license_specifications.is_none()`.
+    pub fn remove_license_specifications(&self) -> &[crate::types::LicenseSpecification] {
+        self.remove_license_specifications.as_deref().unwrap_or_default()
     }
 }
 impl UpdateLicenseSpecificationsForResourceInput {
@@ -41,6 +45,7 @@ pub struct UpdateLicenseSpecificationsForResourceInputBuilder {
 }
 impl UpdateLicenseSpecificationsForResourceInputBuilder {
     /// <p>Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -99,7 +104,7 @@ impl UpdateLicenseSpecificationsForResourceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_license_specifications_for_resource::UpdateLicenseSpecificationsForResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_license_specifications_for_resource::UpdateLicenseSpecificationsForResourceInput {

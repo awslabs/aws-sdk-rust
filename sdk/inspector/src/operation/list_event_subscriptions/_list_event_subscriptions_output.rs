@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEventSubscriptionsOutput {
     /// <p>Details of the returned event subscriptions.</p>
-    pub subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::Subscription>>,
+    pub subscriptions: ::std::vec::Vec<crate::types::Subscription>,
     /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListEventSubscriptionsOutput {
     /// <p>Details of the returned event subscriptions.</p>
-    pub fn subscriptions(&self) -> ::std::option::Option<&[crate::types::Subscription]> {
-        self.subscriptions.as_deref()
+    pub fn subscriptions(&self) -> &[crate::types::Subscription] {
+        use std::ops::Deref;
+        self.subscriptions.deref()
     }
     /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,23 @@ impl ListEventSubscriptionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListEventSubscriptionsOutput`](crate::operation::list_event_subscriptions::ListEventSubscriptionsOutput).
-    pub fn build(self) -> crate::operation::list_event_subscriptions::ListEventSubscriptionsOutput {
-        crate::operation::list_event_subscriptions::ListEventSubscriptionsOutput {
-            subscriptions: self.subscriptions,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`subscriptions`](crate::operation::list_event_subscriptions::builders::ListEventSubscriptionsOutputBuilder::subscriptions)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_event_subscriptions::ListEventSubscriptionsOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_event_subscriptions::ListEventSubscriptionsOutput {
+            subscriptions: self.subscriptions.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "subscriptions",
+                    "subscriptions was not specified but it is required when building ListEventSubscriptionsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

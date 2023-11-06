@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SchemaDefinition {
     /// <p>The regular columns of the table.</p>
-    pub all_columns: ::std::option::Option<::std::vec::Vec<crate::types::ColumnDefinition>>,
+    pub all_columns: ::std::vec::Vec<crate::types::ColumnDefinition>,
     /// <p>The columns that are part of the partition key of the table .</p>
-    pub partition_keys: ::std::option::Option<::std::vec::Vec<crate::types::PartitionKey>>,
+    pub partition_keys: ::std::vec::Vec<crate::types::PartitionKey>,
     /// <p>The columns that are part of the clustering key of the table.</p>
     pub clustering_keys: ::std::option::Option<::std::vec::Vec<crate::types::ClusteringKey>>,
     /// <p>The columns that have been defined as <code>STATIC</code>. Static columns store values that are shared by all rows in the same partition.</p>
@@ -15,20 +15,26 @@ pub struct SchemaDefinition {
 }
 impl SchemaDefinition {
     /// <p>The regular columns of the table.</p>
-    pub fn all_columns(&self) -> ::std::option::Option<&[crate::types::ColumnDefinition]> {
-        self.all_columns.as_deref()
+    pub fn all_columns(&self) -> &[crate::types::ColumnDefinition] {
+        use std::ops::Deref;
+        self.all_columns.deref()
     }
     /// <p>The columns that are part of the partition key of the table .</p>
-    pub fn partition_keys(&self) -> ::std::option::Option<&[crate::types::PartitionKey]> {
-        self.partition_keys.as_deref()
+    pub fn partition_keys(&self) -> &[crate::types::PartitionKey] {
+        use std::ops::Deref;
+        self.partition_keys.deref()
     }
     /// <p>The columns that are part of the clustering key of the table.</p>
-    pub fn clustering_keys(&self) -> ::std::option::Option<&[crate::types::ClusteringKey]> {
-        self.clustering_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.clustering_keys.is_none()`.
+    pub fn clustering_keys(&self) -> &[crate::types::ClusteringKey] {
+        self.clustering_keys.as_deref().unwrap_or_default()
     }
     /// <p>The columns that have been defined as <code>STATIC</code>. Static columns store values that are shared by all rows in the same partition.</p>
-    pub fn static_columns(&self) -> ::std::option::Option<&[crate::types::StaticColumn]> {
-        self.static_columns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.static_columns.is_none()`.
+    pub fn static_columns(&self) -> &[crate::types::StaticColumn] {
+        self.static_columns.as_deref().unwrap_or_default()
     }
 }
 impl SchemaDefinition {
@@ -129,12 +135,25 @@ impl SchemaDefinitionBuilder {
         &self.static_columns
     }
     /// Consumes the builder and constructs a [`SchemaDefinition`](crate::types::SchemaDefinition).
-    pub fn build(self) -> crate::types::SchemaDefinition {
-        crate::types::SchemaDefinition {
-            all_columns: self.all_columns,
-            partition_keys: self.partition_keys,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`all_columns`](crate::types::builders::SchemaDefinitionBuilder::all_columns)
+    /// - [`partition_keys`](crate::types::builders::SchemaDefinitionBuilder::partition_keys)
+    pub fn build(self) -> ::std::result::Result<crate::types::SchemaDefinition, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SchemaDefinition {
+            all_columns: self.all_columns.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "all_columns",
+                    "all_columns was not specified but it is required when building SchemaDefinition",
+                )
+            })?,
+            partition_keys: self.partition_keys.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "partition_keys",
+                    "partition_keys was not specified but it is required when building SchemaDefinition",
+                )
+            })?,
             clustering_keys: self.clustering_keys,
             static_columns: self.static_columns,
-        }
+        })
     }
 }

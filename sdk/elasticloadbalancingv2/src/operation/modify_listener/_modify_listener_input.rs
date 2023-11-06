@@ -46,12 +46,16 @@ impl ModifyListenerInput {
         self.ssl_policy.as_deref()
     }
     /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
-    pub fn certificates(&self) -> ::std::option::Option<&[crate::types::Certificate]> {
-        self.certificates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificates.is_none()`.
+    pub fn certificates(&self) -> &[crate::types::Certificate] {
+        self.certificates.as_deref().unwrap_or_default()
     }
     /// <p>The actions for the default rule.</p>
-    pub fn default_actions(&self) -> ::std::option::Option<&[crate::types::Action]> {
-        self.default_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.default_actions.is_none()`.
+    pub fn default_actions(&self) -> &[crate::types::Action] {
+        self.default_actions.as_deref().unwrap_or_default()
     }
     /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p>
     /// <ul>
@@ -62,8 +66,10 @@ impl ModifyListenerInput {
     /// <li> <p> <code>None</code> </p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN policies</a> in the <i>Network Load Balancers Guide</i>.</p>
-    pub fn alpn_policy(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.alpn_policy.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alpn_policy.is_none()`.
+    pub fn alpn_policy(&self) -> &[::std::string::String] {
+        self.alpn_policy.as_deref().unwrap_or_default()
     }
 }
 impl ModifyListenerInput {
@@ -87,6 +93,7 @@ pub struct ModifyListenerInputBuilder {
 }
 impl ModifyListenerInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
+    /// This field is required.
     pub fn listener_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.listener_arn = ::std::option::Option::Some(input.into());
         self
@@ -232,7 +239,7 @@ impl ModifyListenerInputBuilder {
     /// Consumes the builder and constructs a [`ModifyListenerInput`](crate::operation::modify_listener::ModifyListenerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_listener::ModifyListenerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::modify_listener::ModifyListenerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_listener::ModifyListenerInput {
             listener_arn: self.listener_arn,
             port: self.port,

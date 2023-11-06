@@ -12,8 +12,10 @@ pub struct DescribeConformancePacksInput {
 }
 impl DescribeConformancePacksInput {
     /// <p>Comma-separated list of conformance pack names for which you want details. If you do not specify any names, Config returns details for all your conformance packs. </p>
-    pub fn conformance_pack_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.conformance_pack_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.conformance_pack_names.is_none()`.
+    pub fn conformance_pack_names(&self) -> &[::std::string::String] {
+        self.conformance_pack_names.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of conformance packs returned on each page.</p>
     pub fn limit(&self) -> ::std::option::Option<i32> {
@@ -93,7 +95,7 @@ impl DescribeConformancePacksInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_conformance_packs::DescribeConformancePacksInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_conformance_packs::DescribeConformancePacksInput {
             conformance_pack_names: self.conformance_pack_names,

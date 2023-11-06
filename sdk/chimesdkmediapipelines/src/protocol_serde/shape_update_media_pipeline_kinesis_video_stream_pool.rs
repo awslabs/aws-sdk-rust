@@ -36,8 +36,8 @@ pub fn de_update_media_pipeline_kinesis_video_stream_pool_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ConflictException" => crate::operation::update_media_pipeline_kinesis_video_stream_pool::UpdateMediaPipelineKinesisVideoStreamPoolError::ConflictException({
@@ -52,8 +52,8 @@ pub fn de_update_media_pipeline_kinesis_video_stream_pool_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ForbiddenException" => crate::operation::update_media_pipeline_kinesis_video_stream_pool::UpdateMediaPipelineKinesisVideoStreamPoolError::ForbiddenException({
@@ -68,8 +68,8 @@ pub fn de_update_media_pipeline_kinesis_video_stream_pool_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NotFoundException" => crate::operation::update_media_pipeline_kinesis_video_stream_pool::UpdateMediaPipelineKinesisVideoStreamPoolError::NotFoundException({
@@ -84,8 +84,8 @@ pub fn de_update_media_pipeline_kinesis_video_stream_pool_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ServiceFailureException" => crate::operation::update_media_pipeline_kinesis_video_stream_pool::UpdateMediaPipelineKinesisVideoStreamPoolError::ServiceFailureException({
@@ -100,8 +100,8 @@ pub fn de_update_media_pipeline_kinesis_video_stream_pool_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::update_media_pipeline_kinesis_video_stream_pool::UpdateMediaPipelineKinesisVideoStreamPoolError::ServiceUnavailableException({
@@ -116,8 +116,8 @@ pub fn de_update_media_pipeline_kinesis_video_stream_pool_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ThrottledClientException" => crate::operation::update_media_pipeline_kinesis_video_stream_pool::UpdateMediaPipelineKinesisVideoStreamPoolError::ThrottledClientException({
@@ -132,8 +132,8 @@ pub fn de_update_media_pipeline_kinesis_video_stream_pool_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "UnauthorizedClientException" => crate::operation::update_media_pipeline_kinesis_video_stream_pool::UpdateMediaPipelineKinesisVideoStreamPoolError::UnauthorizedClientException({
@@ -148,8 +148,8 @@ pub fn de_update_media_pipeline_kinesis_video_stream_pool_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::update_media_pipeline_kinesis_video_stream_pool::UpdateMediaPipelineKinesisVideoStreamPoolError::generic(generic)
@@ -180,7 +180,7 @@ pub fn de_update_media_pipeline_kinesis_video_stream_pool_http_response(
 
 pub fn ser_update_media_pipeline_kinesis_video_stream_pool_input(
     input: &crate::operation::update_media_pipeline_kinesis_video_stream_pool::UpdateMediaPipelineKinesisVideoStreamPoolInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_update_media_pipeline_kinesis_video_stream_pool_input::ser_update_media_pipeline_kinesis_video_stream_pool_input(
@@ -188,7 +188,7 @@ pub fn ser_update_media_pipeline_kinesis_video_stream_pool_input(
         input,
     )?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_update_media_pipeline_kinesis_video_stream_pool(

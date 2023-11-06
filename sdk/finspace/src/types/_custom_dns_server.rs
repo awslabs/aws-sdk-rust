@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomDnsServer {
     /// <p>The name of the DNS server.</p>
-    pub custom_dns_server_name: ::std::option::Option<::std::string::String>,
+    pub custom_dns_server_name: ::std::string::String,
     /// <p>The IP address of the DNS server.</p>
-    pub custom_dns_server_ip: ::std::option::Option<::std::string::String>,
+    pub custom_dns_server_ip: ::std::string::String,
 }
 impl CustomDnsServer {
     /// <p>The name of the DNS server.</p>
-    pub fn custom_dns_server_name(&self) -> ::std::option::Option<&str> {
-        self.custom_dns_server_name.as_deref()
+    pub fn custom_dns_server_name(&self) -> &str {
+        use std::ops::Deref;
+        self.custom_dns_server_name.deref()
     }
     /// <p>The IP address of the DNS server.</p>
-    pub fn custom_dns_server_ip(&self) -> ::std::option::Option<&str> {
-        self.custom_dns_server_ip.as_deref()
+    pub fn custom_dns_server_ip(&self) -> &str {
+        use std::ops::Deref;
+        self.custom_dns_server_ip.deref()
     }
 }
 impl CustomDnsServer {
@@ -35,6 +37,7 @@ pub struct CustomDnsServerBuilder {
 }
 impl CustomDnsServerBuilder {
     /// <p>The name of the DNS server.</p>
+    /// This field is required.
     pub fn custom_dns_server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_dns_server_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl CustomDnsServerBuilder {
         &self.custom_dns_server_name
     }
     /// <p>The IP address of the DNS server.</p>
+    /// This field is required.
     pub fn custom_dns_server_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_dns_server_ip = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl CustomDnsServerBuilder {
         &self.custom_dns_server_ip
     }
     /// Consumes the builder and constructs a [`CustomDnsServer`](crate::types::CustomDnsServer).
-    pub fn build(self) -> crate::types::CustomDnsServer {
-        crate::types::CustomDnsServer {
-            custom_dns_server_name: self.custom_dns_server_name,
-            custom_dns_server_ip: self.custom_dns_server_ip,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`custom_dns_server_name`](crate::types::builders::CustomDnsServerBuilder::custom_dns_server_name)
+    /// - [`custom_dns_server_ip`](crate::types::builders::CustomDnsServerBuilder::custom_dns_server_ip)
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomDnsServer, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CustomDnsServer {
+            custom_dns_server_name: self.custom_dns_server_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "custom_dns_server_name",
+                    "custom_dns_server_name was not specified but it is required when building CustomDnsServer",
+                )
+            })?,
+            custom_dns_server_ip: self.custom_dns_server_ip.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "custom_dns_server_ip",
+                    "custom_dns_server_ip was not specified but it is required when building CustomDnsServer",
+                )
+            })?,
+        })
     }
 }

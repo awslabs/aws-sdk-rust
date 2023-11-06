@@ -27,6 +27,7 @@ pub struct DeregisterTaskDefinitionInputBuilder {
 }
 impl DeregisterTaskDefinitionInputBuilder {
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition to deregister. You must specify a <code>revision</code>.</p>
+    /// This field is required.
     pub fn task_definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_definition = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeregisterTaskDefinitionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_task_definition::DeregisterTaskDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::deregister_task_definition::DeregisterTaskDefinitionInput {
             task_definition: self.task_definition,

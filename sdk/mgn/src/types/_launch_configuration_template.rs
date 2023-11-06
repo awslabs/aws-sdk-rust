@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct LaunchConfigurationTemplate {
     /// <p>ID of the Launch Configuration Template.</p>
-    pub launch_configuration_template_id: ::std::option::Option<::std::string::String>,
+    pub launch_configuration_template_id: ::std::string::String,
     /// <p>ARN of the Launch Configuration Template.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Post Launch Actions of the Launch Configuration Template.</p>
@@ -40,8 +40,9 @@ pub struct LaunchConfigurationTemplate {
 }
 impl LaunchConfigurationTemplate {
     /// <p>ID of the Launch Configuration Template.</p>
-    pub fn launch_configuration_template_id(&self) -> ::std::option::Option<&str> {
-        self.launch_configuration_template_id.as_deref()
+    pub fn launch_configuration_template_id(&self) -> &str {
+        use std::ops::Deref;
+        self.launch_configuration_template_id.deref()
     }
     /// <p>ARN of the Launch Configuration Template.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
@@ -162,6 +163,7 @@ pub struct LaunchConfigurationTemplateBuilder {
 }
 impl LaunchConfigurationTemplateBuilder {
     /// <p>ID of the Launch Configuration Template.</p>
+    /// This field is required.
     pub fn launch_configuration_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_configuration_template_id = ::std::option::Option::Some(input.into());
         self
@@ -409,9 +411,16 @@ impl LaunchConfigurationTemplateBuilder {
         &self.large_volume_conf
     }
     /// Consumes the builder and constructs a [`LaunchConfigurationTemplate`](crate::types::LaunchConfigurationTemplate).
-    pub fn build(self) -> crate::types::LaunchConfigurationTemplate {
-        crate::types::LaunchConfigurationTemplate {
-            launch_configuration_template_id: self.launch_configuration_template_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`launch_configuration_template_id`](crate::types::builders::LaunchConfigurationTemplateBuilder::launch_configuration_template_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::LaunchConfigurationTemplate, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::LaunchConfigurationTemplate {
+            launch_configuration_template_id: self.launch_configuration_template_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "launch_configuration_template_id",
+                    "launch_configuration_template_id was not specified but it is required when building LaunchConfigurationTemplate",
+                )
+            })?,
             arn: self.arn,
             post_launch_actions: self.post_launch_actions,
             enable_map_auto_tagging: self.enable_map_auto_tagging,
@@ -428,7 +437,7 @@ impl LaunchConfigurationTemplateBuilder {
             small_volume_max_size: self.small_volume_max_size.unwrap_or_default(),
             small_volume_conf: self.small_volume_conf,
             large_volume_conf: self.large_volume_conf,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for LaunchConfigurationTemplateBuilder {

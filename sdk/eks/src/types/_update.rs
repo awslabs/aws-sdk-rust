@@ -31,16 +31,20 @@ impl Update {
         self.r#type.as_ref()
     }
     /// <p>A key-value map that contains the parameters associated with the update.</p>
-    pub fn params(&self) -> ::std::option::Option<&[crate::types::UpdateParam]> {
-        self.params.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.params.is_none()`.
+    pub fn params(&self) -> &[crate::types::UpdateParam] {
+        self.params.as_deref().unwrap_or_default()
     }
     /// <p>The Unix epoch timestamp in seconds for when the update was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>Any errors associated with a <code>Failed</code> update.</p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::ErrorDetail]> {
-        self.errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
+    pub fn errors(&self) -> &[crate::types::ErrorDetail] {
+        self.errors.as_deref().unwrap_or_default()
     }
 }
 impl Update {

@@ -41,6 +41,7 @@ pub struct AddRegionInputBuilder {
 }
 impl AddRegionInputBuilder {
     /// <p>The identifier of the directory to which you want to add Region replication.</p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl AddRegionInputBuilder {
         &self.directory_id
     }
     /// <p>The name of the Region where you want to add domain controllers for replication. For example, <code>us-east-1</code>.</p>
+    /// This field is required.
     pub fn region_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl AddRegionInputBuilder {
         &self.region_name
     }
     /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
+    /// This field is required.
     pub fn vpc_settings(mut self, input: crate::types::DirectoryVpcSettings) -> Self {
         self.vpc_settings = ::std::option::Option::Some(input);
         self
@@ -83,7 +86,7 @@ impl AddRegionInputBuilder {
         &self.vpc_settings
     }
     /// Consumes the builder and constructs a [`AddRegionInput`](crate::operation::add_region::AddRegionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::add_region::AddRegionInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::add_region::AddRegionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::add_region::AddRegionInput {
             directory_id: self.directory_id,
             region_name: self.region_name,

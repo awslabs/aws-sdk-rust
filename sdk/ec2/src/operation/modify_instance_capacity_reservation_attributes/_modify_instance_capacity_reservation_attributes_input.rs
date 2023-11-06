@@ -43,6 +43,7 @@ pub struct ModifyInstanceCapacityReservationAttributesInputBuilder {
 }
 impl ModifyInstanceCapacityReservationAttributesInputBuilder {
     /// <p>The ID of the instance to be modified.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +58,7 @@ impl ModifyInstanceCapacityReservationAttributesInputBuilder {
         &self.instance_id
     }
     /// <p>Information about the Capacity Reservation targeting option.</p>
+    /// This field is required.
     pub fn capacity_reservation_specification(mut self, input: crate::types::CapacityReservationSpecification) -> Self {
         self.capacity_reservation_specification = ::std::option::Option::Some(input);
         self
@@ -89,7 +91,7 @@ impl ModifyInstanceCapacityReservationAttributesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_instance_capacity_reservation_attributes::ModifyInstanceCapacityReservationAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::modify_instance_capacity_reservation_attributes::ModifyInstanceCapacityReservationAttributesInput {

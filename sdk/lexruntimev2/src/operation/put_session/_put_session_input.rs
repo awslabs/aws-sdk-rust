@@ -42,8 +42,10 @@ impl PutSessionInput {
         self.session_id.as_deref()
     }
     /// <p>A list of messages to send to the user. Messages are sent in the order that they are defined in the list.</p>
-    pub fn messages(&self) -> ::std::option::Option<&[crate::types::Message]> {
-        self.messages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.messages.is_none()`.
+    pub fn messages(&self) -> &[crate::types::Message] {
+        self.messages.as_deref().unwrap_or_default()
     }
     /// <p>Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation with the user.</p>
     pub fn session_state(&self) -> ::std::option::Option<&crate::types::SessionState> {
@@ -84,6 +86,7 @@ pub struct PutSessionInputBuilder {
 }
 impl PutSessionInputBuilder {
     /// <p>The identifier of the bot that receives the session data.</p>
+    /// This field is required.
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +101,7 @@ impl PutSessionInputBuilder {
         &self.bot_id
     }
     /// <p>The alias identifier of the bot that receives the session data.</p>
+    /// This field is required.
     pub fn bot_alias_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_alias_id = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +116,7 @@ impl PutSessionInputBuilder {
         &self.bot_alias_id
     }
     /// <p>The locale where the session is in use.</p>
+    /// This field is required.
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +131,7 @@ impl PutSessionInputBuilder {
         &self.locale_id
     }
     /// <p>The identifier of the session that receives the session data.</p>
+    /// This field is required.
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
         self
@@ -160,6 +166,7 @@ impl PutSessionInputBuilder {
         &self.messages
     }
     /// <p>Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation with the user.</p>
+    /// This field is required.
     pub fn session_state(mut self, input: crate::types::SessionState) -> Self {
         self.session_state = ::std::option::Option::Some(input);
         self
@@ -227,7 +234,7 @@ impl PutSessionInputBuilder {
         &self.response_content_type
     }
     /// Consumes the builder and constructs a [`PutSessionInput`](crate::operation::put_session::PutSessionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_session::PutSessionInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_session::PutSessionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_session::PutSessionInput {
             bot_id: self.bot_id,
             bot_alias_id: self.bot_alias_id,

@@ -2,7 +2,7 @@
 pub fn ser_automated_abr_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AutomatedAbrSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.max_abr_bitrate {
         object.key("maxAbrBitrate").number(
             #[allow(clippy::useless_conversion)]
@@ -73,8 +73,9 @@ where
                             );
                         }
                         "rules" => {
-                            builder = builder
-                                .set_rules(crate::protocol_serde::shape___list_of_automated_abr_rule::de___list_of_automated_abr_rule(tokens)?);
+                            builder = builder.set_rules(crate::protocol_serde::shape_list_of_automated_abr_rule::de_list_of_automated_abr_rule(
+                                tokens,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

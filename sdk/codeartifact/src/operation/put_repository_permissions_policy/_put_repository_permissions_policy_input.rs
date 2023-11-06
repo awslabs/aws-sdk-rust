@@ -55,6 +55,7 @@ pub struct PutRepositoryPermissionsPolicyInputBuilder {
 }
 impl PutRepositoryPermissionsPolicyInputBuilder {
     /// <p> The name of the domain containing the repository to set the resource policy on. </p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +84,7 @@ impl PutRepositoryPermissionsPolicyInputBuilder {
         &self.domain_owner
     }
     /// <p> The name of the repository to set the resource policy on. </p>
+    /// This field is required.
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +113,7 @@ impl PutRepositoryPermissionsPolicyInputBuilder {
         &self.policy_revision
     }
     /// <p> A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided repository. </p>
+    /// This field is required.
     pub fn policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_document = ::std::option::Option::Some(input.into());
         self
@@ -129,7 +132,7 @@ impl PutRepositoryPermissionsPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_repository_permissions_policy::PutRepositoryPermissionsPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_repository_permissions_policy::PutRepositoryPermissionsPolicyInput {
             domain: self.domain,

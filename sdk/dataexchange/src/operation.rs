@@ -67,6 +67,9 @@ pub mod revoke_revision;
 /// Types for the `SendApiAsset` operation.
 pub mod send_api_asset;
 
+/// Types for the `SendDataSetNotification` operation.
+pub mod send_data_set_notification;
+
 /// Types for the `StartJob` operation.
 pub mod start_job;
 

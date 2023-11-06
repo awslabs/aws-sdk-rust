@@ -138,8 +138,10 @@ impl DbClusterAutomatedBackup {
         self.engine_mode.as_deref()
     }
     /// <p>The Availability Zones where instances in the DB cluster can be created. For information on Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions and Availability Zones</a>.</p>
-    pub fn availability_zones(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.availability_zones.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
+    pub fn availability_zones(&self) -> &[::std::string::String] {
+        self.availability_zones.as_deref().unwrap_or_default()
     }
     /// <p>The port number that the automated backup used for connections.</p>
     /// <p>Default: Inherits from the source DB cluster</p>

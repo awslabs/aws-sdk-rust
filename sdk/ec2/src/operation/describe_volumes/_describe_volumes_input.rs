@@ -66,12 +66,16 @@ impl DescribeVolumesInput {
     /// <li> <p> <code>volume-id</code> - The volume ID.</p> </li>
     /// <li> <p> <code>volume-type</code> - The Amazon EBS volume type (<code>gp2</code> | <code>gp3</code> | <code>io1</code> | <code>io2</code> | <code>st1</code> | <code>sc1</code>| <code>standard</code>)</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The volume IDs.</p>
-    pub fn volume_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.volume_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volume_ids.is_none()`.
+    pub fn volume_ids(&self) -> &[::std::string::String] {
+        self.volume_ids.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -264,7 +268,7 @@ impl DescribeVolumesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeVolumesInput`](crate::operation::describe_volumes::DescribeVolumesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_volumes::DescribeVolumesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_volumes::DescribeVolumesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_volumes::DescribeVolumesInput {
             filters: self.filters,
             volume_ids: self.volume_ids,

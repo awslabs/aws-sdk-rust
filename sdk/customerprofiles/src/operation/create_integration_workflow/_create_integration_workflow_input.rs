@@ -62,6 +62,7 @@ pub struct CreateIntegrationWorkflowInputBuilder {
 }
 impl CreateIntegrationWorkflowInputBuilder {
     /// <p>The unique name of the domain.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl CreateIntegrationWorkflowInputBuilder {
         &self.domain_name
     }
     /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
+    /// This field is required.
     pub fn workflow_type(mut self, input: crate::types::WorkflowType) -> Self {
         self.workflow_type = ::std::option::Option::Some(input);
         self
@@ -90,6 +92,7 @@ impl CreateIntegrationWorkflowInputBuilder {
         &self.workflow_type
     }
     /// <p>Configuration data for integration workflow.</p>
+    /// This field is required.
     pub fn integration_config(mut self, input: crate::types::IntegrationConfig) -> Self {
         self.integration_config = ::std::option::Option::Some(input);
         self
@@ -104,6 +107,7 @@ impl CreateIntegrationWorkflowInputBuilder {
         &self.integration_config
     }
     /// <p>The name of the profile object type.</p>
+    /// This field is required.
     pub fn object_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_type_name = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +122,7 @@ impl CreateIntegrationWorkflowInputBuilder {
         &self.object_type_name
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Customer Profiles assumes this role to create resources on your behalf as part of workflow execution.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -156,7 +161,7 @@ impl CreateIntegrationWorkflowInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_integration_workflow::CreateIntegrationWorkflowInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_integration_workflow::CreateIntegrationWorkflowInput {
             domain_name: self.domain_name,

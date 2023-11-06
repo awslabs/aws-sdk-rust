@@ -5,24 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReadSetBatchError {
     /// <p>The error's ID.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The error's code.</p>
-    pub code: ::std::option::Option<::std::string::String>,
+    pub code: ::std::string::String,
     /// <p>The error's message.</p>
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
 }
 impl ReadSetBatchError {
     /// <p>The error's ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The error's code.</p>
-    pub fn code(&self) -> ::std::option::Option<&str> {
-        self.code.as_deref()
+    pub fn code(&self) -> &str {
+        use std::ops::Deref;
+        self.code.deref()
     }
     /// <p>The error's message.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        use std::ops::Deref;
+        self.message.deref()
     }
 }
 impl ReadSetBatchError {
@@ -42,6 +45,7 @@ pub struct ReadSetBatchErrorBuilder {
 }
 impl ReadSetBatchErrorBuilder {
     /// <p>The error's ID.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +60,7 @@ impl ReadSetBatchErrorBuilder {
         &self.id
     }
     /// <p>The error's code.</p>
+    /// This field is required.
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +75,7 @@ impl ReadSetBatchErrorBuilder {
         &self.code
     }
     /// <p>The error's message.</p>
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +90,30 @@ impl ReadSetBatchErrorBuilder {
         &self.message
     }
     /// Consumes the builder and constructs a [`ReadSetBatchError`](crate::types::ReadSetBatchError).
-    pub fn build(self) -> crate::types::ReadSetBatchError {
-        crate::types::ReadSetBatchError {
-            id: self.id,
-            code: self.code,
-            message: self.message,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::ReadSetBatchErrorBuilder::id)
+    /// - [`code`](crate::types::builders::ReadSetBatchErrorBuilder::code)
+    /// - [`message`](crate::types::builders::ReadSetBatchErrorBuilder::message)
+    pub fn build(self) -> ::std::result::Result<crate::types::ReadSetBatchError, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ReadSetBatchError {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building ReadSetBatchError",
+                )
+            })?,
+            code: self.code.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "code",
+                    "code was not specified but it is required when building ReadSetBatchError",
+                )
+            })?,
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building ReadSetBatchError",
+                )
+            })?,
+        })
     }
 }

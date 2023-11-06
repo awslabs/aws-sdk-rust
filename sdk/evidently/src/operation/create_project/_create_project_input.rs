@@ -67,6 +67,7 @@ pub struct CreateProjectInputBuilder {
 }
 impl CreateProjectInputBuilder {
     /// <p>The name for the project.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -163,7 +164,7 @@ impl CreateProjectInputBuilder {
     /// Consumes the builder and constructs a [`CreateProjectInput`](crate::operation::create_project::CreateProjectInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_project::CreateProjectInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_project::CreateProjectInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_project::CreateProjectInput {
             name: self.name,
             description: self.description,

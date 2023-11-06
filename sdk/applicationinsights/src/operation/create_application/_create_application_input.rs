@@ -38,8 +38,10 @@ impl CreateApplicationInput {
         self.ops_item_sns_topic_arn.as_deref()
     }
     /// <p>List of tags to add to the application. tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p> Indicates whether Application Insights automatically configures unmonitored resources in the resource group. </p>
     pub fn auto_config_enabled(&self) -> ::std::option::Option<bool> {
@@ -196,7 +198,7 @@ impl CreateApplicationInputBuilder {
     /// Consumes the builder and constructs a [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_application::CreateApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_application::CreateApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_application::CreateApplicationInput {
             resource_group_name: self.resource_group_name,
             ops_center_enabled: self.ops_center_enabled,

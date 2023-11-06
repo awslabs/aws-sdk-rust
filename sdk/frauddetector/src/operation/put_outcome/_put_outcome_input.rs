@@ -20,8 +20,10 @@ impl PutOutcomeInput {
         self.description.as_deref()
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl PutOutcomeInput {
@@ -41,6 +43,7 @@ pub struct PutOutcomeInputBuilder {
 }
 impl PutOutcomeInputBuilder {
     /// <p>The name of the outcome.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -89,7 +92,7 @@ impl PutOutcomeInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`PutOutcomeInput`](crate::operation::put_outcome::PutOutcomeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_outcome::PutOutcomeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_outcome::PutOutcomeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_outcome::PutOutcomeInput {
             name: self.name,
             description: self.description,

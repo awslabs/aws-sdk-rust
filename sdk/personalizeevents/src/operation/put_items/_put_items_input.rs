@@ -14,8 +14,10 @@ impl PutItemsInput {
         self.dataset_arn.as_deref()
     }
     /// <p>A list of item data.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::Item]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[crate::types::Item] {
+        self.items.as_deref().unwrap_or_default()
     }
 }
 impl PutItemsInput {
@@ -34,6 +36,7 @@ pub struct PutItemsInputBuilder {
 }
 impl PutItemsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Items dataset you are adding the item or items to.</p>
+    /// This field is required.
     pub fn dataset_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_arn = ::std::option::Option::Some(input.into());
         self
@@ -68,7 +71,7 @@ impl PutItemsInputBuilder {
         &self.items
     }
     /// Consumes the builder and constructs a [`PutItemsInput`](crate::operation::put_items::PutItemsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_items::PutItemsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_items::PutItemsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_items::PutItemsInput {
             dataset_arn: self.dataset_arn,
             items: self.items,

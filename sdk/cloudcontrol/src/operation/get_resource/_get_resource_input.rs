@@ -58,6 +58,7 @@ pub struct GetResourceInputBuilder {
 }
 impl GetResourceInputBuilder {
     /// <p>The name of the resource type.</p>
+    /// This field is required.
     pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_name = ::std::option::Option::Some(input.into());
         self
@@ -109,6 +110,7 @@ impl GetResourceInputBuilder {
     /// <p>You can specify the primary identifier, or any secondary identifier defined for the resource type in its resource schema. You can only specify one identifier. Primary identifiers can be specified as a string or JSON; secondary identifiers must be specified as JSON.</p>
     /// <p>For compound primary identifiers (that is, one that consists of multiple resource properties strung together), to specify the primary identifier as a string, list the property values <i>in the order they are specified</i> in the primary identifier definition, separated by <code>|</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html">Identifying resources</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -129,7 +131,7 @@ impl GetResourceInputBuilder {
         &self.identifier
     }
     /// Consumes the builder and constructs a [`GetResourceInput`](crate::operation::get_resource::GetResourceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_resource::GetResourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_resource::GetResourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_resource::GetResourceInput {
             type_name: self.type_name,
             type_version_id: self.type_version_id,

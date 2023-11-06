@@ -40,8 +40,10 @@ impl CreateBatchImportJobInput {
         self.iam_role_arn.as_deref()
     }
     /// <p>A collection of key-value pairs associated with this request. </p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateBatchImportJobInput {
@@ -64,6 +66,7 @@ pub struct CreateBatchImportJobInputBuilder {
 }
 impl CreateBatchImportJobInputBuilder {
     /// <p>The ID of the batch import job. The ID cannot be of a past job, unless the job exists in <code>CREATE_FAILED</code> state.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -78,6 +81,7 @@ impl CreateBatchImportJobInputBuilder {
         &self.job_id
     }
     /// <p>The URI that points to the Amazon S3 location of your data file.</p>
+    /// This field is required.
     pub fn input_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_path = ::std::option::Option::Some(input.into());
         self
@@ -92,6 +96,7 @@ impl CreateBatchImportJobInputBuilder {
         &self.input_path
     }
     /// <p>The URI that points to the Amazon S3 location for storing your results. </p>
+    /// This field is required.
     pub fn output_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_path = ::std::option::Option::Some(input.into());
         self
@@ -106,6 +111,7 @@ impl CreateBatchImportJobInputBuilder {
         &self.output_path
     }
     /// <p>The name of the event type.</p>
+    /// This field is required.
     pub fn event_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_type_name = ::std::option::Option::Some(input.into());
         self
@@ -121,6 +127,7 @@ impl CreateBatchImportJobInputBuilder {
     }
     /// <p>The ARN of the IAM role created for Amazon S3 bucket that holds your data file.</p>
     /// <p>The IAM role must have read permissions to your input S3 bucket and write permissions to your output S3 bucket. For more information about bucket permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html">User policy examples</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// This field is required.
     pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -159,7 +166,7 @@ impl CreateBatchImportJobInputBuilder {
     /// Consumes the builder and constructs a [`CreateBatchImportJobInput`](crate::operation::create_batch_import_job::CreateBatchImportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_batch_import_job::CreateBatchImportJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_batch_import_job::CreateBatchImportJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_batch_import_job::CreateBatchImportJobInput {
             job_id: self.job_id,

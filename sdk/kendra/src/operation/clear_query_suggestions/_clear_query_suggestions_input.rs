@@ -27,6 +27,7 @@ pub struct ClearQuerySuggestionsInputBuilder {
 }
 impl ClearQuerySuggestionsInputBuilder {
     /// <p>The identifier of the index you want to clear query suggestions from.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl ClearQuerySuggestionsInputBuilder {
     /// Consumes the builder and constructs a [`ClearQuerySuggestionsInput`](crate::operation::clear_query_suggestions::ClearQuerySuggestionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::clear_query_suggestions::ClearQuerySuggestionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::clear_query_suggestions::ClearQuerySuggestionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::clear_query_suggestions::ClearQuerySuggestionsInput { index_id: self.index_id })
     }

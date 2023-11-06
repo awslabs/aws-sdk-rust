@@ -8,7 +8,7 @@ pub struct UpdateFailbackReplicationConfigurationInput {
     /// <p>The name of the Failback Replication Configuration.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Recovery Instance in Mbps.</p>
-    pub bandwidth_throttling: i64,
+    pub bandwidth_throttling: ::std::option::Option<i64>,
     /// <p>Whether to use Private IP for the failback replication of the Recovery Instance.</p>
     pub use_private_ip: ::std::option::Option<bool>,
 }
@@ -22,7 +22,7 @@ impl UpdateFailbackReplicationConfigurationInput {
         self.name.as_deref()
     }
     /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Recovery Instance in Mbps.</p>
-    pub fn bandwidth_throttling(&self) -> i64 {
+    pub fn bandwidth_throttling(&self) -> ::std::option::Option<i64> {
         self.bandwidth_throttling
     }
     /// <p>Whether to use Private IP for the failback replication of the Recovery Instance.</p>
@@ -48,6 +48,7 @@ pub struct UpdateFailbackReplicationConfigurationInputBuilder {
 }
 impl UpdateFailbackReplicationConfigurationInputBuilder {
     /// <p>The ID of the Recovery Instance.</p>
+    /// This field is required.
     pub fn recovery_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recovery_instance_id = ::std::option::Option::Some(input.into());
         self
@@ -108,13 +109,13 @@ impl UpdateFailbackReplicationConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_failback_replication_configuration::UpdateFailbackReplicationConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_failback_replication_configuration::UpdateFailbackReplicationConfigurationInput {
                 recovery_instance_id: self.recovery_instance_id,
                 name: self.name,
-                bandwidth_throttling: self.bandwidth_throttling.unwrap_or_default(),
+                bandwidth_throttling: self.bandwidth_throttling,
                 use_private_ip: self.use_private_ip,
             },
         )

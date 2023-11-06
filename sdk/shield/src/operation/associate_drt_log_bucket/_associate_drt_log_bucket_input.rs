@@ -27,6 +27,7 @@ pub struct AssociateDrtLogBucketInputBuilder {
 }
 impl AssociateDrtLogBucketInputBuilder {
     /// <p>The Amazon S3 bucket that contains the logs that you want to share.</p>
+    /// This field is required.
     pub fn log_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_bucket = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl AssociateDrtLogBucketInputBuilder {
     /// Consumes the builder and constructs a [`AssociateDrtLogBucketInput`](crate::operation::associate_drt_log_bucket::AssociateDrtLogBucketInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_drt_log_bucket::AssociateDrtLogBucketInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::associate_drt_log_bucket::AssociateDrtLogBucketInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::associate_drt_log_bucket::AssociateDrtLogBucketInput { log_bucket: self.log_bucket })
     }

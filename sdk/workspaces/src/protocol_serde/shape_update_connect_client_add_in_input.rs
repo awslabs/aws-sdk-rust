@@ -2,7 +2,7 @@
 pub fn ser_update_connect_client_add_in_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_connect_client_add_in::UpdateConnectClientAddInInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.add_in_id {
         object.key("AddInId").string(var_1.as_str());
     }

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomArtifactConfiguration {
     /// <p> <code>UDF</code> stands for user-defined functions. This type of artifact must be in an S3 bucket. A <code>DEPENDENCY_JAR</code> can be in either Maven or an S3 bucket.</p>
-    pub artifact_type: ::std::option::Option<crate::types::ArtifactType>,
+    pub artifact_type: crate::types::ArtifactType,
     /// <p>For a Kinesis Data Analytics application provides a description of an Amazon S3 object, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data. </p>
     pub s3_content_location: ::std::option::Option<crate::types::S3ContentLocation>,
     /// <p>The parameters required to fully specify a Maven reference.</p>
@@ -13,8 +13,8 @@ pub struct CustomArtifactConfiguration {
 }
 impl CustomArtifactConfiguration {
     /// <p> <code>UDF</code> stands for user-defined functions. This type of artifact must be in an S3 bucket. A <code>DEPENDENCY_JAR</code> can be in either Maven or an S3 bucket.</p>
-    pub fn artifact_type(&self) -> ::std::option::Option<&crate::types::ArtifactType> {
-        self.artifact_type.as_ref()
+    pub fn artifact_type(&self) -> &crate::types::ArtifactType {
+        &self.artifact_type
     }
     /// <p>For a Kinesis Data Analytics application provides a description of an Amazon S3 object, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data. </p>
     pub fn s3_content_location(&self) -> ::std::option::Option<&crate::types::S3ContentLocation> {
@@ -42,6 +42,7 @@ pub struct CustomArtifactConfigurationBuilder {
 }
 impl CustomArtifactConfigurationBuilder {
     /// <p> <code>UDF</code> stands for user-defined functions. This type of artifact must be in an S3 bucket. A <code>DEPENDENCY_JAR</code> can be in either Maven or an S3 bucket.</p>
+    /// This field is required.
     pub fn artifact_type(mut self, input: crate::types::ArtifactType) -> Self {
         self.artifact_type = ::std::option::Option::Some(input);
         self
@@ -84,11 +85,18 @@ impl CustomArtifactConfigurationBuilder {
         &self.maven_reference
     }
     /// Consumes the builder and constructs a [`CustomArtifactConfiguration`](crate::types::CustomArtifactConfiguration).
-    pub fn build(self) -> crate::types::CustomArtifactConfiguration {
-        crate::types::CustomArtifactConfiguration {
-            artifact_type: self.artifact_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`artifact_type`](crate::types::builders::CustomArtifactConfigurationBuilder::artifact_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomArtifactConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CustomArtifactConfiguration {
+            artifact_type: self.artifact_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "artifact_type",
+                    "artifact_type was not specified but it is required when building CustomArtifactConfiguration",
+                )
+            })?,
             s3_content_location: self.s3_content_location,
             maven_reference: self.maven_reference,
-        }
+        })
     }
 }

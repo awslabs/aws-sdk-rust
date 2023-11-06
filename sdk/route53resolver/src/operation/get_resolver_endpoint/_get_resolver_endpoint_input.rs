@@ -27,6 +27,7 @@ pub struct GetResolverEndpointInputBuilder {
 }
 impl GetResolverEndpointInputBuilder {
     /// <p>The ID of the Resolver endpoint that you want to get information about.</p>
+    /// This field is required.
     pub fn resolver_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolver_endpoint_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetResolverEndpointInputBuilder {
     /// Consumes the builder and constructs a [`GetResolverEndpointInput`](crate::operation::get_resolver_endpoint::GetResolverEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_resolver_endpoint::GetResolverEndpointInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_resolver_endpoint::GetResolverEndpointInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_resolver_endpoint::GetResolverEndpointInput {
             resolver_endpoint_id: self.resolver_endpoint_id,

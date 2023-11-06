@@ -35,8 +35,10 @@ impl Permission {
         self.source_account.as_deref()
     }
     /// <p>The private CA actions that can be performed by the designated Amazon Web Services service.</p>
-    pub fn actions(&self) -> ::std::option::Option<&[crate::types::ActionType]> {
-        self.actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
+    pub fn actions(&self) -> &[crate::types::ActionType] {
+        self.actions.as_deref().unwrap_or_default()
     }
     /// <p>The name of the policy that is associated with the permission.</p>
     pub fn policy(&self) -> ::std::option::Option<&str> {

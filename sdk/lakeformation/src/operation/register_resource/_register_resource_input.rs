@@ -57,6 +57,7 @@ pub struct RegisterResourceInputBuilder {
 }
 impl RegisterResourceInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to register.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -132,7 +133,7 @@ impl RegisterResourceInputBuilder {
     /// Consumes the builder and constructs a [`RegisterResourceInput`](crate::operation::register_resource::RegisterResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_resource::RegisterResourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::register_resource::RegisterResourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_resource::RegisterResourceInput {
             resource_arn: self.resource_arn,
             use_service_linked_role: self.use_service_linked_role,

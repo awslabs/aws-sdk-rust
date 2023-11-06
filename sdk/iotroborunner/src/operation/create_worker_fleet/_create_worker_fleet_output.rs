@@ -4,31 +4,33 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateWorkerFleetOutput {
     /// Full ARN of the worker fleet.
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// Filters access by the worker fleet's identifier
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// Timestamp at which the resource was created.
-    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_at: ::aws_smithy_types::DateTime,
     /// Timestamp at which the resource was last updated.
-    pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub updated_at: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
 impl CreateWorkerFleetOutput {
     /// Full ARN of the worker fleet.
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// Filters access by the worker fleet's identifier
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// Timestamp at which the resource was created.
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_at.as_ref()
+    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_at
     }
     /// Timestamp at which the resource was last updated.
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.updated_at.as_ref()
+    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.updated_at
     }
 }
 impl ::aws_http::request_id::RequestId for CreateWorkerFleetOutput {
@@ -55,6 +57,7 @@ pub struct CreateWorkerFleetOutputBuilder {
 }
 impl CreateWorkerFleetOutputBuilder {
     /// Full ARN of the worker fleet.
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +72,7 @@ impl CreateWorkerFleetOutputBuilder {
         &self.arn
     }
     /// Filters access by the worker fleet's identifier
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +87,7 @@ impl CreateWorkerFleetOutputBuilder {
         &self.id
     }
     /// Timestamp at which the resource was created.
+    /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
@@ -97,6 +102,7 @@ impl CreateWorkerFleetOutputBuilder {
         &self.created_at
     }
     /// Timestamp at which the resource was last updated.
+    /// This field is required.
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
@@ -120,13 +126,40 @@ impl CreateWorkerFleetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateWorkerFleetOutput`](crate::operation::create_worker_fleet::CreateWorkerFleetOutput).
-    pub fn build(self) -> crate::operation::create_worker_fleet::CreateWorkerFleetOutput {
-        crate::operation::create_worker_fleet::CreateWorkerFleetOutput {
-            arn: self.arn,
-            id: self.id,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::operation::create_worker_fleet::builders::CreateWorkerFleetOutputBuilder::arn)
+    /// - [`id`](crate::operation::create_worker_fleet::builders::CreateWorkerFleetOutputBuilder::id)
+    /// - [`created_at`](crate::operation::create_worker_fleet::builders::CreateWorkerFleetOutputBuilder::created_at)
+    /// - [`updated_at`](crate::operation::create_worker_fleet::builders::CreateWorkerFleetOutputBuilder::updated_at)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_worker_fleet::CreateWorkerFleetOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_worker_fleet::CreateWorkerFleetOutput {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building CreateWorkerFleetOutput",
+                )
+            })?,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building CreateWorkerFleetOutput",
+                )
+            })?,
+            created_at: self.created_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_at",
+                    "created_at was not specified but it is required when building CreateWorkerFleetOutput",
+                )
+            })?,
+            updated_at: self.updated_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "updated_at",
+                    "updated_at was not specified but it is required when building CreateWorkerFleetOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

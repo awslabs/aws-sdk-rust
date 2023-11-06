@@ -61,6 +61,7 @@ pub struct AdminLinkProviderForUserInputBuilder {
 }
 impl AdminLinkProviderForUserInputBuilder {
     /// <p>The user pool ID for the user pool.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +81,7 @@ impl AdminLinkProviderForUserInputBuilder {
     /// <p>The <code>ProviderName</code> should be set to <code>Cognito</code> for users in Cognito user pools.</p> <important>
     /// <p>All attributes in the DestinationUser profile must be mutable. If you have assigned the user any immutable custom attributes, the operation won't succeed.</p>
     /// </important>
+    /// This field is required.
     pub fn destination_user(mut self, input: crate::types::ProviderUserIdentifierType) -> Self {
         self.destination_user = ::std::option::Option::Some(input);
         self
@@ -109,6 +111,7 @@ impl AdminLinkProviderForUserInputBuilder {
     /// <p>For OIDC, the <code>ProviderAttributeName</code> can be any value that matches a claim in the ID token, or that your app retrieves from the <code>userInfo</code> endpoint. You must map the claim to a user pool attribute in your IdP configuration, and set the user pool attribute name as the value of <code>ProviderAttributeName</code> in your <code>AdminLinkProviderForUser</code> request.</p>
     /// <p>For SAML, the <code>ProviderAttributeName</code> can be any value that matches a claim in the SAML assertion. To link SAML users based on the subject of the SAML assertion, map the subject to a claim through the SAML IdP and set that claim name as the value of <code>ProviderAttributeName</code> in your <code>AdminLinkProviderForUser</code> request.</p>
     /// <p>For both OIDC and SAML users, when you set <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>, Amazon Cognito will automatically parse the default unique identifier found in the subject from the IdP token.</p>
+    /// This field is required.
     pub fn source_user(mut self, input: crate::types::ProviderUserIdentifierType) -> Self {
         self.source_user = ::std::option::Option::Some(input);
         self
@@ -137,7 +140,7 @@ impl AdminLinkProviderForUserInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::admin_link_provider_for_user::AdminLinkProviderForUserInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::admin_link_provider_for_user::AdminLinkProviderForUserInput {
             user_pool_id: self.user_pool_id,

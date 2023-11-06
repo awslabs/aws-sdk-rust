@@ -11,8 +11,10 @@ pub struct DescribeUsageLimitsOutput {
 }
 impl DescribeUsageLimitsOutput {
     /// <p>Contains the output from the <code>DescribeUsageLimits</code> action. </p>
-    pub fn usage_limits(&self) -> ::std::option::Option<&[crate::types::UsageLimit]> {
-        self.usage_limits.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.usage_limits.is_none()`.
+    pub fn usage_limits(&self) -> &[crate::types::UsageLimit] {
+        self.usage_limits.as_deref().unwrap_or_default()
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

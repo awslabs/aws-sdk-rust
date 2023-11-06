@@ -50,6 +50,7 @@ pub struct ListAppInstanceUserEndpointsInputBuilder {
 }
 impl ListAppInstanceUserEndpointsInputBuilder {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    /// This field is required.
     pub fn app_instance_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_user_arn = ::std::option::Option::Some(input.into());
         self
@@ -96,7 +97,7 @@ impl ListAppInstanceUserEndpointsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsInput {
             app_instance_user_arn: self.app_instance_user_arn,

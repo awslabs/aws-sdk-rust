@@ -27,6 +27,7 @@ pub struct StopProcessingJobInputBuilder {
 }
 impl StopProcessingJobInputBuilder {
     /// <p>The name of the processing job to stop.</p>
+    /// This field is required.
     pub fn processing_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.processing_job_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl StopProcessingJobInputBuilder {
     /// Consumes the builder and constructs a [`StopProcessingJobInput`](crate::operation::stop_processing_job::StopProcessingJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_processing_job::StopProcessingJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_processing_job::StopProcessingJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_processing_job::StopProcessingJobInput {
             processing_job_name: self.processing_job_name,
         })

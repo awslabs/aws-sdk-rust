@@ -19,8 +19,10 @@ impl ListComponentTypesInput {
         self.workspace_id.as_deref()
     }
     /// <p>A list of objects that filter the request.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::ListComponentTypesFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::ListComponentTypesFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The string that specifies the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -50,6 +52,7 @@ pub struct ListComponentTypesInputBuilder {
 }
 impl ListComponentTypesInputBuilder {
     /// <p>The ID of the workspace.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -117,7 +120,8 @@ impl ListComponentTypesInputBuilder {
     /// Consumes the builder and constructs a [`ListComponentTypesInput`](crate::operation::list_component_types::ListComponentTypesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_component_types::ListComponentTypesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_component_types::ListComponentTypesInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_component_types::ListComponentTypesInput {
             workspace_id: self.workspace_id,
             filters: self.filters,

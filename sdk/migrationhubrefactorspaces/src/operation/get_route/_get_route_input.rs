@@ -41,6 +41,7 @@ pub struct GetRouteInputBuilder {
 }
 impl GetRouteInputBuilder {
     /// <p>The ID of the environment.</p>
+    /// This field is required.
     pub fn environment_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_identifier = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl GetRouteInputBuilder {
         &self.environment_identifier
     }
     /// <p>The ID of the application. </p>
+    /// This field is required.
     pub fn application_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_identifier = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl GetRouteInputBuilder {
         &self.application_identifier
     }
     /// <p>The ID of the route.</p>
+    /// This field is required.
     pub fn route_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_identifier = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +86,7 @@ impl GetRouteInputBuilder {
         &self.route_identifier
     }
     /// Consumes the builder and constructs a [`GetRouteInput`](crate::operation::get_route::GetRouteInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_route::GetRouteInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_route::GetRouteInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_route::GetRouteInput {
             environment_identifier: self.environment_identifier,
             application_identifier: self.application_identifier,

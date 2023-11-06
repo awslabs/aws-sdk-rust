@@ -7,18 +7,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HomeDirectoryMapEntry {
     /// <p>Represents an entry for <code>HomeDirectoryMappings</code>.</p>
-    pub entry: ::std::option::Option<::std::string::String>,
+    pub entry: ::std::string::String,
     /// <p>Represents the map target that is used in a <code>HomeDirectorymapEntry</code>.</p>
-    pub target: ::std::option::Option<::std::string::String>,
+    pub target: ::std::string::String,
 }
 impl HomeDirectoryMapEntry {
     /// <p>Represents an entry for <code>HomeDirectoryMappings</code>.</p>
-    pub fn entry(&self) -> ::std::option::Option<&str> {
-        self.entry.as_deref()
+    pub fn entry(&self) -> &str {
+        use std::ops::Deref;
+        self.entry.deref()
     }
     /// <p>Represents the map target that is used in a <code>HomeDirectorymapEntry</code>.</p>
-    pub fn target(&self) -> ::std::option::Option<&str> {
-        self.target.as_deref()
+    pub fn target(&self) -> &str {
+        use std::ops::Deref;
+        self.target.deref()
     }
 }
 impl HomeDirectoryMapEntry {
@@ -37,6 +39,7 @@ pub struct HomeDirectoryMapEntryBuilder {
 }
 impl HomeDirectoryMapEntryBuilder {
     /// <p>Represents an entry for <code>HomeDirectoryMappings</code>.</p>
+    /// This field is required.
     pub fn entry(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entry = ::std::option::Option::Some(input.into());
         self
@@ -51,6 +54,7 @@ impl HomeDirectoryMapEntryBuilder {
         &self.entry
     }
     /// <p>Represents the map target that is used in a <code>HomeDirectorymapEntry</code>.</p>
+    /// This field is required.
     pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target = ::std::option::Option::Some(input.into());
         self
@@ -65,10 +69,23 @@ impl HomeDirectoryMapEntryBuilder {
         &self.target
     }
     /// Consumes the builder and constructs a [`HomeDirectoryMapEntry`](crate::types::HomeDirectoryMapEntry).
-    pub fn build(self) -> crate::types::HomeDirectoryMapEntry {
-        crate::types::HomeDirectoryMapEntry {
-            entry: self.entry,
-            target: self.target,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`entry`](crate::types::builders::HomeDirectoryMapEntryBuilder::entry)
+    /// - [`target`](crate::types::builders::HomeDirectoryMapEntryBuilder::target)
+    pub fn build(self) -> ::std::result::Result<crate::types::HomeDirectoryMapEntry, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::HomeDirectoryMapEntry {
+            entry: self.entry.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "entry",
+                    "entry was not specified but it is required when building HomeDirectoryMapEntry",
+                )
+            })?,
+            target: self.target.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "target",
+                    "target was not specified but it is required when building HomeDirectoryMapEntry",
+                )
+            })?,
+        })
     }
 }

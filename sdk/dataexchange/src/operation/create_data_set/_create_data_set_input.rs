@@ -48,6 +48,7 @@ pub struct CreateDataSetInputBuilder {
 }
 impl CreateDataSetInputBuilder {
     /// <p>The type of asset that is added to a data set.</p>
+    /// This field is required.
     pub fn asset_type(mut self, input: crate::types::AssetType) -> Self {
         self.asset_type = ::std::option::Option::Some(input);
         self
@@ -62,6 +63,7 @@ impl CreateDataSetInputBuilder {
         &self.asset_type
     }
     /// <p>A description for the data set. This value can be up to 16,348 characters long.</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl CreateDataSetInputBuilder {
         &self.description
     }
     /// <p>The name of the data set.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -112,7 +115,7 @@ impl CreateDataSetInputBuilder {
     /// Consumes the builder and constructs a [`CreateDataSetInput`](crate::operation::create_data_set::CreateDataSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_data_set::CreateDataSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_data_set::CreateDataSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_data_set::CreateDataSetInput {
             asset_type: self.asset_type,
             description: self.description,

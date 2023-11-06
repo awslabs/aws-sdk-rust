@@ -79,12 +79,16 @@ impl AwsCertificateManagerCertificateDetails {
     }
     /// <p>Contains information about the initial validation of each domain name that occurs as a result of the <code>RequestCertificate</code> request.</p>
     /// <p>Only provided if the certificate type is <code>AMAZON_ISSUED</code>.</p>
-    pub fn domain_validation_options(&self) -> ::std::option::Option<&[crate::types::AwsCertificateManagerCertificateDomainValidationOption]> {
-        self.domain_validation_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domain_validation_options.is_none()`.
+    pub fn domain_validation_options(&self) -> &[crate::types::AwsCertificateManagerCertificateDomainValidationOption] {
+        self.domain_validation_options.as_deref().unwrap_or_default()
     }
     /// <p>Contains a list of Extended Key Usage X.509 v3 extension objects. Each object specifies a purpose for which the certificate public key can be used and consists of a name and an object identifier (OID).</p>
-    pub fn extended_key_usages(&self) -> ::std::option::Option<&[crate::types::AwsCertificateManagerCertificateExtendedKeyUsage]> {
-        self.extended_key_usages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.extended_key_usages.is_none()`.
+    pub fn extended_key_usages(&self) -> &[crate::types::AwsCertificateManagerCertificateExtendedKeyUsage] {
+        self.extended_key_usages.as_deref().unwrap_or_default()
     }
     /// <p>For a failed certificate request, the reason for the failure.</p>
     /// <p>Valid values: <code>NO_AVAILABLE_CONTACTS</code> | <code>ADDITIONAL_VERIFICATION_REQUIRED</code> | <code>DOMAIN_NOT_ALLOWED</code> | <code>INVALID_PUBLIC_DOMAIN</code> | <code>DOMAIN_VALIDATION_DENIED</code> | <code>CAA_ERROR</code> | <code>PCA_LIMIT_EXCEEDED</code> | <code>PCA_INVALID_ARN</code> | <code>PCA_INVALID_STATE</code> | <code>PCA_REQUEST_FAILED</code> | <code>PCA_NAME_CONSTRAINTS_VALIDATION</code> | <code>PCA_RESOURCE_NOT_FOUND</code> | <code>PCA_INVALID_ARGS</code> | <code>PCA_INVALID_DURATION</code> | <code>PCA_ACCESS_DENIED</code> | <code>SLR_NOT_FOUND</code> | <code>OTHER</code> </p>
@@ -97,8 +101,10 @@ impl AwsCertificateManagerCertificateDetails {
         self.imported_at.as_deref()
     }
     /// <p>The list of ARNs for the Amazon Web Services resources that use the certificate.</p>
-    pub fn in_use_by(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.in_use_by.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.in_use_by.is_none()`.
+    pub fn in_use_by(&self) -> &[::std::string::String] {
+        self.in_use_by.as_deref().unwrap_or_default()
     }
     /// <p>Indicates when the certificate was issued. Provided if the certificate type is <code>AMAZON_ISSUED</code>.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
@@ -115,8 +121,10 @@ impl AwsCertificateManagerCertificateDetails {
         self.key_algorithm.as_deref()
     }
     /// <p>A list of key usage X.509 v3 extension objects.</p>
-    pub fn key_usages(&self) -> ::std::option::Option<&[crate::types::AwsCertificateManagerCertificateKeyUsage]> {
-        self.key_usages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.key_usages.is_none()`.
+    pub fn key_usages(&self) -> &[crate::types::AwsCertificateManagerCertificateKeyUsage] {
+        self.key_usages.as_deref().unwrap_or_default()
     }
     /// <p>The time after which the certificate becomes invalid.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
@@ -160,8 +168,10 @@ impl AwsCertificateManagerCertificateDetails {
     }
     /// <p>One or more domain names (subject alternative names) included in the certificate. This list contains the domain names that are bound to the public key that is contained in the certificate.</p>
     /// <p>The subject alternative names include the canonical domain name (CN) of the certificate and additional domain names that can be used to connect to the website.</p>
-    pub fn subject_alternative_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subject_alternative_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subject_alternative_names.is_none()`.
+    pub fn subject_alternative_names(&self) -> &[::std::string::String] {
+        self.subject_alternative_names.as_deref().unwrap_or_default()
     }
     /// <p>The source of the certificate. For certificates that Certificate Manager provides, <code>Type</code> is <code>AMAZON_ISSUED</code>. For certificates that are imported with <code>ImportCertificate</code>, <code>Type</code> is <code>IMPORTED</code>.</p>
     /// <p>Valid values: <code>IMPORTED</code> | <code>AMAZON_ISSUED</code> | <code>PRIVATE</code> </p>

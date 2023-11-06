@@ -34,6 +34,7 @@ pub struct GetJobBookmarkInputBuilder {
 }
 impl GetJobBookmarkInputBuilder {
     /// <p>The name of the job in question.</p>
+    /// This field is required.
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl GetJobBookmarkInputBuilder {
     /// Consumes the builder and constructs a [`GetJobBookmarkInput`](crate::operation::get_job_bookmark::GetJobBookmarkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_job_bookmark::GetJobBookmarkInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_job_bookmark::GetJobBookmarkInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_job_bookmark::GetJobBookmarkInput {
             job_name: self.job_name,
             run_id: self.run_id,

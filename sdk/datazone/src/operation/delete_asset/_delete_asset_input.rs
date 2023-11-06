@@ -34,6 +34,7 @@ pub struct DeleteAssetInputBuilder {
 }
 impl DeleteAssetInputBuilder {
     /// <p>The ID of the Amazon DataZone domain in which the asset is deleted.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteAssetInputBuilder {
         &self.domain_identifier
     }
     /// <p>The identifier of the asset that is deleted.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,7 @@ impl DeleteAssetInputBuilder {
         &self.identifier
     }
     /// Consumes the builder and constructs a [`DeleteAssetInput`](crate::operation::delete_asset::DeleteAssetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_asset::DeleteAssetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_asset::DeleteAssetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_asset::DeleteAssetInput {
             domain_identifier: self.domain_identifier,
             identifier: self.identifier,

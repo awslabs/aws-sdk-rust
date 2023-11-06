@@ -34,6 +34,7 @@ pub struct GetCoreDefinitionVersionInputBuilder {
 }
 impl GetCoreDefinitionVersionInputBuilder {
     /// The ID of the core definition.
+    /// This field is required.
     pub fn core_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_definition_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetCoreDefinitionVersionInputBuilder {
         &self.core_definition_id
     }
     /// The ID of the core definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListCoreDefinitionVersions'' requests. If the version is the last one that was associated with a core definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
+    /// This field is required.
     pub fn core_definition_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_definition_version_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl GetCoreDefinitionVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_core_definition_version::GetCoreDefinitionVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_core_definition_version::GetCoreDefinitionVersionInput {
             core_definition_id: self.core_definition_id,

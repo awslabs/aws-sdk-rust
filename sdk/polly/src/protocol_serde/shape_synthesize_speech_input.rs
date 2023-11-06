@@ -2,7 +2,7 @@
 pub fn ser_synthesize_speech_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::synthesize_speech::SynthesizeSpeechInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.engine {
         object.key("Engine").string(var_1.as_str());
     }

@@ -7,22 +7,22 @@
 // This code is referenced in generated code, so the compiler doesn't realize it is used.
 #![allow(dead_code)]
 
-use aws_runtime::auth::sigv4::SigV4OperationSigningConfig;
-use aws_sigv4::http_request::SignableBody;
-use aws_smithy_http::body::SdkBody;
-use aws_smithy_http::byte_stream;
-use aws_smithy_runtime_api::box_error::BoxError;
-use aws_smithy_runtime_api::client::interceptors::context::{BeforeSerializationInterceptorContextMut, BeforeTransmitInterceptorContextMut};
-use aws_smithy_runtime_api::client::interceptors::Interceptor;
-use aws_smithy_runtime_api::client::orchestrator::LoadedRequestBody;
-use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
-use aws_smithy_types::config_bag::ConfigBag;
-use bytes::Bytes;
-use http::header::{HeaderName, HeaderValue};
-use http::Request;
-use ring::digest::{Context, Digest, SHA256};
 use std::fmt;
 use std::marker::PhantomData;
+
+use bytes::Bytes;
+use http::header::HeaderValue;
+use ring::digest::{Context, Digest, SHA256};
+
+use aws_runtime::auth::SigV4OperationSigningConfig;
+use aws_sigv4::http_request::SignableBody;
+use aws_smithy_runtime_api::box_error::BoxError;
+use aws_smithy_runtime_api::client::interceptors::context::{BeforeSerializationInterceptorContextMut, BeforeTransmitInterceptorContextMut};
+use aws_smithy_runtime_api::client::interceptors::Intercept;
+use aws_smithy_runtime_api::client::orchestrator::{HttpRequest, LoadedRequestBody};
+use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
+use aws_smithy_types::byte_stream;
+use aws_smithy_types::config_bag::ConfigBag;
 
 /// The default account ID when none is set on an input
 const DEFAULT_ACCOUNT_ID: &str = "-";
@@ -64,7 +64,7 @@ impl<I> GlacierAccountIdAutofillInterceptor<I> {
     }
 }
 
-impl<I: GlacierAccountId + Send + Sync + 'static> Interceptor for GlacierAccountIdAutofillInterceptor<I> {
+impl<I: GlacierAccountId + Send + Sync + 'static> Intercept for GlacierAccountIdAutofillInterceptor<I> {
     fn name(&self) -> &'static str {
         "GlacierAccountIdAutofillInterceptor"
     }
@@ -95,7 +95,7 @@ impl GlacierApiVersionInterceptor {
     }
 }
 
-impl Interceptor for GlacierApiVersionInterceptor {
+impl Intercept for GlacierApiVersionInterceptor {
     fn name(&self) -> &'static str {
         "GlacierApiVersionInterceptor"
     }
@@ -118,7 +118,7 @@ impl Interceptor for GlacierApiVersionInterceptor {
 #[derive(Debug, Default)]
 pub(crate) struct GlacierTreeHashHeaderInterceptor;
 
-impl Interceptor for GlacierTreeHashHeaderInterceptor {
+impl Intercept for GlacierTreeHashHeaderInterceptor {
     fn name(&self) -> &'static str {
         "GlacierTreeHashHeaderInterceptor"
     }
@@ -172,21 +172,15 @@ impl Interceptor for GlacierTreeHashHeaderInterceptor {
 /// chunk (if it exists) is paired at the end.
 ///
 /// See <https://docs.aws.amazon.com/amazonglacier/latest/dev/checksum-calculations.html> for more information.
-fn add_checksum_treehash(request: &mut Request<SdkBody>, body: &Bytes) -> Result<String, byte_stream::error::Error> {
+fn add_checksum_treehash(request: &mut HttpRequest, body: &Bytes) -> Result<String, byte_stream::error::Error> {
     let (full_body, hashes) = compute_hashes(body, MEGABYTE)?;
     let tree_hash = hex::encode(compute_hash_tree(hashes));
     let complete_hash = hex::encode(full_body);
     if !request.headers().contains_key(TREE_HASH_HEADER) {
-        request.headers_mut().insert(
-            HeaderName::from_static(TREE_HASH_HEADER),
-            tree_hash.parse().expect("hash must be valid header"),
-        );
+        request.headers_mut().insert(TREE_HASH_HEADER, tree_hash);
     }
     if !request.headers().contains_key(X_AMZ_CONTENT_SHA256) {
-        request.headers_mut().insert(
-            HeaderName::from_static(X_AMZ_CONTENT_SHA256),
-            complete_hash.parse().expect("hash must be valid header"),
-        );
+        request.headers_mut().insert(X_AMZ_CONTENT_SHA256, complete_hash.clone());
     }
     Ok(complete_hash)
 }
@@ -236,9 +230,10 @@ fn compute_hash_tree(mut hashes: Vec<Digest>) -> Digest {
 
 #[cfg(test)]
 mod account_id_autofill_tests {
-    use super::*;
     use aws_smithy_runtime_api::client::interceptors::context::{Input, InterceptorContext};
     use aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder;
+
+    use super::*;
 
     #[test]
     fn autofill_account_id() {
@@ -273,16 +268,17 @@ mod account_id_autofill_tests {
 
 #[cfg(test)]
 mod api_version_tests {
-    use super::*;
     use aws_smithy_runtime_api::client::interceptors::context::{Input, InterceptorContext};
     use aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder;
+
+    use super::*;
 
     #[test]
     fn api_version_interceptor() {
         let rc = RuntimeComponentsBuilder::for_tests().build().unwrap();
         let mut cfg = ConfigBag::base();
         let mut context = InterceptorContext::new(Input::doesnt_matter());
-        context.set_request(http::Request::builder().body(SdkBody::empty()).unwrap());
+        context.set_request(HttpRequest::empty());
         let mut context = BeforeTransmitInterceptorContextMut::from(&mut context);
 
         let interceptor = GlacierApiVersionInterceptor::new("some-version");
@@ -361,10 +357,7 @@ mod treehash_checksum_tests {
         }
         let test_data = Bytes::from(test_data);
 
-        let mut http_req = http::Request::builder()
-            .uri("http://example.com/hello")
-            .body(SdkBody::taken()) // the body isn't used by add_checksum_treehash
-            .unwrap();
+        let mut http_req = HttpRequest::empty();
 
         add_checksum_treehash(&mut http_req, &test_data).expect("should succeed");
         // hash value verified with AWS CLI

@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttachmentStateChange {
     /// <p>The Amazon Resource Name (ARN) of the attachment.</p>
-    pub attachment_arn: ::std::option::Option<::std::string::String>,
+    pub attachment_arn: ::std::string::String,
     /// <p>The status of the attachment.</p>
-    pub status: ::std::option::Option<::std::string::String>,
+    pub status: ::std::string::String,
 }
 impl AttachmentStateChange {
     /// <p>The Amazon Resource Name (ARN) of the attachment.</p>
-    pub fn attachment_arn(&self) -> ::std::option::Option<&str> {
-        self.attachment_arn.as_deref()
+    pub fn attachment_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.attachment_arn.deref()
     }
     /// <p>The status of the attachment.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
-        self.status.as_deref()
+    pub fn status(&self) -> &str {
+        use std::ops::Deref;
+        self.status.deref()
     }
 }
 impl AttachmentStateChange {
@@ -35,6 +37,7 @@ pub struct AttachmentStateChangeBuilder {
 }
 impl AttachmentStateChangeBuilder {
     /// <p>The Amazon Resource Name (ARN) of the attachment.</p>
+    /// This field is required.
     pub fn attachment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attachment_arn = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl AttachmentStateChangeBuilder {
         &self.attachment_arn
     }
     /// <p>The status of the attachment.</p>
+    /// This field is required.
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl AttachmentStateChangeBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`AttachmentStateChange`](crate::types::AttachmentStateChange).
-    pub fn build(self) -> crate::types::AttachmentStateChange {
-        crate::types::AttachmentStateChange {
-            attachment_arn: self.attachment_arn,
-            status: self.status,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`attachment_arn`](crate::types::builders::AttachmentStateChangeBuilder::attachment_arn)
+    /// - [`status`](crate::types::builders::AttachmentStateChangeBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::AttachmentStateChange, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AttachmentStateChange {
+            attachment_arn: self.attachment_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "attachment_arn",
+                    "attachment_arn was not specified but it is required when building AttachmentStateChange",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building AttachmentStateChange",
+                )
+            })?,
+        })
     }
 }

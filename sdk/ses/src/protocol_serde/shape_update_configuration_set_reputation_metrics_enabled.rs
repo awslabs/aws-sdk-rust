@@ -38,8 +38,8 @@ pub fn de_update_configuration_set_reputation_metrics_enabled_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::update_configuration_set_reputation_metrics_enabled::UpdateConfigurationSetReputationMetricsEnabledError::generic(generic)

@@ -35,6 +35,7 @@ pub struct GetDomainDeliverabilityCampaignOutputBuilder {
 }
 impl GetDomainDeliverabilityCampaignOutputBuilder {
     /// <p>An object that contains the deliverability data for the campaign.</p>
+    /// This field is required.
     pub fn domain_deliverability_campaign(mut self, input: crate::types::DomainDeliverabilityCampaign) -> Self {
         self.domain_deliverability_campaign = ::std::option::Option::Some(input);
         self

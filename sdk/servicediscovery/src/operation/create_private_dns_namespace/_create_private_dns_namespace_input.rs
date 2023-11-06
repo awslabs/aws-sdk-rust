@@ -34,8 +34,10 @@ impl CreatePrivateDnsNamespaceInput {
         self.vpc.as_deref()
     }
     /// <p>The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Properties for the private DNS namespace.</p>
     pub fn properties(&self) -> ::std::option::Option<&crate::types::PrivateDnsNamespaceProperties> {
@@ -62,6 +64,7 @@ pub struct CreatePrivateDnsNamespaceInputBuilder {
 }
 impl CreatePrivateDnsNamespaceInputBuilder {
     /// <p>The name that you want to assign to this namespace. When you create a private DNS namespace, Cloud Map automatically creates an Amazon Route&nbsp;53 private hosted zone that has the same name as the namespace.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +107,7 @@ impl CreatePrivateDnsNamespaceInputBuilder {
         &self.description
     }
     /// <p>The ID of the Amazon VPC that you want to associate the namespace with.</p>
+    /// This field is required.
     pub fn vpc(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc = ::std::option::Option::Some(input.into());
         self
@@ -156,7 +160,7 @@ impl CreatePrivateDnsNamespaceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_private_dns_namespace::CreatePrivateDnsNamespaceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_private_dns_namespace::CreatePrivateDnsNamespaceInput {
             name: self.name,

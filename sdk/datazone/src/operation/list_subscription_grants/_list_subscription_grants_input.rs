@@ -83,6 +83,7 @@ pub struct ListSubscriptionGrantsInputBuilder {
 }
 impl ListSubscriptionGrantsInputBuilder {
     /// <p>The identifier of the Amazon DataZone domain.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -211,8 +212,10 @@ impl ListSubscriptionGrantsInputBuilder {
     /// Consumes the builder and constructs a [`ListSubscriptionGrantsInput`](crate::operation::list_subscription_grants::ListSubscriptionGrantsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_subscription_grants::ListSubscriptionGrantsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::list_subscription_grants::ListSubscriptionGrantsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::list_subscription_grants::ListSubscriptionGrantsInput {
             domain_identifier: self.domain_identifier,
             environment_id: self.environment_id,

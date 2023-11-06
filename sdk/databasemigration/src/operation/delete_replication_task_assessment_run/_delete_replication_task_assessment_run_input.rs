@@ -28,6 +28,7 @@ pub struct DeleteReplicationTaskAssessmentRunInputBuilder {
 }
 impl DeleteReplicationTaskAssessmentRunInputBuilder {
     /// <p>Amazon Resource Name (ARN) of the premigration assessment run to be deleted.</p>
+    /// This field is required.
     pub fn replication_task_assessment_run_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_task_assessment_run_arn = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl DeleteReplicationTaskAssessmentRunInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_replication_task_assessment_run::DeleteReplicationTaskAssessmentRunInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_replication_task_assessment_run::DeleteReplicationTaskAssessmentRunInput {

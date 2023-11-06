@@ -12,8 +12,10 @@ pub struct ListDataLakeExceptionsOutput {
 }
 impl ListDataLakeExceptionsOutput {
     /// <p>Lists the failures that cannot be retried in the current Region.</p>
-    pub fn exceptions(&self) -> ::std::option::Option<&[crate::types::DataLakeException]> {
-        self.exceptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exceptions.is_none()`.
+    pub fn exceptions(&self) -> &[crate::types::DataLakeException] {
+        self.exceptions.as_deref().unwrap_or_default()
     }
     /// <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>

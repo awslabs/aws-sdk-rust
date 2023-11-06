@@ -11,8 +11,10 @@ pub struct ListPermissionGroupsByUserOutput {
 }
 impl ListPermissionGroupsByUserOutput {
     /// <p>A list of returned permission groups.</p>
-    pub fn permission_groups(&self) -> ::std::option::Option<&[crate::types::PermissionGroupByUser]> {
-        self.permission_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permission_groups.is_none()`.
+    pub fn permission_groups(&self) -> &[crate::types::PermissionGroupByUser] {
+        self.permission_groups.as_deref().unwrap_or_default()
     }
     /// <p>A token that indicates where a results page should begin.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

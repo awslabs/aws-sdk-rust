@@ -78,12 +78,16 @@ impl UpdateProductInput {
         self.support_url.as_deref()
     }
     /// <p>The tags to add to the product.</p>
-    pub fn add_tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.add_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_tags.is_none()`.
+    pub fn add_tags(&self) -> &[crate::types::Tag] {
+        self.add_tags.as_deref().unwrap_or_default()
     }
     /// <p>The tags to remove from the product.</p>
-    pub fn remove_tags(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.remove_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove_tags.is_none()`.
+    pub fn remove_tags(&self) -> &[::std::string::String] {
+        self.remove_tags.as_deref().unwrap_or_default()
     }
     /// <p>Specifies connection details for the updated product and syncs the product to the connection source artifact. This automatically manages the product's artifacts based on changes to the source. The <code>SourceConnection</code> parameter consists of the following sub-fields.</p>
     /// <ul>
@@ -146,6 +150,7 @@ impl UpdateProductInputBuilder {
         &self.accept_language
     }
     /// <p>The product identifier.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -326,7 +331,7 @@ impl UpdateProductInputBuilder {
     /// Consumes the builder and constructs a [`UpdateProductInput`](crate::operation::update_product::UpdateProductInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_product::UpdateProductInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_product::UpdateProductInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_product::UpdateProductInput {
             accept_language: self.accept_language,
             id: self.id,

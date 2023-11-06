@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAnomaliesOutput {
     /// <p>A list of cost anomalies. </p>
-    pub anomalies: ::std::option::Option<::std::vec::Vec<crate::types::Anomaly>>,
+    pub anomalies: ::std::vec::Vec<crate::types::Anomaly>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetAnomaliesOutput {
     /// <p>A list of cost anomalies. </p>
-    pub fn anomalies(&self) -> ::std::option::Option<&[crate::types::Anomaly]> {
-        self.anomalies.as_deref()
+    pub fn anomalies(&self) -> &[crate::types::Anomaly] {
+        use std::ops::Deref;
+        self.anomalies.deref()
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub fn next_page_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl GetAnomaliesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetAnomaliesOutput`](crate::operation::get_anomalies::GetAnomaliesOutput).
-    pub fn build(self) -> crate::operation::get_anomalies::GetAnomaliesOutput {
-        crate::operation::get_anomalies::GetAnomaliesOutput {
-            anomalies: self.anomalies,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`anomalies`](crate::operation::get_anomalies::builders::GetAnomaliesOutputBuilder::anomalies)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_anomalies::GetAnomaliesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_anomalies::GetAnomaliesOutput {
+            anomalies: self.anomalies.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "anomalies",
+                    "anomalies was not specified but it is required when building GetAnomaliesOutput",
+                )
+            })?,
             next_page_token: self.next_page_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

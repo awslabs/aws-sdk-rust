@@ -16,7 +16,7 @@ pub struct GetServiceNetworkOutput {
     /// <p>The type of IAM policy.</p>
     pub auth_type: ::std::option::Option<crate::types::AuthType>,
     /// <p>The number of VPCs associated with the service network.</p>
-    pub number_of_associated_vp_cs: ::std::option::Option<i64>,
+    pub number_of_associated_vpcs: ::std::option::Option<i64>,
     /// <p>The number of services associated with the service network.</p>
     pub number_of_associated_services: ::std::option::Option<i64>,
     _request_id: Option<String>,
@@ -47,8 +47,8 @@ impl GetServiceNetworkOutput {
         self.auth_type.as_ref()
     }
     /// <p>The number of VPCs associated with the service network.</p>
-    pub fn number_of_associated_vp_cs(&self) -> ::std::option::Option<i64> {
-        self.number_of_associated_vp_cs
+    pub fn number_of_associated_vpcs(&self) -> ::std::option::Option<i64> {
+        self.number_of_associated_vpcs
     }
     /// <p>The number of services associated with the service network.</p>
     pub fn number_of_associated_services(&self) -> ::std::option::Option<i64> {
@@ -77,7 +77,7 @@ pub struct GetServiceNetworkOutputBuilder {
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) auth_type: ::std::option::Option<crate::types::AuthType>,
-    pub(crate) number_of_associated_vp_cs: ::std::option::Option<i64>,
+    pub(crate) number_of_associated_vpcs: ::std::option::Option<i64>,
     pub(crate) number_of_associated_services: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
@@ -167,18 +167,18 @@ impl GetServiceNetworkOutputBuilder {
         &self.auth_type
     }
     /// <p>The number of VPCs associated with the service network.</p>
-    pub fn number_of_associated_vp_cs(mut self, input: i64) -> Self {
-        self.number_of_associated_vp_cs = ::std::option::Option::Some(input);
+    pub fn number_of_associated_vpcs(mut self, input: i64) -> Self {
+        self.number_of_associated_vpcs = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of VPCs associated with the service network.</p>
-    pub fn set_number_of_associated_vp_cs(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.number_of_associated_vp_cs = input;
+    pub fn set_number_of_associated_vpcs(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.number_of_associated_vpcs = input;
         self
     }
     /// <p>The number of VPCs associated with the service network.</p>
-    pub fn get_number_of_associated_vp_cs(&self) -> &::std::option::Option<i64> {
-        &self.number_of_associated_vp_cs
+    pub fn get_number_of_associated_vpcs(&self) -> &::std::option::Option<i64> {
+        &self.number_of_associated_vpcs
     }
     /// <p>The number of services associated with the service network.</p>
     pub fn number_of_associated_services(mut self, input: i64) -> Self {
@@ -212,7 +212,7 @@ impl GetServiceNetworkOutputBuilder {
             last_updated_at: self.last_updated_at,
             arn: self.arn,
             auth_type: self.auth_type,
-            number_of_associated_vp_cs: self.number_of_associated_vp_cs,
+            number_of_associated_vpcs: self.number_of_associated_vpcs,
             number_of_associated_services: self.number_of_associated_services,
             _request_id: self._request_id,
         }

@@ -18,8 +18,10 @@ impl OpenTunnelInput {
         self.description.as_deref()
     }
     /// <p>A collection of tag metadata.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The destination configuration for the OpenTunnel request.</p>
     pub fn destination_config(&self) -> ::std::option::Option<&crate::types::DestinationConfig> {
@@ -110,7 +112,7 @@ impl OpenTunnelInputBuilder {
         &self.timeout_config
     }
     /// Consumes the builder and constructs a [`OpenTunnelInput`](crate::operation::open_tunnel::OpenTunnelInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::open_tunnel::OpenTunnelInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::open_tunnel::OpenTunnelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::open_tunnel::OpenTunnelInput {
             description: self.description,
             tags: self.tags,

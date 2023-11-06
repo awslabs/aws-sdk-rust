@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FormInputValuePropertyBindingProperties {
     /// <p>The form property to bind to the data field.</p>
-    pub property: ::std::option::Option<::std::string::String>,
+    pub property: ::std::string::String,
     /// <p>The data field to bind the property to.</p>
     pub field: ::std::option::Option<::std::string::String>,
 }
 impl FormInputValuePropertyBindingProperties {
     /// <p>The form property to bind to the data field.</p>
-    pub fn property(&self) -> ::std::option::Option<&str> {
-        self.property.as_deref()
+    pub fn property(&self) -> &str {
+        use std::ops::Deref;
+        self.property.deref()
     }
     /// <p>The data field to bind the property to.</p>
     pub fn field(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct FormInputValuePropertyBindingPropertiesBuilder {
 }
 impl FormInputValuePropertyBindingPropertiesBuilder {
     /// <p>The form property to bind to the data field.</p>
+    /// This field is required.
     pub fn property(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.property = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,19 @@ impl FormInputValuePropertyBindingPropertiesBuilder {
         &self.field
     }
     /// Consumes the builder and constructs a [`FormInputValuePropertyBindingProperties`](crate::types::FormInputValuePropertyBindingProperties).
-    pub fn build(self) -> crate::types::FormInputValuePropertyBindingProperties {
-        crate::types::FormInputValuePropertyBindingProperties {
-            property: self.property,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`property`](crate::types::builders::FormInputValuePropertyBindingPropertiesBuilder::property)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::FormInputValuePropertyBindingProperties, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::FormInputValuePropertyBindingProperties {
+            property: self.property.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "property",
+                    "property was not specified but it is required when building FormInputValuePropertyBindingProperties",
+                )
+            })?,
             field: self.field,
-        }
+        })
     }
 }

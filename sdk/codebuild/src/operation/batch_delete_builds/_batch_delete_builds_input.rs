@@ -8,8 +8,10 @@ pub struct BatchDeleteBuildsInput {
 }
 impl BatchDeleteBuildsInput {
     /// <p>The IDs of the builds to delete.</p>
-    pub fn ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ids.is_none()`.
+    pub fn ids(&self) -> &[::std::string::String] {
+        self.ids.as_deref().unwrap_or_default()
     }
 }
 impl BatchDeleteBuildsInput {
@@ -49,7 +51,7 @@ impl BatchDeleteBuildsInputBuilder {
     /// Consumes the builder and constructs a [`BatchDeleteBuildsInput`](crate::operation::batch_delete_builds::BatchDeleteBuildsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_delete_builds::BatchDeleteBuildsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_delete_builds::BatchDeleteBuildsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_delete_builds::BatchDeleteBuildsInput { ids: self.ids })
     }
 }

@@ -48,6 +48,7 @@ pub struct UpdatePreparedStatementInputBuilder {
 }
 impl UpdatePreparedStatementInputBuilder {
     /// <p>The name of the prepared statement.</p>
+    /// This field is required.
     pub fn statement_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.statement_name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl UpdatePreparedStatementInputBuilder {
         &self.statement_name
     }
     /// <p>The workgroup for the prepared statement.</p>
+    /// This field is required.
     pub fn work_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.work_group = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl UpdatePreparedStatementInputBuilder {
         &self.work_group
     }
     /// <p>The query string for the prepared statement.</p>
+    /// This field is required.
     pub fn query_statement(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_statement = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +111,7 @@ impl UpdatePreparedStatementInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_prepared_statement::UpdatePreparedStatementInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_prepared_statement::UpdatePreparedStatementInput {
             statement_name: self.statement_name,

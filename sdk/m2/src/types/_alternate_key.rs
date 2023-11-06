@@ -63,6 +63,7 @@ impl AlternateKeyBuilder {
         &self.name
     }
     /// <p>A positive integer value representing the offset to mark the start of the alternate key part in the record byte array.</p>
+    /// This field is required.
     pub fn offset(mut self, input: i32) -> Self {
         self.offset = ::std::option::Option::Some(input);
         self
@@ -77,6 +78,7 @@ impl AlternateKeyBuilder {
         &self.offset
     }
     /// <p>A strictly positive integer value representing the length of the alternate key.</p>
+    /// This field is required.
     pub fn length(mut self, input: i32) -> Self {
         self.length = ::std::option::Option::Some(input);
         self

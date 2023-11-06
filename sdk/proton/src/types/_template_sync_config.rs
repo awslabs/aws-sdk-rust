@@ -5,38 +5,41 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TemplateSyncConfig {
     /// <p>The template name.</p>
-    pub template_name: ::std::option::Option<::std::string::String>,
+    pub template_name: ::std::string::String,
     /// <p>The template type.</p>
-    pub template_type: ::std::option::Option<crate::types::TemplateType>,
+    pub template_type: crate::types::TemplateType,
     /// <p>The repository provider.</p>
-    pub repository_provider: ::std::option::Option<crate::types::RepositoryProvider>,
+    pub repository_provider: crate::types::RepositoryProvider,
     /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
-    pub repository_name: ::std::option::Option<::std::string::String>,
+    pub repository_name: ::std::string::String,
     /// <p>The repository branch.</p>
-    pub branch: ::std::option::Option<::std::string::String>,
+    pub branch: ::std::string::String,
     /// <p>A subdirectory path to your template bundle version.</p>
     pub subdirectory: ::std::option::Option<::std::string::String>,
 }
 impl TemplateSyncConfig {
     /// <p>The template name.</p>
-    pub fn template_name(&self) -> ::std::option::Option<&str> {
-        self.template_name.as_deref()
+    pub fn template_name(&self) -> &str {
+        use std::ops::Deref;
+        self.template_name.deref()
     }
     /// <p>The template type.</p>
-    pub fn template_type(&self) -> ::std::option::Option<&crate::types::TemplateType> {
-        self.template_type.as_ref()
+    pub fn template_type(&self) -> &crate::types::TemplateType {
+        &self.template_type
     }
     /// <p>The repository provider.</p>
-    pub fn repository_provider(&self) -> ::std::option::Option<&crate::types::RepositoryProvider> {
-        self.repository_provider.as_ref()
+    pub fn repository_provider(&self) -> &crate::types::RepositoryProvider {
+        &self.repository_provider
     }
     /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
-        self.repository_name.as_deref()
+    pub fn repository_name(&self) -> &str {
+        use std::ops::Deref;
+        self.repository_name.deref()
     }
     /// <p>The repository branch.</p>
-    pub fn branch(&self) -> ::std::option::Option<&str> {
-        self.branch.as_deref()
+    pub fn branch(&self) -> &str {
+        use std::ops::Deref;
+        self.branch.deref()
     }
     /// <p>A subdirectory path to your template bundle version.</p>
     pub fn subdirectory(&self) -> ::std::option::Option<&str> {
@@ -63,6 +66,7 @@ pub struct TemplateSyncConfigBuilder {
 }
 impl TemplateSyncConfigBuilder {
     /// <p>The template name.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +81,7 @@ impl TemplateSyncConfigBuilder {
         &self.template_name
     }
     /// <p>The template type.</p>
+    /// This field is required.
     pub fn template_type(mut self, input: crate::types::TemplateType) -> Self {
         self.template_type = ::std::option::Option::Some(input);
         self
@@ -91,6 +96,7 @@ impl TemplateSyncConfigBuilder {
         &self.template_type
     }
     /// <p>The repository provider.</p>
+    /// This field is required.
     pub fn repository_provider(mut self, input: crate::types::RepositoryProvider) -> Self {
         self.repository_provider = ::std::option::Option::Some(input);
         self
@@ -105,6 +111,7 @@ impl TemplateSyncConfigBuilder {
         &self.repository_provider
     }
     /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +126,7 @@ impl TemplateSyncConfigBuilder {
         &self.repository_name
     }
     /// <p>The repository branch.</p>
+    /// This field is required.
     pub fn branch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch = ::std::option::Option::Some(input.into());
         self
@@ -147,14 +155,45 @@ impl TemplateSyncConfigBuilder {
         &self.subdirectory
     }
     /// Consumes the builder and constructs a [`TemplateSyncConfig`](crate::types::TemplateSyncConfig).
-    pub fn build(self) -> crate::types::TemplateSyncConfig {
-        crate::types::TemplateSyncConfig {
-            template_name: self.template_name,
-            template_type: self.template_type,
-            repository_provider: self.repository_provider,
-            repository_name: self.repository_name,
-            branch: self.branch,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`template_name`](crate::types::builders::TemplateSyncConfigBuilder::template_name)
+    /// - [`template_type`](crate::types::builders::TemplateSyncConfigBuilder::template_type)
+    /// - [`repository_provider`](crate::types::builders::TemplateSyncConfigBuilder::repository_provider)
+    /// - [`repository_name`](crate::types::builders::TemplateSyncConfigBuilder::repository_name)
+    /// - [`branch`](crate::types::builders::TemplateSyncConfigBuilder::branch)
+    pub fn build(self) -> ::std::result::Result<crate::types::TemplateSyncConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TemplateSyncConfig {
+            template_name: self.template_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "template_name",
+                    "template_name was not specified but it is required when building TemplateSyncConfig",
+                )
+            })?,
+            template_type: self.template_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "template_type",
+                    "template_type was not specified but it is required when building TemplateSyncConfig",
+                )
+            })?,
+            repository_provider: self.repository_provider.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "repository_provider",
+                    "repository_provider was not specified but it is required when building TemplateSyncConfig",
+                )
+            })?,
+            repository_name: self.repository_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "repository_name",
+                    "repository_name was not specified but it is required when building TemplateSyncConfig",
+                )
+            })?,
+            branch: self.branch.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "branch",
+                    "branch was not specified but it is required when building TemplateSyncConfig",
+                )
+            })?,
             subdirectory: self.subdirectory,
-        }
+        })
     }
 }

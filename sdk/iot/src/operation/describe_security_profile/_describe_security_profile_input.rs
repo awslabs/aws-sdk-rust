@@ -27,6 +27,7 @@ pub struct DescribeSecurityProfileInputBuilder {
 }
 impl DescribeSecurityProfileInputBuilder {
     /// <p>The name of the security profile whose information you want to get.</p>
+    /// This field is required.
     pub fn security_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_profile_name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeSecurityProfileInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_security_profile::DescribeSecurityProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_security_profile::DescribeSecurityProfileInput {
             security_profile_name: self.security_profile_name,

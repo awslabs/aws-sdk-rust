@@ -8,8 +8,10 @@ pub struct DeclineInvitationsInput {
 }
 impl DeclineInvitationsInput {
     /// <p>The list of prospective member account IDs for which to decline an invitation.</p>
-    pub fn account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.account_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
+    pub fn account_ids(&self) -> &[::std::string::String] {
+        self.account_ids.as_deref().unwrap_or_default()
     }
 }
 impl DeclineInvitationsInput {
@@ -49,7 +51,7 @@ impl DeclineInvitationsInputBuilder {
     /// Consumes the builder and constructs a [`DeclineInvitationsInput`](crate::operation::decline_invitations::DeclineInvitationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::decline_invitations::DeclineInvitationsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::decline_invitations::DeclineInvitationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::decline_invitations::DeclineInvitationsInput {
             account_ids: self.account_ids,
         })

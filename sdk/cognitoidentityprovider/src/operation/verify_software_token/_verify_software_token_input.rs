@@ -86,6 +86,7 @@ impl VerifySoftwareTokenInputBuilder {
         &self.session
     }
     /// <p>The one- time password computed using the secret code returned by <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken</a>.</p>
+    /// This field is required.
     pub fn user_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_code = ::std::option::Option::Some(input.into());
         self
@@ -116,7 +117,7 @@ impl VerifySoftwareTokenInputBuilder {
     /// Consumes the builder and constructs a [`VerifySoftwareTokenInput`](crate::operation::verify_software_token::VerifySoftwareTokenInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::verify_software_token::VerifySoftwareTokenInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::verify_software_token::VerifySoftwareTokenInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::verify_software_token::VerifySoftwareTokenInput {
             access_token: self.access_token,

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CookieSpecification {
     /// <p>The domain of the cookie.</p>
-    pub domain: ::std::option::Option<::std::string::String>,
+    pub domain: ::std::string::String,
     /// <p>The name of the cookie.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The path of the cookie.</p>
@@ -13,8 +13,9 @@ pub struct CookieSpecification {
 }
 impl CookieSpecification {
     /// <p>The domain of the cookie.</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
-        self.domain.as_deref()
+    pub fn domain(&self) -> &str {
+        use std::ops::Deref;
+        self.domain.deref()
     }
     /// <p>The name of the cookie.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -42,6 +43,7 @@ pub struct CookieSpecificationBuilder {
 }
 impl CookieSpecificationBuilder {
     /// <p>The domain of the cookie.</p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +86,18 @@ impl CookieSpecificationBuilder {
         &self.path
     }
     /// Consumes the builder and constructs a [`CookieSpecification`](crate::types::CookieSpecification).
-    pub fn build(self) -> crate::types::CookieSpecification {
-        crate::types::CookieSpecification {
-            domain: self.domain,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`domain`](crate::types::builders::CookieSpecificationBuilder::domain)
+    pub fn build(self) -> ::std::result::Result<crate::types::CookieSpecification, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CookieSpecification {
+            domain: self.domain.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "domain",
+                    "domain was not specified but it is required when building CookieSpecification",
+                )
+            })?,
             name: self.name,
             path: self.path,
-        }
+        })
     }
 }

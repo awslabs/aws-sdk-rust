@@ -2,7 +2,7 @@
 pub fn ser_aws_redshift_cluster_pending_modified_values(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsRedshiftClusterPendingModifiedValues,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.automated_snapshot_retention_period {
         object.key("AutomatedSnapshotRetentionPeriod").number(
             #[allow(clippy::useless_conversion)]

@@ -89,6 +89,7 @@ pub struct CreateDataSourceFromRdsInputBuilder {
 }
 impl CreateDataSourceFromRdsInputBuilder {
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. Typically, an Amazon Resource Number (ARN) becomes the ID for a <code>DataSource</code>.</p>
+    /// This field is required.
     pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_id = ::std::option::Option::Some(input.into());
         self
@@ -133,6 +134,7 @@ impl CreateDataSourceFromRdsInputBuilder {
     /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li>
     /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn rds_data(mut self, input: crate::types::RdsDataSpec) -> Self {
         self.rds_data = ::std::option::Option::Some(input);
         self
@@ -180,6 +182,7 @@ impl CreateDataSourceFromRdsInputBuilder {
     }
     /// <p>The role that Amazon ML assumes on behalf of the user to create and activate a data pipeline in the user's account and copy data using the <code>SelectSqlQuery</code> query from Amazon RDS to Amazon S3.</p>
     /// <p></p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -214,7 +217,7 @@ impl CreateDataSourceFromRdsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_data_source_from_rds::CreateDataSourceFromRdsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_data_source_from_rds::CreateDataSourceFromRdsInput {
             data_source_id: self.data_source_id,

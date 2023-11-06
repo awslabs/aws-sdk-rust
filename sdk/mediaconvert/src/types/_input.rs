@@ -115,8 +115,10 @@ impl Input {
         self.image_inserter.as_ref()
     }
     /// Contains sets of start and end times that together specify a portion of the input to be used in the outputs. If you provide only a start time, the clip will be the entire input from that point to the end. If you provide only an end time, it will be the entire input up to that point. When you specify more than one input clip, the transcoding service creates the job outputs by stringing the clips together in the order you specify them.
-    pub fn input_clippings(&self) -> ::std::option::Option<&[crate::types::InputClipping]> {
-        self.input_clippings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_clippings.is_none()`.
+    pub fn input_clippings(&self) -> &[crate::types::InputClipping] {
+        self.input_clippings.as_deref().unwrap_or_default()
     }
     /// When you have a progressive segmented frame (PsF) input, use this setting to flag the input as PsF. MediaConvert doesn't automatically detect PsF. Therefore, flagging your input as PsF results in better preservation of video quality when you do deinterlacing and frame rate conversion. If you don't specify, the default value is Auto. Auto is the correct setting for all inputs that are not PsF. Don't set this value to PsF when your input is interlaced. Doing so creates horizontal interlacing artifacts.
     pub fn input_scan_type(&self) -> ::std::option::Option<&crate::types::InputScanType> {
@@ -135,8 +137,10 @@ impl Input {
         self.psi_control.as_ref()
     }
     /// Provide a list of any necessary supplemental IMPs. You need supplemental IMPs if the CPL that you're using for your input is in an incomplete IMP. Specify either the supplemental IMP directories with a trailing slash or the ASSETMAP.xml files. For example ["s3://bucket/ov/", "s3://bucket/vf2/ASSETMAP.xml"]. You don't need to specify the IMP that contains your input CPL, because the service automatically detects it.
-    pub fn supplemental_imps(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.supplemental_imps.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supplemental_imps.is_none()`.
+    pub fn supplemental_imps(&self) -> &[::std::string::String] {
+        self.supplemental_imps.as_deref().unwrap_or_default()
     }
     /// Use this Timecode source setting, located under the input settings, to specify how the service counts input video frames. This input frame count affects only the behavior of features that apply to a single input at a time, such as input clipping and synchronizing some captions formats. Choose Embedded to use the timecodes in your input video. Choose Start at zero to start the first frame at zero. Choose Specified start to start the first frame at the timecode that you specify in the setting Start timecode. If you don't specify a value for Timecode source, the service will use Embedded by default. For more information about timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
     pub fn timecode_source(&self) -> ::std::option::Option<&crate::types::InputTimecodeSource> {
@@ -151,8 +155,10 @@ impl Input {
         self.video_generator.as_ref()
     }
     /// Contains an array of video overlays.
-    pub fn video_overlays(&self) -> ::std::option::Option<&[crate::types::VideoOverlay]> {
-        self.video_overlays.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.video_overlays.is_none()`.
+    pub fn video_overlays(&self) -> &[crate::types::VideoOverlay] {
+        self.video_overlays.as_deref().unwrap_or_default()
     }
     /// Input video selectors contain the video settings for the input. Each of your inputs can have up to one video selector.
     pub fn video_selector(&self) -> ::std::option::Option<&crate::types::VideoSelector> {

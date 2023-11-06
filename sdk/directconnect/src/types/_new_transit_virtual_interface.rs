@@ -67,8 +67,10 @@ impl NewTransitVirtualInterface {
         self.direct_connect_gateway_id.as_deref()
     }
     /// <p>The tags associated with the transitive virtual interface.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether to enable or disable SiteLink.</p>
     pub fn enable_site_link(&self) -> ::std::option::Option<bool> {

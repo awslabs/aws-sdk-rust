@@ -30,8 +30,10 @@ impl StartGameSessionPlacementInput {
         self.game_session_queue_name.as_deref()
     }
     /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
-    pub fn game_properties(&self) -> ::std::option::Option<&[crate::types::GameProperty]> {
-        self.game_properties.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.game_properties.is_none()`.
+    pub fn game_properties(&self) -> &[crate::types::GameProperty] {
+        self.game_properties.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
     pub fn maximum_player_session_count(&self) -> ::std::option::Option<i32> {
@@ -42,12 +44,16 @@ impl StartGameSessionPlacementInput {
         self.game_session_name.as_deref()
     }
     /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to Amazon Web Services Regions. This information is used to try to place the new game session where it can offer the best possible gameplay experience for the players. </p>
-    pub fn player_latencies(&self) -> ::std::option::Option<&[crate::types::PlayerLatency]> {
-        self.player_latencies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.player_latencies.is_none()`.
+    pub fn player_latencies(&self) -> &[crate::types::PlayerLatency] {
+        self.player_latencies.as_deref().unwrap_or_default()
     }
     /// <p>Set of information on each player to create a player session for.</p>
-    pub fn desired_player_sessions(&self) -> ::std::option::Option<&[crate::types::DesiredPlayerSession]> {
-        self.desired_player_sessions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.desired_player_sessions.is_none()`.
+    pub fn desired_player_sessions(&self) -> &[crate::types::DesiredPlayerSession] {
+        self.desired_player_sessions.as_deref().unwrap_or_default()
     }
     /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
     pub fn game_session_data(&self) -> ::std::option::Option<&str> {
@@ -76,6 +82,7 @@ pub struct StartGameSessionPlacementInputBuilder {
 }
 impl StartGameSessionPlacementInputBuilder {
     /// <p>A unique identifier to assign to the new game session placement. This value is developer-defined. The value must be unique across all Regions and cannot be reused.</p>
+    /// This field is required.
     pub fn placement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.placement_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +97,7 @@ impl StartGameSessionPlacementInputBuilder {
         &self.placement_id
     }
     /// <p>Name of the queue to use to place the new game session. You can use either the queue name or ARN value. </p>
+    /// This field is required.
     pub fn game_session_queue_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_session_queue_name = ::std::option::Option::Some(input.into());
         self
@@ -124,6 +132,7 @@ impl StartGameSessionPlacementInputBuilder {
         &self.game_properties
     }
     /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
+    /// This field is required.
     pub fn maximum_player_session_count(mut self, input: i32) -> Self {
         self.maximum_player_session_count = ::std::option::Option::Some(input);
         self
@@ -210,7 +219,7 @@ impl StartGameSessionPlacementInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_game_session_placement::StartGameSessionPlacementInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_game_session_placement::StartGameSessionPlacementInput {
             placement_id: self.placement_id,

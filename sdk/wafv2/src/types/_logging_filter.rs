@@ -6,18 +6,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoggingFilter {
     /// <p>The filters that you want to apply to the logs. </p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub filters: ::std::vec::Vec<crate::types::Filter>,
     /// <p>Default handling for logs that don't match any of the specified filtering conditions. </p>
-    pub default_behavior: ::std::option::Option<crate::types::FilterBehavior>,
+    pub default_behavior: crate::types::FilterBehavior,
 }
 impl LoggingFilter {
     /// <p>The filters that you want to apply to the logs. </p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        use std::ops::Deref;
+        self.filters.deref()
     }
     /// <p>Default handling for logs that don't match any of the specified filtering conditions. </p>
-    pub fn default_behavior(&self) -> ::std::option::Option<&crate::types::FilterBehavior> {
-        self.default_behavior.as_ref()
+    pub fn default_behavior(&self) -> &crate::types::FilterBehavior {
+        &self.default_behavior
     }
 }
 impl LoggingFilter {
@@ -56,6 +57,7 @@ impl LoggingFilterBuilder {
         &self.filters
     }
     /// <p>Default handling for logs that don't match any of the specified filtering conditions. </p>
+    /// This field is required.
     pub fn default_behavior(mut self, input: crate::types::FilterBehavior) -> Self {
         self.default_behavior = ::std::option::Option::Some(input);
         self
@@ -70,10 +72,23 @@ impl LoggingFilterBuilder {
         &self.default_behavior
     }
     /// Consumes the builder and constructs a [`LoggingFilter`](crate::types::LoggingFilter).
-    pub fn build(self) -> crate::types::LoggingFilter {
-        crate::types::LoggingFilter {
-            filters: self.filters,
-            default_behavior: self.default_behavior,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`filters`](crate::types::builders::LoggingFilterBuilder::filters)
+    /// - [`default_behavior`](crate::types::builders::LoggingFilterBuilder::default_behavior)
+    pub fn build(self) -> ::std::result::Result<crate::types::LoggingFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::LoggingFilter {
+            filters: self.filters.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "filters",
+                    "filters was not specified but it is required when building LoggingFilter",
+                )
+            })?,
+            default_behavior: self.default_behavior.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "default_behavior",
+                    "default_behavior was not specified but it is required when building LoggingFilter",
+                )
+            })?,
+        })
     }
 }

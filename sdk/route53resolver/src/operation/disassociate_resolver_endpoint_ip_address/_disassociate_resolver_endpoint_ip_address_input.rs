@@ -34,6 +34,7 @@ pub struct DisassociateResolverEndpointIpAddressInputBuilder {
 }
 impl DisassociateResolverEndpointIpAddressInputBuilder {
     /// <p>The ID of the Resolver endpoint that you want to disassociate an IP address from.</p>
+    /// This field is required.
     pub fn resolver_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolver_endpoint_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DisassociateResolverEndpointIpAddressInputBuilder {
         &self.resolver_endpoint_id
     }
     /// <p>The IPv4 address that you want to remove from a Resolver endpoint.</p>
+    /// This field is required.
     pub fn ip_address(mut self, input: crate::types::IpAddressUpdate) -> Self {
         self.ip_address = ::std::option::Option::Some(input);
         self
@@ -66,7 +68,7 @@ impl DisassociateResolverEndpointIpAddressInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressInput {

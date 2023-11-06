@@ -3,23 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use aws_config::SdkConfig;
+#![cfg(feature = "test-util")]
+
 use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_sdk_s3::config::{Credentials, Region};
-use aws_sdk_s3::Client;
-use aws_smithy_client::test_connection::capture_request;
-use std::time::{Duration, UNIX_EPOCH};
+use aws_sdk_s3::{Client, Config};
+use aws_smithy_runtime::client::http::test_util::capture_request;
 
 #[tokio::test]
 async fn test_s3_signer_query_string_with_all_valid_chars() {
-    let (conn, rcvr) = capture_request(None);
-    let sdk_config = SdkConfig::builder()
-        .credentials_provider(SharedCredentialsProvider::new(Credentials::for_tests()))
+    let (http_client, rcvr) = capture_request(None);
+    let config = Config::builder()
+        .credentials_provider(SharedCredentialsProvider::new(
+            Credentials::for_tests_with_session_token(),
+        ))
         .region(Region::new("us-east-1"))
-        .http_connector(conn.clone())
+        .http_client(http_client.clone())
+        .with_test_defaults()
         .build();
-
-    let client = Client::new(&sdk_config);
+    let client = Client::from_conf(config);
 
     // Generate a string containing all printable ASCII chars
     let prefix: String = (32u8..127).map(char::from).collect();
@@ -30,11 +32,6 @@ async fn test_s3_signer_query_string_with_all_valid_chars() {
         .list_objects_v2()
         .bucket("test-bucket")
         .prefix(&prefix)
-        .customize()
-        .await
-        .unwrap()
-        .request_time_for_tests(UNIX_EPOCH + Duration::from_secs(1624036048))
-        .user_agent_for_tests()
         .send()
         .await;
 
@@ -47,14 +44,12 @@ async fn test_s3_signer_query_string_with_all_valid_chars() {
 
     // This is a snapshot test taken from a known working test result
     let snapshot_signature =
-        "Signature=647aa91c7f91f1f1c498ef376fea370b48d0cd8c80a53c8e2cd64e3fc527a5e0";
+        "Signature=9a931d20606f93fa4e5553602866a9b5ccac2cd42b54ae5a4b17e4614fb443ce";
     assert!(
         auth_header
-            .to_str()
-            .unwrap()
             .contains(snapshot_signature),
         "authorization header signature did not match expected signature: got {}, expected it to contain {}",
-        auth_header.to_str().unwrap(),
+        auth_header,
         snapshot_signature
     );
 }
@@ -65,7 +60,7 @@ async fn test_s3_signer_query_string_with_all_valid_chars() {
 #[ignore]
 async fn test_query_strings_are_correctly_encoded() {
     use aws_sdk_s3::operation::list_objects_v2::ListObjectsV2Error;
-    use aws_smithy_http::result::SdkError;
+    use aws_smithy_runtime_api::client::result::SdkError;
 
     tracing_subscriber::fmt::init();
     let config = aws_config::load_from_env().await;

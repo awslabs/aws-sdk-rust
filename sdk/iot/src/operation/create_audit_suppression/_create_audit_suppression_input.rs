@@ -62,6 +62,7 @@ pub struct CreateAuditSuppressionInputBuilder {
 }
 impl CreateAuditSuppressionInputBuilder {
     /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
+    /// This field is required.
     pub fn check_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.check_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl CreateAuditSuppressionInputBuilder {
         &self.check_name
     }
     /// <p>Information that identifies the noncompliant resource.</p>
+    /// This field is required.
     pub fn resource_identifier(mut self, input: crate::types::ResourceIdentifier) -> Self {
         self.resource_identifier = ::std::option::Option::Some(input);
         self
@@ -132,6 +134,7 @@ impl CreateAuditSuppressionInputBuilder {
         &self.description
     }
     /// <p> Each audit supression must have a unique client request token. If you try to create a new audit suppression with the same token as one that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
+    /// This field is required.
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
@@ -148,8 +151,10 @@ impl CreateAuditSuppressionInputBuilder {
     /// Consumes the builder and constructs a [`CreateAuditSuppressionInput`](crate::operation::create_audit_suppression::CreateAuditSuppressionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_audit_suppression::CreateAuditSuppressionInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_audit_suppression::CreateAuditSuppressionInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_audit_suppression::CreateAuditSuppressionInput {
             check_name: self.check_name,
             resource_identifier: self.resource_identifier,

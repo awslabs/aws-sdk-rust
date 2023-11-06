@@ -23,8 +23,10 @@ impl ListPricingRulesAssociatedToPricingPlanOutput {
         self.pricing_plan_arn.as_deref()
     }
     /// <p> A list containing pricing rules that are associated with the requested pricing plan. </p>
-    pub fn pricing_rule_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.pricing_rule_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pricing_rule_arns.is_none()`.
+    pub fn pricing_rule_arns(&self) -> &[::std::string::String] {
+        self.pricing_rule_arns.as_deref().unwrap_or_default()
     }
     /// <p> The pagination token to be used on subsequent calls. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -42,6 +42,7 @@ pub struct StartQueryPlanningInputBuilder {
 }
 impl StartQueryPlanningInputBuilder {
     /// <p>A structure containing information about the query plan.</p>
+    /// This field is required.
     pub fn query_planning_context(mut self, input: crate::types::QueryPlanningContext) -> Self {
         self.query_planning_context = ::std::option::Option::Some(input);
         self
@@ -56,6 +57,7 @@ impl StartQueryPlanningInputBuilder {
         &self.query_planning_context
     }
     /// <p>A PartiQL query statement used as an input to the planner service.</p>
+    /// This field is required.
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_string = ::std::option::Option::Some(input.into());
         self
@@ -72,7 +74,8 @@ impl StartQueryPlanningInputBuilder {
     /// Consumes the builder and constructs a [`StartQueryPlanningInput`](crate::operation::start_query_planning::StartQueryPlanningInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_query_planning::StartQueryPlanningInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_query_planning::StartQueryPlanningInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::start_query_planning::StartQueryPlanningInput {
             query_planning_context: self.query_planning_context,
             query_string: self.query_string,

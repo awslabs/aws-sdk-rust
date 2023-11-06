@@ -55,6 +55,7 @@ pub struct UpdateVirtualGatewayInputBuilder {
 }
 impl UpdateVirtualGatewayInputBuilder {
     /// <p>The name of the virtual gateway to update.</p>
+    /// This field is required.
     pub fn virtual_gateway_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_gateway_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl UpdateVirtualGatewayInputBuilder {
         &self.virtual_gateway_name
     }
     /// <p>The name of the service mesh that the virtual gateway resides in.</p>
+    /// This field is required.
     pub fn mesh_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mesh_name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +85,7 @@ impl UpdateVirtualGatewayInputBuilder {
         &self.mesh_name
     }
     /// <p>The new virtual gateway specification to apply. This overwrites the existing data.</p>
+    /// This field is required.
     pub fn spec(mut self, input: crate::types::VirtualGatewaySpec) -> Self {
         self.spec = ::std::option::Option::Some(input);
         self
@@ -127,7 +130,7 @@ impl UpdateVirtualGatewayInputBuilder {
     /// Consumes the builder and constructs a [`UpdateVirtualGatewayInput`](crate::operation::update_virtual_gateway::UpdateVirtualGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_virtual_gateway::UpdateVirtualGatewayInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_virtual_gateway::UpdateVirtualGatewayInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_virtual_gateway::UpdateVirtualGatewayInput {
             virtual_gateway_name: self.virtual_gateway_name,

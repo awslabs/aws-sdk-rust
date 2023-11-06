@@ -41,6 +41,7 @@ pub struct DescribeEndpointSettingsInputBuilder {
 }
 impl DescribeEndpointSettingsInputBuilder {
     /// <p>The database engine used for your source or target endpoint.</p>
+    /// This field is required.
     pub fn engine_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_name = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl DescribeEndpointSettingsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_endpoint_settings::DescribeEndpointSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_endpoint_settings::DescribeEndpointSettingsInput {
             engine_name: self.engine_name,

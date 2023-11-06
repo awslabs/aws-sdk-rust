@@ -6,18 +6,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExtensionField {
     /// <p>The name of the header to add. Must be between 1 and 50 characters, inclusive, and consist of alphanumeric (a-z, A-Z, 0-9) characters and dashes only.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The value of the header to add. Must contain 2048 characters or fewer, and must not contain newline characters ("\r" or "\n").</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
 }
 impl ExtensionField {
     /// <p>The name of the header to add. Must be between 1 and 50 characters, inclusive, and consist of alphanumeric (a-z, A-Z, 0-9) characters and dashes only.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The value of the header to add. Must contain 2048 characters or fewer, and must not contain newline characters ("\r" or "\n").</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
 }
 impl ExtensionField {
@@ -36,6 +38,7 @@ pub struct ExtensionFieldBuilder {
 }
 impl ExtensionFieldBuilder {
     /// <p>The name of the header to add. Must be between 1 and 50 characters, inclusive, and consist of alphanumeric (a-z, A-Z, 0-9) characters and dashes only.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -50,6 +53,7 @@ impl ExtensionFieldBuilder {
         &self.name
     }
     /// <p>The value of the header to add. Must contain 2048 characters or fewer, and must not contain newline characters ("\r" or "\n").</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -64,10 +68,23 @@ impl ExtensionFieldBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`ExtensionField`](crate::types::ExtensionField).
-    pub fn build(self) -> crate::types::ExtensionField {
-        crate::types::ExtensionField {
-            name: self.name,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::ExtensionFieldBuilder::name)
+    /// - [`value`](crate::types::builders::ExtensionFieldBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::ExtensionField, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ExtensionField {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ExtensionField",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building ExtensionField",
+                )
+            })?,
+        })
     }
 }

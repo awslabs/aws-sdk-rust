@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NumericEqualityFilter {
     /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
-    pub filter_id: ::std::option::Option<::std::string::String>,
+    pub filter_id: ::std::string::String,
     /// <p>The column that the filter is applied to.</p>
     pub column: ::std::option::Option<crate::types::ColumnIdentifier>,
     /// <p>The input value.</p>
@@ -16,7 +16,7 @@ pub struct NumericEqualityFilter {
     /// </ul>
     pub select_all_options: ::std::option::Option<crate::types::NumericFilterSelectAllOptions>,
     /// <p>The match operator that is used to determine if a filter should be applied.</p>
-    pub match_operator: ::std::option::Option<crate::types::NumericEqualityMatchOperator>,
+    pub match_operator: crate::types::NumericEqualityMatchOperator,
     /// <p>The aggregation function of the filter.</p>
     pub aggregation_function: ::std::option::Option<crate::types::AggregationFunction>,
     /// <p>The parameter whose value should be used for the filter value.</p>
@@ -27,12 +27,13 @@ pub struct NumericEqualityFilter {
     /// <li> <p> <code>NULLS_ONLY</code>: Only include null values in filtered results.</p> </li>
     /// <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p> </li>
     /// </ul>
-    pub null_option: ::std::option::Option<crate::types::FilterNullOption>,
+    pub null_option: crate::types::FilterNullOption,
 }
 impl NumericEqualityFilter {
     /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
-    pub fn filter_id(&self) -> ::std::option::Option<&str> {
-        self.filter_id.as_deref()
+    pub fn filter_id(&self) -> &str {
+        use std::ops::Deref;
+        self.filter_id.deref()
     }
     /// <p>The column that the filter is applied to.</p>
     pub fn column(&self) -> ::std::option::Option<&crate::types::ColumnIdentifier> {
@@ -50,8 +51,8 @@ impl NumericEqualityFilter {
         self.select_all_options.as_ref()
     }
     /// <p>The match operator that is used to determine if a filter should be applied.</p>
-    pub fn match_operator(&self) -> ::std::option::Option<&crate::types::NumericEqualityMatchOperator> {
-        self.match_operator.as_ref()
+    pub fn match_operator(&self) -> &crate::types::NumericEqualityMatchOperator {
+        &self.match_operator
     }
     /// <p>The aggregation function of the filter.</p>
     pub fn aggregation_function(&self) -> ::std::option::Option<&crate::types::AggregationFunction> {
@@ -67,8 +68,8 @@ impl NumericEqualityFilter {
     /// <li> <p> <code>NULLS_ONLY</code>: Only include null values in filtered results.</p> </li>
     /// <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p> </li>
     /// </ul>
-    pub fn null_option(&self) -> ::std::option::Option<&crate::types::FilterNullOption> {
-        self.null_option.as_ref()
+    pub fn null_option(&self) -> &crate::types::FilterNullOption {
+        &self.null_option
     }
 }
 impl NumericEqualityFilter {
@@ -93,6 +94,7 @@ pub struct NumericEqualityFilterBuilder {
 }
 impl NumericEqualityFilterBuilder {
     /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
+    /// This field is required.
     pub fn filter_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter_id = ::std::option::Option::Some(input.into());
         self
@@ -107,6 +109,7 @@ impl NumericEqualityFilterBuilder {
         &self.filter_id
     }
     /// <p>The column that the filter is applied to.</p>
+    /// This field is required.
     pub fn column(mut self, input: crate::types::ColumnIdentifier) -> Self {
         self.column = ::std::option::Option::Some(input);
         self
@@ -158,6 +161,7 @@ impl NumericEqualityFilterBuilder {
         &self.select_all_options
     }
     /// <p>The match operator that is used to determine if a filter should be applied.</p>
+    /// This field is required.
     pub fn match_operator(mut self, input: crate::types::NumericEqualityMatchOperator) -> Self {
         self.match_operator = ::std::option::Option::Some(input);
         self
@@ -205,6 +209,7 @@ impl NumericEqualityFilterBuilder {
     /// <li> <p> <code>NULLS_ONLY</code>: Only include null values in filtered results.</p> </li>
     /// <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn null_option(mut self, input: crate::types::FilterNullOption) -> Self {
         self.null_option = ::std::option::Option::Some(input);
         self
@@ -229,16 +234,35 @@ impl NumericEqualityFilterBuilder {
         &self.null_option
     }
     /// Consumes the builder and constructs a [`NumericEqualityFilter`](crate::types::NumericEqualityFilter).
-    pub fn build(self) -> crate::types::NumericEqualityFilter {
-        crate::types::NumericEqualityFilter {
-            filter_id: self.filter_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`filter_id`](crate::types::builders::NumericEqualityFilterBuilder::filter_id)
+    /// - [`match_operator`](crate::types::builders::NumericEqualityFilterBuilder::match_operator)
+    /// - [`null_option`](crate::types::builders::NumericEqualityFilterBuilder::null_option)
+    pub fn build(self) -> ::std::result::Result<crate::types::NumericEqualityFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::NumericEqualityFilter {
+            filter_id: self.filter_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "filter_id",
+                    "filter_id was not specified but it is required when building NumericEqualityFilter",
+                )
+            })?,
             column: self.column,
             value: self.value,
             select_all_options: self.select_all_options,
-            match_operator: self.match_operator,
+            match_operator: self.match_operator.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "match_operator",
+                    "match_operator was not specified but it is required when building NumericEqualityFilter",
+                )
+            })?,
             aggregation_function: self.aggregation_function,
             parameter_name: self.parameter_name,
-            null_option: self.null_option,
-        }
+            null_option: self.null_option.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "null_option",
+                    "null_option was not specified but it is required when building NumericEqualityFilter",
+                )
+            })?,
+        })
     }
 }

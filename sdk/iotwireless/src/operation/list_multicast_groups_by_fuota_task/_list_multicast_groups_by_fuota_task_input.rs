@@ -41,6 +41,7 @@ pub struct ListMulticastGroupsByFuotaTaskInputBuilder {
 }
 impl ListMulticastGroupsByFuotaTaskInputBuilder {
     /// <p>The ID of a FUOTA task.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListMulticastGroupsByFuotaTaskInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_multicast_groups_by_fuota_task::ListMulticastGroupsByFuotaTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_multicast_groups_by_fuota_task::ListMulticastGroupsByFuotaTaskInput {

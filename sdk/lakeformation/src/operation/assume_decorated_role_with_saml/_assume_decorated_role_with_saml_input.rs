@@ -48,6 +48,7 @@ pub struct AssumeDecoratedRoleWithSamlInputBuilder {
 }
 impl AssumeDecoratedRoleWithSamlInputBuilder {
     /// <p>A SAML assertion consisting of an assertion statement for the user who needs temporary credentials. This must match the SAML assertion that was issued to IAM. This must be Base64 encoded.</p>
+    /// This field is required.
     pub fn saml_assertion(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.saml_assertion = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl AssumeDecoratedRoleWithSamlInputBuilder {
         &self.saml_assertion
     }
     /// <p>The role that represents an IAM principal whose scope down policy allows it to call credential vending APIs such as <code>GetTemporaryTableCredentials</code>. The caller must also have iam:PassRole permission on this role. </p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl AssumeDecoratedRoleWithSamlInputBuilder {
         &self.role_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the SAML provider in IAM that describes the IdP.</p>
+    /// This field is required.
     pub fn principal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_arn = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +111,7 @@ impl AssumeDecoratedRoleWithSamlInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::assume_decorated_role_with_saml::AssumeDecoratedRoleWithSamlInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::assume_decorated_role_with_saml::AssumeDecoratedRoleWithSamlInput {
             saml_assertion: self.saml_assertion,

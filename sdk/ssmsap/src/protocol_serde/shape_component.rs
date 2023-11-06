@@ -21,6 +21,20 @@ where
                                     .transpose()?,
                             );
                         }
+                        "Sid" => {
+                            builder = builder.set_sid(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "SystemNumber" => {
+                            builder = builder.set_system_number(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "ParentComponent" => {
                             builder = builder.set_parent_component(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -59,6 +73,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "SapFeature" => {
+                            builder = builder.set_sap_feature(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "SapKernelVersion" => {
                             builder = builder.set_sap_kernel_version(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -91,6 +112,10 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "DatabaseConnection" => {
+                            builder =
+                                builder.set_database_connection(crate::protocol_serde::shape_database_connection::de_database_connection(tokens)?);
                         }
                         "LastUpdated" => {
                             builder = builder.set_last_updated(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

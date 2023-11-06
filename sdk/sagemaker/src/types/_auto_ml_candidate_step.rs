@@ -42,6 +42,7 @@ pub struct AutoMlCandidateStepBuilder {
 }
 impl AutoMlCandidateStepBuilder {
     /// <p>Whether the candidate is at the transform, training, or processing step.</p>
+    /// This field is required.
     pub fn candidate_step_type(mut self, input: crate::types::CandidateStepType) -> Self {
         self.candidate_step_type = ::std::option::Option::Some(input);
         self
@@ -56,6 +57,7 @@ impl AutoMlCandidateStepBuilder {
         &self.candidate_step_type
     }
     /// <p>The ARN for the candidate's step.</p>
+    /// This field is required.
     pub fn candidate_step_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.candidate_step_arn = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl AutoMlCandidateStepBuilder {
         &self.candidate_step_arn
     }
     /// <p>The name for the candidate's step.</p>
+    /// This field is required.
     pub fn candidate_step_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.candidate_step_name = ::std::option::Option::Some(input.into());
         self

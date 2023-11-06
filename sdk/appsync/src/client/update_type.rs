@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateType`](crate::operation::update_type::builders::UpdateTypeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`api_id(impl Into<String>)`](crate::operation::update_type::builders::UpdateTypeFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::update_type::builders::UpdateTypeFluentBuilder::set_api_id): <p>The API ID.</p>
-    ///   - [`type_name(impl Into<String>)`](crate::operation::update_type::builders::UpdateTypeFluentBuilder::type_name) / [`set_type_name(Option<String>)`](crate::operation::update_type::builders::UpdateTypeFluentBuilder::set_type_name): <p>The new type name.</p>
-    ///   - [`definition(impl Into<String>)`](crate::operation::update_type::builders::UpdateTypeFluentBuilder::definition) / [`set_definition(Option<String>)`](crate::operation::update_type::builders::UpdateTypeFluentBuilder::set_definition): <p>The new definition.</p>
-    ///   - [`format(TypeDefinitionFormat)`](crate::operation::update_type::builders::UpdateTypeFluentBuilder::format) / [`set_format(Option<TypeDefinitionFormat>)`](crate::operation::update_type::builders::UpdateTypeFluentBuilder::set_format): <p>The new type format: SDL or JSON.</p>
+    ///   - [`api_id(impl Into<String>)`](crate::operation::update_type::builders::UpdateTypeFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::update_type::builders::UpdateTypeFluentBuilder::set_api_id):<br>required: **true**<br><p>The API ID.</p><br>
+    ///   - [`type_name(impl Into<String>)`](crate::operation::update_type::builders::UpdateTypeFluentBuilder::type_name) / [`set_type_name(Option<String>)`](crate::operation::update_type::builders::UpdateTypeFluentBuilder::set_type_name):<br>required: **true**<br><p>The new type name.</p><br>
+    ///   - [`definition(impl Into<String>)`](crate::operation::update_type::builders::UpdateTypeFluentBuilder::definition) / [`set_definition(Option<String>)`](crate::operation::update_type::builders::UpdateTypeFluentBuilder::set_definition):<br>required: **false**<br><p>The new definition.</p><br>
+    ///   - [`format(TypeDefinitionFormat)`](crate::operation::update_type::builders::UpdateTypeFluentBuilder::format) / [`set_format(Option<TypeDefinitionFormat>)`](crate::operation::update_type::builders::UpdateTypeFluentBuilder::set_format):<br>required: **true**<br><p>The new type format: SDL or JSON.</p><br>
     /// - On success, responds with [`UpdateTypeOutput`](crate::operation::update_type::UpdateTypeOutput) with field(s):
     ///   - [`r#type(Option<Type>)`](crate::operation::update_type::UpdateTypeOutput::type): <p>The updated <code>Type</code> object.</p>
     /// - On failure, responds with [`SdkError<UpdateTypeError>`](crate::operation::update_type::UpdateTypeError)

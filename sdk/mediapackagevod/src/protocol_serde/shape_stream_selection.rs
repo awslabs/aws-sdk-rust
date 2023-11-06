@@ -2,7 +2,7 @@
 pub fn ser_stream_selection(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StreamSelection,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.max_video_bits_per_second {
         object.key("maxVideoBitsPerSecond").number(
             #[allow(clippy::useless_conversion)]

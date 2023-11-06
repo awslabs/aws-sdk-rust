@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnvironmentTemplateFilter {
     /// <p>Include <code>templateName</code> to filter search for a template name.</p>
-    pub template_name: ::std::option::Option<::std::string::String>,
+    pub template_name: ::std::string::String,
     /// <p>Include <code>majorVersion</code> to filter search for a major version.</p>
-    pub major_version: ::std::option::Option<::std::string::String>,
+    pub major_version: ::std::string::String,
 }
 impl EnvironmentTemplateFilter {
     /// <p>Include <code>templateName</code> to filter search for a template name.</p>
-    pub fn template_name(&self) -> ::std::option::Option<&str> {
-        self.template_name.as_deref()
+    pub fn template_name(&self) -> &str {
+        use std::ops::Deref;
+        self.template_name.deref()
     }
     /// <p>Include <code>majorVersion</code> to filter search for a major version.</p>
-    pub fn major_version(&self) -> ::std::option::Option<&str> {
-        self.major_version.as_deref()
+    pub fn major_version(&self) -> &str {
+        use std::ops::Deref;
+        self.major_version.deref()
     }
 }
 impl EnvironmentTemplateFilter {
@@ -35,6 +37,7 @@ pub struct EnvironmentTemplateFilterBuilder {
 }
 impl EnvironmentTemplateFilterBuilder {
     /// <p>Include <code>templateName</code> to filter search for a template name.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl EnvironmentTemplateFilterBuilder {
         &self.template_name
     }
     /// <p>Include <code>majorVersion</code> to filter search for a major version.</p>
+    /// This field is required.
     pub fn major_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.major_version = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl EnvironmentTemplateFilterBuilder {
         &self.major_version
     }
     /// Consumes the builder and constructs a [`EnvironmentTemplateFilter`](crate::types::EnvironmentTemplateFilter).
-    pub fn build(self) -> crate::types::EnvironmentTemplateFilter {
-        crate::types::EnvironmentTemplateFilter {
-            template_name: self.template_name,
-            major_version: self.major_version,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`template_name`](crate::types::builders::EnvironmentTemplateFilterBuilder::template_name)
+    /// - [`major_version`](crate::types::builders::EnvironmentTemplateFilterBuilder::major_version)
+    pub fn build(self) -> ::std::result::Result<crate::types::EnvironmentTemplateFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EnvironmentTemplateFilter {
+            template_name: self.template_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "template_name",
+                    "template_name was not specified but it is required when building EnvironmentTemplateFilter",
+                )
+            })?,
+            major_version: self.major_version.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "major_version",
+                    "major_version was not specified but it is required when building EnvironmentTemplateFilter",
+                )
+            })?,
+        })
     }
 }

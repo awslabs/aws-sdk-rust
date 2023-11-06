@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SparkConnectorSource {
     /// <p>The name of the data source.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The name of the connection that is associated with the connector.</p>
-    pub connection_name: ::std::option::Option<::std::string::String>,
+    pub connection_name: ::std::string::String,
     /// <p>The name of a connector that assists with accessing the data store in Glue Studio.</p>
-    pub connector_name: ::std::option::Option<::std::string::String>,
+    pub connector_name: ::std::string::String,
     /// <p>The type of connection, such as marketplace.spark or custom.spark, designating a connection to an Apache Spark data store.</p>
-    pub connection_type: ::std::option::Option<::std::string::String>,
+    pub connection_type: ::std::string::String,
     /// <p>Additional connection options for the connector.</p>
     pub additional_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Specifies data schema for the custom spark source.</p>
@@ -19,28 +19,34 @@ pub struct SparkConnectorSource {
 }
 impl SparkConnectorSource {
     /// <p>The name of the data source.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The name of the connection that is associated with the connector.</p>
-    pub fn connection_name(&self) -> ::std::option::Option<&str> {
-        self.connection_name.as_deref()
+    pub fn connection_name(&self) -> &str {
+        use std::ops::Deref;
+        self.connection_name.deref()
     }
     /// <p>The name of a connector that assists with accessing the data store in Glue Studio.</p>
-    pub fn connector_name(&self) -> ::std::option::Option<&str> {
-        self.connector_name.as_deref()
+    pub fn connector_name(&self) -> &str {
+        use std::ops::Deref;
+        self.connector_name.deref()
     }
     /// <p>The type of connection, such as marketplace.spark or custom.spark, designating a connection to an Apache Spark data store.</p>
-    pub fn connection_type(&self) -> ::std::option::Option<&str> {
-        self.connection_type.as_deref()
+    pub fn connection_type(&self) -> &str {
+        use std::ops::Deref;
+        self.connection_type.deref()
     }
     /// <p>Additional connection options for the connector.</p>
     pub fn additional_options(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.additional_options.as_ref()
     }
     /// <p>Specifies data schema for the custom spark source.</p>
-    pub fn output_schemas(&self) -> ::std::option::Option<&[crate::types::GlueSchema]> {
-        self.output_schemas.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_schemas.is_none()`.
+    pub fn output_schemas(&self) -> &[crate::types::GlueSchema] {
+        self.output_schemas.as_deref().unwrap_or_default()
     }
 }
 impl SparkConnectorSource {
@@ -63,6 +69,7 @@ pub struct SparkConnectorSourceBuilder {
 }
 impl SparkConnectorSourceBuilder {
     /// <p>The name of the data source.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +84,7 @@ impl SparkConnectorSourceBuilder {
         &self.name
     }
     /// <p>The name of the connection that is associated with the connector.</p>
+    /// This field is required.
     pub fn connection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_name = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +99,7 @@ impl SparkConnectorSourceBuilder {
         &self.connection_name
     }
     /// <p>The name of a connector that assists with accessing the data store in Glue Studio.</p>
+    /// This field is required.
     pub fn connector_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_name = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +114,7 @@ impl SparkConnectorSourceBuilder {
         &self.connector_name
     }
     /// <p>The type of connection, such as marketplace.spark or custom.spark, designating a connection to an Apache Spark data store.</p>
+    /// This field is required.
     pub fn connection_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_type = ::std::option::Option::Some(input.into());
         self
@@ -166,14 +176,39 @@ impl SparkConnectorSourceBuilder {
         &self.output_schemas
     }
     /// Consumes the builder and constructs a [`SparkConnectorSource`](crate::types::SparkConnectorSource).
-    pub fn build(self) -> crate::types::SparkConnectorSource {
-        crate::types::SparkConnectorSource {
-            name: self.name,
-            connection_name: self.connection_name,
-            connector_name: self.connector_name,
-            connection_type: self.connection_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::SparkConnectorSourceBuilder::name)
+    /// - [`connection_name`](crate::types::builders::SparkConnectorSourceBuilder::connection_name)
+    /// - [`connector_name`](crate::types::builders::SparkConnectorSourceBuilder::connector_name)
+    /// - [`connection_type`](crate::types::builders::SparkConnectorSourceBuilder::connection_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::SparkConnectorSource, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SparkConnectorSource {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building SparkConnectorSource",
+                )
+            })?,
+            connection_name: self.connection_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "connection_name",
+                    "connection_name was not specified but it is required when building SparkConnectorSource",
+                )
+            })?,
+            connector_name: self.connector_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "connector_name",
+                    "connector_name was not specified but it is required when building SparkConnectorSource",
+                )
+            })?,
+            connection_type: self.connection_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "connection_type",
+                    "connection_type was not specified but it is required when building SparkConnectorSource",
+                )
+            })?,
             additional_options: self.additional_options,
             output_schemas: self.output_schemas,
-        }
+        })
     }
 }

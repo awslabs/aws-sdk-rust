@@ -86,6 +86,7 @@ impl ModifyVpcAttributeInputBuilder {
         &self.enable_dns_support
     }
     /// <p>The ID of the VPC.</p>
+    /// This field is required.
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
         self
@@ -116,7 +117,8 @@ impl ModifyVpcAttributeInputBuilder {
     /// Consumes the builder and constructs a [`ModifyVpcAttributeInput`](crate::operation::modify_vpc_attribute::ModifyVpcAttributeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_vpc_attribute::ModifyVpcAttributeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::modify_vpc_attribute::ModifyVpcAttributeInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::modify_vpc_attribute::ModifyVpcAttributeInput {
             enable_dns_hostnames: self.enable_dns_hostnames,
             enable_dns_support: self.enable_dns_support,

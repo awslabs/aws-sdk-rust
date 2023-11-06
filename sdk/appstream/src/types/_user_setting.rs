@@ -35,6 +35,7 @@ pub struct UserSettingBuilder {
 }
 impl UserSettingBuilder {
     /// <p>The action that is enabled or disabled.</p>
+    /// This field is required.
     pub fn action(mut self, input: crate::types::Action) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl UserSettingBuilder {
         &self.action
     }
     /// <p>Indicates whether the action is enabled or disabled.</p>
+    /// This field is required.
     pub fn permission(mut self, input: crate::types::Permission) -> Self {
         self.permission = ::std::option::Option::Some(input);
         self

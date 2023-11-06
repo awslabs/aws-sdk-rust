@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EmergencyContact {
     /// <p>The email address for the contact.</p>
-    pub email_address: ::std::option::Option<::std::string::String>,
+    pub email_address: ::std::string::String,
     /// <p>The phone number for the contact.</p>
     pub phone_number: ::std::option::Option<::std::string::String>,
     /// <p>Additional notes regarding the contact. </p>
@@ -13,8 +13,9 @@ pub struct EmergencyContact {
 }
 impl EmergencyContact {
     /// <p>The email address for the contact.</p>
-    pub fn email_address(&self) -> ::std::option::Option<&str> {
-        self.email_address.as_deref()
+    pub fn email_address(&self) -> &str {
+        use std::ops::Deref;
+        self.email_address.deref()
     }
     /// <p>The phone number for the contact.</p>
     pub fn phone_number(&self) -> ::std::option::Option<&str> {
@@ -42,6 +43,7 @@ pub struct EmergencyContactBuilder {
 }
 impl EmergencyContactBuilder {
     /// <p>The email address for the contact.</p>
+    /// This field is required.
     pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_address = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +86,18 @@ impl EmergencyContactBuilder {
         &self.contact_notes
     }
     /// Consumes the builder and constructs a [`EmergencyContact`](crate::types::EmergencyContact).
-    pub fn build(self) -> crate::types::EmergencyContact {
-        crate::types::EmergencyContact {
-            email_address: self.email_address,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`email_address`](crate::types::builders::EmergencyContactBuilder::email_address)
+    pub fn build(self) -> ::std::result::Result<crate::types::EmergencyContact, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EmergencyContact {
+            email_address: self.email_address.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "email_address",
+                    "email_address was not specified but it is required when building EmergencyContact",
+                )
+            })?,
             phone_number: self.phone_number,
             contact_notes: self.contact_notes,
-        }
+        })
     }
 }

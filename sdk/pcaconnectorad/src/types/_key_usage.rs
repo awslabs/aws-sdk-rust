@@ -49,6 +49,7 @@ impl KeyUsageBuilder {
         &self.critical
     }
     /// <p>The key usage flags represent the purpose (e.g., encipherment, signature) of the key contained in the certificate.</p>
+    /// This field is required.
     pub fn usage_flags(mut self, input: crate::types::KeyUsageFlags) -> Self {
         self.usage_flags = ::std::option::Option::Some(input);
         self

@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SheetElementRenderingRule {
     /// <p>The expression of the rendering rules of a sheet.</p>
-    pub expression: ::std::option::Option<::std::string::String>,
+    pub expression: ::std::string::String,
     /// <p>The override configuration of the rendering rules of a sheet.</p>
     pub configuration_overrides: ::std::option::Option<crate::types::SheetElementConfigurationOverrides>,
 }
 impl SheetElementRenderingRule {
     /// <p>The expression of the rendering rules of a sheet.</p>
-    pub fn expression(&self) -> ::std::option::Option<&str> {
-        self.expression.as_deref()
+    pub fn expression(&self) -> &str {
+        use std::ops::Deref;
+        self.expression.deref()
     }
     /// <p>The override configuration of the rendering rules of a sheet.</p>
     pub fn configuration_overrides(&self) -> ::std::option::Option<&crate::types::SheetElementConfigurationOverrides> {
@@ -43,6 +44,7 @@ pub struct SheetElementRenderingRuleBuilder {
 }
 impl SheetElementRenderingRuleBuilder {
     /// <p>The expression of the rendering rules of a sheet.</p>
+    /// This field is required.
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expression = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +59,7 @@ impl SheetElementRenderingRuleBuilder {
         &self.expression
     }
     /// <p>The override configuration of the rendering rules of a sheet.</p>
+    /// This field is required.
     pub fn configuration_overrides(mut self, input: crate::types::SheetElementConfigurationOverrides) -> Self {
         self.configuration_overrides = ::std::option::Option::Some(input);
         self
@@ -71,11 +74,18 @@ impl SheetElementRenderingRuleBuilder {
         &self.configuration_overrides
     }
     /// Consumes the builder and constructs a [`SheetElementRenderingRule`](crate::types::SheetElementRenderingRule).
-    pub fn build(self) -> crate::types::SheetElementRenderingRule {
-        crate::types::SheetElementRenderingRule {
-            expression: self.expression,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`expression`](crate::types::builders::SheetElementRenderingRuleBuilder::expression)
+    pub fn build(self) -> ::std::result::Result<crate::types::SheetElementRenderingRule, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SheetElementRenderingRule {
+            expression: self.expression.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "expression",
+                    "expression was not specified but it is required when building SheetElementRenderingRule",
+                )
+            })?,
             configuration_overrides: self.configuration_overrides,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for SheetElementRenderingRuleBuilder {

@@ -27,6 +27,7 @@ pub struct GetPresetInputBuilder {
 }
 impl GetPresetInputBuilder {
     /// The name of the preset.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetPresetInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`GetPresetInput`](crate::operation::get_preset::GetPresetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_preset::GetPresetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_preset::GetPresetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_preset::GetPresetInput { name: self.name })
     }
 }

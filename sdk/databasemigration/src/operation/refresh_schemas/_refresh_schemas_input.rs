@@ -35,6 +35,7 @@ pub struct RefreshSchemasInputBuilder {
 }
 impl RefreshSchemasInputBuilder {
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
+    /// This field is required.
     pub fn endpoint_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_arn = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl RefreshSchemasInputBuilder {
         &self.endpoint_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+    /// This field is required.
     pub fn replication_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_instance_arn = ::std::option::Option::Some(input.into());
         self
@@ -65,7 +67,7 @@ impl RefreshSchemasInputBuilder {
     /// Consumes the builder and constructs a [`RefreshSchemasInput`](crate::operation::refresh_schemas::RefreshSchemasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::refresh_schemas::RefreshSchemasInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::refresh_schemas::RefreshSchemasInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::refresh_schemas::RefreshSchemasInput {
             endpoint_arn: self.endpoint_arn,
             replication_instance_arn: self.replication_instance_arn,

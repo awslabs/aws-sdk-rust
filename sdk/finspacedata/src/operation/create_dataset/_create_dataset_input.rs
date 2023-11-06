@@ -99,6 +99,7 @@ impl CreateDatasetInputBuilder {
         &self.client_token
     }
     /// <p>Display title for a FinSpace Dataset.</p>
+    /// This field is required.
     pub fn dataset_title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_title = ::std::option::Option::Some(input.into());
         self
@@ -117,6 +118,7 @@ impl CreateDatasetInputBuilder {
     /// <li> <p> <code>TABULAR</code> – Data is structured in a tabular format.</p> </li>
     /// <li> <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn kind(mut self, input: crate::types::DatasetKind) -> Self {
         self.kind = ::std::option::Option::Some(input);
         self
@@ -167,6 +169,7 @@ impl CreateDatasetInputBuilder {
         &self.owner_info
     }
     /// <p>Permission group parameters for Dataset permissions.</p>
+    /// This field is required.
     pub fn permission_group_params(mut self, input: crate::types::PermissionGroupParams) -> Self {
         self.permission_group_params = ::std::option::Option::Some(input);
         self
@@ -211,7 +214,7 @@ impl CreateDatasetInputBuilder {
     /// Consumes the builder and constructs a [`CreateDatasetInput`](crate::operation::create_dataset::CreateDatasetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_dataset::CreateDatasetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_dataset::CreateDatasetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_dataset::CreateDatasetInput {
             client_token: self.client_token,
             dataset_title: self.dataset_title,

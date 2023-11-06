@@ -2,7 +2,7 @@
 pub fn ser_delete_fleet_advisor_collector_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_fleet_advisor_collector::DeleteFleetAdvisorCollectorInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.collector_referenced_id {
         object.key("CollectorReferencedId").string(var_1.as_str());
     }

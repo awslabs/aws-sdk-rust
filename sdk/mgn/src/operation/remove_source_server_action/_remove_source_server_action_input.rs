@@ -41,6 +41,7 @@ pub struct RemoveSourceServerActionInputBuilder {
 }
 impl RemoveSourceServerActionInputBuilder {
     /// <p>Source server ID of the post migration custom action to remove.</p>
+    /// This field is required.
     pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl RemoveSourceServerActionInputBuilder {
         &self.source_server_id
     }
     /// <p>Source server post migration custom action ID to remove.</p>
+    /// This field is required.
     pub fn action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +89,7 @@ impl RemoveSourceServerActionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_source_server_action::RemoveSourceServerActionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::remove_source_server_action::RemoveSourceServerActionInput {
             source_server_id: self.source_server_id,

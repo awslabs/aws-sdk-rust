@@ -35,6 +35,7 @@ pub struct RemoveNotificationChannelInputBuilder {
 }
 impl RemoveNotificationChannelInputBuilder {
     /// <p>The name of the profiling group we want to change notification configuration for.</p>
+    /// This field is required.
     pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profiling_group_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl RemoveNotificationChannelInputBuilder {
         &self.profiling_group_name
     }
     /// <p>The id of the channel that we want to stop receiving notifications.</p>
+    /// This field is required.
     pub fn channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_id = ::std::option::Option::Some(input.into());
         self
@@ -67,7 +69,7 @@ impl RemoveNotificationChannelInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_notification_channel::RemoveNotificationChannelInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::remove_notification_channel::RemoveNotificationChannelInput {
             profiling_group_name: self.profiling_group_name,

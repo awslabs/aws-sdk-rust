@@ -34,6 +34,7 @@ pub struct GetKeyOutputBuilder {
 }
 impl GetKeyOutputBuilder {
     /// <p>The key material, including the immutable and mutable data for the key.</p>
+    /// This field is required.
     pub fn key(mut self, input: crate::types::Key) -> Self {
         self.key = ::std::option::Option::Some(input);
         self

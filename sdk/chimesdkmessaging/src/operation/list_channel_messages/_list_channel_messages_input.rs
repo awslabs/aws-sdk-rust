@@ -94,6 +94,7 @@ pub struct ListChannelMessagesInputBuilder {
 }
 impl ListChannelMessagesInputBuilder {
     /// <p>The ARN of the channel.</p>
+    /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self
@@ -178,6 +179,7 @@ impl ListChannelMessagesInputBuilder {
         &self.next_token
     }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
+    /// This field is required.
     pub fn chime_bearer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.chime_bearer = ::std::option::Option::Some(input.into());
         self
@@ -214,7 +216,7 @@ impl ListChannelMessagesInputBuilder {
     /// Consumes the builder and constructs a [`ListChannelMessagesInput`](crate::operation::list_channel_messages::ListChannelMessagesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_channel_messages::ListChannelMessagesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_channel_messages::ListChannelMessagesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_channel_messages::ListChannelMessagesInput {
             channel_arn: self.channel_arn,

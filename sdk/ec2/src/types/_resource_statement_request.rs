@@ -11,12 +11,16 @@ pub struct ResourceStatementRequest {
 }
 impl ResourceStatementRequest {
     /// <p>The resources.</p>
-    pub fn resources(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
+    pub fn resources(&self) -> &[::std::string::String] {
+        self.resources.as_deref().unwrap_or_default()
     }
     /// <p>The resource types.</p>
-    pub fn resource_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_types.is_none()`.
+    pub fn resource_types(&self) -> &[::std::string::String] {
+        self.resource_types.as_deref().unwrap_or_default()
     }
 }
 impl ResourceStatementRequest {

@@ -2,12 +2,12 @@
 pub fn ser_action_identifier(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ActionIdentifier,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.action_type {
-        object.key("actionType").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("actionType").string(input.action_type.as_str());
     }
-    if let Some(var_2) = &input.action_id {
-        object.key("actionId").string(var_2.as_str());
+    {
+        object.key("actionId").string(input.action_id.as_str());
     }
     Ok(())
 }

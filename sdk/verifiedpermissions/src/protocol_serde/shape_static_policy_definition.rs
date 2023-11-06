@@ -2,12 +2,12 @@
 pub fn ser_static_policy_definition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StaticPolicyDefinition,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.description {
         object.key("description").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.statement {
-        object.key("statement").string(var_2.as_str());
+    {
+        object.key("statement").string(input.statement.as_str());
     }
     Ok(())
 }

@@ -29,12 +29,16 @@ impl MediaConcatenationPipeline {
         self.media_pipeline_arn.as_deref()
     }
     /// <p>The data sources being concatenated.</p>
-    pub fn sources(&self) -> ::std::option::Option<&[crate::types::ConcatenationSource]> {
-        self.sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
+    pub fn sources(&self) -> &[crate::types::ConcatenationSource] {
+        self.sources.as_deref().unwrap_or_default()
     }
     /// <p>The data sinks of the concatenation pipeline.</p>
-    pub fn sinks(&self) -> ::std::option::Option<&[crate::types::ConcatenationSink]> {
-        self.sinks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sinks.is_none()`.
+    pub fn sinks(&self) -> &[crate::types::ConcatenationSink] {
+        self.sinks.as_deref().unwrap_or_default()
     }
     /// <p>The status of the concatenation pipeline.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::MediaPipelineStatus> {

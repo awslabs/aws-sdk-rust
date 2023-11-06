@@ -34,7 +34,7 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::cmaf_encryption_correct_errors(builder).build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -45,7 +45,7 @@ where
 pub fn ser_cmaf_encryption(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CmafEncryption,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.constant_initialization_vector {
         object.key("constantInitializationVector").string(var_1.as_str());
     }

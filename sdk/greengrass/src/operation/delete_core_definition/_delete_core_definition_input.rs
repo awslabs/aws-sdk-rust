@@ -27,6 +27,7 @@ pub struct DeleteCoreDefinitionInputBuilder {
 }
 impl DeleteCoreDefinitionInputBuilder {
     /// The ID of the core definition.
+    /// This field is required.
     pub fn core_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_definition_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteCoreDefinitionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCoreDefinitionInput`](crate::operation::delete_core_definition::DeleteCoreDefinitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_core_definition::DeleteCoreDefinitionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_core_definition::DeleteCoreDefinitionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_core_definition::DeleteCoreDefinitionInput {
             core_definition_id: self.core_definition_id,

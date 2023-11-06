@@ -38,8 +38,10 @@ impl DescribeLocationS3Output {
         self.s3_config.as_ref()
     }
     /// <p>If you are using DataSync on an Amazon Web Services Outpost, the Amazon Resource Name (ARNs) of the EC2 agents deployed on your Outpost. For more information about launching a DataSync agent on an Amazon Web Services Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your DataSync agent on Outposts</a>.</p>
-    pub fn agent_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.agent_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agent_arns.is_none()`.
+    pub fn agent_arns(&self) -> &[::std::string::String] {
+        self.agent_arns.as_deref().unwrap_or_default()
     }
     /// <p>The time that the Amazon S3 bucket location was created.</p>
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

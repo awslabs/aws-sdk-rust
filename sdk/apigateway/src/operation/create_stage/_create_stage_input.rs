@@ -98,6 +98,7 @@ pub struct CreateStageInputBuilder {
 }
 impl CreateStageInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
+    /// This field is required.
     pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rest_api_id = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +113,7 @@ impl CreateStageInputBuilder {
         &self.rest_api_id
     }
     /// <p>The name for the Stage resource. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
+    /// This field is required.
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_name = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +128,7 @@ impl CreateStageInputBuilder {
         &self.stage_name
     }
     /// <p>The identifier of the Deployment resource for the Stage resource.</p>
+    /// This field is required.
     pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
@@ -264,7 +267,7 @@ impl CreateStageInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateStageInput`](crate::operation::create_stage::CreateStageInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_stage::CreateStageInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_stage::CreateStageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_stage::CreateStageInput {
             rest_api_id: self.rest_api_id,
             stage_name: self.stage_name,

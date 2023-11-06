@@ -11,9 +11,9 @@ pub struct GetCostCategoriesOutput {
     /// <p>If the <code>CostCategoryName</code> key isn't specified in the request, the <code>CostCategoryValues</code> fields aren't returned. </p>
     pub cost_category_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The number of objects that are returned.</p>
-    pub return_size: ::std::option::Option<i32>,
+    pub return_size: i32,
     /// <p>The total number of objects.</p>
-    pub total_size: ::std::option::Option<i32>,
+    pub total_size: i32,
     _request_id: Option<String>,
 }
 impl GetCostCategoriesOutput {
@@ -22,20 +22,24 @@ impl GetCostCategoriesOutput {
         self.next_page_token.as_deref()
     }
     /// <p>The names of the Cost Categories.</p>
-    pub fn cost_category_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cost_category_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cost_category_names.is_none()`.
+    pub fn cost_category_names(&self) -> &[::std::string::String] {
+        self.cost_category_names.as_deref().unwrap_or_default()
     }
     /// <p>The Cost Category values.</p>
     /// <p>If the <code>CostCategoryName</code> key isn't specified in the request, the <code>CostCategoryValues</code> fields aren't returned. </p>
-    pub fn cost_category_values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cost_category_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cost_category_values.is_none()`.
+    pub fn cost_category_values(&self) -> &[::std::string::String] {
+        self.cost_category_values.as_deref().unwrap_or_default()
     }
     /// <p>The number of objects that are returned.</p>
-    pub fn return_size(&self) -> ::std::option::Option<i32> {
+    pub fn return_size(&self) -> i32 {
         self.return_size
     }
     /// <p>The total number of objects.</p>
-    pub fn total_size(&self) -> ::std::option::Option<i32> {
+    pub fn total_size(&self) -> i32 {
         self.total_size
     }
 }
@@ -121,6 +125,7 @@ impl GetCostCategoriesOutputBuilder {
         &self.cost_category_values
     }
     /// <p>The number of objects that are returned.</p>
+    /// This field is required.
     pub fn return_size(mut self, input: i32) -> Self {
         self.return_size = ::std::option::Option::Some(input);
         self
@@ -135,6 +140,7 @@ impl GetCostCategoriesOutputBuilder {
         &self.return_size
     }
     /// <p>The total number of objects.</p>
+    /// This field is required.
     pub fn total_size(mut self, input: i32) -> Self {
         self.total_size = ::std::option::Option::Some(input);
         self
@@ -158,14 +164,29 @@ impl GetCostCategoriesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetCostCategoriesOutput`](crate::operation::get_cost_categories::GetCostCategoriesOutput).
-    pub fn build(self) -> crate::operation::get_cost_categories::GetCostCategoriesOutput {
-        crate::operation::get_cost_categories::GetCostCategoriesOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`return_size`](crate::operation::get_cost_categories::builders::GetCostCategoriesOutputBuilder::return_size)
+    /// - [`total_size`](crate::operation::get_cost_categories::builders::GetCostCategoriesOutputBuilder::total_size)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_cost_categories::GetCostCategoriesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_cost_categories::GetCostCategoriesOutput {
             next_page_token: self.next_page_token,
             cost_category_names: self.cost_category_names,
             cost_category_values: self.cost_category_values,
-            return_size: self.return_size,
-            total_size: self.total_size,
+            return_size: self.return_size.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "return_size",
+                    "return_size was not specified but it is required when building GetCostCategoriesOutput",
+                )
+            })?,
+            total_size: self.total_size.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "total_size",
+                    "total_size was not specified but it is required when building GetCostCategoriesOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

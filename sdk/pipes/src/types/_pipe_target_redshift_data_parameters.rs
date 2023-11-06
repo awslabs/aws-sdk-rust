@@ -7,7 +7,7 @@ pub struct PipeTargetRedshiftDataParameters {
     /// <p>The name or ARN of the secret that enables access to the database. Required when authenticating using SageMaker.</p>
     pub secret_manager_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database. Required when authenticating using temporary credentials.</p>
-    pub database: ::std::option::Option<::std::string::String>,
+    pub database: ::std::string::String,
     /// <p>The database user name. Required when authenticating using temporary credentials.</p>
     pub db_user: ::std::option::Option<::std::string::String>,
     /// <p>The name of the SQL statement. You can name the SQL statement when you create it to identify the query.</p>
@@ -15,7 +15,7 @@ pub struct PipeTargetRedshiftDataParameters {
     /// <p>Indicates whether to send an event back to EventBridge after the SQL statement runs.</p>
     pub with_event: bool,
     /// <p>The SQL statement text to run.</p>
-    pub sqls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub sqls: ::std::vec::Vec<::std::string::String>,
 }
 impl PipeTargetRedshiftDataParameters {
     /// <p>The name or ARN of the secret that enables access to the database. Required when authenticating using SageMaker.</p>
@@ -23,8 +23,9 @@ impl PipeTargetRedshiftDataParameters {
         self.secret_manager_arn.as_deref()
     }
     /// <p>The name of the database. Required when authenticating using temporary credentials.</p>
-    pub fn database(&self) -> ::std::option::Option<&str> {
-        self.database.as_deref()
+    pub fn database(&self) -> &str {
+        use std::ops::Deref;
+        self.database.deref()
     }
     /// <p>The database user name. Required when authenticating using temporary credentials.</p>
     pub fn db_user(&self) -> ::std::option::Option<&str> {
@@ -39,8 +40,9 @@ impl PipeTargetRedshiftDataParameters {
         self.with_event
     }
     /// <p>The SQL statement text to run.</p>
-    pub fn sqls(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.sqls.as_deref()
+    pub fn sqls(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.sqls.deref()
     }
 }
 impl ::std::fmt::Debug for PipeTargetRedshiftDataParameters {
@@ -89,6 +91,7 @@ impl PipeTargetRedshiftDataParametersBuilder {
         &self.secret_manager_arn
     }
     /// <p>The name of the database. Required when authenticating using temporary credentials.</p>
+    /// This field is required.
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database = ::std::option::Option::Some(input.into());
         self
@@ -165,15 +168,28 @@ impl PipeTargetRedshiftDataParametersBuilder {
         &self.sqls
     }
     /// Consumes the builder and constructs a [`PipeTargetRedshiftDataParameters`](crate::types::PipeTargetRedshiftDataParameters).
-    pub fn build(self) -> crate::types::PipeTargetRedshiftDataParameters {
-        crate::types::PipeTargetRedshiftDataParameters {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`database`](crate::types::builders::PipeTargetRedshiftDataParametersBuilder::database)
+    /// - [`sqls`](crate::types::builders::PipeTargetRedshiftDataParametersBuilder::sqls)
+    pub fn build(self) -> ::std::result::Result<crate::types::PipeTargetRedshiftDataParameters, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PipeTargetRedshiftDataParameters {
             secret_manager_arn: self.secret_manager_arn,
-            database: self.database,
+            database: self.database.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "database",
+                    "database was not specified but it is required when building PipeTargetRedshiftDataParameters",
+                )
+            })?,
             db_user: self.db_user,
             statement_name: self.statement_name,
             with_event: self.with_event.unwrap_or_default(),
-            sqls: self.sqls,
-        }
+            sqls: self.sqls.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "sqls",
+                    "sqls was not specified but it is required when building PipeTargetRedshiftDataParameters",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for PipeTargetRedshiftDataParametersBuilder {

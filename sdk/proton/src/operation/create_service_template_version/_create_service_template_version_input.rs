@@ -46,18 +46,24 @@ impl CreateServiceTemplateVersionInput {
         self.source.as_ref()
     }
     /// <p>An array of environment template objects that are compatible with the new service template version. A service instance based on this service template version can run in environments based on compatible templates.</p>
-    pub fn compatible_environment_templates(&self) -> ::std::option::Option<&[crate::types::CompatibleEnvironmentTemplateInput]> {
-        self.compatible_environment_templates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compatible_environment_templates.is_none()`.
+    pub fn compatible_environment_templates(&self) -> &[crate::types::CompatibleEnvironmentTemplateInput] {
+        self.compatible_environment_templates.as_deref().unwrap_or_default()
     }
     /// <p>An optional list of metadata items that you can associate with the Proton service template version. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p>
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
-    pub fn supported_component_sources(&self) -> ::std::option::Option<&[crate::types::ServiceTemplateSupportedComponentSourceType]> {
-        self.supported_component_sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_component_sources.is_none()`.
+    pub fn supported_component_sources(&self) -> &[crate::types::ServiceTemplateSupportedComponentSourceType] {
+        self.supported_component_sources.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for CreateServiceTemplateVersionInput {
@@ -110,6 +116,7 @@ impl CreateServiceTemplateVersionInputBuilder {
         &self.client_token
     }
     /// <p>The name of the service template.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
@@ -155,6 +162,7 @@ impl CreateServiceTemplateVersionInputBuilder {
         &self.major_version
     }
     /// <p>An object that includes the template bundle S3 bucket path and name for the new version of a service template.</p>
+    /// This field is required.
     pub fn source(mut self, input: crate::types::TemplateVersionSourceInput) -> Self {
         self.source = ::std::option::Option::Some(input);
         self
@@ -247,7 +255,7 @@ impl CreateServiceTemplateVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_service_template_version::CreateServiceTemplateVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_service_template_version::CreateServiceTemplateVersionInput {
             client_token: self.client_token,

@@ -21,8 +21,10 @@ impl DataSetConfiguration {
         self.data_set_schema.as_ref()
     }
     /// <p>A structure containing the list of column group schemas.</p>
-    pub fn column_group_schema_list(&self) -> ::std::option::Option<&[crate::types::ColumnGroupSchema]> {
-        self.column_group_schema_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.column_group_schema_list.is_none()`.
+    pub fn column_group_schema_list(&self) -> &[crate::types::ColumnGroupSchema] {
+        self.column_group_schema_list.as_deref().unwrap_or_default()
     }
 }
 impl DataSetConfiguration {

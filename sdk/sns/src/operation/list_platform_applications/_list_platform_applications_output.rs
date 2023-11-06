@@ -12,8 +12,10 @@ pub struct ListPlatformApplicationsOutput {
 }
 impl ListPlatformApplicationsOutput {
     /// <p>Platform applications returned when calling ListPlatformApplications action.</p>
-    pub fn platform_applications(&self) -> ::std::option::Option<&[crate::types::PlatformApplication]> {
-        self.platform_applications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.platform_applications.is_none()`.
+    pub fn platform_applications(&self) -> &[crate::types::PlatformApplication] {
+        self.platform_applications.as_deref().unwrap_or_default()
     }
     /// <p>NextToken string is returned when calling ListPlatformApplications action if additional records are available after the first page results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

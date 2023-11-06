@@ -2,27 +2,27 @@
 pub fn ser_search_place_index_for_position_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.language {
         object.key("Language").string(var_1.as_str());
     }
-    if input.max_results != 0 {
+    if let Some(var_2) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.max_results).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.position {
-        let mut array_3 = object.key("Position").start_array();
-        for item_4 in var_2 {
+    if let Some(var_3) = &input.position {
+        let mut array_4 = object.key("Position").start_array();
+        for item_5 in var_3 {
             {
-                array_3.value().number(
+                array_4.value().number(
                     #[allow(clippy::useless_conversion)]
-                    ::aws_smithy_types::Number::Float((*item_4).into()),
+                    ::aws_smithy_types::Number::Float((*item_5).into()),
                 );
             }
         }
-        array_3.finish();
+        array_4.finish();
     }
     Ok(())
 }

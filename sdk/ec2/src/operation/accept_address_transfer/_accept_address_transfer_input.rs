@@ -28,8 +28,10 @@ impl AcceptAddressTransferInput {
     /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
     /// </key></p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -53,6 +55,7 @@ pub struct AcceptAddressTransferInputBuilder {
 }
 impl AcceptAddressTransferInputBuilder {
     /// <p>The Elastic IP address you are accepting for transfer.</p>
+    /// This field is required.
     pub fn address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.address = ::std::option::Option::Some(input.into());
         self
@@ -121,7 +124,7 @@ impl AcceptAddressTransferInputBuilder {
     /// Consumes the builder and constructs a [`AcceptAddressTransferInput`](crate::operation::accept_address_transfer::AcceptAddressTransferInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::accept_address_transfer::AcceptAddressTransferInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::accept_address_transfer::AcceptAddressTransferInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::accept_address_transfer::AcceptAddressTransferInput {
             address: self.address,

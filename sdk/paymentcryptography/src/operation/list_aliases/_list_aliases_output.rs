@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAliasesOutput {
     /// <p>The list of aliases. Each alias describes the <code>KeyArn</code> contained within.</p>
-    pub aliases: ::std::option::Option<::std::vec::Vec<crate::types::Alias>>,
+    pub aliases: ::std::vec::Vec<crate::types::Alias>,
     /// <p>The token for the next set of results, or an empty or null value if there are no more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAliasesOutput {
     /// <p>The list of aliases. Each alias describes the <code>KeyArn</code> contained within.</p>
-    pub fn aliases(&self) -> ::std::option::Option<&[crate::types::Alias]> {
-        self.aliases.as_deref()
+    pub fn aliases(&self) -> &[crate::types::Alias] {
+        use std::ops::Deref;
+        self.aliases.deref()
     }
     /// <p>The token for the next set of results, or an empty or null value if there are no more results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,18 @@ impl ListAliasesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAliasesOutput`](crate::operation::list_aliases::ListAliasesOutput).
-    pub fn build(self) -> crate::operation::list_aliases::ListAliasesOutput {
-        crate::operation::list_aliases::ListAliasesOutput {
-            aliases: self.aliases,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`aliases`](crate::operation::list_aliases::builders::ListAliasesOutputBuilder::aliases)
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_aliases::ListAliasesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_aliases::ListAliasesOutput {
+            aliases: self.aliases.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "aliases",
+                    "aliases was not specified but it is required when building ListAliasesOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

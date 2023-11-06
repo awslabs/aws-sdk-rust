@@ -35,6 +35,7 @@ pub struct DefineSuggesterOutputBuilder {
 }
 impl DefineSuggesterOutputBuilder {
     /// <p>The value of a <code>Suggester</code> and its current status.</p>
+    /// This field is required.
     pub fn suggester(mut self, input: crate::types::SuggesterStatus) -> Self {
         self.suggester = ::std::option::Option::Some(input);
         self

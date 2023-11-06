@@ -55,6 +55,7 @@ pub struct CreateAnomalyDetectorInputBuilder {
 }
 impl CreateAnomalyDetectorInputBuilder {
     /// <p>The name of the detector.</p>
+    /// This field is required.
     pub fn anomaly_detector_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_detector_name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +84,7 @@ impl CreateAnomalyDetectorInputBuilder {
         &self.anomaly_detector_description
     }
     /// <p>Contains information about the configuration of the anomaly detector.</p>
+    /// This field is required.
     pub fn anomaly_detector_config(mut self, input: crate::types::AnomalyDetectorConfig) -> Self {
         self.anomaly_detector_config = ::std::option::Option::Some(input);
         self
@@ -133,7 +135,7 @@ impl CreateAnomalyDetectorInputBuilder {
     /// Consumes the builder and constructs a [`CreateAnomalyDetectorInput`](crate::operation::create_anomaly_detector::CreateAnomalyDetectorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_anomaly_detector::CreateAnomalyDetectorInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_anomaly_detector::CreateAnomalyDetectorInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_anomaly_detector::CreateAnomalyDetectorInput {
             anomaly_detector_name: self.anomaly_detector_name,

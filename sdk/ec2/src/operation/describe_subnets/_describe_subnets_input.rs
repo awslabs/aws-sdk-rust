@@ -83,13 +83,17 @@ impl DescribeSubnetsInput {
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// <li> <p> <code>vpc-id</code> - The ID of the VPC for the subnet.</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The IDs of the subnets.</p>
     /// <p>Default: Describes all your subnets.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        self.subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -309,7 +313,7 @@ impl DescribeSubnetsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSubnetsInput`](crate::operation::describe_subnets::DescribeSubnetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_subnets::DescribeSubnetsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_subnets::DescribeSubnetsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_subnets::DescribeSubnetsInput {
             filters: self.filters,
             subnet_ids: self.subnet_ids,

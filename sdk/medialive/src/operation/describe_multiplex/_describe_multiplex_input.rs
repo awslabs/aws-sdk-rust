@@ -28,6 +28,7 @@ pub struct DescribeMultiplexInputBuilder {
 }
 impl DescribeMultiplexInputBuilder {
     /// The ID of the multiplex.
+    /// This field is required.
     pub fn multiplex_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.multiplex_id = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl DescribeMultiplexInputBuilder {
     /// Consumes the builder and constructs a [`DescribeMultiplexInput`](crate::operation::describe_multiplex::DescribeMultiplexInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_multiplex::DescribeMultiplexInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_multiplex::DescribeMultiplexInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_multiplex::DescribeMultiplexInput {
             multiplex_id: self.multiplex_id,
         })

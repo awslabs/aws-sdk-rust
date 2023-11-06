@@ -9,8 +9,10 @@ pub struct SnapshotUserConfiguration {
 }
 impl SnapshotUserConfiguration {
     /// <p>An array of records that describe the anonymous users that the dashboard snapshot is generated for.</p>
-    pub fn anonymous_users(&self) -> ::std::option::Option<&[crate::types::SnapshotAnonymousUser]> {
-        self.anonymous_users.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.anonymous_users.is_none()`.
+    pub fn anonymous_users(&self) -> &[crate::types::SnapshotAnonymousUser] {
+        self.anonymous_users.as_deref().unwrap_or_default()
     }
 }
 impl SnapshotUserConfiguration {

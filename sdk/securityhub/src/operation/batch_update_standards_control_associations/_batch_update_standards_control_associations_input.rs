@@ -8,8 +8,10 @@ pub struct BatchUpdateStandardsControlAssociationsInput {
 }
 impl BatchUpdateStandardsControlAssociationsInput {
     /// <p> Updates the enablement status of a security control in a specified standard. </p>
-    pub fn standards_control_association_updates(&self) -> ::std::option::Option<&[crate::types::StandardsControlAssociationUpdate]> {
-        self.standards_control_association_updates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.standards_control_association_updates.is_none()`.
+    pub fn standards_control_association_updates(&self) -> &[crate::types::StandardsControlAssociationUpdate] {
+        self.standards_control_association_updates.as_deref().unwrap_or_default()
     }
 }
 impl BatchUpdateStandardsControlAssociationsInput {
@@ -56,7 +58,7 @@ impl BatchUpdateStandardsControlAssociationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_update_standards_control_associations::BatchUpdateStandardsControlAssociationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::batch_update_standards_control_associations::BatchUpdateStandardsControlAssociationsInput {

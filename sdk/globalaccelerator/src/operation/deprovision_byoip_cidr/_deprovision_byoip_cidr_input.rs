@@ -27,6 +27,7 @@ pub struct DeprovisionByoipCidrInputBuilder {
 }
 impl DeprovisionByoipCidrInputBuilder {
     /// <p>The address range, in CIDR notation. The prefix must be the same prefix that you specified when you provisioned the address range.</p>
+    /// This field is required.
     pub fn cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cidr = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeprovisionByoipCidrInputBuilder {
     /// Consumes the builder and constructs a [`DeprovisionByoipCidrInput`](crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidrInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidrInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidrInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidrInput { cidr: self.cidr })
     }

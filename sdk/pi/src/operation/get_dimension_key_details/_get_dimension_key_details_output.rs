@@ -9,8 +9,10 @@ pub struct GetDimensionKeyDetailsOutput {
 }
 impl GetDimensionKeyDetailsOutput {
     /// <p>The details for the requested dimensions.</p>
-    pub fn dimensions(&self) -> ::std::option::Option<&[crate::types::DimensionKeyDetail]> {
-        self.dimensions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimensions.is_none()`.
+    pub fn dimensions(&self) -> &[crate::types::DimensionKeyDetail] {
+        self.dimensions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetDimensionKeyDetailsOutput {

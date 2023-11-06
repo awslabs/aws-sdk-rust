@@ -56,6 +56,7 @@ pub struct PutThirdPartyJobSuccessResultInputBuilder {
 }
 impl PutThirdPartyJobSuccessResultInputBuilder {
     /// <p>The ID of the job that successfully completed. This is the same ID returned from <code>PollForThirdPartyJobs</code>.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +71,7 @@ impl PutThirdPartyJobSuccessResultInputBuilder {
         &self.job_id
     }
     /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -130,7 +132,7 @@ impl PutThirdPartyJobSuccessResultInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_third_party_job_success_result::PutThirdPartyJobSuccessResultInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_third_party_job_success_result::PutThirdPartyJobSuccessResultInput {
             job_id: self.job_id,

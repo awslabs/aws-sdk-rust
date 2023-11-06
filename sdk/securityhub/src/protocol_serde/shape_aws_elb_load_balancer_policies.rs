@@ -2,7 +2,7 @@
 pub fn ser_aws_elb_load_balancer_policies(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsElbLoadBalancerPolicies,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.app_cookie_stickiness_policies {
         let mut array_2 = object.key("AppCookieStickinessPolicies").start_array();
         for item_3 in var_1 {

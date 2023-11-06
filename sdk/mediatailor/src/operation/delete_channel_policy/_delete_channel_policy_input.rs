@@ -27,6 +27,7 @@ pub struct DeleteChannelPolicyInputBuilder {
 }
 impl DeleteChannelPolicyInputBuilder {
     /// <p>The name of the channel associated with this channel policy.</p>
+    /// This field is required.
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteChannelPolicyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteChannelPolicyInput`](crate::operation::delete_channel_policy::DeleteChannelPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_channel_policy::DeleteChannelPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_channel_policy::DeleteChannelPolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_channel_policy::DeleteChannelPolicyInput {
             channel_name: self.channel_name,

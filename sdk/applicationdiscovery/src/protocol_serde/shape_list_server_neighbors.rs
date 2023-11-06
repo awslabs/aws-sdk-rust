@@ -120,18 +120,20 @@ pub fn de_list_server_neighbors_http_response(
         output = crate::protocol_serde::shape_list_server_neighbors::de_list_server_neighbors(_response_body, output)
             .map_err(crate::operation::list_server_neighbors::ListServerNeighborsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::list_server_neighbors_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::list_server_neighbors::ListServerNeighborsError::unhandled)?
     })
 }
 
 pub fn ser_list_server_neighbors_input(
     input: &crate::operation::list_server_neighbors::ListServerNeighborsInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_list_server_neighbors_input::ser_list_server_neighbors_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_list_server_neighbors(

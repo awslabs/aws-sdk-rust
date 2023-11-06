@@ -55,6 +55,7 @@ pub struct ListSourceRepositoryBranchesInputBuilder {
 }
 impl ListSourceRepositoryBranchesInputBuilder {
     /// <p>The name of the space.</p>
+    /// This field is required.
     pub fn space_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.space_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl ListSourceRepositoryBranchesInputBuilder {
         &self.space_name
     }
     /// <p>The name of the project in the space.</p>
+    /// This field is required.
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +85,7 @@ impl ListSourceRepositoryBranchesInputBuilder {
         &self.project_name
     }
     /// <p>The name of the source repository.</p>
+    /// This field is required.
     pub fn source_repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_repository_name = ::std::option::Option::Some(input.into());
         self
@@ -129,7 +132,7 @@ impl ListSourceRepositoryBranchesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_source_repository_branches::ListSourceRepositoryBranchesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_source_repository_branches::ListSourceRepositoryBranchesInput {
             space_name: self.space_name,

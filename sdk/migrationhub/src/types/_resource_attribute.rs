@@ -34,18 +34,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceAttribute {
     /// <p>Type of resource.</p>
-    pub r#type: ::std::option::Option<crate::types::ResourceAttributeType>,
+    pub r#type: crate::types::ResourceAttributeType,
     /// <p>Value of the resource type.</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
 }
 impl ResourceAttribute {
     /// <p>Type of resource.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ResourceAttributeType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::ResourceAttributeType {
+        &self.r#type
     }
     /// <p>Value of the resource type.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
 }
 impl ResourceAttribute {
@@ -64,6 +65,7 @@ pub struct ResourceAttributeBuilder {
 }
 impl ResourceAttributeBuilder {
     /// <p>Type of resource.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::ResourceAttributeType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -78,6 +80,7 @@ impl ResourceAttributeBuilder {
         &self.r#type
     }
     /// <p>Value of the resource type.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -92,10 +95,23 @@ impl ResourceAttributeBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`ResourceAttribute`](crate::types::ResourceAttribute).
-    pub fn build(self) -> crate::types::ResourceAttribute {
-        crate::types::ResourceAttribute {
-            r#type: self.r#type,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::ResourceAttributeBuilder::r#type)
+    /// - [`value`](crate::types::builders::ResourceAttributeBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::ResourceAttribute, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ResourceAttribute {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building ResourceAttribute",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building ResourceAttribute",
+                )
+            })?,
+        })
     }
 }

@@ -11,8 +11,10 @@ pub struct ResultSet {
 }
 impl ResultSet {
     /// <p>The rows in the table.</p>
-    pub fn rows(&self) -> ::std::option::Option<&[crate::types::Row]> {
-        self.rows.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rows.is_none()`.
+    pub fn rows(&self) -> &[crate::types::Row] {
+        self.rows.as_deref().unwrap_or_default()
     }
     /// <p>The metadata that describes the column structure and data types of a table of query results.</p>
     pub fn result_set_metadata(&self) -> ::std::option::Option<&crate::types::ResultSetMetadata> {

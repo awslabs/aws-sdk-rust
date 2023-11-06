@@ -48,6 +48,7 @@ pub struct StartContactRecordingInputBuilder {
 }
 impl StartContactRecordingInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl StartContactRecordingInputBuilder {
         &self.instance_id
     }
     /// <p>The identifier of the contact.</p>
+    /// This field is required.
     pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl StartContactRecordingInputBuilder {
         &self.contact_id
     }
     /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
+    /// This field is required.
     pub fn initial_contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.initial_contact_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl StartContactRecordingInputBuilder {
         &self.initial_contact_id
     }
     /// <p>The person being recorded.</p>
+    /// This field is required.
     pub fn voice_recording_configuration(mut self, input: crate::types::VoiceRecordingConfiguration) -> Self {
         self.voice_recording_configuration = ::std::option::Option::Some(input);
         self
@@ -106,7 +110,7 @@ impl StartContactRecordingInputBuilder {
     /// Consumes the builder and constructs a [`StartContactRecordingInput`](crate::operation::start_contact_recording::StartContactRecordingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_contact_recording::StartContactRecordingInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_contact_recording::StartContactRecordingInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_contact_recording::StartContactRecordingInput {
             instance_id: self.instance_id,

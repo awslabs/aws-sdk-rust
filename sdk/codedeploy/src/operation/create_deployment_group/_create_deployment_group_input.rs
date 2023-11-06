@@ -65,24 +65,32 @@ impl CreateDeploymentGroupInput {
         self.deployment_config_name.as_deref()
     }
     /// <p>The Amazon EC2 tags on which to filter. The deployment group includes Amazon EC2 instances with any of the specified tags. Cannot be used in the same call as ec2TagSet.</p>
-    pub fn ec2_tag_filters(&self) -> ::std::option::Option<&[crate::types::Ec2TagFilter]> {
-        self.ec2_tag_filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ec2_tag_filters.is_none()`.
+    pub fn ec2_tag_filters(&self) -> &[crate::types::Ec2TagFilter] {
+        self.ec2_tag_filters.as_deref().unwrap_or_default()
     }
     /// <p>The on-premises instance tags on which to filter. The deployment group includes on-premises instances with any of the specified tags. Cannot be used in the same call as <code>OnPremisesTagSet</code>.</p>
-    pub fn on_premises_instance_tag_filters(&self) -> ::std::option::Option<&[crate::types::TagFilter]> {
-        self.on_premises_instance_tag_filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.on_premises_instance_tag_filters.is_none()`.
+    pub fn on_premises_instance_tag_filters(&self) -> &[crate::types::TagFilter] {
+        self.on_premises_instance_tag_filters.as_deref().unwrap_or_default()
     }
     /// <p>A list of associated Amazon EC2 Auto Scaling groups.</p>
-    pub fn auto_scaling_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.auto_scaling_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auto_scaling_groups.is_none()`.
+    pub fn auto_scaling_groups(&self) -> &[::std::string::String] {
+        self.auto_scaling_groups.as_deref().unwrap_or_default()
     }
     /// <p>A service role Amazon Resource Name (ARN) that allows CodeDeploy to act on the user's behalf when interacting with Amazon Web Services services.</p>
     pub fn service_role_arn(&self) -> ::std::option::Option<&str> {
         self.service_role_arn.as_deref()
     }
     /// <p>Information about triggers to create when the deployment group is created. For examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for an CodeDeploy Event</a> in the <i>CodeDeploy User Guide</i>.</p>
-    pub fn trigger_configurations(&self) -> ::std::option::Option<&[crate::types::TriggerConfig]> {
-        self.trigger_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.trigger_configurations.is_none()`.
+    pub fn trigger_configurations(&self) -> &[crate::types::TriggerConfig] {
+        self.trigger_configurations.as_deref().unwrap_or_default()
     }
     /// <p>Information to add about Amazon CloudWatch alarms when the deployment group is created.</p>
     pub fn alarm_configuration(&self) -> ::std::option::Option<&crate::types::AlarmConfiguration> {
@@ -119,16 +127,20 @@ impl CreateDeploymentGroupInput {
     /// :
     /// <servicename></servicename>
     /// </clustername></code>. </p>
-    pub fn ecs_services(&self) -> ::std::option::Option<&[crate::types::EcsService]> {
-        self.ecs_services.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ecs_services.is_none()`.
+    pub fn ecs_services(&self) -> &[crate::types::EcsService] {
+        self.ecs_services.as_deref().unwrap_or_default()
     }
     /// <p>Information about groups of tags applied to on-premises instances. The deployment group includes only on-premises instances identified by all of the tag groups. Cannot be used in the same call as <code>onPremisesInstanceTagFilters</code>.</p>
     pub fn on_premises_tag_set(&self) -> ::std::option::Option<&crate::types::OnPremisesTagSet> {
         self.on_premises_tag_set.as_ref()
     }
     /// <p> The metadata that you apply to CodeDeploy deployment groups to help you organize and categorize them. Each tag consists of a key and an optional value, both of which you define. </p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateDeploymentGroupInput {
@@ -163,6 +175,7 @@ pub struct CreateDeploymentGroupInputBuilder {
 }
 impl CreateDeploymentGroupInputBuilder {
     /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
@@ -177,6 +190,7 @@ impl CreateDeploymentGroupInputBuilder {
         &self.application_name
     }
     /// <p>The name of a new deployment group for the specified application.</p>
+    /// This field is required.
     pub fn deployment_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_group_name = ::std::option::Option::Some(input.into());
         self
@@ -271,6 +285,7 @@ impl CreateDeploymentGroupInputBuilder {
         &self.auto_scaling_groups
     }
     /// <p>A service role Amazon Resource Name (ARN) that allows CodeDeploy to act on the user's behalf when interacting with Amazon Web Services services.</p>
+    /// This field is required.
     pub fn service_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -477,7 +492,7 @@ impl CreateDeploymentGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateDeploymentGroupInput`](crate::operation::create_deployment_group::CreateDeploymentGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_deployment_group::CreateDeploymentGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_deployment_group::CreateDeploymentGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_deployment_group::CreateDeploymentGroupInput {
             application_name: self.application_name,

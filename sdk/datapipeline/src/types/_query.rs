@@ -9,8 +9,10 @@ pub struct Query {
 }
 impl Query {
     /// <p>List of selectors that define the query. An object must satisfy all of the selectors to match the query.</p>
-    pub fn selectors(&self) -> ::std::option::Option<&[crate::types::Selector]> {
-        self.selectors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.selectors.is_none()`.
+    pub fn selectors(&self) -> &[crate::types::Selector] {
+        self.selectors.as_deref().unwrap_or_default()
     }
 }
 impl Query {

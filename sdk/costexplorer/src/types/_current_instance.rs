@@ -37,8 +37,10 @@ impl CurrentInstance {
         self.instance_name.as_deref()
     }
     /// <p>Cost allocation resource tags that are applied to the instance.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::TagValues]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::TagValues] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Details about the resource and utilization.</p>
     pub fn resource_details(&self) -> ::std::option::Option<&crate::types::ResourceDetails> {

@@ -26,8 +26,10 @@ impl UpdateUserAttributesInput {
     /// <p>An array of name-value pairs representing user attributes.</p>
     /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
     /// <p>If you have set an attribute to require verification before Amazon Cognito updates its value, this request doesn’t immediately update the value of that attribute. After your user receives and responds to a verification message to verify the new value, Amazon Cognito updates the attribute value. Your user can sign in and receive messages with the original attribute value until they verify the new value.</p>
-    pub fn user_attributes(&self) -> ::std::option::Option<&[crate::types::AttributeType]> {
-        self.user_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_attributes.is_none()`.
+    pub fn user_attributes(&self) -> &[crate::types::AttributeType] {
+        self.user_attributes.as_deref().unwrap_or_default()
     }
     /// <p>A valid access token that Amazon Cognito issued to the user whose user attributes you want to update.</p>
     pub fn access_token(&self) -> ::std::option::Option<&str> {
@@ -99,6 +101,7 @@ impl UpdateUserAttributesInputBuilder {
         &self.user_attributes
     }
     /// <p>A valid access token that Amazon Cognito issued to the user whose user attributes you want to update.</p>
+    /// This field is required.
     pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_token = ::std::option::Option::Some(input.into());
         self
@@ -169,7 +172,7 @@ impl UpdateUserAttributesInputBuilder {
     /// Consumes the builder and constructs a [`UpdateUserAttributesInput`](crate::operation::update_user_attributes::UpdateUserAttributesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_user_attributes::UpdateUserAttributesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_user_attributes::UpdateUserAttributesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_user_attributes::UpdateUserAttributesInput {
             user_attributes: self.user_attributes,

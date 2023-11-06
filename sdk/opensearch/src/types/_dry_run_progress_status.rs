@@ -5,36 +5,42 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DryRunProgressStatus {
     /// <p>The unique identifier of the dry run.</p>
-    pub dry_run_id: ::std::option::Option<::std::string::String>,
+    pub dry_run_id: ::std::string::String,
     /// <p>The current status of the dry run.</p>
-    pub dry_run_status: ::std::option::Option<::std::string::String>,
+    pub dry_run_status: ::std::string::String,
     /// <p>The timestamp when the dry run was initiated.</p>
-    pub creation_date: ::std::option::Option<::std::string::String>,
+    pub creation_date: ::std::string::String,
     /// <p>The timestamp when the dry run was last updated.</p>
-    pub update_date: ::std::option::Option<::std::string::String>,
+    pub update_date: ::std::string::String,
     /// <p>Any validation failures that occurred as a result of the dry run.</p>
     pub validation_failures: ::std::option::Option<::std::vec::Vec<crate::types::ValidationFailure>>,
 }
 impl DryRunProgressStatus {
     /// <p>The unique identifier of the dry run.</p>
-    pub fn dry_run_id(&self) -> ::std::option::Option<&str> {
-        self.dry_run_id.as_deref()
+    pub fn dry_run_id(&self) -> &str {
+        use std::ops::Deref;
+        self.dry_run_id.deref()
     }
     /// <p>The current status of the dry run.</p>
-    pub fn dry_run_status(&self) -> ::std::option::Option<&str> {
-        self.dry_run_status.as_deref()
+    pub fn dry_run_status(&self) -> &str {
+        use std::ops::Deref;
+        self.dry_run_status.deref()
     }
     /// <p>The timestamp when the dry run was initiated.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&str> {
-        self.creation_date.as_deref()
+    pub fn creation_date(&self) -> &str {
+        use std::ops::Deref;
+        self.creation_date.deref()
     }
     /// <p>The timestamp when the dry run was last updated.</p>
-    pub fn update_date(&self) -> ::std::option::Option<&str> {
-        self.update_date.as_deref()
+    pub fn update_date(&self) -> &str {
+        use std::ops::Deref;
+        self.update_date.deref()
     }
     /// <p>Any validation failures that occurred as a result of the dry run.</p>
-    pub fn validation_failures(&self) -> ::std::option::Option<&[crate::types::ValidationFailure]> {
-        self.validation_failures.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.validation_failures.is_none()`.
+    pub fn validation_failures(&self) -> &[crate::types::ValidationFailure] {
+        self.validation_failures.as_deref().unwrap_or_default()
     }
 }
 impl DryRunProgressStatus {
@@ -56,6 +62,7 @@ pub struct DryRunProgressStatusBuilder {
 }
 impl DryRunProgressStatusBuilder {
     /// <p>The unique identifier of the dry run.</p>
+    /// This field is required.
     pub fn dry_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dry_run_id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +77,7 @@ impl DryRunProgressStatusBuilder {
         &self.dry_run_id
     }
     /// <p>The current status of the dry run.</p>
+    /// This field is required.
     pub fn dry_run_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dry_run_status = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +92,7 @@ impl DryRunProgressStatusBuilder {
         &self.dry_run_status
     }
     /// <p>The timestamp when the dry run was initiated.</p>
+    /// This field is required.
     pub fn creation_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_date = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +107,7 @@ impl DryRunProgressStatusBuilder {
         &self.creation_date
     }
     /// <p>The timestamp when the dry run was last updated.</p>
+    /// This field is required.
     pub fn update_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.update_date = ::std::option::Option::Some(input.into());
         self
@@ -132,13 +142,38 @@ impl DryRunProgressStatusBuilder {
         &self.validation_failures
     }
     /// Consumes the builder and constructs a [`DryRunProgressStatus`](crate::types::DryRunProgressStatus).
-    pub fn build(self) -> crate::types::DryRunProgressStatus {
-        crate::types::DryRunProgressStatus {
-            dry_run_id: self.dry_run_id,
-            dry_run_status: self.dry_run_status,
-            creation_date: self.creation_date,
-            update_date: self.update_date,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`dry_run_id`](crate::types::builders::DryRunProgressStatusBuilder::dry_run_id)
+    /// - [`dry_run_status`](crate::types::builders::DryRunProgressStatusBuilder::dry_run_status)
+    /// - [`creation_date`](crate::types::builders::DryRunProgressStatusBuilder::creation_date)
+    /// - [`update_date`](crate::types::builders::DryRunProgressStatusBuilder::update_date)
+    pub fn build(self) -> ::std::result::Result<crate::types::DryRunProgressStatus, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DryRunProgressStatus {
+            dry_run_id: self.dry_run_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "dry_run_id",
+                    "dry_run_id was not specified but it is required when building DryRunProgressStatus",
+                )
+            })?,
+            dry_run_status: self.dry_run_status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "dry_run_status",
+                    "dry_run_status was not specified but it is required when building DryRunProgressStatus",
+                )
+            })?,
+            creation_date: self.creation_date.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "creation_date",
+                    "creation_date was not specified but it is required when building DryRunProgressStatus",
+                )
+            })?,
+            update_date: self.update_date.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "update_date",
+                    "update_date was not specified but it is required when building DryRunProgressStatus",
+                )
+            })?,
             validation_failures: self.validation_failures,
-        }
+        })
     }
 }

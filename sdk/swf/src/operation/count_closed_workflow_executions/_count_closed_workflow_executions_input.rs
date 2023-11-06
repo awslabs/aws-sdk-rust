@@ -93,6 +93,7 @@ pub struct CountClosedWorkflowExecutionsInputBuilder {
 }
 impl CountClosedWorkflowExecutionsInputBuilder {
     /// <p>The name of the domain containing the workflow executions to count.</p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -231,7 +232,7 @@ impl CountClosedWorkflowExecutionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::count_closed_workflow_executions::CountClosedWorkflowExecutionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::count_closed_workflow_executions::CountClosedWorkflowExecutionsInput {
             domain: self.domain,

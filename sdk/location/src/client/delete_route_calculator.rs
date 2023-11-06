@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteRouteCalculator`](crate::operation::delete_route_calculator::builders::DeleteRouteCalculatorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`calculator_name(impl Into<String>)`](crate::operation::delete_route_calculator::builders::DeleteRouteCalculatorFluentBuilder::calculator_name) / [`set_calculator_name(Option<String>)`](crate::operation::delete_route_calculator::builders::DeleteRouteCalculatorFluentBuilder::set_calculator_name): <p>The name of the route calculator resource to be deleted.</p>
+    ///   - [`calculator_name(impl Into<String>)`](crate::operation::delete_route_calculator::builders::DeleteRouteCalculatorFluentBuilder::calculator_name) / [`set_calculator_name(Option<String>)`](crate::operation::delete_route_calculator::builders::DeleteRouteCalculatorFluentBuilder::set_calculator_name):<br>required: **true**<br><p>The name of the route calculator resource to be deleted.</p><br>
     /// - On success, responds with [`DeleteRouteCalculatorOutput`](crate::operation::delete_route_calculator::DeleteRouteCalculatorOutput)
     /// - On failure, responds with [`SdkError<DeleteRouteCalculatorError>`](crate::operation::delete_route_calculator::DeleteRouteCalculatorError)
     pub fn delete_route_calculator(&self) -> crate::operation::delete_route_calculator::builders::DeleteRouteCalculatorFluentBuilder {

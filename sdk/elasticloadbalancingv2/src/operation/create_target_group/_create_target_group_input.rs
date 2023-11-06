@@ -118,8 +118,10 @@ impl CreateTargetGroupInput {
         self.target_type.as_ref()
     }
     /// <p>The tags to assign to the target group.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The type of IP address used for this target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
     pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::TargetGroupIpAddressTypeEnum> {
@@ -158,6 +160,7 @@ pub struct CreateTargetGroupInputBuilder {
 impl CreateTargetGroupInputBuilder {
     /// <p>The name of the target group.</p>
     /// <p>This name must be unique per region per account, can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and must not begin or end with a hyphen.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -430,7 +433,7 @@ impl CreateTargetGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateTargetGroupInput`](crate::operation::create_target_group::CreateTargetGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_target_group::CreateTargetGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_target_group::CreateTargetGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_target_group::CreateTargetGroupInput {
             name: self.name,
             protocol: self.protocol,

@@ -28,6 +28,7 @@ pub struct EdgeDeploymentConfigBuilder {
 }
 impl EdgeDeploymentConfigBuilder {
     /// <p>Toggle that determines whether to rollback to previous configuration if the current deployment fails. By default this is turned on. You may turn this off if you want to investigate the errors yourself.</p>
+    /// This field is required.
     pub fn failure_handling_policy(mut self, input: crate::types::FailureHandlingPolicy) -> Self {
         self.failure_handling_policy = ::std::option::Option::Some(input);
         self

@@ -41,6 +41,7 @@ pub struct DescribeBudgetActionsForAccountInputBuilder {
 }
 impl DescribeBudgetActionsForAccountInputBuilder {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl DescribeBudgetActionsForAccountInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_budget_actions_for_account::DescribeBudgetActionsForAccountInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_budget_actions_for_account::DescribeBudgetActionsForAccountInput {

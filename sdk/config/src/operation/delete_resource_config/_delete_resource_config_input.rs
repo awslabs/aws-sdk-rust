@@ -34,6 +34,7 @@ pub struct DeleteResourceConfigInputBuilder {
 }
 impl DeleteResourceConfigInputBuilder {
     /// <p>The type of the resource.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteResourceConfigInputBuilder {
         &self.resource_type
     }
     /// <p>Unique identifier of the resource.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DeleteResourceConfigInputBuilder {
     /// Consumes the builder and constructs a [`DeleteResourceConfigInput`](crate::operation::delete_resource_config::DeleteResourceConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_resource_config::DeleteResourceConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_resource_config::DeleteResourceConfigInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_resource_config::DeleteResourceConfigInput {
             resource_type: self.resource_type,

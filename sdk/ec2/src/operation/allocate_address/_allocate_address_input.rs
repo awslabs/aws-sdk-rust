@@ -46,8 +46,10 @@ impl AllocateAddressInput {
         self.dry_run
     }
     /// <p>The tags to assign to the Elastic IP address.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
 }
 impl AllocateAddressInput {
@@ -180,7 +182,7 @@ impl AllocateAddressInputBuilder {
     /// Consumes the builder and constructs a [`AllocateAddressInput`](crate::operation::allocate_address::AllocateAddressInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::allocate_address::AllocateAddressInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::allocate_address::AllocateAddressInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::allocate_address::AllocateAddressInput {
             domain: self.domain,
             address: self.address,

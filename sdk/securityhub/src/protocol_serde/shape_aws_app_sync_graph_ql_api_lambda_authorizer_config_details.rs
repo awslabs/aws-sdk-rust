@@ -2,7 +2,7 @@
 pub fn ser_aws_app_sync_graph_ql_api_lambda_authorizer_config_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.authorizer_result_ttl_in_seconds {
         object.key("AuthorizerResultTtlInSeconds").number(
             #[allow(clippy::useless_conversion)]

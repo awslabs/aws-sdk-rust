@@ -48,6 +48,7 @@ pub struct ListSegmentReferencesInputBuilder {
 }
 impl ListSegmentReferencesInputBuilder {
     /// <p>The ARN of the segment that you want to view information for.</p>
+    /// This field is required.
     pub fn segment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.segment = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +91,7 @@ impl ListSegmentReferencesInputBuilder {
         &self.next_token
     }
     /// <p>Specifies whether to return information about launches or experiments that use this segment.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::SegmentReferenceResourceType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -106,7 +108,7 @@ impl ListSegmentReferencesInputBuilder {
     /// Consumes the builder and constructs a [`ListSegmentReferencesInput`](crate::operation::list_segment_references::ListSegmentReferencesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_segment_references::ListSegmentReferencesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_segment_references::ListSegmentReferencesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_segment_references::ListSegmentReferencesInput {
             segment: self.segment,

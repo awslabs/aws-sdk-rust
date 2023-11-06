@@ -4,23 +4,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSubscriptionGrantStatusOutput {
     /// <p>The identifier of the subscription grant.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The Amazon DataZone domain user who created the subscription grant status.</p>
-    pub created_by: ::std::option::Option<::std::string::String>,
+    pub created_by: ::std::string::String,
     /// <p>The Amazon DataZone user who updated the subscription grant status.</p>
     pub updated_by: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon DataZone domain in which a subscription grant status is to be updated.</p>
-    pub domain_id: ::std::option::Option<::std::string::String>,
+    pub domain_id: ::std::string::String,
     /// <p>The timestamp of when the subscription grant status was created.</p>
-    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The timestamp of when the subscription grant status is to be updated.</p>
-    pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub updated_at: ::aws_smithy_types::DateTime,
     /// <p>The identifier of the subscription target whose subscription grant status is to be updated.</p>
-    pub subscription_target_id: ::std::option::Option<::std::string::String>,
+    pub subscription_target_id: ::std::string::String,
     /// <p>The granted entity to be updated as part of the <code>UpdateSubscriptionGrantStatus</code> action.</p>
     pub granted_entity: ::std::option::Option<crate::types::GrantedEntity>,
     /// <p>The status to be updated as part of the <code>UpdateSubscriptionGrantStatus</code> action.</p>
-    pub status: ::std::option::Option<crate::types::SubscriptionGrantOverallStatus>,
+    pub status: crate::types::SubscriptionGrantOverallStatus,
     /// <p></p>
     pub assets: ::std::option::Option<::std::vec::Vec<crate::types::SubscribedAsset>>,
     /// <p>The identifier of the subscription.</p>
@@ -29,44 +29,50 @@ pub struct UpdateSubscriptionGrantStatusOutput {
 }
 impl UpdateSubscriptionGrantStatusOutput {
     /// <p>The identifier of the subscription grant.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The Amazon DataZone domain user who created the subscription grant status.</p>
-    pub fn created_by(&self) -> ::std::option::Option<&str> {
-        self.created_by.as_deref()
+    pub fn created_by(&self) -> &str {
+        use std::ops::Deref;
+        self.created_by.deref()
     }
     /// <p>The Amazon DataZone user who updated the subscription grant status.</p>
     pub fn updated_by(&self) -> ::std::option::Option<&str> {
         self.updated_by.as_deref()
     }
     /// <p>The identifier of the Amazon DataZone domain in which a subscription grant status is to be updated.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
-        self.domain_id.as_deref()
+    pub fn domain_id(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_id.deref()
     }
     /// <p>The timestamp of when the subscription grant status was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_at.as_ref()
+    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_at
     }
     /// <p>The timestamp of when the subscription grant status is to be updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.updated_at.as_ref()
+    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.updated_at
     }
     /// <p>The identifier of the subscription target whose subscription grant status is to be updated.</p>
-    pub fn subscription_target_id(&self) -> ::std::option::Option<&str> {
-        self.subscription_target_id.as_deref()
+    pub fn subscription_target_id(&self) -> &str {
+        use std::ops::Deref;
+        self.subscription_target_id.deref()
     }
     /// <p>The granted entity to be updated as part of the <code>UpdateSubscriptionGrantStatus</code> action.</p>
     pub fn granted_entity(&self) -> ::std::option::Option<&crate::types::GrantedEntity> {
         self.granted_entity.as_ref()
     }
     /// <p>The status to be updated as part of the <code>UpdateSubscriptionGrantStatus</code> action.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::SubscriptionGrantOverallStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::SubscriptionGrantOverallStatus {
+        &self.status
     }
     /// <p></p>
-    pub fn assets(&self) -> ::std::option::Option<&[crate::types::SubscribedAsset]> {
-        self.assets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.assets.is_none()`.
+    pub fn assets(&self) -> &[crate::types::SubscribedAsset] {
+        self.assets.as_deref().unwrap_or_default()
     }
     /// <p>The identifier of the subscription.</p>
     pub fn subscription_id(&self) -> ::std::option::Option<&str> {
@@ -104,6 +110,7 @@ pub struct UpdateSubscriptionGrantStatusOutputBuilder {
 }
 impl UpdateSubscriptionGrantStatusOutputBuilder {
     /// <p>The identifier of the subscription grant.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +125,7 @@ impl UpdateSubscriptionGrantStatusOutputBuilder {
         &self.id
     }
     /// <p>The Amazon DataZone domain user who created the subscription grant status.</p>
+    /// This field is required.
     pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by = ::std::option::Option::Some(input.into());
         self
@@ -146,6 +154,7 @@ impl UpdateSubscriptionGrantStatusOutputBuilder {
         &self.updated_by
     }
     /// <p>The identifier of the Amazon DataZone domain in which a subscription grant status is to be updated.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -160,6 +169,7 @@ impl UpdateSubscriptionGrantStatusOutputBuilder {
         &self.domain_id
     }
     /// <p>The timestamp of when the subscription grant status was created.</p>
+    /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
@@ -174,6 +184,7 @@ impl UpdateSubscriptionGrantStatusOutputBuilder {
         &self.created_at
     }
     /// <p>The timestamp of when the subscription grant status is to be updated.</p>
+    /// This field is required.
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
@@ -188,6 +199,7 @@ impl UpdateSubscriptionGrantStatusOutputBuilder {
         &self.updated_at
     }
     /// <p>The identifier of the subscription target whose subscription grant status is to be updated.</p>
+    /// This field is required.
     pub fn subscription_target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_target_id = ::std::option::Option::Some(input.into());
         self
@@ -202,6 +214,7 @@ impl UpdateSubscriptionGrantStatusOutputBuilder {
         &self.subscription_target_id
     }
     /// <p>The granted entity to be updated as part of the <code>UpdateSubscriptionGrantStatus</code> action.</p>
+    /// This field is required.
     pub fn granted_entity(mut self, input: crate::types::GrantedEntity) -> Self {
         self.granted_entity = ::std::option::Option::Some(input);
         self
@@ -216,6 +229,7 @@ impl UpdateSubscriptionGrantStatusOutputBuilder {
         &self.granted_entity
     }
     /// <p>The status to be updated as part of the <code>UpdateSubscriptionGrantStatus</code> action.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::SubscriptionGrantOverallStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -273,20 +287,68 @@ impl UpdateSubscriptionGrantStatusOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateSubscriptionGrantStatusOutput`](crate::operation::update_subscription_grant_status::UpdateSubscriptionGrantStatusOutput).
-    pub fn build(self) -> crate::operation::update_subscription_grant_status::UpdateSubscriptionGrantStatusOutput {
-        crate::operation::update_subscription_grant_status::UpdateSubscriptionGrantStatusOutput {
-            id: self.id,
-            created_by: self.created_by,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::update_subscription_grant_status::builders::UpdateSubscriptionGrantStatusOutputBuilder::id)
+    /// - [`created_by`](crate::operation::update_subscription_grant_status::builders::UpdateSubscriptionGrantStatusOutputBuilder::created_by)
+    /// - [`domain_id`](crate::operation::update_subscription_grant_status::builders::UpdateSubscriptionGrantStatusOutputBuilder::domain_id)
+    /// - [`created_at`](crate::operation::update_subscription_grant_status::builders::UpdateSubscriptionGrantStatusOutputBuilder::created_at)
+    /// - [`updated_at`](crate::operation::update_subscription_grant_status::builders::UpdateSubscriptionGrantStatusOutputBuilder::updated_at)
+    /// - [`subscription_target_id`](crate::operation::update_subscription_grant_status::builders::UpdateSubscriptionGrantStatusOutputBuilder::subscription_target_id)
+    /// - [`status`](crate::operation::update_subscription_grant_status::builders::UpdateSubscriptionGrantStatusOutputBuilder::status)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_subscription_grant_status::UpdateSubscriptionGrantStatusOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::update_subscription_grant_status::UpdateSubscriptionGrantStatusOutput {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building UpdateSubscriptionGrantStatusOutput",
+                )
+            })?,
+            created_by: self.created_by.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_by",
+                    "created_by was not specified but it is required when building UpdateSubscriptionGrantStatusOutput",
+                )
+            })?,
             updated_by: self.updated_by,
-            domain_id: self.domain_id,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
-            subscription_target_id: self.subscription_target_id,
+            domain_id: self.domain_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "domain_id",
+                    "domain_id was not specified but it is required when building UpdateSubscriptionGrantStatusOutput",
+                )
+            })?,
+            created_at: self.created_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_at",
+                    "created_at was not specified but it is required when building UpdateSubscriptionGrantStatusOutput",
+                )
+            })?,
+            updated_at: self.updated_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "updated_at",
+                    "updated_at was not specified but it is required when building UpdateSubscriptionGrantStatusOutput",
+                )
+            })?,
+            subscription_target_id: self.subscription_target_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "subscription_target_id",
+                    "subscription_target_id was not specified but it is required when building UpdateSubscriptionGrantStatusOutput",
+                )
+            })?,
             granted_entity: self.granted_entity,
-            status: self.status,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building UpdateSubscriptionGrantStatusOutput",
+                )
+            })?,
             assets: self.assets,
             subscription_id: self.subscription_id,
             _request_id: self._request_id,
-        }
+        })
     }
 }

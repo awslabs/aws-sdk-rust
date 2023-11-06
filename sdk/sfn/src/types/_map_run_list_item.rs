@@ -5,32 +5,35 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MapRunListItem {
     /// <p>The <code>executionArn</code> of the execution from which the Map Run was started.</p>
-    pub execution_arn: ::std::option::Option<::std::string::String>,
+    pub execution_arn: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the Map Run.</p>
-    pub map_run_arn: ::std::option::Option<::std::string::String>,
+    pub map_run_arn: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the executed state machine.</p>
-    pub state_machine_arn: ::std::option::Option<::std::string::String>,
+    pub state_machine_arn: ::std::string::String,
     /// <p>The date on which the Map Run started.</p>
-    pub start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub start_date: ::aws_smithy_types::DateTime,
     /// <p>The date on which the Map Run stopped.</p>
     pub stop_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl MapRunListItem {
     /// <p>The <code>executionArn</code> of the execution from which the Map Run was started.</p>
-    pub fn execution_arn(&self) -> ::std::option::Option<&str> {
-        self.execution_arn.as_deref()
+    pub fn execution_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.execution_arn.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Map Run.</p>
-    pub fn map_run_arn(&self) -> ::std::option::Option<&str> {
-        self.map_run_arn.as_deref()
+    pub fn map_run_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.map_run_arn.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the executed state machine.</p>
-    pub fn state_machine_arn(&self) -> ::std::option::Option<&str> {
-        self.state_machine_arn.as_deref()
+    pub fn state_machine_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.state_machine_arn.deref()
     }
     /// <p>The date on which the Map Run started.</p>
-    pub fn start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.start_date.as_ref()
+    pub fn start_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.start_date
     }
     /// <p>The date on which the Map Run stopped.</p>
     pub fn stop_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -56,6 +59,7 @@ pub struct MapRunListItemBuilder {
 }
 impl MapRunListItemBuilder {
     /// <p>The <code>executionArn</code> of the execution from which the Map Run was started.</p>
+    /// This field is required.
     pub fn execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_arn = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +74,7 @@ impl MapRunListItemBuilder {
         &self.execution_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the Map Run.</p>
+    /// This field is required.
     pub fn map_run_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.map_run_arn = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +89,7 @@ impl MapRunListItemBuilder {
         &self.map_run_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the executed state machine.</p>
+    /// This field is required.
     pub fn state_machine_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_machine_arn = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +104,7 @@ impl MapRunListItemBuilder {
         &self.state_machine_arn
     }
     /// <p>The date on which the Map Run started.</p>
+    /// This field is required.
     pub fn start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_date = ::std::option::Option::Some(input);
         self
@@ -126,13 +133,38 @@ impl MapRunListItemBuilder {
         &self.stop_date
     }
     /// Consumes the builder and constructs a [`MapRunListItem`](crate::types::MapRunListItem).
-    pub fn build(self) -> crate::types::MapRunListItem {
-        crate::types::MapRunListItem {
-            execution_arn: self.execution_arn,
-            map_run_arn: self.map_run_arn,
-            state_machine_arn: self.state_machine_arn,
-            start_date: self.start_date,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`execution_arn`](crate::types::builders::MapRunListItemBuilder::execution_arn)
+    /// - [`map_run_arn`](crate::types::builders::MapRunListItemBuilder::map_run_arn)
+    /// - [`state_machine_arn`](crate::types::builders::MapRunListItemBuilder::state_machine_arn)
+    /// - [`start_date`](crate::types::builders::MapRunListItemBuilder::start_date)
+    pub fn build(self) -> ::std::result::Result<crate::types::MapRunListItem, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::MapRunListItem {
+            execution_arn: self.execution_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "execution_arn",
+                    "execution_arn was not specified but it is required when building MapRunListItem",
+                )
+            })?,
+            map_run_arn: self.map_run_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "map_run_arn",
+                    "map_run_arn was not specified but it is required when building MapRunListItem",
+                )
+            })?,
+            state_machine_arn: self.state_machine_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "state_machine_arn",
+                    "state_machine_arn was not specified but it is required when building MapRunListItem",
+                )
+            })?,
+            start_date: self.start_date.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "start_date",
+                    "start_date was not specified but it is required when building MapRunListItem",
+                )
+            })?,
             stop_date: self.stop_date,
-        }
+        })
     }
 }

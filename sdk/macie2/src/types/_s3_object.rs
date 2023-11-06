@@ -71,8 +71,10 @@ impl S3Object {
         self.storage_class.as_ref()
     }
     /// <p>The tags that are associated with the object.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::KeyValuePair]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::KeyValuePair] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The identifier for the affected version of the object.</p>
     pub fn version_id(&self) -> ::std::option::Option<&str> {

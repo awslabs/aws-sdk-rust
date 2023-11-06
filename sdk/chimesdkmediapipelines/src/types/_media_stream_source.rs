@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct MediaStreamSource {
     /// <p>The type of media stream source.</p>
-    pub source_type: ::std::option::Option<crate::types::MediaPipelineSourceType>,
+    pub source_type: crate::types::MediaPipelineSourceType,
     /// <p>The ARN of the media stream source. </p>
-    pub source_arn: ::std::option::Option<::std::string::String>,
+    pub source_arn: ::std::string::String,
 }
 impl MediaStreamSource {
     /// <p>The type of media stream source.</p>
-    pub fn source_type(&self) -> ::std::option::Option<&crate::types::MediaPipelineSourceType> {
-        self.source_type.as_ref()
+    pub fn source_type(&self) -> &crate::types::MediaPipelineSourceType {
+        &self.source_type
     }
     /// <p>The ARN of the media stream source. </p>
-    pub fn source_arn(&self) -> ::std::option::Option<&str> {
-        self.source_arn.as_deref()
+    pub fn source_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.source_arn.deref()
     }
 }
 impl ::std::fmt::Debug for MediaStreamSource {
@@ -43,6 +44,7 @@ pub struct MediaStreamSourceBuilder {
 }
 impl MediaStreamSourceBuilder {
     /// <p>The type of media stream source.</p>
+    /// This field is required.
     pub fn source_type(mut self, input: crate::types::MediaPipelineSourceType) -> Self {
         self.source_type = ::std::option::Option::Some(input);
         self
@@ -57,6 +59,7 @@ impl MediaStreamSourceBuilder {
         &self.source_type
     }
     /// <p>The ARN of the media stream source. </p>
+    /// This field is required.
     pub fn source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_arn = ::std::option::Option::Some(input.into());
         self
@@ -71,11 +74,24 @@ impl MediaStreamSourceBuilder {
         &self.source_arn
     }
     /// Consumes the builder and constructs a [`MediaStreamSource`](crate::types::MediaStreamSource).
-    pub fn build(self) -> crate::types::MediaStreamSource {
-        crate::types::MediaStreamSource {
-            source_type: self.source_type,
-            source_arn: self.source_arn,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`source_type`](crate::types::builders::MediaStreamSourceBuilder::source_type)
+    /// - [`source_arn`](crate::types::builders::MediaStreamSourceBuilder::source_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::MediaStreamSource, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::MediaStreamSource {
+            source_type: self.source_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "source_type",
+                    "source_type was not specified but it is required when building MediaStreamSource",
+                )
+            })?,
+            source_arn: self.source_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "source_arn",
+                    "source_arn was not specified but it is required when building MediaStreamSource",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for MediaStreamSourceBuilder {

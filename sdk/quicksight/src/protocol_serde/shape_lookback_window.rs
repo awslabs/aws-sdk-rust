@@ -45,7 +45,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::lookback_window_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -56,18 +58,18 @@ where
 pub fn ser_lookback_window(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LookbackWindow,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.column_name {
-        object.key("ColumnName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("ColumnName").string(input.column_name.as_str());
     }
-    if let Some(var_2) = &input.size {
+    {
         object.key("Size").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((input.size).into()),
         );
     }
-    if let Some(var_3) = &input.size_unit {
-        object.key("SizeUnit").string(var_3.as_str());
+    {
+        object.key("SizeUnit").string(input.size_unit.as_str());
     }
     Ok(())
 }

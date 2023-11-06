@@ -21,7 +21,7 @@ where
                             )?);
                         }
                         "messages" => {
-                            builder = builder.set_messages(crate::protocol_serde::shape___list_of_message::de___list_of_message(tokens)?);
+                            builder = builder.set_messages(crate::protocol_serde::shape_list_of_message::de_list_of_message(tokens)?);
                         }
                         "readiness" => {
                             builder = builder.set_readiness(
@@ -47,7 +47,7 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::rule_result_correct_errors(builder).build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

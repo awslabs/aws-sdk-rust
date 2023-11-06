@@ -27,6 +27,7 @@ pub struct DeleteSmsSandboxPhoneNumberInputBuilder {
 }
 impl DeleteSmsSandboxPhoneNumberInputBuilder {
     /// <p>The destination phone number to delete.</p>
+    /// This field is required.
     pub fn phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteSmsSandboxPhoneNumberInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_sms_sandbox_phone_number::DeleteSmsSandboxPhoneNumberInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_sms_sandbox_phone_number::DeleteSmsSandboxPhoneNumberInput {
             phone_number: self.phone_number,

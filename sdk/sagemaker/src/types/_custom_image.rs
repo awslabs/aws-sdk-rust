@@ -42,6 +42,7 @@ pub struct CustomImageBuilder {
 }
 impl CustomImageBuilder {
     /// <p>The name of the CustomImage. Must be unique to your account.</p>
+    /// This field is required.
     pub fn image_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +71,7 @@ impl CustomImageBuilder {
         &self.image_version_number
     }
     /// <p>The name of the AppImageConfig.</p>
+    /// This field is required.
     pub fn app_image_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_image_config_name = ::std::option::Option::Some(input.into());
         self

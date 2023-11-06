@@ -285,7 +285,9 @@ impl ActivateTypeInputBuilder {
         &self.major_version
     }
     /// Consumes the builder and constructs a [`ActivateTypeInput`](crate::operation::activate_type::ActivateTypeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::activate_type::ActivateTypeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::activate_type::ActivateTypeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::activate_type::ActivateTypeInput {
             r#type: self.r#type,
             public_type_arn: self.public_type_arn,

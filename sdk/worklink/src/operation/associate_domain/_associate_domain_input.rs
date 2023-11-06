@@ -48,6 +48,7 @@ pub struct AssociateDomainInputBuilder {
 }
 impl AssociateDomainInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    /// This field is required.
     pub fn fleet_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_arn = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl AssociateDomainInputBuilder {
         &self.fleet_arn
     }
     /// <p>The fully qualified domain name (FQDN).</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +92,7 @@ impl AssociateDomainInputBuilder {
         &self.display_name
     }
     /// <p>The ARN of an issued ACM certificate that is valid for the domain being associated.</p>
+    /// This field is required.
     pub fn acm_certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.acm_certificate_arn = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +109,7 @@ impl AssociateDomainInputBuilder {
     /// Consumes the builder and constructs a [`AssociateDomainInput`](crate::operation::associate_domain::AssociateDomainInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_domain::AssociateDomainInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::associate_domain::AssociateDomainInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::associate_domain::AssociateDomainInput {
             fleet_arn: self.fleet_arn,
             domain_name: self.domain_name,

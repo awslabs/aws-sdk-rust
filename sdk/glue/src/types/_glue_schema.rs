@@ -9,8 +9,10 @@ pub struct GlueSchema {
 }
 impl GlueSchema {
     /// <p>Specifies the column definitions that make up a Glue schema.</p>
-    pub fn columns(&self) -> ::std::option::Option<&[crate::types::GlueStudioSchemaColumn]> {
-        self.columns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.columns.is_none()`.
+    pub fn columns(&self) -> &[crate::types::GlueStudioSchemaColumn] {
+        self.columns.as_deref().unwrap_or_default()
     }
 }
 impl GlueSchema {

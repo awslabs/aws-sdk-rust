@@ -2,11 +2,11 @@
 pub fn ser_soa(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Soa,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.ttl {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
         object.key("TTL").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+            ::aws_smithy_types::Number::NegInt((input.ttl).into()),
         );
     }
     Ok(())
@@ -44,7 +44,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::soa_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

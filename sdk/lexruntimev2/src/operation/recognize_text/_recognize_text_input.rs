@@ -84,6 +84,7 @@ pub struct RecognizeTextInputBuilder {
 }
 impl RecognizeTextInputBuilder {
     /// <p>The identifier of the bot that processes the request.</p>
+    /// This field is required.
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +99,7 @@ impl RecognizeTextInputBuilder {
         &self.bot_id
     }
     /// <p>The alias identifier in use for the bot that processes the request.</p>
+    /// This field is required.
     pub fn bot_alias_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_alias_id = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +114,7 @@ impl RecognizeTextInputBuilder {
         &self.bot_alias_id
     }
     /// <p>The locale where the session is in use.</p>
+    /// This field is required.
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +129,7 @@ impl RecognizeTextInputBuilder {
         &self.locale_id
     }
     /// <p>The identifier of the user session that is having the conversation.</p>
+    /// This field is required.
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
         self
@@ -140,6 +144,7 @@ impl RecognizeTextInputBuilder {
         &self.session_id
     }
     /// <p>The text that the user entered. Amazon Lex V2 interprets this text.</p>
+    /// This field is required.
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text = ::std::option::Option::Some(input.into());
         self
@@ -200,7 +205,7 @@ impl RecognizeTextInputBuilder {
     /// Consumes the builder and constructs a [`RecognizeTextInput`](crate::operation::recognize_text::RecognizeTextInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::recognize_text::RecognizeTextInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::recognize_text::RecognizeTextInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::recognize_text::RecognizeTextInput {
             bot_id: self.bot_id,
             bot_alias_id: self.bot_alias_id,

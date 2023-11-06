@@ -35,6 +35,7 @@ pub struct EventsBatchBuilder {
 }
 impl EventsBatchBuilder {
     /// <p>A set of properties and attributes that are associated with the endpoint.</p>
+    /// This field is required.
     pub fn endpoint(mut self, input: crate::types::PublicEndpoint) -> Self {
         self.endpoint = ::std::option::Option::Some(input);
         self

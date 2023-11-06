@@ -39,8 +39,10 @@ impl GetFaceSearchOutput {
         self.video_metadata.as_ref()
     }
     /// <p>An array of persons, <code>PersonMatch</code>, in the video whose face(s) match the face(s) in an Amazon Rekognition collection. It also includes time information for when persons are matched in the video. You specify the input collection in an initial call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes a time the person was matched, face match details (<code>FaceMatches</code>) for matching faces in the collection, and person information (<code>Person</code>) for the matched person. </p>
-    pub fn persons(&self) -> ::std::option::Option<&[crate::types::PersonMatch]> {
-        self.persons.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.persons.is_none()`.
+    pub fn persons(&self) -> &[crate::types::PersonMatch] {
+        self.persons.as_deref().unwrap_or_default()
     }
     /// <p>Job identifier for the face search operation for which you want to obtain results. The job identifer is returned by an initial call to StartFaceSearch.</p>
     pub fn job_id(&self) -> ::std::option::Option<&str> {

@@ -8,8 +8,10 @@ pub struct DescribeFileSystemAssociationsInput {
 }
 impl DescribeFileSystemAssociationsInput {
     /// <p>An array containing the Amazon Resource Name (ARN) of each file system association to be described.</p>
-    pub fn file_system_association_arn_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.file_system_association_arn_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.file_system_association_arn_list.is_none()`.
+    pub fn file_system_association_arn_list(&self) -> &[::std::string::String] {
+        self.file_system_association_arn_list.as_deref().unwrap_or_default()
     }
 }
 impl DescribeFileSystemAssociationsInput {
@@ -51,7 +53,7 @@ impl DescribeFileSystemAssociationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_file_system_associations::DescribeFileSystemAssociationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_file_system_associations::DescribeFileSystemAssociationsInput {
             file_system_association_arn_list: self.file_system_association_arn_list,

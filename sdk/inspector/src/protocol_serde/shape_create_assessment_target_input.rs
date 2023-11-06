@@ -2,7 +2,7 @@
 pub fn ser_create_assessment_target_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_assessment_target::CreateAssessmentTargetInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.assessment_target_name {
         object.key("assessmentTargetName").string(var_1.as_str());
     }

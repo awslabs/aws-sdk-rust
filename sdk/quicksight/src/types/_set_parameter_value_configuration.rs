@@ -5,15 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetParameterValueConfiguration {
     /// <p>The destination parameter name of the <code>SetParameterValueConfiguration</code>.</p>
-    pub destination_parameter_name: ::std::option::Option<::std::string::String>,
+    pub destination_parameter_name: ::std::string::String,
     /// <p>The configuration of destination parameter values.</p>
     /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
     pub value: ::std::option::Option<crate::types::DestinationParameterValueConfiguration>,
 }
 impl SetParameterValueConfiguration {
     /// <p>The destination parameter name of the <code>SetParameterValueConfiguration</code>.</p>
-    pub fn destination_parameter_name(&self) -> ::std::option::Option<&str> {
-        self.destination_parameter_name.as_deref()
+    pub fn destination_parameter_name(&self) -> &str {
+        use std::ops::Deref;
+        self.destination_parameter_name.deref()
     }
     /// <p>The configuration of destination parameter values.</p>
     /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
@@ -37,6 +38,7 @@ pub struct SetParameterValueConfigurationBuilder {
 }
 impl SetParameterValueConfigurationBuilder {
     /// <p>The destination parameter name of the <code>SetParameterValueConfiguration</code>.</p>
+    /// This field is required.
     pub fn destination_parameter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_parameter_name = ::std::option::Option::Some(input.into());
         self
@@ -52,6 +54,7 @@ impl SetParameterValueConfigurationBuilder {
     }
     /// <p>The configuration of destination parameter values.</p>
     /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
+    /// This field is required.
     pub fn value(mut self, input: crate::types::DestinationParameterValueConfiguration) -> Self {
         self.value = ::std::option::Option::Some(input);
         self
@@ -68,10 +71,17 @@ impl SetParameterValueConfigurationBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`SetParameterValueConfiguration`](crate::types::SetParameterValueConfiguration).
-    pub fn build(self) -> crate::types::SetParameterValueConfiguration {
-        crate::types::SetParameterValueConfiguration {
-            destination_parameter_name: self.destination_parameter_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`destination_parameter_name`](crate::types::builders::SetParameterValueConfigurationBuilder::destination_parameter_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::SetParameterValueConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SetParameterValueConfiguration {
+            destination_parameter_name: self.destination_parameter_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "destination_parameter_name",
+                    "destination_parameter_name was not specified but it is required when building SetParameterValueConfiguration",
+                )
+            })?,
             value: self.value,
-        }
+        })
     }
 }

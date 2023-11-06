@@ -27,6 +27,7 @@ pub struct DescribeInferenceRecommendationsJobInputBuilder {
 }
 impl DescribeInferenceRecommendationsJobInputBuilder {
     /// <p>The name of the job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
+    /// This field is required.
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeInferenceRecommendationsJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_inference_recommendations_job::DescribeInferenceRecommendationsJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_inference_recommendations_job::DescribeInferenceRecommendationsJobInput { job_name: self.job_name },

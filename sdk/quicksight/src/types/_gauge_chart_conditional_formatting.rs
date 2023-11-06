@@ -9,8 +9,10 @@ pub struct GaugeChartConditionalFormatting {
 }
 impl GaugeChartConditionalFormatting {
     /// <p>Conditional formatting options of a <code>GaugeChartVisual</code>.</p>
-    pub fn conditional_formatting_options(&self) -> ::std::option::Option<&[crate::types::GaugeChartConditionalFormattingOption]> {
-        self.conditional_formatting_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.conditional_formatting_options.is_none()`.
+    pub fn conditional_formatting_options(&self) -> &[crate::types::GaugeChartConditionalFormattingOption] {
+        self.conditional_formatting_options.as_deref().unwrap_or_default()
     }
 }
 impl GaugeChartConditionalFormatting {

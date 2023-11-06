@@ -49,6 +49,7 @@ impl DeleteDatasetInputBuilder {
         &self.client_token
     }
     /// <p>The unique identifier of the Dataset to be deleted.</p>
+    /// This field is required.
     pub fn dataset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_id = ::std::option::Option::Some(input.into());
         self
@@ -65,7 +66,7 @@ impl DeleteDatasetInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDatasetInput`](crate::operation::delete_dataset::DeleteDatasetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_dataset::DeleteDatasetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_dataset::DeleteDatasetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_dataset::DeleteDatasetInput {
             client_token: self.client_token,
             dataset_id: self.dataset_id,

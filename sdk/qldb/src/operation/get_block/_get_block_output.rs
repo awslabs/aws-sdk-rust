@@ -50,6 +50,7 @@ pub struct GetBlockOutputBuilder {
 }
 impl GetBlockOutputBuilder {
     /// <p>The block data object in Amazon Ion format.</p>
+    /// This field is required.
     pub fn block(mut self, input: crate::types::ValueHolder) -> Self {
         self.block = ::std::option::Option::Some(input);
         self

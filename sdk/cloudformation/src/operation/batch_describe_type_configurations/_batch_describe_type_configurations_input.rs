@@ -8,8 +8,10 @@ pub struct BatchDescribeTypeConfigurationsInput {
 }
 impl BatchDescribeTypeConfigurationsInput {
     /// <p>The list of identifiers for the desired extension configurations.</p>
-    pub fn type_configuration_identifiers(&self) -> ::std::option::Option<&[crate::types::TypeConfigurationIdentifier]> {
-        self.type_configuration_identifiers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.type_configuration_identifiers.is_none()`.
+    pub fn type_configuration_identifiers(&self) -> &[crate::types::TypeConfigurationIdentifier] {
+        self.type_configuration_identifiers.as_deref().unwrap_or_default()
     }
 }
 impl BatchDescribeTypeConfigurationsInput {
@@ -54,7 +56,7 @@ impl BatchDescribeTypeConfigurationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurationsInput {

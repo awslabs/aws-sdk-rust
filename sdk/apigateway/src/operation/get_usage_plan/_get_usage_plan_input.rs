@@ -28,6 +28,7 @@ pub struct GetUsagePlanInputBuilder {
 }
 impl GetUsagePlanInputBuilder {
     /// <p>The identifier of the UsagePlan resource to be retrieved.</p>
+    /// This field is required.
     pub fn usage_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.usage_plan_id = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl GetUsagePlanInputBuilder {
     /// Consumes the builder and constructs a [`GetUsagePlanInput`](crate::operation::get_usage_plan::GetUsagePlanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_usage_plan::GetUsagePlanInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_usage_plan::GetUsagePlanInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_usage_plan::GetUsagePlanInput {
             usage_plan_id: self.usage_plan_id,
         })

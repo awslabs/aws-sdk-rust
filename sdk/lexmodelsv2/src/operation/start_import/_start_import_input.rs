@@ -58,6 +58,7 @@ pub struct StartImportInputBuilder {
 }
 impl StartImportInputBuilder {
     /// <p>The unique identifier for the import. It is included in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateUploadUrl.html">CreateUploadUrl</a> operation.</p>
+    /// This field is required.
     pub fn import_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.import_id = ::std::option::Option::Some(input.into());
         self
@@ -72,6 +73,7 @@ impl StartImportInputBuilder {
         &self.import_id
     }
     /// <p>Parameters for creating the bot, bot locale or custom vocabulary.</p>
+    /// This field is required.
     pub fn resource_specification(mut self, input: crate::types::ImportResourceSpecification) -> Self {
         self.resource_specification = ::std::option::Option::Some(input);
         self
@@ -86,6 +88,7 @@ impl StartImportInputBuilder {
         &self.resource_specification
     }
     /// <p>The strategy to use when there is a name conflict between the imported resource and an existing resource. When the merge strategy is <code>FailOnConflict</code> existing resources are not overwritten and the import fails.</p>
+    /// This field is required.
     pub fn merge_strategy(mut self, input: crate::types::MergeStrategy) -> Self {
         self.merge_strategy = ::std::option::Option::Some(input);
         self
@@ -114,7 +117,7 @@ impl StartImportInputBuilder {
         &self.file_password
     }
     /// Consumes the builder and constructs a [`StartImportInput`](crate::operation::start_import::StartImportInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_import::StartImportInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_import::StartImportInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_import::StartImportInput {
             import_id: self.import_id,
             resource_specification: self.resource_specification,

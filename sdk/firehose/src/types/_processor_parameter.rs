@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProcessorParameter {
     /// <p>The name of the parameter. Currently the following default values are supported: 3 for <code>NumberOfRetries</code> and 60 for the <code>BufferIntervalInSeconds</code>. The <code>BufferSizeInMBs</code> ranges between 0.2 MB and up to 3MB. The default buffering hint is 1MB for all destinations, except Splunk. For Splunk, the default buffering hint is 256 KB. </p>
-    pub parameter_name: ::std::option::Option<crate::types::ProcessorParameterName>,
+    pub parameter_name: crate::types::ProcessorParameterName,
     /// <p>The parameter value.</p>
-    pub parameter_value: ::std::option::Option<::std::string::String>,
+    pub parameter_value: ::std::string::String,
 }
 impl ProcessorParameter {
     /// <p>The name of the parameter. Currently the following default values are supported: 3 for <code>NumberOfRetries</code> and 60 for the <code>BufferIntervalInSeconds</code>. The <code>BufferSizeInMBs</code> ranges between 0.2 MB and up to 3MB. The default buffering hint is 1MB for all destinations, except Splunk. For Splunk, the default buffering hint is 256 KB. </p>
-    pub fn parameter_name(&self) -> ::std::option::Option<&crate::types::ProcessorParameterName> {
-        self.parameter_name.as_ref()
+    pub fn parameter_name(&self) -> &crate::types::ProcessorParameterName {
+        &self.parameter_name
     }
     /// <p>The parameter value.</p>
-    pub fn parameter_value(&self) -> ::std::option::Option<&str> {
-        self.parameter_value.as_deref()
+    pub fn parameter_value(&self) -> &str {
+        use std::ops::Deref;
+        self.parameter_value.deref()
     }
 }
 impl ProcessorParameter {
@@ -35,6 +36,7 @@ pub struct ProcessorParameterBuilder {
 }
 impl ProcessorParameterBuilder {
     /// <p>The name of the parameter. Currently the following default values are supported: 3 for <code>NumberOfRetries</code> and 60 for the <code>BufferIntervalInSeconds</code>. The <code>BufferSizeInMBs</code> ranges between 0.2 MB and up to 3MB. The default buffering hint is 1MB for all destinations, except Splunk. For Splunk, the default buffering hint is 256 KB. </p>
+    /// This field is required.
     pub fn parameter_name(mut self, input: crate::types::ProcessorParameterName) -> Self {
         self.parameter_name = ::std::option::Option::Some(input);
         self
@@ -49,6 +51,7 @@ impl ProcessorParameterBuilder {
         &self.parameter_name
     }
     /// <p>The parameter value.</p>
+    /// This field is required.
     pub fn parameter_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_value = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +66,23 @@ impl ProcessorParameterBuilder {
         &self.parameter_value
     }
     /// Consumes the builder and constructs a [`ProcessorParameter`](crate::types::ProcessorParameter).
-    pub fn build(self) -> crate::types::ProcessorParameter {
-        crate::types::ProcessorParameter {
-            parameter_name: self.parameter_name,
-            parameter_value: self.parameter_value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`parameter_name`](crate::types::builders::ProcessorParameterBuilder::parameter_name)
+    /// - [`parameter_value`](crate::types::builders::ProcessorParameterBuilder::parameter_value)
+    pub fn build(self) -> ::std::result::Result<crate::types::ProcessorParameter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ProcessorParameter {
+            parameter_name: self.parameter_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "parameter_name",
+                    "parameter_name was not specified but it is required when building ProcessorParameter",
+                )
+            })?,
+            parameter_value: self.parameter_value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "parameter_value",
+                    "parameter_value was not specified but it is required when building ProcessorParameter",
+                )
+            })?,
+        })
     }
 }

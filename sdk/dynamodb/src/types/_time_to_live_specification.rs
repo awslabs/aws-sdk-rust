@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeToLiveSpecification {
     /// <p>Indicates whether TTL is to be enabled (true) or disabled (false) on the table.</p>
-    pub enabled: ::std::option::Option<bool>,
+    pub enabled: bool,
     /// <p>The name of the TTL attribute used to store the expiration time for items in the table.</p>
-    pub attribute_name: ::std::option::Option<::std::string::String>,
+    pub attribute_name: ::std::string::String,
 }
 impl TimeToLiveSpecification {
     /// <p>Indicates whether TTL is to be enabled (true) or disabled (false) on the table.</p>
-    pub fn enabled(&self) -> ::std::option::Option<bool> {
+    pub fn enabled(&self) -> bool {
         self.enabled
     }
     /// <p>The name of the TTL attribute used to store the expiration time for items in the table.</p>
-    pub fn attribute_name(&self) -> ::std::option::Option<&str> {
-        self.attribute_name.as_deref()
+    pub fn attribute_name(&self) -> &str {
+        use std::ops::Deref;
+        self.attribute_name.deref()
     }
 }
 impl TimeToLiveSpecification {
@@ -35,6 +36,7 @@ pub struct TimeToLiveSpecificationBuilder {
 }
 impl TimeToLiveSpecificationBuilder {
     /// <p>Indicates whether TTL is to be enabled (true) or disabled (false) on the table.</p>
+    /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
@@ -49,6 +51,7 @@ impl TimeToLiveSpecificationBuilder {
         &self.enabled
     }
     /// <p>The name of the TTL attribute used to store the expiration time for items in the table.</p>
+    /// This field is required.
     pub fn attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +66,23 @@ impl TimeToLiveSpecificationBuilder {
         &self.attribute_name
     }
     /// Consumes the builder and constructs a [`TimeToLiveSpecification`](crate::types::TimeToLiveSpecification).
-    pub fn build(self) -> crate::types::TimeToLiveSpecification {
-        crate::types::TimeToLiveSpecification {
-            enabled: self.enabled,
-            attribute_name: self.attribute_name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`enabled`](crate::types::builders::TimeToLiveSpecificationBuilder::enabled)
+    /// - [`attribute_name`](crate::types::builders::TimeToLiveSpecificationBuilder::attribute_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::TimeToLiveSpecification, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TimeToLiveSpecification {
+            enabled: self.enabled.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "enabled",
+                    "enabled was not specified but it is required when building TimeToLiveSpecification",
+                )
+            })?,
+            attribute_name: self.attribute_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "attribute_name",
+                    "attribute_name was not specified but it is required when building TimeToLiveSpecification",
+                )
+            })?,
+        })
     }
 }

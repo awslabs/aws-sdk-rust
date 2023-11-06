@@ -36,8 +36,8 @@ pub fn de_get_relational_database_master_user_password_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "AccountSetupInProgressException" => crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordError::AccountSetupInProgressException({
@@ -52,8 +52,8 @@ pub fn de_get_relational_database_master_user_password_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidInputException" => crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordError::InvalidInputException({
@@ -68,8 +68,8 @@ pub fn de_get_relational_database_master_user_password_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NotFoundException" => crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordError::NotFoundException({
@@ -84,8 +84,8 @@ pub fn de_get_relational_database_master_user_password_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "OperationFailureException" => crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordError::OperationFailureException({
@@ -100,8 +100,8 @@ pub fn de_get_relational_database_master_user_password_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ServiceException" => crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordError::ServiceException({
@@ -116,8 +116,8 @@ pub fn de_get_relational_database_master_user_password_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "UnauthenticatedException" => crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordError::UnauthenticatedException({
@@ -132,8 +132,8 @@ pub fn de_get_relational_database_master_user_password_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordError::generic(generic)
@@ -165,7 +165,7 @@ pub fn de_get_relational_database_master_user_password_http_response(
 
 pub fn ser_get_relational_database_master_user_password_input(
     input: &crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_get_relational_database_master_user_password_input::ser_get_relational_database_master_user_password_input(
@@ -173,7 +173,7 @@ pub fn ser_get_relational_database_master_user_password_input(
         input,
     )?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_get_relational_database_master_user_password(

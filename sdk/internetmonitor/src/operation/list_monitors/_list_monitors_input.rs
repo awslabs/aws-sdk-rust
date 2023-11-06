@@ -6,7 +6,7 @@ pub struct ListMonitorsInput {
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The number of monitor objects that you want to return with this call.</p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>The status of a monitor. This includes the status of the data processing for the monitor and the status of the monitor itself.</p>
     /// <p>For information about the statuses for a monitor, see <a href="https://docs.aws.amazon.com/internet-monitor/latest/api/API_Monitor.html"> Monitor</a>.</p>
     pub monitor_status: ::std::option::Option<::std::string::String>,
@@ -17,7 +17,7 @@ impl ListMonitorsInput {
         self.next_token.as_deref()
     }
     /// <p>The number of monitor objects that you want to return with this call.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The status of a monitor. This includes the status of the data processing for the monitor and the status of the monitor itself.</p>
@@ -88,10 +88,12 @@ impl ListMonitorsInputBuilder {
         &self.monitor_status
     }
     /// Consumes the builder and constructs a [`ListMonitorsInput`](crate::operation::list_monitors::ListMonitorsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_monitors::ListMonitorsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_monitors::ListMonitorsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_monitors::ListMonitorsInput {
             next_token: self.next_token,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             monitor_status: self.monitor_status,
         })
     }

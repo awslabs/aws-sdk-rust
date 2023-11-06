@@ -34,6 +34,7 @@ pub struct UpdateExperimentOutputBuilder {
 }
 impl UpdateExperimentOutputBuilder {
     /// <p>A structure containing the configuration details of the experiment that was updated.</p>
+    /// This field is required.
     pub fn experiment(mut self, input: crate::types::Experiment) -> Self {
         self.experiment = ::std::option::Option::Some(input);
         self

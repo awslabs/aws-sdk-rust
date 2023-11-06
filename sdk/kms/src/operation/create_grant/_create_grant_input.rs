@@ -68,8 +68,10 @@ impl CreateGrantInput {
     }
     /// <p>A list of operations that the grant permits. </p>
     /// <p>This list must include only operations that are permitted in a grant. Also, the operation must be supported on the KMS key. For example, you cannot create a grant for a symmetric encryption KMS key that allows the <code>Sign</code> operation, or a grant for an asymmetric KMS key that allows the <code>GenerateDataKey</code> operation. If you try, KMS returns a <code>ValidationError</code> exception. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-grant-operations">Grant operations</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    pub fn operations(&self) -> ::std::option::Option<&[crate::types::GrantOperation]> {
-        self.operations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.operations.is_none()`.
+    pub fn operations(&self) -> &[crate::types::GrantOperation] {
+        self.operations.as_deref().unwrap_or_default()
     }
     /// <p>Specifies a grant constraint.</p> <important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
@@ -83,8 +85,10 @@ impl CreateGrantInput {
     }
     /// <p>A list of grant tokens. </p>
     /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    pub fn grant_tokens(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.grant_tokens.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.grant_tokens.is_none()`.
+    pub fn grant_tokens(&self) -> &[::std::string::String] {
+        self.grant_tokens.as_deref().unwrap_or_default()
     }
     /// <p>A friendly name for the grant. Use this value to prevent the unintended creation of duplicate grants when retrying this request.</p> <important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
@@ -129,6 +133,7 @@ impl CreateGrantInputBuilder {
     /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
     /// </ul>
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
+    /// This field is required.
     pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_id = ::std::option::Option::Some(input.into());
         self
@@ -158,6 +163,7 @@ impl CreateGrantInputBuilder {
     }
     /// <p>The identity that gets the permissions specified in the grant.</p>
     /// <p>To specify the grantee principal, use the Amazon Resource Name (ARN) of an Amazon Web Services principal. Valid principals include Amazon Web Services accounts, IAM users, IAM roles, federated users, and assumed role users. For help with the ARN syntax for a principal, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
+    /// This field is required.
     pub fn grantee_principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grantee_principal = ::std::option::Option::Some(input.into());
         self
@@ -315,7 +321,7 @@ impl CreateGrantInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`CreateGrantInput`](crate::operation::create_grant::CreateGrantInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_grant::CreateGrantInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_grant::CreateGrantInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_grant::CreateGrantInput {
             key_id: self.key_id,
             grantee_principal: self.grantee_principal,

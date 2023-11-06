@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMapRunsOutput {
     /// <p>An array that lists information related to a Map Run, such as the Amazon Resource Name (ARN) of the Map Run and the ARN of the state machine that started the Map Run.</p>
-    pub map_runs: ::std::option::Option<::std::vec::Vec<crate::types::MapRunListItem>>,
+    pub map_runs: ::std::vec::Vec<crate::types::MapRunListItem>,
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListMapRunsOutput {
     /// <p>An array that lists information related to a Map Run, such as the Amazon Resource Name (ARN) of the Map Run and the ARN of the state machine that started the Map Run.</p>
-    pub fn map_runs(&self) -> ::std::option::Option<&[crate::types::MapRunListItem]> {
-        self.map_runs.as_deref()
+    pub fn map_runs(&self) -> &[crate::types::MapRunListItem] {
+        use std::ops::Deref;
+        self.map_runs.deref()
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ListMapRunsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListMapRunsOutput`](crate::operation::list_map_runs::ListMapRunsOutput).
-    pub fn build(self) -> crate::operation::list_map_runs::ListMapRunsOutput {
-        crate::operation::list_map_runs::ListMapRunsOutput {
-            map_runs: self.map_runs,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`map_runs`](crate::operation::list_map_runs::builders::ListMapRunsOutputBuilder::map_runs)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_map_runs::ListMapRunsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_map_runs::ListMapRunsOutput {
+            map_runs: self.map_runs.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "map_runs",
+                    "map_runs was not specified but it is required when building ListMapRunsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

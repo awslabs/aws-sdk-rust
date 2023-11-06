@@ -27,6 +27,7 @@ pub struct DescribeExportInputBuilder {
 }
 impl DescribeExportInputBuilder {
     /// <p>The unique identifier of the export to describe.</p>
+    /// This field is required.
     pub fn export_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.export_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeExportInputBuilder {
     /// Consumes the builder and constructs a [`DescribeExportInput`](crate::operation::describe_export::DescribeExportInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_export::DescribeExportInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_export::DescribeExportInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_export::DescribeExportInput { export_id: self.export_id })
     }
 }

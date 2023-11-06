@@ -2,7 +2,7 @@
 pub fn ser_aws_rds_event_subscription_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsRdsEventSubscriptionDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cust_subscription_id {
         object.key("CustSubscriptionId").string(var_1.as_str());
     }

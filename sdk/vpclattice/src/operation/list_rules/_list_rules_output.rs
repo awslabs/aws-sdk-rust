@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRulesOutput {
     /// <p>Information about the rules.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::RuleSummary>>,
+    pub items: ::std::vec::Vec<crate::types::RuleSummary>,
     /// <p>If there are additional results, a pagination token for the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListRulesOutput {
     /// <p>Information about the rules.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::RuleSummary]> {
-        self.items.as_deref()
+    pub fn items(&self) -> &[crate::types::RuleSummary] {
+        use std::ops::Deref;
+        self.items.deref()
     }
     /// <p>If there are additional results, a pagination token for the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,18 @@ impl ListRulesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListRulesOutput`](crate::operation::list_rules::ListRulesOutput).
-    pub fn build(self) -> crate::operation::list_rules::ListRulesOutput {
-        crate::operation::list_rules::ListRulesOutput {
-            items: self.items,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`items`](crate::operation::list_rules::builders::ListRulesOutputBuilder::items)
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_rules::ListRulesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_rules::ListRulesOutput {
+            items: self.items.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "items",
+                    "items was not specified but it is required when building ListRulesOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

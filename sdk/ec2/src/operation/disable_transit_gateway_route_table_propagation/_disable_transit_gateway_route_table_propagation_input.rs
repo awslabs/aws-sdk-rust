@@ -49,6 +49,7 @@ pub struct DisableTransitGatewayRouteTablePropagationInputBuilder {
 }
 impl DisableTransitGatewayRouteTablePropagationInputBuilder {
     /// <p>The ID of the propagation route table.</p>
+    /// This field is required.
     pub fn transit_gateway_route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_route_table_id = ::std::option::Option::Some(input.into());
         self
@@ -109,7 +110,7 @@ impl DisableTransitGatewayRouteTablePropagationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_transit_gateway_route_table_propagation::DisableTransitGatewayRouteTablePropagationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::disable_transit_gateway_route_table_propagation::DisableTransitGatewayRouteTablePropagationInput {

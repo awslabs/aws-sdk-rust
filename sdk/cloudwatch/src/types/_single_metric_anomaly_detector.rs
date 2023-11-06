@@ -23,8 +23,10 @@ impl SingleMetricAnomalyDetector {
         self.metric_name.as_deref()
     }
     /// <p>The metric dimensions to create the anomaly detection model for.</p>
-    pub fn dimensions(&self) -> ::std::option::Option<&[crate::types::Dimension]> {
-        self.dimensions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimensions.is_none()`.
+    pub fn dimensions(&self) -> &[crate::types::Dimension] {
+        self.dimensions.as_deref().unwrap_or_default()
     }
     /// <p>The statistic to use for the metric and anomaly detection model.</p>
     pub fn stat(&self) -> ::std::option::Option<&str> {

@@ -2,7 +2,7 @@
 pub fn ser_nielsen_naes_ii_nw(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NielsenNaesIiNw,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.check_digit_string {
         object.key("checkDigitString").string(var_1.as_str());
     }
@@ -61,7 +61,7 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::nielsen_naes_ii_nw_correct_errors(builder).build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

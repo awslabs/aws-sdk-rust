@@ -34,6 +34,7 @@ pub struct UpdateUserAccessLoggingSettingsOutputBuilder {
 }
 impl UpdateUserAccessLoggingSettingsOutputBuilder {
     /// <p>The user access logging settings.</p>
+    /// This field is required.
     pub fn user_access_logging_settings(mut self, input: crate::types::UserAccessLoggingSettings) -> Self {
         self.user_access_logging_settings = ::std::option::Option::Some(input);
         self

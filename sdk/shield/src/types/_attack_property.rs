@@ -27,8 +27,10 @@ impl AttackProperty {
         self.attack_property_identifier.as_ref()
     }
     /// <p>Contributor objects for the top five contributors to a Shield event. A contributor is a source of traffic that Shield Advanced identifies as responsible for some or all of an event.</p>
-    pub fn top_contributors(&self) -> ::std::option::Option<&[crate::types::Contributor]> {
-        self.top_contributors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.top_contributors.is_none()`.
+    pub fn top_contributors(&self) -> &[crate::types::Contributor] {
+        self.top_contributors.as_deref().unwrap_or_default()
     }
     /// <p>The unit used for the <code>Contributor</code> <code>Value</code> property. </p>
     pub fn unit(&self) -> ::std::option::Option<&crate::types::Unit> {

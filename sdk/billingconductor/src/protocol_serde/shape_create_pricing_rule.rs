@@ -26,11 +26,10 @@ pub fn de_create_pricing_rule_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_pricing_rule::CreatePricingRuleError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_pricing_rule::CreatePricingRuleError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ConflictException" => crate::operation::create_pricing_rule::CreatePricingRuleError::ConflictException({
@@ -41,11 +40,10 @@ pub fn de_create_pricing_rule_http_error(
                 output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_pricing_rule::CreatePricingRuleError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::conflict_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_pricing_rule::CreatePricingRuleError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerException" => crate::operation::create_pricing_rule::CreatePricingRuleError::InternalServerException({
@@ -63,11 +61,10 @@ pub fn de_create_pricing_rule_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_pricing_rule::CreatePricingRuleError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ServiceLimitExceededException" => crate::operation::create_pricing_rule::CreatePricingRuleError::ServiceLimitExceededException({
@@ -81,11 +78,10 @@ pub fn de_create_pricing_rule_http_error(
                 )
                 .map_err(crate::operation::create_pricing_rule::CreatePricingRuleError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::service_limit_exceeded_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_pricing_rule::CreatePricingRuleError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::create_pricing_rule::CreatePricingRuleError::ThrottlingException({
@@ -103,11 +99,10 @@ pub fn de_create_pricing_rule_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_pricing_rule::CreatePricingRuleError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::create_pricing_rule::CreatePricingRuleError::ValidationException({
@@ -118,11 +113,10 @@ pub fn de_create_pricing_rule_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_pricing_rule::CreatePricingRuleError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_pricing_rule::CreatePricingRuleError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::create_pricing_rule::CreatePricingRuleError::generic(generic),
@@ -149,13 +143,13 @@ pub fn de_create_pricing_rule_http_response(
 pub fn ser_create_pricing_rule_headers(
     input: &crate::operation::create_pricing_rule::CreatePricingRuleInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.client_token {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "client_token",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -168,12 +162,12 @@ pub fn ser_create_pricing_rule_headers(
 
 pub fn ser_create_pricing_rule_input(
     input: &crate::operation::create_pricing_rule::CreatePricingRuleInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_pricing_rule_input::ser_create_pricing_rule_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_create_pricing_rule(

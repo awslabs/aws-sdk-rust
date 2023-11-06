@@ -34,6 +34,7 @@ pub struct GetAccessPointForObjectLambdaInputBuilder {
 }
 impl GetAccessPointForObjectLambdaInputBuilder {
     /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetAccessPointForObjectLambdaInputBuilder {
         &self.account_id
     }
     /// <p>The name of the Object Lambda Access Point.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl GetAccessPointForObjectLambdaInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_access_point_for_object_lambda::GetAccessPointForObjectLambdaInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_access_point_for_object_lambda::GetAccessPointForObjectLambdaInput {
             account_id: self.account_id,

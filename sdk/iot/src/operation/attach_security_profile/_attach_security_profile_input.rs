@@ -34,6 +34,7 @@ pub struct AttachSecurityProfileInputBuilder {
 }
 impl AttachSecurityProfileInputBuilder {
     /// <p>The security profile that is attached.</p>
+    /// This field is required.
     pub fn security_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_profile_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl AttachSecurityProfileInputBuilder {
         &self.security_profile_name
     }
     /// <p>The ARN of the target (thing group) to which the security profile is attached.</p>
+    /// This field is required.
     pub fn security_profile_target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_profile_target_arn = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl AttachSecurityProfileInputBuilder {
     /// Consumes the builder and constructs a [`AttachSecurityProfileInput`](crate::operation::attach_security_profile::AttachSecurityProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::attach_security_profile::AttachSecurityProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::attach_security_profile::AttachSecurityProfileInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::attach_security_profile::AttachSecurityProfileInput {
             security_profile_name: self.security_profile_name,

@@ -49,6 +49,7 @@ pub struct FileSystemSizeBuilder {
 }
 impl FileSystemSizeBuilder {
     /// <p>The latest known metered size (in bytes) of data stored in the file system.</p>
+    /// This field is required.
     pub fn value(mut self, input: i64) -> Self {
         self.value = ::std::option::Option::Some(input);
         self

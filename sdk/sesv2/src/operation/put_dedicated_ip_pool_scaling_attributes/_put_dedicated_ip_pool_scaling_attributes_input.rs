@@ -39,6 +39,7 @@ pub struct PutDedicatedIpPoolScalingAttributesInputBuilder {
 }
 impl PutDedicatedIpPoolScalingAttributesInputBuilder {
     /// <p>The name of the dedicated IP pool.</p>
+    /// This field is required.
     pub fn pool_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pool_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl PutDedicatedIpPoolScalingAttributesInputBuilder {
     /// <p>The scaling mode to apply to the dedicated IP pool.</p> <note>
     /// <p>Changing the scaling mode from <code>MANAGED</code> to <code>STANDARD</code> is not supported.</p>
     /// </note>
+    /// This field is required.
     pub fn scaling_mode(mut self, input: crate::types::ScalingMode) -> Self {
         self.scaling_mode = ::std::option::Option::Some(input);
         self
@@ -77,7 +79,7 @@ impl PutDedicatedIpPoolScalingAttributesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_dedicated_ip_pool_scaling_attributes::PutDedicatedIpPoolScalingAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::put_dedicated_ip_pool_scaling_attributes::PutDedicatedIpPoolScalingAttributesInput {

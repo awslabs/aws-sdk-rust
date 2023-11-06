@@ -14,8 +14,10 @@ impl UngroupResourcesInput {
         self.group.as_deref()
     }
     /// <p>The ARNs of the resources to be removed from the group.</p>
-    pub fn resource_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_arns.is_none()`.
+    pub fn resource_arns(&self) -> &[::std::string::String] {
+        self.resource_arns.as_deref().unwrap_or_default()
     }
 }
 impl UngroupResourcesInput {
@@ -34,6 +36,7 @@ pub struct UngroupResourcesInputBuilder {
 }
 impl UngroupResourcesInputBuilder {
     /// <p>The name or the ARN of the resource group from which to remove the resources.</p>
+    /// This field is required.
     pub fn group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +73,7 @@ impl UngroupResourcesInputBuilder {
     /// Consumes the builder and constructs a [`UngroupResourcesInput`](crate::operation::ungroup_resources::UngroupResourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::ungroup_resources::UngroupResourcesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::ungroup_resources::UngroupResourcesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::ungroup_resources::UngroupResourcesInput {
             group: self.group,
             resource_arns: self.resource_arns,

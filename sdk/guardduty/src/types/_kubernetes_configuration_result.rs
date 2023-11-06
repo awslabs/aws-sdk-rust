@@ -28,6 +28,7 @@ pub struct KubernetesConfigurationResultBuilder {
 }
 impl KubernetesConfigurationResultBuilder {
     /// <p>Describes whether Kubernetes audit logs are enabled as a data source.</p>
+    /// This field is required.
     pub fn audit_logs(mut self, input: crate::types::KubernetesAuditLogsConfigurationResult) -> Self {
         self.audit_logs = ::std::option::Option::Some(input);
         self

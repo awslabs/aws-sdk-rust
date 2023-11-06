@@ -38,20 +38,26 @@ impl CreateContactInput {
         self.phone_number.as_deref()
     }
     /// <p>The list of phone numbers for the contact.</p>
-    pub fn phone_numbers(&self) -> ::std::option::Option<&[crate::types::PhoneNumber]> {
-        self.phone_numbers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phone_numbers.is_none()`.
+    pub fn phone_numbers(&self) -> &[crate::types::PhoneNumber] {
+        self.phone_numbers.as_deref().unwrap_or_default()
     }
     /// <p>The list of SIP addresses for the contact.</p>
-    pub fn sip_addresses(&self) -> ::std::option::Option<&[crate::types::SipAddress]> {
-        self.sip_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sip_addresses.is_none()`.
+    pub fn sip_addresses(&self) -> &[crate::types::SipAddress] {
+        self.sip_addresses.as_deref().unwrap_or_default()
     }
     /// <p>A unique, user-specified identifier for this request that ensures idempotency.</p>
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
     /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for CreateContactInput {
@@ -104,6 +110,7 @@ impl CreateContactInputBuilder {
         &self.display_name
     }
     /// <p>The first name of the contact that is used to call the contact on the device.</p>
+    /// This field is required.
     pub fn first_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.first_name = ::std::option::Option::Some(input.into());
         self
@@ -222,7 +229,7 @@ impl CreateContactInputBuilder {
     /// Consumes the builder and constructs a [`CreateContactInput`](crate::operation::create_contact::CreateContactInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_contact::CreateContactInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_contact::CreateContactInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_contact::CreateContactInput {
             display_name: self.display_name,
             first_name: self.first_name,

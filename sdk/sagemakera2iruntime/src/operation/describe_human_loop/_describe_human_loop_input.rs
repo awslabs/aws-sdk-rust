@@ -27,6 +27,7 @@ pub struct DescribeHumanLoopInputBuilder {
 }
 impl DescribeHumanLoopInputBuilder {
     /// <p>The name of the human loop that you want information about.</p>
+    /// This field is required.
     pub fn human_loop_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.human_loop_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeHumanLoopInputBuilder {
     /// Consumes the builder and constructs a [`DescribeHumanLoopInput`](crate::operation::describe_human_loop::DescribeHumanLoopInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_human_loop::DescribeHumanLoopInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_human_loop::DescribeHumanLoopInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_human_loop::DescribeHumanLoopInput {
             human_loop_name: self.human_loop_name,
         })

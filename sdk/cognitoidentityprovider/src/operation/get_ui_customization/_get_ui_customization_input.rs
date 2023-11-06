@@ -42,6 +42,7 @@ pub struct GetUiCustomizationInputBuilder {
 }
 impl GetUiCustomizationInputBuilder {
     /// <p>The user pool ID for the user pool.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -72,7 +73,8 @@ impl GetUiCustomizationInputBuilder {
     /// Consumes the builder and constructs a [`GetUiCustomizationInput`](crate::operation::get_ui_customization::GetUiCustomizationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_ui_customization::GetUiCustomizationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_ui_customization::GetUiCustomizationInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_ui_customization::GetUiCustomizationInput {
             user_pool_id: self.user_pool_id,
             client_id: self.client_id,

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteEnvironment`](crate::operation::delete_environment::builders::DeleteEnvironmentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_identifier(impl Into<String>)`](crate::operation::delete_environment::builders::DeleteEnvironmentFluentBuilder::domain_identifier) / [`set_domain_identifier(Option<String>)`](crate::operation::delete_environment::builders::DeleteEnvironmentFluentBuilder::set_domain_identifier): <p>The ID of the Amazon DataZone domain in which the environment is deleted.</p>
-    ///   - [`identifier(impl Into<String>)`](crate::operation::delete_environment::builders::DeleteEnvironmentFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::delete_environment::builders::DeleteEnvironmentFluentBuilder::set_identifier): <p>The identifier of the environment that is to be deleted.</p>
+    ///   - [`domain_identifier(impl Into<String>)`](crate::operation::delete_environment::builders::DeleteEnvironmentFluentBuilder::domain_identifier) / [`set_domain_identifier(Option<String>)`](crate::operation::delete_environment::builders::DeleteEnvironmentFluentBuilder::set_domain_identifier):<br>required: **true**<br><p>The ID of the Amazon DataZone domain in which the environment is deleted.</p><br>
+    ///   - [`identifier(impl Into<String>)`](crate::operation::delete_environment::builders::DeleteEnvironmentFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::delete_environment::builders::DeleteEnvironmentFluentBuilder::set_identifier):<br>required: **true**<br><p>The identifier of the environment that is to be deleted.</p><br>
     /// - On success, responds with [`DeleteEnvironmentOutput`](crate::operation::delete_environment::DeleteEnvironmentOutput)
     /// - On failure, responds with [`SdkError<DeleteEnvironmentError>`](crate::operation::delete_environment::DeleteEnvironmentError)
     pub fn delete_environment(&self) -> crate::operation::delete_environment::builders::DeleteEnvironmentFluentBuilder {

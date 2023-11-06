@@ -20,8 +20,10 @@ impl UpdateOpsMetadataInput {
         self.metadata_to_update.as_ref()
     }
     /// <p>The metadata keys to delete from the OpsMetadata object. </p>
-    pub fn keys_to_delete(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.keys_to_delete.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.keys_to_delete.is_none()`.
+    pub fn keys_to_delete(&self) -> &[::std::string::String] {
+        self.keys_to_delete.as_deref().unwrap_or_default()
     }
 }
 impl UpdateOpsMetadataInput {
@@ -41,6 +43,7 @@ pub struct UpdateOpsMetadataInputBuilder {
 }
 impl UpdateOpsMetadataInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the OpsMetadata Object to update.</p>
+    /// This field is required.
     pub fn ops_metadata_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ops_metadata_arn = ::std::option::Option::Some(input.into());
         self
@@ -100,7 +103,7 @@ impl UpdateOpsMetadataInputBuilder {
     /// Consumes the builder and constructs a [`UpdateOpsMetadataInput`](crate::operation::update_ops_metadata::UpdateOpsMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_ops_metadata::UpdateOpsMetadataInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_ops_metadata::UpdateOpsMetadataInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_ops_metadata::UpdateOpsMetadataInput {
             ops_metadata_arn: self.ops_metadata_arn,
             metadata_to_update: self.metadata_to_update,

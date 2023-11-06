@@ -27,6 +27,7 @@ pub struct GetComponentInputBuilder {
 }
 impl GetComponentInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the component that you want to get. Regex requires the suffix <code>/\d+$</code>.</p>
+    /// This field is required.
     pub fn component_build_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_build_version_arn = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,9 @@ impl GetComponentInputBuilder {
         &self.component_build_version_arn
     }
     /// Consumes the builder and constructs a [`GetComponentInput`](crate::operation::get_component::GetComponentInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_component::GetComponentInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_component::GetComponentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_component::GetComponentInput {
             component_build_version_arn: self.component_build_version_arn,
         })

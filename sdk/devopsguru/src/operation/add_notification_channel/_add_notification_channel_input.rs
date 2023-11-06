@@ -27,6 +27,7 @@ pub struct AddNotificationChannelInputBuilder {
 }
 impl AddNotificationChannelInputBuilder {
     /// <p> A <code>NotificationChannelConfig</code> object that specifies what type of notification channel to add. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS). </p>
+    /// This field is required.
     pub fn config(mut self, input: crate::types::NotificationChannelConfig) -> Self {
         self.config = ::std::option::Option::Some(input);
         self
@@ -43,8 +44,10 @@ impl AddNotificationChannelInputBuilder {
     /// Consumes the builder and constructs a [`AddNotificationChannelInput`](crate::operation::add_notification_channel::AddNotificationChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::add_notification_channel::AddNotificationChannelInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::add_notification_channel::AddNotificationChannelInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::add_notification_channel::AddNotificationChannelInput { config: self.config })
     }
 }

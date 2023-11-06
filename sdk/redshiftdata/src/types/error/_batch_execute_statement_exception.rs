@@ -5,30 +5,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchExecuteStatementException {
     #[allow(missing_docs)] // documentation missing in model
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
     /// <p>Statement identifier of the exception.</p>
-    pub statement_id: ::std::option::Option<::std::string::String>,
+    pub statement_id: ::std::string::String,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl BatchExecuteStatementException {
     /// <p>Statement identifier of the exception.</p>
-    pub fn statement_id(&self) -> ::std::option::Option<&str> {
-        self.statement_id.as_deref()
+    pub fn statement_id(&self) -> &str {
+        use std::ops::Deref;
+        self.statement_id.deref()
     }
 }
 impl BatchExecuteStatementException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        &self.message
     }
 }
 impl ::std::fmt::Display for BatchExecuteStatementException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "BatchExecuteStatementException")?;
-        if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
-                ::std::write!(f, ": {}", inner_1)?;
-            }
+        {
+            ::std::write!(f, ": {}", &self.message)?;
         }
         Ok(())
     }
@@ -62,6 +61,7 @@ pub struct BatchExecuteStatementExceptionBuilder {
 }
 impl BatchExecuteStatementExceptionBuilder {
     #[allow(missing_docs)] // documentation missing in model
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +76,7 @@ impl BatchExecuteStatementExceptionBuilder {
         &self.message
     }
     /// <p>Statement identifier of the exception.</p>
+    /// This field is required.
     pub fn statement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.statement_id = ::std::option::Option::Some(input.into());
         self
@@ -101,11 +102,26 @@ impl BatchExecuteStatementExceptionBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchExecuteStatementException`](crate::types::error::BatchExecuteStatementException).
-    pub fn build(self) -> crate::types::error::BatchExecuteStatementException {
-        crate::types::error::BatchExecuteStatementException {
-            message: self.message,
-            statement_id: self.statement_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`message`](crate::types::error::builders::BatchExecuteStatementExceptionBuilder::message)
+    /// - [`statement_id`](crate::types::error::builders::BatchExecuteStatementExceptionBuilder::statement_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::error::BatchExecuteStatementException, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::error::BatchExecuteStatementException {
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building BatchExecuteStatementException",
+                )
+            })?,
+            statement_id: self.statement_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "statement_id",
+                    "statement_id was not specified but it is required when building BatchExecuteStatementException",
+                )
+            })?,
             meta: self.meta.unwrap_or_default(),
-        }
+        })
     }
 }

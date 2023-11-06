@@ -20,16 +20,20 @@ impl CreateTokenInput {
         self.license_arn.as_deref()
     }
     /// <p>Amazon Resource Name (ARN) of the IAM roles to embed in the token. License Manager does not check whether the roles are in use.</p>
-    pub fn role_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.role_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.role_arns.is_none()`.
+    pub fn role_arns(&self) -> &[::std::string::String] {
+        self.role_arns.as_deref().unwrap_or_default()
     }
     /// <p>Token expiration, in days, counted from token creation. The default is 365 days.</p>
     pub fn expiration_in_days(&self) -> ::std::option::Option<i32> {
         self.expiration_in_days
     }
     /// <p>Data specified by the caller to be included in the JWT token. The data is mapped to the amr claim of the JWT token.</p>
-    pub fn token_properties(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.token_properties.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.token_properties.is_none()`.
+    pub fn token_properties(&self) -> &[::std::string::String] {
+        self.token_properties.as_deref().unwrap_or_default()
     }
     /// <p>Idempotency token, valid for 10 minutes.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -55,6 +59,7 @@ pub struct CreateTokenInputBuilder {
 }
 impl CreateTokenInputBuilder {
     /// <p>Amazon Resource Name (ARN) of the license. The ARN is mapped to the aud claim of the JWT token.</p>
+    /// This field is required.
     pub fn license_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_arn = ::std::option::Option::Some(input.into());
         self
@@ -123,6 +128,7 @@ impl CreateTokenInputBuilder {
         &self.token_properties
     }
     /// <p>Idempotency token, valid for 10 minutes.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -137,7 +143,7 @@ impl CreateTokenInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateTokenInput`](crate::operation::create_token::CreateTokenInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_token::CreateTokenInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_token::CreateTokenInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_token::CreateTokenInput {
             license_arn: self.license_arn,
             role_arns: self.role_arns,

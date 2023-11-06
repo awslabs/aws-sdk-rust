@@ -34,6 +34,7 @@ pub struct RevokeDomainAccessInputBuilder {
 }
 impl RevokeDomainAccessInputBuilder {
     /// <p>The ARN of the fleet.</p>
+    /// This field is required.
     pub fn fleet_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl RevokeDomainAccessInputBuilder {
         &self.fleet_arn
     }
     /// <p>The name of the domain.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,8 @@ impl RevokeDomainAccessInputBuilder {
     /// Consumes the builder and constructs a [`RevokeDomainAccessInput`](crate::operation::revoke_domain_access::RevokeDomainAccessInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::revoke_domain_access::RevokeDomainAccessInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::revoke_domain_access::RevokeDomainAccessInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::revoke_domain_access::RevokeDomainAccessInput {
             fleet_arn: self.fleet_arn,
             domain_name: self.domain_name,

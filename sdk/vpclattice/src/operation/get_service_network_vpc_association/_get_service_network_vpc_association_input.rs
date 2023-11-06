@@ -27,6 +27,7 @@ pub struct GetServiceNetworkVpcAssociationInputBuilder {
 }
 impl GetServiceNetworkVpcAssociationInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
+    /// This field is required.
     pub fn service_network_vpc_association_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_network_vpc_association_identifier = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetServiceNetworkVpcAssociationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationInput {

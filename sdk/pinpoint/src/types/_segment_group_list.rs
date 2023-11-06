@@ -11,8 +11,10 @@ pub struct SegmentGroupList {
 }
 impl SegmentGroupList {
     /// <p>An array that defines the set of segment criteria to evaluate when handling segment groups for the segment.</p>
-    pub fn groups(&self) -> ::std::option::Option<&[crate::types::SegmentGroup]> {
-        self.groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
+    pub fn groups(&self) -> &[crate::types::SegmentGroup] {
+        self.groups.as_deref().unwrap_or_default()
     }
     /// <p>Specifies how to handle multiple segment groups for the segment. For example, if the segment includes three segment groups, whether the resulting segment includes endpoints that match all, any, or none of the segment groups.</p>
     pub fn include(&self) -> ::std::option::Option<&crate::types::Include> {

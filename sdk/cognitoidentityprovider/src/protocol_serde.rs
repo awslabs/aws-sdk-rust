@@ -655,7 +655,7 @@ pub(crate) mod shape_attribute_mapping_type;
 
 pub(crate) mod shape_auth_event_type;
 
-pub(crate) mod shape_callback_ur_ls_list_type;
+pub(crate) mod shape_callback_urls_list_type;
 
 pub(crate) mod shape_client_permission_list_type;
 
@@ -675,7 +675,7 @@ pub(crate) mod shape_idp_identifiers_list_type;
 
 pub(crate) mod shape_log_configuration_list_type;
 
-pub(crate) mod shape_logout_ur_ls_list_type;
+pub(crate) mod shape_logout_urls_list_type;
 
 pub(crate) mod shape_message_template_type;
 

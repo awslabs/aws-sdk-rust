@@ -1,8 +1,9 @@
 allowed_external_types = [
-    "aws_credential_types::*",
-    "aws_smithy_http::*",
-    "aws_smithy_types::*",
-    "aws_types::*",
+    "aws_smithy_types::body::Error",
+    "aws_smithy_types::config_bag::storable::Storable",
+    "aws_smithy_types::config_bag::storable::StoreReplace",
+    "aws_types::app_name::AppName",
+    "aws_types::os_shim_internal::Env",
     "bytes::bytes::Bytes",
     "http_body::Body",
 ]

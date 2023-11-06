@@ -35,6 +35,7 @@ pub struct CreateVpcAssociationAuthorizationInputBuilder {
 }
 impl CreateVpcAssociationAuthorizationInputBuilder {
     /// <p>The ID of the private hosted zone that you want to authorize associating a VPC with.</p>
+    /// This field is required.
     pub fn hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hosted_zone_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl CreateVpcAssociationAuthorizationInputBuilder {
         &self.hosted_zone_id
     }
     /// <p>A complex type that contains the VPC ID and region for the VPC that you want to authorize associating with your hosted zone.</p>
+    /// This field is required.
     pub fn vpc(mut self, input: crate::types::Vpc) -> Self {
         self.vpc = ::std::option::Option::Some(input);
         self
@@ -67,7 +69,7 @@ impl CreateVpcAssociationAuthorizationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_vpc_association_authorization::CreateVpcAssociationAuthorizationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_vpc_association_authorization::CreateVpcAssociationAuthorizationInput {

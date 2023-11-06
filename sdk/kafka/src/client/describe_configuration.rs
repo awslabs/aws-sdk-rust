@@ -3,12 +3,12 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeConfiguration`](crate::operation::describe_configuration::builders::DescribeConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::describe_configuration::builders::DescribeConfigurationFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::describe_configuration::builders::DescribeConfigurationFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.</p>
+    ///   - [`arn(impl Into<String>)`](crate::operation::describe_configuration::builders::DescribeConfigurationFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::describe_configuration::builders::DescribeConfigurationFluentBuilder::set_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.</p><br>
     /// - On success, responds with [`DescribeConfigurationOutput`](crate::operation::describe_configuration::DescribeConfigurationOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::describe_configuration::DescribeConfigurationOutput::arn): <p>The Amazon Resource Name (ARN) of the configuration.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_configuration::DescribeConfigurationOutput::creation_time): <p>The time when the configuration was created.</p>
     ///   - [`description(Option<String>)`](crate::operation::describe_configuration::DescribeConfigurationOutput::description): <p>The description of the configuration.</p>
-    ///   - [`kafka_versions(Option<Vec<String>>)`](crate::operation::describe_configuration::DescribeConfigurationOutput::kafka_versions): <p>The versions of Apache Kafka with which you can use this MSK configuration.</p>
+    ///   - [`kafka_versions(Option<Vec::<String>>)`](crate::operation::describe_configuration::DescribeConfigurationOutput::kafka_versions): <p>The versions of Apache Kafka with which you can use this MSK configuration.</p>
     ///   - [`latest_revision(Option<ConfigurationRevision>)`](crate::operation::describe_configuration::DescribeConfigurationOutput::latest_revision): <p>Latest revision of the configuration.</p>
     ///   - [`name(Option<String>)`](crate::operation::describe_configuration::DescribeConfigurationOutput::name): <p>The name of the configuration.</p>
     ///   - [`state(Option<ConfigurationState>)`](crate::operation::describe_configuration::DescribeConfigurationOutput::state): <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>

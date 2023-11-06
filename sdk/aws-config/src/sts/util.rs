@@ -17,24 +17,15 @@ pub(crate) fn into_credentials(
 ) -> provider::Result {
     let sts_credentials = sts_credentials
         .ok_or_else(|| CredentialsError::unhandled("STS credentials must be defined"))?;
-    let expiration = SystemTime::try_from(
-        sts_credentials
-            .expiration
-            .ok_or_else(|| CredentialsError::unhandled("missing expiration"))?,
-    )
-    .map_err(|_| {
+    let expiration = SystemTime::try_from(sts_credentials.expiration).map_err(|_| {
         CredentialsError::unhandled(
             "credential expiration time cannot be represented by a SystemTime",
         )
     })?;
     Ok(AwsCredentials::new(
-        sts_credentials
-            .access_key_id
-            .ok_or_else(|| CredentialsError::unhandled("access key id missing from result"))?,
-        sts_credentials
-            .secret_access_key
-            .ok_or_else(|| CredentialsError::unhandled("secret access token missing"))?,
-        sts_credentials.session_token,
+        sts_credentials.access_key_id,
+        sts_credentials.secret_access_key,
+        Some(sts_credentials.session_token),
         Some(expiration),
         provider_name,
     ))

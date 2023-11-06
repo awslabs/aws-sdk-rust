@@ -42,6 +42,7 @@ pub struct CreatePolicyVersionInputBuilder {
 }
 impl CreatePolicyVersionInputBuilder {
     /// <p>The policy name.</p>
+    /// This field is required.
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl CreatePolicyVersionInputBuilder {
         &self.policy_name
     }
     /// <p>The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048, excluding whitespace.</p>
+    /// This field is required.
     pub fn policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_document = ::std::option::Option::Some(input.into());
         self
@@ -86,7 +88,7 @@ impl CreatePolicyVersionInputBuilder {
     /// Consumes the builder and constructs a [`CreatePolicyVersionInput`](crate::operation::create_policy_version::CreatePolicyVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_policy_version::CreatePolicyVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_policy_version::CreatePolicyVersionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_policy_version::CreatePolicyVersionInput {
             policy_name: self.policy_name,

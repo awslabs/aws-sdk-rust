@@ -41,6 +41,7 @@ pub struct UpdateNetworkSiteInputBuilder {
 }
 impl UpdateNetworkSiteInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
+    /// This field is required.
     pub fn network_site_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_site_arn = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl UpdateNetworkSiteInputBuilder {
     /// Consumes the builder and constructs a [`UpdateNetworkSiteInput`](crate::operation::update_network_site::UpdateNetworkSiteInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_network_site::UpdateNetworkSiteInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_network_site::UpdateNetworkSiteInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_network_site::UpdateNetworkSiteInput {
             network_site_arn: self.network_site_arn,
             client_token: self.client_token,

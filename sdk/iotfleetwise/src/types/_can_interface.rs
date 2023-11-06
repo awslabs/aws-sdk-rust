@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CanInterface {
     /// <p>The unique name of the interface.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The name of the communication protocol for the interface.</p>
     pub protocol_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the communication protocol for the interface.</p>
@@ -13,8 +13,9 @@ pub struct CanInterface {
 }
 impl CanInterface {
     /// <p>The unique name of the interface.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The name of the communication protocol for the interface.</p>
     pub fn protocol_name(&self) -> ::std::option::Option<&str> {
@@ -42,6 +43,7 @@ pub struct CanInterfaceBuilder {
 }
 impl CanInterfaceBuilder {
     /// <p>The unique name of the interface.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +86,18 @@ impl CanInterfaceBuilder {
         &self.protocol_version
     }
     /// Consumes the builder and constructs a [`CanInterface`](crate::types::CanInterface).
-    pub fn build(self) -> crate::types::CanInterface {
-        crate::types::CanInterface {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::CanInterfaceBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::CanInterface, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CanInterface {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CanInterface",
+                )
+            })?,
             protocol_name: self.protocol_name,
             protocol_version: self.protocol_version,
-        }
+        })
     }
 }

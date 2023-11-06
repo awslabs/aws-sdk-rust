@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AmazonopensearchserviceDestinationConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon OpenSearch Service Configuration API and for indexing documents.</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
     /// <p>The ARN of the Amazon OpenSearch Service domain. The IAM role must have permissions for DescribeElasticsearchDomain, DescribeElasticsearchDomains, and DescribeElasticsearchDomainConfig after assuming the role specified in RoleARN. </p>
     pub domain_arn: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint to use when communicating with the cluster. Specify either this ClusterEndpoint or the DomainARN field. </p>
     pub cluster_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The ElasticsearAmazon OpenSearch Service index name.</p>
-    pub index_name: ::std::option::Option<::std::string::String>,
+    pub index_name: ::std::string::String,
     /// <p>The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be only one type per index. If you try to specify a new type for an existing index that already has another type, Kinesis Data Firehose returns an error during run time. </p>
     pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon OpenSearch Service index rotation period. Index rotation appends a timestamp to the IndexName to facilitate the expiration of old data.</p>
@@ -35,8 +35,9 @@ pub struct AmazonopensearchserviceDestinationConfiguration {
 }
 impl AmazonopensearchserviceDestinationConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon OpenSearch Service Configuration API and for indexing documents.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
     /// <p>The ARN of the Amazon OpenSearch Service domain. The IAM role must have permissions for DescribeElasticsearchDomain, DescribeElasticsearchDomains, and DescribeElasticsearchDomainConfig after assuming the role specified in RoleARN. </p>
     pub fn domain_arn(&self) -> ::std::option::Option<&str> {
@@ -47,8 +48,9 @@ impl AmazonopensearchserviceDestinationConfiguration {
         self.cluster_endpoint.as_deref()
     }
     /// <p>The ElasticsearAmazon OpenSearch Service index name.</p>
-    pub fn index_name(&self) -> ::std::option::Option<&str> {
-        self.index_name.as_deref()
+    pub fn index_name(&self) -> &str {
+        use std::ops::Deref;
+        self.index_name.deref()
     }
     /// <p>The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be only one type per index. If you try to specify a new type for an existing index that already has another type, Kinesis Data Firehose returns an error during run time. </p>
     pub fn type_name(&self) -> ::std::option::Option<&str> {
@@ -119,6 +121,7 @@ pub struct AmazonopensearchserviceDestinationConfigurationBuilder {
 }
 impl AmazonopensearchserviceDestinationConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon OpenSearch Service Configuration API and for indexing documents.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -161,6 +164,7 @@ impl AmazonopensearchserviceDestinationConfigurationBuilder {
         &self.cluster_endpoint
     }
     /// <p>The ElasticsearAmazon OpenSearch Service index name.</p>
+    /// This field is required.
     pub fn index_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_name = ::std::option::Option::Some(input.into());
         self
@@ -245,6 +249,7 @@ impl AmazonopensearchserviceDestinationConfigurationBuilder {
         &self.s3_backup_mode
     }
     /// <p>Describes the configuration of a destination in Amazon S3.</p>
+    /// This field is required.
     pub fn s3_configuration(mut self, input: crate::types::S3DestinationConfiguration) -> Self {
         self.s3_configuration = ::std::option::Option::Some(input);
         self
@@ -315,12 +320,27 @@ impl AmazonopensearchserviceDestinationConfigurationBuilder {
         &self.document_id_options
     }
     /// Consumes the builder and constructs a [`AmazonopensearchserviceDestinationConfiguration`](crate::types::AmazonopensearchserviceDestinationConfiguration).
-    pub fn build(self) -> crate::types::AmazonopensearchserviceDestinationConfiguration {
-        crate::types::AmazonopensearchserviceDestinationConfiguration {
-            role_arn: self.role_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`role_arn`](crate::types::builders::AmazonopensearchserviceDestinationConfigurationBuilder::role_arn)
+    /// - [`index_name`](crate::types::builders::AmazonopensearchserviceDestinationConfigurationBuilder::index_name)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::AmazonopensearchserviceDestinationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AmazonopensearchserviceDestinationConfiguration {
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building AmazonopensearchserviceDestinationConfiguration",
+                )
+            })?,
             domain_arn: self.domain_arn,
             cluster_endpoint: self.cluster_endpoint,
-            index_name: self.index_name,
+            index_name: self.index_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "index_name",
+                    "index_name was not specified but it is required when building AmazonopensearchserviceDestinationConfiguration",
+                )
+            })?,
             type_name: self.type_name,
             index_rotation_period: self.index_rotation_period,
             buffering_hints: self.buffering_hints,
@@ -331,6 +351,6 @@ impl AmazonopensearchserviceDestinationConfigurationBuilder {
             cloud_watch_logging_options: self.cloud_watch_logging_options,
             vpc_configuration: self.vpc_configuration,
             document_id_options: self.document_id_options,
-        }
+        })
     }
 }

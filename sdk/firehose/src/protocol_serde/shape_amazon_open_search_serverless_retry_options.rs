@@ -2,7 +2,7 @@
 pub fn ser_amazon_open_search_serverless_retry_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AmazonOpenSearchServerlessRetryOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.duration_in_seconds {
         object.key("DurationInSeconds").number(
             #[allow(clippy::useless_conversion)]

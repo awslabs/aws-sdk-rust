@@ -2,7 +2,7 @@
 pub fn ser_image_classification_job_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ImageClassificationJobConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.completion_criteria {
         #[allow(unused_mut)]
         let mut object_2 = object.key("CompletionCriteria").start_object();

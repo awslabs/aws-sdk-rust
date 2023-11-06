@@ -27,6 +27,7 @@ pub struct GetCustomDataIdentifierInputBuilder {
 }
 impl GetCustomDataIdentifierInputBuilder {
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetCustomDataIdentifierInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_custom_data_identifier::GetCustomDataIdentifierInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_custom_data_identifier::GetCustomDataIdentifierInput { id: self.id })
     }

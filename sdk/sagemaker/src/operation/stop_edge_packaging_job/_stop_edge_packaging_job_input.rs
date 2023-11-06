@@ -27,6 +27,7 @@ pub struct StopEdgePackagingJobInputBuilder {
 }
 impl StopEdgePackagingJobInputBuilder {
     /// <p>The name of the edge packaging job.</p>
+    /// This field is required.
     pub fn edge_packaging_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_packaging_job_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl StopEdgePackagingJobInputBuilder {
     /// Consumes the builder and constructs a [`StopEdgePackagingJobInput`](crate::operation::stop_edge_packaging_job::StopEdgePackagingJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_edge_packaging_job::StopEdgePackagingJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::stop_edge_packaging_job::StopEdgePackagingJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::stop_edge_packaging_job::StopEdgePackagingJobInput {
             edge_packaging_job_name: self.edge_packaging_job_name,

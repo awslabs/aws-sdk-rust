@@ -34,6 +34,7 @@ pub struct DeleteStudioOutputBuilder {
 }
 impl DeleteStudioOutputBuilder {
     /// <p>Information about a studio.</p>
+    /// This field is required.
     pub fn studio(mut self, input: crate::types::Studio) -> Self {
         self.studio = ::std::option::Option::Some(input);
         self

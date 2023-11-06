@@ -15,8 +15,10 @@ impl ResultSetMetadata {
         self.column_count
     }
     /// <p>The metadata of the columns in the result set.</p>
-    pub fn column_metadata(&self) -> ::std::option::Option<&[crate::types::ColumnMetadata]> {
-        self.column_metadata.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.column_metadata.is_none()`.
+    pub fn column_metadata(&self) -> &[crate::types::ColumnMetadata] {
+        self.column_metadata.as_deref().unwrap_or_default()
     }
 }
 impl ResultSetMetadata {

@@ -319,6 +319,7 @@ impl CreateRouteInputBuilder {
         &self.network_interface_id
     }
     /// <p>The ID of the route table for the route.</p>
+    /// This field is required.
     pub fn route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_table_id = ::std::option::Option::Some(input.into());
         self
@@ -361,7 +362,7 @@ impl CreateRouteInputBuilder {
         &self.core_network_arn
     }
     /// Consumes the builder and constructs a [`CreateRouteInput`](crate::operation::create_route::CreateRouteInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_route::CreateRouteInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_route::CreateRouteInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_route::CreateRouteInput {
             destination_cidr_block: self.destination_cidr_block,
             destination_ipv6_cidr_block: self.destination_ipv6_cidr_block,

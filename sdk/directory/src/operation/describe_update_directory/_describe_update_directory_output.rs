@@ -11,8 +11,10 @@ pub struct DescribeUpdateDirectoryOutput {
 }
 impl DescribeUpdateDirectoryOutput {
     /// <p> The list of update activities on a directory for the requested update type. </p>
-    pub fn update_activities(&self) -> ::std::option::Option<&[crate::types::UpdateInfoEntry]> {
-        self.update_activities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.update_activities.is_none()`.
+    pub fn update_activities(&self) -> &[crate::types::UpdateInfoEntry] {
+        self.update_activities.as_deref().unwrap_or_default()
     }
     /// <p> If not null, more results are available. Pass this value for the <code>NextToken</code> parameter. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

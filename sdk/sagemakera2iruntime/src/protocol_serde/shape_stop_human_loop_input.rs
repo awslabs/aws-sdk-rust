@@ -2,7 +2,7 @@
 pub fn ser_stop_human_loop_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::stop_human_loop::StopHumanLoopInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.human_loop_name {
         object.key("HumanLoopName").string(var_1.as_str());
     }

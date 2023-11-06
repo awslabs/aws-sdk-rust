@@ -55,6 +55,7 @@ pub struct UpdateGroupInputBuilder {
 }
 impl UpdateGroupInputBuilder {
     /// <p>The name of the group.</p>
+    /// This field is required.
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl UpdateGroupInputBuilder {
         &self.group_name
     }
     /// <p>The user pool ID for the user pool.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -125,7 +127,7 @@ impl UpdateGroupInputBuilder {
         &self.precedence
     }
     /// Consumes the builder and constructs a [`UpdateGroupInput`](crate::operation::update_group::UpdateGroupInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_group::UpdateGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_group::UpdateGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_group::UpdateGroupInput {
             group_name: self.group_name,
             user_pool_id: self.user_pool_id,

@@ -63,6 +63,7 @@ impl ProductionVariantStatusBuilder {
     /// <li> <p> <code>ActivatingTraffic</code>: Turning on traffic for the production variant.</p> </li>
     /// <li> <p> <code>Baking</code>: Waiting period to monitor the CloudWatch alarms in the automatic rollback configuration.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::VariantStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self

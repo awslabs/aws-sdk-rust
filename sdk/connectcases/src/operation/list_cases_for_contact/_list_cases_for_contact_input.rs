@@ -48,6 +48,7 @@ pub struct ListCasesForContactInputBuilder {
 }
 impl ListCasesForContactInputBuilder {
     /// <p>The unique identifier of the Cases domain. </p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl ListCasesForContactInputBuilder {
         &self.domain_id
     }
     /// <p>A unique identifier of a contact in Amazon Connect.</p>
+    /// This field is required.
     pub fn contact_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_arn = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +108,7 @@ impl ListCasesForContactInputBuilder {
     /// Consumes the builder and constructs a [`ListCasesForContactInput`](crate::operation::list_cases_for_contact::ListCasesForContactInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_cases_for_contact::ListCasesForContactInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_cases_for_contact::ListCasesForContactInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_cases_for_contact::ListCasesForContactInput {
             domain_id: self.domain_id,

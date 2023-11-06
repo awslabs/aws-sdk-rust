@@ -2,7 +2,7 @@
 pub fn ser_data_label_type(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataLabelType,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.field_label_type {
         #[allow(unused_mut)]
         let mut object_2 = object.key("FieldLabelType").start_object();

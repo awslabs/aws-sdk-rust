@@ -62,7 +62,7 @@ impl ListBrokersInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListBrokersInput`](crate::operation::list_brokers::ListBrokersInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_brokers::ListBrokersInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_brokers::ListBrokersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_brokers::ListBrokersInput {
             max_results: self.max_results,
             next_token: self.next_token,

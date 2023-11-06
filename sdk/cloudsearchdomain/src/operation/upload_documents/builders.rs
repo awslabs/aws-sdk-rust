@@ -10,7 +10,7 @@ impl UploadDocumentsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::upload_documents::UploadDocumentsOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::upload_documents::UploadDocumentsError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -74,12 +74,15 @@ impl UploadDocumentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::upload_documents::UploadDocumentsOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::upload_documents::UploadDocumentsError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::upload_documents::UploadDocuments::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -88,20 +91,15 @@ impl UploadDocumentsFluentBuilder {
         crate::operation::upload_documents::UploadDocuments::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::upload_documents::UploadDocumentsOutput,
-            crate::operation::upload_documents::UploadDocumentsError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::upload_documents::UploadDocumentsError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::upload_documents::UploadDocumentsOutput,
+        crate::operation::upload_documents::UploadDocumentsError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -113,17 +111,17 @@ impl UploadDocumentsFluentBuilder {
         self
     }
     /// <p>A batch of documents formatted in JSON or HTML.</p>
-    pub fn documents(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
+    pub fn documents(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.inner = self.inner.documents(input);
         self
     }
     /// <p>A batch of documents formatted in JSON or HTML.</p>
-    pub fn set_documents(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
+    pub fn set_documents(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.inner = self.inner.set_documents(input);
         self
     }
     /// <p>A batch of documents formatted in JSON or HTML.</p>
-    pub fn get_documents(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_documents(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         self.inner.get_documents()
     }
     /// <p>The format of the batch you are uploading. Amazon CloudSearch supports two document batch formats:</p>

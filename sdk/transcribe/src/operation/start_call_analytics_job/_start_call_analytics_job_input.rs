@@ -96,8 +96,10 @@ impl StartCallAnalyticsJobInput {
         self.settings.as_ref()
     }
     /// <p>Makes it possible to specify which speaker is on which channel. For example, if your agent is the first participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).</p>
-    pub fn channel_definitions(&self) -> ::std::option::Option<&[crate::types::ChannelDefinition]> {
-        self.channel_definitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.channel_definitions.is_none()`.
+    pub fn channel_definitions(&self) -> &[crate::types::ChannelDefinition] {
+        self.channel_definitions.as_deref().unwrap_or_default()
     }
 }
 impl StartCallAnalyticsJobInput {
@@ -122,6 +124,7 @@ pub struct StartCallAnalyticsJobInputBuilder {
 impl StartCallAnalyticsJobInputBuilder {
     /// <p>A unique name, chosen by you, for your Call Analytics job.</p>
     /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a new job with the same name as an existing job, you get a <code>ConflictException</code> error.</p>
+    /// This field is required.
     pub fn call_analytics_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.call_analytics_job_name = ::std::option::Option::Some(input.into());
         self
@@ -138,6 +141,7 @@ impl StartCallAnalyticsJobInputBuilder {
         &self.call_analytics_job_name
     }
     /// <p>Describes the Amazon S3 location of the media file you want to use in your Call Analytics request.</p>
+    /// This field is required.
     pub fn media(mut self, input: crate::types::Media) -> Self {
         self.media = ::std::option::Option::Some(input);
         self
@@ -305,7 +309,7 @@ impl StartCallAnalyticsJobInputBuilder {
     /// Consumes the builder and constructs a [`StartCallAnalyticsJobInput`](crate::operation::start_call_analytics_job::StartCallAnalyticsJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_call_analytics_job::StartCallAnalyticsJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_call_analytics_job::StartCallAnalyticsJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_call_analytics_job::StartCallAnalyticsJobInput {
             call_analytics_job_name: self.call_analytics_job_name,

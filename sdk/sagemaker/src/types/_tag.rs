@@ -37,6 +37,7 @@ pub struct TagBuilder {
 }
 impl TagBuilder {
     /// <p>The tag key. Tag keys must be unique per resource.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -51,6 +52,7 @@ impl TagBuilder {
         &self.key
     }
     /// <p>The tag value.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self

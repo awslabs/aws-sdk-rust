@@ -12,8 +12,10 @@ pub struct ListResourceComplianceSummariesInput {
 }
 impl ListResourceComplianceSummariesInput {
     /// <p>One or more filters. Use a filter to return a more specific list of results.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::ComplianceStringFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::ComplianceStringFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -93,7 +95,7 @@ impl ListResourceComplianceSummariesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resource_compliance_summaries::ListResourceComplianceSummariesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_resource_compliance_summaries::ListResourceComplianceSummariesInput {

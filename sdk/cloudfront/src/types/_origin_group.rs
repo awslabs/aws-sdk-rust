@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OriginGroup {
     /// <p>The origin group's ID.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>A complex type that contains information about the failover criteria for an origin group.</p>
     pub failover_criteria: ::std::option::Option<crate::types::OriginGroupFailoverCriteria>,
     /// <p>A complex type that contains information about the origins in an origin group.</p>
@@ -13,8 +13,9 @@ pub struct OriginGroup {
 }
 impl OriginGroup {
     /// <p>The origin group's ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>A complex type that contains information about the failover criteria for an origin group.</p>
     pub fn failover_criteria(&self) -> ::std::option::Option<&crate::types::OriginGroupFailoverCriteria> {
@@ -42,6 +43,7 @@ pub struct OriginGroupBuilder {
 }
 impl OriginGroupBuilder {
     /// <p>The origin group's ID.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +58,7 @@ impl OriginGroupBuilder {
         &self.id
     }
     /// <p>A complex type that contains information about the failover criteria for an origin group.</p>
+    /// This field is required.
     pub fn failover_criteria(mut self, input: crate::types::OriginGroupFailoverCriteria) -> Self {
         self.failover_criteria = ::std::option::Option::Some(input);
         self
@@ -70,6 +73,7 @@ impl OriginGroupBuilder {
         &self.failover_criteria
     }
     /// <p>A complex type that contains information about the origins in an origin group.</p>
+    /// This field is required.
     pub fn members(mut self, input: crate::types::OriginGroupMembers) -> Self {
         self.members = ::std::option::Option::Some(input);
         self
@@ -84,11 +88,18 @@ impl OriginGroupBuilder {
         &self.members
     }
     /// Consumes the builder and constructs a [`OriginGroup`](crate::types::OriginGroup).
-    pub fn build(self) -> crate::types::OriginGroup {
-        crate::types::OriginGroup {
-            id: self.id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::OriginGroupBuilder::id)
+    pub fn build(self) -> ::std::result::Result<crate::types::OriginGroup, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::OriginGroup {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building OriginGroup",
+                )
+            })?,
             failover_criteria: self.failover_criteria,
             members: self.members,
-        }
+        })
     }
 }

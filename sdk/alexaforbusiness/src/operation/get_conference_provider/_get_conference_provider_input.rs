@@ -27,6 +27,7 @@ pub struct GetConferenceProviderInputBuilder {
 }
 impl GetConferenceProviderInputBuilder {
     /// <p>The ARN of the newly created conference provider.</p>
+    /// This field is required.
     pub fn conference_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.conference_provider_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetConferenceProviderInputBuilder {
     /// Consumes the builder and constructs a [`GetConferenceProviderInput`](crate::operation::get_conference_provider::GetConferenceProviderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_conference_provider::GetConferenceProviderInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_conference_provider::GetConferenceProviderInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_conference_provider::GetConferenceProviderInput {
             conference_provider_arn: self.conference_provider_arn,

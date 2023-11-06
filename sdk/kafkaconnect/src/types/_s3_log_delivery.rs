@@ -56,6 +56,7 @@ impl S3LogDeliveryBuilder {
         &self.bucket
     }
     /// <p>Specifies whether connector logs get sent to the specified Amazon S3 destination.</p>
+    /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self

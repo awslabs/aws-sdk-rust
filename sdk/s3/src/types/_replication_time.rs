@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicationTime {
     /// <p> Specifies whether the replication time is enabled. </p>
-    pub status: ::std::option::Option<crate::types::ReplicationTimeStatus>,
+    pub status: crate::types::ReplicationTimeStatus,
     /// <p> A container specifying the time by which replication should be complete for all objects and operations on objects. </p>
     pub time: ::std::option::Option<crate::types::ReplicationTimeValue>,
 }
 impl ReplicationTime {
     /// <p> Specifies whether the replication time is enabled. </p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ReplicationTimeStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::ReplicationTimeStatus {
+        &self.status
     }
     /// <p> A container specifying the time by which replication should be complete for all objects and operations on objects. </p>
     pub fn time(&self) -> ::std::option::Option<&crate::types::ReplicationTimeValue> {
@@ -35,6 +35,7 @@ pub struct ReplicationTimeBuilder {
 }
 impl ReplicationTimeBuilder {
     /// <p> Specifies whether the replication time is enabled. </p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::ReplicationTimeStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl ReplicationTimeBuilder {
         &self.status
     }
     /// <p> A container specifying the time by which replication should be complete for all objects and operations on objects. </p>
+    /// This field is required.
     pub fn time(mut self, input: crate::types::ReplicationTimeValue) -> Self {
         self.time = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,17 @@ impl ReplicationTimeBuilder {
         &self.time
     }
     /// Consumes the builder and constructs a [`ReplicationTime`](crate::types::ReplicationTime).
-    pub fn build(self) -> crate::types::ReplicationTime {
-        crate::types::ReplicationTime {
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::types::builders::ReplicationTimeBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::ReplicationTime, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ReplicationTime {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building ReplicationTime",
+                )
+            })?,
             time: self.time,
-        }
+        })
     }
 }

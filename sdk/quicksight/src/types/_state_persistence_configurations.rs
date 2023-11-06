@@ -28,6 +28,7 @@ pub struct StatePersistenceConfigurationsBuilder {
 }
 impl StatePersistenceConfigurationsBuilder {
     /// <p>Determines if a Amazon QuickSight dashboard's state persistence settings are turned on or off.</p>
+    /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self

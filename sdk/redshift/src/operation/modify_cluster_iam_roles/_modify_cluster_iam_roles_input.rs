@@ -19,12 +19,16 @@ impl ModifyClusterIamRolesInput {
         self.cluster_identifier.as_deref()
     }
     /// <p>Zero or more IAM roles to associate with the cluster. The roles must be in their Amazon Resource Name (ARN) format. </p>
-    pub fn add_iam_roles(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.add_iam_roles.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_iam_roles.is_none()`.
+    pub fn add_iam_roles(&self) -> &[::std::string::String] {
+        self.add_iam_roles.as_deref().unwrap_or_default()
     }
     /// <p>Zero or more IAM roles in ARN format to disassociate from the cluster. </p>
-    pub fn remove_iam_roles(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.remove_iam_roles.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove_iam_roles.is_none()`.
+    pub fn remove_iam_roles(&self) -> &[::std::string::String] {
+        self.remove_iam_roles.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last modified.</p>
     pub fn default_iam_role_arn(&self) -> ::std::option::Option<&str> {
@@ -49,6 +53,7 @@ pub struct ModifyClusterIamRolesInputBuilder {
 }
 impl ModifyClusterIamRolesInputBuilder {
     /// <p>The unique identifier of the cluster for which you want to associate or disassociate IAM roles.</p>
+    /// This field is required.
     pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
@@ -119,7 +124,7 @@ impl ModifyClusterIamRolesInputBuilder {
     /// Consumes the builder and constructs a [`ModifyClusterIamRolesInput`](crate::operation::modify_cluster_iam_roles::ModifyClusterIamRolesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_cluster_iam_roles::ModifyClusterIamRolesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::modify_cluster_iam_roles::ModifyClusterIamRolesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::modify_cluster_iam_roles::ModifyClusterIamRolesInput {
             cluster_identifier: self.cluster_identifier,

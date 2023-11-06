@@ -21,8 +21,10 @@ impl SuggestModel {
         self.found
     }
     /// <p>The documents that match the query string.</p>
-    pub fn suggestions(&self) -> ::std::option::Option<&[crate::types::SuggestionMatch]> {
-        self.suggestions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.suggestions.is_none()`.
+    pub fn suggestions(&self) -> &[crate::types::SuggestionMatch] {
+        self.suggestions.as_deref().unwrap_or_default()
     }
 }
 impl SuggestModel {

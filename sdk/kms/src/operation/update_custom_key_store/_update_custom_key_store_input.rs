@@ -140,6 +140,7 @@ pub struct UpdateCustomKeyStoreInputBuilder {
 }
 impl UpdateCustomKeyStoreInputBuilder {
     /// <p>Identifies the custom key store that you want to update. Enter the ID of the custom key store. To find the ID of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
+    /// This field is required.
     pub fn custom_key_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_key_store_id = ::std::option::Option::Some(input.into());
         self
@@ -334,7 +335,7 @@ impl UpdateCustomKeyStoreInputBuilder {
     /// Consumes the builder and constructs a [`UpdateCustomKeyStoreInput`](crate::operation::update_custom_key_store::UpdateCustomKeyStoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_custom_key_store::UpdateCustomKeyStoreInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_custom_key_store::UpdateCustomKeyStoreInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_custom_key_store::UpdateCustomKeyStoreInput {
             custom_key_store_id: self.custom_key_store_id,

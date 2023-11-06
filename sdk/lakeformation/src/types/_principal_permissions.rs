@@ -15,8 +15,10 @@ impl PrincipalPermissions {
         self.principal.as_ref()
     }
     /// <p>The permissions that are granted to the principal.</p>
-    pub fn permissions(&self) -> ::std::option::Option<&[crate::types::Permission]> {
-        self.permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permissions.is_none()`.
+    pub fn permissions(&self) -> &[crate::types::Permission] {
+        self.permissions.as_deref().unwrap_or_default()
     }
 }
 impl PrincipalPermissions {

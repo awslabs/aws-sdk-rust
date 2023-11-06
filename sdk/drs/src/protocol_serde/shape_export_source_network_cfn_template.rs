@@ -51,11 +51,10 @@ pub fn de_export_source_network_cfn_template_http_error(
                         })?,
                     );
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::internal_server_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::export_source_network_cfn_template::ExportSourceNetworkCfnTemplateError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -92,11 +91,10 @@ pub fn de_export_source_network_cfn_template_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::export_source_network_cfn_template::ExportSourceNetworkCfnTemplateError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "UninitializedAccountException" => {
@@ -159,12 +157,12 @@ pub fn de_export_source_network_cfn_template_http_response(
 
 pub fn ser_export_source_network_cfn_template_input(
     input: &crate::operation::export_source_network_cfn_template::ExportSourceNetworkCfnTemplateInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_export_source_network_cfn_template_input::ser_export_source_network_cfn_template_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_export_source_network_cfn_template(

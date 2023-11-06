@@ -17,8 +17,10 @@ impl RemoveTagsFromResourceInput {
         self.resource_name.as_deref()
     }
     /// <p>A list of <code>TagKeys</code> identifying the tags you want removed from the named resource.</p>
-    pub fn tag_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tag_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_keys.is_none()`.
+    pub fn tag_keys(&self) -> &[::std::string::String] {
+        self.tag_keys.as_deref().unwrap_or_default()
     }
 }
 impl RemoveTagsFromResourceInput {
@@ -38,6 +40,7 @@ pub struct RemoveTagsFromResourceInputBuilder {
 impl RemoveTagsFromResourceInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the resource from which you want the tags removed, for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code> or <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Service Namespaces</a>.</p>
+    /// This field is required.
     pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self
@@ -78,7 +81,7 @@ impl RemoveTagsFromResourceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_tags_from_resource::RemoveTagsFromResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::remove_tags_from_resource::RemoveTagsFromResourceInput {
             resource_name: self.resource_name,

@@ -2,7 +2,7 @@
 pub fn ser_copy_project_version_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::copy_project_version::CopyProjectVersionInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.source_project_arn {
         object.key("SourceProjectArn").string(var_1.as_str());
     }

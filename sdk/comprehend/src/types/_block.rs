@@ -48,8 +48,10 @@ impl Block {
         self.geometry.as_ref()
     }
     /// <p>A list of child blocks of the current block. For example, a LINE object has child blocks for each WORD block that's part of the line of text. </p>
-    pub fn relationships(&self) -> ::std::option::Option<&[crate::types::RelationshipsListItem]> {
-        self.relationships.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.relationships.is_none()`.
+    pub fn relationships(&self) -> &[crate::types::RelationshipsListItem] {
+        self.relationships.as_deref().unwrap_or_default()
     }
 }
 impl Block {

@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateWorkflow`](crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder::set_id): <p>The ID of the migration workflow.</p>
-    ///   - [`name(impl Into<String>)`](crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder::set_name): <p>The name of the migration workflow.</p>
-    ///   - [`description(impl Into<String>)`](crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder::set_description): <p>The description of the migration workflow.</p>
-    ///   - [`input_parameters(impl Into<String>, StepInput)`](crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder::input_parameters) / [`set_input_parameters(Option<HashMap<String, StepInput>>)`](crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder::set_input_parameters): <p>The input parameters required to update a migration workflow.</p>
-    ///   - [`step_targets(impl Into<String>)`](crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder::step_targets) / [`set_step_targets(Option<Vec<String>>)`](crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder::set_step_targets): <p>The servers on which a step will be run.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder::set_id):<br>required: **true**<br><p>The ID of the migration workflow.</p><br>
+    ///   - [`name(impl Into<String>)`](crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder::set_name):<br>required: **false**<br><p>The name of the migration workflow.</p><br>
+    ///   - [`description(impl Into<String>)`](crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder::set_description):<br>required: **false**<br><p>The description of the migration workflow.</p><br>
+    ///   - [`input_parameters(impl Into<String>, StepInput)`](crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder::input_parameters) / [`set_input_parameters(Option<HashMap::<String, StepInput>>)`](crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder::set_input_parameters):<br>required: **false**<br><p>The input parameters required to update a migration workflow.</p><br>
+    ///   - [`step_targets(impl Into<String>)`](crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder::step_targets) / [`set_step_targets(Option<Vec::<String>>)`](crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder::set_step_targets):<br>required: **false**<br><p>The servers on which a step will be run.</p><br>
     /// - On success, responds with [`UpdateWorkflowOutput`](crate::operation::update_workflow::UpdateWorkflowOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::update_workflow::UpdateWorkflowOutput::id): <p>The ID of the migration workflow.</p>
     ///   - [`arn(Option<String>)`](crate::operation::update_workflow::UpdateWorkflowOutput::arn): <p>The Amazon Resource Name (ARN) of the migration workflow.</p>
@@ -15,12 +15,12 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::update_workflow::UpdateWorkflowOutput::description): <p>The description of the migration workflow.</p>
     ///   - [`template_id(Option<String>)`](crate::operation::update_workflow::UpdateWorkflowOutput::template_id): <p>The ID of the template.</p>
     ///   - [`ads_application_configuration_id(Option<String>)`](crate::operation::update_workflow::UpdateWorkflowOutput::ads_application_configuration_id): <p>The ID of the application configured in Application Discovery Service.</p>
-    ///   - [`workflow_inputs(Option<HashMap<String, StepInput>>)`](crate::operation::update_workflow::UpdateWorkflowOutput::workflow_inputs): <p>The inputs required to update a migration workflow.</p>
-    ///   - [`step_targets(Option<Vec<String>>)`](crate::operation::update_workflow::UpdateWorkflowOutput::step_targets): <p>The servers on which a step will be run.</p>
+    ///   - [`workflow_inputs(Option<HashMap::<String, StepInput>>)`](crate::operation::update_workflow::UpdateWorkflowOutput::workflow_inputs): <p>The inputs required to update a migration workflow.</p>
+    ///   - [`step_targets(Option<Vec::<String>>)`](crate::operation::update_workflow::UpdateWorkflowOutput::step_targets): <p>The servers on which a step will be run.</p>
     ///   - [`status(Option<MigrationWorkflowStatusEnum>)`](crate::operation::update_workflow::UpdateWorkflowOutput::status): <p>The status of the migration workflow.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::update_workflow::UpdateWorkflowOutput::creation_time): <p>The time at which the migration workflow was created.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::update_workflow::UpdateWorkflowOutput::last_modified_time): <p>The time at which the migration workflow was last modified.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::update_workflow::UpdateWorkflowOutput::tags): <p>The tags added to the migration workflow.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::update_workflow::UpdateWorkflowOutput::tags): <p>The tags added to the migration workflow.</p>
     /// - On failure, responds with [`SdkError<UpdateWorkflowError>`](crate::operation::update_workflow::UpdateWorkflowError)
     pub fn update_workflow(&self) -> crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder {
         crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder::new(self.handle.clone())

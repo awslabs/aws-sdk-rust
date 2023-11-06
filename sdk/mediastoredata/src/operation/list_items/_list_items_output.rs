@@ -11,8 +11,10 @@ pub struct ListItemsOutput {
 }
 impl ListItemsOutput {
     /// <p>The metadata entries for the folders and objects at the requested path.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::Item]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[crate::types::Item] {
+        self.items.as_deref().unwrap_or_default()
     }
     /// <p>The token that can be used in a request to view the next set of results. For example, you submit a <code>ListItems</code> request that matches 2,000 items with <code>MaxResults</code> set at 500. The service returns the first batch of results (up to 500) and a <code>NextToken</code> value that can be used to fetch the next batch of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

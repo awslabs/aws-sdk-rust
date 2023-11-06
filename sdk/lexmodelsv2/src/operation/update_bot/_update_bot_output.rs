@@ -69,8 +69,10 @@ impl UpdateBotOutput {
         self.bot_type.as_ref()
     }
     /// <p>The list of bot members in the network that was updated.</p>
-    pub fn bot_members(&self) -> ::std::option::Option<&[crate::types::BotMember]> {
-        self.bot_members.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bot_members.is_none()`.
+    pub fn bot_members(&self) -> &[crate::types::BotMember] {
+        self.bot_members.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateBotOutput {

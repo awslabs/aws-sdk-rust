@@ -153,6 +153,7 @@ impl GetTranscriptInputBuilder {
         &self.start_position
     }
     /// <p>The authentication token associated with the participant's connection.</p>
+    /// This field is required.
     pub fn connection_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_token = ::std::option::Option::Some(input.into());
         self
@@ -169,7 +170,7 @@ impl GetTranscriptInputBuilder {
     /// Consumes the builder and constructs a [`GetTranscriptInput`](crate::operation::get_transcript::GetTranscriptInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_transcript::GetTranscriptInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_transcript::GetTranscriptInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_transcript::GetTranscriptInput {
             contact_id: self.contact_id,
             max_results: self.max_results,

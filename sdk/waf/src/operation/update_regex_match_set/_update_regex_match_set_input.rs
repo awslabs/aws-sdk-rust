@@ -16,8 +16,10 @@ impl UpdateRegexMatchSetInput {
         self.regex_match_set_id.as_deref()
     }
     /// <p>An array of <code>RegexMatchSetUpdate</code> objects that you want to insert into or delete from a <code>RegexMatchSet</code>. For more information, see <code>RegexMatchTuple</code>.</p>
-    pub fn updates(&self) -> ::std::option::Option<&[crate::types::RegexMatchSetUpdate]> {
-        self.updates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.updates.is_none()`.
+    pub fn updates(&self) -> &[crate::types::RegexMatchSetUpdate] {
+        self.updates.as_deref().unwrap_or_default()
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(&self) -> ::std::option::Option<&str> {
@@ -41,6 +43,7 @@ pub struct UpdateRegexMatchSetInputBuilder {
 }
 impl UpdateRegexMatchSetInputBuilder {
     /// <p>The <code>RegexMatchSetId</code> of the <code>RegexMatchSet</code> that you want to update. <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
+    /// This field is required.
     pub fn regex_match_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.regex_match_set_id = ::std::option::Option::Some(input.into());
         self
@@ -75,6 +78,7 @@ impl UpdateRegexMatchSetInputBuilder {
         &self.updates
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    /// This field is required.
     pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_token = ::std::option::Option::Some(input.into());
         self
@@ -91,7 +95,7 @@ impl UpdateRegexMatchSetInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRegexMatchSetInput`](crate::operation::update_regex_match_set::UpdateRegexMatchSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_regex_match_set::UpdateRegexMatchSetInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_regex_match_set::UpdateRegexMatchSetInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_regex_match_set::UpdateRegexMatchSetInput {
             regex_match_set_id: self.regex_match_set_id,

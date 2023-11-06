@@ -62,6 +62,7 @@ pub struct DescribeHumanTaskUiOutputBuilder {
 }
 impl DescribeHumanTaskUiOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the human task user interface (worker task template).</p>
+    /// This field is required.
     pub fn human_task_ui_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.human_task_ui_arn = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl DescribeHumanTaskUiOutputBuilder {
         &self.human_task_ui_arn
     }
     /// <p>The name of the human task user interface (worker task template).</p>
+    /// This field is required.
     pub fn human_task_ui_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.human_task_ui_name = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +106,7 @@ impl DescribeHumanTaskUiOutputBuilder {
         &self.human_task_ui_status
     }
     /// <p>The timestamp when the human task user interface was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -118,6 +121,7 @@ impl DescribeHumanTaskUiOutputBuilder {
         &self.creation_time
     }
     /// <p>Container for user interface template information.</p>
+    /// This field is required.
     pub fn ui_template(mut self, input: crate::types::UiTemplateInfo) -> Self {
         self.ui_template = ::std::option::Option::Some(input);
         self

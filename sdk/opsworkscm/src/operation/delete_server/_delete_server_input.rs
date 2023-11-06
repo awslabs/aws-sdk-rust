@@ -27,6 +27,7 @@ pub struct DeleteServerInputBuilder {
 }
 impl DeleteServerInputBuilder {
     /// <p>The ID of the server to delete.</p>
+    /// This field is required.
     pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_name = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,9 @@ impl DeleteServerInputBuilder {
         &self.server_name
     }
     /// Consumes the builder and constructs a [`DeleteServerInput`](crate::operation::delete_server::DeleteServerInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_server::DeleteServerInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_server::DeleteServerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_server::DeleteServerInput {
             server_name: self.server_name,
         })

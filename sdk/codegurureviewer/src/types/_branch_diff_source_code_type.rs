@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BranchDiffSourceCodeType {
     /// <p>The source branch for a diff in an associated repository.</p>
-    pub source_branch_name: ::std::option::Option<::std::string::String>,
+    pub source_branch_name: ::std::string::String,
     /// <p>The destination branch for a diff in an associated repository.</p>
-    pub destination_branch_name: ::std::option::Option<::std::string::String>,
+    pub destination_branch_name: ::std::string::String,
 }
 impl BranchDiffSourceCodeType {
     /// <p>The source branch for a diff in an associated repository.</p>
-    pub fn source_branch_name(&self) -> ::std::option::Option<&str> {
-        self.source_branch_name.as_deref()
+    pub fn source_branch_name(&self) -> &str {
+        use std::ops::Deref;
+        self.source_branch_name.deref()
     }
     /// <p>The destination branch for a diff in an associated repository.</p>
-    pub fn destination_branch_name(&self) -> ::std::option::Option<&str> {
-        self.destination_branch_name.as_deref()
+    pub fn destination_branch_name(&self) -> &str {
+        use std::ops::Deref;
+        self.destination_branch_name.deref()
     }
 }
 impl BranchDiffSourceCodeType {
@@ -35,6 +37,7 @@ pub struct BranchDiffSourceCodeTypeBuilder {
 }
 impl BranchDiffSourceCodeTypeBuilder {
     /// <p>The source branch for a diff in an associated repository.</p>
+    /// This field is required.
     pub fn source_branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_branch_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl BranchDiffSourceCodeTypeBuilder {
         &self.source_branch_name
     }
     /// <p>The destination branch for a diff in an associated repository.</p>
+    /// This field is required.
     pub fn destination_branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_branch_name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl BranchDiffSourceCodeTypeBuilder {
         &self.destination_branch_name
     }
     /// Consumes the builder and constructs a [`BranchDiffSourceCodeType`](crate::types::BranchDiffSourceCodeType).
-    pub fn build(self) -> crate::types::BranchDiffSourceCodeType {
-        crate::types::BranchDiffSourceCodeType {
-            source_branch_name: self.source_branch_name,
-            destination_branch_name: self.destination_branch_name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`source_branch_name`](crate::types::builders::BranchDiffSourceCodeTypeBuilder::source_branch_name)
+    /// - [`destination_branch_name`](crate::types::builders::BranchDiffSourceCodeTypeBuilder::destination_branch_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::BranchDiffSourceCodeType, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::BranchDiffSourceCodeType {
+            source_branch_name: self.source_branch_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "source_branch_name",
+                    "source_branch_name was not specified but it is required when building BranchDiffSourceCodeType",
+                )
+            })?,
+            destination_branch_name: self.destination_branch_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "destination_branch_name",
+                    "destination_branch_name was not specified but it is required when building BranchDiffSourceCodeType",
+                )
+            })?,
+        })
     }
 }

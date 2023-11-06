@@ -32,8 +32,10 @@ impl ListExplainabilityExportsInput {
     /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>ResourceArn</code> and <code>Status</code>.</p> </li>
     /// <li> <p> <code>Value</code> - The value to match.</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
 }
 impl ListExplainabilityExportsInput {
@@ -123,7 +125,7 @@ impl ListExplainabilityExportsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_explainability_exports::ListExplainabilityExportsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_explainability_exports::ListExplainabilityExportsInput {
             next_token: self.next_token,

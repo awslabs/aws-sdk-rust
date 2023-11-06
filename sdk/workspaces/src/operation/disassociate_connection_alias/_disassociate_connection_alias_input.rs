@@ -27,6 +27,7 @@ pub struct DisassociateConnectionAliasInputBuilder {
 }
 impl DisassociateConnectionAliasInputBuilder {
     /// <p>The identifier of the connection alias to disassociate.</p>
+    /// This field is required.
     pub fn alias_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DisassociateConnectionAliasInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_connection_alias::DisassociateConnectionAliasInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_connection_alias::DisassociateConnectionAliasInput { alias_id: self.alias_id })
     }

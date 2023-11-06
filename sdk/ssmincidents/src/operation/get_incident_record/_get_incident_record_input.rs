@@ -27,6 +27,7 @@ pub struct GetIncidentRecordInputBuilder {
 }
 impl GetIncidentRecordInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the incident record.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetIncidentRecordInputBuilder {
     /// Consumes the builder and constructs a [`GetIncidentRecordInput`](crate::operation::get_incident_record::GetIncidentRecordInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_incident_record::GetIncidentRecordInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_incident_record::GetIncidentRecordInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_incident_record::GetIncidentRecordInput { arn: self.arn })
     }
 }

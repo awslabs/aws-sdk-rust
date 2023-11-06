@@ -19,8 +19,10 @@ pub struct Celebrity {
 }
 impl Celebrity {
     /// <p>An array of URLs pointing to additional information about the celebrity. If there is no additional information about the celebrity, this list is empty.</p>
-    pub fn urls(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.urls.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.urls.is_none()`.
+    pub fn urls(&self) -> &[::std::string::String] {
+        self.urls.as_deref().unwrap_or_default()
     }
     /// <p>The name of the celebrity.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {

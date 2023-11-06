@@ -11,8 +11,10 @@ pub struct ListIpRoutesOutput {
 }
 impl ListIpRoutesOutput {
     /// <p>A list of <code>IpRoute</code>s.</p>
-    pub fn ip_routes_info(&self) -> ::std::option::Option<&[crate::types::IpRouteInfo]> {
-        self.ip_routes_info.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ip_routes_info.is_none()`.
+    pub fn ip_routes_info(&self) -> &[crate::types::IpRouteInfo] {
+        self.ip_routes_info.as_deref().unwrap_or_default()
     }
     /// <p>If not null, more results are available. Pass this value for the <i>NextToken</i> parameter in a subsequent call to <code>ListIpRoutes</code> to retrieve the next set of items.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

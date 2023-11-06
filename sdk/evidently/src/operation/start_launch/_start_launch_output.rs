@@ -34,6 +34,7 @@ pub struct StartLaunchOutputBuilder {
 }
 impl StartLaunchOutputBuilder {
     /// <p>A structure that contains information about the launch that was started.</p>
+    /// This field is required.
     pub fn launch(mut self, input: crate::types::Launch) -> Self {
         self.launch = ::std::option::Option::Some(input);
         self

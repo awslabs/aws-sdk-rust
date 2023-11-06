@@ -27,6 +27,7 @@ pub struct DeleteEdgeDeploymentPlanInputBuilder {
 }
 impl DeleteEdgeDeploymentPlanInputBuilder {
     /// <p>The name of the edge deployment plan to delete.</p>
+    /// This field is required.
     pub fn edge_deployment_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_deployment_plan_name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteEdgeDeploymentPlanInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_edge_deployment_plan::DeleteEdgeDeploymentPlanInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_edge_deployment_plan::DeleteEdgeDeploymentPlanInput {
             edge_deployment_plan_name: self.edge_deployment_plan_name,

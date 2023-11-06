@@ -29,8 +29,10 @@ impl BatchCreateTableRowsInput {
     }
     /// <p> The list of rows to create at the end of the table. Each item in this list needs to have a batch item id to uniquely identify the element in the request and the cells to create for that row. You need to specify at least one item in this list. </p>
     /// <p> Note that if one of the column ids in any of the rows in the request does not exist in the table, then the request fails and no updates are made to the table. </p>
-    pub fn rows_to_create(&self) -> ::std::option::Option<&[crate::types::CreateRowData]> {
-        self.rows_to_create.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rows_to_create.is_none()`.
+    pub fn rows_to_create(&self) -> &[crate::types::CreateRowData] {
+        self.rows_to_create.as_deref().unwrap_or_default()
     }
     /// <p> The request token for performing the batch create operation. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the operation again. </p>
     /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
@@ -57,6 +59,7 @@ pub struct BatchCreateTableRowsInputBuilder {
 impl BatchCreateTableRowsInputBuilder {
     /// <p>The ID of the workbook where the new rows are being added.</p>
     /// <p> If a workbook with the specified ID could not be found, this API throws ResourceNotFoundException. </p>
+    /// This field is required.
     pub fn workbook_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workbook_id = ::std::option::Option::Some(input.into());
         self
@@ -74,6 +77,7 @@ impl BatchCreateTableRowsInputBuilder {
     }
     /// <p>The ID of the table where the new rows are being added.</p>
     /// <p> If a table with the specified ID could not be found, this API throws ResourceNotFoundException. </p>
+    /// This field is required.
     pub fn table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_id = ::std::option::Option::Some(input.into());
         self
@@ -132,7 +136,7 @@ impl BatchCreateTableRowsInputBuilder {
     /// Consumes the builder and constructs a [`BatchCreateTableRowsInput`](crate::operation::batch_create_table_rows::BatchCreateTableRowsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_create_table_rows::BatchCreateTableRowsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_create_table_rows::BatchCreateTableRowsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_create_table_rows::BatchCreateTableRowsInput {
             workbook_id: self.workbook_id,

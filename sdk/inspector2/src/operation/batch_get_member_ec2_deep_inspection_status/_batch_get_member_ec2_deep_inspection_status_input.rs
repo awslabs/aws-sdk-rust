@@ -8,8 +8,10 @@ pub struct BatchGetMemberEc2DeepInspectionStatusInput {
 }
 impl BatchGetMemberEc2DeepInspectionStatusInput {
     /// <p>The unique identifiers for the Amazon Web Services accounts to retrieve Amazon Inspector deep inspection activation status for. </p>
-    pub fn account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.account_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
+    pub fn account_ids(&self) -> &[::std::string::String] {
+        self.account_ids.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetMemberEc2DeepInspectionStatusInput {
@@ -51,7 +53,7 @@ impl BatchGetMemberEc2DeepInspectionStatusInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_member_ec2_deep_inspection_status::BatchGetMemberEc2DeepInspectionStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::batch_get_member_ec2_deep_inspection_status::BatchGetMemberEc2DeepInspectionStatusInput {

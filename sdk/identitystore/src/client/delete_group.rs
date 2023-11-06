@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteGroup`](crate::operation::delete_group::builders::DeleteGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identity_store_id(impl Into<String>)`](crate::operation::delete_group::builders::DeleteGroupFluentBuilder::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::operation::delete_group::builders::DeleteGroupFluentBuilder::set_identity_store_id): <p>The globally unique identifier for the identity store.</p>
-    ///   - [`group_id(impl Into<String>)`](crate::operation::delete_group::builders::DeleteGroupFluentBuilder::group_id) / [`set_group_id(Option<String>)`](crate::operation::delete_group::builders::DeleteGroupFluentBuilder::set_group_id): <p>The identifier for a group in the identity store.</p>
+    ///   - [`identity_store_id(impl Into<String>)`](crate::operation::delete_group::builders::DeleteGroupFluentBuilder::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::operation::delete_group::builders::DeleteGroupFluentBuilder::set_identity_store_id):<br>required: **true**<br><p>The globally unique identifier for the identity store.</p><br>
+    ///   - [`group_id(impl Into<String>)`](crate::operation::delete_group::builders::DeleteGroupFluentBuilder::group_id) / [`set_group_id(Option<String>)`](crate::operation::delete_group::builders::DeleteGroupFluentBuilder::set_group_id):<br>required: **true**<br><p>The identifier for a group in the identity store.</p><br>
     /// - On success, responds with [`DeleteGroupOutput`](crate::operation::delete_group::DeleteGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteGroupError>`](crate::operation::delete_group::DeleteGroupError)
     pub fn delete_group(&self) -> crate::operation::delete_group::builders::DeleteGroupFluentBuilder {

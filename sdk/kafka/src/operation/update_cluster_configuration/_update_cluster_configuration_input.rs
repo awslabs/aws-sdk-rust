@@ -41,6 +41,7 @@ pub struct UpdateClusterConfigurationInputBuilder {
 }
 impl UpdateClusterConfigurationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    /// This field is required.
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateClusterConfigurationInputBuilder {
         &self.cluster_arn
     }
     /// <p>Represents the configuration that you want MSK to use for the brokers in a cluster.</p>
+    /// This field is required.
     pub fn configuration_info(mut self, input: crate::types::ConfigurationInfo) -> Self {
         self.configuration_info = ::std::option::Option::Some(input);
         self
@@ -69,6 +71,7 @@ impl UpdateClusterConfigurationInputBuilder {
         &self.configuration_info
     }
     /// <p>The version of the cluster that needs to be updated.</p>
+    /// This field is required.
     pub fn current_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_version = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +90,7 @@ impl UpdateClusterConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_cluster_configuration::UpdateClusterConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_cluster_configuration::UpdateClusterConfigurationInput {
             cluster_arn: self.cluster_arn,

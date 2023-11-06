@@ -2,7 +2,7 @@
 pub fn ser_aws_ecs_cluster_configuration_execute_command_configuration_log_configuration_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cloud_watch_encryption_enabled {
         object.key("CloudWatchEncryptionEnabled").boolean(*var_1);
     }

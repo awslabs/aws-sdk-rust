@@ -5,36 +5,36 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceExistsException {
     #[allow(missing_docs)] // documentation missing in model
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
     #[allow(missing_docs)] // documentation missing in model
-    pub resource: ::std::option::Option<::std::string::String>,
+    pub resource: ::std::string::String,
     #[allow(missing_docs)] // documentation missing in model
-    pub resource_type: ::std::option::Option<::std::string::String>,
+    pub resource_type: ::std::string::String,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl ResourceExistsException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn resource(&self) -> ::std::option::Option<&str> {
-        self.resource.as_deref()
+    pub fn resource(&self) -> &str {
+        use std::ops::Deref;
+        self.resource.deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
-        self.resource_type.as_deref()
+    pub fn resource_type(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_type.deref()
     }
 }
 impl ResourceExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        &self.message
     }
 }
 impl ::std::fmt::Display for ResourceExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "ResourceExistsException")?;
-        if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
-                ::std::write!(f, ": {}", inner_1)?;
-            }
+        {
+            ::std::write!(f, ": {}", &self.message)?;
         }
         Ok(())
     }
@@ -69,6 +69,7 @@ pub struct ResourceExistsExceptionBuilder {
 }
 impl ResourceExistsExceptionBuilder {
     #[allow(missing_docs)] // documentation missing in model
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +84,7 @@ impl ResourceExistsExceptionBuilder {
         &self.message
     }
     #[allow(missing_docs)] // documentation missing in model
+    /// This field is required.
     pub fn resource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +99,7 @@ impl ResourceExistsExceptionBuilder {
         &self.resource
     }
     #[allow(missing_docs)] // documentation missing in model
+    /// This field is required.
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
@@ -122,12 +125,31 @@ impl ResourceExistsExceptionBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ResourceExistsException`](crate::types::error::ResourceExistsException).
-    pub fn build(self) -> crate::types::error::ResourceExistsException {
-        crate::types::error::ResourceExistsException {
-            message: self.message,
-            resource: self.resource,
-            resource_type: self.resource_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`message`](crate::types::error::builders::ResourceExistsExceptionBuilder::message)
+    /// - [`resource`](crate::types::error::builders::ResourceExistsExceptionBuilder::resource)
+    /// - [`resource_type`](crate::types::error::builders::ResourceExistsExceptionBuilder::resource_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::error::ResourceExistsException, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::error::ResourceExistsException {
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building ResourceExistsException",
+                )
+            })?,
+            resource: self.resource.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "resource",
+                    "resource was not specified but it is required when building ResourceExistsException",
+                )
+            })?,
+            resource_type: self.resource_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "resource_type",
+                    "resource_type was not specified but it is required when building ResourceExistsException",
+                )
+            })?,
             meta: self.meta.unwrap_or_default(),
-        }
+        })
     }
 }

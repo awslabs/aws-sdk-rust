@@ -35,6 +35,7 @@ pub struct ListEndpointsByPlatformApplicationInputBuilder {
 }
 impl ListEndpointsByPlatformApplicationInputBuilder {
     /// <p>PlatformApplicationArn for ListEndpointsByPlatformApplicationInput action.</p>
+    /// This field is required.
     pub fn platform_application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform_application_arn = ::std::option::Option::Some(input.into());
         self
@@ -67,7 +68,7 @@ impl ListEndpointsByPlatformApplicationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_endpoints_by_platform_application::ListEndpointsByPlatformApplicationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_endpoints_by_platform_application::ListEndpointsByPlatformApplicationInput {

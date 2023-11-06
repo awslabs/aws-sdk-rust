@@ -42,6 +42,7 @@ pub struct DeleteMethodInputBuilder {
 }
 impl DeleteMethodInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
+    /// This field is required.
     pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rest_api_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl DeleteMethodInputBuilder {
         &self.rest_api_id
     }
     /// <p>The Resource identifier for the Method resource.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl DeleteMethodInputBuilder {
         &self.resource_id
     }
     /// <p>The HTTP verb of the Method resource.</p>
+    /// This field is required.
     pub fn http_method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.http_method = ::std::option::Option::Some(input.into());
         self
@@ -84,7 +87,9 @@ impl DeleteMethodInputBuilder {
         &self.http_method
     }
     /// Consumes the builder and constructs a [`DeleteMethodInput`](crate::operation::delete_method::DeleteMethodInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_method::DeleteMethodInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_method::DeleteMethodInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_method::DeleteMethodInput {
             rest_api_id: self.rest_api_id,
             resource_id: self.resource_id,

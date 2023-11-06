@@ -41,6 +41,7 @@ pub struct UpdateDeletionProtectionInputBuilder {
 }
 impl UpdateDeletionProtectionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the replication set to update.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateDeletionProtectionInputBuilder {
         &self.arn
     }
     /// <p>Specifies if deletion protection is turned on or off in your account. </p>
+    /// This field is required.
     pub fn deletion_protected(mut self, input: bool) -> Self {
         self.deletion_protected = ::std::option::Option::Some(input);
         self
@@ -87,7 +89,7 @@ impl UpdateDeletionProtectionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_deletion_protection::UpdateDeletionProtectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_deletion_protection::UpdateDeletionProtectionInput {
             arn: self.arn,

@@ -98,7 +98,7 @@ impl GetBundlesInputBuilder {
         &self.app_category
     }
     /// Consumes the builder and constructs a [`GetBundlesInput`](crate::operation::get_bundles::GetBundlesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_bundles::GetBundlesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_bundles::GetBundlesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_bundles::GetBundlesInput {
             include_inactive: self.include_inactive,
             page_token: self.page_token,

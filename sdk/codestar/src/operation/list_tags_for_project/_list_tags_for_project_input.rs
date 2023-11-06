@@ -41,6 +41,7 @@ pub struct ListTagsForProjectInputBuilder {
 }
 impl ListTagsForProjectInputBuilder {
     /// <p>The ID of the project to get tags for.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl ListTagsForProjectInputBuilder {
     /// Consumes the builder and constructs a [`ListTagsForProjectInput`](crate::operation::list_tags_for_project::ListTagsForProjectInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_tags_for_project::ListTagsForProjectInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_tags_for_project::ListTagsForProjectInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_tags_for_project::ListTagsForProjectInput {
             id: self.id,

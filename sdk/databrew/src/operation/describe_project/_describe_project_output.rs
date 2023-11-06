@@ -14,7 +14,7 @@ pub struct DescribeProjectOutput {
     /// <p>The identifier (user name) of the user who last modified the project.</p>
     pub last_modified_by: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The recipe associated with this job.</p>
     pub recipe_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
@@ -60,8 +60,9 @@ impl DescribeProjectOutput {
         self.last_modified_by.as_deref()
     }
     /// <p>The name of the project.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The recipe associated with this job.</p>
     pub fn recipe_name(&self) -> ::std::option::Option<&str> {
@@ -205,6 +206,7 @@ impl DescribeProjectOutputBuilder {
         &self.last_modified_by
     }
     /// <p>The name of the project.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -361,14 +363,23 @@ impl DescribeProjectOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeProjectOutput`](crate::operation::describe_project::DescribeProjectOutput).
-    pub fn build(self) -> crate::operation::describe_project::DescribeProjectOutput {
-        crate::operation::describe_project::DescribeProjectOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::describe_project::builders::DescribeProjectOutputBuilder::name)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_project::DescribeProjectOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_project::DescribeProjectOutput {
             create_date: self.create_date,
             created_by: self.created_by,
             dataset_name: self.dataset_name,
             last_modified_date: self.last_modified_date,
             last_modified_by: self.last_modified_by,
-            name: self.name,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DescribeProjectOutput",
+                )
+            })?,
             recipe_name: self.recipe_name,
             resource_arn: self.resource_arn,
             sample: self.sample,
@@ -378,6 +389,6 @@ impl DescribeProjectOutputBuilder {
             opened_by: self.opened_by,
             open_date: self.open_date,
             _request_id: self._request_id,
-        }
+        })
     }
 }

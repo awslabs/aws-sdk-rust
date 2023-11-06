@@ -48,6 +48,7 @@ pub struct UpdateMapRunInputBuilder {
 }
 impl UpdateMapRunInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of a Map Run.</p>
+    /// This field is required.
     pub fn map_run_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.map_run_arn = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,7 @@ impl UpdateMapRunInputBuilder {
     /// Consumes the builder and constructs a [`UpdateMapRunInput`](crate::operation::update_map_run::UpdateMapRunInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_map_run::UpdateMapRunInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_map_run::UpdateMapRunInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_map_run::UpdateMapRunInput {
             map_run_arn: self.map_run_arn,
             max_concurrency: self.max_concurrency,

@@ -18,8 +18,10 @@ pub struct DescribeAffectedAccountsForOrganizationOutput {
 }
 impl DescribeAffectedAccountsForOrganizationOutput {
     /// <p>A JSON set of elements of the affected accounts.</p>
-    pub fn affected_accounts(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.affected_accounts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.affected_accounts.is_none()`.
+    pub fn affected_accounts(&self) -> &[::std::string::String] {
+        self.affected_accounts.as_deref().unwrap_or_default()
     }
     /// <p>This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific event.</p>
     /// <ul>

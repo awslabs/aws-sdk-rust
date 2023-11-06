@@ -190,7 +190,7 @@ impl ListAuditFindingsInputBuilder {
     /// Consumes the builder and constructs a [`ListAuditFindingsInput`](crate::operation::list_audit_findings::ListAuditFindingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_audit_findings::ListAuditFindingsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_audit_findings::ListAuditFindingsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_audit_findings::ListAuditFindingsInput {
             task_id: self.task_id,
             check_name: self.check_name,

@@ -3,14 +3,14 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribePage`](crate::operation::describe_page::builders::DescribePageFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`page_id(impl Into<String>)`](crate::operation::describe_page::builders::DescribePageFluentBuilder::page_id) / [`set_page_id(Option<String>)`](crate::operation::describe_page::builders::DescribePageFluentBuilder::set_page_id): <p>The ID of the engagement to a contact channel.</p>
+    ///   - [`page_id(impl Into<String>)`](crate::operation::describe_page::builders::DescribePageFluentBuilder::page_id) / [`set_page_id(Option<String>)`](crate::operation::describe_page::builders::DescribePageFluentBuilder::set_page_id):<br>required: **true**<br><p>The ID of the engagement to a contact channel.</p><br>
     /// - On success, responds with [`DescribePageOutput`](crate::operation::describe_page::DescribePageOutput) with field(s):
-    ///   - [`page_arn(Option<String>)`](crate::operation::describe_page::DescribePageOutput::page_arn): <p>The Amazon Resource Name (ARN) of the engagement to a contact channel.</p>
-    ///   - [`engagement_arn(Option<String>)`](crate::operation::describe_page::DescribePageOutput::engagement_arn): <p>The ARN of the engagement that engaged the contact channel.</p>
-    ///   - [`contact_arn(Option<String>)`](crate::operation::describe_page::DescribePageOutput::contact_arn): <p>The ARN of the contact that was engaged.</p>
-    ///   - [`sender(Option<String>)`](crate::operation::describe_page::DescribePageOutput::sender): <p>The user that started the engagement.</p>
-    ///   - [`subject(Option<String>)`](crate::operation::describe_page::DescribePageOutput::subject): <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
-    ///   - [`content(Option<String>)`](crate::operation::describe_page::DescribePageOutput::content): <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
+    ///   - [`page_arn(String)`](crate::operation::describe_page::DescribePageOutput::page_arn): <p>The Amazon Resource Name (ARN) of the engagement to a contact channel.</p>
+    ///   - [`engagement_arn(String)`](crate::operation::describe_page::DescribePageOutput::engagement_arn): <p>The ARN of the engagement that engaged the contact channel.</p>
+    ///   - [`contact_arn(String)`](crate::operation::describe_page::DescribePageOutput::contact_arn): <p>The ARN of the contact that was engaged.</p>
+    ///   - [`sender(String)`](crate::operation::describe_page::DescribePageOutput::sender): <p>The user that started the engagement.</p>
+    ///   - [`subject(String)`](crate::operation::describe_page::DescribePageOutput::subject): <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
+    ///   - [`content(String)`](crate::operation::describe_page::DescribePageOutput::content): <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
     ///   - [`public_subject(Option<String>)`](crate::operation::describe_page::DescribePageOutput::public_subject): <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
     ///   - [`public_content(Option<String>)`](crate::operation::describe_page::DescribePageOutput::public_content): <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
     ///   - [`incident_id(Option<String>)`](crate::operation::describe_page::DescribePageOutput::incident_id): <p>The ARN of the incident that engaged the contact channel.</p>

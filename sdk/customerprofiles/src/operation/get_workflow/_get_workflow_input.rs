@@ -34,6 +34,7 @@ pub struct GetWorkflowInputBuilder {
 }
 impl GetWorkflowInputBuilder {
     /// <p>The unique name of the domain.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetWorkflowInputBuilder {
         &self.domain_name
     }
     /// <p>Unique identifier for the workflow.</p>
+    /// This field is required.
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_id = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,7 @@ impl GetWorkflowInputBuilder {
         &self.workflow_id
     }
     /// Consumes the builder and constructs a [`GetWorkflowInput`](crate::operation::get_workflow::GetWorkflowInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_workflow::GetWorkflowInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_workflow::GetWorkflowInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_workflow::GetWorkflowInput {
             domain_name: self.domain_name,
             workflow_id: self.workflow_id,

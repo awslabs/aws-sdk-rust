@@ -41,6 +41,7 @@ pub struct StartBlueprintRunInputBuilder {
 }
 impl StartBlueprintRunInputBuilder {
     /// <p>The name of the blueprint.</p>
+    /// This field is required.
     pub fn blueprint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.blueprint_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl StartBlueprintRunInputBuilder {
         &self.parameters
     }
     /// <p>Specifies the IAM role used to create the workflow.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +87,7 @@ impl StartBlueprintRunInputBuilder {
     /// Consumes the builder and constructs a [`StartBlueprintRunInput`](crate::operation::start_blueprint_run::StartBlueprintRunInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_blueprint_run::StartBlueprintRunInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_blueprint_run::StartBlueprintRunInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_blueprint_run::StartBlueprintRunInput {
             blueprint_name: self.blueprint_name,
             parameters: self.parameters,

@@ -28,6 +28,7 @@ pub struct DeleteMissionProfileInputBuilder {
 }
 impl DeleteMissionProfileInputBuilder {
     /// <p>UUID of a mission profile.</p>
+    /// This field is required.
     pub fn mission_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mission_profile_id = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl DeleteMissionProfileInputBuilder {
     /// Consumes the builder and constructs a [`DeleteMissionProfileInput`](crate::operation::delete_mission_profile::DeleteMissionProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_mission_profile::DeleteMissionProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_mission_profile::DeleteMissionProfileInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_mission_profile::DeleteMissionProfileInput {
             mission_profile_id: self.mission_profile_id,

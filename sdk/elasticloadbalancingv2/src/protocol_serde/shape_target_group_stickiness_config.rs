@@ -3,7 +3,7 @@
 pub fn ser_target_group_stickiness_config(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::TargetGroupStickinessConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Enabled");
     if let Some(var_2) = &input.enabled {
@@ -20,6 +20,7 @@ pub fn ser_target_group_stickiness_config(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_target_group_stickiness_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::TargetGroupStickinessConfig, ::aws_smithy_xml::decode::XmlDecodeError> {

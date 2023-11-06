@@ -94,8 +94,10 @@ impl RestoreTableInput {
     }
     /// <p>A list of key-value pair tags to be attached to the restored table. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn tags_override(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags_override.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags_override.is_none()`.
+    pub fn tags_override(&self) -> &[crate::types::Tag] {
+        self.tags_override.as_deref().unwrap_or_default()
     }
 }
 impl RestoreTableInput {
@@ -121,6 +123,7 @@ pub struct RestoreTableInputBuilder {
 }
 impl RestoreTableInputBuilder {
     /// <p>The keyspace name of the source table.</p>
+    /// This field is required.
     pub fn source_keyspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_keyspace_name = ::std::option::Option::Some(input.into());
         self
@@ -135,6 +138,7 @@ impl RestoreTableInputBuilder {
         &self.source_keyspace_name
     }
     /// <p>The name of the source table.</p>
+    /// This field is required.
     pub fn source_table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_table_name = ::std::option::Option::Some(input.into());
         self
@@ -149,6 +153,7 @@ impl RestoreTableInputBuilder {
         &self.source_table_name
     }
     /// <p>The name of the target keyspace.</p>
+    /// This field is required.
     pub fn target_keyspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_keyspace_name = ::std::option::Option::Some(input.into());
         self
@@ -163,6 +168,7 @@ impl RestoreTableInputBuilder {
         &self.target_keyspace_name
     }
     /// <p>The name of the target table.</p>
+    /// This field is required.
     pub fn target_table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_table_name = ::std::option::Option::Some(input.into());
         self
@@ -310,7 +316,9 @@ impl RestoreTableInputBuilder {
         &self.tags_override
     }
     /// Consumes the builder and constructs a [`RestoreTableInput`](crate::operation::restore_table::RestoreTableInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::restore_table::RestoreTableInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::restore_table::RestoreTableInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::restore_table::RestoreTableInput {
             source_keyspace_name: self.source_keyspace_name,
             source_table_name: self.source_table_name,

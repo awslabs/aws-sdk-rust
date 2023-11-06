@@ -27,6 +27,7 @@ pub struct GetModelCustomizationJobInputBuilder {
 }
 impl GetModelCustomizationJobInputBuilder {
     /// <p>Identifier for the customization job.</p>
+    /// This field is required.
     pub fn job_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_identifier = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetModelCustomizationJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_model_customization_job::GetModelCustomizationJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_model_customization_job::GetModelCustomizationJobInput {
             job_identifier: self.job_identifier,

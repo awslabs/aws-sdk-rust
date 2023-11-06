@@ -27,6 +27,7 @@ pub struct DeletePricingPlanInputBuilder {
 }
 impl DeletePricingPlanInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're deleting. </p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeletePricingPlanInputBuilder {
     /// Consumes the builder and constructs a [`DeletePricingPlanInput`](crate::operation::delete_pricing_plan::DeletePricingPlanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_pricing_plan::DeletePricingPlanInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_pricing_plan::DeletePricingPlanInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_pricing_plan::DeletePricingPlanInput { arn: self.arn })
     }
 }

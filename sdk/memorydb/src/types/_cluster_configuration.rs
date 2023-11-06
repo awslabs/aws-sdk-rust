@@ -87,8 +87,10 @@ impl ClusterConfiguration {
         self.num_shards
     }
     /// <p>The list of shards in the cluster</p>
-    pub fn shards(&self) -> ::std::option::Option<&[crate::types::ShardDetail]> {
-        self.shards.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.shards.is_none()`.
+    pub fn shards(&self) -> &[crate::types::ShardDetail] {
+        self.shards.as_deref().unwrap_or_default()
     }
 }
 impl ClusterConfiguration {

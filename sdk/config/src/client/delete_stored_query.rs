@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteStoredQuery`](crate::operation::delete_stored_query::builders::DeleteStoredQueryFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`query_name(impl Into<String>)`](crate::operation::delete_stored_query::builders::DeleteStoredQueryFluentBuilder::query_name) / [`set_query_name(Option<String>)`](crate::operation::delete_stored_query::builders::DeleteStoredQueryFluentBuilder::set_query_name): <p>The name of the query that you want to delete.</p>
+    ///   - [`query_name(impl Into<String>)`](crate::operation::delete_stored_query::builders::DeleteStoredQueryFluentBuilder::query_name) / [`set_query_name(Option<String>)`](crate::operation::delete_stored_query::builders::DeleteStoredQueryFluentBuilder::set_query_name):<br>required: **true**<br><p>The name of the query that you want to delete.</p><br>
     /// - On success, responds with [`DeleteStoredQueryOutput`](crate::operation::delete_stored_query::DeleteStoredQueryOutput)
     /// - On failure, responds with [`SdkError<DeleteStoredQueryError>`](crate::operation::delete_stored_query::DeleteStoredQueryError)
     pub fn delete_stored_query(&self) -> crate::operation::delete_stored_query::builders::DeleteStoredQueryFluentBuilder {

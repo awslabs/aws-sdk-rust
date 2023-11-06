@@ -34,8 +34,10 @@ impl RestoreVolumeFromSnapshotInput {
     /// <li> <p> <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots between the current state and the specified snapshot. If there are intermediate snapshots and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li>
     /// <li> <p> <code>DELETE_CLONED_VOLUMES</code> - Deletes any dependent clone volumes created from intermediate snapshots. If there are any dependent clone volumes and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li>
     /// </ul>
-    pub fn options(&self) -> ::std::option::Option<&[crate::types::RestoreOpenZfsVolumeOption]> {
-        self.options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.options.is_none()`.
+    pub fn options(&self) -> &[crate::types::RestoreOpenZfsVolumeOption] {
+        self.options.as_deref().unwrap_or_default()
     }
 }
 impl RestoreVolumeFromSnapshotInput {
@@ -70,6 +72,7 @@ impl RestoreVolumeFromSnapshotInputBuilder {
         &self.client_request_token
     }
     /// <p>The ID of the volume that you are restoring.</p>
+    /// This field is required.
     pub fn volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_id = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +87,7 @@ impl RestoreVolumeFromSnapshotInputBuilder {
         &self.volume_id
     }
     /// <p>The ID of the source snapshot. Specifies the snapshot that you are restoring from.</p>
+    /// This field is required.
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_id = ::std::option::Option::Some(input.into());
         self
@@ -134,7 +138,7 @@ impl RestoreVolumeFromSnapshotInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotInput {
             client_request_token: self.client_request_token,

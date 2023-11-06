@@ -5,30 +5,33 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TreatmentConfig {
     /// <p>A name for this treatment.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>A description for this treatment.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The feature that this experiment is testing.</p>
-    pub feature: ::std::option::Option<::std::string::String>,
+    pub feature: ::std::string::String,
     /// <p>The name of the variation to use as this treatment in the experiment.</p>
-    pub variation: ::std::option::Option<::std::string::String>,
+    pub variation: ::std::string::String,
 }
 impl TreatmentConfig {
     /// <p>A name for this treatment.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>A description for this treatment.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The feature that this experiment is testing.</p>
-    pub fn feature(&self) -> ::std::option::Option<&str> {
-        self.feature.as_deref()
+    pub fn feature(&self) -> &str {
+        use std::ops::Deref;
+        self.feature.deref()
     }
     /// <p>The name of the variation to use as this treatment in the experiment.</p>
-    pub fn variation(&self) -> ::std::option::Option<&str> {
-        self.variation.as_deref()
+    pub fn variation(&self) -> &str {
+        use std::ops::Deref;
+        self.variation.deref()
     }
 }
 impl TreatmentConfig {
@@ -49,6 +52,7 @@ pub struct TreatmentConfigBuilder {
 }
 impl TreatmentConfigBuilder {
     /// <p>A name for this treatment.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +81,7 @@ impl TreatmentConfigBuilder {
         &self.description
     }
     /// <p>The feature that this experiment is testing.</p>
+    /// This field is required.
     pub fn feature(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +96,7 @@ impl TreatmentConfigBuilder {
         &self.feature
     }
     /// <p>The name of the variation to use as this treatment in the experiment.</p>
+    /// This field is required.
     pub fn variation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.variation = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +111,31 @@ impl TreatmentConfigBuilder {
         &self.variation
     }
     /// Consumes the builder and constructs a [`TreatmentConfig`](crate::types::TreatmentConfig).
-    pub fn build(self) -> crate::types::TreatmentConfig {
-        crate::types::TreatmentConfig {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::TreatmentConfigBuilder::name)
+    /// - [`feature`](crate::types::builders::TreatmentConfigBuilder::feature)
+    /// - [`variation`](crate::types::builders::TreatmentConfigBuilder::variation)
+    pub fn build(self) -> ::std::result::Result<crate::types::TreatmentConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TreatmentConfig {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building TreatmentConfig",
+                )
+            })?,
             description: self.description,
-            feature: self.feature,
-            variation: self.variation,
-        }
+            feature: self.feature.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "feature",
+                    "feature was not specified but it is required when building TreatmentConfig",
+                )
+            })?,
+            variation: self.variation.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "variation",
+                    "variation was not specified but it is required when building TreatmentConfig",
+                )
+            })?,
+        })
     }
 }

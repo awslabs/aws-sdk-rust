@@ -28,6 +28,7 @@ pub struct DescribeCertificateInputBuilder {
 }
 impl DescribeCertificateInputBuilder {
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
+    /// This field is required.
     pub fn certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_id = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl DescribeCertificateInputBuilder {
     /// Consumes the builder and constructs a [`DescribeCertificateInput`](crate::operation::describe_certificate::DescribeCertificateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_certificate::DescribeCertificateInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_certificate::DescribeCertificateInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_certificate::DescribeCertificateInput {
             certificate_id: self.certificate_id,

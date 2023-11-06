@@ -69,6 +69,7 @@ pub struct StartTableDataImportJobInputBuilder {
 impl StartTableDataImportJobInputBuilder {
     /// <p>The ID of the workbook where the rows are being imported.</p>
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    /// This field is required.
     pub fn workbook_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workbook_id = ::std::option::Option::Some(input.into());
         self
@@ -85,6 +86,7 @@ impl StartTableDataImportJobInputBuilder {
         &self.workbook_id
     }
     /// <p> The source of the data that is being imported. The size of source must be no larger than 100 MB. Source must have no more than 100,000 cells and no more than 1,000 rows. </p>
+    /// This field is required.
     pub fn data_source(mut self, input: crate::types::ImportDataSource) -> Self {
         self.data_source = ::std::option::Option::Some(input);
         self
@@ -99,6 +101,7 @@ impl StartTableDataImportJobInputBuilder {
         &self.data_source
     }
     /// <p> The format of the data that is being imported. Currently the only option supported is "DELIMITED_TEXT". </p>
+    /// This field is required.
     pub fn data_format(mut self, input: crate::types::ImportSourceDataFormat) -> Self {
         self.data_format = ::std::option::Option::Some(input);
         self
@@ -114,6 +117,7 @@ impl StartTableDataImportJobInputBuilder {
     }
     /// <p>The ID of the table where the rows are being imported.</p>
     /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    /// This field is required.
     pub fn destination_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_table_id = ::std::option::Option::Some(input.into());
         self
@@ -130,6 +134,7 @@ impl StartTableDataImportJobInputBuilder {
         &self.destination_table_id
     }
     /// <p> The options for customizing this import request. </p>
+    /// This field is required.
     pub fn import_options(mut self, input: crate::types::ImportOptions) -> Self {
         self.import_options = ::std::option::Option::Some(input);
         self
@@ -145,6 +150,7 @@ impl StartTableDataImportJobInputBuilder {
     }
     /// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>
     /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
+    /// This field is required.
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
@@ -165,7 +171,7 @@ impl StartTableDataImportJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_table_data_import_job::StartTableDataImportJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_table_data_import_job::StartTableDataImportJobInput {
             workbook_id: self.workbook_id,

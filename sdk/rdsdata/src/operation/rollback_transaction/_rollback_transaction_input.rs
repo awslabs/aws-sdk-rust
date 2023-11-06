@@ -42,6 +42,7 @@ pub struct RollbackTransactionInputBuilder {
 }
 impl RollbackTransactionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl RollbackTransactionInputBuilder {
         &self.resource_arn
     }
     /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
+    /// This field is required.
     pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_arn = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl RollbackTransactionInputBuilder {
         &self.secret_arn
     }
     /// <p>The identifier of the transaction to roll back.</p>
+    /// This field is required.
     pub fn transaction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transaction_id = ::std::option::Option::Some(input.into());
         self
@@ -86,7 +89,7 @@ impl RollbackTransactionInputBuilder {
     /// Consumes the builder and constructs a [`RollbackTransactionInput`](crate::operation::rollback_transaction::RollbackTransactionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::rollback_transaction::RollbackTransactionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::rollback_transaction::RollbackTransactionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::rollback_transaction::RollbackTransactionInput {
             resource_arn: self.resource_arn,

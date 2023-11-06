@@ -4,31 +4,33 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartDicomImportJobOutput {
     /// <p>The data store identifier.</p>
-    pub datastore_id: ::std::option::Option<::std::string::String>,
+    pub datastore_id: ::std::string::String,
     /// <p>The import job identifier.</p>
-    pub job_id: ::std::option::Option<::std::string::String>,
+    pub job_id: ::std::string::String,
     /// <p>The import job status.</p>
-    pub job_status: ::std::option::Option<crate::types::JobStatus>,
+    pub job_status: crate::types::JobStatus,
     /// <p>The timestamp when the import job was submitted.</p>
-    pub submitted_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub submitted_at: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
 impl StartDicomImportJobOutput {
     /// <p>The data store identifier.</p>
-    pub fn datastore_id(&self) -> ::std::option::Option<&str> {
-        self.datastore_id.as_deref()
+    pub fn datastore_id(&self) -> &str {
+        use std::ops::Deref;
+        self.datastore_id.deref()
     }
     /// <p>The import job identifier.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
-        self.job_id.as_deref()
+    pub fn job_id(&self) -> &str {
+        use std::ops::Deref;
+        self.job_id.deref()
     }
     /// <p>The import job status.</p>
-    pub fn job_status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
-        self.job_status.as_ref()
+    pub fn job_status(&self) -> &crate::types::JobStatus {
+        &self.job_status
     }
     /// <p>The timestamp when the import job was submitted.</p>
-    pub fn submitted_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.submitted_at.as_ref()
+    pub fn submitted_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.submitted_at
     }
 }
 impl ::aws_http::request_id::RequestId for StartDicomImportJobOutput {
@@ -55,6 +57,7 @@ pub struct StartDicomImportJobOutputBuilder {
 }
 impl StartDicomImportJobOutputBuilder {
     /// <p>The data store identifier.</p>
+    /// This field is required.
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +72,7 @@ impl StartDicomImportJobOutputBuilder {
         &self.datastore_id
     }
     /// <p>The import job identifier.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +87,7 @@ impl StartDicomImportJobOutputBuilder {
         &self.job_id
     }
     /// <p>The import job status.</p>
+    /// This field is required.
     pub fn job_status(mut self, input: crate::types::JobStatus) -> Self {
         self.job_status = ::std::option::Option::Some(input);
         self
@@ -97,6 +102,7 @@ impl StartDicomImportJobOutputBuilder {
         &self.job_status
     }
     /// <p>The timestamp when the import job was submitted.</p>
+    /// This field is required.
     pub fn submitted_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.submitted_at = ::std::option::Option::Some(input);
         self
@@ -120,13 +126,41 @@ impl StartDicomImportJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartDicomImportJobOutput`](crate::operation::start_dicom_import_job::StartDicomImportJobOutput).
-    pub fn build(self) -> crate::operation::start_dicom_import_job::StartDicomImportJobOutput {
-        crate::operation::start_dicom_import_job::StartDicomImportJobOutput {
-            datastore_id: self.datastore_id,
-            job_id: self.job_id,
-            job_status: self.job_status,
-            submitted_at: self.submitted_at,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`datastore_id`](crate::operation::start_dicom_import_job::builders::StartDicomImportJobOutputBuilder::datastore_id)
+    /// - [`job_id`](crate::operation::start_dicom_import_job::builders::StartDicomImportJobOutputBuilder::job_id)
+    /// - [`job_status`](crate::operation::start_dicom_import_job::builders::StartDicomImportJobOutputBuilder::job_status)
+    /// - [`submitted_at`](crate::operation::start_dicom_import_job::builders::StartDicomImportJobOutputBuilder::submitted_at)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::start_dicom_import_job::StartDicomImportJobOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::start_dicom_import_job::StartDicomImportJobOutput {
+            datastore_id: self.datastore_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "datastore_id",
+                    "datastore_id was not specified but it is required when building StartDicomImportJobOutput",
+                )
+            })?,
+            job_id: self.job_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "job_id",
+                    "job_id was not specified but it is required when building StartDicomImportJobOutput",
+                )
+            })?,
+            job_status: self.job_status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "job_status",
+                    "job_status was not specified but it is required when building StartDicomImportJobOutput",
+                )
+            })?,
+            submitted_at: self.submitted_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "submitted_at",
+                    "submitted_at was not specified but it is required when building StartDicomImportJobOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

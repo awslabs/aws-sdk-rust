@@ -64,7 +64,7 @@ impl ListLegalHoldsInputBuilder {
     /// Consumes the builder and constructs a [`ListLegalHoldsInput`](crate::operation::list_legal_holds::ListLegalHoldsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_legal_holds::ListLegalHoldsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_legal_holds::ListLegalHoldsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_legal_holds::ListLegalHoldsInput {
             next_token: self.next_token,
             max_results: self.max_results,

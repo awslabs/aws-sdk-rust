@@ -2,7 +2,7 @@
 pub fn ser_cancel_workflow_execution_decision_attributes(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CancelWorkflowExecutionDecisionAttributes,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.details {
         object.key("details").string(var_1.as_str());
     }

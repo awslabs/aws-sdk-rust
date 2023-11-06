@@ -35,11 +35,10 @@ pub fn de_put_dial_request_batch_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::put_dial_request_batch::PutDialRequestBatchError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ConflictException" => crate::operation::put_dial_request_batch::PutDialRequestBatchError::ConflictException({
@@ -57,11 +56,10 @@ pub fn de_put_dial_request_batch_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::conflict_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::put_dial_request_batch::PutDialRequestBatchError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerException" => crate::operation::put_dial_request_batch::PutDialRequestBatchError::InternalServerException({
@@ -79,11 +77,10 @@ pub fn de_put_dial_request_batch_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::put_dial_request_batch::PutDialRequestBatchError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InvalidCampaignStateException" => crate::operation::put_dial_request_batch::PutDialRequestBatchError::InvalidCampaignStateException({
@@ -104,11 +101,10 @@ pub fn de_put_dial_request_batch_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_campaign_state_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::put_dial_request_batch::PutDialRequestBatchError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::put_dial_request_batch::PutDialRequestBatchError::ResourceNotFoundException({
@@ -126,11 +122,10 @@ pub fn de_put_dial_request_batch_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::put_dial_request_batch::PutDialRequestBatchError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::put_dial_request_batch::PutDialRequestBatchError::ThrottlingException({
@@ -148,11 +143,10 @@ pub fn de_put_dial_request_batch_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::put_dial_request_batch::PutDialRequestBatchError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::put_dial_request_batch::PutDialRequestBatchError::ValidationException({
@@ -170,11 +164,10 @@ pub fn de_put_dial_request_batch_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::put_dial_request_batch::PutDialRequestBatchError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::put_dial_request_batch::PutDialRequestBatchError::generic(generic),
@@ -202,12 +195,12 @@ pub fn de_put_dial_request_batch_http_response(
 
 pub fn ser_put_dial_request_batch_input(
     input: &crate::operation::put_dial_request_batch::PutDialRequestBatchInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_put_dial_request_batch_input::ser_put_dial_request_batch_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_put_dial_request_batch(

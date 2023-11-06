@@ -62,6 +62,7 @@ pub struct UpdateTemplateSyncConfigInputBuilder {
 }
 impl UpdateTemplateSyncConfigInputBuilder {
     /// <p>The synced template name.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl UpdateTemplateSyncConfigInputBuilder {
         &self.template_name
     }
     /// <p>The synced template type.</p>
+    /// This field is required.
     pub fn template_type(mut self, input: crate::types::TemplateType) -> Self {
         self.template_type = ::std::option::Option::Some(input);
         self
@@ -90,6 +92,7 @@ impl UpdateTemplateSyncConfigInputBuilder {
         &self.template_type
     }
     /// <p>The repository provider.</p>
+    /// This field is required.
     pub fn repository_provider(mut self, input: crate::types::RepositoryProvider) -> Self {
         self.repository_provider = ::std::option::Option::Some(input);
         self
@@ -104,6 +107,7 @@ impl UpdateTemplateSyncConfigInputBuilder {
         &self.repository_provider
     }
     /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +122,7 @@ impl UpdateTemplateSyncConfigInputBuilder {
         &self.repository_name
     }
     /// <p>The repository branch for your template.</p>
+    /// This field is required.
     pub fn branch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch = ::std::option::Option::Some(input.into());
         self
@@ -150,7 +155,7 @@ impl UpdateTemplateSyncConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_template_sync_config::UpdateTemplateSyncConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_template_sync_config::UpdateTemplateSyncConfigInput {
             template_name: self.template_name,

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamSpecification {
     /// <p>Indicates whether DynamoDB Streams is enabled (true) or disabled (false) on the table.</p>
-    pub stream_enabled: ::std::option::Option<bool>,
+    pub stream_enabled: bool,
     /// <p> When an item in the table is modified, <code>StreamViewType</code> determines what information is written to the stream for this table. Valid values for <code>StreamViewType</code> are:</p>
     /// <ul>
     /// <li> <p> <code>KEYS_ONLY</code> - Only the key attributes of the modified item are written to the stream.</p> </li>
@@ -17,7 +17,7 @@ pub struct StreamSpecification {
 }
 impl StreamSpecification {
     /// <p>Indicates whether DynamoDB Streams is enabled (true) or disabled (false) on the table.</p>
-    pub fn stream_enabled(&self) -> ::std::option::Option<bool> {
+    pub fn stream_enabled(&self) -> bool {
         self.stream_enabled
     }
     /// <p> When an item in the table is modified, <code>StreamViewType</code> determines what information is written to the stream for this table. Valid values for <code>StreamViewType</code> are:</p>
@@ -47,6 +47,7 @@ pub struct StreamSpecificationBuilder {
 }
 impl StreamSpecificationBuilder {
     /// <p>Indicates whether DynamoDB Streams is enabled (true) or disabled (false) on the table.</p>
+    /// This field is required.
     pub fn stream_enabled(mut self, input: bool) -> Self {
         self.stream_enabled = ::std::option::Option::Some(input);
         self
@@ -93,10 +94,17 @@ impl StreamSpecificationBuilder {
         &self.stream_view_type
     }
     /// Consumes the builder and constructs a [`StreamSpecification`](crate::types::StreamSpecification).
-    pub fn build(self) -> crate::types::StreamSpecification {
-        crate::types::StreamSpecification {
-            stream_enabled: self.stream_enabled,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`stream_enabled`](crate::types::builders::StreamSpecificationBuilder::stream_enabled)
+    pub fn build(self) -> ::std::result::Result<crate::types::StreamSpecification, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::StreamSpecification {
+            stream_enabled: self.stream_enabled.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "stream_enabled",
+                    "stream_enabled was not specified but it is required when building StreamSpecification",
+                )
+            })?,
             stream_view_type: self.stream_view_type,
-        }
+        })
     }
 }

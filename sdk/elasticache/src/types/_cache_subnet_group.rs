@@ -35,16 +35,20 @@ impl CacheSubnetGroup {
         self.vpc_id.as_deref()
     }
     /// <p>A list of subnets associated with the cache subnet group.</p>
-    pub fn subnets(&self) -> ::std::option::Option<&[crate::types::Subnet]> {
-        self.subnets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnets.is_none()`.
+    pub fn subnets(&self) -> &[crate::types::Subnet] {
+        self.subnets.as_deref().unwrap_or_default()
     }
     /// <p>The ARN (Amazon Resource Name) of the cache subnet group.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
-    pub fn supported_network_types(&self) -> ::std::option::Option<&[crate::types::NetworkType]> {
-        self.supported_network_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_network_types.is_none()`.
+    pub fn supported_network_types(&self) -> &[crate::types::NetworkType] {
+        self.supported_network_types.as_deref().unwrap_or_default()
     }
 }
 impl CacheSubnetGroup {

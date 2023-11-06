@@ -34,6 +34,7 @@ pub struct UpdateTargetGroupInputBuilder {
 }
 impl UpdateTargetGroupInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
+    /// This field is required.
     pub fn target_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_group_identifier = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateTargetGroupInputBuilder {
         &self.target_group_identifier
     }
     /// <p>The health check configuration.</p>
+    /// This field is required.
     pub fn health_check(mut self, input: crate::types::HealthCheckConfig) -> Self {
         self.health_check = ::std::option::Option::Some(input);
         self
@@ -64,7 +66,7 @@ impl UpdateTargetGroupInputBuilder {
     /// Consumes the builder and constructs a [`UpdateTargetGroupInput`](crate::operation::update_target_group::UpdateTargetGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_target_group::UpdateTargetGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_target_group::UpdateTargetGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_target_group::UpdateTargetGroupInput {
             target_group_identifier: self.target_group_identifier,
             health_check: self.health_check,

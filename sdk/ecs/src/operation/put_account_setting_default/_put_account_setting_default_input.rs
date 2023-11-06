@@ -52,6 +52,7 @@ impl PutAccountSettingDefaultInputBuilder {
     /// <p>The resource name for which to modify the account setting. If you specify <code>serviceLongArnFormat</code>, the ARN for your Amazon ECS services is affected. If you specify <code>taskLongArnFormat</code>, the ARN and resource ID for your Amazon ECS tasks is affected. If you specify <code>containerInstanceLongArnFormat</code>, the ARN and resource ID for your Amazon ECS container instances is affected. If you specify <code>awsvpcTrunking</code>, the ENI limit for your Amazon ECS container instances is affected. If you specify <code>containerInsights</code>, the default setting for Amazon Web Services CloudWatch Container Insights for your clusters is affected. If you specify <code>tagResourceAuthorization</code>, the opt-in option for tagging resources on creation is affected. For information about the opt-in timeline, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#tag-resources">Tagging authorization timeline</a> in the <i>Amazon ECS Developer Guide</i>. If you specify <code>fargateTaskRetirementWaitPeriod</code>, the default wait time to retire a Fargate task due to required maintenance is affected.</p>
     /// <p>When you specify <code>fargateFIPSMode</code> for the <code>name</code> and <code>enabled</code> for the <code>value</code>, Fargate uses FIPS-140 compliant cryptographic algorithms on your tasks. For more information about FIPS-140 compliance with Fargate, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-fips-compliance.html"> Amazon Web Services Fargate Federal Information Processing Standard (FIPS) 140-2 compliance</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// <p>When Amazon Web Services determines that a security or infrastructure update is needed for an Amazon ECS task hosted on Fargate, the tasks need to be stopped and new tasks launched to replace them. Use <code>fargateTaskRetirementWaitPeriod</code> to set the wait time to retire a Fargate task to the default. For information about the Fargate tasks maintenance, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-maintenance.html">Amazon Web Services Fargate task maintenance</a> in the <i>Amazon ECS Developer Guide</i>.</p>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::SettingName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -76,6 +77,7 @@ impl PutAccountSettingDefaultInputBuilder {
     /// <li> <p> <code>7</code> - Amazon Web Services sends the notification, and waits 7 calendar days to retire the tasks.</p> </li>
     /// <li> <p> <code>14</code> - Amazon Web Services sends the notification, and waits 14 calendar days to retire the tasks.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +108,7 @@ impl PutAccountSettingDefaultInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_account_setting_default::PutAccountSettingDefaultInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_account_setting_default::PutAccountSettingDefaultInput {
             name: self.name,

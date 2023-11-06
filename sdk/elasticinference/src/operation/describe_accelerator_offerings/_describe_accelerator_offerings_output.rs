@@ -9,8 +9,10 @@ pub struct DescribeAcceleratorOfferingsOutput {
 }
 impl DescribeAcceleratorOfferingsOutput {
     /// <p> The list of accelerator type offerings for a specific location. </p>
-    pub fn accelerator_type_offerings(&self) -> ::std::option::Option<&[crate::types::AcceleratorTypeOffering]> {
-        self.accelerator_type_offerings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accelerator_type_offerings.is_none()`.
+    pub fn accelerator_type_offerings(&self) -> &[crate::types::AcceleratorTypeOffering] {
+        self.accelerator_type_offerings.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeAcceleratorOfferingsOutput {

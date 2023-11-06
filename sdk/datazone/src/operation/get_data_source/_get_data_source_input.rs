@@ -34,6 +34,7 @@ pub struct GetDataSourceInputBuilder {
 }
 impl GetDataSourceInputBuilder {
     /// <p>The ID of the Amazon DataZone domain in which the data source exists.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetDataSourceInputBuilder {
         &self.domain_identifier
     }
     /// <p>The ID of the Amazon DataZone data source.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl GetDataSourceInputBuilder {
     /// Consumes the builder and constructs a [`GetDataSourceInput`](crate::operation::get_data_source::GetDataSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_data_source::GetDataSourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_data_source::GetDataSourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_data_source::GetDataSourceInput {
             domain_identifier: self.domain_identifier,
             identifier: self.identifier,

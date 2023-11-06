@@ -2,7 +2,7 @@
 pub fn ser_backend(
     object_10: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Backend,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::Backend::VirtualService(inner) => {
             #[allow(unused_mut)]
@@ -10,7 +10,7 @@ pub fn ser_backend(
             crate::protocol_serde::shape_virtual_service_backend::ser_virtual_service_backend(&mut object_1, inner)?;
             object_1.finish();
         }
-        crate::types::Backend::Unknown => return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("Backend")),
+        crate::types::Backend::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("Backend")),
     }
     Ok(())
 }
@@ -28,12 +28,17 @@ where
             match tokens.next().transpose()? {
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                    let key = key.to_unescaped()?;
+                    if key == "__type" {
+                        ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                        continue;
+                    }
                     if variant.is_some() {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
                             "encountered mixed variants in union",
                         ));
                     }
-                    variant = match key.to_unescaped()?.as_ref() {
+                    variant = match key.as_ref() {
                         "virtualService" => Some(crate::types::Backend::VirtualService(
                             crate::protocol_serde::shape_virtual_service_backend::de_virtual_service_backend(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'virtualService' cannot be null")

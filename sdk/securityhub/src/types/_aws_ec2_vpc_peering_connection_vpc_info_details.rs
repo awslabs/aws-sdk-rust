@@ -25,12 +25,16 @@ impl AwsEc2VpcPeeringConnectionVpcInfoDetails {
         self.cidr_block.as_deref()
     }
     /// <p>Information about the IPv4 CIDR blocks for the VPC. </p>
-    pub fn cidr_block_set(&self) -> ::std::option::Option<&[crate::types::VpcInfoCidrBlockSetDetails]> {
-        self.cidr_block_set.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cidr_block_set.is_none()`.
+    pub fn cidr_block_set(&self) -> &[crate::types::VpcInfoCidrBlockSetDetails] {
+        self.cidr_block_set.as_deref().unwrap_or_default()
     }
     /// <p>The IPv6 CIDR block for the VPC. </p>
-    pub fn ipv6_cidr_block_set(&self) -> ::std::option::Option<&[crate::types::VpcInfoIpv6CidrBlockSetDetails]> {
-        self.ipv6_cidr_block_set.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv6_cidr_block_set.is_none()`.
+    pub fn ipv6_cidr_block_set(&self) -> &[crate::types::VpcInfoIpv6CidrBlockSetDetails] {
+        self.ipv6_cidr_block_set.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the Amazon Web Services account that owns the VPC. </p>
     pub fn owner_id(&self) -> ::std::option::Option<&str> {

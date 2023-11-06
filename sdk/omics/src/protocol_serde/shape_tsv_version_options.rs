@@ -48,7 +48,7 @@ where
 pub fn ser_tsv_version_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TsvVersionOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.annotation_type {
         object.key("annotationType").string(var_1.as_str());
     }

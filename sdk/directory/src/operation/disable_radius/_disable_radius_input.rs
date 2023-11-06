@@ -28,6 +28,7 @@ pub struct DisableRadiusInputBuilder {
 }
 impl DisableRadiusInputBuilder {
     /// <p>The identifier of the directory for which to disable MFA.</p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl DisableRadiusInputBuilder {
     /// Consumes the builder and constructs a [`DisableRadiusInput`](crate::operation::disable_radius::DisableRadiusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disable_radius::DisableRadiusInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::disable_radius::DisableRadiusInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::disable_radius::DisableRadiusInput {
             directory_id: self.directory_id,
         })

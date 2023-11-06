@@ -176,6 +176,7 @@ pub struct SetTopicAttributesInputBuilder {
 }
 impl SetTopicAttributesInputBuilder {
     /// <p>The ARN of the topic to modify.</p>
+    /// This field is required.
     pub fn topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_arn = ::std::option::Option::Some(input.into());
         self
@@ -257,6 +258,7 @@ impl SetTopicAttributesInputBuilder {
     /// <li> <p>When you set <code>ContentBasedDeduplication</code> to <code>true</code>, Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).</p> <p>(Optional) To override the generated value, you can specify a value for the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code> action.</p> </li>
     /// </ul> </li>
     /// </ul>
+    /// This field is required.
     pub fn attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_name = ::std::option::Option::Some(input.into());
         self
@@ -421,7 +423,8 @@ impl SetTopicAttributesInputBuilder {
     /// Consumes the builder and constructs a [`SetTopicAttributesInput`](crate::operation::set_topic_attributes::SetTopicAttributesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::set_topic_attributes::SetTopicAttributesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::set_topic_attributes::SetTopicAttributesInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::set_topic_attributes::SetTopicAttributesInput {
             topic_arn: self.topic_arn,
             attribute_name: self.attribute_name,

@@ -5,24 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IntentLevelSlotResolutionTestResultItem {
     /// <p>The name of the intent that was recognized.</p>
-    pub intent_name: ::std::option::Option<::std::string::String>,
+    pub intent_name: ::std::string::String,
     /// <p>Indicates whether the conversation involves multiple turns or not.</p>
     pub multi_turn_conversation: bool,
     /// <p>The results for the slot resolution in the test execution result.</p>
-    pub slot_resolution_results: ::std::option::Option<::std::vec::Vec<crate::types::SlotResolutionTestResultItem>>,
+    pub slot_resolution_results: ::std::vec::Vec<crate::types::SlotResolutionTestResultItem>,
 }
 impl IntentLevelSlotResolutionTestResultItem {
     /// <p>The name of the intent that was recognized.</p>
-    pub fn intent_name(&self) -> ::std::option::Option<&str> {
-        self.intent_name.as_deref()
+    pub fn intent_name(&self) -> &str {
+        use std::ops::Deref;
+        self.intent_name.deref()
     }
     /// <p>Indicates whether the conversation involves multiple turns or not.</p>
     pub fn multi_turn_conversation(&self) -> bool {
         self.multi_turn_conversation
     }
     /// <p>The results for the slot resolution in the test execution result.</p>
-    pub fn slot_resolution_results(&self) -> ::std::option::Option<&[crate::types::SlotResolutionTestResultItem]> {
-        self.slot_resolution_results.as_deref()
+    pub fn slot_resolution_results(&self) -> &[crate::types::SlotResolutionTestResultItem] {
+        use std::ops::Deref;
+        self.slot_resolution_results.deref()
     }
 }
 impl IntentLevelSlotResolutionTestResultItem {
@@ -42,6 +44,7 @@ pub struct IntentLevelSlotResolutionTestResultItemBuilder {
 }
 impl IntentLevelSlotResolutionTestResultItemBuilder {
     /// <p>The name of the intent that was recognized.</p>
+    /// This field is required.
     pub fn intent_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.intent_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl IntentLevelSlotResolutionTestResultItemBuilder {
         &self.intent_name
     }
     /// <p>Indicates whether the conversation involves multiple turns or not.</p>
+    /// This field is required.
     pub fn multi_turn_conversation(mut self, input: bool) -> Self {
         self.multi_turn_conversation = ::std::option::Option::Some(input);
         self
@@ -90,11 +94,26 @@ impl IntentLevelSlotResolutionTestResultItemBuilder {
         &self.slot_resolution_results
     }
     /// Consumes the builder and constructs a [`IntentLevelSlotResolutionTestResultItem`](crate::types::IntentLevelSlotResolutionTestResultItem).
-    pub fn build(self) -> crate::types::IntentLevelSlotResolutionTestResultItem {
-        crate::types::IntentLevelSlotResolutionTestResultItem {
-            intent_name: self.intent_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`intent_name`](crate::types::builders::IntentLevelSlotResolutionTestResultItemBuilder::intent_name)
+    /// - [`slot_resolution_results`](crate::types::builders::IntentLevelSlotResolutionTestResultItemBuilder::slot_resolution_results)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::IntentLevelSlotResolutionTestResultItem, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::IntentLevelSlotResolutionTestResultItem {
+            intent_name: self.intent_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "intent_name",
+                    "intent_name was not specified but it is required when building IntentLevelSlotResolutionTestResultItem",
+                )
+            })?,
             multi_turn_conversation: self.multi_turn_conversation.unwrap_or_default(),
-            slot_resolution_results: self.slot_resolution_results,
-        }
+            slot_resolution_results: self.slot_resolution_results.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "slot_resolution_results",
+                    "slot_resolution_results was not specified but it is required when building IntentLevelSlotResolutionTestResultItem",
+                )
+            })?,
+        })
     }
 }

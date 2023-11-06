@@ -8,7 +8,7 @@ pub struct StartViewerSessionRevocationInput {
     /// <p>The ID of the viewer associated with the viewer session to revoke. Do not use this field for personally identifying, confidential, or sensitive information.</p>
     pub viewer_id: ::std::option::Option<::std::string::String>,
     /// <p>An optional filter on which versions of the viewer session to revoke. All versions less than or equal to the specified version will be revoked. Default: 0.</p>
-    pub viewer_session_versions_less_than_or_equal_to: i32,
+    pub viewer_session_versions_less_than_or_equal_to: ::std::option::Option<i32>,
 }
 impl StartViewerSessionRevocationInput {
     /// <p>The ARN of the channel associated with the viewer session to revoke.</p>
@@ -20,7 +20,7 @@ impl StartViewerSessionRevocationInput {
         self.viewer_id.as_deref()
     }
     /// <p>An optional filter on which versions of the viewer session to revoke. All versions less than or equal to the specified version will be revoked. Default: 0.</p>
-    pub fn viewer_session_versions_less_than_or_equal_to(&self) -> i32 {
+    pub fn viewer_session_versions_less_than_or_equal_to(&self) -> ::std::option::Option<i32> {
         self.viewer_session_versions_less_than_or_equal_to
     }
 }
@@ -41,6 +41,7 @@ pub struct StartViewerSessionRevocationInputBuilder {
 }
 impl StartViewerSessionRevocationInputBuilder {
     /// <p>The ARN of the channel associated with the viewer session to revoke.</p>
+    /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl StartViewerSessionRevocationInputBuilder {
         &self.channel_arn
     }
     /// <p>The ID of the viewer associated with the viewer session to revoke. Do not use this field for personally identifying, confidential, or sensitive information.</p>
+    /// This field is required.
     pub fn viewer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.viewer_id = ::std::option::Option::Some(input.into());
         self
@@ -87,12 +89,12 @@ impl StartViewerSessionRevocationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_viewer_session_revocation::StartViewerSessionRevocationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_viewer_session_revocation::StartViewerSessionRevocationInput {
             channel_arn: self.channel_arn,
             viewer_id: self.viewer_id,
-            viewer_session_versions_less_than_or_equal_to: self.viewer_session_versions_less_than_or_equal_to.unwrap_or_default(),
+            viewer_session_versions_less_than_or_equal_to: self.viewer_session_versions_less_than_or_equal_to,
         })
     }
 }

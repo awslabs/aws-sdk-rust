@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetRevision`](crate::operation::get_revision::builders::GetRevisionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`data_set_id(impl Into<String>)`](crate::operation::get_revision::builders::GetRevisionFluentBuilder::data_set_id) / [`set_data_set_id(Option<String>)`](crate::operation::get_revision::builders::GetRevisionFluentBuilder::set_data_set_id): <p>The unique identifier for a data set.</p>
-    ///   - [`revision_id(impl Into<String>)`](crate::operation::get_revision::builders::GetRevisionFluentBuilder::revision_id) / [`set_revision_id(Option<String>)`](crate::operation::get_revision::builders::GetRevisionFluentBuilder::set_revision_id): <p>The unique identifier for a revision.</p>
+    ///   - [`data_set_id(impl Into<String>)`](crate::operation::get_revision::builders::GetRevisionFluentBuilder::data_set_id) / [`set_data_set_id(Option<String>)`](crate::operation::get_revision::builders::GetRevisionFluentBuilder::set_data_set_id):<br>required: **true**<br><p>The unique identifier for a data set.</p><br>
+    ///   - [`revision_id(impl Into<String>)`](crate::operation::get_revision::builders::GetRevisionFluentBuilder::revision_id) / [`set_revision_id(Option<String>)`](crate::operation::get_revision::builders::GetRevisionFluentBuilder::set_revision_id):<br>required: **true**<br><p>The unique identifier for a revision.</p><br>
     /// - On success, responds with [`GetRevisionOutput`](crate::operation::get_revision::GetRevisionOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::get_revision::GetRevisionOutput::arn): <p>The ARN for the revision.</p>
     ///   - [`comment(Option<String>)`](crate::operation::get_revision::GetRevisionOutput::comment): <p>An optional comment about the revision.</p>
@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`finalized(bool)`](crate::operation::get_revision::GetRevisionOutput::finalized): <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products. Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
     ///   - [`id(Option<String>)`](crate::operation::get_revision::GetRevisionOutput::id): <p>The unique identifier for the revision.</p>
     ///   - [`source_id(Option<String>)`](crate::operation::get_revision::GetRevisionOutput::source_id): <p>The revision ID of the owned revision corresponding to the entitled revision being viewed. This parameter is returned when a revision owner is viewing the entitled copy of its owned revision.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_revision::GetRevisionOutput::tags): <p>The tags for the revision.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_revision::GetRevisionOutput::tags): <p>The tags for the revision.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_revision::GetRevisionOutput::updated_at): <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
     ///   - [`revocation_comment(Option<String>)`](crate::operation::get_revision::GetRevisionOutput::revocation_comment): <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
     ///   - [`revoked(bool)`](crate::operation::get_revision::GetRevisionOutput::revoked): <p>A status indicating that subscribers' access to the revision was revoked.</p>

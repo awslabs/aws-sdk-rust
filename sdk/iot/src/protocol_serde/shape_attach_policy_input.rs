@@ -2,7 +2,7 @@
 pub fn ser_attach_policy_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::attach_policy::AttachPolicyInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.target {
         object.key("target").string(var_1.as_str());
     }

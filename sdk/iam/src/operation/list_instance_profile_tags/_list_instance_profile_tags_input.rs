@@ -46,6 +46,7 @@ pub struct ListInstanceProfileTagsInputBuilder {
 impl ListInstanceProfileTagsInputBuilder {
     /// <p>The name of the IAM instance profile whose tags you want to see.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// This field is required.
     pub fn instance_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_profile_name = ::std::option::Option::Some(input.into());
         self
@@ -97,7 +98,7 @@ impl ListInstanceProfileTagsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_instance_profile_tags::ListInstanceProfileTagsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_instance_profile_tags::ListInstanceProfileTagsInput {
             instance_profile_name: self.instance_profile_name,

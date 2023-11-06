@@ -62,8 +62,10 @@ impl HyperParameterTuningJobSearchEntity {
         self.training_job_definition.as_ref()
     }
     /// <p>The job definitions included in a hyperparameter tuning job.</p>
-    pub fn training_job_definitions(&self) -> ::std::option::Option<&[crate::types::HyperParameterTrainingJobDefinition]> {
-        self.training_job_definitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.training_job_definitions.is_none()`.
+    pub fn training_job_definitions(&self) -> &[crate::types::HyperParameterTrainingJobDefinition] {
+        self.training_job_definitions.as_deref().unwrap_or_default()
     }
     /// <p>The status of a hyperparameter tuning job.</p>
     pub fn hyper_parameter_tuning_job_status(&self) -> ::std::option::Option<&crate::types::HyperParameterTuningJobStatus> {
@@ -109,8 +111,10 @@ impl HyperParameterTuningJobSearchEntity {
         self.failure_reason.as_deref()
     }
     /// <p>The tags associated with a hyperparameter tuning job. For more information see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Information about either a current or completed hyperparameter tuning job.</p>
     pub fn tuning_job_completion_details(&self) -> ::std::option::Option<&crate::types::HyperParameterTuningJobCompletionDetails> {

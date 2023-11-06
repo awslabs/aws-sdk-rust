@@ -79,6 +79,7 @@ impl RuleGroupBuilder {
         &self.reference_sets
     }
     /// <p>The stateful rules or stateless rules for the rule group. </p>
+    /// This field is required.
     pub fn rules_source(mut self, input: crate::types::RulesSource) -> Self {
         self.rules_source = ::std::option::Option::Some(input);
         self

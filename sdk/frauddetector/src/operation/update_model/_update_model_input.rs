@@ -41,6 +41,7 @@ pub struct UpdateModelInputBuilder {
 }
 impl UpdateModelInputBuilder {
     /// <p>The model ID.</p>
+    /// This field is required.
     pub fn model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateModelInputBuilder {
         &self.model_id
     }
     /// <p>The model type.</p>
+    /// This field is required.
     pub fn model_type(mut self, input: crate::types::ModelTypeEnum) -> Self {
         self.model_type = ::std::option::Option::Some(input);
         self
@@ -83,7 +85,7 @@ impl UpdateModelInputBuilder {
         &self.description
     }
     /// Consumes the builder and constructs a [`UpdateModelInput`](crate::operation::update_model::UpdateModelInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_model::UpdateModelInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_model::UpdateModelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_model::UpdateModelInput {
             model_id: self.model_id,
             model_type: self.model_type,

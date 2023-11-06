@@ -27,6 +27,7 @@ pub struct DeleteWirelessGatewayTaskDefinitionInputBuilder {
 }
 impl DeleteWirelessGatewayTaskDefinitionInputBuilder {
     /// <p>The ID of the resource to delete.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteWirelessGatewayTaskDefinitionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_wireless_gateway_task_definition::DeleteWirelessGatewayTaskDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_wireless_gateway_task_definition::DeleteWirelessGatewayTaskDefinitionInput { id: self.id })
     }

@@ -64,8 +64,10 @@ impl StartTopicsDetectionJobInput {
         self.vpc_config.as_ref()
     }
     /// <p>Tags to associate with the topics detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl StartTopicsDetectionJobInput {
@@ -91,6 +93,7 @@ pub struct StartTopicsDetectionJobInputBuilder {
 }
 impl StartTopicsDetectionJobInputBuilder {
     /// <p>Specifies the format and location of the input data for the job.</p>
+    /// This field is required.
     pub fn input_data_config(mut self, input: crate::types::InputDataConfig) -> Self {
         self.input_data_config = ::std::option::Option::Some(input);
         self
@@ -105,6 +108,7 @@ impl StartTopicsDetectionJobInputBuilder {
         &self.input_data_config
     }
     /// <p>Specifies where to send the output files. The output is a compressed archive with two files, <code>topic-terms.csv</code> that lists the terms associated with each topic, and <code>doc-topics.csv</code> that lists the documents associated with each topic</p>
+    /// This field is required.
     pub fn output_data_config(mut self, input: crate::types::OutputDataConfig) -> Self {
         self.output_data_config = ::std::option::Option::Some(input);
         self
@@ -119,6 +123,7 @@ impl StartTopicsDetectionJobInputBuilder {
         &self.output_data_config
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/security_iam_id-based-policy-examples.html#auth-role-permissions">Role-based permissions</a>.</p>
+    /// This field is required.
     pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_access_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -239,7 +244,7 @@ impl StartTopicsDetectionJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_topics_detection_job::StartTopicsDetectionJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_topics_detection_job::StartTopicsDetectionJobInput {
             input_data_config: self.input_data_config,

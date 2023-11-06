@@ -2,18 +2,18 @@
 pub fn ser_kpi_sparkline_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::KpiSparklineOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.visibility {
         object.key("Visibility").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.r#type {
-        object.key("Type").string(var_2.as_str());
+    {
+        object.key("Type").string(input.r#type.as_str());
     }
-    if let Some(var_3) = &input.color {
-        object.key("Color").string(var_3.as_str());
+    if let Some(var_2) = &input.color {
+        object.key("Color").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.tooltip_visibility {
-        object.key("TooltipVisibility").string(var_4.as_str());
+    if let Some(var_3) = &input.tooltip_visibility {
+        object.key("TooltipVisibility").string(var_3.as_str());
     }
     Ok(())
 }
@@ -71,7 +71,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::kpi_sparkline_options_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -4,19 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRecipeVersionOutput {
     /// <p>The name of the recipe that was deleted.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The version of the recipe that was deleted.</p>
-    pub recipe_version: ::std::option::Option<::std::string::String>,
+    pub recipe_version: ::std::string::String,
     _request_id: Option<String>,
 }
 impl DeleteRecipeVersionOutput {
     /// <p>The name of the recipe that was deleted.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The version of the recipe that was deleted.</p>
-    pub fn recipe_version(&self) -> ::std::option::Option<&str> {
-        self.recipe_version.as_deref()
+    pub fn recipe_version(&self) -> &str {
+        use std::ops::Deref;
+        self.recipe_version.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteRecipeVersionOutput {
@@ -41,6 +43,7 @@ pub struct DeleteRecipeVersionOutputBuilder {
 }
 impl DeleteRecipeVersionOutputBuilder {
     /// <p>The name of the recipe that was deleted.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl DeleteRecipeVersionOutputBuilder {
         &self.name
     }
     /// <p>The version of the recipe that was deleted.</p>
+    /// This field is required.
     pub fn recipe_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recipe_version = ::std::option::Option::Some(input.into());
         self
@@ -78,11 +82,27 @@ impl DeleteRecipeVersionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteRecipeVersionOutput`](crate::operation::delete_recipe_version::DeleteRecipeVersionOutput).
-    pub fn build(self) -> crate::operation::delete_recipe_version::DeleteRecipeVersionOutput {
-        crate::operation::delete_recipe_version::DeleteRecipeVersionOutput {
-            name: self.name,
-            recipe_version: self.recipe_version,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::delete_recipe_version::builders::DeleteRecipeVersionOutputBuilder::name)
+    /// - [`recipe_version`](crate::operation::delete_recipe_version::builders::DeleteRecipeVersionOutputBuilder::recipe_version)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_recipe_version::DeleteRecipeVersionOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_recipe_version::DeleteRecipeVersionOutput {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DeleteRecipeVersionOutput",
+                )
+            })?,
+            recipe_version: self.recipe_version.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "recipe_version",
+                    "recipe_version was not specified but it is required when building DeleteRecipeVersionOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

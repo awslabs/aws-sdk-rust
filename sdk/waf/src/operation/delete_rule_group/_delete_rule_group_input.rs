@@ -34,6 +34,7 @@ pub struct DeleteRuleGroupInputBuilder {
 }
 impl DeleteRuleGroupInputBuilder {
     /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to delete. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
+    /// This field is required.
     pub fn rule_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_group_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteRuleGroupInputBuilder {
         &self.rule_group_id
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    /// This field is required.
     pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_token = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DeleteRuleGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRuleGroupInput`](crate::operation::delete_rule_group::DeleteRuleGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_rule_group::DeleteRuleGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_rule_group::DeleteRuleGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_rule_group::DeleteRuleGroupInput {
             rule_group_id: self.rule_group_id,
             change_token: self.change_token,

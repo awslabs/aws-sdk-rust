@@ -48,6 +48,7 @@ pub struct UpdateAnomalyDetectorInputBuilder {
 }
 impl UpdateAnomalyDetectorInputBuilder {
     /// <p>The ARN of the detector to update.</p>
+    /// This field is required.
     pub fn anomaly_detector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_detector_arn = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,7 @@ impl UpdateAnomalyDetectorInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAnomalyDetectorInput`](crate::operation::update_anomaly_detector::UpdateAnomalyDetectorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_anomaly_detector::UpdateAnomalyDetectorInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_anomaly_detector::UpdateAnomalyDetectorInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_anomaly_detector::UpdateAnomalyDetectorInput {
             anomaly_detector_arn: self.anomaly_detector_arn,

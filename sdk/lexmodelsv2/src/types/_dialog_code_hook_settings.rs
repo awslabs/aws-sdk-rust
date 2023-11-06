@@ -28,6 +28,7 @@ pub struct DialogCodeHookSettingsBuilder {
 }
 impl DialogCodeHookSettingsBuilder {
     /// <p>Enables the dialog code hook so that it processes user requests.</p>
+    /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self

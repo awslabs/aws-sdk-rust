@@ -48,6 +48,7 @@ impl EnableIpamOrganizationAdminAccountInputBuilder {
         &self.dry_run
     }
     /// <p>The Organizations member account ID that you want to enable as the IPAM account.</p>
+    /// This field is required.
     pub fn delegated_admin_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delegated_admin_account_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl EnableIpamOrganizationAdminAccountInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable_ipam_organization_admin_account::EnableIpamOrganizationAdminAccountInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::enable_ipam_organization_admin_account::EnableIpamOrganizationAdminAccountInput {

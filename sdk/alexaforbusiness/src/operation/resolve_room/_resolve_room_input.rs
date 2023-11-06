@@ -34,6 +34,7 @@ pub struct ResolveRoomInputBuilder {
 }
 impl ResolveRoomInputBuilder {
     /// <p>The ARN of the user. Required.</p>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl ResolveRoomInputBuilder {
         &self.user_id
     }
     /// <p>The ARN of the skill that was requested. Required.</p>
+    /// This field is required.
     pub fn skill_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.skill_id = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,7 @@ impl ResolveRoomInputBuilder {
         &self.skill_id
     }
     /// Consumes the builder and constructs a [`ResolveRoomInput`](crate::operation::resolve_room::ResolveRoomInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::resolve_room::ResolveRoomInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::resolve_room::ResolveRoomInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::resolve_room::ResolveRoomInput {
             user_id: self.user_id,
             skill_id: self.skill_id,

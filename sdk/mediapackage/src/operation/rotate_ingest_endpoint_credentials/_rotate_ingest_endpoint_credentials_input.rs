@@ -34,6 +34,7 @@ pub struct RotateIngestEndpointCredentialsInputBuilder {
 }
 impl RotateIngestEndpointCredentialsInputBuilder {
     /// The ID of the channel the IngestEndpoint is on.
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl RotateIngestEndpointCredentialsInputBuilder {
         &self.id
     }
     /// The id of the IngestEndpoint whose credentials should be rotated
+    /// This field is required.
     pub fn ingest_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ingest_endpoint_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl RotateIngestEndpointCredentialsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::rotate_ingest_endpoint_credentials::RotateIngestEndpointCredentialsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::rotate_ingest_endpoint_credentials::RotateIngestEndpointCredentialsInput {

@@ -27,6 +27,7 @@ pub struct DisconnectSourceServerInputBuilder {
 }
 impl DisconnectSourceServerInputBuilder {
     /// <p>The ID of the Source Server to disconnect.</p>
+    /// This field is required.
     pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
@@ -43,8 +44,10 @@ impl DisconnectSourceServerInputBuilder {
     /// Consumes the builder and constructs a [`DisconnectSourceServerInput`](crate::operation::disconnect_source_server::DisconnectSourceServerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disconnect_source_server::DisconnectSourceServerInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::disconnect_source_server::DisconnectSourceServerInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::disconnect_source_server::DisconnectSourceServerInput {
             source_server_id: self.source_server_id,
         })

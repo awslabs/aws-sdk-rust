@@ -11,14 +11,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EndpointState {
     /// <p>Enum that indicates the Status of an <code>AppInstanceUserEndpoint</code>.</p>
-    pub status: ::std::option::Option<crate::types::EndpointStatus>,
+    pub status: crate::types::EndpointStatus,
     /// <p>The reason for the <code>EndpointStatus</code>.</p>
     pub status_reason: ::std::option::Option<crate::types::EndpointStatusReason>,
 }
 impl EndpointState {
     /// <p>Enum that indicates the Status of an <code>AppInstanceUserEndpoint</code>.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::EndpointStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::EndpointStatus {
+        &self.status
     }
     /// <p>The reason for the <code>EndpointStatus</code>.</p>
     pub fn status_reason(&self) -> ::std::option::Option<&crate::types::EndpointStatusReason> {
@@ -41,6 +41,7 @@ pub struct EndpointStateBuilder {
 }
 impl EndpointStateBuilder {
     /// <p>Enum that indicates the Status of an <code>AppInstanceUserEndpoint</code>.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::EndpointStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -69,10 +70,17 @@ impl EndpointStateBuilder {
         &self.status_reason
     }
     /// Consumes the builder and constructs a [`EndpointState`](crate::types::EndpointState).
-    pub fn build(self) -> crate::types::EndpointState {
-        crate::types::EndpointState {
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::types::builders::EndpointStateBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::EndpointState, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EndpointState {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building EndpointState",
+                )
+            })?,
             status_reason: self.status_reason,
-        }
+        })
     }
 }

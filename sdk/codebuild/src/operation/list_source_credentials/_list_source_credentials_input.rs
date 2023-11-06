@@ -18,7 +18,7 @@ impl ListSourceCredentialsInputBuilder {
     /// Consumes the builder and constructs a [`ListSourceCredentialsInput`](crate::operation::list_source_credentials::ListSourceCredentialsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_source_credentials::ListSourceCredentialsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_source_credentials::ListSourceCredentialsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_source_credentials::ListSourceCredentialsInput {})
     }

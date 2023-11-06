@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CancelAnnotationImportJob`](crate::operation::cancel_annotation_import_job::builders::CancelAnnotationImportJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_id(impl Into<String>)`](crate::operation::cancel_annotation_import_job::builders::CancelAnnotationImportJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::cancel_annotation_import_job::builders::CancelAnnotationImportJobFluentBuilder::set_job_id): <p>The job's ID.</p>
+    ///   - [`job_id(impl Into<String>)`](crate::operation::cancel_annotation_import_job::builders::CancelAnnotationImportJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::cancel_annotation_import_job::builders::CancelAnnotationImportJobFluentBuilder::set_job_id):<br>required: **true**<br><p>The job's ID.</p><br>
     /// - On success, responds with [`CancelAnnotationImportJobOutput`](crate::operation::cancel_annotation_import_job::CancelAnnotationImportJobOutput)
     /// - On failure, responds with [`SdkError<CancelAnnotationImportJobError>`](crate::operation::cancel_annotation_import_job::CancelAnnotationImportJobError)
     pub fn cancel_annotation_import_job(&self) -> crate::operation::cancel_annotation_import_job::builders::CancelAnnotationImportJobFluentBuilder {

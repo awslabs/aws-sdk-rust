@@ -2,29 +2,30 @@
 pub fn ser_forwarded_values(
     input: &crate::types::ForwardedValues,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.query_string {
+    {
         let mut inner_writer = scope.start_el("QueryString").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_1).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.query_string).encode());
     }
-    if let Some(var_2) = &input.cookies {
+    if let Some(var_1) = &input.cookies {
         let inner_writer = scope.start_el("Cookies");
-        crate::protocol_serde::shape_cookie_preference::ser_cookie_preference(var_2, inner_writer)?
+        crate::protocol_serde::shape_cookie_preference::ser_cookie_preference(var_1, inner_writer)?
     }
-    if let Some(var_3) = &input.headers {
+    if let Some(var_2) = &input.headers {
         let inner_writer = scope.start_el("Headers");
-        crate::protocol_serde::shape_headers::ser_headers(var_3, inner_writer)?
+        crate::protocol_serde::shape_headers::ser_headers(var_2, inner_writer)?
     }
-    if let Some(var_4) = &input.query_string_cache_keys {
+    if let Some(var_3) = &input.query_string_cache_keys {
         let inner_writer = scope.start_el("QueryStringCacheKeys");
-        crate::protocol_serde::shape_query_string_cache_keys::ser_query_string_cache_keys(var_4, inner_writer)?
+        crate::protocol_serde::shape_query_string_cache_keys::ser_query_string_cache_keys(var_3, inner_writer)?
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_forwarded_values(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::ForwardedValues, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -33,7 +34,7 @@ pub fn de_forwarded_values(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("QueryString") /* QueryString com.amazonaws.cloudfront#ForwardedValues$QueryString */ =>  {
-                let var_5 =
+                let var_4 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -44,41 +45,43 @@ pub fn de_forwarded_values(
                         ?
                     )
                 ;
-                builder = builder.set_query_string(var_5);
+                builder = builder.set_query_string(var_4);
             }
             ,
             s if s.matches("Cookies") /* Cookies com.amazonaws.cloudfront#ForwardedValues$Cookies */ =>  {
-                let var_6 =
+                let var_5 =
                     Some(
                         crate::protocol_serde::shape_cookie_preference::de_cookie_preference(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_cookies(var_6);
+                builder = builder.set_cookies(var_5);
             }
             ,
             s if s.matches("Headers") /* Headers com.amazonaws.cloudfront#ForwardedValues$Headers */ =>  {
-                let var_7 =
+                let var_6 =
                     Some(
                         crate::protocol_serde::shape_headers::de_headers(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_headers(var_7);
+                builder = builder.set_headers(var_6);
             }
             ,
             s if s.matches("QueryStringCacheKeys") /* QueryStringCacheKeys com.amazonaws.cloudfront#ForwardedValues$QueryStringCacheKeys */ =>  {
-                let var_8 =
+                let var_7 =
                     Some(
                         crate::protocol_serde::shape_query_string_cache_keys::de_query_string_cache_keys(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_query_string_cache_keys(var_8);
+                builder = builder.set_query_string_cache_keys(var_7);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::forwarded_values_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

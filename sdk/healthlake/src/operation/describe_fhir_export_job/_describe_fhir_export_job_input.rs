@@ -34,6 +34,7 @@ pub struct DescribeFhirExportJobInputBuilder {
 }
 impl DescribeFhirExportJobInputBuilder {
     /// <p>The AWS generated ID for the data store from which files are being exported from for an export job.</p>
+    /// This field is required.
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeFhirExportJobInputBuilder {
         &self.datastore_id
     }
     /// <p>The AWS generated ID for an export job.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DescribeFhirExportJobInputBuilder {
     /// Consumes the builder and constructs a [`DescribeFhirExportJobInput`](crate::operation::describe_fhir_export_job::DescribeFhirExportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_fhir_export_job::DescribeFhirExportJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_fhir_export_job::DescribeFhirExportJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_fhir_export_job::DescribeFhirExportJobInput {
             datastore_id: self.datastore_id,

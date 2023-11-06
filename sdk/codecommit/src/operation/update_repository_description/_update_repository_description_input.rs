@@ -35,6 +35,7 @@ pub struct UpdateRepositoryDescriptionInputBuilder {
 }
 impl UpdateRepositoryDescriptionInputBuilder {
     /// <p>The name of the repository to set or change the comment or description for.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -67,7 +68,7 @@ impl UpdateRepositoryDescriptionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_repository_description::UpdateRepositoryDescriptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_repository_description::UpdateRepositoryDescriptionInput {
             repository_name: self.repository_name,

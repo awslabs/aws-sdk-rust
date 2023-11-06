@@ -66,6 +66,7 @@ pub struct UpdateAssessmentControlInputBuilder {
 }
 impl UpdateAssessmentControlInputBuilder {
     /// <p> The unique identifier for the assessment. </p>
+    /// This field is required.
     pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_id = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +81,7 @@ impl UpdateAssessmentControlInputBuilder {
         &self.assessment_id
     }
     /// <p> The unique identifier for the control set. </p>
+    /// This field is required.
     pub fn control_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_set_id = ::std::option::Option::Some(input.into());
         self
@@ -94,6 +96,7 @@ impl UpdateAssessmentControlInputBuilder {
         &self.control_set_id
     }
     /// <p> The unique identifier for the control. </p>
+    /// This field is required.
     pub fn control_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_id = ::std::option::Option::Some(input.into());
         self
@@ -140,7 +143,7 @@ impl UpdateAssessmentControlInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_assessment_control::UpdateAssessmentControlInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_assessment_control::UpdateAssessmentControlInput {
             assessment_id: self.assessment_id,

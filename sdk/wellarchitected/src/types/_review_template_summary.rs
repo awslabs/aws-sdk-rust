@@ -25,8 +25,10 @@ impl ReviewTemplateSummary {
         self.description.as_deref()
     }
     /// <p>Lenses associated with the review template.</p>
-    pub fn lenses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.lenses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lenses.is_none()`.
+    pub fn lenses(&self) -> &[::std::string::String] {
+        self.lenses.as_deref().unwrap_or_default()
     }
     /// <p>An Amazon Web Services account ID.</p>
     pub fn owner(&self) -> ::std::option::Option<&str> {

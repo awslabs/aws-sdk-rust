@@ -391,6 +391,7 @@ impl SearchInputBuilder {
     }
     /// <p>Specifies the search criteria for the request. How you specify the search criteria depends on the query parser used for the request and the parser options specified in the <code>queryOptions</code> parameter. By default, the <code>simple</code> query parser is used to process requests. To use the <code>structured</code>, <code>lucene</code>, or <code>dismax</code> query parser, you must also specify the <code>queryParser</code> parameter. </p>
     /// <p>For more information about specifying search criteria, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/searching.html">Searching Your Data</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
+    /// This field is required.
     pub fn query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query = ::std::option::Option::Some(input.into());
         self
@@ -565,7 +566,7 @@ impl SearchInputBuilder {
         &self.stats
     }
     /// Consumes the builder and constructs a [`SearchInput`](crate::operation::search::SearchInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::search::SearchInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::search::SearchInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search::SearchInput {
             cursor: self.cursor,
             expr: self.expr,

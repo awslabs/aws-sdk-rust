@@ -20,12 +20,16 @@ impl DescribeServiceUpdatesInput {
         self.service_update_name.as_deref()
     }
     /// <p>The list of cluster names to identify service updates to apply</p>
-    pub fn cluster_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cluster_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cluster_names.is_none()`.
+    pub fn cluster_names(&self) -> &[::std::string::String] {
+        self.cluster_names.as_deref().unwrap_or_default()
     }
     /// <p>The status(es) of the service updates to filter on</p>
-    pub fn status(&self) -> ::std::option::Option<&[crate::types::ServiceUpdateStatus]> {
-        self.status.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.status.is_none()`.
+    pub fn status(&self) -> &[crate::types::ServiceUpdateStatus] {
+        self.status.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -139,8 +143,10 @@ impl DescribeServiceUpdatesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeServiceUpdatesInput`](crate::operation::describe_service_updates::DescribeServiceUpdatesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_service_updates::DescribeServiceUpdatesInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_service_updates::DescribeServiceUpdatesInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_service_updates::DescribeServiceUpdatesInput {
             service_update_name: self.service_update_name,
             cluster_names: self.cluster_names,

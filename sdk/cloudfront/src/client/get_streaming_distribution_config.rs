@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetStreamingDistributionConfig`](crate::operation::get_streaming_distribution_config::builders::GetStreamingDistributionConfigFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_streaming_distribution_config::builders::GetStreamingDistributionConfigFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_streaming_distribution_config::builders::GetStreamingDistributionConfigFluentBuilder::set_id): <p>The streaming distribution's ID.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_streaming_distribution_config::builders::GetStreamingDistributionConfigFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_streaming_distribution_config::builders::GetStreamingDistributionConfigFluentBuilder::set_id):<br>required: **true**<br><p>The streaming distribution's ID.</p><br>
     /// - On success, responds with [`GetStreamingDistributionConfigOutput`](crate::operation::get_streaming_distribution_config::GetStreamingDistributionConfigOutput) with field(s):
     ///   - [`streaming_distribution_config(Option<StreamingDistributionConfig>)`](crate::operation::get_streaming_distribution_config::GetStreamingDistributionConfigOutput::streaming_distribution_config): <p>The streaming distribution's configuration information.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::get_streaming_distribution_config::GetStreamingDistributionConfigOutput::e_tag): <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>. </p>

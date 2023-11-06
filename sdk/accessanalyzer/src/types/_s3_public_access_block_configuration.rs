@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3PublicAccessBlockConfiguration {
     /// <p> Specifies whether Amazon S3 should ignore public ACLs for this bucket and objects in this bucket. </p>
-    pub ignore_public_acls: ::std::option::Option<bool>,
+    pub ignore_public_acls: bool,
     /// <p> Specifies whether Amazon S3 should restrict public bucket policies for this bucket. </p>
-    pub restrict_public_buckets: ::std::option::Option<bool>,
+    pub restrict_public_buckets: bool,
 }
 impl S3PublicAccessBlockConfiguration {
     /// <p> Specifies whether Amazon S3 should ignore public ACLs for this bucket and objects in this bucket. </p>
-    pub fn ignore_public_acls(&self) -> ::std::option::Option<bool> {
+    pub fn ignore_public_acls(&self) -> bool {
         self.ignore_public_acls
     }
     /// <p> Specifies whether Amazon S3 should restrict public bucket policies for this bucket. </p>
-    pub fn restrict_public_buckets(&self) -> ::std::option::Option<bool> {
+    pub fn restrict_public_buckets(&self) -> bool {
         self.restrict_public_buckets
     }
 }
@@ -35,6 +35,7 @@ pub struct S3PublicAccessBlockConfigurationBuilder {
 }
 impl S3PublicAccessBlockConfigurationBuilder {
     /// <p> Specifies whether Amazon S3 should ignore public ACLs for this bucket and objects in this bucket. </p>
+    /// This field is required.
     pub fn ignore_public_acls(mut self, input: bool) -> Self {
         self.ignore_public_acls = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl S3PublicAccessBlockConfigurationBuilder {
         &self.ignore_public_acls
     }
     /// <p> Specifies whether Amazon S3 should restrict public bucket policies for this bucket. </p>
+    /// This field is required.
     pub fn restrict_public_buckets(mut self, input: bool) -> Self {
         self.restrict_public_buckets = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl S3PublicAccessBlockConfigurationBuilder {
         &self.restrict_public_buckets
     }
     /// Consumes the builder and constructs a [`S3PublicAccessBlockConfiguration`](crate::types::S3PublicAccessBlockConfiguration).
-    pub fn build(self) -> crate::types::S3PublicAccessBlockConfiguration {
-        crate::types::S3PublicAccessBlockConfiguration {
-            ignore_public_acls: self.ignore_public_acls,
-            restrict_public_buckets: self.restrict_public_buckets,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`ignore_public_acls`](crate::types::builders::S3PublicAccessBlockConfigurationBuilder::ignore_public_acls)
+    /// - [`restrict_public_buckets`](crate::types::builders::S3PublicAccessBlockConfigurationBuilder::restrict_public_buckets)
+    pub fn build(self) -> ::std::result::Result<crate::types::S3PublicAccessBlockConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::S3PublicAccessBlockConfiguration {
+            ignore_public_acls: self.ignore_public_acls.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "ignore_public_acls",
+                    "ignore_public_acls was not specified but it is required when building S3PublicAccessBlockConfiguration",
+                )
+            })?,
+            restrict_public_buckets: self.restrict_public_buckets.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "restrict_public_buckets",
+                    "restrict_public_buckets was not specified but it is required when building S3PublicAccessBlockConfiguration",
+                )
+            })?,
+        })
     }
 }

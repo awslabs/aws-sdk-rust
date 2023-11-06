@@ -42,8 +42,10 @@ impl DescribeOrganizationConfigurationOutput {
         self.data_sources.as_ref()
     }
     /// <p>A list of features that are configured for this organization.</p>
-    pub fn features(&self) -> ::std::option::Option<&[crate::types::OrganizationFeatureConfigurationResult]> {
-        self.features.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.features.is_none()`.
+    pub fn features(&self) -> &[crate::types::OrganizationFeatureConfigurationResult] {
+        self.features.as_deref().unwrap_or_default()
     }
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -105,6 +107,7 @@ impl DescribeOrganizationConfigurationOutputBuilder {
         &self.auto_enable
     }
     /// <p>Indicates whether the maximum number of allowed member accounts are already associated with the delegated administrator account for your organization.</p>
+    /// This field is required.
     pub fn member_account_limit_reached(mut self, input: bool) -> Self {
         self.member_account_limit_reached = ::std::option::Option::Some(input);
         self

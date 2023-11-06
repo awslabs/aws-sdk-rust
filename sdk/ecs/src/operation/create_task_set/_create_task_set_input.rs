@@ -68,12 +68,16 @@ impl CreateTaskSetInput {
         self.network_configuration.as_ref()
     }
     /// <p>A load balancer object representing the load balancer to use with the task set. The supported load balancer types are either an Application Load Balancer or a Network Load Balancer.</p>
-    pub fn load_balancers(&self) -> ::std::option::Option<&[crate::types::LoadBalancer]> {
-        self.load_balancers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.load_balancers.is_none()`.
+    pub fn load_balancers(&self) -> &[crate::types::LoadBalancer] {
+        self.load_balancers.as_deref().unwrap_or_default()
     }
     /// <p>The details of the service discovery registries to assign to this task set. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service discovery</a>.</p>
-    pub fn service_registries(&self) -> ::std::option::Option<&[crate::types::ServiceRegistry]> {
-        self.service_registries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_registries.is_none()`.
+    pub fn service_registries(&self) -> &[crate::types::ServiceRegistry] {
+        self.service_registries.as_deref().unwrap_or_default()
     }
     /// <p>The launch type that new tasks in the task set uses. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// <p>If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code> parameter must be omitted.</p>
@@ -86,8 +90,10 @@ impl CreateTaskSetInput {
     /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created. New capacity providers can be created with the <code>CreateCapacityProvider</code> API operation.</p>
     /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are available to all accounts and only need to be associated with a cluster to be used.</p>
     /// <p>The <code>PutClusterCapacityProviders</code> API operation is used to update the list of available capacity providers for a cluster after the cluster is created.</p>
-    pub fn capacity_provider_strategy(&self) -> ::std::option::Option<&[crate::types::CapacityProviderStrategyItem]> {
-        self.capacity_provider_strategy.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capacity_provider_strategy.is_none()`.
+    pub fn capacity_provider_strategy(&self) -> &[crate::types::CapacityProviderStrategyItem] {
+        self.capacity_provider_strategy.as_deref().unwrap_or_default()
     }
     /// <p>The platform version that the tasks in the task set uses. A platform version is specified only for tasks using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used.</p>
     pub fn platform_version(&self) -> ::std::option::Option<&str> {
@@ -112,8 +118,10 @@ impl CreateTaskSetInput {
     /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateTaskSetInput {
@@ -143,6 +151,7 @@ pub struct CreateTaskSetInputBuilder {
 }
 impl CreateTaskSetInputBuilder {
     /// <p>The short name or full Amazon Resource Name (ARN) of the service to create the task set in.</p>
+    /// This field is required.
     pub fn service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service = ::std::option::Option::Some(input.into());
         self
@@ -157,6 +166,7 @@ impl CreateTaskSetInputBuilder {
         &self.service
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service to create the task set in.</p>
+    /// This field is required.
     pub fn cluster(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster = ::std::option::Option::Some(input.into());
         self
@@ -185,6 +195,7 @@ impl CreateTaskSetInputBuilder {
         &self.external_id
     }
     /// <p>The task definition for the tasks in the task set to use. If a revision isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
+    /// This field is required.
     pub fn task_definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_definition = ::std::option::Option::Some(input.into());
         self
@@ -402,7 +413,7 @@ impl CreateTaskSetInputBuilder {
     /// Consumes the builder and constructs a [`CreateTaskSetInput`](crate::operation::create_task_set::CreateTaskSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_task_set::CreateTaskSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_task_set::CreateTaskSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_task_set::CreateTaskSetInput {
             service: self.service,
             cluster: self.cluster,

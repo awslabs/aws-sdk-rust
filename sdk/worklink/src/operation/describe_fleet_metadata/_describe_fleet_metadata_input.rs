@@ -27,6 +27,7 @@ pub struct DescribeFleetMetadataInputBuilder {
 }
 impl DescribeFleetMetadataInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    /// This field is required.
     pub fn fleet_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeFleetMetadataInputBuilder {
     /// Consumes the builder and constructs a [`DescribeFleetMetadataInput`](crate::operation::describe_fleet_metadata::DescribeFleetMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_fleet_metadata::DescribeFleetMetadataInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_fleet_metadata::DescribeFleetMetadataInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_fleet_metadata::DescribeFleetMetadataInput { fleet_arn: self.fleet_arn })
     }

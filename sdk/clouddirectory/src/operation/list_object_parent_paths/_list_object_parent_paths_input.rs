@@ -48,6 +48,7 @@ pub struct ListObjectParentPathsInputBuilder {
 }
 impl ListObjectParentPathsInputBuilder {
     /// <p>The ARN of the directory to which the parent path applies.</p>
+    /// This field is required.
     pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl ListObjectParentPathsInputBuilder {
         &self.directory_arn
     }
     /// <p>The reference that identifies the object whose parent paths are listed.</p>
+    /// This field is required.
     pub fn object_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.object_reference = ::std::option::Option::Some(input);
         self
@@ -106,7 +108,7 @@ impl ListObjectParentPathsInputBuilder {
     /// Consumes the builder and constructs a [`ListObjectParentPathsInput`](crate::operation::list_object_parent_paths::ListObjectParentPathsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_object_parent_paths::ListObjectParentPathsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_object_parent_paths::ListObjectParentPathsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_object_parent_paths::ListObjectParentPathsInput {
             directory_arn: self.directory_arn,

@@ -215,6 +215,7 @@ impl PublishInputBuilder {
     /// <li> <p>Duplicate keys are not allowed.</p> </li>
     /// <li> <p>Failure to parse or validate any key or value in the message will cause the <code>Publish</code> call to return an error (no partial delivery).</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -378,7 +379,7 @@ impl PublishInputBuilder {
         &self.message_group_id
     }
     /// Consumes the builder and constructs a [`PublishInput`](crate::operation::publish::PublishInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::publish::PublishInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::publish::PublishInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::publish::PublishInput {
             topic_arn: self.topic_arn,
             target_arn: self.target_arn,

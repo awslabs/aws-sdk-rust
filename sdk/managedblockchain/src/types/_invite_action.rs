@@ -6,12 +6,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InviteAction {
     /// <p>The Amazon Web Services account ID to invite.</p>
-    pub principal: ::std::option::Option<::std::string::String>,
+    pub principal: ::std::string::String,
 }
 impl InviteAction {
     /// <p>The Amazon Web Services account ID to invite.</p>
-    pub fn principal(&self) -> ::std::option::Option<&str> {
-        self.principal.as_deref()
+    pub fn principal(&self) -> &str {
+        use std::ops::Deref;
+        self.principal.deref()
     }
 }
 impl InviteAction {
@@ -29,6 +30,7 @@ pub struct InviteActionBuilder {
 }
 impl InviteActionBuilder {
     /// <p>The Amazon Web Services account ID to invite.</p>
+    /// This field is required.
     pub fn principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +45,16 @@ impl InviteActionBuilder {
         &self.principal
     }
     /// Consumes the builder and constructs a [`InviteAction`](crate::types::InviteAction).
-    pub fn build(self) -> crate::types::InviteAction {
-        crate::types::InviteAction { principal: self.principal }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`principal`](crate::types::builders::InviteActionBuilder::principal)
+    pub fn build(self) -> ::std::result::Result<crate::types::InviteAction, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::InviteAction {
+            principal: self.principal.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "principal",
+                    "principal was not specified but it is required when building InviteAction",
+                )
+            })?,
+        })
     }
 }

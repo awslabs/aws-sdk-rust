@@ -40,24 +40,32 @@ impl AwsEc2VpcEndpointServiceDetails {
         self.acceptance_required
     }
     /// <p>The Availability Zones where the service is available.</p>
-    pub fn availability_zones(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.availability_zones.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
+    pub fn availability_zones(&self) -> &[::std::string::String] {
+        self.availability_zones.as_deref().unwrap_or_default()
     }
     /// <p>The DNS names for the service.</p>
-    pub fn base_endpoint_dns_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.base_endpoint_dns_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.base_endpoint_dns_names.is_none()`.
+    pub fn base_endpoint_dns_names(&self) -> &[::std::string::String] {
+        self.base_endpoint_dns_names.as_deref().unwrap_or_default()
     }
     /// <p>Whether the service manages its VPC endpoints.</p>
     pub fn manages_vpc_endpoints(&self) -> ::std::option::Option<bool> {
         self.manages_vpc_endpoints
     }
     /// <p>The ARNs of the Gateway Load Balancers for the service.</p>
-    pub fn gateway_load_balancer_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.gateway_load_balancer_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.gateway_load_balancer_arns.is_none()`.
+    pub fn gateway_load_balancer_arns(&self) -> &[::std::string::String] {
+        self.gateway_load_balancer_arns.as_deref().unwrap_or_default()
     }
     /// <p>The ARNs of the Network Load Balancers for the service.</p>
-    pub fn network_load_balancer_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.network_load_balancer_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_load_balancer_arns.is_none()`.
+    pub fn network_load_balancer_arns(&self) -> &[::std::string::String] {
+        self.network_load_balancer_arns.as_deref().unwrap_or_default()
     }
     /// <p>The private DNS name for the service.</p>
     pub fn private_dns_name(&self) -> ::std::option::Option<&str> {
@@ -83,8 +91,10 @@ impl AwsEc2VpcEndpointServiceDetails {
         self.service_state.as_deref()
     }
     /// <p>The types for the service.</p>
-    pub fn service_type(&self) -> ::std::option::Option<&[crate::types::AwsEc2VpcEndpointServiceServiceTypeDetails]> {
-        self.service_type.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_type.is_none()`.
+    pub fn service_type(&self) -> &[crate::types::AwsEc2VpcEndpointServiceServiceTypeDetails] {
+        self.service_type.as_deref().unwrap_or_default()
     }
 }
 impl AwsEc2VpcEndpointServiceDetails {

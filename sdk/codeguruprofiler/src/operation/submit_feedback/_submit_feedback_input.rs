@@ -49,6 +49,7 @@ pub struct SubmitFeedbackInputBuilder {
 }
 impl SubmitFeedbackInputBuilder {
     /// <p>The name of the profiling group that is associated with the analysis data.</p>
+    /// This field is required.
     pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profiling_group_name = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl SubmitFeedbackInputBuilder {
         &self.profiling_group_name
     }
     /// <p>The universally unique identifier (UUID) of the <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AnomalyInstance.html"> <code>AnomalyInstance</code> </a> object that is included in the analysis data.</p>
+    /// This field is required.
     pub fn anomaly_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_instance_id = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +79,7 @@ impl SubmitFeedbackInputBuilder {
         &self.anomaly_instance_id
     }
     /// <p> The feedback tpye. Thee are two valid values, <code>Positive</code> and <code>Negative</code>. </p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::FeedbackType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -107,7 +110,7 @@ impl SubmitFeedbackInputBuilder {
     /// Consumes the builder and constructs a [`SubmitFeedbackInput`](crate::operation::submit_feedback::SubmitFeedbackInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::submit_feedback::SubmitFeedbackInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::submit_feedback::SubmitFeedbackInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::submit_feedback::SubmitFeedbackInput {
             profiling_group_name: self.profiling_group_name,
             anomaly_instance_id: self.anomaly_instance_id,

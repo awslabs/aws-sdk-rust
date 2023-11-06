@@ -36,6 +36,7 @@ pub struct InsightRuleContributorDatapointBuilder {
 }
 impl InsightRuleContributorDatapointBuilder {
     /// <p>The timestamp of the data point.</p>
+    /// This field is required.
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
         self
@@ -50,6 +51,7 @@ impl InsightRuleContributorDatapointBuilder {
         &self.timestamp
     }
     /// <p>The approximate value that this contributor added during this timestamp.</p>
+    /// This field is required.
     pub fn approximate_value(mut self, input: f64) -> Self {
         self.approximate_value = ::std::option::Option::Some(input);
         self

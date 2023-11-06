@@ -38,8 +38,10 @@ impl MedicalResult {
         self.is_partial
     }
     /// <p>A list of possible alternative transcriptions for the input audio. Each alternative may contain one or more of <code>Items</code>, <code>Entities</code>, or <code>Transcript</code>.</p>
-    pub fn alternatives(&self) -> ::std::option::Option<&[crate::types::MedicalAlternative]> {
-        self.alternatives.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alternatives.is_none()`.
+    pub fn alternatives(&self) -> &[crate::types::MedicalAlternative] {
+        self.alternatives.as_deref().unwrap_or_default()
     }
     /// <p>Indicates the channel identified for the <code>Result</code>.</p>
     pub fn channel_id(&self) -> ::std::option::Option<&str> {

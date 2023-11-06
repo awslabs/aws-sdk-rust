@@ -56,6 +56,7 @@ pub struct CreateModelInputBuilder {
 }
 impl CreateModelInputBuilder {
     /// <p>The RestApi identifier under which the Model will be created.</p>
+    /// This field is required.
     pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rest_api_id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +71,7 @@ impl CreateModelInputBuilder {
         &self.rest_api_id
     }
     /// <p>The name of the model. Must be alphanumeric.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +114,7 @@ impl CreateModelInputBuilder {
         &self.schema
     }
     /// <p>The content-type for the model.</p>
+    /// This field is required.
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
         self
@@ -126,7 +129,7 @@ impl CreateModelInputBuilder {
         &self.content_type
     }
     /// Consumes the builder and constructs a [`CreateModelInput`](crate::operation::create_model::CreateModelInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_model::CreateModelInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_model::CreateModelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_model::CreateModelInput {
             rest_api_id: self.rest_api_id,
             name: self.name,

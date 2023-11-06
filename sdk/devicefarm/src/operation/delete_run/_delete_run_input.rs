@@ -28,6 +28,7 @@ pub struct DeleteRunInputBuilder {
 }
 impl DeleteRunInputBuilder {
     /// <p>The Amazon Resource Name (ARN) for the run to delete.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +43,7 @@ impl DeleteRunInputBuilder {
         &self.arn
     }
     /// Consumes the builder and constructs a [`DeleteRunInput`](crate::operation::delete_run::DeleteRunInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_run::DeleteRunInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_run::DeleteRunInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_run::DeleteRunInput { arn: self.arn })
     }
 }

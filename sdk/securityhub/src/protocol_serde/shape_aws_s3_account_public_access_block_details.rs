@@ -2,7 +2,7 @@
 pub fn ser_aws_s3_account_public_access_block_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsS3AccountPublicAccessBlockDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.block_public_acls {
         object.key("BlockPublicAcls").boolean(*var_1);
     }

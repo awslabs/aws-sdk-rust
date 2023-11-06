@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetApplicationPolicy`](crate::operation::get_application_policy::builders::GetApplicationPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::operation::get_application_policy::builders::GetApplicationPolicyFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::get_application_policy::builders::GetApplicationPolicyFluentBuilder::set_application_id): <p>The Amazon Resource Name (ARN) of the application.</p>
+    ///   - [`application_id(impl Into<String>)`](crate::operation::get_application_policy::builders::GetApplicationPolicyFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::get_application_policy::builders::GetApplicationPolicyFluentBuilder::set_application_id):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the application.</p><br>
     /// - On success, responds with [`GetApplicationPolicyOutput`](crate::operation::get_application_policy::GetApplicationPolicyOutput) with field(s):
-    ///   - [`statements(Option<Vec<ApplicationPolicyStatement>>)`](crate::operation::get_application_policy::GetApplicationPolicyOutput::statements): <p>An array of policy statements applied to the application.</p>
+    ///   - [`statements(Option<Vec::<ApplicationPolicyStatement>>)`](crate::operation::get_application_policy::GetApplicationPolicyOutput::statements): <p>An array of policy statements applied to the application.</p>
     /// - On failure, responds with [`SdkError<GetApplicationPolicyError>`](crate::operation::get_application_policy::GetApplicationPolicyError)
     pub fn get_application_policy(&self) -> crate::operation::get_application_policy::builders::GetApplicationPolicyFluentBuilder {
         crate::operation::get_application_policy::builders::GetApplicationPolicyFluentBuilder::new(self.handle.clone())

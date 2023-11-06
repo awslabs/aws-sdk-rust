@@ -16,7 +16,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "availabilityZones" => {
                             builder = builder.set_availability_zones(
-                                crate::protocol_serde::shape___list_of_availability_zone::de___list_of_availability_zone(tokens)?,
+                                crate::protocol_serde::shape_list_of_availability_zone::de_list_of_availability_zone(tokens)?,
                             );
                         }
                         "engineType" => {
@@ -42,12 +42,11 @@ where
                         }
                         "supportedDeploymentModes" => {
                             builder = builder.set_supported_deployment_modes(
-                                crate::protocol_serde::shape___list_of_deployment_mode::de___list_of_deployment_mode(tokens)?,
+                                crate::protocol_serde::shape_list_of_deployment_mode::de_list_of_deployment_mode(tokens)?,
                             );
                         }
                         "supportedEngineVersions" => {
-                            builder =
-                                builder.set_supported_engine_versions(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                            builder = builder.set_supported_engine_versions(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

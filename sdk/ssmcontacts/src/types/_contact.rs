@@ -5,30 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Contact {
     /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
-    pub contact_arn: ::std::option::Option<::std::string::String>,
+    pub contact_arn: ::std::string::String,
     /// <p>The unique and identifiable alias of the contact or escalation plan.</p>
-    pub alias: ::std::option::Option<::std::string::String>,
+    pub alias: ::std::string::String,
     /// <p>The full name of the contact or escalation plan.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>Refers to the type of contact. A single contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
-    pub r#type: ::std::option::Option<crate::types::ContactType>,
+    pub r#type: crate::types::ContactType,
 }
 impl Contact {
     /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
-    pub fn contact_arn(&self) -> ::std::option::Option<&str> {
-        self.contact_arn.as_deref()
+    pub fn contact_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.contact_arn.deref()
     }
     /// <p>The unique and identifiable alias of the contact or escalation plan.</p>
-    pub fn alias(&self) -> ::std::option::Option<&str> {
-        self.alias.as_deref()
+    pub fn alias(&self) -> &str {
+        use std::ops::Deref;
+        self.alias.deref()
     }
     /// <p>The full name of the contact or escalation plan.</p>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
     /// <p>Refers to the type of contact. A single contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ContactType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::ContactType {
+        &self.r#type
     }
 }
 impl Contact {
@@ -49,6 +51,7 @@ pub struct ContactBuilder {
 }
 impl ContactBuilder {
     /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
+    /// This field is required.
     pub fn contact_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_arn = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +66,7 @@ impl ContactBuilder {
         &self.contact_arn
     }
     /// <p>The unique and identifiable alias of the contact or escalation plan.</p>
+    /// This field is required.
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +95,7 @@ impl ContactBuilder {
         &self.display_name
     }
     /// <p>Refers to the type of contact. A single contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::ContactType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -105,12 +110,31 @@ impl ContactBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`Contact`](crate::types::Contact).
-    pub fn build(self) -> crate::types::Contact {
-        crate::types::Contact {
-            contact_arn: self.contact_arn,
-            alias: self.alias,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`contact_arn`](crate::types::builders::ContactBuilder::contact_arn)
+    /// - [`alias`](crate::types::builders::ContactBuilder::alias)
+    /// - [`r#type`](crate::types::builders::ContactBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::Contact, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Contact {
+            contact_arn: self.contact_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "contact_arn",
+                    "contact_arn was not specified but it is required when building Contact",
+                )
+            })?,
+            alias: self.alias.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "alias",
+                    "alias was not specified but it is required when building Contact",
+                )
+            })?,
             display_name: self.display_name,
-            r#type: self.r#type,
-        }
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building Contact",
+                )
+            })?,
+        })
     }
 }

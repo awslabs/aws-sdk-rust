@@ -2,30 +2,30 @@
 pub fn ser_salesforce_destination_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SalesforceDestinationProperties,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.object {
-        object.key("object").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("object").string(input.object.as_str());
     }
-    if let Some(var_2) = &input.id_field_names {
-        let mut array_3 = object.key("idFieldNames").start_array();
-        for item_4 in var_2 {
+    if let Some(var_1) = &input.id_field_names {
+        let mut array_2 = object.key("idFieldNames").start_array();
+        for item_3 in var_1 {
             {
-                array_3.value().string(item_4.as_str());
+                array_2.value().string(item_3.as_str());
             }
         }
-        array_3.finish();
+        array_2.finish();
     }
-    if let Some(var_5) = &input.error_handling_config {
+    if let Some(var_4) = &input.error_handling_config {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("errorHandlingConfig").start_object();
-        crate::protocol_serde::shape_error_handling_config::ser_error_handling_config(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_5 = object.key("errorHandlingConfig").start_object();
+        crate::protocol_serde::shape_error_handling_config::ser_error_handling_config(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_7) = &input.write_operation_type {
-        object.key("writeOperationType").string(var_7.as_str());
+    if let Some(var_6) = &input.write_operation_type {
+        object.key("writeOperationType").string(var_6.as_str());
     }
-    if let Some(var_8) = &input.data_transfer_api {
-        object.key("dataTransferApi").string(var_8.as_str());
+    if let Some(var_7) = &input.data_transfer_api {
+        object.key("dataTransferApi").string(var_7.as_str());
     }
     Ok(())
 }
@@ -83,7 +83,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::salesforce_destination_properties_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -11,8 +11,10 @@ pub struct ListSyncResourcesOutput {
 }
 impl ListSyncResourcesOutput {
     /// <p>The sync resources.</p>
-    pub fn sync_resources(&self) -> ::std::option::Option<&[crate::types::SyncResourceSummary]> {
-        self.sync_resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sync_resources.is_none()`.
+    pub fn sync_resources(&self) -> &[crate::types::SyncResourceSummary] {
+        self.sync_resources.as_deref().unwrap_or_default()
     }
     /// <p>The string that specifies the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

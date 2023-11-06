@@ -27,6 +27,7 @@ pub struct DescribeLocationFsxLustreInputBuilder {
 }
 impl DescribeLocationFsxLustreInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the FSx for Lustre location to describe. </p>
+    /// This field is required.
     pub fn location_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeLocationFsxLustreInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_location_fsx_lustre::DescribeLocationFsxLustreInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_location_fsx_lustre::DescribeLocationFsxLustreInput {
             location_arn: self.location_arn,

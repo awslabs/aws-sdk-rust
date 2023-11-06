@@ -48,6 +48,7 @@ pub struct ListReadSetActivationJobsInputBuilder {
 }
 impl ListReadSetActivationJobsInputBuilder {
     /// <p>The read set's sequence store ID.</p>
+    /// This field is required.
     pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_store_id = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +109,7 @@ impl ListReadSetActivationJobsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsInput {
             sequence_store_id: self.sequence_store_id,

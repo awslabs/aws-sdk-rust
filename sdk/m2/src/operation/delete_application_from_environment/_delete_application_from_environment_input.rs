@@ -34,6 +34,7 @@ pub struct DeleteApplicationFromEnvironmentInputBuilder {
 }
 impl DeleteApplicationFromEnvironmentInputBuilder {
     /// <p>The unique identifier of the application you want to delete.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteApplicationFromEnvironmentInputBuilder {
         &self.application_id
     }
     /// <p>The unique identifier of the runtime environment where the application was previously deployed.</p>
+    /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl DeleteApplicationFromEnvironmentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_application_from_environment::DeleteApplicationFromEnvironmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_application_from_environment::DeleteApplicationFromEnvironmentInput {

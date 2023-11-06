@@ -45,6 +45,7 @@ pub struct DeleteServiceInputBuilder {
 }
 impl DeleteServiceInputBuilder {
     /// <p>The ID of the environment that the service is in.</p>
+    /// This field is required.
     pub fn environment_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_identifier = ::std::option::Option::Some(input.into());
         self
@@ -61,6 +62,7 @@ impl DeleteServiceInputBuilder {
     /// <p>Deletes a Refactor Spaces service.</p> <note>
     /// <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL endpoint in a VPC.</p>
     /// </note>
+    /// This field is required.
     pub fn application_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_identifier = ::std::option::Option::Some(input.into());
         self
@@ -79,6 +81,7 @@ impl DeleteServiceInputBuilder {
         &self.application_identifier
     }
     /// <p>The ID of the service to delete.</p>
+    /// This field is required.
     pub fn service_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_identifier = ::std::option::Option::Some(input.into());
         self
@@ -95,7 +98,7 @@ impl DeleteServiceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteServiceInput`](crate::operation::delete_service::DeleteServiceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_service::DeleteServiceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_service::DeleteServiceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_service::DeleteServiceInput {
             environment_identifier: self.environment_identifier,
             application_identifier: self.application_identifier,

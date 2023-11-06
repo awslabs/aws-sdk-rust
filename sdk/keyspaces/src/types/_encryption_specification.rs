@@ -17,7 +17,7 @@ pub struct EncryptionSpecification {
     /// </ul>
     /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub r#type: ::std::option::Option<crate::types::EncryptionType>,
+    pub r#type: crate::types::EncryptionType,
     /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key, for example <code>kms_key_identifier:ARN</code>.</p>
     pub kms_key_identifier: ::std::option::Option<::std::string::String>,
 }
@@ -29,8 +29,8 @@ impl EncryptionSpecification {
     /// </ul>
     /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::EncryptionType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::EncryptionType {
+        &self.r#type
     }
     /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key, for example <code>kms_key_identifier:ARN</code>.</p>
     pub fn kms_key_identifier(&self) -> ::std::option::Option<&str> {
@@ -59,6 +59,7 @@ impl EncryptionSpecificationBuilder {
     /// </ul>
     /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::EncryptionType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -99,10 +100,17 @@ impl EncryptionSpecificationBuilder {
         &self.kms_key_identifier
     }
     /// Consumes the builder and constructs a [`EncryptionSpecification`](crate::types::EncryptionSpecification).
-    pub fn build(self) -> crate::types::EncryptionSpecification {
-        crate::types::EncryptionSpecification {
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::EncryptionSpecificationBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::EncryptionSpecification, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EncryptionSpecification {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building EncryptionSpecification",
+                )
+            })?,
             kms_key_identifier: self.kms_key_identifier,
-        }
+        })
     }
 }

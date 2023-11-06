@@ -6,9 +6,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Target {
     /// <p>The ID of the target. We recommend using a memorable and unique string.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the target.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the IAM role to be used for this target when the rule is triggered. If one rule triggers multiple targets, you can use a different IAM role for each target.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange Format</a>.</p>
@@ -44,12 +44,14 @@ pub struct Target {
 }
 impl Target {
     /// <p>The ID of the target. We recommend using a memorable and unique string.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the target.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to be used for this target when the rule is triggered. If one rule triggers multiple targets, you can use a different IAM role for each target.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
@@ -142,6 +144,7 @@ pub struct TargetBuilder {
 }
 impl TargetBuilder {
     /// <p>The ID of the target. We recommend using a memorable and unique string.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -156,6 +159,7 @@ impl TargetBuilder {
         &self.id
     }
     /// <p>The Amazon Resource Name (ARN) of the target.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -378,10 +382,20 @@ impl TargetBuilder {
         &self.retry_policy
     }
     /// Consumes the builder and constructs a [`Target`](crate::types::Target).
-    pub fn build(self) -> crate::types::Target {
-        crate::types::Target {
-            id: self.id,
-            arn: self.arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::TargetBuilder::id)
+    /// - [`arn`](crate::types::builders::TargetBuilder::arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::Target, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Target {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building Target")
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building Target",
+                )
+            })?,
             role_arn: self.role_arn,
             input: self.input,
             input_path: self.input_path,
@@ -396,6 +410,6 @@ impl TargetBuilder {
             sage_maker_pipeline_parameters: self.sage_maker_pipeline_parameters,
             dead_letter_config: self.dead_letter_config,
             retry_policy: self.retry_policy,
-        }
+        })
     }
 }

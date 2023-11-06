@@ -34,6 +34,7 @@ pub struct UpdateEvaluationInputBuilder {
 }
 impl UpdateEvaluationInputBuilder {
     /// <p>The ID assigned to the <code>Evaluation</code> during creation.</p>
+    /// This field is required.
     pub fn evaluation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateEvaluationInputBuilder {
         &self.evaluation_id
     }
     /// <p>A new user-supplied name or description of the <code>Evaluation</code> that will replace the current content. </p>
+    /// This field is required.
     pub fn evaluation_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl UpdateEvaluationInputBuilder {
     /// Consumes the builder and constructs a [`UpdateEvaluationInput`](crate::operation::update_evaluation::UpdateEvaluationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_evaluation::UpdateEvaluationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_evaluation::UpdateEvaluationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_evaluation::UpdateEvaluationInput {
             evaluation_id: self.evaluation_id,
             evaluation_name: self.evaluation_name,

@@ -22,13 +22,17 @@ impl AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails {
     }
     /// <p>The IDs of the security groups associated with the task or service.</p>
     /// <p>You can provide up to five security groups.</p>
-    pub fn security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
+    pub fn security_groups(&self) -> &[::std::string::String] {
+        self.security_groups.as_deref().unwrap_or_default()
     }
     /// <p>The IDs of the subnets associated with the task or service.</p>
     /// <p>You can provide up to 16 subnets.</p>
-    pub fn subnets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnets.is_none()`.
+    pub fn subnets(&self) -> &[::std::string::String] {
+        self.subnets.as_deref().unwrap_or_default()
     }
 }
 impl AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails {

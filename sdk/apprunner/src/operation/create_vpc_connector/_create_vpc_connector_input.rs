@@ -22,16 +22,22 @@ impl CreateVpcConnectorInput {
     /// <p>A list of IDs of subnets that App Runner should use when it associates your service with a custom Amazon VPC. Specify IDs of subnets of a single Amazon VPC. App Runner determines the Amazon VPC from the subnets you specify.</p> <note>
     /// <p> App Runner currently only provides support for IPv4. </p>
     /// </note>
-    pub fn subnets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnets.is_none()`.
+    pub fn subnets(&self) -> &[::std::string::String] {
+        self.subnets.as_deref().unwrap_or_default()
     }
     /// <p>A list of IDs of security groups that App Runner should use for access to Amazon Web Services resources under the specified subnets. If not specified, App Runner uses the default security group of the Amazon VPC. The default security group allows all outbound traffic.</p>
-    pub fn security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
+    pub fn security_groups(&self) -> &[::std::string::String] {
+        self.security_groups.as_deref().unwrap_or_default()
     }
     /// <p>A list of metadata items that you can associate with your VPC connector resource. A tag is a key-value pair.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateVpcConnectorInput {
@@ -52,6 +58,7 @@ pub struct CreateVpcConnectorInputBuilder {
 }
 impl CreateVpcConnectorInputBuilder {
     /// <p>A name for the VPC connector.</p>
+    /// This field is required.
     pub fn vpc_connector_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_connector_name = ::std::option::Option::Some(input.into());
         self
@@ -134,7 +141,8 @@ impl CreateVpcConnectorInputBuilder {
     /// Consumes the builder and constructs a [`CreateVpcConnectorInput`](crate::operation::create_vpc_connector::CreateVpcConnectorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_vpc_connector::CreateVpcConnectorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_vpc_connector::CreateVpcConnectorInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_vpc_connector::CreateVpcConnectorInput {
             vpc_connector_name: self.vpc_connector_name,
             subnets: self.subnets,

@@ -27,6 +27,7 @@ pub struct GetQueryStatisticsInputBuilder {
 }
 impl GetQueryStatisticsInputBuilder {
     /// <p>The ID of the plan query operation.</p>
+    /// This field is required.
     pub fn query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,8 @@ impl GetQueryStatisticsInputBuilder {
     /// Consumes the builder and constructs a [`GetQueryStatisticsInput`](crate::operation::get_query_statistics::GetQueryStatisticsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_query_statistics::GetQueryStatisticsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_query_statistics::GetQueryStatisticsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_query_statistics::GetQueryStatisticsInput { query_id: self.query_id })
     }
 }

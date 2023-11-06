@@ -27,6 +27,7 @@ pub struct DeleteDatabaseInputBuilder {
 }
 impl DeleteDatabaseInputBuilder {
     /// <p>The name of the Timestream database to be deleted.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteDatabaseInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDatabaseInput`](crate::operation::delete_database::DeleteDatabaseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_database::DeleteDatabaseInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_database::DeleteDatabaseInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_database::DeleteDatabaseInput {
             database_name: self.database_name,
         })

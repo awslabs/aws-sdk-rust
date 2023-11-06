@@ -31,8 +31,10 @@ impl SchedulingConfig {
         self.end_behavior.as_ref()
     }
     /// <p>An optional configuration within the <code>SchedulingConfig</code> to setup a recurring maintenance window with a predetermined start time and duration for the rollout of a job document to all devices in a target group for a job.</p>
-    pub fn maintenance_windows(&self) -> ::std::option::Option<&[crate::types::MaintenanceWindow]> {
-        self.maintenance_windows.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.maintenance_windows.is_none()`.
+    pub fn maintenance_windows(&self) -> &[crate::types::MaintenanceWindow] {
+        self.maintenance_windows.as_deref().unwrap_or_default()
     }
 }
 impl SchedulingConfig {

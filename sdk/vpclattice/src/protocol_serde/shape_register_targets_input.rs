@@ -2,7 +2,7 @@
 pub fn ser_register_targets_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::register_targets::RegisterTargetsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.targets {
         let mut array_2 = object.key("targets").start_array();
         for item_3 in var_1 {

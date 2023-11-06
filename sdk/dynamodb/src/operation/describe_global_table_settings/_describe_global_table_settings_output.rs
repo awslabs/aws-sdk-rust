@@ -15,8 +15,10 @@ impl DescribeGlobalTableSettingsOutput {
         self.global_table_name.as_deref()
     }
     /// <p>The Region-specific settings for the global table.</p>
-    pub fn replica_settings(&self) -> ::std::option::Option<&[crate::types::ReplicaSettingsDescription]> {
-        self.replica_settings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replica_settings.is_none()`.
+    pub fn replica_settings(&self) -> &[crate::types::ReplicaSettingsDescription] {
+        self.replica_settings.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeGlobalTableSettingsOutput {

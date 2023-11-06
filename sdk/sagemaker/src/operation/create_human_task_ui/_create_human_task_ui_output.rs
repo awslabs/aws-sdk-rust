@@ -34,6 +34,7 @@ pub struct CreateHumanTaskUiOutputBuilder {
 }
 impl CreateHumanTaskUiOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the human review workflow user interface you create.</p>
+    /// This field is required.
     pub fn human_task_ui_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.human_task_ui_arn = ::std::option::Option::Some(input.into());
         self

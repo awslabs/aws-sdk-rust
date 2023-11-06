@@ -28,8 +28,10 @@ impl ModifyFleetInput {
         self.excess_capacity_termination_policy.as_ref()
     }
     /// <p>The launch template and overrides.</p>
-    pub fn launch_template_configs(&self) -> ::std::option::Option<&[crate::types::FleetLaunchTemplateConfigRequest]> {
-        self.launch_template_configs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.launch_template_configs.is_none()`.
+    pub fn launch_template_configs(&self) -> &[crate::types::FleetLaunchTemplateConfigRequest] {
+        self.launch_template_configs.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the EC2 Fleet.</p>
     pub fn fleet_id(&self) -> ::std::option::Option<&str> {
@@ -121,6 +123,7 @@ impl ModifyFleetInputBuilder {
         &self.launch_template_configs
     }
     /// <p>The ID of the EC2 Fleet.</p>
+    /// This field is required.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
         self
@@ -163,7 +166,7 @@ impl ModifyFleetInputBuilder {
         &self.context
     }
     /// Consumes the builder and constructs a [`ModifyFleetInput`](crate::operation::modify_fleet::ModifyFleetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::modify_fleet::ModifyFleetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_fleet::ModifyFleetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_fleet::ModifyFleetInput {
             dry_run: self.dry_run,
             excess_capacity_termination_policy: self.excess_capacity_termination_policy,

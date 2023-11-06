@@ -35,6 +35,7 @@ pub struct RangedConnectionDetailsBuilder {
 }
 impl RangedConnectionDetailsBuilder {
     /// <p>A ranged socket address.</p>
+    /// This field is required.
     pub fn socket_address(mut self, input: crate::types::RangedSocketAddress) -> Self {
         self.socket_address = ::std::option::Option::Some(input);
         self

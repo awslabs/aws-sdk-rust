@@ -46,7 +46,7 @@ impl DeleteGitHubAccountTokenInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_git_hub_account_token::DeleteGitHubAccountTokenInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_git_hub_account_token::DeleteGitHubAccountTokenInput { token_name: self.token_name })
     }

@@ -11,8 +11,10 @@ pub struct GetDevEndpointsOutput {
 }
 impl GetDevEndpointsOutput {
     /// <p>A list of <code>DevEndpoint</code> definitions.</p>
-    pub fn dev_endpoints(&self) -> ::std::option::Option<&[crate::types::DevEndpoint]> {
-        self.dev_endpoints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dev_endpoints.is_none()`.
+    pub fn dev_endpoints(&self) -> &[crate::types::DevEndpoint] {
+        self.dev_endpoints.as_deref().unwrap_or_default()
     }
     /// <p>A continuation token, if not all <code>DevEndpoint</code> definitions have yet been returned.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

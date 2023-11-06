@@ -65,7 +65,7 @@ pub fn de_list_bucket_intelligent_tiering_configurations(
             s if s.matches("IntelligentTieringConfiguration") /* IntelligentTieringConfigurationList com.amazonaws.s3.synthetic#ListBucketIntelligentTieringConfigurationsOutput$IntelligentTieringConfigurationList */ =>  {
                 let var_1 =
                     Some(
-                        Result::<::std::vec::Vec<crate::types::IntelligentTieringConfiguration>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<crate::types::IntelligentTieringConfiguration>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_2 = builder.intelligent_tiering_configuration_list.take().unwrap_or_default();
                             list_2.push(
                                 crate::protocol_serde::shape_intelligent_tiering_configuration::de_intelligent_tiering_configuration(&mut tag)

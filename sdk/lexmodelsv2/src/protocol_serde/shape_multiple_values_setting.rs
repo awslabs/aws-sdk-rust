@@ -38,7 +38,7 @@ where
 pub fn ser_multiple_values_setting(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MultipleValuesSetting,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.allow_multiple_values {
         object.key("allowMultipleValues").boolean(input.allow_multiple_values);
     }

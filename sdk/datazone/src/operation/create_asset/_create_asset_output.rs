@@ -4,17 +4,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateAssetOutput {
     /// <p>The unique identifier of the created asset.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The name of the created asset.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The identifier of the created asset type.</p>
-    pub type_identifier: ::std::option::Option<::std::string::String>,
+    pub type_identifier: ::std::string::String,
     /// <p>The revision type of the asset.</p>
-    pub type_revision: ::std::option::Option<::std::string::String>,
+    pub type_revision: ::std::string::String,
     /// <p></p>
     pub external_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The revision of the asset.</p>
-    pub revision: ::std::option::Option<::std::string::String>,
+    pub revision: ::std::string::String,
     /// <p>The description of the created asset.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of when the asset was created.</p>
@@ -28,13 +28,13 @@ pub struct CreateAssetOutput {
     /// <p>The glossary terms that are attached to the created asset.</p>
     pub glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the Amazon DataZone project that owns the created asset. </p>
-    pub owning_project_id: ::std::option::Option<::std::string::String>,
+    pub owning_project_id: ::std::string::String,
     /// <p>The ID of the Amazon DataZone domain in which the asset was created.</p>
-    pub domain_id: ::std::option::Option<::std::string::String>,
+    pub domain_id: ::std::string::String,
     /// <p></p>
     pub listing: ::std::option::Option<crate::types::AssetListingDetails>,
     /// <p>The metadata forms that are attached to the created asset.</p>
-    pub forms_output: ::std::option::Option<::std::vec::Vec<crate::types::FormOutput>>,
+    pub forms_output: ::std::vec::Vec<crate::types::FormOutput>,
     /// <p>The read-only metadata forms that are attached to the created asset.</p>
     pub read_only_forms_output: ::std::option::Option<::std::vec::Vec<crate::types::FormOutput>>,
     /// <p>The configuration of the automatically generated business-friendly metadata for the asset.</p>
@@ -43,28 +43,33 @@ pub struct CreateAssetOutput {
 }
 impl CreateAssetOutput {
     /// <p>The unique identifier of the created asset.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The name of the created asset.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The identifier of the created asset type.</p>
-    pub fn type_identifier(&self) -> ::std::option::Option<&str> {
-        self.type_identifier.as_deref()
+    pub fn type_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.type_identifier.deref()
     }
     /// <p>The revision type of the asset.</p>
-    pub fn type_revision(&self) -> ::std::option::Option<&str> {
-        self.type_revision.as_deref()
+    pub fn type_revision(&self) -> &str {
+        use std::ops::Deref;
+        self.type_revision.deref()
     }
     /// <p></p>
     pub fn external_identifier(&self) -> ::std::option::Option<&str> {
         self.external_identifier.as_deref()
     }
     /// <p>The revision of the asset.</p>
-    pub fn revision(&self) -> ::std::option::Option<&str> {
-        self.revision.as_deref()
+    pub fn revision(&self) -> &str {
+        use std::ops::Deref;
+        self.revision.deref()
     }
     /// <p>The description of the created asset.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -87,28 +92,35 @@ impl CreateAssetOutput {
         self.first_revision_created_by.as_deref()
     }
     /// <p>The glossary terms that are attached to the created asset.</p>
-    pub fn glossary_terms(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.glossary_terms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.glossary_terms.is_none()`.
+    pub fn glossary_terms(&self) -> &[::std::string::String] {
+        self.glossary_terms.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the Amazon DataZone project that owns the created asset. </p>
-    pub fn owning_project_id(&self) -> ::std::option::Option<&str> {
-        self.owning_project_id.as_deref()
+    pub fn owning_project_id(&self) -> &str {
+        use std::ops::Deref;
+        self.owning_project_id.deref()
     }
     /// <p>The ID of the Amazon DataZone domain in which the asset was created.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
-        self.domain_id.as_deref()
+    pub fn domain_id(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_id.deref()
     }
     /// <p></p>
     pub fn listing(&self) -> ::std::option::Option<&crate::types::AssetListingDetails> {
         self.listing.as_ref()
     }
     /// <p>The metadata forms that are attached to the created asset.</p>
-    pub fn forms_output(&self) -> ::std::option::Option<&[crate::types::FormOutput]> {
-        self.forms_output.as_deref()
+    pub fn forms_output(&self) -> &[crate::types::FormOutput] {
+        use std::ops::Deref;
+        self.forms_output.deref()
     }
     /// <p>The read-only metadata forms that are attached to the created asset.</p>
-    pub fn read_only_forms_output(&self) -> ::std::option::Option<&[crate::types::FormOutput]> {
-        self.read_only_forms_output.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.read_only_forms_output.is_none()`.
+    pub fn read_only_forms_output(&self) -> &[crate::types::FormOutput] {
+        self.read_only_forms_output.as_deref().unwrap_or_default()
     }
     /// <p>The configuration of the automatically generated business-friendly metadata for the asset.</p>
     pub fn prediction_configuration(&self) -> ::std::option::Option<&crate::types::PredictionConfiguration> {
@@ -178,6 +190,7 @@ pub struct CreateAssetOutputBuilder {
 }
 impl CreateAssetOutputBuilder {
     /// <p>The unique identifier of the created asset.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -192,6 +205,7 @@ impl CreateAssetOutputBuilder {
         &self.id
     }
     /// <p>The name of the created asset.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -206,6 +220,7 @@ impl CreateAssetOutputBuilder {
         &self.name
     }
     /// <p>The identifier of the created asset type.</p>
+    /// This field is required.
     pub fn type_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_identifier = ::std::option::Option::Some(input.into());
         self
@@ -220,6 +235,7 @@ impl CreateAssetOutputBuilder {
         &self.type_identifier
     }
     /// <p>The revision type of the asset.</p>
+    /// This field is required.
     pub fn type_revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_revision = ::std::option::Option::Some(input.into());
         self
@@ -248,6 +264,7 @@ impl CreateAssetOutputBuilder {
         &self.external_identifier
     }
     /// <p>The revision of the asset.</p>
+    /// This field is required.
     pub fn revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision = ::std::option::Option::Some(input.into());
         self
@@ -352,6 +369,7 @@ impl CreateAssetOutputBuilder {
         &self.glossary_terms
     }
     /// <p>The ID of the Amazon DataZone project that owns the created asset. </p>
+    /// This field is required.
     pub fn owning_project_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owning_project_id = ::std::option::Option::Some(input.into());
         self
@@ -366,6 +384,7 @@ impl CreateAssetOutputBuilder {
         &self.owning_project_id
     }
     /// <p>The ID of the Amazon DataZone domain in which the asset was created.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -457,28 +476,77 @@ impl CreateAssetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateAssetOutput`](crate::operation::create_asset::CreateAssetOutput).
-    pub fn build(self) -> crate::operation::create_asset::CreateAssetOutput {
-        crate::operation::create_asset::CreateAssetOutput {
-            id: self.id,
-            name: self.name,
-            type_identifier: self.type_identifier,
-            type_revision: self.type_revision,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::create_asset::builders::CreateAssetOutputBuilder::id)
+    /// - [`name`](crate::operation::create_asset::builders::CreateAssetOutputBuilder::name)
+    /// - [`type_identifier`](crate::operation::create_asset::builders::CreateAssetOutputBuilder::type_identifier)
+    /// - [`type_revision`](crate::operation::create_asset::builders::CreateAssetOutputBuilder::type_revision)
+    /// - [`revision`](crate::operation::create_asset::builders::CreateAssetOutputBuilder::revision)
+    /// - [`owning_project_id`](crate::operation::create_asset::builders::CreateAssetOutputBuilder::owning_project_id)
+    /// - [`domain_id`](crate::operation::create_asset::builders::CreateAssetOutputBuilder::domain_id)
+    /// - [`forms_output`](crate::operation::create_asset::builders::CreateAssetOutputBuilder::forms_output)
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_asset::CreateAssetOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_asset::CreateAssetOutput {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building CreateAssetOutput",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CreateAssetOutput",
+                )
+            })?,
+            type_identifier: self.type_identifier.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "type_identifier",
+                    "type_identifier was not specified but it is required when building CreateAssetOutput",
+                )
+            })?,
+            type_revision: self.type_revision.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "type_revision",
+                    "type_revision was not specified but it is required when building CreateAssetOutput",
+                )
+            })?,
             external_identifier: self.external_identifier,
-            revision: self.revision,
+            revision: self.revision.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "revision",
+                    "revision was not specified but it is required when building CreateAssetOutput",
+                )
+            })?,
             description: self.description,
             created_at: self.created_at,
             created_by: self.created_by,
             first_revision_created_at: self.first_revision_created_at,
             first_revision_created_by: self.first_revision_created_by,
             glossary_terms: self.glossary_terms,
-            owning_project_id: self.owning_project_id,
-            domain_id: self.domain_id,
+            owning_project_id: self.owning_project_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "owning_project_id",
+                    "owning_project_id was not specified but it is required when building CreateAssetOutput",
+                )
+            })?,
+            domain_id: self.domain_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "domain_id",
+                    "domain_id was not specified but it is required when building CreateAssetOutput",
+                )
+            })?,
             listing: self.listing,
-            forms_output: self.forms_output,
+            forms_output: self.forms_output.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "forms_output",
+                    "forms_output was not specified but it is required when building CreateAssetOutput",
+                )
+            })?,
             read_only_forms_output: self.read_only_forms_output,
             prediction_configuration: self.prediction_configuration,
             _request_id: self._request_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for CreateAssetOutputBuilder {

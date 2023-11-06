@@ -2,7 +2,7 @@
 pub fn ser_describe_configuration_sets_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_configuration_sets::DescribeConfigurationSetsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.configuration_set_names {
         let mut array_2 = object.key("ConfigurationSetNames").start_array();
         for item_3 in var_1 {

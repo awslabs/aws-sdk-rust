@@ -14,8 +14,10 @@ impl BatchGetSchemaInput {
         self.collaboration_identifier.as_deref()
     }
     /// <p>The names for the schema objects to retrieve.&gt;</p>
-    pub fn names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.names.is_none()`.
+    pub fn names(&self) -> &[::std::string::String] {
+        self.names.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetSchemaInput {
@@ -34,6 +36,7 @@ pub struct BatchGetSchemaInputBuilder {
 }
 impl BatchGetSchemaInputBuilder {
     /// <p>A unique identifier for the collaboration that the schemas belong to. Currently accepts collaboration ID.</p>
+    /// This field is required.
     pub fn collaboration_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collaboration_identifier = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +73,7 @@ impl BatchGetSchemaInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetSchemaInput`](crate::operation::batch_get_schema::BatchGetSchemaInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_get_schema::BatchGetSchemaInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_get_schema::BatchGetSchemaInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_get_schema::BatchGetSchemaInput {
             collaboration_identifier: self.collaboration_identifier,
             names: self.names,

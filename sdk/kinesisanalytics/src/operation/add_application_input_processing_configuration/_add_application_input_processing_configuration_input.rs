@@ -49,6 +49,7 @@ pub struct AddApplicationInputProcessingConfigurationInputBuilder {
 }
 impl AddApplicationInputProcessingConfigurationInputBuilder {
     /// <p>Name of the application to which you want to add the input processing configuration.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl AddApplicationInputProcessingConfigurationInputBuilder {
         &self.application_name
     }
     /// <p>Version of the application to which you want to add the input processing configuration. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
+    /// This field is required.
     pub fn current_application_version_id(mut self, input: i64) -> Self {
         self.current_application_version_id = ::std::option::Option::Some(input);
         self
@@ -77,6 +79,7 @@ impl AddApplicationInputProcessingConfigurationInputBuilder {
         &self.current_application_version_id
     }
     /// <p>The ID of the input configuration to add the input processing configuration to. You can get a list of the input IDs for an application using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
+    /// This field is required.
     pub fn input_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_id = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +94,7 @@ impl AddApplicationInputProcessingConfigurationInputBuilder {
         &self.input_id
     }
     /// <p>The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a> to add to the application.</p>
+    /// This field is required.
     pub fn input_processing_configuration(mut self, input: crate::types::InputProcessingConfiguration) -> Self {
         self.input_processing_configuration = ::std::option::Option::Some(input);
         self
@@ -109,7 +113,7 @@ impl AddApplicationInputProcessingConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationInput {

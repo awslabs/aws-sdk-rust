@@ -165,6 +165,7 @@ pub struct UpdateBranchInputBuilder {
 }
 impl UpdateBranchInputBuilder {
     /// <p> The unique ID for an Amplify app. </p>
+    /// This field is required.
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
         self
@@ -179,6 +180,7 @@ impl UpdateBranchInputBuilder {
         &self.app_id
     }
     /// <p> The name for the branch. </p>
+    /// This field is required.
     pub fn branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch_name = ::std::option::Option::Some(input.into());
         self
@@ -419,7 +421,9 @@ impl UpdateBranchInputBuilder {
         &self.backend_environment_arn
     }
     /// Consumes the builder and constructs a [`UpdateBranchInput`](crate::operation::update_branch::UpdateBranchInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_branch::UpdateBranchInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_branch::UpdateBranchInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_branch::UpdateBranchInput {
             app_id: self.app_id,
             branch_name: self.branch_name,

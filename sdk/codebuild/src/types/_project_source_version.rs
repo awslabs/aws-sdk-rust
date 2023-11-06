@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProjectSourceVersion {
     /// <p>An identifier for a source in the build project. The identifier can only contain alphanumeric characters and underscores, and must be less than 128 characters in length. </p>
-    pub source_identifier: ::std::option::Option<::std::string::String>,
+    pub source_identifier: ::std::string::String,
     /// <p>The source version for the corresponding source identifier. If specified, must be one of:</p>
     /// <ul>
     /// <li> <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p> </li>
@@ -14,12 +14,13 @@ pub struct ProjectSourceVersion {
     /// <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li>
     /// </ul>
     /// <p> For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
-    pub source_version: ::std::option::Option<::std::string::String>,
+    pub source_version: ::std::string::String,
 }
 impl ProjectSourceVersion {
     /// <p>An identifier for a source in the build project. The identifier can only contain alphanumeric characters and underscores, and must be less than 128 characters in length. </p>
-    pub fn source_identifier(&self) -> ::std::option::Option<&str> {
-        self.source_identifier.as_deref()
+    pub fn source_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.source_identifier.deref()
     }
     /// <p>The source version for the corresponding source identifier. If specified, must be one of:</p>
     /// <ul>
@@ -29,8 +30,9 @@ impl ProjectSourceVersion {
     /// <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li>
     /// </ul>
     /// <p> For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
-    pub fn source_version(&self) -> ::std::option::Option<&str> {
-        self.source_version.as_deref()
+    pub fn source_version(&self) -> &str {
+        use std::ops::Deref;
+        self.source_version.deref()
     }
 }
 impl ProjectSourceVersion {
@@ -49,6 +51,7 @@ pub struct ProjectSourceVersionBuilder {
 }
 impl ProjectSourceVersionBuilder {
     /// <p>An identifier for a source in the build project. The identifier can only contain alphanumeric characters and underscores, and must be less than 128 characters in length. </p>
+    /// This field is required.
     pub fn source_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_identifier = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +73,7 @@ impl ProjectSourceVersionBuilder {
     /// <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li>
     /// </ul>
     /// <p> For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
+    /// This field is required.
     pub fn source_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_version = ::std::option::Option::Some(input.into());
         self
@@ -98,10 +102,23 @@ impl ProjectSourceVersionBuilder {
         &self.source_version
     }
     /// Consumes the builder and constructs a [`ProjectSourceVersion`](crate::types::ProjectSourceVersion).
-    pub fn build(self) -> crate::types::ProjectSourceVersion {
-        crate::types::ProjectSourceVersion {
-            source_identifier: self.source_identifier,
-            source_version: self.source_version,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`source_identifier`](crate::types::builders::ProjectSourceVersionBuilder::source_identifier)
+    /// - [`source_version`](crate::types::builders::ProjectSourceVersionBuilder::source_version)
+    pub fn build(self) -> ::std::result::Result<crate::types::ProjectSourceVersion, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ProjectSourceVersion {
+            source_identifier: self.source_identifier.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "source_identifier",
+                    "source_identifier was not specified but it is required when building ProjectSourceVersion",
+                )
+            })?,
+            source_version: self.source_version.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "source_version",
+                    "source_version was not specified but it is required when building ProjectSourceVersion",
+                )
+            })?,
+        })
     }
 }

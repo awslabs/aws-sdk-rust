@@ -15,8 +15,10 @@ impl ValidationWarning {
         self.id.as_deref()
     }
     /// <p>A description of the validation warning.</p>
-    pub fn warnings(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.warnings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.warnings.is_none()`.
+    pub fn warnings(&self) -> &[::std::string::String] {
+        self.warnings.as_deref().unwrap_or_default()
     }
 }
 impl ValidationWarning {

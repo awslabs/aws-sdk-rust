@@ -21,8 +21,10 @@ impl ParameterGroupStatus {
         self.parameter_apply_status.as_deref()
     }
     /// <p>The node IDs of one or more nodes to be rebooted.</p>
-    pub fn node_ids_to_reboot(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.node_ids_to_reboot.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.node_ids_to_reboot.is_none()`.
+    pub fn node_ids_to_reboot(&self) -> &[::std::string::String] {
+        self.node_ids_to_reboot.as_deref().unwrap_or_default()
     }
 }
 impl ParameterGroupStatus {

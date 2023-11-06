@@ -12,8 +12,10 @@ pub struct ListPolicyPrincipalsOutput {
 }
 impl ListPolicyPrincipalsOutput {
     /// <p>The descriptions of the principals.</p>
-    pub fn principals(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.principals.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.principals.is_none()`.
+    pub fn principals(&self) -> &[::std::string::String] {
+        self.principals.as_deref().unwrap_or_default()
     }
     /// <p>The marker for the next set of results, or null if there are no additional results.</p>
     pub fn next_marker(&self) -> ::std::option::Option<&str> {

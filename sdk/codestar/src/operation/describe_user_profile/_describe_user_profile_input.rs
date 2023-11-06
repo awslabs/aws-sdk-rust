@@ -27,6 +27,7 @@ pub struct DescribeUserProfileInputBuilder {
 }
 impl DescribeUserProfileInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
+    /// This field is required.
     pub fn user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeUserProfileInputBuilder {
     /// Consumes the builder and constructs a [`DescribeUserProfileInput`](crate::operation::describe_user_profile::DescribeUserProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_user_profile::DescribeUserProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_user_profile::DescribeUserProfileInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_user_profile::DescribeUserProfileInput { user_arn: self.user_arn })
     }

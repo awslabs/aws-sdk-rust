@@ -44,8 +44,10 @@ pub struct WriteCampaignRequest {
 }
 impl WriteCampaignRequest {
     /// <p>An array of requests that defines additional treatments for the campaign, in addition to the default treatment for the campaign.</p>
-    pub fn additional_treatments(&self) -> ::std::option::Option<&[crate::types::WriteTreatmentResource]> {
-        self.additional_treatments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_treatments.is_none()`.
+    pub fn additional_treatments(&self) -> &[crate::types::WriteTreatmentResource] {
+        self.additional_treatments.as_deref().unwrap_or_default()
     }
     /// <p>The delivery configuration settings for sending the campaign through a custom channel. This object is required if the MessageConfiguration object for the campaign specifies a CustomMessage object.</p>
     pub fn custom_delivery_configuration(&self) -> ::std::option::Option<&crate::types::CustomDeliveryConfiguration> {

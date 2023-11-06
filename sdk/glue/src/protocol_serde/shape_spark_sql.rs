@@ -2,45 +2,45 @@
 pub fn ser_spark_sql(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SparkSql,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("Name").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.inputs {
-        let mut array_3 = object.key("Inputs").start_array();
-        for item_4 in var_2 {
+    {
+        let mut array_1 = object.key("Inputs").start_array();
+        for item_2 in &input.inputs {
             {
-                array_3.value().string(item_4.as_str());
+                array_1.value().string(item_2.as_str());
+            }
+        }
+        array_1.finish();
+    }
+    {
+        object.key("SqlQuery").string(input.sql_query.as_str());
+    }
+    {
+        let mut array_3 = object.key("SqlAliases").start_array();
+        for item_4 in &input.sql_aliases {
+            {
+                #[allow(unused_mut)]
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_sql_alias::ser_sql_alias(&mut object_5, item_4)?;
+                object_5.finish();
             }
         }
         array_3.finish();
     }
-    if let Some(var_5) = &input.sql_query {
-        object.key("SqlQuery").string(var_5.as_str());
-    }
-    if let Some(var_6) = &input.sql_aliases {
-        let mut array_7 = object.key("SqlAliases").start_array();
+    if let Some(var_6) = &input.output_schemas {
+        let mut array_7 = object.key("OutputSchemas").start_array();
         for item_8 in var_6 {
             {
                 #[allow(unused_mut)]
                 let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_sql_alias::ser_sql_alias(&mut object_9, item_8)?;
+                crate::protocol_serde::shape_glue_schema::ser_glue_schema(&mut object_9, item_8)?;
                 object_9.finish();
             }
         }
         array_7.finish();
-    }
-    if let Some(var_10) = &input.output_schemas {
-        let mut array_11 = object.key("OutputSchemas").start_array();
-        for item_12 in var_10 {
-            {
-                #[allow(unused_mut)]
-                let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_glue_schema::ser_glue_schema(&mut object_13, item_12)?;
-                object_13.finish();
-            }
-        }
-        array_11.finish();
     }
     Ok(())
 }
@@ -93,7 +93,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::spark_sql_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

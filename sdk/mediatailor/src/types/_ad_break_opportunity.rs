@@ -28,6 +28,7 @@ pub struct AdBreakOpportunityBuilder {
 }
 impl AdBreakOpportunityBuilder {
     /// <p>The offset in milliseconds from the start of the VOD source at which an ad marker was detected.</p>
+    /// This field is required.
     pub fn offset_millis(mut self, input: i64) -> Self {
         self.offset_millis = ::std::option::Option::Some(input);
         self

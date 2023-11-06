@@ -45,6 +45,7 @@ pub struct UpdateWorkspaceConfigurationInputBuilder {
 }
 impl UpdateWorkspaceConfigurationInputBuilder {
     /// <p>The new configuration string for the workspace. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
+    /// This field is required.
     pub fn configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration = ::std::option::Option::Some(input.into());
         self
@@ -59,6 +60,7 @@ impl UpdateWorkspaceConfigurationInputBuilder {
         &self.configuration
     }
     /// <p>The ID of the workspace to update.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -97,7 +99,7 @@ impl UpdateWorkspaceConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationInput {
             configuration: self.configuration,

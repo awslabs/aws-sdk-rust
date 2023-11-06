@@ -41,6 +41,7 @@ pub struct SelectResourceConfigInputBuilder {
 }
 impl SelectResourceConfigInputBuilder {
     /// <p>The SQL query <code>SELECT</code> command.</p>
+    /// This field is required.
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expression = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl SelectResourceConfigInputBuilder {
     /// Consumes the builder and constructs a [`SelectResourceConfigInput`](crate::operation::select_resource_config::SelectResourceConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::select_resource_config::SelectResourceConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::select_resource_config::SelectResourceConfigInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::select_resource_config::SelectResourceConfigInput {
             expression: self.expression,

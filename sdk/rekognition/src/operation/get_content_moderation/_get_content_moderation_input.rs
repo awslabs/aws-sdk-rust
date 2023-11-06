@@ -55,6 +55,7 @@ pub struct GetContentModerationInputBuilder {
 }
 impl GetContentModerationInputBuilder {
     /// <p>The identifier for the inappropriate, unwanted, or offensive content moderation job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetContentModeration</code>.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -127,7 +128,7 @@ impl GetContentModerationInputBuilder {
     /// Consumes the builder and constructs a [`GetContentModerationInput`](crate::operation::get_content_moderation::GetContentModerationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_content_moderation::GetContentModerationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_content_moderation::GetContentModerationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_content_moderation::GetContentModerationInput {
             job_id: self.job_id,

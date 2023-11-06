@@ -45,7 +45,7 @@ impl EnableVpcClassicLinkDnsSupportInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable_vpc_classic_link_dns_support::EnableVpcClassicLinkDnsSupportInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::enable_vpc_classic_link_dns_support::EnableVpcClassicLinkDnsSupportInput { vpc_id: self.vpc_id })
     }

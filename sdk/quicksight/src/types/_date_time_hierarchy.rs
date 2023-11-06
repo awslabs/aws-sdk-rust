@@ -5,18 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DateTimeHierarchy {
     /// <p>The hierarchy ID of the <code>DateTime</code> hierarchy.</p>
-    pub hierarchy_id: ::std::option::Option<::std::string::String>,
+    pub hierarchy_id: ::std::string::String,
     /// <p>The option that determines the drill down filters for the <code>DateTime</code> hierarchy.</p>
     pub drill_down_filters: ::std::option::Option<::std::vec::Vec<crate::types::DrillDownFilter>>,
 }
 impl DateTimeHierarchy {
     /// <p>The hierarchy ID of the <code>DateTime</code> hierarchy.</p>
-    pub fn hierarchy_id(&self) -> ::std::option::Option<&str> {
-        self.hierarchy_id.as_deref()
+    pub fn hierarchy_id(&self) -> &str {
+        use std::ops::Deref;
+        self.hierarchy_id.deref()
     }
     /// <p>The option that determines the drill down filters for the <code>DateTime</code> hierarchy.</p>
-    pub fn drill_down_filters(&self) -> ::std::option::Option<&[crate::types::DrillDownFilter]> {
-        self.drill_down_filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.drill_down_filters.is_none()`.
+    pub fn drill_down_filters(&self) -> &[crate::types::DrillDownFilter] {
+        self.drill_down_filters.as_deref().unwrap_or_default()
     }
 }
 impl DateTimeHierarchy {
@@ -35,6 +38,7 @@ pub struct DateTimeHierarchyBuilder {
 }
 impl DateTimeHierarchyBuilder {
     /// <p>The hierarchy ID of the <code>DateTime</code> hierarchy.</p>
+    /// This field is required.
     pub fn hierarchy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hierarchy_id = ::std::option::Option::Some(input.into());
         self
@@ -69,10 +73,17 @@ impl DateTimeHierarchyBuilder {
         &self.drill_down_filters
     }
     /// Consumes the builder and constructs a [`DateTimeHierarchy`](crate::types::DateTimeHierarchy).
-    pub fn build(self) -> crate::types::DateTimeHierarchy {
-        crate::types::DateTimeHierarchy {
-            hierarchy_id: self.hierarchy_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`hierarchy_id`](crate::types::builders::DateTimeHierarchyBuilder::hierarchy_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::DateTimeHierarchy, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DateTimeHierarchy {
+            hierarchy_id: self.hierarchy_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "hierarchy_id",
+                    "hierarchy_id was not specified but it is required when building DateTimeHierarchy",
+                )
+            })?,
             drill_down_filters: self.drill_down_filters,
-        }
+        })
     }
 }

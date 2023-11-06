@@ -5,24 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SharePrincipal {
     /// <p>The ID of the recipient.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The type of the recipient.</p>
-    pub r#type: ::std::option::Option<crate::types::PrincipalType>,
+    pub r#type: crate::types::PrincipalType,
     /// <p>The role of the recipient.</p>
-    pub role: ::std::option::Option<crate::types::RoleType>,
+    pub role: crate::types::RoleType,
 }
 impl SharePrincipal {
     /// <p>The ID of the recipient.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The type of the recipient.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::PrincipalType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::PrincipalType {
+        &self.r#type
     }
     /// <p>The role of the recipient.</p>
-    pub fn role(&self) -> ::std::option::Option<&crate::types::RoleType> {
-        self.role.as_ref()
+    pub fn role(&self) -> &crate::types::RoleType {
+        &self.role
     }
 }
 impl SharePrincipal {
@@ -42,6 +43,7 @@ pub struct SharePrincipalBuilder {
 }
 impl SharePrincipalBuilder {
     /// <p>The ID of the recipient.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +58,7 @@ impl SharePrincipalBuilder {
         &self.id
     }
     /// <p>The type of the recipient.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::PrincipalType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -70,6 +73,7 @@ impl SharePrincipalBuilder {
         &self.r#type
     }
     /// <p>The role of the recipient.</p>
+    /// This field is required.
     pub fn role(mut self, input: crate::types::RoleType) -> Self {
         self.role = ::std::option::Option::Some(input);
         self
@@ -84,11 +88,30 @@ impl SharePrincipalBuilder {
         &self.role
     }
     /// Consumes the builder and constructs a [`SharePrincipal`](crate::types::SharePrincipal).
-    pub fn build(self) -> crate::types::SharePrincipal {
-        crate::types::SharePrincipal {
-            id: self.id,
-            r#type: self.r#type,
-            role: self.role,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::SharePrincipalBuilder::id)
+    /// - [`r#type`](crate::types::builders::SharePrincipalBuilder::r#type)
+    /// - [`role`](crate::types::builders::SharePrincipalBuilder::role)
+    pub fn build(self) -> ::std::result::Result<crate::types::SharePrincipal, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SharePrincipal {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building SharePrincipal",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building SharePrincipal",
+                )
+            })?,
+            role: self.role.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "role",
+                    "role was not specified but it is required when building SharePrincipal",
+                )
+            })?,
+        })
     }
 }

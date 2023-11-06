@@ -11,8 +11,10 @@ pub struct GetBuiltinSlotTypesOutput {
 }
 impl GetBuiltinSlotTypesOutput {
     /// <p>An array of <code>BuiltInSlotTypeMetadata</code> objects, one entry for each slot type returned.</p>
-    pub fn slot_types(&self) -> ::std::option::Option<&[crate::types::BuiltinSlotTypeMetadata]> {
-        self.slot_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.slot_types.is_none()`.
+    pub fn slot_types(&self) -> &[crate::types::BuiltinSlotTypeMetadata] {
+        self.slot_types.as_deref().unwrap_or_default()
     }
     /// <p>If the response is truncated, the response includes a pagination token that you can use in your next request to fetch the next page of slot types.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

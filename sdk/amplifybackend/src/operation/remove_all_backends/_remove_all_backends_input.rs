@@ -35,6 +35,7 @@ pub struct RemoveAllBackendsInputBuilder {
 }
 impl RemoveAllBackendsInputBuilder {
     /// <p>The app ID.</p>
+    /// This field is required.
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
         self
@@ -65,7 +66,7 @@ impl RemoveAllBackendsInputBuilder {
     /// Consumes the builder and constructs a [`RemoveAllBackendsInput`](crate::operation::remove_all_backends::RemoveAllBackendsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::remove_all_backends::RemoveAllBackendsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::remove_all_backends::RemoveAllBackendsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::remove_all_backends::RemoveAllBackendsInput {
             app_id: self.app_id,
             clean_amplify_app: self.clean_amplify_app,

@@ -34,6 +34,7 @@ pub struct AssociateUserOutputBuilder {
 }
 impl AssociateUserOutputBuilder {
     /// <p>Metadata that describes the associate user operation.</p>
+    /// This field is required.
     pub fn instance_user_summary(mut self, input: crate::types::InstanceUserSummary) -> Self {
         self.instance_user_summary = ::std::option::Option::Some(input);
         self

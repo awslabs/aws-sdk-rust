@@ -2,7 +2,7 @@
 pub fn ser_action(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Action,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.sns_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("SNSConfiguration").start_object();

@@ -14,8 +14,10 @@ impl RemoveRegionsFromReplicationInput {
         self.secret_id.as_deref()
     }
     /// <p>The Regions of the replicas to remove.</p>
-    pub fn remove_replica_regions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.remove_replica_regions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove_replica_regions.is_none()`.
+    pub fn remove_replica_regions(&self) -> &[::std::string::String] {
+        self.remove_replica_regions.as_deref().unwrap_or_default()
     }
 }
 impl RemoveRegionsFromReplicationInput {
@@ -34,6 +36,7 @@ pub struct RemoveRegionsFromReplicationInputBuilder {
 }
 impl RemoveRegionsFromReplicationInputBuilder {
     /// <p>The ARN or name of the secret.</p>
+    /// This field is required.
     pub fn secret_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_id = ::std::option::Option::Some(input.into());
         self
@@ -72,7 +75,7 @@ impl RemoveRegionsFromReplicationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_regions_from_replication::RemoveRegionsFromReplicationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::remove_regions_from_replication::RemoveRegionsFromReplicationInput {
             secret_id: self.secret_id,

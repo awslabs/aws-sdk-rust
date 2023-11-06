@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetModelVersion`](crate::operation::get_model_version::builders::GetModelVersionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`model_id(impl Into<String>)`](crate::operation::get_model_version::builders::GetModelVersionFluentBuilder::model_id) / [`set_model_id(Option<String>)`](crate::operation::get_model_version::builders::GetModelVersionFluentBuilder::set_model_id): <p>The model ID.</p>
-    ///   - [`model_type(ModelTypeEnum)`](crate::operation::get_model_version::builders::GetModelVersionFluentBuilder::model_type) / [`set_model_type(Option<ModelTypeEnum>)`](crate::operation::get_model_version::builders::GetModelVersionFluentBuilder::set_model_type): <p>The model type.</p>
-    ///   - [`model_version_number(impl Into<String>)`](crate::operation::get_model_version::builders::GetModelVersionFluentBuilder::model_version_number) / [`set_model_version_number(Option<String>)`](crate::operation::get_model_version::builders::GetModelVersionFluentBuilder::set_model_version_number): <p>The model version number.</p>
+    ///   - [`model_id(impl Into<String>)`](crate::operation::get_model_version::builders::GetModelVersionFluentBuilder::model_id) / [`set_model_id(Option<String>)`](crate::operation::get_model_version::builders::GetModelVersionFluentBuilder::set_model_id):<br>required: **true**<br><p>The model ID.</p><br>
+    ///   - [`model_type(ModelTypeEnum)`](crate::operation::get_model_version::builders::GetModelVersionFluentBuilder::model_type) / [`set_model_type(Option<ModelTypeEnum>)`](crate::operation::get_model_version::builders::GetModelVersionFluentBuilder::set_model_type):<br>required: **true**<br><p>The model type.</p><br>
+    ///   - [`model_version_number(impl Into<String>)`](crate::operation::get_model_version::builders::GetModelVersionFluentBuilder::model_version_number) / [`set_model_version_number(Option<String>)`](crate::operation::get_model_version::builders::GetModelVersionFluentBuilder::set_model_version_number):<br>required: **true**<br><p>The model version number.</p><br>
     /// - On success, responds with [`GetModelVersionOutput`](crate::operation::get_model_version::GetModelVersionOutput) with field(s):
     ///   - [`model_id(Option<String>)`](crate::operation::get_model_version::GetModelVersionOutput::model_id): <p>The model ID.</p>
     ///   - [`model_type(Option<ModelTypeEnum>)`](crate::operation::get_model_version::GetModelVersionOutput::model_type): <p>The model type.</p>

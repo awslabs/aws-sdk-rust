@@ -69,6 +69,7 @@ impl ListAssociatedGroupsInputBuilder {
         &self.max_results
     }
     /// <p>The ARN of the canary that you want to view groups for.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl ListAssociatedGroupsInputBuilder {
     /// Consumes the builder and constructs a [`ListAssociatedGroupsInput`](crate::operation::list_associated_groups::ListAssociatedGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_associated_groups::ListAssociatedGroupsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_associated_groups::ListAssociatedGroupsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_associated_groups::ListAssociatedGroupsInput {
             next_token: self.next_token,

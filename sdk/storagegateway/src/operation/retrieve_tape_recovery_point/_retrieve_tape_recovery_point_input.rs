@@ -35,6 +35,7 @@ pub struct RetrieveTapeRecoveryPointInputBuilder {
 }
 impl RetrieveTapeRecoveryPointInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the virtual tape for which you want to retrieve the recovery point.</p>
+    /// This field is required.
     pub fn tape_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tape_arn = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl RetrieveTapeRecoveryPointInputBuilder {
         &self.tape_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// This field is required.
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_arn = ::std::option::Option::Some(input.into());
         self
@@ -67,7 +69,7 @@ impl RetrieveTapeRecoveryPointInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::retrieve_tape_recovery_point::RetrieveTapeRecoveryPointInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::retrieve_tape_recovery_point::RetrieveTapeRecoveryPointInput {
             tape_arn: self.tape_arn,

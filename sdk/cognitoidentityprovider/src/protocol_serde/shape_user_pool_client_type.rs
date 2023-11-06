@@ -103,13 +103,11 @@ where
                             );
                         }
                         "CallbackURLs" => {
-                            builder = builder.set_callback_ur_ls(crate::protocol_serde::shape_callback_ur_ls_list_type::de_callback_ur_ls_list_type(
-                                tokens,
-                            )?);
+                            builder =
+                                builder.set_callback_urls(crate::protocol_serde::shape_callback_urls_list_type::de_callback_urls_list_type(tokens)?);
                         }
                         "LogoutURLs" => {
-                            builder =
-                                builder.set_logout_ur_ls(crate::protocol_serde::shape_logout_ur_ls_list_type::de_logout_ur_ls_list_type(tokens)?);
+                            builder = builder.set_logout_urls(crate::protocol_serde::shape_logout_urls_list_type::de_logout_urls_list_type(tokens)?);
                         }
                         "DefaultRedirectURI" => {
                             builder = builder.set_default_redirect_uri(

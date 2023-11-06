@@ -27,6 +27,7 @@ pub struct DescribeRecipeInputBuilder {
 }
 impl DescribeRecipeInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the recipe to describe.</p>
+    /// This field is required.
     pub fn recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recipe_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeRecipeInputBuilder {
     /// Consumes the builder and constructs a [`DescribeRecipeInput`](crate::operation::describe_recipe::DescribeRecipeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_recipe::DescribeRecipeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_recipe::DescribeRecipeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_recipe::DescribeRecipeInput { recipe_arn: self.recipe_arn })
     }
 }

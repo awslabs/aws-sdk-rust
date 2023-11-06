@@ -27,6 +27,7 @@ pub struct RestoreKeyInputBuilder {
 }
 impl RestoreKeyInputBuilder {
     /// <p>The <code>KeyARN</code> of the key to be restored within Amazon Web Services Payment Cryptography.</p>
+    /// This field is required.
     pub fn key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_identifier = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl RestoreKeyInputBuilder {
         &self.key_identifier
     }
     /// Consumes the builder and constructs a [`RestoreKeyInput`](crate::operation::restore_key::RestoreKeyInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::restore_key::RestoreKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::restore_key::RestoreKeyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::restore_key::RestoreKeyInput {
             key_identifier: self.key_identifier,
         })

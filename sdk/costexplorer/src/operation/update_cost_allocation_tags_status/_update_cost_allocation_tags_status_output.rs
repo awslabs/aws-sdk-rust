@@ -9,8 +9,10 @@ pub struct UpdateCostAllocationTagsStatusOutput {
 }
 impl UpdateCostAllocationTagsStatusOutput {
     /// <p>A list of <code>UpdateCostAllocationTagsStatusError</code> objects with error details about each cost allocation tag that can't be updated. If there's no failure, an empty array returns. </p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::UpdateCostAllocationTagsStatusError]> {
-        self.errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
+    pub fn errors(&self) -> &[crate::types::UpdateCostAllocationTagsStatusError] {
+        self.errors.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateCostAllocationTagsStatusOutput {

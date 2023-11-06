@@ -38,8 +38,8 @@ pub fn de_get_organization_conformance_pack_detailed_status_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidNextTokenException" => crate::operation::get_organization_conformance_pack_detailed_status::GetOrganizationConformancePackDetailedStatusError::InvalidNextTokenException({
@@ -54,8 +54,8 @@ pub fn de_get_organization_conformance_pack_detailed_status_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NoSuchOrganizationConformancePackException" => crate::operation::get_organization_conformance_pack_detailed_status::GetOrganizationConformancePackDetailedStatusError::NoSuchOrganizationConformancePackException({
@@ -70,8 +70,8 @@ pub fn de_get_organization_conformance_pack_detailed_status_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "OrganizationAccessDeniedException" => crate::operation::get_organization_conformance_pack_detailed_status::GetOrganizationConformancePackDetailedStatusError::OrganizationAccessDeniedException({
@@ -86,8 +86,8 @@ pub fn de_get_organization_conformance_pack_detailed_status_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::get_organization_conformance_pack_detailed_status::GetOrganizationConformancePackDetailedStatusError::generic(generic)
@@ -121,12 +121,12 @@ pub fn de_get_organization_conformance_pack_detailed_status_http_response(
 
 pub fn ser_get_organization_conformance_pack_detailed_status_input(
     input: &crate::operation::get_organization_conformance_pack_detailed_status::GetOrganizationConformancePackDetailedStatusInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_get_organization_conformance_pack_detailed_status_input::ser_get_organization_conformance_pack_detailed_status_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_get_organization_conformance_pack_detailed_status(

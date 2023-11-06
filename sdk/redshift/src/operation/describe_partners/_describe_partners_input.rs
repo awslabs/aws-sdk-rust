@@ -48,6 +48,7 @@ pub struct DescribePartnersInputBuilder {
 }
 impl DescribePartnersInputBuilder {
     /// <p>The Amazon Web Services account ID that owns the cluster.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl DescribePartnersInputBuilder {
         &self.account_id
     }
     /// <p>The cluster identifier of the cluster whose partner integration is being described.</p>
+    /// This field is required.
     pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +108,7 @@ impl DescribePartnersInputBuilder {
     /// Consumes the builder and constructs a [`DescribePartnersInput`](crate::operation::describe_partners::DescribePartnersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_partners::DescribePartnersInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_partners::DescribePartnersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_partners::DescribePartnersInput {
             account_id: self.account_id,
             cluster_identifier: self.cluster_identifier,

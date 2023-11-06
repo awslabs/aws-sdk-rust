@@ -54,6 +54,7 @@ pub struct StartPipelineReprocessingInputBuilder {
 }
 impl StartPipelineReprocessingInputBuilder {
     /// <p>The name of the pipeline on which to start reprocessing.</p>
+    /// This field is required.
     pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_name = ::std::option::Option::Some(input.into());
         self
@@ -123,7 +124,7 @@ impl StartPipelineReprocessingInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingInput {
             pipeline_name: self.pipeline_name,

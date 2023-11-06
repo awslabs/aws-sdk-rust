@@ -15,8 +15,10 @@ impl CategoricalParameter {
         self.name.as_deref()
     }
     /// <p>The list of values you can pass.</p>
-    pub fn value(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.value.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.value.is_none()`.
+    pub fn value(&self) -> &[::std::string::String] {
+        self.value.as_deref().unwrap_or_default()
     }
 }
 impl CategoricalParameter {
@@ -35,6 +37,7 @@ pub struct CategoricalParameterBuilder {
 }
 impl CategoricalParameterBuilder {
     /// <p>The Name of the environment variable.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

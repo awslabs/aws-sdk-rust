@@ -59,6 +59,7 @@ pub struct StartFaceDetectionInputBuilder {
 }
 impl StartFaceDetectionInputBuilder {
     /// <p>The video in which you want to detect faces. The video must be stored in an Amazon S3 bucket.</p>
+    /// This field is required.
     pub fn video(mut self, input: crate::types::Video) -> Self {
         self.video = ::std::option::Option::Some(input);
         self
@@ -137,7 +138,8 @@ impl StartFaceDetectionInputBuilder {
     /// Consumes the builder and constructs a [`StartFaceDetectionInput`](crate::operation::start_face_detection::StartFaceDetectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_face_detection::StartFaceDetectionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_face_detection::StartFaceDetectionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::start_face_detection::StartFaceDetectionInput {
             video: self.video,
             client_request_token: self.client_request_token,

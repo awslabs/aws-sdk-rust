@@ -27,6 +27,7 @@ pub struct UpdateSamplingRuleInputBuilder {
 }
 impl UpdateSamplingRuleInputBuilder {
     /// <p>The rule and fields to change.</p>
+    /// This field is required.
     pub fn sampling_rule_update(mut self, input: crate::types::SamplingRuleUpdate) -> Self {
         self.sampling_rule_update = ::std::option::Option::Some(input);
         self
@@ -43,7 +44,8 @@ impl UpdateSamplingRuleInputBuilder {
     /// Consumes the builder and constructs a [`UpdateSamplingRuleInput`](crate::operation::update_sampling_rule::UpdateSamplingRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_sampling_rule::UpdateSamplingRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_sampling_rule::UpdateSamplingRuleInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_sampling_rule::UpdateSamplingRuleInput {
             sampling_rule_update: self.sampling_rule_update,
         })

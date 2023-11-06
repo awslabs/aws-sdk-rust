@@ -2,7 +2,7 @@
 pub fn ser_pivot_table_field_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PivotTableFieldOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.selected_field_options {
         let mut array_2 = object.key("SelectedFieldOptions").start_array();
         for item_3 in var_1 {

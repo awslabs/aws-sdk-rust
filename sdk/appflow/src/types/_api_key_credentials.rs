@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ApiKeyCredentials {
     /// <p>The API key required for API key authentication.</p>
-    pub api_key: ::std::option::Option<::std::string::String>,
+    pub api_key: ::std::string::String,
     /// <p>The API secret key required for API key authentication.</p>
     pub api_secret_key: ::std::option::Option<::std::string::String>,
 }
 impl ApiKeyCredentials {
     /// <p>The API key required for API key authentication.</p>
-    pub fn api_key(&self) -> ::std::option::Option<&str> {
-        self.api_key.as_deref()
+    pub fn api_key(&self) -> &str {
+        use std::ops::Deref;
+        self.api_key.deref()
     }
     /// <p>The API secret key required for API key authentication.</p>
     pub fn api_secret_key(&self) -> ::std::option::Option<&str> {
@@ -43,6 +44,7 @@ pub struct ApiKeyCredentialsBuilder {
 }
 impl ApiKeyCredentialsBuilder {
     /// <p>The API key required for API key authentication.</p>
+    /// This field is required.
     pub fn api_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_key = ::std::option::Option::Some(input.into());
         self
@@ -71,11 +73,18 @@ impl ApiKeyCredentialsBuilder {
         &self.api_secret_key
     }
     /// Consumes the builder and constructs a [`ApiKeyCredentials`](crate::types::ApiKeyCredentials).
-    pub fn build(self) -> crate::types::ApiKeyCredentials {
-        crate::types::ApiKeyCredentials {
-            api_key: self.api_key,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`api_key`](crate::types::builders::ApiKeyCredentialsBuilder::api_key)
+    pub fn build(self) -> ::std::result::Result<crate::types::ApiKeyCredentials, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ApiKeyCredentials {
+            api_key: self.api_key.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "api_key",
+                    "api_key was not specified but it is required when building ApiKeyCredentials",
+                )
+            })?,
             api_secret_key: self.api_secret_key,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for ApiKeyCredentialsBuilder {

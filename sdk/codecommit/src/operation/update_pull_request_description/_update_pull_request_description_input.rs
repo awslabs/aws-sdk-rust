@@ -34,6 +34,7 @@ pub struct UpdatePullRequestDescriptionInputBuilder {
 }
 impl UpdatePullRequestDescriptionInputBuilder {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
+    /// This field is required.
     pub fn pull_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pull_request_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdatePullRequestDescriptionInputBuilder {
         &self.pull_request_id
     }
     /// <p>The updated content of the description for the pull request. This content replaces the existing description.</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl UpdatePullRequestDescriptionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_pull_request_description::UpdatePullRequestDescriptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_pull_request_description::UpdatePullRequestDescriptionInput {
             pull_request_id: self.pull_request_id,

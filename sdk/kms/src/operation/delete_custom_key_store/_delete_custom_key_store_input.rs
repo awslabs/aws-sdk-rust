@@ -27,6 +27,7 @@ pub struct DeleteCustomKeyStoreInputBuilder {
 }
 impl DeleteCustomKeyStoreInputBuilder {
     /// <p>Enter the ID of the custom key store you want to delete. To find the ID of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
+    /// This field is required.
     pub fn custom_key_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_key_store_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteCustomKeyStoreInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCustomKeyStoreInput`](crate::operation::delete_custom_key_store::DeleteCustomKeyStoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_custom_key_store::DeleteCustomKeyStoreInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_custom_key_store::DeleteCustomKeyStoreInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_custom_key_store::DeleteCustomKeyStoreInput {
             custom_key_store_id: self.custom_key_store_id,

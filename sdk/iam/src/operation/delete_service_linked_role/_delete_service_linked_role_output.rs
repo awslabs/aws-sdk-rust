@@ -11,7 +11,7 @@ pub struct DeleteServiceLinkedRoleOutput {
     /// <task-uuid></task-uuid>
     /// </role-name>
     /// </service-principal-name></code>.</p>
-    pub deletion_task_id: ::std::option::Option<::std::string::String>,
+    pub deletion_task_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl DeleteServiceLinkedRoleOutput {
@@ -23,8 +23,9 @@ impl DeleteServiceLinkedRoleOutput {
     /// <task-uuid></task-uuid>
     /// </role-name>
     /// </service-principal-name></code>.</p>
-    pub fn deletion_task_id(&self) -> ::std::option::Option<&str> {
-        self.deletion_task_id.as_deref()
+    pub fn deletion_task_id(&self) -> &str {
+        use std::ops::Deref;
+        self.deletion_task_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteServiceLinkedRoleOutput {
@@ -55,6 +56,7 @@ impl DeleteServiceLinkedRoleOutputBuilder {
     /// <task-uuid></task-uuid>
     /// </role-name>
     /// </service-principal-name></code>.</p>
+    /// This field is required.
     pub fn deletion_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deletion_task_id = ::std::option::Option::Some(input.into());
         self
@@ -92,10 +94,22 @@ impl DeleteServiceLinkedRoleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteServiceLinkedRoleOutput`](crate::operation::delete_service_linked_role::DeleteServiceLinkedRoleOutput).
-    pub fn build(self) -> crate::operation::delete_service_linked_role::DeleteServiceLinkedRoleOutput {
-        crate::operation::delete_service_linked_role::DeleteServiceLinkedRoleOutput {
-            deletion_task_id: self.deletion_task_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`deletion_task_id`](crate::operation::delete_service_linked_role::builders::DeleteServiceLinkedRoleOutputBuilder::deletion_task_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_service_linked_role::DeleteServiceLinkedRoleOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::delete_service_linked_role::DeleteServiceLinkedRoleOutput {
+            deletion_task_id: self.deletion_task_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "deletion_task_id",
+                    "deletion_task_id was not specified but it is required when building DeleteServiceLinkedRoleOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

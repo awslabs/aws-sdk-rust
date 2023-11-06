@@ -2,24 +2,24 @@
 pub fn ser_list_statements_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_statements::ListStatementsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.next_token {
         object.key("NextToken").string(var_1.as_str());
     }
-    if input.max_results != 0 {
+    if let Some(var_2) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.max_results).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.statement_name {
-        object.key("StatementName").string(var_2.as_str());
+    if let Some(var_3) = &input.statement_name {
+        object.key("StatementName").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.status {
-        object.key("Status").string(var_3.as_str());
+    if let Some(var_4) = &input.status {
+        object.key("Status").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.role_level {
-        object.key("RoleLevel").boolean(*var_4);
+    if let Some(var_5) = &input.role_level {
+        object.key("RoleLevel").boolean(*var_5);
     }
     Ok(())
 }

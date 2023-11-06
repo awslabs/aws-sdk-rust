@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CardVerificationValue1 {
     /// <p>The expiry date of a payment card.</p>
-    pub card_expiry_date: ::std::option::Option<::std::string::String>,
+    pub card_expiry_date: ::std::string::String,
     /// <p>The service code of the payment card. This is different from Card Security Code (CSC).</p>
-    pub service_code: ::std::option::Option<::std::string::String>,
+    pub service_code: ::std::string::String,
 }
 impl CardVerificationValue1 {
     /// <p>The expiry date of a payment card.</p>
-    pub fn card_expiry_date(&self) -> ::std::option::Option<&str> {
-        self.card_expiry_date.as_deref()
+    pub fn card_expiry_date(&self) -> &str {
+        use std::ops::Deref;
+        self.card_expiry_date.deref()
     }
     /// <p>The service code of the payment card. This is different from Card Security Code (CSC).</p>
-    pub fn service_code(&self) -> ::std::option::Option<&str> {
-        self.service_code.as_deref()
+    pub fn service_code(&self) -> &str {
+        use std::ops::Deref;
+        self.service_code.deref()
     }
 }
 impl CardVerificationValue1 {
@@ -35,6 +37,7 @@ pub struct CardVerificationValue1Builder {
 }
 impl CardVerificationValue1Builder {
     /// <p>The expiry date of a payment card.</p>
+    /// This field is required.
     pub fn card_expiry_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.card_expiry_date = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl CardVerificationValue1Builder {
         &self.card_expiry_date
     }
     /// <p>The service code of the payment card. This is different from Card Security Code (CSC).</p>
+    /// This field is required.
     pub fn service_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_code = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl CardVerificationValue1Builder {
         &self.service_code
     }
     /// Consumes the builder and constructs a [`CardVerificationValue1`](crate::types::CardVerificationValue1).
-    pub fn build(self) -> crate::types::CardVerificationValue1 {
-        crate::types::CardVerificationValue1 {
-            card_expiry_date: self.card_expiry_date,
-            service_code: self.service_code,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`card_expiry_date`](crate::types::builders::CardVerificationValue1Builder::card_expiry_date)
+    /// - [`service_code`](crate::types::builders::CardVerificationValue1Builder::service_code)
+    pub fn build(self) -> ::std::result::Result<crate::types::CardVerificationValue1, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CardVerificationValue1 {
+            card_expiry_date: self.card_expiry_date.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "card_expiry_date",
+                    "card_expiry_date was not specified but it is required when building CardVerificationValue1",
+                )
+            })?,
+            service_code: self.service_code.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "service_code",
+                    "service_code was not specified but it is required when building CardVerificationValue1",
+                )
+            })?,
+        })
     }
 }

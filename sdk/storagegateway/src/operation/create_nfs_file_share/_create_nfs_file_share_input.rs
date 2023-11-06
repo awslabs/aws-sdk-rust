@@ -132,8 +132,10 @@ impl CreateNfsFileShareInput {
         self.object_acl.as_ref()
     }
     /// <p>The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IP addresses or valid CIDR blocks.</p>
-    pub fn client_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.client_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.client_list.is_none()`.
+    pub fn client_list(&self) -> &[::std::string::String] {
+        self.client_list.as_deref().unwrap_or_default()
     }
     /// <p>A value that maps a user to anonymous user.</p>
     /// <p>Valid values are the following:</p>
@@ -165,8 +167,10 @@ impl CreateNfsFileShareInput {
     /// <p>A list of up to 50 tags that can be assigned to the NFS file share. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The name of the file share. Optional.</p> <note>
     /// <p> <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
@@ -240,6 +244,7 @@ pub struct CreateNfsFileShareInputBuilder {
 }
 impl CreateNfsFileShareInputBuilder {
     /// <p>A unique string value that you supply that is used by S3 File Gateway to ensure idempotent file share creation.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -268,6 +273,7 @@ impl CreateNfsFileShareInputBuilder {
         &self.nfs_file_share_defaults
     }
     /// <p>The Amazon Resource Name (ARN) of the S3 File Gateway on which you want to create a file share.</p>
+    /// This field is required.
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_arn = ::std::option::Option::Some(input.into());
         self
@@ -313,6 +319,7 @@ impl CreateNfsFileShareInputBuilder {
         &self.kms_key
     }
     /// <p>The ARN of the Identity and Access Management (IAM) role that an S3 File Gateway assumes when it accesses the underlying storage.</p>
+    /// This field is required.
     pub fn role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role = ::std::option::Option::Some(input.into());
         self
@@ -336,6 +343,7 @@ impl CreateNfsFileShareInputBuilder {
     /// <p>Access point alias:</p>
     /// <p> <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> </p>
     /// </note>
+    /// This field is required.
     pub fn location_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_arn = ::std::option::Option::Some(input.into());
         self
@@ -656,7 +664,7 @@ impl CreateNfsFileShareInputBuilder {
     /// Consumes the builder and constructs a [`CreateNfsFileShareInput`](crate::operation::create_nfs_file_share::CreateNfsFileShareInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_nfs_file_share::CreateNfsFileShareInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_nfs_file_share::CreateNfsFileShareInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_nfs_file_share::CreateNfsFileShareInput {
             client_token: self.client_token,

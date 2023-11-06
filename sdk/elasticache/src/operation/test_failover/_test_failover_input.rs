@@ -34,6 +34,7 @@ pub struct TestFailoverInputBuilder {
 }
 impl TestFailoverInputBuilder {
     /// <p>The name of the replication group (console: cluster) whose automatic failover is being tested by this operation.</p>
+    /// This field is required.
     pub fn replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_group_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl TestFailoverInputBuilder {
         &self.replication_group_id
     }
     /// <p>The name of the node group (called shard in the console) in this replication group on which automatic failover is to be tested. You may test automatic failover on up to 5 node groups in any rolling 24-hour period.</p>
+    /// This field is required.
     pub fn node_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_group_id = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,9 @@ impl TestFailoverInputBuilder {
         &self.node_group_id
     }
     /// Consumes the builder and constructs a [`TestFailoverInput`](crate::operation::test_failover::TestFailoverInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::test_failover::TestFailoverInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::test_failover::TestFailoverInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::test_failover::TestFailoverInput {
             replication_group_id: self.replication_group_id,
             node_group_id: self.node_group_id,

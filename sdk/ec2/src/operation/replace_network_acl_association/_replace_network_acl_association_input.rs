@@ -41,6 +41,7 @@ pub struct ReplaceNetworkAclAssociationInputBuilder {
 }
 impl ReplaceNetworkAclAssociationInputBuilder {
     /// <p>The ID of the current association between the original network ACL and the subnet.</p>
+    /// This field is required.
     pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl ReplaceNetworkAclAssociationInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the new network ACL to associate with the subnet.</p>
+    /// This field is required.
     pub fn network_acl_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_acl_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +89,7 @@ impl ReplaceNetworkAclAssociationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::replace_network_acl_association::ReplaceNetworkAclAssociationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::replace_network_acl_association::ReplaceNetworkAclAssociationInput {
             association_id: self.association_id,

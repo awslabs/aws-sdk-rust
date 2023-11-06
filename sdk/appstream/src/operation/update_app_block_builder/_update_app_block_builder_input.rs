@@ -78,12 +78,16 @@ impl UpdateAppBlockBuilderInput {
         self.iam_role_arn.as_deref()
     }
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the app block builder only through the specified endpoints.</p>
-    pub fn access_endpoints(&self) -> ::std::option::Option<&[crate::types::AccessEndpoint]> {
-        self.access_endpoints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.access_endpoints.is_none()`.
+    pub fn access_endpoints(&self) -> &[crate::types::AccessEndpoint] {
+        self.access_endpoints.as_deref().unwrap_or_default()
     }
     /// <p>The attributes to delete from the app block builder.</p>
-    pub fn attributes_to_delete(&self) -> ::std::option::Option<&[crate::types::AppBlockBuilderAttribute]> {
-        self.attributes_to_delete.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes_to_delete.is_none()`.
+    pub fn attributes_to_delete(&self) -> &[crate::types::AppBlockBuilderAttribute] {
+        self.attributes_to_delete.as_deref().unwrap_or_default()
     }
 }
 impl UpdateAppBlockBuilderInput {
@@ -110,6 +114,7 @@ pub struct UpdateAppBlockBuilderInputBuilder {
 }
 impl UpdateAppBlockBuilderInputBuilder {
     /// <p>The unique name for the app block builder.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -294,7 +299,7 @@ impl UpdateAppBlockBuilderInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAppBlockBuilderInput`](crate::operation::update_app_block_builder::UpdateAppBlockBuilderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_app_block_builder::UpdateAppBlockBuilderInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_app_block_builder::UpdateAppBlockBuilderInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_app_block_builder::UpdateAppBlockBuilderInput {
             name: self.name,

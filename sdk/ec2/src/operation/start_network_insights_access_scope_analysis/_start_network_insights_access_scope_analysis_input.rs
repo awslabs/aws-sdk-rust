@@ -22,8 +22,10 @@ impl StartNetworkInsightsAccessScopeAnalysisInput {
         self.dry_run
     }
     /// <p>The tags to apply.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -49,6 +51,7 @@ pub struct StartNetworkInsightsAccessScopeAnalysisInputBuilder {
 }
 impl StartNetworkInsightsAccessScopeAnalysisInputBuilder {
     /// <p>The ID of the Network Access Scope.</p>
+    /// This field is required.
     pub fn network_insights_access_scope_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_insights_access_scope_id = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +100,7 @@ impl StartNetworkInsightsAccessScopeAnalysisInputBuilder {
         &self.tag_specifications
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -115,7 +119,7 @@ impl StartNetworkInsightsAccessScopeAnalysisInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_network_insights_access_scope_analysis::StartNetworkInsightsAccessScopeAnalysisInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::start_network_insights_access_scope_analysis::StartNetworkInsightsAccessScopeAnalysisInput {

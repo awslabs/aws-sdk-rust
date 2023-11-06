@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListHapgsOutput {
     /// <p>The list of high-availability partition groups.</p>
-    pub hapg_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub hapg_list: ::std::vec::Vec<::std::string::String>,
     /// <p>If not null, more results are available. Pass this value to <code>ListHapgs</code> to retrieve the next set of items.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListHapgsOutput {
     /// <p>The list of high-availability partition groups.</p>
-    pub fn hapg_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.hapg_list.as_deref()
+    pub fn hapg_list(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.hapg_list.deref()
     }
     /// <p>If not null, more results are available. Pass this value to <code>ListHapgs</code> to retrieve the next set of items.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,18 @@ impl ListHapgsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListHapgsOutput`](crate::operation::list_hapgs::ListHapgsOutput).
-    pub fn build(self) -> crate::operation::list_hapgs::ListHapgsOutput {
-        crate::operation::list_hapgs::ListHapgsOutput {
-            hapg_list: self.hapg_list,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`hapg_list`](crate::operation::list_hapgs::builders::ListHapgsOutputBuilder::hapg_list)
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_hapgs::ListHapgsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_hapgs::ListHapgsOutput {
+            hapg_list: self.hapg_list.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "hapg_list",
+                    "hapg_list was not specified but it is required when building ListHapgsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

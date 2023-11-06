@@ -2,7 +2,7 @@
 pub fn ser_aws_amazon_mq_broker_users_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsAmazonMqBrokerUsersDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.pending_change {
         object.key("PendingChange").string(var_1.as_str());
     }

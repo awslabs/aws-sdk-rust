@@ -27,6 +27,7 @@ pub struct DescribePackagingGroupInputBuilder {
 }
 impl DescribePackagingGroupInputBuilder {
     /// The ID of a MediaPackage VOD PackagingGroup resource.
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -43,8 +44,10 @@ impl DescribePackagingGroupInputBuilder {
     /// Consumes the builder and constructs a [`DescribePackagingGroupInput`](crate::operation::describe_packaging_group::DescribePackagingGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_packaging_group::DescribePackagingGroupInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_packaging_group::DescribePackagingGroupInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_packaging_group::DescribePackagingGroupInput { id: self.id })
     }
 }

@@ -11,8 +11,10 @@ pub struct DescribeTrafficMirrorSessionsOutput {
 }
 impl DescribeTrafficMirrorSessionsOutput {
     /// <p>Describes one or more Traffic Mirror sessions. By default, all Traffic Mirror sessions are described. Alternatively, you can filter the results.</p>
-    pub fn traffic_mirror_sessions(&self) -> ::std::option::Option<&[crate::types::TrafficMirrorSession]> {
-        self.traffic_mirror_sessions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.traffic_mirror_sessions.is_none()`.
+    pub fn traffic_mirror_sessions(&self) -> &[crate::types::TrafficMirrorSession] {
+        self.traffic_mirror_sessions.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

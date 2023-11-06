@@ -17,8 +17,10 @@ impl GetTranscriptOutput {
         self.initial_contact_id.as_deref()
     }
     /// <p>The list of messages in the session.</p>
-    pub fn transcript(&self) -> ::std::option::Option<&[crate::types::Item]> {
-        self.transcript.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.transcript.is_none()`.
+    pub fn transcript(&self) -> &[crate::types::Item] {
+        self.transcript.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token. Use the value returned previously in the next subsequent request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

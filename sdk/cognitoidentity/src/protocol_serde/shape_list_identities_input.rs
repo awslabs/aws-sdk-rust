@@ -2,7 +2,7 @@
 pub fn ser_list_identities_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_identities::ListIdentitiesInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.identity_pool_id {
         object.key("IdentityPoolId").string(var_1.as_str());
     }

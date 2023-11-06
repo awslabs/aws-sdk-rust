@@ -34,6 +34,7 @@ impl GetHealthCheckLastFailureReasonInputBuilder {
     /// <p>The ID for the health check for which you want the last failure reason. When you created the health check, <code>CreateHealthCheck</code> returned the ID in the response, in the <code>HealthCheckId</code> element.</p> <note>
     /// <p>If you want to get the last failure reason for a calculated health check, you must use the Amazon Route 53 console or the CloudWatch console. You can't use <code>GetHealthCheckLastFailureReason</code> for a calculated health check.</p>
     /// </note>
+    /// This field is required.
     pub fn health_check_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.health_check_id = ::std::option::Option::Some(input.into());
         self
@@ -56,7 +57,7 @@ impl GetHealthCheckLastFailureReasonInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReasonInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReasonInput {

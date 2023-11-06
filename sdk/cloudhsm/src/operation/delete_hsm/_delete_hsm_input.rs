@@ -28,6 +28,7 @@ pub struct DeleteHsmInputBuilder {
 }
 impl DeleteHsmInputBuilder {
     /// <p>The ARN of the HSM to delete.</p>
+    /// This field is required.
     pub fn hsm_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hsm_arn = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +43,7 @@ impl DeleteHsmInputBuilder {
         &self.hsm_arn
     }
     /// Consumes the builder and constructs a [`DeleteHsmInput`](crate::operation::delete_hsm::DeleteHsmInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_hsm::DeleteHsmInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_hsm::DeleteHsmInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_hsm::DeleteHsmInput { hsm_arn: self.hsm_arn })
     }
 }

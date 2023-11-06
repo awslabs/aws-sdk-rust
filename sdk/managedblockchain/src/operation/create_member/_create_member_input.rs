@@ -48,6 +48,7 @@ pub struct CreateMemberInputBuilder {
 }
 impl CreateMemberInputBuilder {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the CLI.</p>
+    /// This field is required.
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl CreateMemberInputBuilder {
         &self.client_request_token
     }
     /// <p>The unique identifier of the invitation that is sent to the member to join the network.</p>
+    /// This field is required.
     pub fn invitation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.invitation_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl CreateMemberInputBuilder {
         &self.invitation_id
     }
     /// <p>The unique identifier of the network in which the member is created.</p>
+    /// This field is required.
     pub fn network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl CreateMemberInputBuilder {
         &self.network_id
     }
     /// <p>Member configuration parameters.</p>
+    /// This field is required.
     pub fn member_configuration(mut self, input: crate::types::MemberConfiguration) -> Self {
         self.member_configuration = ::std::option::Option::Some(input);
         self
@@ -104,7 +108,9 @@ impl CreateMemberInputBuilder {
         &self.member_configuration
     }
     /// Consumes the builder and constructs a [`CreateMemberInput`](crate::operation::create_member::CreateMemberInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_member::CreateMemberInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_member::CreateMemberInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_member::CreateMemberInput {
             client_request_token: self.client_request_token,
             invitation_id: self.invitation_id,

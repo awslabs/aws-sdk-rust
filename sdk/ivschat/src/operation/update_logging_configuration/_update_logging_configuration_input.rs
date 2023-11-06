@@ -41,6 +41,7 @@ pub struct UpdateLoggingConfigurationInputBuilder {
 }
 impl UpdateLoggingConfigurationInputBuilder {
     /// <p>Identifier of the logging configuration to be updated.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl UpdateLoggingConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_logging_configuration::UpdateLoggingConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_logging_configuration::UpdateLoggingConfigurationInput {
             identifier: self.identifier,

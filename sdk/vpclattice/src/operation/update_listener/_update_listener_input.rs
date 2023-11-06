@@ -41,6 +41,7 @@ pub struct UpdateListenerInputBuilder {
 }
 impl UpdateListenerInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    /// This field is required.
     pub fn service_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_identifier = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateListenerInputBuilder {
         &self.service_identifier
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
+    /// This field is required.
     pub fn listener_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.listener_identifier = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl UpdateListenerInputBuilder {
         &self.listener_identifier
     }
     /// <p>The action for the default rule.</p>
+    /// This field is required.
     pub fn default_action(mut self, input: crate::types::RuleAction) -> Self {
         self.default_action = ::std::option::Option::Some(input);
         self
@@ -85,7 +88,7 @@ impl UpdateListenerInputBuilder {
     /// Consumes the builder and constructs a [`UpdateListenerInput`](crate::operation::update_listener::UpdateListenerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_listener::UpdateListenerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_listener::UpdateListenerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_listener::UpdateListenerInput {
             service_identifier: self.service_identifier,
             listener_identifier: self.listener_identifier,

@@ -11,12 +11,16 @@ pub struct BatchUpdateClusterOutput {
 }
 impl BatchUpdateClusterOutput {
     /// <p>The list of clusters that have been updated.</p>
-    pub fn processed_clusters(&self) -> ::std::option::Option<&[crate::types::Cluster]> {
-        self.processed_clusters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.processed_clusters.is_none()`.
+    pub fn processed_clusters(&self) -> &[crate::types::Cluster] {
+        self.processed_clusters.as_deref().unwrap_or_default()
     }
     /// <p>The list of clusters where updates have not been applied.</p>
-    pub fn unprocessed_clusters(&self) -> ::std::option::Option<&[crate::types::UnprocessedCluster]> {
-        self.unprocessed_clusters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unprocessed_clusters.is_none()`.
+    pub fn unprocessed_clusters(&self) -> &[crate::types::UnprocessedCluster] {
+        self.unprocessed_clusters.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchUpdateClusterOutput {

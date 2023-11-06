@@ -27,6 +27,7 @@ pub struct GetClassifierInputBuilder {
 }
 impl GetClassifierInputBuilder {
     /// <p>Name of the classifier to retrieve.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetClassifierInputBuilder {
     /// Consumes the builder and constructs a [`GetClassifierInput`](crate::operation::get_classifier::GetClassifierInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_classifier::GetClassifierInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_classifier::GetClassifierInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_classifier::GetClassifierInput { name: self.name })
     }
 }

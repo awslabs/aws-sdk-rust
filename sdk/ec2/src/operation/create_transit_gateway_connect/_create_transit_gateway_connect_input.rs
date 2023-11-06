@@ -22,8 +22,10 @@ impl CreateTransitGatewayConnectInput {
         self.options.as_ref()
     }
     /// <p>The tags to apply to the Connect attachment.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -48,6 +50,7 @@ pub struct CreateTransitGatewayConnectInputBuilder {
 }
 impl CreateTransitGatewayConnectInputBuilder {
     /// <p>The ID of the transit gateway attachment. You can specify a VPC attachment or Amazon Web Services Direct Connect attachment.</p>
+    /// This field is required.
     pub fn transport_transit_gateway_attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transport_transit_gateway_attachment_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl CreateTransitGatewayConnectInputBuilder {
         &self.transport_transit_gateway_attachment_id
     }
     /// <p>The Connect attachment options.</p>
+    /// This field is required.
     pub fn options(mut self, input: crate::types::CreateTransitGatewayConnectRequestOptions) -> Self {
         self.options = ::std::option::Option::Some(input);
         self
@@ -114,7 +118,7 @@ impl CreateTransitGatewayConnectInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_transit_gateway_connect::CreateTransitGatewayConnectInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_transit_gateway_connect::CreateTransitGatewayConnectInput {
             transport_transit_gateway_attachment_id: self.transport_transit_gateway_attachment_id,

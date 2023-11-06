@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`InferICD10CM`](crate::operation::infer_icd10_cm::builders::InferICD10CMFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`text(impl Into<String>)`](crate::operation::infer_icd10_cm::builders::InferICD10CMFluentBuilder::text) / [`set_text(Option<String>)`](crate::operation::infer_icd10_cm::builders::InferICD10CMFluentBuilder::set_text): <p>The input text used for analysis.</p>
+    ///   - [`text(impl Into<String>)`](crate::operation::infer_icd10_cm::builders::InferICD10CMFluentBuilder::text) / [`set_text(Option<String>)`](crate::operation::infer_icd10_cm::builders::InferICD10CMFluentBuilder::set_text):<br>required: **true**<br><p>The input text used for analysis.</p><br>
     /// - On success, responds with [`InferIcd10CmOutput`](crate::operation::infer_icd10_cm::InferIcd10CmOutput) with field(s):
-    ///   - [`entities(Option<Vec<Icd10CmEntity>>)`](crate::operation::infer_icd10_cm::InferIcd10CmOutput::entities): <p>The medical conditions detected in the text linked to ICD-10-CM concepts. If the action is successful, the service sends back an HTTP 200 response, as well as the entities detected.</p>
+    ///   - [`entities(Vec::<Icd10CmEntity>)`](crate::operation::infer_icd10_cm::InferIcd10CmOutput::entities): <p>The medical conditions detected in the text linked to ICD-10-CM concepts. If the action is successful, the service sends back an HTTP 200 response, as well as the entities detected.</p>
     ///   - [`pagination_token(Option<String>)`](crate::operation::infer_icd10_cm::InferIcd10CmOutput::pagination_token): <p>If the result of the previous request to <code>InferICD10CM</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of medical condition entities. </p>
     ///   - [`model_version(Option<String>)`](crate::operation::infer_icd10_cm::InferIcd10CmOutput::model_version): <p>The version of the model used to analyze the documents, in the format <i>n</i>.<i>n</i>.<i>n</i> You can use this information to track the model used for a particular batch of documents.</p>
     /// - On failure, responds with [`SdkError<InferICD10CMError>`](crate::operation::infer_icd10_cm::InferICD10CMError)

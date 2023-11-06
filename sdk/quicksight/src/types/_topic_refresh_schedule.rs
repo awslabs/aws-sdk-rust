@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TopicRefreshSchedule {
     /// <p>A Boolean value that controls whether to schedule is enabled.</p>
-    pub is_enabled: ::std::option::Option<bool>,
+    pub is_enabled: bool,
     /// <p>A Boolean value that controls whether to schedule runs at the same schedule that is specified in SPICE dataset.</p>
     pub based_on_spice_schedule: bool,
     /// <p>The starting date and time for the refresh schedule.</p>
@@ -19,7 +19,7 @@ pub struct TopicRefreshSchedule {
 }
 impl TopicRefreshSchedule {
     /// <p>A Boolean value that controls whether to schedule is enabled.</p>
-    pub fn is_enabled(&self) -> ::std::option::Option<bool> {
+    pub fn is_enabled(&self) -> bool {
         self.is_enabled
     }
     /// <p>A Boolean value that controls whether to schedule runs at the same schedule that is specified in SPICE dataset.</p>
@@ -63,6 +63,7 @@ pub struct TopicRefreshScheduleBuilder {
 }
 impl TopicRefreshScheduleBuilder {
     /// <p>A Boolean value that controls whether to schedule is enabled.</p>
+    /// This field is required.
     pub fn is_enabled(mut self, input: bool) -> Self {
         self.is_enabled = ::std::option::Option::Some(input);
         self
@@ -77,6 +78,7 @@ impl TopicRefreshScheduleBuilder {
         &self.is_enabled
     }
     /// <p>A Boolean value that controls whether to schedule runs at the same schedule that is specified in SPICE dataset.</p>
+    /// This field is required.
     pub fn based_on_spice_schedule(mut self, input: bool) -> Self {
         self.based_on_spice_schedule = ::std::option::Option::Some(input);
         self
@@ -147,14 +149,21 @@ impl TopicRefreshScheduleBuilder {
         &self.topic_schedule_type
     }
     /// Consumes the builder and constructs a [`TopicRefreshSchedule`](crate::types::TopicRefreshSchedule).
-    pub fn build(self) -> crate::types::TopicRefreshSchedule {
-        crate::types::TopicRefreshSchedule {
-            is_enabled: self.is_enabled,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`is_enabled`](crate::types::builders::TopicRefreshScheduleBuilder::is_enabled)
+    pub fn build(self) -> ::std::result::Result<crate::types::TopicRefreshSchedule, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TopicRefreshSchedule {
+            is_enabled: self.is_enabled.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "is_enabled",
+                    "is_enabled was not specified but it is required when building TopicRefreshSchedule",
+                )
+            })?,
             based_on_spice_schedule: self.based_on_spice_schedule.unwrap_or_default(),
             starting_at: self.starting_at,
             timezone: self.timezone,
             repeat_at: self.repeat_at,
             topic_schedule_type: self.topic_schedule_type,
-        }
+        })
     }
 }

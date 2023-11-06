@@ -24,12 +24,19 @@
 ///     AutoMlMetricExtendedEnum::Mape => { /* ... */ },
 ///     AutoMlMetricExtendedEnum::Mase => { /* ... */ },
 ///     AutoMlMetricExtendedEnum::Mse => { /* ... */ },
+///     AutoMlMetricExtendedEnum::Perplexity => { /* ... */ },
 ///     AutoMlMetricExtendedEnum::Precision => { /* ... */ },
 ///     AutoMlMetricExtendedEnum::PrecisionMacro => { /* ... */ },
 ///     AutoMlMetricExtendedEnum::R2 => { /* ... */ },
 ///     AutoMlMetricExtendedEnum::Rmse => { /* ... */ },
 ///     AutoMlMetricExtendedEnum::Recall => { /* ... */ },
 ///     AutoMlMetricExtendedEnum::RecallMacro => { /* ... */ },
+///     AutoMlMetricExtendedEnum::Rouge1 => { /* ... */ },
+///     AutoMlMetricExtendedEnum::Rouge2 => { /* ... */ },
+///     AutoMlMetricExtendedEnum::Rougel => { /* ... */ },
+///     AutoMlMetricExtendedEnum::RougelSum => { /* ... */ },
+///     AutoMlMetricExtendedEnum::TrainingLoss => { /* ... */ },
+///     AutoMlMetricExtendedEnum::ValidationLoss => { /* ... */ },
 ///     AutoMlMetricExtendedEnum::Wape => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -83,6 +90,8 @@ pub enum AutoMlMetricExtendedEnum {
     #[allow(missing_docs)] // documentation missing in model
     Mse,
     #[allow(missing_docs)] // documentation missing in model
+    Perplexity,
+    #[allow(missing_docs)] // documentation missing in model
     Precision,
     #[allow(missing_docs)] // documentation missing in model
     PrecisionMacro,
@@ -94,6 +103,18 @@ pub enum AutoMlMetricExtendedEnum {
     Recall,
     #[allow(missing_docs)] // documentation missing in model
     RecallMacro,
+    #[allow(missing_docs)] // documentation missing in model
+    Rouge1,
+    #[allow(missing_docs)] // documentation missing in model
+    Rouge2,
+    #[allow(missing_docs)] // documentation missing in model
+    Rougel,
+    #[allow(missing_docs)] // documentation missing in model
+    RougelSum,
+    #[allow(missing_docs)] // documentation missing in model
+    TrainingLoss,
+    #[allow(missing_docs)] // documentation missing in model
+    ValidationLoss,
     #[allow(missing_docs)] // documentation missing in model
     Wape,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -114,12 +135,19 @@ impl ::std::convert::From<&str> for AutoMlMetricExtendedEnum {
             "MAPE" => AutoMlMetricExtendedEnum::Mape,
             "MASE" => AutoMlMetricExtendedEnum::Mase,
             "MSE" => AutoMlMetricExtendedEnum::Mse,
+            "Perplexity" => AutoMlMetricExtendedEnum::Perplexity,
             "Precision" => AutoMlMetricExtendedEnum::Precision,
             "PrecisionMacro" => AutoMlMetricExtendedEnum::PrecisionMacro,
             "R2" => AutoMlMetricExtendedEnum::R2,
             "RMSE" => AutoMlMetricExtendedEnum::Rmse,
             "Recall" => AutoMlMetricExtendedEnum::Recall,
             "RecallMacro" => AutoMlMetricExtendedEnum::RecallMacro,
+            "Rouge1" => AutoMlMetricExtendedEnum::Rouge1,
+            "Rouge2" => AutoMlMetricExtendedEnum::Rouge2,
+            "RougeL" => AutoMlMetricExtendedEnum::Rougel,
+            "RougeLSum" => AutoMlMetricExtendedEnum::RougelSum,
+            "TrainingLoss" => AutoMlMetricExtendedEnum::TrainingLoss,
+            "ValidationLoss" => AutoMlMetricExtendedEnum::ValidationLoss,
             "WAPE" => AutoMlMetricExtendedEnum::Wape,
             other => AutoMlMetricExtendedEnum::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
@@ -148,12 +176,19 @@ impl AutoMlMetricExtendedEnum {
             AutoMlMetricExtendedEnum::Mape => "MAPE",
             AutoMlMetricExtendedEnum::Mase => "MASE",
             AutoMlMetricExtendedEnum::Mse => "MSE",
+            AutoMlMetricExtendedEnum::Perplexity => "Perplexity",
             AutoMlMetricExtendedEnum::Precision => "Precision",
             AutoMlMetricExtendedEnum::PrecisionMacro => "PrecisionMacro",
             AutoMlMetricExtendedEnum::R2 => "R2",
             AutoMlMetricExtendedEnum::Rmse => "RMSE",
             AutoMlMetricExtendedEnum::Recall => "Recall",
             AutoMlMetricExtendedEnum::RecallMacro => "RecallMacro",
+            AutoMlMetricExtendedEnum::Rouge1 => "Rouge1",
+            AutoMlMetricExtendedEnum::Rouge2 => "Rouge2",
+            AutoMlMetricExtendedEnum::Rougel => "RougeL",
+            AutoMlMetricExtendedEnum::RougelSum => "RougeLSum",
+            AutoMlMetricExtendedEnum::TrainingLoss => "TrainingLoss",
+            AutoMlMetricExtendedEnum::ValidationLoss => "ValidationLoss",
             AutoMlMetricExtendedEnum::Wape => "WAPE",
             AutoMlMetricExtendedEnum::Unknown(value) => value.as_str(),
         }
@@ -173,12 +208,19 @@ impl AutoMlMetricExtendedEnum {
             "MAPE",
             "MASE",
             "MSE",
+            "Perplexity",
             "Precision",
             "PrecisionMacro",
             "R2",
             "RMSE",
             "Recall",
             "RecallMacro",
+            "Rouge1",
+            "Rouge2",
+            "RougeL",
+            "RougeLSum",
+            "TrainingLoss",
+            "ValidationLoss",
             "WAPE",
         ]
     }

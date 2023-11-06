@@ -13,8 +13,10 @@ pub struct DescribeDataProvidersInput {
 }
 impl DescribeDataProvidersInput {
     /// <p>Filters applied to the data providers described in the form of key-value pairs.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, DMS includes a pagination token in the response so that you can retrieve the remaining results.</p>
     pub fn max_records(&self) -> ::std::option::Option<i32> {
@@ -96,7 +98,7 @@ impl DescribeDataProvidersInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDataProvidersInput`](crate::operation::describe_data_providers::DescribeDataProvidersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_data_providers::DescribeDataProvidersInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_data_providers::DescribeDataProvidersInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_data_providers::DescribeDataProvidersInput {
             filters: self.filters,

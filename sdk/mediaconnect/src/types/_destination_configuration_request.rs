@@ -42,6 +42,7 @@ pub struct DestinationConfigurationRequestBuilder {
 }
 impl DestinationConfigurationRequestBuilder {
     /// The IP address where you want MediaConnect to send contents of the media stream.
+    /// This field is required.
     pub fn destination_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_ip = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl DestinationConfigurationRequestBuilder {
         &self.destination_ip
     }
     /// The port that you want MediaConnect to use when it distributes the media stream to the output.
+    /// This field is required.
     pub fn destination_port(mut self, input: i32) -> Self {
         self.destination_port = ::std::option::Option::Some(input);
         self
@@ -70,6 +72,7 @@ impl DestinationConfigurationRequestBuilder {
         &self.destination_port
     }
     /// The VPC interface that you want to use for the media stream associated with the output.
+    /// This field is required.
     pub fn interface(mut self, input: crate::types::InterfaceRequest) -> Self {
         self.interface = ::std::option::Option::Some(input);
         self

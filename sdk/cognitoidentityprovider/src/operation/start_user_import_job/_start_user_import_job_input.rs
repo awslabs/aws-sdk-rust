@@ -35,6 +35,7 @@ pub struct StartUserImportJobInputBuilder {
 }
 impl StartUserImportJobInputBuilder {
     /// <p>The user pool ID for the user pool that the users are being imported into.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl StartUserImportJobInputBuilder {
         &self.user_pool_id
     }
     /// <p>The job ID for the user import job.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -65,7 +67,7 @@ impl StartUserImportJobInputBuilder {
     /// Consumes the builder and constructs a [`StartUserImportJobInput`](crate::operation::start_user_import_job::StartUserImportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_user_import_job::StartUserImportJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_user_import_job::StartUserImportJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_user_import_job::StartUserImportJobInput {
             user_pool_id: self.user_pool_id,

@@ -28,6 +28,7 @@ pub struct GetTopicAttributesInputBuilder {
 }
 impl GetTopicAttributesInputBuilder {
     /// <p>The ARN of the topic whose properties you want to get.</p>
+    /// This field is required.
     pub fn topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_arn = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,8 @@ impl GetTopicAttributesInputBuilder {
     /// Consumes the builder and constructs a [`GetTopicAttributesInput`](crate::operation::get_topic_attributes::GetTopicAttributesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_topic_attributes::GetTopicAttributesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_topic_attributes::GetTopicAttributesInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_topic_attributes::GetTopicAttributesInput { topic_arn: self.topic_arn })
     }
 }

@@ -2,7 +2,7 @@
 pub fn ser_upgrade_applied_schema_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::upgrade_applied_schema::UpgradeAppliedSchemaInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.directory_arn {
         object.key("DirectoryArn").string(var_1.as_str());
     }

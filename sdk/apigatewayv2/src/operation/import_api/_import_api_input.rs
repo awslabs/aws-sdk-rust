@@ -56,6 +56,7 @@ impl ImportApiInputBuilder {
         &self.basepath
     }
     /// <p>The OpenAPI definition. Supported only for HTTP APIs.</p>
+    /// This field is required.
     pub fn body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.body = ::std::option::Option::Some(input.into());
         self
@@ -84,7 +85,7 @@ impl ImportApiInputBuilder {
         &self.fail_on_warnings
     }
     /// Consumes the builder and constructs a [`ImportApiInput`](crate::operation::import_api::ImportApiInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::import_api::ImportApiInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::import_api::ImportApiInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::import_api::ImportApiInput {
             basepath: self.basepath,
             body: self.body,

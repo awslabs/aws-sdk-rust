@@ -66,6 +66,7 @@ pub struct CreateReportPlanInputBuilder {
 }
 impl CreateReportPlanInputBuilder {
     /// <p>The unique name of the report plan. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
+    /// This field is required.
     pub fn report_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.report_plan_name = ::std::option::Option::Some(input.into());
         self
@@ -94,6 +95,7 @@ impl CreateReportPlanInputBuilder {
         &self.report_plan_description
     }
     /// <p>A structure that contains information about where and how to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
+    /// This field is required.
     pub fn report_delivery_channel(mut self, input: crate::types::ReportDeliveryChannel) -> Self {
         self.report_delivery_channel = ::std::option::Option::Some(input);
         self
@@ -110,6 +112,7 @@ impl CreateReportPlanInputBuilder {
     /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
     /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
     /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report coverage by Amazon Web Services Regions and frameworks.</p>
+    /// This field is required.
     pub fn report_setting(mut self, input: crate::types::ReportSetting) -> Self {
         self.report_setting = ::std::option::Option::Some(input);
         self
@@ -171,7 +174,7 @@ impl CreateReportPlanInputBuilder {
     /// Consumes the builder and constructs a [`CreateReportPlanInput`](crate::operation::create_report_plan::CreateReportPlanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_report_plan::CreateReportPlanInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_report_plan::CreateReportPlanInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_report_plan::CreateReportPlanInput {
             report_plan_name: self.report_plan_name,
             report_plan_description: self.report_plan_description,

@@ -27,6 +27,7 @@ pub struct RejectInvitationInputBuilder {
 }
 impl RejectInvitationInputBuilder {
     /// <p>The unique identifier of the invitation to reject.</p>
+    /// This field is required.
     pub fn invitation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.invitation_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl RejectInvitationInputBuilder {
     /// Consumes the builder and constructs a [`RejectInvitationInput`](crate::operation::reject_invitation::RejectInvitationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::reject_invitation::RejectInvitationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::reject_invitation::RejectInvitationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::reject_invitation::RejectInvitationInput {
             invitation_id: self.invitation_id,
         })

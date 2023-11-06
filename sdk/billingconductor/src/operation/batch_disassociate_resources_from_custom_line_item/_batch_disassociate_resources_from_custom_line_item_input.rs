@@ -16,8 +16,10 @@ impl BatchDisassociateResourcesFromCustomLineItemInput {
         self.target_arn.as_deref()
     }
     /// <p> A list containing the ARNs of resources to be disassociated. </p>
-    pub fn resource_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_arns.is_none()`.
+    pub fn resource_arns(&self) -> &[::std::string::String] {
+        self.resource_arns.as_deref().unwrap_or_default()
     }
     /// <p>The billing period range in which the custom line item request will be applied.</p>
     pub fn billing_period_range(&self) -> ::std::option::Option<&crate::types::CustomLineItemBillingPeriodRange> {
@@ -43,6 +45,7 @@ pub struct BatchDisassociateResourcesFromCustomLineItemInputBuilder {
 }
 impl BatchDisassociateResourcesFromCustomLineItemInputBuilder {
     /// <p> A percentage custom line item ARN to disassociate the resources from. </p>
+    /// This field is required.
     pub fn target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_arn = ::std::option::Option::Some(input.into());
         self
@@ -95,7 +98,7 @@ impl BatchDisassociateResourcesFromCustomLineItemInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_disassociate_resources_from_custom_line_item::BatchDisassociateResourcesFromCustomLineItemInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::batch_disassociate_resources_from_custom_line_item::BatchDisassociateResourcesFromCustomLineItemInput {

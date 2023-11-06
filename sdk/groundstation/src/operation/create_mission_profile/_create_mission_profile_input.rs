@@ -41,8 +41,10 @@ impl CreateMissionProfileInput {
         self.minimum_viable_contact_duration_seconds
     }
     /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
-    pub fn dataflow_edges(&self) -> ::std::option::Option<&[::std::vec::Vec<::std::string::String>]> {
-        self.dataflow_edges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dataflow_edges.is_none()`.
+    pub fn dataflow_edges(&self) -> &[::std::vec::Vec<::std::string::String>] {
+        self.dataflow_edges.as_deref().unwrap_or_default()
     }
     /// <p>ARN of a tracking <code>Config</code>.</p>
     pub fn tracking_config_arn(&self) -> ::std::option::Option<&str> {
@@ -84,6 +86,7 @@ pub struct CreateMissionProfileInputBuilder {
 }
 impl CreateMissionProfileInputBuilder {
     /// <p>Name of a mission profile.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +129,7 @@ impl CreateMissionProfileInputBuilder {
         &self.contact_post_pass_duration_seconds
     }
     /// <p>Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.</p>
+    /// This field is required.
     pub fn minimum_viable_contact_duration_seconds(mut self, input: i32) -> Self {
         self.minimum_viable_contact_duration_seconds = ::std::option::Option::Some(input);
         self
@@ -160,6 +164,7 @@ impl CreateMissionProfileInputBuilder {
         &self.dataflow_edges
     }
     /// <p>ARN of a tracking <code>Config</code>.</p>
+    /// This field is required.
     pub fn tracking_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tracking_config_arn = ::std::option::Option::Some(input.into());
         self
@@ -224,7 +229,7 @@ impl CreateMissionProfileInputBuilder {
     /// Consumes the builder and constructs a [`CreateMissionProfileInput`](crate::operation::create_mission_profile::CreateMissionProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_mission_profile::CreateMissionProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_mission_profile::CreateMissionProfileInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_mission_profile::CreateMissionProfileInput {
             name: self.name,

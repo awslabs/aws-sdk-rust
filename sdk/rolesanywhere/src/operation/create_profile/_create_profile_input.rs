@@ -34,12 +34,16 @@ impl CreateProfileInput {
         self.session_policy.as_deref()
     }
     /// <p>A list of IAM roles that this profile can assume in a temporary credential request.</p>
-    pub fn role_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.role_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.role_arns.is_none()`.
+    pub fn role_arns(&self) -> &[::std::string::String] {
+        self.role_arns.as_deref().unwrap_or_default()
     }
     /// <p>A list of managed policy ARNs that apply to the vended session credentials. </p>
-    pub fn managed_policy_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.managed_policy_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.managed_policy_arns.is_none()`.
+    pub fn managed_policy_arns(&self) -> &[::std::string::String] {
+        self.managed_policy_arns.as_deref().unwrap_or_default()
     }
     /// <p> The number of seconds the vended session credentials are valid for. </p>
     pub fn duration_seconds(&self) -> ::std::option::Option<i32> {
@@ -50,8 +54,10 @@ impl CreateProfileInput {
         self.enabled
     }
     /// <p>The tags to attach to the profile.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateProfileInput {
@@ -76,6 +82,7 @@ pub struct CreateProfileInputBuilder {
 }
 impl CreateProfileInputBuilder {
     /// <p>The name of the profile.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -208,7 +215,7 @@ impl CreateProfileInputBuilder {
     /// Consumes the builder and constructs a [`CreateProfileInput`](crate::operation::create_profile::CreateProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_profile::CreateProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_profile::CreateProfileInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_profile::CreateProfileInput {
             name: self.name,
             require_instance_properties: self.require_instance_properties,

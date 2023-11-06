@@ -37,6 +37,7 @@ pub struct GetParameterInputBuilder {
 impl GetParameterInputBuilder {
     /// <p>The name of the parameter you want to query.</p>
     /// <p>To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter version, use <code>"Name": "name:version"</code>.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -67,7 +68,9 @@ impl GetParameterInputBuilder {
         &self.with_decryption
     }
     /// Consumes the builder and constructs a [`GetParameterInput`](crate::operation::get_parameter::GetParameterInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_parameter::GetParameterInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_parameter::GetParameterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_parameter::GetParameterInput {
             name: self.name,
             with_decryption: self.with_decryption,

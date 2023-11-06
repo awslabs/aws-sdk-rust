@@ -6,7 +6,7 @@ pub struct StopApplicationInput {
     /// <p>The unique identifier of the application you want to stop.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>Stopping an application process can take a long time. Setting this parameter to true lets you force stop the application so you don't need to wait until the process finishes to apply another action on the application. The default value is false.</p>
-    pub force_stop: bool,
+    pub force_stop: ::std::option::Option<bool>,
 }
 impl StopApplicationInput {
     /// <p>The unique identifier of the application you want to stop.</p>
@@ -14,7 +14,7 @@ impl StopApplicationInput {
         self.application_id.as_deref()
     }
     /// <p>Stopping an application process can take a long time. Setting this parameter to true lets you force stop the application so you don't need to wait until the process finishes to apply another action on the application. The default value is false.</p>
-    pub fn force_stop(&self) -> bool {
+    pub fn force_stop(&self) -> ::std::option::Option<bool> {
         self.force_stop
     }
 }
@@ -34,6 +34,7 @@ pub struct StopApplicationInputBuilder {
 }
 impl StopApplicationInputBuilder {
     /// <p>The unique identifier of the application you want to stop.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -64,10 +65,10 @@ impl StopApplicationInputBuilder {
     /// Consumes the builder and constructs a [`StopApplicationInput`](crate::operation::stop_application::StopApplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_application::StopApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_application::StopApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_application::StopApplicationInput {
             application_id: self.application_id,
-            force_stop: self.force_stop.unwrap_or_default(),
+            force_stop: self.force_stop,
         })
     }
 }

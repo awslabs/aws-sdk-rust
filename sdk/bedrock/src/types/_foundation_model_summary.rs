@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FoundationModelSummary {
     /// <p>The ARN of the foundation model.</p>
-    pub model_arn: ::std::option::Option<::std::string::String>,
+    pub model_arn: ::std::string::String,
     /// <p>The model Id of the foundation model.</p>
-    pub model_id: ::std::option::Option<::std::string::String>,
+    pub model_id: ::std::string::String,
     /// <p>The name of the model.</p>
     pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>The model's provider name.</p>
@@ -25,12 +25,14 @@ pub struct FoundationModelSummary {
 }
 impl FoundationModelSummary {
     /// <p>The ARN of the foundation model.</p>
-    pub fn model_arn(&self) -> ::std::option::Option<&str> {
-        self.model_arn.as_deref()
+    pub fn model_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.model_arn.deref()
     }
     /// <p>The model Id of the foundation model.</p>
-    pub fn model_id(&self) -> ::std::option::Option<&str> {
-        self.model_id.as_deref()
+    pub fn model_id(&self) -> &str {
+        use std::ops::Deref;
+        self.model_id.deref()
     }
     /// <p>The name of the model.</p>
     pub fn model_name(&self) -> ::std::option::Option<&str> {
@@ -41,24 +43,32 @@ impl FoundationModelSummary {
         self.provider_name.as_deref()
     }
     /// <p>The input modalities that the model supports.</p>
-    pub fn input_modalities(&self) -> ::std::option::Option<&[crate::types::ModelModality]> {
-        self.input_modalities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_modalities.is_none()`.
+    pub fn input_modalities(&self) -> &[crate::types::ModelModality] {
+        self.input_modalities.as_deref().unwrap_or_default()
     }
     /// <p>The output modalities that the model supports.</p>
-    pub fn output_modalities(&self) -> ::std::option::Option<&[crate::types::ModelModality]> {
-        self.output_modalities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_modalities.is_none()`.
+    pub fn output_modalities(&self) -> &[crate::types::ModelModality] {
+        self.output_modalities.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether the model supports streaming.</p>
     pub fn response_streaming_supported(&self) -> ::std::option::Option<bool> {
         self.response_streaming_supported
     }
     /// <p>Whether the model supports fine-tuning or continual pre-training.</p>
-    pub fn customizations_supported(&self) -> ::std::option::Option<&[crate::types::ModelCustomization]> {
-        self.customizations_supported.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.customizations_supported.is_none()`.
+    pub fn customizations_supported(&self) -> &[crate::types::ModelCustomization] {
+        self.customizations_supported.as_deref().unwrap_or_default()
     }
     /// <p>The inference types that the model supports.</p>
-    pub fn inference_types_supported(&self) -> ::std::option::Option<&[crate::types::InferenceType]> {
-        self.inference_types_supported.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inference_types_supported.is_none()`.
+    pub fn inference_types_supported(&self) -> &[crate::types::InferenceType] {
+        self.inference_types_supported.as_deref().unwrap_or_default()
     }
 }
 impl FoundationModelSummary {
@@ -84,6 +94,7 @@ pub struct FoundationModelSummaryBuilder {
 }
 impl FoundationModelSummaryBuilder {
     /// <p>The ARN of the foundation model.</p>
+    /// This field is required.
     pub fn model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_arn = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +109,7 @@ impl FoundationModelSummaryBuilder {
         &self.model_arn
     }
     /// <p>The model Id of the foundation model.</p>
+    /// This field is required.
     pub fn model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_id = ::std::option::Option::Some(input.into());
         self
@@ -234,10 +246,23 @@ impl FoundationModelSummaryBuilder {
         &self.inference_types_supported
     }
     /// Consumes the builder and constructs a [`FoundationModelSummary`](crate::types::FoundationModelSummary).
-    pub fn build(self) -> crate::types::FoundationModelSummary {
-        crate::types::FoundationModelSummary {
-            model_arn: self.model_arn,
-            model_id: self.model_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`model_arn`](crate::types::builders::FoundationModelSummaryBuilder::model_arn)
+    /// - [`model_id`](crate::types::builders::FoundationModelSummaryBuilder::model_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::FoundationModelSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::FoundationModelSummary {
+            model_arn: self.model_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "model_arn",
+                    "model_arn was not specified but it is required when building FoundationModelSummary",
+                )
+            })?,
+            model_id: self.model_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "model_id",
+                    "model_id was not specified but it is required when building FoundationModelSummary",
+                )
+            })?,
             model_name: self.model_name,
             provider_name: self.provider_name,
             input_modalities: self.input_modalities,
@@ -245,6 +270,6 @@ impl FoundationModelSummaryBuilder {
             response_streaming_supported: self.response_streaming_supported,
             customizations_supported: self.customizations_supported,
             inference_types_supported: self.inference_types_supported,
-        }
+        })
     }
 }

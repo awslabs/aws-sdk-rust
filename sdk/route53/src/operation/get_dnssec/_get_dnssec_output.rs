@@ -6,7 +6,7 @@ pub struct GetDnssecOutput {
     /// <p>A string repesenting the status of DNSSEC.</p>
     pub status: ::std::option::Option<crate::types::DnssecStatus>,
     /// <p>The key-signing keys (KSKs) in your account.</p>
-    pub key_signing_keys: ::std::option::Option<::std::vec::Vec<crate::types::KeySigningKey>>,
+    pub key_signing_keys: ::std::vec::Vec<crate::types::KeySigningKey>,
     _request_id: Option<String>,
 }
 impl GetDnssecOutput {
@@ -15,8 +15,9 @@ impl GetDnssecOutput {
         self.status.as_ref()
     }
     /// <p>The key-signing keys (KSKs) in your account.</p>
-    pub fn key_signing_keys(&self) -> ::std::option::Option<&[crate::types::KeySigningKey]> {
-        self.key_signing_keys.as_deref()
+    pub fn key_signing_keys(&self) -> &[crate::types::KeySigningKey] {
+        use std::ops::Deref;
+        self.key_signing_keys.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetDnssecOutput {
@@ -41,6 +42,7 @@ pub struct GetDnssecOutputBuilder {
 }
 impl GetDnssecOutputBuilder {
     /// <p>A string repesenting the status of DNSSEC.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::DnssecStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -84,11 +86,18 @@ impl GetDnssecOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetDnssecOutput`](crate::operation::get_dnssec::GetDnssecOutput).
-    pub fn build(self) -> crate::operation::get_dnssec::GetDnssecOutput {
-        crate::operation::get_dnssec::GetDnssecOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key_signing_keys`](crate::operation::get_dnssec::builders::GetDnssecOutputBuilder::key_signing_keys)
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_dnssec::GetDnssecOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_dnssec::GetDnssecOutput {
             status: self.status,
-            key_signing_keys: self.key_signing_keys,
+            key_signing_keys: self.key_signing_keys.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "key_signing_keys",
+                    "key_signing_keys was not specified but it is required when building GetDnssecOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

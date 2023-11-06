@@ -16,8 +16,10 @@ impl TagRoleInput {
         self.role_name.as_deref()
     }
     /// <p>The list of tags that you want to attach to the IAM role. Each tag consists of a key name and an associated value.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl TagRoleInput {
@@ -37,6 +39,7 @@ pub struct TagRoleInputBuilder {
 impl TagRoleInputBuilder {
     /// <p>The name of the IAM role to which you want to add tags.</p>
     /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// This field is required.
     pub fn role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_name = ::std::option::Option::Some(input.into());
         self
@@ -73,7 +76,7 @@ impl TagRoleInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`TagRoleInput`](crate::operation::tag_role::TagRoleInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::tag_role::TagRoleInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::tag_role::TagRoleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::tag_role::TagRoleInput {
             role_name: self.role_name,
             tags: self.tags,

@@ -36,7 +36,7 @@ where
                             );
                         }
                         "resources" => {
-                            builder = builder.set_resources(crate::protocol_serde::shape___list_of_resource::de___list_of_resource(tokens)?);
+                            builder = builder.set_resources(crate::protocol_serde::shape_list_of_resource::de_list_of_resource(tokens)?);
                         }
                         "tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
@@ -51,7 +51,7 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::resource_set_output_correct_errors(builder).build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

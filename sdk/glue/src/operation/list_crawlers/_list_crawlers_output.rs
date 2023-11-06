@@ -11,8 +11,10 @@ pub struct ListCrawlersOutput {
 }
 impl ListCrawlersOutput {
     /// <p>The names of all crawlers in the account, or the crawlers with the specified tags.</p>
-    pub fn crawler_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.crawler_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.crawler_names.is_none()`.
+    pub fn crawler_names(&self) -> &[::std::string::String] {
+        self.crawler_names.as_deref().unwrap_or_default()
     }
     /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

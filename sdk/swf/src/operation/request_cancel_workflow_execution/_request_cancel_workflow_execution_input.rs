@@ -41,6 +41,7 @@ pub struct RequestCancelWorkflowExecutionInputBuilder {
 }
 impl RequestCancelWorkflowExecutionInputBuilder {
     /// <p>The name of the domain containing the workflow execution to cancel.</p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl RequestCancelWorkflowExecutionInputBuilder {
         &self.domain
     }
     /// <p>The workflowId of the workflow execution to cancel.</p>
+    /// This field is required.
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +89,7 @@ impl RequestCancelWorkflowExecutionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::request_cancel_workflow_execution::RequestCancelWorkflowExecutionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::request_cancel_workflow_execution::RequestCancelWorkflowExecutionInput {
             domain: self.domain,

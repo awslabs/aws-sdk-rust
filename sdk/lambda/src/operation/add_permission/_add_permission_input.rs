@@ -120,6 +120,7 @@ impl AddPermissionInputBuilder {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    /// This field is required.
     pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_name = ::std::option::Option::Some(input.into());
         self
@@ -148,6 +149,7 @@ impl AddPermissionInputBuilder {
         &self.function_name
     }
     /// <p>A statement identifier that differentiates the statement from others in the same policy.</p>
+    /// This field is required.
     pub fn statement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.statement_id = ::std::option::Option::Some(input.into());
         self
@@ -162,6 +164,7 @@ impl AddPermissionInputBuilder {
         &self.statement_id
     }
     /// <p>The action that the principal can use on the function. For example, <code>lambda:InvokeFunction</code> or <code>lambda:GetFunction</code>.</p>
+    /// This field is required.
     pub fn action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action = ::std::option::Option::Some(input.into());
         self
@@ -176,6 +179,7 @@ impl AddPermissionInputBuilder {
         &self.action
     }
     /// <p>The Amazon Web Service or Amazon Web Services account that invokes the function. If you specify a service, use <code>SourceArn</code> or <code>SourceAccount</code> to limit who can invoke the function through that service.</p>
+    /// This field is required.
     pub fn principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal = ::std::option::Option::Some(input.into());
         self
@@ -293,7 +297,7 @@ impl AddPermissionInputBuilder {
     /// Consumes the builder and constructs a [`AddPermissionInput`](crate::operation::add_permission::AddPermissionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::add_permission::AddPermissionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::add_permission::AddPermissionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::add_permission::AddPermissionInput {
             function_name: self.function_name,
             statement_id: self.statement_id,

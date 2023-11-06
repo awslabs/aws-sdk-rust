@@ -42,6 +42,7 @@ pub struct ActionSourceBuilder {
 }
 impl ActionSourceBuilder {
     /// <p>The URI of the source.</p>
+    /// This field is required.
     pub fn source_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_uri = ::std::option::Option::Some(input.into());
         self

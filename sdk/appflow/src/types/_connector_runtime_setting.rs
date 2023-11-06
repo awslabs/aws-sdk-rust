@@ -45,8 +45,10 @@ impl ConnectorRuntimeSetting {
         self.scope.as_deref()
     }
     /// <p>Contains default values for the connector runtime setting that are supplied by the connector.</p>
-    pub fn connector_supplied_value_options(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.connector_supplied_value_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connector_supplied_value_options.is_none()`.
+    pub fn connector_supplied_value_options(&self) -> &[::std::string::String] {
+        self.connector_supplied_value_options.as_deref().unwrap_or_default()
     }
 }
 impl ConnectorRuntimeSetting {

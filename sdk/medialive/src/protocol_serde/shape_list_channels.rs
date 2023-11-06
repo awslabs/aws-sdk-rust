@@ -140,9 +140,7 @@ pub(crate) fn de_list_channels(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "channels" => {
-                    builder = builder.set_channels(crate::protocol_serde::shape___list_of_channel_summary::de___list_of_channel_summary(
-                        tokens,
-                    )?);
+                    builder = builder.set_channels(crate::protocol_serde::shape_list_of_channel_summary::de_list_of_channel_summary(tokens)?);
                 }
                 "nextToken" => {
                     builder = builder.set_next_token(

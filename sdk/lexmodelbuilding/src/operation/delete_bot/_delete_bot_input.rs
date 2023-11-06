@@ -27,6 +27,7 @@ pub struct DeleteBotInputBuilder {
 }
 impl DeleteBotInputBuilder {
     /// <p>The name of the bot. The name is case sensitive. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl DeleteBotInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`DeleteBotInput`](crate::operation::delete_bot::DeleteBotInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_bot::DeleteBotInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_bot::DeleteBotInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_bot::DeleteBotInput { name: self.name })
     }
 }

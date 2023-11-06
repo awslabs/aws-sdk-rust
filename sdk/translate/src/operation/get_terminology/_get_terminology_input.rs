@@ -38,6 +38,7 @@ pub struct GetTerminologyInputBuilder {
 }
 impl GetTerminologyInputBuilder {
     /// <p>The name of the custom terminology being retrieved.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -74,7 +75,7 @@ impl GetTerminologyInputBuilder {
     /// Consumes the builder and constructs a [`GetTerminologyInput`](crate::operation::get_terminology::GetTerminologyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_terminology::GetTerminologyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_terminology::GetTerminologyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_terminology::GetTerminologyInput {
             name: self.name,
             terminology_data_format: self.terminology_data_format,

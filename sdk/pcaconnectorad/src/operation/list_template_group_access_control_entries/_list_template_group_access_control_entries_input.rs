@@ -69,6 +69,7 @@ impl ListTemplateGroupAccessControlEntriesInputBuilder {
         &self.next_token
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>.</p>
+    /// This field is required.
     pub fn template_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_arn = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListTemplateGroupAccessControlEntriesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_template_group_access_control_entries::ListTemplateGroupAccessControlEntriesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_template_group_access_control_entries::ListTemplateGroupAccessControlEntriesInput {

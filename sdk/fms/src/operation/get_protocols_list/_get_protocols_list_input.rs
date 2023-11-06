@@ -34,6 +34,7 @@ pub struct GetProtocolsListInputBuilder {
 }
 impl GetProtocolsListInputBuilder {
     /// <p>The ID of the Firewall Manager protocols list that you want the details for.</p>
+    /// This field is required.
     pub fn list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.list_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl GetProtocolsListInputBuilder {
     /// Consumes the builder and constructs a [`GetProtocolsListInput`](crate::operation::get_protocols_list::GetProtocolsListInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_protocols_list::GetProtocolsListInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_protocols_list::GetProtocolsListInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_protocols_list::GetProtocolsListInput {
             list_id: self.list_id,
             default_list: self.default_list,

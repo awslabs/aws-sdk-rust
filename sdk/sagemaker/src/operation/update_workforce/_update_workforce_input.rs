@@ -50,6 +50,7 @@ pub struct UpdateWorkforceInputBuilder {
 }
 impl UpdateWorkforceInputBuilder {
     /// <p>The name of the private workforce that you want to update. You can find your workforce name by using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListWorkforces.html">ListWorkforces</a> operation.</p>
+    /// This field is required.
     pub fn workforce_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workforce_name = ::std::option::Option::Some(input.into());
         self
@@ -111,7 +112,7 @@ impl UpdateWorkforceInputBuilder {
     /// Consumes the builder and constructs a [`UpdateWorkforceInput`](crate::operation::update_workforce::UpdateWorkforceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_workforce::UpdateWorkforceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_workforce::UpdateWorkforceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_workforce::UpdateWorkforceInput {
             workforce_name: self.workforce_name,
             source_ip_config: self.source_ip_config,

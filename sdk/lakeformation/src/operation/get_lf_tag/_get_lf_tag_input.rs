@@ -48,6 +48,7 @@ impl GetLfTagInputBuilder {
         &self.catalog_id
     }
     /// <p>The key-name for the LF-tag.</p>
+    /// This field is required.
     pub fn tag_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tag_key = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +63,7 @@ impl GetLfTagInputBuilder {
         &self.tag_key
     }
     /// Consumes the builder and constructs a [`GetLfTagInput`](crate::operation::get_lf_tag::GetLfTagInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_lf_tag::GetLfTagInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_lf_tag::GetLfTagInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_lf_tag::GetLfTagInput {
             catalog_id: self.catalog_id,
             tag_key: self.tag_key,

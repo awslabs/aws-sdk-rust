@@ -43,7 +43,7 @@ impl ListOpenCypherQueriesInputBuilder {
     /// Consumes the builder and constructs a [`ListOpenCypherQueriesInput`](crate::operation::list_open_cypher_queries::ListOpenCypherQueriesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_open_cypher_queries::ListOpenCypherQueriesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_open_cypher_queries::ListOpenCypherQueriesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_open_cypher_queries::ListOpenCypherQueriesInput {
             include_waiting: self.include_waiting,

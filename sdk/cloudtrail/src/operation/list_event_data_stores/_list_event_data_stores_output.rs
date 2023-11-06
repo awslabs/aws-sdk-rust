@@ -11,8 +11,10 @@ pub struct ListEventDataStoresOutput {
 }
 impl ListEventDataStoresOutput {
     /// <p>Contains information about event data stores in the account, in the current Region.</p>
-    pub fn event_data_stores(&self) -> ::std::option::Option<&[crate::types::EventDataStore]> {
-        self.event_data_stores.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_data_stores.is_none()`.
+    pub fn event_data_stores(&self) -> &[crate::types::EventDataStore] {
+        self.event_data_stores.as_deref().unwrap_or_default()
     }
     /// <p>A token you can use to get the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

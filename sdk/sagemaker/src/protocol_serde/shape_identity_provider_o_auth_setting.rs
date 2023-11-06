@@ -2,7 +2,7 @@
 pub fn ser_identity_provider_o_auth_setting(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IdentityProviderOAuthSetting,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.data_source_name {
         object.key("DataSourceName").string(var_1.as_str());
     }

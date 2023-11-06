@@ -63,6 +63,7 @@ pub struct GetUsageInputBuilder {
 }
 impl GetUsageInputBuilder {
     /// <p>The Id of the usage plan associated with the usage data.</p>
+    /// This field is required.
     pub fn usage_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.usage_plan_id = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +92,7 @@ impl GetUsageInputBuilder {
         &self.key_id
     }
     /// <p>The starting date (e.g., 2016-01-01) of the usage data.</p>
+    /// This field is required.
     pub fn start_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_date = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +107,7 @@ impl GetUsageInputBuilder {
         &self.start_date
     }
     /// <p>The ending date (e.g., 2016-12-31) of the usage data.</p>
+    /// This field is required.
     pub fn end_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.end_date = ::std::option::Option::Some(input.into());
         self
@@ -147,7 +150,7 @@ impl GetUsageInputBuilder {
         &self.limit
     }
     /// Consumes the builder and constructs a [`GetUsageInput`](crate::operation::get_usage::GetUsageInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_usage::GetUsageInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_usage::GetUsageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_usage::GetUsageInput {
             usage_plan_id: self.usage_plan_id,
             key_id: self.key_id,

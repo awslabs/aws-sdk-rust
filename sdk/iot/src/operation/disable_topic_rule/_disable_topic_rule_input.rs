@@ -28,6 +28,7 @@ pub struct DisableTopicRuleInputBuilder {
 }
 impl DisableTopicRuleInputBuilder {
     /// <p>The name of the rule to disable.</p>
+    /// This field is required.
     pub fn rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_name = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl DisableTopicRuleInputBuilder {
     /// Consumes the builder and constructs a [`DisableTopicRuleInput`](crate::operation::disable_topic_rule::DisableTopicRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disable_topic_rule::DisableTopicRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::disable_topic_rule::DisableTopicRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::disable_topic_rule::DisableTopicRuleInput { rule_name: self.rule_name })
     }
 }

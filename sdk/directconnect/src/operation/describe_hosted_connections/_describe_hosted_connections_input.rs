@@ -27,6 +27,7 @@ pub struct DescribeHostedConnectionsInputBuilder {
 }
 impl DescribeHostedConnectionsInputBuilder {
     /// <p>The ID of the interconnect or LAG.</p>
+    /// This field is required.
     pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeHostedConnectionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_hosted_connections::DescribeHostedConnectionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_hosted_connections::DescribeHostedConnectionsInput {
             connection_id: self.connection_id,

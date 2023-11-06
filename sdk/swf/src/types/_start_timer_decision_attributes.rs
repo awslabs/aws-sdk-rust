@@ -14,18 +14,19 @@
 pub struct StartTimerDecisionAttributes {
     /// <p> The unique ID of the timer.</p>
     /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
-    pub timer_id: ::std::option::Option<::std::string::String>,
+    pub timer_id: ::std::string::String,
     /// <p>The data attached to the event that can be used by the decider in subsequent workflow tasks.</p>
     pub control: ::std::option::Option<::std::string::String>,
     /// <p> The duration to wait before firing the timer.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>.</p>
-    pub start_to_fire_timeout: ::std::option::Option<::std::string::String>,
+    pub start_to_fire_timeout: ::std::string::String,
 }
 impl StartTimerDecisionAttributes {
     /// <p> The unique ID of the timer.</p>
     /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
-    pub fn timer_id(&self) -> ::std::option::Option<&str> {
-        self.timer_id.as_deref()
+    pub fn timer_id(&self) -> &str {
+        use std::ops::Deref;
+        self.timer_id.deref()
     }
     /// <p>The data attached to the event that can be used by the decider in subsequent workflow tasks.</p>
     pub fn control(&self) -> ::std::option::Option<&str> {
@@ -33,8 +34,9 @@ impl StartTimerDecisionAttributes {
     }
     /// <p> The duration to wait before firing the timer.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>.</p>
-    pub fn start_to_fire_timeout(&self) -> ::std::option::Option<&str> {
-        self.start_to_fire_timeout.as_deref()
+    pub fn start_to_fire_timeout(&self) -> &str {
+        use std::ops::Deref;
+        self.start_to_fire_timeout.deref()
     }
 }
 impl StartTimerDecisionAttributes {
@@ -55,6 +57,7 @@ pub struct StartTimerDecisionAttributesBuilder {
 impl StartTimerDecisionAttributesBuilder {
     /// <p> The unique ID of the timer.</p>
     /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
+    /// This field is required.
     pub fn timer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timer_id = ::std::option::Option::Some(input.into());
         self
@@ -86,6 +89,7 @@ impl StartTimerDecisionAttributesBuilder {
     }
     /// <p> The duration to wait before firing the timer.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>.</p>
+    /// This field is required.
     pub fn start_to_fire_timeout(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_to_fire_timeout = ::std::option::Option::Some(input.into());
         self
@@ -102,11 +106,24 @@ impl StartTimerDecisionAttributesBuilder {
         &self.start_to_fire_timeout
     }
     /// Consumes the builder and constructs a [`StartTimerDecisionAttributes`](crate::types::StartTimerDecisionAttributes).
-    pub fn build(self) -> crate::types::StartTimerDecisionAttributes {
-        crate::types::StartTimerDecisionAttributes {
-            timer_id: self.timer_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`timer_id`](crate::types::builders::StartTimerDecisionAttributesBuilder::timer_id)
+    /// - [`start_to_fire_timeout`](crate::types::builders::StartTimerDecisionAttributesBuilder::start_to_fire_timeout)
+    pub fn build(self) -> ::std::result::Result<crate::types::StartTimerDecisionAttributes, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::StartTimerDecisionAttributes {
+            timer_id: self.timer_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "timer_id",
+                    "timer_id was not specified but it is required when building StartTimerDecisionAttributes",
+                )
+            })?,
             control: self.control,
-            start_to_fire_timeout: self.start_to_fire_timeout,
-        }
+            start_to_fire_timeout: self.start_to_fire_timeout.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "start_to_fire_timeout",
+                    "start_to_fire_timeout was not specified but it is required when building StartTimerDecisionAttributes",
+                )
+            })?,
+        })
     }
 }

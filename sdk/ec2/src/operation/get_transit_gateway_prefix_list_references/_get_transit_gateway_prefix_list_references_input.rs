@@ -38,8 +38,10 @@ impl GetTransitGatewayPrefixListReferencesInput {
     /// <li> <p> <code>prefix-list-owner-id</code> - The ID of the owner of the prefix list.</p> </li>
     /// <li> <p> <code>state</code> - The state of the prefix list reference (<code>pending</code> | <code>available</code> | <code>modifying</code> | <code>deleting</code>).</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -73,6 +75,7 @@ pub struct GetTransitGatewayPrefixListReferencesInputBuilder {
 }
 impl GetTransitGatewayPrefixListReferencesInputBuilder {
     /// <p>The ID of the transit gateway route table.</p>
+    /// This field is required.
     pub fn transit_gateway_route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_route_table_id = ::std::option::Option::Some(input.into());
         self
@@ -180,7 +183,7 @@ impl GetTransitGatewayPrefixListReferencesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_transit_gateway_prefix_list_references::GetTransitGatewayPrefixListReferencesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_transit_gateway_prefix_list_references::GetTransitGatewayPrefixListReferencesInput {

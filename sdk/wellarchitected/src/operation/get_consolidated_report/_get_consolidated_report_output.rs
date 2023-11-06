@@ -17,8 +17,10 @@ pub struct GetConsolidatedReportOutput {
 impl GetConsolidatedReportOutput {
     /// <p>The metrics that make up the consolidated report.</p>
     /// <p>Only returned when <code>JSON</code> format is requested.</p>
-    pub fn metrics(&self) -> ::std::option::Option<&[crate::types::ConsolidatedReportMetric]> {
-        self.metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metrics.is_none()`.
+    pub fn metrics(&self) -> &[crate::types::ConsolidatedReportMetric] {
+        self.metrics.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

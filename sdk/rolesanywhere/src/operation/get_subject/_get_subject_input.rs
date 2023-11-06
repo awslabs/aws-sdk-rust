@@ -27,6 +27,7 @@ pub struct GetSubjectInputBuilder {
 }
 impl GetSubjectInputBuilder {
     /// <p>The unique identifier of the subject. </p>
+    /// This field is required.
     pub fn subject_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subject_id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetSubjectInputBuilder {
         &self.subject_id
     }
     /// Consumes the builder and constructs a [`GetSubjectInput`](crate::operation::get_subject::GetSubjectInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_subject::GetSubjectInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_subject::GetSubjectInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_subject::GetSubjectInput { subject_id: self.subject_id })
     }
 }

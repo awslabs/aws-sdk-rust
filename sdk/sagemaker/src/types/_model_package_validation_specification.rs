@@ -15,8 +15,10 @@ impl ModelPackageValidationSpecification {
         self.validation_role.as_deref()
     }
     /// <p>An array of <code>ModelPackageValidationProfile</code> objects, each of which specifies a batch transform job that SageMaker runs to validate your model package.</p>
-    pub fn validation_profiles(&self) -> ::std::option::Option<&[crate::types::ModelPackageValidationProfile]> {
-        self.validation_profiles.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.validation_profiles.is_none()`.
+    pub fn validation_profiles(&self) -> &[crate::types::ModelPackageValidationProfile] {
+        self.validation_profiles.as_deref().unwrap_or_default()
     }
 }
 impl ModelPackageValidationSpecification {
@@ -35,6 +37,7 @@ pub struct ModelPackageValidationSpecificationBuilder {
 }
 impl ModelPackageValidationSpecificationBuilder {
     /// <p>The IAM roles to be used for the validation of the model package.</p>
+    /// This field is required.
     pub fn validation_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.validation_role = ::std::option::Option::Some(input.into());
         self

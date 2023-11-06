@@ -36,12 +36,16 @@ impl CreateResourcePolicyStatementInput {
         self.effect.as_ref()
     }
     /// <p>An IAM principal, such as an IAM user, IAM role, or Amazon Web Services services that is allowed or denied access to a resource. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">Amazon Web Services JSON policy elements: Principal</a>.</p>
-    pub fn principal(&self) -> ::std::option::Option<&[crate::types::Principal]> {
-        self.principal.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.principal.is_none()`.
+    pub fn principal(&self) -> &[crate::types::Principal] {
+        self.principal.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Lex action that this policy either allows or denies. The action must apply to the resource type of the specified ARN. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlexv2.html"> Actions, resources, and condition keys for Amazon Lex V2</a>.</p>
-    pub fn action(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.action.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.action.is_none()`.
+    pub fn action(&self) -> &[::std::string::String] {
+        self.action.as_deref().unwrap_or_default()
     }
     /// <p>Specifies a condition when the policy is in effect. If the principal of the policy is a service principal, you must provide two condition blocks, one with a SourceAccount global condition key and one with a SourceArn global condition key.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html">IAM JSON policy elements: Condition </a>.</p>
@@ -81,6 +85,7 @@ pub struct CreateResourcePolicyStatementInputBuilder {
 }
 impl CreateResourcePolicyStatementInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -95,6 +100,7 @@ impl CreateResourcePolicyStatementInputBuilder {
         &self.resource_arn
     }
     /// <p>The name of the statement. The ID is the same as the <code>Sid</code> IAM property. The statement name must be unique within the policy. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html">IAM JSON policy elements: Sid</a>. </p>
+    /// This field is required.
     pub fn statement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.statement_id = ::std::option::Option::Some(input.into());
         self
@@ -109,6 +115,7 @@ impl CreateResourcePolicyStatementInputBuilder {
         &self.statement_id
     }
     /// <p>Determines whether the statement allows or denies access to the resource.</p>
+    /// This field is required.
     pub fn effect(mut self, input: crate::types::Effect) -> Self {
         self.effect = ::std::option::Option::Some(input);
         self
@@ -220,7 +227,7 @@ impl CreateResourcePolicyStatementInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_resource_policy_statement::CreateResourcePolicyStatementInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_resource_policy_statement::CreateResourcePolicyStatementInput {
             resource_arn: self.resource_arn,

@@ -13,16 +13,22 @@ pub struct GroupResourcesOutput {
 }
 impl GroupResourcesOutput {
     /// <p>A list of ARNs of the resources that this operation successfully added to the group.</p>
-    pub fn succeeded(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.succeeded.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.succeeded.is_none()`.
+    pub fn succeeded(&self) -> &[::std::string::String] {
+        self.succeeded.as_deref().unwrap_or_default()
     }
     /// <p>A list of ARNs of any resources that this operation failed to add to the group.</p>
-    pub fn failed(&self) -> ::std::option::Option<&[crate::types::FailedResource]> {
-        self.failed.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed.is_none()`.
+    pub fn failed(&self) -> &[crate::types::FailedResource] {
+        self.failed.as_deref().unwrap_or_default()
     }
     /// <p>A list of ARNs of any resources that this operation is still in the process adding to the group. These pending additions continue asynchronously. You can check the status of pending additions by using the <code> <code>ListGroupResources</code> </code> operation, and checking the <code>Resources</code> array in the response and the <code>Status</code> field of each object in that array. </p>
-    pub fn pending(&self) -> ::std::option::Option<&[crate::types::PendingResource]> {
-        self.pending.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pending.is_none()`.
+    pub fn pending(&self) -> &[crate::types::PendingResource] {
+        self.pending.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GroupResourcesOutput {

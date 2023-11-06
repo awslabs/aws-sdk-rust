@@ -48,6 +48,7 @@ pub struct CreateThemeAliasInputBuilder {
 }
 impl CreateThemeAliasInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the theme for the new theme alias.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl CreateThemeAliasInputBuilder {
         &self.aws_account_id
     }
     /// <p>An ID for the theme alias.</p>
+    /// This field is required.
     pub fn theme_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.theme_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl CreateThemeAliasInputBuilder {
         &self.theme_id
     }
     /// <p>The name that you want to give to the theme alias that you are creating. The alias name can't begin with a <code>$</code>. Alias names that start with <code>$</code> are reserved by Amazon QuickSight. </p>
+    /// This field is required.
     pub fn alias_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl CreateThemeAliasInputBuilder {
         &self.alias_name
     }
     /// <p>The version number of the theme.</p>
+    /// This field is required.
     pub fn theme_version_number(mut self, input: i64) -> Self {
         self.theme_version_number = ::std::option::Option::Some(input);
         self
@@ -106,7 +110,7 @@ impl CreateThemeAliasInputBuilder {
     /// Consumes the builder and constructs a [`CreateThemeAliasInput`](crate::operation::create_theme_alias::CreateThemeAliasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_theme_alias::CreateThemeAliasInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_theme_alias::CreateThemeAliasInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_theme_alias::CreateThemeAliasInput {
             aws_account_id: self.aws_account_id,
             theme_id: self.theme_id,

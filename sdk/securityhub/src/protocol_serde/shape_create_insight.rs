@@ -108,18 +108,18 @@ pub fn de_create_insight_http_response(
         output = crate::protocol_serde::shape_create_insight::de_create_insight(_response_body, output)
             .map_err(crate::operation::create_insight::CreateInsightError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::create_insight_output_correct_errors(output).build()
     })
 }
 
 pub fn ser_create_insight_input(
     input: &crate::operation::create_insight::CreateInsightInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_insight_input::ser_create_insight_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_create_insight(

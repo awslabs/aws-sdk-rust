@@ -42,6 +42,7 @@ pub struct GradientStopBuilder {
 }
 impl GradientStopBuilder {
     /// <p>Determines gradient offset value.</p>
+    /// This field is required.
     pub fn gradient_offset(mut self, input: f64) -> Self {
         self.gradient_offset = ::std::option::Option::Some(input);
         self

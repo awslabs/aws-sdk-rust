@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MatchRange {
     /// <p>The start of the range.</p>
-    pub start: ::std::option::Option<i64>,
+    pub start: i64,
     /// <p>The end of the range.</p>
-    pub end: ::std::option::Option<i64>,
+    pub end: i64,
 }
 impl MatchRange {
     /// <p>The start of the range.</p>
-    pub fn start(&self) -> ::std::option::Option<i64> {
+    pub fn start(&self) -> i64 {
         self.start
     }
     /// <p>The end of the range.</p>
-    pub fn end(&self) -> ::std::option::Option<i64> {
+    pub fn end(&self) -> i64 {
         self.end
     }
 }
@@ -35,6 +35,7 @@ pub struct MatchRangeBuilder {
 }
 impl MatchRangeBuilder {
     /// <p>The start of the range.</p>
+    /// This field is required.
     pub fn start(mut self, input: i64) -> Self {
         self.start = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl MatchRangeBuilder {
         &self.start
     }
     /// <p>The end of the range.</p>
+    /// This field is required.
     pub fn end(mut self, input: i64) -> Self {
         self.end = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl MatchRangeBuilder {
         &self.end
     }
     /// Consumes the builder and constructs a [`MatchRange`](crate::types::MatchRange).
-    pub fn build(self) -> crate::types::MatchRange {
-        crate::types::MatchRange {
-            start: self.start,
-            end: self.end,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`start`](crate::types::builders::MatchRangeBuilder::start)
+    /// - [`end`](crate::types::builders::MatchRangeBuilder::end)
+    pub fn build(self) -> ::std::result::Result<crate::types::MatchRange, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::MatchRange {
+            start: self.start.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "start",
+                    "start was not specified but it is required when building MatchRange",
+                )
+            })?,
+            end: self.end.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "end",
+                    "end was not specified but it is required when building MatchRange",
+                )
+            })?,
+        })
     }
 }

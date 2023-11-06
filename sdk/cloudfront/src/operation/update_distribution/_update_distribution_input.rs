@@ -42,6 +42,7 @@ pub struct UpdateDistributionInputBuilder {
 }
 impl UpdateDistributionInputBuilder {
     /// <p>The distribution's configuration information.</p>
+    /// This field is required.
     pub fn distribution_config(mut self, input: crate::types::DistributionConfig) -> Self {
         self.distribution_config = ::std::option::Option::Some(input);
         self
@@ -56,6 +57,7 @@ impl UpdateDistributionInputBuilder {
         &self.distribution_config
     }
     /// <p>The distribution's id.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -86,7 +88,7 @@ impl UpdateDistributionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDistributionInput`](crate::operation::update_distribution::UpdateDistributionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_distribution::UpdateDistributionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_distribution::UpdateDistributionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_distribution::UpdateDistributionInput {
             distribution_config: self.distribution_config,
             id: self.id,

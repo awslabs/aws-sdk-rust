@@ -57,6 +57,7 @@ pub struct CompleteSnapshotInputBuilder {
 }
 impl CompleteSnapshotInputBuilder {
     /// <p>The ID of the snapshot.</p>
+    /// This field is required.
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_id = ::std::option::Option::Some(input.into());
         self
@@ -71,6 +72,7 @@ impl CompleteSnapshotInputBuilder {
         &self.snapshot_id
     }
     /// <p>The number of blocks that were written to the snapshot.</p>
+    /// This field is required.
     pub fn changed_blocks_count(mut self, input: i32) -> Self {
         self.changed_blocks_count = ::std::option::Option::Some(input);
         self
@@ -132,7 +134,7 @@ impl CompleteSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`CompleteSnapshotInput`](crate::operation::complete_snapshot::CompleteSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::complete_snapshot::CompleteSnapshotInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::complete_snapshot::CompleteSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::complete_snapshot::CompleteSnapshotInput {
             snapshot_id: self.snapshot_id,
             changed_blocks_count: self.changed_blocks_count,

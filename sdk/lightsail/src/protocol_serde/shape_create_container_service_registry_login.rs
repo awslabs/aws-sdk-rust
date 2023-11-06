@@ -132,8 +132,8 @@ pub fn de_create_container_service_registry_login_http_response(
 
 pub fn ser_create_container_service_registry_login_input(
     _input: &crate::operation::create_container_service_registry_login::CreateContainerServiceRegistryLoginInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
-    Ok(::aws_smithy_http::body::SdkBody::from("{}"))
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+    Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }
 
 pub(crate) fn de_create_container_service_registry_login(

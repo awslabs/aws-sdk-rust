@@ -9,11 +9,11 @@ pub struct ChangeRequest {
     /// <li> <p>PUT – Adds or updates files in a database.</p> </li>
     /// <li> <p>DELETE – Deletes files in a database.</p> </li>
     /// </ul>
-    pub change_type: ::std::option::Option<crate::types::ChangeType>,
+    pub change_type: crate::types::ChangeType,
     /// <p>Defines the S3 path of the source file that is required to add or update files in a database.</p>
     pub s3_path: ::std::option::Option<::std::string::String>,
     /// <p>Defines the path within the database directory. </p>
-    pub db_path: ::std::option::Option<::std::string::String>,
+    pub db_path: ::std::string::String,
 }
 impl ChangeRequest {
     /// <p>Defines the type of change request. A <code>changeType</code> can have the following values:</p>
@@ -21,16 +21,17 @@ impl ChangeRequest {
     /// <li> <p>PUT – Adds or updates files in a database.</p> </li>
     /// <li> <p>DELETE – Deletes files in a database.</p> </li>
     /// </ul>
-    pub fn change_type(&self) -> ::std::option::Option<&crate::types::ChangeType> {
-        self.change_type.as_ref()
+    pub fn change_type(&self) -> &crate::types::ChangeType {
+        &self.change_type
     }
     /// <p>Defines the S3 path of the source file that is required to add or update files in a database.</p>
     pub fn s3_path(&self) -> ::std::option::Option<&str> {
         self.s3_path.as_deref()
     }
     /// <p>Defines the path within the database directory. </p>
-    pub fn db_path(&self) -> ::std::option::Option<&str> {
-        self.db_path.as_deref()
+    pub fn db_path(&self) -> &str {
+        use std::ops::Deref;
+        self.db_path.deref()
     }
 }
 impl ChangeRequest {
@@ -54,6 +55,7 @@ impl ChangeRequestBuilder {
     /// <li> <p>PUT – Adds or updates files in a database.</p> </li>
     /// <li> <p>DELETE – Deletes files in a database.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn change_type(mut self, input: crate::types::ChangeType) -> Self {
         self.change_type = ::std::option::Option::Some(input);
         self
@@ -90,6 +92,7 @@ impl ChangeRequestBuilder {
         &self.s3_path
     }
     /// <p>Defines the path within the database directory. </p>
+    /// This field is required.
     pub fn db_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_path = ::std::option::Option::Some(input.into());
         self
@@ -104,11 +107,24 @@ impl ChangeRequestBuilder {
         &self.db_path
     }
     /// Consumes the builder and constructs a [`ChangeRequest`](crate::types::ChangeRequest).
-    pub fn build(self) -> crate::types::ChangeRequest {
-        crate::types::ChangeRequest {
-            change_type: self.change_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`change_type`](crate::types::builders::ChangeRequestBuilder::change_type)
+    /// - [`db_path`](crate::types::builders::ChangeRequestBuilder::db_path)
+    pub fn build(self) -> ::std::result::Result<crate::types::ChangeRequest, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ChangeRequest {
+            change_type: self.change_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "change_type",
+                    "change_type was not specified but it is required when building ChangeRequest",
+                )
+            })?,
             s3_path: self.s3_path,
-            db_path: self.db_path,
-        }
+            db_path: self.db_path.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "db_path",
+                    "db_path was not specified but it is required when building ChangeRequest",
+                )
+            })?,
+        })
     }
 }

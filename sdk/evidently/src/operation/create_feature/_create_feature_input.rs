@@ -45,8 +45,10 @@ impl CreateFeatureInput {
         self.description.as_deref()
     }
     /// <p>An array of structures that contain the configuration of the feature's different variations.</p>
-    pub fn variations(&self) -> ::std::option::Option<&[crate::types::VariationConfig]> {
-        self.variations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.variations.is_none()`.
+    pub fn variations(&self) -> &[crate::types::VariationConfig] {
+        self.variations.as_deref().unwrap_or_default()
     }
     /// <p>The name of the variation to use as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
     /// <p>This variation must also be listed in the <code>variations</code> structure.</p>
@@ -90,6 +92,7 @@ pub struct CreateFeatureInputBuilder {
 }
 impl CreateFeatureInputBuilder {
     /// <p>The name or ARN of the project that is to contain the new feature.</p>
+    /// This field is required.
     pub fn project(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +107,7 @@ impl CreateFeatureInputBuilder {
         &self.project
     }
     /// <p>The name for the new feature.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -250,7 +254,7 @@ impl CreateFeatureInputBuilder {
     /// Consumes the builder and constructs a [`CreateFeatureInput`](crate::operation::create_feature::CreateFeatureInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_feature::CreateFeatureInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_feature::CreateFeatureInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_feature::CreateFeatureInput {
             project: self.project,
             name: self.name,

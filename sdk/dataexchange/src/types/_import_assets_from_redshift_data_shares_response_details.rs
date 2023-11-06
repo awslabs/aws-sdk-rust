@@ -5,24 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportAssetsFromRedshiftDataSharesResponseDetails {
     /// <p>A list of Amazon Redshift datashare asset sources.</p>
-    pub asset_sources: ::std::option::Option<::std::vec::Vec<crate::types::RedshiftDataShareAssetSourceEntry>>,
+    pub asset_sources: ::std::vec::Vec<crate::types::RedshiftDataShareAssetSourceEntry>,
     /// <p>The unique identifier for the data set associated with this import job.</p>
-    pub data_set_id: ::std::option::Option<::std::string::String>,
+    pub data_set_id: ::std::string::String,
     /// <p>The unique identifier for the revision associated with this import job.</p>
-    pub revision_id: ::std::option::Option<::std::string::String>,
+    pub revision_id: ::std::string::String,
 }
 impl ImportAssetsFromRedshiftDataSharesResponseDetails {
     /// <p>A list of Amazon Redshift datashare asset sources.</p>
-    pub fn asset_sources(&self) -> ::std::option::Option<&[crate::types::RedshiftDataShareAssetSourceEntry]> {
-        self.asset_sources.as_deref()
+    pub fn asset_sources(&self) -> &[crate::types::RedshiftDataShareAssetSourceEntry] {
+        use std::ops::Deref;
+        self.asset_sources.deref()
     }
     /// <p>The unique identifier for the data set associated with this import job.</p>
-    pub fn data_set_id(&self) -> ::std::option::Option<&str> {
-        self.data_set_id.as_deref()
+    pub fn data_set_id(&self) -> &str {
+        use std::ops::Deref;
+        self.data_set_id.deref()
     }
     /// <p>The unique identifier for the revision associated with this import job.</p>
-    pub fn revision_id(&self) -> ::std::option::Option<&str> {
-        self.revision_id.as_deref()
+    pub fn revision_id(&self) -> &str {
+        use std::ops::Deref;
+        self.revision_id.deref()
     }
 }
 impl ImportAssetsFromRedshiftDataSharesResponseDetails {
@@ -62,6 +65,7 @@ impl ImportAssetsFromRedshiftDataSharesResponseDetailsBuilder {
         &self.asset_sources
     }
     /// <p>The unique identifier for the data set associated with this import job.</p>
+    /// This field is required.
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +80,7 @@ impl ImportAssetsFromRedshiftDataSharesResponseDetailsBuilder {
         &self.data_set_id
     }
     /// <p>The unique identifier for the revision associated with this import job.</p>
+    /// This field is required.
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
         self
@@ -90,11 +95,33 @@ impl ImportAssetsFromRedshiftDataSharesResponseDetailsBuilder {
         &self.revision_id
     }
     /// Consumes the builder and constructs a [`ImportAssetsFromRedshiftDataSharesResponseDetails`](crate::types::ImportAssetsFromRedshiftDataSharesResponseDetails).
-    pub fn build(self) -> crate::types::ImportAssetsFromRedshiftDataSharesResponseDetails {
-        crate::types::ImportAssetsFromRedshiftDataSharesResponseDetails {
-            asset_sources: self.asset_sources,
-            data_set_id: self.data_set_id,
-            revision_id: self.revision_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`asset_sources`](crate::types::builders::ImportAssetsFromRedshiftDataSharesResponseDetailsBuilder::asset_sources)
+    /// - [`data_set_id`](crate::types::builders::ImportAssetsFromRedshiftDataSharesResponseDetailsBuilder::data_set_id)
+    /// - [`revision_id`](crate::types::builders::ImportAssetsFromRedshiftDataSharesResponseDetailsBuilder::revision_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::ImportAssetsFromRedshiftDataSharesResponseDetails, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::types::ImportAssetsFromRedshiftDataSharesResponseDetails {
+            asset_sources: self.asset_sources.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "asset_sources",
+                    "asset_sources was not specified but it is required when building ImportAssetsFromRedshiftDataSharesResponseDetails",
+                )
+            })?,
+            data_set_id: self.data_set_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "data_set_id",
+                    "data_set_id was not specified but it is required when building ImportAssetsFromRedshiftDataSharesResponseDetails",
+                )
+            })?,
+            revision_id: self.revision_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "revision_id",
+                    "revision_id was not specified but it is required when building ImportAssetsFromRedshiftDataSharesResponseDetails",
+                )
+            })?,
+        })
     }
 }

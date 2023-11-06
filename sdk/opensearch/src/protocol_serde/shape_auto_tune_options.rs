@@ -2,7 +2,7 @@
 pub fn ser_auto_tune_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AutoTuneOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.desired_state {
         object.key("DesiredState").string(var_1.as_str());
     }

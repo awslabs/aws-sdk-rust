@@ -5,20 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HybridJobQueueInfo {
     /// <p>The name of the queue.</p>
-    pub queue: ::std::option::Option<crate::types::QueueName>,
+    pub queue: crate::types::QueueName,
     /// <p>Current position of the job in the jobs queue.</p>
-    pub position: ::std::option::Option<::std::string::String>,
+    pub position: ::std::string::String,
     /// <p>Optional. Provides more information about the queue position. For example, if the job is complete and no longer in the queue, the message field contains that information.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl HybridJobQueueInfo {
     /// <p>The name of the queue.</p>
-    pub fn queue(&self) -> ::std::option::Option<&crate::types::QueueName> {
-        self.queue.as_ref()
+    pub fn queue(&self) -> &crate::types::QueueName {
+        &self.queue
     }
     /// <p>Current position of the job in the jobs queue.</p>
-    pub fn position(&self) -> ::std::option::Option<&str> {
-        self.position.as_deref()
+    pub fn position(&self) -> &str {
+        use std::ops::Deref;
+        self.position.deref()
     }
     /// <p>Optional. Provides more information about the queue position. For example, if the job is complete and no longer in the queue, the message field contains that information.</p>
     pub fn message(&self) -> ::std::option::Option<&str> {
@@ -42,6 +43,7 @@ pub struct HybridJobQueueInfoBuilder {
 }
 impl HybridJobQueueInfoBuilder {
     /// <p>The name of the queue.</p>
+    /// This field is required.
     pub fn queue(mut self, input: crate::types::QueueName) -> Self {
         self.queue = ::std::option::Option::Some(input);
         self
@@ -56,6 +58,7 @@ impl HybridJobQueueInfoBuilder {
         &self.queue
     }
     /// <p>Current position of the job in the jobs queue.</p>
+    /// This field is required.
     pub fn position(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.position = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +87,24 @@ impl HybridJobQueueInfoBuilder {
         &self.message
     }
     /// Consumes the builder and constructs a [`HybridJobQueueInfo`](crate::types::HybridJobQueueInfo).
-    pub fn build(self) -> crate::types::HybridJobQueueInfo {
-        crate::types::HybridJobQueueInfo {
-            queue: self.queue,
-            position: self.position,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`queue`](crate::types::builders::HybridJobQueueInfoBuilder::queue)
+    /// - [`position`](crate::types::builders::HybridJobQueueInfoBuilder::position)
+    pub fn build(self) -> ::std::result::Result<crate::types::HybridJobQueueInfo, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::HybridJobQueueInfo {
+            queue: self.queue.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "queue",
+                    "queue was not specified but it is required when building HybridJobQueueInfo",
+                )
+            })?,
+            position: self.position.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "position",
+                    "position was not specified but it is required when building HybridJobQueueInfo",
+                )
+            })?,
             message: self.message,
-        }
+        })
     }
 }

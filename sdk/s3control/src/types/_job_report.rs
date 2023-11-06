@@ -96,6 +96,7 @@ impl JobReportBuilder {
         &self.format
     }
     /// <p>Indicates whether the specified job will generate a job-completion report.</p>
+    /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self

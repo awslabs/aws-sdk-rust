@@ -15,8 +15,10 @@ impl GetUtterancesViewOutput {
         self.bot_name.as_deref()
     }
     /// <p>An array of <code>UtteranceList</code> objects, each containing a list of <code>UtteranceData</code> objects describing the utterances that were processed by your bot. The response contains a maximum of 100 <code>UtteranceData</code> objects for each version. Amazon Lex returns the most frequent utterances received by the bot in the last 15 days.</p>
-    pub fn utterances(&self) -> ::std::option::Option<&[crate::types::UtteranceList]> {
-        self.utterances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.utterances.is_none()`.
+    pub fn utterances(&self) -> &[crate::types::UtteranceList] {
+        self.utterances.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetUtterancesViewOutput {

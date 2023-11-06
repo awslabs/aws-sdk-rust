@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FilterValue {
     /// <p>The type of filter value.</p>
-    pub r#type: ::std::option::Option<crate::types::FilterValueType>,
+    pub r#type: crate::types::FilterValueType,
     /// <p>The value to be associated.</p>
-    pub value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub value: ::std::vec::Vec<::std::string::String>,
 }
 impl FilterValue {
     /// <p>The type of filter value.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::FilterValueType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::FilterValueType {
+        &self.r#type
     }
     /// <p>The value to be associated.</p>
-    pub fn value(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.value.as_deref()
+    pub fn value(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.value.deref()
     }
 }
 impl FilterValue {
@@ -35,6 +36,7 @@ pub struct FilterValueBuilder {
 }
 impl FilterValueBuilder {
     /// <p>The type of filter value.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::FilterValueType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -69,10 +71,23 @@ impl FilterValueBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`FilterValue`](crate::types::FilterValue).
-    pub fn build(self) -> crate::types::FilterValue {
-        crate::types::FilterValue {
-            r#type: self.r#type,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::FilterValueBuilder::r#type)
+    /// - [`value`](crate::types::builders::FilterValueBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::FilterValue, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::FilterValue {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building FilterValue",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building FilterValue",
+                )
+            })?,
+        })
     }
 }

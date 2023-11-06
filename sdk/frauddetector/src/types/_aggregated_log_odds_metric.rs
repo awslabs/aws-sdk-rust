@@ -6,17 +6,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AggregatedLogOddsMetric {
     /// <p> The names of all the variables. </p>
-    pub variable_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub variable_names: ::std::vec::Vec<::std::string::String>,
     /// <p> The relative importance of the variables in the list to the other event variable. </p>
-    pub aggregated_variables_importance: ::std::option::Option<f32>,
+    pub aggregated_variables_importance: f32,
 }
 impl AggregatedLogOddsMetric {
     /// <p> The names of all the variables. </p>
-    pub fn variable_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.variable_names.as_deref()
+    pub fn variable_names(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.variable_names.deref()
     }
     /// <p> The relative importance of the variables in the list to the other event variable. </p>
-    pub fn aggregated_variables_importance(&self) -> ::std::option::Option<f32> {
+    pub fn aggregated_variables_importance(&self) -> f32 {
         self.aggregated_variables_importance
     }
 }
@@ -56,6 +57,7 @@ impl AggregatedLogOddsMetricBuilder {
         &self.variable_names
     }
     /// <p> The relative importance of the variables in the list to the other event variable. </p>
+    /// This field is required.
     pub fn aggregated_variables_importance(mut self, input: f32) -> Self {
         self.aggregated_variables_importance = ::std::option::Option::Some(input);
         self
@@ -70,10 +72,23 @@ impl AggregatedLogOddsMetricBuilder {
         &self.aggregated_variables_importance
     }
     /// Consumes the builder and constructs a [`AggregatedLogOddsMetric`](crate::types::AggregatedLogOddsMetric).
-    pub fn build(self) -> crate::types::AggregatedLogOddsMetric {
-        crate::types::AggregatedLogOddsMetric {
-            variable_names: self.variable_names,
-            aggregated_variables_importance: self.aggregated_variables_importance,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`variable_names`](crate::types::builders::AggregatedLogOddsMetricBuilder::variable_names)
+    /// - [`aggregated_variables_importance`](crate::types::builders::AggregatedLogOddsMetricBuilder::aggregated_variables_importance)
+    pub fn build(self) -> ::std::result::Result<crate::types::AggregatedLogOddsMetric, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AggregatedLogOddsMetric {
+            variable_names: self.variable_names.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "variable_names",
+                    "variable_names was not specified but it is required when building AggregatedLogOddsMetric",
+                )
+            })?,
+            aggregated_variables_importance: self.aggregated_variables_importance.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "aggregated_variables_importance",
+                    "aggregated_variables_importance was not specified but it is required when building AggregatedLogOddsMetric",
+                )
+            })?,
+        })
     }
 }

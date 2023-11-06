@@ -2,7 +2,7 @@
 pub fn ser_display_format_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DisplayFormatOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.use_blank_cell_format {
         object.key("UseBlankCellFormat").boolean(input.use_blank_cell_format);
     }

@@ -111,8 +111,10 @@ impl DescribeDomainOutput {
         self.home_efs_file_system_kms_key_id.as_deref()
     }
     /// <p>The VPC subnets that Studio uses for communication.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        self.subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>The domain's URL.</p>
     pub fn url(&self) -> ::std::option::Option<&str> {

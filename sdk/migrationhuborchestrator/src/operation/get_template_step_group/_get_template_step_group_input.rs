@@ -34,6 +34,7 @@ pub struct GetTemplateStepGroupInputBuilder {
 }
 impl GetTemplateStepGroupInputBuilder {
     /// <p>The ID of the template.</p>
+    /// This field is required.
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetTemplateStepGroupInputBuilder {
         &self.template_id
     }
     /// <p>The ID of the step group.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl GetTemplateStepGroupInputBuilder {
     /// Consumes the builder and constructs a [`GetTemplateStepGroupInput`](crate::operation::get_template_step_group::GetTemplateStepGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_template_step_group::GetTemplateStepGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_template_step_group::GetTemplateStepGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_template_step_group::GetTemplateStepGroupInput {
             template_id: self.template_id,

@@ -56,13 +56,17 @@ impl GetPublicKeyOutput {
     /// <p>The encryption algorithms that KMS supports for this key. </p>
     /// <p>This information is critical. If a public key encrypts data outside of KMS by using an unsupported encryption algorithm, the ciphertext cannot be decrypted. </p>
     /// <p>This field appears in the response only when the <code>KeyUsage</code> of the public key is <code>ENCRYPT_DECRYPT</code>.</p>
-    pub fn encryption_algorithms(&self) -> ::std::option::Option<&[crate::types::EncryptionAlgorithmSpec]> {
-        self.encryption_algorithms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.encryption_algorithms.is_none()`.
+    pub fn encryption_algorithms(&self) -> &[crate::types::EncryptionAlgorithmSpec] {
+        self.encryption_algorithms.as_deref().unwrap_or_default()
     }
     /// <p>The signing algorithms that KMS supports for this key.</p>
     /// <p>This field appears in the response only when the <code>KeyUsage</code> of the public key is <code>SIGN_VERIFY</code>.</p>
-    pub fn signing_algorithms(&self) -> ::std::option::Option<&[crate::types::SigningAlgorithmSpec]> {
-        self.signing_algorithms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.signing_algorithms.is_none()`.
+    pub fn signing_algorithms(&self) -> &[crate::types::SigningAlgorithmSpec] {
+        self.signing_algorithms.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetPublicKeyOutput {

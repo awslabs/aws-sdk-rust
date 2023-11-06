@@ -23,8 +23,10 @@ impl SpekeKeyProvider {
         self.resource_id.as_deref()
     }
     /// Relates to SPEKE implementation. DRM system identifiers. DASH output groups support a max of two system ids. Other group types support one system id. See https://dashif.org/identifiers/content_protection/ for more details.
-    pub fn system_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.system_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.system_ids.is_none()`.
+    pub fn system_ids(&self) -> &[::std::string::String] {
+        self.system_ids.as_deref().unwrap_or_default()
     }
     /// Specify the URL to the key server that your SPEKE-compliant DRM key provider uses to provide keys for encrypting your content.
     pub fn url(&self) -> ::std::option::Option<&str> {

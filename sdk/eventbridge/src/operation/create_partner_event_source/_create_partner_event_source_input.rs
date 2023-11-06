@@ -34,6 +34,7 @@ pub struct CreatePartnerEventSourceInputBuilder {
 }
 impl CreatePartnerEventSourceInputBuilder {
     /// <p>The name of the partner event source. This name must be unique and must be in the format <code> <i>partner_name</i>/<i>event_namespace</i>/<i>event_name</i> </code>. The Amazon Web Services account that wants to use this partner event source must create a partner event bus with a name that matches the name of the partner event source.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl CreatePartnerEventSourceInputBuilder {
         &self.name
     }
     /// <p>The Amazon Web Services account ID that is permitted to create a matching partner event bus for this partner event source.</p>
+    /// This field is required.
     pub fn account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl CreatePartnerEventSourceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_partner_event_source::CreatePartnerEventSourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_partner_event_source::CreatePartnerEventSourceInput {
             name: self.name,

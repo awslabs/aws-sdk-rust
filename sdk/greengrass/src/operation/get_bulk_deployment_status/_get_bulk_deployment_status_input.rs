@@ -27,6 +27,7 @@ pub struct GetBulkDeploymentStatusInputBuilder {
 }
 impl GetBulkDeploymentStatusInputBuilder {
     /// The ID of the bulk deployment.
+    /// This field is required.
     pub fn bulk_deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bulk_deployment_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetBulkDeploymentStatusInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_bulk_deployment_status::GetBulkDeploymentStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_bulk_deployment_status::GetBulkDeploymentStatusInput {
             bulk_deployment_id: self.bulk_deployment_id,

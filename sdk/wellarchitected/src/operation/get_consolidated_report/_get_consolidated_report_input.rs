@@ -51,6 +51,7 @@ pub struct GetConsolidatedReportInputBuilder {
 impl GetConsolidatedReportInputBuilder {
     /// <p>The format of the consolidated report.</p>
     /// <p>For <code>PDF</code>, <code>Base64String</code> is returned. For <code>JSON</code>, <code>Metrics</code> is returned.</p>
+    /// This field is required.
     pub fn format(mut self, input: crate::types::ReportFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
         self
@@ -111,7 +112,7 @@ impl GetConsolidatedReportInputBuilder {
     /// Consumes the builder and constructs a [`GetConsolidatedReportInput`](crate::operation::get_consolidated_report::GetConsolidatedReportInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_consolidated_report::GetConsolidatedReportInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_consolidated_report::GetConsolidatedReportInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_consolidated_report::GetConsolidatedReportInput {
             format: self.format,

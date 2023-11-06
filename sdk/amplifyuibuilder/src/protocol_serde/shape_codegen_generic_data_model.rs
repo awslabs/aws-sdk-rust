@@ -2,31 +2,31 @@
 pub fn ser_codegen_generic_data_model(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CodegenGenericDataModel,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.fields {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("fields").start_object();
-        for (key_3, value_4) in var_1 {
+        let mut object_1 = object.key("fields").start_object();
+        for (key_2, value_3) in &input.fields {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = object_2.key(key_3.as_str()).start_object();
-                crate::protocol_serde::shape_codegen_generic_data_field::ser_codegen_generic_data_field(&mut object_5, value_4)?;
-                object_5.finish();
+                let mut object_4 = object_1.key(key_2.as_str()).start_object();
+                crate::protocol_serde::shape_codegen_generic_data_field::ser_codegen_generic_data_field(&mut object_4, value_3)?;
+                object_4.finish();
             }
         }
-        object_2.finish();
+        object_1.finish();
     }
-    if let Some(var_6) = &input.is_join_table {
-        object.key("isJoinTable").boolean(*var_6);
+    if let Some(var_5) = &input.is_join_table {
+        object.key("isJoinTable").boolean(*var_5);
     }
-    if let Some(var_7) = &input.primary_keys {
-        let mut array_8 = object.key("primaryKeys").start_array();
-        for item_9 in var_7 {
+    {
+        let mut array_6 = object.key("primaryKeys").start_array();
+        for item_7 in &input.primary_keys {
             {
-                array_8.value().string(item_9.as_str());
+                array_6.value().string(item_7.as_str());
             }
         }
-        array_8.finish();
+        array_6.finish();
     }
     Ok(())
 }
@@ -69,7 +69,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::codegen_generic_data_model_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

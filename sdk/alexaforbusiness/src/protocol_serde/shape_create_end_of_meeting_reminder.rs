@@ -2,24 +2,24 @@
 pub fn ser_create_end_of_meeting_reminder(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CreateEndOfMeetingReminder,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.reminder_at_minutes {
-        let mut array_2 = object.key("ReminderAtMinutes").start_array();
-        for item_3 in var_1 {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        let mut array_1 = object.key("ReminderAtMinutes").start_array();
+        for item_2 in &input.reminder_at_minutes {
             {
-                array_2.value().number(
+                array_1.value().number(
                     #[allow(clippy::useless_conversion)]
-                    ::aws_smithy_types::Number::NegInt((*item_3).into()),
+                    ::aws_smithy_types::Number::NegInt((*item_2).into()),
                 );
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
-    if let Some(var_4) = &input.reminder_type {
-        object.key("ReminderType").string(var_4.as_str());
+    {
+        object.key("ReminderType").string(input.reminder_type.as_str());
     }
-    if let Some(var_5) = &input.enabled {
-        object.key("Enabled").boolean(*var_5);
+    {
+        object.key("Enabled").boolean(input.enabled);
     }
     Ok(())
 }

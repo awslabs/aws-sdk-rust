@@ -4,17 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailurePolicy {
-    /// <p>The Recovery Time Objective (RTO), in seconds.</p>
+    /// <p>Recovery Time Objective (RTO) in seconds.</p>
     pub rto_in_secs: i32,
-    /// <p>The Recovery Point Objective (RPO), in seconds.</p>
+    /// <p>Recovery Point Objective (RPO) in seconds.</p>
     pub rpo_in_secs: i32,
 }
 impl FailurePolicy {
-    /// <p>The Recovery Time Objective (RTO), in seconds.</p>
+    /// <p>Recovery Time Objective (RTO) in seconds.</p>
     pub fn rto_in_secs(&self) -> i32 {
         self.rto_in_secs
     }
-    /// <p>The Recovery Point Objective (RPO), in seconds.</p>
+    /// <p>Recovery Point Objective (RPO) in seconds.</p>
     pub fn rpo_in_secs(&self) -> i32 {
         self.rpo_in_secs
     }
@@ -34,31 +34,33 @@ pub struct FailurePolicyBuilder {
     pub(crate) rpo_in_secs: ::std::option::Option<i32>,
 }
 impl FailurePolicyBuilder {
-    /// <p>The Recovery Time Objective (RTO), in seconds.</p>
+    /// <p>Recovery Time Objective (RTO) in seconds.</p>
+    /// This field is required.
     pub fn rto_in_secs(mut self, input: i32) -> Self {
         self.rto_in_secs = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Recovery Time Objective (RTO), in seconds.</p>
+    /// <p>Recovery Time Objective (RTO) in seconds.</p>
     pub fn set_rto_in_secs(mut self, input: ::std::option::Option<i32>) -> Self {
         self.rto_in_secs = input;
         self
     }
-    /// <p>The Recovery Time Objective (RTO), in seconds.</p>
+    /// <p>Recovery Time Objective (RTO) in seconds.</p>
     pub fn get_rto_in_secs(&self) -> &::std::option::Option<i32> {
         &self.rto_in_secs
     }
-    /// <p>The Recovery Point Objective (RPO), in seconds.</p>
+    /// <p>Recovery Point Objective (RPO) in seconds.</p>
+    /// This field is required.
     pub fn rpo_in_secs(mut self, input: i32) -> Self {
         self.rpo_in_secs = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Recovery Point Objective (RPO), in seconds.</p>
+    /// <p>Recovery Point Objective (RPO) in seconds.</p>
     pub fn set_rpo_in_secs(mut self, input: ::std::option::Option<i32>) -> Self {
         self.rpo_in_secs = input;
         self
     }
-    /// <p>The Recovery Point Objective (RPO), in seconds.</p>
+    /// <p>Recovery Point Objective (RPO) in seconds.</p>
     pub fn get_rpo_in_secs(&self) -> &::std::option::Option<i32> {
         &self.rpo_in_secs
     }

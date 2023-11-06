@@ -151,9 +151,7 @@ where
                             );
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape___list_of_key_value_pair::de___list_of_key_value_pair(
-                                tokens,
-                            )?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_list_of_key_value_pair::de_list_of_key_value_pair(tokens)?);
                         }
                         "unclassifiableObjectCount" => {
                             builder = builder.set_unclassifiable_object_count(

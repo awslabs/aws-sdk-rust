@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteTheme`](crate::operation::delete_theme::builders::DeleteThemeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_id(impl Into<String>)`](crate::operation::delete_theme::builders::DeleteThemeFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::delete_theme::builders::DeleteThemeFluentBuilder::set_app_id): <p>The unique ID of the Amplify app associated with the theme to delete.</p>
-    ///   - [`environment_name(impl Into<String>)`](crate::operation::delete_theme::builders::DeleteThemeFluentBuilder::environment_name) / [`set_environment_name(Option<String>)`](crate::operation::delete_theme::builders::DeleteThemeFluentBuilder::set_environment_name): <p>The name of the backend environment that is a part of the Amplify app.</p>
-    ///   - [`id(impl Into<String>)`](crate::operation::delete_theme::builders::DeleteThemeFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_theme::builders::DeleteThemeFluentBuilder::set_id): <p>The unique ID of the theme to delete.</p>
+    ///   - [`app_id(impl Into<String>)`](crate::operation::delete_theme::builders::DeleteThemeFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::delete_theme::builders::DeleteThemeFluentBuilder::set_app_id):<br>required: **true**<br><p>The unique ID of the Amplify app associated with the theme to delete.</p><br>
+    ///   - [`environment_name(impl Into<String>)`](crate::operation::delete_theme::builders::DeleteThemeFluentBuilder::environment_name) / [`set_environment_name(Option<String>)`](crate::operation::delete_theme::builders::DeleteThemeFluentBuilder::set_environment_name):<br>required: **true**<br><p>The name of the backend environment that is a part of the Amplify app.</p><br>
+    ///   - [`id(impl Into<String>)`](crate::operation::delete_theme::builders::DeleteThemeFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_theme::builders::DeleteThemeFluentBuilder::set_id):<br>required: **true**<br><p>The unique ID of the theme to delete.</p><br>
     /// - On success, responds with [`DeleteThemeOutput`](crate::operation::delete_theme::DeleteThemeOutput)
     /// - On failure, responds with [`SdkError<DeleteThemeError>`](crate::operation::delete_theme::DeleteThemeError)
     pub fn delete_theme(&self) -> crate::operation::delete_theme::builders::DeleteThemeFluentBuilder {

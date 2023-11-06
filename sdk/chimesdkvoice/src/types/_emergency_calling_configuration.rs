@@ -9,8 +9,10 @@ pub struct EmergencyCallingConfiguration {
 }
 impl EmergencyCallingConfiguration {
     /// <p>The Dialed Number Identification Service (DNIS) emergency calling configuration details.</p>
-    pub fn dnis(&self) -> ::std::option::Option<&[crate::types::DnisEmergencyCallingConfiguration]> {
-        self.dnis.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dnis.is_none()`.
+    pub fn dnis(&self) -> &[crate::types::DnisEmergencyCallingConfiguration] {
+        self.dnis.as_deref().unwrap_or_default()
     }
 }
 impl EmergencyCallingConfiguration {

@@ -11,8 +11,10 @@ pub struct ListProposalsOutput {
 }
 impl ListProposalsOutput {
     /// <p>The summary of each proposal made on the network.</p>
-    pub fn proposals(&self) -> ::std::option::Option<&[crate::types::ProposalSummary]> {
-        self.proposals.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.proposals.is_none()`.
+    pub fn proposals(&self) -> &[crate::types::ProposalSummary] {
+        self.proposals.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -27,8 +27,10 @@ impl JobManifestGeneratorFilter {
         self.created_before.as_ref()
     }
     /// <p>If provided, the generated manifest should include only source bucket objects that have one of the specified Replication statuses.</p>
-    pub fn object_replication_statuses(&self) -> ::std::option::Option<&[crate::types::ReplicationStatus]> {
-        self.object_replication_statuses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.object_replication_statuses.is_none()`.
+    pub fn object_replication_statuses(&self) -> &[crate::types::ReplicationStatus] {
+        self.object_replication_statuses.as_deref().unwrap_or_default()
     }
 }
 impl JobManifestGeneratorFilter {

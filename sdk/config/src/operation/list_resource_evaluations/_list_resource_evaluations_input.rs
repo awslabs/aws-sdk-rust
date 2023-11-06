@@ -87,7 +87,7 @@ impl ListResourceEvaluationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resource_evaluations::ListResourceEvaluationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_resource_evaluations::ListResourceEvaluationsInput {
             filters: self.filters,

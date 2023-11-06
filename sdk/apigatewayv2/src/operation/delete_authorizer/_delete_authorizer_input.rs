@@ -34,6 +34,7 @@ pub struct DeleteAuthorizerInputBuilder {
 }
 impl DeleteAuthorizerInputBuilder {
     /// <p>The API identifier.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteAuthorizerInputBuilder {
         &self.api_id
     }
     /// <p>The authorizer identifier.</p>
+    /// This field is required.
     pub fn authorizer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorizer_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DeleteAuthorizerInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAuthorizerInput`](crate::operation::delete_authorizer::DeleteAuthorizerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_authorizer::DeleteAuthorizerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_authorizer::DeleteAuthorizerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_authorizer::DeleteAuthorizerInput {
             api_id: self.api_id,
             authorizer_id: self.authorizer_id,

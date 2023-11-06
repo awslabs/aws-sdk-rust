@@ -7,13 +7,13 @@ pub struct AutomaticTapeCreationRule {
     /// <p>A prefix that you append to the barcode of the virtual tape that you are creating. This prefix makes the barcode unique.</p> <note>
     /// <p>The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.</p>
     /// </note>
-    pub tape_barcode_prefix: ::std::option::Option<::std::string::String>,
+    pub tape_barcode_prefix: ::std::string::String,
     /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the Amazon S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
-    pub pool_id: ::std::option::Option<::std::string::String>,
+    pub pool_id: ::std::string::String,
     /// <p>The size, in bytes, of the virtual tape capacity.</p>
-    pub tape_size_in_bytes: ::std::option::Option<i64>,
+    pub tape_size_in_bytes: i64,
     /// <p>The minimum number of available virtual tapes that the gateway maintains at all times. If the number of tapes on the gateway goes below this value, the gateway creates as many new tapes as are needed to have <code>MinimumNumTapes</code> on the gateway. For more information about automatic tape creation, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateTapes.html#CreateTapesAutomatically">Creating Tapes Automatically</a>.</p>
-    pub minimum_num_tapes: ::std::option::Option<i32>,
+    pub minimum_num_tapes: i32,
     /// <p>Set to <code>true</code> to indicate that tapes are to be archived as write-once-read-many (WORM). Set to <code>false</code> when WORM is not enabled for tapes.</p>
     pub worm: bool,
 }
@@ -21,19 +21,21 @@ impl AutomaticTapeCreationRule {
     /// <p>A prefix that you append to the barcode of the virtual tape that you are creating. This prefix makes the barcode unique.</p> <note>
     /// <p>The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.</p>
     /// </note>
-    pub fn tape_barcode_prefix(&self) -> ::std::option::Option<&str> {
-        self.tape_barcode_prefix.as_deref()
+    pub fn tape_barcode_prefix(&self) -> &str {
+        use std::ops::Deref;
+        self.tape_barcode_prefix.deref()
     }
     /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the Amazon S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
-    pub fn pool_id(&self) -> ::std::option::Option<&str> {
-        self.pool_id.as_deref()
+    pub fn pool_id(&self) -> &str {
+        use std::ops::Deref;
+        self.pool_id.deref()
     }
     /// <p>The size, in bytes, of the virtual tape capacity.</p>
-    pub fn tape_size_in_bytes(&self) -> ::std::option::Option<i64> {
+    pub fn tape_size_in_bytes(&self) -> i64 {
         self.tape_size_in_bytes
     }
     /// <p>The minimum number of available virtual tapes that the gateway maintains at all times. If the number of tapes on the gateway goes below this value, the gateway creates as many new tapes as are needed to have <code>MinimumNumTapes</code> on the gateway. For more information about automatic tape creation, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateTapes.html#CreateTapesAutomatically">Creating Tapes Automatically</a>.</p>
-    pub fn minimum_num_tapes(&self) -> ::std::option::Option<i32> {
+    pub fn minimum_num_tapes(&self) -> i32 {
         self.minimum_num_tapes
     }
     /// <p>Set to <code>true</code> to indicate that tapes are to be archived as write-once-read-many (WORM). Set to <code>false</code> when WORM is not enabled for tapes.</p>
@@ -62,6 +64,7 @@ impl AutomaticTapeCreationRuleBuilder {
     /// <p>A prefix that you append to the barcode of the virtual tape that you are creating. This prefix makes the barcode unique.</p> <note>
     /// <p>The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.</p>
     /// </note>
+    /// This field is required.
     pub fn tape_barcode_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tape_barcode_prefix = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +83,7 @@ impl AutomaticTapeCreationRuleBuilder {
         &self.tape_barcode_prefix
     }
     /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the Amazon S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
+    /// This field is required.
     pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pool_id = ::std::option::Option::Some(input.into());
         self
@@ -94,6 +98,7 @@ impl AutomaticTapeCreationRuleBuilder {
         &self.pool_id
     }
     /// <p>The size, in bytes, of the virtual tape capacity.</p>
+    /// This field is required.
     pub fn tape_size_in_bytes(mut self, input: i64) -> Self {
         self.tape_size_in_bytes = ::std::option::Option::Some(input);
         self
@@ -108,6 +113,7 @@ impl AutomaticTapeCreationRuleBuilder {
         &self.tape_size_in_bytes
     }
     /// <p>The minimum number of available virtual tapes that the gateway maintains at all times. If the number of tapes on the gateway goes below this value, the gateway creates as many new tapes as are needed to have <code>MinimumNumTapes</code> on the gateway. For more information about automatic tape creation, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateTapes.html#CreateTapesAutomatically">Creating Tapes Automatically</a>.</p>
+    /// This field is required.
     pub fn minimum_num_tapes(mut self, input: i32) -> Self {
         self.minimum_num_tapes = ::std::option::Option::Some(input);
         self
@@ -136,13 +142,38 @@ impl AutomaticTapeCreationRuleBuilder {
         &self.worm
     }
     /// Consumes the builder and constructs a [`AutomaticTapeCreationRule`](crate::types::AutomaticTapeCreationRule).
-    pub fn build(self) -> crate::types::AutomaticTapeCreationRule {
-        crate::types::AutomaticTapeCreationRule {
-            tape_barcode_prefix: self.tape_barcode_prefix,
-            pool_id: self.pool_id,
-            tape_size_in_bytes: self.tape_size_in_bytes,
-            minimum_num_tapes: self.minimum_num_tapes,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`tape_barcode_prefix`](crate::types::builders::AutomaticTapeCreationRuleBuilder::tape_barcode_prefix)
+    /// - [`pool_id`](crate::types::builders::AutomaticTapeCreationRuleBuilder::pool_id)
+    /// - [`tape_size_in_bytes`](crate::types::builders::AutomaticTapeCreationRuleBuilder::tape_size_in_bytes)
+    /// - [`minimum_num_tapes`](crate::types::builders::AutomaticTapeCreationRuleBuilder::minimum_num_tapes)
+    pub fn build(self) -> ::std::result::Result<crate::types::AutomaticTapeCreationRule, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AutomaticTapeCreationRule {
+            tape_barcode_prefix: self.tape_barcode_prefix.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "tape_barcode_prefix",
+                    "tape_barcode_prefix was not specified but it is required when building AutomaticTapeCreationRule",
+                )
+            })?,
+            pool_id: self.pool_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "pool_id",
+                    "pool_id was not specified but it is required when building AutomaticTapeCreationRule",
+                )
+            })?,
+            tape_size_in_bytes: self.tape_size_in_bytes.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "tape_size_in_bytes",
+                    "tape_size_in_bytes was not specified but it is required when building AutomaticTapeCreationRule",
+                )
+            })?,
+            minimum_num_tapes: self.minimum_num_tapes.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "minimum_num_tapes",
+                    "minimum_num_tapes was not specified but it is required when building AutomaticTapeCreationRule",
+                )
+            })?,
             worm: self.worm.unwrap_or_default(),
-        }
+        })
     }
 }

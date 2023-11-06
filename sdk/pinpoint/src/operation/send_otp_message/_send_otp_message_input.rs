@@ -34,6 +34,7 @@ pub struct SendOtpMessageInputBuilder {
 }
 impl SendOtpMessageInputBuilder {
     /// <p>The unique ID of your Amazon Pinpoint application.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl SendOtpMessageInputBuilder {
         &self.application_id
     }
     /// <p>Send OTP message request parameters.</p>
+    /// This field is required.
     pub fn send_otp_message_request_parameters(mut self, input: crate::types::SendOtpMessageRequestParameters) -> Self {
         self.send_otp_message_request_parameters = ::std::option::Option::Some(input);
         self
@@ -64,7 +66,7 @@ impl SendOtpMessageInputBuilder {
     /// Consumes the builder and constructs a [`SendOtpMessageInput`](crate::operation::send_otp_message::SendOtpMessageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::send_otp_message::SendOtpMessageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::send_otp_message::SendOtpMessageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_otp_message::SendOtpMessageInput {
             application_id: self.application_id,
             send_otp_message_request_parameters: self.send_otp_message_request_parameters,

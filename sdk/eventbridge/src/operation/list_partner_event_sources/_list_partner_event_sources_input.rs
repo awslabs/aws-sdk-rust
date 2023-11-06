@@ -41,6 +41,7 @@ pub struct ListPartnerEventSourcesInputBuilder {
 }
 impl ListPartnerEventSourcesInputBuilder {
     /// <p>If you specify this, the results are limited to only those partner event sources that start with the string you specify.</p>
+    /// This field is required.
     pub fn name_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name_prefix = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListPartnerEventSourcesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_partner_event_sources::ListPartnerEventSourcesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_partner_event_sources::ListPartnerEventSourcesInput {
             name_prefix: self.name_prefix,

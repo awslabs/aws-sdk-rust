@@ -2,20 +2,20 @@
 pub fn ser_identity_provider_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IdentityProviderConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.authorization_strategy {
-        object.key("AuthorizationStrategy").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("AuthorizationStrategy").string(input.authorization_strategy.as_str());
     }
     if input.fine_grained_authorization_enabled {
         object
             .key("FineGrainedAuthorizationEnabled")
             .boolean(input.fine_grained_authorization_enabled);
     }
-    if let Some(var_2) = &input.metadata {
-        object.key("Metadata").string(var_2.as_str());
+    if let Some(var_1) = &input.metadata {
+        object.key("Metadata").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.idp_lambda_arn {
-        object.key("IdpLambdaArn").string(var_3.as_str());
+    if let Some(var_2) = &input.idp_lambda_arn {
+        object.key("IdpLambdaArn").string(var_2.as_str());
     }
     Ok(())
 }
@@ -70,7 +70,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::identity_provider_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

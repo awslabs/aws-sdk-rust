@@ -41,6 +41,7 @@ pub struct AssociateWebsiteCertificateAuthorityInputBuilder {
 }
 impl AssociateWebsiteCertificateAuthorityInputBuilder {
     /// <p>The ARN of the fleet.</p>
+    /// This field is required.
     pub fn fleet_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl AssociateWebsiteCertificateAuthorityInputBuilder {
         &self.fleet_arn
     }
     /// <p>The root certificate of the CA.</p>
+    /// This field is required.
     pub fn certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +89,7 @@ impl AssociateWebsiteCertificateAuthorityInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_website_certificate_authority::AssociateWebsiteCertificateAuthorityInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::associate_website_certificate_authority::AssociateWebsiteCertificateAuthorityInput {

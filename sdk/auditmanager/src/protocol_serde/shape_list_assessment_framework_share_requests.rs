@@ -31,11 +31,10 @@ pub fn de_list_assessment_framework_share_requests_http_error(
                     output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                         .map_err(crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::access_denied_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -48,11 +47,10 @@ pub fn de_list_assessment_framework_share_requests_http_error(
                     output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
                         .map_err(crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::internal_server_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -65,11 +63,10 @@ pub fn de_list_assessment_framework_share_requests_http_error(
                     output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                         .map_err(crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::validation_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }

@@ -27,6 +27,7 @@ pub struct DeletePeeringInputBuilder {
 }
 impl DeletePeeringInputBuilder {
     /// <p>The ID of the peering connection to delete.</p>
+    /// This field is required.
     pub fn peering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.peering_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeletePeeringInputBuilder {
     /// Consumes the builder and constructs a [`DeletePeeringInput`](crate::operation::delete_peering::DeletePeeringInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_peering::DeletePeeringInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_peering::DeletePeeringInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_peering::DeletePeeringInput { peering_id: self.peering_id })
     }
 }

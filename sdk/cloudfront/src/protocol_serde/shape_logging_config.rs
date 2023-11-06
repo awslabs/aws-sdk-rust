@@ -2,29 +2,30 @@
 pub fn ser_logging_config(
     input: &crate::types::LoggingConfig,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.enabled {
+    {
         let mut inner_writer = scope.start_el("Enabled").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_1).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.enabled).encode());
     }
-    if let Some(var_2) = &input.include_cookies {
+    {
         let mut inner_writer = scope.start_el("IncludeCookies").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_2).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.include_cookies).encode());
     }
-    if let Some(var_3) = &input.bucket {
+    {
         let mut inner_writer = scope.start_el("Bucket").finish();
-        inner_writer.data(var_3.as_str());
+        inner_writer.data(input.bucket.as_str());
     }
-    if let Some(var_4) = &input.prefix {
+    {
         let mut inner_writer = scope.start_el("Prefix").finish();
-        inner_writer.data(var_4.as_str());
+        inner_writer.data(input.prefix.as_str());
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_logging_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::LoggingConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -33,7 +34,7 @@ pub fn de_logging_config(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Enabled") /* Enabled com.amazonaws.cloudfront#LoggingConfig$Enabled */ =>  {
-                let var_5 =
+                let var_1 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -44,11 +45,11 @@ pub fn de_logging_config(
                         ?
                     )
                 ;
-                builder = builder.set_enabled(var_5);
+                builder = builder.set_enabled(var_1);
             }
             ,
             s if s.matches("IncludeCookies") /* IncludeCookies com.amazonaws.cloudfront#LoggingConfig$IncludeCookies */ =>  {
-                let var_6 =
+                let var_2 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -59,11 +60,11 @@ pub fn de_logging_config(
                         ?
                     )
                 ;
-                builder = builder.set_include_cookies(var_6);
+                builder = builder.set_include_cookies(var_2);
             }
             ,
             s if s.matches("Bucket") /* Bucket com.amazonaws.cloudfront#LoggingConfig$Bucket */ =>  {
-                let var_7 =
+                let var_3 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -72,11 +73,11 @@ pub fn de_logging_config(
                         ?
                     )
                 ;
-                builder = builder.set_bucket(var_7);
+                builder = builder.set_bucket(var_3);
             }
             ,
             s if s.matches("Prefix") /* Prefix com.amazonaws.cloudfront#LoggingConfig$Prefix */ =>  {
-                let var_8 =
+                let var_4 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -85,11 +86,13 @@ pub fn de_logging_config(
                         ?
                     )
                 ;
-                builder = builder.set_prefix(var_8);
+                builder = builder.set_prefix(var_4);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::logging_config_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

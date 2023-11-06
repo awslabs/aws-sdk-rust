@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Grantee {
     /// <p>Type of grantee</p>
-    pub r#type: ::std::option::Option<crate::types::Type>,
+    pub r#type: crate::types::Type,
     /// <p>Screen name of the grantee.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>URI of the grantee group.</p>
@@ -17,8 +17,8 @@ pub struct Grantee {
 }
 impl Grantee {
     /// <p>Type of grantee</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::Type> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::Type {
+        &self.r#type
     }
     /// <p>Screen name of the grantee.</p>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
@@ -56,6 +56,7 @@ pub struct GranteeBuilder {
 }
 impl GranteeBuilder {
     /// <p>Type of grantee</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::Type) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -126,13 +127,20 @@ impl GranteeBuilder {
         &self.email_address
     }
     /// Consumes the builder and constructs a [`Grantee`](crate::types::Grantee).
-    pub fn build(self) -> crate::types::Grantee {
-        crate::types::Grantee {
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::GranteeBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::Grantee, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Grantee {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building Grantee",
+                )
+            })?,
             display_name: self.display_name,
             uri: self.uri,
             id: self.id,
             email_address: self.email_address,
-        }
+        })
     }
 }

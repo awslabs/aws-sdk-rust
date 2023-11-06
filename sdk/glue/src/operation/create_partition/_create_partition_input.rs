@@ -62,6 +62,7 @@ impl CreatePartitionInputBuilder {
         &self.catalog_id
     }
     /// <p>The name of the metadata database in which the partition is to be created.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl CreatePartitionInputBuilder {
         &self.database_name
     }
     /// <p>The name of the metadata table in which the partition is to be created.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +92,7 @@ impl CreatePartitionInputBuilder {
         &self.table_name
     }
     /// <p>A <code>PartitionInput</code> structure defining the partition to be created.</p>
+    /// This field is required.
     pub fn partition_input(mut self, input: crate::types::PartitionInput) -> Self {
         self.partition_input = ::std::option::Option::Some(input);
         self
@@ -106,7 +109,7 @@ impl CreatePartitionInputBuilder {
     /// Consumes the builder and constructs a [`CreatePartitionInput`](crate::operation::create_partition::CreatePartitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_partition::CreatePartitionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_partition::CreatePartitionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_partition::CreatePartitionInput {
             catalog_id: self.catalog_id,
             database_name: self.database_name,

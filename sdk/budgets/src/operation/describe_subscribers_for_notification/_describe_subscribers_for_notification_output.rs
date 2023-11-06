@@ -12,8 +12,10 @@ pub struct DescribeSubscribersForNotificationOutput {
 }
 impl DescribeSubscribersForNotificationOutput {
     /// <p>A list of subscribers that are associated with a notification.</p>
-    pub fn subscribers(&self) -> ::std::option::Option<&[crate::types::Subscriber]> {
-        self.subscribers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subscribers.is_none()`.
+    pub fn subscribers(&self) -> &[crate::types::Subscriber] {
+        self.subscribers.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

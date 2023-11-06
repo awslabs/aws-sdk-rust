@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Delete {
     /// <p>The object to delete.</p>
-    pub objects: ::std::option::Option<::std::vec::Vec<crate::types::ObjectIdentifier>>,
+    pub objects: ::std::vec::Vec<crate::types::ObjectIdentifier>,
     /// <p>Element to enable quiet mode for the request. When you add this element, you must set its value to true.</p>
     pub quiet: bool,
 }
 impl Delete {
     /// <p>The object to delete.</p>
-    pub fn objects(&self) -> ::std::option::Option<&[crate::types::ObjectIdentifier]> {
-        self.objects.as_deref()
+    pub fn objects(&self) -> &[crate::types::ObjectIdentifier] {
+        use std::ops::Deref;
+        self.objects.deref()
     }
     /// <p>Element to enable quiet mode for the request. When you add this element, you must set its value to true.</p>
     pub fn quiet(&self) -> bool {
@@ -69,10 +70,17 @@ impl DeleteBuilder {
         &self.quiet
     }
     /// Consumes the builder and constructs a [`Delete`](crate::types::Delete).
-    pub fn build(self) -> crate::types::Delete {
-        crate::types::Delete {
-            objects: self.objects,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`objects`](crate::types::builders::DeleteBuilder::objects)
+    pub fn build(self) -> ::std::result::Result<crate::types::Delete, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Delete {
+            objects: self.objects.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "objects",
+                    "objects was not specified but it is required when building Delete",
+                )
+            })?,
             quiet: self.quiet.unwrap_or_default(),
-        }
+        })
     }
 }

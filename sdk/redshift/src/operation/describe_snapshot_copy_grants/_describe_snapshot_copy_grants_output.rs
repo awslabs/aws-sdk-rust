@@ -18,8 +18,10 @@ impl DescribeSnapshotCopyGrantsOutput {
         self.marker.as_deref()
     }
     /// <p>The list of <code>SnapshotCopyGrant</code> objects.</p>
-    pub fn snapshot_copy_grants(&self) -> ::std::option::Option<&[crate::types::SnapshotCopyGrant]> {
-        self.snapshot_copy_grants.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.snapshot_copy_grants.is_none()`.
+    pub fn snapshot_copy_grants(&self) -> &[crate::types::SnapshotCopyGrant] {
+        self.snapshot_copy_grants.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeSnapshotCopyGrantsOutput {

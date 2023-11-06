@@ -27,6 +27,7 @@ pub struct DescribeClusterOperationInputBuilder {
 }
 impl DescribeClusterOperationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the MSK cluster operation.</p>
+    /// This field is required.
     pub fn cluster_operation_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_operation_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeClusterOperationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_cluster_operation::DescribeClusterOperationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_cluster_operation::DescribeClusterOperationInput {
             cluster_operation_arn: self.cluster_operation_arn,

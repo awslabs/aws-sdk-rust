@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteMigrationProject`](crate::operation::delete_migration_project::builders::DeleteMigrationProjectFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`migration_project_identifier(impl Into<String>)`](crate::operation::delete_migration_project::builders::DeleteMigrationProjectFluentBuilder::migration_project_identifier) / [`set_migration_project_identifier(Option<String>)`](crate::operation::delete_migration_project::builders::DeleteMigrationProjectFluentBuilder::set_migration_project_identifier): <p>The name or Amazon Resource Name (ARN) of the migration project to delete.</p>
+    ///   - [`migration_project_identifier(impl Into<String>)`](crate::operation::delete_migration_project::builders::DeleteMigrationProjectFluentBuilder::migration_project_identifier) / [`set_migration_project_identifier(Option<String>)`](crate::operation::delete_migration_project::builders::DeleteMigrationProjectFluentBuilder::set_migration_project_identifier):<br>required: **true**<br><p>The name or Amazon Resource Name (ARN) of the migration project to delete.</p><br>
     /// - On success, responds with [`DeleteMigrationProjectOutput`](crate::operation::delete_migration_project::DeleteMigrationProjectOutput) with field(s):
     ///   - [`migration_project(Option<MigrationProject>)`](crate::operation::delete_migration_project::DeleteMigrationProjectOutput::migration_project): <p>The migration project that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteMigrationProjectError>`](crate::operation::delete_migration_project::DeleteMigrationProjectError)

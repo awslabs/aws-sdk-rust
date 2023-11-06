@@ -27,6 +27,7 @@ pub struct DisableTrustAnchorInputBuilder {
 }
 impl DisableTrustAnchorInputBuilder {
     /// <p>The unique identifier of the trust anchor.</p>
+    /// This field is required.
     pub fn trust_anchor_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trust_anchor_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,8 @@ impl DisableTrustAnchorInputBuilder {
     /// Consumes the builder and constructs a [`DisableTrustAnchorInput`](crate::operation::disable_trust_anchor::DisableTrustAnchorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disable_trust_anchor::DisableTrustAnchorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::disable_trust_anchor::DisableTrustAnchorInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::disable_trust_anchor::DisableTrustAnchorInput {
             trust_anchor_id: self.trust_anchor_id,
         })

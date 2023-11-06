@@ -42,6 +42,7 @@ pub struct CreateUsagePlanKeyInputBuilder {
 }
 impl CreateUsagePlanKeyInputBuilder {
     /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-created UsagePlanKey resource representing a plan customer.</p>
+    /// This field is required.
     pub fn usage_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.usage_plan_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl CreateUsagePlanKeyInputBuilder {
         &self.usage_plan_id
     }
     /// <p>The identifier of a UsagePlanKey resource for a plan customer.</p>
+    /// This field is required.
     pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl CreateUsagePlanKeyInputBuilder {
         &self.key_id
     }
     /// <p>The type of a UsagePlanKey resource for a plan customer.</p>
+    /// This field is required.
     pub fn key_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_type = ::std::option::Option::Some(input.into());
         self
@@ -86,7 +89,7 @@ impl CreateUsagePlanKeyInputBuilder {
     /// Consumes the builder and constructs a [`CreateUsagePlanKeyInput`](crate::operation::create_usage_plan_key::CreateUsagePlanKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_usage_plan_key::CreateUsagePlanKeyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_usage_plan_key::CreateUsagePlanKeyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_usage_plan_key::CreateUsagePlanKeyInput {
             usage_plan_id: self.usage_plan_id,

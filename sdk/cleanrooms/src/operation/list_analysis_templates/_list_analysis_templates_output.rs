@@ -6,7 +6,7 @@ pub struct ListAnalysisTemplatesOutput {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Lists analysis template metadata.</p>
-    pub analysis_template_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisTemplateSummary>>,
+    pub analysis_template_summaries: ::std::vec::Vec<crate::types::AnalysisTemplateSummary>,
     _request_id: Option<String>,
 }
 impl ListAnalysisTemplatesOutput {
@@ -15,8 +15,9 @@ impl ListAnalysisTemplatesOutput {
         self.next_token.as_deref()
     }
     /// <p>Lists analysis template metadata.</p>
-    pub fn analysis_template_summaries(&self) -> ::std::option::Option<&[crate::types::AnalysisTemplateSummary]> {
-        self.analysis_template_summaries.as_deref()
+    pub fn analysis_template_summaries(&self) -> &[crate::types::AnalysisTemplateSummary] {
+        use std::ops::Deref;
+        self.analysis_template_summaries.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListAnalysisTemplatesOutput {
@@ -84,11 +85,21 @@ impl ListAnalysisTemplatesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAnalysisTemplatesOutput`](crate::operation::list_analysis_templates::ListAnalysisTemplatesOutput).
-    pub fn build(self) -> crate::operation::list_analysis_templates::ListAnalysisTemplatesOutput {
-        crate::operation::list_analysis_templates::ListAnalysisTemplatesOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`analysis_template_summaries`](crate::operation::list_analysis_templates::builders::ListAnalysisTemplatesOutputBuilder::analysis_template_summaries)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_analysis_templates::ListAnalysisTemplatesOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_analysis_templates::ListAnalysisTemplatesOutput {
             next_token: self.next_token,
-            analysis_template_summaries: self.analysis_template_summaries,
+            analysis_template_summaries: self.analysis_template_summaries.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "analysis_template_summaries",
+                    "analysis_template_summaries was not specified but it is required when building ListAnalysisTemplatesOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

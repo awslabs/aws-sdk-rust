@@ -43,7 +43,7 @@ mod serde_serialize {
             S: serde::Serializer,
         {
             if serializer.is_human_readable() {
-                serializer.serialize_str(&crate::base64::encode(&self.inner))
+                serializer.serialize_str(&base64::encode(&self.inner))
             } else {
                 serializer.serialize_bytes(&self.inner)
             }

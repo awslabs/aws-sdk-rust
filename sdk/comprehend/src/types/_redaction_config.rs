@@ -13,8 +13,10 @@ pub struct RedactionConfig {
 }
 impl RedactionConfig {
     /// <p>An array of the types of PII entities that Amazon Comprehend detects in the input text for your request.</p>
-    pub fn pii_entity_types(&self) -> ::std::option::Option<&[crate::types::PiiEntityType]> {
-        self.pii_entity_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pii_entity_types.is_none()`.
+    pub fn pii_entity_types(&self) -> &[crate::types::PiiEntityType] {
+        self.pii_entity_types.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether the PII entity is redacted with the mask character or the entity type.</p>
     pub fn mask_mode(&self) -> ::std::option::Option<&crate::types::PiiEntitiesDetectionMaskMode> {

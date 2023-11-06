@@ -41,6 +41,7 @@ pub struct ListAssessmentFrameworksInputBuilder {
 }
 impl ListAssessmentFrameworksInputBuilder {
     /// <p> The type of framework, such as a standard framework or a custom framework. </p>
+    /// This field is required.
     pub fn framework_type(mut self, input: crate::types::FrameworkType) -> Self {
         self.framework_type = ::std::option::Option::Some(input);
         self
@@ -87,7 +88,7 @@ impl ListAssessmentFrameworksInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_assessment_frameworks::ListAssessmentFrameworksInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_assessment_frameworks::ListAssessmentFrameworksInput {
             framework_type: self.framework_type,

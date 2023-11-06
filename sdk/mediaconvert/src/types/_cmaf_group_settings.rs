@@ -61,8 +61,10 @@ pub struct CmafGroupSettings {
 }
 impl CmafGroupSettings {
     /// By default, the service creates one top-level .m3u8 HLS manifest and one top -level .mpd DASH manifest for each CMAF output group in your job. These default manifests reference every output in the output group. To create additional top-level manifests that reference a subset of the outputs in the output group, specify a list of them here. For each additional manifest that you specify, the service creates one HLS manifest and one DASH manifest.
-    pub fn additional_manifests(&self) -> ::std::option::Option<&[crate::types::CmafAdditionalManifest]> {
-        self.additional_manifests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_manifests.is_none()`.
+    pub fn additional_manifests(&self) -> &[crate::types::CmafAdditionalManifest] {
+        self.additional_manifests.as_deref().unwrap_or_default()
     }
     /// A partial URI prefix that will be put in the manifest file at the top level BaseURL element. Can be used if streams are delivered from a different URL than the manifest file.
     pub fn base_url(&self) -> ::std::option::Option<&str> {

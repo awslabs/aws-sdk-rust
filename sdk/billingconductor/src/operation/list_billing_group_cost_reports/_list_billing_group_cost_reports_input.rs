@@ -108,7 +108,7 @@ impl ListBillingGroupCostReportsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsInput {
             billing_period: self.billing_period,

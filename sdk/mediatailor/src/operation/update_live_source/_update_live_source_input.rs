@@ -12,8 +12,10 @@ pub struct UpdateLiveSourceInput {
 }
 impl UpdateLiveSourceInput {
     /// <p>A list of HTTP package configurations for the live source on this account.</p>
-    pub fn http_package_configurations(&self) -> ::std::option::Option<&[crate::types::HttpPackageConfiguration]> {
-        self.http_package_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.http_package_configurations.is_none()`.
+    pub fn http_package_configurations(&self) -> &[crate::types::HttpPackageConfiguration] {
+        self.http_package_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The name of the live source.</p>
     pub fn live_source_name(&self) -> ::std::option::Option<&str> {
@@ -61,6 +63,7 @@ impl UpdateLiveSourceInputBuilder {
         &self.http_package_configurations
     }
     /// <p>The name of the live source.</p>
+    /// This field is required.
     pub fn live_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.live_source_name = ::std::option::Option::Some(input.into());
         self
@@ -75,6 +78,7 @@ impl UpdateLiveSourceInputBuilder {
         &self.live_source_name
     }
     /// <p>The name of the source location associated with this Live Source.</p>
+    /// This field is required.
     pub fn source_location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_location_name = ::std::option::Option::Some(input.into());
         self
@@ -91,7 +95,7 @@ impl UpdateLiveSourceInputBuilder {
     /// Consumes the builder and constructs a [`UpdateLiveSourceInput`](crate::operation::update_live_source::UpdateLiveSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_live_source::UpdateLiveSourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_live_source::UpdateLiveSourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_live_source::UpdateLiveSourceInput {
             http_package_configurations: self.http_package_configurations,
             live_source_name: self.live_source_name,

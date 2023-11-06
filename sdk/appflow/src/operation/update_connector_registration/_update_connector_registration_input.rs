@@ -52,6 +52,7 @@ pub struct UpdateConnectorRegistrationInputBuilder {
 }
 impl UpdateConnectorRegistrationInputBuilder {
     /// <p>The name of the connector. The name is unique for each connector registration in your AWS account.</p>
+    /// This field is required.
     pub fn connector_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_label = ::std::option::Option::Some(input.into());
         self
@@ -118,7 +119,7 @@ impl UpdateConnectorRegistrationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_connector_registration::UpdateConnectorRegistrationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_connector_registration::UpdateConnectorRegistrationInput {
             connector_label: self.connector_label,

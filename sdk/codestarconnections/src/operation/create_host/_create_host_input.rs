@@ -32,8 +32,10 @@ impl CreateHostInput {
         self.vpc_configuration.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateHostInput {
@@ -55,6 +57,7 @@ pub struct CreateHostInputBuilder {
 }
 impl CreateHostInputBuilder {
     /// <p>The name of the host to be created.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +72,7 @@ impl CreateHostInputBuilder {
         &self.name
     }
     /// <p>The name of the installed provider to be associated with your connection. The host resource represents the infrastructure where your provider type is installed. The valid provider type is GitHub Enterprise Server.</p>
+    /// This field is required.
     pub fn provider_type(mut self, input: crate::types::ProviderType) -> Self {
         self.provider_type = ::std::option::Option::Some(input);
         self
@@ -83,6 +87,7 @@ impl CreateHostInputBuilder {
         &self.provider_type
     }
     /// <p>The endpoint of the infrastructure to be represented by the host after it is created.</p>
+    /// This field is required.
     pub fn provider_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider_endpoint = ::std::option::Option::Some(input.into());
         self
@@ -130,7 +135,7 @@ impl CreateHostInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateHostInput`](crate::operation::create_host::CreateHostInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_host::CreateHostInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_host::CreateHostInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_host::CreateHostInput {
             name: self.name,
             provider_type: self.provider_type,

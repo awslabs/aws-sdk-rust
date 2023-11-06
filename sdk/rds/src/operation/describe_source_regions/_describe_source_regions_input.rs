@@ -39,8 +39,10 @@ impl DescribeSourceRegionsInput {
         self.marker.as_deref()
     }
     /// <p>This parameter isn't currently supported.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
 }
 impl DescribeSourceRegionsInput {
@@ -143,7 +145,7 @@ impl DescribeSourceRegionsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSourceRegionsInput`](crate::operation::describe_source_regions::DescribeSourceRegionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_source_regions::DescribeSourceRegionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_source_regions::DescribeSourceRegionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_source_regions::DescribeSourceRegionsInput {
             region_name: self.region_name,

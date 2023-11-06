@@ -7,9 +7,9 @@ pub struct SelectParameters {
     /// <p>Describes the serialization format of the object.</p>
     pub input_serialization: ::std::option::Option<crate::types::InputSerialization>,
     /// <p>The type of the provided expression (for example, SQL).</p>
-    pub expression_type: ::std::option::Option<crate::types::ExpressionType>,
+    pub expression_type: crate::types::ExpressionType,
     /// <p>The expression that is used to query the object.</p>
-    pub expression: ::std::option::Option<::std::string::String>,
+    pub expression: ::std::string::String,
     /// <p>Describes how the results of the Select job are serialized.</p>
     pub output_serialization: ::std::option::Option<crate::types::OutputSerialization>,
 }
@@ -19,12 +19,13 @@ impl SelectParameters {
         self.input_serialization.as_ref()
     }
     /// <p>The type of the provided expression (for example, SQL).</p>
-    pub fn expression_type(&self) -> ::std::option::Option<&crate::types::ExpressionType> {
-        self.expression_type.as_ref()
+    pub fn expression_type(&self) -> &crate::types::ExpressionType {
+        &self.expression_type
     }
     /// <p>The expression that is used to query the object.</p>
-    pub fn expression(&self) -> ::std::option::Option<&str> {
-        self.expression.as_deref()
+    pub fn expression(&self) -> &str {
+        use std::ops::Deref;
+        self.expression.deref()
     }
     /// <p>Describes how the results of the Select job are serialized.</p>
     pub fn output_serialization(&self) -> ::std::option::Option<&crate::types::OutputSerialization> {
@@ -49,6 +50,7 @@ pub struct SelectParametersBuilder {
 }
 impl SelectParametersBuilder {
     /// <p>Describes the serialization format of the object.</p>
+    /// This field is required.
     pub fn input_serialization(mut self, input: crate::types::InputSerialization) -> Self {
         self.input_serialization = ::std::option::Option::Some(input);
         self
@@ -63,6 +65,7 @@ impl SelectParametersBuilder {
         &self.input_serialization
     }
     /// <p>The type of the provided expression (for example, SQL).</p>
+    /// This field is required.
     pub fn expression_type(mut self, input: crate::types::ExpressionType) -> Self {
         self.expression_type = ::std::option::Option::Some(input);
         self
@@ -77,6 +80,7 @@ impl SelectParametersBuilder {
         &self.expression_type
     }
     /// <p>The expression that is used to query the object.</p>
+    /// This field is required.
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expression = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +95,7 @@ impl SelectParametersBuilder {
         &self.expression
     }
     /// <p>Describes how the results of the Select job are serialized.</p>
+    /// This field is required.
     pub fn output_serialization(mut self, input: crate::types::OutputSerialization) -> Self {
         self.output_serialization = ::std::option::Option::Some(input);
         self
@@ -105,12 +110,25 @@ impl SelectParametersBuilder {
         &self.output_serialization
     }
     /// Consumes the builder and constructs a [`SelectParameters`](crate::types::SelectParameters).
-    pub fn build(self) -> crate::types::SelectParameters {
-        crate::types::SelectParameters {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`expression_type`](crate::types::builders::SelectParametersBuilder::expression_type)
+    /// - [`expression`](crate::types::builders::SelectParametersBuilder::expression)
+    pub fn build(self) -> ::std::result::Result<crate::types::SelectParameters, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SelectParameters {
             input_serialization: self.input_serialization,
-            expression_type: self.expression_type,
-            expression: self.expression,
+            expression_type: self.expression_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "expression_type",
+                    "expression_type was not specified but it is required when building SelectParameters",
+                )
+            })?,
+            expression: self.expression.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "expression",
+                    "expression was not specified but it is required when building SelectParameters",
+                )
+            })?,
             output_serialization: self.output_serialization,
-        }
+        })
     }
 }

@@ -27,6 +27,7 @@ pub struct StartInstanceInputBuilder {
 }
 impl StartInstanceInputBuilder {
     /// <p>The name of the instance (a virtual private server) to start.</p>
+    /// This field is required.
     pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl StartInstanceInputBuilder {
     /// Consumes the builder and constructs a [`StartInstanceInput`](crate::operation::start_instance::StartInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_instance::StartInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_instance::StartInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_instance::StartInstanceInput {
             instance_name: self.instance_name,
         })

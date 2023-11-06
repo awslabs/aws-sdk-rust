@@ -47,8 +47,10 @@ impl JdbcConnectorOptions {
         self.num_partitions
     }
     /// <p>The name of the job bookmark keys on which to sort.</p>
-    pub fn job_bookmark_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.job_bookmark_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_bookmark_keys.is_none()`.
+    pub fn job_bookmark_keys(&self) -> &[::std::string::String] {
+        self.job_bookmark_keys.as_deref().unwrap_or_default()
     }
     /// <p>Specifies an ascending or descending sort order.</p>
     pub fn job_bookmark_keys_sort_order(&self) -> ::std::option::Option<&str> {

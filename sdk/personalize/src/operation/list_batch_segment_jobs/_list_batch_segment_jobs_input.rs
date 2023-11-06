@@ -85,7 +85,7 @@ impl ListBatchSegmentJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListBatchSegmentJobsInput`](crate::operation::list_batch_segment_jobs::ListBatchSegmentJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_batch_segment_jobs::ListBatchSegmentJobsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_batch_segment_jobs::ListBatchSegmentJobsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_batch_segment_jobs::ListBatchSegmentJobsInput {
             solution_version_arn: self.solution_version_arn,

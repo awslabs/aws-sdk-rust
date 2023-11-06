@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestSetDiscrepancyErrors {
     /// <p>Contains information about discrepancies found for intents between the test set and the bot.</p>
-    pub intent_discrepancies: ::std::option::Option<::std::vec::Vec<crate::types::TestSetIntentDiscrepancyItem>>,
+    pub intent_discrepancies: ::std::vec::Vec<crate::types::TestSetIntentDiscrepancyItem>,
     /// <p>Contains information about discrepancies found for slots between the test set and the bot.</p>
-    pub slot_discrepancies: ::std::option::Option<::std::vec::Vec<crate::types::TestSetSlotDiscrepancyItem>>,
+    pub slot_discrepancies: ::std::vec::Vec<crate::types::TestSetSlotDiscrepancyItem>,
 }
 impl TestSetDiscrepancyErrors {
     /// <p>Contains information about discrepancies found for intents between the test set and the bot.</p>
-    pub fn intent_discrepancies(&self) -> ::std::option::Option<&[crate::types::TestSetIntentDiscrepancyItem]> {
-        self.intent_discrepancies.as_deref()
+    pub fn intent_discrepancies(&self) -> &[crate::types::TestSetIntentDiscrepancyItem] {
+        use std::ops::Deref;
+        self.intent_discrepancies.deref()
     }
     /// <p>Contains information about discrepancies found for slots between the test set and the bot.</p>
-    pub fn slot_discrepancies(&self) -> ::std::option::Option<&[crate::types::TestSetSlotDiscrepancyItem]> {
-        self.slot_discrepancies.as_deref()
+    pub fn slot_discrepancies(&self) -> &[crate::types::TestSetSlotDiscrepancyItem] {
+        use std::ops::Deref;
+        self.slot_discrepancies.deref()
     }
 }
 impl TestSetDiscrepancyErrors {
@@ -75,10 +77,23 @@ impl TestSetDiscrepancyErrorsBuilder {
         &self.slot_discrepancies
     }
     /// Consumes the builder and constructs a [`TestSetDiscrepancyErrors`](crate::types::TestSetDiscrepancyErrors).
-    pub fn build(self) -> crate::types::TestSetDiscrepancyErrors {
-        crate::types::TestSetDiscrepancyErrors {
-            intent_discrepancies: self.intent_discrepancies,
-            slot_discrepancies: self.slot_discrepancies,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`intent_discrepancies`](crate::types::builders::TestSetDiscrepancyErrorsBuilder::intent_discrepancies)
+    /// - [`slot_discrepancies`](crate::types::builders::TestSetDiscrepancyErrorsBuilder::slot_discrepancies)
+    pub fn build(self) -> ::std::result::Result<crate::types::TestSetDiscrepancyErrors, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TestSetDiscrepancyErrors {
+            intent_discrepancies: self.intent_discrepancies.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "intent_discrepancies",
+                    "intent_discrepancies was not specified but it is required when building TestSetDiscrepancyErrors",
+                )
+            })?,
+            slot_discrepancies: self.slot_discrepancies.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "slot_discrepancies",
+                    "slot_discrepancies was not specified but it is required when building TestSetDiscrepancyErrors",
+                )
+            })?,
+        })
     }
 }

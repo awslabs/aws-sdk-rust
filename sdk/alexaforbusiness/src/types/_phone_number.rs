@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PhoneNumber {
     /// <p>The raw value of the phone number.</p>
-    pub number: ::std::option::Option<::std::string::String>,
+    pub number: ::std::string::String,
     /// <p>The type of the phone number.</p>
-    pub r#type: ::std::option::Option<crate::types::PhoneNumberType>,
+    pub r#type: crate::types::PhoneNumberType,
 }
 impl PhoneNumber {
     /// <p>The raw value of the phone number.</p>
-    pub fn number(&self) -> ::std::option::Option<&str> {
-        self.number.as_deref()
+    pub fn number(&self) -> &str {
+        use std::ops::Deref;
+        self.number.deref()
     }
     /// <p>The type of the phone number.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::PhoneNumberType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::PhoneNumberType {
+        &self.r#type
     }
 }
 impl ::std::fmt::Debug for PhoneNumber {
@@ -43,6 +44,7 @@ pub struct PhoneNumberBuilder {
 }
 impl PhoneNumberBuilder {
     /// <p>The raw value of the phone number.</p>
+    /// This field is required.
     pub fn number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.number = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +59,7 @@ impl PhoneNumberBuilder {
         &self.number
     }
     /// <p>The type of the phone number.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::PhoneNumberType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -71,11 +74,24 @@ impl PhoneNumberBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`PhoneNumber`](crate::types::PhoneNumber).
-    pub fn build(self) -> crate::types::PhoneNumber {
-        crate::types::PhoneNumber {
-            number: self.number,
-            r#type: self.r#type,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`number`](crate::types::builders::PhoneNumberBuilder::number)
+    /// - [`r#type`](crate::types::builders::PhoneNumberBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::PhoneNumber, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PhoneNumber {
+            number: self.number.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "number",
+                    "number was not specified but it is required when building PhoneNumber",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building PhoneNumber",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for PhoneNumberBuilder {

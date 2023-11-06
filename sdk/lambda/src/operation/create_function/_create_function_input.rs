@@ -132,12 +132,16 @@ impl CreateFunctionInput {
         self.tags.as_ref()
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a> to add to the function's execution environment. Specify each layer by its ARN, including the version.</p>
-    pub fn layers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.layers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.layers.is_none()`.
+    pub fn layers(&self) -> &[::std::string::String] {
+        self.layers.as_deref().unwrap_or_default()
     }
     /// <p>Connection settings for an Amazon EFS file system.</p>
-    pub fn file_system_configs(&self) -> ::std::option::Option<&[crate::types::FileSystemConfig]> {
-        self.file_system_configs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.file_system_configs.is_none()`.
+    pub fn file_system_configs(&self) -> &[crate::types::FileSystemConfig] {
+        self.file_system_configs.as_deref().unwrap_or_default()
     }
     /// <p>Container image <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-images.html#configuration-images-settings">configuration values</a> that override the values in the container image Dockerfile.</p>
     pub fn image_config(&self) -> ::std::option::Option<&crate::types::ImageConfig> {
@@ -148,8 +152,10 @@ impl CreateFunctionInput {
         self.code_signing_config_arn.as_deref()
     }
     /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64). The default value is <code>x86_64</code>.</p>
-    pub fn architectures(&self) -> ::std::option::Option<&[crate::types::Architecture]> {
-        self.architectures.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.architectures.is_none()`.
+    pub fn architectures(&self) -> &[crate::types::Architecture] {
+        self.architectures.as_deref().unwrap_or_default()
     }
     /// <p>The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole number between 512 and 10,240 MB.</p>
     pub fn ephemeral_storage(&self) -> ::std::option::Option<&crate::types::EphemeralStorage> {
@@ -204,6 +210,7 @@ impl CreateFunctionInputBuilder {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    /// This field is required.
     pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_name = ::std::option::Option::Some(input.into());
         self
@@ -249,6 +256,7 @@ impl CreateFunctionInputBuilder {
         &self.runtime
     }
     /// <p>The Amazon Resource Name (ARN) of the function's execution role.</p>
+    /// This field is required.
     pub fn role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role = ::std::option::Option::Some(input.into());
         self
@@ -277,6 +285,7 @@ impl CreateFunctionInputBuilder {
         &self.handler
     }
     /// <p>The code for the function.</p>
+    /// This field is required.
     pub fn code(mut self, input: crate::types::FunctionCode) -> Self {
         self.code = ::std::option::Option::Some(input);
         self
@@ -569,7 +578,7 @@ impl CreateFunctionInputBuilder {
     /// Consumes the builder and constructs a [`CreateFunctionInput`](crate::operation::create_function::CreateFunctionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_function::CreateFunctionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_function::CreateFunctionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_function::CreateFunctionInput {
             function_name: self.function_name,
             runtime: self.runtime,

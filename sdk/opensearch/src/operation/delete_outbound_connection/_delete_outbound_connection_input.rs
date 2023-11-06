@@ -28,6 +28,7 @@ pub struct DeleteOutboundConnectionInputBuilder {
 }
 impl DeleteOutboundConnectionInputBuilder {
     /// <p>The ID of the outbound connection you want to permanently delete.</p>
+    /// This field is required.
     pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_id = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl DeleteOutboundConnectionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_outbound_connection::DeleteOutboundConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_outbound_connection::DeleteOutboundConnectionInput {
             connection_id: self.connection_id,

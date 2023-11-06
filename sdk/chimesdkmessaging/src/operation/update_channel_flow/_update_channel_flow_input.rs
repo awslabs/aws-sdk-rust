@@ -16,8 +16,10 @@ impl UpdateChannelFlowInput {
         self.channel_flow_arn.as_deref()
     }
     /// <p>Information about the processor Lambda functions </p>
-    pub fn processors(&self) -> ::std::option::Option<&[crate::types::Processor]> {
-        self.processors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.processors.is_none()`.
+    pub fn processors(&self) -> &[crate::types::Processor] {
+        self.processors.as_deref().unwrap_or_default()
     }
     /// <p>The name of the channel flow.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -50,6 +52,7 @@ pub struct UpdateChannelFlowInputBuilder {
 }
 impl UpdateChannelFlowInputBuilder {
     /// <p>The ARN of the channel flow.</p>
+    /// This field is required.
     pub fn channel_flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_flow_arn = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +87,7 @@ impl UpdateChannelFlowInputBuilder {
         &self.processors
     }
     /// <p>The name of the channel flow.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -100,7 +104,7 @@ impl UpdateChannelFlowInputBuilder {
     /// Consumes the builder and constructs a [`UpdateChannelFlowInput`](crate::operation::update_channel_flow::UpdateChannelFlowInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_channel_flow::UpdateChannelFlowInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_channel_flow::UpdateChannelFlowInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_channel_flow::UpdateChannelFlowInput {
             channel_flow_arn: self.channel_flow_arn,
             processors: self.processors,

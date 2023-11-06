@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Deployment {
     /// <p>The ID of the deployment.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the deployment.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the target of the deployment.</p>
-    pub target_arn: ::std::option::Option<::std::string::String>,
+    pub target_arn: ::std::string::String,
     /// <p>The date and time the depoyment target was created.</p>
-    pub target_resource_created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub target_resource_created_at: ::aws_smithy_types::DateTime,
     /// <p>The resource type of the deployment target. It can be an environment, service, service instance, or component.</p>
-    pub target_resource_type: ::std::option::Option<crate::types::DeploymentTargetResourceType>,
+    pub target_resource_type: crate::types::DeploymentTargetResourceType,
     /// <p>The name of the environment associated with this deployment.</p>
-    pub environment_name: ::std::option::Option<::std::string::String>,
+    pub environment_name: ::std::string::String,
     /// <p>The name of the service in this deployment.</p>
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the deployment's service instance.</p>
@@ -23,13 +23,13 @@ pub struct Deployment {
     /// <p>The name of the component associated with this deployment.</p>
     pub component_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the deployment.</p>
-    pub deployment_status: ::std::option::Option<crate::types::DeploymentStatus>,
+    pub deployment_status: crate::types::DeploymentStatus,
     /// <p>The deployment status message.</p>
     pub deployment_status_message: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the deployment was created.</p>
-    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The date and time the deployment was last modified.</p>
-    pub last_modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub last_modified_at: ::aws_smithy_types::DateTime,
     /// <p>The date and time the deployment was completed.</p>
     pub completed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ID of the last attempted deployment.</p>
@@ -43,28 +43,32 @@ pub struct Deployment {
 }
 impl Deployment {
     /// <p>The ID of the deployment.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the deployment.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the target of the deployment.</p>
-    pub fn target_arn(&self) -> ::std::option::Option<&str> {
-        self.target_arn.as_deref()
+    pub fn target_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.target_arn.deref()
     }
     /// <p>The date and time the depoyment target was created.</p>
-    pub fn target_resource_created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.target_resource_created_at.as_ref()
+    pub fn target_resource_created_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.target_resource_created_at
     }
     /// <p>The resource type of the deployment target. It can be an environment, service, service instance, or component.</p>
-    pub fn target_resource_type(&self) -> ::std::option::Option<&crate::types::DeploymentTargetResourceType> {
-        self.target_resource_type.as_ref()
+    pub fn target_resource_type(&self) -> &crate::types::DeploymentTargetResourceType {
+        &self.target_resource_type
     }
     /// <p>The name of the environment associated with this deployment.</p>
-    pub fn environment_name(&self) -> ::std::option::Option<&str> {
-        self.environment_name.as_deref()
+    pub fn environment_name(&self) -> &str {
+        use std::ops::Deref;
+        self.environment_name.deref()
     }
     /// <p>The name of the service in this deployment.</p>
     pub fn service_name(&self) -> ::std::option::Option<&str> {
@@ -79,20 +83,20 @@ impl Deployment {
         self.component_name.as_deref()
     }
     /// <p>The status of the deployment.</p>
-    pub fn deployment_status(&self) -> ::std::option::Option<&crate::types::DeploymentStatus> {
-        self.deployment_status.as_ref()
+    pub fn deployment_status(&self) -> &crate::types::DeploymentStatus {
+        &self.deployment_status
     }
     /// <p>The deployment status message.</p>
     pub fn deployment_status_message(&self) -> ::std::option::Option<&str> {
         self.deployment_status_message.as_deref()
     }
     /// <p>The date and time the deployment was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_at.as_ref()
+    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_at
     }
     /// <p>The date and time the deployment was last modified.</p>
-    pub fn last_modified_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.last_modified_at.as_ref()
+    pub fn last_modified_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.last_modified_at
     }
     /// <p>The date and time the deployment was completed.</p>
     pub fn completed_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -171,6 +175,7 @@ pub struct DeploymentBuilder {
 }
 impl DeploymentBuilder {
     /// <p>The ID of the deployment.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -185,6 +190,7 @@ impl DeploymentBuilder {
         &self.id
     }
     /// <p>The Amazon Resource Name (ARN) of the deployment.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -199,6 +205,7 @@ impl DeploymentBuilder {
         &self.arn
     }
     /// <p>The Amazon Resource Name (ARN) of the target of the deployment.</p>
+    /// This field is required.
     pub fn target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_arn = ::std::option::Option::Some(input.into());
         self
@@ -213,6 +220,7 @@ impl DeploymentBuilder {
         &self.target_arn
     }
     /// <p>The date and time the depoyment target was created.</p>
+    /// This field is required.
     pub fn target_resource_created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.target_resource_created_at = ::std::option::Option::Some(input);
         self
@@ -227,6 +235,7 @@ impl DeploymentBuilder {
         &self.target_resource_created_at
     }
     /// <p>The resource type of the deployment target. It can be an environment, service, service instance, or component.</p>
+    /// This field is required.
     pub fn target_resource_type(mut self, input: crate::types::DeploymentTargetResourceType) -> Self {
         self.target_resource_type = ::std::option::Option::Some(input);
         self
@@ -241,6 +250,7 @@ impl DeploymentBuilder {
         &self.target_resource_type
     }
     /// <p>The name of the environment associated with this deployment.</p>
+    /// This field is required.
     pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
@@ -297,6 +307,7 @@ impl DeploymentBuilder {
         &self.component_name
     }
     /// <p>The status of the deployment.</p>
+    /// This field is required.
     pub fn deployment_status(mut self, input: crate::types::DeploymentStatus) -> Self {
         self.deployment_status = ::std::option::Option::Some(input);
         self
@@ -325,6 +336,7 @@ impl DeploymentBuilder {
         &self.deployment_status_message
     }
     /// <p>The date and time the deployment was created.</p>
+    /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
@@ -339,6 +351,7 @@ impl DeploymentBuilder {
         &self.created_at
     }
     /// <p>The date and time the deployment was last modified.</p>
+    /// This field is required.
     pub fn last_modified_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_at = ::std::option::Option::Some(input);
         self
@@ -423,27 +436,82 @@ impl DeploymentBuilder {
         &self.target_state
     }
     /// Consumes the builder and constructs a [`Deployment`](crate::types::Deployment).
-    pub fn build(self) -> crate::types::Deployment {
-        crate::types::Deployment {
-            id: self.id,
-            arn: self.arn,
-            target_arn: self.target_arn,
-            target_resource_created_at: self.target_resource_created_at,
-            target_resource_type: self.target_resource_type,
-            environment_name: self.environment_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::DeploymentBuilder::id)
+    /// - [`arn`](crate::types::builders::DeploymentBuilder::arn)
+    /// - [`target_arn`](crate::types::builders::DeploymentBuilder::target_arn)
+    /// - [`target_resource_created_at`](crate::types::builders::DeploymentBuilder::target_resource_created_at)
+    /// - [`target_resource_type`](crate::types::builders::DeploymentBuilder::target_resource_type)
+    /// - [`environment_name`](crate::types::builders::DeploymentBuilder::environment_name)
+    /// - [`deployment_status`](crate::types::builders::DeploymentBuilder::deployment_status)
+    /// - [`created_at`](crate::types::builders::DeploymentBuilder::created_at)
+    /// - [`last_modified_at`](crate::types::builders::DeploymentBuilder::last_modified_at)
+    pub fn build(self) -> ::std::result::Result<crate::types::Deployment, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Deployment {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building Deployment",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building Deployment",
+                )
+            })?,
+            target_arn: self.target_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "target_arn",
+                    "target_arn was not specified but it is required when building Deployment",
+                )
+            })?,
+            target_resource_created_at: self.target_resource_created_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "target_resource_created_at",
+                    "target_resource_created_at was not specified but it is required when building Deployment",
+                )
+            })?,
+            target_resource_type: self.target_resource_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "target_resource_type",
+                    "target_resource_type was not specified but it is required when building Deployment",
+                )
+            })?,
+            environment_name: self.environment_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "environment_name",
+                    "environment_name was not specified but it is required when building Deployment",
+                )
+            })?,
             service_name: self.service_name,
             service_instance_name: self.service_instance_name,
             component_name: self.component_name,
-            deployment_status: self.deployment_status,
+            deployment_status: self.deployment_status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "deployment_status",
+                    "deployment_status was not specified but it is required when building Deployment",
+                )
+            })?,
             deployment_status_message: self.deployment_status_message,
-            created_at: self.created_at,
-            last_modified_at: self.last_modified_at,
+            created_at: self.created_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_at",
+                    "created_at was not specified but it is required when building Deployment",
+                )
+            })?,
+            last_modified_at: self.last_modified_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "last_modified_at",
+                    "last_modified_at was not specified but it is required when building Deployment",
+                )
+            })?,
             completed_at: self.completed_at,
             last_attempted_deployment_id: self.last_attempted_deployment_id,
             last_succeeded_deployment_id: self.last_succeeded_deployment_id,
             initial_state: self.initial_state,
             target_state: self.target_state,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for DeploymentBuilder {

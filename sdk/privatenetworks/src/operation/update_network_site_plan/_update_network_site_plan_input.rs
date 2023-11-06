@@ -41,6 +41,7 @@ pub struct UpdateNetworkSitePlanInputBuilder {
 }
 impl UpdateNetworkSitePlanInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
+    /// This field is required.
     pub fn network_site_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_site_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateNetworkSitePlanInputBuilder {
         &self.network_site_arn
     }
     /// <p>The pending plan.</p>
+    /// This field is required.
     pub fn pending_plan(mut self, input: crate::types::SitePlan) -> Self {
         self.pending_plan = ::std::option::Option::Some(input);
         self
@@ -85,7 +87,7 @@ impl UpdateNetworkSitePlanInputBuilder {
     /// Consumes the builder and constructs a [`UpdateNetworkSitePlanInput`](crate::operation::update_network_site_plan::UpdateNetworkSitePlanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_network_site_plan::UpdateNetworkSitePlanInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_network_site_plan::UpdateNetworkSitePlanInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_network_site_plan::UpdateNetworkSitePlanInput {
             network_site_arn: self.network_site_arn,

@@ -11,8 +11,10 @@ pub struct ConfigurationEvent {
 }
 impl ConfigurationEvent {
     /// <p>Indicates which speaker is on which audio channel.</p>
-    pub fn channel_definitions(&self) -> ::std::option::Option<&[crate::types::ChannelDefinition]> {
-        self.channel_definitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.channel_definitions.is_none()`.
+    pub fn channel_definitions(&self) -> &[crate::types::ChannelDefinition] {
+        self.channel_definitions.as_deref().unwrap_or_default()
     }
     /// <p>Provides additional optional settings for your Call Analytics post-call request, including encryption and output locations for your redacted and unredacted transcript.</p>
     pub fn post_call_analytics_settings(&self) -> ::std::option::Option<&crate::types::PostCallAnalyticsSettings> {

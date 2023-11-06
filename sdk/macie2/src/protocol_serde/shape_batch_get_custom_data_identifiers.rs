@@ -160,12 +160,12 @@ pub fn de_batch_get_custom_data_identifiers_http_response(
 
 pub fn ser_batch_get_custom_data_identifiers_input(
     input: &crate::operation::batch_get_custom_data_identifiers::BatchGetCustomDataIdentifiersInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_batch_get_custom_data_identifiers_input::ser_batch_get_custom_data_identifiers_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_batch_get_custom_data_identifiers(
@@ -184,11 +184,11 @@ pub(crate) fn de_batch_get_custom_data_identifiers(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "customDataIdentifiers" => {
                     builder = builder.set_custom_data_identifiers(
-                            crate::protocol_serde::shape___list_of_batch_get_custom_data_identifier_summary::de___list_of_batch_get_custom_data_identifier_summary(tokens)?
+                            crate::protocol_serde::shape_list_of_batch_get_custom_data_identifier_summary::de_list_of_batch_get_custom_data_identifier_summary(tokens)?
                         );
                 }
                 "notFoundIdentifierIds" => {
-                    builder = builder.set_not_found_identifier_ids(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                    builder = builder.set_not_found_identifier_ids(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

@@ -232,7 +232,7 @@ impl ListTransformJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListTransformJobsInput`](crate::operation::list_transform_jobs::ListTransformJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_transform_jobs::ListTransformJobsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_transform_jobs::ListTransformJobsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_transform_jobs::ListTransformJobsInput {
             creation_time_after: self.creation_time_after,
             creation_time_before: self.creation_time_before,

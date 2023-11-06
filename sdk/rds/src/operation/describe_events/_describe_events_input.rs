@@ -77,12 +77,16 @@ impl DescribeEventsInput {
         self.duration
     }
     /// <p>A list of event categories that trigger notifications for a event notification subscription.</p>
-    pub fn event_categories(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.event_categories.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_categories.is_none()`.
+    pub fn event_categories(&self) -> &[::std::string::String] {
+        self.event_categories.as_deref().unwrap_or_default()
     }
     /// <p>This parameter isn't currently supported.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
@@ -309,7 +313,7 @@ impl DescribeEventsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEventsInput`](crate::operation::describe_events::DescribeEventsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_events::DescribeEventsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_events::DescribeEventsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_events::DescribeEventsInput {
             source_identifier: self.source_identifier,
             source_type: self.source_type,

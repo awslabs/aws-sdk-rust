@@ -99,12 +99,16 @@ impl Service {
         self.cluster_arn.as_deref()
     }
     /// <p>A list of Elastic Load Balancing load balancer objects. It contains the load balancer name, the container name, and the container port to access from the load balancer. The container name is as it appears in a container definition.</p>
-    pub fn load_balancers(&self) -> ::std::option::Option<&[crate::types::LoadBalancer]> {
-        self.load_balancers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.load_balancers.is_none()`.
+    pub fn load_balancers(&self) -> &[crate::types::LoadBalancer] {
+        self.load_balancers.as_deref().unwrap_or_default()
     }
     /// <p>The details for the service discovery registries to assign to this service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.</p>
-    pub fn service_registries(&self) -> ::std::option::Option<&[crate::types::ServiceRegistry]> {
-        self.service_registries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_registries.is_none()`.
+    pub fn service_registries(&self) -> &[crate::types::ServiceRegistry] {
+        self.service_registries.as_deref().unwrap_or_default()
     }
     /// <p>The status of the service. The valid values are <code>ACTIVE</code>, <code>DRAINING</code>, or <code>INACTIVE</code>.</p>
     pub fn status(&self) -> ::std::option::Option<&str> {
@@ -127,8 +131,10 @@ impl Service {
         self.launch_type.as_ref()
     }
     /// <p>The capacity provider strategy the service uses. When using the DescribeServices API, this field is omitted if the service was created using a launch type.</p>
-    pub fn capacity_provider_strategy(&self) -> ::std::option::Option<&[crate::types::CapacityProviderStrategyItem]> {
-        self.capacity_provider_strategy.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capacity_provider_strategy.is_none()`.
+    pub fn capacity_provider_strategy(&self) -> &[crate::types::CapacityProviderStrategyItem] {
+        self.capacity_provider_strategy.as_deref().unwrap_or_default()
     }
     /// <p>The platform version to run your service on. A platform version is only specified for tasks that are hosted on Fargate. If one isn't specified, the <code>LATEST</code> platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn platform_version(&self) -> ::std::option::Option<&str> {
@@ -148,32 +154,42 @@ impl Service {
         self.deployment_configuration.as_ref()
     }
     /// <p>Information about a set of Amazon ECS tasks in either an CodeDeploy or an <code>EXTERNAL</code> deployment. An Amazon ECS task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic.</p>
-    pub fn task_sets(&self) -> ::std::option::Option<&[crate::types::TaskSet]> {
-        self.task_sets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.task_sets.is_none()`.
+    pub fn task_sets(&self) -> &[crate::types::TaskSet] {
+        self.task_sets.as_deref().unwrap_or_default()
     }
     /// <p>The current state of deployments for the service.</p>
-    pub fn deployments(&self) -> ::std::option::Option<&[crate::types::Deployment]> {
-        self.deployments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.deployments.is_none()`.
+    pub fn deployments(&self) -> &[crate::types::Deployment] {
+        self.deployments.as_deref().unwrap_or_default()
     }
     /// <p>The ARN of the IAM role that's associated with the service. It allows the Amazon ECS container agent to register container instances with an Elastic Load Balancing load balancer.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>The event stream for your service. A maximum of 100 of the latest events are displayed.</p>
-    pub fn events(&self) -> ::std::option::Option<&[crate::types::ServiceEvent]> {
-        self.events.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.events.is_none()`.
+    pub fn events(&self) -> &[crate::types::ServiceEvent] {
+        self.events.as_deref().unwrap_or_default()
     }
     /// <p>The Unix timestamp for the time when the service was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The placement constraints for the tasks in the service.</p>
-    pub fn placement_constraints(&self) -> ::std::option::Option<&[crate::types::PlacementConstraint]> {
-        self.placement_constraints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.placement_constraints.is_none()`.
+    pub fn placement_constraints(&self) -> &[crate::types::PlacementConstraint] {
+        self.placement_constraints.as_deref().unwrap_or_default()
     }
     /// <p>The placement strategy that determines how tasks for the service are placed.</p>
-    pub fn placement_strategy(&self) -> ::std::option::Option<&[crate::types::PlacementStrategy]> {
-        self.placement_strategy.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.placement_strategy.is_none()`.
+    pub fn placement_strategy(&self) -> &[crate::types::PlacementStrategy] {
+        self.placement_strategy.as_deref().unwrap_or_default()
     }
     /// <p>The VPC subnet and security group configuration for tasks that receive their own elastic network interface by using the <code>awsvpc</code> networking mode.</p>
     pub fn network_configuration(&self) -> ::std::option::Option<&crate::types::NetworkConfiguration> {
@@ -209,8 +225,10 @@ impl Service {
     /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The principal that created the service.</p>
     pub fn created_by(&self) -> ::std::option::Option<&str> {

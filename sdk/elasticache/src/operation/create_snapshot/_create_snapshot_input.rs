@@ -33,8 +33,10 @@ impl CreateSnapshotInput {
         self.kms_key_id.as_deref()
     }
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateSnapshotInput {
@@ -84,6 +86,7 @@ impl CreateSnapshotInputBuilder {
         &self.cache_cluster_id
     }
     /// <p>A name for the snapshot being created.</p>
+    /// This field is required.
     pub fn snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_name = ::std::option::Option::Some(input.into());
         self
@@ -134,7 +137,7 @@ impl CreateSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`CreateSnapshotInput`](crate::operation::create_snapshot::CreateSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_snapshot::CreateSnapshotInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_snapshot::CreateSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_snapshot::CreateSnapshotInput {
             replication_group_id: self.replication_group_id,
             cache_cluster_id: self.cache_cluster_id,

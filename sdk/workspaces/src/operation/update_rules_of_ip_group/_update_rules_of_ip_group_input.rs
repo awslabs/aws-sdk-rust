@@ -14,8 +14,10 @@ impl UpdateRulesOfIpGroupInput {
         self.group_id.as_deref()
     }
     /// <p>One or more rules.</p>
-    pub fn user_rules(&self) -> ::std::option::Option<&[crate::types::IpRuleItem]> {
-        self.user_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_rules.is_none()`.
+    pub fn user_rules(&self) -> &[crate::types::IpRuleItem] {
+        self.user_rules.as_deref().unwrap_or_default()
     }
 }
 impl UpdateRulesOfIpGroupInput {
@@ -34,6 +36,7 @@ pub struct UpdateRulesOfIpGroupInputBuilder {
 }
 impl UpdateRulesOfIpGroupInputBuilder {
     /// <p>The identifier of the group.</p>
+    /// This field is required.
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +73,7 @@ impl UpdateRulesOfIpGroupInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRulesOfIpGroupInput`](crate::operation::update_rules_of_ip_group::UpdateRulesOfIpGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_rules_of_ip_group::UpdateRulesOfIpGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_rules_of_ip_group::UpdateRulesOfIpGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_rules_of_ip_group::UpdateRulesOfIpGroupInput {
             group_id: self.group_id,

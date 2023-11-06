@@ -64,6 +64,7 @@ impl StartImportTaskInputBuilder {
         &self.client_request_token
     }
     /// <p>A descriptive name for this request. You can use this name to filter future requests related to this import task, such as identifying applications and servers that were included in this import task. We recommend that you use a meaningful name for each import task.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +81,7 @@ impl StartImportTaskInputBuilder {
     /// <p>The URL for your import file that you've uploaded to Amazon S3.</p> <note>
     /// <p>If you're using the Amazon Web Services CLI, this URL is structured as follows: <code>s3://BucketName/ImportFileName.CSV</code> </p>
     /// </note>
+    /// This field is required.
     pub fn import_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.import_url = ::std::option::Option::Some(input.into());
         self
@@ -100,7 +102,7 @@ impl StartImportTaskInputBuilder {
     /// Consumes the builder and constructs a [`StartImportTaskInput`](crate::operation::start_import_task::StartImportTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_import_task::StartImportTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_import_task::StartImportTaskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_import_task::StartImportTaskInput {
             client_request_token: self.client_request_token,
             name: self.name,

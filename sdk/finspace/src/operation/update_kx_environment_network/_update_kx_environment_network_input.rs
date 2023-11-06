@@ -22,8 +22,10 @@ impl UpdateKxEnvironmentNetworkInput {
         self.transit_gateway_configuration.as_ref()
     }
     /// <p>A list of DNS server name and server IP. This is used to set up Route-53 outbound resolvers.</p>
-    pub fn custom_dns_configuration(&self) -> ::std::option::Option<&[crate::types::CustomDnsServer]> {
-        self.custom_dns_configuration.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_dns_configuration.is_none()`.
+    pub fn custom_dns_configuration(&self) -> &[crate::types::CustomDnsServer] {
+        self.custom_dns_configuration.as_deref().unwrap_or_default()
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -48,6 +50,7 @@ pub struct UpdateKxEnvironmentNetworkInputBuilder {
 }
 impl UpdateKxEnvironmentNetworkInputBuilder {
     /// <p>A unique identifier for the kdb environment.</p>
+    /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
@@ -114,7 +117,7 @@ impl UpdateKxEnvironmentNetworkInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkInput {
             environment_id: self.environment_id,

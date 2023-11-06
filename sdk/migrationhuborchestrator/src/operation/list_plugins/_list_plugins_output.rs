@@ -15,8 +15,10 @@ impl ListPluginsOutput {
         self.next_token.as_deref()
     }
     /// <p>Migration Hub Orchestrator plugins.</p>
-    pub fn plugins(&self) -> ::std::option::Option<&[crate::types::PluginSummary]> {
-        self.plugins.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.plugins.is_none()`.
+    pub fn plugins(&self) -> &[crate::types::PluginSummary] {
+        self.plugins.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListPluginsOutput {

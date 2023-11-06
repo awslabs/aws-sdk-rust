@@ -33,8 +33,10 @@ impl Configuration {
         self.description.as_deref()
     }
     /// <p>An array of the versions of Apache Kafka with which you can use this MSK configuration. You can use this configuration for an MSK cluster only if the Apache Kafka version specified for the cluster appears in this array.</p>
-    pub fn kafka_versions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.kafka_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.kafka_versions.is_none()`.
+    pub fn kafka_versions(&self) -> &[::std::string::String] {
+        self.kafka_versions.as_deref().unwrap_or_default()
     }
     /// <p>Latest revision of the configuration.</p>
     pub fn latest_revision(&self) -> ::std::option::Option<&crate::types::ConfigurationRevision> {
@@ -70,6 +72,7 @@ pub struct ConfigurationBuilder {
 }
 impl ConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +87,7 @@ impl ConfigurationBuilder {
         &self.arn
     }
     /// <p>The time when the configuration was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -98,6 +102,7 @@ impl ConfigurationBuilder {
         &self.creation_time
     }
     /// <p>The description of the configuration.</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +137,7 @@ impl ConfigurationBuilder {
         &self.kafka_versions
     }
     /// <p>Latest revision of the configuration.</p>
+    /// This field is required.
     pub fn latest_revision(mut self, input: crate::types::ConfigurationRevision) -> Self {
         self.latest_revision = ::std::option::Option::Some(input);
         self
@@ -146,6 +152,7 @@ impl ConfigurationBuilder {
         &self.latest_revision
     }
     /// <p>The name of the configuration.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -160,6 +167,7 @@ impl ConfigurationBuilder {
         &self.name
     }
     /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
+    /// This field is required.
     pub fn state(mut self, input: crate::types::ConfigurationState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self

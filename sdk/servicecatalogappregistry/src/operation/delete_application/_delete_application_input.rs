@@ -27,6 +27,7 @@ pub struct DeleteApplicationInputBuilder {
 }
 impl DeleteApplicationInputBuilder {
     /// <p> The name, ID, or ARN of the application. </p>
+    /// This field is required.
     pub fn application(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteApplicationInputBuilder {
     /// Consumes the builder and constructs a [`DeleteApplicationInput`](crate::operation::delete_application::DeleteApplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_application::DeleteApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_application::DeleteApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_application::DeleteApplicationInput {
             application: self.application,
         })

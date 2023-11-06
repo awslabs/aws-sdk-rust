@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceFilter {
     /// <p>Specify <code>NAMESPACE_ID</code>.</p>
-    pub name: ::std::option::Option<crate::types::ServiceFilterName>,
+    pub name: crate::types::ServiceFilterName,
     /// <p>The values that are applicable to the value that you specify for <code>Condition</code> to filter the list of services.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::vec::Vec<::std::string::String>,
     /// <p>The operator that you want to use to determine whether a service is returned by <code>ListServices</code>. Valid values for <code>Condition</code> include the following:</p>
     /// <ul>
     /// <li> <p> <code>EQ</code>: When you specify <code>EQ</code>, specify one namespace ID for <code>Values</code>. <code>EQ</code> is the default condition and can be omitted.</p> </li>
@@ -16,12 +16,13 @@ pub struct ServiceFilter {
 }
 impl ServiceFilter {
     /// <p>Specify <code>NAMESPACE_ID</code>.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::ServiceFilterName> {
-        self.name.as_ref()
+    pub fn name(&self) -> &crate::types::ServiceFilterName {
+        &self.name
     }
     /// <p>The values that are applicable to the value that you specify for <code>Condition</code> to filter the list of services.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    pub fn values(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.values.deref()
     }
     /// <p>The operator that you want to use to determine whether a service is returned by <code>ListServices</code>. Valid values for <code>Condition</code> include the following:</p>
     /// <ul>
@@ -48,6 +49,7 @@ pub struct ServiceFilterBuilder {
 }
 impl ServiceFilterBuilder {
     /// <p>Specify <code>NAMESPACE_ID</code>.</p>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::ServiceFilterName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -105,11 +107,24 @@ impl ServiceFilterBuilder {
         &self.condition
     }
     /// Consumes the builder and constructs a [`ServiceFilter`](crate::types::ServiceFilter).
-    pub fn build(self) -> crate::types::ServiceFilter {
-        crate::types::ServiceFilter {
-            name: self.name,
-            values: self.values,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::ServiceFilterBuilder::name)
+    /// - [`values`](crate::types::builders::ServiceFilterBuilder::values)
+    pub fn build(self) -> ::std::result::Result<crate::types::ServiceFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ServiceFilter {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ServiceFilter",
+                )
+            })?,
+            values: self.values.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "values",
+                    "values was not specified but it is required when building ServiceFilter",
+                )
+            })?,
             condition: self.condition,
-        }
+        })
     }
 }

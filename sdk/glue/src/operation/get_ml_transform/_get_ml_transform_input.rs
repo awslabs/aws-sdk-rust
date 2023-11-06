@@ -27,6 +27,7 @@ pub struct GetMlTransformInputBuilder {
 }
 impl GetMlTransformInputBuilder {
     /// <p>The unique identifier of the transform, generated at the time that the transform was created.</p>
+    /// This field is required.
     pub fn transform_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transform_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetMlTransformInputBuilder {
     /// Consumes the builder and constructs a [`GetMlTransformInput`](crate::operation::get_ml_transform::GetMlTransformInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_ml_transform::GetMlTransformInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_ml_transform::GetMlTransformInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_ml_transform::GetMlTransformInput {
             transform_id: self.transform_id,
         })

@@ -58,6 +58,7 @@ pub struct UpdateDomainInputBuilder {
 }
 impl UpdateDomainInputBuilder {
     /// <p>The identifier of the domain to be updated.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -72,6 +73,7 @@ impl UpdateDomainInputBuilder {
         &self.domain_id
     }
     /// <p>The name of the domain.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -100,6 +102,7 @@ impl UpdateDomainInputBuilder {
         &self.description
     }
     /// <p>The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side encryption of your data. Changing the domain's associated KMS key immediately triggers an asynchronous process to remove dependency on the old KMS key, such that the domain's data can only be accessed using the new KMS key. The domain's <code>ServerSideEncryptionUpdateDetails</code> contains the details for this process.</p>
+    /// This field is required.
     pub fn server_side_encryption_configuration(mut self, input: crate::types::ServerSideEncryptionConfiguration) -> Self {
         self.server_side_encryption_configuration = ::std::option::Option::Some(input);
         self
@@ -114,7 +117,9 @@ impl UpdateDomainInputBuilder {
         &self.server_side_encryption_configuration
     }
     /// Consumes the builder and constructs a [`UpdateDomainInput`](crate::operation::update_domain::UpdateDomainInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_domain::UpdateDomainInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_domain::UpdateDomainInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_domain::UpdateDomainInput {
             domain_id: self.domain_id,
             name: self.name,

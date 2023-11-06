@@ -27,6 +27,7 @@ pub struct StartDbClusterInputBuilder {
 }
 impl StartDbClusterInputBuilder {
     /// <p>The identifier of the cluster to restart. Example: <code>docdb-2019-05-28-15-24-52</code> </p>
+    /// This field is required.
     pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_identifier = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl StartDbClusterInputBuilder {
     /// Consumes the builder and constructs a [`StartDbClusterInput`](crate::operation::start_db_cluster::StartDbClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_db_cluster::StartDbClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_db_cluster::StartDbClusterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_db_cluster::StartDbClusterInput {
             db_cluster_identifier: self.db_cluster_identifier,
         })

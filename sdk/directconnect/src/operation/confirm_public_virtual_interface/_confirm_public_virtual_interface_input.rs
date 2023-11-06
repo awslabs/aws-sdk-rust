@@ -27,6 +27,7 @@ pub struct ConfirmPublicVirtualInterfaceInputBuilder {
 }
 impl ConfirmPublicVirtualInterfaceInputBuilder {
     /// <p>The ID of the virtual interface.</p>
+    /// This field is required.
     pub fn virtual_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_interface_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl ConfirmPublicVirtualInterfaceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::confirm_public_virtual_interface::ConfirmPublicVirtualInterfaceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::confirm_public_virtual_interface::ConfirmPublicVirtualInterfaceInput {
             virtual_interface_id: self.virtual_interface_id,

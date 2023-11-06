@@ -27,6 +27,7 @@ pub struct CancelDataQualityRulesetEvaluationRunInputBuilder {
 }
 impl CancelDataQualityRulesetEvaluationRunInputBuilder {
     /// <p>The unique run identifier associated with this run.</p>
+    /// This field is required.
     pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.run_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl CancelDataQualityRulesetEvaluationRunInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_data_quality_ruleset_evaluation_run::CancelDataQualityRulesetEvaluationRunInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::cancel_data_quality_ruleset_evaluation_run::CancelDataQualityRulesetEvaluationRunInput { run_id: self.run_id },

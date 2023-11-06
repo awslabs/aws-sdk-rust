@@ -38,8 +38,10 @@ impl CreateServiceInput {
         self.instance_configuration.as_ref()
     }
     /// <p>An optional list of metadata items that you can associate with the App Runner service resource. A tag is a key-value pair.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>An optional custom encryption key that App Runner uses to encrypt the copy of your source repository that it maintains and your service logs. By default, App Runner uses an Amazon Web Services managed key.</p>
     pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
@@ -87,6 +89,7 @@ pub struct CreateServiceInputBuilder {
 }
 impl CreateServiceInputBuilder {
     /// <p>A name for the App Runner service. It must be unique across all the running App Runner services in your Amazon Web Services account in the Amazon Web Services Region.</p>
+    /// This field is required.
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
         self
@@ -101,6 +104,7 @@ impl CreateServiceInputBuilder {
         &self.service_name
     }
     /// <p>The source to deploy to the App Runner service. It can be a code or an image repository.</p>
+    /// This field is required.
     pub fn source_configuration(mut self, input: crate::types::SourceConfiguration) -> Self {
         self.source_configuration = ::std::option::Option::Some(input);
         self
@@ -227,7 +231,7 @@ impl CreateServiceInputBuilder {
     /// Consumes the builder and constructs a [`CreateServiceInput`](crate::operation::create_service::CreateServiceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_service::CreateServiceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_service::CreateServiceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_service::CreateServiceInput {
             service_name: self.service_name,
             source_configuration: self.source_configuration,

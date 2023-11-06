@@ -41,6 +41,7 @@ pub struct CreateShareInputBuilder {
 }
 impl CreateShareInputBuilder {
     /// <p> The resource ARN for the analytics store to be shared. </p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl CreateShareInputBuilder {
         &self.resource_arn
     }
     /// <p> The principal subscriber is the account being given access to the analytics store data through the share offer. </p>
+    /// This field is required.
     pub fn principal_subscriber(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_subscriber = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +85,7 @@ impl CreateShareInputBuilder {
         &self.share_name
     }
     /// Consumes the builder and constructs a [`CreateShareInput`](crate::operation::create_share::CreateShareInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_share::CreateShareInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_share::CreateShareInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_share::CreateShareInput {
             resource_arn: self.resource_arn,
             principal_subscriber: self.principal_subscriber,

@@ -21,8 +21,10 @@ impl PolicyDescription {
         self.policy_type_name.as_deref()
     }
     /// <p>The policy attributes.</p>
-    pub fn policy_attribute_descriptions(&self) -> ::std::option::Option<&[crate::types::PolicyAttributeDescription]> {
-        self.policy_attribute_descriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_attribute_descriptions.is_none()`.
+    pub fn policy_attribute_descriptions(&self) -> &[crate::types::PolicyAttributeDescription] {
+        self.policy_attribute_descriptions.as_deref().unwrap_or_default()
     }
 }
 impl PolicyDescription {

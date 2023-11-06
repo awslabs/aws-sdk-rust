@@ -25,8 +25,10 @@ impl PutPartnerEventsRequestEntry {
         self.source.as_deref()
     }
     /// <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number, including zero, may be present.</p>
-    pub fn resources(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
+    pub fn resources(&self) -> &[::std::string::String] {
+        self.resources.as_deref().unwrap_or_default()
     }
     /// <p>A free-form string used to decide what fields to expect in the event detail.</p>
     pub fn detail_type(&self) -> ::std::option::Option<&str> {

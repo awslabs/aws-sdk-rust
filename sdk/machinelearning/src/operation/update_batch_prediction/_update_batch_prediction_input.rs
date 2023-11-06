@@ -34,6 +34,7 @@ pub struct UpdateBatchPredictionInputBuilder {
 }
 impl UpdateBatchPredictionInputBuilder {
     /// <p>The ID assigned to the <code>BatchPrediction</code> during creation.</p>
+    /// This field is required.
     pub fn batch_prediction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.batch_prediction_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateBatchPredictionInputBuilder {
         &self.batch_prediction_id
     }
     /// <p>A new user-supplied name or description of the <code>BatchPrediction</code>.</p>
+    /// This field is required.
     pub fn batch_prediction_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.batch_prediction_name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl UpdateBatchPredictionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateBatchPredictionInput`](crate::operation::update_batch_prediction::UpdateBatchPredictionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_batch_prediction::UpdateBatchPredictionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_batch_prediction::UpdateBatchPredictionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_batch_prediction::UpdateBatchPredictionInput {
             batch_prediction_id: self.batch_prediction_id,

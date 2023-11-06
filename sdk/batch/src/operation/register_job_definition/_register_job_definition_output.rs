@@ -48,6 +48,7 @@ pub struct RegisterJobDefinitionOutputBuilder {
 }
 impl RegisterJobDefinitionOutputBuilder {
     /// <p>The name of the job definition.</p>
+    /// This field is required.
     pub fn job_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_definition_name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl RegisterJobDefinitionOutputBuilder {
         &self.job_definition_name
     }
     /// <p>The Amazon Resource Name (ARN) of the job definition.</p>
+    /// This field is required.
     pub fn job_definition_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_definition_arn = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl RegisterJobDefinitionOutputBuilder {
         &self.job_definition_arn
     }
     /// <p>The revision of the job definition.</p>
+    /// This field is required.
     pub fn revision(mut self, input: i32) -> Self {
         self.revision = ::std::option::Option::Some(input);
         self

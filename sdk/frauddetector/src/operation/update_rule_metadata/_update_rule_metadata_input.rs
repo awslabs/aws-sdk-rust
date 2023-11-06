@@ -34,6 +34,7 @@ pub struct UpdateRuleMetadataInputBuilder {
 }
 impl UpdateRuleMetadataInputBuilder {
     /// <p>The rule to update.</p>
+    /// This field is required.
     pub fn rule(mut self, input: crate::types::Rule) -> Self {
         self.rule = ::std::option::Option::Some(input);
         self
@@ -48,6 +49,7 @@ impl UpdateRuleMetadataInputBuilder {
         &self.rule
     }
     /// <p>The rule description.</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,8 @@ impl UpdateRuleMetadataInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRuleMetadataInput`](crate::operation::update_rule_metadata::UpdateRuleMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_rule_metadata::UpdateRuleMetadataInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_rule_metadata::UpdateRuleMetadataInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_rule_metadata::UpdateRuleMetadataInput {
             rule: self.rule,
             description: self.description,

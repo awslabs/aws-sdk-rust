@@ -35,6 +35,7 @@ pub struct CreateAlertManagerDefinitionOutputBuilder {
 }
 impl CreateAlertManagerDefinitionOutputBuilder {
     /// The status of alert manager definition.
+    /// This field is required.
     pub fn status(mut self, input: crate::types::AlertManagerDefinitionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self

@@ -12,8 +12,10 @@ pub struct DescribeTagsInput {
 }
 impl DescribeTagsInput {
     /// <p>You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these items by using logical operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>, and <code>configurationId</code>. </p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::TagFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::TagFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The total number of items to return in a single page of output. The maximum value is 100.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -89,7 +91,9 @@ impl DescribeTagsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeTagsInput`](crate::operation::describe_tags::DescribeTagsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_tags::DescribeTagsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_tags::DescribeTagsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_tags::DescribeTagsInput {
             filters: self.filters,
             max_results: self.max_results,

@@ -12,8 +12,10 @@ pub struct CreateInvitationsInput {
 }
 impl CreateInvitationsInput {
     /// <p>An array that lists Amazon Web Services account IDs, one for each account to send the invitation to.</p>
-    pub fn account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.account_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
+    pub fn account_ids(&self) -> &[::std::string::String] {
+        self.account_ids.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether to send the invitation as an email message. If this value is false, Amazon Macie sends the invitation (as an email message) to the email address that you specified for the recipient's account when you associated the account with your account. The default value is false.</p>
     pub fn disable_email_notification(&self) -> ::std::option::Option<bool> {
@@ -91,7 +93,7 @@ impl CreateInvitationsInputBuilder {
     /// Consumes the builder and constructs a [`CreateInvitationsInput`](crate::operation::create_invitations::CreateInvitationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_invitations::CreateInvitationsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_invitations::CreateInvitationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_invitations::CreateInvitationsInput {
             account_ids: self.account_ids,
             disable_email_notification: self.disable_email_notification,

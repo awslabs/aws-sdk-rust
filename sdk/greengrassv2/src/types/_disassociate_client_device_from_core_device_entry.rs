@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateClientDeviceFromCoreDeviceEntry {
     /// <p>The name of the IoT thing that represents the client device to disassociate.</p>
-    pub thing_name: ::std::option::Option<::std::string::String>,
+    pub thing_name: ::std::string::String,
 }
 impl DisassociateClientDeviceFromCoreDeviceEntry {
     /// <p>The name of the IoT thing that represents the client device to disassociate.</p>
-    pub fn thing_name(&self) -> ::std::option::Option<&str> {
-        self.thing_name.as_deref()
+    pub fn thing_name(&self) -> &str {
+        use std::ops::Deref;
+        self.thing_name.deref()
     }
 }
 impl DisassociateClientDeviceFromCoreDeviceEntry {
@@ -28,6 +29,7 @@ pub struct DisassociateClientDeviceFromCoreDeviceEntryBuilder {
 }
 impl DisassociateClientDeviceFromCoreDeviceEntryBuilder {
     /// <p>The name of the IoT thing that represents the client device to disassociate.</p>
+    /// This field is required.
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_name = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,18 @@ impl DisassociateClientDeviceFromCoreDeviceEntryBuilder {
         &self.thing_name
     }
     /// Consumes the builder and constructs a [`DisassociateClientDeviceFromCoreDeviceEntry`](crate::types::DisassociateClientDeviceFromCoreDeviceEntry).
-    pub fn build(self) -> crate::types::DisassociateClientDeviceFromCoreDeviceEntry {
-        crate::types::DisassociateClientDeviceFromCoreDeviceEntry { thing_name: self.thing_name }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`thing_name`](crate::types::builders::DisassociateClientDeviceFromCoreDeviceEntryBuilder::thing_name)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::DisassociateClientDeviceFromCoreDeviceEntry, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DisassociateClientDeviceFromCoreDeviceEntry {
+            thing_name: self.thing_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "thing_name",
+                    "thing_name was not specified but it is required when building DisassociateClientDeviceFromCoreDeviceEntry",
+                )
+            })?,
+        })
     }
 }

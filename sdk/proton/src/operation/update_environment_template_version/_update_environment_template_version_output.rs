@@ -34,6 +34,7 @@ pub struct UpdateEnvironmentTemplateVersionOutputBuilder {
 }
 impl UpdateEnvironmentTemplateVersionOutputBuilder {
     /// <p>The environment template version detail data that's returned by Proton.</p>
+    /// This field is required.
     pub fn environment_template_version(mut self, input: crate::types::EnvironmentTemplateVersion) -> Self {
         self.environment_template_version = ::std::option::Option::Some(input);
         self

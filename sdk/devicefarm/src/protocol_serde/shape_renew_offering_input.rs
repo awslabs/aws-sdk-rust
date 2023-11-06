@@ -2,7 +2,7 @@
 pub fn ser_renew_offering_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::renew_offering::RenewOfferingInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.offering_id {
         object.key("offeringId").string(var_1.as_str());
     }

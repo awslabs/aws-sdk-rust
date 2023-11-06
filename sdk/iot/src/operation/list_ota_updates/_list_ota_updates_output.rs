@@ -11,8 +11,10 @@ pub struct ListOtaUpdatesOutput {
 }
 impl ListOtaUpdatesOutput {
     /// <p>A list of OTA update jobs.</p>
-    pub fn ota_updates(&self) -> ::std::option::Option<&[crate::types::OtaUpdateSummary]> {
-        self.ota_updates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ota_updates.is_none()`.
+    pub fn ota_updates(&self) -> &[crate::types::OtaUpdateSummary] {
+        self.ota_updates.as_deref().unwrap_or_default()
     }
     /// <p>A token to use to get the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

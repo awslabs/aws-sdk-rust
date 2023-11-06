@@ -9,8 +9,10 @@ pub struct GetDeploymentsOutput {
 }
 impl GetDeploymentsOutput {
     /// <p>Returns a list of the configurations of the active deployments on the device.</p>
-    pub fn deployments(&self) -> ::std::option::Option<&[crate::types::EdgeDeployment]> {
-        self.deployments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.deployments.is_none()`.
+    pub fn deployments(&self) -> &[crate::types::EdgeDeployment] {
+        self.deployments.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetDeploymentsOutput {

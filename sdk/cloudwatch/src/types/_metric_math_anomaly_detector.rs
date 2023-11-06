@@ -9,8 +9,10 @@ pub struct MetricMathAnomalyDetector {
 }
 impl MetricMathAnomalyDetector {
     /// <p>An array of metric data query structures that enables you to create an anomaly detector based on the result of a metric math expression. Each item in <code>MetricDataQueries</code> gets a metric or performs a math expression. One item in <code>MetricDataQueries</code> is the expression that provides the time series that the anomaly detector uses as input. Designate the expression by setting <code>ReturnData</code> to <code>true</code> for this object in the array. For all other expressions and metrics, set <code>ReturnData</code> to <code>false</code>. The designated expression must return a single time series.</p>
-    pub fn metric_data_queries(&self) -> ::std::option::Option<&[crate::types::MetricDataQuery]> {
-        self.metric_data_queries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_data_queries.is_none()`.
+    pub fn metric_data_queries(&self) -> &[crate::types::MetricDataQuery] {
+        self.metric_data_queries.as_deref().unwrap_or_default()
     }
 }
 impl MetricMathAnomalyDetector {

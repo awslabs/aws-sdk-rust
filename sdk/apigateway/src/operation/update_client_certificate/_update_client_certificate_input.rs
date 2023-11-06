@@ -15,8 +15,10 @@ impl UpdateClientCertificateInput {
         self.client_certificate_id.as_deref()
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn patch_operations(&self) -> ::std::option::Option<&[crate::types::PatchOperation]> {
-        self.patch_operations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.patch_operations.is_none()`.
+    pub fn patch_operations(&self) -> &[crate::types::PatchOperation] {
+        self.patch_operations.as_deref().unwrap_or_default()
     }
 }
 impl UpdateClientCertificateInput {
@@ -35,6 +37,7 @@ pub struct UpdateClientCertificateInputBuilder {
 }
 impl UpdateClientCertificateInputBuilder {
     /// <p>The identifier of the ClientCertificate resource to be updated.</p>
+    /// This field is required.
     pub fn client_certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_certificate_id = ::std::option::Option::Some(input.into());
         self
@@ -73,7 +76,7 @@ impl UpdateClientCertificateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_client_certificate::UpdateClientCertificateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_client_certificate::UpdateClientCertificateInput {
             client_certificate_id: self.client_certificate_id,

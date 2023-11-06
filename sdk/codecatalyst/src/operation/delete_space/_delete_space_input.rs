@@ -27,6 +27,7 @@ pub struct DeleteSpaceInputBuilder {
 }
 impl DeleteSpaceInputBuilder {
     /// <p>The name of the space. To retrieve a list of space names, use <code>ListSpaces</code>.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl DeleteSpaceInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`DeleteSpaceInput`](crate::operation::delete_space::DeleteSpaceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_space::DeleteSpaceInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_space::DeleteSpaceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_space::DeleteSpaceInput { name: self.name })
     }
 }

@@ -26,8 +26,10 @@ impl ExportMetadataModelAssessmentInput {
         self.file_name.as_deref()
     }
     /// <p>The file format of the assessment file.</p>
-    pub fn assessment_report_types(&self) -> ::std::option::Option<&[crate::types::AssessmentReportType]> {
-        self.assessment_report_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.assessment_report_types.is_none()`.
+    pub fn assessment_report_types(&self) -> &[crate::types::AssessmentReportType] {
+        self.assessment_report_types.as_deref().unwrap_or_default()
     }
 }
 impl ExportMetadataModelAssessmentInput {
@@ -48,6 +50,7 @@ pub struct ExportMetadataModelAssessmentInputBuilder {
 }
 impl ExportMetadataModelAssessmentInputBuilder {
     /// <p>The migration project name or Amazon Resource Name (ARN).</p>
+    /// This field is required.
     pub fn migration_project_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.migration_project_identifier = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl ExportMetadataModelAssessmentInputBuilder {
         &self.migration_project_identifier
     }
     /// <p>A value that specifies the database objects to assess.</p>
+    /// This field is required.
     pub fn selection_rules(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.selection_rules = ::std::option::Option::Some(input.into());
         self
@@ -114,7 +118,7 @@ impl ExportMetadataModelAssessmentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::export_metadata_model_assessment::ExportMetadataModelAssessmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::export_metadata_model_assessment::ExportMetadataModelAssessmentInput {
             migration_project_identifier: self.migration_project_identifier,

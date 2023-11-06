@@ -2,7 +2,7 @@
 pub fn ser_describe_trails_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_trails::DescribeTrailsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.trail_name_list {
         let mut array_2 = object.key("trailNameList").start_array();
         for item_3 in var_1 {

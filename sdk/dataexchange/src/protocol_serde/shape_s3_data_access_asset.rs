@@ -22,10 +22,10 @@ where
                             );
                         }
                         "KeyPrefixes" => {
-                            builder = builder.set_key_prefixes(crate::protocol_serde::shape_list_of__string::de_list_of__string(tokens)?);
+                            builder = builder.set_key_prefixes(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         "Keys" => {
-                            builder = builder.set_keys(crate::protocol_serde::shape_list_of__string::de_list_of__string(tokens)?);
+                            builder = builder.set_keys(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         "S3AccessPointAlias" => {
                             builder = builder.set_s3_access_point_alias(
@@ -56,7 +56,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::s3_data_access_asset_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

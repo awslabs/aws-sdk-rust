@@ -10,7 +10,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetAssetPropertyValueHistoryEntry {
     /// <p>The ID of the entry.</p>
-    pub entry_id: ::std::option::Option<::std::string::String>,
+    pub entry_id: ::std::string::String,
     /// <p>The ID of the asset in which the asset property was created.</p>
     pub asset_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the asset property.</p>
@@ -29,8 +29,9 @@ pub struct BatchGetAssetPropertyValueHistoryEntry {
 }
 impl BatchGetAssetPropertyValueHistoryEntry {
     /// <p>The ID of the entry.</p>
-    pub fn entry_id(&self) -> ::std::option::Option<&str> {
-        self.entry_id.as_deref()
+    pub fn entry_id(&self) -> &str {
+        use std::ops::Deref;
+        self.entry_id.deref()
     }
     /// <p>The ID of the asset in which the asset property was created.</p>
     pub fn asset_id(&self) -> ::std::option::Option<&str> {
@@ -53,8 +54,10 @@ impl BatchGetAssetPropertyValueHistoryEntry {
         self.end_date.as_ref()
     }
     /// <p>The quality by which to filter asset data.</p>
-    pub fn qualities(&self) -> ::std::option::Option<&[crate::types::Quality]> {
-        self.qualities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.qualities.is_none()`.
+    pub fn qualities(&self) -> &[crate::types::Quality] {
+        self.qualities.as_deref().unwrap_or_default()
     }
     /// <p>The chronological sorting order of the requested information.</p>
     /// <p>Default: <code>ASCENDING</code> </p>
@@ -84,6 +87,7 @@ pub struct BatchGetAssetPropertyValueHistoryEntryBuilder {
 }
 impl BatchGetAssetPropertyValueHistoryEntryBuilder {
     /// <p>The ID of the entry.</p>
+    /// This field is required.
     pub fn entry_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entry_id = ::std::option::Option::Some(input.into());
         self
@@ -205,9 +209,18 @@ impl BatchGetAssetPropertyValueHistoryEntryBuilder {
         &self.time_ordering
     }
     /// Consumes the builder and constructs a [`BatchGetAssetPropertyValueHistoryEntry`](crate::types::BatchGetAssetPropertyValueHistoryEntry).
-    pub fn build(self) -> crate::types::BatchGetAssetPropertyValueHistoryEntry {
-        crate::types::BatchGetAssetPropertyValueHistoryEntry {
-            entry_id: self.entry_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`entry_id`](crate::types::builders::BatchGetAssetPropertyValueHistoryEntryBuilder::entry_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::BatchGetAssetPropertyValueHistoryEntry, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::BatchGetAssetPropertyValueHistoryEntry {
+            entry_id: self.entry_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "entry_id",
+                    "entry_id was not specified but it is required when building BatchGetAssetPropertyValueHistoryEntry",
+                )
+            })?,
             asset_id: self.asset_id,
             property_id: self.property_id,
             property_alias: self.property_alias,
@@ -215,6 +228,6 @@ impl BatchGetAssetPropertyValueHistoryEntryBuilder {
             end_date: self.end_date,
             qualities: self.qualities,
             time_ordering: self.time_ordering,
-        }
+        })
     }
 }

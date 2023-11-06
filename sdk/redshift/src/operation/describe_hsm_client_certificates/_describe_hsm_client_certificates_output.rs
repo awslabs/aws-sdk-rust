@@ -16,8 +16,10 @@ impl DescribeHsmClientCertificatesOutput {
         self.marker.as_deref()
     }
     /// <p>A list of the identifiers for one or more HSM client certificates used by Amazon Redshift clusters to store and retrieve database encryption keys in an HSM.</p>
-    pub fn hsm_client_certificates(&self) -> ::std::option::Option<&[crate::types::HsmClientCertificate]> {
-        self.hsm_client_certificates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hsm_client_certificates.is_none()`.
+    pub fn hsm_client_certificates(&self) -> &[crate::types::HsmClientCertificate] {
+        self.hsm_client_certificates.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeHsmClientCertificatesOutput {

@@ -29,12 +29,16 @@ impl VCpuInfo {
         self.default_threads_per_core
     }
     /// <p>The valid number of cores that can be configured for the instance type.</p>
-    pub fn valid_cores(&self) -> ::std::option::Option<&[i32]> {
-        self.valid_cores.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.valid_cores.is_none()`.
+    pub fn valid_cores(&self) -> &[i32] {
+        self.valid_cores.as_deref().unwrap_or_default()
     }
     /// <p>The valid number of threads per core that can be configured for the instance type.</p>
-    pub fn valid_threads_per_core(&self) -> ::std::option::Option<&[i32]> {
-        self.valid_threads_per_core.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.valid_threads_per_core.is_none()`.
+    pub fn valid_threads_per_core(&self) -> &[i32] {
+        self.valid_threads_per_core.as_deref().unwrap_or_default()
     }
 }
 impl VCpuInfo {

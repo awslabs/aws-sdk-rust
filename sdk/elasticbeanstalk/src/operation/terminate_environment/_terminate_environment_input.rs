@@ -152,7 +152,7 @@ impl TerminateEnvironmentInputBuilder {
     /// Consumes the builder and constructs a [`TerminateEnvironmentInput`](crate::operation::terminate_environment::TerminateEnvironmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::terminate_environment::TerminateEnvironmentInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::terminate_environment::TerminateEnvironmentInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::terminate_environment::TerminateEnvironmentInput {
             environment_id: self.environment_id,

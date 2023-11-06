@@ -21,8 +21,10 @@ impl ListWorkflowExecutionsOutput {
         self.request_id.as_deref()
     }
     /// <p>Contains an array of runtime details that represents each time a workflow ran for the requested image build version.</p>
-    pub fn workflow_executions(&self) -> ::std::option::Option<&[crate::types::WorkflowExecutionMetadata]> {
-        self.workflow_executions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.workflow_executions.is_none()`.
+    pub fn workflow_executions(&self) -> &[crate::types::WorkflowExecutionMetadata] {
+        self.workflow_executions.as_deref().unwrap_or_default()
     }
     /// <p>The resource ARN of the image build version for which you requested a list of workflow runtime details.</p>
     pub fn image_build_version_arn(&self) -> ::std::option::Option<&str> {

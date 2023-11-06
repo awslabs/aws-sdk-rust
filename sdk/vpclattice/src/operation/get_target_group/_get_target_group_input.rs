@@ -27,6 +27,7 @@ pub struct GetTargetGroupInputBuilder {
 }
 impl GetTargetGroupInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
+    /// This field is required.
     pub fn target_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_group_identifier = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetTargetGroupInputBuilder {
     /// Consumes the builder and constructs a [`GetTargetGroupInput`](crate::operation::get_target_group::GetTargetGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_target_group::GetTargetGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_target_group::GetTargetGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_target_group::GetTargetGroupInput {
             target_group_identifier: self.target_group_identifier,
         })

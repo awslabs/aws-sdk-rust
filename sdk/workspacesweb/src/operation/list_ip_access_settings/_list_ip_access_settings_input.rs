@@ -64,7 +64,7 @@ impl ListIpAccessSettingsInputBuilder {
     /// Consumes the builder and constructs a [`ListIpAccessSettingsInput`](crate::operation::list_ip_access_settings::ListIpAccessSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_ip_access_settings::ListIpAccessSettingsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_ip_access_settings::ListIpAccessSettingsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_ip_access_settings::ListIpAccessSettingsInput {
             next_token: self.next_token,

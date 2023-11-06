@@ -359,7 +359,7 @@ pub struct AdvancedFieldSelector {
     /// </partition></code> </p> </li>
     /// </ul> </li>
     /// </ul>
-    pub field: ::std::option::Option<::std::string::String>,
+    pub field: ::std::string::String,
     /// <p> An operator that includes events that match the exact value of the event record field specified as the value of <code>Field</code>. This is the only valid operator that you can use with the <code>readOnly</code>, <code>eventCategory</code>, and <code>resources.type</code> fields.</p>
     pub equals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An operator that includes events that match the first few characters of the event record field specified as the value of <code>Field</code>.</p>
@@ -729,32 +729,45 @@ impl AdvancedFieldSelector {
     /// </partition></code> </p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn field(&self) -> ::std::option::Option<&str> {
-        self.field.as_deref()
+    pub fn field(&self) -> &str {
+        use std::ops::Deref;
+        self.field.deref()
     }
     /// <p> An operator that includes events that match the exact value of the event record field specified as the value of <code>Field</code>. This is the only valid operator that you can use with the <code>readOnly</code>, <code>eventCategory</code>, and <code>resources.type</code> fields.</p>
-    pub fn equals(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.equals.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.equals.is_none()`.
+    pub fn equals(&self) -> &[::std::string::String] {
+        self.equals.as_deref().unwrap_or_default()
     }
     /// <p>An operator that includes events that match the first few characters of the event record field specified as the value of <code>Field</code>.</p>
-    pub fn starts_with(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.starts_with.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.starts_with.is_none()`.
+    pub fn starts_with(&self) -> &[::std::string::String] {
+        self.starts_with.as_deref().unwrap_or_default()
     }
     /// <p>An operator that includes events that match the last few characters of the event record field specified as the value of <code>Field</code>.</p>
-    pub fn ends_with(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ends_with.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ends_with.is_none()`.
+    pub fn ends_with(&self) -> &[::std::string::String] {
+        self.ends_with.as_deref().unwrap_or_default()
     }
     /// <p> An operator that excludes events that match the exact value of the event record field specified as the value of <code>Field</code>. </p>
-    pub fn not_equals(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.not_equals.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.not_equals.is_none()`.
+    pub fn not_equals(&self) -> &[::std::string::String] {
+        self.not_equals.as_deref().unwrap_or_default()
     }
     /// <p> An operator that excludes events that match the first few characters of the event record field specified as the value of <code>Field</code>. </p>
-    pub fn not_starts_with(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.not_starts_with.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.not_starts_with.is_none()`.
+    pub fn not_starts_with(&self) -> &[::std::string::String] {
+        self.not_starts_with.as_deref().unwrap_or_default()
     }
     /// <p> An operator that excludes events that match the last few characters of the event record field specified as the value of <code>Field</code>. </p>
-    pub fn not_ends_with(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.not_ends_with.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.not_ends_with.is_none()`.
+    pub fn not_ends_with(&self) -> &[::std::string::String] {
+        self.not_ends_with.as_deref().unwrap_or_default()
     }
 }
 impl AdvancedFieldSelector {
@@ -1132,6 +1145,7 @@ impl AdvancedFieldSelectorBuilder {
     /// </partition></code> </p> </li>
     /// </ul> </li>
     /// </ul>
+    /// This field is required.
     pub fn field(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.field = ::std::option::Option::Some(input.into());
         self
@@ -1974,15 +1988,22 @@ impl AdvancedFieldSelectorBuilder {
         &self.not_ends_with
     }
     /// Consumes the builder and constructs a [`AdvancedFieldSelector`](crate::types::AdvancedFieldSelector).
-    pub fn build(self) -> crate::types::AdvancedFieldSelector {
-        crate::types::AdvancedFieldSelector {
-            field: self.field,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`field`](crate::types::builders::AdvancedFieldSelectorBuilder::field)
+    pub fn build(self) -> ::std::result::Result<crate::types::AdvancedFieldSelector, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AdvancedFieldSelector {
+            field: self.field.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "field",
+                    "field was not specified but it is required when building AdvancedFieldSelector",
+                )
+            })?,
             equals: self.equals,
             starts_with: self.starts_with,
             ends_with: self.ends_with,
             not_equals: self.not_equals,
             not_starts_with: self.not_starts_with,
             not_ends_with: self.not_ends_with,
-        }
+        })
     }
 }

@@ -27,6 +27,7 @@ pub struct GetKeyPairInputBuilder {
 }
 impl GetKeyPairInputBuilder {
     /// <p>The name of the key pair for which you are requesting information.</p>
+    /// This field is required.
     pub fn key_pair_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_pair_name = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetKeyPairInputBuilder {
         &self.key_pair_name
     }
     /// Consumes the builder and constructs a [`GetKeyPairInput`](crate::operation::get_key_pair::GetKeyPairInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_key_pair::GetKeyPairInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_key_pair::GetKeyPairInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_key_pair::GetKeyPairInput {
             key_pair_name: self.key_pair_name,
         })

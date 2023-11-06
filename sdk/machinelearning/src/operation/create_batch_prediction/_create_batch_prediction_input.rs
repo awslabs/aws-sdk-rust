@@ -57,6 +57,7 @@ pub struct CreateBatchPredictionInputBuilder {
 }
 impl CreateBatchPredictionInputBuilder {
     /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</p>
+    /// This field is required.
     pub fn batch_prediction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.batch_prediction_id = ::std::option::Option::Some(input.into());
         self
@@ -85,6 +86,7 @@ impl CreateBatchPredictionInputBuilder {
         &self.batch_prediction_name
     }
     /// <p>The ID of the <code>MLModel</code> that will generate predictions for the group of observations. </p>
+    /// This field is required.
     pub fn ml_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ml_model_id = ::std::option::Option::Some(input.into());
         self
@@ -99,6 +101,7 @@ impl CreateBatchPredictionInputBuilder {
         &self.ml_model_id
     }
     /// <p>The ID of the <code>DataSource</code> that points to the group of observations to predict.</p>
+    /// This field is required.
     pub fn batch_prediction_data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.batch_prediction_data_source_id = ::std::option::Option::Some(input.into());
         self
@@ -114,6 +117,7 @@ impl CreateBatchPredictionInputBuilder {
     }
     /// <p>The location of an Amazon Simple Storage Service (Amazon S3) bucket or directory to store the batch prediction results. The following substrings are not allowed in the <code>s3 key</code> portion of the <code>outputURI</code> field: ':', '//', '/./', '/../'.</p>
     /// <p>Amazon ML needs permissions to store and retrieve the logs on your behalf. For information about how to set permissions, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.</p>
+    /// This field is required.
     pub fn output_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_uri = ::std::option::Option::Some(input.into());
         self
@@ -132,7 +136,7 @@ impl CreateBatchPredictionInputBuilder {
     /// Consumes the builder and constructs a [`CreateBatchPredictionInput`](crate::operation::create_batch_prediction::CreateBatchPredictionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_batch_prediction::CreateBatchPredictionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_batch_prediction::CreateBatchPredictionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_batch_prediction::CreateBatchPredictionInput {
             batch_prediction_id: self.batch_prediction_id,

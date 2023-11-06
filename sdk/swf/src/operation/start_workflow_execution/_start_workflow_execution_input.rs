@@ -87,8 +87,10 @@ impl StartWorkflowExecutionInput {
         self.execution_start_to_close_timeout.as_deref()
     }
     /// <p>The list of tags to associate with the workflow execution. You can specify a maximum of 5 tags. You can list workflow executions with a specific tag by calling <code>ListOpenWorkflowExecutions</code> or <code>ListClosedWorkflowExecutions</code> and specifying a <code>TagFilter</code>.</p>
-    pub fn tag_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tag_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_list.is_none()`.
+    pub fn tag_list(&self) -> &[::std::string::String] {
+        self.tag_list.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the maximum duration of decision tasks for this workflow execution. This parameter overrides the <code>defaultTaskStartToCloseTimout</code> specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>
@@ -142,6 +144,7 @@ pub struct StartWorkflowExecutionInputBuilder {
 impl StartWorkflowExecutionInputBuilder {
     /// <p>The name of the domain in which the workflow execution is created.</p>
     /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -159,6 +162,7 @@ impl StartWorkflowExecutionInputBuilder {
     }
     /// <p>The user defined identifier associated with the workflow execution. You can use this to associate a custom identifier with the workflow execution. You may specify the same identifier if a workflow execution is logically a <i>restart</i> of a previous execution. You cannot have two open workflow executions with the same <code>workflowId</code> at the same time within the same domain.</p>
     /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
+    /// This field is required.
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_id = ::std::option::Option::Some(input.into());
         self
@@ -175,6 +179,7 @@ impl StartWorkflowExecutionInputBuilder {
         &self.workflow_id
     }
     /// <p>The type of the workflow to start.</p>
+    /// This field is required.
     pub fn workflow_type(mut self, input: crate::types::WorkflowType) -> Self {
         self.workflow_type = ::std::option::Option::Some(input);
         self
@@ -369,8 +374,10 @@ impl StartWorkflowExecutionInputBuilder {
     /// Consumes the builder and constructs a [`StartWorkflowExecutionInput`](crate::operation::start_workflow_execution::StartWorkflowExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_workflow_execution::StartWorkflowExecutionInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::start_workflow_execution::StartWorkflowExecutionInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::start_workflow_execution::StartWorkflowExecutionInput {
             domain: self.domain,
             workflow_id: self.workflow_id,

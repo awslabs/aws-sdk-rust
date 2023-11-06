@@ -70,6 +70,7 @@ pub struct SecurityControlBuilder {
 }
 impl SecurityControlBuilder {
     /// <p> The unique identifier of a security control across standards. Values for this field typically consist of an Amazon Web Service name and a number, such as APIGateway.3. </p>
+    /// This field is required.
     pub fn security_control_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_control_id = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +85,7 @@ impl SecurityControlBuilder {
         &self.security_control_id
     }
     /// <p> The Amazon Resource Name (ARN) for a security control across standards, such as <code>arn:aws:securityhub:eu-central-1:123456789012:security-control/S3.1</code>. This parameter doesn't mention a specific standard. </p>
+    /// This field is required.
     pub fn security_control_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_control_arn = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +100,7 @@ impl SecurityControlBuilder {
         &self.security_control_arn
     }
     /// <p>The title of a security control. </p>
+    /// This field is required.
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +115,7 @@ impl SecurityControlBuilder {
         &self.title
     }
     /// <p> The description of a security control across standards. This typically summarizes how Security Hub evaluates the control and the conditions under which it produces a failed finding. This parameter doesn't reference a specific standard. </p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +130,7 @@ impl SecurityControlBuilder {
         &self.description
     }
     /// <p> A link to Security Hub documentation that explains how to remediate a failed finding for a security control. </p>
+    /// This field is required.
     pub fn remediation_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.remediation_url = ::std::option::Option::Some(input.into());
         self
@@ -140,6 +145,7 @@ impl SecurityControlBuilder {
         &self.remediation_url
     }
     /// <p> The severity of a security control. For more information about how Security Hub determines control severity, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/controls-findings-create-update.html#control-findings-severity">Assigning severity to control findings</a> in the <i>Security Hub User Guide</i>. </p>
+    /// This field is required.
     pub fn severity_rating(mut self, input: crate::types::SeverityRating) -> Self {
         self.severity_rating = ::std::option::Option::Some(input);
         self
@@ -154,6 +160,7 @@ impl SecurityControlBuilder {
         &self.severity_rating
     }
     /// <p> The enablement status of a security control in a specific standard. </p>
+    /// This field is required.
     pub fn security_control_status(mut self, input: crate::types::ControlStatus) -> Self {
         self.security_control_status = ::std::option::Option::Some(input);
         self

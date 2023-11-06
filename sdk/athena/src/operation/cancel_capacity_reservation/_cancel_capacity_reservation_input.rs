@@ -27,6 +27,7 @@ pub struct CancelCapacityReservationInputBuilder {
 }
 impl CancelCapacityReservationInputBuilder {
     /// <p>The name of the capacity reservation to cancel.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl CancelCapacityReservationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_capacity_reservation::CancelCapacityReservationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::cancel_capacity_reservation::CancelCapacityReservationInput { name: self.name })
     }

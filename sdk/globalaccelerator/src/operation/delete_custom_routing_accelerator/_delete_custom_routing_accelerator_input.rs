@@ -27,6 +27,7 @@ pub struct DeleteCustomRoutingAcceleratorInputBuilder {
 }
 impl DeleteCustomRoutingAcceleratorInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator to delete.</p>
+    /// This field is required.
     pub fn accelerator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accelerator_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteCustomRoutingAcceleratorInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_custom_routing_accelerator::DeleteCustomRoutingAcceleratorInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_custom_routing_accelerator::DeleteCustomRoutingAcceleratorInput {
             accelerator_arn: self.accelerator_arn,

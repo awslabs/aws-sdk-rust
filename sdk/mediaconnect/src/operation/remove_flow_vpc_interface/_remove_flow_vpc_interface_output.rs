@@ -17,8 +17,10 @@ impl RemoveFlowVpcInterfaceOutput {
         self.flow_arn.as_deref()
     }
     /// IDs of network interfaces associated with the removed VPC interface that Media Connect was unable to remove.
-    pub fn non_deleted_network_interface_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.non_deleted_network_interface_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.non_deleted_network_interface_ids.is_none()`.
+    pub fn non_deleted_network_interface_ids(&self) -> &[::std::string::String] {
+        self.non_deleted_network_interface_ids.as_deref().unwrap_or_default()
     }
     /// The name of the VPC interface that was removed.
     pub fn vpc_interface_name(&self) -> ::std::option::Option<&str> {

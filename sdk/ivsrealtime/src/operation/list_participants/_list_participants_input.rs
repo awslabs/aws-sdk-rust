@@ -69,6 +69,7 @@ pub struct ListParticipantsInputBuilder {
 }
 impl ListParticipantsInputBuilder {
     /// <p>Stage ARN.</p>
+    /// This field is required.
     pub fn stage_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_arn = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +84,7 @@ impl ListParticipantsInputBuilder {
         &self.stage_arn
     }
     /// <p>ID of the session within the stage.</p>
+    /// This field is required.
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
         self
@@ -169,7 +171,7 @@ impl ListParticipantsInputBuilder {
     /// Consumes the builder and constructs a [`ListParticipantsInput`](crate::operation::list_participants::ListParticipantsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_participants::ListParticipantsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_participants::ListParticipantsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_participants::ListParticipantsInput {
             stage_arn: self.stage_arn,
             session_id: self.session_id,

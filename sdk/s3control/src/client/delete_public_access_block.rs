@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeletePublicAccessBlock`](crate::operation::delete_public_access_block::builders::DeletePublicAccessBlockFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::operation::delete_public_access_block::builders::DeletePublicAccessBlockFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::delete_public_access_block::builders::DeletePublicAccessBlockFluentBuilder::set_account_id): <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to remove.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::operation::delete_public_access_block::builders::DeletePublicAccessBlockFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::delete_public_access_block::builders::DeletePublicAccessBlockFluentBuilder::set_account_id):<br>required: **true**<br><p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to remove.</p><br>
     /// - On success, responds with [`DeletePublicAccessBlockOutput`](crate::operation::delete_public_access_block::DeletePublicAccessBlockOutput)
     /// - On failure, responds with [`SdkError<DeletePublicAccessBlockError>`](crate::operation::delete_public_access_block::DeletePublicAccessBlockError)
     pub fn delete_public_access_block(&self) -> crate::operation::delete_public_access_block::builders::DeletePublicAccessBlockFluentBuilder {

@@ -5,30 +5,33 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfigurationSetInformation {
     /// <p>The Resource Name (ARN) of the ConfigurationSet.</p>
-    pub configuration_set_arn: ::std::option::Option<::std::string::String>,
+    pub configuration_set_arn: ::std::string::String,
     /// <p>The name of the ConfigurationSet.</p>
-    pub configuration_set_name: ::std::option::Option<::std::string::String>,
+    pub configuration_set_name: ::std::string::String,
     /// <p>An array of EventDestination objects that describe any events to log and where to log them.</p>
-    pub event_destinations: ::std::option::Option<::std::vec::Vec<crate::types::EventDestination>>,
+    pub event_destinations: ::std::vec::Vec<crate::types::EventDestination>,
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
     pub default_message_type: ::std::option::Option<crate::types::MessageType>,
     /// <p>The default sender ID used by the ConfigurationSet.</p>
     pub default_sender_id: ::std::option::Option<::std::string::String>,
     /// <p>The time when the ConfigurationSet was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_timestamp: ::aws_smithy_types::DateTime,
 }
 impl ConfigurationSetInformation {
     /// <p>The Resource Name (ARN) of the ConfigurationSet.</p>
-    pub fn configuration_set_arn(&self) -> ::std::option::Option<&str> {
-        self.configuration_set_arn.as_deref()
+    pub fn configuration_set_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.configuration_set_arn.deref()
     }
     /// <p>The name of the ConfigurationSet.</p>
-    pub fn configuration_set_name(&self) -> ::std::option::Option<&str> {
-        self.configuration_set_name.as_deref()
+    pub fn configuration_set_name(&self) -> &str {
+        use std::ops::Deref;
+        self.configuration_set_name.deref()
     }
     /// <p>An array of EventDestination objects that describe any events to log and where to log them.</p>
-    pub fn event_destinations(&self) -> ::std::option::Option<&[crate::types::EventDestination]> {
-        self.event_destinations.as_deref()
+    pub fn event_destinations(&self) -> &[crate::types::EventDestination] {
+        use std::ops::Deref;
+        self.event_destinations.deref()
     }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
     pub fn default_message_type(&self) -> ::std::option::Option<&crate::types::MessageType> {
@@ -39,8 +42,8 @@ impl ConfigurationSetInformation {
         self.default_sender_id.as_deref()
     }
     /// <p>The time when the ConfigurationSet was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_timestamp.as_ref()
+    pub fn created_timestamp(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_timestamp
     }
 }
 impl ConfigurationSetInformation {
@@ -63,6 +66,7 @@ pub struct ConfigurationSetInformationBuilder {
 }
 impl ConfigurationSetInformationBuilder {
     /// <p>The Resource Name (ARN) of the ConfigurationSet.</p>
+    /// This field is required.
     pub fn configuration_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_arn = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +81,7 @@ impl ConfigurationSetInformationBuilder {
         &self.configuration_set_arn
     }
     /// <p>The name of the ConfigurationSet.</p>
+    /// This field is required.
     pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
@@ -139,6 +144,7 @@ impl ConfigurationSetInformationBuilder {
         &self.default_sender_id
     }
     /// <p>The time when the ConfigurationSet was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
+    /// This field is required.
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_timestamp = ::std::option::Option::Some(input);
         self
@@ -153,14 +159,39 @@ impl ConfigurationSetInformationBuilder {
         &self.created_timestamp
     }
     /// Consumes the builder and constructs a [`ConfigurationSetInformation`](crate::types::ConfigurationSetInformation).
-    pub fn build(self) -> crate::types::ConfigurationSetInformation {
-        crate::types::ConfigurationSetInformation {
-            configuration_set_arn: self.configuration_set_arn,
-            configuration_set_name: self.configuration_set_name,
-            event_destinations: self.event_destinations,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`configuration_set_arn`](crate::types::builders::ConfigurationSetInformationBuilder::configuration_set_arn)
+    /// - [`configuration_set_name`](crate::types::builders::ConfigurationSetInformationBuilder::configuration_set_name)
+    /// - [`event_destinations`](crate::types::builders::ConfigurationSetInformationBuilder::event_destinations)
+    /// - [`created_timestamp`](crate::types::builders::ConfigurationSetInformationBuilder::created_timestamp)
+    pub fn build(self) -> ::std::result::Result<crate::types::ConfigurationSetInformation, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ConfigurationSetInformation {
+            configuration_set_arn: self.configuration_set_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "configuration_set_arn",
+                    "configuration_set_arn was not specified but it is required when building ConfigurationSetInformation",
+                )
+            })?,
+            configuration_set_name: self.configuration_set_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "configuration_set_name",
+                    "configuration_set_name was not specified but it is required when building ConfigurationSetInformation",
+                )
+            })?,
+            event_destinations: self.event_destinations.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "event_destinations",
+                    "event_destinations was not specified but it is required when building ConfigurationSetInformation",
+                )
+            })?,
             default_message_type: self.default_message_type,
             default_sender_id: self.default_sender_id,
-            created_timestamp: self.created_timestamp,
-        }
+            created_timestamp: self.created_timestamp.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_timestamp",
+                    "created_timestamp was not specified but it is required when building ConfigurationSetInformation",
+                )
+            })?,
+        })
     }
 }

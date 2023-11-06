@@ -12,13 +12,17 @@ pub struct TransactGetItemsOutput {
 }
 impl TransactGetItemsOutput {
     /// <p>If the <i>ReturnConsumedCapacity</i> value was <code>TOTAL</code>, this is an array of <code>ConsumedCapacity</code> objects, one for each table addressed by <code>TransactGetItem</code> objects in the <i>TransactItems</i> parameter. These <code>ConsumedCapacity</code> objects report the read-capacity units consumed by the <code>TransactGetItems</code> call in that table.</p>
-    pub fn consumed_capacity(&self) -> ::std::option::Option<&[crate::types::ConsumedCapacity]> {
-        self.consumed_capacity.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.consumed_capacity.is_none()`.
+    pub fn consumed_capacity(&self) -> &[crate::types::ConsumedCapacity] {
+        self.consumed_capacity.as_deref().unwrap_or_default()
     }
     /// <p>An ordered array of up to 100 <code>ItemResponse</code> objects, each of which corresponds to the <code>TransactGetItem</code> object in the same position in the <i>TransactItems</i> array. Each <code>ItemResponse</code> object contains a Map of the name-value pairs that are the projected attributes of the requested item.</p>
     /// <p>If a requested item could not be retrieved, the corresponding <code>ItemResponse</code> object is Null, or if the requested item has no projected attributes, the corresponding <code>ItemResponse</code> object is an empty Map. </p>
-    pub fn responses(&self) -> ::std::option::Option<&[crate::types::ItemResponse]> {
-        self.responses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.responses.is_none()`.
+    pub fn responses(&self) -> &[crate::types::ItemResponse] {
+        self.responses.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for TransactGetItemsOutput {

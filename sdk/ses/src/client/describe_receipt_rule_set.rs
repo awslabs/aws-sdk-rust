@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeReceiptRuleSet`](crate::operation::describe_receipt_rule_set::builders::DescribeReceiptRuleSetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`rule_set_name(impl Into<String>)`](crate::operation::describe_receipt_rule_set::builders::DescribeReceiptRuleSetFluentBuilder::rule_set_name) / [`set_rule_set_name(Option<String>)`](crate::operation::describe_receipt_rule_set::builders::DescribeReceiptRuleSetFluentBuilder::set_rule_set_name): <p>The name of the receipt rule set to describe.</p>
+    ///   - [`rule_set_name(impl Into<String>)`](crate::operation::describe_receipt_rule_set::builders::DescribeReceiptRuleSetFluentBuilder::rule_set_name) / [`set_rule_set_name(Option<String>)`](crate::operation::describe_receipt_rule_set::builders::DescribeReceiptRuleSetFluentBuilder::set_rule_set_name):<br>required: **true**<br><p>The name of the receipt rule set to describe.</p><br>
     /// - On success, responds with [`DescribeReceiptRuleSetOutput`](crate::operation::describe_receipt_rule_set::DescribeReceiptRuleSetOutput) with field(s):
     ///   - [`metadata(Option<ReceiptRuleSetMetadata>)`](crate::operation::describe_receipt_rule_set::DescribeReceiptRuleSetOutput::metadata): <p>The metadata for the receipt rule set, which consists of the rule set name and the timestamp of when the rule set was created.</p>
-    ///   - [`rules(Option<Vec<ReceiptRule>>)`](crate::operation::describe_receipt_rule_set::DescribeReceiptRuleSetOutput::rules): <p>A list of the receipt rules that belong to the specified receipt rule set.</p>
+    ///   - [`rules(Option<Vec::<ReceiptRule>>)`](crate::operation::describe_receipt_rule_set::DescribeReceiptRuleSetOutput::rules): <p>A list of the receipt rules that belong to the specified receipt rule set.</p>
     /// - On failure, responds with [`SdkError<DescribeReceiptRuleSetError>`](crate::operation::describe_receipt_rule_set::DescribeReceiptRuleSetError)
     pub fn describe_receipt_rule_set(&self) -> crate::operation::describe_receipt_rule_set::builders::DescribeReceiptRuleSetFluentBuilder {
         crate::operation::describe_receipt_rule_set::builders::DescribeReceiptRuleSetFluentBuilder::new(self.handle.clone())

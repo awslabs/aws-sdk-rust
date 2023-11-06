@@ -14,8 +14,10 @@ impl UpdateConnectivityInfoInput {
         self.thing_name.as_deref()
     }
     /// <p>The connectivity information for the core device.</p>
-    pub fn connectivity_info(&self) -> ::std::option::Option<&[crate::types::ConnectivityInfo]> {
-        self.connectivity_info.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connectivity_info.is_none()`.
+    pub fn connectivity_info(&self) -> &[crate::types::ConnectivityInfo] {
+        self.connectivity_info.as_deref().unwrap_or_default()
     }
 }
 impl UpdateConnectivityInfoInput {
@@ -34,6 +36,7 @@ pub struct UpdateConnectivityInfoInputBuilder {
 }
 impl UpdateConnectivityInfoInputBuilder {
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
+    /// This field is required.
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_name = ::std::option::Option::Some(input.into());
         self
@@ -70,8 +73,10 @@ impl UpdateConnectivityInfoInputBuilder {
     /// Consumes the builder and constructs a [`UpdateConnectivityInfoInput`](crate::operation::update_connectivity_info::UpdateConnectivityInfoInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_connectivity_info::UpdateConnectivityInfoInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::update_connectivity_info::UpdateConnectivityInfoInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::update_connectivity_info::UpdateConnectivityInfoInput {
             thing_name: self.thing_name,
             connectivity_info: self.connectivity_info,

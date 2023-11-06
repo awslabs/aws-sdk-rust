@@ -109,16 +109,22 @@ impl CreateFileSystemInput {
     }
     /// <p>Specifies the IDs of the subnets that the file system will be accessible from. For Windows and ONTAP <code>MULTI_AZ_1</code> deployment types,provide exactly two subnet IDs, one for the preferred file server and one for the standby file server. You specify one of these subnets as the preferred subnet using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> or <code>OntapConfiguration &gt; PreferredSubnetID</code> properties. For more information about Multi-AZ file system configuration, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html"> Availability and durability: Single-AZ and Multi-AZ file systems</a> in the <i>Amazon FSx for Windows User Guide</i> and <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html"> Availability and durability</a> in the <i>Amazon FSx for ONTAP User Guide</i>.</p>
     /// <p>For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> and all Lustre deployment types, provide exactly one subnet ID. The file server is launched in that subnet's Availability Zone.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        self.subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>A list of IDs specifying the security groups to apply to all network interfaces created for file system access. This list isn't returned in later requests to describe the file system.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>The tags to apply to the file system that's being created. The key value of the <code>Name</code> tag appears in the console as the file system name.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on Amazon FSx file systems, as follows:</p>
     /// <ul>
@@ -208,6 +214,7 @@ impl CreateFileSystemInputBuilder {
         &self.client_request_token
     }
     /// <p>The type of Amazon FSx file system to create. Valid values are <code>WINDOWS</code>, <code>LUSTRE</code>, <code>ONTAP</code>, and <code>OPENZFS</code>.</p>
+    /// This field is required.
     pub fn file_system_type(mut self, input: crate::types::FileSystemType) -> Self {
         self.file_system_type = ::std::option::Option::Some(input);
         self
@@ -235,6 +242,7 @@ impl CreateFileSystemInputBuilder {
     /// <li> <p>For SSD storage, valid values are 32 GiB-65,536 GiB (64 TiB).</p> </li>
     /// <li> <p>For HDD storage, valid values are 2000 GiB-65,536 GiB (64 TiB).</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn storage_capacity(mut self, input: i32) -> Self {
         self.storage_capacity = ::std::option::Option::Some(input);
         self
@@ -519,7 +527,7 @@ impl CreateFileSystemInputBuilder {
     /// Consumes the builder and constructs a [`CreateFileSystemInput`](crate::operation::create_file_system::CreateFileSystemInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_file_system::CreateFileSystemInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_file_system::CreateFileSystemInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_file_system::CreateFileSystemInput {
             client_request_token: self.client_request_token,
             file_system_type: self.file_system_type,

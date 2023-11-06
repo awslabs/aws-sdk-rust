@@ -9,11 +9,11 @@
 pub struct ManagedRuleSet {
     /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
     /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use. </p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>A description of the set that helps with identification. </p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The versions of this managed rule set that are available for use by customers. </p>
@@ -34,16 +34,19 @@ pub struct ManagedRuleSet {
 impl ManagedRuleSet {
     /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
     /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use. </p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>A description of the set that helps with identification. </p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -94,6 +97,7 @@ pub struct ManagedRuleSetBuilder {
 impl ManagedRuleSetBuilder {
     /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
     /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -110,6 +114,7 @@ impl ManagedRuleSetBuilder {
         &self.name
     }
     /// <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -124,6 +129,7 @@ impl ManagedRuleSetBuilder {
         &self.id
     }
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -229,15 +235,34 @@ impl ManagedRuleSetBuilder {
         &self.label_namespace
     }
     /// Consumes the builder and constructs a [`ManagedRuleSet`](crate::types::ManagedRuleSet).
-    pub fn build(self) -> crate::types::ManagedRuleSet {
-        crate::types::ManagedRuleSet {
-            name: self.name,
-            id: self.id,
-            arn: self.arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::ManagedRuleSetBuilder::name)
+    /// - [`id`](crate::types::builders::ManagedRuleSetBuilder::id)
+    /// - [`arn`](crate::types::builders::ManagedRuleSetBuilder::arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::ManagedRuleSet, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ManagedRuleSet {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ManagedRuleSet",
+                )
+            })?,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building ManagedRuleSet",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building ManagedRuleSet",
+                )
+            })?,
             description: self.description,
             published_versions: self.published_versions,
             recommended_version: self.recommended_version,
             label_namespace: self.label_namespace,
-        }
+        })
     }
 }

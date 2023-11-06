@@ -16,8 +16,10 @@ impl InviteUsersInput {
         self.account_id.as_deref()
     }
     /// <p>The user email addresses to which to send the email invitation.</p>
-    pub fn user_email_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.user_email_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_email_list.is_none()`.
+    pub fn user_email_list(&self) -> &[::std::string::String] {
+        self.user_email_list.as_deref().unwrap_or_default()
     }
     /// <p>The user type.</p>
     pub fn user_type(&self) -> ::std::option::Option<&crate::types::UserType> {
@@ -41,6 +43,7 @@ pub struct InviteUsersInputBuilder {
 }
 impl InviteUsersInputBuilder {
     /// <p>The Amazon Chime account ID.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -89,7 +92,7 @@ impl InviteUsersInputBuilder {
         &self.user_type
     }
     /// Consumes the builder and constructs a [`InviteUsersInput`](crate::operation::invite_users::InviteUsersInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::invite_users::InviteUsersInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::invite_users::InviteUsersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::invite_users::InviteUsersInput {
             account_id: self.account_id,
             user_email_list: self.user_email_list,

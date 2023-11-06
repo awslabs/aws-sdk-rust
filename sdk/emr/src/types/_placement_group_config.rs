@@ -41,6 +41,7 @@ pub struct PlacementGroupConfigBuilder {
 impl PlacementGroupConfigBuilder {
     /// <p>Role of the instance in the cluster.</p>
     /// <p>Starting with Amazon EMR release 5.23.0, the only supported instance role is <code>MASTER</code>.</p>
+    /// This field is required.
     pub fn instance_role(mut self, input: crate::types::InstanceRoleType) -> Self {
         self.instance_role = ::std::option::Option::Some(input);
         self

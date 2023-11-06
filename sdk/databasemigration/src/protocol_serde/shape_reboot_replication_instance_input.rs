@@ -2,7 +2,7 @@
 pub fn ser_reboot_replication_instance_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::reboot_replication_instance::RebootReplicationInstanceInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.replication_instance_arn {
         object.key("ReplicationInstanceArn").string(var_1.as_str());
     }

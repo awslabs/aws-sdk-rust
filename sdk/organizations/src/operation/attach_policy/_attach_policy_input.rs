@@ -49,6 +49,7 @@ pub struct AttachPolicyInputBuilder {
 impl AttachPolicyInputBuilder {
     /// <p>The unique identifier (ID) of the policy that you want to attach to the target. You can get the ID for the policy by calling the <code>ListPolicies</code> operation.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
+    /// This field is required.
     pub fn policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_id = ::std::option::Option::Some(input.into());
         self
@@ -71,6 +72,7 @@ impl AttachPolicyInputBuilder {
     /// <li> <p> <b>Account</b> - A string that consists of exactly 12 digits.</p> </li>
     /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_id = ::std::option::Option::Some(input.into());
         self
@@ -97,7 +99,9 @@ impl AttachPolicyInputBuilder {
         &self.target_id
     }
     /// Consumes the builder and constructs a [`AttachPolicyInput`](crate::operation::attach_policy::AttachPolicyInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::attach_policy::AttachPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::attach_policy::AttachPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::attach_policy::AttachPolicyInput {
             policy_id: self.policy_id,
             target_id: self.target_id,

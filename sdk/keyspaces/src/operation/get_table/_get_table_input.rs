@@ -34,6 +34,7 @@ pub struct GetTableInputBuilder {
 }
 impl GetTableInputBuilder {
     /// <p>The name of the keyspace that the table is stored in.</p>
+    /// This field is required.
     pub fn keyspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.keyspace_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetTableInputBuilder {
         &self.keyspace_name
     }
     /// <p>The name of the table.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,7 @@ impl GetTableInputBuilder {
         &self.table_name
     }
     /// Consumes the builder and constructs a [`GetTableInput`](crate::operation::get_table::GetTableInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_table::GetTableInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_table::GetTableInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_table::GetTableInput {
             keyspace_name: self.keyspace_name,
             table_name: self.table_name,

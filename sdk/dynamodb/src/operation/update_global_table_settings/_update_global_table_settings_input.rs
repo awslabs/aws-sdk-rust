@@ -45,14 +45,16 @@ impl UpdateGlobalTableSettingsInput {
         self.global_table_provisioned_write_capacity_auto_scaling_settings_update.as_ref()
     }
     /// <p>Represents the settings of a global secondary index for a global table that will be modified.</p>
-    pub fn global_table_global_secondary_index_settings_update(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::GlobalTableGlobalSecondaryIndexSettingsUpdate]> {
-        self.global_table_global_secondary_index_settings_update.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.global_table_global_secondary_index_settings_update.is_none()`.
+    pub fn global_table_global_secondary_index_settings_update(&self) -> &[crate::types::GlobalTableGlobalSecondaryIndexSettingsUpdate] {
+        self.global_table_global_secondary_index_settings_update.as_deref().unwrap_or_default()
     }
     /// <p>Represents the settings for a global table in a Region that will be modified.</p>
-    pub fn replica_settings_update(&self) -> ::std::option::Option<&[crate::types::ReplicaSettingsUpdate]> {
-        self.replica_settings_update.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replica_settings_update.is_none()`.
+    pub fn replica_settings_update(&self) -> &[crate::types::ReplicaSettingsUpdate] {
+        self.replica_settings_update.as_deref().unwrap_or_default()
     }
 }
 impl UpdateGlobalTableSettingsInput {
@@ -76,6 +78,7 @@ pub struct UpdateGlobalTableSettingsInputBuilder {
 }
 impl UpdateGlobalTableSettingsInputBuilder {
     /// <p>The name of the global table</p>
+    /// This field is required.
     pub fn global_table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_table_name = ::std::option::Option::Some(input.into());
         self
@@ -198,7 +201,7 @@ impl UpdateGlobalTableSettingsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_global_table_settings::UpdateGlobalTableSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_global_table_settings::UpdateGlobalTableSettingsInput {
             global_table_name: self.global_table_name,

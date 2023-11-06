@@ -12,9 +12,9 @@ pub struct AnomalySubscription {
     /// <p>Your unique account identifier. </p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of cost anomaly monitors. </p>
-    pub monitor_arn_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub monitor_arn_list: ::std::vec::Vec<::std::string::String>,
     /// <p>A list of subscribers to notify. </p>
-    pub subscribers: ::std::option::Option<::std::vec::Vec<crate::types::Subscriber>>,
+    pub subscribers: ::std::vec::Vec<crate::types::Subscriber>,
     /// <p>(deprecated)</p>
     /// <p>An absolute dollar value that must be exceeded by the anomaly's total impact (see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Impact.html">Impact</a> for more details) for an anomaly notification to be generated.</p>
     /// <p>This field has been deprecated. To specify a threshold, use ThresholdExpression. Continued use of Threshold will be treated as shorthand syntax for a ThresholdExpression.</p>
@@ -22,9 +22,9 @@ pub struct AnomalySubscription {
     #[deprecated(note = "Threshold has been deprecated in favor of ThresholdExpression")]
     pub threshold: ::std::option::Option<f64>,
     /// <p>The frequency that anomaly notifications are sent. Notifications are sent either over email (for DAILY and WEEKLY frequencies) or SNS (for IMMEDIATE frequency). For more information, see <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ad-SNS.html">Creating an Amazon SNS topic for anomaly notifications</a>.</p>
-    pub frequency: ::std::option::Option<crate::types::AnomalySubscriptionFrequency>,
+    pub frequency: crate::types::AnomalySubscriptionFrequency,
     /// <p>The name for the subscription. </p>
-    pub subscription_name: ::std::option::Option<::std::string::String>,
+    pub subscription_name: ::std::string::String,
     /// <p>An <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object used to specify the anomalies that you want to generate alerts for. This supports dimensions and nested expressions. The supported dimensions are <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>, corresponding to an anomaly’s TotalImpact and TotalImpactPercentage, respectively (see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Impact.html">Impact</a> for more details). The supported nested expression types are <code>AND</code> and <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between 0 and 10,000,000,000 in string format.</p>
     /// <p>One of Threshold or ThresholdExpression is required for this resource. You cannot specify both.</p>
     /// <p>The following are examples of valid ThresholdExpressions:</p>
@@ -46,12 +46,14 @@ impl AnomalySubscription {
         self.account_id.as_deref()
     }
     /// <p>A list of cost anomaly monitors. </p>
-    pub fn monitor_arn_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.monitor_arn_list.as_deref()
+    pub fn monitor_arn_list(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.monitor_arn_list.deref()
     }
     /// <p>A list of subscribers to notify. </p>
-    pub fn subscribers(&self) -> ::std::option::Option<&[crate::types::Subscriber]> {
-        self.subscribers.as_deref()
+    pub fn subscribers(&self) -> &[crate::types::Subscriber] {
+        use std::ops::Deref;
+        self.subscribers.deref()
     }
     /// <p>(deprecated)</p>
     /// <p>An absolute dollar value that must be exceeded by the anomaly's total impact (see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Impact.html">Impact</a> for more details) for an anomaly notification to be generated.</p>
@@ -62,12 +64,13 @@ impl AnomalySubscription {
         self.threshold
     }
     /// <p>The frequency that anomaly notifications are sent. Notifications are sent either over email (for DAILY and WEEKLY frequencies) or SNS (for IMMEDIATE frequency). For more information, see <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ad-SNS.html">Creating an Amazon SNS topic for anomaly notifications</a>.</p>
-    pub fn frequency(&self) -> ::std::option::Option<&crate::types::AnomalySubscriptionFrequency> {
-        self.frequency.as_ref()
+    pub fn frequency(&self) -> &crate::types::AnomalySubscriptionFrequency {
+        &self.frequency
     }
     /// <p>The name for the subscription. </p>
-    pub fn subscription_name(&self) -> ::std::option::Option<&str> {
-        self.subscription_name.as_deref()
+    pub fn subscription_name(&self) -> &str {
+        use std::ops::Deref;
+        self.subscription_name.deref()
     }
     /// <p>An <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object used to specify the anomalies that you want to generate alerts for. This supports dimensions and nested expressions. The supported dimensions are <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>, corresponding to an anomaly’s TotalImpact and TotalImpactPercentage, respectively (see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Impact.html">Impact</a> for more details). The supported nested expression types are <code>AND</code> and <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between 0 and 10,000,000,000 in string format.</p>
     /// <p>One of Threshold or ThresholdExpression is required for this resource. You cannot specify both.</p>
@@ -198,6 +201,7 @@ impl AnomalySubscriptionBuilder {
         &self.threshold
     }
     /// <p>The frequency that anomaly notifications are sent. Notifications are sent either over email (for DAILY and WEEKLY frequencies) or SNS (for IMMEDIATE frequency). For more information, see <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ad-SNS.html">Creating an Amazon SNS topic for anomaly notifications</a>.</p>
+    /// This field is required.
     pub fn frequency(mut self, input: crate::types::AnomalySubscriptionFrequency) -> Self {
         self.frequency = ::std::option::Option::Some(input);
         self
@@ -212,6 +216,7 @@ impl AnomalySubscriptionBuilder {
         &self.frequency
     }
     /// <p>The name for the subscription. </p>
+    /// This field is required.
     pub fn subscription_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_name = ::std::option::Option::Some(input.into());
         self
@@ -264,16 +269,41 @@ impl AnomalySubscriptionBuilder {
         &self.threshold_expression
     }
     /// Consumes the builder and constructs a [`AnomalySubscription`](crate::types::AnomalySubscription).
-    pub fn build(self) -> crate::types::AnomalySubscription {
-        crate::types::AnomalySubscription {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`monitor_arn_list`](crate::types::builders::AnomalySubscriptionBuilder::monitor_arn_list)
+    /// - [`subscribers`](crate::types::builders::AnomalySubscriptionBuilder::subscribers)
+    /// - [`frequency`](crate::types::builders::AnomalySubscriptionBuilder::frequency)
+    /// - [`subscription_name`](crate::types::builders::AnomalySubscriptionBuilder::subscription_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::AnomalySubscription, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AnomalySubscription {
             subscription_arn: self.subscription_arn,
             account_id: self.account_id,
-            monitor_arn_list: self.monitor_arn_list,
-            subscribers: self.subscribers,
+            monitor_arn_list: self.monitor_arn_list.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "monitor_arn_list",
+                    "monitor_arn_list was not specified but it is required when building AnomalySubscription",
+                )
+            })?,
+            subscribers: self.subscribers.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "subscribers",
+                    "subscribers was not specified but it is required when building AnomalySubscription",
+                )
+            })?,
             threshold: self.threshold,
-            frequency: self.frequency,
-            subscription_name: self.subscription_name,
+            frequency: self.frequency.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "frequency",
+                    "frequency was not specified but it is required when building AnomalySubscription",
+                )
+            })?,
+            subscription_name: self.subscription_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "subscription_name",
+                    "subscription_name was not specified but it is required when building AnomalySubscription",
+                )
+            })?,
             threshold_expression: self.threshold_expression,
-        }
+        })
     }
 }

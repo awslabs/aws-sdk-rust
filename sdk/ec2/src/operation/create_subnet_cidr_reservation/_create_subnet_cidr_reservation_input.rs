@@ -46,8 +46,10 @@ impl CreateSubnetCidrReservationInput {
         self.dry_run
     }
     /// <p>The tags to assign to the subnet CIDR reservation.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
 }
 impl CreateSubnetCidrReservationInput {
@@ -70,6 +72,7 @@ pub struct CreateSubnetCidrReservationInputBuilder {
 }
 impl CreateSubnetCidrReservationInputBuilder {
     /// <p>The ID of the subnet.</p>
+    /// This field is required.
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +87,7 @@ impl CreateSubnetCidrReservationInputBuilder {
         &self.subnet_id
     }
     /// <p>The IPv4 or IPV6 CIDR range to reserve.</p>
+    /// This field is required.
     pub fn cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cidr = ::std::option::Option::Some(input.into());
         self
@@ -102,6 +106,7 @@ impl CreateSubnetCidrReservationInputBuilder {
     /// <li> <p> <code>prefix</code> - Amazon Web Services assigns the reserved IP addresses to network interfaces.</p> </li>
     /// <li> <p> <code>explicit</code> - You assign the reserved IP addresses to network interfaces.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn reservation_type(mut self, input: crate::types::SubnetCidrReservationType) -> Self {
         self.reservation_type = ::std::option::Option::Some(input);
         self
@@ -176,7 +181,7 @@ impl CreateSubnetCidrReservationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_subnet_cidr_reservation::CreateSubnetCidrReservationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_subnet_cidr_reservation::CreateSubnetCidrReservationInput {
             subnet_id: self.subnet_id,

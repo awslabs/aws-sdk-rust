@@ -9,8 +9,10 @@ pub struct OidcMemberDefinition {
 }
 impl OidcMemberDefinition {
     /// <p>A list of comma seperated strings that identifies user groups in your OIDC IdP. Each user group is made up of a group of private workers.</p>
-    pub fn groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
+    pub fn groups(&self) -> &[::std::string::String] {
+        self.groups.as_deref().unwrap_or_default()
     }
 }
 impl OidcMemberDefinition {

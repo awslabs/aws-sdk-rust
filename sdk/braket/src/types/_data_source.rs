@@ -28,6 +28,7 @@ pub struct DataSourceBuilder {
 }
 impl DataSourceBuilder {
     /// <p>Information about the data stored in Amazon S3 used by the Amazon Braket job.</p>
+    /// This field is required.
     pub fn s3_data_source(mut self, input: crate::types::S3DataSource) -> Self {
         self.s3_data_source = ::std::option::Option::Some(input);
         self

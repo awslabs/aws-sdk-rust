@@ -34,8 +34,8 @@ pub fn de_update_cloud_front_origin_access_identity_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "IllegalUpdate" => crate::operation::update_cloud_front_origin_access_identity::UpdateCloudFrontOriginAccessIdentityError::IllegalUpdate({
@@ -50,8 +50,8 @@ pub fn de_update_cloud_front_origin_access_identity_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InconsistentQuantities" => crate::operation::update_cloud_front_origin_access_identity::UpdateCloudFrontOriginAccessIdentityError::InconsistentQuantities({
@@ -66,8 +66,8 @@ pub fn de_update_cloud_front_origin_access_identity_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidArgument" => crate::operation::update_cloud_front_origin_access_identity::UpdateCloudFrontOriginAccessIdentityError::InvalidArgument({
@@ -82,8 +82,8 @@ pub fn de_update_cloud_front_origin_access_identity_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidIfMatchVersion" => crate::operation::update_cloud_front_origin_access_identity::UpdateCloudFrontOriginAccessIdentityError::InvalidIfMatchVersion({
@@ -98,8 +98,8 @@ pub fn de_update_cloud_front_origin_access_identity_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "MissingBody" => crate::operation::update_cloud_front_origin_access_identity::UpdateCloudFrontOriginAccessIdentityError::MissingBody({
@@ -114,8 +114,8 @@ pub fn de_update_cloud_front_origin_access_identity_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NoSuchCloudFrontOriginAccessIdentity" => crate::operation::update_cloud_front_origin_access_identity::UpdateCloudFrontOriginAccessIdentityError::NoSuchCloudFrontOriginAccessIdentity({
@@ -130,8 +130,8 @@ pub fn de_update_cloud_front_origin_access_identity_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "PreconditionFailed" => crate::operation::update_cloud_front_origin_access_identity::UpdateCloudFrontOriginAccessIdentityError::PreconditionFailed({
@@ -146,8 +146,8 @@ pub fn de_update_cloud_front_origin_access_identity_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::update_cloud_front_origin_access_identity::UpdateCloudFrontOriginAccessIdentityError::generic(generic)
@@ -187,13 +187,13 @@ pub fn de_update_cloud_front_origin_access_identity_http_response(
 pub fn ser_update_cloud_front_origin_access_identity_headers(
     input: &crate::operation::update_cloud_front_origin_access_identity::UpdateCloudFrontOriginAccessIdentityInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.if_match {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "if_match",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )

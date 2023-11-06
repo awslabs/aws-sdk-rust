@@ -41,7 +41,7 @@ pub(crate) fn de_list_vod_sources(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Items" => {
-                    builder = builder.set_items(crate::protocol_serde::shape___list_of_vod_source::de___list_of_vod_source(tokens)?);
+                    builder = builder.set_items(crate::protocol_serde::shape_list_of_vod_source::de_list_of_vod_source(tokens)?);
                 }
                 "NextToken" => {
                     builder = builder.set_next_token(

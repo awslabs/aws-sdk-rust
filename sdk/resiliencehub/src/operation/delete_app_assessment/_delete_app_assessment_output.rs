@@ -3,20 +3,21 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAppAssessmentOutput {
-    /// <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub assessment_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
+    pub assessment_arn: ::std::string::String,
     /// <p>The current status of the assessment for the resiliency policy.</p>
-    pub assessment_status: ::std::option::Option<crate::types::AssessmentStatus>,
+    pub assessment_status: crate::types::AssessmentStatus,
     _request_id: Option<String>,
 }
 impl DeleteAppAssessmentOutput {
-    /// <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub fn assessment_arn(&self) -> ::std::option::Option<&str> {
-        self.assessment_arn.as_deref()
+    /// <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
+    pub fn assessment_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.assessment_arn.deref()
     }
     /// <p>The current status of the assessment for the resiliency policy.</p>
-    pub fn assessment_status(&self) -> ::std::option::Option<&crate::types::AssessmentStatus> {
-        self.assessment_status.as_ref()
+    pub fn assessment_status(&self) -> &crate::types::AssessmentStatus {
+        &self.assessment_status
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteAppAssessmentOutput {
@@ -40,21 +41,23 @@ pub struct DeleteAppAssessmentOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteAppAssessmentOutputBuilder {
-    /// <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
+    /// This field is required.
     pub fn assessment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn set_assessment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_arn = input;
         self
     }
-    /// <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn get_assessment_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.assessment_arn
     }
     /// <p>The current status of the assessment for the resiliency policy.</p>
+    /// This field is required.
     pub fn assessment_status(mut self, input: crate::types::AssessmentStatus) -> Self {
         self.assessment_status = ::std::option::Option::Some(input);
         self
@@ -78,11 +81,27 @@ impl DeleteAppAssessmentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteAppAssessmentOutput`](crate::operation::delete_app_assessment::DeleteAppAssessmentOutput).
-    pub fn build(self) -> crate::operation::delete_app_assessment::DeleteAppAssessmentOutput {
-        crate::operation::delete_app_assessment::DeleteAppAssessmentOutput {
-            assessment_arn: self.assessment_arn,
-            assessment_status: self.assessment_status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`assessment_arn`](crate::operation::delete_app_assessment::builders::DeleteAppAssessmentOutputBuilder::assessment_arn)
+    /// - [`assessment_status`](crate::operation::delete_app_assessment::builders::DeleteAppAssessmentOutputBuilder::assessment_status)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_app_assessment::DeleteAppAssessmentOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_app_assessment::DeleteAppAssessmentOutput {
+            assessment_arn: self.assessment_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "assessment_arn",
+                    "assessment_arn was not specified but it is required when building DeleteAppAssessmentOutput",
+                )
+            })?,
+            assessment_status: self.assessment_status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "assessment_status",
+                    "assessment_status was not specified but it is required when building DeleteAppAssessmentOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

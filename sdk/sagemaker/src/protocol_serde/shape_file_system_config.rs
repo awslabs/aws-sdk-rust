@@ -2,7 +2,7 @@
 pub fn ser_file_system_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FileSystemConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.mount_path {
         object.key("MountPath").string(var_1.as_str());
     }

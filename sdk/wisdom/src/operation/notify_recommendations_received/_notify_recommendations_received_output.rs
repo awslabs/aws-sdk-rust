@@ -11,12 +11,16 @@ pub struct NotifyRecommendationsReceivedOutput {
 }
 impl NotifyRecommendationsReceivedOutput {
     /// <p>The identifiers of the recommendations.</p>
-    pub fn recommendation_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.recommendation_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recommendation_ids.is_none()`.
+    pub fn recommendation_ids(&self) -> &[::std::string::String] {
+        self.recommendation_ids.as_deref().unwrap_or_default()
     }
     /// <p>The identifiers of recommendations that are causing errors.</p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::NotifyRecommendationsReceivedError]> {
-        self.errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
+    pub fn errors(&self) -> &[crate::types::NotifyRecommendationsReceivedError] {
+        self.errors.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for NotifyRecommendationsReceivedOutput {

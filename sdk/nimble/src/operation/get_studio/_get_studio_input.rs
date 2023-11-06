@@ -27,6 +27,7 @@ pub struct GetStudioInputBuilder {
 }
 impl GetStudioInputBuilder {
     /// <p>The studio ID. </p>
+    /// This field is required.
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetStudioInputBuilder {
         &self.studio_id
     }
     /// Consumes the builder and constructs a [`GetStudioInput`](crate::operation::get_studio::GetStudioInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_studio::GetStudioInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_studio::GetStudioInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_studio::GetStudioInput { studio_id: self.studio_id })
     }
 }

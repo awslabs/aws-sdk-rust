@@ -2,12 +2,12 @@
 pub fn ser_log_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LogConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.field_log_level {
-        object.key("fieldLogLevel").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("fieldLogLevel").string(input.field_log_level.as_str());
     }
-    if let Some(var_2) = &input.cloud_watch_logs_role_arn {
-        object.key("cloudWatchLogsRoleArn").string(var_2.as_str());
+    {
+        object.key("cloudWatchLogsRoleArn").string(input.cloud_watch_logs_role_arn.as_str());
     }
     if input.exclude_verbose_content {
         object.key("excludeVerboseContent").boolean(input.exclude_verbose_content);
@@ -57,7 +57,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::log_config_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -27,6 +27,7 @@ pub struct SendActivationCodeInputBuilder {
 }
 impl SendActivationCodeInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
+    /// This field is required.
     pub fn contact_channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_channel_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,8 @@ impl SendActivationCodeInputBuilder {
     /// Consumes the builder and constructs a [`SendActivationCodeInput`](crate::operation::send_activation_code::SendActivationCodeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::send_activation_code::SendActivationCodeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::send_activation_code::SendActivationCodeInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::send_activation_code::SendActivationCodeInput {
             contact_channel_id: self.contact_channel_id,
         })

@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DocumentReviews {
     /// <p>The action to take on a document approval review request.</p>
-    pub action: ::std::option::Option<crate::types::DocumentReviewAction>,
+    pub action: crate::types::DocumentReviewAction,
     /// <p>A comment entered by a user in your organization about the document review request.</p>
     pub comment: ::std::option::Option<::std::vec::Vec<crate::types::DocumentReviewCommentSource>>,
 }
 impl DocumentReviews {
     /// <p>The action to take on a document approval review request.</p>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::DocumentReviewAction> {
-        self.action.as_ref()
+    pub fn action(&self) -> &crate::types::DocumentReviewAction {
+        &self.action
     }
     /// <p>A comment entered by a user in your organization about the document review request.</p>
-    pub fn comment(&self) -> ::std::option::Option<&[crate::types::DocumentReviewCommentSource]> {
-        self.comment.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.comment.is_none()`.
+    pub fn comment(&self) -> &[crate::types::DocumentReviewCommentSource] {
+        self.comment.as_deref().unwrap_or_default()
     }
 }
 impl DocumentReviews {
@@ -35,6 +37,7 @@ pub struct DocumentReviewsBuilder {
 }
 impl DocumentReviewsBuilder {
     /// <p>The action to take on a document approval review request.</p>
+    /// This field is required.
     pub fn action(mut self, input: crate::types::DocumentReviewAction) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
@@ -69,10 +72,17 @@ impl DocumentReviewsBuilder {
         &self.comment
     }
     /// Consumes the builder and constructs a [`DocumentReviews`](crate::types::DocumentReviews).
-    pub fn build(self) -> crate::types::DocumentReviews {
-        crate::types::DocumentReviews {
-            action: self.action,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`action`](crate::types::builders::DocumentReviewsBuilder::action)
+    pub fn build(self) -> ::std::result::Result<crate::types::DocumentReviews, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DocumentReviews {
+            action: self.action.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "action",
+                    "action was not specified but it is required when building DocumentReviews",
+                )
+            })?,
             comment: self.comment,
-        }
+        })
     }
 }

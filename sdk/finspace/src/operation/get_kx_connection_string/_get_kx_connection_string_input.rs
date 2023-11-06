@@ -41,6 +41,7 @@ pub struct GetKxConnectionStringInputBuilder {
 }
 impl GetKxConnectionStringInputBuilder {
     /// <p> The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>. </p>
+    /// This field is required.
     pub fn user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl GetKxConnectionStringInputBuilder {
         &self.user_arn
     }
     /// <p>A unique identifier for the kdb environment.</p>
+    /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl GetKxConnectionStringInputBuilder {
         &self.environment_id
     }
     /// <p>A name of the kdb cluster.</p>
+    /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +88,7 @@ impl GetKxConnectionStringInputBuilder {
     /// Consumes the builder and constructs a [`GetKxConnectionStringInput`](crate::operation::get_kx_connection_string::GetKxConnectionStringInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_kx_connection_string::GetKxConnectionStringInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_kx_connection_string::GetKxConnectionStringInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_kx_connection_string::GetKxConnectionStringInput {
             user_arn: self.user_arn,

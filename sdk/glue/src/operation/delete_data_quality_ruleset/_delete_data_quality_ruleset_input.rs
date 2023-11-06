@@ -27,6 +27,7 @@ pub struct DeleteDataQualityRulesetInputBuilder {
 }
 impl DeleteDataQualityRulesetInputBuilder {
     /// <p>A name for the data quality ruleset.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteDataQualityRulesetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_data_quality_ruleset::DeleteDataQualityRulesetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_data_quality_ruleset::DeleteDataQualityRulesetInput { name: self.name })
     }

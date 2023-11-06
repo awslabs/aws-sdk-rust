@@ -11,8 +11,10 @@ pub struct ListGroupResourcesOutput {
 }
 impl ListGroupResourcesOutput {
     /// <p>An array of ARNs. These ARNs are for the canaries that are associated with the group.</p>
-    pub fn resources(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
+    pub fn resources(&self) -> &[::std::string::String] {
+        self.resources.as_deref().unwrap_or_default()
     }
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>ListGroupResources</code> operation to retrieve the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -28,6 +28,7 @@ pub struct CustomPluginLocationBuilder {
 }
 impl CustomPluginLocationBuilder {
     /// <p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the plugin file stored in Amazon S3.</p>
+    /// This field is required.
     pub fn s3_location(mut self, input: crate::types::S3Location) -> Self {
         self.s3_location = ::std::option::Option::Some(input);
         self

@@ -2,7 +2,7 @@
 pub fn ser_aws_backup_backup_plan_lifecycle_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsBackupBackupPlanLifecycleDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.delete_after_days {
         object.key("DeleteAfterDays").number(
             #[allow(clippy::useless_conversion)]

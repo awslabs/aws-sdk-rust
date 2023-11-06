@@ -104,6 +104,7 @@ pub struct GetContainerLogInputBuilder {
 }
 impl GetContainerLogInputBuilder {
     /// <p>The name of the container service for which to get a container log.</p>
+    /// This field is required.
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +119,7 @@ impl GetContainerLogInputBuilder {
         &self.service_name
     }
     /// <p>The name of the container that is either running or previously ran on the container service for which to return a log.</p>
+    /// This field is required.
     pub fn container_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_name = ::std::option::Option::Some(input.into());
         self
@@ -253,7 +255,7 @@ impl GetContainerLogInputBuilder {
     /// Consumes the builder and constructs a [`GetContainerLogInput`](crate::operation::get_container_log::GetContainerLogInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_container_log::GetContainerLogInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_container_log::GetContainerLogInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_container_log::GetContainerLogInput {
             service_name: self.service_name,
             container_name: self.container_name,

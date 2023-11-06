@@ -27,6 +27,7 @@ pub struct DescribeWhatIfForecastExportInputBuilder {
 }
 impl DescribeWhatIfForecastExportInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast export that you are interested in.</p>
+    /// This field is required.
     pub fn what_if_forecast_export_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.what_if_forecast_export_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeWhatIfForecastExportInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_what_if_forecast_export::DescribeWhatIfForecastExportInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_what_if_forecast_export::DescribeWhatIfForecastExportInput {
             what_if_forecast_export_arn: self.what_if_forecast_export_arn,

@@ -88,8 +88,10 @@ impl Bucket {
         self.support_code.as_deref()
     }
     /// <p>The tag keys and optional values for the bucket. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Tags in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether object versioning is enabled for the bucket.</p>
     /// <p>The following options can be configured:</p>
@@ -108,13 +110,17 @@ impl Bucket {
         self.able_to_update_bundle
     }
     /// <p>An array of strings that specify the Amazon Web Services account IDs that have read-only access to the bucket.</p>
-    pub fn readonly_access_accounts(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.readonly_access_accounts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.readonly_access_accounts.is_none()`.
+    pub fn readonly_access_accounts(&self) -> &[::std::string::String] {
+        self.readonly_access_accounts.as_deref().unwrap_or_default()
     }
     /// <p>An array of objects that describe Lightsail instances that have access to the bucket.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action to update the instances that have access to a bucket.</p>
-    pub fn resources_receiving_access(&self) -> ::std::option::Option<&[crate::types::ResourceReceivingAccess]> {
-        self.resources_receiving_access.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources_receiving_access.is_none()`.
+    pub fn resources_receiving_access(&self) -> &[crate::types::ResourceReceivingAccess] {
+        self.resources_receiving_access.as_deref().unwrap_or_default()
     }
     /// <p>An object that describes the state of the bucket.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::BucketState> {

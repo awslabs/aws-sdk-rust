@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionDeclaration {
     /// <p>The action declaration's name.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>Specifies the action type and the provider of the action.</p>
     pub action_type_id: ::std::option::Option<crate::types::ActionTypeId>,
     /// <p>The order in which actions are run.</p>
@@ -28,8 +28,9 @@ pub struct ActionDeclaration {
 }
 impl ActionDeclaration {
     /// <p>The action declaration's name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>Specifies the action type and the provider of the action.</p>
     pub fn action_type_id(&self) -> ::std::option::Option<&crate::types::ActionTypeId> {
@@ -47,12 +48,16 @@ impl ActionDeclaration {
         self.configuration.as_ref()
     }
     /// <p>The name or ID of the result of the action declaration, such as a test or build artifact.</p>
-    pub fn output_artifacts(&self) -> ::std::option::Option<&[crate::types::OutputArtifact]> {
-        self.output_artifacts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_artifacts.is_none()`.
+    pub fn output_artifacts(&self) -> &[crate::types::OutputArtifact] {
+        self.output_artifacts.as_deref().unwrap_or_default()
     }
     /// <p>The name or ID of the artifact consumed by the action, such as a test or build artifact.</p>
-    pub fn input_artifacts(&self) -> ::std::option::Option<&[crate::types::InputArtifact]> {
-        self.input_artifacts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_artifacts.is_none()`.
+    pub fn input_artifacts(&self) -> &[crate::types::InputArtifact] {
+        self.input_artifacts.as_deref().unwrap_or_default()
     }
     /// <p>The ARN of the IAM service role that performs the declared action. This is assumed through the roleArn for the pipeline.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
@@ -90,6 +95,7 @@ pub struct ActionDeclarationBuilder {
 }
 impl ActionDeclarationBuilder {
     /// <p>The action declaration's name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +110,7 @@ impl ActionDeclarationBuilder {
         &self.name
     }
     /// <p>Specifies the action type and the provider of the action.</p>
+    /// This field is required.
     pub fn action_type_id(mut self, input: crate::types::ActionTypeId) -> Self {
         self.action_type_id = ::std::option::Option::Some(input);
         self
@@ -246,9 +253,16 @@ impl ActionDeclarationBuilder {
         &self.namespace
     }
     /// Consumes the builder and constructs a [`ActionDeclaration`](crate::types::ActionDeclaration).
-    pub fn build(self) -> crate::types::ActionDeclaration {
-        crate::types::ActionDeclaration {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::ActionDeclarationBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::ActionDeclaration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ActionDeclaration {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ActionDeclaration",
+                )
+            })?,
             action_type_id: self.action_type_id,
             run_order: self.run_order,
             configuration: self.configuration,
@@ -257,6 +271,6 @@ impl ActionDeclarationBuilder {
             role_arn: self.role_arn,
             region: self.region,
             namespace: self.namespace,
-        }
+        })
     }
 }

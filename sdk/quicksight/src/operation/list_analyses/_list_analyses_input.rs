@@ -41,6 +41,7 @@ pub struct ListAnalysesInputBuilder {
 }
 impl ListAnalysesInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the analyses.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +84,9 @@ impl ListAnalysesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListAnalysesInput`](crate::operation::list_analyses::ListAnalysesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_analyses::ListAnalysesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_analyses::ListAnalysesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_analyses::ListAnalysesInput {
             aws_account_id: self.aws_account_id,
             next_token: self.next_token,

@@ -33,8 +33,10 @@ impl DescribeEndpointConfigOutput {
         self.endpoint_config_arn.as_deref()
     }
     /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint.</p>
-    pub fn production_variants(&self) -> ::std::option::Option<&[crate::types::ProductionVariant]> {
-        self.production_variants.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.production_variants.is_none()`.
+    pub fn production_variants(&self) -> &[crate::types::ProductionVariant] {
+        self.production_variants.as_deref().unwrap_or_default()
     }
     /// <p>Configuration to control how SageMaker captures inference data.</p>
     pub fn data_capture_config(&self) -> ::std::option::Option<&crate::types::DataCaptureConfig> {
@@ -57,8 +59,10 @@ impl DescribeEndpointConfigOutput {
         self.explainer_config.as_ref()
     }
     /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>.</p>
-    pub fn shadow_production_variants(&self) -> ::std::option::Option<&[crate::types::ProductionVariant]> {
-        self.shadow_production_variants.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.shadow_production_variants.is_none()`.
+    pub fn shadow_production_variants(&self) -> &[crate::types::ProductionVariant] {
+        self.shadow_production_variants.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeEndpointConfigOutput {
@@ -90,6 +94,7 @@ pub struct DescribeEndpointConfigOutputBuilder {
 }
 impl DescribeEndpointConfigOutputBuilder {
     /// <p>Name of the SageMaker endpoint configuration.</p>
+    /// This field is required.
     pub fn endpoint_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_config_name = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +109,7 @@ impl DescribeEndpointConfigOutputBuilder {
         &self.endpoint_config_name
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint configuration.</p>
+    /// This field is required.
     pub fn endpoint_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_config_arn = ::std::option::Option::Some(input.into());
         self
@@ -166,6 +172,7 @@ impl DescribeEndpointConfigOutputBuilder {
         &self.kms_key_id
     }
     /// <p>A timestamp that shows when the endpoint configuration was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self

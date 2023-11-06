@@ -39,8 +39,10 @@ impl PhoneNumberInformation {
         self.route_type.as_ref()
     }
     /// <p>The capabilities of each phone number.</p>
-    pub fn number_capabilities(&self) -> ::std::option::Option<&[crate::types::NumberCapability]> {
-        self.number_capabilities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.number_capabilities.is_none()`.
+    pub fn number_capabilities(&self) -> &[crate::types::NumberCapability] {
+        self.number_capabilities.as_deref().unwrap_or_default()
     }
 }
 impl PhoneNumberInformation {

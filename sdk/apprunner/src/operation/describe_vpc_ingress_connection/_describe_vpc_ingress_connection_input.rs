@@ -27,6 +27,7 @@ pub struct DescribeVpcIngressConnectionInputBuilder {
 }
 impl DescribeVpcIngressConnectionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the App Runner VPC Ingress Connection that you want a description for.</p>
+    /// This field is required.
     pub fn vpc_ingress_connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_ingress_connection_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeVpcIngressConnectionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_vpc_ingress_connection::DescribeVpcIngressConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_vpc_ingress_connection::DescribeVpcIngressConnectionInput {
             vpc_ingress_connection_arn: self.vpc_ingress_connection_arn,

@@ -27,8 +27,10 @@ impl GetCostEstimationOutput {
         self.status.as_ref()
     }
     /// <p>An array of <code>ResourceCost</code> objects that each contains details about the monthly cost estimate to analyze one of your Amazon Web Services resources.</p>
-    pub fn costs(&self) -> ::std::option::Option<&[crate::types::ServiceResourceCost]> {
-        self.costs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.costs.is_none()`.
+    pub fn costs(&self) -> &[crate::types::ServiceResourceCost] {
+        self.costs.as_deref().unwrap_or_default()
     }
     /// <p>The start and end time of the cost estimation.</p>
     pub fn time_range(&self) -> ::std::option::Option<&crate::types::CostEstimationTimeRange> {

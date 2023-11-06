@@ -27,6 +27,7 @@ pub struct GetConfiguredTableInputBuilder {
 }
 impl GetConfiguredTableInputBuilder {
     /// <p>The unique ID for the configured table to retrieve.</p>
+    /// This field is required.
     pub fn configured_table_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configured_table_identifier = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,8 @@ impl GetConfiguredTableInputBuilder {
     /// Consumes the builder and constructs a [`GetConfiguredTableInput`](crate::operation::get_configured_table::GetConfiguredTableInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_configured_table::GetConfiguredTableInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_configured_table::GetConfiguredTableInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_configured_table::GetConfiguredTableInput {
             configured_table_identifier: self.configured_table_identifier,
         })

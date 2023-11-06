@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateProject`](crate::operation::update_project::builders::UpdateProjectFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::set_id): <p>The ID of the project you want to update.</p>
-    ///   - [`name(impl Into<String>)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::set_name): <p>The name of the project you want to update.</p>
-    ///   - [`description(impl Into<String>)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::set_description): <p>The description of the project, if any.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::set_id):<br>required: **true**<br><p>The ID of the project you want to update.</p><br>
+    ///   - [`name(impl Into<String>)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::set_name):<br>required: **false**<br><p>The name of the project you want to update.</p><br>
+    ///   - [`description(impl Into<String>)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::set_description):<br>required: **false**<br><p>The description of the project, if any.</p><br>
     /// - On success, responds with [`UpdateProjectOutput`](crate::operation::update_project::UpdateProjectOutput)
     /// - On failure, responds with [`SdkError<UpdateProjectError>`](crate::operation::update_project::UpdateProjectError)
     pub fn update_project(&self) -> crate::operation::update_project::builders::UpdateProjectFluentBuilder {

@@ -34,6 +34,7 @@ pub struct EnableRuleInputBuilder {
 }
 impl EnableRuleInputBuilder {
     /// <p>The name of the rule.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +63,7 @@ impl EnableRuleInputBuilder {
         &self.event_bus_name
     }
     /// Consumes the builder and constructs a [`EnableRuleInput`](crate::operation::enable_rule::EnableRuleInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::enable_rule::EnableRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::enable_rule::EnableRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::enable_rule::EnableRuleInput {
             name: self.name,
             event_bus_name: self.event_bus_name,

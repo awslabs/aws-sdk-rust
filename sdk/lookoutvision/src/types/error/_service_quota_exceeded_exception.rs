@@ -83,6 +83,7 @@ pub struct ServiceQuotaExceededExceptionBuilder {
 }
 impl ServiceQuotaExceededExceptionBuilder {
     #[allow(missing_docs)] // documentation missing in model
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +126,7 @@ impl ServiceQuotaExceededExceptionBuilder {
         &self.resource_type
     }
     /// <p>The quota code. </p>
+    /// This field is required.
     pub fn quota_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.quota_code = ::std::option::Option::Some(input.into());
         self
@@ -139,6 +141,7 @@ impl ServiceQuotaExceededExceptionBuilder {
         &self.quota_code
     }
     /// <p>The service code. </p>
+    /// This field is required.
     pub fn service_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_code = ::std::option::Option::Some(input.into());
         self

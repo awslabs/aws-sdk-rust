@@ -62,7 +62,9 @@ impl ListProjectsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListProjectsInput`](crate::operation::list_projects::ListProjectsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_projects::ListProjectsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_projects::ListProjectsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_projects::ListProjectsInput {
             next_token: self.next_token,
             max_results: self.max_results,

@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateResourceGroupOutput {
     /// <p>The ARN that specifies the resource group that is created.</p>
-    pub resource_group_arn: ::std::option::Option<::std::string::String>,
+    pub resource_group_arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateResourceGroupOutput {
     /// <p>The ARN that specifies the resource group that is created.</p>
-    pub fn resource_group_arn(&self) -> ::std::option::Option<&str> {
-        self.resource_group_arn.as_deref()
+    pub fn resource_group_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_group_arn.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateResourceGroupOutput {
@@ -34,6 +35,7 @@ pub struct CreateResourceGroupOutputBuilder {
 }
 impl CreateResourceGroupOutputBuilder {
     /// <p>The ARN that specifies the resource group that is created.</p>
+    /// This field is required.
     pub fn resource_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_group_arn = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,20 @@ impl CreateResourceGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateResourceGroupOutput`](crate::operation::create_resource_group::CreateResourceGroupOutput).
-    pub fn build(self) -> crate::operation::create_resource_group::CreateResourceGroupOutput {
-        crate::operation::create_resource_group::CreateResourceGroupOutput {
-            resource_group_arn: self.resource_group_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource_group_arn`](crate::operation::create_resource_group::builders::CreateResourceGroupOutputBuilder::resource_group_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_resource_group::CreateResourceGroupOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_resource_group::CreateResourceGroupOutput {
+            resource_group_arn: self.resource_group_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "resource_group_arn",
+                    "resource_group_arn was not specified but it is required when building CreateResourceGroupOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

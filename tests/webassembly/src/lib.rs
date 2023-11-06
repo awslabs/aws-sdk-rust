@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-mod adapter;
 mod default_config;
+mod http;
 mod list_buckets;
 
 #[tokio::main(flavor = "current_thread")]

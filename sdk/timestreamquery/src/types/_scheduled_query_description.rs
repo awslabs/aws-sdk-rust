@@ -5,15 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ScheduledQueryDescription {
     /// <p>Scheduled query ARN.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>Name of the scheduled query.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The query to be run.</p>
-    pub query_string: ::std::option::Option<::std::string::String>,
+    pub query_string: ::std::string::String,
     /// <p>Creation time of the scheduled query.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>State of the scheduled query. </p>
-    pub state: ::std::option::Option<crate::types::ScheduledQueryState>,
+    pub state: crate::types::ScheduledQueryState,
     /// <p>Last time the query was run.</p>
     pub previous_invocation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The next time the scheduled query is scheduled to run.</p>
@@ -37,24 +37,27 @@ pub struct ScheduledQueryDescription {
 }
 impl ScheduledQueryDescription {
     /// <p>Scheduled query ARN.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>Name of the scheduled query.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The query to be run.</p>
-    pub fn query_string(&self) -> ::std::option::Option<&str> {
-        self.query_string.as_deref()
+    pub fn query_string(&self) -> &str {
+        use std::ops::Deref;
+        self.query_string.deref()
     }
     /// <p>Creation time of the scheduled query.</p>
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>State of the scheduled query. </p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ScheduledQueryState> {
-        self.state.as_ref()
+    pub fn state(&self) -> &crate::types::ScheduledQueryState {
+        &self.state
     }
     /// <p>Last time the query was run.</p>
     pub fn previous_invocation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -93,8 +96,10 @@ impl ScheduledQueryDescription {
         self.last_run_summary.as_ref()
     }
     /// <p>Runtime summary for the last five failed scheduled query runs.</p>
-    pub fn recently_failed_runs(&self) -> ::std::option::Option<&[crate::types::ScheduledQueryRunSummary]> {
-        self.recently_failed_runs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recently_failed_runs.is_none()`.
+    pub fn recently_failed_runs(&self) -> &[crate::types::ScheduledQueryRunSummary] {
+        self.recently_failed_runs.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for ScheduledQueryDescription {
@@ -147,6 +152,7 @@ pub struct ScheduledQueryDescriptionBuilder {
 }
 impl ScheduledQueryDescriptionBuilder {
     /// <p>Scheduled query ARN.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -161,6 +167,7 @@ impl ScheduledQueryDescriptionBuilder {
         &self.arn
     }
     /// <p>Name of the scheduled query.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -175,6 +182,7 @@ impl ScheduledQueryDescriptionBuilder {
         &self.name
     }
     /// <p>The query to be run.</p>
+    /// This field is required.
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_string = ::std::option::Option::Some(input.into());
         self
@@ -203,6 +211,7 @@ impl ScheduledQueryDescriptionBuilder {
         &self.creation_time
     }
     /// <p>State of the scheduled query. </p>
+    /// This field is required.
     pub fn state(mut self, input: crate::types::ScheduledQueryState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
@@ -245,6 +254,7 @@ impl ScheduledQueryDescriptionBuilder {
         &self.next_invocation_time
     }
     /// <p>Schedule configuration.</p>
+    /// This field is required.
     pub fn schedule_configuration(mut self, input: crate::types::ScheduleConfiguration) -> Self {
         self.schedule_configuration = ::std::option::Option::Some(input);
         self
@@ -259,6 +269,7 @@ impl ScheduledQueryDescriptionBuilder {
         &self.schedule_configuration
     }
     /// <p>Notification configuration.</p>
+    /// This field is required.
     pub fn notification_configuration(mut self, input: crate::types::NotificationConfiguration) -> Self {
         self.notification_configuration = ::std::option::Option::Some(input);
         self
@@ -363,13 +374,38 @@ impl ScheduledQueryDescriptionBuilder {
         &self.recently_failed_runs
     }
     /// Consumes the builder and constructs a [`ScheduledQueryDescription`](crate::types::ScheduledQueryDescription).
-    pub fn build(self) -> crate::types::ScheduledQueryDescription {
-        crate::types::ScheduledQueryDescription {
-            arn: self.arn,
-            name: self.name,
-            query_string: self.query_string,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::ScheduledQueryDescriptionBuilder::arn)
+    /// - [`name`](crate::types::builders::ScheduledQueryDescriptionBuilder::name)
+    /// - [`query_string`](crate::types::builders::ScheduledQueryDescriptionBuilder::query_string)
+    /// - [`state`](crate::types::builders::ScheduledQueryDescriptionBuilder::state)
+    pub fn build(self) -> ::std::result::Result<crate::types::ScheduledQueryDescription, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ScheduledQueryDescription {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building ScheduledQueryDescription",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ScheduledQueryDescription",
+                )
+            })?,
+            query_string: self.query_string.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "query_string",
+                    "query_string was not specified but it is required when building ScheduledQueryDescription",
+                )
+            })?,
             creation_time: self.creation_time,
-            state: self.state,
+            state: self.state.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "state",
+                    "state was not specified but it is required when building ScheduledQueryDescription",
+                )
+            })?,
             previous_invocation_time: self.previous_invocation_time,
             next_invocation_time: self.next_invocation_time,
             schedule_configuration: self.schedule_configuration,
@@ -380,7 +416,7 @@ impl ScheduledQueryDescriptionBuilder {
             error_report_configuration: self.error_report_configuration,
             last_run_summary: self.last_run_summary,
             recently_failed_runs: self.recently_failed_runs,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for ScheduledQueryDescriptionBuilder {

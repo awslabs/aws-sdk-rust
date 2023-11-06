@@ -33,8 +33,10 @@ impl StopImportOutput {
         self.import_source.as_ref()
     }
     /// <p> The ARN of the destination event data store. </p>
-    pub fn destinations(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.destinations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destinations.is_none()`.
+    pub fn destinations(&self) -> &[::std::string::String] {
+        self.destinations.as_deref().unwrap_or_default()
     }
     /// <p> The status of the import. </p>
     pub fn import_status(&self) -> ::std::option::Option<&crate::types::ImportStatus> {

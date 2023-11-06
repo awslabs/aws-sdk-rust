@@ -9,8 +9,10 @@ pub struct LicenseUsage {
 }
 impl LicenseUsage {
     /// <p>License entitlement usages.</p>
-    pub fn entitlement_usages(&self) -> ::std::option::Option<&[crate::types::EntitlementUsage]> {
-        self.entitlement_usages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entitlement_usages.is_none()`.
+    pub fn entitlement_usages(&self) -> &[crate::types::EntitlementUsage] {
+        self.entitlement_usages.as_deref().unwrap_or_default()
     }
 }
 impl LicenseUsage {

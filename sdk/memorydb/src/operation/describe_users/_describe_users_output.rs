@@ -11,8 +11,10 @@ pub struct DescribeUsersOutput {
 }
 impl DescribeUsersOutput {
     /// <p>A list of users.</p>
-    pub fn users(&self) -> ::std::option::Option<&[crate::types::User]> {
-        self.users.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.users.is_none()`.
+    pub fn users(&self) -> &[crate::types::User] {
+        self.users.as_deref().unwrap_or_default()
     }
     /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -12,8 +12,10 @@ pub struct DescribeFileSystemsOutput {
 }
 impl DescribeFileSystemsOutput {
     /// <p>An array of file system descriptions.</p>
-    pub fn file_systems(&self) -> ::std::option::Option<&[crate::types::FileSystem]> {
-        self.file_systems.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.file_systems.is_none()`.
+    pub fn file_systems(&self) -> &[crate::types::FileSystem] {
+        self.file_systems.as_deref().unwrap_or_default()
     }
     /// <p>Present if there are more file systems than returned in the response (String). You can use the <code>NextToken</code> value in the later request to fetch the descriptions. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

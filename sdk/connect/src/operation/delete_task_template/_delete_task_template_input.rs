@@ -34,6 +34,7 @@ pub struct DeleteTaskTemplateInputBuilder {
 }
 impl DeleteTaskTemplateInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteTaskTemplateInputBuilder {
         &self.instance_id
     }
     /// <p>A unique identifier for the task template.</p>
+    /// This field is required.
     pub fn task_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_template_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,8 @@ impl DeleteTaskTemplateInputBuilder {
     /// Consumes the builder and constructs a [`DeleteTaskTemplateInput`](crate::operation::delete_task_template::DeleteTaskTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_task_template::DeleteTaskTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_task_template::DeleteTaskTemplateInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_task_template::DeleteTaskTemplateInput {
             instance_id: self.instance_id,
             task_template_id: self.task_template_id,

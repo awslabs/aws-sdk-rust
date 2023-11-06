@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPrefetchSchedulesInput {
     /// <p>The maximum number of prefetch schedules that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> prefetch schedules, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>(Optional) If the playback configuration has more than <code>MaxResults</code> prefetch schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p>
     /// <p> For the first <code>ListPrefetchSchedulesRequest</code> request, omit this value.</p>
     /// <p> For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>
@@ -17,7 +17,7 @@ pub struct ListPrefetchSchedulesInput {
 }
 impl ListPrefetchSchedulesInput {
     /// <p>The maximum number of prefetch schedules that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> prefetch schedules, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>(Optional) If the playback configuration has more than <code>MaxResults</code> prefetch schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p>
@@ -91,6 +91,7 @@ impl ListPrefetchSchedulesInputBuilder {
         &self.next_token
     }
     /// <p>Retrieves the prefetch schedule(s) for a specific playback configuration.</p>
+    /// This field is required.
     pub fn playback_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.playback_configuration_name = ::std::option::Option::Some(input.into());
         self
@@ -121,10 +122,10 @@ impl ListPrefetchSchedulesInputBuilder {
     /// Consumes the builder and constructs a [`ListPrefetchSchedulesInput`](crate::operation::list_prefetch_schedules::ListPrefetchSchedulesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_prefetch_schedules::ListPrefetchSchedulesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_prefetch_schedules::ListPrefetchSchedulesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_prefetch_schedules::ListPrefetchSchedulesInput {
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
             playback_configuration_name: self.playback_configuration_name,
             stream_id: self.stream_id,

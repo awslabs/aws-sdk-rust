@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEndpointsOutput {
     /// <p>An <code>Endpoints</code> object is returned when a <code>DescribeEndpoints</code> request is made.</p>
-    pub endpoints: ::std::option::Option<::std::vec::Vec<crate::types::Endpoint>>,
+    pub endpoints: ::std::vec::Vec<crate::types::Endpoint>,
     _request_id: Option<String>,
 }
 impl DescribeEndpointsOutput {
     /// <p>An <code>Endpoints</code> object is returned when a <code>DescribeEndpoints</code> request is made.</p>
-    pub fn endpoints(&self) -> ::std::option::Option<&[crate::types::Endpoint]> {
-        self.endpoints.as_deref()
+    pub fn endpoints(&self) -> &[crate::types::Endpoint] {
+        use std::ops::Deref;
+        self.endpoints.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeEndpointsOutput {
@@ -63,10 +64,19 @@ impl DescribeEndpointsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeEndpointsOutput`](crate::operation::describe_endpoints::DescribeEndpointsOutput).
-    pub fn build(self) -> crate::operation::describe_endpoints::DescribeEndpointsOutput {
-        crate::operation::describe_endpoints::DescribeEndpointsOutput {
-            endpoints: self.endpoints,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`endpoints`](crate::operation::describe_endpoints::builders::DescribeEndpointsOutputBuilder::endpoints)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_endpoints::DescribeEndpointsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_endpoints::DescribeEndpointsOutput {
+            endpoints: self.endpoints.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "endpoints",
+                    "endpoints was not specified but it is required when building DescribeEndpointsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

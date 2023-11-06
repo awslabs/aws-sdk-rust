@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ExecuteGremlinExplainQuery`](crate::operation::execute_gremlin_explain_query::builders::ExecuteGremlinExplainQueryFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`gremlin_query(impl Into<String>)`](crate::operation::execute_gremlin_explain_query::builders::ExecuteGremlinExplainQueryFluentBuilder::gremlin_query) / [`set_gremlin_query(Option<String>)`](crate::operation::execute_gremlin_explain_query::builders::ExecuteGremlinExplainQueryFluentBuilder::set_gremlin_query): <p>The Gremlin explain query string.</p>
+    ///   - [`gremlin_query(impl Into<String>)`](crate::operation::execute_gremlin_explain_query::builders::ExecuteGremlinExplainQueryFluentBuilder::gremlin_query) / [`set_gremlin_query(Option<String>)`](crate::operation::execute_gremlin_explain_query::builders::ExecuteGremlinExplainQueryFluentBuilder::set_gremlin_query):<br>required: **true**<br><p>The Gremlin explain query string.</p><br>
     /// - On success, responds with [`ExecuteGremlinExplainQueryOutput`](crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryOutput) with field(s):
     ///   - [`output(Option<Blob>)`](crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryOutput::output): <p>A text blob containing the Gremlin explain result, as described in <a href="https://docs.aws.amazon.com/neptune/latest/userguide/gremlin-traversal-tuning.html">Tuning Gremlin queries</a>.</p>
     /// - On failure, responds with [`SdkError<ExecuteGremlinExplainQueryError>`](crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError)

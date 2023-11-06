@@ -27,6 +27,7 @@ pub struct DescribeWorkspaceSnapshotsInputBuilder {
 }
 impl DescribeWorkspaceSnapshotsInputBuilder {
     /// <p>The identifier of the WorkSpace.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeWorkspaceSnapshotsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsInput {
             workspace_id: self.workspace_id,

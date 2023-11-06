@@ -2,15 +2,15 @@
 pub fn ser_bucket_access_log_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BucketAccessLogConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.enabled {
-        object.key("enabled").boolean(*var_1);
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("enabled").boolean(input.enabled);
     }
-    if let Some(var_2) = &input.destination {
-        object.key("destination").string(var_2.as_str());
+    if let Some(var_1) = &input.destination {
+        object.key("destination").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.prefix {
-        object.key("prefix").string(var_3.as_str());
+    if let Some(var_2) = &input.prefix {
+        object.key("prefix").string(var_2.as_str());
     }
     Ok(())
 }
@@ -57,7 +57,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::bucket_access_log_config_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

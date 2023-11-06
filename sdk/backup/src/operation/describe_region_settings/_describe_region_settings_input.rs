@@ -18,8 +18,10 @@ impl DescribeRegionSettingsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeRegionSettingsInput`](crate::operation::describe_region_settings::DescribeRegionSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_region_settings::DescribeRegionSettingsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_region_settings::DescribeRegionSettingsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_region_settings::DescribeRegionSettingsInput {})
     }
 }

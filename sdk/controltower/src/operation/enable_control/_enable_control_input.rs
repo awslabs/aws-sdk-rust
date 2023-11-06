@@ -34,6 +34,7 @@ pub struct EnableControlInputBuilder {
 }
 impl EnableControlInputBuilder {
     /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> control. For information on how to find the <code>controlIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
+    /// This field is required.
     pub fn control_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_identifier = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl EnableControlInputBuilder {
         &self.control_identifier
     }
     /// <p>The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
+    /// This field is required.
     pub fn target_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_identifier = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl EnableControlInputBuilder {
     /// Consumes the builder and constructs a [`EnableControlInput`](crate::operation::enable_control::EnableControlInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::enable_control::EnableControlInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::enable_control::EnableControlInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::enable_control::EnableControlInput {
             control_identifier: self.control_identifier,
             target_identifier: self.target_identifier,

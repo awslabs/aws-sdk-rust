@@ -2,7 +2,7 @@
 pub fn ser_capacity_limits(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CapacityLimits,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.max_indexing_capacity_in_ocu {
         object.key("maxIndexingCapacityInOCU").number(
             #[allow(clippy::useless_conversion)]

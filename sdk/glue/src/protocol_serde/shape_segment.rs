@@ -2,17 +2,17 @@
 pub fn ser_segment(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Segment,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("SegmentNumber").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((input.segment_number).into()),
         );
     }
-    if let Some(var_1) = &input.total_segments {
+    {
         object.key("TotalSegments").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+            ::aws_smithy_types::Number::NegInt((input.total_segments).into()),
         );
     }
     Ok(())

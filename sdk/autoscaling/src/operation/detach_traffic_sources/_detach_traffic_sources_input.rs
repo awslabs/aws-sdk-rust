@@ -14,8 +14,10 @@ impl DetachTrafficSourcesInput {
         self.auto_scaling_group_name.as_deref()
     }
     /// <p>The unique identifiers of one or more traffic sources. You can specify up to 10 traffic sources.</p>
-    pub fn traffic_sources(&self) -> ::std::option::Option<&[crate::types::TrafficSourceIdentifier]> {
-        self.traffic_sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.traffic_sources.is_none()`.
+    pub fn traffic_sources(&self) -> &[crate::types::TrafficSourceIdentifier] {
+        self.traffic_sources.as_deref().unwrap_or_default()
     }
 }
 impl DetachTrafficSourcesInput {
@@ -34,6 +36,7 @@ pub struct DetachTrafficSourcesInputBuilder {
 }
 impl DetachTrafficSourcesInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
+    /// This field is required.
     pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +73,7 @@ impl DetachTrafficSourcesInputBuilder {
     /// Consumes the builder and constructs a [`DetachTrafficSourcesInput`](crate::operation::detach_traffic_sources::DetachTrafficSourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::detach_traffic_sources::DetachTrafficSourcesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::detach_traffic_sources::DetachTrafficSourcesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::detach_traffic_sources::DetachTrafficSourcesInput {
             auto_scaling_group_name: self.auto_scaling_group_name,

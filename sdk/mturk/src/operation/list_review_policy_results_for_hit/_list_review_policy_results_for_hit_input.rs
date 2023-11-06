@@ -22,8 +22,10 @@ impl ListReviewPolicyResultsForHitInput {
         self.hit_id.as_deref()
     }
     /// <p> The Policy Level(s) to retrieve review results for - HIT or Assignment. If omitted, the default behavior is to retrieve all data for both policy levels. For a list of all the described policies, see Review Policies. </p>
-    pub fn policy_levels(&self) -> ::std::option::Option<&[crate::types::ReviewPolicyLevel]> {
-        self.policy_levels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_levels.is_none()`.
+    pub fn policy_levels(&self) -> &[crate::types::ReviewPolicyLevel] {
+        self.policy_levels.as_deref().unwrap_or_default()
     }
     /// <p> Specify if the operation should retrieve a list of the actions taken executing the Review Policies and their outcomes. </p>
     pub fn retrieve_actions(&self) -> ::std::option::Option<bool> {
@@ -62,6 +64,7 @@ pub struct ListReviewPolicyResultsForHitInputBuilder {
 }
 impl ListReviewPolicyResultsForHitInputBuilder {
     /// <p>The unique identifier of the HIT to retrieve review results for.</p>
+    /// This field is required.
     pub fn hit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hit_id = ::std::option::Option::Some(input.into());
         self
@@ -156,7 +159,7 @@ impl ListReviewPolicyResultsForHitInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_review_policy_results_for_hit::ListReviewPolicyResultsForHitInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_review_policy_results_for_hit::ListReviewPolicyResultsForHitInput {
             hit_id: self.hit_id,

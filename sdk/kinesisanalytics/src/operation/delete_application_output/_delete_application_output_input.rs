@@ -42,6 +42,7 @@ pub struct DeleteApplicationOutputInputBuilder {
 }
 impl DeleteApplicationOutputInputBuilder {
     /// <p>Amazon Kinesis Analytics application name.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl DeleteApplicationOutputInputBuilder {
         &self.application_name
     }
     /// <p>Amazon Kinesis Analytics application version. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
+    /// This field is required.
     pub fn current_application_version_id(mut self, input: i64) -> Self {
         self.current_application_version_id = ::std::option::Option::Some(input);
         self
@@ -70,6 +72,7 @@ impl DeleteApplicationOutputInputBuilder {
         &self.current_application_version_id
     }
     /// <p>The ID of the configuration to delete. Each output configuration that is added to the application, either when the application is created or later using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationOutput.html">AddApplicationOutput</a> operation, has a unique ID. You need to provide the ID to uniquely identify the output configuration that you want to delete from the application configuration. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the specific <code>OutputId</code>. </p>
+    /// This field is required.
     pub fn output_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_id = ::std::option::Option::Some(input.into());
         self
@@ -88,7 +91,7 @@ impl DeleteApplicationOutputInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_application_output::DeleteApplicationOutputInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_application_output::DeleteApplicationOutputInput {
             application_name: self.application_name,

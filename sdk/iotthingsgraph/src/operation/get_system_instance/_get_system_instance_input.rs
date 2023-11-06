@@ -33,6 +33,7 @@ impl GetSystemInstanceInputBuilder {
     /// <p>The ID of the system deployment instance. This value is returned by <code>CreateSystemInstance</code>.</p>
     /// <p>The ID should be in the following format.</p>
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code> </p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -53,7 +54,7 @@ impl GetSystemInstanceInputBuilder {
     /// Consumes the builder and constructs a [`GetSystemInstanceInput`](crate::operation::get_system_instance::GetSystemInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_system_instance::GetSystemInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_system_instance::GetSystemInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_system_instance::GetSystemInstanceInput { id: self.id })
     }
 }

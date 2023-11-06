@@ -4,6 +4,7 @@
  */
 
 use aws_sdk_dynamodb::config::{self, Credentials, Region};
+use aws_smithy_runtime::client::http::test_util::capture_request;
 use aws_types::SdkConfig;
 use http::Uri;
 
@@ -12,11 +13,11 @@ async fn expect_uri(
     uri: &'static str,
     customize: fn(config::Builder) -> config::Builder,
 ) {
-    let (conn, request) = aws_smithy_client::test_connection::capture_request(None);
+    let (http_client, request) = capture_request(None);
     let conf = customize(
         aws_sdk_dynamodb::config::Builder::from(&conf)
             .credentials_provider(Credentials::for_tests())
-            .http_connector(conn),
+            .http_client(http_client),
     )
     .build();
     let svc = aws_sdk_dynamodb::Client::from_conf(conf);

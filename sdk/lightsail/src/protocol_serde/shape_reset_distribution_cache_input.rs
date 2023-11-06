@@ -2,7 +2,7 @@
 pub fn ser_reset_distribution_cache_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::reset_distribution_cache::ResetDistributionCacheInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.distribution_name {
         object.key("distributionName").string(var_1.as_str());
     }

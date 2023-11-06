@@ -74,7 +74,7 @@ pub fn de_list_publishing_destinations_http_response(
         output = crate::protocol_serde::shape_list_publishing_destinations::de_list_publishing_destinations(_response_body, output)
             .map_err(crate::operation::list_publishing_destinations::ListPublishingDestinationsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::list_publishing_destinations_output_correct_errors(output).build()
     })
 }
 

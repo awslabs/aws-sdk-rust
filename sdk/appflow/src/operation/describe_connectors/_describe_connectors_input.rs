@@ -12,8 +12,10 @@ pub struct DescribeConnectorsInput {
 }
 impl DescribeConnectorsInput {
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
-    pub fn connector_types(&self) -> ::std::option::Option<&[crate::types::ConnectorType]> {
-        self.connector_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connector_types.is_none()`.
+    pub fn connector_types(&self) -> &[crate::types::ConnectorType] {
+        self.connector_types.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of items that should be returned in the result set. The default is 20.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -91,7 +93,7 @@ impl DescribeConnectorsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeConnectorsInput`](crate::operation::describe_connectors::DescribeConnectorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_connectors::DescribeConnectorsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_connectors::DescribeConnectorsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_connectors::DescribeConnectorsInput {
             connector_types: self.connector_types,
             max_results: self.max_results,

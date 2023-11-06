@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AllowedPublishers {
     /// <p>The Amazon Resource Name (ARN) for each of the signing profiles. A signing profile defines a trusted user who can sign a code package. </p>
-    pub signing_profile_version_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub signing_profile_version_arns: ::std::vec::Vec<::std::string::String>,
 }
 impl AllowedPublishers {
     /// <p>The Amazon Resource Name (ARN) for each of the signing profiles. A signing profile defines a trusted user who can sign a code package. </p>
-    pub fn signing_profile_version_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.signing_profile_version_arns.as_deref()
+    pub fn signing_profile_version_arns(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.signing_profile_version_arns.deref()
     }
 }
 impl AllowedPublishers {
@@ -48,9 +49,16 @@ impl AllowedPublishersBuilder {
         &self.signing_profile_version_arns
     }
     /// Consumes the builder and constructs a [`AllowedPublishers`](crate::types::AllowedPublishers).
-    pub fn build(self) -> crate::types::AllowedPublishers {
-        crate::types::AllowedPublishers {
-            signing_profile_version_arns: self.signing_profile_version_arns,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`signing_profile_version_arns`](crate::types::builders::AllowedPublishersBuilder::signing_profile_version_arns)
+    pub fn build(self) -> ::std::result::Result<crate::types::AllowedPublishers, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AllowedPublishers {
+            signing_profile_version_arns: self.signing_profile_version_arns.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "signing_profile_version_arns",
+                    "signing_profile_version_arns was not specified but it is required when building AllowedPublishers",
+                )
+            })?,
+        })
     }
 }

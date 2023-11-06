@@ -16,8 +16,10 @@ pub struct DescribeConnectorProfilesInput {
 }
 impl DescribeConnectorProfilesInput {
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
-    pub fn connector_profile_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.connector_profile_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connector_profile_names.is_none()`.
+    pub fn connector_profile_names(&self) -> &[::std::string::String] {
+        self.connector_profile_names.as_deref().unwrap_or_default()
     }
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
     pub fn connector_type(&self) -> ::std::option::Option<&crate::types::ConnectorType> {
@@ -135,7 +137,7 @@ impl DescribeConnectorProfilesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_connector_profiles::DescribeConnectorProfilesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_connector_profiles::DescribeConnectorProfilesInput {
             connector_profile_names: self.connector_profile_names,

@@ -27,6 +27,7 @@ pub struct UpdateTemplateInputBuilder {
 }
 impl UpdateTemplateInputBuilder {
     /// <p>The content of the email, composed of a subject line and either an HTML part or a text-only part.</p>
+    /// This field is required.
     pub fn template(mut self, input: crate::types::Template) -> Self {
         self.template = ::std::option::Option::Some(input);
         self
@@ -43,7 +44,7 @@ impl UpdateTemplateInputBuilder {
     /// Consumes the builder and constructs a [`UpdateTemplateInput`](crate::operation::update_template::UpdateTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_template::UpdateTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_template::UpdateTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_template::UpdateTemplateInput { template: self.template })
     }
 }

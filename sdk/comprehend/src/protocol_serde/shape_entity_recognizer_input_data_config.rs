@@ -2,51 +2,51 @@
 pub fn ser_entity_recognizer_input_data_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EntityRecognizerInputDataConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.data_format {
         object.key("DataFormat").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.entity_types {
-        let mut array_3 = object.key("EntityTypes").start_array();
-        for item_4 in var_2 {
+    {
+        let mut array_2 = object.key("EntityTypes").start_array();
+        for item_3 in &input.entity_types {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_entity_types_list_item::ser_entity_types_list_item(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_entity_types_list_item::ser_entity_types_list_item(&mut object_4, item_3)?;
+                object_4.finish();
             }
         }
-        array_3.finish();
+        array_2.finish();
     }
-    if let Some(var_6) = &input.documents {
+    if let Some(var_5) = &input.documents {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("Documents").start_object();
-        crate::protocol_serde::shape_entity_recognizer_documents::ser_entity_recognizer_documents(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_6 = object.key("Documents").start_object();
+        crate::protocol_serde::shape_entity_recognizer_documents::ser_entity_recognizer_documents(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_8) = &input.annotations {
+    if let Some(var_7) = &input.annotations {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("Annotations").start_object();
-        crate::protocol_serde::shape_entity_recognizer_annotations::ser_entity_recognizer_annotations(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_8 = object.key("Annotations").start_object();
+        crate::protocol_serde::shape_entity_recognizer_annotations::ser_entity_recognizer_annotations(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_10) = &input.entity_list {
+    if let Some(var_9) = &input.entity_list {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("EntityList").start_object();
-        crate::protocol_serde::shape_entity_recognizer_entity_list::ser_entity_recognizer_entity_list(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_10 = object.key("EntityList").start_object();
+        crate::protocol_serde::shape_entity_recognizer_entity_list::ser_entity_recognizer_entity_list(&mut object_10, var_9)?;
+        object_10.finish();
     }
-    if let Some(var_12) = &input.augmented_manifests {
-        let mut array_13 = object.key("AugmentedManifests").start_array();
-        for item_14 in var_12 {
+    if let Some(var_11) = &input.augmented_manifests {
+        let mut array_12 = object.key("AugmentedManifests").start_array();
+        for item_13 in var_11 {
             {
                 #[allow(unused_mut)]
-                let mut object_15 = array_13.value().start_object();
-                crate::protocol_serde::shape_augmented_manifests_list_item::ser_augmented_manifests_list_item(&mut object_15, item_14)?;
-                object_15.finish();
+                let mut object_14 = array_12.value().start_object();
+                crate::protocol_serde::shape_augmented_manifests_list_item::ser_augmented_manifests_list_item(&mut object_14, item_13)?;
+                object_14.finish();
             }
         }
-        array_13.finish();
+        array_12.finish();
     }
     Ok(())
 }
@@ -106,7 +106,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::entity_recognizer_input_data_config_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

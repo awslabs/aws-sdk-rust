@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteMediaPipeline`](crate::operation::delete_media_pipeline::builders::DeleteMediaPipelineFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`media_pipeline_id(impl Into<String>)`](crate::operation::delete_media_pipeline::builders::DeleteMediaPipelineFluentBuilder::media_pipeline_id) / [`set_media_pipeline_id(Option<String>)`](crate::operation::delete_media_pipeline::builders::DeleteMediaPipelineFluentBuilder::set_media_pipeline_id): <p>The ID of the media pipeline to delete.</p>
+    ///   - [`media_pipeline_id(impl Into<String>)`](crate::operation::delete_media_pipeline::builders::DeleteMediaPipelineFluentBuilder::media_pipeline_id) / [`set_media_pipeline_id(Option<String>)`](crate::operation::delete_media_pipeline::builders::DeleteMediaPipelineFluentBuilder::set_media_pipeline_id):<br>required: **true**<br><p>The ID of the media pipeline to delete.</p><br>
     /// - On success, responds with [`DeleteMediaPipelineOutput`](crate::operation::delete_media_pipeline::DeleteMediaPipelineOutput)
     /// - On failure, responds with [`SdkError<DeleteMediaPipelineError>`](crate::operation::delete_media_pipeline::DeleteMediaPipelineError)
     pub fn delete_media_pipeline(&self) -> crate::operation::delete_media_pipeline::builders::DeleteMediaPipelineFluentBuilder {

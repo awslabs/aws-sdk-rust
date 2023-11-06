@@ -16,8 +16,10 @@ pub struct StartImportInput {
 }
 impl StartImportInput {
     /// <p> The ARN of the destination event data store. Use this parameter for a new import. </p>
-    pub fn destinations(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.destinations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destinations.is_none()`.
+    pub fn destinations(&self) -> &[::std::string::String] {
+        self.destinations.as_deref().unwrap_or_default()
     }
     /// <p> The source S3 bucket for the import. Use this parameter for a new import. </p>
     pub fn import_source(&self) -> ::std::option::Option<&crate::types::ImportSource> {
@@ -131,7 +133,7 @@ impl StartImportInputBuilder {
         &self.import_id
     }
     /// Consumes the builder and constructs a [`StartImportInput`](crate::operation::start_import::StartImportInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_import::StartImportInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_import::StartImportInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_import::StartImportInput {
             destinations: self.destinations,
             import_source: self.import_source,

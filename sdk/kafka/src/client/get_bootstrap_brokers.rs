@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetBootstrapBrokers`](crate::operation::get_bootstrap_brokers::builders::GetBootstrapBrokersFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cluster_arn(impl Into<String>)`](crate::operation::get_bootstrap_brokers::builders::GetBootstrapBrokersFluentBuilder::cluster_arn) / [`set_cluster_arn(Option<String>)`](crate::operation::get_bootstrap_brokers::builders::GetBootstrapBrokersFluentBuilder::set_cluster_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    ///   - [`cluster_arn(impl Into<String>)`](crate::operation::get_bootstrap_brokers::builders::GetBootstrapBrokersFluentBuilder::cluster_arn) / [`set_cluster_arn(Option<String>)`](crate::operation::get_bootstrap_brokers::builders::GetBootstrapBrokersFluentBuilder::set_cluster_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p><br>
     /// - On success, responds with [`GetBootstrapBrokersOutput`](crate::operation::get_bootstrap_brokers::GetBootstrapBrokersOutput) with field(s):
     ///   - [`bootstrap_broker_string(Option<String>)`](crate::operation::get_bootstrap_brokers::GetBootstrapBrokersOutput::bootstrap_broker_string): <p>A string containing one or more hostname:port pairs.</p>
     ///   - [`bootstrap_broker_string_tls(Option<String>)`](crate::operation::get_bootstrap_brokers::GetBootstrapBrokersOutput::bootstrap_broker_string_tls): <p>A string containing one or more DNS names (or IP) and TLS port pairs.</p>

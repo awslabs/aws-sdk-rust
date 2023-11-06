@@ -141,6 +141,7 @@ impl StartMedicalStreamTranscriptionInputBuilder {
     /// <p>Specify the language code that represents the language spoken in your audio.</p> <important>
     /// <p>Amazon Transcribe Medical only supports US English (<code>en-US</code>).</p>
     /// </important>
+    /// This field is required.
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.language_code = ::std::option::Option::Some(input);
         self
@@ -159,6 +160,7 @@ impl StartMedicalStreamTranscriptionInputBuilder {
         &self.language_code
     }
     /// <p>The sample rate of the input audio (in hertz). Amazon Transcribe Medical supports a range from 16,000 Hz to 48,000 Hz. Note that the sample rate you specify must match that of your audio.</p>
+    /// This field is required.
     pub fn media_sample_rate_hertz(mut self, input: i32) -> Self {
         self.media_sample_rate_hertz = ::std::option::Option::Some(input);
         self
@@ -179,6 +181,7 @@ impl StartMedicalStreamTranscriptionInputBuilder {
     /// <li> <p>PCM (only signed 16-bit little-endian audio formats, which does not include WAV)</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a>.</p>
+    /// This field is required.
     pub fn media_encoding(mut self, input: crate::types::MediaEncoding) -> Self {
         self.media_encoding = ::std::option::Option::Some(input);
         self
@@ -219,6 +222,7 @@ impl StartMedicalStreamTranscriptionInputBuilder {
         &self.vocabulary_name
     }
     /// <p>Specify the medical specialty contained in your audio.</p>
+    /// This field is required.
     pub fn specialty(mut self, input: crate::types::Specialty) -> Self {
         self.specialty = ::std::option::Option::Some(input);
         self
@@ -233,6 +237,7 @@ impl StartMedicalStreamTranscriptionInputBuilder {
         &self.specialty
     }
     /// <p>Specify the type of input audio. For example, choose <code>DICTATION</code> for a provider dictating patient notes and <code>CONVERSATION</code> for a dialogue between a patient and a medical professional.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::Type) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -282,6 +287,7 @@ impl StartMedicalStreamTranscriptionInputBuilder {
     }
     /// <p>An encoded stream of audio blobs. Audio streams are encoded as either HTTP/2 or WebSocket data frames.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html">Transcribing streaming audio</a>.</p>
+    /// This field is required.
     pub fn audio_stream(
         mut self,
         input: ::aws_smithy_http::event_stream::EventStreamSender<crate::types::AudioStream, crate::types::error::AudioStreamError>,
@@ -366,11 +372,13 @@ impl StartMedicalStreamTranscriptionInputBuilder {
         &self.content_identification_type
     }
     /// Consumes the builder and constructs a [`StartMedicalStreamTranscriptionInput`](crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`audio_stream`](crate::operation::start_medical_stream_transcription::builders::StartMedicalStreamTranscriptionInputBuilder::audio_stream)
     pub fn build(
         self,
     ) -> ::std::result::Result<
         crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionInput {
@@ -383,7 +391,7 @@ impl StartMedicalStreamTranscriptionInputBuilder {
                 show_speaker_label: self.show_speaker_label,
                 session_id: self.session_id,
                 audio_stream: self.audio_stream.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "audio_stream",
                         "audio_stream was not specified but it is required when building StartMedicalStreamTranscriptionInput",
                     )

@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchResultErrorEntry {
     /// <p>The <code>Id</code> of an entry in a batch request</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>An error code representing why the action failed on this entry.</p>
-    pub code: ::std::option::Option<::std::string::String>,
+    pub code: ::std::string::String,
     /// <p>A message explaining why the action failed on this entry.</p>
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the error happened due to the caller of the batch API action.</p>
@@ -15,12 +15,14 @@ pub struct BatchResultErrorEntry {
 }
 impl BatchResultErrorEntry {
     /// <p>The <code>Id</code> of an entry in a batch request</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>An error code representing why the action failed on this entry.</p>
-    pub fn code(&self) -> ::std::option::Option<&str> {
-        self.code.as_deref()
+    pub fn code(&self) -> &str {
+        use std::ops::Deref;
+        self.code.deref()
     }
     /// <p>A message explaining why the action failed on this entry.</p>
     pub fn message(&self) -> ::std::option::Option<&str> {
@@ -49,6 +51,7 @@ pub struct BatchResultErrorEntryBuilder {
 }
 impl BatchResultErrorEntryBuilder {
     /// <p>The <code>Id</code> of an entry in a batch request</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +66,7 @@ impl BatchResultErrorEntryBuilder {
         &self.id
     }
     /// <p>An error code representing why the action failed on this entry.</p>
+    /// This field is required.
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +95,7 @@ impl BatchResultErrorEntryBuilder {
         &self.message
     }
     /// <p>Specifies whether the error happened due to the caller of the batch API action.</p>
+    /// This field is required.
     pub fn sender_fault(mut self, input: bool) -> Self {
         self.sender_fault = ::std::option::Option::Some(input);
         self
@@ -105,12 +110,25 @@ impl BatchResultErrorEntryBuilder {
         &self.sender_fault
     }
     /// Consumes the builder and constructs a [`BatchResultErrorEntry`](crate::types::BatchResultErrorEntry).
-    pub fn build(self) -> crate::types::BatchResultErrorEntry {
-        crate::types::BatchResultErrorEntry {
-            id: self.id,
-            code: self.code,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::BatchResultErrorEntryBuilder::id)
+    /// - [`code`](crate::types::builders::BatchResultErrorEntryBuilder::code)
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchResultErrorEntry, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::BatchResultErrorEntry {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building BatchResultErrorEntry",
+                )
+            })?,
+            code: self.code.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "code",
+                    "code was not specified but it is required when building BatchResultErrorEntry",
+                )
+            })?,
             message: self.message,
             sender_fault: self.sender_fault.unwrap_or_default(),
-        }
+        })
     }
 }

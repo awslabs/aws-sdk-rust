@@ -50,6 +50,7 @@ pub struct ListAppInstanceAdminsInputBuilder {
 }
 impl ListAppInstanceAdminsInputBuilder {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
+    /// This field is required.
     pub fn app_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_arn = ::std::option::Option::Some(input.into());
         self
@@ -94,7 +95,7 @@ impl ListAppInstanceAdminsInputBuilder {
     /// Consumes the builder and constructs a [`ListAppInstanceAdminsInput`](crate::operation::list_app_instance_admins::ListAppInstanceAdminsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_app_instance_admins::ListAppInstanceAdminsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_app_instance_admins::ListAppInstanceAdminsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_app_instance_admins::ListAppInstanceAdminsInput {
             app_instance_arn: self.app_instance_arn,

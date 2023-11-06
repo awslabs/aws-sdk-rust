@@ -62,6 +62,7 @@ pub struct RegisterComputeInputBuilder {
 }
 impl RegisterComputeInputBuilder {
     /// <p>A unique identifier for the fleet to register the compute to. You can use either the fleet ID or ARN value.</p>
+    /// This field is required.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl RegisterComputeInputBuilder {
         &self.fleet_id
     }
     /// <p>A descriptive label for the compute resource.</p>
+    /// This field is required.
     pub fn compute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compute_name = ::std::option::Option::Some(input.into());
         self
@@ -148,7 +150,7 @@ impl RegisterComputeInputBuilder {
     /// Consumes the builder and constructs a [`RegisterComputeInput`](crate::operation::register_compute::RegisterComputeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_compute::RegisterComputeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::register_compute::RegisterComputeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_compute::RegisterComputeInput {
             fleet_id: self.fleet_id,
             compute_name: self.compute_name,

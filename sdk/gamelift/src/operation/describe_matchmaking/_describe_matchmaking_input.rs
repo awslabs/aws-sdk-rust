@@ -8,8 +8,10 @@ pub struct DescribeMatchmakingInput {
 }
 impl DescribeMatchmakingInput {
     /// <p>A unique identifier for a matchmaking ticket. You can include up to 10 ID values. </p>
-    pub fn ticket_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ticket_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ticket_ids.is_none()`.
+    pub fn ticket_ids(&self) -> &[::std::string::String] {
+        self.ticket_ids.as_deref().unwrap_or_default()
     }
 }
 impl DescribeMatchmakingInput {
@@ -49,7 +51,7 @@ impl DescribeMatchmakingInputBuilder {
     /// Consumes the builder and constructs a [`DescribeMatchmakingInput`](crate::operation::describe_matchmaking::DescribeMatchmakingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_matchmaking::DescribeMatchmakingInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_matchmaking::DescribeMatchmakingInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_matchmaking::DescribeMatchmakingInput { ticket_ids: self.ticket_ids })
     }

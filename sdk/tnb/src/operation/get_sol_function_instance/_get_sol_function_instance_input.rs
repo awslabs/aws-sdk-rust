@@ -27,6 +27,7 @@ pub struct GetSolFunctionInstanceInputBuilder {
 }
 impl GetSolFunctionInstanceInputBuilder {
     /// <p>ID of the network function.</p>
+    /// This field is required.
     pub fn vnf_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vnf_instance_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetSolFunctionInstanceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_sol_function_instance::GetSolFunctionInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_sol_function_instance::GetSolFunctionInstanceInput {
             vnf_instance_id: self.vnf_instance_id,

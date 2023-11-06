@@ -72,8 +72,10 @@ impl CreateIngestionInput {
         self.client_token.as_deref()
     }
     /// <p>A map of the key-value pairs of the tag or tags to assign to the resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateIngestionInput {
@@ -96,6 +98,7 @@ pub struct CreateIngestionInputBuilder {
 }
 impl CreateIngestionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
+    /// This field is required.
     pub fn app_bundle_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_bundle_identifier = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +128,7 @@ impl CreateIngestionInputBuilder {
     /// <li> <p> <code>SMARTSHEET</code> </p> </li>
     /// <li> <p> <code>CISCO</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn app(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app = ::std::option::Option::Some(input.into());
         self
@@ -169,6 +173,7 @@ impl CreateIngestionInputBuilder {
         &self.app
     }
     /// <p>The ID of the application tenant.</p>
+    /// This field is required.
     pub fn tenant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tenant_id = ::std::option::Option::Some(input.into());
         self
@@ -183,6 +188,7 @@ impl CreateIngestionInputBuilder {
         &self.tenant_id
     }
     /// <p>The ingestion type.</p>
+    /// This field is required.
     pub fn ingestion_type(mut self, input: crate::types::IngestionType) -> Self {
         self.ingestion_type = ::std::option::Option::Some(input);
         self
@@ -239,7 +245,7 @@ impl CreateIngestionInputBuilder {
     /// Consumes the builder and constructs a [`CreateIngestionInput`](crate::operation::create_ingestion::CreateIngestionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_ingestion::CreateIngestionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_ingestion::CreateIngestionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_ingestion::CreateIngestionInput {
             app_bundle_identifier: self.app_bundle_identifier,
             app: self.app,

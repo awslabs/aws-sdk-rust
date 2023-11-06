@@ -22,8 +22,10 @@ pub struct CreateCollaborationInput {
 }
 impl CreateCollaborationInput {
     /// <p>A list of initial members, not including the creator. This list is immutable.</p>
-    pub fn members(&self) -> ::std::option::Option<&[crate::types::MemberSpecification]> {
-        self.members.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.members.is_none()`.
+    pub fn members(&self) -> &[crate::types::MemberSpecification] {
+        self.members.as_deref().unwrap_or_default()
     }
     /// <p>The display name for a collaboration.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -34,8 +36,10 @@ impl CreateCollaborationInput {
         self.description.as_deref()
     }
     /// <p>The abilities granted to the collaboration creator.</p>
-    pub fn creator_member_abilities(&self) -> ::std::option::Option<&[crate::types::MemberAbility]> {
-        self.creator_member_abilities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.creator_member_abilities.is_none()`.
+    pub fn creator_member_abilities(&self) -> &[crate::types::MemberAbility] {
+        self.creator_member_abilities.as_deref().unwrap_or_default()
     }
     /// <p>The display name of the collaboration creator.</p>
     pub fn creator_display_name(&self) -> ::std::option::Option<&str> {
@@ -96,6 +100,7 @@ impl CreateCollaborationInputBuilder {
         &self.members
     }
     /// <p>The display name for a collaboration.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -110,6 +115,7 @@ impl CreateCollaborationInputBuilder {
         &self.name
     }
     /// <p>A description of the collaboration provided by the collaboration owner.</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -144,6 +150,7 @@ impl CreateCollaborationInputBuilder {
         &self.creator_member_abilities
     }
     /// <p>The display name of the collaboration creator.</p>
+    /// This field is required.
     pub fn creator_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creator_display_name = ::std::option::Option::Some(input.into());
         self
@@ -172,6 +179,7 @@ impl CreateCollaborationInputBuilder {
         &self.data_encryption_metadata
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
+    /// This field is required.
     pub fn query_log_status(mut self, input: crate::types::CollaborationQueryLogStatus) -> Self {
         self.query_log_status = ::std::option::Option::Some(input);
         self
@@ -208,7 +216,7 @@ impl CreateCollaborationInputBuilder {
     /// Consumes the builder and constructs a [`CreateCollaborationInput`](crate::operation::create_collaboration::CreateCollaborationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_collaboration::CreateCollaborationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_collaboration::CreateCollaborationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_collaboration::CreateCollaborationInput {
             members: self.members,

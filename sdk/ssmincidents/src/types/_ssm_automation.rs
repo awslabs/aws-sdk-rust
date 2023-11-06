@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SsmAutomation {
     /// <p>The Amazon Resource Name (ARN) of the role that the automation document will assume when running commands.</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
     /// <p>The automation document's name.</p>
-    pub document_name: ::std::option::Option<::std::string::String>,
+    pub document_name: ::std::string::String,
     /// <p>The automation document's version to use when running.</p>
     pub document_version: ::std::option::Option<::std::string::String>,
     /// <p>The account that the automation document will be run in. This can be in either the management account or an application account.</p>
@@ -19,12 +19,14 @@ pub struct SsmAutomation {
 }
 impl SsmAutomation {
     /// <p>The Amazon Resource Name (ARN) of the role that the automation document will assume when running commands.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
     /// <p>The automation document's name.</p>
-    pub fn document_name(&self) -> ::std::option::Option<&str> {
-        self.document_name.as_deref()
+    pub fn document_name(&self) -> &str {
+        use std::ops::Deref;
+        self.document_name.deref()
     }
     /// <p>The automation document's version to use when running.</p>
     pub fn document_version(&self) -> ::std::option::Option<&str> {
@@ -65,6 +67,7 @@ pub struct SsmAutomationBuilder {
 }
 impl SsmAutomationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the role that the automation document will assume when running commands.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -79,6 +82,7 @@ impl SsmAutomationBuilder {
         &self.role_arn
     }
     /// <p>The automation document's name.</p>
+    /// This field is required.
     pub fn document_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_name = ::std::option::Option::Some(input.into());
         self
@@ -171,14 +175,27 @@ impl SsmAutomationBuilder {
         &self.dynamic_parameters
     }
     /// Consumes the builder and constructs a [`SsmAutomation`](crate::types::SsmAutomation).
-    pub fn build(self) -> crate::types::SsmAutomation {
-        crate::types::SsmAutomation {
-            role_arn: self.role_arn,
-            document_name: self.document_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`role_arn`](crate::types::builders::SsmAutomationBuilder::role_arn)
+    /// - [`document_name`](crate::types::builders::SsmAutomationBuilder::document_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::SsmAutomation, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SsmAutomation {
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building SsmAutomation",
+                )
+            })?,
+            document_name: self.document_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "document_name",
+                    "document_name was not specified but it is required when building SsmAutomation",
+                )
+            })?,
             document_version: self.document_version,
             target_account: self.target_account,
             parameters: self.parameters,
             dynamic_parameters: self.dynamic_parameters,
-        }
+        })
     }
 }

@@ -2,16 +2,16 @@
 pub fn ser_execution_time_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ExecutionTimeFilter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.oldest_date {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
         object
             .key("oldestDate")
-            .date_time(var_1, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(&input.oldest_date, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_2) = &input.latest_date {
+    if let Some(var_1) = &input.latest_date {
         object
             .key("latestDate")
-            .date_time(var_2, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_1, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }

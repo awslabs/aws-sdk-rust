@@ -28,6 +28,7 @@ pub struct ArchiveRetainRuleBuilder {
 }
 impl ArchiveRetainRuleBuilder {
     /// <p>Information about retention period in the Amazon EBS Snapshots Archive. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/snapshot-archive.html">Archive Amazon EBS snapshots</a>.</p>
+    /// This field is required.
     pub fn retention_archive_tier(mut self, input: crate::types::RetentionArchiveTier) -> Self {
         self.retention_archive_tier = ::std::option::Option::Some(input);
         self

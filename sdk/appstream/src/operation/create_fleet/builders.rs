@@ -10,7 +10,7 @@ impl CreateFleetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_fleet::CreateFleetOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::create_fleet::CreateFleetError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl CreateFleetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_fleet::CreateFleetOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::create_fleet::CreateFleetError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::create_fleet::CreateFleet::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -86,20 +89,15 @@ impl CreateFleetFluentBuilder {
         crate::operation::create_fleet::CreateFleet::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::create_fleet::CreateFleetOutput,
-            crate::operation::create_fleet::CreateFleetError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::create_fleet::CreateFleetError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::create_fleet::CreateFleetOutput,
+        crate::operation::create_fleet::CreateFleetError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -386,19 +384,19 @@ impl CreateFleetFluentBuilder {
         self.inner.get_vpc_config()
     }
     /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.</p>
-    /// <p>Specify a value between 600 and 360000.</p>
+    /// <p>Specify a value between 600 and 432000.</p>
     pub fn max_user_duration_in_seconds(mut self, input: i32) -> Self {
         self.inner = self.inner.max_user_duration_in_seconds(input);
         self
     }
     /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.</p>
-    /// <p>Specify a value between 600 and 360000.</p>
+    /// <p>Specify a value between 600 and 432000.</p>
     pub fn set_max_user_duration_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_user_duration_in_seconds(input);
         self
     }
     /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.</p>
-    /// <p>Specify a value between 600 and 360000.</p>
+    /// <p>Specify a value between 600 and 432000.</p>
     pub fn get_max_user_duration_in_seconds(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_user_duration_in_seconds()
     }
@@ -621,5 +619,19 @@ impl CreateFleetFluentBuilder {
     /// <p>The S3 location of the session scripts configuration zip file. This only applies to Elastic fleets.</p>
     pub fn get_session_script_s3_location(&self) -> &::std::option::Option<crate::types::S3Location> {
         self.inner.get_session_script_s3_location()
+    }
+    /// <p>The maximum number of user sessions on an instance. This only applies to multi-session fleets.</p>
+    pub fn max_sessions_per_instance(mut self, input: i32) -> Self {
+        self.inner = self.inner.max_sessions_per_instance(input);
+        self
+    }
+    /// <p>The maximum number of user sessions on an instance. This only applies to multi-session fleets.</p>
+    pub fn set_max_sessions_per_instance(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_max_sessions_per_instance(input);
+        self
+    }
+    /// <p>The maximum number of user sessions on an instance. This only applies to multi-session fleets.</p>
+    pub fn get_max_sessions_per_instance(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_sessions_per_instance()
     }
 }

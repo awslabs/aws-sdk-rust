@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConflictExceptionErrorArgument {
     /// <p>The error argument's name.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The error argument's value.</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
 }
 impl ConflictExceptionErrorArgument {
     /// <p>The error argument's name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The error argument's value.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
 }
 impl ConflictExceptionErrorArgument {
@@ -35,6 +37,7 @@ pub struct ConflictExceptionErrorArgumentBuilder {
 }
 impl ConflictExceptionErrorArgumentBuilder {
     /// <p>The error argument's name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl ConflictExceptionErrorArgumentBuilder {
         &self.name
     }
     /// <p>The error argument's value.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl ConflictExceptionErrorArgumentBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`ConflictExceptionErrorArgument`](crate::types::ConflictExceptionErrorArgument).
-    pub fn build(self) -> crate::types::ConflictExceptionErrorArgument {
-        crate::types::ConflictExceptionErrorArgument {
-            name: self.name,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::ConflictExceptionErrorArgumentBuilder::name)
+    /// - [`value`](crate::types::builders::ConflictExceptionErrorArgumentBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::ConflictExceptionErrorArgument, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ConflictExceptionErrorArgument {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ConflictExceptionErrorArgument",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building ConflictExceptionErrorArgument",
+                )
+            })?,
+        })
     }
 }

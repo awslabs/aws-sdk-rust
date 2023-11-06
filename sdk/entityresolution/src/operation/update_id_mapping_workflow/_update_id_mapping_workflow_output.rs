@@ -4,49 +4,54 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateIdMappingWorkflowOutput {
     /// <p>The name of the workflow.</p>
-    pub workflow_name: ::std::option::Option<::std::string::String>,
+    pub workflow_name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the workflow role. Entity Resolution assumes this role to access resources on your behalf.</p>
-    pub workflow_arn: ::std::option::Option<::std::string::String>,
+    pub workflow_arn: ::std::string::String,
     /// <p>A description of the workflow.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>InputSource</code> objects, which have the fields <code>InputSourceARN</code> and <code>SchemaName</code>.</p>
-    pub input_source_config: ::std::option::Option<::std::vec::Vec<crate::types::IdMappingWorkflowInputSource>>,
+    pub input_source_config: ::std::vec::Vec<crate::types::IdMappingWorkflowInputSource>,
     /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code> and <code>KMSArn</code>.</p>
-    pub output_source_config: ::std::option::Option<::std::vec::Vec<crate::types::IdMappingWorkflowOutputSource>>,
+    pub output_source_config: ::std::vec::Vec<crate::types::IdMappingWorkflowOutputSource>,
     /// <p>An object which defines the <code>idMappingType</code> and the <code>providerProperties</code>.</p>
     pub id_mapping_techniques: ::std::option::Option<crate::types::IdMappingTechniques>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to access resources on your behalf.</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl UpdateIdMappingWorkflowOutput {
     /// <p>The name of the workflow.</p>
-    pub fn workflow_name(&self) -> ::std::option::Option<&str> {
-        self.workflow_name.as_deref()
+    pub fn workflow_name(&self) -> &str {
+        use std::ops::Deref;
+        self.workflow_name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the workflow role. Entity Resolution assumes this role to access resources on your behalf.</p>
-    pub fn workflow_arn(&self) -> ::std::option::Option<&str> {
-        self.workflow_arn.as_deref()
+    pub fn workflow_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.workflow_arn.deref()
     }
     /// <p>A description of the workflow.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>A list of <code>InputSource</code> objects, which have the fields <code>InputSourceARN</code> and <code>SchemaName</code>.</p>
-    pub fn input_source_config(&self) -> ::std::option::Option<&[crate::types::IdMappingWorkflowInputSource]> {
-        self.input_source_config.as_deref()
+    pub fn input_source_config(&self) -> &[crate::types::IdMappingWorkflowInputSource] {
+        use std::ops::Deref;
+        self.input_source_config.deref()
     }
     /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code> and <code>KMSArn</code>.</p>
-    pub fn output_source_config(&self) -> ::std::option::Option<&[crate::types::IdMappingWorkflowOutputSource]> {
-        self.output_source_config.as_deref()
+    pub fn output_source_config(&self) -> &[crate::types::IdMappingWorkflowOutputSource] {
+        use std::ops::Deref;
+        self.output_source_config.deref()
     }
     /// <p>An object which defines the <code>idMappingType</code> and the <code>providerProperties</code>.</p>
     pub fn id_mapping_techniques(&self) -> ::std::option::Option<&crate::types::IdMappingTechniques> {
         self.id_mapping_techniques.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to access resources on your behalf.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateIdMappingWorkflowOutput {
@@ -76,6 +81,7 @@ pub struct UpdateIdMappingWorkflowOutputBuilder {
 }
 impl UpdateIdMappingWorkflowOutputBuilder {
     /// <p>The name of the workflow.</p>
+    /// This field is required.
     pub fn workflow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +96,7 @@ impl UpdateIdMappingWorkflowOutputBuilder {
         &self.workflow_name
     }
     /// <p>The Amazon Resource Name (ARN) of the workflow role. Entity Resolution assumes this role to access resources on your behalf.</p>
+    /// This field is required.
     pub fn workflow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_arn = ::std::option::Option::Some(input.into());
         self
@@ -158,6 +165,7 @@ impl UpdateIdMappingWorkflowOutputBuilder {
         &self.output_source_config
     }
     /// <p>An object which defines the <code>idMappingType</code> and the <code>providerProperties</code>.</p>
+    /// This field is required.
     pub fn id_mapping_techniques(mut self, input: crate::types::IdMappingTechniques) -> Self {
         self.id_mapping_techniques = ::std::option::Option::Some(input);
         self
@@ -172,6 +180,7 @@ impl UpdateIdMappingWorkflowOutputBuilder {
         &self.id_mapping_techniques
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to access resources on your behalf.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -195,16 +204,52 @@ impl UpdateIdMappingWorkflowOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateIdMappingWorkflowOutput`](crate::operation::update_id_mapping_workflow::UpdateIdMappingWorkflowOutput).
-    pub fn build(self) -> crate::operation::update_id_mapping_workflow::UpdateIdMappingWorkflowOutput {
-        crate::operation::update_id_mapping_workflow::UpdateIdMappingWorkflowOutput {
-            workflow_name: self.workflow_name,
-            workflow_arn: self.workflow_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workflow_name`](crate::operation::update_id_mapping_workflow::builders::UpdateIdMappingWorkflowOutputBuilder::workflow_name)
+    /// - [`workflow_arn`](crate::operation::update_id_mapping_workflow::builders::UpdateIdMappingWorkflowOutputBuilder::workflow_arn)
+    /// - [`input_source_config`](crate::operation::update_id_mapping_workflow::builders::UpdateIdMappingWorkflowOutputBuilder::input_source_config)
+    /// - [`output_source_config`](crate::operation::update_id_mapping_workflow::builders::UpdateIdMappingWorkflowOutputBuilder::output_source_config)
+    /// - [`role_arn`](crate::operation::update_id_mapping_workflow::builders::UpdateIdMappingWorkflowOutputBuilder::role_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_id_mapping_workflow::UpdateIdMappingWorkflowOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::update_id_mapping_workflow::UpdateIdMappingWorkflowOutput {
+            workflow_name: self.workflow_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "workflow_name",
+                    "workflow_name was not specified but it is required when building UpdateIdMappingWorkflowOutput",
+                )
+            })?,
+            workflow_arn: self.workflow_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "workflow_arn",
+                    "workflow_arn was not specified but it is required when building UpdateIdMappingWorkflowOutput",
+                )
+            })?,
             description: self.description,
-            input_source_config: self.input_source_config,
-            output_source_config: self.output_source_config,
+            input_source_config: self.input_source_config.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "input_source_config",
+                    "input_source_config was not specified but it is required when building UpdateIdMappingWorkflowOutput",
+                )
+            })?,
+            output_source_config: self.output_source_config.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "output_source_config",
+                    "output_source_config was not specified but it is required when building UpdateIdMappingWorkflowOutput",
+                )
+            })?,
             id_mapping_techniques: self.id_mapping_techniques,
-            role_arn: self.role_arn,
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building UpdateIdMappingWorkflowOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -27,6 +27,7 @@ pub struct DescribePatchGroupStateInputBuilder {
 }
 impl DescribePatchGroupStateInputBuilder {
     /// <p>The name of the patch group whose patch snapshot should be retrieved.</p>
+    /// This field is required.
     pub fn patch_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.patch_group = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribePatchGroupStateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_patch_group_state::DescribePatchGroupStateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_patch_group_state::DescribePatchGroupStateInput {
             patch_group: self.patch_group,

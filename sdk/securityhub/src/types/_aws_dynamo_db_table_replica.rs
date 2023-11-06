@@ -26,8 +26,10 @@ pub struct AwsDynamoDbTableReplica {
 }
 impl AwsDynamoDbTableReplica {
     /// <p>List of global secondary indexes for the replica.</p>
-    pub fn global_secondary_indexes(&self) -> ::std::option::Option<&[crate::types::AwsDynamoDbTableReplicaGlobalSecondaryIndex]> {
-        self.global_secondary_indexes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.global_secondary_indexes.is_none()`.
+    pub fn global_secondary_indexes(&self) -> &[crate::types::AwsDynamoDbTableReplicaGlobalSecondaryIndex] {
+        self.global_secondary_indexes.as_deref().unwrap_or_default()
     }
     /// <p>The identifier of the KMS key that will be used for KMS encryption for the replica.</p>
     pub fn kms_master_key_id(&self) -> ::std::option::Option<&str> {

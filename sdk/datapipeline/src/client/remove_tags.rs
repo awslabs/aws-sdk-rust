@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RemoveTags`](crate::operation::remove_tags::builders::RemoveTagsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`pipeline_id(impl Into<String>)`](crate::operation::remove_tags::builders::RemoveTagsFluentBuilder::pipeline_id) / [`set_pipeline_id(Option<String>)`](crate::operation::remove_tags::builders::RemoveTagsFluentBuilder::set_pipeline_id): <p>The ID of the pipeline.</p>
-    ///   - [`tag_keys(impl Into<String>)`](crate::operation::remove_tags::builders::RemoveTagsFluentBuilder::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::operation::remove_tags::builders::RemoveTagsFluentBuilder::set_tag_keys): <p>The keys of the tags to remove.</p>
+    ///   - [`pipeline_id(impl Into<String>)`](crate::operation::remove_tags::builders::RemoveTagsFluentBuilder::pipeline_id) / [`set_pipeline_id(Option<String>)`](crate::operation::remove_tags::builders::RemoveTagsFluentBuilder::set_pipeline_id):<br>required: **true**<br><p>The ID of the pipeline.</p><br>
+    ///   - [`tag_keys(impl Into<String>)`](crate::operation::remove_tags::builders::RemoveTagsFluentBuilder::tag_keys) / [`set_tag_keys(Option<Vec::<String>>)`](crate::operation::remove_tags::builders::RemoveTagsFluentBuilder::set_tag_keys):<br>required: **true**<br><p>The keys of the tags to remove.</p><br>
     /// - On success, responds with [`RemoveTagsOutput`](crate::operation::remove_tags::RemoveTagsOutput)
     /// - On failure, responds with [`SdkError<RemoveTagsError>`](crate::operation::remove_tags::RemoveTagsError)
     pub fn remove_tags(&self) -> crate::operation::remove_tags::builders::RemoveTagsFluentBuilder {

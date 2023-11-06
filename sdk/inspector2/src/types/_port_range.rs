@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PortRange {
     /// <p>The beginning port in a port range.</p>
-    pub begin: ::std::option::Option<i32>,
+    pub begin: i32,
     /// <p>The ending port in a port range.</p>
-    pub end: ::std::option::Option<i32>,
+    pub end: i32,
 }
 impl PortRange {
     /// <p>The beginning port in a port range.</p>
-    pub fn begin(&self) -> ::std::option::Option<i32> {
+    pub fn begin(&self) -> i32 {
         self.begin
     }
     /// <p>The ending port in a port range.</p>
-    pub fn end(&self) -> ::std::option::Option<i32> {
+    pub fn end(&self) -> i32 {
         self.end
     }
 }
@@ -35,6 +35,7 @@ pub struct PortRangeBuilder {
 }
 impl PortRangeBuilder {
     /// <p>The beginning port in a port range.</p>
+    /// This field is required.
     pub fn begin(mut self, input: i32) -> Self {
         self.begin = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl PortRangeBuilder {
         &self.begin
     }
     /// <p>The ending port in a port range.</p>
+    /// This field is required.
     pub fn end(mut self, input: i32) -> Self {
         self.end = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl PortRangeBuilder {
         &self.end
     }
     /// Consumes the builder and constructs a [`PortRange`](crate::types::PortRange).
-    pub fn build(self) -> crate::types::PortRange {
-        crate::types::PortRange {
-            begin: self.begin,
-            end: self.end,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`begin`](crate::types::builders::PortRangeBuilder::begin)
+    /// - [`end`](crate::types::builders::PortRangeBuilder::end)
+    pub fn build(self) -> ::std::result::Result<crate::types::PortRange, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PortRange {
+            begin: self.begin.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "begin",
+                    "begin was not specified but it is required when building PortRange",
+                )
+            })?,
+            end: self.end.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "end",
+                    "end was not specified but it is required when building PortRange",
+                )
+            })?,
+        })
     }
 }

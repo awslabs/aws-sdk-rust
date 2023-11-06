@@ -10,8 +10,10 @@ pub struct AddCustomRoutingEndpointsInput {
 }
 impl AddCustomRoutingEndpointsInput {
     /// <p>The list of endpoint objects to add to a custom routing accelerator.</p>
-    pub fn endpoint_configurations(&self) -> ::std::option::Option<&[crate::types::CustomRoutingEndpointConfiguration]> {
-        self.endpoint_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.endpoint_configurations.is_none()`.
+    pub fn endpoint_configurations(&self) -> &[crate::types::CustomRoutingEndpointConfiguration] {
+        self.endpoint_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group for the custom routing endpoint.</p>
     pub fn endpoint_group_arn(&self) -> ::std::option::Option<&str> {
@@ -57,6 +59,7 @@ impl AddCustomRoutingEndpointsInputBuilder {
         &self.endpoint_configurations
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group for the custom routing endpoint.</p>
+    /// This field is required.
     pub fn endpoint_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_group_arn = ::std::option::Option::Some(input.into());
         self
@@ -75,7 +78,7 @@ impl AddCustomRoutingEndpointsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpointsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpointsInput {
             endpoint_configurations: self.endpoint_configurations,

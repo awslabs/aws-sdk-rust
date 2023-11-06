@@ -58,6 +58,7 @@ pub struct SetUserPoolMfaConfigInputBuilder {
 }
 impl SetUserPoolMfaConfigInputBuilder {
     /// <p>The user pool ID.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -131,7 +132,7 @@ impl SetUserPoolMfaConfigInputBuilder {
     /// Consumes the builder and constructs a [`SetUserPoolMfaConfigInput`](crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigInput {
             user_pool_id: self.user_pool_id,

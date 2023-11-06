@@ -12,8 +12,10 @@ pub struct ListApplicationStatesInput {
 }
 impl ListApplicationStatesInput {
     /// <p>The configurationIds from the Application Discovery Service that uniquely identifies your applications.</p>
-    pub fn application_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.application_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.application_ids.is_none()`.
+    pub fn application_ids(&self) -> &[::std::string::String] {
+        self.application_ids.as_deref().unwrap_or_default()
     }
     /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -91,7 +93,7 @@ impl ListApplicationStatesInputBuilder {
     /// Consumes the builder and constructs a [`ListApplicationStatesInput`](crate::operation::list_application_states::ListApplicationStatesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_application_states::ListApplicationStatesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_application_states::ListApplicationStatesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_application_states::ListApplicationStatesInput {
             application_ids: self.application_ids,

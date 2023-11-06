@@ -35,6 +35,7 @@ pub struct GetPositionConfigurationInputBuilder {
 }
 impl GetPositionConfigurationInputBuilder {
     /// <p>Resource identifier used in a position configuration.</p>
+    /// This field is required.
     pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_identifier = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl GetPositionConfigurationInputBuilder {
         &self.resource_identifier
     }
     /// <p>Resource type of the resource for which position configuration is retrieved.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: crate::types::PositionResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
@@ -67,7 +69,7 @@ impl GetPositionConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_position_configuration::GetPositionConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_position_configuration::GetPositionConfigurationInput {
             resource_identifier: self.resource_identifier,

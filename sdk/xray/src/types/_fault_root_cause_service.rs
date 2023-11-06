@@ -23,8 +23,10 @@ impl FaultRootCauseService {
         self.name.as_deref()
     }
     /// <p>A collection of associated service names.</p>
-    pub fn names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.names.is_none()`.
+    pub fn names(&self) -> &[::std::string::String] {
+        self.names.as_deref().unwrap_or_default()
     }
     /// <p>The type associated to the service.</p>
     pub fn r#type(&self) -> ::std::option::Option<&str> {
@@ -35,8 +37,10 @@ impl FaultRootCauseService {
         self.account_id.as_deref()
     }
     /// <p>The path of root cause entities found on the service. </p>
-    pub fn entity_path(&self) -> ::std::option::Option<&[crate::types::FaultRootCauseEntity]> {
-        self.entity_path.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entity_path.is_none()`.
+    pub fn entity_path(&self) -> &[crate::types::FaultRootCauseEntity] {
+        self.entity_path.as_deref().unwrap_or_default()
     }
     /// <p>A Boolean value indicating if the service is inferred from the trace.</p>
     pub fn inferred(&self) -> ::std::option::Option<bool> {

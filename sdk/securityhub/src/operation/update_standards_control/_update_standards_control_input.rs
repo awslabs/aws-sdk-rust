@@ -41,6 +41,7 @@ pub struct UpdateStandardsControlInputBuilder {
 }
 impl UpdateStandardsControlInputBuilder {
     /// <p>The ARN of the security standard control to enable or disable.</p>
+    /// This field is required.
     pub fn standards_control_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.standards_control_arn = ::std::option::Option::Some(input.into());
         self
@@ -85,8 +86,10 @@ impl UpdateStandardsControlInputBuilder {
     /// Consumes the builder and constructs a [`UpdateStandardsControlInput`](crate::operation::update_standards_control::UpdateStandardsControlInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_standards_control::UpdateStandardsControlInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::update_standards_control::UpdateStandardsControlInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::update_standards_control::UpdateStandardsControlInput {
             standards_control_arn: self.standards_control_arn,
             control_status: self.control_status,

@@ -11,8 +11,10 @@ pub struct ListVirtualClustersOutput {
 }
 impl ListVirtualClustersOutput {
     /// <p>This output lists the specified virtual clusters.</p>
-    pub fn virtual_clusters(&self) -> ::std::option::Option<&[crate::types::VirtualCluster]> {
-        self.virtual_clusters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.virtual_clusters.is_none()`.
+    pub fn virtual_clusters(&self) -> &[crate::types::VirtualCluster] {
+        self.virtual_clusters.as_deref().unwrap_or_default()
     }
     /// <p>This output displays the token for the next set of virtual clusters.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

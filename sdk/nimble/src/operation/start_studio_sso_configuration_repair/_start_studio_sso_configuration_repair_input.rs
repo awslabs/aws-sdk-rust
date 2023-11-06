@@ -48,6 +48,7 @@ impl StartStudioSsoConfigurationRepairInputBuilder {
         &self.client_token
     }
     /// <p>The studio ID. </p>
+    /// This field is required.
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl StartStudioSsoConfigurationRepairInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_studio_sso_configuration_repair::StartStudioSsoConfigurationRepairInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::start_studio_sso_configuration_repair::StartStudioSsoConfigurationRepairInput {

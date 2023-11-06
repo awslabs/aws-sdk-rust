@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualServiceData {
     /// <p>The name of the service mesh that the virtual service resides in.</p>
-    pub mesh_name: ::std::option::Option<::std::string::String>,
+    pub mesh_name: ::std::string::String,
     /// <p>The name of the virtual service.</p>
-    pub virtual_service_name: ::std::option::Option<::std::string::String>,
+    pub virtual_service_name: ::std::string::String,
     /// <p>The specifications of the virtual service.</p>
     pub spec: ::std::option::Option<crate::types::VirtualServiceSpec>,
     /// <p>An object that represents metadata for a resource.</p>
@@ -17,12 +17,14 @@ pub struct VirtualServiceData {
 }
 impl VirtualServiceData {
     /// <p>The name of the service mesh that the virtual service resides in.</p>
-    pub fn mesh_name(&self) -> ::std::option::Option<&str> {
-        self.mesh_name.as_deref()
+    pub fn mesh_name(&self) -> &str {
+        use std::ops::Deref;
+        self.mesh_name.deref()
     }
     /// <p>The name of the virtual service.</p>
-    pub fn virtual_service_name(&self) -> ::std::option::Option<&str> {
-        self.virtual_service_name.as_deref()
+    pub fn virtual_service_name(&self) -> &str {
+        use std::ops::Deref;
+        self.virtual_service_name.deref()
     }
     /// <p>The specifications of the virtual service.</p>
     pub fn spec(&self) -> ::std::option::Option<&crate::types::VirtualServiceSpec> {
@@ -56,6 +58,7 @@ pub struct VirtualServiceDataBuilder {
 }
 impl VirtualServiceDataBuilder {
     /// <p>The name of the service mesh that the virtual service resides in.</p>
+    /// This field is required.
     pub fn mesh_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mesh_name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +73,7 @@ impl VirtualServiceDataBuilder {
         &self.mesh_name
     }
     /// <p>The name of the virtual service.</p>
+    /// This field is required.
     pub fn virtual_service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_service_name = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +88,7 @@ impl VirtualServiceDataBuilder {
         &self.virtual_service_name
     }
     /// <p>The specifications of the virtual service.</p>
+    /// This field is required.
     pub fn spec(mut self, input: crate::types::VirtualServiceSpec) -> Self {
         self.spec = ::std::option::Option::Some(input);
         self
@@ -98,6 +103,7 @@ impl VirtualServiceDataBuilder {
         &self.spec
     }
     /// <p>An object that represents metadata for a resource.</p>
+    /// This field is required.
     pub fn metadata(mut self, input: crate::types::ResourceMetadata) -> Self {
         self.metadata = ::std::option::Option::Some(input);
         self
@@ -112,6 +118,7 @@ impl VirtualServiceDataBuilder {
         &self.metadata
     }
     /// <p>The current status of the virtual service.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::VirtualServiceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -126,13 +133,26 @@ impl VirtualServiceDataBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`VirtualServiceData`](crate::types::VirtualServiceData).
-    pub fn build(self) -> crate::types::VirtualServiceData {
-        crate::types::VirtualServiceData {
-            mesh_name: self.mesh_name,
-            virtual_service_name: self.virtual_service_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`mesh_name`](crate::types::builders::VirtualServiceDataBuilder::mesh_name)
+    /// - [`virtual_service_name`](crate::types::builders::VirtualServiceDataBuilder::virtual_service_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::VirtualServiceData, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::VirtualServiceData {
+            mesh_name: self.mesh_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "mesh_name",
+                    "mesh_name was not specified but it is required when building VirtualServiceData",
+                )
+            })?,
+            virtual_service_name: self.virtual_service_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "virtual_service_name",
+                    "virtual_service_name was not specified but it is required when building VirtualServiceData",
+                )
+            })?,
             spec: self.spec,
             metadata: self.metadata,
             status: self.status,
-        }
+        })
     }
 }

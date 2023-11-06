@@ -66,8 +66,10 @@ impl CreateClusterInput {
         self.tags.as_ref()
     }
     /// <p>The encryption configuration for the cluster.</p>
-    pub fn encryption_config(&self) -> ::std::option::Option<&[crate::types::EncryptionConfig]> {
-        self.encryption_config.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.encryption_config.is_none()`.
+    pub fn encryption_config(&self) -> &[crate::types::EncryptionConfig] {
+        self.encryption_config.as_deref().unwrap_or_default()
     }
     /// <p>An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. Before creating a local cluster on an Outpost, review <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-local-cluster-overview.html">Local clusters for Amazon EKS on Amazon Web Services Outposts</a> in the <i>Amazon EKS User Guide</i>. This object isn't available for creating Amazon EKS clusters on the Amazon Web Services cloud.</p>
     pub fn outpost_config(&self) -> ::std::option::Option<&crate::types::OutpostConfigRequest> {
@@ -98,6 +100,7 @@ pub struct CreateClusterInputBuilder {
 }
 impl CreateClusterInputBuilder {
     /// <p>The unique name to give to your cluster.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +135,7 @@ impl CreateClusterInputBuilder {
         &self.version
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make calls to Amazon Web Services API operations on your behalf. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -146,6 +150,7 @@ impl CreateClusterInputBuilder {
         &self.role_arn
     }
     /// <p>The VPC configuration that's used by the cluster control plane. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must specify at least two subnets. You can specify up to five security groups. However, we recommend that you use a dedicated security group for your cluster control plane.</p>
+    /// This field is required.
     pub fn resources_vpc_config(mut self, input: crate::types::VpcConfigRequest) -> Self {
         self.resources_vpc_config = ::std::option::Option::Some(input);
         self
@@ -264,7 +269,7 @@ impl CreateClusterInputBuilder {
     /// Consumes the builder and constructs a [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_cluster::CreateClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_cluster::CreateClusterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_cluster::CreateClusterInput {
             name: self.name,
             version: self.version,

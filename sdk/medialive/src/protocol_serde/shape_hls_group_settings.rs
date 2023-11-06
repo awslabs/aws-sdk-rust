@@ -2,7 +2,7 @@
 pub fn ser_hls_group_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HlsGroupSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ad_markers {
         let mut array_2 = object.key("adMarkers").start_array();
         for item_3 in var_1 {
@@ -199,9 +199,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "adMarkers" => {
-                            builder = builder.set_ad_markers(crate::protocol_serde::shape___list_of_hls_ad_markers::de___list_of_hls_ad_markers(
-                                tokens,
-                            )?);
+                            builder = builder.set_ad_markers(crate::protocol_serde::shape_list_of_hls_ad_markers::de_list_of_hls_ad_markers(tokens)?);
                         }
                         "baseUrlContent" => {
                             builder = builder.set_base_url_content(
@@ -233,7 +231,7 @@ where
                         }
                         "captionLanguageMappings" => {
                             builder = builder.set_caption_language_mappings(
-                                crate::protocol_serde::shape___list_of_caption_language_mapping::de___list_of_caption_language_mapping(tokens)?,
+                                crate::protocol_serde::shape_list_of_caption_language_mapping::de_list_of_caption_language_mapping(tokens)?,
                             );
                         }
                         "captionLanguageSetting" => {
@@ -494,7 +492,7 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::hls_group_settings_correct_errors(builder).build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

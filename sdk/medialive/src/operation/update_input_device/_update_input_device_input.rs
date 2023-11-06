@@ -70,6 +70,7 @@ impl UpdateInputDeviceInputBuilder {
         &self.hd_device_settings
     }
     /// The unique ID of the input device. For example, hd-123456789abcdef.
+    /// This field is required.
     pub fn input_device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_device_id = ::std::option::Option::Some(input.into());
         self
@@ -128,7 +129,7 @@ impl UpdateInputDeviceInputBuilder {
     /// Consumes the builder and constructs a [`UpdateInputDeviceInput`](crate::operation::update_input_device::UpdateInputDeviceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_input_device::UpdateInputDeviceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_input_device::UpdateInputDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_input_device::UpdateInputDeviceInput {
             hd_device_settings: self.hd_device_settings,
             input_device_id: self.input_device_id,

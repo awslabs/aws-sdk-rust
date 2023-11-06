@@ -34,6 +34,7 @@ pub struct DeleteWebAclInputBuilder {
 }
 impl DeleteWebAclInputBuilder {
     /// <p>The <code>WebACLId</code> of the <code>WebACL</code> that you want to delete. <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
+    /// This field is required.
     pub fn web_acl_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.web_acl_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteWebAclInputBuilder {
         &self.web_acl_id
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    /// This field is required.
     pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_token = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DeleteWebAclInputBuilder {
     /// Consumes the builder and constructs a [`DeleteWebAclInput`](crate::operation::delete_web_acl::DeleteWebAclInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_web_acl::DeleteWebAclInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_web_acl::DeleteWebAclInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_web_acl::DeleteWebAclInput {
             web_acl_id: self.web_acl_id,
             change_token: self.change_token,

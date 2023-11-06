@@ -64,7 +64,7 @@ impl DiscoverPollEndpointInputBuilder {
     /// Consumes the builder and constructs a [`DiscoverPollEndpointInput`](crate::operation::discover_poll_endpoint::DiscoverPollEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::discover_poll_endpoint::DiscoverPollEndpointInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::discover_poll_endpoint::DiscoverPollEndpointInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::discover_poll_endpoint::DiscoverPollEndpointInput {
             container_instance: self.container_instance,

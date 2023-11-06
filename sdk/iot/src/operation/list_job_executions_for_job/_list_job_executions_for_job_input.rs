@@ -48,6 +48,7 @@ pub struct ListJobExecutionsForJobInputBuilder {
 }
 impl ListJobExecutionsForJobInputBuilder {
     /// <p>The unique identifier you assigned to this job when it was created.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +109,7 @@ impl ListJobExecutionsForJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_job_executions_for_job::ListJobExecutionsForJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_job_executions_for_job::ListJobExecutionsForJobInput {
             job_id: self.job_id,

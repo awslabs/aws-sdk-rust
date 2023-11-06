@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestSetTurnRecord {
     /// <p>The record number associated with the turn.</p>
-    pub record_number: ::std::option::Option<i64>,
+    pub record_number: i64,
     /// <p>The unique identifier for the conversation associated with the turn.</p>
     pub conversation_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of turns that has elapsed up to that turn.</p>
@@ -15,7 +15,7 @@ pub struct TestSetTurnRecord {
 }
 impl TestSetTurnRecord {
     /// <p>The record number associated with the turn.</p>
-    pub fn record_number(&self) -> ::std::option::Option<i64> {
+    pub fn record_number(&self) -> i64 {
         self.record_number
     }
     /// <p>The unique identifier for the conversation associated with the turn.</p>
@@ -49,6 +49,7 @@ pub struct TestSetTurnRecordBuilder {
 }
 impl TestSetTurnRecordBuilder {
     /// <p>The record number associated with the turn.</p>
+    /// This field is required.
     pub fn record_number(mut self, input: i64) -> Self {
         self.record_number = ::std::option::Option::Some(input);
         self
@@ -91,6 +92,7 @@ impl TestSetTurnRecordBuilder {
         &self.turn_number
     }
     /// <p>Contains information about the agent or user turn depending upon type of turn.</p>
+    /// This field is required.
     pub fn turn_specification(mut self, input: crate::types::TurnSpecification) -> Self {
         self.turn_specification = ::std::option::Option::Some(input);
         self
@@ -105,12 +107,19 @@ impl TestSetTurnRecordBuilder {
         &self.turn_specification
     }
     /// Consumes the builder and constructs a [`TestSetTurnRecord`](crate::types::TestSetTurnRecord).
-    pub fn build(self) -> crate::types::TestSetTurnRecord {
-        crate::types::TestSetTurnRecord {
-            record_number: self.record_number,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`record_number`](crate::types::builders::TestSetTurnRecordBuilder::record_number)
+    pub fn build(self) -> ::std::result::Result<crate::types::TestSetTurnRecord, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TestSetTurnRecord {
+            record_number: self.record_number.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "record_number",
+                    "record_number was not specified but it is required when building TestSetTurnRecord",
+                )
+            })?,
             conversation_id: self.conversation_id,
             turn_number: self.turn_number,
             turn_specification: self.turn_specification,
-        }
+        })
     }
 }

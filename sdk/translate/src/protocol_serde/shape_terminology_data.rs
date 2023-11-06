@@ -2,15 +2,15 @@
 pub fn ser_terminology_data(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TerminologyData,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.file {
-        object.key("File").string_unchecked(&::aws_smithy_types::base64::encode(var_1));
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("File").string_unchecked(&::aws_smithy_types::base64::encode(&input.file));
     }
-    if let Some(var_2) = &input.format {
-        object.key("Format").string(var_2.as_str());
+    {
+        object.key("Format").string(input.format.as_str());
     }
-    if let Some(var_3) = &input.directionality {
-        object.key("Directionality").string(var_3.as_str());
+    if let Some(var_1) = &input.directionality {
+        object.key("Directionality").string(var_1.as_str());
     }
     Ok(())
 }

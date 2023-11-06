@@ -41,6 +41,7 @@ pub struct GetHostedConfigurationVersionInputBuilder {
 }
 impl GetHostedConfigurationVersionInputBuilder {
     /// <p>The application ID.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl GetHostedConfigurationVersionInputBuilder {
         &self.application_id
     }
     /// <p>The configuration profile ID.</p>
+    /// This field is required.
     pub fn configuration_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_profile_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl GetHostedConfigurationVersionInputBuilder {
         &self.configuration_profile_id
     }
     /// <p>The version.</p>
+    /// This field is required.
     pub fn version_number(mut self, input: i32) -> Self {
         self.version_number = ::std::option::Option::Some(input);
         self
@@ -87,7 +90,7 @@ impl GetHostedConfigurationVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionInput {
             application_id: self.application_id,

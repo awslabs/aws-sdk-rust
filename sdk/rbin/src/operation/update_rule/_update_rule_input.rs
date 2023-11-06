@@ -40,8 +40,10 @@ impl UpdateRuleInput {
     /// <p>Specifies the resource tags to use to identify resources that are to be retained by a tag-level retention rule. For tag-level retention rules, only deleted resources, of the specified resource type, that have one or more of the specified tag key and value pairs are retained. If a resource is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule.</p>
     /// <p>You can add the same tag key and value pair to a maximum or five retention rules.</p>
     /// <p>To create a Region-level retention rule, omit this parameter. A Region-level retention rule does not have any resource tags specified. It retains all deleted resources of the specified resource type in the Region in which the rule is created, even if the resources are not tagged.</p>
-    pub fn resource_tags(&self) -> ::std::option::Option<&[crate::types::ResourceTag]> {
-        self.resource_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_tags.is_none()`.
+    pub fn resource_tags(&self) -> &[crate::types::ResourceTag] {
+        self.resource_tags.as_deref().unwrap_or_default()
     }
 }
 impl UpdateRuleInput {
@@ -63,6 +65,7 @@ pub struct UpdateRuleInputBuilder {
 }
 impl UpdateRuleInputBuilder {
     /// <p>The unique ID of the retention rule.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -151,7 +154,7 @@ impl UpdateRuleInputBuilder {
         &self.resource_tags
     }
     /// Consumes the builder and constructs a [`UpdateRuleInput`](crate::operation::update_rule::UpdateRuleInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_rule::UpdateRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_rule::UpdateRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_rule::UpdateRuleInput {
             identifier: self.identifier,
             retention_period: self.retention_period,

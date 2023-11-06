@@ -5,23 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComponentPropertyGroupResponse {
     /// <p>The group type.</p>
-    pub group_type: ::std::option::Option<crate::types::GroupType>,
+    pub group_type: crate::types::GroupType,
     /// <p>The names of properties</p>
-    pub property_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub property_names: ::std::vec::Vec<::std::string::String>,
     /// <p>A Boolean value that specifies whether the property group is inherited from a parent entity</p>
-    pub is_inherited: ::std::option::Option<bool>,
+    pub is_inherited: bool,
 }
 impl ComponentPropertyGroupResponse {
     /// <p>The group type.</p>
-    pub fn group_type(&self) -> ::std::option::Option<&crate::types::GroupType> {
-        self.group_type.as_ref()
+    pub fn group_type(&self) -> &crate::types::GroupType {
+        &self.group_type
     }
     /// <p>The names of properties</p>
-    pub fn property_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.property_names.as_deref()
+    pub fn property_names(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.property_names.deref()
     }
     /// <p>A Boolean value that specifies whether the property group is inherited from a parent entity</p>
-    pub fn is_inherited(&self) -> ::std::option::Option<bool> {
+    pub fn is_inherited(&self) -> bool {
         self.is_inherited
     }
 }
@@ -42,6 +43,7 @@ pub struct ComponentPropertyGroupResponseBuilder {
 }
 impl ComponentPropertyGroupResponseBuilder {
     /// <p>The group type.</p>
+    /// This field is required.
     pub fn group_type(mut self, input: crate::types::GroupType) -> Self {
         self.group_type = ::std::option::Option::Some(input);
         self
@@ -76,6 +78,7 @@ impl ComponentPropertyGroupResponseBuilder {
         &self.property_names
     }
     /// <p>A Boolean value that specifies whether the property group is inherited from a parent entity</p>
+    /// This field is required.
     pub fn is_inherited(mut self, input: bool) -> Self {
         self.is_inherited = ::std::option::Option::Some(input);
         self
@@ -90,11 +93,30 @@ impl ComponentPropertyGroupResponseBuilder {
         &self.is_inherited
     }
     /// Consumes the builder and constructs a [`ComponentPropertyGroupResponse`](crate::types::ComponentPropertyGroupResponse).
-    pub fn build(self) -> crate::types::ComponentPropertyGroupResponse {
-        crate::types::ComponentPropertyGroupResponse {
-            group_type: self.group_type,
-            property_names: self.property_names,
-            is_inherited: self.is_inherited,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`group_type`](crate::types::builders::ComponentPropertyGroupResponseBuilder::group_type)
+    /// - [`property_names`](crate::types::builders::ComponentPropertyGroupResponseBuilder::property_names)
+    /// - [`is_inherited`](crate::types::builders::ComponentPropertyGroupResponseBuilder::is_inherited)
+    pub fn build(self) -> ::std::result::Result<crate::types::ComponentPropertyGroupResponse, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ComponentPropertyGroupResponse {
+            group_type: self.group_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "group_type",
+                    "group_type was not specified but it is required when building ComponentPropertyGroupResponse",
+                )
+            })?,
+            property_names: self.property_names.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "property_names",
+                    "property_names was not specified but it is required when building ComponentPropertyGroupResponse",
+                )
+            })?,
+            is_inherited: self.is_inherited.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "is_inherited",
+                    "is_inherited was not specified but it is required when building ComponentPropertyGroupResponse",
+                )
+            })?,
+        })
     }
 }

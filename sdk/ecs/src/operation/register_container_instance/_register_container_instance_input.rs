@@ -46,8 +46,10 @@ impl RegisterContainerInstanceInput {
         self.instance_identity_document_signature.as_deref()
     }
     /// <p>The resources available on the instance.</p>
-    pub fn total_resources(&self) -> ::std::option::Option<&[crate::types::Resource]> {
-        self.total_resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.total_resources.is_none()`.
+    pub fn total_resources(&self) -> &[crate::types::Resource] {
+        self.total_resources.as_deref().unwrap_or_default()
     }
     /// <p>The version information for the Amazon ECS container agent and Docker daemon that runs on the container instance.</p>
     pub fn version_info(&self) -> ::std::option::Option<&crate::types::VersionInfo> {
@@ -58,12 +60,16 @@ impl RegisterContainerInstanceInput {
         self.container_instance_arn.as_deref()
     }
     /// <p>The container instance attributes that this container instance supports.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&[crate::types::Attribute]> {
-        self.attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
+    pub fn attributes(&self) -> &[crate::types::Attribute] {
+        self.attributes.as_deref().unwrap_or_default()
     }
     /// <p>The devices that are available on the container instance. The only supported device type is a GPU.</p>
-    pub fn platform_devices(&self) -> ::std::option::Option<&[crate::types::PlatformDevice]> {
-        self.platform_devices.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.platform_devices.is_none()`.
+    pub fn platform_devices(&self) -> &[crate::types::PlatformDevice] {
+        self.platform_devices.as_deref().unwrap_or_default()
     }
     /// <p>The metadata that you apply to the container instance to help you categorize and organize them. Each tag consists of a key and an optional value. You define both.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -76,8 +82,10 @@ impl RegisterContainerInstanceInput {
     /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl RegisterContainerInstanceInput {
@@ -287,7 +295,7 @@ impl RegisterContainerInstanceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_container_instance::RegisterContainerInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::register_container_instance::RegisterContainerInstanceInput {
             cluster: self.cluster,

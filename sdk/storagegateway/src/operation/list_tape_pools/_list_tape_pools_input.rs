@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTapePoolsInput {
     /// <p>The Amazon Resource Name (ARN) of each of the custom tape pools you want to list. If you don't specify a custom tape pool ARN, the response lists all custom tape pools. </p>
-    pub pool_ar_ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub pool_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A string that indicates the position at which to begin the returned list of tape pools.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>An optional number limit for the tape pools in the list returned by this call.</p>
@@ -12,8 +12,10 @@ pub struct ListTapePoolsInput {
 }
 impl ListTapePoolsInput {
     /// <p>The Amazon Resource Name (ARN) of each of the custom tape pools you want to list. If you don't specify a custom tape pool ARN, the response lists all custom tape pools. </p>
-    pub fn pool_ar_ns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.pool_ar_ns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pool_arns.is_none()`.
+    pub fn pool_arns(&self) -> &[::std::string::String] {
+        self.pool_arns.as_deref().unwrap_or_default()
     }
     /// <p>A string that indicates the position at which to begin the returned list of tape pools.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {
@@ -35,30 +37,30 @@ impl ListTapePoolsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTapePoolsInputBuilder {
-    pub(crate) pool_ar_ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) pool_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,
 }
 impl ListTapePoolsInputBuilder {
-    /// Appends an item to `pool_ar_ns`.
+    /// Appends an item to `pool_arns`.
     ///
-    /// To override the contents of this collection use [`set_pool_ar_ns`](Self::set_pool_ar_ns).
+    /// To override the contents of this collection use [`set_pool_arns`](Self::set_pool_arns).
     ///
     /// <p>The Amazon Resource Name (ARN) of each of the custom tape pools you want to list. If you don't specify a custom tape pool ARN, the response lists all custom tape pools. </p>
-    pub fn pool_ar_ns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.pool_ar_ns.unwrap_or_default();
+    pub fn pool_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.pool_arns.unwrap_or_default();
         v.push(input.into());
-        self.pool_ar_ns = ::std::option::Option::Some(v);
+        self.pool_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of each of the custom tape pools you want to list. If you don't specify a custom tape pool ARN, the response lists all custom tape pools. </p>
-    pub fn set_pool_ar_ns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.pool_ar_ns = input;
+    pub fn set_pool_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.pool_arns = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of each of the custom tape pools you want to list. If you don't specify a custom tape pool ARN, the response lists all custom tape pools. </p>
-    pub fn get_pool_ar_ns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.pool_ar_ns
+    pub fn get_pool_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.pool_arns
     }
     /// <p>A string that indicates the position at which to begin the returned list of tape pools.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -91,9 +93,9 @@ impl ListTapePoolsInputBuilder {
     /// Consumes the builder and constructs a [`ListTapePoolsInput`](crate::operation::list_tape_pools::ListTapePoolsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_tape_pools::ListTapePoolsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_tape_pools::ListTapePoolsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_tape_pools::ListTapePoolsInput {
-            pool_ar_ns: self.pool_ar_ns,
+            pool_arns: self.pool_arns,
             marker: self.marker,
             limit: self.limit,
         })

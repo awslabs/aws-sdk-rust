@@ -50,7 +50,7 @@ where
                             );
                         }
                         "labels" => {
-                            builder = builder.set_labels(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                            builder = builder.set_labels(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         "name" => {
                             builder = builder.set_name(
@@ -76,7 +76,7 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::application_summary_correct_errors(builder).build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

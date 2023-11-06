@@ -2,7 +2,7 @@
 pub fn ser_get_app_monitor_data_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_app_monitor_data::GetAppMonitorDataInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.filters {
         let mut array_2 = object.key("Filters").start_array();
         for item_3 in var_1 {
@@ -15,20 +15,20 @@ pub fn ser_get_app_monitor_data_input(
         }
         array_2.finish();
     }
-    if input.max_results != 0 {
+    if let Some(var_5) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.max_results).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_5) = &input.next_token {
-        object.key("NextToken").string(var_5.as_str());
+    if let Some(var_6) = &input.next_token {
+        object.key("NextToken").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.time_range {
+    if let Some(var_7) = &input.time_range {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("TimeRange").start_object();
-        crate::protocol_serde::shape_time_range::ser_time_range(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_8 = object.key("TimeRange").start_object();
+        crate::protocol_serde::shape_time_range::ser_time_range(&mut object_8, var_7)?;
+        object_8.finish();
     }
     Ok(())
 }

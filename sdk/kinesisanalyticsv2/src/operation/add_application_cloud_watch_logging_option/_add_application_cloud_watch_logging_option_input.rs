@@ -48,6 +48,7 @@ pub struct AddApplicationCloudWatchLoggingOptionInputBuilder {
 }
 impl AddApplicationCloudWatchLoggingOptionInputBuilder {
     /// <p>The Kinesis Data Analytics application name.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl AddApplicationCloudWatchLoggingOptionInputBuilder {
         &self.current_application_version_id
     }
     /// <p>Provides the Amazon CloudWatch log stream Amazon Resource Name (ARN). </p>
+    /// This field is required.
     pub fn cloud_watch_logging_option(mut self, input: crate::types::CloudWatchLoggingOption) -> Self {
         self.cloud_watch_logging_option = ::std::option::Option::Some(input);
         self
@@ -108,7 +110,7 @@ impl AddApplicationCloudWatchLoggingOptionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionInput {

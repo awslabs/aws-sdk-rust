@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWorkflowExecutionHistoryOutput {
     /// <p>The list of history events.</p>
-    pub events: ::std::option::Option<::std::vec::Vec<crate::types::HistoryEvent>>,
+    pub events: ::std::vec::Vec<crate::types::HistoryEvent>,
     /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
     pub next_page_token: ::std::option::Option<::std::string::String>,
@@ -13,8 +13,9 @@ pub struct GetWorkflowExecutionHistoryOutput {
 }
 impl GetWorkflowExecutionHistoryOutput {
     /// <p>The list of history events.</p>
-    pub fn events(&self) -> ::std::option::Option<&[crate::types::HistoryEvent]> {
-        self.events.as_deref()
+    pub fn events(&self) -> &[crate::types::HistoryEvent] {
+        use std::ops::Deref;
+        self.events.deref()
     }
     /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
@@ -90,11 +91,23 @@ impl GetWorkflowExecutionHistoryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetWorkflowExecutionHistoryOutput`](crate::operation::get_workflow_execution_history::GetWorkflowExecutionHistoryOutput).
-    pub fn build(self) -> crate::operation::get_workflow_execution_history::GetWorkflowExecutionHistoryOutput {
-        crate::operation::get_workflow_execution_history::GetWorkflowExecutionHistoryOutput {
-            events: self.events,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`events`](crate::operation::get_workflow_execution_history::builders::GetWorkflowExecutionHistoryOutputBuilder::events)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_workflow_execution_history::GetWorkflowExecutionHistoryOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::get_workflow_execution_history::GetWorkflowExecutionHistoryOutput {
+            events: self.events.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "events",
+                    "events was not specified but it is required when building GetWorkflowExecutionHistoryOutput",
+                )
+            })?,
             next_page_token: self.next_page_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

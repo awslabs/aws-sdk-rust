@@ -49,6 +49,7 @@ pub struct UpdateCampaignOutboundCallConfigInputBuilder {
 }
 impl UpdateCampaignOutboundCallConfigInputBuilder {
     /// Identifier representing a Campaign
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -109,7 +110,7 @@ impl UpdateCampaignOutboundCallConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_campaign_outbound_call_config::UpdateCampaignOutboundCallConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_campaign_outbound_call_config::UpdateCampaignOutboundCallConfigInput {

@@ -34,6 +34,7 @@ pub struct DeleteEnvironmentMembershipInputBuilder {
 }
 impl DeleteEnvironmentMembershipInputBuilder {
     /// <p>The ID of the environment to delete the environment member from.</p>
+    /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteEnvironmentMembershipInputBuilder {
         &self.environment_id
     }
     /// <p>The Amazon Resource Name (ARN) of the environment member to delete from the environment.</p>
+    /// This field is required.
     pub fn user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_arn = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl DeleteEnvironmentMembershipInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_environment_membership::DeleteEnvironmentMembershipInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_environment_membership::DeleteEnvironmentMembershipInput {
             environment_id: self.environment_id,

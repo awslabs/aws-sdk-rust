@@ -21,8 +21,10 @@ impl RemoveTagsInput {
         self.resource_id.as_deref()
     }
     /// <p>Specifies a list of tags to be removed.</p>
-    pub fn tags_list(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags_list.is_none()`.
+    pub fn tags_list(&self) -> &[crate::types::Tag] {
+        self.tags_list.as_deref().unwrap_or_default()
     }
 }
 impl RemoveTagsInput {
@@ -44,6 +46,7 @@ impl RemoveTagsInputBuilder {
     /// <p> Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     /// <p>Example event data store ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code> </p>
     /// <p>Example channel ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -84,7 +87,7 @@ impl RemoveTagsInputBuilder {
         &self.tags_list
     }
     /// Consumes the builder and constructs a [`RemoveTagsInput`](crate::operation::remove_tags::RemoveTagsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::remove_tags::RemoveTagsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::remove_tags::RemoveTagsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::remove_tags::RemoveTagsInput {
             resource_id: self.resource_id,
             tags_list: self.tags_list,

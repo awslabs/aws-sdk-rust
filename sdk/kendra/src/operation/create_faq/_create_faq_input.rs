@@ -47,8 +47,10 @@ impl CreateFaqInput {
         self.role_arn.as_deref()
     }
     /// <p>A list of key-value pairs that identify the FAQ. You can use the tags to identify and organize your resources and to control access to resources.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The format of the FAQ input file. You can choose between a basic CSV format, a CSV format that includes customs attributes in a header, and a JSON format that includes custom attributes.</p>
     /// <p>The default format is CSV.</p>
@@ -89,6 +91,7 @@ pub struct CreateFaqInputBuilder {
 }
 impl CreateFaqInputBuilder {
     /// <p>The identifier of the index for the FAQ.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self
@@ -103,6 +106,7 @@ impl CreateFaqInputBuilder {
         &self.index_id
     }
     /// <p>A name for the FAQ.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -131,6 +135,7 @@ impl CreateFaqInputBuilder {
         &self.description
     }
     /// <p>The path to the FAQ file in S3.</p>
+    /// This field is required.
     pub fn s3_path(mut self, input: crate::types::S3Path) -> Self {
         self.s3_path = ::std::option::Option::Some(input);
         self
@@ -145,6 +150,7 @@ impl CreateFaqInputBuilder {
         &self.s3_path
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access the S3 bucket that contains the FAQs. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra</a>.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -230,7 +236,7 @@ impl CreateFaqInputBuilder {
         &self.language_code
     }
     /// Consumes the builder and constructs a [`CreateFaqInput`](crate::operation::create_faq::CreateFaqInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_faq::CreateFaqInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_faq::CreateFaqInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_faq::CreateFaqInput {
             index_id: self.index_id,
             name: self.name,

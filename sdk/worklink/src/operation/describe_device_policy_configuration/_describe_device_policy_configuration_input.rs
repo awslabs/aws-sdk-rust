@@ -27,6 +27,7 @@ pub struct DescribeDevicePolicyConfigurationInputBuilder {
 }
 impl DescribeDevicePolicyConfigurationInputBuilder {
     /// <p>The ARN of the fleet.</p>
+    /// This field is required.
     pub fn fleet_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeDevicePolicyConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_device_policy_configuration::DescribeDevicePolicyConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_device_policy_configuration::DescribeDevicePolicyConfigurationInput { fleet_arn: self.fleet_arn },

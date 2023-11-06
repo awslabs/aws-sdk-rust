@@ -27,6 +27,7 @@ pub struct DescribeProfileInputBuilder {
 }
 impl DescribeProfileInputBuilder {
     /// <p>The identifier of the profile that you want described.</p>
+    /// This field is required.
     pub fn profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeProfileInputBuilder {
     /// Consumes the builder and constructs a [`DescribeProfileInput`](crate::operation::describe_profile::DescribeProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_profile::DescribeProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_profile::DescribeProfileInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_profile::DescribeProfileInput { profile_id: self.profile_id })
     }
 }

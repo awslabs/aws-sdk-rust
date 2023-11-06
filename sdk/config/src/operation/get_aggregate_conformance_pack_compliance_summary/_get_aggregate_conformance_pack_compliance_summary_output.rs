@@ -14,10 +14,10 @@ pub struct GetAggregateConformancePackComplianceSummaryOutput {
 }
 impl GetAggregateConformancePackComplianceSummaryOutput {
     /// <p>Returns a list of <code>AggregateConformancePackComplianceSummary</code> object.</p>
-    pub fn aggregate_conformance_pack_compliance_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AggregateConformancePackComplianceSummary]> {
-        self.aggregate_conformance_pack_compliance_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aggregate_conformance_pack_compliance_summaries.is_none()`.
+    pub fn aggregate_conformance_pack_compliance_summaries(&self) -> &[crate::types::AggregateConformancePackComplianceSummary] {
+        self.aggregate_conformance_pack_compliance_summaries.as_deref().unwrap_or_default()
     }
     /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
     pub fn group_by_key(&self) -> ::std::option::Option<&str> {

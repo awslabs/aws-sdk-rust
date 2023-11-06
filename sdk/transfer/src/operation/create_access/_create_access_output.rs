@@ -4,19 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAccessOutput {
     /// <p>The identifier of the server that the user is attached to.</p>
-    pub server_id: ::std::option::Option<::std::string::String>,
+    pub server_id: ::std::string::String,
     /// <p>The external identifier of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family.</p>
-    pub external_id: ::std::option::Option<::std::string::String>,
+    pub external_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateAccessOutput {
     /// <p>The identifier of the server that the user is attached to.</p>
-    pub fn server_id(&self) -> ::std::option::Option<&str> {
-        self.server_id.as_deref()
+    pub fn server_id(&self) -> &str {
+        use std::ops::Deref;
+        self.server_id.deref()
     }
     /// <p>The external identifier of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family.</p>
-    pub fn external_id(&self) -> ::std::option::Option<&str> {
-        self.external_id.as_deref()
+    pub fn external_id(&self) -> &str {
+        use std::ops::Deref;
+        self.external_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateAccessOutput {
@@ -41,6 +43,7 @@ pub struct CreateAccessOutputBuilder {
 }
 impl CreateAccessOutputBuilder {
     /// <p>The identifier of the server that the user is attached to.</p>
+    /// This field is required.
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl CreateAccessOutputBuilder {
         &self.server_id
     }
     /// <p>The external identifier of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family.</p>
+    /// This field is required.
     pub fn external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.external_id = ::std::option::Option::Some(input.into());
         self
@@ -78,11 +82,26 @@ impl CreateAccessOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateAccessOutput`](crate::operation::create_access::CreateAccessOutput).
-    pub fn build(self) -> crate::operation::create_access::CreateAccessOutput {
-        crate::operation::create_access::CreateAccessOutput {
-            server_id: self.server_id,
-            external_id: self.external_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`server_id`](crate::operation::create_access::builders::CreateAccessOutputBuilder::server_id)
+    /// - [`external_id`](crate::operation::create_access::builders::CreateAccessOutputBuilder::external_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_access::CreateAccessOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_access::CreateAccessOutput {
+            server_id: self.server_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "server_id",
+                    "server_id was not specified but it is required when building CreateAccessOutput",
+                )
+            })?,
+            external_id: self.external_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "external_id",
+                    "external_id was not specified but it is required when building CreateAccessOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

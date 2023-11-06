@@ -4,13 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMetadataOutput {
     /// <p>Represents the configuration settings for the features metadata.</p>
-    pub features: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub features: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetMetadataOutput {
     /// <p>Represents the configuration settings for the features metadata.</p>
-    pub fn features(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
-        self.features.as_ref()
+    pub fn features(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+        &self.features
     }
 }
 impl ::aws_http::request_id::RequestId for GetMetadataOutput {
@@ -63,10 +63,17 @@ impl GetMetadataOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetMetadataOutput`](crate::operation::get_metadata::GetMetadataOutput).
-    pub fn build(self) -> crate::operation::get_metadata::GetMetadataOutput {
-        crate::operation::get_metadata::GetMetadataOutput {
-            features: self.features,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`features`](crate::operation::get_metadata::builders::GetMetadataOutputBuilder::features)
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_metadata::GetMetadataOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_metadata::GetMetadataOutput {
+            features: self.features.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "features",
+                    "features was not specified but it is required when building GetMetadataOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

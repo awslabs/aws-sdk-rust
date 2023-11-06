@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRegistriesOutput {
     /// <p>An object that contains the details for a public registry.</p>
-    pub registries: ::std::option::Option<::std::vec::Vec<crate::types::Registry>>,
+    pub registries: ::std::vec::Vec<crate::types::Registry>,
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. If the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. If there are no more results, this value is <code>null</code>.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeRegistriesOutput {
     /// <p>An object that contains the details for a public registry.</p>
-    pub fn registries(&self) -> ::std::option::Option<&[crate::types::Registry]> {
-        self.registries.as_deref()
+    pub fn registries(&self) -> &[crate::types::Registry] {
+        use std::ops::Deref;
+        self.registries.deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. If the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. If there are no more results, this value is <code>null</code>.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,21 @@ impl DescribeRegistriesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeRegistriesOutput`](crate::operation::describe_registries::DescribeRegistriesOutput).
-    pub fn build(self) -> crate::operation::describe_registries::DescribeRegistriesOutput {
-        crate::operation::describe_registries::DescribeRegistriesOutput {
-            registries: self.registries,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`registries`](crate::operation::describe_registries::builders::DescribeRegistriesOutputBuilder::registries)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_registries::DescribeRegistriesOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_registries::DescribeRegistriesOutput {
+            registries: self.registries.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "registries",
+                    "registries was not specified but it is required when building DescribeRegistriesOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

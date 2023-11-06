@@ -51,8 +51,10 @@ impl AutoMlAlgorithmConfig {
     /// <li> <p>"xgboost"</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn auto_ml_algorithms(&self) -> ::std::option::Option<&[crate::types::AutoMlAlgorithm]> {
-        self.auto_ml_algorithms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auto_ml_algorithms.is_none()`.
+    pub fn auto_ml_algorithms(&self) -> &[crate::types::AutoMlAlgorithm] {
+        self.auto_ml_algorithms.as_deref().unwrap_or_default()
     }
 }
 impl AutoMlAlgorithmConfig {

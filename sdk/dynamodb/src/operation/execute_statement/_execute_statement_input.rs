@@ -30,8 +30,10 @@ impl ExecuteStatementInput {
         self.statement.as_deref()
     }
     /// <p>The parameters for the PartiQL statement, if any.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&[crate::types::AttributeValue]> {
-        self.parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
+    pub fn parameters(&self) -> &[crate::types::AttributeValue] {
+        self.parameters.as_deref().unwrap_or_default()
     }
     /// <p>The consistency of a read operation. If set to <code>true</code>, then a strongly consistent read is used; otherwise, an eventually consistent read is used.</p>
     pub fn consistent_read(&self) -> ::std::option::Option<bool> {
@@ -81,6 +83,7 @@ pub struct ExecuteStatementInputBuilder {
 }
 impl ExecuteStatementInputBuilder {
     /// <p>The PartiQL statement representing the operation to run.</p>
+    /// This field is required.
     pub fn statement(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.statement = ::std::option::Option::Some(input.into());
         self
@@ -208,7 +211,7 @@ impl ExecuteStatementInputBuilder {
     /// Consumes the builder and constructs a [`ExecuteStatementInput`](crate::operation::execute_statement::ExecuteStatementInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::execute_statement::ExecuteStatementInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::execute_statement::ExecuteStatementInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::execute_statement::ExecuteStatementInput {
             statement: self.statement,
             parameters: self.parameters,

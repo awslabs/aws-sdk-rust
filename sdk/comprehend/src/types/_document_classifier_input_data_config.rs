@@ -64,8 +64,10 @@ impl DocumentClassifierInputDataConfig {
     }
     /// <p>A list of augmented manifest files that provide training data for your custom model. An augmented manifest file is a labeled dataset that is produced by Amazon SageMaker Ground Truth.</p>
     /// <p>This parameter is required if you set <code>DataFormat</code> to <code>AUGMENTED_MANIFEST</code>.</p>
-    pub fn augmented_manifests(&self) -> ::std::option::Option<&[crate::types::AugmentedManifestsListItem]> {
-        self.augmented_manifests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.augmented_manifests.is_none()`.
+    pub fn augmented_manifests(&self) -> &[crate::types::AugmentedManifestsListItem] {
+        self.augmented_manifests.as_deref().unwrap_or_default()
     }
     /// <p>The type of input documents for training the model. Provide plain-text documents to create a plain-text model, and provide semi-structured documents to create a native model.</p>
     pub fn document_type(&self) -> ::std::option::Option<&crate::types::DocumentClassifierDocumentTypeFormat> {

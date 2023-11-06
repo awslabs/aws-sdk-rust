@@ -15,8 +15,10 @@ impl ListStudioLifecycleConfigsOutput {
         self.next_token.as_deref()
     }
     /// <p>A list of Lifecycle Configurations and their properties.</p>
-    pub fn studio_lifecycle_configs(&self) -> ::std::option::Option<&[crate::types::StudioLifecycleConfigDetails]> {
-        self.studio_lifecycle_configs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.studio_lifecycle_configs.is_none()`.
+    pub fn studio_lifecycle_configs(&self) -> &[crate::types::StudioLifecycleConfigDetails] {
+        self.studio_lifecycle_configs.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListStudioLifecycleConfigsOutput {

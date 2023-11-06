@@ -4,21 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRoutingControlStateOutput {
     /// <p>The Amazon Resource Name (ARN) of the response.</p>
-    pub routing_control_arn: ::std::option::Option<::std::string::String>,
+    pub routing_control_arn: ::std::string::String,
     /// <p>The state of the routing control.</p>
-    pub routing_control_state: ::std::option::Option<crate::types::RoutingControlState>,
+    pub routing_control_state: crate::types::RoutingControlState,
     /// <p>The routing control name.</p>
     pub routing_control_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetRoutingControlStateOutput {
     /// <p>The Amazon Resource Name (ARN) of the response.</p>
-    pub fn routing_control_arn(&self) -> ::std::option::Option<&str> {
-        self.routing_control_arn.as_deref()
+    pub fn routing_control_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.routing_control_arn.deref()
     }
     /// <p>The state of the routing control.</p>
-    pub fn routing_control_state(&self) -> ::std::option::Option<&crate::types::RoutingControlState> {
-        self.routing_control_state.as_ref()
+    pub fn routing_control_state(&self) -> &crate::types::RoutingControlState {
+        &self.routing_control_state
     }
     /// <p>The routing control name.</p>
     pub fn routing_control_name(&self) -> ::std::option::Option<&str> {
@@ -48,6 +49,7 @@ pub struct GetRoutingControlStateOutputBuilder {
 }
 impl GetRoutingControlStateOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the response.</p>
+    /// This field is required.
     pub fn routing_control_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.routing_control_arn = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +64,7 @@ impl GetRoutingControlStateOutputBuilder {
         &self.routing_control_arn
     }
     /// <p>The state of the routing control.</p>
+    /// This field is required.
     pub fn routing_control_state(mut self, input: crate::types::RoutingControlState) -> Self {
         self.routing_control_state = ::std::option::Option::Some(input);
         self
@@ -99,12 +102,30 @@ impl GetRoutingControlStateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetRoutingControlStateOutput`](crate::operation::get_routing_control_state::GetRoutingControlStateOutput).
-    pub fn build(self) -> crate::operation::get_routing_control_state::GetRoutingControlStateOutput {
-        crate::operation::get_routing_control_state::GetRoutingControlStateOutput {
-            routing_control_arn: self.routing_control_arn,
-            routing_control_state: self.routing_control_state,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`routing_control_arn`](crate::operation::get_routing_control_state::builders::GetRoutingControlStateOutputBuilder::routing_control_arn)
+    /// - [`routing_control_state`](crate::operation::get_routing_control_state::builders::GetRoutingControlStateOutputBuilder::routing_control_state)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_routing_control_state::GetRoutingControlStateOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::get_routing_control_state::GetRoutingControlStateOutput {
+            routing_control_arn: self.routing_control_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "routing_control_arn",
+                    "routing_control_arn was not specified but it is required when building GetRoutingControlStateOutput",
+                )
+            })?,
+            routing_control_state: self.routing_control_state.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "routing_control_state",
+                    "routing_control_state was not specified but it is required when building GetRoutingControlStateOutput",
+                )
+            })?,
             routing_control_name: self.routing_control_name,
             _request_id: self._request_id,
-        }
+        })
     }
 }

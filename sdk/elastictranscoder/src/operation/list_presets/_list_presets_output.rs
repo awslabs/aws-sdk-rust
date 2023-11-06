@@ -12,8 +12,10 @@ pub struct ListPresetsOutput {
 }
 impl ListPresetsOutput {
     /// <p>An array of <code>Preset</code> objects.</p>
-    pub fn presets(&self) -> ::std::option::Option<&[crate::types::Preset]> {
-        self.presets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.presets.is_none()`.
+    pub fn presets(&self) -> &[crate::types::Preset] {
+        self.presets.as_deref().unwrap_or_default()
     }
     /// <p>A value that you use to access the second and subsequent pages of results, if any. When the presets fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
     pub fn next_page_token(&self) -> ::std::option::Option<&str> {

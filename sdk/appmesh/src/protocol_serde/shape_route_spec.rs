@@ -2,7 +2,7 @@
 pub fn ser_route_spec(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RouteSpec,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.priority {
         object.key("priority").number(
             #[allow(clippy::useless_conversion)]

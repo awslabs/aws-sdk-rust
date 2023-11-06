@@ -2,7 +2,7 @@
 pub fn ser_access_method(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AccessMethod,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.custom_object_identifier {
         object.key("CustomObjectIdentifier").string(var_1.as_str());
     }

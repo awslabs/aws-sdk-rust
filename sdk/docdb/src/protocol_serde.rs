@@ -271,7 +271,7 @@ pub(crate) mod shape_db_snapshot_not_found_fault;
 
 pub(crate) mod shape_db_subnet_group_already_exists_fault;
 
-pub(crate) mod shape_db_subnet_group_does_not_cover_enough_a_zs;
+pub(crate) mod shape_db_subnet_group_does_not_cover_enough_azs;
 
 pub(crate) mod shape_db_subnet_group_not_found_fault;
 

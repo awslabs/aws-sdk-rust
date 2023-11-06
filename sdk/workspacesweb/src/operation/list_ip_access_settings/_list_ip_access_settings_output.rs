@@ -11,8 +11,10 @@ pub struct ListIpAccessSettingsOutput {
 }
 impl ListIpAccessSettingsOutput {
     /// <p>The IP access settings.</p>
-    pub fn ip_access_settings(&self) -> ::std::option::Option<&[crate::types::IpAccessSettingsSummary]> {
-        self.ip_access_settings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ip_access_settings.is_none()`.
+    pub fn ip_access_settings(&self) -> &[crate::types::IpAccessSettingsSummary] {
+        self.ip_access_settings.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

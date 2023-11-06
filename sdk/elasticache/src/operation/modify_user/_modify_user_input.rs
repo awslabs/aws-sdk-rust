@@ -30,8 +30,10 @@ impl ModifyUserInput {
         self.append_access_string.as_deref()
     }
     /// <p>The passwords belonging to the user. You are allowed up to two.</p>
-    pub fn passwords(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.passwords.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.passwords.is_none()`.
+    pub fn passwords(&self) -> &[::std::string::String] {
+        self.passwords.as_deref().unwrap_or_default()
     }
     /// <p>Indicates no password is required for the user.</p>
     pub fn no_password_required(&self) -> ::std::option::Option<bool> {
@@ -62,6 +64,7 @@ pub struct ModifyUserInputBuilder {
 }
 impl ModifyUserInputBuilder {
     /// <p>The ID of the user.</p>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
@@ -152,7 +155,7 @@ impl ModifyUserInputBuilder {
         &self.authentication_mode
     }
     /// Consumes the builder and constructs a [`ModifyUserInput`](crate::operation::modify_user::ModifyUserInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::modify_user::ModifyUserInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_user::ModifyUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_user::ModifyUserInput {
             user_id: self.user_id,
             access_string: self.access_string,

@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestSetImportInputLocation {
     /// <p>The name of the Amazon S3 bucket.</p>
-    pub s3_bucket_name: ::std::option::Option<::std::string::String>,
+    pub s3_bucket_name: ::std::string::String,
     /// <p>The path inside the Amazon S3 bucket pointing to the test-set CSV file.</p>
-    pub s3_path: ::std::option::Option<::std::string::String>,
+    pub s3_path: ::std::string::String,
 }
 impl TestSetImportInputLocation {
     /// <p>The name of the Amazon S3 bucket.</p>
-    pub fn s3_bucket_name(&self) -> ::std::option::Option<&str> {
-        self.s3_bucket_name.as_deref()
+    pub fn s3_bucket_name(&self) -> &str {
+        use std::ops::Deref;
+        self.s3_bucket_name.deref()
     }
     /// <p>The path inside the Amazon S3 bucket pointing to the test-set CSV file.</p>
-    pub fn s3_path(&self) -> ::std::option::Option<&str> {
-        self.s3_path.as_deref()
+    pub fn s3_path(&self) -> &str {
+        use std::ops::Deref;
+        self.s3_path.deref()
     }
 }
 impl TestSetImportInputLocation {
@@ -35,6 +37,7 @@ pub struct TestSetImportInputLocationBuilder {
 }
 impl TestSetImportInputLocationBuilder {
     /// <p>The name of the Amazon S3 bucket.</p>
+    /// This field is required.
     pub fn s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl TestSetImportInputLocationBuilder {
         &self.s3_bucket_name
     }
     /// <p>The path inside the Amazon S3 bucket pointing to the test-set CSV file.</p>
+    /// This field is required.
     pub fn s3_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_path = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl TestSetImportInputLocationBuilder {
         &self.s3_path
     }
     /// Consumes the builder and constructs a [`TestSetImportInputLocation`](crate::types::TestSetImportInputLocation).
-    pub fn build(self) -> crate::types::TestSetImportInputLocation {
-        crate::types::TestSetImportInputLocation {
-            s3_bucket_name: self.s3_bucket_name,
-            s3_path: self.s3_path,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`s3_bucket_name`](crate::types::builders::TestSetImportInputLocationBuilder::s3_bucket_name)
+    /// - [`s3_path`](crate::types::builders::TestSetImportInputLocationBuilder::s3_path)
+    pub fn build(self) -> ::std::result::Result<crate::types::TestSetImportInputLocation, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TestSetImportInputLocation {
+            s3_bucket_name: self.s3_bucket_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "s3_bucket_name",
+                    "s3_bucket_name was not specified but it is required when building TestSetImportInputLocation",
+                )
+            })?,
+            s3_path: self.s3_path.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "s3_path",
+                    "s3_path was not specified but it is required when building TestSetImportInputLocation",
+                )
+            })?,
+        })
     }
 }

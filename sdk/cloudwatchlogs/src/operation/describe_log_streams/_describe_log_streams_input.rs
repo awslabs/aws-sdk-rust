@@ -204,7 +204,8 @@ impl DescribeLogStreamsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeLogStreamsInput`](crate::operation::describe_log_streams::DescribeLogStreamsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_log_streams::DescribeLogStreamsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_log_streams::DescribeLogStreamsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::describe_log_streams::DescribeLogStreamsInput {
             log_group_name: self.log_group_name,
             log_group_identifier: self.log_group_identifier,

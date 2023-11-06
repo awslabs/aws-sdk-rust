@@ -34,6 +34,7 @@ pub struct DeleteSpaceInputBuilder {
 }
 impl DeleteSpaceInputBuilder {
     /// <p>The ID of the associated Domain.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteSpaceInputBuilder {
         &self.domain_id
     }
     /// <p>The name of the space.</p>
+    /// This field is required.
     pub fn space_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.space_name = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,7 @@ impl DeleteSpaceInputBuilder {
         &self.space_name
     }
     /// Consumes the builder and constructs a [`DeleteSpaceInput`](crate::operation::delete_space::DeleteSpaceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_space::DeleteSpaceInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_space::DeleteSpaceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_space::DeleteSpaceInput {
             domain_id: self.domain_id,
             space_name: self.space_name,

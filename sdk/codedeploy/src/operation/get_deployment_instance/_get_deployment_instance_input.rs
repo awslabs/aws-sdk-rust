@@ -35,6 +35,7 @@ pub struct GetDeploymentInstanceInputBuilder {
 }
 impl GetDeploymentInstanceInputBuilder {
     /// <p> The unique ID of a deployment. </p>
+    /// This field is required.
     pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl GetDeploymentInstanceInputBuilder {
         &self.deployment_id
     }
     /// <p> The unique ID of an instance in the deployment group. </p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -65,7 +67,7 @@ impl GetDeploymentInstanceInputBuilder {
     /// Consumes the builder and constructs a [`GetDeploymentInstanceInput`](crate::operation::get_deployment_instance::GetDeploymentInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_deployment_instance::GetDeploymentInstanceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_deployment_instance::GetDeploymentInstanceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_deployment_instance::GetDeploymentInstanceInput {
             deployment_id: self.deployment_id,

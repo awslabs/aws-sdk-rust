@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IotEventsInputIdentifier {
     /// <p> The name of the input routed to AWS IoT Events. </p>
-    pub input_name: ::std::option::Option<::std::string::String>,
+    pub input_name: ::std::string::String,
 }
 impl IotEventsInputIdentifier {
     /// <p> The name of the input routed to AWS IoT Events. </p>
-    pub fn input_name(&self) -> ::std::option::Option<&str> {
-        self.input_name.as_deref()
+    pub fn input_name(&self) -> &str {
+        use std::ops::Deref;
+        self.input_name.deref()
     }
 }
 impl IotEventsInputIdentifier {
@@ -28,6 +29,7 @@ pub struct IotEventsInputIdentifierBuilder {
 }
 impl IotEventsInputIdentifierBuilder {
     /// <p> The name of the input routed to AWS IoT Events. </p>
+    /// This field is required.
     pub fn input_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_name = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl IotEventsInputIdentifierBuilder {
         &self.input_name
     }
     /// Consumes the builder and constructs a [`IotEventsInputIdentifier`](crate::types::IotEventsInputIdentifier).
-    pub fn build(self) -> crate::types::IotEventsInputIdentifier {
-        crate::types::IotEventsInputIdentifier { input_name: self.input_name }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`input_name`](crate::types::builders::IotEventsInputIdentifierBuilder::input_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::IotEventsInputIdentifier, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::IotEventsInputIdentifier {
+            input_name: self.input_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "input_name",
+                    "input_name was not specified but it is required when building IotEventsInputIdentifier",
+                )
+            })?,
+        })
     }
 }

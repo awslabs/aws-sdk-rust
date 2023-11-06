@@ -26,11 +26,10 @@ pub fn de_put_resource_policy_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::put_resource_policy::PutResourcePolicyError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::put_resource_policy::PutResourcePolicyError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerException" => crate::operation::put_resource_policy::PutResourcePolicyError::InternalServerException({
@@ -41,11 +40,10 @@ pub fn de_put_resource_policy_http_error(
                 output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
                     .map_err(crate::operation::put_resource_policy::PutResourcePolicyError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::put_resource_policy::PutResourcePolicyError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InvalidResourcePolicyException" => crate::operation::put_resource_policy::PutResourcePolicyError::InvalidResourcePolicyException({
@@ -59,11 +57,10 @@ pub fn de_put_resource_policy_http_error(
                 )
                 .map_err(crate::operation::put_resource_policy::PutResourcePolicyError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_resource_policy_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::put_resource_policy::PutResourcePolicyError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::put_resource_policy::PutResourcePolicyError::ResourceNotFoundException({
@@ -74,11 +71,10 @@ pub fn de_put_resource_policy_http_error(
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::put_resource_policy::PutResourcePolicyError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::put_resource_policy::PutResourcePolicyError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::put_resource_policy::PutResourcePolicyError::ThrottlingException({
@@ -96,11 +92,10 @@ pub fn de_put_resource_policy_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::put_resource_policy::PutResourcePolicyError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::put_resource_policy::PutResourcePolicyError::ValidationException({
@@ -111,11 +106,10 @@ pub fn de_put_resource_policy_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::put_resource_policy::PutResourcePolicyError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::put_resource_policy::PutResourcePolicyError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::put_resource_policy::PutResourcePolicyError::generic(generic),
@@ -139,10 +133,10 @@ pub fn de_put_resource_policy_http_response(
 
 pub fn ser_put_resource_policy_input(
     input: &crate::operation::put_resource_policy::PutResourcePolicyInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_put_resource_policy_input::ser_put_resource_policy_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

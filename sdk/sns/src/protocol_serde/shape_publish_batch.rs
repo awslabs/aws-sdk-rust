@@ -326,11 +326,10 @@ pub fn de_publish_batch_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_xml_err(_response_body, output)
                     .map_err(crate::operation::publish_batch::PublishBatchError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::publish_batch::PublishBatchError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::publish_batch::PublishBatchError::generic(generic),

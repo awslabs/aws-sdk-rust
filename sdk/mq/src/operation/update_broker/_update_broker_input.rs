@@ -65,8 +65,10 @@ impl UpdateBrokerInput {
         self.maintenance_window_start_time.as_ref()
     }
     /// <p>The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.</p>
-    pub fn security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
+    pub fn security_groups(&self) -> &[::std::string::String] {
+        self.security_groups.as_deref().unwrap_or_default()
     }
     /// <p>Defines whether this broker is a part of a data replication pair.</p>
     pub fn data_replication_mode(&self) -> ::std::option::Option<&crate::types::DataReplicationMode> {
@@ -126,6 +128,7 @@ impl UpdateBrokerInputBuilder {
         &self.auto_minor_version_upgrade
     }
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
+    /// This field is required.
     pub fn broker_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.broker_id = ::std::option::Option::Some(input.into());
         self
@@ -258,7 +261,9 @@ impl UpdateBrokerInputBuilder {
         &self.data_replication_mode
     }
     /// Consumes the builder and constructs a [`UpdateBrokerInput`](crate::operation::update_broker::UpdateBrokerInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_broker::UpdateBrokerInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_broker::UpdateBrokerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_broker::UpdateBrokerInput {
             authentication_strategy: self.authentication_strategy,
             auto_minor_version_upgrade: self.auto_minor_version_upgrade,

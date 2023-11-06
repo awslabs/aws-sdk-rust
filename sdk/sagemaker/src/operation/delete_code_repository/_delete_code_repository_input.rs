@@ -27,6 +27,7 @@ pub struct DeleteCodeRepositoryInputBuilder {
 }
 impl DeleteCodeRepositoryInputBuilder {
     /// <p>The name of the Git repository to delete.</p>
+    /// This field is required.
     pub fn code_repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code_repository_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteCodeRepositoryInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCodeRepositoryInput`](crate::operation::delete_code_repository::DeleteCodeRepositoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_code_repository::DeleteCodeRepositoryInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_code_repository::DeleteCodeRepositoryInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_code_repository::DeleteCodeRepositoryInput {
             code_repository_name: self.code_repository_name,

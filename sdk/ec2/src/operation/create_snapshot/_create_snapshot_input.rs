@@ -40,8 +40,10 @@ impl CreateSnapshotInput {
         self.volume_id.as_deref()
     }
     /// <p>The tags to apply to the snapshot during creation.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -113,6 +115,7 @@ impl CreateSnapshotInputBuilder {
         &self.outpost_arn
     }
     /// <p>The ID of the Amazon EBS volume.</p>
+    /// This field is required.
     pub fn volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_id = ::std::option::Option::Some(input.into());
         self
@@ -163,7 +166,7 @@ impl CreateSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`CreateSnapshotInput`](crate::operation::create_snapshot::CreateSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_snapshot::CreateSnapshotInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_snapshot::CreateSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_snapshot::CreateSnapshotInput {
             description: self.description,
             outpost_arn: self.outpost_arn,

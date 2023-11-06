@@ -41,6 +41,7 @@ pub struct CreateApiKeyInputBuilder {
 }
 impl CreateApiKeyInputBuilder {
     /// <p>The ID for your GraphQL API.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl CreateApiKeyInputBuilder {
     /// Consumes the builder and constructs a [`CreateApiKeyInput`](crate::operation::create_api_key::CreateApiKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_api_key::CreateApiKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_api_key::CreateApiKeyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_api_key::CreateApiKeyInput {
             api_id: self.api_id,
             description: self.description,

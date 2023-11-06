@@ -75,12 +75,16 @@ impl GetDocumentOutput {
         self.document_format.as_ref()
     }
     /// <p>A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document.</p>
-    pub fn requires(&self) -> ::std::option::Option<&[crate::types::DocumentRequires]> {
-        self.requires.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.requires.is_none()`.
+    pub fn requires(&self) -> &[crate::types::DocumentRequires] {
+        self.requires.as_deref().unwrap_or_default()
     }
     /// <p>A description of the document attachments, including names, locations, sizes, and so on.</p>
-    pub fn attachments_content(&self) -> ::std::option::Option<&[crate::types::AttachmentContent]> {
-        self.attachments_content.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attachments_content.is_none()`.
+    pub fn attachments_content(&self) -> &[crate::types::AttachmentContent] {
+        self.attachments_content.as_deref().unwrap_or_default()
     }
     /// <p>The current review status of a new custom Systems Manager document (SSM document) created by a member of your organization, or of the latest version of an existing SSM document.</p>
     /// <p>Only one version of an SSM document can be in the APPROVED state at a time. When a new version is approved, the status of the previous version changes to REJECTED.</p>

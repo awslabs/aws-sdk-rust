@@ -27,6 +27,7 @@ pub struct DeleteLogGroupInputBuilder {
 }
 impl DeleteLogGroupInputBuilder {
     /// <p>The name of the log group.</p>
+    /// This field is required.
     pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteLogGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteLogGroupInput`](crate::operation::delete_log_group::DeleteLogGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_log_group::DeleteLogGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_log_group::DeleteLogGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_log_group::DeleteLogGroupInput {
             log_group_name: self.log_group_name,
         })

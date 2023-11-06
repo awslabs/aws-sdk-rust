@@ -5,24 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WirelessDeviceLogOption {
     /// <p>The wireless device type.</p>
-    pub r#type: ::std::option::Option<crate::types::WirelessDeviceType>,
+    pub r#type: crate::types::WirelessDeviceType,
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
-    pub log_level: ::std::option::Option<crate::types::LogLevel>,
+    pub log_level: crate::types::LogLevel,
     /// <p>The list of wireless device event log options.</p>
     pub events: ::std::option::Option<::std::vec::Vec<crate::types::WirelessDeviceEventLogOption>>,
 }
 impl WirelessDeviceLogOption {
     /// <p>The wireless device type.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::WirelessDeviceType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::WirelessDeviceType {
+        &self.r#type
     }
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
-    pub fn log_level(&self) -> ::std::option::Option<&crate::types::LogLevel> {
-        self.log_level.as_ref()
+    pub fn log_level(&self) -> &crate::types::LogLevel {
+        &self.log_level
     }
     /// <p>The list of wireless device event log options.</p>
-    pub fn events(&self) -> ::std::option::Option<&[crate::types::WirelessDeviceEventLogOption]> {
-        self.events.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.events.is_none()`.
+    pub fn events(&self) -> &[crate::types::WirelessDeviceEventLogOption] {
+        self.events.as_deref().unwrap_or_default()
     }
 }
 impl WirelessDeviceLogOption {
@@ -42,6 +44,7 @@ pub struct WirelessDeviceLogOptionBuilder {
 }
 impl WirelessDeviceLogOptionBuilder {
     /// <p>The wireless device type.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::WirelessDeviceType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -56,6 +59,7 @@ impl WirelessDeviceLogOptionBuilder {
         &self.r#type
     }
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
+    /// This field is required.
     pub fn log_level(mut self, input: crate::types::LogLevel) -> Self {
         self.log_level = ::std::option::Option::Some(input);
         self
@@ -90,11 +94,24 @@ impl WirelessDeviceLogOptionBuilder {
         &self.events
     }
     /// Consumes the builder and constructs a [`WirelessDeviceLogOption`](crate::types::WirelessDeviceLogOption).
-    pub fn build(self) -> crate::types::WirelessDeviceLogOption {
-        crate::types::WirelessDeviceLogOption {
-            r#type: self.r#type,
-            log_level: self.log_level,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::WirelessDeviceLogOptionBuilder::r#type)
+    /// - [`log_level`](crate::types::builders::WirelessDeviceLogOptionBuilder::log_level)
+    pub fn build(self) -> ::std::result::Result<crate::types::WirelessDeviceLogOption, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::WirelessDeviceLogOption {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building WirelessDeviceLogOption",
+                )
+            })?,
+            log_level: self.log_level.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "log_level",
+                    "log_level was not specified but it is required when building WirelessDeviceLogOption",
+                )
+            })?,
             events: self.events,
-        }
+        })
     }
 }

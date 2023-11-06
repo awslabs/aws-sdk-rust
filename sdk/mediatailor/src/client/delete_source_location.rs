@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteSourceLocation`](crate::operation::delete_source_location::builders::DeleteSourceLocationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`source_location_name(impl Into<String>)`](crate::operation::delete_source_location::builders::DeleteSourceLocationFluentBuilder::source_location_name) / [`set_source_location_name(Option<String>)`](crate::operation::delete_source_location::builders::DeleteSourceLocationFluentBuilder::set_source_location_name): <p>The name of the source location.</p>
+    ///   - [`source_location_name(impl Into<String>)`](crate::operation::delete_source_location::builders::DeleteSourceLocationFluentBuilder::source_location_name) / [`set_source_location_name(Option<String>)`](crate::operation::delete_source_location::builders::DeleteSourceLocationFluentBuilder::set_source_location_name):<br>required: **true**<br><p>The name of the source location.</p><br>
     /// - On success, responds with [`DeleteSourceLocationOutput`](crate::operation::delete_source_location::DeleteSourceLocationOutput)
     /// - On failure, responds with [`SdkError<DeleteSourceLocationError>`](crate::operation::delete_source_location::DeleteSourceLocationError)
     pub fn delete_source_location(&self) -> crate::operation::delete_source_location::builders::DeleteSourceLocationFluentBuilder {

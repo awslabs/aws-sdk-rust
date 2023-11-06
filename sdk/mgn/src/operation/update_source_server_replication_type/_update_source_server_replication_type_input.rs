@@ -41,6 +41,7 @@ pub struct UpdateSourceServerReplicationTypeInputBuilder {
 }
 impl UpdateSourceServerReplicationTypeInputBuilder {
     /// <p>ID of source server on which to update replication type.</p>
+    /// This field is required.
     pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateSourceServerReplicationTypeInputBuilder {
         &self.source_server_id
     }
     /// <p>Replication type to which to update source server.</p>
+    /// This field is required.
     pub fn replication_type(mut self, input: crate::types::ReplicationType) -> Self {
         self.replication_type = ::std::option::Option::Some(input);
         self
@@ -87,7 +89,7 @@ impl UpdateSourceServerReplicationTypeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_source_server_replication_type::UpdateSourceServerReplicationTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_source_server_replication_type::UpdateSourceServerReplicationTypeInput {

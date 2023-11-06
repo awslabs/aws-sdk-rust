@@ -17,8 +17,10 @@ impl FaultRootCauseEntity {
         self.name.as_deref()
     }
     /// <p>The types and messages of the exceptions.</p>
-    pub fn exceptions(&self) -> ::std::option::Option<&[crate::types::RootCauseException]> {
-        self.exceptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exceptions.is_none()`.
+    pub fn exceptions(&self) -> &[crate::types::RootCauseException] {
+        self.exceptions.as_deref().unwrap_or_default()
     }
     /// <p>A flag that denotes a remote subsegment.</p>
     pub fn remote(&self) -> ::std::option::Option<bool> {

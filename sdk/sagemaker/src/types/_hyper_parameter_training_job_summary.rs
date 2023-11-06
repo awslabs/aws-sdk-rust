@@ -139,6 +139,7 @@ impl HyperParameterTrainingJobSummaryBuilder {
         &self.training_job_definition_name
     }
     /// <p>The name of the training job.</p>
+    /// This field is required.
     pub fn training_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.training_job_name = ::std::option::Option::Some(input.into());
         self
@@ -153,6 +154,7 @@ impl HyperParameterTrainingJobSummaryBuilder {
         &self.training_job_name
     }
     /// <p>The Amazon Resource Name (ARN) of the training job.</p>
+    /// This field is required.
     pub fn training_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.training_job_arn = ::std::option::Option::Some(input.into());
         self
@@ -181,6 +183,7 @@ impl HyperParameterTrainingJobSummaryBuilder {
         &self.tuning_job_name
     }
     /// <p>The date and time that the training job was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -223,6 +226,7 @@ impl HyperParameterTrainingJobSummaryBuilder {
         &self.training_end_time
     }
     /// <p>The status of the training job.</p>
+    /// This field is required.
     pub fn training_job_status(mut self, input: crate::types::TrainingJobStatus) -> Self {
         self.training_job_status = ::std::option::Option::Some(input);
         self

@@ -18,7 +18,7 @@ impl DeleteRegistryPolicyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRegistryPolicyInput`](crate::operation::delete_registry_policy::DeleteRegistryPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_registry_policy::DeleteRegistryPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_registry_policy::DeleteRegistryPolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_registry_policy::DeleteRegistryPolicyInput {})
     }

@@ -27,6 +27,7 @@ pub struct DeleteScriptInputBuilder {
 }
 impl DeleteScriptInputBuilder {
     /// <p>A unique identifier for the Realtime script to delete. You can use either the script ID or ARN value.</p>
+    /// This field is required.
     pub fn script_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.script_id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,9 @@ impl DeleteScriptInputBuilder {
         &self.script_id
     }
     /// Consumes the builder and constructs a [`DeleteScriptInput`](crate::operation::delete_script::DeleteScriptInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_script::DeleteScriptInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_script::DeleteScriptInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_script::DeleteScriptInput { script_id: self.script_id })
     }
 }

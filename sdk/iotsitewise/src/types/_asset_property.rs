@@ -5,15 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetProperty {
     /// <p>The ID of the asset property.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The name of the property.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub alias: ::std::option::Option<::std::string::String>,
     /// <p>The asset property's notification topic and state. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
     pub notification: ::std::option::Option<crate::types::PropertyNotification>,
     /// <p>The data type of the asset property.</p>
-    pub data_type: ::std::option::Option<crate::types::PropertyDataType>,
+    pub data_type: crate::types::PropertyDataType,
     /// <p>The data type of the structure for this property. This parameter exists on properties that have the <code>STRUCT</code> data type.</p>
     pub data_type_spec: ::std::option::Option<::std::string::String>,
     /// <p>The unit (such as <code>Newtons</code> or <code>RPM</code>) of the asset property.</p>
@@ -21,12 +21,14 @@ pub struct AssetProperty {
 }
 impl AssetProperty {
     /// <p>The ID of the asset property.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The name of the property.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn alias(&self) -> ::std::option::Option<&str> {
@@ -37,8 +39,8 @@ impl AssetProperty {
         self.notification.as_ref()
     }
     /// <p>The data type of the asset property.</p>
-    pub fn data_type(&self) -> ::std::option::Option<&crate::types::PropertyDataType> {
-        self.data_type.as_ref()
+    pub fn data_type(&self) -> &crate::types::PropertyDataType {
+        &self.data_type
     }
     /// <p>The data type of the structure for this property. This parameter exists on properties that have the <code>STRUCT</code> data type.</p>
     pub fn data_type_spec(&self) -> ::std::option::Option<&str> {
@@ -70,6 +72,7 @@ pub struct AssetPropertyBuilder {
 }
 impl AssetPropertyBuilder {
     /// <p>The ID of the asset property.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +87,7 @@ impl AssetPropertyBuilder {
         &self.id
     }
     /// <p>The name of the property.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +130,7 @@ impl AssetPropertyBuilder {
         &self.notification
     }
     /// <p>The data type of the asset property.</p>
+    /// This field is required.
     pub fn data_type(mut self, input: crate::types::PropertyDataType) -> Self {
         self.data_type = ::std::option::Option::Some(input);
         self
@@ -168,15 +173,34 @@ impl AssetPropertyBuilder {
         &self.unit
     }
     /// Consumes the builder and constructs a [`AssetProperty`](crate::types::AssetProperty).
-    pub fn build(self) -> crate::types::AssetProperty {
-        crate::types::AssetProperty {
-            id: self.id,
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::AssetPropertyBuilder::id)
+    /// - [`name`](crate::types::builders::AssetPropertyBuilder::name)
+    /// - [`data_type`](crate::types::builders::AssetPropertyBuilder::data_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::AssetProperty, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AssetProperty {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building AssetProperty",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building AssetProperty",
+                )
+            })?,
             alias: self.alias,
             notification: self.notification,
-            data_type: self.data_type,
+            data_type: self.data_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "data_type",
+                    "data_type was not specified but it is required when building AssetProperty",
+                )
+            })?,
             data_type_spec: self.data_type_spec,
             unit: self.unit,
-        }
+        })
     }
 }

@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CdmaObj {
     /// <p>CDMA system ID (SID).</p>
-    pub system_id: ::std::option::Option<i32>,
+    pub system_id: i32,
     /// <p>CDMA network ID (NID).</p>
-    pub network_id: ::std::option::Option<i32>,
+    pub network_id: i32,
     /// <p>CDMA base station ID (BSID).</p>
-    pub base_station_id: ::std::option::Option<i32>,
+    pub base_station_id: i32,
     /// <p>CDMA registration zone (RZ).</p>
     pub registration_zone: ::std::option::Option<i32>,
     /// <p>CDMA local identification (local ID) parameters.</p>
@@ -25,15 +25,15 @@ pub struct CdmaObj {
 }
 impl CdmaObj {
     /// <p>CDMA system ID (SID).</p>
-    pub fn system_id(&self) -> ::std::option::Option<i32> {
+    pub fn system_id(&self) -> i32 {
         self.system_id
     }
     /// <p>CDMA network ID (NID).</p>
-    pub fn network_id(&self) -> ::std::option::Option<i32> {
+    pub fn network_id(&self) -> i32 {
         self.network_id
     }
     /// <p>CDMA base station ID (BSID).</p>
-    pub fn base_station_id(&self) -> ::std::option::Option<i32> {
+    pub fn base_station_id(&self) -> i32 {
         self.base_station_id
     }
     /// <p>CDMA registration zone (RZ).</p>
@@ -57,8 +57,10 @@ impl CdmaObj {
         self.base_lng
     }
     /// <p>CDMA network measurement reports.</p>
-    pub fn cdma_nmr(&self) -> ::std::option::Option<&[crate::types::CdmaNmrObj]> {
-        self.cdma_nmr.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cdma_nmr.is_none()`.
+    pub fn cdma_nmr(&self) -> &[crate::types::CdmaNmrObj] {
+        self.cdma_nmr.as_deref().unwrap_or_default()
     }
 }
 impl CdmaObj {
@@ -84,6 +86,7 @@ pub struct CdmaObjBuilder {
 }
 impl CdmaObjBuilder {
     /// <p>CDMA system ID (SID).</p>
+    /// This field is required.
     pub fn system_id(mut self, input: i32) -> Self {
         self.system_id = ::std::option::Option::Some(input);
         self
@@ -98,6 +101,7 @@ impl CdmaObjBuilder {
         &self.system_id
     }
     /// <p>CDMA network ID (NID).</p>
+    /// This field is required.
     pub fn network_id(mut self, input: i32) -> Self {
         self.network_id = ::std::option::Option::Some(input);
         self
@@ -112,6 +116,7 @@ impl CdmaObjBuilder {
         &self.network_id
     }
     /// <p>CDMA base station ID (BSID).</p>
+    /// This field is required.
     pub fn base_station_id(mut self, input: i32) -> Self {
         self.base_station_id = ::std::option::Option::Some(input);
         self
@@ -216,17 +221,36 @@ impl CdmaObjBuilder {
         &self.cdma_nmr
     }
     /// Consumes the builder and constructs a [`CdmaObj`](crate::types::CdmaObj).
-    pub fn build(self) -> crate::types::CdmaObj {
-        crate::types::CdmaObj {
-            system_id: self.system_id,
-            network_id: self.network_id,
-            base_station_id: self.base_station_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`system_id`](crate::types::builders::CdmaObjBuilder::system_id)
+    /// - [`network_id`](crate::types::builders::CdmaObjBuilder::network_id)
+    /// - [`base_station_id`](crate::types::builders::CdmaObjBuilder::base_station_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::CdmaObj, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CdmaObj {
+            system_id: self.system_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "system_id",
+                    "system_id was not specified but it is required when building CdmaObj",
+                )
+            })?,
+            network_id: self.network_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "network_id",
+                    "network_id was not specified but it is required when building CdmaObj",
+                )
+            })?,
+            base_station_id: self.base_station_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "base_station_id",
+                    "base_station_id was not specified but it is required when building CdmaObj",
+                )
+            })?,
             registration_zone: self.registration_zone,
             cdma_local_id: self.cdma_local_id,
             pilot_power: self.pilot_power,
             base_lat: self.base_lat,
             base_lng: self.base_lng,
             cdma_nmr: self.cdma_nmr,
-        }
+        })
     }
 }

@@ -12,8 +12,10 @@ pub struct ValidationException {
 }
 impl ValidationException {
     /// <p>The list of fields for which validation failed and the corresponding failure messages.</p>
-    pub fn field_list(&self) -> ::std::option::Option<&[crate::types::ValidationExceptionField]> {
-        self.field_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.field_list.is_none()`.
+    pub fn field_list(&self) -> &[crate::types::ValidationExceptionField] {
+        self.field_list.as_deref().unwrap_or_default()
     }
 }
 impl ValidationException {

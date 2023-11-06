@@ -27,6 +27,7 @@ pub struct StartSmartHomeApplianceDiscoveryInputBuilder {
 }
 impl StartSmartHomeApplianceDiscoveryInputBuilder {
     /// <p>The room where smart home appliance discovery was initiated.</p>
+    /// This field is required.
     pub fn room_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.room_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl StartSmartHomeApplianceDiscoveryInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_smart_home_appliance_discovery::StartSmartHomeApplianceDiscoveryInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::start_smart_home_appliance_discovery::StartSmartHomeApplianceDiscoveryInput { room_arn: self.room_arn },

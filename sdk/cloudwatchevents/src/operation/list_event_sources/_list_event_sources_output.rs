@@ -11,8 +11,10 @@ pub struct ListEventSourcesOutput {
 }
 impl ListEventSourcesOutput {
     /// <p>The list of event sources.</p>
-    pub fn event_sources(&self) -> ::std::option::Option<&[crate::types::EventSource]> {
-        self.event_sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_sources.is_none()`.
+    pub fn event_sources(&self) -> &[crate::types::EventSource] {
+        self.event_sources.as_deref().unwrap_or_default()
     }
     /// <p>A token you can use in a subsequent operation to retrieve the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

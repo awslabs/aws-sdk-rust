@@ -43,16 +43,20 @@ impl DescribeClassicLinkInstancesInput {
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// <li> <p> <code>vpc-id</code> - The ID of the VPC to which the instance is linked.</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The instance IDs. Must be instances linked to a VPC through ClassicLink.</p>
-    pub fn instance_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.instance_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_ids.is_none()`.
+    pub fn instance_ids(&self) -> &[::std::string::String] {
+        self.instance_ids.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     /// <p>Constraint: If the value is greater than 1000, we return only 1000 items.</p>
@@ -211,7 +215,7 @@ impl DescribeClassicLinkInstancesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_classic_link_instances::DescribeClassicLinkInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_classic_link_instances::DescribeClassicLinkInstancesInput {
             filters: self.filters,

@@ -34,6 +34,7 @@ pub struct UpdateGcmChannelInputBuilder {
 }
 impl UpdateGcmChannelInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateGcmChannelInputBuilder {
         &self.application_id
     }
     /// <p>Specifies the status and settings of the GCM channel for an application. This channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
+    /// This field is required.
     pub fn gcm_channel_request(mut self, input: crate::types::GcmChannelRequest) -> Self {
         self.gcm_channel_request = ::std::option::Option::Some(input);
         self
@@ -64,7 +66,7 @@ impl UpdateGcmChannelInputBuilder {
     /// Consumes the builder and constructs a [`UpdateGcmChannelInput`](crate::operation::update_gcm_channel::UpdateGcmChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_gcm_channel::UpdateGcmChannelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_gcm_channel::UpdateGcmChannelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_gcm_channel::UpdateGcmChannelInput {
             application_id: self.application_id,
             gcm_channel_request: self.gcm_channel_request,

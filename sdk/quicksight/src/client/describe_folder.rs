@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeFolder`](crate::operation::describe_folder::builders::DescribeFolderFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`aws_account_id(impl Into<String>)`](crate::operation::describe_folder::builders::DescribeFolderFluentBuilder::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::operation::describe_folder::builders::DescribeFolderFluentBuilder::set_aws_account_id): <p>The ID for the Amazon Web Services account that contains the folder.</p>
-    ///   - [`folder_id(impl Into<String>)`](crate::operation::describe_folder::builders::DescribeFolderFluentBuilder::folder_id) / [`set_folder_id(Option<String>)`](crate::operation::describe_folder::builders::DescribeFolderFluentBuilder::set_folder_id): <p>The ID of the folder.</p>
+    ///   - [`aws_account_id(impl Into<String>)`](crate::operation::describe_folder::builders::DescribeFolderFluentBuilder::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::operation::describe_folder::builders::DescribeFolderFluentBuilder::set_aws_account_id):<br>required: **true**<br><p>The ID for the Amazon Web Services account that contains the folder.</p><br>
+    ///   - [`folder_id(impl Into<String>)`](crate::operation::describe_folder::builders::DescribeFolderFluentBuilder::folder_id) / [`set_folder_id(Option<String>)`](crate::operation::describe_folder::builders::DescribeFolderFluentBuilder::set_folder_id):<br>required: **true**<br><p>The ID of the folder.</p><br>
     /// - On success, responds with [`DescribeFolderOutput`](crate::operation::describe_folder::DescribeFolderOutput) with field(s):
     ///   - [`status(i32)`](crate::operation::describe_folder::DescribeFolderOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`folder(Option<Folder>)`](crate::operation::describe_folder::DescribeFolderOutput::folder): <p>Information about the folder.</p>

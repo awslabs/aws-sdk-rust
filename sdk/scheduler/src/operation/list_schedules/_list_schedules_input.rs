@@ -127,7 +127,7 @@ impl ListSchedulesInputBuilder {
     /// Consumes the builder and constructs a [`ListSchedulesInput`](crate::operation::list_schedules::ListSchedulesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_schedules::ListSchedulesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_schedules::ListSchedulesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_schedules::ListSchedulesInput {
             group_name: self.group_name,
             name_prefix: self.name_prefix,

@@ -75,6 +75,7 @@ impl ExecuteProvisionedProductPlanInputBuilder {
         &self.accept_language
     }
     /// <p>The plan identifier.</p>
+    /// This field is required.
     pub fn plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.plan_id = ::std::option::Option::Some(input.into());
         self
@@ -89,6 +90,7 @@ impl ExecuteProvisionedProductPlanInputBuilder {
         &self.plan_id
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
+    /// This field is required.
     pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.idempotency_token = ::std::option::Option::Some(input.into());
         self
@@ -107,7 +109,7 @@ impl ExecuteProvisionedProductPlanInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::execute_provisioned_product_plan::ExecuteProvisionedProductPlanInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::execute_provisioned_product_plan::ExecuteProvisionedProductPlanInput {
             accept_language: self.accept_language,

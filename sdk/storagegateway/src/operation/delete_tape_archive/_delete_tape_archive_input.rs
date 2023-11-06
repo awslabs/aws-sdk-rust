@@ -35,6 +35,7 @@ pub struct DeleteTapeArchiveInputBuilder {
 }
 impl DeleteTapeArchiveInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the virtual tape to delete from the virtual tape shelf (VTS).</p>
+    /// This field is required.
     pub fn tape_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tape_arn = ::std::option::Option::Some(input.into());
         self
@@ -65,7 +66,7 @@ impl DeleteTapeArchiveInputBuilder {
     /// Consumes the builder and constructs a [`DeleteTapeArchiveInput`](crate::operation::delete_tape_archive::DeleteTapeArchiveInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_tape_archive::DeleteTapeArchiveInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_tape_archive::DeleteTapeArchiveInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_tape_archive::DeleteTapeArchiveInput {
             tape_arn: self.tape_arn,
             bypass_governance_retention: self.bypass_governance_retention,

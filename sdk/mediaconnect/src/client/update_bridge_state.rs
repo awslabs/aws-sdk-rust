@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateBridgeState`](crate::operation::update_bridge_state::builders::UpdateBridgeStateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`bridge_arn(impl Into<String>)`](crate::operation::update_bridge_state::builders::UpdateBridgeStateFluentBuilder::bridge_arn) / [`set_bridge_arn(Option<String>)`](crate::operation::update_bridge_state::builders::UpdateBridgeStateFluentBuilder::set_bridge_arn): The ARN of the bridge that you want to update.
-    ///   - [`desired_state(DesiredState)`](crate::operation::update_bridge_state::builders::UpdateBridgeStateFluentBuilder::desired_state) / [`set_desired_state(Option<DesiredState>)`](crate::operation::update_bridge_state::builders::UpdateBridgeStateFluentBuilder::set_desired_state): (undocumented)
+    ///   - [`bridge_arn(impl Into<String>)`](crate::operation::update_bridge_state::builders::UpdateBridgeStateFluentBuilder::bridge_arn) / [`set_bridge_arn(Option<String>)`](crate::operation::update_bridge_state::builders::UpdateBridgeStateFluentBuilder::set_bridge_arn):<br>required: **true**<br>The ARN of the bridge that you want to update.<br>
+    ///   - [`desired_state(DesiredState)`](crate::operation::update_bridge_state::builders::UpdateBridgeStateFluentBuilder::desired_state) / [`set_desired_state(Option<DesiredState>)`](crate::operation::update_bridge_state::builders::UpdateBridgeStateFluentBuilder::set_desired_state):<br>required: **true**<br>(undocumented)<br>
     /// - On success, responds with [`UpdateBridgeStateOutput`](crate::operation::update_bridge_state::UpdateBridgeStateOutput) with field(s):
     ///   - [`bridge_arn(Option<String>)`](crate::operation::update_bridge_state::UpdateBridgeStateOutput::bridge_arn): The Amazon Resource Number (ARN) of the bridge.
     ///   - [`desired_state(Option<DesiredState>)`](crate::operation::update_bridge_state::UpdateBridgeStateOutput::desired_state): The state of the bridge. ACTIVE or STANDBY.

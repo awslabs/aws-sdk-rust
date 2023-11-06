@@ -34,13 +34,13 @@ pub fn de_get_bucket_cors_http_response(
 pub fn ser_get_bucket_cors_headers(
     input: &crate::operation::get_bucket_cors::GetBucketCorsInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.expected_bucket_owner {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "expected_bucket_owner",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -73,7 +73,7 @@ pub fn de_get_bucket_cors(
             s if s.matches("CORSRule") /* CORSRules com.amazonaws.s3.synthetic#GetBucketCorsOutput$CORSRules */ =>  {
                 let var_3 =
                     Some(
-                        Result::<::std::vec::Vec<crate::types::CorsRule>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<crate::types::CorsRule>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_4 = builder.cors_rules.take().unwrap_or_default();
                             list_4.push(
                                 crate::protocol_serde::shape_cors_rule::de_cors_rule(&mut tag)

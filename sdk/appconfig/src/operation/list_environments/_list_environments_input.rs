@@ -41,6 +41,7 @@ pub struct ListEnvironmentsInputBuilder {
 }
 impl ListEnvironmentsInputBuilder {
     /// <p>The application ID.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl ListEnvironmentsInputBuilder {
     /// Consumes the builder and constructs a [`ListEnvironmentsInput`](crate::operation::list_environments::ListEnvironmentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_environments::ListEnvironmentsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_environments::ListEnvironmentsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_environments::ListEnvironmentsInput {
             application_id: self.application_id,
             max_results: self.max_results,

@@ -11,8 +11,10 @@ pub struct ListQueryExecutionsOutput {
 }
 impl ListQueryExecutionsOutput {
     /// <p>The unique IDs of each query execution as an array of strings.</p>
-    pub fn query_execution_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.query_execution_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.query_execution_ids.is_none()`.
+    pub fn query_execution_ids(&self) -> &[::std::string::String] {
+        self.query_execution_ids.as_deref().unwrap_or_default()
     }
     /// <p>A token to be used by the next request if this request is truncated.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

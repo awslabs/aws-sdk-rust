@@ -62,6 +62,7 @@ impl ReleaseIpamPoolAllocationInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the IPAM pool which contains the allocation you want to release.</p>
+    /// This field is required.
     pub fn ipam_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl ReleaseIpamPoolAllocationInputBuilder {
         &self.ipam_pool_id
     }
     /// <p>The CIDR of the allocation you want to release.</p>
+    /// This field is required.
     pub fn cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cidr = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +92,7 @@ impl ReleaseIpamPoolAllocationInputBuilder {
         &self.cidr
     }
     /// <p>The ID of the allocation.</p>
+    /// This field is required.
     pub fn ipam_pool_allocation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_pool_allocation_id = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +111,7 @@ impl ReleaseIpamPoolAllocationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::release_ipam_pool_allocation::ReleaseIpamPoolAllocationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::release_ipam_pool_allocation::ReleaseIpamPoolAllocationInput {
             dry_run: self.dry_run,

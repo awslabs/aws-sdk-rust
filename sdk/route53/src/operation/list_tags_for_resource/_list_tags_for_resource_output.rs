@@ -35,6 +35,7 @@ pub struct ListTagsForResourceOutputBuilder {
 }
 impl ListTagsForResourceOutputBuilder {
     /// <p>A <code>ResourceTagSet</code> containing tags associated with the specified resource.</p>
+    /// This field is required.
     pub fn resource_tag_set(mut self, input: crate::types::ResourceTagSet) -> Self {
         self.resource_tag_set = ::std::option::Option::Some(input);
         self

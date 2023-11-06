@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainStatus {
     /// <p>An internally generated unique identifier for a domain.</p>
-    pub domain_id: ::std::option::Option<::std::string::String>,
+    pub domain_id: ::std::string::String,
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    pub domain_name: ::std::option::Option<::std::string::String>,
+    pub domain_name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the search domain. See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>True if the search domain is created. It can take several minutes to initialize a domain when <code>CreateDomain</code> is called. Newly created search domains are returned from <code>DescribeDomains</code> with a false value for Created until domain creation is complete.</p>
@@ -19,7 +19,7 @@ pub struct DomainStatus {
     /// <p>The service endpoint for requesting search results from a search domain.</p>
     pub search_service: ::std::option::Option<crate::types::ServiceEndpoint>,
     /// <p>True if <code>IndexDocuments</code> needs to be called to activate the current domain configuration.</p>
-    pub requires_index_documents: ::std::option::Option<bool>,
+    pub requires_index_documents: bool,
     /// <p>True if processing is being done to activate the current domain configuration.</p>
     pub processing: ::std::option::Option<bool>,
     /// <p>The instance type that is being used to process search requests.</p>
@@ -33,12 +33,14 @@ pub struct DomainStatus {
 }
 impl DomainStatus {
     /// <p>An internally generated unique identifier for a domain.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
-        self.domain_id.as_deref()
+    pub fn domain_id(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_id.deref()
     }
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
-        self.domain_name.as_deref()
+    pub fn domain_name(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the search domain. See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
@@ -61,7 +63,7 @@ impl DomainStatus {
         self.search_service.as_ref()
     }
     /// <p>True if <code>IndexDocuments</code> needs to be called to activate the current domain configuration.</p>
-    pub fn requires_index_documents(&self) -> ::std::option::Option<bool> {
+    pub fn requires_index_documents(&self) -> bool {
         self.requires_index_documents
     }
     /// <p>True if processing is being done to activate the current domain configuration.</p>
@@ -112,6 +114,7 @@ pub struct DomainStatusBuilder {
 }
 impl DomainStatusBuilder {
     /// <p>An internally generated unique identifier for a domain.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +129,7 @@ impl DomainStatusBuilder {
         &self.domain_id
     }
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -210,6 +214,7 @@ impl DomainStatusBuilder {
         &self.search_service
     }
     /// <p>True if <code>IndexDocuments</code> needs to be called to activate the current domain configuration.</p>
+    /// This field is required.
     pub fn requires_index_documents(mut self, input: bool) -> Self {
         self.requires_index_documents = ::std::option::Option::Some(input);
         self
@@ -294,21 +299,40 @@ impl DomainStatusBuilder {
         &self.limits
     }
     /// Consumes the builder and constructs a [`DomainStatus`](crate::types::DomainStatus).
-    pub fn build(self) -> crate::types::DomainStatus {
-        crate::types::DomainStatus {
-            domain_id: self.domain_id,
-            domain_name: self.domain_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`domain_id`](crate::types::builders::DomainStatusBuilder::domain_id)
+    /// - [`domain_name`](crate::types::builders::DomainStatusBuilder::domain_name)
+    /// - [`requires_index_documents`](crate::types::builders::DomainStatusBuilder::requires_index_documents)
+    pub fn build(self) -> ::std::result::Result<crate::types::DomainStatus, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DomainStatus {
+            domain_id: self.domain_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "domain_id",
+                    "domain_id was not specified but it is required when building DomainStatus",
+                )
+            })?,
+            domain_name: self.domain_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "domain_name",
+                    "domain_name was not specified but it is required when building DomainStatus",
+                )
+            })?,
             arn: self.arn,
             created: self.created,
             deleted: self.deleted,
             doc_service: self.doc_service,
             search_service: self.search_service,
-            requires_index_documents: self.requires_index_documents,
+            requires_index_documents: self.requires_index_documents.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "requires_index_documents",
+                    "requires_index_documents was not specified but it is required when building DomainStatus",
+                )
+            })?,
             processing: self.processing,
             search_instance_type: self.search_instance_type,
             search_partition_count: self.search_partition_count,
             search_instance_count: self.search_instance_count,
             limits: self.limits,
-        }
+        })
     }
 }

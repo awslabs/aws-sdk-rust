@@ -69,8 +69,10 @@ impl DataQualityResult {
         self.ruleset_evaluation_run_id.as_deref()
     }
     /// <p>A list of <code>DataQualityRuleResult</code> objects representing the results for each rule. </p>
-    pub fn rule_results(&self) -> ::std::option::Option<&[crate::types::DataQualityRuleResult]> {
-        self.rule_results.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rule_results.is_none()`.
+    pub fn rule_results(&self) -> &[crate::types::DataQualityRuleResult] {
+        self.rule_results.as_deref().unwrap_or_default()
     }
 }
 impl DataQualityResult {

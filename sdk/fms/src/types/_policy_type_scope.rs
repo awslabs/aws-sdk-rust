@@ -11,8 +11,10 @@ pub struct PolicyTypeScope {
 }
 impl PolicyTypeScope {
     /// <p>The list of policy types that the specified Firewall Manager administrator can manage.</p>
-    pub fn policy_types(&self) -> ::std::option::Option<&[crate::types::SecurityServiceType]> {
-        self.policy_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_types.is_none()`.
+    pub fn policy_types(&self) -> &[crate::types::SecurityServiceType] {
+        self.policy_types.as_deref().unwrap_or_default()
     }
     /// <p>Allows the specified Firewall Manager administrator to manage all Firewall Manager policy types, except for third-party policy types. Third-party policy types can only be managed by the Firewall Manager default administrator.</p>
     pub fn all_policy_types_enabled(&self) -> bool {

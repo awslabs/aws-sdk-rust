@@ -27,6 +27,7 @@ pub struct DeleteActivityInputBuilder {
 }
 impl DeleteActivityInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the activity to delete.</p>
+    /// This field is required.
     pub fn activity_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.activity_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteActivityInputBuilder {
     /// Consumes the builder and constructs a [`DeleteActivityInput`](crate::operation::delete_activity::DeleteActivityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_activity::DeleteActivityInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_activity::DeleteActivityInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_activity::DeleteActivityInput {
             activity_arn: self.activity_arn,
         })

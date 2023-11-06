@@ -87,7 +87,7 @@ impl CreateFaceLivenessSessionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_face_liveness_session::CreateFaceLivenessSessionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_face_liveness_session::CreateFaceLivenessSessionInput {
             kms_key_id: self.kms_key_id,

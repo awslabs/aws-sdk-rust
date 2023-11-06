@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDataSourcesOutput {
     /// <p>The results of the <code>ListDataSources</code> action.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceSummary>>,
+    pub items: ::std::vec::Vec<crate::types::DataSourceSummary>,
     /// <p>When the number of data sources is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of data sources, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListDataSources</code> to list the next set of data sources.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListDataSourcesOutput {
     /// <p>The results of the <code>ListDataSources</code> action.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::DataSourceSummary]> {
-        self.items.as_deref()
+    pub fn items(&self) -> &[crate::types::DataSourceSummary] {
+        use std::ops::Deref;
+        self.items.deref()
     }
     /// <p>When the number of data sources is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of data sources, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListDataSources</code> to list the next set of data sources.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ListDataSourcesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDataSourcesOutput`](crate::operation::list_data_sources::ListDataSourcesOutput).
-    pub fn build(self) -> crate::operation::list_data_sources::ListDataSourcesOutput {
-        crate::operation::list_data_sources::ListDataSourcesOutput {
-            items: self.items,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`items`](crate::operation::list_data_sources::builders::ListDataSourcesOutputBuilder::items)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_data_sources::ListDataSourcesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_data_sources::ListDataSourcesOutput {
+            items: self.items.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "items",
+                    "items was not specified but it is required when building ListDataSourcesOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

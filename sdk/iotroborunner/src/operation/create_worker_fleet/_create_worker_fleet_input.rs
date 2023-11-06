@@ -62,6 +62,7 @@ impl CreateWorkerFleetInputBuilder {
         &self.client_token
     }
     /// Human friendly name of the resource.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl CreateWorkerFleetInputBuilder {
         &self.name
     }
     /// Site ARN.
+    /// This field is required.
     pub fn site(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.site = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +108,7 @@ impl CreateWorkerFleetInputBuilder {
     /// Consumes the builder and constructs a [`CreateWorkerFleetInput`](crate::operation::create_worker_fleet::CreateWorkerFleetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_worker_fleet::CreateWorkerFleetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_worker_fleet::CreateWorkerFleetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_worker_fleet::CreateWorkerFleetInput {
             client_token: self.client_token,
             name: self.name,

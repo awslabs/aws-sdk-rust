@@ -34,6 +34,7 @@ pub struct DescribeProblemObservationsInputBuilder {
 }
 impl DescribeProblemObservationsInputBuilder {
     /// <p>The ID of the problem.</p>
+    /// This field is required.
     pub fn problem_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.problem_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl DescribeProblemObservationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_problem_observations::DescribeProblemObservationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_problem_observations::DescribeProblemObservationsInput {
             problem_id: self.problem_id,

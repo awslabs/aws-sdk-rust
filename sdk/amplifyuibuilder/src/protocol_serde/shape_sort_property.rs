@@ -2,12 +2,12 @@
 pub fn ser_sort_property(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SortProperty,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.field {
-        object.key("field").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("field").string(input.field.as_str());
     }
-    if let Some(var_2) = &input.direction {
-        object.key("direction").string(var_2.as_str());
+    {
+        object.key("direction").string(input.direction.as_str());
     }
     Ok(())
 }
@@ -51,7 +51,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::sort_property_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

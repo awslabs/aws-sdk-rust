@@ -8,29 +8,32 @@
 pub struct ResponseInspectionJson {
     /// <p>The identifier for the value to match against in the JSON. The identifier must be an exact match, including case.</p>
     /// <p>JSON examples: <code>"Identifier": [ "/login/success" ]</code> and <code>"Identifier": [ "/sign-up/success" ]</code> </p>
-    pub identifier: ::std::option::Option<::std::string::String>,
+    pub identifier: ::std::string::String,
     /// <p>Values for the specified identifier in the response JSON that indicate a successful login or account creation attempt. To be counted as a success, the value must be an exact match, including case. Each value must be unique among the success and failure values. </p>
     /// <p>JSON example: <code>"SuccessValues": [ "True", "Succeeded" ]</code> </p>
-    pub success_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub success_values: ::std::vec::Vec<::std::string::String>,
     /// <p>Values for the specified identifier in the response JSON that indicate a failed login or account creation attempt. To be counted as a failure, the value must be an exact match, including case. Each value must be unique among the success and failure values. </p>
     /// <p>JSON example: <code>"FailureValues": [ "False", "Failed" ]</code> </p>
-    pub failure_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub failure_values: ::std::vec::Vec<::std::string::String>,
 }
 impl ResponseInspectionJson {
     /// <p>The identifier for the value to match against in the JSON. The identifier must be an exact match, including case.</p>
     /// <p>JSON examples: <code>"Identifier": [ "/login/success" ]</code> and <code>"Identifier": [ "/sign-up/success" ]</code> </p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
-        self.identifier.as_deref()
+    pub fn identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.identifier.deref()
     }
     /// <p>Values for the specified identifier in the response JSON that indicate a successful login or account creation attempt. To be counted as a success, the value must be an exact match, including case. Each value must be unique among the success and failure values. </p>
     /// <p>JSON example: <code>"SuccessValues": [ "True", "Succeeded" ]</code> </p>
-    pub fn success_values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.success_values.as_deref()
+    pub fn success_values(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.success_values.deref()
     }
     /// <p>Values for the specified identifier in the response JSON that indicate a failed login or account creation attempt. To be counted as a failure, the value must be an exact match, including case. Each value must be unique among the success and failure values. </p>
     /// <p>JSON example: <code>"FailureValues": [ "False", "Failed" ]</code> </p>
-    pub fn failure_values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.failure_values.as_deref()
+    pub fn failure_values(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.failure_values.deref()
     }
 }
 impl ResponseInspectionJson {
@@ -51,6 +54,7 @@ pub struct ResponseInspectionJsonBuilder {
 impl ResponseInspectionJsonBuilder {
     /// <p>The identifier for the value to match against in the JSON. The identifier must be an exact match, including case.</p>
     /// <p>JSON examples: <code>"Identifier": [ "/login/success" ]</code> and <code>"Identifier": [ "/sign-up/success" ]</code> </p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -113,11 +117,30 @@ impl ResponseInspectionJsonBuilder {
         &self.failure_values
     }
     /// Consumes the builder and constructs a [`ResponseInspectionJson`](crate::types::ResponseInspectionJson).
-    pub fn build(self) -> crate::types::ResponseInspectionJson {
-        crate::types::ResponseInspectionJson {
-            identifier: self.identifier,
-            success_values: self.success_values,
-            failure_values: self.failure_values,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`identifier`](crate::types::builders::ResponseInspectionJsonBuilder::identifier)
+    /// - [`success_values`](crate::types::builders::ResponseInspectionJsonBuilder::success_values)
+    /// - [`failure_values`](crate::types::builders::ResponseInspectionJsonBuilder::failure_values)
+    pub fn build(self) -> ::std::result::Result<crate::types::ResponseInspectionJson, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ResponseInspectionJson {
+            identifier: self.identifier.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "identifier",
+                    "identifier was not specified but it is required when building ResponseInspectionJson",
+                )
+            })?,
+            success_values: self.success_values.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "success_values",
+                    "success_values was not specified but it is required when building ResponseInspectionJson",
+                )
+            })?,
+            failure_values: self.failure_values.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "failure_values",
+                    "failure_values was not specified but it is required when building ResponseInspectionJson",
+                )
+            })?,
+        })
     }
 }

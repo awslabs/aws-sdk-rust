@@ -27,6 +27,7 @@ pub struct GetPlaybackConfigurationInputBuilder {
 }
 impl GetPlaybackConfigurationInputBuilder {
     /// <p>The identifier for the playback configuration.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetPlaybackConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_playback_configuration::GetPlaybackConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_playback_configuration::GetPlaybackConfigurationInput { name: self.name })
     }

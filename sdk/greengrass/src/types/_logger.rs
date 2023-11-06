@@ -56,6 +56,7 @@ pub struct LoggerBuilder {
 }
 impl LoggerBuilder {
     /// The component that will be subject to logging.
+    /// This field is required.
     pub fn component(mut self, input: crate::types::LoggerComponent) -> Self {
         self.component = ::std::option::Option::Some(input);
         self
@@ -70,6 +71,7 @@ impl LoggerBuilder {
         &self.component
     }
     /// A descriptive or arbitrary ID for the logger. This value must be unique within the logger definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +86,7 @@ impl LoggerBuilder {
         &self.id
     }
     /// The level of the logs.
+    /// This field is required.
     pub fn level(mut self, input: crate::types::LoggerLevel) -> Self {
         self.level = ::std::option::Option::Some(input);
         self
@@ -112,6 +115,7 @@ impl LoggerBuilder {
         &self.space
     }
     /// The type of log output which will be used.
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::LoggerType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self

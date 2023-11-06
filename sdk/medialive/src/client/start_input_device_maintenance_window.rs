@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartInputDeviceMaintenanceWindow`](crate::operation::start_input_device_maintenance_window::builders::StartInputDeviceMaintenanceWindowFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`input_device_id(impl Into<String>)`](crate::operation::start_input_device_maintenance_window::builders::StartInputDeviceMaintenanceWindowFluentBuilder::input_device_id) / [`set_input_device_id(Option<String>)`](crate::operation::start_input_device_maintenance_window::builders::StartInputDeviceMaintenanceWindowFluentBuilder::set_input_device_id): The unique ID of the input device to start a maintenance window for. For example, hd-123456789abcdef.
+    ///   - [`input_device_id(impl Into<String>)`](crate::operation::start_input_device_maintenance_window::builders::StartInputDeviceMaintenanceWindowFluentBuilder::input_device_id) / [`set_input_device_id(Option<String>)`](crate::operation::start_input_device_maintenance_window::builders::StartInputDeviceMaintenanceWindowFluentBuilder::set_input_device_id):<br>required: **true**<br>The unique ID of the input device to start a maintenance window for. For example, hd-123456789abcdef.<br>
     /// - On success, responds with [`StartInputDeviceMaintenanceWindowOutput`](crate::operation::start_input_device_maintenance_window::StartInputDeviceMaintenanceWindowOutput)
     /// - On failure, responds with [`SdkError<StartInputDeviceMaintenanceWindowError>`](crate::operation::start_input_device_maintenance_window::StartInputDeviceMaintenanceWindowError)
     pub fn start_input_device_maintenance_window(

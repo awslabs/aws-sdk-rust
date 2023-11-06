@@ -27,6 +27,7 @@ pub struct DeregisterRdsDbInstanceInputBuilder {
 }
 impl DeregisterRdsDbInstanceInputBuilder {
     /// <p>The Amazon RDS instance's ARN.</p>
+    /// This field is required.
     pub fn rds_db_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rds_db_instance_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeregisterRdsDbInstanceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceInput {
             rds_db_instance_arn: self.rds_db_instance_arn,

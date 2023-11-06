@@ -34,6 +34,7 @@ pub struct ListMessageMoveTasksInputBuilder {
 }
 impl ListMessageMoveTasksInputBuilder {
     /// <p>The ARN of the queue whose message movement tasks are to be listed.</p>
+    /// This field is required.
     pub fn source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_arn = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl ListMessageMoveTasksInputBuilder {
     /// Consumes the builder and constructs a [`ListMessageMoveTasksInput`](crate::operation::list_message_move_tasks::ListMessageMoveTasksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_message_move_tasks::ListMessageMoveTasksInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_message_move_tasks::ListMessageMoveTasksInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_message_move_tasks::ListMessageMoveTasksInput {
             source_arn: self.source_arn,

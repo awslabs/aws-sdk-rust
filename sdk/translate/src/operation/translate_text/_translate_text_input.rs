@@ -27,8 +27,10 @@ impl TranslateTextInput {
     /// <p>The name of a terminology list file to add to the translation job. This file provides source terms and the desired translation for each term. A terminology list can contain a maximum of 256 terms. You can use one custom terminology resource in your translation request.</p>
     /// <p>Use the <code>ListTerminologies</code> operation to get the available terminology lists.</p>
     /// <p>For more information about custom terminology lists, see <a href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom terminology</a>.</p>
-    pub fn terminology_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.terminology_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.terminology_names.is_none()`.
+    pub fn terminology_names(&self) -> &[::std::string::String] {
+        self.terminology_names.as_deref().unwrap_or_default()
     }
     /// <p>The language code for the language of the source text. For a list of language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
     /// <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to determine the source language.</p> <note>
@@ -65,6 +67,7 @@ pub struct TranslateTextInputBuilder {
 }
 impl TranslateTextInputBuilder {
     /// <p>The text to translate. The text string can be a maximum of 10,000 bytes long. Depending on your character set, this may be fewer than 10,000 characters.</p>
+    /// This field is required.
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text = ::std::option::Option::Some(input.into());
         self
@@ -108,6 +111,7 @@ impl TranslateTextInputBuilder {
     /// <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to determine the source language.</p> <note>
     /// <p>If you specify <code>auto</code>, you must send the <code>TranslateText</code> request in a region that supports Amazon Comprehend. Otherwise, the request returns an error indicating that autodetect is not supported. </p>
     /// </note>
+    /// This field is required.
     pub fn source_language_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_language_code = ::std::option::Option::Some(input.into());
         self
@@ -128,6 +132,7 @@ impl TranslateTextInputBuilder {
         &self.source_language_code
     }
     /// <p>The language code requested for the language of the target text. For a list of language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
+    /// This field is required.
     pub fn target_language_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_language_code = ::std::option::Option::Some(input.into());
         self
@@ -158,7 +163,7 @@ impl TranslateTextInputBuilder {
     /// Consumes the builder and constructs a [`TranslateTextInput`](crate::operation::translate_text::TranslateTextInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::translate_text::TranslateTextInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::translate_text::TranslateTextInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::translate_text::TranslateTextInput {
             text: self.text,
             terminology_names: self.terminology_names,

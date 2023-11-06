@@ -34,6 +34,7 @@ pub struct DetachSecurityProfileInputBuilder {
 }
 impl DetachSecurityProfileInputBuilder {
     /// <p>The security profile that is detached.</p>
+    /// This field is required.
     pub fn security_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_profile_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DetachSecurityProfileInputBuilder {
         &self.security_profile_name
     }
     /// <p>The ARN of the thing group from which the security profile is detached.</p>
+    /// This field is required.
     pub fn security_profile_target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_profile_target_arn = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DetachSecurityProfileInputBuilder {
     /// Consumes the builder and constructs a [`DetachSecurityProfileInput`](crate::operation::detach_security_profile::DetachSecurityProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::detach_security_profile::DetachSecurityProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::detach_security_profile::DetachSecurityProfileInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::detach_security_profile::DetachSecurityProfileInput {
             security_profile_name: self.security_profile_name,

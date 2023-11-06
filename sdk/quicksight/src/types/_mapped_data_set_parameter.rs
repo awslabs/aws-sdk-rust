@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MappedDataSetParameter {
     /// <p>A unique name that identifies a dataset within the analysis or dashboard.</p>
-    pub data_set_identifier: ::std::option::Option<::std::string::String>,
+    pub data_set_identifier: ::std::string::String,
     /// <p>The name of the dataset parameter.</p>
-    pub data_set_parameter_name: ::std::option::Option<::std::string::String>,
+    pub data_set_parameter_name: ::std::string::String,
 }
 impl MappedDataSetParameter {
     /// <p>A unique name that identifies a dataset within the analysis or dashboard.</p>
-    pub fn data_set_identifier(&self) -> ::std::option::Option<&str> {
-        self.data_set_identifier.as_deref()
+    pub fn data_set_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.data_set_identifier.deref()
     }
     /// <p>The name of the dataset parameter.</p>
-    pub fn data_set_parameter_name(&self) -> ::std::option::Option<&str> {
-        self.data_set_parameter_name.as_deref()
+    pub fn data_set_parameter_name(&self) -> &str {
+        use std::ops::Deref;
+        self.data_set_parameter_name.deref()
     }
 }
 impl MappedDataSetParameter {
@@ -35,6 +37,7 @@ pub struct MappedDataSetParameterBuilder {
 }
 impl MappedDataSetParameterBuilder {
     /// <p>A unique name that identifies a dataset within the analysis or dashboard.</p>
+    /// This field is required.
     pub fn data_set_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_identifier = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl MappedDataSetParameterBuilder {
         &self.data_set_identifier
     }
     /// <p>The name of the dataset parameter.</p>
+    /// This field is required.
     pub fn data_set_parameter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_parameter_name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl MappedDataSetParameterBuilder {
         &self.data_set_parameter_name
     }
     /// Consumes the builder and constructs a [`MappedDataSetParameter`](crate::types::MappedDataSetParameter).
-    pub fn build(self) -> crate::types::MappedDataSetParameter {
-        crate::types::MappedDataSetParameter {
-            data_set_identifier: self.data_set_identifier,
-            data_set_parameter_name: self.data_set_parameter_name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`data_set_identifier`](crate::types::builders::MappedDataSetParameterBuilder::data_set_identifier)
+    /// - [`data_set_parameter_name`](crate::types::builders::MappedDataSetParameterBuilder::data_set_parameter_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::MappedDataSetParameter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::MappedDataSetParameter {
+            data_set_identifier: self.data_set_identifier.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "data_set_identifier",
+                    "data_set_identifier was not specified but it is required when building MappedDataSetParameter",
+                )
+            })?,
+            data_set_parameter_name: self.data_set_parameter_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "data_set_parameter_name",
+                    "data_set_parameter_name was not specified but it is required when building MappedDataSetParameter",
+                )
+            })?,
+        })
     }
 }

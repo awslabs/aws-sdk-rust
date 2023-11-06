@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRulesetOutput {
     /// <p>The name of the ruleset.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The description of the ruleset.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is associated with.</p>
@@ -27,8 +27,9 @@ pub struct DescribeRulesetOutput {
 }
 impl DescribeRulesetOutput {
     /// <p>The name of the ruleset.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The description of the ruleset.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -39,8 +40,10 @@ impl DescribeRulesetOutput {
         self.target_arn.as_deref()
     }
     /// <p>A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset.</p>
-    pub fn rules(&self) -> ::std::option::Option<&[crate::types::Rule]> {
-        self.rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
+    pub fn rules(&self) -> &[crate::types::Rule] {
+        self.rules.as_deref().unwrap_or_default()
     }
     /// <p>The date and time that the ruleset was created.</p>
     pub fn create_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -97,6 +100,7 @@ pub struct DescribeRulesetOutputBuilder {
 }
 impl DescribeRulesetOutputBuilder {
     /// <p>The name of the ruleset.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -258,9 +262,18 @@ impl DescribeRulesetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeRulesetOutput`](crate::operation::describe_ruleset::DescribeRulesetOutput).
-    pub fn build(self) -> crate::operation::describe_ruleset::DescribeRulesetOutput {
-        crate::operation::describe_ruleset::DescribeRulesetOutput {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::describe_ruleset::builders::DescribeRulesetOutputBuilder::name)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_ruleset::DescribeRulesetOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_ruleset::DescribeRulesetOutput {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DescribeRulesetOutput",
+                )
+            })?,
             description: self.description,
             target_arn: self.target_arn,
             rules: self.rules,
@@ -271,6 +284,6 @@ impl DescribeRulesetOutputBuilder {
             resource_arn: self.resource_arn,
             tags: self.tags,
             _request_id: self._request_id,
-        }
+        })
     }
 }

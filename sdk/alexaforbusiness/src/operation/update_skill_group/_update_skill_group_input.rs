@@ -85,7 +85,7 @@ impl UpdateSkillGroupInputBuilder {
     /// Consumes the builder and constructs a [`UpdateSkillGroupInput`](crate::operation::update_skill_group::UpdateSkillGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_skill_group::UpdateSkillGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_skill_group::UpdateSkillGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_skill_group::UpdateSkillGroupInput {
             skill_group_arn: self.skill_group_arn,
             skill_group_name: self.skill_group_name,

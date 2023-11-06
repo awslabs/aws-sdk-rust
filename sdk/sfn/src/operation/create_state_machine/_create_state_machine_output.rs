@@ -4,21 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateStateMachineOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the created state machine.</p>
-    pub state_machine_arn: ::std::option::Option<::std::string::String>,
+    pub state_machine_arn: ::std::string::String,
     /// <p>The date the state machine is created.</p>
-    pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_date: ::aws_smithy_types::DateTime,
     /// <p>The Amazon Resource Name (ARN) that identifies the created state machine version. If you do not set the <code>publish</code> parameter to <code>true</code>, this field returns null value.</p>
     pub state_machine_version_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateStateMachineOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the created state machine.</p>
-    pub fn state_machine_arn(&self) -> ::std::option::Option<&str> {
-        self.state_machine_arn.as_deref()
+    pub fn state_machine_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.state_machine_arn.deref()
     }
     /// <p>The date the state machine is created.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_date.as_ref()
+    pub fn creation_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_date
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the created state machine version. If you do not set the <code>publish</code> parameter to <code>true</code>, this field returns null value.</p>
     pub fn state_machine_version_arn(&self) -> ::std::option::Option<&str> {
@@ -48,6 +49,7 @@ pub struct CreateStateMachineOutputBuilder {
 }
 impl CreateStateMachineOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) that identifies the created state machine.</p>
+    /// This field is required.
     pub fn state_machine_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_machine_arn = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +64,7 @@ impl CreateStateMachineOutputBuilder {
         &self.state_machine_arn
     }
     /// <p>The date the state machine is created.</p>
+    /// This field is required.
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
         self
@@ -99,12 +102,28 @@ impl CreateStateMachineOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateStateMachineOutput`](crate::operation::create_state_machine::CreateStateMachineOutput).
-    pub fn build(self) -> crate::operation::create_state_machine::CreateStateMachineOutput {
-        crate::operation::create_state_machine::CreateStateMachineOutput {
-            state_machine_arn: self.state_machine_arn,
-            creation_date: self.creation_date,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`state_machine_arn`](crate::operation::create_state_machine::builders::CreateStateMachineOutputBuilder::state_machine_arn)
+    /// - [`creation_date`](crate::operation::create_state_machine::builders::CreateStateMachineOutputBuilder::creation_date)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_state_machine::CreateStateMachineOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_state_machine::CreateStateMachineOutput {
+            state_machine_arn: self.state_machine_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "state_machine_arn",
+                    "state_machine_arn was not specified but it is required when building CreateStateMachineOutput",
+                )
+            })?,
+            creation_date: self.creation_date.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "creation_date",
+                    "creation_date was not specified but it is required when building CreateStateMachineOutput",
+                )
+            })?,
             state_machine_version_arn: self.state_machine_version_arn,
             _request_id: self._request_id,
-        }
+        })
     }
 }

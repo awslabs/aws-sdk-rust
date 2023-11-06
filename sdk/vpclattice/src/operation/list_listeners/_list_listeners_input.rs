@@ -41,6 +41,7 @@ pub struct ListListenersInputBuilder {
 }
 impl ListListenersInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    /// This field is required.
     pub fn service_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_identifier = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl ListListenersInputBuilder {
     /// Consumes the builder and constructs a [`ListListenersInput`](crate::operation::list_listeners::ListListenersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_listeners::ListListenersInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_listeners::ListListenersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_listeners::ListListenersInput {
             service_identifier: self.service_identifier,
             max_results: self.max_results,

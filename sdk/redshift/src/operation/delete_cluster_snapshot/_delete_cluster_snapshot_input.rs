@@ -40,6 +40,7 @@ pub struct DeleteClusterSnapshotInputBuilder {
 impl DeleteClusterSnapshotInputBuilder {
     /// <p>The unique identifier of the manual snapshot to be deleted.</p>
     /// <p>Constraints: Must be the name of an existing snapshot that is in the <code>available</code>, <code>failed</code>, or <code>cancelled</code> state.</p>
+    /// This field is required.
     pub fn snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_identifier = ::std::option::Option::Some(input.into());
         self
@@ -75,7 +76,7 @@ impl DeleteClusterSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`DeleteClusterSnapshotInput`](crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotInput {
             snapshot_identifier: self.snapshot_identifier,

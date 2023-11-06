@@ -13,8 +13,10 @@ pub struct DetectMitigationActionsTaskTarget {
 }
 impl DetectMitigationActionsTaskTarget {
     /// <p> The unique identifiers of the violations. </p>
-    pub fn violation_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.violation_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.violation_ids.is_none()`.
+    pub fn violation_ids(&self) -> &[::std::string::String] {
+        self.violation_ids.as_deref().unwrap_or_default()
     }
     /// <p> The name of the security profile. </p>
     pub fn security_profile_name(&self) -> ::std::option::Option<&str> {

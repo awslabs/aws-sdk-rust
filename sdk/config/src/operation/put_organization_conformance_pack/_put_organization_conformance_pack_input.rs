@@ -52,12 +52,16 @@ impl PutOrganizationConformancePackInput {
         self.delivery_s3_key_prefix.as_deref()
     }
     /// <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
-    pub fn conformance_pack_input_parameters(&self) -> ::std::option::Option<&[crate::types::ConformancePackInputParameter]> {
-        self.conformance_pack_input_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.conformance_pack_input_parameters.is_none()`.
+    pub fn conformance_pack_input_parameters(&self) -> &[crate::types::ConformancePackInputParameter] {
+        self.conformance_pack_input_parameters.as_deref().unwrap_or_default()
     }
     /// <p>A list of Amazon Web Services accounts to be excluded from an organization conformance pack while deploying a conformance pack.</p>
-    pub fn excluded_accounts(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.excluded_accounts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.excluded_accounts.is_none()`.
+    pub fn excluded_accounts(&self) -> &[::std::string::String] {
+        self.excluded_accounts.as_deref().unwrap_or_default()
     }
 }
 impl PutOrganizationConformancePackInput {
@@ -81,6 +85,7 @@ pub struct PutOrganizationConformancePackInputBuilder {
 }
 impl PutOrganizationConformancePackInputBuilder {
     /// <p>Name of the organization conformance pack you want to create.</p>
+    /// This field is required.
     pub fn organization_conformance_pack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_conformance_pack_name = ::std::option::Option::Some(input.into());
         self
@@ -216,7 +221,7 @@ impl PutOrganizationConformancePackInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackInput {
             organization_conformance_pack_name: self.organization_conformance_pack_name,

@@ -15,7 +15,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "IpV4Cidr" => {
-                            builder = builder.set_ip_v4_cidr(
+                            builder = builder.set_ipv4_cidr(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
@@ -29,7 +29,7 @@ where
                             );
                         }
                         "IpV6Cidr" => {
-                            builder = builder.set_ip_v6_cidr(
+                            builder = builder.set_ipv6_cidr(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

@@ -2,7 +2,7 @@
 pub fn ser_local_volume_resource_data(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LocalVolumeResourceData,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.destination_path {
         object.key("DestinationPath").string(var_1.as_str());
     }

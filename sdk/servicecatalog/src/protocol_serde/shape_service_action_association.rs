@@ -2,15 +2,15 @@
 pub fn ser_service_action_association(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ServiceActionAssociation,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.service_action_id {
-        object.key("ServiceActionId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("ServiceActionId").string(input.service_action_id.as_str());
     }
-    if let Some(var_2) = &input.product_id {
-        object.key("ProductId").string(var_2.as_str());
+    {
+        object.key("ProductId").string(input.product_id.as_str());
     }
-    if let Some(var_3) = &input.provisioning_artifact_id {
-        object.key("ProvisioningArtifactId").string(var_3.as_str());
+    {
+        object.key("ProvisioningArtifactId").string(input.provisioning_artifact_id.as_str());
     }
     Ok(())
 }

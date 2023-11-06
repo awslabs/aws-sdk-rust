@@ -2,7 +2,7 @@
 pub fn ser_device_job_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DeviceJobConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ota_job_config {
         #[allow(unused_mut)]
         let mut object_2 = object.key("OTAJobConfig").start_object();

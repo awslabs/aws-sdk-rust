@@ -2,7 +2,7 @@
 pub fn ser_aws_guard_duty_detector_data_sources_kubernetes_audit_logs_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsGuardDutyDetectorDataSourcesKubernetesAuditLogsDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.status {
         object.key("Status").string(var_1.as_str());
     }

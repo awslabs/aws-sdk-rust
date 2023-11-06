@@ -34,6 +34,7 @@ pub struct CreateVpcEndpointOutputBuilder {
 }
 impl CreateVpcEndpointOutputBuilder {
     /// <p>Information about the newly created VPC endpoint.</p>
+    /// This field is required.
     pub fn vpc_endpoint(mut self, input: crate::types::VpcEndpoint) -> Self {
         self.vpc_endpoint = ::std::option::Option::Some(input);
         self

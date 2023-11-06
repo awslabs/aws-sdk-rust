@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartPipe`](crate::operation::start_pipe::builders::StartPipeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::start_pipe::builders::StartPipeFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::start_pipe::builders::StartPipeFluentBuilder::set_name): <p>The name of the pipe.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::start_pipe::builders::StartPipeFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::start_pipe::builders::StartPipeFluentBuilder::set_name):<br>required: **true**<br><p>The name of the pipe.</p><br>
     /// - On success, responds with [`StartPipeOutput`](crate::operation::start_pipe::StartPipeOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::start_pipe::StartPipeOutput::arn): <p>The ARN of the pipe.</p>
     ///   - [`name(Option<String>)`](crate::operation::start_pipe::StartPipeOutput::name): <p>The name of the pipe.</p>

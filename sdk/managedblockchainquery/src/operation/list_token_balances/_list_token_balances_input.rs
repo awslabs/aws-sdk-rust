@@ -68,6 +68,7 @@ impl ListTokenBalancesInputBuilder {
     /// <p>The contract address or a token identifier on the blockchain network by which to filter the request. You must specify the <code>contractAddress</code> property of this container when listing tokens minted by a contract.</p> <note>
     /// <p>You must always specify the network property of this container when using this operation.</p>
     /// </note>
+    /// This field is required.
     pub fn token_filter(mut self, input: crate::types::TokenFilter) -> Self {
         self.token_filter = ::std::option::Option::Some(input);
         self
@@ -116,7 +117,7 @@ impl ListTokenBalancesInputBuilder {
     /// Consumes the builder and constructs a [`ListTokenBalancesInput`](crate::operation::list_token_balances::ListTokenBalancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_token_balances::ListTokenBalancesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_token_balances::ListTokenBalancesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_token_balances::ListTokenBalancesInput {
             owner_filter: self.owner_filter,
             token_filter: self.token_filter,

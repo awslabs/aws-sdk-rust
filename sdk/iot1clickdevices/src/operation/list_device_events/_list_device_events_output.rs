@@ -11,8 +11,10 @@ pub struct ListDeviceEventsOutput {
 }
 impl ListDeviceEventsOutput {
     /// <p>An array of zero or more elements describing the event(s) associated with the device.</p>
-    pub fn events(&self) -> ::std::option::Option<&[crate::types::DeviceEvent]> {
-        self.events.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.events.is_none()`.
+    pub fn events(&self) -> &[crate::types::DeviceEvent] {
+        self.events.as_deref().unwrap_or_default()
     }
     /// <p>The token to retrieve the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

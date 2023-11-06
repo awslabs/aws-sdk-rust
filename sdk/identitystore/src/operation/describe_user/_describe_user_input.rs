@@ -34,6 +34,7 @@ pub struct DescribeUserInputBuilder {
 }
 impl DescribeUserInputBuilder {
     /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.</p>
+    /// This field is required.
     pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_store_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeUserInputBuilder {
         &self.identity_store_id
     }
     /// <p>The identifier for a user in the identity store.</p>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,9 @@ impl DescribeUserInputBuilder {
         &self.user_id
     }
     /// Consumes the builder and constructs a [`DescribeUserInput`](crate::operation::describe_user::DescribeUserInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_user::DescribeUserInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_user::DescribeUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_user::DescribeUserInput {
             identity_store_id: self.identity_store_id,
             user_id: self.user_id,

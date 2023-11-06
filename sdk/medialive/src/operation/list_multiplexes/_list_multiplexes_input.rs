@@ -65,7 +65,7 @@ impl ListMultiplexesInputBuilder {
     /// Consumes the builder and constructs a [`ListMultiplexesInput`](crate::operation::list_multiplexes::ListMultiplexesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_multiplexes::ListMultiplexesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_multiplexes::ListMultiplexesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_multiplexes::ListMultiplexesInput {
             max_results: self.max_results,
             next_token: self.next_token,

@@ -6,7 +6,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageResponseCard {
     /// <p>The title to display on the response card. The format of the title is determined by the platform displaying the response card.</p>
-    pub title: ::std::option::Option<::std::string::String>,
+    pub title: ::std::string::String,
     /// <p>The subtitle to display on the response card. The format of the subtitle is determined by the platform displaying the response card.</p>
     pub subtitle: ::std::option::Option<::std::string::String>,
     /// <p>The URL of an image to display on the response card. The image URL must be publicly available so that the platform displaying the response card has access to the image.</p>
@@ -16,8 +16,9 @@ pub struct ImageResponseCard {
 }
 impl ImageResponseCard {
     /// <p>The title to display on the response card. The format of the title is determined by the platform displaying the response card.</p>
-    pub fn title(&self) -> ::std::option::Option<&str> {
-        self.title.as_deref()
+    pub fn title(&self) -> &str {
+        use std::ops::Deref;
+        self.title.deref()
     }
     /// <p>The subtitle to display on the response card. The format of the subtitle is determined by the platform displaying the response card.</p>
     pub fn subtitle(&self) -> ::std::option::Option<&str> {
@@ -28,8 +29,10 @@ impl ImageResponseCard {
         self.image_url.as_deref()
     }
     /// <p>A list of buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button.</p>
-    pub fn buttons(&self) -> ::std::option::Option<&[crate::types::Button]> {
-        self.buttons.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.buttons.is_none()`.
+    pub fn buttons(&self) -> &[crate::types::Button] {
+        self.buttons.as_deref().unwrap_or_default()
     }
 }
 impl ImageResponseCard {
@@ -50,6 +53,7 @@ pub struct ImageResponseCardBuilder {
 }
 impl ImageResponseCardBuilder {
     /// <p>The title to display on the response card. The format of the title is determined by the platform displaying the response card.</p>
+    /// This field is required.
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
         self
@@ -112,12 +116,19 @@ impl ImageResponseCardBuilder {
         &self.buttons
     }
     /// Consumes the builder and constructs a [`ImageResponseCard`](crate::types::ImageResponseCard).
-    pub fn build(self) -> crate::types::ImageResponseCard {
-        crate::types::ImageResponseCard {
-            title: self.title,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`title`](crate::types::builders::ImageResponseCardBuilder::title)
+    pub fn build(self) -> ::std::result::Result<crate::types::ImageResponseCard, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ImageResponseCard {
+            title: self.title.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "title",
+                    "title was not specified but it is required when building ImageResponseCard",
+                )
+            })?,
             subtitle: self.subtitle,
             image_url: self.image_url,
             buttons: self.buttons,
-        }
+        })
     }
 }

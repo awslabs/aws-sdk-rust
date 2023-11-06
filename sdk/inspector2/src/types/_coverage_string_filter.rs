@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoverageStringFilter {
     /// <p>The operator to compare strings on.</p>
-    pub comparison: ::std::option::Option<crate::types::CoverageStringComparison>,
+    pub comparison: crate::types::CoverageStringComparison,
     /// <p>The value to compare strings on.</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
 }
 impl CoverageStringFilter {
     /// <p>The operator to compare strings on.</p>
-    pub fn comparison(&self) -> ::std::option::Option<&crate::types::CoverageStringComparison> {
-        self.comparison.as_ref()
+    pub fn comparison(&self) -> &crate::types::CoverageStringComparison {
+        &self.comparison
     }
     /// <p>The value to compare strings on.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
 }
 impl CoverageStringFilter {
@@ -35,6 +36,7 @@ pub struct CoverageStringFilterBuilder {
 }
 impl CoverageStringFilterBuilder {
     /// <p>The operator to compare strings on.</p>
+    /// This field is required.
     pub fn comparison(mut self, input: crate::types::CoverageStringComparison) -> Self {
         self.comparison = ::std::option::Option::Some(input);
         self
@@ -49,6 +51,7 @@ impl CoverageStringFilterBuilder {
         &self.comparison
     }
     /// <p>The value to compare strings on.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +66,23 @@ impl CoverageStringFilterBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`CoverageStringFilter`](crate::types::CoverageStringFilter).
-    pub fn build(self) -> crate::types::CoverageStringFilter {
-        crate::types::CoverageStringFilter {
-            comparison: self.comparison,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`comparison`](crate::types::builders::CoverageStringFilterBuilder::comparison)
+    /// - [`value`](crate::types::builders::CoverageStringFilterBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::CoverageStringFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CoverageStringFilter {
+            comparison: self.comparison.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "comparison",
+                    "comparison was not specified but it is required when building CoverageStringFilter",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building CoverageStringFilter",
+                )
+            })?,
+        })
     }
 }

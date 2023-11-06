@@ -49,12 +49,16 @@ impl Domain {
         self.resource_type.as_ref()
     }
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>An array of key-value pairs containing information about the domain entries.</p>
-    pub fn domain_entries(&self) -> ::std::option::Option<&[crate::types::DomainEntry]> {
-        self.domain_entries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domain_entries.is_none()`.
+    pub fn domain_entries(&self) -> &[crate::types::DomainEntry] {
+        self.domain_entries.as_deref().unwrap_or_default()
     }
     /// <p>An object that describes the state of the Route&nbsp;53 domain delegation to a Lightsail DNS zone.</p>
     pub fn registered_domain_delegation_info(&self) -> ::std::option::Option<&crate::types::RegisteredDomainDelegationInfo> {

@@ -11,8 +11,10 @@ pub struct ListDatasetEntriesOutput {
 }
 impl ListDatasetEntriesOutput {
     /// <p>A list of the entries (JSON Lines) within the dataset.</p>
-    pub fn dataset_entries(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.dataset_entries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dataset_entries.is_none()`.
+    pub fn dataset_entries(&self) -> &[::std::string::String] {
+        self.dataset_entries.as_deref().unwrap_or_default()
     }
     /// <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set ofdataset entries.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

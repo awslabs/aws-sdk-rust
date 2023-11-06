@@ -34,6 +34,7 @@ pub struct CancelPipelineReprocessingInputBuilder {
 }
 impl CancelPipelineReprocessingInputBuilder {
     /// <p>The name of pipeline for which data reprocessing is canceled.</p>
+    /// This field is required.
     pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl CancelPipelineReprocessingInputBuilder {
         &self.pipeline_name
     }
     /// <p>The ID of the reprocessing task (returned by <code>StartPipelineReprocessing</code>).</p>
+    /// This field is required.
     pub fn reprocessing_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reprocessing_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl CancelPipelineReprocessingInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_pipeline_reprocessing::CancelPipelineReprocessingInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::cancel_pipeline_reprocessing::CancelPipelineReprocessingInput {
             pipeline_name: self.pipeline_name,

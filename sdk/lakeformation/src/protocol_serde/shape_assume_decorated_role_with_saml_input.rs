@@ -2,7 +2,7 @@
 pub fn ser_assume_decorated_role_with_saml_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::assume_decorated_role_with_saml::AssumeDecoratedRoleWithSamlInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.duration_seconds {
         object.key("DurationSeconds").number(
             #[allow(clippy::useless_conversion)]

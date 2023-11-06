@@ -48,6 +48,7 @@ pub struct DescribeBotRecommendationInputBuilder {
 }
 impl DescribeBotRecommendationInputBuilder {
     /// <p>The unique identifier of the bot associated with the bot recommendation.</p>
+    /// This field is required.
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl DescribeBotRecommendationInputBuilder {
         &self.bot_id
     }
     /// <p>The version of the bot associated with the bot recommendation.</p>
+    /// This field is required.
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl DescribeBotRecommendationInputBuilder {
         &self.bot_version
     }
     /// <p>The identifier of the language and locale of the bot recommendation to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// This field is required.
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl DescribeBotRecommendationInputBuilder {
         &self.locale_id
     }
     /// <p>The identifier of the bot recommendation to describe.</p>
+    /// This field is required.
     pub fn bot_recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_recommendation_id = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +112,7 @@ impl DescribeBotRecommendationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_bot_recommendation::DescribeBotRecommendationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_bot_recommendation::DescribeBotRecommendationInput {
             bot_id: self.bot_id,

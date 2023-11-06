@@ -35,6 +35,7 @@ pub struct ResultReuseByAgeConfigurationBuilder {
 }
 impl ResultReuseByAgeConfigurationBuilder {
     /// <p>True if previous query results can be reused when the query is run; otherwise, false. The default is false.</p>
+    /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self

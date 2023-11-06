@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcrContainerImageDetails {
     /// <p>The name of the repository the Amazon ECR container image resides in.</p>
-    pub repository_name: ::std::option::Option<::std::string::String>,
+    pub repository_name: ::std::string::String,
     /// <p>The image tags attached to the Amazon ECR container image.</p>
     pub image_tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The date and time the Amazon ECR container image was pushed.</p>
@@ -15,20 +15,23 @@ pub struct AwsEcrContainerImageDetails {
     /// <p>The architecture of the Amazon ECR container image.</p>
     pub architecture: ::std::option::Option<::std::string::String>,
     /// <p>The image hash of the Amazon ECR container image.</p>
-    pub image_hash: ::std::option::Option<::std::string::String>,
+    pub image_hash: ::std::string::String,
     /// <p>The registry for the Amazon ECR container image.</p>
-    pub registry: ::std::option::Option<::std::string::String>,
+    pub registry: ::std::string::String,
     /// <p>The platform of the Amazon ECR container image.</p>
     pub platform: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcrContainerImageDetails {
     /// <p>The name of the repository the Amazon ECR container image resides in.</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
-        self.repository_name.as_deref()
+    pub fn repository_name(&self) -> &str {
+        use std::ops::Deref;
+        self.repository_name.deref()
     }
     /// <p>The image tags attached to the Amazon ECR container image.</p>
-    pub fn image_tags(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.image_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_tags.is_none()`.
+    pub fn image_tags(&self) -> &[::std::string::String] {
+        self.image_tags.as_deref().unwrap_or_default()
     }
     /// <p>The date and time the Amazon ECR container image was pushed.</p>
     pub fn pushed_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -43,12 +46,14 @@ impl AwsEcrContainerImageDetails {
         self.architecture.as_deref()
     }
     /// <p>The image hash of the Amazon ECR container image.</p>
-    pub fn image_hash(&self) -> ::std::option::Option<&str> {
-        self.image_hash.as_deref()
+    pub fn image_hash(&self) -> &str {
+        use std::ops::Deref;
+        self.image_hash.deref()
     }
     /// <p>The registry for the Amazon ECR container image.</p>
-    pub fn registry(&self) -> ::std::option::Option<&str> {
-        self.registry.as_deref()
+    pub fn registry(&self) -> &str {
+        use std::ops::Deref;
+        self.registry.deref()
     }
     /// <p>The platform of the Amazon ECR container image.</p>
     pub fn platform(&self) -> ::std::option::Option<&str> {
@@ -77,6 +82,7 @@ pub struct AwsEcrContainerImageDetailsBuilder {
 }
 impl AwsEcrContainerImageDetailsBuilder {
     /// <p>The name of the repository the Amazon ECR container image resides in.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -153,6 +159,7 @@ impl AwsEcrContainerImageDetailsBuilder {
         &self.architecture
     }
     /// <p>The image hash of the Amazon ECR container image.</p>
+    /// This field is required.
     pub fn image_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_hash = ::std::option::Option::Some(input.into());
         self
@@ -167,6 +174,7 @@ impl AwsEcrContainerImageDetailsBuilder {
         &self.image_hash
     }
     /// <p>The registry for the Amazon ECR container image.</p>
+    /// This field is required.
     pub fn registry(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry = ::std::option::Option::Some(input.into());
         self
@@ -195,16 +203,35 @@ impl AwsEcrContainerImageDetailsBuilder {
         &self.platform
     }
     /// Consumes the builder and constructs a [`AwsEcrContainerImageDetails`](crate::types::AwsEcrContainerImageDetails).
-    pub fn build(self) -> crate::types::AwsEcrContainerImageDetails {
-        crate::types::AwsEcrContainerImageDetails {
-            repository_name: self.repository_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`repository_name`](crate::types::builders::AwsEcrContainerImageDetailsBuilder::repository_name)
+    /// - [`image_hash`](crate::types::builders::AwsEcrContainerImageDetailsBuilder::image_hash)
+    /// - [`registry`](crate::types::builders::AwsEcrContainerImageDetailsBuilder::registry)
+    pub fn build(self) -> ::std::result::Result<crate::types::AwsEcrContainerImageDetails, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AwsEcrContainerImageDetails {
+            repository_name: self.repository_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "repository_name",
+                    "repository_name was not specified but it is required when building AwsEcrContainerImageDetails",
+                )
+            })?,
             image_tags: self.image_tags,
             pushed_at: self.pushed_at,
             author: self.author,
             architecture: self.architecture,
-            image_hash: self.image_hash,
-            registry: self.registry,
+            image_hash: self.image_hash.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "image_hash",
+                    "image_hash was not specified but it is required when building AwsEcrContainerImageDetails",
+                )
+            })?,
+            registry: self.registry.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "registry",
+                    "registry was not specified but it is required when building AwsEcrContainerImageDetails",
+                )
+            })?,
             platform: self.platform,
-        }
+        })
     }
 }

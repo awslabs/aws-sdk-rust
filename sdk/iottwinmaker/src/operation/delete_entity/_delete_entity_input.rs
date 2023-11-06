@@ -41,6 +41,7 @@ pub struct DeleteEntityInputBuilder {
 }
 impl DeleteEntityInputBuilder {
     /// <p>The ID of the workspace that contains the entity to delete.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DeleteEntityInputBuilder {
         &self.workspace_id
     }
     /// <p>The ID of the entity to delete.</p>
+    /// This field is required.
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +85,9 @@ impl DeleteEntityInputBuilder {
         &self.is_recursive
     }
     /// Consumes the builder and constructs a [`DeleteEntityInput`](crate::operation::delete_entity::DeleteEntityInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_entity::DeleteEntityInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_entity::DeleteEntityInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_entity::DeleteEntityInput {
             workspace_id: self.workspace_id,
             entity_id: self.entity_id,

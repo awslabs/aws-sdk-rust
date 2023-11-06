@@ -179,7 +179,7 @@ pub mod list_subscribed_rule_groups;
 pub mod list_tags_for_resource;
 
 /// Types for the `ListWebACLs` operation.
-pub mod list_web_ac_ls;
+pub mod list_web_acls;
 
 /// Types for the `ListXssMatchSets` operation.
 pub mod list_xss_match_sets;

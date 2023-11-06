@@ -34,6 +34,7 @@ pub struct DeleteProfileObjectTypeInputBuilder {
 }
 impl DeleteProfileObjectTypeInputBuilder {
     /// <p>The unique name of the domain.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteProfileObjectTypeInputBuilder {
         &self.domain_name
     }
     /// <p>The name of the profile object type.</p>
+    /// This field is required.
     pub fn object_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_type_name = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl DeleteProfileObjectTypeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_profile_object_type::DeleteProfileObjectTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_profile_object_type::DeleteProfileObjectTypeInput {
             domain_name: self.domain_name,

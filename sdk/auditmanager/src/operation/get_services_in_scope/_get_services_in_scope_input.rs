@@ -18,7 +18,7 @@ impl GetServicesInScopeInputBuilder {
     /// Consumes the builder and constructs a [`GetServicesInScopeInput`](crate::operation::get_services_in_scope::GetServicesInScopeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_services_in_scope::GetServicesInScopeInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_services_in_scope::GetServicesInScopeInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_services_in_scope::GetServicesInScopeInput {})
     }

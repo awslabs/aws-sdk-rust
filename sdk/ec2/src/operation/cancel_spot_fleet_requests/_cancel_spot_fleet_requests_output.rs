@@ -12,12 +12,16 @@ pub struct CancelSpotFleetRequestsOutput {
 }
 impl CancelSpotFleetRequestsOutput {
     /// <p>Information about the Spot Fleet requests that are successfully canceled.</p>
-    pub fn successful_fleet_requests(&self) -> ::std::option::Option<&[crate::types::CancelSpotFleetRequestsSuccessItem]> {
-        self.successful_fleet_requests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.successful_fleet_requests.is_none()`.
+    pub fn successful_fleet_requests(&self) -> &[crate::types::CancelSpotFleetRequestsSuccessItem] {
+        self.successful_fleet_requests.as_deref().unwrap_or_default()
     }
     /// <p>Information about the Spot Fleet requests that are not successfully canceled.</p>
-    pub fn unsuccessful_fleet_requests(&self) -> ::std::option::Option<&[crate::types::CancelSpotFleetRequestsErrorItem]> {
-        self.unsuccessful_fleet_requests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unsuccessful_fleet_requests.is_none()`.
+    pub fn unsuccessful_fleet_requests(&self) -> &[crate::types::CancelSpotFleetRequestsErrorItem] {
+        self.unsuccessful_fleet_requests.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for CancelSpotFleetRequestsOutput {

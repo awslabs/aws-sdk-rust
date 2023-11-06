@@ -2,7 +2,7 @@
 pub fn ser_aws_route53_query_logging_config_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsRoute53QueryLoggingConfigDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cloud_watch_logs_log_group_arn {
         #[allow(unused_mut)]
         let mut object_2 = object.key("CloudWatchLogsLogGroupArn").start_object();

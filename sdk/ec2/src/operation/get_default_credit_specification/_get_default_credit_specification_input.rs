@@ -48,6 +48,7 @@ impl GetDefaultCreditSpecificationInputBuilder {
         &self.dry_run
     }
     /// <p>The instance family.</p>
+    /// This field is required.
     pub fn instance_family(mut self, input: crate::types::UnlimitedSupportedInstanceFamily) -> Self {
         self.instance_family = ::std::option::Option::Some(input);
         self
@@ -66,7 +67,7 @@ impl GetDefaultCreditSpecificationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_default_credit_specification::GetDefaultCreditSpecificationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_default_credit_specification::GetDefaultCreditSpecificationInput {
             dry_run: self.dry_run,

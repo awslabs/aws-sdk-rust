@@ -5,54 +5,58 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleSummary {
     /// <p>The name of the rule.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>A unique identifier for the rule.</p>
-    pub rule_id: ::std::option::Option<::std::string::String>,
+    pub rule_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
-    pub rule_arn: ::std::option::Option<::std::string::String>,
+    pub rule_arn: ::std::string::String,
     /// <p>The name of the event source.</p>
-    pub event_source_name: ::std::option::Option<crate::types::EventSourceName>,
+    pub event_source_name: crate::types::EventSourceName,
     /// <p>The publish status of the rule.</p>
-    pub publish_status: ::std::option::Option<crate::types::RulePublishStatus>,
+    pub publish_status: crate::types::RulePublishStatus,
     /// <p>A list of ActionTypes associated with a rule. </p>
-    pub action_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ActionSummary>>,
+    pub action_summaries: ::std::vec::Vec<crate::types::ActionSummary>,
     /// <p>The timestamp for when the rule was created. </p>
-    pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_time: ::aws_smithy_types::DateTime,
     /// <p>The timestamp for when the rule was last updated.</p>
-    pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub last_updated_time: ::aws_smithy_types::DateTime,
 }
 impl RuleSummary {
     /// <p>The name of the rule.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>A unique identifier for the rule.</p>
-    pub fn rule_id(&self) -> ::std::option::Option<&str> {
-        self.rule_id.as_deref()
+    pub fn rule_id(&self) -> &str {
+        use std::ops::Deref;
+        self.rule_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
-    pub fn rule_arn(&self) -> ::std::option::Option<&str> {
-        self.rule_arn.as_deref()
+    pub fn rule_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.rule_arn.deref()
     }
     /// <p>The name of the event source.</p>
-    pub fn event_source_name(&self) -> ::std::option::Option<&crate::types::EventSourceName> {
-        self.event_source_name.as_ref()
+    pub fn event_source_name(&self) -> &crate::types::EventSourceName {
+        &self.event_source_name
     }
     /// <p>The publish status of the rule.</p>
-    pub fn publish_status(&self) -> ::std::option::Option<&crate::types::RulePublishStatus> {
-        self.publish_status.as_ref()
+    pub fn publish_status(&self) -> &crate::types::RulePublishStatus {
+        &self.publish_status
     }
     /// <p>A list of ActionTypes associated with a rule. </p>
-    pub fn action_summaries(&self) -> ::std::option::Option<&[crate::types::ActionSummary]> {
-        self.action_summaries.as_deref()
+    pub fn action_summaries(&self) -> &[crate::types::ActionSummary] {
+        use std::ops::Deref;
+        self.action_summaries.deref()
     }
     /// <p>The timestamp for when the rule was created. </p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_time.as_ref()
+    pub fn created_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_time
     }
     /// <p>The timestamp for when the rule was last updated.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.last_updated_time.as_ref()
+    pub fn last_updated_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.last_updated_time
     }
 }
 impl RuleSummary {
@@ -77,6 +81,7 @@ pub struct RuleSummaryBuilder {
 }
 impl RuleSummaryBuilder {
     /// <p>The name of the rule.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +96,7 @@ impl RuleSummaryBuilder {
         &self.name
     }
     /// <p>A unique identifier for the rule.</p>
+    /// This field is required.
     pub fn rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_id = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +111,7 @@ impl RuleSummaryBuilder {
         &self.rule_id
     }
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
+    /// This field is required.
     pub fn rule_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_arn = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +126,7 @@ impl RuleSummaryBuilder {
         &self.rule_arn
     }
     /// <p>The name of the event source.</p>
+    /// This field is required.
     pub fn event_source_name(mut self, input: crate::types::EventSourceName) -> Self {
         self.event_source_name = ::std::option::Option::Some(input);
         self
@@ -133,6 +141,7 @@ impl RuleSummaryBuilder {
         &self.event_source_name
     }
     /// <p>The publish status of the rule.</p>
+    /// This field is required.
     pub fn publish_status(mut self, input: crate::types::RulePublishStatus) -> Self {
         self.publish_status = ::std::option::Option::Some(input);
         self
@@ -167,6 +176,7 @@ impl RuleSummaryBuilder {
         &self.action_summaries
     }
     /// <p>The timestamp for when the rule was created. </p>
+    /// This field is required.
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
         self
@@ -181,6 +191,7 @@ impl RuleSummaryBuilder {
         &self.created_time
     }
     /// <p>The timestamp for when the rule was last updated.</p>
+    /// This field is required.
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
         self
@@ -195,16 +206,65 @@ impl RuleSummaryBuilder {
         &self.last_updated_time
     }
     /// Consumes the builder and constructs a [`RuleSummary`](crate::types::RuleSummary).
-    pub fn build(self) -> crate::types::RuleSummary {
-        crate::types::RuleSummary {
-            name: self.name,
-            rule_id: self.rule_id,
-            rule_arn: self.rule_arn,
-            event_source_name: self.event_source_name,
-            publish_status: self.publish_status,
-            action_summaries: self.action_summaries,
-            created_time: self.created_time,
-            last_updated_time: self.last_updated_time,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::RuleSummaryBuilder::name)
+    /// - [`rule_id`](crate::types::builders::RuleSummaryBuilder::rule_id)
+    /// - [`rule_arn`](crate::types::builders::RuleSummaryBuilder::rule_arn)
+    /// - [`event_source_name`](crate::types::builders::RuleSummaryBuilder::event_source_name)
+    /// - [`publish_status`](crate::types::builders::RuleSummaryBuilder::publish_status)
+    /// - [`action_summaries`](crate::types::builders::RuleSummaryBuilder::action_summaries)
+    /// - [`created_time`](crate::types::builders::RuleSummaryBuilder::created_time)
+    /// - [`last_updated_time`](crate::types::builders::RuleSummaryBuilder::last_updated_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::RuleSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RuleSummary {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building RuleSummary",
+                )
+            })?,
+            rule_id: self.rule_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "rule_id",
+                    "rule_id was not specified but it is required when building RuleSummary",
+                )
+            })?,
+            rule_arn: self.rule_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "rule_arn",
+                    "rule_arn was not specified but it is required when building RuleSummary",
+                )
+            })?,
+            event_source_name: self.event_source_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "event_source_name",
+                    "event_source_name was not specified but it is required when building RuleSummary",
+                )
+            })?,
+            publish_status: self.publish_status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "publish_status",
+                    "publish_status was not specified but it is required when building RuleSummary",
+                )
+            })?,
+            action_summaries: self.action_summaries.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "action_summaries",
+                    "action_summaries was not specified but it is required when building RuleSummary",
+                )
+            })?,
+            created_time: self.created_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_time",
+                    "created_time was not specified but it is required when building RuleSummary",
+                )
+            })?,
+            last_updated_time: self.last_updated_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "last_updated_time",
+                    "last_updated_time was not specified but it is required when building RuleSummary",
+                )
+            })?,
+        })
     }
 }

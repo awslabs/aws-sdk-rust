@@ -85,7 +85,7 @@ impl ListDiscoveryJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListDiscoveryJobsInput`](crate::operation::list_discovery_jobs::ListDiscoveryJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_discovery_jobs::ListDiscoveryJobsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_discovery_jobs::ListDiscoveryJobsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_discovery_jobs::ListDiscoveryJobsInput {
             storage_system_arn: self.storage_system_arn,
             max_results: self.max_results,

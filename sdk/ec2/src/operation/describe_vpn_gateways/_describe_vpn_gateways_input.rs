@@ -48,13 +48,17 @@ impl DescribeVpnGatewaysInput {
     /// <li> <p> <code>type</code> - The type of virtual private gateway. Currently the only supported type is <code>ipsec.1</code>.</p> </li>
     /// <li> <p> <code>vpn-gateway-id</code> - The ID of the virtual private gateway.</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>One or more virtual private gateway IDs.</p>
     /// <p>Default: Describes all your virtual private gateways.</p>
-    pub fn vpn_gateway_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.vpn_gateway_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpn_gateway_ids.is_none()`.
+    pub fn vpn_gateway_ids(&self) -> &[::std::string::String] {
+        self.vpn_gateway_ids.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -188,7 +192,7 @@ impl DescribeVpnGatewaysInputBuilder {
     /// Consumes the builder and constructs a [`DescribeVpnGatewaysInput`](crate::operation::describe_vpn_gateways::DescribeVpnGatewaysInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_vpn_gateways::DescribeVpnGatewaysInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_vpn_gateways::DescribeVpnGatewaysInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_vpn_gateways::DescribeVpnGatewaysInput {
             filters: self.filters,

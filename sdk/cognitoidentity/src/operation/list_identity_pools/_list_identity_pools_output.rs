@@ -12,8 +12,10 @@ pub struct ListIdentityPoolsOutput {
 }
 impl ListIdentityPoolsOutput {
     /// <p>The identity pools returned by the ListIdentityPools action.</p>
-    pub fn identity_pools(&self) -> ::std::option::Option<&[crate::types::IdentityPoolShortDescription]> {
-        self.identity_pools.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.identity_pools.is_none()`.
+    pub fn identity_pools(&self) -> &[crate::types::IdentityPoolShortDescription] {
+        self.identity_pools.as_deref().unwrap_or_default()
     }
     /// <p>A pagination token.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

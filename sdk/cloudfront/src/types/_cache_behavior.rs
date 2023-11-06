@@ -15,9 +15,9 @@ pub struct CacheBehavior {
     /// </note>
     /// <p>The path pattern for the default cache behavior is <code>*</code> and cannot be changed. If the request for an object does not match the path pattern for any cache behaviors, CloudFront applies the behavior in the default cache behavior.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesPathPattern">Path Pattern</a> in the <i> Amazon CloudFront Developer Guide</i>.</p>
-    pub path_pattern: ::std::option::Option<::std::string::String>,
+    pub path_pattern: ::std::string::String,
     /// <p>The value of <code>ID</code> for the origin that you want CloudFront to route requests to when they match this cache behavior.</p>
-    pub target_origin_id: ::std::option::Option<::std::string::String>,
+    pub target_origin_id: ::std::string::String,
     /// <important>
     /// <p>We recommend using <code>TrustedKeyGroups</code> instead of <code>TrustedSigners</code>.</p>
     /// </important>
@@ -36,7 +36,7 @@ pub struct CacheBehavior {
     /// <p>For more information about requiring the HTTPS protocol, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-viewers-to-cloudfront.html">Requiring HTTPS Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> <note>
     /// <p>The only way to guarantee that viewers retrieve an object that was fetched from the origin using HTTPS is never to use any other protocol to fetch the object. If you have recently changed from HTTP to HTTPS, we recommend that you clear your objects' cache because cached objects are protocol agnostic. That means that an edge location will return an object from the cache regardless of whether the current request protocol matches the protocol used previously. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing Cache Expiration</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// </note>
-    pub viewer_protocol_policy: ::std::option::Option<crate::types::ViewerProtocolPolicy>,
+    pub viewer_protocol_policy: crate::types::ViewerProtocolPolicy,
     /// <p>A complex type that controls which HTTP methods CloudFront processes and forwards to your Amazon S3 bucket or your custom origin. There are three choices:</p>
     /// <ul>
     /// <li> <p>CloudFront forwards only <code>GET</code> and <code>HEAD</code> requests.</p> </li>
@@ -91,12 +91,14 @@ impl CacheBehavior {
     /// </note>
     /// <p>The path pattern for the default cache behavior is <code>*</code> and cannot be changed. If the request for an object does not match the path pattern for any cache behaviors, CloudFront applies the behavior in the default cache behavior.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesPathPattern">Path Pattern</a> in the <i> Amazon CloudFront Developer Guide</i>.</p>
-    pub fn path_pattern(&self) -> ::std::option::Option<&str> {
-        self.path_pattern.as_deref()
+    pub fn path_pattern(&self) -> &str {
+        use std::ops::Deref;
+        self.path_pattern.deref()
     }
     /// <p>The value of <code>ID</code> for the origin that you want CloudFront to route requests to when they match this cache behavior.</p>
-    pub fn target_origin_id(&self) -> ::std::option::Option<&str> {
-        self.target_origin_id.as_deref()
+    pub fn target_origin_id(&self) -> &str {
+        use std::ops::Deref;
+        self.target_origin_id.deref()
     }
     /// <important>
     /// <p>We recommend using <code>TrustedKeyGroups</code> instead of <code>TrustedSigners</code>.</p>
@@ -120,8 +122,8 @@ impl CacheBehavior {
     /// <p>For more information about requiring the HTTPS protocol, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-viewers-to-cloudfront.html">Requiring HTTPS Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> <note>
     /// <p>The only way to guarantee that viewers retrieve an object that was fetched from the origin using HTTPS is never to use any other protocol to fetch the object. If you have recently changed from HTTP to HTTPS, we recommend that you clear your objects' cache because cached objects are protocol agnostic. That means that an edge location will return an object from the cache regardless of whether the current request protocol matches the protocol used previously. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing Cache Expiration</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// </note>
-    pub fn viewer_protocol_policy(&self) -> ::std::option::Option<&crate::types::ViewerProtocolPolicy> {
-        self.viewer_protocol_policy.as_ref()
+    pub fn viewer_protocol_policy(&self) -> &crate::types::ViewerProtocolPolicy {
+        &self.viewer_protocol_policy
     }
     /// <p>A complex type that controls which HTTP methods CloudFront processes and forwards to your Amazon S3 bucket or your custom origin. There are three choices:</p>
     /// <ul>
@@ -236,6 +238,7 @@ impl CacheBehaviorBuilder {
     /// </note>
     /// <p>The path pattern for the default cache behavior is <code>*</code> and cannot be changed. If the request for an object does not match the path pattern for any cache behaviors, CloudFront applies the behavior in the default cache behavior.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesPathPattern">Path Pattern</a> in the <i> Amazon CloudFront Developer Guide</i>.</p>
+    /// This field is required.
     pub fn path_pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path_pattern = ::std::option::Option::Some(input.into());
         self
@@ -258,6 +261,7 @@ impl CacheBehaviorBuilder {
         &self.path_pattern
     }
     /// <p>The value of <code>ID</code> for the origin that you want CloudFront to route requests to when they match this cache behavior.</p>
+    /// This field is required.
     pub fn target_origin_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_origin_id = ::std::option::Option::Some(input.into());
         self
@@ -323,6 +327,7 @@ impl CacheBehaviorBuilder {
     /// <p>For more information about requiring the HTTPS protocol, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-viewers-to-cloudfront.html">Requiring HTTPS Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> <note>
     /// <p>The only way to guarantee that viewers retrieve an object that was fetched from the origin using HTTPS is never to use any other protocol to fetch the object. If you have recently changed from HTTP to HTTPS, we recommend that you clear your objects' cache because cached objects are protocol agnostic. That means that an edge location will return an object from the cache regardless of whether the current request protocol matches the protocol used previously. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing Cache Expiration</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// </note>
+    /// This field is required.
     pub fn viewer_protocol_policy(mut self, input: crate::types::ViewerProtocolPolicy) -> Self {
         self.viewer_protocol_policy = ::std::option::Option::Some(input);
         self
@@ -606,13 +611,32 @@ impl CacheBehaviorBuilder {
         &self.max_ttl
     }
     /// Consumes the builder and constructs a [`CacheBehavior`](crate::types::CacheBehavior).
-    pub fn build(self) -> crate::types::CacheBehavior {
-        crate::types::CacheBehavior {
-            path_pattern: self.path_pattern,
-            target_origin_id: self.target_origin_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`path_pattern`](crate::types::builders::CacheBehaviorBuilder::path_pattern)
+    /// - [`target_origin_id`](crate::types::builders::CacheBehaviorBuilder::target_origin_id)
+    /// - [`viewer_protocol_policy`](crate::types::builders::CacheBehaviorBuilder::viewer_protocol_policy)
+    pub fn build(self) -> ::std::result::Result<crate::types::CacheBehavior, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CacheBehavior {
+            path_pattern: self.path_pattern.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "path_pattern",
+                    "path_pattern was not specified but it is required when building CacheBehavior",
+                )
+            })?,
+            target_origin_id: self.target_origin_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "target_origin_id",
+                    "target_origin_id was not specified but it is required when building CacheBehavior",
+                )
+            })?,
             trusted_signers: self.trusted_signers,
             trusted_key_groups: self.trusted_key_groups,
-            viewer_protocol_policy: self.viewer_protocol_policy,
+            viewer_protocol_policy: self.viewer_protocol_policy.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "viewer_protocol_policy",
+                    "viewer_protocol_policy was not specified but it is required when building CacheBehavior",
+                )
+            })?,
             allowed_methods: self.allowed_methods,
             smooth_streaming: self.smooth_streaming,
             compress: self.compress,
@@ -627,6 +651,6 @@ impl CacheBehaviorBuilder {
             min_ttl: self.min_ttl,
             default_ttl: self.default_ttl,
             max_ttl: self.max_ttl,
-        }
+        })
     }
 }

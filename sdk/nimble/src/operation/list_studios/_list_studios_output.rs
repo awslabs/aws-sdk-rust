@@ -6,7 +6,7 @@ pub struct ListStudiosOutput {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A collection of studios.</p>
-    pub studios: ::std::option::Option<::std::vec::Vec<crate::types::Studio>>,
+    pub studios: ::std::vec::Vec<crate::types::Studio>,
     _request_id: Option<String>,
 }
 impl ListStudiosOutput {
@@ -15,8 +15,9 @@ impl ListStudiosOutput {
         self.next_token.as_deref()
     }
     /// <p>A collection of studios.</p>
-    pub fn studios(&self) -> ::std::option::Option<&[crate::types::Studio]> {
-        self.studios.as_deref()
+    pub fn studios(&self) -> &[crate::types::Studio] {
+        use std::ops::Deref;
+        self.studios.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListStudiosOutput {
@@ -84,11 +85,18 @@ impl ListStudiosOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListStudiosOutput`](crate::operation::list_studios::ListStudiosOutput).
-    pub fn build(self) -> crate::operation::list_studios::ListStudiosOutput {
-        crate::operation::list_studios::ListStudiosOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`studios`](crate::operation::list_studios::builders::ListStudiosOutputBuilder::studios)
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_studios::ListStudiosOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_studios::ListStudiosOutput {
             next_token: self.next_token,
-            studios: self.studios,
+            studios: self.studios.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "studios",
+                    "studios was not specified but it is required when building ListStudiosOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

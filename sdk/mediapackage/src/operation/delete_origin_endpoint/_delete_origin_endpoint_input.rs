@@ -27,6 +27,7 @@ pub struct DeleteOriginEndpointInputBuilder {
 }
 impl DeleteOriginEndpointInputBuilder {
     /// The ID of the OriginEndpoint to delete.
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteOriginEndpointInputBuilder {
     /// Consumes the builder and constructs a [`DeleteOriginEndpointInput`](crate::operation::delete_origin_endpoint::DeleteOriginEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_origin_endpoint::DeleteOriginEndpointInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_origin_endpoint::DeleteOriginEndpointInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_origin_endpoint::DeleteOriginEndpointInput { id: self.id })
     }

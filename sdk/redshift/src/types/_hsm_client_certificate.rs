@@ -21,8 +21,10 @@ impl HsmClientCertificate {
         self.hsm_client_certificate_public_key.as_deref()
     }
     /// <p>The list of tags for the HSM client certificate.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl HsmClientCertificate {

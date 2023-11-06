@@ -10,7 +10,7 @@ impl UpdateEndpointInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_endpoint::UpdateEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::update_endpoint::UpdateEndpointError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl UpdateEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_endpoint::UpdateEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::update_endpoint::UpdateEndpointError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::update_endpoint::UpdateEndpoint::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -86,20 +89,15 @@ impl UpdateEndpointFluentBuilder {
         crate::operation::update_endpoint::UpdateEndpoint::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::update_endpoint::UpdateEndpointOutput,
-            crate::operation::update_endpoint::UpdateEndpointError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::update_endpoint::UpdateEndpointError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::update_endpoint::UpdateEndpointOutput,
+        crate::operation::update_endpoint::UpdateEndpointError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -124,17 +122,17 @@ impl UpdateEndpointFluentBuilder {
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
     }
-    /// <p>The unique identifier for the endpoint.</p>
+    /// <p>The case insensitive unique identifier for the endpoint. The identifier can't contain <code>$</code>, <code>{</code> or <code>}</code>.</p>
     pub fn endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.endpoint_id(input.into());
         self
     }
-    /// <p>The unique identifier for the endpoint.</p>
+    /// <p>The case insensitive unique identifier for the endpoint. The identifier can't contain <code>$</code>, <code>{</code> or <code>}</code>.</p>
     pub fn set_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_endpoint_id(input);
         self
     }
-    /// <p>The unique identifier for the endpoint.</p>
+    /// <p>The case insensitive unique identifier for the endpoint. The identifier can't contain <code>$</code>, <code>{</code> or <code>}</code>.</p>
     pub fn get_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_endpoint_id()
     }

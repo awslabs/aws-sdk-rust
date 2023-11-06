@@ -15,7 +15,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "egressCidrBlocks" => {
-                            builder = builder.set_egress_cidr_blocks(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                            builder = builder.set_egress_cidr_blocks(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         "gatewayArn" => {
                             builder = builder.set_gateway_arn(
@@ -25,9 +25,8 @@ where
                             );
                         }
                         "gatewayMessages" => {
-                            builder = builder.set_gateway_messages(
-                                crate::protocol_serde::shape___list_of_message_detail::de___list_of_message_detail(tokens)?,
-                            );
+                            builder =
+                                builder.set_gateway_messages(crate::protocol_serde::shape_list_of_message_detail::de_list_of_message_detail(tokens)?);
                         }
                         "gatewayState" => {
                             builder = builder.set_gateway_state(
@@ -44,9 +43,7 @@ where
                             );
                         }
                         "networks" => {
-                            builder = builder.set_networks(crate::protocol_serde::shape___list_of_gateway_network::de___list_of_gateway_network(
-                                tokens,
-                            )?);
+                            builder = builder.set_networks(crate::protocol_serde::shape_list_of_gateway_network::de_list_of_gateway_network(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
@@ -58,7 +55,7 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::gateway_correct_errors(builder).build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

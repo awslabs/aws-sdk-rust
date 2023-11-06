@@ -2,7 +2,7 @@
 pub fn ser_update_trial_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_trial::UpdateTrialInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.trial_name {
         object.key("TrialName").string(var_1.as_str());
     }

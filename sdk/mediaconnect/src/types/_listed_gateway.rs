@@ -42,6 +42,7 @@ pub struct ListedGatewayBuilder {
 }
 impl ListedGatewayBuilder {
     /// The Amazon Resource Name (ARN) of the gateway.
+    /// This field is required.
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_arn = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl ListedGatewayBuilder {
         &self.gateway_arn
     }
     #[allow(missing_docs)] // documentation missing in model
+    /// This field is required.
     pub fn gateway_state(mut self, input: crate::types::GatewayState) -> Self {
         self.gateway_state = ::std::option::Option::Some(input);
         self
@@ -70,6 +72,7 @@ impl ListedGatewayBuilder {
         &self.gateway_state
     }
     /// The name of the gateway.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

@@ -42,6 +42,7 @@ pub struct DeleteFraudsterInputBuilder {
 }
 impl DeleteFraudsterInputBuilder {
     /// <p>The identifier of the domain that contains the fraudster.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl DeleteFraudsterInputBuilder {
         &self.domain_id
     }
     /// <p>The identifier of the fraudster you want to delete.</p>
+    /// This field is required.
     pub fn fraudster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fraudster_id = ::std::option::Option::Some(input.into());
         self
@@ -72,7 +74,7 @@ impl DeleteFraudsterInputBuilder {
     /// Consumes the builder and constructs a [`DeleteFraudsterInput`](crate::operation::delete_fraudster::DeleteFraudsterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_fraudster::DeleteFraudsterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_fraudster::DeleteFraudsterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_fraudster::DeleteFraudsterInput {
             domain_id: self.domain_id,
             fraudster_id: self.fraudster_id,

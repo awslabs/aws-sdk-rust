@@ -10,14 +10,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FulfillmentActivity {
     /// <p> How the intent should be fulfilled, either by running a Lambda function or by returning the slot data to the client application. </p>
-    pub r#type: ::std::option::Option<crate::types::FulfillmentActivityType>,
+    pub r#type: crate::types::FulfillmentActivityType,
     /// <p> A description of the Lambda function that is run to fulfill the intent. </p>
     pub code_hook: ::std::option::Option<crate::types::CodeHook>,
 }
 impl FulfillmentActivity {
     /// <p> How the intent should be fulfilled, either by running a Lambda function or by returning the slot data to the client application. </p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::FulfillmentActivityType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::FulfillmentActivityType {
+        &self.r#type
     }
     /// <p> A description of the Lambda function that is run to fulfill the intent. </p>
     pub fn code_hook(&self) -> ::std::option::Option<&crate::types::CodeHook> {
@@ -40,6 +40,7 @@ pub struct FulfillmentActivityBuilder {
 }
 impl FulfillmentActivityBuilder {
     /// <p> How the intent should be fulfilled, either by running a Lambda function or by returning the slot data to the client application. </p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::FulfillmentActivityType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -68,10 +69,17 @@ impl FulfillmentActivityBuilder {
         &self.code_hook
     }
     /// Consumes the builder and constructs a [`FulfillmentActivity`](crate::types::FulfillmentActivity).
-    pub fn build(self) -> crate::types::FulfillmentActivity {
-        crate::types::FulfillmentActivity {
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::FulfillmentActivityBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::FulfillmentActivity, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::FulfillmentActivity {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building FulfillmentActivity",
+                )
+            })?,
             code_hook: self.code_hook,
-        }
+        })
     }
 }

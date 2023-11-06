@@ -12,8 +12,10 @@ pub struct GetEntitlementsOutput {
 }
 impl GetEntitlementsOutput {
     /// <p>The set of entitlements found through the GetEntitlements operation. If the result contains an empty set of entitlements, NextToken might still be present and should be used.</p>
-    pub fn entitlements(&self) -> ::std::option::Option<&[crate::types::Entitlement]> {
-        self.entitlements.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entitlements.is_none()`.
+    pub fn entitlements(&self) -> &[crate::types::Entitlement] {
+        self.entitlements.as_deref().unwrap_or_default()
     }
     /// <p>For paginated results, use NextToken in subsequent calls to GetEntitlements. If the result contains an empty set of entitlements, NextToken might still be present and should be used.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

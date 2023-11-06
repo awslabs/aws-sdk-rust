@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PsAttributes {
     /// <p>The format of the data set records.</p>
-    pub format: ::std::option::Option<::std::string::String>,
+    pub format: ::std::string::String,
     /// <p>The character set encoding of the data set.</p>
     pub encoding: ::std::option::Option<::std::string::String>,
 }
 impl PsAttributes {
     /// <p>The format of the data set records.</p>
-    pub fn format(&self) -> ::std::option::Option<&str> {
-        self.format.as_deref()
+    pub fn format(&self) -> &str {
+        use std::ops::Deref;
+        self.format.deref()
     }
     /// <p>The character set encoding of the data set.</p>
     pub fn encoding(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct PsAttributesBuilder {
 }
 impl PsAttributesBuilder {
     /// <p>The format of the data set records.</p>
+    /// This field is required.
     pub fn format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.format = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl PsAttributesBuilder {
         &self.encoding
     }
     /// Consumes the builder and constructs a [`PsAttributes`](crate::types::PsAttributes).
-    pub fn build(self) -> crate::types::PsAttributes {
-        crate::types::PsAttributes {
-            format: self.format,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`format`](crate::types::builders::PsAttributesBuilder::format)
+    pub fn build(self) -> ::std::result::Result<crate::types::PsAttributes, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PsAttributes {
+            format: self.format.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "format",
+                    "format was not specified but it is required when building PsAttributes",
+                )
+            })?,
             encoding: self.encoding,
-        }
+        })
     }
 }

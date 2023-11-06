@@ -7,7 +7,7 @@ pub struct VirtualGatewaySpec {
     /// <p>A reference to an object that represents the defaults for backends.</p>
     pub backend_defaults: ::std::option::Option<crate::types::VirtualGatewayBackendDefaults>,
     /// <p>The listeners that the mesh endpoint is expected to receive inbound traffic from. You can specify one listener.</p>
-    pub listeners: ::std::option::Option<::std::vec::Vec<crate::types::VirtualGatewayListener>>,
+    pub listeners: ::std::vec::Vec<crate::types::VirtualGatewayListener>,
     /// <p>An object that represents logging information.</p>
     pub logging: ::std::option::Option<crate::types::VirtualGatewayLogging>,
 }
@@ -17,8 +17,9 @@ impl VirtualGatewaySpec {
         self.backend_defaults.as_ref()
     }
     /// <p>The listeners that the mesh endpoint is expected to receive inbound traffic from. You can specify one listener.</p>
-    pub fn listeners(&self) -> ::std::option::Option<&[crate::types::VirtualGatewayListener]> {
-        self.listeners.as_deref()
+    pub fn listeners(&self) -> &[crate::types::VirtualGatewayListener] {
+        use std::ops::Deref;
+        self.listeners.deref()
     }
     /// <p>An object that represents logging information.</p>
     pub fn logging(&self) -> ::std::option::Option<&crate::types::VirtualGatewayLogging> {
@@ -90,11 +91,18 @@ impl VirtualGatewaySpecBuilder {
         &self.logging
     }
     /// Consumes the builder and constructs a [`VirtualGatewaySpec`](crate::types::VirtualGatewaySpec).
-    pub fn build(self) -> crate::types::VirtualGatewaySpec {
-        crate::types::VirtualGatewaySpec {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`listeners`](crate::types::builders::VirtualGatewaySpecBuilder::listeners)
+    pub fn build(self) -> ::std::result::Result<crate::types::VirtualGatewaySpec, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::VirtualGatewaySpec {
             backend_defaults: self.backend_defaults,
-            listeners: self.listeners,
+            listeners: self.listeners.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "listeners",
+                    "listeners was not specified but it is required when building VirtualGatewaySpec",
+                )
+            })?,
             logging: self.logging,
-        }
+        })
     }
 }

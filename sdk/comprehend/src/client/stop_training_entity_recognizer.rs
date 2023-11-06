@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopTrainingEntityRecognizer`](crate::operation::stop_training_entity_recognizer::builders::StopTrainingEntityRecognizerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`entity_recognizer_arn(impl Into<String>)`](crate::operation::stop_training_entity_recognizer::builders::StopTrainingEntityRecognizerFluentBuilder::entity_recognizer_arn) / [`set_entity_recognizer_arn(Option<String>)`](crate::operation::stop_training_entity_recognizer::builders::StopTrainingEntityRecognizerFluentBuilder::set_entity_recognizer_arn): <p>The Amazon Resource Name (ARN) that identifies the entity recognizer currently being trained.</p>
+    ///   - [`entity_recognizer_arn(impl Into<String>)`](crate::operation::stop_training_entity_recognizer::builders::StopTrainingEntityRecognizerFluentBuilder::entity_recognizer_arn) / [`set_entity_recognizer_arn(Option<String>)`](crate::operation::stop_training_entity_recognizer::builders::StopTrainingEntityRecognizerFluentBuilder::set_entity_recognizer_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) that identifies the entity recognizer currently being trained.</p><br>
     /// - On success, responds with [`StopTrainingEntityRecognizerOutput`](crate::operation::stop_training_entity_recognizer::StopTrainingEntityRecognizerOutput)
     /// - On failure, responds with [`SdkError<StopTrainingEntityRecognizerError>`](crate::operation::stop_training_entity_recognizer::StopTrainingEntityRecognizerError)
     pub fn stop_training_entity_recognizer(

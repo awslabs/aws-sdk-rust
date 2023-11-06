@@ -62,6 +62,7 @@ impl CreateDatastoreInputBuilder {
         &self.datastore_name
     }
     /// <p>A unique identifier for API idempotency.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -112,7 +113,7 @@ impl CreateDatastoreInputBuilder {
     /// Consumes the builder and constructs a [`CreateDatastoreInput`](crate::operation::create_datastore::CreateDatastoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_datastore::CreateDatastoreInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_datastore::CreateDatastoreInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_datastore::CreateDatastoreInput {
             datastore_name: self.datastore_name,
             client_token: self.client_token,

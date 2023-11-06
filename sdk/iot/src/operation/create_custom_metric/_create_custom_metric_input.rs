@@ -32,8 +32,10 @@ impl CreateCustomMetricInput {
         self.metric_type.as_ref()
     }
     /// <p> Metadata that can be used to manage the custom metric. </p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Each custom metric must have a unique client request token. If you try to create a new custom metric that already exists with a different token, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
@@ -59,6 +61,7 @@ pub struct CreateCustomMetricInputBuilder {
 }
 impl CreateCustomMetricInputBuilder {
     /// <p> The name of the custom metric. This will be used in the metric report submitted from the device/thing. The name can't begin with <code>aws:</code>. You can't change the name after you define it.</p>
+    /// This field is required.
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_name = ::std::option::Option::Some(input.into());
         self
@@ -89,6 +92,7 @@ impl CreateCustomMetricInputBuilder {
     /// <p> The type of the custom metric. </p> <important>
     /// <p>The type <code>number</code> only takes a single metric value as an input, but when you submit the metrics value in the DeviceMetrics report, you must pass it as an array with a single value.</p>
     /// </important>
+    /// This field is required.
     pub fn metric_type(mut self, input: crate::types::CustomMetricType) -> Self {
         self.metric_type = ::std::option::Option::Some(input);
         self
@@ -127,6 +131,7 @@ impl CreateCustomMetricInputBuilder {
         &self.tags
     }
     /// <p>Each custom metric must have a unique client request token. If you try to create a new custom metric that already exists with a different token, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
+    /// This field is required.
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
@@ -143,7 +148,8 @@ impl CreateCustomMetricInputBuilder {
     /// Consumes the builder and constructs a [`CreateCustomMetricInput`](crate::operation::create_custom_metric::CreateCustomMetricInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_custom_metric::CreateCustomMetricInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_custom_metric::CreateCustomMetricInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_custom_metric::CreateCustomMetricInput {
             metric_name: self.metric_name,
             display_name: self.display_name,

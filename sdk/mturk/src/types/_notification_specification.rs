@@ -10,13 +10,13 @@ pub struct NotificationSpecification {
     /// <li> <p>When Transport is SQS, the Destination is your queue URL.</p> </li>
     /// <li> <p>When Transport is SNS, the Destination is the ARN of your topic.</p> </li>
     /// </ul>
-    pub destination: ::std::option::Option<::std::string::String>,
+    pub destination: ::std::string::String,
     /// <p> The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS | SNS. </p>
-    pub transport: ::std::option::Option<crate::types::NotificationTransport>,
+    pub transport: crate::types::NotificationTransport,
     /// <p>The version of the Notification API to use. Valid value is 2006-05-05.</p>
-    pub version: ::std::option::Option<::std::string::String>,
+    pub version: ::std::string::String,
     /// <p> The list of events that should cause notifications to be sent. Valid Values: AssignmentAccepted | AssignmentAbandoned | AssignmentReturned | AssignmentSubmitted | AssignmentRejected | AssignmentApproved | HITCreated | HITExtended | HITDisposed | HITReviewable | HITExpired | Ping. The Ping event is only valid for the SendTestEventNotification operation. </p>
-    pub event_types: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
+    pub event_types: ::std::vec::Vec<crate::types::EventType>,
 }
 impl NotificationSpecification {
     /// <p> The target for notification messages. The Destination’s format is determined by the specified Transport: </p>
@@ -25,20 +25,23 @@ impl NotificationSpecification {
     /// <li> <p>When Transport is SQS, the Destination is your queue URL.</p> </li>
     /// <li> <p>When Transport is SNS, the Destination is the ARN of your topic.</p> </li>
     /// </ul>
-    pub fn destination(&self) -> ::std::option::Option<&str> {
-        self.destination.as_deref()
+    pub fn destination(&self) -> &str {
+        use std::ops::Deref;
+        self.destination.deref()
     }
     /// <p> The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS | SNS. </p>
-    pub fn transport(&self) -> ::std::option::Option<&crate::types::NotificationTransport> {
-        self.transport.as_ref()
+    pub fn transport(&self) -> &crate::types::NotificationTransport {
+        &self.transport
     }
     /// <p>The version of the Notification API to use. Valid value is 2006-05-05.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
-        self.version.as_deref()
+    pub fn version(&self) -> &str {
+        use std::ops::Deref;
+        self.version.deref()
     }
     /// <p> The list of events that should cause notifications to be sent. Valid Values: AssignmentAccepted | AssignmentAbandoned | AssignmentReturned | AssignmentSubmitted | AssignmentRejected | AssignmentApproved | HITCreated | HITExtended | HITDisposed | HITReviewable | HITExpired | Ping. The Ping event is only valid for the SendTestEventNotification operation. </p>
-    pub fn event_types(&self) -> ::std::option::Option<&[crate::types::EventType]> {
-        self.event_types.as_deref()
+    pub fn event_types(&self) -> &[crate::types::EventType] {
+        use std::ops::Deref;
+        self.event_types.deref()
     }
 }
 impl NotificationSpecification {
@@ -64,6 +67,7 @@ impl NotificationSpecificationBuilder {
     /// <li> <p>When Transport is SQS, the Destination is your queue URL.</p> </li>
     /// <li> <p>When Transport is SNS, the Destination is the ARN of your topic.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination = ::std::option::Option::Some(input.into());
         self
@@ -88,6 +92,7 @@ impl NotificationSpecificationBuilder {
         &self.destination
     }
     /// <p> The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS | SNS. </p>
+    /// This field is required.
     pub fn transport(mut self, input: crate::types::NotificationTransport) -> Self {
         self.transport = ::std::option::Option::Some(input);
         self
@@ -102,6 +107,7 @@ impl NotificationSpecificationBuilder {
         &self.transport
     }
     /// <p>The version of the Notification API to use. Valid value is 2006-05-05.</p>
+    /// This field is required.
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
         self
@@ -136,12 +142,37 @@ impl NotificationSpecificationBuilder {
         &self.event_types
     }
     /// Consumes the builder and constructs a [`NotificationSpecification`](crate::types::NotificationSpecification).
-    pub fn build(self) -> crate::types::NotificationSpecification {
-        crate::types::NotificationSpecification {
-            destination: self.destination,
-            transport: self.transport,
-            version: self.version,
-            event_types: self.event_types,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`destination`](crate::types::builders::NotificationSpecificationBuilder::destination)
+    /// - [`transport`](crate::types::builders::NotificationSpecificationBuilder::transport)
+    /// - [`version`](crate::types::builders::NotificationSpecificationBuilder::version)
+    /// - [`event_types`](crate::types::builders::NotificationSpecificationBuilder::event_types)
+    pub fn build(self) -> ::std::result::Result<crate::types::NotificationSpecification, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::NotificationSpecification {
+            destination: self.destination.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "destination",
+                    "destination was not specified but it is required when building NotificationSpecification",
+                )
+            })?,
+            transport: self.transport.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "transport",
+                    "transport was not specified but it is required when building NotificationSpecification",
+                )
+            })?,
+            version: self.version.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "version",
+                    "version was not specified but it is required when building NotificationSpecification",
+                )
+            })?,
+            event_types: self.event_types.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "event_types",
+                    "event_types was not specified but it is required when building NotificationSpecification",
+                )
+            })?,
+        })
     }
 }

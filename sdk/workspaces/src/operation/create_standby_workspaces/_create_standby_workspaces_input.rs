@@ -14,8 +14,10 @@ impl CreateStandbyWorkspacesInput {
         self.primary_region.as_deref()
     }
     /// <p>Information about the standby WorkSpace to be created.</p>
-    pub fn standby_workspaces(&self) -> ::std::option::Option<&[crate::types::StandbyWorkspace]> {
-        self.standby_workspaces.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.standby_workspaces.is_none()`.
+    pub fn standby_workspaces(&self) -> &[crate::types::StandbyWorkspace] {
+        self.standby_workspaces.as_deref().unwrap_or_default()
     }
 }
 impl CreateStandbyWorkspacesInput {
@@ -34,6 +36,7 @@ pub struct CreateStandbyWorkspacesInputBuilder {
 }
 impl CreateStandbyWorkspacesInputBuilder {
     /// <p>The Region of the primary WorkSpace.</p>
+    /// This field is required.
     pub fn primary_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.primary_region = ::std::option::Option::Some(input.into());
         self
@@ -72,7 +75,7 @@ impl CreateStandbyWorkspacesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_standby_workspaces::CreateStandbyWorkspacesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_standby_workspaces::CreateStandbyWorkspacesInput {
             primary_region: self.primary_region,

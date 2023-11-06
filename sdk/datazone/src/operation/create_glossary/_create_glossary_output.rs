@@ -4,13 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateGlossaryOutput {
     /// <p>The ID of the Amazon DataZone domain in which this business glossary is created.</p>
-    pub domain_id: ::std::option::Option<::std::string::String>,
+    pub domain_id: ::std::string::String,
     /// <p>The ID of this business glossary.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The name of this business glossary.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The ID of the project that currently owns this business glossary.</p>
-    pub owning_project_id: ::std::option::Option<::std::string::String>,
+    pub owning_project_id: ::std::string::String,
     /// <p>The description of this business glossary.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The status of this business glossary.</p>
@@ -19,20 +19,24 @@ pub struct CreateGlossaryOutput {
 }
 impl CreateGlossaryOutput {
     /// <p>The ID of the Amazon DataZone domain in which this business glossary is created.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
-        self.domain_id.as_deref()
+    pub fn domain_id(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_id.deref()
     }
     /// <p>The ID of this business glossary.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The name of this business glossary.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The ID of the project that currently owns this business glossary.</p>
-    pub fn owning_project_id(&self) -> ::std::option::Option<&str> {
-        self.owning_project_id.as_deref()
+    pub fn owning_project_id(&self) -> &str {
+        use std::ops::Deref;
+        self.owning_project_id.deref()
     }
     /// <p>The description of this business glossary.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -82,6 +86,7 @@ pub struct CreateGlossaryOutputBuilder {
 }
 impl CreateGlossaryOutputBuilder {
     /// <p>The ID of the Amazon DataZone domain in which this business glossary is created.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -96,6 +101,7 @@ impl CreateGlossaryOutputBuilder {
         &self.domain_id
     }
     /// <p>The ID of this business glossary.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -110,6 +116,7 @@ impl CreateGlossaryOutputBuilder {
         &self.id
     }
     /// <p>The name of this business glossary.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -124,6 +131,7 @@ impl CreateGlossaryOutputBuilder {
         &self.name
     }
     /// <p>The ID of the project that currently owns this business glossary.</p>
+    /// This field is required.
     pub fn owning_project_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owning_project_id = ::std::option::Option::Some(input.into());
         self
@@ -175,16 +183,43 @@ impl CreateGlossaryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateGlossaryOutput`](crate::operation::create_glossary::CreateGlossaryOutput).
-    pub fn build(self) -> crate::operation::create_glossary::CreateGlossaryOutput {
-        crate::operation::create_glossary::CreateGlossaryOutput {
-            domain_id: self.domain_id,
-            id: self.id,
-            name: self.name,
-            owning_project_id: self.owning_project_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`domain_id`](crate::operation::create_glossary::builders::CreateGlossaryOutputBuilder::domain_id)
+    /// - [`id`](crate::operation::create_glossary::builders::CreateGlossaryOutputBuilder::id)
+    /// - [`name`](crate::operation::create_glossary::builders::CreateGlossaryOutputBuilder::name)
+    /// - [`owning_project_id`](crate::operation::create_glossary::builders::CreateGlossaryOutputBuilder::owning_project_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_glossary::CreateGlossaryOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_glossary::CreateGlossaryOutput {
+            domain_id: self.domain_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "domain_id",
+                    "domain_id was not specified but it is required when building CreateGlossaryOutput",
+                )
+            })?,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building CreateGlossaryOutput",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CreateGlossaryOutput",
+                )
+            })?,
+            owning_project_id: self.owning_project_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "owning_project_id",
+                    "owning_project_id was not specified but it is required when building CreateGlossaryOutput",
+                )
+            })?,
             description: self.description,
             status: self.status,
             _request_id: self._request_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for CreateGlossaryOutputBuilder {

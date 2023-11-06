@@ -41,6 +41,7 @@ pub struct ListSafetyRulesInputBuilder {
 }
 impl ListSafetyRulesInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
+    /// This field is required.
     pub fn control_panel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_panel_arn = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl ListSafetyRulesInputBuilder {
     /// Consumes the builder and constructs a [`ListSafetyRulesInput`](crate::operation::list_safety_rules::ListSafetyRulesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_safety_rules::ListSafetyRulesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_safety_rules::ListSafetyRulesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_safety_rules::ListSafetyRulesInput {
             control_panel_arn: self.control_panel_arn,
             max_results: self.max_results,

@@ -57,12 +57,16 @@ impl EventSubscription {
         self.source_type.as_deref()
     }
     /// <p>A list of source Ids for the event subscription.</p>
-    pub fn source_ids_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.source_ids_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_ids_list.is_none()`.
+    pub fn source_ids_list(&self) -> &[::std::string::String] {
+        self.source_ids_list.as_deref().unwrap_or_default()
     }
     /// <p>A lists of event categories.</p>
-    pub fn event_categories_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.event_categories_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_categories_list.is_none()`.
+    pub fn event_categories_list(&self) -> &[::std::string::String] {
+        self.event_categories_list.as_deref().unwrap_or_default()
     }
     /// <p>Boolean value that indicates if the event subscription is enabled.</p>
     pub fn enabled(&self) -> bool {

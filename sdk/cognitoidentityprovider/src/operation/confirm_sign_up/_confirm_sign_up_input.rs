@@ -109,6 +109,7 @@ pub struct ConfirmSignUpInputBuilder {
 }
 impl ConfirmSignUpInputBuilder {
     /// <p>The ID of the app client associated with the user pool.</p>
+    /// This field is required.
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
         self
@@ -137,6 +138,7 @@ impl ConfirmSignUpInputBuilder {
         &self.secret_hash
     }
     /// <p>The user name of the user whose registration you want to confirm.</p>
+    /// This field is required.
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self
@@ -151,6 +153,7 @@ impl ConfirmSignUpInputBuilder {
         &self.username
     }
     /// <p>The confirmation code sent by a user's request to confirm registration.</p>
+    /// This field is required.
     pub fn confirmation_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.confirmation_code = ::std::option::Option::Some(input.into());
         self
@@ -263,7 +266,7 @@ impl ConfirmSignUpInputBuilder {
     /// Consumes the builder and constructs a [`ConfirmSignUpInput`](crate::operation::confirm_sign_up::ConfirmSignUpInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::confirm_sign_up::ConfirmSignUpInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::confirm_sign_up::ConfirmSignUpInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::confirm_sign_up::ConfirmSignUpInput {
             client_id: self.client_id,
             secret_hash: self.secret_hash,

@@ -28,6 +28,7 @@ pub struct BookmarksConfigurationsBuilder {
 }
 impl BookmarksConfigurationsBuilder {
     /// <p>A Boolean value that determines whether a user can bookmark an embedded dashboard.</p>
+    /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self

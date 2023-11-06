@@ -11,8 +11,10 @@ pub struct ListDatasetGroupsOutput {
 }
 impl ListDatasetGroupsOutput {
     /// <p>An array of objects that summarize each dataset group's properties.</p>
-    pub fn dataset_groups(&self) -> ::std::option::Option<&[crate::types::DatasetGroupSummary]> {
-        self.dataset_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dataset_groups.is_none()`.
+    pub fn dataset_groups(&self) -> &[crate::types::DatasetGroupSummary] {
+        self.dataset_groups.as_deref().unwrap_or_default()
     }
     /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

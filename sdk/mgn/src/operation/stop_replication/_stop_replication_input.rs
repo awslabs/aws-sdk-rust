@@ -34,6 +34,7 @@ pub struct StopReplicationInputBuilder {
 }
 impl StopReplicationInputBuilder {
     /// <p>Stop Replication Request source server ID.</p>
+    /// This field is required.
     pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl StopReplicationInputBuilder {
     /// Consumes the builder and constructs a [`StopReplicationInput`](crate::operation::stop_replication::StopReplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_replication::StopReplicationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_replication::StopReplicationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_replication::StopReplicationInput {
             source_server_id: self.source_server_id,
             account_id: self.account_id,

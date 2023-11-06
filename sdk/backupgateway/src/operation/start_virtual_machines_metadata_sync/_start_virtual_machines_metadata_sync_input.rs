@@ -27,6 +27,7 @@ pub struct StartVirtualMachinesMetadataSyncInputBuilder {
 }
 impl StartVirtualMachinesMetadataSyncInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
+    /// This field is required.
     pub fn hypervisor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hypervisor_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl StartVirtualMachinesMetadataSyncInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_virtual_machines_metadata_sync::StartVirtualMachinesMetadataSyncInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::start_virtual_machines_metadata_sync::StartVirtualMachinesMetadataSyncInput {

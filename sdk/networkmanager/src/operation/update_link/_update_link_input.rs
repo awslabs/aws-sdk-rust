@@ -68,6 +68,7 @@ pub struct UpdateLinkInputBuilder {
 }
 impl UpdateLinkInputBuilder {
     /// <p>The ID of the global network.</p>
+    /// This field is required.
     pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_network_id = ::std::option::Option::Some(input.into());
         self
@@ -82,6 +83,7 @@ impl UpdateLinkInputBuilder {
         &self.global_network_id
     }
     /// <p>The ID of the link.</p>
+    /// This field is required.
     pub fn link_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.link_id = ::std::option::Option::Some(input.into());
         self
@@ -161,7 +163,7 @@ impl UpdateLinkInputBuilder {
         &self.provider
     }
     /// Consumes the builder and constructs a [`UpdateLinkInput`](crate::operation::update_link::UpdateLinkInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_link::UpdateLinkInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_link::UpdateLinkInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_link::UpdateLinkInput {
             global_network_id: self.global_network_id,
             link_id: self.link_id,

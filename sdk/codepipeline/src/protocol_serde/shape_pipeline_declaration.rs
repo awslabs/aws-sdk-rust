@@ -73,7 +73,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::pipeline_declaration_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -84,76 +86,76 @@ where
 pub fn ser_pipeline_declaration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PipelineDeclaration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("name").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.role_arn {
-        object.key("roleArn").string(var_2.as_str());
+    {
+        object.key("roleArn").string(input.role_arn.as_str());
     }
-    if let Some(var_3) = &input.artifact_store {
+    if let Some(var_1) = &input.artifact_store {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("artifactStore").start_object();
-        crate::protocol_serde::shape_artifact_store::ser_artifact_store(&mut object_4, var_3)?;
+        let mut object_2 = object.key("artifactStore").start_object();
+        crate::protocol_serde::shape_artifact_store::ser_artifact_store(&mut object_2, var_1)?;
+        object_2.finish();
+    }
+    if let Some(var_3) = &input.artifact_stores {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("artifactStores").start_object();
+        for (key_5, value_6) in var_3 {
+            {
+                #[allow(unused_mut)]
+                let mut object_7 = object_4.key(key_5.as_str()).start_object();
+                crate::protocol_serde::shape_artifact_store::ser_artifact_store(&mut object_7, value_6)?;
+                object_7.finish();
+            }
+        }
         object_4.finish();
     }
-    if let Some(var_5) = &input.artifact_stores {
-        #[allow(unused_mut)]
-        let mut object_6 = object.key("artifactStores").start_object();
-        for (key_7, value_8) in var_5 {
+    {
+        let mut array_8 = object.key("stages").start_array();
+        for item_9 in &input.stages {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = object_6.key(key_7.as_str()).start_object();
-                crate::protocol_serde::shape_artifact_store::ser_artifact_store(&mut object_9, value_8)?;
-                object_9.finish();
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_stage_declaration::ser_stage_declaration(&mut object_10, item_9)?;
+                object_10.finish();
             }
         }
-        object_6.finish();
+        array_8.finish();
     }
-    if let Some(var_10) = &input.stages {
-        let mut array_11 = object.key("stages").start_array();
-        for item_12 in var_10 {
-            {
-                #[allow(unused_mut)]
-                let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_stage_declaration::ser_stage_declaration(&mut object_13, item_12)?;
-                object_13.finish();
-            }
-        }
-        array_11.finish();
-    }
-    if let Some(var_14) = &input.version {
+    if let Some(var_11) = &input.version {
         object.key("version").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_14).into()),
+            ::aws_smithy_types::Number::NegInt((*var_11).into()),
         );
     }
-    if let Some(var_15) = &input.pipeline_type {
-        object.key("pipelineType").string(var_15.as_str());
+    if let Some(var_12) = &input.pipeline_type {
+        object.key("pipelineType").string(var_12.as_str());
     }
-    if let Some(var_16) = &input.triggers {
-        let mut array_17 = object.key("triggers").start_array();
-        for item_18 in var_16 {
+    if let Some(var_13) = &input.triggers {
+        let mut array_14 = object.key("triggers").start_array();
+        for item_15 in var_13 {
             {
                 #[allow(unused_mut)]
-                let mut object_19 = array_17.value().start_object();
-                crate::protocol_serde::shape_pipeline_trigger_declaration::ser_pipeline_trigger_declaration(&mut object_19, item_18)?;
-                object_19.finish();
+                let mut object_16 = array_14.value().start_object();
+                crate::protocol_serde::shape_pipeline_trigger_declaration::ser_pipeline_trigger_declaration(&mut object_16, item_15)?;
+                object_16.finish();
             }
         }
-        array_17.finish();
+        array_14.finish();
     }
-    if let Some(var_20) = &input.variables {
-        let mut array_21 = object.key("variables").start_array();
-        for item_22 in var_20 {
+    if let Some(var_17) = &input.variables {
+        let mut array_18 = object.key("variables").start_array();
+        for item_19 in var_17 {
             {
                 #[allow(unused_mut)]
-                let mut object_23 = array_21.value().start_object();
-                crate::protocol_serde::shape_pipeline_variable_declaration::ser_pipeline_variable_declaration(&mut object_23, item_22)?;
-                object_23.finish();
+                let mut object_20 = array_18.value().start_object();
+                crate::protocol_serde::shape_pipeline_variable_declaration::ser_pipeline_variable_declaration(&mut object_20, item_19)?;
+                object_20.finish();
             }
         }
-        array_21.finish();
+        array_18.finish();
     }
     Ok(())
 }

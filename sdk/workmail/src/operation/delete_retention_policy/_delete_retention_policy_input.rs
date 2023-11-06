@@ -34,6 +34,7 @@ pub struct DeleteRetentionPolicyInputBuilder {
 }
 impl DeleteRetentionPolicyInputBuilder {
     /// <p>The organization ID.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteRetentionPolicyInputBuilder {
         &self.organization_id
     }
     /// <p>The retention policy ID.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DeleteRetentionPolicyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRetentionPolicyInput`](crate::operation::delete_retention_policy::DeleteRetentionPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_retention_policy::DeleteRetentionPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_retention_policy::DeleteRetentionPolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_retention_policy::DeleteRetentionPolicyInput {
             organization_id: self.organization_id,

@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DicomStudyDateAndTime {
     /// <p>The DICOM study date provided in <code>yyMMdd</code> format.</p>
-    pub dicom_study_date: ::std::option::Option<::std::string::String>,
+    pub dicom_study_date: ::std::string::String,
     /// <p>The DICOM study time provided in <code>HHmmss.FFFFFF</code> format.</p>
     pub dicom_study_time: ::std::option::Option<::std::string::String>,
 }
 impl DicomStudyDateAndTime {
     /// <p>The DICOM study date provided in <code>yyMMdd</code> format.</p>
-    pub fn dicom_study_date(&self) -> ::std::option::Option<&str> {
-        self.dicom_study_date.as_deref()
+    pub fn dicom_study_date(&self) -> &str {
+        use std::ops::Deref;
+        self.dicom_study_date.deref()
     }
     /// <p>The DICOM study time provided in <code>HHmmss.FFFFFF</code> format.</p>
     pub fn dicom_study_time(&self) -> ::std::option::Option<&str> {
@@ -43,6 +44,7 @@ pub struct DicomStudyDateAndTimeBuilder {
 }
 impl DicomStudyDateAndTimeBuilder {
     /// <p>The DICOM study date provided in <code>yyMMdd</code> format.</p>
+    /// This field is required.
     pub fn dicom_study_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dicom_study_date = ::std::option::Option::Some(input.into());
         self
@@ -71,11 +73,18 @@ impl DicomStudyDateAndTimeBuilder {
         &self.dicom_study_time
     }
     /// Consumes the builder and constructs a [`DicomStudyDateAndTime`](crate::types::DicomStudyDateAndTime).
-    pub fn build(self) -> crate::types::DicomStudyDateAndTime {
-        crate::types::DicomStudyDateAndTime {
-            dicom_study_date: self.dicom_study_date,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`dicom_study_date`](crate::types::builders::DicomStudyDateAndTimeBuilder::dicom_study_date)
+    pub fn build(self) -> ::std::result::Result<crate::types::DicomStudyDateAndTime, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DicomStudyDateAndTime {
+            dicom_study_date: self.dicom_study_date.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "dicom_study_date",
+                    "dicom_study_date was not specified but it is required when building DicomStudyDateAndTime",
+                )
+            })?,
             dicom_study_time: self.dicom_study_time,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for DicomStudyDateAndTimeBuilder {

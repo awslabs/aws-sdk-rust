@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StagingDistributionDnsNames {
     /// <p>The number of CloudFront domain names in your staging distribution.</p>
-    pub quantity: ::std::option::Option<i32>,
+    pub quantity: i32,
     /// <p>The CloudFront domain name of the staging distribution.</p>
     pub items: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl StagingDistributionDnsNames {
     /// <p>The number of CloudFront domain names in your staging distribution.</p>
-    pub fn quantity(&self) -> ::std::option::Option<i32> {
+    pub fn quantity(&self) -> i32 {
         self.quantity
     }
     /// <p>The CloudFront domain name of the staging distribution.</p>
-    pub fn items(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[::std::string::String] {
+        self.items.as_deref().unwrap_or_default()
     }
 }
 impl StagingDistributionDnsNames {
@@ -35,6 +37,7 @@ pub struct StagingDistributionDnsNamesBuilder {
 }
 impl StagingDistributionDnsNamesBuilder {
     /// <p>The number of CloudFront domain names in your staging distribution.</p>
+    /// This field is required.
     pub fn quantity(mut self, input: i32) -> Self {
         self.quantity = ::std::option::Option::Some(input);
         self
@@ -69,10 +72,17 @@ impl StagingDistributionDnsNamesBuilder {
         &self.items
     }
     /// Consumes the builder and constructs a [`StagingDistributionDnsNames`](crate::types::StagingDistributionDnsNames).
-    pub fn build(self) -> crate::types::StagingDistributionDnsNames {
-        crate::types::StagingDistributionDnsNames {
-            quantity: self.quantity,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`quantity`](crate::types::builders::StagingDistributionDnsNamesBuilder::quantity)
+    pub fn build(self) -> ::std::result::Result<crate::types::StagingDistributionDnsNames, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::StagingDistributionDnsNames {
+            quantity: self.quantity.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "quantity",
+                    "quantity was not specified but it is required when building StagingDistributionDnsNames",
+                )
+            })?,
             items: self.items,
-        }
+        })
     }
 }

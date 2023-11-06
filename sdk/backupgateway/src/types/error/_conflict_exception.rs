@@ -5,15 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConflictException {
     /// <p>A description of why the operation is not supported.</p>
-    pub error_code: ::std::option::Option<::std::string::String>,
+    pub error_code: ::std::string::String,
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl ConflictException {
     /// <p>A description of why the operation is not supported.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
-        self.error_code.as_deref()
+    pub fn error_code(&self) -> &str {
+        use std::ops::Deref;
+        self.error_code.deref()
     }
 }
 impl ConflictException {
@@ -62,6 +63,7 @@ pub struct ConflictExceptionBuilder {
 }
 impl ConflictExceptionBuilder {
     /// <p>A description of why the operation is not supported.</p>
+    /// This field is required.
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
         self
@@ -101,11 +103,18 @@ impl ConflictExceptionBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ConflictException`](crate::types::error::ConflictException).
-    pub fn build(self) -> crate::types::error::ConflictException {
-        crate::types::error::ConflictException {
-            error_code: self.error_code,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`error_code`](crate::types::error::builders::ConflictExceptionBuilder::error_code)
+    pub fn build(self) -> ::std::result::Result<crate::types::error::ConflictException, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::error::ConflictException {
+            error_code: self.error_code.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "error_code",
+                    "error_code was not specified but it is required when building ConflictException",
+                )
+            })?,
             message: self.message,
             meta: self.meta.unwrap_or_default(),
-        }
+        })
     }
 }

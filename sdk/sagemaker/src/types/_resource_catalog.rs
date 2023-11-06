@@ -49,6 +49,7 @@ pub struct ResourceCatalogBuilder {
 }
 impl ResourceCatalogBuilder {
     /// <p> The Amazon Resource Name (ARN) of the <code>ResourceCatalog</code>. </p>
+    /// This field is required.
     pub fn resource_catalog_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_catalog_arn = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl ResourceCatalogBuilder {
         &self.resource_catalog_arn
     }
     /// <p> The name of the <code>ResourceCatalog</code>. </p>
+    /// This field is required.
     pub fn resource_catalog_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_catalog_name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +79,7 @@ impl ResourceCatalogBuilder {
         &self.resource_catalog_name
     }
     /// <p> A free form description of the <code>ResourceCatalog</code>. </p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +94,7 @@ impl ResourceCatalogBuilder {
         &self.description
     }
     /// <p> The time the <code>ResourceCatalog</code> was created. </p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self

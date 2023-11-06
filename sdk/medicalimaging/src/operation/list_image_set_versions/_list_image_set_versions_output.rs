@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListImageSetVersionsOutput {
     /// <p>Lists all properties associated with an image set.</p>
-    pub image_set_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::ImageSetProperties>>,
+    pub image_set_properties_list: ::std::vec::Vec<crate::types::ImageSetProperties>,
     /// <p>The pagination token used to retrieve the list of image set versions on the next page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListImageSetVersionsOutput {
     /// <p>Lists all properties associated with an image set.</p>
-    pub fn image_set_properties_list(&self) -> ::std::option::Option<&[crate::types::ImageSetProperties]> {
-        self.image_set_properties_list.as_deref()
+    pub fn image_set_properties_list(&self) -> &[crate::types::ImageSetProperties] {
+        use std::ops::Deref;
+        self.image_set_properties_list.deref()
     }
     /// <p>The pagination token used to retrieve the list of image set versions on the next page.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,21 @@ impl ListImageSetVersionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListImageSetVersionsOutput`](crate::operation::list_image_set_versions::ListImageSetVersionsOutput).
-    pub fn build(self) -> crate::operation::list_image_set_versions::ListImageSetVersionsOutput {
-        crate::operation::list_image_set_versions::ListImageSetVersionsOutput {
-            image_set_properties_list: self.image_set_properties_list,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`image_set_properties_list`](crate::operation::list_image_set_versions::builders::ListImageSetVersionsOutputBuilder::image_set_properties_list)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_image_set_versions::ListImageSetVersionsOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_image_set_versions::ListImageSetVersionsOutput {
+            image_set_properties_list: self.image_set_properties_list.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "image_set_properties_list",
+                    "image_set_properties_list was not specified but it is required when building ListImageSetVersionsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

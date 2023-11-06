@@ -177,6 +177,7 @@ impl CreateLaunchTemplateVersionInputBuilder {
         &self.version_description
     }
     /// <p>The information for the launch template.</p>
+    /// This field is required.
     pub fn launch_template_data(mut self, input: crate::types::RequestLaunchTemplateData) -> Self {
         self.launch_template_data = ::std::option::Option::Some(input);
         self
@@ -212,7 +213,7 @@ impl CreateLaunchTemplateVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_launch_template_version::CreateLaunchTemplateVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_launch_template_version::CreateLaunchTemplateVersionInput {
             dry_run: self.dry_run,

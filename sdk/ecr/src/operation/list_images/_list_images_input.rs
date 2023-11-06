@@ -73,6 +73,7 @@ impl ListImagesInputBuilder {
         &self.registry_id
     }
     /// <p>The repository with image IDs to be listed.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -135,7 +136,7 @@ impl ListImagesInputBuilder {
         &self.filter
     }
     /// Consumes the builder and constructs a [`ListImagesInput`](crate::operation::list_images::ListImagesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_images::ListImagesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_images::ListImagesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_images::ListImagesInput {
             registry_id: self.registry_id,
             repository_name: self.repository_name,

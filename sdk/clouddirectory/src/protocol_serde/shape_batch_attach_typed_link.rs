@@ -2,7 +2,7 @@
 pub fn ser_batch_attach_typed_link(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BatchAttachTypedLink,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.source_object_reference {
         #[allow(unused_mut)]
         let mut object_2 = object.key("SourceObjectReference").start_object();
@@ -21,17 +21,17 @@ pub fn ser_batch_attach_typed_link(
         crate::protocol_serde::shape_typed_link_schema_and_facet_name::ser_typed_link_schema_and_facet_name(&mut object_6, var_5)?;
         object_6.finish();
     }
-    if let Some(var_7) = &input.attributes {
-        let mut array_8 = object.key("Attributes").start_array();
-        for item_9 in var_7 {
+    {
+        let mut array_7 = object.key("Attributes").start_array();
+        for item_8 in &input.attributes {
             {
                 #[allow(unused_mut)]
-                let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_attribute_name_and_value::ser_attribute_name_and_value(&mut object_10, item_9)?;
-                object_10.finish();
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_attribute_name_and_value::ser_attribute_name_and_value(&mut object_9, item_8)?;
+                object_9.finish();
             }
         }
-        array_8.finish();
+        array_7.finish();
     }
     Ok(())
 }

@@ -49,6 +49,7 @@ pub struct BridgeFlowSourceBuilder {
 }
 impl BridgeFlowSourceBuilder {
     /// The ARN of the cloud flow used as a source of this bridge.
+    /// This field is required.
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_arn = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +78,7 @@ impl BridgeFlowSourceBuilder {
         &self.flow_vpc_interface_attachment
     }
     /// The name of the flow source.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

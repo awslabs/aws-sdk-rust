@@ -16,12 +16,16 @@ impl DescribeTasksInput {
         self.cluster.as_deref()
     }
     /// <p>A list of up to 100 task IDs or full ARN entries.</p>
-    pub fn tasks(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tasks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tasks.is_none()`.
+    pub fn tasks(&self) -> &[::std::string::String] {
+        self.tasks.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether you want to see the resource tags for the task. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
-    pub fn include(&self) -> ::std::option::Option<&[crate::types::TaskField]> {
-        self.include.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.include.is_none()`.
+    pub fn include(&self) -> &[crate::types::TaskField] {
+        self.include.as_deref().unwrap_or_default()
     }
 }
 impl DescribeTasksInput {
@@ -97,7 +101,7 @@ impl DescribeTasksInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTasksInput`](crate::operation::describe_tasks::DescribeTasksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_tasks::DescribeTasksInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_tasks::DescribeTasksInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_tasks::DescribeTasksInput {
             cluster: self.cluster,
             tasks: self.tasks,

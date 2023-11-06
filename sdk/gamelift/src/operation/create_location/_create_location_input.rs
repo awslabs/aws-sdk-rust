@@ -14,8 +14,10 @@ impl CreateLocationInput {
         self.location_name.as_deref()
     }
     /// <p>A list of labels to assign to the new matchmaking configuration resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Rareference</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateLocationInput {
@@ -34,6 +36,7 @@ pub struct CreateLocationInputBuilder {
 }
 impl CreateLocationInputBuilder {
     /// <p>A descriptive name for the custom location.</p>
+    /// This field is required.
     pub fn location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_name = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +73,7 @@ impl CreateLocationInputBuilder {
     /// Consumes the builder and constructs a [`CreateLocationInput`](crate::operation::create_location::CreateLocationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_location::CreateLocationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_location::CreateLocationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_location::CreateLocationInput {
             location_name: self.location_name,
             tags: self.tags,

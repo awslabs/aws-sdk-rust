@@ -18,8 +18,10 @@ impl ListQueuesInput {
         self.instance_id.as_deref()
     }
     /// <p>The type of queue.</p>
-    pub fn queue_types(&self) -> ::std::option::Option<&[crate::types::QueueType]> {
-        self.queue_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.queue_types.is_none()`.
+    pub fn queue_types(&self) -> &[crate::types::QueueType] {
+        self.queue_types.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -48,6 +50,7 @@ pub struct ListQueuesInputBuilder {
 }
 impl ListQueuesInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -110,7 +113,7 @@ impl ListQueuesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListQueuesInput`](crate::operation::list_queues::ListQueuesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_queues::ListQueuesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_queues::ListQueuesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_queues::ListQueuesInput {
             instance_id: self.instance_id,
             queue_types: self.queue_types,

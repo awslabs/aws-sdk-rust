@@ -4,31 +4,33 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutObjectOutput {
     /// Inline chunk checksum
-    pub inline_chunk_checksum: ::std::option::Option<::std::string::String>,
+    pub inline_chunk_checksum: ::std::string::String,
     /// Inline chunk checksum algorithm
-    pub inline_chunk_checksum_algorithm: ::std::option::Option<crate::types::DataChecksumAlgorithm>,
+    pub inline_chunk_checksum_algorithm: crate::types::DataChecksumAlgorithm,
     /// object checksum
-    pub object_checksum: ::std::option::Option<::std::string::String>,
+    pub object_checksum: ::std::string::String,
     /// object checksum algorithm
-    pub object_checksum_algorithm: ::std::option::Option<crate::types::SummaryChecksumAlgorithm>,
+    pub object_checksum_algorithm: crate::types::SummaryChecksumAlgorithm,
     _request_id: Option<String>,
 }
 impl PutObjectOutput {
     /// Inline chunk checksum
-    pub fn inline_chunk_checksum(&self) -> ::std::option::Option<&str> {
-        self.inline_chunk_checksum.as_deref()
+    pub fn inline_chunk_checksum(&self) -> &str {
+        use std::ops::Deref;
+        self.inline_chunk_checksum.deref()
     }
     /// Inline chunk checksum algorithm
-    pub fn inline_chunk_checksum_algorithm(&self) -> ::std::option::Option<&crate::types::DataChecksumAlgorithm> {
-        self.inline_chunk_checksum_algorithm.as_ref()
+    pub fn inline_chunk_checksum_algorithm(&self) -> &crate::types::DataChecksumAlgorithm {
+        &self.inline_chunk_checksum_algorithm
     }
     /// object checksum
-    pub fn object_checksum(&self) -> ::std::option::Option<&str> {
-        self.object_checksum.as_deref()
+    pub fn object_checksum(&self) -> &str {
+        use std::ops::Deref;
+        self.object_checksum.deref()
     }
     /// object checksum algorithm
-    pub fn object_checksum_algorithm(&self) -> ::std::option::Option<&crate::types::SummaryChecksumAlgorithm> {
-        self.object_checksum_algorithm.as_ref()
+    pub fn object_checksum_algorithm(&self) -> &crate::types::SummaryChecksumAlgorithm {
+        &self.object_checksum_algorithm
     }
 }
 impl ::aws_http::request_id::RequestId for PutObjectOutput {
@@ -55,6 +57,7 @@ pub struct PutObjectOutputBuilder {
 }
 impl PutObjectOutputBuilder {
     /// Inline chunk checksum
+    /// This field is required.
     pub fn inline_chunk_checksum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inline_chunk_checksum = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +72,7 @@ impl PutObjectOutputBuilder {
         &self.inline_chunk_checksum
     }
     /// Inline chunk checksum algorithm
+    /// This field is required.
     pub fn inline_chunk_checksum_algorithm(mut self, input: crate::types::DataChecksumAlgorithm) -> Self {
         self.inline_chunk_checksum_algorithm = ::std::option::Option::Some(input);
         self
@@ -83,6 +87,7 @@ impl PutObjectOutputBuilder {
         &self.inline_chunk_checksum_algorithm
     }
     /// object checksum
+    /// This field is required.
     pub fn object_checksum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_checksum = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +102,7 @@ impl PutObjectOutputBuilder {
         &self.object_checksum
     }
     /// object checksum algorithm
+    /// This field is required.
     pub fn object_checksum_algorithm(mut self, input: crate::types::SummaryChecksumAlgorithm) -> Self {
         self.object_checksum_algorithm = ::std::option::Option::Some(input);
         self
@@ -120,13 +126,38 @@ impl PutObjectOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutObjectOutput`](crate::operation::put_object::PutObjectOutput).
-    pub fn build(self) -> crate::operation::put_object::PutObjectOutput {
-        crate::operation::put_object::PutObjectOutput {
-            inline_chunk_checksum: self.inline_chunk_checksum,
-            inline_chunk_checksum_algorithm: self.inline_chunk_checksum_algorithm,
-            object_checksum: self.object_checksum,
-            object_checksum_algorithm: self.object_checksum_algorithm,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`inline_chunk_checksum`](crate::operation::put_object::builders::PutObjectOutputBuilder::inline_chunk_checksum)
+    /// - [`inline_chunk_checksum_algorithm`](crate::operation::put_object::builders::PutObjectOutputBuilder::inline_chunk_checksum_algorithm)
+    /// - [`object_checksum`](crate::operation::put_object::builders::PutObjectOutputBuilder::object_checksum)
+    /// - [`object_checksum_algorithm`](crate::operation::put_object::builders::PutObjectOutputBuilder::object_checksum_algorithm)
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_object::PutObjectOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::put_object::PutObjectOutput {
+            inline_chunk_checksum: self.inline_chunk_checksum.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "inline_chunk_checksum",
+                    "inline_chunk_checksum was not specified but it is required when building PutObjectOutput",
+                )
+            })?,
+            inline_chunk_checksum_algorithm: self.inline_chunk_checksum_algorithm.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "inline_chunk_checksum_algorithm",
+                    "inline_chunk_checksum_algorithm was not specified but it is required when building PutObjectOutput",
+                )
+            })?,
+            object_checksum: self.object_checksum.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "object_checksum",
+                    "object_checksum was not specified but it is required when building PutObjectOutput",
+                )
+            })?,
+            object_checksum_algorithm: self.object_checksum_algorithm.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "object_checksum_algorithm",
+                    "object_checksum_algorithm was not specified but it is required when building PutObjectOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

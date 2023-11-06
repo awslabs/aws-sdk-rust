@@ -9,8 +9,10 @@ pub struct SensitivityInspectionTemplateExcludes {
 }
 impl SensitivityInspectionTemplateExcludes {
     /// <p>An array of unique identifiers, one for each managed data identifier to exclude. To retrieve a list of valid values, use the ListManagedDataIdentifiers operation.</p>
-    pub fn managed_data_identifier_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.managed_data_identifier_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.managed_data_identifier_ids.is_none()`.
+    pub fn managed_data_identifier_ids(&self) -> &[::std::string::String] {
+        self.managed_data_identifier_ids.as_deref().unwrap_or_default()
     }
 }
 impl SensitivityInspectionTemplateExcludes {

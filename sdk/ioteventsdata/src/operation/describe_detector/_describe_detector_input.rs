@@ -34,6 +34,7 @@ pub struct DescribeDetectorInputBuilder {
 }
 impl DescribeDetectorInputBuilder {
     /// <p>The name of the detector model whose detectors (instances) you want information about.</p>
+    /// This field is required.
     pub fn detector_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_model_name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl DescribeDetectorInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDetectorInput`](crate::operation::describe_detector::DescribeDetectorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_detector::DescribeDetectorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_detector::DescribeDetectorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_detector::DescribeDetectorInput {
             detector_model_name: self.detector_model_name,
             key_value: self.key_value,

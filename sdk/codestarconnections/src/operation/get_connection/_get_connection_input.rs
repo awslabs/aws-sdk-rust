@@ -27,6 +27,7 @@ pub struct GetConnectionInputBuilder {
 }
 impl GetConnectionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of a connection.</p>
+    /// This field is required.
     pub fn connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetConnectionInputBuilder {
     /// Consumes the builder and constructs a [`GetConnectionInput`](crate::operation::get_connection::GetConnectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_connection::GetConnectionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_connection::GetConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_connection::GetConnectionInput {
             connection_arn: self.connection_arn,
         })

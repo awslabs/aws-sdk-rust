@@ -86,7 +86,8 @@ impl ListTaskExecutionsInputBuilder {
     /// Consumes the builder and constructs a [`ListTaskExecutionsInput`](crate::operation::list_task_executions::ListTaskExecutionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_task_executions::ListTaskExecutionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_task_executions::ListTaskExecutionsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_task_executions::ListTaskExecutionsInput {
             task_arn: self.task_arn,
             max_results: self.max_results,

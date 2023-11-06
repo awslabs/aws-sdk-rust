@@ -5,24 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetAssetPropertyValueErrorEntry {
     /// <p>The error code.</p>
-    pub error_code: ::std::option::Option<crate::types::BatchGetAssetPropertyValueErrorCode>,
+    pub error_code: crate::types::BatchGetAssetPropertyValueErrorCode,
     /// <p>The associated error message.</p>
-    pub error_message: ::std::option::Option<::std::string::String>,
+    pub error_message: ::std::string::String,
     /// <p>The ID of the entry.</p>
-    pub entry_id: ::std::option::Option<::std::string::String>,
+    pub entry_id: ::std::string::String,
 }
 impl BatchGetAssetPropertyValueErrorEntry {
     /// <p>The error code.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&crate::types::BatchGetAssetPropertyValueErrorCode> {
-        self.error_code.as_ref()
+    pub fn error_code(&self) -> &crate::types::BatchGetAssetPropertyValueErrorCode {
+        &self.error_code
     }
     /// <p>The associated error message.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
-        self.error_message.as_deref()
+    pub fn error_message(&self) -> &str {
+        use std::ops::Deref;
+        self.error_message.deref()
     }
     /// <p>The ID of the entry.</p>
-    pub fn entry_id(&self) -> ::std::option::Option<&str> {
-        self.entry_id.as_deref()
+    pub fn entry_id(&self) -> &str {
+        use std::ops::Deref;
+        self.entry_id.deref()
     }
 }
 impl BatchGetAssetPropertyValueErrorEntry {
@@ -42,6 +44,7 @@ pub struct BatchGetAssetPropertyValueErrorEntryBuilder {
 }
 impl BatchGetAssetPropertyValueErrorEntryBuilder {
     /// <p>The error code.</p>
+    /// This field is required.
     pub fn error_code(mut self, input: crate::types::BatchGetAssetPropertyValueErrorCode) -> Self {
         self.error_code = ::std::option::Option::Some(input);
         self
@@ -56,6 +59,7 @@ impl BatchGetAssetPropertyValueErrorEntryBuilder {
         &self.error_code
     }
     /// <p>The associated error message.</p>
+    /// This field is required.
     pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +74,7 @@ impl BatchGetAssetPropertyValueErrorEntryBuilder {
         &self.error_message
     }
     /// <p>The ID of the entry.</p>
+    /// This field is required.
     pub fn entry_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entry_id = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +89,32 @@ impl BatchGetAssetPropertyValueErrorEntryBuilder {
         &self.entry_id
     }
     /// Consumes the builder and constructs a [`BatchGetAssetPropertyValueErrorEntry`](crate::types::BatchGetAssetPropertyValueErrorEntry).
-    pub fn build(self) -> crate::types::BatchGetAssetPropertyValueErrorEntry {
-        crate::types::BatchGetAssetPropertyValueErrorEntry {
-            error_code: self.error_code,
-            error_message: self.error_message,
-            entry_id: self.entry_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`error_code`](crate::types::builders::BatchGetAssetPropertyValueErrorEntryBuilder::error_code)
+    /// - [`error_message`](crate::types::builders::BatchGetAssetPropertyValueErrorEntryBuilder::error_message)
+    /// - [`entry_id`](crate::types::builders::BatchGetAssetPropertyValueErrorEntryBuilder::entry_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::BatchGetAssetPropertyValueErrorEntry, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::BatchGetAssetPropertyValueErrorEntry {
+            error_code: self.error_code.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "error_code",
+                    "error_code was not specified but it is required when building BatchGetAssetPropertyValueErrorEntry",
+                )
+            })?,
+            error_message: self.error_message.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "error_message",
+                    "error_message was not specified but it is required when building BatchGetAssetPropertyValueErrorEntry",
+                )
+            })?,
+            entry_id: self.entry_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "entry_id",
+                    "entry_id was not specified but it is required when building BatchGetAssetPropertyValueErrorEntry",
+                )
+            })?,
+        })
     }
 }

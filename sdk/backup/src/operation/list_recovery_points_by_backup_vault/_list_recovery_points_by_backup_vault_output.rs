@@ -15,8 +15,10 @@ impl ListRecoveryPointsByBackupVaultOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of objects that contain detailed information about recovery points saved in a backup vault.</p>
-    pub fn recovery_points(&self) -> ::std::option::Option<&[crate::types::RecoveryPointByBackupVault]> {
-        self.recovery_points.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recovery_points.is_none()`.
+    pub fn recovery_points(&self) -> &[crate::types::RecoveryPointByBackupVault] {
+        self.recovery_points.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListRecoveryPointsByBackupVaultOutput {

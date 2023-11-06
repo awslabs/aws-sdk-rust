@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NodeInstance {
     /// <p>The instance's ID.</p>
-    pub node_instance_id: ::std::option::Option<::std::string::String>,
+    pub node_instance_id: ::std::string::String,
     /// <p>The node's ID.</p>
     pub node_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance's package name.</p>
@@ -17,12 +17,13 @@ pub struct NodeInstance {
     /// <p>The instance's name.</p>
     pub node_name: ::std::option::Option<::std::string::String>,
     /// <p>The instance's current status.</p>
-    pub current_status: ::std::option::Option<crate::types::NodeInstanceStatus>,
+    pub current_status: crate::types::NodeInstanceStatus,
 }
 impl NodeInstance {
     /// <p>The instance's ID.</p>
-    pub fn node_instance_id(&self) -> ::std::option::Option<&str> {
-        self.node_instance_id.as_deref()
+    pub fn node_instance_id(&self) -> &str {
+        use std::ops::Deref;
+        self.node_instance_id.deref()
     }
     /// <p>The node's ID.</p>
     pub fn node_id(&self) -> ::std::option::Option<&str> {
@@ -45,8 +46,8 @@ impl NodeInstance {
         self.node_name.as_deref()
     }
     /// <p>The instance's current status.</p>
-    pub fn current_status(&self) -> ::std::option::Option<&crate::types::NodeInstanceStatus> {
-        self.current_status.as_ref()
+    pub fn current_status(&self) -> &crate::types::NodeInstanceStatus {
+        &self.current_status
     }
 }
 impl NodeInstance {
@@ -70,6 +71,7 @@ pub struct NodeInstanceBuilder {
 }
 impl NodeInstanceBuilder {
     /// <p>The instance's ID.</p>
+    /// This field is required.
     pub fn node_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_instance_id = ::std::option::Option::Some(input.into());
         self
@@ -154,6 +156,7 @@ impl NodeInstanceBuilder {
         &self.node_name
     }
     /// <p>The instance's current status.</p>
+    /// This field is required.
     pub fn current_status(mut self, input: crate::types::NodeInstanceStatus) -> Self {
         self.current_status = ::std::option::Option::Some(input);
         self
@@ -168,15 +171,28 @@ impl NodeInstanceBuilder {
         &self.current_status
     }
     /// Consumes the builder and constructs a [`NodeInstance`](crate::types::NodeInstance).
-    pub fn build(self) -> crate::types::NodeInstance {
-        crate::types::NodeInstance {
-            node_instance_id: self.node_instance_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`node_instance_id`](crate::types::builders::NodeInstanceBuilder::node_instance_id)
+    /// - [`current_status`](crate::types::builders::NodeInstanceBuilder::current_status)
+    pub fn build(self) -> ::std::result::Result<crate::types::NodeInstance, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::NodeInstance {
+            node_instance_id: self.node_instance_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "node_instance_id",
+                    "node_instance_id was not specified but it is required when building NodeInstance",
+                )
+            })?,
             node_id: self.node_id,
             package_name: self.package_name,
             package_version: self.package_version,
             package_patch_version: self.package_patch_version,
             node_name: self.node_name,
-            current_status: self.current_status,
-        }
+            current_status: self.current_status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "current_status",
+                    "current_status was not specified but it is required when building NodeInstance",
+                )
+            })?,
+        })
     }
 }

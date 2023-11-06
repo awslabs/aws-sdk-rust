@@ -27,6 +27,7 @@ pub struct GetTrailInputBuilder {
 }
 impl GetTrailInputBuilder {
     /// <p>The name or the Amazon Resource Name (ARN) of the trail for which you want to retrieve settings information.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetTrailInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`GetTrailInput`](crate::operation::get_trail::GetTrailInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_trail::GetTrailInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_trail::GetTrailInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_trail::GetTrailInput { name: self.name })
     }
 }

@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VectorEnrichmentJobS3Data {
     /// <p>The URL to the Amazon S3 data for the Vector Enrichment job.</p>
-    pub s3_uri: ::std::option::Option<::std::string::String>,
+    pub s3_uri: ::std::string::String,
     /// <p>The Key Management Service key ID for server-side encryption.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl VectorEnrichmentJobS3Data {
     /// <p>The URL to the Amazon S3 data for the Vector Enrichment job.</p>
-    pub fn s3_uri(&self) -> ::std::option::Option<&str> {
-        self.s3_uri.as_deref()
+    pub fn s3_uri(&self) -> &str {
+        use std::ops::Deref;
+        self.s3_uri.deref()
     }
     /// <p>The Key Management Service key ID for server-side encryption.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct VectorEnrichmentJobS3DataBuilder {
 }
 impl VectorEnrichmentJobS3DataBuilder {
     /// <p>The URL to the Amazon S3 data for the Vector Enrichment job.</p>
+    /// This field is required.
     pub fn s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_uri = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl VectorEnrichmentJobS3DataBuilder {
         &self.kms_key_id
     }
     /// Consumes the builder and constructs a [`VectorEnrichmentJobS3Data`](crate::types::VectorEnrichmentJobS3Data).
-    pub fn build(self) -> crate::types::VectorEnrichmentJobS3Data {
-        crate::types::VectorEnrichmentJobS3Data {
-            s3_uri: self.s3_uri,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`s3_uri`](crate::types::builders::VectorEnrichmentJobS3DataBuilder::s3_uri)
+    pub fn build(self) -> ::std::result::Result<crate::types::VectorEnrichmentJobS3Data, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::VectorEnrichmentJobS3Data {
+            s3_uri: self.s3_uri.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "s3_uri",
+                    "s3_uri was not specified but it is required when building VectorEnrichmentJobS3Data",
+                )
+            })?,
             kms_key_id: self.kms_key_id,
-        }
+        })
     }
 }

@@ -15,8 +15,10 @@ impl ApplySecurityGroupsToLoadBalancerInput {
         self.load_balancer_name.as_deref()
     }
     /// <p>The IDs of the security groups to associate with the load balancer. Note that you cannot specify the name of the security group.</p>
-    pub fn security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
+    pub fn security_groups(&self) -> &[::std::string::String] {
+        self.security_groups.as_deref().unwrap_or_default()
     }
 }
 impl ApplySecurityGroupsToLoadBalancerInput {
@@ -35,6 +37,7 @@ pub struct ApplySecurityGroupsToLoadBalancerInputBuilder {
 }
 impl ApplySecurityGroupsToLoadBalancerInputBuilder {
     /// <p>The name of the load balancer.</p>
+    /// This field is required.
     pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
@@ -73,7 +76,7 @@ impl ApplySecurityGroupsToLoadBalancerInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancerInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancerInput {

@@ -101,6 +101,7 @@ impl CreateStreamInputBuilder {
     }
     /// <p>A name for the stream that you are creating.</p>
     /// <p>The stream name is an identifier for the stream, and must be unique for each account and region.</p>
+    /// This field is required.
     pub fn stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_name = ::std::option::Option::Some(input.into());
         self
@@ -197,7 +198,9 @@ impl CreateStreamInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateStreamInput`](crate::operation::create_stream::CreateStreamInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_stream::CreateStreamInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_stream::CreateStreamInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_stream::CreateStreamInput {
             device_name: self.device_name,
             stream_name: self.stream_name,

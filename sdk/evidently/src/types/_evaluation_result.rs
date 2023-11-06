@@ -7,13 +7,13 @@ pub struct EvaluationResult {
     /// <p>The name or ARN of the project that contains the feature being evaluated.</p>
     pub project: ::std::option::Option<::std::string::String>,
     /// <p>The name of the feature being evaluated.</p>
-    pub feature: ::std::option::Option<::std::string::String>,
+    pub feature: ::std::string::String,
     /// <p>The name of the variation that was served to the user session.</p>
     pub variation: ::std::option::Option<::std::string::String>,
     /// <p>The value assigned to this variation to differentiate it from the other variations of this feature.</p>
     pub value: ::std::option::Option<crate::types::VariableValue>,
     /// <p>An internal ID that represents a unique user session of the application.</p>
-    pub entity_id: ::std::option::Option<::std::string::String>,
+    pub entity_id: ::std::string::String,
     /// <p>Specifies the reason that the user session was assigned this variation. Possible values include <code>DEFAULT</code>, meaning the user was served the default variation; <code>LAUNCH_RULE_MATCH</code>, if the user session was enrolled in a launch; or <code>EXPERIMENT_RULE_MATCH</code>, if the user session was enrolled in an experiment.</p>
     pub reason: ::std::option::Option<::std::string::String>,
     /// <p>If this user was assigned to a launch or experiment, this field lists the launch or experiment name.</p>
@@ -25,8 +25,9 @@ impl EvaluationResult {
         self.project.as_deref()
     }
     /// <p>The name of the feature being evaluated.</p>
-    pub fn feature(&self) -> ::std::option::Option<&str> {
-        self.feature.as_deref()
+    pub fn feature(&self) -> &str {
+        use std::ops::Deref;
+        self.feature.deref()
     }
     /// <p>The name of the variation that was served to the user session.</p>
     pub fn variation(&self) -> ::std::option::Option<&str> {
@@ -37,8 +38,9 @@ impl EvaluationResult {
         self.value.as_ref()
     }
     /// <p>An internal ID that represents a unique user session of the application.</p>
-    pub fn entity_id(&self) -> ::std::option::Option<&str> {
-        self.entity_id.as_deref()
+    pub fn entity_id(&self) -> &str {
+        use std::ops::Deref;
+        self.entity_id.deref()
     }
     /// <p>Specifies the reason that the user session was assigned this variation. Possible values include <code>DEFAULT</code>, meaning the user was served the default variation; <code>LAUNCH_RULE_MATCH</code>, if the user session was enrolled in a launch; or <code>EXPERIMENT_RULE_MATCH</code>, if the user session was enrolled in an experiment.</p>
     pub fn reason(&self) -> ::std::option::Option<&str> {
@@ -84,6 +86,7 @@ impl EvaluationResultBuilder {
         &self.project
     }
     /// <p>The name of the feature being evaluated.</p>
+    /// This field is required.
     pub fn feature(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +129,7 @@ impl EvaluationResultBuilder {
         &self.value
     }
     /// <p>An internal ID that represents a unique user session of the application.</p>
+    /// This field is required.
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
         self
@@ -168,15 +172,28 @@ impl EvaluationResultBuilder {
         &self.details
     }
     /// Consumes the builder and constructs a [`EvaluationResult`](crate::types::EvaluationResult).
-    pub fn build(self) -> crate::types::EvaluationResult {
-        crate::types::EvaluationResult {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`feature`](crate::types::builders::EvaluationResultBuilder::feature)
+    /// - [`entity_id`](crate::types::builders::EvaluationResultBuilder::entity_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::EvaluationResult, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EvaluationResult {
             project: self.project,
-            feature: self.feature,
+            feature: self.feature.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "feature",
+                    "feature was not specified but it is required when building EvaluationResult",
+                )
+            })?,
             variation: self.variation,
             value: self.value,
-            entity_id: self.entity_id,
+            entity_id: self.entity_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "entity_id",
+                    "entity_id was not specified but it is required when building EvaluationResult",
+                )
+            })?,
             reason: self.reason,
             details: self.details,
-        }
+        })
     }
 }

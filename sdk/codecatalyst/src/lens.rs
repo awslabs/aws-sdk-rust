@@ -82,40 +82,28 @@ pub(crate) fn reflens_list_spaces_output_next_token(
 pub(crate) fn lens_list_access_tokens_output_items(
     input: crate::operation::list_access_tokens::ListAccessTokensOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AccessTokenSummary>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_dev_environment_sessions_output_items(
     input: crate::operation::list_dev_environment_sessions::ListDevEnvironmentSessionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DevEnvironmentSessionSummary>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_dev_environments_output_items(
     input: crate::operation::list_dev_environments::ListDevEnvironmentsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DevEnvironmentSummary>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_event_logs_output_items(
     input: crate::operation::list_event_logs::ListEventLogsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::EventLogEntry>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items;
     ::std::option::Option::Some(input)
 }
 
@@ -142,10 +130,7 @@ pub(crate) fn lens_list_source_repositories_output_items(
 pub(crate) fn lens_list_source_repository_branches_output_items(
     input: crate::operation::list_source_repository_branches::ListSourceRepositoryBranchesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ListSourceRepositoryBranchesItem>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items;
     ::std::option::Option::Some(input)
 }
 

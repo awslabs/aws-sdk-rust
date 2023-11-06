@@ -11,8 +11,10 @@ pub struct DescribeHostReservationsOutput {
 }
 impl DescribeHostReservationsOutput {
     /// <p>Details about the reservation's configuration.</p>
-    pub fn host_reservation_set(&self) -> ::std::option::Option<&[crate::types::HostReservation]> {
-        self.host_reservation_set.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.host_reservation_set.is_none()`.
+    pub fn host_reservation_set(&self) -> &[crate::types::HostReservation] {
+        self.host_reservation_set.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

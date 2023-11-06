@@ -38,6 +38,7 @@ pub struct DeleteResourceShareInputBuilder {
 }
 impl DeleteResourceShareInputBuilder {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share to delete.</p>
+    /// This field is required.
     pub fn resource_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_share_arn = ::std::option::Option::Some(input.into());
         self
@@ -74,7 +75,7 @@ impl DeleteResourceShareInputBuilder {
     /// Consumes the builder and constructs a [`DeleteResourceShareInput`](crate::operation::delete_resource_share::DeleteResourceShareInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_resource_share::DeleteResourceShareInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_resource_share::DeleteResourceShareInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_resource_share::DeleteResourceShareInput {
             resource_share_arn: self.resource_share_arn,

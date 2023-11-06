@@ -72,8 +72,10 @@ impl StartEntitiesDetectionJobInput {
         self.vpc_config.as_ref()
     }
     /// <p>Tags to associate with the entities detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Number (ARN) of the flywheel associated with the model to use.</p>
     pub fn flywheel_arn(&self) -> ::std::option::Option<&str> {
@@ -105,6 +107,7 @@ pub struct StartEntitiesDetectionJobInputBuilder {
 }
 impl StartEntitiesDetectionJobInputBuilder {
     /// <p>Specifies the format and location of the input data for the job.</p>
+    /// This field is required.
     pub fn input_data_config(mut self, input: crate::types::InputDataConfig) -> Self {
         self.input_data_config = ::std::option::Option::Some(input);
         self
@@ -119,6 +122,7 @@ impl StartEntitiesDetectionJobInputBuilder {
         &self.input_data_config
     }
     /// <p>Specifies where to send the output files.</p>
+    /// This field is required.
     pub fn output_data_config(mut self, input: crate::types::OutputDataConfig) -> Self {
         self.output_data_config = ::std::option::Option::Some(input);
         self
@@ -133,6 +137,7 @@ impl StartEntitiesDetectionJobInputBuilder {
         &self.output_data_config
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/security_iam_id-based-policy-examples.html#auth-role-permissions">Role-based permissions</a>.</p>
+    /// This field is required.
     pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_access_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -175,6 +180,7 @@ impl StartEntitiesDetectionJobInputBuilder {
         &self.entity_recognizer_arn
     }
     /// <p>The language of the input documents. All documents must be in the same language. You can specify any of the languages supported by Amazon Comprehend. If custom entities recognition is used, this parameter is ignored and the language used for training the model is used instead.</p>
+    /// This field is required.
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.language_code = ::std::option::Option::Some(input);
         self
@@ -281,7 +287,7 @@ impl StartEntitiesDetectionJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_entities_detection_job::StartEntitiesDetectionJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_entities_detection_job::StartEntitiesDetectionJobInput {
             input_data_config: self.input_data_config,

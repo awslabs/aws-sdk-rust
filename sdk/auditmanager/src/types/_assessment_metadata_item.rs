@@ -39,12 +39,16 @@ impl AssessmentMetadataItem {
         self.status.as_ref()
     }
     /// <p> The roles that are associated with the assessment. </p>
-    pub fn roles(&self) -> ::std::option::Option<&[crate::types::Role]> {
-        self.roles.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.roles.is_none()`.
+    pub fn roles(&self) -> &[crate::types::Role] {
+        self.roles.as_deref().unwrap_or_default()
     }
     /// <p> The delegations that are associated with the assessment. </p>
-    pub fn delegations(&self) -> ::std::option::Option<&[crate::types::Delegation]> {
-        self.delegations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.delegations.is_none()`.
+    pub fn delegations(&self) -> &[crate::types::Delegation] {
+        self.delegations.as_deref().unwrap_or_default()
     }
     /// <p> Specifies when the assessment was created. </p>
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

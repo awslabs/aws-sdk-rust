@@ -11,8 +11,10 @@ pub struct SidewalkGetStartImportInfo {
 }
 impl SidewalkGetStartImportInfo {
     /// <p>List of Sidewalk devices that are added to the import task.</p>
-    pub fn device_creation_file_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.device_creation_file_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.device_creation_file_list.is_none()`.
+    pub fn device_creation_file_list(&self) -> &[::std::string::String] {
+        self.device_creation_file_list.as_deref().unwrap_or_default()
     }
     /// <p>The IAM role that allows AWS IoT Wireless to access the CSV file in the S3 bucket.</p>
     pub fn role(&self) -> ::std::option::Option<&str> {

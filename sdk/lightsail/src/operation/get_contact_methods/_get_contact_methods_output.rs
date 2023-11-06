@@ -9,8 +9,10 @@ pub struct GetContactMethodsOutput {
 }
 impl GetContactMethodsOutput {
     /// <p>An array of objects that describe the contact methods.</p>
-    pub fn contact_methods(&self) -> ::std::option::Option<&[crate::types::ContactMethod]> {
-        self.contact_methods.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.contact_methods.is_none()`.
+    pub fn contact_methods(&self) -> &[crate::types::ContactMethod] {
+        self.contact_methods.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetContactMethodsOutput {

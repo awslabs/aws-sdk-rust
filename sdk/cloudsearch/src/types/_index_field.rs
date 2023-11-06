@@ -7,9 +7,9 @@ pub struct IndexField {
     /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
     /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
     /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
-    pub index_field_name: ::std::option::Option<::std::string::String>,
+    pub index_field_name: ::std::string::String,
     /// <p>The type of field. The valid options for a field depend on the field type. For more information about the supported field types, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html" target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    pub index_field_type: ::std::option::Option<crate::types::IndexFieldType>,
+    pub index_field_type: crate::types::IndexFieldType,
     /// <p>Options for a 64-bit signed integer field. Present if <code>IndexFieldType</code> specifies the field is of type <code>int</code>. All options are enabled by default.</p>
     pub int_options: ::std::option::Option<crate::types::IntOptions>,
     /// <p>Options for a double-precision 64-bit floating point field. Present if <code>IndexFieldType</code> specifies the field is of type <code>double</code>. All options are enabled by default.</p>
@@ -37,12 +37,13 @@ impl IndexField {
     /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
     /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
     /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
-    pub fn index_field_name(&self) -> ::std::option::Option<&str> {
-        self.index_field_name.as_deref()
+    pub fn index_field_name(&self) -> &str {
+        use std::ops::Deref;
+        self.index_field_name.deref()
     }
     /// <p>The type of field. The valid options for a field depend on the field type. For more information about the supported field types, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html" target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    pub fn index_field_type(&self) -> ::std::option::Option<&crate::types::IndexFieldType> {
-        self.index_field_type.as_ref()
+    pub fn index_field_type(&self) -> &crate::types::IndexFieldType {
+        &self.index_field_type
     }
     /// <p>Options for a 64-bit signed integer field. Present if <code>IndexFieldType</code> specifies the field is of type <code>int</code>. All options are enabled by default.</p>
     pub fn int_options(&self) -> ::std::option::Option<&crate::types::IntOptions> {
@@ -118,6 +119,7 @@ impl IndexFieldBuilder {
     /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
     /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
     /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
+    /// This field is required.
     pub fn index_field_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_field_name = ::std::option::Option::Some(input.into());
         self
@@ -136,6 +138,7 @@ impl IndexFieldBuilder {
         &self.index_field_name
     }
     /// <p>The type of field. The valid options for a field depend on the field type. For more information about the supported field types, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html" target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
+    /// This field is required.
     pub fn index_field_type(mut self, input: crate::types::IndexFieldType) -> Self {
         self.index_field_type = ::std::option::Option::Some(input);
         self
@@ -304,10 +307,23 @@ impl IndexFieldBuilder {
         &self.date_array_options
     }
     /// Consumes the builder and constructs a [`IndexField`](crate::types::IndexField).
-    pub fn build(self) -> crate::types::IndexField {
-        crate::types::IndexField {
-            index_field_name: self.index_field_name,
-            index_field_type: self.index_field_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`index_field_name`](crate::types::builders::IndexFieldBuilder::index_field_name)
+    /// - [`index_field_type`](crate::types::builders::IndexFieldBuilder::index_field_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::IndexField, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::IndexField {
+            index_field_name: self.index_field_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "index_field_name",
+                    "index_field_name was not specified but it is required when building IndexField",
+                )
+            })?,
+            index_field_type: self.index_field_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "index_field_type",
+                    "index_field_type was not specified but it is required when building IndexField",
+                )
+            })?,
             int_options: self.int_options,
             double_options: self.double_options,
             literal_options: self.literal_options,
@@ -319,6 +335,6 @@ impl IndexFieldBuilder {
             literal_array_options: self.literal_array_options,
             text_array_options: self.text_array_options,
             date_array_options: self.date_array_options,
-        }
+        })
     }
 }

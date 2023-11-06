@@ -73,6 +73,7 @@ pub struct TestDnsAnswerInputBuilder {
 }
 impl TestDnsAnswerInputBuilder {
     /// <p>The ID of the hosted zone that you want Amazon Route 53 to simulate a query for.</p>
+    /// This field is required.
     pub fn hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hosted_zone_id = ::std::option::Option::Some(input.into());
         self
@@ -87,6 +88,7 @@ impl TestDnsAnswerInputBuilder {
         &self.hosted_zone_id
     }
     /// <p>The name of the resource record set that you want Amazon Route 53 to simulate a query for.</p>
+    /// This field is required.
     pub fn record_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.record_name = ::std::option::Option::Some(input.into());
         self
@@ -101,6 +103,7 @@ impl TestDnsAnswerInputBuilder {
         &self.record_name
     }
     /// <p>The type of the resource record set.</p>
+    /// This field is required.
     pub fn record_type(mut self, input: crate::types::RrType) -> Self {
         self.record_type = ::std::option::Option::Some(input);
         self
@@ -174,7 +177,7 @@ impl TestDnsAnswerInputBuilder {
     /// Consumes the builder and constructs a [`TestDnsAnswerInput`](crate::operation::test_dns_answer::TestDnsAnswerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::test_dns_answer::TestDnsAnswerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::test_dns_answer::TestDnsAnswerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::test_dns_answer::TestDnsAnswerInput {
             hosted_zone_id: self.hosted_zone_id,
             record_name: self.record_name,

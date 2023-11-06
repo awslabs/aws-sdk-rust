@@ -64,7 +64,7 @@ impl ListBulkDeploymentsInputBuilder {
     /// Consumes the builder and constructs a [`ListBulkDeploymentsInput`](crate::operation::list_bulk_deployments::ListBulkDeploymentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_bulk_deployments::ListBulkDeploymentsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_bulk_deployments::ListBulkDeploymentsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_bulk_deployments::ListBulkDeploymentsInput {
             max_results: self.max_results,

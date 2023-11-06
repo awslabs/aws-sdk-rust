@@ -3,7 +3,7 @@
 pub fn ser_auto_deployment(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::AutoDeployment,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Enabled");
     if let Some(var_2) = &input.enabled {
@@ -17,6 +17,7 @@ pub fn ser_auto_deployment(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_auto_deployment(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::AutoDeployment, ::aws_smithy_xml::decode::XmlDecodeError> {

@@ -13,7 +13,7 @@ pub struct AccountTakeoverActionType {
     /// <li> <p> <code>MFA_REQUIRED</code> Present an MFA challenge if user has configured it, else block the request.</p> </li>
     /// <li> <p> <code>NO_ACTION</code> Allow the user to sign in.</p> </li>
     /// </ul>
-    pub event_action: ::std::option::Option<crate::types::AccountTakeoverEventActionType>,
+    pub event_action: crate::types::AccountTakeoverEventActionType,
 }
 impl AccountTakeoverActionType {
     /// <p>Flag specifying whether to send a notification.</p>
@@ -27,8 +27,8 @@ impl AccountTakeoverActionType {
     /// <li> <p> <code>MFA_REQUIRED</code> Present an MFA challenge if user has configured it, else block the request.</p> </li>
     /// <li> <p> <code>NO_ACTION</code> Allow the user to sign in.</p> </li>
     /// </ul>
-    pub fn event_action(&self) -> ::std::option::Option<&crate::types::AccountTakeoverEventActionType> {
-        self.event_action.as_ref()
+    pub fn event_action(&self) -> &crate::types::AccountTakeoverEventActionType {
+        &self.event_action
     }
 }
 impl AccountTakeoverActionType {
@@ -47,6 +47,7 @@ pub struct AccountTakeoverActionTypeBuilder {
 }
 impl AccountTakeoverActionTypeBuilder {
     /// <p>Flag specifying whether to send a notification.</p>
+    /// This field is required.
     pub fn notify(mut self, input: bool) -> Self {
         self.notify = ::std::option::Option::Some(input);
         self
@@ -67,6 +68,7 @@ impl AccountTakeoverActionTypeBuilder {
     /// <li> <p> <code>MFA_REQUIRED</code> Present an MFA challenge if user has configured it, else block the request.</p> </li>
     /// <li> <p> <code>NO_ACTION</code> Allow the user to sign in.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn event_action(mut self, input: crate::types::AccountTakeoverEventActionType) -> Self {
         self.event_action = ::std::option::Option::Some(input);
         self
@@ -93,10 +95,17 @@ impl AccountTakeoverActionTypeBuilder {
         &self.event_action
     }
     /// Consumes the builder and constructs a [`AccountTakeoverActionType`](crate::types::AccountTakeoverActionType).
-    pub fn build(self) -> crate::types::AccountTakeoverActionType {
-        crate::types::AccountTakeoverActionType {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`event_action`](crate::types::builders::AccountTakeoverActionTypeBuilder::event_action)
+    pub fn build(self) -> ::std::result::Result<crate::types::AccountTakeoverActionType, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AccountTakeoverActionType {
             notify: self.notify.unwrap_or_default(),
-            event_action: self.event_action,
-        }
+            event_action: self.event_action.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "event_action",
+                    "event_action was not specified but it is required when building AccountTakeoverActionType",
+                )
+            })?,
+        })
     }
 }

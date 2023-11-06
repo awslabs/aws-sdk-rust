@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcConfig {
     /// <p>The ID number for a security group on an instance of your private VPC. Security groups on your VPC function serve as a virtual firewall to control inbound and outbound traffic and provides security for the resources that you’ll be accessing on the VPC. This ID number is preceded by "sg-", for instance: "sg-03b388029b0a285ea". For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security Groups for your VPC</a>. </p>
-    pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_group_ids: ::std::vec::Vec<::std::string::String>,
     /// <p>The ID for each subnet being used in your private VPC. This subnet is a subset of the a range of IPv4 addresses used by the VPC and is specific to a given availability zone in the VPC’s Region. This ID number is preceded by "subnet-", for instance: "subnet-04ccf456919e69055". For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and Subnets</a>. </p>
-    pub subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subnets: ::std::vec::Vec<::std::string::String>,
 }
 impl VpcConfig {
     /// <p>The ID number for a security group on an instance of your private VPC. Security groups on your VPC function serve as a virtual firewall to control inbound and outbound traffic and provides security for the resources that you’ll be accessing on the VPC. This ID number is preceded by "sg-", for instance: "sg-03b388029b0a285ea". For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security Groups for your VPC</a>. </p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.security_group_ids.deref()
     }
     /// <p>The ID for each subnet being used in your private VPC. This subnet is a subset of the a range of IPv4 addresses used by the VPC and is specific to a given availability zone in the VPC’s Region. This ID number is preceded by "subnet-", for instance: "subnet-04ccf456919e69055". For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and Subnets</a>. </p>
-    pub fn subnets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnets.as_deref()
+    pub fn subnets(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.subnets.deref()
     }
 }
 impl VpcConfig {
@@ -75,10 +77,23 @@ impl VpcConfigBuilder {
         &self.subnets
     }
     /// Consumes the builder and constructs a [`VpcConfig`](crate::types::VpcConfig).
-    pub fn build(self) -> crate::types::VpcConfig {
-        crate::types::VpcConfig {
-            security_group_ids: self.security_group_ids,
-            subnets: self.subnets,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`security_group_ids`](crate::types::builders::VpcConfigBuilder::security_group_ids)
+    /// - [`subnets`](crate::types::builders::VpcConfigBuilder::subnets)
+    pub fn build(self) -> ::std::result::Result<crate::types::VpcConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::VpcConfig {
+            security_group_ids: self.security_group_ids.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "security_group_ids",
+                    "security_group_ids was not specified but it is required when building VpcConfig",
+                )
+            })?,
+            subnets: self.subnets.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "subnets",
+                    "subnets was not specified but it is required when building VpcConfig",
+                )
+            })?,
+        })
     }
 }

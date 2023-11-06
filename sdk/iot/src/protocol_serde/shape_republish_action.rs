@@ -48,7 +48,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::republish_action_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -59,24 +61,24 @@ where
 pub fn ser_republish_action(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RepublishAction,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.role_arn {
-        object.key("roleArn").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("roleArn").string(input.role_arn.as_str());
     }
-    if let Some(var_2) = &input.topic {
-        object.key("topic").string(var_2.as_str());
+    {
+        object.key("topic").string(input.topic.as_str());
     }
-    if let Some(var_3) = &input.qos {
+    if let Some(var_1) = &input.qos {
         object.key("qos").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_4) = &input.headers {
+    if let Some(var_2) = &input.headers {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("headers").start_object();
-        crate::protocol_serde::shape_mqtt_headers::ser_mqtt_headers(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_3 = object.key("headers").start_object();
+        crate::protocol_serde::shape_mqtt_headers::ser_mqtt_headers(&mut object_3, var_2)?;
+        object_3.finish();
     }
     Ok(())
 }

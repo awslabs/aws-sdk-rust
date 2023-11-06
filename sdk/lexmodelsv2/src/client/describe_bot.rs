@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeBot`](crate::operation::describe_bot::builders::DescribeBotFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`bot_id(impl Into<String>)`](crate::operation::describe_bot::builders::DescribeBotFluentBuilder::bot_id) / [`set_bot_id(Option<String>)`](crate::operation::describe_bot::builders::DescribeBotFluentBuilder::set_bot_id): <p>The unique identifier of the bot to describe.</p>
+    ///   - [`bot_id(impl Into<String>)`](crate::operation::describe_bot::builders::DescribeBotFluentBuilder::bot_id) / [`set_bot_id(Option<String>)`](crate::operation::describe_bot::builders::DescribeBotFluentBuilder::set_bot_id):<br>required: **true**<br><p>The unique identifier of the bot to describe.</p><br>
     /// - On success, responds with [`DescribeBotOutput`](crate::operation::describe_bot::DescribeBotOutput) with field(s):
     ///   - [`bot_id(Option<String>)`](crate::operation::describe_bot::DescribeBotOutput::bot_id): <p>The unique identifier of the bot.</p>
     ///   - [`bot_name(Option<String>)`](crate::operation::describe_bot::DescribeBotOutput::bot_name): <p>The name of the bot.</p>
@@ -15,8 +15,8 @@ impl super::Client {
     ///   - [`creation_date_time(Option<DateTime>)`](crate::operation::describe_bot::DescribeBotOutput::creation_date_time): <p>A timestamp of the date and time that the bot was created.</p>
     ///   - [`last_updated_date_time(Option<DateTime>)`](crate::operation::describe_bot::DescribeBotOutput::last_updated_date_time): <p>A timestamp of the date and time that the bot was last updated.</p>
     ///   - [`bot_type(Option<BotType>)`](crate::operation::describe_bot::DescribeBotOutput::bot_type): <p>The type of the bot that was described.</p>
-    ///   - [`bot_members(Option<Vec<BotMember>>)`](crate::operation::describe_bot::DescribeBotOutput::bot_members): <p>The list of bots in the network that was described.</p>
-    ///   - [`failure_reasons(Option<Vec<String>>)`](crate::operation::describe_bot::DescribeBotOutput::failure_reasons): <p>If the <code>botStatus</code> is <code>Failed</code>, this contains a list of reasons that the bot couldn't be built.</p>
+    ///   - [`bot_members(Option<Vec::<BotMember>>)`](crate::operation::describe_bot::DescribeBotOutput::bot_members): <p>The list of bots in the network that was described.</p>
+    ///   - [`failure_reasons(Option<Vec::<String>>)`](crate::operation::describe_bot::DescribeBotOutput::failure_reasons): <p>If the <code>botStatus</code> is <code>Failed</code>, this contains a list of reasons that the bot couldn't be built.</p>
     /// - On failure, responds with [`SdkError<DescribeBotError>`](crate::operation::describe_bot::DescribeBotError)
     pub fn describe_bot(&self) -> crate::operation::describe_bot::builders::DescribeBotFluentBuilder {
         crate::operation::describe_bot::builders::DescribeBotFluentBuilder::new(self.handle.clone())

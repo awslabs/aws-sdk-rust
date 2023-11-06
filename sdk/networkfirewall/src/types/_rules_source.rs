@@ -25,8 +25,10 @@ impl RulesSource {
         self.rules_source_list.as_ref()
     }
     /// <p>An array of individual stateful rules inspection criteria to be used together in a stateful rule group. Use this option to specify simple Suricata rules with protocol, source and destination, ports, direction, and rule options. For information about the Suricata <code>Rules</code> format, see <a href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html">Rules Format</a>. </p>
-    pub fn stateful_rules(&self) -> ::std::option::Option<&[crate::types::StatefulRule]> {
-        self.stateful_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stateful_rules.is_none()`.
+    pub fn stateful_rules(&self) -> &[crate::types::StatefulRule] {
+        self.stateful_rules.as_deref().unwrap_or_default()
     }
     /// <p>Stateless inspection criteria to be used in a stateless rule group. </p>
     pub fn stateless_rules_and_custom_actions(&self) -> ::std::option::Option<&crate::types::StatelessRulesAndCustomActions> {

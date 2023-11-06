@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListJobsOutput {
     /// <p>A list of jobs that are defined.</p>
-    pub jobs: ::std::option::Option<::std::vec::Vec<crate::types::Job>>,
+    pub jobs: ::std::vec::Vec<crate::types::Job>,
     /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListJobsOutput {
     /// <p>A list of jobs that are defined.</p>
-    pub fn jobs(&self) -> ::std::option::Option<&[crate::types::Job]> {
-        self.jobs.as_deref()
+    pub fn jobs(&self) -> &[crate::types::Job] {
+        use std::ops::Deref;
+        self.jobs.deref()
     }
     /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,18 @@ impl ListJobsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListJobsOutput`](crate::operation::list_jobs::ListJobsOutput).
-    pub fn build(self) -> crate::operation::list_jobs::ListJobsOutput {
-        crate::operation::list_jobs::ListJobsOutput {
-            jobs: self.jobs,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`jobs`](crate::operation::list_jobs::builders::ListJobsOutputBuilder::jobs)
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_jobs::ListJobsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_jobs::ListJobsOutput {
+            jobs: self.jobs.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "jobs",
+                    "jobs was not specified but it is required when building ListJobsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

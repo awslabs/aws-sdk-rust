@@ -12,23 +12,28 @@ where
             match tokens.next().transpose()? {
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                    let key = key.to_unescaped()?;
+                    if key == "__type" {
+                        ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                        continue;
+                    }
                     if variant.is_some() {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
                             "encountered mixed variants in union",
                         ));
                     }
-                    variant = match key.to_unescaped()?.as_ref() {
+                    variant = match key.as_ref() {
                         "index" => Some(crate::types::PathElement::Index(
                             ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                 .map(i32::try_from)
                                 .transpose()?
-                                .unwrap_or_default(),
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'index' cannot be null"))?,
                         )),
                         "key" => Some(crate::types::PathElement::Key(
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                 .transpose()?
-                                .unwrap_or_default(),
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'key' cannot be null"))?,
                         )),
                         "substring" => Some(crate::types::PathElement::Substring(
                             crate::protocol_serde::shape_substring::de_substring(tokens)?.ok_or_else(|| {
@@ -39,7 +44,7 @@ where
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                 .transpose()?
-                                .unwrap_or_default(),
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'value' cannot be null"))?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

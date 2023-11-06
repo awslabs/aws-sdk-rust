@@ -2,7 +2,7 @@
 pub fn ser_aws_sage_maker_notebook_instance_metadata_service_configuration_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.minimum_instance_metadata_service_version {
         object.key("MinimumInstanceMetadataServiceVersion").string(var_1.as_str());
     }

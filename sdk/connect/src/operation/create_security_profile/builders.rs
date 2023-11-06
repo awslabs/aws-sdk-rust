@@ -10,7 +10,7 @@ impl CreateSecurityProfileInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_security_profile::CreateSecurityProfileOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::create_security_profile::CreateSecurityProfileError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl CreateSecurityProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_security_profile::CreateSecurityProfileOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::create_security_profile::CreateSecurityProfileError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::create_security_profile::CreateSecurityProfile::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -86,20 +89,15 @@ impl CreateSecurityProfileFluentBuilder {
         crate::operation::create_security_profile::CreateSecurityProfile::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::create_security_profile::CreateSecurityProfileOutput,
-            crate::operation::create_security_profile::CreateSecurityProfileError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::create_security_profile::CreateSecurityProfileError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::create_security_profile::CreateSecurityProfileOutput,
+        crate::operation::create_security_profile::CreateSecurityProfileError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -238,19 +236,19 @@ impl CreateSecurityProfileFluentBuilder {
     /// To override the contents of this collection use [`set_applications`](Self::set_applications).
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
-    /// <p>A list of third party applications that the security profile will give access to.</p>
+    /// <p>A list of third-party applications that the security profile will give access to.</p>
     pub fn applications(mut self, input: crate::types::Application) -> Self {
         self.inner = self.inner.applications(input);
         self
     }
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
-    /// <p>A list of third party applications that the security profile will give access to.</p>
+    /// <p>A list of third-party applications that the security profile will give access to.</p>
     pub fn set_applications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Application>>) -> Self {
         self.inner = self.inner.set_applications(input);
         self
     }
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
-    /// <p>A list of third party applications that the security profile will give access to.</p>
+    /// <p>A list of third-party applications that the security profile will give access to.</p>
     pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Application>> {
         self.inner.get_applications()
     }

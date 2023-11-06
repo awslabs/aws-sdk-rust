@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteConnection`](crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`connection_arn(impl Into<String>)`](crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder::connection_arn) / [`set_connection_arn(Option<String>)`](crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder::set_connection_arn): <p>The Amazon Resource Name (ARN) of the App Runner connection that you want to delete.</p>
+    ///   - [`connection_arn(impl Into<String>)`](crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder::connection_arn) / [`set_connection_arn(Option<String>)`](crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder::set_connection_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the App Runner connection that you want to delete.</p><br>
     /// - On success, responds with [`DeleteConnectionOutput`](crate::operation::delete_connection::DeleteConnectionOutput) with field(s):
     ///   - [`connection(Option<Connection>)`](crate::operation::delete_connection::DeleteConnectionOutput::connection): <p>A description of the App Runner connection that this request just deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteConnectionError>`](crate::operation::delete_connection::DeleteConnectionError)

@@ -3,7 +3,7 @@
 pub fn ser_option_configuration(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::OptionConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("OptionName");
     if let Some(var_2) = &input.option_name {

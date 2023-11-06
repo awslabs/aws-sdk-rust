@@ -27,6 +27,7 @@ pub struct GetDevEndpointInputBuilder {
 }
 impl GetDevEndpointInputBuilder {
     /// <p>Name of the <code>DevEndpoint</code> to retrieve information for.</p>
+    /// This field is required.
     pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetDevEndpointInputBuilder {
     /// Consumes the builder and constructs a [`GetDevEndpointInput`](crate::operation::get_dev_endpoint::GetDevEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_dev_endpoint::GetDevEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_dev_endpoint::GetDevEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_dev_endpoint::GetDevEndpointInput {
             endpoint_name: self.endpoint_name,
         })

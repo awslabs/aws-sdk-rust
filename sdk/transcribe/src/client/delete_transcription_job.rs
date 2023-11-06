@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteTranscriptionJob`](crate::operation::delete_transcription_job::builders::DeleteTranscriptionJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`transcription_job_name(impl Into<String>)`](crate::operation::delete_transcription_job::builders::DeleteTranscriptionJobFluentBuilder::transcription_job_name) / [`set_transcription_job_name(Option<String>)`](crate::operation::delete_transcription_job::builders::DeleteTranscriptionJobFluentBuilder::set_transcription_job_name): <p>The name of the transcription job you want to delete. Job names are case sensitive.</p>
+    ///   - [`transcription_job_name(impl Into<String>)`](crate::operation::delete_transcription_job::builders::DeleteTranscriptionJobFluentBuilder::transcription_job_name) / [`set_transcription_job_name(Option<String>)`](crate::operation::delete_transcription_job::builders::DeleteTranscriptionJobFluentBuilder::set_transcription_job_name):<br>required: **true**<br><p>The name of the transcription job you want to delete. Job names are case sensitive.</p><br>
     /// - On success, responds with [`DeleteTranscriptionJobOutput`](crate::operation::delete_transcription_job::DeleteTranscriptionJobOutput)
     /// - On failure, responds with [`SdkError<DeleteTranscriptionJobError>`](crate::operation::delete_transcription_job::DeleteTranscriptionJobError)
     pub fn delete_transcription_job(&self) -> crate::operation::delete_transcription_job::builders::DeleteTranscriptionJobFluentBuilder {

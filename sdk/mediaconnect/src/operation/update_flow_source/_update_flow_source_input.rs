@@ -79,8 +79,10 @@ impl UpdateFlowSourceInput {
         self.max_sync_buffer
     }
     /// The media streams that are associated with the source, and the parameters for those associations.
-    pub fn media_stream_source_configurations(&self) -> ::std::option::Option<&[crate::types::MediaStreamSourceConfigurationRequest]> {
-        self.media_stream_source_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.media_stream_source_configurations.is_none()`.
+    pub fn media_stream_source_configurations(&self) -> &[crate::types::MediaStreamSourceConfigurationRequest] {
+        self.media_stream_source_configurations.as_deref().unwrap_or_default()
     }
     /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
     pub fn min_latency(&self) -> ::std::option::Option<i32> {
@@ -203,6 +205,7 @@ impl UpdateFlowSourceInputBuilder {
         &self.entitlement_arn
     }
     /// The flow that is associated with the source that you want to update.
+    /// This field is required.
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_arn = ::std::option::Option::Some(input.into());
         self
@@ -354,6 +357,7 @@ impl UpdateFlowSourceInputBuilder {
         &self.sender_ip_address
     }
     /// The ARN of the source that you want to update.
+    /// This field is required.
     pub fn source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_arn = ::std::option::Option::Some(input.into());
         self
@@ -454,7 +458,7 @@ impl UpdateFlowSourceInputBuilder {
     /// Consumes the builder and constructs a [`UpdateFlowSourceInput`](crate::operation::update_flow_source::UpdateFlowSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_flow_source::UpdateFlowSourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_flow_source::UpdateFlowSourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_flow_source::UpdateFlowSourceInput {
             decryption: self.decryption,
             description: self.description,

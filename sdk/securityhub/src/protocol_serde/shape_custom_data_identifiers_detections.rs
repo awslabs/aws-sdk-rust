@@ -2,7 +2,7 @@
 pub fn ser_custom_data_identifiers_detections(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CustomDataIdentifiersDetections,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.count {
         object.key("Count").number(
             #[allow(clippy::useless_conversion)]

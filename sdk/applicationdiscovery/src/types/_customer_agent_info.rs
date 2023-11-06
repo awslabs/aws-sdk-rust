@@ -70,6 +70,7 @@ pub struct CustomerAgentInfoBuilder {
 }
 impl CustomerAgentInfoBuilder {
     /// <p>Number of active discovery agents.</p>
+    /// This field is required.
     pub fn active_agents(mut self, input: i32) -> Self {
         self.active_agents = ::std::option::Option::Some(input);
         self
@@ -84,6 +85,7 @@ impl CustomerAgentInfoBuilder {
         &self.active_agents
     }
     /// <p>Number of healthy discovery agents</p>
+    /// This field is required.
     pub fn healthy_agents(mut self, input: i32) -> Self {
         self.healthy_agents = ::std::option::Option::Some(input);
         self
@@ -98,6 +100,7 @@ impl CustomerAgentInfoBuilder {
         &self.healthy_agents
     }
     /// <p>Number of blacklisted discovery agents.</p>
+    /// This field is required.
     pub fn black_listed_agents(mut self, input: i32) -> Self {
         self.black_listed_agents = ::std::option::Option::Some(input);
         self
@@ -112,6 +115,7 @@ impl CustomerAgentInfoBuilder {
         &self.black_listed_agents
     }
     /// <p>Number of discovery agents with status SHUTDOWN.</p>
+    /// This field is required.
     pub fn shutdown_agents(mut self, input: i32) -> Self {
         self.shutdown_agents = ::std::option::Option::Some(input);
         self
@@ -126,6 +130,7 @@ impl CustomerAgentInfoBuilder {
         &self.shutdown_agents
     }
     /// <p>Number of unhealthy discovery agents.</p>
+    /// This field is required.
     pub fn unhealthy_agents(mut self, input: i32) -> Self {
         self.unhealthy_agents = ::std::option::Option::Some(input);
         self
@@ -140,6 +145,7 @@ impl CustomerAgentInfoBuilder {
         &self.unhealthy_agents
     }
     /// <p>Total number of discovery agents.</p>
+    /// This field is required.
     pub fn total_agents(mut self, input: i32) -> Self {
         self.total_agents = ::std::option::Option::Some(input);
         self
@@ -154,6 +160,7 @@ impl CustomerAgentInfoBuilder {
         &self.total_agents
     }
     /// <p>Number of unknown discovery agents.</p>
+    /// This field is required.
     pub fn unknown_agents(mut self, input: i32) -> Self {
         self.unknown_agents = ::std::option::Option::Some(input);
         self

@@ -2,7 +2,7 @@
 pub fn ser_m3u8_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::M3u8Settings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.audio_duration {
         object.key("audioDuration").string(var_1.as_str());
     }
@@ -148,7 +148,7 @@ where
                         }
                         "audioPids" => {
                             builder = builder.set_audio_pids(
-                                crate::protocol_serde::shape___list_of__integer_min32_max8182::de___list_of__integer_min32_max8182(tokens)?,
+                                crate::protocol_serde::shape_list_of_integer_min32_max8182::de_list_of_integer_min32_max8182(tokens)?,
                             );
                         }
                         "dataPTSControl" => {

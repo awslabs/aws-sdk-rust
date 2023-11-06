@@ -13,8 +13,10 @@ pub struct SearchQuickConnectsOutput {
 }
 impl SearchQuickConnectsOutput {
     /// <p>Information about the quick connects.</p>
-    pub fn quick_connects(&self) -> ::std::option::Option<&[crate::types::QuickConnect]> {
-        self.quick_connects.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.quick_connects.is_none()`.
+    pub fn quick_connects(&self) -> &[crate::types::QuickConnect] {
+        self.quick_connects.as_deref().unwrap_or_default()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

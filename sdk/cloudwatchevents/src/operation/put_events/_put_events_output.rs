@@ -15,8 +15,10 @@ impl PutEventsOutput {
         self.failed_entry_count
     }
     /// <p>The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.</p>
-    pub fn entries(&self) -> ::std::option::Option<&[crate::types::PutEventsResultEntry]> {
-        self.entries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entries.is_none()`.
+    pub fn entries(&self) -> &[crate::types::PutEventsResultEntry] {
+        self.entries.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for PutEventsOutput {

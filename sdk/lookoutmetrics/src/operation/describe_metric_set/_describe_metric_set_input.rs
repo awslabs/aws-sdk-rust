@@ -27,6 +27,7 @@ pub struct DescribeMetricSetInputBuilder {
 }
 impl DescribeMetricSetInputBuilder {
     /// <p>The ARN of the dataset.</p>
+    /// This field is required.
     pub fn metric_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_set_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeMetricSetInputBuilder {
     /// Consumes the builder and constructs a [`DescribeMetricSetInput`](crate::operation::describe_metric_set::DescribeMetricSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_metric_set::DescribeMetricSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_metric_set::DescribeMetricSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_metric_set::DescribeMetricSetInput {
             metric_set_arn: self.metric_set_arn,
         })

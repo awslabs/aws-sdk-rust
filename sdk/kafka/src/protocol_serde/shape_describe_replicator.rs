@@ -180,12 +180,12 @@ pub(crate) fn de_describe_replicator(
                 }
                 "kafkaClusters" => {
                     builder = builder.set_kafka_clusters(
-                        crate::protocol_serde::shape___list_of_kafka_cluster_description::de___list_of_kafka_cluster_description(tokens)?,
+                        crate::protocol_serde::shape_list_of_kafka_cluster_description::de_list_of_kafka_cluster_description(tokens)?,
                     );
                 }
                 "replicationInfoList" => {
                     builder = builder.set_replication_info_list(
-                        crate::protocol_serde::shape___list_of_replication_info_description::de___list_of_replication_info_description(tokens)?,
+                        crate::protocol_serde::shape_list_of_replication_info_description::de_list_of_replication_info_description(tokens)?,
                     );
                 }
                 "replicatorArn" => {
@@ -234,7 +234,7 @@ pub(crate) fn de_describe_replicator(
                     builder = builder.set_state_info(crate::protocol_serde::shape_replication_state_info::de_replication_state_info(tokens)?);
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape___map_of__string::de___map_of__string(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

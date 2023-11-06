@@ -76,6 +76,7 @@ impl ListBatchJobDefinitionsInputBuilder {
         &self.max_results
     }
     /// <p>The identifier of the application.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +109,7 @@ impl ListBatchJobDefinitionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_batch_job_definitions::ListBatchJobDefinitionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_batch_job_definitions::ListBatchJobDefinitionsInput {
             next_token: self.next_token,

@@ -2,7 +2,7 @@
 pub fn ser_severity_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SeverityUpdate,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.normalized {
         object.key("Normalized").number(
             #[allow(clippy::useless_conversion)]

@@ -63,6 +63,7 @@ pub struct DescribeWorkflowExecutionOutputBuilder {
 }
 impl DescribeWorkflowExecutionOutputBuilder {
     /// <p>Information about the workflow execution.</p>
+    /// This field is required.
     pub fn execution_info(mut self, input: crate::types::WorkflowExecutionInfo) -> Self {
         self.execution_info = ::std::option::Option::Some(input);
         self
@@ -77,6 +78,7 @@ impl DescribeWorkflowExecutionOutputBuilder {
         &self.execution_info
     }
     /// <p>The configuration settings for this workflow execution including timeout values, tasklist etc.</p>
+    /// This field is required.
     pub fn execution_configuration(mut self, input: crate::types::WorkflowExecutionConfiguration) -> Self {
         self.execution_configuration = ::std::option::Option::Some(input);
         self
@@ -91,6 +93,7 @@ impl DescribeWorkflowExecutionOutputBuilder {
         &self.execution_configuration
     }
     /// <p>The number of tasks for this workflow execution. This includes open and closed tasks of all types.</p>
+    /// This field is required.
     pub fn open_counts(mut self, input: crate::types::WorkflowExecutionOpenCounts) -> Self {
         self.open_counts = ::std::option::Option::Some(input);
         self

@@ -27,6 +27,7 @@ pub struct DescribeTrainingJobInputBuilder {
 }
 impl DescribeTrainingJobInputBuilder {
     /// <p>The name of the training job.</p>
+    /// This field is required.
     pub fn training_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.training_job_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeTrainingJobInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTrainingJobInput`](crate::operation::describe_training_job::DescribeTrainingJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_training_job::DescribeTrainingJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_training_job::DescribeTrainingJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_training_job::DescribeTrainingJobInput {
             training_job_name: self.training_job_name,

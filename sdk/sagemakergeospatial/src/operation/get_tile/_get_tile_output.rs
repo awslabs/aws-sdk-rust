@@ -4,12 +4,12 @@
 #[derive(::std::fmt::Debug)]
 pub struct GetTileOutput {
     /// <p>The output binary file.</p>
-    pub binary_file: ::aws_smithy_http::byte_stream::ByteStream,
+    pub binary_file: ::aws_smithy_types::byte_stream::ByteStream,
     _request_id: Option<String>,
 }
 impl GetTileOutput {
     /// <p>The output binary file.</p>
-    pub fn binary_file(&self) -> &::aws_smithy_http::byte_stream::ByteStream {
+    pub fn binary_file(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
         &self.binary_file
     }
 }
@@ -29,22 +29,22 @@ impl GetTileOutput {
 #[non_exhaustive]
 #[derive(::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTileOutputBuilder {
-    pub(crate) binary_file: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
+    pub(crate) binary_file: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,
     _request_id: Option<String>,
 }
 impl GetTileOutputBuilder {
     /// <p>The output binary file.</p>
-    pub fn binary_file(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
+    pub fn binary_file(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.binary_file = ::std::option::Option::Some(input);
         self
     }
     /// <p>The output binary file.</p>
-    pub fn set_binary_file(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
+    pub fn set_binary_file(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.binary_file = input;
         self
     }
     /// <p>The output binary file.</p>
-    pub fn get_binary_file(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_binary_file(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         &self.binary_file
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

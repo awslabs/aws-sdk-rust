@@ -5,15 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationFormQuestion {
     /// <p>The title of the question.</p>
-    pub title: ::std::option::Option<::std::string::String>,
+    pub title: ::std::string::String,
     /// <p>The instructions of the section.</p>
     pub instructions: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the question. An identifier must be unique within the evaluation form.</p>
-    pub ref_id: ::std::option::Option<::std::string::String>,
+    pub ref_id: ::std::string::String,
     /// <p>The flag to enable not applicable answers to the question.</p>
     pub not_applicable_enabled: bool,
     /// <p>The type of the question.</p>
-    pub question_type: ::std::option::Option<crate::types::EvaluationFormQuestionType>,
+    pub question_type: crate::types::EvaluationFormQuestionType,
     /// <p>The properties of the type of question. Text questions do not have to define question type properties.</p>
     pub question_type_properties: ::std::option::Option<crate::types::EvaluationFormQuestionTypeProperties>,
     /// <p>The scoring weight of the section.</p>
@@ -21,24 +21,26 @@ pub struct EvaluationFormQuestion {
 }
 impl EvaluationFormQuestion {
     /// <p>The title of the question.</p>
-    pub fn title(&self) -> ::std::option::Option<&str> {
-        self.title.as_deref()
+    pub fn title(&self) -> &str {
+        use std::ops::Deref;
+        self.title.deref()
     }
     /// <p>The instructions of the section.</p>
     pub fn instructions(&self) -> ::std::option::Option<&str> {
         self.instructions.as_deref()
     }
     /// <p>The identifier of the question. An identifier must be unique within the evaluation form.</p>
-    pub fn ref_id(&self) -> ::std::option::Option<&str> {
-        self.ref_id.as_deref()
+    pub fn ref_id(&self) -> &str {
+        use std::ops::Deref;
+        self.ref_id.deref()
     }
     /// <p>The flag to enable not applicable answers to the question.</p>
     pub fn not_applicable_enabled(&self) -> bool {
         self.not_applicable_enabled
     }
     /// <p>The type of the question.</p>
-    pub fn question_type(&self) -> ::std::option::Option<&crate::types::EvaluationFormQuestionType> {
-        self.question_type.as_ref()
+    pub fn question_type(&self) -> &crate::types::EvaluationFormQuestionType {
+        &self.question_type
     }
     /// <p>The properties of the type of question. Text questions do not have to define question type properties.</p>
     pub fn question_type_properties(&self) -> ::std::option::Option<&crate::types::EvaluationFormQuestionTypeProperties> {
@@ -70,6 +72,7 @@ pub struct EvaluationFormQuestionBuilder {
 }
 impl EvaluationFormQuestionBuilder {
     /// <p>The title of the question.</p>
+    /// This field is required.
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +101,7 @@ impl EvaluationFormQuestionBuilder {
         &self.instructions
     }
     /// <p>The identifier of the question. An identifier must be unique within the evaluation form.</p>
+    /// This field is required.
     pub fn ref_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ref_id = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +130,7 @@ impl EvaluationFormQuestionBuilder {
         &self.not_applicable_enabled
     }
     /// <p>The type of the question.</p>
+    /// This field is required.
     pub fn question_type(mut self, input: crate::types::EvaluationFormQuestionType) -> Self {
         self.question_type = ::std::option::Option::Some(input);
         self
@@ -168,15 +173,34 @@ impl EvaluationFormQuestionBuilder {
         &self.weight
     }
     /// Consumes the builder and constructs a [`EvaluationFormQuestion`](crate::types::EvaluationFormQuestion).
-    pub fn build(self) -> crate::types::EvaluationFormQuestion {
-        crate::types::EvaluationFormQuestion {
-            title: self.title,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`title`](crate::types::builders::EvaluationFormQuestionBuilder::title)
+    /// - [`ref_id`](crate::types::builders::EvaluationFormQuestionBuilder::ref_id)
+    /// - [`question_type`](crate::types::builders::EvaluationFormQuestionBuilder::question_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::EvaluationFormQuestion, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EvaluationFormQuestion {
+            title: self.title.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "title",
+                    "title was not specified but it is required when building EvaluationFormQuestion",
+                )
+            })?,
             instructions: self.instructions,
-            ref_id: self.ref_id,
+            ref_id: self.ref_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "ref_id",
+                    "ref_id was not specified but it is required when building EvaluationFormQuestion",
+                )
+            })?,
             not_applicable_enabled: self.not_applicable_enabled.unwrap_or_default(),
-            question_type: self.question_type,
+            question_type: self.question_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "question_type",
+                    "question_type was not specified but it is required when building EvaluationFormQuestion",
+                )
+            })?,
             question_type_properties: self.question_type_properties,
             weight: self.weight.unwrap_or_default(),
-        }
+        })
     }
 }

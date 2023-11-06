@@ -11,8 +11,10 @@ pub struct DescribeActionTargetsOutput {
 }
 impl DescribeActionTargetsOutput {
     /// <p>A list of <code>ActionTarget</code> objects. Each object includes the <code>ActionTargetArn</code>, <code>Description</code>, and <code>Name</code> of a custom action target available in Security Hub.</p>
-    pub fn action_targets(&self) -> ::std::option::Option<&[crate::types::ActionTarget]> {
-        self.action_targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.action_targets.is_none()`.
+    pub fn action_targets(&self) -> &[crate::types::ActionTarget] {
+        self.action_targets.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token to use to request the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

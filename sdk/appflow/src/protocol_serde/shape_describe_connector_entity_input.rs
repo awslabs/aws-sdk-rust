@@ -2,7 +2,7 @@
 pub fn ser_describe_connector_entity_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_connector_entity::DescribeConnectorEntityInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.api_version {
         object.key("apiVersion").string(var_1.as_str());
     }

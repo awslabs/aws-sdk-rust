@@ -11,8 +11,10 @@ pub struct DescribeWorkspaceBundlesOutput {
 }
 impl DescribeWorkspaceBundlesOutput {
     /// <p>Information about the bundles.</p>
-    pub fn bundles(&self) -> ::std::option::Option<&[crate::types::WorkspaceBundle]> {
-        self.bundles.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bundles.is_none()`.
+    pub fn bundles(&self) -> &[crate::types::WorkspaceBundle] {
+        self.bundles.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. This token is valid for one day and must be used within that time frame.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

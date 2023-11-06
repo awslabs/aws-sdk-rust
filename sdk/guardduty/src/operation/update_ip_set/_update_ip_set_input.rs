@@ -55,6 +55,7 @@ pub struct UpdateIpSetInputBuilder {
 }
 impl UpdateIpSetInputBuilder {
     /// <p>The detectorID that specifies the GuardDuty service whose IPSet you want to update.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl UpdateIpSetInputBuilder {
         &self.detector_id
     }
     /// <p>The unique ID that specifies the IPSet that you want to update.</p>
+    /// This field is required.
     pub fn ip_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_set_id = ::std::option::Option::Some(input.into());
         self
@@ -125,7 +127,7 @@ impl UpdateIpSetInputBuilder {
         &self.activate
     }
     /// Consumes the builder and constructs a [`UpdateIpSetInput`](crate::operation::update_ip_set::UpdateIpSetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_ip_set::UpdateIpSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_ip_set::UpdateIpSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_ip_set::UpdateIpSetInput {
             detector_id: self.detector_id,
             ip_set_id: self.ip_set_id,

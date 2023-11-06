@@ -11,8 +11,10 @@ pub struct ListAttachedIndicesOutput {
 }
 impl ListAttachedIndicesOutput {
     /// <p>The indices attached to the specified object.</p>
-    pub fn index_attachments(&self) -> ::std::option::Option<&[crate::types::IndexAttachment]> {
-        self.index_attachments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.index_attachments.is_none()`.
+    pub fn index_attachments(&self) -> &[crate::types::IndexAttachment] {
+        self.index_attachments.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -27,6 +27,7 @@ pub struct DeleteDocumentClassifierInputBuilder {
 }
 impl DeleteDocumentClassifierInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. </p>
+    /// This field is required.
     pub fn document_classifier_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_classifier_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteDocumentClassifierInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_document_classifier::DeleteDocumentClassifierInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_document_classifier::DeleteDocumentClassifierInput {
             document_classifier_arn: self.document_classifier_arn,

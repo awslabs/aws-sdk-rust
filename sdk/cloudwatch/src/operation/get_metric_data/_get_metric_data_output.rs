@@ -14,8 +14,10 @@ pub struct GetMetricDataOutput {
 }
 impl GetMetricDataOutput {
     /// <p>The metrics that are returned, including the metric name, namespace, and dimensions.</p>
-    pub fn metric_data_results(&self) -> ::std::option::Option<&[crate::types::MetricDataResult]> {
-        self.metric_data_results.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_data_results.is_none()`.
+    pub fn metric_data_results(&self) -> &[crate::types::MetricDataResult] {
+        self.metric_data_results.as_deref().unwrap_or_default()
     }
     /// <p>A token that marks the next batch of returned results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -23,8 +25,10 @@ impl GetMetricDataOutput {
     }
     /// <p>Contains a message about this <code>GetMetricData</code> operation, if the operation results in such a message. An example of a message that might be returned is <code>Maximum number of allowed metrics exceeded</code>. If there is a message, as much of the operation as possible is still executed.</p>
     /// <p>A message appears here only if it is related to the global <code>GetMetricData</code> operation. Any message about a specific metric returned by the operation appears in the <code>MetricDataResult</code> object returned for that metric.</p>
-    pub fn messages(&self) -> ::std::option::Option<&[crate::types::MessageData]> {
-        self.messages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.messages.is_none()`.
+    pub fn messages(&self) -> &[crate::types::MessageData] {
+        self.messages.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetMetricDataOutput {

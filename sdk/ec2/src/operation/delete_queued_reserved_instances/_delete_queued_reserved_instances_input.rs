@@ -14,8 +14,10 @@ impl DeleteQueuedReservedInstancesInput {
         self.dry_run
     }
     /// <p>The IDs of the Reserved Instances.</p>
-    pub fn reserved_instances_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.reserved_instances_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reserved_instances_ids.is_none()`.
+    pub fn reserved_instances_ids(&self) -> &[::std::string::String] {
+        self.reserved_instances_ids.as_deref().unwrap_or_default()
     }
 }
 impl DeleteQueuedReservedInstancesInput {
@@ -72,7 +74,7 @@ impl DeleteQueuedReservedInstancesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_queued_reserved_instances::DeleteQueuedReservedInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_queued_reserved_instances::DeleteQueuedReservedInstancesInput {
             dry_run: self.dry_run,

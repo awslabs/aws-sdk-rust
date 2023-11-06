@@ -28,11 +28,10 @@ pub fn de_list_multipart_read_set_uploads_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerException" => crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsError::InternalServerException({
@@ -43,11 +42,10 @@ pub fn de_list_multipart_read_set_uploads_http_error(
                 output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "NotSupportedOperationException" => {
@@ -62,11 +60,10 @@ pub fn de_list_multipart_read_set_uploads_http_error(
                     )
                     .map_err(crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::not_supported_operation_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -78,11 +75,10 @@ pub fn de_list_multipart_read_set_uploads_http_error(
                 output = crate::protocol_serde::shape_request_timeout_exception::de_request_timeout_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::request_timeout_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => {
@@ -95,11 +91,10 @@ pub fn de_list_multipart_read_set_uploads_http_error(
                         crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                             .map_err(crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::resource_not_found_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -115,11 +110,10 @@ pub fn de_list_multipart_read_set_uploads_http_error(
                     )
                     .map_err(crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::service_quota_exceeded_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -131,11 +125,10 @@ pub fn de_list_multipart_read_set_uploads_http_error(
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsError::ValidationException({
@@ -146,11 +139,10 @@ pub fn de_list_multipart_read_set_uploads_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsError::generic(generic),

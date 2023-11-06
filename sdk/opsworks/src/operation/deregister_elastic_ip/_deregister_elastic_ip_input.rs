@@ -27,6 +27,7 @@ pub struct DeregisterElasticIpInputBuilder {
 }
 impl DeregisterElasticIpInputBuilder {
     /// <p>The Elastic IP address.</p>
+    /// This field is required.
     pub fn elastic_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.elastic_ip = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeregisterElasticIpInputBuilder {
     /// Consumes the builder and constructs a [`DeregisterElasticIpInput`](crate::operation::deregister_elastic_ip::DeregisterElasticIpInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::deregister_elastic_ip::DeregisterElasticIpInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::deregister_elastic_ip::DeregisterElasticIpInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::deregister_elastic_ip::DeregisterElasticIpInput { elastic_ip: self.elastic_ip })
     }

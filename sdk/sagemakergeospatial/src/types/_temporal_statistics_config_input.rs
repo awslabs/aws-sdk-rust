@@ -7,7 +7,7 @@ pub struct TemporalStatisticsConfigInput {
     /// <p>The input for the temporal statistics grouping by time frequency option.</p>
     pub group_by: ::std::option::Option<crate::types::GroupBy>,
     /// <p>The list of the statistics method options.</p>
-    pub statistics: ::std::option::Option<::std::vec::Vec<crate::types::TemporalStatistics>>,
+    pub statistics: ::std::vec::Vec<crate::types::TemporalStatistics>,
     /// <p>The list of target band names for the temporal statistic to calculate.</p>
     pub target_bands: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -17,12 +17,15 @@ impl TemporalStatisticsConfigInput {
         self.group_by.as_ref()
     }
     /// <p>The list of the statistics method options.</p>
-    pub fn statistics(&self) -> ::std::option::Option<&[crate::types::TemporalStatistics]> {
-        self.statistics.as_deref()
+    pub fn statistics(&self) -> &[crate::types::TemporalStatistics] {
+        use std::ops::Deref;
+        self.statistics.deref()
     }
     /// <p>The list of target band names for the temporal statistic to calculate.</p>
-    pub fn target_bands(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.target_bands.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_bands.is_none()`.
+    pub fn target_bands(&self) -> &[::std::string::String] {
+        self.target_bands.as_deref().unwrap_or_default()
     }
 }
 impl TemporalStatisticsConfigInput {
@@ -96,11 +99,18 @@ impl TemporalStatisticsConfigInputBuilder {
         &self.target_bands
     }
     /// Consumes the builder and constructs a [`TemporalStatisticsConfigInput`](crate::types::TemporalStatisticsConfigInput).
-    pub fn build(self) -> crate::types::TemporalStatisticsConfigInput {
-        crate::types::TemporalStatisticsConfigInput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`statistics`](crate::types::builders::TemporalStatisticsConfigInputBuilder::statistics)
+    pub fn build(self) -> ::std::result::Result<crate::types::TemporalStatisticsConfigInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TemporalStatisticsConfigInput {
             group_by: self.group_by,
-            statistics: self.statistics,
+            statistics: self.statistics.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "statistics",
+                    "statistics was not specified but it is required when building TemporalStatisticsConfigInput",
+                )
+            })?,
             target_bands: self.target_bands,
-        }
+        })
     }
 }

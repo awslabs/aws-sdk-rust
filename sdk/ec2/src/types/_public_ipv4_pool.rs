@@ -29,8 +29,10 @@ impl PublicIpv4Pool {
         self.description.as_deref()
     }
     /// <p>The address ranges.</p>
-    pub fn pool_address_ranges(&self) -> ::std::option::Option<&[crate::types::PublicIpv4PoolRange]> {
-        self.pool_address_ranges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pool_address_ranges.is_none()`.
+    pub fn pool_address_ranges(&self) -> &[crate::types::PublicIpv4PoolRange] {
+        self.pool_address_ranges.as_deref().unwrap_or_default()
     }
     /// <p>The total number of addresses.</p>
     pub fn total_address_count(&self) -> ::std::option::Option<i32> {
@@ -45,8 +47,10 @@ impl PublicIpv4Pool {
         self.network_border_group.as_deref()
     }
     /// <p>Any tags for the address pool.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl PublicIpv4Pool {

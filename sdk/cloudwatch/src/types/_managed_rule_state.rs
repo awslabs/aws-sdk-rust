@@ -35,6 +35,7 @@ pub struct ManagedRuleStateBuilder {
 }
 impl ManagedRuleStateBuilder {
     /// <p> The name of the Contributor Insights rule that contains data for the specified Amazon Web Services resource. </p>
+    /// This field is required.
     pub fn rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl ManagedRuleStateBuilder {
         &self.rule_name
     }
     /// <p> Indicates whether the rule is enabled or disabled. </p>
+    /// This field is required.
     pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state = ::std::option::Option::Some(input.into());
         self

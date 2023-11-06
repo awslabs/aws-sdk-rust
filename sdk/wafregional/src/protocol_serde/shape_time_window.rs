@@ -36,7 +36,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::time_window_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -47,16 +49,16 @@ where
 pub fn ser_time_window(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TimeWindow,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.start_time {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
         object
             .key("StartTime")
-            .date_time(var_1, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(&input.start_time, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_2) = &input.end_time {
+    {
         object
             .key("EndTime")
-            .date_time(var_2, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(&input.end_time, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }

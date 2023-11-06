@@ -50,6 +50,7 @@ impl DeregisterInstanceEventNotificationAttributesInputBuilder {
         &self.dry_run
     }
     /// <p>Information about the tag keys to deregister.</p>
+    /// This field is required.
     pub fn instance_tag_attribute(mut self, input: crate::types::DeregisterInstanceTagAttributeRequest) -> Self {
         self.instance_tag_attribute = ::std::option::Option::Some(input);
         self
@@ -68,7 +69,7 @@ impl DeregisterInstanceEventNotificationAttributesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_instance_event_notification_attributes::DeregisterInstanceEventNotificationAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::deregister_instance_event_notification_attributes::DeregisterInstanceEventNotificationAttributesInput {

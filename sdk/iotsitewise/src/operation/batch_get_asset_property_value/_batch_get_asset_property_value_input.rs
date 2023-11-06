@@ -10,8 +10,10 @@ pub struct BatchGetAssetPropertyValueInput {
 }
 impl BatchGetAssetPropertyValueInput {
     /// <p>The list of asset property value entries for the batch get request. You can specify up to 128 entries per request.</p>
-    pub fn entries(&self) -> ::std::option::Option<&[crate::types::BatchGetAssetPropertyValueEntry]> {
-        self.entries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entries.is_none()`.
+    pub fn entries(&self) -> &[crate::types::BatchGetAssetPropertyValueEntry] {
+        self.entries.as_deref().unwrap_or_default()
     }
     /// <p>The token to be used for the next set of paginated results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -72,7 +74,7 @@ impl BatchGetAssetPropertyValueInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_asset_property_value::BatchGetAssetPropertyValueInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_get_asset_property_value::BatchGetAssetPropertyValueInput {
             entries: self.entries,

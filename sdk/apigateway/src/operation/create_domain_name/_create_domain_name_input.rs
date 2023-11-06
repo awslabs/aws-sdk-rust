@@ -112,6 +112,7 @@ pub struct CreateDomainNameInputBuilder {
 }
 impl CreateDomainNameInputBuilder {
     /// <p>The name of the DomainName resource.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -302,7 +303,7 @@ impl CreateDomainNameInputBuilder {
     /// Consumes the builder and constructs a [`CreateDomainNameInput`](crate::operation::create_domain_name::CreateDomainNameInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_domain_name::CreateDomainNameInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_domain_name::CreateDomainNameInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_domain_name::CreateDomainNameInput {
             domain_name: self.domain_name,
             certificate_name: self.certificate_name,

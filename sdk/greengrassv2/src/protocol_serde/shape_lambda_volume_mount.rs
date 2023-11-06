@@ -2,18 +2,18 @@
 pub fn ser_lambda_volume_mount(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LambdaVolumeMount,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.source_path {
-        object.key("sourcePath").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("sourcePath").string(input.source_path.as_str());
     }
-    if let Some(var_2) = &input.destination_path {
-        object.key("destinationPath").string(var_2.as_str());
+    {
+        object.key("destinationPath").string(input.destination_path.as_str());
     }
-    if let Some(var_3) = &input.permission {
-        object.key("permission").string(var_3.as_str());
+    if let Some(var_1) = &input.permission {
+        object.key("permission").string(var_1.as_str());
     }
-    if let Some(var_4) = &input.add_group_owner {
-        object.key("addGroupOwner").boolean(*var_4);
+    if let Some(var_2) = &input.add_group_owner {
+        object.key("addGroupOwner").boolean(*var_2);
     }
     Ok(())
 }

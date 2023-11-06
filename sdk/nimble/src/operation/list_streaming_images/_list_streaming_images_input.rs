@@ -69,6 +69,7 @@ impl ListStreamingImagesInputBuilder {
         &self.owner
     }
     /// <p>The studio ID. </p>
+    /// This field is required.
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl ListStreamingImagesInputBuilder {
     /// Consumes the builder and constructs a [`ListStreamingImagesInput`](crate::operation::list_streaming_images::ListStreamingImagesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_streaming_images::ListStreamingImagesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_streaming_images::ListStreamingImagesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_streaming_images::ListStreamingImagesInput {
             next_token: self.next_token,

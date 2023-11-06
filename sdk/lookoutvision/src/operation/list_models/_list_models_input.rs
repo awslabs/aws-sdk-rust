@@ -41,6 +41,7 @@ pub struct ListModelsInputBuilder {
 }
 impl ListModelsInputBuilder {
     /// <p>The name of the project that contains the model versions that you want to list.</p>
+    /// This field is required.
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +84,7 @@ impl ListModelsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListModelsInput`](crate::operation::list_models::ListModelsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_models::ListModelsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_models::ListModelsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_models::ListModelsInput {
             project_name: self.project_name,
             next_token: self.next_token,

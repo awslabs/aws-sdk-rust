@@ -11,8 +11,10 @@ pub struct ListConnectorsOutput {
 }
 impl ListConnectorsOutput {
     /// <p>List connectors response items.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::Connector]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[crate::types::Connector] {
+        self.items.as_deref().unwrap_or_default()
     }
     /// <p>List connectors response next token.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

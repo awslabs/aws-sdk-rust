@@ -49,6 +49,7 @@ pub struct ReadinessCheckOutputBuilder {
 }
 impl ReadinessCheckOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) associated with a readiness check.</p>
+    /// This field is required.
     pub fn readiness_check_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.readiness_check_arn = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +78,7 @@ impl ReadinessCheckOutputBuilder {
         &self.readiness_check_name
     }
     /// <p>Name of the resource set to be checked.</p>
+    /// This field is required.
     pub fn resource_set(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_set = ::std::option::Option::Some(input.into());
         self

@@ -105,7 +105,7 @@ impl ListCachePoliciesInputBuilder {
     /// Consumes the builder and constructs a [`ListCachePoliciesInput`](crate::operation::list_cache_policies::ListCachePoliciesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_cache_policies::ListCachePoliciesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_cache_policies::ListCachePoliciesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_cache_policies::ListCachePoliciesInput {
             r#type: self.r#type,
             marker: self.marker,

@@ -27,6 +27,7 @@ pub struct DescribeFeatureTransformationInputBuilder {
 }
 impl DescribeFeatureTransformationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the feature transformation to describe.</p>
+    /// This field is required.
     pub fn feature_transformation_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_transformation_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeFeatureTransformationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_feature_transformation::DescribeFeatureTransformationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_feature_transformation::DescribeFeatureTransformationInput {
             feature_transformation_arn: self.feature_transformation_arn,

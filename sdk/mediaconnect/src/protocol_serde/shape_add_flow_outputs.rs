@@ -26,11 +26,8 @@ pub fn de_add_flow_outputs_http_error(
                     crate::protocol_serde::shape_add_flow_outputs420_exception::de_add_flow_outputs420_exception_json_err(_response_body, output)
                         .map_err(crate::operation::add_flow_outputs::AddFlowOutputsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::add_flow_outputs420_exception_correct_errors(output).build()
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "BadRequestException" => crate::operation::add_flow_outputs::AddFlowOutputsError::BadRequestException({
@@ -41,11 +38,8 @@ pub fn de_add_flow_outputs_http_error(
                 output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output)
                     .map_err(crate::operation::add_flow_outputs::AddFlowOutputsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::bad_request_exception_correct_errors(output).build()
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ForbiddenException" => crate::operation::add_flow_outputs::AddFlowOutputsError::ForbiddenException({
@@ -56,11 +50,8 @@ pub fn de_add_flow_outputs_http_error(
                 output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(_response_body, output)
                     .map_err(crate::operation::add_flow_outputs::AddFlowOutputsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::forbidden_exception_correct_errors(output).build()
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerErrorException" => crate::operation::add_flow_outputs::AddFlowOutputsError::InternalServerErrorException({
@@ -72,11 +63,8 @@ pub fn de_add_flow_outputs_http_error(
                     crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(_response_body, output)
                         .map_err(crate::operation::add_flow_outputs::AddFlowOutputsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_error_exception_correct_errors(output).build()
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "NotFoundException" => crate::operation::add_flow_outputs::AddFlowOutputsError::NotFoundException({
@@ -87,11 +75,8 @@ pub fn de_add_flow_outputs_http_error(
                 output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::add_flow_outputs::AddFlowOutputsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::not_found_exception_correct_errors(output).build()
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::add_flow_outputs::AddFlowOutputsError::ServiceUnavailableException({
@@ -103,11 +88,8 @@ pub fn de_add_flow_outputs_http_error(
                     crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
                         .map_err(crate::operation::add_flow_outputs::AddFlowOutputsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::service_unavailable_exception_correct_errors(output).build()
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "TooManyRequestsException" => crate::operation::add_flow_outputs::AddFlowOutputsError::TooManyRequestsException({
@@ -118,11 +100,8 @@ pub fn de_add_flow_outputs_http_error(
                 output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output)
                     .map_err(crate::operation::add_flow_outputs::AddFlowOutputsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::too_many_requests_exception_correct_errors(output).build()
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::add_flow_outputs::AddFlowOutputsError::generic(generic),
@@ -147,12 +126,12 @@ pub fn de_add_flow_outputs_http_response(
 
 pub fn ser_add_flow_outputs_input(
     input: &crate::operation::add_flow_outputs::AddFlowOutputsInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_add_flow_outputs_input::ser_add_flow_outputs_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_add_flow_outputs(
@@ -174,7 +153,7 @@ pub(crate) fn de_add_flow_outputs(
                     );
                 }
                 "outputs" => {
-                    builder = builder.set_outputs(crate::protocol_serde::shape___list_of_output::de___list_of_output(tokens)?);
+                    builder = builder.set_outputs(crate::protocol_serde::shape_list_of_output::de_list_of_output(tokens)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

@@ -11,8 +11,10 @@ pub struct DescribeVerifiedAccessEndpointsOutput {
 }
 impl DescribeVerifiedAccessEndpointsOutput {
     /// <p>The ID of the Verified Access endpoint.</p>
-    pub fn verified_access_endpoints(&self) -> ::std::option::Option<&[crate::types::VerifiedAccessEndpoint]> {
-        self.verified_access_endpoints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.verified_access_endpoints.is_none()`.
+    pub fn verified_access_endpoints(&self) -> &[crate::types::VerifiedAccessEndpoint] {
+        self.verified_access_endpoints.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

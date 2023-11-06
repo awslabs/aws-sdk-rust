@@ -5,24 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InvalidationSummary {
     /// <p>The unique ID for an invalidation request.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The time that an invalidation request was created.</p>
-    pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub create_time: ::aws_smithy_types::DateTime,
     /// <p>The status of an invalidation request.</p>
-    pub status: ::std::option::Option<::std::string::String>,
+    pub status: ::std::string::String,
 }
 impl InvalidationSummary {
     /// <p>The unique ID for an invalidation request.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The time that an invalidation request was created.</p>
-    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.create_time.as_ref()
+    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.create_time
     }
     /// <p>The status of an invalidation request.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
-        self.status.as_deref()
+    pub fn status(&self) -> &str {
+        use std::ops::Deref;
+        self.status.deref()
     }
 }
 impl InvalidationSummary {
@@ -42,6 +44,7 @@ pub struct InvalidationSummaryBuilder {
 }
 impl InvalidationSummaryBuilder {
     /// <p>The unique ID for an invalidation request.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl InvalidationSummaryBuilder {
         &self.id
     }
     /// <p>The time that an invalidation request was created.</p>
+    /// This field is required.
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
         self
@@ -70,6 +74,7 @@ impl InvalidationSummaryBuilder {
         &self.create_time
     }
     /// <p>The status of an invalidation request.</p>
+    /// This field is required.
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +89,30 @@ impl InvalidationSummaryBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`InvalidationSummary`](crate::types::InvalidationSummary).
-    pub fn build(self) -> crate::types::InvalidationSummary {
-        crate::types::InvalidationSummary {
-            id: self.id,
-            create_time: self.create_time,
-            status: self.status,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::InvalidationSummaryBuilder::id)
+    /// - [`create_time`](crate::types::builders::InvalidationSummaryBuilder::create_time)
+    /// - [`status`](crate::types::builders::InvalidationSummaryBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::InvalidationSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::InvalidationSummary {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building InvalidationSummary",
+                )
+            })?,
+            create_time: self.create_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "create_time",
+                    "create_time was not specified but it is required when building InvalidationSummary",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building InvalidationSummary",
+                )
+            })?,
+        })
     }
 }

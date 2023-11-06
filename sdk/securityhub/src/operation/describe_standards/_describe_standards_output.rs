@@ -11,8 +11,10 @@ pub struct DescribeStandardsOutput {
 }
 impl DescribeStandardsOutput {
     /// <p>A list of available standards.</p>
-    pub fn standards(&self) -> ::std::option::Option<&[crate::types::Standard]> {
-        self.standards.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.standards.is_none()`.
+    pub fn standards(&self) -> &[crate::types::Standard] {
+        self.standards.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token to use to request the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

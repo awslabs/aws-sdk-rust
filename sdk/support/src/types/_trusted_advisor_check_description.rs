@@ -5,36 +5,41 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrustedAdvisorCheckDescription {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The display name for the Trusted Advisor check.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The description of the Trusted Advisor check, which includes the alert criteria and recommended operations (contains HTML markup).</p>
-    pub description: ::std::option::Option<::std::string::String>,
+    pub description: ::std::string::String,
     /// <p>The category of the Trusted Advisor check.</p>
-    pub category: ::std::option::Option<::std::string::String>,
+    pub category: ::std::string::String,
     /// <p>The column headings for the data returned by the Trusted Advisor check. The order of the headings corresponds to the order of the data in the <b>Metadata</b> element of the <code>TrustedAdvisorResourceDetail</code> for the check. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data. </p>
-    pub metadata: ::std::option::Option<::std::vec::Vec<::std::option::Option<::std::string::String>>>,
+    pub metadata: ::std::vec::Vec<::std::option::Option<::std::string::String>>,
 }
 impl TrustedAdvisorCheckDescription {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The display name for the Trusted Advisor check.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The description of the Trusted Advisor check, which includes the alert criteria and recommended operations (contains HTML markup).</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
-        self.description.as_deref()
+    pub fn description(&self) -> &str {
+        use std::ops::Deref;
+        self.description.deref()
     }
     /// <p>The category of the Trusted Advisor check.</p>
-    pub fn category(&self) -> ::std::option::Option<&str> {
-        self.category.as_deref()
+    pub fn category(&self) -> &str {
+        use std::ops::Deref;
+        self.category.deref()
     }
     /// <p>The column headings for the data returned by the Trusted Advisor check. The order of the headings corresponds to the order of the data in the <b>Metadata</b> element of the <code>TrustedAdvisorResourceDetail</code> for the check. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data. </p>
-    pub fn metadata(&self) -> ::std::option::Option<&[::std::option::Option<::std::string::String>]> {
-        self.metadata.as_deref()
+    pub fn metadata(&self) -> &[::std::option::Option<::std::string::String>] {
+        use std::ops::Deref;
+        self.metadata.deref()
     }
 }
 impl TrustedAdvisorCheckDescription {
@@ -56,6 +61,7 @@ pub struct TrustedAdvisorCheckDescriptionBuilder {
 }
 impl TrustedAdvisorCheckDescriptionBuilder {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +76,7 @@ impl TrustedAdvisorCheckDescriptionBuilder {
         &self.id
     }
     /// <p>The display name for the Trusted Advisor check.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +91,7 @@ impl TrustedAdvisorCheckDescriptionBuilder {
         &self.name
     }
     /// <p>The description of the Trusted Advisor check, which includes the alert criteria and recommended operations (contains HTML markup).</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +106,7 @@ impl TrustedAdvisorCheckDescriptionBuilder {
         &self.description
     }
     /// <p>The category of the Trusted Advisor check.</p>
+    /// This field is required.
     pub fn category(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.category = ::std::option::Option::Some(input.into());
         self
@@ -132,13 +141,44 @@ impl TrustedAdvisorCheckDescriptionBuilder {
         &self.metadata
     }
     /// Consumes the builder and constructs a [`TrustedAdvisorCheckDescription`](crate::types::TrustedAdvisorCheckDescription).
-    pub fn build(self) -> crate::types::TrustedAdvisorCheckDescription {
-        crate::types::TrustedAdvisorCheckDescription {
-            id: self.id,
-            name: self.name,
-            description: self.description,
-            category: self.category,
-            metadata: self.metadata,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::TrustedAdvisorCheckDescriptionBuilder::id)
+    /// - [`name`](crate::types::builders::TrustedAdvisorCheckDescriptionBuilder::name)
+    /// - [`description`](crate::types::builders::TrustedAdvisorCheckDescriptionBuilder::description)
+    /// - [`category`](crate::types::builders::TrustedAdvisorCheckDescriptionBuilder::category)
+    /// - [`metadata`](crate::types::builders::TrustedAdvisorCheckDescriptionBuilder::metadata)
+    pub fn build(self) -> ::std::result::Result<crate::types::TrustedAdvisorCheckDescription, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TrustedAdvisorCheckDescription {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building TrustedAdvisorCheckDescription",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building TrustedAdvisorCheckDescription",
+                )
+            })?,
+            description: self.description.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "description",
+                    "description was not specified but it is required when building TrustedAdvisorCheckDescription",
+                )
+            })?,
+            category: self.category.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "category",
+                    "category was not specified but it is required when building TrustedAdvisorCheckDescription",
+                )
+            })?,
+            metadata: self.metadata.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "metadata",
+                    "metadata was not specified but it is required when building TrustedAdvisorCheckDescription",
+                )
+            })?,
+        })
     }
 }

@@ -2,7 +2,7 @@
 pub fn ser_delete_identities_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_identities::DeleteIdentitiesInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.identity_ids_to_delete {
         let mut array_2 = object.key("IdentityIdsToDelete").start_array();
         for item_3 in var_1 {

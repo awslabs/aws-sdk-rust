@@ -8,8 +8,10 @@ pub struct DescribeLoadBasedAutoScalingInput {
 }
 impl DescribeLoadBasedAutoScalingInput {
     /// <p>An array of layer IDs.</p>
-    pub fn layer_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.layer_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.layer_ids.is_none()`.
+    pub fn layer_ids(&self) -> &[::std::string::String] {
+        self.layer_ids.as_deref().unwrap_or_default()
     }
 }
 impl DescribeLoadBasedAutoScalingInput {
@@ -51,7 +53,7 @@ impl DescribeLoadBasedAutoScalingInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_load_based_auto_scaling::DescribeLoadBasedAutoScalingInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_load_based_auto_scaling::DescribeLoadBasedAutoScalingInput { layer_ids: self.layer_ids })
     }

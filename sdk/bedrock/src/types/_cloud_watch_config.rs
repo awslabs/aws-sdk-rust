@@ -5,20 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudWatchConfig {
     /// <p>The log group name.</p>
-    pub log_group_name: ::std::option::Option<::std::string::String>,
+    pub log_group_name: ::std::string::String,
     /// <p>The role ARN.</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
     /// <p>S3 configuration for delivering a large amount of data.</p>
     pub large_data_delivery_s3_config: ::std::option::Option<crate::types::S3Config>,
 }
 impl CloudWatchConfig {
     /// <p>The log group name.</p>
-    pub fn log_group_name(&self) -> ::std::option::Option<&str> {
-        self.log_group_name.as_deref()
+    pub fn log_group_name(&self) -> &str {
+        use std::ops::Deref;
+        self.log_group_name.deref()
     }
     /// <p>The role ARN.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
     /// <p>S3 configuration for delivering a large amount of data.</p>
     pub fn large_data_delivery_s3_config(&self) -> ::std::option::Option<&crate::types::S3Config> {
@@ -42,6 +44,7 @@ pub struct CloudWatchConfigBuilder {
 }
 impl CloudWatchConfigBuilder {
     /// <p>The log group name.</p>
+    /// This field is required.
     pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl CloudWatchConfigBuilder {
         &self.log_group_name
     }
     /// <p>The role ARN.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +88,24 @@ impl CloudWatchConfigBuilder {
         &self.large_data_delivery_s3_config
     }
     /// Consumes the builder and constructs a [`CloudWatchConfig`](crate::types::CloudWatchConfig).
-    pub fn build(self) -> crate::types::CloudWatchConfig {
-        crate::types::CloudWatchConfig {
-            log_group_name: self.log_group_name,
-            role_arn: self.role_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`log_group_name`](crate::types::builders::CloudWatchConfigBuilder::log_group_name)
+    /// - [`role_arn`](crate::types::builders::CloudWatchConfigBuilder::role_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::CloudWatchConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CloudWatchConfig {
+            log_group_name: self.log_group_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "log_group_name",
+                    "log_group_name was not specified but it is required when building CloudWatchConfig",
+                )
+            })?,
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building CloudWatchConfig",
+                )
+            })?,
             large_data_delivery_s3_config: self.large_data_delivery_s3_config,
-        }
+        })
     }
 }

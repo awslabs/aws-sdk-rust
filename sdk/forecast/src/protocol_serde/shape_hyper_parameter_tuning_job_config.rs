@@ -2,7 +2,7 @@
 pub fn ser_hyper_parameter_tuning_job_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HyperParameterTuningJobConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.parameter_ranges {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ParameterRanges").start_object();

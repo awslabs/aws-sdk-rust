@@ -27,6 +27,7 @@ pub struct DescribeImageInputBuilder {
 }
 impl DescribeImageInputBuilder {
     /// <p>The name of the image to describe.</p>
+    /// This field is required.
     pub fn image_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeImageInputBuilder {
     /// Consumes the builder and constructs a [`DescribeImageInput`](crate::operation::describe_image::DescribeImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_image::DescribeImageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_image::DescribeImageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_image::DescribeImageInput { image_name: self.image_name })
     }
 }

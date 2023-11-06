@@ -11,8 +11,10 @@ pub struct DescribeImageTagsOutput {
 }
 impl DescribeImageTagsOutput {
     /// <p>The image tag details for the images in the requested repository.</p>
-    pub fn image_tag_details(&self) -> ::std::option::Option<&[crate::types::ImageTagDetail]> {
-        self.image_tag_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_tag_details.is_none()`.
+    pub fn image_tag_details(&self) -> &[crate::types::ImageTagDetail] {
+        self.image_tag_details.as_deref().unwrap_or_default()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImageTags</code> request. When the results of a <code>DescribeImageTags</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. If there are no more results to return, this value is <code>null</code>.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -18,8 +18,10 @@ impl ListAccessPoliciesInput {
         self.r#type.as_ref()
     }
     /// <p>Resource filters (can be collections or indexes) that policies can apply to.</p>
-    pub fn resource(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource.is_none()`.
+    pub fn resource(&self) -> &[::std::string::String] {
+        self.resource.as_deref().unwrap_or_default()
     }
     /// <p>If your initial <code>ListAccessPolicies</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListAccessPolicies</code> operations, which returns results in the next page. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -48,6 +50,7 @@ pub struct ListAccessPoliciesInputBuilder {
 }
 impl ListAccessPoliciesInputBuilder {
     /// <p>The type of access policy.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::AccessPolicyType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -112,7 +115,8 @@ impl ListAccessPoliciesInputBuilder {
     /// Consumes the builder and constructs a [`ListAccessPoliciesInput`](crate::operation::list_access_policies::ListAccessPoliciesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_access_policies::ListAccessPoliciesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_access_policies::ListAccessPoliciesInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_access_policies::ListAccessPoliciesInput {
             r#type: self.r#type,
             resource: self.resource,

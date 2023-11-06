@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFunctionUrlConfigsOutput {
     /// <p>A list of function URL configurations.</p>
-    pub function_url_configs: ::std::option::Option<::std::vec::Vec<crate::types::FunctionUrlConfig>>,
+    pub function_url_configs: ::std::vec::Vec<crate::types::FunctionUrlConfig>,
     /// <p>The pagination token that's included if more results are available.</p>
     pub next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListFunctionUrlConfigsOutput {
     /// <p>A list of function URL configurations.</p>
-    pub fn function_url_configs(&self) -> ::std::option::Option<&[crate::types::FunctionUrlConfig]> {
-        self.function_url_configs.as_deref()
+    pub fn function_url_configs(&self) -> &[crate::types::FunctionUrlConfig] {
+        use std::ops::Deref;
+        self.function_url_configs.deref()
     }
     /// <p>The pagination token that's included if more results are available.</p>
     pub fn next_marker(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,23 @@ impl ListFunctionUrlConfigsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListFunctionUrlConfigsOutput`](crate::operation::list_function_url_configs::ListFunctionUrlConfigsOutput).
-    pub fn build(self) -> crate::operation::list_function_url_configs::ListFunctionUrlConfigsOutput {
-        crate::operation::list_function_url_configs::ListFunctionUrlConfigsOutput {
-            function_url_configs: self.function_url_configs,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`function_url_configs`](crate::operation::list_function_url_configs::builders::ListFunctionUrlConfigsOutputBuilder::function_url_configs)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_function_url_configs::ListFunctionUrlConfigsOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_function_url_configs::ListFunctionUrlConfigsOutput {
+            function_url_configs: self.function_url_configs.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "function_url_configs",
+                    "function_url_configs was not specified but it is required when building ListFunctionUrlConfigsOutput",
+                )
+            })?,
             next_marker: self.next_marker,
             _request_id: self._request_id,
-        }
+        })
     }
 }

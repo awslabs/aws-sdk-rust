@@ -36,8 +36,10 @@ impl ListVirtualClustersInput {
         self.created_before.as_ref()
     }
     /// <p>The states of the requested virtual clusters.</p>
-    pub fn states(&self) -> ::std::option::Option<&[crate::types::VirtualClusterState]> {
-        self.states.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.states.is_none()`.
+    pub fn states(&self) -> &[crate::types::VirtualClusterState] {
+        self.states.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of virtual clusters that can be listed.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -175,7 +177,7 @@ impl ListVirtualClustersInputBuilder {
     /// Consumes the builder and constructs a [`ListVirtualClustersInput`](crate::operation::list_virtual_clusters::ListVirtualClustersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_virtual_clusters::ListVirtualClustersInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_virtual_clusters::ListVirtualClustersInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_virtual_clusters::ListVirtualClustersInput {
             container_provider_id: self.container_provider_id,

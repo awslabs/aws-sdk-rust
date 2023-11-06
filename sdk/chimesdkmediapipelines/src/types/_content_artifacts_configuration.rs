@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContentArtifactsConfiguration {
     /// <p>Indicates whether the content artifact is enabled or disabled.</p>
-    pub state: ::std::option::Option<crate::types::ArtifactsState>,
+    pub state: crate::types::ArtifactsState,
     /// <p>The MUX type of the artifact configuration.</p>
     pub mux_type: ::std::option::Option<crate::types::ContentMuxType>,
 }
 impl ContentArtifactsConfiguration {
     /// <p>Indicates whether the content artifact is enabled or disabled.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ArtifactsState> {
-        self.state.as_ref()
+    pub fn state(&self) -> &crate::types::ArtifactsState {
+        &self.state
     }
     /// <p>The MUX type of the artifact configuration.</p>
     pub fn mux_type(&self) -> ::std::option::Option<&crate::types::ContentMuxType> {
@@ -35,6 +35,7 @@ pub struct ContentArtifactsConfigurationBuilder {
 }
 impl ContentArtifactsConfigurationBuilder {
     /// <p>Indicates whether the content artifact is enabled or disabled.</p>
+    /// This field is required.
     pub fn state(mut self, input: crate::types::ArtifactsState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
@@ -63,10 +64,17 @@ impl ContentArtifactsConfigurationBuilder {
         &self.mux_type
     }
     /// Consumes the builder and constructs a [`ContentArtifactsConfiguration`](crate::types::ContentArtifactsConfiguration).
-    pub fn build(self) -> crate::types::ContentArtifactsConfiguration {
-        crate::types::ContentArtifactsConfiguration {
-            state: self.state,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`state`](crate::types::builders::ContentArtifactsConfigurationBuilder::state)
+    pub fn build(self) -> ::std::result::Result<crate::types::ContentArtifactsConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ContentArtifactsConfiguration {
+            state: self.state.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "state",
+                    "state was not specified but it is required when building ContentArtifactsConfiguration",
+                )
+            })?,
             mux_type: self.mux_type,
-        }
+        })
     }
 }

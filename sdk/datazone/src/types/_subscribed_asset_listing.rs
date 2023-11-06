@@ -33,8 +33,10 @@ impl SubscribedAssetListing {
         self.forms.as_deref()
     }
     /// <p>The glossary terms attached to the published asset for which the subscription grant is created.</p>
-    pub fn glossary_terms(&self) -> ::std::option::Option<&[crate::types::DetailedGlossaryTerm]> {
-        self.glossary_terms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.glossary_terms.is_none()`.
+    pub fn glossary_terms(&self) -> &[crate::types::DetailedGlossaryTerm] {
+        self.glossary_terms.as_deref().unwrap_or_default()
     }
 }
 impl SubscribedAssetListing {

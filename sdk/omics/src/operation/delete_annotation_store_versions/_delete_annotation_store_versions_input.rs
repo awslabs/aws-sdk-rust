@@ -16,8 +16,10 @@ impl DeleteAnnotationStoreVersionsInput {
         self.name.as_deref()
     }
     /// <p> The versions of an annotation store to be deleted. </p>
-    pub fn versions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.versions.is_none()`.
+    pub fn versions(&self) -> &[::std::string::String] {
+        self.versions.as_deref().unwrap_or_default()
     }
     /// <p> Forces the deletion of an annotation store version when imports are in-progress.. </p>
     pub fn force(&self) -> ::std::option::Option<bool> {
@@ -41,6 +43,7 @@ pub struct DeleteAnnotationStoreVersionsInputBuilder {
 }
 impl DeleteAnnotationStoreVersionsInputBuilder {
     /// <p> The name of the annotation store from which versions are being deleted. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -93,7 +96,7 @@ impl DeleteAnnotationStoreVersionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_annotation_store_versions::DeleteAnnotationStoreVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_annotation_store_versions::DeleteAnnotationStoreVersionsInput {
             name: self.name,

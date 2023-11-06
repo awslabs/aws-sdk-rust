@@ -48,6 +48,7 @@ impl EnableVolumeIoInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the volume.</p>
+    /// This field is required.
     pub fn volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl EnableVolumeIoInputBuilder {
     /// Consumes the builder and constructs a [`EnableVolumeIoInput`](crate::operation::enable_volume_io::EnableVolumeIoInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::enable_volume_io::EnableVolumeIoInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::enable_volume_io::EnableVolumeIoInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::enable_volume_io::EnableVolumeIoInput {
             dry_run: self.dry_run,
             volume_id: self.volume_id,

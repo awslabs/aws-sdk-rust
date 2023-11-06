@@ -5,30 +5,33 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CvssScore {
     /// <p>The base CVSS score used for the finding.</p>
-    pub base_score: ::std::option::Option<f64>,
+    pub base_score: f64,
     /// <p>The vector string of the CVSS score.</p>
-    pub scoring_vector: ::std::option::Option<::std::string::String>,
+    pub scoring_vector: ::std::string::String,
     /// <p>The version of CVSS used for the score.</p>
-    pub version: ::std::option::Option<::std::string::String>,
+    pub version: ::std::string::String,
     /// <p>The source of the CVSS score.</p>
-    pub source: ::std::option::Option<::std::string::String>,
+    pub source: ::std::string::String,
 }
 impl CvssScore {
     /// <p>The base CVSS score used for the finding.</p>
-    pub fn base_score(&self) -> ::std::option::Option<f64> {
+    pub fn base_score(&self) -> f64 {
         self.base_score
     }
     /// <p>The vector string of the CVSS score.</p>
-    pub fn scoring_vector(&self) -> ::std::option::Option<&str> {
-        self.scoring_vector.as_deref()
+    pub fn scoring_vector(&self) -> &str {
+        use std::ops::Deref;
+        self.scoring_vector.deref()
     }
     /// <p>The version of CVSS used for the score.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
-        self.version.as_deref()
+    pub fn version(&self) -> &str {
+        use std::ops::Deref;
+        self.version.deref()
     }
     /// <p>The source of the CVSS score.</p>
-    pub fn source(&self) -> ::std::option::Option<&str> {
-        self.source.as_deref()
+    pub fn source(&self) -> &str {
+        use std::ops::Deref;
+        self.source.deref()
     }
 }
 impl CvssScore {
@@ -49,6 +52,7 @@ pub struct CvssScoreBuilder {
 }
 impl CvssScoreBuilder {
     /// <p>The base CVSS score used for the finding.</p>
+    /// This field is required.
     pub fn base_score(mut self, input: f64) -> Self {
         self.base_score = ::std::option::Option::Some(input);
         self
@@ -63,6 +67,7 @@ impl CvssScoreBuilder {
         &self.base_score
     }
     /// <p>The vector string of the CVSS score.</p>
+    /// This field is required.
     pub fn scoring_vector(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scoring_vector = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +82,7 @@ impl CvssScoreBuilder {
         &self.scoring_vector
     }
     /// <p>The version of CVSS used for the score.</p>
+    /// This field is required.
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +97,7 @@ impl CvssScoreBuilder {
         &self.version
     }
     /// <p>The source of the CVSS score.</p>
+    /// This field is required.
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +112,37 @@ impl CvssScoreBuilder {
         &self.source
     }
     /// Consumes the builder and constructs a [`CvssScore`](crate::types::CvssScore).
-    pub fn build(self) -> crate::types::CvssScore {
-        crate::types::CvssScore {
-            base_score: self.base_score,
-            scoring_vector: self.scoring_vector,
-            version: self.version,
-            source: self.source,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`base_score`](crate::types::builders::CvssScoreBuilder::base_score)
+    /// - [`scoring_vector`](crate::types::builders::CvssScoreBuilder::scoring_vector)
+    /// - [`version`](crate::types::builders::CvssScoreBuilder::version)
+    /// - [`source`](crate::types::builders::CvssScoreBuilder::source)
+    pub fn build(self) -> ::std::result::Result<crate::types::CvssScore, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CvssScore {
+            base_score: self.base_score.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "base_score",
+                    "base_score was not specified but it is required when building CvssScore",
+                )
+            })?,
+            scoring_vector: self.scoring_vector.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "scoring_vector",
+                    "scoring_vector was not specified but it is required when building CvssScore",
+                )
+            })?,
+            version: self.version.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "version",
+                    "version was not specified but it is required when building CvssScore",
+                )
+            })?,
+            source: self.source.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "source",
+                    "source was not specified but it is required when building CvssScore",
+                )
+            })?,
+        })
     }
 }

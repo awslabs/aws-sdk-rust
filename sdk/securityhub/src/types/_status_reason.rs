@@ -35,6 +35,7 @@ pub struct StatusReasonBuilder {
 }
 impl StatusReasonBuilder {
     /// <p>A code that represents a reason for the control status. For the list of status reason codes and their meanings, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related information in the ASFF</a> in the <i>Security Hub User Guide</i>. </p>
+    /// This field is required.
     pub fn reason_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason_code = ::std::option::Option::Some(input.into());
         self

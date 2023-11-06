@@ -27,6 +27,7 @@ pub struct GetLexiconInputBuilder {
 }
 impl GetLexiconInputBuilder {
     /// <p>Name of the lexicon.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetLexiconInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`GetLexiconInput`](crate::operation::get_lexicon::GetLexiconInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_lexicon::GetLexiconInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_lexicon::GetLexiconInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_lexicon::GetLexiconInput { name: self.name })
     }
 }

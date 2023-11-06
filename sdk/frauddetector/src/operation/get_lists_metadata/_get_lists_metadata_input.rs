@@ -85,7 +85,7 @@ impl GetListsMetadataInputBuilder {
     /// Consumes the builder and constructs a [`GetListsMetadataInput`](crate::operation::get_lists_metadata::GetListsMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_lists_metadata::GetListsMetadataInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_lists_metadata::GetListsMetadataInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_lists_metadata::GetListsMetadataInput {
             name: self.name,
             next_token: self.next_token,

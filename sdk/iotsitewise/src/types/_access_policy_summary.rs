@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessPolicySummary {
     /// <p>The ID of the access policy.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The identity (an IAM Identity Center user, an IAM Identity Center group, or an IAM user).</p>
     pub identity: ::std::option::Option<crate::types::Identity>,
     /// <p>The IoT SiteWise Monitor resource (a portal or project).</p>
     pub resource: ::std::option::Option<crate::types::Resource>,
     /// <p>The permissions for the access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
-    pub permission: ::std::option::Option<crate::types::Permission>,
+    pub permission: crate::types::Permission,
     /// <p>The date the access policy was created, in Unix epoch time.</p>
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date the access policy was last updated, in Unix epoch time.</p>
@@ -19,8 +19,9 @@ pub struct AccessPolicySummary {
 }
 impl AccessPolicySummary {
     /// <p>The ID of the access policy.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The identity (an IAM Identity Center user, an IAM Identity Center group, or an IAM user).</p>
     pub fn identity(&self) -> ::std::option::Option<&crate::types::Identity> {
@@ -31,8 +32,8 @@ impl AccessPolicySummary {
         self.resource.as_ref()
     }
     /// <p>The permissions for the access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
-    pub fn permission(&self) -> ::std::option::Option<&crate::types::Permission> {
-        self.permission.as_ref()
+    pub fn permission(&self) -> &crate::types::Permission {
+        &self.permission
     }
     /// <p>The date the access policy was created, in Unix epoch time.</p>
     pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -63,6 +64,7 @@ pub struct AccessPolicySummaryBuilder {
 }
 impl AccessPolicySummaryBuilder {
     /// <p>The ID of the access policy.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +79,7 @@ impl AccessPolicySummaryBuilder {
         &self.id
     }
     /// <p>The identity (an IAM Identity Center user, an IAM Identity Center group, or an IAM user).</p>
+    /// This field is required.
     pub fn identity(mut self, input: crate::types::Identity) -> Self {
         self.identity = ::std::option::Option::Some(input);
         self
@@ -91,6 +94,7 @@ impl AccessPolicySummaryBuilder {
         &self.identity
     }
     /// <p>The IoT SiteWise Monitor resource (a portal or project).</p>
+    /// This field is required.
     pub fn resource(mut self, input: crate::types::Resource) -> Self {
         self.resource = ::std::option::Option::Some(input);
         self
@@ -105,6 +109,7 @@ impl AccessPolicySummaryBuilder {
         &self.resource
     }
     /// <p>The permissions for the access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
+    /// This field is required.
     pub fn permission(mut self, input: crate::types::Permission) -> Self {
         self.permission = ::std::option::Option::Some(input);
         self
@@ -147,14 +152,27 @@ impl AccessPolicySummaryBuilder {
         &self.last_update_date
     }
     /// Consumes the builder and constructs a [`AccessPolicySummary`](crate::types::AccessPolicySummary).
-    pub fn build(self) -> crate::types::AccessPolicySummary {
-        crate::types::AccessPolicySummary {
-            id: self.id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::AccessPolicySummaryBuilder::id)
+    /// - [`permission`](crate::types::builders::AccessPolicySummaryBuilder::permission)
+    pub fn build(self) -> ::std::result::Result<crate::types::AccessPolicySummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AccessPolicySummary {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building AccessPolicySummary",
+                )
+            })?,
             identity: self.identity,
             resource: self.resource,
-            permission: self.permission,
+            permission: self.permission.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "permission",
+                    "permission was not specified but it is required when building AccessPolicySummary",
+                )
+            })?,
             creation_date: self.creation_date,
             last_update_date: self.last_update_date,
-        }
+        })
     }
 }

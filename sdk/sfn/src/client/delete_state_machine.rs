@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteStateMachine`](crate::operation::delete_state_machine::builders::DeleteStateMachineFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`state_machine_arn(impl Into<String>)`](crate::operation::delete_state_machine::builders::DeleteStateMachineFluentBuilder::state_machine_arn) / [`set_state_machine_arn(Option<String>)`](crate::operation::delete_state_machine::builders::DeleteStateMachineFluentBuilder::set_state_machine_arn): <p>The Amazon Resource Name (ARN) of the state machine to delete.</p>
+    ///   - [`state_machine_arn(impl Into<String>)`](crate::operation::delete_state_machine::builders::DeleteStateMachineFluentBuilder::state_machine_arn) / [`set_state_machine_arn(Option<String>)`](crate::operation::delete_state_machine::builders::DeleteStateMachineFluentBuilder::set_state_machine_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the state machine to delete.</p><br>
     /// - On success, responds with [`DeleteStateMachineOutput`](crate::operation::delete_state_machine::DeleteStateMachineOutput)
     /// - On failure, responds with [`SdkError<DeleteStateMachineError>`](crate::operation::delete_state_machine::DeleteStateMachineError)
     pub fn delete_state_machine(&self) -> crate::operation::delete_state_machine::builders::DeleteStateMachineFluentBuilder {

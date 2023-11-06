@@ -67,6 +67,7 @@ impl ListDomainsInputBuilder {
         &self.next_page_token
     }
     /// <p>Specifies the registration status of the domains to list.</p>
+    /// This field is required.
     pub fn registration_status(mut self, input: crate::types::RegistrationStatus) -> Self {
         self.registration_status = ::std::option::Option::Some(input);
         self
@@ -109,7 +110,7 @@ impl ListDomainsInputBuilder {
         &self.reverse_order
     }
     /// Consumes the builder and constructs a [`ListDomainsInput`](crate::operation::list_domains::ListDomainsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_domains::ListDomainsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_domains::ListDomainsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_domains::ListDomainsInput {
             next_page_token: self.next_page_token,
             registration_status: self.registration_status,

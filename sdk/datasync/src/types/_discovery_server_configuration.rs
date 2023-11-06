@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DiscoveryServerConfiguration {
     /// <p>The domain name or IP address of your storage system's management interface.</p>
-    pub server_hostname: ::std::option::Option<::std::string::String>,
+    pub server_hostname: ::std::string::String,
     /// <p>The network port for accessing the storage system's management interface.</p>
     pub server_port: ::std::option::Option<i32>,
 }
 impl DiscoveryServerConfiguration {
     /// <p>The domain name or IP address of your storage system's management interface.</p>
-    pub fn server_hostname(&self) -> ::std::option::Option<&str> {
-        self.server_hostname.as_deref()
+    pub fn server_hostname(&self) -> &str {
+        use std::ops::Deref;
+        self.server_hostname.deref()
     }
     /// <p>The network port for accessing the storage system's management interface.</p>
     pub fn server_port(&self) -> ::std::option::Option<i32> {
@@ -35,6 +36,7 @@ pub struct DiscoveryServerConfigurationBuilder {
 }
 impl DiscoveryServerConfigurationBuilder {
     /// <p>The domain name or IP address of your storage system's management interface.</p>
+    /// This field is required.
     pub fn server_hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_hostname = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl DiscoveryServerConfigurationBuilder {
         &self.server_port
     }
     /// Consumes the builder and constructs a [`DiscoveryServerConfiguration`](crate::types::DiscoveryServerConfiguration).
-    pub fn build(self) -> crate::types::DiscoveryServerConfiguration {
-        crate::types::DiscoveryServerConfiguration {
-            server_hostname: self.server_hostname,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`server_hostname`](crate::types::builders::DiscoveryServerConfigurationBuilder::server_hostname)
+    pub fn build(self) -> ::std::result::Result<crate::types::DiscoveryServerConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DiscoveryServerConfiguration {
+            server_hostname: self.server_hostname.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "server_hostname",
+                    "server_hostname was not specified but it is required when building DiscoveryServerConfiguration",
+                )
+            })?,
             server_port: self.server_port,
-        }
+        })
     }
 }

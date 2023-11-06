@@ -2,7 +2,7 @@
 pub fn ser_update_browser_settings_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_browser_settings::UpdateBrowserSettingsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.browser_policy {
         object.key("browserPolicy").string(var_1.as_str());
     }

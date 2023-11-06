@@ -9,7 +9,7 @@ pub struct ScheduleConfiguration {
     /// <p>The name of the object to pull from the data source.</p>
     pub object: ::std::option::Option<::std::string::String>,
     /// <p>How often the data should be pulled from data source.</p>
-    pub schedule_expression: ::std::option::Option<::std::string::String>,
+    pub schedule_expression: ::std::string::String,
 }
 impl ScheduleConfiguration {
     /// <p>The start date for objects to import in the first flow run as an Unix/epoch timestamp in milliseconds or in ISO-8601 format.</p>
@@ -21,8 +21,9 @@ impl ScheduleConfiguration {
         self.object.as_deref()
     }
     /// <p>How often the data should be pulled from data source.</p>
-    pub fn schedule_expression(&self) -> ::std::option::Option<&str> {
-        self.schedule_expression.as_deref()
+    pub fn schedule_expression(&self) -> &str {
+        use std::ops::Deref;
+        self.schedule_expression.deref()
     }
 }
 impl ScheduleConfiguration {
@@ -70,6 +71,7 @@ impl ScheduleConfigurationBuilder {
         &self.object
     }
     /// <p>How often the data should be pulled from data source.</p>
+    /// This field is required.
     pub fn schedule_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule_expression = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +86,18 @@ impl ScheduleConfigurationBuilder {
         &self.schedule_expression
     }
     /// Consumes the builder and constructs a [`ScheduleConfiguration`](crate::types::ScheduleConfiguration).
-    pub fn build(self) -> crate::types::ScheduleConfiguration {
-        crate::types::ScheduleConfiguration {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`schedule_expression`](crate::types::builders::ScheduleConfigurationBuilder::schedule_expression)
+    pub fn build(self) -> ::std::result::Result<crate::types::ScheduleConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ScheduleConfiguration {
             first_execution_from: self.first_execution_from,
             object: self.object,
-            schedule_expression: self.schedule_expression,
-        }
+            schedule_expression: self.schedule_expression.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "schedule_expression",
+                    "schedule_expression was not specified but it is required when building ScheduleConfiguration",
+                )
+            })?,
+        })
     }
 }

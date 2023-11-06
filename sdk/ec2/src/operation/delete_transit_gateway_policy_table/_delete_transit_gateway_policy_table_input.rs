@@ -34,6 +34,7 @@ pub struct DeleteTransitGatewayPolicyTableInputBuilder {
 }
 impl DeleteTransitGatewayPolicyTableInputBuilder {
     /// <p>The transit gateway policy table to delete.</p>
+    /// This field is required.
     pub fn transit_gateway_policy_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_policy_table_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl DeleteTransitGatewayPolicyTableInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_transit_gateway_policy_table::DeleteTransitGatewayPolicyTableInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_transit_gateway_policy_table::DeleteTransitGatewayPolicyTableInput {

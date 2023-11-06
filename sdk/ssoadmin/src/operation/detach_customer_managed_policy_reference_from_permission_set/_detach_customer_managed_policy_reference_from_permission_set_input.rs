@@ -41,6 +41,7 @@ pub struct DetachCustomerManagedPolicyReferenceFromPermissionSetInputBuilder {
 }
 impl DetachCustomerManagedPolicyReferenceFromPermissionSetInputBuilder {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
+    /// This field is required.
     pub fn instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DetachCustomerManagedPolicyReferenceFromPermissionSetInputBuilder {
         &self.instance_arn
     }
     /// <p>The ARN of the <code>PermissionSet</code>.</p>
+    /// This field is required.
     pub fn permission_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permission_set_arn = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl DetachCustomerManagedPolicyReferenceFromPermissionSetInputBuilder {
         &self.permission_set_arn
     }
     /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each Amazon Web Services account where you want to deploy your permission set.</p>
+    /// This field is required.
     pub fn customer_managed_policy_reference(mut self, input: crate::types::CustomerManagedPolicyReference) -> Self {
         self.customer_managed_policy_reference = ::std::option::Option::Some(input);
         self
@@ -87,7 +90,7 @@ impl DetachCustomerManagedPolicyReferenceFromPermissionSetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detach_customer_managed_policy_reference_from_permission_set::DetachCustomerManagedPolicyReferenceFromPermissionSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::detach_customer_managed_policy_reference_from_permission_set::DetachCustomerManagedPolicyReferenceFromPermissionSetInput {

@@ -10,7 +10,7 @@ impl DetectPiiEntitiesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::detect_pii_entities::DetectPiiEntitiesOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::detect_pii_entities::DetectPiiEntitiesError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl DetectPiiEntitiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detect_pii_entities::DetectPiiEntitiesOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::detect_pii_entities::DetectPiiEntitiesError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::detect_pii_entities::DetectPiiEntities::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -86,20 +89,15 @@ impl DetectPiiEntitiesFluentBuilder {
         crate::operation::detect_pii_entities::DetectPiiEntities::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::detect_pii_entities::DetectPiiEntitiesOutput,
-            crate::operation::detect_pii_entities::DetectPiiEntitiesError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::detect_pii_entities::DetectPiiEntitiesError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::detect_pii_entities::DetectPiiEntitiesOutput,
+        crate::operation::detect_pii_entities::DetectPiiEntitiesError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

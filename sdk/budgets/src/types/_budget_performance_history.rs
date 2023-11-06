@@ -41,8 +41,10 @@ impl BudgetPerformanceHistory {
         self.time_unit.as_ref()
     }
     /// <p>A list of amounts of cost or usage that you created budgets for, which are compared to your actual costs or usage.</p>
-    pub fn budgeted_and_actual_amounts_list(&self) -> ::std::option::Option<&[crate::types::BudgetedAndActualAmounts]> {
-        self.budgeted_and_actual_amounts_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.budgeted_and_actual_amounts_list.is_none()`.
+    pub fn budgeted_and_actual_amounts_list(&self) -> &[crate::types::BudgetedAndActualAmounts] {
+        self.budgeted_and_actual_amounts_list.as_deref().unwrap_or_default()
     }
 }
 impl BudgetPerformanceHistory {

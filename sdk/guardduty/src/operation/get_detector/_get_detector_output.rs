@@ -53,8 +53,10 @@ impl GetDetectorOutput {
         self.tags.as_ref()
     }
     /// <p>Describes the features that have been enabled for the detector.</p>
-    pub fn features(&self) -> ::std::option::Option<&[crate::types::DetectorFeatureConfigurationResult]> {
-        self.features.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.features.is_none()`.
+    pub fn features(&self) -> &[crate::types::DetectorFeatureConfigurationResult] {
+        self.features.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetDetectorOutput {
@@ -113,6 +115,7 @@ impl GetDetectorOutputBuilder {
         &self.finding_publishing_frequency
     }
     /// <p>The GuardDuty service role.</p>
+    /// This field is required.
     pub fn service_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_role = ::std::option::Option::Some(input.into());
         self
@@ -127,6 +130,7 @@ impl GetDetectorOutputBuilder {
         &self.service_role
     }
     /// <p>The detector status.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::DetectorStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self

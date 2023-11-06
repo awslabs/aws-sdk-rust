@@ -2,7 +2,7 @@
 pub fn ser_aws_backup_backup_plan_rule_copy_actions_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsBackupBackupPlanRuleCopyActionsDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.destination_backup_vault_arn {
         object.key("DestinationBackupVaultArn").string(var_1.as_str());
     }

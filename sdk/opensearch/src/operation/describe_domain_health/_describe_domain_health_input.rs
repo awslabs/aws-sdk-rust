@@ -28,6 +28,7 @@ pub struct DescribeDomainHealthInputBuilder {
 }
 impl DescribeDomainHealthInputBuilder {
     /// <p>The name of the domain.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl DescribeDomainHealthInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDomainHealthInput`](crate::operation::describe_domain_health::DescribeDomainHealthInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_domain_health::DescribeDomainHealthInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_domain_health::DescribeDomainHealthInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_domain_health::DescribeDomainHealthInput {
             domain_name: self.domain_name,

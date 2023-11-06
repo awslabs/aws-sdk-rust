@@ -87,8 +87,10 @@ impl ClientVpnEndpoint {
         self.client_cidr_block.as_deref()
     }
     /// <p>Information about the DNS servers to be used for DNS resolution. </p>
-    pub fn dns_servers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.dns_servers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dns_servers.is_none()`.
+    pub fn dns_servers(&self) -> &[::std::string::String] {
+        self.dns_servers.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether split-tunnel is enabled in the Client VPN endpoint.</p>
     /// <p>For information about split-tunnel VPN endpoints, see <a href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-Tunnel Client VPN endpoint</a> in the <i>Client VPN Administrator Guide</i>.</p>
@@ -108,31 +110,39 @@ impl ClientVpnEndpoint {
         self.vpn_port
     }
     /// <p>Information about the associated target networks. A target network is a subnet in a VPC.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_target_networks.is_none()`.
     #[deprecated(
         note = "This property is deprecated. To view the target networks associated with a Client VPN endpoint, call DescribeClientVpnTargetNetworks and inspect the clientVpnTargetNetworks response element."
     )]
-    pub fn associated_target_networks(&self) -> ::std::option::Option<&[crate::types::AssociatedTargetNetwork]> {
-        self.associated_target_networks.as_deref()
+    pub fn associated_target_networks(&self) -> &[crate::types::AssociatedTargetNetwork] {
+        self.associated_target_networks.as_deref().unwrap_or_default()
     }
     /// <p>The ARN of the server certificate.</p>
     pub fn server_certificate_arn(&self) -> ::std::option::Option<&str> {
         self.server_certificate_arn.as_deref()
     }
     /// <p>Information about the authentication method used by the Client VPN endpoint.</p>
-    pub fn authentication_options(&self) -> ::std::option::Option<&[crate::types::ClientVpnAuthentication]> {
-        self.authentication_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.authentication_options.is_none()`.
+    pub fn authentication_options(&self) -> &[crate::types::ClientVpnAuthentication] {
+        self.authentication_options.as_deref().unwrap_or_default()
     }
     /// <p>Information about the client connection logging options for the Client VPN endpoint.</p>
     pub fn connection_log_options(&self) -> ::std::option::Option<&crate::types::ConnectionLogResponseOptions> {
         self.connection_log_options.as_ref()
     }
     /// <p>Any tags assigned to the Client VPN endpoint.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The IDs of the security groups for the target network.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the VPC.</p>
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {

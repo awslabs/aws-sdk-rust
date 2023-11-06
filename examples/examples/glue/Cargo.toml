@@ -18,14 +18,13 @@ thiserror = "1.0.37"
 secrecy = "0.8.0"
 futures = "0.3.25"
 tracing-bunyan-formatter = "0.3.4"
-aws-config= { version = "0.56.1", path = "../../../sdk/aws-config" }
-aws-sdk-glue= { version = "0.34.0", path = "../../../sdk/glue" }
-aws-sdk-s3= { version = "0.34.0", path = "../../../sdk/s3" }
-aws-http= { version = "0.56.1", path = "../../../sdk/aws-http" }
-aws-smithy-client= { version = "0.56.1", path = "../../../sdk/aws-smithy-client", features = ["client-hyper", "rustls", "rt-tokio"] }
-aws-smithy-http= { version = "0.56.1", path = "../../../sdk/aws-smithy-http", features = ["rt-tokio"] }
-aws-smithy-types= { version = "0.56.1", path = "../../../sdk/aws-smithy-types" }
-aws-types= { version = "0.56.1", path = "../../../sdk/aws-types" }
+aws-config= { version = "0.57.1", path = "../../../sdk/aws-config" }
+aws-sdk-glue= { version = "0.35.0", path = "../../../sdk/glue" }
+aws-sdk-s3= { version = "0.35.0", path = "../../../sdk/s3" }
+aws-http= { version = "0.57.1", path = "../../../sdk/aws-http" }
+aws-smithy-http= { version = "0.57.1", path = "../../../sdk/aws-smithy-http", features = ["rt-tokio"] }
+aws-smithy-types= { version = "0.57.1", path = "../../../sdk/aws-smithy-types" }
+aws-types= { version = "0.57.1", path = "../../../sdk/aws-types" }
 
 [dependencies.tokio]
 version = "1.20.1"
@@ -36,7 +35,7 @@ version = "0.3.15"
 features = ["env-filter"]
 
 [dependencies.clap]
-version = "~4.2"
+version = "~4.4"
 features = ["derive"]
 
 [dependencies.uuid]

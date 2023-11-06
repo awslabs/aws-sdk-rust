@@ -27,6 +27,7 @@ pub struct EnableImportFindingsForProductInputBuilder {
 }
 impl EnableImportFindingsForProductInputBuilder {
     /// <p>The ARN of the product to enable the integration for.</p>
+    /// This field is required.
     pub fn product_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl EnableImportFindingsForProductInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable_import_findings_for_product::EnableImportFindingsForProductInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::enable_import_findings_for_product::EnableImportFindingsForProductInput {

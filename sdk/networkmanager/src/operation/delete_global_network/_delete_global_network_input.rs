@@ -27,6 +27,7 @@ pub struct DeleteGlobalNetworkInputBuilder {
 }
 impl DeleteGlobalNetworkInputBuilder {
     /// <p>The ID of the global network.</p>
+    /// This field is required.
     pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_network_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteGlobalNetworkInputBuilder {
     /// Consumes the builder and constructs a [`DeleteGlobalNetworkInput`](crate::operation::delete_global_network::DeleteGlobalNetworkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_global_network::DeleteGlobalNetworkInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_global_network::DeleteGlobalNetworkInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_global_network::DeleteGlobalNetworkInput {
             global_network_id: self.global_network_id,

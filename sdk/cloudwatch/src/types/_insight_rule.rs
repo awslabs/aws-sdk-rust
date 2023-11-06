@@ -56,6 +56,7 @@ pub struct InsightRuleBuilder {
 }
 impl InsightRuleBuilder {
     /// <p>The name of the rule.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +71,7 @@ impl InsightRuleBuilder {
         &self.name
     }
     /// <p>Indicates whether the rule is enabled or disabled.</p>
+    /// This field is required.
     pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +86,7 @@ impl InsightRuleBuilder {
         &self.state
     }
     /// <p>For rules that you create, this is always <code>{"Name": "CloudWatchLogRule", "Version": 1}</code>. For managed rules, this is <code>{"Name": "ServiceLogRule", "Version": 1}</code> </p>
+    /// This field is required.
     pub fn schema(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +101,7 @@ impl InsightRuleBuilder {
         &self.schema
     }
     /// <p>The definition of the rule, as a JSON object. The definition contains the keywords used to define contributors, the value to aggregate on if this rule returns a sum instead of a count, and the filters. For details on the valid syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights-RuleSyntax.html">Contributor Insights Rule Syntax</a>.</p>
+    /// This field is required.
     pub fn definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.definition = ::std::option::Option::Some(input.into());
         self

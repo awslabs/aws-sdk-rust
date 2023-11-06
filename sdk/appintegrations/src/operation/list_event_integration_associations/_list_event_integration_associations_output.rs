@@ -11,8 +11,10 @@ pub struct ListEventIntegrationAssociationsOutput {
 }
 impl ListEventIntegrationAssociationsOutput {
     /// <p>The event integration associations.</p>
-    pub fn event_integration_associations(&self) -> ::std::option::Option<&[crate::types::EventIntegrationAssociation]> {
-        self.event_integration_associations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_integration_associations.is_none()`.
+    pub fn event_integration_associations(&self) -> &[crate::types::EventIntegrationAssociation] {
+        self.event_integration_associations.as_deref().unwrap_or_default()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

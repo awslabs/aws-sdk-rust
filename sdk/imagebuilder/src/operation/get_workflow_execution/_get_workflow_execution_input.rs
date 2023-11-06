@@ -27,6 +27,7 @@ pub struct GetWorkflowExecutionInputBuilder {
 }
 impl GetWorkflowExecutionInputBuilder {
     /// <p>Use the unique identifier for a runtime instance of the workflow to get runtime details.</p>
+    /// This field is required.
     pub fn workflow_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_execution_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetWorkflowExecutionInputBuilder {
     /// Consumes the builder and constructs a [`GetWorkflowExecutionInput`](crate::operation::get_workflow_execution::GetWorkflowExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_workflow_execution::GetWorkflowExecutionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_workflow_execution::GetWorkflowExecutionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_workflow_execution::GetWorkflowExecutionInput {
             workflow_execution_id: self.workflow_execution_id,

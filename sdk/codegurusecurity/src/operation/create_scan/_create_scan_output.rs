@@ -4,33 +4,35 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateScanOutput {
     /// <p>The name of the scan.</p>
-    pub scan_name: ::std::option::Option<::std::string::String>,
+    pub scan_name: ::std::string::String,
     /// <p>UUID that identifies the individual scan run.</p>
-    pub run_id: ::std::option::Option<::std::string::String>,
+    pub run_id: ::std::string::String,
     /// <p>The identifier for the resource object that contains resources that were scanned.</p>
     pub resource_id: ::std::option::Option<crate::types::ResourceId>,
     /// <p>The current state of the scan. Returns either <code>InProgress</code>, <code>Successful</code>, or <code>Failed</code>.</p>
-    pub scan_state: ::std::option::Option<crate::types::ScanState>,
+    pub scan_state: crate::types::ScanState,
     /// <p>The ARN for the scan name.</p>
     pub scan_name_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateScanOutput {
     /// <p>The name of the scan.</p>
-    pub fn scan_name(&self) -> ::std::option::Option<&str> {
-        self.scan_name.as_deref()
+    pub fn scan_name(&self) -> &str {
+        use std::ops::Deref;
+        self.scan_name.deref()
     }
     /// <p>UUID that identifies the individual scan run.</p>
-    pub fn run_id(&self) -> ::std::option::Option<&str> {
-        self.run_id.as_deref()
+    pub fn run_id(&self) -> &str {
+        use std::ops::Deref;
+        self.run_id.deref()
     }
     /// <p>The identifier for the resource object that contains resources that were scanned.</p>
     pub fn resource_id(&self) -> ::std::option::Option<&crate::types::ResourceId> {
         self.resource_id.as_ref()
     }
     /// <p>The current state of the scan. Returns either <code>InProgress</code>, <code>Successful</code>, or <code>Failed</code>.</p>
-    pub fn scan_state(&self) -> ::std::option::Option<&crate::types::ScanState> {
-        self.scan_state.as_ref()
+    pub fn scan_state(&self) -> &crate::types::ScanState {
+        &self.scan_state
     }
     /// <p>The ARN for the scan name.</p>
     pub fn scan_name_arn(&self) -> ::std::option::Option<&str> {
@@ -62,6 +64,7 @@ pub struct CreateScanOutputBuilder {
 }
 impl CreateScanOutputBuilder {
     /// <p>The name of the scan.</p>
+    /// This field is required.
     pub fn scan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scan_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +79,7 @@ impl CreateScanOutputBuilder {
         &self.scan_name
     }
     /// <p>UUID that identifies the individual scan run.</p>
+    /// This field is required.
     pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.run_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +94,7 @@ impl CreateScanOutputBuilder {
         &self.run_id
     }
     /// <p>The identifier for the resource object that contains resources that were scanned.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: crate::types::ResourceId) -> Self {
         self.resource_id = ::std::option::Option::Some(input);
         self
@@ -104,6 +109,7 @@ impl CreateScanOutputBuilder {
         &self.resource_id
     }
     /// <p>The current state of the scan. Returns either <code>InProgress</code>, <code>Successful</code>, or <code>Failed</code>.</p>
+    /// This field is required.
     pub fn scan_state(mut self, input: crate::types::ScanState) -> Self {
         self.scan_state = ::std::option::Option::Some(input);
         self
@@ -141,14 +147,33 @@ impl CreateScanOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateScanOutput`](crate::operation::create_scan::CreateScanOutput).
-    pub fn build(self) -> crate::operation::create_scan::CreateScanOutput {
-        crate::operation::create_scan::CreateScanOutput {
-            scan_name: self.scan_name,
-            run_id: self.run_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`scan_name`](crate::operation::create_scan::builders::CreateScanOutputBuilder::scan_name)
+    /// - [`run_id`](crate::operation::create_scan::builders::CreateScanOutputBuilder::run_id)
+    /// - [`scan_state`](crate::operation::create_scan::builders::CreateScanOutputBuilder::scan_state)
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_scan::CreateScanOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_scan::CreateScanOutput {
+            scan_name: self.scan_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "scan_name",
+                    "scan_name was not specified but it is required when building CreateScanOutput",
+                )
+            })?,
+            run_id: self.run_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "run_id",
+                    "run_id was not specified but it is required when building CreateScanOutput",
+                )
+            })?,
             resource_id: self.resource_id,
-            scan_state: self.scan_state,
+            scan_state: self.scan_state.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "scan_state",
+                    "scan_state was not specified but it is required when building CreateScanOutput",
+                )
+            })?,
             scan_name_arn: self.scan_name_arn,
             _request_id: self._request_id,
-        }
+        })
     }
 }

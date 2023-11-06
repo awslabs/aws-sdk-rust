@@ -5,15 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamingDistributionSummary {
     /// <p>The identifier for the distribution, for example, <code>EDFDVBD632BHDS5</code>.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The ARN (Amazon Resource Name) for the streaming distribution. For example: <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>, where <code>123456789012</code> is your Amazon Web Services account ID.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>Indicates the current status of the distribution. When the status is <code>Deployed</code>, the distribution's information is fully propagated throughout the Amazon CloudFront system.</p>
-    pub status: ::std::option::Option<::std::string::String>,
+    pub status: ::std::string::String,
     /// <p>The date and time the distribution was last modified.</p>
-    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub last_modified_time: ::aws_smithy_types::DateTime,
     /// <p>The domain name corresponding to the distribution, for example, <code>d111111abcdef8.cloudfront.net</code>.</p>
-    pub domain_name: ::std::option::Option<::std::string::String>,
+    pub domain_name: ::std::string::String,
     /// <p>A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your media files for distribution.</p>
     pub s3_origin: ::std::option::Option<crate::types::S3Origin>,
     /// <p>A complex type that contains information about CNAMEs (alternate domain names), if any, for this streaming distribution.</p>
@@ -22,32 +22,36 @@ pub struct StreamingDistributionSummary {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub trusted_signers: ::std::option::Option<crate::types::TrustedSigners>,
     /// <p>The comment originally specified when this distribution was created.</p>
-    pub comment: ::std::option::Option<::std::string::String>,
+    pub comment: ::std::string::String,
     /// <p>A complex type that contains information about price class for this streaming distribution.</p>
-    pub price_class: ::std::option::Option<crate::types::PriceClass>,
+    pub price_class: crate::types::PriceClass,
     /// <p>Whether the distribution is enabled to accept end user requests for content.</p>
-    pub enabled: ::std::option::Option<bool>,
+    pub enabled: bool,
 }
 impl StreamingDistributionSummary {
     /// <p>The identifier for the distribution, for example, <code>EDFDVBD632BHDS5</code>.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The ARN (Amazon Resource Name) for the streaming distribution. For example: <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>, where <code>123456789012</code> is your Amazon Web Services account ID.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>Indicates the current status of the distribution. When the status is <code>Deployed</code>, the distribution's information is fully propagated throughout the Amazon CloudFront system.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
-        self.status.as_deref()
+    pub fn status(&self) -> &str {
+        use std::ops::Deref;
+        self.status.deref()
     }
     /// <p>The date and time the distribution was last modified.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.last_modified_time.as_ref()
+    pub fn last_modified_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.last_modified_time
     }
     /// <p>The domain name corresponding to the distribution, for example, <code>d111111abcdef8.cloudfront.net</code>.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
-        self.domain_name.as_deref()
+    pub fn domain_name(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_name.deref()
     }
     /// <p>A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your media files for distribution.</p>
     pub fn s3_origin(&self) -> ::std::option::Option<&crate::types::S3Origin> {
@@ -63,15 +67,16 @@ impl StreamingDistributionSummary {
         self.trusted_signers.as_ref()
     }
     /// <p>The comment originally specified when this distribution was created.</p>
-    pub fn comment(&self) -> ::std::option::Option<&str> {
-        self.comment.as_deref()
+    pub fn comment(&self) -> &str {
+        use std::ops::Deref;
+        self.comment.deref()
     }
     /// <p>A complex type that contains information about price class for this streaming distribution.</p>
-    pub fn price_class(&self) -> ::std::option::Option<&crate::types::PriceClass> {
-        self.price_class.as_ref()
+    pub fn price_class(&self) -> &crate::types::PriceClass {
+        &self.price_class
     }
     /// <p>Whether the distribution is enabled to accept end user requests for content.</p>
-    pub fn enabled(&self) -> ::std::option::Option<bool> {
+    pub fn enabled(&self) -> bool {
         self.enabled
     }
 }
@@ -100,6 +105,7 @@ pub struct StreamingDistributionSummaryBuilder {
 }
 impl StreamingDistributionSummaryBuilder {
     /// <p>The identifier for the distribution, for example, <code>EDFDVBD632BHDS5</code>.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -114,6 +120,7 @@ impl StreamingDistributionSummaryBuilder {
         &self.id
     }
     /// <p>The ARN (Amazon Resource Name) for the streaming distribution. For example: <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>, where <code>123456789012</code> is your Amazon Web Services account ID.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -128,6 +135,7 @@ impl StreamingDistributionSummaryBuilder {
         &self.arn
     }
     /// <p>Indicates the current status of the distribution. When the status is <code>Deployed</code>, the distribution's information is fully propagated throughout the Amazon CloudFront system.</p>
+    /// This field is required.
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
         self
@@ -142,6 +150,7 @@ impl StreamingDistributionSummaryBuilder {
         &self.status
     }
     /// <p>The date and time the distribution was last modified.</p>
+    /// This field is required.
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
         self
@@ -156,6 +165,7 @@ impl StreamingDistributionSummaryBuilder {
         &self.last_modified_time
     }
     /// <p>The domain name corresponding to the distribution, for example, <code>d111111abcdef8.cloudfront.net</code>.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -170,6 +180,7 @@ impl StreamingDistributionSummaryBuilder {
         &self.domain_name
     }
     /// <p>A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your media files for distribution.</p>
+    /// This field is required.
     pub fn s3_origin(mut self, input: crate::types::S3Origin) -> Self {
         self.s3_origin = ::std::option::Option::Some(input);
         self
@@ -184,6 +195,7 @@ impl StreamingDistributionSummaryBuilder {
         &self.s3_origin
     }
     /// <p>A complex type that contains information about CNAMEs (alternate domain names), if any, for this streaming distribution.</p>
+    /// This field is required.
     pub fn aliases(mut self, input: crate::types::Aliases) -> Self {
         self.aliases = ::std::option::Option::Some(input);
         self
@@ -199,6 +211,7 @@ impl StreamingDistributionSummaryBuilder {
     }
     /// <p>A complex type that specifies the Amazon Web Services accounts, if any, that you want to allow to create signed URLs for private content. If you want to require signed URLs in requests for objects in the target origin that match the <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and specify the applicable values for <code>Quantity</code> and <code>Items</code>.If you don't want to require signed URLs in requests for objects that match <code>PathPattern</code>, specify <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit <code>Items</code>. To add, change, or remove one or more trusted signers, change <code>Enabled</code> to <code>true</code> (if it's currently <code>false</code>), change <code>Quantity</code> as applicable, and specify all of the trusted signers that you want to include in the updated distribution.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// This field is required.
     pub fn trusted_signers(mut self, input: crate::types::TrustedSigners) -> Self {
         self.trusted_signers = ::std::option::Option::Some(input);
         self
@@ -215,6 +228,7 @@ impl StreamingDistributionSummaryBuilder {
         &self.trusted_signers
     }
     /// <p>The comment originally specified when this distribution was created.</p>
+    /// This field is required.
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment = ::std::option::Option::Some(input.into());
         self
@@ -229,6 +243,7 @@ impl StreamingDistributionSummaryBuilder {
         &self.comment
     }
     /// <p>A complex type that contains information about price class for this streaming distribution.</p>
+    /// This field is required.
     pub fn price_class(mut self, input: crate::types::PriceClass) -> Self {
         self.price_class = ::std::option::Option::Some(input);
         self
@@ -243,6 +258,7 @@ impl StreamingDistributionSummaryBuilder {
         &self.price_class
     }
     /// <p>Whether the distribution is enabled to accept end user requests for content.</p>
+    /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
@@ -257,19 +273,68 @@ impl StreamingDistributionSummaryBuilder {
         &self.enabled
     }
     /// Consumes the builder and constructs a [`StreamingDistributionSummary`](crate::types::StreamingDistributionSummary).
-    pub fn build(self) -> crate::types::StreamingDistributionSummary {
-        crate::types::StreamingDistributionSummary {
-            id: self.id,
-            arn: self.arn,
-            status: self.status,
-            last_modified_time: self.last_modified_time,
-            domain_name: self.domain_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::StreamingDistributionSummaryBuilder::id)
+    /// - [`arn`](crate::types::builders::StreamingDistributionSummaryBuilder::arn)
+    /// - [`status`](crate::types::builders::StreamingDistributionSummaryBuilder::status)
+    /// - [`last_modified_time`](crate::types::builders::StreamingDistributionSummaryBuilder::last_modified_time)
+    /// - [`domain_name`](crate::types::builders::StreamingDistributionSummaryBuilder::domain_name)
+    /// - [`comment`](crate::types::builders::StreamingDistributionSummaryBuilder::comment)
+    /// - [`price_class`](crate::types::builders::StreamingDistributionSummaryBuilder::price_class)
+    /// - [`enabled`](crate::types::builders::StreamingDistributionSummaryBuilder::enabled)
+    pub fn build(self) -> ::std::result::Result<crate::types::StreamingDistributionSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::StreamingDistributionSummary {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building StreamingDistributionSummary",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building StreamingDistributionSummary",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building StreamingDistributionSummary",
+                )
+            })?,
+            last_modified_time: self.last_modified_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "last_modified_time",
+                    "last_modified_time was not specified but it is required when building StreamingDistributionSummary",
+                )
+            })?,
+            domain_name: self.domain_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "domain_name",
+                    "domain_name was not specified but it is required when building StreamingDistributionSummary",
+                )
+            })?,
             s3_origin: self.s3_origin,
             aliases: self.aliases,
             trusted_signers: self.trusted_signers,
-            comment: self.comment,
-            price_class: self.price_class,
-            enabled: self.enabled,
-        }
+            comment: self.comment.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "comment",
+                    "comment was not specified but it is required when building StreamingDistributionSummary",
+                )
+            })?,
+            price_class: self.price_class.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "price_class",
+                    "price_class was not specified but it is required when building StreamingDistributionSummary",
+                )
+            })?,
+            enabled: self.enabled.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "enabled",
+                    "enabled was not specified but it is required when building StreamingDistributionSummary",
+                )
+            })?,
+        })
     }
 }

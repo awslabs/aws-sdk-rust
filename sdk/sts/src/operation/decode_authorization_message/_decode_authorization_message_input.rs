@@ -27,6 +27,7 @@ pub struct DecodeAuthorizationMessageInputBuilder {
 }
 impl DecodeAuthorizationMessageInputBuilder {
     /// <p>The encoded message that was returned with the response.</p>
+    /// This field is required.
     pub fn encoded_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encoded_message = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DecodeAuthorizationMessageInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::decode_authorization_message::DecodeAuthorizationMessageInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::decode_authorization_message::DecodeAuthorizationMessageInput {
             encoded_message: self.encoded_message,

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LogicalTable {
     /// <p>A display name for the logical table.</p>
-    pub alias: ::std::option::Option<::std::string::String>,
+    pub alias: ::std::string::String,
     /// <p>Transform operations that act on this logical table. For this structure to be valid, only one of the attributes can be non-null. </p>
     pub data_transforms: ::std::option::Option<::std::vec::Vec<crate::types::TransformOperation>>,
     /// <p>Source of this logical table.</p>
@@ -13,12 +13,15 @@ pub struct LogicalTable {
 }
 impl LogicalTable {
     /// <p>A display name for the logical table.</p>
-    pub fn alias(&self) -> ::std::option::Option<&str> {
-        self.alias.as_deref()
+    pub fn alias(&self) -> &str {
+        use std::ops::Deref;
+        self.alias.deref()
     }
     /// <p>Transform operations that act on this logical table. For this structure to be valid, only one of the attributes can be non-null. </p>
-    pub fn data_transforms(&self) -> ::std::option::Option<&[crate::types::TransformOperation]> {
-        self.data_transforms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_transforms.is_none()`.
+    pub fn data_transforms(&self) -> &[crate::types::TransformOperation] {
+        self.data_transforms.as_deref().unwrap_or_default()
     }
     /// <p>Source of this logical table.</p>
     pub fn source(&self) -> ::std::option::Option<&crate::types::LogicalTableSource> {
@@ -42,6 +45,7 @@ pub struct LogicalTableBuilder {
 }
 impl LogicalTableBuilder {
     /// <p>A display name for the logical table.</p>
+    /// This field is required.
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +80,7 @@ impl LogicalTableBuilder {
         &self.data_transforms
     }
     /// <p>Source of this logical table.</p>
+    /// This field is required.
     pub fn source(mut self, input: crate::types::LogicalTableSource) -> Self {
         self.source = ::std::option::Option::Some(input);
         self
@@ -90,11 +95,18 @@ impl LogicalTableBuilder {
         &self.source
     }
     /// Consumes the builder and constructs a [`LogicalTable`](crate::types::LogicalTable).
-    pub fn build(self) -> crate::types::LogicalTable {
-        crate::types::LogicalTable {
-            alias: self.alias,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`alias`](crate::types::builders::LogicalTableBuilder::alias)
+    pub fn build(self) -> ::std::result::Result<crate::types::LogicalTable, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::LogicalTable {
+            alias: self.alias.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "alias",
+                    "alias was not specified but it is required when building LogicalTable",
+                )
+            })?,
             data_transforms: self.data_transforms,
             source: self.source,
-        }
+        })
     }
 }

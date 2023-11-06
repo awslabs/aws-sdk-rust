@@ -9,8 +9,10 @@ pub struct DescribePartnersOutput {
 }
 impl DescribePartnersOutput {
     /// <p>A list of partner integrations.</p>
-    pub fn partner_integration_info_list(&self) -> ::std::option::Option<&[crate::types::PartnerIntegrationInfo]> {
-        self.partner_integration_info_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.partner_integration_info_list.is_none()`.
+    pub fn partner_integration_info_list(&self) -> &[crate::types::PartnerIntegrationInfo] {
+        self.partner_integration_info_list.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribePartnersOutput {

@@ -75,6 +75,7 @@ pub struct ListTransactionsInputBuilder {
 }
 impl ListTransactionsInputBuilder {
     /// <p>The address (either a contract or wallet), whose transactions are being requested.</p>
+    /// This field is required.
     pub fn address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.address = ::std::option::Option::Some(input.into());
         self
@@ -89,6 +90,7 @@ impl ListTransactionsInputBuilder {
         &self.address
     }
     /// <p>The blockchain network where the transactions occurred.</p>
+    /// This field is required.
     pub fn network(mut self, input: crate::types::QueryNetwork) -> Self {
         self.network = ::std::option::Option::Some(input);
         self
@@ -184,7 +186,7 @@ impl ListTransactionsInputBuilder {
     /// Consumes the builder and constructs a [`ListTransactionsInput`](crate::operation::list_transactions::ListTransactionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_transactions::ListTransactionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_transactions::ListTransactionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_transactions::ListTransactionsInput {
             address: self.address,
             network: self.network,

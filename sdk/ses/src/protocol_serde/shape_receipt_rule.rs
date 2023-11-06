@@ -3,52 +3,53 @@
 pub fn ser_receipt_rule(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::ReceiptRule,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Name");
-    if let Some(var_2) = &input.name {
-        scope_1.string(var_2);
+    {
+        scope_1.string(&input.name);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("Enabled");
+    let mut scope_2 = writer.prefix("Enabled");
     if input.enabled {
-        scope_3.boolean(input.enabled);
+        scope_2.boolean(input.enabled);
     }
     #[allow(unused_mut)]
-    let mut scope_4 = writer.prefix("TlsPolicy");
-    if let Some(var_5) = &input.tls_policy {
-        scope_4.string(var_5.as_str());
+    let mut scope_3 = writer.prefix("TlsPolicy");
+    if let Some(var_4) = &input.tls_policy {
+        scope_3.string(var_4.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_6 = writer.prefix("Recipients");
-    if let Some(var_7) = &input.recipients {
-        let mut list_9 = scope_6.start_list(false, None);
-        for item_8 in var_7 {
+    let mut scope_5 = writer.prefix("Recipients");
+    if let Some(var_6) = &input.recipients {
+        let mut list_8 = scope_5.start_list(false, None);
+        for item_7 in var_6 {
             #[allow(unused_mut)]
-            let mut entry_10 = list_9.entry();
-            entry_10.string(item_8);
+            let mut entry_9 = list_8.entry();
+            entry_9.string(item_7);
         }
-        list_9.finish();
+        list_8.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_11 = writer.prefix("Actions");
-    if let Some(var_12) = &input.actions {
-        let mut list_14 = scope_11.start_list(false, None);
-        for item_13 in var_12 {
+    let mut scope_10 = writer.prefix("Actions");
+    if let Some(var_11) = &input.actions {
+        let mut list_13 = scope_10.start_list(false, None);
+        for item_12 in var_11 {
             #[allow(unused_mut)]
-            let mut entry_15 = list_14.entry();
-            crate::protocol_serde::shape_receipt_action::ser_receipt_action(entry_15, item_13)?;
+            let mut entry_14 = list_13.entry();
+            crate::protocol_serde::shape_receipt_action::ser_receipt_action(entry_14, item_12)?;
         }
-        list_14.finish();
+        list_13.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_16 = writer.prefix("ScanEnabled");
+    let mut scope_15 = writer.prefix("ScanEnabled");
     if input.scan_enabled {
-        scope_16.boolean(input.scan_enabled);
+        scope_15.boolean(input.scan_enabled);
     }
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_receipt_rule(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::ReceiptRule, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -57,7 +58,7 @@ pub fn de_receipt_rule(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Name") /* Name com.amazonaws.ses#ReceiptRule$Name */ =>  {
-                let var_17 =
+                let var_16 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -66,11 +67,11 @@ pub fn de_receipt_rule(
                         ?
                     )
                 ;
-                builder = builder.set_name(var_17);
+                builder = builder.set_name(var_16);
             }
             ,
             s if s.matches("Enabled") /* Enabled com.amazonaws.ses#ReceiptRule$Enabled */ =>  {
-                let var_18 =
+                let var_17 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -81,11 +82,11 @@ pub fn de_receipt_rule(
                         ?
                     )
                 ;
-                builder = builder.set_enabled(var_18);
+                builder = builder.set_enabled(var_17);
             }
             ,
             s if s.matches("TlsPolicy") /* TlsPolicy com.amazonaws.ses#ReceiptRule$TlsPolicy */ =>  {
-                let var_19 =
+                let var_18 =
                     Some(
                         Result::<crate::types::TlsPolicy, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::TlsPolicy::from(
@@ -95,31 +96,31 @@ pub fn de_receipt_rule(
                         ?
                     )
                 ;
-                builder = builder.set_tls_policy(var_19);
+                builder = builder.set_tls_policy(var_18);
             }
             ,
             s if s.matches("Recipients") /* Recipients com.amazonaws.ses#ReceiptRule$Recipients */ =>  {
-                let var_20 =
+                let var_19 =
                     Some(
                         crate::protocol_serde::shape_recipients_list::de_recipients_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_recipients(var_20);
+                builder = builder.set_recipients(var_19);
             }
             ,
             s if s.matches("Actions") /* Actions com.amazonaws.ses#ReceiptRule$Actions */ =>  {
-                let var_21 =
+                let var_20 =
                     Some(
                         crate::protocol_serde::shape_receipt_actions_list::de_receipt_actions_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_actions(var_21);
+                builder = builder.set_actions(var_20);
             }
             ,
             s if s.matches("ScanEnabled") /* ScanEnabled com.amazonaws.ses#ReceiptRule$ScanEnabled */ =>  {
-                let var_22 =
+                let var_21 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -130,11 +131,13 @@ pub fn de_receipt_rule(
                         ?
                     )
                 ;
-                builder = builder.set_scan_enabled(var_22);
+                builder = builder.set_scan_enabled(var_21);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::receipt_rule_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

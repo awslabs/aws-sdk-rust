@@ -11,8 +11,10 @@ pub struct ServerlessRequest {
 }
 impl ServerlessRequest {
     /// <p>The configuration of the Amazon VPCs for the cluster.</p>
-    pub fn vpc_configs(&self) -> ::std::option::Option<&[crate::types::VpcConfig]> {
-        self.vpc_configs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_configs.is_none()`.
+    pub fn vpc_configs(&self) -> &[crate::types::VpcConfig] {
+        self.vpc_configs.as_deref().unwrap_or_default()
     }
     /// <p>Includes all client authentication information.</p>
     pub fn client_authentication(&self) -> ::std::option::Option<&crate::types::ServerlessClientAuthentication> {

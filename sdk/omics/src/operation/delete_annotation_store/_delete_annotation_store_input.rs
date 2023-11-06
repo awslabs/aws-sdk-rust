@@ -34,6 +34,7 @@ pub struct DeleteAnnotationStoreInputBuilder {
 }
 impl DeleteAnnotationStoreInputBuilder {
     /// <p>The store's name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl DeleteAnnotationStoreInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAnnotationStoreInput`](crate::operation::delete_annotation_store::DeleteAnnotationStoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_annotation_store::DeleteAnnotationStoreInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_annotation_store::DeleteAnnotationStoreInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_annotation_store::DeleteAnnotationStoreInput {
             name: self.name,

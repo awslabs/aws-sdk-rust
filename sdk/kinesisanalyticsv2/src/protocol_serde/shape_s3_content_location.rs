@@ -2,15 +2,15 @@
 pub fn ser_s3_content_location(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::S3ContentLocation,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.bucket_arn {
-        object.key("BucketARN").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("BucketARN").string(input.bucket_arn.as_str());
     }
-    if let Some(var_2) = &input.file_key {
-        object.key("FileKey").string(var_2.as_str());
+    {
+        object.key("FileKey").string(input.file_key.as_str());
     }
-    if let Some(var_3) = &input.object_version {
-        object.key("ObjectVersion").string(var_3.as_str());
+    if let Some(var_1) = &input.object_version {
+        object.key("ObjectVersion").string(var_1.as_str());
     }
     Ok(())
 }
@@ -61,7 +61,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::s3_content_location_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -62,6 +62,7 @@ pub struct DescribePublishingDestinationOutputBuilder {
 }
 impl DescribePublishingDestinationOutputBuilder {
     /// <p>The ID of the publishing destination.</p>
+    /// This field is required.
     pub fn destination_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl DescribePublishingDestinationOutputBuilder {
         &self.destination_id
     }
     /// <p>The type of publishing destination. Currently, only Amazon S3 buckets are supported.</p>
+    /// This field is required.
     pub fn destination_type(mut self, input: crate::types::DestinationType) -> Self {
         self.destination_type = ::std::option::Option::Some(input);
         self
@@ -90,6 +92,7 @@ impl DescribePublishingDestinationOutputBuilder {
         &self.destination_type
     }
     /// <p>The status of the publishing destination.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::PublishingStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -104,6 +107,7 @@ impl DescribePublishingDestinationOutputBuilder {
         &self.status
     }
     /// <p>The time, in epoch millisecond format, at which GuardDuty was first unable to publish findings to the destination.</p>
+    /// This field is required.
     pub fn publishing_failure_start_timestamp(mut self, input: i64) -> Self {
         self.publishing_failure_start_timestamp = ::std::option::Option::Some(input);
         self
@@ -118,6 +122,7 @@ impl DescribePublishingDestinationOutputBuilder {
         &self.publishing_failure_start_timestamp
     }
     /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing destination.</p>
+    /// This field is required.
     pub fn destination_properties(mut self, input: crate::types::DestinationProperties) -> Self {
         self.destination_properties = ::std::option::Option::Some(input);
         self

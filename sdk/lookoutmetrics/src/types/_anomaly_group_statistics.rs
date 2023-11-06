@@ -21,8 +21,10 @@ impl AnomalyGroupStatistics {
         self.total_count
     }
     /// <p>Statistics for individual metrics within the group.</p>
-    pub fn itemized_metric_stats_list(&self) -> ::std::option::Option<&[crate::types::ItemizedMetricStats]> {
-        self.itemized_metric_stats_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.itemized_metric_stats_list.is_none()`.
+    pub fn itemized_metric_stats_list(&self) -> &[crate::types::ItemizedMetricStats] {
+        self.itemized_metric_stats_list.as_deref().unwrap_or_default()
     }
 }
 impl AnomalyGroupStatistics {

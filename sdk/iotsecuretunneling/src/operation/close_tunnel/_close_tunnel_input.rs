@@ -34,6 +34,7 @@ pub struct CloseTunnelInputBuilder {
 }
 impl CloseTunnelInputBuilder {
     /// <p>The ID of the tunnel to close.</p>
+    /// This field is required.
     pub fn tunnel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tunnel_id = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +63,7 @@ impl CloseTunnelInputBuilder {
         &self.delete
     }
     /// Consumes the builder and constructs a [`CloseTunnelInput`](crate::operation::close_tunnel::CloseTunnelInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::close_tunnel::CloseTunnelInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::close_tunnel::CloseTunnelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::close_tunnel::CloseTunnelInput {
             tunnel_id: self.tunnel_id,
             delete: self.delete,

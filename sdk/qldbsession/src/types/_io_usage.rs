@@ -5,18 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IoUsage {
     /// <p>The number of read I/O requests that the command made.</p>
-    pub read_i_os: i64,
+    pub read_ios: i64,
     /// <p>The number of write I/O requests that the command made.</p>
-    pub write_i_os: i64,
+    pub write_ios: i64,
 }
 impl IoUsage {
     /// <p>The number of read I/O requests that the command made.</p>
-    pub fn read_i_os(&self) -> i64 {
-        self.read_i_os
+    pub fn read_ios(&self) -> i64 {
+        self.read_ios
     }
     /// <p>The number of write I/O requests that the command made.</p>
-    pub fn write_i_os(&self) -> i64 {
-        self.write_i_os
+    pub fn write_ios(&self) -> i64 {
+        self.write_ios
     }
 }
 impl IoUsage {
@@ -30,43 +30,43 @@ impl IoUsage {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IoUsageBuilder {
-    pub(crate) read_i_os: ::std::option::Option<i64>,
-    pub(crate) write_i_os: ::std::option::Option<i64>,
+    pub(crate) read_ios: ::std::option::Option<i64>,
+    pub(crate) write_ios: ::std::option::Option<i64>,
 }
 impl IoUsageBuilder {
     /// <p>The number of read I/O requests that the command made.</p>
-    pub fn read_i_os(mut self, input: i64) -> Self {
-        self.read_i_os = ::std::option::Option::Some(input);
+    pub fn read_ios(mut self, input: i64) -> Self {
+        self.read_ios = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of read I/O requests that the command made.</p>
-    pub fn set_read_i_os(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.read_i_os = input;
+    pub fn set_read_ios(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.read_ios = input;
         self
     }
     /// <p>The number of read I/O requests that the command made.</p>
-    pub fn get_read_i_os(&self) -> &::std::option::Option<i64> {
-        &self.read_i_os
+    pub fn get_read_ios(&self) -> &::std::option::Option<i64> {
+        &self.read_ios
     }
     /// <p>The number of write I/O requests that the command made.</p>
-    pub fn write_i_os(mut self, input: i64) -> Self {
-        self.write_i_os = ::std::option::Option::Some(input);
+    pub fn write_ios(mut self, input: i64) -> Self {
+        self.write_ios = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of write I/O requests that the command made.</p>
-    pub fn set_write_i_os(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.write_i_os = input;
+    pub fn set_write_ios(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.write_ios = input;
         self
     }
     /// <p>The number of write I/O requests that the command made.</p>
-    pub fn get_write_i_os(&self) -> &::std::option::Option<i64> {
-        &self.write_i_os
+    pub fn get_write_ios(&self) -> &::std::option::Option<i64> {
+        &self.write_ios
     }
     /// Consumes the builder and constructs a [`IoUsage`](crate::types::IoUsage).
     pub fn build(self) -> crate::types::IoUsage {
         crate::types::IoUsage {
-            read_i_os: self.read_i_os.unwrap_or_default(),
-            write_i_os: self.write_i_os.unwrap_or_default(),
+            read_ios: self.read_ios.unwrap_or_default(),
+            write_ios: self.write_ios.unwrap_or_default(),
         }
     }
 }

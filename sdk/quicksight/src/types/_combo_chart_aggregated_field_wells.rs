@@ -15,20 +15,28 @@ pub struct ComboChartAggregatedFieldWells {
 }
 impl ComboChartAggregatedFieldWells {
     /// <p>The aggregated category field wells of a combo chart.</p>
-    pub fn category(&self) -> ::std::option::Option<&[crate::types::DimensionField]> {
-        self.category.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.category.is_none()`.
+    pub fn category(&self) -> &[crate::types::DimensionField] {
+        self.category.as_deref().unwrap_or_default()
     }
     /// <p>The aggregated <code>BarValues</code> field well of a combo chart.</p>
-    pub fn bar_values(&self) -> ::std::option::Option<&[crate::types::MeasureField]> {
-        self.bar_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bar_values.is_none()`.
+    pub fn bar_values(&self) -> &[crate::types::MeasureField] {
+        self.bar_values.as_deref().unwrap_or_default()
     }
     /// <p>The aggregated colors field well of a combo chart.</p>
-    pub fn colors(&self) -> ::std::option::Option<&[crate::types::DimensionField]> {
-        self.colors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.colors.is_none()`.
+    pub fn colors(&self) -> &[crate::types::DimensionField] {
+        self.colors.as_deref().unwrap_or_default()
     }
     /// <p>The aggregated <code>LineValues</code> field well of a combo chart.</p>
-    pub fn line_values(&self) -> ::std::option::Option<&[crate::types::MeasureField]> {
-        self.line_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.line_values.is_none()`.
+    pub fn line_values(&self) -> &[crate::types::MeasureField] {
+        self.line_values.as_deref().unwrap_or_default()
     }
 }
 impl ComboChartAggregatedFieldWells {

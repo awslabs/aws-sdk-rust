@@ -27,6 +27,7 @@ pub struct GetImageRecipeInputBuilder {
 }
 impl GetImageRecipeInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the image recipe that you want to retrieve.</p>
+    /// This field is required.
     pub fn image_recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_recipe_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetImageRecipeInputBuilder {
     /// Consumes the builder and constructs a [`GetImageRecipeInput`](crate::operation::get_image_recipe::GetImageRecipeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_image_recipe::GetImageRecipeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_image_recipe::GetImageRecipeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_image_recipe::GetImageRecipeInput {
             image_recipe_arn: self.image_recipe_arn,
         })

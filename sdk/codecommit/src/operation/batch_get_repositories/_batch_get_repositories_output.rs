@@ -12,12 +12,16 @@ pub struct BatchGetRepositoriesOutput {
 }
 impl BatchGetRepositoriesOutput {
     /// <p>A list of repositories returned by the batch get repositories operation.</p>
-    pub fn repositories(&self) -> ::std::option::Option<&[crate::types::RepositoryMetadata]> {
-        self.repositories.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.repositories.is_none()`.
+    pub fn repositories(&self) -> &[crate::types::RepositoryMetadata] {
+        self.repositories.as_deref().unwrap_or_default()
     }
     /// <p>Returns a list of repository names for which information could not be found.</p>
-    pub fn repositories_not_found(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.repositories_not_found.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.repositories_not_found.is_none()`.
+    pub fn repositories_not_found(&self) -> &[::std::string::String] {
+        self.repositories_not_found.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchGetRepositoriesOutput {

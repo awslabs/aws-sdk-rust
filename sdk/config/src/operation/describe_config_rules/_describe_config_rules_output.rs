@@ -12,8 +12,10 @@ pub struct DescribeConfigRulesOutput {
 }
 impl DescribeConfigRulesOutput {
     /// <p>The details about your Config rules.</p>
-    pub fn config_rules(&self) -> ::std::option::Option<&[crate::types::ConfigRule]> {
-        self.config_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.config_rules.is_none()`.
+    pub fn config_rules(&self) -> &[crate::types::ConfigRule] {
+        self.config_rules.as_deref().unwrap_or_default()
     }
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -22,7 +22,7 @@ where
                             );
                         }
                         "allowedValues" => {
-                            builder = builder.set_allowed_values(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                            builder = builder.set_allowed_values(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         "constraintDescription" => {
                             builder = builder.set_constraint_description(
@@ -84,8 +84,7 @@ where
                             builder = builder.set_no_echo(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "referencedByResources" => {
-                            builder =
-                                builder.set_referenced_by_resources(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                            builder = builder.set_referenced_by_resources(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         "type" => {
                             builder = builder.set_type(
@@ -104,7 +103,7 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::parameter_definition_correct_errors(builder).build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

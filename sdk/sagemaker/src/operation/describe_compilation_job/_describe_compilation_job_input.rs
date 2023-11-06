@@ -27,6 +27,7 @@ pub struct DescribeCompilationJobInputBuilder {
 }
 impl DescribeCompilationJobInputBuilder {
     /// <p>The name of the model compilation job that you want information about.</p>
+    /// This field is required.
     pub fn compilation_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compilation_job_name = ::std::option::Option::Some(input.into());
         self
@@ -43,8 +44,10 @@ impl DescribeCompilationJobInputBuilder {
     /// Consumes the builder and constructs a [`DescribeCompilationJobInput`](crate::operation::describe_compilation_job::DescribeCompilationJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_compilation_job::DescribeCompilationJobInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_compilation_job::DescribeCompilationJobInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_compilation_job::DescribeCompilationJobInput {
             compilation_job_name: self.compilation_job_name,
         })

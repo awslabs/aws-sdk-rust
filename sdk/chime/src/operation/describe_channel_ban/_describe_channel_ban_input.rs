@@ -41,6 +41,7 @@ pub struct DescribeChannelBanInputBuilder {
 }
 impl DescribeChannelBanInputBuilder {
     /// <p>The ARN of the channel from which the user is banned.</p>
+    /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DescribeChannelBanInputBuilder {
         &self.channel_arn
     }
     /// <p>The ARN of the member being banned.</p>
+    /// This field is required.
     pub fn member_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_arn = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +87,8 @@ impl DescribeChannelBanInputBuilder {
     /// Consumes the builder and constructs a [`DescribeChannelBanInput`](crate::operation::describe_channel_ban::DescribeChannelBanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_channel_ban::DescribeChannelBanInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_channel_ban::DescribeChannelBanInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::describe_channel_ban::DescribeChannelBanInput {
             channel_arn: self.channel_arn,
             member_arn: self.member_arn,

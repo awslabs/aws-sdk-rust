@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DelimitedTextImportOptions {
     /// <p>The delimiter to use for separating columns in a single row of the input.</p>
-    pub delimiter: ::std::option::Option<::std::string::String>,
+    pub delimiter: ::std::string::String,
     /// <p>Indicates whether the input file has a header row at the top containing the column names.</p>
     pub has_header_row: bool,
     /// <p>A parameter to indicate whether empty rows should be ignored or be included in the import.</p>
@@ -15,8 +15,9 @@ pub struct DelimitedTextImportOptions {
 }
 impl DelimitedTextImportOptions {
     /// <p>The delimiter to use for separating columns in a single row of the input.</p>
-    pub fn delimiter(&self) -> ::std::option::Option<&str> {
-        self.delimiter.as_deref()
+    pub fn delimiter(&self) -> &str {
+        use std::ops::Deref;
+        self.delimiter.deref()
     }
     /// <p>Indicates whether the input file has a header row at the top containing the column names.</p>
     pub fn has_header_row(&self) -> bool {
@@ -49,6 +50,7 @@ pub struct DelimitedTextImportOptionsBuilder {
 }
 impl DelimitedTextImportOptionsBuilder {
     /// <p>The delimiter to use for separating columns in a single row of the input.</p>
+    /// This field is required.
     pub fn delimiter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delimiter = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +107,19 @@ impl DelimitedTextImportOptionsBuilder {
         &self.data_character_encoding
     }
     /// Consumes the builder and constructs a [`DelimitedTextImportOptions`](crate::types::DelimitedTextImportOptions).
-    pub fn build(self) -> crate::types::DelimitedTextImportOptions {
-        crate::types::DelimitedTextImportOptions {
-            delimiter: self.delimiter,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`delimiter`](crate::types::builders::DelimitedTextImportOptionsBuilder::delimiter)
+    pub fn build(self) -> ::std::result::Result<crate::types::DelimitedTextImportOptions, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DelimitedTextImportOptions {
+            delimiter: self.delimiter.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "delimiter",
+                    "delimiter was not specified but it is required when building DelimitedTextImportOptions",
+                )
+            })?,
             has_header_row: self.has_header_row.unwrap_or_default(),
             ignore_empty_rows: self.ignore_empty_rows.unwrap_or_default(),
             data_character_encoding: self.data_character_encoding,
-        }
+        })
     }
 }

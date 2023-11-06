@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartApplicationRefresh`](crate::operation::start_application_refresh::builders::StartApplicationRefreshFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::operation::start_application_refresh::builders::StartApplicationRefreshFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::start_application_refresh::builders::StartApplicationRefreshFluentBuilder::set_application_id): <p>The ID of the application.</p>
+    ///   - [`application_id(impl Into<String>)`](crate::operation::start_application_refresh::builders::StartApplicationRefreshFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::start_application_refresh::builders::StartApplicationRefreshFluentBuilder::set_application_id):<br>required: **true**<br><p>The ID of the application.</p><br>
     /// - On success, responds with [`StartApplicationRefreshOutput`](crate::operation::start_application_refresh::StartApplicationRefreshOutput) with field(s):
     ///   - [`operation_id(Option<String>)`](crate::operation::start_application_refresh::StartApplicationRefreshOutput::operation_id): <p>The ID of the operation.</p>
     /// - On failure, responds with [`SdkError<StartApplicationRefreshError>`](crate::operation::start_application_refresh::StartApplicationRefreshError)

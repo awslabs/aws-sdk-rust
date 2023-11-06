@@ -14,8 +14,10 @@ impl UpdateServiceNetworkVpcAssociationInput {
         self.service_network_vpc_association_identifier.as_deref()
     }
     /// <p>The IDs of the security groups. Once you add a security group, it cannot be removed.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
 }
 impl UpdateServiceNetworkVpcAssociationInput {
@@ -34,6 +36,7 @@ pub struct UpdateServiceNetworkVpcAssociationInputBuilder {
 }
 impl UpdateServiceNetworkVpcAssociationInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
+    /// This field is required.
     pub fn service_network_vpc_association_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_network_vpc_association_identifier = ::std::option::Option::Some(input.into());
         self
@@ -72,7 +75,7 @@ impl UpdateServiceNetworkVpcAssociationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_service_network_vpc_association::UpdateServiceNetworkVpcAssociationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_service_network_vpc_association::UpdateServiceNetworkVpcAssociationInput {

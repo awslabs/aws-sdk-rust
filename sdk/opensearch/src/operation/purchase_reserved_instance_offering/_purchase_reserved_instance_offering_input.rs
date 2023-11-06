@@ -42,6 +42,7 @@ pub struct PurchaseReservedInstanceOfferingInputBuilder {
 }
 impl PurchaseReservedInstanceOfferingInputBuilder {
     /// <p>The ID of the Reserved Instance offering to purchase.</p>
+    /// This field is required.
     pub fn reserved_instance_offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_instance_offering_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl PurchaseReservedInstanceOfferingInputBuilder {
         &self.reserved_instance_offering_id
     }
     /// <p>A customer-specified identifier to track this reservation.</p>
+    /// This field is required.
     pub fn reservation_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reservation_name = ::std::option::Option::Some(input.into());
         self
@@ -88,7 +90,7 @@ impl PurchaseReservedInstanceOfferingInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::purchase_reserved_instance_offering::PurchaseReservedInstanceOfferingInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::purchase_reserved_instance_offering::PurchaseReservedInstanceOfferingInput {

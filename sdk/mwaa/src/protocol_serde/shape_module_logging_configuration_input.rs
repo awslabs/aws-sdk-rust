@@ -2,12 +2,12 @@
 pub fn ser_module_logging_configuration_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ModuleLoggingConfigurationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.enabled {
-        object.key("Enabled").boolean(*var_1);
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Enabled").boolean(input.enabled);
     }
-    if let Some(var_2) = &input.log_level {
-        object.key("LogLevel").string(var_2.as_str());
+    {
+        object.key("LogLevel").string(input.log_level.as_str());
     }
     Ok(())
 }

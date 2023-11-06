@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder takes no input, just [`send`](crate::operation::list_buckets::builders::ListBucketsFluentBuilder::send) it.
     /// - On success, responds with [`ListBucketsOutput`](crate::operation::list_buckets::ListBucketsOutput) with field(s):
-    ///   - [`buckets(Option<Vec<Bucket>>)`](crate::operation::list_buckets::ListBucketsOutput::buckets): <p>The list of buckets owned by the requester.</p>
+    ///   - [`buckets(Option<Vec::<Bucket>>)`](crate::operation::list_buckets::ListBucketsOutput::buckets): <p>The list of buckets owned by the requester.</p>
     ///   - [`owner(Option<Owner>)`](crate::operation::list_buckets::ListBucketsOutput::owner): <p>The owner of the buckets listed.</p>
     /// - On failure, responds with [`SdkError<ListBucketsError>`](crate::operation::list_buckets::ListBucketsError)
     pub fn list_buckets(&self) -> crate::operation::list_buckets::builders::ListBucketsFluentBuilder {

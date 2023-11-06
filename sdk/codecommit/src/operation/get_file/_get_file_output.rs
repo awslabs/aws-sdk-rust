@@ -4,47 +4,50 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFileOutput {
     /// <p>The full commit ID of the commit that contains the content returned by GetFile.</p>
-    pub commit_id: ::std::option::Option<::std::string::String>,
+    pub commit_id: ::std::string::String,
     /// <p>The blob ID of the object that represents the file content.</p>
-    pub blob_id: ::std::option::Option<::std::string::String>,
+    pub blob_id: ::std::string::String,
     /// <p>The fully qualified path to the specified file. Returns the name and extension of the file.</p>
-    pub file_path: ::std::option::Option<::std::string::String>,
+    pub file_path: ::std::string::String,
     /// <p>The extrapolated file mode permissions of the blob. Valid values include strings such as EXECUTABLE and not numeric values.</p> <note>
     /// <p>The file mode permissions returned by this API are not the standard file mode permission values, such as 100644, but rather extrapolated values. See the supported return values.</p>
     /// </note>
-    pub file_mode: ::std::option::Option<crate::types::FileModeTypeEnum>,
+    pub file_mode: crate::types::FileModeTypeEnum,
     /// <p>The size of the contents of the file, in bytes.</p>
     pub file_size: i64,
     /// <p>The base-64 encoded binary data object that represents the content of the file.</p>
-    pub file_content: ::std::option::Option<::aws_smithy_types::Blob>,
+    pub file_content: ::aws_smithy_types::Blob,
     _request_id: Option<String>,
 }
 impl GetFileOutput {
     /// <p>The full commit ID of the commit that contains the content returned by GetFile.</p>
-    pub fn commit_id(&self) -> ::std::option::Option<&str> {
-        self.commit_id.as_deref()
+    pub fn commit_id(&self) -> &str {
+        use std::ops::Deref;
+        self.commit_id.deref()
     }
     /// <p>The blob ID of the object that represents the file content.</p>
-    pub fn blob_id(&self) -> ::std::option::Option<&str> {
-        self.blob_id.as_deref()
+    pub fn blob_id(&self) -> &str {
+        use std::ops::Deref;
+        self.blob_id.deref()
     }
     /// <p>The fully qualified path to the specified file. Returns the name and extension of the file.</p>
-    pub fn file_path(&self) -> ::std::option::Option<&str> {
-        self.file_path.as_deref()
+    pub fn file_path(&self) -> &str {
+        use std::ops::Deref;
+        self.file_path.deref()
     }
     /// <p>The extrapolated file mode permissions of the blob. Valid values include strings such as EXECUTABLE and not numeric values.</p> <note>
     /// <p>The file mode permissions returned by this API are not the standard file mode permission values, such as 100644, but rather extrapolated values. See the supported return values.</p>
     /// </note>
-    pub fn file_mode(&self) -> ::std::option::Option<&crate::types::FileModeTypeEnum> {
-        self.file_mode.as_ref()
+    pub fn file_mode(&self) -> &crate::types::FileModeTypeEnum {
+        &self.file_mode
     }
     /// <p>The size of the contents of the file, in bytes.</p>
     pub fn file_size(&self) -> i64 {
         self.file_size
     }
     /// <p>The base-64 encoded binary data object that represents the content of the file.</p>
-    pub fn file_content(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
-        self.file_content.as_ref()
+    pub fn file_content(&self) -> &::aws_smithy_types::Blob {
+        &self.file_content
     }
 }
 impl ::aws_http::request_id::RequestId for GetFileOutput {
@@ -73,6 +76,7 @@ pub struct GetFileOutputBuilder {
 }
 impl GetFileOutputBuilder {
     /// <p>The full commit ID of the commit that contains the content returned by GetFile.</p>
+    /// This field is required.
     pub fn commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.commit_id = ::std::option::Option::Some(input.into());
         self
@@ -87,6 +91,7 @@ impl GetFileOutputBuilder {
         &self.commit_id
     }
     /// <p>The blob ID of the object that represents the file content.</p>
+    /// This field is required.
     pub fn blob_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.blob_id = ::std::option::Option::Some(input.into());
         self
@@ -101,6 +106,7 @@ impl GetFileOutputBuilder {
         &self.blob_id
     }
     /// <p>The fully qualified path to the specified file. Returns the name and extension of the file.</p>
+    /// This field is required.
     pub fn file_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_path = ::std::option::Option::Some(input.into());
         self
@@ -117,6 +123,7 @@ impl GetFileOutputBuilder {
     /// <p>The extrapolated file mode permissions of the blob. Valid values include strings such as EXECUTABLE and not numeric values.</p> <note>
     /// <p>The file mode permissions returned by this API are not the standard file mode permission values, such as 100644, but rather extrapolated values. See the supported return values.</p>
     /// </note>
+    /// This field is required.
     pub fn file_mode(mut self, input: crate::types::FileModeTypeEnum) -> Self {
         self.file_mode = ::std::option::Option::Some(input);
         self
@@ -135,6 +142,7 @@ impl GetFileOutputBuilder {
         &self.file_mode
     }
     /// <p>The size of the contents of the file, in bytes.</p>
+    /// This field is required.
     pub fn file_size(mut self, input: i64) -> Self {
         self.file_size = ::std::option::Option::Some(input);
         self
@@ -149,6 +157,7 @@ impl GetFileOutputBuilder {
         &self.file_size
     }
     /// <p>The base-64 encoded binary data object that represents the content of the file.</p>
+    /// This field is required.
     pub fn file_content(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.file_content = ::std::option::Option::Some(input);
         self
@@ -172,15 +181,46 @@ impl GetFileOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetFileOutput`](crate::operation::get_file::GetFileOutput).
-    pub fn build(self) -> crate::operation::get_file::GetFileOutput {
-        crate::operation::get_file::GetFileOutput {
-            commit_id: self.commit_id,
-            blob_id: self.blob_id,
-            file_path: self.file_path,
-            file_mode: self.file_mode,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`commit_id`](crate::operation::get_file::builders::GetFileOutputBuilder::commit_id)
+    /// - [`blob_id`](crate::operation::get_file::builders::GetFileOutputBuilder::blob_id)
+    /// - [`file_path`](crate::operation::get_file::builders::GetFileOutputBuilder::file_path)
+    /// - [`file_mode`](crate::operation::get_file::builders::GetFileOutputBuilder::file_mode)
+    /// - [`file_content`](crate::operation::get_file::builders::GetFileOutputBuilder::file_content)
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_file::GetFileOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_file::GetFileOutput {
+            commit_id: self.commit_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "commit_id",
+                    "commit_id was not specified but it is required when building GetFileOutput",
+                )
+            })?,
+            blob_id: self.blob_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "blob_id",
+                    "blob_id was not specified but it is required when building GetFileOutput",
+                )
+            })?,
+            file_path: self.file_path.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "file_path",
+                    "file_path was not specified but it is required when building GetFileOutput",
+                )
+            })?,
+            file_mode: self.file_mode.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "file_mode",
+                    "file_mode was not specified but it is required when building GetFileOutput",
+                )
+            })?,
             file_size: self.file_size.unwrap_or_default(),
-            file_content: self.file_content,
+            file_content: self.file_content.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "file_content",
+                    "file_content was not specified but it is required when building GetFileOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

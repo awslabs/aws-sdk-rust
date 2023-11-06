@@ -11,12 +11,16 @@ pub struct CreateMembersOutput {
 }
 impl CreateMembersOutput {
     /// <p>The set of member account invitation or enablement requests that Detective was able to process. This includes accounts that are being verified, that failed verification, and that passed verification and are being sent an invitation or are being enabled.</p>
-    pub fn members(&self) -> ::std::option::Option<&[crate::types::MemberDetail]> {
-        self.members.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.members.is_none()`.
+    pub fn members(&self) -> &[crate::types::MemberDetail] {
+        self.members.as_deref().unwrap_or_default()
     }
     /// <p>The list of accounts for which Detective was unable to process the invitation or enablement request. For each account, the list provides the reason why the request could not be processed. The list includes accounts that are already member accounts in the behavior graph.</p>
-    pub fn unprocessed_accounts(&self) -> ::std::option::Option<&[crate::types::UnprocessedAccount]> {
-        self.unprocessed_accounts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unprocessed_accounts.is_none()`.
+    pub fn unprocessed_accounts(&self) -> &[crate::types::UnprocessedAccount] {
+        self.unprocessed_accounts.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateMembersOutput {

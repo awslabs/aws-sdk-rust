@@ -68,7 +68,7 @@ pub fn de_describe_metadata_model_exports_as_script_http_response(
 
 pub fn ser_describe_metadata_model_exports_as_script_input(
     input: &crate::operation::describe_metadata_model_exports_as_script::DescribeMetadataModelExportsAsScriptInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_describe_metadata_model_exports_as_script_input::ser_describe_metadata_model_exports_as_script_input(
@@ -76,7 +76,7 @@ pub fn ser_describe_metadata_model_exports_as_script_input(
         input,
     )?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_describe_metadata_model_exports_as_script(

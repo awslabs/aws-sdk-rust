@@ -62,6 +62,7 @@ impl CreateServiceNetworkServiceAssociationInputBuilder {
         &self.client_token
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    /// This field is required.
     pub fn service_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_identifier = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl CreateServiceNetworkServiceAssociationInputBuilder {
         &self.service_identifier
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service network. You must use the ARN if the resources specified in the operation are in different accounts.</p>
+    /// This field is required.
     pub fn service_network_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_network_identifier = ::std::option::Option::Some(input.into());
         self
@@ -114,7 +116,7 @@ impl CreateServiceNetworkServiceAssociationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociationInput {

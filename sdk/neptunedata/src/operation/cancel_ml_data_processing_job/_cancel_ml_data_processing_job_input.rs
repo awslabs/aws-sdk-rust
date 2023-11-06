@@ -41,6 +41,7 @@ pub struct CancelMlDataProcessingJobInputBuilder {
 }
 impl CancelMlDataProcessingJobInputBuilder {
     /// <p>The unique identifier of the data-processing job.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl CancelMlDataProcessingJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_ml_data_processing_job::CancelMlDataProcessingJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::cancel_ml_data_processing_job::CancelMlDataProcessingJobInput {
             id: self.id,

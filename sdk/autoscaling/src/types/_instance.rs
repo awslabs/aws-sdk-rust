@@ -86,6 +86,7 @@ pub struct InstanceBuilder {
 }
 impl InstanceBuilder {
     /// <p>The ID of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -114,6 +115,7 @@ impl InstanceBuilder {
         &self.instance_type
     }
     /// <p>The Availability Zone in which the instance is running.</p>
+    /// This field is required.
     pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
@@ -128,6 +130,7 @@ impl InstanceBuilder {
         &self.availability_zone
     }
     /// <p>A description of the current lifecycle state. The <code>Quarantined</code> state is not used. For information about lifecycle states, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
+    /// This field is required.
     pub fn lifecycle_state(mut self, input: crate::types::LifecycleState) -> Self {
         self.lifecycle_state = ::std::option::Option::Some(input);
         self
@@ -142,6 +145,7 @@ impl InstanceBuilder {
         &self.lifecycle_state
     }
     /// <p>The last reported health status of the instance. <code>Healthy</code> means that the instance is healthy and should remain in service. <code>Unhealthy</code> means that the instance is unhealthy and that Amazon EC2 Auto Scaling should terminate and replace it.</p>
+    /// This field is required.
     pub fn health_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.health_status = ::std::option::Option::Some(input.into());
         self
@@ -184,6 +188,7 @@ impl InstanceBuilder {
         &self.launch_template
     }
     /// <p>Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling in.</p>
+    /// This field is required.
     pub fn protected_from_scale_in(mut self, input: bool) -> Self {
         self.protected_from_scale_in = ::std::option::Option::Some(input);
         self

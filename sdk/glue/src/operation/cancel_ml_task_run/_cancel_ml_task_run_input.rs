@@ -34,6 +34,7 @@ pub struct CancelMlTaskRunInputBuilder {
 }
 impl CancelMlTaskRunInputBuilder {
     /// <p>The unique identifier of the machine learning transform.</p>
+    /// This field is required.
     pub fn transform_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transform_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl CancelMlTaskRunInputBuilder {
         &self.transform_id
     }
     /// <p>A unique identifier for the task run.</p>
+    /// This field is required.
     pub fn task_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_run_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl CancelMlTaskRunInputBuilder {
     /// Consumes the builder and constructs a [`CancelMlTaskRunInput`](crate::operation::cancel_ml_task_run::CancelMlTaskRunInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_ml_task_run::CancelMlTaskRunInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::cancel_ml_task_run::CancelMlTaskRunInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_ml_task_run::CancelMlTaskRunInput {
             transform_id: self.transform_id,
             task_run_id: self.task_run_id,

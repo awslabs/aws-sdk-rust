@@ -34,6 +34,7 @@ pub struct UpdateDataSourceInputBuilder {
 }
 impl UpdateDataSourceInputBuilder {
     /// <p>The ID assigned to the <code>DataSource</code> during creation.</p>
+    /// This field is required.
     pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateDataSourceInputBuilder {
         &self.data_source_id
     }
     /// <p>A new user-supplied name or description of the <code>DataSource</code> that will replace the current description. </p>
+    /// This field is required.
     pub fn data_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl UpdateDataSourceInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDataSourceInput`](crate::operation::update_data_source::UpdateDataSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_data_source::UpdateDataSourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_data_source::UpdateDataSourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_data_source::UpdateDataSourceInput {
             data_source_id: self.data_source_id,
             data_source_name: self.data_source_name,

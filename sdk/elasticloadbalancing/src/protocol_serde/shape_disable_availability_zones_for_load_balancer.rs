@@ -36,8 +36,8 @@ pub fn de_disable_availability_zones_for_load_balancer_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidConfigurationRequest" => crate::operation::disable_availability_zones_for_load_balancer::DisableAvailabilityZonesForLoadBalancerError::InvalidConfigurationRequestException({
@@ -52,8 +52,8 @@ pub fn de_disable_availability_zones_for_load_balancer_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::disable_availability_zones_for_load_balancer::DisableAvailabilityZonesForLoadBalancerError::generic(generic)

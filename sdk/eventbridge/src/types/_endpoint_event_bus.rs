@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EndpointEventBus {
     /// <p>The ARN of the event bus the endpoint is associated with.</p>
-    pub event_bus_arn: ::std::option::Option<::std::string::String>,
+    pub event_bus_arn: ::std::string::String,
 }
 impl EndpointEventBus {
     /// <p>The ARN of the event bus the endpoint is associated with.</p>
-    pub fn event_bus_arn(&self) -> ::std::option::Option<&str> {
-        self.event_bus_arn.as_deref()
+    pub fn event_bus_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.event_bus_arn.deref()
     }
 }
 impl EndpointEventBus {
@@ -28,6 +29,7 @@ pub struct EndpointEventBusBuilder {
 }
 impl EndpointEventBusBuilder {
     /// <p>The ARN of the event bus the endpoint is associated with.</p>
+    /// This field is required.
     pub fn event_bus_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_bus_arn = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl EndpointEventBusBuilder {
         &self.event_bus_arn
     }
     /// Consumes the builder and constructs a [`EndpointEventBus`](crate::types::EndpointEventBus).
-    pub fn build(self) -> crate::types::EndpointEventBus {
-        crate::types::EndpointEventBus {
-            event_bus_arn: self.event_bus_arn,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`event_bus_arn`](crate::types::builders::EndpointEventBusBuilder::event_bus_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::EndpointEventBus, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EndpointEventBus {
+            event_bus_arn: self.event_bus_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "event_bus_arn",
+                    "event_bus_arn was not specified but it is required when building EndpointEventBus",
+                )
+            })?,
+        })
     }
 }

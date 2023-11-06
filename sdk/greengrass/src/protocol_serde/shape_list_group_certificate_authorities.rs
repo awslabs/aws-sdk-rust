@@ -94,7 +94,7 @@ pub(crate) fn de_list_group_certificate_authorities(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "GroupCertificateAuthorities" => {
                     builder = builder.set_group_certificate_authorities(
-                            crate::protocol_serde::shape___list_of_group_certificate_authority_properties::de___list_of_group_certificate_authority_properties(tokens)?
+                            crate::protocol_serde::shape_list_of_group_certificate_authority_properties::de_list_of_group_certificate_authority_properties(tokens)?
                         );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

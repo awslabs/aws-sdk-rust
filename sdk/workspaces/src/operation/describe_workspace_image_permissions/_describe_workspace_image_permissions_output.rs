@@ -17,8 +17,10 @@ impl DescribeWorkspaceImagePermissionsOutput {
         self.image_id.as_deref()
     }
     /// <p>The identifiers of the Amazon Web Services accounts that the image has been shared with.</p>
-    pub fn image_permissions(&self) -> ::std::option::Option<&[crate::types::ImagePermission]> {
-        self.image_permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_permissions.is_none()`.
+    pub fn image_permissions(&self) -> &[crate::types::ImagePermission] {
+        self.image_permissions.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

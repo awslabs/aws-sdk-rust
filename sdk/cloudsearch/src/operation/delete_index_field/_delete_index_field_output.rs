@@ -35,6 +35,7 @@ pub struct DeleteIndexFieldOutputBuilder {
 }
 impl DeleteIndexFieldOutputBuilder {
     /// <p>The status of the index field being deleted.</p>
+    /// This field is required.
     pub fn index_field(mut self, input: crate::types::IndexFieldStatus) -> Self {
         self.index_field = ::std::option::Option::Some(input);
         self

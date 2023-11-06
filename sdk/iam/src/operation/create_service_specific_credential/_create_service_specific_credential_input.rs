@@ -37,6 +37,7 @@ pub struct CreateServiceSpecificCredentialInputBuilder {
 impl CreateServiceSpecificCredentialInputBuilder {
     /// <p>The name of the IAM user that is to be associated with the credentials. The new service-specific credentials have the same permissions as the associated user except that they can be used only to access the specified service.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// This field is required.
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self
@@ -53,6 +54,7 @@ impl CreateServiceSpecificCredentialInputBuilder {
         &self.user_name
     }
     /// <p>The name of the Amazon Web Services service that is to be associated with the credentials. The service you specify here is the only service that can be accessed using these credentials.</p>
+    /// This field is required.
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
         self
@@ -71,7 +73,7 @@ impl CreateServiceSpecificCredentialInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_service_specific_credential::CreateServiceSpecificCredentialInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_service_specific_credential::CreateServiceSpecificCredentialInput {

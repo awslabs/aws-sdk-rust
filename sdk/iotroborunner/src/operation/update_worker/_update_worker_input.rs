@@ -69,6 +69,7 @@ pub struct UpdateWorkerInputBuilder {
 }
 impl UpdateWorkerInputBuilder {
     /// Full ARN of the worker.
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -167,7 +168,9 @@ impl UpdateWorkerInputBuilder {
         &self.orientation
     }
     /// Consumes the builder and constructs a [`UpdateWorkerInput`](crate::operation::update_worker::UpdateWorkerInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_worker::UpdateWorkerInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_worker::UpdateWorkerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_worker::UpdateWorkerInput {
             id: self.id,
             name: self.name,

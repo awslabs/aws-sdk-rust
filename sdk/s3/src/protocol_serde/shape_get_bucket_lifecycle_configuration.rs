@@ -40,13 +40,13 @@ pub fn de_get_bucket_lifecycle_configuration_http_response(
 pub fn ser_get_bucket_lifecycle_configuration_headers(
     input: &crate::operation::get_bucket_lifecycle_configuration::GetBucketLifecycleConfigurationInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.expected_bucket_owner {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "expected_bucket_owner",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -82,7 +82,7 @@ pub fn de_get_bucket_lifecycle_configuration(
             s if s.matches("Rule") /* Rules com.amazonaws.s3.synthetic#GetBucketLifecycleConfigurationOutput$Rules */ =>  {
                 let var_3 =
                     Some(
-                        Result::<::std::vec::Vec<crate::types::LifecycleRule>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<crate::types::LifecycleRule>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_4 = builder.rules.take().unwrap_or_default();
                             list_4.push(
                                 crate::protocol_serde::shape_lifecycle_rule::de_lifecycle_rule(&mut tag)

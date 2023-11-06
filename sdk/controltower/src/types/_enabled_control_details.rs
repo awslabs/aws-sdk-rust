@@ -31,8 +31,10 @@ impl EnabledControlDetails {
         self.target_identifier.as_deref()
     }
     /// <p> Target AWS Regions for the enabled control. </p>
-    pub fn target_regions(&self) -> ::std::option::Option<&[crate::types::Region]> {
-        self.target_regions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_regions.is_none()`.
+    pub fn target_regions(&self) -> &[crate::types::Region] {
+        self.target_regions.as_deref().unwrap_or_default()
     }
     /// <p> The deployment summary of the enabled control. </p>
     pub fn status_summary(&self) -> ::std::option::Option<&crate::types::EnablementStatusSummary> {

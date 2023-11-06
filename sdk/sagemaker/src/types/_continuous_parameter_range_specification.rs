@@ -35,6 +35,7 @@ pub struct ContinuousParameterRangeSpecificationBuilder {
 }
 impl ContinuousParameterRangeSpecificationBuilder {
     /// <p>The minimum floating-point value allowed.</p>
+    /// This field is required.
     pub fn min_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.min_value = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl ContinuousParameterRangeSpecificationBuilder {
         &self.min_value
     }
     /// <p>The maximum floating-point value allowed.</p>
+    /// This field is required.
     pub fn max_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.max_value = ::std::option::Option::Some(input.into());
         self

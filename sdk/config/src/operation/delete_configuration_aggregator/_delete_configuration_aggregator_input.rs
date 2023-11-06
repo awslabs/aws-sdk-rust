@@ -27,6 +27,7 @@ pub struct DeleteConfigurationAggregatorInputBuilder {
 }
 impl DeleteConfigurationAggregatorInputBuilder {
     /// <p>The name of the configuration aggregator.</p>
+    /// This field is required.
     pub fn configuration_aggregator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_aggregator_name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteConfigurationAggregatorInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_configuration_aggregator::DeleteConfigurationAggregatorInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_configuration_aggregator::DeleteConfigurationAggregatorInput {
             configuration_aggregator_name: self.configuration_aggregator_name,

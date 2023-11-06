@@ -4,10 +4,10 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_workspaces::builders::ListWorkspacesFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::operation::list_workspaces::builders::ListWorkspacesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_workspaces::builders::ListWorkspacesFluentBuilder::set_max_results): <p>The maximum number of results to return at one time. The default is 25.</p>  <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_workspaces::builders::ListWorkspacesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_workspaces::builders::ListWorkspacesFluentBuilder::set_next_token): <p>The string that specifies the next page of results.</p>
+    ///   - [`max_results(i32)`](crate::operation::list_workspaces::builders::ListWorkspacesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_workspaces::builders::ListWorkspacesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return at one time. The default is 25.</p>  <p>Valid Range: Minimum value of 1. Maximum value of 250.</p><br>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_workspaces::builders::ListWorkspacesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_workspaces::builders::ListWorkspacesFluentBuilder::set_next_token):<br>required: **false**<br><p>The string that specifies the next page of results.</p><br>
     /// - On success, responds with [`ListWorkspacesOutput`](crate::operation::list_workspaces::ListWorkspacesOutput) with field(s):
-    ///   - [`workspace_summaries(Option<Vec<WorkspaceSummary>>)`](crate::operation::list_workspaces::ListWorkspacesOutput::workspace_summaries): <p>A list of objects that contain information about the workspaces.</p>
+    ///   - [`workspace_summaries(Option<Vec::<WorkspaceSummary>>)`](crate::operation::list_workspaces::ListWorkspacesOutput::workspace_summaries): <p>A list of objects that contain information about the workspaces.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_workspaces::ListWorkspacesOutput::next_token): <p>The string that specifies the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListWorkspacesError>`](crate::operation::list_workspaces::ListWorkspacesError)
     pub fn list_workspaces(&self) -> crate::operation::list_workspaces::builders::ListWorkspacesFluentBuilder {

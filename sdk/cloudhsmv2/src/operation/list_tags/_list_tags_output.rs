@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTagsOutput {
     /// <p>A list of tags.</p>
-    pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tag_list: ::std::vec::Vec<crate::types::Tag>,
     /// <p>An opaque string that indicates that the response contains only a subset of tags. Use this value in a subsequent <code>ListTags</code> request to get more tags.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListTagsOutput {
     /// <p>A list of tags.</p>
-    pub fn tag_list(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tag_list.as_deref()
+    pub fn tag_list(&self) -> &[crate::types::Tag] {
+        use std::ops::Deref;
+        self.tag_list.deref()
     }
     /// <p>An opaque string that indicates that the response contains only a subset of tags. Use this value in a subsequent <code>ListTags</code> request to get more tags.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,18 @@ impl ListTagsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListTagsOutput`](crate::operation::list_tags::ListTagsOutput).
-    pub fn build(self) -> crate::operation::list_tags::ListTagsOutput {
-        crate::operation::list_tags::ListTagsOutput {
-            tag_list: self.tag_list,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`tag_list`](crate::operation::list_tags::builders::ListTagsOutputBuilder::tag_list)
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_tags::ListTagsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_tags::ListTagsOutput {
+            tag_list: self.tag_list.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "tag_list",
+                    "tag_list was not specified but it is required when building ListTagsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -34,6 +34,7 @@ pub struct UpdateMediaInsightsPipelineStatusInputBuilder {
 }
 impl UpdateMediaInsightsPipelineStatusInputBuilder {
     /// <p>The unique identifier of the resource to be updated. Valid values include the ID and ARN of the media insights pipeline.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateMediaInsightsPipelineStatusInputBuilder {
         &self.identifier
     }
     /// <p>The requested status of the media insights pipeline.</p>
+    /// This field is required.
     pub fn update_status(mut self, input: crate::types::MediaPipelineStatusUpdate) -> Self {
         self.update_status = ::std::option::Option::Some(input);
         self
@@ -66,7 +68,7 @@ impl UpdateMediaInsightsPipelineStatusInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusInput {

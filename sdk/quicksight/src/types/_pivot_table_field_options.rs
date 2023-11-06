@@ -13,16 +13,22 @@ pub struct PivotTableFieldOptions {
 }
 impl PivotTableFieldOptions {
     /// <p>The selected field options for the pivot table field options.</p>
-    pub fn selected_field_options(&self) -> ::std::option::Option<&[crate::types::PivotTableFieldOption]> {
-        self.selected_field_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.selected_field_options.is_none()`.
+    pub fn selected_field_options(&self) -> &[crate::types::PivotTableFieldOption] {
+        self.selected_field_options.as_deref().unwrap_or_default()
     }
     /// <p>The data path options for the pivot table field options.</p>
-    pub fn data_path_options(&self) -> ::std::option::Option<&[crate::types::PivotTableDataPathOption]> {
-        self.data_path_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_path_options.is_none()`.
+    pub fn data_path_options(&self) -> &[crate::types::PivotTableDataPathOption] {
+        self.data_path_options.as_deref().unwrap_or_default()
     }
     /// <p>The collapse state options for the pivot table field options.</p>
-    pub fn collapse_state_options(&self) -> ::std::option::Option<&[crate::types::PivotTableFieldCollapseStateOption]> {
-        self.collapse_state_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.collapse_state_options.is_none()`.
+    pub fn collapse_state_options(&self) -> &[crate::types::PivotTableFieldCollapseStateOption] {
+        self.collapse_state_options.as_deref().unwrap_or_default()
     }
 }
 impl PivotTableFieldOptions {

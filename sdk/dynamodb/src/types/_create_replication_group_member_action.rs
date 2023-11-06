@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateReplicationGroupMemberAction {
     /// <p>The Region where the new replica will be created.</p>
-    pub region_name: ::std::option::Option<::std::string::String>,
+    pub region_name: ::std::string::String,
     /// <p>The KMS key that should be used for KMS encryption in the new replica. To specify a key, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. Note that you should only provide this parameter if the key is different from the default DynamoDB KMS key <code>alias/aws/dynamodb</code>.</p>
     pub kms_master_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Replica-specific provisioned throughput. If not specified, uses the source table's provisioned throughput settings.</p>
@@ -17,8 +17,9 @@ pub struct CreateReplicationGroupMemberAction {
 }
 impl CreateReplicationGroupMemberAction {
     /// <p>The Region where the new replica will be created.</p>
-    pub fn region_name(&self) -> ::std::option::Option<&str> {
-        self.region_name.as_deref()
+    pub fn region_name(&self) -> &str {
+        use std::ops::Deref;
+        self.region_name.deref()
     }
     /// <p>The KMS key that should be used for KMS encryption in the new replica. To specify a key, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. Note that you should only provide this parameter if the key is different from the default DynamoDB KMS key <code>alias/aws/dynamodb</code>.</p>
     pub fn kms_master_key_id(&self) -> ::std::option::Option<&str> {
@@ -29,8 +30,10 @@ impl CreateReplicationGroupMemberAction {
         self.provisioned_throughput_override.as_ref()
     }
     /// <p>Replica-specific global secondary index settings.</p>
-    pub fn global_secondary_indexes(&self) -> ::std::option::Option<&[crate::types::ReplicaGlobalSecondaryIndex]> {
-        self.global_secondary_indexes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.global_secondary_indexes.is_none()`.
+    pub fn global_secondary_indexes(&self) -> &[crate::types::ReplicaGlobalSecondaryIndex] {
+        self.global_secondary_indexes.as_deref().unwrap_or_default()
     }
     /// <p>Replica-specific table class. If not specified, uses the source table's table class.</p>
     pub fn table_class_override(&self) -> ::std::option::Option<&crate::types::TableClass> {
@@ -56,6 +59,7 @@ pub struct CreateReplicationGroupMemberActionBuilder {
 }
 impl CreateReplicationGroupMemberActionBuilder {
     /// <p>The Region where the new replica will be created.</p>
+    /// This field is required.
     pub fn region_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region_name = ::std::option::Option::Some(input.into());
         self
@@ -132,13 +136,20 @@ impl CreateReplicationGroupMemberActionBuilder {
         &self.table_class_override
     }
     /// Consumes the builder and constructs a [`CreateReplicationGroupMemberAction`](crate::types::CreateReplicationGroupMemberAction).
-    pub fn build(self) -> crate::types::CreateReplicationGroupMemberAction {
-        crate::types::CreateReplicationGroupMemberAction {
-            region_name: self.region_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`region_name`](crate::types::builders::CreateReplicationGroupMemberActionBuilder::region_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::CreateReplicationGroupMemberAction, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CreateReplicationGroupMemberAction {
+            region_name: self.region_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "region_name",
+                    "region_name was not specified but it is required when building CreateReplicationGroupMemberAction",
+                )
+            })?,
             kms_master_key_id: self.kms_master_key_id,
             provisioned_throughput_override: self.provisioned_throughput_override,
             global_secondary_indexes: self.global_secondary_indexes,
             table_class_override: self.table_class_override,
-        }
+        })
     }
 }

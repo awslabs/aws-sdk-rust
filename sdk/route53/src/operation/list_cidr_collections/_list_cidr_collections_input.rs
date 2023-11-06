@@ -69,7 +69,7 @@ impl ListCidrCollectionsInputBuilder {
     /// Consumes the builder and constructs a [`ListCidrCollectionsInput`](crate::operation::list_cidr_collections::ListCidrCollectionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_cidr_collections::ListCidrCollectionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_cidr_collections::ListCidrCollectionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_cidr_collections::ListCidrCollectionsInput {
             next_token: self.next_token,

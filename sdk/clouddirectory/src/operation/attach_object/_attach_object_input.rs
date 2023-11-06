@@ -48,6 +48,7 @@ pub struct AttachObjectInputBuilder {
 }
 impl AttachObjectInputBuilder {
     /// <p>Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
+    /// This field is required.
     pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl AttachObjectInputBuilder {
         &self.directory_arn
     }
     /// <p>The parent object reference.</p>
+    /// This field is required.
     pub fn parent_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.parent_reference = ::std::option::Option::Some(input);
         self
@@ -76,6 +78,7 @@ impl AttachObjectInputBuilder {
         &self.parent_reference
     }
     /// <p>The child object reference to be attached to the object.</p>
+    /// This field is required.
     pub fn child_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.child_reference = ::std::option::Option::Some(input);
         self
@@ -90,6 +93,7 @@ impl AttachObjectInputBuilder {
         &self.child_reference
     }
     /// <p>The link name with which the child object is attached to the parent.</p>
+    /// This field is required.
     pub fn link_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.link_name = ::std::option::Option::Some(input.into());
         self
@@ -104,7 +108,9 @@ impl AttachObjectInputBuilder {
         &self.link_name
     }
     /// Consumes the builder and constructs a [`AttachObjectInput`](crate::operation::attach_object::AttachObjectInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::attach_object::AttachObjectInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::attach_object::AttachObjectInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::attach_object::AttachObjectInput {
             directory_arn: self.directory_arn,
             parent_reference: self.parent_reference,

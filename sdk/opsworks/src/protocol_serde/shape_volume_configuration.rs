@@ -2,39 +2,39 @@
 pub fn ser_volume_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VolumeConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.mount_point {
-        object.key("MountPoint").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("MountPoint").string(input.mount_point.as_str());
     }
-    if let Some(var_2) = &input.raid_level {
+    if let Some(var_1) = &input.raid_level {
         object.key("RaidLevel").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_3) = &input.number_of_disks {
+    {
         object.key("NumberOfDisks").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((input.number_of_disks).into()),
+        );
+    }
+    {
+        object.key("Size").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((input.size).into()),
+        );
+    }
+    if let Some(var_2) = &input.volume_type {
+        object.key("VolumeType").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.iops {
+        object.key("Iops").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_4) = &input.size {
-        object.key("Size").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
-        );
-    }
-    if let Some(var_5) = &input.volume_type {
-        object.key("VolumeType").string(var_5.as_str());
-    }
-    if let Some(var_6) = &input.iops {
-        object.key("Iops").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_6).into()),
-        );
-    }
-    if let Some(var_7) = &input.encrypted {
-        object.key("Encrypted").boolean(*var_7);
+    if let Some(var_4) = &input.encrypted {
+        object.key("Encrypted").boolean(*var_4);
     }
     Ok(())
 }
@@ -109,7 +109,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::volume_configuration_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

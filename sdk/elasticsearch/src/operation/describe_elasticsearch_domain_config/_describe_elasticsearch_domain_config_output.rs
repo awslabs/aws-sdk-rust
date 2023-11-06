@@ -35,6 +35,7 @@ pub struct DescribeElasticsearchDomainConfigOutputBuilder {
 }
 impl DescribeElasticsearchDomainConfigOutputBuilder {
     /// <p>The configuration information of the domain requested in the <code>DescribeElasticsearchDomainConfig</code> request.</p>
+    /// This field is required.
     pub fn domain_config(mut self, input: crate::types::ElasticsearchDomainConfig) -> Self {
         self.domain_config = ::std::option::Option::Some(input);
         self

@@ -2,7 +2,7 @@
 pub fn ser_discover_input_schema_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::discover_input_schema::DiscoverInputSchemaInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.resource_arn {
         object.key("ResourceARN").string(var_1.as_str());
     }

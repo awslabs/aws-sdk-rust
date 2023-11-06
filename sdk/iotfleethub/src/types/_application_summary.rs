@@ -7,13 +7,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationSummary {
     /// <p>The unique Id of the web application.</p>
-    pub application_id: ::std::option::Option<::std::string::String>,
+    pub application_id: ::std::string::String,
     /// <p>The name of the web application.</p>
-    pub application_name: ::std::option::Option<::std::string::String>,
+    pub application_name: ::std::string::String,
     /// <p>An optional description of the web application.</p>
     pub application_description: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the web application.</p>
-    pub application_url: ::std::option::Option<::std::string::String>,
+    pub application_url: ::std::string::String,
     /// <p>The date (in Unix epoch time) when the web application was created.</p>
     pub application_creation_date: i64,
     /// <p>The date (in Unix epoch time) when the web application was last updated.</p>
@@ -23,20 +23,23 @@ pub struct ApplicationSummary {
 }
 impl ApplicationSummary {
     /// <p>The unique Id of the web application.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
-        self.application_id.as_deref()
+    pub fn application_id(&self) -> &str {
+        use std::ops::Deref;
+        self.application_id.deref()
     }
     /// <p>The name of the web application.</p>
-    pub fn application_name(&self) -> ::std::option::Option<&str> {
-        self.application_name.as_deref()
+    pub fn application_name(&self) -> &str {
+        use std::ops::Deref;
+        self.application_name.deref()
     }
     /// <p>An optional description of the web application.</p>
     pub fn application_description(&self) -> ::std::option::Option<&str> {
         self.application_description.as_deref()
     }
     /// <p>The URL of the web application.</p>
-    pub fn application_url(&self) -> ::std::option::Option<&str> {
-        self.application_url.as_deref()
+    pub fn application_url(&self) -> &str {
+        use std::ops::Deref;
+        self.application_url.deref()
     }
     /// <p>The date (in Unix epoch time) when the web application was created.</p>
     pub fn application_creation_date(&self) -> i64 {
@@ -72,6 +75,7 @@ pub struct ApplicationSummaryBuilder {
 }
 impl ApplicationSummaryBuilder {
     /// <p>The unique Id of the web application.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -86,6 +90,7 @@ impl ApplicationSummaryBuilder {
         &self.application_id
     }
     /// <p>The name of the web application.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
@@ -114,6 +119,7 @@ impl ApplicationSummaryBuilder {
         &self.application_description
     }
     /// <p>The URL of the web application.</p>
+    /// This field is required.
     pub fn application_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_url = ::std::option::Option::Some(input.into());
         self
@@ -170,15 +176,34 @@ impl ApplicationSummaryBuilder {
         &self.application_state
     }
     /// Consumes the builder and constructs a [`ApplicationSummary`](crate::types::ApplicationSummary).
-    pub fn build(self) -> crate::types::ApplicationSummary {
-        crate::types::ApplicationSummary {
-            application_id: self.application_id,
-            application_name: self.application_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`application_id`](crate::types::builders::ApplicationSummaryBuilder::application_id)
+    /// - [`application_name`](crate::types::builders::ApplicationSummaryBuilder::application_name)
+    /// - [`application_url`](crate::types::builders::ApplicationSummaryBuilder::application_url)
+    pub fn build(self) -> ::std::result::Result<crate::types::ApplicationSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ApplicationSummary {
+            application_id: self.application_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "application_id",
+                    "application_id was not specified but it is required when building ApplicationSummary",
+                )
+            })?,
+            application_name: self.application_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "application_name",
+                    "application_name was not specified but it is required when building ApplicationSummary",
+                )
+            })?,
             application_description: self.application_description,
-            application_url: self.application_url,
+            application_url: self.application_url.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "application_url",
+                    "application_url was not specified but it is required when building ApplicationSummary",
+                )
+            })?,
             application_creation_date: self.application_creation_date.unwrap_or_default(),
             application_last_update_date: self.application_last_update_date.unwrap_or_default(),
             application_state: self.application_state,
-        }
+        })
     }
 }

@@ -27,6 +27,7 @@ pub struct UpdateActionTypeInputBuilder {
 }
 impl UpdateActionTypeInputBuilder {
     /// <p>The action type definition for the action type to be updated.</p>
+    /// This field is required.
     pub fn action_type(mut self, input: crate::types::ActionTypeDeclaration) -> Self {
         self.action_type = ::std::option::Option::Some(input);
         self
@@ -43,7 +44,7 @@ impl UpdateActionTypeInputBuilder {
     /// Consumes the builder and constructs a [`UpdateActionTypeInput`](crate::operation::update_action_type::UpdateActionTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_action_type::UpdateActionTypeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_action_type::UpdateActionTypeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_action_type::UpdateActionTypeInput {
             action_type: self.action_type,
         })

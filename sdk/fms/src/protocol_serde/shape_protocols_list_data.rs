@@ -65,7 +65,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::protocols_list_data_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -76,50 +78,50 @@ where
 pub fn ser_protocols_list_data(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ProtocolsListData,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.list_id {
         object.key("ListId").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.list_name {
-        object.key("ListName").string(var_2.as_str());
+    {
+        object.key("ListName").string(input.list_name.as_str());
     }
-    if let Some(var_3) = &input.list_update_token {
-        object.key("ListUpdateToken").string(var_3.as_str());
+    if let Some(var_2) = &input.list_update_token {
+        object.key("ListUpdateToken").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.create_time {
+    if let Some(var_3) = &input.create_time {
         object
             .key("CreateTime")
-            .date_time(var_4, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_3, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_5) = &input.last_update_time {
+    if let Some(var_4) = &input.last_update_time {
         object
             .key("LastUpdateTime")
-            .date_time(var_5, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_4, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_6) = &input.protocols_list {
-        let mut array_7 = object.key("ProtocolsList").start_array();
-        for item_8 in var_6 {
+    {
+        let mut array_5 = object.key("ProtocolsList").start_array();
+        for item_6 in &input.protocols_list {
             {
-                array_7.value().string(item_8.as_str());
+                array_5.value().string(item_6.as_str());
             }
         }
-        array_7.finish();
+        array_5.finish();
     }
-    if let Some(var_9) = &input.previous_protocols_list {
+    if let Some(var_7) = &input.previous_protocols_list {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("PreviousProtocolsList").start_object();
-        for (key_11, value_12) in var_9 {
+        let mut object_8 = object.key("PreviousProtocolsList").start_object();
+        for (key_9, value_10) in var_7 {
             {
-                let mut array_13 = object_10.key(key_11.as_str()).start_array();
-                for item_14 in value_12 {
+                let mut array_11 = object_8.key(key_9.as_str()).start_array();
+                for item_12 in value_10 {
                     {
-                        array_13.value().string(item_14.as_str());
+                        array_11.value().string(item_12.as_str());
                     }
                 }
-                array_13.finish();
+                array_11.finish();
             }
         }
-        object_10.finish();
+        object_8.finish();
     }
     Ok(())
 }

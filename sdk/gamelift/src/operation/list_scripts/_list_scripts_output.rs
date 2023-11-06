@@ -11,8 +11,10 @@ pub struct ListScriptsOutput {
 }
 impl ListScriptsOutput {
     /// <p>A set of properties describing the requested script.</p>
-    pub fn scripts(&self) -> ::std::option::Option<&[crate::types::Script]> {
-        self.scripts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scripts.is_none()`.
+    pub fn scripts(&self) -> &[crate::types::Script] {
+        self.scripts.as_deref().unwrap_or_default()
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

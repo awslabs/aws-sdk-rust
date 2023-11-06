@@ -27,6 +27,7 @@ pub struct DeleteMulticastGroupInputBuilder {
 }
 impl DeleteMulticastGroupInputBuilder {
     /// <p>The ID of the multicast group.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteMulticastGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteMulticastGroupInput`](crate::operation::delete_multicast_group::DeleteMulticastGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_multicast_group::DeleteMulticastGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_multicast_group::DeleteMulticastGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_multicast_group::DeleteMulticastGroupInput { id: self.id })
     }

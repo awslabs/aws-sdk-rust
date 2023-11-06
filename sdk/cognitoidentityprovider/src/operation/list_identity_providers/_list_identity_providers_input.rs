@@ -41,6 +41,7 @@ pub struct ListIdentityProvidersInputBuilder {
 }
 impl ListIdentityProvidersInputBuilder {
     /// <p>The user pool ID.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl ListIdentityProvidersInputBuilder {
     /// Consumes the builder and constructs a [`ListIdentityProvidersInput`](crate::operation::list_identity_providers::ListIdentityProvidersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_identity_providers::ListIdentityProvidersInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_identity_providers::ListIdentityProvidersInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_identity_providers::ListIdentityProvidersInput {
             user_pool_id: self.user_pool_id,

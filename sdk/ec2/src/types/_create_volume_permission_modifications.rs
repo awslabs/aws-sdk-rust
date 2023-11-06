@@ -11,12 +11,16 @@ pub struct CreateVolumePermissionModifications {
 }
 impl CreateVolumePermissionModifications {
     /// <p>Adds the specified Amazon Web Services account ID or group to the list.</p>
-    pub fn add(&self) -> ::std::option::Option<&[crate::types::CreateVolumePermission]> {
-        self.add.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add.is_none()`.
+    pub fn add(&self) -> &[crate::types::CreateVolumePermission] {
+        self.add.as_deref().unwrap_or_default()
     }
     /// <p>Removes the specified Amazon Web Services account ID or group from the list.</p>
-    pub fn remove(&self) -> ::std::option::Option<&[crate::types::CreateVolumePermission]> {
-        self.remove.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove.is_none()`.
+    pub fn remove(&self) -> &[crate::types::CreateVolumePermission] {
+        self.remove.as_deref().unwrap_or_default()
     }
 }
 impl CreateVolumePermissionModifications {

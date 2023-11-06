@@ -23,8 +23,10 @@ impl DescribeMovingAddressesInput {
     /// <ul>
     /// <li> <p> <code>moving-status</code> - The status of the Elastic IP address (<code>MovingToVpc</code> | <code>RestoringToClassic</code>).</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -40,8 +42,10 @@ impl DescribeMovingAddressesInput {
         self.next_token.as_deref()
     }
     /// <p>One or more Elastic IP addresses.</p>
-    pub fn public_ips(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.public_ips.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.public_ips.is_none()`.
+    pub fn public_ips(&self) -> &[::std::string::String] {
+        self.public_ips.as_deref().unwrap_or_default()
     }
 }
 impl DescribeMovingAddressesInput {
@@ -161,7 +165,7 @@ impl DescribeMovingAddressesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_moving_addresses::DescribeMovingAddressesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_moving_addresses::DescribeMovingAddressesInput {
             filters: self.filters,

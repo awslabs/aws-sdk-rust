@@ -18,7 +18,7 @@ pub struct DescribeJobOutput {
     /// </ul>
     pub encryption_mode: ::std::option::Option<crate::types::EncryptionMode>,
     /// <p>The name of the job.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The job type, which must be one of the following:</p>
     /// <ul>
     /// <li> <p> <code>PROFILE</code> - The job analyzes the dataset to determine its size, data types, data distribution, and more.</p> </li>
@@ -87,8 +87,9 @@ impl DescribeJobOutput {
         self.encryption_mode.as_ref()
     }
     /// <p>The name of the job.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The job type, which must be one of the following:</p>
     /// <ul>
@@ -119,16 +120,22 @@ impl DescribeJobOutput {
         self.max_retries
     }
     /// <p>One or more artifacts that represent the output from running the job.</p>
-    pub fn outputs(&self) -> ::std::option::Option<&[crate::types::Output]> {
-        self.outputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outputs.is_none()`.
+    pub fn outputs(&self) -> &[crate::types::Output] {
+        self.outputs.as_deref().unwrap_or_default()
     }
     /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
-    pub fn data_catalog_outputs(&self) -> ::std::option::Option<&[crate::types::DataCatalogOutput]> {
-        self.data_catalog_outputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_catalog_outputs.is_none()`.
+    pub fn data_catalog_outputs(&self) -> &[crate::types::DataCatalogOutput] {
+        self.data_catalog_outputs.as_deref().unwrap_or_default()
     }
     /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
-    pub fn database_outputs(&self) -> ::std::option::Option<&[crate::types::DatabaseOutput]> {
-        self.database_outputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.database_outputs.is_none()`.
+    pub fn database_outputs(&self) -> &[crate::types::DatabaseOutput] {
+        self.database_outputs.as_deref().unwrap_or_default()
     }
     /// <p>The DataBrew project associated with this job.</p>
     pub fn project_name(&self) -> ::std::option::Option<&str> {
@@ -139,8 +146,10 @@ impl DescribeJobOutput {
         self.profile_configuration.as_ref()
     }
     /// <p>List of validation configurations that are applied to the profile job.</p>
-    pub fn validation_configurations(&self) -> ::std::option::Option<&[crate::types::ValidationConfiguration]> {
-        self.validation_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.validation_configurations.is_none()`.
+    pub fn validation_configurations(&self) -> &[crate::types::ValidationConfiguration] {
+        self.validation_configurations.as_deref().unwrap_or_default()
     }
     /// <p>Represents the name and version of a DataBrew recipe.</p>
     pub fn recipe_reference(&self) -> ::std::option::Option<&crate::types::RecipeReference> {
@@ -293,6 +302,7 @@ impl DescribeJobOutputBuilder {
         &self.encryption_mode
     }
     /// <p>The name of the job.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -610,14 +620,21 @@ impl DescribeJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeJobOutput`](crate::operation::describe_job::DescribeJobOutput).
-    pub fn build(self) -> crate::operation::describe_job::DescribeJobOutput {
-        crate::operation::describe_job::DescribeJobOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::describe_job::builders::DescribeJobOutputBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_job::DescribeJobOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_job::DescribeJobOutput {
             create_date: self.create_date,
             created_by: self.created_by,
             dataset_name: self.dataset_name,
             encryption_key_arn: self.encryption_key_arn,
             encryption_mode: self.encryption_mode,
-            name: self.name,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DescribeJobOutput",
+                )
+            })?,
             r#type: self.r#type,
             last_modified_by: self.last_modified_by,
             last_modified_date: self.last_modified_date,
@@ -637,6 +654,6 @@ impl DescribeJobOutputBuilder {
             timeout: self.timeout.unwrap_or_default(),
             job_sample: self.job_sample,
             _request_id: self._request_id,
-        }
+        })
     }
 }

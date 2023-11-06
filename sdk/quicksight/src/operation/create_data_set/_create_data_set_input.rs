@@ -62,16 +62,20 @@ impl CreateDataSetInput {
         self.import_mode.as_ref()
     }
     /// <p>Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial hierarchy is supported.</p>
-    pub fn column_groups(&self) -> ::std::option::Option<&[crate::types::ColumnGroup]> {
-        self.column_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.column_groups.is_none()`.
+    pub fn column_groups(&self) -> &[crate::types::ColumnGroup] {
+        self.column_groups.as_deref().unwrap_or_default()
     }
     /// <p>The folder that contains fields and nested subfolders for your dataset.</p>
     pub fn field_folders(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::FieldFolder>> {
         self.field_folders.as_ref()
     }
     /// <p>A list of resource permissions on the dataset.</p>
-    pub fn permissions(&self) -> ::std::option::Option<&[crate::types::ResourcePermission]> {
-        self.permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permissions.is_none()`.
+    pub fn permissions(&self) -> &[crate::types::ResourcePermission] {
+        self.permissions.as_deref().unwrap_or_default()
     }
     /// <p>The row-level security configuration for the data that you want to create.</p>
     pub fn row_level_permission_data_set(&self) -> ::std::option::Option<&crate::types::RowLevelPermissionDataSet> {
@@ -82,24 +86,32 @@ impl CreateDataSetInput {
         self.row_level_permission_tag_configuration.as_ref()
     }
     /// <p>A set of one or more definitions of a <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a> </code>.</p>
-    pub fn column_level_permission_rules(&self) -> ::std::option::Option<&[crate::types::ColumnLevelPermissionRule]> {
-        self.column_level_permission_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.column_level_permission_rules.is_none()`.
+    pub fn column_level_permission_rules(&self) -> &[crate::types::ColumnLevelPermissionRule] {
+        self.column_level_permission_rules.as_deref().unwrap_or_default()
     }
     /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the dataset.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The usage configuration to apply to child datasets that reference this dataset as a source.</p>
     pub fn data_set_usage_configuration(&self) -> ::std::option::Option<&crate::types::DataSetUsageConfiguration> {
         self.data_set_usage_configuration.as_ref()
     }
     /// <p>The parameter declarations of the dataset.</p>
-    pub fn dataset_parameters(&self) -> ::std::option::Option<&[crate::types::DatasetParameter]> {
-        self.dataset_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dataset_parameters.is_none()`.
+    pub fn dataset_parameters(&self) -> &[crate::types::DatasetParameter] {
+        self.dataset_parameters.as_deref().unwrap_or_default()
     }
     /// <p>When you create the dataset, Amazon QuickSight adds the dataset to these folders.</p>
-    pub fn folder_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.folder_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.folder_arns.is_none()`.
+    pub fn folder_arns(&self) -> &[::std::string::String] {
+        self.folder_arns.as_deref().unwrap_or_default()
     }
 }
 impl CreateDataSetInput {
@@ -132,6 +144,7 @@ pub struct CreateDataSetInputBuilder {
 }
 impl CreateDataSetInputBuilder {
     /// <p>The Amazon Web Services account ID.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -146,6 +159,7 @@ impl CreateDataSetInputBuilder {
         &self.aws_account_id
     }
     /// <p>An ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    /// This field is required.
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
         self
@@ -160,6 +174,7 @@ impl CreateDataSetInputBuilder {
         &self.data_set_id
     }
     /// <p>The display name for the dataset.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -220,6 +235,7 @@ impl CreateDataSetInputBuilder {
         &self.logical_table_map
     }
     /// <p>Indicates whether you want to import the data into SPICE.</p>
+    /// This field is required.
     pub fn import_mode(mut self, input: crate::types::DataSetImportMode) -> Self {
         self.import_mode = ::std::option::Option::Some(input);
         self
@@ -427,7 +443,7 @@ impl CreateDataSetInputBuilder {
     /// Consumes the builder and constructs a [`CreateDataSetInput`](crate::operation::create_data_set::CreateDataSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_data_set::CreateDataSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_data_set::CreateDataSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_data_set::CreateDataSetInput {
             aws_account_id: self.aws_account_id,
             data_set_id: self.data_set_id,

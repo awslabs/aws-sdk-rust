@@ -28,6 +28,7 @@ pub struct ExportProjectInputBuilder {
 }
 impl ExportProjectInputBuilder {
     /// <p> Unique project identifier. </p>
+    /// This field is required.
     pub fn project_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_id = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl ExportProjectInputBuilder {
     /// Consumes the builder and constructs a [`ExportProjectInput`](crate::operation::export_project::ExportProjectInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::export_project::ExportProjectInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::export_project::ExportProjectInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::export_project::ExportProjectInput { project_id: self.project_id })
     }
 }

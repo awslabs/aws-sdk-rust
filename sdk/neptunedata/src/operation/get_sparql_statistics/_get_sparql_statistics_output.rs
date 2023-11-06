@@ -5,7 +5,7 @@
 pub struct GetSparqlStatisticsOutput {
     /// <p>The HTTP return code of the request. If the request succeeded, the code is 200. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors">Common error codes for DFE statistics request</a> for a list of common errors.</p>
     /// <p>When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#getstatisticsstatus">neptune-db:GetStatisticsStatus</a> IAM action in that cluster.</p>
-    pub status: ::std::option::Option<::std::string::String>,
+    pub status: ::std::string::String,
     /// <p>Statistics for RDF data.</p>
     pub payload: ::std::option::Option<crate::types::Statistics>,
     _request_id: Option<String>,
@@ -13,8 +13,9 @@ pub struct GetSparqlStatisticsOutput {
 impl GetSparqlStatisticsOutput {
     /// <p>The HTTP return code of the request. If the request succeeded, the code is 200. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors">Common error codes for DFE statistics request</a> for a list of common errors.</p>
     /// <p>When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#getstatisticsstatus">neptune-db:GetStatisticsStatus</a> IAM action in that cluster.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
-        self.status.as_deref()
+    pub fn status(&self) -> &str {
+        use std::ops::Deref;
+        self.status.deref()
     }
     /// <p>Statistics for RDF data.</p>
     pub fn payload(&self) -> ::std::option::Option<&crate::types::Statistics> {
@@ -44,6 +45,7 @@ pub struct GetSparqlStatisticsOutputBuilder {
 impl GetSparqlStatisticsOutputBuilder {
     /// <p>The HTTP return code of the request. If the request succeeded, the code is 200. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors">Common error codes for DFE statistics request</a> for a list of common errors.</p>
     /// <p>When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#getstatisticsstatus">neptune-db:GetStatisticsStatus</a> IAM action in that cluster.</p>
+    /// This field is required.
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
         self
@@ -60,6 +62,7 @@ impl GetSparqlStatisticsOutputBuilder {
         &self.status
     }
     /// <p>Statistics for RDF data.</p>
+    /// This field is required.
     pub fn payload(mut self, input: crate::types::Statistics) -> Self {
         self.payload = ::std::option::Option::Some(input);
         self
@@ -83,11 +86,21 @@ impl GetSparqlStatisticsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetSparqlStatisticsOutput`](crate::operation::get_sparql_statistics::GetSparqlStatisticsOutput).
-    pub fn build(self) -> crate::operation::get_sparql_statistics::GetSparqlStatisticsOutput {
-        crate::operation::get_sparql_statistics::GetSparqlStatisticsOutput {
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::operation::get_sparql_statistics::builders::GetSparqlStatisticsOutputBuilder::status)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_sparql_statistics::GetSparqlStatisticsOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_sparql_statistics::GetSparqlStatisticsOutput {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building GetSparqlStatisticsOutput",
+                )
+            })?,
             payload: self.payload,
             _request_id: self._request_id,
-        }
+        })
     }
 }

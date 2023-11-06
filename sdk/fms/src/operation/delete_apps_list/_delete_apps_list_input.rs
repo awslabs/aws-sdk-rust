@@ -27,6 +27,7 @@ pub struct DeleteAppsListInputBuilder {
 }
 impl DeleteAppsListInputBuilder {
     /// <p>The ID of the applications list that you want to delete. You can retrieve this ID from <code>PutAppsList</code>, <code>ListAppsLists</code>, and <code>GetAppsList</code>.</p>
+    /// This field is required.
     pub fn list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.list_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteAppsListInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAppsListInput`](crate::operation::delete_apps_list::DeleteAppsListInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_apps_list::DeleteAppsListInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_apps_list::DeleteAppsListInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_apps_list::DeleteAppsListInput { list_id: self.list_id })
     }
 }

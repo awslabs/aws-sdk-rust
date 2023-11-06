@@ -89,10 +89,10 @@ pub fn de_set_v2_logging_options_http_response(
 
 pub fn ser_set_v2_logging_options_input(
     input: &crate::operation::set_v2_logging_options::SetV2LoggingOptionsInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_set_v2_logging_options_input::ser_set_v2_logging_options_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

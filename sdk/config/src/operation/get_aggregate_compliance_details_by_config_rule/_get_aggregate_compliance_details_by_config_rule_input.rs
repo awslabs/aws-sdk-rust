@@ -74,6 +74,7 @@ pub struct GetAggregateComplianceDetailsByConfigRuleInputBuilder {
 }
 impl GetAggregateComplianceDetailsByConfigRuleInputBuilder {
     /// <p>The name of the configuration aggregator.</p>
+    /// This field is required.
     pub fn configuration_aggregator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_aggregator_name = ::std::option::Option::Some(input.into());
         self
@@ -88,6 +89,7 @@ impl GetAggregateComplianceDetailsByConfigRuleInputBuilder {
         &self.configuration_aggregator_name
     }
     /// <p>The name of the Config rule for which you want compliance information.</p>
+    /// This field is required.
     pub fn config_rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.config_rule_name = ::std::option::Option::Some(input.into());
         self
@@ -102,6 +104,7 @@ impl GetAggregateComplianceDetailsByConfigRuleInputBuilder {
         &self.config_rule_name
     }
     /// <p>The 12-digit account ID of the source account.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -116,6 +119,7 @@ impl GetAggregateComplianceDetailsByConfigRuleInputBuilder {
         &self.account_id
     }
     /// <p>The source region from where the data is aggregated.</p>
+    /// This field is required.
     pub fn aws_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_region = ::std::option::Option::Some(input.into());
         self
@@ -182,7 +186,7 @@ impl GetAggregateComplianceDetailsByConfigRuleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_aggregate_compliance_details_by_config_rule::GetAggregateComplianceDetailsByConfigRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_aggregate_compliance_details_by_config_rule::GetAggregateComplianceDetailsByConfigRuleInput {

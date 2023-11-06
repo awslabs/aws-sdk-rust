@@ -27,6 +27,7 @@ pub struct DeleteOutcomeInputBuilder {
 }
 impl DeleteOutcomeInputBuilder {
     /// <p>The name of the outcome to delete.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteOutcomeInputBuilder {
     /// Consumes the builder and constructs a [`DeleteOutcomeInput`](crate::operation::delete_outcome::DeleteOutcomeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_outcome::DeleteOutcomeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_outcome::DeleteOutcomeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_outcome::DeleteOutcomeInput { name: self.name })
     }
 }

@@ -27,6 +27,7 @@ pub struct DeletePricingRuleInputBuilder {
 }
 impl DeletePricingRuleInputBuilder {
     /// <p> The Amazon Resource Name (ARN) of the pricing rule that you are deleting. </p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeletePricingRuleInputBuilder {
     /// Consumes the builder and constructs a [`DeletePricingRuleInput`](crate::operation::delete_pricing_rule::DeletePricingRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_pricing_rule::DeletePricingRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_pricing_rule::DeletePricingRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_pricing_rule::DeletePricingRuleInput { arn: self.arn })
     }
 }

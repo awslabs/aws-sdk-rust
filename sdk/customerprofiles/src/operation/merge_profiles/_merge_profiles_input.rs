@@ -22,8 +22,10 @@ impl MergeProfilesInput {
         self.main_profile_id.as_deref()
     }
     /// <p>The identifier of the profile to be merged into MainProfileId.</p>
-    pub fn profile_ids_to_be_merged(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.profile_ids_to_be_merged.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.profile_ids_to_be_merged.is_none()`.
+    pub fn profile_ids_to_be_merged(&self) -> &[::std::string::String] {
+        self.profile_ids_to_be_merged.as_deref().unwrap_or_default()
     }
     /// <p>The identifiers of the fields in the profile that has the information you want to apply to the merge. For example, say you want to merge EmailAddress from Profile1 into MainProfile. This would be the identifier of the EmailAddress field in Profile1. </p>
     pub fn field_source_profile_ids(&self) -> ::std::option::Option<&crate::types::FieldSourceProfileIds> {
@@ -48,6 +50,7 @@ pub struct MergeProfilesInputBuilder {
 }
 impl MergeProfilesInputBuilder {
     /// <p>The unique name of the domain.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl MergeProfilesInputBuilder {
         &self.domain_name
     }
     /// <p>The identifier of the profile to be taken.</p>
+    /// This field is required.
     pub fn main_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.main_profile_id = ::std::option::Option::Some(input.into());
         self
@@ -112,7 +116,7 @@ impl MergeProfilesInputBuilder {
     /// Consumes the builder and constructs a [`MergeProfilesInput`](crate::operation::merge_profiles::MergeProfilesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::merge_profiles::MergeProfilesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::merge_profiles::MergeProfilesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::merge_profiles::MergeProfilesInput {
             domain_name: self.domain_name,
             main_profile_id: self.main_profile_id,

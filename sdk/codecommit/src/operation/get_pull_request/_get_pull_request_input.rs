@@ -27,6 +27,7 @@ pub struct GetPullRequestInputBuilder {
 }
 impl GetPullRequestInputBuilder {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
+    /// This field is required.
     pub fn pull_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pull_request_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetPullRequestInputBuilder {
     /// Consumes the builder and constructs a [`GetPullRequestInput`](crate::operation::get_pull_request::GetPullRequestInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_pull_request::GetPullRequestInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_pull_request::GetPullRequestInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_pull_request::GetPullRequestInput {
             pull_request_id: self.pull_request_id,
         })

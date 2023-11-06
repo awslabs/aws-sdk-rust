@@ -27,6 +27,7 @@ pub struct DeleteExternalModelInputBuilder {
 }
 impl DeleteExternalModelInputBuilder {
     /// <p>The endpoint of the Amazon Sagemaker model to delete.</p>
+    /// This field is required.
     pub fn model_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_endpoint = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteExternalModelInputBuilder {
     /// Consumes the builder and constructs a [`DeleteExternalModelInput`](crate::operation::delete_external_model::DeleteExternalModelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_external_model::DeleteExternalModelInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_external_model::DeleteExternalModelInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_external_model::DeleteExternalModelInput {
             model_endpoint: self.model_endpoint,

@@ -2,7 +2,7 @@
 pub fn ser_kinesis_video_stream_configuration_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::KinesisVideoStreamConfigurationUpdate,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.data_retention_in_hours {
         object.key("DataRetentionInHours").number(
             #[allow(clippy::useless_conversion)]

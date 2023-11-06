@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceTableDetails {
     /// <p>The name of the table for which the backup was created. </p>
-    pub table_name: ::std::option::Option<::std::string::String>,
+    pub table_name: ::std::string::String,
     /// <p>Unique identifier for the table for which the backup was created. </p>
-    pub table_id: ::std::option::Option<::std::string::String>,
+    pub table_id: ::std::string::String,
     /// <p>ARN of the table for which backup was created. </p>
     pub table_arn: ::std::option::Option<::std::string::String>,
     /// <p>Size of the table in bytes. Note that this is an approximate value.</p>
     pub table_size_bytes: ::std::option::Option<i64>,
     /// <p>Schema of the table. </p>
-    pub key_schema: ::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>>,
+    pub key_schema: ::std::vec::Vec<crate::types::KeySchemaElement>,
     /// <p>Time when the source table was created. </p>
-    pub table_creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub table_creation_date_time: ::aws_smithy_types::DateTime,
     /// <p>Read IOPs and Write IOPS on the table when the backup was created.</p>
     pub provisioned_throughput: ::std::option::Option<crate::types::ProvisionedThroughput>,
     /// <p>Number of items in the table. Note that this is an approximate value. </p>
@@ -29,12 +29,14 @@ pub struct SourceTableDetails {
 }
 impl SourceTableDetails {
     /// <p>The name of the table for which the backup was created. </p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
-        self.table_name.as_deref()
+    pub fn table_name(&self) -> &str {
+        use std::ops::Deref;
+        self.table_name.deref()
     }
     /// <p>Unique identifier for the table for which the backup was created. </p>
-    pub fn table_id(&self) -> ::std::option::Option<&str> {
-        self.table_id.as_deref()
+    pub fn table_id(&self) -> &str {
+        use std::ops::Deref;
+        self.table_id.deref()
     }
     /// <p>ARN of the table for which backup was created. </p>
     pub fn table_arn(&self) -> ::std::option::Option<&str> {
@@ -45,12 +47,13 @@ impl SourceTableDetails {
         self.table_size_bytes
     }
     /// <p>Schema of the table. </p>
-    pub fn key_schema(&self) -> ::std::option::Option<&[crate::types::KeySchemaElement]> {
-        self.key_schema.as_deref()
+    pub fn key_schema(&self) -> &[crate::types::KeySchemaElement] {
+        use std::ops::Deref;
+        self.key_schema.deref()
     }
     /// <p>Time when the source table was created. </p>
-    pub fn table_creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.table_creation_date_time.as_ref()
+    pub fn table_creation_date_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.table_creation_date_time
     }
     /// <p>Read IOPs and Write IOPS on the table when the backup was created.</p>
     pub fn provisioned_throughput(&self) -> ::std::option::Option<&crate::types::ProvisionedThroughput> {
@@ -92,6 +95,7 @@ pub struct SourceTableDetailsBuilder {
 }
 impl SourceTableDetailsBuilder {
     /// <p>The name of the table for which the backup was created. </p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -106,6 +110,7 @@ impl SourceTableDetailsBuilder {
         &self.table_name
     }
     /// <p>Unique identifier for the table for which the backup was created. </p>
+    /// This field is required.
     pub fn table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_id = ::std::option::Option::Some(input.into());
         self
@@ -168,6 +173,7 @@ impl SourceTableDetailsBuilder {
         &self.key_schema
     }
     /// <p>Time when the source table was created. </p>
+    /// This field is required.
     pub fn table_creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.table_creation_date_time = ::std::option::Option::Some(input);
         self
@@ -182,6 +188,7 @@ impl SourceTableDetailsBuilder {
         &self.table_creation_date_time
     }
     /// <p>Read IOPs and Write IOPS on the table when the backup was created.</p>
+    /// This field is required.
     pub fn provisioned_throughput(mut self, input: crate::types::ProvisionedThroughput) -> Self {
         self.provisioned_throughput = ::std::option::Option::Some(input);
         self
@@ -236,17 +243,42 @@ impl SourceTableDetailsBuilder {
         &self.billing_mode
     }
     /// Consumes the builder and constructs a [`SourceTableDetails`](crate::types::SourceTableDetails).
-    pub fn build(self) -> crate::types::SourceTableDetails {
-        crate::types::SourceTableDetails {
-            table_name: self.table_name,
-            table_id: self.table_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`table_name`](crate::types::builders::SourceTableDetailsBuilder::table_name)
+    /// - [`table_id`](crate::types::builders::SourceTableDetailsBuilder::table_id)
+    /// - [`key_schema`](crate::types::builders::SourceTableDetailsBuilder::key_schema)
+    /// - [`table_creation_date_time`](crate::types::builders::SourceTableDetailsBuilder::table_creation_date_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::SourceTableDetails, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SourceTableDetails {
+            table_name: self.table_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "table_name",
+                    "table_name was not specified but it is required when building SourceTableDetails",
+                )
+            })?,
+            table_id: self.table_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "table_id",
+                    "table_id was not specified but it is required when building SourceTableDetails",
+                )
+            })?,
             table_arn: self.table_arn,
             table_size_bytes: self.table_size_bytes,
-            key_schema: self.key_schema,
-            table_creation_date_time: self.table_creation_date_time,
+            key_schema: self.key_schema.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "key_schema",
+                    "key_schema was not specified but it is required when building SourceTableDetails",
+                )
+            })?,
+            table_creation_date_time: self.table_creation_date_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "table_creation_date_time",
+                    "table_creation_date_time was not specified but it is required when building SourceTableDetails",
+                )
+            })?,
             provisioned_throughput: self.provisioned_throughput,
             item_count: self.item_count,
             billing_mode: self.billing_mode,
-        }
+        })
     }
 }

@@ -17,12 +17,16 @@ impl GetLaunchProfileDetailsOutput {
         self.launch_profile.as_ref()
     }
     /// <p>A collection of streaming images.</p>
-    pub fn streaming_images(&self) -> ::std::option::Option<&[crate::types::StreamingImage]> {
-        self.streaming_images.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.streaming_images.is_none()`.
+    pub fn streaming_images(&self) -> &[crate::types::StreamingImage] {
+        self.streaming_images.as_deref().unwrap_or_default()
     }
     /// <p>A collection of studio component summaries.</p>
-    pub fn studio_component_summaries(&self) -> ::std::option::Option<&[crate::types::StudioComponentSummary]> {
-        self.studio_component_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.studio_component_summaries.is_none()`.
+    pub fn studio_component_summaries(&self) -> &[crate::types::StudioComponentSummary] {
+        self.studio_component_summaries.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetLaunchProfileDetailsOutput {

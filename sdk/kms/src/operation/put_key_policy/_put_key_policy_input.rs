@@ -101,6 +101,7 @@ impl PutKeyPolicyInputBuilder {
     /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
     /// </ul>
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
+    /// This field is required.
     pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_id = ::std::option::Option::Some(input.into());
         self
@@ -129,6 +130,7 @@ impl PutKeyPolicyInputBuilder {
         &self.key_id
     }
     /// <p>The name of the key policy. The only valid value is <code>default</code>.</p>
+    /// This field is required.
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
         self
@@ -155,6 +157,7 @@ impl PutKeyPolicyInputBuilder {
     /// <li> <p>The tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>) special characters</p> </li>
     /// </ul>
     /// <p>For information about key policies, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key policies in KMS</a> in the <i>Key Management Service Developer Guide</i>.For help writing and formatting a JSON policy document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
+    /// This field is required.
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
         self
@@ -221,7 +224,7 @@ impl PutKeyPolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutKeyPolicyInput`](crate::operation::put_key_policy::PutKeyPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_key_policy::PutKeyPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_key_policy::PutKeyPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_key_policy::PutKeyPolicyInput {
             key_id: self.key_id,
             policy_name: self.policy_name,

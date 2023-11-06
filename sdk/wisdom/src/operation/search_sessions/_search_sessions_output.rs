@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchSessionsOutput {
     /// <p>Summary information about the sessions.</p>
-    pub session_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SessionSummary>>,
+    pub session_summaries: ::std::vec::Vec<crate::types::SessionSummary>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl SearchSessionsOutput {
     /// <p>Summary information about the sessions.</p>
-    pub fn session_summaries(&self) -> ::std::option::Option<&[crate::types::SessionSummary]> {
-        self.session_summaries.as_deref()
+    pub fn session_summaries(&self) -> &[crate::types::SessionSummary] {
+        use std::ops::Deref;
+        self.session_summaries.deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl SearchSessionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SearchSessionsOutput`](crate::operation::search_sessions::SearchSessionsOutput).
-    pub fn build(self) -> crate::operation::search_sessions::SearchSessionsOutput {
-        crate::operation::search_sessions::SearchSessionsOutput {
-            session_summaries: self.session_summaries,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`session_summaries`](crate::operation::search_sessions::builders::SearchSessionsOutputBuilder::session_summaries)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::search_sessions::SearchSessionsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::search_sessions::SearchSessionsOutput {
+            session_summaries: self.session_summaries.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "session_summaries",
+                    "session_summaries was not specified but it is required when building SearchSessionsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

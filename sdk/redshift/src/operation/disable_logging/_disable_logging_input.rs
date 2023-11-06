@@ -31,6 +31,7 @@ pub struct DisableLoggingInputBuilder {
 impl DisableLoggingInputBuilder {
     /// <p>The identifier of the cluster on which logging is to be stopped.</p>
     /// <p>Example: <code>examplecluster</code> </p>
+    /// This field is required.
     pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
@@ -49,7 +50,7 @@ impl DisableLoggingInputBuilder {
     /// Consumes the builder and constructs a [`DisableLoggingInput`](crate::operation::disable_logging::DisableLoggingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disable_logging::DisableLoggingInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::disable_logging::DisableLoggingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::disable_logging::DisableLoggingInput {
             cluster_identifier: self.cluster_identifier,
         })

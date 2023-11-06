@@ -2,7 +2,7 @@
 pub fn ser_send_users_message_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SendUsersMessageRequest,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.context {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Context").start_object();

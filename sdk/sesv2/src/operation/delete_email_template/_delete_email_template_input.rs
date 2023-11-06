@@ -28,6 +28,7 @@ pub struct DeleteEmailTemplateInputBuilder {
 }
 impl DeleteEmailTemplateInputBuilder {
     /// <p>The name of the template to be deleted.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl DeleteEmailTemplateInputBuilder {
     /// Consumes the builder and constructs a [`DeleteEmailTemplateInput`](crate::operation::delete_email_template::DeleteEmailTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_email_template::DeleteEmailTemplateInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_email_template::DeleteEmailTemplateInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_email_template::DeleteEmailTemplateInput {
             template_name: self.template_name,

@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Contact {
     /// <p>A unique identifier of a contact in Amazon Connect.</p>
-    pub contact_arn: ::std::option::Option<::std::string::String>,
+    pub contact_arn: ::std::string::String,
 }
 impl Contact {
     /// <p>A unique identifier of a contact in Amazon Connect.</p>
-    pub fn contact_arn(&self) -> ::std::option::Option<&str> {
-        self.contact_arn.as_deref()
+    pub fn contact_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.contact_arn.deref()
     }
 }
 impl Contact {
@@ -28,6 +29,7 @@ pub struct ContactBuilder {
 }
 impl ContactBuilder {
     /// <p>A unique identifier of a contact in Amazon Connect.</p>
+    /// This field is required.
     pub fn contact_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_arn = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl ContactBuilder {
         &self.contact_arn
     }
     /// Consumes the builder and constructs a [`Contact`](crate::types::Contact).
-    pub fn build(self) -> crate::types::Contact {
-        crate::types::Contact {
-            contact_arn: self.contact_arn,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`contact_arn`](crate::types::builders::ContactBuilder::contact_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::Contact, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Contact {
+            contact_arn: self.contact_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "contact_arn",
+                    "contact_arn was not specified but it is required when building Contact",
+                )
+            })?,
+        })
     }
 }

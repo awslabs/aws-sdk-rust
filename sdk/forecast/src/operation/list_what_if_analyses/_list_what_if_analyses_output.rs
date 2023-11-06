@@ -11,8 +11,10 @@ pub struct ListWhatIfAnalysesOutput {
 }
 impl ListWhatIfAnalysesOutput {
     /// <p>An array of <code>WhatIfAnalysisSummary</code> objects that describe the matched analyses.</p>
-    pub fn what_if_analyses(&self) -> ::std::option::Option<&[crate::types::WhatIfAnalysisSummary]> {
-        self.what_if_analyses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.what_if_analyses.is_none()`.
+    pub fn what_if_analyses(&self) -> &[crate::types::WhatIfAnalysisSummary] {
+        self.what_if_analyses.as_deref().unwrap_or_default()
     }
     /// <p>If the response is truncated, Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

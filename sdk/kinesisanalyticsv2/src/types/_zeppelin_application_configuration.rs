@@ -27,8 +27,10 @@ impl ZeppelinApplicationConfiguration {
         self.deploy_as_application_configuration.as_ref()
     }
     /// <p>Custom artifacts are dependency JARs and user-defined functions (UDF).</p>
-    pub fn custom_artifacts_configuration(&self) -> ::std::option::Option<&[crate::types::CustomArtifactConfiguration]> {
-        self.custom_artifacts_configuration.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_artifacts_configuration.is_none()`.
+    pub fn custom_artifacts_configuration(&self) -> &[crate::types::CustomArtifactConfiguration] {
+        self.custom_artifacts_configuration.as_deref().unwrap_or_default()
     }
 }
 impl ZeppelinApplicationConfiguration {

@@ -2,7 +2,7 @@
 pub fn ser_create_vpc_peering_authorization_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_vpc_peering_authorization::CreateVpcPeeringAuthorizationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.game_lift_aws_account_id {
         object.key("GameLiftAwsAccountId").string(var_1.as_str());
     }

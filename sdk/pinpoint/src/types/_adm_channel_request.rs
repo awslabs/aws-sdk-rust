@@ -42,6 +42,7 @@ pub struct AdmChannelRequestBuilder {
 }
 impl AdmChannelRequestBuilder {
     /// <p>The Client ID that you received from Amazon to send messages by using ADM.</p>
+    /// This field is required.
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl AdmChannelRequestBuilder {
         &self.client_id
     }
     /// <p>The Client Secret that you received from Amazon to send messages by using ADM.</p>
+    /// This field is required.
     pub fn client_secret(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_secret = ::std::option::Option::Some(input.into());
         self

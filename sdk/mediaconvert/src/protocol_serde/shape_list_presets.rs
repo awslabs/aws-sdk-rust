@@ -147,7 +147,7 @@ pub(crate) fn de_list_presets(
                     );
                 }
                 "presets" => {
-                    builder = builder.set_presets(crate::protocol_serde::shape___list_of_preset::de___list_of_preset(tokens)?);
+                    builder = builder.set_presets(crate::protocol_serde::shape_list_of_preset::de_list_of_preset(tokens)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

@@ -44,6 +44,7 @@ pub struct PurchaseReservedElasticsearchInstanceOfferingInputBuilder {
 }
 impl PurchaseReservedElasticsearchInstanceOfferingInputBuilder {
     /// <p>The ID of the reserved Elasticsearch instance offering to purchase.</p>
+    /// This field is required.
     pub fn reserved_elasticsearch_instance_offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_elasticsearch_instance_offering_id = ::std::option::Option::Some(input.into());
         self
@@ -58,6 +59,7 @@ impl PurchaseReservedElasticsearchInstanceOfferingInputBuilder {
         &self.reserved_elasticsearch_instance_offering_id
     }
     /// <p>A customer-specified identifier to track this reservation.</p>
+    /// This field is required.
     pub fn reservation_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reservation_name = ::std::option::Option::Some(input.into());
         self
@@ -90,7 +92,7 @@ impl PurchaseReservedElasticsearchInstanceOfferingInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::purchase_reserved_elasticsearch_instance_offering::PurchaseReservedElasticsearchInstanceOfferingInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::purchase_reserved_elasticsearch_instance_offering::PurchaseReservedElasticsearchInstanceOfferingInput {

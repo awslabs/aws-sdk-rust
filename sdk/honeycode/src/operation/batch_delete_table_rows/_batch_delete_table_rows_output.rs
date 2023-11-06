@@ -15,8 +15,10 @@ impl BatchDeleteTableRowsOutput {
         self.workbook_cursor
     }
     /// <p> The list of row ids in the request that could not be deleted from the table. Each element in this list contains one row id from the request that could not be deleted along with the reason why that item could not be deleted. </p>
-    pub fn failed_batch_items(&self) -> ::std::option::Option<&[crate::types::FailedBatchItem]> {
-        self.failed_batch_items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_batch_items.is_none()`.
+    pub fn failed_batch_items(&self) -> &[crate::types::FailedBatchItem] {
+        self.failed_batch_items.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchDeleteTableRowsOutput {
@@ -41,6 +43,7 @@ pub struct BatchDeleteTableRowsOutputBuilder {
 }
 impl BatchDeleteTableRowsOutputBuilder {
     /// <p>The updated workbook cursor after deleting the rows from the table.</p>
+    /// This field is required.
     pub fn workbook_cursor(mut self, input: i64) -> Self {
         self.workbook_cursor = ::std::option::Option::Some(input);
         self

@@ -14,8 +14,10 @@ impl PutAttributesInput {
         self.cluster.as_deref()
     }
     /// <p>The attributes to apply to your resource. You can specify up to 10 custom attributes for each resource. You can specify up to 10 attributes in a single call.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&[crate::types::Attribute]> {
-        self.attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
+    pub fn attributes(&self) -> &[crate::types::Attribute] {
+        self.attributes.as_deref().unwrap_or_default()
     }
 }
 impl PutAttributesInput {
@@ -70,7 +72,7 @@ impl PutAttributesInputBuilder {
     /// Consumes the builder and constructs a [`PutAttributesInput`](crate::operation::put_attributes::PutAttributesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_attributes::PutAttributesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_attributes::PutAttributesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_attributes::PutAttributesInput {
             cluster: self.cluster,
             attributes: self.attributes,

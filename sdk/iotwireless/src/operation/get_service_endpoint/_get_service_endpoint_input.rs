@@ -43,7 +43,8 @@ impl GetServiceEndpointInputBuilder {
     /// Consumes the builder and constructs a [`GetServiceEndpointInput`](crate::operation::get_service_endpoint::GetServiceEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_service_endpoint::GetServiceEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_service_endpoint::GetServiceEndpointInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_service_endpoint::GetServiceEndpointInput {
             service_type: self.service_type,
         })

@@ -7,11 +7,11 @@ pub struct RedshiftDataParameters {
     /// <p>The name or ARN of the secret that enables access to the database. Required when authenticating using Amazon Web Services Secrets Manager.</p>
     pub secret_manager_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database. Required when authenticating using temporary credentials.</p>
-    pub database: ::std::option::Option<::std::string::String>,
+    pub database: ::std::string::String,
     /// <p>The database user name. Required when authenticating using temporary credentials.</p>
     pub db_user: ::std::option::Option<::std::string::String>,
     /// <p>The SQL statement text to run.</p>
-    pub sql: ::std::option::Option<::std::string::String>,
+    pub sql: ::std::string::String,
     /// <p>The name of the SQL statement. You can name the SQL statement when you create it to identify the query.</p>
     pub statement_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to send an event back to EventBridge after the SQL statement runs.</p>
@@ -23,16 +23,18 @@ impl RedshiftDataParameters {
         self.secret_manager_arn.as_deref()
     }
     /// <p>The name of the database. Required when authenticating using temporary credentials.</p>
-    pub fn database(&self) -> ::std::option::Option<&str> {
-        self.database.as_deref()
+    pub fn database(&self) -> &str {
+        use std::ops::Deref;
+        self.database.deref()
     }
     /// <p>The database user name. Required when authenticating using temporary credentials.</p>
     pub fn db_user(&self) -> ::std::option::Option<&str> {
         self.db_user.as_deref()
     }
     /// <p>The SQL statement text to run.</p>
-    pub fn sql(&self) -> ::std::option::Option<&str> {
-        self.sql.as_deref()
+    pub fn sql(&self) -> &str {
+        use std::ops::Deref;
+        self.sql.deref()
     }
     /// <p>The name of the SQL statement. You can name the SQL statement when you create it to identify the query.</p>
     pub fn statement_name(&self) -> ::std::option::Option<&str> {
@@ -77,6 +79,7 @@ impl RedshiftDataParametersBuilder {
         &self.secret_manager_arn
     }
     /// <p>The name of the database. Required when authenticating using temporary credentials.</p>
+    /// This field is required.
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +108,7 @@ impl RedshiftDataParametersBuilder {
         &self.db_user
     }
     /// <p>The SQL statement text to run.</p>
+    /// This field is required.
     pub fn sql(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sql = ::std::option::Option::Some(input.into());
         self
@@ -147,14 +151,27 @@ impl RedshiftDataParametersBuilder {
         &self.with_event
     }
     /// Consumes the builder and constructs a [`RedshiftDataParameters`](crate::types::RedshiftDataParameters).
-    pub fn build(self) -> crate::types::RedshiftDataParameters {
-        crate::types::RedshiftDataParameters {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`database`](crate::types::builders::RedshiftDataParametersBuilder::database)
+    /// - [`sql`](crate::types::builders::RedshiftDataParametersBuilder::sql)
+    pub fn build(self) -> ::std::result::Result<crate::types::RedshiftDataParameters, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RedshiftDataParameters {
             secret_manager_arn: self.secret_manager_arn,
-            database: self.database,
+            database: self.database.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "database",
+                    "database was not specified but it is required when building RedshiftDataParameters",
+                )
+            })?,
             db_user: self.db_user,
-            sql: self.sql,
+            sql: self.sql.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "sql",
+                    "sql was not specified but it is required when building RedshiftDataParameters",
+                )
+            })?,
             statement_name: self.statement_name,
             with_event: self.with_event.unwrap_or_default(),
-        }
+        })
     }
 }

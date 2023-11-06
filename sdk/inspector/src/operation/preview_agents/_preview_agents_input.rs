@@ -41,6 +41,7 @@ pub struct PreviewAgentsInputBuilder {
 }
 impl PreviewAgentsInputBuilder {
     /// <p>The ARN of the assessment target whose agents you want to preview.</p>
+    /// This field is required.
     pub fn preview_agents_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preview_agents_arn = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl PreviewAgentsInputBuilder {
     /// Consumes the builder and constructs a [`PreviewAgentsInput`](crate::operation::preview_agents::PreviewAgentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::preview_agents::PreviewAgentsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::preview_agents::PreviewAgentsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::preview_agents::PreviewAgentsInput {
             preview_agents_arn: self.preview_agents_arn,
             next_token: self.next_token,

@@ -31,8 +31,10 @@ impl Bridge {
         self.bridge_arn.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn bridge_messages(&self) -> ::std::option::Option<&[crate::types::MessageDetail]> {
-        self.bridge_messages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bridge_messages.is_none()`.
+    pub fn bridge_messages(&self) -> &[crate::types::MessageDetail] {
+        self.bridge_messages.as_deref().unwrap_or_default()
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn bridge_state(&self) -> ::std::option::Option<&crate::types::BridgeState> {
@@ -51,8 +53,10 @@ impl Bridge {
         self.name.as_deref()
     }
     /// The outputs on this bridge.
-    pub fn outputs(&self) -> ::std::option::Option<&[crate::types::BridgeOutput]> {
-        self.outputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outputs.is_none()`.
+    pub fn outputs(&self) -> &[crate::types::BridgeOutput] {
+        self.outputs.as_deref().unwrap_or_default()
     }
     /// The placement Amazon Resource Number (ARN) of the bridge.
     pub fn placement_arn(&self) -> ::std::option::Option<&str> {
@@ -63,8 +67,10 @@ impl Bridge {
         self.source_failover_config.as_ref()
     }
     /// The sources on this bridge.
-    pub fn sources(&self) -> ::std::option::Option<&[crate::types::BridgeSource]> {
-        self.sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
+    pub fn sources(&self) -> &[crate::types::BridgeSource] {
+        self.sources.as_deref().unwrap_or_default()
     }
 }
 impl Bridge {
@@ -91,6 +97,7 @@ pub struct BridgeBuilder {
 }
 impl BridgeBuilder {
     /// The Amazon Resource Number (ARN) of the bridge.
+    /// This field is required.
     pub fn bridge_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bridge_arn = ::std::option::Option::Some(input.into());
         self
@@ -124,6 +131,7 @@ impl BridgeBuilder {
         &self.bridge_messages
     }
     #[allow(missing_docs)] // documentation missing in model
+    /// This field is required.
     pub fn bridge_state(mut self, input: crate::types::BridgeState) -> Self {
         self.bridge_state = ::std::option::Option::Some(input);
         self
@@ -166,6 +174,7 @@ impl BridgeBuilder {
         &self.ingress_gateway_bridge
     }
     /// The name of the bridge.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -200,6 +209,7 @@ impl BridgeBuilder {
         &self.outputs
     }
     /// The placement Amazon Resource Number (ARN) of the bridge.
+    /// This field is required.
     pub fn placement_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.placement_arn = ::std::option::Option::Some(input.into());
         self

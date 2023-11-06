@@ -2,7 +2,7 @@
 pub fn ser_noise_reducer_spatial_filter_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NoiseReducerSpatialFilterSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.post_filter_sharpen_strength {
         object.key("postFilterSharpenStrength").number(
             #[allow(clippy::useless_conversion)]

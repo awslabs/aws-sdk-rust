@@ -50,6 +50,7 @@ pub struct RevokeTokenInputBuilder {
 }
 impl RevokeTokenInputBuilder {
     /// <p>The refresh token that you want to revoke.</p>
+    /// This field is required.
     pub fn token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.token = ::std::option::Option::Some(input.into());
         self
@@ -64,6 +65,7 @@ impl RevokeTokenInputBuilder {
         &self.token
     }
     /// <p>The client ID for the token that you want to revoke.</p>
+    /// This field is required.
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
         self
@@ -92,7 +94,7 @@ impl RevokeTokenInputBuilder {
         &self.client_secret
     }
     /// Consumes the builder and constructs a [`RevokeTokenInput`](crate::operation::revoke_token::RevokeTokenInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::revoke_token::RevokeTokenInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::revoke_token::RevokeTokenInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::revoke_token::RevokeTokenInput {
             token: self.token,
             client_id: self.client_id,

@@ -43,6 +43,7 @@ pub struct UpdateRouteCalculatorInputBuilder {
 }
 impl UpdateRouteCalculatorInputBuilder {
     /// <p>The name of the route calculator resource to update.</p>
+    /// This field is required.
     pub fn calculator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.calculator_name = ::std::option::Option::Some(input.into());
         self
@@ -90,7 +91,7 @@ impl UpdateRouteCalculatorInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRouteCalculatorInput`](crate::operation::update_route_calculator::UpdateRouteCalculatorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_route_calculator::UpdateRouteCalculatorInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_route_calculator::UpdateRouteCalculatorInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_route_calculator::UpdateRouteCalculatorInput {
             calculator_name: self.calculator_name,

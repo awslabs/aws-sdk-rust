@@ -6,7 +6,7 @@ pub struct DeleteServiceOutput {
     /// <p>A description of the App Runner service that this request just deleted.</p>
     pub service: ::std::option::Option<crate::types::Service>,
     /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
-    pub operation_id: ::std::option::Option<::std::string::String>,
+    pub operation_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl DeleteServiceOutput {
@@ -15,8 +15,9 @@ impl DeleteServiceOutput {
         self.service.as_ref()
     }
     /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
-    pub fn operation_id(&self) -> ::std::option::Option<&str> {
-        self.operation_id.as_deref()
+    pub fn operation_id(&self) -> &str {
+        use std::ops::Deref;
+        self.operation_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteServiceOutput {
@@ -41,6 +42,7 @@ pub struct DeleteServiceOutputBuilder {
 }
 impl DeleteServiceOutputBuilder {
     /// <p>A description of the App Runner service that this request just deleted.</p>
+    /// This field is required.
     pub fn service(mut self, input: crate::types::Service) -> Self {
         self.service = ::std::option::Option::Some(input);
         self
@@ -55,6 +57,7 @@ impl DeleteServiceOutputBuilder {
         &self.service
     }
     /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
+    /// This field is required.
     pub fn operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operation_id = ::std::option::Option::Some(input.into());
         self
@@ -78,11 +81,20 @@ impl DeleteServiceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteServiceOutput`](crate::operation::delete_service::DeleteServiceOutput).
-    pub fn build(self) -> crate::operation::delete_service::DeleteServiceOutput {
-        crate::operation::delete_service::DeleteServiceOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`operation_id`](crate::operation::delete_service::builders::DeleteServiceOutputBuilder::operation_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_service::DeleteServiceOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_service::DeleteServiceOutput {
             service: self.service,
-            operation_id: self.operation_id,
+            operation_id: self.operation_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "operation_id",
+                    "operation_id was not specified but it is required when building DeleteServiceOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -3,7 +3,7 @@
 pub fn ser_traffic_source_identifier(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::TrafficSourceIdentifier,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Identifier");
     if let Some(var_2) = &input.identifier {
@@ -17,6 +17,7 @@ pub fn ser_traffic_source_identifier(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_traffic_source_identifier(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::TrafficSourceIdentifier, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -53,5 +54,5 @@ pub fn de_traffic_source_identifier(
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::traffic_source_identifier_correct_errors(builder).build())
 }

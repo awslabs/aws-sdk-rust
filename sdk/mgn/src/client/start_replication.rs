@@ -3,13 +3,13 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartReplication`](crate::operation::start_replication::builders::StartReplicationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`source_server_id(impl Into<String>)`](crate::operation::start_replication::builders::StartReplicationFluentBuilder::source_server_id) / [`set_source_server_id(Option<String>)`](crate::operation::start_replication::builders::StartReplicationFluentBuilder::set_source_server_id): <p>ID of source server on which to start replication.</p>
-    ///   - [`account_id(impl Into<String>)`](crate::operation::start_replication::builders::StartReplicationFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::start_replication::builders::StartReplicationFluentBuilder::set_account_id): <p>Account ID on which to start replication.</p>
+    ///   - [`source_server_id(impl Into<String>)`](crate::operation::start_replication::builders::StartReplicationFluentBuilder::source_server_id) / [`set_source_server_id(Option<String>)`](crate::operation::start_replication::builders::StartReplicationFluentBuilder::set_source_server_id):<br>required: **true**<br><p>ID of source server on which to start replication.</p><br>
+    ///   - [`account_id(impl Into<String>)`](crate::operation::start_replication::builders::StartReplicationFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::start_replication::builders::StartReplicationFluentBuilder::set_account_id):<br>required: **false**<br><p>Account ID on which to start replication.</p><br>
     /// - On success, responds with [`StartReplicationOutput`](crate::operation::start_replication::StartReplicationOutput) with field(s):
     ///   - [`source_server_id(Option<String>)`](crate::operation::start_replication::StartReplicationOutput::source_server_id): <p>Source server ID.</p>
     ///   - [`arn(Option<String>)`](crate::operation::start_replication::StartReplicationOutput::arn): <p>Source server ARN.</p>
     ///   - [`is_archived(Option<bool>)`](crate::operation::start_replication::StartReplicationOutput::is_archived): <p>Source server archived status.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::start_replication::StartReplicationOutput::tags): <p>Source server Tags.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::start_replication::StartReplicationOutput::tags): <p>Source server Tags.</p>
     ///   - [`launched_instance(Option<LaunchedInstance>)`](crate::operation::start_replication::StartReplicationOutput::launched_instance): <p>Source server launched instance.</p>
     ///   - [`data_replication_info(Option<DataReplicationInfo>)`](crate::operation::start_replication::StartReplicationOutput::data_replication_info): <p>Source server data replication info.</p>
     ///   - [`life_cycle(Option<LifeCycle>)`](crate::operation::start_replication::StartReplicationOutput::life_cycle): <p>Source server lifecycle state.</p>

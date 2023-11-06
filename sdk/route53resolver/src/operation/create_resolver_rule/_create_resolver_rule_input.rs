@@ -44,16 +44,20 @@ impl CreateResolverRuleInput {
     }
     /// <p>The IPs that you want Resolver to forward DNS queries to. You can specify either Ipv4 or Ipv6 addresses but not both in the same rule. Separate IP addresses with a space.</p>
     /// <p> <code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.</p>
-    pub fn target_ips(&self) -> ::std::option::Option<&[crate::types::TargetAddress]> {
-        self.target_ips.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_ips.is_none()`.
+    pub fn target_ips(&self) -> &[crate::types::TargetAddress] {
+        self.target_ips.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the outbound Resolver endpoint that you want to use to route DNS queries to the IP addresses that you specify in <code>TargetIps</code>.</p>
     pub fn resolver_endpoint_id(&self) -> ::std::option::Option<&str> {
         self.resolver_endpoint_id.as_deref()
     }
     /// <p>A list of the tag keys and values that you want to associate with the endpoint.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateResolverRuleInput {
@@ -77,6 +81,7 @@ pub struct CreateResolverRuleInputBuilder {
 }
 impl CreateResolverRuleInputBuilder {
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
+    /// This field is required.
     pub fn creator_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creator_request_id = ::std::option::Option::Some(input.into());
         self
@@ -108,6 +113,7 @@ impl CreateResolverRuleInputBuilder {
     /// <p>When you have a forwarding rule to forward DNS queries for a domain to your network and you want Resolver to process queries for a subdomain of that domain, specify <code>SYSTEM</code>.</p>
     /// <p>For example, to forward DNS queries for example.com to resolvers on your network, you create a rule and specify <code>FORWARD</code> for <code>RuleType</code>. To then have Resolver process queries for apex.example.com, you create a rule and specify <code>SYSTEM</code> for <code>RuleType</code>.</p>
     /// <p>Currently, only Resolver can create rules that have a value of <code>RECURSIVE</code> for <code>RuleType</code>.</p>
+    /// This field is required.
     pub fn rule_type(mut self, input: crate::types::RuleTypeOption) -> Self {
         self.rule_type = ::std::option::Option::Some(input);
         self
@@ -128,6 +134,7 @@ impl CreateResolverRuleInputBuilder {
         &self.rule_type
     }
     /// <p>DNS queries for this domain name are forwarded to the IP addresses that you specify in <code>TargetIps</code>. If a query matches multiple Resolver rules (example.com and www.example.com), outbound DNS queries are routed using the Resolver rule that contains the most specific domain name (www.example.com).</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -201,7 +208,8 @@ impl CreateResolverRuleInputBuilder {
     /// Consumes the builder and constructs a [`CreateResolverRuleInput`](crate::operation::create_resolver_rule::CreateResolverRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_resolver_rule::CreateResolverRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_resolver_rule::CreateResolverRuleInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_resolver_rule::CreateResolverRuleInput {
             creator_request_id: self.creator_request_id,
             name: self.name,

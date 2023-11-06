@@ -158,7 +158,7 @@ pub(crate) fn de_list_resource_profile_detections(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "detections" => {
-                    builder = builder.set_detections(crate::protocol_serde::shape___list_of_detection::de___list_of_detection(tokens)?);
+                    builder = builder.set_detections(crate::protocol_serde::shape_list_of_detection::de_list_of_detection(tokens)?);
                 }
                 "nextToken" => {
                     builder = builder.set_next_token(

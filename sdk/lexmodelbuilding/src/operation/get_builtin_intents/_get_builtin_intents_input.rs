@@ -106,7 +106,7 @@ impl GetBuiltinIntentsInputBuilder {
     /// Consumes the builder and constructs a [`GetBuiltinIntentsInput`](crate::operation::get_builtin_intents::GetBuiltinIntentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_builtin_intents::GetBuiltinIntentsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_builtin_intents::GetBuiltinIntentsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_builtin_intents::GetBuiltinIntentsInput {
             locale: self.locale,
             signature_contains: self.signature_contains,

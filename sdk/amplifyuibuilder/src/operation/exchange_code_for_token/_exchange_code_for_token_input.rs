@@ -34,6 +34,7 @@ pub struct ExchangeCodeForTokenInputBuilder {
 }
 impl ExchangeCodeForTokenInputBuilder {
     /// <p>The third-party provider for the token. The only valid value is <code>figma</code>.</p>
+    /// This field is required.
     pub fn provider(mut self, input: crate::types::TokenProviders) -> Self {
         self.provider = ::std::option::Option::Some(input);
         self
@@ -48,6 +49,7 @@ impl ExchangeCodeForTokenInputBuilder {
         &self.provider
     }
     /// <p>Describes the configuration of the request.</p>
+    /// This field is required.
     pub fn request(mut self, input: crate::types::ExchangeCodeForTokenRequestBody) -> Self {
         self.request = ::std::option::Option::Some(input);
         self
@@ -64,7 +66,7 @@ impl ExchangeCodeForTokenInputBuilder {
     /// Consumes the builder and constructs a [`ExchangeCodeForTokenInput`](crate::operation::exchange_code_for_token::ExchangeCodeForTokenInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::exchange_code_for_token::ExchangeCodeForTokenInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::exchange_code_for_token::ExchangeCodeForTokenInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::exchange_code_for_token::ExchangeCodeForTokenInput {
             provider: self.provider,

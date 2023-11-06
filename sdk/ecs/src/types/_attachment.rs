@@ -27,8 +27,10 @@ impl Attachment {
         self.status.as_deref()
     }
     /// <p>Details of the attachment. For elastic network interfaces, this includes the network interface ID, the MAC address, the subnet ID, and the private IPv4 address.</p>
-    pub fn details(&self) -> ::std::option::Option<&[crate::types::KeyValuePair]> {
-        self.details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.details.is_none()`.
+    pub fn details(&self) -> &[crate::types::KeyValuePair] {
+        self.details.as_deref().unwrap_or_default()
     }
 }
 impl Attachment {

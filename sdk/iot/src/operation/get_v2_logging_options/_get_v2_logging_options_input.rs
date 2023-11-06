@@ -18,7 +18,7 @@ impl GetV2LoggingOptionsInputBuilder {
     /// Consumes the builder and constructs a [`GetV2LoggingOptionsInput`](crate::operation::get_v2_logging_options::GetV2LoggingOptionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_v2_logging_options::GetV2LoggingOptionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_v2_logging_options::GetV2LoggingOptionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_v2_logging_options::GetV2LoggingOptionsInput {})
     }

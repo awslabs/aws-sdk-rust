@@ -39,8 +39,10 @@ impl PutComplianceItemsInput {
         self.execution_summary.as_ref()
     }
     /// <p>Information about the compliance as defined by the resource type. For example, for a patch compliance type, <code>Items</code> includes information about the PatchSeverity, Classification, and so on.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::ComplianceItemEntry]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[crate::types::ComplianceItemEntry] {
+        self.items.as_deref().unwrap_or_default()
     }
     /// <p>MD5 or SHA-256 content hash. The content hash is used to determine if existing information should be overwritten or ignored. If the content hashes match, the request to put compliance information is ignored.</p>
     pub fn item_content_hash(&self) -> ::std::option::Option<&str> {
@@ -75,6 +77,7 @@ pub struct PutComplianceItemsInputBuilder {
 }
 impl PutComplianceItemsInputBuilder {
     /// <p>Specify an ID for this resource. For a managed node, this is the node ID.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -89,6 +92,7 @@ impl PutComplianceItemsInputBuilder {
         &self.resource_id
     }
     /// <p>Specify the type of resource. <code>ManagedInstance</code> is currently the only supported resource type.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
@@ -103,6 +107,7 @@ impl PutComplianceItemsInputBuilder {
         &self.resource_type
     }
     /// <p>Specify the compliance type. For example, specify Association (for a State Manager association), Patch, or Custom:<code>string</code>.</p>
+    /// This field is required.
     pub fn compliance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compliance_type = ::std::option::Option::Some(input.into());
         self
@@ -117,6 +122,7 @@ impl PutComplianceItemsInputBuilder {
         &self.compliance_type
     }
     /// <p>A summary of the call execution that includes an execution ID, the type of execution (for example, <code>Command</code>), and the date/time of the execution using a datetime object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
+    /// This field is required.
     pub fn execution_summary(mut self, input: crate::types::ComplianceExecutionSummary) -> Self {
         self.execution_summary = ::std::option::Option::Some(input);
         self
@@ -190,7 +196,8 @@ impl PutComplianceItemsInputBuilder {
     /// Consumes the builder and constructs a [`PutComplianceItemsInput`](crate::operation::put_compliance_items::PutComplianceItemsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_compliance_items::PutComplianceItemsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_compliance_items::PutComplianceItemsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::put_compliance_items::PutComplianceItemsInput {
             resource_id: self.resource_id,
             resource_type: self.resource_type,

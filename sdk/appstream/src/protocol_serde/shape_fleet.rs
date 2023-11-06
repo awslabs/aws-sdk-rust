@@ -158,6 +158,13 @@ where
                         "SessionScriptS3Location" => {
                             builder = builder.set_session_script_s3_location(crate::protocol_serde::shape_s3_location::de_s3_location(tokens)?);
                         }
+                        "MaxSessionsPerInstance" => {
+                            builder = builder.set_max_sessions_per_instance(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -168,7 +175,7 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::fleet_correct_errors(builder).build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

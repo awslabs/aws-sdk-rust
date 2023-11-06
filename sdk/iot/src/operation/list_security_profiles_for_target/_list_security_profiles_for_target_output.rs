@@ -11,8 +11,10 @@ pub struct ListSecurityProfilesForTargetOutput {
 }
 impl ListSecurityProfilesForTargetOutput {
     /// <p>A list of security profiles and their associated targets.</p>
-    pub fn security_profile_target_mappings(&self) -> ::std::option::Option<&[crate::types::SecurityProfileTargetMapping]> {
-        self.security_profile_target_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_profile_target_mappings.is_none()`.
+    pub fn security_profile_target_mappings(&self) -> &[crate::types::SecurityProfileTargetMapping] {
+        self.security_profile_target_mappings.as_deref().unwrap_or_default()
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

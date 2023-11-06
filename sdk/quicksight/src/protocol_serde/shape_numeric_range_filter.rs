@@ -2,45 +2,45 @@
 pub fn ser_numeric_range_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NumericRangeFilter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.filter_id {
-        object.key("FilterId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("FilterId").string(input.filter_id.as_str());
     }
-    if let Some(var_2) = &input.column {
+    if let Some(var_1) = &input.column {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("Column").start_object();
-        crate::protocol_serde::shape_column_identifier::ser_column_identifier(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("Column").start_object();
+        crate::protocol_serde::shape_column_identifier::ser_column_identifier(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.include_minimum {
-        object.key("IncludeMinimum").boolean(*var_4);
+    if let Some(var_3) = &input.include_minimum {
+        object.key("IncludeMinimum").boolean(*var_3);
     }
-    if let Some(var_5) = &input.include_maximum {
-        object.key("IncludeMaximum").boolean(*var_5);
+    if let Some(var_4) = &input.include_maximum {
+        object.key("IncludeMaximum").boolean(*var_4);
     }
-    if let Some(var_6) = &input.range_minimum {
+    if let Some(var_5) = &input.range_minimum {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("RangeMinimum").start_object();
-        crate::protocol_serde::shape_numeric_range_filter_value::ser_numeric_range_filter_value(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_6 = object.key("RangeMinimum").start_object();
+        crate::protocol_serde::shape_numeric_range_filter_value::ser_numeric_range_filter_value(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_8) = &input.range_maximum {
+    if let Some(var_7) = &input.range_maximum {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("RangeMaximum").start_object();
-        crate::protocol_serde::shape_numeric_range_filter_value::ser_numeric_range_filter_value(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_8 = object.key("RangeMaximum").start_object();
+        crate::protocol_serde::shape_numeric_range_filter_value::ser_numeric_range_filter_value(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_10) = &input.select_all_options {
-        object.key("SelectAllOptions").string(var_10.as_str());
+    if let Some(var_9) = &input.select_all_options {
+        object.key("SelectAllOptions").string(var_9.as_str());
     }
-    if let Some(var_11) = &input.aggregation_function {
+    if let Some(var_10) = &input.aggregation_function {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("AggregationFunction").start_object();
-        crate::protocol_serde::shape_aggregation_function::ser_aggregation_function(&mut object_12, var_11)?;
-        object_12.finish();
+        let mut object_11 = object.key("AggregationFunction").start_object();
+        crate::protocol_serde::shape_aggregation_function::ser_aggregation_function(&mut object_11, var_10)?;
+        object_11.finish();
     }
-    if let Some(var_13) = &input.null_option {
-        object.key("NullOption").string(var_13.as_str());
+    {
+        object.key("NullOption").string(input.null_option.as_str());
     }
     Ok(())
 }
@@ -114,7 +114,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::numeric_range_filter_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

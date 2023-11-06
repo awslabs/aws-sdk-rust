@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeForecastExportJob`](crate::operation::describe_forecast_export_job::builders::DescribeForecastExportJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`forecast_export_job_arn(impl Into<String>)`](crate::operation::describe_forecast_export_job::builders::DescribeForecastExportJobFluentBuilder::forecast_export_job_arn) / [`set_forecast_export_job_arn(Option<String>)`](crate::operation::describe_forecast_export_job::builders::DescribeForecastExportJobFluentBuilder::set_forecast_export_job_arn): <p>The Amazon Resource Name (ARN) of the forecast export job.</p>
+    ///   - [`forecast_export_job_arn(impl Into<String>)`](crate::operation::describe_forecast_export_job::builders::DescribeForecastExportJobFluentBuilder::forecast_export_job_arn) / [`set_forecast_export_job_arn(Option<String>)`](crate::operation::describe_forecast_export_job::builders::DescribeForecastExportJobFluentBuilder::set_forecast_export_job_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the forecast export job.</p><br>
     /// - On success, responds with [`DescribeForecastExportJobOutput`](crate::operation::describe_forecast_export_job::DescribeForecastExportJobOutput) with field(s):
     ///   - [`forecast_export_job_arn(Option<String>)`](crate::operation::describe_forecast_export_job::DescribeForecastExportJobOutput::forecast_export_job_arn): <p>The ARN of the forecast export job.</p>
     ///   - [`forecast_export_job_name(Option<String>)`](crate::operation::describe_forecast_export_job::DescribeForecastExportJobOutput::forecast_export_job_name): <p>The name of the forecast export job.</p>

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RejectSkill`](crate::operation::reject_skill::builders::RejectSkillFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`skill_id(impl Into<String>)`](crate::operation::reject_skill::builders::RejectSkillFluentBuilder::skill_id) / [`set_skill_id(Option<String>)`](crate::operation::reject_skill::builders::RejectSkillFluentBuilder::set_skill_id): <p>The unique identifier of the skill.</p>
+    ///   - [`skill_id(impl Into<String>)`](crate::operation::reject_skill::builders::RejectSkillFluentBuilder::skill_id) / [`set_skill_id(Option<String>)`](crate::operation::reject_skill::builders::RejectSkillFluentBuilder::set_skill_id):<br>required: **true**<br><p>The unique identifier of the skill.</p><br>
     /// - On success, responds with [`RejectSkillOutput`](crate::operation::reject_skill::RejectSkillOutput)
     /// - On failure, responds with [`SdkError<RejectSkillError>`](crate::operation::reject_skill::RejectSkillError)
     #[deprecated(note = "Alexa For Business is no longer supported")]

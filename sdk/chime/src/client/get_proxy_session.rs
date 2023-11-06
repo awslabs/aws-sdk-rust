@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetProxySession`](crate::operation::get_proxy_session::builders::GetProxySessionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`voice_connector_id(impl Into<String>)`](crate::operation::get_proxy_session::builders::GetProxySessionFluentBuilder::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::operation::get_proxy_session::builders::GetProxySessionFluentBuilder::set_voice_connector_id): <p>The Amazon Chime voice connector ID.</p>
-    ///   - [`proxy_session_id(impl Into<String>)`](crate::operation::get_proxy_session::builders::GetProxySessionFluentBuilder::proxy_session_id) / [`set_proxy_session_id(Option<String>)`](crate::operation::get_proxy_session::builders::GetProxySessionFluentBuilder::set_proxy_session_id): <p>The proxy session ID.</p>
+    ///   - [`voice_connector_id(impl Into<String>)`](crate::operation::get_proxy_session::builders::GetProxySessionFluentBuilder::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::operation::get_proxy_session::builders::GetProxySessionFluentBuilder::set_voice_connector_id):<br>required: **true**<br><p>The Amazon Chime voice connector ID.</p><br>
+    ///   - [`proxy_session_id(impl Into<String>)`](crate::operation::get_proxy_session::builders::GetProxySessionFluentBuilder::proxy_session_id) / [`set_proxy_session_id(Option<String>)`](crate::operation::get_proxy_session::builders::GetProxySessionFluentBuilder::set_proxy_session_id):<br>required: **true**<br><p>The proxy session ID.</p><br>
     /// - On success, responds with [`GetProxySessionOutput`](crate::operation::get_proxy_session::GetProxySessionOutput) with field(s):
     ///   - [`proxy_session(Option<ProxySession>)`](crate::operation::get_proxy_session::GetProxySessionOutput::proxy_session): <p>The proxy session details.</p>
     /// - On failure, responds with [`SdkError<GetProxySessionError>`](crate::operation::get_proxy_session::GetProxySessionError)

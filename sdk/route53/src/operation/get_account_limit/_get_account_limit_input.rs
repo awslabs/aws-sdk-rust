@@ -49,6 +49,7 @@ impl GetAccountLimitInputBuilder {
     /// <li> <p> <b>MAX_TRAFFIC_POLICIES_BY_OWNER</b>: The maximum number of traffic policies that you can create using the current account.</p> </li>
     /// <li> <p> <b>MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER</b>: The maximum number of traffic policy instances that you can create using the current account. (Traffic policy instances are referred to as traffic flow policy records in the Amazon Route 53 console.)</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::AccountLimitType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -79,7 +80,7 @@ impl GetAccountLimitInputBuilder {
     /// Consumes the builder and constructs a [`GetAccountLimitInput`](crate::operation::get_account_limit::GetAccountLimitInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_account_limit::GetAccountLimitInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_account_limit::GetAccountLimitInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_account_limit::GetAccountLimitInput { r#type: self.r#type })
     }
 }

@@ -45,12 +45,16 @@ impl UpdateClusterInput {
         self.shard_count
     }
     /// <p>A list of EC2 VPC security groups to associate with the new Elastic DocumentDB cluster.</p>
-    pub fn vpc_security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.vpc_security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_group_ids.is_none()`.
+    pub fn vpc_security_group_ids(&self) -> &[::std::string::String] {
+        self.vpc_security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>The number of shards to create in the Elastic DocumentDB cluster.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        self.subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>The password for the Elastic DocumentDB cluster administrator. This password can contain any printable ASCII character except forward slash (/), double quote ("), or the "at" symbol (@).</p>
     /// <p> <i>Constraints</i>: Must contain from 8 to 100 characters.</p>
@@ -108,6 +112,7 @@ pub struct UpdateClusterInputBuilder {
 }
 impl UpdateClusterInputBuilder {
     /// <p>The arn of the Elastic DocumentDB cluster.</p>
+    /// This field is required.
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_arn = ::std::option::Option::Some(input.into());
         self
@@ -263,7 +268,7 @@ impl UpdateClusterInputBuilder {
     /// Consumes the builder and constructs a [`UpdateClusterInput`](crate::operation::update_cluster::UpdateClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_cluster::UpdateClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_cluster::UpdateClusterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_cluster::UpdateClusterInput {
             cluster_arn: self.cluster_arn,
             auth_type: self.auth_type,

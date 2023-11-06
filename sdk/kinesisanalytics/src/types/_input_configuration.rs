@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputConfiguration {
     /// <p>Input source ID. You can get this ID by calling the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>Point at which you want the application to start processing records from the streaming source.</p>
     pub input_starting_position_configuration: ::std::option::Option<crate::types::InputStartingPositionConfiguration>,
 }
 impl InputConfiguration {
     /// <p>Input source ID. You can get this ID by calling the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>Point at which you want the application to start processing records from the streaming source.</p>
     pub fn input_starting_position_configuration(&self) -> ::std::option::Option<&crate::types::InputStartingPositionConfiguration> {
@@ -35,6 +36,7 @@ pub struct InputConfigurationBuilder {
 }
 impl InputConfigurationBuilder {
     /// <p>Input source ID. You can get this ID by calling the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl InputConfigurationBuilder {
         &self.id
     }
     /// <p>Point at which you want the application to start processing records from the streaming source.</p>
+    /// This field is required.
     pub fn input_starting_position_configuration(mut self, input: crate::types::InputStartingPositionConfiguration) -> Self {
         self.input_starting_position_configuration = ::std::option::Option::Some(input);
         self
@@ -66,10 +69,17 @@ impl InputConfigurationBuilder {
         &self.input_starting_position_configuration
     }
     /// Consumes the builder and constructs a [`InputConfiguration`](crate::types::InputConfiguration).
-    pub fn build(self) -> crate::types::InputConfiguration {
-        crate::types::InputConfiguration {
-            id: self.id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::InputConfigurationBuilder::id)
+    pub fn build(self) -> ::std::result::Result<crate::types::InputConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::InputConfiguration {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building InputConfiguration",
+                )
+            })?,
             input_starting_position_configuration: self.input_starting_position_configuration,
-        }
+        })
     }
 }

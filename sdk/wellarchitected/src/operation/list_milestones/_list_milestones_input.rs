@@ -42,6 +42,7 @@ pub struct ListMilestonesInputBuilder {
 }
 impl ListMilestonesInputBuilder {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    /// This field is required.
     pub fn workload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workload_id = ::std::option::Option::Some(input.into());
         self
@@ -86,7 +87,7 @@ impl ListMilestonesInputBuilder {
     /// Consumes the builder and constructs a [`ListMilestonesInput`](crate::operation::list_milestones::ListMilestonesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_milestones::ListMilestonesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_milestones::ListMilestonesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_milestones::ListMilestonesInput {
             workload_id: self.workload_id,
             next_token: self.next_token,

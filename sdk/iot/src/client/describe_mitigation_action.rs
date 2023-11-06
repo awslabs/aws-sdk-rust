@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeMitigationAction`](crate::operation::describe_mitigation_action::builders::DescribeMitigationActionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`action_name(impl Into<String>)`](crate::operation::describe_mitigation_action::builders::DescribeMitigationActionFluentBuilder::action_name) / [`set_action_name(Option<String>)`](crate::operation::describe_mitigation_action::builders::DescribeMitigationActionFluentBuilder::set_action_name): <p>The friendly name that uniquely identifies the mitigation action.</p>
+    ///   - [`action_name(impl Into<String>)`](crate::operation::describe_mitigation_action::builders::DescribeMitigationActionFluentBuilder::action_name) / [`set_action_name(Option<String>)`](crate::operation::describe_mitigation_action::builders::DescribeMitigationActionFluentBuilder::set_action_name):<br>required: **true**<br><p>The friendly name that uniquely identifies the mitigation action.</p><br>
     /// - On success, responds with [`DescribeMitigationActionOutput`](crate::operation::describe_mitigation_action::DescribeMitigationActionOutput) with field(s):
     ///   - [`action_name(Option<String>)`](crate::operation::describe_mitigation_action::DescribeMitigationActionOutput::action_name): <p>The friendly name that uniquely identifies the mitigation action.</p>
     ///   - [`action_type(Option<MitigationActionType>)`](crate::operation::describe_mitigation_action::DescribeMitigationActionOutput::action_type): <p>The type of mitigation action.</p>

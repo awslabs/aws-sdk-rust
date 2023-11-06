@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddThingsToThingGroupParams {
     /// <p>The list of groups to which you want to add the things that triggered the mitigation action. You can add a thing to a maximum of 10 groups, but you can't add a thing to more than one group in the same hierarchy.</p>
-    pub thing_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub thing_group_names: ::std::vec::Vec<::std::string::String>,
     /// <p>Specifies if this mitigation action can move the things that triggered the mitigation action even if they are part of one or more dynamic thing groups.</p>
     pub override_dynamic_groups: ::std::option::Option<bool>,
 }
 impl AddThingsToThingGroupParams {
     /// <p>The list of groups to which you want to add the things that triggered the mitigation action. You can add a thing to a maximum of 10 groups, but you can't add a thing to more than one group in the same hierarchy.</p>
-    pub fn thing_group_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.thing_group_names.as_deref()
+    pub fn thing_group_names(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.thing_group_names.deref()
     }
     /// <p>Specifies if this mitigation action can move the things that triggered the mitigation action even if they are part of one or more dynamic thing groups.</p>
     pub fn override_dynamic_groups(&self) -> ::std::option::Option<bool> {
@@ -69,10 +70,17 @@ impl AddThingsToThingGroupParamsBuilder {
         &self.override_dynamic_groups
     }
     /// Consumes the builder and constructs a [`AddThingsToThingGroupParams`](crate::types::AddThingsToThingGroupParams).
-    pub fn build(self) -> crate::types::AddThingsToThingGroupParams {
-        crate::types::AddThingsToThingGroupParams {
-            thing_group_names: self.thing_group_names,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`thing_group_names`](crate::types::builders::AddThingsToThingGroupParamsBuilder::thing_group_names)
+    pub fn build(self) -> ::std::result::Result<crate::types::AddThingsToThingGroupParams, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AddThingsToThingGroupParams {
+            thing_group_names: self.thing_group_names.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "thing_group_names",
+                    "thing_group_names was not specified but it is required when building AddThingsToThingGroupParams",
+                )
+            })?,
             override_dynamic_groups: self.override_dynamic_groups,
-        }
+        })
     }
 }

@@ -34,6 +34,7 @@ pub struct DeleteRuleInputBuilder {
 }
 impl DeleteRuleInputBuilder {
     /// <p>The <code>RuleId</code> of the <code>Rule</code> that you want to delete. <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
+    /// This field is required.
     pub fn rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteRuleInputBuilder {
         &self.rule_id
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    /// This field is required.
     pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_token = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,7 @@ impl DeleteRuleInputBuilder {
         &self.change_token
     }
     /// Consumes the builder and constructs a [`DeleteRuleInput`](crate::operation::delete_rule::DeleteRuleInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_rule::DeleteRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_rule::DeleteRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_rule::DeleteRuleInput {
             rule_id: self.rule_id,
             change_token: self.change_token,

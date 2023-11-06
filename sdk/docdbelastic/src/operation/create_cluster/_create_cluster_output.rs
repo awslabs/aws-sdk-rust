@@ -34,6 +34,7 @@ pub struct CreateClusterOutputBuilder {
 }
 impl CreateClusterOutputBuilder {
     /// <p>The new Elastic DocumentDB cluster that has been created.</p>
+    /// This field is required.
     pub fn cluster(mut self, input: crate::types::Cluster) -> Self {
         self.cluster = ::std::option::Option::Some(input);
         self

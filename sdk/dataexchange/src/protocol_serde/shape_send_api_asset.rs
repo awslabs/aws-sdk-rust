@@ -25,11 +25,10 @@ pub fn de_send_api_asset_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::send_api_asset::SendApiAssetError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::send_api_asset::SendApiAssetError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerException" => crate::operation::send_api_asset::SendApiAssetError::InternalServerException({
@@ -40,11 +39,10 @@ pub fn de_send_api_asset_http_error(
                 output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
                     .map_err(crate::operation::send_api_asset::SendApiAssetError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::send_api_asset::SendApiAssetError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::send_api_asset::SendApiAssetError::ResourceNotFoundException({
@@ -55,11 +53,10 @@ pub fn de_send_api_asset_http_error(
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::send_api_asset::SendApiAssetError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::send_api_asset::SendApiAssetError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::send_api_asset::SendApiAssetError::ThrottlingException({
@@ -70,11 +67,10 @@ pub fn de_send_api_asset_http_error(
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::send_api_asset::SendApiAssetError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::send_api_asset::SendApiAssetError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::send_api_asset::SendApiAssetError::ValidationException({
@@ -85,11 +81,10 @@ pub fn de_send_api_asset_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::send_api_asset::SendApiAssetError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::send_api_asset::SendApiAssetError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::send_api_asset::SendApiAssetError::generic(generic),
@@ -119,13 +114,13 @@ pub fn de_send_api_asset_http_response(
 pub fn ser_send_api_asset_headers(
     input: &crate::operation::send_api_asset::SendApiAssetInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.asset_id {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "asset_id",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -138,7 +133,7 @@ pub fn ser_send_api_asset_headers(
         if !formatted_4.is_empty() {
             let header_value = formatted_4;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "data_set_id",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -151,7 +146,7 @@ pub fn ser_send_api_asset_headers(
         if !formatted_6.is_empty() {
             let header_value = formatted_6;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "method",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -164,7 +159,7 @@ pub fn ser_send_api_asset_headers(
         if !formatted_8.is_empty() {
             let header_value = formatted_8;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "path",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -177,7 +172,7 @@ pub fn ser_send_api_asset_headers(
         if !formatted_10.is_empty() {
             let header_value = formatted_10;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "revision_id",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -190,14 +185,14 @@ pub fn ser_send_api_asset_headers(
             for (k, v) in inner_11 {
                 use std::str::FromStr;
                 let header_name = http::header::HeaderName::from_str(&format!("{}{}", "x-amzn-dataexchange-header-", &k)).map_err(|err| {
-                    ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                    ::aws_smithy_types::error::operation::BuildError::invalid_field(
                         "request_headers",
                         format!("`{k}` cannot be used as a header name: {err}"),
                     )
                 })?;
                 let header_value = v.as_str();
                 let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                    ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                    ::aws_smithy_types::error::operation::BuildError::invalid_field(
                         "request_headers",
                         format!("`{}` cannot be used as a header value: {}", v, err),
                     )

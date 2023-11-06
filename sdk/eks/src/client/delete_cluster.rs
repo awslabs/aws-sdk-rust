@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteCluster`](crate::operation::delete_cluster::builders::DeleteClusterFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::delete_cluster::builders::DeleteClusterFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_cluster::builders::DeleteClusterFluentBuilder::set_name): <p>The name of the cluster to delete.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::delete_cluster::builders::DeleteClusterFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_cluster::builders::DeleteClusterFluentBuilder::set_name):<br>required: **true**<br><p>The name of the cluster to delete.</p><br>
     /// - On success, responds with [`DeleteClusterOutput`](crate::operation::delete_cluster::DeleteClusterOutput) with field(s):
     ///   - [`cluster(Option<Cluster>)`](crate::operation::delete_cluster::DeleteClusterOutput::cluster): <p>The full description of the cluster to delete.</p>
     /// - On failure, responds with [`SdkError<DeleteClusterError>`](crate::operation::delete_cluster::DeleteClusterError)

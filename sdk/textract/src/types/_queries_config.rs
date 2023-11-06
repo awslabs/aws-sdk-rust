@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueriesConfig {
     /// <p></p>
-    pub queries: ::std::option::Option<::std::vec::Vec<crate::types::Query>>,
+    pub queries: ::std::vec::Vec<crate::types::Query>,
 }
 impl QueriesConfig {
     /// <p></p>
-    pub fn queries(&self) -> ::std::option::Option<&[crate::types::Query]> {
-        self.queries.as_deref()
+    pub fn queries(&self) -> &[crate::types::Query] {
+        use std::ops::Deref;
+        self.queries.deref()
     }
 }
 impl QueriesConfig {
@@ -48,7 +49,16 @@ impl QueriesConfigBuilder {
         &self.queries
     }
     /// Consumes the builder and constructs a [`QueriesConfig`](crate::types::QueriesConfig).
-    pub fn build(self) -> crate::types::QueriesConfig {
-        crate::types::QueriesConfig { queries: self.queries }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`queries`](crate::types::builders::QueriesConfigBuilder::queries)
+    pub fn build(self) -> ::std::result::Result<crate::types::QueriesConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::QueriesConfig {
+            queries: self.queries.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "queries",
+                    "queries was not specified but it is required when building QueriesConfig",
+                )
+            })?,
+        })
     }
 }

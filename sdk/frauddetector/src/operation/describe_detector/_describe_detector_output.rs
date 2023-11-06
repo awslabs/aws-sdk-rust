@@ -19,8 +19,10 @@ impl DescribeDetectorOutput {
         self.detector_id.as_deref()
     }
     /// <p>The status and description for each detector version.</p>
-    pub fn detector_version_summaries(&self) -> ::std::option::Option<&[crate::types::DetectorVersionSummary]> {
-        self.detector_version_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.detector_version_summaries.is_none()`.
+    pub fn detector_version_summaries(&self) -> &[crate::types::DetectorVersionSummary] {
+        self.detector_version_summaries.as_deref().unwrap_or_default()
     }
     /// <p>The next token to be used for subsequent requests.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

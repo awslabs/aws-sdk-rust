@@ -70,8 +70,10 @@ impl DescribeFeatureGroupOutput {
         self.event_time_feature_name.as_deref()
     }
     /// <p>A list of the <code>Features</code> in the <code>FeatureGroup</code>. Each feature is defined by a <code>FeatureName</code> and <code>FeatureType</code>.</p>
-    pub fn feature_definitions(&self) -> ::std::option::Option<&[crate::types::FeatureDefinition]> {
-        self.feature_definitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.feature_definitions.is_none()`.
+    pub fn feature_definitions(&self) -> &[crate::types::FeatureDefinition] {
+        self.feature_definitions.as_deref().unwrap_or_default()
     }
     /// <p>A timestamp indicating when SageMaker created the <code>FeatureGroup</code>.</p>
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -170,6 +172,7 @@ pub struct DescribeFeatureGroupOutputBuilder {
 }
 impl DescribeFeatureGroupOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the <code>FeatureGroup</code>. </p>
+    /// This field is required.
     pub fn feature_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_group_arn = ::std::option::Option::Some(input.into());
         self
@@ -184,6 +187,7 @@ impl DescribeFeatureGroupOutputBuilder {
         &self.feature_group_arn
     }
     /// <p>he name of the <code>FeatureGroup</code>.</p>
+    /// This field is required.
     pub fn feature_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_group_name = ::std::option::Option::Some(input.into());
         self
@@ -198,6 +202,7 @@ impl DescribeFeatureGroupOutputBuilder {
         &self.feature_group_name
     }
     /// <p>The name of the <code>Feature</code> used for <code>RecordIdentifier</code>, whose value uniquely identifies a record stored in the feature store.</p>
+    /// This field is required.
     pub fn record_identifier_feature_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.record_identifier_feature_name = ::std::option::Option::Some(input.into());
         self
@@ -213,6 +218,7 @@ impl DescribeFeatureGroupOutputBuilder {
     }
     /// <p>The name of the feature that stores the <code>EventTime</code> of a Record in a <code>FeatureGroup</code>.</p>
     /// <p> An <code>EventTime</code> is a point in time when a new event occurs that corresponds to the creation or update of a <code>Record</code> in a <code>FeatureGroup</code>. All <code>Records</code> in the <code>FeatureGroup</code> have a corresponding <code>EventTime</code>.</p>
+    /// This field is required.
     pub fn event_time_feature_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_time_feature_name = ::std::option::Option::Some(input.into());
         self
@@ -249,6 +255,7 @@ impl DescribeFeatureGroupOutputBuilder {
         &self.feature_definitions
     }
     /// <p>A timestamp indicating when SageMaker created the <code>FeatureGroup</code>.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -422,6 +429,7 @@ impl DescribeFeatureGroupOutputBuilder {
         &self.description
     }
     /// <p>A token to resume pagination of the list of <code>Features</code> (<code>FeatureDefinitions</code>).</p>
+    /// This field is required.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self

@@ -18,8 +18,10 @@ impl AttachInstancesToLoadBalancerInput {
     /// <p>An array of strings representing the instance name(s) you want to attach to your load balancer.</p>
     /// <p>An instance must be <code>running</code> before you can attach it to your load balancer.</p>
     /// <p>There are no additional limits on the number of instances you can attach to your load balancer, aside from the limit of Lightsail instances you can create in your account (20).</p>
-    pub fn instance_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.instance_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_names.is_none()`.
+    pub fn instance_names(&self) -> &[::std::string::String] {
+        self.instance_names.as_deref().unwrap_or_default()
     }
 }
 impl AttachInstancesToLoadBalancerInput {
@@ -38,6 +40,7 @@ pub struct AttachInstancesToLoadBalancerInputBuilder {
 }
 impl AttachInstancesToLoadBalancerInputBuilder {
     /// <p>The name of the load balancer.</p>
+    /// This field is required.
     pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
@@ -82,7 +85,7 @@ impl AttachInstancesToLoadBalancerInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::attach_instances_to_load_balancer::AttachInstancesToLoadBalancerInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::attach_instances_to_load_balancer::AttachInstancesToLoadBalancerInput {
             load_balancer_name: self.load_balancer_name,

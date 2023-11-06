@@ -36,8 +36,8 @@ pub fn de_get_cloud_front_origin_access_identity_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NoSuchCloudFrontOriginAccessIdentity" => crate::operation::get_cloud_front_origin_access_identity_config::GetCloudFrontOriginAccessIdentityConfigError::NoSuchCloudFrontOriginAccessIdentity({
@@ -52,8 +52,8 @@ pub fn de_get_cloud_front_origin_access_identity_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::get_cloud_front_origin_access_identity_config::GetCloudFrontOriginAccessIdentityConfigError::generic(generic)

@@ -7,20 +7,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ArtifactStore {
     /// <p>The type of the artifact store, such as S3.</p>
-    pub r#type: ::std::option::Option<crate::types::ArtifactStoreType>,
+    pub r#type: crate::types::ArtifactStoreType,
     /// <p>The S3 bucket used for storing the artifacts for a pipeline. You can specify the name of an S3 bucket but not a folder in the bucket. A folder to contain the pipeline artifacts is created for you based on the name of the pipeline. You can use any S3 bucket in the same Amazon Web Services Region as the pipeline to store your pipeline artifacts.</p>
-    pub location: ::std::option::Option<::std::string::String>,
+    pub location: ::std::string::String,
     /// <p>The encryption key used to encrypt the data in the artifact store, such as an Amazon Web Services Key Management Service key. If this is undefined, the default key for Amazon S3 is used.</p>
     pub encryption_key: ::std::option::Option<crate::types::EncryptionKey>,
 }
 impl ArtifactStore {
     /// <p>The type of the artifact store, such as S3.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ArtifactStoreType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::ArtifactStoreType {
+        &self.r#type
     }
     /// <p>The S3 bucket used for storing the artifacts for a pipeline. You can specify the name of an S3 bucket but not a folder in the bucket. A folder to contain the pipeline artifacts is created for you based on the name of the pipeline. You can use any S3 bucket in the same Amazon Web Services Region as the pipeline to store your pipeline artifacts.</p>
-    pub fn location(&self) -> ::std::option::Option<&str> {
-        self.location.as_deref()
+    pub fn location(&self) -> &str {
+        use std::ops::Deref;
+        self.location.deref()
     }
     /// <p>The encryption key used to encrypt the data in the artifact store, such as an Amazon Web Services Key Management Service key. If this is undefined, the default key for Amazon S3 is used.</p>
     pub fn encryption_key(&self) -> ::std::option::Option<&crate::types::EncryptionKey> {
@@ -44,6 +45,7 @@ pub struct ArtifactStoreBuilder {
 }
 impl ArtifactStoreBuilder {
     /// <p>The type of the artifact store, such as S3.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::ArtifactStoreType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -58,6 +60,7 @@ impl ArtifactStoreBuilder {
         &self.r#type
     }
     /// <p>The S3 bucket used for storing the artifacts for a pipeline. You can specify the name of an S3 bucket but not a folder in the bucket. A folder to contain the pipeline artifacts is created for you based on the name of the pipeline. You can use any S3 bucket in the same Amazon Web Services Region as the pipeline to store your pipeline artifacts.</p>
+    /// This field is required.
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
         self
@@ -86,11 +89,24 @@ impl ArtifactStoreBuilder {
         &self.encryption_key
     }
     /// Consumes the builder and constructs a [`ArtifactStore`](crate::types::ArtifactStore).
-    pub fn build(self) -> crate::types::ArtifactStore {
-        crate::types::ArtifactStore {
-            r#type: self.r#type,
-            location: self.location,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::ArtifactStoreBuilder::r#type)
+    /// - [`location`](crate::types::builders::ArtifactStoreBuilder::location)
+    pub fn build(self) -> ::std::result::Result<crate::types::ArtifactStore, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ArtifactStore {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building ArtifactStore",
+                )
+            })?,
+            location: self.location.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "location",
+                    "location was not specified but it is required when building ArtifactStore",
+                )
+            })?,
             encryption_key: self.encryption_key,
-        }
+        })
     }
 }

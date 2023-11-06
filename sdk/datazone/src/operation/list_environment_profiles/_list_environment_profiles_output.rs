@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEnvironmentProfilesOutput {
     /// <p>The results of the <code>ListEnvironmentProfiles</code> action. </p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentProfileSummary>>,
+    pub items: ::std::vec::Vec<crate::types::EnvironmentProfileSummary>,
     /// <p>When the number of environment profiles is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of environment profiles, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListEnvironmentProfiles</code> to list the next set of environment profiles.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListEnvironmentProfilesOutput {
     /// <p>The results of the <code>ListEnvironmentProfiles</code> action. </p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::EnvironmentProfileSummary]> {
-        self.items.as_deref()
+    pub fn items(&self) -> &[crate::types::EnvironmentProfileSummary] {
+        use std::ops::Deref;
+        self.items.deref()
     }
     /// <p>When the number of environment profiles is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of environment profiles, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListEnvironmentProfiles</code> to list the next set of environment profiles.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,23 @@ impl ListEnvironmentProfilesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListEnvironmentProfilesOutput`](crate::operation::list_environment_profiles::ListEnvironmentProfilesOutput).
-    pub fn build(self) -> crate::operation::list_environment_profiles::ListEnvironmentProfilesOutput {
-        crate::operation::list_environment_profiles::ListEnvironmentProfilesOutput {
-            items: self.items,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`items`](crate::operation::list_environment_profiles::builders::ListEnvironmentProfilesOutputBuilder::items)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_environment_profiles::ListEnvironmentProfilesOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_environment_profiles::ListEnvironmentProfilesOutput {
+            items: self.items.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "items",
+                    "items was not specified but it is required when building ListEnvironmentProfilesOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

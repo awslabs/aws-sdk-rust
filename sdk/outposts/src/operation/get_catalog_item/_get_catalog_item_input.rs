@@ -27,6 +27,7 @@ pub struct GetCatalogItemInputBuilder {
 }
 impl GetCatalogItemInputBuilder {
     /// <p>The ID of the catalog item.</p>
+    /// This field is required.
     pub fn catalog_item_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.catalog_item_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetCatalogItemInputBuilder {
     /// Consumes the builder and constructs a [`GetCatalogItemInput`](crate::operation::get_catalog_item::GetCatalogItemInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_catalog_item::GetCatalogItemInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_catalog_item::GetCatalogItemInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_catalog_item::GetCatalogItemInput {
             catalog_item_id: self.catalog_item_id,
         })

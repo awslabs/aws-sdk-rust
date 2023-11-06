@@ -7,16 +7,19 @@ pub struct TrustStore {
     /// <p>A list of web portal ARNs that this trust store is associated with.</p>
     pub associated_portal_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ARN of the trust store.</p>
-    pub trust_store_arn: ::std::option::Option<::std::string::String>,
+    pub trust_store_arn: ::std::string::String,
 }
 impl TrustStore {
     /// <p>A list of web portal ARNs that this trust store is associated with.</p>
-    pub fn associated_portal_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.associated_portal_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_portal_arns.is_none()`.
+    pub fn associated_portal_arns(&self) -> &[::std::string::String] {
+        self.associated_portal_arns.as_deref().unwrap_or_default()
     }
     /// <p>The ARN of the trust store.</p>
-    pub fn trust_store_arn(&self) -> ::std::option::Option<&str> {
-        self.trust_store_arn.as_deref()
+    pub fn trust_store_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.trust_store_arn.deref()
     }
 }
 impl TrustStore {
@@ -55,6 +58,7 @@ impl TrustStoreBuilder {
         &self.associated_portal_arns
     }
     /// <p>The ARN of the trust store.</p>
+    /// This field is required.
     pub fn trust_store_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trust_store_arn = ::std::option::Option::Some(input.into());
         self
@@ -69,10 +73,17 @@ impl TrustStoreBuilder {
         &self.trust_store_arn
     }
     /// Consumes the builder and constructs a [`TrustStore`](crate::types::TrustStore).
-    pub fn build(self) -> crate::types::TrustStore {
-        crate::types::TrustStore {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`trust_store_arn`](crate::types::builders::TrustStoreBuilder::trust_store_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::TrustStore, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TrustStore {
             associated_portal_arns: self.associated_portal_arns,
-            trust_store_arn: self.trust_store_arn,
-        }
+            trust_store_arn: self.trust_store_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "trust_store_arn",
+                    "trust_store_arn was not specified but it is required when building TrustStore",
+                )
+            })?,
+        })
     }
 }

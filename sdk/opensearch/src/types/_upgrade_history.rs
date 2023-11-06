@@ -39,8 +39,10 @@ impl UpgradeHistory {
         self.upgrade_status.as_ref()
     }
     /// <p>A list of each step performed as part of a specific upgrade or upgrade eligibility check.</p>
-    pub fn steps_list(&self) -> ::std::option::Option<&[crate::types::UpgradeStepItem]> {
-        self.steps_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.steps_list.is_none()`.
+    pub fn steps_list(&self) -> &[crate::types::UpgradeStepItem] {
+        self.steps_list.as_deref().unwrap_or_default()
     }
 }
 impl UpgradeHistory {

@@ -77,6 +77,7 @@ impl PutSkillAuthorizationInputBuilder {
         &self.authorization_result
     }
     /// <p>The unique identifier of a skill.</p>
+    /// This field is required.
     pub fn skill_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.skill_id = ::std::option::Option::Some(input.into());
         self
@@ -107,7 +108,7 @@ impl PutSkillAuthorizationInputBuilder {
     /// Consumes the builder and constructs a [`PutSkillAuthorizationInput`](crate::operation::put_skill_authorization::PutSkillAuthorizationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_skill_authorization::PutSkillAuthorizationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_skill_authorization::PutSkillAuthorizationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_skill_authorization::PutSkillAuthorizationInput {
             authorization_result: self.authorization_result,

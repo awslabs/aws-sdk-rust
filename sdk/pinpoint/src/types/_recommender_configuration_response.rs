@@ -140,6 +140,7 @@ impl RecommenderConfigurationResponseBuilder {
         &self.attributes
     }
     /// <p>The date, in extended ISO 8601 format, when the configuration was created for the recommender model.</p>
+    /// This field is required.
     pub fn creation_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_date = ::std::option::Option::Some(input.into());
         self
@@ -168,6 +169,7 @@ impl RecommenderConfigurationResponseBuilder {
         &self.description
     }
     /// <p>The unique identifier for the recommender model configuration.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -182,6 +184,7 @@ impl RecommenderConfigurationResponseBuilder {
         &self.id
     }
     /// <p>The date, in extended ISO 8601 format, when the configuration for the recommender model was last modified.</p>
+    /// This field is required.
     pub fn last_modified_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input.into());
         self
@@ -236,6 +239,7 @@ impl RecommenderConfigurationResponseBuilder {
         &self.recommendation_provider_id_type
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorizes Amazon Pinpoint to retrieve recommendation data from the recommender model.</p>
+    /// This field is required.
     pub fn recommendation_provider_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommendation_provider_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -250,6 +254,7 @@ impl RecommenderConfigurationResponseBuilder {
         &self.recommendation_provider_role_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the recommender model that Amazon Pinpoint retrieves the recommendation data from. This value is the ARN of an Amazon Personalize campaign.</p>
+    /// This field is required.
     pub fn recommendation_provider_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommendation_provider_uri = ::std::option::Option::Some(input.into());
         self

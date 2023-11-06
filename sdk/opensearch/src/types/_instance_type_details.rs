@@ -47,12 +47,16 @@ impl InstanceTypeDetails {
         self.warm_enabled
     }
     /// <p>Whether the instance acts as a data node, a dedicated master node, or an UltraWarm node.</p>
-    pub fn instance_role(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.instance_role.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_role.is_none()`.
+    pub fn instance_role(&self) -> &[::std::string::String] {
+        self.instance_role.as_deref().unwrap_or_default()
     }
     /// <p>The supported Availability Zones for the instance type.</p>
-    pub fn availability_zones(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.availability_zones.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
+    pub fn availability_zones(&self) -> &[::std::string::String] {
+        self.availability_zones.as_deref().unwrap_or_default()
     }
 }
 impl InstanceTypeDetails {

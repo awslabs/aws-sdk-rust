@@ -16,8 +16,10 @@ impl DescribeReservedInstanceOfferingsOutput {
         self.next_token.as_deref()
     }
     /// <p>List of Reserved Instance offerings.</p>
-    pub fn reserved_instance_offerings(&self) -> ::std::option::Option<&[crate::types::ReservedInstanceOffering]> {
-        self.reserved_instance_offerings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reserved_instance_offerings.is_none()`.
+    pub fn reserved_instance_offerings(&self) -> &[crate::types::ReservedInstanceOffering] {
+        self.reserved_instance_offerings.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeReservedInstanceOfferingsOutput {

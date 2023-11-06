@@ -27,6 +27,7 @@ pub struct DeregisterEcsClusterInputBuilder {
 }
 impl DeregisterEcsClusterInputBuilder {
     /// <p>The cluster's Amazon Resource Number (ARN).</p>
+    /// This field is required.
     pub fn ecs_cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ecs_cluster_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeregisterEcsClusterInputBuilder {
     /// Consumes the builder and constructs a [`DeregisterEcsClusterInput`](crate::operation::deregister_ecs_cluster::DeregisterEcsClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::deregister_ecs_cluster::DeregisterEcsClusterInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::deregister_ecs_cluster::DeregisterEcsClusterInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::deregister_ecs_cluster::DeregisterEcsClusterInput {
             ecs_cluster_arn: self.ecs_cluster_arn,

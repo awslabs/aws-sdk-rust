@@ -2,7 +2,7 @@
 pub fn ser_create_campaign_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_campaign::CreateCampaignInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.connect_instance_id {
         object.key("connectInstanceId").string(var_1.as_str());
     }

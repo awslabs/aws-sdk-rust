@@ -38,8 +38,8 @@ pub fn de_delete_service_quota_increase_request_from_template_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "AWSServiceAccessNotEnabledException" => crate::operation::delete_service_quota_increase_request_from_template::DeleteServiceQuotaIncreaseRequestFromTemplateError::AwsServiceAccessNotEnabledException({
@@ -54,8 +54,8 @@ pub fn de_delete_service_quota_increase_request_from_template_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "DependencyAccessDeniedException" => crate::operation::delete_service_quota_increase_request_from_template::DeleteServiceQuotaIncreaseRequestFromTemplateError::DependencyAccessDeniedException({
@@ -70,8 +70,8 @@ pub fn de_delete_service_quota_increase_request_from_template_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "IllegalArgumentException" => crate::operation::delete_service_quota_increase_request_from_template::DeleteServiceQuotaIncreaseRequestFromTemplateError::IllegalArgumentException({
@@ -86,8 +86,8 @@ pub fn de_delete_service_quota_increase_request_from_template_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NoAvailableOrganizationException" => crate::operation::delete_service_quota_increase_request_from_template::DeleteServiceQuotaIncreaseRequestFromTemplateError::NoAvailableOrganizationException({
@@ -102,8 +102,8 @@ pub fn de_delete_service_quota_increase_request_from_template_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NoSuchResourceException" => crate::operation::delete_service_quota_increase_request_from_template::DeleteServiceQuotaIncreaseRequestFromTemplateError::NoSuchResourceException({
@@ -118,8 +118,8 @@ pub fn de_delete_service_quota_increase_request_from_template_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ServiceException" => crate::operation::delete_service_quota_increase_request_from_template::DeleteServiceQuotaIncreaseRequestFromTemplateError::ServiceException({
@@ -134,8 +134,8 @@ pub fn de_delete_service_quota_increase_request_from_template_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TemplatesNotAvailableInRegionException" => crate::operation::delete_service_quota_increase_request_from_template::DeleteServiceQuotaIncreaseRequestFromTemplateError::TemplatesNotAvailableInRegionException({
@@ -150,8 +150,8 @@ pub fn de_delete_service_quota_increase_request_from_template_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyRequestsException" => crate::operation::delete_service_quota_increase_request_from_template::DeleteServiceQuotaIncreaseRequestFromTemplateError::TooManyRequestsException({
@@ -166,8 +166,8 @@ pub fn de_delete_service_quota_increase_request_from_template_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::delete_service_quota_increase_request_from_template::DeleteServiceQuotaIncreaseRequestFromTemplateError::generic(generic)
@@ -193,10 +193,10 @@ pub fn de_delete_service_quota_increase_request_from_template_http_response(
 
 pub fn ser_delete_service_quota_increase_request_from_template_input(
     input: &crate::operation::delete_service_quota_increase_request_from_template::DeleteServiceQuotaIncreaseRequestFromTemplateInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_delete_service_quota_increase_request_from_template_input::ser_delete_service_quota_increase_request_from_template_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

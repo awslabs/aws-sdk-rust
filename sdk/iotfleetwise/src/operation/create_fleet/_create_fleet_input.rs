@@ -26,8 +26,10 @@ impl CreateFleetInput {
         self.signal_catalog_arn.as_deref()
     }
     /// <p>Metadata that can be used to manage the fleet.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateFleetInput {
@@ -48,6 +50,7 @@ pub struct CreateFleetInputBuilder {
 }
 impl CreateFleetInputBuilder {
     /// <p> The unique ID of the fleet to create. </p>
+    /// This field is required.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +79,7 @@ impl CreateFleetInputBuilder {
         &self.description
     }
     /// <p> The Amazon Resource Name (ARN) of a signal catalog. </p>
+    /// This field is required.
     pub fn signal_catalog_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signal_catalog_arn = ::std::option::Option::Some(input.into());
         self
@@ -110,7 +114,7 @@ impl CreateFleetInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateFleetInput`](crate::operation::create_fleet::CreateFleetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_fleet::CreateFleetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_fleet::CreateFleetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_fleet::CreateFleetInput {
             fleet_id: self.fleet_id,
             description: self.description,

@@ -27,8 +27,10 @@ impl MemberFeaturesConfigurationResult {
         self.updated_at.as_ref()
     }
     /// <p>Indicates the additional configuration of the feature that is configured for the member account.</p>
-    pub fn additional_configuration(&self) -> ::std::option::Option<&[crate::types::MemberAdditionalConfigurationResult]> {
-        self.additional_configuration.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_configuration.is_none()`.
+    pub fn additional_configuration(&self) -> &[crate::types::MemberAdditionalConfigurationResult] {
+        self.additional_configuration.as_deref().unwrap_or_default()
     }
 }
 impl MemberFeaturesConfigurationResult {

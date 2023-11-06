@@ -17,8 +17,10 @@ impl ListAvailableManagedRuleGroupVersionsOutput {
         self.next_marker.as_deref()
     }
     /// <p>The versions that are currently available for the specified managed rule group. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
-    pub fn versions(&self) -> ::std::option::Option<&[crate::types::ManagedRuleGroupVersion]> {
-        self.versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.versions.is_none()`.
+    pub fn versions(&self) -> &[crate::types::ManagedRuleGroupVersion] {
+        self.versions.as_deref().unwrap_or_default()
     }
     /// <p>The name of the version that's currently set as the default. </p>
     pub fn current_default_version(&self) -> ::std::option::Option<&str> {

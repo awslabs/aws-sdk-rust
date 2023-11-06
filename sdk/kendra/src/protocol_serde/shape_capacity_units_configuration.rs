@@ -38,7 +38,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::capacity_units_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -49,17 +53,17 @@ where
 pub fn ser_capacity_units_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CapacityUnitsConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.storage_capacity_units {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
         object.key("StorageCapacityUnits").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+            ::aws_smithy_types::Number::NegInt((input.storage_capacity_units).into()),
         );
     }
-    if let Some(var_2) = &input.query_capacity_units {
+    {
         object.key("QueryCapacityUnits").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((input.query_capacity_units).into()),
         );
     }
     Ok(())

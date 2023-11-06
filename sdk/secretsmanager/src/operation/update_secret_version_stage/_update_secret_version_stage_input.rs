@@ -53,6 +53,7 @@ pub struct UpdateSecretVersionStageInputBuilder {
 impl UpdateSecretVersionStageInputBuilder {
     /// <p>The ARN or the name of the secret with the version and staging labelsto modify.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
+    /// This field is required.
     pub fn secret_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl UpdateSecretVersionStageInputBuilder {
         &self.secret_id
     }
     /// <p>The staging label to add to this version.</p>
+    /// This field is required.
     pub fn version_stage(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_stage = ::std::option::Option::Some(input.into());
         self
@@ -118,7 +120,7 @@ impl UpdateSecretVersionStageInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_secret_version_stage::UpdateSecretVersionStageInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_secret_version_stage::UpdateSecretVersionStageInput {
             secret_id: self.secret_id,

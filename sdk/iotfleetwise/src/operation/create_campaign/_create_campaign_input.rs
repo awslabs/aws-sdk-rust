@@ -100,8 +100,10 @@ impl CreateCampaignInput {
         self.priority
     }
     /// <p>(Optional) A list of information about signals to collect. </p>
-    pub fn signals_to_collect(&self) -> ::std::option::Option<&[crate::types::SignalInformation]> {
-        self.signals_to_collect.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.signals_to_collect.is_none()`.
+    pub fn signals_to_collect(&self) -> &[crate::types::SignalInformation] {
+        self.signals_to_collect.as_deref().unwrap_or_default()
     }
     /// <p> The data collection scheme associated with the campaign. You can specify a scheme that collects data based on time or an event.</p>
     pub fn collection_scheme(&self) -> ::std::option::Option<&crate::types::CollectionScheme> {
@@ -110,18 +112,24 @@ impl CreateCampaignInput {
     /// <p> (Optional) A list of vehicle attributes to associate with a campaign. </p>
     /// <p>Enrich the data with specified vehicle attributes. For example, add <code>make</code> and <code>model</code> to the campaign, and Amazon Web Services IoT FleetWise will associate the data with those attributes as dimensions in Amazon Timestream. You can then query the data against <code>make</code> and <code>model</code>.</p>
     /// <p>Default: An empty array</p>
-    pub fn data_extra_dimensions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.data_extra_dimensions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_extra_dimensions.is_none()`.
+    pub fn data_extra_dimensions(&self) -> &[::std::string::String] {
+        self.data_extra_dimensions.as_deref().unwrap_or_default()
     }
     /// <p>Metadata that can be used to manage the campaign.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The destination where the campaign sends data. You can choose to send data to be stored in Amazon S3 or Amazon Timestream.</p>
     /// <p>Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such as data lakes, centralized data storage, data processing pipelines, and analytics. Amazon Web Services IoT FleetWise supports at-least-once file delivery to S3. Your vehicle data is stored on multiple Amazon Web Services IoT FleetWise servers for redundancy and high availability.</p>
     /// <p>You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data so that you can identify trends and patterns.</p>
-    pub fn data_destination_configs(&self) -> ::std::option::Option<&[crate::types::DataDestinationConfig]> {
-        self.data_destination_configs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_destination_configs.is_none()`.
+    pub fn data_destination_configs(&self) -> &[crate::types::DataDestinationConfig] {
+        self.data_destination_configs.as_deref().unwrap_or_default()
     }
 }
 impl CreateCampaignInput {
@@ -154,6 +162,7 @@ pub struct CreateCampaignInputBuilder {
 }
 impl CreateCampaignInputBuilder {
     /// <p> The name of the campaign to create. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -182,6 +191,7 @@ impl CreateCampaignInputBuilder {
         &self.description
     }
     /// <p>(Optional) The Amazon Resource Name (ARN) of the signal catalog to associate with the campaign. </p>
+    /// This field is required.
     pub fn signal_catalog_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signal_catalog_arn = ::std::option::Option::Some(input.into());
         self
@@ -196,6 +206,7 @@ impl CreateCampaignInputBuilder {
         &self.signal_catalog_arn
     }
     /// <p> The ARN of the vehicle or fleet to deploy a campaign to. </p>
+    /// This field is required.
     pub fn target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_arn = ::std::option::Option::Some(input.into());
         self
@@ -349,6 +360,7 @@ impl CreateCampaignInputBuilder {
         &self.signals_to_collect
     }
     /// <p> The data collection scheme associated with the campaign. You can specify a scheme that collects data based on time or an event.</p>
+    /// This field is required.
     pub fn collection_scheme(mut self, input: crate::types::CollectionScheme) -> Self {
         self.collection_scheme = ::std::option::Option::Some(input);
         self
@@ -437,7 +449,7 @@ impl CreateCampaignInputBuilder {
     /// Consumes the builder and constructs a [`CreateCampaignInput`](crate::operation::create_campaign::CreateCampaignInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_campaign::CreateCampaignInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_campaign::CreateCampaignInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_campaign::CreateCampaignInput {
             name: self.name,
             description: self.description,

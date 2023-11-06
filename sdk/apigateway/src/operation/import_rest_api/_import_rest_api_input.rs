@@ -91,6 +91,7 @@ impl ImportRestApiInputBuilder {
         &self.parameters
     }
     /// <p>The POST request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
+    /// This field is required.
     pub fn body(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.body = ::std::option::Option::Some(input);
         self
@@ -107,7 +108,7 @@ impl ImportRestApiInputBuilder {
     /// Consumes the builder and constructs a [`ImportRestApiInput`](crate::operation::import_rest_api::ImportRestApiInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::import_rest_api::ImportRestApiInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::import_rest_api::ImportRestApiInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::import_rest_api::ImportRestApiInput {
             fail_on_warnings: self.fail_on_warnings,
             parameters: self.parameters,

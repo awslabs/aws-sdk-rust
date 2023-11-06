@@ -17,8 +17,10 @@ pub struct ServiceQuotaExceededException {
 }
 impl ServiceQuotaExceededException {
     /// <p>The type of resource that has exceeded the service quota.</p>
-    pub fn resources(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
+    pub fn resources(&self) -> &[::std::string::String] {
+        self.resources.as_deref().unwrap_or_default()
     }
 }
 impl ServiceQuotaExceededException {

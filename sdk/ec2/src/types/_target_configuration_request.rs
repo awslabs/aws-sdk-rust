@@ -49,6 +49,7 @@ impl TargetConfigurationRequestBuilder {
         &self.instance_count
     }
     /// <p>The Convertible Reserved Instance offering ID.</p>
+    /// This field is required.
     pub fn offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.offering_id = ::std::option::Option::Some(input.into());
         self

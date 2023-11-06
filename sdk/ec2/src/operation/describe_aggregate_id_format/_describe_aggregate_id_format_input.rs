@@ -45,7 +45,7 @@ impl DescribeAggregateIdFormatInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_aggregate_id_format::DescribeAggregateIdFormatInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_aggregate_id_format::DescribeAggregateIdFormatInput { dry_run: self.dry_run })
     }

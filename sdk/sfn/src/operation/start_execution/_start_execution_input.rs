@@ -198,6 +198,7 @@ impl StartExecutionInputBuilder {
     /// </region>
     /// </partition></code> </p> <p>Step Functions associates executions that you start with an alias ARN with that alias and the state machine version used for that execution.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn state_machine_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_machine_arn = ::std::option::Option::Some(input.into());
         self
@@ -371,7 +372,7 @@ impl StartExecutionInputBuilder {
     /// Consumes the builder and constructs a [`StartExecutionInput`](crate::operation::start_execution::StartExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_execution::StartExecutionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_execution::StartExecutionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_execution::StartExecutionInput {
             state_machine_arn: self.state_machine_arn,
             name: self.name,

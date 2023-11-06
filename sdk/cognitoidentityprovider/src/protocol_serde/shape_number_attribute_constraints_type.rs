@@ -2,7 +2,7 @@
 pub fn ser_number_attribute_constraints_type(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NumberAttributeConstraintsType,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.min_value {
         object.key("MinValue").string(var_1.as_str());
     }

@@ -34,6 +34,7 @@ pub struct RegenerateSecurityTokenInputBuilder {
 }
 impl RegenerateSecurityTokenInputBuilder {
     /// <p>The Amazon Chime account ID.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl RegenerateSecurityTokenInputBuilder {
         &self.account_id
     }
     /// <p>The bot ID.</p>
+    /// This field is required.
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl RegenerateSecurityTokenInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::regenerate_security_token::RegenerateSecurityTokenInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::regenerate_security_token::RegenerateSecurityTokenInput {
             account_id: self.account_id,

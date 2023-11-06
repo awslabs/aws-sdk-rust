@@ -34,6 +34,7 @@ pub struct UpdateRecommenderConfigurationInputBuilder {
 }
 impl UpdateRecommenderConfigurationInputBuilder {
     /// <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
+    /// This field is required.
     pub fn recommender_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommender_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateRecommenderConfigurationInputBuilder {
         &self.recommender_id
     }
     /// <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
+    /// This field is required.
     pub fn update_recommender_configuration(mut self, input: crate::types::UpdateRecommenderConfigurationShape) -> Self {
         self.update_recommender_configuration = ::std::option::Option::Some(input);
         self
@@ -66,7 +68,7 @@ impl UpdateRecommenderConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_recommender_configuration::UpdateRecommenderConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_recommender_configuration::UpdateRecommenderConfigurationInput {
             recommender_id: self.recommender_id,

@@ -37,8 +37,10 @@ impl PhoneNumberOrder {
         self.order_type.as_ref()
     }
     /// <p>The ordered phone number details, such as the phone number in E.164 format and the phone number status.</p>
-    pub fn ordered_phone_numbers(&self) -> ::std::option::Option<&[crate::types::OrderedPhoneNumber]> {
-        self.ordered_phone_numbers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ordered_phone_numbers.is_none()`.
+    pub fn ordered_phone_numbers(&self) -> &[crate::types::OrderedPhoneNumber] {
+        self.ordered_phone_numbers.as_deref().unwrap_or_default()
     }
     /// <p>The phone number order creation time stamp, in ISO 8601 format.</p>
     pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

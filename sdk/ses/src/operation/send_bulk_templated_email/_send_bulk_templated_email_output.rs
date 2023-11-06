@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendBulkTemplatedEmailOutput {
     /// <p>One object per intended recipient. Check each response object and retry any messages with a failure status. (Note that order of responses will be respective to order of destinations in the request.)Receipt rules enable you to specify which actions </p>
-    pub status: ::std::option::Option<::std::vec::Vec<crate::types::BulkEmailDestinationStatus>>,
+    pub status: ::std::vec::Vec<crate::types::BulkEmailDestinationStatus>,
     _request_id: Option<String>,
 }
 impl SendBulkTemplatedEmailOutput {
     /// <p>One object per intended recipient. Check each response object and retry any messages with a failure status. (Note that order of responses will be respective to order of destinations in the request.)Receipt rules enable you to specify which actions </p>
-    pub fn status(&self) -> ::std::option::Option<&[crate::types::BulkEmailDestinationStatus]> {
-        self.status.as_deref()
+    pub fn status(&self) -> &[crate::types::BulkEmailDestinationStatus] {
+        use std::ops::Deref;
+        self.status.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for SendBulkTemplatedEmailOutput {
@@ -63,10 +64,22 @@ impl SendBulkTemplatedEmailOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SendBulkTemplatedEmailOutput`](crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailOutput).
-    pub fn build(self) -> crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailOutput {
-        crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailOutput {
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::operation::send_bulk_templated_email::builders::SendBulkTemplatedEmailOutputBuilder::status)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailOutput {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building SendBulkTemplatedEmailOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

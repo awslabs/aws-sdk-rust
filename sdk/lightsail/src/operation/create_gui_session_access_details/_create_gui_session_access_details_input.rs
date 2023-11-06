@@ -27,6 +27,7 @@ pub struct CreateGuiSessionAccessDetailsInputBuilder {
 }
 impl CreateGuiSessionAccessDetailsInputBuilder {
     /// <p>The resource name.</p>
+    /// This field is required.
     pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl CreateGuiSessionAccessDetailsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_gui_session_access_details::CreateGuiSessionAccessDetailsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_gui_session_access_details::CreateGuiSessionAccessDetailsInput {
             resource_name: self.resource_name,

@@ -16,12 +16,16 @@ impl CreateAclInput {
         self.acl_name.as_deref()
     }
     /// <p>The list of users that belong to the Access Control List.</p>
-    pub fn user_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.user_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_names.is_none()`.
+    pub fn user_names(&self) -> &[::std::string::String] {
+        self.user_names.as_deref().unwrap_or_default()
     }
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateAclInput {
@@ -41,6 +45,7 @@ pub struct CreateAclInputBuilder {
 }
 impl CreateAclInputBuilder {
     /// <p>The name of the Access Control List.</p>
+    /// This field is required.
     pub fn acl_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.acl_name = ::std::option::Option::Some(input.into());
         self
@@ -95,7 +100,7 @@ impl CreateAclInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateAclInput`](crate::operation::create_acl::CreateAclInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_acl::CreateAclInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_acl::CreateAclInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_acl::CreateAclInput {
             acl_name: self.acl_name,
             user_names: self.user_names,

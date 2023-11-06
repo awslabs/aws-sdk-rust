@@ -38,8 +38,10 @@ impl CreateArtifactInput {
         self.metadata_properties.as_ref()
     }
     /// <p>A list of tags to apply to the artifact.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateArtifactInput {
@@ -76,6 +78,7 @@ impl CreateArtifactInputBuilder {
         &self.artifact_name
     }
     /// <p>The ID, ID type, and URI of the source.</p>
+    /// This field is required.
     pub fn source(mut self, input: crate::types::ArtifactSource) -> Self {
         self.source = ::std::option::Option::Some(input);
         self
@@ -90,6 +93,7 @@ impl CreateArtifactInputBuilder {
         &self.source
     }
     /// <p>The artifact type.</p>
+    /// This field is required.
     pub fn artifact_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.artifact_type = ::std::option::Option::Some(input.into());
         self
@@ -160,7 +164,7 @@ impl CreateArtifactInputBuilder {
     /// Consumes the builder and constructs a [`CreateArtifactInput`](crate::operation::create_artifact::CreateArtifactInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_artifact::CreateArtifactInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_artifact::CreateArtifactInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_artifact::CreateArtifactInput {
             artifact_name: self.artifact_name,
             source: self.source,

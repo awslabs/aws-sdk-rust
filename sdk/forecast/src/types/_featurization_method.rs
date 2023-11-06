@@ -10,7 +10,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FeaturizationMethod {
     /// <p>The name of the method. The "filling" method is the only supported method.</p>
-    pub featurization_method_name: ::std::option::Option<crate::types::FeaturizationMethodName>,
+    pub featurization_method_name: crate::types::FeaturizationMethodName,
     /// <p>The method parameters (key-value pairs), which are a map of override parameters. Specify these parameters to override the default values. Related Time Series attributes do not accept aggregation parameters.</p>
     /// <p>The following list shows the parameters and their valid values for the "filling" featurization method for a <b>Target Time Series</b> dataset. Bold signifies the default value.</p>
     /// <ul>
@@ -30,8 +30,8 @@ pub struct FeaturizationMethod {
 }
 impl FeaturizationMethod {
     /// <p>The name of the method. The "filling" method is the only supported method.</p>
-    pub fn featurization_method_name(&self) -> ::std::option::Option<&crate::types::FeaturizationMethodName> {
-        self.featurization_method_name.as_ref()
+    pub fn featurization_method_name(&self) -> &crate::types::FeaturizationMethodName {
+        &self.featurization_method_name
     }
     /// <p>The method parameters (key-value pairs), which are a map of override parameters. Specify these parameters to override the default values. Related Time Series attributes do not accept aggregation parameters.</p>
     /// <p>The following list shows the parameters and their valid values for the "filling" featurization method for a <b>Target Time Series</b> dataset. Bold signifies the default value.</p>
@@ -70,6 +70,7 @@ pub struct FeaturizationMethodBuilder {
 }
 impl FeaturizationMethodBuilder {
     /// <p>The name of the method. The "filling" method is the only supported method.</p>
+    /// This field is required.
     pub fn featurization_method_name(mut self, input: crate::types::FeaturizationMethodName) -> Self {
         self.featurization_method_name = ::std::option::Option::Some(input);
         self
@@ -155,10 +156,17 @@ impl FeaturizationMethodBuilder {
         &self.featurization_method_parameters
     }
     /// Consumes the builder and constructs a [`FeaturizationMethod`](crate::types::FeaturizationMethod).
-    pub fn build(self) -> crate::types::FeaturizationMethod {
-        crate::types::FeaturizationMethod {
-            featurization_method_name: self.featurization_method_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`featurization_method_name`](crate::types::builders::FeaturizationMethodBuilder::featurization_method_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::FeaturizationMethod, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::FeaturizationMethod {
+            featurization_method_name: self.featurization_method_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "featurization_method_name",
+                    "featurization_method_name was not specified but it is required when building FeaturizationMethod",
+                )
+            })?,
             featurization_method_parameters: self.featurization_method_parameters,
-        }
+        })
     }
 }

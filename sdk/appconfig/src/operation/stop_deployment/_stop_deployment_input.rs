@@ -41,6 +41,7 @@ pub struct StopDeploymentInputBuilder {
 }
 impl StopDeploymentInputBuilder {
     /// <p>The application ID.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl StopDeploymentInputBuilder {
         &self.application_id
     }
     /// <p>The environment ID.</p>
+    /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl StopDeploymentInputBuilder {
         &self.environment_id
     }
     /// <p>The sequence number of the deployment.</p>
+    /// This field is required.
     pub fn deployment_number(mut self, input: i32) -> Self {
         self.deployment_number = ::std::option::Option::Some(input);
         self
@@ -85,7 +88,7 @@ impl StopDeploymentInputBuilder {
     /// Consumes the builder and constructs a [`StopDeploymentInput`](crate::operation::stop_deployment::StopDeploymentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_deployment::StopDeploymentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_deployment::StopDeploymentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_deployment::StopDeploymentInput {
             application_id: self.application_id,
             environment_id: self.environment_id,

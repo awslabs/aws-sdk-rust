@@ -21,8 +21,10 @@ pub struct LaunchProfileInitializationActiveDirectory {
 }
 impl LaunchProfileInitializationActiveDirectory {
     /// <p>A collection of custom attributes for an Active Directory computer.</p>
-    pub fn computer_attributes(&self) -> ::std::option::Option<&[crate::types::ActiveDirectoryComputerAttribute]> {
-        self.computer_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.computer_attributes.is_none()`.
+    pub fn computer_attributes(&self) -> &[crate::types::ActiveDirectoryComputerAttribute] {
+        self.computer_attributes.as_deref().unwrap_or_default()
     }
     /// <p>The directory ID of the Directory Service for Microsoft Active Directory to access using this launch profile.</p>
     pub fn directory_id(&self) -> ::std::option::Option<&str> {
@@ -33,8 +35,10 @@ impl LaunchProfileInitializationActiveDirectory {
         self.directory_name.as_deref()
     }
     /// <p>The DNS IP address.</p>
-    pub fn dns_ip_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.dns_ip_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dns_ip_addresses.is_none()`.
+    pub fn dns_ip_addresses(&self) -> &[::std::string::String] {
+        self.dns_ip_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The name for the organizational unit distinguished name.</p>
     pub fn organizational_unit_distinguished_name(&self) -> ::std::option::Option<&str> {

@@ -17,12 +17,16 @@ impl IdentityDocument {
         self.document_index
     }
     /// <p>The structure used to record information extracted from identity documents. Contains both normalized field and value of the extracted text.</p>
-    pub fn identity_document_fields(&self) -> ::std::option::Option<&[crate::types::IdentityDocumentField]> {
-        self.identity_document_fields.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.identity_document_fields.is_none()`.
+    pub fn identity_document_fields(&self) -> &[crate::types::IdentityDocumentField] {
+        self.identity_document_fields.as_deref().unwrap_or_default()
     }
     /// <p>Individual word recognition, as returned by document detection.</p>
-    pub fn blocks(&self) -> ::std::option::Option<&[crate::types::Block]> {
-        self.blocks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.blocks.is_none()`.
+    pub fn blocks(&self) -> &[crate::types::Block] {
+        self.blocks.as_deref().unwrap_or_default()
     }
 }
 impl IdentityDocument {

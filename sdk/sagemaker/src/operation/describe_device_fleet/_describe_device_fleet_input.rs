@@ -27,6 +27,7 @@ pub struct DescribeDeviceFleetInputBuilder {
 }
 impl DescribeDeviceFleetInputBuilder {
     /// <p>The name of the fleet.</p>
+    /// This field is required.
     pub fn device_fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_fleet_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeDeviceFleetInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDeviceFleetInput`](crate::operation::describe_device_fleet::DescribeDeviceFleetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_device_fleet::DescribeDeviceFleetInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_device_fleet::DescribeDeviceFleetInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_device_fleet::DescribeDeviceFleetInput {
             device_fleet_name: self.device_fleet_name,

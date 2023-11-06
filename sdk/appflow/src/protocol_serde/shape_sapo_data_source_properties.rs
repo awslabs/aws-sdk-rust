@@ -2,7 +2,7 @@
 pub fn ser_sapo_data_source_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SapoDataSourceProperties,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.object_path {
         object.key("objectPath").string(var_1.as_str());
     }

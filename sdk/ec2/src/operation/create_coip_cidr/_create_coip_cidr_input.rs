@@ -41,6 +41,7 @@ pub struct CreateCoipCidrInputBuilder {
 }
 impl CreateCoipCidrInputBuilder {
     /// <p> A customer-owned IP address range to create. </p>
+    /// This field is required.
     pub fn cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cidr = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl CreateCoipCidrInputBuilder {
         &self.cidr
     }
     /// <p> The ID of the address pool. </p>
+    /// This field is required.
     pub fn coip_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.coip_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +87,7 @@ impl CreateCoipCidrInputBuilder {
     /// Consumes the builder and constructs a [`CreateCoipCidrInput`](crate::operation::create_coip_cidr::CreateCoipCidrInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_coip_cidr::CreateCoipCidrInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_coip_cidr::CreateCoipCidrInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_coip_cidr::CreateCoipCidrInput {
             cidr: self.cidr,
             coip_pool_id: self.coip_pool_id,

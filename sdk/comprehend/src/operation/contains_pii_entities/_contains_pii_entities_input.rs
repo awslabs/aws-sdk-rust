@@ -34,6 +34,7 @@ pub struct ContainsPiiEntitiesInputBuilder {
 }
 impl ContainsPiiEntitiesInputBuilder {
     /// <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
+    /// This field is required.
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl ContainsPiiEntitiesInputBuilder {
         &self.text
     }
     /// <p>The language of the input documents. Currently, English is the only valid language.</p>
+    /// This field is required.
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.language_code = ::std::option::Option::Some(input);
         self
@@ -64,7 +66,7 @@ impl ContainsPiiEntitiesInputBuilder {
     /// Consumes the builder and constructs a [`ContainsPiiEntitiesInput`](crate::operation::contains_pii_entities::ContainsPiiEntitiesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::contains_pii_entities::ContainsPiiEntitiesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::contains_pii_entities::ContainsPiiEntitiesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::contains_pii_entities::ContainsPiiEntitiesInput {
             text: self.text,

@@ -6,18 +6,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReceiptIpFilter {
     /// <p>Indicates whether to block or allow incoming mail from the specified IP addresses.</p>
-    pub policy: ::std::option::Option<crate::types::ReceiptFilterPolicy>,
+    pub policy: crate::types::ReceiptFilterPolicy,
     /// <p>A single IP address or a range of IP addresses to block or allow, specified in Classless Inter-Domain Routing (CIDR) notation. An example of a single email address is 10.0.0.1. An example of a range of IP addresses is 10.0.0.1/24. For more information about CIDR notation, see <a href="https://tools.ietf.org/html/rfc2317">RFC 2317</a>.</p>
-    pub cidr: ::std::option::Option<::std::string::String>,
+    pub cidr: ::std::string::String,
 }
 impl ReceiptIpFilter {
     /// <p>Indicates whether to block or allow incoming mail from the specified IP addresses.</p>
-    pub fn policy(&self) -> ::std::option::Option<&crate::types::ReceiptFilterPolicy> {
-        self.policy.as_ref()
+    pub fn policy(&self) -> &crate::types::ReceiptFilterPolicy {
+        &self.policy
     }
     /// <p>A single IP address or a range of IP addresses to block or allow, specified in Classless Inter-Domain Routing (CIDR) notation. An example of a single email address is 10.0.0.1. An example of a range of IP addresses is 10.0.0.1/24. For more information about CIDR notation, see <a href="https://tools.ietf.org/html/rfc2317">RFC 2317</a>.</p>
-    pub fn cidr(&self) -> ::std::option::Option<&str> {
-        self.cidr.as_deref()
+    pub fn cidr(&self) -> &str {
+        use std::ops::Deref;
+        self.cidr.deref()
     }
 }
 impl ReceiptIpFilter {
@@ -36,6 +37,7 @@ pub struct ReceiptIpFilterBuilder {
 }
 impl ReceiptIpFilterBuilder {
     /// <p>Indicates whether to block or allow incoming mail from the specified IP addresses.</p>
+    /// This field is required.
     pub fn policy(mut self, input: crate::types::ReceiptFilterPolicy) -> Self {
         self.policy = ::std::option::Option::Some(input);
         self
@@ -50,6 +52,7 @@ impl ReceiptIpFilterBuilder {
         &self.policy
     }
     /// <p>A single IP address or a range of IP addresses to block or allow, specified in Classless Inter-Domain Routing (CIDR) notation. An example of a single email address is 10.0.0.1. An example of a range of IP addresses is 10.0.0.1/24. For more information about CIDR notation, see <a href="https://tools.ietf.org/html/rfc2317">RFC 2317</a>.</p>
+    /// This field is required.
     pub fn cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cidr = ::std::option::Option::Some(input.into());
         self
@@ -64,10 +67,23 @@ impl ReceiptIpFilterBuilder {
         &self.cidr
     }
     /// Consumes the builder and constructs a [`ReceiptIpFilter`](crate::types::ReceiptIpFilter).
-    pub fn build(self) -> crate::types::ReceiptIpFilter {
-        crate::types::ReceiptIpFilter {
-            policy: self.policy,
-            cidr: self.cidr,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`policy`](crate::types::builders::ReceiptIpFilterBuilder::policy)
+    /// - [`cidr`](crate::types::builders::ReceiptIpFilterBuilder::cidr)
+    pub fn build(self) -> ::std::result::Result<crate::types::ReceiptIpFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ReceiptIpFilter {
+            policy: self.policy.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "policy",
+                    "policy was not specified but it is required when building ReceiptIpFilter",
+                )
+            })?,
+            cidr: self.cidr.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "cidr",
+                    "cidr was not specified but it is required when building ReceiptIpFilter",
+                )
+            })?,
+        })
     }
 }

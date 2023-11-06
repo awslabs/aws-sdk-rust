@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAccessPreviewsOutput {
     /// <p>A list of access previews retrieved for the analyzer.</p>
-    pub access_previews: ::std::option::Option<::std::vec::Vec<crate::types::AccessPreviewSummary>>,
+    pub access_previews: ::std::vec::Vec<crate::types::AccessPreviewSummary>,
     /// <p>A token used for pagination of results returned.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAccessPreviewsOutput {
     /// <p>A list of access previews retrieved for the analyzer.</p>
-    pub fn access_previews(&self) -> ::std::option::Option<&[crate::types::AccessPreviewSummary]> {
-        self.access_previews.as_deref()
+    pub fn access_previews(&self) -> &[crate::types::AccessPreviewSummary] {
+        use std::ops::Deref;
+        self.access_previews.deref()
     }
     /// <p>A token used for pagination of results returned.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,21 @@ impl ListAccessPreviewsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAccessPreviewsOutput`](crate::operation::list_access_previews::ListAccessPreviewsOutput).
-    pub fn build(self) -> crate::operation::list_access_previews::ListAccessPreviewsOutput {
-        crate::operation::list_access_previews::ListAccessPreviewsOutput {
-            access_previews: self.access_previews,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`access_previews`](crate::operation::list_access_previews::builders::ListAccessPreviewsOutputBuilder::access_previews)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_access_previews::ListAccessPreviewsOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_access_previews::ListAccessPreviewsOutput {
+            access_previews: self.access_previews.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "access_previews",
+                    "access_previews was not specified but it is required when building ListAccessPreviewsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

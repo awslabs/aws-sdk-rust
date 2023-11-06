@@ -2,33 +2,33 @@
 pub fn ser_transform_config_parameter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TransformConfigParameter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("Name").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.r#type {
-        object.key("Type").string(var_2.as_str());
+    {
+        object.key("Type").string(input.r#type.as_str());
     }
-    if let Some(var_3) = &input.validation_rule {
-        object.key("ValidationRule").string(var_3.as_str());
+    if let Some(var_1) = &input.validation_rule {
+        object.key("ValidationRule").string(var_1.as_str());
     }
-    if let Some(var_4) = &input.validation_message {
-        object.key("ValidationMessage").string(var_4.as_str());
+    if let Some(var_2) = &input.validation_message {
+        object.key("ValidationMessage").string(var_2.as_str());
     }
-    if let Some(var_5) = &input.value {
-        let mut array_6 = object.key("Value").start_array();
-        for item_7 in var_5 {
+    if let Some(var_3) = &input.value {
+        let mut array_4 = object.key("Value").start_array();
+        for item_5 in var_3 {
             {
-                array_6.value().string(item_7.as_str());
+                array_4.value().string(item_5.as_str());
             }
         }
-        array_6.finish();
+        array_4.finish();
     }
-    if let Some(var_8) = &input.list_type {
-        object.key("ListType").string(var_8.as_str());
+    if let Some(var_6) = &input.list_type {
+        object.key("ListType").string(var_6.as_str());
     }
-    if let Some(var_9) = &input.is_optional {
-        object.key("IsOptional").boolean(*var_9);
+    if let Some(var_7) = &input.is_optional {
+        object.key("IsOptional").boolean(*var_7);
     }
     Ok(())
 }
@@ -100,7 +100,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::transform_config_parameter_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

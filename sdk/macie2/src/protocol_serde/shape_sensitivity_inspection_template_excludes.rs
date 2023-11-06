@@ -15,8 +15,8 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "managedDataIdentifierIds" => {
-                            builder = builder
-                                .set_managed_data_identifier_ids(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                            builder =
+                                builder.set_managed_data_identifier_ids(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
@@ -39,7 +39,7 @@ where
 pub fn ser_sensitivity_inspection_template_excludes(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SensitivityInspectionTemplateExcludes,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.managed_data_identifier_ids {
         let mut array_2 = object.key("managedDataIdentifierIds").start_array();
         for item_3 in var_1 {

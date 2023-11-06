@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ec2AmiResource {
     /// <p>The ID of the AMI in Amazon EC2.</p>
-    pub ami_id: ::std::option::Option<::std::string::String>,
+    pub ami_id: ::std::string::String,
     /// <p>The ID of the AMI on the Snow device.</p>
     pub snowball_ami_id: ::std::option::Option<::std::string::String>,
 }
 impl Ec2AmiResource {
     /// <p>The ID of the AMI in Amazon EC2.</p>
-    pub fn ami_id(&self) -> ::std::option::Option<&str> {
-        self.ami_id.as_deref()
+    pub fn ami_id(&self) -> &str {
+        use std::ops::Deref;
+        self.ami_id.deref()
     }
     /// <p>The ID of the AMI on the Snow device.</p>
     pub fn snowball_ami_id(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct Ec2AmiResourceBuilder {
 }
 impl Ec2AmiResourceBuilder {
     /// <p>The ID of the AMI in Amazon EC2.</p>
+    /// This field is required.
     pub fn ami_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ami_id = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl Ec2AmiResourceBuilder {
         &self.snowball_ami_id
     }
     /// Consumes the builder and constructs a [`Ec2AmiResource`](crate::types::Ec2AmiResource).
-    pub fn build(self) -> crate::types::Ec2AmiResource {
-        crate::types::Ec2AmiResource {
-            ami_id: self.ami_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`ami_id`](crate::types::builders::Ec2AmiResourceBuilder::ami_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::Ec2AmiResource, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Ec2AmiResource {
+            ami_id: self.ami_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "ami_id",
+                    "ami_id was not specified but it is required when building Ec2AmiResource",
+                )
+            })?,
             snowball_ami_id: self.snowball_ami_id,
-        }
+        })
     }
 }

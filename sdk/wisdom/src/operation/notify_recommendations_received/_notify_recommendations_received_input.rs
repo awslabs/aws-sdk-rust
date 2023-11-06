@@ -20,8 +20,10 @@ impl NotifyRecommendationsReceivedInput {
         self.session_id.as_deref()
     }
     /// <p>The identifiers of the recommendations.</p>
-    pub fn recommendation_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.recommendation_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recommendation_ids.is_none()`.
+    pub fn recommendation_ids(&self) -> &[::std::string::String] {
+        self.recommendation_ids.as_deref().unwrap_or_default()
     }
 }
 impl NotifyRecommendationsReceivedInput {
@@ -41,6 +43,7 @@ pub struct NotifyRecommendationsReceivedInputBuilder {
 }
 impl NotifyRecommendationsReceivedInputBuilder {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// This field is required.
     pub fn assistant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assistant_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl NotifyRecommendationsReceivedInputBuilder {
         &self.assistant_id
     }
     /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// This field is required.
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
         self
@@ -93,7 +97,7 @@ impl NotifyRecommendationsReceivedInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::notify_recommendations_received::NotifyRecommendationsReceivedInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::notify_recommendations_received::NotifyRecommendationsReceivedInput {
             assistant_id: self.assistant_id,

@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrustedAdvisorCheckSummary {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
-    pub check_id: ::std::option::Option<::std::string::String>,
+    pub check_id: ::std::string::String,
     /// <p>The time of the last refresh of the check.</p>
-    pub timestamp: ::std::option::Option<::std::string::String>,
+    pub timestamp: ::std::string::String,
     /// <p>The alert status of the check: "ok" (green), "warning" (yellow), "error" (red), or "not_available".</p>
-    pub status: ::std::option::Option<::std::string::String>,
+    pub status: ::std::string::String,
     /// <p>Specifies whether the Trusted Advisor check has flagged resources.</p>
     pub has_flagged_resources: bool,
     /// <p>Details about Amazon Web Services resources that were analyzed in a call to Trusted Advisor <code>DescribeTrustedAdvisorCheckSummaries</code>.</p>
@@ -19,16 +19,19 @@ pub struct TrustedAdvisorCheckSummary {
 }
 impl TrustedAdvisorCheckSummary {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
-    pub fn check_id(&self) -> ::std::option::Option<&str> {
-        self.check_id.as_deref()
+    pub fn check_id(&self) -> &str {
+        use std::ops::Deref;
+        self.check_id.deref()
     }
     /// <p>The time of the last refresh of the check.</p>
-    pub fn timestamp(&self) -> ::std::option::Option<&str> {
-        self.timestamp.as_deref()
+    pub fn timestamp(&self) -> &str {
+        use std::ops::Deref;
+        self.timestamp.deref()
     }
     /// <p>The alert status of the check: "ok" (green), "warning" (yellow), "error" (red), or "not_available".</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
-        self.status.as_deref()
+    pub fn status(&self) -> &str {
+        use std::ops::Deref;
+        self.status.deref()
     }
     /// <p>Specifies whether the Trusted Advisor check has flagged resources.</p>
     pub fn has_flagged_resources(&self) -> bool {
@@ -63,6 +66,7 @@ pub struct TrustedAdvisorCheckSummaryBuilder {
 }
 impl TrustedAdvisorCheckSummaryBuilder {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
+    /// This field is required.
     pub fn check_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.check_id = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +81,7 @@ impl TrustedAdvisorCheckSummaryBuilder {
         &self.check_id
     }
     /// <p>The time of the last refresh of the check.</p>
+    /// This field is required.
     pub fn timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timestamp = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +96,7 @@ impl TrustedAdvisorCheckSummaryBuilder {
         &self.timestamp
     }
     /// <p>The alert status of the check: "ok" (green), "warning" (yellow), "error" (red), or "not_available".</p>
+    /// This field is required.
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +125,7 @@ impl TrustedAdvisorCheckSummaryBuilder {
         &self.has_flagged_resources
     }
     /// <p>Details about Amazon Web Services resources that were analyzed in a call to Trusted Advisor <code>DescribeTrustedAdvisorCheckSummaries</code>.</p>
+    /// This field is required.
     pub fn resources_summary(mut self, input: crate::types::TrustedAdvisorResourcesSummary) -> Self {
         self.resources_summary = ::std::option::Option::Some(input);
         self
@@ -133,6 +140,7 @@ impl TrustedAdvisorCheckSummaryBuilder {
         &self.resources_summary
     }
     /// <p>Summary information that relates to the category of the check. Cost Optimizing is the only category that is currently supported.</p>
+    /// This field is required.
     pub fn category_specific_summary(mut self, input: crate::types::TrustedAdvisorCategorySpecificSummary) -> Self {
         self.category_specific_summary = ::std::option::Option::Some(input);
         self
@@ -147,14 +155,33 @@ impl TrustedAdvisorCheckSummaryBuilder {
         &self.category_specific_summary
     }
     /// Consumes the builder and constructs a [`TrustedAdvisorCheckSummary`](crate::types::TrustedAdvisorCheckSummary).
-    pub fn build(self) -> crate::types::TrustedAdvisorCheckSummary {
-        crate::types::TrustedAdvisorCheckSummary {
-            check_id: self.check_id,
-            timestamp: self.timestamp,
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`check_id`](crate::types::builders::TrustedAdvisorCheckSummaryBuilder::check_id)
+    /// - [`timestamp`](crate::types::builders::TrustedAdvisorCheckSummaryBuilder::timestamp)
+    /// - [`status`](crate::types::builders::TrustedAdvisorCheckSummaryBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::TrustedAdvisorCheckSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TrustedAdvisorCheckSummary {
+            check_id: self.check_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "check_id",
+                    "check_id was not specified but it is required when building TrustedAdvisorCheckSummary",
+                )
+            })?,
+            timestamp: self.timestamp.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "timestamp",
+                    "timestamp was not specified but it is required when building TrustedAdvisorCheckSummary",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building TrustedAdvisorCheckSummary",
+                )
+            })?,
             has_flagged_resources: self.has_flagged_resources.unwrap_or_default(),
             resources_summary: self.resources_summary,
             category_specific_summary: self.category_specific_summary,
-        }
+        })
     }
 }

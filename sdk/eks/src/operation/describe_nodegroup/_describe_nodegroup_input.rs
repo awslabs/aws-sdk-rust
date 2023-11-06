@@ -34,6 +34,7 @@ pub struct DescribeNodegroupInputBuilder {
 }
 impl DescribeNodegroupInputBuilder {
     /// <p>The name of the Amazon EKS cluster associated with the node group.</p>
+    /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeNodegroupInputBuilder {
         &self.cluster_name
     }
     /// <p>The name of the node group to describe.</p>
+    /// This field is required.
     pub fn nodegroup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nodegroup_name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DescribeNodegroupInputBuilder {
     /// Consumes the builder and constructs a [`DescribeNodegroupInput`](crate::operation::describe_nodegroup::DescribeNodegroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_nodegroup::DescribeNodegroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_nodegroup::DescribeNodegroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_nodegroup::DescribeNodegroupInput {
             cluster_name: self.cluster_name,
             nodegroup_name: self.nodegroup_name,

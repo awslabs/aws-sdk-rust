@@ -2,7 +2,7 @@
 pub fn ser_aws_ec2_vpn_connection_routes_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEc2VpnConnectionRoutesDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.destination_cidr_block {
         object.key("DestinationCidrBlock").string(var_1.as_str());
     }

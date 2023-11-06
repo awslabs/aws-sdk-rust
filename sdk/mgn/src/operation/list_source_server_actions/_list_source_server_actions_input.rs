@@ -8,7 +8,7 @@ pub struct ListSourceServerActionsInput {
     /// <p>Filters to apply when listing source server post migration custom actions.</p>
     pub filters: ::std::option::Option<crate::types::SourceServerActionsRequestFilters>,
     /// <p>Maximum amount of items to return when listing source server post migration custom actions.</p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>Next token to use when listing source server post migration custom actions.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Account ID to return when listing source server post migration custom actions.</p>
@@ -24,7 +24,7 @@ impl ListSourceServerActionsInput {
         self.filters.as_ref()
     }
     /// <p>Maximum amount of items to return when listing source server post migration custom actions.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>Next token to use when listing source server post migration custom actions.</p>
@@ -55,6 +55,7 @@ pub struct ListSourceServerActionsInputBuilder {
 }
 impl ListSourceServerActionsInputBuilder {
     /// <p>Source server ID.</p>
+    /// This field is required.
     pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
@@ -129,12 +130,12 @@ impl ListSourceServerActionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_source_server_actions::ListSourceServerActionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_source_server_actions::ListSourceServerActionsInput {
             source_server_id: self.source_server_id,
             filters: self.filters,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
             account_id: self.account_id,
         })

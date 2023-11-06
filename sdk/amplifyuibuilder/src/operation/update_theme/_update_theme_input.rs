@@ -55,6 +55,7 @@ pub struct UpdateThemeInputBuilder {
 }
 impl UpdateThemeInputBuilder {
     /// <p>The unique ID for the Amplify app.</p>
+    /// This field is required.
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl UpdateThemeInputBuilder {
         &self.app_id
     }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
+    /// This field is required.
     pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +85,7 @@ impl UpdateThemeInputBuilder {
         &self.environment_name
     }
     /// <p>The unique ID for the theme.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +114,7 @@ impl UpdateThemeInputBuilder {
         &self.client_token
     }
     /// <p>The configuration of the updated theme.</p>
+    /// This field is required.
     pub fn updated_theme(mut self, input: crate::types::UpdateThemeData) -> Self {
         self.updated_theme = ::std::option::Option::Some(input);
         self
@@ -125,7 +129,7 @@ impl UpdateThemeInputBuilder {
         &self.updated_theme
     }
     /// Consumes the builder and constructs a [`UpdateThemeInput`](crate::operation::update_theme::UpdateThemeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_theme::UpdateThemeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_theme::UpdateThemeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_theme::UpdateThemeInput {
             app_id: self.app_id,
             environment_name: self.environment_name,

@@ -15,8 +15,10 @@ impl SystemStatus {
         self.cpu_utilization.as_ref()
     }
     /// <p>Load average in the last 1-minute, 5-minute, and 15-minute periods. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os">Operating System Metrics</a>.</p>
-    pub fn load_average(&self) -> ::std::option::Option<&[f64]> {
-        self.load_average.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.load_average.is_none()`.
+    pub fn load_average(&self) -> &[f64] {
+        self.load_average.as_deref().unwrap_or_default()
     }
 }
 impl SystemStatus {

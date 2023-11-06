@@ -11,12 +11,16 @@ pub struct BatchCreateDelegationByAssessmentOutput {
 }
 impl BatchCreateDelegationByAssessmentOutput {
     /// <p> The delegations that are associated with the assessment. </p>
-    pub fn delegations(&self) -> ::std::option::Option<&[crate::types::Delegation]> {
-        self.delegations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.delegations.is_none()`.
+    pub fn delegations(&self) -> &[crate::types::Delegation] {
+        self.delegations.as_deref().unwrap_or_default()
     }
     /// <p> A list of errors that the <code>BatchCreateDelegationByAssessment</code> API returned. </p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::BatchCreateDelegationByAssessmentError]> {
-        self.errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
+    pub fn errors(&self) -> &[crate::types::BatchCreateDelegationByAssessmentError] {
+        self.errors.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for BatchCreateDelegationByAssessmentOutput {

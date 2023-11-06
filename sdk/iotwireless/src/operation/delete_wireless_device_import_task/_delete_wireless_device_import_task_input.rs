@@ -27,6 +27,7 @@ pub struct DeleteWirelessDeviceImportTaskInputBuilder {
 }
 impl DeleteWirelessDeviceImportTaskInputBuilder {
     /// <p>The unique identifier of the import task to be deleted.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteWirelessDeviceImportTaskInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_wireless_device_import_task::DeleteWirelessDeviceImportTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_wireless_device_import_task::DeleteWirelessDeviceImportTaskInput { id: self.id })
     }

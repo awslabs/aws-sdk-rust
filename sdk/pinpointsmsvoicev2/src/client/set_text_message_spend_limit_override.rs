@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`SetTextMessageSpendLimitOverride`](crate::operation::set_text_message_spend_limit_override::builders::SetTextMessageSpendLimitOverrideFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`monthly_limit(i64)`](crate::operation::set_text_message_spend_limit_override::builders::SetTextMessageSpendLimitOverrideFluentBuilder::monthly_limit) / [`set_monthly_limit(Option<i64>)`](crate::operation::set_text_message_spend_limit_override::builders::SetTextMessageSpendLimitOverrideFluentBuilder::set_monthly_limit): <p>The new monthly limit to enforce on text messages.</p>
+    ///   - [`monthly_limit(i64)`](crate::operation::set_text_message_spend_limit_override::builders::SetTextMessageSpendLimitOverrideFluentBuilder::monthly_limit) / [`set_monthly_limit(Option<i64>)`](crate::operation::set_text_message_spend_limit_override::builders::SetTextMessageSpendLimitOverrideFluentBuilder::set_monthly_limit):<br>required: **true**<br><p>The new monthly limit to enforce on text messages.</p><br>
     /// - On success, responds with [`SetTextMessageSpendLimitOverrideOutput`](crate::operation::set_text_message_spend_limit_override::SetTextMessageSpendLimitOverrideOutput) with field(s):
     ///   - [`monthly_limit(Option<i64>)`](crate::operation::set_text_message_spend_limit_override::SetTextMessageSpendLimitOverrideOutput::monthly_limit): <p>The current monthly limit to enforce on sending text messages.</p>
     /// - On failure, responds with [`SdkError<SetTextMessageSpendLimitOverrideError>`](crate::operation::set_text_message_spend_limit_override::SetTextMessageSpendLimitOverrideError)

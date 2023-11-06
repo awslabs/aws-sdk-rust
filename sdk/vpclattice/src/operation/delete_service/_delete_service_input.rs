@@ -27,6 +27,7 @@ pub struct DeleteServiceInputBuilder {
 }
 impl DeleteServiceInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    /// This field is required.
     pub fn service_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_identifier = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteServiceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteServiceInput`](crate::operation::delete_service::DeleteServiceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_service::DeleteServiceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_service::DeleteServiceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_service::DeleteServiceInput {
             service_identifier: self.service_identifier,
         })

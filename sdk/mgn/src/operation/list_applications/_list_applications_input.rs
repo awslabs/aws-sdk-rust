@@ -6,7 +6,7 @@ pub struct ListApplicationsInput {
     /// <p>Applications list filters.</p>
     pub filters: ::std::option::Option<crate::types::ListApplicationsRequestFilters>,
     /// <p>Maximum results to return when listing applications.</p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>Request next token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Applications list Account ID.</p>
@@ -18,7 +18,7 @@ impl ListApplicationsInput {
         self.filters.as_ref()
     }
     /// <p>Maximum results to return when listing applications.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>Request next token.</p>
@@ -106,10 +106,10 @@ impl ListApplicationsInputBuilder {
     /// Consumes the builder and constructs a [`ListApplicationsInput`](crate::operation::list_applications::ListApplicationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_applications::ListApplicationsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_applications::ListApplicationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_applications::ListApplicationsInput {
             filters: self.filters,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
             account_id: self.account_id,
         })

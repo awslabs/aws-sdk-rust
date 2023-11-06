@@ -2,7 +2,7 @@
 pub fn ser_restore_table_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::restore_table::RestoreTableInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.source_keyspace_name {
         object.key("sourceKeyspaceName").string(var_1.as_str());
     }

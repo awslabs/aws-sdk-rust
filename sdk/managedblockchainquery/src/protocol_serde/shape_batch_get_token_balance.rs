@@ -28,11 +28,10 @@ pub fn de_batch_get_token_balance_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::batch_get_token_balance::BatchGetTokenBalanceError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::batch_get_token_balance::BatchGetTokenBalanceError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerException" => crate::operation::batch_get_token_balance::BatchGetTokenBalanceError::InternalServerException({
@@ -50,11 +49,10 @@ pub fn de_batch_get_token_balance_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::batch_get_token_balance::BatchGetTokenBalanceError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::batch_get_token_balance::BatchGetTokenBalanceError::ResourceNotFoundException({
@@ -65,11 +63,10 @@ pub fn de_batch_get_token_balance_http_error(
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::batch_get_token_balance::BatchGetTokenBalanceError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::batch_get_token_balance::BatchGetTokenBalanceError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ServiceQuotaExceededException" => crate::operation::batch_get_token_balance::BatchGetTokenBalanceError::ServiceQuotaExceededException({
@@ -83,11 +80,10 @@ pub fn de_batch_get_token_balance_http_error(
                 )
                 .map_err(crate::operation::batch_get_token_balance::BatchGetTokenBalanceError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::service_quota_exceeded_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::batch_get_token_balance::BatchGetTokenBalanceError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::batch_get_token_balance::BatchGetTokenBalanceError::ThrottlingException({
@@ -105,11 +101,10 @@ pub fn de_batch_get_token_balance_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::batch_get_token_balance::BatchGetTokenBalanceError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::batch_get_token_balance::BatchGetTokenBalanceError::ValidationException({
@@ -120,11 +115,10 @@ pub fn de_batch_get_token_balance_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::batch_get_token_balance::BatchGetTokenBalanceError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::batch_get_token_balance::BatchGetTokenBalanceError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::batch_get_token_balance::BatchGetTokenBalanceError::generic(generic),
@@ -146,18 +140,20 @@ pub fn de_batch_get_token_balance_http_response(
         output = crate::protocol_serde::shape_batch_get_token_balance::de_batch_get_token_balance(_response_body, output)
             .map_err(crate::operation::batch_get_token_balance::BatchGetTokenBalanceError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::batch_get_token_balance_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::batch_get_token_balance::BatchGetTokenBalanceError::unhandled)?
     })
 }
 
 pub fn ser_batch_get_token_balance_input(
     input: &crate::operation::batch_get_token_balance::BatchGetTokenBalanceInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_batch_get_token_balance_input::ser_batch_get_token_balance_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_batch_get_token_balance(

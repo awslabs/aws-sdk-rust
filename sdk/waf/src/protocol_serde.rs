@@ -141,7 +141,7 @@ pub(crate) mod shape_list_subscribed_rule_groups;
 
 pub(crate) mod shape_list_tags_for_resource;
 
-pub(crate) mod shape_list_web_ac_ls;
+pub(crate) mod shape_list_web_acls;
 
 pub(crate) mod shape_list_xss_match_sets;
 
@@ -301,7 +301,7 @@ pub(crate) mod shape_list_subscribed_rule_groups_input;
 
 pub(crate) mod shape_list_tags_for_resource_input;
 
-pub(crate) mod shape_list_web_ac_ls_input;
+pub(crate) mod shape_list_web_acls_input;
 
 pub(crate) mod shape_list_xss_match_sets_input;
 

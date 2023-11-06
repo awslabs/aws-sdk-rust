@@ -50,6 +50,7 @@ pub struct EvaluateFeatureInputBuilder {
 }
 impl EvaluateFeatureInputBuilder {
     /// <p>The name or ARN of the project that contains this feature.</p>
+    /// This field is required.
     pub fn project(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project = ::std::option::Option::Some(input.into());
         self
@@ -64,6 +65,7 @@ impl EvaluateFeatureInputBuilder {
         &self.project
     }
     /// <p>The name of the feature being evaluated.</p>
+    /// This field is required.
     pub fn feature(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature = ::std::option::Option::Some(input.into());
         self
@@ -78,6 +80,7 @@ impl EvaluateFeatureInputBuilder {
         &self.feature
     }
     /// <p>An internal ID that represents a unique user of the application. This <code>entityID</code> is checked against any override rules assigned for this feature.</p>
+    /// This field is required.
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
         self
@@ -111,7 +114,7 @@ impl EvaluateFeatureInputBuilder {
     /// Consumes the builder and constructs a [`EvaluateFeatureInput`](crate::operation::evaluate_feature::EvaluateFeatureInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::evaluate_feature::EvaluateFeatureInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::evaluate_feature::EvaluateFeatureInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::evaluate_feature::EvaluateFeatureInput {
             project: self.project,
             feature: self.feature,

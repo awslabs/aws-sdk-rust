@@ -27,6 +27,7 @@ pub struct DescribeDatasetInputBuilder {
 }
 impl DescribeDatasetInputBuilder {
     /// <p>The name of the dataset whose information is retrieved.</p>
+    /// This field is required.
     pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeDatasetInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDatasetInput`](crate::operation::describe_dataset::DescribeDatasetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_dataset::DescribeDatasetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_dataset::DescribeDatasetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_dataset::DescribeDatasetInput {
             dataset_name: self.dataset_name,
         })

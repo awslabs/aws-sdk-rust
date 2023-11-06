@@ -5,24 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3BucketConfiguration {
     /// <p>The name of an existing Amazon S3 bucket where the generated snapshot artifacts are sent.</p>
-    pub bucket_name: ::std::option::Option<::std::string::String>,
+    pub bucket_name: ::std::string::String,
     /// <p>The prefix of the Amazon S3 bucket that the generated snapshots are stored in.</p>
-    pub bucket_prefix: ::std::option::Option<::std::string::String>,
+    pub bucket_prefix: ::std::string::String,
     /// <p>The region that the Amazon S3 bucket is located in. The bucket must be located in the same region that the <code>StartDashboardSnapshotJob</code> API call is made.</p>
-    pub bucket_region: ::std::option::Option<::std::string::String>,
+    pub bucket_region: ::std::string::String,
 }
 impl S3BucketConfiguration {
     /// <p>The name of an existing Amazon S3 bucket where the generated snapshot artifacts are sent.</p>
-    pub fn bucket_name(&self) -> ::std::option::Option<&str> {
-        self.bucket_name.as_deref()
+    pub fn bucket_name(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket_name.deref()
     }
     /// <p>The prefix of the Amazon S3 bucket that the generated snapshots are stored in.</p>
-    pub fn bucket_prefix(&self) -> ::std::option::Option<&str> {
-        self.bucket_prefix.as_deref()
+    pub fn bucket_prefix(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket_prefix.deref()
     }
     /// <p>The region that the Amazon S3 bucket is located in. The bucket must be located in the same region that the <code>StartDashboardSnapshotJob</code> API call is made.</p>
-    pub fn bucket_region(&self) -> ::std::option::Option<&str> {
-        self.bucket_region.as_deref()
+    pub fn bucket_region(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket_region.deref()
     }
 }
 impl S3BucketConfiguration {
@@ -42,6 +45,7 @@ pub struct S3BucketConfigurationBuilder {
 }
 impl S3BucketConfigurationBuilder {
     /// <p>The name of an existing Amazon S3 bucket where the generated snapshot artifacts are sent.</p>
+    /// This field is required.
     pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +60,7 @@ impl S3BucketConfigurationBuilder {
         &self.bucket_name
     }
     /// <p>The prefix of the Amazon S3 bucket that the generated snapshots are stored in.</p>
+    /// This field is required.
     pub fn bucket_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_prefix = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +75,7 @@ impl S3BucketConfigurationBuilder {
         &self.bucket_prefix
     }
     /// <p>The region that the Amazon S3 bucket is located in. The bucket must be located in the same region that the <code>StartDashboardSnapshotJob</code> API call is made.</p>
+    /// This field is required.
     pub fn bucket_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_region = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +90,30 @@ impl S3BucketConfigurationBuilder {
         &self.bucket_region
     }
     /// Consumes the builder and constructs a [`S3BucketConfiguration`](crate::types::S3BucketConfiguration).
-    pub fn build(self) -> crate::types::S3BucketConfiguration {
-        crate::types::S3BucketConfiguration {
-            bucket_name: self.bucket_name,
-            bucket_prefix: self.bucket_prefix,
-            bucket_region: self.bucket_region,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bucket_name`](crate::types::builders::S3BucketConfigurationBuilder::bucket_name)
+    /// - [`bucket_prefix`](crate::types::builders::S3BucketConfigurationBuilder::bucket_prefix)
+    /// - [`bucket_region`](crate::types::builders::S3BucketConfigurationBuilder::bucket_region)
+    pub fn build(self) -> ::std::result::Result<crate::types::S3BucketConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::S3BucketConfiguration {
+            bucket_name: self.bucket_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "bucket_name",
+                    "bucket_name was not specified but it is required when building S3BucketConfiguration",
+                )
+            })?,
+            bucket_prefix: self.bucket_prefix.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "bucket_prefix",
+                    "bucket_prefix was not specified but it is required when building S3BucketConfiguration",
+                )
+            })?,
+            bucket_region: self.bucket_region.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "bucket_region",
+                    "bucket_region was not specified but it is required when building S3BucketConfiguration",
+                )
+            })?,
+        })
     }
 }

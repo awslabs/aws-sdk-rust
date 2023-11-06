@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetEnvironmentAccountConnection`](crate::operation::get_environment_account_connection::builders::GetEnvironmentAccountConnectionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_environment_account_connection::builders::GetEnvironmentAccountConnectionFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_environment_account_connection::builders::GetEnvironmentAccountConnectionFluentBuilder::set_id): <p>The ID of the environment account connection that you want to get the detailed data for.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_environment_account_connection::builders::GetEnvironmentAccountConnectionFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_environment_account_connection::builders::GetEnvironmentAccountConnectionFluentBuilder::set_id):<br>required: **true**<br><p>The ID of the environment account connection that you want to get the detailed data for.</p><br>
     /// - On success, responds with [`GetEnvironmentAccountConnectionOutput`](crate::operation::get_environment_account_connection::GetEnvironmentAccountConnectionOutput) with field(s):
     ///   - [`environment_account_connection(Option<EnvironmentAccountConnection>)`](crate::operation::get_environment_account_connection::GetEnvironmentAccountConnectionOutput::environment_account_connection): <p>The detailed data of the requested environment account connection.</p>
     /// - On failure, responds with [`SdkError<GetEnvironmentAccountConnectionError>`](crate::operation::get_environment_account_connection::GetEnvironmentAccountConnectionError)

@@ -43,6 +43,7 @@ pub struct ListAppAuthorizationsInputBuilder {
 }
 impl ListAppAuthorizationsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
+    /// This field is required.
     pub fn app_bundle_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_bundle_identifier = ::std::option::Option::Some(input.into());
         self
@@ -90,7 +91,7 @@ impl ListAppAuthorizationsInputBuilder {
     /// Consumes the builder and constructs a [`ListAppAuthorizationsInput`](crate::operation::list_app_authorizations::ListAppAuthorizationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_app_authorizations::ListAppAuthorizationsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_app_authorizations::ListAppAuthorizationsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_app_authorizations::ListAppAuthorizationsInput {
             app_bundle_identifier: self.app_bundle_identifier,

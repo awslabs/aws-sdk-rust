@@ -11,8 +11,10 @@ pub struct ListAuditMitigationActionsExecutionsOutput {
 }
 impl ListAuditMitigationActionsExecutionsOutput {
     /// <p>A set of task execution results based on the input parameters. Details include the mitigation action applied, start time, and task status.</p>
-    pub fn actions_executions(&self) -> ::std::option::Option<&[crate::types::AuditMitigationActionExecutionMetadata]> {
-        self.actions_executions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions_executions.is_none()`.
+    pub fn actions_executions(&self) -> &[crate::types::AuditMitigationActionExecutionMetadata] {
+        self.actions_executions.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

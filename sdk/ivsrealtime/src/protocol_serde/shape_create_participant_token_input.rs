@@ -2,7 +2,7 @@
 pub fn ser_create_participant_token_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_participant_token::CreateParticipantTokenInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.attributes {
         #[allow(unused_mut)]
         let mut object_2 = object.key("attributes").start_object();
@@ -22,17 +22,17 @@ pub fn ser_create_participant_token_input(
         }
         array_6.finish();
     }
-    if input.duration != 0 {
+    if let Some(var_8) = &input.duration {
         object.key("duration").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.duration).into()),
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
-    if let Some(var_8) = &input.stage_arn {
-        object.key("stageArn").string(var_8.as_str());
+    if let Some(var_9) = &input.stage_arn {
+        object.key("stageArn").string(var_9.as_str());
     }
-    if let Some(var_9) = &input.user_id {
-        object.key("userId").string(var_9.as_str());
+    if let Some(var_10) = &input.user_id {
+        object.key("userId").string(var_10.as_str());
     }
     Ok(())
 }

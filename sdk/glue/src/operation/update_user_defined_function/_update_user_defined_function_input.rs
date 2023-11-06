@@ -62,6 +62,7 @@ impl UpdateUserDefinedFunctionInputBuilder {
         &self.catalog_id
     }
     /// <p>The name of the catalog database where the function to be updated is located.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl UpdateUserDefinedFunctionInputBuilder {
         &self.database_name
     }
     /// <p>The name of the function.</p>
+    /// This field is required.
     pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +92,7 @@ impl UpdateUserDefinedFunctionInputBuilder {
         &self.function_name
     }
     /// <p>A <code>FunctionInput</code> object that redefines the function in the Data Catalog.</p>
+    /// This field is required.
     pub fn function_input(mut self, input: crate::types::UserDefinedFunctionInput) -> Self {
         self.function_input = ::std::option::Option::Some(input);
         self
@@ -108,7 +111,7 @@ impl UpdateUserDefinedFunctionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_user_defined_function::UpdateUserDefinedFunctionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_user_defined_function::UpdateUserDefinedFunctionInput {
             catalog_id: self.catalog_id,

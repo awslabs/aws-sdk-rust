@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetHostedZone`](crate::operation::get_hosted_zone::builders::GetHostedZoneFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_hosted_zone::builders::GetHostedZoneFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_hosted_zone::builders::GetHostedZoneFluentBuilder::set_id): <p>The ID of the hosted zone that you want to get information about.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_hosted_zone::builders::GetHostedZoneFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_hosted_zone::builders::GetHostedZoneFluentBuilder::set_id):<br>required: **true**<br><p>The ID of the hosted zone that you want to get information about.</p><br>
     /// - On success, responds with [`GetHostedZoneOutput`](crate::operation::get_hosted_zone::GetHostedZoneOutput) with field(s):
     ///   - [`hosted_zone(Option<HostedZone>)`](crate::operation::get_hosted_zone::GetHostedZoneOutput::hosted_zone): <p>A complex type that contains general information about the specified hosted zone.</p>
     ///   - [`delegation_set(Option<DelegationSet>)`](crate::operation::get_hosted_zone::GetHostedZoneOutput::delegation_set): <p>A complex type that lists the Amazon Route 53 name servers for the specified hosted zone.</p>
-    ///   - [`vp_cs(Option<Vec<Vpc>>)`](crate::operation::get_hosted_zone::GetHostedZoneOutput::vp_cs): <p>A complex type that contains information about the VPCs that are associated with the specified hosted zone.</p>
+    ///   - [`vpcs(Option<Vec::<Vpc>>)`](crate::operation::get_hosted_zone::GetHostedZoneOutput::vpcs): <p>A complex type that contains information about the VPCs that are associated with the specified hosted zone.</p>
     /// - On failure, responds with [`SdkError<GetHostedZoneError>`](crate::operation::get_hosted_zone::GetHostedZoneError)
     pub fn get_hosted_zone(&self) -> crate::operation::get_hosted_zone::builders::GetHostedZoneFluentBuilder {
         crate::operation::get_hosted_zone::builders::GetHostedZoneFluentBuilder::new(self.handle.clone())

@@ -2,7 +2,7 @@
 pub fn ser_aws_network_firewall_firewall_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsNetworkFirewallFirewallDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.delete_protection {
         object.key("DeleteProtection").boolean(*var_1);
     }

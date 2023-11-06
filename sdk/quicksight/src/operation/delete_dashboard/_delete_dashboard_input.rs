@@ -41,6 +41,7 @@ pub struct DeleteDashboardInputBuilder {
 }
 impl DeleteDashboardInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're deleting.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DeleteDashboardInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID for the dashboard.</p>
+    /// This field is required.
     pub fn dashboard_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dashboard_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +87,7 @@ impl DeleteDashboardInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDashboardInput`](crate::operation::delete_dashboard::DeleteDashboardInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_dashboard::DeleteDashboardInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_dashboard::DeleteDashboardInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_dashboard::DeleteDashboardInput {
             aws_account_id: self.aws_account_id,
             dashboard_id: self.dashboard_id,

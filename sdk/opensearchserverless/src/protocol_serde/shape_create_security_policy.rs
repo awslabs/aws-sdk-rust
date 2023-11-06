@@ -61,11 +61,10 @@ pub fn de_create_security_policy_http_error(
                 )
                 .map_err(crate::operation::create_security_policy::CreateSecurityPolicyError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::service_quota_exceeded_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_security_policy::CreateSecurityPolicyError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::create_security_policy::CreateSecurityPolicyError::ValidationException({
@@ -108,12 +107,12 @@ pub fn de_create_security_policy_http_response(
 
 pub fn ser_create_security_policy_input(
     input: &crate::operation::create_security_policy::CreateSecurityPolicyInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_security_policy_input::ser_create_security_policy_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_create_security_policy(

@@ -35,6 +35,7 @@ pub struct IndexStatisticsBuilder {
 }
 impl IndexStatisticsBuilder {
     /// <p>The number of question and answer topics in the index.</p>
+    /// This field is required.
     pub fn faq_statistics(mut self, input: crate::types::FaqStatistics) -> Self {
         self.faq_statistics = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl IndexStatisticsBuilder {
         &self.faq_statistics
     }
     /// <p>The number of text documents indexed.</p>
+    /// This field is required.
     pub fn text_document_statistics(mut self, input: crate::types::TextDocumentStatistics) -> Self {
         self.text_document_statistics = ::std::option::Option::Some(input);
         self

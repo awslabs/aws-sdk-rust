@@ -4,12 +4,12 @@
 #[derive(::std::fmt::Debug)]
 pub struct GetRawMessageContentOutput {
     /// <p>The raw content of the email message, in MIME format.</p>
-    pub message_content: ::aws_smithy_http::byte_stream::ByteStream,
+    pub message_content: ::aws_smithy_types::byte_stream::ByteStream,
     _request_id: Option<String>,
 }
 impl GetRawMessageContentOutput {
     /// <p>The raw content of the email message, in MIME format.</p>
-    pub fn message_content(&self) -> &::aws_smithy_http::byte_stream::ByteStream {
+    pub fn message_content(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
         &self.message_content
     }
 }
@@ -29,22 +29,23 @@ impl GetRawMessageContentOutput {
 #[non_exhaustive]
 #[derive(::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRawMessageContentOutputBuilder {
-    pub(crate) message_content: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
+    pub(crate) message_content: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,
     _request_id: Option<String>,
 }
 impl GetRawMessageContentOutputBuilder {
     /// <p>The raw content of the email message, in MIME format.</p>
-    pub fn message_content(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
+    /// This field is required.
+    pub fn message_content(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.message_content = ::std::option::Option::Some(input);
         self
     }
     /// <p>The raw content of the email message, in MIME format.</p>
-    pub fn set_message_content(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
+    pub fn set_message_content(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.message_content = input;
         self
     }
     /// <p>The raw content of the email message, in MIME format.</p>
-    pub fn get_message_content(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_message_content(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         &self.message_content
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

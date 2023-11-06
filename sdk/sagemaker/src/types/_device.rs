@@ -42,6 +42,7 @@ pub struct DeviceBuilder {
 }
 impl DeviceBuilder {
     /// <p>The name of the device.</p>
+    /// This field is required.
     pub fn device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_name = ::std::option::Option::Some(input.into());
         self

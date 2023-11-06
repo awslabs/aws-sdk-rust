@@ -28,6 +28,7 @@ pub struct StartElasticsearchServiceSoftwareUpdateInputBuilder {
 }
 impl StartElasticsearchServiceSoftwareUpdateInputBuilder {
     /// <p>The name of the domain that you want to update to the latest service software.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl StartElasticsearchServiceSoftwareUpdateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_elasticsearch_service_software_update::StartElasticsearchServiceSoftwareUpdateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::start_elasticsearch_service_software_update::StartElasticsearchServiceSoftwareUpdateInput {

@@ -66,8 +66,10 @@ impl EnableMetricsCollectionInput {
     /// </ul>
     /// <p>If you specify <code>Granularity</code> and don't specify any metrics, all metrics are enabled.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    pub fn metrics(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metrics.is_none()`.
+    pub fn metrics(&self) -> &[::std::string::String] {
+        self.metrics.as_deref().unwrap_or_default()
     }
     /// <p>The frequency at which Amazon EC2 Auto Scaling sends aggregated data to CloudWatch. The only valid value is <code>1Minute</code>.</p>
     pub fn granularity(&self) -> ::std::option::Option<&str> {
@@ -91,6 +93,7 @@ pub struct EnableMetricsCollectionInputBuilder {
 }
 impl EnableMetricsCollectionInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
+    /// This field is required.
     pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
@@ -200,6 +203,7 @@ impl EnableMetricsCollectionInputBuilder {
         &self.metrics
     }
     /// <p>The frequency at which Amazon EC2 Auto Scaling sends aggregated data to CloudWatch. The only valid value is <code>1Minute</code>.</p>
+    /// This field is required.
     pub fn granularity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.granularity = ::std::option::Option::Some(input.into());
         self
@@ -218,7 +222,7 @@ impl EnableMetricsCollectionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable_metrics_collection::EnableMetricsCollectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::enable_metrics_collection::EnableMetricsCollectionInput {
             auto_scaling_group_name: self.auto_scaling_group_name,

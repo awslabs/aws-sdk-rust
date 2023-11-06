@@ -48,6 +48,7 @@ impl BatchGetTokenBalanceInputItemBuilder {
     /// <p>The container for the identifier for the token including the unique token ID and its blockchain network.</p> <note>
     /// <p>Only the native tokens BTC,ETH, and the ERC-20, ERC-721, and ERC 1155 token standards are supported.</p>
     /// </note>
+    /// This field is required.
     pub fn token_identifier(mut self, input: crate::types::TokenIdentifier) -> Self {
         self.token_identifier = ::std::option::Option::Some(input);
         self
@@ -66,6 +67,7 @@ impl BatchGetTokenBalanceInputItemBuilder {
         &self.token_identifier
     }
     /// <p>The container for the identifier of the owner.</p>
+    /// This field is required.
     pub fn owner_identifier(mut self, input: crate::types::OwnerIdentifier) -> Self {
         self.owner_identifier = ::std::option::Option::Some(input);
         self

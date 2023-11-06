@@ -87,7 +87,7 @@ impl ListEntitiesDetectionJobsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_entities_detection_jobs::ListEntitiesDetectionJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_entities_detection_jobs::ListEntitiesDetectionJobsInput {
             filter: self.filter,

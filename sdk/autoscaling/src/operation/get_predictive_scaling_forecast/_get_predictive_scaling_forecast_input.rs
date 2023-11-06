@@ -50,6 +50,7 @@ pub struct GetPredictiveScalingForecastInputBuilder {
 }
 impl GetPredictiveScalingForecastInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
+    /// This field is required.
     pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
@@ -64,6 +65,7 @@ impl GetPredictiveScalingForecastInputBuilder {
         &self.auto_scaling_group_name
     }
     /// <p>The name of the policy.</p>
+    /// This field is required.
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
         self
@@ -78,6 +80,7 @@ impl GetPredictiveScalingForecastInputBuilder {
         &self.policy_name
     }
     /// <p>The inclusive start time of the time range for the forecast data to get. At most, the date and time can be one year before the current date and time.</p>
+    /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
@@ -93,6 +96,7 @@ impl GetPredictiveScalingForecastInputBuilder {
     }
     /// <p>The exclusive end time of the time range for the forecast data to get. The maximum time duration between the start and end time is 30 days. </p>
     /// <p>Although this parameter can accept a date and time that is more than two days in the future, the availability of forecast data has limits. Amazon EC2 Auto Scaling only issues forecasts for periods of two days in advance.</p>
+    /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
@@ -113,7 +117,7 @@ impl GetPredictiveScalingForecastInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_predictive_scaling_forecast::GetPredictiveScalingForecastInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_predictive_scaling_forecast::GetPredictiveScalingForecastInput {
             auto_scaling_group_name: self.auto_scaling_group_name,

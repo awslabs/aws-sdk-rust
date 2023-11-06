@@ -115,7 +115,7 @@ impl ListResourceTypesInputBuilder {
     /// Consumes the builder and constructs a [`ListResourceTypesInput`](crate::operation::list_resource_types::ListResourceTypesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_resource_types::ListResourceTypesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_resource_types::ListResourceTypesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_resource_types::ListResourceTypesInput {
             next_token: self.next_token,
             max_results: self.max_results,

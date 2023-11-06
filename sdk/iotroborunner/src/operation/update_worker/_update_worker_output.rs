@@ -4,15 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateWorkerOutput {
     /// Full ARN of the worker.
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// Filters access by the workers identifier
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// Full ARN of the worker fleet.
-    pub fleet: ::std::option::Option<::std::string::String>,
+    pub fleet: ::std::string::String,
     /// Timestamp at which the resource was last updated.
-    pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub updated_at: ::aws_smithy_types::DateTime,
     /// Human friendly name of the resource.
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// JSON blob containing unstructured worker properties that are transient and may change during regular operation.
     pub additional_transient_properties: ::std::option::Option<::std::string::String>,
     /// JSON blob containing unstructured worker properties that are fixed and won't change during regular operation.
@@ -27,24 +27,28 @@ pub struct UpdateWorkerOutput {
 }
 impl UpdateWorkerOutput {
     /// Full ARN of the worker.
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// Filters access by the workers identifier
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// Full ARN of the worker fleet.
-    pub fn fleet(&self) -> ::std::option::Option<&str> {
-        self.fleet.as_deref()
+    pub fn fleet(&self) -> &str {
+        use std::ops::Deref;
+        self.fleet.deref()
     }
     /// Timestamp at which the resource was last updated.
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.updated_at.as_ref()
+    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.updated_at
     }
     /// Human friendly name of the resource.
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// JSON blob containing unstructured worker properties that are transient and may change during regular operation.
     pub fn additional_transient_properties(&self) -> ::std::option::Option<&str> {
@@ -97,6 +101,7 @@ pub struct UpdateWorkerOutputBuilder {
 }
 impl UpdateWorkerOutputBuilder {
     /// Full ARN of the worker.
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +116,7 @@ impl UpdateWorkerOutputBuilder {
         &self.arn
     }
     /// Filters access by the workers identifier
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +131,7 @@ impl UpdateWorkerOutputBuilder {
         &self.id
     }
     /// Full ARN of the worker fleet.
+    /// This field is required.
     pub fn fleet(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet = ::std::option::Option::Some(input.into());
         self
@@ -139,6 +146,7 @@ impl UpdateWorkerOutputBuilder {
         &self.fleet
     }
     /// Timestamp at which the resource was last updated.
+    /// This field is required.
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
@@ -153,6 +161,7 @@ impl UpdateWorkerOutputBuilder {
         &self.updated_at
     }
     /// Human friendly name of the resource.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -246,19 +255,52 @@ impl UpdateWorkerOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateWorkerOutput`](crate::operation::update_worker::UpdateWorkerOutput).
-    pub fn build(self) -> crate::operation::update_worker::UpdateWorkerOutput {
-        crate::operation::update_worker::UpdateWorkerOutput {
-            arn: self.arn,
-            id: self.id,
-            fleet: self.fleet,
-            updated_at: self.updated_at,
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::operation::update_worker::builders::UpdateWorkerOutputBuilder::arn)
+    /// - [`id`](crate::operation::update_worker::builders::UpdateWorkerOutputBuilder::id)
+    /// - [`fleet`](crate::operation::update_worker::builders::UpdateWorkerOutputBuilder::fleet)
+    /// - [`updated_at`](crate::operation::update_worker::builders::UpdateWorkerOutputBuilder::updated_at)
+    /// - [`name`](crate::operation::update_worker::builders::UpdateWorkerOutputBuilder::name)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_worker::UpdateWorkerOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_worker::UpdateWorkerOutput {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building UpdateWorkerOutput",
+                )
+            })?,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building UpdateWorkerOutput",
+                )
+            })?,
+            fleet: self.fleet.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "fleet",
+                    "fleet was not specified but it is required when building UpdateWorkerOutput",
+                )
+            })?,
+            updated_at: self.updated_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "updated_at",
+                    "updated_at was not specified but it is required when building UpdateWorkerOutput",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building UpdateWorkerOutput",
+                )
+            })?,
             additional_transient_properties: self.additional_transient_properties,
             additional_fixed_properties: self.additional_fixed_properties,
             orientation: self.orientation,
             vendor_properties: self.vendor_properties,
             position: self.position,
             _request_id: self._request_id,
-        }
+        })
     }
 }

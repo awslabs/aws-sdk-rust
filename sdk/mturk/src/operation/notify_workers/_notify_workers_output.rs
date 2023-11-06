@@ -9,8 +9,10 @@ pub struct NotifyWorkersOutput {
 }
 impl NotifyWorkersOutput {
     /// <p> When MTurk sends notifications to the list of Workers, it returns back any failures it encounters in this list of NotifyWorkersFailureStatus objects. </p>
-    pub fn notify_workers_failure_statuses(&self) -> ::std::option::Option<&[crate::types::NotifyWorkersFailureStatus]> {
-        self.notify_workers_failure_statuses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notify_workers_failure_statuses.is_none()`.
+    pub fn notify_workers_failure_statuses(&self) -> &[crate::types::NotifyWorkersFailureStatus] {
+        self.notify_workers_failure_statuses.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for NotifyWorkersOutput {

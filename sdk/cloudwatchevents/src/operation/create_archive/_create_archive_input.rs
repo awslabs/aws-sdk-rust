@@ -55,6 +55,7 @@ pub struct CreateArchiveInputBuilder {
 }
 impl CreateArchiveInputBuilder {
     /// <p>The name for the archive to create.</p>
+    /// This field is required.
     pub fn archive_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.archive_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl CreateArchiveInputBuilder {
         &self.archive_name
     }
     /// <p>The ARN of the event bus that sends events to the archive.</p>
+    /// This field is required.
     pub fn event_source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_source_arn = ::std::option::Option::Some(input.into());
         self
@@ -127,7 +129,7 @@ impl CreateArchiveInputBuilder {
     /// Consumes the builder and constructs a [`CreateArchiveInput`](crate::operation::create_archive::CreateArchiveInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_archive::CreateArchiveInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_archive::CreateArchiveInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_archive::CreateArchiveInput {
             archive_name: self.archive_name,
             event_source_arn: self.event_source_arn,

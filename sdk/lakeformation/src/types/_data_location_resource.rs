@@ -7,7 +7,7 @@ pub struct DataLocationResource {
     /// <p>The identifier for the Data Catalog where the location is registered with Lake Formation. By default, it is the account ID of the caller.</p>
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the data location resource.</p>
-    pub resource_arn: ::std::option::Option<::std::string::String>,
+    pub resource_arn: ::std::string::String,
 }
 impl DataLocationResource {
     /// <p>The identifier for the Data Catalog where the location is registered with Lake Formation. By default, it is the account ID of the caller.</p>
@@ -15,8 +15,9 @@ impl DataLocationResource {
         self.catalog_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the data location resource.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
-        self.resource_arn.as_deref()
+    pub fn resource_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_arn.deref()
     }
 }
 impl DataLocationResource {
@@ -49,6 +50,7 @@ impl DataLocationResourceBuilder {
         &self.catalog_id
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the data location resource.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl DataLocationResourceBuilder {
         &self.resource_arn
     }
     /// Consumes the builder and constructs a [`DataLocationResource`](crate::types::DataLocationResource).
-    pub fn build(self) -> crate::types::DataLocationResource {
-        crate::types::DataLocationResource {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource_arn`](crate::types::builders::DataLocationResourceBuilder::resource_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::DataLocationResource, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DataLocationResource {
             catalog_id: self.catalog_id,
-            resource_arn: self.resource_arn,
-        }
+            resource_arn: self.resource_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "resource_arn",
+                    "resource_arn was not specified but it is required when building DataLocationResource",
+                )
+            })?,
+        })
     }
 }

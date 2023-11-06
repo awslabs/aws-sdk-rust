@@ -48,6 +48,7 @@ impl DeleteEgressOnlyInternetGatewayInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the egress-only internet gateway.</p>
+    /// This field is required.
     pub fn egress_only_internet_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.egress_only_internet_gateway_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl DeleteEgressOnlyInternetGatewayInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_egress_only_internet_gateway::DeleteEgressOnlyInternetGatewayInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_egress_only_internet_gateway::DeleteEgressOnlyInternetGatewayInput {

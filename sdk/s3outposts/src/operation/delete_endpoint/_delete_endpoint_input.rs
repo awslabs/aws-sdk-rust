@@ -34,6 +34,7 @@ pub struct DeleteEndpointInputBuilder {
 }
 impl DeleteEndpointInputBuilder {
     /// <p>The ID of the endpoint.</p>
+    /// This field is required.
     pub fn endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteEndpointInputBuilder {
         &self.endpoint_id
     }
     /// <p>The ID of the Outposts. </p>
+    /// This field is required.
     pub fn outpost_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outpost_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DeleteEndpointInputBuilder {
     /// Consumes the builder and constructs a [`DeleteEndpointInput`](crate::operation::delete_endpoint::DeleteEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_endpoint::DeleteEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_endpoint::DeleteEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_endpoint::DeleteEndpointInput {
             endpoint_id: self.endpoint_id,
             outpost_id: self.outpost_id,

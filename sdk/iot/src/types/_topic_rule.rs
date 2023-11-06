@@ -39,8 +39,10 @@ impl TopicRule {
         self.created_at.as_ref()
     }
     /// <p>The actions associated with the rule.</p>
-    pub fn actions(&self) -> ::std::option::Option<&[crate::types::Action]> {
-        self.actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
+    pub fn actions(&self) -> &[crate::types::Action] {
+        self.actions.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether the rule is disabled.</p>
     pub fn rule_disabled(&self) -> ::std::option::Option<bool> {

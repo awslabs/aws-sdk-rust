@@ -71,6 +71,7 @@ pub struct CreateDomainInputBuilder {
 }
 impl CreateDomainInputBuilder {
     /// <p>The unique name of the domain.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -85,6 +86,7 @@ impl CreateDomainInputBuilder {
         &self.domain_name
     }
     /// <p>The default number of days until the data within the domain expires.</p>
+    /// This field is required.
     pub fn default_expiration_days(mut self, input: i32) -> Self {
         self.default_expiration_days = ::std::option::Option::Some(input);
         self
@@ -178,7 +180,9 @@ impl CreateDomainInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateDomainInput`](crate::operation::create_domain::CreateDomainInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_domain::CreateDomainInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_domain::CreateDomainInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_domain::CreateDomainInput {
             domain_name: self.domain_name,
             default_expiration_days: self.default_expiration_days,

@@ -34,6 +34,7 @@ pub struct DeleteKeyInputBuilder {
 }
 impl DeleteKeyInputBuilder {
     /// <p>The <code>KeyARN</code> of the key that is scheduled for deletion.</p>
+    /// This field is required.
     pub fn key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_identifier = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +63,7 @@ impl DeleteKeyInputBuilder {
         &self.delete_key_in_days
     }
     /// Consumes the builder and constructs a [`DeleteKeyInput`](crate::operation::delete_key::DeleteKeyInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_key::DeleteKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_key::DeleteKeyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_key::DeleteKeyInput {
             key_identifier: self.key_identifier,
             delete_key_in_days: self.delete_key_in_days,

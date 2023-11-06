@@ -52,6 +52,7 @@ pub struct UpdateDatasetEntriesInputBuilder {
 }
 impl UpdateDatasetEntriesInputBuilder {
     /// <p>The name of the project that contains the dataset that you want to update.</p>
+    /// This field is required.
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
         self
@@ -66,6 +67,7 @@ impl UpdateDatasetEntriesInputBuilder {
         &self.project_name
     }
     /// <p>The type of the dataset that you want to update. Specify <code>train</code> to update the training dataset. Specify <code>test</code> to update the test dataset. If you have a single dataset project, specify <code>train</code>.</p>
+    /// This field is required.
     pub fn dataset_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_type = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +82,7 @@ impl UpdateDatasetEntriesInputBuilder {
         &self.dataset_type
     }
     /// <p>The entries to add to the dataset.</p>
+    /// This field is required.
     pub fn changes(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.changes = ::std::option::Option::Some(input);
         self
@@ -116,7 +119,7 @@ impl UpdateDatasetEntriesInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDatasetEntriesInput`](crate::operation::update_dataset_entries::UpdateDatasetEntriesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_dataset_entries::UpdateDatasetEntriesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_dataset_entries::UpdateDatasetEntriesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_dataset_entries::UpdateDatasetEntriesInput {
             project_name: self.project_name,

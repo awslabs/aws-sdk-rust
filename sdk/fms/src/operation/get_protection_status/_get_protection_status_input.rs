@@ -62,6 +62,7 @@ pub struct GetProtectionStatusInputBuilder {
 }
 impl GetProtectionStatusInputBuilder {
     /// <p>The ID of the policy for which you want to get the attack information.</p>
+    /// This field is required.
     pub fn policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_id = ::std::option::Option::Some(input.into());
         self
@@ -148,7 +149,7 @@ impl GetProtectionStatusInputBuilder {
     /// Consumes the builder and constructs a [`GetProtectionStatusInput`](crate::operation::get_protection_status::GetProtectionStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_protection_status::GetProtectionStatusInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_protection_status::GetProtectionStatusInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_protection_status::GetProtectionStatusInput {
             policy_id: self.policy_id,

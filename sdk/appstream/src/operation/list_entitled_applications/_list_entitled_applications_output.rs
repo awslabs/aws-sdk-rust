@@ -11,8 +11,10 @@ pub struct ListEntitledApplicationsOutput {
 }
 impl ListEntitledApplicationsOutput {
     /// <p>The entitled applications.</p>
-    pub fn entitled_applications(&self) -> ::std::option::Option<&[crate::types::EntitledApplication]> {
-        self.entitled_applications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entitled_applications.is_none()`.
+    pub fn entitled_applications(&self) -> &[crate::types::EntitledApplication] {
+        self.entitled_applications.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -62,6 +62,7 @@ pub struct UpdateSecurityPolicyInputBuilder {
 }
 impl UpdateSecurityPolicyInputBuilder {
     /// <p>The type of access policy.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::SecurityPolicyType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -76,6 +77,7 @@ impl UpdateSecurityPolicyInputBuilder {
         &self.r#type
     }
     /// <p>The name of the policy.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +92,7 @@ impl UpdateSecurityPolicyInputBuilder {
         &self.name
     }
     /// <p>The version of the policy being updated.</p>
+    /// This field is required.
     pub fn policy_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_version = ::std::option::Option::Some(input.into());
         self
@@ -148,7 +151,7 @@ impl UpdateSecurityPolicyInputBuilder {
     /// Consumes the builder and constructs a [`UpdateSecurityPolicyInput`](crate::operation::update_security_policy::UpdateSecurityPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_security_policy::UpdateSecurityPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_security_policy::UpdateSecurityPolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_security_policy::UpdateSecurityPolicyInput {
             r#type: self.r#type,

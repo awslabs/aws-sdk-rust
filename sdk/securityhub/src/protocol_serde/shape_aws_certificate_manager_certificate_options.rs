@@ -2,7 +2,7 @@
 pub fn ser_aws_certificate_manager_certificate_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsCertificateManagerCertificateOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.certificate_transparency_logging_preference {
         object.key("CertificateTransparencyLoggingPreference").string(var_1.as_str());
     }

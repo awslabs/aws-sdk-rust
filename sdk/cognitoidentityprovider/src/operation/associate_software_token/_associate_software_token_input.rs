@@ -72,8 +72,10 @@ impl AssociateSoftwareTokenInputBuilder {
     /// Consumes the builder and constructs a [`AssociateSoftwareTokenInput`](crate::operation::associate_software_token::AssociateSoftwareTokenInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_software_token::AssociateSoftwareTokenInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::associate_software_token::AssociateSoftwareTokenInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::associate_software_token::AssociateSoftwareTokenInput {
             access_token: self.access_token,
             session: self.session,

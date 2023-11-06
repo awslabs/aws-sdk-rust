@@ -11,8 +11,10 @@ pub struct ListBackupVaultsOutput {
 }
 impl ListBackupVaultsOutput {
     /// <p>An array of backup vault list members containing vault metadata, including Amazon Resource Name (ARN), display name, creation date, number of saved recovery points, and encryption information if the resources saved in the backup vault are encrypted.</p>
-    pub fn backup_vault_list(&self) -> ::std::option::Option<&[crate::types::BackupVaultListMember]> {
-        self.backup_vault_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.backup_vault_list.is_none()`.
+    pub fn backup_vault_list(&self) -> &[crate::types::BackupVaultListMember] {
+        self.backup_vault_list.as_deref().unwrap_or_default()
     }
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

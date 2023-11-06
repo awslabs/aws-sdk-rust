@@ -2,7 +2,7 @@
 pub fn ser_create_chat_token_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_chat_token::CreateChatTokenInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.attributes {
         #[allow(unused_mut)]
         let mut object_2 = object.key("attributes").start_object();
@@ -25,14 +25,14 @@ pub fn ser_create_chat_token_input(
     if let Some(var_8) = &input.room_identifier {
         object.key("roomIdentifier").string(var_8.as_str());
     }
-    if input.session_duration_in_minutes != 0 {
+    if let Some(var_9) = &input.session_duration_in_minutes {
         object.key("sessionDurationInMinutes").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.session_duration_in_minutes).into()),
+            ::aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
-    if let Some(var_9) = &input.user_id {
-        object.key("userId").string(var_9.as_str());
+    if let Some(var_10) = &input.user_id {
+        object.key("userId").string(var_10.as_str());
     }
     Ok(())
 }

@@ -339,7 +339,7 @@ impl ListMonitoringExecutionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_monitoring_executions::ListMonitoringExecutionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_monitoring_executions::ListMonitoringExecutionsInput {
             monitoring_schedule_name: self.monitoring_schedule_name,

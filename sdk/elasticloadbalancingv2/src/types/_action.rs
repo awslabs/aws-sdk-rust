@@ -78,6 +78,7 @@ pub struct ActionBuilder {
 }
 impl ActionBuilder {
     /// <p>The type of action.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::ActionTypeEnum) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self

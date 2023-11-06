@@ -27,6 +27,7 @@ pub struct GetMonitoringSubscriptionInputBuilder {
 }
 impl GetMonitoringSubscriptionInputBuilder {
     /// <p>The ID of the distribution that you are getting metrics information for.</p>
+    /// This field is required.
     pub fn distribution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.distribution_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetMonitoringSubscriptionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_monitoring_subscription::GetMonitoringSubscriptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_monitoring_subscription::GetMonitoringSubscriptionInput {
             distribution_id: self.distribution_id,

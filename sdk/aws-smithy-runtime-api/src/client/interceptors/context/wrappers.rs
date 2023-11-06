@@ -54,6 +54,14 @@ impl<'a, I, O, E> BeforeSerializationInterceptorContextRef<'a, I, O, E> {
     pub fn input(&self) -> &I {
         expect!(self, input)
     }
+
+    /// Downgrade this wrapper struct, returning the underlying InterceptorContext.
+    ///
+    /// There's no good reason to use this unless you're writing tests or you have to
+    /// interact with an API that doesn't support the context wrapper structs.
+    pub fn inner(&self) -> &'_ InterceptorContext<I, O, E> {
+        self.inner
+    }
 }
 
 //
@@ -80,6 +88,22 @@ impl<'a, I, O, E> BeforeSerializationInterceptorContextMut<'a, I, O, E> {
     pub fn input_mut(&mut self) -> &mut I {
         expect!(self, input_mut)
     }
+
+    /// Downgrade this wrapper struct, returning the underlying InterceptorContext.
+    ///
+    /// There's no good reason to use this unless you're writing tests or you have to
+    /// interact with an API that doesn't support the context wrapper structs.
+    pub fn inner(&self) -> &'_ InterceptorContext<I, O, E> {
+        self.inner
+    }
+
+    /// Downgrade this wrapper struct, returning the underlying InterceptorContext.
+    ///
+    /// There's no good reason to use this unless you're writing tests or you have to
+    /// interact with an API that doesn't support the context wrapper structs.
+    pub fn inner_mut(&mut self) -> &'_ mut InterceptorContext<I, O, E> {
+        self.inner
+    }
 }
 
 //
@@ -100,6 +124,14 @@ impl<'a, I, O, E> BeforeTransmitInterceptorContextRef<'a, I, O, E> {
     /// Returns a reference to the transmittable request for the operation being invoked.
     pub fn request(&self) -> &Request {
         expect!(self, request)
+    }
+
+    /// Downgrade this wrapper struct, returning the underlying InterceptorContext.
+    ///
+    /// There's no good reason to use this unless you're writing tests or you have to
+    /// interact with an API that doesn't support the context wrapper structs.
+    pub fn inner(&self) -> &'_ InterceptorContext<I, O, E> {
+        self.inner
     }
 }
 
@@ -127,6 +159,22 @@ impl<'a, I, O, E> BeforeTransmitInterceptorContextMut<'a, I, O, E> {
     pub fn request_mut(&mut self) -> &mut Request {
         expect!(self, request_mut)
     }
+
+    /// Downgrade this wrapper struct, returning the underlying InterceptorContext.
+    ///
+    /// There's no good reason to use this unless you're writing tests or you have to
+    /// interact with an API that doesn't support the context wrapper structs.
+    pub fn inner(&self) -> &'_ InterceptorContext<I, O, E> {
+        self.inner
+    }
+
+    /// Downgrade this wrapper struct, returning the underlying InterceptorContext.
+    ///
+    /// There's no good reason to use this unless you're writing tests or you have to
+    /// interact with an API that doesn't support the context wrapper structs.
+    pub fn inner_mut(&mut self) -> &'_ mut InterceptorContext<I, O, E> {
+        self.inner
+    }
 }
 
 //
@@ -147,6 +195,14 @@ impl<'a, I, O, E> BeforeDeserializationInterceptorContextRef<'a, I, O, E> {
     /// Returns a reference to the response.
     pub fn response(&self) -> &Response {
         expect!(self, response)
+    }
+
+    /// Downgrade this wrapper struct, returning the underlying InterceptorContext.
+    ///
+    /// There's no good reason to use this unless you're writing tests or you have to
+    /// interact with an API that doesn't support the context wrapper structs.
+    pub fn inner(&self) -> &'_ InterceptorContext<I, O, E> {
+        self.inner
     }
 }
 
@@ -174,10 +230,18 @@ impl<'a, I, O, E> BeforeDeserializationInterceptorContextMut<'a, I, O, E> {
         expect!(self, response_mut)
     }
 
-    #[doc(hidden)]
-    /// Downgrade this helper struct, returning the underlying InterceptorContext. There's no good
-    /// reason to use this unless you're writing tests or you have to interact with an API that
-    /// doesn't support the helper structs.
+    /// Downgrade this wrapper struct, returning the underlying InterceptorContext.
+    ///
+    /// There's no good reason to use this unless you're writing tests or you have to
+    /// interact with an API that doesn't support the context wrapper structs.
+    pub fn inner(&self) -> &'_ InterceptorContext<I, O, E> {
+        self.inner
+    }
+
+    /// Downgrade this wrapper struct, returning the underlying InterceptorContext.
+    ///
+    /// There's no good reason to use this unless you're writing tests or you have to
+    /// interact with an API that doesn't support the context wrapper structs.
     pub fn inner_mut(&mut self) -> &'_ mut InterceptorContext<I, O, E> {
         self.inner
     }
@@ -205,6 +269,14 @@ impl<'a, I, O, E> AfterDeserializationInterceptorContextRef<'a, I, O, E> {
     /// Returns a reference to the deserialized output or error.
     pub fn output_or_error(&self) -> Result<&O, &OrchestratorError<E>> {
         expect!(self, output_or_error)
+    }
+
+    /// Downgrade this wrapper struct, returning the underlying InterceptorContext.
+    ///
+    /// There's no good reason to use this unless you're writing tests or you have to
+    /// interact with an API that doesn't support the context wrapper structs.
+    pub fn inner(&self) -> &'_ InterceptorContext<I, O, E> {
+        self.inner
     }
 }
 
@@ -242,6 +314,14 @@ impl<'a, I, O, E> FinalizerInterceptorContextRef<'a, I, O, E> {
     /// Returns the deserialized operation output or error.
     pub fn output_or_error(&self) -> Option<Result<&O, &OrchestratorError<E>>> {
         self.inner.output_or_error.as_ref().map(|o| o.as_ref())
+    }
+
+    /// Downgrade this wrapper struct, returning the underlying InterceptorContext.
+    ///
+    /// There's no good reason to use this unless you're writing tests or you have to
+    /// interact with an API that doesn't support the context wrapper structs.
+    pub fn inner(&self) -> &'_ InterceptorContext<I, O, E> {
+        self.inner
     }
 }
 
@@ -299,5 +379,21 @@ impl<'a, I, O, E> FinalizerInterceptorContextMut<'a, I, O, E> {
     /// Mutably returns the deserialized operation output or error.
     pub fn output_or_error_mut(&mut self) -> Option<&mut Result<O, OrchestratorError<E>>> {
         self.inner.output_or_error.as_mut()
+    }
+
+    /// Downgrade this wrapper struct, returning the underlying InterceptorContext.
+    ///
+    /// There's no good reason to use this unless you're writing tests or you have to
+    /// interact with an API that doesn't support the context wrapper structs.
+    pub fn inner(&self) -> &'_ InterceptorContext<I, O, E> {
+        self.inner
+    }
+
+    /// Downgrade this wrapper struct, returning the underlying InterceptorContext.
+    ///
+    /// There's no good reason to use this unless you're writing tests or you have to
+    /// interact with an API that doesn't support the context wrapper structs.
+    pub fn inner_mut(&mut self) -> &'_ mut InterceptorContext<I, O, E> {
+        self.inner
     }
 }

@@ -3,13 +3,13 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeHub`](crate::operation::describe_hub::builders::DescribeHubFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`hub_name(impl Into<String>)`](crate::operation::describe_hub::builders::DescribeHubFluentBuilder::hub_name) / [`set_hub_name(Option<String>)`](crate::operation::describe_hub::builders::DescribeHubFluentBuilder::set_hub_name): <p>The name of the hub to describe.</p>
+    ///   - [`hub_name(impl Into<String>)`](crate::operation::describe_hub::builders::DescribeHubFluentBuilder::hub_name) / [`set_hub_name(Option<String>)`](crate::operation::describe_hub::builders::DescribeHubFluentBuilder::set_hub_name):<br>required: **true**<br><p>The name of the hub to describe.</p><br>
     /// - On success, responds with [`DescribeHubOutput`](crate::operation::describe_hub::DescribeHubOutput) with field(s):
     ///   - [`hub_name(Option<String>)`](crate::operation::describe_hub::DescribeHubOutput::hub_name): <p>The name of the hub.</p>
     ///   - [`hub_arn(Option<String>)`](crate::operation::describe_hub::DescribeHubOutput::hub_arn): <p>The Amazon Resource Name (ARN) of the hub.</p>
     ///   - [`hub_display_name(Option<String>)`](crate::operation::describe_hub::DescribeHubOutput::hub_display_name): <p>The display name of the hub.</p>
     ///   - [`hub_description(Option<String>)`](crate::operation::describe_hub::DescribeHubOutput::hub_description): <p>A description of the hub.</p>
-    ///   - [`hub_search_keywords(Option<Vec<String>>)`](crate::operation::describe_hub::DescribeHubOutput::hub_search_keywords): <p>The searchable keywords for the hub.</p>
+    ///   - [`hub_search_keywords(Option<Vec::<String>>)`](crate::operation::describe_hub::DescribeHubOutput::hub_search_keywords): <p>The searchable keywords for the hub.</p>
     ///   - [`s3_storage_config(Option<HubS3StorageConfig>)`](crate::operation::describe_hub::DescribeHubOutput::s3_storage_config): <p>The Amazon S3 storage configuration for the hub.</p>
     ///   - [`hub_status(Option<HubStatus>)`](crate::operation::describe_hub::DescribeHubOutput::hub_status): <p>The status of the hub.</p>
     ///   - [`failure_reason(Option<String>)`](crate::operation::describe_hub::DescribeHubOutput::failure_reason): <p>The failure reason if importing hub content failed.</p>

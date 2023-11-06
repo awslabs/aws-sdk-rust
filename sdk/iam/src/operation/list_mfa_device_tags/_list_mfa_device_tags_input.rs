@@ -46,6 +46,7 @@ pub struct ListMfaDeviceTagsInputBuilder {
 impl ListMfaDeviceTagsInputBuilder {
     /// <p>The unique identifier for the IAM virtual MFA device whose tags you want to see. For virtual MFA devices, the serial number is the same as the ARN.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// This field is required.
     pub fn serial_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.serial_number = ::std::option::Option::Some(input.into());
         self
@@ -95,7 +96,7 @@ impl ListMfaDeviceTagsInputBuilder {
     /// Consumes the builder and constructs a [`ListMfaDeviceTagsInput`](crate::operation::list_mfa_device_tags::ListMfaDeviceTagsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_mfa_device_tags::ListMfaDeviceTagsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_mfa_device_tags::ListMfaDeviceTagsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_mfa_device_tags::ListMfaDeviceTagsInput {
             serial_number: self.serial_number,
             marker: self.marker,

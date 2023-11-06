@@ -7,12 +7,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RateLimitLabelNamespace {
     /// <p>The namespace to use for aggregation. </p>
-    pub namespace: ::std::option::Option<::std::string::String>,
+    pub namespace: ::std::string::String,
 }
 impl RateLimitLabelNamespace {
     /// <p>The namespace to use for aggregation. </p>
-    pub fn namespace(&self) -> ::std::option::Option<&str> {
-        self.namespace.as_deref()
+    pub fn namespace(&self) -> &str {
+        use std::ops::Deref;
+        self.namespace.deref()
     }
 }
 impl RateLimitLabelNamespace {
@@ -30,6 +31,7 @@ pub struct RateLimitLabelNamespaceBuilder {
 }
 impl RateLimitLabelNamespaceBuilder {
     /// <p>The namespace to use for aggregation. </p>
+    /// This field is required.
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +46,16 @@ impl RateLimitLabelNamespaceBuilder {
         &self.namespace
     }
     /// Consumes the builder and constructs a [`RateLimitLabelNamespace`](crate::types::RateLimitLabelNamespace).
-    pub fn build(self) -> crate::types::RateLimitLabelNamespace {
-        crate::types::RateLimitLabelNamespace { namespace: self.namespace }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`namespace`](crate::types::builders::RateLimitLabelNamespaceBuilder::namespace)
+    pub fn build(self) -> ::std::result::Result<crate::types::RateLimitLabelNamespace, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RateLimitLabelNamespace {
+            namespace: self.namespace.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "namespace",
+                    "namespace was not specified but it is required when building RateLimitLabelNamespace",
+                )
+            })?,
+        })
     }
 }

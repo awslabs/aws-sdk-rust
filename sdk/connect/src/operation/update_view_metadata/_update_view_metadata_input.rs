@@ -58,6 +58,7 @@ pub struct UpdateViewMetadataInputBuilder {
 }
 impl UpdateViewMetadataInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -72,6 +73,7 @@ impl UpdateViewMetadataInputBuilder {
         &self.instance_id
     }
     /// <p>The identifier of the view. Both <code>ViewArn</code> and <code>ViewId</code> can be used.</p>
+    /// This field is required.
     pub fn view_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.view_id = ::std::option::Option::Some(input.into());
         self
@@ -116,7 +118,8 @@ impl UpdateViewMetadataInputBuilder {
     /// Consumes the builder and constructs a [`UpdateViewMetadataInput`](crate::operation::update_view_metadata::UpdateViewMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_view_metadata::UpdateViewMetadataInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_view_metadata::UpdateViewMetadataInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_view_metadata::UpdateViewMetadataInput {
             instance_id: self.instance_id,
             view_id: self.view_id,

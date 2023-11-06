@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPullRequestsOutput {
     /// <p>The system-generated IDs of the pull requests.</p>
-    pub pull_request_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub pull_request_ids: ::std::vec::Vec<::std::string::String>,
     /// <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListPullRequestsOutput {
     /// <p>The system-generated IDs of the pull requests.</p>
-    pub fn pull_request_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.pull_request_ids.as_deref()
+    pub fn pull_request_ids(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.pull_request_ids.deref()
     }
     /// <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ListPullRequestsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListPullRequestsOutput`](crate::operation::list_pull_requests::ListPullRequestsOutput).
-    pub fn build(self) -> crate::operation::list_pull_requests::ListPullRequestsOutput {
-        crate::operation::list_pull_requests::ListPullRequestsOutput {
-            pull_request_ids: self.pull_request_ids,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`pull_request_ids`](crate::operation::list_pull_requests::builders::ListPullRequestsOutputBuilder::pull_request_ids)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_pull_requests::ListPullRequestsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_pull_requests::ListPullRequestsOutput {
+            pull_request_ids: self.pull_request_ids.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "pull_request_ids",
+                    "pull_request_ids was not specified but it is required when building ListPullRequestsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

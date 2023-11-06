@@ -2,7 +2,7 @@
 pub fn ser_replication_rule_filter(
     input: &crate::types::ReplicationRuleFilter,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     let mut scope_writer = writer.finish();
     match input {
         crate::types::ReplicationRuleFilter::Prefix(inner) => {
@@ -18,7 +18,7 @@ pub fn ser_replication_rule_filter(
             crate::protocol_serde::shape_replication_rule_and_operator::ser_replication_rule_and_operator(inner, inner_writer)?
         }
         crate::types::ReplicationRuleFilter::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "ReplicationRuleFilter",
             ))
         }

@@ -5,20 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecordingConfigurationSummary {
     /// <p>Recording-configuration ARN.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>Recording-configuration name. The value does not need to be unique.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A complex type that contains information about where recorded video will be stored.</p>
     pub destination_configuration: ::std::option::Option<crate::types::DestinationConfiguration>,
     /// <p>Indicates the current state of the recording configuration. When the state is <code>ACTIVE</code>, the configuration is ready for recording a channel stream.</p>
-    pub state: ::std::option::Option<crate::types::RecordingConfigurationState>,
+    pub state: crate::types::RecordingConfigurationState,
     /// <p>Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl RecordingConfigurationSummary {
     /// <p>Recording-configuration ARN.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>Recording-configuration name. The value does not need to be unique.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -29,8 +30,8 @@ impl RecordingConfigurationSummary {
         self.destination_configuration.as_ref()
     }
     /// <p>Indicates the current state of the recording configuration. When the state is <code>ACTIVE</code>, the configuration is ready for recording a channel stream.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::RecordingConfigurationState> {
-        self.state.as_ref()
+    pub fn state(&self) -> &crate::types::RecordingConfigurationState {
+        &self.state
     }
     /// <p>Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -56,6 +57,7 @@ pub struct RecordingConfigurationSummaryBuilder {
 }
 impl RecordingConfigurationSummaryBuilder {
     /// <p>Recording-configuration ARN.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +86,7 @@ impl RecordingConfigurationSummaryBuilder {
         &self.name
     }
     /// <p>A complex type that contains information about where recorded video will be stored.</p>
+    /// This field is required.
     pub fn destination_configuration(mut self, input: crate::types::DestinationConfiguration) -> Self {
         self.destination_configuration = ::std::option::Option::Some(input);
         self
@@ -98,6 +101,7 @@ impl RecordingConfigurationSummaryBuilder {
         &self.destination_configuration
     }
     /// <p>Indicates the current state of the recording configuration. When the state is <code>ACTIVE</code>, the configuration is ready for recording a channel stream.</p>
+    /// This field is required.
     pub fn state(mut self, input: crate::types::RecordingConfigurationState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
@@ -132,13 +136,26 @@ impl RecordingConfigurationSummaryBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`RecordingConfigurationSummary`](crate::types::RecordingConfigurationSummary).
-    pub fn build(self) -> crate::types::RecordingConfigurationSummary {
-        crate::types::RecordingConfigurationSummary {
-            arn: self.arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::RecordingConfigurationSummaryBuilder::arn)
+    /// - [`state`](crate::types::builders::RecordingConfigurationSummaryBuilder::state)
+    pub fn build(self) -> ::std::result::Result<crate::types::RecordingConfigurationSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RecordingConfigurationSummary {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building RecordingConfigurationSummary",
+                )
+            })?,
             name: self.name,
             destination_configuration: self.destination_configuration,
-            state: self.state,
+            state: self.state.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "state",
+                    "state was not specified but it is required when building RecordingConfigurationSummary",
+                )
+            })?,
             tags: self.tags,
-        }
+        })
     }
 }

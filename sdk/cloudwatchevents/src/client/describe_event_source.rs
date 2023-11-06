@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeEventSource`](crate::operation::describe_event_source::builders::DescribeEventSourceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::describe_event_source::builders::DescribeEventSourceFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_event_source::builders::DescribeEventSourceFluentBuilder::set_name): <p>The name of the partner event source to display the details of.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::describe_event_source::builders::DescribeEventSourceFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_event_source::builders::DescribeEventSourceFluentBuilder::set_name):<br>required: **true**<br><p>The name of the partner event source to display the details of.</p><br>
     /// - On success, responds with [`DescribeEventSourceOutput`](crate::operation::describe_event_source::DescribeEventSourceOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::describe_event_source::DescribeEventSourceOutput::arn): <p>The ARN of the partner event source.</p>
     ///   - [`created_by(Option<String>)`](crate::operation::describe_event_source::DescribeEventSourceOutput::created_by): <p>The name of the SaaS partner that created the event source.</p>

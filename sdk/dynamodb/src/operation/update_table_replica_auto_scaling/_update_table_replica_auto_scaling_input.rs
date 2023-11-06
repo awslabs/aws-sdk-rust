@@ -14,8 +14,10 @@ pub struct UpdateTableReplicaAutoScalingInput {
 }
 impl UpdateTableReplicaAutoScalingInput {
     /// <p>Represents the auto scaling settings of the global secondary indexes of the replica to be updated.</p>
-    pub fn global_secondary_index_updates(&self) -> ::std::option::Option<&[crate::types::GlobalSecondaryIndexAutoScalingUpdate]> {
-        self.global_secondary_index_updates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.global_secondary_index_updates.is_none()`.
+    pub fn global_secondary_index_updates(&self) -> &[crate::types::GlobalSecondaryIndexAutoScalingUpdate] {
+        self.global_secondary_index_updates.as_deref().unwrap_or_default()
     }
     /// <p>The name of the global table to be updated.</p>
     pub fn table_name(&self) -> ::std::option::Option<&str> {
@@ -26,8 +28,10 @@ impl UpdateTableReplicaAutoScalingInput {
         self.provisioned_write_capacity_auto_scaling_update.as_ref()
     }
     /// <p>Represents the auto scaling settings of replicas of the table that will be modified.</p>
-    pub fn replica_updates(&self) -> ::std::option::Option<&[crate::types::ReplicaAutoScalingUpdate]> {
-        self.replica_updates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replica_updates.is_none()`.
+    pub fn replica_updates(&self) -> &[crate::types::ReplicaAutoScalingUpdate] {
+        self.replica_updates.as_deref().unwrap_or_default()
     }
 }
 impl UpdateTableReplicaAutoScalingInput {
@@ -71,6 +75,7 @@ impl UpdateTableReplicaAutoScalingInputBuilder {
         &self.global_secondary_index_updates
     }
     /// <p>The name of the global table to be updated.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -126,7 +131,7 @@ impl UpdateTableReplicaAutoScalingInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_table_replica_auto_scaling::UpdateTableReplicaAutoScalingInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_table_replica_auto_scaling::UpdateTableReplicaAutoScalingInput {
             global_secondary_index_updates: self.global_secondary_index_updates,

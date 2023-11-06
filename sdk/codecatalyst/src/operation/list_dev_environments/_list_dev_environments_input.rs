@@ -24,8 +24,10 @@ impl ListDevEnvironmentsInput {
         self.project_name.as_deref()
     }
     /// <p>Information about filters to apply to narrow the results returned in the list.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -55,6 +57,7 @@ pub struct ListDevEnvironmentsInputBuilder {
 }
 impl ListDevEnvironmentsInputBuilder {
     /// <p>The name of the space.</p>
+    /// This field is required.
     pub fn space_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.space_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +72,7 @@ impl ListDevEnvironmentsInputBuilder {
         &self.space_name
     }
     /// <p>The name of the project in the space.</p>
+    /// This field is required.
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
         self
@@ -133,7 +137,7 @@ impl ListDevEnvironmentsInputBuilder {
     /// Consumes the builder and constructs a [`ListDevEnvironmentsInput`](crate::operation::list_dev_environments::ListDevEnvironmentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_dev_environments::ListDevEnvironmentsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_dev_environments::ListDevEnvironmentsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_dev_environments::ListDevEnvironmentsInput {
             space_name: self.space_name,

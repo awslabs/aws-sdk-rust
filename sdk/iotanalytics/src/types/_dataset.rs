@@ -37,16 +37,22 @@ impl Dataset {
         self.arn.as_deref()
     }
     /// <p>The <code>DatasetAction</code> objects that automatically create the dataset contents.</p>
-    pub fn actions(&self) -> ::std::option::Option<&[crate::types::DatasetAction]> {
-        self.actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
+    pub fn actions(&self) -> &[crate::types::DatasetAction] {
+        self.actions.as_deref().unwrap_or_default()
     }
     /// <p>The <code>DatasetTrigger</code> objects that specify when the dataset is automatically updated.</p>
-    pub fn triggers(&self) -> ::std::option::Option<&[crate::types::DatasetTrigger]> {
-        self.triggers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.triggers.is_none()`.
+    pub fn triggers(&self) -> &[crate::types::DatasetTrigger] {
+        self.triggers.as_deref().unwrap_or_default()
     }
     /// <p>When dataset contents are created they are delivered to destinations specified here.</p>
-    pub fn content_delivery_rules(&self) -> ::std::option::Option<&[crate::types::DatasetContentDeliveryRule]> {
-        self.content_delivery_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.content_delivery_rules.is_none()`.
+    pub fn content_delivery_rules(&self) -> &[crate::types::DatasetContentDeliveryRule] {
+        self.content_delivery_rules.as_deref().unwrap_or_default()
     }
     /// <p>The status of the dataset.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::DatasetStatus> {
@@ -69,8 +75,10 @@ impl Dataset {
         self.versioning_configuration.as_ref()
     }
     /// <p>A list of data rules that send notifications to CloudWatch, when data arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
-    pub fn late_data_rules(&self) -> ::std::option::Option<&[crate::types::LateDataRule]> {
-        self.late_data_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.late_data_rules.is_none()`.
+    pub fn late_data_rules(&self) -> &[crate::types::LateDataRule] {
+        self.late_data_rules.as_deref().unwrap_or_default()
     }
 }
 impl Dataset {

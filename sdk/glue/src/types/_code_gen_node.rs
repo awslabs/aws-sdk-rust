@@ -5,26 +5,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeGenNode {
     /// <p>A node identifier that is unique within the node's graph.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The type of node that this is.</p>
-    pub node_type: ::std::option::Option<::std::string::String>,
+    pub node_type: ::std::string::String,
     /// <p>Properties of the node, in the form of name-value pairs.</p>
-    pub args: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenNodeArg>>,
+    pub args: ::std::vec::Vec<crate::types::CodeGenNodeArg>,
     /// <p>The line number of the node.</p>
     pub line_number: i32,
 }
 impl CodeGenNode {
     /// <p>A node identifier that is unique within the node's graph.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The type of node that this is.</p>
-    pub fn node_type(&self) -> ::std::option::Option<&str> {
-        self.node_type.as_deref()
+    pub fn node_type(&self) -> &str {
+        use std::ops::Deref;
+        self.node_type.deref()
     }
     /// <p>Properties of the node, in the form of name-value pairs.</p>
-    pub fn args(&self) -> ::std::option::Option<&[crate::types::CodeGenNodeArg]> {
-        self.args.as_deref()
+    pub fn args(&self) -> &[crate::types::CodeGenNodeArg] {
+        use std::ops::Deref;
+        self.args.deref()
     }
     /// <p>The line number of the node.</p>
     pub fn line_number(&self) -> i32 {
@@ -49,6 +52,7 @@ pub struct CodeGenNodeBuilder {
 }
 impl CodeGenNodeBuilder {
     /// <p>A node identifier that is unique within the node's graph.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +67,7 @@ impl CodeGenNodeBuilder {
         &self.id
     }
     /// <p>The type of node that this is.</p>
+    /// This field is required.
     pub fn node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_type = ::std::option::Option::Some(input.into());
         self
@@ -111,12 +116,31 @@ impl CodeGenNodeBuilder {
         &self.line_number
     }
     /// Consumes the builder and constructs a [`CodeGenNode`](crate::types::CodeGenNode).
-    pub fn build(self) -> crate::types::CodeGenNode {
-        crate::types::CodeGenNode {
-            id: self.id,
-            node_type: self.node_type,
-            args: self.args,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::CodeGenNodeBuilder::id)
+    /// - [`node_type`](crate::types::builders::CodeGenNodeBuilder::node_type)
+    /// - [`args`](crate::types::builders::CodeGenNodeBuilder::args)
+    pub fn build(self) -> ::std::result::Result<crate::types::CodeGenNode, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CodeGenNode {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building CodeGenNode",
+                )
+            })?,
+            node_type: self.node_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "node_type",
+                    "node_type was not specified but it is required when building CodeGenNode",
+                )
+            })?,
+            args: self.args.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "args",
+                    "args was not specified but it is required when building CodeGenNode",
+                )
+            })?,
             line_number: self.line_number.unwrap_or_default(),
-        }
+        })
     }
 }

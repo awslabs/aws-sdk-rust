@@ -132,8 +132,10 @@ impl CreateIdentityProviderInput {
         self.attribute_mapping.as_ref()
     }
     /// <p>A list of IdP identifiers.</p>
-    pub fn idp_identifiers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.idp_identifiers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.idp_identifiers.is_none()`.
+    pub fn idp_identifiers(&self) -> &[::std::string::String] {
+        self.idp_identifiers.as_deref().unwrap_or_default()
     }
 }
 impl CreateIdentityProviderInput {
@@ -156,6 +158,7 @@ pub struct CreateIdentityProviderInputBuilder {
 }
 impl CreateIdentityProviderInputBuilder {
     /// <p>The user pool ID.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -170,6 +173,7 @@ impl CreateIdentityProviderInputBuilder {
         &self.user_pool_id
     }
     /// <p>The IdP name.</p>
+    /// This field is required.
     pub fn provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider_name = ::std::option::Option::Some(input.into());
         self
@@ -184,6 +188,7 @@ impl CreateIdentityProviderInputBuilder {
         &self.provider_name
     }
     /// <p>The IdP type.</p>
+    /// This field is required.
     pub fn provider_type(mut self, input: crate::types::IdentityProviderTypeType) -> Self {
         self.provider_type = ::std::option::Option::Some(input);
         self
@@ -415,8 +420,10 @@ impl CreateIdentityProviderInputBuilder {
     /// Consumes the builder and constructs a [`CreateIdentityProviderInput`](crate::operation::create_identity_provider::CreateIdentityProviderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_identity_provider::CreateIdentityProviderInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_identity_provider::CreateIdentityProviderInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_identity_provider::CreateIdentityProviderInput {
             user_pool_id: self.user_pool_id,
             provider_name: self.provider_name,

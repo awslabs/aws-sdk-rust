@@ -39,8 +39,10 @@ impl Parameter {
         self.parameter_value.as_deref()
     }
     /// <p>A list of node types, and specific parameter values for each node.</p>
-    pub fn node_type_specific_values(&self) -> ::std::option::Option<&[crate::types::NodeTypeSpecificValue]> {
-        self.node_type_specific_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.node_type_specific_values.is_none()`.
+    pub fn node_type_specific_values(&self) -> &[crate::types::NodeTypeSpecificValue] {
+        self.node_type_specific_values.as_deref().unwrap_or_default()
     }
     /// <p>A description of the parameter</p>
     pub fn description(&self) -> ::std::option::Option<&str> {

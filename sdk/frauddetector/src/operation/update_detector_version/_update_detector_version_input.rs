@@ -31,20 +31,26 @@ impl UpdateDetectorVersionInput {
         self.detector_version_id.as_deref()
     }
     /// <p>The Amazon SageMaker model endpoints to include in the detector version.</p>
-    pub fn external_model_endpoints(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.external_model_endpoints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.external_model_endpoints.is_none()`.
+    pub fn external_model_endpoints(&self) -> &[::std::string::String] {
+        self.external_model_endpoints.as_deref().unwrap_or_default()
     }
     /// <p>The rules to include in the detector version.</p>
-    pub fn rules(&self) -> ::std::option::Option<&[crate::types::Rule]> {
-        self.rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
+    pub fn rules(&self) -> &[crate::types::Rule] {
+        self.rules.as_deref().unwrap_or_default()
     }
     /// <p>The detector version description. </p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The model versions to include in the detector version.</p>
-    pub fn model_versions(&self) -> ::std::option::Option<&[crate::types::ModelVersion]> {
-        self.model_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.model_versions.is_none()`.
+    pub fn model_versions(&self) -> &[crate::types::ModelVersion] {
+        self.model_versions.as_deref().unwrap_or_default()
     }
     /// <p>The rule execution mode to add to the detector.</p>
     /// <p>If you specify <code>FIRST_MATCHED</code>, Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
@@ -75,6 +81,7 @@ pub struct UpdateDetectorVersionInputBuilder {
 }
 impl UpdateDetectorVersionInputBuilder {
     /// <p>The parent detector ID for the detector version you want to update.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
@@ -89,6 +96,7 @@ impl UpdateDetectorVersionInputBuilder {
         &self.detector_id
     }
     /// <p>The detector version ID. </p>
+    /// This field is required.
     pub fn detector_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_version_id = ::std::option::Option::Some(input.into());
         self
@@ -202,7 +210,7 @@ impl UpdateDetectorVersionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDetectorVersionInput`](crate::operation::update_detector_version::UpdateDetectorVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_detector_version::UpdateDetectorVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_detector_version::UpdateDetectorVersionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_detector_version::UpdateDetectorVersionInput {
             detector_id: self.detector_id,

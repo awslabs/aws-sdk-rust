@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetApnsChannel`](crate::operation::get_apns_channel::builders::GetApnsChannelFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::operation::get_apns_channel::builders::GetApnsChannelFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::get_apns_channel::builders::GetApnsChannelFluentBuilder::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`application_id(impl Into<String>)`](crate::operation::get_apns_channel::builders::GetApnsChannelFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::get_apns_channel::builders::GetApnsChannelFluentBuilder::set_application_id):<br>required: **true**<br><p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p><br>
     /// - On success, responds with [`GetApnsChannelOutput`](crate::operation::get_apns_channel::GetApnsChannelOutput) with field(s):
     ///   - [`apns_channel_response(Option<ApnsChannelResponse>)`](crate::operation::get_apns_channel::GetApnsChannelOutput::apns_channel_response): <p>Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
     /// - On failure, responds with [`SdkError<GetApnsChannelError>`](crate::operation::get_apns_channel::GetApnsChannelError)

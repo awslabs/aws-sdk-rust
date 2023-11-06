@@ -5,68 +5,74 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Rule {
     /// <p>The name of the rule.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>A unique identifier for the rule.</p>
-    pub rule_id: ::std::option::Option<::std::string::String>,
+    pub rule_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
-    pub rule_arn: ::std::option::Option<::std::string::String>,
+    pub rule_arn: ::std::string::String,
     /// <p>The event source to trigger the rule.</p>
     pub trigger_event_source: ::std::option::Option<crate::types::RuleTriggerEventSource>,
     /// <p>The conditions of the rule.</p>
-    pub function: ::std::option::Option<::std::string::String>,
+    pub function: ::std::string::String,
     /// <p>A list of actions to be run when the rule is triggered.</p>
-    pub actions: ::std::option::Option<::std::vec::Vec<crate::types::RuleAction>>,
+    pub actions: ::std::vec::Vec<crate::types::RuleAction>,
     /// <p>The publish status of the rule.</p>
-    pub publish_status: ::std::option::Option<crate::types::RulePublishStatus>,
+    pub publish_status: crate::types::RulePublishStatus,
     /// <p>The timestamp for when the rule was created.</p>
-    pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_time: ::aws_smithy_types::DateTime,
     /// <p>The timestamp for the when the rule was last updated.</p>
-    pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub last_updated_time: ::aws_smithy_types::DateTime,
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the rule.</p>
-    pub last_updated_by: ::std::option::Option<::std::string::String>,
+    pub last_updated_by: ::std::string::String,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl Rule {
     /// <p>The name of the rule.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>A unique identifier for the rule.</p>
-    pub fn rule_id(&self) -> ::std::option::Option<&str> {
-        self.rule_id.as_deref()
+    pub fn rule_id(&self) -> &str {
+        use std::ops::Deref;
+        self.rule_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
-    pub fn rule_arn(&self) -> ::std::option::Option<&str> {
-        self.rule_arn.as_deref()
+    pub fn rule_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.rule_arn.deref()
     }
     /// <p>The event source to trigger the rule.</p>
     pub fn trigger_event_source(&self) -> ::std::option::Option<&crate::types::RuleTriggerEventSource> {
         self.trigger_event_source.as_ref()
     }
     /// <p>The conditions of the rule.</p>
-    pub fn function(&self) -> ::std::option::Option<&str> {
-        self.function.as_deref()
+    pub fn function(&self) -> &str {
+        use std::ops::Deref;
+        self.function.deref()
     }
     /// <p>A list of actions to be run when the rule is triggered.</p>
-    pub fn actions(&self) -> ::std::option::Option<&[crate::types::RuleAction]> {
-        self.actions.as_deref()
+    pub fn actions(&self) -> &[crate::types::RuleAction] {
+        use std::ops::Deref;
+        self.actions.deref()
     }
     /// <p>The publish status of the rule.</p>
-    pub fn publish_status(&self) -> ::std::option::Option<&crate::types::RulePublishStatus> {
-        self.publish_status.as_ref()
+    pub fn publish_status(&self) -> &crate::types::RulePublishStatus {
+        &self.publish_status
     }
     /// <p>The timestamp for when the rule was created.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_time.as_ref()
+    pub fn created_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_time
     }
     /// <p>The timestamp for the when the rule was last updated.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.last_updated_time.as_ref()
+    pub fn last_updated_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.last_updated_time
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the rule.</p>
-    pub fn last_updated_by(&self) -> ::std::option::Option<&str> {
-        self.last_updated_by.as_deref()
+    pub fn last_updated_by(&self) -> &str {
+        use std::ops::Deref;
+        self.last_updated_by.deref()
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -98,6 +104,7 @@ pub struct RuleBuilder {
 }
 impl RuleBuilder {
     /// <p>The name of the rule.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +119,7 @@ impl RuleBuilder {
         &self.name
     }
     /// <p>A unique identifier for the rule.</p>
+    /// This field is required.
     pub fn rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_id = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +134,7 @@ impl RuleBuilder {
         &self.rule_id
     }
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
+    /// This field is required.
     pub fn rule_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_arn = ::std::option::Option::Some(input.into());
         self
@@ -140,6 +149,7 @@ impl RuleBuilder {
         &self.rule_arn
     }
     /// <p>The event source to trigger the rule.</p>
+    /// This field is required.
     pub fn trigger_event_source(mut self, input: crate::types::RuleTriggerEventSource) -> Self {
         self.trigger_event_source = ::std::option::Option::Some(input);
         self
@@ -154,6 +164,7 @@ impl RuleBuilder {
         &self.trigger_event_source
     }
     /// <p>The conditions of the rule.</p>
+    /// This field is required.
     pub fn function(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function = ::std::option::Option::Some(input.into());
         self
@@ -188,6 +199,7 @@ impl RuleBuilder {
         &self.actions
     }
     /// <p>The publish status of the rule.</p>
+    /// This field is required.
     pub fn publish_status(mut self, input: crate::types::RulePublishStatus) -> Self {
         self.publish_status = ::std::option::Option::Some(input);
         self
@@ -202,6 +214,7 @@ impl RuleBuilder {
         &self.publish_status
     }
     /// <p>The timestamp for when the rule was created.</p>
+    /// This field is required.
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
         self
@@ -216,6 +229,7 @@ impl RuleBuilder {
         &self.created_time
     }
     /// <p>The timestamp for the when the rule was last updated.</p>
+    /// This field is required.
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
         self
@@ -230,6 +244,7 @@ impl RuleBuilder {
         &self.last_updated_time
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the rule.</p>
+    /// This field is required.
     pub fn last_updated_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_updated_by = ::std::option::Option::Some(input.into());
         self
@@ -264,19 +279,74 @@ impl RuleBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`Rule`](crate::types::Rule).
-    pub fn build(self) -> crate::types::Rule {
-        crate::types::Rule {
-            name: self.name,
-            rule_id: self.rule_id,
-            rule_arn: self.rule_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::RuleBuilder::name)
+    /// - [`rule_id`](crate::types::builders::RuleBuilder::rule_id)
+    /// - [`rule_arn`](crate::types::builders::RuleBuilder::rule_arn)
+    /// - [`function`](crate::types::builders::RuleBuilder::function)
+    /// - [`actions`](crate::types::builders::RuleBuilder::actions)
+    /// - [`publish_status`](crate::types::builders::RuleBuilder::publish_status)
+    /// - [`created_time`](crate::types::builders::RuleBuilder::created_time)
+    /// - [`last_updated_time`](crate::types::builders::RuleBuilder::last_updated_time)
+    /// - [`last_updated_by`](crate::types::builders::RuleBuilder::last_updated_by)
+    pub fn build(self) -> ::std::result::Result<crate::types::Rule, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Rule {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building Rule",
+                )
+            })?,
+            rule_id: self.rule_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "rule_id",
+                    "rule_id was not specified but it is required when building Rule",
+                )
+            })?,
+            rule_arn: self.rule_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "rule_arn",
+                    "rule_arn was not specified but it is required when building Rule",
+                )
+            })?,
             trigger_event_source: self.trigger_event_source,
-            function: self.function,
-            actions: self.actions,
-            publish_status: self.publish_status,
-            created_time: self.created_time,
-            last_updated_time: self.last_updated_time,
-            last_updated_by: self.last_updated_by,
+            function: self.function.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "function",
+                    "function was not specified but it is required when building Rule",
+                )
+            })?,
+            actions: self.actions.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "actions",
+                    "actions was not specified but it is required when building Rule",
+                )
+            })?,
+            publish_status: self.publish_status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "publish_status",
+                    "publish_status was not specified but it is required when building Rule",
+                )
+            })?,
+            created_time: self.created_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_time",
+                    "created_time was not specified but it is required when building Rule",
+                )
+            })?,
+            last_updated_time: self.last_updated_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "last_updated_time",
+                    "last_updated_time was not specified but it is required when building Rule",
+                )
+            })?,
+            last_updated_by: self.last_updated_by.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "last_updated_by",
+                    "last_updated_by was not specified but it is required when building Rule",
+                )
+            })?,
             tags: self.tags,
-        }
+        })
     }
 }

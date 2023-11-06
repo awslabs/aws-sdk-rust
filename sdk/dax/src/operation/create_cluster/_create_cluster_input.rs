@@ -87,8 +87,10 @@ impl CreateClusterInput {
         self.replication_factor
     }
     /// <p>The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.</p>
-    pub fn availability_zones(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.availability_zones.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
+    pub fn availability_zones(&self) -> &[::std::string::String] {
+        self.availability_zones.as_deref().unwrap_or_default()
     }
     /// <p>The name of the subnet group to be used for the replication group.</p> <important>
     /// <p>DAX clusters can only run in an Amazon VPC environment. All of the subnets that you specify in a subnet group must exist in the same VPC.</p>
@@ -98,8 +100,10 @@ impl CreateClusterInput {
     }
     /// <p>A list of security group IDs to be assigned to each node in the DAX cluster. (Each of the security group ID is system-generated.)</p>
     /// <p>If this parameter is not specified, DAX assigns the default VPC security group to each node.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the weekly time range during which maintenance on the DAX cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid values for <code>ddd</code> are:</p>
     /// <ul>
@@ -132,8 +136,10 @@ impl CreateClusterInput {
         self.parameter_group_name.as_deref()
     }
     /// <p>A set of tags to associate with the DAX cluster. </p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Represents the settings used to enable server-side encryption on the cluster.</p>
     pub fn sse_specification(&self) -> ::std::option::Option<&crate::types::SseSpecification> {
@@ -182,6 +188,7 @@ impl CreateClusterInputBuilder {
     /// <li> <p>The first character must be a letter.</p> </li>
     /// <li> <p>A name cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
@@ -208,6 +215,7 @@ impl CreateClusterInputBuilder {
         &self.cluster_name
     }
     /// <p>The compute and memory capacity of the nodes in the cluster.</p>
+    /// This field is required.
     pub fn node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_type = ::std::option::Option::Some(input.into());
         self
@@ -238,6 +246,7 @@ impl CreateClusterInputBuilder {
     /// <p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p> <note>
     /// <p>AWS recommends that you have at least two read replicas per cluster.</p>
     /// </note>
+    /// This field is required.
     pub fn replication_factor(mut self, input: i32) -> Self {
         self.replication_factor = ::std::option::Option::Some(input);
         self
@@ -389,6 +398,7 @@ impl CreateClusterInputBuilder {
         &self.notification_topic_arn
     }
     /// <p>A valid Amazon Resource Name (ARN) that identifies an IAM role. At runtime, DAX will assume this role and use the role's permissions to access DynamoDB on your behalf.</p>
+    /// This field is required.
     pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -479,7 +489,7 @@ impl CreateClusterInputBuilder {
     /// Consumes the builder and constructs a [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_cluster::CreateClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_cluster::CreateClusterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_cluster::CreateClusterInput {
             cluster_name: self.cluster_name,
             node_type: self.node_type,

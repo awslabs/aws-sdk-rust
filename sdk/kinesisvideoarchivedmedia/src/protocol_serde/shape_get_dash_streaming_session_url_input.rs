@@ -2,7 +2,7 @@
 pub fn ser_get_dash_streaming_session_url_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_dash_streaming_session_url::GetDashStreamingSessionUrlInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.dash_fragment_selector {
         #[allow(unused_mut)]
         let mut object_2 = object.key("DASHFragmentSelector").start_object();

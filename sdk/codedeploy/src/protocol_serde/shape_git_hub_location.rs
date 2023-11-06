@@ -2,7 +2,7 @@
 pub fn ser_git_hub_location(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GitHubLocation,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.repository {
         object.key("repository").string(var_1.as_str());
     }

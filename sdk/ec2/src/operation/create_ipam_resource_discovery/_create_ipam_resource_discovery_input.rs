@@ -24,12 +24,16 @@ impl CreateIpamResourceDiscoveryInput {
         self.description.as_deref()
     }
     /// <p>Operating Regions for the IPAM resource discovery. Operating Regions are Amazon Web Services Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services Regions you select as operating Regions.</p>
-    pub fn operating_regions(&self) -> ::std::option::Option<&[crate::types::AddIpamOperatingRegion]> {
-        self.operating_regions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.operating_regions.is_none()`.
+    pub fn operating_regions(&self) -> &[crate::types::AddIpamOperatingRegion] {
+        self.operating_regions.as_deref().unwrap_or_default()
     }
     /// <p>Tag specifications for the IPAM resource discovery.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
     /// <p>A client token for the IPAM resource discovery.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -141,7 +145,7 @@ impl CreateIpamResourceDiscoveryInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_ipam_resource_discovery::CreateIpamResourceDiscoveryInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_ipam_resource_discovery::CreateIpamResourceDiscoveryInput {
             dry_run: self.dry_run,

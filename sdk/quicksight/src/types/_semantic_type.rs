@@ -37,16 +37,20 @@ impl SemanticType {
         self.truthy_cell_value.as_deref()
     }
     /// <p>The other names or aliases for the true cell value.</p>
-    pub fn truthy_cell_value_synonyms(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.truthy_cell_value_synonyms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.truthy_cell_value_synonyms.is_none()`.
+    pub fn truthy_cell_value_synonyms(&self) -> &[::std::string::String] {
+        self.truthy_cell_value_synonyms.as_deref().unwrap_or_default()
     }
     /// <p>The semantic type falsey cell value.</p>
     pub fn falsey_cell_value(&self) -> ::std::option::Option<&str> {
         self.falsey_cell_value.as_deref()
     }
     /// <p>The other names or aliases for the false cell value.</p>
-    pub fn falsey_cell_value_synonyms(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.falsey_cell_value_synonyms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.falsey_cell_value_synonyms.is_none()`.
+    pub fn falsey_cell_value_synonyms(&self) -> &[::std::string::String] {
+        self.falsey_cell_value_synonyms.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for SemanticType {

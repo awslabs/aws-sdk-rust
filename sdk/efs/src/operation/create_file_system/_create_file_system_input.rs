@@ -92,8 +92,10 @@ impl CreateFileSystemInput {
         self.backup
     }
     /// <p>Use to create one or more tags associated with the file system. Each tag is a user-defined key-value pair. Name your file system on creation by including a <code>"Key":"Name","Value":"{value}"</code> key-value pair. Each key must be unique. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateFileSystemInput {
@@ -119,6 +121,7 @@ pub struct CreateFileSystemInputBuilder {
 }
 impl CreateFileSystemInputBuilder {
     /// <p>A string of up to 64 ASCII characters. Amazon EFS uses this to ensure idempotent creation.</p>
+    /// This field is required.
     pub fn creation_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_token = ::std::option::Option::Some(input.into());
         self
@@ -307,7 +310,7 @@ impl CreateFileSystemInputBuilder {
     /// Consumes the builder and constructs a [`CreateFileSystemInput`](crate::operation::create_file_system::CreateFileSystemInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_file_system::CreateFileSystemInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_file_system::CreateFileSystemInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_file_system::CreateFileSystemInput {
             creation_token: self.creation_token,
             performance_mode: self.performance_mode,

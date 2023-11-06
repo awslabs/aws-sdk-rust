@@ -34,6 +34,7 @@ pub struct VerifyOtpMessageInputBuilder {
 }
 impl VerifyOtpMessageInputBuilder {
     /// <p>The unique ID of your Amazon Pinpoint application.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl VerifyOtpMessageInputBuilder {
         &self.application_id
     }
     /// <p>Verify OTP message request.</p>
+    /// This field is required.
     pub fn verify_otp_message_request_parameters(mut self, input: crate::types::VerifyOtpMessageRequestParameters) -> Self {
         self.verify_otp_message_request_parameters = ::std::option::Option::Some(input);
         self
@@ -67,7 +69,7 @@ impl VerifyOtpMessageInputBuilder {
     /// Consumes the builder and constructs a [`VerifyOtpMessageInput`](crate::operation::verify_otp_message::VerifyOtpMessageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::verify_otp_message::VerifyOtpMessageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::verify_otp_message::VerifyOtpMessageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::verify_otp_message::VerifyOtpMessageInput {
             application_id: self.application_id,
             verify_otp_message_request_parameters: self.verify_otp_message_request_parameters,

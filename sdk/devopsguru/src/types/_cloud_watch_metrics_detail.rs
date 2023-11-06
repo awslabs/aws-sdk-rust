@@ -29,8 +29,10 @@ impl CloudWatchMetricsDetail {
         self.namespace.as_deref()
     }
     /// <p> An array of CloudWatch dimensions associated with </p>
-    pub fn dimensions(&self) -> ::std::option::Option<&[crate::types::CloudWatchMetricsDimension]> {
-        self.dimensions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimensions.is_none()`.
+    pub fn dimensions(&self) -> &[crate::types::CloudWatchMetricsDimension] {
+        self.dimensions.as_deref().unwrap_or_default()
     }
     /// <p> The type of statistic associated with the CloudWatch metric. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Statistic">Statistics</a> in the <i>Amazon CloudWatch User Guide</i>. </p>
     pub fn stat(&self) -> ::std::option::Option<&crate::types::CloudWatchMetricsStat> {

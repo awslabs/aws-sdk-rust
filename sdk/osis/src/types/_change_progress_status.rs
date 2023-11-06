@@ -27,8 +27,10 @@ impl ChangeProgressStatus {
         self.total_number_of_stages
     }
     /// <p>Information about the stages that the pipeline is going through to perform the configuration change.</p>
-    pub fn change_progress_stages(&self) -> ::std::option::Option<&[crate::types::ChangeProgressStage]> {
-        self.change_progress_stages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.change_progress_stages.is_none()`.
+    pub fn change_progress_stages(&self) -> &[crate::types::ChangeProgressStage] {
+        self.change_progress_stages.as_deref().unwrap_or_default()
     }
 }
 impl ChangeProgressStatus {

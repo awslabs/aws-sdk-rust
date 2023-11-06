@@ -13,8 +13,10 @@ pub struct RepositoryAggregation {
 }
 impl RepositoryAggregation {
     /// <p>The names of repositories to aggregate findings on.</p>
-    pub fn repositories(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.repositories.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.repositories.is_none()`.
+    pub fn repositories(&self) -> &[crate::types::StringFilter] {
+        self.repositories.as_deref().unwrap_or_default()
     }
     /// <p>The order to sort results by.</p>
     pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {

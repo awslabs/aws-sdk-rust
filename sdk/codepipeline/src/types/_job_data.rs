@@ -39,12 +39,16 @@ impl JobData {
         self.pipeline_context.as_ref()
     }
     /// <p>The artifact supplied to the job.</p>
-    pub fn input_artifacts(&self) -> ::std::option::Option<&[crate::types::Artifact]> {
-        self.input_artifacts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_artifacts.is_none()`.
+    pub fn input_artifacts(&self) -> &[crate::types::Artifact] {
+        self.input_artifacts.as_deref().unwrap_or_default()
     }
     /// <p>The output of the job.</p>
-    pub fn output_artifacts(&self) -> ::std::option::Option<&[crate::types::Artifact]> {
-        self.output_artifacts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_artifacts.is_none()`.
+    pub fn output_artifacts(&self) -> &[crate::types::Artifact] {
+        self.output_artifacts.as_deref().unwrap_or_default()
     }
     /// <p>Represents an Amazon Web Services session credentials object. These credentials are temporary credentials that are issued by Amazon Web Services Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store artifacts for the pipeline in CodePipeline.</p>
     pub fn artifact_credentials(&self) -> ::std::option::Option<&crate::types::AwsSessionCredentials> {

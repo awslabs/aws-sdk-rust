@@ -41,6 +41,7 @@ pub struct ModifyAddressAttributeInputBuilder {
 }
 impl ModifyAddressAttributeInputBuilder {
     /// <p>[EC2-VPC] The allocation ID.</p>
+    /// This field is required.
     pub fn allocation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.allocation_id = ::std::option::Option::Some(input.into());
         self
@@ -85,8 +86,10 @@ impl ModifyAddressAttributeInputBuilder {
     /// Consumes the builder and constructs a [`ModifyAddressAttributeInput`](crate::operation::modify_address_attribute::ModifyAddressAttributeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_address_attribute::ModifyAddressAttributeInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::modify_address_attribute::ModifyAddressAttributeInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::modify_address_attribute::ModifyAddressAttributeInput {
             allocation_id: self.allocation_id,
             domain_name: self.domain_name,

@@ -5,15 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SyncBlocker {
     /// <p>The ID of the sync blocker.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The type of the sync blocker.</p>
-    pub r#type: ::std::option::Option<crate::types::BlockerType>,
+    pub r#type: crate::types::BlockerType,
     /// <p>The status of the sync blocker.</p>
-    pub status: ::std::option::Option<crate::types::BlockerStatus>,
+    pub status: crate::types::BlockerStatus,
     /// <p>The reason why the sync blocker was created.</p>
-    pub created_reason: ::std::option::Option<::std::string::String>,
+    pub created_reason: ::std::string::String,
     /// <p>The time when the sync blocker was created.</p>
-    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The contexts for the sync blocker.</p>
     pub contexts: ::std::option::Option<::std::vec::Vec<crate::types::SyncBlockerContext>>,
     /// <p>The reason the sync blocker was resolved.</p>
@@ -23,28 +23,32 @@ pub struct SyncBlocker {
 }
 impl SyncBlocker {
     /// <p>The ID of the sync blocker.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The type of the sync blocker.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::BlockerType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::BlockerType {
+        &self.r#type
     }
     /// <p>The status of the sync blocker.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::BlockerStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::BlockerStatus {
+        &self.status
     }
     /// <p>The reason why the sync blocker was created.</p>
-    pub fn created_reason(&self) -> ::std::option::Option<&str> {
-        self.created_reason.as_deref()
+    pub fn created_reason(&self) -> &str {
+        use std::ops::Deref;
+        self.created_reason.deref()
     }
     /// <p>The time when the sync blocker was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_at.as_ref()
+    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_at
     }
     /// <p>The contexts for the sync blocker.</p>
-    pub fn contexts(&self) -> ::std::option::Option<&[crate::types::SyncBlockerContext]> {
-        self.contexts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.contexts.is_none()`.
+    pub fn contexts(&self) -> &[crate::types::SyncBlockerContext] {
+        self.contexts.as_deref().unwrap_or_default()
     }
     /// <p>The reason the sync blocker was resolved.</p>
     pub fn resolved_reason(&self) -> ::std::option::Option<&str> {
@@ -77,6 +81,7 @@ pub struct SyncBlockerBuilder {
 }
 impl SyncBlockerBuilder {
     /// <p>The ID of the sync blocker.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +96,7 @@ impl SyncBlockerBuilder {
         &self.id
     }
     /// <p>The type of the sync blocker.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::BlockerType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -105,6 +111,7 @@ impl SyncBlockerBuilder {
         &self.r#type
     }
     /// <p>The status of the sync blocker.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::BlockerStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -119,6 +126,7 @@ impl SyncBlockerBuilder {
         &self.status
     }
     /// <p>The reason why the sync blocker was created.</p>
+    /// This field is required.
     pub fn created_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_reason = ::std::option::Option::Some(input.into());
         self
@@ -133,6 +141,7 @@ impl SyncBlockerBuilder {
         &self.created_reason
     }
     /// <p>The time when the sync blocker was created.</p>
+    /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
@@ -195,16 +204,47 @@ impl SyncBlockerBuilder {
         &self.resolved_at
     }
     /// Consumes the builder and constructs a [`SyncBlocker`](crate::types::SyncBlocker).
-    pub fn build(self) -> crate::types::SyncBlocker {
-        crate::types::SyncBlocker {
-            id: self.id,
-            r#type: self.r#type,
-            status: self.status,
-            created_reason: self.created_reason,
-            created_at: self.created_at,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::SyncBlockerBuilder::id)
+    /// - [`r#type`](crate::types::builders::SyncBlockerBuilder::r#type)
+    /// - [`status`](crate::types::builders::SyncBlockerBuilder::status)
+    /// - [`created_reason`](crate::types::builders::SyncBlockerBuilder::created_reason)
+    /// - [`created_at`](crate::types::builders::SyncBlockerBuilder::created_at)
+    pub fn build(self) -> ::std::result::Result<crate::types::SyncBlocker, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SyncBlocker {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building SyncBlocker",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building SyncBlocker",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building SyncBlocker",
+                )
+            })?,
+            created_reason: self.created_reason.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_reason",
+                    "created_reason was not specified but it is required when building SyncBlocker",
+                )
+            })?,
+            created_at: self.created_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_at",
+                    "created_at was not specified but it is required when building SyncBlocker",
+                )
+            })?,
             contexts: self.contexts,
             resolved_reason: self.resolved_reason,
             resolved_at: self.resolved_at,
-        }
+        })
     }
 }

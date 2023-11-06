@@ -13,7 +13,7 @@
 pub struct TranscriptFilter {
     /// <p>Flag the presence or absence of an exact match to the phrases that you specify. For example, if you specify the phrase "speak to a manager" as your <code>Targets</code> value, only that exact phrase is flagged.</p>
     /// <p>Note that semantic matching is not supported. For example, if your customer says "speak to <i>the</i> manager", instead of "speak to <i>a</i> manager", your content is not flagged.</p>
-    pub transcript_filter_type: ::std::option::Option<crate::types::TranscriptFilterType>,
+    pub transcript_filter_type: crate::types::TranscriptFilterType,
     /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for the specified key words or phrases. See for more detail.</p>
     pub absolute_time_range: ::std::option::Option<crate::types::AbsoluteTimeRange>,
     /// <p>Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for the specified key words or phrases. See for more detail.</p>
@@ -23,13 +23,13 @@ pub struct TranscriptFilter {
     /// <p>Set to <code>TRUE</code> to flag the absence of the phrase that you specified in your request. Set to <code>FALSE</code> to flag the presence of the phrase that you specified in your request.</p>
     pub negate: ::std::option::Option<bool>,
     /// <p>Specify the phrases that you want to flag.</p>
-    pub targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub targets: ::std::vec::Vec<::std::string::String>,
 }
 impl TranscriptFilter {
     /// <p>Flag the presence or absence of an exact match to the phrases that you specify. For example, if you specify the phrase "speak to a manager" as your <code>Targets</code> value, only that exact phrase is flagged.</p>
     /// <p>Note that semantic matching is not supported. For example, if your customer says "speak to <i>the</i> manager", instead of "speak to <i>a</i> manager", your content is not flagged.</p>
-    pub fn transcript_filter_type(&self) -> ::std::option::Option<&crate::types::TranscriptFilterType> {
-        self.transcript_filter_type.as_ref()
+    pub fn transcript_filter_type(&self) -> &crate::types::TranscriptFilterType {
+        &self.transcript_filter_type
     }
     /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for the specified key words or phrases. See for more detail.</p>
     pub fn absolute_time_range(&self) -> ::std::option::Option<&crate::types::AbsoluteTimeRange> {
@@ -48,8 +48,9 @@ impl TranscriptFilter {
         self.negate
     }
     /// <p>Specify the phrases that you want to flag.</p>
-    pub fn targets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.targets.as_deref()
+    pub fn targets(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.targets.deref()
     }
 }
 impl TranscriptFilter {
@@ -73,6 +74,7 @@ pub struct TranscriptFilterBuilder {
 impl TranscriptFilterBuilder {
     /// <p>Flag the presence or absence of an exact match to the phrases that you specify. For example, if you specify the phrase "speak to a manager" as your <code>Targets</code> value, only that exact phrase is flagged.</p>
     /// <p>Note that semantic matching is not supported. For example, if your customer says "speak to <i>the</i> manager", instead of "speak to <i>a</i> manager", your content is not flagged.</p>
+    /// This field is required.
     pub fn transcript_filter_type(mut self, input: crate::types::TranscriptFilterType) -> Self {
         self.transcript_filter_type = ::std::option::Option::Some(input);
         self
@@ -165,14 +167,27 @@ impl TranscriptFilterBuilder {
         &self.targets
     }
     /// Consumes the builder and constructs a [`TranscriptFilter`](crate::types::TranscriptFilter).
-    pub fn build(self) -> crate::types::TranscriptFilter {
-        crate::types::TranscriptFilter {
-            transcript_filter_type: self.transcript_filter_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`transcript_filter_type`](crate::types::builders::TranscriptFilterBuilder::transcript_filter_type)
+    /// - [`targets`](crate::types::builders::TranscriptFilterBuilder::targets)
+    pub fn build(self) -> ::std::result::Result<crate::types::TranscriptFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TranscriptFilter {
+            transcript_filter_type: self.transcript_filter_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "transcript_filter_type",
+                    "transcript_filter_type was not specified but it is required when building TranscriptFilter",
+                )
+            })?,
             absolute_time_range: self.absolute_time_range,
             relative_time_range: self.relative_time_range,
             participant_role: self.participant_role,
             negate: self.negate,
-            targets: self.targets,
-        }
+            targets: self.targets.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "targets",
+                    "targets was not specified but it is required when building TranscriptFilter",
+                )
+            })?,
+        })
     }
 }

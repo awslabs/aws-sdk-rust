@@ -64,8 +64,10 @@ impl DisableMetricsCollectionInput {
     /// </ul>
     /// <p>If you omit this property, all metrics are disabled.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    pub fn metrics(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metrics.is_none()`.
+    pub fn metrics(&self) -> &[::std::string::String] {
+        self.metrics.as_deref().unwrap_or_default()
     }
 }
 impl DisableMetricsCollectionInput {
@@ -84,6 +86,7 @@ pub struct DisableMetricsCollectionInputBuilder {
 }
 impl DisableMetricsCollectionInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
+    /// This field is required.
     pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
@@ -197,7 +200,7 @@ impl DisableMetricsCollectionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_metrics_collection::DisableMetricsCollectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disable_metrics_collection::DisableMetricsCollectionInput {
             auto_scaling_group_name: self.auto_scaling_group_name,

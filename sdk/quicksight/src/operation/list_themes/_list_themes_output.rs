@@ -15,8 +15,10 @@ pub struct ListThemesOutput {
 }
 impl ListThemesOutput {
     /// <p>Information about the themes in the list.</p>
-    pub fn theme_summary_list(&self) -> ::std::option::Option<&[crate::types::ThemeSummary]> {
-        self.theme_summary_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.theme_summary_list.is_none()`.
+    pub fn theme_summary_list(&self) -> &[crate::types::ThemeSummary] {
+        self.theme_summary_list.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

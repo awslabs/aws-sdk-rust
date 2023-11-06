@@ -10,20 +10,20 @@ pub struct DescribeTimeSeriesOutput {
     /// <p>The alias that identifies the time series.</p>
     pub alias: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the time series.</p>
-    pub time_series_id: ::std::option::Option<::std::string::String>,
+    pub time_series_id: ::std::string::String,
     /// <p>The data type of the time series.</p>
     /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this time series.</p>
-    pub data_type: ::std::option::Option<crate::types::PropertyDataType>,
+    pub data_type: crate::types::PropertyDataType,
     /// <p>The data type of the structure for this time series. This parameter is required for time series that have the <code>STRUCT</code> data type.</p>
     /// <p>The options for this parameter depend on the type of the composite model in which you created the asset property that is associated with your time series. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
     pub data_type_spec: ::std::option::Option<::std::string::String>,
     /// <p>The date that the time series was created, in Unix epoch time.</p>
-    pub time_series_creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub time_series_creation_date: ::aws_smithy_types::DateTime,
     /// <p>The date that the time series was last updated, in Unix epoch time.</p>
-    pub time_series_last_update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub time_series_last_update_date: ::aws_smithy_types::DateTime,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the time series, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:time-series/${TimeSeriesId}</code> </p>
-    pub time_series_arn: ::std::option::Option<::std::string::String>,
+    pub time_series_arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl DescribeTimeSeriesOutput {
@@ -40,13 +40,14 @@ impl DescribeTimeSeriesOutput {
         self.alias.as_deref()
     }
     /// <p>The ID of the time series.</p>
-    pub fn time_series_id(&self) -> ::std::option::Option<&str> {
-        self.time_series_id.as_deref()
+    pub fn time_series_id(&self) -> &str {
+        use std::ops::Deref;
+        self.time_series_id.deref()
     }
     /// <p>The data type of the time series.</p>
     /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this time series.</p>
-    pub fn data_type(&self) -> ::std::option::Option<&crate::types::PropertyDataType> {
-        self.data_type.as_ref()
+    pub fn data_type(&self) -> &crate::types::PropertyDataType {
+        &self.data_type
     }
     /// <p>The data type of the structure for this time series. This parameter is required for time series that have the <code>STRUCT</code> data type.</p>
     /// <p>The options for this parameter depend on the type of the composite model in which you created the asset property that is associated with your time series. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
@@ -54,17 +55,18 @@ impl DescribeTimeSeriesOutput {
         self.data_type_spec.as_deref()
     }
     /// <p>The date that the time series was created, in Unix epoch time.</p>
-    pub fn time_series_creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.time_series_creation_date.as_ref()
+    pub fn time_series_creation_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.time_series_creation_date
     }
     /// <p>The date that the time series was last updated, in Unix epoch time.</p>
-    pub fn time_series_last_update_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.time_series_last_update_date.as_ref()
+    pub fn time_series_last_update_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.time_series_last_update_date
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the time series, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:time-series/${TimeSeriesId}</code> </p>
-    pub fn time_series_arn(&self) -> ::std::option::Option<&str> {
-        self.time_series_arn.as_deref()
+    pub fn time_series_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.time_series_arn.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeTimeSeriesOutput {
@@ -138,6 +140,7 @@ impl DescribeTimeSeriesOutputBuilder {
         &self.alias
     }
     /// <p>The ID of the time series.</p>
+    /// This field is required.
     pub fn time_series_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.time_series_id = ::std::option::Option::Some(input.into());
         self
@@ -153,6 +156,7 @@ impl DescribeTimeSeriesOutputBuilder {
     }
     /// <p>The data type of the time series.</p>
     /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this time series.</p>
+    /// This field is required.
     pub fn data_type(mut self, input: crate::types::PropertyDataType) -> Self {
         self.data_type = ::std::option::Option::Some(input);
         self
@@ -186,6 +190,7 @@ impl DescribeTimeSeriesOutputBuilder {
         &self.data_type_spec
     }
     /// <p>The date that the time series was created, in Unix epoch time.</p>
+    /// This field is required.
     pub fn time_series_creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.time_series_creation_date = ::std::option::Option::Some(input);
         self
@@ -200,6 +205,7 @@ impl DescribeTimeSeriesOutputBuilder {
         &self.time_series_creation_date
     }
     /// <p>The date that the time series was last updated, in Unix epoch time.</p>
+    /// This field is required.
     pub fn time_series_last_update_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.time_series_last_update_date = ::std::option::Option::Some(input);
         self
@@ -215,6 +221,7 @@ impl DescribeTimeSeriesOutputBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the time series, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:time-series/${TimeSeriesId}</code> </p>
+    /// This field is required.
     pub fn time_series_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.time_series_arn = ::std::option::Option::Some(input.into());
         self
@@ -240,18 +247,52 @@ impl DescribeTimeSeriesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeTimeSeriesOutput`](crate::operation::describe_time_series::DescribeTimeSeriesOutput).
-    pub fn build(self) -> crate::operation::describe_time_series::DescribeTimeSeriesOutput {
-        crate::operation::describe_time_series::DescribeTimeSeriesOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`time_series_id`](crate::operation::describe_time_series::builders::DescribeTimeSeriesOutputBuilder::time_series_id)
+    /// - [`data_type`](crate::operation::describe_time_series::builders::DescribeTimeSeriesOutputBuilder::data_type)
+    /// - [`time_series_creation_date`](crate::operation::describe_time_series::builders::DescribeTimeSeriesOutputBuilder::time_series_creation_date)
+    /// - [`time_series_last_update_date`](crate::operation::describe_time_series::builders::DescribeTimeSeriesOutputBuilder::time_series_last_update_date)
+    /// - [`time_series_arn`](crate::operation::describe_time_series::builders::DescribeTimeSeriesOutputBuilder::time_series_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_time_series::DescribeTimeSeriesOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_time_series::DescribeTimeSeriesOutput {
             asset_id: self.asset_id,
             property_id: self.property_id,
             alias: self.alias,
-            time_series_id: self.time_series_id,
-            data_type: self.data_type,
+            time_series_id: self.time_series_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "time_series_id",
+                    "time_series_id was not specified but it is required when building DescribeTimeSeriesOutput",
+                )
+            })?,
+            data_type: self.data_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "data_type",
+                    "data_type was not specified but it is required when building DescribeTimeSeriesOutput",
+                )
+            })?,
             data_type_spec: self.data_type_spec,
-            time_series_creation_date: self.time_series_creation_date,
-            time_series_last_update_date: self.time_series_last_update_date,
-            time_series_arn: self.time_series_arn,
+            time_series_creation_date: self.time_series_creation_date.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "time_series_creation_date",
+                    "time_series_creation_date was not specified but it is required when building DescribeTimeSeriesOutput",
+                )
+            })?,
+            time_series_last_update_date: self.time_series_last_update_date.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "time_series_last_update_date",
+                    "time_series_last_update_date was not specified but it is required when building DescribeTimeSeriesOutput",
+                )
+            })?,
+            time_series_arn: self.time_series_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "time_series_arn",
+                    "time_series_arn was not specified but it is required when building DescribeTimeSeriesOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

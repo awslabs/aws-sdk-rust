@@ -10,14 +10,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdvancedOptionsStatus {
     /// <p> Specifies the status of advanced options for the specified Elasticsearch domain.</p>
-    pub options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub options: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     /// <p> Specifies the status of <code>OptionStatus</code> for advanced options for the specified Elasticsearch domain.</p>
     pub status: ::std::option::Option<crate::types::OptionStatus>,
 }
 impl AdvancedOptionsStatus {
     /// <p> Specifies the status of advanced options for the specified Elasticsearch domain.</p>
-    pub fn options(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
-        self.options.as_ref()
+    pub fn options(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+        &self.options
     }
     /// <p> Specifies the status of <code>OptionStatus</code> for advanced options for the specified Elasticsearch domain.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::OptionStatus> {
@@ -60,6 +60,7 @@ impl AdvancedOptionsStatusBuilder {
         &self.options
     }
     /// <p> Specifies the status of <code>OptionStatus</code> for advanced options for the specified Elasticsearch domain.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -74,10 +75,17 @@ impl AdvancedOptionsStatusBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`AdvancedOptionsStatus`](crate::types::AdvancedOptionsStatus).
-    pub fn build(self) -> crate::types::AdvancedOptionsStatus {
-        crate::types::AdvancedOptionsStatus {
-            options: self.options,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`options`](crate::types::builders::AdvancedOptionsStatusBuilder::options)
+    pub fn build(self) -> ::std::result::Result<crate::types::AdvancedOptionsStatus, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AdvancedOptionsStatus {
+            options: self.options.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "options",
+                    "options was not specified but it is required when building AdvancedOptionsStatus",
+                )
+            })?,
             status: self.status,
-        }
+        })
     }
 }

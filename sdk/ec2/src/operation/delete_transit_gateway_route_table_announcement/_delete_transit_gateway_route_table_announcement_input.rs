@@ -35,6 +35,7 @@ pub struct DeleteTransitGatewayRouteTableAnnouncementInputBuilder {
 }
 impl DeleteTransitGatewayRouteTableAnnouncementInputBuilder {
     /// <p>The transit gateway route table ID that's being deleted. </p>
+    /// This field is required.
     pub fn transit_gateway_route_table_announcement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_route_table_announcement_id = ::std::option::Option::Some(input.into());
         self
@@ -67,7 +68,7 @@ impl DeleteTransitGatewayRouteTableAnnouncementInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_transit_gateway_route_table_announcement::DeleteTransitGatewayRouteTableAnnouncementInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_transit_gateway_route_table_announcement::DeleteTransitGatewayRouteTableAnnouncementInput {

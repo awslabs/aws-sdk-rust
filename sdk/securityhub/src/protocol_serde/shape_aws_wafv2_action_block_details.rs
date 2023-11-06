@@ -2,7 +2,7 @@
 pub fn ser_aws_wafv2_action_block_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsWafv2ActionBlockDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.custom_response {
         #[allow(unused_mut)]
         let mut object_2 = object.key("CustomResponse").start_object();

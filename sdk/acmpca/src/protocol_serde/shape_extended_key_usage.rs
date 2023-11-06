@@ -2,7 +2,7 @@
 pub fn ser_extended_key_usage(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ExtendedKeyUsage,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.extended_key_usage_type {
         object.key("ExtendedKeyUsageType").string(var_1.as_str());
     }

@@ -41,6 +41,7 @@ pub struct ListIdMappingJobsInputBuilder {
 }
 impl ListIdMappingJobsInputBuilder {
     /// <p>The name of the workflow to be retrieved.</p>
+    /// This field is required.
     pub fn workflow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_name = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl ListIdMappingJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListIdMappingJobsInput`](crate::operation::list_id_mapping_jobs::ListIdMappingJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_id_mapping_jobs::ListIdMappingJobsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_id_mapping_jobs::ListIdMappingJobsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_id_mapping_jobs::ListIdMappingJobsInput {
             workflow_name: self.workflow_name,
             next_token: self.next_token,

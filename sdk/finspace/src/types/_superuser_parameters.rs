@@ -5,24 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SuperuserParameters {
     /// <p>The email address of the superuser.</p>
-    pub email_address: ::std::option::Option<::std::string::String>,
+    pub email_address: ::std::string::String,
     /// <p>The first name of the superuser.</p>
-    pub first_name: ::std::option::Option<::std::string::String>,
+    pub first_name: ::std::string::String,
     /// <p>The last name of the superuser.</p>
-    pub last_name: ::std::option::Option<::std::string::String>,
+    pub last_name: ::std::string::String,
 }
 impl SuperuserParameters {
     /// <p>The email address of the superuser.</p>
-    pub fn email_address(&self) -> ::std::option::Option<&str> {
-        self.email_address.as_deref()
+    pub fn email_address(&self) -> &str {
+        use std::ops::Deref;
+        self.email_address.deref()
     }
     /// <p>The first name of the superuser.</p>
-    pub fn first_name(&self) -> ::std::option::Option<&str> {
-        self.first_name.as_deref()
+    pub fn first_name(&self) -> &str {
+        use std::ops::Deref;
+        self.first_name.deref()
     }
     /// <p>The last name of the superuser.</p>
-    pub fn last_name(&self) -> ::std::option::Option<&str> {
-        self.last_name.as_deref()
+    pub fn last_name(&self) -> &str {
+        use std::ops::Deref;
+        self.last_name.deref()
     }
 }
 impl ::std::fmt::Debug for SuperuserParameters {
@@ -51,6 +54,7 @@ pub struct SuperuserParametersBuilder {
 }
 impl SuperuserParametersBuilder {
     /// <p>The email address of the superuser.</p>
+    /// This field is required.
     pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_address = ::std::option::Option::Some(input.into());
         self
@@ -65,6 +69,7 @@ impl SuperuserParametersBuilder {
         &self.email_address
     }
     /// <p>The first name of the superuser.</p>
+    /// This field is required.
     pub fn first_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.first_name = ::std::option::Option::Some(input.into());
         self
@@ -79,6 +84,7 @@ impl SuperuserParametersBuilder {
         &self.first_name
     }
     /// <p>The last name of the superuser.</p>
+    /// This field is required.
     pub fn last_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_name = ::std::option::Option::Some(input.into());
         self
@@ -93,12 +99,31 @@ impl SuperuserParametersBuilder {
         &self.last_name
     }
     /// Consumes the builder and constructs a [`SuperuserParameters`](crate::types::SuperuserParameters).
-    pub fn build(self) -> crate::types::SuperuserParameters {
-        crate::types::SuperuserParameters {
-            email_address: self.email_address,
-            first_name: self.first_name,
-            last_name: self.last_name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`email_address`](crate::types::builders::SuperuserParametersBuilder::email_address)
+    /// - [`first_name`](crate::types::builders::SuperuserParametersBuilder::first_name)
+    /// - [`last_name`](crate::types::builders::SuperuserParametersBuilder::last_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::SuperuserParameters, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SuperuserParameters {
+            email_address: self.email_address.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "email_address",
+                    "email_address was not specified but it is required when building SuperuserParameters",
+                )
+            })?,
+            first_name: self.first_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "first_name",
+                    "first_name was not specified but it is required when building SuperuserParameters",
+                )
+            })?,
+            last_name: self.last_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "last_name",
+                    "last_name was not specified but it is required when building SuperuserParameters",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for SuperuserParametersBuilder {

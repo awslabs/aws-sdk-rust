@@ -28,6 +28,7 @@ pub struct GetRepositoryInputBuilder {
 }
 impl GetRepositoryInputBuilder {
     /// <p>The name of the repository to get information about.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl GetRepositoryInputBuilder {
     /// Consumes the builder and constructs a [`GetRepositoryInput`](crate::operation::get_repository::GetRepositoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_repository::GetRepositoryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_repository::GetRepositoryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_repository::GetRepositoryInput {
             repository_name: self.repository_name,
         })

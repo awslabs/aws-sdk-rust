@@ -27,6 +27,7 @@ pub struct DeleteForecastInputBuilder {
 }
 impl DeleteForecastInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the forecast to delete.</p>
+    /// This field is required.
     pub fn forecast_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.forecast_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteForecastInputBuilder {
     /// Consumes the builder and constructs a [`DeleteForecastInput`](crate::operation::delete_forecast::DeleteForecastInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_forecast::DeleteForecastInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_forecast::DeleteForecastInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_forecast::DeleteForecastInput {
             forecast_arn: self.forecast_arn,
         })

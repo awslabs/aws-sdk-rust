@@ -52,8 +52,10 @@ impl StreamingImage {
         self.encryption_configuration.as_ref()
     }
     /// <p>The list of EULAs that must be accepted before a Streaming Session can be started using this streaming image.</p>
-    pub fn eula_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.eula_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.eula_ids.is_none()`.
+    pub fn eula_ids(&self) -> &[::std::string::String] {
+        self.eula_ids.as_deref().unwrap_or_default()
     }
     /// <p>A friendly name for a streaming image resource.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {

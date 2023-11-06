@@ -7,15 +7,15 @@ pub struct EventActionEntry {
     /// <p>What occurs after a certain event.</p>
     pub action: ::std::option::Option<crate::types::Action>,
     /// <p>The Amazon Resource Name (ARN) for the event action.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The date and time that the event action was created, in ISO 8601 format.</p>
-    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_at: ::aws_smithy_types::DateTime,
     /// <p>What occurs to start an action.</p>
     pub event: ::std::option::Option<crate::types::Event>,
     /// <p>The unique identifier for the event action.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
-    pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub updated_at: ::aws_smithy_types::DateTime,
 }
 impl EventActionEntry {
     /// <p>What occurs after a certain event.</p>
@@ -23,24 +23,26 @@ impl EventActionEntry {
         self.action.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) for the event action.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The date and time that the event action was created, in ISO 8601 format.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_at.as_ref()
+    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_at
     }
     /// <p>What occurs to start an action.</p>
     pub fn event(&self) -> ::std::option::Option<&crate::types::Event> {
         self.event.as_ref()
     }
     /// <p>The unique identifier for the event action.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.updated_at.as_ref()
+    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.updated_at
     }
 }
 impl EventActionEntry {
@@ -63,6 +65,7 @@ pub struct EventActionEntryBuilder {
 }
 impl EventActionEntryBuilder {
     /// <p>What occurs after a certain event.</p>
+    /// This field is required.
     pub fn action(mut self, input: crate::types::Action) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
@@ -77,6 +80,7 @@ impl EventActionEntryBuilder {
         &self.action
     }
     /// <p>The Amazon Resource Name (ARN) for the event action.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +95,7 @@ impl EventActionEntryBuilder {
         &self.arn
     }
     /// <p>The date and time that the event action was created, in ISO 8601 format.</p>
+    /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
@@ -105,6 +110,7 @@ impl EventActionEntryBuilder {
         &self.created_at
     }
     /// <p>What occurs to start an action.</p>
+    /// This field is required.
     pub fn event(mut self, input: crate::types::Event) -> Self {
         self.event = ::std::option::Option::Some(input);
         self
@@ -119,6 +125,7 @@ impl EventActionEntryBuilder {
         &self.event
     }
     /// <p>The unique identifier for the event action.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -133,6 +140,7 @@ impl EventActionEntryBuilder {
         &self.id
     }
     /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
+    /// This field is required.
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
@@ -147,14 +155,39 @@ impl EventActionEntryBuilder {
         &self.updated_at
     }
     /// Consumes the builder and constructs a [`EventActionEntry`](crate::types::EventActionEntry).
-    pub fn build(self) -> crate::types::EventActionEntry {
-        crate::types::EventActionEntry {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::EventActionEntryBuilder::arn)
+    /// - [`created_at`](crate::types::builders::EventActionEntryBuilder::created_at)
+    /// - [`id`](crate::types::builders::EventActionEntryBuilder::id)
+    /// - [`updated_at`](crate::types::builders::EventActionEntryBuilder::updated_at)
+    pub fn build(self) -> ::std::result::Result<crate::types::EventActionEntry, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EventActionEntry {
             action: self.action,
-            arn: self.arn,
-            created_at: self.created_at,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building EventActionEntry",
+                )
+            })?,
+            created_at: self.created_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_at",
+                    "created_at was not specified but it is required when building EventActionEntry",
+                )
+            })?,
             event: self.event,
-            id: self.id,
-            updated_at: self.updated_at,
-        }
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building EventActionEntry",
+                )
+            })?,
+            updated_at: self.updated_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "updated_at",
+                    "updated_at was not specified but it is required when building EventActionEntry",
+                )
+            })?,
+        })
     }
 }

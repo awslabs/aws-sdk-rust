@@ -27,6 +27,7 @@ pub struct StopGameSessionPlacementInputBuilder {
 }
 impl StopGameSessionPlacementInputBuilder {
     /// <p>A unique identifier for a game session placement to stop.</p>
+    /// This field is required.
     pub fn placement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.placement_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl StopGameSessionPlacementInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_game_session_placement::StopGameSessionPlacementInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::stop_game_session_placement::StopGameSessionPlacementInput {
             placement_id: self.placement_id,

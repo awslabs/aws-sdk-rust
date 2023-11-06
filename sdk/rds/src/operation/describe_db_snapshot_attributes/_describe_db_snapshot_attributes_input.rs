@@ -28,6 +28,7 @@ pub struct DescribeDbSnapshotAttributesInputBuilder {
 }
 impl DescribeDbSnapshotAttributesInputBuilder {
     /// <p>The identifier for the DB snapshot to describe the attributes for.</p>
+    /// This field is required.
     pub fn db_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_snapshot_identifier = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl DescribeDbSnapshotAttributesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_db_snapshot_attributes::DescribeDbSnapshotAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_db_snapshot_attributes::DescribeDbSnapshotAttributesInput {
             db_snapshot_identifier: self.db_snapshot_identifier,

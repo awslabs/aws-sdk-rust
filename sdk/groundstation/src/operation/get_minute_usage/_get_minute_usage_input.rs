@@ -35,6 +35,7 @@ pub struct GetMinuteUsageInputBuilder {
 }
 impl GetMinuteUsageInputBuilder {
     /// <p>The month being requested, with a value of 1-12.</p>
+    /// This field is required.
     pub fn month(mut self, input: i32) -> Self {
         self.month = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl GetMinuteUsageInputBuilder {
         &self.month
     }
     /// <p>The year being requested, in the format of YYYY.</p>
+    /// This field is required.
     pub fn year(mut self, input: i32) -> Self {
         self.year = ::std::option::Option::Some(input);
         self
@@ -65,7 +67,7 @@ impl GetMinuteUsageInputBuilder {
     /// Consumes the builder and constructs a [`GetMinuteUsageInput`](crate::operation::get_minute_usage::GetMinuteUsageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_minute_usage::GetMinuteUsageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_minute_usage::GetMinuteUsageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_minute_usage::GetMinuteUsageInput {
             month: self.month,
             year: self.year,

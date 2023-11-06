@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualServiceBackend {
     /// <p>The name of the virtual service that is acting as a virtual node backend.</p>
-    pub virtual_service_name: ::std::option::Option<::std::string::String>,
+    pub virtual_service_name: ::std::string::String,
     /// <p>A reference to an object that represents the client policy for a backend.</p>
     pub client_policy: ::std::option::Option<crate::types::ClientPolicy>,
 }
 impl VirtualServiceBackend {
     /// <p>The name of the virtual service that is acting as a virtual node backend.</p>
-    pub fn virtual_service_name(&self) -> ::std::option::Option<&str> {
-        self.virtual_service_name.as_deref()
+    pub fn virtual_service_name(&self) -> &str {
+        use std::ops::Deref;
+        self.virtual_service_name.deref()
     }
     /// <p>A reference to an object that represents the client policy for a backend.</p>
     pub fn client_policy(&self) -> ::std::option::Option<&crate::types::ClientPolicy> {
@@ -35,6 +36,7 @@ pub struct VirtualServiceBackendBuilder {
 }
 impl VirtualServiceBackendBuilder {
     /// <p>The name of the virtual service that is acting as a virtual node backend.</p>
+    /// This field is required.
     pub fn virtual_service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_service_name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl VirtualServiceBackendBuilder {
         &self.client_policy
     }
     /// Consumes the builder and constructs a [`VirtualServiceBackend`](crate::types::VirtualServiceBackend).
-    pub fn build(self) -> crate::types::VirtualServiceBackend {
-        crate::types::VirtualServiceBackend {
-            virtual_service_name: self.virtual_service_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`virtual_service_name`](crate::types::builders::VirtualServiceBackendBuilder::virtual_service_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::VirtualServiceBackend, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::VirtualServiceBackend {
+            virtual_service_name: self.virtual_service_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "virtual_service_name",
+                    "virtual_service_name was not specified but it is required when building VirtualServiceBackend",
+                )
+            })?,
             client_policy: self.client_policy,
-        }
+        })
     }
 }

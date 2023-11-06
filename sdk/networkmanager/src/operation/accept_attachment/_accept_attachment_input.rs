@@ -27,6 +27,7 @@ pub struct AcceptAttachmentInputBuilder {
 }
 impl AcceptAttachmentInputBuilder {
     /// <p>The ID of the attachment. </p>
+    /// This field is required.
     pub fn attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attachment_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl AcceptAttachmentInputBuilder {
     /// Consumes the builder and constructs a [`AcceptAttachmentInput`](crate::operation::accept_attachment::AcceptAttachmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::accept_attachment::AcceptAttachmentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::accept_attachment::AcceptAttachmentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::accept_attachment::AcceptAttachmentInput {
             attachment_id: self.attachment_id,
         })

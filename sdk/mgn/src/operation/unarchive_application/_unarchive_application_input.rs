@@ -34,6 +34,7 @@ pub struct UnarchiveApplicationInputBuilder {
 }
 impl UnarchiveApplicationInputBuilder {
     /// <p>Application ID.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl UnarchiveApplicationInputBuilder {
     /// Consumes the builder and constructs a [`UnarchiveApplicationInput`](crate::operation::unarchive_application::UnarchiveApplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::unarchive_application::UnarchiveApplicationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::unarchive_application::UnarchiveApplicationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::unarchive_application::UnarchiveApplicationInput {
             application_id: self.application_id,

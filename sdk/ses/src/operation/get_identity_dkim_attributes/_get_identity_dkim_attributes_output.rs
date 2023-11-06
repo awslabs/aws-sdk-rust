@@ -5,15 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIdentityDkimAttributesOutput {
     /// <p>The DKIM attributes for an email address or a domain.</p>
-    pub dkim_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IdentityDkimAttributes>>,
+    pub dkim_attributes: ::std::collections::HashMap<::std::string::String, crate::types::IdentityDkimAttributes>,
     _request_id: Option<String>,
 }
 impl GetIdentityDkimAttributesOutput {
     /// <p>The DKIM attributes for an email address or a domain.</p>
-    pub fn dkim_attributes(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::IdentityDkimAttributes>> {
-        self.dkim_attributes.as_ref()
+    pub fn dkim_attributes(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::IdentityDkimAttributes> {
+        &self.dkim_attributes
     }
 }
 impl ::aws_http::request_id::RequestId for GetIdentityDkimAttributesOutput {
@@ -71,10 +69,22 @@ impl GetIdentityDkimAttributesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetIdentityDkimAttributesOutput`](crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributesOutput).
-    pub fn build(self) -> crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributesOutput {
-        crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributesOutput {
-            dkim_attributes: self.dkim_attributes,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`dkim_attributes`](crate::operation::get_identity_dkim_attributes::builders::GetIdentityDkimAttributesOutputBuilder::dkim_attributes)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributesOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributesOutput {
+            dkim_attributes: self.dkim_attributes.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "dkim_attributes",
+                    "dkim_attributes was not specified but it is required when building GetIdentityDkimAttributesOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

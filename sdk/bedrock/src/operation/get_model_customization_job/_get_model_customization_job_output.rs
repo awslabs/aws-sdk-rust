@@ -4,31 +4,31 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetModelCustomizationJobOutput {
     /// <p>The ARN of the customization job.</p>
-    pub job_arn: ::std::option::Option<::std::string::String>,
+    pub job_arn: ::std::string::String,
     /// <p>The name of the customization job.</p>
-    pub job_name: ::std::option::Option<::std::string::String>,
+    pub job_name: ::std::string::String,
     /// <p>The name of the output model.</p>
-    pub output_model_name: ::std::option::Option<::std::string::String>,
+    pub output_model_name: ::std::string::String,
     /// <p>The ARN of the output model.</p>
     pub output_model_arn: ::std::option::Option<::std::string::String>,
     /// <p>The token that you specified in the CreateCustomizationJob request.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM role.</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
     /// <p>The status of the job. A successful job transitions from in-progress to completed when the output model is ready to use. If the job failed, the failure message contains information about why the job failed.</p>
     pub status: ::std::option::Option<crate::types::ModelCustomizationJobStatus>,
     /// <p>Information about why the job failed.</p>
     pub failure_message: ::std::option::Option<::std::string::String>,
     /// <p>Time that the resource was created.</p>
-    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_time: ::aws_smithy_types::DateTime,
     /// <p>Time that the resource was last modified.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Time that the resource transitioned to terminal state.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>ARN of the base model.</p>
-    pub base_model_arn: ::std::option::Option<::std::string::String>,
+    pub base_model_arn: ::std::string::String,
     /// <p>The hyperparameter values for the job.</p>
-    pub hyper_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub hyper_parameters: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     /// <p>S3 Location of the training data.</p>
     pub training_data_config: ::std::option::Option<crate::types::TrainingDataConfig>,
     /// <p>Array of up to 10 validators.</p>
@@ -47,16 +47,19 @@ pub struct GetModelCustomizationJobOutput {
 }
 impl GetModelCustomizationJobOutput {
     /// <p>The ARN of the customization job.</p>
-    pub fn job_arn(&self) -> ::std::option::Option<&str> {
-        self.job_arn.as_deref()
+    pub fn job_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.job_arn.deref()
     }
     /// <p>The name of the customization job.</p>
-    pub fn job_name(&self) -> ::std::option::Option<&str> {
-        self.job_name.as_deref()
+    pub fn job_name(&self) -> &str {
+        use std::ops::Deref;
+        self.job_name.deref()
     }
     /// <p>The name of the output model.</p>
-    pub fn output_model_name(&self) -> ::std::option::Option<&str> {
-        self.output_model_name.as_deref()
+    pub fn output_model_name(&self) -> &str {
+        use std::ops::Deref;
+        self.output_model_name.deref()
     }
     /// <p>The ARN of the output model.</p>
     pub fn output_model_arn(&self) -> ::std::option::Option<&str> {
@@ -67,8 +70,9 @@ impl GetModelCustomizationJobOutput {
         self.client_request_token.as_deref()
     }
     /// <p>The ARN of the IAM role.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
     /// <p>The status of the job. A successful job transitions from in-progress to completed when the output model is ready to use. If the job failed, the failure message contains information about why the job failed.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ModelCustomizationJobStatus> {
@@ -79,8 +83,8 @@ impl GetModelCustomizationJobOutput {
         self.failure_message.as_deref()
     }
     /// <p>Time that the resource was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_time.as_ref()
+    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_time
     }
     /// <p>Time that the resource was last modified.</p>
     pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -91,12 +95,13 @@ impl GetModelCustomizationJobOutput {
         self.end_time.as_ref()
     }
     /// <p>ARN of the base model.</p>
-    pub fn base_model_arn(&self) -> ::std::option::Option<&str> {
-        self.base_model_arn.as_deref()
+    pub fn base_model_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.base_model_arn.deref()
     }
     /// <p>The hyperparameter values for the job.</p>
-    pub fn hyper_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
-        self.hyper_parameters.as_ref()
+    pub fn hyper_parameters(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+        &self.hyper_parameters
     }
     /// <p>S3 Location of the training data.</p>
     pub fn training_data_config(&self) -> ::std::option::Option<&crate::types::TrainingDataConfig> {
@@ -119,8 +124,10 @@ impl GetModelCustomizationJobOutput {
         self.training_metrics.as_ref()
     }
     /// <p>The loss metric for each validator that you provided in the createjob request.</p>
-    pub fn validation_metrics(&self) -> ::std::option::Option<&[crate::types::ValidatorMetric]> {
-        self.validation_metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.validation_metrics.is_none()`.
+    pub fn validation_metrics(&self) -> &[crate::types::ValidatorMetric] {
+        self.validation_metrics.as_deref().unwrap_or_default()
     }
     /// <p>VPC configuration for the custom model job.</p>
     pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
@@ -167,6 +174,7 @@ pub struct GetModelCustomizationJobOutputBuilder {
 }
 impl GetModelCustomizationJobOutputBuilder {
     /// <p>The ARN of the customization job.</p>
+    /// This field is required.
     pub fn job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_arn = ::std::option::Option::Some(input.into());
         self
@@ -181,6 +189,7 @@ impl GetModelCustomizationJobOutputBuilder {
         &self.job_arn
     }
     /// <p>The name of the customization job.</p>
+    /// This field is required.
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name = ::std::option::Option::Some(input.into());
         self
@@ -195,6 +204,7 @@ impl GetModelCustomizationJobOutputBuilder {
         &self.job_name
     }
     /// <p>The name of the output model.</p>
+    /// This field is required.
     pub fn output_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_model_name = ::std::option::Option::Some(input.into());
         self
@@ -237,6 +247,7 @@ impl GetModelCustomizationJobOutputBuilder {
         &self.client_request_token
     }
     /// <p>The ARN of the IAM role.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -279,6 +290,7 @@ impl GetModelCustomizationJobOutputBuilder {
         &self.failure_message
     }
     /// <p>Time that the resource was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -321,6 +333,7 @@ impl GetModelCustomizationJobOutputBuilder {
         &self.end_time
     }
     /// <p>ARN of the base model.</p>
+    /// This field is required.
     pub fn base_model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.base_model_arn = ::std::option::Option::Some(input.into());
         self
@@ -362,6 +375,7 @@ impl GetModelCustomizationJobOutputBuilder {
         &self.hyper_parameters
     }
     /// <p>S3 Location of the training data.</p>
+    /// This field is required.
     pub fn training_data_config(mut self, input: crate::types::TrainingDataConfig) -> Self {
         self.training_data_config = ::std::option::Option::Some(input);
         self
@@ -376,6 +390,7 @@ impl GetModelCustomizationJobOutputBuilder {
         &self.training_data_config
     }
     /// <p>Array of up to 10 validators.</p>
+    /// This field is required.
     pub fn validation_data_config(mut self, input: crate::types::ValidationDataConfig) -> Self {
         self.validation_data_config = ::std::option::Option::Some(input);
         self
@@ -390,6 +405,7 @@ impl GetModelCustomizationJobOutputBuilder {
         &self.validation_data_config
     }
     /// <p>Output data configuration </p>
+    /// This field is required.
     pub fn output_data_config(mut self, input: crate::types::OutputDataConfig) -> Self {
         self.output_data_config = ::std::option::Option::Some(input);
         self
@@ -475,21 +491,69 @@ impl GetModelCustomizationJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetModelCustomizationJobOutput`](crate::operation::get_model_customization_job::GetModelCustomizationJobOutput).
-    pub fn build(self) -> crate::operation::get_model_customization_job::GetModelCustomizationJobOutput {
-        crate::operation::get_model_customization_job::GetModelCustomizationJobOutput {
-            job_arn: self.job_arn,
-            job_name: self.job_name,
-            output_model_name: self.output_model_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`job_arn`](crate::operation::get_model_customization_job::builders::GetModelCustomizationJobOutputBuilder::job_arn)
+    /// - [`job_name`](crate::operation::get_model_customization_job::builders::GetModelCustomizationJobOutputBuilder::job_name)
+    /// - [`output_model_name`](crate::operation::get_model_customization_job::builders::GetModelCustomizationJobOutputBuilder::output_model_name)
+    /// - [`role_arn`](crate::operation::get_model_customization_job::builders::GetModelCustomizationJobOutputBuilder::role_arn)
+    /// - [`creation_time`](crate::operation::get_model_customization_job::builders::GetModelCustomizationJobOutputBuilder::creation_time)
+    /// - [`base_model_arn`](crate::operation::get_model_customization_job::builders::GetModelCustomizationJobOutputBuilder::base_model_arn)
+    /// - [`hyper_parameters`](crate::operation::get_model_customization_job::builders::GetModelCustomizationJobOutputBuilder::hyper_parameters)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_model_customization_job::GetModelCustomizationJobOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::get_model_customization_job::GetModelCustomizationJobOutput {
+            job_arn: self.job_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "job_arn",
+                    "job_arn was not specified but it is required when building GetModelCustomizationJobOutput",
+                )
+            })?,
+            job_name: self.job_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "job_name",
+                    "job_name was not specified but it is required when building GetModelCustomizationJobOutput",
+                )
+            })?,
+            output_model_name: self.output_model_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "output_model_name",
+                    "output_model_name was not specified but it is required when building GetModelCustomizationJobOutput",
+                )
+            })?,
             output_model_arn: self.output_model_arn,
             client_request_token: self.client_request_token,
-            role_arn: self.role_arn,
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building GetModelCustomizationJobOutput",
+                )
+            })?,
             status: self.status,
             failure_message: self.failure_message,
-            creation_time: self.creation_time,
+            creation_time: self.creation_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "creation_time",
+                    "creation_time was not specified but it is required when building GetModelCustomizationJobOutput",
+                )
+            })?,
             last_modified_time: self.last_modified_time,
             end_time: self.end_time,
-            base_model_arn: self.base_model_arn,
-            hyper_parameters: self.hyper_parameters,
+            base_model_arn: self.base_model_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "base_model_arn",
+                    "base_model_arn was not specified but it is required when building GetModelCustomizationJobOutput",
+                )
+            })?,
+            hyper_parameters: self.hyper_parameters.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "hyper_parameters",
+                    "hyper_parameters was not specified but it is required when building GetModelCustomizationJobOutput",
+                )
+            })?,
             training_data_config: self.training_data_config,
             validation_data_config: self.validation_data_config,
             output_data_config: self.output_data_config,
@@ -498,6 +562,6 @@ impl GetModelCustomizationJobOutputBuilder {
             validation_metrics: self.validation_metrics,
             vpc_config: self.vpc_config,
             _request_id: self._request_id,
-        }
+        })
     }
 }

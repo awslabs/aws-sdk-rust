@@ -41,6 +41,7 @@ pub struct DescribeEffectiveInstanceAssociationsInputBuilder {
 }
 impl DescribeEffectiveInstanceAssociationsInputBuilder {
     /// <p>The managed node ID for which you want to view all associations.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl DescribeEffectiveInstanceAssociationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_effective_instance_associations::DescribeEffectiveInstanceAssociationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_effective_instance_associations::DescribeEffectiveInstanceAssociationsInput {

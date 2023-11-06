@@ -51,8 +51,10 @@ impl AwsEc2TransitGatewayDetails {
         self.default_route_table_association.as_deref()
     }
     /// <p>The transit gateway Classless Inter-Domain Routing (CIDR) blocks. </p>
-    pub fn transit_gateway_cidr_blocks(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.transit_gateway_cidr_blocks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.transit_gateway_cidr_blocks.is_none()`.
+    pub fn transit_gateway_cidr_blocks(&self) -> &[::std::string::String] {
+        self.transit_gateway_cidr_blocks.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the default association route table. </p>
     pub fn association_default_route_table_id(&self) -> ::std::option::Option<&str> {

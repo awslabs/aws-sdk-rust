@@ -8,8 +8,10 @@ pub struct BatchGetCrawlersInput {
 }
 impl BatchGetCrawlersInput {
     /// <p>A list of crawler names, which might be the names returned from the <code>ListCrawlers</code> operation.</p>
-    pub fn crawler_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.crawler_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.crawler_names.is_none()`.
+    pub fn crawler_names(&self) -> &[::std::string::String] {
+        self.crawler_names.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetCrawlersInput {
@@ -49,7 +51,7 @@ impl BatchGetCrawlersInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetCrawlersInput`](crate::operation::batch_get_crawlers::BatchGetCrawlersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_get_crawlers::BatchGetCrawlersInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_get_crawlers::BatchGetCrawlersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_get_crawlers::BatchGetCrawlersInput {
             crawler_names: self.crawler_names,
         })

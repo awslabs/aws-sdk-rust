@@ -11,12 +11,16 @@ pub struct AwsRdsPendingCloudWatchLogsExports {
 }
 impl AwsRdsPendingCloudWatchLogsExports {
     /// <p>A list of log types that are being enabled.</p>
-    pub fn log_types_to_enable(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.log_types_to_enable.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_types_to_enable.is_none()`.
+    pub fn log_types_to_enable(&self) -> &[::std::string::String] {
+        self.log_types_to_enable.as_deref().unwrap_or_default()
     }
     /// <p>A list of log types that are being disabled.</p>
-    pub fn log_types_to_disable(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.log_types_to_disable.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_types_to_disable.is_none()`.
+    pub fn log_types_to_disable(&self) -> &[::std::string::String] {
+        self.log_types_to_disable.as_deref().unwrap_or_default()
     }
 }
 impl AwsRdsPendingCloudWatchLogsExports {

@@ -2,15 +2,15 @@
 pub fn ser_visa_pin_verification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VisaPinVerification,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.pin_verification_key_index {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
         object.key("PinVerificationKeyIndex").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+            ::aws_smithy_types::Number::NegInt((input.pin_verification_key_index).into()),
         );
     }
-    if let Some(var_2) = &input.verification_value {
-        object.key("VerificationValue").string(var_2.as_str());
+    {
+        object.key("VerificationValue").string(input.verification_value.as_str());
     }
     Ok(())
 }

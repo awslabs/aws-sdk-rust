@@ -60,6 +60,7 @@ pub struct ClarifyShapConfigBuilder {
 }
 impl ClarifyShapConfigBuilder {
     /// <p>The configuration for the SHAP baseline of the Kernal SHAP algorithm.</p>
+    /// This field is required.
     pub fn shap_baseline_config(mut self, input: crate::types::ClarifyShapBaselineConfig) -> Self {
         self.shap_baseline_config = ::std::option::Option::Some(input);
         self

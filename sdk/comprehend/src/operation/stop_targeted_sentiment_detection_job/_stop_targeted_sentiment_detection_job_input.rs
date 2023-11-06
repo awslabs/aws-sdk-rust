@@ -27,6 +27,7 @@ pub struct StopTargetedSentimentDetectionJobInputBuilder {
 }
 impl StopTargetedSentimentDetectionJobInputBuilder {
     /// <p>The identifier of the targeted sentiment detection job to stop.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl StopTargetedSentimentDetectionJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_targeted_sentiment_detection_job::StopTargetedSentimentDetectionJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::stop_targeted_sentiment_detection_job::StopTargetedSentimentDetectionJobInput { job_id: self.job_id },

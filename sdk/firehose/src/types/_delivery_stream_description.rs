@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeliveryStreamDescription {
     /// <p>The name of the delivery stream.</p>
-    pub delivery_stream_name: ::std::option::Option<::std::string::String>,
+    pub delivery_stream_name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the delivery stream. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-    pub delivery_stream_arn: ::std::option::Option<::std::string::String>,
+    pub delivery_stream_arn: ::std::string::String,
     /// <p>The status of the delivery stream. If the status of a delivery stream is <code>CREATING_FAILED</code>, this status doesn't change, and you can't invoke <code>CreateDeliveryStream</code> again on it. However, you can invoke the <code>DeleteDeliveryStream</code> operation to delete it.</p>
-    pub delivery_stream_status: ::std::option::Option<crate::types::DeliveryStreamStatus>,
+    pub delivery_stream_status: crate::types::DeliveryStreamStatus,
     /// <p>Provides details in case one of the following operations fails due to an error related to KMS: <code>CreateDeliveryStream</code>, <code>DeleteDeliveryStream</code>, <code>StartDeliveryStreamEncryption</code>, <code>StopDeliveryStreamEncryption</code>.</p>
     pub failure_description: ::std::option::Option<crate::types::FailureDescription>,
     /// <p>Indicates the server-side encryption (SSE) status for the delivery stream.</p>
@@ -19,9 +19,9 @@ pub struct DeliveryStreamDescription {
     /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li>
     /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li>
     /// </ul>
-    pub delivery_stream_type: ::std::option::Option<crate::types::DeliveryStreamType>,
+    pub delivery_stream_type: crate::types::DeliveryStreamType,
     /// <p>Each time the destination is updated for a delivery stream, the version ID is changed, and the current version ID is required when updating the destination. This is so that the service knows it is applying the changes to the correct version of the delivery stream.</p>
-    pub version_id: ::std::option::Option<::std::string::String>,
+    pub version_id: ::std::string::String,
     /// <p>The date and time that the delivery stream was created.</p>
     pub create_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the delivery stream was last updated.</p>
@@ -29,22 +29,24 @@ pub struct DeliveryStreamDescription {
     /// <p>If the <code>DeliveryStreamType</code> parameter is <code>KinesisStreamAsSource</code>, a <code>SourceDescription</code> object describing the source Kinesis data stream.</p>
     pub source: ::std::option::Option<crate::types::SourceDescription>,
     /// <p>The destinations.</p>
-    pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::DestinationDescription>>,
+    pub destinations: ::std::vec::Vec<crate::types::DestinationDescription>,
     /// <p>Indicates whether there are more destinations available to list.</p>
-    pub has_more_destinations: ::std::option::Option<bool>,
+    pub has_more_destinations: bool,
 }
 impl DeliveryStreamDescription {
     /// <p>The name of the delivery stream.</p>
-    pub fn delivery_stream_name(&self) -> ::std::option::Option<&str> {
-        self.delivery_stream_name.as_deref()
+    pub fn delivery_stream_name(&self) -> &str {
+        use std::ops::Deref;
+        self.delivery_stream_name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the delivery stream. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-    pub fn delivery_stream_arn(&self) -> ::std::option::Option<&str> {
-        self.delivery_stream_arn.as_deref()
+    pub fn delivery_stream_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.delivery_stream_arn.deref()
     }
     /// <p>The status of the delivery stream. If the status of a delivery stream is <code>CREATING_FAILED</code>, this status doesn't change, and you can't invoke <code>CreateDeliveryStream</code> again on it. However, you can invoke the <code>DeleteDeliveryStream</code> operation to delete it.</p>
-    pub fn delivery_stream_status(&self) -> ::std::option::Option<&crate::types::DeliveryStreamStatus> {
-        self.delivery_stream_status.as_ref()
+    pub fn delivery_stream_status(&self) -> &crate::types::DeliveryStreamStatus {
+        &self.delivery_stream_status
     }
     /// <p>Provides details in case one of the following operations fails due to an error related to KMS: <code>CreateDeliveryStream</code>, <code>DeleteDeliveryStream</code>, <code>StartDeliveryStreamEncryption</code>, <code>StopDeliveryStreamEncryption</code>.</p>
     pub fn failure_description(&self) -> ::std::option::Option<&crate::types::FailureDescription> {
@@ -59,12 +61,13 @@ impl DeliveryStreamDescription {
     /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li>
     /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li>
     /// </ul>
-    pub fn delivery_stream_type(&self) -> ::std::option::Option<&crate::types::DeliveryStreamType> {
-        self.delivery_stream_type.as_ref()
+    pub fn delivery_stream_type(&self) -> &crate::types::DeliveryStreamType {
+        &self.delivery_stream_type
     }
     /// <p>Each time the destination is updated for a delivery stream, the version ID is changed, and the current version ID is required when updating the destination. This is so that the service knows it is applying the changes to the correct version of the delivery stream.</p>
-    pub fn version_id(&self) -> ::std::option::Option<&str> {
-        self.version_id.as_deref()
+    pub fn version_id(&self) -> &str {
+        use std::ops::Deref;
+        self.version_id.deref()
     }
     /// <p>The date and time that the delivery stream was created.</p>
     pub fn create_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -79,11 +82,12 @@ impl DeliveryStreamDescription {
         self.source.as_ref()
     }
     /// <p>The destinations.</p>
-    pub fn destinations(&self) -> ::std::option::Option<&[crate::types::DestinationDescription]> {
-        self.destinations.as_deref()
+    pub fn destinations(&self) -> &[crate::types::DestinationDescription] {
+        use std::ops::Deref;
+        self.destinations.deref()
     }
     /// <p>Indicates whether there are more destinations available to list.</p>
-    pub fn has_more_destinations(&self) -> ::std::option::Option<bool> {
+    pub fn has_more_destinations(&self) -> bool {
         self.has_more_destinations
     }
 }
@@ -113,6 +117,7 @@ pub struct DeliveryStreamDescriptionBuilder {
 }
 impl DeliveryStreamDescriptionBuilder {
     /// <p>The name of the delivery stream.</p>
+    /// This field is required.
     pub fn delivery_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delivery_stream_name = ::std::option::Option::Some(input.into());
         self
@@ -127,6 +132,7 @@ impl DeliveryStreamDescriptionBuilder {
         &self.delivery_stream_name
     }
     /// <p>The Amazon Resource Name (ARN) of the delivery stream. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
+    /// This field is required.
     pub fn delivery_stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delivery_stream_arn = ::std::option::Option::Some(input.into());
         self
@@ -141,6 +147,7 @@ impl DeliveryStreamDescriptionBuilder {
         &self.delivery_stream_arn
     }
     /// <p>The status of the delivery stream. If the status of a delivery stream is <code>CREATING_FAILED</code>, this status doesn't change, and you can't invoke <code>CreateDeliveryStream</code> again on it. However, you can invoke the <code>DeleteDeliveryStream</code> operation to delete it.</p>
+    /// This field is required.
     pub fn delivery_stream_status(mut self, input: crate::types::DeliveryStreamStatus) -> Self {
         self.delivery_stream_status = ::std::option::Option::Some(input);
         self
@@ -190,6 +197,7 @@ impl DeliveryStreamDescriptionBuilder {
     /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li>
     /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn delivery_stream_type(mut self, input: crate::types::DeliveryStreamType) -> Self {
         self.delivery_stream_type = ::std::option::Option::Some(input);
         self
@@ -212,6 +220,7 @@ impl DeliveryStreamDescriptionBuilder {
         &self.delivery_stream_type
     }
     /// <p>Each time the destination is updated for a delivery stream, the version ID is changed, and the current version ID is required when updating the destination. This is so that the service knows it is applying the changes to the correct version of the delivery stream.</p>
+    /// This field is required.
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_id = ::std::option::Option::Some(input.into());
         self
@@ -288,6 +297,7 @@ impl DeliveryStreamDescriptionBuilder {
         &self.destinations
     }
     /// <p>Indicates whether there are more destinations available to list.</p>
+    /// This field is required.
     pub fn has_more_destinations(mut self, input: bool) -> Self {
         self.has_more_destinations = ::std::option::Option::Some(input);
         self
@@ -302,20 +312,63 @@ impl DeliveryStreamDescriptionBuilder {
         &self.has_more_destinations
     }
     /// Consumes the builder and constructs a [`DeliveryStreamDescription`](crate::types::DeliveryStreamDescription).
-    pub fn build(self) -> crate::types::DeliveryStreamDescription {
-        crate::types::DeliveryStreamDescription {
-            delivery_stream_name: self.delivery_stream_name,
-            delivery_stream_arn: self.delivery_stream_arn,
-            delivery_stream_status: self.delivery_stream_status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`delivery_stream_name`](crate::types::builders::DeliveryStreamDescriptionBuilder::delivery_stream_name)
+    /// - [`delivery_stream_arn`](crate::types::builders::DeliveryStreamDescriptionBuilder::delivery_stream_arn)
+    /// - [`delivery_stream_status`](crate::types::builders::DeliveryStreamDescriptionBuilder::delivery_stream_status)
+    /// - [`delivery_stream_type`](crate::types::builders::DeliveryStreamDescriptionBuilder::delivery_stream_type)
+    /// - [`version_id`](crate::types::builders::DeliveryStreamDescriptionBuilder::version_id)
+    /// - [`destinations`](crate::types::builders::DeliveryStreamDescriptionBuilder::destinations)
+    /// - [`has_more_destinations`](crate::types::builders::DeliveryStreamDescriptionBuilder::has_more_destinations)
+    pub fn build(self) -> ::std::result::Result<crate::types::DeliveryStreamDescription, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DeliveryStreamDescription {
+            delivery_stream_name: self.delivery_stream_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "delivery_stream_name",
+                    "delivery_stream_name was not specified but it is required when building DeliveryStreamDescription",
+                )
+            })?,
+            delivery_stream_arn: self.delivery_stream_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "delivery_stream_arn",
+                    "delivery_stream_arn was not specified but it is required when building DeliveryStreamDescription",
+                )
+            })?,
+            delivery_stream_status: self.delivery_stream_status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "delivery_stream_status",
+                    "delivery_stream_status was not specified but it is required when building DeliveryStreamDescription",
+                )
+            })?,
             failure_description: self.failure_description,
             delivery_stream_encryption_configuration: self.delivery_stream_encryption_configuration,
-            delivery_stream_type: self.delivery_stream_type,
-            version_id: self.version_id,
+            delivery_stream_type: self.delivery_stream_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "delivery_stream_type",
+                    "delivery_stream_type was not specified but it is required when building DeliveryStreamDescription",
+                )
+            })?,
+            version_id: self.version_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "version_id",
+                    "version_id was not specified but it is required when building DeliveryStreamDescription",
+                )
+            })?,
             create_timestamp: self.create_timestamp,
             last_update_timestamp: self.last_update_timestamp,
             source: self.source,
-            destinations: self.destinations,
-            has_more_destinations: self.has_more_destinations,
-        }
+            destinations: self.destinations.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "destinations",
+                    "destinations was not specified but it is required when building DeliveryStreamDescription",
+                )
+            })?,
+            has_more_destinations: self.has_more_destinations.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "has_more_destinations",
+                    "has_more_destinations was not specified but it is required when building DeliveryStreamDescription",
+                )
+            })?,
+        })
     }
 }

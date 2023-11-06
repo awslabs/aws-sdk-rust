@@ -110,8 +110,10 @@ impl DescribeDomainHealthOutput {
         self.total_un_assigned_shards.as_deref()
     }
     /// <p>A list of <code>EnvironmentInfo</code> for the domain. </p>
-    pub fn environment_information(&self) -> ::std::option::Option<&[crate::types::EnvironmentInfo]> {
-        self.environment_information.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.environment_information.is_none()`.
+    pub fn environment_information(&self) -> &[crate::types::EnvironmentInfo] {
+        self.environment_information.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeDomainHealthOutput {

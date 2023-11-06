@@ -22,8 +22,10 @@ impl StartSimulationJobBatchInput {
         self.batch_policy.as_ref()
     }
     /// <p>A list of simulation job requests to create in the batch.</p>
-    pub fn create_simulation_job_requests(&self) -> ::std::option::Option<&[crate::types::SimulationJobRequest]> {
-        self.create_simulation_job_requests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.create_simulation_job_requests.is_none()`.
+    pub fn create_simulation_job_requests(&self) -> &[crate::types::SimulationJobRequest] {
+        self.create_simulation_job_requests.as_deref().unwrap_or_default()
     }
     /// <p>A map that contains tag keys and tag values that are attached to the deployment job batch.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -120,7 +122,7 @@ impl StartSimulationJobBatchInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_simulation_job_batch::StartSimulationJobBatchInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_simulation_job_batch::StartSimulationJobBatchInput {
             client_request_token: self.client_request_token,

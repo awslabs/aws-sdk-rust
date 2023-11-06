@@ -15,8 +15,10 @@ impl HttpEndpointRequestConfiguration {
         self.content_encoding.as_ref()
     }
     /// <p>Describes the metadata sent to the HTTP endpoint destination.</p>
-    pub fn common_attributes(&self) -> ::std::option::Option<&[crate::types::HttpEndpointCommonAttribute]> {
-        self.common_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.common_attributes.is_none()`.
+    pub fn common_attributes(&self) -> &[crate::types::HttpEndpointCommonAttribute] {
+        self.common_attributes.as_deref().unwrap_or_default()
     }
 }
 impl HttpEndpointRequestConfiguration {

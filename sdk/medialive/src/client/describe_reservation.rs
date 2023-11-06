@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeReservation`](crate::operation::describe_reservation::builders::DescribeReservationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`reservation_id(impl Into<String>)`](crate::operation::describe_reservation::builders::DescribeReservationFluentBuilder::reservation_id) / [`set_reservation_id(Option<String>)`](crate::operation::describe_reservation::builders::DescribeReservationFluentBuilder::set_reservation_id): Unique reservation ID, e.g. '1234567'
+    ///   - [`reservation_id(impl Into<String>)`](crate::operation::describe_reservation::builders::DescribeReservationFluentBuilder::reservation_id) / [`set_reservation_id(Option<String>)`](crate::operation::describe_reservation::builders::DescribeReservationFluentBuilder::set_reservation_id):<br>required: **true**<br>Unique reservation ID, e.g. '1234567'<br>
     /// - On success, responds with [`DescribeReservationOutput`](crate::operation::describe_reservation::DescribeReservationOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::describe_reservation::DescribeReservationOutput::arn): Unique reservation ARN, e.g. 'arn:aws:medialive:us-west-2:123456789012:reservation:1234567'
     ///   - [`count(Option<i32>)`](crate::operation::describe_reservation::DescribeReservationOutput::count): Number of reserved resources
@@ -22,7 +22,7 @@ impl super::Client {
     ///   - [`resource_specification(Option<ReservationResourceSpecification>)`](crate::operation::describe_reservation::DescribeReservationOutput::resource_specification): Resource configuration details
     ///   - [`start(Option<String>)`](crate::operation::describe_reservation::DescribeReservationOutput::start): Reservation UTC start date and time in ISO-8601 format, e.g. '2018-03-01T00:00:00'
     ///   - [`state(Option<ReservationState>)`](crate::operation::describe_reservation::DescribeReservationOutput::state): Current state of reservation, e.g. 'ACTIVE'
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_reservation::DescribeReservationOutput::tags): A collection of key-value pairs
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_reservation::DescribeReservationOutput::tags): A collection of key-value pairs
     ///   - [`usage_price(Option<f64>)`](crate::operation::describe_reservation::DescribeReservationOutput::usage_price): Recurring usage charge for each reserved resource, e.g. '157.0'
     /// - On failure, responds with [`SdkError<DescribeReservationError>`](crate::operation::describe_reservation::DescribeReservationError)
     pub fn describe_reservation(&self) -> crate::operation::describe_reservation::builders::DescribeReservationFluentBuilder {

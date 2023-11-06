@@ -27,6 +27,7 @@ pub struct GetMaintenanceWindowExecutionInputBuilder {
 }
 impl GetMaintenanceWindowExecutionInputBuilder {
     /// <p>The ID of the maintenance window execution that includes the task.</p>
+    /// This field is required.
     pub fn window_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.window_execution_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetMaintenanceWindowExecutionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_maintenance_window_execution::GetMaintenanceWindowExecutionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_maintenance_window_execution::GetMaintenanceWindowExecutionInput {
             window_execution_id: self.window_execution_id,

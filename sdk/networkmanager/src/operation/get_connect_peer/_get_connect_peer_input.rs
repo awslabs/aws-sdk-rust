@@ -27,6 +27,7 @@ pub struct GetConnectPeerInputBuilder {
 }
 impl GetConnectPeerInputBuilder {
     /// <p>The ID of the Connect peer.</p>
+    /// This field is required.
     pub fn connect_peer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connect_peer_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetConnectPeerInputBuilder {
     /// Consumes the builder and constructs a [`GetConnectPeerInput`](crate::operation::get_connect_peer::GetConnectPeerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_connect_peer::GetConnectPeerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_connect_peer::GetConnectPeerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_connect_peer::GetConnectPeerInput {
             connect_peer_id: self.connect_peer_id,
         })

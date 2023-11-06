@@ -41,6 +41,7 @@ pub struct ListTeamMembersInputBuilder {
 }
 impl ListTeamMembersInputBuilder {
     /// <p>The ID of the project for which you want to list team members.</p>
+    /// This field is required.
     pub fn project_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl ListTeamMembersInputBuilder {
     /// Consumes the builder and constructs a [`ListTeamMembersInput`](crate::operation::list_team_members::ListTeamMembersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_team_members::ListTeamMembersInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_team_members::ListTeamMembersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_team_members::ListTeamMembersInput {
             project_id: self.project_id,
             next_token: self.next_token,

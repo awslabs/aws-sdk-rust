@@ -11,27 +11,33 @@ pub struct RecurrenceSettings {
     /// <p>Information about on-call rotations that recur daily.</p>
     pub daily_settings: ::std::option::Option<::std::vec::Vec<crate::types::HandOffTime>>,
     /// <p>The number of contacts, or shift team members designated to be on call concurrently during a shift. For example, in an on-call schedule containing ten contacts, a value of <code>2</code> designates that two of them are on call at any given time.</p>
-    pub number_of_on_calls: ::std::option::Option<i32>,
+    pub number_of_on_calls: i32,
     /// <p>Information about the days of the week included in on-call rotation coverage.</p>
     pub shift_coverages: ::std::option::Option<::std::collections::HashMap<crate::types::DayOfWeek, ::std::vec::Vec<crate::types::CoverageTime>>>,
     /// <p>The number of days, weeks, or months a single rotation lasts.</p>
-    pub recurrence_multiplier: ::std::option::Option<i32>,
+    pub recurrence_multiplier: i32,
 }
 impl RecurrenceSettings {
     /// <p>Information about on-call rotations that recur monthly.</p>
-    pub fn monthly_settings(&self) -> ::std::option::Option<&[crate::types::MonthlySetting]> {
-        self.monthly_settings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.monthly_settings.is_none()`.
+    pub fn monthly_settings(&self) -> &[crate::types::MonthlySetting] {
+        self.monthly_settings.as_deref().unwrap_or_default()
     }
     /// <p>Information about on-call rotations that recur weekly.</p>
-    pub fn weekly_settings(&self) -> ::std::option::Option<&[crate::types::WeeklySetting]> {
-        self.weekly_settings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.weekly_settings.is_none()`.
+    pub fn weekly_settings(&self) -> &[crate::types::WeeklySetting] {
+        self.weekly_settings.as_deref().unwrap_or_default()
     }
     /// <p>Information about on-call rotations that recur daily.</p>
-    pub fn daily_settings(&self) -> ::std::option::Option<&[crate::types::HandOffTime]> {
-        self.daily_settings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.daily_settings.is_none()`.
+    pub fn daily_settings(&self) -> &[crate::types::HandOffTime] {
+        self.daily_settings.as_deref().unwrap_or_default()
     }
     /// <p>The number of contacts, or shift team members designated to be on call concurrently during a shift. For example, in an on-call schedule containing ten contacts, a value of <code>2</code> designates that two of them are on call at any given time.</p>
-    pub fn number_of_on_calls(&self) -> ::std::option::Option<i32> {
+    pub fn number_of_on_calls(&self) -> i32 {
         self.number_of_on_calls
     }
     /// <p>Information about the days of the week included in on-call rotation coverage.</p>
@@ -41,7 +47,7 @@ impl RecurrenceSettings {
         self.shift_coverages.as_ref()
     }
     /// <p>The number of days, weeks, or months a single rotation lasts.</p>
-    pub fn recurrence_multiplier(&self) -> ::std::option::Option<i32> {
+    pub fn recurrence_multiplier(&self) -> i32 {
         self.recurrence_multiplier
     }
 }
@@ -126,6 +132,7 @@ impl RecurrenceSettingsBuilder {
         &self.daily_settings
     }
     /// <p>The number of contacts, or shift team members designated to be on call concurrently during a shift. For example, in an on-call schedule containing ten contacts, a value of <code>2</code> designates that two of them are on call at any given time.</p>
+    /// This field is required.
     pub fn number_of_on_calls(mut self, input: i32) -> Self {
         self.number_of_on_calls = ::std::option::Option::Some(input);
         self
@@ -165,6 +172,7 @@ impl RecurrenceSettingsBuilder {
         &self.shift_coverages
     }
     /// <p>The number of days, weeks, or months a single rotation lasts.</p>
+    /// This field is required.
     pub fn recurrence_multiplier(mut self, input: i32) -> Self {
         self.recurrence_multiplier = ::std::option::Option::Some(input);
         self
@@ -179,14 +187,27 @@ impl RecurrenceSettingsBuilder {
         &self.recurrence_multiplier
     }
     /// Consumes the builder and constructs a [`RecurrenceSettings`](crate::types::RecurrenceSettings).
-    pub fn build(self) -> crate::types::RecurrenceSettings {
-        crate::types::RecurrenceSettings {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`number_of_on_calls`](crate::types::builders::RecurrenceSettingsBuilder::number_of_on_calls)
+    /// - [`recurrence_multiplier`](crate::types::builders::RecurrenceSettingsBuilder::recurrence_multiplier)
+    pub fn build(self) -> ::std::result::Result<crate::types::RecurrenceSettings, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RecurrenceSettings {
             monthly_settings: self.monthly_settings,
             weekly_settings: self.weekly_settings,
             daily_settings: self.daily_settings,
-            number_of_on_calls: self.number_of_on_calls,
+            number_of_on_calls: self.number_of_on_calls.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "number_of_on_calls",
+                    "number_of_on_calls was not specified but it is required when building RecurrenceSettings",
+                )
+            })?,
             shift_coverages: self.shift_coverages,
-            recurrence_multiplier: self.recurrence_multiplier,
-        }
+            recurrence_multiplier: self.recurrence_multiplier.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "recurrence_multiplier",
+                    "recurrence_multiplier was not specified but it is required when building RecurrenceSettings",
+                )
+            })?,
+        })
     }
 }

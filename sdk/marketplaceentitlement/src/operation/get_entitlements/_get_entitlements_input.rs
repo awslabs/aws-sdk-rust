@@ -52,6 +52,7 @@ pub struct GetEntitlementsInputBuilder {
 }
 impl GetEntitlementsInputBuilder {
     /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code will be provided by AWS Marketplace when the product listing is created.</p>
+    /// This field is required.
     pub fn product_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_code = ::std::option::Option::Some(input.into());
         self
@@ -121,7 +122,7 @@ impl GetEntitlementsInputBuilder {
     /// Consumes the builder and constructs a [`GetEntitlementsInput`](crate::operation::get_entitlements::GetEntitlementsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_entitlements::GetEntitlementsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_entitlements::GetEntitlementsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_entitlements::GetEntitlementsInput {
             product_code: self.product_code,
             filter: self.filter,

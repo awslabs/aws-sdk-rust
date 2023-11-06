@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisableControlOutput {
     /// <p>The ID of the asynchronous operation, which is used to track status. The operation is available for 90 days.</p>
-    pub operation_identifier: ::std::option::Option<::std::string::String>,
+    pub operation_identifier: ::std::string::String,
     _request_id: Option<String>,
 }
 impl DisableControlOutput {
     /// <p>The ID of the asynchronous operation, which is used to track status. The operation is available for 90 days.</p>
-    pub fn operation_identifier(&self) -> ::std::option::Option<&str> {
-        self.operation_identifier.as_deref()
+    pub fn operation_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.operation_identifier.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DisableControlOutput {
@@ -34,6 +35,7 @@ pub struct DisableControlOutputBuilder {
 }
 impl DisableControlOutputBuilder {
     /// <p>The ID of the asynchronous operation, which is used to track status. The operation is available for 90 days.</p>
+    /// This field is required.
     pub fn operation_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operation_identifier = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,19 @@ impl DisableControlOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisableControlOutput`](crate::operation::disable_control::DisableControlOutput).
-    pub fn build(self) -> crate::operation::disable_control::DisableControlOutput {
-        crate::operation::disable_control::DisableControlOutput {
-            operation_identifier: self.operation_identifier,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`operation_identifier`](crate::operation::disable_control::builders::DisableControlOutputBuilder::operation_identifier)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::disable_control::DisableControlOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::disable_control::DisableControlOutput {
+            operation_identifier: self.operation_identifier.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "operation_identifier",
+                    "operation_identifier was not specified but it is required when building DisableControlOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

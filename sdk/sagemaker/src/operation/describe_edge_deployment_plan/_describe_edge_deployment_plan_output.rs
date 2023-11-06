@@ -37,8 +37,10 @@ impl DescribeEdgeDeploymentPlanOutput {
         self.edge_deployment_plan_name.as_deref()
     }
     /// <p>List of models associated with the edge deployment plan.</p>
-    pub fn model_configs(&self) -> ::std::option::Option<&[crate::types::EdgeDeploymentModelConfig]> {
-        self.model_configs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.model_configs.is_none()`.
+    pub fn model_configs(&self) -> &[crate::types::EdgeDeploymentModelConfig] {
+        self.model_configs.as_deref().unwrap_or_default()
     }
     /// <p>The device fleet used for this edge deployment plan.</p>
     pub fn device_fleet_name(&self) -> ::std::option::Option<&str> {
@@ -57,8 +59,10 @@ impl DescribeEdgeDeploymentPlanOutput {
         self.edge_deployment_failed
     }
     /// <p>List of stages in the edge deployment plan.</p>
-    pub fn stages(&self) -> ::std::option::Option<&[crate::types::DeploymentStageStatusSummary]> {
-        self.stages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stages.is_none()`.
+    pub fn stages(&self) -> &[crate::types::DeploymentStageStatusSummary] {
+        self.stages.as_deref().unwrap_or_default()
     }
     /// <p>Token to use when calling the next set of stages in the edge deployment plan.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -104,6 +108,7 @@ pub struct DescribeEdgeDeploymentPlanOutputBuilder {
 }
 impl DescribeEdgeDeploymentPlanOutputBuilder {
     /// <p>The ARN of edge deployment plan.</p>
+    /// This field is required.
     pub fn edge_deployment_plan_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_deployment_plan_arn = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +123,7 @@ impl DescribeEdgeDeploymentPlanOutputBuilder {
         &self.edge_deployment_plan_arn
     }
     /// <p>The name of the edge deployment plan.</p>
+    /// This field is required.
     pub fn edge_deployment_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_deployment_plan_name = ::std::option::Option::Some(input.into());
         self
@@ -152,6 +158,7 @@ impl DescribeEdgeDeploymentPlanOutputBuilder {
         &self.model_configs
     }
     /// <p>The device fleet used for this edge deployment plan.</p>
+    /// This field is required.
     pub fn device_fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_fleet_name = ::std::option::Option::Some(input.into());
         self

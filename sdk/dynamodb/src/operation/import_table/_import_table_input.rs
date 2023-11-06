@@ -86,6 +86,7 @@ impl ImportTableInputBuilder {
         &self.client_token
     }
     /// <p> The S3 bucket that provides the source for the import. </p>
+    /// This field is required.
     pub fn s3_bucket_source(mut self, input: crate::types::S3BucketSource) -> Self {
         self.s3_bucket_source = ::std::option::Option::Some(input);
         self
@@ -100,6 +101,7 @@ impl ImportTableInputBuilder {
         &self.s3_bucket_source
     }
     /// <p> The format of the source data. Valid values for <code>ImportFormat</code> are <code>CSV</code>, <code>DYNAMODB_JSON</code> or <code>ION</code>. </p>
+    /// This field is required.
     pub fn input_format(mut self, input: crate::types::InputFormat) -> Self {
         self.input_format = ::std::option::Option::Some(input);
         self
@@ -142,6 +144,7 @@ impl ImportTableInputBuilder {
         &self.input_compression_type
     }
     /// <p>Parameters for the table to import the data into. </p>
+    /// This field is required.
     pub fn table_creation_parameters(mut self, input: crate::types::TableCreationParameters) -> Self {
         self.table_creation_parameters = ::std::option::Option::Some(input);
         self
@@ -156,7 +159,7 @@ impl ImportTableInputBuilder {
         &self.table_creation_parameters
     }
     /// Consumes the builder and constructs a [`ImportTableInput`](crate::operation::import_table::ImportTableInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::import_table::ImportTableInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::import_table::ImportTableInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::import_table::ImportTableInput {
             client_token: self.client_token,
             s3_bucket_source: self.s3_bucket_source,

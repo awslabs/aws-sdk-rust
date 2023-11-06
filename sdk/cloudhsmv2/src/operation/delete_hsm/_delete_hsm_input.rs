@@ -48,6 +48,7 @@ pub struct DeleteHsmInputBuilder {
 }
 impl DeleteHsmInputBuilder {
     /// <p>The identifier (ID) of the cluster that contains the HSM that you are deleting.</p>
+    /// This field is required.
     pub fn cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_id = ::std::option::Option::Some(input.into());
         self
@@ -104,7 +105,7 @@ impl DeleteHsmInputBuilder {
         &self.eni_ip
     }
     /// Consumes the builder and constructs a [`DeleteHsmInput`](crate::operation::delete_hsm::DeleteHsmInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_hsm::DeleteHsmInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_hsm::DeleteHsmInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_hsm::DeleteHsmInput {
             cluster_id: self.cluster_id,
             hsm_id: self.hsm_id,

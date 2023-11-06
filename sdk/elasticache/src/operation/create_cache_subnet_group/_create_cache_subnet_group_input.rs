@@ -27,12 +27,16 @@ impl CreateCacheSubnetGroupInput {
         self.cache_subnet_group_description.as_deref()
     }
     /// <p>A list of VPC subnet IDs for the cache subnet group.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        self.subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateCacheSubnetGroupInput {
@@ -55,6 +59,7 @@ impl CreateCacheSubnetGroupInputBuilder {
     /// <p>A name for the cache subnet group. This value is stored as a lowercase string.</p>
     /// <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p>
     /// <p>Example: <code>mysubnetgroup</code> </p>
+    /// This field is required.
     pub fn cache_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_subnet_group_name = ::std::option::Option::Some(input.into());
         self
@@ -73,6 +78,7 @@ impl CreateCacheSubnetGroupInputBuilder {
         &self.cache_subnet_group_name
     }
     /// <p>A description for the cache subnet group.</p>
+    /// This field is required.
     pub fn cache_subnet_group_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_subnet_group_description = ::std::option::Option::Some(input.into());
         self
@@ -131,7 +137,7 @@ impl CreateCacheSubnetGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_cache_subnet_group::CreateCacheSubnetGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_cache_subnet_group::CreateCacheSubnetGroupInput {
             cache_subnet_group_name: self.cache_subnet_group_name,

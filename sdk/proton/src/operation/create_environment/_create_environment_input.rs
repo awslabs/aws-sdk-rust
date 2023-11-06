@@ -72,8 +72,10 @@ impl CreateEnvironmentInput {
     }
     /// <p>An optional list of metadata items that you can associate with the Proton environment. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The linked repository that you use to host your rendered infrastructure templates for self-managed provisioning. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
     /// <p>To use self-managed provisioning for the environment, specify this parameter and omit the <code>environmentAccountConnectionId</code> and <code>protonServiceRoleArn</code> parameters.</p>
@@ -136,6 +138,7 @@ pub struct CreateEnvironmentInputBuilder {
 }
 impl CreateEnvironmentInputBuilder {
     /// <p>The name of the environment.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -150,6 +153,7 @@ impl CreateEnvironmentInputBuilder {
         &self.name
     }
     /// <p>The name of the environment template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-templates.html">Environment Templates</a> in the <i>Proton User Guide</i>.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
@@ -164,6 +168,7 @@ impl CreateEnvironmentInputBuilder {
         &self.template_name
     }
     /// <p>The major version of the environment template.</p>
+    /// This field is required.
     pub fn template_major_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_major_version = ::std::option::Option::Some(input.into());
         self
@@ -206,6 +211,7 @@ impl CreateEnvironmentInputBuilder {
         &self.description
     }
     /// <p>A YAML formatted string that provides inputs as defined in the environment template bundle schema file. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-environments.html">Environments</a> in the <i>Proton User Guide</i>.</p>
+    /// This field is required.
     pub fn spec(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.spec = ::std::option::Option::Some(input.into());
         self
@@ -333,7 +339,7 @@ impl CreateEnvironmentInputBuilder {
     /// Consumes the builder and constructs a [`CreateEnvironmentInput`](crate::operation::create_environment::CreateEnvironmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_environment::CreateEnvironmentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_environment::CreateEnvironmentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_environment::CreateEnvironmentInput {
             name: self.name,
             template_name: self.template_name,

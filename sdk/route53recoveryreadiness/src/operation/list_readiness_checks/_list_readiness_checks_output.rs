@@ -15,8 +15,10 @@ impl ListReadinessChecksOutput {
         self.next_token.as_deref()
     }
     /// <p>A list of readiness checks associated with the account.</p>
-    pub fn readiness_checks(&self) -> ::std::option::Option<&[crate::types::ReadinessCheckOutput]> {
-        self.readiness_checks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.readiness_checks.is_none()`.
+    pub fn readiness_checks(&self) -> &[crate::types::ReadinessCheckOutput] {
+        self.readiness_checks.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListReadinessChecksOutput {

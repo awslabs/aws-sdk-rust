@@ -11,8 +11,10 @@ pub struct AudioTrackSelection {
 }
 impl AudioTrackSelection {
     /// Selects one or more unique audio tracks from within a source.
-    pub fn tracks(&self) -> ::std::option::Option<&[crate::types::AudioTrack]> {
-        self.tracks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tracks.is_none()`.
+    pub fn tracks(&self) -> &[crate::types::AudioTrack] {
+        self.tracks.as_deref().unwrap_or_default()
     }
     /// Configure decoding options for Dolby E streams - these should be Dolby E frames carried in PCM streams tagged with SMPTE-337
     pub fn dolby_e_decode(&self) -> ::std::option::Option<&crate::types::AudioDolbyEDecode> {

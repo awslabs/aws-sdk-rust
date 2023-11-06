@@ -27,6 +27,7 @@ pub struct DeletePipelineInputBuilder {
 }
 impl DeletePipelineInputBuilder {
     /// <p>The name of the pipeline to delete.</p>
+    /// This field is required.
     pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeletePipelineInputBuilder {
     /// Consumes the builder and constructs a [`DeletePipelineInput`](crate::operation::delete_pipeline::DeletePipelineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_pipeline::DeletePipelineInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_pipeline::DeletePipelineInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_pipeline::DeletePipelineInput {
             pipeline_name: self.pipeline_name,
         })

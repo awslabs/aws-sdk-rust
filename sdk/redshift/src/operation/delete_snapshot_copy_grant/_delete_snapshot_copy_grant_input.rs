@@ -28,6 +28,7 @@ pub struct DeleteSnapshotCopyGrantInputBuilder {
 }
 impl DeleteSnapshotCopyGrantInputBuilder {
     /// <p>The name of the snapshot copy grant to delete.</p>
+    /// This field is required.
     pub fn snapshot_copy_grant_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_copy_grant_name = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl DeleteSnapshotCopyGrantInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_snapshot_copy_grant::DeleteSnapshotCopyGrantInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_snapshot_copy_grant::DeleteSnapshotCopyGrantInput {
             snapshot_copy_grant_name: self.snapshot_copy_grant_name,

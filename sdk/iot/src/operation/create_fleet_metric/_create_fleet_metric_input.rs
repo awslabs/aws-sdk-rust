@@ -62,8 +62,10 @@ impl CreateFleetMetricInput {
         self.unit.as_ref()
     }
     /// <p>Metadata, which can be used to manage the fleet metric.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateFleetMetricInput {
@@ -90,6 +92,7 @@ pub struct CreateFleetMetricInputBuilder {
 }
 impl CreateFleetMetricInputBuilder {
     /// <p>The name of the fleet metric to create.</p>
+    /// This field is required.
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_name = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +107,7 @@ impl CreateFleetMetricInputBuilder {
         &self.metric_name
     }
     /// <p>The search query string.</p>
+    /// This field is required.
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_string = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +122,7 @@ impl CreateFleetMetricInputBuilder {
         &self.query_string
     }
     /// <p>The type of the aggregation query.</p>
+    /// This field is required.
     pub fn aggregation_type(mut self, input: crate::types::AggregationType) -> Self {
         self.aggregation_type = ::std::option::Option::Some(input);
         self
@@ -132,6 +137,7 @@ impl CreateFleetMetricInputBuilder {
         &self.aggregation_type
     }
     /// <p>The time in seconds between fleet metric emissions. Range [60(1 min), 86400(1 day)] and must be multiple of 60.</p>
+    /// This field is required.
     pub fn period(mut self, input: i32) -> Self {
         self.period = ::std::option::Option::Some(input);
         self
@@ -146,6 +152,7 @@ impl CreateFleetMetricInputBuilder {
         &self.period
     }
     /// <p>The field to aggregate.</p>
+    /// This field is required.
     pub fn aggregation_field(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aggregation_field = ::std::option::Option::Some(input.into());
         self
@@ -238,7 +245,7 @@ impl CreateFleetMetricInputBuilder {
     /// Consumes the builder and constructs a [`CreateFleetMetricInput`](crate::operation::create_fleet_metric::CreateFleetMetricInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_fleet_metric::CreateFleetMetricInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_fleet_metric::CreateFleetMetricInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_fleet_metric::CreateFleetMetricInput {
             metric_name: self.metric_name,
             query_string: self.query_string,

@@ -31,8 +31,8 @@ pub fn de_describe_instance_access_control_attribute_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InternalServerException" => crate::operation::describe_instance_access_control_attribute_configuration::DescribeInstanceAccessControlAttributeConfigurationError::InternalServerException({
@@ -47,8 +47,8 @@ pub fn de_describe_instance_access_control_attribute_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::describe_instance_access_control_attribute_configuration::DescribeInstanceAccessControlAttributeConfigurationError::ResourceNotFoundException({
@@ -63,8 +63,8 @@ pub fn de_describe_instance_access_control_attribute_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ThrottlingException" => crate::operation::describe_instance_access_control_attribute_configuration::DescribeInstanceAccessControlAttributeConfigurationError::ThrottlingException({
@@ -79,8 +79,8 @@ pub fn de_describe_instance_access_control_attribute_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ValidationException" => crate::operation::describe_instance_access_control_attribute_configuration::DescribeInstanceAccessControlAttributeConfigurationError::ValidationException({
@@ -95,8 +95,8 @@ pub fn de_describe_instance_access_control_attribute_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::describe_instance_access_control_attribute_configuration::DescribeInstanceAccessControlAttributeConfigurationError::generic(generic)
@@ -123,12 +123,12 @@ pub fn de_describe_instance_access_control_attribute_configuration_http_response
 
 pub fn ser_describe_instance_access_control_attribute_configuration_input(
     input: &crate::operation::describe_instance_access_control_attribute_configuration::DescribeInstanceAccessControlAttributeConfigurationInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_describe_instance_access_control_attribute_configuration_input::ser_describe_instance_access_control_attribute_configuration_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_describe_instance_access_control_attribute_configuration(value: &[u8], mut builder: crate::operation::describe_instance_access_control_attribute_configuration::builders::DescribeInstanceAccessControlAttributeConfigurationOutputBuilder) -> Result<crate::operation::describe_instance_access_control_attribute_configuration::builders::DescribeInstanceAccessControlAttributeConfigurationOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>{

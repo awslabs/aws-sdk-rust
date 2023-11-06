@@ -30,6 +30,7 @@ pub struct DescribeCreateAccountStatusInputBuilder {
 impl DescribeCreateAccountStatusInputBuilder {
     /// <p>Specifies the <code>Id</code> value that uniquely identifies the <code>CreateAccount</code> request. You can get the value from the <code>CreateAccountStatus.Id</code> response in an earlier <code>CreateAccount</code> request, or from the <code>ListCreateAccountStatus</code> operation.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account request ID string requires "car-" followed by from 8 to 32 lowercase letters or digits.</p>
+    /// This field is required.
     pub fn create_account_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.create_account_request_id = ::std::option::Option::Some(input.into());
         self
@@ -50,7 +51,7 @@ impl DescribeCreateAccountStatusInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_create_account_status::DescribeCreateAccountStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_create_account_status::DescribeCreateAccountStatusInput {
             create_account_request_id: self.create_account_request_id,

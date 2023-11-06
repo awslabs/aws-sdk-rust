@@ -4,19 +4,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSubscriptionOutput {
     /// <p>The ID of the subscription.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The Amazon DataZone user who created the subscription.</p>
-    pub created_by: ::std::option::Option<::std::string::String>,
+    pub created_by: ::std::string::String,
     /// <p>The Amazon DataZone user who updated the subscription.</p>
     pub updated_by: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon DataZone domain in which the subscription exists.</p>
-    pub domain_id: ::std::option::Option<::std::string::String>,
+    pub domain_id: ::std::string::String,
     /// <p>The status of the subscription.</p>
-    pub status: ::std::option::Option<crate::types::SubscriptionStatus>,
+    pub status: crate::types::SubscriptionStatus,
     /// <p>The timestamp of when the subscription was created.</p>
-    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The timestamp of when the subscription was updated.</p>
-    pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub updated_at: ::aws_smithy_types::DateTime,
     /// <p>The principal that owns the subscription.</p>
     pub subscribed_principal: ::std::option::Option<crate::types::SubscribedPrincipal>,
     /// <p></p>
@@ -29,32 +29,35 @@ pub struct GetSubscriptionOutput {
 }
 impl GetSubscriptionOutput {
     /// <p>The ID of the subscription.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The Amazon DataZone user who created the subscription.</p>
-    pub fn created_by(&self) -> ::std::option::Option<&str> {
-        self.created_by.as_deref()
+    pub fn created_by(&self) -> &str {
+        use std::ops::Deref;
+        self.created_by.deref()
     }
     /// <p>The Amazon DataZone user who updated the subscription.</p>
     pub fn updated_by(&self) -> ::std::option::Option<&str> {
         self.updated_by.as_deref()
     }
     /// <p>The ID of the Amazon DataZone domain in which the subscription exists.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
-        self.domain_id.as_deref()
+    pub fn domain_id(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_id.deref()
     }
     /// <p>The status of the subscription.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::SubscriptionStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::SubscriptionStatus {
+        &self.status
     }
     /// <p>The timestamp of when the subscription was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_at.as_ref()
+    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_at
     }
     /// <p>The timestamp of when the subscription was updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.updated_at.as_ref()
+    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.updated_at
     }
     /// <p>The principal that owns the subscription.</p>
     pub fn subscribed_principal(&self) -> ::std::option::Option<&crate::types::SubscribedPrincipal> {
@@ -104,6 +107,7 @@ pub struct GetSubscriptionOutputBuilder {
 }
 impl GetSubscriptionOutputBuilder {
     /// <p>The ID of the subscription.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +122,7 @@ impl GetSubscriptionOutputBuilder {
         &self.id
     }
     /// <p>The Amazon DataZone user who created the subscription.</p>
+    /// This field is required.
     pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by = ::std::option::Option::Some(input.into());
         self
@@ -146,6 +151,7 @@ impl GetSubscriptionOutputBuilder {
         &self.updated_by
     }
     /// <p>The ID of the Amazon DataZone domain in which the subscription exists.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -160,6 +166,7 @@ impl GetSubscriptionOutputBuilder {
         &self.domain_id
     }
     /// <p>The status of the subscription.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::SubscriptionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -174,6 +181,7 @@ impl GetSubscriptionOutputBuilder {
         &self.status
     }
     /// <p>The timestamp of when the subscription was created.</p>
+    /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
@@ -188,6 +196,7 @@ impl GetSubscriptionOutputBuilder {
         &self.created_at
     }
     /// <p>The timestamp of when the subscription was updated.</p>
+    /// This field is required.
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
@@ -202,6 +211,7 @@ impl GetSubscriptionOutputBuilder {
         &self.updated_at
     }
     /// <p>The principal that owns the subscription.</p>
+    /// This field is required.
     pub fn subscribed_principal(mut self, input: crate::types::SubscribedPrincipal) -> Self {
         self.subscribed_principal = ::std::option::Option::Some(input);
         self
@@ -216,6 +226,7 @@ impl GetSubscriptionOutputBuilder {
         &self.subscribed_principal
     }
     /// <p></p>
+    /// This field is required.
     pub fn subscribed_listing(mut self, input: crate::types::SubscribedListing) -> Self {
         self.subscribed_listing = ::std::option::Option::Some(input);
         self
@@ -267,20 +278,59 @@ impl GetSubscriptionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetSubscriptionOutput`](crate::operation::get_subscription::GetSubscriptionOutput).
-    pub fn build(self) -> crate::operation::get_subscription::GetSubscriptionOutput {
-        crate::operation::get_subscription::GetSubscriptionOutput {
-            id: self.id,
-            created_by: self.created_by,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::get_subscription::builders::GetSubscriptionOutputBuilder::id)
+    /// - [`created_by`](crate::operation::get_subscription::builders::GetSubscriptionOutputBuilder::created_by)
+    /// - [`domain_id`](crate::operation::get_subscription::builders::GetSubscriptionOutputBuilder::domain_id)
+    /// - [`status`](crate::operation::get_subscription::builders::GetSubscriptionOutputBuilder::status)
+    /// - [`created_at`](crate::operation::get_subscription::builders::GetSubscriptionOutputBuilder::created_at)
+    /// - [`updated_at`](crate::operation::get_subscription::builders::GetSubscriptionOutputBuilder::updated_at)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_subscription::GetSubscriptionOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_subscription::GetSubscriptionOutput {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building GetSubscriptionOutput",
+                )
+            })?,
+            created_by: self.created_by.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_by",
+                    "created_by was not specified but it is required when building GetSubscriptionOutput",
+                )
+            })?,
             updated_by: self.updated_by,
-            domain_id: self.domain_id,
-            status: self.status,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
+            domain_id: self.domain_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "domain_id",
+                    "domain_id was not specified but it is required when building GetSubscriptionOutput",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building GetSubscriptionOutput",
+                )
+            })?,
+            created_at: self.created_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_at",
+                    "created_at was not specified but it is required when building GetSubscriptionOutput",
+                )
+            })?,
+            updated_at: self.updated_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "updated_at",
+                    "updated_at was not specified but it is required when building GetSubscriptionOutput",
+                )
+            })?,
             subscribed_principal: self.subscribed_principal,
             subscribed_listing: self.subscribed_listing,
             subscription_request_id: self.subscription_request_id,
             retain_permissions: self.retain_permissions,
             _request_id: self._request_id,
-        }
+        })
     }
 }

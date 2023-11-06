@@ -49,8 +49,10 @@ impl ConsolidatedReportMetric {
         self.updated_at.as_ref()
     }
     /// <p>The metrics for the lenses in the workload.</p>
-    pub fn lenses(&self) -> ::std::option::Option<&[crate::types::LensMetric]> {
-        self.lenses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lenses.is_none()`.
+    pub fn lenses(&self) -> &[crate::types::LensMetric] {
+        self.lenses.as_deref().unwrap_or_default()
     }
     /// <p>The total number of lenses applied to the workload.</p>
     pub fn lenses_applied_count(&self) -> ::std::option::Option<i32> {

@@ -32,8 +32,8 @@ pub fn de_skip_wait_time_for_instance_termination_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "DeploymentDoesNotExistException" => crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationError::DeploymentDoesNotExistException({
@@ -48,8 +48,8 @@ pub fn de_skip_wait_time_for_instance_termination_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "DeploymentIdRequiredException" => crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationError::DeploymentIdRequiredException({
@@ -64,8 +64,8 @@ pub fn de_skip_wait_time_for_instance_termination_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "DeploymentNotStartedException" => crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationError::DeploymentNotStartedException({
@@ -80,8 +80,8 @@ pub fn de_skip_wait_time_for_instance_termination_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidDeploymentIdException" => crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationError::InvalidDeploymentIdException({
@@ -96,8 +96,8 @@ pub fn de_skip_wait_time_for_instance_termination_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "UnsupportedActionForDeploymentTypeException" => crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationError::UnsupportedActionForDeploymentTypeException({
@@ -112,8 +112,8 @@ pub fn de_skip_wait_time_for_instance_termination_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationError::generic(generic)
@@ -140,7 +140,7 @@ pub fn de_skip_wait_time_for_instance_termination_http_response(
 
 pub fn ser_skip_wait_time_for_instance_termination_input(
     input: &crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_skip_wait_time_for_instance_termination_input::ser_skip_wait_time_for_instance_termination_input(
@@ -148,5 +148,5 @@ pub fn ser_skip_wait_time_for_instance_termination_input(
         input,
     )?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

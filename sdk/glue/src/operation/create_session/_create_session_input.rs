@@ -140,6 +140,7 @@ pub struct CreateSessionInputBuilder {
 }
 impl CreateSessionInputBuilder {
     /// <p>The ID of the session request. </p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -168,6 +169,7 @@ impl CreateSessionInputBuilder {
         &self.description
     }
     /// <p>The IAM Role ARN </p>
+    /// This field is required.
     pub fn role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role = ::std::option::Option::Some(input.into());
         self
@@ -182,6 +184,7 @@ impl CreateSessionInputBuilder {
         &self.role
     }
     /// <p>The <code>SessionCommand</code> that runs the job. </p>
+    /// This field is required.
     pub fn command(mut self, input: crate::types::SessionCommand) -> Self {
         self.command = ::std::option::Option::Some(input);
         self
@@ -392,7 +395,7 @@ impl CreateSessionInputBuilder {
     /// Consumes the builder and constructs a [`CreateSessionInput`](crate::operation::create_session::CreateSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_session::CreateSessionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_session::CreateSessionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_session::CreateSessionInput {
             id: self.id,
             description: self.description,

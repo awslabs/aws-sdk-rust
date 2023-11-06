@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateSpace`](crate::operation::update_space::builders::UpdateSpaceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_id(impl Into<String>)`](crate::operation::update_space::builders::UpdateSpaceFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::update_space::builders::UpdateSpaceFluentBuilder::set_domain_id): <p>The ID of the associated Domain.</p>
-    ///   - [`space_name(impl Into<String>)`](crate::operation::update_space::builders::UpdateSpaceFluentBuilder::space_name) / [`set_space_name(Option<String>)`](crate::operation::update_space::builders::UpdateSpaceFluentBuilder::set_space_name): <p>The name of the space.</p>
-    ///   - [`space_settings(SpaceSettings)`](crate::operation::update_space::builders::UpdateSpaceFluentBuilder::space_settings) / [`set_space_settings(Option<SpaceSettings>)`](crate::operation::update_space::builders::UpdateSpaceFluentBuilder::set_space_settings): <p>A collection of space settings.</p>
+    ///   - [`domain_id(impl Into<String>)`](crate::operation::update_space::builders::UpdateSpaceFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::update_space::builders::UpdateSpaceFluentBuilder::set_domain_id):<br>required: **true**<br><p>The ID of the associated Domain.</p><br>
+    ///   - [`space_name(impl Into<String>)`](crate::operation::update_space::builders::UpdateSpaceFluentBuilder::space_name) / [`set_space_name(Option<String>)`](crate::operation::update_space::builders::UpdateSpaceFluentBuilder::set_space_name):<br>required: **true**<br><p>The name of the space.</p><br>
+    ///   - [`space_settings(SpaceSettings)`](crate::operation::update_space::builders::UpdateSpaceFluentBuilder::space_settings) / [`set_space_settings(Option<SpaceSettings>)`](crate::operation::update_space::builders::UpdateSpaceFluentBuilder::set_space_settings):<br>required: **false**<br><p>A collection of space settings.</p><br>
     /// - On success, responds with [`UpdateSpaceOutput`](crate::operation::update_space::UpdateSpaceOutput) with field(s):
     ///   - [`space_arn(Option<String>)`](crate::operation::update_space::UpdateSpaceOutput::space_arn): <p>The space's Amazon Resource Name (ARN).</p>
     /// - On failure, responds with [`SdkError<UpdateSpaceError>`](crate::operation::update_space::UpdateSpaceError)

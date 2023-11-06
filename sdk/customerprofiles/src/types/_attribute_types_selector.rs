@@ -20,7 +20,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttributeTypesSelector {
     /// <p>Configures the <code>AttributeMatchingModel</code>, you can either choose <code>ONE_TO_ONE</code> or <code>MANY_TO_MANY</code>.</p>
-    pub attribute_matching_model: ::std::option::Option<crate::types::AttributeMatchingModel>,
+    pub attribute_matching_model: crate::types::AttributeMatchingModel,
     /// <p>The <code>Address</code> type. You can choose from <code>Address</code>, <code>BusinessAddress</code>, <code>MaillingAddress</code>, and <code>ShippingAddress</code>.</p>
     /// <p>You only can use the Address type in the <code>MatchingRule</code>. For example, if you want to match profile based on <code>BusinessAddress.City</code> or <code>MaillingAddress.City</code>, you need to choose the <code>BusinessAddress</code> and the <code>MaillingAddress</code> to represent the Address type and specify the <code>Address.City</code> on the matching rule.</p>
     pub address: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -33,23 +33,29 @@ pub struct AttributeTypesSelector {
 }
 impl AttributeTypesSelector {
     /// <p>Configures the <code>AttributeMatchingModel</code>, you can either choose <code>ONE_TO_ONE</code> or <code>MANY_TO_MANY</code>.</p>
-    pub fn attribute_matching_model(&self) -> ::std::option::Option<&crate::types::AttributeMatchingModel> {
-        self.attribute_matching_model.as_ref()
+    pub fn attribute_matching_model(&self) -> &crate::types::AttributeMatchingModel {
+        &self.attribute_matching_model
     }
     /// <p>The <code>Address</code> type. You can choose from <code>Address</code>, <code>BusinessAddress</code>, <code>MaillingAddress</code>, and <code>ShippingAddress</code>.</p>
     /// <p>You only can use the Address type in the <code>MatchingRule</code>. For example, if you want to match profile based on <code>BusinessAddress.City</code> or <code>MaillingAddress.City</code>, you need to choose the <code>BusinessAddress</code> and the <code>MaillingAddress</code> to represent the Address type and specify the <code>Address.City</code> on the matching rule.</p>
-    pub fn address(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.address.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.address.is_none()`.
+    pub fn address(&self) -> &[::std::string::String] {
+        self.address.as_deref().unwrap_or_default()
     }
     /// <p>The <code>PhoneNumber</code> type. You can choose from <code>PhoneNumber</code>, <code>HomePhoneNumber</code>, and <code>MobilePhoneNumber</code>.</p>
     /// <p>You only can use the <code>PhoneNumber</code> type in the <code>MatchingRule</code>. For example, if you want to match a profile based on <code>Phone</code> or <code>HomePhone</code>, you need to choose the <code>Phone</code> and the <code>HomePhone</code> to represent the <code>PhoneNumber</code> type and only specify the <code>PhoneNumber</code> on the matching rule.</p>
-    pub fn phone_number(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.phone_number.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phone_number.is_none()`.
+    pub fn phone_number(&self) -> &[::std::string::String] {
+        self.phone_number.as_deref().unwrap_or_default()
     }
     /// <p>The <code>Email</code> type. You can choose from <code>EmailAddress</code>, <code>BusinessEmailAddress</code> and <code>PersonalEmailAddress</code>.</p>
     /// <p>You only can use the <code>EmailAddress</code> type in the <code>MatchingRule</code>. For example, if you want to match profile based on <code>PersonalEmailAddress</code> or <code>BusinessEmailAddress</code>, you need to choose the <code>PersonalEmailAddress</code> and the <code>BusinessEmailAddress</code> to represent the <code>EmailAddress</code> type and only specify the <code>EmailAddress</code> on the matching rule.</p>
-    pub fn email_address(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.email_address.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.email_address.is_none()`.
+    pub fn email_address(&self) -> &[::std::string::String] {
+        self.email_address.as_deref().unwrap_or_default()
     }
 }
 impl AttributeTypesSelector {
@@ -70,6 +76,7 @@ pub struct AttributeTypesSelectorBuilder {
 }
 impl AttributeTypesSelectorBuilder {
     /// <p>Configures the <code>AttributeMatchingModel</code>, you can either choose <code>ONE_TO_ONE</code> or <code>MANY_TO_MANY</code>.</p>
+    /// This field is required.
     pub fn attribute_matching_model(mut self, input: crate::types::AttributeMatchingModel) -> Self {
         self.attribute_matching_model = ::std::option::Option::Some(input);
         self
@@ -153,12 +160,19 @@ impl AttributeTypesSelectorBuilder {
         &self.email_address
     }
     /// Consumes the builder and constructs a [`AttributeTypesSelector`](crate::types::AttributeTypesSelector).
-    pub fn build(self) -> crate::types::AttributeTypesSelector {
-        crate::types::AttributeTypesSelector {
-            attribute_matching_model: self.attribute_matching_model,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`attribute_matching_model`](crate::types::builders::AttributeTypesSelectorBuilder::attribute_matching_model)
+    pub fn build(self) -> ::std::result::Result<crate::types::AttributeTypesSelector, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AttributeTypesSelector {
+            attribute_matching_model: self.attribute_matching_model.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "attribute_matching_model",
+                    "attribute_matching_model was not specified but it is required when building AttributeTypesSelector",
+                )
+            })?,
             address: self.address,
             phone_number: self.phone_number,
             email_address: self.email_address,
-        }
+        })
     }
 }

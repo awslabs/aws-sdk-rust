@@ -34,6 +34,7 @@ pub struct DeleteApnsVoipSandboxChannelOutputBuilder {
 }
 impl DeleteApnsVoipSandboxChannelOutputBuilder {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
+    /// This field is required.
     pub fn apns_voip_sandbox_channel_response(mut self, input: crate::types::ApnsVoipSandboxChannelResponse) -> Self {
         self.apns_voip_sandbox_channel_response = ::std::option::Option::Some(input);
         self

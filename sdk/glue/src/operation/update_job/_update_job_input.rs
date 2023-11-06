@@ -34,6 +34,7 @@ pub struct UpdateJobInputBuilder {
 }
 impl UpdateJobInputBuilder {
     /// <p>The name of the job definition to update.</p>
+    /// This field is required.
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateJobInputBuilder {
         &self.job_name
     }
     /// <p>Specifies the values with which to update the job definition. Unspecified configuration is removed or reset to default values.</p>
+    /// This field is required.
     pub fn job_update(mut self, input: crate::types::JobUpdate) -> Self {
         self.job_update = ::std::option::Option::Some(input);
         self
@@ -62,7 +64,7 @@ impl UpdateJobInputBuilder {
         &self.job_update
     }
     /// Consumes the builder and constructs a [`UpdateJobInput`](crate::operation::update_job::UpdateJobInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_job::UpdateJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_job::UpdateJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_job::UpdateJobInput {
             job_name: self.job_name,
             job_update: self.job_update,

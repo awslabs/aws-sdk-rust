@@ -27,6 +27,7 @@ pub struct GetLogDeliveryConfigurationInputBuilder {
 }
 impl GetLogDeliveryConfigurationInputBuilder {
     /// <p>The ID of the user pool where you want to view detailed activity logging configuration.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetLogDeliveryConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_log_delivery_configuration::GetLogDeliveryConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_log_delivery_configuration::GetLogDeliveryConfigurationInput {
             user_pool_id: self.user_pool_id,

@@ -20,8 +20,10 @@ impl UpdateVoiceConnectorGroupInput {
         self.name.as_deref()
     }
     /// <p>The <code>VoiceConnectorItems</code> to associate with the Voice Connector group.</p>
-    pub fn voice_connector_items(&self) -> ::std::option::Option<&[crate::types::VoiceConnectorItem]> {
-        self.voice_connector_items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.voice_connector_items.is_none()`.
+    pub fn voice_connector_items(&self) -> &[crate::types::VoiceConnectorItem] {
+        self.voice_connector_items.as_deref().unwrap_or_default()
     }
 }
 impl UpdateVoiceConnectorGroupInput {
@@ -41,6 +43,7 @@ pub struct UpdateVoiceConnectorGroupInputBuilder {
 }
 impl UpdateVoiceConnectorGroupInputBuilder {
     /// <p>The Voice Connector ID.</p>
+    /// This field is required.
     pub fn voice_connector_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_group_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl UpdateVoiceConnectorGroupInputBuilder {
         &self.voice_connector_group_id
     }
     /// <p>The name of the Voice Connector group.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -93,7 +97,7 @@ impl UpdateVoiceConnectorGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_voice_connector_group::UpdateVoiceConnectorGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_voice_connector_group::UpdateVoiceConnectorGroupInput {
             voice_connector_group_id: self.voice_connector_group_id,

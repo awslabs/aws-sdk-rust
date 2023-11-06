@@ -25,8 +25,10 @@ impl InstanceEventWindow {
         self.instance_event_window_id.as_deref()
     }
     /// <p>One or more time ranges defined for the event window.</p>
-    pub fn time_ranges(&self) -> ::std::option::Option<&[crate::types::InstanceEventWindowTimeRange]> {
-        self.time_ranges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.time_ranges.is_none()`.
+    pub fn time_ranges(&self) -> &[crate::types::InstanceEventWindowTimeRange] {
+        self.time_ranges.as_deref().unwrap_or_default()
     }
     /// <p>The name of the event window.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -45,8 +47,10 @@ impl InstanceEventWindow {
         self.state.as_ref()
     }
     /// <p>The instance tags associated with the event window.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl InstanceEventWindow {

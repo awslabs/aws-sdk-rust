@@ -9,8 +9,10 @@ pub struct AssociateEntitiesToExperienceOutput {
 }
 impl AssociateEntitiesToExperienceOutput {
     /// <p>Lists the users or groups in your IAM Identity Center identity source that failed to properly configure with your Amazon Kendra experience.</p>
-    pub fn failed_entity_list(&self) -> ::std::option::Option<&[crate::types::FailedEntity]> {
-        self.failed_entity_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_entity_list.is_none()`.
+    pub fn failed_entity_list(&self) -> &[crate::types::FailedEntity] {
+        self.failed_entity_list.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for AssociateEntitiesToExperienceOutput {

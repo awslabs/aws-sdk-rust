@@ -56,6 +56,7 @@ pub struct CreateOutboundConnectionInputBuilder {
 }
 impl CreateOutboundConnectionInputBuilder {
     /// <p>Name and Region of the source (local) domain.</p>
+    /// This field is required.
     pub fn local_domain_info(mut self, input: crate::types::DomainInformationContainer) -> Self {
         self.local_domain_info = ::std::option::Option::Some(input);
         self
@@ -70,6 +71,7 @@ impl CreateOutboundConnectionInputBuilder {
         &self.local_domain_info
     }
     /// <p>Name and Region of the destination (remote) domain.</p>
+    /// This field is required.
     pub fn remote_domain_info(mut self, input: crate::types::DomainInformationContainer) -> Self {
         self.remote_domain_info = ::std::option::Option::Some(input);
         self
@@ -84,6 +86,7 @@ impl CreateOutboundConnectionInputBuilder {
         &self.remote_domain_info
     }
     /// <p>Name of the connection.</p>
+    /// This field is required.
     pub fn connection_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_alias = ::std::option::Option::Some(input.into());
         self
@@ -130,7 +133,7 @@ impl CreateOutboundConnectionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_outbound_connection::CreateOutboundConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_outbound_connection::CreateOutboundConnectionInput {
             local_domain_info: self.local_domain_info,

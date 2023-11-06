@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InventoryItem {
     /// <p>The name of the inventory type. Default inventory item type names start with <code>AWS</code>. Custom inventory type names will start with Custom. Default inventory item types include the following: <code>AWS:AWSComponent</code>, <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>, <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.</p>
-    pub type_name: ::std::option::Option<::std::string::String>,
+    pub type_name: ::std::string::String,
     /// <p>The schema version for the inventory item.</p>
-    pub schema_version: ::std::option::Option<::std::string::String>,
+    pub schema_version: ::std::string::String,
     /// <p>The time the inventory information was collected.</p>
-    pub capture_time: ::std::option::Option<::std::string::String>,
+    pub capture_time: ::std::string::String,
     /// <p>MD5 hash of the inventory item type contents. The content hash is used to determine whether to update inventory information. The PutInventory API doesn't update the inventory item type contents if the MD5 hash hasn't changed since last update. </p>
     pub content_hash: ::std::option::Option<::std::string::String>,
     /// <p>The inventory data of the inventory type.</p>
@@ -19,24 +19,29 @@ pub struct InventoryItem {
 }
 impl InventoryItem {
     /// <p>The name of the inventory type. Default inventory item type names start with <code>AWS</code>. Custom inventory type names will start with Custom. Default inventory item types include the following: <code>AWS:AWSComponent</code>, <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>, <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.</p>
-    pub fn type_name(&self) -> ::std::option::Option<&str> {
-        self.type_name.as_deref()
+    pub fn type_name(&self) -> &str {
+        use std::ops::Deref;
+        self.type_name.deref()
     }
     /// <p>The schema version for the inventory item.</p>
-    pub fn schema_version(&self) -> ::std::option::Option<&str> {
-        self.schema_version.as_deref()
+    pub fn schema_version(&self) -> &str {
+        use std::ops::Deref;
+        self.schema_version.deref()
     }
     /// <p>The time the inventory information was collected.</p>
-    pub fn capture_time(&self) -> ::std::option::Option<&str> {
-        self.capture_time.as_deref()
+    pub fn capture_time(&self) -> &str {
+        use std::ops::Deref;
+        self.capture_time.deref()
     }
     /// <p>MD5 hash of the inventory item type contents. The content hash is used to determine whether to update inventory information. The PutInventory API doesn't update the inventory item type contents if the MD5 hash hasn't changed since last update. </p>
     pub fn content_hash(&self) -> ::std::option::Option<&str> {
         self.content_hash.as_deref()
     }
     /// <p>The inventory data of the inventory type.</p>
-    pub fn content(&self) -> ::std::option::Option<&[::std::collections::HashMap<::std::string::String, ::std::string::String>]> {
-        self.content.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.content.is_none()`.
+    pub fn content(&self) -> &[::std::collections::HashMap<::std::string::String, ::std::string::String>] {
+        self.content.as_deref().unwrap_or_default()
     }
     /// <p>A map of associated properties for a specified inventory type. For example, with this attribute, you can specify the <code>ExecutionId</code>, <code>ExecutionType</code>, <code>ComplianceType</code> properties of the <code>AWS:ComplianceItem</code> type.</p>
     pub fn context(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -63,6 +68,7 @@ pub struct InventoryItemBuilder {
 }
 impl InventoryItemBuilder {
     /// <p>The name of the inventory type. Default inventory item type names start with <code>AWS</code>. Custom inventory type names will start with Custom. Default inventory item types include the following: <code>AWS:AWSComponent</code>, <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>, <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.</p>
+    /// This field is required.
     pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +83,7 @@ impl InventoryItemBuilder {
         &self.type_name
     }
     /// <p>The schema version for the inventory item.</p>
+    /// This field is required.
     pub fn schema_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_version = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +98,7 @@ impl InventoryItemBuilder {
         &self.schema_version
     }
     /// <p>The time the inventory information was collected.</p>
+    /// This field is required.
     pub fn capture_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capture_time = ::std::option::Option::Some(input.into());
         self
@@ -162,14 +170,33 @@ impl InventoryItemBuilder {
         &self.context
     }
     /// Consumes the builder and constructs a [`InventoryItem`](crate::types::InventoryItem).
-    pub fn build(self) -> crate::types::InventoryItem {
-        crate::types::InventoryItem {
-            type_name: self.type_name,
-            schema_version: self.schema_version,
-            capture_time: self.capture_time,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`type_name`](crate::types::builders::InventoryItemBuilder::type_name)
+    /// - [`schema_version`](crate::types::builders::InventoryItemBuilder::schema_version)
+    /// - [`capture_time`](crate::types::builders::InventoryItemBuilder::capture_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::InventoryItem, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::InventoryItem {
+            type_name: self.type_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "type_name",
+                    "type_name was not specified but it is required when building InventoryItem",
+                )
+            })?,
+            schema_version: self.schema_version.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "schema_version",
+                    "schema_version was not specified but it is required when building InventoryItem",
+                )
+            })?,
+            capture_time: self.capture_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "capture_time",
+                    "capture_time was not specified but it is required when building InventoryItem",
+                )
+            })?,
             content_hash: self.content_hash,
             content: self.content,
             context: self.context,
-        }
+        })
     }
 }

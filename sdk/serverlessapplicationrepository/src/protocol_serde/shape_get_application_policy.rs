@@ -135,7 +135,7 @@ pub(crate) fn de_get_application_policy(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "statements" => {
                     builder = builder.set_statements(
-                        crate::protocol_serde::shape___list_of_application_policy_statement::de___list_of_application_policy_statement(tokens)?,
+                        crate::protocol_serde::shape_list_of_application_policy_statement::de_list_of_application_policy_statement(tokens)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

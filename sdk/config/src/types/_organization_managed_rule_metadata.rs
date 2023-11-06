@@ -7,7 +7,7 @@ pub struct OrganizationManagedRuleMetadata {
     /// <p>The description that you provide for your organization Config rule.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>For organization config managed rules, a predefined identifier from a list. For example, <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a managed rule, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using Config managed rules</a>.</p>
-    pub rule_identifier: ::std::option::Option<::std::string::String>,
+    pub rule_identifier: ::std::string::String,
     /// <p>A string, in JSON format, that is passed to your organization Config rule Lambda function.</p>
     pub input_parameters: ::std::option::Option<::std::string::String>,
     /// <p>The maximum frequency with which Config runs evaluations for a rule. This is for an Config managed rule that is triggered at a periodic frequency.</p> <note>
@@ -29,8 +29,9 @@ impl OrganizationManagedRuleMetadata {
         self.description.as_deref()
     }
     /// <p>For organization config managed rules, a predefined identifier from a list. For example, <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a managed rule, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using Config managed rules</a>.</p>
-    pub fn rule_identifier(&self) -> ::std::option::Option<&str> {
-        self.rule_identifier.as_deref()
+    pub fn rule_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.rule_identifier.deref()
     }
     /// <p>A string, in JSON format, that is passed to your organization Config rule Lambda function.</p>
     pub fn input_parameters(&self) -> ::std::option::Option<&str> {
@@ -43,8 +44,10 @@ impl OrganizationManagedRuleMetadata {
         self.maximum_execution_frequency.as_ref()
     }
     /// <p>The type of the Amazon Web Services resource that was evaluated.</p>
-    pub fn resource_types_scope(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_types_scope.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_types_scope.is_none()`.
+    pub fn resource_types_scope(&self) -> &[::std::string::String] {
+        self.resource_types_scope.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
     pub fn resource_id_scope(&self) -> ::std::option::Option<&str> {
@@ -95,6 +98,7 @@ impl OrganizationManagedRuleMetadataBuilder {
         &self.description
     }
     /// <p>For organization config managed rules, a predefined identifier from a list. For example, <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a managed rule, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using Config managed rules</a>.</p>
+    /// This field is required.
     pub fn rule_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_identifier = ::std::option::Option::Some(input.into());
         self
@@ -205,16 +209,23 @@ impl OrganizationManagedRuleMetadataBuilder {
         &self.tag_value_scope
     }
     /// Consumes the builder and constructs a [`OrganizationManagedRuleMetadata`](crate::types::OrganizationManagedRuleMetadata).
-    pub fn build(self) -> crate::types::OrganizationManagedRuleMetadata {
-        crate::types::OrganizationManagedRuleMetadata {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`rule_identifier`](crate::types::builders::OrganizationManagedRuleMetadataBuilder::rule_identifier)
+    pub fn build(self) -> ::std::result::Result<crate::types::OrganizationManagedRuleMetadata, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::OrganizationManagedRuleMetadata {
             description: self.description,
-            rule_identifier: self.rule_identifier,
+            rule_identifier: self.rule_identifier.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "rule_identifier",
+                    "rule_identifier was not specified but it is required when building OrganizationManagedRuleMetadata",
+                )
+            })?,
             input_parameters: self.input_parameters,
             maximum_execution_frequency: self.maximum_execution_frequency,
             resource_types_scope: self.resource_types_scope,
             resource_id_scope: self.resource_id_scope,
             tag_key_scope: self.tag_key_scope,
             tag_value_scope: self.tag_value_scope,
-        }
+        })
     }
 }

@@ -147,6 +147,7 @@ impl BrokerSummaryBuilder {
         &self.created
     }
     /// <p>The broker's deployment mode.</p>
+    /// This field is required.
     pub fn deployment_mode(mut self, input: crate::types::DeploymentMode) -> Self {
         self.deployment_mode = ::std::option::Option::Some(input);
         self
@@ -161,6 +162,7 @@ impl BrokerSummaryBuilder {
         &self.deployment_mode
     }
     /// <p>The type of broker engine.</p>
+    /// This field is required.
     pub fn engine_type(mut self, input: crate::types::EngineType) -> Self {
         self.engine_type = ::std::option::Option::Some(input);
         self

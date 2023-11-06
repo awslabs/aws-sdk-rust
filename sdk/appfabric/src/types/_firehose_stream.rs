@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FirehoseStream {
     /// <p>The name of the Amazon Kinesis Data Firehose delivery stream.</p>
-    pub stream_name: ::std::option::Option<::std::string::String>,
+    pub stream_name: ::std::string::String,
 }
 impl FirehoseStream {
     /// <p>The name of the Amazon Kinesis Data Firehose delivery stream.</p>
-    pub fn stream_name(&self) -> ::std::option::Option<&str> {
-        self.stream_name.as_deref()
+    pub fn stream_name(&self) -> &str {
+        use std::ops::Deref;
+        self.stream_name.deref()
     }
 }
 impl FirehoseStream {
@@ -28,6 +29,7 @@ pub struct FirehoseStreamBuilder {
 }
 impl FirehoseStreamBuilder {
     /// <p>The name of the Amazon Kinesis Data Firehose delivery stream.</p>
+    /// This field is required.
     pub fn stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_name = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl FirehoseStreamBuilder {
         &self.stream_name
     }
     /// Consumes the builder and constructs a [`FirehoseStream`](crate::types::FirehoseStream).
-    pub fn build(self) -> crate::types::FirehoseStream {
-        crate::types::FirehoseStream {
-            stream_name: self.stream_name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`stream_name`](crate::types::builders::FirehoseStreamBuilder::stream_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::FirehoseStream, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::FirehoseStream {
+            stream_name: self.stream_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "stream_name",
+                    "stream_name was not specified but it is required when building FirehoseStream",
+                )
+            })?,
+        })
     }
 }

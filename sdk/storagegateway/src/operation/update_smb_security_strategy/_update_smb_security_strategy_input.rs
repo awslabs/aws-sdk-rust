@@ -40,6 +40,7 @@ pub struct UpdateSmbSecurityStrategyInputBuilder {
 }
 impl UpdateSmbSecurityStrategyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// This field is required.
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_arn = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +58,7 @@ impl UpdateSmbSecurityStrategyInputBuilder {
     /// <p>ClientSpecified: if you use this option, requests are established based on what is negotiated by the client. This option is recommended when you want to maximize compatibility across different clients in your environment. Supported only in S3 File Gateway.</p>
     /// <p>MandatorySigning: if you use this option, file gateway only allows connections from SMBv2 or SMBv3 clients that have signing enabled. This option works with SMB clients on Microsoft Windows Vista, Windows Server 2008 or newer.</p>
     /// <p>MandatoryEncryption: if you use this option, file gateway only allows connections from SMBv3 clients that have encryption enabled. This option is highly recommended for environments that handle sensitive data. This option works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.</p>
+    /// This field is required.
     pub fn smb_security_strategy(mut self, input: crate::types::SmbSecurityStrategy) -> Self {
         self.smb_security_strategy = ::std::option::Option::Some(input);
         self
@@ -81,7 +83,7 @@ impl UpdateSmbSecurityStrategyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_smb_security_strategy::UpdateSmbSecurityStrategyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_smb_security_strategy::UpdateSmbSecurityStrategyInput {
             gateway_arn: self.gateway_arn,

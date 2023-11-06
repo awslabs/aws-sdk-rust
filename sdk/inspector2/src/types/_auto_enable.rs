@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoEnable {
     /// <p>Represents whether Amazon EC2 scans are automatically enabled for new members of your Amazon Inspector organization.</p>
-    pub ec2: ::std::option::Option<bool>,
+    pub ec2: bool,
     /// <p>Represents whether Amazon ECR scans are automatically enabled for new members of your Amazon Inspector organization.</p>
-    pub ecr: ::std::option::Option<bool>,
+    pub ecr: bool,
     /// <p>Represents whether AWS Lambda standard scans are automatically enabled for new members of your Amazon Inspector organization. </p>
     pub lambda: ::std::option::Option<bool>,
     /// <p>Represents whether AWS Lambda code scans are automatically enabled for new members of your Amazon Inspector organization. </p>
@@ -15,11 +15,11 @@ pub struct AutoEnable {
 }
 impl AutoEnable {
     /// <p>Represents whether Amazon EC2 scans are automatically enabled for new members of your Amazon Inspector organization.</p>
-    pub fn ec2(&self) -> ::std::option::Option<bool> {
+    pub fn ec2(&self) -> bool {
         self.ec2
     }
     /// <p>Represents whether Amazon ECR scans are automatically enabled for new members of your Amazon Inspector organization.</p>
-    pub fn ecr(&self) -> ::std::option::Option<bool> {
+    pub fn ecr(&self) -> bool {
         self.ecr
     }
     /// <p>Represents whether AWS Lambda standard scans are automatically enabled for new members of your Amazon Inspector organization. </p>
@@ -49,6 +49,7 @@ pub struct AutoEnableBuilder {
 }
 impl AutoEnableBuilder {
     /// <p>Represents whether Amazon EC2 scans are automatically enabled for new members of your Amazon Inspector organization.</p>
+    /// This field is required.
     pub fn ec2(mut self, input: bool) -> Self {
         self.ec2 = ::std::option::Option::Some(input);
         self
@@ -63,6 +64,7 @@ impl AutoEnableBuilder {
         &self.ec2
     }
     /// <p>Represents whether Amazon ECR scans are automatically enabled for new members of your Amazon Inspector organization.</p>
+    /// This field is required.
     pub fn ecr(mut self, input: bool) -> Self {
         self.ecr = ::std::option::Option::Some(input);
         self
@@ -105,12 +107,25 @@ impl AutoEnableBuilder {
         &self.lambda_code
     }
     /// Consumes the builder and constructs a [`AutoEnable`](crate::types::AutoEnable).
-    pub fn build(self) -> crate::types::AutoEnable {
-        crate::types::AutoEnable {
-            ec2: self.ec2,
-            ecr: self.ecr,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`ec2`](crate::types::builders::AutoEnableBuilder::ec2)
+    /// - [`ecr`](crate::types::builders::AutoEnableBuilder::ecr)
+    pub fn build(self) -> ::std::result::Result<crate::types::AutoEnable, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AutoEnable {
+            ec2: self.ec2.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "ec2",
+                    "ec2 was not specified but it is required when building AutoEnable",
+                )
+            })?,
+            ecr: self.ecr.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "ecr",
+                    "ecr was not specified but it is required when building AutoEnable",
+                )
+            })?,
             lambda: self.lambda,
             lambda_code: self.lambda_code,
-        }
+        })
     }
 }

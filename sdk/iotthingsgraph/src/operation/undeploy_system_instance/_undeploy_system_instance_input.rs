@@ -43,8 +43,10 @@ impl UndeploySystemInstanceInputBuilder {
     /// Consumes the builder and constructs a [`UndeploySystemInstanceInput`](crate::operation::undeploy_system_instance::UndeploySystemInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::undeploy_system_instance::UndeploySystemInstanceInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::undeploy_system_instance::UndeploySystemInstanceInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::undeploy_system_instance::UndeploySystemInstanceInput { id: self.id })
     }
 }

@@ -34,6 +34,7 @@ pub struct DescribeComputeInputBuilder {
 }
 impl DescribeComputeInputBuilder {
     /// <p>A unique identifier for the fleet that the compute is registered to. You can use either the fleet ID or ARN value.</p>
+    /// This field is required.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeComputeInputBuilder {
         &self.fleet_id
     }
     /// <p>The unique identifier of the compute resource to retrieve properties for. For an Anywhere fleet compute, use the registered compute name. For a managed EC2 fleet instance, use the instance ID.</p>
+    /// This field is required.
     pub fn compute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compute_name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DescribeComputeInputBuilder {
     /// Consumes the builder and constructs a [`DescribeComputeInput`](crate::operation::describe_compute::DescribeComputeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_compute::DescribeComputeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_compute::DescribeComputeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_compute::DescribeComputeInput {
             fleet_id: self.fleet_id,
             compute_name: self.compute_name,

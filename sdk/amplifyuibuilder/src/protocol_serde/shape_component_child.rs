@@ -2,53 +2,53 @@
 pub fn ser_component_child(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ComponentChild,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.component_type {
-        object.key("componentType").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("componentType").string(input.component_type.as_str());
     }
-    if let Some(var_2) = &input.name {
-        object.key("name").string(var_2.as_str());
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_3) = &input.properties {
+    {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("properties").start_object();
-        for (key_5, value_6) in var_3 {
+        let mut object_1 = object.key("properties").start_object();
+        for (key_2, value_3) in &input.properties {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = object_4.key(key_5.as_str()).start_object();
-                crate::protocol_serde::shape_component_property::ser_component_property(&mut object_7, value_6)?;
-                object_7.finish();
+                let mut object_4 = object_1.key(key_2.as_str()).start_object();
+                crate::protocol_serde::shape_component_property::ser_component_property(&mut object_4, value_3)?;
+                object_4.finish();
             }
         }
-        object_4.finish();
+        object_1.finish();
     }
-    if let Some(var_8) = &input.children {
-        let mut array_9 = object.key("children").start_array();
-        for item_10 in var_8 {
+    if let Some(var_5) = &input.children {
+        let mut array_6 = object.key("children").start_array();
+        for item_7 in var_5 {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_component_child::ser_component_child(&mut object_11, item_10)?;
-                object_11.finish();
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_component_child::ser_component_child(&mut object_8, item_7)?;
+                object_8.finish();
             }
         }
-        array_9.finish();
+        array_6.finish();
     }
-    if let Some(var_12) = &input.events {
+    if let Some(var_9) = &input.events {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("events").start_object();
-        for (key_14, value_15) in var_12 {
+        let mut object_10 = object.key("events").start_object();
+        for (key_11, value_12) in var_9 {
             {
                 #[allow(unused_mut)]
-                let mut object_16 = object_13.key(key_14.as_str()).start_object();
-                crate::protocol_serde::shape_component_event::ser_component_event(&mut object_16, value_15)?;
-                object_16.finish();
+                let mut object_13 = object_10.key(key_11.as_str()).start_object();
+                crate::protocol_serde::shape_component_event::ser_component_event(&mut object_13, value_12)?;
+                object_13.finish();
             }
         }
-        object_13.finish();
+        object_10.finish();
     }
-    if let Some(var_17) = &input.source_id {
-        object.key("sourceId").string(var_17.as_str());
+    if let Some(var_14) = &input.source_id {
+        object.key("sourceId").string(var_14.as_str());
     }
     Ok(())
 }
@@ -108,7 +108,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::component_child_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

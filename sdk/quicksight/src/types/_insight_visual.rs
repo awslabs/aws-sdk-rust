@@ -6,7 +6,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InsightVisual {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers.</p>
-    pub visual_id: ::std::option::Option<::std::string::String>,
+    pub visual_id: ::std::string::String,
     /// <p>The title that is displayed on the visual.</p>
     pub title: ::std::option::Option<crate::types::VisualTitleLabelOptions>,
     /// <p>The subtitle that is displayed on the visual.</p>
@@ -16,12 +16,13 @@ pub struct InsightVisual {
     /// <p>The list of custom actions that are configured for a visual.</p>
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>,
     /// <p>The dataset that is used in the insight visual.</p>
-    pub data_set_identifier: ::std::option::Option<::std::string::String>,
+    pub data_set_identifier: ::std::string::String,
 }
 impl InsightVisual {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers.</p>
-    pub fn visual_id(&self) -> ::std::option::Option<&str> {
-        self.visual_id.as_deref()
+    pub fn visual_id(&self) -> &str {
+        use std::ops::Deref;
+        self.visual_id.deref()
     }
     /// <p>The title that is displayed on the visual.</p>
     pub fn title(&self) -> ::std::option::Option<&crate::types::VisualTitleLabelOptions> {
@@ -36,12 +37,15 @@ impl InsightVisual {
         self.insight_configuration.as_ref()
     }
     /// <p>The list of custom actions that are configured for a visual.</p>
-    pub fn actions(&self) -> ::std::option::Option<&[crate::types::VisualCustomAction]> {
-        self.actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
+    pub fn actions(&self) -> &[crate::types::VisualCustomAction] {
+        self.actions.as_deref().unwrap_or_default()
     }
     /// <p>The dataset that is used in the insight visual.</p>
-    pub fn data_set_identifier(&self) -> ::std::option::Option<&str> {
-        self.data_set_identifier.as_deref()
+    pub fn data_set_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.data_set_identifier.deref()
     }
 }
 impl InsightVisual {
@@ -64,6 +68,7 @@ pub struct InsightVisualBuilder {
 }
 impl InsightVisualBuilder {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers.</p>
+    /// This field is required.
     pub fn visual_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.visual_id = ::std::option::Option::Some(input.into());
         self
@@ -140,6 +145,7 @@ impl InsightVisualBuilder {
         &self.actions
     }
     /// <p>The dataset that is used in the insight visual.</p>
+    /// This field is required.
     pub fn data_set_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_identifier = ::std::option::Option::Some(input.into());
         self
@@ -154,14 +160,27 @@ impl InsightVisualBuilder {
         &self.data_set_identifier
     }
     /// Consumes the builder and constructs a [`InsightVisual`](crate::types::InsightVisual).
-    pub fn build(self) -> crate::types::InsightVisual {
-        crate::types::InsightVisual {
-            visual_id: self.visual_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`visual_id`](crate::types::builders::InsightVisualBuilder::visual_id)
+    /// - [`data_set_identifier`](crate::types::builders::InsightVisualBuilder::data_set_identifier)
+    pub fn build(self) -> ::std::result::Result<crate::types::InsightVisual, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::InsightVisual {
+            visual_id: self.visual_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "visual_id",
+                    "visual_id was not specified but it is required when building InsightVisual",
+                )
+            })?,
             title: self.title,
             subtitle: self.subtitle,
             insight_configuration: self.insight_configuration,
             actions: self.actions,
-            data_set_identifier: self.data_set_identifier,
-        }
+            data_set_identifier: self.data_set_identifier.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "data_set_identifier",
+                    "data_set_identifier was not specified but it is required when building InsightVisual",
+                )
+            })?,
+        })
     }
 }

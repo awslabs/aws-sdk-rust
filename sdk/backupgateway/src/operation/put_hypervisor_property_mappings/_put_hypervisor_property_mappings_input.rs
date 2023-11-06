@@ -16,8 +16,10 @@ impl PutHypervisorPropertyMappingsInput {
         self.hypervisor_arn.as_deref()
     }
     /// <p>This action requests the mappings of on-premises VMware tags to the Amazon Web Services tags.</p>
-    pub fn vmware_to_aws_tag_mappings(&self) -> ::std::option::Option<&[crate::types::VmwareToAwsTagMapping]> {
-        self.vmware_to_aws_tag_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vmware_to_aws_tag_mappings.is_none()`.
+    pub fn vmware_to_aws_tag_mappings(&self) -> &[crate::types::VmwareToAwsTagMapping] {
+        self.vmware_to_aws_tag_mappings.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role.</p>
     pub fn iam_role_arn(&self) -> ::std::option::Option<&str> {
@@ -41,6 +43,7 @@ pub struct PutHypervisorPropertyMappingsInputBuilder {
 }
 impl PutHypervisorPropertyMappingsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
+    /// This field is required.
     pub fn hypervisor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hypervisor_arn = ::std::option::Option::Some(input.into());
         self
@@ -75,6 +78,7 @@ impl PutHypervisorPropertyMappingsInputBuilder {
         &self.vmware_to_aws_tag_mappings
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role.</p>
+    /// This field is required.
     pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -93,7 +97,7 @@ impl PutHypervisorPropertyMappingsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_hypervisor_property_mappings::PutHypervisorPropertyMappingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_hypervisor_property_mappings::PutHypervisorPropertyMappingsInput {
             hypervisor_arn: self.hypervisor_arn,

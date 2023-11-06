@@ -11,8 +11,10 @@ pub struct DescribeInstanceTypesOutput {
 }
 impl DescribeInstanceTypesOutput {
     /// <p>The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn instance_types(&self) -> ::std::option::Option<&[crate::types::InstanceTypeInfo]> {
-        self.instance_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_types.is_none()`.
+    pub fn instance_types(&self) -> &[crate::types::InstanceTypeInfo] {
+        self.instance_types.as_deref().unwrap_or_default()
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

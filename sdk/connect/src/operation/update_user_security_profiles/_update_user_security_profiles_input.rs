@@ -12,8 +12,10 @@ pub struct UpdateUserSecurityProfilesInput {
 }
 impl UpdateUserSecurityProfilesInput {
     /// <p>The identifiers of the security profiles for the user.</p>
-    pub fn security_profile_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_profile_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_profile_ids.is_none()`.
+    pub fn security_profile_ids(&self) -> &[::std::string::String] {
+        self.security_profile_ids.as_deref().unwrap_or_default()
     }
     /// <p>The identifier of the user account.</p>
     pub fn user_id(&self) -> ::std::option::Option<&str> {
@@ -61,6 +63,7 @@ impl UpdateUserSecurityProfilesInputBuilder {
         &self.security_profile_ids
     }
     /// <p>The identifier of the user account.</p>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
@@ -75,6 +78,7 @@ impl UpdateUserSecurityProfilesInputBuilder {
         &self.user_id
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -93,7 +97,7 @@ impl UpdateUserSecurityProfilesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_user_security_profiles::UpdateUserSecurityProfilesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_user_security_profiles::UpdateUserSecurityProfilesInput {
             security_profile_ids: self.security_profile_ids,

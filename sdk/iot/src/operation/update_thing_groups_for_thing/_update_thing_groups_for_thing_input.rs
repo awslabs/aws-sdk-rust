@@ -18,12 +18,16 @@ impl UpdateThingGroupsForThingInput {
         self.thing_name.as_deref()
     }
     /// <p>The groups to which the thing will be added.</p>
-    pub fn thing_groups_to_add(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.thing_groups_to_add.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.thing_groups_to_add.is_none()`.
+    pub fn thing_groups_to_add(&self) -> &[::std::string::String] {
+        self.thing_groups_to_add.as_deref().unwrap_or_default()
     }
     /// <p>The groups from which the thing will be removed.</p>
-    pub fn thing_groups_to_remove(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.thing_groups_to_remove.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.thing_groups_to_remove.is_none()`.
+    pub fn thing_groups_to_remove(&self) -> &[::std::string::String] {
+        self.thing_groups_to_remove.as_deref().unwrap_or_default()
     }
     /// <p>Override dynamic thing groups with static thing groups when 10-group limit is reached. If a thing belongs to 10 thing groups, and one or more of those groups are dynamic thing groups, adding a thing to a static group removes the thing from the last dynamic group.</p>
     pub fn override_dynamic_groups(&self) -> ::std::option::Option<bool> {
@@ -120,7 +124,7 @@ impl UpdateThingGroupsForThingInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_thing_groups_for_thing::UpdateThingGroupsForThingInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_thing_groups_for_thing::UpdateThingGroupsForThingInput {
             thing_name: self.thing_name,

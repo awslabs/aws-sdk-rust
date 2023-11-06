@@ -14,8 +14,10 @@ impl BatchUpdateDevicePositionInput {
         self.tracker_name.as_deref()
     }
     /// <p>Contains the position update details for each device, up to 10 devices.</p>
-    pub fn updates(&self) -> ::std::option::Option<&[crate::types::DevicePositionUpdate]> {
-        self.updates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.updates.is_none()`.
+    pub fn updates(&self) -> &[crate::types::DevicePositionUpdate] {
+        self.updates.as_deref().unwrap_or_default()
     }
 }
 impl BatchUpdateDevicePositionInput {
@@ -34,6 +36,7 @@ pub struct BatchUpdateDevicePositionInputBuilder {
 }
 impl BatchUpdateDevicePositionInputBuilder {
     /// <p>The name of the tracker resource to update.</p>
+    /// This field is required.
     pub fn tracker_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tracker_name = ::std::option::Option::Some(input.into());
         self
@@ -72,7 +75,7 @@ impl BatchUpdateDevicePositionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_update_device_position::BatchUpdateDevicePositionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_update_device_position::BatchUpdateDevicePositionInput {
             tracker_name: self.tracker_name,

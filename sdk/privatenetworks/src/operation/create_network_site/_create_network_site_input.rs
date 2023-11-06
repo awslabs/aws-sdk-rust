@@ -90,6 +90,7 @@ pub struct CreateNetworkSiteInputBuilder {
 }
 impl CreateNetworkSiteInputBuilder {
     /// <p>The name of the site. You can't change the name after you create the site.</p>
+    /// This field is required.
     pub fn network_site_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_site_name = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +119,7 @@ impl CreateNetworkSiteInputBuilder {
         &self.description
     }
     /// <p>The Amazon Resource Name (ARN) of the network.</p>
+    /// This field is required.
     pub fn network_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_arn = ::std::option::Option::Some(input.into());
         self
@@ -210,7 +212,7 @@ impl CreateNetworkSiteInputBuilder {
     /// Consumes the builder and constructs a [`CreateNetworkSiteInput`](crate::operation::create_network_site::CreateNetworkSiteInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_network_site::CreateNetworkSiteInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_network_site::CreateNetworkSiteInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_network_site::CreateNetworkSiteInput {
             network_site_name: self.network_site_name,
             description: self.description,

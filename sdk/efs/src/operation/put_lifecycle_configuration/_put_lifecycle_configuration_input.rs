@@ -26,8 +26,10 @@ impl PutLifecycleConfigurationInput {
     /// </ul> <note>
     /// <p>When using the <code>put-lifecycle-configuration</code> CLI command or the <code>PutLifecycleConfiguration</code> API action, Amazon EFS requires that each <code>LifecyclePolicy</code> object have only a single transition. This means that in a request body, <code>LifecyclePolicies</code> must be structured as an array of <code>LifecyclePolicy</code> objects, one object for each transition, <code>TransitionToIA</code>, <code>TransitionToPrimaryStorageClass</code>. See the example requests in the following section for more information.</p>
     /// </note>
-    pub fn lifecycle_policies(&self) -> ::std::option::Option<&[crate::types::LifecyclePolicy]> {
-        self.lifecycle_policies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lifecycle_policies.is_none()`.
+    pub fn lifecycle_policies(&self) -> &[crate::types::LifecyclePolicy] {
+        self.lifecycle_policies.as_deref().unwrap_or_default()
     }
 }
 impl PutLifecycleConfigurationInput {
@@ -46,6 +48,7 @@ pub struct PutLifecycleConfigurationInputBuilder {
 }
 impl PutLifecycleConfigurationInputBuilder {
     /// <p>The ID of the file system for which you are creating the <code>LifecycleConfiguration</code> object (String).</p>
+    /// This field is required.
     pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
@@ -102,7 +105,7 @@ impl PutLifecycleConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_lifecycle_configuration::PutLifecycleConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_lifecycle_configuration::PutLifecycleConfigurationInput {
             file_system_id: self.file_system_id,

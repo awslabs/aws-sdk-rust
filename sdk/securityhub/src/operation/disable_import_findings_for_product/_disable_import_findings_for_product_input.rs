@@ -27,6 +27,7 @@ pub struct DisableImportFindingsForProductInputBuilder {
 }
 impl DisableImportFindingsForProductInputBuilder {
     /// <p>The ARN of the integrated product to disable the integration for.</p>
+    /// This field is required.
     pub fn product_subscription_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_subscription_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DisableImportFindingsForProductInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_import_findings_for_product::DisableImportFindingsForProductInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::disable_import_findings_for_product::DisableImportFindingsForProductInput {

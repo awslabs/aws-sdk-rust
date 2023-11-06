@@ -34,8 +34,8 @@ pub fn de_create_cloud_front_origin_access_identity_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InconsistentQuantities" => crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityError::InconsistentQuantities({
@@ -50,8 +50,8 @@ pub fn de_create_cloud_front_origin_access_identity_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidArgument" => crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityError::InvalidArgument({
@@ -66,8 +66,8 @@ pub fn de_create_cloud_front_origin_access_identity_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "MissingBody" => crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityError::MissingBody({
@@ -82,8 +82,8 @@ pub fn de_create_cloud_front_origin_access_identity_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyCloudFrontOriginAccessIdentities" => crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityError::TooManyCloudFrontOriginAccessIdentities({
@@ -98,8 +98,8 @@ pub fn de_create_cloud_front_origin_access_identity_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityError::generic(generic)

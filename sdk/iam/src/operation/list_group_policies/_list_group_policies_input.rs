@@ -46,6 +46,7 @@ pub struct ListGroupPoliciesInputBuilder {
 impl ListGroupPoliciesInputBuilder {
     /// <p>The name of the group to list policies for.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// This field is required.
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_name = ::std::option::Option::Some(input.into());
         self
@@ -95,7 +96,7 @@ impl ListGroupPoliciesInputBuilder {
     /// Consumes the builder and constructs a [`ListGroupPoliciesInput`](crate::operation::list_group_policies::ListGroupPoliciesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_group_policies::ListGroupPoliciesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_group_policies::ListGroupPoliciesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_group_policies::ListGroupPoliciesInput {
             group_name: self.group_name,
             marker: self.marker,

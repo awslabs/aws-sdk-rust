@@ -25,11 +25,8 @@ pub fn de_describe_flow_http_error(
                 output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output)
                     .map_err(crate::operation::describe_flow::DescribeFlowError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::bad_request_exception_correct_errors(output).build()
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ForbiddenException" => crate::operation::describe_flow::DescribeFlowError::ForbiddenException({
@@ -40,11 +37,8 @@ pub fn de_describe_flow_http_error(
                 output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(_response_body, output)
                     .map_err(crate::operation::describe_flow::DescribeFlowError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::forbidden_exception_correct_errors(output).build()
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerErrorException" => crate::operation::describe_flow::DescribeFlowError::InternalServerErrorException({
@@ -56,11 +50,8 @@ pub fn de_describe_flow_http_error(
                     crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(_response_body, output)
                         .map_err(crate::operation::describe_flow::DescribeFlowError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_error_exception_correct_errors(output).build()
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "NotFoundException" => crate::operation::describe_flow::DescribeFlowError::NotFoundException({
@@ -71,11 +62,8 @@ pub fn de_describe_flow_http_error(
                 output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::describe_flow::DescribeFlowError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::not_found_exception_correct_errors(output).build()
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::describe_flow::DescribeFlowError::ServiceUnavailableException({
@@ -87,11 +75,8 @@ pub fn de_describe_flow_http_error(
                     crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
                         .map_err(crate::operation::describe_flow::DescribeFlowError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::service_unavailable_exception_correct_errors(output).build()
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "TooManyRequestsException" => crate::operation::describe_flow::DescribeFlowError::TooManyRequestsException({
@@ -102,11 +87,8 @@ pub fn de_describe_flow_http_error(
                 output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output)
                     .map_err(crate::operation::describe_flow::DescribeFlowError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::too_many_requests_exception_correct_errors(output).build()
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::describe_flow::DescribeFlowError::generic(generic),

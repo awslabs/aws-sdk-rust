@@ -37,8 +37,10 @@ impl EvaluatedRule {
         self.expression_with_values.as_deref()
     }
     /// <p> The rule outcome. </p>
-    pub fn outcomes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.outcomes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outcomes.is_none()`.
+    pub fn outcomes(&self) -> &[::std::string::String] {
+        self.outcomes.as_deref().unwrap_or_default()
     }
     /// <p> Indicates whether the rule was evaluated. </p>
     pub fn evaluated(&self) -> ::std::option::Option<bool> {

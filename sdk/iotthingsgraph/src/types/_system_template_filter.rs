@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SystemTemplateFilter {
     /// <p>The name of the system search filter field.</p>
-    pub name: ::std::option::Option<crate::types::SystemTemplateFilterName>,
+    pub name: crate::types::SystemTemplateFilterName,
     /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
-    pub value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub value: ::std::vec::Vec<::std::string::String>,
 }
 impl SystemTemplateFilter {
     /// <p>The name of the system search filter field.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::SystemTemplateFilterName> {
-        self.name.as_ref()
+    pub fn name(&self) -> &crate::types::SystemTemplateFilterName {
+        &self.name
     }
     /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
-    pub fn value(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.value.as_deref()
+    pub fn value(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.value.deref()
     }
 }
 impl SystemTemplateFilter {
@@ -35,6 +36,7 @@ pub struct SystemTemplateFilterBuilder {
 }
 impl SystemTemplateFilterBuilder {
     /// <p>The name of the system search filter field.</p>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::SystemTemplateFilterName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -69,10 +71,23 @@ impl SystemTemplateFilterBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`SystemTemplateFilter`](crate::types::SystemTemplateFilter).
-    pub fn build(self) -> crate::types::SystemTemplateFilter {
-        crate::types::SystemTemplateFilter {
-            name: self.name,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::SystemTemplateFilterBuilder::name)
+    /// - [`value`](crate::types::builders::SystemTemplateFilterBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::SystemTemplateFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SystemTemplateFilter {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building SystemTemplateFilter",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building SystemTemplateFilter",
+                )
+            })?,
+        })
     }
 }

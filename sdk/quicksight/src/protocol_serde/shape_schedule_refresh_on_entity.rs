@@ -2,7 +2,7 @@
 pub fn ser_schedule_refresh_on_entity(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ScheduleRefreshOnEntity,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.day_of_week {
         object.key("DayOfWeek").string(var_1.as_str());
     }

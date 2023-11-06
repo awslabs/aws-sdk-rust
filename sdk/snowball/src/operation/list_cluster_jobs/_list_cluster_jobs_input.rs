@@ -41,6 +41,7 @@ pub struct ListClusterJobsInputBuilder {
 }
 impl ListClusterJobsInputBuilder {
     /// <p>The 39-character ID for the cluster that you want to list, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    /// This field is required.
     pub fn cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl ListClusterJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListClusterJobsInput`](crate::operation::list_cluster_jobs::ListClusterJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_cluster_jobs::ListClusterJobsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_cluster_jobs::ListClusterJobsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_cluster_jobs::ListClusterJobsInput {
             cluster_id: self.cluster_id,
             max_results: self.max_results,

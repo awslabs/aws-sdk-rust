@@ -2,15 +2,15 @@
 pub fn ser_s3_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::S3Configuration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.role_arn {
-        object.key("RoleARN").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("RoleARN").string(input.role_arn.as_str());
     }
-    if let Some(var_2) = &input.bucket_arn {
-        object.key("BucketARN").string(var_2.as_str());
+    {
+        object.key("BucketARN").string(input.bucket_arn.as_str());
     }
-    if let Some(var_3) = &input.file_key {
-        object.key("FileKey").string(var_3.as_str());
+    {
+        object.key("FileKey").string(input.file_key.as_str());
     }
     Ok(())
 }

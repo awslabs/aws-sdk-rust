@@ -41,8 +41,10 @@ impl LambdaTarget {
         self.last_updated_at.as_ref()
     }
     /// <p> The lifecycle events of the deployment to this target Lambda function. </p>
-    pub fn lifecycle_events(&self) -> ::std::option::Option<&[crate::types::LifecycleEvent]> {
-        self.lifecycle_events.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lifecycle_events.is_none()`.
+    pub fn lifecycle_events(&self) -> &[crate::types::LifecycleEvent] {
+        self.lifecycle_events.as_deref().unwrap_or_default()
     }
     /// <p> A <code>LambdaFunctionInfo</code> object that describes a target Lambda function. </p>
     pub fn lambda_function_info(&self) -> ::std::option::Option<&crate::types::LambdaFunctionInfo> {

@@ -35,8 +35,10 @@ impl ModifyNetworkInterfaceAttributeInput {
         self.dry_run
     }
     /// <p>Changes the security groups for the network interface. The new set of groups you specify replaces the current set. You must specify at least one group, even if it's just the default security group in the VPC. You must specify the ID of the security group, not the name.</p>
-    pub fn groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
+    pub fn groups(&self) -> &[::std::string::String] {
+        self.groups.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the network interface.</p>
     pub fn network_interface_id(&self) -> ::std::option::Option<&str> {
@@ -139,6 +141,7 @@ impl ModifyNetworkInterfaceAttributeInputBuilder {
         &self.groups
     }
     /// <p>The ID of the network interface.</p>
+    /// This field is required.
     pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_interface_id = ::std::option::Option::Some(input.into());
         self
@@ -199,7 +202,7 @@ impl ModifyNetworkInterfaceAttributeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttributeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttributeInput {

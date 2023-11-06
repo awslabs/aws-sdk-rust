@@ -22,8 +22,10 @@ impl Notification {
         self.sns_topic_arn.as_deref()
     }
     /// <p>The list of job states that will trigger a notification for this job.</p>
-    pub fn job_states_to_notify(&self) -> ::std::option::Option<&[crate::types::JobState]> {
-        self.job_states_to_notify.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_states_to_notify.is_none()`.
+    pub fn job_states_to_notify(&self) -> &[crate::types::JobState] {
+        self.job_states_to_notify.as_deref().unwrap_or_default()
     }
     /// <p>Any change in job state will trigger a notification for this job.</p>
     pub fn notify_all(&self) -> bool {

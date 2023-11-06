@@ -35,11 +35,10 @@ pub fn de_update_campaign_name_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_campaign_name::UpdateCampaignNameError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ConflictException" => crate::operation::update_campaign_name::UpdateCampaignNameError::ConflictException({
@@ -57,11 +56,10 @@ pub fn de_update_campaign_name_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::conflict_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_campaign_name::UpdateCampaignNameError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerException" => crate::operation::update_campaign_name::UpdateCampaignNameError::InternalServerException({
@@ -79,11 +77,10 @@ pub fn de_update_campaign_name_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_campaign_name::UpdateCampaignNameError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::update_campaign_name::UpdateCampaignNameError::ResourceNotFoundException({
@@ -101,11 +98,10 @@ pub fn de_update_campaign_name_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_campaign_name::UpdateCampaignNameError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::update_campaign_name::UpdateCampaignNameError::ValidationException({
@@ -123,11 +119,10 @@ pub fn de_update_campaign_name_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_campaign_name::UpdateCampaignNameError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::update_campaign_name::UpdateCampaignNameError::generic(generic),
@@ -153,10 +148,10 @@ pub fn de_update_campaign_name_http_response(
 
 pub fn ser_update_campaign_name_input(
     input: &crate::operation::update_campaign_name::UpdateCampaignNameInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_update_campaign_name_input::ser_update_campaign_name_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

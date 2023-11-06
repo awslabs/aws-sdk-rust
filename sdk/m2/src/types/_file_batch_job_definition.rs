@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FileBatchJobDefinition {
     /// <p>The name of the file containing the batch job definition.</p>
-    pub file_name: ::std::option::Option<::std::string::String>,
+    pub file_name: ::std::string::String,
     /// <p>The path to the file containing the batch job definition.</p>
     pub folder_path: ::std::option::Option<::std::string::String>,
 }
 impl FileBatchJobDefinition {
     /// <p>The name of the file containing the batch job definition.</p>
-    pub fn file_name(&self) -> ::std::option::Option<&str> {
-        self.file_name.as_deref()
+    pub fn file_name(&self) -> &str {
+        use std::ops::Deref;
+        self.file_name.deref()
     }
     /// <p>The path to the file containing the batch job definition.</p>
     pub fn folder_path(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct FileBatchJobDefinitionBuilder {
 }
 impl FileBatchJobDefinitionBuilder {
     /// <p>The name of the file containing the batch job definition.</p>
+    /// This field is required.
     pub fn file_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl FileBatchJobDefinitionBuilder {
         &self.folder_path
     }
     /// Consumes the builder and constructs a [`FileBatchJobDefinition`](crate::types::FileBatchJobDefinition).
-    pub fn build(self) -> crate::types::FileBatchJobDefinition {
-        crate::types::FileBatchJobDefinition {
-            file_name: self.file_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`file_name`](crate::types::builders::FileBatchJobDefinitionBuilder::file_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::FileBatchJobDefinition, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::FileBatchJobDefinition {
+            file_name: self.file_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "file_name",
+                    "file_name was not specified but it is required when building FileBatchJobDefinition",
+                )
+            })?,
             folder_path: self.folder_path,
-        }
+        })
     }
 }

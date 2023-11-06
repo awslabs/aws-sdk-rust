@@ -16,8 +16,10 @@ impl GetSolVnfInfo {
         self.vnf_state.as_ref()
     }
     /// <p>Compute info used by the network function instance.</p>
-    pub fn vnfc_resource_info(&self) -> ::std::option::Option<&[crate::types::GetSolVnfcResourceInfo]> {
-        self.vnfc_resource_info.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vnfc_resource_info.is_none()`.
+    pub fn vnfc_resource_info(&self) -> &[crate::types::GetSolVnfcResourceInfo] {
+        self.vnfc_resource_info.as_deref().unwrap_or_default()
     }
 }
 impl GetSolVnfInfo {

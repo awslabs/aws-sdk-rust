@@ -27,11 +27,13 @@ pub enum Error {
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// <p>The credential signature isn't valid. You must use an HTTPS endpoint and sign your request using Signature Version 4.</p>
     InvalidSecurityException(crate::types::error::InvalidSecurityException),
+    /// <p>Indicates that the specified state is not a valid state for an event source.</p>
+    InvalidStateException(crate::types::error::InvalidStateException),
     /// <p>The ciphertext references a key that doesn't exist or that you don't have access to.</p>
     KmsAccessDeniedException(crate::types::error::KmsAccessDeniedException),
-    /// <p>The request was rejected because the specified customer master key (CMK) isn't enabled.</p>
+    /// <p>The request was rejected because the specified Amazon Web Services KMS key isn't enabled.</p>
     KmsDisabledException(crate::types::error::KmsDisabledException),
-    /// <p>The request was rejected because the state of the specified resource isn't valid for this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a Customer Master Key</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>The request was rejected because the state of the specified resource isn't valid for this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of Amazon Web Services KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
     KmsInvalidStateException(crate::types::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource can't be found.</p>
     KmsNotFoundException(crate::types::error::KmsNotFoundException),
@@ -45,6 +47,8 @@ pub enum Error {
     OptedOutException(crate::types::error::OptedOutException),
     /// <p>Exception error indicating platform application disabled.</p>
     PlatformApplicationDisabledException(crate::types::error::PlatformApplicationDisabledException),
+    /// <p>Indicates that the request parameter has exceeded the maximum number of concurrent message replays.</p>
+    ReplayLimitExceededException(crate::types::error::ReplayLimitExceededException),
     /// <p>Can’t perform the action on the specified resource. Make sure that the resource exists.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>A tag has been added to a resource with the same ARN as a deleted resource. Wait a short while and then retry the operation.</p>
@@ -85,6 +89,7 @@ impl ::std::fmt::Display for Error {
             Error::InvalidParameterException(inner) => inner.fmt(f),
             Error::InvalidParameterValueException(inner) => inner.fmt(f),
             Error::InvalidSecurityException(inner) => inner.fmt(f),
+            Error::InvalidStateException(inner) => inner.fmt(f),
             Error::KmsAccessDeniedException(inner) => inner.fmt(f),
             Error::KmsDisabledException(inner) => inner.fmt(f),
             Error::KmsInvalidStateException(inner) => inner.fmt(f),
@@ -94,6 +99,7 @@ impl ::std::fmt::Display for Error {
             Error::NotFoundException(inner) => inner.fmt(f),
             Error::OptedOutException(inner) => inner.fmt(f),
             Error::PlatformApplicationDisabledException(inner) => inner.fmt(f),
+            Error::ReplayLimitExceededException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::StaleTagException(inner) => inner.fmt(f),
             Error::SubscriptionLimitExceededException(inner) => inner.fmt(f),
@@ -109,13 +115,13 @@ impl ::std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::add_permission::AddPermissionError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::add_permission::AddPermissionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::add_permission::AddPermissionError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::add_permission::AddPermissionError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -136,16 +142,24 @@ impl From<crate::operation::add_permission::AddPermissionError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutError, R>>
-    for Error
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: ::aws_smithy_http::result::SdkError<crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutError, R>,
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutError,
+            R,
+        >,
     ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -174,13 +188,13 @@ impl From<crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumb
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::confirm_subscription::ConfirmSubscriptionError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::confirm_subscription::ConfirmSubscriptionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::confirm_subscription::ConfirmSubscriptionError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::confirm_subscription::ConfirmSubscriptionError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -204,6 +218,9 @@ impl From<crate::operation::confirm_subscription::ConfirmSubscriptionError> for 
                 Error::InvalidParameterException(inner)
             }
             crate::operation::confirm_subscription::ConfirmSubscriptionError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::confirm_subscription::ConfirmSubscriptionError::ReplayLimitExceededException(inner) => {
+                Error::ReplayLimitExceededException(inner)
+            }
             crate::operation::confirm_subscription::ConfirmSubscriptionError::SubscriptionLimitExceededException(inner) => {
                 Error::SubscriptionLimitExceededException(inner)
             }
@@ -211,13 +228,16 @@ impl From<crate::operation::confirm_subscription::ConfirmSubscriptionError> for 
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_platform_application::CreatePlatformApplicationError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_platform_application::CreatePlatformApplicationError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_platform_application::CreatePlatformApplicationError, R>) -> Self {
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_platform_application::CreatePlatformApplicationError, R>,
+    ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -243,13 +263,15 @@ impl From<crate::operation::create_platform_application::CreatePlatformApplicati
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_platform_endpoint::CreatePlatformEndpointError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_platform_endpoint::CreatePlatformEndpointError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_platform_endpoint::CreatePlatformEndpointError, R>) -> Self {
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_platform_endpoint::CreatePlatformEndpointError, R>,
+    ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -276,15 +298,20 @@ impl From<crate::operation::create_platform_endpoint::CreatePlatformEndpointErro
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_sms_sandbox_phone_number::CreateSMSSandboxPhoneNumberError, R>> for Error
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_sms_sandbox_phone_number::CreateSMSSandboxPhoneNumberError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: ::aws_smithy_http::result::SdkError<crate::operation::create_sms_sandbox_phone_number::CreateSMSSandboxPhoneNumberError, R>,
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_sms_sandbox_phone_number::CreateSMSSandboxPhoneNumberError,
+            R,
+        >,
     ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -319,13 +346,13 @@ impl From<crate::operation::create_sms_sandbox_phone_number::CreateSMSSandboxPho
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_topic::CreateTopicError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_topic::CreateTopicError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_topic::CreateTopicError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_topic::CreateTopicError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -351,13 +378,13 @@ impl From<crate::operation::create_topic::CreateTopicError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_endpoint::DeleteEndpointError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_endpoint::DeleteEndpointError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_endpoint::DeleteEndpointError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_endpoint::DeleteEndpointError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -377,13 +404,16 @@ impl From<crate::operation::delete_endpoint::DeleteEndpointError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_platform_application::DeletePlatformApplicationError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_platform_application::DeletePlatformApplicationError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_platform_application::DeletePlatformApplicationError, R>) -> Self {
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_platform_application::DeletePlatformApplicationError, R>,
+    ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -409,15 +439,20 @@ impl From<crate::operation::delete_platform_application::DeletePlatformApplicati
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_sms_sandbox_phone_number::DeleteSMSSandboxPhoneNumberError, R>> for Error
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_sms_sandbox_phone_number::DeleteSMSSandboxPhoneNumberError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: ::aws_smithy_http::result::SdkError<crate::operation::delete_sms_sandbox_phone_number::DeleteSMSSandboxPhoneNumberError, R>,
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_sms_sandbox_phone_number::DeleteSMSSandboxPhoneNumberError,
+            R,
+        >,
     ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -452,13 +487,13 @@ impl From<crate::operation::delete_sms_sandbox_phone_number::DeleteSMSSandboxPho
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_topic::DeleteTopicError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_topic::DeleteTopicError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_topic::DeleteTopicError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_topic::DeleteTopicError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -475,6 +510,7 @@ impl From<crate::operation::delete_topic::DeleteTopicError> for Error {
             crate::operation::delete_topic::DeleteTopicError::ConcurrentAccessException(inner) => Error::ConcurrentAccessException(inner),
             crate::operation::delete_topic::DeleteTopicError::InternalErrorException(inner) => Error::InternalErrorException(inner),
             crate::operation::delete_topic::DeleteTopicError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_topic::DeleteTopicError::InvalidStateException(inner) => Error::InvalidStateException(inner),
             crate::operation::delete_topic::DeleteTopicError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::delete_topic::DeleteTopicError::StaleTagException(inner) => Error::StaleTagException(inner),
             crate::operation::delete_topic::DeleteTopicError::TagPolicyException(inner) => Error::TagPolicyException(inner),
@@ -482,13 +518,16 @@ impl From<crate::operation::delete_topic::DeleteTopicError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_data_protection_policy::GetDataProtectionPolicyError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_data_protection_policy::GetDataProtectionPolicyError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_data_protection_policy::GetDataProtectionPolicyError, R>) -> Self {
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_data_protection_policy::GetDataProtectionPolicyError, R>,
+    ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -518,13 +557,15 @@ impl From<crate::operation::get_data_protection_policy::GetDataProtectionPolicyE
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_endpoint_attributes::GetEndpointAttributesError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_endpoint_attributes::GetEndpointAttributesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_endpoint_attributes::GetEndpointAttributesError, R>) -> Self {
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_endpoint_attributes::GetEndpointAttributesError, R>,
+    ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -551,16 +592,24 @@ impl From<crate::operation::get_endpoint_attributes::GetEndpointAttributesError>
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_platform_application_attributes::GetPlatformApplicationAttributesError, R>>
-    for Error
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_platform_application_attributes::GetPlatformApplicationAttributesError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: ::aws_smithy_http::result::SdkError<crate::operation::get_platform_application_attributes::GetPlatformApplicationAttributesError, R>,
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_platform_application_attributes::GetPlatformApplicationAttributesError,
+            R,
+        >,
     ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -589,13 +638,13 @@ impl From<crate::operation::get_platform_application_attributes::GetPlatformAppl
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_sms_attributes::GetSMSAttributesError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_sms_attributes::GetSMSAttributesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_sms_attributes::GetSMSAttributesError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_sms_attributes::GetSMSAttributesError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -618,13 +667,16 @@ impl From<crate::operation::get_sms_attributes::GetSMSAttributesError> for Error
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_sms_sandbox_account_status::GetSMSSandboxAccountStatusError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_sms_sandbox_account_status::GetSMSSandboxAccountStatusError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_sms_sandbox_account_status::GetSMSSandboxAccountStatusError, R>) -> Self {
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_sms_sandbox_account_status::GetSMSSandboxAccountStatusError, R>,
+    ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -650,13 +702,16 @@ impl From<crate::operation::get_sms_sandbox_account_status::GetSMSSandboxAccount
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_subscription_attributes::GetSubscriptionAttributesError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_subscription_attributes::GetSubscriptionAttributesError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_subscription_attributes::GetSubscriptionAttributesError, R>) -> Self {
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_subscription_attributes::GetSubscriptionAttributesError, R>,
+    ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -685,13 +740,13 @@ impl From<crate::operation::get_subscription_attributes::GetSubscriptionAttribut
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_topic_attributes::GetTopicAttributesError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_topic_attributes::GetTopicAttributesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_topic_attributes::GetTopicAttributesError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_topic_attributes::GetTopicAttributesError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -720,19 +775,23 @@ impl From<crate::operation::get_topic_attributes::GetTopicAttributesError> for E
     }
 }
 impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::list_endpoints_by_platform_application::ListEndpointsByPlatformApplicationError, R>>
-    for Error
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_endpoints_by_platform_application::ListEndpointsByPlatformApplicationError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: ::aws_smithy_http::result::SdkError<
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::list_endpoints_by_platform_application::ListEndpointsByPlatformApplicationError,
             R,
         >,
     ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -763,13 +822,15 @@ impl From<crate::operation::list_endpoints_by_platform_application::ListEndpoint
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_origination_numbers::ListOriginationNumbersError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_origination_numbers::ListOriginationNumbersError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_origination_numbers::ListOriginationNumbersError, R>) -> Self {
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_origination_numbers::ListOriginationNumbersError, R>,
+    ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -797,13 +858,16 @@ impl From<crate::operation::list_origination_numbers::ListOriginationNumbersErro
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_phone_numbers_opted_out::ListPhoneNumbersOptedOutError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_phone_numbers_opted_out::ListPhoneNumbersOptedOutError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_phone_numbers_opted_out::ListPhoneNumbersOptedOutError, R>) -> Self {
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_phone_numbers_opted_out::ListPhoneNumbersOptedOutError, R>,
+    ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -832,13 +896,16 @@ impl From<crate::operation::list_phone_numbers_opted_out::ListPhoneNumbersOptedO
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_platform_applications::ListPlatformApplicationsError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_platform_applications::ListPlatformApplicationsError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_platform_applications::ListPlatformApplicationsError, R>) -> Self {
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_platform_applications::ListPlatformApplicationsError, R>,
+    ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -864,13 +931,16 @@ impl From<crate::operation::list_platform_applications::ListPlatformApplications
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_sms_sandbox_phone_numbers::ListSMSSandboxPhoneNumbersError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_sms_sandbox_phone_numbers::ListSMSSandboxPhoneNumbersError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_sms_sandbox_phone_numbers::ListSMSSandboxPhoneNumbersError, R>) -> Self {
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_sms_sandbox_phone_numbers::ListSMSSandboxPhoneNumbersError, R>,
+    ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -902,13 +972,13 @@ impl From<crate::operation::list_sms_sandbox_phone_numbers::ListSMSSandboxPhoneN
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_subscriptions::ListSubscriptionsError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_subscriptions::ListSubscriptionsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_subscriptions::ListSubscriptionsError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_subscriptions::ListSubscriptionsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -930,13 +1000,16 @@ impl From<crate::operation::list_subscriptions::ListSubscriptionsError> for Erro
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_subscriptions_by_topic::ListSubscriptionsByTopicError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_subscriptions_by_topic::ListSubscriptionsByTopicError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_subscriptions_by_topic::ListSubscriptionsByTopicError, R>) -> Self {
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_subscriptions_by_topic::ListSubscriptionsByTopicError, R>,
+    ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -963,13 +1036,13 @@ impl From<crate::operation::list_subscriptions_by_topic::ListSubscriptionsByTopi
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -999,13 +1072,13 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_topics::ListTopicsError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_topics::ListTopicsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_topics::ListTopicsError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_topics::ListTopicsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -1025,13 +1098,13 @@ impl From<crate::operation::list_topics::ListTopicsError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::opt_in_phone_number::OptInPhoneNumberError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::opt_in_phone_number::OptInPhoneNumberError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::opt_in_phone_number::OptInPhoneNumberError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::opt_in_phone_number::OptInPhoneNumberError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -1054,13 +1127,13 @@ impl From<crate::operation::opt_in_phone_number::OptInPhoneNumberError> for Erro
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::publish::PublishError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::publish::PublishError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::publish::PublishError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::publish::PublishError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -1094,13 +1167,13 @@ impl From<crate::operation::publish::PublishError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::publish_batch::PublishBatchError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::publish_batch::PublishBatchError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::publish_batch::PublishBatchError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::publish_batch::PublishBatchError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -1143,13 +1216,16 @@ impl From<crate::operation::publish_batch::PublishBatchError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::put_data_protection_policy::PutDataProtectionPolicyError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_data_protection_policy::PutDataProtectionPolicyError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::put_data_protection_policy::PutDataProtectionPolicyError, R>) -> Self {
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_data_protection_policy::PutDataProtectionPolicyError, R>,
+    ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -1179,13 +1255,13 @@ impl From<crate::operation::put_data_protection_policy::PutDataProtectionPolicyE
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::remove_permission::RemovePermissionError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::remove_permission::RemovePermissionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::remove_permission::RemovePermissionError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::remove_permission::RemovePermissionError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -1208,13 +1284,15 @@ impl From<crate::operation::remove_permission::RemovePermissionError> for Error 
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::set_endpoint_attributes::SetEndpointAttributesError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::set_endpoint_attributes::SetEndpointAttributesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::set_endpoint_attributes::SetEndpointAttributesError, R>) -> Self {
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::set_endpoint_attributes::SetEndpointAttributesError, R>,
+    ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -1241,16 +1319,24 @@ impl From<crate::operation::set_endpoint_attributes::SetEndpointAttributesError>
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::set_platform_application_attributes::SetPlatformApplicationAttributesError, R>>
-    for Error
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::set_platform_application_attributes::SetPlatformApplicationAttributesError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: ::aws_smithy_http::result::SdkError<crate::operation::set_platform_application_attributes::SetPlatformApplicationAttributesError, R>,
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::set_platform_application_attributes::SetPlatformApplicationAttributesError,
+            R,
+        >,
     ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -1279,13 +1365,13 @@ impl From<crate::operation::set_platform_application_attributes::SetPlatformAppl
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::set_sms_attributes::SetSMSAttributesError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::set_sms_attributes::SetSMSAttributesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::set_sms_attributes::SetSMSAttributesError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::set_sms_attributes::SetSMSAttributesError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -1308,13 +1394,16 @@ impl From<crate::operation::set_sms_attributes::SetSMSAttributesError> for Error
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::set_subscription_attributes::SetSubscriptionAttributesError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::set_subscription_attributes::SetSubscriptionAttributesError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::set_subscription_attributes::SetSubscriptionAttributesError, R>) -> Self {
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::set_subscription_attributes::SetSubscriptionAttributesError, R>,
+    ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -1342,17 +1431,20 @@ impl From<crate::operation::set_subscription_attributes::SetSubscriptionAttribut
             crate::operation::set_subscription_attributes::SetSubscriptionAttributesError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
+            crate::operation::set_subscription_attributes::SetSubscriptionAttributesError::ReplayLimitExceededException(inner) => {
+                Error::ReplayLimitExceededException(inner)
+            }
             crate::operation::set_subscription_attributes::SetSubscriptionAttributesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::set_topic_attributes::SetTopicAttributesError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::set_topic_attributes::SetTopicAttributesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::set_topic_attributes::SetTopicAttributesError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::set_topic_attributes::SetTopicAttributesError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -1380,13 +1472,13 @@ impl From<crate::operation::set_topic_attributes::SetTopicAttributesError> for E
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::subscribe::SubscribeError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::subscribe::SubscribeError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::subscribe::SubscribeError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::subscribe::SubscribeError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -1407,6 +1499,7 @@ impl From<crate::operation::subscribe::SubscribeError> for Error {
             crate::operation::subscribe::SubscribeError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::subscribe::SubscribeError::InvalidSecurityException(inner) => Error::InvalidSecurityException(inner),
             crate::operation::subscribe::SubscribeError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::subscribe::SubscribeError::ReplayLimitExceededException(inner) => Error::ReplayLimitExceededException(inner),
             crate::operation::subscribe::SubscribeError::SubscriptionLimitExceededException(inner) => {
                 Error::SubscriptionLimitExceededException(inner)
             }
@@ -1414,13 +1507,13 @@ impl From<crate::operation::subscribe::SubscribeError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -1444,13 +1537,13 @@ impl From<crate::operation::tag_resource::TagResourceError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::unsubscribe::UnsubscribeError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::unsubscribe::UnsubscribeError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::unsubscribe::UnsubscribeError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::unsubscribe::UnsubscribeError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -1472,13 +1565,13 @@ impl From<crate::operation::unsubscribe::UnsubscribeError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>) -> Self {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -1502,15 +1595,20 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::verify_sms_sandbox_phone_number::VerifySMSSandboxPhoneNumberError, R>> for Error
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::verify_sms_sandbox_phone_number::VerifySMSSandboxPhoneNumberError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: ::aws_smithy_http::result::SdkError<crate::operation::verify_sms_sandbox_phone_number::VerifySMSSandboxPhoneNumberError, R>,
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::verify_sms_sandbox_phone_number::VerifySMSSandboxPhoneNumberError,
+            R,
+        >,
     ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
                     .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
@@ -1560,6 +1658,7 @@ impl ::std::error::Error for Error {
             Error::InvalidParameterException(inner) => inner.source(),
             Error::InvalidParameterValueException(inner) => inner.source(),
             Error::InvalidSecurityException(inner) => inner.source(),
+            Error::InvalidStateException(inner) => inner.source(),
             Error::KmsAccessDeniedException(inner) => inner.source(),
             Error::KmsDisabledException(inner) => inner.source(),
             Error::KmsInvalidStateException(inner) => inner.source(),
@@ -1569,6 +1668,7 @@ impl ::std::error::Error for Error {
             Error::NotFoundException(inner) => inner.source(),
             Error::OptedOutException(inner) => inner.source(),
             Error::PlatformApplicationDisabledException(inner) => inner.source(),
+            Error::ReplayLimitExceededException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::StaleTagException(inner) => inner.source(),
             Error::SubscriptionLimitExceededException(inner) => inner.source(),
@@ -1599,6 +1699,7 @@ impl ::aws_http::request_id::RequestId for Error {
             Self::InvalidParameterException(e) => e.request_id(),
             Self::InvalidParameterValueException(e) => e.request_id(),
             Self::InvalidSecurityException(e) => e.request_id(),
+            Self::InvalidStateException(e) => e.request_id(),
             Self::KmsAccessDeniedException(e) => e.request_id(),
             Self::KmsDisabledException(e) => e.request_id(),
             Self::KmsInvalidStateException(e) => e.request_id(),
@@ -1608,6 +1709,7 @@ impl ::aws_http::request_id::RequestId for Error {
             Self::NotFoundException(e) => e.request_id(),
             Self::OptedOutException(e) => e.request_id(),
             Self::PlatformApplicationDisabledException(e) => e.request_id(),
+            Self::ReplayLimitExceededException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::StaleTagException(e) => e.request_id(),
             Self::SubscriptionLimitExceededException(e) => e.request_id(),

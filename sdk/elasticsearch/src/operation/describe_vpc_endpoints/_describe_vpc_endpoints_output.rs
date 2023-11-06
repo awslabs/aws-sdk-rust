@@ -5,19 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVpcEndpointsOutput {
     /// <p>Information about each requested VPC endpoint.</p>
-    pub vpc_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpoint>>,
+    pub vpc_endpoints: ::std::vec::Vec<crate::types::VpcEndpoint>,
     /// <p>Any errors associated with the request.</p>
-    pub vpc_endpoint_errors: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpointError>>,
+    pub vpc_endpoint_errors: ::std::vec::Vec<crate::types::VpcEndpointError>,
     _request_id: Option<String>,
 }
 impl DescribeVpcEndpointsOutput {
     /// <p>Information about each requested VPC endpoint.</p>
-    pub fn vpc_endpoints(&self) -> ::std::option::Option<&[crate::types::VpcEndpoint]> {
-        self.vpc_endpoints.as_deref()
+    pub fn vpc_endpoints(&self) -> &[crate::types::VpcEndpoint] {
+        use std::ops::Deref;
+        self.vpc_endpoints.deref()
     }
     /// <p>Any errors associated with the request.</p>
-    pub fn vpc_endpoint_errors(&self) -> ::std::option::Option<&[crate::types::VpcEndpointError]> {
-        self.vpc_endpoint_errors.as_deref()
+    pub fn vpc_endpoint_errors(&self) -> &[crate::types::VpcEndpointError] {
+        use std::ops::Deref;
+        self.vpc_endpoint_errors.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeVpcEndpointsOutput {
@@ -91,11 +93,27 @@ impl DescribeVpcEndpointsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeVpcEndpointsOutput`](crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsOutput).
-    pub fn build(self) -> crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsOutput {
-        crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsOutput {
-            vpc_endpoints: self.vpc_endpoints,
-            vpc_endpoint_errors: self.vpc_endpoint_errors,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`vpc_endpoints`](crate::operation::describe_vpc_endpoints::builders::DescribeVpcEndpointsOutputBuilder::vpc_endpoints)
+    /// - [`vpc_endpoint_errors`](crate::operation::describe_vpc_endpoints::builders::DescribeVpcEndpointsOutputBuilder::vpc_endpoint_errors)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsOutput {
+            vpc_endpoints: self.vpc_endpoints.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "vpc_endpoints",
+                    "vpc_endpoints was not specified but it is required when building DescribeVpcEndpointsOutput",
+                )
+            })?,
+            vpc_endpoint_errors: self.vpc_endpoint_errors.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "vpc_endpoint_errors",
+                    "vpc_endpoint_errors was not specified but it is required when building DescribeVpcEndpointsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

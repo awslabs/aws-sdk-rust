@@ -9,8 +9,10 @@ pub struct DescribeJobsInput {
 }
 impl DescribeJobsInput {
     /// <p>A list of up to 100 job IDs.</p>
-    pub fn jobs(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.jobs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.jobs.is_none()`.
+    pub fn jobs(&self) -> &[::std::string::String] {
+        self.jobs.as_deref().unwrap_or_default()
     }
 }
 impl DescribeJobsInput {
@@ -48,7 +50,9 @@ impl DescribeJobsInputBuilder {
         &self.jobs
     }
     /// Consumes the builder and constructs a [`DescribeJobsInput`](crate::operation::describe_jobs::DescribeJobsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_jobs::DescribeJobsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_jobs::DescribeJobsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_jobs::DescribeJobsInput { jobs: self.jobs })
     }
 }

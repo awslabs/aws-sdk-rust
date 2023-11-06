@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Expression {
     /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
-    pub expression_name: ::std::option::Option<::std::string::String>,
+    pub expression_name: ::std::string::String,
     /// <p>The expression to evaluate for sorting while processing a search request. The <code>Expression</code> syntax is based on JavaScript expressions. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    pub expression_value: ::std::option::Option<::std::string::String>,
+    pub expression_value: ::std::string::String,
 }
 impl Expression {
     /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
-    pub fn expression_name(&self) -> ::std::option::Option<&str> {
-        self.expression_name.as_deref()
+    pub fn expression_name(&self) -> &str {
+        use std::ops::Deref;
+        self.expression_name.deref()
     }
     /// <p>The expression to evaluate for sorting while processing a search request. The <code>Expression</code> syntax is based on JavaScript expressions. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    pub fn expression_value(&self) -> ::std::option::Option<&str> {
-        self.expression_value.as_deref()
+    pub fn expression_value(&self) -> &str {
+        use std::ops::Deref;
+        self.expression_value.deref()
     }
 }
 impl Expression {
@@ -35,6 +37,7 @@ pub struct ExpressionBuilder {
 }
 impl ExpressionBuilder {
     /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
+    /// This field is required.
     pub fn expression_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expression_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl ExpressionBuilder {
         &self.expression_name
     }
     /// <p>The expression to evaluate for sorting while processing a search request. The <code>Expression</code> syntax is based on JavaScript expressions. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
+    /// This field is required.
     pub fn expression_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expression_value = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl ExpressionBuilder {
         &self.expression_value
     }
     /// Consumes the builder and constructs a [`Expression`](crate::types::Expression).
-    pub fn build(self) -> crate::types::Expression {
-        crate::types::Expression {
-            expression_name: self.expression_name,
-            expression_value: self.expression_value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`expression_name`](crate::types::builders::ExpressionBuilder::expression_name)
+    /// - [`expression_value`](crate::types::builders::ExpressionBuilder::expression_value)
+    pub fn build(self) -> ::std::result::Result<crate::types::Expression, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Expression {
+            expression_name: self.expression_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "expression_name",
+                    "expression_name was not specified but it is required when building Expression",
+                )
+            })?,
+            expression_value: self.expression_value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "expression_value",
+                    "expression_value was not specified but it is required when building Expression",
+                )
+            })?,
+        })
     }
 }

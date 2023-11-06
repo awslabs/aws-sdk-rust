@@ -51,8 +51,10 @@ impl LicenseConfiguration {
         self.license_version.as_deref()
     }
     /// <p> The list of metric sources required to generate recommendations for commercial software licenses. </p>
-    pub fn metrics_source(&self) -> ::std::option::Option<&[crate::types::MetricSource]> {
-        self.metrics_source.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metrics_source.is_none()`.
+    pub fn metrics_source(&self) -> &[crate::types::MetricSource] {
+        self.metrics_source.as_deref().unwrap_or_default()
     }
 }
 impl LicenseConfiguration {

@@ -100,6 +100,7 @@ impl GetTableObjectsInputBuilder {
         &self.catalog_id
     }
     /// <p>The database containing the governed table.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -114,6 +115,7 @@ impl GetTableObjectsInputBuilder {
         &self.database_name
     }
     /// <p>The governed table for which to retrieve objects.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -215,7 +217,7 @@ impl GetTableObjectsInputBuilder {
     /// Consumes the builder and constructs a [`GetTableObjectsInput`](crate::operation::get_table_objects::GetTableObjectsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_table_objects::GetTableObjectsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_table_objects::GetTableObjectsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_table_objects::GetTableObjectsInput {
             catalog_id: self.catalog_id,
             database_name: self.database_name,

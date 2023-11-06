@@ -23,7 +23,7 @@ pub struct Schedule {
     /// <p>Metadata tags that have been applied to the schedule.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The name of the schedule.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
 }
 impl Schedule {
     /// <p>The ID of the Amazon Web Services account that owns the schedule.</p>
@@ -39,8 +39,10 @@ impl Schedule {
         self.create_date.as_ref()
     }
     /// <p>A list of jobs to be run, according to the schedule.</p>
-    pub fn job_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.job_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_names.is_none()`.
+    pub fn job_names(&self) -> &[::std::string::String] {
+        self.job_names.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last modified the schedule.</p>
     pub fn last_modified_by(&self) -> ::std::option::Option<&str> {
@@ -63,8 +65,9 @@ impl Schedule {
         self.tags.as_ref()
     }
     /// <p>The name of the schedule.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
 }
 impl Schedule {
@@ -229,6 +232,7 @@ impl ScheduleBuilder {
         &self.tags
     }
     /// <p>The name of the schedule.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -243,8 +247,10 @@ impl ScheduleBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`Schedule`](crate::types::Schedule).
-    pub fn build(self) -> crate::types::Schedule {
-        crate::types::Schedule {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::ScheduleBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::Schedule, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Schedule {
             account_id: self.account_id,
             created_by: self.created_by,
             create_date: self.create_date,
@@ -254,7 +260,12 @@ impl ScheduleBuilder {
             resource_arn: self.resource_arn,
             cron_expression: self.cron_expression,
             tags: self.tags,
-            name: self.name,
-        }
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building Schedule",
+                )
+            })?,
+        })
     }
 }

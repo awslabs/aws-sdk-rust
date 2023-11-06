@@ -2,7 +2,7 @@
 pub fn ser_active_directory_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ActiveDirectoryConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.computer_attributes {
         let mut array_2 = object.key("computerAttributes").start_array();
         for item_3 in var_1 {

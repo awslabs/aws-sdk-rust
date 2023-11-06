@@ -27,6 +27,7 @@ pub struct DescribeNotebookInstanceLifecycleConfigInputBuilder {
 }
 impl DescribeNotebookInstanceLifecycleConfigInputBuilder {
     /// <p>The name of the lifecycle configuration to describe.</p>
+    /// This field is required.
     pub fn notebook_instance_lifecycle_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_instance_lifecycle_config_name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeNotebookInstanceLifecycleConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_notebook_instance_lifecycle_config::DescribeNotebookInstanceLifecycleConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_notebook_instance_lifecycle_config::DescribeNotebookInstanceLifecycleConfigInput {

@@ -2,17 +2,17 @@
 pub fn ser_stateless_rule(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StatelessRule,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.rule_definition {
         #[allow(unused_mut)]
         let mut object_2 = object.key("RuleDefinition").start_object();
         crate::protocol_serde::shape_rule_definition::ser_rule_definition(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.priority {
+    {
         object.key("Priority").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((input.priority).into()),
         );
     }
     Ok(())
@@ -53,7 +53,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::stateless_rule_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

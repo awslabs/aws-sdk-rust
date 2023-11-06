@@ -22,9 +22,8 @@ where
                             );
                         }
                         "bridgeMessages" => {
-                            builder = builder.set_bridge_messages(
-                                crate::protocol_serde::shape___list_of_message_detail::de___list_of_message_detail(tokens)?,
-                            );
+                            builder =
+                                builder.set_bridge_messages(crate::protocol_serde::shape_list_of_message_detail::de_list_of_message_detail(tokens)?);
                         }
                         "bridgeState" => {
                             builder = builder.set_bridge_state(
@@ -49,7 +48,7 @@ where
                             );
                         }
                         "outputs" => {
-                            builder = builder.set_outputs(crate::protocol_serde::shape___list_of_bridge_output::de___list_of_bridge_output(tokens)?);
+                            builder = builder.set_outputs(crate::protocol_serde::shape_list_of_bridge_output::de_list_of_bridge_output(tokens)?);
                         }
                         "placementArn" => {
                             builder = builder.set_placement_arn(
@@ -62,7 +61,7 @@ where
                             builder = builder.set_source_failover_config(crate::protocol_serde::shape_failover_config::de_failover_config(tokens)?);
                         }
                         "sources" => {
-                            builder = builder.set_sources(crate::protocol_serde::shape___list_of_bridge_source::de___list_of_bridge_source(tokens)?);
+                            builder = builder.set_sources(crate::protocol_serde::shape_list_of_bridge_source::de_list_of_bridge_source(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
@@ -74,7 +73,7 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::bridge_correct_errors(builder).build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

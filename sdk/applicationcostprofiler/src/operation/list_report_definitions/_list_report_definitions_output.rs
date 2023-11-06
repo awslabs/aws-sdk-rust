@@ -11,8 +11,10 @@ pub struct ListReportDefinitionsOutput {
 }
 impl ListReportDefinitionsOutput {
     /// <p>The retrieved reports.</p>
-    pub fn report_definitions(&self) -> ::std::option::Option<&[crate::types::ReportDefinition]> {
-        self.report_definitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.report_definitions.is_none()`.
+    pub fn report_definitions(&self) -> &[crate::types::ReportDefinition] {
+        self.report_definitions.as_deref().unwrap_or_default()
     }
     /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

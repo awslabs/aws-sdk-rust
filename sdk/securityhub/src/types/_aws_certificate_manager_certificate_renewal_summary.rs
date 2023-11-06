@@ -18,8 +18,10 @@ pub struct AwsCertificateManagerCertificateRenewalSummary {
 }
 impl AwsCertificateManagerCertificateRenewalSummary {
     /// <p>Information about the validation of each domain name in the certificate, as it pertains to Certificate Manager managed renewal. Provided only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
-    pub fn domain_validation_options(&self) -> ::std::option::Option<&[crate::types::AwsCertificateManagerCertificateDomainValidationOption]> {
-        self.domain_validation_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domain_validation_options.is_none()`.
+    pub fn domain_validation_options(&self) -> &[crate::types::AwsCertificateManagerCertificateDomainValidationOption] {
+        self.domain_validation_options.as_deref().unwrap_or_default()
     }
     /// <p>The status of the Certificate Manager managed renewal of the certificate.</p>
     /// <p>Valid values: <code>PENDING_AUTO_RENEWAL</code> | <code>PENDING_VALIDATION</code> | <code>SUCCESS</code> | <code>FAILED</code> </p>

@@ -11,8 +11,10 @@ pub struct ListEdgePackagingJobsOutput {
 }
 impl ListEdgePackagingJobsOutput {
     /// <p>Summaries of edge packaging jobs.</p>
-    pub fn edge_packaging_job_summaries(&self) -> ::std::option::Option<&[crate::types::EdgePackagingJobSummary]> {
-        self.edge_packaging_job_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.edge_packaging_job_summaries.is_none()`.
+    pub fn edge_packaging_job_summaries(&self) -> &[crate::types::EdgePackagingJobSummary] {
+        self.edge_packaging_job_summaries.as_deref().unwrap_or_default()
     }
     /// <p>Token to use when calling the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

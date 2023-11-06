@@ -2,7 +2,7 @@
 pub fn ser_teletext_destination_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TeletextDestinationSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.page_number {
         object.key("pageNumber").string(var_1.as_str());
     }
@@ -41,8 +41,9 @@ where
                             );
                         }
                         "pageTypes" => {
-                            builder = builder
-                                .set_page_types(crate::protocol_serde::shape___list_of_teletext_page_type::de___list_of_teletext_page_type(tokens)?);
+                            builder = builder.set_page_types(crate::protocol_serde::shape_list_of_teletext_page_type::de_list_of_teletext_page_type(
+                                tokens,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

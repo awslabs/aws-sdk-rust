@@ -28,8 +28,10 @@ impl CreateChannelInput {
         self.filler_slate.as_ref()
     }
     /// <p>The channel's output properties.</p>
-    pub fn outputs(&self) -> ::std::option::Option<&[crate::types::RequestOutputItem]> {
-        self.outputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outputs.is_none()`.
+    pub fn outputs(&self) -> &[crate::types::RequestOutputItem] {
+        self.outputs.as_deref().unwrap_or_default()
     }
     /// <p>The type of playback mode to use for this channel.</p>
     /// <p> <code>LINEAR</code> - The programs in the schedule play once back-to-back in the schedule.</p>
@@ -66,6 +68,7 @@ pub struct CreateChannelInputBuilder {
 }
 impl CreateChannelInputBuilder {
     /// <p>The name of the channel.</p>
+    /// This field is required.
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_name = ::std::option::Option::Some(input.into());
         self
@@ -116,6 +119,7 @@ impl CreateChannelInputBuilder {
     /// <p>The type of playback mode to use for this channel.</p>
     /// <p> <code>LINEAR</code> - The programs in the schedule play once back-to-back in the schedule.</p>
     /// <p> <code>LOOP</code> - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule stops playing, playback loops back to the first program in the schedule.</p>
+    /// This field is required.
     pub fn playback_mode(mut self, input: crate::types::PlaybackMode) -> Self {
         self.playback_mode = ::std::option::Option::Some(input);
         self
@@ -170,7 +174,7 @@ impl CreateChannelInputBuilder {
     /// Consumes the builder and constructs a [`CreateChannelInput`](crate::operation::create_channel::CreateChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_channel::CreateChannelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_channel::CreateChannelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_channel::CreateChannelInput {
             channel_name: self.channel_name,
             filler_slate: self.filler_slate,

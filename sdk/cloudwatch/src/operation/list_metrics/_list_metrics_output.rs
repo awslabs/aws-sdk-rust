@@ -14,8 +14,10 @@ pub struct ListMetricsOutput {
 }
 impl ListMetricsOutput {
     /// <p>The metrics that match your request. </p>
-    pub fn metrics(&self) -> ::std::option::Option<&[crate::types::Metric]> {
-        self.metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metrics.is_none()`.
+    pub fn metrics(&self) -> &[crate::types::Metric] {
+        self.metrics.as_deref().unwrap_or_default()
     }
     /// <p>The token that marks the start of the next batch of returned results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -23,8 +25,10 @@ impl ListMetricsOutput {
     }
     /// <p>If you are using this operation in a monitoring account, this array contains the account IDs of the source accounts where the metrics in the returned data are from.</p>
     /// <p>This field is a 1:1 mapping between each metric that is returned and the ID of the owning account.</p>
-    pub fn owning_accounts(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.owning_accounts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.owning_accounts.is_none()`.
+    pub fn owning_accounts(&self) -> &[::std::string::String] {
+        self.owning_accounts.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListMetricsOutput {

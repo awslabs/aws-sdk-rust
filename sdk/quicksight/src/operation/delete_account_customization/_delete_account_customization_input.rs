@@ -34,6 +34,7 @@ pub struct DeleteAccountCustomizationInputBuilder {
 }
 impl DeleteAccountCustomizationInputBuilder {
     /// <p>The ID for the Amazon Web Services account that you want to delete Amazon QuickSight customizations from in this Amazon Web Services Region.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl DeleteAccountCustomizationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_account_customization::DeleteAccountCustomizationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_account_customization::DeleteAccountCustomizationInput {
             aws_account_id: self.aws_account_id,

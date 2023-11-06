@@ -27,6 +27,7 @@ pub struct StopIcd10CmInferenceJobInputBuilder {
 }
 impl StopIcd10CmInferenceJobInputBuilder {
     /// <p>The identifier of the job.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl StopIcd10CmInferenceJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_icd10_cm_inference_job::StopIcd10CmInferenceJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::stop_icd10_cm_inference_job::StopIcd10CmInferenceJobInput { job_id: self.job_id })
     }

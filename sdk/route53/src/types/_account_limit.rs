@@ -12,9 +12,9 @@ pub struct AccountLimit {
     /// <li> <p> <b>MAX_TRAFFIC_POLICIES_BY_OWNER</b>: The maximum number of traffic policies that you can create using the current account.</p> </li>
     /// <li> <p> <b>MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER</b>: The maximum number of traffic policy instances that you can create using the current account. (Traffic policy instances are referred to as traffic flow policy records in the Amazon Route 53 console.)</p> </li>
     /// </ul>
-    pub r#type: ::std::option::Option<crate::types::AccountLimitType>,
+    pub r#type: crate::types::AccountLimitType,
     /// <p>The current value for the limit that is specified by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AccountLimit.html#Route53-Type-AccountLimit-Type">Type</a>.</p>
-    pub value: ::std::option::Option<i64>,
+    pub value: i64,
 }
 impl AccountLimit {
     /// <p>The limit that you requested. Valid values include the following:</p>
@@ -25,11 +25,11 @@ impl AccountLimit {
     /// <li> <p> <b>MAX_TRAFFIC_POLICIES_BY_OWNER</b>: The maximum number of traffic policies that you can create using the current account.</p> </li>
     /// <li> <p> <b>MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER</b>: The maximum number of traffic policy instances that you can create using the current account. (Traffic policy instances are referred to as traffic flow policy records in the Amazon Route 53 console.)</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::AccountLimitType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::AccountLimitType {
+        &self.r#type
     }
     /// <p>The current value for the limit that is specified by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AccountLimit.html#Route53-Type-AccountLimit-Type">Type</a>.</p>
-    pub fn value(&self) -> ::std::option::Option<i64> {
+    pub fn value(&self) -> i64 {
         self.value
     }
 }
@@ -56,6 +56,7 @@ impl AccountLimitBuilder {
     /// <li> <p> <b>MAX_TRAFFIC_POLICIES_BY_OWNER</b>: The maximum number of traffic policies that you can create using the current account.</p> </li>
     /// <li> <p> <b>MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER</b>: The maximum number of traffic policy instances that you can create using the current account. (Traffic policy instances are referred to as traffic flow policy records in the Amazon Route 53 console.)</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::AccountLimitType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -84,6 +85,7 @@ impl AccountLimitBuilder {
         &self.r#type
     }
     /// <p>The current value for the limit that is specified by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AccountLimit.html#Route53-Type-AccountLimit-Type">Type</a>.</p>
+    /// This field is required.
     pub fn value(mut self, input: i64) -> Self {
         self.value = ::std::option::Option::Some(input);
         self
@@ -98,10 +100,23 @@ impl AccountLimitBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`AccountLimit`](crate::types::AccountLimit).
-    pub fn build(self) -> crate::types::AccountLimit {
-        crate::types::AccountLimit {
-            r#type: self.r#type,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::AccountLimitBuilder::r#type)
+    /// - [`value`](crate::types::builders::AccountLimitBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::AccountLimit, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AccountLimit {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building AccountLimit",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building AccountLimit",
+                )
+            })?,
+        })
     }
 }

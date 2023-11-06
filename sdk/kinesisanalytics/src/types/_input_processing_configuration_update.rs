@@ -28,6 +28,7 @@ pub struct InputProcessingConfigurationUpdateBuilder {
 }
 impl InputProcessingConfigurationUpdateBuilder {
     /// <p>Provides update information for an <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">InputLambdaProcessor</a>.</p>
+    /// This field is required.
     pub fn input_lambda_processor_update(mut self, input: crate::types::InputLambdaProcessorUpdate) -> Self {
         self.input_lambda_processor_update = ::std::option::Option::Some(input);
         self

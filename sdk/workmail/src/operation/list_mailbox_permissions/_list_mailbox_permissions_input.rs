@@ -60,6 +60,7 @@ pub struct ListMailboxPermissionsInputBuilder {
 }
 impl ListMailboxPermissionsInputBuilder {
     /// <p>The identifier of the organization under which the user, group, or resource exists.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +81,7 @@ impl ListMailboxPermissionsInputBuilder {
     /// <li> <p>Email address: entity@domain.tld</p> </li>
     /// <li> <p>Entity name: entity</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
         self
@@ -136,8 +138,10 @@ impl ListMailboxPermissionsInputBuilder {
     /// Consumes the builder and constructs a [`ListMailboxPermissionsInput`](crate::operation::list_mailbox_permissions::ListMailboxPermissionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_mailbox_permissions::ListMailboxPermissionsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::list_mailbox_permissions::ListMailboxPermissionsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::list_mailbox_permissions::ListMailboxPermissionsInput {
             organization_id: self.organization_id,
             entity_id: self.entity_id,

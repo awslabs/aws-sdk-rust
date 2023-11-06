@@ -39,8 +39,10 @@ impl DeploymentResult {
         self.deployment_end_time.as_ref()
     }
     /// <p>Returns a list of models deployed on the agent.</p>
-    pub fn deployment_models(&self) -> ::std::option::Option<&[crate::types::DeploymentModel]> {
-        self.deployment_models.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.deployment_models.is_none()`.
+    pub fn deployment_models(&self) -> &[crate::types::DeploymentModel] {
+        self.deployment_models.as_deref().unwrap_or_default()
     }
 }
 impl DeploymentResult {

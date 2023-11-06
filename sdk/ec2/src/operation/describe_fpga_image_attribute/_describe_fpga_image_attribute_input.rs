@@ -55,6 +55,7 @@ impl DescribeFpgaImageAttributeInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the AFI.</p>
+    /// This field is required.
     pub fn fpga_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fpga_image_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl DescribeFpgaImageAttributeInputBuilder {
         &self.fpga_image_id
     }
     /// <p>The AFI attribute.</p>
+    /// This field is required.
     pub fn attribute(mut self, input: crate::types::FpgaImageAttributeName) -> Self {
         self.attribute = ::std::option::Option::Some(input);
         self
@@ -87,7 +89,7 @@ impl DescribeFpgaImageAttributeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_fpga_image_attribute::DescribeFpgaImageAttributeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_fpga_image_attribute::DescribeFpgaImageAttributeInput {
             dry_run: self.dry_run,

@@ -28,6 +28,7 @@ pub struct DeregisterOnPremisesInstanceInputBuilder {
 }
 impl DeregisterOnPremisesInstanceInputBuilder {
     /// <p>The name of the on-premises instance to deregister.</p>
+    /// This field is required.
     pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_name = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl DeregisterOnPremisesInstanceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_on_premises_instance::DeregisterOnPremisesInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::deregister_on_premises_instance::DeregisterOnPremisesInstanceInput {
             instance_name: self.instance_name,

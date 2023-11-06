@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectionSettings {
     /// <p>The time, in seconds, that the connection is allowed to be idle (no data has been sent over the connection) before it is closed by the load balancer.</p>
-    pub idle_timeout: ::std::option::Option<i32>,
+    pub idle_timeout: i32,
 }
 impl ConnectionSettings {
     /// <p>The time, in seconds, that the connection is allowed to be idle (no data has been sent over the connection) before it is closed by the load balancer.</p>
-    pub fn idle_timeout(&self) -> ::std::option::Option<i32> {
+    pub fn idle_timeout(&self) -> i32 {
         self.idle_timeout
     }
 }
@@ -28,6 +28,7 @@ pub struct ConnectionSettingsBuilder {
 }
 impl ConnectionSettingsBuilder {
     /// <p>The time, in seconds, that the connection is allowed to be idle (no data has been sent over the connection) before it is closed by the load balancer.</p>
+    /// This field is required.
     pub fn idle_timeout(mut self, input: i32) -> Self {
         self.idle_timeout = ::std::option::Option::Some(input);
         self
@@ -42,9 +43,16 @@ impl ConnectionSettingsBuilder {
         &self.idle_timeout
     }
     /// Consumes the builder and constructs a [`ConnectionSettings`](crate::types::ConnectionSettings).
-    pub fn build(self) -> crate::types::ConnectionSettings {
-        crate::types::ConnectionSettings {
-            idle_timeout: self.idle_timeout,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`idle_timeout`](crate::types::builders::ConnectionSettingsBuilder::idle_timeout)
+    pub fn build(self) -> ::std::result::Result<crate::types::ConnectionSettings, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ConnectionSettings {
+            idle_timeout: self.idle_timeout.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "idle_timeout",
+                    "idle_timeout was not specified but it is required when building ConnectionSettings",
+                )
+            })?,
+        })
     }
 }

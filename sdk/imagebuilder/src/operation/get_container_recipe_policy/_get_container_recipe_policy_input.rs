@@ -27,6 +27,7 @@ pub struct GetContainerRecipePolicyInputBuilder {
 }
 impl GetContainerRecipePolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the container recipe for the policy being requested.</p>
+    /// This field is required.
     pub fn container_recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_recipe_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetContainerRecipePolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_container_recipe_policy::GetContainerRecipePolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_container_recipe_policy::GetContainerRecipePolicyInput {
             container_recipe_arn: self.container_recipe_arn,

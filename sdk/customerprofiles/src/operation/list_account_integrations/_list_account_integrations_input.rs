@@ -48,6 +48,7 @@ pub struct ListAccountIntegrationsInputBuilder {
 }
 impl ListAccountIntegrationsInputBuilder {
     /// <p>The URI of the S3 bucket or any other type of data source.</p>
+    /// This field is required.
     pub fn uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.uri = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +109,7 @@ impl ListAccountIntegrationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_account_integrations::ListAccountIntegrationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_account_integrations::ListAccountIntegrationsInput {
             uri: self.uri,

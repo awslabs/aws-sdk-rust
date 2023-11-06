@@ -23,20 +23,28 @@ impl Cors {
         self.allow_credentials
     }
     /// <p>Represents a collection of allowed headers. Supported only for HTTP APIs.</p>
-    pub fn allow_headers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.allow_headers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allow_headers.is_none()`.
+    pub fn allow_headers(&self) -> &[::std::string::String] {
+        self.allow_headers.as_deref().unwrap_or_default()
     }
     /// <p>Represents a collection of allowed HTTP methods. Supported only for HTTP APIs.</p>
-    pub fn allow_methods(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.allow_methods.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allow_methods.is_none()`.
+    pub fn allow_methods(&self) -> &[::std::string::String] {
+        self.allow_methods.as_deref().unwrap_or_default()
     }
     /// <p>Represents a collection of allowed origins. Supported only for HTTP APIs.</p>
-    pub fn allow_origins(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.allow_origins.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allow_origins.is_none()`.
+    pub fn allow_origins(&self) -> &[::std::string::String] {
+        self.allow_origins.as_deref().unwrap_or_default()
     }
     /// <p>Represents a collection of exposed headers. Supported only for HTTP APIs.</p>
-    pub fn expose_headers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.expose_headers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.expose_headers.is_none()`.
+    pub fn expose_headers(&self) -> &[::std::string::String] {
+        self.expose_headers.as_deref().unwrap_or_default()
     }
     /// <p>The number of seconds that the browser should cache preflight request results. Supported only for HTTP APIs.</p>
     pub fn max_age(&self) -> ::std::option::Option<i32> {

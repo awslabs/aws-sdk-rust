@@ -11,8 +11,10 @@ pub struct ListPipelinesOutput {
 }
 impl ListPipelinesOutput {
     /// <p>Contains a sorted list of <code>PipelineSummary</code> objects matching the specified filters. Each <code>PipelineSummary</code> consists of PipelineArn, PipelineName, ExperimentName, PipelineDescription, CreationTime, LastModifiedTime, LastRunTime, and RoleArn. This list can be empty. </p>
-    pub fn pipeline_summaries(&self) -> ::std::option::Option<&[crate::types::PipelineSummary]> {
-        self.pipeline_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pipeline_summaries.is_none()`.
+    pub fn pipeline_summaries(&self) -> &[crate::types::PipelineSummary] {
+        self.pipeline_summaries.as_deref().unwrap_or_default()
     }
     /// <p>If the result of the previous <code>ListPipelines</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipelines, use the token in the next request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

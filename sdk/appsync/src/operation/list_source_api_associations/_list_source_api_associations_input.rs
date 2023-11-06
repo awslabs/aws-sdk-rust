@@ -41,6 +41,7 @@ pub struct ListSourceApiAssociationsInputBuilder {
 }
 impl ListSourceApiAssociationsInputBuilder {
     /// <p>The API ID.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListSourceApiAssociationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_source_api_associations::ListSourceApiAssociationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_source_api_associations::ListSourceApiAssociationsInput {
             api_id: self.api_id,

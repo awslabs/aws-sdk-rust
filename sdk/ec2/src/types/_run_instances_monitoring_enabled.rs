@@ -28,6 +28,7 @@ pub struct RunInstancesMonitoringEnabledBuilder {
 }
 impl RunInstancesMonitoringEnabledBuilder {
     /// <p>Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring is enabled.</p>
+    /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self

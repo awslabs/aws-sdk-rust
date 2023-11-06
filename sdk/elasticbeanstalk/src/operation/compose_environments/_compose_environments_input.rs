@@ -21,8 +21,10 @@ impl ComposeEnvironmentsInput {
         self.group_name.as_deref()
     }
     /// <p>A list of version labels, specifying one or more application source bundles that belong to the target application. Each source bundle must include an environment manifest that specifies the name of the environment and the name of the solution stack to use, and optionally can specify environment links to create.</p>
-    pub fn version_labels(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.version_labels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.version_labels.is_none()`.
+    pub fn version_labels(&self) -> &[::std::string::String] {
+        self.version_labels.as_deref().unwrap_or_default()
     }
 }
 impl ComposeEnvironmentsInput {
@@ -92,7 +94,7 @@ impl ComposeEnvironmentsInputBuilder {
     /// Consumes the builder and constructs a [`ComposeEnvironmentsInput`](crate::operation::compose_environments::ComposeEnvironmentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::compose_environments::ComposeEnvironmentsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::compose_environments::ComposeEnvironmentsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::compose_environments::ComposeEnvironmentsInput {
             application_name: self.application_name,

@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FsxStorageConfiguration {
     /// <p>The file system identifier.</p>
-    pub file_system_id: ::std::option::Option<::std::string::String>,
+    pub file_system_id: ::std::string::String,
     /// <p>The mount point for the file system.</p>
-    pub mount_point: ::std::option::Option<::std::string::String>,
+    pub mount_point: ::std::string::String,
 }
 impl FsxStorageConfiguration {
     /// <p>The file system identifier.</p>
-    pub fn file_system_id(&self) -> ::std::option::Option<&str> {
-        self.file_system_id.as_deref()
+    pub fn file_system_id(&self) -> &str {
+        use std::ops::Deref;
+        self.file_system_id.deref()
     }
     /// <p>The mount point for the file system.</p>
-    pub fn mount_point(&self) -> ::std::option::Option<&str> {
-        self.mount_point.as_deref()
+    pub fn mount_point(&self) -> &str {
+        use std::ops::Deref;
+        self.mount_point.deref()
     }
 }
 impl FsxStorageConfiguration {
@@ -35,6 +37,7 @@ pub struct FsxStorageConfigurationBuilder {
 }
 impl FsxStorageConfigurationBuilder {
     /// <p>The file system identifier.</p>
+    /// This field is required.
     pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl FsxStorageConfigurationBuilder {
         &self.file_system_id
     }
     /// <p>The mount point for the file system.</p>
+    /// This field is required.
     pub fn mount_point(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mount_point = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl FsxStorageConfigurationBuilder {
         &self.mount_point
     }
     /// Consumes the builder and constructs a [`FsxStorageConfiguration`](crate::types::FsxStorageConfiguration).
-    pub fn build(self) -> crate::types::FsxStorageConfiguration {
-        crate::types::FsxStorageConfiguration {
-            file_system_id: self.file_system_id,
-            mount_point: self.mount_point,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`file_system_id`](crate::types::builders::FsxStorageConfigurationBuilder::file_system_id)
+    /// - [`mount_point`](crate::types::builders::FsxStorageConfigurationBuilder::mount_point)
+    pub fn build(self) -> ::std::result::Result<crate::types::FsxStorageConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::FsxStorageConfiguration {
+            file_system_id: self.file_system_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "file_system_id",
+                    "file_system_id was not specified but it is required when building FsxStorageConfiguration",
+                )
+            })?,
+            mount_point: self.mount_point.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "mount_point",
+                    "mount_point was not specified but it is required when building FsxStorageConfiguration",
+                )
+            })?,
+        })
     }
 }

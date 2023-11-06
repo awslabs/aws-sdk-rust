@@ -41,6 +41,7 @@ pub struct InitializeClusterInputBuilder {
 }
 impl InitializeClusterInputBuilder {
     /// <p>The identifier (ID) of the cluster that you are claiming. To find the cluster ID, use <code>DescribeClusters</code>.</p>
+    /// This field is required.
     pub fn cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl InitializeClusterInputBuilder {
         &self.cluster_id
     }
     /// <p>The cluster certificate issued (signed) by your issuing certificate authority (CA). The certificate must be in PEM format and can contain a maximum of 5000 characters.</p>
+    /// This field is required.
     pub fn signed_cert(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signed_cert = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl InitializeClusterInputBuilder {
         &self.signed_cert
     }
     /// <p>The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and thus must be the root certificate. The certificate must be in PEM format and can contain a maximum of 5000 characters.</p>
+    /// This field is required.
     pub fn trust_anchor(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trust_anchor = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +88,7 @@ impl InitializeClusterInputBuilder {
     /// Consumes the builder and constructs a [`InitializeClusterInput`](crate::operation::initialize_cluster::InitializeClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::initialize_cluster::InitializeClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::initialize_cluster::InitializeClusterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::initialize_cluster::InitializeClusterInput {
             cluster_id: self.cluster_id,
             signed_cert: self.signed_cert,

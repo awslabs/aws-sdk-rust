@@ -3,8 +3,6 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCredentialsInput {
-    /// <p>The name of the workgroup associated with the database.</p>
-    pub workgroup_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database to get temporary authorization to log on to.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -17,12 +15,12 @@ pub struct GetCredentialsInput {
     pub db_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of seconds until the returned temporary password expires. The minimum is 900 seconds, and the maximum is 3600 seconds.</p>
     pub duration_seconds: ::std::option::Option<i32>,
+    /// <p>The name of the workgroup associated with the database.</p>
+    pub workgroup_name: ::std::option::Option<::std::string::String>,
+    /// <p>The custom domain name associated with the workgroup. The custom domain name or the workgroup name must be included in the request.</p>
+    pub custom_domain_name: ::std::option::Option<::std::string::String>,
 }
 impl GetCredentialsInput {
-    /// <p>The name of the workgroup associated with the database.</p>
-    pub fn workgroup_name(&self) -> ::std::option::Option<&str> {
-        self.workgroup_name.as_deref()
-    }
     /// <p>The name of the database to get temporary authorization to log on to.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -39,6 +37,14 @@ impl GetCredentialsInput {
     pub fn duration_seconds(&self) -> ::std::option::Option<i32> {
         self.duration_seconds
     }
+    /// <p>The name of the workgroup associated with the database.</p>
+    pub fn workgroup_name(&self) -> ::std::option::Option<&str> {
+        self.workgroup_name.as_deref()
+    }
+    /// <p>The custom domain name associated with the workgroup. The custom domain name or the workgroup name must be included in the request.</p>
+    pub fn custom_domain_name(&self) -> ::std::option::Option<&str> {
+        self.custom_domain_name.as_deref()
+    }
 }
 impl GetCredentialsInput {
     /// Creates a new builder-style object to manufacture [`GetCredentialsInput`](crate::operation::get_credentials::GetCredentialsInput).
@@ -51,25 +57,12 @@ impl GetCredentialsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCredentialsInputBuilder {
-    pub(crate) workgroup_name: ::std::option::Option<::std::string::String>,
     pub(crate) db_name: ::std::option::Option<::std::string::String>,
     pub(crate) duration_seconds: ::std::option::Option<i32>,
+    pub(crate) workgroup_name: ::std::option::Option<::std::string::String>,
+    pub(crate) custom_domain_name: ::std::option::Option<::std::string::String>,
 }
 impl GetCredentialsInputBuilder {
-    /// <p>The name of the workgroup associated with the database.</p>
-    pub fn workgroup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.workgroup_name = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The name of the workgroup associated with the database.</p>
-    pub fn set_workgroup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workgroup_name = input;
-        self
-    }
-    /// <p>The name of the workgroup associated with the database.</p>
-    pub fn get_workgroup_name(&self) -> &::std::option::Option<::std::string::String> {
-        &self.workgroup_name
-    }
     /// <p>The name of the database to get temporary authorization to log on to.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -122,14 +115,43 @@ impl GetCredentialsInputBuilder {
     pub fn get_duration_seconds(&self) -> &::std::option::Option<i32> {
         &self.duration_seconds
     }
+    /// <p>The name of the workgroup associated with the database.</p>
+    pub fn workgroup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workgroup_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the workgroup associated with the database.</p>
+    pub fn set_workgroup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.workgroup_name = input;
+        self
+    }
+    /// <p>The name of the workgroup associated with the database.</p>
+    pub fn get_workgroup_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workgroup_name
+    }
+    /// <p>The custom domain name associated with the workgroup. The custom domain name or the workgroup name must be included in the request.</p>
+    pub fn custom_domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.custom_domain_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The custom domain name associated with the workgroup. The custom domain name or the workgroup name must be included in the request.</p>
+    pub fn set_custom_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.custom_domain_name = input;
+        self
+    }
+    /// <p>The custom domain name associated with the workgroup. The custom domain name or the workgroup name must be included in the request.</p>
+    pub fn get_custom_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_domain_name
+    }
     /// Consumes the builder and constructs a [`GetCredentialsInput`](crate::operation::get_credentials::GetCredentialsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_credentials::GetCredentialsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_credentials::GetCredentialsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_credentials::GetCredentialsInput {
-            workgroup_name: self.workgroup_name,
             db_name: self.db_name,
             duration_seconds: self.duration_seconds,
+            workgroup_name: self.workgroup_name,
+            custom_domain_name: self.custom_domain_name,
         })
     }
 }

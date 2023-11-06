@@ -38,8 +38,10 @@ impl UpdateImpersonationRoleInput {
         self.description.as_deref()
     }
     /// <p>The updated list of rules.</p>
-    pub fn rules(&self) -> ::std::option::Option<&[crate::types::ImpersonationRule]> {
-        self.rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
+    pub fn rules(&self) -> &[crate::types::ImpersonationRule] {
+        self.rules.as_deref().unwrap_or_default()
     }
 }
 impl UpdateImpersonationRoleInput {
@@ -62,6 +64,7 @@ pub struct UpdateImpersonationRoleInputBuilder {
 }
 impl UpdateImpersonationRoleInputBuilder {
     /// <p>The WorkMail organization that contains the impersonation role to update.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +79,7 @@ impl UpdateImpersonationRoleInputBuilder {
         &self.organization_id
     }
     /// <p>The ID of the impersonation role to update.</p>
+    /// This field is required.
     pub fn impersonation_role_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.impersonation_role_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +94,7 @@ impl UpdateImpersonationRoleInputBuilder {
         &self.impersonation_role_id
     }
     /// <p>The updated impersonation role name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +109,7 @@ impl UpdateImpersonationRoleInputBuilder {
         &self.name
     }
     /// <p>The updated impersonation role type.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::ImpersonationRoleType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -156,7 +162,7 @@ impl UpdateImpersonationRoleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_impersonation_role::UpdateImpersonationRoleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_impersonation_role::UpdateImpersonationRoleInput {
             organization_id: self.organization_id,

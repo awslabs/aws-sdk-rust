@@ -34,6 +34,7 @@ pub struct ConfirmTransitVirtualInterfaceInputBuilder {
 }
 impl ConfirmTransitVirtualInterfaceInputBuilder {
     /// <p>The ID of the virtual interface.</p>
+    /// This field is required.
     pub fn virtual_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_interface_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl ConfirmTransitVirtualInterfaceInputBuilder {
         &self.virtual_interface_id
     }
     /// <p>The ID of the Direct Connect gateway.</p>
+    /// This field is required.
     pub fn direct_connect_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.direct_connect_gateway_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl ConfirmTransitVirtualInterfaceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::confirm_transit_virtual_interface::ConfirmTransitVirtualInterfaceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::confirm_transit_virtual_interface::ConfirmTransitVirtualInterfaceInput {
             virtual_interface_id: self.virtual_interface_id,

@@ -2,14 +2,14 @@
 pub fn ser_wi_fi_access_point(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WiFiAccessPoint,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.mac_address {
-        object.key("MacAddress").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("MacAddress").string(input.mac_address.as_str());
     }
-    if let Some(var_2) = &input.rss {
+    {
         object.key("Rss").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((input.rss).into()),
         );
     }
     Ok(())

@@ -34,6 +34,7 @@ pub struct SetV2LoggingLevelInputBuilder {
 }
 impl SetV2LoggingLevelInputBuilder {
     /// <p>The log target.</p>
+    /// This field is required.
     pub fn log_target(mut self, input: crate::types::LogTarget) -> Self {
         self.log_target = ::std::option::Option::Some(input);
         self
@@ -48,6 +49,7 @@ impl SetV2LoggingLevelInputBuilder {
         &self.log_target
     }
     /// <p>The log level.</p>
+    /// This field is required.
     pub fn log_level(mut self, input: crate::types::LogLevel) -> Self {
         self.log_level = ::std::option::Option::Some(input);
         self
@@ -64,7 +66,7 @@ impl SetV2LoggingLevelInputBuilder {
     /// Consumes the builder and constructs a [`SetV2LoggingLevelInput`](crate::operation::set_v2_logging_level::SetV2LoggingLevelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::set_v2_logging_level::SetV2LoggingLevelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::set_v2_logging_level::SetV2LoggingLevelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::set_v2_logging_level::SetV2LoggingLevelInput {
             log_target: self.log_target,
             log_level: self.log_level,

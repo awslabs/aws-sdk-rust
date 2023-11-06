@@ -213,6 +213,7 @@ impl CreateConstraintInputBuilder {
         &self.accept_language
     }
     /// <p>The portfolio identifier.</p>
+    /// This field is required.
     pub fn portfolio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portfolio_id = ::std::option::Option::Some(input.into());
         self
@@ -227,6 +228,7 @@ impl CreateConstraintInputBuilder {
         &self.portfolio_id
     }
     /// <p>The product identifier.</p>
+    /// This field is required.
     pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_id = ::std::option::Option::Some(input.into());
         self
@@ -289,6 +291,7 @@ impl CreateConstraintInputBuilder {
     /// <p>Specify the <code>Rules</code> property. For more information, see <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>
     /// </dd>
     /// </dl>
+    /// This field is required.
     pub fn parameters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameters = ::std::option::Option::Some(input.into());
         self
@@ -406,6 +409,7 @@ impl CreateConstraintInputBuilder {
     /// <li> <p> <code>STACKSET</code> </p> </li>
     /// <li> <p> <code>TEMPLATE</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
@@ -448,6 +452,7 @@ impl CreateConstraintInputBuilder {
         &self.description
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
+    /// This field is required.
     pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.idempotency_token = ::std::option::Option::Some(input.into());
         self
@@ -464,7 +469,7 @@ impl CreateConstraintInputBuilder {
     /// Consumes the builder and constructs a [`CreateConstraintInput`](crate::operation::create_constraint::CreateConstraintInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_constraint::CreateConstraintInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_constraint::CreateConstraintInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_constraint::CreateConstraintInput {
             accept_language: self.accept_language,
             portfolio_id: self.portfolio_id,

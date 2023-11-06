@@ -34,6 +34,7 @@ pub struct StartCostEstimationInputBuilder {
 }
 impl StartCostEstimationInputBuilder {
     /// <p>The collection of Amazon Web Services resources used to create a monthly DevOps Guru cost estimate.</p>
+    /// This field is required.
     pub fn resource_collection(mut self, input: crate::types::CostEstimationResourceCollectionFilter) -> Self {
         self.resource_collection = ::std::option::Option::Some(input);
         self
@@ -64,7 +65,7 @@ impl StartCostEstimationInputBuilder {
     /// Consumes the builder and constructs a [`StartCostEstimationInput`](crate::operation::start_cost_estimation::StartCostEstimationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_cost_estimation::StartCostEstimationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_cost_estimation::StartCostEstimationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_cost_estimation::StartCostEstimationInput {
             resource_collection: self.resource_collection,

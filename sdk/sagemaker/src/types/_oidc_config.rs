@@ -91,6 +91,7 @@ pub struct OidcConfigBuilder {
 }
 impl OidcConfigBuilder {
     /// <p>The OIDC IdP client ID used to configure your private workforce.</p>
+    /// This field is required.
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +106,7 @@ impl OidcConfigBuilder {
         &self.client_id
     }
     /// <p>The OIDC IdP client secret used to configure your private workforce.</p>
+    /// This field is required.
     pub fn client_secret(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_secret = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +121,7 @@ impl OidcConfigBuilder {
         &self.client_secret
     }
     /// <p>The OIDC IdP issuer used to configure your private workforce.</p>
+    /// This field is required.
     pub fn issuer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.issuer = ::std::option::Option::Some(input.into());
         self
@@ -133,6 +136,7 @@ impl OidcConfigBuilder {
         &self.issuer
     }
     /// <p>The OIDC IdP authorization endpoint used to configure your private workforce.</p>
+    /// This field is required.
     pub fn authorization_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorization_endpoint = ::std::option::Option::Some(input.into());
         self
@@ -147,6 +151,7 @@ impl OidcConfigBuilder {
         &self.authorization_endpoint
     }
     /// <p>The OIDC IdP token endpoint used to configure your private workforce.</p>
+    /// This field is required.
     pub fn token_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.token_endpoint = ::std::option::Option::Some(input.into());
         self
@@ -161,6 +166,7 @@ impl OidcConfigBuilder {
         &self.token_endpoint
     }
     /// <p>The OIDC IdP user information endpoint used to configure your private workforce.</p>
+    /// This field is required.
     pub fn user_info_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_info_endpoint = ::std::option::Option::Some(input.into());
         self
@@ -175,6 +181,7 @@ impl OidcConfigBuilder {
         &self.user_info_endpoint
     }
     /// <p>The OIDC IdP logout endpoint used to configure your private workforce.</p>
+    /// This field is required.
     pub fn logout_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.logout_endpoint = ::std::option::Option::Some(input.into());
         self
@@ -189,6 +196,7 @@ impl OidcConfigBuilder {
         &self.logout_endpoint
     }
     /// <p>The OIDC IdP JSON Web Key Set (Jwks) URI used to configure your private workforce.</p>
+    /// This field is required.
     pub fn jwks_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.jwks_uri = ::std::option::Option::Some(input.into());
         self

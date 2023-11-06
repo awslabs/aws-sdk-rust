@@ -34,6 +34,7 @@ pub struct DeleteAggregationAuthorizationInputBuilder {
 }
 impl DeleteAggregationAuthorizationInputBuilder {
     /// <p>The 12-digit account ID of the account authorized to aggregate data.</p>
+    /// This field is required.
     pub fn authorized_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorized_account_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteAggregationAuthorizationInputBuilder {
         &self.authorized_account_id
     }
     /// <p>The region authorized to collect aggregated data.</p>
+    /// This field is required.
     pub fn authorized_aws_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorized_aws_region = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl DeleteAggregationAuthorizationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_aggregation_authorization::DeleteAggregationAuthorizationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_aggregation_authorization::DeleteAggregationAuthorizationInput {
             authorized_account_id: self.authorized_account_id,

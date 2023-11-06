@@ -2,7 +2,7 @@
 pub fn ser_batch_get_token_balance_input_item(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BatchGetTokenBalanceInputItem,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.token_identifier {
         #[allow(unused_mut)]
         let mut object_2 = object.key("tokenIdentifier").start_object();

@@ -34,6 +34,7 @@ pub struct CreateAppBlockBuilderStreamingUrlInputBuilder {
 }
 impl CreateAppBlockBuilderStreamingUrlInputBuilder {
     /// <p>The name of the app block builder.</p>
+    /// This field is required.
     pub fn app_block_builder_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_block_builder_name = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl CreateAppBlockBuilderStreamingUrlInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_app_block_builder_streaming_url::CreateAppBlockBuilderStreamingUrlInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_app_block_builder_streaming_url::CreateAppBlockBuilderStreamingUrlInput {

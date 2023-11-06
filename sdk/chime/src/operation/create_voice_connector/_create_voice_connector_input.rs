@@ -41,6 +41,7 @@ pub struct CreateVoiceConnectorInputBuilder {
 }
 impl CreateVoiceConnectorInputBuilder {
     /// <p>The name of the Amazon Chime Voice Connector.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl CreateVoiceConnectorInputBuilder {
         &self.aws_region
     }
     /// <p>When enabled, requires encryption for the Amazon Chime Voice Connector.</p>
+    /// This field is required.
     pub fn require_encryption(mut self, input: bool) -> Self {
         self.require_encryption = ::std::option::Option::Some(input);
         self
@@ -85,7 +87,7 @@ impl CreateVoiceConnectorInputBuilder {
     /// Consumes the builder and constructs a [`CreateVoiceConnectorInput`](crate::operation::create_voice_connector::CreateVoiceConnectorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_voice_connector::CreateVoiceConnectorInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_voice_connector::CreateVoiceConnectorInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_voice_connector::CreateVoiceConnectorInput {
             name: self.name,

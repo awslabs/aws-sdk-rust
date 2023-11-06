@@ -17,12 +17,16 @@ impl UnassignPrivateIpAddressesInput {
         self.network_interface_id.as_deref()
     }
     /// <p>The secondary private IP addresses to unassign from the network interface. You can specify this option multiple times to unassign more than one IP address.</p>
-    pub fn private_ip_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.private_ip_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.private_ip_addresses.is_none()`.
+    pub fn private_ip_addresses(&self) -> &[::std::string::String] {
+        self.private_ip_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The IPv4 prefixes to unassign from the network interface.</p>
-    pub fn ipv4_prefixes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ipv4_prefixes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv4_prefixes.is_none()`.
+    pub fn ipv4_prefixes(&self) -> &[::std::string::String] {
+        self.ipv4_prefixes.as_deref().unwrap_or_default()
     }
 }
 impl UnassignPrivateIpAddressesInput {
@@ -42,6 +46,7 @@ pub struct UnassignPrivateIpAddressesInputBuilder {
 }
 impl UnassignPrivateIpAddressesInputBuilder {
     /// <p>The ID of the network interface.</p>
+    /// This field is required.
     pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_interface_id = ::std::option::Option::Some(input.into());
         self
@@ -100,7 +105,7 @@ impl UnassignPrivateIpAddressesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::unassign_private_ip_addresses::UnassignPrivateIpAddressesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::unassign_private_ip_addresses::UnassignPrivateIpAddressesInput {
             network_interface_id: self.network_interface_id,

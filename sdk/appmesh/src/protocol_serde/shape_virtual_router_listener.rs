@@ -2,7 +2,7 @@
 pub fn ser_virtual_router_listener(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VirtualRouterListener,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.port_mapping {
         #[allow(unused_mut)]
         let mut object_2 = object.key("portMapping").start_object();
@@ -40,7 +40,7 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::virtual_router_listener_correct_errors(builder).build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

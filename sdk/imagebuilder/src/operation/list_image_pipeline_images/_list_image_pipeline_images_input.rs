@@ -26,8 +26,10 @@ impl ListImagePipelineImagesInput {
     /// <li> <p> <code>name</code> </p> </li>
     /// <li> <p> <code>version</code> </p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum items to return in a request.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -56,6 +58,7 @@ pub struct ListImagePipelineImagesInputBuilder {
 }
 impl ListImagePipelineImagesInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline whose images you want to view.</p>
+    /// This field is required.
     pub fn image_pipeline_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_pipeline_arn = ::std::option::Option::Some(input.into());
         self
@@ -134,7 +137,7 @@ impl ListImagePipelineImagesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_image_pipeline_images::ListImagePipelineImagesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_image_pipeline_images::ListImagePipelineImagesInput {
             image_pipeline_arn: self.image_pipeline_arn,

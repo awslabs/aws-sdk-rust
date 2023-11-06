@@ -34,6 +34,7 @@ pub struct DeleteSiteInputBuilder {
 }
 impl DeleteSiteInputBuilder {
     /// <p>The ID of the global network.</p>
+    /// This field is required.
     pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_network_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteSiteInputBuilder {
         &self.global_network_id
     }
     /// <p>The ID of the site.</p>
+    /// This field is required.
     pub fn site_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.site_id = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,7 @@ impl DeleteSiteInputBuilder {
         &self.site_id
     }
     /// Consumes the builder and constructs a [`DeleteSiteInput`](crate::operation::delete_site::DeleteSiteInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_site::DeleteSiteInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_site::DeleteSiteInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_site::DeleteSiteInput {
             global_network_id: self.global_network_id,
             site_id: self.site_id,

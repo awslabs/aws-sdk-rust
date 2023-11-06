@@ -7,7 +7,7 @@ pub struct AssetHierarchy {
     /// <p>The ID of the hierarchy. This ID is a <code>hierarchyId</code>.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The hierarchy name provided in the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
 }
 impl AssetHierarchy {
     /// <p>The ID of the hierarchy. This ID is a <code>hierarchyId</code>.</p>
@@ -15,8 +15,9 @@ impl AssetHierarchy {
         self.id.as_deref()
     }
     /// <p>The hierarchy name provided in the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
 }
 impl AssetHierarchy {
@@ -49,6 +50,7 @@ impl AssetHierarchyBuilder {
         &self.id
     }
     /// <p>The hierarchy name provided in the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl AssetHierarchyBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`AssetHierarchy`](crate::types::AssetHierarchy).
-    pub fn build(self) -> crate::types::AssetHierarchy {
-        crate::types::AssetHierarchy {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::AssetHierarchyBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::AssetHierarchy, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AssetHierarchy {
             id: self.id,
-            name: self.name,
-        }
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building AssetHierarchy",
+                )
+            })?,
+        })
     }
 }

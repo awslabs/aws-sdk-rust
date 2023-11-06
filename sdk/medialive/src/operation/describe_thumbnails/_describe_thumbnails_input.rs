@@ -42,6 +42,7 @@ pub struct DescribeThumbnailsInputBuilder {
 }
 impl DescribeThumbnailsInputBuilder {
     /// Unique ID of the channel
+    /// This field is required.
     pub fn channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl DescribeThumbnailsInputBuilder {
         &self.channel_id
     }
     /// Pipeline ID ("0" or "1")
+    /// This field is required.
     pub fn pipeline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl DescribeThumbnailsInputBuilder {
         &self.pipeline_id
     }
     /// thumbnail type
+    /// This field is required.
     pub fn thumbnail_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thumbnail_type = ::std::option::Option::Some(input.into());
         self
@@ -86,7 +89,7 @@ impl DescribeThumbnailsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeThumbnailsInput`](crate::operation::describe_thumbnails::DescribeThumbnailsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_thumbnails::DescribeThumbnailsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_thumbnails::DescribeThumbnailsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_thumbnails::DescribeThumbnailsInput {
             channel_id: self.channel_id,
             pipeline_id: self.pipeline_id,

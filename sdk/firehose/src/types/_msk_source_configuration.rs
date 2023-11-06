@@ -5,20 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MskSourceConfiguration {
     /// <p>The ARN of the Amazon MSK cluster.</p>
-    pub msk_cluster_arn: ::std::option::Option<::std::string::String>,
+    pub msk_cluster_arn: ::std::string::String,
     /// <p>The topic name within the Amazon MSK cluster. </p>
-    pub topic_name: ::std::option::Option<::std::string::String>,
+    pub topic_name: ::std::string::String,
     /// <p>The authentication configuration of the Amazon MSK cluster.</p>
     pub authentication_configuration: ::std::option::Option<crate::types::AuthenticationConfiguration>,
 }
 impl MskSourceConfiguration {
     /// <p>The ARN of the Amazon MSK cluster.</p>
-    pub fn msk_cluster_arn(&self) -> ::std::option::Option<&str> {
-        self.msk_cluster_arn.as_deref()
+    pub fn msk_cluster_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.msk_cluster_arn.deref()
     }
     /// <p>The topic name within the Amazon MSK cluster. </p>
-    pub fn topic_name(&self) -> ::std::option::Option<&str> {
-        self.topic_name.as_deref()
+    pub fn topic_name(&self) -> &str {
+        use std::ops::Deref;
+        self.topic_name.deref()
     }
     /// <p>The authentication configuration of the Amazon MSK cluster.</p>
     pub fn authentication_configuration(&self) -> ::std::option::Option<&crate::types::AuthenticationConfiguration> {
@@ -42,6 +44,7 @@ pub struct MskSourceConfigurationBuilder {
 }
 impl MskSourceConfigurationBuilder {
     /// <p>The ARN of the Amazon MSK cluster.</p>
+    /// This field is required.
     pub fn msk_cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.msk_cluster_arn = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl MskSourceConfigurationBuilder {
         &self.msk_cluster_arn
     }
     /// <p>The topic name within the Amazon MSK cluster. </p>
+    /// This field is required.
     pub fn topic_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +74,7 @@ impl MskSourceConfigurationBuilder {
         &self.topic_name
     }
     /// <p>The authentication configuration of the Amazon MSK cluster.</p>
+    /// This field is required.
     pub fn authentication_configuration(mut self, input: crate::types::AuthenticationConfiguration) -> Self {
         self.authentication_configuration = ::std::option::Option::Some(input);
         self
@@ -84,11 +89,24 @@ impl MskSourceConfigurationBuilder {
         &self.authentication_configuration
     }
     /// Consumes the builder and constructs a [`MskSourceConfiguration`](crate::types::MskSourceConfiguration).
-    pub fn build(self) -> crate::types::MskSourceConfiguration {
-        crate::types::MskSourceConfiguration {
-            msk_cluster_arn: self.msk_cluster_arn,
-            topic_name: self.topic_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`msk_cluster_arn`](crate::types::builders::MskSourceConfigurationBuilder::msk_cluster_arn)
+    /// - [`topic_name`](crate::types::builders::MskSourceConfigurationBuilder::topic_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::MskSourceConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::MskSourceConfiguration {
+            msk_cluster_arn: self.msk_cluster_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "msk_cluster_arn",
+                    "msk_cluster_arn was not specified but it is required when building MskSourceConfiguration",
+                )
+            })?,
+            topic_name: self.topic_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "topic_name",
+                    "topic_name was not specified but it is required when building MskSourceConfiguration",
+                )
+            })?,
             authentication_configuration: self.authentication_configuration,
-        }
+        })
     }
 }

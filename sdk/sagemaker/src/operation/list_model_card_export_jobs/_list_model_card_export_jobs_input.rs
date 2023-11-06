@@ -90,6 +90,7 @@ pub struct ListModelCardExportJobsInputBuilder {
 }
 impl ListModelCardExportJobsInputBuilder {
     /// <p>List export jobs for the model card with the specified name.</p>
+    /// This field is required.
     pub fn model_card_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_card_name = ::std::option::Option::Some(input.into());
         self
@@ -234,7 +235,7 @@ impl ListModelCardExportJobsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_model_card_export_jobs::ListModelCardExportJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_model_card_export_jobs::ListModelCardExportJobsInput {
             model_card_name: self.model_card_name,

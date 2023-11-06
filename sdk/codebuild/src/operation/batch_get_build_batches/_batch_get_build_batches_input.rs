@@ -8,8 +8,10 @@ pub struct BatchGetBuildBatchesInput {
 }
 impl BatchGetBuildBatchesInput {
     /// <p>An array that contains the batch build identifiers to retrieve.</p>
-    pub fn ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ids.is_none()`.
+    pub fn ids(&self) -> &[::std::string::String] {
+        self.ids.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetBuildBatchesInput {
@@ -49,7 +51,7 @@ impl BatchGetBuildBatchesInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetBuildBatchesInput`](crate::operation::batch_get_build_batches::BatchGetBuildBatchesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_get_build_batches::BatchGetBuildBatchesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_get_build_batches::BatchGetBuildBatchesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_get_build_batches::BatchGetBuildBatchesInput { ids: self.ids })
     }

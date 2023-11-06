@@ -2,48 +2,57 @@
 pub fn ser_confluence_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ConfluenceConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.server_url {
-        object.key("ServerUrl").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("ServerUrl").string(input.server_url.as_str());
     }
-    if let Some(var_2) = &input.secret_arn {
-        object.key("SecretArn").string(var_2.as_str());
+    {
+        object.key("SecretArn").string(input.secret_arn.as_str());
     }
-    if let Some(var_3) = &input.version {
-        object.key("Version").string(var_3.as_str());
+    {
+        object.key("Version").string(input.version.as_str());
     }
-    if let Some(var_4) = &input.space_configuration {
+    if let Some(var_1) = &input.space_configuration {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("SpaceConfiguration").start_object();
-        crate::protocol_serde::shape_confluence_space_configuration::ser_confluence_space_configuration(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_2 = object.key("SpaceConfiguration").start_object();
+        crate::protocol_serde::shape_confluence_space_configuration::ser_confluence_space_configuration(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_6) = &input.page_configuration {
+    if let Some(var_3) = &input.page_configuration {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("PageConfiguration").start_object();
-        crate::protocol_serde::shape_confluence_page_configuration::ser_confluence_page_configuration(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_4 = object.key("PageConfiguration").start_object();
+        crate::protocol_serde::shape_confluence_page_configuration::ser_confluence_page_configuration(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_8) = &input.blog_configuration {
+    if let Some(var_5) = &input.blog_configuration {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("BlogConfiguration").start_object();
-        crate::protocol_serde::shape_confluence_blog_configuration::ser_confluence_blog_configuration(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_6 = object.key("BlogConfiguration").start_object();
+        crate::protocol_serde::shape_confluence_blog_configuration::ser_confluence_blog_configuration(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_10) = &input.attachment_configuration {
+    if let Some(var_7) = &input.attachment_configuration {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("AttachmentConfiguration").start_object();
-        crate::protocol_serde::shape_confluence_attachment_configuration::ser_confluence_attachment_configuration(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_8 = object.key("AttachmentConfiguration").start_object();
+        crate::protocol_serde::shape_confluence_attachment_configuration::ser_confluence_attachment_configuration(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_12) = &input.vpc_configuration {
+    if let Some(var_9) = &input.vpc_configuration {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("VpcConfiguration").start_object();
-        crate::protocol_serde::shape_data_source_vpc_configuration::ser_data_source_vpc_configuration(&mut object_13, var_12)?;
-        object_13.finish();
+        let mut object_10 = object.key("VpcConfiguration").start_object();
+        crate::protocol_serde::shape_data_source_vpc_configuration::ser_data_source_vpc_configuration(&mut object_10, var_9)?;
+        object_10.finish();
     }
-    if let Some(var_14) = &input.inclusion_patterns {
-        let mut array_15 = object.key("InclusionPatterns").start_array();
+    if let Some(var_11) = &input.inclusion_patterns {
+        let mut array_12 = object.key("InclusionPatterns").start_array();
+        for item_13 in var_11 {
+            {
+                array_12.value().string(item_13.as_str());
+            }
+        }
+        array_12.finish();
+    }
+    if let Some(var_14) = &input.exclusion_patterns {
+        let mut array_15 = object.key("ExclusionPatterns").start_array();
         for item_16 in var_14 {
             {
                 array_15.value().string(item_16.as_str());
@@ -51,23 +60,14 @@ pub fn ser_confluence_configuration(
         }
         array_15.finish();
     }
-    if let Some(var_17) = &input.exclusion_patterns {
-        let mut array_18 = object.key("ExclusionPatterns").start_array();
-        for item_19 in var_17 {
-            {
-                array_18.value().string(item_19.as_str());
-            }
-        }
-        array_18.finish();
-    }
-    if let Some(var_20) = &input.proxy_configuration {
+    if let Some(var_17) = &input.proxy_configuration {
         #[allow(unused_mut)]
-        let mut object_21 = object.key("ProxyConfiguration").start_object();
-        crate::protocol_serde::shape_proxy_configuration::ser_proxy_configuration(&mut object_21, var_20)?;
-        object_21.finish();
+        let mut object_18 = object.key("ProxyConfiguration").start_object();
+        crate::protocol_serde::shape_proxy_configuration::ser_proxy_configuration(&mut object_18, var_17)?;
+        object_18.finish();
     }
-    if let Some(var_22) = &input.authentication_type {
-        object.key("AuthenticationType").string(var_22.as_str());
+    if let Some(var_19) = &input.authentication_type {
+        object.key("AuthenticationType").string(var_19.as_str());
     }
     Ok(())
 }
@@ -166,7 +166,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::confluence_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

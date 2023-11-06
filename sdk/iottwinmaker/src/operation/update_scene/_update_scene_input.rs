@@ -34,8 +34,10 @@ impl UpdateSceneInput {
         self.description.as_deref()
     }
     /// <p>A list of capabilities that the scene uses to render.</p>
-    pub fn capabilities(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.capabilities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capabilities.is_none()`.
+    pub fn capabilities(&self) -> &[::std::string::String] {
+        self.capabilities.as_deref().unwrap_or_default()
     }
     /// <p>The scene metadata.</p>
     pub fn scene_metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -62,6 +64,7 @@ pub struct UpdateSceneInputBuilder {
 }
 impl UpdateSceneInputBuilder {
     /// <p>The ID of the workspace that contains the scene.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +79,7 @@ impl UpdateSceneInputBuilder {
         &self.workspace_id
     }
     /// <p>The ID of the scene.</p>
+    /// This field is required.
     pub fn scene_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scene_id = ::std::option::Option::Some(input.into());
         self
@@ -165,7 +169,7 @@ impl UpdateSceneInputBuilder {
         &self.scene_metadata
     }
     /// Consumes the builder and constructs a [`UpdateSceneInput`](crate::operation::update_scene::UpdateSceneInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_scene::UpdateSceneInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_scene::UpdateSceneInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_scene::UpdateSceneInput {
             workspace_id: self.workspace_id,
             scene_id: self.scene_id,

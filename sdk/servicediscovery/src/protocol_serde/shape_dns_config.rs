@@ -2,24 +2,24 @@
 pub fn ser_dns_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DnsConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.namespace_id {
         object.key("NamespaceId").string(var_1.as_str());
     }
     if let Some(var_2) = &input.routing_policy {
         object.key("RoutingPolicy").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.dns_records {
-        let mut array_4 = object.key("DnsRecords").start_array();
-        for item_5 in var_3 {
+    {
+        let mut array_3 = object.key("DnsRecords").start_array();
+        for item_4 in &input.dns_records {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_dns_record::ser_dns_record(&mut object_6, item_5)?;
-                object_6.finish();
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_dns_record::ser_dns_record(&mut object_5, item_4)?;
+                object_5.finish();
             }
         }
-        array_4.finish();
+        array_3.finish();
     }
     Ok(())
 }
@@ -66,7 +66,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::dns_config_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

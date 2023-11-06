@@ -2,24 +2,24 @@
 pub fn ser_parallelism_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ParallelismConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.configuration_type {
-        object.key("ConfigurationType").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("ConfigurationType").string(input.configuration_type.as_str());
     }
-    if let Some(var_2) = &input.parallelism {
+    if let Some(var_1) = &input.parallelism {
         object.key("Parallelism").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+        );
+    }
+    if let Some(var_2) = &input.parallelism_per_kpu {
+        object.key("ParallelismPerKPU").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_3) = &input.parallelism_per_kpu {
-        object.key("ParallelismPerKPU").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
-        );
-    }
-    if let Some(var_4) = &input.auto_scaling_enabled {
-        object.key("AutoScalingEnabled").boolean(*var_4);
+    if let Some(var_3) = &input.auto_scaling_enabled {
+        object.key("AutoScalingEnabled").boolean(*var_3);
     }
     Ok(())
 }

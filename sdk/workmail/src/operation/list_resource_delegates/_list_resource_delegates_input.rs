@@ -60,6 +60,7 @@ pub struct ListResourceDelegatesInputBuilder {
 }
 impl ListResourceDelegatesInputBuilder {
     /// <p>The identifier for the organization that contains the resource for which delegates are listed.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +81,7 @@ impl ListResourceDelegatesInputBuilder {
     /// <li> <p>Email address: resource@domain.tld</p> </li>
     /// <li> <p>Resource name: resource</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -136,7 +138,7 @@ impl ListResourceDelegatesInputBuilder {
     /// Consumes the builder and constructs a [`ListResourceDelegatesInput`](crate::operation::list_resource_delegates::ListResourceDelegatesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_resource_delegates::ListResourceDelegatesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_resource_delegates::ListResourceDelegatesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_resource_delegates::ListResourceDelegatesInput {
             organization_id: self.organization_id,

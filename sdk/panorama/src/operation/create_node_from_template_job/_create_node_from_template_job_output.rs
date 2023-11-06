@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateNodeFromTemplateJobOutput {
     /// <p>The job's ID.</p>
-    pub job_id: ::std::option::Option<::std::string::String>,
+    pub job_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateNodeFromTemplateJobOutput {
     /// <p>The job's ID.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
-        self.job_id.as_deref()
+    pub fn job_id(&self) -> &str {
+        use std::ops::Deref;
+        self.job_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateNodeFromTemplateJobOutput {
@@ -34,6 +35,7 @@ pub struct CreateNodeFromTemplateJobOutputBuilder {
 }
 impl CreateNodeFromTemplateJobOutputBuilder {
     /// <p>The job's ID.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,22 @@ impl CreateNodeFromTemplateJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateNodeFromTemplateJobOutput`](crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobOutput).
-    pub fn build(self) -> crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobOutput {
-        crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobOutput {
-            job_id: self.job_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`job_id`](crate::operation::create_node_from_template_job::builders::CreateNodeFromTemplateJobOutputBuilder::job_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobOutput {
+            job_id: self.job_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "job_id",
+                    "job_id was not specified but it is required when building CreateNodeFromTemplateJobOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

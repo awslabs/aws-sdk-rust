@@ -2,12 +2,12 @@
 pub fn ser_s3_repository(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::S3Repository,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("Name").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.bucket_name {
-        object.key("BucketName").string(var_2.as_str());
+    {
+        object.key("BucketName").string(input.bucket_name.as_str());
     }
     Ok(())
 }

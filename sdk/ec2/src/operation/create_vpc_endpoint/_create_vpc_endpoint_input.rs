@@ -58,16 +58,22 @@ impl CreateVpcEndpointInput {
         self.policy_document.as_deref()
     }
     /// <p>(Gateway endpoint) The route table IDs.</p>
-    pub fn route_table_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.route_table_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.route_table_ids.is_none()`.
+    pub fn route_table_ids(&self) -> &[::std::string::String] {
+        self.route_table_ids.as_deref().unwrap_or_default()
     }
     /// <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to create endpoint network interfaces. For a Gateway Load Balancer endpoint, you can specify only one subnet.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        self.subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>(Interface endpoint) The IDs of the security groups to associate with the endpoint network interfaces. If this parameter is not specified, we use the default security group for the VPC.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>The IP address type for the endpoint.</p>
     pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
@@ -88,12 +94,16 @@ impl CreateVpcEndpointInput {
         self.private_dns_enabled
     }
     /// <p>The tags to associate with the endpoint.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
     /// <p>The subnet configurations for the endpoint.</p>
-    pub fn subnet_configurations(&self) -> ::std::option::Option<&[crate::types::SubnetConfiguration]> {
-        self.subnet_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_configurations.is_none()`.
+    pub fn subnet_configurations(&self) -> &[crate::types::SubnetConfiguration] {
+        self.subnet_configurations.as_deref().unwrap_or_default()
     }
 }
 impl CreateVpcEndpointInput {
@@ -155,6 +165,7 @@ impl CreateVpcEndpointInputBuilder {
         &self.vpc_endpoint_type
     }
     /// <p>The ID of the VPC.</p>
+    /// This field is required.
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
         self
@@ -169,6 +180,7 @@ impl CreateVpcEndpointInputBuilder {
         &self.vpc_id
     }
     /// <p>The name of the endpoint service.</p>
+    /// This field is required.
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
         self
@@ -361,7 +373,7 @@ impl CreateVpcEndpointInputBuilder {
     /// Consumes the builder and constructs a [`CreateVpcEndpointInput`](crate::operation::create_vpc_endpoint::CreateVpcEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_vpc_endpoint::CreateVpcEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_vpc_endpoint::CreateVpcEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_vpc_endpoint::CreateVpcEndpointInput {
             dry_run: self.dry_run,
             vpc_endpoint_type: self.vpc_endpoint_type,

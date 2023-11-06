@@ -82,6 +82,7 @@ pub struct CreateContactChannelInputBuilder {
 }
 impl CreateContactChannelInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the contact you are adding the contact channel to.</p>
+    /// This field is required.
     pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_id = ::std::option::Option::Some(input.into());
         self
@@ -96,6 +97,7 @@ impl CreateContactChannelInputBuilder {
         &self.contact_id
     }
     /// <p>The name of the contact channel.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -115,6 +117,7 @@ impl CreateContactChannelInputBuilder {
     /// <li> <p> <code>VOICE</code> </p> </li>
     /// <li> <p> <code>EMAIL</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::ChannelType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -144,6 +147,7 @@ impl CreateContactChannelInputBuilder {
     /// <li> <p>VOICE - '+' followed by the country code and phone number</p> </li>
     /// <li> <p>EMAIL - any standard email format</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn delivery_address(mut self, input: crate::types::ContactChannelAddress) -> Self {
         self.delivery_address = ::std::option::Option::Some(input);
         self
@@ -198,7 +202,7 @@ impl CreateContactChannelInputBuilder {
     /// Consumes the builder and constructs a [`CreateContactChannelInput`](crate::operation::create_contact_channel::CreateContactChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_contact_channel::CreateContactChannelInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_contact_channel::CreateContactChannelInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_contact_channel::CreateContactChannelInput {
             contact_id: self.contact_id,

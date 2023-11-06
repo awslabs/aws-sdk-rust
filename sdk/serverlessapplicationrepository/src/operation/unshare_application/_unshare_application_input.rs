@@ -34,6 +34,7 @@ pub struct UnshareApplicationInputBuilder {
 }
 impl UnshareApplicationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UnshareApplicationInputBuilder {
         &self.application_id
     }
     /// <p>The AWS Organization ID to unshare the application from.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl UnshareApplicationInputBuilder {
     /// Consumes the builder and constructs a [`UnshareApplicationInput`](crate::operation::unshare_application::UnshareApplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::unshare_application::UnshareApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::unshare_application::UnshareApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::unshare_application::UnshareApplicationInput {
             application_id: self.application_id,
             organization_id: self.organization_id,

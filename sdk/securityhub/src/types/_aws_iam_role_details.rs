@@ -32,8 +32,10 @@ impl AwsIamRoleDetails {
         self.assume_role_policy_document.as_deref()
     }
     /// <p>The list of the managed policies that are attached to the role.</p>
-    pub fn attached_managed_policies(&self) -> ::std::option::Option<&[crate::types::AwsIamAttachedManagedPolicy]> {
-        self.attached_managed_policies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attached_managed_policies.is_none()`.
+    pub fn attached_managed_policies(&self) -> &[crate::types::AwsIamAttachedManagedPolicy] {
+        self.attached_managed_policies.as_deref().unwrap_or_default()
     }
     /// <p>Indicates when the role was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
@@ -41,8 +43,10 @@ impl AwsIamRoleDetails {
         self.create_date.as_deref()
     }
     /// <p>The list of instance profiles that contain this role.</p>
-    pub fn instance_profile_list(&self) -> ::std::option::Option<&[crate::types::AwsIamInstanceProfile]> {
-        self.instance_profile_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_profile_list.is_none()`.
+    pub fn instance_profile_list(&self) -> &[crate::types::AwsIamInstanceProfile] {
+        self.instance_profile_list.as_deref().unwrap_or_default()
     }
     /// <p>Information about the policy used to set the permissions boundary for an IAM principal.</p>
     pub fn permissions_boundary(&self) -> ::std::option::Option<&crate::types::AwsIamPermissionsBoundary> {
@@ -57,8 +61,10 @@ impl AwsIamRoleDetails {
         self.role_name.as_deref()
     }
     /// <p>The list of inline policies that are embedded in the role.</p>
-    pub fn role_policy_list(&self) -> ::std::option::Option<&[crate::types::AwsIamRolePolicy]> {
-        self.role_policy_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.role_policy_list.is_none()`.
+    pub fn role_policy_list(&self) -> &[crate::types::AwsIamRolePolicy] {
+        self.role_policy_list.as_deref().unwrap_or_default()
     }
     /// <p>The maximum session duration (in seconds) that you want to set for the specified role.</p>
     pub fn max_session_duration(&self) -> ::std::option::Option<i32> {

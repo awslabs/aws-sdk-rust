@@ -16,8 +16,10 @@ impl DbClusterSnapshotAttributesResult {
         self.db_cluster_snapshot_identifier.as_deref()
     }
     /// <p>The list of attributes and values for the manual DB cluster snapshot.</p>
-    pub fn db_cluster_snapshot_attributes(&self) -> ::std::option::Option<&[crate::types::DbClusterSnapshotAttribute]> {
-        self.db_cluster_snapshot_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_cluster_snapshot_attributes.is_none()`.
+    pub fn db_cluster_snapshot_attributes(&self) -> &[crate::types::DbClusterSnapshotAttribute] {
+        self.db_cluster_snapshot_attributes.as_deref().unwrap_or_default()
     }
 }
 impl DbClusterSnapshotAttributesResult {

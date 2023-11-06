@@ -13,8 +13,10 @@ pub struct EncryptionConfiguration {
 }
 impl EncryptionConfiguration {
     /// <p>The encryption configuration for Amazon Simple Storage Service (Amazon S3) data.</p>
-    pub fn s3_encryption(&self) -> ::std::option::Option<&[crate::types::S3Encryption]> {
-        self.s3_encryption.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.s3_encryption.is_none()`.
+    pub fn s3_encryption(&self) -> &[crate::types::S3Encryption] {
+        self.s3_encryption.as_deref().unwrap_or_default()
     }
     /// <p>The encryption configuration for Amazon CloudWatch.</p>
     pub fn cloud_watch_encryption(&self) -> ::std::option::Option<&crate::types::CloudWatchEncryption> {

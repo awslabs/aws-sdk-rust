@@ -99,12 +99,16 @@ impl Workspace {
         self.workspace_properties.as_ref()
     }
     /// <p>The modification states of the WorkSpace.</p>
-    pub fn modification_states(&self) -> ::std::option::Option<&[crate::types::ModificationState]> {
-        self.modification_states.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.modification_states.is_none()`.
+    pub fn modification_states(&self) -> &[crate::types::ModificationState] {
+        self.modification_states.as_deref().unwrap_or_default()
     }
     /// <p>The standby WorkSpace or primary WorkSpace related to the specified WorkSpace.</p>
-    pub fn related_workspaces(&self) -> ::std::option::Option<&[crate::types::RelatedWorkspaceProperties]> {
-        self.related_workspaces.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.related_workspaces.is_none()`.
+    pub fn related_workspaces(&self) -> &[crate::types::RelatedWorkspaceProperties] {
+        self.related_workspaces.as_deref().unwrap_or_default()
     }
 }
 impl Workspace {

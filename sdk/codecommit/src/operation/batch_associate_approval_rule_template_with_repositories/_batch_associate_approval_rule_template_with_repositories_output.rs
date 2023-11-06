@@ -4,19 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchAssociateApprovalRuleTemplateWithRepositoriesOutput {
     /// <p>A list of names of the repositories that have been associated with the template.</p>
-    pub associated_repository_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub associated_repository_names: ::std::vec::Vec<::std::string::String>,
     /// <p>A list of any errors that might have occurred while attempting to create the association between the template and the repositories.</p>
-    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchAssociateApprovalRuleTemplateWithRepositoriesError>>,
+    pub errors: ::std::vec::Vec<crate::types::BatchAssociateApprovalRuleTemplateWithRepositoriesError>,
     _request_id: Option<String>,
 }
 impl BatchAssociateApprovalRuleTemplateWithRepositoriesOutput {
     /// <p>A list of names of the repositories that have been associated with the template.</p>
-    pub fn associated_repository_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.associated_repository_names.as_deref()
+    pub fn associated_repository_names(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.associated_repository_names.deref()
     }
     /// <p>A list of any errors that might have occurred while attempting to create the association between the template and the repositories.</p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::BatchAssociateApprovalRuleTemplateWithRepositoriesError]> {
-        self.errors.as_deref()
+    pub fn errors(&self) -> &[crate::types::BatchAssociateApprovalRuleTemplateWithRepositoriesError] {
+        use std::ops::Deref;
+        self.errors.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchAssociateApprovalRuleTemplateWithRepositoriesOutput {
@@ -93,13 +95,29 @@ impl BatchAssociateApprovalRuleTemplateWithRepositoriesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchAssociateApprovalRuleTemplateWithRepositoriesOutput`](crate::operation::batch_associate_approval_rule_template_with_repositories::BatchAssociateApprovalRuleTemplateWithRepositoriesOutput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`associated_repository_names`](crate::operation::batch_associate_approval_rule_template_with_repositories::builders::BatchAssociateApprovalRuleTemplateWithRepositoriesOutputBuilder::associated_repository_names)
+    /// - [`errors`](crate::operation::batch_associate_approval_rule_template_with_repositories::builders::BatchAssociateApprovalRuleTemplateWithRepositoriesOutputBuilder::errors)
     pub fn build(
         self,
-    ) -> crate::operation::batch_associate_approval_rule_template_with_repositories::BatchAssociateApprovalRuleTemplateWithRepositoriesOutput {
-        crate::operation::batch_associate_approval_rule_template_with_repositories::BatchAssociateApprovalRuleTemplateWithRepositoriesOutput {
-            associated_repository_names: self.associated_repository_names,
-            errors: self.errors,
-            _request_id: self._request_id,
-        }
+    ) -> ::std::result::Result<
+        crate::operation::batch_associate_approval_rule_template_with_repositories::BatchAssociateApprovalRuleTemplateWithRepositoriesOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::batch_associate_approval_rule_template_with_repositories::BatchAssociateApprovalRuleTemplateWithRepositoriesOutput {
+                associated_repository_names: self.associated_repository_names
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("associated_repository_names", "associated_repository_names was not specified but it is required when building BatchAssociateApprovalRuleTemplateWithRepositoriesOutput")
+                    )?
+                ,
+                errors: self.errors
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("errors", "errors was not specified but it is required when building BatchAssociateApprovalRuleTemplateWithRepositoriesOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }

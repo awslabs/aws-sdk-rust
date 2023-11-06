@@ -2,7 +2,7 @@
 pub fn ser_update_monitor_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_monitor::UpdateMonitorInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.client_token {
         object.key("ClientToken").string(var_1.as_str());
     }
@@ -18,37 +18,37 @@ pub fn ser_update_monitor_input(
         crate::protocol_serde::shape_internet_measurements_log_delivery::ser_internet_measurements_log_delivery(&mut object_5, var_4)?;
         object_5.finish();
     }
-    if input.max_city_networks_to_monitor != 0 {
+    if let Some(var_6) = &input.max_city_networks_to_monitor {
         object.key("MaxCityNetworksToMonitor").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.max_city_networks_to_monitor).into()),
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if let Some(var_6) = &input.resources_to_add {
-        let mut array_7 = object.key("ResourcesToAdd").start_array();
-        for item_8 in var_6 {
+    if let Some(var_7) = &input.resources_to_add {
+        let mut array_8 = object.key("ResourcesToAdd").start_array();
+        for item_9 in var_7 {
             {
-                array_7.value().string(item_8.as_str());
+                array_8.value().string(item_9.as_str());
             }
         }
-        array_7.finish();
+        array_8.finish();
     }
-    if let Some(var_9) = &input.resources_to_remove {
-        let mut array_10 = object.key("ResourcesToRemove").start_array();
-        for item_11 in var_9 {
+    if let Some(var_10) = &input.resources_to_remove {
+        let mut array_11 = object.key("ResourcesToRemove").start_array();
+        for item_12 in var_10 {
             {
-                array_10.value().string(item_11.as_str());
+                array_11.value().string(item_12.as_str());
             }
         }
-        array_10.finish();
+        array_11.finish();
     }
-    if let Some(var_12) = &input.status {
-        object.key("Status").string(var_12.as_str());
+    if let Some(var_13) = &input.status {
+        object.key("Status").string(var_13.as_str());
     }
-    if input.traffic_percentage_to_monitor != 0 {
+    if let Some(var_14) = &input.traffic_percentage_to_monitor {
         object.key("TrafficPercentageToMonitor").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.traffic_percentage_to_monitor).into()),
+            ::aws_smithy_types::Number::NegInt((*var_14).into()),
         );
     }
     Ok(())

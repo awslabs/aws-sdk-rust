@@ -32,8 +32,10 @@ impl ListFieldOptionsInput {
         self.next_token.as_deref()
     }
     /// <p>A list of <code>FieldOption</code> values to filter on for <code>ListFieldOptions</code>.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
+    pub fn values(&self) -> &[::std::string::String] {
+        self.values.as_deref().unwrap_or_default()
     }
 }
 impl ListFieldOptionsInput {
@@ -55,6 +57,7 @@ pub struct ListFieldOptionsInputBuilder {
 }
 impl ListFieldOptionsInputBuilder {
     /// <p>The unique identifier of the Cases domain. </p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +72,7 @@ impl ListFieldOptionsInputBuilder {
         &self.domain_id
     }
     /// <p>The unique identifier of a field.</p>
+    /// This field is required.
     pub fn field_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.field_id = ::std::option::Option::Some(input.into());
         self
@@ -133,7 +137,7 @@ impl ListFieldOptionsInputBuilder {
     /// Consumes the builder and constructs a [`ListFieldOptionsInput`](crate::operation::list_field_options::ListFieldOptionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_field_options::ListFieldOptionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_field_options::ListFieldOptionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_field_options::ListFieldOptionsInput {
             domain_id: self.domain_id,
             field_id: self.field_id,

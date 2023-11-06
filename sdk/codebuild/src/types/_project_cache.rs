@@ -10,7 +10,7 @@ pub struct ProjectCache {
     /// <li> <p> <code>S3</code>: The build project reads and writes from and to S3.</p> </li>
     /// <li> <p> <code>LOCAL</code>: The build project stores a cache locally on a build host that is only available to that build host.</p> </li>
     /// </ul>
-    pub r#type: ::std::option::Option<crate::types::CacheType>,
+    pub r#type: crate::types::CacheType,
     /// <p>Information about the cache location: </p>
     /// <ul>
     /// <li> <p> <code>NO_CACHE</code> or <code>LOCAL</code>: This value is ignored.</p> </li>
@@ -59,8 +59,8 @@ impl ProjectCache {
     /// <li> <p> <code>S3</code>: The build project reads and writes from and to S3.</p> </li>
     /// <li> <p> <code>LOCAL</code>: The build project stores a cache locally on a build host that is only available to that build host.</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::CacheType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::CacheType {
+        &self.r#type
     }
     /// <p>Information about the cache location: </p>
     /// <ul>
@@ -103,8 +103,10 @@ impl ProjectCache {
     /// </ul>
     /// </dd>
     /// </dl>
-    pub fn modes(&self) -> ::std::option::Option<&[crate::types::CacheMode]> {
-        self.modes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.modes.is_none()`.
+    pub fn modes(&self) -> &[crate::types::CacheMode] {
+        self.modes.as_deref().unwrap_or_default()
     }
 }
 impl ProjectCache {
@@ -129,6 +131,7 @@ impl ProjectCacheBuilder {
     /// <li> <p> <code>S3</code>: The build project reads and writes from and to S3.</p> </li>
     /// <li> <p> <code>LOCAL</code>: The build project stores a cache locally on a build host that is only available to that build host.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::CacheType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -295,11 +298,18 @@ impl ProjectCacheBuilder {
         &self.modes
     }
     /// Consumes the builder and constructs a [`ProjectCache`](crate::types::ProjectCache).
-    pub fn build(self) -> crate::types::ProjectCache {
-        crate::types::ProjectCache {
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::ProjectCacheBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::ProjectCache, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ProjectCache {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building ProjectCache",
+                )
+            })?,
             location: self.location,
             modes: self.modes,
-        }
+        })
     }
 }

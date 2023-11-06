@@ -41,6 +41,7 @@ pub struct ListDataSourcesInputBuilder {
 }
 impl ListDataSourcesInputBuilder {
     /// <p>The API ID.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl ListDataSourcesInputBuilder {
     /// Consumes the builder and constructs a [`ListDataSourcesInput`](crate::operation::list_data_sources::ListDataSourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_data_sources::ListDataSourcesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_data_sources::ListDataSourcesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_data_sources::ListDataSourcesInput {
             api_id: self.api_id,
             next_token: self.next_token,

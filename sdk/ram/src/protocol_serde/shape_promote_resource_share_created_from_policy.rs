@@ -30,12 +30,9 @@ pub fn de_promote_resource_share_created_from_policy_http_error(
                     let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
                     output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output).map_err(crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::invalid_parameter_exception_correct_errors(output).build().map_err(crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyError::unhandled)?
                 }
             ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
             tmp
         }),
         "InvalidStateTransitionException" => crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyError::InvalidStateTransitionException({
@@ -46,12 +43,9 @@ pub fn de_promote_resource_share_created_from_policy_http_error(
                     let mut output = crate::types::error::builders::InvalidStateTransitionExceptionBuilder::default();
                     output = crate::protocol_serde::shape_invalid_state_transition_exception::de_invalid_state_transition_exception_json_err(_response_body, output).map_err(crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::invalid_state_transition_exception_correct_errors(output).build().map_err(crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyError::unhandled)?
                 }
             ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
             tmp
         }),
         "MalformedArnException" => crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyError::MalformedArnException({
@@ -62,12 +56,9 @@ pub fn de_promote_resource_share_created_from_policy_http_error(
                     let mut output = crate::types::error::builders::MalformedArnExceptionBuilder::default();
                     output = crate::protocol_serde::shape_malformed_arn_exception::de_malformed_arn_exception_json_err(_response_body, output).map_err(crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::malformed_arn_exception_correct_errors(output).build().map_err(crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyError::unhandled)?
                 }
             ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
             tmp
         }),
         "MissingRequiredParameterException" => crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyError::MissingRequiredParameterException({
@@ -78,12 +69,9 @@ pub fn de_promote_resource_share_created_from_policy_http_error(
                     let mut output = crate::types::error::builders::MissingRequiredParameterExceptionBuilder::default();
                     output = crate::protocol_serde::shape_missing_required_parameter_exception::de_missing_required_parameter_exception_json_err(_response_body, output).map_err(crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::missing_required_parameter_exception_correct_errors(output).build().map_err(crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyError::unhandled)?
                 }
             ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
             tmp
         }),
         "OperationNotPermittedException" => crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyError::OperationNotPermittedException({
@@ -94,12 +82,9 @@ pub fn de_promote_resource_share_created_from_policy_http_error(
                     let mut output = crate::types::error::builders::OperationNotPermittedExceptionBuilder::default();
                     output = crate::protocol_serde::shape_operation_not_permitted_exception::de_operation_not_permitted_exception_json_err(_response_body, output).map_err(crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::operation_not_permitted_exception_correct_errors(output).build().map_err(crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyError::unhandled)?
                 }
             ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
             tmp
         }),
         "ResourceShareLimitExceededException" => crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyError::ResourceShareLimitExceededException({
@@ -110,12 +95,9 @@ pub fn de_promote_resource_share_created_from_policy_http_error(
                     let mut output = crate::types::error::builders::ResourceShareLimitExceededExceptionBuilder::default();
                     output = crate::protocol_serde::shape_resource_share_limit_exceeded_exception::de_resource_share_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::resource_share_limit_exceeded_exception_correct_errors(output).build().map_err(crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyError::unhandled)?
                 }
             ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
             tmp
         }),
         "ServerInternalException" => crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyError::ServerInternalException({
@@ -126,12 +108,9 @@ pub fn de_promote_resource_share_created_from_policy_http_error(
                     let mut output = crate::types::error::builders::ServerInternalExceptionBuilder::default();
                     output = crate::protocol_serde::shape_server_internal_exception::de_server_internal_exception_json_err(_response_body, output).map_err(crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::server_internal_exception_correct_errors(output).build().map_err(crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyError::unhandled)?
                 }
             ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyError::ServiceUnavailableException({
@@ -142,12 +121,9 @@ pub fn de_promote_resource_share_created_from_policy_http_error(
                     let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
                     output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output).map_err(crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::service_unavailable_exception_correct_errors(output).build().map_err(crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyError::unhandled)?
                 }
             ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
             tmp
         }),
         "UnknownResourceException" => crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyError::UnknownResourceException({
@@ -158,12 +134,9 @@ pub fn de_promote_resource_share_created_from_policy_http_error(
                     let mut output = crate::types::error::builders::UnknownResourceExceptionBuilder::default();
                     output = crate::protocol_serde::shape_unknown_resource_exception::de_unknown_resource_exception_json_err(_response_body, output).map_err(crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::unknown_resource_exception_correct_errors(output).build().map_err(crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyError::unhandled)?
                 }
             ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
             tmp
         }),
         "UnmatchedPolicyPermissionException" => crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyError::UnmatchedPolicyPermissionException({
@@ -174,12 +147,9 @@ pub fn de_promote_resource_share_created_from_policy_http_error(
                     let mut output = crate::types::error::builders::UnmatchedPolicyPermissionExceptionBuilder::default();
                     output = crate::protocol_serde::shape_unmatched_policy_permission_exception::de_unmatched_policy_permission_exception_json_err(_response_body, output).map_err(crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::unmatched_policy_permission_exception_correct_errors(output).build().map_err(crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyError::unhandled)?
                 }
             ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
             tmp
         }),
         _ => crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyError::generic(generic)

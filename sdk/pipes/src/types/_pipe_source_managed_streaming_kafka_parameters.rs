@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PipeSourceManagedStreamingKafkaParameters {
     /// <p>The name of the topic that the pipe will read from.</p>
-    pub topic_name: ::std::option::Option<::std::string::String>,
+    pub topic_name: ::std::string::String,
     /// <p>(Streams only) The position in a stream from which to start reading.</p>
     pub starting_position: ::std::option::Option<crate::types::MskStartPosition>,
     /// <p>The maximum number of records to include in each batch.</p>
@@ -19,8 +19,9 @@ pub struct PipeSourceManagedStreamingKafkaParameters {
 }
 impl PipeSourceManagedStreamingKafkaParameters {
     /// <p>The name of the topic that the pipe will read from.</p>
-    pub fn topic_name(&self) -> ::std::option::Option<&str> {
-        self.topic_name.as_deref()
+    pub fn topic_name(&self) -> &str {
+        use std::ops::Deref;
+        self.topic_name.deref()
     }
     /// <p>(Streams only) The position in a stream from which to start reading.</p>
     pub fn starting_position(&self) -> ::std::option::Option<&crate::types::MskStartPosition> {
@@ -75,6 +76,7 @@ pub struct PipeSourceManagedStreamingKafkaParametersBuilder {
 }
 impl PipeSourceManagedStreamingKafkaParametersBuilder {
     /// <p>The name of the topic that the pipe will read from.</p>
+    /// This field is required.
     pub fn topic_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_name = ::std::option::Option::Some(input.into());
         self
@@ -159,15 +161,24 @@ impl PipeSourceManagedStreamingKafkaParametersBuilder {
         &self.credentials
     }
     /// Consumes the builder and constructs a [`PipeSourceManagedStreamingKafkaParameters`](crate::types::PipeSourceManagedStreamingKafkaParameters).
-    pub fn build(self) -> crate::types::PipeSourceManagedStreamingKafkaParameters {
-        crate::types::PipeSourceManagedStreamingKafkaParameters {
-            topic_name: self.topic_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`topic_name`](crate::types::builders::PipeSourceManagedStreamingKafkaParametersBuilder::topic_name)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::PipeSourceManagedStreamingKafkaParameters, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PipeSourceManagedStreamingKafkaParameters {
+            topic_name: self.topic_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "topic_name",
+                    "topic_name was not specified but it is required when building PipeSourceManagedStreamingKafkaParameters",
+                )
+            })?,
             starting_position: self.starting_position,
             batch_size: self.batch_size,
             maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds,
             consumer_group_id: self.consumer_group_id,
             credentials: self.credentials,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for PipeSourceManagedStreamingKafkaParametersBuilder {

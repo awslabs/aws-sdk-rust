@@ -11,8 +11,10 @@ pub struct ListUserHierarchyGroupsOutput {
 }
 impl ListUserHierarchyGroupsOutput {
     /// <p>Information about the hierarchy groups.</p>
-    pub fn user_hierarchy_group_summary_list(&self) -> ::std::option::Option<&[crate::types::HierarchyGroupSummary]> {
-        self.user_hierarchy_group_summary_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_hierarchy_group_summary_list.is_none()`.
+    pub fn user_hierarchy_group_summary_list(&self) -> &[crate::types::HierarchyGroupSummary] {
+        self.user_hierarchy_group_summary_list.as_deref().unwrap_or_default()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

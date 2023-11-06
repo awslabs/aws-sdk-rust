@@ -98,10 +98,10 @@ pub fn de_associate_device_with_network_profile_http_response(
 
 pub fn ser_associate_device_with_network_profile_input(
     input: &crate::operation::associate_device_with_network_profile::AssociateDeviceWithNetworkProfileInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_associate_device_with_network_profile_input::ser_associate_device_with_network_profile_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

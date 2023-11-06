@@ -5,20 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CanDbcDefinition {
     /// <p>Contains information about a network interface.</p>
-    pub network_interface: ::std::option::Option<::std::string::String>,
+    pub network_interface: ::std::string::String,
     /// <p>A list of DBC files. You can upload only one DBC file for each network interface and specify up to five (inclusive) files in the list.</p>
-    pub can_dbc_files: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>>,
+    pub can_dbc_files: ::std::vec::Vec<::aws_smithy_types::Blob>,
     /// <p>Pairs every signal specified in your vehicle model with a signal decoder.</p>
     pub signals_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CanDbcDefinition {
     /// <p>Contains information about a network interface.</p>
-    pub fn network_interface(&self) -> ::std::option::Option<&str> {
-        self.network_interface.as_deref()
+    pub fn network_interface(&self) -> &str {
+        use std::ops::Deref;
+        self.network_interface.deref()
     }
     /// <p>A list of DBC files. You can upload only one DBC file for each network interface and specify up to five (inclusive) files in the list.</p>
-    pub fn can_dbc_files(&self) -> ::std::option::Option<&[::aws_smithy_types::Blob]> {
-        self.can_dbc_files.as_deref()
+    pub fn can_dbc_files(&self) -> &[::aws_smithy_types::Blob] {
+        use std::ops::Deref;
+        self.can_dbc_files.deref()
     }
     /// <p>Pairs every signal specified in your vehicle model with a signal decoder.</p>
     pub fn signals_map(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -42,6 +44,7 @@ pub struct CanDbcDefinitionBuilder {
 }
 impl CanDbcDefinitionBuilder {
     /// <p>Contains information about a network interface.</p>
+    /// This field is required.
     pub fn network_interface(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_interface = ::std::option::Option::Some(input.into());
         self
@@ -99,11 +102,24 @@ impl CanDbcDefinitionBuilder {
         &self.signals_map
     }
     /// Consumes the builder and constructs a [`CanDbcDefinition`](crate::types::CanDbcDefinition).
-    pub fn build(self) -> crate::types::CanDbcDefinition {
-        crate::types::CanDbcDefinition {
-            network_interface: self.network_interface,
-            can_dbc_files: self.can_dbc_files,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`network_interface`](crate::types::builders::CanDbcDefinitionBuilder::network_interface)
+    /// - [`can_dbc_files`](crate::types::builders::CanDbcDefinitionBuilder::can_dbc_files)
+    pub fn build(self) -> ::std::result::Result<crate::types::CanDbcDefinition, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CanDbcDefinition {
+            network_interface: self.network_interface.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "network_interface",
+                    "network_interface was not specified but it is required when building CanDbcDefinition",
+                )
+            })?,
+            can_dbc_files: self.can_dbc_files.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "can_dbc_files",
+                    "can_dbc_files was not specified but it is required when building CanDbcDefinition",
+                )
+            })?,
             signals_map: self.signals_map,
-        }
+        })
     }
 }

@@ -97,8 +97,10 @@ impl Job {
         self.error_message.as_deref()
     }
     /// Optional list of hop destinations.
-    pub fn hop_destinations(&self) -> ::std::option::Option<&[crate::types::HopDestination]> {
-        self.hop_destinations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hop_destinations.is_none()`.
+    pub fn hop_destinations(&self) -> &[crate::types::HopDestination] {
+        self.hop_destinations.as_deref().unwrap_or_default()
     }
     /// A portion of the job's ARN, unique within your AWS Elemental MediaConvert resources
     pub fn id(&self) -> ::std::option::Option<&str> {
@@ -117,8 +119,10 @@ impl Job {
         self.messages.as_ref()
     }
     /// List of output group details
-    pub fn output_group_details(&self) -> ::std::option::Option<&[crate::types::OutputGroupDetail]> {
-        self.output_group_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_group_details.is_none()`.
+    pub fn output_group_details(&self) -> &[crate::types::OutputGroupDetail] {
+        self.output_group_details.as_deref().unwrap_or_default()
     }
     /// Relative priority on the job.
     pub fn priority(&self) -> ::std::option::Option<i32> {
@@ -129,8 +133,10 @@ impl Job {
         self.queue.as_deref()
     }
     /// The job's queue hopping history.
-    pub fn queue_transitions(&self) -> ::std::option::Option<&[crate::types::QueueTransition]> {
-        self.queue_transitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.queue_transitions.is_none()`.
+    pub fn queue_transitions(&self) -> &[crate::types::QueueTransition] {
+        self.queue_transitions.as_deref().unwrap_or_default()
     }
     /// The number of times that the service automatically attempted to process your job after encountering an error.
     pub fn retry_count(&self) -> ::std::option::Option<i32> {
@@ -165,8 +171,10 @@ impl Job {
         self.user_metadata.as_ref()
     }
     /// Contains any warning messages for the job. Use to help identify potential issues with your input, output, or job. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/warning_codes.html
-    pub fn warnings(&self) -> ::std::option::Option<&[crate::types::WarningGroup]> {
-        self.warnings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.warnings.is_none()`.
+    pub fn warnings(&self) -> &[crate::types::WarningGroup] {
+        self.warnings.as_deref().unwrap_or_default()
     }
 }
 impl Job {
@@ -494,6 +502,7 @@ impl JobBuilder {
         &self.retry_count
     }
     /// The IAM role you use for creating this job. For details about permissions, see the User Guide topic at the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
+    /// This field is required.
     pub fn role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role = ::std::option::Option::Some(input.into());
         self
@@ -508,6 +517,7 @@ impl JobBuilder {
         &self.role
     }
     /// JobSettings contains all the transcode settings for a job.
+    /// This field is required.
     pub fn settings(mut self, input: crate::types::JobSettings) -> Self {
         self.settings = ::std::option::Option::Some(input);
         self

@@ -54,8 +54,10 @@ impl CopyBackupInput {
         self.copy_tags
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CopyBackupInput {
@@ -92,6 +94,7 @@ impl CopyBackupInputBuilder {
         &self.client_request_token
     }
     /// <p>The ID of the source backup. Specifies the ID of the backup that's being copied.</p>
+    /// This field is required.
     pub fn source_backup_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_backup_id = ::std::option::Option::Some(input.into());
         self
@@ -192,7 +195,7 @@ impl CopyBackupInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CopyBackupInput`](crate::operation::copy_backup::CopyBackupInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::copy_backup::CopyBackupInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::copy_backup::CopyBackupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::copy_backup::CopyBackupInput {
             client_request_token: self.client_request_token,
             source_backup_id: self.source_backup_id,

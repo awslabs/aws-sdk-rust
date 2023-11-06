@@ -2,7 +2,7 @@
 pub fn ser_start_device_sync_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_device_sync::StartDeviceSyncInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.room_arn {
         object.key("RoomArn").string(var_1.as_str());
     }

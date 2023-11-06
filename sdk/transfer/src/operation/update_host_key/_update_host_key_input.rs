@@ -41,6 +41,7 @@ pub struct UpdateHostKeyInputBuilder {
 }
 impl UpdateHostKeyInputBuilder {
     /// <p>The identifier of the server that contains the host key that you are updating.</p>
+    /// This field is required.
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateHostKeyInputBuilder {
         &self.server_id
     }
     /// <p>The identifier of the host key that you are updating.</p>
+    /// This field is required.
     pub fn host_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host_key_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl UpdateHostKeyInputBuilder {
         &self.host_key_id
     }
     /// <p>An updated description for the host key.</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +88,7 @@ impl UpdateHostKeyInputBuilder {
     /// Consumes the builder and constructs a [`UpdateHostKeyInput`](crate::operation::update_host_key::UpdateHostKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_host_key::UpdateHostKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_host_key::UpdateHostKeyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_host_key::UpdateHostKeyInput {
             server_id: self.server_id,
             host_key_id: self.host_key_id,

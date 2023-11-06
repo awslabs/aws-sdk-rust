@@ -25,7 +25,7 @@ pub use crate::types::_asset_property_timestamp::AssetPropertyTimestampBuilder;
 
 pub use crate::types::_asset_property_variant::AssetPropertyVariantBuilder;
 
-pub use crate::types::_dynamo_d_bv2_action::DynamoDBv2ActionBuilder;
+pub use crate::types::_dynamo_dbv2_action::DynamoDBv2ActionBuilder;
 
 pub use crate::types::_payload::PayloadBuilder;
 

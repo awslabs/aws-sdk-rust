@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OwnerFilter {
     /// <p>The contract or wallet address.</p>
-    pub address: ::std::option::Option<::std::string::String>,
+    pub address: ::std::string::String,
 }
 impl OwnerFilter {
     /// <p>The contract or wallet address.</p>
-    pub fn address(&self) -> ::std::option::Option<&str> {
-        self.address.as_deref()
+    pub fn address(&self) -> &str {
+        use std::ops::Deref;
+        self.address.deref()
     }
 }
 impl OwnerFilter {
@@ -28,6 +29,7 @@ pub struct OwnerFilterBuilder {
 }
 impl OwnerFilterBuilder {
     /// <p>The contract or wallet address.</p>
+    /// This field is required.
     pub fn address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.address = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl OwnerFilterBuilder {
         &self.address
     }
     /// Consumes the builder and constructs a [`OwnerFilter`](crate::types::OwnerFilter).
-    pub fn build(self) -> crate::types::OwnerFilter {
-        crate::types::OwnerFilter { address: self.address }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`address`](crate::types::builders::OwnerFilterBuilder::address)
+    pub fn build(self) -> ::std::result::Result<crate::types::OwnerFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::OwnerFilter {
+            address: self.address.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "address",
+                    "address was not specified but it is required when building OwnerFilter",
+                )
+            })?,
+        })
     }
 }

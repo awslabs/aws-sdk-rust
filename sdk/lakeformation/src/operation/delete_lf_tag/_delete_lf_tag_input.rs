@@ -48,6 +48,7 @@ impl DeleteLfTagInputBuilder {
         &self.catalog_id
     }
     /// <p>The key-name for the LF-tag to delete.</p>
+    /// This field is required.
     pub fn tag_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tag_key = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +63,7 @@ impl DeleteLfTagInputBuilder {
         &self.tag_key
     }
     /// Consumes the builder and constructs a [`DeleteLfTagInput`](crate::operation::delete_lf_tag::DeleteLfTagInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_lf_tag::DeleteLfTagInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_lf_tag::DeleteLfTagInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_lf_tag::DeleteLfTagInput {
             catalog_id: self.catalog_id,
             tag_key: self.tag_key,

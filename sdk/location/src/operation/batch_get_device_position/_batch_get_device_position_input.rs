@@ -20,8 +20,10 @@ impl BatchGetDevicePositionInput {
     /// <ul>
     /// <li> <p>For example, for two devices: <code>device-ids=DeviceId1&amp;device-ids=DeviceId2</code> </p> </li>
     /// </ul>
-    pub fn device_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.device_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.device_ids.is_none()`.
+    pub fn device_ids(&self) -> &[::std::string::String] {
+        self.device_ids.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetDevicePositionInput {
@@ -40,6 +42,7 @@ pub struct BatchGetDevicePositionInputBuilder {
 }
 impl BatchGetDevicePositionInputBuilder {
     /// <p>The tracker resource retrieving the device position.</p>
+    /// This field is required.
     pub fn tracker_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tracker_name = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +90,7 @@ impl BatchGetDevicePositionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_device_position::BatchGetDevicePositionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_get_device_position::BatchGetDevicePositionInput {
             tracker_name: self.tracker_name,

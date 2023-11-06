@@ -8,8 +8,10 @@ pub struct CreateAssociationBatchInput {
 }
 impl CreateAssociationBatchInput {
     /// <p>One or more associations.</p>
-    pub fn entries(&self) -> ::std::option::Option<&[crate::types::CreateAssociationBatchRequestEntry]> {
-        self.entries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entries.is_none()`.
+    pub fn entries(&self) -> &[crate::types::CreateAssociationBatchRequestEntry] {
+        self.entries.as_deref().unwrap_or_default()
     }
 }
 impl CreateAssociationBatchInput {
@@ -49,8 +51,10 @@ impl CreateAssociationBatchInputBuilder {
     /// Consumes the builder and constructs a [`CreateAssociationBatchInput`](crate::operation::create_association_batch::CreateAssociationBatchInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_association_batch::CreateAssociationBatchInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_association_batch::CreateAssociationBatchInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_association_batch::CreateAssociationBatchInput { entries: self.entries })
     }
 }

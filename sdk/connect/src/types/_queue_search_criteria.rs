@@ -19,12 +19,16 @@ pub struct QueueSearchCriteria {
 }
 impl QueueSearchCriteria {
     /// <p>A list of conditions which would be applied together with an OR condition.</p>
-    pub fn or_conditions(&self) -> ::std::option::Option<&[crate::types::QueueSearchCriteria]> {
-        self.or_conditions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.or_conditions.is_none()`.
+    pub fn or_conditions(&self) -> &[crate::types::QueueSearchCriteria] {
+        self.or_conditions.as_deref().unwrap_or_default()
     }
     /// <p>A list of conditions which would be applied together with an AND condition.</p>
-    pub fn and_conditions(&self) -> ::std::option::Option<&[crate::types::QueueSearchCriteria]> {
-        self.and_conditions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.and_conditions.is_none()`.
+    pub fn and_conditions(&self) -> &[crate::types::QueueSearchCriteria] {
+        self.and_conditions.as_deref().unwrap_or_default()
     }
     /// <p>A leaf node condition which can be used to specify a string condition.</p> <note>
     /// <p>The currently supported values for <code>FieldName</code> are <code>name</code>, <code>description</code>, and <code>resourceID</code>.</p>

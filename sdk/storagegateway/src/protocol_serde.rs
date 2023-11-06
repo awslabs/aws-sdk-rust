@@ -449,9 +449,9 @@ pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tags;
 
-pub(crate) mod shape_tape_ar_ns;
-
 pub(crate) mod shape_tape_archives;
+
+pub(crate) mod shape_tape_arns;
 
 pub(crate) mod shape_tape_infos;
 

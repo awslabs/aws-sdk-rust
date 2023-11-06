@@ -4,31 +4,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateCustomDomainOutput {
     /// <p>The App Runner subdomain of the App Runner service. The custom domain name is mapped to this target name.</p>
-    pub dns_target: ::std::option::Option<::std::string::String>,
+    pub dns_target: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the App Runner service with which a custom domain name is associated.</p>
-    pub service_arn: ::std::option::Option<::std::string::String>,
+    pub service_arn: ::std::string::String,
     /// <p>A description of the domain name that's being associated.</p>
     pub custom_domain: ::std::option::Option<crate::types::CustomDomain>,
     /// <p>DNS Target records for the custom domains of this Amazon VPC. </p>
-    pub vpc_dns_targets: ::std::option::Option<::std::vec::Vec<crate::types::VpcDnsTarget>>,
+    pub vpc_dns_targets: ::std::vec::Vec<crate::types::VpcDnsTarget>,
     _request_id: Option<String>,
 }
 impl AssociateCustomDomainOutput {
     /// <p>The App Runner subdomain of the App Runner service. The custom domain name is mapped to this target name.</p>
-    pub fn dns_target(&self) -> ::std::option::Option<&str> {
-        self.dns_target.as_deref()
+    pub fn dns_target(&self) -> &str {
+        use std::ops::Deref;
+        self.dns_target.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the App Runner service with which a custom domain name is associated.</p>
-    pub fn service_arn(&self) -> ::std::option::Option<&str> {
-        self.service_arn.as_deref()
+    pub fn service_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.service_arn.deref()
     }
     /// <p>A description of the domain name that's being associated.</p>
     pub fn custom_domain(&self) -> ::std::option::Option<&crate::types::CustomDomain> {
         self.custom_domain.as_ref()
     }
     /// <p>DNS Target records for the custom domains of this Amazon VPC. </p>
-    pub fn vpc_dns_targets(&self) -> ::std::option::Option<&[crate::types::VpcDnsTarget]> {
-        self.vpc_dns_targets.as_deref()
+    pub fn vpc_dns_targets(&self) -> &[crate::types::VpcDnsTarget] {
+        use std::ops::Deref;
+        self.vpc_dns_targets.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for AssociateCustomDomainOutput {
@@ -55,6 +58,7 @@ pub struct AssociateCustomDomainOutputBuilder {
 }
 impl AssociateCustomDomainOutputBuilder {
     /// <p>The App Runner subdomain of the App Runner service. The custom domain name is mapped to this target name.</p>
+    /// This field is required.
     pub fn dns_target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dns_target = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +73,7 @@ impl AssociateCustomDomainOutputBuilder {
         &self.dns_target
     }
     /// <p>The Amazon Resource Name (ARN) of the App Runner service with which a custom domain name is associated.</p>
+    /// This field is required.
     pub fn service_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_arn = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +88,7 @@ impl AssociateCustomDomainOutputBuilder {
         &self.service_arn
     }
     /// <p>A description of the domain name that's being associated.</p>
+    /// This field is required.
     pub fn custom_domain(mut self, input: crate::types::CustomDomain) -> Self {
         self.custom_domain = ::std::option::Option::Some(input);
         self
@@ -126,13 +132,35 @@ impl AssociateCustomDomainOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateCustomDomainOutput`](crate::operation::associate_custom_domain::AssociateCustomDomainOutput).
-    pub fn build(self) -> crate::operation::associate_custom_domain::AssociateCustomDomainOutput {
-        crate::operation::associate_custom_domain::AssociateCustomDomainOutput {
-            dns_target: self.dns_target,
-            service_arn: self.service_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`dns_target`](crate::operation::associate_custom_domain::builders::AssociateCustomDomainOutputBuilder::dns_target)
+    /// - [`service_arn`](crate::operation::associate_custom_domain::builders::AssociateCustomDomainOutputBuilder::service_arn)
+    /// - [`vpc_dns_targets`](crate::operation::associate_custom_domain::builders::AssociateCustomDomainOutputBuilder::vpc_dns_targets)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::associate_custom_domain::AssociateCustomDomainOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::associate_custom_domain::AssociateCustomDomainOutput {
+            dns_target: self.dns_target.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "dns_target",
+                    "dns_target was not specified but it is required when building AssociateCustomDomainOutput",
+                )
+            })?,
+            service_arn: self.service_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "service_arn",
+                    "service_arn was not specified but it is required when building AssociateCustomDomainOutput",
+                )
+            })?,
             custom_domain: self.custom_domain,
-            vpc_dns_targets: self.vpc_dns_targets,
+            vpc_dns_targets: self.vpc_dns_targets.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "vpc_dns_targets",
+                    "vpc_dns_targets was not specified but it is required when building AssociateCustomDomainOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

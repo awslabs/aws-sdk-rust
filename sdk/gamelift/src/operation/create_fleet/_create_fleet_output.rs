@@ -15,8 +15,10 @@ impl CreateFleetOutput {
         self.fleet_attributes.as_ref()
     }
     /// <p>The fleet's locations and life-cycle status of each location. For new fleets, the status of all locations is set to <code>NEW</code>. During fleet creation, Amazon GameLift updates each location status as instances are deployed there and prepared for game hosting. This list includes an entry for the fleet's home Region. For fleets with no remote locations, only one entry, representing the home Region, is returned.</p>
-    pub fn location_states(&self) -> ::std::option::Option<&[crate::types::LocationState]> {
-        self.location_states.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.location_states.is_none()`.
+    pub fn location_states(&self) -> &[crate::types::LocationState] {
+        self.location_states.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateFleetOutput {

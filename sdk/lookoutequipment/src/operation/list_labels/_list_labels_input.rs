@@ -69,6 +69,7 @@ pub struct ListLabelsInputBuilder {
 }
 impl ListLabelsInputBuilder {
     /// <p> Retruns the name of the label group. </p>
+    /// This field is required.
     pub fn label_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_group_name = ::std::option::Option::Some(input.into());
         self
@@ -167,7 +168,7 @@ impl ListLabelsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListLabelsInput`](crate::operation::list_labels::ListLabelsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_labels::ListLabelsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_labels::ListLabelsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_labels::ListLabelsInput {
             label_group_name: self.label_group_name,
             interval_start_time: self.interval_start_time,

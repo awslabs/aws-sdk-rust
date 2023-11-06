@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchCreateIndex {
     /// <p>Specifies the attributes that should be indexed on. Currently only a single attribute is supported.</p>
-    pub ordered_indexed_attribute_list: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKey>>,
+    pub ordered_indexed_attribute_list: ::std::vec::Vec<crate::types::AttributeKey>,
     /// <p>Indicates whether the attribute that is being indexed has unique values or not.</p>
     pub is_unique: bool,
     /// <p>A reference to the parent object that contains the index object.</p>
@@ -17,8 +17,9 @@ pub struct BatchCreateIndex {
 }
 impl BatchCreateIndex {
     /// <p>Specifies the attributes that should be indexed on. Currently only a single attribute is supported.</p>
-    pub fn ordered_indexed_attribute_list(&self) -> ::std::option::Option<&[crate::types::AttributeKey]> {
-        self.ordered_indexed_attribute_list.as_deref()
+    pub fn ordered_indexed_attribute_list(&self) -> &[crate::types::AttributeKey] {
+        use std::ops::Deref;
+        self.ordered_indexed_attribute_list.deref()
     }
     /// <p>Indicates whether the attribute that is being indexed has unique values or not.</p>
     pub fn is_unique(&self) -> bool {
@@ -76,6 +77,7 @@ impl BatchCreateIndexBuilder {
         &self.ordered_indexed_attribute_list
     }
     /// <p>Indicates whether the attribute that is being indexed has unique values or not.</p>
+    /// This field is required.
     pub fn is_unique(mut self, input: bool) -> Self {
         self.is_unique = ::std::option::Option::Some(input);
         self
@@ -132,13 +134,20 @@ impl BatchCreateIndexBuilder {
         &self.batch_reference_name
     }
     /// Consumes the builder and constructs a [`BatchCreateIndex`](crate::types::BatchCreateIndex).
-    pub fn build(self) -> crate::types::BatchCreateIndex {
-        crate::types::BatchCreateIndex {
-            ordered_indexed_attribute_list: self.ordered_indexed_attribute_list,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`ordered_indexed_attribute_list`](crate::types::builders::BatchCreateIndexBuilder::ordered_indexed_attribute_list)
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchCreateIndex, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::BatchCreateIndex {
+            ordered_indexed_attribute_list: self.ordered_indexed_attribute_list.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "ordered_indexed_attribute_list",
+                    "ordered_indexed_attribute_list was not specified but it is required when building BatchCreateIndex",
+                )
+            })?,
             is_unique: self.is_unique.unwrap_or_default(),
             parent_reference: self.parent_reference,
             link_name: self.link_name,
             batch_reference_name: self.batch_reference_name,
-        }
+        })
     }
 }

@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Config {
     /// <p>S3 bucket name.</p>
-    pub bucket_name: ::std::option::Option<::std::string::String>,
+    pub bucket_name: ::std::string::String,
     /// <p>S3 prefix. </p>
     pub key_prefix: ::std::option::Option<::std::string::String>,
 }
 impl S3Config {
     /// <p>S3 bucket name.</p>
-    pub fn bucket_name(&self) -> ::std::option::Option<&str> {
-        self.bucket_name.as_deref()
+    pub fn bucket_name(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket_name.deref()
     }
     /// <p>S3 prefix. </p>
     pub fn key_prefix(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct S3ConfigBuilder {
 }
 impl S3ConfigBuilder {
     /// <p>S3 bucket name.</p>
+    /// This field is required.
     pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl S3ConfigBuilder {
         &self.key_prefix
     }
     /// Consumes the builder and constructs a [`S3Config`](crate::types::S3Config).
-    pub fn build(self) -> crate::types::S3Config {
-        crate::types::S3Config {
-            bucket_name: self.bucket_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bucket_name`](crate::types::builders::S3ConfigBuilder::bucket_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::S3Config, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::S3Config {
+            bucket_name: self.bucket_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "bucket_name",
+                    "bucket_name was not specified but it is required when building S3Config",
+                )
+            })?,
             key_prefix: self.key_prefix,
-        }
+        })
     }
 }

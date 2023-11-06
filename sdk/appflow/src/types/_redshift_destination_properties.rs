@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RedshiftDestinationProperties {
     /// <p> The object specified in the Amazon Redshift flow destination. </p>
-    pub object: ::std::option::Option<::std::string::String>,
+    pub object: ::std::string::String,
     /// <p> The intermediate bucket that Amazon AppFlow uses when moving data into Amazon Redshift. </p>
-    pub intermediate_bucket_name: ::std::option::Option<::std::string::String>,
+    pub intermediate_bucket_name: ::std::string::String,
     /// <p> The object key for the bucket in which Amazon AppFlow places the destination files. </p>
     pub bucket_prefix: ::std::option::Option<::std::string::String>,
     /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the Amazon Redshift destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
@@ -15,12 +15,14 @@ pub struct RedshiftDestinationProperties {
 }
 impl RedshiftDestinationProperties {
     /// <p> The object specified in the Amazon Redshift flow destination. </p>
-    pub fn object(&self) -> ::std::option::Option<&str> {
-        self.object.as_deref()
+    pub fn object(&self) -> &str {
+        use std::ops::Deref;
+        self.object.deref()
     }
     /// <p> The intermediate bucket that Amazon AppFlow uses when moving data into Amazon Redshift. </p>
-    pub fn intermediate_bucket_name(&self) -> ::std::option::Option<&str> {
-        self.intermediate_bucket_name.as_deref()
+    pub fn intermediate_bucket_name(&self) -> &str {
+        use std::ops::Deref;
+        self.intermediate_bucket_name.deref()
     }
     /// <p> The object key for the bucket in which Amazon AppFlow places the destination files. </p>
     pub fn bucket_prefix(&self) -> ::std::option::Option<&str> {
@@ -49,6 +51,7 @@ pub struct RedshiftDestinationPropertiesBuilder {
 }
 impl RedshiftDestinationPropertiesBuilder {
     /// <p> The object specified in the Amazon Redshift flow destination. </p>
+    /// This field is required.
     pub fn object(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +66,7 @@ impl RedshiftDestinationPropertiesBuilder {
         &self.object
     }
     /// <p> The intermediate bucket that Amazon AppFlow uses when moving data into Amazon Redshift. </p>
+    /// This field is required.
     pub fn intermediate_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.intermediate_bucket_name = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +109,25 @@ impl RedshiftDestinationPropertiesBuilder {
         &self.error_handling_config
     }
     /// Consumes the builder and constructs a [`RedshiftDestinationProperties`](crate::types::RedshiftDestinationProperties).
-    pub fn build(self) -> crate::types::RedshiftDestinationProperties {
-        crate::types::RedshiftDestinationProperties {
-            object: self.object,
-            intermediate_bucket_name: self.intermediate_bucket_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`object`](crate::types::builders::RedshiftDestinationPropertiesBuilder::object)
+    /// - [`intermediate_bucket_name`](crate::types::builders::RedshiftDestinationPropertiesBuilder::intermediate_bucket_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::RedshiftDestinationProperties, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RedshiftDestinationProperties {
+            object: self.object.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "object",
+                    "object was not specified but it is required when building RedshiftDestinationProperties",
+                )
+            })?,
+            intermediate_bucket_name: self.intermediate_bucket_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "intermediate_bucket_name",
+                    "intermediate_bucket_name was not specified but it is required when building RedshiftDestinationProperties",
+                )
+            })?,
             bucket_prefix: self.bucket_prefix,
             error_handling_config: self.error_handling_config,
-        }
+        })
     }
 }

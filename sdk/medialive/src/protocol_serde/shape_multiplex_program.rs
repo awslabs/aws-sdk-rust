@@ -34,7 +34,7 @@ where
                             }
                             "pipelineDetails" => {
                                 builder = builder.set_pipeline_details(
-                                    crate::protocol_serde::shape___list_of_multiplex_program_pipeline_detail::de___list_of_multiplex_program_pipeline_detail(tokens)?
+                                    crate::protocol_serde::shape_list_of_multiplex_program_pipeline_detail::de_list_of_multiplex_program_pipeline_detail(tokens)?
                                 );
                             }
                             "programName" => {

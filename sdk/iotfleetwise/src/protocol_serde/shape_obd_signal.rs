@@ -2,7 +2,7 @@
 pub fn ser_obd_signal(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ObdSignal,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("pidResponseLength").number(
             #[allow(clippy::useless_conversion)]
@@ -21,16 +21,16 @@ pub fn ser_obd_signal(
             ::aws_smithy_types::Number::NegInt((input.pid).into()),
         );
     }
-    if let Some(var_1) = &input.scaling {
+    {
         object.key("scaling").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_1).into()),
+            ::aws_smithy_types::Number::Float((input.scaling).into()),
         );
     }
-    if let Some(var_2) = &input.offset {
+    {
         object.key("offset").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_2).into()),
+            ::aws_smithy_types::Number::Float((input.offset).into()),
         );
     }
     {
@@ -39,10 +39,10 @@ pub fn ser_obd_signal(
             ::aws_smithy_types::Number::NegInt((input.start_byte).into()),
         );
     }
-    if let Some(var_3) = &input.byte_length {
+    {
         object.key("byteLength").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((input.byte_length).into()),
         );
     }
     if input.bit_right_shift != 0 {
@@ -51,10 +51,10 @@ pub fn ser_obd_signal(
             ::aws_smithy_types::Number::NegInt((input.bit_right_shift).into()),
         );
     }
-    if let Some(var_4) = &input.bit_mask_length {
+    if let Some(var_1) = &input.bit_mask_length {
         object.key("bitMaskLength").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
     Ok(())
@@ -142,7 +142,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::obd_signal_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -12,8 +12,10 @@ pub struct EnterStandbyInput {
 }
 impl EnterStandbyInput {
     /// <p>The IDs of the instances. You can specify up to 20 instances.</p>
-    pub fn instance_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.instance_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_ids.is_none()`.
+    pub fn instance_ids(&self) -> &[::std::string::String] {
+        self.instance_ids.as_deref().unwrap_or_default()
     }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn auto_scaling_group_name(&self) -> ::std::option::Option<&str> {
@@ -61,6 +63,7 @@ impl EnterStandbyInputBuilder {
         &self.instance_ids
     }
     /// <p>The name of the Auto Scaling group.</p>
+    /// This field is required.
     pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
@@ -75,6 +78,7 @@ impl EnterStandbyInputBuilder {
         &self.auto_scaling_group_name
     }
     /// <p>Indicates whether to decrement the desired capacity of the Auto Scaling group by the number of instances moved to <code>Standby</code> mode.</p>
+    /// This field is required.
     pub fn should_decrement_desired_capacity(mut self, input: bool) -> Self {
         self.should_decrement_desired_capacity = ::std::option::Option::Some(input);
         self
@@ -89,7 +93,9 @@ impl EnterStandbyInputBuilder {
         &self.should_decrement_desired_capacity
     }
     /// Consumes the builder and constructs a [`EnterStandbyInput`](crate::operation::enter_standby::EnterStandbyInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::enter_standby::EnterStandbyInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::enter_standby::EnterStandbyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::enter_standby::EnterStandbyInput {
             instance_ids: self.instance_ids,
             auto_scaling_group_name: self.auto_scaling_group_name,

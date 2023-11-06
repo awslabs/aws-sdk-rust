@@ -11,8 +11,10 @@ pub struct ConfigurationOverrides {
 }
 impl ConfigurationOverrides {
     /// <p>The override configurations for the application.</p>
-    pub fn application_configuration(&self) -> ::std::option::Option<&[crate::types::Configuration]> {
-        self.application_configuration.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.application_configuration.is_none()`.
+    pub fn application_configuration(&self) -> &[crate::types::Configuration] {
+        self.application_configuration.as_deref().unwrap_or_default()
     }
     /// <p>The override configurations for monitoring.</p>
     pub fn monitoring_configuration(&self) -> ::std::option::Option<&crate::types::MonitoringConfiguration> {

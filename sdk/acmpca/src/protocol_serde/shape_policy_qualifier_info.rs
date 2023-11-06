@@ -2,15 +2,15 @@
 pub fn ser_policy_qualifier_info(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PolicyQualifierInfo,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.policy_qualifier_id {
-        object.key("PolicyQualifierId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("PolicyQualifierId").string(input.policy_qualifier_id.as_str());
     }
-    if let Some(var_2) = &input.qualifier {
+    if let Some(var_1) = &input.qualifier {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("Qualifier").start_object();
-        crate::protocol_serde::shape_qualifier::ser_qualifier(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("Qualifier").start_object();
+        crate::protocol_serde::shape_qualifier::ser_qualifier(&mut object_2, var_1)?;
+        object_2.finish();
     }
     Ok(())
 }

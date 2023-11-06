@@ -2,12 +2,12 @@
 pub fn ser_endpoint_identifier(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EndpointIdentifier,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.endpoint_id {
-        object.key("EndpointId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("EndpointId").string(input.endpoint_id.as_str());
     }
-    if let Some(var_2) = &input.client_ip_preservation_enabled {
-        object.key("ClientIPPreservationEnabled").boolean(*var_2);
+    if let Some(var_1) = &input.client_ip_preservation_enabled {
+        object.key("ClientIPPreservationEnabled").boolean(*var_1);
     }
     Ok(())
 }

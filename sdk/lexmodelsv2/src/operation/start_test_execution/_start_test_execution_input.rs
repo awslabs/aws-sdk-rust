@@ -48,6 +48,7 @@ pub struct StartTestExecutionInputBuilder {
 }
 impl StartTestExecutionInputBuilder {
     /// <p>The test set Id for the test set execution.</p>
+    /// This field is required.
     pub fn test_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.test_set_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl StartTestExecutionInputBuilder {
         &self.test_set_id
     }
     /// <p>The target bot for the test set execution.</p>
+    /// This field is required.
     pub fn target(mut self, input: crate::types::TestExecutionTarget) -> Self {
         self.target = ::std::option::Option::Some(input);
         self
@@ -76,6 +78,7 @@ impl StartTestExecutionInputBuilder {
         &self.target
     }
     /// <p>Indicates whether we use streaming or non-streaming APIs for the test set execution. For streaming, StartConversation Runtime API is used. Whereas, for non-streaming, RecognizeUtterance and RecognizeText Amazon Lex Runtime API are used.</p>
+    /// This field is required.
     pub fn api_mode(mut self, input: crate::types::TestExecutionApiMode) -> Self {
         self.api_mode = ::std::option::Option::Some(input);
         self
@@ -106,7 +109,8 @@ impl StartTestExecutionInputBuilder {
     /// Consumes the builder and constructs a [`StartTestExecutionInput`](crate::operation::start_test_execution::StartTestExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_test_execution::StartTestExecutionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_test_execution::StartTestExecutionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::start_test_execution::StartTestExecutionInput {
             test_set_id: self.test_set_id,
             target: self.target,

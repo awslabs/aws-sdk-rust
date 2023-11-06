@@ -27,6 +27,7 @@ pub struct DescribeCodeRepositoryInputBuilder {
 }
 impl DescribeCodeRepositoryInputBuilder {
     /// <p>The name of the Git repository to describe.</p>
+    /// This field is required.
     pub fn code_repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code_repository_name = ::std::option::Option::Some(input.into());
         self
@@ -43,8 +44,10 @@ impl DescribeCodeRepositoryInputBuilder {
     /// Consumes the builder and constructs a [`DescribeCodeRepositoryInput`](crate::operation::describe_code_repository::DescribeCodeRepositoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_code_repository::DescribeCodeRepositoryInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_code_repository::DescribeCodeRepositoryInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_code_repository::DescribeCodeRepositoryInput {
             code_repository_name: self.code_repository_name,
         })

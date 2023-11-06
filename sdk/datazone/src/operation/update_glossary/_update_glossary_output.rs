@@ -4,13 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateGlossaryOutput {
     /// <p>The identifier of the Amazon DataZone domain in which a business glossary is to be updated.</p>
-    pub domain_id: ::std::option::Option<::std::string::String>,
+    pub domain_id: ::std::string::String,
     /// <p>The identifier of the business glossary that is to be updated.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The name to be updated as part of the <code>UpdateGlossary</code> action.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The identifier of the project in which to update a business glossary.</p>
-    pub owning_project_id: ::std::option::Option<::std::string::String>,
+    pub owning_project_id: ::std::string::String,
     /// <p>The description to be updated as part of the <code>UpdateGlossary</code> action.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The status to be updated as part of the <code>UpdateGlossary</code> action.</p>
@@ -19,20 +19,24 @@ pub struct UpdateGlossaryOutput {
 }
 impl UpdateGlossaryOutput {
     /// <p>The identifier of the Amazon DataZone domain in which a business glossary is to be updated.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
-        self.domain_id.as_deref()
+    pub fn domain_id(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_id.deref()
     }
     /// <p>The identifier of the business glossary that is to be updated.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The name to be updated as part of the <code>UpdateGlossary</code> action.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The identifier of the project in which to update a business glossary.</p>
-    pub fn owning_project_id(&self) -> ::std::option::Option<&str> {
-        self.owning_project_id.as_deref()
+    pub fn owning_project_id(&self) -> &str {
+        use std::ops::Deref;
+        self.owning_project_id.deref()
     }
     /// <p>The description to be updated as part of the <code>UpdateGlossary</code> action.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -82,6 +86,7 @@ pub struct UpdateGlossaryOutputBuilder {
 }
 impl UpdateGlossaryOutputBuilder {
     /// <p>The identifier of the Amazon DataZone domain in which a business glossary is to be updated.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -96,6 +101,7 @@ impl UpdateGlossaryOutputBuilder {
         &self.domain_id
     }
     /// <p>The identifier of the business glossary that is to be updated.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -110,6 +116,7 @@ impl UpdateGlossaryOutputBuilder {
         &self.id
     }
     /// <p>The name to be updated as part of the <code>UpdateGlossary</code> action.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -124,6 +131,7 @@ impl UpdateGlossaryOutputBuilder {
         &self.name
     }
     /// <p>The identifier of the project in which to update a business glossary.</p>
+    /// This field is required.
     pub fn owning_project_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owning_project_id = ::std::option::Option::Some(input.into());
         self
@@ -175,16 +183,43 @@ impl UpdateGlossaryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateGlossaryOutput`](crate::operation::update_glossary::UpdateGlossaryOutput).
-    pub fn build(self) -> crate::operation::update_glossary::UpdateGlossaryOutput {
-        crate::operation::update_glossary::UpdateGlossaryOutput {
-            domain_id: self.domain_id,
-            id: self.id,
-            name: self.name,
-            owning_project_id: self.owning_project_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`domain_id`](crate::operation::update_glossary::builders::UpdateGlossaryOutputBuilder::domain_id)
+    /// - [`id`](crate::operation::update_glossary::builders::UpdateGlossaryOutputBuilder::id)
+    /// - [`name`](crate::operation::update_glossary::builders::UpdateGlossaryOutputBuilder::name)
+    /// - [`owning_project_id`](crate::operation::update_glossary::builders::UpdateGlossaryOutputBuilder::owning_project_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_glossary::UpdateGlossaryOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_glossary::UpdateGlossaryOutput {
+            domain_id: self.domain_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "domain_id",
+                    "domain_id was not specified but it is required when building UpdateGlossaryOutput",
+                )
+            })?,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building UpdateGlossaryOutput",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building UpdateGlossaryOutput",
+                )
+            })?,
+            owning_project_id: self.owning_project_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "owning_project_id",
+                    "owning_project_id was not specified but it is required when building UpdateGlossaryOutput",
+                )
+            })?,
             description: self.description,
             status: self.status,
             _request_id: self._request_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for UpdateGlossaryOutputBuilder {

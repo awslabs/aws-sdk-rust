@@ -48,6 +48,7 @@ pub struct ListProtectedQueriesInputBuilder {
 }
 impl ListProtectedQueriesInputBuilder {
     /// <p>The identifier for the membership in the collaboration.</p>
+    /// This field is required.
     pub fn membership_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.membership_identifier = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,7 @@ impl ListProtectedQueriesInputBuilder {
     /// Consumes the builder and constructs a [`ListProtectedQueriesInput`](crate::operation::list_protected_queries::ListProtectedQueriesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_protected_queries::ListProtectedQueriesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_protected_queries::ListProtectedQueriesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_protected_queries::ListProtectedQueriesInput {
             membership_identifier: self.membership_identifier,

@@ -34,6 +34,7 @@ pub struct RegisterDelegatedAdministratorInputBuilder {
 }
 impl RegisterDelegatedAdministratorInputBuilder {
     /// <p>The account ID number of the member account in the organization to register as a delegated administrator.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl RegisterDelegatedAdministratorInputBuilder {
         &self.account_id
     }
     /// <p>The service principal of the Amazon Web Services service for which you want to make the member account a delegated administrator.</p>
+    /// This field is required.
     pub fn service_principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_principal = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl RegisterDelegatedAdministratorInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_delegated_administrator::RegisterDelegatedAdministratorInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::register_delegated_administrator::RegisterDelegatedAdministratorInput {
             account_id: self.account_id,

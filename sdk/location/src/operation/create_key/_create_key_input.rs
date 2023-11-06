@@ -100,6 +100,7 @@ impl CreateKeyInputBuilder {
     /// <li> <p>Must be a unique API key name.</p> </li>
     /// <li> <p>No spaces allowed. For example, <code>ExampleAPIKey</code>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_name = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +127,7 @@ impl CreateKeyInputBuilder {
         &self.key_name
     }
     /// <p>The API key restrictions for the API key resource.</p>
+    /// This field is required.
     pub fn restrictions(mut self, input: crate::types::ApiKeyRestrictions) -> Self {
         self.restrictions = ::std::option::Option::Some(input);
         self
@@ -232,7 +234,7 @@ impl CreateKeyInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateKeyInput`](crate::operation::create_key::CreateKeyInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_key::CreateKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_key::CreateKeyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_key::CreateKeyInput {
             key_name: self.key_name,
             restrictions: self.restrictions,

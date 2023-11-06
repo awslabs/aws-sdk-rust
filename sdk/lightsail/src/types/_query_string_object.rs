@@ -20,8 +20,10 @@ impl QueryStringObject {
     /// <p>The specific query strings that the distribution forwards to the origin.</p>
     /// <p>Your distribution will cache content based on the specified query strings.</p>
     /// <p>If the <code>option</code> parameter is true, then your distribution forwards all query strings, regardless of what you specify using the <code>queryStringsAllowList</code> parameter.</p>
-    pub fn query_strings_allow_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.query_strings_allow_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.query_strings_allow_list.is_none()`.
+    pub fn query_strings_allow_list(&self) -> &[::std::string::String] {
+        self.query_strings_allow_list.as_deref().unwrap_or_default()
     }
 }
 impl QueryStringObject {

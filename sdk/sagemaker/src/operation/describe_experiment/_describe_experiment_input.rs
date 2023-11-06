@@ -27,6 +27,7 @@ pub struct DescribeExperimentInputBuilder {
 }
 impl DescribeExperimentInputBuilder {
     /// <p>The name of the experiment to describe.</p>
+    /// This field is required.
     pub fn experiment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.experiment_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeExperimentInputBuilder {
     /// Consumes the builder and constructs a [`DescribeExperimentInput`](crate::operation::describe_experiment::DescribeExperimentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_experiment::DescribeExperimentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_experiment::DescribeExperimentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_experiment::DescribeExperimentInput {
             experiment_name: self.experiment_name,
         })

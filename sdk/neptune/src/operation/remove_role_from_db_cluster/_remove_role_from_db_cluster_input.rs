@@ -7,7 +7,7 @@ pub struct RemoveRoleFromDbClusterInput {
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role to disassociate from the DB cluster, for example <code>arn:aws:iam::123456789012:role/NeptuneAccessRole</code>.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the feature for the DB cluster that the IAM role is to be disassociated from. For the list of supported feature names, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
+    /// <p>The name of the feature for the DB cluster that the IAM role is to be disassociated from. For the list of supported feature names, see <code>DescribeDBEngineVersions</code>.</p>
     pub feature_name: ::std::option::Option<::std::string::String>,
 }
 impl RemoveRoleFromDbClusterInput {
@@ -19,7 +19,7 @@ impl RemoveRoleFromDbClusterInput {
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The name of the feature for the DB cluster that the IAM role is to be disassociated from. For the list of supported feature names, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
+    /// <p>The name of the feature for the DB cluster that the IAM role is to be disassociated from. For the list of supported feature names, see <code>DescribeDBEngineVersions</code>.</p>
     pub fn feature_name(&self) -> ::std::option::Option<&str> {
         self.feature_name.as_deref()
     }
@@ -41,6 +41,7 @@ pub struct RemoveRoleFromDbClusterInputBuilder {
 }
 impl RemoveRoleFromDbClusterInputBuilder {
     /// <p>The name of the DB cluster to disassociate the IAM role from.</p>
+    /// This field is required.
     pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_identifier = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl RemoveRoleFromDbClusterInputBuilder {
         &self.db_cluster_identifier
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to disassociate from the DB cluster, for example <code>arn:aws:iam::123456789012:role/NeptuneAccessRole</code>.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -68,17 +70,17 @@ impl RemoveRoleFromDbClusterInputBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
-    /// <p>The name of the feature for the DB cluster that the IAM role is to be disassociated from. For the list of supported feature names, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
+    /// <p>The name of the feature for the DB cluster that the IAM role is to be disassociated from. For the list of supported feature names, see <code>DescribeDBEngineVersions</code>.</p>
     pub fn feature_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the feature for the DB cluster that the IAM role is to be disassociated from. For the list of supported feature names, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
+    /// <p>The name of the feature for the DB cluster that the IAM role is to be disassociated from. For the list of supported feature names, see <code>DescribeDBEngineVersions</code>.</p>
     pub fn set_feature_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feature_name = input;
         self
     }
-    /// <p>The name of the feature for the DB cluster that the IAM role is to be disassociated from. For the list of supported feature names, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
+    /// <p>The name of the feature for the DB cluster that the IAM role is to be disassociated from. For the list of supported feature names, see <code>DescribeDBEngineVersions</code>.</p>
     pub fn get_feature_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.feature_name
     }
@@ -87,7 +89,7 @@ impl RemoveRoleFromDbClusterInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_role_from_db_cluster::RemoveRoleFromDbClusterInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::remove_role_from_db_cluster::RemoveRoleFromDbClusterInput {
             db_cluster_identifier: self.db_cluster_identifier,

@@ -35,6 +35,7 @@ pub struct StopUserImportJobInputBuilder {
 }
 impl StopUserImportJobInputBuilder {
     /// <p>The user pool ID for the user pool that the users are being imported into.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl StopUserImportJobInputBuilder {
         &self.user_pool_id
     }
     /// <p>The job ID for the user import job.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -65,7 +67,7 @@ impl StopUserImportJobInputBuilder {
     /// Consumes the builder and constructs a [`StopUserImportJobInput`](crate::operation::stop_user_import_job::StopUserImportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_user_import_job::StopUserImportJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_user_import_job::StopUserImportJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_user_import_job::StopUserImportJobInput {
             user_pool_id: self.user_pool_id,
             job_id: self.job_id,

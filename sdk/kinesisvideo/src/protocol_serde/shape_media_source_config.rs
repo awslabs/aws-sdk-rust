@@ -38,7 +38,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::media_source_config_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -49,12 +51,12 @@ where
 pub fn ser_media_source_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MediaSourceConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.media_uri_secret_arn {
-        object.key("MediaUriSecretArn").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("MediaUriSecretArn").string(input.media_uri_secret_arn.as_str());
     }
-    if let Some(var_2) = &input.media_uri_type {
-        object.key("MediaUriType").string(var_2.as_str());
+    {
+        object.key("MediaUriType").string(input.media_uri_type.as_str());
     }
     Ok(())
 }

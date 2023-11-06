@@ -3,14 +3,14 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetScan`](crate::operation::get_scan::builders::GetScanFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`scan_name(impl Into<String>)`](crate::operation::get_scan::builders::GetScanFluentBuilder::scan_name) / [`set_scan_name(Option<String>)`](crate::operation::get_scan::builders::GetScanFluentBuilder::set_scan_name): <p>The name of the scan you want to view details about.</p>
-    ///   - [`run_id(impl Into<String>)`](crate::operation::get_scan::builders::GetScanFluentBuilder::run_id) / [`set_run_id(Option<String>)`](crate::operation::get_scan::builders::GetScanFluentBuilder::set_run_id): <p>UUID that identifies the individual scan run you want to view details about. You retrieve this when you call the <code>CreateScan</code> operation. Defaults to the latest scan run if missing.</p>
+    ///   - [`scan_name(impl Into<String>)`](crate::operation::get_scan::builders::GetScanFluentBuilder::scan_name) / [`set_scan_name(Option<String>)`](crate::operation::get_scan::builders::GetScanFluentBuilder::set_scan_name):<br>required: **true**<br><p>The name of the scan you want to view details about.</p><br>
+    ///   - [`run_id(impl Into<String>)`](crate::operation::get_scan::builders::GetScanFluentBuilder::run_id) / [`set_run_id(Option<String>)`](crate::operation::get_scan::builders::GetScanFluentBuilder::set_run_id):<br>required: **false**<br><p>UUID that identifies the individual scan run you want to view details about. You retrieve this when you call the <code>CreateScan</code> operation. Defaults to the latest scan run if missing.</p><br>
     /// - On success, responds with [`GetScanOutput`](crate::operation::get_scan::GetScanOutput) with field(s):
-    ///   - [`scan_name(Option<String>)`](crate::operation::get_scan::GetScanOutput::scan_name): <p>The name of the scan.</p>
-    ///   - [`run_id(Option<String>)`](crate::operation::get_scan::GetScanOutput::run_id): <p>UUID that identifies the individual scan run.</p>
-    ///   - [`scan_state(Option<ScanState>)`](crate::operation::get_scan::GetScanOutput::scan_state): <p>The current state of the scan. Pass either <code>InProgress</code>, <code>Successful</code>, or <code>Failed</code>.</p>
-    ///   - [`created_at(Option<DateTime>)`](crate::operation::get_scan::GetScanOutput::created_at): <p>The time the scan was created.</p>
-    ///   - [`analysis_type(Option<AnalysisType>)`](crate::operation::get_scan::GetScanOutput::analysis_type): <p>The type of analysis CodeGuru Security performed in the scan, either <code>Security</code> or <code>All</code>. The <code>Security</code> type only generates findings related to security. The <code>All</code> type generates both security findings and quality findings.</p>
+    ///   - [`scan_name(String)`](crate::operation::get_scan::GetScanOutput::scan_name): <p>The name of the scan.</p>
+    ///   - [`run_id(String)`](crate::operation::get_scan::GetScanOutput::run_id): <p>UUID that identifies the individual scan run.</p>
+    ///   - [`scan_state(ScanState)`](crate::operation::get_scan::GetScanOutput::scan_state): <p>The current state of the scan. Pass either <code>InProgress</code>, <code>Successful</code>, or <code>Failed</code>.</p>
+    ///   - [`created_at(DateTime)`](crate::operation::get_scan::GetScanOutput::created_at): <p>The time the scan was created.</p>
+    ///   - [`analysis_type(AnalysisType)`](crate::operation::get_scan::GetScanOutput::analysis_type): <p>The type of analysis CodeGuru Security performed in the scan, either <code>Security</code> or <code>All</code>. The <code>Security</code> type only generates findings related to security. The <code>All</code> type generates both security findings and quality findings.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_scan::GetScanOutput::updated_at): <p>The time when the scan was last updated. Only available for <code>STANDARD</code> scan types.</p>
     ///   - [`number_of_revisions(Option<i64>)`](crate::operation::get_scan::GetScanOutput::number_of_revisions): <p>The number of times a scan has been re-run on a revised resource.</p>
     ///   - [`scan_name_arn(Option<String>)`](crate::operation::get_scan::GetScanOutput::scan_name_arn): <p>The ARN for the scan name.</p>

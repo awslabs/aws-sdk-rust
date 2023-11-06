@@ -69,6 +69,7 @@ impl ListDeploymentsInputBuilder {
         &self.max_results
     }
     /// <p>The application identifier.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl ListDeploymentsInputBuilder {
     /// Consumes the builder and constructs a [`ListDeploymentsInput`](crate::operation::list_deployments::ListDeploymentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_deployments::ListDeploymentsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_deployments::ListDeploymentsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_deployments::ListDeploymentsInput {
             next_token: self.next_token,
             max_results: self.max_results,

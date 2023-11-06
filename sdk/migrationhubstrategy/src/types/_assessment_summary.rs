@@ -29,24 +29,34 @@ pub struct AssessmentSummary {
 }
 impl AssessmentSummary {
     /// <p> List of ServerStrategySummary. </p>
-    pub fn list_server_strategy_summary(&self) -> ::std::option::Option<&[crate::types::StrategySummary]> {
-        self.list_server_strategy_summary.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.list_server_strategy_summary.is_none()`.
+    pub fn list_server_strategy_summary(&self) -> &[crate::types::StrategySummary] {
+        self.list_server_strategy_summary.as_deref().unwrap_or_default()
     }
     /// <p> List of ApplicationComponentStrategySummary. </p>
-    pub fn list_application_component_strategy_summary(&self) -> ::std::option::Option<&[crate::types::StrategySummary]> {
-        self.list_application_component_strategy_summary.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.list_application_component_strategy_summary.is_none()`.
+    pub fn list_application_component_strategy_summary(&self) -> &[crate::types::StrategySummary] {
+        self.list_application_component_strategy_summary.as_deref().unwrap_or_default()
     }
     /// <p> List of AntipatternSeveritySummary. </p>
-    pub fn list_antipattern_severity_summary(&self) -> ::std::option::Option<&[crate::types::AntipatternSeveritySummary]> {
-        self.list_antipattern_severity_summary.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.list_antipattern_severity_summary.is_none()`.
+    pub fn list_antipattern_severity_summary(&self) -> &[crate::types::AntipatternSeveritySummary] {
+        self.list_antipattern_severity_summary.as_deref().unwrap_or_default()
     }
     /// <p> List of ApplicationComponentSummary. </p>
-    pub fn list_application_component_summary(&self) -> ::std::option::Option<&[crate::types::ApplicationComponentSummary]> {
-        self.list_application_component_summary.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.list_application_component_summary.is_none()`.
+    pub fn list_application_component_summary(&self) -> &[crate::types::ApplicationComponentSummary] {
+        self.list_application_component_summary.as_deref().unwrap_or_default()
     }
     /// <p> List of ServerSummary. </p>
-    pub fn list_server_summary(&self) -> ::std::option::Option<&[crate::types::ServerSummary]> {
-        self.list_server_summary.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.list_server_summary.is_none()`.
+    pub fn list_server_summary(&self) -> &[crate::types::ServerSummary] {
+        self.list_server_summary.as_deref().unwrap_or_default()
     }
     /// <p> The Amazon S3 object containing the anti-pattern report. </p>
     pub fn antipattern_report_s3_object(&self) -> ::std::option::Option<&crate::types::S3Object> {
@@ -65,12 +75,16 @@ impl AssessmentSummary {
         self.last_analyzed_timestamp.as_ref()
     }
     /// <p>List of status summaries of the analyzed application components.</p>
-    pub fn list_application_component_status_summary(&self) -> ::std::option::Option<&[crate::types::ApplicationComponentStatusSummary]> {
-        self.list_application_component_status_summary.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.list_application_component_status_summary.is_none()`.
+    pub fn list_application_component_status_summary(&self) -> &[crate::types::ApplicationComponentStatusSummary] {
+        self.list_application_component_status_summary.as_deref().unwrap_or_default()
     }
     /// <p>List of status summaries of the analyzed servers.</p>
-    pub fn list_server_status_summary(&self) -> ::std::option::Option<&[crate::types::ServerStatusSummary]> {
-        self.list_server_status_summary.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.list_server_status_summary.is_none()`.
+    pub fn list_server_status_summary(&self) -> &[crate::types::ServerStatusSummary] {
+        self.list_server_status_summary.as_deref().unwrap_or_default()
     }
 }
 impl AssessmentSummary {

@@ -2,12 +2,12 @@
 pub fn ser_datadog_connector_profile_credentials(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DatadogConnectorProfileCredentials,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.api_key {
-        object.key("apiKey").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("apiKey").string(input.api_key.as_str());
     }
-    if let Some(var_2) = &input.application_key {
-        object.key("applicationKey").string(var_2.as_str());
+    {
+        object.key("applicationKey").string(input.application_key.as_str());
     }
     Ok(())
 }

@@ -27,6 +27,7 @@ pub struct GetMaintenanceWindowInputBuilder {
 }
 impl GetMaintenanceWindowInputBuilder {
     /// <p>The ID of the maintenance window for which you want to retrieve information.</p>
+    /// This field is required.
     pub fn window_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.window_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetMaintenanceWindowInputBuilder {
     /// Consumes the builder and constructs a [`GetMaintenanceWindowInput`](crate::operation::get_maintenance_window::GetMaintenanceWindowInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_maintenance_window::GetMaintenanceWindowInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_maintenance_window::GetMaintenanceWindowInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_maintenance_window::GetMaintenanceWindowInput { window_id: self.window_id })
     }

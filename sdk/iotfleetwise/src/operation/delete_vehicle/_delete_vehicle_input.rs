@@ -27,6 +27,7 @@ pub struct DeleteVehicleInputBuilder {
 }
 impl DeleteVehicleInputBuilder {
     /// <p>The ID of the vehicle to delete. </p>
+    /// This field is required.
     pub fn vehicle_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vehicle_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteVehicleInputBuilder {
     /// Consumes the builder and constructs a [`DeleteVehicleInput`](crate::operation::delete_vehicle::DeleteVehicleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_vehicle::DeleteVehicleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_vehicle::DeleteVehicleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_vehicle::DeleteVehicleInput {
             vehicle_name: self.vehicle_name,
         })

@@ -48,6 +48,7 @@ impl DeleteIpamPoolInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the pool to delete.</p>
+    /// This field is required.
     pub fn ipam_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl DeleteIpamPoolInputBuilder {
     /// Consumes the builder and constructs a [`DeleteIpamPoolInput`](crate::operation::delete_ipam_pool::DeleteIpamPoolInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_ipam_pool::DeleteIpamPoolInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_ipam_pool::DeleteIpamPoolInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_ipam_pool::DeleteIpamPoolInput {
             dry_run: self.dry_run,
             ipam_pool_id: self.ipam_pool_id,

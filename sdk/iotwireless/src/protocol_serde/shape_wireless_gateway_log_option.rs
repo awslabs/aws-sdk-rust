@@ -2,24 +2,24 @@
 pub fn ser_wireless_gateway_log_option(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WirelessGatewayLogOption,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.r#type {
-        object.key("Type").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Type").string(input.r#type.as_str());
     }
-    if let Some(var_2) = &input.log_level {
-        object.key("LogLevel").string(var_2.as_str());
+    {
+        object.key("LogLevel").string(input.log_level.as_str());
     }
-    if let Some(var_3) = &input.events {
-        let mut array_4 = object.key("Events").start_array();
-        for item_5 in var_3 {
+    if let Some(var_1) = &input.events {
+        let mut array_2 = object.key("Events").start_array();
+        for item_3 in var_1 {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_wireless_gateway_event_log_option::ser_wireless_gateway_event_log_option(&mut object_6, item_5)?;
-                object_6.finish();
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_wireless_gateway_event_log_option::ser_wireless_gateway_event_log_option(&mut object_4, item_3)?;
+                object_4.finish();
             }
         }
-        array_4.finish();
+        array_2.finish();
     }
     Ok(())
 }
@@ -70,7 +70,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::wireless_gateway_log_option_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

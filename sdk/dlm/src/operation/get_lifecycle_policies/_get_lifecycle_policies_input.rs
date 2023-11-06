@@ -19,27 +19,35 @@ pub struct GetLifecyclePoliciesInput {
 }
 impl GetLifecyclePoliciesInput {
     /// <p>The identifiers of the data lifecycle policies.</p>
-    pub fn policy_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.policy_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_ids.is_none()`.
+    pub fn policy_ids(&self) -> &[::std::string::String] {
+        self.policy_ids.as_deref().unwrap_or_default()
     }
     /// <p>The activation state.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::GettablePolicyStateValues> {
         self.state.as_ref()
     }
     /// <p>The resource type.</p>
-    pub fn resource_types(&self) -> ::std::option::Option<&[crate::types::ResourceTypeValues]> {
-        self.resource_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_types.is_none()`.
+    pub fn resource_types(&self) -> &[crate::types::ResourceTypeValues] {
+        self.resource_types.as_deref().unwrap_or_default()
     }
     /// <p>The target tag for a policy.</p>
     /// <p>Tags are strings in the format <code>key=value</code>.</p>
-    pub fn target_tags(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.target_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_tags.is_none()`.
+    pub fn target_tags(&self) -> &[::std::string::String] {
+        self.target_tags.as_deref().unwrap_or_default()
     }
     /// <p>The tags to add to objects created by the policy.</p>
     /// <p>Tags are strings in the format <code>key=value</code>.</p>
     /// <p>These user-defined tags are added in addition to the Amazon Web Services-added lifecycle tags.</p>
-    pub fn tags_to_add(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tags_to_add.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags_to_add.is_none()`.
+    pub fn tags_to_add(&self) -> &[::std::string::String] {
+        self.tags_to_add.as_deref().unwrap_or_default()
     }
 }
 impl GetLifecyclePoliciesInput {
@@ -166,7 +174,7 @@ impl GetLifecyclePoliciesInputBuilder {
     /// Consumes the builder and constructs a [`GetLifecyclePoliciesInput`](crate::operation::get_lifecycle_policies::GetLifecyclePoliciesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_lifecycle_policies::GetLifecyclePoliciesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_lifecycle_policies::GetLifecyclePoliciesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_lifecycle_policies::GetLifecyclePoliciesInput {
             policy_ids: self.policy_ids,

@@ -2,7 +2,7 @@
 pub fn ser_detach_static_ip_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::detach_static_ip::DetachStaticIpInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.static_ip_name {
         object.key("staticIpName").string(var_1.as_str());
     }

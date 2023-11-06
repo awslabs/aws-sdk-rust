@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PivotTableDataPathOption {
     /// <p>The list of data path values for the data path options.</p>
-    pub data_path_list: ::std::option::Option<::std::vec::Vec<crate::types::DataPathValue>>,
+    pub data_path_list: ::std::vec::Vec<crate::types::DataPathValue>,
     /// <p>The width of the data path option.</p>
     pub width: ::std::option::Option<::std::string::String>,
 }
 impl PivotTableDataPathOption {
     /// <p>The list of data path values for the data path options.</p>
-    pub fn data_path_list(&self) -> ::std::option::Option<&[crate::types::DataPathValue]> {
-        self.data_path_list.as_deref()
+    pub fn data_path_list(&self) -> &[crate::types::DataPathValue] {
+        use std::ops::Deref;
+        self.data_path_list.deref()
     }
     /// <p>The width of the data path option.</p>
     pub fn width(&self) -> ::std::option::Option<&str> {
@@ -69,10 +70,17 @@ impl PivotTableDataPathOptionBuilder {
         &self.width
     }
     /// Consumes the builder and constructs a [`PivotTableDataPathOption`](crate::types::PivotTableDataPathOption).
-    pub fn build(self) -> crate::types::PivotTableDataPathOption {
-        crate::types::PivotTableDataPathOption {
-            data_path_list: self.data_path_list,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`data_path_list`](crate::types::builders::PivotTableDataPathOptionBuilder::data_path_list)
+    pub fn build(self) -> ::std::result::Result<crate::types::PivotTableDataPathOption, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PivotTableDataPathOption {
+            data_path_list: self.data_path_list.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "data_path_list",
+                    "data_path_list was not specified but it is required when building PivotTableDataPathOption",
+                )
+            })?,
             width: self.width,
-        }
+        })
     }
 }

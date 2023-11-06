@@ -123,9 +123,8 @@ pub(crate) fn de_list_recovery_groups(
                     );
                 }
                 "recoveryGroups" => {
-                    builder = builder.set_recovery_groups(
-                        crate::protocol_serde::shape___list_of_recovery_group_output::de___list_of_recovery_group_output(tokens)?,
-                    );
+                    builder = builder
+                        .set_recovery_groups(crate::protocol_serde::shape_list_of_recovery_group_output::de_list_of_recovery_group_output(tokens)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

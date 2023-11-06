@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EntityRecognitionConfig {
     /// <p>Up to 25 entity types that the model is trained to recognize.</p>
-    pub entity_types: ::std::option::Option<::std::vec::Vec<crate::types::EntityTypesListItem>>,
+    pub entity_types: ::std::vec::Vec<crate::types::EntityTypesListItem>,
 }
 impl EntityRecognitionConfig {
     /// <p>Up to 25 entity types that the model is trained to recognize.</p>
-    pub fn entity_types(&self) -> ::std::option::Option<&[crate::types::EntityTypesListItem]> {
-        self.entity_types.as_deref()
+    pub fn entity_types(&self) -> &[crate::types::EntityTypesListItem] {
+        use std::ops::Deref;
+        self.entity_types.deref()
     }
 }
 impl EntityRecognitionConfig {
@@ -48,9 +49,16 @@ impl EntityRecognitionConfigBuilder {
         &self.entity_types
     }
     /// Consumes the builder and constructs a [`EntityRecognitionConfig`](crate::types::EntityRecognitionConfig).
-    pub fn build(self) -> crate::types::EntityRecognitionConfig {
-        crate::types::EntityRecognitionConfig {
-            entity_types: self.entity_types,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`entity_types`](crate::types::builders::EntityRecognitionConfigBuilder::entity_types)
+    pub fn build(self) -> ::std::result::Result<crate::types::EntityRecognitionConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EntityRecognitionConfig {
+            entity_types: self.entity_types.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "entity_types",
+                    "entity_types was not specified but it is required when building EntityRecognitionConfig",
+                )
+            })?,
+        })
     }
 }

@@ -7,20 +7,21 @@ pub struct ProtectiveEquipmentSummarizationAttributes {
     /// <p>The minimum confidence level for which you want summary information. The confidence level applies to person detection, body part detection, equipment detection, and body part coverage. Amazon Rekognition doesn't return summary information with a confidence than this specified value. There isn't a default value.</p>
     /// <p>Specify a <code>MinConfidence</code> value that is between 50-100% as <code>DetectProtectiveEquipment</code> returns predictions only where the detection confidence is between 50% - 100%. If you specify a value that is less than 50%, the results are the same specifying a value of 50%.</p>
     /// <p> </p>
-    pub min_confidence: ::std::option::Option<f32>,
+    pub min_confidence: f32,
     /// <p>An array of personal protective equipment types for which you want summary information. If a person is detected wearing a required requipment type, the person's ID is added to the <code>PersonsWithRequiredEquipment</code> array field returned in <code>ProtectiveEquipmentSummary</code> by <code>DetectProtectiveEquipment</code>. </p>
-    pub required_equipment_types: ::std::option::Option<::std::vec::Vec<crate::types::ProtectiveEquipmentType>>,
+    pub required_equipment_types: ::std::vec::Vec<crate::types::ProtectiveEquipmentType>,
 }
 impl ProtectiveEquipmentSummarizationAttributes {
     /// <p>The minimum confidence level for which you want summary information. The confidence level applies to person detection, body part detection, equipment detection, and body part coverage. Amazon Rekognition doesn't return summary information with a confidence than this specified value. There isn't a default value.</p>
     /// <p>Specify a <code>MinConfidence</code> value that is between 50-100% as <code>DetectProtectiveEquipment</code> returns predictions only where the detection confidence is between 50% - 100%. If you specify a value that is less than 50%, the results are the same specifying a value of 50%.</p>
     /// <p> </p>
-    pub fn min_confidence(&self) -> ::std::option::Option<f32> {
+    pub fn min_confidence(&self) -> f32 {
         self.min_confidence
     }
     /// <p>An array of personal protective equipment types for which you want summary information. If a person is detected wearing a required requipment type, the person's ID is added to the <code>PersonsWithRequiredEquipment</code> array field returned in <code>ProtectiveEquipmentSummary</code> by <code>DetectProtectiveEquipment</code>. </p>
-    pub fn required_equipment_types(&self) -> ::std::option::Option<&[crate::types::ProtectiveEquipmentType]> {
-        self.required_equipment_types.as_deref()
+    pub fn required_equipment_types(&self) -> &[crate::types::ProtectiveEquipmentType] {
+        use std::ops::Deref;
+        self.required_equipment_types.deref()
     }
 }
 impl ProtectiveEquipmentSummarizationAttributes {
@@ -41,6 +42,7 @@ impl ProtectiveEquipmentSummarizationAttributesBuilder {
     /// <p>The minimum confidence level for which you want summary information. The confidence level applies to person detection, body part detection, equipment detection, and body part coverage. Amazon Rekognition doesn't return summary information with a confidence than this specified value. There isn't a default value.</p>
     /// <p>Specify a <code>MinConfidence</code> value that is between 50-100% as <code>DetectProtectiveEquipment</code> returns predictions only where the detection confidence is between 50% - 100%. If you specify a value that is less than 50%, the results are the same specifying a value of 50%.</p>
     /// <p> </p>
+    /// This field is required.
     pub fn min_confidence(mut self, input: f32) -> Self {
         self.min_confidence = ::std::option::Option::Some(input);
         self
@@ -79,10 +81,25 @@ impl ProtectiveEquipmentSummarizationAttributesBuilder {
         &self.required_equipment_types
     }
     /// Consumes the builder and constructs a [`ProtectiveEquipmentSummarizationAttributes`](crate::types::ProtectiveEquipmentSummarizationAttributes).
-    pub fn build(self) -> crate::types::ProtectiveEquipmentSummarizationAttributes {
-        crate::types::ProtectiveEquipmentSummarizationAttributes {
-            min_confidence: self.min_confidence,
-            required_equipment_types: self.required_equipment_types,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`min_confidence`](crate::types::builders::ProtectiveEquipmentSummarizationAttributesBuilder::min_confidence)
+    /// - [`required_equipment_types`](crate::types::builders::ProtectiveEquipmentSummarizationAttributesBuilder::required_equipment_types)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::ProtectiveEquipmentSummarizationAttributes, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ProtectiveEquipmentSummarizationAttributes {
+            min_confidence: self.min_confidence.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "min_confidence",
+                    "min_confidence was not specified but it is required when building ProtectiveEquipmentSummarizationAttributes",
+                )
+            })?,
+            required_equipment_types: self.required_equipment_types.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "required_equipment_types",
+                    "required_equipment_types was not specified but it is required when building ProtectiveEquipmentSummarizationAttributes",
+                )
+            })?,
+        })
     }
 }

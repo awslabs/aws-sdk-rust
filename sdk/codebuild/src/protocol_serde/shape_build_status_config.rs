@@ -2,7 +2,7 @@
 pub fn ser_build_status_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BuildStatusConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.context {
         object.key("context").string(var_1.as_str());
     }

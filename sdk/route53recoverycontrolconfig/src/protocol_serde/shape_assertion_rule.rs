@@ -16,7 +16,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "AssertedControls" => {
                             builder = builder.set_asserted_controls(
-                                    crate::protocol_serde::shape___list_of__string_min1_max256_pattern_a_za_z09::de___list_of__string_min1_max256_pattern_a_za_z09(tokens)?
+                                    crate::protocol_serde::shape_list_of_string_min1_max256_pattern_a_za_z09::de_list_of_string_min1_max256_pattern_a_za_z09(tokens)?
                                 );
                         }
                         "ControlPanelArn" => {
@@ -74,7 +74,7 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::assertion_rule_correct_errors(builder).build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

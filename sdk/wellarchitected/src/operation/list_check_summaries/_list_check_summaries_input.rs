@@ -71,6 +71,7 @@ pub struct ListCheckSummariesInputBuilder {
 }
 impl ListCheckSummariesInputBuilder {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    /// This field is required.
     pub fn workload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workload_id = ::std::option::Option::Some(input.into());
         self
@@ -113,6 +114,7 @@ impl ListCheckSummariesInputBuilder {
         &self.max_results
     }
     /// <p>Well-Architected Lens ARN.</p>
+    /// This field is required.
     pub fn lens_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lens_arn = ::std::option::Option::Some(input.into());
         self
@@ -128,6 +130,7 @@ impl ListCheckSummariesInputBuilder {
     }
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
+    /// This field is required.
     pub fn pillar_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pillar_id = ::std::option::Option::Some(input.into());
         self
@@ -144,6 +147,7 @@ impl ListCheckSummariesInputBuilder {
         &self.pillar_id
     }
     /// <p>The ID of the question.</p>
+    /// This field is required.
     pub fn question_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.question_id = ::std::option::Option::Some(input.into());
         self
@@ -158,6 +162,7 @@ impl ListCheckSummariesInputBuilder {
         &self.question_id
     }
     /// <p>The ID of a choice.</p>
+    /// This field is required.
     pub fn choice_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.choice_id = ::std::option::Option::Some(input.into());
         self
@@ -174,7 +179,8 @@ impl ListCheckSummariesInputBuilder {
     /// Consumes the builder and constructs a [`ListCheckSummariesInput`](crate::operation::list_check_summaries::ListCheckSummariesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_check_summaries::ListCheckSummariesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_check_summaries::ListCheckSummariesInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_check_summaries::ListCheckSummariesInput {
             workload_id: self.workload_id,
             next_token: self.next_token,

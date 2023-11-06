@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAssetRelationshipsOutput {
     /// <p>A list that summarizes each asset relationship.</p>
-    pub asset_relationship_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AssetRelationshipSummary>>,
+    pub asset_relationship_summaries: ::std::vec::Vec<crate::types::AssetRelationshipSummary>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAssetRelationshipsOutput {
     /// <p>A list that summarizes each asset relationship.</p>
-    pub fn asset_relationship_summaries(&self) -> ::std::option::Option<&[crate::types::AssetRelationshipSummary]> {
-        self.asset_relationship_summaries.as_deref()
+    pub fn asset_relationship_summaries(&self) -> &[crate::types::AssetRelationshipSummary] {
+        use std::ops::Deref;
+        self.asset_relationship_summaries.deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,23 @@ impl ListAssetRelationshipsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAssetRelationshipsOutput`](crate::operation::list_asset_relationships::ListAssetRelationshipsOutput).
-    pub fn build(self) -> crate::operation::list_asset_relationships::ListAssetRelationshipsOutput {
-        crate::operation::list_asset_relationships::ListAssetRelationshipsOutput {
-            asset_relationship_summaries: self.asset_relationship_summaries,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`asset_relationship_summaries`](crate::operation::list_asset_relationships::builders::ListAssetRelationshipsOutputBuilder::asset_relationship_summaries)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_asset_relationships::ListAssetRelationshipsOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_asset_relationships::ListAssetRelationshipsOutput {
+            asset_relationship_summaries: self.asset_relationship_summaries.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "asset_relationship_summaries",
+                    "asset_relationship_summaries was not specified but it is required when building ListAssetRelationshipsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

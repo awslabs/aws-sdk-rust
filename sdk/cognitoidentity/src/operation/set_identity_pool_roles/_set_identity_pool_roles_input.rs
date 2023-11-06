@@ -44,6 +44,7 @@ pub struct SetIdentityPoolRolesInputBuilder {
 }
 impl SetIdentityPoolRolesInputBuilder {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
+    /// This field is required.
     pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,7 @@ impl SetIdentityPoolRolesInputBuilder {
     /// Consumes the builder and constructs a [`SetIdentityPoolRolesInput`](crate::operation::set_identity_pool_roles::SetIdentityPoolRolesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::set_identity_pool_roles::SetIdentityPoolRolesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::set_identity_pool_roles::SetIdentityPoolRolesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::set_identity_pool_roles::SetIdentityPoolRolesInput {
             identity_pool_id: self.identity_pool_id,

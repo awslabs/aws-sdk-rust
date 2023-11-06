@@ -48,6 +48,7 @@ pub struct UpdateVariableInputBuilder {
 }
 impl UpdateVariableInputBuilder {
     /// <p>The name of the variable.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,7 @@ impl UpdateVariableInputBuilder {
     /// Consumes the builder and constructs a [`UpdateVariableInput`](crate::operation::update_variable::UpdateVariableInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_variable::UpdateVariableInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_variable::UpdateVariableInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_variable::UpdateVariableInput {
             name: self.name,
             default_value: self.default_value,

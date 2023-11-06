@@ -27,6 +27,7 @@ pub struct GetAccuracyMetricsInputBuilder {
 }
 impl GetAccuracyMetricsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the predictor to get metrics for.</p>
+    /// This field is required.
     pub fn predictor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.predictor_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,8 @@ impl GetAccuracyMetricsInputBuilder {
     /// Consumes the builder and constructs a [`GetAccuracyMetricsInput`](crate::operation::get_accuracy_metrics::GetAccuracyMetricsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_accuracy_metrics::GetAccuracyMetricsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_accuracy_metrics::GetAccuracyMetricsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_accuracy_metrics::GetAccuracyMetricsInput {
             predictor_arn: self.predictor_arn,
         })

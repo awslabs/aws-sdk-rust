@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDecoderManifest`](crate::operation::delete_decoder_manifest::builders::DeleteDecoderManifestFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::delete_decoder_manifest::builders::DeleteDecoderManifestFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_decoder_manifest::builders::DeleteDecoderManifestFluentBuilder::set_name): <p> The name of the decoder manifest to delete. </p>
+    ///   - [`name(impl Into<String>)`](crate::operation::delete_decoder_manifest::builders::DeleteDecoderManifestFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_decoder_manifest::builders::DeleteDecoderManifestFluentBuilder::set_name):<br>required: **true**<br><p> The name of the decoder manifest to delete. </p><br>
     /// - On success, responds with [`DeleteDecoderManifestOutput`](crate::operation::delete_decoder_manifest::DeleteDecoderManifestOutput) with field(s):
-    ///   - [`name(Option<String>)`](crate::operation::delete_decoder_manifest::DeleteDecoderManifestOutput::name): <p>The name of the deleted decoder manifest.</p>
-    ///   - [`arn(Option<String>)`](crate::operation::delete_decoder_manifest::DeleteDecoderManifestOutput::arn): <p>The Amazon Resource Name (ARN) of the deleted decoder manifest.</p>
+    ///   - [`name(String)`](crate::operation::delete_decoder_manifest::DeleteDecoderManifestOutput::name): <p>The name of the deleted decoder manifest.</p>
+    ///   - [`arn(String)`](crate::operation::delete_decoder_manifest::DeleteDecoderManifestOutput::arn): <p>The Amazon Resource Name (ARN) of the deleted decoder manifest.</p>
     /// - On failure, responds with [`SdkError<DeleteDecoderManifestError>`](crate::operation::delete_decoder_manifest::DeleteDecoderManifestError)
     pub fn delete_decoder_manifest(&self) -> crate::operation::delete_decoder_manifest::builders::DeleteDecoderManifestFluentBuilder {
         crate::operation::delete_decoder_manifest::builders::DeleteDecoderManifestFluentBuilder::new(self.handle.clone())

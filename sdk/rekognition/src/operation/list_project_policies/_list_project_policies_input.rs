@@ -41,6 +41,7 @@ pub struct ListProjectPoliciesInputBuilder {
 }
 impl ListProjectPoliciesInputBuilder {
     /// <p>The ARN of the project for which you want to list the project policies.</p>
+    /// This field is required.
     pub fn project_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_arn = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl ListProjectPoliciesInputBuilder {
     /// Consumes the builder and constructs a [`ListProjectPoliciesInput`](crate::operation::list_project_policies::ListProjectPoliciesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_project_policies::ListProjectPoliciesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_project_policies::ListProjectPoliciesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_project_policies::ListProjectPoliciesInput {
             project_arn: self.project_arn,

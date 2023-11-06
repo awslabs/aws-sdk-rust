@@ -132,8 +132,10 @@ impl Instance {
         self.availability_zone.as_deref()
     }
     /// <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block device mappings.</p>
-    pub fn block_device_mappings(&self) -> ::std::option::Option<&[crate::types::BlockDeviceMapping]> {
-        self.block_device_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.block_device_mappings.is_none()`.
+    pub fn block_device_mappings(&self) -> &[crate::types::BlockDeviceMapping] {
+        self.block_device_mappings.as_deref().unwrap_or_default()
     }
     /// <p>The time that the instance was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&str> {
@@ -190,8 +192,10 @@ impl Instance {
         self.last_service_error_id.as_deref()
     }
     /// <p>An array containing the instance layer IDs.</p>
-    pub fn layer_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.layer_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.layer_ids.is_none()`.
+    pub fn layer_ids(&self) -> &[::std::string::String] {
+        self.layer_ids.as_deref().unwrap_or_default()
     }
     /// <p>The instance's operating system.</p>
     pub fn os(&self) -> ::std::option::Option<&str> {
@@ -238,8 +242,10 @@ impl Instance {
         self.root_device_volume_id.as_deref()
     }
     /// <p>An array containing the instance security group IDs.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>The SSH key's Deep Security Agent (DSA) fingerprint.</p>
     pub fn ssh_host_dsa_key_fingerprint(&self) -> ::std::option::Option<&str> {

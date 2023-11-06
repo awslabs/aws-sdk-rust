@@ -19,8 +19,10 @@ impl CreateDomainNameInput {
         self.domain_name.as_deref()
     }
     /// <p>The domain name configurations.</p>
-    pub fn domain_name_configurations(&self) -> ::std::option::Option<&[crate::types::DomainNameConfiguration]> {
-        self.domain_name_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domain_name_configurations.is_none()`.
+    pub fn domain_name_configurations(&self) -> &[crate::types::DomainNameConfiguration] {
+        self.domain_name_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The mutual TLS authentication configuration for a custom domain name.</p>
     pub fn mutual_tls_authentication(&self) -> ::std::option::Option<&crate::types::MutualTlsAuthenticationInput> {
@@ -49,6 +51,7 @@ pub struct CreateDomainNameInputBuilder {
 }
 impl CreateDomainNameInputBuilder {
     /// <p>The domain name.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -119,7 +122,7 @@ impl CreateDomainNameInputBuilder {
     /// Consumes the builder and constructs a [`CreateDomainNameInput`](crate::operation::create_domain_name::CreateDomainNameInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_domain_name::CreateDomainNameInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_domain_name::CreateDomainNameInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_domain_name::CreateDomainNameInput {
             domain_name: self.domain_name,
             domain_name_configurations: self.domain_name_configurations,

@@ -58,8 +58,10 @@ impl StartNotebookExecutionInput {
         self.notebook_instance_security_group_id.as_deref()
     }
     /// <p>A list of tags associated with a notebook execution. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters and an optional value string with a maximum of 256 characters.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon S3 location for the notebook execution input.</p>
     pub fn notebook_s3_location(&self) -> ::std::option::Option<&crate::types::NotebookS3LocationFromInput> {
@@ -160,6 +162,7 @@ impl StartNotebookExecutionInputBuilder {
         &self.notebook_params
     }
     /// <p>Specifies the execution engine (cluster) that runs the notebook execution.</p>
+    /// This field is required.
     pub fn execution_engine(mut self, input: crate::types::ExecutionEngineConfig) -> Self {
         self.execution_engine = ::std::option::Option::Some(input);
         self
@@ -174,6 +177,7 @@ impl StartNotebookExecutionInputBuilder {
         &self.execution_engine
     }
     /// <p>The name or ARN of the IAM role that is used as the service role for Amazon EMR (the Amazon EMR role) for the notebook execution.</p>
+    /// This field is required.
     pub fn service_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_role = ::std::option::Option::Some(input.into());
         self
@@ -293,8 +297,10 @@ impl StartNotebookExecutionInputBuilder {
     /// Consumes the builder and constructs a [`StartNotebookExecutionInput`](crate::operation::start_notebook_execution::StartNotebookExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_notebook_execution::StartNotebookExecutionInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::start_notebook_execution::StartNotebookExecutionInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::start_notebook_execution::StartNotebookExecutionInput {
             editor_id: self.editor_id,
             relative_path: self.relative_path,

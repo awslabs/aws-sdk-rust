@@ -2,18 +2,18 @@
 pub fn ser_mapping_rule(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MappingRule,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.claim {
-        object.key("Claim").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Claim").string(input.claim.as_str());
     }
-    if let Some(var_2) = &input.match_type {
-        object.key("MatchType").string(var_2.as_str());
+    {
+        object.key("MatchType").string(input.match_type.as_str());
     }
-    if let Some(var_3) = &input.value {
-        object.key("Value").string(var_3.as_str());
+    {
+        object.key("Value").string(input.value.as_str());
     }
-    if let Some(var_4) = &input.role_arn {
-        object.key("RoleARN").string(var_4.as_str());
+    {
+        object.key("RoleARN").string(input.role_arn.as_str());
     }
     Ok(())
 }
@@ -71,7 +71,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::mapping_rule_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

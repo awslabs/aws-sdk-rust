@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReadSetUploadPartListItem {
     /// <p> The number identifying the part in an upload. </p>
-    pub part_number: ::std::option::Option<i32>,
+    pub part_number: i32,
     /// <p> The size of the the part in an upload. </p>
-    pub part_size: ::std::option::Option<i64>,
+    pub part_size: i64,
     /// <p> The origin of the part being direct uploaded. </p>
-    pub part_source: ::std::option::Option<crate::types::ReadSetPartSource>,
+    pub part_source: crate::types::ReadSetPartSource,
     /// <p> A unique identifier used to confirm that parts are being added to the correct upload. </p>
-    pub checksum: ::std::option::Option<::std::string::String>,
+    pub checksum: ::std::string::String,
     /// <p> The time stamp for when a direct upload was created. </p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The time stamp for the most recent update to an uploaded part. </p>
@@ -19,20 +19,21 @@ pub struct ReadSetUploadPartListItem {
 }
 impl ReadSetUploadPartListItem {
     /// <p> The number identifying the part in an upload. </p>
-    pub fn part_number(&self) -> ::std::option::Option<i32> {
+    pub fn part_number(&self) -> i32 {
         self.part_number
     }
     /// <p> The size of the the part in an upload. </p>
-    pub fn part_size(&self) -> ::std::option::Option<i64> {
+    pub fn part_size(&self) -> i64 {
         self.part_size
     }
     /// <p> The origin of the part being direct uploaded. </p>
-    pub fn part_source(&self) -> ::std::option::Option<&crate::types::ReadSetPartSource> {
-        self.part_source.as_ref()
+    pub fn part_source(&self) -> &crate::types::ReadSetPartSource {
+        &self.part_source
     }
     /// <p> A unique identifier used to confirm that parts are being added to the correct upload. </p>
-    pub fn checksum(&self) -> ::std::option::Option<&str> {
-        self.checksum.as_deref()
+    pub fn checksum(&self) -> &str {
+        use std::ops::Deref;
+        self.checksum.deref()
     }
     /// <p> The time stamp for when a direct upload was created. </p>
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -63,6 +64,7 @@ pub struct ReadSetUploadPartListItemBuilder {
 }
 impl ReadSetUploadPartListItemBuilder {
     /// <p> The number identifying the part in an upload. </p>
+    /// This field is required.
     pub fn part_number(mut self, input: i32) -> Self {
         self.part_number = ::std::option::Option::Some(input);
         self
@@ -77,6 +79,7 @@ impl ReadSetUploadPartListItemBuilder {
         &self.part_number
     }
     /// <p> The size of the the part in an upload. </p>
+    /// This field is required.
     pub fn part_size(mut self, input: i64) -> Self {
         self.part_size = ::std::option::Option::Some(input);
         self
@@ -91,6 +94,7 @@ impl ReadSetUploadPartListItemBuilder {
         &self.part_size
     }
     /// <p> The origin of the part being direct uploaded. </p>
+    /// This field is required.
     pub fn part_source(mut self, input: crate::types::ReadSetPartSource) -> Self {
         self.part_source = ::std::option::Option::Some(input);
         self
@@ -105,6 +109,7 @@ impl ReadSetUploadPartListItemBuilder {
         &self.part_source
     }
     /// <p> A unique identifier used to confirm that parts are being added to the correct upload. </p>
+    /// This field is required.
     pub fn checksum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.checksum = ::std::option::Option::Some(input.into());
         self
@@ -147,14 +152,39 @@ impl ReadSetUploadPartListItemBuilder {
         &self.last_updated_time
     }
     /// Consumes the builder and constructs a [`ReadSetUploadPartListItem`](crate::types::ReadSetUploadPartListItem).
-    pub fn build(self) -> crate::types::ReadSetUploadPartListItem {
-        crate::types::ReadSetUploadPartListItem {
-            part_number: self.part_number,
-            part_size: self.part_size,
-            part_source: self.part_source,
-            checksum: self.checksum,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`part_number`](crate::types::builders::ReadSetUploadPartListItemBuilder::part_number)
+    /// - [`part_size`](crate::types::builders::ReadSetUploadPartListItemBuilder::part_size)
+    /// - [`part_source`](crate::types::builders::ReadSetUploadPartListItemBuilder::part_source)
+    /// - [`checksum`](crate::types::builders::ReadSetUploadPartListItemBuilder::checksum)
+    pub fn build(self) -> ::std::result::Result<crate::types::ReadSetUploadPartListItem, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ReadSetUploadPartListItem {
+            part_number: self.part_number.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "part_number",
+                    "part_number was not specified but it is required when building ReadSetUploadPartListItem",
+                )
+            })?,
+            part_size: self.part_size.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "part_size",
+                    "part_size was not specified but it is required when building ReadSetUploadPartListItem",
+                )
+            })?,
+            part_source: self.part_source.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "part_source",
+                    "part_source was not specified but it is required when building ReadSetUploadPartListItem",
+                )
+            })?,
+            checksum: self.checksum.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "checksum",
+                    "checksum was not specified but it is required when building ReadSetUploadPartListItem",
+                )
+            })?,
             creation_time: self.creation_time,
             last_updated_time: self.last_updated_time,
-        }
+        })
     }
 }

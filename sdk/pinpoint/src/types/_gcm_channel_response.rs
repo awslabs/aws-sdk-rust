@@ -266,6 +266,7 @@ impl GcmChannelResponseBuilder {
         &self.last_modified_date
     }
     /// <p>The type of messaging or notification platform for the channel. For the GCM channel, this value is GCM.</p>
+    /// This field is required.
     pub fn platform(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform = ::std::option::Option::Some(input.into());
         self

@@ -6,12 +6,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserPoolAddOnsType {
     /// <p>The operating mode of advanced security features in your user pool.</p>
-    pub advanced_security_mode: ::std::option::Option<crate::types::AdvancedSecurityModeType>,
+    pub advanced_security_mode: crate::types::AdvancedSecurityModeType,
 }
 impl UserPoolAddOnsType {
     /// <p>The operating mode of advanced security features in your user pool.</p>
-    pub fn advanced_security_mode(&self) -> ::std::option::Option<&crate::types::AdvancedSecurityModeType> {
-        self.advanced_security_mode.as_ref()
+    pub fn advanced_security_mode(&self) -> &crate::types::AdvancedSecurityModeType {
+        &self.advanced_security_mode
     }
 }
 impl UserPoolAddOnsType {
@@ -29,6 +29,7 @@ pub struct UserPoolAddOnsTypeBuilder {
 }
 impl UserPoolAddOnsTypeBuilder {
     /// <p>The operating mode of advanced security features in your user pool.</p>
+    /// This field is required.
     pub fn advanced_security_mode(mut self, input: crate::types::AdvancedSecurityModeType) -> Self {
         self.advanced_security_mode = ::std::option::Option::Some(input);
         self
@@ -43,9 +44,16 @@ impl UserPoolAddOnsTypeBuilder {
         &self.advanced_security_mode
     }
     /// Consumes the builder and constructs a [`UserPoolAddOnsType`](crate::types::UserPoolAddOnsType).
-    pub fn build(self) -> crate::types::UserPoolAddOnsType {
-        crate::types::UserPoolAddOnsType {
-            advanced_security_mode: self.advanced_security_mode,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`advanced_security_mode`](crate::types::builders::UserPoolAddOnsTypeBuilder::advanced_security_mode)
+    pub fn build(self) -> ::std::result::Result<crate::types::UserPoolAddOnsType, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::UserPoolAddOnsType {
+            advanced_security_mode: self.advanced_security_mode.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "advanced_security_mode",
+                    "advanced_security_mode was not specified but it is required when building UserPoolAddOnsType",
+                )
+            })?,
+        })
     }
 }

@@ -15,8 +15,10 @@ impl ListWirelessGatewayTaskDefinitionsOutput {
         self.next_token.as_deref()
     }
     /// <p>The list of task definitions.</p>
-    pub fn task_definitions(&self) -> ::std::option::Option<&[crate::types::UpdateWirelessGatewayTaskEntry]> {
-        self.task_definitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.task_definitions.is_none()`.
+    pub fn task_definitions(&self) -> &[crate::types::UpdateWirelessGatewayTaskEntry] {
+        self.task_definitions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListWirelessGatewayTaskDefinitionsOutput {

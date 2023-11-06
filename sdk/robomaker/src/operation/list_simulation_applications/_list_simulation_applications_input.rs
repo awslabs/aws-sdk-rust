@@ -28,8 +28,10 @@ impl ListSimulationApplicationsInput {
     }
     /// <p>Optional list of filters to limit results.</p>
     /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
 }
 impl ListSimulationApplicationsInput {
@@ -119,7 +121,7 @@ impl ListSimulationApplicationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_simulation_applications::ListSimulationApplicationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_simulation_applications::ListSimulationApplicationsInput {
             version_qualifier: self.version_qualifier,

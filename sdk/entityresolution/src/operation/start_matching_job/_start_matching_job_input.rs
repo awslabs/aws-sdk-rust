@@ -27,6 +27,7 @@ pub struct StartMatchingJobInputBuilder {
 }
 impl StartMatchingJobInputBuilder {
     /// <p>The name of the matching job to be retrieved.</p>
+    /// This field is required.
     pub fn workflow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl StartMatchingJobInputBuilder {
     /// Consumes the builder and constructs a [`StartMatchingJobInput`](crate::operation::start_matching_job::StartMatchingJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_matching_job::StartMatchingJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_matching_job::StartMatchingJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_matching_job::StartMatchingJobInput {
             workflow_name: self.workflow_name,
         })

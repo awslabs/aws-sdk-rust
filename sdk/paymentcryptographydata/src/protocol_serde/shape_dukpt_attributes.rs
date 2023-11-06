@@ -2,12 +2,12 @@
 pub fn ser_dukpt_attributes(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DukptAttributes,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.key_serial_number {
-        object.key("KeySerialNumber").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("KeySerialNumber").string(input.key_serial_number.as_str());
     }
-    if let Some(var_2) = &input.dukpt_derivation_type {
-        object.key("DukptDerivationType").string(var_2.as_str());
+    {
+        object.key("DukptDerivationType").string(input.dukpt_derivation_type.as_str());
     }
     Ok(())
 }

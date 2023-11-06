@@ -48,6 +48,7 @@ pub struct GetDocumentInputBuilder {
 }
 impl GetDocumentInputBuilder {
     /// <p>The name of the SSM document.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -104,7 +105,7 @@ impl GetDocumentInputBuilder {
         &self.document_format
     }
     /// Consumes the builder and constructs a [`GetDocumentInput`](crate::operation::get_document::GetDocumentInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_document::GetDocumentInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_document::GetDocumentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_document::GetDocumentInput {
             name: self.name,
             version_name: self.version_name,

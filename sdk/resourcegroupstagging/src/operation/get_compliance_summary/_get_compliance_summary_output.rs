@@ -11,8 +11,10 @@ pub struct GetComplianceSummaryOutput {
 }
 impl GetComplianceSummaryOutput {
     /// <p>A table that shows counts of noncompliant resources.</p>
-    pub fn summary_list(&self) -> ::std::option::Option<&[crate::types::Summary]> {
-        self.summary_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.summary_list.is_none()`.
+    pub fn summary_list(&self) -> &[crate::types::Summary] {
+        self.summary_list.as_deref().unwrap_or_default()
     }
     /// <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
     pub fn pagination_token(&self) -> ::std::option::Option<&str> {

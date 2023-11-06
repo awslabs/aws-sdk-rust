@@ -103,8 +103,10 @@ impl CreateFileSystemOpenZfsConfiguration {
         self.endpoint_ip_address_range.as_deref()
     }
     /// <p>(Multi-AZ only) Specifies the route tables in which Amazon FSx creates the rules for routing traffic to the correct file server. You should specify all virtual private cloud (VPC) route tables associated with the subnets in which your clients are located. By default, Amazon FSx selects your VPC's default route table.</p>
-    pub fn route_table_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.route_table_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.route_table_ids.is_none()`.
+    pub fn route_table_ids(&self) -> &[::std::string::String] {
+        self.route_table_ids.as_deref().unwrap_or_default()
     }
 }
 impl CreateFileSystemOpenZfsConfiguration {
@@ -195,6 +197,7 @@ impl CreateFileSystemOpenZfsConfigurationBuilder {
     /// <li> <p> <code>SINGLE_AZ_2</code>- Creates file systems with throughput capacities of 160 - 10,240 MB/s using an NVMe L2ARC cache. <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Singapore), Asia Pacific (Tokyo), and Europe (Ireland) Amazon Web Services Regions.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/availability-durability.html#available-aws-regions">Deployment type availability</a> and <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#zfs-fs-performance">File system performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
+    /// This field is required.
     pub fn deployment_type(mut self, input: crate::types::OpenZfsDeploymentType) -> Self {
         self.deployment_type = ::std::option::Option::Some(input);
         self
@@ -226,6 +229,7 @@ impl CreateFileSystemOpenZfsConfigurationBuilder {
     /// <li> <p>For <code>SINGLE_AZ_1</code>, valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MBps.</p> </li>
     /// </ul>
     /// <p>You pay for additional throughput capacity that you provision.</p>
+    /// This field is required.
     pub fn throughput_capacity(mut self, input: i32) -> Self {
         self.throughput_capacity = ::std::option::Option::Some(input);
         self

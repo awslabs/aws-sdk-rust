@@ -21,8 +21,10 @@ impl AddApplicationReferenceDataSourceOutput {
         self.application_version_id
     }
     /// <p>Describes reference data sources configured for the application. </p>
-    pub fn reference_data_source_descriptions(&self) -> ::std::option::Option<&[crate::types::ReferenceDataSourceDescription]> {
-        self.reference_data_source_descriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reference_data_source_descriptions.is_none()`.
+    pub fn reference_data_source_descriptions(&self) -> &[crate::types::ReferenceDataSourceDescription] {
+        self.reference_data_source_descriptions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for AddApplicationReferenceDataSourceOutput {

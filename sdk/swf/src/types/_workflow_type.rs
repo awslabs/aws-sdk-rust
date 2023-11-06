@@ -7,24 +7,26 @@ pub struct WorkflowType {
     /// <p> The name of the workflow type.</p> <note>
     /// <p>The combination of workflow type name and version must be unique with in a domain.</p>
     /// </note>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p> The version of the workflow type.</p> <note>
     /// <p>The combination of workflow type name and version must be unique with in a domain.</p>
     /// </note>
-    pub version: ::std::option::Option<::std::string::String>,
+    pub version: ::std::string::String,
 }
 impl WorkflowType {
     /// <p> The name of the workflow type.</p> <note>
     /// <p>The combination of workflow type name and version must be unique with in a domain.</p>
     /// </note>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p> The version of the workflow type.</p> <note>
     /// <p>The combination of workflow type name and version must be unique with in a domain.</p>
     /// </note>
-    pub fn version(&self) -> ::std::option::Option<&str> {
-        self.version.as_deref()
+    pub fn version(&self) -> &str {
+        use std::ops::Deref;
+        self.version.deref()
     }
 }
 impl WorkflowType {
@@ -45,6 +47,7 @@ impl WorkflowTypeBuilder {
     /// <p> The name of the workflow type.</p> <note>
     /// <p>The combination of workflow type name and version must be unique with in a domain.</p>
     /// </note>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -65,6 +68,7 @@ impl WorkflowTypeBuilder {
     /// <p> The version of the workflow type.</p> <note>
     /// <p>The combination of workflow type name and version must be unique with in a domain.</p>
     /// </note>
+    /// This field is required.
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
         self
@@ -83,10 +87,23 @@ impl WorkflowTypeBuilder {
         &self.version
     }
     /// Consumes the builder and constructs a [`WorkflowType`](crate::types::WorkflowType).
-    pub fn build(self) -> crate::types::WorkflowType {
-        crate::types::WorkflowType {
-            name: self.name,
-            version: self.version,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::WorkflowTypeBuilder::name)
+    /// - [`version`](crate::types::builders::WorkflowTypeBuilder::version)
+    pub fn build(self) -> ::std::result::Result<crate::types::WorkflowType, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::WorkflowType {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building WorkflowType",
+                )
+            })?,
+            version: self.version.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "version",
+                    "version was not specified but it is required when building WorkflowType",
+                )
+            })?,
+        })
     }
 }

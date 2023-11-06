@@ -2319,6 +2319,8 @@ pub(crate) mod shape_tensor_board_app_settings;
 
 pub(crate) mod shape_text_classification_job_config;
 
+pub(crate) mod shape_text_generation_job_config;
+
 pub(crate) mod shape_time_series_forecasting_job_config;
 
 pub(crate) mod shape_traffic_pattern;
@@ -2572,6 +2574,8 @@ pub(crate) mod shape_selective_execution_result;
 pub(crate) mod shape_stairs;
 
 pub(crate) mod shape_tabular_resolved_attributes;
+
+pub(crate) mod shape_text_generation_resolved_attributes;
 
 pub(crate) mod shape_time_series_config;
 

@@ -11,12 +11,16 @@ pub struct SchemaDefinition {
 }
 impl SchemaDefinition {
     /// <p>List of column definitions.</p>
-    pub fn columns(&self) -> ::std::option::Option<&[crate::types::ColumnDefinition]> {
-        self.columns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.columns.is_none()`.
+    pub fn columns(&self) -> &[crate::types::ColumnDefinition] {
+        self.columns.as_deref().unwrap_or_default()
     }
     /// <p>List of column names used for primary key.</p>
-    pub fn primary_key_columns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.primary_key_columns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.primary_key_columns.is_none()`.
+    pub fn primary_key_columns(&self) -> &[::std::string::String] {
+        self.primary_key_columns.as_deref().unwrap_or_default()
     }
 }
 impl SchemaDefinition {

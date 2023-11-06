@@ -2,21 +2,22 @@
 pub fn ser_storage_lens_tag(
     input: &crate::types::StorageLensTag,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.key {
+    {
         let mut inner_writer = scope.start_el("Key").finish();
-        inner_writer.data(var_1.as_str());
+        inner_writer.data(input.key.as_str());
     }
-    if let Some(var_2) = &input.value {
+    {
         let mut inner_writer = scope.start_el("Value").finish();
-        inner_writer.data(var_2.as_str());
+        inner_writer.data(input.value.as_str());
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_storage_lens_tag(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::StorageLensTag, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -25,7 +26,7 @@ pub fn de_storage_lens_tag(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Key") /* Key com.amazonaws.s3control#StorageLensTag$Key */ =>  {
-                let var_3 =
+                let var_1 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -34,11 +35,11 @@ pub fn de_storage_lens_tag(
                         ?
                     )
                 ;
-                builder = builder.set_key(var_3);
+                builder = builder.set_key(var_1);
             }
             ,
             s if s.matches("Value") /* Value com.amazonaws.s3control#StorageLensTag$Value */ =>  {
-                let var_4 =
+                let var_2 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -47,11 +48,13 @@ pub fn de_storage_lens_tag(
                         ?
                     )
                 ;
-                builder = builder.set_value(var_4);
+                builder = builder.set_value(var_2);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::storage_lens_tag_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

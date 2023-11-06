@@ -15,8 +15,10 @@ pub struct FunctionResponse {
 }
 impl FunctionResponse {
     /// <p>The required properties of the function.</p>
-    pub fn required_properties(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.required_properties.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.required_properties.is_none()`.
+    pub fn required_properties(&self) -> &[::std::string::String] {
+        self.required_properties.as_deref().unwrap_or_default()
     }
     /// <p>The scope of the function.</p>
     pub fn scope(&self) -> ::std::option::Option<&crate::types::Scope> {

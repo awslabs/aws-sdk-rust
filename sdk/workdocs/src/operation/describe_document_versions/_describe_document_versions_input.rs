@@ -88,6 +88,7 @@ impl DescribeDocumentVersionsInputBuilder {
         &self.authentication_token
     }
     /// <p>The ID of the document.</p>
+    /// This field is required.
     pub fn document_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_id = ::std::option::Option::Some(input.into());
         self
@@ -162,7 +163,7 @@ impl DescribeDocumentVersionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_document_versions::DescribeDocumentVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_document_versions::DescribeDocumentVersionsInput {
             authentication_token: self.authentication_token,

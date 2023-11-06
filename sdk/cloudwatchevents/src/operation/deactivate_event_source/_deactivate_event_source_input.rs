@@ -27,6 +27,7 @@ pub struct DeactivateEventSourceInputBuilder {
 }
 impl DeactivateEventSourceInputBuilder {
     /// <p>The name of the partner event source to deactivate.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeactivateEventSourceInputBuilder {
     /// Consumes the builder and constructs a [`DeactivateEventSourceInput`](crate::operation::deactivate_event_source::DeactivateEventSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::deactivate_event_source::DeactivateEventSourceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::deactivate_event_source::DeactivateEventSourceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::deactivate_event_source::DeactivateEventSourceInput { name: self.name })
     }

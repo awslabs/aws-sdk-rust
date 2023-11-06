@@ -7,7 +7,7 @@ pub struct ProtocolsListData {
     /// <p>The ID of the Firewall Manager protocols list.</p>
     pub list_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Firewall Manager protocols list.</p>
-    pub list_name: ::std::option::Option<::std::string::String>,
+    pub list_name: ::std::string::String,
     /// <p>A unique identifier for each update to the list. When you update the list, the update token must match the token of the current version of the application list. You can retrieve the update token by getting the list. </p>
     pub list_update_token: ::std::option::Option<::std::string::String>,
     /// <p>The time that the Firewall Manager protocols list was created.</p>
@@ -15,7 +15,7 @@ pub struct ProtocolsListData {
     /// <p>The time that the Firewall Manager protocols list was last updated.</p>
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An array of protocols in the Firewall Manager protocols list.</p>
-    pub protocols_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub protocols_list: ::std::vec::Vec<::std::string::String>,
     /// <p>A map of previous version numbers to their corresponding protocol arrays.</p>
     pub previous_protocols_list: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
@@ -25,8 +25,9 @@ impl ProtocolsListData {
         self.list_id.as_deref()
     }
     /// <p>The name of the Firewall Manager protocols list.</p>
-    pub fn list_name(&self) -> ::std::option::Option<&str> {
-        self.list_name.as_deref()
+    pub fn list_name(&self) -> &str {
+        use std::ops::Deref;
+        self.list_name.deref()
     }
     /// <p>A unique identifier for each update to the list. When you update the list, the update token must match the token of the current version of the application list. You can retrieve the update token by getting the list. </p>
     pub fn list_update_token(&self) -> ::std::option::Option<&str> {
@@ -41,8 +42,9 @@ impl ProtocolsListData {
         self.last_update_time.as_ref()
     }
     /// <p>An array of protocols in the Firewall Manager protocols list.</p>
-    pub fn protocols_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.protocols_list.as_deref()
+    pub fn protocols_list(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.protocols_list.deref()
     }
     /// <p>A map of previous version numbers to their corresponding protocol arrays.</p>
     pub fn previous_protocols_list(
@@ -87,6 +89,7 @@ impl ProtocolsListDataBuilder {
         &self.list_id
     }
     /// <p>The name of the Firewall Manager protocols list.</p>
+    /// This field is required.
     pub fn list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.list_name = ::std::option::Option::Some(input.into());
         self
@@ -188,15 +191,28 @@ impl ProtocolsListDataBuilder {
         &self.previous_protocols_list
     }
     /// Consumes the builder and constructs a [`ProtocolsListData`](crate::types::ProtocolsListData).
-    pub fn build(self) -> crate::types::ProtocolsListData {
-        crate::types::ProtocolsListData {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`list_name`](crate::types::builders::ProtocolsListDataBuilder::list_name)
+    /// - [`protocols_list`](crate::types::builders::ProtocolsListDataBuilder::protocols_list)
+    pub fn build(self) -> ::std::result::Result<crate::types::ProtocolsListData, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ProtocolsListData {
             list_id: self.list_id,
-            list_name: self.list_name,
+            list_name: self.list_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "list_name",
+                    "list_name was not specified but it is required when building ProtocolsListData",
+                )
+            })?,
             list_update_token: self.list_update_token,
             create_time: self.create_time,
             last_update_time: self.last_update_time,
-            protocols_list: self.protocols_list,
+            protocols_list: self.protocols_list.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "protocols_list",
+                    "protocols_list was not specified but it is required when building ProtocolsListData",
+                )
+            })?,
             previous_protocols_list: self.previous_protocols_list,
-        }
+        })
     }
 }

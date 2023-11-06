@@ -260,6 +260,7 @@ pub struct CreateJobInputBuilder {
 }
 impl CreateJobInputBuilder {
     /// <p>The name you assign to this job definition. It must be unique in your account.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -302,6 +303,7 @@ impl CreateJobInputBuilder {
         &self.log_uri
     }
     /// <p>The name or Amazon Resource Name (ARN) of the IAM role associated with this job.</p>
+    /// This field is required.
     pub fn role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role = ::std::option::Option::Some(input.into());
         self
@@ -330,6 +332,7 @@ impl CreateJobInputBuilder {
         &self.execution_property
     }
     /// <p>The <code>JobCommand</code> that runs this job.</p>
+    /// This field is required.
     pub fn command(mut self, input: crate::types::JobCommand) -> Self {
         self.command = ::std::option::Option::Some(input);
         self
@@ -696,7 +699,7 @@ impl CreateJobInputBuilder {
         &self.source_control_details
     }
     /// Consumes the builder and constructs a [`CreateJobInput`](crate::operation::create_job::CreateJobInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_job::CreateJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_job::CreateJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_job::CreateJobInput {
             name: self.name,
             description: self.description,

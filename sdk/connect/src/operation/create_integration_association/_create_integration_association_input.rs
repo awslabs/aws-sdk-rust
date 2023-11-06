@@ -73,6 +73,7 @@ pub struct CreateIntegrationAssociationInputBuilder {
 }
 impl CreateIntegrationAssociationInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -87,6 +88,7 @@ impl CreateIntegrationAssociationInputBuilder {
         &self.instance_id
     }
     /// <p>The type of information to be ingested.</p>
+    /// This field is required.
     pub fn integration_type(mut self, input: crate::types::IntegrationType) -> Self {
         self.integration_type = ::std::option::Option::Some(input);
         self
@@ -103,6 +105,7 @@ impl CreateIntegrationAssociationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the integration.</p> <note>
     /// <p>When integrating with Amazon Pinpoint, the Amazon Connect and Amazon Pinpoint instances must be in the same account.</p>
     /// </note>
+    /// This field is required.
     pub fn integration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.integration_arn = ::std::option::Option::Some(input.into());
         self
@@ -187,7 +190,7 @@ impl CreateIntegrationAssociationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_integration_association::CreateIntegrationAssociationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_integration_association::CreateIntegrationAssociationInput {
             instance_id: self.instance_id,

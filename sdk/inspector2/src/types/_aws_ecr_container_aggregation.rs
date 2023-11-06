@@ -21,24 +21,34 @@ pub struct AwsEcrContainerAggregation {
 }
 impl AwsEcrContainerAggregation {
     /// <p>The container resource IDs.</p>
-    pub fn resource_ids(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.resource_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_ids.is_none()`.
+    pub fn resource_ids(&self) -> &[crate::types::StringFilter] {
+        self.resource_ids.as_deref().unwrap_or_default()
     }
     /// <p>The image SHA values.</p>
-    pub fn image_shas(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.image_shas.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_shas.is_none()`.
+    pub fn image_shas(&self) -> &[crate::types::StringFilter] {
+        self.image_shas.as_deref().unwrap_or_default()
     }
     /// <p>The container repositories.</p>
-    pub fn repositories(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.repositories.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.repositories.is_none()`.
+    pub fn repositories(&self) -> &[crate::types::StringFilter] {
+        self.repositories.as_deref().unwrap_or_default()
     }
     /// <p>The architecture of the containers.</p>
-    pub fn architectures(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.architectures.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.architectures.is_none()`.
+    pub fn architectures(&self) -> &[crate::types::StringFilter] {
+        self.architectures.as_deref().unwrap_or_default()
     }
     /// <p>The image tags.</p>
-    pub fn image_tags(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.image_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_tags.is_none()`.
+    pub fn image_tags(&self) -> &[crate::types::StringFilter] {
+        self.image_tags.as_deref().unwrap_or_default()
     }
     /// <p>The sort order (ascending or descending).</p>
     pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {

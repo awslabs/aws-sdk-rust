@@ -5,36 +5,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExternalEvaluation {
     /// <p>The evaluated compliance resource type. Config accepts <code>AWS::::Account</code> resource type.</p>
-    pub compliance_resource_type: ::std::option::Option<::std::string::String>,
+    pub compliance_resource_type: ::std::string::String,
     /// <p>The evaluated compliance resource ID. Config accepts only Amazon Web Services account ID.</p>
-    pub compliance_resource_id: ::std::option::Option<::std::string::String>,
+    pub compliance_resource_id: ::std::string::String,
     /// <p>The compliance of the Amazon Web Services resource. The valid values are <code>COMPLIANT, NON_COMPLIANT, </code> and <code>NOT_APPLICABLE</code>.</p>
-    pub compliance_type: ::std::option::Option<crate::types::ComplianceType>,
+    pub compliance_type: crate::types::ComplianceType,
     /// <p>Supplementary information about the reason of compliance. For example, this task was completed on a specific date.</p>
     pub annotation: ::std::option::Option<::std::string::String>,
     /// <p>The time when the compliance was recorded. </p>
-    pub ordering_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub ordering_timestamp: ::aws_smithy_types::DateTime,
 }
 impl ExternalEvaluation {
     /// <p>The evaluated compliance resource type. Config accepts <code>AWS::::Account</code> resource type.</p>
-    pub fn compliance_resource_type(&self) -> ::std::option::Option<&str> {
-        self.compliance_resource_type.as_deref()
+    pub fn compliance_resource_type(&self) -> &str {
+        use std::ops::Deref;
+        self.compliance_resource_type.deref()
     }
     /// <p>The evaluated compliance resource ID. Config accepts only Amazon Web Services account ID.</p>
-    pub fn compliance_resource_id(&self) -> ::std::option::Option<&str> {
-        self.compliance_resource_id.as_deref()
+    pub fn compliance_resource_id(&self) -> &str {
+        use std::ops::Deref;
+        self.compliance_resource_id.deref()
     }
     /// <p>The compliance of the Amazon Web Services resource. The valid values are <code>COMPLIANT, NON_COMPLIANT, </code> and <code>NOT_APPLICABLE</code>.</p>
-    pub fn compliance_type(&self) -> ::std::option::Option<&crate::types::ComplianceType> {
-        self.compliance_type.as_ref()
+    pub fn compliance_type(&self) -> &crate::types::ComplianceType {
+        &self.compliance_type
     }
     /// <p>Supplementary information about the reason of compliance. For example, this task was completed on a specific date.</p>
     pub fn annotation(&self) -> ::std::option::Option<&str> {
         self.annotation.as_deref()
     }
     /// <p>The time when the compliance was recorded. </p>
-    pub fn ordering_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.ordering_timestamp.as_ref()
+    pub fn ordering_timestamp(&self) -> &::aws_smithy_types::DateTime {
+        &self.ordering_timestamp
     }
 }
 impl ExternalEvaluation {
@@ -56,6 +58,7 @@ pub struct ExternalEvaluationBuilder {
 }
 impl ExternalEvaluationBuilder {
     /// <p>The evaluated compliance resource type. Config accepts <code>AWS::::Account</code> resource type.</p>
+    /// This field is required.
     pub fn compliance_resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compliance_resource_type = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +73,7 @@ impl ExternalEvaluationBuilder {
         &self.compliance_resource_type
     }
     /// <p>The evaluated compliance resource ID. Config accepts only Amazon Web Services account ID.</p>
+    /// This field is required.
     pub fn compliance_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compliance_resource_id = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +88,7 @@ impl ExternalEvaluationBuilder {
         &self.compliance_resource_id
     }
     /// <p>The compliance of the Amazon Web Services resource. The valid values are <code>COMPLIANT, NON_COMPLIANT, </code> and <code>NOT_APPLICABLE</code>.</p>
+    /// This field is required.
     pub fn compliance_type(mut self, input: crate::types::ComplianceType) -> Self {
         self.compliance_type = ::std::option::Option::Some(input);
         self
@@ -112,6 +117,7 @@ impl ExternalEvaluationBuilder {
         &self.annotation
     }
     /// <p>The time when the compliance was recorded. </p>
+    /// This field is required.
     pub fn ordering_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.ordering_timestamp = ::std::option::Option::Some(input);
         self
@@ -126,13 +132,38 @@ impl ExternalEvaluationBuilder {
         &self.ordering_timestamp
     }
     /// Consumes the builder and constructs a [`ExternalEvaluation`](crate::types::ExternalEvaluation).
-    pub fn build(self) -> crate::types::ExternalEvaluation {
-        crate::types::ExternalEvaluation {
-            compliance_resource_type: self.compliance_resource_type,
-            compliance_resource_id: self.compliance_resource_id,
-            compliance_type: self.compliance_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`compliance_resource_type`](crate::types::builders::ExternalEvaluationBuilder::compliance_resource_type)
+    /// - [`compliance_resource_id`](crate::types::builders::ExternalEvaluationBuilder::compliance_resource_id)
+    /// - [`compliance_type`](crate::types::builders::ExternalEvaluationBuilder::compliance_type)
+    /// - [`ordering_timestamp`](crate::types::builders::ExternalEvaluationBuilder::ordering_timestamp)
+    pub fn build(self) -> ::std::result::Result<crate::types::ExternalEvaluation, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ExternalEvaluation {
+            compliance_resource_type: self.compliance_resource_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "compliance_resource_type",
+                    "compliance_resource_type was not specified but it is required when building ExternalEvaluation",
+                )
+            })?,
+            compliance_resource_id: self.compliance_resource_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "compliance_resource_id",
+                    "compliance_resource_id was not specified but it is required when building ExternalEvaluation",
+                )
+            })?,
+            compliance_type: self.compliance_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "compliance_type",
+                    "compliance_type was not specified but it is required when building ExternalEvaluation",
+                )
+            })?,
             annotation: self.annotation,
-            ordering_timestamp: self.ordering_timestamp,
-        }
+            ordering_timestamp: self.ordering_timestamp.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "ordering_timestamp",
+                    "ordering_timestamp was not specified but it is required when building ExternalEvaluation",
+                )
+            })?,
+        })
     }
 }

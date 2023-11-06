@@ -2,7 +2,7 @@
 pub fn ser_create_meeting_dial_out_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_meeting_dial_out::CreateMeetingDialOutInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.from_phone_number {
         object.key("FromPhoneNumber").string(var_1.as_str());
     }

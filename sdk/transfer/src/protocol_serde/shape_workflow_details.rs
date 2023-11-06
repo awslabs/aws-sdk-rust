@@ -2,7 +2,7 @@
 pub fn ser_workflow_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WorkflowDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.on_upload {
         let mut array_2 = object.key("OnUpload").start_array();
         for item_3 in var_1 {

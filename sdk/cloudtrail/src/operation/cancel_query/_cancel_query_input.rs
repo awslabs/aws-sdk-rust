@@ -53,6 +53,7 @@ impl CancelQueryInputBuilder {
         &self.event_data_store
     }
     /// <p>The ID of the query that you want to cancel. The <code>QueryId</code> comes from the response of a <code>StartQuery</code> operation.</p>
+    /// This field is required.
     pub fn query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_id = ::std::option::Option::Some(input.into());
         self
@@ -67,7 +68,7 @@ impl CancelQueryInputBuilder {
         &self.query_id
     }
     /// Consumes the builder and constructs a [`CancelQueryInput`](crate::operation::cancel_query::CancelQueryInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_query::CancelQueryInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_query::CancelQueryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_query::CancelQueryInput {
             event_data_store: self.event_data_store,
             query_id: self.query_id,

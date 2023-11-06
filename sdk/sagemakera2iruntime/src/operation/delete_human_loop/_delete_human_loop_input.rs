@@ -27,6 +27,7 @@ pub struct DeleteHumanLoopInputBuilder {
 }
 impl DeleteHumanLoopInputBuilder {
     /// <p>The name of the human loop that you want to delete.</p>
+    /// This field is required.
     pub fn human_loop_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.human_loop_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteHumanLoopInputBuilder {
     /// Consumes the builder and constructs a [`DeleteHumanLoopInput`](crate::operation::delete_human_loop::DeleteHumanLoopInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_human_loop::DeleteHumanLoopInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_human_loop::DeleteHumanLoopInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_human_loop::DeleteHumanLoopInput {
             human_loop_name: self.human_loop_name,
         })

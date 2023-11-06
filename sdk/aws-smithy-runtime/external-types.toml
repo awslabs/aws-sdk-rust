@@ -3,10 +3,29 @@ allowed_external_types = [
     "aws_smithy_async::*",
     "aws_smithy_http::*",
     "aws_smithy_types::*",
-    "aws_smithy_client::erase::DynConnector",
+
     # TODO(audit-external-type-usage) We should newtype these or otherwise avoid exposing them
     "http::header::name::HeaderName",
     "http::request::Request",
     "http::response::Response",
     "http::uri::Uri",
+
+    # Used for creating hyper connectors
+    "tower_service::Service",
+
+    # TODO(https://github.com/awslabs/smithy-rs/issues/1193): Once tooling permits it, only allow the following types in the `test-util` feature
+    "aws_smithy_protocol_test::MediaType",
+    "bytes::bytes::Bytes",
+    "serde::ser::Serialize",
+    "serde::de::Deserialize",
+    "hyper::client::connect::dns::Name",
+
+    # TODO(https://github.com/awslabs/smithy-rs/issues/1193): Once tooling permits it, only allow the following types in the `connector-hyper-0-14-x` feature
+    "hyper::client::client::Builder",
+    "hyper::client::connect::Connection",
+    "tokio::io::async_read::AsyncRead",
+    "tokio::io::async_write::AsyncWrite",
+
+    # TODO(https://github.com/awslabs/smithy-rs/issues/1193): Once tooling permits it, only allow the following types in the `http-0-x` feature
+    "http_body::Body"
 ]

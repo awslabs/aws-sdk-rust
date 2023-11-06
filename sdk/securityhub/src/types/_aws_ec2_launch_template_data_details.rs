@@ -69,8 +69,10 @@ pub struct AwsEc2LaunchTemplateDataDetails {
 }
 impl AwsEc2LaunchTemplateDataDetails {
     /// <p> Information about a block device mapping for an Amazon EC2 launch template. </p>
-    pub fn block_device_mapping_set(&self) -> ::std::option::Option<&[crate::types::AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails]> {
-        self.block_device_mapping_set.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.block_device_mapping_set.is_none()`.
+    pub fn block_device_mapping_set(&self) -> &[crate::types::AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails] {
+        self.block_device_mapping_set.as_deref().unwrap_or_default()
     }
     /// <p> Specifies an instance's Capacity Reservation targeting option. You can specify only one option at a time. </p>
     pub fn capacity_reservation_specification(
@@ -99,14 +101,16 @@ impl AwsEc2LaunchTemplateDataDetails {
         self.ebs_optimized
     }
     /// <p> Provides details about Elastic Graphics accelerators to associate with the instance. </p>
-    pub fn elastic_gpu_specification_set(&self) -> ::std::option::Option<&[crate::types::AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails]> {
-        self.elastic_gpu_specification_set.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.elastic_gpu_specification_set.is_none()`.
+    pub fn elastic_gpu_specification_set(&self) -> &[crate::types::AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails] {
+        self.elastic_gpu_specification_set.as_deref().unwrap_or_default()
     }
     /// <p> The Amazon Elastic Inference accelerator for the instance. </p>
-    pub fn elastic_inference_accelerator_set(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails]> {
-        self.elastic_inference_accelerator_set.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.elastic_inference_accelerator_set.is_none()`.
+    pub fn elastic_inference_accelerator_set(&self) -> &[crate::types::AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails] {
+        self.elastic_inference_accelerator_set.as_deref().unwrap_or_default()
     }
     /// <p> Indicates whether the Amazon EC2 instance is enabled for Amazon Web Services Nitro Enclaves. </p>
     pub fn enclave_options(&self) -> ::std::option::Option<&crate::types::AwsEc2LaunchTemplateDataEnclaveOptionsDetails> {
@@ -149,8 +153,10 @@ impl AwsEc2LaunchTemplateDataDetails {
         self.key_name.as_deref()
     }
     /// <p> Specifies a license configuration for an instance. </p>
-    pub fn license_set(&self) -> ::std::option::Option<&[crate::types::AwsEc2LaunchTemplateDataLicenseSetDetails]> {
-        self.license_set.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.license_set.is_none()`.
+    pub fn license_set(&self) -> &[crate::types::AwsEc2LaunchTemplateDataLicenseSetDetails] {
+        self.license_set.as_deref().unwrap_or_default()
     }
     /// <p> The maintenance options of your instance. </p>
     pub fn maintenance_options(&self) -> ::std::option::Option<&crate::types::AwsEc2LaunchTemplateDataMaintenanceOptionsDetails> {
@@ -165,8 +171,10 @@ impl AwsEc2LaunchTemplateDataDetails {
         self.monitoring.as_ref()
     }
     /// <p> Specifies the parameters for a network interface that is attached to the instance. </p>
-    pub fn network_interface_set(&self) -> ::std::option::Option<&[crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails]> {
-        self.network_interface_set.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_interface_set.is_none()`.
+    pub fn network_interface_set(&self) -> &[crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails] {
+        self.network_interface_set.as_deref().unwrap_or_default()
     }
     /// <p> Specifies the placement of an instance. </p>
     pub fn placement(&self) -> ::std::option::Option<&crate::types::AwsEc2LaunchTemplateDataPlacementDetails> {
@@ -181,12 +189,16 @@ impl AwsEc2LaunchTemplateDataDetails {
         self.ram_disk_id.as_deref()
     }
     /// <p> One or more security group IDs. </p>
-    pub fn security_group_id_set(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_id_set.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_id_set.is_none()`.
+    pub fn security_group_id_set(&self) -> &[::std::string::String] {
+        self.security_group_id_set.as_deref().unwrap_or_default()
     }
     /// <p> One or more security group names. For a nondefault VPC, you must use security group IDs instead. You cannot specify both a security group ID and security name in the same request. </p>
-    pub fn security_group_set(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_set.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_set.is_none()`.
+    pub fn security_group_set(&self) -> &[::std::string::String] {
+        self.security_group_set.as_deref().unwrap_or_default()
     }
     /// <p> The user data to make available to the instance. </p>
     pub fn user_data(&self) -> ::std::option::Option<&str> {

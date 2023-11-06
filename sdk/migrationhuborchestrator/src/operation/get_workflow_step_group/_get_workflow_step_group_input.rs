@@ -34,6 +34,7 @@ pub struct GetWorkflowStepGroupInputBuilder {
 }
 impl GetWorkflowStepGroupInputBuilder {
     /// <p>The ID of the step group.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetWorkflowStepGroupInputBuilder {
         &self.id
     }
     /// <p>The ID of the migration workflow.</p>
+    /// This field is required.
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl GetWorkflowStepGroupInputBuilder {
     /// Consumes the builder and constructs a [`GetWorkflowStepGroupInput`](crate::operation::get_workflow_step_group::GetWorkflowStepGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_workflow_step_group::GetWorkflowStepGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_workflow_step_group::GetWorkflowStepGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_workflow_step_group::GetWorkflowStepGroupInput {
             id: self.id,

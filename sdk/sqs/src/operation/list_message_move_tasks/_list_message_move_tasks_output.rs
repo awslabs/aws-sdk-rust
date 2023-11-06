@@ -9,8 +9,10 @@ pub struct ListMessageMoveTasksOutput {
 }
 impl ListMessageMoveTasksOutput {
     /// <p>A list of message movement tasks and their attributes.</p>
-    pub fn results(&self) -> ::std::option::Option<&[crate::types::ListMessageMoveTasksResultEntry]> {
-        self.results.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.results.is_none()`.
+    pub fn results(&self) -> &[crate::types::ListMessageMoveTasksResultEntry] {
+        self.results.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListMessageMoveTasksOutput {

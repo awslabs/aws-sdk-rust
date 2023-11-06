@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserAccessLoggingSettings {
     /// <p>The ARN of the user access logging settings.</p>
-    pub user_access_logging_settings_arn: ::std::option::Option<::std::string::String>,
+    pub user_access_logging_settings_arn: ::std::string::String,
     /// <p>A list of web portal ARNs that this user access logging settings is associated with.</p>
     pub associated_portal_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ARN of the Kinesis stream.</p>
@@ -13,12 +13,15 @@ pub struct UserAccessLoggingSettings {
 }
 impl UserAccessLoggingSettings {
     /// <p>The ARN of the user access logging settings.</p>
-    pub fn user_access_logging_settings_arn(&self) -> ::std::option::Option<&str> {
-        self.user_access_logging_settings_arn.as_deref()
+    pub fn user_access_logging_settings_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.user_access_logging_settings_arn.deref()
     }
     /// <p>A list of web portal ARNs that this user access logging settings is associated with.</p>
-    pub fn associated_portal_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.associated_portal_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_portal_arns.is_none()`.
+    pub fn associated_portal_arns(&self) -> &[::std::string::String] {
+        self.associated_portal_arns.as_deref().unwrap_or_default()
     }
     /// <p>The ARN of the Kinesis stream.</p>
     pub fn kinesis_stream_arn(&self) -> ::std::option::Option<&str> {
@@ -42,6 +45,7 @@ pub struct UserAccessLoggingSettingsBuilder {
 }
 impl UserAccessLoggingSettingsBuilder {
     /// <p>The ARN of the user access logging settings.</p>
+    /// This field is required.
     pub fn user_access_logging_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_access_logging_settings_arn = ::std::option::Option::Some(input.into());
         self
@@ -90,11 +94,18 @@ impl UserAccessLoggingSettingsBuilder {
         &self.kinesis_stream_arn
     }
     /// Consumes the builder and constructs a [`UserAccessLoggingSettings`](crate::types::UserAccessLoggingSettings).
-    pub fn build(self) -> crate::types::UserAccessLoggingSettings {
-        crate::types::UserAccessLoggingSettings {
-            user_access_logging_settings_arn: self.user_access_logging_settings_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`user_access_logging_settings_arn`](crate::types::builders::UserAccessLoggingSettingsBuilder::user_access_logging_settings_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::UserAccessLoggingSettings, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::UserAccessLoggingSettings {
+            user_access_logging_settings_arn: self.user_access_logging_settings_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "user_access_logging_settings_arn",
+                    "user_access_logging_settings_arn was not specified but it is required when building UserAccessLoggingSettings",
+                )
+            })?,
             associated_portal_arns: self.associated_portal_arns,
             kinesis_stream_arn: self.kinesis_stream_arn,
-        }
+        })
     }
 }

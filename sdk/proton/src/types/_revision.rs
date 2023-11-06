@@ -5,36 +5,40 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Revision {
     /// <p>The repository name.</p>
-    pub repository_name: ::std::option::Option<::std::string::String>,
+    pub repository_name: ::std::string::String,
     /// <p>The repository provider.</p>
-    pub repository_provider: ::std::option::Option<crate::types::RepositoryProvider>,
+    pub repository_provider: crate::types::RepositoryProvider,
     /// <p>The secure hash algorithm (SHA) hash for the revision.</p>
-    pub sha: ::std::option::Option<::std::string::String>,
+    pub sha: ::std::string::String,
     /// <p>The repository directory changed by a commit and push that activated the sync attempt.</p>
-    pub directory: ::std::option::Option<::std::string::String>,
+    pub directory: ::std::string::String,
     /// <p>The repository branch.</p>
-    pub branch: ::std::option::Option<::std::string::String>,
+    pub branch: ::std::string::String,
 }
 impl Revision {
     /// <p>The repository name.</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
-        self.repository_name.as_deref()
+    pub fn repository_name(&self) -> &str {
+        use std::ops::Deref;
+        self.repository_name.deref()
     }
     /// <p>The repository provider.</p>
-    pub fn repository_provider(&self) -> ::std::option::Option<&crate::types::RepositoryProvider> {
-        self.repository_provider.as_ref()
+    pub fn repository_provider(&self) -> &crate::types::RepositoryProvider {
+        &self.repository_provider
     }
     /// <p>The secure hash algorithm (SHA) hash for the revision.</p>
-    pub fn sha(&self) -> ::std::option::Option<&str> {
-        self.sha.as_deref()
+    pub fn sha(&self) -> &str {
+        use std::ops::Deref;
+        self.sha.deref()
     }
     /// <p>The repository directory changed by a commit and push that activated the sync attempt.</p>
-    pub fn directory(&self) -> ::std::option::Option<&str> {
-        self.directory.as_deref()
+    pub fn directory(&self) -> &str {
+        use std::ops::Deref;
+        self.directory.deref()
     }
     /// <p>The repository branch.</p>
-    pub fn branch(&self) -> ::std::option::Option<&str> {
-        self.branch.as_deref()
+    pub fn branch(&self) -> &str {
+        use std::ops::Deref;
+        self.branch.deref()
     }
 }
 impl Revision {
@@ -56,6 +60,7 @@ pub struct RevisionBuilder {
 }
 impl RevisionBuilder {
     /// <p>The repository name.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +75,7 @@ impl RevisionBuilder {
         &self.repository_name
     }
     /// <p>The repository provider.</p>
+    /// This field is required.
     pub fn repository_provider(mut self, input: crate::types::RepositoryProvider) -> Self {
         self.repository_provider = ::std::option::Option::Some(input);
         self
@@ -84,6 +90,7 @@ impl RevisionBuilder {
         &self.repository_provider
     }
     /// <p>The secure hash algorithm (SHA) hash for the revision.</p>
+    /// This field is required.
     pub fn sha(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sha = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +105,7 @@ impl RevisionBuilder {
         &self.sha
     }
     /// <p>The repository directory changed by a commit and push that activated the sync attempt.</p>
+    /// This field is required.
     pub fn directory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +120,7 @@ impl RevisionBuilder {
         &self.directory
     }
     /// <p>The repository branch.</p>
+    /// This field is required.
     pub fn branch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch = ::std::option::Option::Some(input.into());
         self
@@ -126,13 +135,44 @@ impl RevisionBuilder {
         &self.branch
     }
     /// Consumes the builder and constructs a [`Revision`](crate::types::Revision).
-    pub fn build(self) -> crate::types::Revision {
-        crate::types::Revision {
-            repository_name: self.repository_name,
-            repository_provider: self.repository_provider,
-            sha: self.sha,
-            directory: self.directory,
-            branch: self.branch,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`repository_name`](crate::types::builders::RevisionBuilder::repository_name)
+    /// - [`repository_provider`](crate::types::builders::RevisionBuilder::repository_provider)
+    /// - [`sha`](crate::types::builders::RevisionBuilder::sha)
+    /// - [`directory`](crate::types::builders::RevisionBuilder::directory)
+    /// - [`branch`](crate::types::builders::RevisionBuilder::branch)
+    pub fn build(self) -> ::std::result::Result<crate::types::Revision, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Revision {
+            repository_name: self.repository_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "repository_name",
+                    "repository_name was not specified but it is required when building Revision",
+                )
+            })?,
+            repository_provider: self.repository_provider.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "repository_provider",
+                    "repository_provider was not specified but it is required when building Revision",
+                )
+            })?,
+            sha: self.sha.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "sha",
+                    "sha was not specified but it is required when building Revision",
+                )
+            })?,
+            directory: self.directory.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "directory",
+                    "directory was not specified but it is required when building Revision",
+                )
+            })?,
+            branch: self.branch.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "branch",
+                    "branch was not specified but it is required when building Revision",
+                )
+            })?,
+        })
     }
 }

@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TerminateRequest {
     /// <p>The identifier of the WorkSpace.</p>
-    pub workspace_id: ::std::option::Option<::std::string::String>,
+    pub workspace_id: ::std::string::String,
 }
 impl TerminateRequest {
     /// <p>The identifier of the WorkSpace.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
-        self.workspace_id.as_deref()
+    pub fn workspace_id(&self) -> &str {
+        use std::ops::Deref;
+        self.workspace_id.deref()
     }
 }
 impl TerminateRequest {
@@ -28,6 +29,7 @@ pub struct TerminateRequestBuilder {
 }
 impl TerminateRequestBuilder {
     /// <p>The identifier of the WorkSpace.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl TerminateRequestBuilder {
         &self.workspace_id
     }
     /// Consumes the builder and constructs a [`TerminateRequest`](crate::types::TerminateRequest).
-    pub fn build(self) -> crate::types::TerminateRequest {
-        crate::types::TerminateRequest {
-            workspace_id: self.workspace_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workspace_id`](crate::types::builders::TerminateRequestBuilder::workspace_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::TerminateRequest, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TerminateRequest {
+            workspace_id: self.workspace_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "workspace_id",
+                    "workspace_id was not specified but it is required when building TerminateRequest",
+                )
+            })?,
+        })
     }
 }

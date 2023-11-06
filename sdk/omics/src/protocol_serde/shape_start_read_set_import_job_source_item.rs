@@ -2,43 +2,43 @@
 pub fn ser_start_read_set_import_job_source_item(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StartReadSetImportJobSourceItem,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.source_files {
         #[allow(unused_mut)]
         let mut object_2 = object.key("sourceFiles").start_object();
         crate::protocol_serde::shape_source_files::ser_source_files(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.source_file_type {
-        object.key("sourceFileType").string(var_3.as_str());
+    {
+        object.key("sourceFileType").string(input.source_file_type.as_str());
     }
-    if let Some(var_4) = &input.subject_id {
-        object.key("subjectId").string(var_4.as_str());
+    {
+        object.key("subjectId").string(input.subject_id.as_str());
     }
-    if let Some(var_5) = &input.sample_id {
-        object.key("sampleId").string(var_5.as_str());
+    {
+        object.key("sampleId").string(input.sample_id.as_str());
     }
-    if let Some(var_6) = &input.generated_from {
-        object.key("generatedFrom").string(var_6.as_str());
+    if let Some(var_3) = &input.generated_from {
+        object.key("generatedFrom").string(var_3.as_str());
     }
-    if let Some(var_7) = &input.reference_arn {
-        object.key("referenceArn").string(var_7.as_str());
+    {
+        object.key("referenceArn").string(input.reference_arn.as_str());
     }
-    if let Some(var_8) = &input.name {
-        object.key("name").string(var_8.as_str());
+    if let Some(var_4) = &input.name {
+        object.key("name").string(var_4.as_str());
     }
-    if let Some(var_9) = &input.description {
-        object.key("description").string(var_9.as_str());
+    if let Some(var_5) = &input.description {
+        object.key("description").string(var_5.as_str());
     }
-    if let Some(var_10) = &input.tags {
+    if let Some(var_6) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("tags").start_object();
-        for (key_12, value_13) in var_10 {
+        let mut object_7 = object.key("tags").start_object();
+        for (key_8, value_9) in var_6 {
             {
-                object_11.key(key_12.as_str()).string(value_13.as_str());
+                object_7.key(key_8.as_str()).string(value_9.as_str());
             }
         }
-        object_11.finish();
+        object_7.finish();
     }
     Ok(())
 }

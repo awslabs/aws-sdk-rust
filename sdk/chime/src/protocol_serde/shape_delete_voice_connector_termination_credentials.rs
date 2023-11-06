@@ -36,8 +36,8 @@ pub fn de_delete_voice_connector_termination_credentials_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ForbiddenException" => crate::operation::delete_voice_connector_termination_credentials::DeleteVoiceConnectorTerminationCredentialsError::ForbiddenException({
@@ -52,8 +52,8 @@ pub fn de_delete_voice_connector_termination_credentials_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NotFoundException" => crate::operation::delete_voice_connector_termination_credentials::DeleteVoiceConnectorTerminationCredentialsError::NotFoundException({
@@ -68,8 +68,8 @@ pub fn de_delete_voice_connector_termination_credentials_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ServiceFailureException" => crate::operation::delete_voice_connector_termination_credentials::DeleteVoiceConnectorTerminationCredentialsError::ServiceFailureException({
@@ -84,8 +84,8 @@ pub fn de_delete_voice_connector_termination_credentials_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::delete_voice_connector_termination_credentials::DeleteVoiceConnectorTerminationCredentialsError::ServiceUnavailableException({
@@ -100,8 +100,8 @@ pub fn de_delete_voice_connector_termination_credentials_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ThrottledClientException" => crate::operation::delete_voice_connector_termination_credentials::DeleteVoiceConnectorTerminationCredentialsError::ThrottledClientException({
@@ -116,8 +116,8 @@ pub fn de_delete_voice_connector_termination_credentials_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "UnauthorizedClientException" => crate::operation::delete_voice_connector_termination_credentials::DeleteVoiceConnectorTerminationCredentialsError::UnauthorizedClientException({
@@ -132,8 +132,8 @@ pub fn de_delete_voice_connector_termination_credentials_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::delete_voice_connector_termination_credentials::DeleteVoiceConnectorTerminationCredentialsError::generic(generic)
@@ -159,7 +159,7 @@ pub fn de_delete_voice_connector_termination_credentials_http_response(
 
 pub fn ser_delete_voice_connector_termination_credentials_input(
     input: &crate::operation::delete_voice_connector_termination_credentials::DeleteVoiceConnectorTerminationCredentialsInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_delete_voice_connector_termination_credentials_input::ser_delete_voice_connector_termination_credentials_input(
@@ -167,5 +167,5 @@ pub fn ser_delete_voice_connector_termination_credentials_input(
         input,
     )?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

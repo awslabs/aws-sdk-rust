@@ -41,6 +41,7 @@ pub struct GetAssessmentReportInputBuilder {
 }
 impl GetAssessmentReportInputBuilder {
     /// <p>The ARN that specifies the assessment run for which you want to generate a report.</p>
+    /// This field is required.
     pub fn assessment_run_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_run_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl GetAssessmentReportInputBuilder {
         &self.assessment_run_arn
     }
     /// <p>Specifies the file format (html or pdf) of the assessment report that you want to generate.</p>
+    /// This field is required.
     pub fn report_file_format(mut self, input: crate::types::ReportFileFormat) -> Self {
         self.report_file_format = ::std::option::Option::Some(input);
         self
@@ -69,6 +71,7 @@ impl GetAssessmentReportInputBuilder {
         &self.report_file_format
     }
     /// <p>Specifies the type of the assessment report that you want to generate. There are two types of assessment reports: a finding report and a full report. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment Reports</a>. </p>
+    /// This field is required.
     pub fn report_type(mut self, input: crate::types::ReportType) -> Self {
         self.report_type = ::std::option::Option::Some(input);
         self
@@ -85,7 +88,7 @@ impl GetAssessmentReportInputBuilder {
     /// Consumes the builder and constructs a [`GetAssessmentReportInput`](crate::operation::get_assessment_report::GetAssessmentReportInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_assessment_report::GetAssessmentReportInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_assessment_report::GetAssessmentReportInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_assessment_report::GetAssessmentReportInput {
             assessment_run_arn: self.assessment_run_arn,

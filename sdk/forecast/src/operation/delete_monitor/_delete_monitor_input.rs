@@ -27,6 +27,7 @@ pub struct DeleteMonitorInputBuilder {
 }
 impl DeleteMonitorInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the monitor resource to delete.</p>
+    /// This field is required.
     pub fn monitor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitor_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteMonitorInputBuilder {
     /// Consumes the builder and constructs a [`DeleteMonitorInput`](crate::operation::delete_monitor::DeleteMonitorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_monitor::DeleteMonitorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_monitor::DeleteMonitorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_monitor::DeleteMonitorInput {
             monitor_arn: self.monitor_arn,
         })

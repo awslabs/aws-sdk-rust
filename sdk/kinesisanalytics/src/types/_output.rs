@@ -7,7 +7,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Output {
     /// <p>Name of the in-application stream.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>Identifies an Amazon Kinesis stream as the destination.</p>
     pub kinesis_streams_output: ::std::option::Option<crate::types::KinesisStreamsOutput>,
     /// <p>Identifies an Amazon Kinesis Firehose delivery stream as the destination.</p>
@@ -19,8 +19,9 @@ pub struct Output {
 }
 impl Output {
     /// <p>Name of the in-application stream.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>Identifies an Amazon Kinesis stream as the destination.</p>
     pub fn kinesis_streams_output(&self) -> ::std::option::Option<&crate::types::KinesisStreamsOutput> {
@@ -58,6 +59,7 @@ pub struct OutputBuilder {
 }
 impl OutputBuilder {
     /// <p>Name of the in-application stream.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -114,6 +116,7 @@ impl OutputBuilder {
         &self.lambda_output
     }
     /// <p>Describes the data format when records are written to the destination. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>.</p>
+    /// This field is required.
     pub fn destination_schema(mut self, input: crate::types::DestinationSchema) -> Self {
         self.destination_schema = ::std::option::Option::Some(input);
         self
@@ -128,13 +131,20 @@ impl OutputBuilder {
         &self.destination_schema
     }
     /// Consumes the builder and constructs a [`Output`](crate::types::Output).
-    pub fn build(self) -> crate::types::Output {
-        crate::types::Output {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::OutputBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::Output, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Output {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building Output",
+                )
+            })?,
             kinesis_streams_output: self.kinesis_streams_output,
             kinesis_firehose_output: self.kinesis_firehose_output,
             lambda_output: self.lambda_output,
             destination_schema: self.destination_schema,
-        }
+        })
     }
 }

@@ -144,7 +144,7 @@ impl PublishTypeInputBuilder {
         &self.public_version_number
     }
     /// Consumes the builder and constructs a [`PublishTypeInput`](crate::operation::publish_type::PublishTypeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::publish_type::PublishTypeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::publish_type::PublishTypeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::publish_type::PublishTypeInput {
             r#type: self.r#type,
             arn: self.arn,

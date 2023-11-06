@@ -62,8 +62,10 @@ impl EcsServiceRecommendation {
         self.current_service_configuration.as_ref()
     }
     /// <p> An array of objects that describe the utilization metrics of the Amazon ECS service. </p>
-    pub fn utilization_metrics(&self) -> ::std::option::Option<&[crate::types::EcsServiceUtilizationMetric]> {
-        self.utilization_metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.utilization_metrics.is_none()`.
+    pub fn utilization_metrics(&self) -> &[crate::types::EcsServiceUtilizationMetric] {
+        self.utilization_metrics.as_deref().unwrap_or_default()
     }
     /// <p> The number of days the Amazon ECS service utilization metrics were analyzed. </p>
     pub fn lookback_period_in_days(&self) -> f64 {
@@ -97,20 +99,26 @@ impl EcsServiceRecommendation {
     /// <li> <p> <b> <code>MemoryUnderprovisioned</code> </b> — The service memory configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p> </li>
     /// <li> <p> <b> <code>MemoryOverprovisioned</code> </b> — The service memory configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p> </li>
     /// </ul>
-    pub fn finding_reason_codes(&self) -> ::std::option::Option<&[crate::types::EcsServiceRecommendationFindingReasonCode]> {
-        self.finding_reason_codes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.finding_reason_codes.is_none()`.
+    pub fn finding_reason_codes(&self) -> &[crate::types::EcsServiceRecommendationFindingReasonCode] {
+        self.finding_reason_codes.as_deref().unwrap_or_default()
     }
     /// <p> An array of objects that describe the recommendation options for the Amazon ECS service. </p>
-    pub fn service_recommendation_options(&self) -> ::std::option::Option<&[crate::types::EcsServiceRecommendationOption]> {
-        self.service_recommendation_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_recommendation_options.is_none()`.
+    pub fn service_recommendation_options(&self) -> &[crate::types::EcsServiceRecommendationOption] {
+        self.service_recommendation_options.as_deref().unwrap_or_default()
     }
     /// <p> The risk of the current Amazon ECS service not meeting the performance needs of its workloads. The higher the risk, the more likely the current service can't meet the performance requirements of its workload. </p>
     pub fn current_performance_risk(&self) -> ::std::option::Option<&crate::types::CurrentPerformanceRisk> {
         self.current_performance_risk.as_ref()
     }
     /// <p> A list of tags assigned to your Amazon ECS service recommendations. </p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl EcsServiceRecommendation {

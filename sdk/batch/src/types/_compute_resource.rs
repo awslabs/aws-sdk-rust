@@ -173,8 +173,10 @@ impl ComputeResource {
     /// </note> <note>
     /// <p>Currently, <code>optimal</code> uses instance types from the C4, M4, and R4 instance families. In Regions that don't have instance types from those instance families, instance types from the C5, M5, and R5 instance families are used.</p>
     /// </note>
-    pub fn instance_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.instance_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_types.is_none()`.
+    pub fn instance_types(&self) -> &[::std::string::String] {
+        self.instance_types.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Machine Image (AMI) ID used for instances launched in the compute environment. This parameter is overridden by the <code>imageIdOverride</code> member of the <code>Ec2Configuration</code> structure.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
@@ -189,12 +191,16 @@ impl ComputeResource {
     /// <p>Batch on Amazon EC2 and Batch on Amazon EKS support Local Zones. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-local-zones"> Local Zones</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>, <a href="https://docs.aws.amazon.com/eks/latest/userguide/local-zones.html">Amazon EKS and Amazon Web Services Local Zones</a> in the <i>Amazon EKS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-regions-zones.html#clusters-local-zones"> Amazon ECS clusters in Local Zones, Wavelength Zones, and Amazon Web Services Outposts</a> in the <i>Amazon ECS Developer Guide</i>.</p>
     /// <p>Batch on Fargate doesn't currently support Local Zones.</p>
     /// </note>
-    pub fn subnets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnets.is_none()`.
+    pub fn subnets(&self) -> &[::std::string::String] {
+        self.subnets.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon EC2 security groups that are associated with instances launched in the compute environment. One or more security groups must be specified, either in <code>securityGroupIds</code> or using a launch template referenced in <code>launchTemplate</code>. This parameter is required for jobs that are running on Fargate resources and must contain at least one security group. Fargate doesn't support launch templates. If security groups are specified using both <code>securityGroupIds</code> and <code>launchTemplate</code>, the values in <code>securityGroupIds</code> are used.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon EC2 key pair that's used for instances launched in the compute environment. You can use this key pair to log in to your instances with SSH.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
@@ -245,8 +251,10 @@ impl ComputeResource {
     /// <p>One or two values can be provided.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
-    pub fn ec2_configuration(&self) -> ::std::option::Option<&[crate::types::Ec2Configuration]> {
-        self.ec2_configuration.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ec2_configuration.is_none()`.
+    pub fn ec2_configuration(&self) -> &[crate::types::Ec2Configuration] {
+        self.ec2_configuration.as_deref().unwrap_or_default()
     }
 }
 impl ComputeResource {
@@ -281,6 +289,7 @@ pub struct ComputeResourceBuilder {
 impl ComputeResourceBuilder {
     /// <p>The type of compute environment: <code>EC2</code>, <code>SPOT</code>, <code>FARGATE</code>, or <code>FARGATE_SPOT</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute environments</a> in the <i>Batch User Guide</i>.</p>
     /// <p> If you choose <code>SPOT</code>, you must also specify an Amazon EC2 Spot Fleet role with the <code>spotIamFleetRole</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 spot fleet role</a> in the <i>Batch User Guide</i>.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::CrType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -420,6 +429,7 @@ impl ComputeResourceBuilder {
     /// <p>The maximum number of vCPUs that a compute environment can support.</p> <note>
     /// <p>With <code>BEST_FIT_PROGRESSIVE</code>, <code>SPOT_CAPACITY_OPTIMIZED</code> and <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance. For example, no more than a single instance from among those specified in your compute environment is allocated.</p>
     /// </note>
+    /// This field is required.
     pub fn maxv_cpus(mut self, input: i32) -> Self {
         self.maxv_cpus = ::std::option::Option::Some(input);
         self

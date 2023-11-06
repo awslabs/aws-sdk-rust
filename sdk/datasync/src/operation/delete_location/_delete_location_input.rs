@@ -28,6 +28,7 @@ pub struct DeleteLocationInputBuilder {
 }
 impl DeleteLocationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the location to delete.</p>
+    /// This field is required.
     pub fn location_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_arn = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl DeleteLocationInputBuilder {
     /// Consumes the builder and constructs a [`DeleteLocationInput`](crate::operation::delete_location::DeleteLocationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_location::DeleteLocationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_location::DeleteLocationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_location::DeleteLocationInput {
             location_arn: self.location_arn,
         })

@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSmsSandboxPhoneNumbersOutput {
     /// <p>A list of the calling account's pending and verified phone numbers.</p>
-    pub phone_numbers: ::std::option::Option<::std::vec::Vec<crate::types::SmsSandboxPhoneNumber>>,
+    pub phone_numbers: ::std::vec::Vec<crate::types::SmsSandboxPhoneNumber>,
     /// <p>A <code>NextToken</code> string is returned when you call the <code>ListSMSSandboxPhoneNumbersInput</code> operation if additional pages of records are available.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListSmsSandboxPhoneNumbersOutput {
     /// <p>A list of the calling account's pending and verified phone numbers.</p>
-    pub fn phone_numbers(&self) -> ::std::option::Option<&[crate::types::SmsSandboxPhoneNumber]> {
-        self.phone_numbers.as_deref()
+    pub fn phone_numbers(&self) -> &[crate::types::SmsSandboxPhoneNumber] {
+        use std::ops::Deref;
+        self.phone_numbers.deref()
     }
     /// <p>A <code>NextToken</code> string is returned when you call the <code>ListSMSSandboxPhoneNumbersInput</code> operation if additional pages of records are available.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,23 @@ impl ListSmsSandboxPhoneNumbersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListSmsSandboxPhoneNumbersOutput`](crate::operation::list_sms_sandbox_phone_numbers::ListSmsSandboxPhoneNumbersOutput).
-    pub fn build(self) -> crate::operation::list_sms_sandbox_phone_numbers::ListSmsSandboxPhoneNumbersOutput {
-        crate::operation::list_sms_sandbox_phone_numbers::ListSmsSandboxPhoneNumbersOutput {
-            phone_numbers: self.phone_numbers,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`phone_numbers`](crate::operation::list_sms_sandbox_phone_numbers::builders::ListSmsSandboxPhoneNumbersOutputBuilder::phone_numbers)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_sms_sandbox_phone_numbers::ListSmsSandboxPhoneNumbersOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_sms_sandbox_phone_numbers::ListSmsSandboxPhoneNumbersOutput {
+            phone_numbers: self.phone_numbers.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "phone_numbers",
+                    "phone_numbers was not specified but it is required when building ListSmsSandboxPhoneNumbersOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -30,11 +30,10 @@ pub fn de_pause_campaign_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::pause_campaign::PauseCampaignError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ConflictException" => crate::operation::pause_campaign::PauseCampaignError::ConflictException({
@@ -50,11 +49,10 @@ pub fn de_pause_campaign_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::conflict_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::pause_campaign::PauseCampaignError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerException" => crate::operation::pause_campaign::PauseCampaignError::InternalServerException({
@@ -70,11 +68,10 @@ pub fn de_pause_campaign_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::pause_campaign::PauseCampaignError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InvalidCampaignStateException" => crate::operation::pause_campaign::PauseCampaignError::InvalidCampaignStateException({
@@ -93,11 +90,10 @@ pub fn de_pause_campaign_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_campaign_state_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::pause_campaign::PauseCampaignError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::pause_campaign::PauseCampaignError::ResourceNotFoundException({
@@ -113,11 +109,10 @@ pub fn de_pause_campaign_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::pause_campaign::PauseCampaignError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::pause_campaign::PauseCampaignError::ThrottlingException({
@@ -133,11 +128,10 @@ pub fn de_pause_campaign_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::pause_campaign::PauseCampaignError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::pause_campaign::PauseCampaignError::ValidationException({
@@ -153,11 +147,10 @@ pub fn de_pause_campaign_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::pause_campaign::PauseCampaignError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::pause_campaign::PauseCampaignError::generic(generic),

@@ -2,7 +2,7 @@
 pub fn ser_ms_smooth_group_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MsSmoothGroupSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.additional_manifests {
         let mut array_2 = object.key("additionalManifests").start_array();
         for item_3 in var_1 {
@@ -65,9 +65,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "additionalManifests" => {
                             builder = builder.set_additional_manifests(
-                                crate::protocol_serde::shape___list_of_ms_smooth_additional_manifest::de___list_of_ms_smooth_additional_manifest(
-                                    tokens,
-                                )?,
+                                crate::protocol_serde::shape_list_of_ms_smooth_additional_manifest::de_list_of_ms_smooth_additional_manifest(tokens)?,
                             );
                         }
                         "audioDeduplication" => {

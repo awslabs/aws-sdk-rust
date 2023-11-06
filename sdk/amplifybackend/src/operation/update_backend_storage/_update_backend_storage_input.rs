@@ -49,6 +49,7 @@ pub struct UpdateBackendStorageInputBuilder {
 }
 impl UpdateBackendStorageInputBuilder {
     /// <p>The app ID.</p>
+    /// This field is required.
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl UpdateBackendStorageInputBuilder {
         &self.app_id
     }
     /// <p>The name of the backend environment.</p>
+    /// This field is required.
     pub fn backend_environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backend_environment_name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +79,7 @@ impl UpdateBackendStorageInputBuilder {
         &self.backend_environment_name
     }
     /// <p>The resource configuration for updating backend storage.</p>
+    /// This field is required.
     pub fn resource_config(mut self, input: crate::types::UpdateBackendStorageResourceConfig) -> Self {
         self.resource_config = ::std::option::Option::Some(input);
         self
@@ -91,6 +94,7 @@ impl UpdateBackendStorageInputBuilder {
         &self.resource_config
     }
     /// <p>The name of the storage resource.</p>
+    /// This field is required.
     pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self
@@ -107,7 +111,7 @@ impl UpdateBackendStorageInputBuilder {
     /// Consumes the builder and constructs a [`UpdateBackendStorageInput`](crate::operation::update_backend_storage::UpdateBackendStorageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_backend_storage::UpdateBackendStorageInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_backend_storage::UpdateBackendStorageInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_backend_storage::UpdateBackendStorageInput {
             app_id: self.app_id,

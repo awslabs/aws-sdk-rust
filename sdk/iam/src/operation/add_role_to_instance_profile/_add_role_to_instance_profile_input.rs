@@ -39,6 +39,7 @@ pub struct AddRoleToInstanceProfileInputBuilder {
 impl AddRoleToInstanceProfileInputBuilder {
     /// <p>The name of the instance profile to update.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// This field is required.
     pub fn instance_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_profile_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl AddRoleToInstanceProfileInputBuilder {
     }
     /// <p>The name of the role to add.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// This field is required.
     pub fn role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_name = ::std::option::Option::Some(input.into());
         self
@@ -76,7 +78,7 @@ impl AddRoleToInstanceProfileInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_role_to_instance_profile::AddRoleToInstanceProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::add_role_to_instance_profile::AddRoleToInstanceProfileInput {
             instance_profile_name: self.instance_profile_name,

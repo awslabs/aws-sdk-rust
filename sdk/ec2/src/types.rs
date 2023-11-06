@@ -347,7 +347,7 @@ pub use crate::types::_instance_requirements::InstanceRequirements;
 
 pub use crate::types::_network_bandwidth_gbps::NetworkBandwidthGbps;
 
-pub use crate::types::_accelerator_total_memory_mi_b::AcceleratorTotalMemoryMiB;
+pub use crate::types::_accelerator_total_memory_mib::AcceleratorTotalMemoryMiB;
 
 pub use crate::types::_accelerator_name::AcceleratorName;
 
@@ -373,11 +373,11 @@ pub use crate::types::_bare_metal::BareMetal;
 
 pub use crate::types::_instance_generation::InstanceGeneration;
 
-pub use crate::types::_memory_gi_b_per_v_cpu::MemoryGiBPerVCpu;
+pub use crate::types::_memory_gib_per_v_cpu::MemoryGiBPerVCpu;
 
 pub use crate::types::_cpu_manufacturer::CpuManufacturer;
 
-pub use crate::types::_memory_mi_b::MemoryMiB;
+pub use crate::types::_memory_mib::MemoryMiB;
 
 pub use crate::types::_v_cpu_count_range::VCpuCountRange;
 
@@ -831,7 +831,7 @@ pub use crate::types::_instance_requirements_request::InstanceRequirementsReques
 
 pub use crate::types::_network_bandwidth_gbps_request::NetworkBandwidthGbpsRequest;
 
-pub use crate::types::_accelerator_total_memory_mi_b_request::AcceleratorTotalMemoryMiBRequest;
+pub use crate::types::_accelerator_total_memory_mib_request::AcceleratorTotalMemoryMiBRequest;
 
 pub use crate::types::_accelerator_count_request::AcceleratorCountRequest;
 
@@ -841,9 +841,9 @@ pub use crate::types::_total_local_storage_gb_request::TotalLocalStorageGbReques
 
 pub use crate::types::_network_interface_count_request::NetworkInterfaceCountRequest;
 
-pub use crate::types::_memory_gi_b_per_v_cpu_request::MemoryGiBPerVCpuRequest;
+pub use crate::types::_memory_gib_per_v_cpu_request::MemoryGiBPerVCpuRequest;
 
-pub use crate::types::_memory_mi_b_request::MemoryMiBRequest;
+pub use crate::types::_memory_mib_request::MemoryMiBRequest;
 
 pub use crate::types::_v_cpu_count_range_request::VCpuCountRangeRequest;
 
@@ -950,6 +950,8 @@ pub use crate::types::_spot_placement_score::SpotPlacementScore;
 pub use crate::types::_instance_requirements_with_metadata_request::InstanceRequirementsWithMetadataRequest;
 
 pub use crate::types::_architecture_type::ArchitectureType;
+
+pub use crate::types::_security_group_for_vpc::SecurityGroupForVpc;
 
 pub use crate::types::_target_reservation_value::TargetReservationValue;
 
@@ -2051,9 +2053,9 @@ mod _accelerator_manufacturer;
 
 mod _accelerator_name;
 
-mod _accelerator_total_memory_mi_b;
+mod _accelerator_total_memory_mib;
 
-mod _accelerator_total_memory_mi_b_request;
+mod _accelerator_total_memory_mib_request;
 
 mod _accelerator_type;
 
@@ -3167,15 +3169,15 @@ mod _market_type;
 
 mod _membership_type;
 
-mod _memory_gi_b_per_v_cpu;
+mod _memory_gib_per_v_cpu;
 
-mod _memory_gi_b_per_v_cpu_request;
+mod _memory_gib_per_v_cpu_request;
 
 mod _memory_info;
 
-mod _memory_mi_b;
+mod _memory_mib;
 
-mod _memory_mi_b_request;
+mod _memory_mib_request;
 
 mod _metric_point;
 
@@ -3558,6 +3560,8 @@ mod _scheduled_instances_private_ip_address_config;
 mod _scope;
 
 mod _security_group;
+
+mod _security_group_for_vpc;
 
 mod _security_group_identifier;
 

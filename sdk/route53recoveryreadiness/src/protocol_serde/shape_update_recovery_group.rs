@@ -120,12 +120,12 @@ pub fn de_update_recovery_group_http_response(
 
 pub fn ser_update_recovery_group_input(
     input: &crate::operation::update_recovery_group::UpdateRecoveryGroupInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_update_recovery_group_input::ser_update_recovery_group_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_update_recovery_group(
@@ -143,7 +143,7 @@ pub(crate) fn de_update_recovery_group(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "cells" => {
-                    builder = builder.set_cells(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                    builder = builder.set_cells(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                 }
                 "recoveryGroupArn" => {
                     builder = builder.set_recovery_group_arn(

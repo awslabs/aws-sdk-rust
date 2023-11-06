@@ -50,16 +50,20 @@ impl AwsAutoScalingLaunchConfigurationDetails {
         self.associate_public_ip_address
     }
     /// <p>Specifies the block devices for the instance.</p>
-    pub fn block_device_mappings(&self) -> ::std::option::Option<&[crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails]> {
-        self.block_device_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.block_device_mappings.is_none()`.
+    pub fn block_device_mappings(&self) -> &[crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails] {
+        self.block_device_mappings.as_deref().unwrap_or_default()
     }
     /// <p>The identifier of a ClassicLink-enabled VPC that EC2-Classic instances are linked to.</p>
     pub fn classic_link_vpc_id(&self) -> ::std::option::Option<&str> {
         self.classic_link_vpc_id.as_deref()
     }
     /// <p>The identifiers of one or more security groups for the VPC that is specified in <code>ClassicLinkVPCId</code>.</p>
-    pub fn classic_link_vpc_security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.classic_link_vpc_security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.classic_link_vpc_security_groups.is_none()`.
+    pub fn classic_link_vpc_security_groups(&self) -> &[::std::string::String] {
+        self.classic_link_vpc_security_groups.as_deref().unwrap_or_default()
     }
     /// <p>The creation date and time for the launch configuration.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
@@ -107,8 +111,10 @@ impl AwsAutoScalingLaunchConfigurationDetails {
         self.ramdisk_id.as_deref()
     }
     /// <p>The security groups to assign to the instances in the Auto Scaling group.</p>
-    pub fn security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
+    pub fn security_groups(&self) -> &[::std::string::String] {
+        self.security_groups.as_deref().unwrap_or_default()
     }
     /// <p>The maximum hourly price to be paid for any Spot Instance that is launched to fulfill the request.</p>
     pub fn spot_price(&self) -> ::std::option::Option<&str> {

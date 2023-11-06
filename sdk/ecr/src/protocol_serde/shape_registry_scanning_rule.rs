@@ -2,21 +2,21 @@
 pub fn ser_registry_scanning_rule(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RegistryScanningRule,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.scan_frequency {
-        object.key("scanFrequency").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("scanFrequency").string(input.scan_frequency.as_str());
     }
-    if let Some(var_2) = &input.repository_filters {
-        let mut array_3 = object.key("repositoryFilters").start_array();
-        for item_4 in var_2 {
+    {
+        let mut array_1 = object.key("repositoryFilters").start_array();
+        for item_2 in &input.repository_filters {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_scanning_repository_filter::ser_scanning_repository_filter(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_3 = array_1.value().start_object();
+                crate::protocol_serde::shape_scanning_repository_filter::ser_scanning_repository_filter(&mut object_3, item_2)?;
+                object_3.finish();
             }
         }
-        array_3.finish();
+        array_1.finish();
     }
     Ok(())
 }
@@ -58,7 +58,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::registry_scanning_rule_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

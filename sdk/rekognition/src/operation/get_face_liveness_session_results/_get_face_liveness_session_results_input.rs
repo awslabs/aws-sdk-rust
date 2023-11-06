@@ -27,6 +27,7 @@ pub struct GetFaceLivenessSessionResultsInputBuilder {
 }
 impl GetFaceLivenessSessionResultsInputBuilder {
     /// <p>A unique 128-bit UUID. This is used to uniquely identify the session and also acts as an idempotency token for all operations associated with the session.</p>
+    /// This field is required.
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetFaceLivenessSessionResultsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsInput {
             session_id: self.session_id,

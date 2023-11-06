@@ -11,12 +11,16 @@ pub struct BatchGetAutomationRulesOutput {
 }
 impl BatchGetAutomationRulesOutput {
     /// <p> A list of rule details for the provided rule ARNs. </p>
-    pub fn rules(&self) -> ::std::option::Option<&[crate::types::AutomationRulesConfig]> {
-        self.rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
+    pub fn rules(&self) -> &[crate::types::AutomationRulesConfig] {
+        self.rules.as_deref().unwrap_or_default()
     }
     /// <p> A list of objects containing <code>RuleArn</code>, <code>ErrorCode</code>, and <code>ErrorMessage</code>. This parameter tells you which automation rules the request didn't retrieve and why. </p>
-    pub fn unprocessed_automation_rules(&self) -> ::std::option::Option<&[crate::types::UnprocessedAutomationRule]> {
-        self.unprocessed_automation_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unprocessed_automation_rules.is_none()`.
+    pub fn unprocessed_automation_rules(&self) -> &[crate::types::UnprocessedAutomationRule] {
+        self.unprocessed_automation_rules.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchGetAutomationRulesOutput {

@@ -28,6 +28,7 @@ pub struct GetArtifactUrlInputBuilder {
 }
 impl GetArtifactUrlInputBuilder {
     /// <p> The unique ID for an artifact. </p>
+    /// This field is required.
     pub fn artifact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.artifact_id = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl GetArtifactUrlInputBuilder {
     /// Consumes the builder and constructs a [`GetArtifactUrlInput`](crate::operation::get_artifact_url::GetArtifactUrlInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_artifact_url::GetArtifactUrlInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_artifact_url::GetArtifactUrlInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_artifact_url::GetArtifactUrlInput {
             artifact_id: self.artifact_id,
         })

@@ -48,6 +48,7 @@ pub struct AssociateDataShareConsumerInputBuilder {
 }
 impl AssociateDataShareConsumerInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use with the account or the namespace.</p>
+    /// This field is required.
     pub fn data_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_share_arn = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +109,7 @@ impl AssociateDataShareConsumerInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_data_share_consumer::AssociateDataShareConsumerInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::associate_data_share_consumer::AssociateDataShareConsumerInput {
             data_share_arn: self.data_share_arn,

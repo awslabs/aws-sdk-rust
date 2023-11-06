@@ -17,8 +17,10 @@ impl VpcAttachment {
         self.attachment.as_ref()
     }
     /// <p>The subnet ARNs.</p>
-    pub fn subnet_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_arns.is_none()`.
+    pub fn subnet_arns(&self) -> &[::std::string::String] {
+        self.subnet_arns.as_deref().unwrap_or_default()
     }
     /// <p>Provides details about the VPC attachment.</p>
     pub fn options(&self) -> ::std::option::Option<&crate::types::VpcOptions> {

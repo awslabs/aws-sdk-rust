@@ -64,8 +64,10 @@ impl CreateServiceInput {
     }
     /// <p>An optional list of metadata items that you can associate with the Proton service. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for CreateServiceInput {
@@ -108,6 +110,7 @@ pub struct CreateServiceInputBuilder {
 }
 impl CreateServiceInputBuilder {
     /// <p>The service name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -136,6 +139,7 @@ impl CreateServiceInputBuilder {
         &self.description
     }
     /// <p>The name of the service template that's used to create the service.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
@@ -150,6 +154,7 @@ impl CreateServiceInputBuilder {
         &self.template_name
     }
     /// <p>The major version of the service template that was used to create the service.</p>
+    /// This field is required.
     pub fn template_major_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_major_version = ::std::option::Option::Some(input.into());
         self
@@ -178,6 +183,7 @@ impl CreateServiceInputBuilder {
         &self.template_minor_version
     }
     /// <p>A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file is in YAML format. <i>Don’t</i> include pipeline inputs in the spec if your service template <i>doesn’t</i> include a service pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-create-svc.html">Create a service</a> in the <i>Proton User Guide</i>.</p>
+    /// This field is required.
     pub fn spec(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.spec = ::std::option::Option::Some(input.into());
         self
@@ -259,7 +265,7 @@ impl CreateServiceInputBuilder {
     /// Consumes the builder and constructs a [`CreateServiceInput`](crate::operation::create_service::CreateServiceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_service::CreateServiceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_service::CreateServiceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_service::CreateServiceInput {
             name: self.name,
             description: self.description,

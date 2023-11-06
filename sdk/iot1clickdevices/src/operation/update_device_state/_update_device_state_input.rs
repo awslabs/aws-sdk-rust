@@ -34,6 +34,7 @@ pub struct UpdateDeviceStateInputBuilder {
 }
 impl UpdateDeviceStateInputBuilder {
     /// <p>The unique identifier of the device.</p>
+    /// This field is required.
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl UpdateDeviceStateInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDeviceStateInput`](crate::operation::update_device_state::UpdateDeviceStateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_device_state::UpdateDeviceStateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_device_state::UpdateDeviceStateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_device_state::UpdateDeviceStateInput {
             device_id: self.device_id,
             enabled: self.enabled,

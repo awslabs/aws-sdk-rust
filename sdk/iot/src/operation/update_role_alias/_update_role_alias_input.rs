@@ -43,6 +43,7 @@ pub struct UpdateRoleAliasInputBuilder {
 }
 impl UpdateRoleAliasInputBuilder {
     /// <p>The role alias to update.</p>
+    /// This field is required.
     pub fn role_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_alias = ::std::option::Option::Some(input.into());
         self
@@ -90,7 +91,7 @@ impl UpdateRoleAliasInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRoleAliasInput`](crate::operation::update_role_alias::UpdateRoleAliasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_role_alias::UpdateRoleAliasInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_role_alias::UpdateRoleAliasInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_role_alias::UpdateRoleAliasInput {
             role_alias: self.role_alias,
             role_arn: self.role_arn,

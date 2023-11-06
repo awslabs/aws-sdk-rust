@@ -2,7 +2,7 @@
 pub fn ser_finding_provider_fields(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FindingProviderFields,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.confidence {
         object.key("Confidence").number(
             #[allow(clippy::useless_conversion)]

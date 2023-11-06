@@ -1,5 +1,5 @@
 {
-  "name": "empty-config",
+  "name": "invalid-config",
   "docs": "config was invalid",
   "result": {
     "ErrorContains": "could not parse profile file"

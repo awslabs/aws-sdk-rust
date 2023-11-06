@@ -27,6 +27,7 @@ pub struct DeleteCampaignInputBuilder {
 }
 impl DeleteCampaignInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the campaign to delete.</p>
+    /// This field is required.
     pub fn campaign_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.campaign_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteCampaignInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCampaignInput`](crate::operation::delete_campaign::DeleteCampaignInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_campaign::DeleteCampaignInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_campaign::DeleteCampaignInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_campaign::DeleteCampaignInput {
             campaign_arn: self.campaign_arn,
         })

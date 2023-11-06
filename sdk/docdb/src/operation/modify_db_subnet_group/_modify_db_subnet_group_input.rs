@@ -25,8 +25,10 @@ impl ModifyDbSubnetGroupInput {
         self.db_subnet_group_description.as_deref()
     }
     /// <p>The Amazon EC2 subnet IDs for the subnet group.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        self.subnet_ids.as_deref().unwrap_or_default()
     }
 }
 impl ModifyDbSubnetGroupInput {
@@ -48,6 +50,7 @@ impl ModifyDbSubnetGroupInputBuilder {
     /// <p>The name for the subnet group. This value is stored as a lowercase string. You can't modify the default subnet group. </p>
     /// <p>Constraints: Must match the name of an existing <code>DBSubnetGroup</code>. Must not be default.</p>
     /// <p>Example: <code>mySubnetgroup</code> </p>
+    /// This field is required.
     pub fn db_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_subnet_group_name = ::std::option::Option::Some(input.into());
         self
@@ -102,7 +105,7 @@ impl ModifyDbSubnetGroupInputBuilder {
     /// Consumes the builder and constructs a [`ModifyDbSubnetGroupInput`](crate::operation::modify_db_subnet_group::ModifyDbSubnetGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_db_subnet_group::ModifyDbSubnetGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::modify_db_subnet_group::ModifyDbSubnetGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::modify_db_subnet_group::ModifyDbSubnetGroupInput {
             db_subnet_group_name: self.db_subnet_group_name,

@@ -55,6 +55,7 @@ pub struct UpdateAccessPolicyInputBuilder {
 }
 impl UpdateAccessPolicyInputBuilder {
     /// <p>The ID of the access policy.</p>
+    /// This field is required.
     pub fn access_policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_policy_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl UpdateAccessPolicyInputBuilder {
         &self.access_policy_id
     }
     /// <p>The identity for this access policy. Choose an IAM Identity Center user, an IAM Identity Center group, or an IAM user.</p>
+    /// This field is required.
     pub fn access_policy_identity(mut self, input: crate::types::Identity) -> Self {
         self.access_policy_identity = ::std::option::Option::Some(input);
         self
@@ -83,6 +85,7 @@ impl UpdateAccessPolicyInputBuilder {
         &self.access_policy_identity
     }
     /// <p>The IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.</p>
+    /// This field is required.
     pub fn access_policy_resource(mut self, input: crate::types::Resource) -> Self {
         self.access_policy_resource = ::std::option::Option::Some(input);
         self
@@ -97,6 +100,7 @@ impl UpdateAccessPolicyInputBuilder {
         &self.access_policy_resource
     }
     /// <p>The permission level for this access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
+    /// This field is required.
     pub fn access_policy_permission(mut self, input: crate::types::Permission) -> Self {
         self.access_policy_permission = ::std::option::Option::Some(input);
         self
@@ -127,7 +131,8 @@ impl UpdateAccessPolicyInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAccessPolicyInput`](crate::operation::update_access_policy::UpdateAccessPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_access_policy::UpdateAccessPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_access_policy::UpdateAccessPolicyInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_access_policy::UpdateAccessPolicyInput {
             access_policy_id: self.access_policy_id,
             access_policy_identity: self.access_policy_identity,

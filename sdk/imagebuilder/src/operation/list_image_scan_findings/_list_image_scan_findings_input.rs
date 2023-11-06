@@ -26,8 +26,10 @@ impl ListImageScanFindingsInput {
     /// <li> <p> <code>severity</code> </p> </li>
     /// </ul>
     /// <p>If you don't request a filter, then all findings in your account are listed.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::ImageScanFindingsFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::ImageScanFindingsFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum items to return in a request.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -126,7 +128,7 @@ impl ListImageScanFindingsInputBuilder {
     /// Consumes the builder and constructs a [`ListImageScanFindingsInput`](crate::operation::list_image_scan_findings::ListImageScanFindingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_image_scan_findings::ListImageScanFindingsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_image_scan_findings::ListImageScanFindingsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_image_scan_findings::ListImageScanFindingsInput {
             filters: self.filters,

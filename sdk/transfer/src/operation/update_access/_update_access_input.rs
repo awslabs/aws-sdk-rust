@@ -58,8 +58,10 @@ impl UpdateAccessInput {
     /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the <code>HomeDirectory</code> parameter value.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
     /// <p> <code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
-    pub fn home_directory_mappings(&self) -> ::std::option::Option<&[crate::types::HomeDirectoryMapEntry]> {
-        self.home_directory_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.home_directory_mappings.is_none()`.
+    pub fn home_directory_mappings(&self) -> &[crate::types::HomeDirectoryMapEntry] {
+        self.home_directory_mappings.as_deref().unwrap_or_default()
     }
     /// <p>A session policy for your user so that you can use the same Identity and Access Management (IAM) role across multiple users. This policy scopes down a user's access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
     /// <p>This policy applies only when the domain of <code>ServerId</code> is Amazon S3. Amazon EFS does not use session policies.</p>
@@ -247,6 +249,7 @@ impl UpdateAccessInputBuilder {
         &self.role
     }
     /// <p>A system-assigned unique identifier for a server instance. This is the specific server that you added your user to.</p>
+    /// This field is required.
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_id = ::std::option::Option::Some(input.into());
         self
@@ -264,6 +267,7 @@ impl UpdateAccessInputBuilder {
     /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
     /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
     /// <p>The regular expression used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
+    /// This field is required.
     pub fn external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.external_id = ::std::option::Option::Some(input.into());
         self
@@ -284,7 +288,9 @@ impl UpdateAccessInputBuilder {
         &self.external_id
     }
     /// Consumes the builder and constructs a [`UpdateAccessInput`](crate::operation::update_access::UpdateAccessInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_access::UpdateAccessInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_access::UpdateAccessInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_access::UpdateAccessInput {
             home_directory: self.home_directory,
             home_directory_type: self.home_directory_type,

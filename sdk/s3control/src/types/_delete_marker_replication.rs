@@ -6,12 +6,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteMarkerReplication {
     /// <p>Indicates whether to replicate delete markers.</p>
-    pub status: ::std::option::Option<crate::types::DeleteMarkerReplicationStatus>,
+    pub status: crate::types::DeleteMarkerReplicationStatus,
 }
 impl DeleteMarkerReplication {
     /// <p>Indicates whether to replicate delete markers.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::DeleteMarkerReplicationStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::DeleteMarkerReplicationStatus {
+        &self.status
     }
 }
 impl DeleteMarkerReplication {
@@ -29,6 +29,7 @@ pub struct DeleteMarkerReplicationBuilder {
 }
 impl DeleteMarkerReplicationBuilder {
     /// <p>Indicates whether to replicate delete markers.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::DeleteMarkerReplicationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -43,7 +44,16 @@ impl DeleteMarkerReplicationBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`DeleteMarkerReplication`](crate::types::DeleteMarkerReplication).
-    pub fn build(self) -> crate::types::DeleteMarkerReplication {
-        crate::types::DeleteMarkerReplication { status: self.status }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::types::builders::DeleteMarkerReplicationBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::DeleteMarkerReplication, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DeleteMarkerReplication {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building DeleteMarkerReplication",
+                )
+            })?,
+        })
     }
 }

@@ -62,6 +62,7 @@ pub struct PutBackupVaultLockConfigurationInputBuilder {
 }
 impl PutBackupVaultLockConfigurationInputBuilder {
     /// <p>The Backup Vault Lock configuration that specifies the name of the backup vault it protects.</p>
+    /// This field is required.
     pub fn backup_vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_vault_name = ::std::option::Option::Some(input.into());
         self
@@ -143,7 +144,7 @@ impl PutBackupVaultLockConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_backup_vault_lock_configuration::PutBackupVaultLockConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::put_backup_vault_lock_configuration::PutBackupVaultLockConfigurationInput {

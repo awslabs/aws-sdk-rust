@@ -9,8 +9,10 @@ pub struct DescribeAllManagedProductsOutput {
 }
 impl DescribeAllManagedProductsOutput {
     /// <p>High-level information for the Amazon Web Services Managed Rules rule groups and Amazon Web Services Marketplace managed rule groups. </p>
-    pub fn managed_products(&self) -> ::std::option::Option<&[crate::types::ManagedProductDescriptor]> {
-        self.managed_products.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.managed_products.is_none()`.
+    pub fn managed_products(&self) -> &[crate::types::ManagedProductDescriptor] {
+        self.managed_products.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeAllManagedProductsOutput {

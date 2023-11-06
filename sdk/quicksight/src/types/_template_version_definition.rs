@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TemplateVersionDefinition {
     /// <p>An array of dataset configurations. These configurations define the required columns for each dataset used within a template.</p>
-    pub data_set_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DataSetConfiguration>>,
+    pub data_set_configurations: ::std::vec::Vec<crate::types::DataSetConfiguration>,
     /// <p>An array of sheet definitions for a template.</p>
     pub sheets: ::std::option::Option<::std::vec::Vec<crate::types::SheetDefinition>>,
     /// <p>An array of calculated field definitions for the template.</p>
@@ -24,31 +24,42 @@ pub struct TemplateVersionDefinition {
 }
 impl TemplateVersionDefinition {
     /// <p>An array of dataset configurations. These configurations define the required columns for each dataset used within a template.</p>
-    pub fn data_set_configurations(&self) -> ::std::option::Option<&[crate::types::DataSetConfiguration]> {
-        self.data_set_configurations.as_deref()
+    pub fn data_set_configurations(&self) -> &[crate::types::DataSetConfiguration] {
+        use std::ops::Deref;
+        self.data_set_configurations.deref()
     }
     /// <p>An array of sheet definitions for a template.</p>
-    pub fn sheets(&self) -> ::std::option::Option<&[crate::types::SheetDefinition]> {
-        self.sheets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sheets.is_none()`.
+    pub fn sheets(&self) -> &[crate::types::SheetDefinition] {
+        self.sheets.as_deref().unwrap_or_default()
     }
     /// <p>An array of calculated field definitions for the template.</p>
-    pub fn calculated_fields(&self) -> ::std::option::Option<&[crate::types::CalculatedField]> {
-        self.calculated_fields.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.calculated_fields.is_none()`.
+    pub fn calculated_fields(&self) -> &[crate::types::CalculatedField] {
+        self.calculated_fields.as_deref().unwrap_or_default()
     }
     /// <p>An array of parameter declarations for a template.</p>
     /// <p> <i>Parameters</i> are named variables that can transfer a value for use by an action or an object.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-in-quicksight.html">Parameters in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>. </p>
-    pub fn parameter_declarations(&self) -> ::std::option::Option<&[crate::types::ParameterDeclaration]> {
-        self.parameter_declarations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameter_declarations.is_none()`.
+    pub fn parameter_declarations(&self) -> &[crate::types::ParameterDeclaration] {
+        self.parameter_declarations.as_deref().unwrap_or_default()
     }
     /// <p>Filter definitions for a template.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/filtering-visual-data.html">Filtering Data</a> in the <i>Amazon QuickSight User Guide</i>. </p>
-    pub fn filter_groups(&self) -> ::std::option::Option<&[crate::types::FilterGroup]> {
-        self.filter_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filter_groups.is_none()`.
+    pub fn filter_groups(&self) -> &[crate::types::FilterGroup] {
+        self.filter_groups.as_deref().unwrap_or_default()
     }
     /// <p> An array of template-level column configurations. Column configurations are used to set default formatting for a column that's used throughout a template. </p>
-    pub fn column_configurations(&self) -> ::std::option::Option<&[crate::types::ColumnConfiguration]> {
-        self.column_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.column_configurations.is_none()`.
+    pub fn column_configurations(&self) -> &[crate::types::ColumnConfiguration] {
+        self.column_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The configuration for default analysis settings.</p>
     pub fn analysis_defaults(&self) -> ::std::option::Option<&crate::types::AnalysisDefaults> {
@@ -219,15 +230,22 @@ impl TemplateVersionDefinitionBuilder {
         &self.analysis_defaults
     }
     /// Consumes the builder and constructs a [`TemplateVersionDefinition`](crate::types::TemplateVersionDefinition).
-    pub fn build(self) -> crate::types::TemplateVersionDefinition {
-        crate::types::TemplateVersionDefinition {
-            data_set_configurations: self.data_set_configurations,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`data_set_configurations`](crate::types::builders::TemplateVersionDefinitionBuilder::data_set_configurations)
+    pub fn build(self) -> ::std::result::Result<crate::types::TemplateVersionDefinition, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TemplateVersionDefinition {
+            data_set_configurations: self.data_set_configurations.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "data_set_configurations",
+                    "data_set_configurations was not specified but it is required when building TemplateVersionDefinition",
+                )
+            })?,
             sheets: self.sheets,
             calculated_fields: self.calculated_fields,
             parameter_declarations: self.parameter_declarations,
             filter_groups: self.filter_groups,
             column_configurations: self.column_configurations,
             analysis_defaults: self.analysis_defaults,
-        }
+        })
     }
 }

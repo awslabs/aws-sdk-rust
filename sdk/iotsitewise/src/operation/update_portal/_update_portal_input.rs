@@ -91,6 +91,7 @@ pub struct UpdatePortalInputBuilder {
 }
 impl UpdatePortalInputBuilder {
     /// <p>The ID of the portal to update.</p>
+    /// This field is required.
     pub fn portal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portal_id = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +106,7 @@ impl UpdatePortalInputBuilder {
         &self.portal_id
     }
     /// <p>A new friendly name for the portal.</p>
+    /// This field is required.
     pub fn portal_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portal_name = ::std::option::Option::Some(input.into());
         self
@@ -133,6 +135,7 @@ impl UpdatePortalInputBuilder {
         &self.portal_description
     }
     /// <p>The Amazon Web Services administrator's contact email address.</p>
+    /// This field is required.
     pub fn portal_contact_email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portal_contact_email = ::std::option::Option::Some(input.into());
         self
@@ -173,6 +176,7 @@ impl UpdatePortalInputBuilder {
         &self.portal_logo_image
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -229,7 +233,9 @@ impl UpdatePortalInputBuilder {
         &self.alarms
     }
     /// Consumes the builder and constructs a [`UpdatePortalInput`](crate::operation::update_portal::UpdatePortalInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_portal::UpdatePortalInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_portal::UpdatePortalInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_portal::UpdatePortalInput {
             portal_id: self.portal_id,
             portal_name: self.portal_name,

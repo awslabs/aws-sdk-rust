@@ -2,7 +2,7 @@
 pub fn ser_authorize_ip_rules_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::authorize_ip_rules::AuthorizeIpRulesInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.group_id {
         object.key("GroupId").string(var_1.as_str());
     }

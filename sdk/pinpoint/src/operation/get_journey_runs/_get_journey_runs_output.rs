@@ -34,6 +34,7 @@ pub struct GetJourneyRunsOutputBuilder {
 }
 impl GetJourneyRunsOutputBuilder {
     /// <p>Provides information from all runs of a journey.</p>
+    /// This field is required.
     pub fn journey_runs_response(mut self, input: crate::types::JourneyRunsResponse) -> Self {
         self.journey_runs_response = ::std::option::Option::Some(input);
         self

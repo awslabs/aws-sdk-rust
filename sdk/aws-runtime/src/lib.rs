@@ -16,9 +16,6 @@
 /// Supporting code for authentication in the AWS SDK.
 pub mod auth;
 
-/// Supporting code for identity in the AWS SDK.
-pub mod identity;
-
 /// Supporting code for recursion detection in the AWS SDK.
 pub mod recursion_detection;
 

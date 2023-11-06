@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeOriginEndpoint`](crate::operation::describe_origin_endpoint::builders::DescribeOriginEndpointFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::describe_origin_endpoint::builders::DescribeOriginEndpointFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::describe_origin_endpoint::builders::DescribeOriginEndpointFluentBuilder::set_id): The ID of the OriginEndpoint.
+    ///   - [`id(impl Into<String>)`](crate::operation::describe_origin_endpoint::builders::DescribeOriginEndpointFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::describe_origin_endpoint::builders::DescribeOriginEndpointFluentBuilder::set_id):<br>required: **true**<br>The ID of the OriginEndpoint.<br>
     /// - On success, responds with [`DescribeOriginEndpointOutput`](crate::operation::describe_origin_endpoint::DescribeOriginEndpointOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::describe_origin_endpoint::DescribeOriginEndpointOutput::arn): The Amazon Resource Name (ARN) assigned to the OriginEndpoint.
     ///   - [`authorization(Option<Authorization>)`](crate::operation::describe_origin_endpoint::DescribeOriginEndpointOutput::authorization): CDN Authorization credentials
@@ -18,10 +18,10 @@ impl super::Client {
     ///   - [`mss_package(Option<MssPackage>)`](crate::operation::describe_origin_endpoint::DescribeOriginEndpointOutput::mss_package): A Microsoft Smooth Streaming (MSS) packaging configuration.
     ///   - [`origination(Option<Origination>)`](crate::operation::describe_origin_endpoint::DescribeOriginEndpointOutput::origination): Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
     ///   - [`startover_window_seconds(Option<i32>)`](crate::operation::describe_origin_endpoint::DescribeOriginEndpointOutput::startover_window_seconds): Maximum duration (seconds) of content to retain for startover playback. If not specified, startover playback will be disabled for the OriginEndpoint.
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_origin_endpoint::DescribeOriginEndpointOutput::tags): A collection of tags associated with a resource
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_origin_endpoint::DescribeOriginEndpointOutput::tags): A collection of tags associated with a resource
     ///   - [`time_delay_seconds(Option<i32>)`](crate::operation::describe_origin_endpoint::DescribeOriginEndpointOutput::time_delay_seconds): Amount of delay (seconds) to enforce on the playback of live content. If not specified, there will be no time delay in effect for the OriginEndpoint.
     ///   - [`url(Option<String>)`](crate::operation::describe_origin_endpoint::DescribeOriginEndpointOutput::url): The URL of the packaged OriginEndpoint for consumption.
-    ///   - [`whitelist(Option<Vec<String>>)`](crate::operation::describe_origin_endpoint::DescribeOriginEndpointOutput::whitelist): A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
+    ///   - [`whitelist(Option<Vec::<String>>)`](crate::operation::describe_origin_endpoint::DescribeOriginEndpointOutput::whitelist): A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
     /// - On failure, responds with [`SdkError<DescribeOriginEndpointError>`](crate::operation::describe_origin_endpoint::DescribeOriginEndpointError)
     pub fn describe_origin_endpoint(&self) -> crate::operation::describe_origin_endpoint::builders::DescribeOriginEndpointFluentBuilder {
         crate::operation::describe_origin_endpoint::builders::DescribeOriginEndpointFluentBuilder::new(self.handle.clone())

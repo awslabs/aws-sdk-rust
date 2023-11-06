@@ -12,8 +12,10 @@ pub struct ListCertificatesOutput {
 }
 impl ListCertificatesOutput {
     /// <p>The descriptions of the certificates.</p>
-    pub fn certificates(&self) -> ::std::option::Option<&[crate::types::Certificate]> {
-        self.certificates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificates.is_none()`.
+    pub fn certificates(&self) -> &[crate::types::Certificate] {
+        self.certificates.as_deref().unwrap_or_default()
     }
     /// <p>The marker for the next set of results, or null if there are no additional results.</p>
     pub fn next_marker(&self) -> ::std::option::Option<&str> {

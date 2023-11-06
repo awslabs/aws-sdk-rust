@@ -40,8 +40,10 @@ impl UpdateSlotTypeInput {
         self.description.as_deref()
     }
     /// <p>A new list of values and their optional synonyms that define the values that the slot type can take.</p>
-    pub fn slot_type_values(&self) -> ::std::option::Option<&[crate::types::SlotTypeValue]> {
-        self.slot_type_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.slot_type_values.is_none()`.
+    pub fn slot_type_values(&self) -> &[crate::types::SlotTypeValue] {
+        self.slot_type_values.as_deref().unwrap_or_default()
     }
     /// <p>The strategy that Amazon Lex should use when deciding on a value from the list of slot type values.</p>
     pub fn value_selection_setting(&self) -> ::std::option::Option<&crate::types::SlotValueSelectionSetting> {
@@ -97,6 +99,7 @@ pub struct UpdateSlotTypeInputBuilder {
 }
 impl UpdateSlotTypeInputBuilder {
     /// <p>The unique identifier of the slot type to update.</p>
+    /// This field is required.
     pub fn slot_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.slot_type_id = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +114,7 @@ impl UpdateSlotTypeInputBuilder {
         &self.slot_type_id
     }
     /// <p>The new name of the slot type.</p>
+    /// This field is required.
     pub fn slot_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.slot_type_name = ::std::option::Option::Some(input.into());
         self
@@ -187,6 +191,7 @@ impl UpdateSlotTypeInputBuilder {
         &self.parent_slot_type_signature
     }
     /// <p>The identifier of the bot that contains the slot type.</p>
+    /// This field is required.
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
         self
@@ -201,6 +206,7 @@ impl UpdateSlotTypeInputBuilder {
         &self.bot_id
     }
     /// <p>The version of the bot that contains the slot type. Must be <code>DRAFT</code>.</p>
+    /// This field is required.
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
         self
@@ -215,6 +221,7 @@ impl UpdateSlotTypeInputBuilder {
         &self.bot_version
     }
     /// <p>The identifier of the language and locale that contains the slot type. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// This field is required.
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
         self
@@ -259,7 +266,7 @@ impl UpdateSlotTypeInputBuilder {
     /// Consumes the builder and constructs a [`UpdateSlotTypeInput`](crate::operation::update_slot_type::UpdateSlotTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_slot_type::UpdateSlotTypeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_slot_type::UpdateSlotTypeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_slot_type::UpdateSlotTypeInput {
             slot_type_id: self.slot_type_id,
             slot_type_name: self.slot_type_name,

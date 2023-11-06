@@ -15,8 +15,10 @@ pub struct CreateDataflowEndpointGroupInput {
 }
 impl CreateDataflowEndpointGroupInput {
     /// <p>Endpoint details of each endpoint in the dataflow endpoint group.</p>
-    pub fn endpoint_details(&self) -> ::std::option::Option<&[crate::types::EndpointDetails]> {
-        self.endpoint_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.endpoint_details.is_none()`.
+    pub fn endpoint_details(&self) -> &[crate::types::EndpointDetails] {
+        self.endpoint_details.as_deref().unwrap_or_default()
     }
     /// <p>Tags of a dataflow endpoint group.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -121,7 +123,7 @@ impl CreateDataflowEndpointGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupInput {
             endpoint_details: self.endpoint_details,

@@ -3,16 +3,16 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PutChunk`](crate::operation::put_chunk::builders::PutChunkFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`backup_job_id(impl Into<String>)`](crate::operation::put_chunk::builders::PutChunkFluentBuilder::backup_job_id) / [`set_backup_job_id(Option<String>)`](crate::operation::put_chunk::builders::PutChunkFluentBuilder::set_backup_job_id): Backup job Id for the in-progress backup.
-    ///   - [`upload_id(impl Into<String>)`](crate::operation::put_chunk::builders::PutChunkFluentBuilder::upload_id) / [`set_upload_id(Option<String>)`](crate::operation::put_chunk::builders::PutChunkFluentBuilder::set_upload_id): Upload Id for the in-progress upload.
-    ///   - [`chunk_index(i64)`](crate::operation::put_chunk::builders::PutChunkFluentBuilder::chunk_index) / [`set_chunk_index(Option<i64>)`](crate::operation::put_chunk::builders::PutChunkFluentBuilder::set_chunk_index): Describes this chunk's position relative to the other chunks
-    ///   - [`data(ByteStream)`](crate::operation::put_chunk::builders::PutChunkFluentBuilder::data) / [`set_data(ByteStream)`](crate::operation::put_chunk::builders::PutChunkFluentBuilder::set_data): Data to be uploaded
-    ///   - [`length(i64)`](crate::operation::put_chunk::builders::PutChunkFluentBuilder::length) / [`set_length(Option<i64>)`](crate::operation::put_chunk::builders::PutChunkFluentBuilder::set_length): Data length
-    ///   - [`checksum(impl Into<String>)`](crate::operation::put_chunk::builders::PutChunkFluentBuilder::checksum) / [`set_checksum(Option<String>)`](crate::operation::put_chunk::builders::PutChunkFluentBuilder::set_checksum): Data checksum
-    ///   - [`checksum_algorithm(DataChecksumAlgorithm)`](crate::operation::put_chunk::builders::PutChunkFluentBuilder::checksum_algorithm) / [`set_checksum_algorithm(Option<DataChecksumAlgorithm>)`](crate::operation::put_chunk::builders::PutChunkFluentBuilder::set_checksum_algorithm): Checksum algorithm
+    ///   - [`backup_job_id(impl Into<String>)`](crate::operation::put_chunk::builders::PutChunkFluentBuilder::backup_job_id) / [`set_backup_job_id(Option<String>)`](crate::operation::put_chunk::builders::PutChunkFluentBuilder::set_backup_job_id):<br>required: **true**<br>Backup job Id for the in-progress backup.<br>
+    ///   - [`upload_id(impl Into<String>)`](crate::operation::put_chunk::builders::PutChunkFluentBuilder::upload_id) / [`set_upload_id(Option<String>)`](crate::operation::put_chunk::builders::PutChunkFluentBuilder::set_upload_id):<br>required: **true**<br>Upload Id for the in-progress upload.<br>
+    ///   - [`chunk_index(i64)`](crate::operation::put_chunk::builders::PutChunkFluentBuilder::chunk_index) / [`set_chunk_index(Option<i64>)`](crate::operation::put_chunk::builders::PutChunkFluentBuilder::set_chunk_index):<br>required: **true**<br>Describes this chunk's position relative to the other chunks<br>
+    ///   - [`data(ByteStream)`](crate::operation::put_chunk::builders::PutChunkFluentBuilder::data) / [`set_data(ByteStream)`](crate::operation::put_chunk::builders::PutChunkFluentBuilder::set_data):<br>required: **true**<br>Data to be uploaded<br>
+    ///   - [`length(i64)`](crate::operation::put_chunk::builders::PutChunkFluentBuilder::length) / [`set_length(Option<i64>)`](crate::operation::put_chunk::builders::PutChunkFluentBuilder::set_length):<br>required: **true**<br>Data length<br>
+    ///   - [`checksum(impl Into<String>)`](crate::operation::put_chunk::builders::PutChunkFluentBuilder::checksum) / [`set_checksum(Option<String>)`](crate::operation::put_chunk::builders::PutChunkFluentBuilder::set_checksum):<br>required: **true**<br>Data checksum<br>
+    ///   - [`checksum_algorithm(DataChecksumAlgorithm)`](crate::operation::put_chunk::builders::PutChunkFluentBuilder::checksum_algorithm) / [`set_checksum_algorithm(Option<DataChecksumAlgorithm>)`](crate::operation::put_chunk::builders::PutChunkFluentBuilder::set_checksum_algorithm):<br>required: **true**<br>Checksum algorithm<br>
     /// - On success, responds with [`PutChunkOutput`](crate::operation::put_chunk::PutChunkOutput) with field(s):
-    ///   - [`chunk_checksum(Option<String>)`](crate::operation::put_chunk::PutChunkOutput::chunk_checksum): Chunk checksum
-    ///   - [`chunk_checksum_algorithm(Option<DataChecksumAlgorithm>)`](crate::operation::put_chunk::PutChunkOutput::chunk_checksum_algorithm): Checksum algorithm
+    ///   - [`chunk_checksum(String)`](crate::operation::put_chunk::PutChunkOutput::chunk_checksum): Chunk checksum
+    ///   - [`chunk_checksum_algorithm(DataChecksumAlgorithm)`](crate::operation::put_chunk::PutChunkOutput::chunk_checksum_algorithm): Checksum algorithm
     /// - On failure, responds with [`SdkError<PutChunkError>`](crate::operation::put_chunk::PutChunkError)
     pub fn put_chunk(&self) -> crate::operation::put_chunk::builders::PutChunkFluentBuilder {
         crate::operation::put_chunk::builders::PutChunkFluentBuilder::new(self.handle.clone())

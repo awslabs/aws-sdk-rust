@@ -31,6 +31,7 @@ pub struct DeleteQueueInputBuilder {
 impl DeleteQueueInputBuilder {
     /// <p>The URL of the Amazon SQS queue to delete.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
+    /// This field is required.
     pub fn queue_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_url = ::std::option::Option::Some(input.into());
         self
@@ -47,7 +48,7 @@ impl DeleteQueueInputBuilder {
         &self.queue_url
     }
     /// Consumes the builder and constructs a [`DeleteQueueInput`](crate::operation::delete_queue::DeleteQueueInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_queue::DeleteQueueInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_queue::DeleteQueueInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_queue::DeleteQueueInput { queue_url: self.queue_url })
     }
 }

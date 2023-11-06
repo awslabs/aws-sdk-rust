@@ -209,7 +209,7 @@ impl LambdaManager {
         zip_file: PathBuf,
         key: Option<String>,
     ) -> Result<FunctionCode, anyhow::Error> {
-        let body = ByteStream::read_from().path(zip_file).build().await?;
+        let body = ByteStream::from_path(zip_file).await?;
 
         let key = key.unwrap_or_else(|| format!("{}_code", self.lambda_name));
 
@@ -258,7 +258,7 @@ impl LambdaManager {
             .create_function()
             .function_name(self.lambda_name.clone())
             .code(code)
-            .role(role.role().unwrap().arn().unwrap())
+            .role(role.role().map(|r| r.arn()).unwrap_or_default())
             .runtime(aws_sdk_lambda::types::Runtime::Providedal2)
             .handler("_unused")
             .send()

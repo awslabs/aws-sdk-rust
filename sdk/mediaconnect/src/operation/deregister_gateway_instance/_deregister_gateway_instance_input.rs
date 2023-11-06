@@ -48,6 +48,7 @@ impl DeregisterGatewayInstanceInputBuilder {
         &self.force
     }
     /// The Amazon Resource Name (ARN) of the gateway that contains the instance that you want to deregister.
+    /// This field is required.
     pub fn gateway_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_instance_arn = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl DeregisterGatewayInstanceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_gateway_instance::DeregisterGatewayInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::deregister_gateway_instance::DeregisterGatewayInstanceInput {
             force: self.force,

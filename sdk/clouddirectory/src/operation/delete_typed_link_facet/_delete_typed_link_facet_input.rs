@@ -34,6 +34,7 @@ pub struct DeleteTypedLinkFacetInputBuilder {
 }
 impl DeleteTypedLinkFacetInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
+    /// This field is required.
     pub fn schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteTypedLinkFacetInputBuilder {
         &self.schema_arn
     }
     /// <p>The unique name of the typed link facet.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DeleteTypedLinkFacetInputBuilder {
     /// Consumes the builder and constructs a [`DeleteTypedLinkFacetInput`](crate::operation::delete_typed_link_facet::DeleteTypedLinkFacetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_typed_link_facet::DeleteTypedLinkFacetInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_typed_link_facet::DeleteTypedLinkFacetInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_typed_link_facet::DeleteTypedLinkFacetInput {
             schema_arn: self.schema_arn,

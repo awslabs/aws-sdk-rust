@@ -2,7 +2,7 @@
 pub fn ser_aws_ecs_service_network_configuration_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEcsServiceNetworkConfigurationDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.aws_vpc_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("AwsVpcConfiguration").start_object();

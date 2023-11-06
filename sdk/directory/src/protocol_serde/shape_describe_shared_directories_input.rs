@@ -2,7 +2,7 @@
 pub fn ser_describe_shared_directories_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_shared_directories::DescribeSharedDirectoriesInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.owner_directory_id {
         object.key("OwnerDirectoryId").string(var_1.as_str());
     }

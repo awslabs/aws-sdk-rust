@@ -28,6 +28,7 @@ pub struct DeleteIdentityInputBuilder {
 }
 impl DeleteIdentityInputBuilder {
     /// <p>The identity to be removed from the list of identities for the Amazon Web Services account.</p>
+    /// This field is required.
     pub fn identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl DeleteIdentityInputBuilder {
     /// Consumes the builder and constructs a [`DeleteIdentityInput`](crate::operation::delete_identity::DeleteIdentityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_identity::DeleteIdentityInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_identity::DeleteIdentityInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_identity::DeleteIdentityInput { identity: self.identity })
     }
 }

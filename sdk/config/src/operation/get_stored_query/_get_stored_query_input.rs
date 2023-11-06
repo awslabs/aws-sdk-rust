@@ -27,6 +27,7 @@ pub struct GetStoredQueryInputBuilder {
 }
 impl GetStoredQueryInputBuilder {
     /// <p>The name of the query.</p>
+    /// This field is required.
     pub fn query_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetStoredQueryInputBuilder {
     /// Consumes the builder and constructs a [`GetStoredQueryInput`](crate::operation::get_stored_query::GetStoredQueryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_stored_query::GetStoredQueryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_stored_query::GetStoredQueryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_stored_query::GetStoredQueryInput { query_name: self.query_name })
     }
 }

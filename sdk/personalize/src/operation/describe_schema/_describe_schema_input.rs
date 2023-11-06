@@ -27,6 +27,7 @@ pub struct DescribeSchemaInputBuilder {
 }
 impl DescribeSchemaInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the schema to retrieve.</p>
+    /// This field is required.
     pub fn schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeSchemaInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSchemaInput`](crate::operation::describe_schema::DescribeSchemaInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_schema::DescribeSchemaInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_schema::DescribeSchemaInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_schema::DescribeSchemaInput { schema_arn: self.schema_arn })
     }
 }

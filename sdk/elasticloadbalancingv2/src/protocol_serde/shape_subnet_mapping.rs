@@ -3,7 +3,7 @@
 pub fn ser_subnet_mapping(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::SubnetMapping,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("SubnetId");
     if let Some(var_2) = &input.subnet_id {
@@ -16,12 +16,12 @@ pub fn ser_subnet_mapping(
     }
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("PrivateIPv4Address");
-    if let Some(var_6) = &input.private_i_pv4_address {
+    if let Some(var_6) = &input.private_ipv4_address {
         scope_5.string(var_6);
     }
     #[allow(unused_mut)]
     let mut scope_7 = writer.prefix("IPv6Address");
-    if let Some(var_8) = &input.i_pv6_address {
+    if let Some(var_8) = &input.ipv6_address {
         scope_7.string(var_8);
     }
     Ok(())

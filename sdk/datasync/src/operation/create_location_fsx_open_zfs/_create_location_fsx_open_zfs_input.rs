@@ -24,16 +24,20 @@ impl CreateLocationFsxOpenZfsInput {
         self.protocol.as_ref()
     }
     /// <p>The ARNs of the security groups that are used to configure the FSx for OpenZFS file system.</p>
-    pub fn security_group_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_arns.is_none()`.
+    pub fn security_group_arns(&self) -> &[::std::string::String] {
+        self.security_group_arns.as_deref().unwrap_or_default()
     }
     /// <p>A subdirectory in the location's path that must begin with <code>/fsx</code>. DataSync uses this subdirectory to read or write data (depending on whether the file system is a source or destination location).</p>
     pub fn subdirectory(&self) -> ::std::option::Option<&str> {
         self.subdirectory.as_deref()
     }
     /// <p>The key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::TagListEntry]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::TagListEntry] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateLocationFsxOpenZfsInput {
@@ -55,6 +59,7 @@ pub struct CreateLocationFsxOpenZfsInputBuilder {
 }
 impl CreateLocationFsxOpenZfsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the FSx for OpenZFS file system.</p>
+    /// This field is required.
     pub fn fsx_filesystem_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fsx_filesystem_arn = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +74,7 @@ impl CreateLocationFsxOpenZfsInputBuilder {
         &self.fsx_filesystem_arn
     }
     /// <p>The type of protocol that DataSync uses to access your file system.</p>
+    /// This field is required.
     pub fn protocol(mut self, input: crate::types::FsxProtocol) -> Self {
         self.protocol = ::std::option::Option::Some(input);
         self
@@ -141,7 +147,7 @@ impl CreateLocationFsxOpenZfsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_location_fsx_open_zfs::CreateLocationFsxOpenZfsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_location_fsx_open_zfs::CreateLocationFsxOpenZfsInput {
             fsx_filesystem_arn: self.fsx_filesystem_arn,

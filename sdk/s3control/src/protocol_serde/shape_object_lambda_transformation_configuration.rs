@@ -2,26 +2,27 @@
 pub fn ser_object_lambda_transformation_configuration(
     input: &crate::types::ObjectLambdaTransformationConfiguration,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.actions {
+    {
         let mut inner_writer = scope.start_el("Actions").finish();
-        for list_item_2 in var_1 {
+        for list_item_1 in &input.actions {
             {
                 let mut inner_writer = inner_writer.start_el("Action").finish();
-                inner_writer.data(list_item_2.as_str());
+                inner_writer.data(list_item_1.as_str());
             }
         }
     }
-    if let Some(var_3) = &input.content_transformation {
+    if let Some(var_2) = &input.content_transformation {
         let inner_writer = scope.start_el("ContentTransformation");
-        crate::protocol_serde::shape_object_lambda_content_transformation::ser_object_lambda_content_transformation(var_3, inner_writer)?
+        crate::protocol_serde::shape_object_lambda_content_transformation::ser_object_lambda_content_transformation(var_2, inner_writer)?
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_object_lambda_transformation_configuration(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::ObjectLambdaTransformationConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -30,27 +31,29 @@ pub fn de_object_lambda_transformation_configuration(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Actions") /* Actions com.amazonaws.s3control#ObjectLambdaTransformationConfiguration$Actions */ =>  {
-                let var_4 =
+                let var_3 =
                     Some(
                         crate::protocol_serde::shape_object_lambda_transformation_configuration_actions_list::de_object_lambda_transformation_configuration_actions_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_actions(var_4);
+                builder = builder.set_actions(var_3);
             }
             ,
             s if s.matches("ContentTransformation") /* ContentTransformation com.amazonaws.s3control#ObjectLambdaTransformationConfiguration$ContentTransformation */ =>  {
-                let var_5 =
+                let var_4 =
                     Some(
                         crate::protocol_serde::shape_object_lambda_content_transformation::de_object_lambda_content_transformation(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_content_transformation(var_5);
+                builder = builder.set_content_transformation(var_4);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::object_lambda_transformation_configuration_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

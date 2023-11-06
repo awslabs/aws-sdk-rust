@@ -21,8 +21,10 @@ impl SetLoadBalancerPoliciesOfListenerInput {
         self.load_balancer_port
     }
     /// <p>The names of the policies. This list must include all policies to be enabled. If you omit a policy that is currently enabled, it is disabled. If the list is empty, all current policies are disabled.</p>
-    pub fn policy_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.policy_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_names.is_none()`.
+    pub fn policy_names(&self) -> &[::std::string::String] {
+        self.policy_names.as_deref().unwrap_or_default()
     }
 }
 impl SetLoadBalancerPoliciesOfListenerInput {
@@ -42,6 +44,7 @@ pub struct SetLoadBalancerPoliciesOfListenerInputBuilder {
 }
 impl SetLoadBalancerPoliciesOfListenerInputBuilder {
     /// <p>The name of the load balancer.</p>
+    /// This field is required.
     pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl SetLoadBalancerPoliciesOfListenerInputBuilder {
         &self.load_balancer_name
     }
     /// <p>The external port of the load balancer.</p>
+    /// This field is required.
     pub fn load_balancer_port(mut self, input: i32) -> Self {
         self.load_balancer_port = ::std::option::Option::Some(input);
         self
@@ -94,7 +98,7 @@ impl SetLoadBalancerPoliciesOfListenerInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_load_balancer_policies_of_listener::SetLoadBalancerPoliciesOfListenerInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::set_load_balancer_policies_of_listener::SetLoadBalancerPoliciesOfListenerInput {

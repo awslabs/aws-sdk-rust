@@ -11,8 +11,10 @@ pub struct ListAccessorsOutput {
 }
 impl ListAccessorsOutput {
     /// <p>An array of AccessorSummary objects that contain configuration properties for each accessor.</p>
-    pub fn accessors(&self) -> ::std::option::Option<&[crate::types::AccessorSummary]> {
-        self.accessors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accessors.is_none()`.
+    pub fn accessors(&self) -> &[crate::types::AccessorSummary] {
+        self.accessors.as_deref().unwrap_or_default()
     }
     /// <p> The pagination token that indicates the next set of results to retrieve. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

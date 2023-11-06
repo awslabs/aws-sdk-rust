@@ -2,7 +2,7 @@
 pub fn ser_organization_scan_ec2_instance_with_findings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OrganizationScanEc2InstanceWithFindings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ebs_volumes {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ebsVolumes").start_object();

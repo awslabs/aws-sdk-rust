@@ -35,12 +35,16 @@ impl DatasetSummary {
         self.last_update_time.as_ref()
     }
     /// <p>A list of triggers. A trigger causes dataset content to be populated at a specified time interval or when another dataset is populated. The list of triggers can be empty or contain up to five <code>DataSetTrigger</code> objects</p>
-    pub fn triggers(&self) -> ::std::option::Option<&[crate::types::DatasetTrigger]> {
-        self.triggers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.triggers.is_none()`.
+    pub fn triggers(&self) -> &[crate::types::DatasetTrigger] {
+        self.triggers.as_deref().unwrap_or_default()
     }
     /// <p>A list of <code>DataActionSummary</code> objects.</p>
-    pub fn actions(&self) -> ::std::option::Option<&[crate::types::DatasetActionSummary]> {
-        self.actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
+    pub fn actions(&self) -> &[crate::types::DatasetActionSummary] {
+        self.actions.as_deref().unwrap_or_default()
     }
 }
 impl DatasetSummary {

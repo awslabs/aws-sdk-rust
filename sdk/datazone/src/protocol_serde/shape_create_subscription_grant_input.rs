@@ -2,7 +2,7 @@
 pub fn ser_create_subscription_grant_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_subscription_grant::CreateSubscriptionGrantInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.asset_target_names {
         let mut array_2 = object.key("assetTargetNames").start_array();
         for item_3 in var_1 {

@@ -34,6 +34,7 @@ pub struct DeleteContactInputBuilder {
 }
 impl DeleteContactInputBuilder {
     /// <p>The name of the contact list from which the contact should be removed.</p>
+    /// This field is required.
     pub fn contact_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_list_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteContactInputBuilder {
         &self.contact_list_name
     }
     /// <p>The contact's email address.</p>
+    /// This field is required.
     pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_address = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DeleteContactInputBuilder {
     /// Consumes the builder and constructs a [`DeleteContactInput`](crate::operation::delete_contact::DeleteContactInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_contact::DeleteContactInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_contact::DeleteContactInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_contact::DeleteContactInput {
             contact_list_name: self.contact_list_name,
             email_address: self.email_address,

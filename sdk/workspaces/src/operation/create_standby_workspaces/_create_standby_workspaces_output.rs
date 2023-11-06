@@ -11,12 +11,16 @@ pub struct CreateStandbyWorkspacesOutput {
 }
 impl CreateStandbyWorkspacesOutput {
     /// <p>Information about the standby WorkSpace that could not be created. </p>
-    pub fn failed_standby_requests(&self) -> ::std::option::Option<&[crate::types::FailedCreateStandbyWorkspacesRequest]> {
-        self.failed_standby_requests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_standby_requests.is_none()`.
+    pub fn failed_standby_requests(&self) -> &[crate::types::FailedCreateStandbyWorkspacesRequest] {
+        self.failed_standby_requests.as_deref().unwrap_or_default()
     }
     /// <p>Information about the standby WorkSpace that was created.</p>
-    pub fn pending_standby_requests(&self) -> ::std::option::Option<&[crate::types::PendingCreateStandbyWorkspacesRequest]> {
-        self.pending_standby_requests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pending_standby_requests.is_none()`.
+    pub fn pending_standby_requests(&self) -> &[crate::types::PendingCreateStandbyWorkspacesRequest] {
+        self.pending_standby_requests.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateStandbyWorkspacesOutput {

@@ -2,7 +2,7 @@
 pub fn ser_get_environment_template_version_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_environment_template_version::GetEnvironmentTemplateVersionInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.template_name {
         object.key("templateName").string(var_1.as_str());
     }

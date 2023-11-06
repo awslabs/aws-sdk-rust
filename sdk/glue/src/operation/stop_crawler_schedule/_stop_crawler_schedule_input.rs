@@ -27,6 +27,7 @@ pub struct StopCrawlerScheduleInputBuilder {
 }
 impl StopCrawlerScheduleInputBuilder {
     /// <p>Name of the crawler whose schedule state to set.</p>
+    /// This field is required.
     pub fn crawler_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.crawler_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl StopCrawlerScheduleInputBuilder {
     /// Consumes the builder and constructs a [`StopCrawlerScheduleInput`](crate::operation::stop_crawler_schedule::StopCrawlerScheduleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_crawler_schedule::StopCrawlerScheduleInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::stop_crawler_schedule::StopCrawlerScheduleInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::stop_crawler_schedule::StopCrawlerScheduleInput {
             crawler_name: self.crawler_name,

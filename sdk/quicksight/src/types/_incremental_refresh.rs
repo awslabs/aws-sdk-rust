@@ -28,6 +28,7 @@ pub struct IncrementalRefreshBuilder {
 }
 impl IncrementalRefreshBuilder {
     /// <p>The lookback window setup for an incremental refresh configuration.</p>
+    /// This field is required.
     pub fn lookback_window(mut self, input: crate::types::LookbackWindow) -> Self {
         self.lookback_window = ::std::option::Option::Some(input);
         self

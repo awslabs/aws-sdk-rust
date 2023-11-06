@@ -2,7 +2,7 @@
 pub fn ser_put_record_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_record::PutRecordInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.record {
         let mut array_2 = object.key("Record").start_array();
         for item_3 in var_1 {

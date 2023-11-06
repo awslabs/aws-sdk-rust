@@ -48,6 +48,7 @@ pub struct UpdateSiteInputBuilder {
 }
 impl UpdateSiteInputBuilder {
     /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
+    /// This field is required.
     pub fn site_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.site_id = ::std::option::Option::Some(input.into());
         self
@@ -104,7 +105,7 @@ impl UpdateSiteInputBuilder {
         &self.notes
     }
     /// Consumes the builder and constructs a [`UpdateSiteInput`](crate::operation::update_site::UpdateSiteInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_site::UpdateSiteInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_site::UpdateSiteInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_site::UpdateSiteInput {
             site_id: self.site_id,
             name: self.name,

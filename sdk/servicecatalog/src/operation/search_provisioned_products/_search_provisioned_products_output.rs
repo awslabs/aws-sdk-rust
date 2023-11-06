@@ -13,8 +13,10 @@ pub struct SearchProvisionedProductsOutput {
 }
 impl SearchProvisionedProductsOutput {
     /// <p>Information about the provisioned products.</p>
-    pub fn provisioned_products(&self) -> ::std::option::Option<&[crate::types::ProvisionedProductAttribute]> {
-        self.provisioned_products.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provisioned_products.is_none()`.
+    pub fn provisioned_products(&self) -> &[crate::types::ProvisionedProductAttribute] {
+        self.provisioned_products.as_deref().unwrap_or_default()
     }
     /// <p>The number of provisioned products found.</p>
     pub fn total_results_count(&self) -> i32 {

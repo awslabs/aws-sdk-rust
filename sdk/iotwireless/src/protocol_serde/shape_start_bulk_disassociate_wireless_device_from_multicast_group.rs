@@ -31,8 +31,8 @@ pub fn de_start_bulk_disassociate_wireless_device_from_multicast_group_http_erro
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InternalServerException" => crate::operation::start_bulk_disassociate_wireless_device_from_multicast_group::StartBulkDisassociateWirelessDeviceFromMulticastGroupError::InternalServerException({
@@ -47,8 +47,8 @@ pub fn de_start_bulk_disassociate_wireless_device_from_multicast_group_http_erro
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::start_bulk_disassociate_wireless_device_from_multicast_group::StartBulkDisassociateWirelessDeviceFromMulticastGroupError::ResourceNotFoundException({
@@ -63,8 +63,8 @@ pub fn de_start_bulk_disassociate_wireless_device_from_multicast_group_http_erro
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ThrottlingException" => crate::operation::start_bulk_disassociate_wireless_device_from_multicast_group::StartBulkDisassociateWirelessDeviceFromMulticastGroupError::ThrottlingException({
@@ -79,8 +79,8 @@ pub fn de_start_bulk_disassociate_wireless_device_from_multicast_group_http_erro
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ValidationException" => crate::operation::start_bulk_disassociate_wireless_device_from_multicast_group::StartBulkDisassociateWirelessDeviceFromMulticastGroupError::ValidationException({
@@ -95,8 +95,8 @@ pub fn de_start_bulk_disassociate_wireless_device_from_multicast_group_http_erro
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::start_bulk_disassociate_wireless_device_from_multicast_group::StartBulkDisassociateWirelessDeviceFromMulticastGroupError::generic(generic)
@@ -122,10 +122,10 @@ pub fn de_start_bulk_disassociate_wireless_device_from_multicast_group_http_resp
 
 pub fn ser_start_bulk_disassociate_wireless_device_from_multicast_group_input(
     input: &crate::operation::start_bulk_disassociate_wireless_device_from_multicast_group::StartBulkDisassociateWirelessDeviceFromMulticastGroupInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_start_bulk_disassociate_wireless_device_from_multicast_group_input::ser_start_bulk_disassociate_wireless_device_from_multicast_group_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

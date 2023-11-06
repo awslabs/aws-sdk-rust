@@ -9,8 +9,10 @@ pub struct BatchDeleteDocumentOutput {
 }
 impl BatchDeleteDocumentOutput {
     /// <p>A list of documents that could not be removed from the index. Each entry contains an error message that indicates why the document couldn't be removed from the index.</p>
-    pub fn failed_documents(&self) -> ::std::option::Option<&[crate::types::BatchDeleteDocumentResponseFailedDocument]> {
-        self.failed_documents.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_documents.is_none()`.
+    pub fn failed_documents(&self) -> &[crate::types::BatchDeleteDocumentResponseFailedDocument] {
+        self.failed_documents.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchDeleteDocumentOutput {

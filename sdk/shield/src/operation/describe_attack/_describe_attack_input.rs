@@ -27,6 +27,7 @@ pub struct DescribeAttackInputBuilder {
 }
 impl DescribeAttackInputBuilder {
     /// <p>The unique identifier (ID) for the attack.</p>
+    /// This field is required.
     pub fn attack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attack_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeAttackInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAttackInput`](crate::operation::describe_attack::DescribeAttackInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_attack::DescribeAttackInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_attack::DescribeAttackInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_attack::DescribeAttackInput { attack_id: self.attack_id })
     }
 }

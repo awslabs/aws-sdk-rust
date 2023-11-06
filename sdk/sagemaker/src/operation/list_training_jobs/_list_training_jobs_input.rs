@@ -253,7 +253,7 @@ impl ListTrainingJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListTrainingJobsInput`](crate::operation::list_training_jobs::ListTrainingJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_training_jobs::ListTrainingJobsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_training_jobs::ListTrainingJobsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_training_jobs::ListTrainingJobsInput {
             next_token: self.next_token,
             max_results: self.max_results,

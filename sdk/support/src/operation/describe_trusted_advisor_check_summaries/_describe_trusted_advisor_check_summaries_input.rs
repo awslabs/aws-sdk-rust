@@ -8,8 +8,10 @@ pub struct DescribeTrustedAdvisorCheckSummariesInput {
 }
 impl DescribeTrustedAdvisorCheckSummariesInput {
     /// <p>The IDs of the Trusted Advisor checks.</p>
-    pub fn check_ids(&self) -> ::std::option::Option<&[::std::option::Option<::std::string::String>]> {
-        self.check_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.check_ids.is_none()`.
+    pub fn check_ids(&self) -> &[::std::option::Option<::std::string::String>] {
+        self.check_ids.as_deref().unwrap_or_default()
     }
 }
 impl DescribeTrustedAdvisorCheckSummariesInput {
@@ -51,7 +53,7 @@ impl DescribeTrustedAdvisorCheckSummariesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_trusted_advisor_check_summaries::DescribeTrustedAdvisorCheckSummariesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_trusted_advisor_check_summaries::DescribeTrustedAdvisorCheckSummariesInput { check_ids: self.check_ids },

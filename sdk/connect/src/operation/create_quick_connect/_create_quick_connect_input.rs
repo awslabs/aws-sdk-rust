@@ -55,6 +55,7 @@ pub struct CreateQuickConnectInputBuilder {
 }
 impl CreateQuickConnectInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl CreateQuickConnectInputBuilder {
         &self.instance_id
     }
     /// <p>A unique name of the quick connect.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +99,7 @@ impl CreateQuickConnectInputBuilder {
         &self.description
     }
     /// <p>Configuration settings for the quick connect.</p>
+    /// This field is required.
     pub fn quick_connect_config(mut self, input: crate::types::QuickConnectConfig) -> Self {
         self.quick_connect_config = ::std::option::Option::Some(input);
         self
@@ -133,7 +136,8 @@ impl CreateQuickConnectInputBuilder {
     /// Consumes the builder and constructs a [`CreateQuickConnectInput`](crate::operation::create_quick_connect::CreateQuickConnectInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_quick_connect::CreateQuickConnectInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_quick_connect::CreateQuickConnectInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_quick_connect::CreateQuickConnectInput {
             instance_id: self.instance_id,
             name: self.name,

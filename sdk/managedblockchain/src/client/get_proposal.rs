@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetProposal`](crate::operation::get_proposal::builders::GetProposalFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`network_id(impl Into<String>)`](crate::operation::get_proposal::builders::GetProposalFluentBuilder::network_id) / [`set_network_id(Option<String>)`](crate::operation::get_proposal::builders::GetProposalFluentBuilder::set_network_id): <p>The unique identifier of the network for which the proposal is made.</p>
-    ///   - [`proposal_id(impl Into<String>)`](crate::operation::get_proposal::builders::GetProposalFluentBuilder::proposal_id) / [`set_proposal_id(Option<String>)`](crate::operation::get_proposal::builders::GetProposalFluentBuilder::set_proposal_id): <p>The unique identifier of the proposal.</p>
+    ///   - [`network_id(impl Into<String>)`](crate::operation::get_proposal::builders::GetProposalFluentBuilder::network_id) / [`set_network_id(Option<String>)`](crate::operation::get_proposal::builders::GetProposalFluentBuilder::set_network_id):<br>required: **true**<br><p>The unique identifier of the network for which the proposal is made.</p><br>
+    ///   - [`proposal_id(impl Into<String>)`](crate::operation::get_proposal::builders::GetProposalFluentBuilder::proposal_id) / [`set_proposal_id(Option<String>)`](crate::operation::get_proposal::builders::GetProposalFluentBuilder::set_proposal_id):<br>required: **true**<br><p>The unique identifier of the proposal.</p><br>
     /// - On success, responds with [`GetProposalOutput`](crate::operation::get_proposal::GetProposalOutput) with field(s):
     ///   - [`proposal(Option<Proposal>)`](crate::operation::get_proposal::GetProposalOutput::proposal): <p>Information about a proposal.</p>
     /// - On failure, responds with [`SdkError<GetProposalError>`](crate::operation::get_proposal::GetProposalError)

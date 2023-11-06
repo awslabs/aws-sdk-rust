@@ -3,7 +3,7 @@
 pub fn ser_s3_object_tag(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::S3ObjectTag,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Key");
     if let Some(var_2) = &input.key {

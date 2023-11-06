@@ -9,8 +9,10 @@ pub struct TestResult {
 }
 impl TestResult {
     /// <p>Show each group of test results.</p>
-    pub fn groups(&self) -> ::std::option::Option<&[crate::types::GroupResult]> {
-        self.groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
+    pub fn groups(&self) -> &[crate::types::GroupResult] {
+        self.groups.as_deref().unwrap_or_default()
     }
 }
 impl TestResult {

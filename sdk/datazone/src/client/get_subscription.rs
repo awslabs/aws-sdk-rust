@@ -3,16 +3,16 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSubscription`](crate::operation::get_subscription::builders::GetSubscriptionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_identifier(impl Into<String>)`](crate::operation::get_subscription::builders::GetSubscriptionFluentBuilder::domain_identifier) / [`set_domain_identifier(Option<String>)`](crate::operation::get_subscription::builders::GetSubscriptionFluentBuilder::set_domain_identifier): <p>The ID of the Amazon DataZone domain in which the subscription exists.</p>
-    ///   - [`identifier(impl Into<String>)`](crate::operation::get_subscription::builders::GetSubscriptionFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::get_subscription::builders::GetSubscriptionFluentBuilder::set_identifier): <p>The ID of the subscription.</p>
+    ///   - [`domain_identifier(impl Into<String>)`](crate::operation::get_subscription::builders::GetSubscriptionFluentBuilder::domain_identifier) / [`set_domain_identifier(Option<String>)`](crate::operation::get_subscription::builders::GetSubscriptionFluentBuilder::set_domain_identifier):<br>required: **true**<br><p>The ID of the Amazon DataZone domain in which the subscription exists.</p><br>
+    ///   - [`identifier(impl Into<String>)`](crate::operation::get_subscription::builders::GetSubscriptionFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::get_subscription::builders::GetSubscriptionFluentBuilder::set_identifier):<br>required: **true**<br><p>The ID of the subscription.</p><br>
     /// - On success, responds with [`GetSubscriptionOutput`](crate::operation::get_subscription::GetSubscriptionOutput) with field(s):
-    ///   - [`id(Option<String>)`](crate::operation::get_subscription::GetSubscriptionOutput::id): <p>The ID of the subscription.</p>
-    ///   - [`created_by(Option<String>)`](crate::operation::get_subscription::GetSubscriptionOutput::created_by): <p>The Amazon DataZone user who created the subscription.</p>
+    ///   - [`id(String)`](crate::operation::get_subscription::GetSubscriptionOutput::id): <p>The ID of the subscription.</p>
+    ///   - [`created_by(String)`](crate::operation::get_subscription::GetSubscriptionOutput::created_by): <p>The Amazon DataZone user who created the subscription.</p>
     ///   - [`updated_by(Option<String>)`](crate::operation::get_subscription::GetSubscriptionOutput::updated_by): <p>The Amazon DataZone user who updated the subscription.</p>
-    ///   - [`domain_id(Option<String>)`](crate::operation::get_subscription::GetSubscriptionOutput::domain_id): <p>The ID of the Amazon DataZone domain in which the subscription exists.</p>
-    ///   - [`status(Option<SubscriptionStatus>)`](crate::operation::get_subscription::GetSubscriptionOutput::status): <p>The status of the subscription.</p>
-    ///   - [`created_at(Option<DateTime>)`](crate::operation::get_subscription::GetSubscriptionOutput::created_at): <p>The timestamp of when the subscription was created.</p>
-    ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_subscription::GetSubscriptionOutput::updated_at): <p>The timestamp of when the subscription was updated.</p>
+    ///   - [`domain_id(String)`](crate::operation::get_subscription::GetSubscriptionOutput::domain_id): <p>The ID of the Amazon DataZone domain in which the subscription exists.</p>
+    ///   - [`status(SubscriptionStatus)`](crate::operation::get_subscription::GetSubscriptionOutput::status): <p>The status of the subscription.</p>
+    ///   - [`created_at(DateTime)`](crate::operation::get_subscription::GetSubscriptionOutput::created_at): <p>The timestamp of when the subscription was created.</p>
+    ///   - [`updated_at(DateTime)`](crate::operation::get_subscription::GetSubscriptionOutput::updated_at): <p>The timestamp of when the subscription was updated.</p>
     ///   - [`subscribed_principal(Option<SubscribedPrincipal>)`](crate::operation::get_subscription::GetSubscriptionOutput::subscribed_principal): <p>The principal that owns the subscription.</p>
     ///   - [`subscribed_listing(Option<SubscribedListing>)`](crate::operation::get_subscription::GetSubscriptionOutput::subscribed_listing): <p></p>
     ///   - [`subscription_request_id(Option<String>)`](crate::operation::get_subscription::GetSubscriptionOutput::subscription_request_id): <p>The ID of the subscription request.</p>

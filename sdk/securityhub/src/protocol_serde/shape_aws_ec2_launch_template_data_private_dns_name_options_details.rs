@@ -2,7 +2,7 @@
 pub fn ser_aws_ec2_launch_template_data_private_dns_name_options_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.enable_resource_name_dns_aaaa_record {
         object.key("EnableResourceNameDnsAAAARecord").boolean(*var_1);
     }

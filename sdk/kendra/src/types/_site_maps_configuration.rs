@@ -7,13 +7,14 @@
 pub struct SiteMapsConfiguration {
     /// <p>The list of sitemap URLs of the websites you want to crawl.</p>
     /// <p>The list can include a maximum of three sitemap URLs.</p>
-    pub site_maps: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub site_maps: ::std::vec::Vec<::std::string::String>,
 }
 impl SiteMapsConfiguration {
     /// <p>The list of sitemap URLs of the websites you want to crawl.</p>
     /// <p>The list can include a maximum of three sitemap URLs.</p>
-    pub fn site_maps(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.site_maps.as_deref()
+    pub fn site_maps(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.site_maps.deref()
     }
 }
 impl SiteMapsConfiguration {
@@ -54,7 +55,16 @@ impl SiteMapsConfigurationBuilder {
         &self.site_maps
     }
     /// Consumes the builder and constructs a [`SiteMapsConfiguration`](crate::types::SiteMapsConfiguration).
-    pub fn build(self) -> crate::types::SiteMapsConfiguration {
-        crate::types::SiteMapsConfiguration { site_maps: self.site_maps }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`site_maps`](crate::types::builders::SiteMapsConfigurationBuilder::site_maps)
+    pub fn build(self) -> ::std::result::Result<crate::types::SiteMapsConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SiteMapsConfiguration {
+            site_maps: self.site_maps.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "site_maps",
+                    "site_maps was not specified but it is required when building SiteMapsConfiguration",
+                )
+            })?,
+        })
     }
 }

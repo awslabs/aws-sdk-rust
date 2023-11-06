@@ -18,8 +18,10 @@ impl AddTagsToCertificateInput {
         self.certificate_arn.as_deref()
     }
     /// <p>The key-value pair that defines the tag. The tag value is optional.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl AddTagsToCertificateInput {
@@ -40,6 +42,7 @@ impl AddTagsToCertificateInputBuilder {
     /// <p>String that contains the ARN of the ACM certificate to which the tag is to be applied. This must be of the form:</p>
     /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
+    /// This field is required.
     pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_arn = ::std::option::Option::Some(input.into());
         self
@@ -80,7 +83,7 @@ impl AddTagsToCertificateInputBuilder {
     /// Consumes the builder and constructs a [`AddTagsToCertificateInput`](crate::operation::add_tags_to_certificate::AddTagsToCertificateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::add_tags_to_certificate::AddTagsToCertificateInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::add_tags_to_certificate::AddTagsToCertificateInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::add_tags_to_certificate::AddTagsToCertificateInput {
             certificate_arn: self.certificate_arn,

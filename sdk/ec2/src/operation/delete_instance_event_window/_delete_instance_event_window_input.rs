@@ -69,6 +69,7 @@ impl DeleteInstanceEventWindowInputBuilder {
         &self.force_delete
     }
     /// <p>The ID of the event window.</p>
+    /// This field is required.
     pub fn instance_event_window_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_event_window_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl DeleteInstanceEventWindowInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_instance_event_window::DeleteInstanceEventWindowInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_instance_event_window::DeleteInstanceEventWindowInput {
             dry_run: self.dry_run,

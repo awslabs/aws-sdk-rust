@@ -20,8 +20,10 @@ impl BatchCreateRoomMembershipInput {
         self.room_id.as_deref()
     }
     /// <p>The list of membership items.</p>
-    pub fn membership_item_list(&self) -> ::std::option::Option<&[crate::types::MembershipItem]> {
-        self.membership_item_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.membership_item_list.is_none()`.
+    pub fn membership_item_list(&self) -> &[crate::types::MembershipItem] {
+        self.membership_item_list.as_deref().unwrap_or_default()
     }
 }
 impl BatchCreateRoomMembershipInput {
@@ -41,6 +43,7 @@ pub struct BatchCreateRoomMembershipInputBuilder {
 }
 impl BatchCreateRoomMembershipInputBuilder {
     /// <p>The Amazon Chime account ID.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl BatchCreateRoomMembershipInputBuilder {
         &self.account_id
     }
     /// <p>The room ID.</p>
+    /// This field is required.
     pub fn room_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.room_id = ::std::option::Option::Some(input.into());
         self
@@ -93,7 +97,7 @@ impl BatchCreateRoomMembershipInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_create_room_membership::BatchCreateRoomMembershipInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_create_room_membership::BatchCreateRoomMembershipInput {
             account_id: self.account_id,

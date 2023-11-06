@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FunctionUrlConfig {
     /// <p>The HTTP URL endpoint for your function.</p>
-    pub function_url: ::std::option::Option<::std::string::String>,
+    pub function_url: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of your function.</p>
-    pub function_arn: ::std::option::Option<::std::string::String>,
+    pub function_arn: ::std::string::String,
     /// <p>When the function URL was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    pub creation_time: ::std::option::Option<::std::string::String>,
+    pub creation_time: ::std::string::String,
     /// <p>When the function URL configuration was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    pub last_modified_time: ::std::option::Option<::std::string::String>,
+    pub last_modified_time: ::std::string::String,
     /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
     pub cors: ::std::option::Option<crate::types::Cors>,
     /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
-    pub auth_type: ::std::option::Option<crate::types::FunctionUrlAuthType>,
+    pub auth_type: crate::types::FunctionUrlAuthType,
     /// <p>Use one of the following options:</p>
     /// <ul>
     /// <li> <p> <code>BUFFERED</code> – This is the default option. Lambda invokes your function using the <code>Invoke</code> API operation. Invocation results are available when the payload is complete. The maximum payload size is 6 MB.</p> </li>
@@ -25,28 +25,32 @@ pub struct FunctionUrlConfig {
 }
 impl FunctionUrlConfig {
     /// <p>The HTTP URL endpoint for your function.</p>
-    pub fn function_url(&self) -> ::std::option::Option<&str> {
-        self.function_url.as_deref()
+    pub fn function_url(&self) -> &str {
+        use std::ops::Deref;
+        self.function_url.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of your function.</p>
-    pub fn function_arn(&self) -> ::std::option::Option<&str> {
-        self.function_arn.as_deref()
+    pub fn function_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.function_arn.deref()
     }
     /// <p>When the function URL was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&str> {
-        self.creation_time.as_deref()
+    pub fn creation_time(&self) -> &str {
+        use std::ops::Deref;
+        self.creation_time.deref()
     }
     /// <p>When the function URL configuration was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&str> {
-        self.last_modified_time.as_deref()
+    pub fn last_modified_time(&self) -> &str {
+        use std::ops::Deref;
+        self.last_modified_time.deref()
     }
     /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
     pub fn cors(&self) -> ::std::option::Option<&crate::types::Cors> {
         self.cors.as_ref()
     }
     /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
-    pub fn auth_type(&self) -> ::std::option::Option<&crate::types::FunctionUrlAuthType> {
-        self.auth_type.as_ref()
+    pub fn auth_type(&self) -> &crate::types::FunctionUrlAuthType {
+        &self.auth_type
     }
     /// <p>Use one of the following options:</p>
     /// <ul>
@@ -78,6 +82,7 @@ pub struct FunctionUrlConfigBuilder {
 }
 impl FunctionUrlConfigBuilder {
     /// <p>The HTTP URL endpoint for your function.</p>
+    /// This field is required.
     pub fn function_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_url = ::std::option::Option::Some(input.into());
         self
@@ -92,6 +97,7 @@ impl FunctionUrlConfigBuilder {
         &self.function_url
     }
     /// <p>The Amazon Resource Name (ARN) of your function.</p>
+    /// This field is required.
     pub fn function_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_arn = ::std::option::Option::Some(input.into());
         self
@@ -106,6 +112,7 @@ impl FunctionUrlConfigBuilder {
         &self.function_arn
     }
     /// <p>When the function URL was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_time = ::std::option::Option::Some(input.into());
         self
@@ -120,6 +127,7 @@ impl FunctionUrlConfigBuilder {
         &self.creation_time
     }
     /// <p>When the function URL configuration was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+    /// This field is required.
     pub fn last_modified_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input.into());
         self
@@ -148,6 +156,7 @@ impl FunctionUrlConfigBuilder {
         &self.cors
     }
     /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
+    /// This field is required.
     pub fn auth_type(mut self, input: crate::types::FunctionUrlAuthType) -> Self {
         self.auth_type = ::std::option::Option::Some(input);
         self
@@ -188,15 +197,46 @@ impl FunctionUrlConfigBuilder {
         &self.invoke_mode
     }
     /// Consumes the builder and constructs a [`FunctionUrlConfig`](crate::types::FunctionUrlConfig).
-    pub fn build(self) -> crate::types::FunctionUrlConfig {
-        crate::types::FunctionUrlConfig {
-            function_url: self.function_url,
-            function_arn: self.function_arn,
-            creation_time: self.creation_time,
-            last_modified_time: self.last_modified_time,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`function_url`](crate::types::builders::FunctionUrlConfigBuilder::function_url)
+    /// - [`function_arn`](crate::types::builders::FunctionUrlConfigBuilder::function_arn)
+    /// - [`creation_time`](crate::types::builders::FunctionUrlConfigBuilder::creation_time)
+    /// - [`last_modified_time`](crate::types::builders::FunctionUrlConfigBuilder::last_modified_time)
+    /// - [`auth_type`](crate::types::builders::FunctionUrlConfigBuilder::auth_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::FunctionUrlConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::FunctionUrlConfig {
+            function_url: self.function_url.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "function_url",
+                    "function_url was not specified but it is required when building FunctionUrlConfig",
+                )
+            })?,
+            function_arn: self.function_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "function_arn",
+                    "function_arn was not specified but it is required when building FunctionUrlConfig",
+                )
+            })?,
+            creation_time: self.creation_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "creation_time",
+                    "creation_time was not specified but it is required when building FunctionUrlConfig",
+                )
+            })?,
+            last_modified_time: self.last_modified_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "last_modified_time",
+                    "last_modified_time was not specified but it is required when building FunctionUrlConfig",
+                )
+            })?,
             cors: self.cors,
-            auth_type: self.auth_type,
+            auth_type: self.auth_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "auth_type",
+                    "auth_type was not specified but it is required when building FunctionUrlConfig",
+                )
+            })?,
             invoke_mode: self.invoke_mode,
-        }
+        })
     }
 }

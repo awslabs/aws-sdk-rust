@@ -69,6 +69,8 @@ pub(crate) mod shape_send_api_asset;
 
 pub(crate) mod shape_send_api_asset_input;
 
+pub(crate) mod shape_send_data_set_notification;
+
 pub(crate) mod shape_start_job;
 
 pub(crate) mod shape_tag_resource;
@@ -111,6 +113,8 @@ pub(crate) mod shape_revoke_revision_input;
 
 pub(crate) mod shape_send_api_asset_output;
 
+pub(crate) mod shape_send_data_set_notification_input;
+
 pub(crate) mod shape_service_limit_exceeded_exception;
 
 pub(crate) mod shape_tag_resource_input;
@@ -145,14 +149,17 @@ pub(crate) mod shape_list_of_job_error;
 
 pub(crate) mod shape_list_of_revision_entry;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape_map_of__string;
+pub(crate) mod shape_map_of_string;
+
+pub(crate) mod shape_notification_details;
 
 pub(crate) mod shape_origin_details;
 
 pub(crate) mod shape_request_details;
 
 pub(crate) mod shape_response_details;
+
+pub(crate) mod shape_scope_details;
 
 pub(crate) mod shape_api_gateway_api_asset;
 
@@ -165,6 +172,10 @@ pub(crate) mod shape_create_s3_data_access_from_s3_bucket_request_details;
 pub(crate) mod shape_create_s3_data_access_from_s3_bucket_response_details;
 
 pub(crate) mod shape_data_set_entry;
+
+pub(crate) mod shape_data_update_request_details;
+
+pub(crate) mod shape_deprecation_request_details;
 
 pub(crate) mod shape_event_action_entry;
 
@@ -206,7 +217,11 @@ pub(crate) mod shape_job_error;
 
 pub(crate) mod shape_lake_formation_data_permission_asset;
 
+pub(crate) mod shape_lake_formation_tag_policy_details;
+
 pub(crate) mod shape_redshift_data_share_asset;
+
+pub(crate) mod shape_redshift_data_share_details;
 
 pub(crate) mod shape_revision_entry;
 
@@ -214,7 +229,11 @@ pub(crate) mod shape_revision_published;
 
 pub(crate) mod shape_s3_data_access_asset;
 
+pub(crate) mod shape_s3_data_access_details;
+
 pub(crate) mod shape_s3_snapshot_asset;
+
+pub(crate) mod shape_schema_change_request_details;
 
 pub(crate) mod shape_asset_destination_entry;
 
@@ -230,9 +249,6 @@ pub(crate) mod shape_export_server_side_encryption;
 
 pub(crate) mod shape_lake_formation_data_permission_details;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape_list_of__string;
-
 pub(crate) mod shape_list_of_asset_destination_entry;
 
 pub(crate) mod shape_list_of_asset_source_entry;
@@ -245,11 +261,15 @@ pub(crate) mod shape_list_of_redshift_data_share_asset_source_entry;
 
 pub(crate) mod shape_list_of_revision_destination_entry;
 
+pub(crate) mod shape_list_of_string;
+
 pub(crate) mod shape_redshift_data_share_asset_source_entry;
 
 pub(crate) mod shape_revision_destination_entry;
 
 pub(crate) mod shape_s3_data_access_asset_source_entry;
+
+pub(crate) mod shape_schema_change_details;
 
 pub(crate) mod shape_table_lf_tag_policy_and_permissions;
 

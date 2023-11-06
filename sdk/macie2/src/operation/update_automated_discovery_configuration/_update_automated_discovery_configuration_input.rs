@@ -30,6 +30,7 @@ pub struct UpdateAutomatedDiscoveryConfigurationInputBuilder {
 impl UpdateAutomatedDiscoveryConfigurationInputBuilder {
     /// <p>The new status of automated sensitive data discovery for the account. Valid values are: ENABLED, start or resume automated sensitive data discovery activities for the account; and, DISABLED, stop performing automated sensitive data discovery activities for the account.</p>
     /// <p>When you enable automated sensitive data discovery for the first time, Amazon Macie uses default configuration settings to determine which data sources to analyze and which managed data identifiers to use. To change these settings, use the UpdateClassificationScope and UpdateSensitivityInspectionTemplate operations, respectively. If you change the settings and subsequently disable the configuration, Amazon Macie retains your changes.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::AutomatedDiscoveryStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -50,7 +51,7 @@ impl UpdateAutomatedDiscoveryConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_automated_discovery_configuration::UpdateAutomatedDiscoveryConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_automated_discovery_configuration::UpdateAutomatedDiscoveryConfigurationInput { status: self.status },

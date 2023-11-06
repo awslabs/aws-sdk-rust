@@ -6,10 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicyXssProtection {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>X-XSS-Protection</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
-    pub r#override: ::std::option::Option<bool>,
+    pub r#override: bool,
     /// <p>A Boolean that determines the value of the <code>X-XSS-Protection</code> HTTP response header. When this setting is <code>true</code>, the value of the <code>X-XSS-Protection</code> header is <code>1</code>. When this setting is <code>false</code>, the value of the <code>X-XSS-Protection</code> header is <code>0</code>.</p>
     /// <p>For more information about these settings, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a> in the MDN Web Docs.</p>
-    pub protection: ::std::option::Option<bool>,
+    pub protection: bool,
     /// <p>A Boolean that determines whether CloudFront includes the <code>mode=block</code> directive in the <code>X-XSS-Protection</code> header.</p>
     /// <p>For more information about this directive, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a> in the MDN Web Docs.</p>
     pub mode_block: ::std::option::Option<bool>,
@@ -20,12 +20,12 @@ pub struct ResponseHeadersPolicyXssProtection {
 }
 impl ResponseHeadersPolicyXssProtection {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>X-XSS-Protection</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
-    pub fn r#override(&self) -> ::std::option::Option<bool> {
+    pub fn r#override(&self) -> bool {
         self.r#override
     }
     /// <p>A Boolean that determines the value of the <code>X-XSS-Protection</code> HTTP response header. When this setting is <code>true</code>, the value of the <code>X-XSS-Protection</code> header is <code>1</code>. When this setting is <code>false</code>, the value of the <code>X-XSS-Protection</code> header is <code>0</code>.</p>
     /// <p>For more information about these settings, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a> in the MDN Web Docs.</p>
-    pub fn protection(&self) -> ::std::option::Option<bool> {
+    pub fn protection(&self) -> bool {
         self.protection
     }
     /// <p>A Boolean that determines whether CloudFront includes the <code>mode=block</code> directive in the <code>X-XSS-Protection</code> header.</p>
@@ -58,6 +58,7 @@ pub struct ResponseHeadersPolicyXssProtectionBuilder {
 }
 impl ResponseHeadersPolicyXssProtectionBuilder {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>X-XSS-Protection</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
+    /// This field is required.
     pub fn r#override(mut self, input: bool) -> Self {
         self.r#override = ::std::option::Option::Some(input);
         self
@@ -73,6 +74,7 @@ impl ResponseHeadersPolicyXssProtectionBuilder {
     }
     /// <p>A Boolean that determines the value of the <code>X-XSS-Protection</code> HTTP response header. When this setting is <code>true</code>, the value of the <code>X-XSS-Protection</code> header is <code>1</code>. When this setting is <code>false</code>, the value of the <code>X-XSS-Protection</code> header is <code>0</code>.</p>
     /// <p>For more information about these settings, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a> in the MDN Web Docs.</p>
+    /// This field is required.
     pub fn protection(mut self, input: bool) -> Self {
         self.protection = ::std::option::Option::Some(input);
         self
@@ -126,12 +128,25 @@ impl ResponseHeadersPolicyXssProtectionBuilder {
         &self.report_uri
     }
     /// Consumes the builder and constructs a [`ResponseHeadersPolicyXssProtection`](crate::types::ResponseHeadersPolicyXssProtection).
-    pub fn build(self) -> crate::types::ResponseHeadersPolicyXssProtection {
-        crate::types::ResponseHeadersPolicyXssProtection {
-            r#override: self.r#override,
-            protection: self.protection,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#override`](crate::types::builders::ResponseHeadersPolicyXssProtectionBuilder::r#override)
+    /// - [`protection`](crate::types::builders::ResponseHeadersPolicyXssProtectionBuilder::protection)
+    pub fn build(self) -> ::std::result::Result<crate::types::ResponseHeadersPolicyXssProtection, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ResponseHeadersPolicyXssProtection {
+            r#override: self.r#override.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#override",
+                    "r#override was not specified but it is required when building ResponseHeadersPolicyXssProtection",
+                )
+            })?,
+            protection: self.protection.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "protection",
+                    "protection was not specified but it is required when building ResponseHeadersPolicyXssProtection",
+                )
+            })?,
             mode_block: self.mode_block,
             report_uri: self.report_uri,
-        }
+        })
     }
 }

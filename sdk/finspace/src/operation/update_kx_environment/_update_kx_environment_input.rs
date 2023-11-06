@@ -48,6 +48,7 @@ pub struct UpdateKxEnvironmentInputBuilder {
 }
 impl UpdateKxEnvironmentInputBuilder {
     /// <p>A unique identifier for the kdb environment.</p>
+    /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,7 @@ impl UpdateKxEnvironmentInputBuilder {
     /// Consumes the builder and constructs a [`UpdateKxEnvironmentInput`](crate::operation::update_kx_environment::UpdateKxEnvironmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_kx_environment::UpdateKxEnvironmentInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_kx_environment::UpdateKxEnvironmentInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_kx_environment::UpdateKxEnvironmentInput {
             environment_id: self.environment_id,

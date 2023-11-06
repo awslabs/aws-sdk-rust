@@ -27,6 +27,7 @@ pub struct DeleteNotebookInputBuilder {
 }
 impl DeleteNotebookInputBuilder {
     /// <p>The ID of the notebook to delete.</p>
+    /// This field is required.
     pub fn notebook_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteNotebookInputBuilder {
     /// Consumes the builder and constructs a [`DeleteNotebookInput`](crate::operation::delete_notebook::DeleteNotebookInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_notebook::DeleteNotebookInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_notebook::DeleteNotebookInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_notebook::DeleteNotebookInput {
             notebook_id: self.notebook_id,
         })

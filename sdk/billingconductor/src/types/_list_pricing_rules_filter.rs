@@ -9,8 +9,10 @@ pub struct ListPricingRulesFilter {
 }
 impl ListPricingRulesFilter {
     /// <p>A list containing the pricing rule Amazon Resource Names (ARNs) to include in the API response.</p>
-    pub fn arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.arns.is_none()`.
+    pub fn arns(&self) -> &[::std::string::String] {
+        self.arns.as_deref().unwrap_or_default()
     }
 }
 impl ListPricingRulesFilter {

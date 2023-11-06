@@ -34,6 +34,7 @@ pub struct DeleteVpcConnectorOutputBuilder {
 }
 impl DeleteVpcConnectorOutputBuilder {
     /// <p>A description of the App Runner VPC connector that this request just deleted.</p>
+    /// This field is required.
     pub fn vpc_connector(mut self, input: crate::types::VpcConnector) -> Self {
         self.vpc_connector = ::std::option::Option::Some(input);
         self

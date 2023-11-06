@@ -42,6 +42,7 @@ pub struct VerifyOtpMessageRequestParametersBuilder {
 }
 impl VerifyOtpMessageRequestParametersBuilder {
     /// <p>The destination identity to send OTP to.</p>
+    /// This field is required.
     pub fn destination_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_identity = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl VerifyOtpMessageRequestParametersBuilder {
         &self.destination_identity
     }
     /// <p>The OTP the end user provided for verification.</p>
+    /// This field is required.
     pub fn otp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.otp = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl VerifyOtpMessageRequestParametersBuilder {
         &self.otp
     }
     /// <p>The reference identifier provided when the OTP was previously sent.</p>
+    /// This field is required.
     pub fn reference_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reference_id = ::std::option::Option::Some(input.into());
         self

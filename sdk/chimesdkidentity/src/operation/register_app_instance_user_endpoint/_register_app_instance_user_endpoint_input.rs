@@ -94,6 +94,7 @@ pub struct RegisterAppInstanceUserEndpointInputBuilder {
 }
 impl RegisterAppInstanceUserEndpointInputBuilder {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    /// This field is required.
     pub fn app_instance_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_user_arn = ::std::option::Option::Some(input.into());
         self
@@ -128,6 +129,7 @@ impl RegisterAppInstanceUserEndpointInputBuilder {
     /// <li> <p> <code>GCM</code>: The mobile notification service for an Android device.</p> </li>
     /// </ul>
     /// <p>Populate the <code>ResourceArn</code> value of each type as <code>PinpointAppArn</code>.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::AppInstanceUserEndpointType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -154,6 +156,7 @@ impl RegisterAppInstanceUserEndpointInputBuilder {
         &self.r#type
     }
     /// <p>The ARN of the resource to which the endpoint belongs.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -168,6 +171,7 @@ impl RegisterAppInstanceUserEndpointInputBuilder {
         &self.resource_arn
     }
     /// <p>The attributes of an <code>Endpoint</code>.</p>
+    /// This field is required.
     pub fn endpoint_attributes(mut self, input: crate::types::EndpointAttributes) -> Self {
         self.endpoint_attributes = ::std::option::Option::Some(input);
         self
@@ -182,6 +186,7 @@ impl RegisterAppInstanceUserEndpointInputBuilder {
         &self.endpoint_attributes
     }
     /// <p>The unique ID assigned to the request. Use different tokens to register other endpoints.</p>
+    /// This field is required.
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
@@ -214,7 +219,7 @@ impl RegisterAppInstanceUserEndpointInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointInput {

@@ -93,8 +93,10 @@ impl CreateApplicationInput {
         self.worker_type_specifications.as_ref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a> specifications to use when creating an application. Each configuration consists of a classification and properties. This configuration is applied to all the job runs submitted under the application.</p>
-    pub fn runtime_configuration(&self) -> ::std::option::Option<&[crate::types::Configuration]> {
-        self.runtime_configuration.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.runtime_configuration.is_none()`.
+    pub fn runtime_configuration(&self) -> &[crate::types::Configuration] {
+        self.runtime_configuration.as_deref().unwrap_or_default()
     }
     /// <p>The configuration setting for monitoring.</p>
     pub fn monitoring_configuration(&self) -> ::std::option::Option<&crate::types::MonitoringConfiguration> {
@@ -145,6 +147,7 @@ impl CreateApplicationInputBuilder {
         &self.name
     }
     /// <p>The Amazon EMR release associated with the application.</p>
+    /// This field is required.
     pub fn release_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.release_label = ::std::option::Option::Some(input.into());
         self
@@ -159,6 +162,7 @@ impl CreateApplicationInputBuilder {
         &self.release_label
     }
     /// <p>The type of application you want to start, such as Spark or Hive.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
@@ -173,6 +177,7 @@ impl CreateApplicationInputBuilder {
         &self.r#type
     }
     /// <p>The client idempotency token of the application to create. Its value must be unique for each request.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -381,7 +386,7 @@ impl CreateApplicationInputBuilder {
     /// Consumes the builder and constructs a [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_application::CreateApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_application::CreateApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_application::CreateApplicationInput {
             name: self.name,
             release_label: self.release_label,

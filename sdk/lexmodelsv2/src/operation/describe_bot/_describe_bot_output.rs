@@ -71,12 +71,16 @@ impl DescribeBotOutput {
         self.bot_type.as_ref()
     }
     /// <p>The list of bots in the network that was described.</p>
-    pub fn bot_members(&self) -> ::std::option::Option<&[crate::types::BotMember]> {
-        self.bot_members.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bot_members.is_none()`.
+    pub fn bot_members(&self) -> &[crate::types::BotMember] {
+        self.bot_members.as_deref().unwrap_or_default()
     }
     /// <p>If the <code>botStatus</code> is <code>Failed</code>, this contains a list of reasons that the bot couldn't be built.</p>
-    pub fn failure_reasons(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.failure_reasons.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failure_reasons.is_none()`.
+    pub fn failure_reasons(&self) -> &[::std::string::String] {
+        self.failure_reasons.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeBotOutput {

@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutRecordOutput {
     /// <p>The shard ID of the shard where the data record was placed.</p>
-    pub shard_id: ::std::option::Option<::std::string::String>,
+    pub shard_id: ::std::string::String,
     /// <p>The sequence number identifier that was assigned to the put data record. The sequence number for the record is unique across all records in the stream. A sequence number is the identifier associated with every record put into the stream.</p>
-    pub sequence_number: ::std::option::Option<::std::string::String>,
+    pub sequence_number: ::std::string::String,
     /// <p>The encryption type to use on the record. This parameter can be one of the following values:</p>
     /// <ul>
     /// <li> <p> <code>NONE</code>: Do not encrypt the records in the stream.</p> </li>
@@ -18,12 +18,14 @@ pub struct PutRecordOutput {
 }
 impl PutRecordOutput {
     /// <p>The shard ID of the shard where the data record was placed.</p>
-    pub fn shard_id(&self) -> ::std::option::Option<&str> {
-        self.shard_id.as_deref()
+    pub fn shard_id(&self) -> &str {
+        use std::ops::Deref;
+        self.shard_id.deref()
     }
     /// <p>The sequence number identifier that was assigned to the put data record. The sequence number for the record is unique across all records in the stream. A sequence number is the identifier associated with every record put into the stream.</p>
-    pub fn sequence_number(&self) -> ::std::option::Option<&str> {
-        self.sequence_number.as_deref()
+    pub fn sequence_number(&self) -> &str {
+        use std::ops::Deref;
+        self.sequence_number.deref()
     }
     /// <p>The encryption type to use on the record. This parameter can be one of the following values:</p>
     /// <ul>
@@ -57,6 +59,7 @@ pub struct PutRecordOutputBuilder {
 }
 impl PutRecordOutputBuilder {
     /// <p>The shard ID of the shard where the data record was placed.</p>
+    /// This field is required.
     pub fn shard_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shard_id = ::std::option::Option::Some(input.into());
         self
@@ -71,6 +74,7 @@ impl PutRecordOutputBuilder {
         &self.shard_id
     }
     /// <p>The sequence number identifier that was assigned to the put data record. The sequence number for the record is unique across all records in the stream. A sequence number is the identifier associated with every record put into the stream.</p>
+    /// This field is required.
     pub fn sequence_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_number = ::std::option::Option::Some(input.into());
         self
@@ -120,12 +124,25 @@ impl PutRecordOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutRecordOutput`](crate::operation::put_record::PutRecordOutput).
-    pub fn build(self) -> crate::operation::put_record::PutRecordOutput {
-        crate::operation::put_record::PutRecordOutput {
-            shard_id: self.shard_id,
-            sequence_number: self.sequence_number,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`shard_id`](crate::operation::put_record::builders::PutRecordOutputBuilder::shard_id)
+    /// - [`sequence_number`](crate::operation::put_record::builders::PutRecordOutputBuilder::sequence_number)
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_record::PutRecordOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::put_record::PutRecordOutput {
+            shard_id: self.shard_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "shard_id",
+                    "shard_id was not specified but it is required when building PutRecordOutput",
+                )
+            })?,
+            sequence_number: self.sequence_number.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "sequence_number",
+                    "sequence_number was not specified but it is required when building PutRecordOutput",
+                )
+            })?,
             encryption_type: self.encryption_type,
             _request_id: self._request_id,
-        }
+        })
     }
 }

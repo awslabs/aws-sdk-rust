@@ -15,8 +15,10 @@ pub struct ExecuteStatementOutput {
 }
 impl ExecuteStatementOutput {
     /// <p>If a read operation was used, this property will contain the result of the read operation; a map of attribute names and their values. For the write operations this value will be empty.</p>
-    pub fn items(&self) -> ::std::option::Option<&[::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>] {
+        self.items.as_deref().unwrap_or_default()
     }
     /// <p>If the response of a read request exceeds the response payload limit DynamoDB will set this value in the response. If set, you can use that this value in the subsequent request to get the remaining results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

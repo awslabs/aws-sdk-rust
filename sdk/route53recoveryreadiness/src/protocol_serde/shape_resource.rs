@@ -2,7 +2,7 @@
 pub fn ser_resource(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Resource,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.component_id {
         object.key("componentId").string(var_1.as_str());
     }
@@ -54,7 +54,7 @@ where
                                 builder.set_dns_target_resource(crate::protocol_serde::shape_dns_target_resource::de_dns_target_resource(tokens)?);
                         }
                         "readinessScopes" => {
-                            builder = builder.set_readiness_scopes(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                            builder = builder.set_readiness_scopes(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         "resourceArn" => {
                             builder = builder.set_resource_arn(

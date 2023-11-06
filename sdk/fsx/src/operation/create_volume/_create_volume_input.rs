@@ -34,8 +34,10 @@ impl CreateVolumeInput {
         self.ontap_configuration.as_ref()
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the configuration to use when creating the OpenZFS volume.</p>
     pub fn open_zfs_configuration(&self) -> ::std::option::Option<&crate::types::CreateOpenZfsVolumeConfiguration> {
@@ -76,6 +78,7 @@ impl CreateVolumeInputBuilder {
         &self.client_request_token
     }
     /// <p>Specifies the type of volume to create; <code>ONTAP</code> and <code>OPENZFS</code> are the only valid volume types.</p>
+    /// This field is required.
     pub fn volume_type(mut self, input: crate::types::VolumeType) -> Self {
         self.volume_type = ::std::option::Option::Some(input);
         self
@@ -90,6 +93,7 @@ impl CreateVolumeInputBuilder {
         &self.volume_type
     }
     /// <p>Specifies the name of the volume that you're creating.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -152,7 +156,9 @@ impl CreateVolumeInputBuilder {
         &self.open_zfs_configuration
     }
     /// Consumes the builder and constructs a [`CreateVolumeInput`](crate::operation::create_volume::CreateVolumeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_volume::CreateVolumeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_volume::CreateVolumeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_volume::CreateVolumeInput {
             client_request_token: self.client_request_token,
             volume_type: self.volume_type,

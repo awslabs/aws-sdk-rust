@@ -5,21 +5,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuditEvent {
     /// <p>The original event ID from the source event.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The content of an audit event that comes from the event, such as <code>userIdentity</code>, <code>userAgent</code>, and <code>eventSource</code>.</p>
-    pub event_data: ::std::option::Option<::std::string::String>,
+    pub event_data: ::std::string::String,
     /// <p>A checksum is a base64-SHA256 algorithm that helps you verify that CloudTrail receives the event that matches with the checksum. Calculate the checksum by running a command like the following:</p>
     /// <p> <code>printf %s <i>$eventdata</i> | openssl dgst -binary -sha256 | base64</code> </p>
     pub event_data_checksum: ::std::option::Option<::std::string::String>,
 }
 impl AuditEvent {
     /// <p>The original event ID from the source event.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The content of an audit event that comes from the event, such as <code>userIdentity</code>, <code>userAgent</code>, and <code>eventSource</code>.</p>
-    pub fn event_data(&self) -> ::std::option::Option<&str> {
-        self.event_data.as_deref()
+    pub fn event_data(&self) -> &str {
+        use std::ops::Deref;
+        self.event_data.deref()
     }
     /// <p>A checksum is a base64-SHA256 algorithm that helps you verify that CloudTrail receives the event that matches with the checksum. Calculate the checksum by running a command like the following:</p>
     /// <p> <code>printf %s <i>$eventdata</i> | openssl dgst -binary -sha256 | base64</code> </p>
@@ -44,6 +46,7 @@ pub struct AuditEventBuilder {
 }
 impl AuditEventBuilder {
     /// <p>The original event ID from the source event.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -58,6 +61,7 @@ impl AuditEventBuilder {
         &self.id
     }
     /// <p>The content of an audit event that comes from the event, such as <code>userIdentity</code>, <code>userAgent</code>, and <code>eventSource</code>.</p>
+    /// This field is required.
     pub fn event_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_data = ::std::option::Option::Some(input.into());
         self
@@ -89,11 +93,24 @@ impl AuditEventBuilder {
         &self.event_data_checksum
     }
     /// Consumes the builder and constructs a [`AuditEvent`](crate::types::AuditEvent).
-    pub fn build(self) -> crate::types::AuditEvent {
-        crate::types::AuditEvent {
-            id: self.id,
-            event_data: self.event_data,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::AuditEventBuilder::id)
+    /// - [`event_data`](crate::types::builders::AuditEventBuilder::event_data)
+    pub fn build(self) -> ::std::result::Result<crate::types::AuditEvent, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AuditEvent {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building AuditEvent",
+                )
+            })?,
+            event_data: self.event_data.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "event_data",
+                    "event_data was not specified but it is required when building AuditEvent",
+                )
+            })?,
             event_data_checksum: self.event_data_checksum,
-        }
+        })
     }
 }

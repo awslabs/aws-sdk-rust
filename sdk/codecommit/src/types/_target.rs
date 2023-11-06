@@ -5,20 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Target {
     /// <p>The name of the repository that contains the pull request.</p>
-    pub repository_name: ::std::option::Option<::std::string::String>,
+    pub repository_name: ::std::string::String,
     /// <p>The branch of the repository that contains the changes for the pull request. Also known as the source branch.</p>
-    pub source_reference: ::std::option::Option<::std::string::String>,
+    pub source_reference: ::std::string::String,
     /// <p>The branch of the repository where the pull request changes are merged. Also known as the destination branch.</p>
     pub destination_reference: ::std::option::Option<::std::string::String>,
 }
 impl Target {
     /// <p>The name of the repository that contains the pull request.</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
-        self.repository_name.as_deref()
+    pub fn repository_name(&self) -> &str {
+        use std::ops::Deref;
+        self.repository_name.deref()
     }
     /// <p>The branch of the repository that contains the changes for the pull request. Also known as the source branch.</p>
-    pub fn source_reference(&self) -> ::std::option::Option<&str> {
-        self.source_reference.as_deref()
+    pub fn source_reference(&self) -> &str {
+        use std::ops::Deref;
+        self.source_reference.deref()
     }
     /// <p>The branch of the repository where the pull request changes are merged. Also known as the destination branch.</p>
     pub fn destination_reference(&self) -> ::std::option::Option<&str> {
@@ -42,6 +44,7 @@ pub struct TargetBuilder {
 }
 impl TargetBuilder {
     /// <p>The name of the repository that contains the pull request.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl TargetBuilder {
         &self.repository_name
     }
     /// <p>The branch of the repository that contains the changes for the pull request. Also known as the source branch.</p>
+    /// This field is required.
     pub fn source_reference(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_reference = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +88,24 @@ impl TargetBuilder {
         &self.destination_reference
     }
     /// Consumes the builder and constructs a [`Target`](crate::types::Target).
-    pub fn build(self) -> crate::types::Target {
-        crate::types::Target {
-            repository_name: self.repository_name,
-            source_reference: self.source_reference,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`repository_name`](crate::types::builders::TargetBuilder::repository_name)
+    /// - [`source_reference`](crate::types::builders::TargetBuilder::source_reference)
+    pub fn build(self) -> ::std::result::Result<crate::types::Target, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Target {
+            repository_name: self.repository_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "repository_name",
+                    "repository_name was not specified but it is required when building Target",
+                )
+            })?,
+            source_reference: self.source_reference.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "source_reference",
+                    "source_reference was not specified but it is required when building Target",
+                )
+            })?,
             destination_reference: self.destination_reference,
-        }
+        })
     }
 }

@@ -2,7 +2,7 @@
 pub fn ser_conditions(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Conditions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.string_equals {
         let mut array_2 = object.key("StringEquals").start_array();
         for item_3 in var_1 {

@@ -2,7 +2,7 @@
 pub fn ser_custom_delivery_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CustomDeliveryConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.delivery_uri {
         object.key("DeliveryUri").string(var_1.as_str());
     }
@@ -42,7 +42,7 @@ where
                         }
                         "EndpointTypes" => {
                             builder = builder.set_endpoint_types(
-                                crate::protocol_serde::shape_list_of__endpoint_types_element::de_list_of__endpoint_types_element(tokens)?,
+                                crate::protocol_serde::shape_list_of_endpoint_types_element::de_list_of_endpoint_types_element(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -55,7 +55,7 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::custom_delivery_configuration_correct_errors(builder).build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

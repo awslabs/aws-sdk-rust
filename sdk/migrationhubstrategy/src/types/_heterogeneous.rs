@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Heterogeneous {
     /// <p> The target database engine for heterogeneous database migration preference. </p>
-    pub target_database_engine: ::std::option::Option<::std::vec::Vec<crate::types::HeterogeneousTargetDatabaseEngine>>,
+    pub target_database_engine: ::std::vec::Vec<crate::types::HeterogeneousTargetDatabaseEngine>,
 }
 impl Heterogeneous {
     /// <p> The target database engine for heterogeneous database migration preference. </p>
-    pub fn target_database_engine(&self) -> ::std::option::Option<&[crate::types::HeterogeneousTargetDatabaseEngine]> {
-        self.target_database_engine.as_deref()
+    pub fn target_database_engine(&self) -> &[crate::types::HeterogeneousTargetDatabaseEngine] {
+        use std::ops::Deref;
+        self.target_database_engine.deref()
     }
 }
 impl Heterogeneous {
@@ -51,9 +52,16 @@ impl HeterogeneousBuilder {
         &self.target_database_engine
     }
     /// Consumes the builder and constructs a [`Heterogeneous`](crate::types::Heterogeneous).
-    pub fn build(self) -> crate::types::Heterogeneous {
-        crate::types::Heterogeneous {
-            target_database_engine: self.target_database_engine,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`target_database_engine`](crate::types::builders::HeterogeneousBuilder::target_database_engine)
+    pub fn build(self) -> ::std::result::Result<crate::types::Heterogeneous, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Heterogeneous {
+            target_database_engine: self.target_database_engine.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "target_database_engine",
+                    "target_database_engine was not specified but it is required when building Heterogeneous",
+                )
+            })?,
+        })
     }
 }

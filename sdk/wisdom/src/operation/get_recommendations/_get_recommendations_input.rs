@@ -10,7 +10,7 @@ pub struct GetRecommendationsInput {
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The duration (in seconds) for which the call waits for a recommendation to be made available before returning. If a recommendation is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the call returns successfully with an empty list.</p>
-    pub wait_time_seconds: i32,
+    pub wait_time_seconds: ::std::option::Option<i32>,
 }
 impl GetRecommendationsInput {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -26,7 +26,7 @@ impl GetRecommendationsInput {
         self.max_results
     }
     /// <p>The duration (in seconds) for which the call waits for a recommendation to be made available before returning. If a recommendation is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the call returns successfully with an empty list.</p>
-    pub fn wait_time_seconds(&self) -> i32 {
+    pub fn wait_time_seconds(&self) -> ::std::option::Option<i32> {
         self.wait_time_seconds
     }
 }
@@ -48,6 +48,7 @@ pub struct GetRecommendationsInputBuilder {
 }
 impl GetRecommendationsInputBuilder {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// This field is required.
     pub fn assistant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assistant_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl GetRecommendationsInputBuilder {
         &self.assistant_id
     }
     /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// This field is required.
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
         self
@@ -106,12 +108,12 @@ impl GetRecommendationsInputBuilder {
     /// Consumes the builder and constructs a [`GetRecommendationsInput`](crate::operation::get_recommendations::GetRecommendationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_recommendations::GetRecommendationsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_recommendations::GetRecommendationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_recommendations::GetRecommendationsInput {
             assistant_id: self.assistant_id,
             session_id: self.session_id,
             max_results: self.max_results,
-            wait_time_seconds: self.wait_time_seconds.unwrap_or_default(),
+            wait_time_seconds: self.wait_time_seconds,
         })
     }
 }

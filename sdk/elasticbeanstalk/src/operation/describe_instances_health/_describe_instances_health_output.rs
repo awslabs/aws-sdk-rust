@@ -18,8 +18,10 @@ impl DescribeInstancesHealthOutput {
     /// <p>Detailed health information about each instance.</p>
     /// <p>The output differs slightly between Linux and Windows environments. There is a difference in the members that are supported under the <code>
     /// <cpuutilization></cpuutilization></code> type.</p>
-    pub fn instance_health_list(&self) -> ::std::option::Option<&[crate::types::SingleInstanceHealth]> {
-        self.instance_health_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_health_list.is_none()`.
+    pub fn instance_health_list(&self) -> &[crate::types::SingleInstanceHealth] {
+        self.instance_health_list.as_deref().unwrap_or_default()
     }
     /// <p>The date and time that the health information was retrieved.</p>
     pub fn refreshed_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

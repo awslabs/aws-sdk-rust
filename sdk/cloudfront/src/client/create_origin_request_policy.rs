@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateOriginRequestPolicy`](crate::operation::create_origin_request_policy::builders::CreateOriginRequestPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`origin_request_policy_config(OriginRequestPolicyConfig)`](crate::operation::create_origin_request_policy::builders::CreateOriginRequestPolicyFluentBuilder::origin_request_policy_config) / [`set_origin_request_policy_config(Option<OriginRequestPolicyConfig>)`](crate::operation::create_origin_request_policy::builders::CreateOriginRequestPolicyFluentBuilder::set_origin_request_policy_config): <p>An origin request policy configuration.</p>
+    ///   - [`origin_request_policy_config(OriginRequestPolicyConfig)`](crate::operation::create_origin_request_policy::builders::CreateOriginRequestPolicyFluentBuilder::origin_request_policy_config) / [`set_origin_request_policy_config(Option<OriginRequestPolicyConfig>)`](crate::operation::create_origin_request_policy::builders::CreateOriginRequestPolicyFluentBuilder::set_origin_request_policy_config):<br>required: **true**<br><p>An origin request policy configuration.</p><br>
     /// - On success, responds with [`CreateOriginRequestPolicyOutput`](crate::operation::create_origin_request_policy::CreateOriginRequestPolicyOutput) with field(s):
     ///   - [`origin_request_policy(Option<OriginRequestPolicy>)`](crate::operation::create_origin_request_policy::CreateOriginRequestPolicyOutput::origin_request_policy): <p>An origin request policy.</p>
     ///   - [`location(Option<String>)`](crate::operation::create_origin_request_policy::CreateOriginRequestPolicyOutput::location): <p>The fully qualified URI of the origin request policy just created.</p>

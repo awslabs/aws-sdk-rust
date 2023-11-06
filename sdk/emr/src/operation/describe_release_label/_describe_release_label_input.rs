@@ -85,7 +85,7 @@ impl DescribeReleaseLabelInputBuilder {
     /// Consumes the builder and constructs a [`DescribeReleaseLabelInput`](crate::operation::describe_release_label::DescribeReleaseLabelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_release_label::DescribeReleaseLabelInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_release_label::DescribeReleaseLabelInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_release_label::DescribeReleaseLabelInput {
             release_label: self.release_label,

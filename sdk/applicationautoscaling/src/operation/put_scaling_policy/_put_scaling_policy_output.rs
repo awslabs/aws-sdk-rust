@@ -4,19 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutScalingPolicyOutput {
     /// <p>The Amazon Resource Name (ARN) of the resulting scaling policy.</p>
-    pub policy_arn: ::std::option::Option<::std::string::String>,
+    pub policy_arn: ::std::string::String,
     /// <p>The CloudWatch alarms created for the target tracking scaling policy.</p>
     pub alarms: ::std::option::Option<::std::vec::Vec<crate::types::Alarm>>,
     _request_id: Option<String>,
 }
 impl PutScalingPolicyOutput {
     /// <p>The Amazon Resource Name (ARN) of the resulting scaling policy.</p>
-    pub fn policy_arn(&self) -> ::std::option::Option<&str> {
-        self.policy_arn.as_deref()
+    pub fn policy_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.policy_arn.deref()
     }
     /// <p>The CloudWatch alarms created for the target tracking scaling policy.</p>
-    pub fn alarms(&self) -> ::std::option::Option<&[crate::types::Alarm]> {
-        self.alarms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alarms.is_none()`.
+    pub fn alarms(&self) -> &[crate::types::Alarm] {
+        self.alarms.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for PutScalingPolicyOutput {
@@ -41,6 +44,7 @@ pub struct PutScalingPolicyOutputBuilder {
 }
 impl PutScalingPolicyOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the resulting scaling policy.</p>
+    /// This field is required.
     pub fn policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_arn = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +88,20 @@ impl PutScalingPolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutScalingPolicyOutput`](crate::operation::put_scaling_policy::PutScalingPolicyOutput).
-    pub fn build(self) -> crate::operation::put_scaling_policy::PutScalingPolicyOutput {
-        crate::operation::put_scaling_policy::PutScalingPolicyOutput {
-            policy_arn: self.policy_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`policy_arn`](crate::operation::put_scaling_policy::builders::PutScalingPolicyOutputBuilder::policy_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::put_scaling_policy::PutScalingPolicyOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::put_scaling_policy::PutScalingPolicyOutput {
+            policy_arn: self.policy_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "policy_arn",
+                    "policy_arn was not specified but it is required when building PutScalingPolicyOutput",
+                )
+            })?,
             alarms: self.alarms,
             _request_id: self._request_id,
-        }
+        })
     }
 }

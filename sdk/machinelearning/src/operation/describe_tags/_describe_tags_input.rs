@@ -34,6 +34,7 @@ pub struct DescribeTagsInputBuilder {
 }
 impl DescribeTagsInputBuilder {
     /// <p>The ID of the ML object. For example, <code>exampleModelId</code>. </p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeTagsInputBuilder {
         &self.resource_id
     }
     /// <p>The type of the ML object.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: crate::types::TaggableResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
@@ -62,7 +64,9 @@ impl DescribeTagsInputBuilder {
         &self.resource_type
     }
     /// Consumes the builder and constructs a [`DescribeTagsInput`](crate::operation::describe_tags::DescribeTagsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_tags::DescribeTagsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_tags::DescribeTagsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_tags::DescribeTagsInput {
             resource_id: self.resource_id,
             resource_type: self.resource_type,

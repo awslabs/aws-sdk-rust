@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetApi`](crate::operation::get_api::builders::GetApiFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`api_id(impl Into<String>)`](crate::operation::get_api::builders::GetApiFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::get_api::builders::GetApiFluentBuilder::set_api_id): <p>The API identifier.</p>
+    ///   - [`api_id(impl Into<String>)`](crate::operation::get_api::builders::GetApiFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::get_api::builders::GetApiFluentBuilder::set_api_id):<br>required: **true**<br><p>The API identifier.</p><br>
     /// - On success, responds with [`GetApiOutput`](crate::operation::get_api::GetApiOutput) with field(s):
     ///   - [`api_endpoint(Option<String>)`](crate::operation::get_api::GetApiOutput::api_endpoint): <p>The URI of the API, of the form {api-id}.execute-api.{region}.amazonaws.com. The stage name is typically appended to this URI to form a complete path to a deployed API stage.</p>
     ///   - [`api_gateway_managed(Option<bool>)`](crate::operation::get_api::GetApiOutput::api_gateway_managed): <p>Specifies whether an API is managed by API Gateway. You can't update or delete a managed API by using API Gateway. A managed API can be deleted only through the tooling or service that created it.</p>
@@ -14,13 +14,13 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::get_api::GetApiOutput::description): <p>The description of the API.</p>
     ///   - [`disable_schema_validation(Option<bool>)`](crate::operation::get_api::GetApiOutput::disable_schema_validation): <p>Avoid validating models when creating a deployment. Supported only for WebSocket APIs.</p>
     ///   - [`disable_execute_api_endpoint(Option<bool>)`](crate::operation::get_api::GetApiOutput::disable_execute_api_endpoint): <p>Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
-    ///   - [`import_info(Option<Vec<String>>)`](crate::operation::get_api::GetApiOutput::import_info): <p>The validation information during API import. This may include particular properties of your OpenAPI definition which are ignored during import. Supported only for HTTP APIs.</p>
+    ///   - [`import_info(Option<Vec::<String>>)`](crate::operation::get_api::GetApiOutput::import_info): <p>The validation information during API import. This may include particular properties of your OpenAPI definition which are ignored during import. Supported only for HTTP APIs.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_api::GetApiOutput::name): <p>The name of the API.</p>
     ///   - [`protocol_type(Option<ProtocolType>)`](crate::operation::get_api::GetApiOutput::protocol_type): <p>The API protocol.</p>
     ///   - [`route_selection_expression(Option<String>)`](crate::operation::get_api::GetApiOutput::route_selection_expression): <p>The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method} ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket APIs.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_api::GetApiOutput::tags): <p>A collection of tags associated with the API.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_api::GetApiOutput::tags): <p>A collection of tags associated with the API.</p>
     ///   - [`version(Option<String>)`](crate::operation::get_api::GetApiOutput::version): <p>A version identifier for the API.</p>
-    ///   - [`warnings(Option<Vec<String>>)`](crate::operation::get_api::GetApiOutput::warnings): <p>The warning messages reported when failonwarnings is turned on during API import.</p>
+    ///   - [`warnings(Option<Vec::<String>>)`](crate::operation::get_api::GetApiOutput::warnings): <p>The warning messages reported when failonwarnings is turned on during API import.</p>
     /// - On failure, responds with [`SdkError<GetApiError>`](crate::operation::get_api::GetApiError)
     pub fn get_api(&self) -> crate::operation::get_api::builders::GetApiFluentBuilder {
         crate::operation::get_api::builders::GetApiFluentBuilder::new(self.handle.clone())

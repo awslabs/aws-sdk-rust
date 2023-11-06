@@ -48,6 +48,7 @@ impl EnableVpcClassicLinkInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the VPC.</p>
+    /// This field is required.
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl EnableVpcClassicLinkInputBuilder {
     /// Consumes the builder and constructs a [`EnableVpcClassicLinkInput`](crate::operation::enable_vpc_classic_link::EnableVpcClassicLinkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::enable_vpc_classic_link::EnableVpcClassicLinkInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::enable_vpc_classic_link::EnableVpcClassicLinkInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::enable_vpc_classic_link::EnableVpcClassicLinkInput {
             dry_run: self.dry_run,

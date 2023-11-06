@@ -12,8 +12,10 @@ pub struct InvalidSignalsException {
 }
 impl InvalidSignalsException {
     /// <p>The signals which caused the exception.</p>
-    pub fn invalid_signals(&self) -> ::std::option::Option<&[crate::types::InvalidSignal]> {
-        self.invalid_signals.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.invalid_signals.is_none()`.
+    pub fn invalid_signals(&self) -> &[crate::types::InvalidSignal] {
+        self.invalid_signals.as_deref().unwrap_or_default()
     }
 }
 impl InvalidSignalsException {

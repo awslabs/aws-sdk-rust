@@ -45,7 +45,7 @@ impl DisassociateDeviceFromRoomInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_device_from_room::DisassociateDeviceFromRoomInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_device_from_room::DisassociateDeviceFromRoomInput { device_arn: self.device_arn })
     }

@@ -39,7 +39,7 @@ pub struct DescribeTaskOutput {
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
     pub includes: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
-    /// <p>The configuration of your task report. For more information, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/datasync/latest/userguide/creating-task-reports.html">Creating a task report</a>.</p>
+    /// <p>The configuration of your task report. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Creating a task report</a>.</p>
     pub task_report_config: ::std::option::Option<crate::types::TaskReportConfig>,
     _request_id: Option<String>,
 }
@@ -75,12 +75,16 @@ impl DescribeTaskOutput {
         self.cloud_watch_log_group_arn.as_deref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the network interfaces created for your source location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network interface requirements</a>.</p>
-    pub fn source_network_interface_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.source_network_interface_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_network_interface_arns.is_none()`.
+    pub fn source_network_interface_arns(&self) -> &[::std::string::String] {
+        self.source_network_interface_arns.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Names (ARNs) of the network interfaces created for your destination location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network interface requirements</a>.</p>
-    pub fn destination_network_interface_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.destination_network_interface_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destination_network_interface_arns.is_none()`.
+    pub fn destination_network_interface_arns(&self) -> &[::std::string::String] {
+        self.destination_network_interface_arns.as_deref().unwrap_or_default()
     }
     /// <p>The configuration options that control the behavior of the <code>StartTaskExecution</code> operation. Some options include preserving file or object metadata and verifying data integrity.</p>
     /// <p>You can override these options for each task execution. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
@@ -88,8 +92,10 @@ impl DescribeTaskOutput {
         self.options.as_ref()
     }
     /// <p>A list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    pub fn excludes(&self) -> ::std::option::Option<&[crate::types::FilterRule]> {
-        self.excludes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.excludes.is_none()`.
+    pub fn excludes(&self) -> &[crate::types::FilterRule] {
+        self.excludes.as_deref().unwrap_or_default()
     }
     /// <p>The schedule used to periodically transfer files from a source to a destination location.</p>
     pub fn schedule(&self) -> ::std::option::Option<&crate::types::TaskSchedule> {
@@ -108,10 +114,12 @@ impl DescribeTaskOutput {
         self.creation_time.as_ref()
     }
     /// <p>A list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    pub fn includes(&self) -> ::std::option::Option<&[crate::types::FilterRule]> {
-        self.includes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.includes.is_none()`.
+    pub fn includes(&self) -> &[crate::types::FilterRule] {
+        self.includes.as_deref().unwrap_or_default()
     }
-    /// <p>The configuration of your task report. For more information, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/datasync/latest/userguide/creating-task-reports.html">Creating a task report</a>.</p>
+    /// <p>The configuration of your task report. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Creating a task report</a>.</p>
     pub fn task_report_config(&self) -> ::std::option::Option<&crate::types::TaskReportConfig> {
         self.task_report_config.as_ref()
     }
@@ -409,17 +417,17 @@ impl DescribeTaskOutputBuilder {
     pub fn get_includes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
         &self.includes
     }
-    /// <p>The configuration of your task report. For more information, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/datasync/latest/userguide/creating-task-reports.html">Creating a task report</a>.</p>
+    /// <p>The configuration of your task report. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Creating a task report</a>.</p>
     pub fn task_report_config(mut self, input: crate::types::TaskReportConfig) -> Self {
         self.task_report_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration of your task report. For more information, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/datasync/latest/userguide/creating-task-reports.html">Creating a task report</a>.</p>
+    /// <p>The configuration of your task report. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Creating a task report</a>.</p>
     pub fn set_task_report_config(mut self, input: ::std::option::Option<crate::types::TaskReportConfig>) -> Self {
         self.task_report_config = input;
         self
     }
-    /// <p>The configuration of your task report. For more information, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/datasync/latest/userguide/creating-task-reports.html">Creating a task report</a>.</p>
+    /// <p>The configuration of your task report. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Creating a task report</a>.</p>
     pub fn get_task_report_config(&self) -> &::std::option::Option<crate::types::TaskReportConfig> {
         &self.task_report_config
     }

@@ -57,6 +57,7 @@ pub struct PostAgentProfileInputBuilder {
 }
 impl PostAgentProfileInputBuilder {
     /// <p> The name of the profiling group with the aggregated profile that receives the submitted profiling data. </p>
+    /// This field is required.
     pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profiling_group_name = ::std::option::Option::Some(input.into());
         self
@@ -71,6 +72,7 @@ impl PostAgentProfileInputBuilder {
         &self.profiling_group_name
     }
     /// <p> The submitted profiling data. </p>
+    /// This field is required.
     pub fn agent_profile(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.agent_profile = ::std::option::Option::Some(input);
         self
@@ -103,6 +105,7 @@ impl PostAgentProfileInputBuilder {
     /// <li> <p> <code>application/json</code> — standard JSON format </p> </li>
     /// <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
         self
@@ -127,7 +130,7 @@ impl PostAgentProfileInputBuilder {
     /// Consumes the builder and constructs a [`PostAgentProfileInput`](crate::operation::post_agent_profile::PostAgentProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::post_agent_profile::PostAgentProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::post_agent_profile::PostAgentProfileInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::post_agent_profile::PostAgentProfileInput {
             profiling_group_name: self.profiling_group_name,
             agent_profile: self.agent_profile,

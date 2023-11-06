@@ -27,6 +27,7 @@ pub struct GetChannelsInputBuilder {
 }
 impl GetChannelsInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetChannelsInputBuilder {
         &self.application_id
     }
     /// Consumes the builder and constructs a [`GetChannelsInput`](crate::operation::get_channels::GetChannelsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_channels::GetChannelsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_channels::GetChannelsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_channels::GetChannelsInput {
             application_id: self.application_id,
         })

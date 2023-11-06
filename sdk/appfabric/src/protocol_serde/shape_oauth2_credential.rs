@@ -2,12 +2,12 @@
 pub fn ser_oauth2_credential(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Oauth2Credential,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.client_id {
-        object.key("clientId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("clientId").string(input.client_id.as_str());
     }
-    if let Some(var_2) = &input.client_secret {
-        object.key("clientSecret").string(var_2.as_str());
+    {
+        object.key("clientSecret").string(input.client_secret.as_str());
     }
     Ok(())
 }

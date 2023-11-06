@@ -154,12 +154,12 @@ pub fn de_set_default_authorizer_http_response(
 
 pub fn ser_set_default_authorizer_input(
     input: &crate::operation::set_default_authorizer::SetDefaultAuthorizerInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_set_default_authorizer_input::ser_set_default_authorizer_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_set_default_authorizer(

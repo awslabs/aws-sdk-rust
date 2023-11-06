@@ -2,7 +2,7 @@
 pub fn ser_tree_map_field_wells(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TreeMapFieldWells,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.tree_map_aggregated_field_wells {
         #[allow(unused_mut)]
         let mut object_2 = object.key("TreeMapAggregatedFieldWells").start_object();

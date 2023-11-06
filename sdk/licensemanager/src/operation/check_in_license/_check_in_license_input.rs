@@ -34,6 +34,7 @@ pub struct CheckInLicenseInputBuilder {
 }
 impl CheckInLicenseInputBuilder {
     /// <p>License consumption token.</p>
+    /// This field is required.
     pub fn license_consumption_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_consumption_token = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl CheckInLicenseInputBuilder {
     /// Consumes the builder and constructs a [`CheckInLicenseInput`](crate::operation::check_in_license::CheckInLicenseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::check_in_license::CheckInLicenseInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::check_in_license::CheckInLicenseInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::check_in_license::CheckInLicenseInput {
             license_consumption_token: self.license_consumption_token,
             beneficiary: self.beneficiary,

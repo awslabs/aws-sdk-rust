@@ -33,8 +33,10 @@ impl SelfManagedActiveDirectoryAttributes {
         self.user_name.as_deref()
     }
     /// <p>A list of up to three IP addresses of DNS servers or domain controllers in the self-managed AD directory.</p>
-    pub fn dns_ips(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.dns_ips.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dns_ips.is_none()`.
+    pub fn dns_ips(&self) -> &[::std::string::String] {
+        self.dns_ips.as_deref().unwrap_or_default()
     }
 }
 impl SelfManagedActiveDirectoryAttributes {

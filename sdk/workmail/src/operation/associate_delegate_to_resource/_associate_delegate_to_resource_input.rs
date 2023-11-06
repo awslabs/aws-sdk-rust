@@ -65,6 +65,7 @@ pub struct AssociateDelegateToResourceInputBuilder {
 }
 impl AssociateDelegateToResourceInputBuilder {
     /// <p>The organization under which the resource exists.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -85,6 +86,7 @@ impl AssociateDelegateToResourceInputBuilder {
     /// <li> <p>Email address: resource@domain.tld</p> </li>
     /// <li> <p>Resource name: resource</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -117,6 +119,7 @@ impl AssociateDelegateToResourceInputBuilder {
     /// <li> <p>Email address: entity@domain.tld</p> </li>
     /// <li> <p>Entity: entity</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
         self
@@ -147,7 +150,7 @@ impl AssociateDelegateToResourceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceInput {
             organization_id: self.organization_id,

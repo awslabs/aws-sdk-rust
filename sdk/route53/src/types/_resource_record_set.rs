@@ -17,7 +17,7 @@ pub struct ResourceRecordSet {
     /// </important> </li>
     /// </ul>
     /// <p>You can use the * wildcard as the leftmost label in a domain name, for example, <code>*.example.com</code>. You can't use an * for one of the middle labels, for example, <code>marketing.*.example.com</code>. In addition, the * must replace the entire label; for example, you can't specify <code>prod*.example.com</code>.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The DNS record type. For information about different record types and how data is encoded for them, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>DS</code> |<code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p>
     /// <p>Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency, geolocation, or failover resource record sets, specify the same value for all of the resource record sets in the group.</p>
@@ -36,7 +36,7 @@ pub struct ResourceRecordSet {
     /// <p>If you're creating an alias record that has the same name as the hosted zone (known as the zone apex), you can't route traffic to a record for which the value of <code>Type</code> is <code>CNAME</code>. This is because the alias record must have the same type as the record you're routing traffic to, and creating a CNAME record for the zone apex isn't supported even for an alias record.</p>
     /// </note> </li>
     /// </ul>
-    pub r#type: ::std::option::Option<crate::types::RrType>,
+    pub r#type: crate::types::RrType,
     /// <p> <i>Resource record sets that have a routing policy other than simple:</i> An identifier that differentiates among multiple resource record sets that have the same combination of name and type, such as multiple weighted resource record sets named acme.example.com that have a type of A. In a group of resource record sets that have the same name and type, the value of <code>SetIdentifier</code> must be unique for each resource record set. </p>
     /// <p>For information about routing policies, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     pub set_identifier: ::std::option::Option<::std::string::String>,
@@ -181,8 +181,9 @@ impl ResourceRecordSet {
     /// </important> </li>
     /// </ul>
     /// <p>You can use the * wildcard as the leftmost label in a domain name, for example, <code>*.example.com</code>. You can't use an * for one of the middle labels, for example, <code>marketing.*.example.com</code>. In addition, the * must replace the entire label; for example, you can't specify <code>prod*.example.com</code>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The DNS record type. For information about different record types and how data is encoded for them, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>DS</code> |<code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p>
@@ -202,8 +203,8 @@ impl ResourceRecordSet {
     /// <p>If you're creating an alias record that has the same name as the hosted zone (known as the zone apex), you can't route traffic to a record for which the value of <code>Type</code> is <code>CNAME</code>. This is because the alias record must have the same type as the record you're routing traffic to, and creating a CNAME record for the zone apex isn't supported even for an alias record.</p>
     /// </note> </li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::RrType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::RrType {
+        &self.r#type
     }
     /// <p> <i>Resource record sets that have a routing policy other than simple:</i> An identifier that differentiates among multiple resource record sets that have the same combination of name and type, such as multiple weighted resource record sets named acme.example.com that have a type of A. In a group of resource record sets that have the same name and type, the value of <code>SetIdentifier</code> must be unique for each resource record set. </p>
     /// <p>For information about routing policies, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
@@ -289,8 +290,10 @@ impl ResourceRecordSet {
     /// <p>Information about the resource records to act upon.</p> <note>
     /// <p>If you're creating an alias resource record set, omit <code>ResourceRecords</code>.</p>
     /// </note>
-    pub fn resource_records(&self) -> ::std::option::Option<&[crate::types::ResourceRecord]> {
-        self.resource_records.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_records.is_none()`.
+    pub fn resource_records(&self) -> &[crate::types::ResourceRecord] {
+        self.resource_records.as_deref().unwrap_or_default()
     }
     /// <p> <i>Alias resource record sets only:</i> Information about the Amazon Web Services resource, such as a CloudFront distribution or an Amazon S3 bucket, that you want to route traffic to. </p>
     /// <p>If you're creating resource records sets for a private hosted zone, note the following:</p>
@@ -399,6 +402,7 @@ impl ResourceRecordSetBuilder {
     /// </important> </li>
     /// </ul>
     /// <p>You can use the * wildcard as the leftmost label in a domain name, for example, <code>*.example.com</code>. You can't use an * for one of the middle labels, for example, <code>marketing.*.example.com</code>. In addition, the * must replace the entire label; for example, you can't specify <code>prod*.example.com</code>.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -454,6 +458,7 @@ impl ResourceRecordSetBuilder {
     /// <p>If you're creating an alias record that has the same name as the hosted zone (known as the zone apex), you can't route traffic to a record for which the value of <code>Type</code> is <code>CNAME</code>. This is because the alias record must have the same type as the record you're routing traffic to, and creating a CNAME record for the zone apex isn't supported even for an alias record.</p>
     /// </note> </li>
     /// </ul>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::RrType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -991,10 +996,23 @@ impl ResourceRecordSetBuilder {
         &self.cidr_routing_config
     }
     /// Consumes the builder and constructs a [`ResourceRecordSet`](crate::types::ResourceRecordSet).
-    pub fn build(self) -> crate::types::ResourceRecordSet {
-        crate::types::ResourceRecordSet {
-            name: self.name,
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::ResourceRecordSetBuilder::name)
+    /// - [`r#type`](crate::types::builders::ResourceRecordSetBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::ResourceRecordSet, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ResourceRecordSet {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ResourceRecordSet",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building ResourceRecordSet",
+                )
+            })?,
             set_identifier: self.set_identifier,
             weight: self.weight,
             region: self.region,
@@ -1007,6 +1025,6 @@ impl ResourceRecordSetBuilder {
             health_check_id: self.health_check_id,
             traffic_policy_instance_id: self.traffic_policy_instance_id,
             cidr_routing_config: self.cidr_routing_config,
-        }
+        })
     }
 }

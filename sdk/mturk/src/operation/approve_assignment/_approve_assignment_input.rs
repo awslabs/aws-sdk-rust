@@ -41,6 +41,7 @@ pub struct ApproveAssignmentInputBuilder {
 }
 impl ApproveAssignmentInputBuilder {
     /// <p> The ID of the assignment. The assignment must correspond to a HIT created by the Requester. </p>
+    /// This field is required.
     pub fn assignment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assignment_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl ApproveAssignmentInputBuilder {
     /// Consumes the builder and constructs a [`ApproveAssignmentInput`](crate::operation::approve_assignment::ApproveAssignmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::approve_assignment::ApproveAssignmentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::approve_assignment::ApproveAssignmentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::approve_assignment::ApproveAssignmentInput {
             assignment_id: self.assignment_id,
             requester_feedback: self.requester_feedback,

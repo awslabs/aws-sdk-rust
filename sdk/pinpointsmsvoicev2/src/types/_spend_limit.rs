@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SpendLimit {
     /// <p>The name for the SpendLimit.</p>
-    pub name: ::std::option::Option<crate::types::SpendLimitName>,
+    pub name: crate::types::SpendLimitName,
     /// <p>The maximum amount of money, in US dollars, that you want to be able to spend sending messages each month. This value has to be less than or equal to the amount in <code>MaxLimit</code>. To use this custom limit, <code>Overridden</code> must be set to true.</p>
     pub enforced_limit: i64,
     /// <p> The maximum amount of money that you are able to spend to send messages each month, in US dollars.</p>
@@ -15,8 +15,8 @@ pub struct SpendLimit {
 }
 impl SpendLimit {
     /// <p>The name for the SpendLimit.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::SpendLimitName> {
-        self.name.as_ref()
+    pub fn name(&self) -> &crate::types::SpendLimitName {
+        &self.name
     }
     /// <p>The maximum amount of money, in US dollars, that you want to be able to spend sending messages each month. This value has to be less than or equal to the amount in <code>MaxLimit</code>. To use this custom limit, <code>Overridden</code> must be set to true.</p>
     pub fn enforced_limit(&self) -> i64 {
@@ -49,6 +49,7 @@ pub struct SpendLimitBuilder {
 }
 impl SpendLimitBuilder {
     /// <p>The name for the SpendLimit.</p>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::SpendLimitName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -63,6 +64,7 @@ impl SpendLimitBuilder {
         &self.name
     }
     /// <p>The maximum amount of money, in US dollars, that you want to be able to spend sending messages each month. This value has to be less than or equal to the amount in <code>MaxLimit</code>. To use this custom limit, <code>Overridden</code> must be set to true.</p>
+    /// This field is required.
     pub fn enforced_limit(mut self, input: i64) -> Self {
         self.enforced_limit = ::std::option::Option::Some(input);
         self
@@ -77,6 +79,7 @@ impl SpendLimitBuilder {
         &self.enforced_limit
     }
     /// <p> The maximum amount of money that you are able to spend to send messages each month, in US dollars.</p>
+    /// This field is required.
     pub fn max_limit(mut self, input: i64) -> Self {
         self.max_limit = ::std::option::Option::Some(input);
         self
@@ -91,6 +94,7 @@ impl SpendLimitBuilder {
         &self.max_limit
     }
     /// <p>When set to <code>True</code>, the value that has been specified in the <code>EnforcedLimit</code> is used to determine the maximum amount in US dollars that can be spent to send messages each month, in US dollars.</p>
+    /// This field is required.
     pub fn overridden(mut self, input: bool) -> Self {
         self.overridden = ::std::option::Option::Some(input);
         self
@@ -105,12 +109,19 @@ impl SpendLimitBuilder {
         &self.overridden
     }
     /// Consumes the builder and constructs a [`SpendLimit`](crate::types::SpendLimit).
-    pub fn build(self) -> crate::types::SpendLimit {
-        crate::types::SpendLimit {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::SpendLimitBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::SpendLimit, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SpendLimit {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building SpendLimit",
+                )
+            })?,
             enforced_limit: self.enforced_limit.unwrap_or_default(),
             max_limit: self.max_limit.unwrap_or_default(),
             overridden: self.overridden.unwrap_or_default(),
-        }
+        })
     }
 }

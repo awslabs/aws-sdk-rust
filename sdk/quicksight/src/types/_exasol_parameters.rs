@@ -5,17 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExasolParameters {
     /// <p>The hostname or IP address of the Exasol data source.</p>
-    pub host: ::std::option::Option<::std::string::String>,
+    pub host: ::std::string::String,
     /// <p>The port for the Exasol data source.</p>
-    pub port: ::std::option::Option<i32>,
+    pub port: i32,
 }
 impl ExasolParameters {
     /// <p>The hostname or IP address of the Exasol data source.</p>
-    pub fn host(&self) -> ::std::option::Option<&str> {
-        self.host.as_deref()
+    pub fn host(&self) -> &str {
+        use std::ops::Deref;
+        self.host.deref()
     }
     /// <p>The port for the Exasol data source.</p>
-    pub fn port(&self) -> ::std::option::Option<i32> {
+    pub fn port(&self) -> i32 {
         self.port
     }
 }
@@ -35,6 +36,7 @@ pub struct ExasolParametersBuilder {
 }
 impl ExasolParametersBuilder {
     /// <p>The hostname or IP address of the Exasol data source.</p>
+    /// This field is required.
     pub fn host(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl ExasolParametersBuilder {
         &self.host
     }
     /// <p>The port for the Exasol data source.</p>
+    /// This field is required.
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,23 @@ impl ExasolParametersBuilder {
         &self.port
     }
     /// Consumes the builder and constructs a [`ExasolParameters`](crate::types::ExasolParameters).
-    pub fn build(self) -> crate::types::ExasolParameters {
-        crate::types::ExasolParameters {
-            host: self.host,
-            port: self.port,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`host`](crate::types::builders::ExasolParametersBuilder::host)
+    /// - [`port`](crate::types::builders::ExasolParametersBuilder::port)
+    pub fn build(self) -> ::std::result::Result<crate::types::ExasolParameters, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ExasolParameters {
+            host: self.host.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "host",
+                    "host was not specified but it is required when building ExasolParameters",
+                )
+            })?,
+            port: self.port.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "port",
+                    "port was not specified but it is required when building ExasolParameters",
+                )
+            })?,
+        })
     }
 }

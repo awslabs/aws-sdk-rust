@@ -27,6 +27,7 @@ pub struct DescribeSolutionInputBuilder {
 }
 impl DescribeSolutionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the solution to describe.</p>
+    /// This field is required.
     pub fn solution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.solution_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeSolutionInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSolutionInput`](crate::operation::describe_solution::DescribeSolutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_solution::DescribeSolutionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_solution::DescribeSolutionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_solution::DescribeSolutionInput {
             solution_arn: self.solution_arn,
         })

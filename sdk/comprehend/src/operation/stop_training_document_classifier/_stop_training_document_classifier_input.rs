@@ -27,6 +27,7 @@ pub struct StopTrainingDocumentClassifierInputBuilder {
 }
 impl StopTrainingDocumentClassifierInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that identifies the document classifier currently being trained.</p>
+    /// This field is required.
     pub fn document_classifier_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_classifier_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl StopTrainingDocumentClassifierInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_training_document_classifier::StopTrainingDocumentClassifierInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::stop_training_document_classifier::StopTrainingDocumentClassifierInput {
             document_classifier_arn: self.document_classifier_arn,

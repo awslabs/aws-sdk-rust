@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeConfiguration`](crate::operation::describe_configuration::builders::DescribeConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`configuration_id(impl Into<String>)`](crate::operation::describe_configuration::builders::DescribeConfigurationFluentBuilder::configuration_id) / [`set_configuration_id(Option<String>)`](crate::operation::describe_configuration::builders::DescribeConfigurationFluentBuilder::set_configuration_id): <p>The unique ID that Amazon MQ generates for the configuration.</p>
+    ///   - [`configuration_id(impl Into<String>)`](crate::operation::describe_configuration::builders::DescribeConfigurationFluentBuilder::configuration_id) / [`set_configuration_id(Option<String>)`](crate::operation::describe_configuration::builders::DescribeConfigurationFluentBuilder::set_configuration_id):<br>required: **true**<br><p>The unique ID that Amazon MQ generates for the configuration.</p><br>
     /// - On success, responds with [`DescribeConfigurationOutput`](crate::operation::describe_configuration::DescribeConfigurationOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::describe_configuration::DescribeConfigurationOutput::arn): <p>Required. The ARN of the configuration.</p>
     ///   - [`authentication_strategy(Option<AuthenticationStrategy>)`](crate::operation::describe_configuration::DescribeConfigurationOutput::authentication_strategy): <p>Optional. The authentication strategy associated with the configuration. The default is SIMPLE.</p>
@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::describe_configuration::DescribeConfigurationOutput::id): <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
     ///   - [`latest_revision(Option<ConfigurationRevision>)`](crate::operation::describe_configuration::DescribeConfigurationOutput::latest_revision): <p>Required. The latest revision of the configuration.</p>
     ///   - [`name(Option<String>)`](crate::operation::describe_configuration::DescribeConfigurationOutput::name): <p>Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_configuration::DescribeConfigurationOutput::tags): <p>The list of all tags associated with this configuration.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_configuration::DescribeConfigurationOutput::tags): <p>The list of all tags associated with this configuration.</p>
     /// - On failure, responds with [`SdkError<DescribeConfigurationError>`](crate::operation::describe_configuration::DescribeConfigurationError)
     pub fn describe_configuration(&self) -> crate::operation::describe_configuration::builders::DescribeConfigurationFluentBuilder {
         crate::operation::describe_configuration::builders::DescribeConfigurationFluentBuilder::new(self.handle.clone())

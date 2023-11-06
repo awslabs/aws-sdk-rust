@@ -34,6 +34,7 @@ pub struct DeleteScalingPlanInputBuilder {
 }
 impl DeleteScalingPlanInputBuilder {
     /// <p>The name of the scaling plan.</p>
+    /// This field is required.
     pub fn scaling_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scaling_plan_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteScalingPlanInputBuilder {
         &self.scaling_plan_name
     }
     /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
+    /// This field is required.
     pub fn scaling_plan_version(mut self, input: i64) -> Self {
         self.scaling_plan_version = ::std::option::Option::Some(input);
         self
@@ -64,7 +66,7 @@ impl DeleteScalingPlanInputBuilder {
     /// Consumes the builder and constructs a [`DeleteScalingPlanInput`](crate::operation::delete_scaling_plan::DeleteScalingPlanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_scaling_plan::DeleteScalingPlanInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_scaling_plan::DeleteScalingPlanInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_scaling_plan::DeleteScalingPlanInput {
             scaling_plan_name: self.scaling_plan_name,
             scaling_plan_version: self.scaling_plan_version,

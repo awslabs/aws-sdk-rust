@@ -41,6 +41,7 @@ pub struct UpdateKeyGroupInputBuilder {
 }
 impl UpdateKeyGroupInputBuilder {
     /// <p>The key group configuration.</p>
+    /// This field is required.
     pub fn key_group_config(mut self, input: crate::types::KeyGroupConfig) -> Self {
         self.key_group_config = ::std::option::Option::Some(input);
         self
@@ -55,6 +56,7 @@ impl UpdateKeyGroupInputBuilder {
         &self.key_group_config
     }
     /// <p>The identifier of the key group that you are updating.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +87,7 @@ impl UpdateKeyGroupInputBuilder {
     /// Consumes the builder and constructs a [`UpdateKeyGroupInput`](crate::operation::update_key_group::UpdateKeyGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_key_group::UpdateKeyGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_key_group::UpdateKeyGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_key_group::UpdateKeyGroupInput {
             key_group_config: self.key_group_config,
             id: self.id,

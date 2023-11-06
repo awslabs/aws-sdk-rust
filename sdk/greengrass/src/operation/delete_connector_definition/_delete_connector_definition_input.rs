@@ -27,6 +27,7 @@ pub struct DeleteConnectorDefinitionInputBuilder {
 }
 impl DeleteConnectorDefinitionInputBuilder {
     /// The ID of the connector definition.
+    /// This field is required.
     pub fn connector_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_definition_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteConnectorDefinitionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_connector_definition::DeleteConnectorDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_connector_definition::DeleteConnectorDefinitionInput {
             connector_definition_id: self.connector_definition_id,

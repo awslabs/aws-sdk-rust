@@ -14,8 +14,10 @@ impl DescribeTargetHealthInput {
         self.target_group_arn.as_deref()
     }
     /// <p>The targets.</p>
-    pub fn targets(&self) -> ::std::option::Option<&[crate::types::TargetDescription]> {
-        self.targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
+    pub fn targets(&self) -> &[crate::types::TargetDescription] {
+        self.targets.as_deref().unwrap_or_default()
     }
 }
 impl DescribeTargetHealthInput {
@@ -34,6 +36,7 @@ pub struct DescribeTargetHealthInputBuilder {
 }
 impl DescribeTargetHealthInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
+    /// This field is required.
     pub fn target_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_group_arn = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +73,7 @@ impl DescribeTargetHealthInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTargetHealthInput`](crate::operation::describe_target_health::DescribeTargetHealthInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_target_health::DescribeTargetHealthInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_target_health::DescribeTargetHealthInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_target_health::DescribeTargetHealthInput {
             target_group_arn: self.target_group_arn,

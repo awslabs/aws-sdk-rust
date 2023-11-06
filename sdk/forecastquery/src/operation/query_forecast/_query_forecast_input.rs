@@ -59,6 +59,7 @@ pub struct QueryForecastInputBuilder {
 }
 impl QueryForecastInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the forecast to query.</p>
+    /// This field is required.
     pub fn forecast_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.forecast_arn = ::std::option::Option::Some(input.into());
         self
@@ -143,7 +144,7 @@ impl QueryForecastInputBuilder {
     /// Consumes the builder and constructs a [`QueryForecastInput`](crate::operation::query_forecast::QueryForecastInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::query_forecast::QueryForecastInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::query_forecast::QueryForecastInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::query_forecast::QueryForecastInput {
             forecast_arn: self.forecast_arn,
             start_date: self.start_date,

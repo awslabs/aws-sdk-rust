@@ -34,6 +34,7 @@ pub struct DeleteSizeConstraintSetInputBuilder {
 }
 impl DeleteSizeConstraintSetInputBuilder {
     /// <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to delete. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
+    /// This field is required.
     pub fn size_constraint_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.size_constraint_set_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteSizeConstraintSetInputBuilder {
         &self.size_constraint_set_id
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    /// This field is required.
     pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_token = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl DeleteSizeConstraintSetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_size_constraint_set::DeleteSizeConstraintSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_size_constraint_set::DeleteSizeConstraintSetInput {
             size_constraint_set_id: self.size_constraint_set_id,

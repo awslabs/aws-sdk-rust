@@ -62,6 +62,7 @@ pub struct CreateDataQualityRulesetInputBuilder {
 }
 impl CreateDataQualityRulesetInputBuilder {
     /// <p>A unique name for the data quality ruleset.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +91,7 @@ impl CreateDataQualityRulesetInputBuilder {
         &self.description
     }
     /// <p>A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide.</p>
+    /// This field is required.
     pub fn ruleset(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ruleset = ::std::option::Option::Some(input.into());
         self
@@ -156,7 +158,7 @@ impl CreateDataQualityRulesetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_data_quality_ruleset::CreateDataQualityRulesetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_data_quality_ruleset::CreateDataQualityRulesetInput {
             name: self.name,

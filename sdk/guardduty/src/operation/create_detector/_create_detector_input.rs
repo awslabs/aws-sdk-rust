@@ -42,8 +42,10 @@ impl CreateDetectorInput {
         self.tags.as_ref()
     }
     /// <p>A list of features that will be configured for the detector.</p>
-    pub fn features(&self) -> ::std::option::Option<&[crate::types::DetectorFeatureConfiguration]> {
-        self.features.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.features.is_none()`.
+    pub fn features(&self) -> &[crate::types::DetectorFeatureConfiguration] {
+        self.features.as_deref().unwrap_or_default()
     }
 }
 impl CreateDetectorInput {
@@ -66,6 +68,7 @@ pub struct CreateDetectorInputBuilder {
 }
 impl CreateDetectorInputBuilder {
     /// <p>A Boolean value that specifies whether the detector is to be enabled.</p>
+    /// This field is required.
     pub fn enable(mut self, input: bool) -> Self {
         self.enable = ::std::option::Option::Some(input);
         self
@@ -170,7 +173,7 @@ impl CreateDetectorInputBuilder {
     /// Consumes the builder and constructs a [`CreateDetectorInput`](crate::operation::create_detector::CreateDetectorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_detector::CreateDetectorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_detector::CreateDetectorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_detector::CreateDetectorInput {
             enable: self.enable,
             client_token: self.client_token,

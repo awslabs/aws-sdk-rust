@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DevEnvironmentSessionConfiguration {
     /// <p>The type of the session.</p>
-    pub session_type: ::std::option::Option<crate::types::DevEnvironmentSessionType>,
+    pub session_type: crate::types::DevEnvironmentSessionType,
     /// <p>Information about optional commands that will be run on the Dev Environment when the SSH session begins.</p>
     pub execute_command_session_configuration: ::std::option::Option<crate::types::ExecuteCommandSessionConfiguration>,
 }
 impl DevEnvironmentSessionConfiguration {
     /// <p>The type of the session.</p>
-    pub fn session_type(&self) -> ::std::option::Option<&crate::types::DevEnvironmentSessionType> {
-        self.session_type.as_ref()
+    pub fn session_type(&self) -> &crate::types::DevEnvironmentSessionType {
+        &self.session_type
     }
     /// <p>Information about optional commands that will be run on the Dev Environment when the SSH session begins.</p>
     pub fn execute_command_session_configuration(&self) -> ::std::option::Option<&crate::types::ExecuteCommandSessionConfiguration> {
@@ -35,6 +35,7 @@ pub struct DevEnvironmentSessionConfigurationBuilder {
 }
 impl DevEnvironmentSessionConfigurationBuilder {
     /// <p>The type of the session.</p>
+    /// This field is required.
     pub fn session_type(mut self, input: crate::types::DevEnvironmentSessionType) -> Self {
         self.session_type = ::std::option::Option::Some(input);
         self
@@ -66,10 +67,17 @@ impl DevEnvironmentSessionConfigurationBuilder {
         &self.execute_command_session_configuration
     }
     /// Consumes the builder and constructs a [`DevEnvironmentSessionConfiguration`](crate::types::DevEnvironmentSessionConfiguration).
-    pub fn build(self) -> crate::types::DevEnvironmentSessionConfiguration {
-        crate::types::DevEnvironmentSessionConfiguration {
-            session_type: self.session_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`session_type`](crate::types::builders::DevEnvironmentSessionConfigurationBuilder::session_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::DevEnvironmentSessionConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DevEnvironmentSessionConfiguration {
+            session_type: self.session_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "session_type",
+                    "session_type was not specified but it is required when building DevEnvironmentSessionConfiguration",
+                )
+            })?,
             execute_command_session_configuration: self.execute_command_session_configuration,
-        }
+        })
     }
 }

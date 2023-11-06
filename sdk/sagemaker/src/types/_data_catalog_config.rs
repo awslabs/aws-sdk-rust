@@ -42,6 +42,7 @@ pub struct DataCatalogConfigBuilder {
 }
 impl DataCatalogConfigBuilder {
     /// <p>The name of the Glue table.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl DataCatalogConfigBuilder {
         &self.table_name
     }
     /// <p>The name of the Glue table catalog.</p>
+    /// This field is required.
     pub fn catalog(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.catalog = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl DataCatalogConfigBuilder {
         &self.catalog
     }
     /// <p>The name of the Glue table database.</p>
+    /// This field is required.
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database = ::std::option::Option::Some(input.into());
         self

@@ -17,8 +17,10 @@ impl CancelStepsInput {
         self.cluster_id.as_deref()
     }
     /// <p>The list of <code>StepIDs</code> to cancel. Use <code>ListSteps</code> to get steps and their states for the specified cluster.</p>
-    pub fn step_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.step_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.step_ids.is_none()`.
+    pub fn step_ids(&self) -> &[::std::string::String] {
+        self.step_ids.as_deref().unwrap_or_default()
     }
     /// <p>The option to choose to cancel <code>RUNNING</code> steps. By default, the value is <code>SEND_INTERRUPT</code>.</p>
     pub fn step_cancellation_option(&self) -> ::std::option::Option<&crate::types::StepCancellationOption> {
@@ -42,6 +44,7 @@ pub struct CancelStepsInputBuilder {
 }
 impl CancelStepsInputBuilder {
     /// <p>The <code>ClusterID</code> for the specified steps that will be canceled. Use <code>RunJobFlow</code> and <code>ListClusters</code> to get ClusterIDs. </p>
+    /// This field is required.
     pub fn cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_id = ::std::option::Option::Some(input.into());
         self
@@ -90,7 +93,7 @@ impl CancelStepsInputBuilder {
         &self.step_cancellation_option
     }
     /// Consumes the builder and constructs a [`CancelStepsInput`](crate::operation::cancel_steps::CancelStepsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_steps::CancelStepsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_steps::CancelStepsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_steps::CancelStepsInput {
             cluster_id: self.cluster_id,
             step_ids: self.step_ids,

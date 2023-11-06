@@ -4,11 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTableOutput {
     /// <p>The name of the keyspace that the specified table is stored in.</p>
-    pub keyspace_name: ::std::option::Option<::std::string::String>,
+    pub keyspace_name: ::std::string::String,
     /// <p>The name of the specified table.</p>
-    pub table_name: ::std::option::Option<::std::string::String>,
+    pub table_name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the specified table.</p>
-    pub resource_arn: ::std::option::Option<::std::string::String>,
+    pub resource_arn: ::std::string::String,
     /// <p>The creation timestamp of the specified table.</p>
     pub creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current status of the specified table.</p>
@@ -37,16 +37,19 @@ pub struct GetTableOutput {
 }
 impl GetTableOutput {
     /// <p>The name of the keyspace that the specified table is stored in.</p>
-    pub fn keyspace_name(&self) -> ::std::option::Option<&str> {
-        self.keyspace_name.as_deref()
+    pub fn keyspace_name(&self) -> &str {
+        use std::ops::Deref;
+        self.keyspace_name.deref()
     }
     /// <p>The name of the specified table.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
-        self.table_name.as_deref()
+    pub fn table_name(&self) -> &str {
+        use std::ops::Deref;
+        self.table_name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the specified table.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
-        self.resource_arn.as_deref()
+    pub fn resource_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_arn.deref()
     }
     /// <p>The creation timestamp of the specified table.</p>
     pub fn creation_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -126,6 +129,7 @@ pub struct GetTableOutputBuilder {
 }
 impl GetTableOutputBuilder {
     /// <p>The name of the keyspace that the specified table is stored in.</p>
+    /// This field is required.
     pub fn keyspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.keyspace_name = ::std::option::Option::Some(input.into());
         self
@@ -140,6 +144,7 @@ impl GetTableOutputBuilder {
         &self.keyspace_name
     }
     /// <p>The name of the specified table.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -154,6 +159,7 @@ impl GetTableOutputBuilder {
         &self.table_name
     }
     /// <p>The Amazon Resource Name (ARN) of the specified table.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -329,11 +335,30 @@ impl GetTableOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetTableOutput`](crate::operation::get_table::GetTableOutput).
-    pub fn build(self) -> crate::operation::get_table::GetTableOutput {
-        crate::operation::get_table::GetTableOutput {
-            keyspace_name: self.keyspace_name,
-            table_name: self.table_name,
-            resource_arn: self.resource_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`keyspace_name`](crate::operation::get_table::builders::GetTableOutputBuilder::keyspace_name)
+    /// - [`table_name`](crate::operation::get_table::builders::GetTableOutputBuilder::table_name)
+    /// - [`resource_arn`](crate::operation::get_table::builders::GetTableOutputBuilder::resource_arn)
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_table::GetTableOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_table::GetTableOutput {
+            keyspace_name: self.keyspace_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "keyspace_name",
+                    "keyspace_name was not specified but it is required when building GetTableOutput",
+                )
+            })?,
+            table_name: self.table_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "table_name",
+                    "table_name was not specified but it is required when building GetTableOutput",
+                )
+            })?,
+            resource_arn: self.resource_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "resource_arn",
+                    "resource_arn was not specified but it is required when building GetTableOutput",
+                )
+            })?,
             creation_timestamp: self.creation_timestamp,
             status: self.status,
             schema_definition: self.schema_definition,
@@ -345,6 +370,6 @@ impl GetTableOutputBuilder {
             comment: self.comment,
             client_side_timestamps: self.client_side_timestamps,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateReceiptFilter`](crate::operation::create_receipt_filter::builders::CreateReceiptFilterFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`filter(ReceiptFilter)`](crate::operation::create_receipt_filter::builders::CreateReceiptFilterFluentBuilder::filter) / [`set_filter(Option<ReceiptFilter>)`](crate::operation::create_receipt_filter::builders::CreateReceiptFilterFluentBuilder::set_filter): <p>A data structure that describes the IP address filter to create, which consists of a name, an IP address range, and whether to allow or block mail from it.</p>
+    ///   - [`filter(ReceiptFilter)`](crate::operation::create_receipt_filter::builders::CreateReceiptFilterFluentBuilder::filter) / [`set_filter(Option<ReceiptFilter>)`](crate::operation::create_receipt_filter::builders::CreateReceiptFilterFluentBuilder::set_filter):<br>required: **true**<br><p>A data structure that describes the IP address filter to create, which consists of a name, an IP address range, and whether to allow or block mail from it.</p><br>
     /// - On success, responds with [`CreateReceiptFilterOutput`](crate::operation::create_receipt_filter::CreateReceiptFilterOutput)
     /// - On failure, responds with [`SdkError<CreateReceiptFilterError>`](crate::operation::create_receipt_filter::CreateReceiptFilterError)
     pub fn create_receipt_filter(&self) -> crate::operation::create_receipt_filter::builders::CreateReceiptFilterFluentBuilder {

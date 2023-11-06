@@ -10,7 +10,7 @@ impl RestoreFromClusterSnapshotInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -74,12 +74,15 @@ impl RestoreFromClusterSnapshotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshot::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -88,20 +91,15 @@ impl RestoreFromClusterSnapshotFluentBuilder {
         crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshot::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotOutput,
-            crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotOutput,
+        crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -727,5 +725,19 @@ impl RestoreFromClusterSnapshotFluentBuilder {
     /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret. You can only use this parameter if <code>ManageMasterPassword</code> is true.</p>
     pub fn get_master_password_secret_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_master_password_secret_kms_key_id()
+    }
+    /// <p>The IP address type for the cluster. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
+    pub fn ip_address_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.ip_address_type(input.into());
+        self
+    }
+    /// <p>The IP address type for the cluster. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_ip_address_type(input);
+        self
+    }
+    /// <p>The IP address type for the cluster. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ip_address_type()
     }
 }

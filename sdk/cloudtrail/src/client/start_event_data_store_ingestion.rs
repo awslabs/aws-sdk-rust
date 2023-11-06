@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartEventDataStoreIngestion`](crate::operation::start_event_data_store_ingestion::builders::StartEventDataStoreIngestionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`event_data_store(impl Into<String>)`](crate::operation::start_event_data_store_ingestion::builders::StartEventDataStoreIngestionFluentBuilder::event_data_store) / [`set_event_data_store(Option<String>)`](crate::operation::start_event_data_store_ingestion::builders::StartEventDataStoreIngestionFluentBuilder::set_event_data_store): <p>The ARN (or ID suffix of the ARN) of the event data store for which you want to start ingestion.</p>
+    ///   - [`event_data_store(impl Into<String>)`](crate::operation::start_event_data_store_ingestion::builders::StartEventDataStoreIngestionFluentBuilder::event_data_store) / [`set_event_data_store(Option<String>)`](crate::operation::start_event_data_store_ingestion::builders::StartEventDataStoreIngestionFluentBuilder::set_event_data_store):<br>required: **true**<br><p>The ARN (or ID suffix of the ARN) of the event data store for which you want to start ingestion.</p><br>
     /// - On success, responds with [`StartEventDataStoreIngestionOutput`](crate::operation::start_event_data_store_ingestion::StartEventDataStoreIngestionOutput)
     /// - On failure, responds with [`SdkError<StartEventDataStoreIngestionError>`](crate::operation::start_event_data_store_ingestion::StartEventDataStoreIngestionError)
     pub fn start_event_data_store_ingestion(

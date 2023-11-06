@@ -34,6 +34,7 @@ pub struct DeleteProxySessionInputBuilder {
 }
 impl DeleteProxySessionInputBuilder {
     /// <p>The Voice Connector ID.</p>
+    /// This field is required.
     pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteProxySessionInputBuilder {
         &self.voice_connector_id
     }
     /// <p>The proxy session ID.</p>
+    /// This field is required.
     pub fn proxy_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.proxy_session_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,8 @@ impl DeleteProxySessionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteProxySessionInput`](crate::operation::delete_proxy_session::DeleteProxySessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_proxy_session::DeleteProxySessionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_proxy_session::DeleteProxySessionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_proxy_session::DeleteProxySessionInput {
             voice_connector_id: self.voice_connector_id,
             proxy_session_id: self.proxy_session_id,

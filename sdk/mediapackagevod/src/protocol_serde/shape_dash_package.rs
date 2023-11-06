@@ -16,7 +16,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "dashManifests" => {
                             builder =
-                                builder.set_dash_manifests(crate::protocol_serde::shape___list_of_dash_manifest::de___list_of_dash_manifest(tokens)?);
+                                builder.set_dash_manifests(crate::protocol_serde::shape_list_of_dash_manifest::de_list_of_dash_manifest(tokens)?);
                         }
                         "encryption" => {
                             builder = builder.set_encryption(crate::protocol_serde::shape_dash_encryption::de_dash_encryption(tokens)?);
@@ -32,7 +32,7 @@ where
                         }
                         "periodTriggers" => {
                             builder = builder.set_period_triggers(
-                                crate::protocol_serde::shape___list_of__period_triggers_element::de___list_of__period_triggers_element(tokens)?,
+                                crate::protocol_serde::shape_list_of_period_triggers_element::de_list_of_period_triggers_element(tokens)?,
                             );
                         }
                         "segmentDurationSeconds" => {
@@ -59,7 +59,7 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::dash_package_correct_errors(builder).build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -70,7 +70,7 @@ where
 pub fn ser_dash_package(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DashPackage,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.dash_manifests {
         let mut array_2 = object.key("dashManifests").start_array();
         for item_3 in var_1 {

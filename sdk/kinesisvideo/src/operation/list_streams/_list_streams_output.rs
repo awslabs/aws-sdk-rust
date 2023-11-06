@@ -11,8 +11,10 @@ pub struct ListStreamsOutput {
 }
 impl ListStreamsOutput {
     /// <p>An array of <code>StreamInfo</code> objects.</p>
-    pub fn stream_info_list(&self) -> ::std::option::Option<&[crate::types::StreamInfo]> {
-        self.stream_info_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stream_info_list.is_none()`.
+    pub fn stream_info_list(&self) -> &[crate::types::StreamInfo] {
+        self.stream_info_list.as_deref().unwrap_or_default()
     }
     /// <p>If the response is truncated, the call returns this element with a token. To get the next batch of streams, use this token in your next request. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

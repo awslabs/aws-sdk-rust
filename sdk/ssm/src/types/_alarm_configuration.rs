@@ -7,7 +7,7 @@ pub struct AlarmConfiguration {
     /// <p>When this value is <i>true</i>, your automation or command continues to run in cases where we can’t retrieve alarm status information from CloudWatch. In cases where we successfully retrieve an alarm status of OK or INSUFFICIENT_DATA, the automation or command continues to run, regardless of this value. Default is <i>false</i>.</p>
     pub ignore_poll_alarm_failure: bool,
     /// <p>The name of the CloudWatch alarm specified in the configuration.</p>
-    pub alarms: ::std::option::Option<::std::vec::Vec<crate::types::Alarm>>,
+    pub alarms: ::std::vec::Vec<crate::types::Alarm>,
 }
 impl AlarmConfiguration {
     /// <p>When this value is <i>true</i>, your automation or command continues to run in cases where we can’t retrieve alarm status information from CloudWatch. In cases where we successfully retrieve an alarm status of OK or INSUFFICIENT_DATA, the automation or command continues to run, regardless of this value. Default is <i>false</i>.</p>
@@ -15,8 +15,9 @@ impl AlarmConfiguration {
         self.ignore_poll_alarm_failure
     }
     /// <p>The name of the CloudWatch alarm specified in the configuration.</p>
-    pub fn alarms(&self) -> ::std::option::Option<&[crate::types::Alarm]> {
-        self.alarms.as_deref()
+    pub fn alarms(&self) -> &[crate::types::Alarm] {
+        use std::ops::Deref;
+        self.alarms.deref()
     }
 }
 impl AlarmConfiguration {
@@ -69,10 +70,17 @@ impl AlarmConfigurationBuilder {
         &self.alarms
     }
     /// Consumes the builder and constructs a [`AlarmConfiguration`](crate::types::AlarmConfiguration).
-    pub fn build(self) -> crate::types::AlarmConfiguration {
-        crate::types::AlarmConfiguration {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`alarms`](crate::types::builders::AlarmConfigurationBuilder::alarms)
+    pub fn build(self) -> ::std::result::Result<crate::types::AlarmConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AlarmConfiguration {
             ignore_poll_alarm_failure: self.ignore_poll_alarm_failure.unwrap_or_default(),
-            alarms: self.alarms,
-        }
+            alarms: self.alarms.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "alarms",
+                    "alarms was not specified but it is required when building AlarmConfiguration",
+                )
+            })?,
+        })
     }
 }

@@ -84,6 +84,7 @@ impl TagBuilder {
         &self.resource_type
     }
     /// <p>The tag key.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self

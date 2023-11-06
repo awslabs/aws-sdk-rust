@@ -2,7 +2,7 @@
 pub fn ser_get_user_attribute_verification_code_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.access_token {
         object.key("AccessToken").string(var_1.as_str());
     }

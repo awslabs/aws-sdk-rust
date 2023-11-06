@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EthernetPayload {
     /// <p>How the device gets an IP address.</p>
-    pub connection_type: ::std::option::Option<crate::types::ConnectionType>,
+    pub connection_type: crate::types::ConnectionType,
     /// <p>Network configuration for a static IP connection.</p>
     pub static_ip_connection_info: ::std::option::Option<crate::types::StaticIpConnectionInfo>,
 }
 impl EthernetPayload {
     /// <p>How the device gets an IP address.</p>
-    pub fn connection_type(&self) -> ::std::option::Option<&crate::types::ConnectionType> {
-        self.connection_type.as_ref()
+    pub fn connection_type(&self) -> &crate::types::ConnectionType {
+        &self.connection_type
     }
     /// <p>Network configuration for a static IP connection.</p>
     pub fn static_ip_connection_info(&self) -> ::std::option::Option<&crate::types::StaticIpConnectionInfo> {
@@ -35,6 +35,7 @@ pub struct EthernetPayloadBuilder {
 }
 impl EthernetPayloadBuilder {
     /// <p>How the device gets an IP address.</p>
+    /// This field is required.
     pub fn connection_type(mut self, input: crate::types::ConnectionType) -> Self {
         self.connection_type = ::std::option::Option::Some(input);
         self
@@ -63,10 +64,17 @@ impl EthernetPayloadBuilder {
         &self.static_ip_connection_info
     }
     /// Consumes the builder and constructs a [`EthernetPayload`](crate::types::EthernetPayload).
-    pub fn build(self) -> crate::types::EthernetPayload {
-        crate::types::EthernetPayload {
-            connection_type: self.connection_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`connection_type`](crate::types::builders::EthernetPayloadBuilder::connection_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::EthernetPayload, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EthernetPayload {
+            connection_type: self.connection_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "connection_type",
+                    "connection_type was not specified but it is required when building EthernetPayload",
+                )
+            })?,
             static_ip_connection_info: self.static_ip_connection_info,
-        }
+        })
     }
 }

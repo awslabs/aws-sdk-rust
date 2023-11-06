@@ -14,12 +14,16 @@ pub struct UnableToDetectSchemaException {
 }
 impl UnableToDetectSchemaException {
     /// <p>Raw stream data that was sampled to infer the schema.</p>
-    pub fn raw_input_records(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.raw_input_records.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.raw_input_records.is_none()`.
+    pub fn raw_input_records(&self) -> &[::std::string::String] {
+        self.raw_input_records.as_deref().unwrap_or_default()
     }
     /// <p>Stream data that was modified by the processor specified in the <code>InputProcessingConfiguration</code> parameter. </p>
-    pub fn processed_input_records(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.processed_input_records.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.processed_input_records.is_none()`.
+    pub fn processed_input_records(&self) -> &[::std::string::String] {
+        self.processed_input_records.as_deref().unwrap_or_default()
     }
 }
 impl UnableToDetectSchemaException {

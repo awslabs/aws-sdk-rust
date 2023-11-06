@@ -22,8 +22,10 @@ impl CreateRobotApplicationVersionInput {
         self.current_revision_id.as_deref()
     }
     /// <p>The Amazon S3 identifier for the zip file bundle that you use for your robot application.</p>
-    pub fn s3_etags(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.s3_etags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.s3_etags.is_none()`.
+    pub fn s3_etags(&self) -> &[::std::string::String] {
+        self.s3_etags.as_deref().unwrap_or_default()
     }
     /// <p>A SHA256 identifier for the Docker image that you use for your robot application.</p>
     pub fn image_digest(&self) -> ::std::option::Option<&str> {
@@ -48,6 +50,7 @@ pub struct CreateRobotApplicationVersionInputBuilder {
 }
 impl CreateRobotApplicationVersionInputBuilder {
     /// <p>The application information for the robot application.</p>
+    /// This field is required.
     pub fn application(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application = ::std::option::Option::Some(input.into());
         self
@@ -114,7 +117,7 @@ impl CreateRobotApplicationVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_robot_application_version::CreateRobotApplicationVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_robot_application_version::CreateRobotApplicationVersionInput {
             application: self.application,

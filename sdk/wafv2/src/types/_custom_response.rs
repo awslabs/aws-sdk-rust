@@ -7,7 +7,7 @@
 pub struct CustomResponse {
     /// <p>The HTTP status code to return to the client. </p>
     /// <p>For a list of status codes that you can use in your custom responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html">Supported status codes for custom response</a> in the <i>WAF Developer Guide</i>. </p>
-    pub response_code: ::std::option::Option<i32>,
+    pub response_code: i32,
     /// <p>References the response body that you want WAF to return to the web request client. You can define a custom response for a rule action or a default web ACL action that is set to block. To do this, you first define the response body key and value in the <code>CustomResponseBodies</code> setting for the <code>WebACL</code> or <code>RuleGroup</code> where you want to use it. Then, in the rule action or web ACL default action <code>BlockAction</code> setting, you reference the response body using this key. </p>
     pub custom_response_body_key: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP headers to use in the response. You can specify any header name except for <code>content-type</code>. Duplicate header names are not allowed.</p>
@@ -17,7 +17,7 @@ pub struct CustomResponse {
 impl CustomResponse {
     /// <p>The HTTP status code to return to the client. </p>
     /// <p>For a list of status codes that you can use in your custom responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html">Supported status codes for custom response</a> in the <i>WAF Developer Guide</i>. </p>
-    pub fn response_code(&self) -> ::std::option::Option<i32> {
+    pub fn response_code(&self) -> i32 {
         self.response_code
     }
     /// <p>References the response body that you want WAF to return to the web request client. You can define a custom response for a rule action or a default web ACL action that is set to block. To do this, you first define the response body key and value in the <code>CustomResponseBodies</code> setting for the <code>WebACL</code> or <code>RuleGroup</code> where you want to use it. Then, in the rule action or web ACL default action <code>BlockAction</code> setting, you reference the response body using this key. </p>
@@ -26,8 +26,10 @@ impl CustomResponse {
     }
     /// <p>The HTTP headers to use in the response. You can specify any header name except for <code>content-type</code>. Duplicate header names are not allowed.</p>
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>. </p>
-    pub fn response_headers(&self) -> ::std::option::Option<&[crate::types::CustomHttpHeader]> {
-        self.response_headers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.response_headers.is_none()`.
+    pub fn response_headers(&self) -> &[crate::types::CustomHttpHeader] {
+        self.response_headers.as_deref().unwrap_or_default()
     }
 }
 impl CustomResponse {
@@ -48,6 +50,7 @@ pub struct CustomResponseBuilder {
 impl CustomResponseBuilder {
     /// <p>The HTTP status code to return to the client. </p>
     /// <p>For a list of status codes that you can use in your custom responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html">Supported status codes for custom response</a> in the <i>WAF Developer Guide</i>. </p>
+    /// This field is required.
     pub fn response_code(mut self, input: i32) -> Self {
         self.response_code = ::std::option::Option::Some(input);
         self
@@ -101,11 +104,18 @@ impl CustomResponseBuilder {
         &self.response_headers
     }
     /// Consumes the builder and constructs a [`CustomResponse`](crate::types::CustomResponse).
-    pub fn build(self) -> crate::types::CustomResponse {
-        crate::types::CustomResponse {
-            response_code: self.response_code,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`response_code`](crate::types::builders::CustomResponseBuilder::response_code)
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomResponse, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CustomResponse {
+            response_code: self.response_code.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "response_code",
+                    "response_code was not specified but it is required when building CustomResponse",
+                )
+            })?,
             custom_response_body_key: self.custom_response_body_key,
             response_headers: self.response_headers,
-        }
+        })
     }
 }

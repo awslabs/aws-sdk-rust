@@ -4,11 +4,11 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_analyzers::builders::ListAnalyzersFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_analyzers::builders::ListAnalyzersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_analyzers::builders::ListAnalyzersFluentBuilder::set_next_token): <p>A token used for pagination of results returned.</p>
-    ///   - [`max_results(i32)`](crate::operation::list_analyzers::builders::ListAnalyzersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_analyzers::builders::ListAnalyzersFluentBuilder::set_max_results): <p>The maximum number of results to return in the response.</p>
-    ///   - [`r#type(Type)`](crate::operation::list_analyzers::builders::ListAnalyzersFluentBuilder::type) / [`set_type(Option<Type>)`](crate::operation::list_analyzers::builders::ListAnalyzersFluentBuilder::set_type): <p>The type of analyzer.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_analyzers::builders::ListAnalyzersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_analyzers::builders::ListAnalyzersFluentBuilder::set_next_token):<br>required: **false**<br><p>A token used for pagination of results returned.</p><br>
+    ///   - [`max_results(i32)`](crate::operation::list_analyzers::builders::ListAnalyzersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_analyzers::builders::ListAnalyzersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in the response.</p><br>
+    ///   - [`r#type(Type)`](crate::operation::list_analyzers::builders::ListAnalyzersFluentBuilder::type) / [`set_type(Option<Type>)`](crate::operation::list_analyzers::builders::ListAnalyzersFluentBuilder::set_type):<br>required: **false**<br><p>The type of analyzer.</p><br>
     /// - On success, responds with [`ListAnalyzersOutput`](crate::operation::list_analyzers::ListAnalyzersOutput) with field(s):
-    ///   - [`analyzers(Option<Vec<AnalyzerSummary>>)`](crate::operation::list_analyzers::ListAnalyzersOutput::analyzers): <p>The analyzers retrieved.</p>
+    ///   - [`analyzers(Vec::<AnalyzerSummary>)`](crate::operation::list_analyzers::ListAnalyzersOutput::analyzers): <p>The analyzers retrieved.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_analyzers::ListAnalyzersOutput::next_token): <p>A token used for pagination of results returned.</p>
     /// - On failure, responds with [`SdkError<ListAnalyzersError>`](crate::operation::list_analyzers::ListAnalyzersError)
     pub fn list_analyzers(&self) -> crate::operation::list_analyzers::builders::ListAnalyzersFluentBuilder {

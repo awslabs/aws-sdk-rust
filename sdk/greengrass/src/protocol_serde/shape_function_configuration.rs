@@ -2,7 +2,7 @@
 pub fn ser_function_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FunctionConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.encoding_type {
         object.key("EncodingType").string(var_1.as_str());
     }

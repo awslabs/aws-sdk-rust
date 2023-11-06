@@ -34,6 +34,7 @@ pub struct ListTopicRefreshSchedulesInputBuilder {
 }
 impl ListTopicRefreshSchedulesInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the topic whose refresh schedule you want described.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl ListTopicRefreshSchedulesInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID for the topic that you want to describe. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    /// This field is required.
     pub fn topic_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl ListTopicRefreshSchedulesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedulesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedulesInput {
             aws_account_id: self.aws_account_id,

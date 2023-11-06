@@ -66,6 +66,7 @@ pub struct ListChannelMembershipsInputBuilder {
 }
 impl ListChannelMembershipsInputBuilder {
     /// <p>The maximum number of channel memberships that you want returned.</p>
+    /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self
@@ -138,8 +139,10 @@ impl ListChannelMembershipsInputBuilder {
     /// Consumes the builder and constructs a [`ListChannelMembershipsInput`](crate::operation::list_channel_memberships::ListChannelMembershipsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_channel_memberships::ListChannelMembershipsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::list_channel_memberships::ListChannelMembershipsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::list_channel_memberships::ListChannelMembershipsInput {
             channel_arn: self.channel_arn,
             r#type: self.r#type,

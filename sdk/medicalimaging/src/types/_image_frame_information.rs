@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageFrameInformation {
     /// <p>The image frame (pixel data) identifier.</p>
-    pub image_frame_id: ::std::option::Option<::std::string::String>,
+    pub image_frame_id: ::std::string::String,
 }
 impl ImageFrameInformation {
     /// <p>The image frame (pixel data) identifier.</p>
-    pub fn image_frame_id(&self) -> ::std::option::Option<&str> {
-        self.image_frame_id.as_deref()
+    pub fn image_frame_id(&self) -> &str {
+        use std::ops::Deref;
+        self.image_frame_id.deref()
     }
 }
 impl ImageFrameInformation {
@@ -28,6 +29,7 @@ pub struct ImageFrameInformationBuilder {
 }
 impl ImageFrameInformationBuilder {
     /// <p>The image frame (pixel data) identifier.</p>
+    /// This field is required.
     pub fn image_frame_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_frame_id = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl ImageFrameInformationBuilder {
         &self.image_frame_id
     }
     /// Consumes the builder and constructs a [`ImageFrameInformation`](crate::types::ImageFrameInformation).
-    pub fn build(self) -> crate::types::ImageFrameInformation {
-        crate::types::ImageFrameInformation {
-            image_frame_id: self.image_frame_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`image_frame_id`](crate::types::builders::ImageFrameInformationBuilder::image_frame_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::ImageFrameInformation, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ImageFrameInformation {
+            image_frame_id: self.image_frame_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "image_frame_id",
+                    "image_frame_id was not specified but it is required when building ImageFrameInformation",
+                )
+            })?,
+        })
     }
 }

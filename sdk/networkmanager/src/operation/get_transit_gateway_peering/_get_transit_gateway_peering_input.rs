@@ -27,6 +27,7 @@ pub struct GetTransitGatewayPeeringInputBuilder {
 }
 impl GetTransitGatewayPeeringInputBuilder {
     /// <p>The ID of the peering request.</p>
+    /// This field is required.
     pub fn peering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.peering_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetTransitGatewayPeeringInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_transit_gateway_peering::GetTransitGatewayPeeringInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_transit_gateway_peering::GetTransitGatewayPeeringInput { peering_id: self.peering_id })
     }

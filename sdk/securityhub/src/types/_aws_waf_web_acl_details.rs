@@ -23,8 +23,10 @@ impl AwsWafWebAclDetails {
         self.default_action.as_deref()
     }
     /// <p>An array that contains the action for each rule in a web ACL, the priority of the rule, and the ID of the rule.</p>
-    pub fn rules(&self) -> ::std::option::Option<&[crate::types::AwsWafWebAclRule]> {
-        self.rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
+    pub fn rules(&self) -> &[crate::types::AwsWafWebAclRule] {
+        self.rules.as_deref().unwrap_or_default()
     }
     /// <p>A unique identifier for a web ACL.</p>
     pub fn web_acl_id(&self) -> ::std::option::Option<&str> {

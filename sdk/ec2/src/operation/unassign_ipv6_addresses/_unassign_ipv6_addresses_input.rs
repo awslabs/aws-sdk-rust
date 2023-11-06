@@ -12,12 +12,16 @@ pub struct UnassignIpv6AddressesInput {
 }
 impl UnassignIpv6AddressesInput {
     /// <p>The IPv6 addresses to unassign from the network interface.</p>
-    pub fn ipv6_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ipv6_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv6_addresses.is_none()`.
+    pub fn ipv6_addresses(&self) -> &[::std::string::String] {
+        self.ipv6_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The IPv6 prefixes to unassign from the network interface.</p>
-    pub fn ipv6_prefixes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ipv6_prefixes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv6_prefixes.is_none()`.
+    pub fn ipv6_prefixes(&self) -> &[::std::string::String] {
+        self.ipv6_prefixes.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the network interface.</p>
     pub fn network_interface_id(&self) -> ::std::option::Option<&str> {
@@ -81,6 +85,7 @@ impl UnassignIpv6AddressesInputBuilder {
         &self.ipv6_prefixes
     }
     /// <p>The ID of the network interface.</p>
+    /// This field is required.
     pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_interface_id = ::std::option::Option::Some(input.into());
         self
@@ -97,7 +102,7 @@ impl UnassignIpv6AddressesInputBuilder {
     /// Consumes the builder and constructs a [`UnassignIpv6AddressesInput`](crate::operation::unassign_ipv6_addresses::UnassignIpv6AddressesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::unassign_ipv6_addresses::UnassignIpv6AddressesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::unassign_ipv6_addresses::UnassignIpv6AddressesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::unassign_ipv6_addresses::UnassignIpv6AddressesInput {
             ipv6_addresses: self.ipv6_addresses,

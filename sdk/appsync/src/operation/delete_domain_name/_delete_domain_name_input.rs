@@ -27,6 +27,7 @@ pub struct DeleteDomainNameInputBuilder {
 }
 impl DeleteDomainNameInputBuilder {
     /// <p>The domain name.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteDomainNameInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDomainNameInput`](crate::operation::delete_domain_name::DeleteDomainNameInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_domain_name::DeleteDomainNameInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_domain_name::DeleteDomainNameInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_domain_name::DeleteDomainNameInput {
             domain_name: self.domain_name,
         })

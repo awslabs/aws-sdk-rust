@@ -34,6 +34,7 @@ pub struct DisassociateLicenseInputBuilder {
 }
 impl DisassociateLicenseInputBuilder {
     /// <p>The ID of the workspace to remove the Grafana Enterprise license from.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DisassociateLicenseInputBuilder {
         &self.workspace_id
     }
     /// <p>The type of license to remove from the workspace.</p>
+    /// This field is required.
     pub fn license_type(mut self, input: crate::types::LicenseType) -> Self {
         self.license_type = ::std::option::Option::Some(input);
         self
@@ -64,7 +66,7 @@ impl DisassociateLicenseInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateLicenseInput`](crate::operation::disassociate_license::DisassociateLicenseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disassociate_license::DisassociateLicenseInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::disassociate_license::DisassociateLicenseInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::disassociate_license::DisassociateLicenseInput {
             workspace_id: self.workspace_id,

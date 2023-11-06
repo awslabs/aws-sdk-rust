@@ -2,36 +2,36 @@
 pub fn ser_neptune_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NeptuneSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.service_access_role_arn {
         object.key("ServiceAccessRoleArn").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.s3_bucket_name {
-        object.key("S3BucketName").string(var_2.as_str());
+    {
+        object.key("S3BucketName").string(input.s3_bucket_name.as_str());
     }
-    if let Some(var_3) = &input.s3_bucket_folder {
-        object.key("S3BucketFolder").string(var_3.as_str());
+    {
+        object.key("S3BucketFolder").string(input.s3_bucket_folder.as_str());
     }
-    if let Some(var_4) = &input.error_retry_duration {
+    if let Some(var_2) = &input.error_retry_duration {
         object.key("ErrorRetryDuration").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+        );
+    }
+    if let Some(var_3) = &input.max_file_size {
+        object.key("MaxFileSize").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+        );
+    }
+    if let Some(var_4) = &input.max_retry_count {
+        object.key("MaxRetryCount").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_5) = &input.max_file_size {
-        object.key("MaxFileSize").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_5).into()),
-        );
-    }
-    if let Some(var_6) = &input.max_retry_count {
-        object.key("MaxRetryCount").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_6).into()),
-        );
-    }
-    if let Some(var_7) = &input.iam_auth_enabled {
-        object.key("IamAuthEnabled").boolean(*var_7);
+    if let Some(var_5) = &input.iam_auth_enabled {
+        object.key("IamAuthEnabled").boolean(*var_5);
     }
     Ok(())
 }
@@ -106,7 +106,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::neptune_settings_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

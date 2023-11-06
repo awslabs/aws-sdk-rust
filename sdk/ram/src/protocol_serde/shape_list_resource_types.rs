@@ -26,11 +26,10 @@ pub fn de_list_resource_types_http_error(
                 output = crate::protocol_serde::shape_invalid_next_token_exception::de_invalid_next_token_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_resource_types::ListResourceTypesError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_next_token_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_resource_types::ListResourceTypesError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InvalidParameterException" => crate::operation::list_resource_types::ListResourceTypesError::InvalidParameterException({
@@ -41,11 +40,10 @@ pub fn de_list_resource_types_http_error(
                 output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_resource_types::ListResourceTypesError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_parameter_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_resource_types::ListResourceTypesError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ServerInternalException" => crate::operation::list_resource_types::ListResourceTypesError::ServerInternalException({
@@ -56,11 +54,10 @@ pub fn de_list_resource_types_http_error(
                 output = crate::protocol_serde::shape_server_internal_exception::de_server_internal_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_resource_types::ListResourceTypesError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::server_internal_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_resource_types::ListResourceTypesError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::list_resource_types::ListResourceTypesError::ServiceUnavailableException({
@@ -72,11 +69,10 @@ pub fn de_list_resource_types_http_error(
                     crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
                         .map_err(crate::operation::list_resource_types::ListResourceTypesError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::service_unavailable_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_resource_types::ListResourceTypesError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::list_resource_types::ListResourceTypesError::generic(generic),
@@ -102,12 +98,12 @@ pub fn de_list_resource_types_http_response(
 
 pub fn ser_list_resource_types_input(
     input: &crate::operation::list_resource_types::ListResourceTypesInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_list_resource_types_input::ser_list_resource_types_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_list_resource_types(

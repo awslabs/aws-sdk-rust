@@ -27,6 +27,7 @@ pub struct DeleteKnowledgeBaseInputBuilder {
 }
 impl DeleteKnowledgeBaseInputBuilder {
     /// <p>The knowledge base to delete content from. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// This field is required.
     pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.knowledge_base_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteKnowledgeBaseInputBuilder {
     /// Consumes the builder and constructs a [`DeleteKnowledgeBaseInput`](crate::operation::delete_knowledge_base::DeleteKnowledgeBaseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_knowledge_base::DeleteKnowledgeBaseInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_knowledge_base::DeleteKnowledgeBaseInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_knowledge_base::DeleteKnowledgeBaseInput {
             knowledge_base_id: self.knowledge_base_id,

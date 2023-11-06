@@ -2,7 +2,7 @@
 pub fn ser_aws_job_executions_rollout_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsJobExecutionsRolloutConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.maximum_per_minute {
         object.key("maximumPerMinute").number(
             #[allow(clippy::useless_conversion)]

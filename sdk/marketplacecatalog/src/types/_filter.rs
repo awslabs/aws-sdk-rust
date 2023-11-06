@@ -37,8 +37,10 @@ impl Filter {
     /// <li> <p> <code>BeforeEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended before the filter value.</p> </li>
     /// <li> <p> <code>AfterEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended after the filter value.</p> </li>
     /// </ul>
-    pub fn value_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.value_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.value_list.is_none()`.
+    pub fn value_list(&self) -> &[::std::string::String] {
+        self.value_list.as_deref().unwrap_or_default()
     }
 }
 impl Filter {

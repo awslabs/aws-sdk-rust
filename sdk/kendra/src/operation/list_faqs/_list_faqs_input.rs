@@ -41,6 +41,7 @@ pub struct ListFaqsInputBuilder {
 }
 impl ListFaqsInputBuilder {
     /// <p>The index that contains the FAQ lists.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +84,7 @@ impl ListFaqsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListFaqsInput`](crate::operation::list_faqs::ListFaqsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_faqs::ListFaqsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_faqs::ListFaqsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_faqs::ListFaqsInput {
             index_id: self.index_id,
             next_token: self.next_token,

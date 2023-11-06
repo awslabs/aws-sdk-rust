@@ -24,8 +24,10 @@ impl ListResolverDnssecConfigsInput {
         self.next_token.as_deref()
     }
     /// <p>An optional specification to return a subset of objects.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
 }
 impl ListResolverDnssecConfigsInput {
@@ -103,7 +105,7 @@ impl ListResolverDnssecConfigsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resolver_dnssec_configs::ListResolverDnssecConfigsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_resolver_dnssec_configs::ListResolverDnssecConfigsInput {
             max_results: self.max_results,

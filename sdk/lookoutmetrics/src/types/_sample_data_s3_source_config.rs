@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SampleDataS3SourceConfig {
     /// <p>The Amazon Resource Name (ARN) of the role.</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
     /// <p>An array of strings containing the list of templated paths.</p>
     pub templated_path_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of strings containing the historical set of data paths.</p>
@@ -15,16 +15,21 @@ pub struct SampleDataS3SourceConfig {
 }
 impl SampleDataS3SourceConfig {
     /// <p>The Amazon Resource Name (ARN) of the role.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
     /// <p>An array of strings containing the list of templated paths.</p>
-    pub fn templated_path_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.templated_path_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.templated_path_list.is_none()`.
+    pub fn templated_path_list(&self) -> &[::std::string::String] {
+        self.templated_path_list.as_deref().unwrap_or_default()
     }
     /// <p>An array of strings containing the historical set of data paths.</p>
-    pub fn historical_data_path_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.historical_data_path_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.historical_data_path_list.is_none()`.
+    pub fn historical_data_path_list(&self) -> &[::std::string::String] {
+        self.historical_data_path_list.as_deref().unwrap_or_default()
     }
     /// <p>Contains information about a source file's formatting.</p>
     pub fn file_format_descriptor(&self) -> ::std::option::Option<&crate::types::FileFormatDescriptor> {
@@ -49,6 +54,7 @@ pub struct SampleDataS3SourceConfigBuilder {
 }
 impl SampleDataS3SourceConfigBuilder {
     /// <p>The Amazon Resource Name (ARN) of the role.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -103,6 +109,7 @@ impl SampleDataS3SourceConfigBuilder {
         &self.historical_data_path_list
     }
     /// <p>Contains information about a source file's formatting.</p>
+    /// This field is required.
     pub fn file_format_descriptor(mut self, input: crate::types::FileFormatDescriptor) -> Self {
         self.file_format_descriptor = ::std::option::Option::Some(input);
         self
@@ -117,12 +124,19 @@ impl SampleDataS3SourceConfigBuilder {
         &self.file_format_descriptor
     }
     /// Consumes the builder and constructs a [`SampleDataS3SourceConfig`](crate::types::SampleDataS3SourceConfig).
-    pub fn build(self) -> crate::types::SampleDataS3SourceConfig {
-        crate::types::SampleDataS3SourceConfig {
-            role_arn: self.role_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`role_arn`](crate::types::builders::SampleDataS3SourceConfigBuilder::role_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::SampleDataS3SourceConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SampleDataS3SourceConfig {
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building SampleDataS3SourceConfig",
+                )
+            })?,
             templated_path_list: self.templated_path_list,
             historical_data_path_list: self.historical_data_path_list,
             file_format_descriptor: self.file_format_descriptor,
-        }
+        })
     }
 }

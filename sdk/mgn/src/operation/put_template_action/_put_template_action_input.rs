@@ -10,7 +10,7 @@ pub struct PutTemplateActionInput {
     /// <p>Template post migration custom action document identifier.</p>
     pub document_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Template post migration custom action order.</p>
-    pub order: i32,
+    pub order: ::std::option::Option<i32>,
     /// <p>Template post migration custom action ID.</p>
     pub action_id: ::std::option::Option<::std::string::String>,
     /// <p>Template post migration custom action document version.</p>
@@ -18,7 +18,7 @@ pub struct PutTemplateActionInput {
     /// <p>Template post migration custom action active status.</p>
     pub active: ::std::option::Option<bool>,
     /// <p>Template post migration custom action timeout in seconds.</p>
-    pub timeout_seconds: i32,
+    pub timeout_seconds: ::std::option::Option<i32>,
     /// <p>Template post migration custom action must succeed for cutover.</p>
     pub must_succeed_for_cutover: ::std::option::Option<bool>,
     /// <p>Template post migration custom action parameters.</p>
@@ -47,7 +47,7 @@ impl PutTemplateActionInput {
         self.document_identifier.as_deref()
     }
     /// <p>Template post migration custom action order.</p>
-    pub fn order(&self) -> i32 {
+    pub fn order(&self) -> ::std::option::Option<i32> {
         self.order
     }
     /// <p>Template post migration custom action ID.</p>
@@ -63,7 +63,7 @@ impl PutTemplateActionInput {
         self.active
     }
     /// <p>Template post migration custom action timeout in seconds.</p>
-    pub fn timeout_seconds(&self) -> i32 {
+    pub fn timeout_seconds(&self) -> ::std::option::Option<i32> {
         self.timeout_seconds
     }
     /// <p>Template post migration custom action must succeed for cutover.</p>
@@ -124,6 +124,7 @@ pub struct PutTemplateActionInputBuilder {
 }
 impl PutTemplateActionInputBuilder {
     /// <p>Launch configuration template ID.</p>
+    /// This field is required.
     pub fn launch_configuration_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_configuration_template_id = ::std::option::Option::Some(input.into());
         self
@@ -138,6 +139,7 @@ impl PutTemplateActionInputBuilder {
         &self.launch_configuration_template_id
     }
     /// <p>Template post migration custom action name.</p>
+    /// This field is required.
     pub fn action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_name = ::std::option::Option::Some(input.into());
         self
@@ -152,6 +154,7 @@ impl PutTemplateActionInputBuilder {
         &self.action_name
     }
     /// <p>Template post migration custom action document identifier.</p>
+    /// This field is required.
     pub fn document_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_identifier = ::std::option::Option::Some(input.into());
         self
@@ -166,6 +169,7 @@ impl PutTemplateActionInputBuilder {
         &self.document_identifier
     }
     /// <p>Template post migration custom action order.</p>
+    /// This field is required.
     pub fn order(mut self, input: i32) -> Self {
         self.order = ::std::option::Option::Some(input);
         self
@@ -180,6 +184,7 @@ impl PutTemplateActionInputBuilder {
         &self.order
     }
     /// <p>Template post migration custom action ID.</p>
+    /// This field is required.
     pub fn action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_id = ::std::option::Option::Some(input.into());
         self
@@ -348,16 +353,16 @@ impl PutTemplateActionInputBuilder {
     /// Consumes the builder and constructs a [`PutTemplateActionInput`](crate::operation::put_template_action::PutTemplateActionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_template_action::PutTemplateActionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_template_action::PutTemplateActionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_template_action::PutTemplateActionInput {
             launch_configuration_template_id: self.launch_configuration_template_id,
             action_name: self.action_name,
             document_identifier: self.document_identifier,
-            order: self.order.unwrap_or_default(),
+            order: self.order,
             action_id: self.action_id,
             document_version: self.document_version,
             active: self.active,
-            timeout_seconds: self.timeout_seconds.unwrap_or_default(),
+            timeout_seconds: self.timeout_seconds,
             must_succeed_for_cutover: self.must_succeed_for_cutover,
             parameters: self.parameters,
             operating_system: self.operating_system,

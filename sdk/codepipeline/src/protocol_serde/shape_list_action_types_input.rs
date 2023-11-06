@@ -2,7 +2,7 @@
 pub fn ser_list_action_types_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_action_types::ListActionTypesInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.action_owner_filter {
         object.key("actionOwnerFilter").string(var_1.as_str());
     }

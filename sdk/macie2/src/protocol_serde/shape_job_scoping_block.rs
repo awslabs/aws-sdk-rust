@@ -2,7 +2,7 @@
 pub fn ser_job_scoping_block(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::JobScopingBlock,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.and {
         let mut array_2 = object.key("and").start_array();
         for item_3 in var_1 {
@@ -34,9 +34,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "and" => {
-                            builder = builder.set_and(crate::protocol_serde::shape___list_of_job_scope_term::de___list_of_job_scope_term(
-                                tokens,
-                            )?);
+                            builder = builder.set_and(crate::protocol_serde::shape_list_of_job_scope_term::de_list_of_job_scope_term(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

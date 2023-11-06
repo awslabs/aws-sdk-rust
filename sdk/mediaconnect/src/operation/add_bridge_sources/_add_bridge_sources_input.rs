@@ -15,8 +15,10 @@ impl AddBridgeSourcesInput {
         self.bridge_arn.as_deref()
     }
     /// The sources that you want to add to this bridge.
-    pub fn sources(&self) -> ::std::option::Option<&[crate::types::AddBridgeSourceRequest]> {
-        self.sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
+    pub fn sources(&self) -> &[crate::types::AddBridgeSourceRequest] {
+        self.sources.as_deref().unwrap_or_default()
     }
 }
 impl AddBridgeSourcesInput {
@@ -35,6 +37,7 @@ pub struct AddBridgeSourcesInputBuilder {
 }
 impl AddBridgeSourcesInputBuilder {
     /// The ARN of the bridge that you want to update.
+    /// This field is required.
     pub fn bridge_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bridge_arn = ::std::option::Option::Some(input.into());
         self
@@ -71,7 +74,7 @@ impl AddBridgeSourcesInputBuilder {
     /// Consumes the builder and constructs a [`AddBridgeSourcesInput`](crate::operation::add_bridge_sources::AddBridgeSourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::add_bridge_sources::AddBridgeSourcesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::add_bridge_sources::AddBridgeSourcesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::add_bridge_sources::AddBridgeSourcesInput {
             bridge_arn: self.bridge_arn,
             sources: self.sources,

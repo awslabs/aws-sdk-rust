@@ -34,6 +34,7 @@ pub struct DescribeChangeSetInputBuilder {
 }
 impl DescribeChangeSetInputBuilder {
     /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
+    /// This field is required.
     pub fn catalog(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.catalog = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeChangeSetInputBuilder {
         &self.catalog
     }
     /// <p>Required. The unique identifier for the <code>StartChangeSet</code> request that you want to describe the details for.</p>
+    /// This field is required.
     pub fn change_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_set_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DescribeChangeSetInputBuilder {
     /// Consumes the builder and constructs a [`DescribeChangeSetInput`](crate::operation::describe_change_set::DescribeChangeSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_change_set::DescribeChangeSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_change_set::DescribeChangeSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_change_set::DescribeChangeSetInput {
             catalog: self.catalog,
             change_set_id: self.change_set_id,

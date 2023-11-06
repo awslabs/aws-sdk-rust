@@ -11,12 +11,16 @@ pub struct BatchGetBuildBatchesOutput {
 }
 impl BatchGetBuildBatchesOutput {
     /// <p>An array of <code>BuildBatch</code> objects that represent the retrieved batch builds.</p>
-    pub fn build_batches(&self) -> ::std::option::Option<&[crate::types::BuildBatch]> {
-        self.build_batches.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.build_batches.is_none()`.
+    pub fn build_batches(&self) -> &[crate::types::BuildBatch] {
+        self.build_batches.as_deref().unwrap_or_default()
     }
     /// <p>An array that contains the identifiers of any batch builds that are not found.</p>
-    pub fn build_batches_not_found(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.build_batches_not_found.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.build_batches_not_found.is_none()`.
+    pub fn build_batches_not_found(&self) -> &[::std::string::String] {
+        self.build_batches_not_found.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchGetBuildBatchesOutput {

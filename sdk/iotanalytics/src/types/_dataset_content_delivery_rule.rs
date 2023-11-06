@@ -49,6 +49,7 @@ impl DatasetContentDeliveryRuleBuilder {
         &self.entry_name
     }
     /// <p>The destination to which dataset contents are delivered.</p>
+    /// This field is required.
     pub fn destination(mut self, input: crate::types::DatasetContentDeliveryDestination) -> Self {
         self.destination = ::std::option::Option::Some(input);
         self

@@ -27,6 +27,7 @@ pub struct GetNotebookMetadataInputBuilder {
 }
 impl GetNotebookMetadataInputBuilder {
     /// <p>The ID of the notebook whose metadata is to be retrieved.</p>
+    /// This field is required.
     pub fn notebook_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetNotebookMetadataInputBuilder {
     /// Consumes the builder and constructs a [`GetNotebookMetadataInput`](crate::operation::get_notebook_metadata::GetNotebookMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_notebook_metadata::GetNotebookMetadataInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_notebook_metadata::GetNotebookMetadataInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_notebook_metadata::GetNotebookMetadataInput {
             notebook_id: self.notebook_id,

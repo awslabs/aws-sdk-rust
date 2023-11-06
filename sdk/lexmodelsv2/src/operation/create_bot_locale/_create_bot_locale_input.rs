@@ -76,6 +76,7 @@ pub struct CreateBotLocaleInputBuilder {
 }
 impl CreateBotLocaleInputBuilder {
     /// <p>The identifier of the bot to create the locale for.</p>
+    /// This field is required.
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +91,7 @@ impl CreateBotLocaleInputBuilder {
         &self.bot_id
     }
     /// <p>The version of the bot to create the locale for. This can only be the draft version of the bot.</p>
+    /// This field is required.
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +106,7 @@ impl CreateBotLocaleInputBuilder {
         &self.bot_version
     }
     /// <p>The identifier of the language and locale that the bot will be used in. The string must match one of the supported locales. All of the intents, slot types, and slots used in the bot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// This field is required.
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
         self
@@ -139,6 +142,7 @@ impl CreateBotLocaleInputBuilder {
     /// <li> <p>IntentB</p> </li>
     /// <li> <p>IntentC</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn nlu_intent_confidence_threshold(mut self, input: f64) -> Self {
         self.nlu_intent_confidence_threshold = ::std::option::Option::Some(input);
         self
@@ -183,7 +187,7 @@ impl CreateBotLocaleInputBuilder {
     /// Consumes the builder and constructs a [`CreateBotLocaleInput`](crate::operation::create_bot_locale::CreateBotLocaleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_bot_locale::CreateBotLocaleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_bot_locale::CreateBotLocaleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_bot_locale::CreateBotLocaleInput {
             bot_id: self.bot_id,
             bot_version: self.bot_version,

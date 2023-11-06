@@ -25,7 +25,7 @@ pub struct DescribeChangeSetOutput {
     /// <p>A description of the change set's status. For example, if your attempt to create a change set failed, CloudFormation shows the error message.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The ARNs of the Amazon Simple Notification Service (Amazon SNS) topics that will be associated with the stack if you execute the change set.</p>
-    pub notification_ar_ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub notification_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The rollback triggers for CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p>
     pub rollback_configuration: ::std::option::Option<crate::types::RollbackConfiguration>,
     /// <p>If you execute the change set, the list of capabilities that were explicitly acknowledged when the change set was created.</p>
@@ -73,8 +73,10 @@ impl DescribeChangeSetOutput {
         self.description.as_deref()
     }
     /// <p>A list of <code>Parameter</code> structures that describes the input parameters and their values used to create the change set. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data type.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&[crate::types::Parameter]> {
-        self.parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
+    pub fn parameters(&self) -> &[crate::types::Parameter] {
+        self.parameters.as_deref().unwrap_or_default()
     }
     /// <p>The start time when the change set was created, in UTC.</p>
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -93,24 +95,32 @@ impl DescribeChangeSetOutput {
         self.status_reason.as_deref()
     }
     /// <p>The ARNs of the Amazon Simple Notification Service (Amazon SNS) topics that will be associated with the stack if you execute the change set.</p>
-    pub fn notification_ar_ns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.notification_ar_ns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notification_arns.is_none()`.
+    pub fn notification_arns(&self) -> &[::std::string::String] {
+        self.notification_arns.as_deref().unwrap_or_default()
     }
     /// <p>The rollback triggers for CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p>
     pub fn rollback_configuration(&self) -> ::std::option::Option<&crate::types::RollbackConfiguration> {
         self.rollback_configuration.as_ref()
     }
     /// <p>If you execute the change set, the list of capabilities that were explicitly acknowledged when the change set was created.</p>
-    pub fn capabilities(&self) -> ::std::option::Option<&[crate::types::Capability]> {
-        self.capabilities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capabilities.is_none()`.
+    pub fn capabilities(&self) -> &[crate::types::Capability] {
+        self.capabilities.as_deref().unwrap_or_default()
     }
     /// <p>If you execute the change set, the tags that will be associated with the stack.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>A list of <code>Change</code> structures that describes the resources CloudFormation changes if you execute the change set.</p>
-    pub fn changes(&self) -> ::std::option::Option<&[crate::types::Change]> {
-        self.changes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.changes.is_none()`.
+    pub fn changes(&self) -> &[crate::types::Change] {
+        self.changes.as_deref().unwrap_or_default()
     }
     /// <p>If the output exceeds 1 MB, a string that identifies the next page of changes. If there is no additional page, this value is null.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -164,7 +174,7 @@ pub struct DescribeChangeSetOutputBuilder {
     pub(crate) execution_status: ::std::option::Option<crate::types::ExecutionStatus>,
     pub(crate) status: ::std::option::Option<crate::types::ChangeSetStatus>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
-    pub(crate) notification_ar_ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) notification_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) rollback_configuration: ::std::option::Option<crate::types::RollbackConfiguration>,
     pub(crate) capabilities: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -323,25 +333,25 @@ impl DescribeChangeSetOutputBuilder {
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_reason
     }
-    /// Appends an item to `notification_ar_ns`.
+    /// Appends an item to `notification_arns`.
     ///
-    /// To override the contents of this collection use [`set_notification_ar_ns`](Self::set_notification_ar_ns).
+    /// To override the contents of this collection use [`set_notification_arns`](Self::set_notification_arns).
     ///
     /// <p>The ARNs of the Amazon Simple Notification Service (Amazon SNS) topics that will be associated with the stack if you execute the change set.</p>
-    pub fn notification_ar_ns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.notification_ar_ns.unwrap_or_default();
+    pub fn notification_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.notification_arns.unwrap_or_default();
         v.push(input.into());
-        self.notification_ar_ns = ::std::option::Option::Some(v);
+        self.notification_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The ARNs of the Amazon Simple Notification Service (Amazon SNS) topics that will be associated with the stack if you execute the change set.</p>
-    pub fn set_notification_ar_ns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.notification_ar_ns = input;
+    pub fn set_notification_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.notification_arns = input;
         self
     }
     /// <p>The ARNs of the Amazon Simple Notification Service (Amazon SNS) topics that will be associated with the stack if you execute the change set.</p>
-    pub fn get_notification_ar_ns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.notification_ar_ns
+    pub fn get_notification_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.notification_arns
     }
     /// <p>The rollback triggers for CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p>
     pub fn rollback_configuration(mut self, input: crate::types::RollbackConfiguration) -> Self {
@@ -524,7 +534,7 @@ impl DescribeChangeSetOutputBuilder {
             execution_status: self.execution_status,
             status: self.status,
             status_reason: self.status_reason,
-            notification_ar_ns: self.notification_ar_ns,
+            notification_arns: self.notification_arns,
             rollback_configuration: self.rollback_configuration,
             capabilities: self.capabilities,
             tags: self.tags,

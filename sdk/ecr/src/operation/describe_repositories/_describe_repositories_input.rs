@@ -20,8 +20,10 @@ impl DescribeRepositoriesInput {
         self.registry_id.as_deref()
     }
     /// <p>A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are described.</p>
-    pub fn repository_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.repository_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.repository_names.is_none()`.
+    pub fn repository_names(&self) -> &[::std::string::String] {
+        self.repository_names.as_deref().unwrap_or_default()
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeRepositories</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return. This option cannot be used when you specify repositories with <code>repositoryNames</code>.</p> <note>
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
@@ -122,7 +124,7 @@ impl DescribeRepositoriesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeRepositoriesInput`](crate::operation::describe_repositories::DescribeRepositoriesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_repositories::DescribeRepositoriesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_repositories::DescribeRepositoriesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_repositories::DescribeRepositoriesInput {
             registry_id: self.registry_id,

@@ -21,7 +21,7 @@ impl GetSagemakerServicecatalogPortfolioStatusInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_sagemaker_servicecatalog_portfolio_status::GetSagemakerServicecatalogPortfolioStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_sagemaker_servicecatalog_portfolio_status::GetSagemakerServicecatalogPortfolioStatusInput {})
     }

@@ -41,6 +41,7 @@ pub struct DeleteGrantInputBuilder {
 }
 impl DeleteGrantInputBuilder {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
+    /// This field is required.
     pub fn grant_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grant_arn = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl DeleteGrantInputBuilder {
         &self.status_reason
     }
     /// <p>Current version of the grant.</p>
+    /// This field is required.
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +85,7 @@ impl DeleteGrantInputBuilder {
         &self.version
     }
     /// Consumes the builder and constructs a [`DeleteGrantInput`](crate::operation::delete_grant::DeleteGrantInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_grant::DeleteGrantInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_grant::DeleteGrantInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_grant::DeleteGrantInput {
             grant_arn: self.grant_arn,
             status_reason: self.status_reason,

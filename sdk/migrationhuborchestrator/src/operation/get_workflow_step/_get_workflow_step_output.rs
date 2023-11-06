@@ -81,20 +81,28 @@ impl GetWorkflowStepOutput {
         self.workflow_step_automation_configuration.as_ref()
     }
     /// <p>The servers on which a step will be run.</p>
-    pub fn step_target(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.step_target.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.step_target.is_none()`.
+    pub fn step_target(&self) -> &[::std::string::String] {
+        self.step_target.as_deref().unwrap_or_default()
     }
     /// <p>The outputs of the step.</p>
-    pub fn outputs(&self) -> ::std::option::Option<&[crate::types::WorkflowStepOutput]> {
-        self.outputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outputs.is_none()`.
+    pub fn outputs(&self) -> &[crate::types::WorkflowStepOutput] {
+        self.outputs.as_deref().unwrap_or_default()
     }
     /// <p>The previous step.</p>
-    pub fn previous(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.previous.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.previous.is_none()`.
+    pub fn previous(&self) -> &[::std::string::String] {
+        self.previous.as_deref().unwrap_or_default()
     }
     /// <p>The next step.</p>
-    pub fn next(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.next.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.next.is_none()`.
+    pub fn next(&self) -> &[::std::string::String] {
+        self.next.as_deref().unwrap_or_default()
     }
     /// <p>The status of the step.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::StepStatus> {

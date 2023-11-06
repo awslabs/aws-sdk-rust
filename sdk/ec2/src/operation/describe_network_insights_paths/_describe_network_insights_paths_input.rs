@@ -29,8 +29,10 @@ pub struct DescribeNetworkInsightsPathsInput {
 }
 impl DescribeNetworkInsightsPathsInput {
     /// <p>The IDs of the paths.</p>
-    pub fn network_insights_path_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.network_insights_path_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_insights_path_ids.is_none()`.
+    pub fn network_insights_path_ids(&self) -> &[::std::string::String] {
+        self.network_insights_path_ids.as_deref().unwrap_or_default()
     }
     /// <p>The filters. The following are the possible values:</p>
     /// <ul>
@@ -46,8 +48,10 @@ impl DescribeNetworkInsightsPathsInput {
     /// <li> <p>protocol - The protocol.</p> </li>
     /// <li> <p>source - The ID of the resource.</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -206,7 +210,7 @@ impl DescribeNetworkInsightsPathsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_network_insights_paths::DescribeNetworkInsightsPathsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_network_insights_paths::DescribeNetworkInsightsPathsInput {
             network_insights_path_ids: self.network_insights_path_ids,

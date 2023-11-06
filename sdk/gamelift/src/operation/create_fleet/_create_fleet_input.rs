@@ -84,16 +84,20 @@ impl CreateFleetInput {
         self.server_launch_parameters.as_deref()
     }
     /// <p> <b>This parameter is no longer used.</b> To specify where Amazon GameLift should store log files once a server process shuts down, use the Amazon GameLift server API <code>ProcessReady()</code> and specify one or more directory paths in <code>logParameters</code>. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-initialize">Initialize the server process</a> in the <i>Amazon GameLift Developer Guide</i>. </p>
-    pub fn log_paths(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.log_paths.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_paths.is_none()`.
+    pub fn log_paths(&self) -> &[::std::string::String] {
+        self.log_paths.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon GameLift-supported Amazon EC2 instance type to use for all fleet instances. Instance type determines the computing resources that will be used to host your game servers, including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions of Amazon EC2 instance types.</p>
     pub fn ec2_instance_type(&self) -> ::std::option::Option<&crate::types::Ec2InstanceType> {
         self.ec2_instance_type.as_ref()
     }
     /// <p>The allowed IP address ranges and port settings that allow inbound traffic to access game sessions on this fleet. If the fleet is hosting a custom game build, this property must be set before players can connect to game sessions. For Realtime Servers fleets, Amazon GameLift automatically sets TCP and UDP ranges. </p>
-    pub fn ec2_inbound_permissions(&self) -> ::std::option::Option<&[crate::types::IpPermission]> {
-        self.ec2_inbound_permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ec2_inbound_permissions.is_none()`.
+    pub fn ec2_inbound_permissions(&self) -> &[crate::types::IpPermission] {
+        self.ec2_inbound_permissions.as_deref().unwrap_or_default()
     }
     /// <p>The status of termination protection for active game sessions on the fleet. By default, this property is set to <code>NoProtection</code>. You can also set game session protection for an individual game session by calling <a href="gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>.</p>
     /// <ul>
@@ -114,8 +118,10 @@ impl CreateFleetInput {
         self.resource_creation_limit_policy.as_ref()
     }
     /// <p>The name of an Amazon Web Services CloudWatch metric group to add this fleet to. A metric group is used to aggregate the metrics for multiple fleets. You can specify an existing metric group name or set a new name to create a new metric group. A fleet can be included in only one metric group at a time. </p>
-    pub fn metric_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.metric_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_groups.is_none()`.
+    pub fn metric_groups(&self) -> &[::std::string::String] {
+        self.metric_groups.as_deref().unwrap_or_default()
     }
     /// <p>Used when peering your Amazon GameLift fleet with a VPC, the unique identifier for the Amazon Web Services account that owns the VPC. You can find your account ID in the Amazon Web Services Management Console under account settings. </p>
     pub fn peer_vpc_aws_account_id(&self) -> ::std::option::Option<&str> {
@@ -142,12 +148,16 @@ impl CreateFleetInput {
     }
     /// <p>A set of remote locations to deploy additional instances to and manage as part of the fleet. This parameter can only be used when creating fleets in Amazon Web Services Regions that support multiple locations. You can add any Amazon GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>. To create a fleet with instances in the home Region only, don't use this parameter. </p>
     /// <p>To use this parameter, Amazon GameLift requires you to use your home location in the request.</p>
-    pub fn locations(&self) -> ::std::option::Option<&[crate::types::LocationConfiguration]> {
-        self.locations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.locations.is_none()`.
+    pub fn locations(&self) -> &[crate::types::LocationConfiguration] {
+        self.locations.as_deref().unwrap_or_default()
     }
     /// <p>A list of labels to assign to the new fleet resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The type of compute resource used to host your game servers. You can use your own compute resources with Amazon GameLift Anywhere or use Amazon EC2 instances with managed Amazon GameLift. By default, this property is set to <code>EC2</code>.</p>
     pub fn compute_type(&self) -> ::std::option::Option<&crate::types::ComputeType> {
@@ -194,6 +204,7 @@ pub struct CreateFleetInputBuilder {
 }
 impl CreateFleetInputBuilder {
     /// <p>A descriptive label that is associated with a fleet. Fleet names do not need to be unique.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -562,7 +573,7 @@ impl CreateFleetInputBuilder {
         &self.anywhere_configuration
     }
     /// Consumes the builder and constructs a [`CreateFleetInput`](crate::operation::create_fleet::CreateFleetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_fleet::CreateFleetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_fleet::CreateFleetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_fleet::CreateFleetInput {
             name: self.name,
             description: self.description,

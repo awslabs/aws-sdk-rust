@@ -11,8 +11,10 @@ pub struct ListAuditTasksOutput {
 }
 impl ListAuditTasksOutput {
     /// <p>The audits that were performed during the specified time period.</p>
-    pub fn tasks(&self) -> ::std::option::Option<&[crate::types::AuditTaskMetadata]> {
-        self.tasks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tasks.is_none()`.
+    pub fn tasks(&self) -> &[crate::types::AuditTaskMetadata] {
+        self.tasks.as_deref().unwrap_or_default()
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

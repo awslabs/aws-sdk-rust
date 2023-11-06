@@ -5,24 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConversationLevelSlotResolutionResultItem {
     /// <p>The intents used in the slots list for the slot resolution details.</p>
-    pub intent_name: ::std::option::Option<::std::string::String>,
+    pub intent_name: ::std::string::String,
     /// <p>The slot name in the slots list for the slot resolution details.</p>
-    pub slot_name: ::std::option::Option<::std::string::String>,
+    pub slot_name: ::std::string::String,
     /// <p>The number of matching slots used in the slots listings for the slot resolution evaluation.</p>
-    pub match_result: ::std::option::Option<crate::types::TestResultMatchStatus>,
+    pub match_result: crate::types::TestResultMatchStatus,
 }
 impl ConversationLevelSlotResolutionResultItem {
     /// <p>The intents used in the slots list for the slot resolution details.</p>
-    pub fn intent_name(&self) -> ::std::option::Option<&str> {
-        self.intent_name.as_deref()
+    pub fn intent_name(&self) -> &str {
+        use std::ops::Deref;
+        self.intent_name.deref()
     }
     /// <p>The slot name in the slots list for the slot resolution details.</p>
-    pub fn slot_name(&self) -> ::std::option::Option<&str> {
-        self.slot_name.as_deref()
+    pub fn slot_name(&self) -> &str {
+        use std::ops::Deref;
+        self.slot_name.deref()
     }
     /// <p>The number of matching slots used in the slots listings for the slot resolution evaluation.</p>
-    pub fn match_result(&self) -> ::std::option::Option<&crate::types::TestResultMatchStatus> {
-        self.match_result.as_ref()
+    pub fn match_result(&self) -> &crate::types::TestResultMatchStatus {
+        &self.match_result
     }
 }
 impl ConversationLevelSlotResolutionResultItem {
@@ -42,6 +44,7 @@ pub struct ConversationLevelSlotResolutionResultItemBuilder {
 }
 impl ConversationLevelSlotResolutionResultItemBuilder {
     /// <p>The intents used in the slots list for the slot resolution details.</p>
+    /// This field is required.
     pub fn intent_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.intent_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl ConversationLevelSlotResolutionResultItemBuilder {
         &self.intent_name
     }
     /// <p>The slot name in the slots list for the slot resolution details.</p>
+    /// This field is required.
     pub fn slot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.slot_name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +74,7 @@ impl ConversationLevelSlotResolutionResultItemBuilder {
         &self.slot_name
     }
     /// <p>The number of matching slots used in the slots listings for the slot resolution evaluation.</p>
+    /// This field is required.
     pub fn match_result(mut self, input: crate::types::TestResultMatchStatus) -> Self {
         self.match_result = ::std::option::Option::Some(input);
         self
@@ -84,11 +89,32 @@ impl ConversationLevelSlotResolutionResultItemBuilder {
         &self.match_result
     }
     /// Consumes the builder and constructs a [`ConversationLevelSlotResolutionResultItem`](crate::types::ConversationLevelSlotResolutionResultItem).
-    pub fn build(self) -> crate::types::ConversationLevelSlotResolutionResultItem {
-        crate::types::ConversationLevelSlotResolutionResultItem {
-            intent_name: self.intent_name,
-            slot_name: self.slot_name,
-            match_result: self.match_result,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`intent_name`](crate::types::builders::ConversationLevelSlotResolutionResultItemBuilder::intent_name)
+    /// - [`slot_name`](crate::types::builders::ConversationLevelSlotResolutionResultItemBuilder::slot_name)
+    /// - [`match_result`](crate::types::builders::ConversationLevelSlotResolutionResultItemBuilder::match_result)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::ConversationLevelSlotResolutionResultItem, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ConversationLevelSlotResolutionResultItem {
+            intent_name: self.intent_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "intent_name",
+                    "intent_name was not specified but it is required when building ConversationLevelSlotResolutionResultItem",
+                )
+            })?,
+            slot_name: self.slot_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "slot_name",
+                    "slot_name was not specified but it is required when building ConversationLevelSlotResolutionResultItem",
+                )
+            })?,
+            match_result: self.match_result.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "match_result",
+                    "match_result was not specified but it is required when building ConversationLevelSlotResolutionResultItem",
+                )
+            })?,
+        })
     }
 }

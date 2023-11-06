@@ -45,8 +45,10 @@ impl ImportWorkspaceImageInput {
         self.image_description.as_deref()
     }
     /// <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 and 11 BYOL images. For more information about subscribing to Office for BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows Desktop Licenses</a>.</p> <note>
     /// <ul>
@@ -54,8 +56,10 @@ impl ImportWorkspaceImageInput {
     /// <li> <p>Windows 11 only supports <code>Microsoft_Office_2019</code>.</p> </li>
     /// </ul>
     /// </note>
-    pub fn applications(&self) -> ::std::option::Option<&[crate::types::Application]> {
-        self.applications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.applications.is_none()`.
+    pub fn applications(&self) -> &[crate::types::Application] {
+        self.applications.as_deref().unwrap_or_default()
     }
 }
 impl ImportWorkspaceImageInput {
@@ -78,6 +82,7 @@ pub struct ImportWorkspaceImageInputBuilder {
 }
 impl ImportWorkspaceImageInputBuilder {
     /// <p>The identifier of the EC2 image.</p>
+    /// This field is required.
     pub fn ec2_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ec2_image_id = ::std::option::Option::Some(input.into());
         self
@@ -95,6 +100,7 @@ impl ImportWorkspaceImageInputBuilder {
     /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>, <code>BYOL_REGULAR_WSP</code>, or <code>BYOL_REGULAR_BYOP</code>, depending on the protocol.</p> <note>
     /// <p>The <code>BYOL_REGULAR_BYOP</code> and <code>BYOL_GRAPHICS_G4DN_BYOP</code> values are only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use these values. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
     /// </note>
+    /// This field is required.
     pub fn ingestion_process(mut self, input: crate::types::WorkspaceImageIngestionProcess) -> Self {
         self.ingestion_process = ::std::option::Option::Some(input);
         self
@@ -115,6 +121,7 @@ impl ImportWorkspaceImageInputBuilder {
         &self.ingestion_process
     }
     /// <p>The name of the WorkSpace image.</p>
+    /// This field is required.
     pub fn image_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_name = ::std::option::Option::Some(input.into());
         self
@@ -129,6 +136,7 @@ impl ImportWorkspaceImageInputBuilder {
         &self.image_name
     }
     /// <p>The description of the WorkSpace image.</p>
+    /// This field is required.
     pub fn image_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_description = ::std::option::Option::Some(input.into());
         self
@@ -200,7 +208,7 @@ impl ImportWorkspaceImageInputBuilder {
     /// Consumes the builder and constructs a [`ImportWorkspaceImageInput`](crate::operation::import_workspace_image::ImportWorkspaceImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::import_workspace_image::ImportWorkspaceImageInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::import_workspace_image::ImportWorkspaceImageInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::import_workspace_image::ImportWorkspaceImageInput {
             ec2_image_id: self.ec2_image_id,

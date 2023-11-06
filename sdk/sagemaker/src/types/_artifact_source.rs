@@ -15,8 +15,10 @@ impl ArtifactSource {
         self.source_uri.as_deref()
     }
     /// <p>A list of source types.</p>
-    pub fn source_types(&self) -> ::std::option::Option<&[crate::types::ArtifactSourceType]> {
-        self.source_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_types.is_none()`.
+    pub fn source_types(&self) -> &[crate::types::ArtifactSourceType] {
+        self.source_types.as_deref().unwrap_or_default()
     }
 }
 impl ArtifactSource {
@@ -35,6 +37,7 @@ pub struct ArtifactSourceBuilder {
 }
 impl ArtifactSourceBuilder {
     /// <p>The URI of the source.</p>
+    /// This field is required.
     pub fn source_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_uri = ::std::option::Option::Some(input.into());
         self

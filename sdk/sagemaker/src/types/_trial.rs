@@ -71,12 +71,16 @@ impl Trial {
         self.metadata_properties.as_ref()
     }
     /// <p>The list of tags that are associated with the trial. You can use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search on the tags.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>A list of the components associated with the trial. For each component, a summary of the component's properties is included.</p>
-    pub fn trial_component_summaries(&self) -> ::std::option::Option<&[crate::types::TrialComponentSimpleSummary]> {
-        self.trial_component_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.trial_component_summaries.is_none()`.
+    pub fn trial_component_summaries(&self) -> &[crate::types::TrialComponentSimpleSummary] {
+        self.trial_component_summaries.as_deref().unwrap_or_default()
     }
 }
 impl Trial {

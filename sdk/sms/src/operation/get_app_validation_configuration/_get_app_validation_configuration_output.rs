@@ -11,12 +11,16 @@ pub struct GetAppValidationConfigurationOutput {
 }
 impl GetAppValidationConfigurationOutput {
     /// <p>The configuration for application validation.</p>
-    pub fn app_validation_configurations(&self) -> ::std::option::Option<&[crate::types::AppValidationConfiguration]> {
-        self.app_validation_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.app_validation_configurations.is_none()`.
+    pub fn app_validation_configurations(&self) -> &[crate::types::AppValidationConfiguration] {
+        self.app_validation_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The configuration for instance validation.</p>
-    pub fn server_group_validation_configurations(&self) -> ::std::option::Option<&[crate::types::ServerGroupValidationConfiguration]> {
-        self.server_group_validation_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.server_group_validation_configurations.is_none()`.
+    pub fn server_group_validation_configurations(&self) -> &[crate::types::ServerGroupValidationConfiguration] {
+        self.server_group_validation_configurations.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetAppValidationConfigurationOutput {

@@ -34,6 +34,7 @@ pub struct DeleteAssessmentReportInputBuilder {
 }
 impl DeleteAssessmentReportInputBuilder {
     /// <p> The unique identifier for the assessment. </p>
+    /// This field is required.
     pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteAssessmentReportInputBuilder {
         &self.assessment_id
     }
     /// <p> The unique identifier for the assessment report. </p>
+    /// This field is required.
     pub fn assessment_report_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_report_id = ::std::option::Option::Some(input.into());
         self
@@ -64,8 +66,10 @@ impl DeleteAssessmentReportInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAssessmentReportInput`](crate::operation::delete_assessment_report::DeleteAssessmentReportInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_assessment_report::DeleteAssessmentReportInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_assessment_report::DeleteAssessmentReportInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_assessment_report::DeleteAssessmentReportInput {
             assessment_id: self.assessment_id,
             assessment_report_id: self.assessment_report_id,

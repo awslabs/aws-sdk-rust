@@ -69,8 +69,10 @@ impl ComponentProperty {
         self.user_attribute.as_deref()
     }
     /// <p>A list of component properties to concatenate to create the value to assign to this component property.</p>
-    pub fn concat(&self) -> ::std::option::Option<&[crate::types::ComponentProperty]> {
-        self.concat.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.concat.is_none()`.
+    pub fn concat(&self) -> &[crate::types::ComponentProperty] {
+        self.concat.as_deref().unwrap_or_default()
     }
     /// <p>The conditional expression to use to assign a value to the component property.</p>
     pub fn condition(&self) -> ::std::option::Option<&crate::types::ComponentConditionProperty> {

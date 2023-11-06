@@ -32,11 +32,10 @@ pub fn de_batch_put_asset_property_value_http_error(
                     )
                     .map_err(crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::conflicting_operation_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -48,11 +47,10 @@ pub fn de_batch_put_asset_property_value_http_error(
                 output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output)
                     .map_err(crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_failure_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InvalidRequestException" => crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError::InvalidRequestException({
@@ -63,11 +61,10 @@ pub fn de_batch_put_asset_property_value_http_error(
                 output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output)
                     .map_err(crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_request_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "LimitExceededException" => crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError::LimitExceededException({
@@ -78,11 +75,10 @@ pub fn de_batch_put_asset_property_value_http_error(
                 output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output)
                     .map_err(crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::limit_exceeded_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => {
@@ -95,11 +91,10 @@ pub fn de_batch_put_asset_property_value_http_error(
                         crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                             .map_err(crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::resource_not_found_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -113,11 +108,10 @@ pub fn de_batch_put_asset_property_value_http_error(
                         crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
                             .map_err(crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::service_unavailable_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -129,11 +123,10 @@ pub fn de_batch_put_asset_property_value_http_error(
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError::generic(generic),
@@ -155,18 +148,20 @@ pub fn de_batch_put_asset_property_value_http_response(
         output = crate::protocol_serde::shape_batch_put_asset_property_value::de_batch_put_asset_property_value(_response_body, output)
             .map_err(crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::batch_put_asset_property_value_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError::unhandled)?
     })
 }
 
 pub fn ser_batch_put_asset_property_value_input(
     input: &crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_batch_put_asset_property_value_input::ser_batch_put_asset_property_value_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_batch_put_asset_property_value(

@@ -27,6 +27,7 @@ pub struct DescribeEmailMonitoringConfigurationInputBuilder {
 }
 impl DescribeEmailMonitoringConfigurationInputBuilder {
     /// <p>The ID of the organization for which the email monitoring configuration is described.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeEmailMonitoringConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationInput {

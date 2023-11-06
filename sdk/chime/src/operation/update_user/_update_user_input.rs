@@ -55,6 +55,7 @@ pub struct UpdateUserInputBuilder {
 }
 impl UpdateUserInputBuilder {
     /// <p>The Amazon Chime account ID.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl UpdateUserInputBuilder {
         &self.account_id
     }
     /// <p>The user ID.</p>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
@@ -125,7 +127,7 @@ impl UpdateUserInputBuilder {
         &self.alexa_for_business_metadata
     }
     /// Consumes the builder and constructs a [`UpdateUserInput`](crate::operation::update_user::UpdateUserInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_user::UpdateUserInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_user::UpdateUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_user::UpdateUserInput {
             account_id: self.account_id,
             user_id: self.user_id,

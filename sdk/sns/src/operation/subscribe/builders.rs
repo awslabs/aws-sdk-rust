@@ -10,7 +10,7 @@ impl SubscribeInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::subscribe::SubscribeOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::subscribe::SubscribeError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -23,7 +23,7 @@ impl SubscribeInputBuilder {
 /// Fluent builder constructing a request to `Subscribe`.
 ///
 /// <p>Subscribes an endpoint to an Amazon SNS topic. If the endpoint type is HTTP/S or email, or if the endpoint and the topic are not in the same Amazon Web Services account, the endpoint owner must run the <code>ConfirmSubscription</code> action to confirm the subscription.</p>
-/// <p>You call the <code>ConfirmSubscription</code> action with the token from the subscription response. Confirmation tokens are valid for three days.</p>
+/// <p>You call the <code>ConfirmSubscription</code> action with the token from the subscription response. Confirmation tokens are valid for two days.</p>
 /// <p>This action is throttled at 100 transactions per second (TPS).</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SubscribeFluentBuilder {
@@ -68,12 +68,15 @@ impl SubscribeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::subscribe::SubscribeOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::subscribe::SubscribeError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::subscribe::Subscribe::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -82,20 +85,15 @@ impl SubscribeFluentBuilder {
         crate::operation::subscribe::Subscribe::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::subscribe::SubscribeOutput,
-            crate::operation::subscribe::SubscribeError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::subscribe::SubscribeError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::subscribe::SubscribeOutput,
+        crate::operation::subscribe::SubscribeError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -239,6 +237,17 @@ impl SubscribeFluentBuilder {
     /// <li> <p>Amazon SNS listed as a trusted entity</p> </li>
     /// </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p> </li>
     /// </ul>
+    /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:</p>
+    /// <ul>
+    /// <li> <p> <code>ReplayPolicy</code> – Adds or updates an inline policy document for a subscription to replay messages stored in the specified Amazon SNS topic.</p> </li>
+    /// <li> <p> <code>ReplayStatus</code> – Retrieves the status of the subscription message replay, which can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>Completed</code> – The replay has successfully redelivered all messages, and is now delivering newly published messages. If an ending point was specified in the <code>ReplayPolicy</code> then the subscription will no longer receive newly published messages.</p> </li>
+    /// <li> <p> <code>In progress</code> – The replay is currently replaying the selected messages.</p> </li>
+    /// <li> <p> <code>Failed</code> – The replay was unable to complete.</p> </li>
+    /// <li> <p> <code>Pending</code> – The default state while the replay initiates.</p> </li>
+    /// </ul> </li>
+    /// </ul>
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attributes(k.into(), v.into());
         self
@@ -264,6 +273,17 @@ impl SubscribeFluentBuilder {
     /// <li> <p>Amazon SNS listed as a trusted entity</p> </li>
     /// </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p> </li>
     /// </ul>
+    /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:</p>
+    /// <ul>
+    /// <li> <p> <code>ReplayPolicy</code> – Adds or updates an inline policy document for a subscription to replay messages stored in the specified Amazon SNS topic.</p> </li>
+    /// <li> <p> <code>ReplayStatus</code> – Retrieves the status of the subscription message replay, which can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>Completed</code> – The replay has successfully redelivered all messages, and is now delivering newly published messages. If an ending point was specified in the <code>ReplayPolicy</code> then the subscription will no longer receive newly published messages.</p> </li>
+    /// <li> <p> <code>In progress</code> – The replay is currently replaying the selected messages.</p> </li>
+    /// <li> <p> <code>Failed</code> – The replay was unable to complete.</p> </li>
+    /// <li> <p> <code>Pending</code> – The default state while the replay initiates.</p> </li>
+    /// </ul> </li>
+    /// </ul>
     pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
@@ -288,6 +308,17 @@ impl SubscribeFluentBuilder {
     /// <li> <p>Permission to write to the Kinesis Data Firehose delivery stream</p> </li>
     /// <li> <p>Amazon SNS listed as a trusted entity</p> </li>
     /// </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p> </li>
+    /// </ul>
+    /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:</p>
+    /// <ul>
+    /// <li> <p> <code>ReplayPolicy</code> – Adds or updates an inline policy document for a subscription to replay messages stored in the specified Amazon SNS topic.</p> </li>
+    /// <li> <p> <code>ReplayStatus</code> – Retrieves the status of the subscription message replay, which can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>Completed</code> – The replay has successfully redelivered all messages, and is now delivering newly published messages. If an ending point was specified in the <code>ReplayPolicy</code> then the subscription will no longer receive newly published messages.</p> </li>
+    /// <li> <p> <code>In progress</code> – The replay is currently replaying the selected messages.</p> </li>
+    /// <li> <p> <code>Failed</code> – The replay was unable to complete.</p> </li>
+    /// <li> <p> <code>Pending</code> – The default state while the replay initiates.</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_attributes()

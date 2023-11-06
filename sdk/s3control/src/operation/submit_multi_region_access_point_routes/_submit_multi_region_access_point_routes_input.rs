@@ -20,8 +20,10 @@ impl SubmitMultiRegionAccessPointRoutesInput {
         self.mrap.as_deref()
     }
     /// <p>The different routes that make up the new route configuration. Active routes return a value of <code>100</code>, and passive routes return a value of <code>0</code>.</p>
-    pub fn route_updates(&self) -> ::std::option::Option<&[crate::types::MultiRegionAccessPointRoute]> {
-        self.route_updates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.route_updates.is_none()`.
+    pub fn route_updates(&self) -> &[crate::types::MultiRegionAccessPointRoute] {
+        self.route_updates.as_deref().unwrap_or_default()
     }
 }
 impl SubmitMultiRegionAccessPointRoutesInput {
@@ -41,6 +43,7 @@ pub struct SubmitMultiRegionAccessPointRoutesInputBuilder {
 }
 impl SubmitMultiRegionAccessPointRoutesInputBuilder {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl SubmitMultiRegionAccessPointRoutesInputBuilder {
         &self.account_id
     }
     /// <p>The Multi-Region Access Point ARN.</p>
+    /// This field is required.
     pub fn mrap(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mrap = ::std::option::Option::Some(input.into());
         self
@@ -93,7 +97,7 @@ impl SubmitMultiRegionAccessPointRoutesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesInput {

@@ -96,6 +96,7 @@ pub struct PutLifecycleHookInputBuilder {
 }
 impl PutLifecycleHookInputBuilder {
     /// <p>The name of the lifecycle hook.</p>
+    /// This field is required.
     pub fn lifecycle_hook_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lifecycle_hook_name = ::std::option::Option::Some(input.into());
         self
@@ -110,6 +111,7 @@ impl PutLifecycleHookInputBuilder {
         &self.lifecycle_hook_name
     }
     /// <p>The name of the Auto Scaling group.</p>
+    /// This field is required.
     pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
@@ -240,7 +242,7 @@ impl PutLifecycleHookInputBuilder {
     /// Consumes the builder and constructs a [`PutLifecycleHookInput`](crate::operation::put_lifecycle_hook::PutLifecycleHookInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_lifecycle_hook::PutLifecycleHookInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_lifecycle_hook::PutLifecycleHookInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_lifecycle_hook::PutLifecycleHookInput {
             lifecycle_hook_name: self.lifecycle_hook_name,
             auto_scaling_group_name: self.auto_scaling_group_name,

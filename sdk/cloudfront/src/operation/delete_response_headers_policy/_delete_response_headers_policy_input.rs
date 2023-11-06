@@ -39,6 +39,7 @@ pub struct DeleteResponseHeadersPolicyInputBuilder {
 impl DeleteResponseHeadersPolicyInputBuilder {
     /// <p>The identifier for the response headers policy that you are deleting.</p>
     /// <p>To get the identifier, you can use <code>ListResponseHeadersPolicies</code>.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -76,7 +77,7 @@ impl DeleteResponseHeadersPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicyInput {
             id: self.id,

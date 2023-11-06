@@ -41,6 +41,7 @@ pub struct ListEnabledControlsInputBuilder {
 }
 impl ListEnabledControlsInputBuilder {
     /// <p>The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
+    /// This field is required.
     pub fn target_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_identifier = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl ListEnabledControlsInputBuilder {
     /// Consumes the builder and constructs a [`ListEnabledControlsInput`](crate::operation::list_enabled_controls::ListEnabledControlsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_enabled_controls::ListEnabledControlsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_enabled_controls::ListEnabledControlsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_enabled_controls::ListEnabledControlsInput {
             target_identifier: self.target_identifier,

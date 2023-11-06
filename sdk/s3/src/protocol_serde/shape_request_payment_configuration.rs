@@ -2,12 +2,12 @@
 pub fn ser_request_payment_configuration(
     input: &crate::types::RequestPaymentConfiguration,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.payer {
+    {
         let mut inner_writer = scope.start_el("Payer").finish();
-        inner_writer.data(var_1.as_str());
+        inner_writer.data(input.payer.as_str());
     }
     scope.finish();
     Ok(())

@@ -5,15 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListArchiveRulesOutput {
     /// <p>A list of archive rules created for the specified analyzer.</p>
-    pub archive_rules: ::std::option::Option<::std::vec::Vec<crate::types::ArchiveRuleSummary>>,
+    pub archive_rules: ::std::vec::Vec<crate::types::ArchiveRuleSummary>,
     /// <p>A token used for pagination of results returned.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListArchiveRulesOutput {
     /// <p>A list of archive rules created for the specified analyzer.</p>
-    pub fn archive_rules(&self) -> ::std::option::Option<&[crate::types::ArchiveRuleSummary]> {
-        self.archive_rules.as_deref()
+    pub fn archive_rules(&self) -> &[crate::types::ArchiveRuleSummary] {
+        use std::ops::Deref;
+        self.archive_rules.deref()
     }
     /// <p>A token used for pagination of results returned.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -85,11 +86,20 @@ impl ListArchiveRulesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListArchiveRulesOutput`](crate::operation::list_archive_rules::ListArchiveRulesOutput).
-    pub fn build(self) -> crate::operation::list_archive_rules::ListArchiveRulesOutput {
-        crate::operation::list_archive_rules::ListArchiveRulesOutput {
-            archive_rules: self.archive_rules,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`archive_rules`](crate::operation::list_archive_rules::builders::ListArchiveRulesOutputBuilder::archive_rules)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_archive_rules::ListArchiveRulesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_archive_rules::ListArchiveRulesOutput {
+            archive_rules: self.archive_rules.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "archive_rules",
+                    "archive_rules was not specified but it is required when building ListArchiveRulesOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

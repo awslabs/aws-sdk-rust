@@ -55,6 +55,7 @@ impl DeleteRepositoryInputBuilder {
         &self.registry_id
     }
     /// <p>The name of the repository to delete.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl DeleteRepositoryInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRepositoryInput`](crate::operation::delete_repository::DeleteRepositoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_repository::DeleteRepositoryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_repository::DeleteRepositoryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_repository::DeleteRepositoryInput {
             registry_id: self.registry_id,
             repository_name: self.repository_name,

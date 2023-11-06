@@ -27,6 +27,7 @@ pub struct GetDetectorInputBuilder {
 }
 impl GetDetectorInputBuilder {
     /// <p>The unique ID of the detector that you want to get.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetDetectorInputBuilder {
         &self.detector_id
     }
     /// Consumes the builder and constructs a [`GetDetectorInput`](crate::operation::get_detector::GetDetectorInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_detector::GetDetectorInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_detector::GetDetectorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_detector::GetDetectorInput {
             detector_id: self.detector_id,
         })

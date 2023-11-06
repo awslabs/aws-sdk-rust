@@ -48,6 +48,7 @@ pub struct CreateResourceDataSyncInputBuilder {
 }
 impl CreateResourceDataSyncInputBuilder {
     /// <p>A name for the configuration.</p>
+    /// This field is required.
     pub fn sync_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sync_name = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +109,7 @@ impl CreateResourceDataSyncInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_resource_data_sync::CreateResourceDataSyncInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_resource_data_sync::CreateResourceDataSyncInput {
             sync_name: self.sync_name,

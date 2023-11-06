@@ -34,6 +34,7 @@ pub struct EvaluateSessionInputBuilder {
 }
 impl EvaluateSessionInputBuilder {
     /// <p>The identifier of the domain where the session started.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl EvaluateSessionInputBuilder {
         &self.domain_id
     }
     /// <p>The session identifier, or name of the session, that you want to evaluate. In Voice ID integration, this is the Contact-Id.</p>
+    /// This field is required.
     pub fn session_name_or_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_name_or_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl EvaluateSessionInputBuilder {
     /// Consumes the builder and constructs a [`EvaluateSessionInput`](crate::operation::evaluate_session::EvaluateSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::evaluate_session::EvaluateSessionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::evaluate_session::EvaluateSessionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::evaluate_session::EvaluateSessionInput {
             domain_id: self.domain_id,
             session_name_or_id: self.session_name_or_id,

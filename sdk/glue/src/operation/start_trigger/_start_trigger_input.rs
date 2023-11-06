@@ -27,6 +27,7 @@ pub struct StartTriggerInputBuilder {
 }
 impl StartTriggerInputBuilder {
     /// <p>The name of the trigger to start.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,9 @@ impl StartTriggerInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`StartTriggerInput`](crate::operation::start_trigger::StartTriggerInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_trigger::StartTriggerInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::start_trigger::StartTriggerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_trigger::StartTriggerInput { name: self.name })
     }
 }

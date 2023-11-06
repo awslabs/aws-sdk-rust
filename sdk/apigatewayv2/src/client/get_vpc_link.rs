@@ -3,13 +3,13 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetVpcLink`](crate::operation::get_vpc_link::builders::GetVpcLinkFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`vpc_link_id(impl Into<String>)`](crate::operation::get_vpc_link::builders::GetVpcLinkFluentBuilder::vpc_link_id) / [`set_vpc_link_id(Option<String>)`](crate::operation::get_vpc_link::builders::GetVpcLinkFluentBuilder::set_vpc_link_id): <p>The ID of the VPC link.</p>
+    ///   - [`vpc_link_id(impl Into<String>)`](crate::operation::get_vpc_link::builders::GetVpcLinkFluentBuilder::vpc_link_id) / [`set_vpc_link_id(Option<String>)`](crate::operation::get_vpc_link::builders::GetVpcLinkFluentBuilder::set_vpc_link_id):<br>required: **true**<br><p>The ID of the VPC link.</p><br>
     /// - On success, responds with [`GetVpcLinkOutput`](crate::operation::get_vpc_link::GetVpcLinkOutput) with field(s):
     ///   - [`created_date(Option<DateTime>)`](crate::operation::get_vpc_link::GetVpcLinkOutput::created_date): <p>The timestamp when the VPC link was created.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_vpc_link::GetVpcLinkOutput::name): <p>The name of the VPC link.</p>
-    ///   - [`security_group_ids(Option<Vec<String>>)`](crate::operation::get_vpc_link::GetVpcLinkOutput::security_group_ids): <p>A list of security group IDs for the VPC link.</p>
-    ///   - [`subnet_ids(Option<Vec<String>>)`](crate::operation::get_vpc_link::GetVpcLinkOutput::subnet_ids): <p>A list of subnet IDs to include in the VPC link.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_vpc_link::GetVpcLinkOutput::tags): <p>Tags for the VPC link.</p>
+    ///   - [`security_group_ids(Option<Vec::<String>>)`](crate::operation::get_vpc_link::GetVpcLinkOutput::security_group_ids): <p>A list of security group IDs for the VPC link.</p>
+    ///   - [`subnet_ids(Option<Vec::<String>>)`](crate::operation::get_vpc_link::GetVpcLinkOutput::subnet_ids): <p>A list of subnet IDs to include in the VPC link.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_vpc_link::GetVpcLinkOutput::tags): <p>Tags for the VPC link.</p>
     ///   - [`vpc_link_id(Option<String>)`](crate::operation::get_vpc_link::GetVpcLinkOutput::vpc_link_id): <p>The ID of the VPC link.</p>
     ///   - [`vpc_link_status(Option<VpcLinkStatus>)`](crate::operation::get_vpc_link::GetVpcLinkOutput::vpc_link_status): <p>The status of the VPC link.</p>
     ///   - [`vpc_link_status_message(Option<String>)`](crate::operation::get_vpc_link::GetVpcLinkOutput::vpc_link_status_message): <p>A message summarizing the cause of the status of the VPC link.</p>

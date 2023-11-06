@@ -38,7 +38,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::code_artifacts_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -49,12 +51,14 @@ where
 pub fn ser_code_artifacts(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CodeArtifacts,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.source_code_artifacts_object_key {
-        object.key("SourceCodeArtifactsObjectKey").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object
+            .key("SourceCodeArtifactsObjectKey")
+            .string(input.source_code_artifacts_object_key.as_str());
     }
-    if let Some(var_2) = &input.build_artifacts_object_key {
-        object.key("BuildArtifactsObjectKey").string(var_2.as_str());
+    if let Some(var_1) = &input.build_artifacts_object_key {
+        object.key("BuildArtifactsObjectKey").string(var_1.as_str());
     }
     Ok(())
 }

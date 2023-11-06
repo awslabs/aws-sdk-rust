@@ -5,19 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TelemetryMetadata {
     /// <p>A specific type of behavioral data that is collected by the agent.</p>
-    pub message_type: ::std::option::Option<::std::string::String>,
+    pub message_type: ::std::string::String,
     /// <p>The count of messages that the agent sends to the Amazon Inspector service.</p>
-    pub count: ::std::option::Option<i64>,
+    pub count: i64,
     /// <p>The data size of messages that the agent sends to the Amazon Inspector service.</p>
     pub data_size: ::std::option::Option<i64>,
 }
 impl TelemetryMetadata {
     /// <p>A specific type of behavioral data that is collected by the agent.</p>
-    pub fn message_type(&self) -> ::std::option::Option<&str> {
-        self.message_type.as_deref()
+    pub fn message_type(&self) -> &str {
+        use std::ops::Deref;
+        self.message_type.deref()
     }
     /// <p>The count of messages that the agent sends to the Amazon Inspector service.</p>
-    pub fn count(&self) -> ::std::option::Option<i64> {
+    pub fn count(&self) -> i64 {
         self.count
     }
     /// <p>The data size of messages that the agent sends to the Amazon Inspector service.</p>
@@ -42,6 +43,7 @@ pub struct TelemetryMetadataBuilder {
 }
 impl TelemetryMetadataBuilder {
     /// <p>A specific type of behavioral data that is collected by the agent.</p>
+    /// This field is required.
     pub fn message_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_type = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +58,7 @@ impl TelemetryMetadataBuilder {
         &self.message_type
     }
     /// <p>The count of messages that the agent sends to the Amazon Inspector service.</p>
+    /// This field is required.
     pub fn count(mut self, input: i64) -> Self {
         self.count = ::std::option::Option::Some(input);
         self
@@ -84,11 +87,24 @@ impl TelemetryMetadataBuilder {
         &self.data_size
     }
     /// Consumes the builder and constructs a [`TelemetryMetadata`](crate::types::TelemetryMetadata).
-    pub fn build(self) -> crate::types::TelemetryMetadata {
-        crate::types::TelemetryMetadata {
-            message_type: self.message_type,
-            count: self.count,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`message_type`](crate::types::builders::TelemetryMetadataBuilder::message_type)
+    /// - [`count`](crate::types::builders::TelemetryMetadataBuilder::count)
+    pub fn build(self) -> ::std::result::Result<crate::types::TelemetryMetadata, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TelemetryMetadata {
+            message_type: self.message_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "message_type",
+                    "message_type was not specified but it is required when building TelemetryMetadata",
+                )
+            })?,
+            count: self.count.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "count",
+                    "count was not specified but it is required when building TelemetryMetadata",
+                )
+            })?,
             data_size: self.data_size,
-        }
+        })
     }
 }

@@ -42,6 +42,7 @@ pub struct GetTagsInputBuilder {
 }
 impl GetTagsInputBuilder {
     /// <p>The ARN of a resource that can be tagged.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -84,7 +85,7 @@ impl GetTagsInputBuilder {
         &self.limit
     }
     /// Consumes the builder and constructs a [`GetTagsInput`](crate::operation::get_tags::GetTagsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_tags::GetTagsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_tags::GetTagsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_tags::GetTagsInput {
             resource_arn: self.resource_arn,
             position: self.position,

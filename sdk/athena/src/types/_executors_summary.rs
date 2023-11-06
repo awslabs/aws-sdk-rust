@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecutorsSummary {
     /// <p>The UUID of the executor.</p>
-    pub executor_id: ::std::option::Option<::std::string::String>,
+    pub executor_id: ::std::string::String,
     /// <p>The type of executor used for the application (<code>COORDINATOR</code>, <code>GATEWAY</code>, or <code>WORKER</code>).</p>
     pub executor_type: ::std::option::Option<crate::types::ExecutorType>,
     /// <p>The date and time that the executor started.</p>
@@ -25,8 +25,9 @@ pub struct ExecutorsSummary {
 }
 impl ExecutorsSummary {
     /// <p>The UUID of the executor.</p>
-    pub fn executor_id(&self) -> ::std::option::Option<&str> {
-        self.executor_id.as_deref()
+    pub fn executor_id(&self) -> &str {
+        use std::ops::Deref;
+        self.executor_id.deref()
     }
     /// <p>The type of executor used for the application (<code>COORDINATOR</code>, <code>GATEWAY</code>, or <code>WORKER</code>).</p>
     pub fn executor_type(&self) -> ::std::option::Option<&crate::types::ExecutorType> {
@@ -75,6 +76,7 @@ pub struct ExecutorsSummaryBuilder {
 }
 impl ExecutorsSummaryBuilder {
     /// <p>The UUID of the executor.</p>
+    /// This field is required.
     pub fn executor_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.executor_id = ::std::option::Option::Some(input.into());
         self
@@ -177,14 +179,21 @@ impl ExecutorsSummaryBuilder {
         &self.executor_size
     }
     /// Consumes the builder and constructs a [`ExecutorsSummary`](crate::types::ExecutorsSummary).
-    pub fn build(self) -> crate::types::ExecutorsSummary {
-        crate::types::ExecutorsSummary {
-            executor_id: self.executor_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`executor_id`](crate::types::builders::ExecutorsSummaryBuilder::executor_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::ExecutorsSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ExecutorsSummary {
+            executor_id: self.executor_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "executor_id",
+                    "executor_id was not specified but it is required when building ExecutorsSummary",
+                )
+            })?,
             executor_type: self.executor_type,
             start_date_time: self.start_date_time,
             termination_date_time: self.termination_date_time,
             executor_state: self.executor_state,
             executor_size: self.executor_size,
-        }
+        })
     }
 }

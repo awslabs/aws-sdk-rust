@@ -15,8 +15,10 @@ impl DescribePackagesFilter {
         self.name.as_ref()
     }
     /// <p>A non-empty list of values for the specified field.</p>
-    pub fn value(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.value.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.value.is_none()`.
+    pub fn value(&self) -> &[::std::string::String] {
+        self.value.as_deref().unwrap_or_default()
     }
 }
 impl DescribePackagesFilter {

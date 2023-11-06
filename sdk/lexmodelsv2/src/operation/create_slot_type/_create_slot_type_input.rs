@@ -40,8 +40,10 @@ impl CreateSlotTypeInput {
         self.description.as_deref()
     }
     /// <p>A list of <code>SlotTypeValue</code> objects that defines the values that the slot type can take. Each value can have a list of synonyms, additional values that help train the machine learning model about the values that it resolves for a slot.</p>
-    pub fn slot_type_values(&self) -> ::std::option::Option<&[crate::types::SlotTypeValue]> {
-        self.slot_type_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.slot_type_values.is_none()`.
+    pub fn slot_type_values(&self) -> &[crate::types::SlotTypeValue] {
+        self.slot_type_values.as_deref().unwrap_or_default()
     }
     /// <p>Determines the strategy that Amazon Lex uses to select a value from the list of possible values. The field can be set to one of the following values:</p>
     /// <ul>
@@ -102,6 +104,7 @@ pub struct CreateSlotTypeInputBuilder {
 }
 impl CreateSlotTypeInputBuilder {
     /// <p>The name for the slot. A slot type name must be unique within the intent.</p>
+    /// This field is required.
     pub fn slot_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.slot_type_name = ::std::option::Option::Some(input.into());
         self
@@ -196,6 +199,7 @@ impl CreateSlotTypeInputBuilder {
         &self.parent_slot_type_signature
     }
     /// <p>The identifier of the bot associated with this slot type.</p>
+    /// This field is required.
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
         self
@@ -210,6 +214,7 @@ impl CreateSlotTypeInputBuilder {
         &self.bot_id
     }
     /// <p>The identifier of the bot version associated with this slot type.</p>
+    /// This field is required.
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
         self
@@ -224,6 +229,7 @@ impl CreateSlotTypeInputBuilder {
         &self.bot_version
     }
     /// <p>The identifier of the language and locale that the slot type will be used in. The string must match one of the supported locales. All of the bots, intents, and slots used by the slot type must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// This field is required.
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
         self
@@ -268,7 +274,7 @@ impl CreateSlotTypeInputBuilder {
     /// Consumes the builder and constructs a [`CreateSlotTypeInput`](crate::operation::create_slot_type::CreateSlotTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_slot_type::CreateSlotTypeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_slot_type::CreateSlotTypeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_slot_type::CreateSlotTypeInput {
             slot_type_name: self.slot_type_name,
             description: self.description,

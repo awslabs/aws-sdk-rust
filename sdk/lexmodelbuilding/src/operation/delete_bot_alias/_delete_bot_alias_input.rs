@@ -34,6 +34,7 @@ pub struct DeleteBotAliasInputBuilder {
 }
 impl DeleteBotAliasInputBuilder {
     /// <p>The name of the alias to delete. The name is case sensitive. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteBotAliasInputBuilder {
         &self.name
     }
     /// <p>The name of the bot that the alias points to.</p>
+    /// This field is required.
     pub fn bot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DeleteBotAliasInputBuilder {
     /// Consumes the builder and constructs a [`DeleteBotAliasInput`](crate::operation::delete_bot_alias::DeleteBotAliasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_bot_alias::DeleteBotAliasInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_bot_alias::DeleteBotAliasInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_bot_alias::DeleteBotAliasInput {
             name: self.name,
             bot_name: self.bot_name,

@@ -40,6 +40,7 @@ pub struct PutContactInformationInputBuilder {
 }
 impl PutContactInformationInputBuilder {
     /// <p>Contains the details of the primary contact information associated with an Amazon Web Services account.</p>
+    /// This field is required.
     pub fn contact_information(mut self, input: crate::types::ContactInformation) -> Self {
         self.contact_information = ::std::option::Option::Some(input);
         self
@@ -79,7 +80,7 @@ impl PutContactInformationInputBuilder {
     /// Consumes the builder and constructs a [`PutContactInformationInput`](crate::operation::put_contact_information::PutContactInformationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_contact_information::PutContactInformationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_contact_information::PutContactInformationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_contact_information::PutContactInformationInput {
             contact_information: self.contact_information,

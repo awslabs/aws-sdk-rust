@@ -14,8 +14,10 @@ impl SetTagsForResourceInput {
         self.resource_arn.as_deref()
     }
     /// <p>A collection of key and value pairs that you want to set to the assessment template.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl SetTagsForResourceInput {
@@ -34,6 +36,7 @@ pub struct SetTagsForResourceInputBuilder {
 }
 impl SetTagsForResourceInputBuilder {
     /// <p>The ARN of the assessment template that you want to set tags to.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +73,7 @@ impl SetTagsForResourceInputBuilder {
     /// Consumes the builder and constructs a [`SetTagsForResourceInput`](crate::operation::set_tags_for_resource::SetTagsForResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::set_tags_for_resource::SetTagsForResourceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::set_tags_for_resource::SetTagsForResourceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::set_tags_for_resource::SetTagsForResourceInput {
             resource_arn: self.resource_arn,

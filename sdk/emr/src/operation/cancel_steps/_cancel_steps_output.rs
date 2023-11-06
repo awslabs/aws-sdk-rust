@@ -10,8 +10,10 @@ pub struct CancelStepsOutput {
 }
 impl CancelStepsOutput {
     /// <p>A list of <code>CancelStepsInfo</code>, which shows the status of specified cancel requests for each <code>StepID</code> specified.</p>
-    pub fn cancel_steps_info_list(&self) -> ::std::option::Option<&[crate::types::CancelStepsInfo]> {
-        self.cancel_steps_info_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cancel_steps_info_list.is_none()`.
+    pub fn cancel_steps_info_list(&self) -> &[crate::types::CancelStepsInfo] {
+        self.cancel_steps_info_list.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for CancelStepsOutput {

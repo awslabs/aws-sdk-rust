@@ -84,6 +84,7 @@ impl CreateServiceInputBuilder {
         &self.client_token
     }
     /// <p>The name of the service. The name must be unique within the account. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -174,7 +175,7 @@ impl CreateServiceInputBuilder {
     /// Consumes the builder and constructs a [`CreateServiceInput`](crate::operation::create_service::CreateServiceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_service::CreateServiceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_service::CreateServiceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_service::CreateServiceInput {
             client_token: self.client_token,
             name: self.name,

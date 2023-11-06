@@ -35,6 +35,7 @@ pub struct ListJobsInputBuilder {
 }
 impl ListJobsInputBuilder {
     /// <p>The run's Amazon Resource Name (ARN).</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -63,7 +64,7 @@ impl ListJobsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListJobsInput`](crate::operation::list_jobs::ListJobsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_jobs::ListJobsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_jobs::ListJobsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_jobs::ListJobsInput {
             arn: self.arn,
             next_token: self.next_token,

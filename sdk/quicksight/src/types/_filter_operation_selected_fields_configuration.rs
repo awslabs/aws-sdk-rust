@@ -18,8 +18,10 @@ pub struct FilterOperationSelectedFieldsConfiguration {
 }
 impl FilterOperationSelectedFieldsConfiguration {
     /// <p>Chooses the fields that are filtered in <code>CustomActionFilterOperation</code>.</p>
-    pub fn selected_fields(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.selected_fields.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.selected_fields.is_none()`.
+    pub fn selected_fields(&self) -> &[::std::string::String] {
+        self.selected_fields.as_deref().unwrap_or_default()
     }
     /// <p>A structure that contains the options that choose which fields are filtered in the <code>CustomActionFilterOperation</code>.</p>
     /// <p>Valid values are defined as follows:</p>
@@ -30,8 +32,10 @@ impl FilterOperationSelectedFieldsConfiguration {
         self.selected_field_options.as_ref()
     }
     /// <p>The selected columns of a dataset.</p>
-    pub fn selected_columns(&self) -> ::std::option::Option<&[crate::types::ColumnIdentifier]> {
-        self.selected_columns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.selected_columns.is_none()`.
+    pub fn selected_columns(&self) -> &[crate::types::ColumnIdentifier] {
+        self.selected_columns.as_deref().unwrap_or_default()
     }
 }
 impl FilterOperationSelectedFieldsConfiguration {

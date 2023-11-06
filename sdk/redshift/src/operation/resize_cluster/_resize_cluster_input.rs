@@ -70,6 +70,7 @@ pub struct ResizeClusterInputBuilder {
 }
 impl ResizeClusterInputBuilder {
     /// <p>The unique identifier for the cluster to resize.</p>
+    /// This field is required.
     pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
@@ -170,7 +171,7 @@ impl ResizeClusterInputBuilder {
     /// Consumes the builder and constructs a [`ResizeClusterInput`](crate::operation::resize_cluster::ResizeClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::resize_cluster::ResizeClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::resize_cluster::ResizeClusterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::resize_cluster::ResizeClusterInput {
             cluster_identifier: self.cluster_identifier,
             cluster_type: self.cluster_type,

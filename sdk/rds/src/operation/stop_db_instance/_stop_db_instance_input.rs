@@ -34,6 +34,7 @@ pub struct StopDbInstanceInputBuilder {
 }
 impl StopDbInstanceInputBuilder {
     /// <p>The user-supplied instance identifier.</p>
+    /// This field is required.
     pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_identifier = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl StopDbInstanceInputBuilder {
     /// Consumes the builder and constructs a [`StopDbInstanceInput`](crate::operation::stop_db_instance::StopDbInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_db_instance::StopDbInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_db_instance::StopDbInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_db_instance::StopDbInstanceInput {
             db_instance_identifier: self.db_instance_identifier,
             db_snapshot_identifier: self.db_snapshot_identifier,

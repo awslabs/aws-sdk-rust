@@ -34,6 +34,7 @@ pub struct GetEnvironmentOutputBuilder {
 }
 impl GetEnvironmentOutputBuilder {
     /// <p>The detailed data of the requested environment.</p>
+    /// This field is required.
     pub fn environment(mut self, input: crate::types::Environment) -> Self {
         self.environment = ::std::option::Option::Some(input);
         self

@@ -2,21 +2,22 @@
 pub fn ser_session_stickiness_config(
     input: &crate::types::SessionStickinessConfig,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.idle_ttl {
+    {
         let mut inner_writer = scope.start_el("IdleTTL").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_1).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.idle_ttl).encode());
     }
-    if let Some(var_2) = &input.maximum_ttl {
+    {
         let mut inner_writer = scope.start_el("MaximumTTL").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_2).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.maximum_ttl).encode());
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_session_stickiness_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::SessionStickinessConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -25,7 +26,7 @@ pub fn de_session_stickiness_config(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("IdleTTL") /* IdleTTL com.amazonaws.cloudfront#SessionStickinessConfig$IdleTTL */ =>  {
-                let var_3 =
+                let var_1 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -36,11 +37,11 @@ pub fn de_session_stickiness_config(
                         ?
                     )
                 ;
-                builder = builder.set_idle_ttl(var_3);
+                builder = builder.set_idle_ttl(var_1);
             }
             ,
             s if s.matches("MaximumTTL") /* MaximumTTL com.amazonaws.cloudfront#SessionStickinessConfig$MaximumTTL */ =>  {
-                let var_4 =
+                let var_2 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -51,11 +52,13 @@ pub fn de_session_stickiness_config(
                         ?
                     )
                 ;
-                builder = builder.set_maximum_ttl(var_4);
+                builder = builder.set_maximum_ttl(var_2);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::session_stickiness_config_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

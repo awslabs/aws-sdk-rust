@@ -55,6 +55,7 @@ pub struct ListGroupMembershipsInputBuilder {
 }
 impl ListGroupMembershipsInputBuilder {
     /// <p>The name of the group that you want to see a membership list of.</p>
+    /// This field is required.
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +98,7 @@ impl ListGroupMembershipsInputBuilder {
         &self.max_results
     }
     /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +113,7 @@ impl ListGroupMembershipsInputBuilder {
         &self.aws_account_id
     }
     /// <p>The namespace of the group that you want a list of users from.</p>
+    /// This field is required.
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
         self
@@ -127,7 +130,7 @@ impl ListGroupMembershipsInputBuilder {
     /// Consumes the builder and constructs a [`ListGroupMembershipsInput`](crate::operation::list_group_memberships::ListGroupMembershipsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_group_memberships::ListGroupMembershipsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_group_memberships::ListGroupMembershipsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_group_memberships::ListGroupMembershipsInput {
             group_name: self.group_name,

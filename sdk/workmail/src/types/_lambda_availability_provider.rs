@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaAvailabilityProvider {
     /// <p>The Amazon Resource Name (ARN) of the Lambda that acts as the availability provider.</p>
-    pub lambda_arn: ::std::option::Option<::std::string::String>,
+    pub lambda_arn: ::std::string::String,
 }
 impl LambdaAvailabilityProvider {
     /// <p>The Amazon Resource Name (ARN) of the Lambda that acts as the availability provider.</p>
-    pub fn lambda_arn(&self) -> ::std::option::Option<&str> {
-        self.lambda_arn.as_deref()
+    pub fn lambda_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.lambda_arn.deref()
     }
 }
 impl LambdaAvailabilityProvider {
@@ -28,6 +29,7 @@ pub struct LambdaAvailabilityProviderBuilder {
 }
 impl LambdaAvailabilityProviderBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Lambda that acts as the availability provider.</p>
+    /// This field is required.
     pub fn lambda_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lambda_arn = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl LambdaAvailabilityProviderBuilder {
         &self.lambda_arn
     }
     /// Consumes the builder and constructs a [`LambdaAvailabilityProvider`](crate::types::LambdaAvailabilityProvider).
-    pub fn build(self) -> crate::types::LambdaAvailabilityProvider {
-        crate::types::LambdaAvailabilityProvider { lambda_arn: self.lambda_arn }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`lambda_arn`](crate::types::builders::LambdaAvailabilityProviderBuilder::lambda_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::LambdaAvailabilityProvider, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::LambdaAvailabilityProvider {
+            lambda_arn: self.lambda_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "lambda_arn",
+                    "lambda_arn was not specified but it is required when building LambdaAvailabilityProvider",
+                )
+            })?,
+        })
     }
 }

@@ -13,8 +13,10 @@ pub struct GetEnrollmentStatusesForOrganizationInput {
 }
 impl GetEnrollmentStatusesForOrganizationInput {
     /// <p>An array of objects to specify a filter that returns a more specific list of account enrollment statuses.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::EnrollmentFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::EnrollmentFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The token to advance to the next page of account enrollment statuses.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -98,7 +100,7 @@ impl GetEnrollmentStatusesForOrganizationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_enrollment_statuses_for_organization::GetEnrollmentStatusesForOrganizationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_enrollment_statuses_for_organization::GetEnrollmentStatusesForOrganizationInput {

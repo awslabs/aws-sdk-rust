@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDomainOutput {
     /// <p>The identifier of the specified Amazon DataZone domain.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The name of the Amazon DataZone domain.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the Amazon DataZone domain.</p>
@@ -12,13 +12,13 @@ pub struct GetDomainOutput {
     /// <p>The single sing-on option of the specified Amazon DataZone domain.</p>
     pub single_sign_on: ::std::option::Option<crate::types::SingleSignOn>,
     /// <p>The domain execution role with which the Amazon DataZone domain is created.</p>
-    pub domain_execution_role: ::std::option::Option<::std::string::String>,
+    pub domain_execution_role: ::std::string::String,
     /// <p>The ARN of the specified Amazon DataZone domain.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon Web Services Key Management Service (KMS) key that is used to encrypt the Amazon DataZone domain, metadata, and reporting data. </p>
     pub kms_key_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The status of the specified Amazon DataZone domain.</p>
-    pub status: ::std::option::Option<crate::types::DomainStatus>,
+    pub status: crate::types::DomainStatus,
     /// <p>The URL of the data portal for this Amazon DataZone domain.</p>
     pub portal_url: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of when the Amazon DataZone domain was created.</p>
@@ -31,8 +31,9 @@ pub struct GetDomainOutput {
 }
 impl GetDomainOutput {
     /// <p>The identifier of the specified Amazon DataZone domain.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The name of the Amazon DataZone domain.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -47,8 +48,9 @@ impl GetDomainOutput {
         self.single_sign_on.as_ref()
     }
     /// <p>The domain execution role with which the Amazon DataZone domain is created.</p>
-    pub fn domain_execution_role(&self) -> ::std::option::Option<&str> {
-        self.domain_execution_role.as_deref()
+    pub fn domain_execution_role(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_execution_role.deref()
     }
     /// <p>The ARN of the specified Amazon DataZone domain.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
@@ -59,8 +61,8 @@ impl GetDomainOutput {
         self.kms_key_identifier.as_deref()
     }
     /// <p>The status of the specified Amazon DataZone domain.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::DomainStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::DomainStatus {
+        &self.status
     }
     /// <p>The URL of the data portal for this Amazon DataZone domain.</p>
     pub fn portal_url(&self) -> ::std::option::Option<&str> {
@@ -111,6 +113,7 @@ pub struct GetDomainOutputBuilder {
 }
 impl GetDomainOutputBuilder {
     /// <p>The identifier of the specified Amazon DataZone domain.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -167,6 +170,7 @@ impl GetDomainOutputBuilder {
         &self.single_sign_on
     }
     /// <p>The domain execution role with which the Amazon DataZone domain is created.</p>
+    /// This field is required.
     pub fn domain_execution_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_execution_role = ::std::option::Option::Some(input.into());
         self
@@ -209,6 +213,7 @@ impl GetDomainOutputBuilder {
         &self.kms_key_identifier
     }
     /// <p>The status of the specified Amazon DataZone domain.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::DomainStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -294,21 +299,40 @@ impl GetDomainOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetDomainOutput`](crate::operation::get_domain::GetDomainOutput).
-    pub fn build(self) -> crate::operation::get_domain::GetDomainOutput {
-        crate::operation::get_domain::GetDomainOutput {
-            id: self.id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::get_domain::builders::GetDomainOutputBuilder::id)
+    /// - [`domain_execution_role`](crate::operation::get_domain::builders::GetDomainOutputBuilder::domain_execution_role)
+    /// - [`status`](crate::operation::get_domain::builders::GetDomainOutputBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_domain::GetDomainOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_domain::GetDomainOutput {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building GetDomainOutput",
+                )
+            })?,
             name: self.name,
             description: self.description,
             single_sign_on: self.single_sign_on,
-            domain_execution_role: self.domain_execution_role,
+            domain_execution_role: self.domain_execution_role.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "domain_execution_role",
+                    "domain_execution_role was not specified but it is required when building GetDomainOutput",
+                )
+            })?,
             arn: self.arn,
             kms_key_identifier: self.kms_key_identifier,
-            status: self.status,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building GetDomainOutput",
+                )
+            })?,
             portal_url: self.portal_url,
             created_at: self.created_at,
             last_updated_at: self.last_updated_at,
             tags: self.tags,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -4,19 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelJobRunOutput {
     /// <p>The output contains the application ID on which the job run is cancelled.</p>
-    pub application_id: ::std::option::Option<::std::string::String>,
+    pub application_id: ::std::string::String,
     /// <p>The output contains the ID of the cancelled job run.</p>
-    pub job_run_id: ::std::option::Option<::std::string::String>,
+    pub job_run_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CancelJobRunOutput {
     /// <p>The output contains the application ID on which the job run is cancelled.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
-        self.application_id.as_deref()
+    pub fn application_id(&self) -> &str {
+        use std::ops::Deref;
+        self.application_id.deref()
     }
     /// <p>The output contains the ID of the cancelled job run.</p>
-    pub fn job_run_id(&self) -> ::std::option::Option<&str> {
-        self.job_run_id.as_deref()
+    pub fn job_run_id(&self) -> &str {
+        use std::ops::Deref;
+        self.job_run_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CancelJobRunOutput {
@@ -41,6 +43,7 @@ pub struct CancelJobRunOutputBuilder {
 }
 impl CancelJobRunOutputBuilder {
     /// <p>The output contains the application ID on which the job run is cancelled.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl CancelJobRunOutputBuilder {
         &self.application_id
     }
     /// <p>The output contains the ID of the cancelled job run.</p>
+    /// This field is required.
     pub fn job_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_run_id = ::std::option::Option::Some(input.into());
         self
@@ -78,11 +82,26 @@ impl CancelJobRunOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CancelJobRunOutput`](crate::operation::cancel_job_run::CancelJobRunOutput).
-    pub fn build(self) -> crate::operation::cancel_job_run::CancelJobRunOutput {
-        crate::operation::cancel_job_run::CancelJobRunOutput {
-            application_id: self.application_id,
-            job_run_id: self.job_run_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`application_id`](crate::operation::cancel_job_run::builders::CancelJobRunOutputBuilder::application_id)
+    /// - [`job_run_id`](crate::operation::cancel_job_run::builders::CancelJobRunOutputBuilder::job_run_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::cancel_job_run::CancelJobRunOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::cancel_job_run::CancelJobRunOutput {
+            application_id: self.application_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "application_id",
+                    "application_id was not specified but it is required when building CancelJobRunOutput",
+                )
+            })?,
+            job_run_id: self.job_run_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "job_run_id",
+                    "job_run_id was not specified but it is required when building CancelJobRunOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -27,6 +27,7 @@ pub struct DescribeDocumentClassifierInputBuilder {
 }
 impl DescribeDocumentClassifierInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. The <code>CreateDocumentClassifier</code> operation returns this identifier in its response.</p>
+    /// This field is required.
     pub fn document_classifier_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_classifier_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeDocumentClassifierInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_document_classifier::DescribeDocumentClassifierInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_document_classifier::DescribeDocumentClassifierInput {
             document_classifier_arn: self.document_classifier_arn,

@@ -76,6 +76,7 @@ pub struct UpdateAlarmModelInputBuilder {
 }
 impl UpdateAlarmModelInputBuilder {
     /// <p>The name of the alarm model.</p>
+    /// This field is required.
     pub fn alarm_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alarm_model_name = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +105,7 @@ impl UpdateAlarmModelInputBuilder {
         &self.alarm_model_description
     }
     /// <p>The ARN of the IAM role that allows the alarm to perform actions and access AWS resources. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +134,7 @@ impl UpdateAlarmModelInputBuilder {
         &self.severity
     }
     /// <p>Defines when your alarm is invoked.</p>
+    /// This field is required.
     pub fn alarm_rule(mut self, input: crate::types::AlarmRule) -> Self {
         self.alarm_rule = ::std::option::Option::Some(input);
         self
@@ -190,7 +193,7 @@ impl UpdateAlarmModelInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAlarmModelInput`](crate::operation::update_alarm_model::UpdateAlarmModelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_alarm_model::UpdateAlarmModelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_alarm_model::UpdateAlarmModelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_alarm_model::UpdateAlarmModelInput {
             alarm_model_name: self.alarm_model_name,
             alarm_model_description: self.alarm_model_description,

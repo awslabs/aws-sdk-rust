@@ -68,6 +68,7 @@ pub struct GetMapSpritesInputBuilder {
 }
 impl GetMapSpritesInputBuilder {
     /// <p>The map resource associated with the sprite ﬁle.</p>
+    /// This field is required.
     pub fn map_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.map_name = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +92,7 @@ impl GetMapSpritesInputBuilder {
     /// <li> <p> <code>sprites.json</code> </p> </li>
     /// <li> <p> <code>sprites@2x.json</code> for high pixel density displays</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn file_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_name = ::std::option::Option::Some(input.into());
         self
@@ -139,7 +141,7 @@ impl GetMapSpritesInputBuilder {
     /// Consumes the builder and constructs a [`GetMapSpritesInput`](crate::operation::get_map_sprites::GetMapSpritesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_map_sprites::GetMapSpritesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_map_sprites::GetMapSpritesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_map_sprites::GetMapSpritesInput {
             map_name: self.map_name,
             file_name: self.file_name,

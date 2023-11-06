@@ -12,8 +12,10 @@ pub struct TransactWriteItemsOutput {
 }
 impl TransactWriteItemsOutput {
     /// <p>The capacity units consumed by the entire <code>TransactWriteItems</code> operation. The values of the list are ordered according to the ordering of the <code>TransactItems</code> request parameter. </p>
-    pub fn consumed_capacity(&self) -> ::std::option::Option<&[crate::types::ConsumedCapacity]> {
-        self.consumed_capacity.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.consumed_capacity.is_none()`.
+    pub fn consumed_capacity(&self) -> &[crate::types::ConsumedCapacity] {
+        self.consumed_capacity.as_deref().unwrap_or_default()
     }
     /// <p>A list of tables that were processed by <code>TransactWriteItems</code> and, for each table, information about any item collections that were affected by individual <code>UpdateItem</code>, <code>PutItem</code>, or <code>DeleteItem</code> operations. </p>
     pub fn item_collection_metrics(

@@ -10,8 +10,10 @@ pub struct DescribeTrailsOutput {
 }
 impl DescribeTrailsOutput {
     /// <p>The list of trail objects. Trail objects with string values are only returned if values for the objects exist in a trail's configuration. For example, <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in results if a trail is configured to send SNS notifications. Similarly, <code>KMSKeyId</code> only appears in results if a trail's log files are encrypted with KMS customer managed keys.</p>
-    pub fn trail_list(&self) -> ::std::option::Option<&[crate::types::Trail]> {
-        self.trail_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.trail_list.is_none()`.
+    pub fn trail_list(&self) -> &[crate::types::Trail] {
+        self.trail_list.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeTrailsOutput {

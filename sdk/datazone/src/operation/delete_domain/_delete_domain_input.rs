@@ -34,6 +34,7 @@ pub struct DeleteDomainInputBuilder {
 }
 impl DeleteDomainInputBuilder {
     /// <p>The identifier of the Amazon Web Services domain that is to be deleted.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +63,9 @@ impl DeleteDomainInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`DeleteDomainInput`](crate::operation::delete_domain::DeleteDomainInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_domain::DeleteDomainInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_domain::DeleteDomainInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_domain::DeleteDomainInput {
             identifier: self.identifier,
             client_token: self.client_token,

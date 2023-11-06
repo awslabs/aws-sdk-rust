@@ -2,36 +2,36 @@
 pub fn ser_webhook_definition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WebhookDefinition,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("name").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.target_pipeline {
-        object.key("targetPipeline").string(var_2.as_str());
+    {
+        object.key("targetPipeline").string(input.target_pipeline.as_str());
     }
-    if let Some(var_3) = &input.target_action {
-        object.key("targetAction").string(var_3.as_str());
+    {
+        object.key("targetAction").string(input.target_action.as_str());
     }
-    if let Some(var_4) = &input.filters {
-        let mut array_5 = object.key("filters").start_array();
-        for item_6 in var_4 {
+    {
+        let mut array_1 = object.key("filters").start_array();
+        for item_2 in &input.filters {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_webhook_filter_rule::ser_webhook_filter_rule(&mut object_7, item_6)?;
-                object_7.finish();
+                let mut object_3 = array_1.value().start_object();
+                crate::protocol_serde::shape_webhook_filter_rule::ser_webhook_filter_rule(&mut object_3, item_2)?;
+                object_3.finish();
             }
         }
-        array_5.finish();
+        array_1.finish();
     }
-    if let Some(var_8) = &input.authentication {
-        object.key("authentication").string(var_8.as_str());
+    {
+        object.key("authentication").string(input.authentication.as_str());
     }
-    if let Some(var_9) = &input.authentication_configuration {
+    if let Some(var_4) = &input.authentication_configuration {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("authenticationConfiguration").start_object();
-        crate::protocol_serde::shape_webhook_auth_configuration::ser_webhook_auth_configuration(&mut object_10, var_9)?;
-        object_10.finish();
+        let mut object_5 = object.key("authenticationConfiguration").start_object();
+        crate::protocol_serde::shape_webhook_auth_configuration::ser_webhook_auth_configuration(&mut object_5, var_4)?;
+        object_5.finish();
     }
     Ok(())
 }
@@ -97,7 +97,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::webhook_definition_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

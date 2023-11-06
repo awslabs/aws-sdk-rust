@@ -124,7 +124,7 @@ impl ListReportsInputBuilder {
         &self.filter
     }
     /// Consumes the builder and constructs a [`ListReportsInput`](crate::operation::list_reports::ListReportsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_reports::ListReportsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_reports::ListReportsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_reports::ListReportsInput {
             sort_order: self.sort_order,
             next_token: self.next_token,

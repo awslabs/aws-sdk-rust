@@ -41,6 +41,7 @@ pub struct DescribeVirtualNodeInputBuilder {
 }
 impl DescribeVirtualNodeInputBuilder {
     /// <p>The name of the virtual node to describe.</p>
+    /// This field is required.
     pub fn virtual_node_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_node_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DescribeVirtualNodeInputBuilder {
         &self.virtual_node_name
     }
     /// <p>The name of the service mesh that the virtual node resides in.</p>
+    /// This field is required.
     pub fn mesh_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mesh_name = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +87,7 @@ impl DescribeVirtualNodeInputBuilder {
     /// Consumes the builder and constructs a [`DescribeVirtualNodeInput`](crate::operation::describe_virtual_node::DescribeVirtualNodeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_virtual_node::DescribeVirtualNodeInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_virtual_node::DescribeVirtualNodeInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_virtual_node::DescribeVirtualNodeInput {
             virtual_node_name: self.virtual_node_name,

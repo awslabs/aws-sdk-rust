@@ -27,6 +27,7 @@ pub struct GetContainerRecipeInputBuilder {
 }
 impl GetContainerRecipeInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the container recipe to retrieve.</p>
+    /// This field is required.
     pub fn container_recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_recipe_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,8 @@ impl GetContainerRecipeInputBuilder {
     /// Consumes the builder and constructs a [`GetContainerRecipeInput`](crate::operation::get_container_recipe::GetContainerRecipeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_container_recipe::GetContainerRecipeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_container_recipe::GetContainerRecipeInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_container_recipe::GetContainerRecipeInput {
             container_recipe_arn: self.container_recipe_arn,
         })

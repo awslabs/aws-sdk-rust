@@ -33,8 +33,10 @@ impl CreateBridgeInput {
         self.name.as_deref()
     }
     /// The outputs that you want to add to this bridge.
-    pub fn outputs(&self) -> ::std::option::Option<&[crate::types::AddBridgeOutputRequest]> {
-        self.outputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outputs.is_none()`.
+    pub fn outputs(&self) -> &[crate::types::AddBridgeOutputRequest] {
+        self.outputs.as_deref().unwrap_or_default()
     }
     /// The bridge placement Amazon Resource Number (ARN).
     pub fn placement_arn(&self) -> ::std::option::Option<&str> {
@@ -45,8 +47,10 @@ impl CreateBridgeInput {
         self.source_failover_config.as_ref()
     }
     /// The sources that you want to add to this bridge.
-    pub fn sources(&self) -> ::std::option::Option<&[crate::types::AddBridgeSourceRequest]> {
-        self.sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
+    pub fn sources(&self) -> &[crate::types::AddBridgeSourceRequest] {
+        self.sources.as_deref().unwrap_or_default()
     }
 }
 impl CreateBridgeInput {
@@ -98,6 +102,7 @@ impl CreateBridgeInputBuilder {
         &self.ingress_gateway_bridge
     }
     /// The name of the bridge. This name can not be modified after the bridge is created.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +137,7 @@ impl CreateBridgeInputBuilder {
         &self.outputs
     }
     /// The bridge placement Amazon Resource Number (ARN).
+    /// This field is required.
     pub fn placement_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.placement_arn = ::std::option::Option::Some(input.into());
         self
@@ -180,7 +186,9 @@ impl CreateBridgeInputBuilder {
         &self.sources
     }
     /// Consumes the builder and constructs a [`CreateBridgeInput`](crate::operation::create_bridge::CreateBridgeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_bridge::CreateBridgeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_bridge::CreateBridgeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_bridge::CreateBridgeInput {
             egress_gateway_bridge: self.egress_gateway_bridge,
             ingress_gateway_bridge: self.ingress_gateway_bridge,

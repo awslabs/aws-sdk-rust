@@ -16,8 +16,10 @@ impl CreateScheduleGroupInput {
         self.name.as_deref()
     }
     /// <p>The list of tags to associate with the schedule group.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p> Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token, EventBridge Scheduler uses a randomly generated token for the request to ensure idempotency. </p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -41,6 +43,7 @@ pub struct CreateScheduleGroupInputBuilder {
 }
 impl CreateScheduleGroupInputBuilder {
     /// <p>The name of the schedule group that you are creating.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -91,7 +94,7 @@ impl CreateScheduleGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateScheduleGroupInput`](crate::operation::create_schedule_group::CreateScheduleGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_schedule_group::CreateScheduleGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_schedule_group::CreateScheduleGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_schedule_group::CreateScheduleGroupInput {
             name: self.name,

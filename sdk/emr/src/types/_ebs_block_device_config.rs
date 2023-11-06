@@ -35,6 +35,7 @@ pub struct EbsBlockDeviceConfigBuilder {
 }
 impl EbsBlockDeviceConfigBuilder {
     /// <p>EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an Amazon EC2 instance in the cluster.</p>
+    /// This field is required.
     pub fn volume_specification(mut self, input: crate::types::VolumeSpecification) -> Self {
         self.volume_specification = ::std::option::Option::Some(input);
         self

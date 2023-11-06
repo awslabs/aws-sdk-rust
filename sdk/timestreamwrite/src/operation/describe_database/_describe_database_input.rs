@@ -27,6 +27,7 @@ pub struct DescribeDatabaseInputBuilder {
 }
 impl DescribeDatabaseInputBuilder {
     /// <p>The name of the Timestream database.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeDatabaseInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDatabaseInput`](crate::operation::describe_database::DescribeDatabaseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_database::DescribeDatabaseInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_database::DescribeDatabaseInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_database::DescribeDatabaseInput {
             database_name: self.database_name,
         })

@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteThingShadowOutput {
     /// <p>The state information, in JSON format.</p>
-    pub payload: ::std::option::Option<::aws_smithy_types::Blob>,
+    pub payload: ::aws_smithy_types::Blob,
     _request_id: Option<String>,
 }
 impl DeleteThingShadowOutput {
     /// <p>The state information, in JSON format.</p>
-    pub fn payload(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
-        self.payload.as_ref()
+    pub fn payload(&self) -> &::aws_smithy_types::Blob {
+        &self.payload
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteThingShadowOutput {
@@ -35,6 +35,7 @@ pub struct DeleteThingShadowOutputBuilder {
 }
 impl DeleteThingShadowOutputBuilder {
     /// <p>The state information, in JSON format.</p>
+    /// This field is required.
     pub fn payload(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.payload = ::std::option::Option::Some(input);
         self
@@ -58,10 +59,19 @@ impl DeleteThingShadowOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteThingShadowOutput`](crate::operation::delete_thing_shadow::DeleteThingShadowOutput).
-    pub fn build(self) -> crate::operation::delete_thing_shadow::DeleteThingShadowOutput {
-        crate::operation::delete_thing_shadow::DeleteThingShadowOutput {
-            payload: self.payload,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`payload`](crate::operation::delete_thing_shadow::builders::DeleteThingShadowOutputBuilder::payload)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_thing_shadow::DeleteThingShadowOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_thing_shadow::DeleteThingShadowOutput {
+            payload: self.payload.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "payload",
+                    "payload was not specified but it is required when building DeleteThingShadowOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -27,6 +27,7 @@ pub struct DeleteNetworkProfileInputBuilder {
 }
 impl DeleteNetworkProfileInputBuilder {
     /// <p>The ARN of the network profile associated with a device.</p>
+    /// This field is required.
     pub fn network_profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_profile_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteNetworkProfileInputBuilder {
     /// Consumes the builder and constructs a [`DeleteNetworkProfileInput`](crate::operation::delete_network_profile::DeleteNetworkProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_network_profile::DeleteNetworkProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_network_profile::DeleteNetworkProfileInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_network_profile::DeleteNetworkProfileInput {
             network_profile_arn: self.network_profile_arn,

@@ -2,7 +2,7 @@
 pub fn ser_list_smart_home_appliances_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_smart_home_appliances::ListSmartHomeAppliancesInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.room_arn {
         object.key("RoomArn").string(var_1.as_str());
     }

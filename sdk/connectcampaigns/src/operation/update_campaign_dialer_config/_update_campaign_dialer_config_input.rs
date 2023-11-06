@@ -35,6 +35,7 @@ pub struct UpdateCampaignDialerConfigInputBuilder {
 }
 impl UpdateCampaignDialerConfigInputBuilder {
     /// Identifier representing a Campaign
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl UpdateCampaignDialerConfigInputBuilder {
         &self.id
     }
     /// The possible types of dialer config parameters
+    /// This field is required.
     pub fn dialer_config(mut self, input: crate::types::DialerConfig) -> Self {
         self.dialer_config = ::std::option::Option::Some(input);
         self
@@ -67,7 +69,7 @@ impl UpdateCampaignDialerConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_campaign_dialer_config::UpdateCampaignDialerConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_campaign_dialer_config::UpdateCampaignDialerConfigInput {
             id: self.id,

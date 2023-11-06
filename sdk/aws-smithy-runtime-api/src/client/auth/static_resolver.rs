@@ -4,10 +4,10 @@
  */
 
 use crate::box_error::BoxError;
-use crate::client::auth::{AuthSchemeId, AuthSchemeOptionResolver, AuthSchemeOptionResolverParams};
+use crate::client::auth::{AuthSchemeId, AuthSchemeOptionResolverParams, ResolveAuthSchemeOptions};
 use std::borrow::Cow;
 
-/// New-type around a `Vec<AuthSchemeId>` that implements `AuthSchemeOptionResolver`.
+/// New-type around a `Vec<AuthSchemeId>` that implements `ResolveAuthSchemeOptions`.
 #[derive(Debug)]
 pub struct StaticAuthSchemeOptionResolver {
     auth_scheme_options: Vec<AuthSchemeId>,
@@ -22,7 +22,7 @@ impl StaticAuthSchemeOptionResolver {
     }
 }
 
-impl AuthSchemeOptionResolver for StaticAuthSchemeOptionResolver {
+impl ResolveAuthSchemeOptions for StaticAuthSchemeOptionResolver {
     fn resolve_auth_scheme_options(
         &self,
         _params: &AuthSchemeOptionResolverParams,

@@ -58,8 +58,10 @@ impl ModifyInstanceAttributeInput {
     }
     /// <p>Modifies the <code>DeleteOnTermination</code> attribute for volumes that are currently attached. The volume must be owned by the caller. If no value is specified for <code>DeleteOnTermination</code>, the default is <code>true</code> and the volume is deleted when the instance is terminated.</p>
     /// <p>To add instance store volumes to an Amazon EBS-backed instance, you must add them when you launch the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Update the block device mapping when launching an instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn block_device_mappings(&self) -> ::std::option::Option<&[crate::types::InstanceBlockDeviceMappingSpecification]> {
-        self.block_device_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.block_device_mappings.is_none()`.
+    pub fn block_device_mappings(&self) -> &[crate::types::InstanceBlockDeviceMappingSpecification] {
+        self.block_device_mappings.as_deref().unwrap_or_default()
     }
     /// <p>If the value is <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or API; otherwise, you can. You cannot use this parameter for Spot Instances.</p>
     pub fn disable_api_termination(&self) -> ::std::option::Option<&crate::types::AttributeBooleanValue> {
@@ -79,8 +81,10 @@ impl ModifyInstanceAttributeInput {
         self.ena_support.as_ref()
     }
     /// <p>Replaces the security groups of the instance with the specified security groups. You must specify the ID of at least one security group, even if it's just the default security group for the VPC.</p>
-    pub fn groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
+    pub fn groups(&self) -> &[::std::string::String] {
+        self.groups.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the instance.</p>
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
@@ -292,6 +296,7 @@ impl ModifyInstanceAttributeInputBuilder {
         &self.groups
     }
     /// <p>The ID of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -431,7 +436,7 @@ impl ModifyInstanceAttributeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_instance_attribute::ModifyInstanceAttributeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_instance_attribute::ModifyInstanceAttributeInput {
             source_dest_check: self.source_dest_check,

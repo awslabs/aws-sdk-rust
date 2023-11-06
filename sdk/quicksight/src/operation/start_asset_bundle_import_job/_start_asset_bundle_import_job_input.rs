@@ -59,6 +59,7 @@ pub struct StartAssetBundleImportJobInputBuilder {
 }
 impl StartAssetBundleImportJobInputBuilder {
     /// <p>The ID of the Amazon Web Services account to import assets into. </p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -73,6 +74,7 @@ impl StartAssetBundleImportJobInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID of the job. This ID is unique while the job is running. After the job is completed, you can reuse this ID for another job.</p>
+    /// This field is required.
     pub fn asset_bundle_import_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_bundle_import_job_id = ::std::option::Option::Some(input.into());
         self
@@ -87,6 +89,7 @@ impl StartAssetBundleImportJobInputBuilder {
         &self.asset_bundle_import_job_id
     }
     /// <p>The source of the asset bundle zip file that contains the data that you want to import. The file must be in <code>QUICKSIGHT_JSON</code> format. </p>
+    /// This field is required.
     pub fn asset_bundle_import_source(mut self, input: crate::types::AssetBundleImportSource) -> Self {
         self.asset_bundle_import_source = ::std::option::Option::Some(input);
         self
@@ -139,7 +142,7 @@ impl StartAssetBundleImportJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_asset_bundle_import_job::StartAssetBundleImportJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_asset_bundle_import_job::StartAssetBundleImportJobInput {
             aws_account_id: self.aws_account_id,

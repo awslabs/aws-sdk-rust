@@ -11,8 +11,10 @@ pub struct ListRevisionAssetsOutput {
 }
 impl ListRevisionAssetsOutput {
     /// <p>The asset objects listed by the request.</p>
-    pub fn assets(&self) -> ::std::option::Option<&[crate::types::AssetEntry]> {
-        self.assets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.assets.is_none()`.
+    pub fn assets(&self) -> &[crate::types::AssetEntry] {
+        self.assets.as_deref().unwrap_or_default()
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

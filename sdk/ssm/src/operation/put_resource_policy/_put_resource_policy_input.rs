@@ -48,6 +48,7 @@ pub struct PutResourcePolicyInputBuilder {
 }
 impl PutResourcePolicyInputBuilder {
     /// <p>Amazon Resource Name (ARN) of the resource to which you want to attach a policy.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl PutResourcePolicyInputBuilder {
         &self.resource_arn
     }
     /// <p>A policy you want to associate with a resource.</p>
+    /// This field is required.
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +108,7 @@ impl PutResourcePolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutResourcePolicyInput`](crate::operation::put_resource_policy::PutResourcePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_resource_policy::PutResourcePolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_resource_policy::PutResourcePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_resource_policy::PutResourcePolicyInput {
             resource_arn: self.resource_arn,
             policy: self.policy,

@@ -10,7 +10,7 @@ impl ListInstanceTypeDetailsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_instance_type_details::ListInstanceTypeDetailsOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::list_instance_type_details::ListInstanceTypeDetailsError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl ListInstanceTypeDetailsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_instance_type_details::ListInstanceTypeDetailsOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::list_instance_type_details::ListInstanceTypeDetailsError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::list_instance_type_details::ListInstanceTypeDetails::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -86,20 +89,15 @@ impl ListInstanceTypeDetailsFluentBuilder {
         crate::operation::list_instance_type_details::ListInstanceTypeDetails::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::list_instance_type_details::ListInstanceTypeDetailsOutput,
-            crate::operation::list_instance_type_details::ListInstanceTypeDetailsError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::list_instance_type_details::ListInstanceTypeDetailsError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::list_instance_type_details::ListInstanceTypeDetailsOutput,
+        crate::operation::list_instance_type_details::ListInstanceTypeDetailsError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -112,7 +110,7 @@ impl ListInstanceTypeDetailsFluentBuilder {
     }
     /// Create a paginator for this request
     ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_instance_type_details::paginator::ListInstanceTypeDetailsPaginator::send) which returns a `Stream`.
+    /// Paginators are used by calling [`send().await`](crate::operation::list_instance_type_details::paginator::ListInstanceTypeDetailsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
     pub fn into_paginator(self) -> crate::operation::list_instance_type_details::paginator::ListInstanceTypeDetailsPaginator {
         crate::operation::list_instance_type_details::paginator::ListInstanceTypeDetailsPaginator::new(self.handle, self.inner)
     }
@@ -173,18 +171,18 @@ impl ListInstanceTypeDetailsFluentBuilder {
         self.inner.get_next_token()
     }
     /// <p>An optional parameter that specifies the Availability Zones for the domain.</p>
-    pub fn retrieve_a_zs(mut self, input: bool) -> Self {
-        self.inner = self.inner.retrieve_a_zs(input);
+    pub fn retrieve_azs(mut self, input: bool) -> Self {
+        self.inner = self.inner.retrieve_azs(input);
         self
     }
     /// <p>An optional parameter that specifies the Availability Zones for the domain.</p>
-    pub fn set_retrieve_a_zs(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.inner = self.inner.set_retrieve_a_zs(input);
+    pub fn set_retrieve_azs(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_retrieve_azs(input);
         self
     }
     /// <p>An optional parameter that specifies the Availability Zones for the domain.</p>
-    pub fn get_retrieve_a_zs(&self) -> &::std::option::Option<bool> {
-        self.inner.get_retrieve_a_zs()
+    pub fn get_retrieve_azs(&self) -> &::std::option::Option<bool> {
+        self.inner.get_retrieve_azs()
     }
     /// <p>An optional parameter that lists information for a given instance type.</p>
     pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

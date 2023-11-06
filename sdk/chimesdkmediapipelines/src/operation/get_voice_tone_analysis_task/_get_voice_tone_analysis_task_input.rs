@@ -34,6 +34,7 @@ pub struct GetVoiceToneAnalysisTaskInputBuilder {
 }
 impl GetVoiceToneAnalysisTaskInputBuilder {
     /// <p>The unique identifier of the resource to be updated. Valid values include the ID and ARN of the media insights pipeline.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetVoiceToneAnalysisTaskInputBuilder {
         &self.identifier
     }
     /// <p>The ID of the voice tone analysis task.</p>
+    /// This field is required.
     pub fn voice_tone_analysis_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_tone_analysis_task_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl GetVoiceToneAnalysisTaskInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_voice_tone_analysis_task::GetVoiceToneAnalysisTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_voice_tone_analysis_task::GetVoiceToneAnalysisTaskInput {
             identifier: self.identifier,

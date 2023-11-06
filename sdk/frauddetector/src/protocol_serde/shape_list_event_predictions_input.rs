@@ -2,7 +2,7 @@
 pub fn ser_list_event_predictions_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_event_predictions::ListEventPredictionsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.event_id {
         #[allow(unused_mut)]
         let mut object_2 = object.key("eventId").start_object();

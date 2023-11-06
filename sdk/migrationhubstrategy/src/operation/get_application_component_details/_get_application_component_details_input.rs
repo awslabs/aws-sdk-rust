@@ -27,6 +27,7 @@ pub struct GetApplicationComponentDetailsInputBuilder {
 }
 impl GetApplicationComponentDetailsInputBuilder {
     /// <p> The ID of the application component. The ID is unique within an AWS account.</p>
+    /// This field is required.
     pub fn application_component_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_component_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetApplicationComponentDetailsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_application_component_details::GetApplicationComponentDetailsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_application_component_details::GetApplicationComponentDetailsInput {
             application_component_id: self.application_component_id,

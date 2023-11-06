@@ -2,7 +2,7 @@
 pub fn ser_create_application_instance_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_application_instance::CreateApplicationInstanceInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.application_instance_id_to_replace {
         object.key("ApplicationInstanceIdToReplace").string(var_1.as_str());
     }

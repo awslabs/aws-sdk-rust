@@ -36,6 +36,7 @@ pub struct PutRetentionPolicyInputBuilder {
 }
 impl PutRetentionPolicyInputBuilder {
     /// <p>The name of the log group.</p>
+    /// This field is required.
     pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_name = ::std::option::Option::Some(input.into());
         self
@@ -51,6 +52,7 @@ impl PutRetentionPolicyInputBuilder {
     }
     /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1096, 1827, 2192, 2557, 2922, 3288, and 3653.</p>
     /// <p>To set a log group so that its log events do not expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
+    /// This field is required.
     pub fn retention_in_days(mut self, input: i32) -> Self {
         self.retention_in_days = ::std::option::Option::Some(input);
         self
@@ -69,7 +71,8 @@ impl PutRetentionPolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutRetentionPolicyInput`](crate::operation::put_retention_policy::PutRetentionPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_retention_policy::PutRetentionPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_retention_policy::PutRetentionPolicyInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::put_retention_policy::PutRetentionPolicyInput {
             log_group_name: self.log_group_name,
             retention_in_days: self.retention_in_days,

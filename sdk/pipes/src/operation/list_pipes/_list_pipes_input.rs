@@ -180,7 +180,7 @@ impl ListPipesInputBuilder {
         &self.limit
     }
     /// Consumes the builder and constructs a [`ListPipesInput`](crate::operation::list_pipes::ListPipesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_pipes::ListPipesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_pipes::ListPipesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_pipes::ListPipesInput {
             name_prefix: self.name_prefix,
             desired_state: self.desired_state,

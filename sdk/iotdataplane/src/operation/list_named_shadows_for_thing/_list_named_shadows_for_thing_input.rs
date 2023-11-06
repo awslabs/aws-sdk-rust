@@ -41,6 +41,7 @@ pub struct ListNamedShadowsForThingInputBuilder {
 }
 impl ListNamedShadowsForThingInputBuilder {
     /// <p>The name of the thing.</p>
+    /// This field is required.
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_name = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListNamedShadowsForThingInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_named_shadows_for_thing::ListNamedShadowsForThingInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_named_shadows_for_thing::ListNamedShadowsForThingInput {
             thing_name: self.thing_name,

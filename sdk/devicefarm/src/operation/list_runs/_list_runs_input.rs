@@ -35,6 +35,7 @@ pub struct ListRunsInputBuilder {
 }
 impl ListRunsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the project for which you want to list runs.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -63,7 +64,7 @@ impl ListRunsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListRunsInput`](crate::operation::list_runs::ListRunsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_runs::ListRunsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_runs::ListRunsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_runs::ListRunsInput {
             arn: self.arn,
             next_token: self.next_token,

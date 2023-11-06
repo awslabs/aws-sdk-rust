@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePermissionsOutput {
     /// <p>An array of structures that contain the errors from the operation, if any.</p>
-    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::UpdateError>>,
+    pub errors: ::std::vec::Vec<crate::types::UpdateError>,
     _request_id: Option<String>,
 }
 impl UpdatePermissionsOutput {
     /// <p>An array of structures that contain the errors from the operation, if any.</p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::UpdateError]> {
-        self.errors.as_deref()
+    pub fn errors(&self) -> &[crate::types::UpdateError] {
+        use std::ops::Deref;
+        self.errors.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for UpdatePermissionsOutput {
@@ -63,10 +64,19 @@ impl UpdatePermissionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdatePermissionsOutput`](crate::operation::update_permissions::UpdatePermissionsOutput).
-    pub fn build(self) -> crate::operation::update_permissions::UpdatePermissionsOutput {
-        crate::operation::update_permissions::UpdatePermissionsOutput {
-            errors: self.errors,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`errors`](crate::operation::update_permissions::builders::UpdatePermissionsOutputBuilder::errors)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_permissions::UpdatePermissionsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_permissions::UpdatePermissionsOutput {
+            errors: self.errors.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "errors",
+                    "errors was not specified but it is required when building UpdatePermissionsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -13,11 +13,11 @@ pub struct BatchGetTokenBalanceErrorItem {
     /// <p>The container for time.</p>
     pub at_blockchain_instant: ::std::option::Option<crate::types::BlockchainInstant>,
     /// <p>The error code associated with the error.</p>
-    pub error_code: ::std::option::Option<::std::string::String>,
+    pub error_code: ::std::string::String,
     /// <p>The message associated with the error.</p>
-    pub error_message: ::std::option::Option<::std::string::String>,
+    pub error_message: ::std::string::String,
     /// <p>The type of error.</p>
-    pub error_type: ::std::option::Option<crate::types::ErrorType>,
+    pub error_type: crate::types::ErrorType,
 }
 impl BatchGetTokenBalanceErrorItem {
     /// <p>The container for the identifier for the token including the unique token ID and its blockchain network.</p> <note>
@@ -35,16 +35,18 @@ impl BatchGetTokenBalanceErrorItem {
         self.at_blockchain_instant.as_ref()
     }
     /// <p>The error code associated with the error.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
-        self.error_code.as_deref()
+    pub fn error_code(&self) -> &str {
+        use std::ops::Deref;
+        self.error_code.deref()
     }
     /// <p>The message associated with the error.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
-        self.error_message.as_deref()
+    pub fn error_message(&self) -> &str {
+        use std::ops::Deref;
+        self.error_message.deref()
     }
     /// <p>The type of error.</p>
-    pub fn error_type(&self) -> ::std::option::Option<&crate::types::ErrorType> {
-        self.error_type.as_ref()
+    pub fn error_type(&self) -> &crate::types::ErrorType {
+        &self.error_type
     }
 }
 impl BatchGetTokenBalanceErrorItem {
@@ -115,6 +117,7 @@ impl BatchGetTokenBalanceErrorItemBuilder {
         &self.at_blockchain_instant
     }
     /// <p>The error code associated with the error.</p>
+    /// This field is required.
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
         self
@@ -129,6 +132,7 @@ impl BatchGetTokenBalanceErrorItemBuilder {
         &self.error_code
     }
     /// <p>The message associated with the error.</p>
+    /// This field is required.
     pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
@@ -143,6 +147,7 @@ impl BatchGetTokenBalanceErrorItemBuilder {
         &self.error_message
     }
     /// <p>The type of error.</p>
+    /// This field is required.
     pub fn error_type(mut self, input: crate::types::ErrorType) -> Self {
         self.error_type = ::std::option::Option::Some(input);
         self
@@ -157,14 +162,33 @@ impl BatchGetTokenBalanceErrorItemBuilder {
         &self.error_type
     }
     /// Consumes the builder and constructs a [`BatchGetTokenBalanceErrorItem`](crate::types::BatchGetTokenBalanceErrorItem).
-    pub fn build(self) -> crate::types::BatchGetTokenBalanceErrorItem {
-        crate::types::BatchGetTokenBalanceErrorItem {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`error_code`](crate::types::builders::BatchGetTokenBalanceErrorItemBuilder::error_code)
+    /// - [`error_message`](crate::types::builders::BatchGetTokenBalanceErrorItemBuilder::error_message)
+    /// - [`error_type`](crate::types::builders::BatchGetTokenBalanceErrorItemBuilder::error_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchGetTokenBalanceErrorItem, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::BatchGetTokenBalanceErrorItem {
             token_identifier: self.token_identifier,
             owner_identifier: self.owner_identifier,
             at_blockchain_instant: self.at_blockchain_instant,
-            error_code: self.error_code,
-            error_message: self.error_message,
-            error_type: self.error_type,
-        }
+            error_code: self.error_code.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "error_code",
+                    "error_code was not specified but it is required when building BatchGetTokenBalanceErrorItem",
+                )
+            })?,
+            error_message: self.error_message.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "error_message",
+                    "error_message was not specified but it is required when building BatchGetTokenBalanceErrorItem",
+                )
+            })?,
+            error_type: self.error_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "error_type",
+                    "error_type was not specified but it is required when building BatchGetTokenBalanceErrorItem",
+                )
+            })?,
+        })
     }
 }

@@ -9,8 +9,10 @@ pub struct ResolveComponentCandidatesOutput {
 }
 impl ResolveComponentCandidatesOutput {
     /// <p>A list of components that meet the requirements that you specify in the request. This list includes each component's recipe that you can use to install the component.</p>
-    pub fn resolved_component_versions(&self) -> ::std::option::Option<&[crate::types::ResolvedComponentVersion]> {
-        self.resolved_component_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resolved_component_versions.is_none()`.
+    pub fn resolved_component_versions(&self) -> &[crate::types::ResolvedComponentVersion] {
+        self.resolved_component_versions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ResolveComponentCandidatesOutput {

@@ -6,20 +6,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KeyGroupConfig {
     /// <p>A name to identify the key group.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>A list of the identifiers of the public keys in the key group.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub items: ::std::vec::Vec<::std::string::String>,
     /// <p>A comment to describe the key group. The comment cannot be longer than 128 characters.</p>
     pub comment: ::std::option::Option<::std::string::String>,
 }
 impl KeyGroupConfig {
     /// <p>A name to identify the key group.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>A list of the identifiers of the public keys in the key group.</p>
-    pub fn items(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.items.as_deref()
+    pub fn items(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.items.deref()
     }
     /// <p>A comment to describe the key group. The comment cannot be longer than 128 characters.</p>
     pub fn comment(&self) -> ::std::option::Option<&str> {
@@ -43,6 +45,7 @@ pub struct KeyGroupConfigBuilder {
 }
 impl KeyGroupConfigBuilder {
     /// <p>A name to identify the key group.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -91,11 +94,24 @@ impl KeyGroupConfigBuilder {
         &self.comment
     }
     /// Consumes the builder and constructs a [`KeyGroupConfig`](crate::types::KeyGroupConfig).
-    pub fn build(self) -> crate::types::KeyGroupConfig {
-        crate::types::KeyGroupConfig {
-            name: self.name,
-            items: self.items,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::KeyGroupConfigBuilder::name)
+    /// - [`items`](crate::types::builders::KeyGroupConfigBuilder::items)
+    pub fn build(self) -> ::std::result::Result<crate::types::KeyGroupConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::KeyGroupConfig {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building KeyGroupConfig",
+                )
+            })?,
+            items: self.items.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "items",
+                    "items was not specified but it is required when building KeyGroupConfig",
+                )
+            })?,
             comment: self.comment,
-        }
+        })
     }
 }

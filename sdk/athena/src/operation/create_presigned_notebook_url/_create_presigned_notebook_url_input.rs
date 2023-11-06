@@ -27,6 +27,7 @@ pub struct CreatePresignedNotebookUrlInputBuilder {
 }
 impl CreatePresignedNotebookUrlInputBuilder {
     /// <p>The session ID.</p>
+    /// This field is required.
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl CreatePresignedNotebookUrlInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlInput { session_id: self.session_id })
     }

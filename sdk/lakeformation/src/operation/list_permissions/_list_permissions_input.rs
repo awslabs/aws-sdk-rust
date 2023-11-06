@@ -174,7 +174,7 @@ impl ListPermissionsInputBuilder {
     /// Consumes the builder and constructs a [`ListPermissionsInput`](crate::operation::list_permissions::ListPermissionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_permissions::ListPermissionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_permissions::ListPermissionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_permissions::ListPermissionsInput {
             catalog_id: self.catalog_id,
             principal: self.principal,

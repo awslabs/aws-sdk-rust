@@ -34,6 +34,7 @@ pub struct AssociateUserSettingsInputBuilder {
 }
 impl AssociateUserSettingsInputBuilder {
     /// <p>The ARN of the web portal.</p>
+    /// This field is required.
     pub fn portal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portal_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl AssociateUserSettingsInputBuilder {
         &self.portal_arn
     }
     /// <p>The ARN of the user settings.</p>
+    /// This field is required.
     pub fn user_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_settings_arn = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl AssociateUserSettingsInputBuilder {
     /// Consumes the builder and constructs a [`AssociateUserSettingsInput`](crate::operation::associate_user_settings::AssociateUserSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_user_settings::AssociateUserSettingsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::associate_user_settings::AssociateUserSettingsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::associate_user_settings::AssociateUserSettingsInput {
             portal_arn: self.portal_arn,

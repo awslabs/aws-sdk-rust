@@ -48,6 +48,7 @@ pub struct ListDestinationsInputBuilder {
 }
 impl ListDestinationsInputBuilder {
     /// Site ARN.
+    /// This field is required.
     pub fn site(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.site = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,7 @@ impl ListDestinationsInputBuilder {
     /// Consumes the builder and constructs a [`ListDestinationsInput`](crate::operation::list_destinations::ListDestinationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_destinations::ListDestinationsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_destinations::ListDestinationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_destinations::ListDestinationsInput {
             site: self.site,
             max_results: self.max_results,

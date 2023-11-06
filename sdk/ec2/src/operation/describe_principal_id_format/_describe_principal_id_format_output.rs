@@ -11,8 +11,10 @@ pub struct DescribePrincipalIdFormatOutput {
 }
 impl DescribePrincipalIdFormatOutput {
     /// <p>Information about the ID format settings for the ARN.</p>
-    pub fn principals(&self) -> ::std::option::Option<&[crate::types::PrincipalIdFormat]> {
-        self.principals.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.principals.is_none()`.
+    pub fn principals(&self) -> &[crate::types::PrincipalIdFormat] {
+        self.principals.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

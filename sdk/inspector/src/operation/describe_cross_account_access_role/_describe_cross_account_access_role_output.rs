@@ -4,25 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCrossAccountAccessRoleOutput {
     /// <p>The ARN that specifies the IAM role that Amazon Inspector uses to access your AWS account.</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
     /// <p>A Boolean value that specifies whether the IAM role has the necessary policies attached to enable Amazon Inspector to access your AWS account.</p>
-    pub valid: ::std::option::Option<bool>,
+    pub valid: bool,
     /// <p>The date when the cross-account access role was registered.</p>
-    pub registered_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub registered_at: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
 impl DescribeCrossAccountAccessRoleOutput {
     /// <p>The ARN that specifies the IAM role that Amazon Inspector uses to access your AWS account.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
     /// <p>A Boolean value that specifies whether the IAM role has the necessary policies attached to enable Amazon Inspector to access your AWS account.</p>
-    pub fn valid(&self) -> ::std::option::Option<bool> {
+    pub fn valid(&self) -> bool {
         self.valid
     }
     /// <p>The date when the cross-account access role was registered.</p>
-    pub fn registered_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.registered_at.as_ref()
+    pub fn registered_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.registered_at
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeCrossAccountAccessRoleOutput {
@@ -48,6 +49,7 @@ pub struct DescribeCrossAccountAccessRoleOutputBuilder {
 }
 impl DescribeCrossAccountAccessRoleOutputBuilder {
     /// <p>The ARN that specifies the IAM role that Amazon Inspector uses to access your AWS account.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +64,7 @@ impl DescribeCrossAccountAccessRoleOutputBuilder {
         &self.role_arn
     }
     /// <p>A Boolean value that specifies whether the IAM role has the necessary policies attached to enable Amazon Inspector to access your AWS account.</p>
+    /// This field is required.
     pub fn valid(mut self, input: bool) -> Self {
         self.valid = ::std::option::Option::Some(input);
         self
@@ -76,6 +79,7 @@ impl DescribeCrossAccountAccessRoleOutputBuilder {
         &self.valid
     }
     /// <p>The date when the cross-account access role was registered.</p>
+    /// This field is required.
     pub fn registered_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.registered_at = ::std::option::Option::Some(input);
         self
@@ -99,12 +103,38 @@ impl DescribeCrossAccountAccessRoleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeCrossAccountAccessRoleOutput`](crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleOutput).
-    pub fn build(self) -> crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleOutput {
-        crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleOutput {
-            role_arn: self.role_arn,
-            valid: self.valid,
-            registered_at: self.registered_at,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`role_arn`](crate::operation::describe_cross_account_access_role::builders::DescribeCrossAccountAccessRoleOutputBuilder::role_arn)
+    /// - [`valid`](crate::operation::describe_cross_account_access_role::builders::DescribeCrossAccountAccessRoleOutputBuilder::valid)
+    /// - [`registered_at`](crate::operation::describe_cross_account_access_role::builders::DescribeCrossAccountAccessRoleOutputBuilder::registered_at)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleOutput {
+                role_arn: self.role_arn.ok_or_else(|| {
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
+                        "role_arn",
+                        "role_arn was not specified but it is required when building DescribeCrossAccountAccessRoleOutput",
+                    )
+                })?,
+                valid: self.valid.ok_or_else(|| {
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
+                        "valid",
+                        "valid was not specified but it is required when building DescribeCrossAccountAccessRoleOutput",
+                    )
+                })?,
+                registered_at: self.registered_at.ok_or_else(|| {
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
+                        "registered_at",
+                        "registered_at was not specified but it is required when building DescribeCrossAccountAccessRoleOutput",
+                    )
+                })?,
+                _request_id: self._request_id,
+            },
+        )
     }
 }

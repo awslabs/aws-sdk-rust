@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeIpRestriction`](crate::operation::describe_ip_restriction::builders::DescribeIpRestrictionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`aws_account_id(impl Into<String>)`](crate::operation::describe_ip_restriction::builders::DescribeIpRestrictionFluentBuilder::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::operation::describe_ip_restriction::builders::DescribeIpRestrictionFluentBuilder::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
+    ///   - [`aws_account_id(impl Into<String>)`](crate::operation::describe_ip_restriction::builders::DescribeIpRestrictionFluentBuilder::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::operation::describe_ip_restriction::builders::DescribeIpRestrictionFluentBuilder::set_aws_account_id):<br>required: **true**<br><p>The ID of the Amazon Web Services account that contains the IP rules.</p><br>
     /// - On success, responds with [`DescribeIpRestrictionOutput`](crate::operation::describe_ip_restriction::DescribeIpRestrictionOutput) with field(s):
     ///   - [`aws_account_id(Option<String>)`](crate::operation::describe_ip_restriction::DescribeIpRestrictionOutput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
-    ///   - [`ip_restriction_rule_map(Option<HashMap<String, String>>)`](crate::operation::describe_ip_restriction::DescribeIpRestrictionOutput::ip_restriction_rule_map): <p>A map that describes the IP rules with CIDR range and description.</p>
+    ///   - [`ip_restriction_rule_map(Option<HashMap::<String, String>>)`](crate::operation::describe_ip_restriction::DescribeIpRestrictionOutput::ip_restriction_rule_map): <p>A map that describes the IP rules with CIDR range and description.</p>
     ///   - [`enabled(Option<bool>)`](crate::operation::describe_ip_restriction::DescribeIpRestrictionOutput::enabled): <p>A value that specifies whether IP rules are turned on.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::describe_ip_restriction::DescribeIpRestrictionOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::describe_ip_restriction::DescribeIpRestrictionOutput::status): <p>The HTTP status of the request. </p>

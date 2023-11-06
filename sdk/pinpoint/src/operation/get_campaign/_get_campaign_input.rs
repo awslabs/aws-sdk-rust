@@ -34,6 +34,7 @@ pub struct GetCampaignInputBuilder {
 }
 impl GetCampaignInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetCampaignInputBuilder {
         &self.application_id
     }
     /// <p>The unique identifier for the campaign.</p>
+    /// This field is required.
     pub fn campaign_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.campaign_id = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,7 @@ impl GetCampaignInputBuilder {
         &self.campaign_id
     }
     /// Consumes the builder and constructs a [`GetCampaignInput`](crate::operation::get_campaign::GetCampaignInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_campaign::GetCampaignInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_campaign::GetCampaignInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_campaign::GetCampaignInput {
             application_id: self.application_id,
             campaign_id: self.campaign_id,

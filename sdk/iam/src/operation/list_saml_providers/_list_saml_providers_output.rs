@@ -10,8 +10,10 @@ pub struct ListSamlProvidersOutput {
 }
 impl ListSamlProvidersOutput {
     /// <p>The list of SAML provider resource objects defined in IAM for this Amazon Web Services account.</p>
-    pub fn saml_provider_list(&self) -> ::std::option::Option<&[crate::types::SamlProviderListEntry]> {
-        self.saml_provider_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.saml_provider_list.is_none()`.
+    pub fn saml_provider_list(&self) -> &[crate::types::SamlProviderListEntry] {
+        self.saml_provider_list.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListSamlProvidersOutput {

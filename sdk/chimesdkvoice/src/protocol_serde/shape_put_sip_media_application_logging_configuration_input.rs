@@ -2,7 +2,7 @@
 pub fn ser_put_sip_media_application_logging_configuration_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_sip_media_application_logging_configuration::PutSipMediaApplicationLoggingConfigurationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.sip_media_application_logging_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("SipMediaApplicationLoggingConfiguration").start_object();

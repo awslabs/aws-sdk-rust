@@ -27,6 +27,7 @@ pub struct GetSegmentInputBuilder {
 }
 impl GetSegmentInputBuilder {
     /// <p>The ARN of the segment to return information for.</p>
+    /// This field is required.
     pub fn segment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.segment = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetSegmentInputBuilder {
         &self.segment
     }
     /// Consumes the builder and constructs a [`GetSegmentInput`](crate::operation::get_segment::GetSegmentInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_segment::GetSegmentInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_segment::GetSegmentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_segment::GetSegmentInput { segment: self.segment })
     }
 }

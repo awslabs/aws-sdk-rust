@@ -46,7 +46,7 @@ impl SetActiveReceiptRuleSetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_active_receipt_rule_set::SetActiveReceiptRuleSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::set_active_receipt_rule_set::SetActiveReceiptRuleSetInput {
             rule_set_name: self.rule_set_name,

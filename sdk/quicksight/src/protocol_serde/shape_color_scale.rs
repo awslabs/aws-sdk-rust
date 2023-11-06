@@ -2,27 +2,27 @@
 pub fn ser_color_scale(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ColorScale,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.colors {
-        let mut array_2 = object.key("Colors").start_array();
-        for item_3 in var_1 {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        let mut array_1 = object.key("Colors").start_array();
+        for item_2 in &input.colors {
             {
                 #[allow(unused_mut)]
-                let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_data_color::ser_data_color(&mut object_4, item_3)?;
-                object_4.finish();
+                let mut object_3 = array_1.value().start_object();
+                crate::protocol_serde::shape_data_color::ser_data_color(&mut object_3, item_2)?;
+                object_3.finish();
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
-    if let Some(var_5) = &input.color_fill_type {
-        object.key("ColorFillType").string(var_5.as_str());
+    {
+        object.key("ColorFillType").string(input.color_fill_type.as_str());
     }
-    if let Some(var_6) = &input.null_value_color {
+    if let Some(var_4) = &input.null_value_color {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("NullValueColor").start_object();
-        crate::protocol_serde::shape_data_color::ser_data_color(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_5 = object.key("NullValueColor").start_object();
+        crate::protocol_serde::shape_data_color::ser_data_color(&mut object_5, var_4)?;
+        object_5.finish();
     }
     Ok(())
 }
@@ -65,7 +65,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::color_scale_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

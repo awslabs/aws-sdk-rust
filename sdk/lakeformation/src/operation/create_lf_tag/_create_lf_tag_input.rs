@@ -20,8 +20,10 @@ impl CreateLfTagInput {
         self.tag_key.as_deref()
     }
     /// <p>A list of possible values an attribute can take.</p>
-    pub fn tag_values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tag_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_values.is_none()`.
+    pub fn tag_values(&self) -> &[::std::string::String] {
+        self.tag_values.as_deref().unwrap_or_default()
     }
 }
 impl CreateLfTagInput {
@@ -55,6 +57,7 @@ impl CreateLfTagInputBuilder {
         &self.catalog_id
     }
     /// <p>The key-name for the LF-tag.</p>
+    /// This field is required.
     pub fn tag_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tag_key = ::std::option::Option::Some(input.into());
         self
@@ -89,7 +92,7 @@ impl CreateLfTagInputBuilder {
         &self.tag_values
     }
     /// Consumes the builder and constructs a [`CreateLfTagInput`](crate::operation::create_lf_tag::CreateLfTagInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_lf_tag::CreateLfTagInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_lf_tag::CreateLfTagInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_lf_tag::CreateLfTagInput {
             catalog_id: self.catalog_id,
             tag_key: self.tag_key,

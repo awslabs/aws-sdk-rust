@@ -27,6 +27,7 @@ pub struct StopTriggerInputBuilder {
 }
 impl StopTriggerInputBuilder {
     /// <p>The name of the trigger to stop.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl StopTriggerInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`StopTriggerInput`](crate::operation::stop_trigger::StopTriggerInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::stop_trigger::StopTriggerInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_trigger::StopTriggerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_trigger::StopTriggerInput { name: self.name })
     }
 }

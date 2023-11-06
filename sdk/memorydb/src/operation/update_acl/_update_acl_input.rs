@@ -16,12 +16,16 @@ impl UpdateAclInput {
         self.acl_name.as_deref()
     }
     /// <p>The list of users to add to the Access Control List</p>
-    pub fn user_names_to_add(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.user_names_to_add.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_names_to_add.is_none()`.
+    pub fn user_names_to_add(&self) -> &[::std::string::String] {
+        self.user_names_to_add.as_deref().unwrap_or_default()
     }
     /// <p>The list of users to remove from the Access Control List</p>
-    pub fn user_names_to_remove(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.user_names_to_remove.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_names_to_remove.is_none()`.
+    pub fn user_names_to_remove(&self) -> &[::std::string::String] {
+        self.user_names_to_remove.as_deref().unwrap_or_default()
     }
 }
 impl UpdateAclInput {
@@ -41,6 +45,7 @@ pub struct UpdateAclInputBuilder {
 }
 impl UpdateAclInputBuilder {
     /// <p>The name of the Access Control List</p>
+    /// This field is required.
     pub fn acl_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.acl_name = ::std::option::Option::Some(input.into());
         self
@@ -95,7 +100,7 @@ impl UpdateAclInputBuilder {
         &self.user_names_to_remove
     }
     /// Consumes the builder and constructs a [`UpdateAclInput`](crate::operation::update_acl::UpdateAclInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_acl::UpdateAclInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_acl::UpdateAclInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_acl::UpdateAclInput {
             acl_name: self.acl_name,
             user_names_to_add: self.user_names_to_add,

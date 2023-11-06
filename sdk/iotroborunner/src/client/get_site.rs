@@ -3,15 +3,15 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSite`](crate::operation::get_site::builders::GetSiteFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_site::builders::GetSiteFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_site::builders::GetSiteFluentBuilder::set_id): Site ARN.
+    ///   - [`id(impl Into<String>)`](crate::operation::get_site::builders::GetSiteFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_site::builders::GetSiteFluentBuilder::set_id):<br>required: **true**<br>Site ARN.<br>
     /// - On success, responds with [`GetSiteOutput`](crate::operation::get_site::GetSiteOutput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::operation::get_site::GetSiteOutput::arn): Site ARN.
-    ///   - [`id(Option<String>)`](crate::operation::get_site::GetSiteOutput::id): Filters access by the site's identifier
-    ///   - [`name(Option<String>)`](crate::operation::get_site::GetSiteOutput::name): Human friendly name of the resource.
-    ///   - [`country_code(Option<String>)`](crate::operation::get_site::GetSiteOutput::country_code): A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
+    ///   - [`arn(String)`](crate::operation::get_site::GetSiteOutput::arn): Site ARN.
+    ///   - [`id(String)`](crate::operation::get_site::GetSiteOutput::id): Filters access by the site's identifier
+    ///   - [`name(String)`](crate::operation::get_site::GetSiteOutput::name): Human friendly name of the resource.
+    ///   - [`country_code(String)`](crate::operation::get_site::GetSiteOutput::country_code): A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
     ///   - [`description(Option<String>)`](crate::operation::get_site::GetSiteOutput::description): A high-level description of the site.
-    ///   - [`created_at(Option<DateTime>)`](crate::operation::get_site::GetSiteOutput::created_at): Timestamp at which the resource was created.
-    ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_site::GetSiteOutput::updated_at): Timestamp at which the resource was last updated.
+    ///   - [`created_at(DateTime)`](crate::operation::get_site::GetSiteOutput::created_at): Timestamp at which the resource was created.
+    ///   - [`updated_at(DateTime)`](crate::operation::get_site::GetSiteOutput::updated_at): Timestamp at which the resource was last updated.
     /// - On failure, responds with [`SdkError<GetSiteError>`](crate::operation::get_site::GetSiteError)
     pub fn get_site(&self) -> crate::operation::get_site::builders::GetSiteFluentBuilder {
         crate::operation::get_site::builders::GetSiteFluentBuilder::new(self.handle.clone())

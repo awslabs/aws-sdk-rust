@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChatParticipantRoleConfig {
     /// <p>A list of participant timers. You can specify any unique combination of role and timer type. Duplicate entries error out the request with a 400.</p>
-    pub participant_timer_config_list: ::std::option::Option<::std::vec::Vec<crate::types::ParticipantTimerConfiguration>>,
+    pub participant_timer_config_list: ::std::vec::Vec<crate::types::ParticipantTimerConfiguration>,
 }
 impl ChatParticipantRoleConfig {
     /// <p>A list of participant timers. You can specify any unique combination of role and timer type. Duplicate entries error out the request with a 400.</p>
-    pub fn participant_timer_config_list(&self) -> ::std::option::Option<&[crate::types::ParticipantTimerConfiguration]> {
-        self.participant_timer_config_list.as_deref()
+    pub fn participant_timer_config_list(&self) -> &[crate::types::ParticipantTimerConfiguration] {
+        use std::ops::Deref;
+        self.participant_timer_config_list.deref()
     }
 }
 impl ChatParticipantRoleConfig {
@@ -51,9 +52,16 @@ impl ChatParticipantRoleConfigBuilder {
         &self.participant_timer_config_list
     }
     /// Consumes the builder and constructs a [`ChatParticipantRoleConfig`](crate::types::ChatParticipantRoleConfig).
-    pub fn build(self) -> crate::types::ChatParticipantRoleConfig {
-        crate::types::ChatParticipantRoleConfig {
-            participant_timer_config_list: self.participant_timer_config_list,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`participant_timer_config_list`](crate::types::builders::ChatParticipantRoleConfigBuilder::participant_timer_config_list)
+    pub fn build(self) -> ::std::result::Result<crate::types::ChatParticipantRoleConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ChatParticipantRoleConfig {
+            participant_timer_config_list: self.participant_timer_config_list.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "participant_timer_config_list",
+                    "participant_timer_config_list was not specified but it is required when building ChatParticipantRoleConfig",
+                )
+            })?,
+        })
     }
 }

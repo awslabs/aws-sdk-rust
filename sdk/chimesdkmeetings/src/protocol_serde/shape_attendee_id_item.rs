@@ -2,9 +2,9 @@
 pub fn ser_attendee_id_item(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AttendeeIdItem,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.attendee_id {
-        object.key("AttendeeId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("AttendeeId").string(input.attendee_id.as_str());
     }
     Ok(())
 }

@@ -34,6 +34,7 @@ pub struct GetSignalingChannelEndpointInputBuilder {
 }
 impl GetSignalingChannelEndpointInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the signalling channel for which you want to get an endpoint.</p>
+    /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self
@@ -69,7 +70,7 @@ impl GetSignalingChannelEndpointInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointInput {
             channel_arn: self.channel_arn,

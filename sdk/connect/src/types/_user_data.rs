@@ -53,8 +53,10 @@ impl UserData {
         self.active_slots_by_channel.as_ref()
     }
     /// <p>A list of contact reference information.</p>
-    pub fn contacts(&self) -> ::std::option::Option<&[crate::types::AgentContactReference]> {
-        self.contacts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.contacts.is_none()`.
+    pub fn contacts(&self) -> &[crate::types::AgentContactReference] {
+        self.contacts.as_deref().unwrap_or_default()
     }
     /// <p>The Next status of the agent.</p>
     pub fn next_status(&self) -> ::std::option::Option<&str> {

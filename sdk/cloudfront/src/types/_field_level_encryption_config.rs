@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FieldLevelEncryptionConfig {
     /// <p>A unique number that ensures the request can't be replayed.</p>
-    pub caller_reference: ::std::option::Option<::std::string::String>,
+    pub caller_reference: ::std::string::String,
     /// <p>An optional comment about the configuration. The comment cannot be longer than 128 characters.</p>
     pub comment: ::std::option::Option<::std::string::String>,
     /// <p>A complex data type that specifies when to forward content if a profile isn't found and the profile that can be provided as a query argument in a request.</p>
@@ -15,8 +15,9 @@ pub struct FieldLevelEncryptionConfig {
 }
 impl FieldLevelEncryptionConfig {
     /// <p>A unique number that ensures the request can't be replayed.</p>
-    pub fn caller_reference(&self) -> ::std::option::Option<&str> {
-        self.caller_reference.as_deref()
+    pub fn caller_reference(&self) -> &str {
+        use std::ops::Deref;
+        self.caller_reference.deref()
     }
     /// <p>An optional comment about the configuration. The comment cannot be longer than 128 characters.</p>
     pub fn comment(&self) -> ::std::option::Option<&str> {
@@ -49,6 +50,7 @@ pub struct FieldLevelEncryptionConfigBuilder {
 }
 impl FieldLevelEncryptionConfigBuilder {
     /// <p>A unique number that ensures the request can't be replayed.</p>
+    /// This field is required.
     pub fn caller_reference(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.caller_reference = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +107,19 @@ impl FieldLevelEncryptionConfigBuilder {
         &self.content_type_profile_config
     }
     /// Consumes the builder and constructs a [`FieldLevelEncryptionConfig`](crate::types::FieldLevelEncryptionConfig).
-    pub fn build(self) -> crate::types::FieldLevelEncryptionConfig {
-        crate::types::FieldLevelEncryptionConfig {
-            caller_reference: self.caller_reference,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`caller_reference`](crate::types::builders::FieldLevelEncryptionConfigBuilder::caller_reference)
+    pub fn build(self) -> ::std::result::Result<crate::types::FieldLevelEncryptionConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::FieldLevelEncryptionConfig {
+            caller_reference: self.caller_reference.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "caller_reference",
+                    "caller_reference was not specified but it is required when building FieldLevelEncryptionConfig",
+                )
+            })?,
             comment: self.comment,
             query_arg_profile_config: self.query_arg_profile_config,
             content_type_profile_config: self.content_type_profile_config,
-        }
+        })
     }
 }

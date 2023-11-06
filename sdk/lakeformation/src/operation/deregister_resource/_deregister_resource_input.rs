@@ -27,6 +27,7 @@ pub struct DeregisterResourceInputBuilder {
 }
 impl DeregisterResourceInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to deregister.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeregisterResourceInputBuilder {
     /// Consumes the builder and constructs a [`DeregisterResourceInput`](crate::operation::deregister_resource::DeregisterResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::deregister_resource::DeregisterResourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::deregister_resource::DeregisterResourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::deregister_resource::DeregisterResourceInput {
             resource_arn: self.resource_arn,
         })

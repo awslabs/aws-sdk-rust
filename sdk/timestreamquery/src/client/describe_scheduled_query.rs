@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeScheduledQuery`](crate::operation::describe_scheduled_query::builders::DescribeScheduledQueryFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`scheduled_query_arn(impl Into<String>)`](crate::operation::describe_scheduled_query::builders::DescribeScheduledQueryFluentBuilder::scheduled_query_arn) / [`set_scheduled_query_arn(Option<String>)`](crate::operation::describe_scheduled_query::builders::DescribeScheduledQueryFluentBuilder::set_scheduled_query_arn): <p>The ARN of the scheduled query.</p>
+    ///   - [`scheduled_query_arn(impl Into<String>)`](crate::operation::describe_scheduled_query::builders::DescribeScheduledQueryFluentBuilder::scheduled_query_arn) / [`set_scheduled_query_arn(Option<String>)`](crate::operation::describe_scheduled_query::builders::DescribeScheduledQueryFluentBuilder::set_scheduled_query_arn):<br>required: **true**<br><p>The ARN of the scheduled query.</p><br>
     /// - On success, responds with [`DescribeScheduledQueryOutput`](crate::operation::describe_scheduled_query::DescribeScheduledQueryOutput) with field(s):
     ///   - [`scheduled_query(Option<ScheduledQueryDescription>)`](crate::operation::describe_scheduled_query::DescribeScheduledQueryOutput::scheduled_query): <p>The scheduled query.</p>
     /// - On failure, responds with [`SdkError<DescribeScheduledQueryError>`](crate::operation::describe_scheduled_query::DescribeScheduledQueryError)

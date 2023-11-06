@@ -14,8 +14,10 @@ impl SetLogDeliveryConfigurationInput {
         self.user_pool_id.as_deref()
     }
     /// <p>A collection of all of the detailed activity logging configurations for a user pool.</p>
-    pub fn log_configurations(&self) -> ::std::option::Option<&[crate::types::LogConfigurationType]> {
-        self.log_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_configurations.is_none()`.
+    pub fn log_configurations(&self) -> &[crate::types::LogConfigurationType] {
+        self.log_configurations.as_deref().unwrap_or_default()
     }
 }
 impl SetLogDeliveryConfigurationInput {
@@ -34,6 +36,7 @@ pub struct SetLogDeliveryConfigurationInputBuilder {
 }
 impl SetLogDeliveryConfigurationInputBuilder {
     /// <p>The ID of the user pool where you want to configure detailed activity logging .</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -72,7 +75,7 @@ impl SetLogDeliveryConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_log_delivery_configuration::SetLogDeliveryConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::set_log_delivery_configuration::SetLogDeliveryConfigurationInput {
             user_pool_id: self.user_pool_id,

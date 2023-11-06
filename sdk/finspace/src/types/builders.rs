@@ -15,6 +15,12 @@ pub use crate::types::_kx_database_configuration::KxDatabaseConfigurationBuilder
 
 pub use crate::types::_kx_database_cache_configuration::KxDatabaseCacheConfigurationBuilder;
 
+pub use crate::types::_kx_cluster_code_deployment_configuration::KxClusterCodeDeploymentConfigurationBuilder;
+
+pub use crate::types::_kx_command_line_argument::KxCommandLineArgumentBuilder;
+
+pub use crate::types::_code_configuration::CodeConfigurationBuilder;
+
 pub use crate::types::_environment::EnvironmentBuilder;
 
 pub use crate::types::_federation_parameters::FederationParametersBuilder;
@@ -32,10 +38,6 @@ pub use crate::types::_kx_node::KxNodeBuilder;
 pub use crate::types::_kx_changeset_list_entry::KxChangesetListEntryBuilder;
 
 pub use crate::types::_kx_savedown_storage_configuration::KxSavedownStorageConfigurationBuilder;
-
-pub use crate::types::_code_configuration::CodeConfigurationBuilder;
-
-pub use crate::types::_kx_command_line_argument::KxCommandLineArgumentBuilder;
 
 pub use crate::types::_vpc_configuration::VpcConfigurationBuilder;
 

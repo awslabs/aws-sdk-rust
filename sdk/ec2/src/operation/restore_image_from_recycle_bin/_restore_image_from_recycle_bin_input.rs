@@ -34,6 +34,7 @@ pub struct RestoreImageFromRecycleBinInputBuilder {
 }
 impl RestoreImageFromRecycleBinInputBuilder {
     /// <p>The ID of the AMI to restore.</p>
+    /// This field is required.
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl RestoreImageFromRecycleBinInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_image_from_recycle_bin::RestoreImageFromRecycleBinInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::restore_image_from_recycle_bin::RestoreImageFromRecycleBinInput {
             image_id: self.image_id,

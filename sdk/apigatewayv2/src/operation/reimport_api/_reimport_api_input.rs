@@ -49,6 +49,7 @@ pub struct ReimportApiInputBuilder {
 }
 impl ReimportApiInputBuilder {
     /// <p>The API identifier.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +78,7 @@ impl ReimportApiInputBuilder {
         &self.basepath
     }
     /// <p>The OpenAPI definition. Supported only for HTTP APIs.</p>
+    /// This field is required.
     pub fn body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.body = ::std::option::Option::Some(input.into());
         self
@@ -105,7 +107,7 @@ impl ReimportApiInputBuilder {
         &self.fail_on_warnings
     }
     /// Consumes the builder and constructs a [`ReimportApiInput`](crate::operation::reimport_api::ReimportApiInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::reimport_api::ReimportApiInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::reimport_api::ReimportApiInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::reimport_api::ReimportApiInput {
             api_id: self.api_id,
             basepath: self.basepath,

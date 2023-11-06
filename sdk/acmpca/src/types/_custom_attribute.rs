@@ -5,20 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomAttribute {
     /// <p>Specifies the object identifier (OID) of the attribute type of the relative distinguished name (RDN).</p>
-    pub object_identifier: ::std::option::Option<::std::string::String>,
+    pub object_identifier: ::std::string::String,
     /// <p></p>
     /// <p>Specifies the attribute value of relative distinguished name (RDN).</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
 }
 impl CustomAttribute {
     /// <p>Specifies the object identifier (OID) of the attribute type of the relative distinguished name (RDN).</p>
-    pub fn object_identifier(&self) -> ::std::option::Option<&str> {
-        self.object_identifier.as_deref()
+    pub fn object_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.object_identifier.deref()
     }
     /// <p></p>
     /// <p>Specifies the attribute value of relative distinguished name (RDN).</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
 }
 impl CustomAttribute {
@@ -37,6 +39,7 @@ pub struct CustomAttributeBuilder {
 }
 impl CustomAttributeBuilder {
     /// <p>Specifies the object identifier (OID) of the attribute type of the relative distinguished name (RDN).</p>
+    /// This field is required.
     pub fn object_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_identifier = ::std::option::Option::Some(input.into());
         self
@@ -52,6 +55,7 @@ impl CustomAttributeBuilder {
     }
     /// <p></p>
     /// <p>Specifies the attribute value of relative distinguished name (RDN).</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -68,10 +72,23 @@ impl CustomAttributeBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`CustomAttribute`](crate::types::CustomAttribute).
-    pub fn build(self) -> crate::types::CustomAttribute {
-        crate::types::CustomAttribute {
-            object_identifier: self.object_identifier,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`object_identifier`](crate::types::builders::CustomAttributeBuilder::object_identifier)
+    /// - [`value`](crate::types::builders::CustomAttributeBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomAttribute, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CustomAttribute {
+            object_identifier: self.object_identifier.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "object_identifier",
+                    "object_identifier was not specified but it is required when building CustomAttribute",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building CustomAttribute",
+                )
+            })?,
+        })
     }
 }

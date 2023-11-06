@@ -42,8 +42,10 @@ impl CreateVehicleInput {
         self.association_behavior.as_ref()
     }
     /// <p>Metadata that can be used to manage the vehicle.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateVehicleInput {
@@ -66,6 +68,7 @@ pub struct CreateVehicleInputBuilder {
 }
 impl CreateVehicleInputBuilder {
     /// <p> The unique ID of the vehicle to create. </p>
+    /// This field is required.
     pub fn vehicle_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vehicle_name = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +83,7 @@ impl CreateVehicleInputBuilder {
         &self.vehicle_name
     }
     /// <p> The Amazon Resource Name ARN of a vehicle model. </p>
+    /// This field is required.
     pub fn model_manifest_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_manifest_arn = ::std::option::Option::Some(input.into());
         self
@@ -94,6 +98,7 @@ impl CreateVehicleInputBuilder {
         &self.model_manifest_arn
     }
     /// <p> The ARN of a decoder manifest. </p>
+    /// This field is required.
     pub fn decoder_manifest_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.decoder_manifest_arn = ::std::option::Option::Some(input.into());
         self
@@ -170,7 +175,7 @@ impl CreateVehicleInputBuilder {
     /// Consumes the builder and constructs a [`CreateVehicleInput`](crate::operation::create_vehicle::CreateVehicleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_vehicle::CreateVehicleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_vehicle::CreateVehicleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_vehicle::CreateVehicleInput {
             vehicle_name: self.vehicle_name,
             model_manifest_arn: self.model_manifest_arn,

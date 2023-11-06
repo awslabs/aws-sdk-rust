@@ -2,12 +2,12 @@
 pub fn ser_validation_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ValidationConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.ruleset_arn {
-        object.key("RulesetArn").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("RulesetArn").string(input.ruleset_arn.as_str());
     }
-    if let Some(var_2) = &input.validation_mode {
-        object.key("ValidationMode").string(var_2.as_str());
+    if let Some(var_1) = &input.validation_mode {
+        object.key("ValidationMode").string(var_1.as_str());
     }
     Ok(())
 }
@@ -51,7 +51,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::validation_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

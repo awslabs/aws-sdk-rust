@@ -27,6 +27,7 @@ pub struct DeleteStateMachineAliasInputBuilder {
 }
 impl DeleteStateMachineAliasInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the state machine alias to delete.</p>
+    /// This field is required.
     pub fn state_machine_alias_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_machine_alias_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteStateMachineAliasInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_state_machine_alias::DeleteStateMachineAliasInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_state_machine_alias::DeleteStateMachineAliasInput {
             state_machine_alias_arn: self.state_machine_alias_arn,

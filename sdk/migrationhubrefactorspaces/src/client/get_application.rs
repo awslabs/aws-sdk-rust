@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetApplication`](crate::operation::get_application::builders::GetApplicationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`environment_identifier(impl Into<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::environment_identifier) / [`set_environment_identifier(Option<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::set_environment_identifier): <p>The ID of the environment. </p>
-    ///   - [`application_identifier(impl Into<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::application_identifier) / [`set_application_identifier(Option<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::set_application_identifier): <p>The ID of the application.</p>
+    ///   - [`environment_identifier(impl Into<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::environment_identifier) / [`set_environment_identifier(Option<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::set_environment_identifier):<br>required: **true**<br><p>The ID of the environment. </p><br>
+    ///   - [`application_identifier(impl Into<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::application_identifier) / [`set_application_identifier(Option<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::set_application_identifier):<br>required: **true**<br><p>The ID of the application.</p><br>
     /// - On success, responds with [`GetApplicationOutput`](crate::operation::get_application::GetApplicationOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::get_application::GetApplicationOutput::name): <p>The name of the application.</p>
     ///   - [`arn(Option<String>)`](crate::operation::get_application::GetApplicationOutput::arn): <p>The Amazon Resource Name (ARN) of the application.</p>
@@ -16,7 +16,7 @@ impl super::Client {
     ///   - [`proxy_type(Option<ProxyType>)`](crate::operation::get_application::GetApplicationOutput::proxy_type): <p>The proxy type of the proxy created within the application. </p>
     ///   - [`api_gateway_proxy(Option<ApiGatewayProxyConfig>)`](crate::operation::get_application::GetApplicationOutput::api_gateway_proxy): <p>The endpoint URL of the API Gateway proxy. </p>
     ///   - [`state(Option<ApplicationState>)`](crate::operation::get_application::GetApplicationOutput::state): <p>The current state of the application. </p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_application::GetApplicationOutput::tags): <p>The tags assigned to the application. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_application::GetApplicationOutput::tags): <p>The tags assigned to the application. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
     ///   - [`error(Option<ErrorResponse>)`](crate::operation::get_application::GetApplicationOutput::error): <p>Any error associated with the application resource. </p>
     ///   - [`last_updated_time(Option<DateTime>)`](crate::operation::get_application::GetApplicationOutput::last_updated_time): <p>A timestamp that indicates when the application was last updated. </p>
     ///   - [`created_time(Option<DateTime>)`](crate::operation::get_application::GetApplicationOutput::created_time): <p>A timestamp that indicates when the application is created. </p>

@@ -2,7 +2,7 @@
 pub fn ser_associate_wireless_device_with_multicast_group_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::associate_wireless_device_with_multicast_group::AssociateWirelessDeviceWithMulticastGroupInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.wireless_device_id {
         object.key("WirelessDeviceId").string(var_1.as_str());
     }

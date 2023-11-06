@@ -9,8 +9,10 @@ pub struct MessageAttributeValue {
 }
 impl MessageAttributeValue {
     /// <p>The strings in a message attribute value.</p>
-    pub fn string_values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.string_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.string_values.is_none()`.
+    pub fn string_values(&self) -> &[::std::string::String] {
+        self.string_values.as_deref().unwrap_or_default()
     }
 }
 impl MessageAttributeValue {

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RotateChannelCredentials`](crate::operation::rotate_channel_credentials::builders::RotateChannelCredentialsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::rotate_channel_credentials::builders::RotateChannelCredentialsFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::rotate_channel_credentials::builders::RotateChannelCredentialsFluentBuilder::set_id): The ID of the channel to update.
+    ///   - [`id(impl Into<String>)`](crate::operation::rotate_channel_credentials::builders::RotateChannelCredentialsFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::rotate_channel_credentials::builders::RotateChannelCredentialsFluentBuilder::set_id):<br>required: **true**<br>The ID of the channel to update.<br>
     /// - On success, responds with [`RotateChannelCredentialsOutput`](crate::operation::rotate_channel_credentials::RotateChannelCredentialsOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::rotate_channel_credentials::RotateChannelCredentialsOutput::arn): The Amazon Resource Name (ARN) assigned to the Channel.
     ///   - [`created_at(Option<String>)`](crate::operation::rotate_channel_credentials::RotateChannelCredentialsOutput::created_at): The date and time the Channel was created.
@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`hls_ingest(Option<HlsIngest>)`](crate::operation::rotate_channel_credentials::RotateChannelCredentialsOutput::hls_ingest): An HTTP Live Streaming (HLS) ingest resource configuration.
     ///   - [`id(Option<String>)`](crate::operation::rotate_channel_credentials::RotateChannelCredentialsOutput::id): The ID of the Channel.
     ///   - [`ingress_access_logs(Option<IngressAccessLogs>)`](crate::operation::rotate_channel_credentials::RotateChannelCredentialsOutput::ingress_access_logs): Configure ingress access logging.
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::rotate_channel_credentials::RotateChannelCredentialsOutput::tags): A collection of tags associated with a resource
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::rotate_channel_credentials::RotateChannelCredentialsOutput::tags): A collection of tags associated with a resource
     /// - On failure, responds with [`SdkError<RotateChannelCredentialsError>`](crate::operation::rotate_channel_credentials::RotateChannelCredentialsError)
     #[deprecated(note = "This API is deprecated. Please use RotateIngestEndpointCredentials instead")]
     pub fn rotate_channel_credentials(&self) -> crate::operation::rotate_channel_credentials::builders::RotateChannelCredentialsFluentBuilder {

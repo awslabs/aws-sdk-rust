@@ -14,8 +14,10 @@ impl UpdateS3ResourcesInput {
         self.member_account_id.as_deref()
     }
     /// <p>(Discontinued) The S3 resources whose classification types you want to update.</p>
-    pub fn s3_resources_update(&self) -> ::std::option::Option<&[crate::types::S3ResourceClassificationUpdate]> {
-        self.s3_resources_update.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.s3_resources_update.is_none()`.
+    pub fn s3_resources_update(&self) -> &[crate::types::S3ResourceClassificationUpdate] {
+        self.s3_resources_update.as_deref().unwrap_or_default()
     }
 }
 impl UpdateS3ResourcesInput {
@@ -70,7 +72,7 @@ impl UpdateS3ResourcesInputBuilder {
     /// Consumes the builder and constructs a [`UpdateS3ResourcesInput`](crate::operation::update_s3_resources::UpdateS3ResourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_s3_resources::UpdateS3ResourcesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_s3_resources::UpdateS3ResourcesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_s3_resources::UpdateS3ResourcesInput {
             member_account_id: self.member_account_id,
             s3_resources_update: self.s3_resources_update,

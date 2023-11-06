@@ -2,51 +2,51 @@
 pub fn ser_request_inspection_acfp(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RequestInspectionAcfp,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.payload_type {
-        object.key("PayloadType").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("PayloadType").string(input.payload_type.as_str());
     }
-    if let Some(var_2) = &input.username_field {
+    if let Some(var_1) = &input.username_field {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("UsernameField").start_object();
-        crate::protocol_serde::shape_username_field::ser_username_field(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("UsernameField").start_object();
+        crate::protocol_serde::shape_username_field::ser_username_field(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.password_field {
+    if let Some(var_3) = &input.password_field {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("PasswordField").start_object();
-        crate::protocol_serde::shape_password_field::ser_password_field(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("PasswordField").start_object();
+        crate::protocol_serde::shape_password_field::ser_password_field(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_6) = &input.email_field {
+    if let Some(var_5) = &input.email_field {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("EmailField").start_object();
-        crate::protocol_serde::shape_email_field::ser_email_field(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_6 = object.key("EmailField").start_object();
+        crate::protocol_serde::shape_email_field::ser_email_field(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_8) = &input.phone_number_fields {
-        let mut array_9 = object.key("PhoneNumberFields").start_array();
-        for item_10 in var_8 {
+    if let Some(var_7) = &input.phone_number_fields {
+        let mut array_8 = object.key("PhoneNumberFields").start_array();
+        for item_9 in var_7 {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_phone_number_field::ser_phone_number_field(&mut object_11, item_10)?;
-                object_11.finish();
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_phone_number_field::ser_phone_number_field(&mut object_10, item_9)?;
+                object_10.finish();
             }
         }
-        array_9.finish();
+        array_8.finish();
     }
-    if let Some(var_12) = &input.address_fields {
-        let mut array_13 = object.key("AddressFields").start_array();
-        for item_14 in var_12 {
+    if let Some(var_11) = &input.address_fields {
+        let mut array_12 = object.key("AddressFields").start_array();
+        for item_13 in var_11 {
             {
                 #[allow(unused_mut)]
-                let mut object_15 = array_13.value().start_object();
-                crate::protocol_serde::shape_address_field::ser_address_field(&mut object_15, item_14)?;
-                object_15.finish();
+                let mut object_14 = array_12.value().start_object();
+                crate::protocol_serde::shape_address_field::ser_address_field(&mut object_14, item_13)?;
+                object_14.finish();
             }
         }
-        array_13.finish();
+        array_12.finish();
     }
     Ok(())
 }
@@ -99,7 +99,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::request_inspection_acfp_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

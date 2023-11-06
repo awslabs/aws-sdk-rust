@@ -24,12 +24,16 @@ impl CreateVpcEndpointInput {
         self.vpc_id.as_deref()
     }
     /// <p>The ID of one or more subnets from which you'll access OpenSearch Serverless.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        self.subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>The unique identifiers of the security groups that define the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -55,6 +59,7 @@ pub struct CreateVpcEndpointInputBuilder {
 }
 impl CreateVpcEndpointInputBuilder {
     /// <p>The name of the interface endpoint.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +74,7 @@ impl CreateVpcEndpointInputBuilder {
         &self.name
     }
     /// <p>The ID of the VPC from which you'll access OpenSearch Serverless.</p>
+    /// This field is required.
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
         self
@@ -139,7 +145,7 @@ impl CreateVpcEndpointInputBuilder {
     /// Consumes the builder and constructs a [`CreateVpcEndpointInput`](crate::operation::create_vpc_endpoint::CreateVpcEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_vpc_endpoint::CreateVpcEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_vpc_endpoint::CreateVpcEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_vpc_endpoint::CreateVpcEndpointInput {
             name: self.name,
             vpc_id: self.vpc_id,

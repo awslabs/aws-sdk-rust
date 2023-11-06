@@ -28,6 +28,7 @@ pub struct DescribeChannelInputBuilder {
 }
 impl DescribeChannelInputBuilder {
     /// channel ID
+    /// This field is required.
     pub fn channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_id = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl DescribeChannelInputBuilder {
     /// Consumes the builder and constructs a [`DescribeChannelInput`](crate::operation::describe_channel::DescribeChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_channel::DescribeChannelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_channel::DescribeChannelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_channel::DescribeChannelInput { channel_id: self.channel_id })
     }
 }

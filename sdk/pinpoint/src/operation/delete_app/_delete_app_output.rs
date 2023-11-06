@@ -34,6 +34,7 @@ pub struct DeleteAppOutputBuilder {
 }
 impl DeleteAppOutputBuilder {
     /// <p>Provides information about an application.</p>
+    /// This field is required.
     pub fn application_response(mut self, input: crate::types::ApplicationResponse) -> Self {
         self.application_response = ::std::option::Option::Some(input);
         self

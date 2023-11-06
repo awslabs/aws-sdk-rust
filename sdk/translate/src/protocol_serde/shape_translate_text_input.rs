@@ -2,7 +2,7 @@
 pub fn ser_translate_text_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::translate_text::TranslateTextInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.text {
         object.key("Text").string(var_1.as_str());
     }

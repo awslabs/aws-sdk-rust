@@ -34,6 +34,7 @@ pub struct GetApplicationSettingsOutputBuilder {
 }
 impl GetApplicationSettingsOutputBuilder {
     /// <p>Provides information about an application, including the default settings for an application.</p>
+    /// This field is required.
     pub fn application_settings_resource(mut self, input: crate::types::ApplicationSettingsResource) -> Self {
         self.application_settings_resource = ::std::option::Option::Some(input);
         self

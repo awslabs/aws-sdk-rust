@@ -6,14 +6,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleActionOverride {
     /// <p>The name of the rule to override.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The override action to use, in place of the configured action of the rule in the rule group. </p>
     pub action_to_use: ::std::option::Option<crate::types::RuleAction>,
 }
 impl RuleActionOverride {
     /// <p>The name of the rule to override.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The override action to use, in place of the configured action of the rule in the rule group. </p>
     pub fn action_to_use(&self) -> ::std::option::Option<&crate::types::RuleAction> {
@@ -36,6 +37,7 @@ pub struct RuleActionOverrideBuilder {
 }
 impl RuleActionOverrideBuilder {
     /// <p>The name of the rule to override.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -50,6 +52,7 @@ impl RuleActionOverrideBuilder {
         &self.name
     }
     /// <p>The override action to use, in place of the configured action of the rule in the rule group. </p>
+    /// This field is required.
     pub fn action_to_use(mut self, input: crate::types::RuleAction) -> Self {
         self.action_to_use = ::std::option::Option::Some(input);
         self
@@ -64,10 +67,17 @@ impl RuleActionOverrideBuilder {
         &self.action_to_use
     }
     /// Consumes the builder and constructs a [`RuleActionOverride`](crate::types::RuleActionOverride).
-    pub fn build(self) -> crate::types::RuleActionOverride {
-        crate::types::RuleActionOverride {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::RuleActionOverrideBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::RuleActionOverride, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RuleActionOverride {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building RuleActionOverride",
+                )
+            })?,
             action_to_use: self.action_to_use,
-        }
+        })
     }
 }

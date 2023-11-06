@@ -2,7 +2,7 @@
 pub fn ser_font_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FontConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.font_size {
         #[allow(unused_mut)]
         let mut object_2 = object.key("FontSize").start_object();

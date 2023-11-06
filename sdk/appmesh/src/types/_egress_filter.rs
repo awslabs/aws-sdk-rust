@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EgressFilter {
     /// <p>The egress filter type. By default, the type is <code>DROP_ALL</code>, which allows egress only from virtual nodes to other defined resources in the service mesh (and any traffic to <code>*.amazonaws.com</code> for Amazon Web Services API calls). You can set the egress filter type to <code>ALLOW_ALL</code> to allow egress to any endpoint inside or outside of the service mesh.</p>
-    pub r#type: ::std::option::Option<crate::types::EgressFilterType>,
+    pub r#type: crate::types::EgressFilterType,
 }
 impl EgressFilter {
     /// <p>The egress filter type. By default, the type is <code>DROP_ALL</code>, which allows egress only from virtual nodes to other defined resources in the service mesh (and any traffic to <code>*.amazonaws.com</code> for Amazon Web Services API calls). You can set the egress filter type to <code>ALLOW_ALL</code> to allow egress to any endpoint inside or outside of the service mesh.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::EgressFilterType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::EgressFilterType {
+        &self.r#type
     }
 }
 impl EgressFilter {
@@ -28,6 +28,7 @@ pub struct EgressFilterBuilder {
 }
 impl EgressFilterBuilder {
     /// <p>The egress filter type. By default, the type is <code>DROP_ALL</code>, which allows egress only from virtual nodes to other defined resources in the service mesh (and any traffic to <code>*.amazonaws.com</code> for Amazon Web Services API calls). You can set the egress filter type to <code>ALLOW_ALL</code> to allow egress to any endpoint inside or outside of the service mesh.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::EgressFilterType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,16 @@ impl EgressFilterBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`EgressFilter`](crate::types::EgressFilter).
-    pub fn build(self) -> crate::types::EgressFilter {
-        crate::types::EgressFilter { r#type: self.r#type }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::EgressFilterBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::EgressFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EgressFilter {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building EgressFilter",
+                )
+            })?,
+        })
     }
 }

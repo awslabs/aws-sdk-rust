@@ -51,8 +51,10 @@ impl RegisterCaCertificateInput {
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Describes the certificate mode in which the Certificate Authority (CA) will be registered. If the <code>verificationCertificate</code> field is not provided, set <code>certificateMode</code> to be <code>SNI_ONLY</code>. If the <code>verificationCertificate</code> field is provided, set <code>certificateMode</code> to be <code>DEFAULT</code>. When <code>certificateMode</code> is not provided, it defaults to <code>DEFAULT</code>. All the device certificates that are registered using this CA will be registered in the same certificate mode as the CA. For more information about certificate mode for device certificates, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode"> certificate mode</a>. </p>
     pub fn certificate_mode(&self) -> ::std::option::Option<&crate::types::CertificateMode> {
@@ -80,6 +82,7 @@ pub struct RegisterCaCertificateInputBuilder {
 }
 impl RegisterCaCertificateInputBuilder {
     /// <p>The CA certificate.</p>
+    /// This field is required.
     pub fn ca_certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ca_certificate = ::std::option::Option::Some(input.into());
         self
@@ -201,7 +204,7 @@ impl RegisterCaCertificateInputBuilder {
     /// Consumes the builder and constructs a [`RegisterCaCertificateInput`](crate::operation::register_ca_certificate::RegisterCaCertificateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_ca_certificate::RegisterCaCertificateInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::register_ca_certificate::RegisterCaCertificateInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::register_ca_certificate::RegisterCaCertificateInput {
             ca_certificate: self.ca_certificate,

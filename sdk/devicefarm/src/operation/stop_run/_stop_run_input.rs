@@ -28,6 +28,7 @@ pub struct StopRunInputBuilder {
 }
 impl StopRunInputBuilder {
     /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm run to stop.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +43,7 @@ impl StopRunInputBuilder {
         &self.arn
     }
     /// Consumes the builder and constructs a [`StopRunInput`](crate::operation::stop_run::StopRunInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::stop_run::StopRunInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_run::StopRunInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_run::StopRunInput { arn: self.arn })
     }
 }

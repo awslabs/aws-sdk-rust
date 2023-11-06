@@ -27,6 +27,7 @@ pub struct DeleteScheduledAuditInputBuilder {
 }
 impl DeleteScheduledAuditInputBuilder {
     /// <p>The name of the scheduled audit you want to delete.</p>
+    /// This field is required.
     pub fn scheduled_audit_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduled_audit_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteScheduledAuditInputBuilder {
     /// Consumes the builder and constructs a [`DeleteScheduledAuditInput`](crate::operation::delete_scheduled_audit::DeleteScheduledAuditInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_scheduled_audit::DeleteScheduledAuditInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_scheduled_audit::DeleteScheduledAuditInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_scheduled_audit::DeleteScheduledAuditInput {
             scheduled_audit_name: self.scheduled_audit_name,

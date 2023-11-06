@@ -27,6 +27,7 @@ pub struct DeleteAppInstanceBotInputBuilder {
 }
 impl DeleteAppInstanceBotInputBuilder {
     /// <p>The ARN of the <code>AppInstanceBot</code> being deleted.</p>
+    /// This field is required.
     pub fn app_instance_bot_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_bot_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteAppInstanceBotInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAppInstanceBotInput`](crate::operation::delete_app_instance_bot::DeleteAppInstanceBotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_app_instance_bot::DeleteAppInstanceBotInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_app_instance_bot::DeleteAppInstanceBotInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_app_instance_bot::DeleteAppInstanceBotInput {
             app_instance_bot_arn: self.app_instance_bot_arn,

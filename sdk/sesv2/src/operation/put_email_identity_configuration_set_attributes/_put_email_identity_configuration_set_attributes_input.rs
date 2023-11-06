@@ -36,6 +36,7 @@ pub struct PutEmailIdentityConfigurationSetAttributesInputBuilder {
 }
 impl PutEmailIdentityConfigurationSetAttributesInputBuilder {
     /// <p>The email address or domain to associate with a configuration set.</p>
+    /// This field is required.
     pub fn email_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_identity = ::std::option::Option::Some(input.into());
         self
@@ -68,7 +69,7 @@ impl PutEmailIdentityConfigurationSetAttributesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributesInput {

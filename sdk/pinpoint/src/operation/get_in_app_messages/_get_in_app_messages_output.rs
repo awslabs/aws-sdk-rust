@@ -34,6 +34,7 @@ pub struct GetInAppMessagesOutputBuilder {
 }
 impl GetInAppMessagesOutputBuilder {
     /// <p>Get in-app messages response object.</p>
+    /// This field is required.
     pub fn in_app_messages_response(mut self, input: crate::types::InAppMessagesResponse) -> Self {
         self.in_app_messages_response = ::std::option::Option::Some(input);
         self

@@ -42,6 +42,7 @@ pub struct GetModelInputBuilder {
 }
 impl GetModelInputBuilder {
     /// <p>The RestApi identifier under which the Model exists.</p>
+    /// This field is required.
     pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rest_api_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl GetModelInputBuilder {
         &self.rest_api_id
     }
     /// <p>The name of the model as an identifier.</p>
+    /// This field is required.
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_name = ::std::option::Option::Some(input.into());
         self
@@ -84,7 +86,7 @@ impl GetModelInputBuilder {
         &self.flatten
     }
     /// Consumes the builder and constructs a [`GetModelInput`](crate::operation::get_model::GetModelInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_model::GetModelInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_model::GetModelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_model::GetModelInput {
             rest_api_id: self.rest_api_id,
             model_name: self.model_name,

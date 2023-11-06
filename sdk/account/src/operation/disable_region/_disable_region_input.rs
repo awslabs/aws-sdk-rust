@@ -63,6 +63,7 @@ impl DisableRegionInputBuilder {
         &self.account_id
     }
     /// <p>Specifies the Region-code for a given Region name (for example, <code>af-south-1</code>). When you disable a Region, Amazon Web Services performs actions to deactivate that Region in your account, such as destroying IAM resources in the Region. This process takes a few minutes for most accounts, but this can take several hours. You cannot enable the Region until the disabling process is fully completed.</p>
+    /// This field is required.
     pub fn region_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region_name = ::std::option::Option::Some(input.into());
         self
@@ -79,7 +80,7 @@ impl DisableRegionInputBuilder {
     /// Consumes the builder and constructs a [`DisableRegionInput`](crate::operation::disable_region::DisableRegionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disable_region::DisableRegionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::disable_region::DisableRegionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::disable_region::DisableRegionInput {
             account_id: self.account_id,
             region_name: self.region_name,

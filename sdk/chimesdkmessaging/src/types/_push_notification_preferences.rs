@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PushNotificationPreferences {
     /// <p>Enum value that indicates which push notifications to send to the requested member of a channel. <code>ALL</code> sends all push notifications, <code>NONE</code> sends no push notifications, <code>FILTERED</code> sends only filtered push notifications. </p>
-    pub allow_notifications: ::std::option::Option<crate::types::AllowNotifications>,
+    pub allow_notifications: crate::types::AllowNotifications,
     /// <p>The simple JSON object used to send a subset of a push notification to the requested member.</p>
     pub filter_rule: ::std::option::Option<::std::string::String>,
 }
 impl PushNotificationPreferences {
     /// <p>Enum value that indicates which push notifications to send to the requested member of a channel. <code>ALL</code> sends all push notifications, <code>NONE</code> sends no push notifications, <code>FILTERED</code> sends only filtered push notifications. </p>
-    pub fn allow_notifications(&self) -> ::std::option::Option<&crate::types::AllowNotifications> {
-        self.allow_notifications.as_ref()
+    pub fn allow_notifications(&self) -> &crate::types::AllowNotifications {
+        &self.allow_notifications
     }
     /// <p>The simple JSON object used to send a subset of a push notification to the requested member.</p>
     pub fn filter_rule(&self) -> ::std::option::Option<&str> {
@@ -43,6 +43,7 @@ pub struct PushNotificationPreferencesBuilder {
 }
 impl PushNotificationPreferencesBuilder {
     /// <p>Enum value that indicates which push notifications to send to the requested member of a channel. <code>ALL</code> sends all push notifications, <code>NONE</code> sends no push notifications, <code>FILTERED</code> sends only filtered push notifications. </p>
+    /// This field is required.
     pub fn allow_notifications(mut self, input: crate::types::AllowNotifications) -> Self {
         self.allow_notifications = ::std::option::Option::Some(input);
         self
@@ -71,11 +72,18 @@ impl PushNotificationPreferencesBuilder {
         &self.filter_rule
     }
     /// Consumes the builder and constructs a [`PushNotificationPreferences`](crate::types::PushNotificationPreferences).
-    pub fn build(self) -> crate::types::PushNotificationPreferences {
-        crate::types::PushNotificationPreferences {
-            allow_notifications: self.allow_notifications,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`allow_notifications`](crate::types::builders::PushNotificationPreferencesBuilder::allow_notifications)
+    pub fn build(self) -> ::std::result::Result<crate::types::PushNotificationPreferences, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PushNotificationPreferences {
+            allow_notifications: self.allow_notifications.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "allow_notifications",
+                    "allow_notifications was not specified but it is required when building PushNotificationPreferences",
+                )
+            })?,
             filter_rule: self.filter_rule,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for PushNotificationPreferencesBuilder {

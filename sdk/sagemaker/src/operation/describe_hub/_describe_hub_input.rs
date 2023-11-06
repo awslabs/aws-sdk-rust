@@ -27,6 +27,7 @@ pub struct DescribeHubInputBuilder {
 }
 impl DescribeHubInputBuilder {
     /// <p>The name of the hub to describe.</p>
+    /// This field is required.
     pub fn hub_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hub_name = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl DescribeHubInputBuilder {
         &self.hub_name
     }
     /// Consumes the builder and constructs a [`DescribeHubInput`](crate::operation::describe_hub::DescribeHubInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_hub::DescribeHubInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_hub::DescribeHubInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_hub::DescribeHubInput { hub_name: self.hub_name })
     }
 }

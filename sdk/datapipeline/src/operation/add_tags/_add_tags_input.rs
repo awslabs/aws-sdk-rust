@@ -15,8 +15,10 @@ impl AddTagsInput {
         self.pipeline_id.as_deref()
     }
     /// <p>The tags to add, as key/value pairs.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl AddTagsInput {
@@ -35,6 +37,7 @@ pub struct AddTagsInputBuilder {
 }
 impl AddTagsInputBuilder {
     /// <p>The ID of the pipeline.</p>
+    /// This field is required.
     pub fn pipeline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_id = ::std::option::Option::Some(input.into());
         self
@@ -69,7 +72,7 @@ impl AddTagsInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`AddTagsInput`](crate::operation::add_tags::AddTagsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::add_tags::AddTagsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::add_tags::AddTagsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::add_tags::AddTagsInput {
             pipeline_id: self.pipeline_id,
             tags: self.tags,

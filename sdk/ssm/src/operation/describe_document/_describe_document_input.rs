@@ -41,6 +41,7 @@ pub struct DescribeDocumentInputBuilder {
 }
 impl DescribeDocumentInputBuilder {
     /// <p>The name of the SSM document.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl DescribeDocumentInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDocumentInput`](crate::operation::describe_document::DescribeDocumentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_document::DescribeDocumentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_document::DescribeDocumentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_document::DescribeDocumentInput {
             name: self.name,
             document_version: self.document_version,

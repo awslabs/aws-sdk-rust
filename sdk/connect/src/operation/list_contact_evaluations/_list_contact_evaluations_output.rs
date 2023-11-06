@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListContactEvaluationsOutput {
     /// <p>Provides details about a list of contact evaluations belonging to an instance.</p>
-    pub evaluation_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationSummary>>,
+    pub evaluation_summary_list: ::std::vec::Vec<crate::types::EvaluationSummary>,
     /// <p>If there are additional results, this is the token for the next set of results.</p> <important>
     /// <p>This is always returned as null in the response.</p>
     /// </important>
@@ -13,8 +13,9 @@ pub struct ListContactEvaluationsOutput {
 }
 impl ListContactEvaluationsOutput {
     /// <p>Provides details about a list of contact evaluations belonging to an instance.</p>
-    pub fn evaluation_summary_list(&self) -> ::std::option::Option<&[crate::types::EvaluationSummary]> {
-        self.evaluation_summary_list.as_deref()
+    pub fn evaluation_summary_list(&self) -> &[crate::types::EvaluationSummary] {
+        use std::ops::Deref;
+        self.evaluation_summary_list.deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p> <important>
     /// <p>This is always returned as null in the response.</p>
@@ -94,11 +95,23 @@ impl ListContactEvaluationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListContactEvaluationsOutput`](crate::operation::list_contact_evaluations::ListContactEvaluationsOutput).
-    pub fn build(self) -> crate::operation::list_contact_evaluations::ListContactEvaluationsOutput {
-        crate::operation::list_contact_evaluations::ListContactEvaluationsOutput {
-            evaluation_summary_list: self.evaluation_summary_list,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`evaluation_summary_list`](crate::operation::list_contact_evaluations::builders::ListContactEvaluationsOutputBuilder::evaluation_summary_list)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_contact_evaluations::ListContactEvaluationsOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_contact_evaluations::ListContactEvaluationsOutput {
+            evaluation_summary_list: self.evaluation_summary_list.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "evaluation_summary_list",
+                    "evaluation_summary_list was not specified but it is required when building ListContactEvaluationsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

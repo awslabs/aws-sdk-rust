@@ -41,6 +41,7 @@ pub struct ListCoreDefinitionVersionsInputBuilder {
 }
 impl ListCoreDefinitionVersionsInputBuilder {
     /// The ID of the core definition.
+    /// This field is required.
     pub fn core_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_definition_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListCoreDefinitionVersionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_core_definition_versions::ListCoreDefinitionVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_core_definition_versions::ListCoreDefinitionVersionsInput {
             core_definition_id: self.core_definition_id,

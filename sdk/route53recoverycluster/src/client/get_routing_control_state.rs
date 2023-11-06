@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetRoutingControlState`](crate::operation::get_routing_control_state::builders::GetRoutingControlStateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`routing_control_arn(impl Into<String>)`](crate::operation::get_routing_control_state::builders::GetRoutingControlStateFluentBuilder::routing_control_arn) / [`set_routing_control_arn(Option<String>)`](crate::operation::get_routing_control_state::builders::GetRoutingControlStateFluentBuilder::set_routing_control_arn): <p>The Amazon Resource Name (ARN) for the routing control that you want to get the state for.</p>
+    ///   - [`routing_control_arn(impl Into<String>)`](crate::operation::get_routing_control_state::builders::GetRoutingControlStateFluentBuilder::routing_control_arn) / [`set_routing_control_arn(Option<String>)`](crate::operation::get_routing_control_state::builders::GetRoutingControlStateFluentBuilder::set_routing_control_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) for the routing control that you want to get the state for.</p><br>
     /// - On success, responds with [`GetRoutingControlStateOutput`](crate::operation::get_routing_control_state::GetRoutingControlStateOutput) with field(s):
-    ///   - [`routing_control_arn(Option<String>)`](crate::operation::get_routing_control_state::GetRoutingControlStateOutput::routing_control_arn): <p>The Amazon Resource Name (ARN) of the response.</p>
-    ///   - [`routing_control_state(Option<RoutingControlState>)`](crate::operation::get_routing_control_state::GetRoutingControlStateOutput::routing_control_state): <p>The state of the routing control.</p>
+    ///   - [`routing_control_arn(String)`](crate::operation::get_routing_control_state::GetRoutingControlStateOutput::routing_control_arn): <p>The Amazon Resource Name (ARN) of the response.</p>
+    ///   - [`routing_control_state(RoutingControlState)`](crate::operation::get_routing_control_state::GetRoutingControlStateOutput::routing_control_state): <p>The state of the routing control.</p>
     ///   - [`routing_control_name(Option<String>)`](crate::operation::get_routing_control_state::GetRoutingControlStateOutput::routing_control_name): <p>The routing control name.</p>
     /// - On failure, responds with [`SdkError<GetRoutingControlStateError>`](crate::operation::get_routing_control_state::GetRoutingControlStateError)
     pub fn get_routing_control_state(&self) -> crate::operation::get_routing_control_state::builders::GetRoutingControlStateFluentBuilder {

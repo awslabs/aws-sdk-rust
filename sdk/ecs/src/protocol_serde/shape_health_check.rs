@@ -2,38 +2,38 @@
 pub fn ser_health_check(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HealthCheck,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.command {
-        let mut array_2 = object.key("command").start_array();
-        for item_3 in var_1 {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        let mut array_1 = object.key("command").start_array();
+        for item_2 in &input.command {
             {
-                array_2.value().string(item_3.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
-    if let Some(var_4) = &input.interval {
+    if let Some(var_3) = &input.interval {
         object.key("interval").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+        );
+    }
+    if let Some(var_4) = &input.timeout {
+        object.key("timeout").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_5) = &input.timeout {
-        object.key("timeout").number(
+    if let Some(var_5) = &input.retries {
+        object.key("retries").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_6) = &input.retries {
-        object.key("retries").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_6).into()),
-        );
-    }
-    if let Some(var_7) = &input.start_period {
+    if let Some(var_6) = &input.start_period {
         object.key("startPeriod").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_7).into()),
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
     Ok(())
@@ -95,7 +95,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::health_check_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

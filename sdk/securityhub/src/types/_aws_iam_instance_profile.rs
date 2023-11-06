@@ -41,8 +41,10 @@ impl AwsIamInstanceProfile {
         self.path.as_deref()
     }
     /// <p>The roles associated with the instance profile.</p>
-    pub fn roles(&self) -> ::std::option::Option<&[crate::types::AwsIamInstanceProfileRole]> {
-        self.roles.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.roles.is_none()`.
+    pub fn roles(&self) -> &[crate::types::AwsIamInstanceProfileRole] {
+        self.roles.as_deref().unwrap_or_default()
     }
 }
 impl AwsIamInstanceProfile {

@@ -2,15 +2,15 @@
 pub fn ser_maven_reference(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MavenReference,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.group_id {
-        object.key("GroupId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("GroupId").string(input.group_id.as_str());
     }
-    if let Some(var_2) = &input.artifact_id {
-        object.key("ArtifactId").string(var_2.as_str());
+    {
+        object.key("ArtifactId").string(input.artifact_id.as_str());
     }
-    if let Some(var_3) = &input.version {
-        object.key("Version").string(var_3.as_str());
+    {
+        object.key("Version").string(input.version.as_str());
     }
     Ok(())
 }
@@ -61,7 +61,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::maven_reference_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

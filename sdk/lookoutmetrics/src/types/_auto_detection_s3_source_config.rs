@@ -11,12 +11,16 @@ pub struct AutoDetectionS3SourceConfig {
 }
 impl AutoDetectionS3SourceConfig {
     /// <p>The config's templated path list.</p>
-    pub fn templated_path_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.templated_path_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.templated_path_list.is_none()`.
+    pub fn templated_path_list(&self) -> &[::std::string::String] {
+        self.templated_path_list.as_deref().unwrap_or_default()
     }
     /// <p>The config's historical data path list.</p>
-    pub fn historical_data_path_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.historical_data_path_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.historical_data_path_list.is_none()`.
+    pub fn historical_data_path_list(&self) -> &[::std::string::String] {
+        self.historical_data_path_list.as_deref().unwrap_or_default()
     }
 }
 impl AutoDetectionS3SourceConfig {

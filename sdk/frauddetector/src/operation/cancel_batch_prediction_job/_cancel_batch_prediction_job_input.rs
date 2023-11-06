@@ -27,6 +27,7 @@ pub struct CancelBatchPredictionJobInputBuilder {
 }
 impl CancelBatchPredictionJobInputBuilder {
     /// <p>The ID of the batch prediction job to cancel.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl CancelBatchPredictionJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_batch_prediction_job::CancelBatchPredictionJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::cancel_batch_prediction_job::CancelBatchPredictionJobInput { job_id: self.job_id })
     }

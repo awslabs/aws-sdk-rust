@@ -4,15 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetScanOutput {
     /// <p>The name of the scan.</p>
-    pub scan_name: ::std::option::Option<::std::string::String>,
+    pub scan_name: ::std::string::String,
     /// <p>UUID that identifies the individual scan run.</p>
-    pub run_id: ::std::option::Option<::std::string::String>,
+    pub run_id: ::std::string::String,
     /// <p>The current state of the scan. Pass either <code>InProgress</code>, <code>Successful</code>, or <code>Failed</code>.</p>
-    pub scan_state: ::std::option::Option<crate::types::ScanState>,
+    pub scan_state: crate::types::ScanState,
     /// <p>The time the scan was created.</p>
-    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The type of analysis CodeGuru Security performed in the scan, either <code>Security</code> or <code>All</code>. The <code>Security</code> type only generates findings related to security. The <code>All</code> type generates both security findings and quality findings.</p>
-    pub analysis_type: ::std::option::Option<crate::types::AnalysisType>,
+    pub analysis_type: crate::types::AnalysisType,
     /// <p>The time when the scan was last updated. Only available for <code>STANDARD</code> scan types.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The number of times a scan has been re-run on a revised resource.</p>
@@ -23,24 +23,26 @@ pub struct GetScanOutput {
 }
 impl GetScanOutput {
     /// <p>The name of the scan.</p>
-    pub fn scan_name(&self) -> ::std::option::Option<&str> {
-        self.scan_name.as_deref()
+    pub fn scan_name(&self) -> &str {
+        use std::ops::Deref;
+        self.scan_name.deref()
     }
     /// <p>UUID that identifies the individual scan run.</p>
-    pub fn run_id(&self) -> ::std::option::Option<&str> {
-        self.run_id.as_deref()
+    pub fn run_id(&self) -> &str {
+        use std::ops::Deref;
+        self.run_id.deref()
     }
     /// <p>The current state of the scan. Pass either <code>InProgress</code>, <code>Successful</code>, or <code>Failed</code>.</p>
-    pub fn scan_state(&self) -> ::std::option::Option<&crate::types::ScanState> {
-        self.scan_state.as_ref()
+    pub fn scan_state(&self) -> &crate::types::ScanState {
+        &self.scan_state
     }
     /// <p>The time the scan was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_at.as_ref()
+    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_at
     }
     /// <p>The type of analysis CodeGuru Security performed in the scan, either <code>Security</code> or <code>All</code>. The <code>Security</code> type only generates findings related to security. The <code>All</code> type generates both security findings and quality findings.</p>
-    pub fn analysis_type(&self) -> ::std::option::Option<&crate::types::AnalysisType> {
-        self.analysis_type.as_ref()
+    pub fn analysis_type(&self) -> &crate::types::AnalysisType {
+        &self.analysis_type
     }
     /// <p>The time when the scan was last updated. Only available for <code>STANDARD</code> scan types.</p>
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -83,6 +85,7 @@ pub struct GetScanOutputBuilder {
 }
 impl GetScanOutputBuilder {
     /// <p>The name of the scan.</p>
+    /// This field is required.
     pub fn scan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scan_name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +100,7 @@ impl GetScanOutputBuilder {
         &self.scan_name
     }
     /// <p>UUID that identifies the individual scan run.</p>
+    /// This field is required.
     pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.run_id = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +115,7 @@ impl GetScanOutputBuilder {
         &self.run_id
     }
     /// <p>The current state of the scan. Pass either <code>InProgress</code>, <code>Successful</code>, or <code>Failed</code>.</p>
+    /// This field is required.
     pub fn scan_state(mut self, input: crate::types::ScanState) -> Self {
         self.scan_state = ::std::option::Option::Some(input);
         self
@@ -125,6 +130,7 @@ impl GetScanOutputBuilder {
         &self.scan_state
     }
     /// <p>The time the scan was created.</p>
+    /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
@@ -139,6 +145,7 @@ impl GetScanOutputBuilder {
         &self.created_at
     }
     /// <p>The type of analysis CodeGuru Security performed in the scan, either <code>Security</code> or <code>All</code>. The <code>Security</code> type only generates findings related to security. The <code>All</code> type generates both security findings and quality findings.</p>
+    /// This field is required.
     pub fn analysis_type(mut self, input: crate::types::AnalysisType) -> Self {
         self.analysis_type = ::std::option::Option::Some(input);
         self
@@ -204,17 +211,48 @@ impl GetScanOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetScanOutput`](crate::operation::get_scan::GetScanOutput).
-    pub fn build(self) -> crate::operation::get_scan::GetScanOutput {
-        crate::operation::get_scan::GetScanOutput {
-            scan_name: self.scan_name,
-            run_id: self.run_id,
-            scan_state: self.scan_state,
-            created_at: self.created_at,
-            analysis_type: self.analysis_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`scan_name`](crate::operation::get_scan::builders::GetScanOutputBuilder::scan_name)
+    /// - [`run_id`](crate::operation::get_scan::builders::GetScanOutputBuilder::run_id)
+    /// - [`scan_state`](crate::operation::get_scan::builders::GetScanOutputBuilder::scan_state)
+    /// - [`created_at`](crate::operation::get_scan::builders::GetScanOutputBuilder::created_at)
+    /// - [`analysis_type`](crate::operation::get_scan::builders::GetScanOutputBuilder::analysis_type)
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_scan::GetScanOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_scan::GetScanOutput {
+            scan_name: self.scan_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "scan_name",
+                    "scan_name was not specified but it is required when building GetScanOutput",
+                )
+            })?,
+            run_id: self.run_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "run_id",
+                    "run_id was not specified but it is required when building GetScanOutput",
+                )
+            })?,
+            scan_state: self.scan_state.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "scan_state",
+                    "scan_state was not specified but it is required when building GetScanOutput",
+                )
+            })?,
+            created_at: self.created_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_at",
+                    "created_at was not specified but it is required when building GetScanOutput",
+                )
+            })?,
+            analysis_type: self.analysis_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "analysis_type",
+                    "analysis_type was not specified but it is required when building GetScanOutput",
+                )
+            })?,
             updated_at: self.updated_at,
             number_of_revisions: self.number_of_revisions,
             scan_name_arn: self.scan_name_arn,
             _request_id: self._request_id,
-        }
+        })
     }
 }

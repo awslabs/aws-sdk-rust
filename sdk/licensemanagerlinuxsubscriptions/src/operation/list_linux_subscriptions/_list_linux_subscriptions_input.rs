@@ -33,8 +33,10 @@ impl ListLinuxSubscriptionsInput {
     /// <li> <p> <code>equals</code> </p> </li>
     /// <li> <p> <code>Notequal</code> </p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>Maximum number of results to return in a single call.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -142,8 +144,10 @@ impl ListLinuxSubscriptionsInputBuilder {
     /// Consumes the builder and constructs a [`ListLinuxSubscriptionsInput`](crate::operation::list_linux_subscriptions::ListLinuxSubscriptionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_linux_subscriptions::ListLinuxSubscriptionsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::list_linux_subscriptions::ListLinuxSubscriptionsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::list_linux_subscriptions::ListLinuxSubscriptionsInput {
             filters: self.filters,
             max_results: self.max_results,

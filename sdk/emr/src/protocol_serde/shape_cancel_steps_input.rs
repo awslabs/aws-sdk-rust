@@ -2,7 +2,7 @@
 pub fn ser_cancel_steps_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::cancel_steps::CancelStepsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cluster_id {
         object.key("ClusterId").string(var_1.as_str());
     }

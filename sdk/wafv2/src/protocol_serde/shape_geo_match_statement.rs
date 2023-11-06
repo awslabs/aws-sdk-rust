@@ -2,7 +2,7 @@
 pub fn ser_geo_match_statement(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GeoMatchStatement,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.country_codes {
         let mut array_2 = object.key("CountryCodes").start_array();
         for item_3 in var_1 {

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteObject`](crate::operation::delete_object::builders::DeleteObjectFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`directory_arn(impl Into<String>)`](crate::operation::delete_object::builders::DeleteObjectFluentBuilder::directory_arn) / [`set_directory_arn(Option<String>)`](crate::operation::delete_object::builders::DeleteObjectFluentBuilder::set_directory_arn): <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
-    ///   - [`object_reference(ObjectReference)`](crate::operation::delete_object::builders::DeleteObjectFluentBuilder::object_reference) / [`set_object_reference(Option<ObjectReference>)`](crate::operation::delete_object::builders::DeleteObjectFluentBuilder::set_object_reference): <p>A reference that identifies the object.</p>
+    ///   - [`directory_arn(impl Into<String>)`](crate::operation::delete_object::builders::DeleteObjectFluentBuilder::directory_arn) / [`set_directory_arn(Option<String>)`](crate::operation::delete_object::builders::DeleteObjectFluentBuilder::set_directory_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p><br>
+    ///   - [`object_reference(ObjectReference)`](crate::operation::delete_object::builders::DeleteObjectFluentBuilder::object_reference) / [`set_object_reference(Option<ObjectReference>)`](crate::operation::delete_object::builders::DeleteObjectFluentBuilder::set_object_reference):<br>required: **true**<br><p>A reference that identifies the object.</p><br>
     /// - On success, responds with [`DeleteObjectOutput`](crate::operation::delete_object::DeleteObjectOutput)
     /// - On failure, responds with [`SdkError<DeleteObjectError>`](crate::operation::delete_object::DeleteObjectError)
     pub fn delete_object(&self) -> crate::operation::delete_object::builders::DeleteObjectFluentBuilder {

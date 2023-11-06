@@ -66,6 +66,7 @@ pub struct GetMapTileInputBuilder {
 }
 impl GetMapTileInputBuilder {
     /// <p>The map resource to retrieve the map tiles from.</p>
+    /// This field is required.
     pub fn map_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.map_name = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +81,7 @@ impl GetMapTileInputBuilder {
         &self.map_name
     }
     /// <p>The zoom value for the map tile.</p>
+    /// This field is required.
     pub fn z(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.z = ::std::option::Option::Some(input.into());
         self
@@ -94,6 +96,7 @@ impl GetMapTileInputBuilder {
         &self.z
     }
     /// <p>The X axis value for the map tile.</p>
+    /// This field is required.
     pub fn x(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.x = ::std::option::Option::Some(input.into());
         self
@@ -108,6 +111,7 @@ impl GetMapTileInputBuilder {
         &self.x
     }
     /// <p>The Y axis value for the map tile. </p>
+    /// This field is required.
     pub fn y(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.y = ::std::option::Option::Some(input.into());
         self
@@ -136,7 +140,7 @@ impl GetMapTileInputBuilder {
         &self.key
     }
     /// Consumes the builder and constructs a [`GetMapTileInput`](crate::operation::get_map_tile::GetMapTileInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_map_tile::GetMapTileInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_map_tile::GetMapTileInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_map_tile::GetMapTileInput {
             map_name: self.map_name,
             z: self.z,

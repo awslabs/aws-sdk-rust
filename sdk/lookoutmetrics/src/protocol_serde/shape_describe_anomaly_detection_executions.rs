@@ -29,11 +29,10 @@ pub fn de_describe_anomaly_detection_executions_http_error(
                     output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                         .map_err(crate::operation::describe_anomaly_detection_executions::DescribeAnomalyDetectionExecutionsError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::access_denied_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::describe_anomaly_detection_executions::DescribeAnomalyDetectionExecutionsError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -46,11 +45,10 @@ pub fn de_describe_anomaly_detection_executions_http_error(
                     output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
                         .map_err(crate::operation::describe_anomaly_detection_executions::DescribeAnomalyDetectionExecutionsError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::internal_server_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::describe_anomaly_detection_executions::DescribeAnomalyDetectionExecutionsError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -64,11 +62,10 @@ pub fn de_describe_anomaly_detection_executions_http_error(
                         crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                             .map_err(crate::operation::describe_anomaly_detection_executions::DescribeAnomalyDetectionExecutionsError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::resource_not_found_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::describe_anomaly_detection_executions::DescribeAnomalyDetectionExecutionsError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -82,11 +79,10 @@ pub fn de_describe_anomaly_detection_executions_http_error(
                         crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output)
                             .map_err(crate::operation::describe_anomaly_detection_executions::DescribeAnomalyDetectionExecutionsError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::too_many_requests_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::describe_anomaly_detection_executions::DescribeAnomalyDetectionExecutionsError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -99,11 +95,10 @@ pub fn de_describe_anomaly_detection_executions_http_error(
                     output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                         .map_err(crate::operation::describe_anomaly_detection_executions::DescribeAnomalyDetectionExecutionsError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::validation_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::describe_anomaly_detection_executions::DescribeAnomalyDetectionExecutionsError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -133,12 +128,12 @@ pub fn de_describe_anomaly_detection_executions_http_response(
 
 pub fn ser_describe_anomaly_detection_executions_input(
     input: &crate::operation::describe_anomaly_detection_executions::DescribeAnomalyDetectionExecutionsInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_describe_anomaly_detection_executions_input::ser_describe_anomaly_detection_executions_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_describe_anomaly_detection_executions(

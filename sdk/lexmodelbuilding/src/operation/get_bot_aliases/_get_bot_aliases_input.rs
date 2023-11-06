@@ -48,6 +48,7 @@ pub struct GetBotAliasesInputBuilder {
 }
 impl GetBotAliasesInputBuilder {
     /// <p>The name of the bot.</p>
+    /// This field is required.
     pub fn bot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_name = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,7 @@ impl GetBotAliasesInputBuilder {
     /// Consumes the builder and constructs a [`GetBotAliasesInput`](crate::operation::get_bot_aliases::GetBotAliasesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_bot_aliases::GetBotAliasesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_bot_aliases::GetBotAliasesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_bot_aliases::GetBotAliasesInput {
             bot_name: self.bot_name,
             next_token: self.next_token,

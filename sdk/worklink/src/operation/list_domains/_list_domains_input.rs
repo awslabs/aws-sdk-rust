@@ -41,6 +41,7 @@ pub struct ListDomainsInputBuilder {
 }
 impl ListDomainsInputBuilder {
     /// <p>The ARN of the fleet.</p>
+    /// This field is required.
     pub fn fleet_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_arn = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +84,7 @@ impl ListDomainsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListDomainsInput`](crate::operation::list_domains::ListDomainsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_domains::ListDomainsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_domains::ListDomainsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_domains::ListDomainsInput {
             fleet_arn: self.fleet_arn,
             next_token: self.next_token,

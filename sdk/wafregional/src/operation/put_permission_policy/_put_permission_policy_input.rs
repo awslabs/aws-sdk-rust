@@ -34,6 +34,7 @@ pub struct PutPermissionPolicyInputBuilder {
 }
 impl PutPermissionPolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the RuleGroup to which you want to attach the policy.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl PutPermissionPolicyInputBuilder {
         &self.resource_arn
     }
     /// <p>The policy to attach to the specified RuleGroup.</p>
+    /// This field is required.
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl PutPermissionPolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutPermissionPolicyInput`](crate::operation::put_permission_policy::PutPermissionPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_permission_policy::PutPermissionPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_permission_policy::PutPermissionPolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_permission_policy::PutPermissionPolicyInput {
             resource_arn: self.resource_arn,

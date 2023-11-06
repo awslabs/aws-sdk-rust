@@ -55,6 +55,7 @@ pub struct CompleteLifecycleActionInputBuilder {
 }
 impl CompleteLifecycleActionInputBuilder {
     /// <p>The name of the lifecycle hook.</p>
+    /// This field is required.
     pub fn lifecycle_hook_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lifecycle_hook_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl CompleteLifecycleActionInputBuilder {
         &self.lifecycle_hook_name
     }
     /// <p>The name of the Auto Scaling group.</p>
+    /// This field is required.
     pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +99,7 @@ impl CompleteLifecycleActionInputBuilder {
         &self.lifecycle_action_token
     }
     /// <p>The action for the group to take. You can specify either <code>CONTINUE</code> or <code>ABANDON</code>.</p>
+    /// This field is required.
     pub fn lifecycle_action_result(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lifecycle_action_result = ::std::option::Option::Some(input.into());
         self
@@ -129,7 +132,7 @@ impl CompleteLifecycleActionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::complete_lifecycle_action::CompleteLifecycleActionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::complete_lifecycle_action::CompleteLifecycleActionInput {
             lifecycle_hook_name: self.lifecycle_hook_name,

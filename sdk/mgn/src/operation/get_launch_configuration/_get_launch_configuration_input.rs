@@ -34,6 +34,7 @@ pub struct GetLaunchConfigurationInputBuilder {
 }
 impl GetLaunchConfigurationInputBuilder {
     /// <p>Request to get Launch Configuration information by Source Server ID.</p>
+    /// This field is required.
     pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
@@ -64,8 +65,10 @@ impl GetLaunchConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`GetLaunchConfigurationInput`](crate::operation::get_launch_configuration::GetLaunchConfigurationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_launch_configuration::GetLaunchConfigurationInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::get_launch_configuration::GetLaunchConfigurationInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::get_launch_configuration::GetLaunchConfigurationInput {
             source_server_id: self.source_server_id,
             account_id: self.account_id,

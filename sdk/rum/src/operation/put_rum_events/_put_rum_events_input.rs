@@ -32,8 +32,10 @@ impl PutRumEventsInput {
         self.user_details.as_ref()
     }
     /// <p>An array of structures that contain the telemetry event data.</p>
-    pub fn rum_events(&self) -> ::std::option::Option<&[crate::types::RumEvent]> {
-        self.rum_events.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rum_events.is_none()`.
+    pub fn rum_events(&self) -> &[crate::types::RumEvent] {
+        self.rum_events.as_deref().unwrap_or_default()
     }
 }
 impl PutRumEventsInput {
@@ -55,6 +57,7 @@ pub struct PutRumEventsInputBuilder {
 }
 impl PutRumEventsInputBuilder {
     /// <p>The ID of the app monitor that is sending this data.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +72,7 @@ impl PutRumEventsInputBuilder {
         &self.id
     }
     /// <p>A unique identifier for this batch of RUM event data.</p>
+    /// This field is required.
     pub fn batch_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.batch_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +87,7 @@ impl PutRumEventsInputBuilder {
         &self.batch_id
     }
     /// <p>A structure that contains information about the app monitor that collected this telemetry information.</p>
+    /// This field is required.
     pub fn app_monitor_details(mut self, input: crate::types::AppMonitorDetails) -> Self {
         self.app_monitor_details = ::std::option::Option::Some(input);
         self
@@ -97,6 +102,7 @@ impl PutRumEventsInputBuilder {
         &self.app_monitor_details
     }
     /// <p>A structure that contains information about the user session that this batch of events was collected from.</p>
+    /// This field is required.
     pub fn user_details(mut self, input: crate::types::UserDetails) -> Self {
         self.user_details = ::std::option::Option::Some(input);
         self
@@ -133,7 +139,7 @@ impl PutRumEventsInputBuilder {
     /// Consumes the builder and constructs a [`PutRumEventsInput`](crate::operation::put_rum_events::PutRumEventsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_rum_events::PutRumEventsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_rum_events::PutRumEventsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_rum_events::PutRumEventsInput {
             id: self.id,
             batch_id: self.batch_id,

@@ -20,8 +20,10 @@ impl GetCoverageStatisticsInput {
         self.filter_criteria.as_ref()
     }
     /// <p>Represents the statistics type used to aggregate the coverage details.</p>
-    pub fn statistics_type(&self) -> ::std::option::Option<&[crate::types::CoverageStatisticsType]> {
-        self.statistics_type.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.statistics_type.is_none()`.
+    pub fn statistics_type(&self) -> &[crate::types::CoverageStatisticsType] {
+        self.statistics_type.as_deref().unwrap_or_default()
     }
 }
 impl GetCoverageStatisticsInput {
@@ -41,6 +43,7 @@ pub struct GetCoverageStatisticsInputBuilder {
 }
 impl GetCoverageStatisticsInputBuilder {
     /// <p>The unique ID of the GuardDuty detector associated to the coverage statistics.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
@@ -91,7 +94,7 @@ impl GetCoverageStatisticsInputBuilder {
     /// Consumes the builder and constructs a [`GetCoverageStatisticsInput`](crate::operation::get_coverage_statistics::GetCoverageStatisticsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_coverage_statistics::GetCoverageStatisticsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_coverage_statistics::GetCoverageStatisticsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_coverage_statistics::GetCoverageStatisticsInput {
             detector_id: self.detector_id,

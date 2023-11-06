@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetGremlinQueryStatus`](crate::operation::get_gremlin_query_status::builders::GetGremlinQueryStatusFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`query_id(impl Into<String>)`](crate::operation::get_gremlin_query_status::builders::GetGremlinQueryStatusFluentBuilder::query_id) / [`set_query_id(Option<String>)`](crate::operation::get_gremlin_query_status::builders::GetGremlinQueryStatusFluentBuilder::set_query_id): <p>The unique identifier that identifies the Gremlin query.</p>
+    ///   - [`query_id(impl Into<String>)`](crate::operation::get_gremlin_query_status::builders::GetGremlinQueryStatusFluentBuilder::query_id) / [`set_query_id(Option<String>)`](crate::operation::get_gremlin_query_status::builders::GetGremlinQueryStatusFluentBuilder::set_query_id):<br>required: **true**<br><p>The unique identifier that identifies the Gremlin query.</p><br>
     /// - On success, responds with [`GetGremlinQueryStatusOutput`](crate::operation::get_gremlin_query_status::GetGremlinQueryStatusOutput) with field(s):
     ///   - [`query_id(Option<String>)`](crate::operation::get_gremlin_query_status::GetGremlinQueryStatusOutput::query_id): <p>The ID of the query for which status is being returned.</p>
     ///   - [`query_string(Option<String>)`](crate::operation::get_gremlin_query_status::GetGremlinQueryStatusOutput::query_string): <p>The Gremlin query string.</p>

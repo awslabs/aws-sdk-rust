@@ -35,12 +35,16 @@ impl ReplicationSubnetGroup {
         self.subnet_group_status.as_deref()
     }
     /// <p>The subnets that are in the subnet group.</p>
-    pub fn subnets(&self) -> ::std::option::Option<&[crate::types::Subnet]> {
-        self.subnets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnets.is_none()`.
+    pub fn subnets(&self) -> &[crate::types::Subnet] {
+        self.subnets.as_deref().unwrap_or_default()
     }
     /// <p>The IP addressing protocol supported by the subnet group. This is used by a replication instance with values such as IPv4 only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.</p>
-    pub fn supported_network_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.supported_network_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_network_types.is_none()`.
+    pub fn supported_network_types(&self) -> &[::std::string::String] {
+        self.supported_network_types.as_deref().unwrap_or_default()
     }
 }
 impl ReplicationSubnetGroup {

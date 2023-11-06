@@ -12,8 +12,10 @@ pub struct GetEnrollmentStatusesForOrganizationOutput {
 }
 impl GetEnrollmentStatusesForOrganizationOutput {
     /// <p>An array of objects that describe the enrollment statuses of organization member accounts.</p>
-    pub fn account_enrollment_statuses(&self) -> ::std::option::Option<&[crate::types::AccountEnrollmentStatus]> {
-        self.account_enrollment_statuses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_enrollment_statuses.is_none()`.
+    pub fn account_enrollment_statuses(&self) -> &[crate::types::AccountEnrollmentStatus] {
+        self.account_enrollment_statuses.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to advance to the next page of account enrollment statuses.</p>
     /// <p>This value is null when there are no more pages of account enrollment statuses to return.</p>

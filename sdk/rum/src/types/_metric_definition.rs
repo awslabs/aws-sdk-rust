@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricDefinition {
     /// <p>The ID of this metric definition.</p>
-    pub metric_definition_id: ::std::option::Option<::std::string::String>,
+    pub metric_definition_id: ::std::string::String,
     /// <p>The name of the metric that is defined in this structure.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The field within the event object that the metric value is sourced from.</p>
     pub value_key: ::std::option::Option<::std::string::String>,
     /// <p>Use this field only if you are sending this metric to CloudWatch. It defines the CloudWatch metric unit that this metric is measured in. </p>
@@ -22,12 +22,14 @@ pub struct MetricDefinition {
 }
 impl MetricDefinition {
     /// <p>The ID of this metric definition.</p>
-    pub fn metric_definition_id(&self) -> ::std::option::Option<&str> {
-        self.metric_definition_id.as_deref()
+    pub fn metric_definition_id(&self) -> &str {
+        use std::ops::Deref;
+        self.metric_definition_id.deref()
     }
     /// <p>The name of the metric that is defined in this structure.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The field within the event object that the metric value is sourced from.</p>
     pub fn value_key(&self) -> ::std::option::Option<&str> {
@@ -72,6 +74,7 @@ pub struct MetricDefinitionBuilder {
 }
 impl MetricDefinitionBuilder {
     /// <p>The ID of this metric definition.</p>
+    /// This field is required.
     pub fn metric_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_definition_id = ::std::option::Option::Some(input.into());
         self
@@ -86,6 +89,7 @@ impl MetricDefinitionBuilder {
         &self.metric_definition_id
     }
     /// <p>The name of the metric that is defined in this structure.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -186,15 +190,28 @@ impl MetricDefinitionBuilder {
         &self.namespace
     }
     /// Consumes the builder and constructs a [`MetricDefinition`](crate::types::MetricDefinition).
-    pub fn build(self) -> crate::types::MetricDefinition {
-        crate::types::MetricDefinition {
-            metric_definition_id: self.metric_definition_id,
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`metric_definition_id`](crate::types::builders::MetricDefinitionBuilder::metric_definition_id)
+    /// - [`name`](crate::types::builders::MetricDefinitionBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::MetricDefinition, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::MetricDefinition {
+            metric_definition_id: self.metric_definition_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "metric_definition_id",
+                    "metric_definition_id was not specified but it is required when building MetricDefinition",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building MetricDefinition",
+                )
+            })?,
             value_key: self.value_key,
             unit_label: self.unit_label,
             dimension_keys: self.dimension_keys,
             event_pattern: self.event_pattern,
             namespace: self.namespace,
-        }
+        })
     }
 }

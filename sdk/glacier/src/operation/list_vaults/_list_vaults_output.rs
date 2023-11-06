@@ -12,8 +12,10 @@ pub struct ListVaultsOutput {
 }
 impl ListVaultsOutput {
     /// <p>List of vaults.</p>
-    pub fn vault_list(&self) -> ::std::option::Option<&[crate::types::DescribeVaultOutput]> {
-        self.vault_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vault_list.is_none()`.
+    pub fn vault_list(&self) -> &[crate::types::DescribeVaultOutput] {
+        self.vault_list.as_deref().unwrap_or_default()
     }
     /// <p>The vault ARN at which to continue pagination of the results. You use the marker in another List Vaults request to obtain more vaults in the list.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

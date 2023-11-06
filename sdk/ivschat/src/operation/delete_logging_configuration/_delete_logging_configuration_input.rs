@@ -27,6 +27,7 @@ pub struct DeleteLoggingConfigurationInputBuilder {
 }
 impl DeleteLoggingConfigurationInputBuilder {
     /// <p>Identifier of the logging configuration to be deleted.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteLoggingConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_logging_configuration::DeleteLoggingConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_logging_configuration::DeleteLoggingConfigurationInput { identifier: self.identifier })
     }

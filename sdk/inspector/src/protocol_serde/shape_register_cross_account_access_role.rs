@@ -29,11 +29,10 @@ pub fn de_register_cross_account_access_role_http_error(
                     output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                         .map_err(crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::access_denied_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -45,11 +44,10 @@ pub fn de_register_cross_account_access_role_http_error(
                 output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(_response_body, output)
                     .map_err(crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InvalidCrossAccountRoleException" => {
@@ -64,11 +62,10 @@ pub fn de_register_cross_account_access_role_http_error(
                     )
                     .map_err(crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::invalid_cross_account_role_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -81,11 +78,10 @@ pub fn de_register_cross_account_access_role_http_error(
                     output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_json_err(_response_body, output)
                         .map_err(crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::invalid_input_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -97,11 +93,10 @@ pub fn de_register_cross_account_access_role_http_error(
                     let mut output = crate::types::error::builders::ServiceTemporarilyUnavailableExceptionBuilder::default();
                     output = crate::protocol_serde::shape_service_temporarily_unavailable_exception::de_service_temporarily_unavailable_exception_json_err(_response_body, output).map_err(crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::service_temporarily_unavailable_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -128,10 +123,10 @@ pub fn de_register_cross_account_access_role_http_response(
 
 pub fn ser_register_cross_account_access_role_input(
     input: &crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_register_cross_account_access_role_input::ser_register_cross_account_access_role_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

@@ -7,7 +7,7 @@ pub struct EnvironmentError {
     /// <p>The error code for the failure reason for the environment deployment.</p>
     pub code: ::std::option::Option<::std::string::String>,
     /// <p>The error message for the failure reason for the environment deployment.</p>
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
 }
 impl EnvironmentError {
     /// <p>The error code for the failure reason for the environment deployment.</p>
@@ -15,8 +15,9 @@ impl EnvironmentError {
         self.code.as_deref()
     }
     /// <p>The error message for the failure reason for the environment deployment.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        use std::ops::Deref;
+        self.message.deref()
     }
 }
 impl EnvironmentError {
@@ -49,6 +50,7 @@ impl EnvironmentErrorBuilder {
         &self.code
     }
     /// <p>The error message for the failure reason for the environment deployment.</p>
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl EnvironmentErrorBuilder {
         &self.message
     }
     /// Consumes the builder and constructs a [`EnvironmentError`](crate::types::EnvironmentError).
-    pub fn build(self) -> crate::types::EnvironmentError {
-        crate::types::EnvironmentError {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`message`](crate::types::builders::EnvironmentErrorBuilder::message)
+    pub fn build(self) -> ::std::result::Result<crate::types::EnvironmentError, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EnvironmentError {
             code: self.code,
-            message: self.message,
-        }
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building EnvironmentError",
+                )
+            })?,
+        })
     }
 }

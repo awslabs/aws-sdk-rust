@@ -27,6 +27,7 @@ pub struct GetResolverQueryLogConfigPolicyInputBuilder {
 }
 impl GetResolverQueryLogConfigPolicyInputBuilder {
     /// <p>The ARN of the query logging configuration that you want to get the query logging policy for.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetResolverQueryLogConfigPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resolver_query_log_config_policy::GetResolverQueryLogConfigPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_resolver_query_log_config_policy::GetResolverQueryLogConfigPolicyInput { arn: self.arn })
     }

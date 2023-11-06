@@ -2,15 +2,15 @@
 pub fn ser_glue_data_catalog_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GlueDataCatalogConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.role_arn {
-        object.key("roleArn").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("roleArn").string(input.role_arn.as_str());
     }
-    if let Some(var_2) = &input.database_name {
-        object.key("databaseName").string(var_2.as_str());
+    {
+        object.key("databaseName").string(input.database_name.as_str());
     }
-    if let Some(var_3) = &input.table_prefix {
-        object.key("tablePrefix").string(var_3.as_str());
+    {
+        object.key("tablePrefix").string(input.table_prefix.as_str());
     }
     Ok(())
 }
@@ -61,7 +61,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::glue_data_catalog_config_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

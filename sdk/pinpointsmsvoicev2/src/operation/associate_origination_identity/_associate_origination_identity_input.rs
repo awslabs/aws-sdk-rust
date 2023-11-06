@@ -48,6 +48,7 @@ pub struct AssociateOriginationIdentityInputBuilder {
 }
 impl AssociateOriginationIdentityInputBuilder {
     /// <p>The pool to update with the new Identity. This value can be either the PoolId or PoolArn, and you can find these values using <code>DescribePools</code>.</p>
+    /// This field is required.
     pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pool_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl AssociateOriginationIdentityInputBuilder {
         &self.pool_id
     }
     /// <p>The origination identity to use, such as PhoneNumberId, PhoneNumberArn, SenderId, or SenderIdArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn, while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
+    /// This field is required.
     pub fn origination_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origination_identity = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl AssociateOriginationIdentityInputBuilder {
         &self.origination_identity
     }
     /// <p>The new two-character code, in ISO 3166-1 alpha-2 format, for the country or region of the origination identity.</p>
+    /// This field is required.
     pub fn iso_country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iso_country_code = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +111,7 @@ impl AssociateOriginationIdentityInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_origination_identity::AssociateOriginationIdentityInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::associate_origination_identity::AssociateOriginationIdentityInput {
             pool_id: self.pool_id,

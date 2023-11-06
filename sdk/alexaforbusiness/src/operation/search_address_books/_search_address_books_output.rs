@@ -13,8 +13,10 @@ pub struct SearchAddressBooksOutput {
 }
 impl SearchAddressBooksOutput {
     /// <p>The address books that meet the specified set of filter criteria, in sort order.</p>
-    pub fn address_books(&self) -> ::std::option::Option<&[crate::types::AddressBookData]> {
-        self.address_books.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.address_books.is_none()`.
+    pub fn address_books(&self) -> &[crate::types::AddressBookData] {
+        self.address_books.as_deref().unwrap_or_default()
     }
     /// <p>The token returned to indicate that there is more data available.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

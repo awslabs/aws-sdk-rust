@@ -19,12 +19,16 @@ pub struct Predicate {
 }
 impl Predicate {
     /// <p>A list of predicates to combine logically.</p>
-    pub fn or(&self) -> ::std::option::Option<&[crate::types::Predicate]> {
-        self.or.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.or.is_none()`.
+    pub fn or(&self) -> &[crate::types::Predicate] {
+        self.or.as_deref().unwrap_or_default()
     }
     /// <p>A list of predicates to combine logically.</p>
-    pub fn and(&self) -> ::std::option::Option<&[crate::types::Predicate]> {
-        self.and.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.and.is_none()`.
+    pub fn and(&self) -> &[crate::types::Predicate] {
+        self.and.as_deref().unwrap_or_default()
     }
     /// <p>The field to query.</p>
     pub fn field(&self) -> ::std::option::Option<&str> {

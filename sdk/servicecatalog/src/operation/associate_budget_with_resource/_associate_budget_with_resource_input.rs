@@ -34,6 +34,7 @@ pub struct AssociateBudgetWithResourceInputBuilder {
 }
 impl AssociateBudgetWithResourceInputBuilder {
     /// <p>The name of the budget you want to associate.</p>
+    /// This field is required.
     pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.budget_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl AssociateBudgetWithResourceInputBuilder {
         &self.budget_name
     }
     /// <p> The resource identifier. Either a portfolio-id or a product-id.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl AssociateBudgetWithResourceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_budget_with_resource::AssociateBudgetWithResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::associate_budget_with_resource::AssociateBudgetWithResourceInput {
             budget_name: self.budget_name,

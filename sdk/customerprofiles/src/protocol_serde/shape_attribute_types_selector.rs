@@ -2,36 +2,36 @@
 pub fn ser_attribute_types_selector(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AttributeTypesSelector,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.attribute_matching_model {
-        object.key("AttributeMatchingModel").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("AttributeMatchingModel").string(input.attribute_matching_model.as_str());
     }
-    if let Some(var_2) = &input.address {
-        let mut array_3 = object.key("Address").start_array();
-        for item_4 in var_2 {
+    if let Some(var_1) = &input.address {
+        let mut array_2 = object.key("Address").start_array();
+        for item_3 in var_1 {
             {
-                array_3.value().string(item_4.as_str());
+                array_2.value().string(item_3.as_str());
             }
         }
-        array_3.finish();
+        array_2.finish();
     }
-    if let Some(var_5) = &input.phone_number {
-        let mut array_6 = object.key("PhoneNumber").start_array();
-        for item_7 in var_5 {
+    if let Some(var_4) = &input.phone_number {
+        let mut array_5 = object.key("PhoneNumber").start_array();
+        for item_6 in var_4 {
             {
-                array_6.value().string(item_7.as_str());
+                array_5.value().string(item_6.as_str());
             }
         }
-        array_6.finish();
+        array_5.finish();
     }
-    if let Some(var_8) = &input.email_address {
-        let mut array_9 = object.key("EmailAddress").start_array();
-        for item_10 in var_8 {
+    if let Some(var_7) = &input.email_address {
+        let mut array_8 = object.key("EmailAddress").start_array();
+        for item_9 in var_7 {
             {
-                array_9.value().string(item_10.as_str());
+                array_8.value().string(item_9.as_str());
             }
         }
-        array_9.finish();
+        array_8.finish();
     }
     Ok(())
 }
@@ -77,7 +77,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::attribute_types_selector_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

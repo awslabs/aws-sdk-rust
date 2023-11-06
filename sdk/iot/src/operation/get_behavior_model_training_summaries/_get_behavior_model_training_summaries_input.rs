@@ -87,7 +87,7 @@ impl GetBehaviorModelTrainingSummariesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_behavior_model_training_summaries::GetBehaviorModelTrainingSummariesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_behavior_model_training_summaries::GetBehaviorModelTrainingSummariesInput {

@@ -34,6 +34,7 @@ pub struct UpdateVariantStoreInputBuilder {
 }
 impl UpdateVariantStoreInputBuilder {
     /// <p>A name for the store.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,8 @@ impl UpdateVariantStoreInputBuilder {
     /// Consumes the builder and constructs a [`UpdateVariantStoreInput`](crate::operation::update_variant_store::UpdateVariantStoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_variant_store::UpdateVariantStoreInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_variant_store::UpdateVariantStoreInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_variant_store::UpdateVariantStoreInput {
             name: self.name,
             description: self.description,

@@ -27,6 +27,7 @@ pub struct DeleteExperimentTemplateInputBuilder {
 }
 impl DeleteExperimentTemplateInputBuilder {
     /// <p>The ID of the experiment template.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteExperimentTemplateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_experiment_template::DeleteExperimentTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_experiment_template::DeleteExperimentTemplateInput { id: self.id })
     }

@@ -5,20 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceConfig {
     /// Amazon Connect Instance Id
-    pub connect_instance_id: ::std::option::Option<::std::string::String>,
+    pub connect_instance_id: ::std::string::String,
     /// Service linked role arn
-    pub service_linked_role_arn: ::std::option::Option<::std::string::String>,
+    pub service_linked_role_arn: ::std::string::String,
     /// Encryption config for Connect Instance. Note that sensitive data will always be encrypted. If disabled, service will perform encryption with its own key. If enabled, a KMS key id needs to be provided and KMS charges will apply. KMS is only type supported
     pub encryption_config: ::std::option::Option<crate::types::EncryptionConfig>,
 }
 impl InstanceConfig {
     /// Amazon Connect Instance Id
-    pub fn connect_instance_id(&self) -> ::std::option::Option<&str> {
-        self.connect_instance_id.as_deref()
+    pub fn connect_instance_id(&self) -> &str {
+        use std::ops::Deref;
+        self.connect_instance_id.deref()
     }
     /// Service linked role arn
-    pub fn service_linked_role_arn(&self) -> ::std::option::Option<&str> {
-        self.service_linked_role_arn.as_deref()
+    pub fn service_linked_role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.service_linked_role_arn.deref()
     }
     /// Encryption config for Connect Instance. Note that sensitive data will always be encrypted. If disabled, service will perform encryption with its own key. If enabled, a KMS key id needs to be provided and KMS charges will apply. KMS is only type supported
     pub fn encryption_config(&self) -> ::std::option::Option<&crate::types::EncryptionConfig> {
@@ -42,6 +44,7 @@ pub struct InstanceConfigBuilder {
 }
 impl InstanceConfigBuilder {
     /// Amazon Connect Instance Id
+    /// This field is required.
     pub fn connect_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connect_instance_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl InstanceConfigBuilder {
         &self.connect_instance_id
     }
     /// Service linked role arn
+    /// This field is required.
     pub fn service_linked_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_linked_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +74,7 @@ impl InstanceConfigBuilder {
         &self.service_linked_role_arn
     }
     /// Encryption config for Connect Instance. Note that sensitive data will always be encrypted. If disabled, service will perform encryption with its own key. If enabled, a KMS key id needs to be provided and KMS charges will apply. KMS is only type supported
+    /// This field is required.
     pub fn encryption_config(mut self, input: crate::types::EncryptionConfig) -> Self {
         self.encryption_config = ::std::option::Option::Some(input);
         self
@@ -84,11 +89,24 @@ impl InstanceConfigBuilder {
         &self.encryption_config
     }
     /// Consumes the builder and constructs a [`InstanceConfig`](crate::types::InstanceConfig).
-    pub fn build(self) -> crate::types::InstanceConfig {
-        crate::types::InstanceConfig {
-            connect_instance_id: self.connect_instance_id,
-            service_linked_role_arn: self.service_linked_role_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`connect_instance_id`](crate::types::builders::InstanceConfigBuilder::connect_instance_id)
+    /// - [`service_linked_role_arn`](crate::types::builders::InstanceConfigBuilder::service_linked_role_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::InstanceConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::InstanceConfig {
+            connect_instance_id: self.connect_instance_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "connect_instance_id",
+                    "connect_instance_id was not specified but it is required when building InstanceConfig",
+                )
+            })?,
+            service_linked_role_arn: self.service_linked_role_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "service_linked_role_arn",
+                    "service_linked_role_arn was not specified but it is required when building InstanceConfig",
+                )
+            })?,
             encryption_config: self.encryption_config,
-        }
+        })
     }
 }

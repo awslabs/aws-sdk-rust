@@ -41,6 +41,17 @@ pub enum ErrorKind {
     ClientError,
 }
 
+impl fmt::Display for ErrorKind {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        match self {
+            Self::TransientError => write!(f, "transient error"),
+            Self::ThrottlingError => write!(f, "throttling error"),
+            Self::ServerError => write!(f, "server error"),
+            Self::ClientError => write!(f, "client error"),
+        }
+    }
+}
+
 /// Trait that provides an `ErrorKind` and an error code.
 pub trait ProvideErrorKind {
     /// Returns the `ErrorKind` when the error is modeled as retryable
@@ -379,6 +390,12 @@ impl RetryConfig {
     /// - the third retry will occur after 0 to 120 milliseconds
     pub fn with_initial_backoff(mut self, initial_backoff: Duration) -> Self {
         self.initial_backoff = initial_backoff;
+        self
+    }
+
+    /// Set the maximum backoff time.
+    pub fn with_max_backoff(mut self, max_backoff: Duration) -> Self {
+        self.max_backoff = max_backoff;
         self
     }
 

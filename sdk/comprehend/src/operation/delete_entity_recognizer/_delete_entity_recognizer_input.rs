@@ -27,6 +27,7 @@ pub struct DeleteEntityRecognizerInputBuilder {
 }
 impl DeleteEntityRecognizerInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
+    /// This field is required.
     pub fn entity_recognizer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_recognizer_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,8 +44,10 @@ impl DeleteEntityRecognizerInputBuilder {
     /// Consumes the builder and constructs a [`DeleteEntityRecognizerInput`](crate::operation::delete_entity_recognizer::DeleteEntityRecognizerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_entity_recognizer::DeleteEntityRecognizerInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_entity_recognizer::DeleteEntityRecognizerInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_entity_recognizer::DeleteEntityRecognizerInput {
             entity_recognizer_arn: self.entity_recognizer_arn,
         })

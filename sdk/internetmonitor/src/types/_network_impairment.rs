@@ -5,24 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkImpairment {
     /// <p>The networks that could be impacted by a network impairment event.</p>
-    pub networks: ::std::option::Option<::std::vec::Vec<crate::types::Network>>,
+    pub networks: ::std::vec::Vec<crate::types::Network>,
     /// <p>The combination of the Autonomous System Number (ASN) of the network and the name of the network.</p>
-    pub as_path: ::std::option::Option<::std::vec::Vec<crate::types::Network>>,
+    pub as_path: ::std::vec::Vec<crate::types::Network>,
     /// <p>Type of network impairment.</p>
-    pub network_event_type: ::std::option::Option<crate::types::TriangulationEventType>,
+    pub network_event_type: crate::types::TriangulationEventType,
 }
 impl NetworkImpairment {
     /// <p>The networks that could be impacted by a network impairment event.</p>
-    pub fn networks(&self) -> ::std::option::Option<&[crate::types::Network]> {
-        self.networks.as_deref()
+    pub fn networks(&self) -> &[crate::types::Network] {
+        use std::ops::Deref;
+        self.networks.deref()
     }
     /// <p>The combination of the Autonomous System Number (ASN) of the network and the name of the network.</p>
-    pub fn as_path(&self) -> ::std::option::Option<&[crate::types::Network]> {
-        self.as_path.as_deref()
+    pub fn as_path(&self) -> &[crate::types::Network] {
+        use std::ops::Deref;
+        self.as_path.deref()
     }
     /// <p>Type of network impairment.</p>
-    pub fn network_event_type(&self) -> ::std::option::Option<&crate::types::TriangulationEventType> {
-        self.network_event_type.as_ref()
+    pub fn network_event_type(&self) -> &crate::types::TriangulationEventType {
+        &self.network_event_type
     }
 }
 impl NetworkImpairment {
@@ -82,6 +84,7 @@ impl NetworkImpairmentBuilder {
         &self.as_path
     }
     /// <p>Type of network impairment.</p>
+    /// This field is required.
     pub fn network_event_type(mut self, input: crate::types::TriangulationEventType) -> Self {
         self.network_event_type = ::std::option::Option::Some(input);
         self
@@ -96,11 +99,30 @@ impl NetworkImpairmentBuilder {
         &self.network_event_type
     }
     /// Consumes the builder and constructs a [`NetworkImpairment`](crate::types::NetworkImpairment).
-    pub fn build(self) -> crate::types::NetworkImpairment {
-        crate::types::NetworkImpairment {
-            networks: self.networks,
-            as_path: self.as_path,
-            network_event_type: self.network_event_type,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`networks`](crate::types::builders::NetworkImpairmentBuilder::networks)
+    /// - [`as_path`](crate::types::builders::NetworkImpairmentBuilder::as_path)
+    /// - [`network_event_type`](crate::types::builders::NetworkImpairmentBuilder::network_event_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::NetworkImpairment, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::NetworkImpairment {
+            networks: self.networks.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "networks",
+                    "networks was not specified but it is required when building NetworkImpairment",
+                )
+            })?,
+            as_path: self.as_path.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "as_path",
+                    "as_path was not specified but it is required when building NetworkImpairment",
+                )
+            })?,
+            network_event_type: self.network_event_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "network_event_type",
+                    "network_event_type was not specified but it is required when building NetworkImpairment",
+                )
+            })?,
+        })
     }
 }

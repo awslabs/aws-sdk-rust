@@ -55,8 +55,10 @@ impl Order {
         self.status.as_ref()
     }
     /// <p>The line items for the order</p>
-    pub fn line_items(&self) -> ::std::option::Option<&[crate::types::LineItem]> {
-        self.line_items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.line_items.is_none()`.
+    pub fn line_items(&self) -> &[crate::types::LineItem] {
+        self.line_items.as_deref().unwrap_or_default()
     }
     /// <p>The payment option for the order.</p>
     pub fn payment_option(&self) -> ::std::option::Option<&crate::types::PaymentOption> {

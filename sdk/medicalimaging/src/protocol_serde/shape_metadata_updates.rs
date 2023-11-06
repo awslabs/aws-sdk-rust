@@ -2,7 +2,7 @@
 pub fn ser_metadata_updates(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MetadataUpdates,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::MetadataUpdates::DicomUpdates(inner) => {
             #[allow(unused_mut)]
@@ -11,7 +11,7 @@ pub fn ser_metadata_updates(
             object_1.finish();
         }
         crate::types::MetadataUpdates::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "MetadataUpdates",
             ))
         }

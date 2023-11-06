@@ -18,8 +18,10 @@ impl UnassignPrivateNatGatewayAddressInput {
         self.nat_gateway_id.as_deref()
     }
     /// <p>The private IPv4 addresses you want to unassign.</p>
-    pub fn private_ip_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.private_ip_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.private_ip_addresses.is_none()`.
+    pub fn private_ip_addresses(&self) -> &[::std::string::String] {
+        self.private_ip_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The maximum amount of time to wait (in seconds) before forcibly releasing the IP addresses if connections are still in progress. Default value is 350 seconds.</p>
     pub fn max_drain_duration_seconds(&self) -> ::std::option::Option<i32> {
@@ -48,6 +50,7 @@ pub struct UnassignPrivateNatGatewayAddressInputBuilder {
 }
 impl UnassignPrivateNatGatewayAddressInputBuilder {
     /// <p>The ID of the NAT gateway.</p>
+    /// This field is required.
     pub fn nat_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nat_gateway_id = ::std::option::Option::Some(input.into());
         self
@@ -114,7 +117,7 @@ impl UnassignPrivateNatGatewayAddressInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressInput {

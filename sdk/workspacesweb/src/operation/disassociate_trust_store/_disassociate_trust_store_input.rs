@@ -27,6 +27,7 @@ pub struct DisassociateTrustStoreInputBuilder {
 }
 impl DisassociateTrustStoreInputBuilder {
     /// <p>The ARN of the web portal.</p>
+    /// This field is required.
     pub fn portal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portal_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,8 +44,10 @@ impl DisassociateTrustStoreInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateTrustStoreInput`](crate::operation::disassociate_trust_store::DisassociateTrustStoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disassociate_trust_store::DisassociateTrustStoreInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_trust_store::DisassociateTrustStoreInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::disassociate_trust_store::DisassociateTrustStoreInput { portal_arn: self.portal_arn })
     }
 }

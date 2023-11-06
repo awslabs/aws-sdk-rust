@@ -28,6 +28,7 @@ pub struct FileCacheLustreMetadataConfigurationBuilder {
 }
 impl FileCacheLustreMetadataConfigurationBuilder {
     /// <p>The storage capacity of the Lustre MDT (Metadata Target) storage volume in gibibytes (GiB). The only supported value is <code>2400</code> GiB.</p>
+    /// This field is required.
     pub fn storage_capacity(mut self, input: i32) -> Self {
         self.storage_capacity = ::std::option::Option::Some(input);
         self

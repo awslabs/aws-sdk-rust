@@ -6,7 +6,7 @@ pub struct ListWorkgroupsOutput {
     /// <p> If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page, make the call again using the returned token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The returned array of workgroups.</p>
-    pub workgroups: ::std::option::Option<::std::vec::Vec<crate::types::Workgroup>>,
+    pub workgroups: ::std::vec::Vec<crate::types::Workgroup>,
     _request_id: Option<String>,
 }
 impl ListWorkgroupsOutput {
@@ -15,8 +15,9 @@ impl ListWorkgroupsOutput {
         self.next_token.as_deref()
     }
     /// <p>The returned array of workgroups.</p>
-    pub fn workgroups(&self) -> ::std::option::Option<&[crate::types::Workgroup]> {
-        self.workgroups.as_deref()
+    pub fn workgroups(&self) -> &[crate::types::Workgroup] {
+        use std::ops::Deref;
+        self.workgroups.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListWorkgroupsOutput {
@@ -84,11 +85,20 @@ impl ListWorkgroupsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListWorkgroupsOutput`](crate::operation::list_workgroups::ListWorkgroupsOutput).
-    pub fn build(self) -> crate::operation::list_workgroups::ListWorkgroupsOutput {
-        crate::operation::list_workgroups::ListWorkgroupsOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workgroups`](crate::operation::list_workgroups::builders::ListWorkgroupsOutputBuilder::workgroups)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_workgroups::ListWorkgroupsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_workgroups::ListWorkgroupsOutput {
             next_token: self.next_token,
-            workgroups: self.workgroups,
+            workgroups: self.workgroups.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "workgroups",
+                    "workgroups was not specified but it is required when building ListWorkgroupsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

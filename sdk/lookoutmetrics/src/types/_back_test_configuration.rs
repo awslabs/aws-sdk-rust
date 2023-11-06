@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BackTestConfiguration {
     /// <p>Run a backtest instead of monitoring new data.</p>
-    pub run_back_test_mode: ::std::option::Option<bool>,
+    pub run_back_test_mode: bool,
 }
 impl BackTestConfiguration {
     /// <p>Run a backtest instead of monitoring new data.</p>
-    pub fn run_back_test_mode(&self) -> ::std::option::Option<bool> {
+    pub fn run_back_test_mode(&self) -> bool {
         self.run_back_test_mode
     }
 }
@@ -28,6 +28,7 @@ pub struct BackTestConfigurationBuilder {
 }
 impl BackTestConfigurationBuilder {
     /// <p>Run a backtest instead of monitoring new data.</p>
+    /// This field is required.
     pub fn run_back_test_mode(mut self, input: bool) -> Self {
         self.run_back_test_mode = ::std::option::Option::Some(input);
         self
@@ -42,9 +43,16 @@ impl BackTestConfigurationBuilder {
         &self.run_back_test_mode
     }
     /// Consumes the builder and constructs a [`BackTestConfiguration`](crate::types::BackTestConfiguration).
-    pub fn build(self) -> crate::types::BackTestConfiguration {
-        crate::types::BackTestConfiguration {
-            run_back_test_mode: self.run_back_test_mode,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`run_back_test_mode`](crate::types::builders::BackTestConfigurationBuilder::run_back_test_mode)
+    pub fn build(self) -> ::std::result::Result<crate::types::BackTestConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::BackTestConfiguration {
+            run_back_test_mode: self.run_back_test_mode.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "run_back_test_mode",
+                    "run_back_test_mode was not specified but it is required when building BackTestConfiguration",
+                )
+            })?,
+        })
     }
 }

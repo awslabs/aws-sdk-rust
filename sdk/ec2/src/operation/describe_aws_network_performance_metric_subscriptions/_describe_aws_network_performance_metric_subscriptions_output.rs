@@ -15,8 +15,10 @@ impl DescribeAwsNetworkPerformanceMetricSubscriptionsOutput {
         self.next_token.as_deref()
     }
     /// <p>Describes the current Infrastructure Performance subscriptions.</p>
-    pub fn subscriptions(&self) -> ::std::option::Option<&[crate::types::Subscription]> {
-        self.subscriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subscriptions.is_none()`.
+    pub fn subscriptions(&self) -> &[crate::types::Subscription] {
+        self.subscriptions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeAwsNetworkPerformanceMetricSubscriptionsOutput {

@@ -27,6 +27,7 @@ pub struct DeleteAppBundleInputBuilder {
 }
 impl DeleteAppBundleInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the app bundle that needs to be deleted.</p>
+    /// This field is required.
     pub fn app_bundle_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_bundle_identifier = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteAppBundleInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAppBundleInput`](crate::operation::delete_app_bundle::DeleteAppBundleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_app_bundle::DeleteAppBundleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_app_bundle::DeleteAppBundleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_app_bundle::DeleteAppBundleInput {
             app_bundle_identifier: self.app_bundle_identifier,
         })

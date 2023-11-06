@@ -14,8 +14,10 @@ impl DescribeRdsDbInstancesInput {
         self.stack_id.as_deref()
     }
     /// <p>An array containing the ARNs of the instances to be described.</p>
-    pub fn rds_db_instance_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.rds_db_instance_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rds_db_instance_arns.is_none()`.
+    pub fn rds_db_instance_arns(&self) -> &[::std::string::String] {
+        self.rds_db_instance_arns.as_deref().unwrap_or_default()
     }
 }
 impl DescribeRdsDbInstancesInput {
@@ -34,6 +36,7 @@ pub struct DescribeRdsDbInstancesInputBuilder {
 }
 impl DescribeRdsDbInstancesInputBuilder {
     /// <p>The ID of the stack with which the instances are registered. The operation returns descriptions of all registered Amazon RDS instances.</p>
+    /// This field is required.
     pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_id = ::std::option::Option::Some(input.into());
         self
@@ -72,7 +75,7 @@ impl DescribeRdsDbInstancesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_rds_db_instances::DescribeRdsDbInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_rds_db_instances::DescribeRdsDbInstancesInput {
             stack_id: self.stack_id,

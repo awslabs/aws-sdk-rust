@@ -56,6 +56,7 @@ pub struct DataQualitySummaryBuilder {
 }
 impl DataQualitySummaryBuilder {
     /// <p> Parameter that gives information about insufficient data for sensors in the dataset. This includes information about those sensors that have complete data missing and those with a short date range. </p>
+    /// This field is required.
     pub fn insufficient_sensor_data(mut self, input: crate::types::InsufficientSensorData) -> Self {
         self.insufficient_sensor_data = ::std::option::Option::Some(input);
         self
@@ -70,6 +71,7 @@ impl DataQualitySummaryBuilder {
         &self.insufficient_sensor_data
     }
     /// <p> Parameter that gives information about data that is missing over all the sensors in the input data. </p>
+    /// This field is required.
     pub fn missing_sensor_data(mut self, input: crate::types::MissingSensorData) -> Self {
         self.missing_sensor_data = ::std::option::Option::Some(input);
         self
@@ -84,6 +86,7 @@ impl DataQualitySummaryBuilder {
         &self.missing_sensor_data
     }
     /// <p> Parameter that gives information about data that is invalid over all the sensors in the input data. </p>
+    /// This field is required.
     pub fn invalid_sensor_data(mut self, input: crate::types::InvalidSensorData) -> Self {
         self.invalid_sensor_data = ::std::option::Option::Some(input);
         self
@@ -98,6 +101,7 @@ impl DataQualitySummaryBuilder {
         &self.invalid_sensor_data
     }
     /// <p> Parameter that gives information about unsupported timestamps in the input data. </p>
+    /// This field is required.
     pub fn unsupported_timestamps(mut self, input: crate::types::UnsupportedTimestamps) -> Self {
         self.unsupported_timestamps = ::std::option::Option::Some(input);
         self
@@ -112,6 +116,7 @@ impl DataQualitySummaryBuilder {
         &self.unsupported_timestamps
     }
     /// <p> Parameter that gives information about duplicate timestamps in the input data. </p>
+    /// This field is required.
     pub fn duplicate_timestamps(mut self, input: crate::types::DuplicateTimestamps) -> Self {
         self.duplicate_timestamps = ::std::option::Option::Some(input);
         self

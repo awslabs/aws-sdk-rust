@@ -14,20 +14,26 @@ pub struct CreateMediaStreamPipelineInput {
 }
 impl CreateMediaStreamPipelineInput {
     /// <p>The data sources for the media pipeline.</p>
-    pub fn sources(&self) -> ::std::option::Option<&[crate::types::MediaStreamSource]> {
-        self.sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
+    pub fn sources(&self) -> &[crate::types::MediaStreamSource] {
+        self.sources.as_deref().unwrap_or_default()
     }
     /// <p>The data sink for the media pipeline.</p>
-    pub fn sinks(&self) -> ::std::option::Option<&[crate::types::MediaStreamSink]> {
-        self.sinks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sinks.is_none()`.
+    pub fn sinks(&self) -> &[crate::types::MediaStreamSink] {
+        self.sinks.as_deref().unwrap_or_default()
     }
     /// <p>The token assigned to the client making the request.</p>
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
     /// <p>The tags assigned to the media pipeline.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for CreateMediaStreamPipelineInput {
@@ -136,7 +142,7 @@ impl CreateMediaStreamPipelineInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_media_stream_pipeline::CreateMediaStreamPipelineInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_media_stream_pipeline::CreateMediaStreamPipelineInput {
             sources: self.sources,

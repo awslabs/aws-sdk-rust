@@ -8,8 +8,10 @@ pub struct BatchGetAutomationRulesInput {
 }
 impl BatchGetAutomationRulesInput {
     /// <p> A list of rule ARNs to get details for. </p>
-    pub fn automation_rules_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.automation_rules_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.automation_rules_arns.is_none()`.
+    pub fn automation_rules_arns(&self) -> &[::std::string::String] {
+        self.automation_rules_arns.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetAutomationRulesInput {
@@ -51,7 +53,7 @@ impl BatchGetAutomationRulesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_automation_rules::BatchGetAutomationRulesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_get_automation_rules::BatchGetAutomationRulesInput {
             automation_rules_arns: self.automation_rules_arns,

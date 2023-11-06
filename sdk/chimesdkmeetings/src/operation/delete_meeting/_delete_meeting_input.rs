@@ -27,6 +27,7 @@ pub struct DeleteMeetingInputBuilder {
 }
 impl DeleteMeetingInputBuilder {
     /// <p>The Amazon Chime SDK meeting ID.</p>
+    /// This field is required.
     pub fn meeting_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.meeting_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteMeetingInputBuilder {
     /// Consumes the builder and constructs a [`DeleteMeetingInput`](crate::operation::delete_meeting::DeleteMeetingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_meeting::DeleteMeetingInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_meeting::DeleteMeetingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_meeting::DeleteMeetingInput { meeting_id: self.meeting_id })
     }
 }

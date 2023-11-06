@@ -4,10 +4,10 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_service_networks::builders::ListServiceNetworksFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::operation::list_service_networks::builders::ListServiceNetworksFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_service_networks::builders::ListServiceNetworksFluentBuilder::set_max_results): <p>The maximum number of results to return.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_service_networks::builders::ListServiceNetworksFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_service_networks::builders::ListServiceNetworksFluentBuilder::set_next_token): <p>A pagination token for the next page of results.</p>
+    ///   - [`max_results(i32)`](crate::operation::list_service_networks::builders::ListServiceNetworksFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_service_networks::builders::ListServiceNetworksFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_service_networks::builders::ListServiceNetworksFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_service_networks::builders::ListServiceNetworksFluentBuilder::set_next_token):<br>required: **false**<br><p>A pagination token for the next page of results.</p><br>
     /// - On success, responds with [`ListServiceNetworksOutput`](crate::operation::list_service_networks::ListServiceNetworksOutput) with field(s):
-    ///   - [`items(Option<Vec<ServiceNetworkSummary>>)`](crate::operation::list_service_networks::ListServiceNetworksOutput::items): <p>Information about the service networks.</p>
+    ///   - [`items(Vec::<ServiceNetworkSummary>)`](crate::operation::list_service_networks::ListServiceNetworksOutput::items): <p>Information about the service networks.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_service_networks::ListServiceNetworksOutput::next_token): <p>If there are additional results, a pagination token for the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListServiceNetworksError>`](crate::operation::list_service_networks::ListServiceNetworksError)
     pub fn list_service_networks(&self) -> crate::operation::list_service_networks::builders::ListServiceNetworksFluentBuilder {

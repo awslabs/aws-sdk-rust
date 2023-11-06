@@ -6,7 +6,7 @@ pub struct ListContactChannelsOutput {
     /// <p>The pagination token to continue to the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of contact channels related to the specified contact.</p>
-    pub contact_channels: ::std::option::Option<::std::vec::Vec<crate::types::ContactChannel>>,
+    pub contact_channels: ::std::vec::Vec<crate::types::ContactChannel>,
     _request_id: Option<String>,
 }
 impl ListContactChannelsOutput {
@@ -15,8 +15,9 @@ impl ListContactChannelsOutput {
         self.next_token.as_deref()
     }
     /// <p>A list of contact channels related to the specified contact.</p>
-    pub fn contact_channels(&self) -> ::std::option::Option<&[crate::types::ContactChannel]> {
-        self.contact_channels.as_deref()
+    pub fn contact_channels(&self) -> &[crate::types::ContactChannel] {
+        use std::ops::Deref;
+        self.contact_channels.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListContactChannelsOutput {
@@ -84,11 +85,21 @@ impl ListContactChannelsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListContactChannelsOutput`](crate::operation::list_contact_channels::ListContactChannelsOutput).
-    pub fn build(self) -> crate::operation::list_contact_channels::ListContactChannelsOutput {
-        crate::operation::list_contact_channels::ListContactChannelsOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`contact_channels`](crate::operation::list_contact_channels::builders::ListContactChannelsOutputBuilder::contact_channels)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_contact_channels::ListContactChannelsOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_contact_channels::ListContactChannelsOutput {
             next_token: self.next_token,
-            contact_channels: self.contact_channels,
+            contact_channels: self.contact_channels.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "contact_channels",
+                    "contact_channels was not specified but it is required when building ListContactChannelsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -27,6 +27,7 @@ pub struct DeleteAccessPointInputBuilder {
 }
 impl DeleteAccessPointInputBuilder {
     /// <p>The ID of the access point that you want to delete.</p>
+    /// This field is required.
     pub fn access_point_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_point_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteAccessPointInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAccessPointInput`](crate::operation::delete_access_point::DeleteAccessPointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_access_point::DeleteAccessPointInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_access_point::DeleteAccessPointInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_access_point::DeleteAccessPointInput {
             access_point_id: self.access_point_id,
         })

@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDomainOutput {
     /// <p>A message that indicates the delete request is done.</p>
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
     _request_id: Option<String>,
 }
 impl DeleteDomainOutput {
     /// <p>A message that indicates the delete request is done.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        use std::ops::Deref;
+        self.message.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteDomainOutput {
@@ -34,6 +35,7 @@ pub struct DeleteDomainOutputBuilder {
 }
 impl DeleteDomainOutputBuilder {
     /// <p>A message that indicates the delete request is done.</p>
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,19 @@ impl DeleteDomainOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteDomainOutput`](crate::operation::delete_domain::DeleteDomainOutput).
-    pub fn build(self) -> crate::operation::delete_domain::DeleteDomainOutput {
-        crate::operation::delete_domain::DeleteDomainOutput {
-            message: self.message,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`message`](crate::operation::delete_domain::builders::DeleteDomainOutputBuilder::message)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_domain::DeleteDomainOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_domain::DeleteDomainOutput {
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building DeleteDomainOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

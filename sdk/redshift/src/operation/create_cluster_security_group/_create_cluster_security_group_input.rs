@@ -35,8 +35,10 @@ impl CreateClusterSecurityGroupInput {
         self.description.as_deref()
     }
     /// <p>A list of tag instances.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateClusterSecurityGroupInput {
@@ -63,6 +65,7 @@ impl CreateClusterSecurityGroupInputBuilder {
     /// <li> <p>Must be unique for all security groups that are created by your Amazon Web Services account.</p> </li>
     /// </ul>
     /// <p>Example: <code>examplesecuritygroup</code> </p>
+    /// This field is required.
     pub fn cluster_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_security_group_name = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +94,7 @@ impl CreateClusterSecurityGroupInputBuilder {
         &self.cluster_security_group_name
     }
     /// <p>A description for the security group.</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -129,7 +133,7 @@ impl CreateClusterSecurityGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_cluster_security_group::CreateClusterSecurityGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_cluster_security_group::CreateClusterSecurityGroupInput {
             cluster_security_group_name: self.cluster_security_group_name,

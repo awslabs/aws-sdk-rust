@@ -91,6 +91,7 @@ pub struct ConfigurationBuilder {
 }
 impl ConfigurationBuilder {
     /// <p>Required. The ARN of the configuration.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +106,7 @@ impl ConfigurationBuilder {
         &self.arn
     }
     /// <p>Optional. The authentication strategy associated with the configuration. The default is SIMPLE.</p>
+    /// This field is required.
     pub fn authentication_strategy(mut self, input: crate::types::AuthenticationStrategy) -> Self {
         self.authentication_strategy = ::std::option::Option::Some(input);
         self
@@ -119,6 +121,7 @@ impl ConfigurationBuilder {
         &self.authentication_strategy
     }
     /// <p>Required. The date and time of the configuration revision.</p>
+    /// This field is required.
     pub fn created(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created = ::std::option::Option::Some(input);
         self
@@ -133,6 +136,7 @@ impl ConfigurationBuilder {
         &self.created
     }
     /// <p>Required. The description of the configuration.</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -147,6 +151,7 @@ impl ConfigurationBuilder {
         &self.description
     }
     /// <p>Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
+    /// This field is required.
     pub fn engine_type(mut self, input: crate::types::EngineType) -> Self {
         self.engine_type = ::std::option::Option::Some(input);
         self
@@ -161,6 +166,7 @@ impl ConfigurationBuilder {
         &self.engine_type
     }
     /// <p>Required. The broker engine's version. For a list of supported engine versions, see, <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
+    /// This field is required.
     pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
@@ -175,6 +181,7 @@ impl ConfigurationBuilder {
         &self.engine_version
     }
     /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -189,6 +196,7 @@ impl ConfigurationBuilder {
         &self.id
     }
     /// <p>Required. The latest revision of the configuration.</p>
+    /// This field is required.
     pub fn latest_revision(mut self, input: crate::types::ConfigurationRevision) -> Self {
         self.latest_revision = ::std::option::Option::Some(input);
         self
@@ -203,6 +211,7 @@ impl ConfigurationBuilder {
         &self.latest_revision
     }
     /// <p>Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

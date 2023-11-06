@@ -42,6 +42,7 @@ pub struct SnaplockRetentionPeriodBuilder {
 }
 impl SnaplockRetentionPeriodBuilder {
     /// <p>The retention period assigned to a write once, read many (WORM) file by default if an explicit retention period is not set for an FSx for ONTAP SnapLock volume. The default retention period must be greater than or equal to the minimum retention period and less than or equal to the maximum retention period. </p>
+    /// This field is required.
     pub fn default_retention(mut self, input: crate::types::RetentionPeriod) -> Self {
         self.default_retention = ::std::option::Option::Some(input);
         self
@@ -56,6 +57,7 @@ impl SnaplockRetentionPeriodBuilder {
         &self.default_retention
     }
     /// <p>The shortest retention period that can be assigned to a WORM file on an FSx for ONTAP SnapLock volume. </p>
+    /// This field is required.
     pub fn minimum_retention(mut self, input: crate::types::RetentionPeriod) -> Self {
         self.minimum_retention = ::std::option::Option::Some(input);
         self
@@ -70,6 +72,7 @@ impl SnaplockRetentionPeriodBuilder {
         &self.minimum_retention
     }
     /// <p>The longest retention period that can be assigned to a WORM file on an FSx for ONTAP SnapLock volume. </p>
+    /// This field is required.
     pub fn maximum_retention(mut self, input: crate::types::RetentionPeriod) -> Self {
         self.maximum_retention = ::std::option::Option::Some(input);
         self

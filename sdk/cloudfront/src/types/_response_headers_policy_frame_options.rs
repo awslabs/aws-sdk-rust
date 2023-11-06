@@ -6,20 +6,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicyFrameOptions {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>X-Frame-Options</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
-    pub r#override: ::std::option::Option<bool>,
+    pub r#override: bool,
     /// <p>The value of the <code>X-Frame-Options</code> HTTP response header. Valid values are <code>DENY</code> and <code>SAMEORIGIN</code>.</p>
     /// <p>For more information about these values, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a> in the MDN Web Docs.</p>
-    pub frame_option: ::std::option::Option<crate::types::FrameOptionsList>,
+    pub frame_option: crate::types::FrameOptionsList,
 }
 impl ResponseHeadersPolicyFrameOptions {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>X-Frame-Options</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
-    pub fn r#override(&self) -> ::std::option::Option<bool> {
+    pub fn r#override(&self) -> bool {
         self.r#override
     }
     /// <p>The value of the <code>X-Frame-Options</code> HTTP response header. Valid values are <code>DENY</code> and <code>SAMEORIGIN</code>.</p>
     /// <p>For more information about these values, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a> in the MDN Web Docs.</p>
-    pub fn frame_option(&self) -> ::std::option::Option<&crate::types::FrameOptionsList> {
-        self.frame_option.as_ref()
+    pub fn frame_option(&self) -> &crate::types::FrameOptionsList {
+        &self.frame_option
     }
 }
 impl ResponseHeadersPolicyFrameOptions {
@@ -38,6 +38,7 @@ pub struct ResponseHeadersPolicyFrameOptionsBuilder {
 }
 impl ResponseHeadersPolicyFrameOptionsBuilder {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>X-Frame-Options</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
+    /// This field is required.
     pub fn r#override(mut self, input: bool) -> Self {
         self.r#override = ::std::option::Option::Some(input);
         self
@@ -53,6 +54,7 @@ impl ResponseHeadersPolicyFrameOptionsBuilder {
     }
     /// <p>The value of the <code>X-Frame-Options</code> HTTP response header. Valid values are <code>DENY</code> and <code>SAMEORIGIN</code>.</p>
     /// <p>For more information about these values, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a> in the MDN Web Docs.</p>
+    /// This field is required.
     pub fn frame_option(mut self, input: crate::types::FrameOptionsList) -> Self {
         self.frame_option = ::std::option::Option::Some(input);
         self
@@ -69,10 +71,23 @@ impl ResponseHeadersPolicyFrameOptionsBuilder {
         &self.frame_option
     }
     /// Consumes the builder and constructs a [`ResponseHeadersPolicyFrameOptions`](crate::types::ResponseHeadersPolicyFrameOptions).
-    pub fn build(self) -> crate::types::ResponseHeadersPolicyFrameOptions {
-        crate::types::ResponseHeadersPolicyFrameOptions {
-            r#override: self.r#override,
-            frame_option: self.frame_option,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#override`](crate::types::builders::ResponseHeadersPolicyFrameOptionsBuilder::r#override)
+    /// - [`frame_option`](crate::types::builders::ResponseHeadersPolicyFrameOptionsBuilder::frame_option)
+    pub fn build(self) -> ::std::result::Result<crate::types::ResponseHeadersPolicyFrameOptions, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ResponseHeadersPolicyFrameOptions {
+            r#override: self.r#override.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#override",
+                    "r#override was not specified but it is required when building ResponseHeadersPolicyFrameOptions",
+                )
+            })?,
+            frame_option: self.frame_option.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "frame_option",
+                    "frame_option was not specified but it is required when building ResponseHeadersPolicyFrameOptions",
+                )
+            })?,
+        })
     }
 }

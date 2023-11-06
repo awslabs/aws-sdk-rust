@@ -29,7 +29,7 @@ where
                             );
                         }
                         "inputs" => {
-                            builder = builder.set_inputs(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                            builder = builder.set_inputs(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         "state" => {
                             builder = builder.set_state(
@@ -43,7 +43,7 @@ where
                         }
                         "whitelistRules" => {
                             builder = builder.set_whitelist_rules(
-                                crate::protocol_serde::shape___list_of_input_whitelist_rule::de___list_of_input_whitelist_rule(tokens)?,
+                                crate::protocol_serde::shape_list_of_input_whitelist_rule::de_list_of_input_whitelist_rule(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

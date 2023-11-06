@@ -2,11 +2,11 @@
 pub fn ser_describe_vtl_devices_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_vtl_devices::DescribeVtlDevicesInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.gateway_arn {
         object.key("GatewayARN").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.vtl_device_ar_ns {
+    if let Some(var_2) = &input.vtl_device_arns {
         let mut array_3 = object.key("VTLDeviceARNs").start_array();
         for item_4 in var_2 {
             {

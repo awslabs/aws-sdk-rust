@@ -66,12 +66,16 @@ impl CreateActivationInput {
     /// <p>When you install SSM Agent on your on-premises servers and VMs, you specify an activation ID and code. When you specify the activation ID and code, tags assigned to the activation are automatically applied to the on-premises servers or VMs.</p>
     /// </important>
     /// <p>You can't add tags to or delete tags from an existing activation. You can tag your on-premises servers, edge devices, and VMs after they connect to Systems Manager for the first time and are assigned a managed node ID. This means they are listed in the Amazon Web Services Systems Manager console with an ID that is prefixed with "mi-". For information about how to add tags to your managed nodes, see <code>AddTagsToResource</code>. For information about how to remove tags from your managed nodes, see <code>RemoveTagsFromResource</code>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Reserved for internal use.</p>
-    pub fn registration_metadata(&self) -> ::std::option::Option<&[crate::types::RegistrationMetadataItem]> {
-        self.registration_metadata.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.registration_metadata.is_none()`.
+    pub fn registration_metadata(&self) -> &[crate::types::RegistrationMetadataItem] {
+        self.registration_metadata.as_deref().unwrap_or_default()
     }
 }
 impl CreateActivationInput {
@@ -137,6 +141,7 @@ impl CreateActivationInputBuilder {
     /// <p>The name of the Identity and Access Management (IAM) role that you want to assign to the managed node. This IAM role must provide AssumeRole permissions for the Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>
     /// <p>You can't specify an IAM service-linked role for this parameter. You must create a unique role.</p>
     /// </note>
+    /// This field is required.
     pub fn iam_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_role = ::std::option::Option::Some(input.into());
         self
@@ -246,7 +251,7 @@ impl CreateActivationInputBuilder {
     /// Consumes the builder and constructs a [`CreateActivationInput`](crate::operation::create_activation::CreateActivationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_activation::CreateActivationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_activation::CreateActivationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_activation::CreateActivationInput {
             description: self.description,
             default_instance_name: self.default_instance_name,

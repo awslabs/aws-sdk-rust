@@ -28,6 +28,7 @@ pub struct FilledMapConditionalFormattingOptionBuilder {
 }
 impl FilledMapConditionalFormattingOptionBuilder {
     /// <p>The conditional formatting that determines the shape of the filled map.</p>
+    /// This field is required.
     pub fn shape(mut self, input: crate::types::FilledMapShapeConditionalFormatting) -> Self {
         self.shape = ::std::option::Option::Some(input);
         self

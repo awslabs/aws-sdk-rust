@@ -33,6 +33,7 @@ impl DeleteFlowTemplateInputBuilder {
     /// <p>The ID of the workflow to be deleted.</p>
     /// <p>The ID should be in the following format.</p>
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -53,7 +54,8 @@ impl DeleteFlowTemplateInputBuilder {
     /// Consumes the builder and constructs a [`DeleteFlowTemplateInput`](crate::operation::delete_flow_template::DeleteFlowTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_flow_template::DeleteFlowTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_flow_template::DeleteFlowTemplateInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_flow_template::DeleteFlowTemplateInput { id: self.id })
     }
 }

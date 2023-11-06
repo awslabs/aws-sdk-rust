@@ -2,12 +2,12 @@
 pub fn ser_s3_public_access_block_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::S3PublicAccessBlockConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.ignore_public_acls {
-        object.key("ignorePublicAcls").boolean(*var_1);
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("ignorePublicAcls").boolean(input.ignore_public_acls);
     }
-    if let Some(var_2) = &input.restrict_public_buckets {
-        object.key("restrictPublicBuckets").boolean(*var_2);
+    {
+        object.key("restrictPublicBuckets").boolean(input.restrict_public_buckets);
     }
     Ok(())
 }
@@ -43,7 +43,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::s3_public_access_block_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

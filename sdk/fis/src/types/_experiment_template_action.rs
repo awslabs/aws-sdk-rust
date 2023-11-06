@@ -33,8 +33,10 @@ impl ExperimentTemplateAction {
         self.targets.as_ref()
     }
     /// <p>The name of the action that must be completed before the current action starts.</p>
-    pub fn start_after(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.start_after.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.start_after.is_none()`.
+    pub fn start_after(&self) -> &[::std::string::String] {
+        self.start_after.as_deref().unwrap_or_default()
     }
 }
 impl ExperimentTemplateAction {

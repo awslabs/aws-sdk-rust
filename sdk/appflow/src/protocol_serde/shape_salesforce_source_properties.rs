@@ -2,9 +2,9 @@
 pub fn ser_salesforce_source_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SalesforceSourceProperties,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.object {
-        object.key("object").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("object").string(input.object.as_str());
     }
     if input.enable_dynamic_field_update {
         object.key("enableDynamicFieldUpdate").boolean(input.enable_dynamic_field_update);
@@ -12,8 +12,8 @@ pub fn ser_salesforce_source_properties(
     if input.include_deleted_records {
         object.key("includeDeletedRecords").boolean(input.include_deleted_records);
     }
-    if let Some(var_2) = &input.data_transfer_api {
-        object.key("dataTransferApi").string(var_2.as_str());
+    if let Some(var_1) = &input.data_transfer_api {
+        object.key("dataTransferApi").string(var_1.as_str());
     }
     Ok(())
 }
@@ -64,7 +64,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::salesforce_source_properties_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

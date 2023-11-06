@@ -11,8 +11,10 @@ pub struct ListComponentsOutput {
 }
 impl ListComponentsOutput {
     /// <p>The list of application components.</p>
-    pub fn application_component_list(&self) -> ::std::option::Option<&[crate::types::ApplicationComponent]> {
-        self.application_component_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.application_component_list.is_none()`.
+    pub fn application_component_list(&self) -> &[crate::types::ApplicationComponent] {
+        self.application_component_list.as_deref().unwrap_or_default()
     }
     /// <p>The token to request the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

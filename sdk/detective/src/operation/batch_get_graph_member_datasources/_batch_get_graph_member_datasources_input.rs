@@ -14,8 +14,10 @@ impl BatchGetGraphMemberDatasourcesInput {
         self.graph_arn.as_deref()
     }
     /// <p>The list of Amazon Web Services accounts to get data source package information on.</p>
-    pub fn account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.account_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
+    pub fn account_ids(&self) -> &[::std::string::String] {
+        self.account_ids.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetGraphMemberDatasourcesInput {
@@ -34,6 +36,7 @@ pub struct BatchGetGraphMemberDatasourcesInputBuilder {
 }
 impl BatchGetGraphMemberDatasourcesInputBuilder {
     /// <p>The ARN of the behavior graph.</p>
+    /// This field is required.
     pub fn graph_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.graph_arn = ::std::option::Option::Some(input.into());
         self
@@ -72,7 +75,7 @@ impl BatchGetGraphMemberDatasourcesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_graph_member_datasources::BatchGetGraphMemberDatasourcesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::batch_get_graph_member_datasources::BatchGetGraphMemberDatasourcesInput {

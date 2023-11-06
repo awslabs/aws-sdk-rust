@@ -9,8 +9,10 @@ pub struct BatchGetOnPremisesInstancesInput {
 }
 impl BatchGetOnPremisesInstancesInput {
     /// <p>The names of the on-premises instances about which to get information. The maximum number of instance names you can specify is 25.</p>
-    pub fn instance_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.instance_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_names.is_none()`.
+    pub fn instance_names(&self) -> &[::std::string::String] {
+        self.instance_names.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetOnPremisesInstancesInput {
@@ -52,7 +54,7 @@ impl BatchGetOnPremisesInstancesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_on_premises_instances::BatchGetOnPremisesInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_get_on_premises_instances::BatchGetOnPremisesInstancesInput {
             instance_names: self.instance_names,

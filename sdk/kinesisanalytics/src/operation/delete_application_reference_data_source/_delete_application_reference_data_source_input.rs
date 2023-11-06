@@ -41,6 +41,7 @@ pub struct DeleteApplicationReferenceDataSourceInputBuilder {
 }
 impl DeleteApplicationReferenceDataSourceInputBuilder {
     /// <p>Name of an existing application.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DeleteApplicationReferenceDataSourceInputBuilder {
         &self.application_name
     }
     /// <p>Version of the application. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
+    /// This field is required.
     pub fn current_application_version_id(mut self, input: i64) -> Self {
         self.current_application_version_id = ::std::option::Option::Some(input);
         self
@@ -69,6 +71,7 @@ impl DeleteApplicationReferenceDataSourceInputBuilder {
         &self.current_application_version_id
     }
     /// <p>ID of the reference data source. When you add a reference data source to your application using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html">AddApplicationReferenceDataSource</a>, Amazon Kinesis Analytics assigns an ID. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the reference ID. </p>
+    /// This field is required.
     pub fn reference_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reference_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +90,7 @@ impl DeleteApplicationReferenceDataSourceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_application_reference_data_source::DeleteApplicationReferenceDataSourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_application_reference_data_source::DeleteApplicationReferenceDataSourceInput {

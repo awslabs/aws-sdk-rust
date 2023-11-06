@@ -30,8 +30,10 @@ impl CreateSourceLocationInput {
         self.http_configuration.as_ref()
     }
     /// <p>A list of the segment delivery configurations associated with this resource.</p>
-    pub fn segment_delivery_configurations(&self) -> ::std::option::Option<&[crate::types::SegmentDeliveryConfiguration]> {
-        self.segment_delivery_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.segment_delivery_configurations.is_none()`.
+    pub fn segment_delivery_configurations(&self) -> &[crate::types::SegmentDeliveryConfiguration] {
+        self.segment_delivery_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The name associated with the source location.</p>
     pub fn source_location_name(&self) -> ::std::option::Option<&str> {
@@ -93,6 +95,7 @@ impl CreateSourceLocationInputBuilder {
         &self.default_segment_delivery_configuration
     }
     /// <p>The source's HTTP package configurations.</p>
+    /// This field is required.
     pub fn http_configuration(mut self, input: crate::types::HttpConfiguration) -> Self {
         self.http_configuration = ::std::option::Option::Some(input);
         self
@@ -130,6 +133,7 @@ impl CreateSourceLocationInputBuilder {
         &self.segment_delivery_configurations
     }
     /// <p>The name associated with the source location.</p>
+    /// This field is required.
     pub fn source_location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_location_name = ::std::option::Option::Some(input.into());
         self
@@ -166,7 +170,7 @@ impl CreateSourceLocationInputBuilder {
     /// Consumes the builder and constructs a [`CreateSourceLocationInput`](crate::operation::create_source_location::CreateSourceLocationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_source_location::CreateSourceLocationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_source_location::CreateSourceLocationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_source_location::CreateSourceLocationInput {
             access_configuration: self.access_configuration,

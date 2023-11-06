@@ -27,6 +27,7 @@ pub struct StopNotebookInstanceInputBuilder {
 }
 impl StopNotebookInstanceInputBuilder {
     /// <p>The name of the notebook instance to terminate.</p>
+    /// This field is required.
     pub fn notebook_instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_instance_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl StopNotebookInstanceInputBuilder {
     /// Consumes the builder and constructs a [`StopNotebookInstanceInput`](crate::operation::stop_notebook_instance::StopNotebookInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_notebook_instance::StopNotebookInstanceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::stop_notebook_instance::StopNotebookInstanceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::stop_notebook_instance::StopNotebookInstanceInput {
             notebook_instance_name: self.notebook_instance_name,

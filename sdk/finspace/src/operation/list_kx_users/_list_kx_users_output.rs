@@ -11,8 +11,10 @@ pub struct ListKxUsersOutput {
 }
 impl ListKxUsersOutput {
     /// <p>A list of users in a kdb environment.</p>
-    pub fn users(&self) -> ::std::option::Option<&[crate::types::KxUser]> {
-        self.users.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.users.is_none()`.
+    pub fn users(&self) -> &[crate::types::KxUser] {
+        self.users.as_deref().unwrap_or_default()
     }
     /// <p>A token that indicates where a results page should begin.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

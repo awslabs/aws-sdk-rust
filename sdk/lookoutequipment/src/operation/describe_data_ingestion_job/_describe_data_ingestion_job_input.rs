@@ -27,6 +27,7 @@ pub struct DescribeDataIngestionJobInputBuilder {
 }
 impl DescribeDataIngestionJobInputBuilder {
     /// <p>The job ID of the data ingestion job. </p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeDataIngestionJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_data_ingestion_job::DescribeDataIngestionJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_data_ingestion_job::DescribeDataIngestionJobInput { job_id: self.job_id })
     }

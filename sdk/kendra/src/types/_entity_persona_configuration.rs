@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EntityPersonaConfiguration {
     /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
-    pub entity_id: ::std::option::Option<::std::string::String>,
+    pub entity_id: ::std::string::String,
     /// <p>The persona that defines the specific permissions of the user or group in your IAM Identity Center identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
-    pub persona: ::std::option::Option<crate::types::Persona>,
+    pub persona: crate::types::Persona,
 }
 impl EntityPersonaConfiguration {
     /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
-    pub fn entity_id(&self) -> ::std::option::Option<&str> {
-        self.entity_id.as_deref()
+    pub fn entity_id(&self) -> &str {
+        use std::ops::Deref;
+        self.entity_id.deref()
     }
     /// <p>The persona that defines the specific permissions of the user or group in your IAM Identity Center identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
-    pub fn persona(&self) -> ::std::option::Option<&crate::types::Persona> {
-        self.persona.as_ref()
+    pub fn persona(&self) -> &crate::types::Persona {
+        &self.persona
     }
 }
 impl EntityPersonaConfiguration {
@@ -35,6 +36,7 @@ pub struct EntityPersonaConfigurationBuilder {
 }
 impl EntityPersonaConfigurationBuilder {
     /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
+    /// This field is required.
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl EntityPersonaConfigurationBuilder {
         &self.entity_id
     }
     /// <p>The persona that defines the specific permissions of the user or group in your IAM Identity Center identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
+    /// This field is required.
     pub fn persona(mut self, input: crate::types::Persona) -> Self {
         self.persona = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,23 @@ impl EntityPersonaConfigurationBuilder {
         &self.persona
     }
     /// Consumes the builder and constructs a [`EntityPersonaConfiguration`](crate::types::EntityPersonaConfiguration).
-    pub fn build(self) -> crate::types::EntityPersonaConfiguration {
-        crate::types::EntityPersonaConfiguration {
-            entity_id: self.entity_id,
-            persona: self.persona,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`entity_id`](crate::types::builders::EntityPersonaConfigurationBuilder::entity_id)
+    /// - [`persona`](crate::types::builders::EntityPersonaConfigurationBuilder::persona)
+    pub fn build(self) -> ::std::result::Result<crate::types::EntityPersonaConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EntityPersonaConfiguration {
+            entity_id: self.entity_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "entity_id",
+                    "entity_id was not specified but it is required when building EntityPersonaConfiguration",
+                )
+            })?,
+            persona: self.persona.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "persona",
+                    "persona was not specified but it is required when building EntityPersonaConfiguration",
+                )
+            })?,
+        })
     }
 }

@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FreeFormLayoutElement {
     /// <p>A unique identifier for an element within a free-form layout.</p>
-    pub element_id: ::std::option::Option<::std::string::String>,
+    pub element_id: ::std::string::String,
     /// <p>The type of element.</p>
-    pub element_type: ::std::option::Option<crate::types::LayoutElementType>,
+    pub element_type: crate::types::LayoutElementType,
     /// <p>The x-axis coordinate of the element.</p>
-    pub x_axis_location: ::std::option::Option<::std::string::String>,
+    pub x_axis_location: ::std::string::String,
     /// <p>The y-axis coordinate of the element.</p>
-    pub y_axis_location: ::std::option::Option<::std::string::String>,
+    pub y_axis_location: ::std::string::String,
     /// <p>The width of an element within a free-form layout.</p>
-    pub width: ::std::option::Option<::std::string::String>,
+    pub width: ::std::string::String,
     /// <p>The height of an element within a free-form layout.</p>
-    pub height: ::std::option::Option<::std::string::String>,
+    pub height: ::std::string::String,
     /// <p>The visibility of an element within a free-form layout.</p>
     pub visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>The rendering rules that determine when an element should be displayed within a free-form layout.</p>
@@ -31,36 +31,43 @@ pub struct FreeFormLayoutElement {
 }
 impl FreeFormLayoutElement {
     /// <p>A unique identifier for an element within a free-form layout.</p>
-    pub fn element_id(&self) -> ::std::option::Option<&str> {
-        self.element_id.as_deref()
+    pub fn element_id(&self) -> &str {
+        use std::ops::Deref;
+        self.element_id.deref()
     }
     /// <p>The type of element.</p>
-    pub fn element_type(&self) -> ::std::option::Option<&crate::types::LayoutElementType> {
-        self.element_type.as_ref()
+    pub fn element_type(&self) -> &crate::types::LayoutElementType {
+        &self.element_type
     }
     /// <p>The x-axis coordinate of the element.</p>
-    pub fn x_axis_location(&self) -> ::std::option::Option<&str> {
-        self.x_axis_location.as_deref()
+    pub fn x_axis_location(&self) -> &str {
+        use std::ops::Deref;
+        self.x_axis_location.deref()
     }
     /// <p>The y-axis coordinate of the element.</p>
-    pub fn y_axis_location(&self) -> ::std::option::Option<&str> {
-        self.y_axis_location.as_deref()
+    pub fn y_axis_location(&self) -> &str {
+        use std::ops::Deref;
+        self.y_axis_location.deref()
     }
     /// <p>The width of an element within a free-form layout.</p>
-    pub fn width(&self) -> ::std::option::Option<&str> {
-        self.width.as_deref()
+    pub fn width(&self) -> &str {
+        use std::ops::Deref;
+        self.width.deref()
     }
     /// <p>The height of an element within a free-form layout.</p>
-    pub fn height(&self) -> ::std::option::Option<&str> {
-        self.height.as_deref()
+    pub fn height(&self) -> &str {
+        use std::ops::Deref;
+        self.height.deref()
     }
     /// <p>The visibility of an element within a free-form layout.</p>
     pub fn visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
         self.visibility.as_ref()
     }
     /// <p>The rendering rules that determine when an element should be displayed within a free-form layout.</p>
-    pub fn rendering_rules(&self) -> ::std::option::Option<&[crate::types::SheetElementRenderingRule]> {
-        self.rendering_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rendering_rules.is_none()`.
+    pub fn rendering_rules(&self) -> &[crate::types::SheetElementRenderingRule] {
+        self.rendering_rules.as_deref().unwrap_or_default()
     }
     /// <p>The border style configuration of a free-form layout element.</p>
     pub fn border_style(&self) -> ::std::option::Option<&crate::types::FreeFormLayoutElementBorderStyle> {
@@ -105,6 +112,7 @@ pub struct FreeFormLayoutElementBuilder {
 }
 impl FreeFormLayoutElementBuilder {
     /// <p>A unique identifier for an element within a free-form layout.</p>
+    /// This field is required.
     pub fn element_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.element_id = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +127,7 @@ impl FreeFormLayoutElementBuilder {
         &self.element_id
     }
     /// <p>The type of element.</p>
+    /// This field is required.
     pub fn element_type(mut self, input: crate::types::LayoutElementType) -> Self {
         self.element_type = ::std::option::Option::Some(input);
         self
@@ -133,6 +142,7 @@ impl FreeFormLayoutElementBuilder {
         &self.element_type
     }
     /// <p>The x-axis coordinate of the element.</p>
+    /// This field is required.
     pub fn x_axis_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.x_axis_location = ::std::option::Option::Some(input.into());
         self
@@ -147,6 +157,7 @@ impl FreeFormLayoutElementBuilder {
         &self.x_axis_location
     }
     /// <p>The y-axis coordinate of the element.</p>
+    /// This field is required.
     pub fn y_axis_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.y_axis_location = ::std::option::Option::Some(input.into());
         self
@@ -161,6 +172,7 @@ impl FreeFormLayoutElementBuilder {
         &self.y_axis_location
     }
     /// <p>The width of an element within a free-form layout.</p>
+    /// This field is required.
     pub fn width(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.width = ::std::option::Option::Some(input.into());
         self
@@ -175,6 +187,7 @@ impl FreeFormLayoutElementBuilder {
         &self.width
     }
     /// <p>The height of an element within a free-form layout.</p>
+    /// This field is required.
     pub fn height(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.height = ::std::option::Option::Some(input.into());
         self
@@ -279,20 +292,57 @@ impl FreeFormLayoutElementBuilder {
         &self.loading_animation
     }
     /// Consumes the builder and constructs a [`FreeFormLayoutElement`](crate::types::FreeFormLayoutElement).
-    pub fn build(self) -> crate::types::FreeFormLayoutElement {
-        crate::types::FreeFormLayoutElement {
-            element_id: self.element_id,
-            element_type: self.element_type,
-            x_axis_location: self.x_axis_location,
-            y_axis_location: self.y_axis_location,
-            width: self.width,
-            height: self.height,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`element_id`](crate::types::builders::FreeFormLayoutElementBuilder::element_id)
+    /// - [`element_type`](crate::types::builders::FreeFormLayoutElementBuilder::element_type)
+    /// - [`x_axis_location`](crate::types::builders::FreeFormLayoutElementBuilder::x_axis_location)
+    /// - [`y_axis_location`](crate::types::builders::FreeFormLayoutElementBuilder::y_axis_location)
+    /// - [`width`](crate::types::builders::FreeFormLayoutElementBuilder::width)
+    /// - [`height`](crate::types::builders::FreeFormLayoutElementBuilder::height)
+    pub fn build(self) -> ::std::result::Result<crate::types::FreeFormLayoutElement, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::FreeFormLayoutElement {
+            element_id: self.element_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "element_id",
+                    "element_id was not specified but it is required when building FreeFormLayoutElement",
+                )
+            })?,
+            element_type: self.element_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "element_type",
+                    "element_type was not specified but it is required when building FreeFormLayoutElement",
+                )
+            })?,
+            x_axis_location: self.x_axis_location.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "x_axis_location",
+                    "x_axis_location was not specified but it is required when building FreeFormLayoutElement",
+                )
+            })?,
+            y_axis_location: self.y_axis_location.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "y_axis_location",
+                    "y_axis_location was not specified but it is required when building FreeFormLayoutElement",
+                )
+            })?,
+            width: self.width.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "width",
+                    "width was not specified but it is required when building FreeFormLayoutElement",
+                )
+            })?,
+            height: self.height.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "height",
+                    "height was not specified but it is required when building FreeFormLayoutElement",
+                )
+            })?,
             visibility: self.visibility,
             rendering_rules: self.rendering_rules,
             border_style: self.border_style,
             selected_border_style: self.selected_border_style,
             background_style: self.background_style,
             loading_animation: self.loading_animation,
-        }
+        })
     }
 }

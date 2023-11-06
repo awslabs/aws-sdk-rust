@@ -19,7 +19,7 @@ pub struct SlotValueRegexFilter {
     /// <li> <p>Infinite repeaters: *, +, or {x,} with no upper bound.</p> </li>
     /// <li> <p>Wild card (.)</p> </li>
     /// </ul>
-    pub pattern: ::std::option::Option<::std::string::String>,
+    pub pattern: ::std::string::String,
 }
 impl SlotValueRegexFilter {
     /// <p>A regular expression used to validate the value of a slot.</p>
@@ -37,8 +37,9 @@ impl SlotValueRegexFilter {
     /// <li> <p>Infinite repeaters: *, +, or {x,} with no upper bound.</p> </li>
     /// <li> <p>Wild card (.)</p> </li>
     /// </ul>
-    pub fn pattern(&self) -> ::std::option::Option<&str> {
-        self.pattern.as_deref()
+    pub fn pattern(&self) -> &str {
+        use std::ops::Deref;
+        self.pattern.deref()
     }
 }
 impl SlotValueRegexFilter {
@@ -70,6 +71,7 @@ impl SlotValueRegexFilterBuilder {
     /// <li> <p>Infinite repeaters: *, +, or {x,} with no upper bound.</p> </li>
     /// <li> <p>Wild card (.)</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pattern = ::std::option::Option::Some(input.into());
         self
@@ -112,7 +114,16 @@ impl SlotValueRegexFilterBuilder {
         &self.pattern
     }
     /// Consumes the builder and constructs a [`SlotValueRegexFilter`](crate::types::SlotValueRegexFilter).
-    pub fn build(self) -> crate::types::SlotValueRegexFilter {
-        crate::types::SlotValueRegexFilter { pattern: self.pattern }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`pattern`](crate::types::builders::SlotValueRegexFilterBuilder::pattern)
+    pub fn build(self) -> ::std::result::Result<crate::types::SlotValueRegexFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SlotValueRegexFilter {
+            pattern: self.pattern.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "pattern",
+                    "pattern was not specified but it is required when building SlotValueRegexFilter",
+                )
+            })?,
+        })
     }
 }

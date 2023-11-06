@@ -82,6 +82,7 @@ impl ListPrincipalsForPortfolioInputBuilder {
         &self.accept_language
     }
     /// <p>The portfolio identifier.</p>
+    /// This field is required.
     pub fn portfolio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portfolio_id = ::std::option::Option::Some(input.into());
         self
@@ -128,7 +129,7 @@ impl ListPrincipalsForPortfolioInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_principals_for_portfolio::ListPrincipalsForPortfolioInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_principals_for_portfolio::ListPrincipalsForPortfolioInput {
             accept_language: self.accept_language,

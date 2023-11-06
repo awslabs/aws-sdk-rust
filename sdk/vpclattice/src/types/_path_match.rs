@@ -35,6 +35,7 @@ pub struct PathMatchBuilder {
 }
 impl PathMatchBuilder {
     /// <p>The type of path match.</p>
+    /// This field is required.
     pub fn r#match(mut self, input: crate::types::PathMatchType) -> Self {
         self.r#match = ::std::option::Option::Some(input);
         self

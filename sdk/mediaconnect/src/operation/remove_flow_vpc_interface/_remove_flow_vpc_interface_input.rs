@@ -34,6 +34,7 @@ pub struct RemoveFlowVpcInterfaceInputBuilder {
 }
 impl RemoveFlowVpcInterfaceInputBuilder {
     /// The flow that you want to remove a VPC interface from.
+    /// This field is required.
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl RemoveFlowVpcInterfaceInputBuilder {
         &self.flow_arn
     }
     /// The name of the VPC interface that you want to remove.
+    /// This field is required.
     pub fn vpc_interface_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_interface_name = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl RemoveFlowVpcInterfaceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterfaceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterfaceInput {
             flow_arn: self.flow_arn,

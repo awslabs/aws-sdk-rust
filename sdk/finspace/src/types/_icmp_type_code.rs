@@ -35,6 +35,7 @@ pub struct IcmpTypeCodeBuilder {
 }
 impl IcmpTypeCodeBuilder {
     /// <p>The ICMP type. A value of <i>-1</i> means all types. </p>
+    /// This field is required.
     pub fn r#type(mut self, input: i32) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl IcmpTypeCodeBuilder {
         &self.r#type
     }
     /// <p> The ICMP code. A value of <i>-1</i> means all codes for the specified ICMP type. </p>
+    /// This field is required.
     pub fn code(mut self, input: i32) -> Self {
         self.code = ::std::option::Option::Some(input);
         self

@@ -19,9 +19,9 @@ pub struct LogConfig {
     /// <li> <p>The generated request/response functions that got resolved for each field.</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub field_log_level: ::std::option::Option<crate::types::FieldLogLevel>,
+    pub field_log_level: crate::types::FieldLogLevel,
     /// <p>The service role that AppSync assumes to publish to CloudWatch logs in your account.</p>
-    pub cloud_watch_logs_role_arn: ::std::option::Option<::std::string::String>,
+    pub cloud_watch_logs_role_arn: ::std::string::String,
     /// <p>Set to TRUE to exclude sections that contain information such as headers, context, and evaluated mapping templates, regardless of logging level.</p>
     pub exclude_verbose_content: bool,
 }
@@ -41,12 +41,13 @@ impl LogConfig {
     /// <li> <p>The generated request/response functions that got resolved for each field.</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn field_log_level(&self) -> ::std::option::Option<&crate::types::FieldLogLevel> {
-        self.field_log_level.as_ref()
+    pub fn field_log_level(&self) -> &crate::types::FieldLogLevel {
+        &self.field_log_level
     }
     /// <p>The service role that AppSync assumes to publish to CloudWatch logs in your account.</p>
-    pub fn cloud_watch_logs_role_arn(&self) -> ::std::option::Option<&str> {
-        self.cloud_watch_logs_role_arn.as_deref()
+    pub fn cloud_watch_logs_role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.cloud_watch_logs_role_arn.deref()
     }
     /// <p>Set to TRUE to exclude sections that contain information such as headers, context, and evaluated mapping templates, regardless of logging level.</p>
     pub fn exclude_verbose_content(&self) -> bool {
@@ -84,6 +85,7 @@ impl LogConfigBuilder {
     /// <li> <p>The generated request/response functions that got resolved for each field.</p> </li>
     /// </ul> </li>
     /// </ul>
+    /// This field is required.
     pub fn field_log_level(mut self, input: crate::types::FieldLogLevel) -> Self {
         self.field_log_level = ::std::option::Option::Some(input);
         self
@@ -126,6 +128,7 @@ impl LogConfigBuilder {
         &self.field_log_level
     }
     /// <p>The service role that AppSync assumes to publish to CloudWatch logs in your account.</p>
+    /// This field is required.
     pub fn cloud_watch_logs_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloud_watch_logs_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -154,11 +157,24 @@ impl LogConfigBuilder {
         &self.exclude_verbose_content
     }
     /// Consumes the builder and constructs a [`LogConfig`](crate::types::LogConfig).
-    pub fn build(self) -> crate::types::LogConfig {
-        crate::types::LogConfig {
-            field_log_level: self.field_log_level,
-            cloud_watch_logs_role_arn: self.cloud_watch_logs_role_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`field_log_level`](crate::types::builders::LogConfigBuilder::field_log_level)
+    /// - [`cloud_watch_logs_role_arn`](crate::types::builders::LogConfigBuilder::cloud_watch_logs_role_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::LogConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::LogConfig {
+            field_log_level: self.field_log_level.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "field_log_level",
+                    "field_log_level was not specified but it is required when building LogConfig",
+                )
+            })?,
+            cloud_watch_logs_role_arn: self.cloud_watch_logs_role_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "cloud_watch_logs_role_arn",
+                    "cloud_watch_logs_role_arn was not specified but it is required when building LogConfig",
+                )
+            })?,
             exclude_verbose_content: self.exclude_verbose_content.unwrap_or_default(),
-        }
+        })
     }
 }

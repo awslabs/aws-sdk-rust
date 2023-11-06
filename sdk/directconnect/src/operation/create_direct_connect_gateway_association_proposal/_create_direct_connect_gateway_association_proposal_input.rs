@@ -28,12 +28,16 @@ impl CreateDirectConnectGatewayAssociationProposalInput {
         self.gateway_id.as_deref()
     }
     /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway.</p>
-    pub fn add_allowed_prefixes_to_direct_connect_gateway(&self) -> ::std::option::Option<&[crate::types::RouteFilterPrefix]> {
-        self.add_allowed_prefixes_to_direct_connect_gateway.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_allowed_prefixes_to_direct_connect_gateway.is_none()`.
+    pub fn add_allowed_prefixes_to_direct_connect_gateway(&self) -> &[crate::types::RouteFilterPrefix] {
+        self.add_allowed_prefixes_to_direct_connect_gateway.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon VPC prefixes to no longer advertise to the Direct Connect gateway.</p>
-    pub fn remove_allowed_prefixes_to_direct_connect_gateway(&self) -> ::std::option::Option<&[crate::types::RouteFilterPrefix]> {
-        self.remove_allowed_prefixes_to_direct_connect_gateway.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove_allowed_prefixes_to_direct_connect_gateway.is_none()`.
+    pub fn remove_allowed_prefixes_to_direct_connect_gateway(&self) -> &[crate::types::RouteFilterPrefix] {
+        self.remove_allowed_prefixes_to_direct_connect_gateway.as_deref().unwrap_or_default()
     }
 }
 impl CreateDirectConnectGatewayAssociationProposalInput {
@@ -57,6 +61,7 @@ pub struct CreateDirectConnectGatewayAssociationProposalInputBuilder {
 }
 impl CreateDirectConnectGatewayAssociationProposalInputBuilder {
     /// <p>The ID of the Direct Connect gateway.</p>
+    /// This field is required.
     pub fn direct_connect_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.direct_connect_gateway_id = ::std::option::Option::Some(input.into());
         self
@@ -71,6 +76,7 @@ impl CreateDirectConnectGatewayAssociationProposalInputBuilder {
         &self.direct_connect_gateway_id
     }
     /// <p>The ID of the Amazon Web Services account that owns the Direct Connect gateway.</p>
+    /// This field is required.
     pub fn direct_connect_gateway_owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.direct_connect_gateway_owner_account = ::std::option::Option::Some(input.into());
         self
@@ -85,6 +91,7 @@ impl CreateDirectConnectGatewayAssociationProposalInputBuilder {
         &self.direct_connect_gateway_owner_account
     }
     /// <p>The ID of the virtual private gateway or transit gateway.</p>
+    /// This field is required.
     pub fn gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_id = ::std::option::Option::Some(input.into());
         self
@@ -149,7 +156,7 @@ impl CreateDirectConnectGatewayAssociationProposalInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_direct_connect_gateway_association_proposal::CreateDirectConnectGatewayAssociationProposalInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_direct_connect_gateway_association_proposal::CreateDirectConnectGatewayAssociationProposalInput {

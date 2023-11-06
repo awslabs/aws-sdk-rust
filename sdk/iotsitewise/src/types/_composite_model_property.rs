@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CompositeModelProperty {
     /// <p>The name of the property.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The type of the composite model that defines this property.</p>
-    pub r#type: ::std::option::Option<::std::string::String>,
+    pub r#type: ::std::string::String,
     /// <p>Contains asset property information.</p>
     pub asset_property: ::std::option::Option<crate::types::Property>,
     /// <p> The ID of the composite model that contains the property. </p>
@@ -15,12 +15,14 @@ pub struct CompositeModelProperty {
 }
 impl CompositeModelProperty {
     /// <p>The name of the property.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The type of the composite model that defines this property.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
-        self.r#type.as_deref()
+    pub fn r#type(&self) -> &str {
+        use std::ops::Deref;
+        self.r#type.deref()
     }
     /// <p>Contains asset property information.</p>
     pub fn asset_property(&self) -> ::std::option::Option<&crate::types::Property> {
@@ -49,6 +51,7 @@ pub struct CompositeModelPropertyBuilder {
 }
 impl CompositeModelPropertyBuilder {
     /// <p>The name of the property.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +66,7 @@ impl CompositeModelPropertyBuilder {
         &self.name
     }
     /// <p>The type of the composite model that defines this property.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +81,7 @@ impl CompositeModelPropertyBuilder {
         &self.r#type
     }
     /// <p>Contains asset property information.</p>
+    /// This field is required.
     pub fn asset_property(mut self, input: crate::types::Property) -> Self {
         self.asset_property = ::std::option::Option::Some(input);
         self
@@ -105,12 +110,25 @@ impl CompositeModelPropertyBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`CompositeModelProperty`](crate::types::CompositeModelProperty).
-    pub fn build(self) -> crate::types::CompositeModelProperty {
-        crate::types::CompositeModelProperty {
-            name: self.name,
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::CompositeModelPropertyBuilder::name)
+    /// - [`r#type`](crate::types::builders::CompositeModelPropertyBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::CompositeModelProperty, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CompositeModelProperty {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CompositeModelProperty",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building CompositeModelProperty",
+                )
+            })?,
             asset_property: self.asset_property,
             id: self.id,
-        }
+        })
     }
 }

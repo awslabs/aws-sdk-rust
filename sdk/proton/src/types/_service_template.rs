@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ServiceTemplate {
     /// <p>The name of the service template.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the service template.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The time when the service template was created.</p>
-    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The time when the service template was last modified.</p>
-    pub last_modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub last_modified_at: ::aws_smithy_types::DateTime,
     /// <p>The service template name as displayed in the developer interface.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the service template.</p>
@@ -25,20 +25,22 @@ pub struct ServiceTemplate {
 }
 impl ServiceTemplate {
     /// <p>The name of the service template.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the service template.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The time when the service template was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_at.as_ref()
+    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_at
     }
     /// <p>The time when the service template was last modified.</p>
-    pub fn last_modified_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.last_modified_at.as_ref()
+    pub fn last_modified_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.last_modified_at
     }
     /// <p>The service template name as displayed in the developer interface.</p>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
@@ -99,6 +101,7 @@ pub struct ServiceTemplateBuilder {
 }
 impl ServiceTemplateBuilder {
     /// <p>The name of the service template.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -113,6 +116,7 @@ impl ServiceTemplateBuilder {
         &self.name
     }
     /// <p>The Amazon Resource Name (ARN) of the service template.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -127,6 +131,7 @@ impl ServiceTemplateBuilder {
         &self.arn
     }
     /// <p>The time when the service template was created.</p>
+    /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
@@ -141,6 +146,7 @@ impl ServiceTemplateBuilder {
         &self.created_at
     }
     /// <p>The time when the service template was last modified.</p>
+    /// This field is required.
     pub fn last_modified_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_at = ::std::option::Option::Some(input);
         self
@@ -225,18 +231,43 @@ impl ServiceTemplateBuilder {
         &self.pipeline_provisioning
     }
     /// Consumes the builder and constructs a [`ServiceTemplate`](crate::types::ServiceTemplate).
-    pub fn build(self) -> crate::types::ServiceTemplate {
-        crate::types::ServiceTemplate {
-            name: self.name,
-            arn: self.arn,
-            created_at: self.created_at,
-            last_modified_at: self.last_modified_at,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::ServiceTemplateBuilder::name)
+    /// - [`arn`](crate::types::builders::ServiceTemplateBuilder::arn)
+    /// - [`created_at`](crate::types::builders::ServiceTemplateBuilder::created_at)
+    /// - [`last_modified_at`](crate::types::builders::ServiceTemplateBuilder::last_modified_at)
+    pub fn build(self) -> ::std::result::Result<crate::types::ServiceTemplate, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ServiceTemplate {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ServiceTemplate",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building ServiceTemplate",
+                )
+            })?,
+            created_at: self.created_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_at",
+                    "created_at was not specified but it is required when building ServiceTemplate",
+                )
+            })?,
+            last_modified_at: self.last_modified_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "last_modified_at",
+                    "last_modified_at was not specified but it is required when building ServiceTemplate",
+                )
+            })?,
             display_name: self.display_name,
             description: self.description,
             recommended_version: self.recommended_version,
             encryption_key: self.encryption_key,
             pipeline_provisioning: self.pipeline_provisioning,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for ServiceTemplateBuilder {

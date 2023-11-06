@@ -34,6 +34,7 @@ pub struct DeleteTransitGatewayPeeringAttachmentInputBuilder {
 }
 impl DeleteTransitGatewayPeeringAttachmentInputBuilder {
     /// <p>The ID of the transit gateway peering attachment.</p>
+    /// This field is required.
     pub fn transit_gateway_attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_attachment_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl DeleteTransitGatewayPeeringAttachmentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_transit_gateway_peering_attachment::DeleteTransitGatewayPeeringAttachmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_transit_gateway_peering_attachment::DeleteTransitGatewayPeeringAttachmentInput {

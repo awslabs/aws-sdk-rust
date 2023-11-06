@@ -51,6 +51,7 @@ pub struct S3LocationBuilder {
 }
 impl S3LocationBuilder {
     /// <p>The S3 bucket of the S3 object.</p>
+    /// This field is required.
     pub fn s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket = ::std::option::Option::Some(input.into());
         self

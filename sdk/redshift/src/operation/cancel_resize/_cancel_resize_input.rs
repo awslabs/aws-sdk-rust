@@ -27,6 +27,7 @@ pub struct CancelResizeInputBuilder {
 }
 impl CancelResizeInputBuilder {
     /// <p>The unique identifier for the cluster that you want to cancel a resize operation for.</p>
+    /// This field is required.
     pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,9 @@ impl CancelResizeInputBuilder {
         &self.cluster_identifier
     }
     /// Consumes the builder and constructs a [`CancelResizeInput`](crate::operation::cancel_resize::CancelResizeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_resize::CancelResizeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::cancel_resize::CancelResizeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_resize::CancelResizeInput {
             cluster_identifier: self.cluster_identifier,
         })

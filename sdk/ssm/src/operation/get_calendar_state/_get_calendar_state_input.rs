@@ -10,8 +10,10 @@ pub struct GetCalendarStateInput {
 }
 impl GetCalendarStateInput {
     /// <p>The names or Amazon Resource Names (ARNs) of the Systems Manager documents (SSM documents) that represent the calendar entries for which you want to get the state.</p>
-    pub fn calendar_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.calendar_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.calendar_names.is_none()`.
+    pub fn calendar_names(&self) -> &[::std::string::String] {
+        self.calendar_names.as_deref().unwrap_or_default()
     }
     /// <p>(Optional) The specific time for which you want to get calendar state information, in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format. If you don't specify a value or <code>AtTime</code>, the current time is used.</p>
     pub fn at_time(&self) -> ::std::option::Option<&str> {
@@ -70,7 +72,7 @@ impl GetCalendarStateInputBuilder {
     /// Consumes the builder and constructs a [`GetCalendarStateInput`](crate::operation::get_calendar_state::GetCalendarStateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_calendar_state::GetCalendarStateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_calendar_state::GetCalendarStateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_calendar_state::GetCalendarStateInput {
             calendar_names: self.calendar_names,
             at_time: self.at_time,

@@ -27,6 +27,7 @@ pub struct DescribeSecurityPolicyInputBuilder {
 }
 impl DescribeSecurityPolicyInputBuilder {
     /// <p>Specifies the name of the security policy that is attached to the server.</p>
+    /// This field is required.
     pub fn security_policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_policy_name = ::std::option::Option::Some(input.into());
         self
@@ -43,8 +44,10 @@ impl DescribeSecurityPolicyInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSecurityPolicyInput`](crate::operation::describe_security_policy::DescribeSecurityPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_security_policy::DescribeSecurityPolicyInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_security_policy::DescribeSecurityPolicyInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_security_policy::DescribeSecurityPolicyInput {
             security_policy_name: self.security_policy_name,
         })

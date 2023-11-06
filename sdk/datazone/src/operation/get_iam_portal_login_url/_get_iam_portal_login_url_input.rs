@@ -27,6 +27,7 @@ pub struct GetIamPortalLoginUrlInputBuilder {
 }
 impl GetIamPortalLoginUrlInputBuilder {
     /// <p>the ID of the Amazon DataZone domain the data portal of which you want to get.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetIamPortalLoginUrlInputBuilder {
     /// Consumes the builder and constructs a [`GetIamPortalLoginUrlInput`](crate::operation::get_iam_portal_login_url::GetIamPortalLoginUrlInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_iam_portal_login_url::GetIamPortalLoginUrlInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_iam_portal_login_url::GetIamPortalLoginUrlInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_iam_portal_login_url::GetIamPortalLoginUrlInput {
             domain_identifier: self.domain_identifier,

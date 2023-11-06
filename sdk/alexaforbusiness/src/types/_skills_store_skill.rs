@@ -37,8 +37,10 @@ impl SkillsStoreSkill {
         self.icon_url.as_deref()
     }
     /// <p>Sample utterances that interact with the skill.</p>
-    pub fn sample_utterances(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.sample_utterances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sample_utterances.is_none()`.
+    pub fn sample_utterances(&self) -> &[::std::string::String] {
+        self.sample_utterances.as_deref().unwrap_or_default()
     }
     /// <p>Information about the skill.</p>
     pub fn skill_details(&self) -> ::std::option::Option<&crate::types::SkillDetails> {

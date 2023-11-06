@@ -27,6 +27,7 @@ pub struct ExportNotebookInputBuilder {
 }
 impl ExportNotebookInputBuilder {
     /// <p>The ID of the notebook to export.</p>
+    /// This field is required.
     pub fn notebook_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl ExportNotebookInputBuilder {
     /// Consumes the builder and constructs a [`ExportNotebookInput`](crate::operation::export_notebook::ExportNotebookInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::export_notebook::ExportNotebookInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::export_notebook::ExportNotebookInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::export_notebook::ExportNotebookInput {
             notebook_id: self.notebook_id,
         })

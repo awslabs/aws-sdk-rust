@@ -51,6 +51,7 @@ pub struct ListLensReviewsInputBuilder {
 }
 impl ListLensReviewsInputBuilder {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    /// This field is required.
     pub fn workload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workload_id = ::std::option::Option::Some(input.into());
         self
@@ -112,7 +113,7 @@ impl ListLensReviewsInputBuilder {
     /// Consumes the builder and constructs a [`ListLensReviewsInput`](crate::operation::list_lens_reviews::ListLensReviewsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_lens_reviews::ListLensReviewsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_lens_reviews::ListLensReviewsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_lens_reviews::ListLensReviewsInput {
             workload_id: self.workload_id,
             milestone_number: self.milestone_number,

@@ -62,6 +62,7 @@ impl GetManagedPrefixListAssociationsInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the prefix list.</p>
+    /// This field is required.
     pub fn prefix_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix_list_id = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +109,7 @@ impl GetManagedPrefixListAssociationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_managed_prefix_list_associations::GetManagedPrefixListAssociationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_managed_prefix_list_associations::GetManagedPrefixListAssociationsInput {

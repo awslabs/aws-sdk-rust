@@ -41,6 +41,7 @@ pub struct UpdateNotificationSettingsInputBuilder {
 }
 impl UpdateNotificationSettingsInputBuilder {
     /// <p> The ID of the HIT type whose notification specification is being updated. </p>
+    /// This field is required.
     pub fn hit_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hit_type_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl UpdateNotificationSettingsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_notification_settings::UpdateNotificationSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_notification_settings::UpdateNotificationSettingsInput {
             hit_type_id: self.hit_type_id,

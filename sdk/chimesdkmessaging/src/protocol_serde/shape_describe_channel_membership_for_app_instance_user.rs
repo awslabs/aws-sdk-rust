@@ -38,8 +38,8 @@ pub fn de_describe_channel_membership_for_app_instance_user_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ForbiddenException" => crate::operation::describe_channel_membership_for_app_instance_user::DescribeChannelMembershipForAppInstanceUserError::ForbiddenException({
@@ -54,8 +54,8 @@ pub fn de_describe_channel_membership_for_app_instance_user_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ServiceFailureException" => crate::operation::describe_channel_membership_for_app_instance_user::DescribeChannelMembershipForAppInstanceUserError::ServiceFailureException({
@@ -70,8 +70,8 @@ pub fn de_describe_channel_membership_for_app_instance_user_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::describe_channel_membership_for_app_instance_user::DescribeChannelMembershipForAppInstanceUserError::ServiceUnavailableException({
@@ -86,8 +86,8 @@ pub fn de_describe_channel_membership_for_app_instance_user_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ThrottledClientException" => crate::operation::describe_channel_membership_for_app_instance_user::DescribeChannelMembershipForAppInstanceUserError::ThrottledClientException({
@@ -102,8 +102,8 @@ pub fn de_describe_channel_membership_for_app_instance_user_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "UnauthorizedClientException" => crate::operation::describe_channel_membership_for_app_instance_user::DescribeChannelMembershipForAppInstanceUserError::UnauthorizedClientException({
@@ -118,8 +118,8 @@ pub fn de_describe_channel_membership_for_app_instance_user_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::describe_channel_membership_for_app_instance_user::DescribeChannelMembershipForAppInstanceUserError::generic(generic)
@@ -154,13 +154,13 @@ pub fn de_describe_channel_membership_for_app_instance_user_http_response(
 pub fn ser_describe_channel_membership_for_app_instance_user_headers(
     input: &crate::operation::describe_channel_membership_for_app_instance_user::DescribeChannelMembershipForAppInstanceUserInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.chime_bearer {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "chime_bearer",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )

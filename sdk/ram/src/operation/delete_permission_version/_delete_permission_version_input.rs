@@ -51,6 +51,7 @@ pub struct DeletePermissionVersionInputBuilder {
 }
 impl DeletePermissionVersionInputBuilder {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the permission with the version you want to delete.</p>
+    /// This field is required.
     pub fn permission_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permission_arn = ::std::option::Option::Some(input.into());
         self
@@ -68,6 +69,7 @@ impl DeletePermissionVersionInputBuilder {
     /// <p>You can't delete the default version for a customer managed permission.</p>
     /// <p>You can't delete a version if it's the only version of the permission. You must either first create another version, or delete the permission completely.</p>
     /// <p>You can't delete a version if it is attached to any resource shares. If the version is the default, you must first use <code>SetDefaultPermissionVersion</code> to set a different version as the default for the customer managed permission, and then use <code>AssociateResourceSharePermission</code> to update your resource shares to use the new default version.</p>
+    /// This field is required.
     pub fn permission_version(mut self, input: i32) -> Self {
         self.permission_version = ::std::option::Option::Some(input);
         self
@@ -112,7 +114,7 @@ impl DeletePermissionVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_permission_version::DeletePermissionVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_permission_version::DeletePermissionVersionInput {
             permission_arn: self.permission_arn,

@@ -15,8 +15,10 @@ impl CustomAuthConfig {
         self.custom_authentication_type.as_deref()
     }
     /// <p>Information about authentication parameters required for authentication.</p>
-    pub fn auth_parameters(&self) -> ::std::option::Option<&[crate::types::AuthParameter]> {
-        self.auth_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auth_parameters.is_none()`.
+    pub fn auth_parameters(&self) -> &[crate::types::AuthParameter] {
+        self.auth_parameters.as_deref().unwrap_or_default()
     }
 }
 impl CustomAuthConfig {

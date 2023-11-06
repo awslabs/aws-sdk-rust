@@ -123,6 +123,7 @@ pub struct UpdateResolverInputBuilder {
 }
 impl UpdateResolverInputBuilder {
     /// <p>The API ID.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -137,6 +138,7 @@ impl UpdateResolverInputBuilder {
         &self.api_id
     }
     /// <p>The new type name.</p>
+    /// This field is required.
     pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_name = ::std::option::Option::Some(input.into());
         self
@@ -151,6 +153,7 @@ impl UpdateResolverInputBuilder {
         &self.type_name
     }
     /// <p>The new field name.</p>
+    /// This field is required.
     pub fn field_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.field_name = ::std::option::Option::Some(input.into());
         self
@@ -325,7 +328,7 @@ impl UpdateResolverInputBuilder {
     /// Consumes the builder and constructs a [`UpdateResolverInput`](crate::operation::update_resolver::UpdateResolverInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_resolver::UpdateResolverInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_resolver::UpdateResolverInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_resolver::UpdateResolverInput {
             api_id: self.api_id,
             type_name: self.type_name,

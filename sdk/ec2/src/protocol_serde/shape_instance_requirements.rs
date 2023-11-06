@@ -3,7 +3,7 @@
 pub fn ser_instance_requirements(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::InstanceRequirements,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("VCpuCount");
     if let Some(var_2) = &input.v_cpu_count {
@@ -11,8 +11,8 @@ pub fn ser_instance_requirements(
     }
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("MemoryMiB");
-    if let Some(var_4) = &input.memory_mi_b {
-        crate::protocol_serde::shape_memory_mi_b::ser_memory_mi_b(scope_3, var_4)?;
+    if let Some(var_4) = &input.memory_mib {
+        crate::protocol_serde::shape_memory_mib::ser_memory_mib(scope_3, var_4)?;
     }
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("CpuManufacturerSet");
@@ -27,8 +27,8 @@ pub fn ser_instance_requirements(
     }
     #[allow(unused_mut)]
     let mut scope_10 = writer.prefix("MemoryGiBPerVCpu");
-    if let Some(var_11) = &input.memory_gi_b_per_v_cpu {
-        crate::protocol_serde::shape_memory_gi_b_per_v_cpu::ser_memory_gi_b_per_v_cpu(scope_10, var_11)?;
+    if let Some(var_11) = &input.memory_gib_per_v_cpu {
+        crate::protocol_serde::shape_memory_gib_per_v_cpu::ser_memory_gib_per_v_cpu(scope_10, var_11)?;
     }
     #[allow(unused_mut)]
     let mut scope_12 = writer.prefix("ExcludedInstanceTypeSet");
@@ -154,8 +154,8 @@ pub fn ser_instance_requirements(
     }
     #[allow(unused_mut)]
     let mut scope_62 = writer.prefix("AcceleratorTotalMemoryMiB");
-    if let Some(var_63) = &input.accelerator_total_memory_mi_b {
-        crate::protocol_serde::shape_accelerator_total_memory_mi_b::ser_accelerator_total_memory_mi_b(scope_62, var_63)?;
+    if let Some(var_63) = &input.accelerator_total_memory_mib {
+        crate::protocol_serde::shape_accelerator_total_memory_mib::ser_accelerator_total_memory_mib(scope_62, var_63)?;
     }
     #[allow(unused_mut)]
     let mut scope_64 = writer.prefix("NetworkBandwidthGbps");
@@ -176,6 +176,7 @@ pub fn ser_instance_requirements(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_instance_requirements(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::InstanceRequirements, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -196,11 +197,11 @@ pub fn de_instance_requirements(
             s if s.matches("memoryMiB") /* MemoryMiB com.amazonaws.ec2#InstanceRequirements$MemoryMiB */ =>  {
                 let var_72 =
                     Some(
-                        crate::protocol_serde::shape_memory_mi_b::de_memory_mi_b(&mut tag)
+                        crate::protocol_serde::shape_memory_mib::de_memory_mib(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_memory_mi_b(var_72);
+                builder = builder.set_memory_mib(var_72);
             }
             ,
             s if s.matches("cpuManufacturerSet") /* CpuManufacturers com.amazonaws.ec2#InstanceRequirements$CpuManufacturers */ =>  {
@@ -216,11 +217,11 @@ pub fn de_instance_requirements(
             s if s.matches("memoryGiBPerVCpu") /* MemoryGiBPerVCpu com.amazonaws.ec2#InstanceRequirements$MemoryGiBPerVCpu */ =>  {
                 let var_74 =
                     Some(
-                        crate::protocol_serde::shape_memory_gi_b_per_v_cpu::de_memory_gi_b_per_v_cpu(&mut tag)
+                        crate::protocol_serde::shape_memory_gib_per_v_cpu::de_memory_gib_per_v_cpu(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_memory_gi_b_per_v_cpu(var_74);
+                builder = builder.set_memory_gib_per_v_cpu(var_74);
             }
             ,
             s if s.matches("excludedInstanceTypeSet") /* ExcludedInstanceTypes com.amazonaws.ec2#InstanceRequirements$ExcludedInstanceTypes */ =>  {
@@ -413,11 +414,11 @@ pub fn de_instance_requirements(
             s if s.matches("acceleratorTotalMemoryMiB") /* AcceleratorTotalMemoryMiB com.amazonaws.ec2#InstanceRequirements$AcceleratorTotalMemoryMiB */ =>  {
                 let var_91 =
                     Some(
-                        crate::protocol_serde::shape_accelerator_total_memory_mi_b::de_accelerator_total_memory_mi_b(&mut tag)
+                        crate::protocol_serde::shape_accelerator_total_memory_mib::de_accelerator_total_memory_mib(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_accelerator_total_memory_mi_b(var_91);
+                builder = builder.set_accelerator_total_memory_mib(var_91);
             }
             ,
             s if s.matches("networkBandwidthGbps") /* NetworkBandwidthGbps com.amazonaws.ec2#InstanceRequirements$NetworkBandwidthGbps */ =>  {

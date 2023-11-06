@@ -9,8 +9,10 @@ pub struct ClassicLoadBalancersConfig {
 }
 impl ClassicLoadBalancersConfig {
     /// <p>One or more Classic Load Balancers.</p>
-    pub fn classic_load_balancers(&self) -> ::std::option::Option<&[crate::types::ClassicLoadBalancer]> {
-        self.classic_load_balancers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.classic_load_balancers.is_none()`.
+    pub fn classic_load_balancers(&self) -> &[crate::types::ClassicLoadBalancer] {
+        self.classic_load_balancers.as_deref().unwrap_or_default()
     }
 }
 impl ClassicLoadBalancersConfig {

@@ -58,8 +58,10 @@ impl CreateAutoScalingConfigurationInput {
         self.max_size
     }
     /// <p>A list of metadata items that you can associate with your auto scaling configuration resource. A tag is a key-value pair.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateAutoScalingConfigurationInput {
@@ -90,6 +92,7 @@ impl CreateAutoScalingConfigurationInputBuilder {
     /// <li> <p>If you delete the auto scaling configuration you can create another custom auto scaling configuration with the same <code>DefaultConfiguration</code> name. The original <code>DefaultConfiguration</code> resource provided by App Runner remains in your account unless you make changes to it.</p> </li>
     /// </ul>
     /// </note>
+    /// This field is required.
     pub fn auto_scaling_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_configuration_name = ::std::option::Option::Some(input.into());
         self
@@ -200,7 +203,7 @@ impl CreateAutoScalingConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_auto_scaling_configuration::CreateAutoScalingConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_auto_scaling_configuration::CreateAutoScalingConfigurationInput {
             auto_scaling_configuration_name: self.auto_scaling_configuration_name,

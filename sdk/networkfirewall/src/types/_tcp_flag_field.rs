@@ -10,7 +10,7 @@ pub struct TcpFlagField {
     /// <li> <p>The ones that are set in this flags setting must be set in the packet. </p> </li>
     /// <li> <p>The ones that are not set in this flags setting must also not be set in the packet. </p> </li>
     /// </ul>
-    pub flags: ::std::option::Option<::std::vec::Vec<crate::types::TcpFlag>>,
+    pub flags: ::std::vec::Vec<crate::types::TcpFlag>,
     /// <p>The set of flags to consider in the inspection. To inspect all flags in the valid values list, leave this with no setting.</p>
     pub masks: ::std::option::Option<::std::vec::Vec<crate::types::TcpFlag>>,
 }
@@ -21,12 +21,15 @@ impl TcpFlagField {
     /// <li> <p>The ones that are set in this flags setting must be set in the packet. </p> </li>
     /// <li> <p>The ones that are not set in this flags setting must also not be set in the packet. </p> </li>
     /// </ul>
-    pub fn flags(&self) -> ::std::option::Option<&[crate::types::TcpFlag]> {
-        self.flags.as_deref()
+    pub fn flags(&self) -> &[crate::types::TcpFlag] {
+        use std::ops::Deref;
+        self.flags.deref()
     }
     /// <p>The set of flags to consider in the inspection. To inspect all flags in the valid values list, leave this with no setting.</p>
-    pub fn masks(&self) -> ::std::option::Option<&[crate::types::TcpFlag]> {
-        self.masks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.masks.is_none()`.
+    pub fn masks(&self) -> &[crate::types::TcpFlag] {
+        self.masks.as_deref().unwrap_or_default()
     }
 }
 impl TcpFlagField {
@@ -100,10 +103,17 @@ impl TcpFlagFieldBuilder {
         &self.masks
     }
     /// Consumes the builder and constructs a [`TcpFlagField`](crate::types::TcpFlagField).
-    pub fn build(self) -> crate::types::TcpFlagField {
-        crate::types::TcpFlagField {
-            flags: self.flags,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`flags`](crate::types::builders::TcpFlagFieldBuilder::flags)
+    pub fn build(self) -> ::std::result::Result<crate::types::TcpFlagField, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TcpFlagField {
+            flags: self.flags.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "flags",
+                    "flags was not specified but it is required when building TcpFlagField",
+                )
+            })?,
             masks: self.masks,
-        }
+        })
     }
 }

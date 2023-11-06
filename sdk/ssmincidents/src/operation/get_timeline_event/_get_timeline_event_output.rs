@@ -34,6 +34,7 @@ pub struct GetTimelineEventOutputBuilder {
 }
 impl GetTimelineEventOutputBuilder {
     /// <p>Details about the timeline event.</p>
+    /// This field is required.
     pub fn event(mut self, input: crate::types::TimelineEvent) -> Self {
         self.event = ::std::option::Option::Some(input);
         self

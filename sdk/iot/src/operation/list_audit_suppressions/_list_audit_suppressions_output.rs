@@ -11,8 +11,10 @@ pub struct ListAuditSuppressionsOutput {
 }
 impl ListAuditSuppressionsOutput {
     /// <p> List of audit suppressions. </p>
-    pub fn suppressions(&self) -> ::std::option::Option<&[crate::types::AuditSuppression]> {
-        self.suppressions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.suppressions.is_none()`.
+    pub fn suppressions(&self) -> &[crate::types::AuditSuppression] {
+        self.suppressions.as_deref().unwrap_or_default()
     }
     /// <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

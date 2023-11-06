@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetProject`](crate::operation::get_project::builders::GetProjectFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`space_name(impl Into<String>)`](crate::operation::get_project::builders::GetProjectFluentBuilder::space_name) / [`set_space_name(Option<String>)`](crate::operation::get_project::builders::GetProjectFluentBuilder::set_space_name): <p>The name of the space.</p>
-    ///   - [`name(impl Into<String>)`](crate::operation::get_project::builders::GetProjectFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_project::builders::GetProjectFluentBuilder::set_name): <p>The name of the project in the space.</p>
+    ///   - [`space_name(impl Into<String>)`](crate::operation::get_project::builders::GetProjectFluentBuilder::space_name) / [`set_space_name(Option<String>)`](crate::operation::get_project::builders::GetProjectFluentBuilder::set_space_name):<br>required: **true**<br><p>The name of the space.</p><br>
+    ///   - [`name(impl Into<String>)`](crate::operation::get_project::builders::GetProjectFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_project::builders::GetProjectFluentBuilder::set_name):<br>required: **true**<br><p>The name of the project in the space.</p><br>
     /// - On success, responds with [`GetProjectOutput`](crate::operation::get_project::GetProjectOutput) with field(s):
     ///   - [`space_name(Option<String>)`](crate::operation::get_project::GetProjectOutput::space_name): <p>The name of the space.</p>
-    ///   - [`name(Option<String>)`](crate::operation::get_project::GetProjectOutput::name): <p>The name of the project in the space.</p>
+    ///   - [`name(String)`](crate::operation::get_project::GetProjectOutput::name): <p>The name of the project in the space.</p>
     ///   - [`display_name(Option<String>)`](crate::operation::get_project::GetProjectOutput::display_name): <p>The friendly name of the project displayed to users in Amazon CodeCatalyst.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_project::GetProjectOutput::description): <p>The description of the project.</p>
     /// - On failure, responds with [`SdkError<GetProjectError>`](crate::operation::get_project::GetProjectError)

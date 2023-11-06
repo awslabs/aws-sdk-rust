@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BotLocaleImportSpecification {
     /// <p>The identifier of the bot to import the locale to.</p>
-    pub bot_id: ::std::option::Option<::std::string::String>,
+    pub bot_id: ::std::string::String,
     /// <p>The version of the bot to import the locale to. This can only be the <code>DRAFT</code> version of the bot.</p>
-    pub bot_version: ::std::option::Option<::std::string::String>,
+    pub bot_version: ::std::string::String,
     /// <p>The identifier of the language and locale that the bot will be used in. The string must match one of the supported locales. All of the intents, slot types, and slots used in the bot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-    pub locale_id: ::std::option::Option<::std::string::String>,
+    pub locale_id: ::std::string::String,
     /// <p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot. </p>
     /// <p>For example, suppose a bot is configured with the confidence threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the <code>PostText</code> operation would be:</p>
     /// <ul>
@@ -24,16 +24,19 @@ pub struct BotLocaleImportSpecification {
 }
 impl BotLocaleImportSpecification {
     /// <p>The identifier of the bot to import the locale to.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
-        self.bot_id.as_deref()
+    pub fn bot_id(&self) -> &str {
+        use std::ops::Deref;
+        self.bot_id.deref()
     }
     /// <p>The version of the bot to import the locale to. This can only be the <code>DRAFT</code> version of the bot.</p>
-    pub fn bot_version(&self) -> ::std::option::Option<&str> {
-        self.bot_version.as_deref()
+    pub fn bot_version(&self) -> &str {
+        use std::ops::Deref;
+        self.bot_version.deref()
     }
     /// <p>The identifier of the language and locale that the bot will be used in. The string must match one of the supported locales. All of the intents, slot types, and slots used in the bot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-    pub fn locale_id(&self) -> ::std::option::Option<&str> {
-        self.locale_id.as_deref()
+    pub fn locale_id(&self) -> &str {
+        use std::ops::Deref;
+        self.locale_id.deref()
     }
     /// <p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot. </p>
     /// <p>For example, suppose a bot is configured with the confidence threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the <code>PostText</code> operation would be:</p>
@@ -70,6 +73,7 @@ pub struct BotLocaleImportSpecificationBuilder {
 }
 impl BotLocaleImportSpecificationBuilder {
     /// <p>The identifier of the bot to import the locale to.</p>
+    /// This field is required.
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +88,7 @@ impl BotLocaleImportSpecificationBuilder {
         &self.bot_id
     }
     /// <p>The version of the bot to import the locale to. This can only be the <code>DRAFT</code> version of the bot.</p>
+    /// This field is required.
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +103,7 @@ impl BotLocaleImportSpecificationBuilder {
         &self.bot_version
     }
     /// <p>The identifier of the language and locale that the bot will be used in. The string must match one of the supported locales. All of the intents, slot types, and slots used in the bot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// This field is required.
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
         self
@@ -161,13 +167,32 @@ impl BotLocaleImportSpecificationBuilder {
         &self.voice_settings
     }
     /// Consumes the builder and constructs a [`BotLocaleImportSpecification`](crate::types::BotLocaleImportSpecification).
-    pub fn build(self) -> crate::types::BotLocaleImportSpecification {
-        crate::types::BotLocaleImportSpecification {
-            bot_id: self.bot_id,
-            bot_version: self.bot_version,
-            locale_id: self.locale_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bot_id`](crate::types::builders::BotLocaleImportSpecificationBuilder::bot_id)
+    /// - [`bot_version`](crate::types::builders::BotLocaleImportSpecificationBuilder::bot_version)
+    /// - [`locale_id`](crate::types::builders::BotLocaleImportSpecificationBuilder::locale_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::BotLocaleImportSpecification, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::BotLocaleImportSpecification {
+            bot_id: self.bot_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "bot_id",
+                    "bot_id was not specified but it is required when building BotLocaleImportSpecification",
+                )
+            })?,
+            bot_version: self.bot_version.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "bot_version",
+                    "bot_version was not specified but it is required when building BotLocaleImportSpecification",
+                )
+            })?,
+            locale_id: self.locale_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "locale_id",
+                    "locale_id was not specified but it is required when building BotLocaleImportSpecification",
+                )
+            })?,
             nlu_intent_confidence_threshold: self.nlu_intent_confidence_threshold,
             voice_settings: self.voice_settings,
-        }
+        })
     }
 }

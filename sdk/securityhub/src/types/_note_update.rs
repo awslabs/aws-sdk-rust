@@ -35,6 +35,7 @@ pub struct NoteUpdateBuilder {
 }
 impl NoteUpdateBuilder {
     /// <p>The updated note text.</p>
+    /// This field is required.
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl NoteUpdateBuilder {
         &self.text
     }
     /// <p>The principal that updated the note.</p>
+    /// This field is required.
     pub fn updated_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.updated_by = ::std::option::Option::Some(input.into());
         self

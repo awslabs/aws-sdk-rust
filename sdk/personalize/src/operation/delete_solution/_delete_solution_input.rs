@@ -27,6 +27,7 @@ pub struct DeleteSolutionInputBuilder {
 }
 impl DeleteSolutionInputBuilder {
     /// <p>The ARN of the solution to delete.</p>
+    /// This field is required.
     pub fn solution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.solution_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteSolutionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSolutionInput`](crate::operation::delete_solution::DeleteSolutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_solution::DeleteSolutionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_solution::DeleteSolutionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_solution::DeleteSolutionInput {
             solution_arn: self.solution_arn,
         })

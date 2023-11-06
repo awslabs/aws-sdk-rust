@@ -12,8 +12,10 @@ pub struct DescribeReportDefinitionsOutput {
 }
 impl DescribeReportDefinitionsOutput {
     /// <p>A list of AWS Cost and Usage reports owned by the account.</p>
-    pub fn report_definitions(&self) -> ::std::option::Option<&[crate::types::ReportDefinition]> {
-        self.report_definitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.report_definitions.is_none()`.
+    pub fn report_definitions(&self) -> &[crate::types::ReportDefinition] {
+        self.report_definitions.as_deref().unwrap_or_default()
     }
     /// <p>A generic string.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

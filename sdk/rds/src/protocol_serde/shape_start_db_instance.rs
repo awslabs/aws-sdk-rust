@@ -62,22 +62,25 @@ pub fn de_start_db_instance_http_error(
             }
             tmp
         }),
-        "DBSubnetGroupDoesNotCoverEnoughAZs" => {
-            crate::operation::start_db_instance::StartDBInstanceError::DbSubnetGroupDoesNotCoverEnoughAZs({
+        "DBSubnetGroupDoesNotCoverEnoughAZs" => crate::operation::start_db_instance::StartDBInstanceError::DbSubnetGroupDoesNotCoverEnoughAZs({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::DbSubnetGroupDoesNotCoverEnoughAZsBuilder::default();
-                    output = crate::protocol_serde::shape_db_subnet_group_does_not_cover_enough_a_zs::de_db_subnet_group_does_not_cover_enough_a_zs_xml_err(_response_body, output).map_err(crate::operation::start_db_instance::StartDBInstanceError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
+                let mut output = crate::types::error::builders::DbSubnetGroupDoesNotCoverEnoughAZsBuilder::default();
+                output =
+                    crate::protocol_serde::shape_db_subnet_group_does_not_cover_enough_azs::de_db_subnet_group_does_not_cover_enough_azs_xml_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::start_db_instance::StartDBInstanceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "DBSubnetGroupNotFoundFault" => crate::operation::start_db_instance::StartDBInstanceError::DbSubnetGroupNotFoundFault({
             #[allow(unused_mut)]
             let mut tmp = {

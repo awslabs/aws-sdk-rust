@@ -20,7 +20,7 @@ pub struct CreateEnvironmentInput {
     /// <p>Optional. The storage configurations for this runtime environment.</p>
     pub storage_configurations: ::std::option::Option<::std::vec::Vec<crate::types::StorageConfiguration>>,
     /// <p>Specifies whether the runtime environment is publicly accessible.</p>
-    pub publicly_accessible: bool,
+    pub publicly_accessible: ::std::option::Option<bool>,
     /// <p>The details of a high availability configuration for this runtime environment.</p>
     pub high_availability_config: ::std::option::Option<crate::types::HighAvailabilityConfig>,
     /// <p>The tags for the runtime environment.</p>
@@ -54,19 +54,25 @@ impl CreateEnvironmentInput {
         self.engine_version.as_deref()
     }
     /// <p>The list of subnets associated with the VPC for this runtime environment.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        self.subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>The list of security groups for the VPC associated with this runtime environment.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>Optional. The storage configurations for this runtime environment.</p>
-    pub fn storage_configurations(&self) -> ::std::option::Option<&[crate::types::StorageConfiguration]> {
-        self.storage_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.storage_configurations.is_none()`.
+    pub fn storage_configurations(&self) -> &[crate::types::StorageConfiguration] {
+        self.storage_configurations.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether the runtime environment is publicly accessible.</p>
-    pub fn publicly_accessible(&self) -> bool {
+    pub fn publicly_accessible(&self) -> ::std::option::Option<bool> {
         self.publicly_accessible
     }
     /// <p>The details of a high availability configuration for this runtime environment.</p>
@@ -118,6 +124,7 @@ pub struct CreateEnvironmentInputBuilder {
 }
 impl CreateEnvironmentInputBuilder {
     /// <p>The name of the runtime environment. Must be unique within the account.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +139,7 @@ impl CreateEnvironmentInputBuilder {
         &self.name
     }
     /// <p>The type of instance for the runtime environment.</p>
+    /// This field is required.
     pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
@@ -160,6 +168,7 @@ impl CreateEnvironmentInputBuilder {
         &self.description
     }
     /// <p>The engine type for the runtime environment.</p>
+    /// This field is required.
     pub fn engine_type(mut self, input: crate::types::EngineType) -> Self {
         self.engine_type = ::std::option::Option::Some(input);
         self
@@ -340,7 +349,7 @@ impl CreateEnvironmentInputBuilder {
     /// Consumes the builder and constructs a [`CreateEnvironmentInput`](crate::operation::create_environment::CreateEnvironmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_environment::CreateEnvironmentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_environment::CreateEnvironmentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_environment::CreateEnvironmentInput {
             name: self.name,
             instance_type: self.instance_type,
@@ -350,7 +359,7 @@ impl CreateEnvironmentInputBuilder {
             subnet_ids: self.subnet_ids,
             security_group_ids: self.security_group_ids,
             storage_configurations: self.storage_configurations,
-            publicly_accessible: self.publicly_accessible.unwrap_or_default(),
+            publicly_accessible: self.publicly_accessible,
             high_availability_config: self.high_availability_config,
             tags: self.tags,
             preferred_maintenance_window: self.preferred_maintenance_window,

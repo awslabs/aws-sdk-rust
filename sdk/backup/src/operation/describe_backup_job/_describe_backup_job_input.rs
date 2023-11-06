@@ -27,6 +27,7 @@ pub struct DescribeBackupJobInputBuilder {
 }
 impl DescribeBackupJobInputBuilder {
     /// <p>Uniquely identifies a request to Backup to back up a resource.</p>
+    /// This field is required.
     pub fn backup_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_job_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeBackupJobInputBuilder {
     /// Consumes the builder and constructs a [`DescribeBackupJobInput`](crate::operation::describe_backup_job::DescribeBackupJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_backup_job::DescribeBackupJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_backup_job::DescribeBackupJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_backup_job::DescribeBackupJobInput {
             backup_job_id: self.backup_job_id,
         })

@@ -9,7 +9,7 @@ pub struct TargetTrackingMetricDataQuery {
     /// <p>Conditional: Within each <code>TargetTrackingMetricDataQuery</code> object, you must specify either <code>Expression</code> or <code>MetricStat</code>, but not both.</p>
     pub expression: ::std::option::Option<::std::string::String>,
     /// <p>A short name that identifies the object's results in the response. This name must be unique among all <code>MetricDataQuery</code> objects specified for a single scaling policy. If you are performing math expressions on this set of data, this name represents that data and can serve as a variable in the mathematical expression. The valid characters are letters, numbers, and underscores. The first character must be a lowercase letter. </p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>A human-readable label for this metric or expression. This is especially useful if this is a math expression, so that you know what the value represents.</p>
     pub label: ::std::option::Option<::std::string::String>,
     /// <p>Information about the metric data to return.</p>
@@ -27,8 +27,9 @@ impl TargetTrackingMetricDataQuery {
         self.expression.as_deref()
     }
     /// <p>A short name that identifies the object's results in the response. This name must be unique among all <code>MetricDataQuery</code> objects specified for a single scaling policy. If you are performing math expressions on this set of data, this name represents that data and can serve as a variable in the mathematical expression. The valid characters are letters, numbers, and underscores. The first character must be a lowercase letter. </p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>A human-readable label for this metric or expression. This is especially useful if this is a math expression, so that you know what the value represents.</p>
     pub fn label(&self) -> ::std::option::Option<&str> {
@@ -82,6 +83,7 @@ impl TargetTrackingMetricDataQueryBuilder {
         &self.expression
     }
     /// <p>A short name that identifies the object's results in the response. This name must be unique among all <code>MetricDataQuery</code> objects specified for a single scaling policy. If you are performing math expressions on this set of data, this name represents that data and can serve as a variable in the mathematical expression. The valid characters are letters, numbers, and underscores. The first character must be a lowercase letter. </p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -147,13 +149,20 @@ impl TargetTrackingMetricDataQueryBuilder {
         &self.return_data
     }
     /// Consumes the builder and constructs a [`TargetTrackingMetricDataQuery`](crate::types::TargetTrackingMetricDataQuery).
-    pub fn build(self) -> crate::types::TargetTrackingMetricDataQuery {
-        crate::types::TargetTrackingMetricDataQuery {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::TargetTrackingMetricDataQueryBuilder::id)
+    pub fn build(self) -> ::std::result::Result<crate::types::TargetTrackingMetricDataQuery, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TargetTrackingMetricDataQuery {
             expression: self.expression,
-            id: self.id,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building TargetTrackingMetricDataQuery",
+                )
+            })?,
             label: self.label,
             metric_stat: self.metric_stat,
             return_data: self.return_data,
-        }
+        })
     }
 }

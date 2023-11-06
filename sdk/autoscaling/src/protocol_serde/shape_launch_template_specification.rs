@@ -3,7 +3,7 @@
 pub fn ser_launch_template_specification(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::LaunchTemplateSpecification,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("LaunchTemplateId");
     if let Some(var_2) = &input.launch_template_id {
@@ -22,6 +22,7 @@ pub fn ser_launch_template_specification(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_launch_template_specification(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::LaunchTemplateSpecification, ::aws_smithy_xml::decode::XmlDecodeError> {

@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAppAuthorizationsOutput {
     /// <p>Contains a list of app authorization summaries.</p>
-    pub app_authorization_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::AppAuthorizationSummary>>,
+    pub app_authorization_summary_list: ::std::vec::Vec<crate::types::AppAuthorizationSummary>,
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken error</i>.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAppAuthorizationsOutput {
     /// <p>Contains a list of app authorization summaries.</p>
-    pub fn app_authorization_summary_list(&self) -> ::std::option::Option<&[crate::types::AppAuthorizationSummary]> {
-        self.app_authorization_summary_list.as_deref()
+    pub fn app_authorization_summary_list(&self) -> &[crate::types::AppAuthorizationSummary] {
+        use std::ops::Deref;
+        self.app_authorization_summary_list.deref()
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken error</i>.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -87,11 +88,21 @@ impl ListAppAuthorizationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAppAuthorizationsOutput`](crate::operation::list_app_authorizations::ListAppAuthorizationsOutput).
-    pub fn build(self) -> crate::operation::list_app_authorizations::ListAppAuthorizationsOutput {
-        crate::operation::list_app_authorizations::ListAppAuthorizationsOutput {
-            app_authorization_summary_list: self.app_authorization_summary_list,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`app_authorization_summary_list`](crate::operation::list_app_authorizations::builders::ListAppAuthorizationsOutputBuilder::app_authorization_summary_list)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_app_authorizations::ListAppAuthorizationsOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_app_authorizations::ListAppAuthorizationsOutput {
+            app_authorization_summary_list: self.app_authorization_summary_list.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "app_authorization_summary_list",
+                    "app_authorization_summary_list was not specified but it is required when building ListAppAuthorizationsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

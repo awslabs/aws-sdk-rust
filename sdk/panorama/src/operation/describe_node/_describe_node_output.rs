@@ -4,71 +4,78 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeNodeOutput {
     /// <p>The node's ID.</p>
-    pub node_id: ::std::option::Option<::std::string::String>,
+    pub node_id: ::std::string::String,
     /// <p>The node's name.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The node's category.</p>
-    pub category: ::std::option::Option<crate::types::NodeCategory>,
+    pub category: crate::types::NodeCategory,
     /// <p>The account ID of the node's owner.</p>
-    pub owner_account: ::std::option::Option<::std::string::String>,
+    pub owner_account: ::std::string::String,
     /// <p>The node's package name.</p>
-    pub package_name: ::std::option::Option<::std::string::String>,
+    pub package_name: ::std::string::String,
     /// <p>The node's package ID.</p>
-    pub package_id: ::std::option::Option<::std::string::String>,
+    pub package_id: ::std::string::String,
     /// <p>The node's ARN.</p>
     pub package_arn: ::std::option::Option<::std::string::String>,
     /// <p>The node's package version.</p>
-    pub package_version: ::std::option::Option<::std::string::String>,
+    pub package_version: ::std::string::String,
     /// <p>The node's patch version.</p>
-    pub patch_version: ::std::option::Option<::std::string::String>,
+    pub patch_version: ::std::string::String,
     /// <p>The node's interface.</p>
     pub node_interface: ::std::option::Option<crate::types::NodeInterface>,
     /// <p>The node's asset name.</p>
     pub asset_name: ::std::option::Option<::std::string::String>,
     /// <p>The node's description.</p>
-    pub description: ::std::option::Option<::std::string::String>,
+    pub description: ::std::string::String,
     /// <p>When the node was created.</p>
-    pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_time: ::aws_smithy_types::DateTime,
     /// <p>When the node was updated.</p>
-    pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub last_updated_time: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
 impl DescribeNodeOutput {
     /// <p>The node's ID.</p>
-    pub fn node_id(&self) -> ::std::option::Option<&str> {
-        self.node_id.as_deref()
+    pub fn node_id(&self) -> &str {
+        use std::ops::Deref;
+        self.node_id.deref()
     }
     /// <p>The node's name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The node's category.</p>
-    pub fn category(&self) -> ::std::option::Option<&crate::types::NodeCategory> {
-        self.category.as_ref()
+    pub fn category(&self) -> &crate::types::NodeCategory {
+        &self.category
     }
     /// <p>The account ID of the node's owner.</p>
-    pub fn owner_account(&self) -> ::std::option::Option<&str> {
-        self.owner_account.as_deref()
+    pub fn owner_account(&self) -> &str {
+        use std::ops::Deref;
+        self.owner_account.deref()
     }
     /// <p>The node's package name.</p>
-    pub fn package_name(&self) -> ::std::option::Option<&str> {
-        self.package_name.as_deref()
+    pub fn package_name(&self) -> &str {
+        use std::ops::Deref;
+        self.package_name.deref()
     }
     /// <p>The node's package ID.</p>
-    pub fn package_id(&self) -> ::std::option::Option<&str> {
-        self.package_id.as_deref()
+    pub fn package_id(&self) -> &str {
+        use std::ops::Deref;
+        self.package_id.deref()
     }
     /// <p>The node's ARN.</p>
     pub fn package_arn(&self) -> ::std::option::Option<&str> {
         self.package_arn.as_deref()
     }
     /// <p>The node's package version.</p>
-    pub fn package_version(&self) -> ::std::option::Option<&str> {
-        self.package_version.as_deref()
+    pub fn package_version(&self) -> &str {
+        use std::ops::Deref;
+        self.package_version.deref()
     }
     /// <p>The node's patch version.</p>
-    pub fn patch_version(&self) -> ::std::option::Option<&str> {
-        self.patch_version.as_deref()
+    pub fn patch_version(&self) -> &str {
+        use std::ops::Deref;
+        self.patch_version.deref()
     }
     /// <p>The node's interface.</p>
     pub fn node_interface(&self) -> ::std::option::Option<&crate::types::NodeInterface> {
@@ -79,16 +86,17 @@ impl DescribeNodeOutput {
         self.asset_name.as_deref()
     }
     /// <p>The node's description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
-        self.description.as_deref()
+    pub fn description(&self) -> &str {
+        use std::ops::Deref;
+        self.description.deref()
     }
     /// <p>When the node was created.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_time.as_ref()
+    pub fn created_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_time
     }
     /// <p>When the node was updated.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.last_updated_time.as_ref()
+    pub fn last_updated_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.last_updated_time
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeNodeOutput {
@@ -125,6 +133,7 @@ pub struct DescribeNodeOutputBuilder {
 }
 impl DescribeNodeOutputBuilder {
     /// <p>The node's ID.</p>
+    /// This field is required.
     pub fn node_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_id = ::std::option::Option::Some(input.into());
         self
@@ -139,6 +148,7 @@ impl DescribeNodeOutputBuilder {
         &self.node_id
     }
     /// <p>The node's name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -153,6 +163,7 @@ impl DescribeNodeOutputBuilder {
         &self.name
     }
     /// <p>The node's category.</p>
+    /// This field is required.
     pub fn category(mut self, input: crate::types::NodeCategory) -> Self {
         self.category = ::std::option::Option::Some(input);
         self
@@ -167,6 +178,7 @@ impl DescribeNodeOutputBuilder {
         &self.category
     }
     /// <p>The account ID of the node's owner.</p>
+    /// This field is required.
     pub fn owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_account = ::std::option::Option::Some(input.into());
         self
@@ -181,6 +193,7 @@ impl DescribeNodeOutputBuilder {
         &self.owner_account
     }
     /// <p>The node's package name.</p>
+    /// This field is required.
     pub fn package_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_name = ::std::option::Option::Some(input.into());
         self
@@ -195,6 +208,7 @@ impl DescribeNodeOutputBuilder {
         &self.package_name
     }
     /// <p>The node's package ID.</p>
+    /// This field is required.
     pub fn package_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_id = ::std::option::Option::Some(input.into());
         self
@@ -223,6 +237,7 @@ impl DescribeNodeOutputBuilder {
         &self.package_arn
     }
     /// <p>The node's package version.</p>
+    /// This field is required.
     pub fn package_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_version = ::std::option::Option::Some(input.into());
         self
@@ -237,6 +252,7 @@ impl DescribeNodeOutputBuilder {
         &self.package_version
     }
     /// <p>The node's patch version.</p>
+    /// This field is required.
     pub fn patch_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.patch_version = ::std::option::Option::Some(input.into());
         self
@@ -251,6 +267,7 @@ impl DescribeNodeOutputBuilder {
         &self.patch_version
     }
     /// <p>The node's interface.</p>
+    /// This field is required.
     pub fn node_interface(mut self, input: crate::types::NodeInterface) -> Self {
         self.node_interface = ::std::option::Option::Some(input);
         self
@@ -279,6 +296,7 @@ impl DescribeNodeOutputBuilder {
         &self.asset_name
     }
     /// <p>The node's description.</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -293,6 +311,7 @@ impl DescribeNodeOutputBuilder {
         &self.description
     }
     /// <p>When the node was created.</p>
+    /// This field is required.
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
         self
@@ -307,6 +326,7 @@ impl DescribeNodeOutputBuilder {
         &self.created_time
     }
     /// <p>When the node was updated.</p>
+    /// This field is required.
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
         self
@@ -330,23 +350,92 @@ impl DescribeNodeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeNodeOutput`](crate::operation::describe_node::DescribeNodeOutput).
-    pub fn build(self) -> crate::operation::describe_node::DescribeNodeOutput {
-        crate::operation::describe_node::DescribeNodeOutput {
-            node_id: self.node_id,
-            name: self.name,
-            category: self.category,
-            owner_account: self.owner_account,
-            package_name: self.package_name,
-            package_id: self.package_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`node_id`](crate::operation::describe_node::builders::DescribeNodeOutputBuilder::node_id)
+    /// - [`name`](crate::operation::describe_node::builders::DescribeNodeOutputBuilder::name)
+    /// - [`category`](crate::operation::describe_node::builders::DescribeNodeOutputBuilder::category)
+    /// - [`owner_account`](crate::operation::describe_node::builders::DescribeNodeOutputBuilder::owner_account)
+    /// - [`package_name`](crate::operation::describe_node::builders::DescribeNodeOutputBuilder::package_name)
+    /// - [`package_id`](crate::operation::describe_node::builders::DescribeNodeOutputBuilder::package_id)
+    /// - [`package_version`](crate::operation::describe_node::builders::DescribeNodeOutputBuilder::package_version)
+    /// - [`patch_version`](crate::operation::describe_node::builders::DescribeNodeOutputBuilder::patch_version)
+    /// - [`description`](crate::operation::describe_node::builders::DescribeNodeOutputBuilder::description)
+    /// - [`created_time`](crate::operation::describe_node::builders::DescribeNodeOutputBuilder::created_time)
+    /// - [`last_updated_time`](crate::operation::describe_node::builders::DescribeNodeOutputBuilder::last_updated_time)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_node::DescribeNodeOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_node::DescribeNodeOutput {
+            node_id: self.node_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "node_id",
+                    "node_id was not specified but it is required when building DescribeNodeOutput",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DescribeNodeOutput",
+                )
+            })?,
+            category: self.category.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "category",
+                    "category was not specified but it is required when building DescribeNodeOutput",
+                )
+            })?,
+            owner_account: self.owner_account.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "owner_account",
+                    "owner_account was not specified but it is required when building DescribeNodeOutput",
+                )
+            })?,
+            package_name: self.package_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "package_name",
+                    "package_name was not specified but it is required when building DescribeNodeOutput",
+                )
+            })?,
+            package_id: self.package_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "package_id",
+                    "package_id was not specified but it is required when building DescribeNodeOutput",
+                )
+            })?,
             package_arn: self.package_arn,
-            package_version: self.package_version,
-            patch_version: self.patch_version,
+            package_version: self.package_version.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "package_version",
+                    "package_version was not specified but it is required when building DescribeNodeOutput",
+                )
+            })?,
+            patch_version: self.patch_version.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "patch_version",
+                    "patch_version was not specified but it is required when building DescribeNodeOutput",
+                )
+            })?,
             node_interface: self.node_interface,
             asset_name: self.asset_name,
-            description: self.description,
-            created_time: self.created_time,
-            last_updated_time: self.last_updated_time,
+            description: self.description.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "description",
+                    "description was not specified but it is required when building DescribeNodeOutput",
+                )
+            })?,
+            created_time: self.created_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_time",
+                    "created_time was not specified but it is required when building DescribeNodeOutput",
+                )
+            })?,
+            last_updated_time: self.last_updated_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "last_updated_time",
+                    "last_updated_time was not specified but it is required when building DescribeNodeOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

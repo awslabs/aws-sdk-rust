@@ -13,6 +13,8 @@ pub struct CreateDomainInput {
     pub ebs_options: ::std::option::Option<crate::types::EbsOptions>,
     /// <p>Identity and Access Management (IAM) policy document specifying the access policies for the new domain.</p>
     pub access_policies: ::std::option::Option<::std::string::String>,
+    /// <p>The type of IP addresses supported by the endpoint for the domain.</p>
+    pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     /// <p>DEPRECATED. Container for the parameters required to configure automated snapshots of domain indexes.</p>
     pub snapshot_options: ::std::option::Option<crate::types::SnapshotOptions>,
     /// <p>Container for the values required to configure VPC access domains. If you don't specify these values, OpenSearch Service creates the domain with a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html">Launching your Amazon OpenSearch Service domains using a VPC</a>.</p>
@@ -68,6 +70,10 @@ impl CreateDomainInput {
     pub fn access_policies(&self) -> ::std::option::Option<&str> {
         self.access_policies.as_deref()
     }
+    /// <p>The type of IP addresses supported by the endpoint for the domain.</p>
+    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
+        self.ip_address_type.as_ref()
+    }
     /// <p>DEPRECATED. Container for the parameters required to configure automated snapshots of domain indexes.</p>
     pub fn snapshot_options(&self) -> ::std::option::Option<&crate::types::SnapshotOptions> {
         self.snapshot_options.as_ref()
@@ -114,8 +120,10 @@ impl CreateDomainInput {
         self.advanced_security_options.as_ref()
     }
     /// <p>List of tags to add to the domain upon creation.</p>
-    pub fn tag_list(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tag_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_list.is_none()`.
+    pub fn tag_list(&self) -> &[crate::types::Tag] {
+        self.tag_list.as_deref().unwrap_or_default()
     }
     /// <p>Options for Auto-Tune.</p>
     pub fn auto_tune_options(&self) -> ::std::option::Option<&crate::types::AutoTuneOptionsInput> {
@@ -146,6 +154,7 @@ pub struct CreateDomainInputBuilder {
     pub(crate) cluster_config: ::std::option::Option<crate::types::ClusterConfig>,
     pub(crate) ebs_options: ::std::option::Option<crate::types::EbsOptions>,
     pub(crate) access_policies: ::std::option::Option<::std::string::String>,
+    pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     pub(crate) snapshot_options: ::std::option::Option<crate::types::SnapshotOptions>,
     pub(crate) vpc_options: ::std::option::Option<crate::types::VpcOptions>,
     pub(crate) cognito_options: ::std::option::Option<crate::types::CognitoOptions>,
@@ -162,6 +171,7 @@ pub struct CreateDomainInputBuilder {
 }
 impl CreateDomainInputBuilder {
     /// <p>Name of the OpenSearch Service domain to create. Domain names are unique across the domains owned by an account within an Amazon Web Services Region.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -230,6 +240,20 @@ impl CreateDomainInputBuilder {
     /// <p>Identity and Access Management (IAM) policy document specifying the access policies for the new domain.</p>
     pub fn get_access_policies(&self) -> &::std::option::Option<::std::string::String> {
         &self.access_policies
+    }
+    /// <p>The type of IP addresses supported by the endpoint for the domain.</p>
+    pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
+        self.ip_address_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of IP addresses supported by the endpoint for the domain.</p>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
+        self.ip_address_type = input;
+        self
+    }
+    /// <p>The type of IP addresses supported by the endpoint for the domain.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
+        &self.ip_address_type
     }
     /// <p>DEPRECATED. Container for the parameters required to configure automated snapshots of domain indexes.</p>
     pub fn snapshot_options(mut self, input: crate::types::SnapshotOptions) -> Self {
@@ -465,13 +489,16 @@ impl CreateDomainInputBuilder {
         &self.software_update_options
     }
     /// Consumes the builder and constructs a [`CreateDomainInput`](crate::operation::create_domain::CreateDomainInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_domain::CreateDomainInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_domain::CreateDomainInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_domain::CreateDomainInput {
             domain_name: self.domain_name,
             engine_version: self.engine_version,
             cluster_config: self.cluster_config,
             ebs_options: self.ebs_options,
             access_policies: self.access_policies,
+            ip_address_type: self.ip_address_type,
             snapshot_options: self.snapshot_options,
             vpc_options: self.vpc_options,
             cognito_options: self.cognito_options,

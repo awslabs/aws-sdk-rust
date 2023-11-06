@@ -16,7 +16,7 @@ impl ListBucketsInput {
 pub struct ListBucketsInputBuilder {}
 impl ListBucketsInputBuilder {
     /// Consumes the builder and constructs a [`ListBucketsInput`](crate::operation::list_buckets::ListBucketsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_buckets::ListBucketsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_buckets::ListBucketsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_buckets::ListBucketsInput {})
     }
 }

@@ -11,8 +11,10 @@ pub struct ListOfferingPromotionsOutput {
 }
 impl ListOfferingPromotionsOutput {
     /// <p>Information about the offering promotions.</p>
-    pub fn offering_promotions(&self) -> ::std::option::Option<&[crate::types::OfferingPromotion]> {
-        self.offering_promotions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.offering_promotions.is_none()`.
+    pub fn offering_promotions(&self) -> &[crate::types::OfferingPromotion] {
+        self.offering_promotions.as_deref().unwrap_or_default()
     }
     /// <p>An identifier to be used in the next call to this operation, to return the next set of items in the list.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

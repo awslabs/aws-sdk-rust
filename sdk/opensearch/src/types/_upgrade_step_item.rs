@@ -45,8 +45,10 @@ impl UpgradeStepItem {
         self.upgrade_step_status.as_ref()
     }
     /// <p>A list of strings containing detailed information about the errors encountered in a particular step.</p>
-    pub fn issues(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.issues.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.issues.is_none()`.
+    pub fn issues(&self) -> &[::std::string::String] {
+        self.issues.as_deref().unwrap_or_default()
     }
     /// <p>The floating point value representing the progress percentage of a particular step.</p>
     pub fn progress_percent(&self) -> ::std::option::Option<f64> {

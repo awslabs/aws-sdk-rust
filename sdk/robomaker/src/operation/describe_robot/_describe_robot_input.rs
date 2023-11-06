@@ -30,6 +30,7 @@ pub struct DescribeRobotInputBuilder {
 }
 impl DescribeRobotInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the robot to be described.</p>
+    /// This field is required.
     pub fn robot(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.robot = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl DescribeRobotInputBuilder {
     /// Consumes the builder and constructs a [`DescribeRobotInput`](crate::operation::describe_robot::DescribeRobotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_robot::DescribeRobotInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_robot::DescribeRobotInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_robot::DescribeRobotInput { robot: self.robot })
     }
 }

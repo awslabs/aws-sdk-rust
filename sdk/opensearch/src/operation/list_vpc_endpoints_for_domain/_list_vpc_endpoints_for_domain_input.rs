@@ -34,6 +34,7 @@ pub struct ListVpcEndpointsForDomainInputBuilder {
 }
 impl ListVpcEndpointsForDomainInputBuilder {
     /// <p>The name of the domain to list associated VPC endpoints for.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl ListVpcEndpointsForDomainInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_vpc_endpoints_for_domain::ListVpcEndpointsForDomainInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_vpc_endpoints_for_domain::ListVpcEndpointsForDomainInput {
             domain_name: self.domain_name,

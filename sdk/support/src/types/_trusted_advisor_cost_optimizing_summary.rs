@@ -35,6 +35,7 @@ pub struct TrustedAdvisorCostOptimizingSummaryBuilder {
 }
 impl TrustedAdvisorCostOptimizingSummaryBuilder {
     /// <p>The estimated monthly savings that might be realized if the recommended operations are taken.</p>
+    /// This field is required.
     pub fn estimated_monthly_savings(mut self, input: f64) -> Self {
         self.estimated_monthly_savings = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl TrustedAdvisorCostOptimizingSummaryBuilder {
         &self.estimated_monthly_savings
     }
     /// <p>The estimated percentage of savings that might be realized if the recommended operations are taken.</p>
+    /// This field is required.
     pub fn estimated_percent_monthly_savings(mut self, input: f64) -> Self {
         self.estimated_percent_monthly_savings = ::std::option::Option::Some(input);
         self

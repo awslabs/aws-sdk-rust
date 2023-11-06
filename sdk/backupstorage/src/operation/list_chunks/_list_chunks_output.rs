@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListChunksOutput {
     /// List of chunks
-    pub chunk_list: ::std::option::Option<::std::vec::Vec<crate::types::Chunk>>,
+    pub chunk_list: ::std::vec::Vec<crate::types::Chunk>,
     /// Pagination token
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListChunksOutput {
     /// List of chunks
-    pub fn chunk_list(&self) -> ::std::option::Option<&[crate::types::Chunk]> {
-        self.chunk_list.as_deref()
+    pub fn chunk_list(&self) -> &[crate::types::Chunk] {
+        use std::ops::Deref;
+        self.chunk_list.deref()
     }
     /// Pagination token
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,18 @@ impl ListChunksOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListChunksOutput`](crate::operation::list_chunks::ListChunksOutput).
-    pub fn build(self) -> crate::operation::list_chunks::ListChunksOutput {
-        crate::operation::list_chunks::ListChunksOutput {
-            chunk_list: self.chunk_list,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`chunk_list`](crate::operation::list_chunks::builders::ListChunksOutputBuilder::chunk_list)
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_chunks::ListChunksOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_chunks::ListChunksOutput {
+            chunk_list: self.chunk_list.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "chunk_list",
+                    "chunk_list was not specified but it is required when building ListChunksOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

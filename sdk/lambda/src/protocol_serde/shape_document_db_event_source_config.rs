@@ -56,7 +56,7 @@ where
 pub fn ser_document_db_event_source_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DocumentDbEventSourceConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.database_name {
         object.key("DatabaseName").string(var_1.as_str());
     }

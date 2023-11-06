@@ -34,6 +34,7 @@ pub struct UpdateSolNetworkPackageInputBuilder {
 }
 impl UpdateSolNetworkPackageInputBuilder {
     /// <p>ID of the network service descriptor in the network package.</p>
+    /// This field is required.
     pub fn nsd_info_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nsd_info_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateSolNetworkPackageInputBuilder {
         &self.nsd_info_id
     }
     /// <p>Operational state of the network service descriptor in the network package.</p>
+    /// This field is required.
     pub fn nsd_operational_state(mut self, input: crate::types::NsdOperationalState) -> Self {
         self.nsd_operational_state = ::std::option::Option::Some(input);
         self
@@ -66,7 +68,7 @@ impl UpdateSolNetworkPackageInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_sol_network_package::UpdateSolNetworkPackageInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_sol_network_package::UpdateSolNetworkPackageInput {
             nsd_info_id: self.nsd_info_id,

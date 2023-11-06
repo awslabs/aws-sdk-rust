@@ -12,12 +12,17 @@ where
             match tokens.next().transpose()? {
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                    let key = key.to_unescaped()?;
+                    if key == "__type" {
+                        ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                        continue;
+                    }
                     if variant.is_some() {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
                             "encountered mixed variants in union",
                         ));
                     }
-                    variant = match key.to_unescaped()?.as_ref() {
+                    variant = match key.as_ref() {
                         "tsvStoreOptions" => Some(crate::types::StoreOptions::TsvStoreOptions(
                             crate::protocol_serde::shape_tsv_store_options::de_tsv_store_options(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'tsvStoreOptions' cannot be null")
@@ -49,7 +54,7 @@ where
 pub fn ser_store_options(
     object_9: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StoreOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::StoreOptions::TsvStoreOptions(inner) => {
             #[allow(unused_mut)]
@@ -57,7 +62,7 @@ pub fn ser_store_options(
             crate::protocol_serde::shape_tsv_store_options::ser_tsv_store_options(&mut object_1, inner)?;
             object_1.finish();
         }
-        crate::types::StoreOptions::Unknown => return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("StoreOptions")),
+        crate::types::StoreOptions::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("StoreOptions")),
     }
     Ok(())
 }

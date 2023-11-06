@@ -35,6 +35,7 @@ pub struct PutSuppressedDestinationInputBuilder {
 }
 impl PutSuppressedDestinationInputBuilder {
     /// <p>The email address that should be added to the suppression list for your account.</p>
+    /// This field is required.
     pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_address = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl PutSuppressedDestinationInputBuilder {
         &self.email_address
     }
     /// <p>The factors that should cause the email address to be added to the suppression list for your account.</p>
+    /// This field is required.
     pub fn reason(mut self, input: crate::types::SuppressionListReason) -> Self {
         self.reason = ::std::option::Option::Some(input);
         self
@@ -67,7 +69,7 @@ impl PutSuppressedDestinationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_suppressed_destination::PutSuppressedDestinationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_suppressed_destination::PutSuppressedDestinationInput {
             email_address: self.email_address,

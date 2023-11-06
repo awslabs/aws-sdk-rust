@@ -42,8 +42,10 @@ impl CreateSnapshotsInput {
         self.outpost_arn.as_deref()
     }
     /// <p>Tags to apply to every snapshot specified by the instance.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -88,6 +90,7 @@ impl CreateSnapshotsInputBuilder {
         &self.description
     }
     /// <p>The instance to specify which volumes should be included in the snapshots.</p>
+    /// This field is required.
     pub fn instance_specification(mut self, input: crate::types::InstanceSpecification) -> Self {
         self.instance_specification = ::std::option::Option::Some(input);
         self
@@ -184,7 +187,7 @@ impl CreateSnapshotsInputBuilder {
     /// Consumes the builder and constructs a [`CreateSnapshotsInput`](crate::operation::create_snapshots::CreateSnapshotsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_snapshots::CreateSnapshotsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_snapshots::CreateSnapshotsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_snapshots::CreateSnapshotsInput {
             description: self.description,
             instance_specification: self.instance_specification,

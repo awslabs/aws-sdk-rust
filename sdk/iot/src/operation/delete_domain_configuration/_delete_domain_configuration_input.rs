@@ -27,6 +27,7 @@ pub struct DeleteDomainConfigurationInputBuilder {
 }
 impl DeleteDomainConfigurationInputBuilder {
     /// <p>The name of the domain configuration to be deleted.</p>
+    /// This field is required.
     pub fn domain_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_configuration_name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteDomainConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_domain_configuration::DeleteDomainConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_domain_configuration::DeleteDomainConfigurationInput {
             domain_configuration_name: self.domain_configuration_name,

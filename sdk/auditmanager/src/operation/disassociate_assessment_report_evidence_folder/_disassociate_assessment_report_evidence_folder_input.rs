@@ -35,6 +35,7 @@ pub struct DisassociateAssessmentReportEvidenceFolderInputBuilder {
 }
 impl DisassociateAssessmentReportEvidenceFolderInputBuilder {
     /// <p> The unique identifier for the assessment. </p>
+    /// This field is required.
     pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl DisassociateAssessmentReportEvidenceFolderInputBuilder {
         &self.assessment_id
     }
     /// <p> The unique identifier for the folder that the evidence is stored in. </p>
+    /// This field is required.
     pub fn evidence_folder_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evidence_folder_id = ::std::option::Option::Some(input.into());
         self
@@ -67,7 +69,7 @@ impl DisassociateAssessmentReportEvidenceFolderInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_assessment_report_evidence_folder::DisassociateAssessmentReportEvidenceFolderInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_assessment_report_evidence_folder::DisassociateAssessmentReportEvidenceFolderInput {

@@ -27,6 +27,7 @@ pub struct DeleteWorkspaceImageInputBuilder {
 }
 impl DeleteWorkspaceImageInputBuilder {
     /// <p>The identifier of the image.</p>
+    /// This field is required.
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteWorkspaceImageInputBuilder {
     /// Consumes the builder and constructs a [`DeleteWorkspaceImageInput`](crate::operation::delete_workspace_image::DeleteWorkspaceImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_workspace_image::DeleteWorkspaceImageInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_workspace_image::DeleteWorkspaceImageInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_workspace_image::DeleteWorkspaceImageInput { image_id: self.image_id })
     }

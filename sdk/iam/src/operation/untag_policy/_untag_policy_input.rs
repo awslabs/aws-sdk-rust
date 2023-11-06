@@ -16,8 +16,10 @@ impl UntagPolicyInput {
         self.policy_arn.as_deref()
     }
     /// <p>A list of key names as a simple array of strings. The tags with matching keys are removed from the specified policy.</p>
-    pub fn tag_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tag_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_keys.is_none()`.
+    pub fn tag_keys(&self) -> &[::std::string::String] {
+        self.tag_keys.as_deref().unwrap_or_default()
     }
 }
 impl UntagPolicyInput {
@@ -37,6 +39,7 @@ pub struct UntagPolicyInputBuilder {
 impl UntagPolicyInputBuilder {
     /// <p>The ARN of the IAM customer managed policy from which you want to remove tags.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// This field is required.
     pub fn policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_arn = ::std::option::Option::Some(input.into());
         self
@@ -73,7 +76,7 @@ impl UntagPolicyInputBuilder {
         &self.tag_keys
     }
     /// Consumes the builder and constructs a [`UntagPolicyInput`](crate::operation::untag_policy::UntagPolicyInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::untag_policy::UntagPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::untag_policy::UntagPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::untag_policy::UntagPolicyInput {
             policy_arn: self.policy_arn,
             tag_keys: self.tag_keys,

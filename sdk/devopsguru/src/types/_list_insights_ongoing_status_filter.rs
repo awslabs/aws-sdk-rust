@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListInsightsOngoingStatusFilter {
     /// <p> Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights. </p>
-    pub r#type: ::std::option::Option<crate::types::InsightType>,
+    pub r#type: crate::types::InsightType,
 }
 impl ListInsightsOngoingStatusFilter {
     /// <p> Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights. </p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::InsightType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::InsightType {
+        &self.r#type
     }
 }
 impl ListInsightsOngoingStatusFilter {
@@ -28,6 +28,7 @@ pub struct ListInsightsOngoingStatusFilterBuilder {
 }
 impl ListInsightsOngoingStatusFilterBuilder {
     /// <p> Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights. </p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::InsightType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,16 @@ impl ListInsightsOngoingStatusFilterBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`ListInsightsOngoingStatusFilter`](crate::types::ListInsightsOngoingStatusFilter).
-    pub fn build(self) -> crate::types::ListInsightsOngoingStatusFilter {
-        crate::types::ListInsightsOngoingStatusFilter { r#type: self.r#type }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::ListInsightsOngoingStatusFilterBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::ListInsightsOngoingStatusFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ListInsightsOngoingStatusFilter {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building ListInsightsOngoingStatusFilter",
+                )
+            })?,
+        })
     }
 }

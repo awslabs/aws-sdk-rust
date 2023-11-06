@@ -6,7 +6,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PredefinedLoadMetricSpecification {
     /// <p>The metric type.</p>
-    pub predefined_load_metric_type: ::std::option::Option<crate::types::LoadMetricType>,
+    pub predefined_load_metric_type: crate::types::LoadMetricType,
     /// <p>Identifies the resource associated with the metric type. You can't specify a resource label unless the metric type is <code>ALBTargetGroupRequestCount</code> and there is a target group for an Application Load Balancer attached to the Auto Scaling group.</p>
     /// <p>You create the resource label by appending the final portion of the load balancer ARN and the final portion of the target group ARN into a single value, separated by a forward slash (/). The format is app/<load-balancer-name>
     /// /
@@ -40,8 +40,8 @@ pub struct PredefinedLoadMetricSpecification {
 }
 impl PredefinedLoadMetricSpecification {
     /// <p>The metric type.</p>
-    pub fn predefined_load_metric_type(&self) -> ::std::option::Option<&crate::types::LoadMetricType> {
-        self.predefined_load_metric_type.as_ref()
+    pub fn predefined_load_metric_type(&self) -> &crate::types::LoadMetricType {
+        &self.predefined_load_metric_type
     }
     /// <p>Identifies the resource associated with the metric type. You can't specify a resource label unless the metric type is <code>ALBTargetGroupRequestCount</code> and there is a target group for an Application Load Balancer attached to the Auto Scaling group.</p>
     /// <p>You create the resource label by appending the final portion of the load balancer ARN and the final portion of the target group ARN into a single value, separated by a forward slash (/). The format is app/<load-balancer-name>
@@ -92,6 +92,7 @@ pub struct PredefinedLoadMetricSpecificationBuilder {
 }
 impl PredefinedLoadMetricSpecificationBuilder {
     /// <p>The metric type.</p>
+    /// This field is required.
     pub fn predefined_load_metric_type(mut self, input: crate::types::LoadMetricType) -> Self {
         self.predefined_load_metric_type = ::std::option::Option::Some(input);
         self
@@ -204,10 +205,17 @@ impl PredefinedLoadMetricSpecificationBuilder {
         &self.resource_label
     }
     /// Consumes the builder and constructs a [`PredefinedLoadMetricSpecification`](crate::types::PredefinedLoadMetricSpecification).
-    pub fn build(self) -> crate::types::PredefinedLoadMetricSpecification {
-        crate::types::PredefinedLoadMetricSpecification {
-            predefined_load_metric_type: self.predefined_load_metric_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`predefined_load_metric_type`](crate::types::builders::PredefinedLoadMetricSpecificationBuilder::predefined_load_metric_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::PredefinedLoadMetricSpecification, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PredefinedLoadMetricSpecification {
+            predefined_load_metric_type: self.predefined_load_metric_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "predefined_load_metric_type",
+                    "predefined_load_metric_type was not specified but it is required when building PredefinedLoadMetricSpecification",
+                )
+            })?,
             resource_label: self.resource_label,
-        }
+        })
     }
 }

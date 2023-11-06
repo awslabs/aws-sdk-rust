@@ -34,6 +34,7 @@ pub struct UpdateVoiceChannelOutputBuilder {
 }
 impl UpdateVoiceChannelOutputBuilder {
     /// <p>Provides information about the status and settings of the voice channel for an application.</p>
+    /// This field is required.
     pub fn voice_channel_response(mut self, input: crate::types::VoiceChannelResponse) -> Self {
         self.voice_channel_response = ::std::option::Option::Some(input);
         self

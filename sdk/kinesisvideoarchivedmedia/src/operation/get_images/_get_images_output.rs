@@ -11,8 +11,10 @@ pub struct GetImagesOutput {
 }
 impl GetImagesOutput {
     /// <p>The list of images generated from the video stream. If there is no media available for the given timestamp, the <code>NO_MEDIA</code> error will be listed in the output. If an error occurs while the image is being generated, the <code>MEDIA_ERROR</code> will be listed in the output as the cause of the missing image. </p>
-    pub fn images(&self) -> ::std::option::Option<&[crate::types::Image]> {
-        self.images.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.images.is_none()`.
+    pub fn images(&self) -> &[crate::types::Image] {
+        self.images.as_deref().unwrap_or_default()
     }
     /// <p>The encrypted token that was used in the request to get more images.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

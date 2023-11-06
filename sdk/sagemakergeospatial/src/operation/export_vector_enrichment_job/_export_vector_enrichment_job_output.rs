@@ -4,33 +4,35 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportVectorEnrichmentJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job being exported.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The creation time.</p>
-    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_time: ::aws_smithy_types::DateTime,
     /// <p>The Amazon Resource Name (ARN) of the IAM role with permission to upload to the location in OutputConfig.</p>
-    pub execution_role_arn: ::std::option::Option<::std::string::String>,
+    pub execution_role_arn: ::std::string::String,
     /// <p>The status of the results the Vector Enrichment job being exported.</p>
-    pub export_status: ::std::option::Option<crate::types::VectorEnrichmentJobExportStatus>,
+    pub export_status: crate::types::VectorEnrichmentJobExportStatus,
     /// <p>Output location information for exporting Vector Enrichment Job results. </p>
     pub output_config: ::std::option::Option<crate::types::ExportVectorEnrichmentJobOutputConfig>,
     _request_id: Option<String>,
 }
 impl ExportVectorEnrichmentJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job being exported.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The creation time.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_time.as_ref()
+    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_time
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role with permission to upload to the location in OutputConfig.</p>
-    pub fn execution_role_arn(&self) -> ::std::option::Option<&str> {
-        self.execution_role_arn.as_deref()
+    pub fn execution_role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.execution_role_arn.deref()
     }
     /// <p>The status of the results the Vector Enrichment job being exported.</p>
-    pub fn export_status(&self) -> ::std::option::Option<&crate::types::VectorEnrichmentJobExportStatus> {
-        self.export_status.as_ref()
+    pub fn export_status(&self) -> &crate::types::VectorEnrichmentJobExportStatus {
+        &self.export_status
     }
     /// <p>Output location information for exporting Vector Enrichment Job results. </p>
     pub fn output_config(&self) -> ::std::option::Option<&crate::types::ExportVectorEnrichmentJobOutputConfig> {
@@ -62,6 +64,7 @@ pub struct ExportVectorEnrichmentJobOutputBuilder {
 }
 impl ExportVectorEnrichmentJobOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job being exported.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +79,7 @@ impl ExportVectorEnrichmentJobOutputBuilder {
         &self.arn
     }
     /// <p>The creation time.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -90,6 +94,7 @@ impl ExportVectorEnrichmentJobOutputBuilder {
         &self.creation_time
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role with permission to upload to the location in OutputConfig.</p>
+    /// This field is required.
     pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +109,7 @@ impl ExportVectorEnrichmentJobOutputBuilder {
         &self.execution_role_arn
     }
     /// <p>The status of the results the Vector Enrichment job being exported.</p>
+    /// This field is required.
     pub fn export_status(mut self, input: crate::types::VectorEnrichmentJobExportStatus) -> Self {
         self.export_status = ::std::option::Option::Some(input);
         self
@@ -118,6 +124,7 @@ impl ExportVectorEnrichmentJobOutputBuilder {
         &self.export_status
     }
     /// <p>Output location information for exporting Vector Enrichment Job results. </p>
+    /// This field is required.
     pub fn output_config(mut self, input: crate::types::ExportVectorEnrichmentJobOutputConfig) -> Self {
         self.output_config = ::std::option::Option::Some(input);
         self
@@ -141,14 +148,44 @@ impl ExportVectorEnrichmentJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ExportVectorEnrichmentJobOutput`](crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobOutput).
-    pub fn build(self) -> crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobOutput {
-        crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobOutput {
-            arn: self.arn,
-            creation_time: self.creation_time,
-            execution_role_arn: self.execution_role_arn,
-            export_status: self.export_status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::operation::export_vector_enrichment_job::builders::ExportVectorEnrichmentJobOutputBuilder::arn)
+    /// - [`creation_time`](crate::operation::export_vector_enrichment_job::builders::ExportVectorEnrichmentJobOutputBuilder::creation_time)
+    /// - [`execution_role_arn`](crate::operation::export_vector_enrichment_job::builders::ExportVectorEnrichmentJobOutputBuilder::execution_role_arn)
+    /// - [`export_status`](crate::operation::export_vector_enrichment_job::builders::ExportVectorEnrichmentJobOutputBuilder::export_status)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobOutput {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building ExportVectorEnrichmentJobOutput",
+                )
+            })?,
+            creation_time: self.creation_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "creation_time",
+                    "creation_time was not specified but it is required when building ExportVectorEnrichmentJobOutput",
+                )
+            })?,
+            execution_role_arn: self.execution_role_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "execution_role_arn",
+                    "execution_role_arn was not specified but it is required when building ExportVectorEnrichmentJobOutput",
+                )
+            })?,
+            export_status: self.export_status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "export_status",
+                    "export_status was not specified but it is required when building ExportVectorEnrichmentJobOutput",
+                )
+            })?,
             output_config: self.output_config,
             _request_id: self._request_id,
-        }
+        })
     }
 }

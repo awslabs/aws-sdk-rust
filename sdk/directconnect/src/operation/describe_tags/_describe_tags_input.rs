@@ -8,8 +8,10 @@ pub struct DescribeTagsInput {
 }
 impl DescribeTagsInput {
     /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
-    pub fn resource_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_arns.is_none()`.
+    pub fn resource_arns(&self) -> &[::std::string::String] {
+        self.resource_arns.as_deref().unwrap_or_default()
     }
 }
 impl DescribeTagsInput {
@@ -47,7 +49,9 @@ impl DescribeTagsInputBuilder {
         &self.resource_arns
     }
     /// Consumes the builder and constructs a [`DescribeTagsInput`](crate::operation::describe_tags::DescribeTagsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_tags::DescribeTagsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_tags::DescribeTagsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_tags::DescribeTagsInput {
             resource_arns: self.resource_arns,
         })

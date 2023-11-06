@@ -41,6 +41,7 @@ pub struct GetAssetInputBuilder {
 }
 impl GetAssetInputBuilder {
     /// <p>The unique identifier for an asset.</p>
+    /// This field is required.
     pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl GetAssetInputBuilder {
         &self.asset_id
     }
     /// <p>The unique identifier for a data set.</p>
+    /// This field is required.
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl GetAssetInputBuilder {
         &self.data_set_id
     }
     /// <p>The unique identifier for a revision.</p>
+    /// This field is required.
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +86,7 @@ impl GetAssetInputBuilder {
         &self.revision_id
     }
     /// Consumes the builder and constructs a [`GetAssetInput`](crate::operation::get_asset::GetAssetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_asset::GetAssetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_asset::GetAssetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_asset::GetAssetInput {
             asset_id: self.asset_id,
             data_set_id: self.data_set_id,

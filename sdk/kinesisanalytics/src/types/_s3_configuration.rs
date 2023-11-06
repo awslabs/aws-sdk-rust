@@ -5,24 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Configuration {
     /// <p>IAM ARN of the role used to access the data.</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
     /// <p>ARN of the S3 bucket that contains the data.</p>
-    pub bucket_arn: ::std::option::Option<::std::string::String>,
+    pub bucket_arn: ::std::string::String,
     /// <p>The name of the object that contains the data.</p>
-    pub file_key: ::std::option::Option<::std::string::String>,
+    pub file_key: ::std::string::String,
 }
 impl S3Configuration {
     /// <p>IAM ARN of the role used to access the data.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
     /// <p>ARN of the S3 bucket that contains the data.</p>
-    pub fn bucket_arn(&self) -> ::std::option::Option<&str> {
-        self.bucket_arn.as_deref()
+    pub fn bucket_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket_arn.deref()
     }
     /// <p>The name of the object that contains the data.</p>
-    pub fn file_key(&self) -> ::std::option::Option<&str> {
-        self.file_key.as_deref()
+    pub fn file_key(&self) -> &str {
+        use std::ops::Deref;
+        self.file_key.deref()
     }
 }
 impl S3Configuration {
@@ -42,6 +45,7 @@ pub struct S3ConfigurationBuilder {
 }
 impl S3ConfigurationBuilder {
     /// <p>IAM ARN of the role used to access the data.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +60,7 @@ impl S3ConfigurationBuilder {
         &self.role_arn
     }
     /// <p>ARN of the S3 bucket that contains the data.</p>
+    /// This field is required.
     pub fn bucket_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_arn = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +75,7 @@ impl S3ConfigurationBuilder {
         &self.bucket_arn
     }
     /// <p>The name of the object that contains the data.</p>
+    /// This field is required.
     pub fn file_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_key = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +90,30 @@ impl S3ConfigurationBuilder {
         &self.file_key
     }
     /// Consumes the builder and constructs a [`S3Configuration`](crate::types::S3Configuration).
-    pub fn build(self) -> crate::types::S3Configuration {
-        crate::types::S3Configuration {
-            role_arn: self.role_arn,
-            bucket_arn: self.bucket_arn,
-            file_key: self.file_key,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`role_arn`](crate::types::builders::S3ConfigurationBuilder::role_arn)
+    /// - [`bucket_arn`](crate::types::builders::S3ConfigurationBuilder::bucket_arn)
+    /// - [`file_key`](crate::types::builders::S3ConfigurationBuilder::file_key)
+    pub fn build(self) -> ::std::result::Result<crate::types::S3Configuration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::S3Configuration {
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building S3Configuration",
+                )
+            })?,
+            bucket_arn: self.bucket_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "bucket_arn",
+                    "bucket_arn was not specified but it is required when building S3Configuration",
+                )
+            })?,
+            file_key: self.file_key.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "file_key",
+                    "file_key was not specified but it is required when building S3Configuration",
+                )
+            })?,
+        })
     }
 }

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`TagResource`](crate::operation::tag_resource::builders::TagResourceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::set_arn): Arn
-    ///   - [`tags(impl Into<String>, impl Into<String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::set_tags): Tag map with key and value.
+    ///   - [`arn(impl Into<String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::set_arn):<br>required: **true**<br>Arn<br>
+    ///   - [`tags(impl Into<String>, impl Into<String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::tags) / [`set_tags(Option<HashMap::<String, String>>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::set_tags):<br>required: **true**<br>Tag map with key and value.<br>
     /// - On success, responds with [`TagResourceOutput`](crate::operation::tag_resource::TagResourceOutput)
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::operation::tag_resource::TagResourceError)
     pub fn tag_resource(&self) -> crate::operation::tag_resource::builders::TagResourceFluentBuilder {

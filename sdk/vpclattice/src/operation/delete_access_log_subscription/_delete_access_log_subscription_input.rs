@@ -27,6 +27,7 @@ pub struct DeleteAccessLogSubscriptionInputBuilder {
 }
 impl DeleteAccessLogSubscriptionInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
+    /// This field is required.
     pub fn access_log_subscription_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_log_subscription_identifier = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteAccessLogSubscriptionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_access_log_subscription::DeleteAccessLogSubscriptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_access_log_subscription::DeleteAccessLogSubscriptionInput {
             access_log_subscription_identifier: self.access_log_subscription_identifier,

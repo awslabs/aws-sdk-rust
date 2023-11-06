@@ -54,6 +54,7 @@ pub struct ListTransactionEventsInputBuilder {
 }
 impl ListTransactionEventsInputBuilder {
     /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
+    /// This field is required.
     pub fn transaction_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transaction_hash = ::std::option::Option::Some(input.into());
         self
@@ -68,6 +69,7 @@ impl ListTransactionEventsInputBuilder {
         &self.transaction_hash
     }
     /// <p>The blockchain network where the transaction events occurred.</p>
+    /// This field is required.
     pub fn network(mut self, input: crate::types::QueryNetwork) -> Self {
         self.network = ::std::option::Option::Some(input);
         self
@@ -121,7 +123,7 @@ impl ListTransactionEventsInputBuilder {
     /// Consumes the builder and constructs a [`ListTransactionEventsInput`](crate::operation::list_transaction_events::ListTransactionEventsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_transaction_events::ListTransactionEventsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_transaction_events::ListTransactionEventsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_transaction_events::ListTransactionEventsInput {
             transaction_hash: self.transaction_hash,

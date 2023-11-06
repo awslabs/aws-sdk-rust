@@ -28,8 +28,10 @@ impl MonitorContactInput {
         self.user_id.as_deref()
     }
     /// <p>Specify which monitoring actions the user is allowed to take. For example, whether the user is allowed to escalate from silent monitoring to barge.</p>
-    pub fn allowed_monitor_capabilities(&self) -> ::std::option::Option<&[crate::types::MonitorCapability]> {
-        self.allowed_monitor_capabilities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_monitor_capabilities.is_none()`.
+    pub fn allowed_monitor_capabilities(&self) -> &[crate::types::MonitorCapability] {
+        self.allowed_monitor_capabilities.as_deref().unwrap_or_default()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -55,6 +57,7 @@ pub struct MonitorContactInputBuilder {
 }
 impl MonitorContactInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +72,7 @@ impl MonitorContactInputBuilder {
         &self.instance_id
     }
     /// <p>The identifier of the contact.</p>
+    /// This field is required.
     pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +87,7 @@ impl MonitorContactInputBuilder {
         &self.contact_id
     }
     /// <p>The identifier of the user account.</p>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
@@ -133,7 +138,7 @@ impl MonitorContactInputBuilder {
     /// Consumes the builder and constructs a [`MonitorContactInput`](crate::operation::monitor_contact::MonitorContactInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::monitor_contact::MonitorContactInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::monitor_contact::MonitorContactInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::monitor_contact::MonitorContactInput {
             instance_id: self.instance_id,
             contact_id: self.contact_id,

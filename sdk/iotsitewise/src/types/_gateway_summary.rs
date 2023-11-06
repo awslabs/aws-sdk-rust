@@ -5,42 +5,46 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GatewaySummary {
     /// <p>The ID of the gateway device.</p>
-    pub gateway_id: ::std::option::Option<::std::string::String>,
+    pub gateway_id: ::std::string::String,
     /// <p>The name of the asset.</p>
-    pub gateway_name: ::std::option::Option<::std::string::String>,
+    pub gateway_name: ::std::string::String,
     /// <p>Contains a gateway's platform information.</p>
     pub gateway_platform: ::std::option::Option<crate::types::GatewayPlatform>,
     /// <p>A list of gateway capability summaries that each contain a namespace and status. Each gateway capability defines data sources for the gateway. To retrieve a capability configuration's definition, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGatewayCapabilityConfiguration.html">DescribeGatewayCapabilityConfiguration</a>.</p>
     pub gateway_capability_summaries: ::std::option::Option<::std::vec::Vec<crate::types::GatewayCapabilitySummary>>,
     /// <p>The date the gateway was created, in Unix epoch time.</p>
-    pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_date: ::aws_smithy_types::DateTime,
     /// <p>The date the gateway was last updated, in Unix epoch time.</p>
-    pub last_update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub last_update_date: ::aws_smithy_types::DateTime,
 }
 impl GatewaySummary {
     /// <p>The ID of the gateway device.</p>
-    pub fn gateway_id(&self) -> ::std::option::Option<&str> {
-        self.gateway_id.as_deref()
+    pub fn gateway_id(&self) -> &str {
+        use std::ops::Deref;
+        self.gateway_id.deref()
     }
     /// <p>The name of the asset.</p>
-    pub fn gateway_name(&self) -> ::std::option::Option<&str> {
-        self.gateway_name.as_deref()
+    pub fn gateway_name(&self) -> &str {
+        use std::ops::Deref;
+        self.gateway_name.deref()
     }
     /// <p>Contains a gateway's platform information.</p>
     pub fn gateway_platform(&self) -> ::std::option::Option<&crate::types::GatewayPlatform> {
         self.gateway_platform.as_ref()
     }
     /// <p>A list of gateway capability summaries that each contain a namespace and status. Each gateway capability defines data sources for the gateway. To retrieve a capability configuration's definition, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGatewayCapabilityConfiguration.html">DescribeGatewayCapabilityConfiguration</a>.</p>
-    pub fn gateway_capability_summaries(&self) -> ::std::option::Option<&[crate::types::GatewayCapabilitySummary]> {
-        self.gateway_capability_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.gateway_capability_summaries.is_none()`.
+    pub fn gateway_capability_summaries(&self) -> &[crate::types::GatewayCapabilitySummary] {
+        self.gateway_capability_summaries.as_deref().unwrap_or_default()
     }
     /// <p>The date the gateway was created, in Unix epoch time.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_date.as_ref()
+    pub fn creation_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_date
     }
     /// <p>The date the gateway was last updated, in Unix epoch time.</p>
-    pub fn last_update_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.last_update_date.as_ref()
+    pub fn last_update_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.last_update_date
     }
 }
 impl GatewaySummary {
@@ -63,6 +67,7 @@ pub struct GatewaySummaryBuilder {
 }
 impl GatewaySummaryBuilder {
     /// <p>The ID of the gateway device.</p>
+    /// This field is required.
     pub fn gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_id = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +82,7 @@ impl GatewaySummaryBuilder {
         &self.gateway_id
     }
     /// <p>The name of the asset.</p>
+    /// This field is required.
     pub fn gateway_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_name = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +131,7 @@ impl GatewaySummaryBuilder {
         &self.gateway_capability_summaries
     }
     /// <p>The date the gateway was created, in Unix epoch time.</p>
+    /// This field is required.
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
         self
@@ -139,6 +146,7 @@ impl GatewaySummaryBuilder {
         &self.creation_date
     }
     /// <p>The date the gateway was last updated, in Unix epoch time.</p>
+    /// This field is required.
     pub fn last_update_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_update_date = ::std::option::Option::Some(input);
         self
@@ -153,14 +161,39 @@ impl GatewaySummaryBuilder {
         &self.last_update_date
     }
     /// Consumes the builder and constructs a [`GatewaySummary`](crate::types::GatewaySummary).
-    pub fn build(self) -> crate::types::GatewaySummary {
-        crate::types::GatewaySummary {
-            gateway_id: self.gateway_id,
-            gateway_name: self.gateway_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`gateway_id`](crate::types::builders::GatewaySummaryBuilder::gateway_id)
+    /// - [`gateway_name`](crate::types::builders::GatewaySummaryBuilder::gateway_name)
+    /// - [`creation_date`](crate::types::builders::GatewaySummaryBuilder::creation_date)
+    /// - [`last_update_date`](crate::types::builders::GatewaySummaryBuilder::last_update_date)
+    pub fn build(self) -> ::std::result::Result<crate::types::GatewaySummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::GatewaySummary {
+            gateway_id: self.gateway_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "gateway_id",
+                    "gateway_id was not specified but it is required when building GatewaySummary",
+                )
+            })?,
+            gateway_name: self.gateway_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "gateway_name",
+                    "gateway_name was not specified but it is required when building GatewaySummary",
+                )
+            })?,
             gateway_platform: self.gateway_platform,
             gateway_capability_summaries: self.gateway_capability_summaries,
-            creation_date: self.creation_date,
-            last_update_date: self.last_update_date,
-        }
+            creation_date: self.creation_date.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "creation_date",
+                    "creation_date was not specified but it is required when building GatewaySummary",
+                )
+            })?,
+            last_update_date: self.last_update_date.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "last_update_date",
+                    "last_update_date was not specified but it is required when building GatewaySummary",
+                )
+            })?,
+        })
     }
 }

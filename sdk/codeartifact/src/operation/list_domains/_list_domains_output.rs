@@ -11,8 +11,10 @@ pub struct ListDomainsOutput {
 }
 impl ListDomainsOutput {
     /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainSummary.html">DomainSummary</a> objects. </p>
-    pub fn domains(&self) -> ::std::option::Option<&[crate::types::DomainSummary]> {
-        self.domains.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domains.is_none()`.
+    pub fn domains(&self) -> &[crate::types::DomainSummary] {
+        self.domains.as_deref().unwrap_or_default()
     }
     /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

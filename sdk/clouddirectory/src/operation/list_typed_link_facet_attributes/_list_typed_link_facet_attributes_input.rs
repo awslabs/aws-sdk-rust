@@ -48,6 +48,7 @@ pub struct ListTypedLinkFacetAttributesInputBuilder {
 }
 impl ListTypedLinkFacetAttributesInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
+    /// This field is required.
     pub fn schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_arn = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl ListTypedLinkFacetAttributesInputBuilder {
         &self.schema_arn
     }
     /// <p>The unique name of the typed link facet.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +110,7 @@ impl ListTypedLinkFacetAttributesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesInput {
             schema_arn: self.schema_arn,

@@ -40,8 +40,10 @@ impl CreateTemplateInput {
         self.name.as_deref()
     }
     /// <p>A list of resource permissions to be set on the template. </p>
-    pub fn permissions(&self) -> ::std::option::Option<&[crate::types::ResourcePermission]> {
-        self.permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permissions.is_none()`.
+    pub fn permissions(&self) -> &[crate::types::ResourcePermission] {
+        self.permissions.as_deref().unwrap_or_default()
     }
     /// <p>The entity that you are using as a source when you create the template. In <code>SourceEntity</code>, you specify the type of object you're using as source: <code>SourceTemplate</code> for a template or <code>SourceAnalysis</code> for an analysis. Both of these require an Amazon Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the source template. For <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region. </p>
     /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder. </p>
@@ -50,8 +52,10 @@ impl CreateTemplateInput {
         self.source_entity.as_ref()
     }
     /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>A description of the current template version being created. This API operation creates the first version of the template. Every time <code>UpdateTemplate</code> is called, a new version is created. Each version of the template maintains a description of the version in the <code>VersionDescription</code> field.</p>
     pub fn version_description(&self) -> ::std::option::Option<&str> {
@@ -91,6 +95,7 @@ pub struct CreateTemplateInputBuilder {
 }
 impl CreateTemplateInputBuilder {
     /// <p>The ID for the Amazon Web Services account that the group is in. You use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +110,7 @@ impl CreateTemplateInputBuilder {
         &self.aws_account_id
     }
     /// <p>An ID for the template that you want to create. This template is unique per Amazon Web Services Region; in each Amazon Web Services account.</p>
+    /// This field is required.
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_id = ::std::option::Option::Some(input.into());
         self
@@ -243,7 +249,7 @@ impl CreateTemplateInputBuilder {
     /// Consumes the builder and constructs a [`CreateTemplateInput`](crate::operation::create_template::CreateTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_template::CreateTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_template::CreateTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_template::CreateTemplateInput {
             aws_account_id: self.aws_account_id,
             template_id: self.template_id,

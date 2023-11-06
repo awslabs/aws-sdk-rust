@@ -34,6 +34,7 @@ pub struct DescribeFeaturedResultsSetInputBuilder {
 }
 impl DescribeFeaturedResultsSetInputBuilder {
     /// <p>The identifier of the index used for featuring results.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeFeaturedResultsSetInputBuilder {
         &self.index_id
     }
     /// <p>The identifier of the set of featured results that you want to get information on.</p>
+    /// This field is required.
     pub fn featured_results_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.featured_results_set_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl DescribeFeaturedResultsSetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_featured_results_set::DescribeFeaturedResultsSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_featured_results_set::DescribeFeaturedResultsSetInput {
             index_id: self.index_id,

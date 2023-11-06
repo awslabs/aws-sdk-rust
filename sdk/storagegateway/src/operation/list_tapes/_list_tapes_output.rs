@@ -16,8 +16,10 @@ pub struct ListTapesOutput {
 }
 impl ListTapesOutput {
     /// <p>An array of <code>TapeInfo</code> objects, where each object describes a single tape. If there are no tapes in the tape library or VTS, then the <code>TapeInfos</code> is an empty array.</p>
-    pub fn tape_infos(&self) -> ::std::option::Option<&[crate::types::TapeInfo]> {
-        self.tape_infos.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tape_infos.is_none()`.
+    pub fn tape_infos(&self) -> &[crate::types::TapeInfo] {
+        self.tape_infos.as_deref().unwrap_or_default()
     }
     /// <p>A string that indicates the position at which to begin returning the next list of tapes. Use the marker in your next request to continue pagination of tapes. If there are no more tapes to list, this element does not appear in the response body.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

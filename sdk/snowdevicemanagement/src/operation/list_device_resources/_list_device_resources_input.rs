@@ -48,6 +48,7 @@ pub struct ListDeviceResourcesInputBuilder {
 }
 impl ListDeviceResourcesInputBuilder {
     /// <p>The ID of the managed device that you are listing the resources of.</p>
+    /// This field is required.
     pub fn managed_device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.managed_device_id = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,7 @@ impl ListDeviceResourcesInputBuilder {
     /// Consumes the builder and constructs a [`ListDeviceResourcesInput`](crate::operation::list_device_resources::ListDeviceResourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_device_resources::ListDeviceResourcesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_device_resources::ListDeviceResourcesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_device_resources::ListDeviceResourcesInput {
             managed_device_id: self.managed_device_id,

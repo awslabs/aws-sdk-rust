@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeCustomRoutingAccelerator`](crate::operation::describe_custom_routing_accelerator::builders::DescribeCustomRoutingAcceleratorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`accelerator_arn(impl Into<String>)`](crate::operation::describe_custom_routing_accelerator::builders::DescribeCustomRoutingAcceleratorFluentBuilder::accelerator_arn) / [`set_accelerator_arn(Option<String>)`](crate::operation::describe_custom_routing_accelerator::builders::DescribeCustomRoutingAcceleratorFluentBuilder::set_accelerator_arn): <p>The Amazon Resource Name (ARN) of the accelerator to describe.</p>
+    ///   - [`accelerator_arn(impl Into<String>)`](crate::operation::describe_custom_routing_accelerator::builders::DescribeCustomRoutingAcceleratorFluentBuilder::accelerator_arn) / [`set_accelerator_arn(Option<String>)`](crate::operation::describe_custom_routing_accelerator::builders::DescribeCustomRoutingAcceleratorFluentBuilder::set_accelerator_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the accelerator to describe.</p><br>
     /// - On success, responds with [`DescribeCustomRoutingAcceleratorOutput`](crate::operation::describe_custom_routing_accelerator::DescribeCustomRoutingAcceleratorOutput) with field(s):
     ///   - [`accelerator(Option<CustomRoutingAccelerator>)`](crate::operation::describe_custom_routing_accelerator::DescribeCustomRoutingAcceleratorOutput::accelerator): <p>The description of the custom routing accelerator.</p>
     /// - On failure, responds with [`SdkError<DescribeCustomRoutingAcceleratorError>`](crate::operation::describe_custom_routing_accelerator::DescribeCustomRoutingAcceleratorError)

@@ -2,7 +2,7 @@
 pub fn ser_job_operation(
     input: &crate::types::JobOperation,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_1) = &input.lambda_invoke {
@@ -43,6 +43,7 @@ pub fn ser_job_operation(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_job_operation(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::JobOperation, ::aws_smithy_xml::decode::XmlDecodeError> {

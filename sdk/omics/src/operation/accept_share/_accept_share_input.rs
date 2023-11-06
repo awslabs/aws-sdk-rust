@@ -27,6 +27,7 @@ pub struct AcceptShareInputBuilder {
 }
 impl AcceptShareInputBuilder {
     /// <p> The ID for a share offer for analytics store data. </p>
+    /// This field is required.
     pub fn share_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.share_id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl AcceptShareInputBuilder {
         &self.share_id
     }
     /// Consumes the builder and constructs a [`AcceptShareInput`](crate::operation::accept_share::AcceptShareInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::accept_share::AcceptShareInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::accept_share::AcceptShareInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::accept_share::AcceptShareInput { share_id: self.share_id })
     }
 }

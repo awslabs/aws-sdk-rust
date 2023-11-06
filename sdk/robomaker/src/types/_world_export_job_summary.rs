@@ -105,8 +105,10 @@ impl WorldExportJobSummary {
         self.created_at.as_ref()
     }
     /// <p>A list of worlds.</p>
-    pub fn worlds(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.worlds.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.worlds.is_none()`.
+    pub fn worlds(&self) -> &[::std::string::String] {
+        self.worlds.as_deref().unwrap_or_default()
     }
     /// <p>The output location.</p>
     pub fn output_location(&self) -> ::std::option::Option<&crate::types::OutputLocation> {

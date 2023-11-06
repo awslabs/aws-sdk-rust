@@ -97,8 +97,10 @@ impl CreateFileSystemWindowsConfiguration {
     /// <li> <p>Can start with a numeric.</p> </li>
     /// </ul>
     /// <p>For DNS alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of how you specify them: as uppercase letters, lowercase letters, or the corresponding letters in escape codes.</p>
-    pub fn aliases(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.aliases.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aliases.is_none()`.
+    pub fn aliases(&self) -> &[::std::string::String] {
+        self.aliases.as_deref().unwrap_or_default()
     }
     /// <p>The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files, folders, and file shares on the Amazon FSx for Windows File Server file system.</p>
     pub fn audit_log_configuration(&self) -> ::std::option::Option<&crate::types::WindowsAuditLogCreateConfiguration> {
@@ -212,6 +214,7 @@ impl CreateFileSystemWindowsConfigurationBuilder {
         &self.preferred_subnet_id
     }
     /// <p>Sets the throughput capacity of an Amazon FSx file system, measured in megabytes per second (MB/s), in 2 to the <i>n</i>th increments, between 2^3 (8) and 2^11 (2048).</p>
+    /// This field is required.
     pub fn throughput_capacity(mut self, input: i32) -> Self {
         self.throughput_capacity = ::std::option::Option::Some(input);
         self

@@ -34,6 +34,7 @@ pub struct DeleteLayerVersionInputBuilder {
 }
 impl DeleteLayerVersionInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
+    /// This field is required.
     pub fn layer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.layer_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteLayerVersionInputBuilder {
         &self.layer_name
     }
     /// <p>The version number.</p>
+    /// This field is required.
     pub fn version_number(mut self, input: i64) -> Self {
         self.version_number = ::std::option::Option::Some(input);
         self
@@ -64,7 +66,8 @@ impl DeleteLayerVersionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteLayerVersionInput`](crate::operation::delete_layer_version::DeleteLayerVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_layer_version::DeleteLayerVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_layer_version::DeleteLayerVersionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_layer_version::DeleteLayerVersionInput {
             layer_name: self.layer_name,
             version_number: self.version_number,

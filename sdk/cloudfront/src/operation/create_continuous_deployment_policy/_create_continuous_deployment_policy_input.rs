@@ -27,6 +27,7 @@ pub struct CreateContinuousDeploymentPolicyInputBuilder {
 }
 impl CreateContinuousDeploymentPolicyInputBuilder {
     /// <p>Contains the configuration for a continuous deployment policy.</p>
+    /// This field is required.
     pub fn continuous_deployment_policy_config(mut self, input: crate::types::ContinuousDeploymentPolicyConfig) -> Self {
         self.continuous_deployment_policy_config = ::std::option::Option::Some(input);
         self
@@ -45,7 +46,7 @@ impl CreateContinuousDeploymentPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyInput {

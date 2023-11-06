@@ -38,7 +38,7 @@ where
 pub fn ser_classification_export_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ClassificationExportConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.s3_destination {
         #[allow(unused_mut)]
         let mut object_2 = object.key("s3Destination").start_object();

@@ -11,8 +11,10 @@ pub struct ListFlowsOutput {
 }
 impl ListFlowsOutput {
     /// <p> The list of flows associated with your account. </p>
-    pub fn flows(&self) -> ::std::option::Option<&[crate::types::FlowDefinition]> {
-        self.flows.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.flows.is_none()`.
+    pub fn flows(&self) -> &[crate::types::FlowDefinition] {
+        self.flows.as_deref().unwrap_or_default()
     }
     /// <p> The pagination token for next page of data. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

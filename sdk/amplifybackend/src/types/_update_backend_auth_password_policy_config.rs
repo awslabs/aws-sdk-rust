@@ -11,8 +11,10 @@ pub struct UpdateBackendAuthPasswordPolicyConfig {
 }
 impl UpdateBackendAuthPasswordPolicyConfig {
     /// <p>Describes additional constraints on password requirements to sign in to the auth resource, configured as a part of your Amplify project.</p>
-    pub fn additional_constraints(&self) -> ::std::option::Option<&[crate::types::AdditionalConstraintsElement]> {
-        self.additional_constraints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_constraints.is_none()`.
+    pub fn additional_constraints(&self) -> &[crate::types::AdditionalConstraintsElement] {
+        self.additional_constraints.as_deref().unwrap_or_default()
     }
     /// <p>Describes the minimum length of the password required to sign in to the auth resource, configured as a part of your Amplify project.</p>
     pub fn minimum_length(&self) -> ::std::option::Option<f64> {

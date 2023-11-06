@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAssistantAssociationsOutput {
     /// <p>Summary information about assistant associations.</p>
-    pub assistant_association_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AssistantAssociationSummary>>,
+    pub assistant_association_summaries: ::std::vec::Vec<crate::types::AssistantAssociationSummary>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAssistantAssociationsOutput {
     /// <p>Summary information about assistant associations.</p>
-    pub fn assistant_association_summaries(&self) -> ::std::option::Option<&[crate::types::AssistantAssociationSummary]> {
-        self.assistant_association_summaries.as_deref()
+    pub fn assistant_association_summaries(&self) -> &[crate::types::AssistantAssociationSummary] {
+        use std::ops::Deref;
+        self.assistant_association_summaries.deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -87,11 +88,23 @@ impl ListAssistantAssociationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAssistantAssociationsOutput`](crate::operation::list_assistant_associations::ListAssistantAssociationsOutput).
-    pub fn build(self) -> crate::operation::list_assistant_associations::ListAssistantAssociationsOutput {
-        crate::operation::list_assistant_associations::ListAssistantAssociationsOutput {
-            assistant_association_summaries: self.assistant_association_summaries,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`assistant_association_summaries`](crate::operation::list_assistant_associations::builders::ListAssistantAssociationsOutputBuilder::assistant_association_summaries)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_assistant_associations::ListAssistantAssociationsOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_assistant_associations::ListAssistantAssociationsOutput {
+            assistant_association_summaries: self.assistant_association_summaries.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "assistant_association_summaries",
+                    "assistant_association_summaries was not specified but it is required when building ListAssistantAssociationsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

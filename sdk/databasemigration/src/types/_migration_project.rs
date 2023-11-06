@@ -39,12 +39,16 @@ impl MigrationProject {
         self.migration_project_creation_time.as_ref()
     }
     /// <p>Information about the source data provider, including the name or ARN, and Secrets Manager parameters.</p>
-    pub fn source_data_provider_descriptors(&self) -> ::std::option::Option<&[crate::types::DataProviderDescriptor]> {
-        self.source_data_provider_descriptors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_data_provider_descriptors.is_none()`.
+    pub fn source_data_provider_descriptors(&self) -> &[crate::types::DataProviderDescriptor] {
+        self.source_data_provider_descriptors.as_deref().unwrap_or_default()
     }
     /// <p>Information about the target data provider, including the name or ARN, and Secrets Manager parameters.</p>
-    pub fn target_data_provider_descriptors(&self) -> ::std::option::Option<&[crate::types::DataProviderDescriptor]> {
-        self.target_data_provider_descriptors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_data_provider_descriptors.is_none()`.
+    pub fn target_data_provider_descriptors(&self) -> &[crate::types::DataProviderDescriptor] {
+        self.target_data_provider_descriptors.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the instance profile for your migration project.</p>
     pub fn instance_profile_arn(&self) -> ::std::option::Option<&str> {

@@ -94,7 +94,7 @@ pub(crate) fn de_get_device_methods(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "deviceMethods" => {
-                    builder = builder.set_device_methods(crate::protocol_serde::shape___list_of_device_method::de___list_of_device_method(tokens)?);
+                    builder = builder.set_device_methods(crate::protocol_serde::shape_list_of_device_method::de_list_of_device_method(tokens)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

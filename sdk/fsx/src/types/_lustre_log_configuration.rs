@@ -56,6 +56,7 @@ impl LustreLogConfigurationBuilder {
     /// <li> <p> <code>DISABLED</code> - logging of data repository events is turned off.</p> </li>
     /// </ul>
     /// <p>Note that Amazon File Cache uses a default setting of <code>WARN_ERROR</code>, which can't be changed.</p>
+    /// This field is required.
     pub fn level(mut self, input: crate::types::LustreAccessAuditLogLevel) -> Self {
         self.level = ::std::option::Option::Some(input);
         self

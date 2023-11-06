@@ -2,7 +2,7 @@
 pub fn ser_dashboard_visual_publish_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DashboardVisualPublishOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.export_hidden_fields_option {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ExportHiddenFieldsOption").start_object();

@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualGatewayTlsValidationContextFileTrust {
     /// <p>The certificate trust chain for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
-    pub certificate_chain: ::std::option::Option<::std::string::String>,
+    pub certificate_chain: ::std::string::String,
 }
 impl VirtualGatewayTlsValidationContextFileTrust {
     /// <p>The certificate trust chain for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
-    pub fn certificate_chain(&self) -> ::std::option::Option<&str> {
-        self.certificate_chain.as_deref()
+    pub fn certificate_chain(&self) -> &str {
+        use std::ops::Deref;
+        self.certificate_chain.deref()
     }
 }
 impl VirtualGatewayTlsValidationContextFileTrust {
@@ -28,6 +29,7 @@ pub struct VirtualGatewayTlsValidationContextFileTrustBuilder {
 }
 impl VirtualGatewayTlsValidationContextFileTrustBuilder {
     /// <p>The certificate trust chain for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
+    /// This field is required.
     pub fn certificate_chain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_chain = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,18 @@ impl VirtualGatewayTlsValidationContextFileTrustBuilder {
         &self.certificate_chain
     }
     /// Consumes the builder and constructs a [`VirtualGatewayTlsValidationContextFileTrust`](crate::types::VirtualGatewayTlsValidationContextFileTrust).
-    pub fn build(self) -> crate::types::VirtualGatewayTlsValidationContextFileTrust {
-        crate::types::VirtualGatewayTlsValidationContextFileTrust {
-            certificate_chain: self.certificate_chain,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`certificate_chain`](crate::types::builders::VirtualGatewayTlsValidationContextFileTrustBuilder::certificate_chain)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::VirtualGatewayTlsValidationContextFileTrust, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::VirtualGatewayTlsValidationContextFileTrust {
+            certificate_chain: self.certificate_chain.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "certificate_chain",
+                    "certificate_chain was not specified but it is required when building VirtualGatewayTlsValidationContextFileTrust",
+                )
+            })?,
+        })
     }
 }

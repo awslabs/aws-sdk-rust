@@ -31,16 +31,22 @@ impl ExportEcsServiceRecommendationsInput {
     /// <p>This parameter can't be specified together with the include member accounts parameter. The parameters are mutually exclusive.</p>
     /// <p>If this parameter or the include member accounts parameter is omitted, the recommendations for member accounts aren't included in the export.</p>
     /// <p>You can specify multiple account IDs per request.</p>
-    pub fn account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.account_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
+    pub fn account_ids(&self) -> &[::std::string::String] {
+        self.account_ids.as_deref().unwrap_or_default()
     }
     /// <p> An array of objects to specify a filter that exports a more specific set of Amazon ECS service recommendations. </p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::EcsServiceRecommendationFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::EcsServiceRecommendationFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>
-    pub fn fields_to_export(&self) -> ::std::option::Option<&[crate::types::ExportableEcsServiceField]> {
-        self.fields_to_export.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fields_to_export.is_none()`.
+    pub fn fields_to_export(&self) -> &[crate::types::ExportableEcsServiceField] {
+        self.fields_to_export.as_deref().unwrap_or_default()
     }
     /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and key prefix for a recommendations export job.</p>
     /// <p>You must create the destination Amazon S3 bucket for your recommendations export before you create the export job. Compute Optimizer does not create the S3 bucket for you. After you create the S3 bucket, ensure that it has the required permission policy to allow Compute Optimizer to write the export file to it. If you plan to specify an object prefix when you create the export job, you must include the object prefix in the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.</p>
@@ -153,6 +159,7 @@ impl ExportEcsServiceRecommendationsInputBuilder {
     }
     /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and key prefix for a recommendations export job.</p>
     /// <p>You must create the destination Amazon S3 bucket for your recommendations export before you create the export job. Compute Optimizer does not create the S3 bucket for you. After you create the S3 bucket, ensure that it has the required permission policy to allow Compute Optimizer to write the export file to it. If you plan to specify an object prefix when you create the export job, you must include the object prefix in the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    /// This field is required.
     pub fn s3_destination_config(mut self, input: crate::types::S3DestinationConfig) -> Self {
         self.s3_destination_config = ::std::option::Option::Some(input);
         self
@@ -213,7 +220,7 @@ impl ExportEcsServiceRecommendationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::export_ecs_service_recommendations::ExportEcsServiceRecommendationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::export_ecs_service_recommendations::ExportEcsServiceRecommendationsInput {

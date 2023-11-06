@@ -49,6 +49,7 @@ impl FirehoseLogDeliveryBuilder {
         &self.delivery_stream
     }
     /// <p>Specifies whether connector logs get delivered to Amazon Kinesis Data Firehose.</p>
+    /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self

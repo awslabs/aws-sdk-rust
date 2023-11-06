@@ -2,15 +2,15 @@
 pub fn ser_output_data_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OutputDataConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.s3_uri {
-        object.key("S3Uri").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("S3Uri").string(input.s3_uri.as_str());
     }
-    if let Some(var_2) = &input.encryption_key {
+    if let Some(var_1) = &input.encryption_key {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("EncryptionKey").start_object();
-        crate::protocol_serde::shape_encryption_key::ser_encryption_key(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("EncryptionKey").start_object();
+        crate::protocol_serde::shape_encryption_key::ser_encryption_key(&mut object_2, var_1)?;
+        object_2.finish();
     }
     Ok(())
 }
@@ -50,7 +50,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::output_data_config_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -34,6 +34,7 @@ pub struct UpdatePublicSharingSettingsInputBuilder {
 }
 impl UpdatePublicSharingSettingsInputBuilder {
     /// <p>The Amazon Web Services account ID associated with your Amazon QuickSight subscription.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl UpdatePublicSharingSettingsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_public_sharing_settings::UpdatePublicSharingSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_public_sharing_settings::UpdatePublicSharingSettingsInput {
             aws_account_id: self.aws_account_id,

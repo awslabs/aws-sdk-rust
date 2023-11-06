@@ -27,6 +27,7 @@ pub struct GetTopicRuleDestinationInputBuilder {
 }
 impl GetTopicRuleDestinationInputBuilder {
     /// <p>The ARN of the topic rule destination.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetTopicRuleDestinationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_topic_rule_destination::GetTopicRuleDestinationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_topic_rule_destination::GetTopicRuleDestinationInput { arn: self.arn })
     }

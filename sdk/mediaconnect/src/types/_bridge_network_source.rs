@@ -56,6 +56,7 @@ pub struct BridgeNetworkSourceBuilder {
 }
 impl BridgeNetworkSourceBuilder {
     /// The network source multicast IP.
+    /// This field is required.
     pub fn multicast_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.multicast_ip = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +71,7 @@ impl BridgeNetworkSourceBuilder {
         &self.multicast_ip
     }
     /// The name of the network source.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +86,7 @@ impl BridgeNetworkSourceBuilder {
         &self.name
     }
     /// The network source's gateway network name.
+    /// This field is required.
     pub fn network_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_name = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +101,7 @@ impl BridgeNetworkSourceBuilder {
         &self.network_name
     }
     /// The network source port.
+    /// This field is required.
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
         self
@@ -112,6 +116,7 @@ impl BridgeNetworkSourceBuilder {
         &self.port
     }
     /// The network source protocol.
+    /// This field is required.
     pub fn protocol(mut self, input: crate::types::Protocol) -> Self {
         self.protocol = ::std::option::Option::Some(input);
         self

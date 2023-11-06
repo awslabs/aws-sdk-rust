@@ -53,8 +53,10 @@ impl JobTemplate {
         self.description.as_deref()
     }
     /// Optional list of hop destinations.
-    pub fn hop_destinations(&self) -> ::std::option::Option<&[crate::types::HopDestination]> {
-        self.hop_destinations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hop_destinations.is_none()`.
+    pub fn hop_destinations(&self) -> &[crate::types::HopDestination] {
+        self.hop_destinations.as_deref().unwrap_or_default()
     }
     /// The timestamp in epoch seconds when the Job template was last updated.
     pub fn last_updated(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -216,6 +218,7 @@ impl JobTemplateBuilder {
         &self.last_updated
     }
     /// A name you create for each job template. Each name must be unique within your account.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -258,6 +261,7 @@ impl JobTemplateBuilder {
         &self.queue
     }
     /// JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs created from it.
+    /// This field is required.
     pub fn settings(mut self, input: crate::types::JobTemplateSettings) -> Self {
         self.settings = ::std::option::Option::Some(input);
         self

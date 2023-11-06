@@ -34,6 +34,7 @@ pub struct DeleteRouteInputBuilder {
 }
 impl DeleteRouteInputBuilder {
     /// <p>The API identifier.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteRouteInputBuilder {
         &self.api_id
     }
     /// <p>The route ID.</p>
+    /// This field is required.
     pub fn route_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_id = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,7 @@ impl DeleteRouteInputBuilder {
         &self.route_id
     }
     /// Consumes the builder and constructs a [`DeleteRouteInput`](crate::operation::delete_route::DeleteRouteInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_route::DeleteRouteInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_route::DeleteRouteInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_route::DeleteRouteInput {
             api_id: self.api_id,
             route_id: self.route_id,

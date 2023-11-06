@@ -27,6 +27,7 @@ pub struct DeleteAccessorInputBuilder {
 }
 impl DeleteAccessorInputBuilder {
     /// <p>The unique identifier of the accessor.</p>
+    /// This field is required.
     pub fn accessor_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accessor_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteAccessorInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAccessorInput`](crate::operation::delete_accessor::DeleteAccessorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_accessor::DeleteAccessorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_accessor::DeleteAccessorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_accessor::DeleteAccessorInput {
             accessor_id: self.accessor_id,
         })

@@ -2,7 +2,7 @@
 pub fn ser_sc_application_attributes(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ScApplicationAttributes,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.s3_bucket_path {
         object.key("S3BucketPath").string(var_1.as_str());
     }

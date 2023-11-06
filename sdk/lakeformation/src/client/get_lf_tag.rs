@@ -3,12 +3,12 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetLFTag`](crate::operation::get_lf_tag::builders::GetLFTagFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`catalog_id(impl Into<String>)`](crate::operation::get_lf_tag::builders::GetLFTagFluentBuilder::catalog_id) / [`set_catalog_id(Option<String>)`](crate::operation::get_lf_tag::builders::GetLFTagFluentBuilder::set_catalog_id): <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-    ///   - [`tag_key(impl Into<String>)`](crate::operation::get_lf_tag::builders::GetLFTagFluentBuilder::tag_key) / [`set_tag_key(Option<String>)`](crate::operation::get_lf_tag::builders::GetLFTagFluentBuilder::set_tag_key): <p>The key-name for the LF-tag.</p>
+    ///   - [`catalog_id(impl Into<String>)`](crate::operation::get_lf_tag::builders::GetLFTagFluentBuilder::catalog_id) / [`set_catalog_id(Option<String>)`](crate::operation::get_lf_tag::builders::GetLFTagFluentBuilder::set_catalog_id):<br>required: **false**<br><p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p><br>
+    ///   - [`tag_key(impl Into<String>)`](crate::operation::get_lf_tag::builders::GetLFTagFluentBuilder::tag_key) / [`set_tag_key(Option<String>)`](crate::operation::get_lf_tag::builders::GetLFTagFluentBuilder::set_tag_key):<br>required: **true**<br><p>The key-name for the LF-tag.</p><br>
     /// - On success, responds with [`GetLfTagOutput`](crate::operation::get_lf_tag::GetLfTagOutput) with field(s):
     ///   - [`catalog_id(Option<String>)`](crate::operation::get_lf_tag::GetLfTagOutput::catalog_id): <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     ///   - [`tag_key(Option<String>)`](crate::operation::get_lf_tag::GetLfTagOutput::tag_key): <p>The key-name for the LF-tag.</p>
-    ///   - [`tag_values(Option<Vec<String>>)`](crate::operation::get_lf_tag::GetLfTagOutput::tag_values): <p>A list of possible values an attribute can take.</p>
+    ///   - [`tag_values(Option<Vec::<String>>)`](crate::operation::get_lf_tag::GetLfTagOutput::tag_values): <p>A list of possible values an attribute can take.</p>
     /// - On failure, responds with [`SdkError<GetLFTagError>`](crate::operation::get_lf_tag::GetLFTagError)
     pub fn get_lf_tag(&self) -> crate::operation::get_lf_tag::builders::GetLFTagFluentBuilder {
         crate::operation::get_lf_tag::builders::GetLFTagFluentBuilder::new(self.handle.clone())

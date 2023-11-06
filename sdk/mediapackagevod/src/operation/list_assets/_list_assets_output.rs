@@ -11,8 +11,10 @@ pub struct ListAssetsOutput {
 }
 impl ListAssetsOutput {
     /// A list of MediaPackage VOD Asset resources.
-    pub fn assets(&self) -> ::std::option::Option<&[crate::types::AssetShallow]> {
-        self.assets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.assets.is_none()`.
+    pub fn assets(&self) -> &[crate::types::AssetShallow] {
+        self.assets.as_deref().unwrap_or_default()
     }
     /// A token that can be used to resume pagination from the end of the collection.
     pub fn next_token(&self) -> ::std::option::Option<&str> {

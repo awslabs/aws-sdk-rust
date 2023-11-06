@@ -18,16 +18,20 @@ impl PutConfigurationAggregatorInput {
         self.configuration_aggregator_name.as_deref()
     }
     /// <p>A list of AccountAggregationSource object. </p>
-    pub fn account_aggregation_sources(&self) -> ::std::option::Option<&[crate::types::AccountAggregationSource]> {
-        self.account_aggregation_sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_aggregation_sources.is_none()`.
+    pub fn account_aggregation_sources(&self) -> &[crate::types::AccountAggregationSource] {
+        self.account_aggregation_sources.as_deref().unwrap_or_default()
     }
     /// <p>An OrganizationAggregationSource object.</p>
     pub fn organization_aggregation_source(&self) -> ::std::option::Option<&crate::types::OrganizationAggregationSource> {
         self.organization_aggregation_source.as_ref()
     }
     /// <p>An array of tag object.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl PutConfigurationAggregatorInput {
@@ -48,6 +52,7 @@ pub struct PutConfigurationAggregatorInputBuilder {
 }
 impl PutConfigurationAggregatorInputBuilder {
     /// <p>The name of the configuration aggregator.</p>
+    /// This field is required.
     pub fn configuration_aggregator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_aggregator_name = ::std::option::Option::Some(input.into());
         self
@@ -120,7 +125,7 @@ impl PutConfigurationAggregatorInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_configuration_aggregator::PutConfigurationAggregatorInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_configuration_aggregator::PutConfigurationAggregatorInput {
             configuration_aggregator_name: self.configuration_aggregator_name,

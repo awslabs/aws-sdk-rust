@@ -11,8 +11,10 @@ pub struct ListCustomerManagedPolicyReferencesInPermissionSetOutput {
 }
 impl ListCustomerManagedPolicyReferencesInPermissionSetOutput {
     /// <p>Specifies the names and paths of the customer managed policies that you have attached to your permission set.</p>
-    pub fn customer_managed_policy_references(&self) -> ::std::option::Option<&[crate::types::CustomerManagedPolicyReference]> {
-        self.customer_managed_policy_references.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.customer_managed_policy_references.is_none()`.
+    pub fn customer_managed_policy_references(&self) -> &[crate::types::CustomerManagedPolicyReference] {
+        self.customer_managed_policy_references.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

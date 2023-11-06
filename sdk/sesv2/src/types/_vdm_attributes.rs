@@ -9,7 +9,7 @@ pub struct VdmAttributes {
     /// <li> <p> <code>ENABLED</code> – Amazon SES enables VDM for your account.</p> </li>
     /// <li> <p> <code>DISABLED</code> – Amazon SES disables VDM for your account.</p> </li>
     /// </ul>
-    pub vdm_enabled: ::std::option::Option<crate::types::FeatureStatus>,
+    pub vdm_enabled: crate::types::FeatureStatus,
     /// <p>Specifies additional settings for your VDM configuration as applicable to the Dashboard.</p>
     pub dashboard_attributes: ::std::option::Option<crate::types::DashboardAttributes>,
     /// <p>Specifies additional settings for your VDM configuration as applicable to the Guardian.</p>
@@ -21,8 +21,8 @@ impl VdmAttributes {
     /// <li> <p> <code>ENABLED</code> – Amazon SES enables VDM for your account.</p> </li>
     /// <li> <p> <code>DISABLED</code> – Amazon SES disables VDM for your account.</p> </li>
     /// </ul>
-    pub fn vdm_enabled(&self) -> ::std::option::Option<&crate::types::FeatureStatus> {
-        self.vdm_enabled.as_ref()
+    pub fn vdm_enabled(&self) -> &crate::types::FeatureStatus {
+        &self.vdm_enabled
     }
     /// <p>Specifies additional settings for your VDM configuration as applicable to the Dashboard.</p>
     pub fn dashboard_attributes(&self) -> ::std::option::Option<&crate::types::DashboardAttributes> {
@@ -54,6 +54,7 @@ impl VdmAttributesBuilder {
     /// <li> <p> <code>ENABLED</code> – Amazon SES enables VDM for your account.</p> </li>
     /// <li> <p> <code>DISABLED</code> – Amazon SES disables VDM for your account.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn vdm_enabled(mut self, input: crate::types::FeatureStatus) -> Self {
         self.vdm_enabled = ::std::option::Option::Some(input);
         self
@@ -104,11 +105,18 @@ impl VdmAttributesBuilder {
         &self.guardian_attributes
     }
     /// Consumes the builder and constructs a [`VdmAttributes`](crate::types::VdmAttributes).
-    pub fn build(self) -> crate::types::VdmAttributes {
-        crate::types::VdmAttributes {
-            vdm_enabled: self.vdm_enabled,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`vdm_enabled`](crate::types::builders::VdmAttributesBuilder::vdm_enabled)
+    pub fn build(self) -> ::std::result::Result<crate::types::VdmAttributes, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::VdmAttributes {
+            vdm_enabled: self.vdm_enabled.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "vdm_enabled",
+                    "vdm_enabled was not specified but it is required when building VdmAttributes",
+                )
+            })?,
             dashboard_attributes: self.dashboard_attributes,
             guardian_attributes: self.guardian_attributes,
-        }
+        })
     }
 }

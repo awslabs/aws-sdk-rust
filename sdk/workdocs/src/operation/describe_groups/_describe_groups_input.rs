@@ -80,6 +80,7 @@ impl DescribeGroupsInputBuilder {
         &self.authentication_token
     }
     /// <p>A query to describe groups by group name.</p>
+    /// This field is required.
     pub fn search_query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.search_query = ::std::option::Option::Some(input.into());
         self
@@ -138,7 +139,7 @@ impl DescribeGroupsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeGroupsInput`](crate::operation::describe_groups::DescribeGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_groups::DescribeGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_groups::DescribeGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_groups::DescribeGroupsInput {
             authentication_token: self.authentication_token,
             search_query: self.search_query,

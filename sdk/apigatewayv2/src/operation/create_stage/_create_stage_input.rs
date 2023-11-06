@@ -112,6 +112,7 @@ impl CreateStageInputBuilder {
         &self.access_log_settings
     }
     /// <p>The API identifier.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -219,6 +220,7 @@ impl CreateStageInputBuilder {
         &self.route_settings
     }
     /// <p>The name of the stage.</p>
+    /// This field is required.
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_name = ::std::option::Option::Some(input.into());
         self
@@ -280,7 +282,7 @@ impl CreateStageInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateStageInput`](crate::operation::create_stage::CreateStageInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_stage::CreateStageInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_stage::CreateStageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_stage::CreateStageInput {
             access_log_settings: self.access_log_settings,
             api_id: self.api_id,

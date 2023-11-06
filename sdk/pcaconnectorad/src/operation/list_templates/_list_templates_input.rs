@@ -69,6 +69,7 @@ impl ListTemplatesInputBuilder {
         &self.next_token
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
+    /// This field is required.
     pub fn connector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_arn = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl ListTemplatesInputBuilder {
     /// Consumes the builder and constructs a [`ListTemplatesInput`](crate::operation::list_templates::ListTemplatesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_templates::ListTemplatesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_templates::ListTemplatesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_templates::ListTemplatesInput {
             max_results: self.max_results,
             next_token: self.next_token,

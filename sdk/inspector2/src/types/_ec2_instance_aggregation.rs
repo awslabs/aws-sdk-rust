@@ -19,20 +19,28 @@ pub struct Ec2InstanceAggregation {
 }
 impl Ec2InstanceAggregation {
     /// <p>The AMI IDs associated with the Amazon EC2 instances to aggregate findings for.</p>
-    pub fn amis(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.amis.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.amis.is_none()`.
+    pub fn amis(&self) -> &[crate::types::StringFilter] {
+        self.amis.as_deref().unwrap_or_default()
     }
     /// <p>The operating system types to aggregate findings for. Valid values must be uppercase and underscore separated, examples are <code>ORACLE_LINUX_7</code> and <code>ALPINE_LINUX_3_8</code>.</p>
-    pub fn operating_systems(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.operating_systems.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.operating_systems.is_none()`.
+    pub fn operating_systems(&self) -> &[crate::types::StringFilter] {
+        self.operating_systems.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon EC2 instance IDs to aggregate findings for.</p>
-    pub fn instance_ids(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.instance_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_ids.is_none()`.
+    pub fn instance_ids(&self) -> &[crate::types::StringFilter] {
+        self.instance_ids.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon EC2 instance tags to aggregate findings for.</p>
-    pub fn instance_tags(&self) -> ::std::option::Option<&[crate::types::MapFilter]> {
-        self.instance_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_tags.is_none()`.
+    pub fn instance_tags(&self) -> &[crate::types::MapFilter] {
+        self.instance_tags.as_deref().unwrap_or_default()
     }
     /// <p>The order to sort results by.</p>
     pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {

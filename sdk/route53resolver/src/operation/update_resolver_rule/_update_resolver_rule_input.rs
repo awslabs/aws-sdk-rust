@@ -34,6 +34,7 @@ pub struct UpdateResolverRuleInputBuilder {
 }
 impl UpdateResolverRuleInputBuilder {
     /// <p>The ID of the Resolver rule that you want to update.</p>
+    /// This field is required.
     pub fn resolver_rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolver_rule_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateResolverRuleInputBuilder {
         &self.resolver_rule_id
     }
     /// <p>The new settings for the Resolver rule.</p>
+    /// This field is required.
     pub fn config(mut self, input: crate::types::ResolverRuleConfig) -> Self {
         self.config = ::std::option::Option::Some(input);
         self
@@ -64,7 +66,8 @@ impl UpdateResolverRuleInputBuilder {
     /// Consumes the builder and constructs a [`UpdateResolverRuleInput`](crate::operation::update_resolver_rule::UpdateResolverRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_resolver_rule::UpdateResolverRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_resolver_rule::UpdateResolverRuleInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_resolver_rule::UpdateResolverRuleInput {
             resolver_rule_id: self.resolver_rule_id,
             config: self.config,

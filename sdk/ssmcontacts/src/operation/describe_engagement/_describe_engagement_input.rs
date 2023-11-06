@@ -27,6 +27,7 @@ pub struct DescribeEngagementInputBuilder {
 }
 impl DescribeEngagementInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the engagement you want the details of.</p>
+    /// This field is required.
     pub fn engagement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engagement_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeEngagementInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEngagementInput`](crate::operation::describe_engagement::DescribeEngagementInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_engagement::DescribeEngagementInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_engagement::DescribeEngagementInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_engagement::DescribeEngagementInput {
             engagement_id: self.engagement_id,
         })

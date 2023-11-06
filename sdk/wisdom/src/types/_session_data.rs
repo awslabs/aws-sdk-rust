@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SessionData {
     /// <p>The Amazon Resource Name (ARN) of the session.</p>
-    pub session_arn: ::std::option::Option<::std::string::String>,
+    pub session_arn: ::std::string::String,
     /// <p>The identifier of the session.</p>
-    pub session_id: ::std::option::Option<::std::string::String>,
+    pub session_id: ::std::string::String,
     /// <p>The name of the session.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The description of the session.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -19,16 +19,19 @@ pub struct SessionData {
 }
 impl SessionData {
     /// <p>The Amazon Resource Name (ARN) of the session.</p>
-    pub fn session_arn(&self) -> ::std::option::Option<&str> {
-        self.session_arn.as_deref()
+    pub fn session_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.session_arn.deref()
     }
     /// <p>The identifier of the session.</p>
-    pub fn session_id(&self) -> ::std::option::Option<&str> {
-        self.session_id.as_deref()
+    pub fn session_id(&self) -> &str {
+        use std::ops::Deref;
+        self.session_id.deref()
     }
     /// <p>The name of the session.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The description of the session.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -63,6 +66,7 @@ pub struct SessionDataBuilder {
 }
 impl SessionDataBuilder {
     /// <p>The Amazon Resource Name (ARN) of the session.</p>
+    /// This field is required.
     pub fn session_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_arn = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +81,7 @@ impl SessionDataBuilder {
         &self.session_arn
     }
     /// <p>The identifier of the session.</p>
+    /// This field is required.
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +96,7 @@ impl SessionDataBuilder {
         &self.session_id
     }
     /// <p>The name of the session.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -153,14 +159,33 @@ impl SessionDataBuilder {
         &self.integration_configuration
     }
     /// Consumes the builder and constructs a [`SessionData`](crate::types::SessionData).
-    pub fn build(self) -> crate::types::SessionData {
-        crate::types::SessionData {
-            session_arn: self.session_arn,
-            session_id: self.session_id,
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`session_arn`](crate::types::builders::SessionDataBuilder::session_arn)
+    /// - [`session_id`](crate::types::builders::SessionDataBuilder::session_id)
+    /// - [`name`](crate::types::builders::SessionDataBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::SessionData, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SessionData {
+            session_arn: self.session_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "session_arn",
+                    "session_arn was not specified but it is required when building SessionData",
+                )
+            })?,
+            session_id: self.session_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "session_id",
+                    "session_id was not specified but it is required when building SessionData",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building SessionData",
+                )
+            })?,
             description: self.description,
             tags: self.tags,
             integration_configuration: self.integration_configuration,
-        }
+        })
     }
 }

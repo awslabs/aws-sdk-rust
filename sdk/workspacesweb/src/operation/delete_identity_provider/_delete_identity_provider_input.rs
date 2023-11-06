@@ -27,6 +27,7 @@ pub struct DeleteIdentityProviderInputBuilder {
 }
 impl DeleteIdentityProviderInputBuilder {
     /// <p>The ARN of the identity provider.</p>
+    /// This field is required.
     pub fn identity_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_provider_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,8 +44,10 @@ impl DeleteIdentityProviderInputBuilder {
     /// Consumes the builder and constructs a [`DeleteIdentityProviderInput`](crate::operation::delete_identity_provider::DeleteIdentityProviderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_identity_provider::DeleteIdentityProviderInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_identity_provider::DeleteIdentityProviderInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_identity_provider::DeleteIdentityProviderInput {
             identity_provider_arn: self.identity_provider_arn,
         })

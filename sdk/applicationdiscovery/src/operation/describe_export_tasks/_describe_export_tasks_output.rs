@@ -11,8 +11,10 @@ pub struct DescribeExportTasksOutput {
 }
 impl DescribeExportTasksOutput {
     /// <p>Contains one or more sets of export request details. When the status of a request is <code>SUCCEEDED</code>, the response includes a URL for an Amazon S3 bucket where you can view the data in a CSV file.</p>
-    pub fn exports_info(&self) -> ::std::option::Option<&[crate::types::ExportInfo]> {
-        self.exports_info.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exports_info.is_none()`.
+    pub fn exports_info(&self) -> &[crate::types::ExportInfo] {
+        self.exports_info.as_deref().unwrap_or_default()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeExportTasks</code> request. When the results of a <code>DescribeExportTasks</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

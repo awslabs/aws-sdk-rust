@@ -2,7 +2,7 @@
 pub fn ser_start_configuration_session_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_configuration_session::StartConfigurationSessionInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.application_identifier {
         object.key("ApplicationIdentifier").string(var_1.as_str());
     }

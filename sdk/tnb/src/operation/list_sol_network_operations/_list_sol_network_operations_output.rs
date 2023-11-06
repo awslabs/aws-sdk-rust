@@ -15,8 +15,10 @@ impl ListSolNetworkOperationsOutput {
         self.next_token.as_deref()
     }
     /// <p>Lists network operation occurrences. Lifecycle management operations are deploy, update, or delete operations.</p>
-    pub fn network_operations(&self) -> ::std::option::Option<&[crate::types::ListSolNetworkOperationsInfo]> {
-        self.network_operations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_operations.is_none()`.
+    pub fn network_operations(&self) -> &[crate::types::ListSolNetworkOperationsInfo] {
+        self.network_operations.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListSolNetworkOperationsOutput {

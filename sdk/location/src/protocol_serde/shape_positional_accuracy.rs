@@ -29,7 +29,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::positional_accuracy_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -40,11 +42,11 @@ where
 pub fn ser_positional_accuracy(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PositionalAccuracy,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.horizontal {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
         object.key("Horizontal").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_1).into()),
+            ::aws_smithy_types::Number::Float((input.horizontal).into()),
         );
     }
     Ok(())

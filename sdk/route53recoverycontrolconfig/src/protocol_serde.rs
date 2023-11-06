@@ -109,24 +109,6 @@ pub(crate) mod shape_update_safety_rule_input;
 
 pub(crate) mod shape_validation_exception;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of__string_max36_pattern_s;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_cluster;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_control_panel;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_routing_control;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_rule;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___map_of__string_min0_max256_pattern_s;
-
 pub(crate) mod shape_assertion_rule;
 
 pub(crate) mod shape_assertion_rule_update;
@@ -139,17 +121,27 @@ pub(crate) mod shape_gating_rule;
 
 pub(crate) mod shape_gating_rule_update;
 
+pub(crate) mod shape_list_of_cluster;
+
+pub(crate) mod shape_list_of_control_panel;
+
+pub(crate) mod shape_list_of_routing_control;
+
+pub(crate) mod shape_list_of_rule;
+
+pub(crate) mod shape_list_of_string_max36_pattern_s;
+
+pub(crate) mod shape_map_of_string_min0_max256_pattern_s;
+
 pub(crate) mod shape_new_assertion_rule;
 
 pub(crate) mod shape_new_gating_rule;
 
 pub(crate) mod shape_routing_control;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of__string_min1_max256_pattern_a_za_z09;
+pub(crate) mod shape_list_of_cluster_endpoint;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_cluster_endpoint;
+pub(crate) mod shape_list_of_string_min1_max256_pattern_a_za_z09;
 
 pub(crate) mod shape_rule;
 

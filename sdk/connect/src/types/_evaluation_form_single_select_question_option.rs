@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationFormSingleSelectQuestionOption {
     /// <p>The identifier of the answer option. An identifier must be unique within the question.</p>
-    pub ref_id: ::std::option::Option<::std::string::String>,
+    pub ref_id: ::std::string::String,
     /// <p>The title of the answer option.</p>
-    pub text: ::std::option::Option<::std::string::String>,
+    pub text: ::std::string::String,
     /// <p>The score assigned to the answer option.</p>
     pub score: i32,
     /// <p>The flag to mark the option as automatic fail. If an automatic fail answer is provided, the overall evaluation gets a score of 0.</p>
@@ -15,12 +15,14 @@ pub struct EvaluationFormSingleSelectQuestionOption {
 }
 impl EvaluationFormSingleSelectQuestionOption {
     /// <p>The identifier of the answer option. An identifier must be unique within the question.</p>
-    pub fn ref_id(&self) -> ::std::option::Option<&str> {
-        self.ref_id.as_deref()
+    pub fn ref_id(&self) -> &str {
+        use std::ops::Deref;
+        self.ref_id.deref()
     }
     /// <p>The title of the answer option.</p>
-    pub fn text(&self) -> ::std::option::Option<&str> {
-        self.text.as_deref()
+    pub fn text(&self) -> &str {
+        use std::ops::Deref;
+        self.text.deref()
     }
     /// <p>The score assigned to the answer option.</p>
     pub fn score(&self) -> i32 {
@@ -49,6 +51,7 @@ pub struct EvaluationFormSingleSelectQuestionOptionBuilder {
 }
 impl EvaluationFormSingleSelectQuestionOptionBuilder {
     /// <p>The identifier of the answer option. An identifier must be unique within the question.</p>
+    /// This field is required.
     pub fn ref_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ref_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +66,7 @@ impl EvaluationFormSingleSelectQuestionOptionBuilder {
         &self.ref_id
     }
     /// <p>The title of the answer option.</p>
+    /// This field is required.
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +109,27 @@ impl EvaluationFormSingleSelectQuestionOptionBuilder {
         &self.automatic_fail
     }
     /// Consumes the builder and constructs a [`EvaluationFormSingleSelectQuestionOption`](crate::types::EvaluationFormSingleSelectQuestionOption).
-    pub fn build(self) -> crate::types::EvaluationFormSingleSelectQuestionOption {
-        crate::types::EvaluationFormSingleSelectQuestionOption {
-            ref_id: self.ref_id,
-            text: self.text,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`ref_id`](crate::types::builders::EvaluationFormSingleSelectQuestionOptionBuilder::ref_id)
+    /// - [`text`](crate::types::builders::EvaluationFormSingleSelectQuestionOptionBuilder::text)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::EvaluationFormSingleSelectQuestionOption, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EvaluationFormSingleSelectQuestionOption {
+            ref_id: self.ref_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "ref_id",
+                    "ref_id was not specified but it is required when building EvaluationFormSingleSelectQuestionOption",
+                )
+            })?,
+            text: self.text.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "text",
+                    "text was not specified but it is required when building EvaluationFormSingleSelectQuestionOption",
+                )
+            })?,
             score: self.score.unwrap_or_default(),
             automatic_fail: self.automatic_fail.unwrap_or_default(),
-        }
+        })
     }
 }

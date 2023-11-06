@@ -34,6 +34,7 @@ pub struct RemoveFlowMediaStreamInputBuilder {
 }
 impl RemoveFlowMediaStreamInputBuilder {
     /// The Amazon Resource Name (ARN) of the flow.
+    /// This field is required.
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl RemoveFlowMediaStreamInputBuilder {
         &self.flow_arn
     }
     /// The name of the media stream that you want to remove.
+    /// This field is required.
     pub fn media_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.media_stream_name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl RemoveFlowMediaStreamInputBuilder {
     /// Consumes the builder and constructs a [`RemoveFlowMediaStreamInput`](crate::operation::remove_flow_media_stream::RemoveFlowMediaStreamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::remove_flow_media_stream::RemoveFlowMediaStreamInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::remove_flow_media_stream::RemoveFlowMediaStreamInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::remove_flow_media_stream::RemoveFlowMediaStreamInput {
             flow_arn: self.flow_arn,

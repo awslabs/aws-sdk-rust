@@ -27,6 +27,7 @@ pub struct StopCompilationJobInputBuilder {
 }
 impl StopCompilationJobInputBuilder {
     /// <p>The name of the model compilation job to stop.</p>
+    /// This field is required.
     pub fn compilation_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compilation_job_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,8 @@ impl StopCompilationJobInputBuilder {
     /// Consumes the builder and constructs a [`StopCompilationJobInput`](crate::operation::stop_compilation_job::StopCompilationJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_compilation_job::StopCompilationJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_compilation_job::StopCompilationJobInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::stop_compilation_job::StopCompilationJobInput {
             compilation_job_name: self.compilation_job_name,
         })

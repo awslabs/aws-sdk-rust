@@ -17,8 +17,10 @@ impl ListTagsInput {
     /// <p> Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     /// <p>Example event data store ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code> </p>
     /// <p>Example channel ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
-    pub fn resource_id_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_id_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_id_list.is_none()`.
+    pub fn resource_id_list(&self) -> &[::std::string::String] {
+        self.resource_id_list.as_deref().unwrap_or_default()
     }
     /// <p>Reserved for future use.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,7 +86,7 @@ impl ListTagsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListTagsInput`](crate::operation::list_tags::ListTagsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_tags::ListTagsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_tags::ListTagsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_tags::ListTagsInput {
             resource_id_list: self.resource_id_list,
             next_token: self.next_token,

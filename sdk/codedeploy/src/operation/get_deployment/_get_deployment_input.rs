@@ -28,6 +28,7 @@ pub struct GetDeploymentInputBuilder {
 }
 impl GetDeploymentInputBuilder {
     /// <p> The unique ID of a deployment associated with the user or Amazon Web Services account. </p>
+    /// This field is required.
     pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl GetDeploymentInputBuilder {
     /// Consumes the builder and constructs a [`GetDeploymentInput`](crate::operation::get_deployment::GetDeploymentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_deployment::GetDeploymentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_deployment::GetDeploymentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_deployment::GetDeploymentInput {
             deployment_id: self.deployment_id,
         })

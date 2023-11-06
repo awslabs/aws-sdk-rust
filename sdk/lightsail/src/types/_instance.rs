@@ -76,8 +76,10 @@ impl Instance {
         self.resource_type.as_ref()
     }
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The blueprint ID (e.g., <code>os_amlinux_2016_03</code>).</p>
     pub fn blueprint_id(&self) -> ::std::option::Option<&str> {
@@ -92,8 +94,10 @@ impl Instance {
         self.bundle_id.as_deref()
     }
     /// <p>An array of objects representing the add-ons enabled on the instance.</p>
-    pub fn add_ons(&self) -> ::std::option::Option<&[crate::types::AddOn]> {
-        self.add_ons.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_ons.is_none()`.
+    pub fn add_ons(&self) -> &[crate::types::AddOn] {
+        self.add_ons.as_deref().unwrap_or_default()
     }
     /// <p>A Boolean value indicating whether this instance has a static IP assigned to it.</p>
     pub fn is_static_ip(&self) -> ::std::option::Option<bool> {
@@ -108,8 +112,10 @@ impl Instance {
         self.public_ip_address.as_deref()
     }
     /// <p>The IPv6 addresses of the instance.</p>
-    pub fn ipv6_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ipv6_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv6_addresses.is_none()`.
+    pub fn ipv6_addresses(&self) -> &[::std::string::String] {
+        self.ipv6_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The IP address type of the instance.</p>
     /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>

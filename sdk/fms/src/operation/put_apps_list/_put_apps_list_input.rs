@@ -14,8 +14,10 @@ impl PutAppsListInput {
         self.apps_list.as_ref()
     }
     /// <p>The tags associated with the resource.</p>
-    pub fn tag_list(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tag_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_list.is_none()`.
+    pub fn tag_list(&self) -> &[crate::types::Tag] {
+        self.tag_list.as_deref().unwrap_or_default()
     }
 }
 impl PutAppsListInput {
@@ -34,6 +36,7 @@ pub struct PutAppsListInputBuilder {
 }
 impl PutAppsListInputBuilder {
     /// <p>The details of the Firewall Manager applications list to be created.</p>
+    /// This field is required.
     pub fn apps_list(mut self, input: crate::types::AppsListData) -> Self {
         self.apps_list = ::std::option::Option::Some(input);
         self
@@ -68,7 +71,7 @@ impl PutAppsListInputBuilder {
         &self.tag_list
     }
     /// Consumes the builder and constructs a [`PutAppsListInput`](crate::operation::put_apps_list::PutAppsListInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_apps_list::PutAppsListInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_apps_list::PutAppsListInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_apps_list::PutAppsListInput {
             apps_list: self.apps_list,
             tag_list: self.tag_list,

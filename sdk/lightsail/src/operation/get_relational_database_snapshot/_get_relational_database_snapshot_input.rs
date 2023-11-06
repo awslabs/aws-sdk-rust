@@ -27,6 +27,7 @@ pub struct GetRelationalDatabaseSnapshotInputBuilder {
 }
 impl GetRelationalDatabaseSnapshotInputBuilder {
     /// <p>The name of the database snapshot for which to get information.</p>
+    /// This field is required.
     pub fn relational_database_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.relational_database_snapshot_name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetRelationalDatabaseSnapshotInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_relational_database_snapshot::GetRelationalDatabaseSnapshotInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_relational_database_snapshot::GetRelationalDatabaseSnapshotInput {
             relational_database_snapshot_name: self.relational_database_snapshot_name,

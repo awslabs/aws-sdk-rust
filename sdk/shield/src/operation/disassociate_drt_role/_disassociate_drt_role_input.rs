@@ -18,7 +18,7 @@ impl DisassociateDrtRoleInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateDrtRoleInput`](crate::operation::disassociate_drt_role::DisassociateDrtRoleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disassociate_drt_role::DisassociateDrtRoleInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::disassociate_drt_role::DisassociateDrtRoleInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::disassociate_drt_role::DisassociateDrtRoleInput {})
     }

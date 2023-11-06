@@ -2,19 +2,19 @@
 pub fn ser_change_batch(
     input: &crate::types::ChangeBatch,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_1) = &input.comment {
         let mut inner_writer = scope.start_el("Comment").finish();
         inner_writer.data(var_1.as_str());
     }
-    if let Some(var_2) = &input.changes {
+    {
         let mut inner_writer = scope.start_el("Changes").finish();
-        for list_item_3 in var_2 {
+        for list_item_2 in &input.changes {
             {
                 let inner_writer = inner_writer.start_el("Change");
-                crate::protocol_serde::shape_change::ser_change(list_item_3, inner_writer)?
+                crate::protocol_serde::shape_change::ser_change(list_item_2, inner_writer)?
             }
         }
     }

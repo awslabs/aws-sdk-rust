@@ -35,6 +35,7 @@ pub struct AdminGetDeviceOutputBuilder {
 }
 impl AdminGetDeviceOutputBuilder {
     /// <p>The device.</p>
+    /// This field is required.
     pub fn device(mut self, input: crate::types::DeviceType) -> Self {
         self.device = ::std::option::Option::Some(input);
         self

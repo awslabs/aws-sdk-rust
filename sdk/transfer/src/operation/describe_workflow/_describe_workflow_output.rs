@@ -34,6 +34,7 @@ pub struct DescribeWorkflowOutputBuilder {
 }
 impl DescribeWorkflowOutputBuilder {
     /// <p>The structure that contains the details of the workflow.</p>
+    /// This field is required.
     pub fn workflow(mut self, input: crate::types::DescribedWorkflow) -> Self {
         self.workflow = ::std::option::Option::Some(input);
         self

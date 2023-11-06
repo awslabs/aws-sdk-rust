@@ -56,6 +56,7 @@ impl ListParentsInputBuilder {
     /// <li> <p> <b>Account</b> - A string that consists of exactly 12 digits.</p> </li>
     /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn child_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.child_id = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +109,7 @@ impl ListParentsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListParentsInput`](crate::operation::list_parents::ListParentsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_parents::ListParentsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_parents::ListParentsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_parents::ListParentsInput {
             child_id: self.child_id,
             next_token: self.next_token,

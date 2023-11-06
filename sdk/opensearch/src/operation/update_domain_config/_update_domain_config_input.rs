@@ -26,6 +26,8 @@ pub struct UpdateDomainConfigInput {
     pub advanced_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Identity and Access Management (IAM) access policy as a JSON-formatted string.</p>
     pub access_policies: ::std::option::Option<::std::string::String>,
+    /// <p>The type of IP addresses supported by the endpoint for the domain.</p>
+    pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     /// <p>Options to publish OpenSearch logs to Amazon CloudWatch Logs.</p>
     pub log_publishing_options: ::std::option::Option<::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>>,
     /// <p>Encryption at rest options for the domain.</p>
@@ -89,6 +91,10 @@ impl UpdateDomainConfigInput {
     /// <p>Identity and Access Management (IAM) access policy as a JSON-formatted string.</p>
     pub fn access_policies(&self) -> ::std::option::Option<&str> {
         self.access_policies.as_deref()
+    }
+    /// <p>The type of IP addresses supported by the endpoint for the domain.</p>
+    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
+        self.ip_address_type.as_ref()
     }
     /// <p>Options to publish OpenSearch logs to Amazon CloudWatch Logs.</p>
     pub fn log_publishing_options(
@@ -156,6 +162,7 @@ pub struct UpdateDomainConfigInputBuilder {
     pub(crate) cognito_options: ::std::option::Option<crate::types::CognitoOptions>,
     pub(crate) advanced_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) access_policies: ::std::option::Option<::std::string::String>,
+    pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     pub(crate) log_publishing_options: ::std::option::Option<::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>>,
     pub(crate) encryption_at_rest_options: ::std::option::Option<crate::types::EncryptionAtRestOptions>,
     pub(crate) domain_endpoint_options: ::std::option::Option<crate::types::DomainEndpointOptions>,
@@ -169,6 +176,7 @@ pub struct UpdateDomainConfigInputBuilder {
 }
 impl UpdateDomainConfigInputBuilder {
     /// <p>The name of the domain that you're updating.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -310,6 +318,20 @@ impl UpdateDomainConfigInputBuilder {
     /// <p>Identity and Access Management (IAM) access policy as a JSON-formatted string.</p>
     pub fn get_access_policies(&self) -> &::std::option::Option<::std::string::String> {
         &self.access_policies
+    }
+    /// <p>The type of IP addresses supported by the endpoint for the domain.</p>
+    pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
+        self.ip_address_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of IP addresses supported by the endpoint for the domain.</p>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
+        self.ip_address_type = input;
+        self
+    }
+    /// <p>The type of IP addresses supported by the endpoint for the domain.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
+        &self.ip_address_type
     }
     /// Adds a key-value pair to `log_publishing_options`.
     ///
@@ -477,7 +499,8 @@ impl UpdateDomainConfigInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDomainConfigInput`](crate::operation::update_domain_config::UpdateDomainConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_domain_config::UpdateDomainConfigInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_domain_config::UpdateDomainConfigInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_domain_config::UpdateDomainConfigInput {
             domain_name: self.domain_name,
             cluster_config: self.cluster_config,
@@ -487,6 +510,7 @@ impl UpdateDomainConfigInputBuilder {
             cognito_options: self.cognito_options,
             advanced_options: self.advanced_options,
             access_policies: self.access_policies,
+            ip_address_type: self.ip_address_type,
             log_publishing_options: self.log_publishing_options,
             encryption_at_rest_options: self.encryption_at_rest_options,
             domain_endpoint_options: self.domain_endpoint_options,

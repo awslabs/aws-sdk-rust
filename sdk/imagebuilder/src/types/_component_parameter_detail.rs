@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComponentParameterDetail {
     /// <p>The name of this input parameter.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The type of input this parameter provides. The currently supported value is "string".</p>
-    pub r#type: ::std::option::Option<::std::string::String>,
+    pub r#type: ::std::string::String,
     /// <p>The default value of this parameter if no input is provided.</p>
     pub default_value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Describes this parameter.</p>
@@ -15,16 +15,20 @@ pub struct ComponentParameterDetail {
 }
 impl ComponentParameterDetail {
     /// <p>The name of this input parameter.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The type of input this parameter provides. The currently supported value is "string".</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
-        self.r#type.as_deref()
+    pub fn r#type(&self) -> &str {
+        use std::ops::Deref;
+        self.r#type.deref()
     }
     /// <p>The default value of this parameter if no input is provided.</p>
-    pub fn default_value(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.default_value.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.default_value.is_none()`.
+    pub fn default_value(&self) -> &[::std::string::String] {
+        self.default_value.as_deref().unwrap_or_default()
     }
     /// <p>Describes this parameter.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -49,6 +53,7 @@ pub struct ComponentParameterDetailBuilder {
 }
 impl ComponentParameterDetailBuilder {
     /// <p>The name of this input parameter.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +68,7 @@ impl ComponentParameterDetailBuilder {
         &self.name
     }
     /// <p>The type of input this parameter provides. The currently supported value is "string".</p>
+    /// This field is required.
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
@@ -111,12 +117,25 @@ impl ComponentParameterDetailBuilder {
         &self.description
     }
     /// Consumes the builder and constructs a [`ComponentParameterDetail`](crate::types::ComponentParameterDetail).
-    pub fn build(self) -> crate::types::ComponentParameterDetail {
-        crate::types::ComponentParameterDetail {
-            name: self.name,
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::ComponentParameterDetailBuilder::name)
+    /// - [`r#type`](crate::types::builders::ComponentParameterDetailBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::ComponentParameterDetail, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ComponentParameterDetail {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ComponentParameterDetail",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building ComponentParameterDetail",
+                )
+            })?,
             default_value: self.default_value,
             description: self.description,
-        }
+        })
     }
 }

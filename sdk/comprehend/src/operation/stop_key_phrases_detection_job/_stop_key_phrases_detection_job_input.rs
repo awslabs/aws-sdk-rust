@@ -27,6 +27,7 @@ pub struct StopKeyPhrasesDetectionJobInputBuilder {
 }
 impl StopKeyPhrasesDetectionJobInputBuilder {
     /// <p>The identifier of the key phrases detection job to stop.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl StopKeyPhrasesDetectionJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_key_phrases_detection_job::StopKeyPhrasesDetectionJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::stop_key_phrases_detection_job::StopKeyPhrasesDetectionJobInput { job_id: self.job_id })
     }

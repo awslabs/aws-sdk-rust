@@ -134,6 +134,7 @@ impl RegisterTypeInputBuilder {
     /// <li> <p> <code>Dev</code> </p> </li>
     /// </ul>
     /// </note>
+    /// This field is required.
     pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_name = ::std::option::Option::Some(input.into());
         self
@@ -183,6 +184,7 @@ impl RegisterTypeInputBuilder {
     /// <p>For information about generating a schema handler package for the extension you want to register, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a> in the <i>CloudFormation CLI User Guide</i>.</p> <note>
     /// <p>The user registering the extension must be able to access the package in the S3 bucket. That's, the user needs to have <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a> permissions for the schema handler package. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html">Actions, Resources, and Condition Keys for Amazon S3</a> in the <i>Identity and Access Management User Guide</i>.</p>
     /// </note>
+    /// This field is required.
     pub fn schema_handler_package(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_handler_package = ::std::option::Option::Some(input.into());
         self
@@ -251,7 +253,9 @@ impl RegisterTypeInputBuilder {
         &self.client_request_token
     }
     /// Consumes the builder and constructs a [`RegisterTypeInput`](crate::operation::register_type::RegisterTypeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::register_type::RegisterTypeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::register_type::RegisterTypeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_type::RegisterTypeInput {
             r#type: self.r#type,
             type_name: self.type_name,

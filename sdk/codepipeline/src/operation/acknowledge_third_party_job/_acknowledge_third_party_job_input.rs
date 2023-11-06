@@ -42,6 +42,7 @@ pub struct AcknowledgeThirdPartyJobInputBuilder {
 }
 impl AcknowledgeThirdPartyJobInputBuilder {
     /// <p>The unique system-generated ID of the job.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl AcknowledgeThirdPartyJobInputBuilder {
         &self.job_id
     }
     /// <p>A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response to a <code>GetThirdPartyJobDetails</code> request.</p>
+    /// This field is required.
     pub fn nonce(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nonce = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl AcknowledgeThirdPartyJobInputBuilder {
         &self.nonce
     }
     /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -88,7 +91,7 @@ impl AcknowledgeThirdPartyJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::acknowledge_third_party_job::AcknowledgeThirdPartyJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::acknowledge_third_party_job::AcknowledgeThirdPartyJobInput {
             job_id: self.job_id,

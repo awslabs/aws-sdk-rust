@@ -39,8 +39,10 @@ impl CreateJobQueueInput {
     /// <p>The set of compute environments mapped to a job queue and their order relative to each other. The job scheduler uses this parameter to determine which compute environment runs a specific job. Compute environments must be in the <code>VALID</code> state before you can associate them with a job queue. You can associate up to three compute environments with a job queue. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.</p> <note>
     /// <p>All compute environments that are associated with a job queue must share the same architecture. Batch doesn't support mixing compute environment architecture types in a single job queue.</p>
     /// </note>
-    pub fn compute_environment_order(&self) -> ::std::option::Option<&[crate::types::ComputeEnvironmentOrder]> {
-        self.compute_environment_order.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compute_environment_order.is_none()`.
+    pub fn compute_environment_order(&self) -> &[crate::types::ComputeEnvironmentOrder] {
+        self.compute_environment_order.as_deref().unwrap_or_default()
     }
     /// <p>The tags that you apply to the job queue to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch resources</a> in <i>Batch User Guide</i>.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -67,6 +69,7 @@ pub struct CreateJobQueueInputBuilder {
 }
 impl CreateJobQueueInputBuilder {
     /// <p>The name of the job queue. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
+    /// This field is required.
     pub fn job_queue_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_queue_name = ::std::option::Option::Some(input.into());
         self
@@ -109,6 +112,7 @@ impl CreateJobQueueInputBuilder {
         &self.scheduling_policy_arn
     }
     /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority is determined in descending order. For example, a job queue with a priority value of <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.</p>
+    /// This field is required.
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
         self
@@ -171,7 +175,7 @@ impl CreateJobQueueInputBuilder {
     /// Consumes the builder and constructs a [`CreateJobQueueInput`](crate::operation::create_job_queue::CreateJobQueueInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_job_queue::CreateJobQueueInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_job_queue::CreateJobQueueInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_job_queue::CreateJobQueueInput {
             job_queue_name: self.job_queue_name,
             state: self.state,

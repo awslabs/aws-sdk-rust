@@ -14,8 +14,10 @@ impl RemoveIpRoutesInput {
         self.directory_id.as_deref()
     }
     /// <p>IP address blocks that you want to remove.</p>
-    pub fn cidr_ips(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cidr_ips.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cidr_ips.is_none()`.
+    pub fn cidr_ips(&self) -> &[::std::string::String] {
+        self.cidr_ips.as_deref().unwrap_or_default()
     }
 }
 impl RemoveIpRoutesInput {
@@ -34,6 +36,7 @@ pub struct RemoveIpRoutesInputBuilder {
 }
 impl RemoveIpRoutesInputBuilder {
     /// <p>Identifier (ID) of the directory from which you want to remove the IP addresses.</p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +73,7 @@ impl RemoveIpRoutesInputBuilder {
     /// Consumes the builder and constructs a [`RemoveIpRoutesInput`](crate::operation::remove_ip_routes::RemoveIpRoutesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::remove_ip_routes::RemoveIpRoutesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::remove_ip_routes::RemoveIpRoutesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::remove_ip_routes::RemoveIpRoutesInput {
             directory_id: self.directory_id,
             cidr_ips: self.cidr_ips,

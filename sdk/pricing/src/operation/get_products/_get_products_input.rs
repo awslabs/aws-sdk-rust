@@ -21,8 +21,10 @@ impl GetProductsInput {
         self.service_code.as_deref()
     }
     /// <p>The list of filters that limit the returned products. only products that match all filters are returned.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The format version that you want the response to be in.</p>
     /// <p>Valid values are: <code>aws_v1</code> </p>
@@ -57,6 +59,7 @@ pub struct GetProductsInputBuilder {
 }
 impl GetProductsInputBuilder {
     /// <p>The code for the service whose products you want to retrieve. </p>
+    /// This field is required.
     pub fn service_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_code = ::std::option::Option::Some(input.into());
         self
@@ -136,7 +139,7 @@ impl GetProductsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetProductsInput`](crate::operation::get_products::GetProductsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_products::GetProductsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_products::GetProductsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_products::GetProductsInput {
             service_code: self.service_code,
             filters: self.filters,

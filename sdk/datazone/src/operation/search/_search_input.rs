@@ -50,8 +50,10 @@ impl SearchInput {
         self.search_text.as_deref()
     }
     /// <p></p>
-    pub fn search_in(&self) -> ::std::option::Option<&[crate::types::SearchInItem]> {
-        self.search_in.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.search_in.is_none()`.
+    pub fn search_in(&self) -> &[crate::types::SearchInItem] {
+        self.search_in.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the search filters.</p>
     pub fn filters(&self) -> ::std::option::Option<&crate::types::FilterClause> {
@@ -62,8 +64,10 @@ impl SearchInput {
         self.sort.as_ref()
     }
     /// <p>Specifies additional attributes for the <code>Search</code> action.</p>
-    pub fn additional_attributes(&self) -> ::std::option::Option<&[crate::types::SearchOutputAdditionalAttribute]> {
-        self.additional_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_attributes.is_none()`.
+    pub fn additional_attributes(&self) -> &[crate::types::SearchOutputAdditionalAttribute] {
+        self.additional_attributes.as_deref().unwrap_or_default()
     }
 }
 impl SearchInput {
@@ -90,6 +94,7 @@ pub struct SearchInputBuilder {
 }
 impl SearchInputBuilder {
     /// <p>The identifier of the Amazon DataZone domain.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -146,6 +151,7 @@ impl SearchInputBuilder {
         &self.next_token
     }
     /// <p>The scope of the search.</p>
+    /// This field is required.
     pub fn search_scope(mut self, input: crate::types::InventorySearchScope) -> Self {
         self.search_scope = ::std::option::Option::Some(input);
         self
@@ -242,7 +248,7 @@ impl SearchInputBuilder {
         &self.additional_attributes
     }
     /// Consumes the builder and constructs a [`SearchInput`](crate::operation::search::SearchInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::search::SearchInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::search::SearchInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search::SearchInput {
             domain_identifier: self.domain_identifier,
             owning_project_identifier: self.owning_project_identifier,

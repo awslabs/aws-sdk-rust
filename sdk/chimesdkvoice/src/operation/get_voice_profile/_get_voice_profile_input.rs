@@ -27,6 +27,7 @@ pub struct GetVoiceProfileInputBuilder {
 }
 impl GetVoiceProfileInputBuilder {
     /// <p>The voice profile ID.</p>
+    /// This field is required.
     pub fn voice_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_profile_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetVoiceProfileInputBuilder {
     /// Consumes the builder and constructs a [`GetVoiceProfileInput`](crate::operation::get_voice_profile::GetVoiceProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_voice_profile::GetVoiceProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_voice_profile::GetVoiceProfileInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_voice_profile::GetVoiceProfileInput {
             voice_profile_id: self.voice_profile_id,
         })

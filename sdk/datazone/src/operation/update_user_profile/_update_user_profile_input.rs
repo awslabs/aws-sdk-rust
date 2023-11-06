@@ -48,6 +48,7 @@ pub struct UpdateUserProfileInputBuilder {
 }
 impl UpdateUserProfileInputBuilder {
     /// <p>The identifier of the Amazon DataZone domain in which a user profile is updated.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl UpdateUserProfileInputBuilder {
         &self.domain_identifier
     }
     /// <p>The identifier of the user whose user profile is to be updated.</p>
+    /// This field is required.
     pub fn user_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_identifier = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +92,7 @@ impl UpdateUserProfileInputBuilder {
         &self.r#type
     }
     /// <p>The status of the user profile that are to be updated.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::UserProfileStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -106,7 +109,7 @@ impl UpdateUserProfileInputBuilder {
     /// Consumes the builder and constructs a [`UpdateUserProfileInput`](crate::operation::update_user_profile::UpdateUserProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_user_profile::UpdateUserProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_user_profile::UpdateUserProfileInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_user_profile::UpdateUserProfileInput {
             domain_identifier: self.domain_identifier,
             user_identifier: self.user_identifier,

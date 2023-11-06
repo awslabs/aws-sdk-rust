@@ -36,6 +36,7 @@ pub struct GenerateOrganizationsAccessReportInputBuilder {
 }
 impl GenerateOrganizationsAccessReportInputBuilder {
     /// <p>The path of the Organizations entity (root, OU, or account). You can build an entity path using the known structure of your organization. For example, assume that your account ID is <code>123456789012</code> and its parent OU ID is <code>ou-rge0-awsabcde</code>. The organization root ID is <code>r-f6g7h8i9j0example</code> and your organization ID is <code>o-a1b2c3d4e5</code>. Your entity path is <code>o-a1b2c3d4e5/r-f6g7h8i9j0example/ou-rge0-awsabcde/123456789012</code>.</p>
+    /// This field is required.
     pub fn entity_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_path = ::std::option::Option::Some(input.into());
         self
@@ -71,7 +72,7 @@ impl GenerateOrganizationsAccessReportInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::generate_organizations_access_report::GenerateOrganizationsAccessReportInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::generate_organizations_access_report::GenerateOrganizationsAccessReportInput {

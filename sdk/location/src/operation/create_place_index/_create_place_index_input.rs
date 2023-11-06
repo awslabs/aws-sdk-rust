@@ -124,6 +124,7 @@ impl CreatePlaceIndexInputBuilder {
     /// <li> <p>Must be a unique place index resource name.</p> </li>
     /// <li> <p>No spaces allowed. For example, <code>ExamplePlaceIndex</code>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn index_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_name = ::std::option::Option::Some(input.into());
         self
@@ -161,6 +162,7 @@ impl CreatePlaceIndexInputBuilder {
     /// </important> </li>
     /// </ul>
     /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
+    /// This field is required.
     pub fn data_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source = ::std::option::Option::Some(input.into());
         self
@@ -294,7 +296,7 @@ impl CreatePlaceIndexInputBuilder {
     /// Consumes the builder and constructs a [`CreatePlaceIndexInput`](crate::operation::create_place_index::CreatePlaceIndexInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_place_index::CreatePlaceIndexInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_place_index::CreatePlaceIndexInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_place_index::CreatePlaceIndexInput {
             index_name: self.index_name,
             data_source: self.data_source,

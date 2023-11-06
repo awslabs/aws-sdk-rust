@@ -41,6 +41,7 @@ pub struct ListStageSessionsInputBuilder {
 }
 impl ListStageSessionsInputBuilder {
     /// <p>Stage ARN.</p>
+    /// This field is required.
     pub fn stage_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_arn = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl ListStageSessionsInputBuilder {
     /// Consumes the builder and constructs a [`ListStageSessionsInput`](crate::operation::list_stage_sessions::ListStageSessionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_stage_sessions::ListStageSessionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_stage_sessions::ListStageSessionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_stage_sessions::ListStageSessionsInput {
             stage_arn: self.stage_arn,
             next_token: self.next_token,

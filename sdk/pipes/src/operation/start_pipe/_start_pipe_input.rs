@@ -27,6 +27,7 @@ pub struct StartPipeInputBuilder {
 }
 impl StartPipeInputBuilder {
     /// <p>The name of the pipe.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl StartPipeInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`StartPipeInput`](crate::operation::start_pipe::StartPipeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_pipe::StartPipeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_pipe::StartPipeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_pipe::StartPipeInput { name: self.name })
     }
 }

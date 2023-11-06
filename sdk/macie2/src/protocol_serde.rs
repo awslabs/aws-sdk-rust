@@ -283,72 +283,6 @@ pub(crate) mod shape_update_sensitivity_inspection_template_input;
 
 pub(crate) mod shape_validation_exception;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of__string;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_admin_account;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_allow_list_summary;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_batch_get_custom_data_identifier_summary;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_bucket_metadata;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_classification_scope_summary;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_custom_data_identifier_summary;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_detection;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_finding;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_findings_filter_list_item;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_group_count;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_invitation;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_job_summary;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_managed_data_identifier_summary;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_matching_resource;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_member;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_resource_profile_artifact;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_sensitivity_inspection_templates_entry;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_unavailability_reason_code;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_unprocessed_account;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_usage_record;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_usage_total;
-
 pub(crate) mod shape_account_detail;
 
 pub(crate) mod shape_allow_list_criteria;
@@ -384,6 +318,50 @@ pub(crate) mod shape_last_run_error_status;
 pub(crate) mod shape_list_jobs_filter_criteria;
 
 pub(crate) mod shape_list_jobs_sort_criteria;
+
+pub(crate) mod shape_list_of_admin_account;
+
+pub(crate) mod shape_list_of_allow_list_summary;
+
+pub(crate) mod shape_list_of_batch_get_custom_data_identifier_summary;
+
+pub(crate) mod shape_list_of_bucket_metadata;
+
+pub(crate) mod shape_list_of_classification_scope_summary;
+
+pub(crate) mod shape_list_of_custom_data_identifier_summary;
+
+pub(crate) mod shape_list_of_detection;
+
+pub(crate) mod shape_list_of_finding;
+
+pub(crate) mod shape_list_of_findings_filter_list_item;
+
+pub(crate) mod shape_list_of_group_count;
+
+pub(crate) mod shape_list_of_invitation;
+
+pub(crate) mod shape_list_of_job_summary;
+
+pub(crate) mod shape_list_of_managed_data_identifier_summary;
+
+pub(crate) mod shape_list_of_matching_resource;
+
+pub(crate) mod shape_list_of_member;
+
+pub(crate) mod shape_list_of_resource_profile_artifact;
+
+pub(crate) mod shape_list_of_sensitivity_inspection_templates_entry;
+
+pub(crate) mod shape_list_of_string;
+
+pub(crate) mod shape_list_of_unavailability_reason_code;
+
+pub(crate) mod shape_list_of_unprocessed_account;
+
+pub(crate) mod shape_list_of_usage_record;
+
+pub(crate) mod shape_list_of_usage_total;
 
 pub(crate) mod shape_object_level_statistics;
 
@@ -427,12 +405,6 @@ pub(crate) mod shape_usage_statistics_sort_by;
 
 pub(crate) mod shape_user_paused_details;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_detected_data_details;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_s3_bucket_definition_for_job;
-
 pub(crate) mod shape_admin_account;
 
 pub(crate) mod shape_allow_list_summary;
@@ -462,6 +434,10 @@ pub(crate) mod shape_group_count;
 pub(crate) mod shape_job_summary;
 
 pub(crate) mod shape_list_jobs_filter_term;
+
+pub(crate) mod shape_list_of_detected_data_details;
+
+pub(crate) mod shape_list_of_s3_bucket_definition_for_job;
 
 pub(crate) mod shape_managed_data_identifier_summary;
 
@@ -501,15 +477,6 @@ pub(crate) mod shape_usage_total;
 
 pub(crate) mod shape_weekly_schedule;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_key_value_pair;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_s3_bucket_name;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_usage_by_account;
-
 pub(crate) mod shape_bucket_public_access;
 
 pub(crate) mod shape_bucket_server_side_encryption;
@@ -523,6 +490,12 @@ pub(crate) mod shape_detected_data_details;
 pub(crate) mod shape_job_details;
 
 pub(crate) mod shape_job_scoping_block;
+
+pub(crate) mod shape_list_of_key_value_pair;
+
+pub(crate) mod shape_list_of_s3_bucket_name;
+
+pub(crate) mod shape_list_of_usage_by_account;
 
 pub(crate) mod shape_matching_bucket;
 
@@ -538,12 +511,6 @@ pub(crate) mod shape_search_resources_criteria;
 
 pub(crate) mod shape_severity;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_criteria_for_job;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_job_scope_term;
-
 pub(crate) mod shape_bucket_permission_configuration;
 
 pub(crate) mod shape_classification_result;
@@ -557,6 +524,10 @@ pub(crate) mod shape_finding_actor;
 pub(crate) mod shape_job_scope_term;
 
 pub(crate) mod shape_key_value_pair;
+
+pub(crate) mod shape_list_of_criteria_for_job;
+
+pub(crate) mod shape_list_of_job_scope_term;
 
 pub(crate) mod shape_s3_bucket;
 
@@ -638,15 +609,13 @@ pub(crate) mod shape_tag_value_pair;
 
 pub(crate) mod shape_user_identity_root;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_tag_criterion_pair_for_job;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_tag_value_pair;
-
 pub(crate) mod shape_custom_detection;
 
 pub(crate) mod shape_default_detections;
+
+pub(crate) mod shape_list_of_tag_criterion_pair_for_job;
+
+pub(crate) mod shape_list_of_tag_value_pair;
 
 pub(crate) mod shape_session_context;
 

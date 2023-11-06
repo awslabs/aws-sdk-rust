@@ -27,6 +27,7 @@ pub struct DeleteCustomModelInputBuilder {
 }
 impl DeleteCustomModelInputBuilder {
     /// <p>Name of the model to delete.</p>
+    /// This field is required.
     pub fn model_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_identifier = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteCustomModelInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCustomModelInput`](crate::operation::delete_custom_model::DeleteCustomModelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_custom_model::DeleteCustomModelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_custom_model::DeleteCustomModelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_custom_model::DeleteCustomModelInput {
             model_identifier: self.model_identifier,
         })

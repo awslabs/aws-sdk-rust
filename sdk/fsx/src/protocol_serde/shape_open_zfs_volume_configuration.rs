@@ -29,21 +29,21 @@ where
                             );
                         }
                         "StorageCapacityReservationGiB" => {
-                            builder = builder.set_storage_capacity_reservation_gi_b(
+                            builder = builder.set_storage_capacity_reservation_gib(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
                             );
                         }
                         "StorageCapacityQuotaGiB" => {
-                            builder = builder.set_storage_capacity_quota_gi_b(
+                            builder = builder.set_storage_capacity_quota_gib(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
                             );
                         }
                         "RecordSizeKiB" => {
-                            builder = builder.set_record_size_ki_b(
+                            builder = builder.set_record_size_kib(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,

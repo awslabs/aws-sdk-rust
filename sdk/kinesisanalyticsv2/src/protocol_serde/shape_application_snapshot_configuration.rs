@@ -2,9 +2,9 @@
 pub fn ser_application_snapshot_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ApplicationSnapshotConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.snapshots_enabled {
-        object.key("SnapshotsEnabled").boolean(*var_1);
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("SnapshotsEnabled").boolean(input.snapshots_enabled);
     }
     Ok(())
 }

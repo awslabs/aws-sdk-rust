@@ -27,6 +27,7 @@ pub struct GetOtaUpdateInputBuilder {
 }
 impl GetOtaUpdateInputBuilder {
     /// <p>The OTA update ID.</p>
+    /// This field is required.
     pub fn ota_update_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ota_update_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetOtaUpdateInputBuilder {
     /// Consumes the builder and constructs a [`GetOtaUpdateInput`](crate::operation::get_ota_update::GetOtaUpdateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_ota_update::GetOtaUpdateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_ota_update::GetOtaUpdateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_ota_update::GetOtaUpdateInput {
             ota_update_id: self.ota_update_id,
         })

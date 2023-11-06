@@ -69,28 +69,36 @@ impl UpdateDeploymentGroupInput {
         self.deployment_config_name.as_deref()
     }
     /// <p>The replacement set of Amazon EC2 tags on which to filter, if you want to change them. To keep the existing tags, enter their names. To remove tags, do not enter any tag names.</p>
-    pub fn ec2_tag_filters(&self) -> ::std::option::Option<&[crate::types::Ec2TagFilter]> {
-        self.ec2_tag_filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ec2_tag_filters.is_none()`.
+    pub fn ec2_tag_filters(&self) -> &[crate::types::Ec2TagFilter] {
+        self.ec2_tag_filters.as_deref().unwrap_or_default()
     }
     /// <p>The replacement set of on-premises instance tags on which to filter, if you want to change them. To keep the existing tags, enter their names. To remove tags, do not enter any tag names.</p>
-    pub fn on_premises_instance_tag_filters(&self) -> ::std::option::Option<&[crate::types::TagFilter]> {
-        self.on_premises_instance_tag_filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.on_premises_instance_tag_filters.is_none()`.
+    pub fn on_premises_instance_tag_filters(&self) -> &[crate::types::TagFilter] {
+        self.on_premises_instance_tag_filters.as_deref().unwrap_or_default()
     }
     /// <p>The replacement list of Auto Scaling groups to be included in the deployment group, if you want to change them.</p>
     /// <ul>
     /// <li> <p>To keep the Auto Scaling groups, enter their names or do not specify this parameter. </p> </li>
     /// <li> <p>To remove Auto Scaling groups, specify a non-null empty list of Auto Scaling group names to detach all CodeDeploy-managed Auto Scaling lifecycle hooks. For examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat">Amazon EC2 instances in an Amazon EC2 Auto Scaling group fail to launch and receive the error "Heartbeat Timeout"</a> in the <i>CodeDeploy User Guide</i>.</p> </li>
     /// </ul>
-    pub fn auto_scaling_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.auto_scaling_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auto_scaling_groups.is_none()`.
+    pub fn auto_scaling_groups(&self) -> &[::std::string::String] {
+        self.auto_scaling_groups.as_deref().unwrap_or_default()
     }
     /// <p>A replacement ARN for the service role, if you want to change it.</p>
     pub fn service_role_arn(&self) -> ::std::option::Option<&str> {
         self.service_role_arn.as_deref()
     }
     /// <p>Information about triggers to change when the deployment group is updated. For examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit a Trigger in a CodeDeploy Deployment Group</a> in the <i>CodeDeploy User Guide</i>.</p>
-    pub fn trigger_configurations(&self) -> ::std::option::Option<&[crate::types::TriggerConfig]> {
-        self.trigger_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.trigger_configurations.is_none()`.
+    pub fn trigger_configurations(&self) -> &[crate::types::TriggerConfig] {
+        self.trigger_configurations.as_deref().unwrap_or_default()
     }
     /// <p>Information to add or change about Amazon CloudWatch alarms when the deployment group is updated.</p>
     pub fn alarm_configuration(&self) -> ::std::option::Option<&crate::types::AlarmConfiguration> {
@@ -127,8 +135,10 @@ impl UpdateDeploymentGroupInput {
     /// :
     /// <servicename></servicename>
     /// </clustername></code>. </p>
-    pub fn ecs_services(&self) -> ::std::option::Option<&[crate::types::EcsService]> {
-        self.ecs_services.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ecs_services.is_none()`.
+    pub fn ecs_services(&self) -> &[crate::types::EcsService] {
+        self.ecs_services.as_deref().unwrap_or_default()
     }
     /// <p>Information about an on-premises instance tag set. The deployment group includes only on-premises instances identified by all the tag groups.</p>
     pub fn on_premises_tag_set(&self) -> ::std::option::Option<&crate::types::OnPremisesTagSet> {
@@ -167,6 +177,7 @@ pub struct UpdateDeploymentGroupInputBuilder {
 }
 impl UpdateDeploymentGroupInputBuilder {
     /// <p>The application name that corresponds to the deployment group to update.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
@@ -181,6 +192,7 @@ impl UpdateDeploymentGroupInputBuilder {
         &self.application_name
     }
     /// <p>The current name of the deployment group.</p>
+    /// This field is required.
     pub fn current_deployment_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_deployment_group_name = ::std::option::Option::Some(input.into());
         self
@@ -481,7 +493,7 @@ impl UpdateDeploymentGroupInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDeploymentGroupInput`](crate::operation::update_deployment_group::UpdateDeploymentGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_deployment_group::UpdateDeploymentGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_deployment_group::UpdateDeploymentGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_deployment_group::UpdateDeploymentGroupInput {
             application_name: self.application_name,

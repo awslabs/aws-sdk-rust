@@ -42,6 +42,7 @@ pub struct StartExportInputBuilder {
 }
 impl StartExportInputBuilder {
     /// <p>Start export request s3 bucket.</p>
+    /// This field is required.
     pub fn s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl StartExportInputBuilder {
         &self.s3_bucket
     }
     /// <p>Start export request s3key.</p>
+    /// This field is required.
     pub fn s3_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_key = ::std::option::Option::Some(input.into());
         self
@@ -84,7 +86,7 @@ impl StartExportInputBuilder {
         &self.s3_bucket_owner
     }
     /// Consumes the builder and constructs a [`StartExportInput`](crate::operation::start_export::StartExportInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_export::StartExportInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_export::StartExportInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_export::StartExportInput {
             s3_bucket: self.s3_bucket,
             s3_key: self.s3_key,

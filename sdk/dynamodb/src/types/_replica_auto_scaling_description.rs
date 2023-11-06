@@ -27,8 +27,10 @@ impl ReplicaAutoScalingDescription {
         self.region_name.as_deref()
     }
     /// <p>Replica-specific global secondary index auto scaling settings.</p>
-    pub fn global_secondary_indexes(&self) -> ::std::option::Option<&[crate::types::ReplicaGlobalSecondaryIndexAutoScalingDescription]> {
-        self.global_secondary_indexes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.global_secondary_indexes.is_none()`.
+    pub fn global_secondary_indexes(&self) -> &[crate::types::ReplicaGlobalSecondaryIndexAutoScalingDescription] {
+        self.global_secondary_indexes.as_deref().unwrap_or_default()
     }
     /// <p>Represents the auto scaling settings for a global table or global secondary index.</p>
     pub fn replica_provisioned_read_capacity_auto_scaling_settings(&self) -> ::std::option::Option<&crate::types::AutoScalingSettingsDescription> {

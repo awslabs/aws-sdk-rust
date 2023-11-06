@@ -41,6 +41,7 @@ pub struct UpdateAddressBookInputBuilder {
 }
 impl UpdateAddressBookInputBuilder {
     /// <p>The ARN of the room to update.</p>
+    /// This field is required.
     pub fn address_book_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.address_book_arn = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl UpdateAddressBookInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAddressBookInput`](crate::operation::update_address_book::UpdateAddressBookInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_address_book::UpdateAddressBookInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_address_book::UpdateAddressBookInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_address_book::UpdateAddressBookInput {
             address_book_arn: self.address_book_arn,
             name: self.name,

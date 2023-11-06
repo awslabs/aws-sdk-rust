@@ -2,7 +2,7 @@
 pub fn ser_geospatial_heatmap_color_scale(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GeospatialHeatmapColorScale,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.colors {
         let mut array_2 = object.key("Colors").start_array();
         for item_3 in var_1 {

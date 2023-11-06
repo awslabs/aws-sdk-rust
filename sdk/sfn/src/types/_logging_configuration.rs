@@ -21,8 +21,10 @@ impl LoggingConfiguration {
         self.include_execution_data
     }
     /// <p>An array of objects that describes where your execution history events will be logged. Limited to size 1. Required, if your log level is not set to <code>OFF</code>.</p>
-    pub fn destinations(&self) -> ::std::option::Option<&[crate::types::LogDestination]> {
-        self.destinations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destinations.is_none()`.
+    pub fn destinations(&self) -> &[crate::types::LogDestination] {
+        self.destinations.as_deref().unwrap_or_default()
     }
 }
 impl LoggingConfiguration {

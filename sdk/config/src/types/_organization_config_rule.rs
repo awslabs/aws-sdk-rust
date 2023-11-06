@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrganizationConfigRule {
     /// <p>The name that you assign to organization Config rule.</p>
-    pub organization_config_rule_name: ::std::option::Option<::std::string::String>,
+    pub organization_config_rule_name: ::std::string::String,
     /// <p>Amazon Resource Name (ARN) of organization Config rule.</p>
-    pub organization_config_rule_arn: ::std::option::Option<::std::string::String>,
+    pub organization_config_rule_arn: ::std::string::String,
     /// <p>An <code>OrganizationManagedRuleMetadata</code> object.</p>
     pub organization_managed_rule_metadata: ::std::option::Option<crate::types::OrganizationManagedRuleMetadata>,
     /// <p>An <code>OrganizationCustomRuleMetadata</code> object.</p>
@@ -21,12 +21,14 @@ pub struct OrganizationConfigRule {
 }
 impl OrganizationConfigRule {
     /// <p>The name that you assign to organization Config rule.</p>
-    pub fn organization_config_rule_name(&self) -> ::std::option::Option<&str> {
-        self.organization_config_rule_name.as_deref()
+    pub fn organization_config_rule_name(&self) -> &str {
+        use std::ops::Deref;
+        self.organization_config_rule_name.deref()
     }
     /// <p>Amazon Resource Name (ARN) of organization Config rule.</p>
-    pub fn organization_config_rule_arn(&self) -> ::std::option::Option<&str> {
-        self.organization_config_rule_arn.as_deref()
+    pub fn organization_config_rule_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.organization_config_rule_arn.deref()
     }
     /// <p>An <code>OrganizationManagedRuleMetadata</code> object.</p>
     pub fn organization_managed_rule_metadata(&self) -> ::std::option::Option<&crate::types::OrganizationManagedRuleMetadata> {
@@ -37,8 +39,10 @@ impl OrganizationConfigRule {
         self.organization_custom_rule_metadata.as_ref()
     }
     /// <p>A comma-separated list of accounts excluded from organization Config rule.</p>
-    pub fn excluded_accounts(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.excluded_accounts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.excluded_accounts.is_none()`.
+    pub fn excluded_accounts(&self) -> &[::std::string::String] {
+        self.excluded_accounts.as_deref().unwrap_or_default()
     }
     /// <p>The timestamp of the last update.</p>
     pub fn last_update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -70,6 +74,7 @@ pub struct OrganizationConfigRuleBuilder {
 }
 impl OrganizationConfigRuleBuilder {
     /// <p>The name that you assign to organization Config rule.</p>
+    /// This field is required.
     pub fn organization_config_rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_config_rule_name = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +89,7 @@ impl OrganizationConfigRuleBuilder {
         &self.organization_config_rule_name
     }
     /// <p>Amazon Resource Name (ARN) of organization Config rule.</p>
+    /// This field is required.
     pub fn organization_config_rule_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_config_rule_arn = ::std::option::Option::Some(input.into());
         self
@@ -177,15 +183,28 @@ impl OrganizationConfigRuleBuilder {
         &self.organization_custom_policy_rule_metadata
     }
     /// Consumes the builder and constructs a [`OrganizationConfigRule`](crate::types::OrganizationConfigRule).
-    pub fn build(self) -> crate::types::OrganizationConfigRule {
-        crate::types::OrganizationConfigRule {
-            organization_config_rule_name: self.organization_config_rule_name,
-            organization_config_rule_arn: self.organization_config_rule_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`organization_config_rule_name`](crate::types::builders::OrganizationConfigRuleBuilder::organization_config_rule_name)
+    /// - [`organization_config_rule_arn`](crate::types::builders::OrganizationConfigRuleBuilder::organization_config_rule_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::OrganizationConfigRule, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::OrganizationConfigRule {
+            organization_config_rule_name: self.organization_config_rule_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "organization_config_rule_name",
+                    "organization_config_rule_name was not specified but it is required when building OrganizationConfigRule",
+                )
+            })?,
+            organization_config_rule_arn: self.organization_config_rule_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "organization_config_rule_arn",
+                    "organization_config_rule_arn was not specified but it is required when building OrganizationConfigRule",
+                )
+            })?,
             organization_managed_rule_metadata: self.organization_managed_rule_metadata,
             organization_custom_rule_metadata: self.organization_custom_rule_metadata,
             excluded_accounts: self.excluded_accounts,
             last_update_time: self.last_update_time,
             organization_custom_policy_rule_metadata: self.organization_custom_policy_rule_metadata,
-        }
+        })
     }
 }

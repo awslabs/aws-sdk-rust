@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPoliciesGrantingServiceAccessOutput {
     /// <p>A&nbsp;<code>ListPoliciesGrantingServiceAccess</code> object that contains details about the permissions policies attached to the specified identity (user, group, or role).</p>
-    pub policies_granting_service_access: ::std::option::Option<::std::vec::Vec<crate::types::ListPoliciesGrantingServiceAccessEntry>>,
+    pub policies_granting_service_access: ::std::vec::Vec<crate::types::ListPoliciesGrantingServiceAccessEntry>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
@@ -13,8 +13,9 @@ pub struct ListPoliciesGrantingServiceAccessOutput {
 }
 impl ListPoliciesGrantingServiceAccessOutput {
     /// <p>A&nbsp;<code>ListPoliciesGrantingServiceAccess</code> object that contains details about the permissions policies attached to the specified identity (user, group, or role).</p>
-    pub fn policies_granting_service_access(&self) -> ::std::option::Option<&[crate::types::ListPoliciesGrantingServiceAccessEntry]> {
-        self.policies_granting_service_access.as_deref()
+    pub fn policies_granting_service_access(&self) -> &[crate::types::ListPoliciesGrantingServiceAccessEntry] {
+        use std::ops::Deref;
+        self.policies_granting_service_access.deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub fn is_truncated(&self) -> bool {
@@ -110,12 +111,26 @@ impl ListPoliciesGrantingServiceAccessOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListPoliciesGrantingServiceAccessOutput`](crate::operation::list_policies_granting_service_access::ListPoliciesGrantingServiceAccessOutput).
-    pub fn build(self) -> crate::operation::list_policies_granting_service_access::ListPoliciesGrantingServiceAccessOutput {
-        crate::operation::list_policies_granting_service_access::ListPoliciesGrantingServiceAccessOutput {
-            policies_granting_service_access: self.policies_granting_service_access,
-            is_truncated: self.is_truncated.unwrap_or_default(),
-            marker: self.marker,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`policies_granting_service_access`](crate::operation::list_policies_granting_service_access::builders::ListPoliciesGrantingServiceAccessOutputBuilder::policies_granting_service_access)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_policies_granting_service_access::ListPoliciesGrantingServiceAccessOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::list_policies_granting_service_access::ListPoliciesGrantingServiceAccessOutput {
+                policies_granting_service_access: self.policies_granting_service_access.ok_or_else(|| {
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
+                        "policies_granting_service_access",
+                        "policies_granting_service_access was not specified but it is required when building ListPoliciesGrantingServiceAccessOutput",
+                    )
+                })?,
+                is_truncated: self.is_truncated.unwrap_or_default(),
+                marker: self.marker,
+                _request_id: self._request_id,
+            },
+        )
     }
 }

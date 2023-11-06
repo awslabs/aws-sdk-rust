@@ -20,8 +20,10 @@ impl IsMemberInGroupsInput {
         self.member_id.as_ref()
     }
     /// <p>A list of identifiers for groups in the identity store.</p>
-    pub fn group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_ids.is_none()`.
+    pub fn group_ids(&self) -> &[::std::string::String] {
+        self.group_ids.as_deref().unwrap_or_default()
     }
 }
 impl IsMemberInGroupsInput {
@@ -41,6 +43,7 @@ pub struct IsMemberInGroupsInputBuilder {
 }
 impl IsMemberInGroupsInputBuilder {
     /// <p>The globally unique identifier for the identity store.</p>
+    /// This field is required.
     pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_store_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl IsMemberInGroupsInputBuilder {
         &self.identity_store_id
     }
     /// <p>An object containing the identifier of a group member.</p>
+    /// This field is required.
     pub fn member_id(mut self, input: crate::types::MemberId) -> Self {
         self.member_id = ::std::option::Option::Some(input);
         self
@@ -91,7 +95,7 @@ impl IsMemberInGroupsInputBuilder {
     /// Consumes the builder and constructs a [`IsMemberInGroupsInput`](crate::operation::is_member_in_groups::IsMemberInGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::is_member_in_groups::IsMemberInGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::is_member_in_groups::IsMemberInGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::is_member_in_groups::IsMemberInGroupsInput {
             identity_store_id: self.identity_store_id,
             member_id: self.member_id,

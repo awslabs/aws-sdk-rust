@@ -28,6 +28,7 @@ pub struct DescribeElasticsearchDomainInputBuilder {
 }
 impl DescribeElasticsearchDomainInputBuilder {
     /// <p>The name of the Elasticsearch domain for which you want information.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl DescribeElasticsearchDomainInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_elasticsearch_domain::DescribeElasticsearchDomainInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_elasticsearch_domain::DescribeElasticsearchDomainInput {
             domain_name: self.domain_name,

@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SampleUtterance {
     /// <p>The sample utterance that Amazon Lex uses to build its machine-learning model to recognize intents.</p>
-    pub utterance: ::std::option::Option<::std::string::String>,
+    pub utterance: ::std::string::String,
 }
 impl SampleUtterance {
     /// <p>The sample utterance that Amazon Lex uses to build its machine-learning model to recognize intents.</p>
-    pub fn utterance(&self) -> ::std::option::Option<&str> {
-        self.utterance.as_deref()
+    pub fn utterance(&self) -> &str {
+        use std::ops::Deref;
+        self.utterance.deref()
     }
 }
 impl SampleUtterance {
@@ -28,6 +29,7 @@ pub struct SampleUtteranceBuilder {
 }
 impl SampleUtteranceBuilder {
     /// <p>The sample utterance that Amazon Lex uses to build its machine-learning model to recognize intents.</p>
+    /// This field is required.
     pub fn utterance(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.utterance = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl SampleUtteranceBuilder {
         &self.utterance
     }
     /// Consumes the builder and constructs a [`SampleUtterance`](crate::types::SampleUtterance).
-    pub fn build(self) -> crate::types::SampleUtterance {
-        crate::types::SampleUtterance { utterance: self.utterance }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`utterance`](crate::types::builders::SampleUtteranceBuilder::utterance)
+    pub fn build(self) -> ::std::result::Result<crate::types::SampleUtterance, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SampleUtterance {
+            utterance: self.utterance.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "utterance",
+                    "utterance was not specified but it is required when building SampleUtterance",
+                )
+            })?,
+        })
     }
 }

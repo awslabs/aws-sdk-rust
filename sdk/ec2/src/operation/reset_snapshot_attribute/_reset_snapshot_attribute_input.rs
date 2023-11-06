@@ -41,6 +41,7 @@ pub struct ResetSnapshotAttributeInputBuilder {
 }
 impl ResetSnapshotAttributeInputBuilder {
     /// <p>The attribute to reset. Currently, only the attribute for permission to create volumes can be reset.</p>
+    /// This field is required.
     pub fn attribute(mut self, input: crate::types::SnapshotAttributeName) -> Self {
         self.attribute = ::std::option::Option::Some(input);
         self
@@ -55,6 +56,7 @@ impl ResetSnapshotAttributeInputBuilder {
         &self.attribute
     }
     /// <p>The ID of the snapshot.</p>
+    /// This field is required.
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_id = ::std::option::Option::Some(input.into());
         self
@@ -85,8 +87,10 @@ impl ResetSnapshotAttributeInputBuilder {
     /// Consumes the builder and constructs a [`ResetSnapshotAttributeInput`](crate::operation::reset_snapshot_attribute::ResetSnapshotAttributeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::reset_snapshot_attribute::ResetSnapshotAttributeInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::reset_snapshot_attribute::ResetSnapshotAttributeInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::reset_snapshot_attribute::ResetSnapshotAttributeInput {
             attribute: self.attribute,
             snapshot_id: self.snapshot_id,

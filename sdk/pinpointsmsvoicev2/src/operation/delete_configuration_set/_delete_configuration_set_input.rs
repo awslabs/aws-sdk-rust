@@ -27,6 +27,7 @@ pub struct DeleteConfigurationSetInputBuilder {
 }
 impl DeleteConfigurationSetInputBuilder {
     /// <p>The name of the configuration set or the configuration set ARN that you want to delete. The ConfigurationSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
+    /// This field is required.
     pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
@@ -43,8 +44,10 @@ impl DeleteConfigurationSetInputBuilder {
     /// Consumes the builder and constructs a [`DeleteConfigurationSetInput`](crate::operation::delete_configuration_set::DeleteConfigurationSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_configuration_set::DeleteConfigurationSetInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_configuration_set::DeleteConfigurationSetInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_configuration_set::DeleteConfigurationSetInput {
             configuration_set_name: self.configuration_set_name,
         })

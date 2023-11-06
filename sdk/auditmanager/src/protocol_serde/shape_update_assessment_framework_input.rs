@@ -2,7 +2,7 @@
 pub fn ser_update_assessment_framework_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_assessment_framework::UpdateAssessmentFrameworkInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.compliance_type {
         object.key("complianceType").string(var_1.as_str());
     }

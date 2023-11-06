@@ -58,6 +58,7 @@ pub struct CreateApplicationInputBuilder {
 }
 impl CreateApplicationInputBuilder {
     /// <p>Application name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -122,7 +123,7 @@ impl CreateApplicationInputBuilder {
     /// Consumes the builder and constructs a [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_application::CreateApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_application::CreateApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_application::CreateApplicationInput {
             name: self.name,
             description: self.description,

@@ -28,6 +28,7 @@ pub struct GetOperationDetailInputBuilder {
 }
 impl GetOperationDetailInputBuilder {
     /// <p>The identifier for the operation for which you want to get the status. Route 53 returned the identifier in the response to the original request.</p>
+    /// This field is required.
     pub fn operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operation_id = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,8 @@ impl GetOperationDetailInputBuilder {
     /// Consumes the builder and constructs a [`GetOperationDetailInput`](crate::operation::get_operation_detail::GetOperationDetailInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_operation_detail::GetOperationDetailInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_operation_detail::GetOperationDetailInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_operation_detail::GetOperationDetailInput {
             operation_id: self.operation_id,
         })

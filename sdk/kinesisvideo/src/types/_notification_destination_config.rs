@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotificationDestinationConfig {
     /// <p>The Uniform Resource Identifier (URI) that identifies where the images will be delivered.</p>
-    pub uri: ::std::option::Option<::std::string::String>,
+    pub uri: ::std::string::String,
 }
 impl NotificationDestinationConfig {
     /// <p>The Uniform Resource Identifier (URI) that identifies where the images will be delivered.</p>
-    pub fn uri(&self) -> ::std::option::Option<&str> {
-        self.uri.as_deref()
+    pub fn uri(&self) -> &str {
+        use std::ops::Deref;
+        self.uri.deref()
     }
 }
 impl NotificationDestinationConfig {
@@ -28,6 +29,7 @@ pub struct NotificationDestinationConfigBuilder {
 }
 impl NotificationDestinationConfigBuilder {
     /// <p>The Uniform Resource Identifier (URI) that identifies where the images will be delivered.</p>
+    /// This field is required.
     pub fn uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.uri = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl NotificationDestinationConfigBuilder {
         &self.uri
     }
     /// Consumes the builder and constructs a [`NotificationDestinationConfig`](crate::types::NotificationDestinationConfig).
-    pub fn build(self) -> crate::types::NotificationDestinationConfig {
-        crate::types::NotificationDestinationConfig { uri: self.uri }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`uri`](crate::types::builders::NotificationDestinationConfigBuilder::uri)
+    pub fn build(self) -> ::std::result::Result<crate::types::NotificationDestinationConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::NotificationDestinationConfig {
+            uri: self.uri.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "uri",
+                    "uri was not specified but it is required when building NotificationDestinationConfig",
+                )
+            })?,
+        })
     }
 }

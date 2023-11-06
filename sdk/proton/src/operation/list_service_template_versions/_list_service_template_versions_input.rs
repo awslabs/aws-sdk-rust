@@ -78,6 +78,7 @@ impl ListServiceTemplateVersionsInputBuilder {
         &self.max_results
     }
     /// <p>The name of the service template.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
@@ -113,7 +114,7 @@ impl ListServiceTemplateVersionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_service_template_versions::ListServiceTemplateVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_service_template_versions::ListServiceTemplateVersionsInput {
             next_token: self.next_token,

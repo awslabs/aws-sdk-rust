@@ -27,6 +27,7 @@ pub struct GetKeyspaceInputBuilder {
 }
 impl GetKeyspaceInputBuilder {
     /// <p>The name of the keyspace.</p>
+    /// This field is required.
     pub fn keyspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.keyspace_name = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetKeyspaceInputBuilder {
         &self.keyspace_name
     }
     /// Consumes the builder and constructs a [`GetKeyspaceInput`](crate::operation::get_keyspace::GetKeyspaceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_keyspace::GetKeyspaceInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_keyspace::GetKeyspaceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_keyspace::GetKeyspaceInput {
             keyspace_name: self.keyspace_name,
         })

@@ -18,8 +18,10 @@ pub struct DescribeScalingActivitiesInput {
 impl DescribeScalingActivitiesInput {
     /// <p>The activity IDs of the desired scaling activities. If you omit this property, all activities for the past six weeks are described. If unknown activities are requested, they are ignored with no error. If you specify an Auto Scaling group, the results are limited to that group.</p>
     /// <p>Array Members: Maximum number of 50 IDs.</p>
-    pub fn activity_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.activity_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.activity_ids.is_none()`.
+    pub fn activity_ids(&self) -> &[::std::string::String] {
+        self.activity_ids.as_deref().unwrap_or_default()
     }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn auto_scaling_group_name(&self) -> ::std::option::Option<&str> {
@@ -140,7 +142,7 @@ impl DescribeScalingActivitiesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_scaling_activities::DescribeScalingActivitiesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_scaling_activities::DescribeScalingActivitiesInput {
             activity_ids: self.activity_ids,

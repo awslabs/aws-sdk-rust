@@ -13,7 +13,7 @@ pub struct Instance {
     /// <p>The health check isn't deleted immediately, so it will still appear for a while if you submit a <code>ListHealthChecks</code> request, for example.</p>
     /// </note> </li>
     /// </ul>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>A unique string that identifies the request and that allows failed <code>RegisterInstance</code> requests to be retried without the risk of executing the operation twice. You must use a unique <code>CreatorRequestId</code> string every time you submit a <code>RegisterInstance</code> request if you're registering additional instances for the same namespace and service. <code>CreatorRequestId</code> can be any unique string (for example, a date/time stamp).</p>
     pub creator_request_id: ::std::option::Option<::std::string::String>,
     /// <p>A string map that contains the following information for the service that you specify in <code>ServiceId</code>:</p>
@@ -93,8 +93,9 @@ impl Instance {
     /// <p>The health check isn't deleted immediately, so it will still appear for a while if you submit a <code>ListHealthChecks</code> request, for example.</p>
     /// </note> </li>
     /// </ul>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>A unique string that identifies the request and that allows failed <code>RegisterInstance</code> requests to be retried without the risk of executing the operation twice. You must use a unique <code>CreatorRequestId</code> string every time you submit a <code>RegisterInstance</code> request if you're registering additional instances for the same namespace and service. <code>CreatorRequestId</code> can be any unique string (for example, a date/time stamp).</p>
     pub fn creator_request_id(&self) -> ::std::option::Option<&str> {
@@ -194,6 +195,7 @@ impl InstanceBuilder {
     /// <p>The health check isn't deleted immediately, so it will still appear for a while if you submit a <code>ListHealthChecks</code> request, for example.</p>
     /// </note> </li>
     /// </ul>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -450,11 +452,18 @@ impl InstanceBuilder {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`Instance`](crate::types::Instance).
-    pub fn build(self) -> crate::types::Instance {
-        crate::types::Instance {
-            id: self.id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::InstanceBuilder::id)
+    pub fn build(self) -> ::std::result::Result<crate::types::Instance, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Instance {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building Instance",
+                )
+            })?,
             creator_request_id: self.creator_request_id,
             attributes: self.attributes,
-        }
+        })
     }
 }

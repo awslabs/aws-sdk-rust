@@ -27,6 +27,7 @@ pub struct StartApplicationInputBuilder {
 }
 impl StartApplicationInputBuilder {
     /// <p>The ID of the application to start.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl StartApplicationInputBuilder {
     /// Consumes the builder and constructs a [`StartApplicationInput`](crate::operation::start_application::StartApplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_application::StartApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_application::StartApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_application::StartApplicationInput {
             application_id: self.application_id,
         })

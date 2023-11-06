@@ -2,7 +2,7 @@
 pub fn ser_update_project_visibility_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_project_visibility::UpdateProjectVisibilityInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.project_arn {
         object.key("projectArn").string(var_1.as_str());
     }

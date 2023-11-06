@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttributeOperation {
     /// <p>A string representation of the path to a given attribute or sub-attribute. Supports JMESPath.</p>
-    pub attribute_path: ::std::option::Option<::std::string::String>,
+    pub attribute_path: ::std::string::String,
     /// <p>The value of the attribute. This is a <code>Document</code> type. This type is not supported by Java V1, Go V1, and older versions of the CLI.</p>
     pub attribute_value: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl AttributeOperation {
     /// <p>A string representation of the path to a given attribute or sub-attribute. Supports JMESPath.</p>
-    pub fn attribute_path(&self) -> ::std::option::Option<&str> {
-        self.attribute_path.as_deref()
+    pub fn attribute_path(&self) -> &str {
+        use std::ops::Deref;
+        self.attribute_path.deref()
     }
     /// <p>The value of the attribute. This is a <code>Document</code> type. This type is not supported by Java V1, Go V1, and older versions of the CLI.</p>
     pub fn attribute_value(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
@@ -35,6 +36,7 @@ pub struct AttributeOperationBuilder {
 }
 impl AttributeOperationBuilder {
     /// <p>A string representation of the path to a given attribute or sub-attribute. Supports JMESPath.</p>
+    /// This field is required.
     pub fn attribute_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_path = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl AttributeOperationBuilder {
         &self.attribute_value
     }
     /// Consumes the builder and constructs a [`AttributeOperation`](crate::types::AttributeOperation).
-    pub fn build(self) -> crate::types::AttributeOperation {
-        crate::types::AttributeOperation {
-            attribute_path: self.attribute_path,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`attribute_path`](crate::types::builders::AttributeOperationBuilder::attribute_path)
+    pub fn build(self) -> ::std::result::Result<crate::types::AttributeOperation, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AttributeOperation {
+            attribute_path: self.attribute_path.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "attribute_path",
+                    "attribute_path was not specified but it is required when building AttributeOperation",
+                )
+            })?,
             attribute_value: self.attribute_value,
-        }
+        })
     }
 }

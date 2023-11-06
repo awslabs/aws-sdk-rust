@@ -3,7 +3,7 @@
 pub fn ser_predictive_scaling_customized_scaling_metric(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::PredictiveScalingCustomizedScalingMetric,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("MetricDataQueries");
     if let Some(var_2) = &input.metric_data_queries {
@@ -18,6 +18,7 @@ pub fn ser_predictive_scaling_customized_scaling_metric(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_predictive_scaling_customized_scaling_metric(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::PredictiveScalingCustomizedScalingMetric, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -38,5 +39,5 @@ pub fn de_predictive_scaling_customized_scaling_metric(
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::predictive_scaling_customized_scaling_metric_correct_errors(builder).build())
 }

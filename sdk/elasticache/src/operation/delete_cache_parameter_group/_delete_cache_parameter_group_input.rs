@@ -34,6 +34,7 @@ impl DeleteCacheParameterGroupInputBuilder {
     /// <p>The name of the cache parameter group to delete.</p> <note>
     /// <p>The specified cache security group must not be associated with any clusters.</p>
     /// </note>
+    /// This field is required.
     pub fn cache_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_parameter_group_name = ::std::option::Option::Some(input.into());
         self
@@ -56,7 +57,7 @@ impl DeleteCacheParameterGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_cache_parameter_group::DeleteCacheParameterGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_cache_parameter_group::DeleteCacheParameterGroupInput {
             cache_parameter_group_name: self.cache_parameter_group_name,

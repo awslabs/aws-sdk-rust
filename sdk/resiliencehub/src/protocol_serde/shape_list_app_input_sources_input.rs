@@ -2,7 +2,7 @@
 pub fn ser_list_app_input_sources_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_app_input_sources::ListAppInputSourcesInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.app_arn {
         object.key("appArn").string(var_1.as_str());
     }

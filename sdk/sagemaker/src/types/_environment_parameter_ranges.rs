@@ -9,8 +9,10 @@ pub struct EnvironmentParameterRanges {
 }
 impl EnvironmentParameterRanges {
     /// <p>Specified a list of parameters for each category.</p>
-    pub fn categorical_parameter_ranges(&self) -> ::std::option::Option<&[crate::types::CategoricalParameter]> {
-        self.categorical_parameter_ranges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.categorical_parameter_ranges.is_none()`.
+    pub fn categorical_parameter_ranges(&self) -> &[crate::types::CategoricalParameter] {
+        self.categorical_parameter_ranges.as_deref().unwrap_or_default()
     }
 }
 impl EnvironmentParameterRanges {

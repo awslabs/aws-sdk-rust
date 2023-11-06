@@ -27,6 +27,7 @@ pub struct GetApnsVoipSandboxChannelInputBuilder {
 }
 impl GetApnsVoipSandboxChannelInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetApnsVoipSandboxChannelInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_apns_voip_sandbox_channel::GetApnsVoipSandboxChannelInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_apns_voip_sandbox_channel::GetApnsVoipSandboxChannelInput {
             application_id: self.application_id,

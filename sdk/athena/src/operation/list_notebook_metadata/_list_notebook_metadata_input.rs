@@ -90,6 +90,7 @@ impl ListNotebookMetadataInputBuilder {
         &self.max_results
     }
     /// <p>The name of the Spark enabled workgroup to retrieve notebook metadata for.</p>
+    /// This field is required.
     pub fn work_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.work_group = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,7 @@ impl ListNotebookMetadataInputBuilder {
     /// Consumes the builder and constructs a [`ListNotebookMetadataInput`](crate::operation::list_notebook_metadata::ListNotebookMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_notebook_metadata::ListNotebookMetadataInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_notebook_metadata::ListNotebookMetadataInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_notebook_metadata::ListNotebookMetadataInput {
             filters: self.filters,

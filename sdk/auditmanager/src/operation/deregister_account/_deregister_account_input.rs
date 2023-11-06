@@ -18,7 +18,7 @@ impl DeregisterAccountInputBuilder {
     /// Consumes the builder and constructs a [`DeregisterAccountInput`](crate::operation::deregister_account::DeregisterAccountInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::deregister_account::DeregisterAccountInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::deregister_account::DeregisterAccountInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::deregister_account::DeregisterAccountInput {})
     }
 }

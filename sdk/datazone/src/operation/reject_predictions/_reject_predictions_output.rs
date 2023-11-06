@@ -4,25 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RejectPredictionsOutput {
     /// <p></p>
-    pub domain_id: ::std::option::Option<::std::string::String>,
+    pub domain_id: ::std::string::String,
     /// <p></p>
-    pub asset_id: ::std::option::Option<::std::string::String>,
+    pub asset_id: ::std::string::String,
     /// <p></p>
-    pub asset_revision: ::std::option::Option<::std::string::String>,
+    pub asset_revision: ::std::string::String,
     _request_id: Option<String>,
 }
 impl RejectPredictionsOutput {
     /// <p></p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
-        self.domain_id.as_deref()
+    pub fn domain_id(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_id.deref()
     }
     /// <p></p>
-    pub fn asset_id(&self) -> ::std::option::Option<&str> {
-        self.asset_id.as_deref()
+    pub fn asset_id(&self) -> &str {
+        use std::ops::Deref;
+        self.asset_id.deref()
     }
     /// <p></p>
-    pub fn asset_revision(&self) -> ::std::option::Option<&str> {
-        self.asset_revision.as_deref()
+    pub fn asset_revision(&self) -> &str {
+        use std::ops::Deref;
+        self.asset_revision.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for RejectPredictionsOutput {
@@ -48,6 +51,7 @@ pub struct RejectPredictionsOutputBuilder {
 }
 impl RejectPredictionsOutputBuilder {
     /// <p></p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +66,7 @@ impl RejectPredictionsOutputBuilder {
         &self.domain_id
     }
     /// <p></p>
+    /// This field is required.
     pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +81,7 @@ impl RejectPredictionsOutputBuilder {
         &self.asset_id
     }
     /// <p></p>
+    /// This field is required.
     pub fn asset_revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_revision = ::std::option::Option::Some(input.into());
         self
@@ -99,12 +105,33 @@ impl RejectPredictionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RejectPredictionsOutput`](crate::operation::reject_predictions::RejectPredictionsOutput).
-    pub fn build(self) -> crate::operation::reject_predictions::RejectPredictionsOutput {
-        crate::operation::reject_predictions::RejectPredictionsOutput {
-            domain_id: self.domain_id,
-            asset_id: self.asset_id,
-            asset_revision: self.asset_revision,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`domain_id`](crate::operation::reject_predictions::builders::RejectPredictionsOutputBuilder::domain_id)
+    /// - [`asset_id`](crate::operation::reject_predictions::builders::RejectPredictionsOutputBuilder::asset_id)
+    /// - [`asset_revision`](crate::operation::reject_predictions::builders::RejectPredictionsOutputBuilder::asset_revision)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::reject_predictions::RejectPredictionsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::reject_predictions::RejectPredictionsOutput {
+            domain_id: self.domain_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "domain_id",
+                    "domain_id was not specified but it is required when building RejectPredictionsOutput",
+                )
+            })?,
+            asset_id: self.asset_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "asset_id",
+                    "asset_id was not specified but it is required when building RejectPredictionsOutput",
+                )
+            })?,
+            asset_revision: self.asset_revision.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "asset_revision",
+                    "asset_revision was not specified but it is required when building RejectPredictionsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

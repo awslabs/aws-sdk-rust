@@ -26,8 +26,10 @@ impl CreateWorkGroupInput {
         self.description.as_deref()
     }
     /// <p>A list of comma separated tags to add to the workgroup that is created.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateWorkGroupInput {
@@ -48,6 +50,7 @@ pub struct CreateWorkGroupInputBuilder {
 }
 impl CreateWorkGroupInputBuilder {
     /// <p>The workgroup name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -112,7 +115,7 @@ impl CreateWorkGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateWorkGroupInput`](crate::operation::create_work_group::CreateWorkGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_work_group::CreateWorkGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_work_group::CreateWorkGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_work_group::CreateWorkGroupInput {
             name: self.name,
             configuration: self.configuration,

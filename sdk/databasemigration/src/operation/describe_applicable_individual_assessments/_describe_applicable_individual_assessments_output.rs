@@ -12,8 +12,10 @@ pub struct DescribeApplicableIndividualAssessmentsOutput {
 }
 impl DescribeApplicableIndividualAssessmentsOutput {
     /// <p>List of names for the individual assessments supported by the premigration assessment run that you start based on the specified request parameters. For more information on the available individual assessments, including compatibility with different migration task configurations, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Working with premigration assessment runs</a> in the <i>Database Migration Service User Guide.</i> </p>
-    pub fn individual_assessment_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.individual_assessment_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.individual_assessment_names.is_none()`.
+    pub fn individual_assessment_names(&self) -> &[::std::string::String] {
+        self.individual_assessment_names.as_deref().unwrap_or_default()
     }
     /// <p>Pagination token returned for you to pass to a subsequent request. If you pass this token as the <code>Marker</code> value in a subsequent request, the response includes only records beyond the marker, up to the value specified in the request by <code>MaxRecords</code>.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

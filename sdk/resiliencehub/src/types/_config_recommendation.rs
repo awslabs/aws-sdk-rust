@@ -14,9 +14,9 @@ pub struct ConfigRecommendation {
     pub recommendation_compliance:
         ::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, crate::types::RecommendationDisruptionCompliance>>,
     /// <p>The type of optimization.</p>
-    pub optimization_type: ::std::option::Option<crate::types::ConfigRecommendationOptimizationType>,
+    pub optimization_type: crate::types::ConfigRecommendationOptimizationType,
     /// <p>The name of the recommendation configuration.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The optional description for an app.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>List of the suggested configuration changes.</p>
@@ -24,7 +24,7 @@ pub struct ConfigRecommendation {
     /// <p>The architecture type.</p>
     pub ha_architecture: ::std::option::Option<crate::types::HaArchitecture>,
     /// <p>Reference identifier for the recommendation configuration.</p>
-    pub reference_id: ::std::option::Option<::std::string::String>,
+    pub reference_id: ::std::string::String,
 }
 impl ConfigRecommendation {
     /// <p>The cost for the application.</p>
@@ -48,28 +48,32 @@ impl ConfigRecommendation {
         self.recommendation_compliance.as_ref()
     }
     /// <p>The type of optimization.</p>
-    pub fn optimization_type(&self) -> ::std::option::Option<&crate::types::ConfigRecommendationOptimizationType> {
-        self.optimization_type.as_ref()
+    pub fn optimization_type(&self) -> &crate::types::ConfigRecommendationOptimizationType {
+        &self.optimization_type
     }
     /// <p>The name of the recommendation configuration.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The optional description for an app.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>List of the suggested configuration changes.</p>
-    pub fn suggested_changes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.suggested_changes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.suggested_changes.is_none()`.
+    pub fn suggested_changes(&self) -> &[::std::string::String] {
+        self.suggested_changes.as_deref().unwrap_or_default()
     }
     /// <p>The architecture type.</p>
     pub fn ha_architecture(&self) -> ::std::option::Option<&crate::types::HaArchitecture> {
         self.ha_architecture.as_ref()
     }
     /// <p>Reference identifier for the recommendation configuration.</p>
-    pub fn reference_id(&self) -> ::std::option::Option<&str> {
-        self.reference_id.as_deref()
+    pub fn reference_id(&self) -> &str {
+        use std::ops::Deref;
+        self.reference_id.deref()
     }
 }
 impl ConfigRecommendation {
@@ -175,6 +179,7 @@ impl ConfigRecommendationBuilder {
         &self.recommendation_compliance
     }
     /// <p>The type of optimization.</p>
+    /// This field is required.
     pub fn optimization_type(mut self, input: crate::types::ConfigRecommendationOptimizationType) -> Self {
         self.optimization_type = ::std::option::Option::Some(input);
         self
@@ -189,6 +194,7 @@ impl ConfigRecommendationBuilder {
         &self.optimization_type
     }
     /// <p>The name of the recommendation configuration.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -251,6 +257,7 @@ impl ConfigRecommendationBuilder {
         &self.ha_architecture
     }
     /// <p>Reference identifier for the recommendation configuration.</p>
+    /// This field is required.
     pub fn reference_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reference_id = ::std::option::Option::Some(input.into());
         self
@@ -265,18 +272,37 @@ impl ConfigRecommendationBuilder {
         &self.reference_id
     }
     /// Consumes the builder and constructs a [`ConfigRecommendation`](crate::types::ConfigRecommendation).
-    pub fn build(self) -> crate::types::ConfigRecommendation {
-        crate::types::ConfigRecommendation {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`optimization_type`](crate::types::builders::ConfigRecommendationBuilder::optimization_type)
+    /// - [`name`](crate::types::builders::ConfigRecommendationBuilder::name)
+    /// - [`reference_id`](crate::types::builders::ConfigRecommendationBuilder::reference_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::ConfigRecommendation, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ConfigRecommendation {
             cost: self.cost,
             app_component_name: self.app_component_name,
             compliance: self.compliance,
             recommendation_compliance: self.recommendation_compliance,
-            optimization_type: self.optimization_type,
-            name: self.name,
+            optimization_type: self.optimization_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "optimization_type",
+                    "optimization_type was not specified but it is required when building ConfigRecommendation",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ConfigRecommendation",
+                )
+            })?,
             description: self.description,
             suggested_changes: self.suggested_changes,
             ha_architecture: self.ha_architecture,
-            reference_id: self.reference_id,
-        }
+            reference_id: self.reference_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "reference_id",
+                    "reference_id was not specified but it is required when building ConfigRecommendation",
+                )
+            })?,
+        })
     }
 }

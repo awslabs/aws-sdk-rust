@@ -66,6 +66,7 @@ pub struct ListTrainingJobsForHyperParameterTuningJobInputBuilder {
 }
 impl ListTrainingJobsForHyperParameterTuningJobInputBuilder {
     /// <p>The name of the tuning job whose training jobs you want to list.</p>
+    /// This field is required.
     pub fn hyper_parameter_tuning_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hyper_parameter_tuning_job_name = ::std::option::Option::Some(input.into());
         self
@@ -157,7 +158,7 @@ impl ListTrainingJobsForHyperParameterTuningJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::ListTrainingJobsForHyperParameterTuningJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::ListTrainingJobsForHyperParameterTuningJobInput {

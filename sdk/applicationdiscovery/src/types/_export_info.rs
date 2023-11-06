@@ -5,15 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportInfo {
     /// <p>A unique identifier used to query an export.</p>
-    pub export_id: ::std::option::Option<::std::string::String>,
+    pub export_id: ::std::string::String,
     /// <p>The status of the data export job.</p>
-    pub export_status: ::std::option::Option<crate::types::ExportStatus>,
+    pub export_status: crate::types::ExportStatus,
     /// <p>A status message provided for API callers.</p>
-    pub status_message: ::std::option::Option<::std::string::String>,
+    pub status_message: ::std::string::String,
     /// <p>A URL for an Amazon S3 bucket where you can review the exported data. The URL is displayed only if the export succeeded.</p>
     pub configurations_download_url: ::std::option::Option<::std::string::String>,
     /// <p>The time that the data export was initiated.</p>
-    pub export_request_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub export_request_time: ::aws_smithy_types::DateTime,
     /// <p>If true, the export of agent information exceeded the size limit for a single export and the exported data is incomplete for the requested time range. To address this, select a smaller time range for the export by using <code>startDate</code> and <code>endDate</code>.</p>
     pub is_truncated: bool,
     /// <p>The value of <code>startTime</code> parameter in the <code>StartExportTask</code> request. If no <code>startTime</code> was requested, this result does not appear in <code>ExportInfo</code>.</p>
@@ -23,24 +23,26 @@ pub struct ExportInfo {
 }
 impl ExportInfo {
     /// <p>A unique identifier used to query an export.</p>
-    pub fn export_id(&self) -> ::std::option::Option<&str> {
-        self.export_id.as_deref()
+    pub fn export_id(&self) -> &str {
+        use std::ops::Deref;
+        self.export_id.deref()
     }
     /// <p>The status of the data export job.</p>
-    pub fn export_status(&self) -> ::std::option::Option<&crate::types::ExportStatus> {
-        self.export_status.as_ref()
+    pub fn export_status(&self) -> &crate::types::ExportStatus {
+        &self.export_status
     }
     /// <p>A status message provided for API callers.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
-        self.status_message.as_deref()
+    pub fn status_message(&self) -> &str {
+        use std::ops::Deref;
+        self.status_message.deref()
     }
     /// <p>A URL for an Amazon S3 bucket where you can review the exported data. The URL is displayed only if the export succeeded.</p>
     pub fn configurations_download_url(&self) -> ::std::option::Option<&str> {
         self.configurations_download_url.as_deref()
     }
     /// <p>The time that the data export was initiated.</p>
-    pub fn export_request_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.export_request_time.as_ref()
+    pub fn export_request_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.export_request_time
     }
     /// <p>If true, the export of agent information exceeded the size limit for a single export and the exported data is incomplete for the requested time range. To address this, select a smaller time range for the export by using <code>startDate</code> and <code>endDate</code>.</p>
     pub fn is_truncated(&self) -> bool {
@@ -77,6 +79,7 @@ pub struct ExportInfoBuilder {
 }
 impl ExportInfoBuilder {
     /// <p>A unique identifier used to query an export.</p>
+    /// This field is required.
     pub fn export_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.export_id = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +94,7 @@ impl ExportInfoBuilder {
         &self.export_id
     }
     /// <p>The status of the data export job.</p>
+    /// This field is required.
     pub fn export_status(mut self, input: crate::types::ExportStatus) -> Self {
         self.export_status = ::std::option::Option::Some(input);
         self
@@ -105,6 +109,7 @@ impl ExportInfoBuilder {
         &self.export_status
     }
     /// <p>A status message provided for API callers.</p>
+    /// This field is required.
     pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
@@ -133,6 +138,7 @@ impl ExportInfoBuilder {
         &self.configurations_download_url
     }
     /// <p>The time that the data export was initiated.</p>
+    /// This field is required.
     pub fn export_request_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.export_request_time = ::std::option::Option::Some(input);
         self
@@ -189,16 +195,41 @@ impl ExportInfoBuilder {
         &self.requested_end_time
     }
     /// Consumes the builder and constructs a [`ExportInfo`](crate::types::ExportInfo).
-    pub fn build(self) -> crate::types::ExportInfo {
-        crate::types::ExportInfo {
-            export_id: self.export_id,
-            export_status: self.export_status,
-            status_message: self.status_message,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`export_id`](crate::types::builders::ExportInfoBuilder::export_id)
+    /// - [`export_status`](crate::types::builders::ExportInfoBuilder::export_status)
+    /// - [`status_message`](crate::types::builders::ExportInfoBuilder::status_message)
+    /// - [`export_request_time`](crate::types::builders::ExportInfoBuilder::export_request_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::ExportInfo, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ExportInfo {
+            export_id: self.export_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "export_id",
+                    "export_id was not specified but it is required when building ExportInfo",
+                )
+            })?,
+            export_status: self.export_status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "export_status",
+                    "export_status was not specified but it is required when building ExportInfo",
+                )
+            })?,
+            status_message: self.status_message.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status_message",
+                    "status_message was not specified but it is required when building ExportInfo",
+                )
+            })?,
             configurations_download_url: self.configurations_download_url,
-            export_request_time: self.export_request_time,
+            export_request_time: self.export_request_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "export_request_time",
+                    "export_request_time was not specified but it is required when building ExportInfo",
+                )
+            })?,
             is_truncated: self.is_truncated.unwrap_or_default(),
             requested_start_time: self.requested_start_time,
             requested_end_time: self.requested_end_time,
-        }
+        })
     }
 }

@@ -27,6 +27,7 @@ pub struct DeleteSecurityConfigurationInputBuilder {
 }
 impl DeleteSecurityConfigurationInputBuilder {
     /// <p>The name of the security configuration to delete.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteSecurityConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_security_configuration::DeleteSecurityConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_security_configuration::DeleteSecurityConfigurationInput { name: self.name })
     }

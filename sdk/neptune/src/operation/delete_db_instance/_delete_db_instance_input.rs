@@ -81,6 +81,7 @@ impl DeleteDbInstanceInputBuilder {
     /// <ul>
     /// <li> <p>Must match the name of an existing DB instance.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_identifier = ::std::option::Option::Some(input.into());
         self
@@ -175,7 +176,7 @@ impl DeleteDbInstanceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDbInstanceInput`](crate::operation::delete_db_instance::DeleteDbInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_db_instance::DeleteDbInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_db_instance::DeleteDbInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_db_instance::DeleteDbInstanceInput {
             db_instance_identifier: self.db_instance_identifier,
             skip_final_snapshot: self.skip_final_snapshot,

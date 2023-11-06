@@ -14,8 +14,10 @@ impl DisassociateMembersInput {
         self.detector_id.as_deref()
     }
     /// <p>A list of account IDs of the GuardDuty member accounts that you want to disassociate from the administrator account.</p>
-    pub fn account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.account_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
+    pub fn account_ids(&self) -> &[::std::string::String] {
+        self.account_ids.as_deref().unwrap_or_default()
     }
 }
 impl DisassociateMembersInput {
@@ -34,6 +36,7 @@ pub struct DisassociateMembersInputBuilder {
 }
 impl DisassociateMembersInputBuilder {
     /// <p>The unique ID of the detector of the GuardDuty account whose members you want to disassociate from the administrator account.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +73,7 @@ impl DisassociateMembersInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateMembersInput`](crate::operation::disassociate_members::DisassociateMembersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disassociate_members::DisassociateMembersInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::disassociate_members::DisassociateMembersInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::disassociate_members::DisassociateMembersInput {
             detector_id: self.detector_id,

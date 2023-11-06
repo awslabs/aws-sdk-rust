@@ -35,6 +35,7 @@ pub struct SigningConfigurationBuilder {
 }
 impl SigningConfigurationBuilder {
     /// <p>The encryption algorithm options that are available for a code signing job.</p>
+    /// This field is required.
     pub fn encryption_algorithm_options(mut self, input: crate::types::EncryptionAlgorithmOptions) -> Self {
         self.encryption_algorithm_options = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl SigningConfigurationBuilder {
         &self.encryption_algorithm_options
     }
     /// <p>The hash algorithm options that are available for a code signing job.</p>
+    /// This field is required.
     pub fn hash_algorithm_options(mut self, input: crate::types::HashAlgorithmOptions) -> Self {
         self.hash_algorithm_options = ::std::option::Option::Some(input);
         self

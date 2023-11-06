@@ -64,7 +64,7 @@ impl RevokeInvitationInputBuilder {
     /// Consumes the builder and constructs a [`RevokeInvitationInput`](crate::operation::revoke_invitation::RevokeInvitationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::revoke_invitation::RevokeInvitationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::revoke_invitation::RevokeInvitationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::revoke_invitation::RevokeInvitationInput {
             user_arn: self.user_arn,
             enrollment_id: self.enrollment_id,

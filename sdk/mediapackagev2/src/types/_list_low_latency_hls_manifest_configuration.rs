@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLowLatencyHlsManifestConfiguration {
     /// <p>A short short string that's appended to the endpoint URL. The manifest name creates a unique path to this endpoint. If you don't enter a value, MediaPackage uses the default manifest name, index. MediaPackage automatically inserts the format extension, such as .m3u8. You can't use the same manifest name if you use HLS manifest and low-latency HLS manifest. The manifestName on the HLSManifest object overrides the manifestName you provided on the originEndpoint object.</p>
-    pub manifest_name: ::std::option::Option<::std::string::String>,
+    pub manifest_name: ::std::string::String,
     /// <p>A short string that's appended to the endpoint URL. The child manifest name creates a unique path to this endpoint. If you don't enter a value, MediaPackage uses the default child manifest name, index_1. The manifestName on the HLSManifest object overrides the manifestName you provided on the originEndpoint object.</p>
     pub child_manifest_name: ::std::option::Option<::std::string::String>,
     /// <p>The egress domain URL for stream delivery from MediaPackage.</p>
@@ -13,8 +13,9 @@ pub struct ListLowLatencyHlsManifestConfiguration {
 }
 impl ListLowLatencyHlsManifestConfiguration {
     /// <p>A short short string that's appended to the endpoint URL. The manifest name creates a unique path to this endpoint. If you don't enter a value, MediaPackage uses the default manifest name, index. MediaPackage automatically inserts the format extension, such as .m3u8. You can't use the same manifest name if you use HLS manifest and low-latency HLS manifest. The manifestName on the HLSManifest object overrides the manifestName you provided on the originEndpoint object.</p>
-    pub fn manifest_name(&self) -> ::std::option::Option<&str> {
-        self.manifest_name.as_deref()
+    pub fn manifest_name(&self) -> &str {
+        use std::ops::Deref;
+        self.manifest_name.deref()
     }
     /// <p>A short string that's appended to the endpoint URL. The child manifest name creates a unique path to this endpoint. If you don't enter a value, MediaPackage uses the default child manifest name, index_1. The manifestName on the HLSManifest object overrides the manifestName you provided on the originEndpoint object.</p>
     pub fn child_manifest_name(&self) -> ::std::option::Option<&str> {
@@ -42,6 +43,7 @@ pub struct ListLowLatencyHlsManifestConfigurationBuilder {
 }
 impl ListLowLatencyHlsManifestConfigurationBuilder {
     /// <p>A short short string that's appended to the endpoint URL. The manifest name creates a unique path to this endpoint. If you don't enter a value, MediaPackage uses the default manifest name, index. MediaPackage automatically inserts the format extension, such as .m3u8. You can't use the same manifest name if you use HLS manifest and low-latency HLS manifest. The manifestName on the HLSManifest object overrides the manifestName you provided on the originEndpoint object.</p>
+    /// This field is required.
     pub fn manifest_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.manifest_name = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +86,20 @@ impl ListLowLatencyHlsManifestConfigurationBuilder {
         &self.url
     }
     /// Consumes the builder and constructs a [`ListLowLatencyHlsManifestConfiguration`](crate::types::ListLowLatencyHlsManifestConfiguration).
-    pub fn build(self) -> crate::types::ListLowLatencyHlsManifestConfiguration {
-        crate::types::ListLowLatencyHlsManifestConfiguration {
-            manifest_name: self.manifest_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`manifest_name`](crate::types::builders::ListLowLatencyHlsManifestConfigurationBuilder::manifest_name)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::ListLowLatencyHlsManifestConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ListLowLatencyHlsManifestConfiguration {
+            manifest_name: self.manifest_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "manifest_name",
+                    "manifest_name was not specified but it is required when building ListLowLatencyHlsManifestConfiguration",
+                )
+            })?,
             child_manifest_name: self.child_manifest_name,
             url: self.url,
-        }
+        })
     }
 }

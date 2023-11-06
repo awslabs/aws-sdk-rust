@@ -14,8 +14,10 @@ impl AssociatePricingRulesInput {
         self.arn.as_deref()
     }
     /// <p> The <code>PricingRuleArns</code> that are associated with the Pricing Plan. </p>
-    pub fn pricing_rule_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.pricing_rule_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pricing_rule_arns.is_none()`.
+    pub fn pricing_rule_arns(&self) -> &[::std::string::String] {
+        self.pricing_rule_arns.as_deref().unwrap_or_default()
     }
 }
 impl AssociatePricingRulesInput {
@@ -34,6 +36,7 @@ pub struct AssociatePricingRulesInputBuilder {
 }
 impl AssociatePricingRulesInputBuilder {
     /// <p> The <code>PricingPlanArn</code> that the <code>PricingRuleArns</code> are associated with. </p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +73,7 @@ impl AssociatePricingRulesInputBuilder {
     /// Consumes the builder and constructs a [`AssociatePricingRulesInput`](crate::operation::associate_pricing_rules::AssociatePricingRulesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_pricing_rules::AssociatePricingRulesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::associate_pricing_rules::AssociatePricingRulesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::associate_pricing_rules::AssociatePricingRulesInput {
             arn: self.arn,

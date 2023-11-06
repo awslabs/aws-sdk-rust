@@ -11,8 +11,10 @@ pub struct ListCustomLineItemVersionsOutput {
 }
 impl ListCustomLineItemVersionsOutput {
     /// <p>A list of <code>CustomLineItemVersionListElements</code> that are received.</p>
-    pub fn custom_line_item_versions(&self) -> ::std::option::Option<&[crate::types::CustomLineItemVersionListElement]> {
-        self.custom_line_item_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_line_item_versions.is_none()`.
+    pub fn custom_line_item_versions(&self) -> &[crate::types::CustomLineItemVersionListElement] {
+        self.custom_line_item_versions.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token that's used on subsequent calls to retrieve custom line item versions.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

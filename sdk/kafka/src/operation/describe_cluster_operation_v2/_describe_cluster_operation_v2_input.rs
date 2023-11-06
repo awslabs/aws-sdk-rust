@@ -27,6 +27,7 @@ pub struct DescribeClusterOperationV2InputBuilder {
 }
 impl DescribeClusterOperationV2InputBuilder {
     /// ARN of the cluster operation to describe.
+    /// This field is required.
     pub fn cluster_operation_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_operation_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeClusterOperationV2InputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_cluster_operation_v2::DescribeClusterOperationV2Input,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_cluster_operation_v2::DescribeClusterOperationV2Input {
             cluster_operation_arn: self.cluster_operation_arn,

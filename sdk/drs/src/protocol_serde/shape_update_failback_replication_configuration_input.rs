@@ -2,21 +2,21 @@
 pub fn ser_update_failback_replication_configuration_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_failback_replication_configuration::UpdateFailbackReplicationConfigurationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.bandwidth_throttling != 0 {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    if let Some(var_1) = &input.bandwidth_throttling {
         object.key("bandwidthThrottling").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.bandwidth_throttling).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.name {
-        object.key("name").string(var_1.as_str());
+    if let Some(var_2) = &input.name {
+        object.key("name").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.recovery_instance_id {
-        object.key("recoveryInstanceID").string(var_2.as_str());
+    if let Some(var_3) = &input.recovery_instance_id {
+        object.key("recoveryInstanceID").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.use_private_ip {
-        object.key("usePrivateIP").boolean(*var_3);
+    if let Some(var_4) = &input.use_private_ip {
+        object.key("usePrivateIP").boolean(*var_4);
     }
     Ok(())
 }

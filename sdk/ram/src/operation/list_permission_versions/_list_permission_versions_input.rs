@@ -41,6 +41,7 @@ pub struct ListPermissionVersionsInputBuilder {
 }
 impl ListPermissionVersionsInputBuilder {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the RAM permission whose versions you want to list. You can use the <code>permissionVersion</code> parameter on the <code>AssociateResourceSharePermission</code> operation to specify a non-default version to attach.</p>
+    /// This field is required.
     pub fn permission_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permission_arn = ::std::option::Option::Some(input.into());
         self
@@ -85,8 +86,10 @@ impl ListPermissionVersionsInputBuilder {
     /// Consumes the builder and constructs a [`ListPermissionVersionsInput`](crate::operation::list_permission_versions::ListPermissionVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_permission_versions::ListPermissionVersionsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::list_permission_versions::ListPermissionVersionsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::list_permission_versions::ListPermissionVersionsInput {
             permission_arn: self.permission_arn,
             next_token: self.next_token,

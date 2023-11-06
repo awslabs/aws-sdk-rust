@@ -28,6 +28,7 @@ pub struct ProcessingFeatureStoreOutputBuilder {
 }
 impl ProcessingFeatureStoreOutputBuilder {
     /// <p>The name of the Amazon SageMaker FeatureGroup to use as the destination for processing job output. Note that your processing script is responsible for putting records into your Feature Store.</p>
+    /// This field is required.
     pub fn feature_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_group_name = ::std::option::Option::Some(input.into());
         self

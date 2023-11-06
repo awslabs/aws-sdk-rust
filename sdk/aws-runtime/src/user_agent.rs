@@ -6,7 +6,7 @@
 use aws_http::user_agent::{ApiMetadata, AwsUserAgent};
 use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::interceptors::context::BeforeTransmitInterceptorContextMut;
-use aws_smithy_runtime_api::client::interceptors::Interceptor;
+use aws_smithy_runtime_api::client::interceptors::Intercept;
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 use aws_smithy_types::config_bag::ConfigBag;
 use aws_types::app_name::AppName;
@@ -71,7 +71,7 @@ fn header_values(
     ))
 }
 
-impl Interceptor for UserAgentInterceptor {
+impl Intercept for UserAgentInterceptor {
     fn name(&self) -> &'static str {
         "UserAgentInterceptor"
     }
@@ -82,25 +82,25 @@ impl Interceptor for UserAgentInterceptor {
         _runtime_components: &RuntimeComponents,
         cfg: &mut ConfigBag,
     ) -> Result<(), BoxError> {
-        let api_metadata = cfg
-            .load::<ApiMetadata>()
-            .ok_or(UserAgentInterceptorError::MissingApiMetadata)?;
-
         // Allow for overriding the user agent by an earlier interceptor (so, for example,
         // tests can use `AwsUserAgent::for_tests()`) by attempting to grab one out of the
         // config bag before creating one.
         let ua: Cow<'_, AwsUserAgent> = cfg
             .load::<AwsUserAgent>()
             .map(Cow::Borrowed)
+            .map(Result::<_, UserAgentInterceptorError>::Ok)
             .unwrap_or_else(|| {
+                let api_metadata = cfg
+                    .load::<ApiMetadata>()
+                    .ok_or(UserAgentInterceptorError::MissingApiMetadata)?;
                 let mut ua = AwsUserAgent::new_from_environment(Env::real(), api_metadata.clone());
 
                 let maybe_app_name = cfg.load::<AppName>();
                 if let Some(app_name) = maybe_app_name {
                     ua.set_app_name(app_name.clone());
                 }
-                Cow::Owned(ua)
-            });
+                Ok(Cow::Owned(ua))
+            })?;
 
         let headers = context.request_mut().headers_mut();
         let (user_agent, x_amz_user_agent) = header_values(&ua)?;
@@ -113,9 +113,9 @@ impl Interceptor for UserAgentInterceptor {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use aws_smithy_http::body::SdkBody;
     use aws_smithy_runtime_api::client::interceptors::context::{Input, InterceptorContext};
-    use aws_smithy_runtime_api::client::interceptors::Interceptor;
+    use aws_smithy_runtime_api::client::interceptors::Intercept;
+    use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
     use aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder;
     use aws_smithy_types::config_bag::{ConfigBag, Layer};
     use aws_smithy_types::error::display::DisplayErrorContext;
@@ -127,14 +127,12 @@ mod tests {
             .headers()
             .get(header_name)
             .unwrap()
-            .to_str()
-            .unwrap()
     }
 
     fn context() -> InterceptorContext {
         let mut context = InterceptorContext::new(Input::doesnt_matter());
         context.enter_serialization_phase();
-        context.set_request(http::Request::builder().body(SdkBody::empty()).unwrap());
+        context.set_request(HttpRequest::empty());
         let _ = context.take_input();
         context.enter_before_transmit_phase();
         context
@@ -248,6 +246,32 @@ mod tests {
         assert!(
             error.contains("This is a bug"),
             "`{error}` should contain message `This is a bug`"
+        );
+    }
+
+    #[test]
+    fn test_api_metadata_missing_with_ua_override() {
+        let rc = RuntimeComponentsBuilder::for_tests().build().unwrap();
+        let mut context = context();
+
+        let mut layer = Layer::new("test");
+        layer.store_put(AwsUserAgent::for_tests());
+        let mut config = ConfigBag::of_layers(vec![layer]);
+
+        let interceptor = UserAgentInterceptor::new();
+        let mut ctx = Into::into(&mut context);
+
+        interceptor
+            .modify_before_signing(&mut ctx, &rc, &mut config)
+            .expect("it should succeed");
+
+        let header = expect_header(&context, "user-agent");
+        assert_eq!(AwsUserAgent::for_tests().ua_header(), header);
+        assert!(!header.contains("unused"));
+
+        assert_eq!(
+            AwsUserAgent::for_tests().aws_ua_header(),
+            expect_header(&context, "x-amz-user-agent")
         );
     }
 }

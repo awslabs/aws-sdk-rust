@@ -62,13 +62,13 @@ pub fn de_list_objects_v2_http_response(
 pub fn ser_list_objects_v2_headers(
     input: &crate::operation::list_objects_v2::ListObjectsV2Input,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.request_payer {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "request_payer",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -81,7 +81,7 @@ pub fn ser_list_objects_v2_headers(
         if !formatted_4.is_empty() {
             let header_value = formatted_4;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "expected_bucket_owner",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -95,7 +95,7 @@ pub fn ser_list_objects_v2_headers(
             if !formatted_7.is_empty() {
                 let header_value = formatted_7;
                 let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                    ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                    ::aws_smithy_types::error::operation::BuildError::invalid_field(
                         "optional_object_attributes",
                         format!("`{}` cannot be used as a header value: {}", &header_value, err),
                     )
@@ -129,7 +129,7 @@ pub fn de_list_objects_v2(
             s if s.matches("CommonPrefixes") /* CommonPrefixes com.amazonaws.s3.synthetic#ListObjectsV2Output$CommonPrefixes */ =>  {
                 let var_8 =
                     Some(
-                        Result::<::std::vec::Vec<crate::types::CommonPrefix>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<crate::types::CommonPrefix>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_9 = builder.common_prefixes.take().unwrap_or_default();
                             list_9.push(
                                 crate::protocol_serde::shape_common_prefix::de_common_prefix(&mut tag)
@@ -240,7 +240,7 @@ pub fn de_list_objects_v2(
             s if s.matches("Contents") /* Contents com.amazonaws.s3.synthetic#ListObjectsV2Output$Contents */ =>  {
                 let var_17 =
                     Some(
-                        Result::<::std::vec::Vec<crate::types::Object>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<crate::types::Object>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_18 = builder.contents.take().unwrap_or_default();
                             list_18.push(
                                 crate::protocol_serde::shape_object::de_object(&mut tag)

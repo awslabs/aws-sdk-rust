@@ -34,6 +34,7 @@ pub struct CreateCollaborationOutputBuilder {
 }
 impl CreateCollaborationOutputBuilder {
     /// <p>The entire created collaboration object.</p>
+    /// This field is required.
     pub fn collaboration(mut self, input: crate::types::Collaboration) -> Self {
         self.collaboration = ::std::option::Option::Some(input);
         self

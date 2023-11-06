@@ -38,8 +38,10 @@ impl CreateResourceShareInput {
         self.name.as_deref()
     }
     /// <p>Specifies a list of one or more ARNs of the resources to associate with the resource share.</p>
-    pub fn resource_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_arns.is_none()`.
+    pub fn resource_arns(&self) -> &[::std::string::String] {
+        self.resource_arns.as_deref().unwrap_or_default()
     }
     /// <p>Specifies a list of one or more principals to associate with the resource share.</p>
     /// <p>You can include the following values:</p>
@@ -52,12 +54,16 @@ impl CreateResourceShareInput {
     /// </ul> <note>
     /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
     /// </note>
-    pub fn principals(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.principals.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.principals.is_none()`.
+    pub fn principals(&self) -> &[::std::string::String] {
+        self.principals.as_deref().unwrap_or_default()
     }
     /// <p>Specifies one or more tags to attach to the resource share itself. It doesn't attach the tags to the resources associated with the resource share.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether principals outside your organization in Organizations can be associated with a resource share. A value of <code>true</code> lets you share with individual Amazon Web Services accounts that are <i>not</i> in your organization. A value of <code>false</code> only has meaning if your account is a member of an Amazon Web Services Organization. The default value is <code>true</code>.</p>
     pub fn allow_external_principals(&self) -> ::std::option::Option<bool> {
@@ -70,12 +76,16 @@ impl CreateResourceShareInput {
         self.client_token.as_deref()
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the RAM permission to associate with the resource share. If you do not specify an ARN for the permission, RAM automatically attaches the default version of the permission for each resource type. You can associate only one permission with each resource type included in the resource share.</p>
-    pub fn permission_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.permission_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permission_arns.is_none()`.
+    pub fn permission_arns(&self) -> &[::std::string::String] {
+        self.permission_arns.as_deref().unwrap_or_default()
     }
     /// <p>Specifies from which source accounts the service principal has access to the resources in this resource share.</p>
-    pub fn sources(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
+    pub fn sources(&self) -> &[::std::string::String] {
+        self.sources.as_deref().unwrap_or_default()
     }
 }
 impl CreateResourceShareInput {
@@ -100,6 +110,7 @@ pub struct CreateResourceShareInputBuilder {
 }
 impl CreateResourceShareInputBuilder {
     /// <p>Specifies the name of the resource share.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -280,7 +291,7 @@ impl CreateResourceShareInputBuilder {
     /// Consumes the builder and constructs a [`CreateResourceShareInput`](crate::operation::create_resource_share::CreateResourceShareInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_resource_share::CreateResourceShareInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_resource_share::CreateResourceShareInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_resource_share::CreateResourceShareInput {
             name: self.name,

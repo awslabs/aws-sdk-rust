@@ -2,15 +2,15 @@
 pub fn ser_update_phone_number_request_item(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdatePhoneNumberRequestItem,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.phone_number_id {
-        object.key("PhoneNumberId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("PhoneNumberId").string(input.phone_number_id.as_str());
     }
-    if let Some(var_2) = &input.product_type {
-        object.key("ProductType").string(var_2.as_str());
+    if let Some(var_1) = &input.product_type {
+        object.key("ProductType").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.calling_name {
-        object.key("CallingName").string(var_3.as_str());
+    if let Some(var_2) = &input.calling_name {
+        object.key("CallingName").string(var_2.as_str());
     }
     Ok(())
 }

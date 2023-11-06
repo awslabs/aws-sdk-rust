@@ -55,6 +55,7 @@ pub struct UpdateSecurityConfigInputBuilder {
 }
 impl UpdateSecurityConfigInputBuilder {
     /// <p>The security configuration identifier. For SAML the ID will be <code>saml/&lt;accountId&gt;/&lt;idpProviderName&gt;</code>. For example, <code>saml/123456789123/OKTADev</code>.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl UpdateSecurityConfigInputBuilder {
         &self.id
     }
     /// <p>The version of the security configuration to be updated. You can find the most recent version of a security configuration using the <code>GetSecurityPolicy</code> command.</p>
+    /// This field is required.
     pub fn config_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.config_version = ::std::option::Option::Some(input.into());
         self
@@ -127,7 +129,7 @@ impl UpdateSecurityConfigInputBuilder {
     /// Consumes the builder and constructs a [`UpdateSecurityConfigInput`](crate::operation::update_security_config::UpdateSecurityConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_security_config::UpdateSecurityConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_security_config::UpdateSecurityConfigInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_security_config::UpdateSecurityConfigInput {
             id: self.id,

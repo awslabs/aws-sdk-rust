@@ -73,11 +73,12 @@ impl GetMaintenanceWindowExecutionTaskOutput {
     /// <li> <p> <code>Key</code>: string, between 1 and 255 characters</p> </li>
     /// <li> <p> <code>Value</code>: an array of strings, each between 1 and 255 characters</p> </li>
     /// </ul>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.task_parameters.is_none()`.
     pub fn task_parameters(
         &self,
-    ) -> ::std::option::Option<&[::std::collections::HashMap<::std::string::String, crate::types::MaintenanceWindowTaskParameterValueExpression>]>
-    {
-        self.task_parameters.as_deref()
+    ) -> &[::std::collections::HashMap<::std::string::String, crate::types::MaintenanceWindowTaskParameterValueExpression>] {
+        self.task_parameters.as_deref().unwrap_or_default()
     }
     /// <p>The priority of the task.</p>
     pub fn priority(&self) -> i32 {
@@ -112,8 +113,10 @@ impl GetMaintenanceWindowExecutionTaskOutput {
         self.alarm_configuration.as_ref()
     }
     /// <p>The CloudWatch alarms that were invoked by the maintenance window task.</p>
-    pub fn triggered_alarms(&self) -> ::std::option::Option<&[crate::types::AlarmStateInformation]> {
-        self.triggered_alarms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.triggered_alarms.is_none()`.
+    pub fn triggered_alarms(&self) -> &[crate::types::AlarmStateInformation] {
+        self.triggered_alarms.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for GetMaintenanceWindowExecutionTaskOutput {

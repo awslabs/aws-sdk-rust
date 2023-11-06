@@ -43,6 +43,7 @@ pub struct ListStateMachineVersionsInputBuilder {
 }
 impl ListStateMachineVersionsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the state machine.</p>
+    /// This field is required.
     pub fn state_machine_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_machine_arn = ::std::option::Option::Some(input.into());
         self
@@ -92,7 +93,7 @@ impl ListStateMachineVersionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_state_machine_versions::ListStateMachineVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_state_machine_versions::ListStateMachineVersionsInput {
             state_machine_arn: self.state_machine_arn,

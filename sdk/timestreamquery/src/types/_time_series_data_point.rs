@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeSeriesDataPoint {
     /// <p>The timestamp when the measure value was collected.</p>
-    pub time: ::std::option::Option<::std::string::String>,
+    pub time: ::std::string::String,
     /// <p>The measure value for the data point.</p>
     pub value: ::std::option::Option<crate::types::Datum>,
 }
 impl TimeSeriesDataPoint {
     /// <p>The timestamp when the measure value was collected.</p>
-    pub fn time(&self) -> ::std::option::Option<&str> {
-        self.time.as_deref()
+    pub fn time(&self) -> &str {
+        use std::ops::Deref;
+        self.time.deref()
     }
     /// <p>The measure value for the data point.</p>
     pub fn value(&self) -> ::std::option::Option<&crate::types::Datum> {
@@ -35,6 +36,7 @@ pub struct TimeSeriesDataPointBuilder {
 }
 impl TimeSeriesDataPointBuilder {
     /// <p>The timestamp when the measure value was collected.</p>
+    /// This field is required.
     pub fn time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.time = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl TimeSeriesDataPointBuilder {
         &self.time
     }
     /// <p>The measure value for the data point.</p>
+    /// This field is required.
     pub fn value(mut self, input: crate::types::Datum) -> Self {
         self.value = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,17 @@ impl TimeSeriesDataPointBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`TimeSeriesDataPoint`](crate::types::TimeSeriesDataPoint).
-    pub fn build(self) -> crate::types::TimeSeriesDataPoint {
-        crate::types::TimeSeriesDataPoint {
-            time: self.time,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`time`](crate::types::builders::TimeSeriesDataPointBuilder::time)
+    pub fn build(self) -> ::std::result::Result<crate::types::TimeSeriesDataPoint, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TimeSeriesDataPoint {
+            time: self.time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "time",
+                    "time was not specified but it is required when building TimeSeriesDataPoint",
+                )
+            })?,
             value: self.value,
-        }
+        })
     }
 }

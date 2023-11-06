@@ -5,22 +5,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventSubscription {
     /// <p>Unique name to identify an event subscription.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The type of event you would like to subscribe and get notification for. Currently, Resilience Hub supports notifications only for <b>Drift detected</b> (<code>DriftDetected</code>) and <b>Scheduled assessment failure</b> (<code>ScheduledAssessmentFailure</code>) events.</p>
-    pub event_type: ::std::option::Option<crate::types::EventType>,
-    /// <p>Amazon Resource Name (ARN) of the Amazon Simple Notification Service topic. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    pub event_type: crate::types::EventType,
+    /// <p>Amazon Resource Name (ARN) of the Amazon Simple Notification Service topic. The format for this ARN is: <code>arn:partition:sns:region:account:topic-name</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub sns_topic_arn: ::std::option::Option<::std::string::String>,
 }
 impl EventSubscription {
     /// <p>Unique name to identify an event subscription.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The type of event you would like to subscribe and get notification for. Currently, Resilience Hub supports notifications only for <b>Drift detected</b> (<code>DriftDetected</code>) and <b>Scheduled assessment failure</b> (<code>ScheduledAssessmentFailure</code>) events.</p>
-    pub fn event_type(&self) -> ::std::option::Option<&crate::types::EventType> {
-        self.event_type.as_ref()
+    pub fn event_type(&self) -> &crate::types::EventType {
+        &self.event_type
     }
-    /// <p>Amazon Resource Name (ARN) of the Amazon Simple Notification Service topic. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Amazon Simple Notification Service topic. The format for this ARN is: <code>arn:partition:sns:region:account:topic-name</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn sns_topic_arn(&self) -> ::std::option::Option<&str> {
         self.sns_topic_arn.as_deref()
     }
@@ -42,6 +43,7 @@ pub struct EventSubscriptionBuilder {
 }
 impl EventSubscriptionBuilder {
     /// <p>Unique name to identify an event subscription.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +58,7 @@ impl EventSubscriptionBuilder {
         &self.name
     }
     /// <p>The type of event you would like to subscribe and get notification for. Currently, Resilience Hub supports notifications only for <b>Drift detected</b> (<code>DriftDetected</code>) and <b>Scheduled assessment failure</b> (<code>ScheduledAssessmentFailure</code>) events.</p>
+    /// This field is required.
     pub fn event_type(mut self, input: crate::types::EventType) -> Self {
         self.event_type = ::std::option::Option::Some(input);
         self
@@ -69,26 +72,39 @@ impl EventSubscriptionBuilder {
     pub fn get_event_type(&self) -> &::std::option::Option<crate::types::EventType> {
         &self.event_type
     }
-    /// <p>Amazon Resource Name (ARN) of the Amazon Simple Notification Service topic. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Amazon Simple Notification Service topic. The format for this ARN is: <code>arn:partition:sns:region:account:topic-name</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sns_topic_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Amazon Resource Name (ARN) of the Amazon Simple Notification Service topic. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Amazon Simple Notification Service topic. The format for this ARN is: <code>arn:partition:sns:region:account:topic-name</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sns_topic_arn = input;
         self
     }
-    /// <p>Amazon Resource Name (ARN) of the Amazon Simple Notification Service topic. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Amazon Simple Notification Service topic. The format for this ARN is: <code>arn:partition:sns:region:account:topic-name</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.sns_topic_arn
     }
     /// Consumes the builder and constructs a [`EventSubscription`](crate::types::EventSubscription).
-    pub fn build(self) -> crate::types::EventSubscription {
-        crate::types::EventSubscription {
-            name: self.name,
-            event_type: self.event_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::EventSubscriptionBuilder::name)
+    /// - [`event_type`](crate::types::builders::EventSubscriptionBuilder::event_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::EventSubscription, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EventSubscription {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building EventSubscription",
+                )
+            })?,
+            event_type: self.event_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "event_type",
+                    "event_type was not specified but it is required when building EventSubscription",
+                )
+            })?,
             sns_topic_arn: self.sns_topic_arn,
-        }
+        })
     }
 }

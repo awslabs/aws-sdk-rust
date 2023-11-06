@@ -48,6 +48,7 @@ pub struct ListKxClusterNodesInputBuilder {
 }
 impl ListKxClusterNodesInputBuilder {
     /// <p>A unique identifier for the kdb environment.</p>
+    /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl ListKxClusterNodesInputBuilder {
         &self.environment_id
     }
     /// <p>A unique name for the cluster.</p>
+    /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +108,7 @@ impl ListKxClusterNodesInputBuilder {
     /// Consumes the builder and constructs a [`ListKxClusterNodesInput`](crate::operation::list_kx_cluster_nodes::ListKxClusterNodesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_kx_cluster_nodes::ListKxClusterNodesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_kx_cluster_nodes::ListKxClusterNodesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_kx_cluster_nodes::ListKxClusterNodesInput {
             environment_id: self.environment_id,

@@ -49,6 +49,7 @@ pub struct DestinationConfigurationBuilder {
 }
 impl DestinationConfigurationBuilder {
     /// The IP address where contents of the media stream will be sent.
+    /// This field is required.
     pub fn destination_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_ip = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl DestinationConfigurationBuilder {
         &self.destination_ip
     }
     /// The port to use when the content of the media stream is distributed to the output.
+    /// This field is required.
     pub fn destination_port(mut self, input: i32) -> Self {
         self.destination_port = ::std::option::Option::Some(input);
         self
@@ -77,6 +79,7 @@ impl DestinationConfigurationBuilder {
         &self.destination_port
     }
     /// The VPC interface that is used for the media stream associated with the output.
+    /// This field is required.
     pub fn interface(mut self, input: crate::types::Interface) -> Self {
         self.interface = ::std::option::Option::Some(input);
         self
@@ -91,6 +94,7 @@ impl DestinationConfigurationBuilder {
         &self.interface
     }
     /// The IP address that the receiver requires in order to establish a connection with the flow. This value is represented by the elastic network interface IP address of the VPC. This field applies only to outputs that use the CDI or ST 2110 JPEG XS protocol.
+    /// This field is required.
     pub fn outbound_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outbound_ip = ::std::option::Option::Some(input.into());
         self

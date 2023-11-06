@@ -11,8 +11,10 @@ pub struct ListVariantStoresOutput {
 }
 impl ListVariantStoresOutput {
     /// <p>A list of variant stores.</p>
-    pub fn variant_stores(&self) -> ::std::option::Option<&[crate::types::VariantStoreItem]> {
-        self.variant_stores.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.variant_stores.is_none()`.
+    pub fn variant_stores(&self) -> &[crate::types::VariantStoreItem] {
+        self.variant_stores.as_deref().unwrap_or_default()
     }
     /// <p>A pagination token that's included if more results are available.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

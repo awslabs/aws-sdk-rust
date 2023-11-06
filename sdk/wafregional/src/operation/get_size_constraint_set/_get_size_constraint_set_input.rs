@@ -27,6 +27,7 @@ pub struct GetSizeConstraintSetInputBuilder {
 }
 impl GetSizeConstraintSetInputBuilder {
     /// <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to get. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
+    /// This field is required.
     pub fn size_constraint_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.size_constraint_set_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetSizeConstraintSetInputBuilder {
     /// Consumes the builder and constructs a [`GetSizeConstraintSetInput`](crate::operation::get_size_constraint_set::GetSizeConstraintSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_size_constraint_set::GetSizeConstraintSetInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_size_constraint_set::GetSizeConstraintSetInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_size_constraint_set::GetSizeConstraintSetInput {
             size_constraint_set_id: self.size_constraint_set_id,

@@ -104,24 +104,34 @@ impl PlatformDescription {
         self.operating_system_version.as_deref()
     }
     /// <p>The programming languages supported by the platform version.</p>
-    pub fn programming_languages(&self) -> ::std::option::Option<&[crate::types::PlatformProgrammingLanguage]> {
-        self.programming_languages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.programming_languages.is_none()`.
+    pub fn programming_languages(&self) -> &[crate::types::PlatformProgrammingLanguage] {
+        self.programming_languages.as_deref().unwrap_or_default()
     }
     /// <p>The frameworks supported by the platform version.</p>
-    pub fn frameworks(&self) -> ::std::option::Option<&[crate::types::PlatformFramework]> {
-        self.frameworks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.frameworks.is_none()`.
+    pub fn frameworks(&self) -> &[crate::types::PlatformFramework] {
+        self.frameworks.as_deref().unwrap_or_default()
     }
     /// <p>The custom AMIs supported by the platform version.</p>
-    pub fn custom_ami_list(&self) -> ::std::option::Option<&[crate::types::CustomAmi]> {
-        self.custom_ami_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_ami_list.is_none()`.
+    pub fn custom_ami_list(&self) -> &[crate::types::CustomAmi] {
+        self.custom_ami_list.as_deref().unwrap_or_default()
     }
     /// <p>The tiers supported by the platform version.</p>
-    pub fn supported_tier_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.supported_tier_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_tier_list.is_none()`.
+    pub fn supported_tier_list(&self) -> &[::std::string::String] {
+        self.supported_tier_list.as_deref().unwrap_or_default()
     }
     /// <p>The additions supported by the platform version.</p>
-    pub fn supported_addon_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.supported_addon_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_addon_list.is_none()`.
+    pub fn supported_addon_list(&self) -> &[::std::string::String] {
+        self.supported_addon_list.as_deref().unwrap_or_default()
     }
     /// <p>The state of the platform version in its lifecycle.</p>
     /// <p>Possible values: <code>Recommended</code> | <code>null</code> </p>

@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ModifyLoadBalancerAttributes`](crate::operation::modify_load_balancer_attributes::builders::ModifyLoadBalancerAttributesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`load_balancer_arn(impl Into<String>)`](crate::operation::modify_load_balancer_attributes::builders::ModifyLoadBalancerAttributesFluentBuilder::load_balancer_arn) / [`set_load_balancer_arn(Option<String>)`](crate::operation::modify_load_balancer_attributes::builders::ModifyLoadBalancerAttributesFluentBuilder::set_load_balancer_arn): <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    ///   - [`attributes(LoadBalancerAttribute)`](crate::operation::modify_load_balancer_attributes::builders::ModifyLoadBalancerAttributesFluentBuilder::attributes) / [`set_attributes(Option<Vec<LoadBalancerAttribute>>)`](crate::operation::modify_load_balancer_attributes::builders::ModifyLoadBalancerAttributesFluentBuilder::set_attributes): <p>The load balancer attributes.</p>
+    ///   - [`load_balancer_arn(impl Into<String>)`](crate::operation::modify_load_balancer_attributes::builders::ModifyLoadBalancerAttributesFluentBuilder::load_balancer_arn) / [`set_load_balancer_arn(Option<String>)`](crate::operation::modify_load_balancer_attributes::builders::ModifyLoadBalancerAttributesFluentBuilder::set_load_balancer_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the load balancer.</p><br>
+    ///   - [`attributes(LoadBalancerAttribute)`](crate::operation::modify_load_balancer_attributes::builders::ModifyLoadBalancerAttributesFluentBuilder::attributes) / [`set_attributes(Option<Vec::<LoadBalancerAttribute>>)`](crate::operation::modify_load_balancer_attributes::builders::ModifyLoadBalancerAttributesFluentBuilder::set_attributes):<br>required: **true**<br><p>The load balancer attributes.</p><br>
     /// - On success, responds with [`ModifyLoadBalancerAttributesOutput`](crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesOutput) with field(s):
-    ///   - [`attributes(Option<Vec<LoadBalancerAttribute>>)`](crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesOutput::attributes): <p>Information about the load balancer attributes.</p>
+    ///   - [`attributes(Option<Vec::<LoadBalancerAttribute>>)`](crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesOutput::attributes): <p>Information about the load balancer attributes.</p>
     /// - On failure, responds with [`SdkError<ModifyLoadBalancerAttributesError>`](crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesError)
     pub fn modify_load_balancer_attributes(
         &self,

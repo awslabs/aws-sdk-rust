@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicyRemoveHeader {
     /// <p>The HTTP header name.</p>
-    pub header: ::std::option::Option<::std::string::String>,
+    pub header: ::std::string::String,
 }
 impl ResponseHeadersPolicyRemoveHeader {
     /// <p>The HTTP header name.</p>
-    pub fn header(&self) -> ::std::option::Option<&str> {
-        self.header.as_deref()
+    pub fn header(&self) -> &str {
+        use std::ops::Deref;
+        self.header.deref()
     }
 }
 impl ResponseHeadersPolicyRemoveHeader {
@@ -28,6 +29,7 @@ pub struct ResponseHeadersPolicyRemoveHeaderBuilder {
 }
 impl ResponseHeadersPolicyRemoveHeaderBuilder {
     /// <p>The HTTP header name.</p>
+    /// This field is required.
     pub fn header(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.header = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl ResponseHeadersPolicyRemoveHeaderBuilder {
         &self.header
     }
     /// Consumes the builder and constructs a [`ResponseHeadersPolicyRemoveHeader`](crate::types::ResponseHeadersPolicyRemoveHeader).
-    pub fn build(self) -> crate::types::ResponseHeadersPolicyRemoveHeader {
-        crate::types::ResponseHeadersPolicyRemoveHeader { header: self.header }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`header`](crate::types::builders::ResponseHeadersPolicyRemoveHeaderBuilder::header)
+    pub fn build(self) -> ::std::result::Result<crate::types::ResponseHeadersPolicyRemoveHeader, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ResponseHeadersPolicyRemoveHeader {
+            header: self.header.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "header",
+                    "header was not specified but it is required when building ResponseHeadersPolicyRemoveHeader",
+                )
+            })?,
+        })
     }
 }

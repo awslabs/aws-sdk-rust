@@ -11,8 +11,10 @@ pub struct DescribeTagsOutput {
 }
 impl DescribeTagsOutput {
     /// <p>Depending on the input, this is a list of configuration items tagged with a specific tag, or a list of tags for a specific configuration item.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::ConfigurationTag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::ConfigurationTag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The call returns a token. Use this token to get the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

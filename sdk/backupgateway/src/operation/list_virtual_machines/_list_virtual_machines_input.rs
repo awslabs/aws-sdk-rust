@@ -85,7 +85,7 @@ impl ListVirtualMachinesInputBuilder {
     /// Consumes the builder and constructs a [`ListVirtualMachinesInput`](crate::operation::list_virtual_machines::ListVirtualMachinesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_virtual_machines::ListVirtualMachinesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_virtual_machines::ListVirtualMachinesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_virtual_machines::ListVirtualMachinesInput {
             hypervisor_arn: self.hypervisor_arn,

@@ -74,9 +74,8 @@ where
                             );
                         }
                         "hopDestinations" => {
-                            builder = builder.set_hop_destinations(
-                                crate::protocol_serde::shape___list_of_hop_destination::de___list_of_hop_destination(tokens)?,
-                            );
+                            builder = builder
+                                .set_hop_destinations(crate::protocol_serde::shape_list_of_hop_destination::de_list_of_hop_destination(tokens)?);
                         }
                         "id" => {
                             builder = builder.set_id(
@@ -104,7 +103,7 @@ where
                         }
                         "outputGroupDetails" => {
                             builder = builder.set_output_group_details(
-                                crate::protocol_serde::shape___list_of_output_group_detail::de___list_of_output_group_detail(tokens)?,
+                                crate::protocol_serde::shape_list_of_output_group_detail::de_list_of_output_group_detail(tokens)?,
                             );
                         }
                         "priority" => {
@@ -123,7 +122,7 @@ where
                         }
                         "queueTransitions" => {
                             builder = builder.set_queue_transitions(
-                                crate::protocol_serde::shape___list_of_queue_transition::de___list_of_queue_transition(tokens)?,
+                                crate::protocol_serde::shape_list_of_queue_transition::de_list_of_queue_transition(tokens)?,
                             );
                         }
                         "retryCount" => {
@@ -168,10 +167,10 @@ where
                             builder = builder.set_timing(crate::protocol_serde::shape_timing::de_timing(tokens)?);
                         }
                         "userMetadata" => {
-                            builder = builder.set_user_metadata(crate::protocol_serde::shape___map_of__string::de___map_of__string(tokens)?);
+                            builder = builder.set_user_metadata(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens)?);
                         }
                         "warnings" => {
-                            builder = builder.set_warnings(crate::protocol_serde::shape___list_of_warning_group::de___list_of_warning_group(tokens)?);
+                            builder = builder.set_warnings(crate::protocol_serde::shape_list_of_warning_group::de_list_of_warning_group(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
@@ -183,7 +182,7 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::job_correct_errors(builder).build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

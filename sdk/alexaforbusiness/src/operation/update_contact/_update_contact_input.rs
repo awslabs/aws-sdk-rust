@@ -40,12 +40,16 @@ impl UpdateContactInput {
         self.phone_number.as_deref()
     }
     /// <p>The list of phone numbers for the contact.</p>
-    pub fn phone_numbers(&self) -> ::std::option::Option<&[crate::types::PhoneNumber]> {
-        self.phone_numbers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phone_numbers.is_none()`.
+    pub fn phone_numbers(&self) -> &[crate::types::PhoneNumber] {
+        self.phone_numbers.as_deref().unwrap_or_default()
     }
     /// <p>The list of SIP addresses for the contact.</p>
-    pub fn sip_addresses(&self) -> ::std::option::Option<&[crate::types::SipAddress]> {
-        self.sip_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sip_addresses.is_none()`.
+    pub fn sip_addresses(&self) -> &[crate::types::SipAddress] {
+        self.sip_addresses.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for UpdateContactInput {
@@ -82,6 +86,7 @@ pub struct UpdateContactInputBuilder {
 }
 impl UpdateContactInputBuilder {
     /// <p>The ARN of the contact to update.</p>
+    /// This field is required.
     pub fn contact_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_arn = ::std::option::Option::Some(input.into());
         self
@@ -194,7 +199,7 @@ impl UpdateContactInputBuilder {
     /// Consumes the builder and constructs a [`UpdateContactInput`](crate::operation::update_contact::UpdateContactInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_contact::UpdateContactInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_contact::UpdateContactInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_contact::UpdateContactInput {
             contact_arn: self.contact_arn,
             display_name: self.display_name,

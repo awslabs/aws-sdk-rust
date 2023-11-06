@@ -15,8 +15,10 @@ impl SourceIpConfig {
     /// <p>Maximum: Ten CIDR values</p> <note>
     /// <p>The following Length Constraints apply to individual CIDR values in the CIDR value list.</p>
     /// </note>
-    pub fn cidrs(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cidrs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cidrs.is_none()`.
+    pub fn cidrs(&self) -> &[::std::string::String] {
+        self.cidrs.as_deref().unwrap_or_default()
     }
 }
 impl SourceIpConfig {

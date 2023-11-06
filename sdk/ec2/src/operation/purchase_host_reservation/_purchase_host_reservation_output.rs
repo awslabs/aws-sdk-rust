@@ -25,8 +25,10 @@ impl PurchaseHostReservationOutput {
         self.currency_code.as_ref()
     }
     /// <p>Describes the details of the purchase.</p>
-    pub fn purchase(&self) -> ::std::option::Option<&[crate::types::Purchase]> {
-        self.purchase.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.purchase.is_none()`.
+    pub fn purchase(&self) -> &[crate::types::Purchase] {
+        self.purchase.as_deref().unwrap_or_default()
     }
     /// <p>The total hourly price of the reservation calculated per hour.</p>
     pub fn total_hourly_price(&self) -> ::std::option::Option<&str> {

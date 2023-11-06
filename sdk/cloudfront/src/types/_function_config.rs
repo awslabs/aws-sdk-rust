@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FunctionConfig {
     /// <p>A comment to describe the function.</p>
-    pub comment: ::std::option::Option<::std::string::String>,
+    pub comment: ::std::string::String,
     /// <p>The function's runtime environment verion.</p>
-    pub runtime: ::std::option::Option<crate::types::FunctionRuntime>,
+    pub runtime: crate::types::FunctionRuntime,
 }
 impl FunctionConfig {
     /// <p>A comment to describe the function.</p>
-    pub fn comment(&self) -> ::std::option::Option<&str> {
-        self.comment.as_deref()
+    pub fn comment(&self) -> &str {
+        use std::ops::Deref;
+        self.comment.deref()
     }
     /// <p>The function's runtime environment verion.</p>
-    pub fn runtime(&self) -> ::std::option::Option<&crate::types::FunctionRuntime> {
-        self.runtime.as_ref()
+    pub fn runtime(&self) -> &crate::types::FunctionRuntime {
+        &self.runtime
     }
 }
 impl FunctionConfig {
@@ -35,6 +36,7 @@ pub struct FunctionConfigBuilder {
 }
 impl FunctionConfigBuilder {
     /// <p>A comment to describe the function.</p>
+    /// This field is required.
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl FunctionConfigBuilder {
         &self.comment
     }
     /// <p>The function's runtime environment verion.</p>
+    /// This field is required.
     pub fn runtime(mut self, input: crate::types::FunctionRuntime) -> Self {
         self.runtime = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,23 @@ impl FunctionConfigBuilder {
         &self.runtime
     }
     /// Consumes the builder and constructs a [`FunctionConfig`](crate::types::FunctionConfig).
-    pub fn build(self) -> crate::types::FunctionConfig {
-        crate::types::FunctionConfig {
-            comment: self.comment,
-            runtime: self.runtime,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`comment`](crate::types::builders::FunctionConfigBuilder::comment)
+    /// - [`runtime`](crate::types::builders::FunctionConfigBuilder::runtime)
+    pub fn build(self) -> ::std::result::Result<crate::types::FunctionConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::FunctionConfig {
+            comment: self.comment.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "comment",
+                    "comment was not specified but it is required when building FunctionConfig",
+                )
+            })?,
+            runtime: self.runtime.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "runtime",
+                    "runtime was not specified but it is required when building FunctionConfig",
+                )
+            })?,
+        })
     }
 }

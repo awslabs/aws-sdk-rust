@@ -2,7 +2,7 @@
 pub fn ser_create_predictor_backtest_export_job_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_predictor_backtest_export_job::CreatePredictorBacktestExportJobInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.predictor_backtest_export_job_name {
         object.key("PredictorBacktestExportJobName").string(var_1.as_str());
     }

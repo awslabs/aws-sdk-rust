@@ -34,6 +34,7 @@ pub struct GetStageSessionInputBuilder {
 }
 impl GetStageSessionInputBuilder {
     /// <p>ARN of the stage for which the information is to be retrieved.</p>
+    /// This field is required.
     pub fn stage_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetStageSessionInputBuilder {
         &self.stage_arn
     }
     /// <p>ID of a session within the stage.</p>
+    /// This field is required.
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl GetStageSessionInputBuilder {
     /// Consumes the builder and constructs a [`GetStageSessionInput`](crate::operation::get_stage_session::GetStageSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_stage_session::GetStageSessionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_stage_session::GetStageSessionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_stage_session::GetStageSessionInput {
             stage_arn: self.stage_arn,
             session_id: self.session_id,

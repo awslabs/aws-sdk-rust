@@ -27,6 +27,7 @@ pub struct DeleteSolNetworkPackageInputBuilder {
 }
 impl DeleteSolNetworkPackageInputBuilder {
     /// <p>ID of the network service descriptor in the network package.</p>
+    /// This field is required.
     pub fn nsd_info_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nsd_info_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteSolNetworkPackageInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_sol_network_package::DeleteSolNetworkPackageInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_sol_network_package::DeleteSolNetworkPackageInput {
             nsd_info_id: self.nsd_info_id,

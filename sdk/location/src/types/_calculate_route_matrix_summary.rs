@@ -11,13 +11,13 @@ pub struct CalculateRouteMatrixSummary {
     /// <li> <p> <code>Here</code> </p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
-    pub data_source: ::std::option::Option<::std::string::String>,
+    pub data_source: ::std::string::String,
     /// <p>The count of cells in the route matrix. Equal to the number of <code>DeparturePositions</code> multiplied by the number of <code>DestinationPositions</code>.</p>
-    pub route_count: ::std::option::Option<i32>,
+    pub route_count: i32,
     /// <p>The count of error results in the route matrix. If this number is 0, all routes were calculated successfully.</p>
-    pub error_count: ::std::option::Option<i32>,
+    pub error_count: i32,
     /// <p>The unit of measurement for route distances.</p>
-    pub distance_unit: ::std::option::Option<crate::types::DistanceUnit>,
+    pub distance_unit: crate::types::DistanceUnit,
 }
 impl CalculateRouteMatrixSummary {
     /// <p>The data provider of traffic and road network data used to calculate the routes. Indicates one of the available providers:</p>
@@ -27,20 +27,21 @@ impl CalculateRouteMatrixSummary {
     /// <li> <p> <code>Here</code> </p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
-    pub fn data_source(&self) -> ::std::option::Option<&str> {
-        self.data_source.as_deref()
+    pub fn data_source(&self) -> &str {
+        use std::ops::Deref;
+        self.data_source.deref()
     }
     /// <p>The count of cells in the route matrix. Equal to the number of <code>DeparturePositions</code> multiplied by the number of <code>DestinationPositions</code>.</p>
-    pub fn route_count(&self) -> ::std::option::Option<i32> {
+    pub fn route_count(&self) -> i32 {
         self.route_count
     }
     /// <p>The count of error results in the route matrix. If this number is 0, all routes were calculated successfully.</p>
-    pub fn error_count(&self) -> ::std::option::Option<i32> {
+    pub fn error_count(&self) -> i32 {
         self.error_count
     }
     /// <p>The unit of measurement for route distances.</p>
-    pub fn distance_unit(&self) -> ::std::option::Option<&crate::types::DistanceUnit> {
-        self.distance_unit.as_ref()
+    pub fn distance_unit(&self) -> &crate::types::DistanceUnit {
+        &self.distance_unit
     }
 }
 impl CalculateRouteMatrixSummary {
@@ -67,6 +68,7 @@ impl CalculateRouteMatrixSummaryBuilder {
     /// <li> <p> <code>Here</code> </p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    /// This field is required.
     pub fn data_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source = ::std::option::Option::Some(input.into());
         self
@@ -93,6 +95,7 @@ impl CalculateRouteMatrixSummaryBuilder {
         &self.data_source
     }
     /// <p>The count of cells in the route matrix. Equal to the number of <code>DeparturePositions</code> multiplied by the number of <code>DestinationPositions</code>.</p>
+    /// This field is required.
     pub fn route_count(mut self, input: i32) -> Self {
         self.route_count = ::std::option::Option::Some(input);
         self
@@ -107,6 +110,7 @@ impl CalculateRouteMatrixSummaryBuilder {
         &self.route_count
     }
     /// <p>The count of error results in the route matrix. If this number is 0, all routes were calculated successfully.</p>
+    /// This field is required.
     pub fn error_count(mut self, input: i32) -> Self {
         self.error_count = ::std::option::Option::Some(input);
         self
@@ -121,6 +125,7 @@ impl CalculateRouteMatrixSummaryBuilder {
         &self.error_count
     }
     /// <p>The unit of measurement for route distances.</p>
+    /// This field is required.
     pub fn distance_unit(mut self, input: crate::types::DistanceUnit) -> Self {
         self.distance_unit = ::std::option::Option::Some(input);
         self
@@ -135,12 +140,37 @@ impl CalculateRouteMatrixSummaryBuilder {
         &self.distance_unit
     }
     /// Consumes the builder and constructs a [`CalculateRouteMatrixSummary`](crate::types::CalculateRouteMatrixSummary).
-    pub fn build(self) -> crate::types::CalculateRouteMatrixSummary {
-        crate::types::CalculateRouteMatrixSummary {
-            data_source: self.data_source,
-            route_count: self.route_count,
-            error_count: self.error_count,
-            distance_unit: self.distance_unit,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`data_source`](crate::types::builders::CalculateRouteMatrixSummaryBuilder::data_source)
+    /// - [`route_count`](crate::types::builders::CalculateRouteMatrixSummaryBuilder::route_count)
+    /// - [`error_count`](crate::types::builders::CalculateRouteMatrixSummaryBuilder::error_count)
+    /// - [`distance_unit`](crate::types::builders::CalculateRouteMatrixSummaryBuilder::distance_unit)
+    pub fn build(self) -> ::std::result::Result<crate::types::CalculateRouteMatrixSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CalculateRouteMatrixSummary {
+            data_source: self.data_source.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "data_source",
+                    "data_source was not specified but it is required when building CalculateRouteMatrixSummary",
+                )
+            })?,
+            route_count: self.route_count.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "route_count",
+                    "route_count was not specified but it is required when building CalculateRouteMatrixSummary",
+                )
+            })?,
+            error_count: self.error_count.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "error_count",
+                    "error_count was not specified but it is required when building CalculateRouteMatrixSummary",
+                )
+            })?,
+            distance_unit: self.distance_unit.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "distance_unit",
+                    "distance_unit was not specified but it is required when building CalculateRouteMatrixSummary",
+                )
+            })?,
+        })
     }
 }

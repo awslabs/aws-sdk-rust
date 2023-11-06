@@ -131,6 +131,7 @@ pub struct UpdateCanaryInputBuilder {
 impl UpdateCanaryInputBuilder {
     /// <p>The name of the canary that you want to update. To find the names of your canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
     /// <p>You cannot change the name of a canary that has already been created.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -337,7 +338,9 @@ impl UpdateCanaryInputBuilder {
         &self.artifact_config
     }
     /// Consumes the builder and constructs a [`UpdateCanaryInput`](crate::operation::update_canary::UpdateCanaryInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_canary::UpdateCanaryInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_canary::UpdateCanaryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_canary::UpdateCanaryInput {
             name: self.name,
             code: self.code,

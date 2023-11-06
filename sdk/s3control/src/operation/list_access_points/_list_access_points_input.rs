@@ -72,6 +72,7 @@ pub struct ListAccessPointsInputBuilder {
 }
 impl ListAccessPointsInputBuilder {
     /// <p>The Amazon Web Services account ID for the account that owns the specified access points.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -166,7 +167,7 @@ impl ListAccessPointsInputBuilder {
     /// Consumes the builder and constructs a [`ListAccessPointsInput`](crate::operation::list_access_points::ListAccessPointsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_access_points::ListAccessPointsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_access_points::ListAccessPointsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_access_points::ListAccessPointsInput {
             account_id: self.account_id,
             bucket: self.bucket,

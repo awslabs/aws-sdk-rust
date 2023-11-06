@@ -54,8 +54,10 @@ impl StartIncidentInput {
         self.trigger_details.as_ref()
     }
     /// <p>Add related items to the incident for other responders to use. Related items are Amazon Web Services resources, external links, or files uploaded to an Amazon S3 bucket. </p>
-    pub fn related_items(&self) -> ::std::option::Option<&[crate::types::RelatedItem]> {
-        self.related_items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.related_items.is_none()`.
+    pub fn related_items(&self) -> &[crate::types::RelatedItem] {
+        self.related_items.as_deref().unwrap_or_default()
     }
 }
 impl StartIncidentInput {
@@ -92,6 +94,7 @@ impl StartIncidentInputBuilder {
         &self.client_token
     }
     /// <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat channels, Amazon SNS topics, runbooks, title, and impact of the incident. </p>
+    /// This field is required.
     pub fn response_plan_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.response_plan_arn = ::std::option::Option::Some(input.into());
         self
@@ -194,7 +197,7 @@ impl StartIncidentInputBuilder {
     /// Consumes the builder and constructs a [`StartIncidentInput`](crate::operation::start_incident::StartIncidentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_incident::StartIncidentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_incident::StartIncidentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_incident::StartIncidentInput {
             client_token: self.client_token,
             response_plan_arn: self.response_plan_arn,

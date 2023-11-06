@@ -154,16 +154,16 @@ pub fn de_update_route_http_response(
         let mut output = crate::operation::update_route::builders::UpdateRouteOutputBuilder::default();
         output = output.set_route(crate::protocol_serde::shape_update_route_output::de_route_payload(_response_body)?);
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::update_route_output_correct_errors(output).build()
     })
 }
 
 pub fn ser_update_route_input(
     input: &crate::operation::update_route::UpdateRouteInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_update_route_input::ser_update_route_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

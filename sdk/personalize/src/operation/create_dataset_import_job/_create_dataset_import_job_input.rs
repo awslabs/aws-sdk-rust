@@ -40,8 +40,10 @@ impl CreateDatasetImportJobInput {
         self.role_arn.as_deref()
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the dataset import job.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Specify how to add the new records to an existing dataset. The default import mode is <code>FULL</code>. If you haven't imported bulk records into the dataset previously, you can only specify <code>FULL</code>.</p>
     /// <ul>
@@ -77,6 +79,7 @@ pub struct CreateDatasetImportJobInputBuilder {
 }
 impl CreateDatasetImportJobInputBuilder {
     /// <p>The name for the dataset import job.</p>
+    /// This field is required.
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +94,7 @@ impl CreateDatasetImportJobInputBuilder {
         &self.job_name
     }
     /// <p>The ARN of the dataset that receives the imported data.</p>
+    /// This field is required.
     pub fn dataset_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_arn = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +109,7 @@ impl CreateDatasetImportJobInputBuilder {
         &self.dataset_arn
     }
     /// <p>The Amazon S3 bucket that contains the training data to import.</p>
+    /// This field is required.
     pub fn data_source(mut self, input: crate::types::DataSource) -> Self {
         self.data_source = ::std::option::Option::Some(input);
         self
@@ -119,6 +124,7 @@ impl CreateDatasetImportJobInputBuilder {
         &self.data_source
     }
     /// <p>The ARN of the IAM role that has permissions to read from the Amazon S3 data source.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -197,7 +203,7 @@ impl CreateDatasetImportJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_dataset_import_job::CreateDatasetImportJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_dataset_import_job::CreateDatasetImportJobInput {
             job_name: self.job_name,

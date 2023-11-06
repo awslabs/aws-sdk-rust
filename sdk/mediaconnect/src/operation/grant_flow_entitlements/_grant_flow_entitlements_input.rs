@@ -11,8 +11,10 @@ pub struct GrantFlowEntitlementsInput {
 }
 impl GrantFlowEntitlementsInput {
     /// The list of entitlements that you want to grant.
-    pub fn entitlements(&self) -> ::std::option::Option<&[crate::types::GrantEntitlementRequest]> {
-        self.entitlements.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entitlements.is_none()`.
+    pub fn entitlements(&self) -> &[crate::types::GrantEntitlementRequest] {
+        self.entitlements.as_deref().unwrap_or_default()
     }
     /// The flow that you want to grant entitlements on.
     pub fn flow_arn(&self) -> ::std::option::Option<&str> {
@@ -55,6 +57,7 @@ impl GrantFlowEntitlementsInputBuilder {
         &self.entitlements
     }
     /// The flow that you want to grant entitlements on.
+    /// This field is required.
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_arn = ::std::option::Option::Some(input.into());
         self
@@ -71,7 +74,7 @@ impl GrantFlowEntitlementsInputBuilder {
     /// Consumes the builder and constructs a [`GrantFlowEntitlementsInput`](crate::operation::grant_flow_entitlements::GrantFlowEntitlementsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::grant_flow_entitlements::GrantFlowEntitlementsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::grant_flow_entitlements::GrantFlowEntitlementsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::grant_flow_entitlements::GrantFlowEntitlementsInput {
             entitlements: self.entitlements,

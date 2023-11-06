@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomerManagedS3Storage {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Amazon S3 object. For more information about how to find the ARN for an Amazon S3 object, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-arn-format.html">Amazon S3 resources</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
-    pub s3_resource_arn: ::std::option::Option<::std::string::String>,
+    pub s3_resource_arn: ::std::string::String,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Identity and Access Management role that allows IoT SiteWise to send data to Amazon S3.</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
 }
 impl CustomerManagedS3Storage {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Amazon S3 object. For more information about how to find the ARN for an Amazon S3 object, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-arn-format.html">Amazon S3 resources</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
-    pub fn s3_resource_arn(&self) -> ::std::option::Option<&str> {
-        self.s3_resource_arn.as_deref()
+    pub fn s3_resource_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.s3_resource_arn.deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Identity and Access Management role that allows IoT SiteWise to send data to Amazon S3.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
 }
 impl CustomerManagedS3Storage {
@@ -35,6 +37,7 @@ pub struct CustomerManagedS3StorageBuilder {
 }
 impl CustomerManagedS3StorageBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Amazon S3 object. For more information about how to find the ARN for an Amazon S3 object, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-arn-format.html">Amazon S3 resources</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
+    /// This field is required.
     pub fn s3_resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl CustomerManagedS3StorageBuilder {
         &self.s3_resource_arn
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Identity and Access Management role that allows IoT SiteWise to send data to Amazon S3.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl CustomerManagedS3StorageBuilder {
         &self.role_arn
     }
     /// Consumes the builder and constructs a [`CustomerManagedS3Storage`](crate::types::CustomerManagedS3Storage).
-    pub fn build(self) -> crate::types::CustomerManagedS3Storage {
-        crate::types::CustomerManagedS3Storage {
-            s3_resource_arn: self.s3_resource_arn,
-            role_arn: self.role_arn,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`s3_resource_arn`](crate::types::builders::CustomerManagedS3StorageBuilder::s3_resource_arn)
+    /// - [`role_arn`](crate::types::builders::CustomerManagedS3StorageBuilder::role_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomerManagedS3Storage, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CustomerManagedS3Storage {
+            s3_resource_arn: self.s3_resource_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "s3_resource_arn",
+                    "s3_resource_arn was not specified but it is required when building CustomerManagedS3Storage",
+                )
+            })?,
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building CustomerManagedS3Storage",
+                )
+            })?,
+        })
     }
 }

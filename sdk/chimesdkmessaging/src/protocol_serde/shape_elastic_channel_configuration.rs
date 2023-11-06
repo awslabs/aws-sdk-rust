@@ -2,23 +2,23 @@
 pub fn ser_elastic_channel_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ElasticChannelConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.maximum_sub_channels {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
         object.key("MaximumSubChannels").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+            ::aws_smithy_types::Number::NegInt((input.maximum_sub_channels).into()),
         );
     }
-    if let Some(var_2) = &input.target_memberships_per_sub_channel {
+    {
         object.key("TargetMembershipsPerSubChannel").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((input.target_memberships_per_sub_channel).into()),
         );
     }
-    if let Some(var_3) = &input.minimum_membership_percentage {
+    {
         object.key("MinimumMembershipPercentage").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((input.minimum_membership_percentage).into()),
         );
     }
     Ok(())
@@ -70,7 +70,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::elastic_channel_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

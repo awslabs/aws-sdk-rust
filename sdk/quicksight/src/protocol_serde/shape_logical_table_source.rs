@@ -2,7 +2,7 @@
 pub fn ser_logical_table_source(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LogicalTableSource,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.join_instruction {
         #[allow(unused_mut)]
         let mut object_2 = object.key("JoinInstruction").start_object();

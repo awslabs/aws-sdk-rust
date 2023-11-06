@@ -28,6 +28,7 @@ pub struct CreateStreamingDistributionInputBuilder {
 }
 impl CreateStreamingDistributionInputBuilder {
     /// <p>The streaming distribution's configuration information.</p>
+    /// This field is required.
     pub fn streaming_distribution_config(mut self, input: crate::types::StreamingDistributionConfig) -> Self {
         self.streaming_distribution_config = ::std::option::Option::Some(input);
         self
@@ -46,7 +47,7 @@ impl CreateStreamingDistributionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_streaming_distribution::CreateStreamingDistributionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_streaming_distribution::CreateStreamingDistributionInput {
             streaming_distribution_config: self.streaming_distribution_config,

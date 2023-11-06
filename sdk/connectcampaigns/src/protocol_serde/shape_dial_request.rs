@@ -2,27 +2,27 @@
 pub fn ser_dial_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DialRequest,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.client_token {
-        object.key("clientToken").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("clientToken").string(input.client_token.as_str());
     }
-    if let Some(var_2) = &input.phone_number {
-        object.key("phoneNumber").string(var_2.as_str());
+    {
+        object.key("phoneNumber").string(input.phone_number.as_str());
     }
-    if let Some(var_3) = &input.expiration_time {
+    {
         object
             .key("expirationTime")
-            .date_time(var_3, ::aws_smithy_types::date_time::Format::DateTime)?;
+            .date_time(&input.expiration_time, ::aws_smithy_types::date_time::Format::DateTime)?;
     }
-    if let Some(var_4) = &input.attributes {
+    {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("attributes").start_object();
-        for (key_6, value_7) in var_4 {
+        let mut object_1 = object.key("attributes").start_object();
+        for (key_2, value_3) in &input.attributes {
             {
-                object_5.key(key_6.as_str()).string(value_7.as_str());
+                object_1.key(key_2.as_str()).string(value_3.as_str());
             }
         }
-        object_5.finish();
+        object_1.finish();
     }
     Ok(())
 }

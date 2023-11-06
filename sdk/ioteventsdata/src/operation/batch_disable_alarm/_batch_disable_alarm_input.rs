@@ -8,8 +8,10 @@ pub struct BatchDisableAlarmInput {
 }
 impl BatchDisableAlarmInput {
     /// <p>The list of disable action requests. You can specify up to 10 requests per operation.</p>
-    pub fn disable_action_requests(&self) -> ::std::option::Option<&[crate::types::DisableAlarmActionRequest]> {
-        self.disable_action_requests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.disable_action_requests.is_none()`.
+    pub fn disable_action_requests(&self) -> &[crate::types::DisableAlarmActionRequest] {
+        self.disable_action_requests.as_deref().unwrap_or_default()
     }
 }
 impl BatchDisableAlarmInput {
@@ -49,7 +51,7 @@ impl BatchDisableAlarmInputBuilder {
     /// Consumes the builder and constructs a [`BatchDisableAlarmInput`](crate::operation::batch_disable_alarm::BatchDisableAlarmInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_disable_alarm::BatchDisableAlarmInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_disable_alarm::BatchDisableAlarmInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_disable_alarm::BatchDisableAlarmInput {
             disable_action_requests: self.disable_action_requests,
         })

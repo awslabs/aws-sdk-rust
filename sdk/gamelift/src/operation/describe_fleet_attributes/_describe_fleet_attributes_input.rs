@@ -12,8 +12,10 @@ pub struct DescribeFleetAttributesInput {
 }
 impl DescribeFleetAttributesInput {
     /// <p>A list of unique fleet identifiers to retrieve attributes for. You can use either the fleet ID or ARN value. To retrieve attributes for all current fleets, do not include this parameter. </p>
-    pub fn fleet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.fleet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fleet_ids.is_none()`.
+    pub fn fleet_ids(&self) -> &[::std::string::String] {
+        self.fleet_ids.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
     pub fn limit(&self) -> ::std::option::Option<i32> {
@@ -93,7 +95,7 @@ impl DescribeFleetAttributesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_fleet_attributes::DescribeFleetAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_fleet_attributes::DescribeFleetAttributesInput {
             fleet_ids: self.fleet_ids,

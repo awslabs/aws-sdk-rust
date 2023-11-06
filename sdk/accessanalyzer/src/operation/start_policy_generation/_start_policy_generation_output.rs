@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartPolicyGenerationOutput {
     /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
-    pub job_id: ::std::option::Option<::std::string::String>,
+    pub job_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl StartPolicyGenerationOutput {
     /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
-        self.job_id.as_deref()
+    pub fn job_id(&self) -> &str {
+        use std::ops::Deref;
+        self.job_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for StartPolicyGenerationOutput {
@@ -34,6 +35,7 @@ pub struct StartPolicyGenerationOutputBuilder {
 }
 impl StartPolicyGenerationOutputBuilder {
     /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,20 @@ impl StartPolicyGenerationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartPolicyGenerationOutput`](crate::operation::start_policy_generation::StartPolicyGenerationOutput).
-    pub fn build(self) -> crate::operation::start_policy_generation::StartPolicyGenerationOutput {
-        crate::operation::start_policy_generation::StartPolicyGenerationOutput {
-            job_id: self.job_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`job_id`](crate::operation::start_policy_generation::builders::StartPolicyGenerationOutputBuilder::job_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::start_policy_generation::StartPolicyGenerationOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::start_policy_generation::StartPolicyGenerationOutput {
+            job_id: self.job_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "job_id",
+                    "job_id was not specified but it is required when building StartPolicyGenerationOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

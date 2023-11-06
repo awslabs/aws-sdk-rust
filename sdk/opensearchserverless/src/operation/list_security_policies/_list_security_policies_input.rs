@@ -18,8 +18,10 @@ impl ListSecurityPoliciesInput {
         self.r#type.as_ref()
     }
     /// <p>Resource filters (can be collection or indexes) that policies can apply to. </p>
-    pub fn resource(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource.is_none()`.
+    pub fn resource(&self) -> &[::std::string::String] {
+        self.resource.as_deref().unwrap_or_default()
     }
     /// <p>If your initial <code>ListSecurityPolicies</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListSecurityPolicies</code> operations, which returns results in the next page. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -48,6 +50,7 @@ pub struct ListSecurityPoliciesInputBuilder {
 }
 impl ListSecurityPoliciesInputBuilder {
     /// <p>The type of policy.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::SecurityPolicyType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -112,7 +115,7 @@ impl ListSecurityPoliciesInputBuilder {
     /// Consumes the builder and constructs a [`ListSecurityPoliciesInput`](crate::operation::list_security_policies::ListSecurityPoliciesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_security_policies::ListSecurityPoliciesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_security_policies::ListSecurityPoliciesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_security_policies::ListSecurityPoliciesInput {
             r#type: self.r#type,

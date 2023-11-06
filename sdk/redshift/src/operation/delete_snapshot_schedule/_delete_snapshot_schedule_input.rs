@@ -27,6 +27,7 @@ pub struct DeleteSnapshotScheduleInputBuilder {
 }
 impl DeleteSnapshotScheduleInputBuilder {
     /// <p>A unique identifier of the snapshot schedule to delete.</p>
+    /// This field is required.
     pub fn schedule_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule_identifier = ::std::option::Option::Some(input.into());
         self
@@ -43,8 +44,10 @@ impl DeleteSnapshotScheduleInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSnapshotScheduleInput`](crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleInput {
             schedule_identifier: self.schedule_identifier,
         })

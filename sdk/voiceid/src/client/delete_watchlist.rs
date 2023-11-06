@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteWatchlist`](crate::operation::delete_watchlist::builders::DeleteWatchlistFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_id(impl Into<String>)`](crate::operation::delete_watchlist::builders::DeleteWatchlistFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::delete_watchlist::builders::DeleteWatchlistFluentBuilder::set_domain_id): <p>The identifier of the domain that contains the watchlist.</p>
-    ///   - [`watchlist_id(impl Into<String>)`](crate::operation::delete_watchlist::builders::DeleteWatchlistFluentBuilder::watchlist_id) / [`set_watchlist_id(Option<String>)`](crate::operation::delete_watchlist::builders::DeleteWatchlistFluentBuilder::set_watchlist_id): <p>The identifier of the watchlist to be deleted.</p>
+    ///   - [`domain_id(impl Into<String>)`](crate::operation::delete_watchlist::builders::DeleteWatchlistFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::delete_watchlist::builders::DeleteWatchlistFluentBuilder::set_domain_id):<br>required: **true**<br><p>The identifier of the domain that contains the watchlist.</p><br>
+    ///   - [`watchlist_id(impl Into<String>)`](crate::operation::delete_watchlist::builders::DeleteWatchlistFluentBuilder::watchlist_id) / [`set_watchlist_id(Option<String>)`](crate::operation::delete_watchlist::builders::DeleteWatchlistFluentBuilder::set_watchlist_id):<br>required: **true**<br><p>The identifier of the watchlist to be deleted.</p><br>
     /// - On success, responds with [`DeleteWatchlistOutput`](crate::operation::delete_watchlist::DeleteWatchlistOutput)
     /// - On failure, responds with [`SdkError<DeleteWatchlistError>`](crate::operation::delete_watchlist::DeleteWatchlistError)
     pub fn delete_watchlist(&self) -> crate::operation::delete_watchlist::builders::DeleteWatchlistFluentBuilder {

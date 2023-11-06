@@ -70,6 +70,7 @@ impl DescribeTagsInputBuilder {
         &self.marker
     }
     /// <p>The ID of the file system whose tag set you want to retrieve.</p>
+    /// This field is required.
     pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
@@ -84,7 +85,9 @@ impl DescribeTagsInputBuilder {
         &self.file_system_id
     }
     /// Consumes the builder and constructs a [`DescribeTagsInput`](crate::operation::describe_tags::DescribeTagsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_tags::DescribeTagsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_tags::DescribeTagsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_tags::DescribeTagsInput {
             max_items: self.max_items,
             marker: self.marker,

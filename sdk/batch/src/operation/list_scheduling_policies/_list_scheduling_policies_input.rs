@@ -75,8 +75,10 @@ impl ListSchedulingPoliciesInputBuilder {
     /// Consumes the builder and constructs a [`ListSchedulingPoliciesInput`](crate::operation::list_scheduling_policies::ListSchedulingPoliciesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_scheduling_policies::ListSchedulingPoliciesInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::list_scheduling_policies::ListSchedulingPoliciesInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::list_scheduling_policies::ListSchedulingPoliciesInput {
             max_results: self.max_results,
             next_token: self.next_token,

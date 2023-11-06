@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TaskStartedEventDetails {
     /// <p>The service name of the resource in a task state.</p>
-    pub resource_type: ::std::option::Option<::std::string::String>,
+    pub resource_type: ::std::string::String,
     /// <p>The action of the resource called by a task state.</p>
-    pub resource: ::std::option::Option<::std::string::String>,
+    pub resource: ::std::string::String,
 }
 impl TaskStartedEventDetails {
     /// <p>The service name of the resource in a task state.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
-        self.resource_type.as_deref()
+    pub fn resource_type(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_type.deref()
     }
     /// <p>The action of the resource called by a task state.</p>
-    pub fn resource(&self) -> ::std::option::Option<&str> {
-        self.resource.as_deref()
+    pub fn resource(&self) -> &str {
+        use std::ops::Deref;
+        self.resource.deref()
     }
 }
 impl TaskStartedEventDetails {
@@ -35,6 +37,7 @@ pub struct TaskStartedEventDetailsBuilder {
 }
 impl TaskStartedEventDetailsBuilder {
     /// <p>The service name of the resource in a task state.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl TaskStartedEventDetailsBuilder {
         &self.resource_type
     }
     /// <p>The action of the resource called by a task state.</p>
+    /// This field is required.
     pub fn resource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl TaskStartedEventDetailsBuilder {
         &self.resource
     }
     /// Consumes the builder and constructs a [`TaskStartedEventDetails`](crate::types::TaskStartedEventDetails).
-    pub fn build(self) -> crate::types::TaskStartedEventDetails {
-        crate::types::TaskStartedEventDetails {
-            resource_type: self.resource_type,
-            resource: self.resource,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource_type`](crate::types::builders::TaskStartedEventDetailsBuilder::resource_type)
+    /// - [`resource`](crate::types::builders::TaskStartedEventDetailsBuilder::resource)
+    pub fn build(self) -> ::std::result::Result<crate::types::TaskStartedEventDetails, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TaskStartedEventDetails {
+            resource_type: self.resource_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "resource_type",
+                    "resource_type was not specified but it is required when building TaskStartedEventDetails",
+                )
+            })?,
+            resource: self.resource.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "resource",
+                    "resource was not specified but it is required when building TaskStartedEventDetails",
+                )
+            })?,
+        })
     }
 }

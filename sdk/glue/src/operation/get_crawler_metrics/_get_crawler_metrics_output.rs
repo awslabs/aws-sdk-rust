@@ -11,8 +11,10 @@ pub struct GetCrawlerMetricsOutput {
 }
 impl GetCrawlerMetricsOutput {
     /// <p>A list of metrics for the specified crawler.</p>
-    pub fn crawler_metrics_list(&self) -> ::std::option::Option<&[crate::types::CrawlerMetrics]> {
-        self.crawler_metrics_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.crawler_metrics_list.is_none()`.
+    pub fn crawler_metrics_list(&self) -> &[crate::types::CrawlerMetrics] {
+        self.crawler_metrics_list.as_deref().unwrap_or_default()
     }
     /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

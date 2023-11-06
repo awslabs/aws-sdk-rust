@@ -34,6 +34,7 @@ pub struct GetComplianceDetailInputBuilder {
 }
 impl GetComplianceDetailInputBuilder {
     /// <p>The ID of the policy that you want to get the details for. <code>PolicyId</code> is returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.</p>
+    /// This field is required.
     pub fn policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetComplianceDetailInputBuilder {
         &self.policy_id
     }
     /// <p>The Amazon Web Services account that owns the resources that you want to get the details for.</p>
+    /// This field is required.
     pub fn member_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_account = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl GetComplianceDetailInputBuilder {
     /// Consumes the builder and constructs a [`GetComplianceDetailInput`](crate::operation::get_compliance_detail::GetComplianceDetailInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_compliance_detail::GetComplianceDetailInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_compliance_detail::GetComplianceDetailInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_compliance_detail::GetComplianceDetailInput {
             policy_id: self.policy_id,

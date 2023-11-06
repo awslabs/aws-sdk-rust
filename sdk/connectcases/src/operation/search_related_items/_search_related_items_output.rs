@@ -6,7 +6,7 @@ pub struct SearchRelatedItemsOutput {
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of items related to a case. </p>
-    pub related_items: ::std::option::Option<::std::vec::Vec<::std::option::Option<crate::types::SearchRelatedItemsResponseItem>>>,
+    pub related_items: ::std::vec::Vec<::std::option::Option<crate::types::SearchRelatedItemsResponseItem>>,
     _request_id: Option<String>,
 }
 impl SearchRelatedItemsOutput {
@@ -15,8 +15,9 @@ impl SearchRelatedItemsOutput {
         self.next_token.as_deref()
     }
     /// <p>A list of items related to a case. </p>
-    pub fn related_items(&self) -> ::std::option::Option<&[::std::option::Option<crate::types::SearchRelatedItemsResponseItem>]> {
-        self.related_items.as_deref()
+    pub fn related_items(&self) -> &[::std::option::Option<crate::types::SearchRelatedItemsResponseItem>] {
+        use std::ops::Deref;
+        self.related_items.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for SearchRelatedItemsOutput {
@@ -87,11 +88,21 @@ impl SearchRelatedItemsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SearchRelatedItemsOutput`](crate::operation::search_related_items::SearchRelatedItemsOutput).
-    pub fn build(self) -> crate::operation::search_related_items::SearchRelatedItemsOutput {
-        crate::operation::search_related_items::SearchRelatedItemsOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`related_items`](crate::operation::search_related_items::builders::SearchRelatedItemsOutputBuilder::related_items)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::search_related_items::SearchRelatedItemsOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::search_related_items::SearchRelatedItemsOutput {
             next_token: self.next_token,
-            related_items: self.related_items,
+            related_items: self.related_items.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "related_items",
+                    "related_items was not specified but it is required when building SearchRelatedItemsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

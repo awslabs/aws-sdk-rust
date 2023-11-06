@@ -51,12 +51,16 @@ impl CreateIntentVersionOutput {
         self.description.as_deref()
     }
     /// <p>An array of slot types that defines the information required to fulfill the intent.</p>
-    pub fn slots(&self) -> ::std::option::Option<&[crate::types::Slot]> {
-        self.slots.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.slots.is_none()`.
+    pub fn slots(&self) -> &[crate::types::Slot] {
+        self.slots.as_deref().unwrap_or_default()
     }
     /// <p>An array of sample utterances configured for the intent. </p>
-    pub fn sample_utterances(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.sample_utterances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sample_utterances.is_none()`.
+    pub fn sample_utterances(&self) -> &[::std::string::String] {
+        self.sample_utterances.as_deref().unwrap_or_default()
     }
     /// <p>If defined, the prompt that Amazon Lex uses to confirm the user's intent before fulfilling it. </p>
     pub fn confirmation_prompt(&self) -> ::std::option::Option<&crate::types::Prompt> {
@@ -107,12 +111,16 @@ impl CreateIntentVersionOutput {
         self.kendra_configuration.as_ref()
     }
     /// <p>An array of <code>InputContext</code> objects that lists the contexts that must be active for Amazon Lex to choose the intent in a conversation with the user.</p>
-    pub fn input_contexts(&self) -> ::std::option::Option<&[crate::types::InputContext]> {
-        self.input_contexts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_contexts.is_none()`.
+    pub fn input_contexts(&self) -> &[crate::types::InputContext] {
+        self.input_contexts.as_deref().unwrap_or_default()
     }
     /// <p>An array of <code>OutputContext</code> objects that lists the contexts that the intent activates when the intent is fulfilled.</p>
-    pub fn output_contexts(&self) -> ::std::option::Option<&[crate::types::OutputContext]> {
-        self.output_contexts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_contexts.is_none()`.
+    pub fn output_contexts(&self) -> &[crate::types::OutputContext] {
+        self.output_contexts.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateIntentVersionOutput {

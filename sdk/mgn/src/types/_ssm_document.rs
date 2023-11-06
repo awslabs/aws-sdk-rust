@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SsmDocument {
     /// <p>User-friendly name for the AWS Systems Manager Document.</p>
-    pub action_name: ::std::option::Option<::std::string::String>,
+    pub action_name: ::std::string::String,
     /// <p>AWS Systems Manager Document name or full ARN.</p>
-    pub ssm_document_name: ::std::option::Option<::std::string::String>,
+    pub ssm_document_name: ::std::string::String,
     /// <p>AWS Systems Manager Document timeout seconds.</p>
     pub timeout_seconds: i32,
     /// <p>If true, Cutover will not be enabled if the document has failed.</p>
@@ -20,12 +20,14 @@ pub struct SsmDocument {
 }
 impl SsmDocument {
     /// <p>User-friendly name for the AWS Systems Manager Document.</p>
-    pub fn action_name(&self) -> ::std::option::Option<&str> {
-        self.action_name.as_deref()
+    pub fn action_name(&self) -> &str {
+        use std::ops::Deref;
+        self.action_name.deref()
     }
     /// <p>AWS Systems Manager Document name or full ARN.</p>
-    pub fn ssm_document_name(&self) -> ::std::option::Option<&str> {
-        self.ssm_document_name.as_deref()
+    pub fn ssm_document_name(&self) -> &str {
+        use std::ops::Deref;
+        self.ssm_document_name.deref()
     }
     /// <p>AWS Systems Manager Document timeout seconds.</p>
     pub fn timeout_seconds(&self) -> i32 {
@@ -69,6 +71,7 @@ pub struct SsmDocumentBuilder {
 }
 impl SsmDocumentBuilder {
     /// <p>User-friendly name for the AWS Systems Manager Document.</p>
+    /// This field is required.
     pub fn action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +86,7 @@ impl SsmDocumentBuilder {
         &self.action_name
     }
     /// <p>AWS Systems Manager Document name or full ARN.</p>
+    /// This field is required.
     pub fn ssm_document_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssm_document_name = ::std::option::Option::Some(input.into());
         self
@@ -179,14 +183,27 @@ impl SsmDocumentBuilder {
         &self.external_parameters
     }
     /// Consumes the builder and constructs a [`SsmDocument`](crate::types::SsmDocument).
-    pub fn build(self) -> crate::types::SsmDocument {
-        crate::types::SsmDocument {
-            action_name: self.action_name,
-            ssm_document_name: self.ssm_document_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`action_name`](crate::types::builders::SsmDocumentBuilder::action_name)
+    /// - [`ssm_document_name`](crate::types::builders::SsmDocumentBuilder::ssm_document_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::SsmDocument, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SsmDocument {
+            action_name: self.action_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "action_name",
+                    "action_name was not specified but it is required when building SsmDocument",
+                )
+            })?,
+            ssm_document_name: self.ssm_document_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "ssm_document_name",
+                    "ssm_document_name was not specified but it is required when building SsmDocument",
+                )
+            })?,
             timeout_seconds: self.timeout_seconds.unwrap_or_default(),
             must_succeed_for_cutover: self.must_succeed_for_cutover,
             parameters: self.parameters,
             external_parameters: self.external_parameters,
-        }
+        })
     }
 }

@@ -14,8 +14,10 @@ impl TestMigrationInput {
         self.replication_group_id.as_deref()
     }
     /// <p> List of endpoints from which data should be migrated. List should have only one element. </p>
-    pub fn customer_node_endpoint_list(&self) -> ::std::option::Option<&[crate::types::CustomerNodeEndpoint]> {
-        self.customer_node_endpoint_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.customer_node_endpoint_list.is_none()`.
+    pub fn customer_node_endpoint_list(&self) -> &[crate::types::CustomerNodeEndpoint] {
+        self.customer_node_endpoint_list.as_deref().unwrap_or_default()
     }
 }
 impl TestMigrationInput {
@@ -34,6 +36,7 @@ pub struct TestMigrationInputBuilder {
 }
 impl TestMigrationInputBuilder {
     /// <p> The ID of the replication group to which data is to be migrated. </p>
+    /// This field is required.
     pub fn replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_group_id = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +73,7 @@ impl TestMigrationInputBuilder {
     /// Consumes the builder and constructs a [`TestMigrationInput`](crate::operation::test_migration::TestMigrationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::test_migration::TestMigrationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::test_migration::TestMigrationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::test_migration::TestMigrationInput {
             replication_group_id: self.replication_group_id,
             customer_node_endpoint_list: self.customer_node_endpoint_list,

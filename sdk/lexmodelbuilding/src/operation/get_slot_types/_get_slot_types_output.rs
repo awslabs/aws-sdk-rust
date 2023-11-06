@@ -11,8 +11,10 @@ pub struct GetSlotTypesOutput {
 }
 impl GetSlotTypesOutput {
     /// <p>An array of objects, one for each slot type, that provides information such as the name of the slot type, the version, and a description.</p>
-    pub fn slot_types(&self) -> ::std::option::Option<&[crate::types::SlotTypeMetadata]> {
-        self.slot_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.slot_types.is_none()`.
+    pub fn slot_types(&self) -> &[crate::types::SlotTypeMetadata] {
+        self.slot_types.as_deref().unwrap_or_default()
     }
     /// <p>If the response is truncated, it includes a pagination token that you can specify in your next request to fetch the next page of slot types.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

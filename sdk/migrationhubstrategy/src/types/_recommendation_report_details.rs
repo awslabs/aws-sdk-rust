@@ -39,8 +39,10 @@ impl RecommendationReportDetails {
         self.s3_bucket.as_deref()
     }
     /// <p> The Amazon S3 key name of the report file. </p>
-    pub fn s3_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.s3_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.s3_keys.is_none()`.
+    pub fn s3_keys(&self) -> &[::std::string::String] {
+        self.s3_keys.as_deref().unwrap_or_default()
     }
 }
 impl RecommendationReportDetails {

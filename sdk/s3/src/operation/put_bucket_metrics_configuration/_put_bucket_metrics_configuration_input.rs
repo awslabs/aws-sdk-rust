@@ -48,6 +48,7 @@ pub struct PutBucketMetricsConfigurationInputBuilder {
 }
 impl PutBucketMetricsConfigurationInputBuilder {
     /// <p>The name of the bucket for which the metrics configuration is set.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl PutBucketMetricsConfigurationInputBuilder {
         &self.bucket
     }
     /// <p>The ID used to identify the metrics configuration. The ID has a 64 character limit and can only contain letters, numbers, periods, dashes, and underscores.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl PutBucketMetricsConfigurationInputBuilder {
         &self.id
     }
     /// <p>Specifies the metrics configuration.</p>
+    /// This field is required.
     pub fn metrics_configuration(mut self, input: crate::types::MetricsConfiguration) -> Self {
         self.metrics_configuration = ::std::option::Option::Some(input);
         self
@@ -108,7 +111,7 @@ impl PutBucketMetricsConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_bucket_metrics_configuration::PutBucketMetricsConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_bucket_metrics_configuration::PutBucketMetricsConfigurationInput {
             bucket: self.bucket,

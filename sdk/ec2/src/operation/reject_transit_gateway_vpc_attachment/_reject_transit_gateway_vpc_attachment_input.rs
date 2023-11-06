@@ -34,6 +34,7 @@ pub struct RejectTransitGatewayVpcAttachmentInputBuilder {
 }
 impl RejectTransitGatewayVpcAttachmentInputBuilder {
     /// <p>The ID of the attachment.</p>
+    /// This field is required.
     pub fn transit_gateway_attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_attachment_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl RejectTransitGatewayVpcAttachmentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reject_transit_gateway_vpc_attachment::RejectTransitGatewayVpcAttachmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::reject_transit_gateway_vpc_attachment::RejectTransitGatewayVpcAttachmentInput {

@@ -34,6 +34,7 @@ pub struct StopProductSubscriptionOutputBuilder {
 }
 impl StopProductSubscriptionOutputBuilder {
     /// <p>Metadata that describes the start product subscription operation.</p>
+    /// This field is required.
     pub fn product_user_summary(mut self, input: crate::types::ProductUserSummary) -> Self {
         self.product_user_summary = ::std::option::Option::Some(input);
         self

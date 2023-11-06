@@ -74,8 +74,10 @@ impl CreateProjectInput {
         self.source.as_ref()
     }
     /// <p>An array of <code>ProjectSource</code> objects. </p>
-    pub fn secondary_sources(&self) -> ::std::option::Option<&[crate::types::ProjectSource]> {
-        self.secondary_sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secondary_sources.is_none()`.
+    pub fn secondary_sources(&self) -> &[crate::types::ProjectSource] {
+        self.secondary_sources.as_deref().unwrap_or_default()
     }
     /// <p>A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of: </p>
     /// <ul>
@@ -90,16 +92,20 @@ impl CreateProjectInput {
         self.source_version.as_deref()
     }
     /// <p>An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is specified at the build level, then they take precedence over these <code>secondarySourceVersions</code> (at the project level). </p>
-    pub fn secondary_source_versions(&self) -> ::std::option::Option<&[crate::types::ProjectSourceVersion]> {
-        self.secondary_source_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secondary_source_versions.is_none()`.
+    pub fn secondary_source_versions(&self) -> &[crate::types::ProjectSourceVersion] {
+        self.secondary_source_versions.as_deref().unwrap_or_default()
     }
     /// <p>Information about the build output artifacts for the build project.</p>
     pub fn artifacts(&self) -> ::std::option::Option<&crate::types::ProjectArtifacts> {
         self.artifacts.as_ref()
     }
     /// <p>An array of <code>ProjectArtifacts</code> objects. </p>
-    pub fn secondary_artifacts(&self) -> ::std::option::Option<&[crate::types::ProjectArtifacts]> {
-        self.secondary_artifacts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secondary_artifacts.is_none()`.
+    pub fn secondary_artifacts(&self) -> &[crate::types::ProjectArtifacts] {
+        self.secondary_artifacts.as_deref().unwrap_or_default()
     }
     /// <p>Stores recently used information so that it can be quickly accessed at a later time.</p>
     pub fn cache(&self) -> ::std::option::Option<&crate::types::ProjectCache> {
@@ -131,8 +137,10 @@ impl CreateProjectInput {
     }
     /// <p>A list of tag key and value pairs associated with this build project.</p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
     pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
@@ -147,8 +155,10 @@ impl CreateProjectInput {
         self.logs_config.as_ref()
     }
     /// <p> An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System. </p>
-    pub fn file_system_locations(&self) -> ::std::option::Option<&[crate::types::ProjectFileSystemLocation]> {
-        self.file_system_locations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.file_system_locations.is_none()`.
+    pub fn file_system_locations(&self) -> &[crate::types::ProjectFileSystemLocation] {
+        self.file_system_locations.as_deref().unwrap_or_default()
     }
     /// <p>A <code>ProjectBuildBatchConfig</code> object that defines the batch build options for the project.</p>
     pub fn build_batch_config(&self) -> ::std::option::Option<&crate::types::ProjectBuildBatchConfig> {
@@ -195,6 +205,7 @@ pub struct CreateProjectInputBuilder {
 }
 impl CreateProjectInputBuilder {
     /// <p>The name of the build project.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -223,6 +234,7 @@ impl CreateProjectInputBuilder {
         &self.description
     }
     /// <p>Information about the build input source code for the build project.</p>
+    /// This field is required.
     pub fn source(mut self, input: crate::types::ProjectSource) -> Self {
         self.source = ::std::option::Option::Some(input);
         self
@@ -315,6 +327,7 @@ impl CreateProjectInputBuilder {
         &self.secondary_source_versions
     }
     /// <p>Information about the build output artifacts for the build project.</p>
+    /// This field is required.
     pub fn artifacts(mut self, input: crate::types::ProjectArtifacts) -> Self {
         self.artifacts = ::std::option::Option::Some(input);
         self
@@ -363,6 +376,7 @@ impl CreateProjectInputBuilder {
         &self.cache
     }
     /// <p>Information about the build environment for the build project.</p>
+    /// This field is required.
     pub fn environment(mut self, input: crate::types::ProjectEnvironment) -> Self {
         self.environment = ::std::option::Option::Some(input);
         self
@@ -377,6 +391,7 @@ impl CreateProjectInputBuilder {
         &self.environment
     }
     /// <p>The ARN of the IAM role that enables CodeBuild to interact with dependent Amazon Web Services services on behalf of the Amazon Web Services account.</p>
+    /// This field is required.
     pub fn service_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_role = ::std::option::Option::Some(input.into());
         self
@@ -563,7 +578,7 @@ impl CreateProjectInputBuilder {
     /// Consumes the builder and constructs a [`CreateProjectInput`](crate::operation::create_project::CreateProjectInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_project::CreateProjectInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_project::CreateProjectInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_project::CreateProjectInput {
             name: self.name,
             description: self.description,

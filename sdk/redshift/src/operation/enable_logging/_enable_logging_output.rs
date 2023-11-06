@@ -52,8 +52,10 @@ impl EnableLoggingOutput {
         self.log_destination_type.as_ref()
     }
     /// <p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>
-    pub fn log_exports(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.log_exports.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_exports.is_none()`.
+    pub fn log_exports(&self) -> &[::std::string::String] {
+        self.log_exports.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for EnableLoggingOutput {

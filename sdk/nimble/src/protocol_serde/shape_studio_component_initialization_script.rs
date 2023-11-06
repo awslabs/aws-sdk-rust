@@ -2,7 +2,7 @@
 pub fn ser_studio_component_initialization_script(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StudioComponentInitializationScript,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.launch_profile_protocol_version {
         object.key("launchProfileProtocolVersion").string(var_1.as_str());
     }

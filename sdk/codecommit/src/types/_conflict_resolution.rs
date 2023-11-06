@@ -13,16 +13,22 @@ pub struct ConflictResolution {
 }
 impl ConflictResolution {
     /// <p>Files to have content replaced as part of the merge conflict resolution.</p>
-    pub fn replace_contents(&self) -> ::std::option::Option<&[crate::types::ReplaceContentEntry]> {
-        self.replace_contents.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replace_contents.is_none()`.
+    pub fn replace_contents(&self) -> &[crate::types::ReplaceContentEntry] {
+        self.replace_contents.as_deref().unwrap_or_default()
     }
     /// <p>Files to be deleted as part of the merge conflict resolution.</p>
-    pub fn delete_files(&self) -> ::std::option::Option<&[crate::types::DeleteFileEntry]> {
-        self.delete_files.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.delete_files.is_none()`.
+    pub fn delete_files(&self) -> &[crate::types::DeleteFileEntry] {
+        self.delete_files.as_deref().unwrap_or_default()
     }
     /// <p>File modes that are set as part of the merge conflict resolution.</p>
-    pub fn set_file_modes(&self) -> ::std::option::Option<&[crate::types::SetFileModeEntry]> {
-        self.set_file_modes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.set_file_modes.is_none()`.
+    pub fn set_file_modes(&self) -> &[crate::types::SetFileModeEntry] {
+        self.set_file_modes.as_deref().unwrap_or_default()
     }
 }
 impl ConflictResolution {

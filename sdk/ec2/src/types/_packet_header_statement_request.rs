@@ -21,32 +21,46 @@ pub struct PacketHeaderStatementRequest {
 }
 impl PacketHeaderStatementRequest {
     /// <p>The source addresses.</p>
-    pub fn source_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.source_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_addresses.is_none()`.
+    pub fn source_addresses(&self) -> &[::std::string::String] {
+        self.source_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The destination addresses.</p>
-    pub fn destination_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.destination_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destination_addresses.is_none()`.
+    pub fn destination_addresses(&self) -> &[::std::string::String] {
+        self.destination_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The source ports.</p>
-    pub fn source_ports(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.source_ports.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_ports.is_none()`.
+    pub fn source_ports(&self) -> &[::std::string::String] {
+        self.source_ports.as_deref().unwrap_or_default()
     }
     /// <p>The destination ports.</p>
-    pub fn destination_ports(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.destination_ports.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destination_ports.is_none()`.
+    pub fn destination_ports(&self) -> &[::std::string::String] {
+        self.destination_ports.as_deref().unwrap_or_default()
     }
     /// <p>The source prefix lists.</p>
-    pub fn source_prefix_lists(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.source_prefix_lists.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_prefix_lists.is_none()`.
+    pub fn source_prefix_lists(&self) -> &[::std::string::String] {
+        self.source_prefix_lists.as_deref().unwrap_or_default()
     }
     /// <p>The destination prefix lists.</p>
-    pub fn destination_prefix_lists(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.destination_prefix_lists.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destination_prefix_lists.is_none()`.
+    pub fn destination_prefix_lists(&self) -> &[::std::string::String] {
+        self.destination_prefix_lists.as_deref().unwrap_or_default()
     }
     /// <p>The protocols.</p>
-    pub fn protocols(&self) -> ::std::option::Option<&[crate::types::Protocol]> {
-        self.protocols.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.protocols.is_none()`.
+    pub fn protocols(&self) -> &[crate::types::Protocol] {
+        self.protocols.as_deref().unwrap_or_default()
     }
 }
 impl PacketHeaderStatementRequest {

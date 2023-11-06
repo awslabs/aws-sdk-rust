@@ -11,8 +11,10 @@ pub struct ListDevicesOutput {
 }
 impl ListDevicesOutput {
     /// <p>Information about the devices.</p>
-    pub fn devices(&self) -> ::std::option::Option<&[crate::types::DeviceSummary]> {
-        self.devices.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.devices.is_none()`.
+    pub fn devices(&self) -> &[crate::types::DeviceSummary] {
+        self.devices.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

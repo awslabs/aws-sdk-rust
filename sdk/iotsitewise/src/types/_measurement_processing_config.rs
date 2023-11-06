@@ -28,6 +28,7 @@ pub struct MeasurementProcessingConfigBuilder {
 }
 impl MeasurementProcessingConfigBuilder {
     /// <p>The forwarding configuration for the given measurement property. </p>
+    /// This field is required.
     pub fn forwarding_config(mut self, input: crate::types::ForwardingConfig) -> Self {
         self.forwarding_config = ::std::option::Option::Some(input);
         self

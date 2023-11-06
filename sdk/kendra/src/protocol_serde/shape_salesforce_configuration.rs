@@ -2,72 +2,72 @@
 pub fn ser_salesforce_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SalesforceConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.server_url {
-        object.key("ServerUrl").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("ServerUrl").string(input.server_url.as_str());
     }
-    if let Some(var_2) = &input.secret_arn {
-        object.key("SecretArn").string(var_2.as_str());
+    {
+        object.key("SecretArn").string(input.secret_arn.as_str());
     }
-    if let Some(var_3) = &input.standard_object_configurations {
-        let mut array_4 = object.key("StandardObjectConfigurations").start_array();
-        for item_5 in var_3 {
+    if let Some(var_1) = &input.standard_object_configurations {
+        let mut array_2 = object.key("StandardObjectConfigurations").start_array();
+        for item_3 in var_1 {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
+                let mut object_4 = array_2.value().start_object();
                 crate::protocol_serde::shape_salesforce_standard_object_configuration::ser_salesforce_standard_object_configuration(
-                    &mut object_6,
-                    item_5,
+                    &mut object_4,
+                    item_3,
                 )?;
-                object_6.finish();
+                object_4.finish();
             }
         }
-        array_4.finish();
+        array_2.finish();
     }
-    if let Some(var_7) = &input.knowledge_article_configuration {
+    if let Some(var_5) = &input.knowledge_article_configuration {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("KnowledgeArticleConfiguration").start_object();
+        let mut object_6 = object.key("KnowledgeArticleConfiguration").start_object();
         crate::protocol_serde::shape_salesforce_knowledge_article_configuration::ser_salesforce_knowledge_article_configuration(
-            &mut object_8,
-            var_7,
+            &mut object_6,
+            var_5,
         )?;
-        object_8.finish();
+        object_6.finish();
     }
-    if let Some(var_9) = &input.chatter_feed_configuration {
+    if let Some(var_7) = &input.chatter_feed_configuration {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("ChatterFeedConfiguration").start_object();
-        crate::protocol_serde::shape_salesforce_chatter_feed_configuration::ser_salesforce_chatter_feed_configuration(&mut object_10, var_9)?;
-        object_10.finish();
+        let mut object_8 = object.key("ChatterFeedConfiguration").start_object();
+        crate::protocol_serde::shape_salesforce_chatter_feed_configuration::ser_salesforce_chatter_feed_configuration(&mut object_8, var_7)?;
+        object_8.finish();
     }
     if input.crawl_attachments {
         object.key("CrawlAttachments").boolean(input.crawl_attachments);
     }
-    if let Some(var_11) = &input.standard_object_attachment_configuration {
+    if let Some(var_9) = &input.standard_object_attachment_configuration {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("StandardObjectAttachmentConfiguration").start_object();
+        let mut object_10 = object.key("StandardObjectAttachmentConfiguration").start_object();
         crate::protocol_serde::shape_salesforce_standard_object_attachment_configuration::ser_salesforce_standard_object_attachment_configuration(
-            &mut object_12,
-            var_11,
+            &mut object_10,
+            var_9,
         )?;
-        object_12.finish();
+        object_10.finish();
     }
-    if let Some(var_13) = &input.include_attachment_file_patterns {
-        let mut array_14 = object.key("IncludeAttachmentFilePatterns").start_array();
-        for item_15 in var_13 {
+    if let Some(var_11) = &input.include_attachment_file_patterns {
+        let mut array_12 = object.key("IncludeAttachmentFilePatterns").start_array();
+        for item_13 in var_11 {
             {
-                array_14.value().string(item_15.as_str());
+                array_12.value().string(item_13.as_str());
             }
         }
-        array_14.finish();
+        array_12.finish();
     }
-    if let Some(var_16) = &input.exclude_attachment_file_patterns {
-        let mut array_17 = object.key("ExcludeAttachmentFilePatterns").start_array();
-        for item_18 in var_16 {
+    if let Some(var_14) = &input.exclude_attachment_file_patterns {
+        let mut array_15 = object.key("ExcludeAttachmentFilePatterns").start_array();
+        for item_16 in var_14 {
             {
-                array_17.value().string(item_18.as_str());
+                array_15.value().string(item_16.as_str());
             }
         }
-        array_17.finish();
+        array_15.finish();
     }
     Ok(())
 }
@@ -148,7 +148,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::salesforce_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -112,6 +112,7 @@ impl CreatePackagingConfigurationInputBuilder {
         &self.hls_package
     }
     /// The ID of the PackagingConfiguration.
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -140,6 +141,7 @@ impl CreatePackagingConfigurationInputBuilder {
         &self.mss_package
     }
     /// The ID of a PackagingGroup.
+    /// This field is required.
     pub fn packaging_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.packaging_group_id = ::std::option::Option::Some(input.into());
         self
@@ -178,7 +180,7 @@ impl CreatePackagingConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_packaging_configuration::CreatePackagingConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_packaging_configuration::CreatePackagingConfigurationInput {
             cmaf_package: self.cmaf_package,

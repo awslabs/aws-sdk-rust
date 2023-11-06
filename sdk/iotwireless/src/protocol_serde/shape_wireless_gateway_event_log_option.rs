@@ -2,12 +2,12 @@
 pub fn ser_wireless_gateway_event_log_option(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WirelessGatewayEventLogOption,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.event {
-        object.key("Event").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Event").string(input.event.as_str());
     }
-    if let Some(var_2) = &input.log_level {
-        object.key("LogLevel").string(var_2.as_str());
+    {
+        object.key("LogLevel").string(input.log_level.as_str());
     }
     Ok(())
 }
@@ -51,7 +51,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::wireless_gateway_event_log_option_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ElicitationCodeHookInvocationSetting {
     /// <p>Indicates whether a Lambda function should be invoked for the dialog.</p>
-    pub enable_code_hook_invocation: ::std::option::Option<bool>,
+    pub enable_code_hook_invocation: bool,
     /// <p>A label that indicates the dialog step from which the dialog code hook is happening.</p>
     pub invocation_label: ::std::option::Option<::std::string::String>,
 }
 impl ElicitationCodeHookInvocationSetting {
     /// <p>Indicates whether a Lambda function should be invoked for the dialog.</p>
-    pub fn enable_code_hook_invocation(&self) -> ::std::option::Option<bool> {
+    pub fn enable_code_hook_invocation(&self) -> bool {
         self.enable_code_hook_invocation
     }
     /// <p>A label that indicates the dialog step from which the dialog code hook is happening.</p>
@@ -35,6 +35,7 @@ pub struct ElicitationCodeHookInvocationSettingBuilder {
 }
 impl ElicitationCodeHookInvocationSettingBuilder {
     /// <p>Indicates whether a Lambda function should be invoked for the dialog.</p>
+    /// This field is required.
     pub fn enable_code_hook_invocation(mut self, input: bool) -> Self {
         self.enable_code_hook_invocation = ::std::option::Option::Some(input);
         self
@@ -63,10 +64,19 @@ impl ElicitationCodeHookInvocationSettingBuilder {
         &self.invocation_label
     }
     /// Consumes the builder and constructs a [`ElicitationCodeHookInvocationSetting`](crate::types::ElicitationCodeHookInvocationSetting).
-    pub fn build(self) -> crate::types::ElicitationCodeHookInvocationSetting {
-        crate::types::ElicitationCodeHookInvocationSetting {
-            enable_code_hook_invocation: self.enable_code_hook_invocation,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`enable_code_hook_invocation`](crate::types::builders::ElicitationCodeHookInvocationSettingBuilder::enable_code_hook_invocation)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::ElicitationCodeHookInvocationSetting, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ElicitationCodeHookInvocationSetting {
+            enable_code_hook_invocation: self.enable_code_hook_invocation.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "enable_code_hook_invocation",
+                    "enable_code_hook_invocation was not specified but it is required when building ElicitationCodeHookInvocationSetting",
+                )
+            })?,
             invocation_label: self.invocation_label,
-        }
+        })
     }
 }

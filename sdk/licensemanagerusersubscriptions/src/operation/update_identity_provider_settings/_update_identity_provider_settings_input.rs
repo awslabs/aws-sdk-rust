@@ -51,6 +51,7 @@ pub struct UpdateIdentityProviderSettingsInputBuilder {
 }
 impl UpdateIdentityProviderSettingsInputBuilder {
     /// <p>Details about an identity provider.</p>
+    /// This field is required.
     pub fn identity_provider(mut self, input: crate::types::IdentityProvider) -> Self {
         self.identity_provider = ::std::option::Option::Some(input);
         self
@@ -65,6 +66,7 @@ impl UpdateIdentityProviderSettingsInputBuilder {
         &self.identity_provider
     }
     /// <p>The name of the user-based subscription product.</p>
+    /// This field is required.
     pub fn product(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +86,7 @@ impl UpdateIdentityProviderSettingsInputBuilder {
     /// <li> <p>Subnets which you want to remove the VPC endpoints from.</p> </li>
     /// <li> <p>Security group ID which permits traffic to the VPC endpoints.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn update_settings(mut self, input: crate::types::UpdateSettings) -> Self {
         self.update_settings = ::std::option::Option::Some(input);
         self
@@ -112,7 +115,7 @@ impl UpdateIdentityProviderSettingsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsInput {
             identity_provider: self.identity_provider,

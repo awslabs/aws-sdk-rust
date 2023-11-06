@@ -43,8 +43,10 @@ impl AwsWafv2RuleGroupDetails {
         self.arn.as_deref()
     }
     /// <p> The Rule statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
-    pub fn rules(&self) -> ::std::option::Option<&[crate::types::AwsWafv2RulesDetails]> {
-        self.rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
+    pub fn rules(&self) -> &[crate::types::AwsWafv2RulesDetails] {
+        self.rules.as_deref().unwrap_or_default()
     }
     /// <p> Specifies whether the rule group is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
     pub fn scope(&self) -> ::std::option::Option<&str> {

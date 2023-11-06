@@ -34,6 +34,7 @@ pub struct GetFindingsStatisticsOutputBuilder {
 }
 impl GetFindingsStatisticsOutputBuilder {
     /// <p>The finding statistics object.</p>
+    /// This field is required.
     pub fn finding_statistics(mut self, input: crate::types::FindingStatistics) -> Self {
         self.finding_statistics = ::std::option::Option::Some(input);
         self

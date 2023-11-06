@@ -27,6 +27,7 @@ pub struct DescribeDeviceInputBuilder {
 }
 impl DescribeDeviceInputBuilder {
     /// <p>The device's ID.</p>
+    /// This field is required.
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeDeviceInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDeviceInput`](crate::operation::describe_device::DescribeDeviceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_device::DescribeDeviceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_device::DescribeDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_device::DescribeDeviceInput { device_id: self.device_id })
     }
 }

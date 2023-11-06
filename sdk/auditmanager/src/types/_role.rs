@@ -9,9 +9,9 @@ pub struct Role {
     /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>.</p>
     /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be <code>RESOURCE_OWNER</code>.</p>
     /// </note>
-    pub role_type: ::std::option::Option<crate::types::RoleType>,
+    pub role_type: crate::types::RoleType,
     /// <p> The Amazon Resource Name (ARN) of the IAM role. </p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
 }
 impl Role {
     /// <p> The type of customer persona. </p> <note>
@@ -19,12 +19,13 @@ impl Role {
     /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>.</p>
     /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be <code>RESOURCE_OWNER</code>.</p>
     /// </note>
-    pub fn role_type(&self) -> ::std::option::Option<&crate::types::RoleType> {
-        self.role_type.as_ref()
+    pub fn role_type(&self) -> &crate::types::RoleType {
+        &self.role_type
     }
     /// <p> The Amazon Resource Name (ARN) of the IAM role. </p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
 }
 impl Role {
@@ -47,6 +48,7 @@ impl RoleBuilder {
     /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>.</p>
     /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be <code>RESOURCE_OWNER</code>.</p>
     /// </note>
+    /// This field is required.
     pub fn role_type(mut self, input: crate::types::RoleType) -> Self {
         self.role_type = ::std::option::Option::Some(input);
         self
@@ -69,6 +71,7 @@ impl RoleBuilder {
         &self.role_type
     }
     /// <p> The Amazon Resource Name (ARN) of the IAM role. </p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -83,10 +86,23 @@ impl RoleBuilder {
         &self.role_arn
     }
     /// Consumes the builder and constructs a [`Role`](crate::types::Role).
-    pub fn build(self) -> crate::types::Role {
-        crate::types::Role {
-            role_type: self.role_type,
-            role_arn: self.role_arn,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`role_type`](crate::types::builders::RoleBuilder::role_type)
+    /// - [`role_arn`](crate::types::builders::RoleBuilder::role_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::Role, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Role {
+            role_type: self.role_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "role_type",
+                    "role_type was not specified but it is required when building Role",
+                )
+            })?,
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building Role",
+                )
+            })?,
+        })
     }
 }

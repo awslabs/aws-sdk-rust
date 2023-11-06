@@ -33,18 +33,19 @@ impl ListCollectionsPaginator {
 
     /// Create the pagination stream
     ///
-    /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
+    /// _Note:_ No requests will be dispatched until the stream is used
+    /// (e.g. with the [`.next().await`](aws_smithy_async::future::pagination_stream::PaginationStream::next) method).
     pub fn send(
         self,
-    ) -> impl ::tokio_stream::Stream<
-        Item = ::std::result::Result<
+    ) -> ::aws_smithy_async::future::pagination_stream::PaginationStream<
+        ::std::result::Result<
             crate::operation::list_collections::ListCollectionsOutput,
-            ::aws_smithy_http::result::SdkError<
+            ::aws_smithy_runtime_api::client::result::SdkError<
                 crate::operation::list_collections::ListCollectionsError,
                 ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
             >,
         >,
-    > + ::std::marker::Unpin {
+    > {
         // Move individual fields out of self for the borrow checker
         let builder = self.builder;
         let handle = self.handle;
@@ -53,41 +54,46 @@ impl ListCollectionsPaginator {
             &handle.conf,
             ::std::option::Option::None,
         );
-        ::aws_smithy_async::future::fn_stream::FnStream::new(move |tx| {
-            ::std::boxed::Box::pin(async move {
-                // Build the input for the first time. If required fields are missing, this is where we'll produce an early error.
-                let mut input = match builder.build().map_err(::aws_smithy_http::result::SdkError::construction_failure) {
-                    ::std::result::Result::Ok(input) => input,
-                    ::std::result::Result::Err(e) => {
-                        let _ = tx.send(::std::result::Result::Err(e)).await;
-                        return;
-                    }
-                };
-                loop {
-                    let resp = crate::operation::list_collections::ListCollections::orchestrate(&runtime_plugins, input.clone()).await;
-                    // If the input member is None or it was an error
-                    let done = match resp {
-                        ::std::result::Result::Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_list_collections_output_next_token(resp);
-                            let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
-                                true
-                            } else {
-                                input.next_token = new_token.cloned();
-                                is_empty
-                            }
+        ::aws_smithy_async::future::pagination_stream::PaginationStream::new(::aws_smithy_async::future::pagination_stream::fn_stream::FnStream::new(
+            move |tx| {
+                ::std::boxed::Box::pin(async move {
+                    // Build the input for the first time. If required fields are missing, this is where we'll produce an early error.
+                    let mut input = match builder
+                        .build()
+                        .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)
+                    {
+                        ::std::result::Result::Ok(input) => input,
+                        ::std::result::Result::Err(e) => {
+                            let _ = tx.send(::std::result::Result::Err(e)).await;
+                            return;
                         }
-                        ::std::result::Result::Err(_) => true,
                     };
-                    if tx.send(resp).await.is_err() {
-                        // receiving end was dropped
-                        return;
+                    loop {
+                        let resp = crate::operation::list_collections::ListCollections::orchestrate(&runtime_plugins, input.clone()).await;
+                        // If the input member is None or it was an error
+                        let done = match resp {
+                            ::std::result::Result::Ok(ref resp) => {
+                                let new_token = crate::lens::reflens_list_collections_output_next_token(resp);
+                                let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
+                                if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
+                                    true
+                                } else {
+                                    input.next_token = new_token.cloned();
+                                    is_empty
+                                }
+                            }
+                            ::std::result::Result::Err(_) => true,
+                        };
+                        if tx.send(resp).await.is_err() {
+                            // receiving end was dropped
+                            return;
+                        }
+                        if done {
+                            return;
+                        }
                     }
-                    if done {
-                        return;
-                    }
-                }
-            })
-        })
+                })
+            },
+        ))
     }
 }

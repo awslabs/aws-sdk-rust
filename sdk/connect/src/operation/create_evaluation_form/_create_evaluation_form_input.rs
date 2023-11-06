@@ -30,8 +30,10 @@ impl CreateEvaluationFormInput {
         self.description.as_deref()
     }
     /// <p>Items that are part of the evaluation form. The total number of sections and questions must not exceed 100 each. Questions must be contained in a section.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::EvaluationFormItem]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[crate::types::EvaluationFormItem] {
+        self.items.as_deref().unwrap_or_default()
     }
     /// <p>A scoring strategy of the evaluation form.</p>
     pub fn scoring_strategy(&self) -> ::std::option::Option<&crate::types::EvaluationFormScoringStrategy> {
@@ -62,6 +64,7 @@ pub struct CreateEvaluationFormInputBuilder {
 }
 impl CreateEvaluationFormInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +79,7 @@ impl CreateEvaluationFormInputBuilder {
         &self.instance_id
     }
     /// <p>A title of the evaluation form.</p>
+    /// This field is required.
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
         self
@@ -154,7 +158,7 @@ impl CreateEvaluationFormInputBuilder {
     /// Consumes the builder and constructs a [`CreateEvaluationFormInput`](crate::operation::create_evaluation_form::CreateEvaluationFormInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_evaluation_form::CreateEvaluationFormInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_evaluation_form::CreateEvaluationFormInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_evaluation_form::CreateEvaluationFormInput {
             instance_id: self.instance_id,

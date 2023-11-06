@@ -27,6 +27,7 @@ pub struct GetDeleteEventsByEventTypeStatusInputBuilder {
 }
 impl GetDeleteEventsByEventTypeStatusInputBuilder {
     /// <p>Name of event type for which to get the deletion status.</p>
+    /// This field is required.
     pub fn event_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_type_name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetDeleteEventsByEventTypeStatusInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusInput {

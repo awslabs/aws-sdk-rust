@@ -25,11 +25,10 @@ pub fn de_create_workgroup_http_error(
                 output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_workgroup::CreateWorkgroupError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::conflict_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_workgroup::CreateWorkgroupError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InsufficientCapacityException" => crate::operation::create_workgroup::CreateWorkgroupError::InsufficientCapacityException({
@@ -41,11 +40,10 @@ pub fn de_create_workgroup_http_error(
                     crate::protocol_serde::shape_insufficient_capacity_exception::de_insufficient_capacity_exception_json_err(_response_body, output)
                         .map_err(crate::operation::create_workgroup::CreateWorkgroupError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::insufficient_capacity_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_workgroup::CreateWorkgroupError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerException" => crate::operation::create_workgroup::CreateWorkgroupError::InternalServerException({
@@ -56,11 +54,10 @@ pub fn de_create_workgroup_http_error(
                 output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_workgroup::CreateWorkgroupError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_workgroup::CreateWorkgroupError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::create_workgroup::CreateWorkgroupError::ResourceNotFoundException({
@@ -71,11 +68,10 @@ pub fn de_create_workgroup_http_error(
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_workgroup::CreateWorkgroupError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_workgroup::CreateWorkgroupError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "TooManyTagsException" => crate::operation::create_workgroup::CreateWorkgroupError::TooManyTagsException({
@@ -101,11 +97,10 @@ pub fn de_create_workgroup_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_workgroup::CreateWorkgroupError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_workgroup::CreateWorkgroupError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::create_workgroup::CreateWorkgroupError::generic(generic),
@@ -130,12 +125,12 @@ pub fn de_create_workgroup_http_response(
 
 pub fn ser_create_workgroup_input(
     input: &crate::operation::create_workgroup::CreateWorkgroupInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_workgroup_input::ser_create_workgroup_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_create_workgroup(

@@ -34,6 +34,7 @@ pub struct GetBucketWebsiteInputBuilder {
 }
 impl GetBucketWebsiteInputBuilder {
     /// <p>The bucket name for which to get the website configuration.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl GetBucketWebsiteInputBuilder {
     /// Consumes the builder and constructs a [`GetBucketWebsiteInput`](crate::operation::get_bucket_website::GetBucketWebsiteInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_bucket_website::GetBucketWebsiteInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_bucket_website::GetBucketWebsiteInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_bucket_website::GetBucketWebsiteInput {
             bucket: self.bucket,
             expected_bucket_owner: self.expected_bucket_owner,

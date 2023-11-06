@@ -48,6 +48,7 @@ pub struct PutMetadataFlagInputBuilder {
 }
 impl PutMetadataFlagInputBuilder {
     /// <p>The unique ID for the Amplify app.</p>
+    /// This field is required.
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl PutMetadataFlagInputBuilder {
         &self.app_id
     }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
+    /// This field is required.
     pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl PutMetadataFlagInputBuilder {
         &self.environment_name
     }
     /// <p>The name of the feature associated with the metadata.</p>
+    /// This field is required.
     pub fn feature_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl PutMetadataFlagInputBuilder {
         &self.feature_name
     }
     /// <p>The metadata information to store.</p>
+    /// This field is required.
     pub fn body(mut self, input: crate::types::PutMetadataFlagBody) -> Self {
         self.body = ::std::option::Option::Some(input);
         self
@@ -106,7 +110,7 @@ impl PutMetadataFlagInputBuilder {
     /// Consumes the builder and constructs a [`PutMetadataFlagInput`](crate::operation::put_metadata_flag::PutMetadataFlagInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_metadata_flag::PutMetadataFlagInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_metadata_flag::PutMetadataFlagInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_metadata_flag::PutMetadataFlagInput {
             app_id: self.app_id,
             environment_name: self.environment_name,

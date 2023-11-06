@@ -50,6 +50,7 @@ pub struct PutEmailIdentityDkimSigningAttributesInputBuilder {
 }
 impl PutEmailIdentityDkimSigningAttributesInputBuilder {
     /// <p>The email identity.</p>
+    /// This field is required.
     pub fn email_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_identity = ::std::option::Option::Some(input.into());
         self
@@ -68,6 +69,7 @@ impl PutEmailIdentityDkimSigningAttributesInputBuilder {
     /// <li> <p> <code>AWS_SES</code> – Configure DKIM for the identity by using <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p> </li>
     /// <li> <p> <code>EXTERNAL</code> – Configure DKIM for the identity by using Bring Your Own DKIM (BYODKIM).</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn signing_attributes_origin(mut self, input: crate::types::DkimSigningAttributesOrigin) -> Self {
         self.signing_attributes_origin = ::std::option::Option::Some(input);
         self
@@ -108,7 +110,7 @@ impl PutEmailIdentityDkimSigningAttributesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_email_identity_dkim_signing_attributes::PutEmailIdentityDkimSigningAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::put_email_identity_dkim_signing_attributes::PutEmailIdentityDkimSigningAttributesInput {

@@ -34,6 +34,7 @@ pub struct DescribeEntityInputBuilder {
 }
 impl DescribeEntityInputBuilder {
     /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
+    /// This field is required.
     pub fn catalog(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.catalog = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeEntityInputBuilder {
         &self.catalog
     }
     /// <p>Required. The unique ID of the entity to describe.</p>
+    /// This field is required.
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DescribeEntityInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEntityInput`](crate::operation::describe_entity::DescribeEntityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_entity::DescribeEntityInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_entity::DescribeEntityInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_entity::DescribeEntityInput {
             catalog: self.catalog,
             entity_id: self.entity_id,

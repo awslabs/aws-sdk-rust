@@ -20,8 +20,10 @@ impl UpdateRobotApplicationInput {
         self.application.as_deref()
     }
     /// <p>The sources of the robot application.</p>
-    pub fn sources(&self) -> ::std::option::Option<&[crate::types::SourceConfig]> {
-        self.sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
+    pub fn sources(&self) -> &[crate::types::SourceConfig] {
+        self.sources.as_deref().unwrap_or_default()
     }
     /// <p>The robot software suite (ROS distribution) used by the robot application.</p>
     pub fn robot_software_suite(&self) -> ::std::option::Option<&crate::types::RobotSoftwareSuite> {
@@ -55,6 +57,7 @@ pub struct UpdateRobotApplicationInputBuilder {
 }
 impl UpdateRobotApplicationInputBuilder {
     /// <p>The application information for the robot application.</p>
+    /// This field is required.
     pub fn application(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application = ::std::option::Option::Some(input.into());
         self
@@ -89,6 +92,7 @@ impl UpdateRobotApplicationInputBuilder {
         &self.sources
     }
     /// <p>The robot software suite (ROS distribution) used by the robot application.</p>
+    /// This field is required.
     pub fn robot_software_suite(mut self, input: crate::types::RobotSoftwareSuite) -> Self {
         self.robot_software_suite = ::std::option::Option::Some(input);
         self
@@ -133,8 +137,10 @@ impl UpdateRobotApplicationInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRobotApplicationInput`](crate::operation::update_robot_application::UpdateRobotApplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_robot_application::UpdateRobotApplicationInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::update_robot_application::UpdateRobotApplicationInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::update_robot_application::UpdateRobotApplicationInput {
             application: self.application,
             sources: self.sources,

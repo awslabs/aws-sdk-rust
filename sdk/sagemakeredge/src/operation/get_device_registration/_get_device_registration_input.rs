@@ -34,6 +34,7 @@ pub struct GetDeviceRegistrationInputBuilder {
 }
 impl GetDeviceRegistrationInputBuilder {
     /// <p>The unique name of the device you want to get the registration status from.</p>
+    /// This field is required.
     pub fn device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetDeviceRegistrationInputBuilder {
         &self.device_name
     }
     /// <p>The name of the fleet that the device belongs to.</p>
+    /// This field is required.
     pub fn device_fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_fleet_name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl GetDeviceRegistrationInputBuilder {
     /// Consumes the builder and constructs a [`GetDeviceRegistrationInput`](crate::operation::get_device_registration::GetDeviceRegistrationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_device_registration::GetDeviceRegistrationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_device_registration::GetDeviceRegistrationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_device_registration::GetDeviceRegistrationInput {
             device_name: self.device_name,

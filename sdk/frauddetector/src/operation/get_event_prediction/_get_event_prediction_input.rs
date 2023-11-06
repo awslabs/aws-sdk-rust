@@ -46,8 +46,10 @@ impl GetEventPredictionInput {
         self.event_type_name.as_deref()
     }
     /// <p>The entity type (associated with the detector's event type) and specific entity ID representing who performed the event. If an entity id is not available, use "UNKNOWN."</p>
-    pub fn entities(&self) -> ::std::option::Option<&[crate::types::Entity]> {
-        self.entities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entities.is_none()`.
+    pub fn entities(&self) -> &[crate::types::Entity] {
+        self.entities.as_deref().unwrap_or_default()
     }
     /// <p>Timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.</p>
     pub fn event_timestamp(&self) -> ::std::option::Option<&str> {
@@ -108,6 +110,7 @@ pub struct GetEventPredictionInputBuilder {
 }
 impl GetEventPredictionInputBuilder {
     /// <p>The detector ID.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
@@ -136,6 +139,7 @@ impl GetEventPredictionInputBuilder {
         &self.detector_version_id
     }
     /// <p>The unique ID used to identify the event.</p>
+    /// This field is required.
     pub fn event_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_id = ::std::option::Option::Some(input.into());
         self
@@ -150,6 +154,7 @@ impl GetEventPredictionInputBuilder {
         &self.event_id
     }
     /// <p>The event type associated with the detector specified for the prediction.</p>
+    /// This field is required.
     pub fn event_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_type_name = ::std::option::Option::Some(input.into());
         self
@@ -184,6 +189,7 @@ impl GetEventPredictionInputBuilder {
         &self.entities
     }
     /// <p>Timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.</p>
+    /// This field is required.
     pub fn event_timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_timestamp = ::std::option::Option::Some(input.into());
         self
@@ -277,7 +283,8 @@ impl GetEventPredictionInputBuilder {
     /// Consumes the builder and constructs a [`GetEventPredictionInput`](crate::operation::get_event_prediction::GetEventPredictionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_event_prediction::GetEventPredictionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_event_prediction::GetEventPredictionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_event_prediction::GetEventPredictionInput {
             detector_id: self.detector_id,
             detector_version_id: self.detector_version_id,

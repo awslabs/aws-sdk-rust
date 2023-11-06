@@ -723,8 +723,10 @@ impl HumanTaskConfig {
         self.pre_human_task_lambda_arn.as_deref()
     }
     /// <p>Keywords used to describe the task so that workers on Amazon Mechanical Turk can discover the task.</p>
-    pub fn task_keywords(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.task_keywords.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.task_keywords.is_none()`.
+    pub fn task_keywords(&self) -> &[::std::string::String] {
+        self.task_keywords.as_deref().unwrap_or_default()
     }
     /// <p>A title for the task for your human workers.</p>
     pub fn task_title(&self) -> ::std::option::Option<&str> {
@@ -795,6 +797,7 @@ pub struct HumanTaskConfigBuilder {
 }
 impl HumanTaskConfigBuilder {
     /// <p>The Amazon Resource Name (ARN) of the work team assigned to complete the tasks.</p>
+    /// This field is required.
     pub fn workteam_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workteam_arn = ::std::option::Option::Some(input.into());
         self
@@ -809,6 +812,7 @@ impl HumanTaskConfigBuilder {
         &self.workteam_arn
     }
     /// <p>Information about the user interface that workers use to complete the labeling task.</p>
+    /// This field is required.
     pub fn ui_config(mut self, input: crate::types::UiConfig) -> Self {
         self.ui_config = ::std::option::Option::Some(input);
         self
@@ -1158,6 +1162,7 @@ impl HumanTaskConfigBuilder {
     /// <li> <p> <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code> </p> </li>
     /// <li> <p> <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn pre_human_task_lambda_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pre_human_task_lambda_arn = ::std::option::Option::Some(input.into());
         self
@@ -1862,6 +1867,7 @@ impl HumanTaskConfigBuilder {
         &self.task_keywords
     }
     /// <p>A title for the task for your human workers.</p>
+    /// This field is required.
     pub fn task_title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_title = ::std::option::Option::Some(input.into());
         self
@@ -1876,6 +1882,7 @@ impl HumanTaskConfigBuilder {
         &self.task_title
     }
     /// <p>A description of the task for your human workers.</p>
+    /// This field is required.
     pub fn task_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_description = ::std::option::Option::Some(input.into());
         self
@@ -1890,6 +1897,7 @@ impl HumanTaskConfigBuilder {
         &self.task_description
     }
     /// <p>The number of human workers that will label an object. </p>
+    /// This field is required.
     pub fn number_of_human_workers_per_data_object(mut self, input: i32) -> Self {
         self.number_of_human_workers_per_data_object = ::std::option::Option::Some(input);
         self
@@ -1910,6 +1918,7 @@ impl HumanTaskConfigBuilder {
     /// <li> <p>For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-label-images.html">image</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-label-text.html">text</a> labeling jobs, the maximum is 8 hours (28,800 seconds).</p> </li>
     /// <li> <p>For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud.html">3D point cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-video.html">video frame</a> labeling jobs, the maximum is 30 days (2952,000 seconds) for non-AL mode. For most users, the maximum is also 30 days.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn task_time_limit_in_seconds(mut self, input: i32) -> Self {
         self.task_time_limit_in_seconds = ::std::option::Option::Some(input);
         self
@@ -1976,6 +1985,7 @@ impl HumanTaskConfigBuilder {
         &self.max_concurrent_task_count
     }
     /// <p>Configures how labels are consolidated across human workers.</p>
+    /// This field is required.
     pub fn annotation_consolidation_config(mut self, input: crate::types::AnnotationConsolidationConfig) -> Self {
         self.annotation_consolidation_config = ::std::option::Option::Some(input);
         self

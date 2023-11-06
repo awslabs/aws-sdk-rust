@@ -39,14 +39,18 @@ impl DescribeManagedJobTemplateOutput {
         self.template_version.as_deref()
     }
     /// <p>A list of environments that are supported with the managed job template.</p>
-    pub fn environments(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.environments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.environments.is_none()`.
+    pub fn environments(&self) -> &[::std::string::String] {
+        self.environments.as_deref().unwrap_or_default()
     }
     /// <p>A map of key-value pairs that you can use as guidance to specify the inputs for creating a job from a managed template.</p> <note>
     /// <p> <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p>
     /// </note>
-    pub fn document_parameters(&self) -> ::std::option::Option<&[crate::types::DocumentParameter]> {
-        self.document_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.document_parameters.is_none()`.
+    pub fn document_parameters(&self) -> &[crate::types::DocumentParameter] {
+        self.document_parameters.as_deref().unwrap_or_default()
     }
     /// <p>The document schema for a managed job template.</p>
     pub fn document(&self) -> ::std::option::Option<&str> {

@@ -27,6 +27,7 @@ pub struct DescribeExplainabilityInputBuilder {
 }
 impl DescribeExplainabilityInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Explaianability to describe.</p>
+    /// This field is required.
     pub fn explainability_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.explainability_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeExplainabilityInputBuilder {
     /// Consumes the builder and constructs a [`DescribeExplainabilityInput`](crate::operation::describe_explainability::DescribeExplainabilityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_explainability::DescribeExplainabilityInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_explainability::DescribeExplainabilityInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_explainability::DescribeExplainabilityInput {
             explainability_arn: self.explainability_arn,

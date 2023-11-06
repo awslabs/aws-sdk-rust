@@ -50,11 +50,10 @@ pub fn de_list_extensible_source_servers_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_extensible_source_servers::ListExtensibleSourceServersError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::list_extensible_source_servers::ListExtensibleSourceServersError::ThrottlingException({
@@ -72,11 +71,10 @@ pub fn de_list_extensible_source_servers_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_extensible_source_servers::ListExtensibleSourceServersError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "UninitializedAccountException" => {
@@ -139,12 +137,12 @@ pub fn de_list_extensible_source_servers_http_response(
 
 pub fn ser_list_extensible_source_servers_input(
     input: &crate::operation::list_extensible_source_servers::ListExtensibleSourceServersInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_list_extensible_source_servers_input::ser_list_extensible_source_servers_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_list_extensible_source_servers(

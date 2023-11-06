@@ -27,6 +27,7 @@ pub struct DeleteBlueprintInputBuilder {
 }
 impl DeleteBlueprintInputBuilder {
     /// <p>The name of the blueprint to delete.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteBlueprintInputBuilder {
     /// Consumes the builder and constructs a [`DeleteBlueprintInput`](crate::operation::delete_blueprint::DeleteBlueprintInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_blueprint::DeleteBlueprintInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_blueprint::DeleteBlueprintInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_blueprint::DeleteBlueprintInput { name: self.name })
     }
 }

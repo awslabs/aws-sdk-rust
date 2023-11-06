@@ -25,11 +25,8 @@ pub fn de_update_flow_source_http_error(
                 output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_flow_source::UpdateFlowSourceError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::bad_request_exception_correct_errors(output).build()
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ForbiddenException" => crate::operation::update_flow_source::UpdateFlowSourceError::ForbiddenException({
@@ -40,11 +37,8 @@ pub fn de_update_flow_source_http_error(
                 output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_flow_source::UpdateFlowSourceError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::forbidden_exception_correct_errors(output).build()
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerErrorException" => crate::operation::update_flow_source::UpdateFlowSourceError::InternalServerErrorException({
@@ -56,11 +50,8 @@ pub fn de_update_flow_source_http_error(
                     crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(_response_body, output)
                         .map_err(crate::operation::update_flow_source::UpdateFlowSourceError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_error_exception_correct_errors(output).build()
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "NotFoundException" => crate::operation::update_flow_source::UpdateFlowSourceError::NotFoundException({
@@ -71,11 +62,8 @@ pub fn de_update_flow_source_http_error(
                 output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_flow_source::UpdateFlowSourceError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::not_found_exception_correct_errors(output).build()
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::update_flow_source::UpdateFlowSourceError::ServiceUnavailableException({
@@ -87,11 +75,8 @@ pub fn de_update_flow_source_http_error(
                     crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
                         .map_err(crate::operation::update_flow_source::UpdateFlowSourceError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::service_unavailable_exception_correct_errors(output).build()
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "TooManyRequestsException" => crate::operation::update_flow_source::UpdateFlowSourceError::TooManyRequestsException({
@@ -102,11 +87,8 @@ pub fn de_update_flow_source_http_error(
                 output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_flow_source::UpdateFlowSourceError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::too_many_requests_exception_correct_errors(output).build()
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::update_flow_source::UpdateFlowSourceError::generic(generic),
@@ -131,12 +113,12 @@ pub fn de_update_flow_source_http_response(
 
 pub fn ser_update_flow_source_input(
     input: &crate::operation::update_flow_source::UpdateFlowSourceInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_update_flow_source_input::ser_update_flow_source_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_update_flow_source(

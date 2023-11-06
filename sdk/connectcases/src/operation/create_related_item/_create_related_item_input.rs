@@ -48,6 +48,7 @@ pub struct CreateRelatedItemInputBuilder {
 }
 impl CreateRelatedItemInputBuilder {
     /// <p>The unique identifier of the Cases domain. </p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl CreateRelatedItemInputBuilder {
         &self.domain_id
     }
     /// <p>A unique identifier of the case.</p>
+    /// This field is required.
     pub fn case_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.case_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl CreateRelatedItemInputBuilder {
         &self.case_id
     }
     /// <p>The type of a related item.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::RelatedItemType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -90,6 +93,7 @@ impl CreateRelatedItemInputBuilder {
         &self.r#type
     }
     /// <p>The content of a related item to be created.</p>
+    /// This field is required.
     pub fn content(mut self, input: crate::types::RelatedItemInputContent) -> Self {
         self.content = ::std::option::Option::Some(input);
         self
@@ -106,7 +110,7 @@ impl CreateRelatedItemInputBuilder {
     /// Consumes the builder and constructs a [`CreateRelatedItemInput`](crate::operation::create_related_item::CreateRelatedItemInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_related_item::CreateRelatedItemInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_related_item::CreateRelatedItemInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_related_item::CreateRelatedItemInput {
             domain_id: self.domain_id,
             case_id: self.case_id,

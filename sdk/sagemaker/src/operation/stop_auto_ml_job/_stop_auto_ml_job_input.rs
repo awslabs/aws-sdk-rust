@@ -27,6 +27,7 @@ pub struct StopAutoMlJobInputBuilder {
 }
 impl StopAutoMlJobInputBuilder {
     /// <p>The name of the object you are requesting.</p>
+    /// This field is required.
     pub fn auto_ml_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_ml_job_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl StopAutoMlJobInputBuilder {
     /// Consumes the builder and constructs a [`StopAutoMlJobInput`](crate::operation::stop_auto_ml_job::StopAutoMlJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_auto_ml_job::StopAutoMlJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_auto_ml_job::StopAutoMlJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_auto_ml_job::StopAutoMlJobInput {
             auto_ml_job_name: self.auto_ml_job_name,
         })

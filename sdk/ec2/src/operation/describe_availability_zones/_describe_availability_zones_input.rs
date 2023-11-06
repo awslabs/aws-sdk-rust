@@ -41,16 +41,22 @@ impl DescribeAvailabilityZonesInput {
     /// <li> <p> <code>zone-name</code> - The name of the Availability Zone (for example, <code>us-east-1a</code>), the Local Zone (for example, <code>us-west-2-lax-1a</code>), or the Wavelength Zone (for example, <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li>
     /// <li> <p> <code>zone-type</code> - The type of zone (<code>availability-zone</code> | <code>local-zone</code> | <code>wavelength-zone</code>).</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The names of the Availability Zones, Local Zones, and Wavelength Zones.</p>
-    pub fn zone_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.zone_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.zone_names.is_none()`.
+    pub fn zone_names(&self) -> &[::std::string::String] {
+        self.zone_names.as_deref().unwrap_or_default()
     }
     /// <p>The IDs of the Availability Zones, Local Zones, and Wavelength Zones.</p>
-    pub fn zone_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.zone_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.zone_ids.is_none()`.
+    pub fn zone_ids(&self) -> &[::std::string::String] {
+        self.zone_ids.as_deref().unwrap_or_default()
     }
     /// <p>Include all Availability Zones, Local Zones, and Wavelength Zones regardless of your opt-in status.</p>
     /// <p>If you do not use this parameter, the results include only the zones for the Regions where you have chosen the option to opt in.</p>
@@ -212,7 +218,7 @@ impl DescribeAvailabilityZonesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_availability_zones::DescribeAvailabilityZonesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_availability_zones::DescribeAvailabilityZonesInput {
             filters: self.filters,

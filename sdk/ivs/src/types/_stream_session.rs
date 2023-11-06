@@ -45,8 +45,10 @@ impl StreamSession {
         self.recording_configuration.as_ref()
     }
     /// <p>List of Amazon IVS events that the stream encountered. The list is sorted by most recent events and contains up to 500 events. For Amazon IVS events, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html">Using Amazon EventBridge with Amazon IVS</a>.</p>
-    pub fn truncated_events(&self) -> ::std::option::Option<&[crate::types::StreamEvent]> {
-        self.truncated_events.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.truncated_events.is_none()`.
+    pub fn truncated_events(&self) -> &[crate::types::StreamEvent] {
+        self.truncated_events.as_deref().unwrap_or_default()
     }
 }
 impl StreamSession {

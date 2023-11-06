@@ -70,6 +70,7 @@ impl GetObjectInputBuilder {
     /// <p>There is no correlation between the path to the source and the path (folders) in the container in AWS Elemental MediaStore.</p>
     /// <p>For more information about folders and how they exist in a container, see the <a href="http://docs.aws.amazon.com/mediastore/latest/ug/">AWS Elemental MediaStore User Guide</a>.</p>
     /// <p>The file name is the name that is assigned to the file that you upload. The file can have the same name inside and outside of AWS Elemental MediaStore, or it can have the same name. The file name can include or omit an extension. </p>
+    /// This field is required.
     pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path = ::std::option::Option::Some(input.into());
         self
@@ -122,7 +123,7 @@ impl GetObjectInputBuilder {
         &self.range
     }
     /// Consumes the builder and constructs a [`GetObjectInput`](crate::operation::get_object::GetObjectInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_object::GetObjectInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_object::GetObjectInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_object::GetObjectInput {
             path: self.path,
             range: self.range,

@@ -35,6 +35,7 @@ pub struct CreateCertificateFromCsrInputBuilder {
 }
 impl CreateCertificateFromCsrInputBuilder {
     /// <p>The certificate signing request (CSR).</p>
+    /// This field is required.
     pub fn certificate_signing_request(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_signing_request = ::std::option::Option::Some(input.into());
         self
@@ -67,7 +68,7 @@ impl CreateCertificateFromCsrInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_certificate_from_csr::CreateCertificateFromCsrInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_certificate_from_csr::CreateCertificateFromCsrInput {
             certificate_signing_request: self.certificate_signing_request,

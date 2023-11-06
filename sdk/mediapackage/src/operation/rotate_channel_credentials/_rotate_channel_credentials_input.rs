@@ -28,6 +28,7 @@ pub struct RotateChannelCredentialsInputBuilder {
 }
 impl RotateChannelCredentialsInputBuilder {
     /// The ID of the channel to update.
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl RotateChannelCredentialsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::rotate_channel_credentials::RotateChannelCredentialsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::rotate_channel_credentials::RotateChannelCredentialsInput { id: self.id })
     }

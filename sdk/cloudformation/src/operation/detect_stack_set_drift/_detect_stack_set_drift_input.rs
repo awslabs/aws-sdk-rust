@@ -60,6 +60,7 @@ pub struct DetectStackSetDriftInputBuilder {
 }
 impl DetectStackSetDriftInputBuilder {
     /// <p>The name of the stack set on which to perform the drift detection operation.</p>
+    /// This field is required.
     pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_set_name = ::std::option::Option::Some(input.into());
         self
@@ -136,7 +137,7 @@ impl DetectStackSetDriftInputBuilder {
     /// Consumes the builder and constructs a [`DetectStackSetDriftInput`](crate::operation::detect_stack_set_drift::DetectStackSetDriftInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::detect_stack_set_drift::DetectStackSetDriftInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::detect_stack_set_drift::DetectStackSetDriftInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::detect_stack_set_drift::DetectStackSetDriftInput {
             stack_set_name: self.stack_set_name,

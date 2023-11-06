@@ -5,54 +5,58 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudWatchAlarmConfiguration {
     /// <p>For the metric that the CloudWatch alarm is associated with, the number of periods that the metric is compared to the threshold.</p>
-    pub evaluation_periods: ::std::option::Option<i32>,
+    pub evaluation_periods: i32,
     /// <p>For the metric that the CloudWatch alarm is associated with, the value the metric is compared with.</p>
-    pub threshold: ::std::option::Option<f64>,
+    pub threshold: f64,
     /// <p>For the metric that the CloudWatch alarm is associated with, the arithmetic operation that is used for the comparison.</p>
-    pub comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,
+    pub comparison_operator: crate::types::ComparisonOperator,
     /// <p>For the metric that the CloudWatch alarm is associated with, the duration of one evaluation period in seconds.</p>
-    pub period: ::std::option::Option<i32>,
+    pub period: i32,
     /// <p>The name of the CloudWatch metric that the alarm is associated with.</p>
-    pub metric_name: ::std::option::Option<::std::string::String>,
+    pub metric_name: ::std::string::String,
     /// <p>The namespace of the metric that the alarm is associated with. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
-    pub namespace: ::std::option::Option<::std::string::String>,
+    pub namespace: ::std::string::String,
     /// <p>For the metric that the CloudWatch alarm is associated with, the statistic that is applied to the metric.</p>
-    pub statistic: ::std::option::Option<crate::types::Statistic>,
+    pub statistic: crate::types::Statistic,
     /// <p>For the metric that the CloudWatch alarm is associated with, a complex type that contains information about the dimensions for the metric. For information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
     pub dimensions: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
 }
 impl CloudWatchAlarmConfiguration {
     /// <p>For the metric that the CloudWatch alarm is associated with, the number of periods that the metric is compared to the threshold.</p>
-    pub fn evaluation_periods(&self) -> ::std::option::Option<i32> {
+    pub fn evaluation_periods(&self) -> i32 {
         self.evaluation_periods
     }
     /// <p>For the metric that the CloudWatch alarm is associated with, the value the metric is compared with.</p>
-    pub fn threshold(&self) -> ::std::option::Option<f64> {
+    pub fn threshold(&self) -> f64 {
         self.threshold
     }
     /// <p>For the metric that the CloudWatch alarm is associated with, the arithmetic operation that is used for the comparison.</p>
-    pub fn comparison_operator(&self) -> ::std::option::Option<&crate::types::ComparisonOperator> {
-        self.comparison_operator.as_ref()
+    pub fn comparison_operator(&self) -> &crate::types::ComparisonOperator {
+        &self.comparison_operator
     }
     /// <p>For the metric that the CloudWatch alarm is associated with, the duration of one evaluation period in seconds.</p>
-    pub fn period(&self) -> ::std::option::Option<i32> {
+    pub fn period(&self) -> i32 {
         self.period
     }
     /// <p>The name of the CloudWatch metric that the alarm is associated with.</p>
-    pub fn metric_name(&self) -> ::std::option::Option<&str> {
-        self.metric_name.as_deref()
+    pub fn metric_name(&self) -> &str {
+        use std::ops::Deref;
+        self.metric_name.deref()
     }
     /// <p>The namespace of the metric that the alarm is associated with. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
-    pub fn namespace(&self) -> ::std::option::Option<&str> {
-        self.namespace.as_deref()
+    pub fn namespace(&self) -> &str {
+        use std::ops::Deref;
+        self.namespace.deref()
     }
     /// <p>For the metric that the CloudWatch alarm is associated with, the statistic that is applied to the metric.</p>
-    pub fn statistic(&self) -> ::std::option::Option<&crate::types::Statistic> {
-        self.statistic.as_ref()
+    pub fn statistic(&self) -> &crate::types::Statistic {
+        &self.statistic
     }
     /// <p>For the metric that the CloudWatch alarm is associated with, a complex type that contains information about the dimensions for the metric. For information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
-    pub fn dimensions(&self) -> ::std::option::Option<&[crate::types::Dimension]> {
-        self.dimensions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimensions.is_none()`.
+    pub fn dimensions(&self) -> &[crate::types::Dimension] {
+        self.dimensions.as_deref().unwrap_or_default()
     }
 }
 impl CloudWatchAlarmConfiguration {
@@ -77,6 +81,7 @@ pub struct CloudWatchAlarmConfigurationBuilder {
 }
 impl CloudWatchAlarmConfigurationBuilder {
     /// <p>For the metric that the CloudWatch alarm is associated with, the number of periods that the metric is compared to the threshold.</p>
+    /// This field is required.
     pub fn evaluation_periods(mut self, input: i32) -> Self {
         self.evaluation_periods = ::std::option::Option::Some(input);
         self
@@ -91,6 +96,7 @@ impl CloudWatchAlarmConfigurationBuilder {
         &self.evaluation_periods
     }
     /// <p>For the metric that the CloudWatch alarm is associated with, the value the metric is compared with.</p>
+    /// This field is required.
     pub fn threshold(mut self, input: f64) -> Self {
         self.threshold = ::std::option::Option::Some(input);
         self
@@ -105,6 +111,7 @@ impl CloudWatchAlarmConfigurationBuilder {
         &self.threshold
     }
     /// <p>For the metric that the CloudWatch alarm is associated with, the arithmetic operation that is used for the comparison.</p>
+    /// This field is required.
     pub fn comparison_operator(mut self, input: crate::types::ComparisonOperator) -> Self {
         self.comparison_operator = ::std::option::Option::Some(input);
         self
@@ -119,6 +126,7 @@ impl CloudWatchAlarmConfigurationBuilder {
         &self.comparison_operator
     }
     /// <p>For the metric that the CloudWatch alarm is associated with, the duration of one evaluation period in seconds.</p>
+    /// This field is required.
     pub fn period(mut self, input: i32) -> Self {
         self.period = ::std::option::Option::Some(input);
         self
@@ -133,6 +141,7 @@ impl CloudWatchAlarmConfigurationBuilder {
         &self.period
     }
     /// <p>The name of the CloudWatch metric that the alarm is associated with.</p>
+    /// This field is required.
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_name = ::std::option::Option::Some(input.into());
         self
@@ -147,6 +156,7 @@ impl CloudWatchAlarmConfigurationBuilder {
         &self.metric_name
     }
     /// <p>The namespace of the metric that the alarm is associated with. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    /// This field is required.
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
         self
@@ -161,6 +171,7 @@ impl CloudWatchAlarmConfigurationBuilder {
         &self.namespace
     }
     /// <p>For the metric that the CloudWatch alarm is associated with, the statistic that is applied to the metric.</p>
+    /// This field is required.
     pub fn statistic(mut self, input: crate::types::Statistic) -> Self {
         self.statistic = ::std::option::Option::Some(input);
         self
@@ -195,16 +206,59 @@ impl CloudWatchAlarmConfigurationBuilder {
         &self.dimensions
     }
     /// Consumes the builder and constructs a [`CloudWatchAlarmConfiguration`](crate::types::CloudWatchAlarmConfiguration).
-    pub fn build(self) -> crate::types::CloudWatchAlarmConfiguration {
-        crate::types::CloudWatchAlarmConfiguration {
-            evaluation_periods: self.evaluation_periods,
-            threshold: self.threshold,
-            comparison_operator: self.comparison_operator,
-            period: self.period,
-            metric_name: self.metric_name,
-            namespace: self.namespace,
-            statistic: self.statistic,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`evaluation_periods`](crate::types::builders::CloudWatchAlarmConfigurationBuilder::evaluation_periods)
+    /// - [`threshold`](crate::types::builders::CloudWatchAlarmConfigurationBuilder::threshold)
+    /// - [`comparison_operator`](crate::types::builders::CloudWatchAlarmConfigurationBuilder::comparison_operator)
+    /// - [`period`](crate::types::builders::CloudWatchAlarmConfigurationBuilder::period)
+    /// - [`metric_name`](crate::types::builders::CloudWatchAlarmConfigurationBuilder::metric_name)
+    /// - [`namespace`](crate::types::builders::CloudWatchAlarmConfigurationBuilder::namespace)
+    /// - [`statistic`](crate::types::builders::CloudWatchAlarmConfigurationBuilder::statistic)
+    pub fn build(self) -> ::std::result::Result<crate::types::CloudWatchAlarmConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CloudWatchAlarmConfiguration {
+            evaluation_periods: self.evaluation_periods.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "evaluation_periods",
+                    "evaluation_periods was not specified but it is required when building CloudWatchAlarmConfiguration",
+                )
+            })?,
+            threshold: self.threshold.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "threshold",
+                    "threshold was not specified but it is required when building CloudWatchAlarmConfiguration",
+                )
+            })?,
+            comparison_operator: self.comparison_operator.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "comparison_operator",
+                    "comparison_operator was not specified but it is required when building CloudWatchAlarmConfiguration",
+                )
+            })?,
+            period: self.period.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "period",
+                    "period was not specified but it is required when building CloudWatchAlarmConfiguration",
+                )
+            })?,
+            metric_name: self.metric_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "metric_name",
+                    "metric_name was not specified but it is required when building CloudWatchAlarmConfiguration",
+                )
+            })?,
+            namespace: self.namespace.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "namespace",
+                    "namespace was not specified but it is required when building CloudWatchAlarmConfiguration",
+                )
+            })?,
+            statistic: self.statistic.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "statistic",
+                    "statistic was not specified but it is required when building CloudWatchAlarmConfiguration",
+                )
+            })?,
             dimensions: self.dimensions,
-        }
+        })
     }
 }

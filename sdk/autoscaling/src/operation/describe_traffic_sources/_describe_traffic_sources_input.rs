@@ -60,6 +60,7 @@ pub struct DescribeTrafficSourcesInputBuilder {
 }
 impl DescribeTrafficSourcesInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
+    /// This field is required.
     pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
@@ -136,8 +137,10 @@ impl DescribeTrafficSourcesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTrafficSourcesInput`](crate::operation::describe_traffic_sources::DescribeTrafficSourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_traffic_sources::DescribeTrafficSourcesInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_traffic_sources::DescribeTrafficSourcesInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_traffic_sources::DescribeTrafficSourcesInput {
             auto_scaling_group_name: self.auto_scaling_group_name,
             traffic_source_type: self.traffic_source_type,

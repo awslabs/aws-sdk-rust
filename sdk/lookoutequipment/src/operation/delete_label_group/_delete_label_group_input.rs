@@ -27,6 +27,7 @@ pub struct DeleteLabelGroupInputBuilder {
 }
 impl DeleteLabelGroupInputBuilder {
     /// <p> The name of the label group that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+    /// This field is required.
     pub fn label_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_group_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteLabelGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteLabelGroupInput`](crate::operation::delete_label_group::DeleteLabelGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_label_group::DeleteLabelGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_label_group::DeleteLabelGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_label_group::DeleteLabelGroupInput {
             label_group_name: self.label_group_name,
         })

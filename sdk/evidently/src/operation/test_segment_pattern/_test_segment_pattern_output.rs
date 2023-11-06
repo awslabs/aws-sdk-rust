@@ -4,12 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestSegmentPatternOutput {
     /// <p>Returns <code>true</code> if the pattern matches the payload.</p>
-    pub r#match: ::std::option::Option<bool>,
+    pub r#match: bool,
     _request_id: Option<String>,
 }
 impl TestSegmentPatternOutput {
     /// <p>Returns <code>true</code> if the pattern matches the payload.</p>
-    pub fn r#match(&self) -> ::std::option::Option<bool> {
+    pub fn r#match(&self) -> bool {
         self.r#match
     }
 }
@@ -34,6 +34,7 @@ pub struct TestSegmentPatternOutputBuilder {
 }
 impl TestSegmentPatternOutputBuilder {
     /// <p>Returns <code>true</code> if the pattern matches the payload.</p>
+    /// This field is required.
     pub fn r#match(mut self, input: bool) -> Self {
         self.r#match = ::std::option::Option::Some(input);
         self
@@ -57,10 +58,20 @@ impl TestSegmentPatternOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`TestSegmentPatternOutput`](crate::operation::test_segment_pattern::TestSegmentPatternOutput).
-    pub fn build(self) -> crate::operation::test_segment_pattern::TestSegmentPatternOutput {
-        crate::operation::test_segment_pattern::TestSegmentPatternOutput {
-            r#match: self.r#match,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#match`](crate::operation::test_segment_pattern::builders::TestSegmentPatternOutputBuilder::r#match)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::test_segment_pattern::TestSegmentPatternOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::test_segment_pattern::TestSegmentPatternOutput {
+            r#match: self.r#match.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#match",
+                    "r#match was not specified but it is required when building TestSegmentPatternOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

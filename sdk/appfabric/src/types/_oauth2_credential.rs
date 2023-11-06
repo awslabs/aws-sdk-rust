@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Oauth2Credential {
     /// <p>The client ID of the client application.</p>
-    pub client_id: ::std::option::Option<::std::string::String>,
+    pub client_id: ::std::string::String,
     /// <p>The client secret of the client application.</p>
-    pub client_secret: ::std::option::Option<::std::string::String>,
+    pub client_secret: ::std::string::String,
 }
 impl Oauth2Credential {
     /// <p>The client ID of the client application.</p>
-    pub fn client_id(&self) -> ::std::option::Option<&str> {
-        self.client_id.as_deref()
+    pub fn client_id(&self) -> &str {
+        use std::ops::Deref;
+        self.client_id.deref()
     }
     /// <p>The client secret of the client application.</p>
-    pub fn client_secret(&self) -> ::std::option::Option<&str> {
-        self.client_secret.as_deref()
+    pub fn client_secret(&self) -> &str {
+        use std::ops::Deref;
+        self.client_secret.deref()
     }
 }
 impl ::std::fmt::Debug for Oauth2Credential {
@@ -43,6 +45,7 @@ pub struct Oauth2CredentialBuilder {
 }
 impl Oauth2CredentialBuilder {
     /// <p>The client ID of the client application.</p>
+    /// This field is required.
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +60,7 @@ impl Oauth2CredentialBuilder {
         &self.client_id
     }
     /// <p>The client secret of the client application.</p>
+    /// This field is required.
     pub fn client_secret(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_secret = ::std::option::Option::Some(input.into());
         self
@@ -71,11 +75,24 @@ impl Oauth2CredentialBuilder {
         &self.client_secret
     }
     /// Consumes the builder and constructs a [`Oauth2Credential`](crate::types::Oauth2Credential).
-    pub fn build(self) -> crate::types::Oauth2Credential {
-        crate::types::Oauth2Credential {
-            client_id: self.client_id,
-            client_secret: self.client_secret,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`client_id`](crate::types::builders::Oauth2CredentialBuilder::client_id)
+    /// - [`client_secret`](crate::types::builders::Oauth2CredentialBuilder::client_secret)
+    pub fn build(self) -> ::std::result::Result<crate::types::Oauth2Credential, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Oauth2Credential {
+            client_id: self.client_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "client_id",
+                    "client_id was not specified but it is required when building Oauth2Credential",
+                )
+            })?,
+            client_secret: self.client_secret.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "client_secret",
+                    "client_secret was not specified but it is required when building Oauth2Credential",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for Oauth2CredentialBuilder {

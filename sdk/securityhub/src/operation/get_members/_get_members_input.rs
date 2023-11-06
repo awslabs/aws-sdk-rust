@@ -8,8 +8,10 @@ pub struct GetMembersInput {
 }
 impl GetMembersInput {
     /// <p>The list of account IDs for the Security Hub member accounts to return the details for. </p>
-    pub fn account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.account_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
+    pub fn account_ids(&self) -> &[::std::string::String] {
+        self.account_ids.as_deref().unwrap_or_default()
     }
 }
 impl GetMembersInput {
@@ -47,7 +49,7 @@ impl GetMembersInputBuilder {
         &self.account_ids
     }
     /// Consumes the builder and constructs a [`GetMembersInput`](crate::operation::get_members::GetMembersInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_members::GetMembersInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_members::GetMembersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_members::GetMembersInput {
             account_ids: self.account_ids,
         })

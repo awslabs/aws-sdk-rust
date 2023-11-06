@@ -11,8 +11,10 @@ pub struct ListPipelineParametersForExecutionOutput {
 }
 impl ListPipelineParametersForExecutionOutput {
     /// <p>Contains a list of pipeline parameters. This list can be empty. </p>
-    pub fn pipeline_parameters(&self) -> ::std::option::Option<&[crate::types::Parameter]> {
-        self.pipeline_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pipeline_parameters.is_none()`.
+    pub fn pipeline_parameters(&self) -> &[crate::types::Parameter] {
+        self.pipeline_parameters.as_deref().unwrap_or_default()
     }
     /// <p>If the result of the previous <code>ListPipelineParametersForExecution</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of parameters, use the token in the next request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

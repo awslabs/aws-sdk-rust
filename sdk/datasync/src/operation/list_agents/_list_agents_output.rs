@@ -12,8 +12,10 @@ pub struct ListAgentsOutput {
 }
 impl ListAgentsOutput {
     /// <p>A list of DataSync agents in your Amazon Web Services account in the Amazon Web Services Region specified in the request. The list is ordered by the agents' Amazon Resource Names (ARNs).</p>
-    pub fn agents(&self) -> ::std::option::Option<&[crate::types::AgentListEntry]> {
-        self.agents.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agents.is_none()`.
+    pub fn agents(&self) -> &[crate::types::AgentListEntry] {
+        self.agents.as_deref().unwrap_or_default()
     }
     /// <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

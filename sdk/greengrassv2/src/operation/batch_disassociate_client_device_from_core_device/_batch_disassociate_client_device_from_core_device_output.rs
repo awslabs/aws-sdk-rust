@@ -9,8 +9,10 @@ pub struct BatchDisassociateClientDeviceFromCoreDeviceOutput {
 }
 impl BatchDisassociateClientDeviceFromCoreDeviceOutput {
     /// <p>The list of any errors for the entries in the request. Each error entry contains the name of the IoT thing that failed to disassociate.</p>
-    pub fn error_entries(&self) -> ::std::option::Option<&[crate::types::DisassociateClientDeviceFromCoreDeviceErrorEntry]> {
-        self.error_entries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.error_entries.is_none()`.
+    pub fn error_entries(&self) -> &[crate::types::DisassociateClientDeviceFromCoreDeviceErrorEntry] {
+        self.error_entries.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchDisassociateClientDeviceFromCoreDeviceOutput {

@@ -10,8 +10,10 @@ pub struct DescribeServicesInput {
 }
 impl DescribeServicesInput {
     /// <p>A JSON-formatted list of service codes available for Amazon Web Services services.</p>
-    pub fn service_code_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.service_code_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_code_list.is_none()`.
+    pub fn service_code_list(&self) -> &[::std::string::String] {
+        self.service_code_list.as_deref().unwrap_or_default()
     }
     /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     pub fn language(&self) -> ::std::option::Option<&str> {
@@ -70,7 +72,7 @@ impl DescribeServicesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeServicesInput`](crate::operation::describe_services::DescribeServicesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_services::DescribeServicesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_services::DescribeServicesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_services::DescribeServicesInput {
             service_code_list: self.service_code_list,
             language: self.language,

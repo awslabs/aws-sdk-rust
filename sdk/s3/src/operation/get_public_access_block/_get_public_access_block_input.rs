@@ -34,6 +34,7 @@ pub struct GetPublicAccessBlockInputBuilder {
 }
 impl GetPublicAccessBlockInputBuilder {
     /// <p>The name of the Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you want to retrieve. </p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl GetPublicAccessBlockInputBuilder {
     /// Consumes the builder and constructs a [`GetPublicAccessBlockInput`](crate::operation::get_public_access_block::GetPublicAccessBlockInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_public_access_block::GetPublicAccessBlockInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_public_access_block::GetPublicAccessBlockInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_public_access_block::GetPublicAccessBlockInput {
             bucket: self.bucket,

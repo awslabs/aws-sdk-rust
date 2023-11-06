@@ -27,6 +27,7 @@ pub struct DeleteRoutingControlInputBuilder {
 }
 impl DeleteRoutingControlInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the routing control that you're deleting.</p>
+    /// This field is required.
     pub fn routing_control_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.routing_control_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteRoutingControlInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRoutingControlInput`](crate::operation::delete_routing_control::DeleteRoutingControlInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_routing_control::DeleteRoutingControlInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_routing_control::DeleteRoutingControlInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_routing_control::DeleteRoutingControlInput {
             routing_control_arn: self.routing_control_arn,

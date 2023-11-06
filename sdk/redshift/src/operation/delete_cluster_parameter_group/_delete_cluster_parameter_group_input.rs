@@ -43,6 +43,7 @@ impl DeleteClusterParameterGroupInputBuilder {
     /// <li> <p>Must be the name of an existing cluster parameter group.</p> </li>
     /// <li> <p>Cannot delete a default cluster parameter group.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_group_name = ::std::option::Option::Some(input.into());
         self
@@ -71,7 +72,7 @@ impl DeleteClusterParameterGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupInput {
             parameter_group_name: self.parameter_group_name,

@@ -2,7 +2,7 @@
 pub fn ser_property(
     object_2: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Property,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::Property::EoCloudCover(inner) => {
             #[allow(unused_mut)]
@@ -40,7 +40,7 @@ pub fn ser_property(
             crate::protocol_serde::shape_landsat_cloud_cover_land_input::ser_landsat_cloud_cover_land_input(&mut object_6, inner)?;
             object_6.finish();
         }
-        crate::types::Property::Unknown => return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("Property")),
+        crate::types::Property::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("Property")),
     }
     Ok(())
 }
@@ -58,12 +58,17 @@ where
             match tokens.next().transpose()? {
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                    let key = key.to_unescaped()?;
+                    if key == "__type" {
+                        ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                        continue;
+                    }
                     if variant.is_some() {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
                             "encountered mixed variants in union",
                         ));
                     }
-                    variant = match key.to_unescaped()?.as_ref() {
+                    variant = match key.as_ref() {
                         "EoCloudCover" => Some(crate::types::Property::EoCloudCover(
                             crate::protocol_serde::shape_eo_cloud_cover_input::de_eo_cloud_cover_input(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'EoCloudCover' cannot be null")

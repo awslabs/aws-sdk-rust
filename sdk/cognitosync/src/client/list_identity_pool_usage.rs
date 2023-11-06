@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ListIdentityPoolUsage`](crate::operation::list_identity_pool_usage::builders::ListIdentityPoolUsageFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_identity_pool_usage::builders::ListIdentityPoolUsageFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_identity_pool_usage::builders::ListIdentityPoolUsageFluentBuilder::set_next_token): A pagination token for obtaining the next page of results.
-    ///   - [`max_results(i32)`](crate::operation::list_identity_pool_usage::builders::ListIdentityPoolUsageFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_identity_pool_usage::builders::ListIdentityPoolUsageFluentBuilder::set_max_results): The maximum number of results to be returned.
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_identity_pool_usage::builders::ListIdentityPoolUsageFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_identity_pool_usage::builders::ListIdentityPoolUsageFluentBuilder::set_next_token):<br>required: **false**<br>A pagination token for obtaining the next page of results.<br>
+    ///   - [`max_results(i32)`](crate::operation::list_identity_pool_usage::builders::ListIdentityPoolUsageFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_identity_pool_usage::builders::ListIdentityPoolUsageFluentBuilder::set_max_results):<br>required: **false**<br>The maximum number of results to be returned.<br>
     /// - On success, responds with [`ListIdentityPoolUsageOutput`](crate::operation::list_identity_pool_usage::ListIdentityPoolUsageOutput) with field(s):
-    ///   - [`identity_pool_usages(Option<Vec<IdentityPoolUsage>>)`](crate::operation::list_identity_pool_usage::ListIdentityPoolUsageOutput::identity_pool_usages): Usage information for the identity pools.
+    ///   - [`identity_pool_usages(Option<Vec::<IdentityPoolUsage>>)`](crate::operation::list_identity_pool_usage::ListIdentityPoolUsageOutput::identity_pool_usages): Usage information for the identity pools.
     ///   - [`max_results(i32)`](crate::operation::list_identity_pool_usage::ListIdentityPoolUsageOutput::max_results): The maximum number of results to be returned.
     ///   - [`count(i32)`](crate::operation::list_identity_pool_usage::ListIdentityPoolUsageOutput::count): Total number of identities for the identity pool.
     ///   - [`next_token(Option<String>)`](crate::operation::list_identity_pool_usage::ListIdentityPoolUsageOutput::next_token): A pagination token for obtaining the next page of results.

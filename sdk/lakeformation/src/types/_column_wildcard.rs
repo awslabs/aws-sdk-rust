@@ -9,8 +9,10 @@ pub struct ColumnWildcard {
 }
 impl ColumnWildcard {
     /// <p>Excludes column names. Any column with this name will be excluded.</p>
-    pub fn excluded_column_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.excluded_column_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.excluded_column_names.is_none()`.
+    pub fn excluded_column_names(&self) -> &[::std::string::String] {
+        self.excluded_column_names.as_deref().unwrap_or_default()
     }
 }
 impl ColumnWildcard {

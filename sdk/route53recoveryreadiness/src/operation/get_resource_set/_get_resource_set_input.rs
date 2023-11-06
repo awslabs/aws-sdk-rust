@@ -27,6 +27,7 @@ pub struct GetResourceSetInputBuilder {
 }
 impl GetResourceSetInputBuilder {
     /// <p>Name of a resource set.</p>
+    /// This field is required.
     pub fn resource_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_set_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetResourceSetInputBuilder {
     /// Consumes the builder and constructs a [`GetResourceSetInput`](crate::operation::get_resource_set::GetResourceSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_resource_set::GetResourceSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_resource_set::GetResourceSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_resource_set::GetResourceSetInput {
             resource_set_name: self.resource_set_name,
         })

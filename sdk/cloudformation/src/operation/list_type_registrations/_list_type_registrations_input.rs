@@ -168,7 +168,7 @@ impl ListTypeRegistrationsInputBuilder {
     /// Consumes the builder and constructs a [`ListTypeRegistrationsInput`](crate::operation::list_type_registrations::ListTypeRegistrationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_type_registrations::ListTypeRegistrationsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_type_registrations::ListTypeRegistrationsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_type_registrations::ListTypeRegistrationsInput {
             r#type: self.r#type,

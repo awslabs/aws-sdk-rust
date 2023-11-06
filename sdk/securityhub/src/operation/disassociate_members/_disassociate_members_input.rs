@@ -8,8 +8,10 @@ pub struct DisassociateMembersInput {
 }
 impl DisassociateMembersInput {
     /// <p>The account IDs of the member accounts to disassociate from the administrator account.</p>
-    pub fn account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.account_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
+    pub fn account_ids(&self) -> &[::std::string::String] {
+        self.account_ids.as_deref().unwrap_or_default()
     }
 }
 impl DisassociateMembersInput {
@@ -49,7 +51,7 @@ impl DisassociateMembersInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateMembersInput`](crate::operation::disassociate_members::DisassociateMembersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disassociate_members::DisassociateMembersInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::disassociate_members::DisassociateMembersInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::disassociate_members::DisassociateMembersInput {
             account_ids: self.account_ids,

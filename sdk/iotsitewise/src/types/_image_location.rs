@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageLocation {
     /// <p>The ID of the image.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The URL where the image is available. The URL is valid for 15 minutes so that you can view and download the image</p>
-    pub url: ::std::option::Option<::std::string::String>,
+    pub url: ::std::string::String,
 }
 impl ImageLocation {
     /// <p>The ID of the image.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The URL where the image is available. The URL is valid for 15 minutes so that you can view and download the image</p>
-    pub fn url(&self) -> ::std::option::Option<&str> {
-        self.url.as_deref()
+    pub fn url(&self) -> &str {
+        use std::ops::Deref;
+        self.url.deref()
     }
 }
 impl ImageLocation {
@@ -35,6 +37,7 @@ pub struct ImageLocationBuilder {
 }
 impl ImageLocationBuilder {
     /// <p>The ID of the image.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl ImageLocationBuilder {
         &self.id
     }
     /// <p>The URL where the image is available. The URL is valid for 15 minutes so that you can view and download the image</p>
+    /// This field is required.
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
         self
@@ -63,7 +67,23 @@ impl ImageLocationBuilder {
         &self.url
     }
     /// Consumes the builder and constructs a [`ImageLocation`](crate::types::ImageLocation).
-    pub fn build(self) -> crate::types::ImageLocation {
-        crate::types::ImageLocation { id: self.id, url: self.url }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::ImageLocationBuilder::id)
+    /// - [`url`](crate::types::builders::ImageLocationBuilder::url)
+    pub fn build(self) -> ::std::result::Result<crate::types::ImageLocation, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ImageLocation {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building ImageLocation",
+                )
+            })?,
+            url: self.url.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "url",
+                    "url was not specified but it is required when building ImageLocation",
+                )
+            })?,
+        })
     }
 }

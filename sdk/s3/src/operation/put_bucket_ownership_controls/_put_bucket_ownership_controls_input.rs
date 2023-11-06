@@ -50,6 +50,7 @@ pub struct PutBucketOwnershipControlsInputBuilder {
 }
 impl PutBucketOwnershipControlsInputBuilder {
     /// <p>The name of the Amazon S3 bucket whose <code>OwnershipControls</code> you want to set.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -95,6 +96,7 @@ impl PutBucketOwnershipControlsInputBuilder {
         &self.expected_bucket_owner
     }
     /// <p>The <code>OwnershipControls</code> (BucketOwnerEnforced, BucketOwnerPreferred, or ObjectWriter) that you want to apply to this Amazon S3 bucket.</p>
+    /// This field is required.
     pub fn ownership_controls(mut self, input: crate::types::OwnershipControls) -> Self {
         self.ownership_controls = ::std::option::Option::Some(input);
         self
@@ -113,7 +115,7 @@ impl PutBucketOwnershipControlsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_bucket_ownership_controls::PutBucketOwnershipControlsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_bucket_ownership_controls::PutBucketOwnershipControlsInput {
             bucket: self.bucket,

@@ -6,7 +6,7 @@ pub struct GetObjectMetadataOutput {
     /// Metadata string.
     pub metadata_string: ::std::option::Option<::std::string::String>,
     /// Metadata blob.
-    pub metadata_blob: ::aws_smithy_http::byte_stream::ByteStream,
+    pub metadata_blob: ::aws_smithy_types::byte_stream::ByteStream,
     /// The size of MetadataBlob.
     pub metadata_blob_length: i64,
     /// MetadataBlob checksum.
@@ -21,7 +21,7 @@ impl GetObjectMetadataOutput {
         self.metadata_string.as_deref()
     }
     /// Metadata blob.
-    pub fn metadata_blob(&self) -> &::aws_smithy_http::byte_stream::ByteStream {
+    pub fn metadata_blob(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
         &self.metadata_blob
     }
     /// The size of MetadataBlob.
@@ -54,7 +54,7 @@ impl GetObjectMetadataOutput {
 #[derive(::std::default::Default, ::std::fmt::Debug)]
 pub struct GetObjectMetadataOutputBuilder {
     pub(crate) metadata_string: ::std::option::Option<::std::string::String>,
-    pub(crate) metadata_blob: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
+    pub(crate) metadata_blob: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,
     pub(crate) metadata_blob_length: ::std::option::Option<i64>,
     pub(crate) metadata_blob_checksum: ::std::option::Option<::std::string::String>,
     pub(crate) metadata_blob_checksum_algorithm: ::std::option::Option<crate::types::DataChecksumAlgorithm>,
@@ -76,17 +76,17 @@ impl GetObjectMetadataOutputBuilder {
         &self.metadata_string
     }
     /// Metadata blob.
-    pub fn metadata_blob(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
+    pub fn metadata_blob(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.metadata_blob = ::std::option::Option::Some(input);
         self
     }
     /// Metadata blob.
-    pub fn set_metadata_blob(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
+    pub fn set_metadata_blob(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.metadata_blob = input;
         self
     }
     /// Metadata blob.
-    pub fn get_metadata_blob(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_metadata_blob(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         &self.metadata_blob
     }
     /// The size of MetadataBlob.

@@ -55,6 +55,7 @@ pub struct DescribeFleetEventsInputBuilder {
 }
 impl DescribeFleetEventsInputBuilder {
     /// <p>A unique identifier for the fleet to get event logs for. You can use either the fleet ID or ARN value.</p>
+    /// This field is required.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
         self
@@ -127,7 +128,7 @@ impl DescribeFleetEventsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeFleetEventsInput`](crate::operation::describe_fleet_events::DescribeFleetEventsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_fleet_events::DescribeFleetEventsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_fleet_events::DescribeFleetEventsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_fleet_events::DescribeFleetEventsInput {
             fleet_id: self.fleet_id,

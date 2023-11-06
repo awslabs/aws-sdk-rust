@@ -2,7 +2,7 @@
 pub fn ser_describe_orderable_replication_instances_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_orderable_replication_instances::DescribeOrderableReplicationInstancesInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.max_records {
         object.key("MaxRecords").number(
             #[allow(clippy::useless_conversion)]

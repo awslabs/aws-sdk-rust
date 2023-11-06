@@ -2,7 +2,7 @@
 pub fn ser_create_code_signing_config_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_code_signing_config::CreateCodeSigningConfigInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.allowed_publishers {
         #[allow(unused_mut)]
         let mut object_2 = object.key("AllowedPublishers").start_object();

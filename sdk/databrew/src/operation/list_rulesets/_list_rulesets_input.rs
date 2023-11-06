@@ -83,7 +83,9 @@ impl ListRulesetsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListRulesetsInput`](crate::operation::list_rulesets::ListRulesetsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_rulesets::ListRulesetsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_rulesets::ListRulesetsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_rulesets::ListRulesetsInput {
             target_arn: self.target_arn,
             max_results: self.max_results,

@@ -14,8 +14,10 @@ impl DeleteClientBrandingInput {
         self.resource_id.as_deref()
     }
     /// <p>The device type for which you want to delete client branding.</p>
-    pub fn platforms(&self) -> ::std::option::Option<&[crate::types::ClientDeviceType]> {
-        self.platforms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.platforms.is_none()`.
+    pub fn platforms(&self) -> &[crate::types::ClientDeviceType] {
+        self.platforms.as_deref().unwrap_or_default()
     }
 }
 impl DeleteClientBrandingInput {
@@ -34,6 +36,7 @@ pub struct DeleteClientBrandingInputBuilder {
 }
 impl DeleteClientBrandingInputBuilder {
     /// <p>The directory identifier of the WorkSpace for which you want to delete client branding.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +73,7 @@ impl DeleteClientBrandingInputBuilder {
     /// Consumes the builder and constructs a [`DeleteClientBrandingInput`](crate::operation::delete_client_branding::DeleteClientBrandingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_client_branding::DeleteClientBrandingInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_client_branding::DeleteClientBrandingInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_client_branding::DeleteClientBrandingInput {
             resource_id: self.resource_id,

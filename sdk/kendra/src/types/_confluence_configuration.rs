@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfluenceConfiguration {
     /// <p>The URL of your Confluence instance. Use the full URL of the server. For example, <i>https://server.example.com:port/</i>. You can also use an IP address, for example, <i>https://192.168.1.113/</i>.</p>
-    pub server_url: ::std::option::Option<::std::string::String>,
+    pub server_url: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to connect to the Confluence instance. If you use Confluence Cloud, you use a generated API token as the password.</p>
     /// <p>You can also provide authentication credentials in the form of a personal access token. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using a Confluence data source</a>.</p>
-    pub secret_arn: ::std::option::Option<::std::string::String>,
+    pub secret_arn: ::std::string::String,
     /// <p>The version or the type of Confluence installation to connect to.</p>
-    pub version: ::std::option::Option<crate::types::ConfluenceVersion>,
+    pub version: crate::types::ConfluenceVersion,
     /// <p>Configuration information for indexing Confluence spaces.</p>
     pub space_configuration: ::std::option::Option<crate::types::ConfluenceSpaceConfiguration>,
     /// <p>Configuration information for indexing Confluence pages.</p>
@@ -35,17 +35,19 @@ pub struct ConfluenceConfiguration {
 }
 impl ConfluenceConfiguration {
     /// <p>The URL of your Confluence instance. Use the full URL of the server. For example, <i>https://server.example.com:port/</i>. You can also use an IP address, for example, <i>https://192.168.1.113/</i>.</p>
-    pub fn server_url(&self) -> ::std::option::Option<&str> {
-        self.server_url.as_deref()
+    pub fn server_url(&self) -> &str {
+        use std::ops::Deref;
+        self.server_url.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to connect to the Confluence instance. If you use Confluence Cloud, you use a generated API token as the password.</p>
     /// <p>You can also provide authentication credentials in the form of a personal access token. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using a Confluence data source</a>.</p>
-    pub fn secret_arn(&self) -> ::std::option::Option<&str> {
-        self.secret_arn.as_deref()
+    pub fn secret_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.secret_arn.deref()
     }
     /// <p>The version or the type of Confluence installation to connect to.</p>
-    pub fn version(&self) -> ::std::option::Option<&crate::types::ConfluenceVersion> {
-        self.version.as_ref()
+    pub fn version(&self) -> &crate::types::ConfluenceVersion {
+        &self.version
     }
     /// <p>Configuration information for indexing Confluence spaces.</p>
     pub fn space_configuration(&self) -> ::std::option::Option<&crate::types::ConfluenceSpaceConfiguration> {
@@ -68,12 +70,16 @@ impl ConfluenceConfiguration {
         self.vpc_configuration.as_ref()
     }
     /// <p>A list of regular expression patterns to include certain blog posts, pages, spaces, or attachments in your Confluence. Content that matches the patterns are included in the index. Content that doesn't match the patterns is excluded from the index. If content matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the content isn't included in the index.</p>
-    pub fn inclusion_patterns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.inclusion_patterns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inclusion_patterns.is_none()`.
+    pub fn inclusion_patterns(&self) -> &[::std::string::String] {
+        self.inclusion_patterns.as_deref().unwrap_or_default()
     }
     /// <p>A list of regular expression patterns to exclude certain blog posts, pages, spaces, or attachments in your Confluence. Content that matches the patterns are excluded from the index. Content that doesn't match the patterns is included in the index. If content matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the content isn't included in the index.</p>
-    pub fn exclusion_patterns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.exclusion_patterns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclusion_patterns.is_none()`.
+    pub fn exclusion_patterns(&self) -> &[::std::string::String] {
+        self.exclusion_patterns.as_deref().unwrap_or_default()
     }
     /// <p>Configuration information to connect to your Confluence URL instance via a web proxy. You can use this option for Confluence Server.</p>
     /// <p>You must provide the website host name and port number. For example, the host name of <i>https://a.example.com/page1.html</i> is "a.example.com" and the port is 443, the standard port for HTTPS.</p>
@@ -113,6 +119,7 @@ pub struct ConfluenceConfigurationBuilder {
 }
 impl ConfluenceConfigurationBuilder {
     /// <p>The URL of your Confluence instance. Use the full URL of the server. For example, <i>https://server.example.com:port/</i>. You can also use an IP address, for example, <i>https://192.168.1.113/</i>.</p>
+    /// This field is required.
     pub fn server_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_url = ::std::option::Option::Some(input.into());
         self
@@ -128,6 +135,7 @@ impl ConfluenceConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to connect to the Confluence instance. If you use Confluence Cloud, you use a generated API token as the password.</p>
     /// <p>You can also provide authentication credentials in the form of a personal access token. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using a Confluence data source</a>.</p>
+    /// This field is required.
     pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_arn = ::std::option::Option::Some(input.into());
         self
@@ -144,6 +152,7 @@ impl ConfluenceConfigurationBuilder {
         &self.secret_arn
     }
     /// <p>The version or the type of Confluence installation to connect to.</p>
+    /// This field is required.
     pub fn version(mut self, input: crate::types::ConfluenceVersion) -> Self {
         self.version = ::std::option::Option::Some(input);
         self
@@ -305,11 +314,30 @@ impl ConfluenceConfigurationBuilder {
         &self.authentication_type
     }
     /// Consumes the builder and constructs a [`ConfluenceConfiguration`](crate::types::ConfluenceConfiguration).
-    pub fn build(self) -> crate::types::ConfluenceConfiguration {
-        crate::types::ConfluenceConfiguration {
-            server_url: self.server_url,
-            secret_arn: self.secret_arn,
-            version: self.version,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`server_url`](crate::types::builders::ConfluenceConfigurationBuilder::server_url)
+    /// - [`secret_arn`](crate::types::builders::ConfluenceConfigurationBuilder::secret_arn)
+    /// - [`version`](crate::types::builders::ConfluenceConfigurationBuilder::version)
+    pub fn build(self) -> ::std::result::Result<crate::types::ConfluenceConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ConfluenceConfiguration {
+            server_url: self.server_url.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "server_url",
+                    "server_url was not specified but it is required when building ConfluenceConfiguration",
+                )
+            })?,
+            secret_arn: self.secret_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "secret_arn",
+                    "secret_arn was not specified but it is required when building ConfluenceConfiguration",
+                )
+            })?,
+            version: self.version.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "version",
+                    "version was not specified but it is required when building ConfluenceConfiguration",
+                )
+            })?,
             space_configuration: self.space_configuration,
             page_configuration: self.page_configuration,
             blog_configuration: self.blog_configuration,
@@ -319,6 +347,6 @@ impl ConfluenceConfigurationBuilder {
             exclusion_patterns: self.exclusion_patterns,
             proxy_configuration: self.proxy_configuration,
             authentication_type: self.authentication_type,
-        }
+        })
     }
 }

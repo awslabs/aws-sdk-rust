@@ -13,8 +13,10 @@ pub struct SearchRoutingProfilesOutput {
 }
 impl SearchRoutingProfilesOutput {
     /// <p>Information about the routing profiles.</p>
-    pub fn routing_profiles(&self) -> ::std::option::Option<&[crate::types::RoutingProfile]> {
-        self.routing_profiles.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.routing_profiles.is_none()`.
+    pub fn routing_profiles(&self) -> &[crate::types::RoutingProfile] {
+        self.routing_profiles.as_deref().unwrap_or_default()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

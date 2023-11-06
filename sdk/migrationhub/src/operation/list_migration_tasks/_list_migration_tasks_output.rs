@@ -15,8 +15,10 @@ impl ListMigrationTasksOutput {
         self.next_token.as_deref()
     }
     /// <p>Lists the migration task's summary which includes: <code>MigrationTaskName</code>, <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>, and the <code>UpdateDateTime</code> for each task.</p>
-    pub fn migration_task_summary_list(&self) -> ::std::option::Option<&[crate::types::MigrationTaskSummary]> {
-        self.migration_task_summary_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.migration_task_summary_list.is_none()`.
+    pub fn migration_task_summary_list(&self) -> &[crate::types::MigrationTaskSummary] {
+        self.migration_task_summary_list.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListMigrationTasksOutput {

@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReusableDelegationSetLimit {
     /// <p>The limit that you requested: <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code>, the maximum number of hosted zones that you can associate with the specified reusable delegation set.</p>
-    pub r#type: ::std::option::Option<crate::types::ReusableDelegationSetLimitType>,
+    pub r#type: crate::types::ReusableDelegationSetLimitType,
     /// <p>The current value for the <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code> limit.</p>
-    pub value: ::std::option::Option<i64>,
+    pub value: i64,
 }
 impl ReusableDelegationSetLimit {
     /// <p>The limit that you requested: <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code>, the maximum number of hosted zones that you can associate with the specified reusable delegation set.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ReusableDelegationSetLimitType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::ReusableDelegationSetLimitType {
+        &self.r#type
     }
     /// <p>The current value for the <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code> limit.</p>
-    pub fn value(&self) -> ::std::option::Option<i64> {
+    pub fn value(&self) -> i64 {
         self.value
     }
 }
@@ -35,6 +35,7 @@ pub struct ReusableDelegationSetLimitBuilder {
 }
 impl ReusableDelegationSetLimitBuilder {
     /// <p>The limit that you requested: <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code>, the maximum number of hosted zones that you can associate with the specified reusable delegation set.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::ReusableDelegationSetLimitType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl ReusableDelegationSetLimitBuilder {
         &self.r#type
     }
     /// <p>The current value for the <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code> limit.</p>
+    /// This field is required.
     pub fn value(mut self, input: i64) -> Self {
         self.value = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl ReusableDelegationSetLimitBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`ReusableDelegationSetLimit`](crate::types::ReusableDelegationSetLimit).
-    pub fn build(self) -> crate::types::ReusableDelegationSetLimit {
-        crate::types::ReusableDelegationSetLimit {
-            r#type: self.r#type,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::ReusableDelegationSetLimitBuilder::r#type)
+    /// - [`value`](crate::types::builders::ReusableDelegationSetLimitBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::ReusableDelegationSetLimit, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ReusableDelegationSetLimit {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building ReusableDelegationSetLimit",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building ReusableDelegationSetLimit",
+                )
+            })?,
+        })
     }
 }

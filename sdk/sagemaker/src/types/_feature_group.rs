@@ -66,8 +66,10 @@ impl FeatureGroup {
     /// <p>Valid <code>FeatureType</code>s are <code>Integral</code>, <code>Fractional</code> and <code>String</code>. </p>
     /// <p> <code>FeatureName</code>s cannot be any of the following: <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code>.</p>
     /// <p>You can create up to 2,500 <code>FeatureDefinition</code>s per <code>FeatureGroup</code>.</p>
-    pub fn feature_definitions(&self) -> ::std::option::Option<&[crate::types::FeatureDefinition]> {
-        self.feature_definitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.feature_definitions.is_none()`.
+    pub fn feature_definitions(&self) -> &[crate::types::FeatureDefinition] {
+        self.feature_definitions.as_deref().unwrap_or_default()
     }
     /// <p>The time a <code>FeatureGroup</code> was created.</p>
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -113,8 +115,10 @@ impl FeatureGroup {
         self.description.as_deref()
     }
     /// <p>Tags used to define a <code>FeatureGroup</code>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl FeatureGroup {

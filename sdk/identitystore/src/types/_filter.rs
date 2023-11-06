@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Filter {
     /// <p>The attribute path that is used to specify which attribute name to search. Length limit is 255 characters. For example, <code>UserName</code> is a valid attribute path for the <code>ListUsers</code> API, and <code>DisplayName</code> is a valid attribute path for the <code>ListGroups</code> API.</p>
-    pub attribute_path: ::std::option::Option<::std::string::String>,
+    pub attribute_path: ::std::string::String,
     /// <p>Represents the data for an attribute. Each attribute value is described as a name-value pair. </p>
-    pub attribute_value: ::std::option::Option<::std::string::String>,
+    pub attribute_value: ::std::string::String,
 }
 impl Filter {
     /// <p>The attribute path that is used to specify which attribute name to search. Length limit is 255 characters. For example, <code>UserName</code> is a valid attribute path for the <code>ListUsers</code> API, and <code>DisplayName</code> is a valid attribute path for the <code>ListGroups</code> API.</p>
-    pub fn attribute_path(&self) -> ::std::option::Option<&str> {
-        self.attribute_path.as_deref()
+    pub fn attribute_path(&self) -> &str {
+        use std::ops::Deref;
+        self.attribute_path.deref()
     }
     /// <p>Represents the data for an attribute. Each attribute value is described as a name-value pair. </p>
-    pub fn attribute_value(&self) -> ::std::option::Option<&str> {
-        self.attribute_value.as_deref()
+    pub fn attribute_value(&self) -> &str {
+        use std::ops::Deref;
+        self.attribute_value.deref()
     }
 }
 impl ::std::fmt::Debug for Filter {
@@ -43,6 +45,7 @@ pub struct FilterBuilder {
 }
 impl FilterBuilder {
     /// <p>The attribute path that is used to specify which attribute name to search. Length limit is 255 characters. For example, <code>UserName</code> is a valid attribute path for the <code>ListUsers</code> API, and <code>DisplayName</code> is a valid attribute path for the <code>ListGroups</code> API.</p>
+    /// This field is required.
     pub fn attribute_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_path = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +60,7 @@ impl FilterBuilder {
         &self.attribute_path
     }
     /// <p>Represents the data for an attribute. Each attribute value is described as a name-value pair. </p>
+    /// This field is required.
     pub fn attribute_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_value = ::std::option::Option::Some(input.into());
         self
@@ -71,11 +75,24 @@ impl FilterBuilder {
         &self.attribute_value
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
-    pub fn build(self) -> crate::types::Filter {
-        crate::types::Filter {
-            attribute_path: self.attribute_path,
-            attribute_value: self.attribute_value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`attribute_path`](crate::types::builders::FilterBuilder::attribute_path)
+    /// - [`attribute_value`](crate::types::builders::FilterBuilder::attribute_value)
+    pub fn build(self) -> ::std::result::Result<crate::types::Filter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Filter {
+            attribute_path: self.attribute_path.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "attribute_path",
+                    "attribute_path was not specified but it is required when building Filter",
+                )
+            })?,
+            attribute_value: self.attribute_value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "attribute_value",
+                    "attribute_value was not specified but it is required when building Filter",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for FilterBuilder {

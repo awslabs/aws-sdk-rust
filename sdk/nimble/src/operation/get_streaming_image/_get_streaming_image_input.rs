@@ -34,6 +34,7 @@ pub struct GetStreamingImageInputBuilder {
 }
 impl GetStreamingImageInputBuilder {
     /// <p>The streaming image ID.</p>
+    /// This field is required.
     pub fn streaming_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.streaming_image_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetStreamingImageInputBuilder {
         &self.streaming_image_id
     }
     /// <p>The studio ID. </p>
+    /// This field is required.
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl GetStreamingImageInputBuilder {
     /// Consumes the builder and constructs a [`GetStreamingImageInput`](crate::operation::get_streaming_image::GetStreamingImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_streaming_image::GetStreamingImageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_streaming_image::GetStreamingImageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_streaming_image::GetStreamingImageInput {
             streaming_image_id: self.streaming_image_id,
             studio_id: self.studio_id,

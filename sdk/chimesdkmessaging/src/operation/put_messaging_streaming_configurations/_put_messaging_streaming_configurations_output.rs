@@ -9,8 +9,10 @@ pub struct PutMessagingStreamingConfigurationsOutput {
 }
 impl PutMessagingStreamingConfigurationsOutput {
     /// <p>The requested streaming configurations.</p>
-    pub fn streaming_configurations(&self) -> ::std::option::Option<&[crate::types::StreamingConfiguration]> {
-        self.streaming_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.streaming_configurations.is_none()`.
+    pub fn streaming_configurations(&self) -> &[crate::types::StreamingConfiguration] {
+        self.streaming_configurations.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for PutMessagingStreamingConfigurationsOutput {

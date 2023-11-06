@@ -34,6 +34,7 @@ pub struct UpdateBrowserSettingsOutputBuilder {
 }
 impl UpdateBrowserSettingsOutputBuilder {
     /// <p>The browser settings.</p>
+    /// This field is required.
     pub fn browser_settings(mut self, input: crate::types::BrowserSettings) -> Self {
         self.browser_settings = ::std::option::Option::Some(input);
         self

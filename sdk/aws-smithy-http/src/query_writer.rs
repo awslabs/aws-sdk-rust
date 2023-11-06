@@ -4,6 +4,7 @@
  */
 
 use crate::query::fmt_string as percent_encode_query;
+use http::uri::InvalidUri;
 use http::Uri;
 
 /// Utility for updating the query string in a [`Uri`].
@@ -15,6 +16,11 @@ pub struct QueryWriter {
 }
 
 impl QueryWriter {
+    /// Creates a new `QueryWriter` from a string
+    pub fn new_from_string(uri: &str) -> Result<Self, InvalidUri> {
+        Ok(Self::new(&Uri::try_from(uri)?))
+    }
+
     /// Creates a new `QueryWriter` based off the given `uri`.
     pub fn new(uri: &Uri) -> Self {
         let new_path_and_query = uri

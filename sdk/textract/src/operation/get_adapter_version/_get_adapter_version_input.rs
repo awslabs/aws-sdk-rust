@@ -34,6 +34,7 @@ pub struct GetAdapterVersionInputBuilder {
 }
 impl GetAdapterVersionInputBuilder {
     /// <p>A string specifying a unique ID for the adapter version you want to retrieve information for.</p>
+    /// This field is required.
     pub fn adapter_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.adapter_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetAdapterVersionInputBuilder {
         &self.adapter_id
     }
     /// <p>A string specifying the adapter version you want to retrieve information for.</p>
+    /// This field is required.
     pub fn adapter_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.adapter_version = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl GetAdapterVersionInputBuilder {
     /// Consumes the builder and constructs a [`GetAdapterVersionInput`](crate::operation::get_adapter_version::GetAdapterVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_adapter_version::GetAdapterVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_adapter_version::GetAdapterVersionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_adapter_version::GetAdapterVersionInput {
             adapter_id: self.adapter_id,
             adapter_version: self.adapter_version,

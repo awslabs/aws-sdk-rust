@@ -64,8 +64,10 @@ impl AllocateHostsInput {
         self.quantity
     }
     /// <p>The tags to apply to the Dedicated Host during creation.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether to enable or disable host recovery for the Dedicated Host. Host recovery is disabled by default. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host recovery</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>Default: <code>off</code> </p>
@@ -86,8 +88,10 @@ impl AllocateHostsInput {
     /// <li> <p>If you specify this parameter, you can omit <b>Quantity</b>. In this case, Amazon EC2 allocates a Dedicated Host on each specified hardware asset.</p> </li>
     /// <li> <p>If you specify both <b>AssetIds</b> and <b>Quantity</b>, then the value for <b>Quantity</b> must be equal to the number of asset IDs specified.</p> </li>
     /// </ul>
-    pub fn asset_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.asset_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.asset_ids.is_none()`.
+    pub fn asset_ids(&self) -> &[::std::string::String] {
+        self.asset_ids.as_deref().unwrap_or_default()
     }
 }
 impl AllocateHostsInput {
@@ -132,6 +136,7 @@ impl AllocateHostsInputBuilder {
         &self.auto_placement
     }
     /// <p>The Availability Zone in which to allocate the Dedicated Host.</p>
+    /// This field is required.
     pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
@@ -310,7 +315,7 @@ impl AllocateHostsInputBuilder {
     /// Consumes the builder and constructs a [`AllocateHostsInput`](crate::operation::allocate_hosts::AllocateHostsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::allocate_hosts::AllocateHostsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::allocate_hosts::AllocateHostsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::allocate_hosts::AllocateHostsInput {
             auto_placement: self.auto_placement,
             availability_zone: self.availability_zone,

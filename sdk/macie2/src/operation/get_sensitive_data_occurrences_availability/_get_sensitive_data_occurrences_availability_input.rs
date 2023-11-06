@@ -27,6 +27,7 @@ pub struct GetSensitiveDataOccurrencesAvailabilityInputBuilder {
 }
 impl GetSensitiveDataOccurrencesAvailabilityInputBuilder {
     /// <p>The unique identifier for the finding.</p>
+    /// This field is required.
     pub fn finding_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.finding_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetSensitiveDataOccurrencesAvailabilityInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_sensitive_data_occurrences_availability::GetSensitiveDataOccurrencesAvailabilityInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_sensitive_data_occurrences_availability::GetSensitiveDataOccurrencesAvailabilityInput {

@@ -41,12 +41,16 @@ impl ConfigureShard {
         self.new_replica_count
     }
     /// <p>A list of <code>PreferredAvailabilityZone</code> strings that specify which availability zones the replication group's nodes are to be in. The nummber of <code>PreferredAvailabilityZone</code> values must equal the value of <code>NewReplicaCount</code> plus 1 to account for the primary node. If this member of <code>ReplicaConfiguration</code> is omitted, ElastiCache for Redis selects the availability zone for each of the replicas.</p>
-    pub fn preferred_availability_zones(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.preferred_availability_zones.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.preferred_availability_zones.is_none()`.
+    pub fn preferred_availability_zones(&self) -> &[::std::string::String] {
+        self.preferred_availability_zones.as_deref().unwrap_or_default()
     }
     /// <p>The outpost ARNs in which the cache cluster is created.</p>
-    pub fn preferred_outpost_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.preferred_outpost_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.preferred_outpost_arns.is_none()`.
+    pub fn preferred_outpost_arns(&self) -> &[::std::string::String] {
+        self.preferred_outpost_arns.as_deref().unwrap_or_default()
     }
 }
 impl ConfigureShard {
@@ -67,6 +71,7 @@ pub struct ConfigureShardBuilder {
 }
 impl ConfigureShardBuilder {
     /// <p>The 4-digit id for the node group you are configuring. For Redis (cluster mode disabled) replication groups, the node group id is always 0001. To find a Redis (cluster mode enabled)'s node group's (shard's) id, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding a Shard's Id</a>.</p>
+    /// This field is required.
     pub fn node_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_group_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +95,7 @@ impl ConfigureShardBuilder {
     /// </ul> </li>
     /// <li> <p>Redis (cluster mode enabled): 0 (though you will not be able to failover to a replica if your primary node fails)</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn new_replica_count(mut self, input: i32) -> Self {
         self.new_replica_count = ::std::option::Option::Some(input);
         self

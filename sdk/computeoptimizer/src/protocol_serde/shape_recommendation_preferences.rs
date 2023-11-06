@@ -2,7 +2,7 @@
 pub fn ser_recommendation_preferences(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RecommendationPreferences,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cpu_vendor_architectures {
         let mut array_2 = object.key("cpuVendorArchitectures").start_array();
         for item_3 in var_1 {

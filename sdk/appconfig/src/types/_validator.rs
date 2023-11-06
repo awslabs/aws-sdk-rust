@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Validator {
     /// <p>AppConfig supports validators of type <code>JSON_SCHEMA</code> and <code>LAMBDA</code> </p>
-    pub r#type: ::std::option::Option<crate::types::ValidatorType>,
+    pub r#type: crate::types::ValidatorType,
     /// <p>Either the JSON Schema content or the Amazon Resource Name (ARN) of an Lambda function.</p>
-    pub content: ::std::option::Option<::std::string::String>,
+    pub content: ::std::string::String,
 }
 impl Validator {
     /// <p>AppConfig supports validators of type <code>JSON_SCHEMA</code> and <code>LAMBDA</code> </p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ValidatorType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::ValidatorType {
+        &self.r#type
     }
     /// <p>Either the JSON Schema content or the Amazon Resource Name (ARN) of an Lambda function.</p>
-    pub fn content(&self) -> ::std::option::Option<&str> {
-        self.content.as_deref()
+    pub fn content(&self) -> &str {
+        use std::ops::Deref;
+        self.content.deref()
     }
 }
 impl ::std::fmt::Debug for Validator {
@@ -43,6 +44,7 @@ pub struct ValidatorBuilder {
 }
 impl ValidatorBuilder {
     /// <p>AppConfig supports validators of type <code>JSON_SCHEMA</code> and <code>LAMBDA</code> </p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::ValidatorType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -57,6 +59,7 @@ impl ValidatorBuilder {
         &self.r#type
     }
     /// <p>Either the JSON Schema content or the Amazon Resource Name (ARN) of an Lambda function.</p>
+    /// This field is required.
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
         self
@@ -71,11 +74,24 @@ impl ValidatorBuilder {
         &self.content
     }
     /// Consumes the builder and constructs a [`Validator`](crate::types::Validator).
-    pub fn build(self) -> crate::types::Validator {
-        crate::types::Validator {
-            r#type: self.r#type,
-            content: self.content,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::ValidatorBuilder::r#type)
+    /// - [`content`](crate::types::builders::ValidatorBuilder::content)
+    pub fn build(self) -> ::std::result::Result<crate::types::Validator, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Validator {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building Validator",
+                )
+            })?,
+            content: self.content.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "content",
+                    "content was not specified but it is required when building Validator",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for ValidatorBuilder {

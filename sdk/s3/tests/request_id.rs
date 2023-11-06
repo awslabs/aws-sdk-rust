@@ -6,12 +6,12 @@
 use aws_sdk_s3::operation::get_object::GetObjectError;
 use aws_sdk_s3::operation::{RequestId, RequestIdExt};
 use aws_sdk_s3::{config::Credentials, config::Region, Client, Config};
-use aws_smithy_client::test_connection::capture_request;
-use aws_smithy_http::body::SdkBody;
+use aws_smithy_runtime::client::http::test_util::capture_request;
+use aws_smithy_types::body::SdkBody;
 
 #[tokio::test]
 async fn get_request_id_from_modeled_error() {
-    let (conn, request) = capture_request(Some(
+    let (http_client, request) = capture_request(Some(
         http::Response::builder()
             .header("x-amz-request-id", "correct-request-id")
             .header("x-amz-id-2", "correct-extended-request-id")
@@ -28,7 +28,7 @@ async fn get_request_id_from_modeled_error() {
             .unwrap(),
     ));
     let config = Config::builder()
-        .http_connector(conn)
+        .http_client(http_client)
         .credentials_provider(Credentials::for_tests())
         .region(Region::new("us-east-1"))
         .build();
@@ -36,6 +36,7 @@ async fn get_request_id_from_modeled_error() {
     let err = client
         .get_object()
         .key("dontcare")
+        .bucket("dontcare")
         .send()
         .await
         .expect_err("status was 404, this is an error")
@@ -59,7 +60,7 @@ async fn get_request_id_from_modeled_error() {
 
 #[tokio::test]
 async fn get_request_id_from_unmodeled_error() {
-    let (conn, request) = capture_request(Some(
+    let (http_client, request) = capture_request(Some(
         http::Response::builder()
             .header("x-amz-request-id", "correct-request-id")
             .header("x-amz-id-2", "correct-extended-request-id")
@@ -76,13 +77,14 @@ async fn get_request_id_from_unmodeled_error() {
             .unwrap(),
     ));
     let config = Config::builder()
-        .http_connector(conn)
+        .http_client(http_client)
         .credentials_provider(Credentials::for_tests())
         .region(Region::new("us-east-1"))
         .build();
     let client = Client::from_conf(config);
     let err = client
         .get_object()
+        .bucket("dontcare")
         .key("dontcare")
         .send()
         .await
@@ -104,7 +106,7 @@ async fn get_request_id_from_unmodeled_error() {
 
 #[tokio::test]
 async fn get_request_id_from_successful_nonstreaming_response() {
-    let (conn, request) = capture_request(Some(
+    let (http_client, request) = capture_request(Some(
         http::Response::builder()
             .header("x-amz-request-id", "correct-request-id")
             .header("x-amz-id-2", "correct-extended-request-id")
@@ -119,7 +121,7 @@ async fn get_request_id_from_successful_nonstreaming_response() {
             .unwrap(),
     ));
     let config = Config::builder()
-        .http_connector(conn)
+        .http_client(http_client)
         .credentials_provider(Credentials::for_tests())
         .region(Region::new("us-east-1"))
         .build();
@@ -139,7 +141,7 @@ async fn get_request_id_from_successful_nonstreaming_response() {
 
 #[tokio::test]
 async fn get_request_id_from_successful_streaming_response() {
-    let (conn, request) = capture_request(Some(
+    let (http_client, request) = capture_request(Some(
         http::Response::builder()
             .header("x-amz-request-id", "correct-request-id")
             .header("x-amz-id-2", "correct-extended-request-id")
@@ -148,7 +150,7 @@ async fn get_request_id_from_successful_streaming_response() {
             .unwrap(),
     ));
     let config = Config::builder()
-        .http_connector(conn)
+        .http_client(http_client)
         .credentials_provider(Credentials::for_tests())
         .region(Region::new("us-east-1"))
         .build();
@@ -156,6 +158,7 @@ async fn get_request_id_from_successful_streaming_response() {
     let output = client
         .get_object()
         .key("dontcare")
+        .bucket("dontcare")
         .send()
         .await
         .expect("valid successful response");
@@ -170,7 +173,7 @@ async fn get_request_id_from_successful_streaming_response() {
 // Verify that the conversion from operation error to the top-level service error maintains the request ID
 #[tokio::test]
 async fn conversion_to_service_error_maintains_request_id() {
-    let (conn, request) = capture_request(Some(
+    let (http_client, request) = capture_request(Some(
         http::Response::builder()
             .header("x-amz-request-id", "correct-request-id")
             .header("x-amz-id-2", "correct-extended-request-id")
@@ -187,13 +190,14 @@ async fn conversion_to_service_error_maintains_request_id() {
             .unwrap(),
     ));
     let config = Config::builder()
-        .http_connector(conn)
+        .http_client(http_client)
         .credentials_provider(Credentials::for_tests())
         .region(Region::new("us-east-1"))
         .build();
     let client = Client::from_conf(config);
     let err = client
         .get_object()
+        .bucket("dontcare")
         .key("dontcare")
         .send()
         .await

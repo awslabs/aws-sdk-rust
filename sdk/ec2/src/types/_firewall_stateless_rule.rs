@@ -27,24 +27,34 @@ impl FirewallStatelessRule {
         self.rule_group_arn.as_deref()
     }
     /// <p>The source IP addresses, in CIDR notation.</p>
-    pub fn sources(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
+    pub fn sources(&self) -> &[::std::string::String] {
+        self.sources.as_deref().unwrap_or_default()
     }
     /// <p>The destination IP addresses, in CIDR notation.</p>
-    pub fn destinations(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.destinations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destinations.is_none()`.
+    pub fn destinations(&self) -> &[::std::string::String] {
+        self.destinations.as_deref().unwrap_or_default()
     }
     /// <p>The source ports.</p>
-    pub fn source_ports(&self) -> ::std::option::Option<&[crate::types::PortRange]> {
-        self.source_ports.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_ports.is_none()`.
+    pub fn source_ports(&self) -> &[crate::types::PortRange] {
+        self.source_ports.as_deref().unwrap_or_default()
     }
     /// <p>The destination ports.</p>
-    pub fn destination_ports(&self) -> ::std::option::Option<&[crate::types::PortRange]> {
-        self.destination_ports.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destination_ports.is_none()`.
+    pub fn destination_ports(&self) -> &[crate::types::PortRange] {
+        self.destination_ports.as_deref().unwrap_or_default()
     }
     /// <p>The protocols.</p>
-    pub fn protocols(&self) -> ::std::option::Option<&[i32]> {
-        self.protocols.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.protocols.is_none()`.
+    pub fn protocols(&self) -> &[i32] {
+        self.protocols.as_deref().unwrap_or_default()
     }
     /// <p>The rule action. The possible values are <code>pass</code>, <code>drop</code>, and <code>forward_to_site</code>.</p>
     pub fn rule_action(&self) -> ::std::option::Option<&str> {

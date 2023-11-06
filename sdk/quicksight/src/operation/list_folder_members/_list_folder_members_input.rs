@@ -48,6 +48,7 @@ pub struct ListFolderMembersInputBuilder {
 }
 impl ListFolderMembersInputBuilder {
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl ListFolderMembersInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID of the folder.</p>
+    /// This field is required.
     pub fn folder_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.folder_id = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +108,7 @@ impl ListFolderMembersInputBuilder {
     /// Consumes the builder and constructs a [`ListFolderMembersInput`](crate::operation::list_folder_members::ListFolderMembersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_folder_members::ListFolderMembersInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_folder_members::ListFolderMembersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_folder_members::ListFolderMembersInput {
             aws_account_id: self.aws_account_id,
             folder_id: self.folder_id,

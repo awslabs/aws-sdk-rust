@@ -114,6 +114,7 @@ pub struct InvokeEndpointInputBuilder {
 }
 impl InvokeEndpointInputBuilder {
     /// <p>The name of the endpoint that you specified when you created the endpoint using the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API.</p>
+    /// This field is required.
     pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_name = ::std::option::Option::Some(input.into());
         self
@@ -129,6 +130,7 @@ impl InvokeEndpointInputBuilder {
     }
     /// <p>Provides input data, in the format specified in the <code>ContentType</code> request header. Amazon SageMaker passes all of the data in the body to the model. </p>
     /// <p>For information about the format of the request body, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats-Inference</a>.</p>
+    /// This field is required.
     pub fn body(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.body = ::std::option::Option::Some(input);
         self
@@ -268,7 +270,7 @@ impl InvokeEndpointInputBuilder {
     /// Consumes the builder and constructs a [`InvokeEndpointInput`](crate::operation::invoke_endpoint::InvokeEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::invoke_endpoint::InvokeEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::invoke_endpoint::InvokeEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::invoke_endpoint::InvokeEndpointInput {
             endpoint_name: self.endpoint_name,
             body: self.body,

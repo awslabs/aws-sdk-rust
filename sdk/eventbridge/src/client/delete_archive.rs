@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteArchive`](crate::operation::delete_archive::builders::DeleteArchiveFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`archive_name(impl Into<String>)`](crate::operation::delete_archive::builders::DeleteArchiveFluentBuilder::archive_name) / [`set_archive_name(Option<String>)`](crate::operation::delete_archive::builders::DeleteArchiveFluentBuilder::set_archive_name): <p>The name of the archive to delete.</p>
+    ///   - [`archive_name(impl Into<String>)`](crate::operation::delete_archive::builders::DeleteArchiveFluentBuilder::archive_name) / [`set_archive_name(Option<String>)`](crate::operation::delete_archive::builders::DeleteArchiveFluentBuilder::set_archive_name):<br>required: **true**<br><p>The name of the archive to delete.</p><br>
     /// - On success, responds with [`DeleteArchiveOutput`](crate::operation::delete_archive::DeleteArchiveOutput)
     /// - On failure, responds with [`SdkError<DeleteArchiveError>`](crate::operation::delete_archive::DeleteArchiveError)
     pub fn delete_archive(&self) -> crate::operation::delete_archive::builders::DeleteArchiveFluentBuilder {

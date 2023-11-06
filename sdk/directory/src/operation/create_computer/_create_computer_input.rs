@@ -33,8 +33,10 @@ impl CreateComputerInput {
         self.organizational_unit_distinguished_name.as_deref()
     }
     /// <p>An array of <code>Attribute</code> objects that contain any LDAP attributes to apply to the computer account.</p>
-    pub fn computer_attributes(&self) -> ::std::option::Option<&[crate::types::Attribute]> {
-        self.computer_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.computer_attributes.is_none()`.
+    pub fn computer_attributes(&self) -> &[crate::types::Attribute] {
+        self.computer_attributes.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for CreateComputerInput {
@@ -67,6 +69,7 @@ pub struct CreateComputerInputBuilder {
 }
 impl CreateComputerInputBuilder {
     /// <p>The identifier of the directory in which to create the computer account.</p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self
@@ -81,6 +84,7 @@ impl CreateComputerInputBuilder {
         &self.directory_id
     }
     /// <p>The name of the computer account.</p>
+    /// This field is required.
     pub fn computer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.computer_name = ::std::option::Option::Some(input.into());
         self
@@ -95,6 +99,7 @@ impl CreateComputerInputBuilder {
         &self.computer_name
     }
     /// <p>A one-time password that is used to join the computer to the directory. You should generate a random, strong password to use for this parameter.</p>
+    /// This field is required.
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
         self
@@ -145,7 +150,7 @@ impl CreateComputerInputBuilder {
     /// Consumes the builder and constructs a [`CreateComputerInput`](crate::operation::create_computer::CreateComputerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_computer::CreateComputerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_computer::CreateComputerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_computer::CreateComputerInput {
             directory_id: self.directory_id,
             computer_name: self.computer_name,

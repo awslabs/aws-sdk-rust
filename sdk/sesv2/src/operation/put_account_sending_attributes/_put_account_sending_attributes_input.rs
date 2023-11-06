@@ -56,7 +56,7 @@ impl PutAccountSendingAttributesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_account_sending_attributes::PutAccountSendingAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_account_sending_attributes::PutAccountSendingAttributesInput {
             sending_enabled: self.sending_enabled,

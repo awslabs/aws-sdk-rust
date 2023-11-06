@@ -22,8 +22,10 @@ impl GetCaseInput {
         self.domain_id.as_deref()
     }
     /// <p>A list of unique field identifiers. </p>
-    pub fn fields(&self) -> ::std::option::Option<&[crate::types::FieldIdentifier]> {
-        self.fields.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fields.is_none()`.
+    pub fn fields(&self) -> &[crate::types::FieldIdentifier] {
+        self.fields.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -48,6 +50,7 @@ pub struct GetCaseInputBuilder {
 }
 impl GetCaseInputBuilder {
     /// <p>A unique identifier of the case.</p>
+    /// This field is required.
     pub fn case_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.case_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl GetCaseInputBuilder {
         &self.case_id
     }
     /// <p>The unique identifier of the Cases domain. </p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -110,7 +114,7 @@ impl GetCaseInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetCaseInput`](crate::operation::get_case::GetCaseInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_case::GetCaseInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_case::GetCaseInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_case::GetCaseInput {
             case_id: self.case_id,
             domain_id: self.domain_id,

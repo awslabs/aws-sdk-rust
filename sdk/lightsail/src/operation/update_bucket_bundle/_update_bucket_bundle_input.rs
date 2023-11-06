@@ -36,6 +36,7 @@ pub struct UpdateBucketBundleInputBuilder {
 }
 impl UpdateBucketBundleInputBuilder {
     /// <p>The name of the bucket for which to update the bundle.</p>
+    /// This field is required.
     pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_name = ::std::option::Option::Some(input.into());
         self
@@ -51,6 +52,7 @@ impl UpdateBucketBundleInputBuilder {
     }
     /// <p>The ID of the new bundle to apply to the bucket.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketBundles.html">GetBucketBundles</a> action to get a list of bundle IDs that you can specify.</p>
+    /// This field is required.
     pub fn bundle_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bundle_id = ::std::option::Option::Some(input.into());
         self
@@ -69,7 +71,8 @@ impl UpdateBucketBundleInputBuilder {
     /// Consumes the builder and constructs a [`UpdateBucketBundleInput`](crate::operation::update_bucket_bundle::UpdateBucketBundleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_bucket_bundle::UpdateBucketBundleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_bucket_bundle::UpdateBucketBundleInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_bucket_bundle::UpdateBucketBundleInput {
             bucket_name: self.bucket_name,
             bundle_id: self.bundle_id,

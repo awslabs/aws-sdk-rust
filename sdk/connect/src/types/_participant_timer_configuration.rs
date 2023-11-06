@@ -6,20 +6,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParticipantTimerConfiguration {
     /// <p>The role of the participant in the chat conversation.</p>
-    pub participant_role: ::std::option::Option<crate::types::TimerEligibleParticipantRoles>,
+    pub participant_role: crate::types::TimerEligibleParticipantRoles,
     /// <p>The type of timer. <code>IDLE</code> indicates the timer applies for considering a human chat participant as idle. <code>DISCONNECT_NONCUSTOMER</code> indicates the timer applies to automatically disconnecting a chat participant due to idleness.</p>
-    pub timer_type: ::std::option::Option<crate::types::ParticipantTimerType>,
+    pub timer_type: crate::types::ParticipantTimerType,
     /// <p>The value of the timer. Either the timer action (Unset to delete the timer), or the duration of the timer in minutes. Only one value can be set.</p>
     pub timer_value: ::std::option::Option<crate::types::ParticipantTimerValue>,
 }
 impl ParticipantTimerConfiguration {
     /// <p>The role of the participant in the chat conversation.</p>
-    pub fn participant_role(&self) -> ::std::option::Option<&crate::types::TimerEligibleParticipantRoles> {
-        self.participant_role.as_ref()
+    pub fn participant_role(&self) -> &crate::types::TimerEligibleParticipantRoles {
+        &self.participant_role
     }
     /// <p>The type of timer. <code>IDLE</code> indicates the timer applies for considering a human chat participant as idle. <code>DISCONNECT_NONCUSTOMER</code> indicates the timer applies to automatically disconnecting a chat participant due to idleness.</p>
-    pub fn timer_type(&self) -> ::std::option::Option<&crate::types::ParticipantTimerType> {
-        self.timer_type.as_ref()
+    pub fn timer_type(&self) -> &crate::types::ParticipantTimerType {
+        &self.timer_type
     }
     /// <p>The value of the timer. Either the timer action (Unset to delete the timer), or the duration of the timer in minutes. Only one value can be set.</p>
     pub fn timer_value(&self) -> ::std::option::Option<&crate::types::ParticipantTimerValue> {
@@ -43,6 +43,7 @@ pub struct ParticipantTimerConfigurationBuilder {
 }
 impl ParticipantTimerConfigurationBuilder {
     /// <p>The role of the participant in the chat conversation.</p>
+    /// This field is required.
     pub fn participant_role(mut self, input: crate::types::TimerEligibleParticipantRoles) -> Self {
         self.participant_role = ::std::option::Option::Some(input);
         self
@@ -57,6 +58,7 @@ impl ParticipantTimerConfigurationBuilder {
         &self.participant_role
     }
     /// <p>The type of timer. <code>IDLE</code> indicates the timer applies for considering a human chat participant as idle. <code>DISCONNECT_NONCUSTOMER</code> indicates the timer applies to automatically disconnecting a chat participant due to idleness.</p>
+    /// This field is required.
     pub fn timer_type(mut self, input: crate::types::ParticipantTimerType) -> Self {
         self.timer_type = ::std::option::Option::Some(input);
         self
@@ -71,6 +73,7 @@ impl ParticipantTimerConfigurationBuilder {
         &self.timer_type
     }
     /// <p>The value of the timer. Either the timer action (Unset to delete the timer), or the duration of the timer in minutes. Only one value can be set.</p>
+    /// This field is required.
     pub fn timer_value(mut self, input: crate::types::ParticipantTimerValue) -> Self {
         self.timer_value = ::std::option::Option::Some(input);
         self
@@ -85,11 +88,24 @@ impl ParticipantTimerConfigurationBuilder {
         &self.timer_value
     }
     /// Consumes the builder and constructs a [`ParticipantTimerConfiguration`](crate::types::ParticipantTimerConfiguration).
-    pub fn build(self) -> crate::types::ParticipantTimerConfiguration {
-        crate::types::ParticipantTimerConfiguration {
-            participant_role: self.participant_role,
-            timer_type: self.timer_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`participant_role`](crate::types::builders::ParticipantTimerConfigurationBuilder::participant_role)
+    /// - [`timer_type`](crate::types::builders::ParticipantTimerConfigurationBuilder::timer_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::ParticipantTimerConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ParticipantTimerConfiguration {
+            participant_role: self.participant_role.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "participant_role",
+                    "participant_role was not specified but it is required when building ParticipantTimerConfiguration",
+                )
+            })?,
+            timer_type: self.timer_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "timer_type",
+                    "timer_type was not specified but it is required when building ParticipantTimerConfiguration",
+                )
+            })?,
             timer_value: self.timer_value,
-        }
+        })
     }
 }

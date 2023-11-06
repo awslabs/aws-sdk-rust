@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteEventBus`](crate::operation::delete_event_bus::builders::DeleteEventBusFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::delete_event_bus::builders::DeleteEventBusFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_event_bus::builders::DeleteEventBusFluentBuilder::set_name): <p>The name of the event bus to delete.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::delete_event_bus::builders::DeleteEventBusFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_event_bus::builders::DeleteEventBusFluentBuilder::set_name):<br>required: **true**<br><p>The name of the event bus to delete.</p><br>
     /// - On success, responds with [`DeleteEventBusOutput`](crate::operation::delete_event_bus::DeleteEventBusOutput)
     /// - On failure, responds with [`SdkError<DeleteEventBusError>`](crate::operation::delete_event_bus::DeleteEventBusError)
     pub fn delete_event_bus(&self) -> crate::operation::delete_event_bus::builders::DeleteEventBusFluentBuilder {

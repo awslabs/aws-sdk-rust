@@ -34,6 +34,7 @@ pub struct DeleteOriginAccessControlInputBuilder {
 }
 impl DeleteOriginAccessControlInputBuilder {
     /// <p>The unique identifier of the origin access control that you are deleting.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl DeleteOriginAccessControlInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_origin_access_control::DeleteOriginAccessControlInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_origin_access_control::DeleteOriginAccessControlInput {
             id: self.id,

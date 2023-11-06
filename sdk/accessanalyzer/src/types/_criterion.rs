@@ -15,16 +15,22 @@ pub struct Criterion {
 }
 impl Criterion {
     /// <p>An "equals" operator to match for the filter used to create the rule.</p>
-    pub fn eq(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.eq.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.eq.is_none()`.
+    pub fn eq(&self) -> &[::std::string::String] {
+        self.eq.as_deref().unwrap_or_default()
     }
     /// <p>A "not equals" operator to match for the filter used to create the rule.</p>
-    pub fn neq(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.neq.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.neq.is_none()`.
+    pub fn neq(&self) -> &[::std::string::String] {
+        self.neq.as_deref().unwrap_or_default()
     }
     /// <p>A "contains" operator to match for the filter used to create the rule.</p>
-    pub fn contains(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.contains.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.contains.is_none()`.
+    pub fn contains(&self) -> &[::std::string::String] {
+        self.contains.as_deref().unwrap_or_default()
     }
     /// <p>An "exists" operator to match for the filter used to create the rule. </p>
     pub fn exists(&self) -> ::std::option::Option<bool> {

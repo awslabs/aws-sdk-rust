@@ -16,8 +16,10 @@ impl TagCertificateAuthorityInput {
         self.certificate_authority_arn.as_deref()
     }
     /// <p>List of tags to be associated with the CA.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl TagCertificateAuthorityInput {
@@ -37,6 +39,7 @@ pub struct TagCertificateAuthorityInputBuilder {
 impl TagCertificateAuthorityInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form: </p>
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
+    /// This field is required.
     pub fn certificate_authority_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_authority_arn = ::std::option::Option::Some(input.into());
         self
@@ -77,7 +80,7 @@ impl TagCertificateAuthorityInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::tag_certificate_authority::TagCertificateAuthorityInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::tag_certificate_authority::TagCertificateAuthorityInput {
             certificate_authority_arn: self.certificate_authority_arn,

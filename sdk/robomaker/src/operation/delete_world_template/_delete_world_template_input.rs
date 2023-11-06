@@ -27,6 +27,7 @@ pub struct DeleteWorldTemplateInputBuilder {
 }
 impl DeleteWorldTemplateInputBuilder {
     /// <p>The Amazon Resource Name (arn) of the world template you want to delete.</p>
+    /// This field is required.
     pub fn template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteWorldTemplateInputBuilder {
     /// Consumes the builder and constructs a [`DeleteWorldTemplateInput`](crate::operation::delete_world_template::DeleteWorldTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_world_template::DeleteWorldTemplateInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_world_template::DeleteWorldTemplateInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_world_template::DeleteWorldTemplateInput { template: self.template })
     }

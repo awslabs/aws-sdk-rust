@@ -128,8 +128,10 @@ impl SyncDeploymentJobOutput {
         self.deployment_config.as_ref()
     }
     /// <p>Information about the deployment application configurations.</p>
-    pub fn deployment_application_configs(&self) -> ::std::option::Option<&[crate::types::DeploymentApplicationConfig]> {
-        self.deployment_application_configs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.deployment_application_configs.is_none()`.
+    pub fn deployment_application_configs(&self) -> &[crate::types::DeploymentApplicationConfig] {
+        self.deployment_application_configs.as_deref().unwrap_or_default()
     }
     /// <p>The failure reason if the job fails.</p>
     pub fn failure_reason(&self) -> ::std::option::Option<&str> {

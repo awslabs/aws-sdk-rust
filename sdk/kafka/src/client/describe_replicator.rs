@@ -3,13 +3,13 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeReplicator`](crate::operation::describe_replicator::builders::DescribeReplicatorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`replicator_arn(impl Into<String>)`](crate::operation::describe_replicator::builders::DescribeReplicatorFluentBuilder::replicator_arn) / [`set_replicator_arn(Option<String>)`](crate::operation::describe_replicator::builders::DescribeReplicatorFluentBuilder::set_replicator_arn): <p>The Amazon Resource Name (ARN) of the replicator to be described.</p>
+    ///   - [`replicator_arn(impl Into<String>)`](crate::operation::describe_replicator::builders::DescribeReplicatorFluentBuilder::replicator_arn) / [`set_replicator_arn(Option<String>)`](crate::operation::describe_replicator::builders::DescribeReplicatorFluentBuilder::set_replicator_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the replicator to be described.</p><br>
     /// - On success, responds with [`DescribeReplicatorOutput`](crate::operation::describe_replicator::DescribeReplicatorOutput) with field(s):
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_replicator::DescribeReplicatorOutput::creation_time): <p>The time when the replicator was created.</p>
     ///   - [`current_version(Option<String>)`](crate::operation::describe_replicator::DescribeReplicatorOutput::current_version): <p>The current version number of the replicator.</p>
     ///   - [`is_replicator_reference(Option<bool>)`](crate::operation::describe_replicator::DescribeReplicatorOutput::is_replicator_reference): <p>Whether this resource is a replicator reference.</p>
-    ///   - [`kafka_clusters(Option<Vec<KafkaClusterDescription>>)`](crate::operation::describe_replicator::DescribeReplicatorOutput::kafka_clusters): <p>Kafka Clusters used in setting up sources / targets for replication.</p>
-    ///   - [`replication_info_list(Option<Vec<ReplicationInfoDescription>>)`](crate::operation::describe_replicator::DescribeReplicatorOutput::replication_info_list): <p>A list of replication configurations, where each configuration targets a given source cluster to target cluster replication flow.</p>
+    ///   - [`kafka_clusters(Option<Vec::<KafkaClusterDescription>>)`](crate::operation::describe_replicator::DescribeReplicatorOutput::kafka_clusters): <p>Kafka Clusters used in setting up sources / targets for replication.</p>
+    ///   - [`replication_info_list(Option<Vec::<ReplicationInfoDescription>>)`](crate::operation::describe_replicator::DescribeReplicatorOutput::replication_info_list): <p>A list of replication configurations, where each configuration targets a given source cluster to target cluster replication flow.</p>
     ///   - [`replicator_arn(Option<String>)`](crate::operation::describe_replicator::DescribeReplicatorOutput::replicator_arn): <p>The Amazon Resource Name (ARN) of the replicator.</p>
     ///   - [`replicator_description(Option<String>)`](crate::operation::describe_replicator::DescribeReplicatorOutput::replicator_description): <p>The description of the replicator.</p>
     ///   - [`replicator_name(Option<String>)`](crate::operation::describe_replicator::DescribeReplicatorOutput::replicator_name): <p>The name of the replicator.</p>
@@ -17,7 +17,7 @@ impl super::Client {
     ///   - [`replicator_state(Option<ReplicatorState>)`](crate::operation::describe_replicator::DescribeReplicatorOutput::replicator_state): <p>State of the replicator.</p>
     ///   - [`service_execution_role_arn(Option<String>)`](crate::operation::describe_replicator::DescribeReplicatorOutput::service_execution_role_arn): <p>The Amazon Resource Name (ARN) of the IAM role used by the replicator to access resources in the customer's account (e.g source and target clusters)</p>
     ///   - [`state_info(Option<ReplicationStateInfo>)`](crate::operation::describe_replicator::DescribeReplicatorOutput::state_info): <p>Details about the state of the replicator.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_replicator::DescribeReplicatorOutput::tags): <p>List of tags attached to the Replicator.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_replicator::DescribeReplicatorOutput::tags): <p>List of tags attached to the Replicator.</p>
     /// - On failure, responds with [`SdkError<DescribeReplicatorError>`](crate::operation::describe_replicator::DescribeReplicatorError)
     pub fn describe_replicator(&self) -> crate::operation::describe_replicator::builders::DescribeReplicatorFluentBuilder {
         crate::operation::describe_replicator::builders::DescribeReplicatorFluentBuilder::new(self.handle.clone())

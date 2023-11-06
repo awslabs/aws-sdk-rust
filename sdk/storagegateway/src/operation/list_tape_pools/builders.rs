@@ -10,7 +10,7 @@ impl ListTapePoolsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_tape_pools::ListTapePoolsOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::list_tape_pools::ListTapePoolsError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -73,12 +73,15 @@ impl ListTapePoolsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_tape_pools::ListTapePoolsOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::list_tape_pools::ListTapePoolsError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::list_tape_pools::ListTapePools::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -87,20 +90,15 @@ impl ListTapePoolsFluentBuilder {
         crate::operation::list_tape_pools::ListTapePools::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::list_tape_pools::ListTapePoolsOutput,
-            crate::operation::list_tape_pools::ListTapePoolsError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::list_tape_pools::ListTapePoolsError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::list_tape_pools::ListTapePoolsOutput,
+        crate::operation::list_tape_pools::ListTapePoolsError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -113,27 +111,27 @@ impl ListTapePoolsFluentBuilder {
     }
     /// Create a paginator for this request
     ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_tape_pools::paginator::ListTapePoolsPaginator::send) which returns a `Stream`.
+    /// Paginators are used by calling [`send().await`](crate::operation::list_tape_pools::paginator::ListTapePoolsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
     pub fn into_paginator(self) -> crate::operation::list_tape_pools::paginator::ListTapePoolsPaginator {
         crate::operation::list_tape_pools::paginator::ListTapePoolsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `PoolARNs`.
     ///
-    /// To override the contents of this collection use [`set_pool_ar_ns`](Self::set_pool_ar_ns).
+    /// To override the contents of this collection use [`set_pool_arns`](Self::set_pool_arns).
     ///
     /// <p>The Amazon Resource Name (ARN) of each of the custom tape pools you want to list. If you don't specify a custom tape pool ARN, the response lists all custom tape pools. </p>
-    pub fn pool_ar_ns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.pool_ar_ns(input.into());
+    pub fn pool_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.pool_arns(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of each of the custom tape pools you want to list. If you don't specify a custom tape pool ARN, the response lists all custom tape pools. </p>
-    pub fn set_pool_ar_ns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inner = self.inner.set_pool_ar_ns(input);
+    pub fn set_pool_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_pool_arns(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of each of the custom tape pools you want to list. If you don't specify a custom tape pool ARN, the response lists all custom tape pools. </p>
-    pub fn get_pool_ar_ns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        self.inner.get_pool_ar_ns()
+    pub fn get_pool_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_pool_arns()
     }
     /// <p>A string that indicates the position at which to begin the returned list of tape pools.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

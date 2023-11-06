@@ -10,7 +10,7 @@ impl DescribeAggregateComplianceByConfigRulesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_aggregate_compliance_by_config_rules::DescribeAggregateComplianceByConfigRulesOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::describe_aggregate_compliance_by_config_rules::DescribeAggregateComplianceByConfigRulesError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -76,12 +76,15 @@ impl DescribeAggregateComplianceByConfigRulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_aggregate_compliance_by_config_rules::DescribeAggregateComplianceByConfigRulesOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::describe_aggregate_compliance_by_config_rules::DescribeAggregateComplianceByConfigRulesError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins =
             crate::operation::describe_aggregate_compliance_by_config_rules::DescribeAggregateComplianceByConfigRules::operation_runtime_plugins(
                 self.handle.runtime_plugins.clone(),
@@ -95,22 +98,15 @@ impl DescribeAggregateComplianceByConfigRulesFluentBuilder {
         .await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::describe_aggregate_compliance_by_config_rules::DescribeAggregateComplianceByConfigRulesOutput,
-            crate::operation::describe_aggregate_compliance_by_config_rules::DescribeAggregateComplianceByConfigRulesError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_aggregate_compliance_by_config_rules::DescribeAggregateComplianceByConfigRulesError,
-        >,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::describe_aggregate_compliance_by_config_rules::DescribeAggregateComplianceByConfigRulesOutput,
+        crate::operation::describe_aggregate_compliance_by_config_rules::DescribeAggregateComplianceByConfigRulesError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -123,7 +119,7 @@ impl DescribeAggregateComplianceByConfigRulesFluentBuilder {
     }
     /// Create a paginator for this request
     ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_aggregate_compliance_by_config_rules::paginator::DescribeAggregateComplianceByConfigRulesPaginator::send) which returns a `Stream`.
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_aggregate_compliance_by_config_rules::paginator::DescribeAggregateComplianceByConfigRulesPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
     pub fn into_paginator(
         self,
     ) -> crate::operation::describe_aggregate_compliance_by_config_rules::paginator::DescribeAggregateComplianceByConfigRulesPaginator {

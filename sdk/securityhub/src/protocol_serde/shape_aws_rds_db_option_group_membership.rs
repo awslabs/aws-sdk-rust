@@ -2,7 +2,7 @@
 pub fn ser_aws_rds_db_option_group_membership(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsRdsDbOptionGroupMembership,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.option_group_name {
         object.key("OptionGroupName").string(var_1.as_str());
     }

@@ -25,8 +25,10 @@ impl ImportsListItem {
         self.import_status.as_ref()
     }
     /// <p> The ARN of the destination event data store. </p>
-    pub fn destinations(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.destinations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destinations.is_none()`.
+    pub fn destinations(&self) -> &[::std::string::String] {
+        self.destinations.as_deref().unwrap_or_default()
     }
     /// <p> The timestamp of the import's creation. </p>
     pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

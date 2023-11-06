@@ -26,8 +26,10 @@ impl DescribeStorageSystemResourcesInput {
         self.resource_type.as_ref()
     }
     /// <p>Specifies the universally unique identifiers (UUIDs) of the storage system resources that you want information about. You can't use this parameter in combination with the <code>Filter</code> parameter.</p>
-    pub fn resource_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_ids.is_none()`.
+    pub fn resource_ids(&self) -> &[::std::string::String] {
+        self.resource_ids.as_deref().unwrap_or_default()
     }
     /// <p>Filters the storage system resources that you want returned. For example, this might be volumes associated with a specific storage virtual machine (SVM).</p>
     pub fn filter(
@@ -65,6 +67,7 @@ pub struct DescribeStorageSystemResourcesInputBuilder {
 }
 impl DescribeStorageSystemResourcesInputBuilder {
     /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that's collecting data from your on-premises storage system.</p>
+    /// This field is required.
     pub fn discovery_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.discovery_job_arn = ::std::option::Option::Some(input.into());
         self
@@ -79,6 +82,7 @@ impl DescribeStorageSystemResourcesInputBuilder {
         &self.discovery_job_arn
     }
     /// <p>Specifies what kind of storage system resources that you want information about.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: crate::types::DiscoveryResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
@@ -170,7 +174,7 @@ impl DescribeStorageSystemResourcesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_storage_system_resources::DescribeStorageSystemResourcesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_storage_system_resources::DescribeStorageSystemResourcesInput {
             discovery_job_arn: self.discovery_job_arn,

@@ -11,8 +11,10 @@ pub struct DescribeJobsOutput {
 }
 impl DescribeJobsOutput {
     /// <p>Request to describe Job log items.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::Job]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[crate::types::Job] {
+        self.items.as_deref().unwrap_or_default()
     }
     /// <p>Request to describe Job response by next token.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

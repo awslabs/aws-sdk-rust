@@ -34,6 +34,7 @@ pub struct AssociateFleetInputBuilder {
 }
 impl AssociateFleetInputBuilder {
     /// <p>The name of the fleet. </p>
+    /// This field is required.
     pub fn fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl AssociateFleetInputBuilder {
         &self.fleet_name
     }
     /// <p>The name of the stack.</p>
+    /// This field is required.
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl AssociateFleetInputBuilder {
     /// Consumes the builder and constructs a [`AssociateFleetInput`](crate::operation::associate_fleet::AssociateFleetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_fleet::AssociateFleetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::associate_fleet::AssociateFleetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::associate_fleet::AssociateFleetInput {
             fleet_name: self.fleet_name,
             stack_name: self.stack_name,

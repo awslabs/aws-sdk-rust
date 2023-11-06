@@ -3,17 +3,17 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateSite`](crate::operation::update_site::builders::UpdateSiteFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::update_site::builders::UpdateSiteFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::update_site::builders::UpdateSiteFluentBuilder::set_id): Site ARN.
-    ///   - [`name(impl Into<String>)`](crate::operation::update_site::builders::UpdateSiteFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_site::builders::UpdateSiteFluentBuilder::set_name): Human friendly name of the resource.
-    ///   - [`country_code(impl Into<String>)`](crate::operation::update_site::builders::UpdateSiteFluentBuilder::country_code) / [`set_country_code(Option<String>)`](crate::operation::update_site::builders::UpdateSiteFluentBuilder::set_country_code): A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
-    ///   - [`description(impl Into<String>)`](crate::operation::update_site::builders::UpdateSiteFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_site::builders::UpdateSiteFluentBuilder::set_description): A high-level description of the site.
+    ///   - [`id(impl Into<String>)`](crate::operation::update_site::builders::UpdateSiteFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::update_site::builders::UpdateSiteFluentBuilder::set_id):<br>required: **true**<br>Site ARN.<br>
+    ///   - [`name(impl Into<String>)`](crate::operation::update_site::builders::UpdateSiteFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_site::builders::UpdateSiteFluentBuilder::set_name):<br>required: **false**<br>Human friendly name of the resource.<br>
+    ///   - [`country_code(impl Into<String>)`](crate::operation::update_site::builders::UpdateSiteFluentBuilder::country_code) / [`set_country_code(Option<String>)`](crate::operation::update_site::builders::UpdateSiteFluentBuilder::set_country_code):<br>required: **false**<br>A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.<br>
+    ///   - [`description(impl Into<String>)`](crate::operation::update_site::builders::UpdateSiteFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_site::builders::UpdateSiteFluentBuilder::set_description):<br>required: **false**<br>A high-level description of the site.<br>
     /// - On success, responds with [`UpdateSiteOutput`](crate::operation::update_site::UpdateSiteOutput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::operation::update_site::UpdateSiteOutput::arn): Site ARN.
-    ///   - [`id(Option<String>)`](crate::operation::update_site::UpdateSiteOutput::id): Filters access by the site's identifier
-    ///   - [`name(Option<String>)`](crate::operation::update_site::UpdateSiteOutput::name): Human friendly name of the resource.
+    ///   - [`arn(String)`](crate::operation::update_site::UpdateSiteOutput::arn): Site ARN.
+    ///   - [`id(String)`](crate::operation::update_site::UpdateSiteOutput::id): Filters access by the site's identifier
+    ///   - [`name(String)`](crate::operation::update_site::UpdateSiteOutput::name): Human friendly name of the resource.
     ///   - [`country_code(Option<String>)`](crate::operation::update_site::UpdateSiteOutput::country_code): A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
     ///   - [`description(Option<String>)`](crate::operation::update_site::UpdateSiteOutput::description): A high-level description of the site.
-    ///   - [`updated_at(Option<DateTime>)`](crate::operation::update_site::UpdateSiteOutput::updated_at): Timestamp at which the resource was last updated.
+    ///   - [`updated_at(DateTime)`](crate::operation::update_site::UpdateSiteOutput::updated_at): Timestamp at which the resource was last updated.
     /// - On failure, responds with [`SdkError<UpdateSiteError>`](crate::operation::update_site::UpdateSiteError)
     pub fn update_site(&self) -> crate::operation::update_site::builders::UpdateSiteFluentBuilder {
         crate::operation::update_site::builders::UpdateSiteFluentBuilder::new(self.handle.clone())

@@ -55,6 +55,7 @@ pub struct CreateTemplateGroupAccessControlEntryInputBuilder {
 }
 impl CreateTemplateGroupAccessControlEntryInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>.</p>
+    /// This field is required.
     pub fn template_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_arn = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl CreateTemplateGroupAccessControlEntryInputBuilder {
         &self.template_arn
     }
     /// <p>Security identifier (SID) of the group object from Active Directory. The SID starts with "S-".</p>
+    /// This field is required.
     pub fn group_security_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_security_identifier = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +85,7 @@ impl CreateTemplateGroupAccessControlEntryInputBuilder {
         &self.group_security_identifier
     }
     /// <p>Name of the Active Directory group. This name does not need to match the group name in Active Directory.</p>
+    /// This field is required.
     pub fn group_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_display_name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +100,7 @@ impl CreateTemplateGroupAccessControlEntryInputBuilder {
         &self.group_display_name
     }
     /// <p> Allow or deny permissions for an Active Directory group to enroll or autoenroll certificates for a template.</p>
+    /// This field is required.
     pub fn access_rights(mut self, input: crate::types::AccessRights) -> Self {
         self.access_rights = ::std::option::Option::Some(input);
         self
@@ -129,7 +133,7 @@ impl CreateTemplateGroupAccessControlEntryInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_template_group_access_control_entry::CreateTemplateGroupAccessControlEntryInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_template_group_access_control_entry::CreateTemplateGroupAccessControlEntryInput {

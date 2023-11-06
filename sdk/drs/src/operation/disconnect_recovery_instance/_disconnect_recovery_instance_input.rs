@@ -27,6 +27,7 @@ pub struct DisconnectRecoveryInstanceInputBuilder {
 }
 impl DisconnectRecoveryInstanceInputBuilder {
     /// <p>The ID of the Recovery Instance to disconnect.</p>
+    /// This field is required.
     pub fn recovery_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recovery_instance_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DisconnectRecoveryInstanceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disconnect_recovery_instance::DisconnectRecoveryInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disconnect_recovery_instance::DisconnectRecoveryInstanceInput {
             recovery_instance_id: self.recovery_instance_id,

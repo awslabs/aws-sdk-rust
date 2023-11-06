@@ -5,18 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SummarizedAttackVector {
     /// <p>The attack type, for example, SNMP reflection or SYN flood.</p>
-    pub vector_type: ::std::option::Option<::std::string::String>,
+    pub vector_type: ::std::string::String,
     /// <p>The list of counters that describe the details of the attack.</p>
     pub vector_counters: ::std::option::Option<::std::vec::Vec<crate::types::SummarizedCounter>>,
 }
 impl SummarizedAttackVector {
     /// <p>The attack type, for example, SNMP reflection or SYN flood.</p>
-    pub fn vector_type(&self) -> ::std::option::Option<&str> {
-        self.vector_type.as_deref()
+    pub fn vector_type(&self) -> &str {
+        use std::ops::Deref;
+        self.vector_type.deref()
     }
     /// <p>The list of counters that describe the details of the attack.</p>
-    pub fn vector_counters(&self) -> ::std::option::Option<&[crate::types::SummarizedCounter]> {
-        self.vector_counters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vector_counters.is_none()`.
+    pub fn vector_counters(&self) -> &[crate::types::SummarizedCounter] {
+        self.vector_counters.as_deref().unwrap_or_default()
     }
 }
 impl SummarizedAttackVector {
@@ -35,6 +38,7 @@ pub struct SummarizedAttackVectorBuilder {
 }
 impl SummarizedAttackVectorBuilder {
     /// <p>The attack type, for example, SNMP reflection or SYN flood.</p>
+    /// This field is required.
     pub fn vector_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vector_type = ::std::option::Option::Some(input.into());
         self
@@ -69,10 +73,17 @@ impl SummarizedAttackVectorBuilder {
         &self.vector_counters
     }
     /// Consumes the builder and constructs a [`SummarizedAttackVector`](crate::types::SummarizedAttackVector).
-    pub fn build(self) -> crate::types::SummarizedAttackVector {
-        crate::types::SummarizedAttackVector {
-            vector_type: self.vector_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`vector_type`](crate::types::builders::SummarizedAttackVectorBuilder::vector_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::SummarizedAttackVector, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SummarizedAttackVector {
+            vector_type: self.vector_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "vector_type",
+                    "vector_type was not specified but it is required when building SummarizedAttackVector",
+                )
+            })?,
             vector_counters: self.vector_counters,
-        }
+        })
     }
 }

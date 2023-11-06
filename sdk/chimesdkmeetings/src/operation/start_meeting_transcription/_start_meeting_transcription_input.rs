@@ -34,6 +34,7 @@ pub struct StartMeetingTranscriptionInputBuilder {
 }
 impl StartMeetingTranscriptionInputBuilder {
     /// <p>The unique ID of the meeting being transcribed.</p>
+    /// This field is required.
     pub fn meeting_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.meeting_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl StartMeetingTranscriptionInputBuilder {
         &self.meeting_id
     }
     /// <p>The configuration for the current transcription operation. Must contain <code>EngineTranscribeSettings</code> or <code>EngineTranscribeMedicalSettings</code>.</p>
+    /// This field is required.
     pub fn transcription_configuration(mut self, input: crate::types::TranscriptionConfiguration) -> Self {
         self.transcription_configuration = ::std::option::Option::Some(input);
         self
@@ -66,7 +68,7 @@ impl StartMeetingTranscriptionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_meeting_transcription::StartMeetingTranscriptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_meeting_transcription::StartMeetingTranscriptionInput {
             meeting_id: self.meeting_id,

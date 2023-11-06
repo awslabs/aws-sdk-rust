@@ -85,8 +85,10 @@ impl ListResiliencyPoliciesInputBuilder {
     /// Consumes the builder and constructs a [`ListResiliencyPoliciesInput`](crate::operation::list_resiliency_policies::ListResiliencyPoliciesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_resiliency_policies::ListResiliencyPoliciesInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::list_resiliency_policies::ListResiliencyPoliciesInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::list_resiliency_policies::ListResiliencyPoliciesInput {
             policy_name: self.policy_name,
             next_token: self.next_token,

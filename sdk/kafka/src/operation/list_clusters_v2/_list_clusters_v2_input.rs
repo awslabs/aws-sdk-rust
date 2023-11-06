@@ -106,7 +106,7 @@ impl ListClustersV2InputBuilder {
     /// Consumes the builder and constructs a [`ListClustersV2Input`](crate::operation::list_clusters_v2::ListClustersV2Input).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_clusters_v2::ListClustersV2Input, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_clusters_v2::ListClustersV2Input, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_clusters_v2::ListClustersV2Input {
             cluster_name_filter: self.cluster_name_filter,
             cluster_type_filter: self.cluster_type_filter,

@@ -8,8 +8,10 @@ pub struct BatchGetMembershipDatasourcesInput {
 }
 impl BatchGetMembershipDatasourcesInput {
     /// <p>The ARN of the behavior graph.</p>
-    pub fn graph_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.graph_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.graph_arns.is_none()`.
+    pub fn graph_arns(&self) -> &[::std::string::String] {
+        self.graph_arns.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetMembershipDatasourcesInput {
@@ -51,7 +53,7 @@ impl BatchGetMembershipDatasourcesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_membership_datasources::BatchGetMembershipDatasourcesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_get_membership_datasources::BatchGetMembershipDatasourcesInput {
             graph_arns: self.graph_arns,

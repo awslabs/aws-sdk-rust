@@ -34,8 +34,8 @@ pub fn de_put_lifecycle_event_hook_execution_status_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "DeploymentIdRequiredException" => crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatusError::DeploymentIdRequiredException({
@@ -50,8 +50,8 @@ pub fn de_put_lifecycle_event_hook_execution_status_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidDeploymentIdException" => crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatusError::InvalidDeploymentIdException({
@@ -66,8 +66,8 @@ pub fn de_put_lifecycle_event_hook_execution_status_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidLifecycleEventHookExecutionIdException" => crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatusError::InvalidLifecycleEventHookExecutionIdException({
@@ -82,8 +82,8 @@ pub fn de_put_lifecycle_event_hook_execution_status_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidLifecycleEventHookExecutionStatusException" => crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatusError::InvalidLifecycleEventHookExecutionStatusException({
@@ -98,8 +98,8 @@ pub fn de_put_lifecycle_event_hook_execution_status_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "LifecycleEventAlreadyCompletedException" => crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatusError::LifecycleEventAlreadyCompletedException({
@@ -114,8 +114,8 @@ pub fn de_put_lifecycle_event_hook_execution_status_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "UnsupportedActionForDeploymentTypeException" => crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatusError::UnsupportedActionForDeploymentTypeException({
@@ -130,8 +130,8 @@ pub fn de_put_lifecycle_event_hook_execution_status_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatusError::generic(generic)
@@ -163,7 +163,7 @@ pub fn de_put_lifecycle_event_hook_execution_status_http_response(
 
 pub fn ser_put_lifecycle_event_hook_execution_status_input(
     input: &crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatusInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_put_lifecycle_event_hook_execution_status_input::ser_put_lifecycle_event_hook_execution_status_input(
@@ -171,7 +171,7 @@ pub fn ser_put_lifecycle_event_hook_execution_status_input(
         input,
     )?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_put_lifecycle_event_hook_execution_status(

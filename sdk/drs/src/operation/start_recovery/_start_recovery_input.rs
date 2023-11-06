@@ -12,8 +12,10 @@ pub struct StartRecoveryInput {
 }
 impl StartRecoveryInput {
     /// <p>The Source Servers that we want to start a Recovery Job for.</p>
-    pub fn source_servers(&self) -> ::std::option::Option<&[crate::types::StartRecoveryRequestSourceServer]> {
-        self.source_servers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_servers.is_none()`.
+    pub fn source_servers(&self) -> &[crate::types::StartRecoveryRequestSourceServer] {
+        self.source_servers.as_deref().unwrap_or_default()
     }
     /// <p>Whether this Source Server Recovery operation is a drill or not.</p>
     pub fn is_drill(&self) -> ::std::option::Option<bool> {
@@ -106,7 +108,7 @@ impl StartRecoveryInputBuilder {
     /// Consumes the builder and constructs a [`StartRecoveryInput`](crate::operation::start_recovery::StartRecoveryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_recovery::StartRecoveryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_recovery::StartRecoveryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_recovery::StartRecoveryInput {
             source_servers: self.source_servers,
             is_drill: self.is_drill,

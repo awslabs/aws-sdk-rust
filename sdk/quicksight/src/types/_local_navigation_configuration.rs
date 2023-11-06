@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LocalNavigationConfiguration {
     /// <p>The sheet that is targeted for navigation in the same analysis.</p>
-    pub target_sheet_id: ::std::option::Option<::std::string::String>,
+    pub target_sheet_id: ::std::string::String,
 }
 impl LocalNavigationConfiguration {
     /// <p>The sheet that is targeted for navigation in the same analysis.</p>
-    pub fn target_sheet_id(&self) -> ::std::option::Option<&str> {
-        self.target_sheet_id.as_deref()
+    pub fn target_sheet_id(&self) -> &str {
+        use std::ops::Deref;
+        self.target_sheet_id.deref()
     }
 }
 impl LocalNavigationConfiguration {
@@ -28,6 +29,7 @@ pub struct LocalNavigationConfigurationBuilder {
 }
 impl LocalNavigationConfigurationBuilder {
     /// <p>The sheet that is targeted for navigation in the same analysis.</p>
+    /// This field is required.
     pub fn target_sheet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_sheet_id = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl LocalNavigationConfigurationBuilder {
         &self.target_sheet_id
     }
     /// Consumes the builder and constructs a [`LocalNavigationConfiguration`](crate::types::LocalNavigationConfiguration).
-    pub fn build(self) -> crate::types::LocalNavigationConfiguration {
-        crate::types::LocalNavigationConfiguration {
-            target_sheet_id: self.target_sheet_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`target_sheet_id`](crate::types::builders::LocalNavigationConfigurationBuilder::target_sheet_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::LocalNavigationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::LocalNavigationConfiguration {
+            target_sheet_id: self.target_sheet_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "target_sheet_id",
+                    "target_sheet_id was not specified but it is required when building LocalNavigationConfiguration",
+                )
+            })?,
+        })
     }
 }

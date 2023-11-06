@@ -34,6 +34,7 @@ pub struct UpdateBaiduChannelInputBuilder {
 }
 impl UpdateBaiduChannelInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateBaiduChannelInputBuilder {
         &self.application_id
     }
     /// <p>Specifies the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
+    /// This field is required.
     pub fn baidu_channel_request(mut self, input: crate::types::BaiduChannelRequest) -> Self {
         self.baidu_channel_request = ::std::option::Option::Some(input);
         self
@@ -64,7 +66,8 @@ impl UpdateBaiduChannelInputBuilder {
     /// Consumes the builder and constructs a [`UpdateBaiduChannelInput`](crate::operation::update_baidu_channel::UpdateBaiduChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_baidu_channel::UpdateBaiduChannelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_baidu_channel::UpdateBaiduChannelInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_baidu_channel::UpdateBaiduChannelInput {
             application_id: self.application_id,
             baidu_channel_request: self.baidu_channel_request,

@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EdiPartyName {
     /// <p>Specifies the party name.</p>
-    pub party_name: ::std::option::Option<::std::string::String>,
+    pub party_name: ::std::string::String,
     /// <p>Specifies the name assigner.</p>
     pub name_assigner: ::std::option::Option<::std::string::String>,
 }
 impl EdiPartyName {
     /// <p>Specifies the party name.</p>
-    pub fn party_name(&self) -> ::std::option::Option<&str> {
-        self.party_name.as_deref()
+    pub fn party_name(&self) -> &str {
+        use std::ops::Deref;
+        self.party_name.deref()
     }
     /// <p>Specifies the name assigner.</p>
     pub fn name_assigner(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct EdiPartyNameBuilder {
 }
 impl EdiPartyNameBuilder {
     /// <p>Specifies the party name.</p>
+    /// This field is required.
     pub fn party_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.party_name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl EdiPartyNameBuilder {
         &self.name_assigner
     }
     /// Consumes the builder and constructs a [`EdiPartyName`](crate::types::EdiPartyName).
-    pub fn build(self) -> crate::types::EdiPartyName {
-        crate::types::EdiPartyName {
-            party_name: self.party_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`party_name`](crate::types::builders::EdiPartyNameBuilder::party_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::EdiPartyName, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EdiPartyName {
+            party_name: self.party_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "party_name",
+                    "party_name was not specified but it is required when building EdiPartyName",
+                )
+            })?,
             name_assigner: self.name_assigner,
-        }
+        })
     }
 }

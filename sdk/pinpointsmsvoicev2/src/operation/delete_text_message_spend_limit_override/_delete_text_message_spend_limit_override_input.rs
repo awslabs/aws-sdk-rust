@@ -20,7 +20,7 @@ impl DeleteTextMessageSpendLimitOverrideInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_text_message_spend_limit_override::DeleteTextMessageSpendLimitOverrideInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_text_message_spend_limit_override::DeleteTextMessageSpendLimitOverrideInput {})
     }

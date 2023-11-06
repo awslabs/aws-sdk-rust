@@ -24,8 +24,10 @@ impl ListServerNeighborsInput {
         self.port_information_needed
     }
     /// <p>List of configuration IDs to test for one-hop-away.</p>
-    pub fn neighbor_configuration_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.neighbor_configuration_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.neighbor_configuration_ids.is_none()`.
+    pub fn neighbor_configuration_ids(&self) -> &[::std::string::String] {
+        self.neighbor_configuration_ids.as_deref().unwrap_or_default()
     }
     /// <p>Maximum number of results to return in a single page of output.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -55,6 +57,7 @@ pub struct ListServerNeighborsInputBuilder {
 }
 impl ListServerNeighborsInputBuilder {
     /// <p>Configuration ID of the server for which neighbors are being listed.</p>
+    /// This field is required.
     pub fn configuration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_id = ::std::option::Option::Some(input.into());
         self
@@ -133,7 +136,7 @@ impl ListServerNeighborsInputBuilder {
     /// Consumes the builder and constructs a [`ListServerNeighborsInput`](crate::operation::list_server_neighbors::ListServerNeighborsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_server_neighbors::ListServerNeighborsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_server_neighbors::ListServerNeighborsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_server_neighbors::ListServerNeighborsInput {
             configuration_id: self.configuration_id,

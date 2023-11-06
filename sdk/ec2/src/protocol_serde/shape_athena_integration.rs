@@ -3,7 +3,7 @@
 pub fn ser_athena_integration(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::AthenaIntegration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("IntegrationResultS3DestinationArn");
     if let Some(var_2) = &input.integration_result_s3_destination_arn {

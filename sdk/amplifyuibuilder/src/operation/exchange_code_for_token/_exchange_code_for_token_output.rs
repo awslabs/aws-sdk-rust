@@ -4,25 +4,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ExchangeCodeForTokenOutput {
     /// <p>The access token.</p>
-    pub access_token: ::std::option::Option<::std::string::String>,
+    pub access_token: ::std::string::String,
     /// <p>The date and time when the new access token expires.</p>
-    pub expires_in: ::std::option::Option<i32>,
+    pub expires_in: i32,
     /// <p>The token to use to refresh a previously issued access token that might have expired.</p>
-    pub refresh_token: ::std::option::Option<::std::string::String>,
+    pub refresh_token: ::std::string::String,
     _request_id: Option<String>,
 }
 impl ExchangeCodeForTokenOutput {
     /// <p>The access token.</p>
-    pub fn access_token(&self) -> ::std::option::Option<&str> {
-        self.access_token.as_deref()
+    pub fn access_token(&self) -> &str {
+        use std::ops::Deref;
+        self.access_token.deref()
     }
     /// <p>The date and time when the new access token expires.</p>
-    pub fn expires_in(&self) -> ::std::option::Option<i32> {
+    pub fn expires_in(&self) -> i32 {
         self.expires_in
     }
     /// <p>The token to use to refresh a previously issued access token that might have expired.</p>
-    pub fn refresh_token(&self) -> ::std::option::Option<&str> {
-        self.refresh_token.as_deref()
+    pub fn refresh_token(&self) -> &str {
+        use std::ops::Deref;
+        self.refresh_token.deref()
     }
 }
 impl ::std::fmt::Debug for ExchangeCodeForTokenOutput {
@@ -58,6 +60,7 @@ pub struct ExchangeCodeForTokenOutputBuilder {
 }
 impl ExchangeCodeForTokenOutputBuilder {
     /// <p>The access token.</p>
+    /// This field is required.
     pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_token = ::std::option::Option::Some(input.into());
         self
@@ -72,6 +75,7 @@ impl ExchangeCodeForTokenOutputBuilder {
         &self.access_token
     }
     /// <p>The date and time when the new access token expires.</p>
+    /// This field is required.
     pub fn expires_in(mut self, input: i32) -> Self {
         self.expires_in = ::std::option::Option::Some(input);
         self
@@ -86,6 +90,7 @@ impl ExchangeCodeForTokenOutputBuilder {
         &self.expires_in
     }
     /// <p>The token to use to refresh a previously issued access token that might have expired.</p>
+    /// This field is required.
     pub fn refresh_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.refresh_token = ::std::option::Option::Some(input.into());
         self
@@ -109,13 +114,35 @@ impl ExchangeCodeForTokenOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ExchangeCodeForTokenOutput`](crate::operation::exchange_code_for_token::ExchangeCodeForTokenOutput).
-    pub fn build(self) -> crate::operation::exchange_code_for_token::ExchangeCodeForTokenOutput {
-        crate::operation::exchange_code_for_token::ExchangeCodeForTokenOutput {
-            access_token: self.access_token,
-            expires_in: self.expires_in,
-            refresh_token: self.refresh_token,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`access_token`](crate::operation::exchange_code_for_token::builders::ExchangeCodeForTokenOutputBuilder::access_token)
+    /// - [`expires_in`](crate::operation::exchange_code_for_token::builders::ExchangeCodeForTokenOutputBuilder::expires_in)
+    /// - [`refresh_token`](crate::operation::exchange_code_for_token::builders::ExchangeCodeForTokenOutputBuilder::refresh_token)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::exchange_code_for_token::ExchangeCodeForTokenOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::exchange_code_for_token::ExchangeCodeForTokenOutput {
+            access_token: self.access_token.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "access_token",
+                    "access_token was not specified but it is required when building ExchangeCodeForTokenOutput",
+                )
+            })?,
+            expires_in: self.expires_in.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "expires_in",
+                    "expires_in was not specified but it is required when building ExchangeCodeForTokenOutput",
+                )
+            })?,
+            refresh_token: self.refresh_token.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "refresh_token",
+                    "refresh_token was not specified but it is required when building ExchangeCodeForTokenOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for ExchangeCodeForTokenOutputBuilder {

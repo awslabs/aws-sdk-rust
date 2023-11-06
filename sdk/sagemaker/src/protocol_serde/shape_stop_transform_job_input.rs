@@ -2,7 +2,7 @@
 pub fn ser_stop_transform_job_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::stop_transform_job::StopTransformJobInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.transform_job_name {
         object.key("TransformJobName").string(var_1.as_str());
     }

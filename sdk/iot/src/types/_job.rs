@@ -96,8 +96,10 @@ impl Job {
         self.comment.as_deref()
     }
     /// <p>A list of IoT things and thing groups to which the job should be sent.</p>
-    pub fn targets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
+    pub fn targets(&self) -> &[::std::string::String] {
+        self.targets.as_deref().unwrap_or_default()
     }
     /// <p>A short text description of the job.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -166,13 +168,17 @@ impl Job {
         self.scheduling_config.as_ref()
     }
     /// <p>Displays the next seven maintenance window occurrences and their start times.</p>
-    pub fn scheduled_job_rollouts(&self) -> ::std::option::Option<&[crate::types::ScheduledJobRollout]> {
-        self.scheduled_job_rollouts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scheduled_job_rollouts.is_none()`.
+    pub fn scheduled_job_rollouts(&self) -> &[crate::types::ScheduledJobRollout] {
+        self.scheduled_job_rollouts.as_deref().unwrap_or_default()
     }
     /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p>
     /// <p> <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.</p>
-    pub fn destination_package_versions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.destination_package_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destination_package_versions.is_none()`.
+    pub fn destination_package_versions(&self) -> &[::std::string::String] {
+        self.destination_package_versions.as_deref().unwrap_or_default()
     }
 }
 impl Job {

@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutRuleGroupsNamespaceOutput {
     /// The rule groups namespace name.
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// The Amazon Resource Name (ARN) of this rule groups namespace.
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// The status of rule groups namespace.
     pub status: ::std::option::Option<crate::types::RuleGroupsNamespaceStatus>,
     /// The tags of this rule groups namespace.
@@ -16,12 +16,14 @@ pub struct PutRuleGroupsNamespaceOutput {
 }
 impl PutRuleGroupsNamespaceOutput {
     /// The rule groups namespace name.
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// The Amazon Resource Name (ARN) of this rule groups namespace.
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// The status of rule groups namespace.
     pub fn status(&self) -> ::std::option::Option<&crate::types::RuleGroupsNamespaceStatus> {
@@ -56,6 +58,7 @@ pub struct PutRuleGroupsNamespaceOutputBuilder {
 }
 impl PutRuleGroupsNamespaceOutputBuilder {
     /// The rule groups namespace name.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +73,7 @@ impl PutRuleGroupsNamespaceOutputBuilder {
         &self.name
     }
     /// The Amazon Resource Name (ARN) of this rule groups namespace.
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +88,7 @@ impl PutRuleGroupsNamespaceOutputBuilder {
         &self.arn
     }
     /// The status of rule groups namespace.
+    /// This field is required.
     pub fn status(mut self, input: crate::types::RuleGroupsNamespaceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -127,13 +132,31 @@ impl PutRuleGroupsNamespaceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutRuleGroupsNamespaceOutput`](crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceOutput).
-    pub fn build(self) -> crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceOutput {
-        crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceOutput {
-            name: self.name,
-            arn: self.arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::put_rule_groups_namespace::builders::PutRuleGroupsNamespaceOutputBuilder::name)
+    /// - [`arn`](crate::operation::put_rule_groups_namespace::builders::PutRuleGroupsNamespaceOutputBuilder::arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceOutput {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building PutRuleGroupsNamespaceOutput",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building PutRuleGroupsNamespaceOutput",
+                )
+            })?,
             status: self.status,
             tags: self.tags,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -34,6 +34,7 @@ pub struct GetModelTemplateInputBuilder {
 }
 impl GetModelTemplateInputBuilder {
     /// <p>The API identifier.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetModelTemplateInputBuilder {
         &self.api_id
     }
     /// <p>The model ID.</p>
+    /// This field is required.
     pub fn model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl GetModelTemplateInputBuilder {
     /// Consumes the builder and constructs a [`GetModelTemplateInput`](crate::operation::get_model_template::GetModelTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_model_template::GetModelTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_model_template::GetModelTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_model_template::GetModelTemplateInput {
             api_id: self.api_id,
             model_id: self.model_id,

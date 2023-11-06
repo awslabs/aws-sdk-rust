@@ -10,7 +10,7 @@ impl SuspendContactRecordingInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::suspend_contact_recording::SuspendContactRecordingOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::suspend_contact_recording::SuspendContactRecordingError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -22,7 +22,7 @@ impl SuspendContactRecordingInputBuilder {
 }
 /// Fluent builder constructing a request to `SuspendContactRecording`.
 ///
-/// <p>When a contact is being recorded, this API suspends recording the call or screen. For example, you might suspend the call or screen recording while collecting sensitive information, such as a credit card number. Then use ResumeContactRecording to restart recording.</p>
+/// <p>When a contact is being recorded, this API suspends recording whatever is selected in the flow configuration: call, screen, or both. If only call recording or only screen recording is enabled, then it would be suspended. For example, you might suspend the screen recording while collecting sensitive information, such as a credit card number. Then use ResumeContactRecording to restart recording the screen.</p>
 /// <p>The period of time that the recording is suspended is filled with silence in the final recording.</p>
 /// <p>Voice and screen recordings are supported.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -74,12 +74,15 @@ impl SuspendContactRecordingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::suspend_contact_recording::SuspendContactRecordingOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::suspend_contact_recording::SuspendContactRecordingError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::suspend_contact_recording::SuspendContactRecording::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -88,20 +91,15 @@ impl SuspendContactRecordingFluentBuilder {
         crate::operation::suspend_contact_recording::SuspendContactRecording::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::suspend_contact_recording::SuspendContactRecordingOutput,
-            crate::operation::suspend_contact_recording::SuspendContactRecordingError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::suspend_contact_recording::SuspendContactRecordingError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::suspend_contact_recording::SuspendContactRecordingOutput,
+        crate::operation::suspend_contact_recording::SuspendContactRecordingError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

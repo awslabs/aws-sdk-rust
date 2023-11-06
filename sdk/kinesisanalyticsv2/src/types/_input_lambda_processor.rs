@@ -7,14 +7,15 @@ pub struct InputLambdaProcessor {
     /// <p>The ARN of the Amazon Lambda function that operates on records in the stream.</p> <note>
     /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a> </p>
     /// </note>
-    pub resource_arn: ::std::option::Option<::std::string::String>,
+    pub resource_arn: ::std::string::String,
 }
 impl InputLambdaProcessor {
     /// <p>The ARN of the Amazon Lambda function that operates on records in the stream.</p> <note>
     /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a> </p>
     /// </note>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
-        self.resource_arn.as_deref()
+    pub fn resource_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_arn.deref()
     }
 }
 impl InputLambdaProcessor {
@@ -34,6 +35,7 @@ impl InputLambdaProcessorBuilder {
     /// <p>The ARN of the Amazon Lambda function that operates on records in the stream.</p> <note>
     /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a> </p>
     /// </note>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -52,9 +54,16 @@ impl InputLambdaProcessorBuilder {
         &self.resource_arn
     }
     /// Consumes the builder and constructs a [`InputLambdaProcessor`](crate::types::InputLambdaProcessor).
-    pub fn build(self) -> crate::types::InputLambdaProcessor {
-        crate::types::InputLambdaProcessor {
-            resource_arn: self.resource_arn,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource_arn`](crate::types::builders::InputLambdaProcessorBuilder::resource_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::InputLambdaProcessor, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::InputLambdaProcessor {
+            resource_arn: self.resource_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "resource_arn",
+                    "resource_arn was not specified but it is required when building InputLambdaProcessor",
+                )
+            })?,
+        })
     }
 }

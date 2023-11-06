@@ -27,6 +27,7 @@ pub struct DescribePipelineExecutionInputBuilder {
 }
 impl DescribePipelineExecutionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
+    /// This field is required.
     pub fn pipeline_execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_execution_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribePipelineExecutionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_pipeline_execution::DescribePipelineExecutionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_pipeline_execution::DescribePipelineExecutionInput {
             pipeline_execution_arn: self.pipeline_execution_arn,

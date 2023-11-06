@@ -35,12 +35,16 @@ impl ListOperationsInput {
         self.max_items
     }
     /// <p> The status of the operations. </p>
-    pub fn status(&self) -> ::std::option::Option<&[crate::types::OperationStatus]> {
-        self.status.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.status.is_none()`.
+    pub fn status(&self) -> &[crate::types::OperationStatus] {
+        self.status.as_deref().unwrap_or_default()
     }
     /// <p> An arrays of the domains operation types. </p>
-    pub fn r#type(&self) -> ::std::option::Option<&[crate::types::OperationType]> {
-        self.r#type.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.r#type.is_none()`.
+    pub fn r#type(&self) -> &[crate::types::OperationType] {
+        self.r#type.as_deref().unwrap_or_default()
     }
     /// <p> The sort type for returned values. </p>
     pub fn sort_by(&self) -> ::std::option::Option<&crate::types::ListOperationsSortAttributeName> {
@@ -187,7 +191,7 @@ impl ListOperationsInputBuilder {
     /// Consumes the builder and constructs a [`ListOperationsInput`](crate::operation::list_operations::ListOperationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_operations::ListOperationsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_operations::ListOperationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_operations::ListOperationsInput {
             submitted_since: self.submitted_since,
             marker: self.marker,

@@ -2,7 +2,7 @@
 pub fn ser_describe_event_aggregates_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_event_aggregates::DescribeEventAggregatesInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.filter {
         #[allow(unused_mut)]
         let mut object_2 = object.key("filter").start_object();

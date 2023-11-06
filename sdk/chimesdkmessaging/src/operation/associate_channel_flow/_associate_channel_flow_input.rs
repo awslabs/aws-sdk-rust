@@ -41,6 +41,7 @@ pub struct AssociateChannelFlowInputBuilder {
 }
 impl AssociateChannelFlowInputBuilder {
     /// <p>The ARN of the channel.</p>
+    /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl AssociateChannelFlowInputBuilder {
         &self.channel_arn
     }
     /// <p>The ARN of the channel flow.</p>
+    /// This field is required.
     pub fn channel_flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_flow_arn = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl AssociateChannelFlowInputBuilder {
         &self.channel_flow_arn
     }
     /// <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
+    /// This field is required.
     pub fn chime_bearer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.chime_bearer = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +88,7 @@ impl AssociateChannelFlowInputBuilder {
     /// Consumes the builder and constructs a [`AssociateChannelFlowInput`](crate::operation::associate_channel_flow::AssociateChannelFlowInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_channel_flow::AssociateChannelFlowInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::associate_channel_flow::AssociateChannelFlowInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::associate_channel_flow::AssociateChannelFlowInput {
             channel_arn: self.channel_arn,

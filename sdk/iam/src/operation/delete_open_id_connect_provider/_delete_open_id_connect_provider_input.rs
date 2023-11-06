@@ -27,6 +27,7 @@ pub struct DeleteOpenIdConnectProviderInputBuilder {
 }
 impl DeleteOpenIdConnectProviderInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect provider resource object to delete. You can get a list of OpenID Connect provider resource ARNs by using the <code>ListOpenIDConnectProviders</code> operation.</p>
+    /// This field is required.
     pub fn open_id_connect_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.open_id_connect_provider_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteOpenIdConnectProviderInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_open_id_connect_provider::DeleteOpenIdConnectProviderInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_open_id_connect_provider::DeleteOpenIdConnectProviderInput {
             open_id_connect_provider_arn: self.open_id_connect_provider_arn,

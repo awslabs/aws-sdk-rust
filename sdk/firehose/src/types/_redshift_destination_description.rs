@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RedshiftDestinationDescription {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
     /// <p>The database connection string.</p>
-    pub cluster_jdbcurl: ::std::option::Option<::std::string::String>,
+    pub cluster_jdbcurl: ::std::string::String,
     /// <p>The <code>COPY</code> command.</p>
     pub copy_command: ::std::option::Option<crate::types::CopyCommand>,
     /// <p>The name of the user.</p>
-    pub username: ::std::option::Option<::std::string::String>,
+    pub username: ::std::string::String,
     /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
     pub retry_options: ::std::option::Option<crate::types::RedshiftRetryOptions>,
     /// <p>The Amazon S3 destination.</p>
@@ -27,20 +27,23 @@ pub struct RedshiftDestinationDescription {
 }
 impl RedshiftDestinationDescription {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
     /// <p>The database connection string.</p>
-    pub fn cluster_jdbcurl(&self) -> ::std::option::Option<&str> {
-        self.cluster_jdbcurl.as_deref()
+    pub fn cluster_jdbcurl(&self) -> &str {
+        use std::ops::Deref;
+        self.cluster_jdbcurl.deref()
     }
     /// <p>The <code>COPY</code> command.</p>
     pub fn copy_command(&self) -> ::std::option::Option<&crate::types::CopyCommand> {
         self.copy_command.as_ref()
     }
     /// <p>The name of the user.</p>
-    pub fn username(&self) -> ::std::option::Option<&str> {
-        self.username.as_deref()
+    pub fn username(&self) -> &str {
+        use std::ops::Deref;
+        self.username.deref()
     }
     /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
     pub fn retry_options(&self) -> ::std::option::Option<&crate::types::RedshiftRetryOptions> {
@@ -107,6 +110,7 @@ pub struct RedshiftDestinationDescriptionBuilder {
 }
 impl RedshiftDestinationDescriptionBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -121,6 +125,7 @@ impl RedshiftDestinationDescriptionBuilder {
         &self.role_arn
     }
     /// <p>The database connection string.</p>
+    /// This field is required.
     pub fn cluster_jdbcurl(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_jdbcurl = ::std::option::Option::Some(input.into());
         self
@@ -135,6 +140,7 @@ impl RedshiftDestinationDescriptionBuilder {
         &self.cluster_jdbcurl
     }
     /// <p>The <code>COPY</code> command.</p>
+    /// This field is required.
     pub fn copy_command(mut self, input: crate::types::CopyCommand) -> Self {
         self.copy_command = ::std::option::Option::Some(input);
         self
@@ -149,6 +155,7 @@ impl RedshiftDestinationDescriptionBuilder {
         &self.copy_command
     }
     /// <p>The name of the user.</p>
+    /// This field is required.
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self
@@ -177,6 +184,7 @@ impl RedshiftDestinationDescriptionBuilder {
         &self.retry_options
     }
     /// <p>The Amazon S3 destination.</p>
+    /// This field is required.
     pub fn s3_destination_description(mut self, input: crate::types::S3DestinationDescription) -> Self {
         self.s3_destination_description = ::std::option::Option::Some(input);
         self
@@ -247,19 +255,38 @@ impl RedshiftDestinationDescriptionBuilder {
         &self.cloud_watch_logging_options
     }
     /// Consumes the builder and constructs a [`RedshiftDestinationDescription`](crate::types::RedshiftDestinationDescription).
-    pub fn build(self) -> crate::types::RedshiftDestinationDescription {
-        crate::types::RedshiftDestinationDescription {
-            role_arn: self.role_arn,
-            cluster_jdbcurl: self.cluster_jdbcurl,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`role_arn`](crate::types::builders::RedshiftDestinationDescriptionBuilder::role_arn)
+    /// - [`cluster_jdbcurl`](crate::types::builders::RedshiftDestinationDescriptionBuilder::cluster_jdbcurl)
+    /// - [`username`](crate::types::builders::RedshiftDestinationDescriptionBuilder::username)
+    pub fn build(self) -> ::std::result::Result<crate::types::RedshiftDestinationDescription, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RedshiftDestinationDescription {
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building RedshiftDestinationDescription",
+                )
+            })?,
+            cluster_jdbcurl: self.cluster_jdbcurl.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "cluster_jdbcurl",
+                    "cluster_jdbcurl was not specified but it is required when building RedshiftDestinationDescription",
+                )
+            })?,
             copy_command: self.copy_command,
-            username: self.username,
+            username: self.username.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "username",
+                    "username was not specified but it is required when building RedshiftDestinationDescription",
+                )
+            })?,
             retry_options: self.retry_options,
             s3_destination_description: self.s3_destination_description,
             processing_configuration: self.processing_configuration,
             s3_backup_mode: self.s3_backup_mode,
             s3_backup_description: self.s3_backup_description,
             cloud_watch_logging_options: self.cloud_watch_logging_options,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for RedshiftDestinationDescriptionBuilder {

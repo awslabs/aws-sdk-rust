@@ -59,32 +59,42 @@ impl LoadBalancerDescription {
         self.canonical_hosted_zone_name_id.as_deref()
     }
     /// <p>The listeners for the load balancer.</p>
-    pub fn listener_descriptions(&self) -> ::std::option::Option<&[crate::types::ListenerDescription]> {
-        self.listener_descriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.listener_descriptions.is_none()`.
+    pub fn listener_descriptions(&self) -> &[crate::types::ListenerDescription] {
+        self.listener_descriptions.as_deref().unwrap_or_default()
     }
     /// <p>The policies defined for the load balancer.</p>
     pub fn policies(&self) -> ::std::option::Option<&crate::types::Policies> {
         self.policies.as_ref()
     }
     /// <p>Information about your EC2 instances.</p>
-    pub fn backend_server_descriptions(&self) -> ::std::option::Option<&[crate::types::BackendServerDescription]> {
-        self.backend_server_descriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.backend_server_descriptions.is_none()`.
+    pub fn backend_server_descriptions(&self) -> &[crate::types::BackendServerDescription] {
+        self.backend_server_descriptions.as_deref().unwrap_or_default()
     }
     /// <p>The Availability Zones for the load balancer.</p>
-    pub fn availability_zones(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.availability_zones.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
+    pub fn availability_zones(&self) -> &[::std::string::String] {
+        self.availability_zones.as_deref().unwrap_or_default()
     }
     /// <p>The IDs of the subnets for the load balancer.</p>
-    pub fn subnets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnets.is_none()`.
+    pub fn subnets(&self) -> &[::std::string::String] {
+        self.subnets.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the VPC for the load balancer.</p>
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
     /// <p>The IDs of the instances for the load balancer.</p>
-    pub fn instances(&self) -> ::std::option::Option<&[crate::types::Instance]> {
-        self.instances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instances.is_none()`.
+    pub fn instances(&self) -> &[crate::types::Instance] {
+        self.instances.as_deref().unwrap_or_default()
     }
     /// <p>Information about the health checks conducted on the load balancer.</p>
     pub fn health_check(&self) -> ::std::option::Option<&crate::types::HealthCheck> {
@@ -95,8 +105,10 @@ impl LoadBalancerDescription {
         self.source_security_group.as_ref()
     }
     /// <p>The security groups for the load balancer. Valid only for load balancers in a VPC.</p>
-    pub fn security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
+    pub fn security_groups(&self) -> &[::std::string::String] {
+        self.security_groups.as_deref().unwrap_or_default()
     }
     /// <p>The date and time the load balancer was created.</p>
     pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

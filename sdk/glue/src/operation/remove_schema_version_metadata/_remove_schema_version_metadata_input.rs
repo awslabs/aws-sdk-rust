@@ -90,6 +90,7 @@ impl RemoveSchemaVersionMetadataInputBuilder {
         &self.schema_version_id
     }
     /// <p>The value of the metadata key.</p>
+    /// This field is required.
     pub fn metadata_key_value(mut self, input: crate::types::MetadataKeyValuePair) -> Self {
         self.metadata_key_value = ::std::option::Option::Some(input);
         self
@@ -108,7 +109,7 @@ impl RemoveSchemaVersionMetadataInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_schema_version_metadata::RemoveSchemaVersionMetadataInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::remove_schema_version_metadata::RemoveSchemaVersionMetadataInput {
             schema_id: self.schema_id,

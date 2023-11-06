@@ -17,8 +17,10 @@ impl ConditionalForwarder {
         self.remote_domain_name.as_deref()
     }
     /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName. This is the IP address of the DNS server that your conditional forwarder points to.</p>
-    pub fn dns_ip_addrs(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.dns_ip_addrs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dns_ip_addrs.is_none()`.
+    pub fn dns_ip_addrs(&self) -> &[::std::string::String] {
+        self.dns_ip_addrs.as_deref().unwrap_or_default()
     }
     /// <p>The replication scope of the conditional forwarder. The only allowed value is <code>Domain</code>, which will replicate the conditional forwarder to all of the domain controllers for your Amazon Web Services directory.</p>
     pub fn replication_scope(&self) -> ::std::option::Option<&crate::types::ReplicationScope> {

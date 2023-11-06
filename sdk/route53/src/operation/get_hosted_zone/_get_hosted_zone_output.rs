@@ -9,7 +9,7 @@ pub struct GetHostedZoneOutput {
     /// <p>A complex type that lists the Amazon Route 53 name servers for the specified hosted zone.</p>
     pub delegation_set: ::std::option::Option<crate::types::DelegationSet>,
     /// <p>A complex type that contains information about the VPCs that are associated with the specified hosted zone.</p>
-    pub vp_cs: ::std::option::Option<::std::vec::Vec<crate::types::Vpc>>,
+    pub vpcs: ::std::option::Option<::std::vec::Vec<crate::types::Vpc>>,
     _request_id: Option<String>,
 }
 impl GetHostedZoneOutput {
@@ -22,8 +22,10 @@ impl GetHostedZoneOutput {
         self.delegation_set.as_ref()
     }
     /// <p>A complex type that contains information about the VPCs that are associated with the specified hosted zone.</p>
-    pub fn vp_cs(&self) -> ::std::option::Option<&[crate::types::Vpc]> {
-        self.vp_cs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpcs.is_none()`.
+    pub fn vpcs(&self) -> &[crate::types::Vpc] {
+        self.vpcs.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetHostedZoneOutput {
@@ -44,11 +46,12 @@ impl GetHostedZoneOutput {
 pub struct GetHostedZoneOutputBuilder {
     pub(crate) hosted_zone: ::std::option::Option<crate::types::HostedZone>,
     pub(crate) delegation_set: ::std::option::Option<crate::types::DelegationSet>,
-    pub(crate) vp_cs: ::std::option::Option<::std::vec::Vec<crate::types::Vpc>>,
+    pub(crate) vpcs: ::std::option::Option<::std::vec::Vec<crate::types::Vpc>>,
     _request_id: Option<String>,
 }
 impl GetHostedZoneOutputBuilder {
     /// <p>A complex type that contains general information about the specified hosted zone.</p>
+    /// This field is required.
     pub fn hosted_zone(mut self, input: crate::types::HostedZone) -> Self {
         self.hosted_zone = ::std::option::Option::Some(input);
         self
@@ -76,25 +79,25 @@ impl GetHostedZoneOutputBuilder {
     pub fn get_delegation_set(&self) -> &::std::option::Option<crate::types::DelegationSet> {
         &self.delegation_set
     }
-    /// Appends an item to `vp_cs`.
+    /// Appends an item to `vpcs`.
     ///
-    /// To override the contents of this collection use [`set_vp_cs`](Self::set_vp_cs).
+    /// To override the contents of this collection use [`set_vpcs`](Self::set_vpcs).
     ///
     /// <p>A complex type that contains information about the VPCs that are associated with the specified hosted zone.</p>
-    pub fn vp_cs(mut self, input: crate::types::Vpc) -> Self {
-        let mut v = self.vp_cs.unwrap_or_default();
+    pub fn vpcs(mut self, input: crate::types::Vpc) -> Self {
+        let mut v = self.vpcs.unwrap_or_default();
         v.push(input);
-        self.vp_cs = ::std::option::Option::Some(v);
+        self.vpcs = ::std::option::Option::Some(v);
         self
     }
     /// <p>A complex type that contains information about the VPCs that are associated with the specified hosted zone.</p>
-    pub fn set_vp_cs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Vpc>>) -> Self {
-        self.vp_cs = input;
+    pub fn set_vpcs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Vpc>>) -> Self {
+        self.vpcs = input;
         self
     }
     /// <p>A complex type that contains information about the VPCs that are associated with the specified hosted zone.</p>
-    pub fn get_vp_cs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Vpc>> {
-        &self.vp_cs
+    pub fn get_vpcs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Vpc>> {
+        &self.vpcs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -110,7 +113,7 @@ impl GetHostedZoneOutputBuilder {
         crate::operation::get_hosted_zone::GetHostedZoneOutput {
             hosted_zone: self.hosted_zone,
             delegation_set: self.delegation_set,
-            vp_cs: self.vp_cs,
+            vpcs: self.vpcs,
             _request_id: self._request_id,
         }
     }

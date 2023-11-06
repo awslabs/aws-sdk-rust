@@ -98,7 +98,7 @@ impl DescribeCacheSecurityGroupsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_cache_security_groups::DescribeCacheSecurityGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_cache_security_groups::DescribeCacheSecurityGroupsInput {
             cache_security_group_name: self.cache_security_group_name,

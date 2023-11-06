@@ -63,6 +63,7 @@ pub struct UpdateServiceActionInputBuilder {
 }
 impl UpdateServiceActionInputBuilder {
     /// <p>The self-service action identifier.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -158,7 +159,7 @@ impl UpdateServiceActionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateServiceActionInput`](crate::operation::update_service_action::UpdateServiceActionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_service_action::UpdateServiceActionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_service_action::UpdateServiceActionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_service_action::UpdateServiceActionInput {
             id: self.id,

@@ -62,6 +62,7 @@ pub struct StartReplayInputBuilder {
 }
 impl StartReplayInputBuilder {
     /// <p>The name of the replay to start.</p>
+    /// This field is required.
     pub fn replay_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replay_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +91,7 @@ impl StartReplayInputBuilder {
         &self.description
     }
     /// <p>The ARN of the archive to replay events from.</p>
+    /// This field is required.
     pub fn event_source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_source_arn = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +106,7 @@ impl StartReplayInputBuilder {
         &self.event_source_arn
     }
     /// <p>A time stamp for the time to start replaying events. Only events that occurred between the <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
+    /// This field is required.
     pub fn event_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.event_start_time = ::std::option::Option::Some(input);
         self
@@ -118,6 +121,7 @@ impl StartReplayInputBuilder {
         &self.event_start_time
     }
     /// <p>A time stamp for the time to stop replaying events. Only events that occurred between the <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
+    /// This field is required.
     pub fn event_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.event_end_time = ::std::option::Option::Some(input);
         self
@@ -132,6 +136,7 @@ impl StartReplayInputBuilder {
         &self.event_end_time
     }
     /// <p>A <code>ReplayDestination</code> object that includes details about the destination for the replay.</p>
+    /// This field is required.
     pub fn destination(mut self, input: crate::types::ReplayDestination) -> Self {
         self.destination = ::std::option::Option::Some(input);
         self
@@ -146,7 +151,7 @@ impl StartReplayInputBuilder {
         &self.destination
     }
     /// Consumes the builder and constructs a [`StartReplayInput`](crate::operation::start_replay::StartReplayInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_replay::StartReplayInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_replay::StartReplayInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_replay::StartReplayInput {
             replay_name: self.replay_name,
             description: self.description,

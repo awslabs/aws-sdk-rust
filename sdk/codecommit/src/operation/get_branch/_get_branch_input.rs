@@ -63,7 +63,7 @@ impl GetBranchInputBuilder {
         &self.branch_name
     }
     /// Consumes the builder and constructs a [`GetBranchInput`](crate::operation::get_branch::GetBranchInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_branch::GetBranchInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_branch::GetBranchInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_branch::GetBranchInput {
             repository_name: self.repository_name,
             branch_name: self.branch_name,

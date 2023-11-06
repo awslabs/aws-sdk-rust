@@ -2,7 +2,7 @@
 pub fn ser_delete_organizational_unit_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_organizational_unit::DeleteOrganizationalUnitInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.organizational_unit_id {
         object.key("OrganizationalUnitId").string(var_1.as_str());
     }

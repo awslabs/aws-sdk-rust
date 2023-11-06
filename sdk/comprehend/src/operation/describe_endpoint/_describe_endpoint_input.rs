@@ -27,6 +27,7 @@ pub struct DescribeEndpointInputBuilder {
 }
 impl DescribeEndpointInputBuilder {
     /// <p>The Amazon Resource Number (ARN) of the endpoint being described.</p>
+    /// This field is required.
     pub fn endpoint_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeEndpointInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEndpointInput`](crate::operation::describe_endpoint::DescribeEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_endpoint::DescribeEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_endpoint::DescribeEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_endpoint::DescribeEndpointInput {
             endpoint_arn: self.endpoint_arn,
         })

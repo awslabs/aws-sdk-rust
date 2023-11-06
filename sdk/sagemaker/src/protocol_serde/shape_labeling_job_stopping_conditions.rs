@@ -2,7 +2,7 @@
 pub fn ser_labeling_job_stopping_conditions(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LabelingJobStoppingConditions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.max_human_labeled_object_count {
         object.key("MaxHumanLabeledObjectCount").number(
             #[allow(clippy::useless_conversion)]

@@ -28,11 +28,10 @@ pub fn de_describe_cross_account_access_role_http_error(
                 output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(_response_body, output)
                     .map_err(crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleError::generic(generic),
@@ -54,14 +53,16 @@ pub fn de_describe_cross_account_access_role_http_response(
         output = crate::protocol_serde::shape_describe_cross_account_access_role::de_describe_cross_account_access_role(_response_body, output)
             .map_err(crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::describe_cross_account_access_role_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleError::unhandled)?
     })
 }
 
 pub fn ser_describe_cross_account_access_role_input(
     _input: &crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
-    Ok(::aws_smithy_http::body::SdkBody::from("{}"))
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+    Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }
 
 pub(crate) fn de_describe_cross_account_access_role(

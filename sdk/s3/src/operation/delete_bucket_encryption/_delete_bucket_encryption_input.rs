@@ -34,6 +34,7 @@ pub struct DeleteBucketEncryptionInputBuilder {
 }
 impl DeleteBucketEncryptionInputBuilder {
     /// <p>The name of the bucket containing the server-side encryption configuration to delete.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -64,8 +65,10 @@ impl DeleteBucketEncryptionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteBucketEncryptionInput`](crate::operation::delete_bucket_encryption::DeleteBucketEncryptionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_bucket_encryption::DeleteBucketEncryptionInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_bucket_encryption::DeleteBucketEncryptionInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_bucket_encryption::DeleteBucketEncryptionInput {
             bucket: self.bucket,
             expected_bucket_owner: self.expected_bucket_owner,

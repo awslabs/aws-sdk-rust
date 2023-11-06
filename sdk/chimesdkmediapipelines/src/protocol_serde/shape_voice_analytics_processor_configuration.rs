@@ -2,7 +2,7 @@
 pub fn ser_voice_analytics_processor_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VoiceAnalyticsProcessorConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.speaker_search_status {
         object.key("SpeakerSearchStatus").string(var_1.as_str());
     }

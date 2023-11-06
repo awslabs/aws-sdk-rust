@@ -20,8 +20,10 @@ pub struct DescribeTrunkInterfaceAssociationsInput {
 }
 impl DescribeTrunkInterfaceAssociationsInput {
     /// <p>The IDs of the associations.</p>
-    pub fn association_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.association_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.association_ids.is_none()`.
+    pub fn association_ids(&self) -> &[::std::string::String] {
+        self.association_ids.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -32,8 +34,10 @@ impl DescribeTrunkInterfaceAssociationsInput {
     /// <li> <p> <code>gre-key</code> - The ID of a trunk interface association.</p> </li>
     /// <li> <p> <code>interface-protocol</code> - The interface protocol. Valid values are <code>VLAN</code> and <code>GRE</code>.</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -161,7 +165,7 @@ impl DescribeTrunkInterfaceAssociationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_trunk_interface_associations::DescribeTrunkInterfaceAssociationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_trunk_interface_associations::DescribeTrunkInterfaceAssociationsInput {

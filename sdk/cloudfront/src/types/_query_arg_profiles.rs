@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryArgProfiles {
     /// <p>Number of profiles for query argument-profile mapping for field-level encryption.</p>
-    pub quantity: ::std::option::Option<i32>,
+    pub quantity: i32,
     /// <p>Number of items for query argument-profile mapping for field-level encryption.</p>
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::QueryArgProfile>>,
 }
 impl QueryArgProfiles {
     /// <p>Number of profiles for query argument-profile mapping for field-level encryption.</p>
-    pub fn quantity(&self) -> ::std::option::Option<i32> {
+    pub fn quantity(&self) -> i32 {
         self.quantity
     }
     /// <p>Number of items for query argument-profile mapping for field-level encryption.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::QueryArgProfile]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[crate::types::QueryArgProfile] {
+        self.items.as_deref().unwrap_or_default()
     }
 }
 impl QueryArgProfiles {
@@ -35,6 +37,7 @@ pub struct QueryArgProfilesBuilder {
 }
 impl QueryArgProfilesBuilder {
     /// <p>Number of profiles for query argument-profile mapping for field-level encryption.</p>
+    /// This field is required.
     pub fn quantity(mut self, input: i32) -> Self {
         self.quantity = ::std::option::Option::Some(input);
         self
@@ -69,10 +72,17 @@ impl QueryArgProfilesBuilder {
         &self.items
     }
     /// Consumes the builder and constructs a [`QueryArgProfiles`](crate::types::QueryArgProfiles).
-    pub fn build(self) -> crate::types::QueryArgProfiles {
-        crate::types::QueryArgProfiles {
-            quantity: self.quantity,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`quantity`](crate::types::builders::QueryArgProfilesBuilder::quantity)
+    pub fn build(self) -> ::std::result::Result<crate::types::QueryArgProfiles, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::QueryArgProfiles {
+            quantity: self.quantity.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "quantity",
+                    "quantity was not specified but it is required when building QueryArgProfiles",
+                )
+            })?,
             items: self.items,
-        }
+        })
     }
 }

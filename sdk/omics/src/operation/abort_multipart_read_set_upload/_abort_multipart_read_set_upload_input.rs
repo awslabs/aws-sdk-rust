@@ -34,6 +34,7 @@ pub struct AbortMultipartReadSetUploadInputBuilder {
 }
 impl AbortMultipartReadSetUploadInputBuilder {
     /// <p> The sequence store ID for the store involved in the multipart upload. </p>
+    /// This field is required.
     pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_store_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl AbortMultipartReadSetUploadInputBuilder {
         &self.sequence_store_id
     }
     /// <p> The ID for the multipart upload. </p>
+    /// This field is required.
     pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upload_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl AbortMultipartReadSetUploadInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUploadInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUploadInput {
             sequence_store_id: self.sequence_store_id,

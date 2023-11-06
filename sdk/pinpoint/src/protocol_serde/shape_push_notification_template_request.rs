@@ -2,7 +2,7 @@
 pub fn ser_push_notification_template_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PushNotificationTemplateRequest,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.adm {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ADM").start_object();

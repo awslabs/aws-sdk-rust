@@ -27,6 +27,7 @@ pub struct DescribeTestSetGenerationInputBuilder {
 }
 impl DescribeTestSetGenerationInputBuilder {
     /// <p>The unique identifier of the test set generation.</p>
+    /// This field is required.
     pub fn test_set_generation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.test_set_generation_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeTestSetGenerationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_test_set_generation::DescribeTestSetGenerationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_test_set_generation::DescribeTestSetGenerationInput {
             test_set_generation_id: self.test_set_generation_id,

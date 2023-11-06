@@ -34,6 +34,7 @@ pub struct GetBucketVersioningInputBuilder {
 }
 impl GetBucketVersioningInputBuilder {
     /// <p>The Amazon Web Services account ID of the S3 on Outposts bucket.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetBucketVersioningInputBuilder {
         &self.account_id
     }
     /// <p>The S3 on Outposts bucket to return the versioning state for.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl GetBucketVersioningInputBuilder {
     /// Consumes the builder and constructs a [`GetBucketVersioningInput`](crate::operation::get_bucket_versioning::GetBucketVersioningInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_bucket_versioning::GetBucketVersioningInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_bucket_versioning::GetBucketVersioningInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_bucket_versioning::GetBucketVersioningInput {
             account_id: self.account_id,

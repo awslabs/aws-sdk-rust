@@ -48,6 +48,7 @@ pub struct UpdateConnectionInputBuilder {
 }
 impl UpdateConnectionInputBuilder {
     /// <p>The name of the connection to update.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,7 @@ impl UpdateConnectionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateConnectionInput`](crate::operation::update_connection::UpdateConnectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_connection::UpdateConnectionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_connection::UpdateConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_connection::UpdateConnectionInput {
             name: self.name,
             description: self.description,

@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComponentChild {
     /// <p>The type of the child component. </p>
-    pub component_type: ::std::option::Option<::std::string::String>,
+    pub component_type: ::std::string::String,
     /// <p>The name of the child component.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>Describes the properties of the child component. You can't specify <code>tags</code> as a valid property for <code>properties</code>.</p>
-    pub properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>>,
+    pub properties: ::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>,
     /// <p>The list of <code>ComponentChild</code> instances for this component.</p>
     pub children: ::std::option::Option<::std::vec::Vec<crate::types::ComponentChild>>,
     /// <p>Describes the events that can be raised on the child component. Use for the workflow feature in Amplify Studio that allows you to bind events and actions to components.</p>
@@ -19,20 +19,24 @@ pub struct ComponentChild {
 }
 impl ComponentChild {
     /// <p>The type of the child component. </p>
-    pub fn component_type(&self) -> ::std::option::Option<&str> {
-        self.component_type.as_deref()
+    pub fn component_type(&self) -> &str {
+        use std::ops::Deref;
+        self.component_type.deref()
     }
     /// <p>The name of the child component.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>Describes the properties of the child component. You can't specify <code>tags</code> as a valid property for <code>properties</code>.</p>
-    pub fn properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>> {
-        self.properties.as_ref()
+    pub fn properties(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty> {
+        &self.properties
     }
     /// <p>The list of <code>ComponentChild</code> instances for this component.</p>
-    pub fn children(&self) -> ::std::option::Option<&[crate::types::ComponentChild]> {
-        self.children.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.children.is_none()`.
+    pub fn children(&self) -> &[crate::types::ComponentChild] {
+        self.children.as_deref().unwrap_or_default()
     }
     /// <p>Describes the events that can be raised on the child component. Use for the workflow feature in Amplify Studio that allows you to bind events and actions to components.</p>
     pub fn events(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ComponentEvent>> {
@@ -63,6 +67,7 @@ pub struct ComponentChildBuilder {
 }
 impl ComponentChildBuilder {
     /// <p>The type of the child component. </p>
+    /// This field is required.
     pub fn component_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_type = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +82,7 @@ impl ComponentChildBuilder {
         &self.component_type
     }
     /// <p>The name of the child component.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -171,14 +177,33 @@ impl ComponentChildBuilder {
         &self.source_id
     }
     /// Consumes the builder and constructs a [`ComponentChild`](crate::types::ComponentChild).
-    pub fn build(self) -> crate::types::ComponentChild {
-        crate::types::ComponentChild {
-            component_type: self.component_type,
-            name: self.name,
-            properties: self.properties,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`component_type`](crate::types::builders::ComponentChildBuilder::component_type)
+    /// - [`name`](crate::types::builders::ComponentChildBuilder::name)
+    /// - [`properties`](crate::types::builders::ComponentChildBuilder::properties)
+    pub fn build(self) -> ::std::result::Result<crate::types::ComponentChild, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ComponentChild {
+            component_type: self.component_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "component_type",
+                    "component_type was not specified but it is required when building ComponentChild",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ComponentChild",
+                )
+            })?,
+            properties: self.properties.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "properties",
+                    "properties was not specified but it is required when building ComponentChild",
+                )
+            })?,
             children: self.children,
             events: self.events,
             source_id: self.source_id,
-        }
+        })
     }
 }

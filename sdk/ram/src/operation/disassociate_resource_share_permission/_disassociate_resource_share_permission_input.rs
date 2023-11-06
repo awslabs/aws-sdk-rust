@@ -45,6 +45,7 @@ pub struct DisassociateResourceSharePermissionInputBuilder {
 }
 impl DisassociateResourceSharePermissionInputBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share that you want to remove the managed permission from.</p>
+    /// This field is required.
     pub fn resource_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_share_arn = ::std::option::Option::Some(input.into());
         self
@@ -59,6 +60,7 @@ impl DisassociateResourceSharePermissionInputBuilder {
         &self.resource_share_arn
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the managed permission to disassociate from the resource share. Changes to permissions take effect immediately.</p>
+    /// This field is required.
     pub fn permission_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permission_arn = ::std::option::Option::Some(input.into());
         self
@@ -97,7 +99,7 @@ impl DisassociateResourceSharePermissionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionInput {

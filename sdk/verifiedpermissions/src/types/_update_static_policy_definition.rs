@@ -20,7 +20,7 @@ pub struct UpdateStaticPolicyDefinition {
     /// <li> <p>The <code>resource</code> referenced by the policy.</p> </li>
     /// </ul>
     /// </important>
-    pub statement: ::std::option::Option<::std::string::String>,
+    pub statement: ::std::string::String,
 }
 impl UpdateStaticPolicyDefinition {
     /// <p>Specifies the description to be added to or replaced on the static policy.</p>
@@ -41,8 +41,9 @@ impl UpdateStaticPolicyDefinition {
     /// <li> <p>The <code>resource</code> referenced by the policy.</p> </li>
     /// </ul>
     /// </important>
-    pub fn statement(&self) -> ::std::option::Option<&str> {
-        self.statement.as_deref()
+    pub fn statement(&self) -> &str {
+        use std::ops::Deref;
+        self.statement.deref()
     }
 }
 impl ::std::fmt::Debug for UpdateStaticPolicyDefinition {
@@ -96,6 +97,7 @@ impl UpdateStaticPolicyDefinitionBuilder {
     /// <li> <p>The <code>resource</code> referenced by the policy.</p> </li>
     /// </ul>
     /// </important>
+    /// This field is required.
     pub fn statement(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.statement = ::std::option::Option::Some(input.into());
         self
@@ -136,11 +138,18 @@ impl UpdateStaticPolicyDefinitionBuilder {
         &self.statement
     }
     /// Consumes the builder and constructs a [`UpdateStaticPolicyDefinition`](crate::types::UpdateStaticPolicyDefinition).
-    pub fn build(self) -> crate::types::UpdateStaticPolicyDefinition {
-        crate::types::UpdateStaticPolicyDefinition {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`statement`](crate::types::builders::UpdateStaticPolicyDefinitionBuilder::statement)
+    pub fn build(self) -> ::std::result::Result<crate::types::UpdateStaticPolicyDefinition, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::UpdateStaticPolicyDefinition {
             description: self.description,
-            statement: self.statement,
-        }
+            statement: self.statement.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "statement",
+                    "statement was not specified but it is required when building UpdateStaticPolicyDefinition",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for UpdateStaticPolicyDefinitionBuilder {

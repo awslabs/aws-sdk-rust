@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListActivitiesOutput {
     /// <p>The list of activities.</p>
-    pub activities: ::std::option::Option<::std::vec::Vec<crate::types::ActivityListItem>>,
+    pub activities: ::std::vec::Vec<crate::types::ActivityListItem>,
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListActivitiesOutput {
     /// <p>The list of activities.</p>
-    pub fn activities(&self) -> ::std::option::Option<&[crate::types::ActivityListItem]> {
-        self.activities.as_deref()
+    pub fn activities(&self) -> &[crate::types::ActivityListItem] {
+        use std::ops::Deref;
+        self.activities.deref()
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ListActivitiesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListActivitiesOutput`](crate::operation::list_activities::ListActivitiesOutput).
-    pub fn build(self) -> crate::operation::list_activities::ListActivitiesOutput {
-        crate::operation::list_activities::ListActivitiesOutput {
-            activities: self.activities,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`activities`](crate::operation::list_activities::builders::ListActivitiesOutputBuilder::activities)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_activities::ListActivitiesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_activities::ListActivitiesOutput {
+            activities: self.activities.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "activities",
+                    "activities was not specified but it is required when building ListActivitiesOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

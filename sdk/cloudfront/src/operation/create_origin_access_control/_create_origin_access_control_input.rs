@@ -27,6 +27,7 @@ pub struct CreateOriginAccessControlInputBuilder {
 }
 impl CreateOriginAccessControlInputBuilder {
     /// <p>Contains the origin access control.</p>
+    /// This field is required.
     pub fn origin_access_control_config(mut self, input: crate::types::OriginAccessControlConfig) -> Self {
         self.origin_access_control_config = ::std::option::Option::Some(input);
         self
@@ -45,7 +46,7 @@ impl CreateOriginAccessControlInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_origin_access_control::CreateOriginAccessControlInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_origin_access_control::CreateOriginAccessControlInput {
             origin_access_control_config: self.origin_access_control_config,

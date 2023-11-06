@@ -33,8 +33,10 @@ impl DescribeScheduledInstancesInput {
     /// <li> <p> <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).</p> </li>
     /// <li> <p> <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of results to return in a single call. This value can be between 5 and 300. The default value is 100. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -45,8 +47,10 @@ impl DescribeScheduledInstancesInput {
         self.next_token.as_deref()
     }
     /// <p>The Scheduled Instance IDs.</p>
-    pub fn scheduled_instance_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.scheduled_instance_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scheduled_instance_ids.is_none()`.
+    pub fn scheduled_instance_ids(&self) -> &[::std::string::String] {
+        self.scheduled_instance_ids.as_deref().unwrap_or_default()
     }
     /// <p>The time period for the first schedule to start.</p>
     pub fn slot_start_time_range(&self) -> ::std::option::Option<&crate::types::SlotStartTimeRangeRequest> {
@@ -188,7 +192,7 @@ impl DescribeScheduledInstancesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_scheduled_instances::DescribeScheduledInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_scheduled_instances::DescribeScheduledInstancesInput {
             dry_run: self.dry_run,

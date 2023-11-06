@@ -48,6 +48,7 @@ pub struct ListProposalVotesInputBuilder {
 }
 impl ListProposalVotesInputBuilder {
     /// <p> The unique identifier of the network. </p>
+    /// This field is required.
     pub fn network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl ListProposalVotesInputBuilder {
         &self.network_id
     }
     /// <p> The unique identifier of the proposal. </p>
+    /// This field is required.
     pub fn proposal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.proposal_id = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +108,7 @@ impl ListProposalVotesInputBuilder {
     /// Consumes the builder and constructs a [`ListProposalVotesInput`](crate::operation::list_proposal_votes::ListProposalVotesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_proposal_votes::ListProposalVotesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_proposal_votes::ListProposalVotesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_proposal_votes::ListProposalVotesInput {
             network_id: self.network_id,
             proposal_id: self.proposal_id,

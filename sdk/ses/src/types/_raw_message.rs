@@ -10,7 +10,7 @@ pub struct RawMessage {
     /// <p>Do not include these X-headers in the DKIM signature, because they are removed by Amazon SES before sending the email.</p>
     /// </important>
     /// <p>For more information, go to the <a href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Amazon SES Developer Guide</a>.</p>
-    pub data: ::std::option::Option<::aws_smithy_types::Blob>,
+    pub data: ::aws_smithy_types::Blob,
 }
 impl RawMessage {
     /// <p>The raw data of the message. This data needs to base64-encoded if you are accessing Amazon SES directly through the HTTPS interface. If you are accessing Amazon SES using an Amazon Web Services SDK, the SDK takes care of the base 64-encoding for you. In all cases, the client must ensure that the message format complies with Internet email standards regarding email header fields, MIME types, and MIME encoding.</p>
@@ -19,8 +19,8 @@ impl RawMessage {
     /// <p>Do not include these X-headers in the DKIM signature, because they are removed by Amazon SES before sending the email.</p>
     /// </important>
     /// <p>For more information, go to the <a href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Amazon SES Developer Guide</a>.</p>
-    pub fn data(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
-        self.data.as_ref()
+    pub fn data(&self) -> &::aws_smithy_types::Blob {
+        &self.data
     }
 }
 impl RawMessage {
@@ -43,6 +43,7 @@ impl RawMessageBuilder {
     /// <p>Do not include these X-headers in the DKIM signature, because they are removed by Amazon SES before sending the email.</p>
     /// </important>
     /// <p>For more information, go to the <a href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Amazon SES Developer Guide</a>.</p>
+    /// This field is required.
     pub fn data(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.data = ::std::option::Option::Some(input);
         self
@@ -67,7 +68,16 @@ impl RawMessageBuilder {
         &self.data
     }
     /// Consumes the builder and constructs a [`RawMessage`](crate::types::RawMessage).
-    pub fn build(self) -> crate::types::RawMessage {
-        crate::types::RawMessage { data: self.data }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`data`](crate::types::builders::RawMessageBuilder::data)
+    pub fn build(self) -> ::std::result::Result<crate::types::RawMessage, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RawMessage {
+            data: self.data.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "data",
+                    "data was not specified but it is required when building RawMessage",
+                )
+            })?,
+        })
     }
 }

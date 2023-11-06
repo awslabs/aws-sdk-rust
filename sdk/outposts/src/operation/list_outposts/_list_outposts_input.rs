@@ -24,16 +24,22 @@ impl ListOutpostsInput {
         self.max_results
     }
     /// <p>Filters the results by the lifecycle status.</p>
-    pub fn life_cycle_status_filter(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.life_cycle_status_filter.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.life_cycle_status_filter.is_none()`.
+    pub fn life_cycle_status_filter(&self) -> &[::std::string::String] {
+        self.life_cycle_status_filter.as_deref().unwrap_or_default()
     }
     /// <p>Filters the results by Availability Zone (for example, <code>us-east-1a</code>).</p>
-    pub fn availability_zone_filter(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.availability_zone_filter.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zone_filter.is_none()`.
+    pub fn availability_zone_filter(&self) -> &[::std::string::String] {
+        self.availability_zone_filter.as_deref().unwrap_or_default()
     }
     /// <p>Filters the results by AZ ID (for example, <code>use1-az1</code>).</p>
-    pub fn availability_zone_id_filter(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.availability_zone_id_filter.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zone_id_filter.is_none()`.
+    pub fn availability_zone_id_filter(&self) -> &[::std::string::String] {
+        self.availability_zone_id_filter.as_deref().unwrap_or_default()
     }
 }
 impl ListOutpostsInput {
@@ -143,7 +149,9 @@ impl ListOutpostsInputBuilder {
         &self.availability_zone_id_filter
     }
     /// Consumes the builder and constructs a [`ListOutpostsInput`](crate::operation::list_outposts::ListOutpostsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_outposts::ListOutpostsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_outposts::ListOutpostsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_outposts::ListOutpostsInput {
             next_token: self.next_token,
             max_results: self.max_results,

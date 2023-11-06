@@ -158,12 +158,16 @@ impl Alarm {
         self.unit.as_ref()
     }
     /// <p>The contact protocols for the alarm, such as <code>Email</code>, <code>SMS</code> (text messaging), or both.</p>
-    pub fn contact_protocols(&self) -> ::std::option::Option<&[crate::types::ContactProtocol]> {
-        self.contact_protocols.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.contact_protocols.is_none()`.
+    pub fn contact_protocols(&self) -> &[crate::types::ContactProtocol] {
+        self.contact_protocols.as_deref().unwrap_or_default()
     }
     /// <p>The alarm states that trigger a notification.</p>
-    pub fn notification_triggers(&self) -> ::std::option::Option<&[crate::types::AlarmState]> {
-        self.notification_triggers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notification_triggers.is_none()`.
+    pub fn notification_triggers(&self) -> &[crate::types::AlarmState] {
+        self.notification_triggers.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether the alarm is enabled.</p>
     pub fn notification_enabled(&self) -> ::std::option::Option<bool> {

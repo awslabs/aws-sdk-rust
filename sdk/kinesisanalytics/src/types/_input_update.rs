@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputUpdate {
     /// <p>Input ID of the application input to be updated.</p>
-    pub input_id: ::std::option::Option<::std::string::String>,
+    pub input_id: ::std::string::String,
     /// <p>Name prefix for in-application streams that Amazon Kinesis Analytics creates for the specific streaming source.</p>
     pub name_prefix_update: ::std::option::Option<::std::string::String>,
     /// <p>Describes updates for an input processing configuration.</p>
@@ -21,8 +21,9 @@ pub struct InputUpdate {
 }
 impl InputUpdate {
     /// <p>Input ID of the application input to be updated.</p>
-    pub fn input_id(&self) -> ::std::option::Option<&str> {
-        self.input_id.as_deref()
+    pub fn input_id(&self) -> &str {
+        use std::ops::Deref;
+        self.input_id.deref()
     }
     /// <p>Name prefix for in-application streams that Amazon Kinesis Analytics creates for the specific streaming source.</p>
     pub fn name_prefix_update(&self) -> ::std::option::Option<&str> {
@@ -70,6 +71,7 @@ pub struct InputUpdateBuilder {
 }
 impl InputUpdateBuilder {
     /// <p>Input ID of the application input to be updated.</p>
+    /// This field is required.
     pub fn input_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_id = ::std::option::Option::Some(input.into());
         self
@@ -171,15 +173,22 @@ impl InputUpdateBuilder {
         &self.input_parallelism_update
     }
     /// Consumes the builder and constructs a [`InputUpdate`](crate::types::InputUpdate).
-    pub fn build(self) -> crate::types::InputUpdate {
-        crate::types::InputUpdate {
-            input_id: self.input_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`input_id`](crate::types::builders::InputUpdateBuilder::input_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::InputUpdate, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::InputUpdate {
+            input_id: self.input_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "input_id",
+                    "input_id was not specified but it is required when building InputUpdate",
+                )
+            })?,
             name_prefix_update: self.name_prefix_update,
             input_processing_configuration_update: self.input_processing_configuration_update,
             kinesis_streams_input_update: self.kinesis_streams_input_update,
             kinesis_firehose_input_update: self.kinesis_firehose_input_update,
             input_schema_update: self.input_schema_update,
             input_parallelism_update: self.input_parallelism_update,
-        }
+        })
     }
 }

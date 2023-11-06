@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RealtimeMetricsSubscriptionConfig {
     /// <p>A flag that indicates whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
-    pub realtime_metrics_subscription_status: ::std::option::Option<crate::types::RealtimeMetricsSubscriptionStatus>,
+    pub realtime_metrics_subscription_status: crate::types::RealtimeMetricsSubscriptionStatus,
 }
 impl RealtimeMetricsSubscriptionConfig {
     /// <p>A flag that indicates whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
-    pub fn realtime_metrics_subscription_status(&self) -> ::std::option::Option<&crate::types::RealtimeMetricsSubscriptionStatus> {
-        self.realtime_metrics_subscription_status.as_ref()
+    pub fn realtime_metrics_subscription_status(&self) -> &crate::types::RealtimeMetricsSubscriptionStatus {
+        &self.realtime_metrics_subscription_status
     }
 }
 impl RealtimeMetricsSubscriptionConfig {
@@ -28,6 +28,7 @@ pub struct RealtimeMetricsSubscriptionConfigBuilder {
 }
 impl RealtimeMetricsSubscriptionConfigBuilder {
     /// <p>A flag that indicates whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
+    /// This field is required.
     pub fn realtime_metrics_subscription_status(mut self, input: crate::types::RealtimeMetricsSubscriptionStatus) -> Self {
         self.realtime_metrics_subscription_status = ::std::option::Option::Some(input);
         self
@@ -42,9 +43,16 @@ impl RealtimeMetricsSubscriptionConfigBuilder {
         &self.realtime_metrics_subscription_status
     }
     /// Consumes the builder and constructs a [`RealtimeMetricsSubscriptionConfig`](crate::types::RealtimeMetricsSubscriptionConfig).
-    pub fn build(self) -> crate::types::RealtimeMetricsSubscriptionConfig {
-        crate::types::RealtimeMetricsSubscriptionConfig {
-            realtime_metrics_subscription_status: self.realtime_metrics_subscription_status,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`realtime_metrics_subscription_status`](crate::types::builders::RealtimeMetricsSubscriptionConfigBuilder::realtime_metrics_subscription_status)
+    pub fn build(self) -> ::std::result::Result<crate::types::RealtimeMetricsSubscriptionConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RealtimeMetricsSubscriptionConfig {
+            realtime_metrics_subscription_status: self.realtime_metrics_subscription_status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "realtime_metrics_subscription_status",
+                    "realtime_metrics_subscription_status was not specified but it is required when building RealtimeMetricsSubscriptionConfig",
+                )
+            })?,
+        })
     }
 }

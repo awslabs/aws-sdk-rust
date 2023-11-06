@@ -21,8 +21,10 @@ impl LendingField {
         self.key_detection.as_ref()
     }
     /// <p>An array of LendingDetection objects.</p>
-    pub fn value_detections(&self) -> ::std::option::Option<&[crate::types::LendingDetection]> {
-        self.value_detections.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.value_detections.is_none()`.
+    pub fn value_detections(&self) -> &[crate::types::LendingDetection] {
+        self.value_detections.as_deref().unwrap_or_default()
     }
 }
 impl LendingField {

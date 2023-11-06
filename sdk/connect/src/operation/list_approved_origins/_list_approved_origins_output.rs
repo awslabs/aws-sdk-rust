@@ -11,8 +11,10 @@ pub struct ListApprovedOriginsOutput {
 }
 impl ListApprovedOriginsOutput {
     /// <p>The approved origins.</p>
-    pub fn origins(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.origins.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.origins.is_none()`.
+    pub fn origins(&self) -> &[::std::string::String] {
+        self.origins.as_deref().unwrap_or_default()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

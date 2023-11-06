@@ -27,6 +27,7 @@ pub struct StartJobInputBuilder {
 }
 impl StartJobInputBuilder {
     /// <p>The unique identifier for a job.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl StartJobInputBuilder {
         &self.job_id
     }
     /// Consumes the builder and constructs a [`StartJobInput`](crate::operation::start_job::StartJobInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_job::StartJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_job::StartJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_job::StartJobInput { job_id: self.job_id })
     }
 }

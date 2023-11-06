@@ -9,8 +9,10 @@ pub struct BatchCreateRoomMembershipOutput {
 }
 impl BatchCreateRoomMembershipOutput {
     /// <p>If the action fails for one or more of the member IDs in the request, a list of the member IDs is returned, along with error codes and error messages.</p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::MemberError]> {
-        self.errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
+    pub fn errors(&self) -> &[crate::types::MemberError] {
+        self.errors.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchCreateRoomMembershipOutput {

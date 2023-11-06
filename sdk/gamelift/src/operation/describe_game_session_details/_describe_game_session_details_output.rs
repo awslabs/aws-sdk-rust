@@ -11,8 +11,10 @@ pub struct DescribeGameSessionDetailsOutput {
 }
 impl DescribeGameSessionDetailsOutput {
     /// <p>A collection of properties for each game session that matches the request.</p>
-    pub fn game_session_details(&self) -> ::std::option::Option<&[crate::types::GameSessionDetail]> {
-        self.game_session_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.game_session_details.is_none()`.
+    pub fn game_session_details(&self) -> &[crate::types::GameSessionDetail] {
+        self.game_session_details.as_deref().unwrap_or_default()
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

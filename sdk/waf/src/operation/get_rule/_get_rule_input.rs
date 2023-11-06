@@ -27,6 +27,7 @@ pub struct GetRuleInputBuilder {
 }
 impl GetRuleInputBuilder {
     /// <p>The <code>RuleId</code> of the <code>Rule</code> that you want to get. <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
+    /// This field is required.
     pub fn rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetRuleInputBuilder {
         &self.rule_id
     }
     /// Consumes the builder and constructs a [`GetRuleInput`](crate::operation::get_rule::GetRuleInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_rule::GetRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_rule::GetRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_rule::GetRuleInput { rule_id: self.rule_id })
     }
 }

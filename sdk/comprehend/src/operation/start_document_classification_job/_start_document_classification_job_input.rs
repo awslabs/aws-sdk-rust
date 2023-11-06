@@ -66,8 +66,10 @@ impl StartDocumentClassificationJobInput {
         self.vpc_config.as_ref()
     }
     /// <p>Tags to associate with the document classification job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Number (ARN) of the flywheel associated with the model to use.</p>
     pub fn flywheel_arn(&self) -> ::std::option::Option<&str> {
@@ -126,6 +128,7 @@ impl StartDocumentClassificationJobInputBuilder {
         &self.document_classifier_arn
     }
     /// <p>Specifies the format and location of the input data for the job.</p>
+    /// This field is required.
     pub fn input_data_config(mut self, input: crate::types::InputDataConfig) -> Self {
         self.input_data_config = ::std::option::Option::Some(input);
         self
@@ -140,6 +143,7 @@ impl StartDocumentClassificationJobInputBuilder {
         &self.input_data_config
     }
     /// <p>Specifies where to send the output files.</p>
+    /// This field is required.
     pub fn output_data_config(mut self, input: crate::types::OutputDataConfig) -> Self {
         self.output_data_config = ::std::option::Option::Some(input);
         self
@@ -154,6 +158,7 @@ impl StartDocumentClassificationJobInputBuilder {
         &self.output_data_config
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
+    /// This field is required.
     pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_access_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -260,7 +265,7 @@ impl StartDocumentClassificationJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_document_classification_job::StartDocumentClassificationJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_document_classification_job::StartDocumentClassificationJobInput {
             job_name: self.job_name,

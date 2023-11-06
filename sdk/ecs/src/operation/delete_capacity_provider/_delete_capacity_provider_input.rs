@@ -27,6 +27,7 @@ pub struct DeleteCapacityProviderInputBuilder {
 }
 impl DeleteCapacityProviderInputBuilder {
     /// <p>The short name or full Amazon Resource Name (ARN) of the capacity provider to delete.</p>
+    /// This field is required.
     pub fn capacity_provider(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capacity_provider = ::std::option::Option::Some(input.into());
         self
@@ -43,8 +44,10 @@ impl DeleteCapacityProviderInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCapacityProviderInput`](crate::operation::delete_capacity_provider::DeleteCapacityProviderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_capacity_provider::DeleteCapacityProviderInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_capacity_provider::DeleteCapacityProviderInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_capacity_provider::DeleteCapacityProviderInput {
             capacity_provider: self.capacity_provider,
         })

@@ -49,6 +49,7 @@ impl ConfigureLogsInputBuilder {
         &self.egress_access_logs
     }
     /// The ID of a MediaPackage VOD PackagingGroup resource.
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -65,7 +66,7 @@ impl ConfigureLogsInputBuilder {
     /// Consumes the builder and constructs a [`ConfigureLogsInput`](crate::operation::configure_logs::ConfigureLogsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::configure_logs::ConfigureLogsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::configure_logs::ConfigureLogsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::configure_logs::ConfigureLogsInput {
             egress_access_logs: self.egress_access_logs,
             id: self.id,

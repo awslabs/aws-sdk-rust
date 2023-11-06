@@ -11,8 +11,10 @@ pub struct ListWorkforcesOutput {
 }
 impl ListWorkforcesOutput {
     /// <p>A list containing information about your workforce.</p>
-    pub fn workforces(&self) -> ::std::option::Option<&[crate::types::Workforce]> {
-        self.workforces.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.workforces.is_none()`.
+    pub fn workforces(&self) -> &[crate::types::Workforce] {
+        self.workforces.as_deref().unwrap_or_default()
     }
     /// <p>A token to resume pagination.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

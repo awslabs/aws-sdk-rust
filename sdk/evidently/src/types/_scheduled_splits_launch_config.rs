@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduledSplitsLaunchConfig {
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch. This also defines the start time of each step.</p>
-    pub steps: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledSplitConfig>>,
+    pub steps: ::std::vec::Vec<crate::types::ScheduledSplitConfig>,
 }
 impl ScheduledSplitsLaunchConfig {
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch. This also defines the start time of each step.</p>
-    pub fn steps(&self) -> ::std::option::Option<&[crate::types::ScheduledSplitConfig]> {
-        self.steps.as_deref()
+    pub fn steps(&self) -> &[crate::types::ScheduledSplitConfig] {
+        use std::ops::Deref;
+        self.steps.deref()
     }
 }
 impl ScheduledSplitsLaunchConfig {
@@ -48,7 +49,16 @@ impl ScheduledSplitsLaunchConfigBuilder {
         &self.steps
     }
     /// Consumes the builder and constructs a [`ScheduledSplitsLaunchConfig`](crate::types::ScheduledSplitsLaunchConfig).
-    pub fn build(self) -> crate::types::ScheduledSplitsLaunchConfig {
-        crate::types::ScheduledSplitsLaunchConfig { steps: self.steps }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`steps`](crate::types::builders::ScheduledSplitsLaunchConfigBuilder::steps)
+    pub fn build(self) -> ::std::result::Result<crate::types::ScheduledSplitsLaunchConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ScheduledSplitsLaunchConfig {
+            steps: self.steps.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "steps",
+                    "steps was not specified but it is required when building ScheduledSplitsLaunchConfig",
+                )
+            })?,
+        })
     }
 }

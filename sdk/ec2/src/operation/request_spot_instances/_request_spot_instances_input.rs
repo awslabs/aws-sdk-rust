@@ -103,8 +103,10 @@ impl RequestSpotInstancesInput {
         self.valid_until.as_ref()
     }
     /// <p>The key-value pair for tagging the Spot Instance request on creation. The value for <code>ResourceType</code> must be <code>spot-instances-request</code>, otherwise the Spot Instance request fails. To tag the Spot Instance request after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>. </p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
     /// <p>The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.</p>
     pub fn instance_interruption_behavior(&self) -> ::std::option::Option<&crate::types::InstanceInterruptionBehavior> {
@@ -367,7 +369,7 @@ impl RequestSpotInstancesInputBuilder {
     /// Consumes the builder and constructs a [`RequestSpotInstancesInput`](crate::operation::request_spot_instances::RequestSpotInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::request_spot_instances::RequestSpotInstancesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::request_spot_instances::RequestSpotInstancesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::request_spot_instances::RequestSpotInstancesInput {
             availability_zone_group: self.availability_zone_group,

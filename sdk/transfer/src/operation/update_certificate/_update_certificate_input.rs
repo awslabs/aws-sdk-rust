@@ -48,6 +48,7 @@ pub struct UpdateCertificateInputBuilder {
 }
 impl UpdateCertificateInputBuilder {
     /// <p>The identifier of the certificate object that you are updating.</p>
+    /// This field is required.
     pub fn certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_id = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,7 @@ impl UpdateCertificateInputBuilder {
     /// Consumes the builder and constructs a [`UpdateCertificateInput`](crate::operation::update_certificate::UpdateCertificateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_certificate::UpdateCertificateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_certificate::UpdateCertificateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_certificate::UpdateCertificateInput {
             certificate_id: self.certificate_id,
             active_date: self.active_date,

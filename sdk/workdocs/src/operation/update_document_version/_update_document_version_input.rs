@@ -72,6 +72,7 @@ impl UpdateDocumentVersionInputBuilder {
         &self.authentication_token
     }
     /// <p>The ID of the document.</p>
+    /// This field is required.
     pub fn document_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_id = ::std::option::Option::Some(input.into());
         self
@@ -86,6 +87,7 @@ impl UpdateDocumentVersionInputBuilder {
         &self.document_id
     }
     /// <p>The version ID of the document.</p>
+    /// This field is required.
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_id = ::std::option::Option::Some(input.into());
         self
@@ -116,7 +118,7 @@ impl UpdateDocumentVersionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDocumentVersionInput`](crate::operation::update_document_version::UpdateDocumentVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_document_version::UpdateDocumentVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_document_version::UpdateDocumentVersionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_document_version::UpdateDocumentVersionInput {
             authentication_token: self.authentication_token,

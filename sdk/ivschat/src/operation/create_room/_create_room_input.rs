@@ -6,9 +6,9 @@ pub struct CreateRoomInput {
     /// <p>Room name. The value does not need to be unique.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10. </p>
-    pub maximum_message_rate_per_second: i32,
+    pub maximum_message_rate_per_second: ::std::option::Option<i32>,
     /// <p>Maximum number of characters in a single message. Messages are expected to be UTF-8 encoded and this limit applies specifically to rune/code-point count, not number of bytes. Default: 500.</p>
-    pub maximum_message_length: i32,
+    pub maximum_message_length: ::std::option::Option<i32>,
     /// <p>Configuration information for optional review of messages.</p>
     pub message_review_handler: ::std::option::Option<crate::types::MessageReviewHandler>,
     /// <p>Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.</p>
@@ -22,11 +22,11 @@ impl CreateRoomInput {
         self.name.as_deref()
     }
     /// <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10. </p>
-    pub fn maximum_message_rate_per_second(&self) -> i32 {
+    pub fn maximum_message_rate_per_second(&self) -> ::std::option::Option<i32> {
         self.maximum_message_rate_per_second
     }
     /// <p>Maximum number of characters in a single message. Messages are expected to be UTF-8 encoded and this limit applies specifically to rune/code-point count, not number of bytes. Default: 500.</p>
-    pub fn maximum_message_length(&self) -> i32 {
+    pub fn maximum_message_length(&self) -> ::std::option::Option<i32> {
         self.maximum_message_length
     }
     /// <p>Configuration information for optional review of messages.</p>
@@ -38,8 +38,10 @@ impl CreateRoomInput {
         self.tags.as_ref()
     }
     /// <p>Array of logging-configuration identifiers attached to the room.</p>
-    pub fn logging_configuration_identifiers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.logging_configuration_identifiers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.logging_configuration_identifiers.is_none()`.
+    pub fn logging_configuration_identifiers(&self) -> &[::std::string::String] {
+        self.logging_configuration_identifiers.as_deref().unwrap_or_default()
     }
 }
 impl CreateRoomInput {
@@ -158,11 +160,11 @@ impl CreateRoomInputBuilder {
         &self.logging_configuration_identifiers
     }
     /// Consumes the builder and constructs a [`CreateRoomInput`](crate::operation::create_room::CreateRoomInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_room::CreateRoomInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_room::CreateRoomInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_room::CreateRoomInput {
             name: self.name,
-            maximum_message_rate_per_second: self.maximum_message_rate_per_second.unwrap_or_default(),
-            maximum_message_length: self.maximum_message_length.unwrap_or_default(),
+            maximum_message_rate_per_second: self.maximum_message_rate_per_second,
+            maximum_message_length: self.maximum_message_length,
             message_review_handler: self.message_review_handler,
             tags: self.tags,
             logging_configuration_identifiers: self.logging_configuration_identifiers,

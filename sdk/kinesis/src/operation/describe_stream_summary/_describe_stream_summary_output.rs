@@ -34,6 +34,7 @@ pub struct DescribeStreamSummaryOutputBuilder {
 }
 impl DescribeStreamSummaryOutputBuilder {
     /// <p>A <code>StreamDescriptionSummary</code> containing information about the stream.</p>
+    /// This field is required.
     pub fn stream_description_summary(mut self, input: crate::types::StreamDescriptionSummary) -> Self {
         self.stream_description_summary = ::std::option::Option::Some(input);
         self

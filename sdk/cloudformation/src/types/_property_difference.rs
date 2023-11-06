@@ -59,6 +59,7 @@ pub struct PropertyDifferenceBuilder {
 }
 impl PropertyDifferenceBuilder {
     /// <p>The fully-qualified path to the resource property.</p>
+    /// This field is required.
     pub fn property_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.property_path = ::std::option::Option::Some(input.into());
         self
@@ -73,6 +74,7 @@ impl PropertyDifferenceBuilder {
         &self.property_path
     }
     /// <p>The expected property value of the resource property, as defined in the stack template and any values specified as template parameters.</p>
+    /// This field is required.
     pub fn expected_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expected_value = ::std::option::Option::Some(input.into());
         self
@@ -87,6 +89,7 @@ impl PropertyDifferenceBuilder {
         &self.expected_value
     }
     /// <p>The actual property value of the resource property.</p>
+    /// This field is required.
     pub fn actual_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.actual_value = ::std::option::Option::Some(input.into());
         self
@@ -106,6 +109,7 @@ impl PropertyDifferenceBuilder {
     /// <li> <p> <code>REMOVE</code>: The property has been removed from the current resource configuration.</p> </li>
     /// <li> <p> <code>NOT_EQUAL</code>: The current property value differs from its expected value (as defined in the stack template and any values specified as template parameters).</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn difference_type(mut self, input: crate::types::DifferenceType) -> Self {
         self.difference_type = ::std::option::Option::Some(input);
         self

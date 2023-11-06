@@ -41,6 +41,7 @@ pub struct ValidateSolNetworkPackageContentInputBuilder {
 }
 impl ValidateSolNetworkPackageContentInputBuilder {
     /// <p>Network service descriptor file.</p>
+    /// This field is required.
     pub fn nsd_info_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nsd_info_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl ValidateSolNetworkPackageContentInputBuilder {
         &self.content_type
     }
     /// <p>Network package file.</p>
+    /// This field is required.
     pub fn file(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.file = ::std::option::Option::Some(input);
         self
@@ -87,7 +89,7 @@ impl ValidateSolNetworkPackageContentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentInput {

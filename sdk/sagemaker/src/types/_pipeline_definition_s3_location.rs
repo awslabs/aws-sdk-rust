@@ -42,6 +42,7 @@ pub struct PipelineDefinitionS3LocationBuilder {
 }
 impl PipelineDefinitionS3LocationBuilder {
     /// <p>Name of the S3 bucket.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl PipelineDefinitionS3LocationBuilder {
         &self.bucket
     }
     /// <p>The object key (or key name) uniquely identifies the object in an S3 bucket. </p>
+    /// This field is required.
     pub fn object_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_key = ::std::option::Option::Some(input.into());
         self

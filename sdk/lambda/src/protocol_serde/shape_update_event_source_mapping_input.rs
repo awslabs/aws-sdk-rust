@@ -2,7 +2,7 @@
 pub fn ser_update_event_source_mapping_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_event_source_mapping::UpdateEventSourceMappingInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.batch_size {
         object.key("BatchSize").number(
             #[allow(clippy::useless_conversion)]

@@ -41,6 +41,7 @@ pub struct GetReplicationRunsInputBuilder {
 }
 impl GetReplicationRunsInputBuilder {
     /// <p>The ID of the replication job.</p>
+    /// This field is required.
     pub fn replication_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_job_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,8 @@ impl GetReplicationRunsInputBuilder {
     /// Consumes the builder and constructs a [`GetReplicationRunsInput`](crate::operation::get_replication_runs::GetReplicationRunsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_replication_runs::GetReplicationRunsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_replication_runs::GetReplicationRunsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_replication_runs::GetReplicationRunsInput {
             replication_job_id: self.replication_job_id,
             next_token: self.next_token,

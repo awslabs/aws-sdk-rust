@@ -64,6 +64,7 @@ pub struct UpdateDataCatalogInputBuilder {
 }
 impl UpdateDataCatalogInputBuilder {
     /// <p>The name of the data catalog to update. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of 256 is reserved for use by Athena.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -78,6 +79,7 @@ impl UpdateDataCatalogInputBuilder {
         &self.name
     }
     /// <p>Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::DataCatalogType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -152,7 +154,7 @@ impl UpdateDataCatalogInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDataCatalogInput`](crate::operation::update_data_catalog::UpdateDataCatalogInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_data_catalog::UpdateDataCatalogInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_data_catalog::UpdateDataCatalogInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_data_catalog::UpdateDataCatalogInput {
             name: self.name,
             r#type: self.r#type,

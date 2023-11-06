@@ -106,7 +106,7 @@ impl ListRegistriesInputBuilder {
     /// Consumes the builder and constructs a [`ListRegistriesInput`](crate::operation::list_registries::ListRegistriesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_registries::ListRegistriesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_registries::ListRegistriesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_registries::ListRegistriesInput {
             limit: self.limit,
             next_token: self.next_token,

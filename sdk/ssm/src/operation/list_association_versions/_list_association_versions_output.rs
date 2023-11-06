@@ -11,8 +11,10 @@ pub struct ListAssociationVersionsOutput {
 }
 impl ListAssociationVersionsOutput {
     /// <p>Information about all versions of the association for the specified association ID.</p>
-    pub fn association_versions(&self) -> ::std::option::Option<&[crate::types::AssociationVersionInfo]> {
-        self.association_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.association_versions.is_none()`.
+    pub fn association_versions(&self) -> &[crate::types::AssociationVersionInfo] {
+        self.association_versions.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

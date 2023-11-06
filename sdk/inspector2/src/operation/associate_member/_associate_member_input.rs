@@ -27,6 +27,7 @@ pub struct AssociateMemberInputBuilder {
 }
 impl AssociateMemberInputBuilder {
     /// <p>The Amazon Web Services account ID of the member account to be associated.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl AssociateMemberInputBuilder {
     /// Consumes the builder and constructs a [`AssociateMemberInput`](crate::operation::associate_member::AssociateMemberInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_member::AssociateMemberInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::associate_member::AssociateMemberInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::associate_member::AssociateMemberInput { account_id: self.account_id })
     }
 }

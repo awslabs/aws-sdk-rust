@@ -27,6 +27,7 @@ pub struct CreateDomainInputBuilder {
 }
 impl CreateDomainInputBuilder {
     /// <p>The name for your Cases domain. It must be unique for your Amazon Web Services account.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,9 @@ impl CreateDomainInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`CreateDomainInput`](crate::operation::create_domain::CreateDomainInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_domain::CreateDomainInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_domain::CreateDomainInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_domain::CreateDomainInput { name: self.name })
     }
 }

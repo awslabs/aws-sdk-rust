@@ -49,6 +49,7 @@ pub struct CreateBackendApiInputBuilder {
 }
 impl CreateBackendApiInputBuilder {
     /// <p>The app ID.</p>
+    /// This field is required.
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl CreateBackendApiInputBuilder {
         &self.app_id
     }
     /// <p>The name of the backend environment.</p>
+    /// This field is required.
     pub fn backend_environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backend_environment_name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +79,7 @@ impl CreateBackendApiInputBuilder {
         &self.backend_environment_name
     }
     /// <p>The resource configuration for this request.</p>
+    /// This field is required.
     pub fn resource_config(mut self, input: crate::types::BackendApiResourceConfig) -> Self {
         self.resource_config = ::std::option::Option::Some(input);
         self
@@ -91,6 +94,7 @@ impl CreateBackendApiInputBuilder {
         &self.resource_config
     }
     /// <p>The name of this resource.</p>
+    /// This field is required.
     pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self
@@ -107,7 +111,7 @@ impl CreateBackendApiInputBuilder {
     /// Consumes the builder and constructs a [`CreateBackendApiInput`](crate::operation::create_backend_api::CreateBackendApiInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_backend_api::CreateBackendApiInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_backend_api::CreateBackendApiInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_backend_api::CreateBackendApiInput {
             app_id: self.app_id,
             backend_environment_name: self.backend_environment_name,

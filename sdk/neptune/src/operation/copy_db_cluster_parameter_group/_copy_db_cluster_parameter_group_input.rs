@@ -54,8 +54,10 @@ impl CopyDbClusterParameterGroupInput {
         self.target_db_cluster_parameter_group_description.as_deref()
     }
     /// <p>The tags to be assigned to the copied DB cluster parameter group.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CopyDbClusterParameterGroupInput {
@@ -82,6 +84,7 @@ impl CopyDbClusterParameterGroupInputBuilder {
     /// <li> <p>If the source DB cluster parameter group is in the same Amazon Region as the copy, specify a valid DB parameter group identifier, for example <code>my-db-cluster-param-group</code>, or a valid ARN.</p> </li>
     /// <li> <p>If the source DB parameter group is in a different Amazon Region than the copy, specify a valid DB cluster parameter group ARN, for example <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn source_db_cluster_parameter_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_db_cluster_parameter_group_identifier = ::std::option::Option::Some(input.into());
         self
@@ -116,6 +119,7 @@ impl CopyDbClusterParameterGroupInputBuilder {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster-param-group1</code> </p>
+    /// This field is required.
     pub fn target_db_cluster_parameter_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_db_cluster_parameter_group_identifier = ::std::option::Option::Some(input.into());
         self
@@ -146,6 +150,7 @@ impl CopyDbClusterParameterGroupInputBuilder {
         &self.target_db_cluster_parameter_group_identifier
     }
     /// <p>A description for the copied DB cluster parameter group.</p>
+    /// This field is required.
     pub fn target_db_cluster_parameter_group_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_db_cluster_parameter_group_description = ::std::option::Option::Some(input.into());
         self
@@ -184,7 +189,7 @@ impl CopyDbClusterParameterGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::copy_db_cluster_parameter_group::CopyDbClusterParameterGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::copy_db_cluster_parameter_group::CopyDbClusterParameterGroupInput {
             source_db_cluster_parameter_group_identifier: self.source_db_cluster_parameter_group_identifier,

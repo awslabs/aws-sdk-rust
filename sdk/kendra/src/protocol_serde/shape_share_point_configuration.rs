@@ -2,21 +2,21 @@
 pub fn ser_share_point_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SharePointConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.share_point_version {
-        object.key("SharePointVersion").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("SharePointVersion").string(input.share_point_version.as_str());
     }
-    if let Some(var_2) = &input.urls {
-        let mut array_3 = object.key("Urls").start_array();
-        for item_4 in var_2 {
+    {
+        let mut array_1 = object.key("Urls").start_array();
+        for item_2 in &input.urls {
             {
-                array_3.value().string(item_4.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_3.finish();
+        array_1.finish();
     }
-    if let Some(var_5) = &input.secret_arn {
-        object.key("SecretArn").string(var_5.as_str());
+    {
+        object.key("SecretArn").string(input.secret_arn.as_str());
     }
     if input.crawl_attachments {
         object.key("CrawlAttachments").boolean(input.crawl_attachments);
@@ -24,8 +24,17 @@ pub fn ser_share_point_configuration(
     if input.use_change_log {
         object.key("UseChangeLog").boolean(input.use_change_log);
     }
-    if let Some(var_6) = &input.inclusion_patterns {
-        let mut array_7 = object.key("InclusionPatterns").start_array();
+    if let Some(var_3) = &input.inclusion_patterns {
+        let mut array_4 = object.key("InclusionPatterns").start_array();
+        for item_5 in var_3 {
+            {
+                array_4.value().string(item_5.as_str());
+            }
+        }
+        array_4.finish();
+    }
+    if let Some(var_6) = &input.exclusion_patterns {
+        let mut array_7 = object.key("ExclusionPatterns").start_array();
         for item_8 in var_6 {
             {
                 array_7.value().string(item_8.as_str());
@@ -33,53 +42,44 @@ pub fn ser_share_point_configuration(
         }
         array_7.finish();
     }
-    if let Some(var_9) = &input.exclusion_patterns {
-        let mut array_10 = object.key("ExclusionPatterns").start_array();
-        for item_11 in var_9 {
-            {
-                array_10.value().string(item_11.as_str());
-            }
-        }
-        array_10.finish();
-    }
-    if let Some(var_12) = &input.vpc_configuration {
+    if let Some(var_9) = &input.vpc_configuration {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("VpcConfiguration").start_object();
-        crate::protocol_serde::shape_data_source_vpc_configuration::ser_data_source_vpc_configuration(&mut object_13, var_12)?;
-        object_13.finish();
+        let mut object_10 = object.key("VpcConfiguration").start_object();
+        crate::protocol_serde::shape_data_source_vpc_configuration::ser_data_source_vpc_configuration(&mut object_10, var_9)?;
+        object_10.finish();
     }
-    if let Some(var_14) = &input.field_mappings {
-        let mut array_15 = object.key("FieldMappings").start_array();
-        for item_16 in var_14 {
+    if let Some(var_11) = &input.field_mappings {
+        let mut array_12 = object.key("FieldMappings").start_array();
+        for item_13 in var_11 {
             {
                 #[allow(unused_mut)]
-                let mut object_17 = array_15.value().start_object();
-                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_17, item_16)?;
-                object_17.finish();
+                let mut object_14 = array_12.value().start_object();
+                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_14, item_13)?;
+                object_14.finish();
             }
         }
-        array_15.finish();
+        array_12.finish();
     }
-    if let Some(var_18) = &input.document_title_field_name {
-        object.key("DocumentTitleFieldName").string(var_18.as_str());
+    if let Some(var_15) = &input.document_title_field_name {
+        object.key("DocumentTitleFieldName").string(var_15.as_str());
     }
     if input.disable_local_groups {
         object.key("DisableLocalGroups").boolean(input.disable_local_groups);
     }
-    if let Some(var_19) = &input.ssl_certificate_s3_path {
+    if let Some(var_16) = &input.ssl_certificate_s3_path {
         #[allow(unused_mut)]
-        let mut object_20 = object.key("SslCertificateS3Path").start_object();
-        crate::protocol_serde::shape_s3_path::ser_s3_path(&mut object_20, var_19)?;
+        let mut object_17 = object.key("SslCertificateS3Path").start_object();
+        crate::protocol_serde::shape_s3_path::ser_s3_path(&mut object_17, var_16)?;
+        object_17.finish();
+    }
+    if let Some(var_18) = &input.authentication_type {
+        object.key("AuthenticationType").string(var_18.as_str());
+    }
+    if let Some(var_19) = &input.proxy_configuration {
+        #[allow(unused_mut)]
+        let mut object_20 = object.key("ProxyConfiguration").start_object();
+        crate::protocol_serde::shape_proxy_configuration::ser_proxy_configuration(&mut object_20, var_19)?;
         object_20.finish();
-    }
-    if let Some(var_21) = &input.authentication_type {
-        object.key("AuthenticationType").string(var_21.as_str());
-    }
-    if let Some(var_22) = &input.proxy_configuration {
-        #[allow(unused_mut)]
-        let mut object_23 = object.key("ProxyConfiguration").start_object();
-        crate::protocol_serde::shape_proxy_configuration::ser_proxy_configuration(&mut object_23, var_22)?;
-        object_23.finish();
     }
     Ok(())
 }
@@ -184,7 +184,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::share_point_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

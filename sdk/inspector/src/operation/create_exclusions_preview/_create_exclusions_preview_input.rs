@@ -27,6 +27,7 @@ pub struct CreateExclusionsPreviewInputBuilder {
 }
 impl CreateExclusionsPreviewInputBuilder {
     /// <p>The ARN that specifies the assessment template for which you want to create an exclusions preview.</p>
+    /// This field is required.
     pub fn assessment_template_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_template_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl CreateExclusionsPreviewInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_exclusions_preview::CreateExclusionsPreviewInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_exclusions_preview::CreateExclusionsPreviewInput {
             assessment_template_arn: self.assessment_template_arn,

@@ -40,8 +40,10 @@ impl StopInferenceExperimentInput {
         self.model_variant_actions.as_ref()
     }
     /// <p> An array of <code>ModelVariantConfig</code> objects. There is one for each variant that you want to deploy after the inference experiment stops. Each <code>ModelVariantConfig</code> describes the infrastructure configuration for deploying the corresponding variant. </p>
-    pub fn desired_model_variants(&self) -> ::std::option::Option<&[crate::types::ModelVariantConfig]> {
-        self.desired_model_variants.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.desired_model_variants.is_none()`.
+    pub fn desired_model_variants(&self) -> &[crate::types::ModelVariantConfig] {
+        self.desired_model_variants.as_deref().unwrap_or_default()
     }
     /// <p> The desired state of the experiment after stopping. The possible states are the following: </p>
     /// <ul>
@@ -75,6 +77,7 @@ pub struct StopInferenceExperimentInputBuilder {
 }
 impl StopInferenceExperimentInputBuilder {
     /// <p>The name of the inference experiment to stop.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -193,7 +196,7 @@ impl StopInferenceExperimentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_inference_experiment::StopInferenceExperimentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::stop_inference_experiment::StopInferenceExperimentInput {
             name: self.name,

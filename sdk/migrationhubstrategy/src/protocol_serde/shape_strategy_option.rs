@@ -2,7 +2,7 @@
 pub fn ser_strategy_option(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StrategyOption,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.strategy {
         object.key("strategy").string(var_1.as_str());
     }

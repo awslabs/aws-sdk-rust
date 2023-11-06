@@ -393,6 +393,8 @@ pub(crate) mod shape_inbound_connection_status;
 
 pub(crate) mod shape_instance_type_details;
 
+pub(crate) mod shape_ip_address_type_status;
+
 pub(crate) mod shape_limits;
 
 pub(crate) mod shape_log_publishing_options;

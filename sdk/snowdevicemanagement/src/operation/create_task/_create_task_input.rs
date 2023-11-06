@@ -16,8 +16,10 @@ pub struct CreateTaskInput {
 }
 impl CreateTaskInput {
     /// <p>A list of managed device IDs.</p>
-    pub fn targets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
+    pub fn targets(&self) -> &[::std::string::String] {
+        self.targets.as_deref().unwrap_or_default()
     }
     /// <p>The task to be performed. Only one task is executed on a device at a time.</p>
     pub fn command(&self) -> ::std::option::Option<&crate::types::Command> {
@@ -75,6 +77,7 @@ impl CreateTaskInputBuilder {
         &self.targets
     }
     /// <p>The task to be performed. Only one task is executed on a device at a time.</p>
+    /// This field is required.
     pub fn command(mut self, input: crate::types::Command) -> Self {
         self.command = ::std::option::Option::Some(input);
         self
@@ -137,7 +140,7 @@ impl CreateTaskInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateTaskInput`](crate::operation::create_task::CreateTaskInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_task::CreateTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_task::CreateTaskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_task::CreateTaskInput {
             targets: self.targets,
             command: self.command,

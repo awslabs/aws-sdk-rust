@@ -20,7 +20,7 @@ impl DisableSagemakerServicecatalogPortfolioInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_sagemaker_servicecatalog_portfolio::DisableSagemakerServicecatalogPortfolioInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disable_sagemaker_servicecatalog_portfolio::DisableSagemakerServicecatalogPortfolioInput {})
     }

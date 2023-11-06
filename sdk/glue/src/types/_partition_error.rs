@@ -11,8 +11,10 @@ pub struct PartitionError {
 }
 impl PartitionError {
     /// <p>The values that define the partition.</p>
-    pub fn partition_values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.partition_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.partition_values.is_none()`.
+    pub fn partition_values(&self) -> &[::std::string::String] {
+        self.partition_values.as_deref().unwrap_or_default()
     }
     /// <p>The details about the partition error.</p>
     pub fn error_detail(&self) -> ::std::option::Option<&crate::types::ErrorDetail> {

@@ -106,7 +106,7 @@ impl DeleteBgpPeerInputBuilder {
     /// Consumes the builder and constructs a [`DeleteBgpPeerInput`](crate::operation::delete_bgp_peer::DeleteBgpPeerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_bgp_peer::DeleteBgpPeerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_bgp_peer::DeleteBgpPeerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_bgp_peer::DeleteBgpPeerInput {
             virtual_interface_id: self.virtual_interface_id,
             asn: self.asn,

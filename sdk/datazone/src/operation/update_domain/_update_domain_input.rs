@@ -62,6 +62,7 @@ pub struct UpdateDomainInputBuilder {
 }
 impl UpdateDomainInputBuilder {
     /// <p>The ID of the Amazon Web Services domain that is to be updated.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -146,7 +147,9 @@ impl UpdateDomainInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateDomainInput`](crate::operation::update_domain::UpdateDomainInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_domain::UpdateDomainInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_domain::UpdateDomainInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_domain::UpdateDomainInput {
             identifier: self.identifier,
             description: self.description,

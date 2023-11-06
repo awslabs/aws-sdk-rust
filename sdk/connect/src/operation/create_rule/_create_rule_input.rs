@@ -36,8 +36,10 @@ impl CreateRuleInput {
         self.function.as_deref()
     }
     /// <p>A list of actions to be run when the rule is triggered.</p>
-    pub fn actions(&self) -> ::std::option::Option<&[crate::types::RuleAction]> {
-        self.actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
+    pub fn actions(&self) -> &[crate::types::RuleAction] {
+        self.actions.as_deref().unwrap_or_default()
     }
     /// <p>The publish status of the rule.</p>
     pub fn publish_status(&self) -> ::std::option::Option<&crate::types::RulePublishStatus> {
@@ -69,6 +71,7 @@ pub struct CreateRuleInputBuilder {
 }
 impl CreateRuleInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +86,7 @@ impl CreateRuleInputBuilder {
         &self.instance_id
     }
     /// <p>A unique name for the rule.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +101,7 @@ impl CreateRuleInputBuilder {
         &self.name
     }
     /// <p>The event source to trigger the rule.</p>
+    /// This field is required.
     pub fn trigger_event_source(mut self, input: crate::types::RuleTriggerEventSource) -> Self {
         self.trigger_event_source = ::std::option::Option::Some(input);
         self
@@ -111,6 +116,7 @@ impl CreateRuleInputBuilder {
         &self.trigger_event_source
     }
     /// <p>The conditions of the rule.</p>
+    /// This field is required.
     pub fn function(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function = ::std::option::Option::Some(input.into());
         self
@@ -145,6 +151,7 @@ impl CreateRuleInputBuilder {
         &self.actions
     }
     /// <p>The publish status of the rule.</p>
+    /// This field is required.
     pub fn publish_status(mut self, input: crate::types::RulePublishStatus) -> Self {
         self.publish_status = ::std::option::Option::Some(input);
         self
@@ -173,7 +180,7 @@ impl CreateRuleInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateRuleInput`](crate::operation::create_rule::CreateRuleInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_rule::CreateRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_rule::CreateRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_rule::CreateRuleInput {
             instance_id: self.instance_id,
             name: self.name,

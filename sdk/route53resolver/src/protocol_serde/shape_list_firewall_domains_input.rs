@@ -2,7 +2,7 @@
 pub fn ser_list_firewall_domains_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_firewall_domains::ListFirewallDomainsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.firewall_domain_list_id {
         object.key("FirewallDomainListId").string(var_1.as_str());
     }

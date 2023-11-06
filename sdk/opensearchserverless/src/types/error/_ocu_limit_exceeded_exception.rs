@@ -5,22 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OcuLimitExceededException {
     /// Description of the error.
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl OcuLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        &self.message
     }
 }
 impl ::std::fmt::Display for OcuLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "OcuLimitExceededException")?;
-        if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
-                ::std::write!(f, ": {}", inner_1)?;
-            }
+        {
+            ::std::write!(f, ": {}", &self.message)?;
         }
         Ok(())
     }
@@ -53,6 +51,7 @@ pub struct OcuLimitExceededExceptionBuilder {
 }
 impl OcuLimitExceededExceptionBuilder {
     /// Description of the error.
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -78,10 +77,17 @@ impl OcuLimitExceededExceptionBuilder {
         self
     }
     /// Consumes the builder and constructs a [`OcuLimitExceededException`](crate::types::error::OcuLimitExceededException).
-    pub fn build(self) -> crate::types::error::OcuLimitExceededException {
-        crate::types::error::OcuLimitExceededException {
-            message: self.message,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`message`](crate::types::error::builders::OcuLimitExceededExceptionBuilder::message)
+    pub fn build(self) -> ::std::result::Result<crate::types::error::OcuLimitExceededException, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::error::OcuLimitExceededException {
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building OcuLimitExceededException",
+                )
+            })?,
             meta: self.meta.unwrap_or_default(),
-        }
+        })
     }
 }

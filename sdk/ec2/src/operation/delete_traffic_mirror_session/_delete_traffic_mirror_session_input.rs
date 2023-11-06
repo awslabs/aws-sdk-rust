@@ -34,6 +34,7 @@ pub struct DeleteTrafficMirrorSessionInputBuilder {
 }
 impl DeleteTrafficMirrorSessionInputBuilder {
     /// <p>The ID of the Traffic Mirror session.</p>
+    /// This field is required.
     pub fn traffic_mirror_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.traffic_mirror_session_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl DeleteTrafficMirrorSessionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_traffic_mirror_session::DeleteTrafficMirrorSessionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_traffic_mirror_session::DeleteTrafficMirrorSessionInput {
             traffic_mirror_session_id: self.traffic_mirror_session_id,

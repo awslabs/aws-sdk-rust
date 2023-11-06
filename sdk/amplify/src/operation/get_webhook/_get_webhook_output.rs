@@ -35,6 +35,7 @@ pub struct GetWebhookOutputBuilder {
 }
 impl GetWebhookOutputBuilder {
     /// <p> Describes the structure of a webhook. </p>
+    /// This field is required.
     pub fn webhook(mut self, input: crate::types::Webhook) -> Self {
         self.webhook = ::std::option::Option::Some(input);
         self

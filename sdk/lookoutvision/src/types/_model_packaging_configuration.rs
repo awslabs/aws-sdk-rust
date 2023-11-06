@@ -28,6 +28,7 @@ pub struct ModelPackagingConfigurationBuilder {
 }
 impl ModelPackagingConfigurationBuilder {
     /// <p> Configuration information for the AWS IoT Greengrass component in a model packaging job. </p>
+    /// This field is required.
     pub fn greengrass(mut self, input: crate::types::GreengrassConfiguration) -> Self {
         self.greengrass = ::std::option::Option::Some(input);
         self

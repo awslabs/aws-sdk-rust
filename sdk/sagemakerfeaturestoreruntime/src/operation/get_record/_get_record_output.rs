@@ -11,8 +11,10 @@ pub struct GetRecordOutput {
 }
 impl GetRecordOutput {
     /// <p>The record you requested. A list of <code>FeatureValues</code>.</p>
-    pub fn record(&self) -> ::std::option::Option<&[crate::types::FeatureValue]> {
-        self.record.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.record.is_none()`.
+    pub fn record(&self) -> &[crate::types::FeatureValue] {
+        self.record.as_deref().unwrap_or_default()
     }
     /// <p>The <code>ExpiresAt</code> ISO string of the requested record.</p>
     pub fn expires_at(&self) -> ::std::option::Option<&str> {

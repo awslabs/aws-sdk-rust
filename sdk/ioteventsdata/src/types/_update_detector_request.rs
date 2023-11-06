@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDetectorRequest {
     /// <p>The ID to assign to the detector update <code>"message"</code>. Each <code>"messageId"</code> must be unique within each batch sent.</p>
-    pub message_id: ::std::option::Option<::std::string::String>,
+    pub message_id: ::std::string::String,
     /// <p>The name of the detector model that created the detectors (instances).</p>
-    pub detector_model_name: ::std::option::Option<::std::string::String>,
+    pub detector_model_name: ::std::string::String,
     /// <p>The value of the input key attribute (identifying the device or system) that caused the creation of this detector (instance).</p>
     pub key_value: ::std::option::Option<::std::string::String>,
     /// <p>The new state, variable values, and timer settings of the detector (instance).</p>
@@ -15,12 +15,14 @@ pub struct UpdateDetectorRequest {
 }
 impl UpdateDetectorRequest {
     /// <p>The ID to assign to the detector update <code>"message"</code>. Each <code>"messageId"</code> must be unique within each batch sent.</p>
-    pub fn message_id(&self) -> ::std::option::Option<&str> {
-        self.message_id.as_deref()
+    pub fn message_id(&self) -> &str {
+        use std::ops::Deref;
+        self.message_id.deref()
     }
     /// <p>The name of the detector model that created the detectors (instances).</p>
-    pub fn detector_model_name(&self) -> ::std::option::Option<&str> {
-        self.detector_model_name.as_deref()
+    pub fn detector_model_name(&self) -> &str {
+        use std::ops::Deref;
+        self.detector_model_name.deref()
     }
     /// <p>The value of the input key attribute (identifying the device or system) that caused the creation of this detector (instance).</p>
     pub fn key_value(&self) -> ::std::option::Option<&str> {
@@ -49,6 +51,7 @@ pub struct UpdateDetectorRequestBuilder {
 }
 impl UpdateDetectorRequestBuilder {
     /// <p>The ID to assign to the detector update <code>"message"</code>. Each <code>"messageId"</code> must be unique within each batch sent.</p>
+    /// This field is required.
     pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +66,7 @@ impl UpdateDetectorRequestBuilder {
         &self.message_id
     }
     /// <p>The name of the detector model that created the detectors (instances).</p>
+    /// This field is required.
     pub fn detector_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_model_name = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +95,7 @@ impl UpdateDetectorRequestBuilder {
         &self.key_value
     }
     /// <p>The new state, variable values, and timer settings of the detector (instance).</p>
+    /// This field is required.
     pub fn state(mut self, input: crate::types::DetectorStateDefinition) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
@@ -105,12 +110,25 @@ impl UpdateDetectorRequestBuilder {
         &self.state
     }
     /// Consumes the builder and constructs a [`UpdateDetectorRequest`](crate::types::UpdateDetectorRequest).
-    pub fn build(self) -> crate::types::UpdateDetectorRequest {
-        crate::types::UpdateDetectorRequest {
-            message_id: self.message_id,
-            detector_model_name: self.detector_model_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`message_id`](crate::types::builders::UpdateDetectorRequestBuilder::message_id)
+    /// - [`detector_model_name`](crate::types::builders::UpdateDetectorRequestBuilder::detector_model_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::UpdateDetectorRequest, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::UpdateDetectorRequest {
+            message_id: self.message_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "message_id",
+                    "message_id was not specified but it is required when building UpdateDetectorRequest",
+                )
+            })?,
+            detector_model_name: self.detector_model_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "detector_model_name",
+                    "detector_model_name was not specified but it is required when building UpdateDetectorRequest",
+                )
+            })?,
             key_value: self.key_value,
             state: self.state,
-        }
+        })
     }
 }

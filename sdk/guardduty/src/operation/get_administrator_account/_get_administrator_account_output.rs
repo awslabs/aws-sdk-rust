@@ -34,6 +34,7 @@ pub struct GetAdministratorAccountOutputBuilder {
 }
 impl GetAdministratorAccountOutputBuilder {
     /// <p>The administrator account details.</p>
+    /// This field is required.
     pub fn administrator(mut self, input: crate::types::Administrator) -> Self {
         self.administrator = ::std::option::Option::Some(input);
         self

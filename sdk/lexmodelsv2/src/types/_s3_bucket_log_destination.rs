@@ -7,9 +7,9 @@ pub struct S3BucketLogDestination {
     /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services Key Management Service (KMS) key for encrypting audio log files stored in an S3 bucket.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an Amazon S3 bucket where audio log files are stored.</p>
-    pub s3_bucket_arn: ::std::option::Option<::std::string::String>,
+    pub s3_bucket_arn: ::std::string::String,
     /// <p>The S3 prefix to assign to audio log files.</p>
-    pub log_prefix: ::std::option::Option<::std::string::String>,
+    pub log_prefix: ::std::string::String,
 }
 impl S3BucketLogDestination {
     /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services Key Management Service (KMS) key for encrypting audio log files stored in an S3 bucket.</p>
@@ -17,12 +17,14 @@ impl S3BucketLogDestination {
         self.kms_key_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon S3 bucket where audio log files are stored.</p>
-    pub fn s3_bucket_arn(&self) -> ::std::option::Option<&str> {
-        self.s3_bucket_arn.as_deref()
+    pub fn s3_bucket_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.s3_bucket_arn.deref()
     }
     /// <p>The S3 prefix to assign to audio log files.</p>
-    pub fn log_prefix(&self) -> ::std::option::Option<&str> {
-        self.log_prefix.as_deref()
+    pub fn log_prefix(&self) -> &str {
+        use std::ops::Deref;
+        self.log_prefix.deref()
     }
 }
 impl S3BucketLogDestination {
@@ -56,6 +58,7 @@ impl S3BucketLogDestinationBuilder {
         &self.kms_key_arn
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon S3 bucket where audio log files are stored.</p>
+    /// This field is required.
     pub fn s3_bucket_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket_arn = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +73,7 @@ impl S3BucketLogDestinationBuilder {
         &self.s3_bucket_arn
     }
     /// <p>The S3 prefix to assign to audio log files.</p>
+    /// This field is required.
     pub fn log_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_prefix = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +88,24 @@ impl S3BucketLogDestinationBuilder {
         &self.log_prefix
     }
     /// Consumes the builder and constructs a [`S3BucketLogDestination`](crate::types::S3BucketLogDestination).
-    pub fn build(self) -> crate::types::S3BucketLogDestination {
-        crate::types::S3BucketLogDestination {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`s3_bucket_arn`](crate::types::builders::S3BucketLogDestinationBuilder::s3_bucket_arn)
+    /// - [`log_prefix`](crate::types::builders::S3BucketLogDestinationBuilder::log_prefix)
+    pub fn build(self) -> ::std::result::Result<crate::types::S3BucketLogDestination, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::S3BucketLogDestination {
             kms_key_arn: self.kms_key_arn,
-            s3_bucket_arn: self.s3_bucket_arn,
-            log_prefix: self.log_prefix,
-        }
+            s3_bucket_arn: self.s3_bucket_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "s3_bucket_arn",
+                    "s3_bucket_arn was not specified but it is required when building S3BucketLogDestination",
+                )
+            })?,
+            log_prefix: self.log_prefix.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "log_prefix",
+                    "log_prefix was not specified but it is required when building S3BucketLogDestination",
+                )
+            })?,
+        })
     }
 }

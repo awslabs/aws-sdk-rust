@@ -12,8 +12,10 @@ pub struct DescribeMatchmakingRuleSetsInput {
 }
 impl DescribeMatchmakingRuleSetsInput {
     /// <p>A list of one or more matchmaking rule set names to retrieve details for. (Note: The rule set name is different from the optional "name" field in the rule set body.) You can use either the rule set name or ARN value. </p>
-    pub fn names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.names.is_none()`.
+    pub fn names(&self) -> &[::std::string::String] {
+        self.names.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub fn limit(&self) -> ::std::option::Option<i32> {
@@ -93,7 +95,7 @@ impl DescribeMatchmakingRuleSetsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSetsInput {
             names: self.names,

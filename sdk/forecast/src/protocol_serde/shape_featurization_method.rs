@@ -2,19 +2,19 @@
 pub fn ser_featurization_method(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FeaturizationMethod,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.featurization_method_name {
-        object.key("FeaturizationMethodName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("FeaturizationMethodName").string(input.featurization_method_name.as_str());
     }
-    if let Some(var_2) = &input.featurization_method_parameters {
+    if let Some(var_1) = &input.featurization_method_parameters {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("FeaturizationMethodParameters").start_object();
-        for (key_4, value_5) in var_2 {
+        let mut object_2 = object.key("FeaturizationMethodParameters").start_object();
+        for (key_3, value_4) in var_1 {
             {
-                object_3.key(key_4.as_str()).string(value_5.as_str());
+                object_2.key(key_3.as_str()).string(value_4.as_str());
             }
         }
-        object_3.finish();
+        object_2.finish();
     }
     Ok(())
 }
@@ -56,7 +56,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::featurization_method_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

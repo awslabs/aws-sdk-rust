@@ -9,8 +9,10 @@ pub struct DisableInsightRulesOutput {
 }
 impl DisableInsightRulesOutput {
     /// <p>An array listing the rules that could not be disabled. You cannot disable built-in rules.</p>
-    pub fn failures(&self) -> ::std::option::Option<&[crate::types::PartialFailure]> {
-        self.failures.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failures.is_none()`.
+    pub fn failures(&self) -> &[crate::types::PartialFailure] {
+        self.failures.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DisableInsightRulesOutput {

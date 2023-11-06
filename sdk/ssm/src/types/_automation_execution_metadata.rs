@@ -130,14 +130,16 @@ impl AutomationExecutionMetadata {
         self.target_parameter_name.as_deref()
     }
     /// <p>The targets defined by the user when starting the automation.</p>
-    pub fn targets(&self) -> ::std::option::Option<&[crate::types::Target]> {
-        self.targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
+    pub fn targets(&self) -> &[crate::types::Target] {
+        self.targets.as_deref().unwrap_or_default()
     }
     /// <p>The specified key-value mapping of document parameters to target resources.</p>
-    pub fn target_maps(
-        &self,
-    ) -> ::std::option::Option<&[::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>]> {
-        self.target_maps.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_maps.is_none()`.
+    pub fn target_maps(&self) -> &[::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>] {
+        self.target_maps.as_deref().unwrap_or_default()
     }
     /// <p>A list of targets that resolved during the execution.</p>
     pub fn resolved_targets(&self) -> ::std::option::Option<&crate::types::ResolvedTargets> {
@@ -164,8 +166,10 @@ impl AutomationExecutionMetadata {
         self.alarm_configuration.as_ref()
     }
     /// <p>The CloudWatch alarm that was invoked by the automation.</p>
-    pub fn triggered_alarms(&self) -> ::std::option::Option<&[crate::types::AlarmStateInformation]> {
-        self.triggered_alarms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.triggered_alarms.is_none()`.
+    pub fn triggered_alarms(&self) -> &[crate::types::AlarmStateInformation] {
+        self.triggered_alarms.as_deref().unwrap_or_default()
     }
     /// <p>The subtype of the Automation operation. Currently, the only supported value is <code>ChangeRequest</code>.</p>
     pub fn automation_subtype(&self) -> ::std::option::Option<&crate::types::AutomationSubtype> {
@@ -178,8 +182,10 @@ impl AutomationExecutionMetadata {
     /// <p>Information about the Automation runbooks that are run during a runbook workflow in Change Manager.</p> <note>
     /// <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p>
     /// </note>
-    pub fn runbooks(&self) -> ::std::option::Option<&[crate::types::Runbook]> {
-        self.runbooks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.runbooks.is_none()`.
+    pub fn runbooks(&self) -> &[crate::types::Runbook] {
+        self.runbooks.as_deref().unwrap_or_default()
     }
     /// <p>The ID of an OpsItem that is created to represent a Change Manager change request.</p>
     pub fn ops_item_id(&self) -> ::std::option::Option<&str> {

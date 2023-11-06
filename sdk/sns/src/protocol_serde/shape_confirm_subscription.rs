@@ -98,6 +98,22 @@ pub fn de_confirm_subscription_http_error(
             }
             tmp
         }),
+        "ReplayLimitExceeded" => crate::operation::confirm_subscription::ConfirmSubscriptionError::ReplayLimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ReplayLimitExceededExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_replay_limit_exceeded_exception::de_replay_limit_exceeded_exception_xml_err(_response_body, output)
+                        .map_err(crate::operation::confirm_subscription::ConfirmSubscriptionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "SubscriptionLimitExceeded" => crate::operation::confirm_subscription::ConfirmSubscriptionError::SubscriptionLimitExceededException({
             #[allow(unused_mut)]
             let mut tmp = {

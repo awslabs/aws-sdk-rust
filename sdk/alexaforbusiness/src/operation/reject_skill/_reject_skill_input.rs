@@ -27,6 +27,7 @@ pub struct RejectSkillInputBuilder {
 }
 impl RejectSkillInputBuilder {
     /// <p>The unique identifier of the skill.</p>
+    /// This field is required.
     pub fn skill_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.skill_id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl RejectSkillInputBuilder {
         &self.skill_id
     }
     /// Consumes the builder and constructs a [`RejectSkillInput`](crate::operation::reject_skill::RejectSkillInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::reject_skill::RejectSkillInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::reject_skill::RejectSkillInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::reject_skill::RejectSkillInput { skill_id: self.skill_id })
     }
 }

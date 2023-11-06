@@ -41,6 +41,7 @@ pub struct ListTargetsForPolicyInputBuilder {
 }
 impl ListTargetsForPolicyInputBuilder {
     /// <p>The policy name.</p>
+    /// This field is required.
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl ListTargetsForPolicyInputBuilder {
     /// Consumes the builder and constructs a [`ListTargetsForPolicyInput`](crate::operation::list_targets_for_policy::ListTargetsForPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_targets_for_policy::ListTargetsForPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_targets_for_policy::ListTargetsForPolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_targets_for_policy::ListTargetsForPolicyInput {
             policy_name: self.policy_name,

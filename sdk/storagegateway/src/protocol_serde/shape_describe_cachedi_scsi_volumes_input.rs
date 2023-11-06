@@ -2,8 +2,8 @@
 pub fn ser_describe_cachedi_scsi_volumes_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_cachedi_scsi_volumes::DescribeCachediScsiVolumesInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.volume_ar_ns {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    if let Some(var_1) = &input.volume_arns {
         let mut array_2 = object.key("VolumeARNs").start_array();
         for item_3 in var_1 {
             {

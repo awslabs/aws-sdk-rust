@@ -34,6 +34,7 @@ pub struct GetControlOperationOutputBuilder {
 }
 impl GetControlOperationOutputBuilder {
     /// <p>An operation performed by the control.</p>
+    /// This field is required.
     pub fn control_operation(mut self, input: crate::types::ControlOperation) -> Self {
         self.control_operation = ::std::option::Option::Some(input);
         self

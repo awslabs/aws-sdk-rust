@@ -28,8 +28,10 @@ impl ListIncomingTypedLinksInput {
         self.object_reference.as_ref()
     }
     /// <p>Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.</p>
-    pub fn filter_attribute_ranges(&self) -> ::std::option::Option<&[crate::types::TypedLinkAttributeRange]> {
-        self.filter_attribute_ranges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filter_attribute_ranges.is_none()`.
+    pub fn filter_attribute_ranges(&self) -> &[crate::types::TypedLinkAttributeRange] {
+        self.filter_attribute_ranges.as_deref().unwrap_or_default()
     }
     /// <p>Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls.</p>
     pub fn filter_typed_link(&self) -> ::std::option::Option<&crate::types::TypedLinkSchemaAndFacetName> {
@@ -69,6 +71,7 @@ pub struct ListIncomingTypedLinksInputBuilder {
 }
 impl ListIncomingTypedLinksInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed links.</p>
+    /// This field is required.
     pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +86,7 @@ impl ListIncomingTypedLinksInputBuilder {
         &self.directory_arn
     }
     /// <p>Reference that identifies the object whose attributes will be listed.</p>
+    /// This field is required.
     pub fn object_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.object_reference = ::std::option::Option::Some(input);
         self
@@ -177,7 +181,7 @@ impl ListIncomingTypedLinksInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_incoming_typed_links::ListIncomingTypedLinksInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_incoming_typed_links::ListIncomingTypedLinksInput {
             directory_arn: self.directory_arn,

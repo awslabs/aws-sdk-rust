@@ -13,6 +13,9 @@
 //!
 //! Only operations that support presigning have the `presigned()` method on them.
 
+use aws_smithy_runtime_api::box_error::BoxError;
+use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
+use aws_smithy_types::body::SdkBody;
 use std::fmt;
 use std::time::{Duration, SystemTime};
 
@@ -169,59 +172,74 @@ impl PresigningConfigBuilder {
 ///
 /// **This struct has conversion convenience functions:**
 ///
-/// - [`PresignedRequest::to_http_request<B>`][Self::to_http_request] returns an [`http::Request<B>`](https://docs.rs/http/0.2.6/http/request/struct.Request.html)
+/// - [`PresignedRequest::make_http_02x_request<B>`][Self::make_http_02x_request] returns an [`http::Request<B>`](https://docs.rs/http/0.2.6/http/request/struct.Request.html)
 /// - [`PresignedRequest::into`](#impl-From<PresignedRequest>) returns an [`http::request::Builder`](https://docs.rs/http/0.2.6/http/request/struct.Builder.html)
 #[non_exhaustive]
-pub struct PresignedRequest(http::Request<()>);
+pub struct PresignedRequest {
+    http_request: HttpRequest,
+}
+
+impl Clone for PresignedRequest {
+    fn clone(&self) -> Self {
+        Self {
+            http_request: match self.http_request.try_clone() {
+                Some(body) => body,
+                None => {
+                    unreachable!("during construction, we replaced the body with `SdkBody::empty()`")
+                }
+            },
+        }
+    }
+}
 
 impl PresignedRequest {
-    pub(crate) fn new(inner: http::Request<()>) -> Self {
-        Self(inner)
+    #[allow(dead_code)]
+    pub(crate) fn new(inner: HttpRequest) -> Result<Self, BoxError> {
+        // throw out the body so we're sure it's cloneable
+        let http_request = inner.map(|_body| SdkBody::empty());
+        // this should never fail, a presigned request should always be convertible, but better to
+        // protect against this potential panic
+        let _ = http_request.try_clone().expect("must be cloneable, body is empty").into_http02x()?;
+        Ok(Self { http_request })
     }
 
     /// Returns the HTTP request method.
-    pub fn method(&self) -> &http::Method {
-        self.0.method()
+    pub fn method(&self) -> &str {
+        self.http_request.method()
     }
 
     /// Returns the HTTP request URI.
-    pub fn uri(&self) -> &http::Uri {
-        self.0.uri()
+    pub fn uri(&self) -> &str {
+        self.http_request.uri()
     }
 
     /// Returns any HTTP headers that need to go along with the request, except for `Host`,
     /// which should be sent based on the endpoint in the URI by the HTTP client rather than
     /// added directly.
-    pub fn headers(&self) -> &http::HeaderMap<http::HeaderValue> {
-        self.0.headers()
+    pub fn headers(&self) -> impl Iterator<Item = (&str, &str)> {
+        self.http_request.headers().iter()
     }
 
-    /// Given a body, convert this `PresignedRequest` into an `http::Request`
-    pub fn to_http_request<B>(self, body: B) -> Result<http::Request<B>, http::Error> {
-        let builder: http::request::Builder = self.into();
+    /// Given a body, produce an `http::Request` from this `PresignedRequest`
+    pub fn make_http_02x_request<B>(&self, body: B) -> http::Request<B> {
+        self.clone().into_http_02x_request(body)
+    }
 
-        builder.body(body)
+    /// Converts this `PresignedRequest` directly into an `http` request.
+    pub fn into_http_02x_request<B>(self, body: B) -> http::Request<B> {
+        self.http_request
+            .into_http02x()
+            .expect("constructor validated convertibility")
+            .map(|_req| body)
     }
 }
 
 impl fmt::Debug for PresignedRequest {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.debug_struct("PresignedRequest")
-            .field("method", self.method())
-            .field("uri", self.uri())
-            .field("headers", self.headers())
+            .field("method", &self.method())
+            .field("uri", &self.uri())
+            .field("headers", self.http_request.headers())
             .finish()
-    }
-}
-
-impl From<PresignedRequest> for http::request::Builder {
-    fn from(req: PresignedRequest) -> Self {
-        let mut builder = http::request::Builder::new().uri(req.uri()).method(req.method());
-
-        if let Some(headers) = builder.headers_mut() {
-            *headers = req.headers().clone();
-        }
-
-        builder
     }
 }

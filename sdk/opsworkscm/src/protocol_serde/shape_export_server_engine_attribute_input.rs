@@ -2,7 +2,7 @@
 pub fn ser_export_server_engine_attribute_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::export_server_engine_attribute::ExportServerEngineAttributeInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.export_attribute_name {
         object.key("ExportAttributeName").string(var_1.as_str());
     }

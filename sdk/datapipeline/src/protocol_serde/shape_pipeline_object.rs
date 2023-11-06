@@ -2,24 +2,24 @@
 pub fn ser_pipeline_object(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PipelineObject,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.id {
-        object.key("id").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("id").string(input.id.as_str());
     }
-    if let Some(var_2) = &input.name {
-        object.key("name").string(var_2.as_str());
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_3) = &input.fields {
-        let mut array_4 = object.key("fields").start_array();
-        for item_5 in var_3 {
+    {
+        let mut array_1 = object.key("fields").start_array();
+        for item_2 in &input.fields {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_field::ser_field(&mut object_6, item_5)?;
-                object_6.finish();
+                let mut object_3 = array_1.value().start_object();
+                crate::protocol_serde::shape_field::ser_field(&mut object_3, item_2)?;
+                object_3.finish();
             }
         }
-        array_4.finish();
+        array_1.finish();
     }
     Ok(())
 }
@@ -66,7 +66,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::pipeline_object_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

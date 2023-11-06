@@ -17,8 +17,10 @@ impl FleetLaunchTemplateConfigRequest {
     }
     /// <p>Any parameters that you specify override the same parameters in the launch template.</p>
     /// <p>For fleets of type <code>request</code> and <code>maintain</code>, a maximum of 300 items is allowed across all launch templates.</p>
-    pub fn overrides(&self) -> ::std::option::Option<&[crate::types::FleetLaunchTemplateOverridesRequest]> {
-        self.overrides.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.overrides.is_none()`.
+    pub fn overrides(&self) -> &[crate::types::FleetLaunchTemplateOverridesRequest] {
+        self.overrides.as_deref().unwrap_or_default()
     }
 }
 impl FleetLaunchTemplateConfigRequest {

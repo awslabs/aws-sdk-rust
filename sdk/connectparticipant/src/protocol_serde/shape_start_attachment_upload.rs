@@ -28,11 +28,10 @@ pub fn de_start_attachment_upload_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::start_attachment_upload::StartAttachmentUploadError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::start_attachment_upload::StartAttachmentUploadError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerException" => crate::operation::start_attachment_upload::StartAttachmentUploadError::InternalServerException({
@@ -43,11 +42,10 @@ pub fn de_start_attachment_upload_http_error(
                 output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
                     .map_err(crate::operation::start_attachment_upload::StartAttachmentUploadError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::start_attachment_upload::StartAttachmentUploadError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ServiceQuotaExceededException" => crate::operation::start_attachment_upload::StartAttachmentUploadError::ServiceQuotaExceededException({
@@ -61,11 +59,10 @@ pub fn de_start_attachment_upload_http_error(
                 )
                 .map_err(crate::operation::start_attachment_upload::StartAttachmentUploadError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::service_quota_exceeded_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::start_attachment_upload::StartAttachmentUploadError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::start_attachment_upload::StartAttachmentUploadError::ThrottlingException({
@@ -76,11 +73,10 @@ pub fn de_start_attachment_upload_http_error(
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::start_attachment_upload::StartAttachmentUploadError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::start_attachment_upload::StartAttachmentUploadError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::start_attachment_upload::StartAttachmentUploadError::ValidationException({
@@ -91,11 +87,10 @@ pub fn de_start_attachment_upload_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::start_attachment_upload::StartAttachmentUploadError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::start_attachment_upload::StartAttachmentUploadError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::start_attachment_upload::StartAttachmentUploadError::generic(generic),
@@ -124,13 +119,13 @@ pub fn de_start_attachment_upload_http_response(
 pub fn ser_start_attachment_upload_headers(
     input: &crate::operation::start_attachment_upload::StartAttachmentUploadInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.connection_token {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "connection_token",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -143,12 +138,12 @@ pub fn ser_start_attachment_upload_headers(
 
 pub fn ser_start_attachment_upload_input(
     input: &crate::operation::start_attachment_upload::StartAttachmentUploadInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_start_attachment_upload_input::ser_start_attachment_upload_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_start_attachment_upload(

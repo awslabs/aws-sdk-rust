@@ -58,6 +58,7 @@ impl FixedResponseActionConfigBuilder {
         &self.message_body
     }
     /// <p>The HTTP response code (2XX, 4XX, or 5XX).</p>
+    /// This field is required.
     pub fn status_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_code = ::std::option::Option::Some(input.into());
         self

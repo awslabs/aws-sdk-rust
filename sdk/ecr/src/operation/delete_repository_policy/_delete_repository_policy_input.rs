@@ -48,6 +48,7 @@ impl DeleteRepositoryPolicyInputBuilder {
         &self.registry_id
     }
     /// <p>The name of the repository that is associated with the repository policy to delete.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -64,8 +65,10 @@ impl DeleteRepositoryPolicyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRepositoryPolicyInput`](crate::operation::delete_repository_policy::DeleteRepositoryPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_repository_policy::DeleteRepositoryPolicyInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_repository_policy::DeleteRepositoryPolicyInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_repository_policy::DeleteRepositoryPolicyInput {
             registry_id: self.registry_id,
             repository_name: self.repository_name,

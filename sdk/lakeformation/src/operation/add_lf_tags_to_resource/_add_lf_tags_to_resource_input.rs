@@ -20,8 +20,10 @@ impl AddLfTagsToResourceInput {
         self.resource.as_ref()
     }
     /// <p>The LF-tags to attach to the resource.</p>
-    pub fn lf_tags(&self) -> ::std::option::Option<&[crate::types::LfTagPair]> {
-        self.lf_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lf_tags.is_none()`.
+    pub fn lf_tags(&self) -> &[crate::types::LfTagPair] {
+        self.lf_tags.as_deref().unwrap_or_default()
     }
 }
 impl AddLfTagsToResourceInput {
@@ -55,6 +57,7 @@ impl AddLfTagsToResourceInputBuilder {
         &self.catalog_id
     }
     /// <p>The database, table, or column resource to which to attach an LF-tag.</p>
+    /// This field is required.
     pub fn resource(mut self, input: crate::types::Resource) -> Self {
         self.resource = ::std::option::Option::Some(input);
         self
@@ -91,7 +94,7 @@ impl AddLfTagsToResourceInputBuilder {
     /// Consumes the builder and constructs a [`AddLfTagsToResourceInput`](crate::operation::add_lf_tags_to_resource::AddLfTagsToResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::add_lf_tags_to_resource::AddLfTagsToResourceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::add_lf_tags_to_resource::AddLfTagsToResourceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::add_lf_tags_to_resource::AddLfTagsToResourceInput {
             catalog_id: self.catalog_id,

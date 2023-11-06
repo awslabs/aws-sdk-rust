@@ -11,11 +11,11 @@ pub struct ColumnInfo {
     /// <p>The table name for the query results.</p>
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the column.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>A column label.</p>
     pub label: ::std::option::Option<::std::string::String>,
     /// <p>The data type of the column.</p>
-    pub r#type: ::std::option::Option<::std::string::String>,
+    pub r#type: ::std::string::String,
     /// <p>For <code>DECIMAL</code> data types, specifies the total number of digits, up to 38. For performance reasons, we recommend up to 18 digits.</p>
     pub precision: i32,
     /// <p>For <code>DECIMAL</code> data types, specifies the total number of digits in the fractional part of the value. Defaults to 0.</p>
@@ -39,16 +39,18 @@ impl ColumnInfo {
         self.table_name.as_deref()
     }
     /// <p>The name of the column.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>A column label.</p>
     pub fn label(&self) -> ::std::option::Option<&str> {
         self.label.as_deref()
     }
     /// <p>The data type of the column.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
-        self.r#type.as_deref()
+    pub fn r#type(&self) -> &str {
+        use std::ops::Deref;
+        self.r#type.deref()
     }
     /// <p>For <code>DECIMAL</code> data types, specifies the total number of digits, up to 38. For performance reasons, we recommend up to 18 digits.</p>
     pub fn precision(&self) -> i32 {
@@ -133,6 +135,7 @@ impl ColumnInfoBuilder {
         &self.table_name
     }
     /// <p>The name of the column.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -161,6 +164,7 @@ impl ColumnInfoBuilder {
         &self.label
     }
     /// <p>The data type of the column.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
@@ -231,18 +235,31 @@ impl ColumnInfoBuilder {
         &self.case_sensitive
     }
     /// Consumes the builder and constructs a [`ColumnInfo`](crate::types::ColumnInfo).
-    pub fn build(self) -> crate::types::ColumnInfo {
-        crate::types::ColumnInfo {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::ColumnInfoBuilder::name)
+    /// - [`r#type`](crate::types::builders::ColumnInfoBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::ColumnInfo, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ColumnInfo {
             catalog_name: self.catalog_name,
             schema_name: self.schema_name,
             table_name: self.table_name,
-            name: self.name,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ColumnInfo",
+                )
+            })?,
             label: self.label,
-            r#type: self.r#type,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building ColumnInfo",
+                )
+            })?,
             precision: self.precision.unwrap_or_default(),
             scale: self.scale.unwrap_or_default(),
             nullable: self.nullable,
             case_sensitive: self.case_sensitive.unwrap_or_default(),
-        }
+        })
     }
 }

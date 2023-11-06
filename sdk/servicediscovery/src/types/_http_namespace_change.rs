@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HttpNamespaceChange {
     /// <p>An updated description for the HTTP namespace.</p>
-    pub description: ::std::option::Option<::std::string::String>,
+    pub description: ::std::string::String,
 }
 impl HttpNamespaceChange {
     /// <p>An updated description for the HTTP namespace.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
-        self.description.as_deref()
+    pub fn description(&self) -> &str {
+        use std::ops::Deref;
+        self.description.deref()
     }
 }
 impl HttpNamespaceChange {
@@ -28,6 +29,7 @@ pub struct HttpNamespaceChangeBuilder {
 }
 impl HttpNamespaceChangeBuilder {
     /// <p>An updated description for the HTTP namespace.</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl HttpNamespaceChangeBuilder {
         &self.description
     }
     /// Consumes the builder and constructs a [`HttpNamespaceChange`](crate::types::HttpNamespaceChange).
-    pub fn build(self) -> crate::types::HttpNamespaceChange {
-        crate::types::HttpNamespaceChange {
-            description: self.description,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`description`](crate::types::builders::HttpNamespaceChangeBuilder::description)
+    pub fn build(self) -> ::std::result::Result<crate::types::HttpNamespaceChange, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::HttpNamespaceChange {
+            description: self.description.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "description",
+                    "description was not specified but it is required when building HttpNamespaceChange",
+                )
+            })?,
+        })
     }
 }

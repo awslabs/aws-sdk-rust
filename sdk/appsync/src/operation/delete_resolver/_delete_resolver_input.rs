@@ -41,6 +41,7 @@ pub struct DeleteResolverInputBuilder {
 }
 impl DeleteResolverInputBuilder {
     /// <p>The API ID.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DeleteResolverInputBuilder {
         &self.api_id
     }
     /// <p>The name of the resolver type.</p>
+    /// This field is required.
     pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl DeleteResolverInputBuilder {
         &self.type_name
     }
     /// <p>The resolver field name.</p>
+    /// This field is required.
     pub fn field_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.field_name = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +88,7 @@ impl DeleteResolverInputBuilder {
     /// Consumes the builder and constructs a [`DeleteResolverInput`](crate::operation::delete_resolver::DeleteResolverInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_resolver::DeleteResolverInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_resolver::DeleteResolverInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_resolver::DeleteResolverInput {
             api_id: self.api_id,
             type_name: self.type_name,

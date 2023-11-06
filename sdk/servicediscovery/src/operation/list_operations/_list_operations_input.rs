@@ -28,8 +28,10 @@ impl ListOperationsInput {
     }
     /// <p>A complex type that contains specifications for the operations that you want to list, for example, operations that you started between a specified start date and end date.</p>
     /// <p>If you specify more than one filter, an operation must match all filters to be returned by <code>ListOperations</code>.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::OperationFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::OperationFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
 }
 impl ListOperationsInput {
@@ -111,7 +113,7 @@ impl ListOperationsInputBuilder {
     /// Consumes the builder and constructs a [`ListOperationsInput`](crate::operation::list_operations::ListOperationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_operations::ListOperationsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_operations::ListOperationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_operations::ListOperationsInput {
             next_token: self.next_token,
             max_results: self.max_results,

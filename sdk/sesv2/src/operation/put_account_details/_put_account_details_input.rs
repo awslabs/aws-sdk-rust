@@ -37,8 +37,10 @@ impl PutAccountDetailsInput {
         self.use_case_description.as_deref()
     }
     /// <p>Additional email addresses that you would like to be notified regarding Amazon SES matters.</p>
-    pub fn additional_contact_email_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.additional_contact_email_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_contact_email_addresses.is_none()`.
+    pub fn additional_contact_email_addresses(&self) -> &[::std::string::String] {
+        self.additional_contact_email_addresses.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether or not your account should have production access in the current Amazon Web Services Region.</p>
     /// <p>If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails you can send in a 24-hour period (your sending quota) is 200, and the maximum number of emails you can send per second (your maximum sending rate) is 1.</p>
@@ -79,6 +81,7 @@ pub struct PutAccountDetailsInputBuilder {
 }
 impl PutAccountDetailsInputBuilder {
     /// <p>The type of email your account will send.</p>
+    /// This field is required.
     pub fn mail_type(mut self, input: crate::types::MailType) -> Self {
         self.mail_type = ::std::option::Option::Some(input);
         self
@@ -93,6 +96,7 @@ impl PutAccountDetailsInputBuilder {
         &self.mail_type
     }
     /// <p>The URL of your website. This information helps us better understand the type of content that you plan to send.</p>
+    /// This field is required.
     pub fn website_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.website_url = ::std::option::Option::Some(input.into());
         self
@@ -121,6 +125,7 @@ impl PutAccountDetailsInputBuilder {
         &self.contact_language
     }
     /// <p>A description of the types of email that you plan to send.</p>
+    /// This field is required.
     pub fn use_case_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.use_case_description = ::std::option::Option::Some(input.into());
         self
@@ -177,7 +182,7 @@ impl PutAccountDetailsInputBuilder {
     /// Consumes the builder and constructs a [`PutAccountDetailsInput`](crate::operation::put_account_details::PutAccountDetailsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_account_details::PutAccountDetailsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_account_details::PutAccountDetailsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_account_details::PutAccountDetailsInput {
             mail_type: self.mail_type,
             website_url: self.website_url,

@@ -27,6 +27,7 @@ pub struct DeleteFirewallDomainListInputBuilder {
 }
 impl DeleteFirewallDomainListInputBuilder {
     /// <p>The ID of the domain list that you want to delete. </p>
+    /// This field is required.
     pub fn firewall_domain_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_domain_list_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteFirewallDomainListInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_firewall_domain_list::DeleteFirewallDomainListInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_firewall_domain_list::DeleteFirewallDomainListInput {
             firewall_domain_list_id: self.firewall_domain_list_id,

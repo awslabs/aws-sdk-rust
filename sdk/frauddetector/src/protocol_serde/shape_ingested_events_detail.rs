@@ -2,7 +2,7 @@
 pub fn ser_ingested_events_detail(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IngestedEventsDetail,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ingested_events_time_window {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ingestedEventsTimeWindow").start_object();
@@ -42,7 +42,7 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::ingested_events_detail_correct_errors(builder).build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

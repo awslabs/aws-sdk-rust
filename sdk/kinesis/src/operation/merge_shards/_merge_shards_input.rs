@@ -63,6 +63,7 @@ impl MergeShardsInputBuilder {
         &self.stream_name
     }
     /// <p>The shard ID of the shard to combine with the adjacent shard for the merge.</p>
+    /// This field is required.
     pub fn shard_to_merge(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shard_to_merge = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +78,7 @@ impl MergeShardsInputBuilder {
         &self.shard_to_merge
     }
     /// <p>The shard ID of the adjacent shard for the merge.</p>
+    /// This field is required.
     pub fn adjacent_shard_to_merge(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.adjacent_shard_to_merge = ::std::option::Option::Some(input.into());
         self
@@ -105,7 +107,7 @@ impl MergeShardsInputBuilder {
         &self.stream_arn
     }
     /// Consumes the builder and constructs a [`MergeShardsInput`](crate::operation::merge_shards::MergeShardsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::merge_shards::MergeShardsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::merge_shards::MergeShardsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::merge_shards::MergeShardsInput {
             stream_name: self.stream_name,
             shard_to_merge: self.shard_to_merge,

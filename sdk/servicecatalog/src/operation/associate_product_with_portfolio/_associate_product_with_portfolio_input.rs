@@ -82,6 +82,7 @@ impl AssociateProductWithPortfolioInputBuilder {
         &self.accept_language
     }
     /// <p>The product identifier.</p>
+    /// This field is required.
     pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_id = ::std::option::Option::Some(input.into());
         self
@@ -96,6 +97,7 @@ impl AssociateProductWithPortfolioInputBuilder {
         &self.product_id
     }
     /// <p>The portfolio identifier.</p>
+    /// This field is required.
     pub fn portfolio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portfolio_id = ::std::option::Option::Some(input.into());
         self
@@ -128,7 +130,7 @@ impl AssociateProductWithPortfolioInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_product_with_portfolio::AssociateProductWithPortfolioInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::associate_product_with_portfolio::AssociateProductWithPortfolioInput {
             accept_language: self.accept_language,

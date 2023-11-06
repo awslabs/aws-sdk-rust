@@ -33,6 +33,7 @@ impl DeleteContactMethodInputBuilder {
     /// <p>The protocol that will be deleted, such as <code>Email</code> or <code>SMS</code> (text messaging).</p> <note>
     /// <p>To delete an <code>Email</code> and an <code>SMS</code> contact method if you added both, you must run separate <code>DeleteContactMethod</code> actions to delete each protocol.</p>
     /// </note>
+    /// This field is required.
     pub fn protocol(mut self, input: crate::types::ContactProtocol) -> Self {
         self.protocol = ::std::option::Option::Some(input);
         self
@@ -53,7 +54,7 @@ impl DeleteContactMethodInputBuilder {
     /// Consumes the builder and constructs a [`DeleteContactMethodInput`](crate::operation::delete_contact_method::DeleteContactMethodInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_contact_method::DeleteContactMethodInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_contact_method::DeleteContactMethodInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_contact_method::DeleteContactMethodInput { protocol: self.protocol })
     }

@@ -8,8 +8,10 @@ pub struct GetSamplingTargetsInput {
 }
 impl GetSamplingTargetsInput {
     /// <p>Information about rules that the service is using to sample requests.</p>
-    pub fn sampling_statistics_documents(&self) -> ::std::option::Option<&[crate::types::SamplingStatisticsDocument]> {
-        self.sampling_statistics_documents.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sampling_statistics_documents.is_none()`.
+    pub fn sampling_statistics_documents(&self) -> &[crate::types::SamplingStatisticsDocument] {
+        self.sampling_statistics_documents.as_deref().unwrap_or_default()
     }
 }
 impl GetSamplingTargetsInput {
@@ -52,7 +54,8 @@ impl GetSamplingTargetsInputBuilder {
     /// Consumes the builder and constructs a [`GetSamplingTargetsInput`](crate::operation::get_sampling_targets::GetSamplingTargetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_sampling_targets::GetSamplingTargetsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_sampling_targets::GetSamplingTargetsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_sampling_targets::GetSamplingTargetsInput {
             sampling_statistics_documents: self.sampling_statistics_documents,
         })

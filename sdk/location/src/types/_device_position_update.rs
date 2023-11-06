@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DevicePositionUpdate {
     /// <p>The device associated to the position update.</p>
-    pub device_id: ::std::option::Option<::std::string::String>,
+    pub device_id: ::std::string::String,
     /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub sample_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub sample_time: ::aws_smithy_types::DateTime,
     /// <p>The latest device position defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">WGS 84</a> format: <code>[X or longitude, Y or latitude]</code>.</p>
-    pub position: ::std::option::Option<::std::vec::Vec<f64>>,
+    pub position: ::std::vec::Vec<f64>,
     /// <p>The accuracy of the device position.</p>
     pub accuracy: ::std::option::Option<crate::types::PositionalAccuracy>,
     /// <p>Associates one of more properties with the position update. A property is a key-value pair stored with the position update and added to any geofence event the update may trigger.</p>
@@ -18,16 +18,18 @@ pub struct DevicePositionUpdate {
 }
 impl DevicePositionUpdate {
     /// <p>The device associated to the position update.</p>
-    pub fn device_id(&self) -> ::std::option::Option<&str> {
-        self.device_id.as_deref()
+    pub fn device_id(&self) -> &str {
+        use std::ops::Deref;
+        self.device_id.deref()
     }
     /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub fn sample_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.sample_time.as_ref()
+    pub fn sample_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.sample_time
     }
     /// <p>The latest device position defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">WGS 84</a> format: <code>[X or longitude, Y or latitude]</code>.</p>
-    pub fn position(&self) -> ::std::option::Option<&[f64]> {
-        self.position.as_deref()
+    pub fn position(&self) -> &[f64] {
+        use std::ops::Deref;
+        self.position.deref()
     }
     /// <p>The accuracy of the device position.</p>
     pub fn accuracy(&self) -> ::std::option::Option<&crate::types::PositionalAccuracy> {
@@ -69,6 +71,7 @@ pub struct DevicePositionUpdateBuilder {
 }
 impl DevicePositionUpdateBuilder {
     /// <p>The device associated to the position update.</p>
+    /// This field is required.
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +86,7 @@ impl DevicePositionUpdateBuilder {
         &self.device_id
     }
     /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
+    /// This field is required.
     pub fn sample_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.sample_time = ::std::option::Option::Some(input);
         self
@@ -161,14 +165,33 @@ impl DevicePositionUpdateBuilder {
         &self.position_properties
     }
     /// Consumes the builder and constructs a [`DevicePositionUpdate`](crate::types::DevicePositionUpdate).
-    pub fn build(self) -> crate::types::DevicePositionUpdate {
-        crate::types::DevicePositionUpdate {
-            device_id: self.device_id,
-            sample_time: self.sample_time,
-            position: self.position,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`device_id`](crate::types::builders::DevicePositionUpdateBuilder::device_id)
+    /// - [`sample_time`](crate::types::builders::DevicePositionUpdateBuilder::sample_time)
+    /// - [`position`](crate::types::builders::DevicePositionUpdateBuilder::position)
+    pub fn build(self) -> ::std::result::Result<crate::types::DevicePositionUpdate, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DevicePositionUpdate {
+            device_id: self.device_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "device_id",
+                    "device_id was not specified but it is required when building DevicePositionUpdate",
+                )
+            })?,
+            sample_time: self.sample_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "sample_time",
+                    "sample_time was not specified but it is required when building DevicePositionUpdate",
+                )
+            })?,
+            position: self.position.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "position",
+                    "position was not specified but it is required when building DevicePositionUpdate",
+                )
+            })?,
             accuracy: self.accuracy,
             position_properties: self.position_properties,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for DevicePositionUpdateBuilder {

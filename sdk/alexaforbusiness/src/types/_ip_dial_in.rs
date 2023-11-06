@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpDialIn {
     /// <p>The IP address.</p>
-    pub endpoint: ::std::option::Option<::std::string::String>,
+    pub endpoint: ::std::string::String,
     /// <p>The protocol, including SIP, SIPS, and H323.</p>
-    pub comms_protocol: ::std::option::Option<crate::types::CommsProtocol>,
+    pub comms_protocol: crate::types::CommsProtocol,
 }
 impl IpDialIn {
     /// <p>The IP address.</p>
-    pub fn endpoint(&self) -> ::std::option::Option<&str> {
-        self.endpoint.as_deref()
+    pub fn endpoint(&self) -> &str {
+        use std::ops::Deref;
+        self.endpoint.deref()
     }
     /// <p>The protocol, including SIP, SIPS, and H323.</p>
-    pub fn comms_protocol(&self) -> ::std::option::Option<&crate::types::CommsProtocol> {
-        self.comms_protocol.as_ref()
+    pub fn comms_protocol(&self) -> &crate::types::CommsProtocol {
+        &self.comms_protocol
     }
 }
 impl IpDialIn {
@@ -35,6 +36,7 @@ pub struct IpDialInBuilder {
 }
 impl IpDialInBuilder {
     /// <p>The IP address.</p>
+    /// This field is required.
     pub fn endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl IpDialInBuilder {
         &self.endpoint
     }
     /// <p>The protocol, including SIP, SIPS, and H323.</p>
+    /// This field is required.
     pub fn comms_protocol(mut self, input: crate::types::CommsProtocol) -> Self {
         self.comms_protocol = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,23 @@ impl IpDialInBuilder {
         &self.comms_protocol
     }
     /// Consumes the builder and constructs a [`IpDialIn`](crate::types::IpDialIn).
-    pub fn build(self) -> crate::types::IpDialIn {
-        crate::types::IpDialIn {
-            endpoint: self.endpoint,
-            comms_protocol: self.comms_protocol,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`endpoint`](crate::types::builders::IpDialInBuilder::endpoint)
+    /// - [`comms_protocol`](crate::types::builders::IpDialInBuilder::comms_protocol)
+    pub fn build(self) -> ::std::result::Result<crate::types::IpDialIn, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::IpDialIn {
+            endpoint: self.endpoint.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "endpoint",
+                    "endpoint was not specified but it is required when building IpDialIn",
+                )
+            })?,
+            comms_protocol: self.comms_protocol.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "comms_protocol",
+                    "comms_protocol was not specified but it is required when building IpDialIn",
+                )
+            })?,
+        })
     }
 }

@@ -15,8 +15,10 @@ pub struct GetReadinessCheckStatusOutput {
 }
 impl GetReadinessCheckStatusOutput {
     /// <p>Top level messages for readiness check status</p>
-    pub fn messages(&self) -> ::std::option::Option<&[crate::types::Message]> {
-        self.messages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.messages.is_none()`.
+    pub fn messages(&self) -> &[crate::types::Message] {
+        self.messages.as_deref().unwrap_or_default()
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -27,8 +29,10 @@ impl GetReadinessCheckStatusOutput {
         self.readiness.as_ref()
     }
     /// <p>Summary of the readiness of resources.</p>
-    pub fn resources(&self) -> ::std::option::Option<&[crate::types::ResourceResult]> {
-        self.resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
+    pub fn resources(&self) -> &[crate::types::ResourceResult] {
+        self.resources.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetReadinessCheckStatusOutput {

@@ -9,8 +9,10 @@ pub struct FilterConfiguration {
 }
 impl FilterConfiguration {
     /// <p> A list of locations to allow game session placement in, in the form of Amazon Web Services Region codes such as <code>us-west-2</code>. </p>
-    pub fn allowed_locations(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.allowed_locations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_locations.is_none()`.
+    pub fn allowed_locations(&self) -> &[::std::string::String] {
+        self.allowed_locations.as_deref().unwrap_or_default()
     }
 }
 impl FilterConfiguration {

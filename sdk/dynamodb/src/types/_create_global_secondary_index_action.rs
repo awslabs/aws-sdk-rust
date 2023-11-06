@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateGlobalSecondaryIndexAction {
     /// <p>The name of the global secondary index to be created.</p>
-    pub index_name: ::std::option::Option<::std::string::String>,
+    pub index_name: ::std::string::String,
     /// <p>The key schema for the global secondary index.</p>
-    pub key_schema: ::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>>,
+    pub key_schema: ::std::vec::Vec<crate::types::KeySchemaElement>,
     /// <p>Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.</p>
     pub projection: ::std::option::Option<crate::types::Projection>,
     /// <p>Represents the provisioned throughput settings for the specified global secondary index.</p>
@@ -16,12 +16,14 @@ pub struct CreateGlobalSecondaryIndexAction {
 }
 impl CreateGlobalSecondaryIndexAction {
     /// <p>The name of the global secondary index to be created.</p>
-    pub fn index_name(&self) -> ::std::option::Option<&str> {
-        self.index_name.as_deref()
+    pub fn index_name(&self) -> &str {
+        use std::ops::Deref;
+        self.index_name.deref()
     }
     /// <p>The key schema for the global secondary index.</p>
-    pub fn key_schema(&self) -> ::std::option::Option<&[crate::types::KeySchemaElement]> {
-        self.key_schema.as_deref()
+    pub fn key_schema(&self) -> &[crate::types::KeySchemaElement] {
+        use std::ops::Deref;
+        self.key_schema.deref()
     }
     /// <p>Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.</p>
     pub fn projection(&self) -> ::std::option::Option<&crate::types::Projection> {
@@ -51,6 +53,7 @@ pub struct CreateGlobalSecondaryIndexActionBuilder {
 }
 impl CreateGlobalSecondaryIndexActionBuilder {
     /// <p>The name of the global secondary index to be created.</p>
+    /// This field is required.
     pub fn index_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_name = ::std::option::Option::Some(input.into());
         self
@@ -85,6 +88,7 @@ impl CreateGlobalSecondaryIndexActionBuilder {
         &self.key_schema
     }
     /// <p>Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.</p>
+    /// This field is required.
     pub fn projection(mut self, input: crate::types::Projection) -> Self {
         self.projection = ::std::option::Option::Some(input);
         self
@@ -116,12 +120,25 @@ impl CreateGlobalSecondaryIndexActionBuilder {
         &self.provisioned_throughput
     }
     /// Consumes the builder and constructs a [`CreateGlobalSecondaryIndexAction`](crate::types::CreateGlobalSecondaryIndexAction).
-    pub fn build(self) -> crate::types::CreateGlobalSecondaryIndexAction {
-        crate::types::CreateGlobalSecondaryIndexAction {
-            index_name: self.index_name,
-            key_schema: self.key_schema,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`index_name`](crate::types::builders::CreateGlobalSecondaryIndexActionBuilder::index_name)
+    /// - [`key_schema`](crate::types::builders::CreateGlobalSecondaryIndexActionBuilder::key_schema)
+    pub fn build(self) -> ::std::result::Result<crate::types::CreateGlobalSecondaryIndexAction, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CreateGlobalSecondaryIndexAction {
+            index_name: self.index_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "index_name",
+                    "index_name was not specified but it is required when building CreateGlobalSecondaryIndexAction",
+                )
+            })?,
+            key_schema: self.key_schema.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "key_schema",
+                    "key_schema was not specified but it is required when building CreateGlobalSecondaryIndexAction",
+                )
+            })?,
             projection: self.projection,
             provisioned_throughput: self.provisioned_throughput,
-        }
+        })
     }
 }

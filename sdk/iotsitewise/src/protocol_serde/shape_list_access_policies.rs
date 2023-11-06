@@ -28,11 +28,10 @@ pub fn de_list_access_policies_http_error(
                 output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_access_policies::ListAccessPoliciesError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_failure_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_access_policies::ListAccessPoliciesError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InvalidRequestException" => crate::operation::list_access_policies::ListAccessPoliciesError::InvalidRequestException({
@@ -43,11 +42,10 @@ pub fn de_list_access_policies_http_error(
                 output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_access_policies::ListAccessPoliciesError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_request_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_access_policies::ListAccessPoliciesError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::list_access_policies::ListAccessPoliciesError::ThrottlingException({
@@ -58,11 +56,10 @@ pub fn de_list_access_policies_http_error(
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_access_policies::ListAccessPoliciesError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_access_policies::ListAccessPoliciesError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::list_access_policies::ListAccessPoliciesError::generic(generic),
@@ -84,7 +81,9 @@ pub fn de_list_access_policies_http_response(
         output = crate::protocol_serde::shape_list_access_policies::de_list_access_policies(_response_body, output)
             .map_err(crate::operation::list_access_policies::ListAccessPoliciesError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::list_access_policies_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::list_access_policies::ListAccessPoliciesError::unhandled)?
     })
 }
 

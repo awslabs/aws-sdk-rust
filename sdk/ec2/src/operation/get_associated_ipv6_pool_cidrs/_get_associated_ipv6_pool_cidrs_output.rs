@@ -11,8 +11,10 @@ pub struct GetAssociatedIpv6PoolCidrsOutput {
 }
 impl GetAssociatedIpv6PoolCidrsOutput {
     /// <p>Information about the IPv6 CIDR block associations.</p>
-    pub fn ipv6_cidr_associations(&self) -> ::std::option::Option<&[crate::types::Ipv6CidrAssociation]> {
-        self.ipv6_cidr_associations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv6_cidr_associations.is_none()`.
+    pub fn ipv6_cidr_associations(&self) -> &[crate::types::Ipv6CidrAssociation] {
+        self.ipv6_cidr_associations.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

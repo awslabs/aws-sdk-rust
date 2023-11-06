@@ -10,7 +10,7 @@ impl DescribeVtlDevicesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_vtl_devices::DescribeVtlDevicesOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::describe_vtl_devices::DescribeVTLDevicesError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -73,12 +73,15 @@ impl DescribeVTLDevicesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_vtl_devices::DescribeVtlDevicesOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::describe_vtl_devices::DescribeVTLDevicesError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::describe_vtl_devices::DescribeVTLDevices::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -87,20 +90,15 @@ impl DescribeVTLDevicesFluentBuilder {
         crate::operation::describe_vtl_devices::DescribeVTLDevices::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::describe_vtl_devices::DescribeVtlDevicesOutput,
-            crate::operation::describe_vtl_devices::DescribeVTLDevicesError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::describe_vtl_devices::DescribeVTLDevicesError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::describe_vtl_devices::DescribeVtlDevicesOutput,
+        crate::operation::describe_vtl_devices::DescribeVTLDevicesError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -113,7 +111,7 @@ impl DescribeVTLDevicesFluentBuilder {
     }
     /// Create a paginator for this request
     ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_vtl_devices::paginator::DescribeVtlDevicesPaginator::send) which returns a `Stream`.
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_vtl_devices::paginator::DescribeVtlDevicesPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
     pub fn into_paginator(self) -> crate::operation::describe_vtl_devices::paginator::DescribeVtlDevicesPaginator {
         crate::operation::describe_vtl_devices::paginator::DescribeVtlDevicesPaginator::new(self.handle, self.inner)
     }
@@ -133,27 +131,27 @@ impl DescribeVTLDevicesFluentBuilder {
     }
     /// Appends an item to `VTLDeviceARNs`.
     ///
-    /// To override the contents of this collection use [`set_vtl_device_ar_ns`](Self::set_vtl_device_ar_ns).
+    /// To override the contents of this collection use [`set_vtl_device_arns`](Self::set_vtl_device_arns).
     ///
     /// <p>An array of strings, where each string represents the Amazon Resource Name (ARN) of a VTL device.</p> <note>
     /// <p>All of the specified VTL devices must be from the same gateway. If no VTL devices are specified, the result will contain all devices on the specified gateway.</p>
     /// </note>
-    pub fn vtl_device_ar_ns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.vtl_device_ar_ns(input.into());
+    pub fn vtl_device_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.vtl_device_arns(input.into());
         self
     }
     /// <p>An array of strings, where each string represents the Amazon Resource Name (ARN) of a VTL device.</p> <note>
     /// <p>All of the specified VTL devices must be from the same gateway. If no VTL devices are specified, the result will contain all devices on the specified gateway.</p>
     /// </note>
-    pub fn set_vtl_device_ar_ns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inner = self.inner.set_vtl_device_ar_ns(input);
+    pub fn set_vtl_device_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_vtl_device_arns(input);
         self
     }
     /// <p>An array of strings, where each string represents the Amazon Resource Name (ARN) of a VTL device.</p> <note>
     /// <p>All of the specified VTL devices must be from the same gateway. If no VTL devices are specified, the result will contain all devices on the specified gateway.</p>
     /// </note>
-    pub fn get_vtl_device_ar_ns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        self.inner.get_vtl_device_ar_ns()
+    pub fn get_vtl_device_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_vtl_device_arns()
     }
     /// <p>An opaque string that indicates the position at which to begin describing the VTL devices.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

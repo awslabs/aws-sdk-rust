@@ -3,15 +3,15 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetEnvironment`](crate::operation::get_environment::builders::GetEnvironmentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::operation::get_environment::builders::GetEnvironmentFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::get_environment::builders::GetEnvironmentFluentBuilder::set_application_id): <p>The ID of the application that includes the environment you want to get.</p>
-    ///   - [`environment_id(impl Into<String>)`](crate::operation::get_environment::builders::GetEnvironmentFluentBuilder::environment_id) / [`set_environment_id(Option<String>)`](crate::operation::get_environment::builders::GetEnvironmentFluentBuilder::set_environment_id): <p>The ID of the environment that you want to get.</p>
+    ///   - [`application_id(impl Into<String>)`](crate::operation::get_environment::builders::GetEnvironmentFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::get_environment::builders::GetEnvironmentFluentBuilder::set_application_id):<br>required: **true**<br><p>The ID of the application that includes the environment you want to get.</p><br>
+    ///   - [`environment_id(impl Into<String>)`](crate::operation::get_environment::builders::GetEnvironmentFluentBuilder::environment_id) / [`set_environment_id(Option<String>)`](crate::operation::get_environment::builders::GetEnvironmentFluentBuilder::set_environment_id):<br>required: **true**<br><p>The ID of the environment that you want to get.</p><br>
     /// - On success, responds with [`GetEnvironmentOutput`](crate::operation::get_environment::GetEnvironmentOutput) with field(s):
     ///   - [`application_id(Option<String>)`](crate::operation::get_environment::GetEnvironmentOutput::application_id): <p>The application ID.</p>
     ///   - [`id(Option<String>)`](crate::operation::get_environment::GetEnvironmentOutput::id): <p>The environment ID.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_environment::GetEnvironmentOutput::name): <p>The name of the environment.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_environment::GetEnvironmentOutput::description): <p>The description of the environment.</p>
     ///   - [`state(Option<EnvironmentState>)`](crate::operation::get_environment::GetEnvironmentOutput::state): <p>The state of the environment. An environment can be in one of the following states: <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or <code>ROLLED_BACK</code> </p>
-    ///   - [`monitors(Option<Vec<Monitor>>)`](crate::operation::get_environment::GetEnvironmentOutput::monitors): <p>Amazon CloudWatch alarms monitored during the deployment.</p>
+    ///   - [`monitors(Option<Vec::<Monitor>>)`](crate::operation::get_environment::GetEnvironmentOutput::monitors): <p>Amazon CloudWatch alarms monitored during the deployment.</p>
     /// - On failure, responds with [`SdkError<GetEnvironmentError>`](crate::operation::get_environment::GetEnvironmentError)
     pub fn get_environment(&self) -> crate::operation::get_environment::builders::GetEnvironmentFluentBuilder {
         crate::operation::get_environment::builders::GetEnvironmentFluentBuilder::new(self.handle.clone())

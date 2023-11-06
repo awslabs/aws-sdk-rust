@@ -22,8 +22,10 @@ impl CreateTransitGatewayRouteTableAttachmentInput {
         self.transit_gateway_route_table_arn.as_deref()
     }
     /// <p>The list of key-value tags associated with the request.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The client token associated with the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -49,6 +51,7 @@ pub struct CreateTransitGatewayRouteTableAttachmentInputBuilder {
 }
 impl CreateTransitGatewayRouteTableAttachmentInputBuilder {
     /// <p>The ID of the peer for the </p>
+    /// This field is required.
     pub fn peering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.peering_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +66,7 @@ impl CreateTransitGatewayRouteTableAttachmentInputBuilder {
         &self.peering_id
     }
     /// <p>The ARN of the transit gateway route table for the attachment request. For example, <code>"TransitGatewayRouteTableArn": "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.</p>
+    /// This field is required.
     pub fn transit_gateway_route_table_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_route_table_arn = ::std::option::Option::Some(input.into());
         self
@@ -115,7 +119,7 @@ impl CreateTransitGatewayRouteTableAttachmentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_transit_gateway_route_table_attachment::CreateTransitGatewayRouteTableAttachmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_transit_gateway_route_table_attachment::CreateTransitGatewayRouteTableAttachmentInput {

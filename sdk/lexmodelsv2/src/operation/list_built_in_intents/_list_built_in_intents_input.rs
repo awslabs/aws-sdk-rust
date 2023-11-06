@@ -48,6 +48,7 @@ pub struct ListBuiltInIntentsInputBuilder {
 }
 impl ListBuiltInIntentsInputBuilder {
     /// <p>The identifier of the language and locale of the intents to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// This field is required.
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,7 @@ impl ListBuiltInIntentsInputBuilder {
     /// Consumes the builder and constructs a [`ListBuiltInIntentsInput`](crate::operation::list_built_in_intents::ListBuiltInIntentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_built_in_intents::ListBuiltInIntentsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_built_in_intents::ListBuiltInIntentsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_built_in_intents::ListBuiltInIntentsInput {
             locale_id: self.locale_id,

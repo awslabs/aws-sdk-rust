@@ -26,8 +26,10 @@ impl DescribeMaintenanceWindowExecutionsInput {
     /// <li> <p>Key. A string between 1 and 128 characters. Supported keys include <code>ExecutedBefore</code> and <code>ExecutedAfter</code>.</p> </li>
     /// <li> <p>Values. An array of strings, each between 1 and 256 characters. Supported values are date/time strings in a valid ISO 8601 date/time format, such as <code>2021-11-04T05:00:00Z</code>.</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::MaintenanceWindowFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::MaintenanceWindowFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -56,6 +58,7 @@ pub struct DescribeMaintenanceWindowExecutionsInputBuilder {
 }
 impl DescribeMaintenanceWindowExecutionsInputBuilder {
     /// <p>The ID of the maintenance window whose executions should be retrieved.</p>
+    /// This field is required.
     pub fn window_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.window_id = ::std::option::Option::Some(input.into());
         self
@@ -134,7 +137,7 @@ impl DescribeMaintenanceWindowExecutionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_maintenance_window_executions::DescribeMaintenanceWindowExecutionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_maintenance_window_executions::DescribeMaintenanceWindowExecutionsInput {

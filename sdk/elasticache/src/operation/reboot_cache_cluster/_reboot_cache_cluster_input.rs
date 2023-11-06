@@ -15,8 +15,10 @@ impl RebootCacheClusterInput {
         self.cache_cluster_id.as_deref()
     }
     /// <p>A list of cache node IDs to reboot. A node ID is a numeric identifier (0001, 0002, etc.). To reboot an entire cluster, specify all of the cache node IDs.</p>
-    pub fn cache_node_ids_to_reboot(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cache_node_ids_to_reboot.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cache_node_ids_to_reboot.is_none()`.
+    pub fn cache_node_ids_to_reboot(&self) -> &[::std::string::String] {
+        self.cache_node_ids_to_reboot.as_deref().unwrap_or_default()
     }
 }
 impl RebootCacheClusterInput {
@@ -35,6 +37,7 @@ pub struct RebootCacheClusterInputBuilder {
 }
 impl RebootCacheClusterInputBuilder {
     /// <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
+    /// This field is required.
     pub fn cache_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_cluster_id = ::std::option::Option::Some(input.into());
         self
@@ -71,7 +74,8 @@ impl RebootCacheClusterInputBuilder {
     /// Consumes the builder and constructs a [`RebootCacheClusterInput`](crate::operation::reboot_cache_cluster::RebootCacheClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::reboot_cache_cluster::RebootCacheClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::reboot_cache_cluster::RebootCacheClusterInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::reboot_cache_cluster::RebootCacheClusterInput {
             cache_cluster_id: self.cache_cluster_id,
             cache_node_ids_to_reboot: self.cache_node_ids_to_reboot,

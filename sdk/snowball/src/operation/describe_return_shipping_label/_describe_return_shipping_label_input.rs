@@ -27,6 +27,7 @@ pub struct DescribeReturnShippingLabelInputBuilder {
 }
 impl DescribeReturnShippingLabelInputBuilder {
     /// <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeReturnShippingLabelInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_return_shipping_label::DescribeReturnShippingLabelInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_return_shipping_label::DescribeReturnShippingLabelInput { job_id: self.job_id })
     }

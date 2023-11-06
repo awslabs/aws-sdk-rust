@@ -129,7 +129,7 @@ impl ListExtensionAssociationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_extension_associations::ListExtensionAssociationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_extension_associations::ListExtensionAssociationsInput {
             resource_identifier: self.resource_identifier,

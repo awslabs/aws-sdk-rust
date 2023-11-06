@@ -82,6 +82,7 @@ pub struct CreateApplicationInputBuilder {
 }
 impl CreateApplicationInputBuilder {
     /// <p>The name to use for the application. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -96,6 +97,7 @@ impl CreateApplicationInputBuilder {
         &self.name
     }
     /// <p>The unique identifier of the environment.</p>
+    /// This field is required.
     pub fn environment_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_identifier = ::std::option::Option::Some(input.into());
         self
@@ -110,6 +112,7 @@ impl CreateApplicationInputBuilder {
         &self.environment_identifier
     }
     /// <p>The ID of the virtual private cloud (VPC).</p>
+    /// This field is required.
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
         self
@@ -124,6 +127,7 @@ impl CreateApplicationInputBuilder {
         &self.vpc_id
     }
     /// <p>The proxy type of the proxy created within the application. </p>
+    /// This field is required.
     pub fn proxy_type(mut self, input: crate::types::ProxyType) -> Self {
         self.proxy_type = ::std::option::Option::Some(input);
         self
@@ -188,7 +192,7 @@ impl CreateApplicationInputBuilder {
     /// Consumes the builder and constructs a [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_application::CreateApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_application::CreateApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_application::CreateApplicationInput {
             name: self.name,
             environment_identifier: self.environment_identifier,

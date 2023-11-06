@@ -34,6 +34,7 @@ pub struct CreateCollectionInputBuilder {
 }
 impl CreateCollectionInputBuilder {
     /// <p>ID for the collection that you are creating.</p>
+    /// This field is required.
     pub fn collection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_id = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +71,7 @@ impl CreateCollectionInputBuilder {
     /// Consumes the builder and constructs a [`CreateCollectionInput`](crate::operation::create_collection::CreateCollectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_collection::CreateCollectionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_collection::CreateCollectionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_collection::CreateCollectionInput {
             collection_id: self.collection_id,
             tags: self.tags,

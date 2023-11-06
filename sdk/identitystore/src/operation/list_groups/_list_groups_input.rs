@@ -27,9 +27,11 @@ impl ListGroupsInput {
         self.next_token.as_deref()
     }
     /// <p>A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and <code>ListGroups</code> requests.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
     #[deprecated(note = "Using filters with ListGroups API is deprecated, please use GetGroupId API instead.")]
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
 }
 impl ListGroupsInput {
@@ -50,6 +52,7 @@ pub struct ListGroupsInputBuilder {
 }
 impl ListGroupsInputBuilder {
     /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.</p>
+    /// This field is required.
     pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_store_id = ::std::option::Option::Some(input.into());
         self
@@ -115,7 +118,7 @@ impl ListGroupsInputBuilder {
         &self.filters
     }
     /// Consumes the builder and constructs a [`ListGroupsInput`](crate::operation::list_groups::ListGroupsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_groups::ListGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_groups::ListGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_groups::ListGroupsInput {
             identity_store_id: self.identity_store_id,
             max_results: self.max_results,

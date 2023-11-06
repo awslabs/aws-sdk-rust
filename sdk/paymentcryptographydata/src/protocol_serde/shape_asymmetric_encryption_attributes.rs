@@ -2,7 +2,7 @@
 pub fn ser_asymmetric_encryption_attributes(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AsymmetricEncryptionAttributes,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.padding_type {
         object.key("PaddingType").string(var_1.as_str());
     }

@@ -48,6 +48,7 @@ pub struct CreateDeploymentInputBuilder {
 }
 impl CreateDeploymentInputBuilder {
     /// <p>The identifier of the runtime environment where you want to deploy this application.</p>
+    /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl CreateDeploymentInputBuilder {
         &self.environment_id
     }
     /// <p>The application identifier.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl CreateDeploymentInputBuilder {
         &self.application_id
     }
     /// <p>The version of the application to deploy.</p>
+    /// This field is required.
     pub fn application_version(mut self, input: i32) -> Self {
         self.application_version = ::std::option::Option::Some(input);
         self
@@ -106,7 +109,7 @@ impl CreateDeploymentInputBuilder {
     /// Consumes the builder and constructs a [`CreateDeploymentInput`](crate::operation::create_deployment::CreateDeploymentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_deployment::CreateDeploymentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_deployment::CreateDeploymentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_deployment::CreateDeploymentInput {
             environment_id: self.environment_id,
             application_id: self.application_id,

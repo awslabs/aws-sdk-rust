@@ -48,6 +48,7 @@ pub struct ListDataSetsInputBuilder {
 }
 impl ListDataSetsInputBuilder {
     /// <p>The unique identifier of the application for which you want to list the associated data sets.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,7 @@ impl ListDataSetsInputBuilder {
     /// Consumes the builder and constructs a [`ListDataSetsInput`](crate::operation::list_data_sets::ListDataSetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_data_sets::ListDataSetsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_data_sets::ListDataSetsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_data_sets::ListDataSetsInput {
             application_id: self.application_id,
             next_token: self.next_token,

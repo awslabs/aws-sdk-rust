@@ -11,8 +11,10 @@ pub struct ListSchedulingPoliciesOutput {
 }
 impl ListSchedulingPoliciesOutput {
     /// <p>A list of scheduling policies that match the request.</p>
-    pub fn scheduling_policies(&self) -> ::std::option::Option<&[crate::types::SchedulingPolicyListingDetail]> {
-        self.scheduling_policies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scheduling_policies.is_none()`.
+    pub fn scheduling_policies(&self) -> &[crate::types::SchedulingPolicyListingDetail] {
+        self.scheduling_policies.as_deref().unwrap_or_default()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListSchedulingPolicies</code> request. When the results of a <code>ListSchedulingPolicies</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

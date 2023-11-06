@@ -23,12 +23,16 @@ impl Ipv6Pool {
         self.description.as_deref()
     }
     /// <p>The CIDR blocks for the address pool.</p>
-    pub fn pool_cidr_blocks(&self) -> ::std::option::Option<&[crate::types::PoolCidrBlock]> {
-        self.pool_cidr_blocks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pool_cidr_blocks.is_none()`.
+    pub fn pool_cidr_blocks(&self) -> &[crate::types::PoolCidrBlock] {
+        self.pool_cidr_blocks.as_deref().unwrap_or_default()
     }
     /// <p>Any tags for the address pool.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl Ipv6Pool {

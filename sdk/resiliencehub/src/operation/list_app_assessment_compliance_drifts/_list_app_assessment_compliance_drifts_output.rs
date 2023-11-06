@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAppAssessmentComplianceDriftsOutput {
     /// <p>Indicates compliance drifts (recovery time objective (RTO) and recovery point objective (RPO)) detected for an assessed entity.</p>
-    pub compliance_drifts: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceDrift>>,
+    pub compliance_drifts: ::std::vec::Vec<crate::types::ComplianceDrift>,
     /// <p>Token number of the next application to be checked for compliance and regulatory requirements from the list of applications.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAppAssessmentComplianceDriftsOutput {
     /// <p>Indicates compliance drifts (recovery time objective (RTO) and recovery point objective (RPO)) detected for an assessed entity.</p>
-    pub fn compliance_drifts(&self) -> ::std::option::Option<&[crate::types::ComplianceDrift]> {
-        self.compliance_drifts.as_deref()
+    pub fn compliance_drifts(&self) -> &[crate::types::ComplianceDrift] {
+        use std::ops::Deref;
+        self.compliance_drifts.deref()
     }
     /// <p>Token number of the next application to be checked for compliance and regulatory requirements from the list of applications.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,25 @@ impl ListAppAssessmentComplianceDriftsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAppAssessmentComplianceDriftsOutput`](crate::operation::list_app_assessment_compliance_drifts::ListAppAssessmentComplianceDriftsOutput).
-    pub fn build(self) -> crate::operation::list_app_assessment_compliance_drifts::ListAppAssessmentComplianceDriftsOutput {
-        crate::operation::list_app_assessment_compliance_drifts::ListAppAssessmentComplianceDriftsOutput {
-            compliance_drifts: self.compliance_drifts,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`compliance_drifts`](crate::operation::list_app_assessment_compliance_drifts::builders::ListAppAssessmentComplianceDriftsOutputBuilder::compliance_drifts)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_app_assessment_compliance_drifts::ListAppAssessmentComplianceDriftsOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::list_app_assessment_compliance_drifts::ListAppAssessmentComplianceDriftsOutput {
+                compliance_drifts: self.compliance_drifts.ok_or_else(|| {
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
+                        "compliance_drifts",
+                        "compliance_drifts was not specified but it is required when building ListAppAssessmentComplianceDriftsOutput",
+                    )
+                })?,
+                next_token: self.next_token,
+                _request_id: self._request_id,
+            },
+        )
     }
 }

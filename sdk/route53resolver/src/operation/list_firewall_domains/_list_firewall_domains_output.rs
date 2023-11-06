@@ -17,8 +17,10 @@ impl ListFirewallDomainsOutput {
     }
     /// <p>A list of the domains in the firewall domain list. </p>
     /// <p>This might be a partial list of the domains that you've defined in the domain list. For information, see <code>MaxResults</code>. </p>
-    pub fn domains(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.domains.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domains.is_none()`.
+    pub fn domains(&self) -> &[::std::string::String] {
+        self.domains.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListFirewallDomainsOutput {

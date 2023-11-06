@@ -13,8 +13,10 @@ pub struct SearchQueuesOutput {
 }
 impl SearchQueuesOutput {
     /// <p>Information about the queues.</p>
-    pub fn queues(&self) -> ::std::option::Option<&[crate::types::Queue]> {
-        self.queues.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.queues.is_none()`.
+    pub fn queues(&self) -> &[crate::types::Queue] {
+        self.queues.as_deref().unwrap_or_default()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

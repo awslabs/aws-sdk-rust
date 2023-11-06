@@ -94,7 +94,7 @@ pub(crate) fn de_get_stages(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "items" => {
-                    builder = builder.set_items(crate::protocol_serde::shape___list_of_stage::de___list_of_stage(tokens)?);
+                    builder = builder.set_items(crate::protocol_serde::shape_list_of_stage::de_list_of_stage(tokens)?);
                 }
                 "nextToken" => {
                     builder = builder.set_next_token(

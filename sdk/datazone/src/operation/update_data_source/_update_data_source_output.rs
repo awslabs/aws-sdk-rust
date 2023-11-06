@@ -4,21 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateDataSourceOutput {
     /// <p>The identifier of the data source to be updated.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The status to be updated as part of the <code>UpdateDataSource</code> action.</p>
     pub status: ::std::option::Option<crate::types::DataSourceStatus>,
     /// <p>The type to be updated as part of the <code>UpdateDataSource</code> action.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The name to be updated as part of the <code>UpdateDataSource</code> action.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The description to be updated as part of the <code>UpdateDataSource</code> action.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon DataZone domain in which a data source is to be updated.</p>
-    pub domain_id: ::std::option::Option<::std::string::String>,
+    pub domain_id: ::std::string::String,
     /// <p>The identifier of the project where data source is to be updated.</p>
-    pub project_id: ::std::option::Option<::std::string::String>,
+    pub project_id: ::std::string::String,
     /// <p>The identifier of the environment in which a data source is to be updated.</p>
-    pub environment_id: ::std::option::Option<::std::string::String>,
+    pub environment_id: ::std::string::String,
     /// <p>The configuration to be updated as part of the <code>UpdateDataSource</code> action.</p>
     pub configuration: ::std::option::Option<crate::types::DataSourceConfigurationOutput>,
     /// <p>The recommendation to be updated as part of the <code>UpdateDataSource</code> action.</p>
@@ -47,8 +47,9 @@ pub struct UpdateDataSourceOutput {
 }
 impl UpdateDataSourceOutput {
     /// <p>The identifier of the data source to be updated.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The status to be updated as part of the <code>UpdateDataSource</code> action.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::DataSourceStatus> {
@@ -59,24 +60,28 @@ impl UpdateDataSourceOutput {
         self.r#type.as_deref()
     }
     /// <p>The name to be updated as part of the <code>UpdateDataSource</code> action.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The description to be updated as part of the <code>UpdateDataSource</code> action.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The identifier of the Amazon DataZone domain in which a data source is to be updated.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
-        self.domain_id.as_deref()
+    pub fn domain_id(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_id.deref()
     }
     /// <p>The identifier of the project where data source is to be updated.</p>
-    pub fn project_id(&self) -> ::std::option::Option<&str> {
-        self.project_id.as_deref()
+    pub fn project_id(&self) -> &str {
+        use std::ops::Deref;
+        self.project_id.deref()
     }
     /// <p>The identifier of the environment in which a data source is to be updated.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
-        self.environment_id.as_deref()
+    pub fn environment_id(&self) -> &str {
+        use std::ops::Deref;
+        self.environment_id.deref()
     }
     /// <p>The configuration to be updated as part of the <code>UpdateDataSource</code> action.</p>
     pub fn configuration(&self) -> ::std::option::Option<&crate::types::DataSourceConfigurationOutput> {
@@ -95,8 +100,10 @@ impl UpdateDataSourceOutput {
         self.publish_on_import
     }
     /// <p>The asset forms to be updated as part of the <code>UpdateDataSource</code> action.</p>
-    pub fn asset_forms_output(&self) -> ::std::option::Option<&[crate::types::FormOutput]> {
-        self.asset_forms_output.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.asset_forms_output.is_none()`.
+    pub fn asset_forms_output(&self) -> &[crate::types::FormOutput] {
+        self.asset_forms_output.as_deref().unwrap_or_default()
     }
     /// <p>The schedule to be updated as part of the <code>UpdateDataSource</code> action.</p>
     pub fn schedule(&self) -> ::std::option::Option<&crate::types::ScheduleConfiguration> {
@@ -194,6 +201,7 @@ pub struct UpdateDataSourceOutputBuilder {
 }
 impl UpdateDataSourceOutputBuilder {
     /// <p>The identifier of the data source to be updated.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -236,6 +244,7 @@ impl UpdateDataSourceOutputBuilder {
         &self.r#type
     }
     /// <p>The name to be updated as part of the <code>UpdateDataSource</code> action.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -264,6 +273,7 @@ impl UpdateDataSourceOutputBuilder {
         &self.description
     }
     /// <p>The identifier of the Amazon DataZone domain in which a data source is to be updated.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -278,6 +288,7 @@ impl UpdateDataSourceOutputBuilder {
         &self.domain_id
     }
     /// <p>The identifier of the project where data source is to be updated.</p>
+    /// This field is required.
     pub fn project_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_id = ::std::option::Option::Some(input.into());
         self
@@ -292,6 +303,7 @@ impl UpdateDataSourceOutputBuilder {
         &self.project_id
     }
     /// <p>The identifier of the environment in which a data source is to be updated.</p>
+    /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
@@ -489,16 +501,49 @@ impl UpdateDataSourceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateDataSourceOutput`](crate::operation::update_data_source::UpdateDataSourceOutput).
-    pub fn build(self) -> crate::operation::update_data_source::UpdateDataSourceOutput {
-        crate::operation::update_data_source::UpdateDataSourceOutput {
-            id: self.id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::update_data_source::builders::UpdateDataSourceOutputBuilder::id)
+    /// - [`name`](crate::operation::update_data_source::builders::UpdateDataSourceOutputBuilder::name)
+    /// - [`domain_id`](crate::operation::update_data_source::builders::UpdateDataSourceOutputBuilder::domain_id)
+    /// - [`project_id`](crate::operation::update_data_source::builders::UpdateDataSourceOutputBuilder::project_id)
+    /// - [`environment_id`](crate::operation::update_data_source::builders::UpdateDataSourceOutputBuilder::environment_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_data_source::UpdateDataSourceOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_data_source::UpdateDataSourceOutput {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building UpdateDataSourceOutput",
+                )
+            })?,
             status: self.status,
             r#type: self.r#type,
-            name: self.name,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building UpdateDataSourceOutput",
+                )
+            })?,
             description: self.description,
-            domain_id: self.domain_id,
-            project_id: self.project_id,
-            environment_id: self.environment_id,
+            domain_id: self.domain_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "domain_id",
+                    "domain_id was not specified but it is required when building UpdateDataSourceOutput",
+                )
+            })?,
+            project_id: self.project_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "project_id",
+                    "project_id was not specified but it is required when building UpdateDataSourceOutput",
+                )
+            })?,
+            environment_id: self.environment_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "environment_id",
+                    "environment_id was not specified but it is required when building UpdateDataSourceOutput",
+                )
+            })?,
             configuration: self.configuration,
             recommendation: self.recommendation,
             enable_setting: self.enable_setting,
@@ -512,7 +557,7 @@ impl UpdateDataSourceOutputBuilder {
             created_at: self.created_at,
             updated_at: self.updated_at,
             _request_id: self._request_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for UpdateDataSourceOutputBuilder {

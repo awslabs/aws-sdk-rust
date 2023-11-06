@@ -41,6 +41,7 @@ pub struct GetThemeInputBuilder {
 }
 impl GetThemeInputBuilder {
     /// <p>The unique ID of the Amplify app.</p>
+    /// This field is required.
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl GetThemeInputBuilder {
         &self.app_id
     }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
+    /// This field is required.
     pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl GetThemeInputBuilder {
         &self.environment_name
     }
     /// <p>The unique ID for the theme.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +86,7 @@ impl GetThemeInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetThemeInput`](crate::operation::get_theme::GetThemeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_theme::GetThemeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_theme::GetThemeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_theme::GetThemeInput {
             app_id: self.app_id,
             environment_name: self.environment_name,

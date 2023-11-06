@@ -61,8 +61,10 @@ impl GetResourcesInput {
     /// <li> <p> <code>GetResources({filter1,filter2,filter3})</code> returns resources tagged with <code>(key1=value1) and (key2=value2 or key2=value3 or key2=value4) and (key3, any or no value)</code> </p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn tag_filters(&self) -> ::std::option::Option<&[crate::types::TagFilter]> {
-        self.tag_filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_filters.is_none()`.
+    pub fn tag_filters(&self) -> &[crate::types::TagFilter] {
+        self.tag_filters.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the maximum number of results to be returned in each page. A query can return fewer than this maximum, even if there are more results still to return. You should always check the <code>PaginationToken</code> response value to see if there are more results. You can specify a minimum of 1 and a maximum value of 100.</p>
     pub fn resources_per_page(&self) -> ::std::option::Option<i32> {
@@ -79,8 +81,10 @@ impl GetResourcesInput {
     /// <p>The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource Name (ARN). For the list of services whose resources you can use in this parameter, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the Resource Groups Tagging API</a>.</p>
     /// <p>You can specify multiple resource types by using an array. The array can include up to 100 items. Note that the length constraint requirement applies to each resource type filter. For example, the following string would limit the response to only Amazon EC2 instances, Amazon S3 buckets, or any Audit Manager resource:</p>
     /// <p> <code>ec2:instance,s3:bucket,auditmanager</code> </p>
-    pub fn resource_type_filters(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_type_filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_type_filters.is_none()`.
+    pub fn resource_type_filters(&self) -> &[::std::string::String] {
+        self.resource_type_filters.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether to include details regarding the compliance with the effective tag policy. Set this to <code>true</code> to determine whether resources are compliant with the tag policy and to get details.</p>
     pub fn include_compliance_details(&self) -> ::std::option::Option<bool> {
@@ -94,8 +98,10 @@ impl GetResourcesInput {
     /// <p>Specifies a list of ARNs of resources for which you want to retrieve tag data. You can't specify both this parameter and any of the pagination parameters (<code>ResourcesPerPage</code>, <code>TagsPerPage</code>, <code>PaginationToken</code>) in the same request. If you specify both, you get an <code>Invalid Parameter</code> exception.</p>
     /// <p>If a resource specified by this parameter doesn't exist, it doesn't generate an error; it simply isn't included in the response.</p>
     /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn resource_arn_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_arn_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_arn_list.is_none()`.
+    pub fn resource_arn_list(&self) -> &[::std::string::String] {
+        self.resource_arn_list.as_deref().unwrap_or_default()
     }
 }
 impl GetResourcesInput {
@@ -316,7 +322,9 @@ impl GetResourcesInputBuilder {
         &self.resource_arn_list
     }
     /// Consumes the builder and constructs a [`GetResourcesInput`](crate::operation::get_resources::GetResourcesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_resources::GetResourcesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_resources::GetResourcesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_resources::GetResourcesInput {
             pagination_token: self.pagination_token,
             tag_filters: self.tag_filters,

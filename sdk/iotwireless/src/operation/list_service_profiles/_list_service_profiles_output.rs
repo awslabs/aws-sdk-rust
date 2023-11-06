@@ -15,8 +15,10 @@ impl ListServiceProfilesOutput {
         self.next_token.as_deref()
     }
     /// <p>The list of service profiles.</p>
-    pub fn service_profile_list(&self) -> ::std::option::Option<&[crate::types::ServiceProfile]> {
-        self.service_profile_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_profile_list.is_none()`.
+    pub fn service_profile_list(&self) -> &[crate::types::ServiceProfile] {
+        self.service_profile_list.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListServiceProfilesOutput {

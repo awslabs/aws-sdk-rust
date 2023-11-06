@@ -27,6 +27,7 @@ pub struct DescribeTargetedSentimentDetectionJobInputBuilder {
 }
 impl DescribeTargetedSentimentDetectionJobInputBuilder {
     /// <p>The identifier that Amazon Comprehend generated for the job. The <code>StartTargetedSentimentDetectionJob</code> operation returns this identifier in its response.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeTargetedSentimentDetectionJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_targeted_sentiment_detection_job::DescribeTargetedSentimentDetectionJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_targeted_sentiment_detection_job::DescribeTargetedSentimentDetectionJobInput { job_id: self.job_id },

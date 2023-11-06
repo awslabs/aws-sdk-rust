@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodegenGenericDataNonModel {
     /// <p>The fields in a generic data schema non model.</p>
-    pub fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CodegenGenericDataField>>,
+    pub fields: ::std::collections::HashMap<::std::string::String, crate::types::CodegenGenericDataField>,
 }
 impl CodegenGenericDataNonModel {
     /// <p>The fields in a generic data schema non model.</p>
-    pub fn fields(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::CodegenGenericDataField>> {
-        self.fields.as_ref()
+    pub fn fields(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::CodegenGenericDataField> {
+        &self.fields
     }
 }
 impl CodegenGenericDataNonModel {
@@ -51,7 +51,16 @@ impl CodegenGenericDataNonModelBuilder {
         &self.fields
     }
     /// Consumes the builder and constructs a [`CodegenGenericDataNonModel`](crate::types::CodegenGenericDataNonModel).
-    pub fn build(self) -> crate::types::CodegenGenericDataNonModel {
-        crate::types::CodegenGenericDataNonModel { fields: self.fields }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`fields`](crate::types::builders::CodegenGenericDataNonModelBuilder::fields)
+    pub fn build(self) -> ::std::result::Result<crate::types::CodegenGenericDataNonModel, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CodegenGenericDataNonModel {
+            fields: self.fields.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "fields",
+                    "fields was not specified but it is required when building CodegenGenericDataNonModel",
+                )
+            })?,
+        })
     }
 }

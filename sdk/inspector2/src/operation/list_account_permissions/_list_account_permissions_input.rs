@@ -85,8 +85,10 @@ impl ListAccountPermissionsInputBuilder {
     /// Consumes the builder and constructs a [`ListAccountPermissionsInput`](crate::operation::list_account_permissions::ListAccountPermissionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_account_permissions::ListAccountPermissionsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::list_account_permissions::ListAccountPermissionsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::list_account_permissions::ListAccountPermissionsInput {
             service: self.service,
             max_results: self.max_results,

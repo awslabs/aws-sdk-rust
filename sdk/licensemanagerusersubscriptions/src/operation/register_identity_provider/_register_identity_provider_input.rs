@@ -41,6 +41,7 @@ pub struct RegisterIdentityProviderInputBuilder {
 }
 impl RegisterIdentityProviderInputBuilder {
     /// <p>An object that specifies details for the identity provider.</p>
+    /// This field is required.
     pub fn identity_provider(mut self, input: crate::types::IdentityProvider) -> Self {
         self.identity_provider = ::std::option::Option::Some(input);
         self
@@ -55,6 +56,7 @@ impl RegisterIdentityProviderInputBuilder {
         &self.identity_provider
     }
     /// <p>The name of the user-based subscription product.</p>
+    /// This field is required.
     pub fn product(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +89,7 @@ impl RegisterIdentityProviderInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_identity_provider::RegisterIdentityProviderInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::register_identity_provider::RegisterIdentityProviderInput {
             identity_provider: self.identity_provider,

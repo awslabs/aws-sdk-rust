@@ -12,12 +12,17 @@ where
             match tokens.next().transpose()? {
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                    let key = key.to_unescaped()?;
+                    if key == "__type" {
+                        ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                        continue;
+                    }
                     if variant.is_some() {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
                             "encountered mixed variants in union",
                         ));
                     }
-                    variant = match key.to_unescaped()?.as_ref() {
+                    variant = match key.as_ref() {
                         "heterogeneous" => Some(crate::types::DatabaseMigrationPreference::Heterogeneous(
                             crate::protocol_serde::shape_heterogeneous::de_heterogeneous(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'heterogeneous' cannot be null")
@@ -59,7 +64,7 @@ where
 pub fn ser_database_migration_preference(
     object_3: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DatabaseMigrationPreference,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::DatabaseMigrationPreference::Heterogeneous(inner) => {
             #[allow(unused_mut)]
@@ -80,7 +85,7 @@ pub fn ser_database_migration_preference(
             object_3.finish();
         }
         crate::types::DatabaseMigrationPreference::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "DatabaseMigrationPreference",
             ))
         }

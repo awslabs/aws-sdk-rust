@@ -11,8 +11,10 @@ pub struct ListWorkspacesOutput {
 }
 impl ListWorkspacesOutput {
     /// <p>A list of objects that contain information about the workspaces.</p>
-    pub fn workspace_summaries(&self) -> ::std::option::Option<&[crate::types::WorkspaceSummary]> {
-        self.workspace_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.workspace_summaries.is_none()`.
+    pub fn workspace_summaries(&self) -> &[crate::types::WorkspaceSummary] {
+        self.workspace_summaries.as_deref().unwrap_or_default()
     }
     /// <p>The string that specifies the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

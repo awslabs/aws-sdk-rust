@@ -35,6 +35,7 @@ pub struct ListBranchesInputBuilder {
 }
 impl ListBranchesInputBuilder {
     /// <p>The name of the repository that contains the branches.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -63,7 +64,9 @@ impl ListBranchesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListBranchesInput`](crate::operation::list_branches::ListBranchesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_branches::ListBranchesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_branches::ListBranchesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_branches::ListBranchesInput {
             repository_name: self.repository_name,
             next_token: self.next_token,

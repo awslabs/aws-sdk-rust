@@ -49,6 +49,7 @@ pub struct UpdateEnvironmentMembershipInputBuilder {
 }
 impl UpdateEnvironmentMembershipInputBuilder {
     /// <p>The ID of the environment for the environment member whose settings you want to change.</p>
+    /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl UpdateEnvironmentMembershipInputBuilder {
         &self.environment_id
     }
     /// <p>The Amazon Resource Name (ARN) of the environment member whose settings you want to change.</p>
+    /// This field is required.
     pub fn user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_arn = ::std::option::Option::Some(input.into());
         self
@@ -81,6 +83,7 @@ impl UpdateEnvironmentMembershipInputBuilder {
     /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
     /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn permissions(mut self, input: crate::types::MemberPermissions) -> Self {
         self.permissions = ::std::option::Option::Some(input);
         self
@@ -107,7 +110,7 @@ impl UpdateEnvironmentMembershipInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_environment_membership::UpdateEnvironmentMembershipInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_environment_membership::UpdateEnvironmentMembershipInput {
             environment_id: self.environment_id,

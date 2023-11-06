@@ -64,7 +64,7 @@ impl ListSimulationsInputBuilder {
     /// Consumes the builder and constructs a [`ListSimulationsInput`](crate::operation::list_simulations::ListSimulationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_simulations::ListSimulationsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_simulations::ListSimulationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_simulations::ListSimulationsInput {
             max_results: self.max_results,
             next_token: self.next_token,

@@ -126,8 +126,10 @@ pub struct RunInstancesInput {
 }
 impl RunInstancesInput {
     /// <p>The block device mapping, which defines the EBS volumes and instance store volumes to attach to the instance at launch. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block device mappings</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn block_device_mappings(&self) -> ::std::option::Option<&[crate::types::BlockDeviceMapping]> {
-        self.block_device_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.block_device_mappings.is_none()`.
+    pub fn block_device_mappings(&self) -> &[crate::types::BlockDeviceMapping] {
+        self.block_device_mappings.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the AMI. An AMI ID is required to launch an instance and must be specified here or in a launch template.</p>
     pub fn image_id(&self) -> ::std::option::Option<&str> {
@@ -144,8 +146,10 @@ impl RunInstancesInput {
     }
     /// <p>The IPv6 addresses from the range of the subnet to associate with the primary network interface. You cannot specify this option and the option to assign a number of IPv6 addresses in the same request. You cannot specify this option if you've specified a minimum number of instances to launch.</p>
     /// <p>You cannot specify this option and the network interfaces option in the same request.</p>
-    pub fn ipv6_addresses(&self) -> ::std::option::Option<&[crate::types::InstanceIpv6Address]> {
-        self.ipv6_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv6_addresses.is_none()`.
+    pub fn ipv6_addresses(&self) -> &[crate::types::InstanceIpv6Address] {
+        self.ipv6_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the kernel.</p> <important>
     /// <p>We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">PV-GRUB</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -185,14 +189,18 @@ impl RunInstancesInput {
     }
     /// <p>The IDs of the security groups. You can create a security group using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
     /// <p>If you specify a network interface, you must specify any security groups as part of the network interface.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>[Default VPC] The names of the security groups.</p>
     /// <p>If you specify a network interface, you must specify any security groups as part of the network interface.</p>
     /// <p>Default: Amazon EC2 uses the default security group.</p>
-    pub fn security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
+    pub fn security_groups(&self) -> &[::std::string::String] {
+        self.security_groups.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the subnet to launch the instance into.</p>
     /// <p>If you specify a network interface, you must specify any subnets as part of the network interface.</p>
@@ -237,8 +245,10 @@ impl RunInstancesInput {
         self.instance_initiated_shutdown_behavior.as_ref()
     }
     /// <p>The network interfaces to associate with the instance. If you specify a network interface, you must specify any security groups and subnets as part of the network interface.</p>
-    pub fn network_interfaces(&self) -> ::std::option::Option<&[crate::types::InstanceNetworkInterfaceSpecification]> {
-        self.network_interfaces.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_interfaces.is_none()`.
+    pub fn network_interfaces(&self) -> &[crate::types::InstanceNetworkInterfaceSpecification] {
+        self.network_interfaces.as_deref().unwrap_or_default()
     }
     /// <p>The primary IPv4 address. You must specify a value from the IPv4 address range of the subnet.</p>
     /// <p>Only one private IP address can be designated as primary. You can't specify this option if you've specified the option to designate a private IP address as the primary IP address in a network interface specification. You cannot specify this option if you're launching more than one instance in the request.</p>
@@ -247,15 +257,19 @@ impl RunInstancesInput {
         self.private_ip_address.as_deref()
     }
     /// <p>An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that you can attach to your Windows instance to accelerate the graphics performance of your applications. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon EC2 Elastic GPUs</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn elastic_gpu_specification(&self) -> ::std::option::Option<&[crate::types::ElasticGpuSpecification]> {
-        self.elastic_gpu_specification.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.elastic_gpu_specification.is_none()`.
+    pub fn elastic_gpu_specification(&self) -> &[crate::types::ElasticGpuSpecification] {
+        self.elastic_gpu_specification.as_deref().unwrap_or_default()
     }
     /// <p>An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a resource you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference workloads.</p>
     /// <p>You cannot specify accelerators from different generations in the same request.</p> <note>
     /// <p>Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performance. After April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past 30-day period are considered current customers and will be able to continue using the service.</p>
     /// </note>
-    pub fn elastic_inference_accelerators(&self) -> ::std::option::Option<&[crate::types::ElasticInferenceAccelerator]> {
-        self.elastic_inference_accelerators.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.elastic_inference_accelerators.is_none()`.
+    pub fn elastic_inference_accelerators(&self) -> &[crate::types::ElasticInferenceAccelerator] {
+        self.elastic_inference_accelerators.as_deref().unwrap_or_default()
     }
     /// <p>The tags to apply to the resources that are created during instance launch.</p>
     /// <p>You can specify tags for the following resources only:</p>
@@ -267,8 +281,10 @@ impl RunInstancesInput {
     /// <li> <p>Network interfaces</p> </li>
     /// </ul>
     /// <p>To tag a resource after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
     /// <p>The launch template to use to launch the instances. Any parameters that you specify in <code>RunInstances</code> override the same parameters in the launch template. You can specify either the name or ID of a launch template, but not both.</p>
     pub fn launch_template(&self) -> ::std::option::Option<&crate::types::LaunchTemplateSpecification> {
@@ -299,8 +315,10 @@ impl RunInstancesInput {
         self.hibernation_options.as_ref()
     }
     /// <p>The license configurations.</p>
-    pub fn license_specifications(&self) -> ::std::option::Option<&[crate::types::LicenseConfigurationRequest]> {
-        self.license_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.license_specifications.is_none()`.
+    pub fn license_specifications(&self) -> &[crate::types::LicenseConfigurationRequest] {
+        self.license_specifications.as_deref().unwrap_or_default()
     }
     /// <p>The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a>.</p>
     pub fn metadata_options(&self) -> ::std::option::Option<&crate::types::InstanceMetadataOptionsRequest> {
@@ -559,6 +577,7 @@ impl RunInstancesInputBuilder {
     }
     /// <p>The maximum number of instances to launch. If you specify more instances than Amazon EC2 can launch in the target Availability Zone, Amazon EC2 launches the largest possible number of instances above <code>MinCount</code>.</p>
     /// <p>Constraints: Between 1 and the maximum number you're allowed for the specified instance type. For more information about the default limits, and how to request an increase, see <a href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How many instances can I run in Amazon EC2</a> in the Amazon EC2 FAQ.</p>
+    /// This field is required.
     pub fn max_count(mut self, input: i32) -> Self {
         self.max_count = ::std::option::Option::Some(input);
         self
@@ -576,6 +595,7 @@ impl RunInstancesInputBuilder {
     }
     /// <p>The minimum number of instances to launch. If you specify a minimum that is more instances than Amazon EC2 can launch in the target Availability Zone, Amazon EC2 launches no instances.</p>
     /// <p>Constraints: Between 1 and the maximum number you're allowed for the specified instance type. For more information about the default limits, and how to request an increase, see <a href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How many instances can I run in Amazon EC2</a> in the Amazon EC2 General FAQ.</p>
+    /// This field is required.
     pub fn min_count(mut self, input: i32) -> Self {
         self.min_count = ::std::option::Option::Some(input);
         self
@@ -1178,7 +1198,9 @@ impl RunInstancesInputBuilder {
         &self.enable_primary_ipv6
     }
     /// Consumes the builder and constructs a [`RunInstancesInput`](crate::operation::run_instances::RunInstancesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::run_instances::RunInstancesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::run_instances::RunInstancesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::run_instances::RunInstancesInput {
             block_device_mappings: self.block_device_mappings,
             image_id: self.image_id,

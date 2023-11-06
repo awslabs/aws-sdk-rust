@@ -14,8 +14,10 @@ pub struct ListPhoneNumbersSummary {
     pub phone_number_country_code: ::std::option::Option<crate::types::PhoneNumberCountryCode>,
     /// <p>The type of phone number.</p>
     pub phone_number_type: ::std::option::Option<crate::types::PhoneNumberType>,
-    /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are claimed to.</p>
+    /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone number inbound traffic is routed through.</p>
     pub target_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The identifier of the Amazon Connect instance that phone numbers are claimed to. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub instance_id: ::std::option::Option<::std::string::String>,
 }
 impl ListPhoneNumbersSummary {
     /// <p>A unique identifier for the phone number.</p>
@@ -38,9 +40,13 @@ impl ListPhoneNumbersSummary {
     pub fn phone_number_type(&self) -> ::std::option::Option<&crate::types::PhoneNumberType> {
         self.phone_number_type.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are claimed to.</p>
+    /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone number inbound traffic is routed through.</p>
     pub fn target_arn(&self) -> ::std::option::Option<&str> {
         self.target_arn.as_deref()
+    }
+    /// <p>The identifier of the Amazon Connect instance that phone numbers are claimed to. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+        self.instance_id.as_deref()
     }
 }
 impl ListPhoneNumbersSummary {
@@ -60,6 +66,7 @@ pub struct ListPhoneNumbersSummaryBuilder {
     pub(crate) phone_number_country_code: ::std::option::Option<crate::types::PhoneNumberCountryCode>,
     pub(crate) phone_number_type: ::std::option::Option<crate::types::PhoneNumberType>,
     pub(crate) target_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_id: ::std::option::Option<::std::string::String>,
 }
 impl ListPhoneNumbersSummaryBuilder {
     /// <p>A unique identifier for the phone number.</p>
@@ -132,19 +139,33 @@ impl ListPhoneNumbersSummaryBuilder {
     pub fn get_phone_number_type(&self) -> &::std::option::Option<crate::types::PhoneNumberType> {
         &self.phone_number_type
     }
-    /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are claimed to.</p>
+    /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone number inbound traffic is routed through.</p>
     pub fn target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are claimed to.</p>
+    /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone number inbound traffic is routed through.</p>
     pub fn set_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are claimed to.</p>
+    /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone number inbound traffic is routed through.</p>
     pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_arn
+    }
+    /// <p>The identifier of the Amazon Connect instance that phone numbers are claimed to. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.instance_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the Amazon Connect instance that phone numbers are claimed to. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.instance_id = input;
+        self
+    }
+    /// <p>The identifier of the Amazon Connect instance that phone numbers are claimed to. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// Consumes the builder and constructs a [`ListPhoneNumbersSummary`](crate::types::ListPhoneNumbersSummary).
     pub fn build(self) -> crate::types::ListPhoneNumbersSummary {
@@ -155,6 +176,7 @@ impl ListPhoneNumbersSummaryBuilder {
             phone_number_country_code: self.phone_number_country_code,
             phone_number_type: self.phone_number_type,
             target_arn: self.target_arn,
+            instance_id: self.instance_id,
         }
     }
 }

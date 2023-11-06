@@ -35,6 +35,7 @@ pub struct InsightResultValueBuilder {
 }
 impl InsightResultValueBuilder {
     /// <p>The value of the attribute that the findings are grouped by for the insight whose results are returned by the <code>GetInsightResults</code> operation.</p>
+    /// This field is required.
     pub fn group_by_attribute_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_by_attribute_value = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl InsightResultValueBuilder {
         &self.group_by_attribute_value
     }
     /// <p>The number of findings returned for each <code>GroupByAttributeValue</code>.</p>
+    /// This field is required.
     pub fn count(mut self, input: i32) -> Self {
         self.count = ::std::option::Option::Some(input);
         self

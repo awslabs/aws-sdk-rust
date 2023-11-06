@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`TagResource`](crate::operation::tag_resource::builders::TagResourceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_name(impl Into<String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::resource_name) / [`set_resource_name(Option<String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::set_resource_name): <p>The name of the resource to which you are adding tags.</p>
-    ///   - [`resource_arn(impl Into<String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource to which you want to add a tag.</p>
-    ///   - [`tags(Tag)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::set_tags): <p>The tag key and optional value.</p>
+    ///   - [`resource_name(impl Into<String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::resource_name) / [`set_resource_name(Option<String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::set_resource_name):<br>required: **true**<br><p>The name of the resource to which you are adding tags.</p><br>
+    ///   - [`resource_arn(impl Into<String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::set_resource_arn):<br>required: **false**<br><p>The Amazon Resource Name (ARN) of the resource to which you want to add a tag.</p><br>
+    ///   - [`tags(Tag)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::tags) / [`set_tags(Option<Vec::<Tag>>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::set_tags):<br>required: **true**<br><p>The tag key and optional value.</p><br>
     /// - On success, responds with [`TagResourceOutput`](crate::operation::tag_resource::TagResourceOutput) with field(s):
-    ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::tag_resource::TagResourceOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    ///   - [`operations(Option<Vec::<Operation>>)`](crate::operation::tag_resource::TagResourceOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::operation::tag_resource::TagResourceError)
     pub fn tag_resource(&self) -> crate::operation::tag_resource::builders::TagResourceFluentBuilder {
         crate::operation::tag_resource::builders::TagResourceFluentBuilder::new(self.handle.clone())

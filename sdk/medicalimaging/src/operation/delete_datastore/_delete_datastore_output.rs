@@ -4,19 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDatastoreOutput {
     /// <p>The data store identifier.</p>
-    pub datastore_id: ::std::option::Option<::std::string::String>,
+    pub datastore_id: ::std::string::String,
     /// <p>The data store status.</p>
-    pub datastore_status: ::std::option::Option<crate::types::DatastoreStatus>,
+    pub datastore_status: crate::types::DatastoreStatus,
     _request_id: Option<String>,
 }
 impl DeleteDatastoreOutput {
     /// <p>The data store identifier.</p>
-    pub fn datastore_id(&self) -> ::std::option::Option<&str> {
-        self.datastore_id.as_deref()
+    pub fn datastore_id(&self) -> &str {
+        use std::ops::Deref;
+        self.datastore_id.deref()
     }
     /// <p>The data store status.</p>
-    pub fn datastore_status(&self) -> ::std::option::Option<&crate::types::DatastoreStatus> {
-        self.datastore_status.as_ref()
+    pub fn datastore_status(&self) -> &crate::types::DatastoreStatus {
+        &self.datastore_status
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteDatastoreOutput {
@@ -41,6 +42,7 @@ pub struct DeleteDatastoreOutputBuilder {
 }
 impl DeleteDatastoreOutputBuilder {
     /// <p>The data store identifier.</p>
+    /// This field is required.
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +57,7 @@ impl DeleteDatastoreOutputBuilder {
         &self.datastore_id
     }
     /// <p>The data store status.</p>
+    /// This field is required.
     pub fn datastore_status(mut self, input: crate::types::DatastoreStatus) -> Self {
         self.datastore_status = ::std::option::Option::Some(input);
         self
@@ -78,11 +81,26 @@ impl DeleteDatastoreOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteDatastoreOutput`](crate::operation::delete_datastore::DeleteDatastoreOutput).
-    pub fn build(self) -> crate::operation::delete_datastore::DeleteDatastoreOutput {
-        crate::operation::delete_datastore::DeleteDatastoreOutput {
-            datastore_id: self.datastore_id,
-            datastore_status: self.datastore_status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`datastore_id`](crate::operation::delete_datastore::builders::DeleteDatastoreOutputBuilder::datastore_id)
+    /// - [`datastore_status`](crate::operation::delete_datastore::builders::DeleteDatastoreOutputBuilder::datastore_status)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_datastore::DeleteDatastoreOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_datastore::DeleteDatastoreOutput {
+            datastore_id: self.datastore_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "datastore_id",
+                    "datastore_id was not specified but it is required when building DeleteDatastoreOutput",
+                )
+            })?,
+            datastore_status: self.datastore_status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "datastore_status",
+                    "datastore_status was not specified but it is required when building DeleteDatastoreOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

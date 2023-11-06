@@ -7,13 +7,13 @@ pub struct StreamingDistributionConfig {
     /// <p>A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p>
     /// <p>If the value of <code>CallerReference</code> is new (regardless of the content of the <code>StreamingDistributionConfig</code> object), CloudFront creates a new distribution.</p>
     /// <p>If <code>CallerReference</code> is a value that you already sent in a previous request to create a distribution, CloudFront returns a <code>DistributionAlreadyExists</code> error.</p>
-    pub caller_reference: ::std::option::Option<::std::string::String>,
+    pub caller_reference: ::std::string::String,
     /// <p>A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your media files for distribution.</p>
     pub s3_origin: ::std::option::Option<crate::types::S3Origin>,
     /// <p>A complex type that contains information about CNAMEs (alternate domain names), if any, for this streaming distribution.</p>
     pub aliases: ::std::option::Option<crate::types::Aliases>,
     /// <p>Any comments you want to include about the streaming distribution.</p>
-    pub comment: ::std::option::Option<::std::string::String>,
+    pub comment: ::std::string::String,
     /// <p>A complex type that controls whether access logs are written for the streaming distribution.</p>
     pub logging: ::std::option::Option<crate::types::StreamingLoggingConfig>,
     /// <p>A complex type that specifies any Amazon Web Services accounts that you want to permit to create signed URLs for private content. If you want the distribution to use signed URLs, include this element; if you want the distribution to use public URLs, remove this element. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -21,14 +21,15 @@ pub struct StreamingDistributionConfig {
     /// <p>A complex type that contains information about price class for this streaming distribution.</p>
     pub price_class: ::std::option::Option<crate::types::PriceClass>,
     /// <p>Whether the streaming distribution is enabled to accept user requests for content.</p>
-    pub enabled: ::std::option::Option<bool>,
+    pub enabled: bool,
 }
 impl StreamingDistributionConfig {
     /// <p>A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p>
     /// <p>If the value of <code>CallerReference</code> is new (regardless of the content of the <code>StreamingDistributionConfig</code> object), CloudFront creates a new distribution.</p>
     /// <p>If <code>CallerReference</code> is a value that you already sent in a previous request to create a distribution, CloudFront returns a <code>DistributionAlreadyExists</code> error.</p>
-    pub fn caller_reference(&self) -> ::std::option::Option<&str> {
-        self.caller_reference.as_deref()
+    pub fn caller_reference(&self) -> &str {
+        use std::ops::Deref;
+        self.caller_reference.deref()
     }
     /// <p>A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your media files for distribution.</p>
     pub fn s3_origin(&self) -> ::std::option::Option<&crate::types::S3Origin> {
@@ -39,8 +40,9 @@ impl StreamingDistributionConfig {
         self.aliases.as_ref()
     }
     /// <p>Any comments you want to include about the streaming distribution.</p>
-    pub fn comment(&self) -> ::std::option::Option<&str> {
-        self.comment.as_deref()
+    pub fn comment(&self) -> &str {
+        use std::ops::Deref;
+        self.comment.deref()
     }
     /// <p>A complex type that controls whether access logs are written for the streaming distribution.</p>
     pub fn logging(&self) -> ::std::option::Option<&crate::types::StreamingLoggingConfig> {
@@ -55,7 +57,7 @@ impl StreamingDistributionConfig {
         self.price_class.as_ref()
     }
     /// <p>Whether the streaming distribution is enabled to accept user requests for content.</p>
-    pub fn enabled(&self) -> ::std::option::Option<bool> {
+    pub fn enabled(&self) -> bool {
         self.enabled
     }
 }
@@ -83,6 +85,7 @@ impl StreamingDistributionConfigBuilder {
     /// <p>A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p>
     /// <p>If the value of <code>CallerReference</code> is new (regardless of the content of the <code>StreamingDistributionConfig</code> object), CloudFront creates a new distribution.</p>
     /// <p>If <code>CallerReference</code> is a value that you already sent in a previous request to create a distribution, CloudFront returns a <code>DistributionAlreadyExists</code> error.</p>
+    /// This field is required.
     pub fn caller_reference(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.caller_reference = ::std::option::Option::Some(input.into());
         self
@@ -101,6 +104,7 @@ impl StreamingDistributionConfigBuilder {
         &self.caller_reference
     }
     /// <p>A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your media files for distribution.</p>
+    /// This field is required.
     pub fn s3_origin(mut self, input: crate::types::S3Origin) -> Self {
         self.s3_origin = ::std::option::Option::Some(input);
         self
@@ -129,6 +133,7 @@ impl StreamingDistributionConfigBuilder {
         &self.aliases
     }
     /// <p>Any comments you want to include about the streaming distribution.</p>
+    /// This field is required.
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment = ::std::option::Option::Some(input.into());
         self
@@ -157,6 +162,7 @@ impl StreamingDistributionConfigBuilder {
         &self.logging
     }
     /// <p>A complex type that specifies any Amazon Web Services accounts that you want to permit to create signed URLs for private content. If you want the distribution to use signed URLs, include this element; if you want the distribution to use public URLs, remove this element. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// This field is required.
     pub fn trusted_signers(mut self, input: crate::types::TrustedSigners) -> Self {
         self.trusted_signers = ::std::option::Option::Some(input);
         self
@@ -185,6 +191,7 @@ impl StreamingDistributionConfigBuilder {
         &self.price_class
     }
     /// <p>Whether the streaming distribution is enabled to accept user requests for content.</p>
+    /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
@@ -199,16 +206,35 @@ impl StreamingDistributionConfigBuilder {
         &self.enabled
     }
     /// Consumes the builder and constructs a [`StreamingDistributionConfig`](crate::types::StreamingDistributionConfig).
-    pub fn build(self) -> crate::types::StreamingDistributionConfig {
-        crate::types::StreamingDistributionConfig {
-            caller_reference: self.caller_reference,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`caller_reference`](crate::types::builders::StreamingDistributionConfigBuilder::caller_reference)
+    /// - [`comment`](crate::types::builders::StreamingDistributionConfigBuilder::comment)
+    /// - [`enabled`](crate::types::builders::StreamingDistributionConfigBuilder::enabled)
+    pub fn build(self) -> ::std::result::Result<crate::types::StreamingDistributionConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::StreamingDistributionConfig {
+            caller_reference: self.caller_reference.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "caller_reference",
+                    "caller_reference was not specified but it is required when building StreamingDistributionConfig",
+                )
+            })?,
             s3_origin: self.s3_origin,
             aliases: self.aliases,
-            comment: self.comment,
+            comment: self.comment.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "comment",
+                    "comment was not specified but it is required when building StreamingDistributionConfig",
+                )
+            })?,
             logging: self.logging,
             trusted_signers: self.trusted_signers,
             price_class: self.price_class,
-            enabled: self.enabled,
-        }
+            enabled: self.enabled.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "enabled",
+                    "enabled was not specified but it is required when building StreamingDistributionConfig",
+                )
+            })?,
+        })
     }
 }

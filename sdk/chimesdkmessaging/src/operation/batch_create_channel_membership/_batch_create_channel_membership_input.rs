@@ -26,8 +26,10 @@ impl BatchCreateChannelMembershipInput {
         self.r#type.as_ref()
     }
     /// <p>The ARNs of the members you want to add to the channel. Only <code>AppInstanceUsers</code> and <code>AppInstanceBots</code> can be added as a channel member.</p>
-    pub fn member_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.member_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.member_arns.is_none()`.
+    pub fn member_arns(&self) -> &[::std::string::String] {
+        self.member_arns.as_deref().unwrap_or_default()
     }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn chime_bearer(&self) -> ::std::option::Option<&str> {
@@ -59,6 +61,7 @@ pub struct BatchCreateChannelMembershipInputBuilder {
 }
 impl BatchCreateChannelMembershipInputBuilder {
     /// <p>The ARN of the channel to which you're adding users or bots.</p>
+    /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self
@@ -107,6 +110,7 @@ impl BatchCreateChannelMembershipInputBuilder {
         &self.member_arns
     }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
+    /// This field is required.
     pub fn chime_bearer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.chime_bearer = ::std::option::Option::Some(input.into());
         self
@@ -145,7 +149,7 @@ impl BatchCreateChannelMembershipInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipInput {
             channel_arn: self.channel_arn,

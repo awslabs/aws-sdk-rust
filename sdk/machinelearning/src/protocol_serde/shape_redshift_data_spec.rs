@@ -2,33 +2,33 @@
 pub fn ser_redshift_data_spec(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RedshiftDataSpec,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.database_information {
         #[allow(unused_mut)]
         let mut object_2 = object.key("DatabaseInformation").start_object();
         crate::protocol_serde::shape_redshift_database::ser_redshift_database(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.select_sql_query {
-        object.key("SelectSqlQuery").string(var_3.as_str());
+    {
+        object.key("SelectSqlQuery").string(input.select_sql_query.as_str());
     }
-    if let Some(var_4) = &input.database_credentials {
+    if let Some(var_3) = &input.database_credentials {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("DatabaseCredentials").start_object();
-        crate::protocol_serde::shape_redshift_database_credentials::ser_redshift_database_credentials(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("DatabaseCredentials").start_object();
+        crate::protocol_serde::shape_redshift_database_credentials::ser_redshift_database_credentials(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_6) = &input.s3_staging_location {
-        object.key("S3StagingLocation").string(var_6.as_str());
+    {
+        object.key("S3StagingLocation").string(input.s3_staging_location.as_str());
     }
-    if let Some(var_7) = &input.data_rearrangement {
-        object.key("DataRearrangement").string(var_7.as_str());
+    if let Some(var_5) = &input.data_rearrangement {
+        object.key("DataRearrangement").string(var_5.as_str());
     }
-    if let Some(var_8) = &input.data_schema {
-        object.key("DataSchema").string(var_8.as_str());
+    if let Some(var_6) = &input.data_schema {
+        object.key("DataSchema").string(var_6.as_str());
     }
-    if let Some(var_9) = &input.data_schema_uri {
-        object.key("DataSchemaUri").string(var_9.as_str());
+    if let Some(var_7) = &input.data_schema_uri {
+        object.key("DataSchemaUri").string(var_7.as_str());
     }
     Ok(())
 }

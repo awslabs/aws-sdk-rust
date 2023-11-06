@@ -27,6 +27,7 @@ pub struct DeleteLunaClientInputBuilder {
 }
 impl DeleteLunaClientInputBuilder {
     /// <p>The ARN of the client to delete.</p>
+    /// This field is required.
     pub fn client_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteLunaClientInputBuilder {
     /// Consumes the builder and constructs a [`DeleteLunaClientInput`](crate::operation::delete_luna_client::DeleteLunaClientInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_luna_client::DeleteLunaClientInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_luna_client::DeleteLunaClientInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_luna_client::DeleteLunaClientInput { client_arn: self.client_arn })
     }
 }

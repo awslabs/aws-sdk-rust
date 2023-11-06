@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Job {
     /// <p>The ID of the Job.</p>
-    pub job_id: ::std::option::Option<::std::string::String>,
+    pub job_id: ::std::string::String,
     /// <p>The ARN of a Job.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of the Job.</p>
@@ -27,8 +27,9 @@ pub struct Job {
 }
 impl Job {
     /// <p>The ID of the Job.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
-        self.job_id.as_deref()
+    pub fn job_id(&self) -> &str {
+        use std::ops::Deref;
+        self.job_id.deref()
     }
     /// <p>The ARN of a Job.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
@@ -55,16 +56,20 @@ impl Job {
         self.status.as_ref()
     }
     /// <p>A list of servers that the Job is acting upon.</p>
-    pub fn participating_servers(&self) -> ::std::option::Option<&[crate::types::ParticipatingServer]> {
-        self.participating_servers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.participating_servers.is_none()`.
+    pub fn participating_servers(&self) -> &[crate::types::ParticipatingServer] {
+        self.participating_servers.as_deref().unwrap_or_default()
     }
     /// <p>A list of tags associated with the Job.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A list of resources that the Job is acting upon.</p>
-    pub fn participating_resources(&self) -> ::std::option::Option<&[crate::types::ParticipatingResource]> {
-        self.participating_resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.participating_resources.is_none()`.
+    pub fn participating_resources(&self) -> &[crate::types::ParticipatingResource] {
+        self.participating_resources.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for Job {
@@ -107,6 +112,7 @@ pub struct JobBuilder {
 }
 impl JobBuilder {
     /// <p>The ID of the Job.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -265,9 +271,16 @@ impl JobBuilder {
         &self.participating_resources
     }
     /// Consumes the builder and constructs a [`Job`](crate::types::Job).
-    pub fn build(self) -> crate::types::Job {
-        crate::types::Job {
-            job_id: self.job_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`job_id`](crate::types::builders::JobBuilder::job_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::Job, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Job {
+            job_id: self.job_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "job_id",
+                    "job_id was not specified but it is required when building Job",
+                )
+            })?,
             arn: self.arn,
             r#type: self.r#type,
             initiated_by: self.initiated_by,
@@ -277,7 +290,7 @@ impl JobBuilder {
             participating_servers: self.participating_servers,
             tags: self.tags,
             participating_resources: self.participating_resources,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for JobBuilder {

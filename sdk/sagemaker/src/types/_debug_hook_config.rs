@@ -27,8 +27,10 @@ impl DebugHookConfig {
         self.hook_parameters.as_ref()
     }
     /// <p>Configuration information for Amazon SageMaker Debugger tensor collections. To learn more about how to configure the <code>CollectionConfiguration</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>. </p>
-    pub fn collection_configurations(&self) -> ::std::option::Option<&[crate::types::CollectionConfiguration]> {
-        self.collection_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.collection_configurations.is_none()`.
+    pub fn collection_configurations(&self) -> &[crate::types::CollectionConfiguration] {
+        self.collection_configurations.as_deref().unwrap_or_default()
     }
 }
 impl DebugHookConfig {
@@ -63,6 +65,7 @@ impl DebugHookConfigBuilder {
         &self.local_path
     }
     /// <p>Path to Amazon S3 storage location for metrics and tensors.</p>
+    /// This field is required.
     pub fn s3_output_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_output_path = ::std::option::Option::Some(input.into());
         self

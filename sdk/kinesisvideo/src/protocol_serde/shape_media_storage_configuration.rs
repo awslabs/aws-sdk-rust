@@ -38,7 +38,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::media_storage_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -49,12 +53,12 @@ where
 pub fn ser_media_storage_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MediaStorageConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.stream_arn {
         object.key("StreamARN").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.status {
-        object.key("Status").string(var_2.as_str());
+    {
+        object.key("Status").string(input.status.as_str());
     }
     Ok(())
 }

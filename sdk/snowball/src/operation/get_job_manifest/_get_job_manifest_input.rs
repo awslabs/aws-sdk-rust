@@ -27,6 +27,7 @@ pub struct GetJobManifestInputBuilder {
 }
 impl GetJobManifestInputBuilder {
     /// <p>The ID for a job that you want to get the manifest file for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetJobManifestInputBuilder {
     /// Consumes the builder and constructs a [`GetJobManifestInput`](crate::operation::get_job_manifest::GetJobManifestInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_job_manifest::GetJobManifestInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_job_manifest::GetJobManifestInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_job_manifest::GetJobManifestInput { job_id: self.job_id })
     }
 }

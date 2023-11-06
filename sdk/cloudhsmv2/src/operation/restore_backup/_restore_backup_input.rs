@@ -27,6 +27,7 @@ pub struct RestoreBackupInputBuilder {
 }
 impl RestoreBackupInputBuilder {
     /// <p>The ID of the backup to be restored. To find the ID of a backup, use the <code>DescribeBackups</code> operation.</p>
+    /// This field is required.
     pub fn backup_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl RestoreBackupInputBuilder {
     /// Consumes the builder and constructs a [`RestoreBackupInput`](crate::operation::restore_backup::RestoreBackupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::restore_backup::RestoreBackupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::restore_backup::RestoreBackupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::restore_backup::RestoreBackupInput { backup_id: self.backup_id })
     }
 }

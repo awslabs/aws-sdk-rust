@@ -14,8 +14,10 @@ impl GetJobInput {
         self.job_arn.as_deref()
     }
     /// <p>A list of attributes to return information for.</p>
-    pub fn additional_attribute_names(&self) -> ::std::option::Option<&[crate::types::HybridJobAdditionalAttributeName]> {
-        self.additional_attribute_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_attribute_names.is_none()`.
+    pub fn additional_attribute_names(&self) -> &[crate::types::HybridJobAdditionalAttributeName] {
+        self.additional_attribute_names.as_deref().unwrap_or_default()
     }
 }
 impl GetJobInput {
@@ -34,6 +36,7 @@ pub struct GetJobInputBuilder {
 }
 impl GetJobInputBuilder {
     /// <p>The ARN of the job to retrieve.</p>
+    /// This field is required.
     pub fn job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_arn = ::std::option::Option::Some(input.into());
         self
@@ -71,7 +74,7 @@ impl GetJobInputBuilder {
         &self.additional_attribute_names
     }
     /// Consumes the builder and constructs a [`GetJobInput`](crate::operation::get_job::GetJobInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_job::GetJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_job::GetJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_job::GetJobInput {
             job_arn: self.job_arn,
             additional_attribute_names: self.additional_attribute_names,

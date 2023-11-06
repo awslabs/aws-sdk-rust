@@ -8,7 +8,7 @@ pub struct CreateKeySigningKeyOutput {
     /// <p>The key-signing key (KSK) that the request creates.</p>
     pub key_signing_key: ::std::option::Option<crate::types::KeySigningKey>,
     /// <p>The unique URL representing the new key-signing key (KSK).</p>
-    pub location: ::std::option::Option<::std::string::String>,
+    pub location: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateKeySigningKeyOutput {
@@ -21,8 +21,9 @@ impl CreateKeySigningKeyOutput {
         self.key_signing_key.as_ref()
     }
     /// <p>The unique URL representing the new key-signing key (KSK).</p>
-    pub fn location(&self) -> ::std::option::Option<&str> {
-        self.location.as_deref()
+    pub fn location(&self) -> &str {
+        use std::ops::Deref;
+        self.location.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateKeySigningKeyOutput {
@@ -48,6 +49,7 @@ pub struct CreateKeySigningKeyOutputBuilder {
 }
 impl CreateKeySigningKeyOutputBuilder {
     /// <p>A complex type that describes change information about changes made to your hosted zone.</p>
+    /// This field is required.
     pub fn change_info(mut self, input: crate::types::ChangeInfo) -> Self {
         self.change_info = ::std::option::Option::Some(input);
         self
@@ -62,6 +64,7 @@ impl CreateKeySigningKeyOutputBuilder {
         &self.change_info
     }
     /// <p>The key-signing key (KSK) that the request creates.</p>
+    /// This field is required.
     pub fn key_signing_key(mut self, input: crate::types::KeySigningKey) -> Self {
         self.key_signing_key = ::std::option::Option::Some(input);
         self
@@ -76,6 +79,7 @@ impl CreateKeySigningKeyOutputBuilder {
         &self.key_signing_key
     }
     /// <p>The unique URL representing the new key-signing key (KSK).</p>
+    /// This field is required.
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
         self
@@ -99,12 +103,22 @@ impl CreateKeySigningKeyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateKeySigningKeyOutput`](crate::operation::create_key_signing_key::CreateKeySigningKeyOutput).
-    pub fn build(self) -> crate::operation::create_key_signing_key::CreateKeySigningKeyOutput {
-        crate::operation::create_key_signing_key::CreateKeySigningKeyOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`location`](crate::operation::create_key_signing_key::builders::CreateKeySigningKeyOutputBuilder::location)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_key_signing_key::CreateKeySigningKeyOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_key_signing_key::CreateKeySigningKeyOutput {
             change_info: self.change_info,
             key_signing_key: self.key_signing_key,
-            location: self.location,
+            location: self.location.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "location",
+                    "location was not specified but it is required when building CreateKeySigningKeyOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

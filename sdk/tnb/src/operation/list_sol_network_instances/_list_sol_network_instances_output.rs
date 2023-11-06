@@ -15,8 +15,10 @@ impl ListSolNetworkInstancesOutput {
         self.next_token.as_deref()
     }
     /// <p>Lists network instances.</p>
-    pub fn network_instances(&self) -> ::std::option::Option<&[crate::types::ListSolNetworkInstanceInfo]> {
-        self.network_instances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_instances.is_none()`.
+    pub fn network_instances(&self) -> &[crate::types::ListSolNetworkInstanceInfo] {
+        self.network_instances.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListSolNetworkInstancesOutput {

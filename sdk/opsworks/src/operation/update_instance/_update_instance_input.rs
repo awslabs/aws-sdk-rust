@@ -53,8 +53,10 @@ impl UpdateInstanceInput {
         self.instance_id.as_deref()
     }
     /// <p>The instance's layer IDs.</p>
-    pub fn layer_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.layer_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.layer_ids.is_none()`.
+    pub fn layer_ids(&self) -> &[::std::string::String] {
+        self.layer_ids.as_deref().unwrap_or_default()
     }
     /// <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the currently supported types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The parameter values that you use to specify the various types are in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
     pub fn instance_type(&self) -> ::std::option::Option<&str> {
@@ -142,6 +144,7 @@ pub struct UpdateInstanceInputBuilder {
 }
 impl UpdateInstanceInputBuilder {
     /// <p>The instance ID.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -375,7 +378,7 @@ impl UpdateInstanceInputBuilder {
     /// Consumes the builder and constructs a [`UpdateInstanceInput`](crate::operation::update_instance::UpdateInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_instance::UpdateInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_instance::UpdateInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_instance::UpdateInstanceInput {
             instance_id: self.instance_id,
             layer_ids: self.layer_ids,

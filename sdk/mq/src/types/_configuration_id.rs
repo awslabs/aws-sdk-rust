@@ -35,6 +35,7 @@ pub struct ConfigurationIdBuilder {
 }
 impl ConfigurationIdBuilder {
     /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

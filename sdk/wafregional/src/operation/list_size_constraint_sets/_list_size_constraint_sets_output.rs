@@ -15,8 +15,10 @@ impl ListSizeConstraintSetsOutput {
         self.next_marker.as_deref()
     }
     /// <p>An array of <code>SizeConstraintSetSummary</code> objects.</p>
-    pub fn size_constraint_sets(&self) -> ::std::option::Option<&[crate::types::SizeConstraintSetSummary]> {
-        self.size_constraint_sets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.size_constraint_sets.is_none()`.
+    pub fn size_constraint_sets(&self) -> &[crate::types::SizeConstraintSetSummary] {
+        self.size_constraint_sets.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListSizeConstraintSetsOutput {

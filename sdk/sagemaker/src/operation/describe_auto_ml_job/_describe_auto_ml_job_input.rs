@@ -27,6 +27,7 @@ pub struct DescribeAutoMlJobInputBuilder {
 }
 impl DescribeAutoMlJobInputBuilder {
     /// <p>Requests information about an AutoML job using its unique name.</p>
+    /// This field is required.
     pub fn auto_ml_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_ml_job_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeAutoMlJobInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAutoMlJobInput`](crate::operation::describe_auto_ml_job::DescribeAutoMlJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_auto_ml_job::DescribeAutoMlJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_auto_ml_job::DescribeAutoMlJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_auto_ml_job::DescribeAutoMlJobInput {
             auto_ml_job_name: self.auto_ml_job_name,
         })

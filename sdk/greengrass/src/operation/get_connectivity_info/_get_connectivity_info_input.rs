@@ -27,6 +27,7 @@ pub struct GetConnectivityInfoInputBuilder {
 }
 impl GetConnectivityInfoInputBuilder {
     /// The thing name.
+    /// This field is required.
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetConnectivityInfoInputBuilder {
     /// Consumes the builder and constructs a [`GetConnectivityInfoInput`](crate::operation::get_connectivity_info::GetConnectivityInfoInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_connectivity_info::GetConnectivityInfoInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_connectivity_info::GetConnectivityInfoInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_connectivity_info::GetConnectivityInfoInput { thing_name: self.thing_name })
     }

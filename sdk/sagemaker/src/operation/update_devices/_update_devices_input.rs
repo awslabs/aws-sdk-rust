@@ -14,8 +14,10 @@ impl UpdateDevicesInput {
         self.device_fleet_name.as_deref()
     }
     /// <p>List of devices to register with Edge Manager agent.</p>
-    pub fn devices(&self) -> ::std::option::Option<&[crate::types::Device]> {
-        self.devices.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.devices.is_none()`.
+    pub fn devices(&self) -> &[crate::types::Device] {
+        self.devices.as_deref().unwrap_or_default()
     }
 }
 impl UpdateDevicesInput {
@@ -34,6 +36,7 @@ pub struct UpdateDevicesInputBuilder {
 }
 impl UpdateDevicesInputBuilder {
     /// <p>The name of the fleet the devices belong to.</p>
+    /// This field is required.
     pub fn device_fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_fleet_name = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +73,7 @@ impl UpdateDevicesInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDevicesInput`](crate::operation::update_devices::UpdateDevicesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_devices::UpdateDevicesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_devices::UpdateDevicesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_devices::UpdateDevicesInput {
             device_fleet_name: self.device_fleet_name,
             devices: self.devices,

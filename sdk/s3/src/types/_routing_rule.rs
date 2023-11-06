@@ -49,6 +49,7 @@ impl RoutingRuleBuilder {
         &self.condition
     }
     /// <p>Container for redirect information. You can redirect requests to another host, to another page, or with another protocol. In the event of an error, you can specify a different error code to return.</p>
+    /// This field is required.
     pub fn redirect(mut self, input: crate::types::Redirect) -> Self {
         self.redirect = ::std::option::Option::Some(input);
         self

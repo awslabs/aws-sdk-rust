@@ -2,7 +2,7 @@
 pub fn ser_versioning_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VersioningConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.unlimited {
         object.key("unlimited").boolean(input.unlimited);
     }

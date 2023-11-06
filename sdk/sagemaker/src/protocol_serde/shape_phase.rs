@@ -2,7 +2,7 @@
 pub fn ser_phase(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Phase,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.initial_number_of_users {
         object.key("InitialNumberOfUsers").number(
             #[allow(clippy::useless_conversion)]

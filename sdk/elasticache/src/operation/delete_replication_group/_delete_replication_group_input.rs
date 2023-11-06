@@ -42,6 +42,7 @@ pub struct DeleteReplicationGroupInputBuilder {
 }
 impl DeleteReplicationGroupInputBuilder {
     /// <p>The identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
+    /// This field is required.
     pub fn replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_group_id = ::std::option::Option::Some(input.into());
         self
@@ -86,8 +87,10 @@ impl DeleteReplicationGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteReplicationGroupInput`](crate::operation::delete_replication_group::DeleteReplicationGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_replication_group::DeleteReplicationGroupInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_replication_group::DeleteReplicationGroupInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_replication_group::DeleteReplicationGroupInput {
             replication_group_id: self.replication_group_id,
             retain_primary_cluster: self.retain_primary_cluster,

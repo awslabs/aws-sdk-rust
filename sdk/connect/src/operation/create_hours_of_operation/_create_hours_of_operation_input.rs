@@ -34,8 +34,10 @@ impl CreateHoursOfOperationInput {
         self.time_zone.as_deref()
     }
     /// <p>Configuration information for the hours of operation: day, start time, and end time.</p>
-    pub fn config(&self) -> ::std::option::Option<&[crate::types::HoursOfOperationConfig]> {
-        self.config.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.config.is_none()`.
+    pub fn config(&self) -> &[crate::types::HoursOfOperationConfig] {
+        self.config.as_deref().unwrap_or_default()
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -62,6 +64,7 @@ pub struct CreateHoursOfOperationInputBuilder {
 }
 impl CreateHoursOfOperationInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +79,7 @@ impl CreateHoursOfOperationInputBuilder {
         &self.instance_id
     }
     /// <p>The name of the hours of operation.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +108,7 @@ impl CreateHoursOfOperationInputBuilder {
         &self.description
     }
     /// <p>The time zone of the hours of operation.</p>
+    /// This field is required.
     pub fn time_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.time_zone = ::std::option::Option::Some(input.into());
         self
@@ -162,7 +167,7 @@ impl CreateHoursOfOperationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_hours_of_operation::CreateHoursOfOperationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_hours_of_operation::CreateHoursOfOperationInput {
             instance_id: self.instance_id,

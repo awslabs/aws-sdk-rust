@@ -5,18 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ViolationEventOccurrenceRange {
     /// <p> The start date and time of a time period in which violation events occurred. </p>
-    pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub start_time: ::aws_smithy_types::DateTime,
     /// <p> The end date and time of a time period in which violation events occurred. </p>
-    pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub end_time: ::aws_smithy_types::DateTime,
 }
 impl ViolationEventOccurrenceRange {
     /// <p> The start date and time of a time period in which violation events occurred. </p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.start_time.as_ref()
+    pub fn start_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.start_time
     }
     /// <p> The end date and time of a time period in which violation events occurred. </p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.end_time.as_ref()
+    pub fn end_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.end_time
     }
 }
 impl ViolationEventOccurrenceRange {
@@ -35,6 +35,7 @@ pub struct ViolationEventOccurrenceRangeBuilder {
 }
 impl ViolationEventOccurrenceRangeBuilder {
     /// <p> The start date and time of a time period in which violation events occurred. </p>
+    /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl ViolationEventOccurrenceRangeBuilder {
         &self.start_time
     }
     /// <p> The end date and time of a time period in which violation events occurred. </p>
+    /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl ViolationEventOccurrenceRangeBuilder {
         &self.end_time
     }
     /// Consumes the builder and constructs a [`ViolationEventOccurrenceRange`](crate::types::ViolationEventOccurrenceRange).
-    pub fn build(self) -> crate::types::ViolationEventOccurrenceRange {
-        crate::types::ViolationEventOccurrenceRange {
-            start_time: self.start_time,
-            end_time: self.end_time,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`start_time`](crate::types::builders::ViolationEventOccurrenceRangeBuilder::start_time)
+    /// - [`end_time`](crate::types::builders::ViolationEventOccurrenceRangeBuilder::end_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::ViolationEventOccurrenceRange, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ViolationEventOccurrenceRange {
+            start_time: self.start_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "start_time",
+                    "start_time was not specified but it is required when building ViolationEventOccurrenceRange",
+                )
+            })?,
+            end_time: self.end_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "end_time",
+                    "end_time was not specified but it is required when building ViolationEventOccurrenceRange",
+                )
+            })?,
+        })
     }
 }

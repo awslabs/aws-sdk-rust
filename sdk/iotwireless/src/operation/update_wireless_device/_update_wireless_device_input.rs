@@ -62,6 +62,7 @@ pub struct UpdateWirelessDeviceInputBuilder {
 }
 impl UpdateWirelessDeviceInputBuilder {
     /// <p>The ID of the resource to update.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -148,7 +149,7 @@ impl UpdateWirelessDeviceInputBuilder {
     /// Consumes the builder and constructs a [`UpdateWirelessDeviceInput`](crate::operation::update_wireless_device::UpdateWirelessDeviceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_wireless_device::UpdateWirelessDeviceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_wireless_device::UpdateWirelessDeviceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_wireless_device::UpdateWirelessDeviceInput {
             id: self.id,

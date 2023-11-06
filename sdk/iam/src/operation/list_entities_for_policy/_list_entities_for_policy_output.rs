@@ -18,16 +18,22 @@ pub struct ListEntitiesForPolicyOutput {
 }
 impl ListEntitiesForPolicyOutput {
     /// <p>A list of IAM groups that the policy is attached to.</p>
-    pub fn policy_groups(&self) -> ::std::option::Option<&[crate::types::PolicyGroup]> {
-        self.policy_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_groups.is_none()`.
+    pub fn policy_groups(&self) -> &[crate::types::PolicyGroup] {
+        self.policy_groups.as_deref().unwrap_or_default()
     }
     /// <p>A list of IAM users that the policy is attached to.</p>
-    pub fn policy_users(&self) -> ::std::option::Option<&[crate::types::PolicyUser]> {
-        self.policy_users.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_users.is_none()`.
+    pub fn policy_users(&self) -> &[crate::types::PolicyUser] {
+        self.policy_users.as_deref().unwrap_or_default()
     }
     /// <p>A list of IAM roles that the policy is attached to.</p>
-    pub fn policy_roles(&self) -> ::std::option::Option<&[crate::types::PolicyRole]> {
-        self.policy_roles.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_roles.is_none()`.
+    pub fn policy_roles(&self) -> &[crate::types::PolicyRole] {
+        self.policy_roles.as_deref().unwrap_or_default()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub fn is_truncated(&self) -> bool {

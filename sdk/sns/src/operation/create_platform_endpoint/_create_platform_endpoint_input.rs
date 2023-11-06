@@ -49,6 +49,7 @@ pub struct CreatePlatformEndpointInputBuilder {
 }
 impl CreatePlatformEndpointInputBuilder {
     /// <p>PlatformApplicationArn returned from CreatePlatformApplication is used to create a an endpoint.</p>
+    /// This field is required.
     pub fn platform_application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform_application_arn = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl CreatePlatformEndpointInputBuilder {
         &self.platform_application_arn
     }
     /// <p>Unique identifier created by the notification service for an app on a device. The specific name for Token will vary, depending on which notification service is being used. For example, when using APNS as the notification service, you need the device token. Alternatively, when using GCM (Firebase Cloud Messaging) or ADM, the device token equivalent is called the registration ID.</p>
+    /// This field is required.
     pub fn token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.token = ::std::option::Option::Some(input.into());
         self
@@ -113,8 +115,10 @@ impl CreatePlatformEndpointInputBuilder {
     /// Consumes the builder and constructs a [`CreatePlatformEndpointInput`](crate::operation::create_platform_endpoint::CreatePlatformEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_platform_endpoint::CreatePlatformEndpointInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_platform_endpoint::CreatePlatformEndpointInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_platform_endpoint::CreatePlatformEndpointInput {
             platform_application_arn: self.platform_application_arn,
             token: self.token,

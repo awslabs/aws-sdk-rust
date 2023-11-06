@@ -48,6 +48,7 @@ pub struct CreateUseCaseInputBuilder {
 }
 impl CreateUseCaseInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl CreateUseCaseInputBuilder {
         &self.instance_id
     }
     /// <p>The identifier for the integration association.</p>
+    /// This field is required.
     pub fn integration_association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.integration_association_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl CreateUseCaseInputBuilder {
         &self.integration_association_id
     }
     /// <p>The type of use case to associate to the integration association. Each integration association can have only one of each use case type.</p>
+    /// This field is required.
     pub fn use_case_type(mut self, input: crate::types::UseCaseType) -> Self {
         self.use_case_type = ::std::option::Option::Some(input);
         self
@@ -112,7 +115,7 @@ impl CreateUseCaseInputBuilder {
     /// Consumes the builder and constructs a [`CreateUseCaseInput`](crate::operation::create_use_case::CreateUseCaseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_use_case::CreateUseCaseInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_use_case::CreateUseCaseInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_use_case::CreateUseCaseInput {
             instance_id: self.instance_id,
             integration_association_id: self.integration_association_id,

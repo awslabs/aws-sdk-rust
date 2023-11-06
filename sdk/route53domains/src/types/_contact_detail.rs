@@ -101,8 +101,10 @@ impl ContactDetail {
         self.fax.as_deref()
     }
     /// <p>A list of name-value pairs for parameters required by certain top-level domains.</p>
-    pub fn extra_params(&self) -> ::std::option::Option<&[crate::types::ExtraParam]> {
-        self.extra_params.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.extra_params.is_none()`.
+    pub fn extra_params(&self) -> &[crate::types::ExtraParam] {
+        self.extra_params.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for ContactDetail {

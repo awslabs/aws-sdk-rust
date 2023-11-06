@@ -2,29 +2,29 @@
 pub fn ser_model_output_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ModelOutputConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.format {
-        object.key("format").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("format").string(input.format.as_str());
     }
-    if let Some(var_2) = &input.json_key_to_variable_map {
+    if let Some(var_1) = &input.json_key_to_variable_map {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("jsonKeyToVariableMap").start_object();
-        for (key_4, value_5) in var_2 {
+        let mut object_2 = object.key("jsonKeyToVariableMap").start_object();
+        for (key_3, value_4) in var_1 {
             {
-                object_3.key(key_4.as_str()).string(value_5.as_str());
+                object_2.key(key_3.as_str()).string(value_4.as_str());
             }
         }
-        object_3.finish();
+        object_2.finish();
     }
-    if let Some(var_6) = &input.csv_index_to_variable_map {
+    if let Some(var_5) = &input.csv_index_to_variable_map {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("csvIndexToVariableMap").start_object();
-        for (key_8, value_9) in var_6 {
+        let mut object_6 = object.key("csvIndexToVariableMap").start_object();
+        for (key_7, value_8) in var_5 {
             {
-                object_7.key(key_8.as_str()).string(value_9.as_str());
+                object_6.key(key_7.as_str()).string(value_8.as_str());
             }
         }
-        object_7.finish();
+        object_6.finish();
     }
     Ok(())
 }
@@ -71,7 +71,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::model_output_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

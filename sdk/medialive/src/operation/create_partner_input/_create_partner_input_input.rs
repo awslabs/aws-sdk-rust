@@ -42,6 +42,7 @@ pub struct CreatePartnerInputInputBuilder {
 }
 impl CreatePartnerInputInputBuilder {
     /// Unique ID of the input.
+    /// This field is required.
     pub fn input_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_id = ::std::option::Option::Some(input.into());
         self
@@ -92,7 +93,8 @@ impl CreatePartnerInputInputBuilder {
     /// Consumes the builder and constructs a [`CreatePartnerInputInput`](crate::operation::create_partner_input::CreatePartnerInputInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_partner_input::CreatePartnerInputInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_partner_input::CreatePartnerInputInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_partner_input::CreatePartnerInputInput {
             input_id: self.input_id,
             request_id: self.request_id,

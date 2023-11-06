@@ -27,6 +27,7 @@ pub struct ExportBackupPlanTemplateInputBuilder {
 }
 impl ExportBackupPlanTemplateInputBuilder {
     /// <p>Uniquely identifies a backup plan.</p>
+    /// This field is required.
     pub fn backup_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_plan_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl ExportBackupPlanTemplateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::export_backup_plan_template::ExportBackupPlanTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::export_backup_plan_template::ExportBackupPlanTemplateInput {
             backup_plan_id: self.backup_plan_id,

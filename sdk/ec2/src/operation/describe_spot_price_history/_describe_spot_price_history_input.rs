@@ -39,8 +39,10 @@ impl DescribeSpotPriceHistoryInput {
     /// <li> <p> <code>spot-price</code> - The Spot price. The value must match exactly (or use wildcards; greater than or less than comparison is not supported).</p> </li>
     /// <li> <p> <code>timestamp</code> - The time stamp of the Spot price history, in UTC format (for example, <i>ddd MMM dd HH</i>:<i>mm</i>:<i>ss</i> UTC <i>YYYY</i>). You can use wildcards (<code>*</code> and <code>?</code>). Greater than or less than comparison is not supported.</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>Filters the results by the specified Availability Zone.</p>
     pub fn availability_zone(&self) -> ::std::option::Option<&str> {
@@ -55,8 +57,10 @@ impl DescribeSpotPriceHistoryInput {
         self.end_time.as_ref()
     }
     /// <p>Filters the results by the specified instance types.</p>
-    pub fn instance_types(&self) -> ::std::option::Option<&[crate::types::InstanceType]> {
-        self.instance_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_types.is_none()`.
+    pub fn instance_types(&self) -> &[crate::types::InstanceType] {
+        self.instance_types.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -67,8 +71,10 @@ impl DescribeSpotPriceHistoryInput {
         self.next_token.as_deref()
     }
     /// <p>Filters the results by the specified basic product descriptions.</p>
-    pub fn product_descriptions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.product_descriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.product_descriptions.is_none()`.
+    pub fn product_descriptions(&self) -> &[::std::string::String] {
+        self.product_descriptions.as_deref().unwrap_or_default()
     }
     /// <p>The date and time, up to the past 90 days, from which to start retrieving the price history data, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -267,7 +273,7 @@ impl DescribeSpotPriceHistoryInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_spot_price_history::DescribeSpotPriceHistoryInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_spot_price_history::DescribeSpotPriceHistoryInput {
             filters: self.filters,

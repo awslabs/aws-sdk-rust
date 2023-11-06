@@ -48,6 +48,7 @@ pub struct ListDashboardVersionsInputBuilder {
 }
 impl ListDashboardVersionsInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're listing versions for.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl ListDashboardVersionsInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID for the dashboard.</p>
+    /// This field is required.
     pub fn dashboard_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dashboard_id = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +108,7 @@ impl ListDashboardVersionsInputBuilder {
     /// Consumes the builder and constructs a [`ListDashboardVersionsInput`](crate::operation::list_dashboard_versions::ListDashboardVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_dashboard_versions::ListDashboardVersionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_dashboard_versions::ListDashboardVersionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_dashboard_versions::ListDashboardVersionsInput {
             aws_account_id: self.aws_account_id,

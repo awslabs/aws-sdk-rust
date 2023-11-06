@@ -27,6 +27,7 @@ pub struct DescribeAcceleratorInputBuilder {
 }
 impl DescribeAcceleratorInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the accelerator to describe.</p>
+    /// This field is required.
     pub fn accelerator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accelerator_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeAcceleratorInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAcceleratorInput`](crate::operation::describe_accelerator::DescribeAcceleratorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_accelerator::DescribeAcceleratorInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_accelerator::DescribeAcceleratorInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_accelerator::DescribeAcceleratorInput {
             accelerator_arn: self.accelerator_arn,

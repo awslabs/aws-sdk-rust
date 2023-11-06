@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRequest {
     /// <p>A map of attribute name to attribute values, representing the primary key of the item to delete. All of the table's primary key attributes must be specified, and their data types must match those of the table's key schema.</p>
-    pub key: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
+    pub key: ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
 }
 impl DeleteRequest {
     /// <p>A map of attribute name to attribute values, representing the primary key of the item to delete. All of the table's primary key attributes must be specified, and their data types must match those of the table's key schema.</p>
-    pub fn key(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>> {
-        self.key.as_ref()
+    pub fn key(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::AttributeValue> {
+        &self.key
     }
 }
 impl DeleteRequest {
@@ -48,7 +48,16 @@ impl DeleteRequestBuilder {
         &self.key
     }
     /// Consumes the builder and constructs a [`DeleteRequest`](crate::types::DeleteRequest).
-    pub fn build(self) -> crate::types::DeleteRequest {
-        crate::types::DeleteRequest { key: self.key }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key`](crate::types::builders::DeleteRequestBuilder::key)
+    pub fn build(self) -> ::std::result::Result<crate::types::DeleteRequest, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DeleteRequest {
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building DeleteRequest",
+                )
+            })?,
+        })
     }
 }

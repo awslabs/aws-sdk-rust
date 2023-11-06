@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicaGlobalSecondaryIndex {
     /// <p>The name of the global secondary index.</p>
-    pub index_name: ::std::option::Option<::std::string::String>,
+    pub index_name: ::std::string::String,
     /// <p>Replica table GSI-specific provisioned throughput. If not specified, uses the source table GSI's read capacity settings.</p>
     pub provisioned_throughput_override: ::std::option::Option<crate::types::ProvisionedThroughputOverride>,
 }
 impl ReplicaGlobalSecondaryIndex {
     /// <p>The name of the global secondary index.</p>
-    pub fn index_name(&self) -> ::std::option::Option<&str> {
-        self.index_name.as_deref()
+    pub fn index_name(&self) -> &str {
+        use std::ops::Deref;
+        self.index_name.deref()
     }
     /// <p>Replica table GSI-specific provisioned throughput. If not specified, uses the source table GSI's read capacity settings.</p>
     pub fn provisioned_throughput_override(&self) -> ::std::option::Option<&crate::types::ProvisionedThroughputOverride> {
@@ -35,6 +36,7 @@ pub struct ReplicaGlobalSecondaryIndexBuilder {
 }
 impl ReplicaGlobalSecondaryIndexBuilder {
     /// <p>The name of the global secondary index.</p>
+    /// This field is required.
     pub fn index_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl ReplicaGlobalSecondaryIndexBuilder {
         &self.provisioned_throughput_override
     }
     /// Consumes the builder and constructs a [`ReplicaGlobalSecondaryIndex`](crate::types::ReplicaGlobalSecondaryIndex).
-    pub fn build(self) -> crate::types::ReplicaGlobalSecondaryIndex {
-        crate::types::ReplicaGlobalSecondaryIndex {
-            index_name: self.index_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`index_name`](crate::types::builders::ReplicaGlobalSecondaryIndexBuilder::index_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::ReplicaGlobalSecondaryIndex, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ReplicaGlobalSecondaryIndex {
+            index_name: self.index_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "index_name",
+                    "index_name was not specified but it is required when building ReplicaGlobalSecondaryIndex",
+                )
+            })?,
             provisioned_throughput_override: self.provisioned_throughput_override,
-        }
+        })
     }
 }

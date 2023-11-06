@@ -59,6 +59,7 @@ pub struct QueryWhatIfForecastInputBuilder {
 }
 impl QueryWhatIfForecastInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast to query.</p>
+    /// This field is required.
     pub fn what_if_forecast_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.what_if_forecast_arn = ::std::option::Option::Some(input.into());
         self
@@ -143,7 +144,7 @@ impl QueryWhatIfForecastInputBuilder {
     /// Consumes the builder and constructs a [`QueryWhatIfForecastInput`](crate::operation::query_what_if_forecast::QueryWhatIfForecastInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::query_what_if_forecast::QueryWhatIfForecastInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::query_what_if_forecast::QueryWhatIfForecastInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::query_what_if_forecast::QueryWhatIfForecastInput {
             what_if_forecast_arn: self.what_if_forecast_arn,

@@ -5,30 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RepositorySyncEvent {
     /// <p>The type of event.</p>
-    pub r#type: ::std::option::Option<::std::string::String>,
+    pub r#type: ::std::string::String,
     /// <p>The external ID of the sync event.</p>
     pub external_id: ::std::option::Option<::std::string::String>,
     /// <p>The time that the sync event occurred.</p>
-    pub time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub time: ::aws_smithy_types::DateTime,
     /// <p>Event detail for a repository sync attempt.</p>
-    pub event: ::std::option::Option<::std::string::String>,
+    pub event: ::std::string::String,
 }
 impl RepositorySyncEvent {
     /// <p>The type of event.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
-        self.r#type.as_deref()
+    pub fn r#type(&self) -> &str {
+        use std::ops::Deref;
+        self.r#type.deref()
     }
     /// <p>The external ID of the sync event.</p>
     pub fn external_id(&self) -> ::std::option::Option<&str> {
         self.external_id.as_deref()
     }
     /// <p>The time that the sync event occurred.</p>
-    pub fn time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.time.as_ref()
+    pub fn time(&self) -> &::aws_smithy_types::DateTime {
+        &self.time
     }
     /// <p>Event detail for a repository sync attempt.</p>
-    pub fn event(&self) -> ::std::option::Option<&str> {
-        self.event.as_deref()
+    pub fn event(&self) -> &str {
+        use std::ops::Deref;
+        self.event.deref()
     }
 }
 impl RepositorySyncEvent {
@@ -49,6 +51,7 @@ pub struct RepositorySyncEventBuilder {
 }
 impl RepositorySyncEventBuilder {
     /// <p>The type of event.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +80,7 @@ impl RepositorySyncEventBuilder {
         &self.external_id
     }
     /// <p>The time that the sync event occurred.</p>
+    /// This field is required.
     pub fn time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.time = ::std::option::Option::Some(input);
         self
@@ -91,6 +95,7 @@ impl RepositorySyncEventBuilder {
         &self.time
     }
     /// <p>Event detail for a repository sync attempt.</p>
+    /// This field is required.
     pub fn event(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +110,31 @@ impl RepositorySyncEventBuilder {
         &self.event
     }
     /// Consumes the builder and constructs a [`RepositorySyncEvent`](crate::types::RepositorySyncEvent).
-    pub fn build(self) -> crate::types::RepositorySyncEvent {
-        crate::types::RepositorySyncEvent {
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::RepositorySyncEventBuilder::r#type)
+    /// - [`time`](crate::types::builders::RepositorySyncEventBuilder::time)
+    /// - [`event`](crate::types::builders::RepositorySyncEventBuilder::event)
+    pub fn build(self) -> ::std::result::Result<crate::types::RepositorySyncEvent, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RepositorySyncEvent {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building RepositorySyncEvent",
+                )
+            })?,
             external_id: self.external_id,
-            time: self.time,
-            event: self.event,
-        }
+            time: self.time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "time",
+                    "time was not specified but it is required when building RepositorySyncEvent",
+                )
+            })?,
+            event: self.event.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "event",
+                    "event was not specified but it is required when building RepositorySyncEvent",
+                )
+            })?,
+        })
     }
 }

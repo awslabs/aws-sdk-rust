@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAccessOutput {
     /// <p>A system-assigned unique identifier for a server that has this access assigned.</p>
-    pub server_id: ::std::option::Option<::std::string::String>,
+    pub server_id: ::std::string::String,
     /// <p>The external identifier of the server that the access is attached to.</p>
     pub access: ::std::option::Option<crate::types::DescribedAccess>,
     _request_id: Option<String>,
 }
 impl DescribeAccessOutput {
     /// <p>A system-assigned unique identifier for a server that has this access assigned.</p>
-    pub fn server_id(&self) -> ::std::option::Option<&str> {
-        self.server_id.as_deref()
+    pub fn server_id(&self) -> &str {
+        use std::ops::Deref;
+        self.server_id.deref()
     }
     /// <p>The external identifier of the server that the access is attached to.</p>
     pub fn access(&self) -> ::std::option::Option<&crate::types::DescribedAccess> {
@@ -41,6 +42,7 @@ pub struct DescribeAccessOutputBuilder {
 }
 impl DescribeAccessOutputBuilder {
     /// <p>A system-assigned unique identifier for a server that has this access assigned.</p>
+    /// This field is required.
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +57,7 @@ impl DescribeAccessOutputBuilder {
         &self.server_id
     }
     /// <p>The external identifier of the server that the access is attached to.</p>
+    /// This field is required.
     pub fn access(mut self, input: crate::types::DescribedAccess) -> Self {
         self.access = ::std::option::Option::Some(input);
         self
@@ -78,11 +81,20 @@ impl DescribeAccessOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAccessOutput`](crate::operation::describe_access::DescribeAccessOutput).
-    pub fn build(self) -> crate::operation::describe_access::DescribeAccessOutput {
-        crate::operation::describe_access::DescribeAccessOutput {
-            server_id: self.server_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`server_id`](crate::operation::describe_access::builders::DescribeAccessOutputBuilder::server_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_access::DescribeAccessOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_access::DescribeAccessOutput {
+            server_id: self.server_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "server_id",
+                    "server_id was not specified but it is required when building DescribeAccessOutput",
+                )
+            })?,
             access: self.access,
             _request_id: self._request_id,
-        }
+        })
     }
 }

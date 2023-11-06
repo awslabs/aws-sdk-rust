@@ -29,20 +29,28 @@ pub struct OrganizationEventFilter {
 }
 impl OrganizationEventFilter {
     /// <p>A list of unique identifiers for event types. For example, <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED".</code> </p>
-    pub fn event_type_codes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.event_type_codes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_type_codes.is_none()`.
+    pub fn event_type_codes(&self) -> &[::std::string::String] {
+        self.event_type_codes.as_deref().unwrap_or_default()
     }
     /// <p>A list of 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
-    pub fn aws_account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.aws_account_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aws_account_ids.is_none()`.
+    pub fn aws_account_ids(&self) -> &[::std::string::String] {
+        self.aws_account_ids.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Web Services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
-    pub fn services(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.services.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.services.is_none()`.
+    pub fn services(&self) -> &[::std::string::String] {
+        self.services.as_deref().unwrap_or_default()
     }
     /// <p>A list of Amazon Web Services Regions.</p>
-    pub fn regions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.regions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regions.is_none()`.
+    pub fn regions(&self) -> &[::std::string::String] {
+        self.regions.as_deref().unwrap_or_default()
     }
     /// <p>A range of dates and times that is used by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventFilter.html">EventFilter</a> and <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EntityFilter.html">EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>.</p>
     pub fn start_time(&self) -> ::std::option::Option<&crate::types::DateTimeRange> {
@@ -57,20 +65,28 @@ impl OrganizationEventFilter {
         self.last_updated_time.as_ref()
     }
     /// <p>A list of entity ARNs (unique identifiers).</p>
-    pub fn entity_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.entity_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entity_arns.is_none()`.
+    pub fn entity_arns(&self) -> &[::std::string::String] {
+        self.entity_arns.as_deref().unwrap_or_default()
     }
     /// <p>A list of entity identifiers, such as EC2 instance IDs (i-34ab692e) or EBS volumes (vol-426ab23e).</p>
-    pub fn entity_values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.entity_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entity_values.is_none()`.
+    pub fn entity_values(&self) -> &[::std::string::String] {
+        self.entity_values.as_deref().unwrap_or_default()
     }
     /// <p>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't supported at this time.</p>
-    pub fn event_type_categories(&self) -> ::std::option::Option<&[crate::types::EventTypeCategory]> {
-        self.event_type_categories.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_type_categories.is_none()`.
+    pub fn event_type_categories(&self) -> &[crate::types::EventTypeCategory] {
+        self.event_type_categories.as_deref().unwrap_or_default()
     }
     /// <p>A list of event status codes.</p>
-    pub fn event_status_codes(&self) -> ::std::option::Option<&[crate::types::EventStatusCode]> {
-        self.event_status_codes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_status_codes.is_none()`.
+    pub fn event_status_codes(&self) -> &[crate::types::EventStatusCode] {
+        self.event_status_codes.as_deref().unwrap_or_default()
     }
 }
 impl OrganizationEventFilter {

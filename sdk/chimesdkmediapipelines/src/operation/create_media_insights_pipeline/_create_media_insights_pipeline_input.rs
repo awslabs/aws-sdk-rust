@@ -47,8 +47,10 @@ impl CreateMediaInsightsPipelineInput {
         self.s3_recording_sink_runtime_configuration.as_ref()
     }
     /// <p>The tags assigned to the media insights pipeline.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The unique identifier for the media insights pipeline request.</p>
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
@@ -96,6 +98,7 @@ pub struct CreateMediaInsightsPipelineInputBuilder {
 }
 impl CreateMediaInsightsPipelineInputBuilder {
     /// <p>The ARN of the pipeline's configuration.</p>
+    /// This field is required.
     pub fn media_insights_pipeline_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.media_insights_pipeline_configuration_arn = ::std::option::Option::Some(input.into());
         self
@@ -235,7 +238,7 @@ impl CreateMediaInsightsPipelineInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_media_insights_pipeline::CreateMediaInsightsPipelineInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_media_insights_pipeline::CreateMediaInsightsPipelineInput {
             media_insights_pipeline_configuration_arn: self.media_insights_pipeline_configuration_arn,

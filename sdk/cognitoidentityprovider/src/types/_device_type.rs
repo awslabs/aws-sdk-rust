@@ -21,8 +21,10 @@ impl DeviceType {
         self.device_key.as_deref()
     }
     /// <p>The device attributes.</p>
-    pub fn device_attributes(&self) -> ::std::option::Option<&[crate::types::AttributeType]> {
-        self.device_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.device_attributes.is_none()`.
+    pub fn device_attributes(&self) -> &[crate::types::AttributeType] {
+        self.device_attributes.as_deref().unwrap_or_default()
     }
     /// <p>The creation date of the device.</p>
     pub fn device_create_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

@@ -17,8 +17,10 @@ impl ListResolverDnssecConfigsOutput {
         self.next_token.as_deref()
     }
     /// <p>An array that contains one <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html">ResolverDnssecConfig</a> element for each configuration for DNSSEC validation that is associated with the current Amazon Web Services account.</p>
-    pub fn resolver_dnssec_configs(&self) -> ::std::option::Option<&[crate::types::ResolverDnssecConfig]> {
-        self.resolver_dnssec_configs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resolver_dnssec_configs.is_none()`.
+    pub fn resolver_dnssec_configs(&self) -> &[crate::types::ResolverDnssecConfig] {
+        self.resolver_dnssec_configs.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListResolverDnssecConfigsOutput {

@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Order {
     /// <p>The name of the column.</p>
-    pub column: ::std::option::Option<::std::string::String>,
+    pub column: ::std::string::String,
     /// <p>Indicates that the column is sorted in ascending order (<code>== 1</code>), or in descending order (<code>==0</code>).</p>
     pub sort_order: i32,
 }
 impl Order {
     /// <p>The name of the column.</p>
-    pub fn column(&self) -> ::std::option::Option<&str> {
-        self.column.as_deref()
+    pub fn column(&self) -> &str {
+        use std::ops::Deref;
+        self.column.deref()
     }
     /// <p>Indicates that the column is sorted in ascending order (<code>== 1</code>), or in descending order (<code>==0</code>).</p>
     pub fn sort_order(&self) -> i32 {
@@ -35,6 +36,7 @@ pub struct OrderBuilder {
 }
 impl OrderBuilder {
     /// <p>The name of the column.</p>
+    /// This field is required.
     pub fn column(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.column = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl OrderBuilder {
         &self.column
     }
     /// <p>Indicates that the column is sorted in ascending order (<code>== 1</code>), or in descending order (<code>==0</code>).</p>
+    /// This field is required.
     pub fn sort_order(mut self, input: i32) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,17 @@ impl OrderBuilder {
         &self.sort_order
     }
     /// Consumes the builder and constructs a [`Order`](crate::types::Order).
-    pub fn build(self) -> crate::types::Order {
-        crate::types::Order {
-            column: self.column,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`column`](crate::types::builders::OrderBuilder::column)
+    pub fn build(self) -> ::std::result::Result<crate::types::Order, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Order {
+            column: self.column.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "column",
+                    "column was not specified but it is required when building Order",
+                )
+            })?,
             sort_order: self.sort_order.unwrap_or_default(),
-        }
+        })
     }
 }

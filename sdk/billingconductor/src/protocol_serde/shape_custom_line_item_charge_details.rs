@@ -2,7 +2,7 @@
 pub fn ser_custom_line_item_charge_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CustomLineItemChargeDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.flat {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Flat").start_object();
@@ -18,20 +18,20 @@ pub fn ser_custom_line_item_charge_details(
         )?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.r#type {
-        object.key("Type").string(var_5.as_str());
+    {
+        object.key("Type").string(input.r#type.as_str());
     }
-    if let Some(var_6) = &input.line_item_filters {
-        let mut array_7 = object.key("LineItemFilters").start_array();
-        for item_8 in var_6 {
+    if let Some(var_5) = &input.line_item_filters {
+        let mut array_6 = object.key("LineItemFilters").start_array();
+        for item_7 in var_5 {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_line_item_filter::ser_line_item_filter(&mut object_9, item_8)?;
-                object_9.finish();
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_line_item_filter::ser_line_item_filter(&mut object_8, item_7)?;
+                object_8.finish();
             }
         }
-        array_7.finish();
+        array_6.finish();
     }
     Ok(())
 }

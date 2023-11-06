@@ -27,6 +27,7 @@ pub struct GetWorkspaceInputBuilder {
 }
 impl GetWorkspaceInputBuilder {
     /// <p>The ID of the workspace.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,9 @@ impl GetWorkspaceInputBuilder {
         &self.workspace_id
     }
     /// Consumes the builder and constructs a [`GetWorkspaceInput`](crate::operation::get_workspace::GetWorkspaceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_workspace::GetWorkspaceInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_workspace::GetWorkspaceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_workspace::GetWorkspaceInput {
             workspace_id: self.workspace_id,
         })

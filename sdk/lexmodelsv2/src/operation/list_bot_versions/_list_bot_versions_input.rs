@@ -48,6 +48,7 @@ pub struct ListBotVersionsInputBuilder {
 }
 impl ListBotVersionsInputBuilder {
     /// <p>The identifier of the bot to list versions for.</p>
+    /// This field is required.
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,7 @@ impl ListBotVersionsInputBuilder {
     /// Consumes the builder and constructs a [`ListBotVersionsInput`](crate::operation::list_bot_versions::ListBotVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_bot_versions::ListBotVersionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_bot_versions::ListBotVersionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_bot_versions::ListBotVersionsInput {
             bot_id: self.bot_id,
             sort_by: self.sort_by,

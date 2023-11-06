@@ -4,25 +4,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetProvisionedModelThroughputOutput {
     /// <p>The current number of model units requested to be available for this provisioned throughput.</p>
-    pub model_units: ::std::option::Option<i32>,
+    pub model_units: i32,
     /// <p>The desired number of model units that was requested to be available for this provisioned throughput.</p>
-    pub desired_model_units: ::std::option::Option<i32>,
+    pub desired_model_units: i32,
     /// <p>The name of the provisioned throughput.</p>
-    pub provisioned_model_name: ::std::option::Option<::std::string::String>,
+    pub provisioned_model_name: ::std::string::String,
     /// <p>The ARN of the provisioned throughput.</p>
-    pub provisioned_model_arn: ::std::option::Option<::std::string::String>,
+    pub provisioned_model_arn: ::std::string::String,
     /// <p>The ARN or name of the model associated with this provisioned throughput.</p>
-    pub model_arn: ::std::option::Option<::std::string::String>,
+    pub model_arn: ::std::string::String,
     /// <p>The ARN of the new model to asssociate with this provisioned throughput.</p>
-    pub desired_model_arn: ::std::option::Option<::std::string::String>,
+    pub desired_model_arn: ::std::string::String,
     /// <p>ARN of the foundation model.</p>
-    pub foundation_model_arn: ::std::option::Option<::std::string::String>,
+    pub foundation_model_arn: ::std::string::String,
     /// <p>Status of the provisioned throughput. </p>
-    pub status: ::std::option::Option<crate::types::ProvisionedModelStatus>,
+    pub status: crate::types::ProvisionedModelStatus,
     /// <p>The timestamp of the creation time for this provisioned throughput. </p>
-    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_time: ::aws_smithy_types::DateTime,
     /// <p>The timestamp of the last modified time of this provisioned throughput. </p>
-    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub last_modified_time: ::aws_smithy_types::DateTime,
     /// <p>Failure message for any issues that the create operation encounters.</p>
     pub failure_message: ::std::option::Option<::std::string::String>,
     /// <p>Commitment duration of the provisioned throughput.</p>
@@ -33,44 +33,49 @@ pub struct GetProvisionedModelThroughputOutput {
 }
 impl GetProvisionedModelThroughputOutput {
     /// <p>The current number of model units requested to be available for this provisioned throughput.</p>
-    pub fn model_units(&self) -> ::std::option::Option<i32> {
+    pub fn model_units(&self) -> i32 {
         self.model_units
     }
     /// <p>The desired number of model units that was requested to be available for this provisioned throughput.</p>
-    pub fn desired_model_units(&self) -> ::std::option::Option<i32> {
+    pub fn desired_model_units(&self) -> i32 {
         self.desired_model_units
     }
     /// <p>The name of the provisioned throughput.</p>
-    pub fn provisioned_model_name(&self) -> ::std::option::Option<&str> {
-        self.provisioned_model_name.as_deref()
+    pub fn provisioned_model_name(&self) -> &str {
+        use std::ops::Deref;
+        self.provisioned_model_name.deref()
     }
     /// <p>The ARN of the provisioned throughput.</p>
-    pub fn provisioned_model_arn(&self) -> ::std::option::Option<&str> {
-        self.provisioned_model_arn.as_deref()
+    pub fn provisioned_model_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.provisioned_model_arn.deref()
     }
     /// <p>The ARN or name of the model associated with this provisioned throughput.</p>
-    pub fn model_arn(&self) -> ::std::option::Option<&str> {
-        self.model_arn.as_deref()
+    pub fn model_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.model_arn.deref()
     }
     /// <p>The ARN of the new model to asssociate with this provisioned throughput.</p>
-    pub fn desired_model_arn(&self) -> ::std::option::Option<&str> {
-        self.desired_model_arn.as_deref()
+    pub fn desired_model_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.desired_model_arn.deref()
     }
     /// <p>ARN of the foundation model.</p>
-    pub fn foundation_model_arn(&self) -> ::std::option::Option<&str> {
-        self.foundation_model_arn.as_deref()
+    pub fn foundation_model_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.foundation_model_arn.deref()
     }
     /// <p>Status of the provisioned throughput. </p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ProvisionedModelStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::ProvisionedModelStatus {
+        &self.status
     }
     /// <p>The timestamp of the creation time for this provisioned throughput. </p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_time.as_ref()
+    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_time
     }
     /// <p>The timestamp of the last modified time of this provisioned throughput. </p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.last_modified_time.as_ref()
+    pub fn last_modified_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.last_modified_time
     }
     /// <p>Failure message for any issues that the create operation encounters.</p>
     pub fn failure_message(&self) -> ::std::option::Option<&str> {
@@ -118,6 +123,7 @@ pub struct GetProvisionedModelThroughputOutputBuilder {
 }
 impl GetProvisionedModelThroughputOutputBuilder {
     /// <p>The current number of model units requested to be available for this provisioned throughput.</p>
+    /// This field is required.
     pub fn model_units(mut self, input: i32) -> Self {
         self.model_units = ::std::option::Option::Some(input);
         self
@@ -132,6 +138,7 @@ impl GetProvisionedModelThroughputOutputBuilder {
         &self.model_units
     }
     /// <p>The desired number of model units that was requested to be available for this provisioned throughput.</p>
+    /// This field is required.
     pub fn desired_model_units(mut self, input: i32) -> Self {
         self.desired_model_units = ::std::option::Option::Some(input);
         self
@@ -146,6 +153,7 @@ impl GetProvisionedModelThroughputOutputBuilder {
         &self.desired_model_units
     }
     /// <p>The name of the provisioned throughput.</p>
+    /// This field is required.
     pub fn provisioned_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioned_model_name = ::std::option::Option::Some(input.into());
         self
@@ -160,6 +168,7 @@ impl GetProvisionedModelThroughputOutputBuilder {
         &self.provisioned_model_name
     }
     /// <p>The ARN of the provisioned throughput.</p>
+    /// This field is required.
     pub fn provisioned_model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioned_model_arn = ::std::option::Option::Some(input.into());
         self
@@ -174,6 +183,7 @@ impl GetProvisionedModelThroughputOutputBuilder {
         &self.provisioned_model_arn
     }
     /// <p>The ARN or name of the model associated with this provisioned throughput.</p>
+    /// This field is required.
     pub fn model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_arn = ::std::option::Option::Some(input.into());
         self
@@ -188,6 +198,7 @@ impl GetProvisionedModelThroughputOutputBuilder {
         &self.model_arn
     }
     /// <p>The ARN of the new model to asssociate with this provisioned throughput.</p>
+    /// This field is required.
     pub fn desired_model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.desired_model_arn = ::std::option::Option::Some(input.into());
         self
@@ -202,6 +213,7 @@ impl GetProvisionedModelThroughputOutputBuilder {
         &self.desired_model_arn
     }
     /// <p>ARN of the foundation model.</p>
+    /// This field is required.
     pub fn foundation_model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.foundation_model_arn = ::std::option::Option::Some(input.into());
         self
@@ -216,6 +228,7 @@ impl GetProvisionedModelThroughputOutputBuilder {
         &self.foundation_model_arn
     }
     /// <p>Status of the provisioned throughput. </p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::ProvisionedModelStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -230,6 +243,7 @@ impl GetProvisionedModelThroughputOutputBuilder {
         &self.status
     }
     /// <p>The timestamp of the creation time for this provisioned throughput. </p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -244,6 +258,7 @@ impl GetProvisionedModelThroughputOutputBuilder {
         &self.creation_time
     }
     /// <p>The timestamp of the last modified time of this provisioned throughput. </p>
+    /// This field is required.
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
         self
@@ -309,22 +324,88 @@ impl GetProvisionedModelThroughputOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetProvisionedModelThroughputOutput`](crate::operation::get_provisioned_model_throughput::GetProvisionedModelThroughputOutput).
-    pub fn build(self) -> crate::operation::get_provisioned_model_throughput::GetProvisionedModelThroughputOutput {
-        crate::operation::get_provisioned_model_throughput::GetProvisionedModelThroughputOutput {
-            model_units: self.model_units,
-            desired_model_units: self.desired_model_units,
-            provisioned_model_name: self.provisioned_model_name,
-            provisioned_model_arn: self.provisioned_model_arn,
-            model_arn: self.model_arn,
-            desired_model_arn: self.desired_model_arn,
-            foundation_model_arn: self.foundation_model_arn,
-            status: self.status,
-            creation_time: self.creation_time,
-            last_modified_time: self.last_modified_time,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`model_units`](crate::operation::get_provisioned_model_throughput::builders::GetProvisionedModelThroughputOutputBuilder::model_units)
+    /// - [`desired_model_units`](crate::operation::get_provisioned_model_throughput::builders::GetProvisionedModelThroughputOutputBuilder::desired_model_units)
+    /// - [`provisioned_model_name`](crate::operation::get_provisioned_model_throughput::builders::GetProvisionedModelThroughputOutputBuilder::provisioned_model_name)
+    /// - [`provisioned_model_arn`](crate::operation::get_provisioned_model_throughput::builders::GetProvisionedModelThroughputOutputBuilder::provisioned_model_arn)
+    /// - [`model_arn`](crate::operation::get_provisioned_model_throughput::builders::GetProvisionedModelThroughputOutputBuilder::model_arn)
+    /// - [`desired_model_arn`](crate::operation::get_provisioned_model_throughput::builders::GetProvisionedModelThroughputOutputBuilder::desired_model_arn)
+    /// - [`foundation_model_arn`](crate::operation::get_provisioned_model_throughput::builders::GetProvisionedModelThroughputOutputBuilder::foundation_model_arn)
+    /// - [`status`](crate::operation::get_provisioned_model_throughput::builders::GetProvisionedModelThroughputOutputBuilder::status)
+    /// - [`creation_time`](crate::operation::get_provisioned_model_throughput::builders::GetProvisionedModelThroughputOutputBuilder::creation_time)
+    /// - [`last_modified_time`](crate::operation::get_provisioned_model_throughput::builders::GetProvisionedModelThroughputOutputBuilder::last_modified_time)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_provisioned_model_throughput::GetProvisionedModelThroughputOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::get_provisioned_model_throughput::GetProvisionedModelThroughputOutput {
+            model_units: self.model_units.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "model_units",
+                    "model_units was not specified but it is required when building GetProvisionedModelThroughputOutput",
+                )
+            })?,
+            desired_model_units: self.desired_model_units.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "desired_model_units",
+                    "desired_model_units was not specified but it is required when building GetProvisionedModelThroughputOutput",
+                )
+            })?,
+            provisioned_model_name: self.provisioned_model_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "provisioned_model_name",
+                    "provisioned_model_name was not specified but it is required when building GetProvisionedModelThroughputOutput",
+                )
+            })?,
+            provisioned_model_arn: self.provisioned_model_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "provisioned_model_arn",
+                    "provisioned_model_arn was not specified but it is required when building GetProvisionedModelThroughputOutput",
+                )
+            })?,
+            model_arn: self.model_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "model_arn",
+                    "model_arn was not specified but it is required when building GetProvisionedModelThroughputOutput",
+                )
+            })?,
+            desired_model_arn: self.desired_model_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "desired_model_arn",
+                    "desired_model_arn was not specified but it is required when building GetProvisionedModelThroughputOutput",
+                )
+            })?,
+            foundation_model_arn: self.foundation_model_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "foundation_model_arn",
+                    "foundation_model_arn was not specified but it is required when building GetProvisionedModelThroughputOutput",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building GetProvisionedModelThroughputOutput",
+                )
+            })?,
+            creation_time: self.creation_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "creation_time",
+                    "creation_time was not specified but it is required when building GetProvisionedModelThroughputOutput",
+                )
+            })?,
+            last_modified_time: self.last_modified_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "last_modified_time",
+                    "last_modified_time was not specified but it is required when building GetProvisionedModelThroughputOutput",
+                )
+            })?,
             failure_message: self.failure_message,
             commitment_duration: self.commitment_duration,
             commitment_expiration_time: self.commitment_expiration_time,
             _request_id: self._request_id,
-        }
+        })
     }
 }

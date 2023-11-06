@@ -15,8 +15,10 @@ impl Conflict {
         self.conflict_metadata.as_ref()
     }
     /// <p>A list of hunks that contain the differences between files or lines causing the conflict.</p>
-    pub fn merge_hunks(&self) -> ::std::option::Option<&[crate::types::MergeHunk]> {
-        self.merge_hunks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.merge_hunks.is_none()`.
+    pub fn merge_hunks(&self) -> &[crate::types::MergeHunk] {
+        self.merge_hunks.as_deref().unwrap_or_default()
     }
 }
 impl Conflict {

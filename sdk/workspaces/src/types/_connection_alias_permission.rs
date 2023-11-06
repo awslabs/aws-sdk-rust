@@ -5,17 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectionAliasPermission {
     /// <p>The identifier of the Amazon Web Services account that the connection alias is shared with.</p>
-    pub shared_account_id: ::std::option::Option<::std::string::String>,
+    pub shared_account_id: ::std::string::String,
     /// <p>Indicates whether the specified Amazon Web Services account is allowed to associate the connection alias with a directory.</p>
-    pub allow_association: ::std::option::Option<bool>,
+    pub allow_association: bool,
 }
 impl ConnectionAliasPermission {
     /// <p>The identifier of the Amazon Web Services account that the connection alias is shared with.</p>
-    pub fn shared_account_id(&self) -> ::std::option::Option<&str> {
-        self.shared_account_id.as_deref()
+    pub fn shared_account_id(&self) -> &str {
+        use std::ops::Deref;
+        self.shared_account_id.deref()
     }
     /// <p>Indicates whether the specified Amazon Web Services account is allowed to associate the connection alias with a directory.</p>
-    pub fn allow_association(&self) -> ::std::option::Option<bool> {
+    pub fn allow_association(&self) -> bool {
         self.allow_association
     }
 }
@@ -35,6 +36,7 @@ pub struct ConnectionAliasPermissionBuilder {
 }
 impl ConnectionAliasPermissionBuilder {
     /// <p>The identifier of the Amazon Web Services account that the connection alias is shared with.</p>
+    /// This field is required.
     pub fn shared_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shared_account_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl ConnectionAliasPermissionBuilder {
         &self.shared_account_id
     }
     /// <p>Indicates whether the specified Amazon Web Services account is allowed to associate the connection alias with a directory.</p>
+    /// This field is required.
     pub fn allow_association(mut self, input: bool) -> Self {
         self.allow_association = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,23 @@ impl ConnectionAliasPermissionBuilder {
         &self.allow_association
     }
     /// Consumes the builder and constructs a [`ConnectionAliasPermission`](crate::types::ConnectionAliasPermission).
-    pub fn build(self) -> crate::types::ConnectionAliasPermission {
-        crate::types::ConnectionAliasPermission {
-            shared_account_id: self.shared_account_id,
-            allow_association: self.allow_association,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`shared_account_id`](crate::types::builders::ConnectionAliasPermissionBuilder::shared_account_id)
+    /// - [`allow_association`](crate::types::builders::ConnectionAliasPermissionBuilder::allow_association)
+    pub fn build(self) -> ::std::result::Result<crate::types::ConnectionAliasPermission, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ConnectionAliasPermission {
+            shared_account_id: self.shared_account_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "shared_account_id",
+                    "shared_account_id was not specified but it is required when building ConnectionAliasPermission",
+                )
+            })?,
+            allow_association: self.allow_association.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "allow_association",
+                    "allow_association was not specified but it is required when building ConnectionAliasPermission",
+                )
+            })?,
+        })
     }
 }

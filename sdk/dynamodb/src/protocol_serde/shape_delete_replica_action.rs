@@ -2,9 +2,9 @@
 pub fn ser_delete_replica_action(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DeleteReplicaAction,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.region_name {
-        object.key("RegionName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("RegionName").string(input.region_name.as_str());
     }
     Ok(())
 }

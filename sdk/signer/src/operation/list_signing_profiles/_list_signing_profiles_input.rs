@@ -32,8 +32,10 @@ impl ListSigningProfilesInput {
         self.platform_id.as_deref()
     }
     /// <p>Filters results to return only signing jobs with statuses in the specified list.</p>
-    pub fn statuses(&self) -> ::std::option::Option<&[crate::types::SigningProfileStatus]> {
-        self.statuses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.statuses.is_none()`.
+    pub fn statuses(&self) -> &[crate::types::SigningProfileStatus] {
+        self.statuses.as_deref().unwrap_or_default()
     }
 }
 impl ListSigningProfilesInput {
@@ -133,7 +135,7 @@ impl ListSigningProfilesInputBuilder {
     /// Consumes the builder and constructs a [`ListSigningProfilesInput`](crate::operation::list_signing_profiles::ListSigningProfilesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_signing_profiles::ListSigningProfilesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_signing_profiles::ListSigningProfilesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_signing_profiles::ListSigningProfilesInput {
             include_canceled: self.include_canceled,

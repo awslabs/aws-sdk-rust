@@ -9,8 +9,10 @@ pub struct CreateAwsLogSourceOutput {
 }
 impl CreateAwsLogSourceOutput {
     /// <p>Lists all accounts in which enabling a natively supported Amazon Web Service as a Security Lake source failed. The failure occurred as these accounts are not part of an organization.</p>
-    pub fn failed(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.failed.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed.is_none()`.
+    pub fn failed(&self) -> &[::std::string::String] {
+        self.failed.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateAwsLogSourceOutput {

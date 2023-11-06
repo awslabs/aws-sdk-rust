@@ -10,7 +10,7 @@ impl ListInstanceProfilesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_instance_profiles::ListInstanceProfilesOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::list_instance_profiles::ListInstanceProfilesError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl ListInstanceProfilesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_instance_profiles::ListInstanceProfilesOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::list_instance_profiles::ListInstanceProfilesError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::list_instance_profiles::ListInstanceProfiles::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -86,20 +89,15 @@ impl ListInstanceProfilesFluentBuilder {
         crate::operation::list_instance_profiles::ListInstanceProfiles::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::list_instance_profiles::ListInstanceProfilesOutput,
-            crate::operation::list_instance_profiles::ListInstanceProfilesError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::list_instance_profiles::ListInstanceProfilesError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::list_instance_profiles::ListInstanceProfilesOutput,
+        crate::operation::list_instance_profiles::ListInstanceProfilesError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

@@ -7,11 +7,11 @@ pub struct EnvironmentState {
     /// <p>The environment spec that was used to create the environment.</p>
     pub spec: ::std::option::Option<::std::string::String>,
     /// <p>The name of the environment template that was used to create the environment.</p>
-    pub template_name: ::std::option::Option<::std::string::String>,
+    pub template_name: ::std::string::String,
     /// <p>The major version of the environment template that was used to create the environment.</p>
-    pub template_major_version: ::std::option::Option<::std::string::String>,
+    pub template_major_version: ::std::string::String,
     /// <p>The minor version of the environment template that was used to create the environment.</p>
-    pub template_minor_version: ::std::option::Option<::std::string::String>,
+    pub template_minor_version: ::std::string::String,
 }
 impl EnvironmentState {
     /// <p>The environment spec that was used to create the environment.</p>
@@ -19,16 +19,19 @@ impl EnvironmentState {
         self.spec.as_deref()
     }
     /// <p>The name of the environment template that was used to create the environment.</p>
-    pub fn template_name(&self) -> ::std::option::Option<&str> {
-        self.template_name.as_deref()
+    pub fn template_name(&self) -> &str {
+        use std::ops::Deref;
+        self.template_name.deref()
     }
     /// <p>The major version of the environment template that was used to create the environment.</p>
-    pub fn template_major_version(&self) -> ::std::option::Option<&str> {
-        self.template_major_version.as_deref()
+    pub fn template_major_version(&self) -> &str {
+        use std::ops::Deref;
+        self.template_major_version.deref()
     }
     /// <p>The minor version of the environment template that was used to create the environment.</p>
-    pub fn template_minor_version(&self) -> ::std::option::Option<&str> {
-        self.template_minor_version.as_deref()
+    pub fn template_minor_version(&self) -> &str {
+        use std::ops::Deref;
+        self.template_minor_version.deref()
     }
 }
 impl ::std::fmt::Debug for EnvironmentState {
@@ -73,6 +76,7 @@ impl EnvironmentStateBuilder {
         &self.spec
     }
     /// <p>The name of the environment template that was used to create the environment.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
@@ -87,6 +91,7 @@ impl EnvironmentStateBuilder {
         &self.template_name
     }
     /// <p>The major version of the environment template that was used to create the environment.</p>
+    /// This field is required.
     pub fn template_major_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_major_version = ::std::option::Option::Some(input.into());
         self
@@ -101,6 +106,7 @@ impl EnvironmentStateBuilder {
         &self.template_major_version
     }
     /// <p>The minor version of the environment template that was used to create the environment.</p>
+    /// This field is required.
     pub fn template_minor_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_minor_version = ::std::option::Option::Some(input.into());
         self
@@ -115,13 +121,32 @@ impl EnvironmentStateBuilder {
         &self.template_minor_version
     }
     /// Consumes the builder and constructs a [`EnvironmentState`](crate::types::EnvironmentState).
-    pub fn build(self) -> crate::types::EnvironmentState {
-        crate::types::EnvironmentState {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`template_name`](crate::types::builders::EnvironmentStateBuilder::template_name)
+    /// - [`template_major_version`](crate::types::builders::EnvironmentStateBuilder::template_major_version)
+    /// - [`template_minor_version`](crate::types::builders::EnvironmentStateBuilder::template_minor_version)
+    pub fn build(self) -> ::std::result::Result<crate::types::EnvironmentState, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EnvironmentState {
             spec: self.spec,
-            template_name: self.template_name,
-            template_major_version: self.template_major_version,
-            template_minor_version: self.template_minor_version,
-        }
+            template_name: self.template_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "template_name",
+                    "template_name was not specified but it is required when building EnvironmentState",
+                )
+            })?,
+            template_major_version: self.template_major_version.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "template_major_version",
+                    "template_major_version was not specified but it is required when building EnvironmentState",
+                )
+            })?,
+            template_minor_version: self.template_minor_version.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "template_minor_version",
+                    "template_minor_version was not specified but it is required when building EnvironmentState",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for EnvironmentStateBuilder {

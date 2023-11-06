@@ -2,18 +2,18 @@
 pub fn ser_s3_destination_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::S3DestinationProperties,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.bucket_name {
-        object.key("bucketName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("bucketName").string(input.bucket_name.as_str());
     }
-    if let Some(var_2) = &input.bucket_prefix {
-        object.key("bucketPrefix").string(var_2.as_str());
+    if let Some(var_1) = &input.bucket_prefix {
+        object.key("bucketPrefix").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.s3_output_format_config {
+    if let Some(var_2) = &input.s3_output_format_config {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("s3OutputFormatConfig").start_object();
-        crate::protocol_serde::shape_s3_output_format_config::ser_s3_output_format_config(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_3 = object.key("s3OutputFormatConfig").start_object();
+        crate::protocol_serde::shape_s3_output_format_config::ser_s3_output_format_config(&mut object_3, var_2)?;
+        object_3.finish();
     }
     Ok(())
 }
@@ -62,7 +62,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::s3_destination_properties_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

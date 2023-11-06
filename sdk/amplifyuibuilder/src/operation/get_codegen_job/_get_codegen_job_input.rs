@@ -41,6 +41,7 @@ pub struct GetCodegenJobInputBuilder {
 }
 impl GetCodegenJobInputBuilder {
     /// <p>The unique ID of the Amplify app associated with the code generation job.</p>
+    /// This field is required.
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl GetCodegenJobInputBuilder {
         &self.app_id
     }
     /// <p>The name of the backend environment that is a part of the Amplify app associated with the code generation job.</p>
+    /// This field is required.
     pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl GetCodegenJobInputBuilder {
         &self.environment_name
     }
     /// <p>The unique ID of the code generation job.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +88,7 @@ impl GetCodegenJobInputBuilder {
     /// Consumes the builder and constructs a [`GetCodegenJobInput`](crate::operation::get_codegen_job::GetCodegenJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_codegen_job::GetCodegenJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_codegen_job::GetCodegenJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_codegen_job::GetCodegenJobInput {
             app_id: self.app_id,
             environment_name: self.environment_name,

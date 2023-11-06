@@ -2,21 +2,21 @@
 pub fn ser_schema_input_attribute(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SchemaInputAttribute,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.field_name {
-        object.key("fieldName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("fieldName").string(input.field_name.as_str());
     }
-    if let Some(var_2) = &input.r#type {
-        object.key("type").string(var_2.as_str());
+    {
+        object.key("type").string(input.r#type.as_str());
     }
-    if let Some(var_3) = &input.group_name {
-        object.key("groupName").string(var_3.as_str());
+    if let Some(var_1) = &input.group_name {
+        object.key("groupName").string(var_1.as_str());
     }
-    if let Some(var_4) = &input.match_key {
-        object.key("matchKey").string(var_4.as_str());
+    if let Some(var_2) = &input.match_key {
+        object.key("matchKey").string(var_2.as_str());
     }
-    if let Some(var_5) = &input.sub_type {
-        object.key("subType").string(var_5.as_str());
+    if let Some(var_3) = &input.sub_type {
+        object.key("subType").string(var_3.as_str());
     }
     Ok(())
 }
@@ -81,7 +81,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::schema_input_attribute_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

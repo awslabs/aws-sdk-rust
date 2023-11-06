@@ -18,8 +18,10 @@ impl DescribeSharedDirectoriesInput {
         self.owner_directory_id.as_deref()
     }
     /// <p>A list of identifiers of all shared directories in your account. </p>
-    pub fn shared_directory_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.shared_directory_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.shared_directory_ids.is_none()`.
+    pub fn shared_directory_ids(&self) -> &[::std::string::String] {
+        self.shared_directory_ids.as_deref().unwrap_or_default()
     }
     /// <p>The <code>DescribeSharedDirectoriesResult.NextToken</code> value from a previous call to <code>DescribeSharedDirectories</code>. Pass null if this is the first call. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -48,6 +50,7 @@ pub struct DescribeSharedDirectoriesInputBuilder {
 }
 impl DescribeSharedDirectoriesInputBuilder {
     /// <p>Returns the identifier of the directory in the directory owner account. </p>
+    /// This field is required.
     pub fn owner_directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_directory_id = ::std::option::Option::Some(input.into());
         self
@@ -114,7 +117,7 @@ impl DescribeSharedDirectoriesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_shared_directories::DescribeSharedDirectoriesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_shared_directories::DescribeSharedDirectoriesInput {
             owner_directory_id: self.owner_directory_id,

@@ -33,11 +33,10 @@ pub fn de_create_template_group_access_control_entry_http_error(
                             crate::operation::create_template_group_access_control_entry::CreateTemplateGroupAccessControlEntryError::unhandled,
                         )?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::access_denied_exception_correct_errors(output).build().map_err(
+                        crate::operation::create_template_group_access_control_entry::CreateTemplateGroupAccessControlEntryError::unhandled,
+                    )?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -51,11 +50,10 @@ pub fn de_create_template_group_access_control_entry_http_error(
                         crate::operation::create_template_group_access_control_entry::CreateTemplateGroupAccessControlEntryError::unhandled,
                     )?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::conflict_exception_correct_errors(output).build().map_err(
+                        crate::operation::create_template_group_access_control_entry::CreateTemplateGroupAccessControlEntryError::unhandled,
+                    )?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -70,11 +68,10 @@ pub fn de_create_template_group_access_control_entry_http_error(
                             crate::operation::create_template_group_access_control_entry::CreateTemplateGroupAccessControlEntryError::unhandled,
                         )?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::internal_server_exception_correct_errors(output).build().map_err(
+                        crate::operation::create_template_group_access_control_entry::CreateTemplateGroupAccessControlEntryError::unhandled,
+                    )?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -90,11 +87,10 @@ pub fn de_create_template_group_access_control_entry_http_error(
                             crate::operation::create_template_group_access_control_entry::CreateTemplateGroupAccessControlEntryError::unhandled,
                         )?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::resource_not_found_exception_correct_errors(output).build().map_err(
+                        crate::operation::create_template_group_access_control_entry::CreateTemplateGroupAccessControlEntryError::unhandled,
+                    )?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -110,11 +106,12 @@ pub fn de_create_template_group_access_control_entry_http_error(
                     )
                     .map_err(crate::operation::create_template_group_access_control_entry::CreateTemplateGroupAccessControlEntryError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::service_quota_exceeded_exception_correct_errors(output)
+                        .build()
+                        .map_err(
+                            crate::operation::create_template_group_access_control_entry::CreateTemplateGroupAccessControlEntryError::unhandled,
+                        )?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -128,11 +125,10 @@ pub fn de_create_template_group_access_control_entry_http_error(
                         crate::operation::create_template_group_access_control_entry::CreateTemplateGroupAccessControlEntryError::unhandled,
                     )?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::throttling_exception_correct_errors(output).build().map_err(
+                        crate::operation::create_template_group_access_control_entry::CreateTemplateGroupAccessControlEntryError::unhandled,
+                    )?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -146,11 +142,10 @@ pub fn de_create_template_group_access_control_entry_http_error(
                         crate::operation::create_template_group_access_control_entry::CreateTemplateGroupAccessControlEntryError::unhandled,
                     )?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::validation_exception_correct_errors(output).build().map_err(
+                        crate::operation::create_template_group_access_control_entry::CreateTemplateGroupAccessControlEntryError::unhandled,
+                    )?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -178,7 +173,7 @@ pub fn de_create_template_group_access_control_entry_http_response(
 
 pub fn ser_create_template_group_access_control_entry_input(
     input: &crate::operation::create_template_group_access_control_entry::CreateTemplateGroupAccessControlEntryInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_template_group_access_control_entry_input::ser_create_template_group_access_control_entry_input(
@@ -186,5 +181,5 @@ pub fn ser_create_template_group_access_control_entry_input(
         input,
     )?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

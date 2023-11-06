@@ -2,7 +2,7 @@
 pub fn ser_secrets_manager_secret_resource_data(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SecretsManagerSecretResourceData,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.arn {
         object.key("ARN").string(var_1.as_str());
     }
@@ -41,9 +41,8 @@ where
                             );
                         }
                         "AdditionalStagingLabelsToDownload" => {
-                            builder = builder.set_additional_staging_labels_to_download(
-                                crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?,
-                            );
+                            builder = builder
+                                .set_additional_staging_labels_to_download(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -11,8 +11,10 @@ pub struct DescribeUsersOutput {
 }
 impl DescribeUsersOutput {
     /// <p>A list of users.</p>
-    pub fn users(&self) -> ::std::option::Option<&[crate::types::User]> {
-        self.users.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.users.is_none()`.
+    pub fn users(&self) -> &[crate::types::User] {
+        self.users.as_deref().unwrap_or_default()
     }
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. &gt;</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

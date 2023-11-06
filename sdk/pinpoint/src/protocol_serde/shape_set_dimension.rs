@@ -2,7 +2,7 @@
 pub fn ser_set_dimension(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SetDimension,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.dimension_type {
         object.key("DimensionType").string(var_1.as_str());
     }
@@ -41,7 +41,7 @@ where
                             );
                         }
                         "Values" => {
-                            builder = builder.set_values(crate::protocol_serde::shape_list_of__string::de_list_of__string(tokens)?);
+                            builder = builder.set_values(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
@@ -53,7 +53,7 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::set_dimension_correct_errors(builder).build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

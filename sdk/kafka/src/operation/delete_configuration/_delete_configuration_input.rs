@@ -27,6 +27,7 @@ pub struct DeleteConfigurationInputBuilder {
 }
 impl DeleteConfigurationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`DeleteConfigurationInput`](crate::operation::delete_configuration::DeleteConfigurationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_configuration::DeleteConfigurationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_configuration::DeleteConfigurationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_configuration::DeleteConfigurationInput { arn: self.arn })
     }

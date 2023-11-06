@@ -43,6 +43,7 @@ pub struct UpdateRecoveryPointLifecycleInputBuilder {
 }
 impl UpdateRecoveryPointLifecycleInputBuilder {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    /// This field is required.
     pub fn backup_vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_vault_name = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +58,7 @@ impl UpdateRecoveryPointLifecycleInputBuilder {
         &self.backup_vault_name
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+    /// This field is required.
     pub fn recovery_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recovery_point_arn = ::std::option::Option::Some(input.into());
         self
@@ -92,7 +94,7 @@ impl UpdateRecoveryPointLifecycleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_recovery_point_lifecycle::UpdateRecoveryPointLifecycleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_recovery_point_lifecycle::UpdateRecoveryPointLifecycleInput {
             backup_vault_name: self.backup_vault_name,

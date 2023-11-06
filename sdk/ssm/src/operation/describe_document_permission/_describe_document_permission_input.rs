@@ -48,6 +48,7 @@ pub struct DescribeDocumentPermissionInputBuilder {
 }
 impl DescribeDocumentPermissionInputBuilder {
     /// <p>The name of the document for which you are the owner.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl DescribeDocumentPermissionInputBuilder {
         &self.name
     }
     /// <p>The permission type for the document. The permission type can be <i>Share</i>.</p>
+    /// This field is required.
     pub fn permission_type(mut self, input: crate::types::DocumentPermissionType) -> Self {
         self.permission_type = ::std::option::Option::Some(input);
         self
@@ -108,7 +110,7 @@ impl DescribeDocumentPermissionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_document_permission::DescribeDocumentPermissionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_document_permission::DescribeDocumentPermissionInput {
             name: self.name,

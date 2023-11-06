@@ -11,8 +11,10 @@ pub struct ListOutpostResolversOutput {
 }
 impl ListOutpostResolversOutput {
     /// <p>The Resolvers on Outposts that were created by using the current Amazon Web Services account, and that match the specified filters, if any.</p>
-    pub fn outpost_resolvers(&self) -> ::std::option::Option<&[crate::types::OutpostResolver]> {
-        self.outpost_resolvers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outpost_resolvers.is_none()`.
+    pub fn outpost_resolvers(&self) -> &[crate::types::OutpostResolver] {
+        self.outpost_resolvers.as_deref().unwrap_or_default()
     }
     /// <p>If more than <code>MaxResults</code> Resolvers match the specified criteria, you can submit another <code>ListOutpostResolver</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamingConfiguration {
     /// <p>The amount of time, in hours, to the Kinesis data.</p>
-    pub data_retention_in_hours: ::std::option::Option<i32>,
+    pub data_retention_in_hours: i32,
     /// <p>When true, streaming to Kinesis is off.</p>
-    pub disabled: ::std::option::Option<bool>,
+    pub disabled: bool,
     /// <p>The streaming notification targets.</p>
     pub streaming_notification_targets: ::std::option::Option<::std::vec::Vec<crate::types::StreamingNotificationTarget>>,
     /// <p>The call analytics configuration.</p>
@@ -15,16 +15,18 @@ pub struct StreamingConfiguration {
 }
 impl StreamingConfiguration {
     /// <p>The amount of time, in hours, to the Kinesis data.</p>
-    pub fn data_retention_in_hours(&self) -> ::std::option::Option<i32> {
+    pub fn data_retention_in_hours(&self) -> i32 {
         self.data_retention_in_hours
     }
     /// <p>When true, streaming to Kinesis is off.</p>
-    pub fn disabled(&self) -> ::std::option::Option<bool> {
+    pub fn disabled(&self) -> bool {
         self.disabled
     }
     /// <p>The streaming notification targets.</p>
-    pub fn streaming_notification_targets(&self) -> ::std::option::Option<&[crate::types::StreamingNotificationTarget]> {
-        self.streaming_notification_targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.streaming_notification_targets.is_none()`.
+    pub fn streaming_notification_targets(&self) -> &[crate::types::StreamingNotificationTarget] {
+        self.streaming_notification_targets.as_deref().unwrap_or_default()
     }
     /// <p>The call analytics configuration.</p>
     pub fn media_insights_configuration(&self) -> ::std::option::Option<&crate::types::MediaInsightsConfiguration> {
@@ -49,6 +51,7 @@ pub struct StreamingConfigurationBuilder {
 }
 impl StreamingConfigurationBuilder {
     /// <p>The amount of time, in hours, to the Kinesis data.</p>
+    /// This field is required.
     pub fn data_retention_in_hours(mut self, input: i32) -> Self {
         self.data_retention_in_hours = ::std::option::Option::Some(input);
         self
@@ -63,6 +66,7 @@ impl StreamingConfigurationBuilder {
         &self.data_retention_in_hours
     }
     /// <p>When true, streaming to Kinesis is off.</p>
+    /// This field is required.
     pub fn disabled(mut self, input: bool) -> Self {
         self.disabled = ::std::option::Option::Some(input);
         self
@@ -114,12 +118,25 @@ impl StreamingConfigurationBuilder {
         &self.media_insights_configuration
     }
     /// Consumes the builder and constructs a [`StreamingConfiguration`](crate::types::StreamingConfiguration).
-    pub fn build(self) -> crate::types::StreamingConfiguration {
-        crate::types::StreamingConfiguration {
-            data_retention_in_hours: self.data_retention_in_hours,
-            disabled: self.disabled,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`data_retention_in_hours`](crate::types::builders::StreamingConfigurationBuilder::data_retention_in_hours)
+    /// - [`disabled`](crate::types::builders::StreamingConfigurationBuilder::disabled)
+    pub fn build(self) -> ::std::result::Result<crate::types::StreamingConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::StreamingConfiguration {
+            data_retention_in_hours: self.data_retention_in_hours.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "data_retention_in_hours",
+                    "data_retention_in_hours was not specified but it is required when building StreamingConfiguration",
+                )
+            })?,
+            disabled: self.disabled.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "disabled",
+                    "disabled was not specified but it is required when building StreamingConfiguration",
+                )
+            })?,
             streaming_notification_targets: self.streaming_notification_targets,
             media_insights_configuration: self.media_insights_configuration,
-        }
+        })
     }
 }

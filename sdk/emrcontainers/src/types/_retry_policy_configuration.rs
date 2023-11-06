@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RetryPolicyConfiguration {
     /// <p>The maximum number of attempts on the job's driver.</p>
-    pub max_attempts: ::std::option::Option<i32>,
+    pub max_attempts: i32,
 }
 impl RetryPolicyConfiguration {
     /// <p>The maximum number of attempts on the job's driver.</p>
-    pub fn max_attempts(&self) -> ::std::option::Option<i32> {
+    pub fn max_attempts(&self) -> i32 {
         self.max_attempts
     }
 }
@@ -28,6 +28,7 @@ pub struct RetryPolicyConfigurationBuilder {
 }
 impl RetryPolicyConfigurationBuilder {
     /// <p>The maximum number of attempts on the job's driver.</p>
+    /// This field is required.
     pub fn max_attempts(mut self, input: i32) -> Self {
         self.max_attempts = ::std::option::Option::Some(input);
         self
@@ -42,9 +43,16 @@ impl RetryPolicyConfigurationBuilder {
         &self.max_attempts
     }
     /// Consumes the builder and constructs a [`RetryPolicyConfiguration`](crate::types::RetryPolicyConfiguration).
-    pub fn build(self) -> crate::types::RetryPolicyConfiguration {
-        crate::types::RetryPolicyConfiguration {
-            max_attempts: self.max_attempts,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`max_attempts`](crate::types::builders::RetryPolicyConfigurationBuilder::max_attempts)
+    pub fn build(self) -> ::std::result::Result<crate::types::RetryPolicyConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RetryPolicyConfiguration {
+            max_attempts: self.max_attempts.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "max_attempts",
+                    "max_attempts was not specified but it is required when building RetryPolicyConfiguration",
+                )
+            })?,
+        })
     }
 }

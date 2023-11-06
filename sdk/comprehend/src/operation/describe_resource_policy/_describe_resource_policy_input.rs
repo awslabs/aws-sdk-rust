@@ -27,6 +27,7 @@ pub struct DescribeResourcePolicyInputBuilder {
 }
 impl DescribeResourcePolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the custom model version that has the resource policy.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,8 +44,10 @@ impl DescribeResourcePolicyInputBuilder {
     /// Consumes the builder and constructs a [`DescribeResourcePolicyInput`](crate::operation::describe_resource_policy::DescribeResourcePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_resource_policy::DescribeResourcePolicyInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_resource_policy::DescribeResourcePolicyInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_resource_policy::DescribeResourcePolicyInput {
             resource_arn: self.resource_arn,
         })

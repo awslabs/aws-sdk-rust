@@ -55,6 +55,7 @@ pub struct CreateProjectInputBuilder {
 }
 impl CreateProjectInputBuilder {
     /// <p>The ID of the portal in which to create the project.</p>
+    /// This field is required.
     pub fn portal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portal_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl CreateProjectInputBuilder {
         &self.portal_id
     }
     /// <p>A friendly name for the project.</p>
+    /// This field is required.
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
         self
@@ -133,7 +135,7 @@ impl CreateProjectInputBuilder {
     /// Consumes the builder and constructs a [`CreateProjectInput`](crate::operation::create_project::CreateProjectInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_project::CreateProjectInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_project::CreateProjectInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_project::CreateProjectInput {
             portal_id: self.portal_id,
             project_name: self.project_name,

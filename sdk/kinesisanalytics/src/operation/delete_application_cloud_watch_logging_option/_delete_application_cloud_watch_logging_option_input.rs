@@ -42,6 +42,7 @@ pub struct DeleteApplicationCloudWatchLoggingOptionInputBuilder {
 }
 impl DeleteApplicationCloudWatchLoggingOptionInputBuilder {
     /// <p>The Kinesis Analytics application name.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl DeleteApplicationCloudWatchLoggingOptionInputBuilder {
         &self.application_name
     }
     /// <p>The version ID of the Kinesis Analytics application.</p>
+    /// This field is required.
     pub fn current_application_version_id(mut self, input: i64) -> Self {
         self.current_application_version_id = ::std::option::Option::Some(input);
         self
@@ -70,6 +72,7 @@ impl DeleteApplicationCloudWatchLoggingOptionInputBuilder {
         &self.current_application_version_id
     }
     /// <p>The <code>CloudWatchLoggingOptionId</code> of the CloudWatch logging option to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation. </p>
+    /// This field is required.
     pub fn cloud_watch_logging_option_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloud_watch_logging_option_id = ::std::option::Option::Some(input.into());
         self
@@ -88,7 +91,7 @@ impl DeleteApplicationCloudWatchLoggingOptionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_application_cloud_watch_logging_option::DeleteApplicationCloudWatchLoggingOptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_application_cloud_watch_logging_option::DeleteApplicationCloudWatchLoggingOptionInput {

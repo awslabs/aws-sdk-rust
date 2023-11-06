@@ -11,8 +11,10 @@ pub struct ListExtensibleSourceServersOutput {
 }
 impl ListExtensibleSourceServersOutput {
     /// <p>A list of source servers on a staging Account that are extensible.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::StagingSourceServer]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[crate::types::StagingSourceServer] {
+        self.items.as_deref().unwrap_or_default()
     }
     /// <p>The token of the next extensible source server to retrieve.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

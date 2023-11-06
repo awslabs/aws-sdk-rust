@@ -90,6 +90,7 @@ impl ListProfileObjectsInputBuilder {
         &self.max_results
     }
     /// <p>The unique name of the domain.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +105,7 @@ impl ListProfileObjectsInputBuilder {
         &self.domain_name
     }
     /// <p>The name of the profile object type.</p>
+    /// This field is required.
     pub fn object_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_type_name = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +120,7 @@ impl ListProfileObjectsInputBuilder {
         &self.object_type_name
     }
     /// <p>The unique identifier of a customer profile.</p>
+    /// This field is required.
     pub fn profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_id = ::std::option::Option::Some(input.into());
         self
@@ -148,7 +151,8 @@ impl ListProfileObjectsInputBuilder {
     /// Consumes the builder and constructs a [`ListProfileObjectsInput`](crate::operation::list_profile_objects::ListProfileObjectsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_profile_objects::ListProfileObjectsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_profile_objects::ListProfileObjectsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_profile_objects::ListProfileObjectsInput {
             next_token: self.next_token,
             max_results: self.max_results,

@@ -35,6 +35,7 @@ pub struct AttachPrincipalPolicyInputBuilder {
 }
 impl AttachPrincipalPolicyInputBuilder {
     /// <p>The policy name.</p>
+    /// This field is required.
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl AttachPrincipalPolicyInputBuilder {
         &self.policy_name
     }
     /// <p>The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</p>
+    /// This field is required.
     pub fn principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal = ::std::option::Option::Some(input.into());
         self
@@ -65,7 +67,7 @@ impl AttachPrincipalPolicyInputBuilder {
     /// Consumes the builder and constructs a [`AttachPrincipalPolicyInput`](crate::operation::attach_principal_policy::AttachPrincipalPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::attach_principal_policy::AttachPrincipalPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::attach_principal_policy::AttachPrincipalPolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::attach_principal_policy::AttachPrincipalPolicyInput {
             policy_name: self.policy_name,

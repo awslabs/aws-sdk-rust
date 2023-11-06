@@ -85,8 +85,10 @@ impl ListCoverageStatisticsInputBuilder {
     /// Consumes the builder and constructs a [`ListCoverageStatisticsInput`](crate::operation::list_coverage_statistics::ListCoverageStatisticsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_coverage_statistics::ListCoverageStatisticsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::list_coverage_statistics::ListCoverageStatisticsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::list_coverage_statistics::ListCoverageStatisticsInput {
             filter_criteria: self.filter_criteria,
             group_by: self.group_by,

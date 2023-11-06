@@ -2,7 +2,7 @@
 pub fn ser_dash_manifest(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DashManifest,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.manifest_layout {
         object.key("manifestLayout").string(var_1.as_str());
     }

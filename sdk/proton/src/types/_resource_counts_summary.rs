@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceCountsSummary {
     /// <p>The total number of resources of this type in the Amazon Web Services account.</p>
-    pub total: ::std::option::Option<i32>,
+    pub total: i32,
     /// <p>The number of resources of this type in the Amazon Web Services account that failed to deploy.</p>
     pub failed: ::std::option::Option<i32>,
     /// <p>The number of resources of this type in the Amazon Web Services account that are up-to-date with their template.</p>
@@ -17,7 +17,7 @@ pub struct ResourceCountsSummary {
 }
 impl ResourceCountsSummary {
     /// <p>The total number of resources of this type in the Amazon Web Services account.</p>
-    pub fn total(&self) -> ::std::option::Option<i32> {
+    pub fn total(&self) -> i32 {
         self.total
     }
     /// <p>The number of resources of this type in the Amazon Web Services account that failed to deploy.</p>
@@ -56,6 +56,7 @@ pub struct ResourceCountsSummaryBuilder {
 }
 impl ResourceCountsSummaryBuilder {
     /// <p>The total number of resources of this type in the Amazon Web Services account.</p>
+    /// This field is required.
     pub fn total(mut self, input: i32) -> Self {
         self.total = ::std::option::Option::Some(input);
         self
@@ -126,13 +127,20 @@ impl ResourceCountsSummaryBuilder {
         &self.behind_minor
     }
     /// Consumes the builder and constructs a [`ResourceCountsSummary`](crate::types::ResourceCountsSummary).
-    pub fn build(self) -> crate::types::ResourceCountsSummary {
-        crate::types::ResourceCountsSummary {
-            total: self.total,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`total`](crate::types::builders::ResourceCountsSummaryBuilder::total)
+    pub fn build(self) -> ::std::result::Result<crate::types::ResourceCountsSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ResourceCountsSummary {
+            total: self.total.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "total",
+                    "total was not specified but it is required when building ResourceCountsSummary",
+                )
+            })?,
             failed: self.failed,
             up_to_date: self.up_to_date,
             behind_major: self.behind_major,
             behind_minor: self.behind_minor,
-        }
+        })
     }
 }

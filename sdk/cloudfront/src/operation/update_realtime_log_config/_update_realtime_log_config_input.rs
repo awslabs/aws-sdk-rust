@@ -17,13 +17,17 @@ pub struct UpdateRealtimeLogConfigInput {
 }
 impl UpdateRealtimeLogConfigInput {
     /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
-    pub fn end_points(&self) -> ::std::option::Option<&[crate::types::EndPoint]> {
-        self.end_points.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.end_points.is_none()`.
+    pub fn end_points(&self) -> &[crate::types::EndPoint] {
+        self.end_points.as_deref().unwrap_or_default()
     }
     /// <p>A list of fields to include in each real-time log record.</p>
     /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn fields(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.fields.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fields.is_none()`.
+    pub fn fields(&self) -> &[::std::string::String] {
+        self.fields.as_deref().unwrap_or_default()
     }
     /// <p>The name for this real-time log configuration.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -146,7 +150,7 @@ impl UpdateRealtimeLogConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_realtime_log_config::UpdateRealtimeLogConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_realtime_log_config::UpdateRealtimeLogConfigInput {
             end_points: self.end_points,

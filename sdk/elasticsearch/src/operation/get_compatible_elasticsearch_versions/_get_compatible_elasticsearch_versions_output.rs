@@ -10,8 +10,10 @@ pub struct GetCompatibleElasticsearchVersionsOutput {
 }
 impl GetCompatibleElasticsearchVersionsOutput {
     /// <p> A map of compatible Elasticsearch versions returned as part of the <code> <code>GetCompatibleElasticsearchVersions</code> </code> operation. </p>
-    pub fn compatible_elasticsearch_versions(&self) -> ::std::option::Option<&[crate::types::CompatibleVersionsMap]> {
-        self.compatible_elasticsearch_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compatible_elasticsearch_versions.is_none()`.
+    pub fn compatible_elasticsearch_versions(&self) -> &[crate::types::CompatibleVersionsMap] {
+        self.compatible_elasticsearch_versions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetCompatibleElasticsearchVersionsOutput {

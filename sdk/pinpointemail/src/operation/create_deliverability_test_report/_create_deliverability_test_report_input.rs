@@ -27,8 +27,10 @@ impl CreateDeliverabilityTestReportInput {
         self.content.as_ref()
     }
     /// <p>An array of objects that define the tags (keys and values) that you want to associate with the predictive inbox placement test.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateDeliverabilityTestReportInput {
@@ -63,6 +65,7 @@ impl CreateDeliverabilityTestReportInputBuilder {
         &self.report_name
     }
     /// <p>The email address that the predictive inbox placement test email was sent from.</p>
+    /// This field is required.
     pub fn from_email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.from_email_address = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +80,7 @@ impl CreateDeliverabilityTestReportInputBuilder {
         &self.from_email_address
     }
     /// <p>The HTML body of the message that you sent when you performed the predictive inbox placement test.</p>
+    /// This field is required.
     pub fn content(mut self, input: crate::types::EmailContent) -> Self {
         self.content = ::std::option::Option::Some(input);
         self
@@ -115,7 +119,7 @@ impl CreateDeliverabilityTestReportInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_deliverability_test_report::CreateDeliverabilityTestReportInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_deliverability_test_report::CreateDeliverabilityTestReportInput {
             report_name: self.report_name,

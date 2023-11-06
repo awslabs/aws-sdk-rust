@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeClusterOperation`](crate::operation::describe_cluster_operation::builders::DescribeClusterOperationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cluster_operation_arn(impl Into<String>)`](crate::operation::describe_cluster_operation::builders::DescribeClusterOperationFluentBuilder::cluster_operation_arn) / [`set_cluster_operation_arn(Option<String>)`](crate::operation::describe_cluster_operation::builders::DescribeClusterOperationFluentBuilder::set_cluster_operation_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies the MSK cluster operation.</p>
+    ///   - [`cluster_operation_arn(impl Into<String>)`](crate::operation::describe_cluster_operation::builders::DescribeClusterOperationFluentBuilder::cluster_operation_arn) / [`set_cluster_operation_arn(Option<String>)`](crate::operation::describe_cluster_operation::builders::DescribeClusterOperationFluentBuilder::set_cluster_operation_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) that uniquely identifies the MSK cluster operation.</p><br>
     /// - On success, responds with [`DescribeClusterOperationOutput`](crate::operation::describe_cluster_operation::DescribeClusterOperationOutput) with field(s):
     ///   - [`cluster_operation_info(Option<ClusterOperationInfo>)`](crate::operation::describe_cluster_operation::DescribeClusterOperationOutput::cluster_operation_info): <p>Cluster operation information</p>
     /// - On failure, responds with [`SdkError<DescribeClusterOperationError>`](crate::operation::describe_cluster_operation::DescribeClusterOperationError)

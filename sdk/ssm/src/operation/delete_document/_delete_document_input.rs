@@ -48,6 +48,7 @@ pub struct DeleteDocumentInputBuilder {
 }
 impl DeleteDocumentInputBuilder {
     /// <p>The name of the document.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,7 @@ impl DeleteDocumentInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDocumentInput`](crate::operation::delete_document::DeleteDocumentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_document::DeleteDocumentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_document::DeleteDocumentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_document::DeleteDocumentInput {
             name: self.name,
             document_version: self.document_version,

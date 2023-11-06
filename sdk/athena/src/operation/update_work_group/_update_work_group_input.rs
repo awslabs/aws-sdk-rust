@@ -48,6 +48,7 @@ pub struct UpdateWorkGroupInputBuilder {
 }
 impl UpdateWorkGroupInputBuilder {
     /// <p>The specified workgroup that will be updated.</p>
+    /// This field is required.
     pub fn work_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.work_group = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,7 @@ impl UpdateWorkGroupInputBuilder {
     /// Consumes the builder and constructs a [`UpdateWorkGroupInput`](crate::operation::update_work_group::UpdateWorkGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_work_group::UpdateWorkGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_work_group::UpdateWorkGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_work_group::UpdateWorkGroupInput {
             work_group: self.work_group,
             description: self.description,

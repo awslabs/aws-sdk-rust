@@ -5,26 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Message {
     /// <p>The ID to assign to the message. Within each batch sent, each <code>"messageId"</code> must be unique.</p>
-    pub message_id: ::std::option::Option<::std::string::String>,
+    pub message_id: ::std::string::String,
     /// <p>The name of the input into which the message payload is transformed.</p>
-    pub input_name: ::std::option::Option<::std::string::String>,
+    pub input_name: ::std::string::String,
     /// <p>The payload of the message. This can be a JSON string or a Base-64-encoded string representing binary data (in which case you must decode it).</p>
-    pub payload: ::std::option::Option<::aws_smithy_types::Blob>,
+    pub payload: ::aws_smithy_types::Blob,
     /// <p>The timestamp associated with the message.</p>
     pub timestamp: ::std::option::Option<crate::types::TimestampValue>,
 }
 impl Message {
     /// <p>The ID to assign to the message. Within each batch sent, each <code>"messageId"</code> must be unique.</p>
-    pub fn message_id(&self) -> ::std::option::Option<&str> {
-        self.message_id.as_deref()
+    pub fn message_id(&self) -> &str {
+        use std::ops::Deref;
+        self.message_id.deref()
     }
     /// <p>The name of the input into which the message payload is transformed.</p>
-    pub fn input_name(&self) -> ::std::option::Option<&str> {
-        self.input_name.as_deref()
+    pub fn input_name(&self) -> &str {
+        use std::ops::Deref;
+        self.input_name.deref()
     }
     /// <p>The payload of the message. This can be a JSON string or a Base-64-encoded string representing binary data (in which case you must decode it).</p>
-    pub fn payload(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
-        self.payload.as_ref()
+    pub fn payload(&self) -> &::aws_smithy_types::Blob {
+        &self.payload
     }
     /// <p>The timestamp associated with the message.</p>
     pub fn timestamp(&self) -> ::std::option::Option<&crate::types::TimestampValue> {
@@ -49,6 +51,7 @@ pub struct MessageBuilder {
 }
 impl MessageBuilder {
     /// <p>The ID to assign to the message. Within each batch sent, each <code>"messageId"</code> must be unique.</p>
+    /// This field is required.
     pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +66,7 @@ impl MessageBuilder {
         &self.message_id
     }
     /// <p>The name of the input into which the message payload is transformed.</p>
+    /// This field is required.
     pub fn input_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +81,7 @@ impl MessageBuilder {
         &self.input_name
     }
     /// <p>The payload of the message. This can be a JSON string or a Base-64-encoded string representing binary data (in which case you must decode it).</p>
+    /// This field is required.
     pub fn payload(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.payload = ::std::option::Option::Some(input);
         self
@@ -105,12 +110,31 @@ impl MessageBuilder {
         &self.timestamp
     }
     /// Consumes the builder and constructs a [`Message`](crate::types::Message).
-    pub fn build(self) -> crate::types::Message {
-        crate::types::Message {
-            message_id: self.message_id,
-            input_name: self.input_name,
-            payload: self.payload,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`message_id`](crate::types::builders::MessageBuilder::message_id)
+    /// - [`input_name`](crate::types::builders::MessageBuilder::input_name)
+    /// - [`payload`](crate::types::builders::MessageBuilder::payload)
+    pub fn build(self) -> ::std::result::Result<crate::types::Message, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Message {
+            message_id: self.message_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "message_id",
+                    "message_id was not specified but it is required when building Message",
+                )
+            })?,
+            input_name: self.input_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "input_name",
+                    "input_name was not specified but it is required when building Message",
+                )
+            })?,
+            payload: self.payload.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "payload",
+                    "payload was not specified but it is required when building Message",
+                )
+            })?,
             timestamp: self.timestamp,
-        }
+        })
     }
 }

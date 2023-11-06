@@ -69,6 +69,7 @@ impl GetReadinessCheckStatusInputBuilder {
         &self.next_token
     }
     /// <p>Name of a readiness check.</p>
+    /// This field is required.
     pub fn readiness_check_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.readiness_check_name = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl GetReadinessCheckStatusInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_readiness_check_status::GetReadinessCheckStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_readiness_check_status::GetReadinessCheckStatusInput {
             max_results: self.max_results,

@@ -27,6 +27,7 @@ pub struct GetAdminScopeInputBuilder {
 }
 impl GetAdminScopeInputBuilder {
     /// <p>The administator account that you want to get the details for.</p>
+    /// This field is required.
     pub fn admin_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_account = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetAdminScopeInputBuilder {
     /// Consumes the builder and constructs a [`GetAdminScopeInput`](crate::operation::get_admin_scope::GetAdminScopeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_admin_scope::GetAdminScopeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_admin_scope::GetAdminScopeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_admin_scope::GetAdminScopeInput {
             admin_account: self.admin_account,
         })

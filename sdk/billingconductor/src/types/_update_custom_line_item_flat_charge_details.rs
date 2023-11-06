@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCustomLineItemFlatChargeDetails {
     /// <p> The custom line item's new fixed charge value in USD. </p>
-    pub charge_value: ::std::option::Option<f64>,
+    pub charge_value: f64,
 }
 impl UpdateCustomLineItemFlatChargeDetails {
     /// <p> The custom line item's new fixed charge value in USD. </p>
-    pub fn charge_value(&self) -> ::std::option::Option<f64> {
+    pub fn charge_value(&self) -> f64 {
         self.charge_value
     }
 }
@@ -28,6 +28,7 @@ pub struct UpdateCustomLineItemFlatChargeDetailsBuilder {
 }
 impl UpdateCustomLineItemFlatChargeDetailsBuilder {
     /// <p> The custom line item's new fixed charge value in USD. </p>
+    /// This field is required.
     pub fn charge_value(mut self, input: f64) -> Self {
         self.charge_value = ::std::option::Option::Some(input);
         self
@@ -42,9 +43,18 @@ impl UpdateCustomLineItemFlatChargeDetailsBuilder {
         &self.charge_value
     }
     /// Consumes the builder and constructs a [`UpdateCustomLineItemFlatChargeDetails`](crate::types::UpdateCustomLineItemFlatChargeDetails).
-    pub fn build(self) -> crate::types::UpdateCustomLineItemFlatChargeDetails {
-        crate::types::UpdateCustomLineItemFlatChargeDetails {
-            charge_value: self.charge_value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`charge_value`](crate::types::builders::UpdateCustomLineItemFlatChargeDetailsBuilder::charge_value)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::UpdateCustomLineItemFlatChargeDetails, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::UpdateCustomLineItemFlatChargeDetails {
+            charge_value: self.charge_value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "charge_value",
+                    "charge_value was not specified but it is required when building UpdateCustomLineItemFlatChargeDetails",
+                )
+            })?,
+        })
     }
 }

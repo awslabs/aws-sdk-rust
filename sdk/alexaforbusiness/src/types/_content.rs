@@ -13,16 +13,22 @@ pub struct Content {
 }
 impl Content {
     /// <p>The list of text messages.</p>
-    pub fn text_list(&self) -> ::std::option::Option<&[crate::types::Text]> {
-        self.text_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.text_list.is_none()`.
+    pub fn text_list(&self) -> &[crate::types::Text] {
+        self.text_list.as_deref().unwrap_or_default()
     }
     /// <p>The list of SSML messages.</p>
-    pub fn ssml_list(&self) -> ::std::option::Option<&[crate::types::Ssml]> {
-        self.ssml_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ssml_list.is_none()`.
+    pub fn ssml_list(&self) -> &[crate::types::Ssml] {
+        self.ssml_list.as_deref().unwrap_or_default()
     }
     /// <p>The list of audio messages.</p>
-    pub fn audio_list(&self) -> ::std::option::Option<&[crate::types::Audio]> {
-        self.audio_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.audio_list.is_none()`.
+    pub fn audio_list(&self) -> &[crate::types::Audio] {
+        self.audio_list.as_deref().unwrap_or_default()
     }
 }
 impl Content {

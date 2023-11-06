@@ -73,6 +73,7 @@ pub struct CreateConnectorProfileInputBuilder {
 }
 impl CreateConnectorProfileInputBuilder {
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your Amazon Web Services account. </p>
+    /// This field is required.
     pub fn connector_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_profile_name = ::std::option::Option::Some(input.into());
         self
@@ -101,6 +102,7 @@ impl CreateConnectorProfileInputBuilder {
         &self.kms_arn
     }
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
+    /// This field is required.
     pub fn connector_type(mut self, input: crate::types::ConnectorType) -> Self {
         self.connector_type = ::std::option::Option::Some(input);
         self
@@ -129,6 +131,7 @@ impl CreateConnectorProfileInputBuilder {
         &self.connector_label
     }
     /// <p> Indicates the connection mode and specifies whether it is public or private. Private flows use Amazon Web Services PrivateLink to route data over Amazon Web Services infrastructure without exposing it to the public internet. </p>
+    /// This field is required.
     pub fn connection_mode(mut self, input: crate::types::ConnectionMode) -> Self {
         self.connection_mode = ::std::option::Option::Some(input);
         self
@@ -143,6 +146,7 @@ impl CreateConnectorProfileInputBuilder {
         &self.connection_mode
     }
     /// <p> Defines the connector-specific configuration and credentials. </p>
+    /// This field is required.
     pub fn connector_profile_config(mut self, input: crate::types::ConnectorProfileConfig) -> Self {
         self.connector_profile_config = ::std::option::Option::Some(input);
         self
@@ -179,8 +183,10 @@ impl CreateConnectorProfileInputBuilder {
     /// Consumes the builder and constructs a [`CreateConnectorProfileInput`](crate::operation::create_connector_profile::CreateConnectorProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_connector_profile::CreateConnectorProfileInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_connector_profile::CreateConnectorProfileInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_connector_profile::CreateConnectorProfileInput {
             connector_profile_name: self.connector_profile_name,
             kms_arn: self.kms_arn,

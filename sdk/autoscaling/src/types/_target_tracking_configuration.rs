@@ -83,6 +83,7 @@ impl TargetTrackingConfigurationBuilder {
     /// <p>The target value for the metric.</p> <note>
     /// <p>Some metrics are based on a count instead of a percentage, such as the request count for an Application Load Balancer or the number of messages in an SQS queue. If the scaling policy specifies one of these metrics, specify the target utilization as the optimal average request or message count per instance during any one-minute interval. </p>
     /// </note>
+    /// This field is required.
     pub fn target_value(mut self, input: f64) -> Self {
         self.target_value = ::std::option::Option::Some(input);
         self

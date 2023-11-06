@@ -21,8 +21,10 @@ impl ListObjectParentsOutput {
         self.next_token.as_deref()
     }
     /// <p>Returns a list of parent reference and LinkName Tuples.</p>
-    pub fn parent_links(&self) -> ::std::option::Option<&[crate::types::ObjectIdentifierAndLinkNameTuple]> {
-        self.parent_links.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parent_links.is_none()`.
+    pub fn parent_links(&self) -> &[crate::types::ObjectIdentifierAndLinkNameTuple] {
+        self.parent_links.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListObjectParentsOutput {

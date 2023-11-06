@@ -27,6 +27,7 @@ pub struct DescribePhoneNumberInputBuilder {
 }
 impl DescribePhoneNumberInputBuilder {
     /// <p>A unique identifier for the phone number.</p>
+    /// This field is required.
     pub fn phone_number_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribePhoneNumberInputBuilder {
     /// Consumes the builder and constructs a [`DescribePhoneNumberInput`](crate::operation::describe_phone_number::DescribePhoneNumberInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_phone_number::DescribePhoneNumberInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_phone_number::DescribePhoneNumberInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_phone_number::DescribePhoneNumberInput {
             phone_number_id: self.phone_number_id,

@@ -39,7 +39,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::auto_merging_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -50,26 +52,26 @@ where
 pub fn ser_auto_merging(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AutoMerging,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.enabled {
-        object.key("Enabled").boolean(*var_1);
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Enabled").boolean(input.enabled);
     }
-    if let Some(var_2) = &input.consolidation {
+    if let Some(var_1) = &input.consolidation {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("Consolidation").start_object();
-        crate::protocol_serde::shape_consolidation::ser_consolidation(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("Consolidation").start_object();
+        crate::protocol_serde::shape_consolidation::ser_consolidation(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.conflict_resolution {
+    if let Some(var_3) = &input.conflict_resolution {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("ConflictResolution").start_object();
-        crate::protocol_serde::shape_conflict_resolution::ser_conflict_resolution(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("ConflictResolution").start_object();
+        crate::protocol_serde::shape_conflict_resolution::ser_conflict_resolution(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_6) = &input.min_allowed_confidence_score_for_merging {
+    if let Some(var_5) = &input.min_allowed_confidence_score_for_merging {
         object.key("MinAllowedConfidenceScoreForMerging").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_6).into()),
+            ::aws_smithy_types::Number::Float((*var_5).into()),
         );
     }
     Ok(())

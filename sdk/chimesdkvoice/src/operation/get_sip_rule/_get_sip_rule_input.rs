@@ -27,6 +27,7 @@ pub struct GetSipRuleInputBuilder {
 }
 impl GetSipRuleInputBuilder {
     /// <p>The SIP rule ID.</p>
+    /// This field is required.
     pub fn sip_rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sip_rule_id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetSipRuleInputBuilder {
         &self.sip_rule_id
     }
     /// Consumes the builder and constructs a [`GetSipRuleInput`](crate::operation::get_sip_rule::GetSipRuleInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_sip_rule::GetSipRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_sip_rule::GetSipRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_sip_rule::GetSipRuleInput {
             sip_rule_id: self.sip_rule_id,
         })

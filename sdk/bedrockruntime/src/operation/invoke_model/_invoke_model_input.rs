@@ -58,6 +58,7 @@ pub struct InvokeModelInputBuilder {
 }
 impl InvokeModelInputBuilder {
     /// <p>Input data in the format specified in the content-type request header. To see the format and content of this field for different models, refer to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>.</p>
+    /// This field is required.
     pub fn body(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.body = ::std::option::Option::Some(input);
         self
@@ -100,6 +101,7 @@ impl InvokeModelInputBuilder {
         &self.accept
     }
     /// <p>Identifier of the model. </p>
+    /// This field is required.
     pub fn model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_id = ::std::option::Option::Some(input.into());
         self
@@ -114,7 +116,7 @@ impl InvokeModelInputBuilder {
         &self.model_id
     }
     /// Consumes the builder and constructs a [`InvokeModelInput`](crate::operation::invoke_model::InvokeModelInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::invoke_model::InvokeModelInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::invoke_model::InvokeModelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::invoke_model::InvokeModelInput {
             body: self.body,
             content_type: self.content_type,

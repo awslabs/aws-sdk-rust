@@ -41,6 +41,7 @@ pub struct GetSourceRepositoryInputBuilder {
 }
 impl GetSourceRepositoryInputBuilder {
     /// <p>The name of the space.</p>
+    /// This field is required.
     pub fn space_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.space_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl GetSourceRepositoryInputBuilder {
         &self.space_name
     }
     /// <p>The name of the project in the space.</p>
+    /// This field is required.
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl GetSourceRepositoryInputBuilder {
         &self.project_name
     }
     /// <p>The name of the source repository.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +88,7 @@ impl GetSourceRepositoryInputBuilder {
     /// Consumes the builder and constructs a [`GetSourceRepositoryInput`](crate::operation::get_source_repository::GetSourceRepositoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_source_repository::GetSourceRepositoryInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_source_repository::GetSourceRepositoryInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_source_repository::GetSourceRepositoryInput {
             space_name: self.space_name,

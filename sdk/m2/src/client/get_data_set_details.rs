@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDataSetDetails`](crate::operation::get_data_set_details::builders::GetDataSetDetailsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::operation::get_data_set_details::builders::GetDataSetDetailsFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::get_data_set_details::builders::GetDataSetDetailsFluentBuilder::set_application_id): <p>The unique identifier of the application that this data set is associated with.</p>
-    ///   - [`data_set_name(impl Into<String>)`](crate::operation::get_data_set_details::builders::GetDataSetDetailsFluentBuilder::data_set_name) / [`set_data_set_name(Option<String>)`](crate::operation::get_data_set_details::builders::GetDataSetDetailsFluentBuilder::set_data_set_name): <p>The name of the data set.</p>
+    ///   - [`application_id(impl Into<String>)`](crate::operation::get_data_set_details::builders::GetDataSetDetailsFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::get_data_set_details::builders::GetDataSetDetailsFluentBuilder::set_application_id):<br>required: **true**<br><p>The unique identifier of the application that this data set is associated with.</p><br>
+    ///   - [`data_set_name(impl Into<String>)`](crate::operation::get_data_set_details::builders::GetDataSetDetailsFluentBuilder::data_set_name) / [`set_data_set_name(Option<String>)`](crate::operation::get_data_set_details::builders::GetDataSetDetailsFluentBuilder::set_data_set_name):<br>required: **true**<br><p>The name of the data set.</p><br>
     /// - On success, responds with [`GetDataSetDetailsOutput`](crate::operation::get_data_set_details::GetDataSetDetailsOutput) with field(s):
-    ///   - [`data_set_name(Option<String>)`](crate::operation::get_data_set_details::GetDataSetDetailsOutput::data_set_name): <p>The name of the data set.</p>
+    ///   - [`data_set_name(String)`](crate::operation::get_data_set_details::GetDataSetDetailsOutput::data_set_name): <p>The name of the data set.</p>
     ///   - [`data_set_org(Option<DatasetDetailOrgAttributes>)`](crate::operation::get_data_set_details::GetDataSetDetailsOutput::data_set_org): <p>The type of data set. The only supported value is VSAM.</p>
     ///   - [`record_length(Option<i32>)`](crate::operation::get_data_set_details::GetDataSetDetailsOutput::record_length): <p>The length of records in the data set.</p>
     ///   - [`location(Option<String>)`](crate::operation::get_data_set_details::GetDataSetDetailsOutput::location): <p>The location where the data set is stored.</p>

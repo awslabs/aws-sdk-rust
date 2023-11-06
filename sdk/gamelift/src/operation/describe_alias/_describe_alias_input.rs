@@ -27,6 +27,7 @@ pub struct DescribeAliasInputBuilder {
 }
 impl DescribeAliasInputBuilder {
     /// <p>The unique identifier for the fleet alias that you want to retrieve. You can use either the alias ID or ARN value. </p>
+    /// This field is required.
     pub fn alias_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeAliasInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAliasInput`](crate::operation::describe_alias::DescribeAliasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_alias::DescribeAliasInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_alias::DescribeAliasInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_alias::DescribeAliasInput { alias_id: self.alias_id })
     }
 }

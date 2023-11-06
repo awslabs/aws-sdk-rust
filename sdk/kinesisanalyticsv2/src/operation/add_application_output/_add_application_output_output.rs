@@ -21,8 +21,10 @@ impl AddApplicationOutputOutput {
         self.application_version_id
     }
     /// <p>Describes the application output configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>. </p>
-    pub fn output_descriptions(&self) -> ::std::option::Option<&[crate::types::OutputDescription]> {
-        self.output_descriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_descriptions.is_none()`.
+    pub fn output_descriptions(&self) -> &[crate::types::OutputDescription] {
+        self.output_descriptions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for AddApplicationOutputOutput {

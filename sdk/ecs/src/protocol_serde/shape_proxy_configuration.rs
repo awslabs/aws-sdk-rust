@@ -2,24 +2,24 @@
 pub fn ser_proxy_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ProxyConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.r#type {
         object.key("type").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.container_name {
-        object.key("containerName").string(var_2.as_str());
+    {
+        object.key("containerName").string(input.container_name.as_str());
     }
-    if let Some(var_3) = &input.properties {
-        let mut array_4 = object.key("properties").start_array();
-        for item_5 in var_3 {
+    if let Some(var_2) = &input.properties {
+        let mut array_3 = object.key("properties").start_array();
+        for item_4 in var_2 {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_key_value_pair::ser_key_value_pair(&mut object_6, item_5)?;
-                object_6.finish();
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_key_value_pair::ser_key_value_pair(&mut object_5, item_4)?;
+                object_5.finish();
             }
         }
-        array_4.finish();
+        array_3.finish();
     }
     Ok(())
 }
@@ -68,7 +68,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::proxy_configuration_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

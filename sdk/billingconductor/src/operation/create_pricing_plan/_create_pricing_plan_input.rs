@@ -28,8 +28,10 @@ impl CreatePricingPlanInput {
         self.description.as_deref()
     }
     /// <p> A list of Amazon Resource Names (ARNs) that define the pricing plan parameters. </p>
-    pub fn pricing_rule_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.pricing_rule_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pricing_rule_arns.is_none()`.
+    pub fn pricing_rule_arns(&self) -> &[::std::string::String] {
+        self.pricing_rule_arns.as_deref().unwrap_or_default()
     }
     /// <p> A map that contains tag keys and tag values that are attached to a pricing plan. </p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -80,6 +82,7 @@ impl CreatePricingPlanInputBuilder {
         &self.client_token
     }
     /// <p>The name of the pricing plan. The names must be unique to each pricing plan. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -150,7 +153,7 @@ impl CreatePricingPlanInputBuilder {
     /// Consumes the builder and constructs a [`CreatePricingPlanInput`](crate::operation::create_pricing_plan::CreatePricingPlanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_pricing_plan::CreatePricingPlanInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_pricing_plan::CreatePricingPlanInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_pricing_plan::CreatePricingPlanInput {
             client_token: self.client_token,
             name: self.name,

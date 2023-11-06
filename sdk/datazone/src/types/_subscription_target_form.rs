@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubscriptionTargetForm {
     /// <p>The form name included in the subscription target configuration.</p>
-    pub form_name: ::std::option::Option<::std::string::String>,
+    pub form_name: ::std::string::String,
     /// <p>The content of the subscription target configuration.</p>
-    pub content: ::std::option::Option<::std::string::String>,
+    pub content: ::std::string::String,
 }
 impl SubscriptionTargetForm {
     /// <p>The form name included in the subscription target configuration.</p>
-    pub fn form_name(&self) -> ::std::option::Option<&str> {
-        self.form_name.as_deref()
+    pub fn form_name(&self) -> &str {
+        use std::ops::Deref;
+        self.form_name.deref()
     }
     /// <p>The content of the subscription target configuration.</p>
-    pub fn content(&self) -> ::std::option::Option<&str> {
-        self.content.as_deref()
+    pub fn content(&self) -> &str {
+        use std::ops::Deref;
+        self.content.deref()
     }
 }
 impl SubscriptionTargetForm {
@@ -35,6 +37,7 @@ pub struct SubscriptionTargetFormBuilder {
 }
 impl SubscriptionTargetFormBuilder {
     /// <p>The form name included in the subscription target configuration.</p>
+    /// This field is required.
     pub fn form_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.form_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl SubscriptionTargetFormBuilder {
         &self.form_name
     }
     /// <p>The content of the subscription target configuration.</p>
+    /// This field is required.
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl SubscriptionTargetFormBuilder {
         &self.content
     }
     /// Consumes the builder and constructs a [`SubscriptionTargetForm`](crate::types::SubscriptionTargetForm).
-    pub fn build(self) -> crate::types::SubscriptionTargetForm {
-        crate::types::SubscriptionTargetForm {
-            form_name: self.form_name,
-            content: self.content,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`form_name`](crate::types::builders::SubscriptionTargetFormBuilder::form_name)
+    /// - [`content`](crate::types::builders::SubscriptionTargetFormBuilder::content)
+    pub fn build(self) -> ::std::result::Result<crate::types::SubscriptionTargetForm, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SubscriptionTargetForm {
+            form_name: self.form_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "form_name",
+                    "form_name was not specified but it is required when building SubscriptionTargetForm",
+                )
+            })?,
+            content: self.content.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "content",
+                    "content was not specified but it is required when building SubscriptionTargetForm",
+                )
+            })?,
+        })
     }
 }

@@ -11,8 +11,10 @@ pub struct DescribeReservedNodeExchangeStatusOutput {
 }
 impl DescribeReservedNodeExchangeStatusOutput {
     /// <p>The details of the reserved-node exchange request, including the status, request time, source reserved-node identifier, and additional details.</p>
-    pub fn reserved_node_exchange_status_details(&self) -> ::std::option::Option<&[crate::types::ReservedNodeExchangeStatus]> {
-        self.reserved_node_exchange_status_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reserved_node_exchange_status_details.is_none()`.
+    pub fn reserved_node_exchange_status_details(&self) -> &[crate::types::ReservedNodeExchangeStatus] {
+        self.reserved_node_exchange_status_details.as_deref().unwrap_or_default()
     }
     /// <p>A pagination token provided by a previous <code>DescribeReservedNodeExchangeStatus</code> request.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

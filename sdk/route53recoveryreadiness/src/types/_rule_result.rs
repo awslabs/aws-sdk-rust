@@ -19,8 +19,10 @@ impl RuleResult {
         self.last_checked_timestamp.as_ref()
     }
     /// <p>Details about the resource's readiness.</p>
-    pub fn messages(&self) -> ::std::option::Option<&[crate::types::Message]> {
-        self.messages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.messages.is_none()`.
+    pub fn messages(&self) -> &[crate::types::Message] {
+        self.messages.as_deref().unwrap_or_default()
     }
     /// <p>The readiness at rule level.</p>
     pub fn readiness(&self) -> ::std::option::Option<&crate::types::Readiness> {
@@ -49,6 +51,7 @@ pub struct RuleResultBuilder {
 }
 impl RuleResultBuilder {
     /// <p>The time the resource was last checked for readiness, in ISO-8601 format, UTC.</p>
+    /// This field is required.
     pub fn last_checked_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_checked_timestamp = ::std::option::Option::Some(input);
         self
@@ -83,6 +86,7 @@ impl RuleResultBuilder {
         &self.messages
     }
     /// <p>The readiness at rule level.</p>
+    /// This field is required.
     pub fn readiness(mut self, input: crate::types::Readiness) -> Self {
         self.readiness = ::std::option::Option::Some(input);
         self
@@ -97,6 +101,7 @@ impl RuleResultBuilder {
         &self.readiness
     }
     /// <p>The identifier of the rule.</p>
+    /// This field is required.
     pub fn rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_id = ::std::option::Option::Some(input.into());
         self

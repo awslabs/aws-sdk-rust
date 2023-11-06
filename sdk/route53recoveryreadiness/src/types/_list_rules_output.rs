@@ -42,6 +42,7 @@ pub struct ListRulesOutputBuilder {
 }
 impl ListRulesOutputBuilder {
     /// <p>The resource type that the readiness rule applies to.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl ListRulesOutputBuilder {
         &self.resource_type
     }
     /// <p>The description of a readiness rule.</p>
+    /// This field is required.
     pub fn rule_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_description = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl ListRulesOutputBuilder {
         &self.rule_description
     }
     /// <p>The ID for the readiness rule.</p>
+    /// This field is required.
     pub fn rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_id = ::std::option::Option::Some(input.into());
         self

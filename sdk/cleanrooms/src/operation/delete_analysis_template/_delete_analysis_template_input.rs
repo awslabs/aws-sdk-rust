@@ -34,6 +34,7 @@ pub struct DeleteAnalysisTemplateInputBuilder {
 }
 impl DeleteAnalysisTemplateInputBuilder {
     /// <p>The identifier for a membership resource.</p>
+    /// This field is required.
     pub fn membership_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.membership_identifier = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteAnalysisTemplateInputBuilder {
         &self.membership_identifier
     }
     /// <p>The identifier for the analysis template resource.</p>
+    /// This field is required.
     pub fn analysis_template_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analysis_template_identifier = ::std::option::Option::Some(input.into());
         self
@@ -64,8 +66,10 @@ impl DeleteAnalysisTemplateInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAnalysisTemplateInput`](crate::operation::delete_analysis_template::DeleteAnalysisTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_analysis_template::DeleteAnalysisTemplateInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_analysis_template::DeleteAnalysisTemplateInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_analysis_template::DeleteAnalysisTemplateInput {
             membership_identifier: self.membership_identifier,
             analysis_template_identifier: self.analysis_template_identifier,

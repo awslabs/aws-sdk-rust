@@ -36,8 +36,8 @@ pub fn de_set_load_balancer_policies_for_backend_server_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidConfigurationRequest" => crate::operation::set_load_balancer_policies_for_backend_server::SetLoadBalancerPoliciesForBackendServerError::InvalidConfigurationRequestException({
@@ -52,8 +52,8 @@ pub fn de_set_load_balancer_policies_for_backend_server_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "PolicyNotFound" => crate::operation::set_load_balancer_policies_for_backend_server::SetLoadBalancerPoliciesForBackendServerError::PolicyNotFoundException({
@@ -68,8 +68,8 @@ pub fn de_set_load_balancer_policies_for_backend_server_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::set_load_balancer_policies_for_backend_server::SetLoadBalancerPoliciesForBackendServerError::generic(generic)

@@ -34,6 +34,7 @@ pub struct DeleteNodegroupInputBuilder {
 }
 impl DeleteNodegroupInputBuilder {
     /// <p>The name of the Amazon EKS cluster that is associated with your node group.</p>
+    /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteNodegroupInputBuilder {
         &self.cluster_name
     }
     /// <p>The name of the node group to delete.</p>
+    /// This field is required.
     pub fn nodegroup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nodegroup_name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DeleteNodegroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteNodegroupInput`](crate::operation::delete_nodegroup::DeleteNodegroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_nodegroup::DeleteNodegroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_nodegroup::DeleteNodegroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_nodegroup::DeleteNodegroupInput {
             cluster_name: self.cluster_name,
             nodegroup_name: self.nodegroup_name,

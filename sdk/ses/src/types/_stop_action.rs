@@ -6,15 +6,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopAction {
     /// <p>The scope of the StopAction. The only acceptable value is <code>RuleSet</code>.</p>
-    pub scope: ::std::option::Option<crate::types::StopScope>,
+    pub scope: crate::types::StopScope,
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the stop action is taken. You can find the ARN of a topic by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a> Amazon SNS operation.</p>
     /// <p>For more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
     pub topic_arn: ::std::option::Option<::std::string::String>,
 }
 impl StopAction {
     /// <p>The scope of the StopAction. The only acceptable value is <code>RuleSet</code>.</p>
-    pub fn scope(&self) -> ::std::option::Option<&crate::types::StopScope> {
-        self.scope.as_ref()
+    pub fn scope(&self) -> &crate::types::StopScope {
+        &self.scope
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the stop action is taken. You can find the ARN of a topic by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a> Amazon SNS operation.</p>
     /// <p>For more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
@@ -38,6 +38,7 @@ pub struct StopActionBuilder {
 }
 impl StopActionBuilder {
     /// <p>The scope of the StopAction. The only acceptable value is <code>RuleSet</code>.</p>
+    /// This field is required.
     pub fn scope(mut self, input: crate::types::StopScope) -> Self {
         self.scope = ::std::option::Option::Some(input);
         self
@@ -69,10 +70,17 @@ impl StopActionBuilder {
         &self.topic_arn
     }
     /// Consumes the builder and constructs a [`StopAction`](crate::types::StopAction).
-    pub fn build(self) -> crate::types::StopAction {
-        crate::types::StopAction {
-            scope: self.scope,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`scope`](crate::types::builders::StopActionBuilder::scope)
+    pub fn build(self) -> ::std::result::Result<crate::types::StopAction, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::StopAction {
+            scope: self.scope.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "scope",
+                    "scope was not specified but it is required when building StopAction",
+                )
+            })?,
             topic_arn: self.topic_arn,
-        }
+        })
     }
 }

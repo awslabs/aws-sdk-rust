@@ -11,8 +11,10 @@ pub struct ListReleaseLabelsOutput {
 }
 impl ListReleaseLabelsOutput {
     /// <p>The returned release labels.</p>
-    pub fn release_labels(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.release_labels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.release_labels.is_none()`.
+    pub fn release_labels(&self) -> &[::std::string::String] {
+        self.release_labels.as_deref().unwrap_or_default()
     }
     /// <p>Used to paginate the next page of results if specified in the next <code>ListReleaseLabels</code> request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

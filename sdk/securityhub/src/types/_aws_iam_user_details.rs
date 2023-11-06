@@ -24,8 +24,10 @@ pub struct AwsIamUserDetails {
 }
 impl AwsIamUserDetails {
     /// <p>A list of the managed policies that are attached to the user.</p>
-    pub fn attached_managed_policies(&self) -> ::std::option::Option<&[crate::types::AwsIamAttachedManagedPolicy]> {
-        self.attached_managed_policies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attached_managed_policies.is_none()`.
+    pub fn attached_managed_policies(&self) -> &[crate::types::AwsIamAttachedManagedPolicy] {
+        self.attached_managed_policies.as_deref().unwrap_or_default()
     }
     /// <p>Indicates when the user was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
@@ -33,8 +35,10 @@ impl AwsIamUserDetails {
         self.create_date.as_deref()
     }
     /// <p>A list of IAM groups that the user belongs to.</p>
-    pub fn group_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.group_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_list.is_none()`.
+    pub fn group_list(&self) -> &[::std::string::String] {
+        self.group_list.as_deref().unwrap_or_default()
     }
     /// <p>The path to the user.</p>
     pub fn path(&self) -> ::std::option::Option<&str> {
@@ -53,8 +57,10 @@ impl AwsIamUserDetails {
         self.user_name.as_deref()
     }
     /// <p>The list of inline policies that are embedded in the user.</p>
-    pub fn user_policy_list(&self) -> ::std::option::Option<&[crate::types::AwsIamUserPolicy]> {
-        self.user_policy_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_policy_list.is_none()`.
+    pub fn user_policy_list(&self) -> &[crate::types::AwsIamUserPolicy] {
+        self.user_policy_list.as_deref().unwrap_or_default()
     }
 }
 impl AwsIamUserDetails {

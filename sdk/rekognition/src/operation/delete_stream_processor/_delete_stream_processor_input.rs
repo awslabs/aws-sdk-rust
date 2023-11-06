@@ -27,6 +27,7 @@ pub struct DeleteStreamProcessorInputBuilder {
 }
 impl DeleteStreamProcessorInputBuilder {
     /// <p>The name of the stream processor you want to delete.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteStreamProcessorInputBuilder {
     /// Consumes the builder and constructs a [`DeleteStreamProcessorInput`](crate::operation::delete_stream_processor::DeleteStreamProcessorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_stream_processor::DeleteStreamProcessorInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_stream_processor::DeleteStreamProcessorInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_stream_processor::DeleteStreamProcessorInput { name: self.name })
     }

@@ -82,30 +82,21 @@ pub(crate) fn reflens_describe_subscribers_for_notification_output_next_token(
 pub(crate) fn lens_describe_budget_action_histories_output_action_histories(
     input: crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ActionHistory>> {
-    let input = match input.action_histories {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.action_histories;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_budget_actions_for_account_output_actions(
     input: crate::operation::describe_budget_actions_for_account::DescribeBudgetActionsForAccountOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Action>> {
-    let input = match input.actions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.actions;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_budget_actions_for_budget_output_actions(
     input: crate::operation::describe_budget_actions_for_budget::DescribeBudgetActionsForBudgetOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Action>> {
-    let input = match input.actions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.actions;
     ::std::option::Option::Some(input)
 }
 

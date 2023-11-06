@@ -153,12 +153,12 @@ pub fn de_get_usage_statistics_http_response(
 
 pub fn ser_get_usage_statistics_input(
     input: &crate::operation::get_usage_statistics::GetUsageStatisticsInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_get_usage_statistics_input::ser_get_usage_statistics_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_get_usage_statistics(
@@ -181,7 +181,7 @@ pub(crate) fn de_get_usage_statistics(
                     );
                 }
                 "records" => {
-                    builder = builder.set_records(crate::protocol_serde::shape___list_of_usage_record::de___list_of_usage_record(tokens)?);
+                    builder = builder.set_records(crate::protocol_serde::shape_list_of_usage_record::de_list_of_usage_record(tokens)?);
                 }
                 "timeRange" => {
                     builder = builder.set_time_range(

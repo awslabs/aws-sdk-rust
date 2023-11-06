@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TaskConfig {
     /// <p>Language code for the language that the model supports.</p>
-    pub language_code: ::std::option::Option<crate::types::LanguageCode>,
+    pub language_code: crate::types::LanguageCode,
     /// <p>Configuration required for a classification model.</p>
     pub document_classification_config: ::std::option::Option<crate::types::DocumentClassificationConfig>,
     /// <p>Configuration required for an entity recognition model.</p>
@@ -13,8 +13,8 @@ pub struct TaskConfig {
 }
 impl TaskConfig {
     /// <p>Language code for the language that the model supports.</p>
-    pub fn language_code(&self) -> ::std::option::Option<&crate::types::LanguageCode> {
-        self.language_code.as_ref()
+    pub fn language_code(&self) -> &crate::types::LanguageCode {
+        &self.language_code
     }
     /// <p>Configuration required for a classification model.</p>
     pub fn document_classification_config(&self) -> ::std::option::Option<&crate::types::DocumentClassificationConfig> {
@@ -42,6 +42,7 @@ pub struct TaskConfigBuilder {
 }
 impl TaskConfigBuilder {
     /// <p>Language code for the language that the model supports.</p>
+    /// This field is required.
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.language_code = ::std::option::Option::Some(input);
         self
@@ -84,11 +85,18 @@ impl TaskConfigBuilder {
         &self.entity_recognition_config
     }
     /// Consumes the builder and constructs a [`TaskConfig`](crate::types::TaskConfig).
-    pub fn build(self) -> crate::types::TaskConfig {
-        crate::types::TaskConfig {
-            language_code: self.language_code,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`language_code`](crate::types::builders::TaskConfigBuilder::language_code)
+    pub fn build(self) -> ::std::result::Result<crate::types::TaskConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TaskConfig {
+            language_code: self.language_code.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "language_code",
+                    "language_code was not specified but it is required when building TaskConfig",
+                )
+            })?,
             document_classification_config: self.document_classification_config,
             entity_recognition_config: self.entity_recognition_config,
-        }
+        })
     }
 }

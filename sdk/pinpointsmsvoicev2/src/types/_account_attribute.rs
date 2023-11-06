@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountAttribute {
     /// <p>The name of the account attribute.</p>
-    pub name: ::std::option::Option<crate::types::AccountAttributeName>,
+    pub name: crate::types::AccountAttributeName,
     /// <p>The value associated with the account attribute name.</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
 }
 impl AccountAttribute {
     /// <p>The name of the account attribute.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::AccountAttributeName> {
-        self.name.as_ref()
+    pub fn name(&self) -> &crate::types::AccountAttributeName {
+        &self.name
     }
     /// <p>The value associated with the account attribute name.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
 }
 impl AccountAttribute {
@@ -35,6 +36,7 @@ pub struct AccountAttributeBuilder {
 }
 impl AccountAttributeBuilder {
     /// <p>The name of the account attribute.</p>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::AccountAttributeName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -49,6 +51,7 @@ impl AccountAttributeBuilder {
         &self.name
     }
     /// <p>The value associated with the account attribute name.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +66,23 @@ impl AccountAttributeBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`AccountAttribute`](crate::types::AccountAttribute).
-    pub fn build(self) -> crate::types::AccountAttribute {
-        crate::types::AccountAttribute {
-            name: self.name,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::AccountAttributeBuilder::name)
+    /// - [`value`](crate::types::builders::AccountAttributeBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::AccountAttribute, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AccountAttribute {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building AccountAttribute",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building AccountAttribute",
+                )
+            })?,
+        })
     }
 }

@@ -6,15 +6,16 @@ pub struct DeletePullRequestApprovalRuleOutput {
     /// <p>The ID of the deleted approval rule. </p> <note>
     /// <p>If the approval rule was deleted in an earlier API call, the response is 200 OK without content.</p>
     /// </note>
-    pub approval_rule_id: ::std::option::Option<::std::string::String>,
+    pub approval_rule_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl DeletePullRequestApprovalRuleOutput {
     /// <p>The ID of the deleted approval rule. </p> <note>
     /// <p>If the approval rule was deleted in an earlier API call, the response is 200 OK without content.</p>
     /// </note>
-    pub fn approval_rule_id(&self) -> ::std::option::Option<&str> {
-        self.approval_rule_id.as_deref()
+    pub fn approval_rule_id(&self) -> &str {
+        use std::ops::Deref;
+        self.approval_rule_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DeletePullRequestApprovalRuleOutput {
@@ -40,6 +41,7 @@ impl DeletePullRequestApprovalRuleOutputBuilder {
     /// <p>The ID of the deleted approval rule. </p> <note>
     /// <p>If the approval rule was deleted in an earlier API call, the response is 200 OK without content.</p>
     /// </note>
+    /// This field is required.
     pub fn approval_rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.approval_rule_id = ::std::option::Option::Some(input.into());
         self
@@ -67,10 +69,22 @@ impl DeletePullRequestApprovalRuleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeletePullRequestApprovalRuleOutput`](crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleOutput).
-    pub fn build(self) -> crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleOutput {
-        crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleOutput {
-            approval_rule_id: self.approval_rule_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`approval_rule_id`](crate::operation::delete_pull_request_approval_rule::builders::DeletePullRequestApprovalRuleOutputBuilder::approval_rule_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleOutput {
+            approval_rule_id: self.approval_rule_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "approval_rule_id",
+                    "approval_rule_id was not specified but it is required when building DeletePullRequestApprovalRuleOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

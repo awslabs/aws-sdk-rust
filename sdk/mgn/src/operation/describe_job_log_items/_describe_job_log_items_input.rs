@@ -6,7 +6,7 @@ pub struct DescribeJobLogItemsInput {
     /// <p>Request to describe Job log job ID.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>Request to describe Job log item maximum results.</p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>Request to describe Job log next token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Request to describe Job log Account ID.</p>
@@ -18,7 +18,7 @@ impl DescribeJobLogItemsInput {
         self.job_id.as_deref()
     }
     /// <p>Request to describe Job log item maximum results.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>Request to describe Job log next token.</p>
@@ -48,6 +48,7 @@ pub struct DescribeJobLogItemsInputBuilder {
 }
 impl DescribeJobLogItemsInputBuilder {
     /// <p>Request to describe Job log job ID.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -106,11 +107,11 @@ impl DescribeJobLogItemsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeJobLogItemsInput`](crate::operation::describe_job_log_items::DescribeJobLogItemsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_job_log_items::DescribeJobLogItemsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_job_log_items::DescribeJobLogItemsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_job_log_items::DescribeJobLogItemsInput {
             job_id: self.job_id,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
             account_id: self.account_id,
         })

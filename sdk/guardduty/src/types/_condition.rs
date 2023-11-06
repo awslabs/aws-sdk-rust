@@ -37,14 +37,18 @@ pub struct Condition {
 }
 impl Condition {
     /// <p>Represents the <i>equal</i> condition to be applied to a single field when querying for findings.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.eq.is_none()`.
     #[deprecated]
-    pub fn eq(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.eq.as_deref()
+    pub fn eq(&self) -> &[::std::string::String] {
+        self.eq.as_deref().unwrap_or_default()
     }
     /// <p>Represents the <i>not equal</i> condition to be applied to a single field when querying for findings.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.neq.is_none()`.
     #[deprecated]
-    pub fn neq(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.neq.as_deref()
+    pub fn neq(&self) -> &[::std::string::String] {
+        self.neq.as_deref().unwrap_or_default()
     }
     /// <p>Represents a <i>greater than</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
@@ -67,12 +71,16 @@ impl Condition {
         self.lte
     }
     /// <p>Represents an <i>equal</i> <b></b> condition to be applied to a single field when querying for findings.</p>
-    pub fn equals(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.equals.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.equals.is_none()`.
+    pub fn equals(&self) -> &[::std::string::String] {
+        self.equals.as_deref().unwrap_or_default()
     }
     /// <p>Represents a <i>not equal</i> <b></b> condition to be applied to a single field when querying for findings.</p>
-    pub fn not_equals(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.not_equals.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.not_equals.is_none()`.
+    pub fn not_equals(&self) -> &[::std::string::String] {
+        self.not_equals.as_deref().unwrap_or_default()
     }
     /// <p>Represents a <i>greater than</i> condition to be applied to a single field when querying for findings.</p>
     pub fn greater_than(&self) -> ::std::option::Option<i64> {

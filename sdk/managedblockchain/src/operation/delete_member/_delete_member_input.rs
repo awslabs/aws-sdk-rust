@@ -34,6 +34,7 @@ pub struct DeleteMemberInputBuilder {
 }
 impl DeleteMemberInputBuilder {
     /// <p>The unique identifier of the network from which the member is removed.</p>
+    /// This field is required.
     pub fn network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteMemberInputBuilder {
         &self.network_id
     }
     /// <p>The unique identifier of the member to remove.</p>
+    /// This field is required.
     pub fn member_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_id = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,9 @@ impl DeleteMemberInputBuilder {
         &self.member_id
     }
     /// Consumes the builder and constructs a [`DeleteMemberInput`](crate::operation::delete_member::DeleteMemberInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_member::DeleteMemberInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_member::DeleteMemberInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_member::DeleteMemberInput {
             network_id: self.network_id,
             member_id: self.member_id,

@@ -104,6 +104,7 @@ impl UpdateSchemaInputBuilder {
         &self.description
     }
     /// <p>The name of the registry.</p>
+    /// This field is required.
     pub fn registry_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_name = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +119,7 @@ impl UpdateSchemaInputBuilder {
         &self.registry_name
     }
     /// <p>The name of the schema.</p>
+    /// This field is required.
     pub fn schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_name = ::std::option::Option::Some(input.into());
         self
@@ -146,7 +148,9 @@ impl UpdateSchemaInputBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`UpdateSchemaInput`](crate::operation::update_schema::UpdateSchemaInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_schema::UpdateSchemaInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_schema::UpdateSchemaInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_schema::UpdateSchemaInput {
             client_token_id: self.client_token_id,
             content: self.content,

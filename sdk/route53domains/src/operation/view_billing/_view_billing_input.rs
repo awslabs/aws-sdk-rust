@@ -115,7 +115,7 @@ impl ViewBillingInputBuilder {
         &self.max_items
     }
     /// Consumes the builder and constructs a [`ViewBillingInput`](crate::operation::view_billing::ViewBillingInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::view_billing::ViewBillingInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::view_billing::ViewBillingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::view_billing::ViewBillingInput {
             start: self.start,
             end: self.end,

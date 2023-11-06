@@ -42,6 +42,7 @@ pub struct ToolchainBuilder {
 }
 impl ToolchainBuilder {
     /// <p>The Amazon S3 location where the toolchain template file provided with the project request is stored. AWS CodeStar retrieves the file during project creation.</p>
+    /// This field is required.
     pub fn source(mut self, input: crate::types::ToolchainSource) -> Self {
         self.source = ::std::option::Option::Some(input);
         self

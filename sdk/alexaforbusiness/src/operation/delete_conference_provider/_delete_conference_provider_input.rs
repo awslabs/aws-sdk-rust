@@ -27,6 +27,7 @@ pub struct DeleteConferenceProviderInputBuilder {
 }
 impl DeleteConferenceProviderInputBuilder {
     /// <p>The ARN of the conference provider.</p>
+    /// This field is required.
     pub fn conference_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.conference_provider_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteConferenceProviderInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_conference_provider::DeleteConferenceProviderInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_conference_provider::DeleteConferenceProviderInput {
             conference_provider_arn: self.conference_provider_arn,

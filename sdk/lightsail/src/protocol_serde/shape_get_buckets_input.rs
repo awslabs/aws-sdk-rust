@@ -2,7 +2,7 @@
 pub fn ser_get_buckets_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_buckets::GetBucketsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.bucket_name {
         object.key("bucketName").string(var_1.as_str());
     }

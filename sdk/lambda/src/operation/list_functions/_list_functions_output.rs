@@ -16,8 +16,10 @@ impl ListFunctionsOutput {
         self.next_marker.as_deref()
     }
     /// <p>A list of Lambda functions.</p>
-    pub fn functions(&self) -> ::std::option::Option<&[crate::types::FunctionConfiguration]> {
-        self.functions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.functions.is_none()`.
+    pub fn functions(&self) -> &[crate::types::FunctionConfiguration] {
+        self.functions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListFunctionsOutput {

@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UtteranceLevelTestResults {
     /// <p>Contains information about an utterance in the results of the test set execution.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::UtteranceLevelTestResultItem>>,
+    pub items: ::std::vec::Vec<crate::types::UtteranceLevelTestResultItem>,
 }
 impl UtteranceLevelTestResults {
     /// <p>Contains information about an utterance in the results of the test set execution.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::UtteranceLevelTestResultItem]> {
-        self.items.as_deref()
+    pub fn items(&self) -> &[crate::types::UtteranceLevelTestResultItem] {
+        use std::ops::Deref;
+        self.items.deref()
     }
 }
 impl UtteranceLevelTestResults {
@@ -48,7 +49,16 @@ impl UtteranceLevelTestResultsBuilder {
         &self.items
     }
     /// Consumes the builder and constructs a [`UtteranceLevelTestResults`](crate::types::UtteranceLevelTestResults).
-    pub fn build(self) -> crate::types::UtteranceLevelTestResults {
-        crate::types::UtteranceLevelTestResults { items: self.items }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`items`](crate::types::builders::UtteranceLevelTestResultsBuilder::items)
+    pub fn build(self) -> ::std::result::Result<crate::types::UtteranceLevelTestResults, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::UtteranceLevelTestResults {
+            items: self.items.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "items",
+                    "items was not specified but it is required when building UtteranceLevelTestResults",
+                )
+            })?,
+        })
     }
 }

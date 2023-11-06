@@ -20,8 +20,10 @@ impl CompleteMultipartReadSetUploadInput {
         self.upload_id.as_deref()
     }
     /// <p> The individual uploads or parts of a multipart upload. </p>
-    pub fn parts(&self) -> ::std::option::Option<&[crate::types::CompleteReadSetUploadPartListItem]> {
-        self.parts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parts.is_none()`.
+    pub fn parts(&self) -> &[crate::types::CompleteReadSetUploadPartListItem] {
+        self.parts.as_deref().unwrap_or_default()
     }
 }
 impl CompleteMultipartReadSetUploadInput {
@@ -41,6 +43,7 @@ pub struct CompleteMultipartReadSetUploadInputBuilder {
 }
 impl CompleteMultipartReadSetUploadInputBuilder {
     /// <p> The sequence store ID for the store involved in the multipart upload. </p>
+    /// This field is required.
     pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_store_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl CompleteMultipartReadSetUploadInputBuilder {
         &self.sequence_store_id
     }
     /// <p> The ID for the multipart upload. </p>
+    /// This field is required.
     pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upload_id = ::std::option::Option::Some(input.into());
         self
@@ -93,7 +97,7 @@ impl CompleteMultipartReadSetUploadInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadInput {

@@ -36,6 +36,7 @@ pub struct AutotuneBuilder {
 }
 impl AutotuneBuilder {
     /// <p>Set <code>Mode</code> to <code>Enabled</code> if you want to use Autotune.</p>
+    /// This field is required.
     pub fn mode(mut self, input: crate::types::AutotuneMode) -> Self {
         self.mode = ::std::option::Option::Some(input);
         self

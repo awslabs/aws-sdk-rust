@@ -34,6 +34,7 @@ pub struct DeregisterInstanceInputBuilder {
 }
 impl DeregisterInstanceInputBuilder {
     /// <p>The ID of the service that the instance is associated with.</p>
+    /// This field is required.
     pub fn service_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeregisterInstanceInputBuilder {
         &self.service_id
     }
     /// <p>The value that you specified for <code>Id</code> in the <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a> request.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DeregisterInstanceInputBuilder {
     /// Consumes the builder and constructs a [`DeregisterInstanceInput`](crate::operation::deregister_instance::DeregisterInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::deregister_instance::DeregisterInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::deregister_instance::DeregisterInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::deregister_instance::DeregisterInstanceInput {
             service_id: self.service_id,
             instance_id: self.instance_id,

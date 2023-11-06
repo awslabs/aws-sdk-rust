@@ -28,6 +28,7 @@ pub struct PutReportDefinitionInputBuilder {
 }
 impl PutReportDefinitionInputBuilder {
     /// <p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information. </p>
+    /// This field is required.
     pub fn report_definition(mut self, input: crate::types::ReportDefinition) -> Self {
         self.report_definition = ::std::option::Option::Some(input);
         self
@@ -44,7 +45,7 @@ impl PutReportDefinitionInputBuilder {
     /// Consumes the builder and constructs a [`PutReportDefinitionInput`](crate::operation::put_report_definition::PutReportDefinitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_report_definition::PutReportDefinitionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_report_definition::PutReportDefinitionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_report_definition::PutReportDefinitionInput {
             report_definition: self.report_definition,

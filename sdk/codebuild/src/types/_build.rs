@@ -155,16 +155,20 @@ impl Build {
         self.project_name.as_deref()
     }
     /// <p>Information about all previous build phases that are complete and information about any current build phase that is not yet complete.</p>
-    pub fn phases(&self) -> ::std::option::Option<&[crate::types::BuildPhase]> {
-        self.phases.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phases.is_none()`.
+    pub fn phases(&self) -> &[crate::types::BuildPhase] {
+        self.phases.as_deref().unwrap_or_default()
     }
     /// <p>Information about the source code to be built.</p>
     pub fn source(&self) -> ::std::option::Option<&crate::types::ProjectSource> {
         self.source.as_ref()
     }
     /// <p> An array of <code>ProjectSource</code> objects. </p>
-    pub fn secondary_sources(&self) -> ::std::option::Option<&[crate::types::ProjectSource]> {
-        self.secondary_sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secondary_sources.is_none()`.
+    pub fn secondary_sources(&self) -> &[crate::types::ProjectSource] {
+        self.secondary_sources.as_deref().unwrap_or_default()
     }
     /// <p> An array of <code>ProjectSourceVersion</code> objects. Each <code>ProjectSourceVersion</code> must be one of: </p>
     /// <ul>
@@ -173,16 +177,20 @@ impl Build {
     /// <li> <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
     /// <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li>
     /// </ul>
-    pub fn secondary_source_versions(&self) -> ::std::option::Option<&[crate::types::ProjectSourceVersion]> {
-        self.secondary_source_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secondary_source_versions.is_none()`.
+    pub fn secondary_source_versions(&self) -> &[crate::types::ProjectSourceVersion] {
+        self.secondary_source_versions.as_deref().unwrap_or_default()
     }
     /// <p>Information about the output artifacts for the build.</p>
     pub fn artifacts(&self) -> ::std::option::Option<&crate::types::BuildArtifacts> {
         self.artifacts.as_ref()
     }
     /// <p> An array of <code>ProjectArtifacts</code> objects. </p>
-    pub fn secondary_artifacts(&self) -> ::std::option::Option<&[crate::types::BuildArtifacts]> {
-        self.secondary_artifacts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secondary_artifacts.is_none()`.
+    pub fn secondary_artifacts(&self) -> &[crate::types::BuildArtifacts] {
+        self.secondary_artifacts.as_deref().unwrap_or_default()
     }
     /// <p>Information about the cache for the build.</p>
     pub fn cache(&self) -> ::std::option::Option<&crate::types::ProjectCache> {
@@ -239,16 +247,22 @@ impl Build {
     }
     /// <p>A list of exported environment variables for this build.</p>
     /// <p>Exported environment variables are used in conjunction with CodePipeline to export environment variables from the current build stage to subsequent stages in the pipeline. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-variables.html">Working with variables</a> in the <i>CodePipeline User Guide</i>.</p>
-    pub fn exported_environment_variables(&self) -> ::std::option::Option<&[crate::types::ExportedEnvironmentVariable]> {
-        self.exported_environment_variables.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exported_environment_variables.is_none()`.
+    pub fn exported_environment_variables(&self) -> &[crate::types::ExportedEnvironmentVariable] {
+        self.exported_environment_variables.as_deref().unwrap_or_default()
     }
     /// <p> An array of the ARNs associated with this build's reports. </p>
-    pub fn report_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.report_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.report_arns.is_none()`.
+    pub fn report_arns(&self) -> &[::std::string::String] {
+        self.report_arns.as_deref().unwrap_or_default()
     }
     /// <p> An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System. </p>
-    pub fn file_system_locations(&self) -> ::std::option::Option<&[crate::types::ProjectFileSystemLocation]> {
-        self.file_system_locations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.file_system_locations.is_none()`.
+    pub fn file_system_locations(&self) -> &[crate::types::ProjectFileSystemLocation] {
+        self.file_system_locations.as_deref().unwrap_or_default()
     }
     /// <p>Contains information about the debug session for this build.</p>
     pub fn debug_session(&self) -> ::std::option::Option<&crate::types::DebugSession> {

@@ -34,6 +34,7 @@ pub struct GetDatastoreOutputBuilder {
 }
 impl GetDatastoreOutputBuilder {
     /// <p>The data store properties.</p>
+    /// This field is required.
     pub fn datastore_properties(mut self, input: crate::types::DatastoreProperties) -> Self {
         self.datastore_properties = ::std::option::Option::Some(input);
         self

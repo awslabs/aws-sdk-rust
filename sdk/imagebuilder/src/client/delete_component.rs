@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteComponent`](crate::operation::delete_component::builders::DeleteComponentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`component_build_version_arn(impl Into<String>)`](crate::operation::delete_component::builders::DeleteComponentFluentBuilder::component_build_version_arn) / [`set_component_build_version_arn(Option<String>)`](crate::operation::delete_component::builders::DeleteComponentFluentBuilder::set_component_build_version_arn): <p>The Amazon Resource Name (ARN) of the component build version to delete.</p>
+    ///   - [`component_build_version_arn(impl Into<String>)`](crate::operation::delete_component::builders::DeleteComponentFluentBuilder::component_build_version_arn) / [`set_component_build_version_arn(Option<String>)`](crate::operation::delete_component::builders::DeleteComponentFluentBuilder::set_component_build_version_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the component build version to delete.</p><br>
     /// - On success, responds with [`DeleteComponentOutput`](crate::operation::delete_component::DeleteComponentOutput) with field(s):
     ///   - [`request_id(Option<String>)`](crate::operation::delete_component::DeleteComponentOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
     ///   - [`component_build_version_arn(Option<String>)`](crate::operation::delete_component::DeleteComponentOutput::component_build_version_arn): <p>The ARN of the component build version that this request deleted.</p>

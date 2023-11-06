@@ -2,7 +2,7 @@
 pub fn ser_image_scanning_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ImageScanningConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.scan_on_push {
         object.key("scanOnPush").boolean(input.scan_on_push);
     }

@@ -28,6 +28,7 @@ pub struct DeleteConfigurationRecorderInputBuilder {
 }
 impl DeleteConfigurationRecorderInputBuilder {
     /// <p>The name of the configuration recorder to be deleted. You can retrieve the name of your configuration recorder by using the <code>DescribeConfigurationRecorders</code> action.</p>
+    /// This field is required.
     pub fn configuration_recorder_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_recorder_name = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl DeleteConfigurationRecorderInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_configuration_recorder::DeleteConfigurationRecorderInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_configuration_recorder::DeleteConfigurationRecorderInput {
             configuration_recorder_name: self.configuration_recorder_name,

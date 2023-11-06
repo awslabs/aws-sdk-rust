@@ -2,9 +2,11 @@
 pub fn ser_application_maintenance_configuration_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ApplicationMaintenanceConfigurationUpdate,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.application_maintenance_window_start_time_update {
-        object.key("ApplicationMaintenanceWindowStartTimeUpdate").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object
+            .key("ApplicationMaintenanceWindowStartTimeUpdate")
+            .string(input.application_maintenance_window_start_time_update.as_str());
     }
     Ok(())
 }

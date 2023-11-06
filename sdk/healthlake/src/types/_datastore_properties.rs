@@ -5,19 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatastoreProperties {
     /// <p>The AWS-generated ID number for the data store.</p>
-    pub datastore_id: ::std::option::Option<::std::string::String>,
+    pub datastore_id: ::std::string::String,
     /// <p>The Amazon Resource Name used in the creation of the data store.</p>
-    pub datastore_arn: ::std::option::Option<::std::string::String>,
+    pub datastore_arn: ::std::string::String,
     /// <p>The user-generated name for the data store.</p>
     pub datastore_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the data store.</p>
-    pub datastore_status: ::std::option::Option<crate::types::DatastoreStatus>,
+    pub datastore_status: crate::types::DatastoreStatus,
     /// <p>The time that a data store was created. </p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The FHIR version. Only R4 version data is supported.</p>
-    pub datastore_type_version: ::std::option::Option<crate::types::FhirVersion>,
+    pub datastore_type_version: crate::types::FhirVersion,
     /// <p>The AWS endpoint for the data store. Each data store will have it's own endpoint with data store ID in the endpoint URL.</p>
-    pub datastore_endpoint: ::std::option::Option<::std::string::String>,
+    pub datastore_endpoint: ::std::string::String,
     /// <p> The server-side encryption key configuration for a customer provided encryption key (CMK). </p>
     pub sse_configuration: ::std::option::Option<crate::types::SseConfiguration>,
     /// <p>The preloaded data configuration for the data store. Only data preloaded from Synthea is supported.</p>
@@ -27,32 +27,35 @@ pub struct DatastoreProperties {
 }
 impl DatastoreProperties {
     /// <p>The AWS-generated ID number for the data store.</p>
-    pub fn datastore_id(&self) -> ::std::option::Option<&str> {
-        self.datastore_id.as_deref()
+    pub fn datastore_id(&self) -> &str {
+        use std::ops::Deref;
+        self.datastore_id.deref()
     }
     /// <p>The Amazon Resource Name used in the creation of the data store.</p>
-    pub fn datastore_arn(&self) -> ::std::option::Option<&str> {
-        self.datastore_arn.as_deref()
+    pub fn datastore_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.datastore_arn.deref()
     }
     /// <p>The user-generated name for the data store.</p>
     pub fn datastore_name(&self) -> ::std::option::Option<&str> {
         self.datastore_name.as_deref()
     }
     /// <p>The status of the data store.</p>
-    pub fn datastore_status(&self) -> ::std::option::Option<&crate::types::DatastoreStatus> {
-        self.datastore_status.as_ref()
+    pub fn datastore_status(&self) -> &crate::types::DatastoreStatus {
+        &self.datastore_status
     }
     /// <p>The time that a data store was created. </p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The FHIR version. Only R4 version data is supported.</p>
-    pub fn datastore_type_version(&self) -> ::std::option::Option<&crate::types::FhirVersion> {
-        self.datastore_type_version.as_ref()
+    pub fn datastore_type_version(&self) -> &crate::types::FhirVersion {
+        &self.datastore_type_version
     }
     /// <p>The AWS endpoint for the data store. Each data store will have it's own endpoint with data store ID in the endpoint URL.</p>
-    pub fn datastore_endpoint(&self) -> ::std::option::Option<&str> {
-        self.datastore_endpoint.as_deref()
+    pub fn datastore_endpoint(&self) -> &str {
+        use std::ops::Deref;
+        self.datastore_endpoint.deref()
     }
     /// <p> The server-side encryption key configuration for a customer provided encryption key (CMK). </p>
     pub fn sse_configuration(&self) -> ::std::option::Option<&crate::types::SseConfiguration> {
@@ -91,6 +94,7 @@ pub struct DatastorePropertiesBuilder {
 }
 impl DatastorePropertiesBuilder {
     /// <p>The AWS-generated ID number for the data store.</p>
+    /// This field is required.
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_id = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +109,7 @@ impl DatastorePropertiesBuilder {
         &self.datastore_id
     }
     /// <p>The Amazon Resource Name used in the creation of the data store.</p>
+    /// This field is required.
     pub fn datastore_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_arn = ::std::option::Option::Some(input.into());
         self
@@ -133,6 +138,7 @@ impl DatastorePropertiesBuilder {
         &self.datastore_name
     }
     /// <p>The status of the data store.</p>
+    /// This field is required.
     pub fn datastore_status(mut self, input: crate::types::DatastoreStatus) -> Self {
         self.datastore_status = ::std::option::Option::Some(input);
         self
@@ -161,6 +167,7 @@ impl DatastorePropertiesBuilder {
         &self.created_at
     }
     /// <p>The FHIR version. Only R4 version data is supported.</p>
+    /// This field is required.
     pub fn datastore_type_version(mut self, input: crate::types::FhirVersion) -> Self {
         self.datastore_type_version = ::std::option::Option::Some(input);
         self
@@ -175,6 +182,7 @@ impl DatastorePropertiesBuilder {
         &self.datastore_type_version
     }
     /// <p>The AWS endpoint for the data store. Each data store will have it's own endpoint with data store ID in the endpoint URL.</p>
+    /// This field is required.
     pub fn datastore_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_endpoint = ::std::option::Option::Some(input.into());
         self
@@ -231,18 +239,49 @@ impl DatastorePropertiesBuilder {
         &self.identity_provider_configuration
     }
     /// Consumes the builder and constructs a [`DatastoreProperties`](crate::types::DatastoreProperties).
-    pub fn build(self) -> crate::types::DatastoreProperties {
-        crate::types::DatastoreProperties {
-            datastore_id: self.datastore_id,
-            datastore_arn: self.datastore_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`datastore_id`](crate::types::builders::DatastorePropertiesBuilder::datastore_id)
+    /// - [`datastore_arn`](crate::types::builders::DatastorePropertiesBuilder::datastore_arn)
+    /// - [`datastore_status`](crate::types::builders::DatastorePropertiesBuilder::datastore_status)
+    /// - [`datastore_type_version`](crate::types::builders::DatastorePropertiesBuilder::datastore_type_version)
+    /// - [`datastore_endpoint`](crate::types::builders::DatastorePropertiesBuilder::datastore_endpoint)
+    pub fn build(self) -> ::std::result::Result<crate::types::DatastoreProperties, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DatastoreProperties {
+            datastore_id: self.datastore_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "datastore_id",
+                    "datastore_id was not specified but it is required when building DatastoreProperties",
+                )
+            })?,
+            datastore_arn: self.datastore_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "datastore_arn",
+                    "datastore_arn was not specified but it is required when building DatastoreProperties",
+                )
+            })?,
             datastore_name: self.datastore_name,
-            datastore_status: self.datastore_status,
+            datastore_status: self.datastore_status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "datastore_status",
+                    "datastore_status was not specified but it is required when building DatastoreProperties",
+                )
+            })?,
             created_at: self.created_at,
-            datastore_type_version: self.datastore_type_version,
-            datastore_endpoint: self.datastore_endpoint,
+            datastore_type_version: self.datastore_type_version.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "datastore_type_version",
+                    "datastore_type_version was not specified but it is required when building DatastoreProperties",
+                )
+            })?,
+            datastore_endpoint: self.datastore_endpoint.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "datastore_endpoint",
+                    "datastore_endpoint was not specified but it is required when building DatastoreProperties",
+                )
+            })?,
             sse_configuration: self.sse_configuration,
             preload_data_config: self.preload_data_config,
             identity_provider_configuration: self.identity_provider_configuration,
-        }
+        })
     }
 }

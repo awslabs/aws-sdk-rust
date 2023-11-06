@@ -10,8 +10,10 @@ pub struct DescribeEventDetailsForOrganizationInput {
 }
 impl DescribeEventDetailsForOrganizationInput {
     /// <p>A set of JSON elements that includes the <code>awsAccountId</code> and the <code>eventArn</code>.</p>
-    pub fn organization_event_detail_filters(&self) -> ::std::option::Option<&[crate::types::EventAccountFilter]> {
-        self.organization_event_detail_filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.organization_event_detail_filters.is_none()`.
+    pub fn organization_event_detail_filters(&self) -> &[crate::types::EventAccountFilter] {
+        self.organization_event_detail_filters.as_deref().unwrap_or_default()
     }
     /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
     pub fn locale(&self) -> ::std::option::Option<&str> {
@@ -72,7 +74,7 @@ impl DescribeEventDetailsForOrganizationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_event_details_for_organization::DescribeEventDetailsForOrganizationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_event_details_for_organization::DescribeEventDetailsForOrganizationInput {

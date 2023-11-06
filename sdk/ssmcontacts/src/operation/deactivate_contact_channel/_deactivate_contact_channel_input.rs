@@ -27,6 +27,7 @@ pub struct DeactivateContactChannelInputBuilder {
 }
 impl DeactivateContactChannelInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the contact channel you're deactivating.</p>
+    /// This field is required.
     pub fn contact_channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_channel_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeactivateContactChannelInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deactivate_contact_channel::DeactivateContactChannelInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::deactivate_contact_channel::DeactivateContactChannelInput {
             contact_channel_id: self.contact_channel_id,

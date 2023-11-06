@@ -36,8 +36,10 @@ impl CreateSoftwareUpdateJobInput {
         self.update_agent_log_level.as_ref()
     }
     /// The ARNs of the targets (IoT things or IoT thing groups) that this update will be applied to.
-    pub fn update_targets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.update_targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.update_targets.is_none()`.
+    pub fn update_targets(&self) -> &[::std::string::String] {
+        self.update_targets.as_deref().unwrap_or_default()
     }
     /// The architecture of the cores which are the targets of an update.
     pub fn update_targets_architecture(&self) -> ::std::option::Option<&crate::types::UpdateTargetsArchitecture> {
@@ -83,6 +85,7 @@ impl CreateSoftwareUpdateJobInputBuilder {
         &self.amzn_client_token
     }
     /// The IAM Role that Greengrass will use to create pre-signed URLs pointing towards the update artifact.
+    /// This field is required.
     pub fn s3_url_signer_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_url_signer_role = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +100,7 @@ impl CreateSoftwareUpdateJobInputBuilder {
         &self.s3_url_signer_role
     }
     /// The piece of software on the Greengrass core that will be updated.
+    /// This field is required.
     pub fn software_to_update(mut self, input: crate::types::SoftwareToUpdate) -> Self {
         self.software_to_update = ::std::option::Option::Some(input);
         self
@@ -145,6 +149,7 @@ impl CreateSoftwareUpdateJobInputBuilder {
         &self.update_targets
     }
     /// The architecture of the cores which are the targets of an update.
+    /// This field is required.
     pub fn update_targets_architecture(mut self, input: crate::types::UpdateTargetsArchitecture) -> Self {
         self.update_targets_architecture = ::std::option::Option::Some(input);
         self
@@ -159,6 +164,7 @@ impl CreateSoftwareUpdateJobInputBuilder {
         &self.update_targets_architecture
     }
     /// The operating system of the cores which are the targets of an update.
+    /// This field is required.
     pub fn update_targets_operating_system(mut self, input: crate::types::UpdateTargetsOperatingSystem) -> Self {
         self.update_targets_operating_system = ::std::option::Option::Some(input);
         self
@@ -177,7 +183,7 @@ impl CreateSoftwareUpdateJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_software_update_job::CreateSoftwareUpdateJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_software_update_job::CreateSoftwareUpdateJobInput {
             amzn_client_token: self.amzn_client_token,

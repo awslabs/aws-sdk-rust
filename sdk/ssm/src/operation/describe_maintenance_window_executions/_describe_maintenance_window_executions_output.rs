@@ -11,8 +11,10 @@ pub struct DescribeMaintenanceWindowExecutionsOutput {
 }
 impl DescribeMaintenanceWindowExecutionsOutput {
     /// <p>Information about the maintenance window executions.</p>
-    pub fn window_executions(&self) -> ::std::option::Option<&[crate::types::MaintenanceWindowExecution]> {
-        self.window_executions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.window_executions.is_none()`.
+    pub fn window_executions(&self) -> &[crate::types::MaintenanceWindowExecution] {
+        self.window_executions.as_deref().unwrap_or_default()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

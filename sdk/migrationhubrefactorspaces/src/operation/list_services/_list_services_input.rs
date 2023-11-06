@@ -48,6 +48,7 @@ pub struct ListServicesInputBuilder {
 }
 impl ListServicesInputBuilder {
     /// <p>The ID of the environment. </p>
+    /// This field is required.
     pub fn environment_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_identifier = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl ListServicesInputBuilder {
         &self.environment_identifier
     }
     /// <p>The ID of the application. </p>
+    /// This field is required.
     pub fn application_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_identifier = ::std::option::Option::Some(input.into());
         self
@@ -104,7 +106,9 @@ impl ListServicesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListServicesInput`](crate::operation::list_services::ListServicesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_services::ListServicesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_services::ListServicesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_services::ListServicesInput {
             environment_identifier: self.environment_identifier,
             application_identifier: self.application_identifier,

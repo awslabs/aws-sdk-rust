@@ -2,36 +2,36 @@
 pub fn ser_organization_managed_rule_metadata(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OrganizationManagedRuleMetadata,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.description {
         object.key("Description").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.rule_identifier {
-        object.key("RuleIdentifier").string(var_2.as_str());
+    {
+        object.key("RuleIdentifier").string(input.rule_identifier.as_str());
     }
-    if let Some(var_3) = &input.input_parameters {
-        object.key("InputParameters").string(var_3.as_str());
+    if let Some(var_2) = &input.input_parameters {
+        object.key("InputParameters").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.maximum_execution_frequency {
-        object.key("MaximumExecutionFrequency").string(var_4.as_str());
+    if let Some(var_3) = &input.maximum_execution_frequency {
+        object.key("MaximumExecutionFrequency").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.resource_types_scope {
-        let mut array_6 = object.key("ResourceTypesScope").start_array();
-        for item_7 in var_5 {
+    if let Some(var_4) = &input.resource_types_scope {
+        let mut array_5 = object.key("ResourceTypesScope").start_array();
+        for item_6 in var_4 {
             {
-                array_6.value().string(item_7.as_str());
+                array_5.value().string(item_6.as_str());
             }
         }
-        array_6.finish();
+        array_5.finish();
     }
-    if let Some(var_8) = &input.resource_id_scope {
-        object.key("ResourceIdScope").string(var_8.as_str());
+    if let Some(var_7) = &input.resource_id_scope {
+        object.key("ResourceIdScope").string(var_7.as_str());
     }
-    if let Some(var_9) = &input.tag_key_scope {
-        object.key("TagKeyScope").string(var_9.as_str());
+    if let Some(var_8) = &input.tag_key_scope {
+        object.key("TagKeyScope").string(var_8.as_str());
     }
-    if let Some(var_10) = &input.tag_value_scope {
-        object.key("TagValueScope").string(var_10.as_str());
+    if let Some(var_9) = &input.tag_value_scope {
+        object.key("TagValueScope").string(var_9.as_str());
     }
     Ok(())
 }
@@ -114,7 +114,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::organization_managed_rule_metadata_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

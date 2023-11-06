@@ -34,6 +34,7 @@ pub struct GetScanInputBuilder {
 }
 impl GetScanInputBuilder {
     /// <p>The name of the scan you want to view details about.</p>
+    /// This field is required.
     pub fn scan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scan_name = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +63,7 @@ impl GetScanInputBuilder {
         &self.run_id
     }
     /// Consumes the builder and constructs a [`GetScanInput`](crate::operation::get_scan::GetScanInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_scan::GetScanInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_scan::GetScanInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_scan::GetScanInput {
             scan_name: self.scan_name,
             run_id: self.run_id,

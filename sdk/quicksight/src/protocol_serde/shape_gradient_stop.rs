@@ -2,7 +2,7 @@
 pub fn ser_gradient_stop(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GradientStop,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("GradientOffset").number(
             #[allow(clippy::useless_conversion)]
@@ -63,7 +63,7 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::gradient_stop_correct_errors(builder).build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

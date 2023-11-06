@@ -27,6 +27,7 @@ pub struct DeleteRunGroupInputBuilder {
 }
 impl DeleteRunGroupInputBuilder {
     /// <p>The run group's ID.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteRunGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRunGroupInput`](crate::operation::delete_run_group::DeleteRunGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_run_group::DeleteRunGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_run_group::DeleteRunGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_run_group::DeleteRunGroupInput { id: self.id })
     }
 }

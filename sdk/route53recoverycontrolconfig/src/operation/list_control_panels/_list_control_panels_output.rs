@@ -11,8 +11,10 @@ pub struct ListControlPanelsOutput {
 }
 impl ListControlPanelsOutput {
     /// <p>The result of a successful ListControlPanel request.</p>
-    pub fn control_panels(&self) -> ::std::option::Option<&[crate::types::ControlPanel]> {
-        self.control_panels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.control_panels.is_none()`.
+    pub fn control_panels(&self) -> &[crate::types::ControlPanel] {
+        self.control_panels.as_deref().unwrap_or_default()
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

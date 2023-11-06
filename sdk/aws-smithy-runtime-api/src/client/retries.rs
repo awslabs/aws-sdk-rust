@@ -8,13 +8,21 @@
 //! This code defines when and how failed requests should be retried. It also defines the behavior
 //! used to limit the rate that requests are sent.
 
-use crate::client::interceptors::context::InterceptorContext;
-use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreReplace};
-use std::fmt::Debug;
-use std::time::Duration;
-use tracing::trace;
+pub mod classifiers;
 
+use crate::box_error::BoxError;
+use crate::client::interceptors::context::InterceptorContext;
+use crate::client::runtime_components::sealed::ValidateConfig;
+use crate::client::runtime_components::RuntimeComponents;
+use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreReplace};
+use std::fmt;
+use std::sync::Arc;
+use std::time::Duration;
+
+use crate::impl_shared_conversions;
 pub use aws_smithy_types::retry::ErrorKind;
+#[cfg(feature = "test-util")]
+pub use test_util::AlwaysRetry;
 
 #[derive(Debug, Clone, PartialEq, Eq)]
 /// An answer to the question "should I make a request attempt?"
@@ -38,13 +46,15 @@ impl ShouldAttempt {
     }
 }
 
+impl_shared_conversions!(convert SharedRetryStrategy from RetryStrategy using SharedRetryStrategy::new);
+
 /// Decider for whether or not to attempt a request, and when.
 ///
 /// The orchestrator consults the retry strategy every time before making a request.
 /// This includes the initial request, and any retry attempts thereafter. The
 /// orchestrator will retry indefinitely (until success) if the retry strategy
 /// always returns `ShouldAttempt::Yes` from `should_attempt_retry`.
-pub trait RetryStrategy: Send + Sync + Debug {
+pub trait RetryStrategy: Send + Sync + fmt::Debug {
     /// Decides if the initial attempt should be made.
     fn should_attempt_initial_request(
         &self,
@@ -98,75 +108,7 @@ impl RetryStrategy for SharedRetryStrategy {
     }
 }
 
-/// Classification result from [`ClassifyRetry`].
-#[non_exhaustive]
-#[derive(Clone, Eq, PartialEq, Debug)]
-pub enum RetryReason {
-    /// There was an unexpected error, and this is the kind of error so that it can be properly retried.
-    Error(ErrorKind),
-    /// The server explicitly told us to back off by this amount of time.
-    Explicit(Duration),
-}
-
-/// Classifies what kind of retry is needed for a given an [`InterceptorContext`].
-pub trait ClassifyRetry: Send + Sync + Debug {
-    /// Run this classifier against an error to determine if it should be retried. Returns
-    /// `Some(RetryKind)` if the error should be retried; Otherwise returns `None`.
-    fn classify_retry(&self, ctx: &InterceptorContext) -> Option<RetryReason>;
-
-    /// The name that this classifier should report for debugging purposes.
-    fn name(&self) -> &'static str;
-}
-
-/// Classifies an error into a [`RetryReason`].
-#[derive(Clone, Debug)]
-pub struct RetryClassifiers {
-    inner: Vec<Arc<dyn ClassifyRetry>>,
-}
-
-impl RetryClassifiers {
-    /// Creates a new [`RetryClassifiers`].
-    pub fn new() -> Self {
-        Self {
-            // It's always expected that at least one classifier will be defined,
-            // so we eagerly allocate for it.
-            inner: Vec::with_capacity(1),
-        }
-    }
-
-    /// Adds a classifier to this collection.
-    pub fn with_classifier(mut self, retry_classifier: impl ClassifyRetry + 'static) -> Self {
-        self.inner.push(Arc::new(retry_classifier));
-        self
-    }
-
-    // TODO(https://github.com/awslabs/smithy-rs/issues/2632) make a map function so users can front-run or second-guess the classifier's decision
-    // pub fn map_classifiers(mut self, fun: Fn() -> RetryClassifiers)
-}
-
-impl ClassifyRetry for RetryClassifiers {
-    fn classify_retry(&self, ctx: &InterceptorContext) -> Option<RetryReason> {
-        // return the first non-None result
-        self.inner.iter().find_map(|cr| {
-            let maybe_reason = cr.classify_retry(ctx);
-
-            match maybe_reason.as_ref() {
-                Some(reason) => trace!(
-                    "\"{}\" classifier classified error as {:?}",
-                    cr.name(),
-                    reason
-                ),
-                None => trace!("\"{}\" classifier ignored the error", cr.name()),
-            };
-
-            maybe_reason
-        })
-    }
-
-    fn name(&self) -> &'static str {
-        "Collection of Classifiers"
-    }
-}
+impl ValidateConfig for SharedRetryStrategy {}
 
 /// A type to track the number of requests sent by the orchestrator for a given operation.
 ///
@@ -207,20 +149,20 @@ impl Storable for RequestAttempts {
 
 #[cfg(feature = "test-util")]
 mod test_util {
-    use super::{ClassifyRetry, ErrorKind, RetryReason};
+    use super::ErrorKind;
     use crate::client::interceptors::context::InterceptorContext;
-    use tracing::trace;
+    use crate::client::retries::classifiers::{ClassifyRetry, RetryAction};
 
     /// A retry classifier for testing purposes. This classifier always returns
-    /// `Some(RetryReason::Error(ErrorKind))` where `ErrorKind` is the value provided when creating
+    /// `Some(RetryAction::Error(ErrorKind))` where `ErrorKind` is the value provided when creating
     /// this classifier.
     #[derive(Debug)]
     pub struct AlwaysRetry(pub ErrorKind);
 
     impl ClassifyRetry for AlwaysRetry {
-        fn classify_retry(&self, error: &InterceptorContext) -> Option<RetryReason> {
-            trace!("Retrying error {:?} as an {:?}", error, self.0);
-            Some(RetryReason::Error(self.0))
+        fn classify_retry(&self, error: &InterceptorContext) -> RetryAction {
+            tracing::debug!("Retrying error {:?} as an {:?}", error, self.0);
+            RetryAction::retryable_error(self.0)
         }
 
         fn name(&self) -> &'static str {
@@ -228,9 +170,3 @@ mod test_util {
         }
     }
 }
-
-use crate::box_error::BoxError;
-use crate::client::runtime_components::RuntimeComponents;
-use std::sync::Arc;
-#[cfg(feature = "test-util")]
-pub use test_util::AlwaysRetry;

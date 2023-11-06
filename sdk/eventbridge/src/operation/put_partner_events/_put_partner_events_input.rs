@@ -8,8 +8,10 @@ pub struct PutPartnerEventsInput {
 }
 impl PutPartnerEventsInput {
     /// <p>The list of events to write to the event bus.</p>
-    pub fn entries(&self) -> ::std::option::Option<&[crate::types::PutPartnerEventsRequestEntry]> {
-        self.entries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entries.is_none()`.
+    pub fn entries(&self) -> &[crate::types::PutPartnerEventsRequestEntry] {
+        self.entries.as_deref().unwrap_or_default()
     }
 }
 impl PutPartnerEventsInput {
@@ -49,7 +51,7 @@ impl PutPartnerEventsInputBuilder {
     /// Consumes the builder and constructs a [`PutPartnerEventsInput`](crate::operation::put_partner_events::PutPartnerEventsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_partner_events::PutPartnerEventsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_partner_events::PutPartnerEventsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_partner_events::PutPartnerEventsInput { entries: self.entries })
     }
 }

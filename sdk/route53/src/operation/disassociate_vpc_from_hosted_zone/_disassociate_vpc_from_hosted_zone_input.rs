@@ -42,6 +42,7 @@ pub struct DisassociateVpcFromHostedZoneInputBuilder {
 }
 impl DisassociateVpcFromHostedZoneInputBuilder {
     /// <p>The ID of the private hosted zone that you want to disassociate a VPC from.</p>
+    /// This field is required.
     pub fn hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hosted_zone_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl DisassociateVpcFromHostedZoneInputBuilder {
         &self.hosted_zone_id
     }
     /// <p>A complex type that contains information about the VPC that you're disassociating from the specified hosted zone.</p>
+    /// This field is required.
     pub fn vpc(mut self, input: crate::types::Vpc) -> Self {
         self.vpc = ::std::option::Option::Some(input);
         self
@@ -88,7 +90,7 @@ impl DisassociateVpcFromHostedZoneInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_vpc_from_hosted_zone::DisassociateVpcFromHostedZoneInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_vpc_from_hosted_zone::DisassociateVpcFromHostedZoneInput {
             hosted_zone_id: self.hosted_zone_id,

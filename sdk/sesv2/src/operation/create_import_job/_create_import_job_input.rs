@@ -35,6 +35,7 @@ pub struct CreateImportJobInputBuilder {
 }
 impl CreateImportJobInputBuilder {
     /// <p>The destination for the import job.</p>
+    /// This field is required.
     pub fn import_destination(mut self, input: crate::types::ImportDestination) -> Self {
         self.import_destination = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl CreateImportJobInputBuilder {
         &self.import_destination
     }
     /// <p>The data source for the import job.</p>
+    /// This field is required.
     pub fn import_data_source(mut self, input: crate::types::ImportDataSource) -> Self {
         self.import_data_source = ::std::option::Option::Some(input);
         self
@@ -65,7 +67,7 @@ impl CreateImportJobInputBuilder {
     /// Consumes the builder and constructs a [`CreateImportJobInput`](crate::operation::create_import_job::CreateImportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_import_job::CreateImportJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_import_job::CreateImportJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_import_job::CreateImportJobInput {
             import_destination: self.import_destination,
             import_data_source: self.import_data_source,

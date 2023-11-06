@@ -2,7 +2,7 @@
 pub fn ser_r_session_app_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RSessionAppSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.default_resource_spec {
         #[allow(unused_mut)]
         let mut object_2 = object.key("DefaultResourceSpec").start_object();

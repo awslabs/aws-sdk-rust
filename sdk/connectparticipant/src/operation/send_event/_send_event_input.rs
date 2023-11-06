@@ -68,6 +68,7 @@ impl SendEventInputBuilder {
     /// <li> <p>application/vnd.amazonaws.connect.event.message.delivered</p> </li>
     /// <li> <p>application/vnd.amazonaws.connect.event.message.read</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +126,7 @@ impl SendEventInputBuilder {
         &self.client_token
     }
     /// <p>The authentication token associated with the participant's connection.</p>
+    /// This field is required.
     pub fn connection_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_token = ::std::option::Option::Some(input.into());
         self
@@ -139,7 +141,7 @@ impl SendEventInputBuilder {
         &self.connection_token
     }
     /// Consumes the builder and constructs a [`SendEventInput`](crate::operation::send_event::SendEventInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::send_event::SendEventInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::send_event::SendEventInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_event::SendEventInput {
             content_type: self.content_type,
             content: self.content,

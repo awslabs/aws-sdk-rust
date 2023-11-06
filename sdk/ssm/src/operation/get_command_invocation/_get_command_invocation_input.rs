@@ -43,6 +43,7 @@ pub struct GetCommandInvocationInputBuilder {
 }
 impl GetCommandInvocationInputBuilder {
     /// <p>(Required) The parent command ID of the invocation plugin.</p>
+    /// This field is required.
     pub fn command_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.command_id = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +58,7 @@ impl GetCommandInvocationInputBuilder {
         &self.command_id
     }
     /// <p>(Required) The ID of the managed node targeted by the command. A <i>managed node</i> can be an Amazon Elastic Compute Cloud (Amazon EC2) instance, edge device, and on-premises server or VM in your hybrid environment that is configured for Amazon Web Services Systems Manager.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -90,7 +92,7 @@ impl GetCommandInvocationInputBuilder {
     /// Consumes the builder and constructs a [`GetCommandInvocationInput`](crate::operation::get_command_invocation::GetCommandInvocationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_command_invocation::GetCommandInvocationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_command_invocation::GetCommandInvocationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_command_invocation::GetCommandInvocationInput {
             command_id: self.command_id,

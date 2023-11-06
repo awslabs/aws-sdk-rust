@@ -14,8 +14,10 @@ impl DescribeAcceleratorOfferingsInput {
         self.location_type.as_ref()
     }
     /// <p> The list of accelerator types to describe. </p>
-    pub fn accelerator_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.accelerator_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accelerator_types.is_none()`.
+    pub fn accelerator_types(&self) -> &[::std::string::String] {
+        self.accelerator_types.as_deref().unwrap_or_default()
     }
 }
 impl DescribeAcceleratorOfferingsInput {
@@ -34,6 +36,7 @@ pub struct DescribeAcceleratorOfferingsInputBuilder {
 }
 impl DescribeAcceleratorOfferingsInputBuilder {
     /// <p> The location type that you want to describe accelerator type offerings for. It can assume the following values: region: will return the accelerator type offering at the regional level. availability-zone: will return the accelerator type offering at the availability zone level. availability-zone-id: will return the accelerator type offering at the availability zone level returning the availability zone id. </p>
+    /// This field is required.
     pub fn location_type(mut self, input: crate::types::LocationType) -> Self {
         self.location_type = ::std::option::Option::Some(input);
         self
@@ -72,7 +75,7 @@ impl DescribeAcceleratorOfferingsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsInput {
             location_type: self.location_type,

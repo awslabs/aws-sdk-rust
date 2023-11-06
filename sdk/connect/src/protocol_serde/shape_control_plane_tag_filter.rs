@@ -2,7 +2,7 @@
 pub fn ser_control_plane_tag_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ControlPlaneTagFilter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.or_conditions {
         let mut array_2 = object.key("OrConditions").start_array();
         for item_3 in var_1 {

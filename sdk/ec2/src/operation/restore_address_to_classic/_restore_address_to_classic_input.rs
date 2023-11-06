@@ -48,6 +48,7 @@ impl RestoreAddressToClassicInputBuilder {
         &self.dry_run
     }
     /// <p>The Elastic IP address.</p>
+    /// This field is required.
     pub fn public_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_ip = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl RestoreAddressToClassicInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_address_to_classic::RestoreAddressToClassicInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::restore_address_to_classic::RestoreAddressToClassicInput {
             dry_run: self.dry_run,

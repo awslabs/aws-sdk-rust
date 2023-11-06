@@ -43,7 +43,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::dialog_code_hook_invocation_setting_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -54,24 +58,24 @@ where
 pub fn ser_dialog_code_hook_invocation_setting(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DialogCodeHookInvocationSetting,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.enable_code_hook_invocation {
-        object.key("enableCodeHookInvocation").boolean(*var_1);
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("enableCodeHookInvocation").boolean(input.enable_code_hook_invocation);
     }
-    if let Some(var_2) = &input.active {
-        object.key("active").boolean(*var_2);
+    {
+        object.key("active").boolean(input.active);
     }
-    if let Some(var_3) = &input.invocation_label {
-        object.key("invocationLabel").string(var_3.as_str());
+    if let Some(var_1) = &input.invocation_label {
+        object.key("invocationLabel").string(var_1.as_str());
     }
-    if let Some(var_4) = &input.post_code_hook_specification {
+    if let Some(var_2) = &input.post_code_hook_specification {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("postCodeHookSpecification").start_object();
+        let mut object_3 = object.key("postCodeHookSpecification").start_object();
         crate::protocol_serde::shape_post_dialog_code_hook_invocation_specification::ser_post_dialog_code_hook_invocation_specification(
-            &mut object_5,
-            var_4,
+            &mut object_3,
+            var_2,
         )?;
-        object_5.finish();
+        object_3.finish();
     }
     Ok(())
 }

@@ -41,6 +41,7 @@ pub struct ListInsightsInputBuilder {
 }
 impl ListInsightsInputBuilder {
     /// <p> A filter used to filter the returned insights by their status. You can specify one status filter. </p>
+    /// This field is required.
     pub fn status_filter(mut self, input: crate::types::ListInsightsStatusFilter) -> Self {
         self.status_filter = ::std::option::Option::Some(input);
         self
@@ -83,7 +84,9 @@ impl ListInsightsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListInsightsInput`](crate::operation::list_insights::ListInsightsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_insights::ListInsightsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_insights::ListInsightsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_insights::ListInsightsInput {
             status_filter: self.status_filter,
             max_results: self.max_results,

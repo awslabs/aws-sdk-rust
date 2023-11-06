@@ -63,6 +63,7 @@ impl UpdateServiceSpecificCredentialInputBuilder {
     }
     /// <p>The unique identifier of the service-specific credential.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
+    /// This field is required.
     pub fn service_specific_credential_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_specific_credential_id = ::std::option::Option::Some(input.into());
         self
@@ -79,6 +80,7 @@ impl UpdateServiceSpecificCredentialInputBuilder {
         &self.service_specific_credential_id
     }
     /// <p>The status to be assigned to the service-specific credential.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::StatusType) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -97,7 +99,7 @@ impl UpdateServiceSpecificCredentialInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_service_specific_credential::UpdateServiceSpecificCredentialInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_service_specific_credential::UpdateServiceSpecificCredentialInput {

@@ -21,12 +21,16 @@ impl MetricV2 {
         self.name.as_deref()
     }
     /// <p>Contains information about the threshold for service level metrics.</p>
-    pub fn threshold(&self) -> ::std::option::Option<&[crate::types::ThresholdV2]> {
-        self.threshold.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.threshold.is_none()`.
+    pub fn threshold(&self) -> &[crate::types::ThresholdV2] {
+        self.threshold.as_deref().unwrap_or_default()
     }
     /// <p>Contains the filters to be used when returning data.</p>
-    pub fn metric_filters(&self) -> ::std::option::Option<&[crate::types::MetricFilterV2]> {
-        self.metric_filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_filters.is_none()`.
+    pub fn metric_filters(&self) -> &[crate::types::MetricFilterV2] {
+        self.metric_filters.as_deref().unwrap_or_default()
     }
 }
 impl MetricV2 {

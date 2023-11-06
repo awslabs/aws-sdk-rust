@@ -51,6 +51,7 @@ pub struct DeleteMobileDeviceAccessOverrideInputBuilder {
 }
 impl DeleteMobileDeviceAccessOverrideInputBuilder {
     /// <p>The WorkMail organization for which the access override will be deleted.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +71,7 @@ impl DeleteMobileDeviceAccessOverrideInputBuilder {
     /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
     /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
@@ -94,6 +96,7 @@ impl DeleteMobileDeviceAccessOverrideInputBuilder {
         &self.user_id
     }
     /// <p>The mobile device for which you delete the override. <code>DeviceId</code> is case insensitive.</p>
+    /// This field is required.
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_id = ::std::option::Option::Some(input.into());
         self
@@ -112,7 +115,7 @@ impl DeleteMobileDeviceAccessOverrideInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_mobile_device_access_override::DeleteMobileDeviceAccessOverrideInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_mobile_device_access_override::DeleteMobileDeviceAccessOverrideInput {

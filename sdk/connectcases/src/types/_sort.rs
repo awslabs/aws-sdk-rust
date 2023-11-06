@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Sort {
     /// <p>Unique identifier of a field.</p>
-    pub field_id: ::std::option::Option<::std::string::String>,
+    pub field_id: ::std::string::String,
     /// <p>A structured set of sort terms</p>
-    pub sort_order: ::std::option::Option<crate::types::Order>,
+    pub sort_order: crate::types::Order,
 }
 impl Sort {
     /// <p>Unique identifier of a field.</p>
-    pub fn field_id(&self) -> ::std::option::Option<&str> {
-        self.field_id.as_deref()
+    pub fn field_id(&self) -> &str {
+        use std::ops::Deref;
+        self.field_id.deref()
     }
     /// <p>A structured set of sort terms</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::Order> {
-        self.sort_order.as_ref()
+    pub fn sort_order(&self) -> &crate::types::Order {
+        &self.sort_order
     }
 }
 impl Sort {
@@ -35,6 +36,7 @@ pub struct SortBuilder {
 }
 impl SortBuilder {
     /// <p>Unique identifier of a field.</p>
+    /// This field is required.
     pub fn field_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.field_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl SortBuilder {
         &self.field_id
     }
     /// <p>A structured set of sort terms</p>
+    /// This field is required.
     pub fn sort_order(mut self, input: crate::types::Order) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,23 @@ impl SortBuilder {
         &self.sort_order
     }
     /// Consumes the builder and constructs a [`Sort`](crate::types::Sort).
-    pub fn build(self) -> crate::types::Sort {
-        crate::types::Sort {
-            field_id: self.field_id,
-            sort_order: self.sort_order,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`field_id`](crate::types::builders::SortBuilder::field_id)
+    /// - [`sort_order`](crate::types::builders::SortBuilder::sort_order)
+    pub fn build(self) -> ::std::result::Result<crate::types::Sort, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Sort {
+            field_id: self.field_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "field_id",
+                    "field_id was not specified but it is required when building Sort",
+                )
+            })?,
+            sort_order: self.sort_order.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "sort_order",
+                    "sort_order was not specified but it is required when building Sort",
+                )
+            })?,
+        })
     }
 }

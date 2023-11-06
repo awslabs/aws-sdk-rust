@@ -2,7 +2,7 @@
 pub fn ser_s3_job_definition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::S3JobDefinition,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.bucket_criteria {
         #[allow(unused_mut)]
         let mut object_2 = object.key("bucketCriteria").start_object();
@@ -52,9 +52,7 @@ where
                         }
                         "bucketDefinitions" => {
                             builder = builder.set_bucket_definitions(
-                                crate::protocol_serde::shape___list_of_s3_bucket_definition_for_job::de___list_of_s3_bucket_definition_for_job(
-                                    tokens,
-                                )?,
+                                crate::protocol_serde::shape_list_of_s3_bucket_definition_for_job::de_list_of_s3_bucket_definition_for_job(tokens)?,
                             );
                         }
                         "scoping" => {

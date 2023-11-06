@@ -34,6 +34,7 @@ pub struct GetScheduleInputBuilder {
 }
 impl GetScheduleInputBuilder {
     /// <p>The name of the schedule to retrieve.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +63,7 @@ impl GetScheduleInputBuilder {
         &self.group_name
     }
     /// Consumes the builder and constructs a [`GetScheduleInput`](crate::operation::get_schedule::GetScheduleInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_schedule::GetScheduleInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_schedule::GetScheduleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_schedule::GetScheduleInput {
             name: self.name,
             group_name: self.group_name,

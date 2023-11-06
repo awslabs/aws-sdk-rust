@@ -32,11 +32,10 @@ pub fn de_list_logging_configurations_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_logging_configurations::ListLoggingConfigurationsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_logging_configurations::ListLoggingConfigurationsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::list_logging_configurations::ListLoggingConfigurationsError::ValidationException({
@@ -47,11 +46,10 @@ pub fn de_list_logging_configurations_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_logging_configurations::ListLoggingConfigurationsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_logging_configurations::ListLoggingConfigurationsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::list_logging_configurations::ListLoggingConfigurationsError::generic(generic),
@@ -73,18 +71,20 @@ pub fn de_list_logging_configurations_http_response(
         output = crate::protocol_serde::shape_list_logging_configurations::de_list_logging_configurations(_response_body, output)
             .map_err(crate::operation::list_logging_configurations::ListLoggingConfigurationsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::list_logging_configurations_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::list_logging_configurations::ListLoggingConfigurationsError::unhandled)?
     })
 }
 
 pub fn ser_list_logging_configurations_input(
     input: &crate::operation::list_logging_configurations::ListLoggingConfigurationsInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_list_logging_configurations_input::ser_list_logging_configurations_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_list_logging_configurations(

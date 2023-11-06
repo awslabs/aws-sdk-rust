@@ -74,7 +74,7 @@ impl RegisterAccountInputBuilder {
     /// Consumes the builder and constructs a [`RegisterAccountInput`](crate::operation::register_account::RegisterAccountInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_account::RegisterAccountInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::register_account::RegisterAccountInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_account::RegisterAccountInput {
             timestream_resources: self.timestream_resources,
             iam_resources: self.iam_resources,

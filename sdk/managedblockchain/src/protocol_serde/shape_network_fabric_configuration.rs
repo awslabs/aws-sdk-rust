@@ -2,9 +2,9 @@
 pub fn ser_network_fabric_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NetworkFabricConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.edition {
-        object.key("Edition").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Edition").string(input.edition.as_str());
     }
     Ok(())
 }

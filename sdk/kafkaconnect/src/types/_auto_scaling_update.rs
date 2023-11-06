@@ -56,6 +56,7 @@ pub struct AutoScalingUpdateBuilder {
 }
 impl AutoScalingUpdateBuilder {
     /// <p>The target maximum number of workers allocated to the connector.</p>
+    /// This field is required.
     pub fn max_worker_count(mut self, input: i32) -> Self {
         self.max_worker_count = ::std::option::Option::Some(input);
         self
@@ -70,6 +71,7 @@ impl AutoScalingUpdateBuilder {
         &self.max_worker_count
     }
     /// <p>The target number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>
+    /// This field is required.
     pub fn mcu_count(mut self, input: i32) -> Self {
         self.mcu_count = ::std::option::Option::Some(input);
         self
@@ -84,6 +86,7 @@ impl AutoScalingUpdateBuilder {
         &self.mcu_count
     }
     /// <p>The target minimum number of workers allocated to the connector.</p>
+    /// This field is required.
     pub fn min_worker_count(mut self, input: i32) -> Self {
         self.min_worker_count = ::std::option::Option::Some(input);
         self
@@ -98,6 +101,7 @@ impl AutoScalingUpdateBuilder {
         &self.min_worker_count
     }
     /// <p>The target sacle-in policy for the connector.</p>
+    /// This field is required.
     pub fn scale_in_policy(mut self, input: crate::types::ScaleInPolicyUpdate) -> Self {
         self.scale_in_policy = ::std::option::Option::Some(input);
         self
@@ -112,6 +116,7 @@ impl AutoScalingUpdateBuilder {
         &self.scale_in_policy
     }
     /// <p>The target sacle-out policy for the connector.</p>
+    /// This field is required.
     pub fn scale_out_policy(mut self, input: crate::types::ScaleOutPolicyUpdate) -> Self {
         self.scale_out_policy = ::std::option::Option::Some(input);
         self

@@ -160,8 +160,10 @@ impl CreateImageBuilderInput {
         self.tags.as_ref()
     }
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the image builder only through the specified endpoints.</p>
-    pub fn access_endpoints(&self) -> ::std::option::Option<&[crate::types::AccessEndpoint]> {
-        self.access_endpoints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.access_endpoints.is_none()`.
+    pub fn access_endpoints(&self) -> &[crate::types::AccessEndpoint] {
+        self.access_endpoints.as_deref().unwrap_or_default()
     }
 }
 impl CreateImageBuilderInput {
@@ -191,6 +193,7 @@ pub struct CreateImageBuilderInputBuilder {
 }
 impl CreateImageBuilderInputBuilder {
     /// <p>A unique name for the image builder.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -268,6 +271,7 @@ impl CreateImageBuilderInputBuilder {
     /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
     /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
@@ -507,7 +511,8 @@ impl CreateImageBuilderInputBuilder {
     /// Consumes the builder and constructs a [`CreateImageBuilderInput`](crate::operation::create_image_builder::CreateImageBuilderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_image_builder::CreateImageBuilderInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_image_builder::CreateImageBuilderInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_image_builder::CreateImageBuilderInput {
             name: self.name,
             image_name: self.image_name,

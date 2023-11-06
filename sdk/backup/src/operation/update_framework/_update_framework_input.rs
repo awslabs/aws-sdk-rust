@@ -22,8 +22,10 @@ impl UpdateFrameworkInput {
         self.framework_description.as_deref()
     }
     /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
-    pub fn framework_controls(&self) -> ::std::option::Option<&[crate::types::FrameworkControl]> {
-        self.framework_controls.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.framework_controls.is_none()`.
+    pub fn framework_controls(&self) -> &[crate::types::FrameworkControl] {
+        self.framework_controls.as_deref().unwrap_or_default()
     }
     /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>UpdateFrameworkInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
     pub fn idempotency_token(&self) -> ::std::option::Option<&str> {
@@ -48,6 +50,7 @@ pub struct UpdateFrameworkInputBuilder {
 }
 impl UpdateFrameworkInputBuilder {
     /// <p>The unique name of a framework. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
+    /// This field is required.
     pub fn framework_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.framework_name = ::std::option::Option::Some(input.into());
         self
@@ -112,7 +115,7 @@ impl UpdateFrameworkInputBuilder {
     /// Consumes the builder and constructs a [`UpdateFrameworkInput`](crate::operation::update_framework::UpdateFrameworkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_framework::UpdateFrameworkInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_framework::UpdateFrameworkInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_framework::UpdateFrameworkInput {
             framework_name: self.framework_name,
             framework_description: self.framework_description,

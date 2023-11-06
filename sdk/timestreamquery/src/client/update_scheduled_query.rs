@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateScheduledQuery`](crate::operation::update_scheduled_query::builders::UpdateScheduledQueryFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`scheduled_query_arn(impl Into<String>)`](crate::operation::update_scheduled_query::builders::UpdateScheduledQueryFluentBuilder::scheduled_query_arn) / [`set_scheduled_query_arn(Option<String>)`](crate::operation::update_scheduled_query::builders::UpdateScheduledQueryFluentBuilder::set_scheduled_query_arn): <p>ARN of the scheuled query.</p>
-    ///   - [`state(ScheduledQueryState)`](crate::operation::update_scheduled_query::builders::UpdateScheduledQueryFluentBuilder::state) / [`set_state(Option<ScheduledQueryState>)`](crate::operation::update_scheduled_query::builders::UpdateScheduledQueryFluentBuilder::set_state): <p>State of the scheduled query. </p>
+    ///   - [`scheduled_query_arn(impl Into<String>)`](crate::operation::update_scheduled_query::builders::UpdateScheduledQueryFluentBuilder::scheduled_query_arn) / [`set_scheduled_query_arn(Option<String>)`](crate::operation::update_scheduled_query::builders::UpdateScheduledQueryFluentBuilder::set_scheduled_query_arn):<br>required: **true**<br><p>ARN of the scheuled query.</p><br>
+    ///   - [`state(ScheduledQueryState)`](crate::operation::update_scheduled_query::builders::UpdateScheduledQueryFluentBuilder::state) / [`set_state(Option<ScheduledQueryState>)`](crate::operation::update_scheduled_query::builders::UpdateScheduledQueryFluentBuilder::set_state):<br>required: **true**<br><p>State of the scheduled query. </p><br>
     /// - On success, responds with [`UpdateScheduledQueryOutput`](crate::operation::update_scheduled_query::UpdateScheduledQueryOutput)
     /// - On failure, responds with [`SdkError<UpdateScheduledQueryError>`](crate::operation::update_scheduled_query::UpdateScheduledQueryError)
     pub fn update_scheduled_query(&self) -> crate::operation::update_scheduled_query::builders::UpdateScheduledQueryFluentBuilder {

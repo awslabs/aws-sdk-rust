@@ -2,7 +2,7 @@
 pub fn ser_hls_cdn_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HlsCdnSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.hls_akamai_settings {
         #[allow(unused_mut)]
         let mut object_2 = object.key("hlsAkamaiSettings").start_object();

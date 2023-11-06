@@ -17,8 +17,10 @@ impl StartPipelineExecutionInput {
         self.name.as_deref()
     }
     /// <p>A list that overrides pipeline variables for a pipeline execution that's being started. Variable names must match <code>[A-Za-z0-9@\-_]+</code>, and the values can be anything except an empty string.</p>
-    pub fn variables(&self) -> ::std::option::Option<&[crate::types::PipelineVariable]> {
-        self.variables.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.variables.is_none()`.
+    pub fn variables(&self) -> &[crate::types::PipelineVariable] {
+        self.variables.as_deref().unwrap_or_default()
     }
     /// <p>The system-generated unique ID used to identify a unique execution request.</p>
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
@@ -42,6 +44,7 @@ pub struct StartPipelineExecutionInputBuilder {
 }
 impl StartPipelineExecutionInputBuilder {
     /// <p>The name of the pipeline to start.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -92,8 +95,10 @@ impl StartPipelineExecutionInputBuilder {
     /// Consumes the builder and constructs a [`StartPipelineExecutionInput`](crate::operation::start_pipeline_execution::StartPipelineExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_pipeline_execution::StartPipelineExecutionInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::start_pipeline_execution::StartPipelineExecutionInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::start_pipeline_execution::StartPipelineExecutionInput {
             name: self.name,
             variables: self.variables,

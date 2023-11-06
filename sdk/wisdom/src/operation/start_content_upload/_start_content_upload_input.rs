@@ -34,6 +34,7 @@ pub struct StartContentUploadInputBuilder {
 }
 impl StartContentUploadInputBuilder {
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// This field is required.
     pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.knowledge_base_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl StartContentUploadInputBuilder {
         &self.knowledge_base_id
     }
     /// <p>The type of content to upload.</p>
+    /// This field is required.
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,8 @@ impl StartContentUploadInputBuilder {
     /// Consumes the builder and constructs a [`StartContentUploadInput`](crate::operation::start_content_upload::StartContentUploadInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_content_upload::StartContentUploadInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_content_upload::StartContentUploadInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::start_content_upload::StartContentUploadInput {
             knowledge_base_id: self.knowledge_base_id,
             content_type: self.content_type,

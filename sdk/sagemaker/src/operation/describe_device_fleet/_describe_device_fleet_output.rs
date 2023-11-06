@@ -83,6 +83,7 @@ pub struct DescribeDeviceFleetOutputBuilder {
 }
 impl DescribeDeviceFleetOutputBuilder {
     /// <p>The name of the fleet.</p>
+    /// This field is required.
     pub fn device_fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_fleet_name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +98,7 @@ impl DescribeDeviceFleetOutputBuilder {
         &self.device_fleet_name
     }
     /// <p>The The Amazon Resource Name (ARN) of the fleet.</p>
+    /// This field is required.
     pub fn device_fleet_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_fleet_arn = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +113,7 @@ impl DescribeDeviceFleetOutputBuilder {
         &self.device_fleet_arn
     }
     /// <p>The output configuration for storing sampled data.</p>
+    /// This field is required.
     pub fn output_config(mut self, input: crate::types::EdgeOutputConfig) -> Self {
         self.output_config = ::std::option::Option::Some(input);
         self
@@ -139,6 +142,7 @@ impl DescribeDeviceFleetOutputBuilder {
         &self.description
     }
     /// <p>Timestamp of when the device fleet was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -153,6 +157,7 @@ impl DescribeDeviceFleetOutputBuilder {
         &self.creation_time
     }
     /// <p>Timestamp of when the device fleet was last updated.</p>
+    /// This field is required.
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
         self

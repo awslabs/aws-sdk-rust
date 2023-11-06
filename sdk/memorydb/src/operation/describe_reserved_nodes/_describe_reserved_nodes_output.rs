@@ -15,8 +15,10 @@ impl DescribeReservedNodesOutput {
         self.next_token.as_deref()
     }
     /// <p>Returns information about reserved nodes for this account, or about a specified reserved node.</p>
-    pub fn reserved_nodes(&self) -> ::std::option::Option<&[crate::types::ReservedNode]> {
-        self.reserved_nodes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reserved_nodes.is_none()`.
+    pub fn reserved_nodes(&self) -> &[crate::types::ReservedNode] {
+        self.reserved_nodes.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeReservedNodesOutput {

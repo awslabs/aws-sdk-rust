@@ -28,6 +28,7 @@ pub struct DeleteHealthCheckInputBuilder {
 }
 impl DeleteHealthCheckInputBuilder {
     /// <p>The ID of the health check that you want to delete.</p>
+    /// This field is required.
     pub fn health_check_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.health_check_id = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl DeleteHealthCheckInputBuilder {
     /// Consumes the builder and constructs a [`DeleteHealthCheckInput`](crate::operation::delete_health_check::DeleteHealthCheckInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_health_check::DeleteHealthCheckInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_health_check::DeleteHealthCheckInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_health_check::DeleteHealthCheckInput {
             health_check_id: self.health_check_id,
         })

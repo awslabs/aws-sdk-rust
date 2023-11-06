@@ -11,8 +11,10 @@ pub struct Settings {
 }
 impl Settings {
     /// <p>The supported MFA types.</p>
-    pub fn mfa_types(&self) -> ::std::option::Option<&[crate::types::MfaTypesElement]> {
-        self.mfa_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mfa_types.is_none()`.
+    pub fn mfa_types(&self) -> &[crate::types::MfaTypesElement] {
+        self.mfa_types.as_deref().unwrap_or_default()
     }
     /// <p>The body of the SMS message.</p>
     pub fn sms_message(&self) -> ::std::option::Option<&str> {

@@ -15,8 +15,10 @@ impl RuleGroupRuleOptionsPair {
         self.rule_group_arn.as_deref()
     }
     /// <p>The rule options.</p>
-    pub fn rule_options(&self) -> ::std::option::Option<&[crate::types::RuleOption]> {
-        self.rule_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rule_options.is_none()`.
+    pub fn rule_options(&self) -> &[crate::types::RuleOption] {
+        self.rule_options.as_deref().unwrap_or_default()
     }
 }
 impl RuleGroupRuleOptionsPair {

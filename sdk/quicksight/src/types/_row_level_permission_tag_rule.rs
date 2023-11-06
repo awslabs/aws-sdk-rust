@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RowLevelPermissionTagRule {
     /// <p>The unique key for a tag.</p>
-    pub tag_key: ::std::option::Option<::std::string::String>,
+    pub tag_key: ::std::string::String,
     /// <p>The column name that a tag key is assigned to.</p>
-    pub column_name: ::std::option::Option<::std::string::String>,
+    pub column_name: ::std::string::String,
     /// <p>A string that you want to use to delimit the values when you pass the values at run time. For example, you can delimit the values with a comma.</p>
     pub tag_multi_value_delimiter: ::std::option::Option<::std::string::String>,
     /// <p>A string that you want to use to filter by all the values in a column in the dataset and don’t want to list the values one by one. For example, you can use an asterisk as your match all value.</p>
@@ -15,12 +15,14 @@ pub struct RowLevelPermissionTagRule {
 }
 impl RowLevelPermissionTagRule {
     /// <p>The unique key for a tag.</p>
-    pub fn tag_key(&self) -> ::std::option::Option<&str> {
-        self.tag_key.as_deref()
+    pub fn tag_key(&self) -> &str {
+        use std::ops::Deref;
+        self.tag_key.deref()
     }
     /// <p>The column name that a tag key is assigned to.</p>
-    pub fn column_name(&self) -> ::std::option::Option<&str> {
-        self.column_name.as_deref()
+    pub fn column_name(&self) -> &str {
+        use std::ops::Deref;
+        self.column_name.deref()
     }
     /// <p>A string that you want to use to delimit the values when you pass the values at run time. For example, you can delimit the values with a comma.</p>
     pub fn tag_multi_value_delimiter(&self) -> ::std::option::Option<&str> {
@@ -59,6 +61,7 @@ pub struct RowLevelPermissionTagRuleBuilder {
 }
 impl RowLevelPermissionTagRuleBuilder {
     /// <p>The unique key for a tag.</p>
+    /// This field is required.
     pub fn tag_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tag_key = ::std::option::Option::Some(input.into());
         self
@@ -73,6 +76,7 @@ impl RowLevelPermissionTagRuleBuilder {
         &self.tag_key
     }
     /// <p>The column name that a tag key is assigned to.</p>
+    /// This field is required.
     pub fn column_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.column_name = ::std::option::Option::Some(input.into());
         self
@@ -115,13 +119,26 @@ impl RowLevelPermissionTagRuleBuilder {
         &self.match_all_value
     }
     /// Consumes the builder and constructs a [`RowLevelPermissionTagRule`](crate::types::RowLevelPermissionTagRule).
-    pub fn build(self) -> crate::types::RowLevelPermissionTagRule {
-        crate::types::RowLevelPermissionTagRule {
-            tag_key: self.tag_key,
-            column_name: self.column_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`tag_key`](crate::types::builders::RowLevelPermissionTagRuleBuilder::tag_key)
+    /// - [`column_name`](crate::types::builders::RowLevelPermissionTagRuleBuilder::column_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::RowLevelPermissionTagRule, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RowLevelPermissionTagRule {
+            tag_key: self.tag_key.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "tag_key",
+                    "tag_key was not specified but it is required when building RowLevelPermissionTagRule",
+                )
+            })?,
+            column_name: self.column_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "column_name",
+                    "column_name was not specified but it is required when building RowLevelPermissionTagRule",
+                )
+            })?,
             tag_multi_value_delimiter: self.tag_multi_value_delimiter,
             match_all_value: self.match_all_value,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for RowLevelPermissionTagRuleBuilder {

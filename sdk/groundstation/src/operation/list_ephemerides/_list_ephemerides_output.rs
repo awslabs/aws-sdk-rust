@@ -15,8 +15,10 @@ impl ListEphemeridesOutput {
         self.next_token.as_deref()
     }
     /// <p>List of ephemerides.</p>
-    pub fn ephemerides(&self) -> ::std::option::Option<&[crate::types::EphemerisItem]> {
-        self.ephemerides.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ephemerides.is_none()`.
+    pub fn ephemerides(&self) -> &[crate::types::EphemerisItem] {
+        self.ephemerides.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListEphemeridesOutput {

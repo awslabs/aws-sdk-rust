@@ -27,8 +27,10 @@ pub struct QueryLineageInput {
 }
 impl QueryLineageInput {
     /// <p>A list of resource Amazon Resource Name (ARN) that represent the starting point for your lineage query.</p>
-    pub fn start_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.start_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.start_arns.is_none()`.
+    pub fn start_arns(&self) -> &[::std::string::String] {
+        self.start_arns.as_deref().unwrap_or_default()
     }
     /// <p>Associations between lineage entities have a direction. This parameter determines the direction from the StartArn(s) that the query traverses.</p>
     pub fn direction(&self) -> ::std::option::Option<&crate::types::Direction> {
@@ -208,7 +210,9 @@ impl QueryLineageInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`QueryLineageInput`](crate::operation::query_lineage::QueryLineageInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::query_lineage::QueryLineageInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::query_lineage::QueryLineageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::query_lineage::QueryLineageInput {
             start_arns: self.start_arns,
             direction: self.direction,

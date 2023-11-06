@@ -12,8 +12,10 @@ pub struct DescribeOrganizationConformancePacksInput {
 }
 impl DescribeOrganizationConformancePacksInput {
     /// <p>The name that you assign to an organization conformance pack.</p>
-    pub fn organization_conformance_pack_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.organization_conformance_pack_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.organization_conformance_pack_names.is_none()`.
+    pub fn organization_conformance_pack_names(&self) -> &[::std::string::String] {
+        self.organization_conformance_pack_names.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of organization config packs returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
     pub fn limit(&self) -> ::std::option::Option<i32> {
@@ -93,7 +95,7 @@ impl DescribeOrganizationConformancePacksInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_organization_conformance_packs::DescribeOrganizationConformancePacksInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_organization_conformance_packs::DescribeOrganizationConformancePacksInput {

@@ -2,12 +2,12 @@
 pub fn ser_app_instance_streaming_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AppInstanceStreamingConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.app_instance_data_type {
-        object.key("AppInstanceDataType").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("AppInstanceDataType").string(input.app_instance_data_type.as_str());
     }
-    if let Some(var_2) = &input.resource_arn {
-        object.key("ResourceArn").string(var_2.as_str());
+    {
+        object.key("ResourceArn").string(input.resource_arn.as_str());
     }
     Ok(())
 }
@@ -51,7 +51,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::app_instance_streaming_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

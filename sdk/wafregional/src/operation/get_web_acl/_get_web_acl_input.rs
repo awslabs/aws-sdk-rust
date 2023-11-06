@@ -27,6 +27,7 @@ pub struct GetWebAclInputBuilder {
 }
 impl GetWebAclInputBuilder {
     /// <p>The <code>WebACLId</code> of the <code>WebACL</code> that you want to get. <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
+    /// This field is required.
     pub fn web_acl_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.web_acl_id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetWebAclInputBuilder {
         &self.web_acl_id
     }
     /// Consumes the builder and constructs a [`GetWebAclInput`](crate::operation::get_web_acl::GetWebAclInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_web_acl::GetWebAclInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_web_acl::GetWebAclInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_web_acl::GetWebAclInput { web_acl_id: self.web_acl_id })
     }
 }

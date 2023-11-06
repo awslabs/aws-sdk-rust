@@ -35,11 +35,10 @@ pub fn de_delete_environment_blueprint_configuration_http_error(
                             crate::operation::delete_environment_blueprint_configuration::DeleteEnvironmentBlueprintConfigurationError::unhandled,
                         )?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::access_denied_exception_correct_errors(output).build().map_err(
+                        crate::operation::delete_environment_blueprint_configuration::DeleteEnvironmentBlueprintConfigurationError::unhandled,
+                    )?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -54,11 +53,10 @@ pub fn de_delete_environment_blueprint_configuration_http_error(
                             crate::operation::delete_environment_blueprint_configuration::DeleteEnvironmentBlueprintConfigurationError::unhandled,
                         )?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::internal_server_exception_correct_errors(output).build().map_err(
+                        crate::operation::delete_environment_blueprint_configuration::DeleteEnvironmentBlueprintConfigurationError::unhandled,
+                    )?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -72,11 +70,10 @@ pub fn de_delete_environment_blueprint_configuration_http_error(
                         crate::operation::delete_environment_blueprint_configuration::DeleteEnvironmentBlueprintConfigurationError::unhandled,
                     )?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::validation_exception_correct_errors(output).build().map_err(
+                        crate::operation::delete_environment_blueprint_configuration::DeleteEnvironmentBlueprintConfigurationError::unhandled,
+                    )?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -90,11 +87,10 @@ pub fn de_delete_environment_blueprint_configuration_http_error(
                         crate::operation::delete_environment_blueprint_configuration::DeleteEnvironmentBlueprintConfigurationError::unhandled,
                     )?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::throttling_exception_correct_errors(output).build().map_err(
+                        crate::operation::delete_environment_blueprint_configuration::DeleteEnvironmentBlueprintConfigurationError::unhandled,
+                    )?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -109,11 +105,10 @@ pub fn de_delete_environment_blueprint_configuration_http_error(
                             crate::operation::delete_environment_blueprint_configuration::DeleteEnvironmentBlueprintConfigurationError::unhandled,
                         )?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::unauthorized_exception_correct_errors(output).build().map_err(
+                        crate::operation::delete_environment_blueprint_configuration::DeleteEnvironmentBlueprintConfigurationError::unhandled,
+                    )?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }

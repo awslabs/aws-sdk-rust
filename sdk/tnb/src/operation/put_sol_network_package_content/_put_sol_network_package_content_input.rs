@@ -41,6 +41,7 @@ pub struct PutSolNetworkPackageContentInputBuilder {
 }
 impl PutSolNetworkPackageContentInputBuilder {
     /// <p>Network service descriptor info ID.</p>
+    /// This field is required.
     pub fn nsd_info_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nsd_info_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl PutSolNetworkPackageContentInputBuilder {
         &self.content_type
     }
     /// <p>Network package file.</p>
+    /// This field is required.
     pub fn file(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.file = ::std::option::Option::Some(input);
         self
@@ -87,7 +89,7 @@ impl PutSolNetworkPackageContentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentInput {
             nsd_info_id: self.nsd_info_id,

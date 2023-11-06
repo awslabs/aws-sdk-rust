@@ -2,7 +2,7 @@
 pub fn ser_abp_v1_0_x(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AbpV10X,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.dev_addr {
         object.key("DevAddr").string(var_1.as_str());
     }

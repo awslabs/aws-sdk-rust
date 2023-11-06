@@ -24,8 +24,10 @@ impl ListEnvironmentAccountConnectionsInput {
         self.environment_name.as_deref()
     }
     /// <p>The status details for each listed environment account connection.</p>
-    pub fn statuses(&self) -> ::std::option::Option<&[crate::types::EnvironmentAccountConnectionStatus]> {
-        self.statuses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.statuses.is_none()`.
+    pub fn statuses(&self) -> &[crate::types::EnvironmentAccountConnectionStatus] {
+        self.statuses.as_deref().unwrap_or_default()
     }
     /// <p>A token that indicates the location of the next environment account connection in the array of environment account connections, after the list of environment account connections that was previously requested.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -55,6 +57,7 @@ pub struct ListEnvironmentAccountConnectionsInputBuilder {
 }
 impl ListEnvironmentAccountConnectionsInputBuilder {
     /// <p>The type of account making the <code>ListEnvironmentAccountConnections</code> request.</p>
+    /// This field is required.
     pub fn requested_by(mut self, input: crate::types::EnvironmentAccountConnectionRequesterAccountType) -> Self {
         self.requested_by = ::std::option::Option::Some(input);
         self
@@ -135,7 +138,7 @@ impl ListEnvironmentAccountConnectionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_environment_account_connections::ListEnvironmentAccountConnectionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_environment_account_connections::ListEnvironmentAccountConnectionsInput {

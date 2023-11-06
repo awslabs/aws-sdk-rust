@@ -5,25 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListReusableDelegationSetsOutput {
     /// <p>A complex type that contains one <code>DelegationSet</code> element for each reusable delegation set that was created by the current Amazon Web Services account.</p>
-    pub delegation_sets: ::std::option::Option<::std::vec::Vec<crate::types::DelegationSet>>,
+    pub delegation_sets: ::std::vec::Vec<crate::types::DelegationSet>,
     /// <p>For the second and subsequent calls to <code>ListReusableDelegationSets</code>, <code>Marker</code> is the value that you specified for the <code>marker</code> parameter in the request that produced the current response.</p>
-    pub marker: ::std::option::Option<::std::string::String>,
+    pub marker: ::std::string::String,
     /// <p>A flag that indicates whether there are more reusable delegation sets to be listed.</p>
     pub is_truncated: bool,
     /// <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the next reusable delegation set that Amazon Route 53 will return if you submit another <code>ListReusableDelegationSets</code> request and specify the value of <code>NextMarker</code> in the <code>marker</code> parameter.</p>
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>The value that you specified for the <code>maxitems</code> parameter in the call to <code>ListReusableDelegationSets</code> that produced the current response.</p>
-    pub max_items: ::std::option::Option<i32>,
+    pub max_items: i32,
     _request_id: Option<String>,
 }
 impl ListReusableDelegationSetsOutput {
     /// <p>A complex type that contains one <code>DelegationSet</code> element for each reusable delegation set that was created by the current Amazon Web Services account.</p>
-    pub fn delegation_sets(&self) -> ::std::option::Option<&[crate::types::DelegationSet]> {
-        self.delegation_sets.as_deref()
+    pub fn delegation_sets(&self) -> &[crate::types::DelegationSet] {
+        use std::ops::Deref;
+        self.delegation_sets.deref()
     }
     /// <p>For the second and subsequent calls to <code>ListReusableDelegationSets</code>, <code>Marker</code> is the value that you specified for the <code>marker</code> parameter in the request that produced the current response.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
-        self.marker.as_deref()
+    pub fn marker(&self) -> &str {
+        use std::ops::Deref;
+        self.marker.deref()
     }
     /// <p>A flag that indicates whether there are more reusable delegation sets to be listed.</p>
     pub fn is_truncated(&self) -> bool {
@@ -34,7 +36,7 @@ impl ListReusableDelegationSetsOutput {
         self.next_marker.as_deref()
     }
     /// <p>The value that you specified for the <code>maxitems</code> parameter in the call to <code>ListReusableDelegationSets</code> that produced the current response.</p>
-    pub fn max_items(&self) -> ::std::option::Option<i32> {
+    pub fn max_items(&self) -> i32 {
         self.max_items
     }
 }
@@ -83,6 +85,7 @@ impl ListReusableDelegationSetsOutputBuilder {
         &self.delegation_sets
     }
     /// <p>For the second and subsequent calls to <code>ListReusableDelegationSets</code>, <code>Marker</code> is the value that you specified for the <code>marker</code> parameter in the request that produced the current response.</p>
+    /// This field is required.
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +100,7 @@ impl ListReusableDelegationSetsOutputBuilder {
         &self.marker
     }
     /// <p>A flag that indicates whether there are more reusable delegation sets to be listed.</p>
+    /// This field is required.
     pub fn is_truncated(mut self, input: bool) -> Self {
         self.is_truncated = ::std::option::Option::Some(input);
         self
@@ -125,6 +129,7 @@ impl ListReusableDelegationSetsOutputBuilder {
         &self.next_marker
     }
     /// <p>The value that you specified for the <code>maxitems</code> parameter in the call to <code>ListReusableDelegationSets</code> that produced the current response.</p>
+    /// This field is required.
     pub fn max_items(mut self, input: i32) -> Self {
         self.max_items = ::std::option::Option::Some(input);
         self
@@ -148,14 +153,38 @@ impl ListReusableDelegationSetsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListReusableDelegationSetsOutput`](crate::operation::list_reusable_delegation_sets::ListReusableDelegationSetsOutput).
-    pub fn build(self) -> crate::operation::list_reusable_delegation_sets::ListReusableDelegationSetsOutput {
-        crate::operation::list_reusable_delegation_sets::ListReusableDelegationSetsOutput {
-            delegation_sets: self.delegation_sets,
-            marker: self.marker,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`delegation_sets`](crate::operation::list_reusable_delegation_sets::builders::ListReusableDelegationSetsOutputBuilder::delegation_sets)
+    /// - [`marker`](crate::operation::list_reusable_delegation_sets::builders::ListReusableDelegationSetsOutputBuilder::marker)
+    /// - [`max_items`](crate::operation::list_reusable_delegation_sets::builders::ListReusableDelegationSetsOutputBuilder::max_items)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_reusable_delegation_sets::ListReusableDelegationSetsOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_reusable_delegation_sets::ListReusableDelegationSetsOutput {
+            delegation_sets: self.delegation_sets.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "delegation_sets",
+                    "delegation_sets was not specified but it is required when building ListReusableDelegationSetsOutput",
+                )
+            })?,
+            marker: self.marker.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "marker",
+                    "marker was not specified but it is required when building ListReusableDelegationSetsOutput",
+                )
+            })?,
             is_truncated: self.is_truncated.unwrap_or_default(),
             next_marker: self.next_marker,
-            max_items: self.max_items,
+            max_items: self.max_items.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "max_items",
+                    "max_items was not specified but it is required when building ListReusableDelegationSetsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

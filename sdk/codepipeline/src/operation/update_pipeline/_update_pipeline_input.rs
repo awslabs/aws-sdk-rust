@@ -28,6 +28,7 @@ pub struct UpdatePipelineInputBuilder {
 }
 impl UpdatePipelineInputBuilder {
     /// <p>The name of the pipeline to be updated.</p>
+    /// This field is required.
     pub fn pipeline(mut self, input: crate::types::PipelineDeclaration) -> Self {
         self.pipeline = ::std::option::Option::Some(input);
         self
@@ -44,7 +45,7 @@ impl UpdatePipelineInputBuilder {
     /// Consumes the builder and constructs a [`UpdatePipelineInput`](crate::operation::update_pipeline::UpdatePipelineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_pipeline::UpdatePipelineInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_pipeline::UpdatePipelineInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_pipeline::UpdatePipelineInput { pipeline: self.pipeline })
     }
 }

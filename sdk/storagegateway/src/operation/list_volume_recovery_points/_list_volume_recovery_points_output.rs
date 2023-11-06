@@ -15,8 +15,10 @@ impl ListVolumeRecoveryPointsOutput {
         self.gateway_arn.as_deref()
     }
     /// <p>An array of <code>VolumeRecoveryPointInfo</code> objects.</p>
-    pub fn volume_recovery_point_infos(&self) -> ::std::option::Option<&[crate::types::VolumeRecoveryPointInfo]> {
-        self.volume_recovery_point_infos.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volume_recovery_point_infos.is_none()`.
+    pub fn volume_recovery_point_infos(&self) -> &[crate::types::VolumeRecoveryPointInfo] {
+        self.volume_recovery_point_infos.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListVolumeRecoveryPointsOutput {

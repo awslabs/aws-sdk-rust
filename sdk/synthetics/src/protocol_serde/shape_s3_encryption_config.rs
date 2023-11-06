@@ -2,7 +2,7 @@
 pub fn ser_s3_encryption_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::S3EncryptionConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.encryption_mode {
         object.key("EncryptionMode").string(var_1.as_str());
     }

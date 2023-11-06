@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribedServer {
     /// <p>Specifies the unique Amazon Resource Name (ARN) of the server.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>Specifies the ARN of the Amazon Web ServicesCertificate Manager (ACM) certificate. Required when <code>Protocols</code> is set to <code>FTPS</code>.</p>
     pub certificate: ::std::option::Option<::std::string::String>,
     /// <p>The protocol settings that are configured for your server.</p>
@@ -80,8 +80,9 @@ pub struct DescribedServer {
 }
 impl DescribedServer {
     /// <p>Specifies the unique Amazon Resource Name (ARN) of the server.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>Specifies the ARN of the Amazon Web ServicesCertificate Manager (ACM) certificate. Required when <code>Protocols</code> is set to <code>FTPS</code>.</p>
     pub fn certificate(&self) -> ::std::option::Option<&str> {
@@ -154,8 +155,10 @@ impl DescribedServer {
     /// <li> <p>If <code>Protocol</code> includes <code>AS2</code>, then the <code>EndpointType</code> must be <code>VPC</code>, and domain must be Amazon S3.</p> </li>
     /// </ul>
     /// </note>
-    pub fn protocols(&self) -> ::std::option::Option<&[crate::types::Protocol]> {
-        self.protocols.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.protocols.is_none()`.
+    pub fn protocols(&self) -> &[crate::types::Protocol] {
+        self.protocols.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the name of the security policy that is attached to the server.</p>
     pub fn security_policy_name(&self) -> ::std::option::Option<&str> {
@@ -171,8 +174,10 @@ impl DescribedServer {
         self.state.as_ref()
     }
     /// <p>Specifies the key-value pairs that you can use to search for and group servers that were assigned to the server that was described.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the number of users that are assigned to a server you specified with the <code>ServerId</code>.</p>
     pub fn user_count(&self) -> ::std::option::Option<i32> {
@@ -189,8 +194,10 @@ impl DescribedServer {
     /// <p>For example, <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code> </p>
     /// <p>If you have previously specified a log group for a server, you can clear it, and in effect turn off structured logging, by providing an empty value for this parameter in an <code>update-server</code> call. For example:</p>
     /// <p> <code>update-server --server-id s-1234567890abcdef0 --structured-log-destinations</code> </p>
-    pub fn structured_log_destinations(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.structured_log_destinations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.structured_log_destinations.is_none()`.
+    pub fn structured_log_destinations(&self) -> &[::std::string::String] {
+        self.structured_log_destinations.as_deref().unwrap_or_default()
     }
 }
 impl DescribedServer {
@@ -227,6 +234,7 @@ pub struct DescribedServerBuilder {
 }
 impl DescribedServerBuilder {
     /// <p>Specifies the unique Amazon Resource Name (ARN) of the server.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -624,9 +632,16 @@ impl DescribedServerBuilder {
         &self.structured_log_destinations
     }
     /// Consumes the builder and constructs a [`DescribedServer`](crate::types::DescribedServer).
-    pub fn build(self) -> crate::types::DescribedServer {
-        crate::types::DescribedServer {
-            arn: self.arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::DescribedServerBuilder::arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::DescribedServer, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DescribedServer {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building DescribedServer",
+                )
+            })?,
             certificate: self.certificate,
             protocol_details: self.protocol_details,
             domain: self.domain,
@@ -646,6 +661,6 @@ impl DescribedServerBuilder {
             user_count: self.user_count,
             workflow_details: self.workflow_details,
             structured_log_destinations: self.structured_log_destinations,
-        }
+        })
     }
 }

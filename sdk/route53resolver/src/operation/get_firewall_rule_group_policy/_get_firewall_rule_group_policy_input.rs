@@ -27,6 +27,7 @@ pub struct GetFirewallRuleGroupPolicyInputBuilder {
 }
 impl GetFirewallRuleGroupPolicyInputBuilder {
     /// <p>The ARN (Amazon Resource Name) for the rule group.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetFirewallRuleGroupPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_firewall_rule_group_policy::GetFirewallRuleGroupPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_firewall_rule_group_policy::GetFirewallRuleGroupPolicyInput { arn: self.arn })
     }

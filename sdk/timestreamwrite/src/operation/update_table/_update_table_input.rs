@@ -55,6 +55,7 @@ pub struct UpdateTableInputBuilder {
 }
 impl UpdateTableInputBuilder {
     /// <p>The name of the Timestream database.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl UpdateTableInputBuilder {
         &self.database_name
     }
     /// <p>The name of the Timestream table.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -125,7 +127,7 @@ impl UpdateTableInputBuilder {
         &self.schema
     }
     /// Consumes the builder and constructs a [`UpdateTableInput`](crate::operation::update_table::UpdateTableInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_table::UpdateTableInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_table::UpdateTableInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_table::UpdateTableInput {
             database_name: self.database_name,
             table_name: self.table_name,

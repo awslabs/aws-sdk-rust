@@ -51,6 +51,7 @@ pub struct VersionSummaryBuilder {
 }
 impl VersionSummaryBuilder {
     /// <p>The application Amazon Resource Name (ARN).</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -65,6 +66,7 @@ impl VersionSummaryBuilder {
         &self.application_id
     }
     /// <p>The date and time this resource was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_time = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +82,7 @@ impl VersionSummaryBuilder {
     }
     /// <p>The semantic version of the application:</p>
     /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
+    /// This field is required.
     pub fn semantic_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.semantic_version = ::std::option::Option::Some(input.into());
         self

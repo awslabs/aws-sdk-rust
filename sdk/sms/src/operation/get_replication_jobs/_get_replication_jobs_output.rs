@@ -11,8 +11,10 @@ pub struct GetReplicationJobsOutput {
 }
 impl GetReplicationJobsOutput {
     /// <p>Information about the replication jobs.</p>
-    pub fn replication_job_list(&self) -> ::std::option::Option<&[crate::types::ReplicationJob]> {
-        self.replication_job_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_job_list.is_none()`.
+    pub fn replication_job_list(&self) -> &[crate::types::ReplicationJob] {
+        self.replication_job_list.as_deref().unwrap_or_default()
     }
     /// <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

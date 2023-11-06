@@ -12,13 +12,17 @@ pub struct GetMembersOutput {
 }
 impl GetMembersOutput {
     /// <p>The member account details that Detective is returning in response to the request.</p>
-    pub fn member_details(&self) -> ::std::option::Option<&[crate::types::MemberDetail]> {
-        self.member_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.member_details.is_none()`.
+    pub fn member_details(&self) -> &[crate::types::MemberDetail] {
+        self.member_details.as_deref().unwrap_or_default()
     }
     /// <p>The requested member accounts for which Detective was unable to return member details.</p>
     /// <p>For each account, provides the reason why the request could not be processed.</p>
-    pub fn unprocessed_accounts(&self) -> ::std::option::Option<&[crate::types::UnprocessedAccount]> {
-        self.unprocessed_accounts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unprocessed_accounts.is_none()`.
+    pub fn unprocessed_accounts(&self) -> &[crate::types::UnprocessedAccount] {
+        self.unprocessed_accounts.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetMembersOutput {

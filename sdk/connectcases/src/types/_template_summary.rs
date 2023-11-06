@@ -5,30 +5,33 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TemplateSummary {
     /// <p>The unique identifier for the template.</p>
-    pub template_id: ::std::option::Option<::std::string::String>,
+    pub template_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
-    pub template_arn: ::std::option::Option<::std::string::String>,
+    pub template_arn: ::std::string::String,
     /// <p>The template name.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The status of the template.</p>
-    pub status: ::std::option::Option<crate::types::TemplateStatus>,
+    pub status: crate::types::TemplateStatus,
 }
 impl TemplateSummary {
     /// <p>The unique identifier for the template.</p>
-    pub fn template_id(&self) -> ::std::option::Option<&str> {
-        self.template_id.as_deref()
+    pub fn template_id(&self) -> &str {
+        use std::ops::Deref;
+        self.template_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
-    pub fn template_arn(&self) -> ::std::option::Option<&str> {
-        self.template_arn.as_deref()
+    pub fn template_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.template_arn.deref()
     }
     /// <p>The template name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The status of the template.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::TemplateStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::TemplateStatus {
+        &self.status
     }
 }
 impl TemplateSummary {
@@ -49,6 +52,7 @@ pub struct TemplateSummaryBuilder {
 }
 impl TemplateSummaryBuilder {
     /// <p>The unique identifier for the template.</p>
+    /// This field is required.
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +67,7 @@ impl TemplateSummaryBuilder {
         &self.template_id
     }
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
+    /// This field is required.
     pub fn template_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_arn = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +82,7 @@ impl TemplateSummaryBuilder {
         &self.template_arn
     }
     /// <p>The template name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +97,7 @@ impl TemplateSummaryBuilder {
         &self.name
     }
     /// <p>The status of the template.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::TemplateStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -105,12 +112,37 @@ impl TemplateSummaryBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`TemplateSummary`](crate::types::TemplateSummary).
-    pub fn build(self) -> crate::types::TemplateSummary {
-        crate::types::TemplateSummary {
-            template_id: self.template_id,
-            template_arn: self.template_arn,
-            name: self.name,
-            status: self.status,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`template_id`](crate::types::builders::TemplateSummaryBuilder::template_id)
+    /// - [`template_arn`](crate::types::builders::TemplateSummaryBuilder::template_arn)
+    /// - [`name`](crate::types::builders::TemplateSummaryBuilder::name)
+    /// - [`status`](crate::types::builders::TemplateSummaryBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::TemplateSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TemplateSummary {
+            template_id: self.template_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "template_id",
+                    "template_id was not specified but it is required when building TemplateSummary",
+                )
+            })?,
+            template_arn: self.template_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "template_arn",
+                    "template_arn was not specified but it is required when building TemplateSummary",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building TemplateSummary",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building TemplateSummary",
+                )
+            })?,
+        })
     }
 }

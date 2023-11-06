@@ -34,6 +34,7 @@ pub struct CreateByteMatchSetInputBuilder {
 }
 impl CreateByteMatchSetInputBuilder {
     /// <p>A friendly name or description of the <code>ByteMatchSet</code>. You can't change <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl CreateByteMatchSetInputBuilder {
         &self.name
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    /// This field is required.
     pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_token = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl CreateByteMatchSetInputBuilder {
     /// Consumes the builder and constructs a [`CreateByteMatchSetInput`](crate::operation::create_byte_match_set::CreateByteMatchSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_byte_match_set::CreateByteMatchSetInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_byte_match_set::CreateByteMatchSetInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_byte_match_set::CreateByteMatchSetInput {
             name: self.name,

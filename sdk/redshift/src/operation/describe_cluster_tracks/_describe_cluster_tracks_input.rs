@@ -85,7 +85,7 @@ impl DescribeClusterTracksInputBuilder {
     /// Consumes the builder and constructs a [`DescribeClusterTracksInput`](crate::operation::describe_cluster_tracks::DescribeClusterTracksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_cluster_tracks::DescribeClusterTracksInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_cluster_tracks::DescribeClusterTracksInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_cluster_tracks::DescribeClusterTracksInput {
             maintenance_track_name: self.maintenance_track_name,

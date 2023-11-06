@@ -27,6 +27,7 @@ pub struct GetEulaInputBuilder {
 }
 impl GetEulaInputBuilder {
     /// <p>The EULA ID.</p>
+    /// This field is required.
     pub fn eula_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.eula_id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetEulaInputBuilder {
         &self.eula_id
     }
     /// Consumes the builder and constructs a [`GetEulaInput`](crate::operation::get_eula::GetEulaInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_eula::GetEulaInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_eula::GetEulaInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_eula::GetEulaInput { eula_id: self.eula_id })
     }
 }

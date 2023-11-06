@@ -7,11 +7,11 @@ pub struct RegionInfo {
     /// <p>The ID of the KMS key used to encrypt the data in this Amazon Web Services Region.</p>
     pub sse_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the Amazon Web Services Region in the replication set.</p>
-    pub status: ::std::option::Option<crate::types::RegionStatus>,
+    pub status: crate::types::RegionStatus,
     /// <p>Information displayed about the status of the Amazon Web Services Region.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The most recent date and time that Incident Manager updated the Amazon Web Services Region's status.</p>
-    pub status_update_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub status_update_date_time: ::aws_smithy_types::DateTime,
 }
 impl RegionInfo {
     /// <p>The ID of the KMS key used to encrypt the data in this Amazon Web Services Region.</p>
@@ -19,16 +19,16 @@ impl RegionInfo {
         self.sse_kms_key_id.as_deref()
     }
     /// <p>The status of the Amazon Web Services Region in the replication set.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::RegionStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::RegionStatus {
+        &self.status
     }
     /// <p>Information displayed about the status of the Amazon Web Services Region.</p>
     pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
     /// <p>The most recent date and time that Incident Manager updated the Amazon Web Services Region's status.</p>
-    pub fn status_update_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.status_update_date_time.as_ref()
+    pub fn status_update_date_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.status_update_date_time
     }
 }
 impl RegionInfo {
@@ -63,6 +63,7 @@ impl RegionInfoBuilder {
         &self.sse_kms_key_id
     }
     /// <p>The status of the Amazon Web Services Region in the replication set.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::RegionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -91,6 +92,7 @@ impl RegionInfoBuilder {
         &self.status_message
     }
     /// <p>The most recent date and time that Incident Manager updated the Amazon Web Services Region's status.</p>
+    /// This field is required.
     pub fn status_update_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.status_update_date_time = ::std::option::Option::Some(input);
         self
@@ -105,12 +107,25 @@ impl RegionInfoBuilder {
         &self.status_update_date_time
     }
     /// Consumes the builder and constructs a [`RegionInfo`](crate::types::RegionInfo).
-    pub fn build(self) -> crate::types::RegionInfo {
-        crate::types::RegionInfo {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::types::builders::RegionInfoBuilder::status)
+    /// - [`status_update_date_time`](crate::types::builders::RegionInfoBuilder::status_update_date_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::RegionInfo, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RegionInfo {
             sse_kms_key_id: self.sse_kms_key_id,
-            status: self.status,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building RegionInfo",
+                )
+            })?,
             status_message: self.status_message,
-            status_update_date_time: self.status_update_date_time,
-        }
+            status_update_date_time: self.status_update_date_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status_update_date_time",
+                    "status_update_date_time was not specified but it is required when building RegionInfo",
+                )
+            })?,
+        })
     }
 }

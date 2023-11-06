@@ -44,6 +44,7 @@ pub struct DescribeStackSetInputBuilder {
 }
 impl DescribeStackSetInputBuilder {
     /// <p>The name or unique ID of the stack set whose description you want.</p>
+    /// This field is required.
     pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_set_name = ::std::option::Option::Some(input.into());
         self
@@ -89,7 +90,7 @@ impl DescribeStackSetInputBuilder {
     /// Consumes the builder and constructs a [`DescribeStackSetInput`](crate::operation::describe_stack_set::DescribeStackSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_stack_set::DescribeStackSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_stack_set::DescribeStackSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_stack_set::DescribeStackSetInput {
             stack_set_name: self.stack_set_name,
             call_as: self.call_as,

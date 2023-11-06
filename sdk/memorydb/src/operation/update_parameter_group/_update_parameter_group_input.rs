@@ -14,8 +14,10 @@ impl UpdateParameterGroupInput {
         self.parameter_group_name.as_deref()
     }
     /// <p>An array of parameter names and values for the parameter update. You must supply at least one parameter name and value; subsequent arguments are optional. A maximum of 20 parameters may be updated per request.</p>
-    pub fn parameter_name_values(&self) -> ::std::option::Option<&[crate::types::ParameterNameValue]> {
-        self.parameter_name_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameter_name_values.is_none()`.
+    pub fn parameter_name_values(&self) -> &[crate::types::ParameterNameValue] {
+        self.parameter_name_values.as_deref().unwrap_or_default()
     }
 }
 impl UpdateParameterGroupInput {
@@ -34,6 +36,7 @@ pub struct UpdateParameterGroupInputBuilder {
 }
 impl UpdateParameterGroupInputBuilder {
     /// <p>The name of the parameter group to update.</p>
+    /// This field is required.
     pub fn parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_group_name = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +73,7 @@ impl UpdateParameterGroupInputBuilder {
     /// Consumes the builder and constructs a [`UpdateParameterGroupInput`](crate::operation::update_parameter_group::UpdateParameterGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_parameter_group::UpdateParameterGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_parameter_group::UpdateParameterGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_parameter_group::UpdateParameterGroupInput {
             parameter_group_name: self.parameter_group_name,

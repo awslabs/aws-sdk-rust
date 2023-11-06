@@ -50,6 +50,7 @@ impl ListStackResourcesInputBuilder {
     /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li>
     /// </ul>
     /// <p>Default: There is no default value.</p>
+    /// This field is required.
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_name = ::std::option::Option::Some(input.into());
         self
@@ -90,7 +91,8 @@ impl ListStackResourcesInputBuilder {
     /// Consumes the builder and constructs a [`ListStackResourcesInput`](crate::operation::list_stack_resources::ListStackResourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_stack_resources::ListStackResourcesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_stack_resources::ListStackResourcesInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_stack_resources::ListStackResourcesInput {
             stack_name: self.stack_name,
             next_token: self.next_token,

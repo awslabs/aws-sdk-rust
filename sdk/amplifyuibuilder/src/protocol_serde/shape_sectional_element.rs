@@ -2,30 +2,30 @@
 pub fn ser_sectional_element(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SectionalElement,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.r#type {
-        object.key("type").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("type").string(input.r#type.as_str());
     }
-    if let Some(var_2) = &input.position {
+    if let Some(var_1) = &input.position {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("position").start_object();
-        crate::protocol_serde::shape_field_position::ser_field_position(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("position").start_object();
+        crate::protocol_serde::shape_field_position::ser_field_position(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.text {
-        object.key("text").string(var_4.as_str());
+    if let Some(var_3) = &input.text {
+        object.key("text").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.level {
+    if let Some(var_4) = &input.level {
         object.key("level").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_5).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_6) = &input.orientation {
-        object.key("orientation").string(var_6.as_str());
+    if let Some(var_5) = &input.orientation {
+        object.key("orientation").string(var_5.as_str());
     }
-    if let Some(var_7) = &input.excluded {
-        object.key("excluded").boolean(*var_7);
+    if let Some(var_6) = &input.excluded {
+        object.key("excluded").boolean(*var_6);
     }
     Ok(())
 }
@@ -89,7 +89,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::sectional_element_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

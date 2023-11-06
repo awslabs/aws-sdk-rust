@@ -64,6 +64,7 @@ impl CreateWorkerConfigurationInputBuilder {
         &self.description
     }
     /// <p>The name of the worker configuration.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -78,6 +79,7 @@ impl CreateWorkerConfigurationInputBuilder {
         &self.name
     }
     /// <p>Base64 encoded contents of connect-distributed.properties file.</p>
+    /// This field is required.
     pub fn properties_file_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.properties_file_content = ::std::option::Option::Some(input.into());
         self
@@ -96,7 +98,7 @@ impl CreateWorkerConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_worker_configuration::CreateWorkerConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_worker_configuration::CreateWorkerConfigurationInput {
             description: self.description,

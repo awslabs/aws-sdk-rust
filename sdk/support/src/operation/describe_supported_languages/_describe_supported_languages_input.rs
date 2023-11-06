@@ -41,6 +41,7 @@ pub struct DescribeSupportedLanguagesInputBuilder {
 }
 impl DescribeSupportedLanguagesInputBuilder {
     /// <p>The type of issue for the case. You can specify <code>customer-service</code> or <code>technical</code>.</p>
+    /// This field is required.
     pub fn issue_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.issue_type = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DescribeSupportedLanguagesInputBuilder {
         &self.issue_type
     }
     /// <p>The code for the Amazon Web Services service. You can use the <code>DescribeServices</code> operation to get the possible <code>serviceCode</code> values.</p>
+    /// This field is required.
     pub fn service_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_code = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl DescribeSupportedLanguagesInputBuilder {
         &self.service_code
     }
     /// <p>The category of problem for the support case. You also use the <code>DescribeServices</code> operation to get the category code for a service. Each Amazon Web Services service defines its own set of category codes.</p>
+    /// This field is required.
     pub fn category_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.category_code = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +90,7 @@ impl DescribeSupportedLanguagesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_supported_languages::DescribeSupportedLanguagesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_supported_languages::DescribeSupportedLanguagesInput {
             issue_type: self.issue_type,

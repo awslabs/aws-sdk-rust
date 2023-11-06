@@ -40,8 +40,10 @@ impl RemoveTagsFromResourceInput {
         self.resource_id.as_deref()
     }
     /// <p>Tag keys that you want to remove from the specified resource.</p>
-    pub fn tag_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tag_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_keys.is_none()`.
+    pub fn tag_keys(&self) -> &[::std::string::String] {
+        self.tag_keys.as_deref().unwrap_or_default()
     }
 }
 impl RemoveTagsFromResourceInput {
@@ -63,6 +65,7 @@ impl RemoveTagsFromResourceInputBuilder {
     /// <p>The type of resource from which you want to remove a tag.</p> <note>
     /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises managed nodes. Specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
     /// </note>
+    /// This field is required.
     pub fn resource_type(mut self, input: crate::types::ResourceTypeForTagging) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
@@ -89,6 +92,7 @@ impl RemoveTagsFromResourceInputBuilder {
     /// <p>For the Document and Parameter values, use the name of the resource.</p> <note>
     /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises managed nodes. Specify the name of the managed node in the following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.</p>
     /// </note>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -143,7 +147,7 @@ impl RemoveTagsFromResourceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_tags_from_resource::RemoveTagsFromResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::remove_tags_from_resource::RemoveTagsFromResourceInput {
             resource_type: self.resource_type,

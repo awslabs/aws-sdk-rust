@@ -34,6 +34,7 @@ pub struct DescribeWorkflowTypeInputBuilder {
 }
 impl DescribeWorkflowTypeInputBuilder {
     /// <p>The name of the domain in which this workflow type is registered.</p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeWorkflowTypeInputBuilder {
         &self.domain
     }
     /// <p>The workflow type to describe.</p>
+    /// This field is required.
     pub fn workflow_type(mut self, input: crate::types::WorkflowType) -> Self {
         self.workflow_type = ::std::option::Option::Some(input);
         self
@@ -64,7 +66,7 @@ impl DescribeWorkflowTypeInputBuilder {
     /// Consumes the builder and constructs a [`DescribeWorkflowTypeInput`](crate::operation::describe_workflow_type::DescribeWorkflowTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_workflow_type::DescribeWorkflowTypeInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_workflow_type::DescribeWorkflowTypeInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_workflow_type::DescribeWorkflowTypeInput {
             domain: self.domain,

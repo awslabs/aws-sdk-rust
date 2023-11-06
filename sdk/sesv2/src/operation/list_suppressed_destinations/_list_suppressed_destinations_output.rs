@@ -12,8 +12,10 @@ pub struct ListSuppressedDestinationsOutput {
 }
 impl ListSuppressedDestinationsOutput {
     /// <p>A list of summaries, each containing a summary for a suppressed email destination.</p>
-    pub fn suppressed_destination_summaries(&self) -> ::std::option::Option<&[crate::types::SuppressedDestinationSummary]> {
-        self.suppressed_destination_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.suppressed_destination_summaries.is_none()`.
+    pub fn suppressed_destination_summaries(&self) -> &[crate::types::SuppressedDestinationSummary] {
+        self.suppressed_destination_summaries.as_deref().unwrap_or_default()
     }
     /// <p>A token that indicates that there are additional email addresses on the suppression list for your account. To view additional suppressed addresses, issue another request to <code>ListSuppressedDestinations</code>, and pass this token in the <code>NextToken</code> parameter.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

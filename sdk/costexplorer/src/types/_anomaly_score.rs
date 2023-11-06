@@ -35,6 +35,7 @@ pub struct AnomalyScoreBuilder {
 }
 impl AnomalyScoreBuilder {
     /// <p>The maximum score that's observed during the <code>AnomalyDateInterval</code>. </p>
+    /// This field is required.
     pub fn max_score(mut self, input: f64) -> Self {
         self.max_score = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl AnomalyScoreBuilder {
         &self.max_score
     }
     /// <p>The last observed score. </p>
+    /// This field is required.
     pub fn current_score(mut self, input: f64) -> Self {
         self.current_score = ::std::option::Option::Some(input);
         self

@@ -10,8 +10,10 @@ pub struct GetSendStatisticsOutput {
 }
 impl GetSendStatisticsOutput {
     /// <p>A list of data points, each of which represents 15 minutes of activity.</p>
-    pub fn send_data_points(&self) -> ::std::option::Option<&[crate::types::SendDataPoint]> {
-        self.send_data_points.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.send_data_points.is_none()`.
+    pub fn send_data_points(&self) -> &[crate::types::SendDataPoint] {
+        self.send_data_points.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetSendStatisticsOutput {

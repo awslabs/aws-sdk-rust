@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KafkaClusterEncryptionInTransit {
     /// <p>The type of encryption in transit to the Apache Kafka cluster.</p>
-    pub encryption_type: ::std::option::Option<crate::types::KafkaClusterEncryptionInTransitType>,
+    pub encryption_type: crate::types::KafkaClusterEncryptionInTransitType,
 }
 impl KafkaClusterEncryptionInTransit {
     /// <p>The type of encryption in transit to the Apache Kafka cluster.</p>
-    pub fn encryption_type(&self) -> ::std::option::Option<&crate::types::KafkaClusterEncryptionInTransitType> {
-        self.encryption_type.as_ref()
+    pub fn encryption_type(&self) -> &crate::types::KafkaClusterEncryptionInTransitType {
+        &self.encryption_type
     }
 }
 impl KafkaClusterEncryptionInTransit {
@@ -28,6 +28,7 @@ pub struct KafkaClusterEncryptionInTransitBuilder {
 }
 impl KafkaClusterEncryptionInTransitBuilder {
     /// <p>The type of encryption in transit to the Apache Kafka cluster.</p>
+    /// This field is required.
     pub fn encryption_type(mut self, input: crate::types::KafkaClusterEncryptionInTransitType) -> Self {
         self.encryption_type = ::std::option::Option::Some(input);
         self
@@ -42,9 +43,16 @@ impl KafkaClusterEncryptionInTransitBuilder {
         &self.encryption_type
     }
     /// Consumes the builder and constructs a [`KafkaClusterEncryptionInTransit`](crate::types::KafkaClusterEncryptionInTransit).
-    pub fn build(self) -> crate::types::KafkaClusterEncryptionInTransit {
-        crate::types::KafkaClusterEncryptionInTransit {
-            encryption_type: self.encryption_type,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`encryption_type`](crate::types::builders::KafkaClusterEncryptionInTransitBuilder::encryption_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::KafkaClusterEncryptionInTransit, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::KafkaClusterEncryptionInTransit {
+            encryption_type: self.encryption_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "encryption_type",
+                    "encryption_type was not specified but it is required when building KafkaClusterEncryptionInTransit",
+                )
+            })?,
+        })
     }
 }

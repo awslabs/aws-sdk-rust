@@ -25,12 +25,16 @@ impl EngineDefaults {
         self.marker.as_deref()
     }
     /// <p>Contains a list of engine default parameters.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&[crate::types::Parameter]> {
-        self.parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
+    pub fn parameters(&self) -> &[crate::types::Parameter] {
+        self.parameters.as_deref().unwrap_or_default()
     }
     /// <p>A list of parameters specific to a particular cache node type. Each element in the list contains detailed information about one parameter.</p>
-    pub fn cache_node_type_specific_parameters(&self) -> ::std::option::Option<&[crate::types::CacheNodeTypeSpecificParameter]> {
-        self.cache_node_type_specific_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cache_node_type_specific_parameters.is_none()`.
+    pub fn cache_node_type_specific_parameters(&self) -> &[crate::types::CacheNodeTypeSpecificParameter] {
+        self.cache_node_type_specific_parameters.as_deref().unwrap_or_default()
     }
 }
 impl EngineDefaults {

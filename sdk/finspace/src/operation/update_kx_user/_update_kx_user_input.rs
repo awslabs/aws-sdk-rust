@@ -48,6 +48,7 @@ pub struct UpdateKxUserInputBuilder {
 }
 impl UpdateKxUserInputBuilder {
     /// <p>A unique identifier for the kdb environment.</p>
+    /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl UpdateKxUserInputBuilder {
         &self.environment_id
     }
     /// <p>A unique identifier for the user.</p>
+    /// This field is required.
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl UpdateKxUserInputBuilder {
         &self.user_name
     }
     /// <p>The IAM role ARN that is associated with the user.</p>
+    /// This field is required.
     pub fn iam_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_role = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +109,7 @@ impl UpdateKxUserInputBuilder {
     /// Consumes the builder and constructs a [`UpdateKxUserInput`](crate::operation::update_kx_user::UpdateKxUserInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_kx_user::UpdateKxUserInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_kx_user::UpdateKxUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_kx_user::UpdateKxUserInput {
             environment_id: self.environment_id,
             user_name: self.user_name,

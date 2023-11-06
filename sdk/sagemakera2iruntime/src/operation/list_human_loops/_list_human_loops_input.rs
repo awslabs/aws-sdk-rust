@@ -90,6 +90,7 @@ impl ListHumanLoopsInputBuilder {
         &self.creation_time_before
     }
     /// <p>The Amazon Resource Name (ARN) of a flow definition.</p>
+    /// This field is required.
     pub fn flow_definition_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_definition_arn = ::std::option::Option::Some(input.into());
         self
@@ -148,7 +149,7 @@ impl ListHumanLoopsInputBuilder {
     /// Consumes the builder and constructs a [`ListHumanLoopsInput`](crate::operation::list_human_loops::ListHumanLoopsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_human_loops::ListHumanLoopsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_human_loops::ListHumanLoopsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_human_loops::ListHumanLoopsInput {
             creation_time_after: self.creation_time_after,
             creation_time_before: self.creation_time_before,

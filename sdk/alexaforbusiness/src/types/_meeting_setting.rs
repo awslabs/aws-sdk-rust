@@ -10,12 +10,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MeetingSetting {
     /// <p>The values that indicate whether the pin is always required.</p>
-    pub require_pin: ::std::option::Option<crate::types::RequirePin>,
+    pub require_pin: crate::types::RequirePin,
 }
 impl MeetingSetting {
     /// <p>The values that indicate whether the pin is always required.</p>
-    pub fn require_pin(&self) -> ::std::option::Option<&crate::types::RequirePin> {
-        self.require_pin.as_ref()
+    pub fn require_pin(&self) -> &crate::types::RequirePin {
+        &self.require_pin
     }
 }
 impl MeetingSetting {
@@ -33,6 +33,7 @@ pub struct MeetingSettingBuilder {
 }
 impl MeetingSettingBuilder {
     /// <p>The values that indicate whether the pin is always required.</p>
+    /// This field is required.
     pub fn require_pin(mut self, input: crate::types::RequirePin) -> Self {
         self.require_pin = ::std::option::Option::Some(input);
         self
@@ -47,9 +48,16 @@ impl MeetingSettingBuilder {
         &self.require_pin
     }
     /// Consumes the builder and constructs a [`MeetingSetting`](crate::types::MeetingSetting).
-    pub fn build(self) -> crate::types::MeetingSetting {
-        crate::types::MeetingSetting {
-            require_pin: self.require_pin,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`require_pin`](crate::types::builders::MeetingSettingBuilder::require_pin)
+    pub fn build(self) -> ::std::result::Result<crate::types::MeetingSetting, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::MeetingSetting {
+            require_pin: self.require_pin.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "require_pin",
+                    "require_pin was not specified but it is required when building MeetingSetting",
+                )
+            })?,
+        })
     }
 }

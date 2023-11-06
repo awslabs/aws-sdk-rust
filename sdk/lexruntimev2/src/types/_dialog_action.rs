@@ -12,7 +12,7 @@ pub struct DialogAction {
     /// <li> <p> <code>ElicitIntent</code> - The next action is to elicit an intent from the user.</p> </li>
     /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
     /// </ul>
-    pub r#type: ::std::option::Option<crate::types::DialogActionType>,
+    pub r#type: crate::types::DialogActionType,
     /// <p>The name of the slot that should be elicited from the user.</p>
     pub slot_to_elicit: ::std::option::Option<::std::string::String>,
     /// <p>Configures the slot to use spell-by-letter or spell-by-word style. When you use a style on a slot, users can spell out their input to make it clear to your bot.</p>
@@ -34,8 +34,8 @@ impl DialogAction {
     /// <li> <p> <code>ElicitIntent</code> - The next action is to elicit an intent from the user.</p> </li>
     /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::DialogActionType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::DialogActionType {
+        &self.r#type
     }
     /// <p>The name of the slot that should be elicited from the user.</p>
     pub fn slot_to_elicit(&self) -> ::std::option::Option<&str> {
@@ -80,6 +80,7 @@ impl DialogActionBuilder {
     /// <li> <p> <code>ElicitIntent</code> - The next action is to elicit an intent from the user.</p> </li>
     /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::DialogActionType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -165,12 +166,19 @@ impl DialogActionBuilder {
         &self.sub_slot_to_elicit
     }
     /// Consumes the builder and constructs a [`DialogAction`](crate::types::DialogAction).
-    pub fn build(self) -> crate::types::DialogAction {
-        crate::types::DialogAction {
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::DialogActionBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::DialogAction, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DialogAction {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building DialogAction",
+                )
+            })?,
             slot_to_elicit: self.slot_to_elicit,
             slot_elicitation_style: self.slot_elicitation_style,
             sub_slot_to_elicit: self.sub_slot_to_elicit,
-        }
+        })
     }
 }

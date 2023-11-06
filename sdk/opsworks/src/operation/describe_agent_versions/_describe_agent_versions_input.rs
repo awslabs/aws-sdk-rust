@@ -64,7 +64,7 @@ impl DescribeAgentVersionsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAgentVersionsInput`](crate::operation::describe_agent_versions::DescribeAgentVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_agent_versions::DescribeAgentVersionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_agent_versions::DescribeAgentVersionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_agent_versions::DescribeAgentVersionsInput {
             stack_id: self.stack_id,

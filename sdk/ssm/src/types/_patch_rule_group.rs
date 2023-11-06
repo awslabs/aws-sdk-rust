@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PatchRuleGroup {
     /// <p>The rules that make up the rule group.</p>
-    pub patch_rules: ::std::option::Option<::std::vec::Vec<crate::types::PatchRule>>,
+    pub patch_rules: ::std::vec::Vec<crate::types::PatchRule>,
 }
 impl PatchRuleGroup {
     /// <p>The rules that make up the rule group.</p>
-    pub fn patch_rules(&self) -> ::std::option::Option<&[crate::types::PatchRule]> {
-        self.patch_rules.as_deref()
+    pub fn patch_rules(&self) -> &[crate::types::PatchRule] {
+        use std::ops::Deref;
+        self.patch_rules.deref()
     }
 }
 impl PatchRuleGroup {
@@ -48,9 +49,16 @@ impl PatchRuleGroupBuilder {
         &self.patch_rules
     }
     /// Consumes the builder and constructs a [`PatchRuleGroup`](crate::types::PatchRuleGroup).
-    pub fn build(self) -> crate::types::PatchRuleGroup {
-        crate::types::PatchRuleGroup {
-            patch_rules: self.patch_rules,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`patch_rules`](crate::types::builders::PatchRuleGroupBuilder::patch_rules)
+    pub fn build(self) -> ::std::result::Result<crate::types::PatchRuleGroup, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PatchRuleGroup {
+            patch_rules: self.patch_rules.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "patch_rules",
+                    "patch_rules was not specified but it is required when building PatchRuleGroup",
+                )
+            })?,
+        })
     }
 }

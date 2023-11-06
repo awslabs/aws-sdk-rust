@@ -93,7 +93,7 @@ impl ListRolesInputBuilder {
         &self.max_items
     }
     /// Consumes the builder and constructs a [`ListRolesInput`](crate::operation::list_roles::ListRolesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_roles::ListRolesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_roles::ListRolesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_roles::ListRolesInput {
             path_prefix: self.path_prefix,
             marker: self.marker,

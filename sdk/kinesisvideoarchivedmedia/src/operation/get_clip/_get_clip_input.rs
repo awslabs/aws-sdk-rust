@@ -79,6 +79,7 @@ impl GetClipInputBuilder {
         &self.stream_arn
     }
     /// <p>The time range of the requested clip and the source of the timestamps.</p>
+    /// This field is required.
     pub fn clip_fragment_selector(mut self, input: crate::types::ClipFragmentSelector) -> Self {
         self.clip_fragment_selector = ::std::option::Option::Some(input);
         self
@@ -93,7 +94,7 @@ impl GetClipInputBuilder {
         &self.clip_fragment_selector
     }
     /// Consumes the builder and constructs a [`GetClipInput`](crate::operation::get_clip::GetClipInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_clip::GetClipInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_clip::GetClipInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_clip::GetClipInput {
             stream_name: self.stream_name,
             stream_arn: self.stream_arn,

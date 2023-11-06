@@ -27,6 +27,7 @@ pub struct DeprecateDomainInputBuilder {
 }
 impl DeprecateDomainInputBuilder {
     /// <p>The name of the domain to deprecate.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeprecateDomainInputBuilder {
     /// Consumes the builder and constructs a [`DeprecateDomainInput`](crate::operation::deprecate_domain::DeprecateDomainInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::deprecate_domain::DeprecateDomainInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::deprecate_domain::DeprecateDomainInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::deprecate_domain::DeprecateDomainInput { name: self.name })
     }
 }

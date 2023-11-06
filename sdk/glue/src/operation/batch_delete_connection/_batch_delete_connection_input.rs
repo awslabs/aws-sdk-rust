@@ -14,8 +14,10 @@ impl BatchDeleteConnectionInput {
         self.catalog_id.as_deref()
     }
     /// <p>A list of names of the connections to delete.</p>
-    pub fn connection_name_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.connection_name_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connection_name_list.is_none()`.
+    pub fn connection_name_list(&self) -> &[::std::string::String] {
+        self.connection_name_list.as_deref().unwrap_or_default()
     }
 }
 impl BatchDeleteConnectionInput {
@@ -70,7 +72,7 @@ impl BatchDeleteConnectionInputBuilder {
     /// Consumes the builder and constructs a [`BatchDeleteConnectionInput`](crate::operation::batch_delete_connection::BatchDeleteConnectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_delete_connection::BatchDeleteConnectionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_delete_connection::BatchDeleteConnectionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_delete_connection::BatchDeleteConnectionInput {
             catalog_id: self.catalog_id,

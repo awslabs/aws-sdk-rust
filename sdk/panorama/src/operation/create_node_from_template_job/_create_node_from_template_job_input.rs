@@ -44,8 +44,10 @@ impl CreateNodeFromTemplateJobInput {
         self.template_parameters.as_ref()
     }
     /// <p>Tags for the job.</p>
-    pub fn job_tags(&self) -> ::std::option::Option<&[crate::types::JobResourceTags]> {
-        self.job_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_tags.is_none()`.
+    pub fn job_tags(&self) -> &[crate::types::JobResourceTags] {
+        self.job_tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateNodeFromTemplateJobInput {
@@ -69,6 +71,7 @@ pub struct CreateNodeFromTemplateJobInputBuilder {
 }
 impl CreateNodeFromTemplateJobInputBuilder {
     /// <p>The type of node.</p>
+    /// This field is required.
     pub fn template_type(mut self, input: crate::types::TemplateType) -> Self {
         self.template_type = ::std::option::Option::Some(input);
         self
@@ -83,6 +86,7 @@ impl CreateNodeFromTemplateJobInputBuilder {
         &self.template_type
     }
     /// <p>An output package name for the node.</p>
+    /// This field is required.
     pub fn output_package_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_package_name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +101,7 @@ impl CreateNodeFromTemplateJobInputBuilder {
         &self.output_package_name
     }
     /// <p>An output package version for the node.</p>
+    /// This field is required.
     pub fn output_package_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_package_version = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +116,7 @@ impl CreateNodeFromTemplateJobInputBuilder {
         &self.output_package_version
     }
     /// <p>A name for the node.</p>
+    /// This field is required.
     pub fn node_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_name = ::std::option::Option::Some(input.into());
         self
@@ -190,7 +196,7 @@ impl CreateNodeFromTemplateJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobInput {
             template_type: self.template_type,

@@ -41,6 +41,7 @@ pub struct DescribeContactEvaluationOutputBuilder {
 }
 impl DescribeContactEvaluationOutputBuilder {
     /// <p>Information about the evaluation form completed for a specific contact.</p>
+    /// This field is required.
     pub fn evaluation(mut self, input: crate::types::Evaluation) -> Self {
         self.evaluation = ::std::option::Option::Some(input);
         self
@@ -55,6 +56,7 @@ impl DescribeContactEvaluationOutputBuilder {
         &self.evaluation
     }
     /// <p>Information about the evaluation form.</p>
+    /// This field is required.
     pub fn evaluation_form(mut self, input: crate::types::EvaluationFormContent) -> Self {
         self.evaluation_form = ::std::option::Option::Some(input);
         self

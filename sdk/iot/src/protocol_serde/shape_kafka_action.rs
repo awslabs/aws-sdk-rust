@@ -58,7 +58,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::kafka_action_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -69,40 +71,40 @@ where
 pub fn ser_kafka_action(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::KafkaAction,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.destination_arn {
-        object.key("destinationArn").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("destinationArn").string(input.destination_arn.as_str());
     }
-    if let Some(var_2) = &input.topic {
-        object.key("topic").string(var_2.as_str());
+    {
+        object.key("topic").string(input.topic.as_str());
     }
-    if let Some(var_3) = &input.key {
-        object.key("key").string(var_3.as_str());
+    if let Some(var_1) = &input.key {
+        object.key("key").string(var_1.as_str());
     }
-    if let Some(var_4) = &input.partition {
-        object.key("partition").string(var_4.as_str());
+    if let Some(var_2) = &input.partition {
+        object.key("partition").string(var_2.as_str());
     }
-    if let Some(var_5) = &input.client_properties {
+    {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("clientProperties").start_object();
-        for (key_7, value_8) in var_5 {
+        let mut object_3 = object.key("clientProperties").start_object();
+        for (key_4, value_5) in &input.client_properties {
             {
-                object_6.key(key_7.as_str()).string(value_8.as_str());
+                object_3.key(key_4.as_str()).string(value_5.as_str());
             }
         }
-        object_6.finish();
+        object_3.finish();
     }
-    if let Some(var_9) = &input.headers {
-        let mut array_10 = object.key("headers").start_array();
-        for item_11 in var_9 {
+    if let Some(var_6) = &input.headers {
+        let mut array_7 = object.key("headers").start_array();
+        for item_8 in var_6 {
             {
                 #[allow(unused_mut)]
-                let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_kafka_action_header::ser_kafka_action_header(&mut object_12, item_11)?;
-                object_12.finish();
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_kafka_action_header::ser_kafka_action_header(&mut object_9, item_8)?;
+                object_9.finish();
             }
         }
-        array_10.finish();
+        array_7.finish();
     }
     Ok(())
 }

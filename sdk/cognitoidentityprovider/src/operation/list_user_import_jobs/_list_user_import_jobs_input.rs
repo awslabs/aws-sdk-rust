@@ -42,6 +42,7 @@ pub struct ListUserImportJobsInputBuilder {
 }
 impl ListUserImportJobsInputBuilder {
     /// <p>The user pool ID for the user pool that the users are being imported into.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl ListUserImportJobsInputBuilder {
         &self.user_pool_id
     }
     /// <p>The maximum number of import jobs you want the request to return.</p>
+    /// This field is required.
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
@@ -86,7 +88,7 @@ impl ListUserImportJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListUserImportJobsInput`](crate::operation::list_user_import_jobs::ListUserImportJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_user_import_jobs::ListUserImportJobsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_user_import_jobs::ListUserImportJobsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_user_import_jobs::ListUserImportJobsInput {
             user_pool_id: self.user_pool_id,

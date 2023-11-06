@@ -70,8 +70,10 @@ impl NatGateway {
         self.failure_message.as_deref()
     }
     /// <p>Information about the IP addresses and network interface associated with the NAT gateway.</p>
-    pub fn nat_gateway_addresses(&self) -> ::std::option::Option<&[crate::types::NatGatewayAddress]> {
-        self.nat_gateway_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.nat_gateway_addresses.is_none()`.
+    pub fn nat_gateway_addresses(&self) -> &[crate::types::NatGatewayAddress] {
+        self.nat_gateway_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the NAT gateway.</p>
     pub fn nat_gateway_id(&self) -> ::std::option::Option<&str> {
@@ -101,8 +103,10 @@ impl NatGateway {
         self.vpc_id.as_deref()
     }
     /// <p>The tags for the NAT gateway.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether the NAT gateway supports public or private connectivity.</p>
     pub fn connectivity_type(&self) -> ::std::option::Option<&crate::types::ConnectivityType> {

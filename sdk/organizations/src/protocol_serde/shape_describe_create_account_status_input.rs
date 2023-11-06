@@ -2,7 +2,7 @@
 pub fn ser_describe_create_account_status_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_create_account_status::DescribeCreateAccountStatusInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.create_account_request_id {
         object.key("CreateAccountRequestId").string(var_1.as_str());
     }

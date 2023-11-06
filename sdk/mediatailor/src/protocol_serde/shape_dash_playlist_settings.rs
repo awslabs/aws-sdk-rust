@@ -2,7 +2,7 @@
 pub fn ser_dash_playlist_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DashPlaylistSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.manifest_window_seconds != 0 {
         object.key("ManifestWindowSeconds").number(
             #[allow(clippy::useless_conversion)]

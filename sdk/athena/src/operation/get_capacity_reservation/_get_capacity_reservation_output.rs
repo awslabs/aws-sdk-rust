@@ -34,6 +34,7 @@ pub struct GetCapacityReservationOutputBuilder {
 }
 impl GetCapacityReservationOutputBuilder {
     /// <p>The requested capacity reservation structure.</p>
+    /// This field is required.
     pub fn capacity_reservation(mut self, input: crate::types::CapacityReservation) -> Self {
         self.capacity_reservation = ::std::option::Option::Some(input);
         self

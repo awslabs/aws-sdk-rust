@@ -2,7 +2,7 @@
 pub fn ser_topic_relative_date_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TopicRelativeDateFilter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.time_granularity {
         object.key("TimeGranularity").string(var_1.as_str());
     }

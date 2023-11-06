@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetKeyGroupConfig`](crate::operation::get_key_group_config::builders::GetKeyGroupConfigFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_key_group_config::builders::GetKeyGroupConfigFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_key_group_config::builders::GetKeyGroupConfigFluentBuilder::set_id): <p>The identifier of the key group whose configuration you are getting. To get the identifier, use <code>ListKeyGroups</code>.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_key_group_config::builders::GetKeyGroupConfigFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_key_group_config::builders::GetKeyGroupConfigFluentBuilder::set_id):<br>required: **true**<br><p>The identifier of the key group whose configuration you are getting. To get the identifier, use <code>ListKeyGroups</code>.</p><br>
     /// - On success, responds with [`GetKeyGroupConfigOutput`](crate::operation::get_key_group_config::GetKeyGroupConfigOutput) with field(s):
     ///   - [`key_group_config(Option<KeyGroupConfig>)`](crate::operation::get_key_group_config::GetKeyGroupConfigOutput::key_group_config): <p>The key group configuration.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::get_key_group_config::GetKeyGroupConfigOutput::e_tag): <p>The identifier for this version of the key group.</p>

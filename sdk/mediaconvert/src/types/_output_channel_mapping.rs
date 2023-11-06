@@ -11,12 +11,16 @@ pub struct OutputChannelMapping {
 }
 impl OutputChannelMapping {
     /// Use this setting to specify your remix values when they are integers, such as -10, 0, or 4.
-    pub fn input_channels(&self) -> ::std::option::Option<&[i32]> {
-        self.input_channels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_channels.is_none()`.
+    pub fn input_channels(&self) -> &[i32] {
+        self.input_channels.as_deref().unwrap_or_default()
     }
     /// Use this setting to specify your remix values when they have a decimal component, such as -10.312, 0.08, or 4.9. MediaConvert rounds your remixing values to the nearest thousandth.
-    pub fn input_channels_fine_tune(&self) -> ::std::option::Option<&[f64]> {
-        self.input_channels_fine_tune.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_channels_fine_tune.is_none()`.
+    pub fn input_channels_fine_tune(&self) -> &[f64] {
+        self.input_channels_fine_tune.as_deref().unwrap_or_default()
     }
 }
 impl OutputChannelMapping {

@@ -27,6 +27,7 @@ pub struct DeregisterInstanceInputBuilder {
 }
 impl DeregisterInstanceInputBuilder {
     /// <p>The instance ID.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeregisterInstanceInputBuilder {
     /// Consumes the builder and constructs a [`DeregisterInstanceInput`](crate::operation::deregister_instance::DeregisterInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::deregister_instance::DeregisterInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::deregister_instance::DeregisterInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::deregister_instance::DeregisterInstanceInput {
             instance_id: self.instance_id,
         })

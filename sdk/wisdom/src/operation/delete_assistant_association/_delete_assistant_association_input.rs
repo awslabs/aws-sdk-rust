@@ -34,6 +34,7 @@ pub struct DeleteAssistantAssociationInputBuilder {
 }
 impl DeleteAssistantAssociationInputBuilder {
     /// <p>The identifier of the assistant association. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// This field is required.
     pub fn assistant_association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assistant_association_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteAssistantAssociationInputBuilder {
         &self.assistant_association_id
     }
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// This field is required.
     pub fn assistant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assistant_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl DeleteAssistantAssociationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_assistant_association::DeleteAssistantAssociationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_assistant_association::DeleteAssistantAssociationInput {
             assistant_association_id: self.assistant_association_id,

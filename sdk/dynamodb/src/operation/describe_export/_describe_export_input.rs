@@ -27,6 +27,7 @@ pub struct DescribeExportInputBuilder {
 }
 impl DescribeExportInputBuilder {
     /// <p>The Amazon Resource Name (ARN) associated with the export.</p>
+    /// This field is required.
     pub fn export_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.export_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeExportInputBuilder {
     /// Consumes the builder and constructs a [`DescribeExportInput`](crate::operation::describe_export::DescribeExportInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_export::DescribeExportInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_export::DescribeExportInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_export::DescribeExportInput { export_arn: self.export_arn })
     }
 }

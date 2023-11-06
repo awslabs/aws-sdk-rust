@@ -42,6 +42,7 @@ pub struct TerminateSolNetworkInstanceInputBuilder {
 }
 impl TerminateSolNetworkInstanceInputBuilder {
     /// <p>ID of the network instance.</p>
+    /// This field is required.
     pub fn ns_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ns_instance_id = ::std::option::Option::Some(input.into());
         self
@@ -80,7 +81,7 @@ impl TerminateSolNetworkInstanceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::terminate_sol_network_instance::TerminateSolNetworkInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::terminate_sol_network_instance::TerminateSolNetworkInstanceInput {
             ns_instance_id: self.ns_instance_id,

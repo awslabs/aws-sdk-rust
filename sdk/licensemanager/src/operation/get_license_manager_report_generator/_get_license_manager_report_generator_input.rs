@@ -27,6 +27,7 @@ pub struct GetLicenseManagerReportGeneratorInputBuilder {
 }
 impl GetLicenseManagerReportGeneratorInputBuilder {
     /// <p>Amazon Resource Name (ARN) of the report generator.</p>
+    /// This field is required.
     pub fn license_manager_report_generator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_manager_report_generator_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetLicenseManagerReportGeneratorInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorInput {

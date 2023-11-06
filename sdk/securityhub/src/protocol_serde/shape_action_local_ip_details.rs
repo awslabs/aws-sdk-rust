@@ -2,7 +2,7 @@
 pub fn ser_action_local_ip_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ActionLocalIpDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ip_address_v4 {
         object.key("IpAddressV4").string(var_1.as_str());
     }

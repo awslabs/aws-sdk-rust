@@ -15,8 +15,10 @@ impl ListSpeechSynthesisTasksOutput {
         self.next_token.as_deref()
     }
     /// <p>List of SynthesisTask objects that provides information from the specified task in the list request, including output format, creation time, task status, and so on.</p>
-    pub fn synthesis_tasks(&self) -> ::std::option::Option<&[crate::types::SynthesisTask]> {
-        self.synthesis_tasks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.synthesis_tasks.is_none()`.
+    pub fn synthesis_tasks(&self) -> &[crate::types::SynthesisTask] {
+        self.synthesis_tasks.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListSpeechSynthesisTasksOutput {

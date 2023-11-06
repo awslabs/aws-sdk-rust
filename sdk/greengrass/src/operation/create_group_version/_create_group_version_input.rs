@@ -153,6 +153,7 @@ impl CreateGroupVersionInputBuilder {
         &self.function_definition_version_arn
     }
     /// The ID of the Greengrass group.
+    /// This field is required.
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
         self
@@ -211,7 +212,8 @@ impl CreateGroupVersionInputBuilder {
     /// Consumes the builder and constructs a [`CreateGroupVersionInput`](crate::operation::create_group_version::CreateGroupVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_group_version::CreateGroupVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_group_version::CreateGroupVersionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_group_version::CreateGroupVersionInput {
             amzn_client_token: self.amzn_client_token,
             connector_definition_version_arn: self.connector_definition_version_arn,

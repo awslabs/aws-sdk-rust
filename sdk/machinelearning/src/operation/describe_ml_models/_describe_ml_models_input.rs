@@ -363,7 +363,7 @@ impl DescribeMlModelsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeMlModelsInput`](crate::operation::describe_ml_models::DescribeMlModelsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_ml_models::DescribeMlModelsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_ml_models::DescribeMlModelsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_ml_models::DescribeMlModelsInput {
             filter_variable: self.filter_variable,
             eq: self.eq,

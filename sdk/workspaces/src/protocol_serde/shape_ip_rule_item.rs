@@ -2,7 +2,7 @@
 pub fn ser_ip_rule_item(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IpRuleItem,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ip_rule {
         object.key("ipRule").string(var_1.as_str());
     }

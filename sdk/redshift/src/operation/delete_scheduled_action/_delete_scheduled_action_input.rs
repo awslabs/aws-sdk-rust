@@ -27,6 +27,7 @@ pub struct DeleteScheduledActionInputBuilder {
 }
 impl DeleteScheduledActionInputBuilder {
     /// <p>The name of the scheduled action to delete. </p>
+    /// This field is required.
     pub fn scheduled_action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduled_action_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteScheduledActionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteScheduledActionInput`](crate::operation::delete_scheduled_action::DeleteScheduledActionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_scheduled_action::DeleteScheduledActionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_scheduled_action::DeleteScheduledActionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_scheduled_action::DeleteScheduledActionInput {
             scheduled_action_name: self.scheduled_action_name,

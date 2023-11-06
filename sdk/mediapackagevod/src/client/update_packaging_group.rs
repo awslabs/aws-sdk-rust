@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdatePackagingGroup`](crate::operation::update_packaging_group::builders::UpdatePackagingGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`authorization(Authorization)`](crate::operation::update_packaging_group::builders::UpdatePackagingGroupFluentBuilder::authorization) / [`set_authorization(Option<Authorization>)`](crate::operation::update_packaging_group::builders::UpdatePackagingGroupFluentBuilder::set_authorization): CDN Authorization credentials
-    ///   - [`id(impl Into<String>)`](crate::operation::update_packaging_group::builders::UpdatePackagingGroupFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::update_packaging_group::builders::UpdatePackagingGroupFluentBuilder::set_id): The ID of a MediaPackage VOD PackagingGroup resource.
+    ///   - [`authorization(Authorization)`](crate::operation::update_packaging_group::builders::UpdatePackagingGroupFluentBuilder::authorization) / [`set_authorization(Option<Authorization>)`](crate::operation::update_packaging_group::builders::UpdatePackagingGroupFluentBuilder::set_authorization):<br>required: **false**<br>CDN Authorization credentials<br>
+    ///   - [`id(impl Into<String>)`](crate::operation::update_packaging_group::builders::UpdatePackagingGroupFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::update_packaging_group::builders::UpdatePackagingGroupFluentBuilder::set_id):<br>required: **true**<br>The ID of a MediaPackage VOD PackagingGroup resource.<br>
     /// - On success, responds with [`UpdatePackagingGroupOutput`](crate::operation::update_packaging_group::UpdatePackagingGroupOutput) with field(s):
     ///   - [`approximate_asset_count(Option<i32>)`](crate::operation::update_packaging_group::UpdatePackagingGroupOutput::approximate_asset_count): The approximate asset count of the PackagingGroup.
     ///   - [`arn(Option<String>)`](crate::operation::update_packaging_group::UpdatePackagingGroupOutput::arn): The ARN of the PackagingGroup.
@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`domain_name(Option<String>)`](crate::operation::update_packaging_group::UpdatePackagingGroupOutput::domain_name): The fully qualified domain name for Assets in the PackagingGroup.
     ///   - [`egress_access_logs(Option<EgressAccessLogs>)`](crate::operation::update_packaging_group::UpdatePackagingGroupOutput::egress_access_logs): Configure egress access logging.
     ///   - [`id(Option<String>)`](crate::operation::update_packaging_group::UpdatePackagingGroupOutput::id): The ID of the PackagingGroup.
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::update_packaging_group::UpdatePackagingGroupOutput::tags): A collection of tags associated with a resource
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::update_packaging_group::UpdatePackagingGroupOutput::tags): A collection of tags associated with a resource
     /// - On failure, responds with [`SdkError<UpdatePackagingGroupError>`](crate::operation::update_packaging_group::UpdatePackagingGroupError)
     pub fn update_packaging_group(&self) -> crate::operation::update_packaging_group::builders::UpdatePackagingGroupFluentBuilder {
         crate::operation::update_packaging_group::builders::UpdatePackagingGroupFluentBuilder::new(self.handle.clone())

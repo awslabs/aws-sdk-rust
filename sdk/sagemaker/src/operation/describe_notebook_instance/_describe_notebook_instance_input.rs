@@ -27,6 +27,7 @@ pub struct DescribeNotebookInstanceInputBuilder {
 }
 impl DescribeNotebookInstanceInputBuilder {
     /// <p>The name of the notebook instance that you want information about.</p>
+    /// This field is required.
     pub fn notebook_instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_instance_name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeNotebookInstanceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_notebook_instance::DescribeNotebookInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_notebook_instance::DescribeNotebookInstanceInput {
             notebook_instance_name: self.notebook_instance_name,

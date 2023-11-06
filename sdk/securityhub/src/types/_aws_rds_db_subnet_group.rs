@@ -35,8 +35,10 @@ impl AwsRdsDbSubnetGroup {
         self.subnet_group_status.as_deref()
     }
     /// <p>A list of subnets in the subnet group.</p>
-    pub fn subnets(&self) -> ::std::option::Option<&[crate::types::AwsRdsDbSubnetGroupSubnet]> {
-        self.subnets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnets.is_none()`.
+    pub fn subnets(&self) -> &[crate::types::AwsRdsDbSubnetGroupSubnet] {
+        self.subnets.as_deref().unwrap_or_default()
     }
     /// <p>The ARN of the subnet group.</p>
     pub fn db_subnet_group_arn(&self) -> ::std::option::Option<&str> {

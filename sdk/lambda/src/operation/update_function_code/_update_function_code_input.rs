@@ -76,8 +76,10 @@ impl UpdateFunctionCodeInput {
         self.revision_id.as_deref()
     }
     /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64). The default value is <code>x86_64</code>.</p>
-    pub fn architectures(&self) -> ::std::option::Option<&[crate::types::Architecture]> {
-        self.architectures.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.architectures.is_none()`.
+    pub fn architectures(&self) -> &[crate::types::Architecture] {
+        self.architectures.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for UpdateFunctionCodeInput {
@@ -127,6 +129,7 @@ impl UpdateFunctionCodeInputBuilder {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    /// This field is required.
     pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_name = ::std::option::Option::Some(input.into());
         self
@@ -289,7 +292,8 @@ impl UpdateFunctionCodeInputBuilder {
     /// Consumes the builder and constructs a [`UpdateFunctionCodeInput`](crate::operation::update_function_code::UpdateFunctionCodeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_function_code::UpdateFunctionCodeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_function_code::UpdateFunctionCodeInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_function_code::UpdateFunctionCodeInput {
             function_name: self.function_name,
             zip_file: self.zip_file,

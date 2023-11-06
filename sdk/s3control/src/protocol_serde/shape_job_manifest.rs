@@ -2,7 +2,7 @@
 pub fn ser_job_manifest(
     input: &crate::types::JobManifest,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_1) = &input.spec {
@@ -17,6 +17,7 @@ pub fn ser_job_manifest(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_job_manifest(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::JobManifest, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -47,5 +48,5 @@ pub fn de_job_manifest(
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::job_manifest_correct_errors(builder).build())
 }

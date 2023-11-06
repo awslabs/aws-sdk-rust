@@ -15,8 +15,10 @@ impl DimensionContribution {
         self.dimension_name.as_deref()
     }
     /// <p>A list of dimension values that contributed to the anomaly.</p>
-    pub fn dimension_value_contribution_list(&self) -> ::std::option::Option<&[crate::types::DimensionValueContribution]> {
-        self.dimension_value_contribution_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimension_value_contribution_list.is_none()`.
+    pub fn dimension_value_contribution_list(&self) -> &[crate::types::DimensionValueContribution] {
+        self.dimension_value_contribution_list.as_deref().unwrap_or_default()
     }
 }
 impl DimensionContribution {

@@ -35,6 +35,7 @@ pub struct PollForThirdPartyJobsInputBuilder {
 }
 impl PollForThirdPartyJobsInputBuilder {
     /// <p>Represents information about an action type.</p>
+    /// This field is required.
     pub fn action_type_id(mut self, input: crate::types::ActionTypeId) -> Self {
         self.action_type_id = ::std::option::Option::Some(input);
         self
@@ -65,8 +66,10 @@ impl PollForThirdPartyJobsInputBuilder {
     /// Consumes the builder and constructs a [`PollForThirdPartyJobsInput`](crate::operation::poll_for_third_party_jobs::PollForThirdPartyJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::poll_for_third_party_jobs::PollForThirdPartyJobsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::poll_for_third_party_jobs::PollForThirdPartyJobsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::poll_for_third_party_jobs::PollForThirdPartyJobsInput {
             action_type_id: self.action_type_id,
             max_batch_size: self.max_batch_size,

@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DescribeGroupOutput {
     /// <p>The identifier for a group in the identity store.</p>
-    pub group_id: ::std::option::Option<::std::string::String>,
+    pub group_id: ::std::string::String,
     /// <p>The group’s display name value. The length limit is 1,024 characters. This value can consist of letters, accented characters, symbols, numbers, punctuation, tab, new line, carriage return, space, and nonbreaking space in this attribute. This value is specified at the time that the group is created and stored as an attribute of the group object in the identity store.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider.</p>
@@ -12,29 +12,33 @@ pub struct DescribeGroupOutput {
     /// <p>A string containing a description of the group.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The globally unique identifier for the identity store.</p>
-    pub identity_store_id: ::std::option::Option<::std::string::String>,
+    pub identity_store_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl DescribeGroupOutput {
     /// <p>The identifier for a group in the identity store.</p>
-    pub fn group_id(&self) -> ::std::option::Option<&str> {
-        self.group_id.as_deref()
+    pub fn group_id(&self) -> &str {
+        use std::ops::Deref;
+        self.group_id.deref()
     }
     /// <p>The group’s display name value. The length limit is 1,024 characters. This value can consist of letters, accented characters, symbols, numbers, punctuation, tab, new line, carriage return, space, and nonbreaking space in this attribute. This value is specified at the time that the group is created and stored as an attribute of the group object in the identity store.</p>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
     /// <p>A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider.</p>
-    pub fn external_ids(&self) -> ::std::option::Option<&[crate::types::ExternalId]> {
-        self.external_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.external_ids.is_none()`.
+    pub fn external_ids(&self) -> &[crate::types::ExternalId] {
+        self.external_ids.as_deref().unwrap_or_default()
     }
     /// <p>A string containing a description of the group.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(&self) -> ::std::option::Option<&str> {
-        self.identity_store_id.as_deref()
+    pub fn identity_store_id(&self) -> &str {
+        use std::ops::Deref;
+        self.identity_store_id.deref()
     }
 }
 impl ::std::fmt::Debug for DescribeGroupOutput {
@@ -74,6 +78,7 @@ pub struct DescribeGroupOutputBuilder {
 }
 impl DescribeGroupOutputBuilder {
     /// <p>The identifier for a group in the identity store.</p>
+    /// This field is required.
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
         self
@@ -136,6 +141,7 @@ impl DescribeGroupOutputBuilder {
         &self.description
     }
     /// <p>The globally unique identifier for the identity store.</p>
+    /// This field is required.
     pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_store_id = ::std::option::Option::Some(input.into());
         self
@@ -159,15 +165,30 @@ impl DescribeGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeGroupOutput`](crate::operation::describe_group::DescribeGroupOutput).
-    pub fn build(self) -> crate::operation::describe_group::DescribeGroupOutput {
-        crate::operation::describe_group::DescribeGroupOutput {
-            group_id: self.group_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`group_id`](crate::operation::describe_group::builders::DescribeGroupOutputBuilder::group_id)
+    /// - [`identity_store_id`](crate::operation::describe_group::builders::DescribeGroupOutputBuilder::identity_store_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_group::DescribeGroupOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_group::DescribeGroupOutput {
+            group_id: self.group_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "group_id",
+                    "group_id was not specified but it is required when building DescribeGroupOutput",
+                )
+            })?,
             display_name: self.display_name,
             external_ids: self.external_ids,
             description: self.description,
-            identity_store_id: self.identity_store_id,
+            identity_store_id: self.identity_store_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "identity_store_id",
+                    "identity_store_id was not specified but it is required when building DescribeGroupOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for DescribeGroupOutputBuilder {

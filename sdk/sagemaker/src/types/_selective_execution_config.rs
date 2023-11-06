@@ -17,8 +17,10 @@ impl SelectiveExecutionConfig {
         self.source_pipeline_execution_arn.as_deref()
     }
     /// <p>A list of pipeline steps to run. All step(s) in all path(s) between two selected steps should be included.</p>
-    pub fn selected_steps(&self) -> ::std::option::Option<&[crate::types::SelectedStep]> {
-        self.selected_steps.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.selected_steps.is_none()`.
+    pub fn selected_steps(&self) -> &[crate::types::SelectedStep] {
+        self.selected_steps.as_deref().unwrap_or_default()
     }
 }
 impl SelectiveExecutionConfig {

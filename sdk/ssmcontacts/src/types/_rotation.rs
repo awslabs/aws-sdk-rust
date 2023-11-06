@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Rotation {
     /// <p>The Amazon Resource Name (ARN) of the rotation.</p>
-    pub rotation_arn: ::std::option::Option<::std::string::String>,
+    pub rotation_arn: ::std::string::String,
     /// <p>The name of the rotation.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The Amazon Resource Names (ARNs) of the contacts assigned to the rotation team.</p>
     pub contact_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The date and time the rotation becomes active.</p>
@@ -19,16 +19,20 @@ pub struct Rotation {
 }
 impl Rotation {
     /// <p>The Amazon Resource Name (ARN) of the rotation.</p>
-    pub fn rotation_arn(&self) -> ::std::option::Option<&str> {
-        self.rotation_arn.as_deref()
+    pub fn rotation_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.rotation_arn.deref()
     }
     /// <p>The name of the rotation.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the contacts assigned to the rotation team.</p>
-    pub fn contact_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.contact_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.contact_ids.is_none()`.
+    pub fn contact_ids(&self) -> &[::std::string::String] {
+        self.contact_ids.as_deref().unwrap_or_default()
     }
     /// <p>The date and time the rotation becomes active.</p>
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -63,6 +67,7 @@ pub struct RotationBuilder {
 }
 impl RotationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the rotation.</p>
+    /// This field is required.
     pub fn rotation_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rotation_arn = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +82,7 @@ impl RotationBuilder {
         &self.rotation_arn
     }
     /// <p>The name of the rotation.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -153,14 +159,27 @@ impl RotationBuilder {
         &self.recurrence
     }
     /// Consumes the builder and constructs a [`Rotation`](crate::types::Rotation).
-    pub fn build(self) -> crate::types::Rotation {
-        crate::types::Rotation {
-            rotation_arn: self.rotation_arn,
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`rotation_arn`](crate::types::builders::RotationBuilder::rotation_arn)
+    /// - [`name`](crate::types::builders::RotationBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::Rotation, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Rotation {
+            rotation_arn: self.rotation_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "rotation_arn",
+                    "rotation_arn was not specified but it is required when building Rotation",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building Rotation",
+                )
+            })?,
             contact_ids: self.contact_ids,
             start_time: self.start_time,
             time_zone_id: self.time_zone_id,
             recurrence: self.recurrence,
-        }
+        })
     }
 }

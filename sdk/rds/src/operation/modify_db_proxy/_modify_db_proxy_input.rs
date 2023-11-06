@@ -30,8 +30,10 @@ impl ModifyDbProxyInput {
         self.new_db_proxy_name.as_deref()
     }
     /// <p>The new authentication settings for the <code>DBProxy</code>.</p>
-    pub fn auth(&self) -> ::std::option::Option<&[crate::types::UserAuthConfig]> {
-        self.auth.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auth.is_none()`.
+    pub fn auth(&self) -> &[crate::types::UserAuthConfig] {
+        self.auth.as_deref().unwrap_or_default()
     }
     /// <p>Whether Transport Layer Security (TLS) encryption is required for connections to the proxy. By enabling this setting, you can enforce encrypted TLS connections to the proxy, even if the associated database doesn't use TLS.</p>
     pub fn require_tls(&self) -> ::std::option::Option<bool> {
@@ -50,8 +52,10 @@ impl ModifyDbProxyInput {
         self.role_arn.as_deref()
     }
     /// <p>The new list of security groups for the <code>DBProxy</code>.</p>
-    pub fn security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
+    pub fn security_groups(&self) -> &[::std::string::String] {
+        self.security_groups.as_deref().unwrap_or_default()
     }
 }
 impl ModifyDbProxyInput {
@@ -76,6 +80,7 @@ pub struct ModifyDbProxyInputBuilder {
 }
 impl ModifyDbProxyInputBuilder {
     /// <p>The identifier for the <code>DBProxy</code> to modify.</p>
+    /// This field is required.
     pub fn db_proxy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_proxy_name = ::std::option::Option::Some(input.into());
         self
@@ -202,7 +207,7 @@ impl ModifyDbProxyInputBuilder {
     /// Consumes the builder and constructs a [`ModifyDbProxyInput`](crate::operation::modify_db_proxy::ModifyDbProxyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_db_proxy::ModifyDbProxyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::modify_db_proxy::ModifyDbProxyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_db_proxy::ModifyDbProxyInput {
             db_proxy_name: self.db_proxy_name,
             new_db_proxy_name: self.new_db_proxy_name,

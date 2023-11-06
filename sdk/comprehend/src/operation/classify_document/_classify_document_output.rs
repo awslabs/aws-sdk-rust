@@ -20,29 +20,39 @@ pub struct ClassifyDocumentOutput {
 }
 impl ClassifyDocumentOutput {
     /// <p>The classes used by the document being analyzed. These are used for multi-class trained models. Individual classes are mutually exclusive and each document is expected to have only a single class assigned to it. For example, an animal can be a dog or a cat, but not both at the same time. </p>
-    pub fn classes(&self) -> ::std::option::Option<&[crate::types::DocumentClass]> {
-        self.classes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.classes.is_none()`.
+    pub fn classes(&self) -> &[crate::types::DocumentClass] {
+        self.classes.as_deref().unwrap_or_default()
     }
     /// <p>The labels used the document being analyzed. These are used for multi-label trained models. Individual labels represent different categories that are related in some manner and are not mutually exclusive. For example, a movie can be just an action movie, or it can be an action movie, a science fiction movie, and a comedy, all at the same time. </p>
-    pub fn labels(&self) -> ::std::option::Option<&[crate::types::DocumentLabel]> {
-        self.labels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.labels.is_none()`.
+    pub fn labels(&self) -> &[crate::types::DocumentLabel] {
+        self.labels.as_deref().unwrap_or_default()
     }
     /// <p>Extraction information about the document. This field is present in the response only if your request includes the <code>Byte</code> parameter. </p>
     pub fn document_metadata(&self) -> ::std::option::Option<&crate::types::DocumentMetadata> {
         self.document_metadata.as_ref()
     }
     /// <p>The document type for each page in the input document. This field is present in the response only if your request includes the <code>Byte</code> parameter. </p>
-    pub fn document_type(&self) -> ::std::option::Option<&[crate::types::DocumentTypeListItem]> {
-        self.document_type.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.document_type.is_none()`.
+    pub fn document_type(&self) -> &[crate::types::DocumentTypeListItem] {
+        self.document_type.as_deref().unwrap_or_default()
     }
     /// <p>Page-level errors that the system detected while processing the input document. The field is empty if the system encountered no errors.</p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::ErrorsListItem]> {
-        self.errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
+    pub fn errors(&self) -> &[crate::types::ErrorsListItem] {
+        self.errors.as_deref().unwrap_or_default()
     }
     /// <p>Warnings detected while processing the input document. The response includes a warning if there is a mismatch between the input document type and the model type associated with the endpoint that you specified. The response can also include warnings for individual pages that have a mismatch. </p>
     /// <p>The field is empty if the system generated no warnings.</p>
-    pub fn warnings(&self) -> ::std::option::Option<&[crate::types::WarningsListItem]> {
-        self.warnings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.warnings.is_none()`.
+    pub fn warnings(&self) -> &[crate::types::WarningsListItem] {
+        self.warnings.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for ClassifyDocumentOutput {

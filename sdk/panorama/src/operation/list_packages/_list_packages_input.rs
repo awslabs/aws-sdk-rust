@@ -4,13 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPackagesInput {
     /// <p>The maximum number of packages to return in one page of results.</p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListPackagesInput {
     /// <p>The maximum number of packages to return in one page of results.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
@@ -62,9 +62,11 @@ impl ListPackagesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListPackagesInput`](crate::operation::list_packages::ListPackagesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_packages::ListPackagesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_packages::ListPackagesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_packages::ListPackagesInput {
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
         })
     }

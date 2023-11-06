@@ -2,7 +2,7 @@
 pub fn ser_write_treatment_resource(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WriteTreatmentResource,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.custom_delivery_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("CustomDeliveryConfiguration").start_object();

@@ -27,6 +27,7 @@ pub struct DeletePolicyStoreInputBuilder {
 }
 impl DeletePolicyStoreInputBuilder {
     /// <p>Specifies the ID of the policy store that you want to delete.</p>
+    /// This field is required.
     pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_store_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeletePolicyStoreInputBuilder {
     /// Consumes the builder and constructs a [`DeletePolicyStoreInput`](crate::operation::delete_policy_store::DeletePolicyStoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_policy_store::DeletePolicyStoreInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_policy_store::DeletePolicyStoreInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_policy_store::DeletePolicyStoreInput {
             policy_store_id: self.policy_store_id,
         })

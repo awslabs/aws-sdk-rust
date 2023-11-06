@@ -41,6 +41,7 @@ pub struct DescribeGroupInputBuilder {
 }
 impl DescribeGroupInputBuilder {
     /// <p>The name of the group that you want to describe.</p>
+    /// This field is required.
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DescribeGroupInputBuilder {
         &self.group_name
     }
     /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl DescribeGroupInputBuilder {
         &self.aws_account_id
     }
     /// <p>The namespace of the group that you want described.</p>
+    /// This field is required.
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +88,7 @@ impl DescribeGroupInputBuilder {
     /// Consumes the builder and constructs a [`DescribeGroupInput`](crate::operation::describe_group::DescribeGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_group::DescribeGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_group::DescribeGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_group::DescribeGroupInput {
             group_name: self.group_name,
             aws_account_id: self.aws_account_id,

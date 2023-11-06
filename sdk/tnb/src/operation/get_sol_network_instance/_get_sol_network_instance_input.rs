@@ -27,6 +27,7 @@ pub struct GetSolNetworkInstanceInputBuilder {
 }
 impl GetSolNetworkInstanceInputBuilder {
     /// <p>ID of the network instance.</p>
+    /// This field is required.
     pub fn ns_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ns_instance_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetSolNetworkInstanceInputBuilder {
     /// Consumes the builder and constructs a [`GetSolNetworkInstanceInput`](crate::operation::get_sol_network_instance::GetSolNetworkInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_sol_network_instance::GetSolNetworkInstanceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_sol_network_instance::GetSolNetworkInstanceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_sol_network_instance::GetSolNetworkInstanceInput {
             ns_instance_id: self.ns_instance_id,

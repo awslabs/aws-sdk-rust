@@ -23,8 +23,10 @@ impl DirectoryConnectSettingsDescription {
         self.vpc_id.as_deref()
     }
     /// <p>A list of subnet identifiers in the VPC that the AD Connector is in.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        self.subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>The user name of the service account in your self-managed directory.</p>
     pub fn customer_user_name(&self) -> ::std::option::Option<&str> {
@@ -35,12 +37,16 @@ impl DirectoryConnectSettingsDescription {
         self.security_group_id.as_deref()
     }
     /// <p>A list of the Availability Zones that the directory is in.</p>
-    pub fn availability_zones(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.availability_zones.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
+    pub fn availability_zones(&self) -> &[::std::string::String] {
+        self.availability_zones.as_deref().unwrap_or_default()
     }
     /// <p>The IP addresses of the AD Connector servers.</p>
-    pub fn connect_ips(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.connect_ips.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connect_ips.is_none()`.
+    pub fn connect_ips(&self) -> &[::std::string::String] {
+        self.connect_ips.as_deref().unwrap_or_default()
     }
 }
 impl DirectoryConnectSettingsDescription {

@@ -8,18 +8,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcConfiguration {
     /// <p>The list of Amazon EC2 security group IDs attached to the Amazon VPC for your Grafana workspace to connect. Duplicates not allowed.</p>
-    pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_group_ids: ::std::vec::Vec<::std::string::String>,
     /// <p>The list of Amazon EC2 subnet IDs created in the Amazon VPC for your Grafana workspace to connect. Duplicates not allowed.</p>
-    pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subnet_ids: ::std::vec::Vec<::std::string::String>,
 }
 impl VpcConfiguration {
     /// <p>The list of Amazon EC2 security group IDs attached to the Amazon VPC for your Grafana workspace to connect. Duplicates not allowed.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.security_group_ids.deref()
     }
     /// <p>The list of Amazon EC2 subnet IDs created in the Amazon VPC for your Grafana workspace to connect. Duplicates not allowed.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.subnet_ids.deref()
     }
 }
 impl VpcConfiguration {
@@ -78,10 +80,23 @@ impl VpcConfigurationBuilder {
         &self.subnet_ids
     }
     /// Consumes the builder and constructs a [`VpcConfiguration`](crate::types::VpcConfiguration).
-    pub fn build(self) -> crate::types::VpcConfiguration {
-        crate::types::VpcConfiguration {
-            security_group_ids: self.security_group_ids,
-            subnet_ids: self.subnet_ids,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`security_group_ids`](crate::types::builders::VpcConfigurationBuilder::security_group_ids)
+    /// - [`subnet_ids`](crate::types::builders::VpcConfigurationBuilder::subnet_ids)
+    pub fn build(self) -> ::std::result::Result<crate::types::VpcConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::VpcConfiguration {
+            security_group_ids: self.security_group_ids.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "security_group_ids",
+                    "security_group_ids was not specified but it is required when building VpcConfiguration",
+                )
+            })?,
+            subnet_ids: self.subnet_ids.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "subnet_ids",
+                    "subnet_ids was not specified but it is required when building VpcConfiguration",
+                )
+            })?,
+        })
     }
 }

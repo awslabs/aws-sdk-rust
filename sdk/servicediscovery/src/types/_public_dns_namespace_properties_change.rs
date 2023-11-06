@@ -28,6 +28,7 @@ pub struct PublicDnsNamespacePropertiesChangeBuilder {
 }
 impl PublicDnsNamespacePropertiesChangeBuilder {
     /// <p>Updated DNS properties for the hosted zone for the public DNS namespace.</p>
+    /// This field is required.
     pub fn dns_properties(mut self, input: crate::types::PublicDnsPropertiesMutableChange) -> Self {
         self.dns_properties = ::std::option::Option::Some(input);
         self

@@ -27,6 +27,7 @@ pub struct AssociateMemberAccountInputBuilder {
 }
 impl AssociateMemberAccountInputBuilder {
     /// <p>(Discontinued) The ID of the Amazon Web Services account that you want to associate with Amazon Macie Classic as a member account.</p>
+    /// This field is required.
     pub fn member_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_account_id = ::std::option::Option::Some(input.into());
         self
@@ -43,8 +44,10 @@ impl AssociateMemberAccountInputBuilder {
     /// Consumes the builder and constructs a [`AssociateMemberAccountInput`](crate::operation::associate_member_account::AssociateMemberAccountInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_member_account::AssociateMemberAccountInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::associate_member_account::AssociateMemberAccountInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::associate_member_account::AssociateMemberAccountInput {
             member_account_id: self.member_account_id,
         })

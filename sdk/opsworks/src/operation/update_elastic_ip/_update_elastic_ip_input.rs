@@ -34,6 +34,7 @@ pub struct UpdateElasticIpInputBuilder {
 }
 impl UpdateElasticIpInputBuilder {
     /// <p>The IP address for which you want to update the name.</p>
+    /// This field is required.
     pub fn elastic_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.elastic_ip = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl UpdateElasticIpInputBuilder {
     /// Consumes the builder and constructs a [`UpdateElasticIpInput`](crate::operation::update_elastic_ip::UpdateElasticIpInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_elastic_ip::UpdateElasticIpInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_elastic_ip::UpdateElasticIpInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_elastic_ip::UpdateElasticIpInput {
             elastic_ip: self.elastic_ip,
             name: self.name,

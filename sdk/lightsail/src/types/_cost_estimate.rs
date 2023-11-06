@@ -15,8 +15,10 @@ impl CostEstimate {
         self.usage_type.as_deref()
     }
     /// <p>The cost estimate result that's associated with a time period.</p>
-    pub fn results_by_time(&self) -> ::std::option::Option<&[crate::types::EstimateByTime]> {
-        self.results_by_time.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.results_by_time.is_none()`.
+    pub fn results_by_time(&self) -> &[crate::types::EstimateByTime] {
+        self.results_by_time.as_deref().unwrap_or_default()
     }
 }
 impl CostEstimate {

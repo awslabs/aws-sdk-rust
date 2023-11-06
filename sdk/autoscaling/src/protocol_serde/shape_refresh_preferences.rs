@@ -3,7 +3,7 @@
 pub fn ser_refresh_preferences(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::RefreshPreferences,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("MinHealthyPercentage");
     if let Some(var_2) = &input.min_healthy_percentage {
@@ -70,6 +70,7 @@ pub fn ser_refresh_preferences(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_refresh_preferences(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::RefreshPreferences, ::aws_smithy_xml::decode::XmlDecodeError> {

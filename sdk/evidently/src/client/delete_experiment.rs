@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteExperiment`](crate::operation::delete_experiment::builders::DeleteExperimentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`project(impl Into<String>)`](crate::operation::delete_experiment::builders::DeleteExperimentFluentBuilder::project) / [`set_project(Option<String>)`](crate::operation::delete_experiment::builders::DeleteExperimentFluentBuilder::set_project): <p>The name or ARN of the project that contains the experiment to delete.</p>
-    ///   - [`experiment(impl Into<String>)`](crate::operation::delete_experiment::builders::DeleteExperimentFluentBuilder::experiment) / [`set_experiment(Option<String>)`](crate::operation::delete_experiment::builders::DeleteExperimentFluentBuilder::set_experiment): <p>The name of the experiment to delete.</p>
+    ///   - [`project(impl Into<String>)`](crate::operation::delete_experiment::builders::DeleteExperimentFluentBuilder::project) / [`set_project(Option<String>)`](crate::operation::delete_experiment::builders::DeleteExperimentFluentBuilder::set_project):<br>required: **true**<br><p>The name or ARN of the project that contains the experiment to delete.</p><br>
+    ///   - [`experiment(impl Into<String>)`](crate::operation::delete_experiment::builders::DeleteExperimentFluentBuilder::experiment) / [`set_experiment(Option<String>)`](crate::operation::delete_experiment::builders::DeleteExperimentFluentBuilder::set_experiment):<br>required: **true**<br><p>The name of the experiment to delete.</p><br>
     /// - On success, responds with [`DeleteExperimentOutput`](crate::operation::delete_experiment::DeleteExperimentOutput)
     /// - On failure, responds with [`SdkError<DeleteExperimentError>`](crate::operation::delete_experiment::DeleteExperimentError)
     pub fn delete_experiment(&self) -> crate::operation::delete_experiment::builders::DeleteExperimentFluentBuilder {

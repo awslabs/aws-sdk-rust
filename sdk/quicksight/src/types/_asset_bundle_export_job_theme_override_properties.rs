@@ -7,7 +7,7 @@ pub struct AssetBundleExportJobThemeOverrideProperties {
     /// <p>The ARN of the specific <code>Theme</code> resource whose override properties are configured in this structure.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>Theme</code> resource properties to generate variables for in the returned CloudFormation template.</p>
-    pub properties: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobThemePropertyToOverride>>,
+    pub properties: ::std::vec::Vec<crate::types::AssetBundleExportJobThemePropertyToOverride>,
 }
 impl AssetBundleExportJobThemeOverrideProperties {
     /// <p>The ARN of the specific <code>Theme</code> resource whose override properties are configured in this structure.</p>
@@ -15,8 +15,9 @@ impl AssetBundleExportJobThemeOverrideProperties {
         self.arn.as_deref()
     }
     /// <p>A list of <code>Theme</code> resource properties to generate variables for in the returned CloudFormation template.</p>
-    pub fn properties(&self) -> ::std::option::Option<&[crate::types::AssetBundleExportJobThemePropertyToOverride]> {
-        self.properties.as_deref()
+    pub fn properties(&self) -> &[crate::types::AssetBundleExportJobThemePropertyToOverride] {
+        use std::ops::Deref;
+        self.properties.deref()
     }
 }
 impl AssetBundleExportJobThemeOverrideProperties {
@@ -72,10 +73,19 @@ impl AssetBundleExportJobThemeOverridePropertiesBuilder {
         &self.properties
     }
     /// Consumes the builder and constructs a [`AssetBundleExportJobThemeOverrideProperties`](crate::types::AssetBundleExportJobThemeOverrideProperties).
-    pub fn build(self) -> crate::types::AssetBundleExportJobThemeOverrideProperties {
-        crate::types::AssetBundleExportJobThemeOverrideProperties {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`properties`](crate::types::builders::AssetBundleExportJobThemeOverridePropertiesBuilder::properties)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::AssetBundleExportJobThemeOverrideProperties, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AssetBundleExportJobThemeOverrideProperties {
             arn: self.arn,
-            properties: self.properties,
-        }
+            properties: self.properties.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "properties",
+                    "properties was not specified but it is required when building AssetBundleExportJobThemeOverrideProperties",
+                )
+            })?,
+        })
     }
 }

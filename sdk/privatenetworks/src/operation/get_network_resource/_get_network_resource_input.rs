@@ -27,6 +27,7 @@ pub struct GetNetworkResourceInputBuilder {
 }
 impl GetNetworkResourceInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
+    /// This field is required.
     pub fn network_resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,8 @@ impl GetNetworkResourceInputBuilder {
     /// Consumes the builder and constructs a [`GetNetworkResourceInput`](crate::operation::get_network_resource::GetNetworkResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_network_resource::GetNetworkResourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_network_resource::GetNetworkResourceInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_network_resource::GetNetworkResourceInput {
             network_resource_arn: self.network_resource_arn,
         })

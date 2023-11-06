@@ -34,6 +34,7 @@ pub struct ListTagsOfResourceInputBuilder {
 }
 impl ListTagsOfResourceInputBuilder {
     /// <p>The Amazon DynamoDB resource with tags to be listed. This value is an Amazon Resource Name (ARN).</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl ListTagsOfResourceInputBuilder {
     /// Consumes the builder and constructs a [`ListTagsOfResourceInput`](crate::operation::list_tags_of_resource::ListTagsOfResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_tags_of_resource::ListTagsOfResourceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_tags_of_resource::ListTagsOfResourceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_tags_of_resource::ListTagsOfResourceInput {
             resource_arn: self.resource_arn,

@@ -38,8 +38,10 @@ impl CreateParallelDataInput {
         self.client_token.as_deref()
     }
     /// <p>Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource. Each tag key for the resource must be unique. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateParallelDataInput {
@@ -62,6 +64,7 @@ pub struct CreateParallelDataInputBuilder {
 }
 impl CreateParallelDataInputBuilder {
     /// <p>A custom name for the parallel data resource in Amazon Translate. You must assign a name that is unique in the account and region.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl CreateParallelDataInputBuilder {
         &self.description
     }
     /// <p>Specifies the format and S3 location of the parallel data input file.</p>
+    /// This field is required.
     pub fn parallel_data_config(mut self, input: crate::types::ParallelDataConfig) -> Self {
         self.parallel_data_config = ::std::option::Option::Some(input);
         self
@@ -118,6 +122,7 @@ impl CreateParallelDataInputBuilder {
         &self.encryption_key
     }
     /// <p>A unique identifier for the request. This token is automatically generated when you use Amazon Translate through an AWS SDK.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -154,7 +159,8 @@ impl CreateParallelDataInputBuilder {
     /// Consumes the builder and constructs a [`CreateParallelDataInput`](crate::operation::create_parallel_data::CreateParallelDataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_parallel_data::CreateParallelDataInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_parallel_data::CreateParallelDataInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_parallel_data::CreateParallelDataInput {
             name: self.name,
             description: self.description,

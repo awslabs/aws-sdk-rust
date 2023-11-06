@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicaSettingsDescription {
     /// <p>The Region name of the replica.</p>
-    pub region_name: ::std::option::Option<::std::string::String>,
+    pub region_name: ::std::string::String,
     /// <p>The current state of the Region:</p>
     /// <ul>
     /// <li> <p> <code>CREATING</code> - The Region is being created.</p> </li>
@@ -31,8 +31,9 @@ pub struct ReplicaSettingsDescription {
 }
 impl ReplicaSettingsDescription {
     /// <p>The Region name of the replica.</p>
-    pub fn region_name(&self) -> ::std::option::Option<&str> {
-        self.region_name.as_deref()
+    pub fn region_name(&self) -> &str {
+        use std::ops::Deref;
+        self.region_name.deref()
     }
     /// <p>The current state of the Region:</p>
     /// <ul>
@@ -65,8 +66,10 @@ impl ReplicaSettingsDescription {
         self.replica_provisioned_write_capacity_auto_scaling_settings.as_ref()
     }
     /// <p>Replica global secondary index settings for the global table.</p>
-    pub fn replica_global_secondary_index_settings(&self) -> ::std::option::Option<&[crate::types::ReplicaGlobalSecondaryIndexSettingsDescription]> {
-        self.replica_global_secondary_index_settings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replica_global_secondary_index_settings.is_none()`.
+    pub fn replica_global_secondary_index_settings(&self) -> &[crate::types::ReplicaGlobalSecondaryIndexSettingsDescription] {
+        self.replica_global_secondary_index_settings.as_deref().unwrap_or_default()
     }
     /// <p>Contains details of the table class.</p>
     pub fn replica_table_class_summary(&self) -> ::std::option::Option<&crate::types::TableClassSummary> {
@@ -97,6 +100,7 @@ pub struct ReplicaSettingsDescriptionBuilder {
 }
 impl ReplicaSettingsDescriptionBuilder {
     /// <p>The Region name of the replica.</p>
+    /// This field is required.
     pub fn region_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region_name = ::std::option::Option::Some(input.into());
         self
@@ -262,9 +266,16 @@ impl ReplicaSettingsDescriptionBuilder {
         &self.replica_table_class_summary
     }
     /// Consumes the builder and constructs a [`ReplicaSettingsDescription`](crate::types::ReplicaSettingsDescription).
-    pub fn build(self) -> crate::types::ReplicaSettingsDescription {
-        crate::types::ReplicaSettingsDescription {
-            region_name: self.region_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`region_name`](crate::types::builders::ReplicaSettingsDescriptionBuilder::region_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::ReplicaSettingsDescription, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ReplicaSettingsDescription {
+            region_name: self.region_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "region_name",
+                    "region_name was not specified but it is required when building ReplicaSettingsDescription",
+                )
+            })?,
             replica_status: self.replica_status,
             replica_billing_mode_summary: self.replica_billing_mode_summary,
             replica_provisioned_read_capacity_units: self.replica_provisioned_read_capacity_units,
@@ -273,6 +284,6 @@ impl ReplicaSettingsDescriptionBuilder {
             replica_provisioned_write_capacity_auto_scaling_settings: self.replica_provisioned_write_capacity_auto_scaling_settings,
             replica_global_secondary_index_settings: self.replica_global_secondary_index_settings,
             replica_table_class_summary: self.replica_table_class_summary,
-        }
+        })
     }
 }

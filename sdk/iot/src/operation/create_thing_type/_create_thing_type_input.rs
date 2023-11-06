@@ -21,8 +21,10 @@ impl CreateThingTypeInput {
         self.thing_type_properties.as_ref()
     }
     /// <p>Metadata which can be used to manage the thing type.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateThingTypeInput {
@@ -42,6 +44,7 @@ pub struct CreateThingTypeInputBuilder {
 }
 impl CreateThingTypeInputBuilder {
     /// <p>The name of the thing type.</p>
+    /// This field is required.
     pub fn thing_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_type_name = ::std::option::Option::Some(input.into());
         self
@@ -92,7 +95,7 @@ impl CreateThingTypeInputBuilder {
     /// Consumes the builder and constructs a [`CreateThingTypeInput`](crate::operation::create_thing_type::CreateThingTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_thing_type::CreateThingTypeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_thing_type::CreateThingTypeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_thing_type::CreateThingTypeInput {
             thing_type_name: self.thing_type_name,
             thing_type_properties: self.thing_type_properties,

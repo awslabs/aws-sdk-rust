@@ -35,6 +35,7 @@ pub struct UpdateAgentInputBuilder {
 }
 impl UpdateAgentInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the agent to update.</p>
+    /// This field is required.
     pub fn agent_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_arn = ::std::option::Option::Some(input.into());
         self
@@ -63,7 +64,7 @@ impl UpdateAgentInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`UpdateAgentInput`](crate::operation::update_agent::UpdateAgentInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_agent::UpdateAgentInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_agent::UpdateAgentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_agent::UpdateAgentInput {
             agent_arn: self.agent_arn,
             name: self.name,

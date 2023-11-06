@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDeviceProfile`](crate::operation::delete_device_profile::builders::DeleteDeviceProfileFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::delete_device_profile::builders::DeleteDeviceProfileFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_device_profile::builders::DeleteDeviceProfileFluentBuilder::set_id): <p>The ID of the resource to delete.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::delete_device_profile::builders::DeleteDeviceProfileFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_device_profile::builders::DeleteDeviceProfileFluentBuilder::set_id):<br>required: **true**<br><p>The ID of the resource to delete.</p><br>
     /// - On success, responds with [`DeleteDeviceProfileOutput`](crate::operation::delete_device_profile::DeleteDeviceProfileOutput)
     /// - On failure, responds with [`SdkError<DeleteDeviceProfileError>`](crate::operation::delete_device_profile::DeleteDeviceProfileError)
     pub fn delete_device_profile(&self) -> crate::operation::delete_device_profile::builders::DeleteDeviceProfileFluentBuilder {

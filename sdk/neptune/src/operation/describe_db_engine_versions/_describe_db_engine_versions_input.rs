@@ -48,8 +48,10 @@ impl DescribeDbEngineVersionsInput {
         self.db_parameter_group_family.as_deref()
     }
     /// <p>Not currently supported.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p> The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value is available, a pagination token called a marker is included in the response so that the following results can be retrieved.</p>
     /// <p>Default: 100</p>
@@ -254,7 +256,7 @@ impl DescribeDbEngineVersionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_db_engine_versions::DescribeDbEngineVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_db_engine_versions::DescribeDbEngineVersionsInput {
             engine: self.engine,

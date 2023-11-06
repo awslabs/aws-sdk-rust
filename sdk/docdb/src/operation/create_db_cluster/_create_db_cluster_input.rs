@@ -87,8 +87,10 @@ pub struct CreateDbClusterInput {
 }
 impl CreateDbClusterInput {
     /// <p>A list of Amazon EC2 Availability Zones that instances in the cluster can be created in.</p>
-    pub fn availability_zones(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.availability_zones.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
+    pub fn availability_zones(&self) -> &[::std::string::String] {
+        self.availability_zones.as_deref().unwrap_or_default()
     }
     /// <p>The number of days for which automated backups are retained. You must specify a minimum value of 1.</p>
     /// <p>Default: 1</p>
@@ -115,8 +117,10 @@ impl CreateDbClusterInput {
         self.db_cluster_parameter_group_name.as_deref()
     }
     /// <p>A list of EC2 VPC security groups to associate with this cluster. </p>
-    pub fn vpc_security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.vpc_security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_group_ids.is_none()`.
+    pub fn vpc_security_group_ids(&self) -> &[::std::string::String] {
+        self.vpc_security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>A subnet group to associate with this cluster.</p>
     /// <p>Constraints: Must match the name of an existing <code>DBSubnetGroup</code>. Must not be default.</p>
@@ -173,8 +177,10 @@ impl CreateDbClusterInput {
         self.preferred_maintenance_window.as_deref()
     }
     /// <p>The tags to be assigned to the cluster.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether the cluster is encrypted.</p>
     pub fn storage_encrypted(&self) -> ::std::option::Option<bool> {
@@ -195,8 +201,10 @@ impl CreateDbClusterInput {
         self.pre_signed_url.as_deref()
     }
     /// <p>A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs. You can enable audit logs or profiler logs. For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/event-auditing.html"> Auditing Amazon DocumentDB Events</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/profiling.html"> Profiling Amazon DocumentDB Operations</a>. </p>
-    pub fn enable_cloudwatch_logs_exports(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.enable_cloudwatch_logs_exports.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enable_cloudwatch_logs_exports.is_none()`.
+    pub fn enable_cloudwatch_logs_exports(&self) -> &[::std::string::String] {
+        self.enable_cloudwatch_logs_exports.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code> protects clusters from being accidentally deleted.</p>
     pub fn deletion_protection(&self) -> ::std::option::Option<bool> {
@@ -297,6 +305,7 @@ impl CreateDbClusterInputBuilder {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens. </p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster</code> </p>
+    /// This field is required.
     pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_identifier = ::std::option::Option::Some(input.into());
         self
@@ -380,6 +389,7 @@ impl CreateDbClusterInputBuilder {
     }
     /// <p>The name of the database engine to be used for this cluster.</p>
     /// <p>Valid values: <code>docdb</code> </p>
+    /// This field is required.
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
         self
@@ -667,7 +677,7 @@ impl CreateDbClusterInputBuilder {
     /// Consumes the builder and constructs a [`CreateDbClusterInput`](crate::operation::create_db_cluster::CreateDbClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_db_cluster::CreateDbClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_db_cluster::CreateDbClusterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_db_cluster::CreateDbClusterInput {
             availability_zones: self.availability_zones,
             backup_retention_period: self.backup_retention_period,

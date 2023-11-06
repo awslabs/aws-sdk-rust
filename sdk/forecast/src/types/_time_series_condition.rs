@@ -5,24 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeSeriesCondition {
     /// <p>The item_id, dimension name, IM name, or timestamp that you are modifying.</p>
-    pub attribute_name: ::std::option::Option<::std::string::String>,
+    pub attribute_name: ::std::string::String,
     /// <p>The value that is applied for the chosen <code>Condition</code>.</p>
-    pub attribute_value: ::std::option::Option<::std::string::String>,
+    pub attribute_value: ::std::string::String,
     /// <p>The condition to apply. Valid values are <code>EQUALS</code>, <code>NOT_EQUALS</code>, <code>LESS_THAN</code> and <code>GREATER_THAN</code>.</p>
-    pub condition: ::std::option::Option<crate::types::Condition>,
+    pub condition: crate::types::Condition,
 }
 impl TimeSeriesCondition {
     /// <p>The item_id, dimension name, IM name, or timestamp that you are modifying.</p>
-    pub fn attribute_name(&self) -> ::std::option::Option<&str> {
-        self.attribute_name.as_deref()
+    pub fn attribute_name(&self) -> &str {
+        use std::ops::Deref;
+        self.attribute_name.deref()
     }
     /// <p>The value that is applied for the chosen <code>Condition</code>.</p>
-    pub fn attribute_value(&self) -> ::std::option::Option<&str> {
-        self.attribute_value.as_deref()
+    pub fn attribute_value(&self) -> &str {
+        use std::ops::Deref;
+        self.attribute_value.deref()
     }
     /// <p>The condition to apply. Valid values are <code>EQUALS</code>, <code>NOT_EQUALS</code>, <code>LESS_THAN</code> and <code>GREATER_THAN</code>.</p>
-    pub fn condition(&self) -> ::std::option::Option<&crate::types::Condition> {
-        self.condition.as_ref()
+    pub fn condition(&self) -> &crate::types::Condition {
+        &self.condition
     }
 }
 impl TimeSeriesCondition {
@@ -42,6 +44,7 @@ pub struct TimeSeriesConditionBuilder {
 }
 impl TimeSeriesConditionBuilder {
     /// <p>The item_id, dimension name, IM name, or timestamp that you are modifying.</p>
+    /// This field is required.
     pub fn attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl TimeSeriesConditionBuilder {
         &self.attribute_name
     }
     /// <p>The value that is applied for the chosen <code>Condition</code>.</p>
+    /// This field is required.
     pub fn attribute_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_value = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +74,7 @@ impl TimeSeriesConditionBuilder {
         &self.attribute_value
     }
     /// <p>The condition to apply. Valid values are <code>EQUALS</code>, <code>NOT_EQUALS</code>, <code>LESS_THAN</code> and <code>GREATER_THAN</code>.</p>
+    /// This field is required.
     pub fn condition(mut self, input: crate::types::Condition) -> Self {
         self.condition = ::std::option::Option::Some(input);
         self
@@ -84,11 +89,30 @@ impl TimeSeriesConditionBuilder {
         &self.condition
     }
     /// Consumes the builder and constructs a [`TimeSeriesCondition`](crate::types::TimeSeriesCondition).
-    pub fn build(self) -> crate::types::TimeSeriesCondition {
-        crate::types::TimeSeriesCondition {
-            attribute_name: self.attribute_name,
-            attribute_value: self.attribute_value,
-            condition: self.condition,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`attribute_name`](crate::types::builders::TimeSeriesConditionBuilder::attribute_name)
+    /// - [`attribute_value`](crate::types::builders::TimeSeriesConditionBuilder::attribute_value)
+    /// - [`condition`](crate::types::builders::TimeSeriesConditionBuilder::condition)
+    pub fn build(self) -> ::std::result::Result<crate::types::TimeSeriesCondition, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TimeSeriesCondition {
+            attribute_name: self.attribute_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "attribute_name",
+                    "attribute_name was not specified but it is required when building TimeSeriesCondition",
+                )
+            })?,
+            attribute_value: self.attribute_value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "attribute_value",
+                    "attribute_value was not specified but it is required when building TimeSeriesCondition",
+                )
+            })?,
+            condition: self.condition.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "condition",
+                    "condition was not specified but it is required when building TimeSeriesCondition",
+                )
+            })?,
+        })
     }
 }

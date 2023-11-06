@@ -8,7 +8,7 @@ pub struct AuthorizationConfig {
     /// <ul>
     /// <li> <p> <b>AWS_IAM</b>: The authorization type is Signature Version 4 (SigV4).</p> </li>
     /// </ul>
-    pub authorization_type: ::std::option::Option<crate::types::AuthorizationType>,
+    pub authorization_type: crate::types::AuthorizationType,
     /// <p>The Identity and Access Management (IAM) settings.</p>
     pub aws_iam_config: ::std::option::Option<crate::types::AwsIamConfig>,
 }
@@ -17,8 +17,8 @@ impl AuthorizationConfig {
     /// <ul>
     /// <li> <p> <b>AWS_IAM</b>: The authorization type is Signature Version 4 (SigV4).</p> </li>
     /// </ul>
-    pub fn authorization_type(&self) -> ::std::option::Option<&crate::types::AuthorizationType> {
-        self.authorization_type.as_ref()
+    pub fn authorization_type(&self) -> &crate::types::AuthorizationType {
+        &self.authorization_type
     }
     /// <p>The Identity and Access Management (IAM) settings.</p>
     pub fn aws_iam_config(&self) -> ::std::option::Option<&crate::types::AwsIamConfig> {
@@ -44,6 +44,7 @@ impl AuthorizationConfigBuilder {
     /// <ul>
     /// <li> <p> <b>AWS_IAM</b>: The authorization type is Signature Version 4 (SigV4).</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn authorization_type(mut self, input: crate::types::AuthorizationType) -> Self {
         self.authorization_type = ::std::option::Option::Some(input);
         self
@@ -78,10 +79,17 @@ impl AuthorizationConfigBuilder {
         &self.aws_iam_config
     }
     /// Consumes the builder and constructs a [`AuthorizationConfig`](crate::types::AuthorizationConfig).
-    pub fn build(self) -> crate::types::AuthorizationConfig {
-        crate::types::AuthorizationConfig {
-            authorization_type: self.authorization_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`authorization_type`](crate::types::builders::AuthorizationConfigBuilder::authorization_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::AuthorizationConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AuthorizationConfig {
+            authorization_type: self.authorization_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "authorization_type",
+                    "authorization_type was not specified but it is required when building AuthorizationConfig",
+                )
+            })?,
             aws_iam_config: self.aws_iam_config,
-        }
+        })
     }
 }

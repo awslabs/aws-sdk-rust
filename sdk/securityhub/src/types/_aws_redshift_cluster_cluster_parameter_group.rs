@@ -13,8 +13,10 @@ pub struct AwsRedshiftClusterClusterParameterGroup {
 }
 impl AwsRedshiftClusterClusterParameterGroup {
     /// <p>The list of parameter statuses.</p>
-    pub fn cluster_parameter_status_list(&self) -> ::std::option::Option<&[crate::types::AwsRedshiftClusterClusterParameterStatus]> {
-        self.cluster_parameter_status_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cluster_parameter_status_list.is_none()`.
+    pub fn cluster_parameter_status_list(&self) -> &[crate::types::AwsRedshiftClusterClusterParameterStatus] {
+        self.cluster_parameter_status_list.as_deref().unwrap_or_default()
     }
     /// <p>The status of updates to the parameters.</p>
     pub fn parameter_apply_status(&self) -> ::std::option::Option<&str> {

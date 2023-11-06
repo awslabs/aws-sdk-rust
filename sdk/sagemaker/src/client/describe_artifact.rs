@@ -3,13 +3,13 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeArtifact`](crate::operation::describe_artifact::builders::DescribeArtifactFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`artifact_arn(impl Into<String>)`](crate::operation::describe_artifact::builders::DescribeArtifactFluentBuilder::artifact_arn) / [`set_artifact_arn(Option<String>)`](crate::operation::describe_artifact::builders::DescribeArtifactFluentBuilder::set_artifact_arn): <p>The Amazon Resource Name (ARN) of the artifact to describe.</p>
+    ///   - [`artifact_arn(impl Into<String>)`](crate::operation::describe_artifact::builders::DescribeArtifactFluentBuilder::artifact_arn) / [`set_artifact_arn(Option<String>)`](crate::operation::describe_artifact::builders::DescribeArtifactFluentBuilder::set_artifact_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the artifact to describe.</p><br>
     /// - On success, responds with [`DescribeArtifactOutput`](crate::operation::describe_artifact::DescribeArtifactOutput) with field(s):
     ///   - [`artifact_name(Option<String>)`](crate::operation::describe_artifact::DescribeArtifactOutput::artifact_name): <p>The name of the artifact.</p>
     ///   - [`artifact_arn(Option<String>)`](crate::operation::describe_artifact::DescribeArtifactOutput::artifact_arn): <p>The Amazon Resource Name (ARN) of the artifact.</p>
     ///   - [`source(Option<ArtifactSource>)`](crate::operation::describe_artifact::DescribeArtifactOutput::source): <p>The source of the artifact.</p>
     ///   - [`artifact_type(Option<String>)`](crate::operation::describe_artifact::DescribeArtifactOutput::artifact_type): <p>The type of the artifact.</p>
-    ///   - [`properties(Option<HashMap<String, String>>)`](crate::operation::describe_artifact::DescribeArtifactOutput::properties): <p>A list of the artifact's properties.</p>
+    ///   - [`properties(Option<HashMap::<String, String>>)`](crate::operation::describe_artifact::DescribeArtifactOutput::properties): <p>A list of the artifact's properties.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_artifact::DescribeArtifactOutput::creation_time): <p>When the artifact was created.</p>
     ///   - [`created_by(Option<UserContext>)`](crate::operation::describe_artifact::DescribeArtifactOutput::created_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::describe_artifact::DescribeArtifactOutput::last_modified_time): <p>When the artifact was last modified.</p>

@@ -28,6 +28,7 @@ pub struct GetInfrastructureConfigurationInputBuilder {
 }
 impl GetInfrastructureConfigurationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to retrieve.</p>
+    /// This field is required.
     pub fn infrastructure_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.infrastructure_configuration_arn = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl GetInfrastructureConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationInput {
             infrastructure_configuration_arn: self.infrastructure_configuration_arn,

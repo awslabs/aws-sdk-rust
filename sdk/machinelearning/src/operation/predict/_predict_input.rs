@@ -41,6 +41,7 @@ pub struct PredictInputBuilder {
 }
 impl PredictInputBuilder {
     /// <p>A unique identifier of the <code>MLModel</code>.</p>
+    /// This field is required.
     pub fn ml_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ml_model_id = ::std::option::Option::Some(input.into());
         self
@@ -75,6 +76,7 @@ impl PredictInputBuilder {
         &self.record
     }
     #[allow(missing_docs)] // documentation missing in model
+    /// This field is required.
     pub fn predict_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.predict_endpoint = ::std::option::Option::Some(input.into());
         self
@@ -89,7 +91,7 @@ impl PredictInputBuilder {
         &self.predict_endpoint
     }
     /// Consumes the builder and constructs a [`PredictInput`](crate::operation::predict::PredictInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::predict::PredictInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::predict::PredictInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::predict::PredictInput {
             ml_model_id: self.ml_model_id,
             record: self.record,

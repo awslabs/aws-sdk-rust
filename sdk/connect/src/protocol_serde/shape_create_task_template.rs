@@ -59,11 +59,10 @@ pub fn de_create_task_template_http_error(
                     crate::protocol_serde::shape_property_validation_exception::de_property_validation_exception_json_err(_response_body, output)
                         .map_err(crate::operation::create_task_template::CreateTaskTemplateError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::property_validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_task_template::CreateTaskTemplateError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::create_task_template::CreateTaskTemplateError::ResourceNotFoundException({
@@ -133,18 +132,20 @@ pub fn de_create_task_template_http_response(
         output = crate::protocol_serde::shape_create_task_template::de_create_task_template(_response_body, output)
             .map_err(crate::operation::create_task_template::CreateTaskTemplateError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::create_task_template_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::create_task_template::CreateTaskTemplateError::unhandled)?
     })
 }
 
 pub fn ser_create_task_template_input(
     input: &crate::operation::create_task_template::CreateTaskTemplateInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_task_template_input::ser_create_task_template_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_create_task_template(

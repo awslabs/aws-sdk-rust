@@ -2,7 +2,7 @@
 pub fn ser_export_preferences(
     object_11: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ExportPreferences,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::ExportPreferences::Ec2RecommendationsPreferences(inner) => {
             #[allow(unused_mut)]
@@ -11,7 +11,7 @@ pub fn ser_export_preferences(
             object_1.finish();
         }
         crate::types::ExportPreferences::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "ExportPreferences",
             ))
         }

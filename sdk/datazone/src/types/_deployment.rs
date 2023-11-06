@@ -35,8 +35,10 @@ impl Deployment {
         self.failure_reason.as_ref()
     }
     /// <p>The messages of the last deployment of the environment.</p>
-    pub fn messages(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.messages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.messages.is_none()`.
+    pub fn messages(&self) -> &[::std::string::String] {
+        self.messages.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether the last deployment of the environment is complete.</p>
     pub fn is_deployment_complete(&self) -> ::std::option::Option<bool> {

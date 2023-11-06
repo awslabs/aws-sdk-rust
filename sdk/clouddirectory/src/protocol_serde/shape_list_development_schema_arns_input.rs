@@ -2,7 +2,7 @@
 pub fn ser_list_development_schema_arns_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_development_schema_arns::ListDevelopmentSchemaArnsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]

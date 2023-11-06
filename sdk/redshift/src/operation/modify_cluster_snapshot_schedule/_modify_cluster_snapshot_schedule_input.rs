@@ -41,6 +41,7 @@ pub struct ModifyClusterSnapshotScheduleInputBuilder {
 }
 impl ModifyClusterSnapshotScheduleInputBuilder {
     /// <p>A unique identifier for the cluster whose snapshot schedule you want to modify. </p>
+    /// This field is required.
     pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ModifyClusterSnapshotScheduleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleInput {
             cluster_identifier: self.cluster_identifier,

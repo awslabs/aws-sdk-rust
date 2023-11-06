@@ -12,13 +12,17 @@ pub struct TabularConditions {
 }
 impl TabularConditions {
     /// <p>Filter criteria that orders the output. It can be sorted in ascending or descending order.</p>
-    pub fn order_by(&self) -> ::std::option::Option<&[crate::types::OrderBy]> {
-        self.order_by.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.order_by.is_none()`.
+    pub fn order_by(&self) -> &[crate::types::OrderBy] {
+        self.order_by.as_deref().unwrap_or_default()
     }
     /// <p>You can filter the request using various logical operators and a key-value format. For example:</p>
     /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
-    pub fn property_filters(&self) -> ::std::option::Option<&[crate::types::PropertyFilter]> {
-        self.property_filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.property_filters.is_none()`.
+    pub fn property_filters(&self) -> &[crate::types::PropertyFilter] {
+        self.property_filters.as_deref().unwrap_or_default()
     }
 }
 impl TabularConditions {

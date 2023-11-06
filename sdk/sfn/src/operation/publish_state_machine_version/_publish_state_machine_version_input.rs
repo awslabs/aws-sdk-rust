@@ -56,6 +56,7 @@ pub struct PublishStateMachineVersionInputBuilder {
 }
 impl PublishStateMachineVersionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the state machine.</p>
+    /// This field is required.
     pub fn state_machine_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_machine_arn = ::std::option::Option::Some(input.into());
         self
@@ -111,7 +112,7 @@ impl PublishStateMachineVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::publish_state_machine_version::PublishStateMachineVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::publish_state_machine_version::PublishStateMachineVersionInput {
             state_machine_arn: self.state_machine_arn,

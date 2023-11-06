@@ -5,36 +5,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssessmentRunAgent {
     /// <p>The AWS account of the EC2 instance where the agent is installed.</p>
-    pub agent_id: ::std::option::Option<::std::string::String>,
+    pub agent_id: ::std::string::String,
     /// <p>The ARN of the assessment run that is associated with the agent.</p>
-    pub assessment_run_arn: ::std::option::Option<::std::string::String>,
+    pub assessment_run_arn: ::std::string::String,
     /// <p>The current health state of the agent.</p>
-    pub agent_health: ::std::option::Option<crate::types::AgentHealth>,
+    pub agent_health: crate::types::AgentHealth,
     /// <p>The detailed health state of the agent.</p>
-    pub agent_health_code: ::std::option::Option<crate::types::AgentHealthCode>,
+    pub agent_health_code: crate::types::AgentHealthCode,
     /// <p>The description for the agent health code.</p>
     pub agent_health_details: ::std::option::Option<::std::string::String>,
     /// <p>The Auto Scaling group of the EC2 instance that is specified by the agent ID.</p>
     pub auto_scaling_group: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Inspector application data metrics that are collected by the agent.</p>
-    pub telemetry_metadata: ::std::option::Option<::std::vec::Vec<crate::types::TelemetryMetadata>>,
+    pub telemetry_metadata: ::std::vec::Vec<crate::types::TelemetryMetadata>,
 }
 impl AssessmentRunAgent {
     /// <p>The AWS account of the EC2 instance where the agent is installed.</p>
-    pub fn agent_id(&self) -> ::std::option::Option<&str> {
-        self.agent_id.as_deref()
+    pub fn agent_id(&self) -> &str {
+        use std::ops::Deref;
+        self.agent_id.deref()
     }
     /// <p>The ARN of the assessment run that is associated with the agent.</p>
-    pub fn assessment_run_arn(&self) -> ::std::option::Option<&str> {
-        self.assessment_run_arn.as_deref()
+    pub fn assessment_run_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.assessment_run_arn.deref()
     }
     /// <p>The current health state of the agent.</p>
-    pub fn agent_health(&self) -> ::std::option::Option<&crate::types::AgentHealth> {
-        self.agent_health.as_ref()
+    pub fn agent_health(&self) -> &crate::types::AgentHealth {
+        &self.agent_health
     }
     /// <p>The detailed health state of the agent.</p>
-    pub fn agent_health_code(&self) -> ::std::option::Option<&crate::types::AgentHealthCode> {
-        self.agent_health_code.as_ref()
+    pub fn agent_health_code(&self) -> &crate::types::AgentHealthCode {
+        &self.agent_health_code
     }
     /// <p>The description for the agent health code.</p>
     pub fn agent_health_details(&self) -> ::std::option::Option<&str> {
@@ -45,8 +47,9 @@ impl AssessmentRunAgent {
         self.auto_scaling_group.as_deref()
     }
     /// <p>The Amazon Inspector application data metrics that are collected by the agent.</p>
-    pub fn telemetry_metadata(&self) -> ::std::option::Option<&[crate::types::TelemetryMetadata]> {
-        self.telemetry_metadata.as_deref()
+    pub fn telemetry_metadata(&self) -> &[crate::types::TelemetryMetadata] {
+        use std::ops::Deref;
+        self.telemetry_metadata.deref()
     }
 }
 impl AssessmentRunAgent {
@@ -70,6 +73,7 @@ pub struct AssessmentRunAgentBuilder {
 }
 impl AssessmentRunAgentBuilder {
     /// <p>The AWS account of the EC2 instance where the agent is installed.</p>
+    /// This field is required.
     pub fn agent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_id = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +88,7 @@ impl AssessmentRunAgentBuilder {
         &self.agent_id
     }
     /// <p>The ARN of the assessment run that is associated with the agent.</p>
+    /// This field is required.
     pub fn assessment_run_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_run_arn = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +103,7 @@ impl AssessmentRunAgentBuilder {
         &self.assessment_run_arn
     }
     /// <p>The current health state of the agent.</p>
+    /// This field is required.
     pub fn agent_health(mut self, input: crate::types::AgentHealth) -> Self {
         self.agent_health = ::std::option::Option::Some(input);
         self
@@ -112,6 +118,7 @@ impl AssessmentRunAgentBuilder {
         &self.agent_health
     }
     /// <p>The detailed health state of the agent.</p>
+    /// This field is required.
     pub fn agent_health_code(mut self, input: crate::types::AgentHealthCode) -> Self {
         self.agent_health_code = ::std::option::Option::Some(input);
         self
@@ -174,15 +181,46 @@ impl AssessmentRunAgentBuilder {
         &self.telemetry_metadata
     }
     /// Consumes the builder and constructs a [`AssessmentRunAgent`](crate::types::AssessmentRunAgent).
-    pub fn build(self) -> crate::types::AssessmentRunAgent {
-        crate::types::AssessmentRunAgent {
-            agent_id: self.agent_id,
-            assessment_run_arn: self.assessment_run_arn,
-            agent_health: self.agent_health,
-            agent_health_code: self.agent_health_code,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`agent_id`](crate::types::builders::AssessmentRunAgentBuilder::agent_id)
+    /// - [`assessment_run_arn`](crate::types::builders::AssessmentRunAgentBuilder::assessment_run_arn)
+    /// - [`agent_health`](crate::types::builders::AssessmentRunAgentBuilder::agent_health)
+    /// - [`agent_health_code`](crate::types::builders::AssessmentRunAgentBuilder::agent_health_code)
+    /// - [`telemetry_metadata`](crate::types::builders::AssessmentRunAgentBuilder::telemetry_metadata)
+    pub fn build(self) -> ::std::result::Result<crate::types::AssessmentRunAgent, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AssessmentRunAgent {
+            agent_id: self.agent_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "agent_id",
+                    "agent_id was not specified but it is required when building AssessmentRunAgent",
+                )
+            })?,
+            assessment_run_arn: self.assessment_run_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "assessment_run_arn",
+                    "assessment_run_arn was not specified but it is required when building AssessmentRunAgent",
+                )
+            })?,
+            agent_health: self.agent_health.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "agent_health",
+                    "agent_health was not specified but it is required when building AssessmentRunAgent",
+                )
+            })?,
+            agent_health_code: self.agent_health_code.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "agent_health_code",
+                    "agent_health_code was not specified but it is required when building AssessmentRunAgent",
+                )
+            })?,
             agent_health_details: self.agent_health_details,
             auto_scaling_group: self.auto_scaling_group,
-            telemetry_metadata: self.telemetry_metadata,
-        }
+            telemetry_metadata: self.telemetry_metadata.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "telemetry_metadata",
+                    "telemetry_metadata was not specified but it is required when building AssessmentRunAgent",
+                )
+            })?,
+        })
     }
 }

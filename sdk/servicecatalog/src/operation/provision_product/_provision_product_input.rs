@@ -72,20 +72,26 @@ impl ProvisionProductInput {
         self.provisioned_product_name.as_deref()
     }
     /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
-    pub fn provisioning_parameters(&self) -> ::std::option::Option<&[crate::types::ProvisioningParameter]> {
-        self.provisioning_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provisioning_parameters.is_none()`.
+    pub fn provisioning_parameters(&self) -> &[crate::types::ProvisioningParameter] {
+        self.provisioning_parameters.as_deref().unwrap_or_default()
     }
     /// <p>An object that contains information about the provisioning preferences for a stack set.</p>
     pub fn provisioning_preferences(&self) -> ::std::option::Option<&crate::types::ProvisioningPreferences> {
         self.provisioning_preferences.as_ref()
     }
     /// <p>One or more tags.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
-    pub fn notification_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.notification_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notification_arns.is_none()`.
+    pub fn notification_arns(&self) -> &[::std::string::String] {
+        self.notification_arns.as_deref().unwrap_or_default()
     }
     /// <p>An idempotency token that uniquely identifies the provisioning request.</p>
     pub fn provision_token(&self) -> ::std::option::Option<&str> {
@@ -229,6 +235,7 @@ impl ProvisionProductInputBuilder {
         &self.path_name
     }
     /// <p>A user-friendly name for the provisioned product. This value must be unique for the Amazon Web Services account and cannot be updated after the product is provisioned.</p>
+    /// This field is required.
     pub fn provisioned_product_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioned_product_name = ::std::option::Option::Some(input.into());
         self
@@ -317,6 +324,7 @@ impl ProvisionProductInputBuilder {
         &self.notification_arns
     }
     /// <p>An idempotency token that uniquely identifies the provisioning request.</p>
+    /// This field is required.
     pub fn provision_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provision_token = ::std::option::Option::Some(input.into());
         self
@@ -333,7 +341,7 @@ impl ProvisionProductInputBuilder {
     /// Consumes the builder and constructs a [`ProvisionProductInput`](crate::operation::provision_product::ProvisionProductInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::provision_product::ProvisionProductInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::provision_product::ProvisionProductInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::provision_product::ProvisionProductInput {
             accept_language: self.accept_language,
             product_id: self.product_id,

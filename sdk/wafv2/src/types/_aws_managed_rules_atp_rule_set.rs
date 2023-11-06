@@ -6,7 +6,7 @@
 pub struct AwsManagedRulesAtpRuleSet {
     /// <p>The path of the login endpoint for your application. For example, for the URL <code>https://example.com/web/login</code>, you would provide the path <code>/web/login</code>. Login paths that start with the path that you provide are considered a match. For example <code>/web/login</code> matches the login paths <code>/web/login</code>, <code>/web/login/</code>, <code>/web/loginPage</code>, and <code>/web/login/thisPage</code>, but doesn't match the login path <code>/home/web/login</code> or <code>/website/login</code>.</p>
     /// <p>The rule group inspects only HTTP <code>POST</code> requests to your specified login endpoint.</p>
-    pub login_path: ::std::option::Option<::std::string::String>,
+    pub login_path: ::std::string::String,
     /// <p>The criteria for inspecting login requests, used by the ATP rule group to validate credentials usage. </p>
     pub request_inspection: ::std::option::Option<crate::types::RequestInspection>,
     /// <p>The criteria for inspecting responses to login requests, used by the ATP rule group to track login failure rates. </p> <note>
@@ -20,8 +20,9 @@ pub struct AwsManagedRulesAtpRuleSet {
 impl AwsManagedRulesAtpRuleSet {
     /// <p>The path of the login endpoint for your application. For example, for the URL <code>https://example.com/web/login</code>, you would provide the path <code>/web/login</code>. Login paths that start with the path that you provide are considered a match. For example <code>/web/login</code> matches the login paths <code>/web/login</code>, <code>/web/login/</code>, <code>/web/loginPage</code>, and <code>/web/login/thisPage</code>, but doesn't match the login path <code>/home/web/login</code> or <code>/website/login</code>.</p>
     /// <p>The rule group inspects only HTTP <code>POST</code> requests to your specified login endpoint.</p>
-    pub fn login_path(&self) -> ::std::option::Option<&str> {
-        self.login_path.as_deref()
+    pub fn login_path(&self) -> &str {
+        use std::ops::Deref;
+        self.login_path.deref()
     }
     /// <p>The criteria for inspecting login requests, used by the ATP rule group to validate credentials usage. </p>
     pub fn request_inspection(&self) -> ::std::option::Option<&crate::types::RequestInspection> {
@@ -58,6 +59,7 @@ pub struct AwsManagedRulesAtpRuleSetBuilder {
 impl AwsManagedRulesAtpRuleSetBuilder {
     /// <p>The path of the login endpoint for your application. For example, for the URL <code>https://example.com/web/login</code>, you would provide the path <code>/web/login</code>. Login paths that start with the path that you provide are considered a match. For example <code>/web/login</code> matches the login paths <code>/web/login</code>, <code>/web/login/</code>, <code>/web/loginPage</code>, and <code>/web/login/thisPage</code>, but doesn't match the login path <code>/home/web/login</code> or <code>/website/login</code>.</p>
     /// <p>The rule group inspects only HTTP <code>POST</code> requests to your specified login endpoint.</p>
+    /// This field is required.
     pub fn login_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.login_path = ::std::option::Option::Some(input.into());
         self
@@ -125,12 +127,19 @@ impl AwsManagedRulesAtpRuleSetBuilder {
         &self.enable_regex_in_path
     }
     /// Consumes the builder and constructs a [`AwsManagedRulesAtpRuleSet`](crate::types::AwsManagedRulesAtpRuleSet).
-    pub fn build(self) -> crate::types::AwsManagedRulesAtpRuleSet {
-        crate::types::AwsManagedRulesAtpRuleSet {
-            login_path: self.login_path,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`login_path`](crate::types::builders::AwsManagedRulesAtpRuleSetBuilder::login_path)
+    pub fn build(self) -> ::std::result::Result<crate::types::AwsManagedRulesAtpRuleSet, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AwsManagedRulesAtpRuleSet {
+            login_path: self.login_path.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "login_path",
+                    "login_path was not specified but it is required when building AwsManagedRulesAtpRuleSet",
+                )
+            })?,
             request_inspection: self.request_inspection,
             response_inspection: self.response_inspection,
             enable_regex_in_path: self.enable_regex_in_path.unwrap_or_default(),
-        }
+        })
     }
 }

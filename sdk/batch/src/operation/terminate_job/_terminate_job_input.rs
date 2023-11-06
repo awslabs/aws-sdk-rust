@@ -35,6 +35,7 @@ pub struct TerminateJobInputBuilder {
 }
 impl TerminateJobInputBuilder {
     /// <p>The Batch job ID of the job to terminate.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl TerminateJobInputBuilder {
         &self.job_id
     }
     /// <p>A message to attach to the job that explains the reason for canceling it. This message is returned by future <code>DescribeJobs</code> operations on the job. This message is also recorded in the Batch activity logs.</p>
+    /// This field is required.
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
         self
@@ -63,7 +65,9 @@ impl TerminateJobInputBuilder {
         &self.reason
     }
     /// Consumes the builder and constructs a [`TerminateJobInput`](crate::operation::terminate_job::TerminateJobInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::terminate_job::TerminateJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::terminate_job::TerminateJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::terminate_job::TerminateJobInput {
             job_id: self.job_id,
             reason: self.reason,

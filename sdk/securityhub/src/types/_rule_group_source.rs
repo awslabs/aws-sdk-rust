@@ -23,8 +23,10 @@ impl RuleGroupSource {
         self.rules_string.as_deref()
     }
     /// <p>Suricata rule specifications.</p>
-    pub fn stateful_rules(&self) -> ::std::option::Option<&[crate::types::RuleGroupSourceStatefulRulesDetails]> {
-        self.stateful_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stateful_rules.is_none()`.
+    pub fn stateful_rules(&self) -> &[crate::types::RuleGroupSourceStatefulRulesDetails] {
+        self.stateful_rules.as_deref().unwrap_or_default()
     }
     /// <p>The stateless rules and custom actions used by a stateless rule group.</p>
     pub fn stateless_rules_and_custom_actions(&self) -> ::std::option::Option<&crate::types::RuleGroupSourceStatelessRulesAndCustomActionsDetails> {

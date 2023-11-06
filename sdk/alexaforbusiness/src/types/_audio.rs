@@ -13,18 +13,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Audio {
     /// <p>The locale of the audio message. Currently, en-US is supported.</p>
-    pub locale: ::std::option::Option<crate::types::Locale>,
+    pub locale: crate::types::Locale,
     /// <p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe characters are valid. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters">Safe Characters</a>.</p>
-    pub location: ::std::option::Option<::std::string::String>,
+    pub location: ::std::string::String,
 }
 impl Audio {
     /// <p>The locale of the audio message. Currently, en-US is supported.</p>
-    pub fn locale(&self) -> ::std::option::Option<&crate::types::Locale> {
-        self.locale.as_ref()
+    pub fn locale(&self) -> &crate::types::Locale {
+        &self.locale
     }
     /// <p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe characters are valid. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters">Safe Characters</a>.</p>
-    pub fn location(&self) -> ::std::option::Option<&str> {
-        self.location.as_deref()
+    pub fn location(&self) -> &str {
+        use std::ops::Deref;
+        self.location.deref()
     }
 }
 impl Audio {
@@ -43,6 +44,7 @@ pub struct AudioBuilder {
 }
 impl AudioBuilder {
     /// <p>The locale of the audio message. Currently, en-US is supported.</p>
+    /// This field is required.
     pub fn locale(mut self, input: crate::types::Locale) -> Self {
         self.locale = ::std::option::Option::Some(input);
         self
@@ -57,6 +59,7 @@ impl AudioBuilder {
         &self.locale
     }
     /// <p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe characters are valid. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters">Safe Characters</a>.</p>
+    /// This field is required.
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
         self
@@ -71,10 +74,23 @@ impl AudioBuilder {
         &self.location
     }
     /// Consumes the builder and constructs a [`Audio`](crate::types::Audio).
-    pub fn build(self) -> crate::types::Audio {
-        crate::types::Audio {
-            locale: self.locale,
-            location: self.location,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`locale`](crate::types::builders::AudioBuilder::locale)
+    /// - [`location`](crate::types::builders::AudioBuilder::location)
+    pub fn build(self) -> ::std::result::Result<crate::types::Audio, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Audio {
+            locale: self.locale.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "locale",
+                    "locale was not specified but it is required when building Audio",
+                )
+            })?,
+            location: self.location.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "location",
+                    "location was not specified but it is required when building Audio",
+                )
+            })?,
+        })
     }
 }

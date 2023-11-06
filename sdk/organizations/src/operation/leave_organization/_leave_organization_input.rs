@@ -18,7 +18,7 @@ impl LeaveOrganizationInputBuilder {
     /// Consumes the builder and constructs a [`LeaveOrganizationInput`](crate::operation::leave_organization::LeaveOrganizationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::leave_organization::LeaveOrganizationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::leave_organization::LeaveOrganizationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::leave_organization::LeaveOrganizationInput {})
     }
 }

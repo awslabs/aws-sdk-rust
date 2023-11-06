@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Adapter {
     /// <p>A unique identifier for the adapter resource.</p>
-    pub adapter_id: ::std::option::Option<::std::string::String>,
+    pub adapter_id: ::std::string::String,
     /// <p>Pages is a parameter that the user inputs to specify which pages to apply an adapter to. The following is a list of rules for using this parameter.</p>
     /// <ul>
     /// <li> <p>If a page is not specified, it is set to <code>["1"]</code> by default.</p> </li>
@@ -16,12 +16,13 @@ pub struct Adapter {
     /// </ul>
     pub pages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A string that identifies the version of the adapter.</p>
-    pub version: ::std::option::Option<::std::string::String>,
+    pub version: ::std::string::String,
 }
 impl Adapter {
     /// <p>A unique identifier for the adapter resource.</p>
-    pub fn adapter_id(&self) -> ::std::option::Option<&str> {
-        self.adapter_id.as_deref()
+    pub fn adapter_id(&self) -> &str {
+        use std::ops::Deref;
+        self.adapter_id.deref()
     }
     /// <p>Pages is a parameter that the user inputs to specify which pages to apply an adapter to. The following is a list of rules for using this parameter.</p>
     /// <ul>
@@ -31,12 +32,15 @@ impl Adapter {
     /// <li> <p>You can use page intervals, such as <code>["1-3", "1-1", "4-*"]</code>. Where <code>*</code> indicates last page of document.</p> </li>
     /// <li> <p>Specified pages must be greater than 0 and less than or equal to the number of pages in the document.</p> </li>
     /// </ul>
-    pub fn pages(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.pages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pages.is_none()`.
+    pub fn pages(&self) -> &[::std::string::String] {
+        self.pages.as_deref().unwrap_or_default()
     }
     /// <p>A string that identifies the version of the adapter.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
-        self.version.as_deref()
+    pub fn version(&self) -> &str {
+        use std::ops::Deref;
+        self.version.deref()
     }
 }
 impl Adapter {
@@ -56,6 +60,7 @@ pub struct AdapterBuilder {
 }
 impl AdapterBuilder {
     /// <p>A unique identifier for the adapter resource.</p>
+    /// This field is required.
     pub fn adapter_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.adapter_id = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +116,7 @@ impl AdapterBuilder {
         &self.pages
     }
     /// <p>A string that identifies the version of the adapter.</p>
+    /// This field is required.
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
         self
@@ -125,11 +131,24 @@ impl AdapterBuilder {
         &self.version
     }
     /// Consumes the builder and constructs a [`Adapter`](crate::types::Adapter).
-    pub fn build(self) -> crate::types::Adapter {
-        crate::types::Adapter {
-            adapter_id: self.adapter_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`adapter_id`](crate::types::builders::AdapterBuilder::adapter_id)
+    /// - [`version`](crate::types::builders::AdapterBuilder::version)
+    pub fn build(self) -> ::std::result::Result<crate::types::Adapter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Adapter {
+            adapter_id: self.adapter_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "adapter_id",
+                    "adapter_id was not specified but it is required when building Adapter",
+                )
+            })?,
             pages: self.pages,
-            version: self.version,
-        }
+            version: self.version.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "version",
+                    "version was not specified but it is required when building Adapter",
+                )
+            })?,
+        })
     }
 }

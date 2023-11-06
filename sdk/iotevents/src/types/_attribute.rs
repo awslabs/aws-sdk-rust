@@ -12,7 +12,7 @@ pub struct Attribute {
     /// ...
     /// </field-name>
     /// </field-name></code> </p>
-    pub json_path: ::std::option::Option<::std::string::String>,
+    pub json_path: ::std::string::String,
 }
 impl Attribute {
     /// <p>An expression that specifies an attribute-value pair in a JSON structure. Use this to specify an attribute from the JSON payload that is made available by the input. Inputs are derived from messages sent to AWS IoT Events (<code>BatchPutMessage</code>). Each such message contains a JSON payload. The attribute (and its paired value) specified here are available for use in the <code>condition</code> expressions used by detectors. </p>
@@ -23,8 +23,9 @@ impl Attribute {
     /// ...
     /// </field-name>
     /// </field-name></code> </p>
-    pub fn json_path(&self) -> ::std::option::Option<&str> {
-        self.json_path.as_deref()
+    pub fn json_path(&self) -> &str {
+        use std::ops::Deref;
+        self.json_path.deref()
     }
 }
 impl Attribute {
@@ -49,6 +50,7 @@ impl AttributeBuilder {
     /// ...
     /// </field-name>
     /// </field-name></code> </p>
+    /// This field is required.
     pub fn json_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.json_path = ::std::option::Option::Some(input.into());
         self
@@ -77,7 +79,16 @@ impl AttributeBuilder {
         &self.json_path
     }
     /// Consumes the builder and constructs a [`Attribute`](crate::types::Attribute).
-    pub fn build(self) -> crate::types::Attribute {
-        crate::types::Attribute { json_path: self.json_path }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`json_path`](crate::types::builders::AttributeBuilder::json_path)
+    pub fn build(self) -> ::std::result::Result<crate::types::Attribute, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Attribute {
+            json_path: self.json_path.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "json_path",
+                    "json_path was not specified but it is required when building Attribute",
+                )
+            })?,
+        })
     }
 }

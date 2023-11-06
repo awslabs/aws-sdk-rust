@@ -2,7 +2,7 @@
 pub fn ser_job_driver(
     object_7: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::JobDriver,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::JobDriver::SparkSubmit(inner) => {
             #[allow(unused_mut)]
@@ -16,7 +16,7 @@ pub fn ser_job_driver(
             crate::protocol_serde::shape_hive::ser_hive(&mut object_2, inner)?;
             object_2.finish();
         }
-        crate::types::JobDriver::Unknown => return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("JobDriver")),
+        crate::types::JobDriver::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("JobDriver")),
     }
     Ok(())
 }
@@ -34,12 +34,17 @@ where
             match tokens.next().transpose()? {
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                    let key = key.to_unescaped()?;
+                    if key == "__type" {
+                        ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                        continue;
+                    }
                     if variant.is_some() {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
                             "encountered mixed variants in union",
                         ));
                     }
-                    variant = match key.to_unescaped()?.as_ref() {
+                    variant = match key.as_ref() {
                         "sparkSubmit" => Some(crate::types::JobDriver::SparkSubmit(
                             crate::protocol_serde::shape_spark_submit::de_spark_submit(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'sparkSubmit' cannot be null")

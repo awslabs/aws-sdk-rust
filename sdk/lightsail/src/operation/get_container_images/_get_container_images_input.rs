@@ -27,6 +27,7 @@ pub struct GetContainerImagesInputBuilder {
 }
 impl GetContainerImagesInputBuilder {
     /// <p>The name of the container service for which to return registered container images.</p>
+    /// This field is required.
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,8 @@ impl GetContainerImagesInputBuilder {
     /// Consumes the builder and constructs a [`GetContainerImagesInput`](crate::operation::get_container_images::GetContainerImagesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_container_images::GetContainerImagesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_container_images::GetContainerImagesInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_container_images::GetContainerImagesInput {
             service_name: self.service_name,
         })

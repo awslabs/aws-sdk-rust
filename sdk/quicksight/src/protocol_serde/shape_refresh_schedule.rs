@@ -2,26 +2,26 @@
 pub fn ser_refresh_schedule(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RefreshSchedule,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.schedule_id {
-        object.key("ScheduleId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("ScheduleId").string(input.schedule_id.as_str());
     }
-    if let Some(var_2) = &input.schedule_frequency {
+    if let Some(var_1) = &input.schedule_frequency {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("ScheduleFrequency").start_object();
-        crate::protocol_serde::shape_refresh_frequency::ser_refresh_frequency(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("ScheduleFrequency").start_object();
+        crate::protocol_serde::shape_refresh_frequency::ser_refresh_frequency(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.start_after_date_time {
+    if let Some(var_3) = &input.start_after_date_time {
         object
             .key("StartAfterDateTime")
-            .date_time(var_4, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_3, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_5) = &input.refresh_type {
-        object.key("RefreshType").string(var_5.as_str());
+    {
+        object.key("RefreshType").string(input.refresh_type.as_str());
     }
-    if let Some(var_6) = &input.arn {
-        object.key("Arn").string(var_6.as_str());
+    if let Some(var_4) = &input.arn {
+        object.key("Arn").string(var_4.as_str());
     }
     Ok(())
 }
@@ -81,7 +81,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::refresh_schedule_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

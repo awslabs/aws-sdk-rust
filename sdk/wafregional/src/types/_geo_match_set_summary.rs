@@ -9,18 +9,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GeoMatchSetSummary {
     /// <p>The <code>GeoMatchSetId</code> for an <code>GeoMatchSet</code>. You can use <code>GeoMatchSetId</code> in a <code>GetGeoMatchSet</code> request to get detailed information about an <code>GeoMatchSet</code>.</p>
-    pub geo_match_set_id: ::std::option::Option<::std::string::String>,
+    pub geo_match_set_id: ::std::string::String,
     /// <p>A friendly name or description of the <code>GeoMatchSet</code>. You can't change the name of an <code>GeoMatchSet</code> after you create it.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
 }
 impl GeoMatchSetSummary {
     /// <p>The <code>GeoMatchSetId</code> for an <code>GeoMatchSet</code>. You can use <code>GeoMatchSetId</code> in a <code>GetGeoMatchSet</code> request to get detailed information about an <code>GeoMatchSet</code>.</p>
-    pub fn geo_match_set_id(&self) -> ::std::option::Option<&str> {
-        self.geo_match_set_id.as_deref()
+    pub fn geo_match_set_id(&self) -> &str {
+        use std::ops::Deref;
+        self.geo_match_set_id.deref()
     }
     /// <p>A friendly name or description of the <code>GeoMatchSet</code>. You can't change the name of an <code>GeoMatchSet</code> after you create it.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
 }
 impl GeoMatchSetSummary {
@@ -39,6 +41,7 @@ pub struct GeoMatchSetSummaryBuilder {
 }
 impl GeoMatchSetSummaryBuilder {
     /// <p>The <code>GeoMatchSetId</code> for an <code>GeoMatchSet</code>. You can use <code>GeoMatchSetId</code> in a <code>GetGeoMatchSet</code> request to get detailed information about an <code>GeoMatchSet</code>.</p>
+    /// This field is required.
     pub fn geo_match_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.geo_match_set_id = ::std::option::Option::Some(input.into());
         self
@@ -53,6 +56,7 @@ impl GeoMatchSetSummaryBuilder {
         &self.geo_match_set_id
     }
     /// <p>A friendly name or description of the <code>GeoMatchSet</code>. You can't change the name of an <code>GeoMatchSet</code> after you create it.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -67,10 +71,23 @@ impl GeoMatchSetSummaryBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`GeoMatchSetSummary`](crate::types::GeoMatchSetSummary).
-    pub fn build(self) -> crate::types::GeoMatchSetSummary {
-        crate::types::GeoMatchSetSummary {
-            geo_match_set_id: self.geo_match_set_id,
-            name: self.name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`geo_match_set_id`](crate::types::builders::GeoMatchSetSummaryBuilder::geo_match_set_id)
+    /// - [`name`](crate::types::builders::GeoMatchSetSummaryBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::GeoMatchSetSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::GeoMatchSetSummary {
+            geo_match_set_id: self.geo_match_set_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "geo_match_set_id",
+                    "geo_match_set_id was not specified but it is required when building GeoMatchSetSummary",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building GeoMatchSetSummary",
+                )
+            })?,
+        })
     }
 }

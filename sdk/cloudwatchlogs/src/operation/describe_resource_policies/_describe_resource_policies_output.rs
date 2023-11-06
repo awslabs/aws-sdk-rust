@@ -11,8 +11,10 @@ pub struct DescribeResourcePoliciesOutput {
 }
 impl DescribeResourcePoliciesOutput {
     /// <p>The resource policies that exist in this account.</p>
-    pub fn resource_policies(&self) -> ::std::option::Option<&[crate::types::ResourcePolicy]> {
-        self.resource_policies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_policies.is_none()`.
+    pub fn resource_policies(&self) -> &[crate::types::ResourcePolicy] {
+        self.resource_policies.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

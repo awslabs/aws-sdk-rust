@@ -61,6 +61,7 @@ pub struct UpdateDomainContactPrivacyInputBuilder {
 }
 impl UpdateDomainContactPrivacyInputBuilder {
     /// <p>The name of the domain that you want to update the privacy setting for.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -139,7 +140,7 @@ impl UpdateDomainContactPrivacyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_domain_contact_privacy::UpdateDomainContactPrivacyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_domain_contact_privacy::UpdateDomainContactPrivacyInput {
             domain_name: self.domain_name,

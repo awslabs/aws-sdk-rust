@@ -26,8 +26,10 @@ impl DescribeNetworkInterfaceAttributeOutput {
         self.description.as_ref()
     }
     /// <p>The security groups associated with the network interface.</p>
-    pub fn groups(&self) -> ::std::option::Option<&[crate::types::GroupIdentifier]> {
-        self.groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
+    pub fn groups(&self) -> &[crate::types::GroupIdentifier] {
+        self.groups.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the network interface.</p>
     pub fn network_interface_id(&self) -> ::std::option::Option<&str> {

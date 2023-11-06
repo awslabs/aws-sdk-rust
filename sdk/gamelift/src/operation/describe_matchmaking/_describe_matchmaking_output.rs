@@ -9,8 +9,10 @@ pub struct DescribeMatchmakingOutput {
 }
 impl DescribeMatchmakingOutput {
     /// <p>A collection of existing matchmaking ticket objects matching the request.</p>
-    pub fn ticket_list(&self) -> ::std::option::Option<&[crate::types::MatchmakingTicket]> {
-        self.ticket_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ticket_list.is_none()`.
+    pub fn ticket_list(&self) -> &[crate::types::MatchmakingTicket] {
+        self.ticket_list.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeMatchmakingOutput {

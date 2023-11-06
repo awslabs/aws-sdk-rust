@@ -51,8 +51,10 @@ impl RxNormAttribute {
         self.text.as_deref()
     }
     /// <p>Contextual information for the attribute. InferRxNorm recognizes the trait <code>NEGATION</code> for attributes, i.e. that the patient is not taking a specific dose or form of a medication.</p>
-    pub fn traits(&self) -> ::std::option::Option<&[crate::types::RxNormTrait]> {
-        self.traits.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.traits.is_none()`.
+    pub fn traits(&self) -> &[crate::types::RxNormTrait] {
+        self.traits.as_deref().unwrap_or_default()
     }
 }
 impl RxNormAttribute {

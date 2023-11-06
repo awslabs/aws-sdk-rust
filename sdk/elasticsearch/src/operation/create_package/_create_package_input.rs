@@ -49,6 +49,7 @@ pub struct CreatePackageInputBuilder {
 }
 impl CreatePackageInputBuilder {
     /// <p>Unique identifier for the package.</p>
+    /// This field is required.
     pub fn package_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_name = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl CreatePackageInputBuilder {
         &self.package_name
     }
     /// <p>Type of package. Currently supports only TXT-DICTIONARY.</p>
+    /// This field is required.
     pub fn package_type(mut self, input: crate::types::PackageType) -> Self {
         self.package_type = ::std::option::Option::Some(input);
         self
@@ -91,6 +93,7 @@ impl CreatePackageInputBuilder {
         &self.package_description
     }
     /// <p>The customer S3 location <code>PackageSource</code> for importing the package.</p>
+    /// This field is required.
     pub fn package_source(mut self, input: crate::types::PackageSource) -> Self {
         self.package_source = ::std::option::Option::Some(input);
         self
@@ -107,7 +110,7 @@ impl CreatePackageInputBuilder {
     /// Consumes the builder and constructs a [`CreatePackageInput`](crate::operation::create_package::CreatePackageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_package::CreatePackageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_package::CreatePackageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_package::CreatePackageInput {
             package_name: self.package_name,
             package_type: self.package_type,

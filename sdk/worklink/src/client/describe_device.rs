@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeDevice`](crate::operation::describe_device::builders::DescribeDeviceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`fleet_arn(impl Into<String>)`](crate::operation::describe_device::builders::DescribeDeviceFluentBuilder::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::operation::describe_device::builders::DescribeDeviceFluentBuilder::set_fleet_arn): <p>The ARN of the fleet.</p>
-    ///   - [`device_id(impl Into<String>)`](crate::operation::describe_device::builders::DescribeDeviceFluentBuilder::device_id) / [`set_device_id(Option<String>)`](crate::operation::describe_device::builders::DescribeDeviceFluentBuilder::set_device_id): <p>A unique identifier for a registered user's device.</p>
+    ///   - [`fleet_arn(impl Into<String>)`](crate::operation::describe_device::builders::DescribeDeviceFluentBuilder::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::operation::describe_device::builders::DescribeDeviceFluentBuilder::set_fleet_arn):<br>required: **true**<br><p>The ARN of the fleet.</p><br>
+    ///   - [`device_id(impl Into<String>)`](crate::operation::describe_device::builders::DescribeDeviceFluentBuilder::device_id) / [`set_device_id(Option<String>)`](crate::operation::describe_device::builders::DescribeDeviceFluentBuilder::set_device_id):<br>required: **true**<br><p>A unique identifier for a registered user's device.</p><br>
     /// - On success, responds with [`DescribeDeviceOutput`](crate::operation::describe_device::DescribeDeviceOutput) with field(s):
     ///   - [`status(Option<DeviceStatus>)`](crate::operation::describe_device::DescribeDeviceOutput::status): <p>The current state of the device.</p>
     ///   - [`model(Option<String>)`](crate::operation::describe_device::DescribeDeviceOutput::model): <p>The model of the device.</p>

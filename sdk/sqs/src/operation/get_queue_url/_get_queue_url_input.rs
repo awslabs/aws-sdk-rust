@@ -38,6 +38,7 @@ pub struct GetQueueUrlInputBuilder {
 impl GetQueueUrlInputBuilder {
     /// <p>The name of the queue whose URL must be fetched. Maximum 80 characters. Valid values: alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>).</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
+    /// This field is required.
     pub fn queue_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_name = ::std::option::Option::Some(input.into());
         self
@@ -68,7 +69,7 @@ impl GetQueueUrlInputBuilder {
         &self.queue_owner_aws_account_id
     }
     /// Consumes the builder and constructs a [`GetQueueUrlInput`](crate::operation::get_queue_url::GetQueueUrlInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_queue_url::GetQueueUrlInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_queue_url::GetQueueUrlInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_queue_url::GetQueueUrlInput {
             queue_name: self.queue_name,
             queue_owner_aws_account_id: self.queue_owner_aws_account_id,

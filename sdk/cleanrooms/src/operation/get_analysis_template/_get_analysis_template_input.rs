@@ -34,6 +34,7 @@ pub struct GetAnalysisTemplateInputBuilder {
 }
 impl GetAnalysisTemplateInputBuilder {
     /// <p>The identifier for a membership resource.</p>
+    /// This field is required.
     pub fn membership_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.membership_identifier = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetAnalysisTemplateInputBuilder {
         &self.membership_identifier
     }
     /// <p>The identifier for the analysis template resource.</p>
+    /// This field is required.
     pub fn analysis_template_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analysis_template_identifier = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl GetAnalysisTemplateInputBuilder {
     /// Consumes the builder and constructs a [`GetAnalysisTemplateInput`](crate::operation::get_analysis_template::GetAnalysisTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_analysis_template::GetAnalysisTemplateInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_analysis_template::GetAnalysisTemplateInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_analysis_template::GetAnalysisTemplateInput {
             membership_identifier: self.membership_identifier,

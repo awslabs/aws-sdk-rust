@@ -5,24 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddAttributesActivity {
     /// <p>The name of the addAttributes activity.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>A list of 1-50 <code>AttributeNameMapping</code> objects that map an existing attribute to a new attribute.</p> <note>
     /// <p>The existing attributes remain in the message, so if you want to remove the originals, use <code>RemoveAttributeActivity</code>.</p>
     /// </note>
-    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub attributes: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     /// <p>The next activity in the pipeline.</p>
     pub next: ::std::option::Option<::std::string::String>,
 }
 impl AddAttributesActivity {
     /// <p>The name of the addAttributes activity.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>A list of 1-50 <code>AttributeNameMapping</code> objects that map an existing attribute to a new attribute.</p> <note>
     /// <p>The existing attributes remain in the message, so if you want to remove the originals, use <code>RemoveAttributeActivity</code>.</p>
     /// </note>
-    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
-        self.attributes.as_ref()
+    pub fn attributes(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+        &self.attributes
     }
     /// <p>The next activity in the pipeline.</p>
     pub fn next(&self) -> ::std::option::Option<&str> {
@@ -46,6 +47,7 @@ pub struct AddAttributesActivityBuilder {
 }
 impl AddAttributesActivityBuilder {
     /// <p>The name of the addAttributes activity.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -100,11 +102,24 @@ impl AddAttributesActivityBuilder {
         &self.next
     }
     /// Consumes the builder and constructs a [`AddAttributesActivity`](crate::types::AddAttributesActivity).
-    pub fn build(self) -> crate::types::AddAttributesActivity {
-        crate::types::AddAttributesActivity {
-            name: self.name,
-            attributes: self.attributes,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::AddAttributesActivityBuilder::name)
+    /// - [`attributes`](crate::types::builders::AddAttributesActivityBuilder::attributes)
+    pub fn build(self) -> ::std::result::Result<crate::types::AddAttributesActivity, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AddAttributesActivity {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building AddAttributesActivity",
+                )
+            })?,
+            attributes: self.attributes.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "attributes",
+                    "attributes was not specified but it is required when building AddAttributesActivity",
+                )
+            })?,
             next: self.next,
-        }
+        })
     }
 }

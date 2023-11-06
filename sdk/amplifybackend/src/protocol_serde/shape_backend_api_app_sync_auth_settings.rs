@@ -2,7 +2,7 @@
 pub fn ser_backend_api_app_sync_auth_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BackendApiAppSyncAuthSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cognito_user_pool_id {
         object.key("cognitoUserPoolId").string(var_1.as_str());
     }

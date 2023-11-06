@@ -36,8 +36,10 @@ impl ListPreviewRotationShiftsInput {
         self.end_time.as_ref()
     }
     /// <p>The contacts that would be assigned to a rotation.</p>
-    pub fn members(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.members.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.members.is_none()`.
+    pub fn members(&self) -> &[::std::string::String] {
+        self.members.as_deref().unwrap_or_default()
     }
     /// <p>The time zone the rotation’s activity would be based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". </p>
     pub fn time_zone_id(&self) -> ::std::option::Option<&str> {
@@ -48,8 +50,10 @@ impl ListPreviewRotationShiftsInput {
         self.recurrence.as_ref()
     }
     /// <p>Information about changes that would be made in a rotation override.</p>
-    pub fn overrides(&self) -> ::std::option::Option<&[crate::types::PreviewOverride]> {
-        self.overrides.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.overrides.is_none()`.
+    pub fn overrides(&self) -> &[crate::types::PreviewOverride] {
+        self.overrides.as_deref().unwrap_or_default()
     }
     /// <p>A token to start the list. This token is used to get the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -111,6 +115,7 @@ impl ListPreviewRotationShiftsInputBuilder {
         &self.start_time
     }
     /// <p>The date and time a rotation shift would end.</p>
+    /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
@@ -145,6 +150,7 @@ impl ListPreviewRotationShiftsInputBuilder {
         &self.members
     }
     /// <p>The time zone the rotation’s activity would be based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". </p>
+    /// This field is required.
     pub fn time_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.time_zone_id = ::std::option::Option::Some(input.into());
         self
@@ -159,6 +165,7 @@ impl ListPreviewRotationShiftsInputBuilder {
         &self.time_zone_id
     }
     /// <p>Information about how long a rotation would last before restarting at the beginning of the shift order.</p>
+    /// This field is required.
     pub fn recurrence(mut self, input: crate::types::RecurrenceSettings) -> Self {
         self.recurrence = ::std::option::Option::Some(input);
         self
@@ -225,7 +232,7 @@ impl ListPreviewRotationShiftsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsInput {
             rotation_start_time: self.rotation_start_time,

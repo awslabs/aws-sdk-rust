@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InferenceS3InputConfiguration {
     /// <p>The bucket containing the input dataset for the inference. </p>
-    pub bucket: ::std::option::Option<::std::string::String>,
+    pub bucket: ::std::string::String,
     /// <p>The prefix for the S3 bucket used for the input data for the inference. </p>
     pub prefix: ::std::option::Option<::std::string::String>,
 }
 impl InferenceS3InputConfiguration {
     /// <p>The bucket containing the input dataset for the inference. </p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
-        self.bucket.as_deref()
+    pub fn bucket(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket.deref()
     }
     /// <p>The prefix for the S3 bucket used for the input data for the inference. </p>
     pub fn prefix(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct InferenceS3InputConfigurationBuilder {
 }
 impl InferenceS3InputConfigurationBuilder {
     /// <p>The bucket containing the input dataset for the inference. </p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl InferenceS3InputConfigurationBuilder {
         &self.prefix
     }
     /// Consumes the builder and constructs a [`InferenceS3InputConfiguration`](crate::types::InferenceS3InputConfiguration).
-    pub fn build(self) -> crate::types::InferenceS3InputConfiguration {
-        crate::types::InferenceS3InputConfiguration {
-            bucket: self.bucket,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bucket`](crate::types::builders::InferenceS3InputConfigurationBuilder::bucket)
+    pub fn build(self) -> ::std::result::Result<crate::types::InferenceS3InputConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::InferenceS3InputConfiguration {
+            bucket: self.bucket.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "bucket",
+                    "bucket was not specified but it is required when building InferenceS3InputConfiguration",
+                )
+            })?,
             prefix: self.prefix,
-        }
+        })
     }
 }

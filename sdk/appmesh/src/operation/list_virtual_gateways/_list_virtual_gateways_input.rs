@@ -48,6 +48,7 @@ pub struct ListVirtualGatewaysInputBuilder {
 }
 impl ListVirtualGatewaysInputBuilder {
     /// <p>The name of the service mesh to list virtual gateways in.</p>
+    /// This field is required.
     pub fn mesh_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mesh_name = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,7 @@ impl ListVirtualGatewaysInputBuilder {
     /// Consumes the builder and constructs a [`ListVirtualGatewaysInput`](crate::operation::list_virtual_gateways::ListVirtualGatewaysInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_virtual_gateways::ListVirtualGatewaysInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_virtual_gateways::ListVirtualGatewaysInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_virtual_gateways::ListVirtualGatewaysInput {
             mesh_name: self.mesh_name,

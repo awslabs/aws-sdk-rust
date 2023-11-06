@@ -2,7 +2,7 @@
 pub fn ser_list_savings_plans_purchase_recommendation_generation_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_savings_plans_purchase_recommendation_generation::ListSavingsPlansPurchaseRecommendationGenerationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.generation_status {
         object.key("GenerationStatus").string(var_1.as_str());
     }

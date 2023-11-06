@@ -49,6 +49,7 @@ pub struct RollingUpdatePolicyBuilder {
 }
 impl RollingUpdatePolicyBuilder {
     /// <p>Batch size for each rolling step to provision capacity and turn on traffic on the new endpoint fleet, and terminate capacity on the old endpoint fleet. Value must be between 5% to 50% of the variant's total instance count.</p>
+    /// This field is required.
     pub fn maximum_batch_size(mut self, input: crate::types::CapacitySize) -> Self {
         self.maximum_batch_size = ::std::option::Option::Some(input);
         self
@@ -63,6 +64,7 @@ impl RollingUpdatePolicyBuilder {
         &self.maximum_batch_size
     }
     /// <p>The length of the baking period, during which SageMaker monitors alarms for each batch on the new fleet.</p>
+    /// This field is required.
     pub fn wait_interval_in_seconds(mut self, input: i32) -> Self {
         self.wait_interval_in_seconds = ::std::option::Option::Some(input);
         self

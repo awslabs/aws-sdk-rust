@@ -11,8 +11,10 @@ pub struct ListImportsOutput {
 }
 impl ListImportsOutput {
     /// <p> The list of returned imports. </p>
-    pub fn imports(&self) -> ::std::option::Option<&[crate::types::ImportsListItem]> {
-        self.imports.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.imports.is_none()`.
+    pub fn imports(&self) -> &[crate::types::ImportsListItem] {
+        self.imports.as_deref().unwrap_or_default()
     }
     /// <p> A token you can use to get the next page of import results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

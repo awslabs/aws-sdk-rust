@@ -2,7 +2,7 @@
 pub fn ser_fast_launch_snapshot_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FastLaunchSnapshotConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.target_resource_count {
         object.key("targetResourceCount").number(
             #[allow(clippy::useless_conversion)]

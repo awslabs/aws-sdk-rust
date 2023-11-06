@@ -35,6 +35,7 @@ pub struct InterpolatedAssetPropertyValueBuilder {
 }
 impl InterpolatedAssetPropertyValueBuilder {
     /// <p>Contains a timestamp with optional nanosecond granularity.</p>
+    /// This field is required.
     pub fn timestamp(mut self, input: crate::types::TimeInNanos) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl InterpolatedAssetPropertyValueBuilder {
         &self.timestamp
     }
     /// <p>Contains an asset property value (of a single type only).</p>
+    /// This field is required.
     pub fn value(mut self, input: crate::types::Variant) -> Self {
         self.value = ::std::option::Option::Some(input);
         self

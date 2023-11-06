@@ -41,6 +41,7 @@ pub struct ListDataIntegrationAssociationsInputBuilder {
 }
 impl ListDataIntegrationAssociationsInputBuilder {
     /// <p>A unique identifier for the DataIntegration.</p>
+    /// This field is required.
     pub fn data_integration_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_integration_identifier = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListDataIntegrationAssociationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_data_integration_associations::ListDataIntegrationAssociationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_data_integration_associations::ListDataIntegrationAssociationsInput {

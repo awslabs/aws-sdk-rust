@@ -5,15 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListManagedAccountsOutput {
     /// <p>List managed accounts response items.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::ManagedAccount>>,
+    pub items: ::std::vec::Vec<crate::types::ManagedAccount>,
     /// <p>List managed accounts response next token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListManagedAccountsOutput {
     /// <p>List managed accounts response items.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::ManagedAccount]> {
-        self.items.as_deref()
+    pub fn items(&self) -> &[crate::types::ManagedAccount] {
+        use std::ops::Deref;
+        self.items.deref()
     }
     /// <p>List managed accounts response next token.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -85,11 +86,21 @@ impl ListManagedAccountsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListManagedAccountsOutput`](crate::operation::list_managed_accounts::ListManagedAccountsOutput).
-    pub fn build(self) -> crate::operation::list_managed_accounts::ListManagedAccountsOutput {
-        crate::operation::list_managed_accounts::ListManagedAccountsOutput {
-            items: self.items,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`items`](crate::operation::list_managed_accounts::builders::ListManagedAccountsOutputBuilder::items)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_managed_accounts::ListManagedAccountsOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_managed_accounts::ListManagedAccountsOutput {
+            items: self.items.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "items",
+                    "items was not specified but it is required when building ListManagedAccountsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

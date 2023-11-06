@@ -34,6 +34,7 @@ pub struct UpdateDeviceDefinitionInputBuilder {
 }
 impl UpdateDeviceDefinitionInputBuilder {
     /// The ID of the device definition.
+    /// This field is required.
     pub fn device_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_definition_id = ::std::option::Option::Some(input.into());
         self
@@ -64,8 +65,10 @@ impl UpdateDeviceDefinitionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDeviceDefinitionInput`](crate::operation::update_device_definition::UpdateDeviceDefinitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_device_definition::UpdateDeviceDefinitionInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::update_device_definition::UpdateDeviceDefinitionInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::update_device_definition::UpdateDeviceDefinitionInput {
             device_definition_id: self.device_definition_id,
             name: self.name,

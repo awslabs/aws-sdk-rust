@@ -114,7 +114,9 @@ pub fn de_get_provider_service_http_response(
         output = crate::protocol_serde::shape_get_provider_service::de_get_provider_service(_response_body, output)
             .map_err(crate::operation::get_provider_service::GetProviderServiceError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::get_provider_service_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::get_provider_service::GetProviderServiceError::unhandled)?
     })
 }
 

@@ -70,8 +70,10 @@ impl Ec2InstanceConnectEndpoint {
         self.fips_dns_name.as_deref()
     }
     /// <p>The ID of the elastic network interface that Amazon EC2 automatically created when creating the EC2 Instance Connect Endpoint.</p>
-    pub fn network_interface_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.network_interface_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_interface_ids.is_none()`.
+    pub fn network_interface_ids(&self) -> &[::std::string::String] {
+        self.network_interface_ids.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the VPC in which the EC2 Instance Connect Endpoint was created.</p>
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {
@@ -99,12 +101,16 @@ impl Ec2InstanceConnectEndpoint {
         self.preserve_client_ip
     }
     /// <p>The security groups associated with the endpoint. If you didn't specify a security group, the default security group for your VPC is associated with the endpoint.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>The tags assigned to the EC2 Instance Connect Endpoint.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl Ec2InstanceConnectEndpoint {

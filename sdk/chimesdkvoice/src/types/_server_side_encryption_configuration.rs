@@ -7,12 +7,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ServerSideEncryptionConfiguration {
     /// <p>The ARN of the KMS key used to encrypt the enrollment data in a voice profile domain. Asymmetric customer managed keys are not supported.</p>
-    pub kms_key_arn: ::std::option::Option<::std::string::String>,
+    pub kms_key_arn: ::std::string::String,
 }
 impl ServerSideEncryptionConfiguration {
     /// <p>The ARN of the KMS key used to encrypt the enrollment data in a voice profile domain. Asymmetric customer managed keys are not supported.</p>
-    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
-        self.kms_key_arn.as_deref()
+    pub fn kms_key_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.kms_key_arn.deref()
     }
 }
 impl ::std::fmt::Debug for ServerSideEncryptionConfiguration {
@@ -37,6 +38,7 @@ pub struct ServerSideEncryptionConfigurationBuilder {
 }
 impl ServerSideEncryptionConfigurationBuilder {
     /// <p>The ARN of the KMS key used to encrypt the enrollment data in a voice profile domain. Asymmetric customer managed keys are not supported.</p>
+    /// This field is required.
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_arn = ::std::option::Option::Some(input.into());
         self
@@ -51,10 +53,17 @@ impl ServerSideEncryptionConfigurationBuilder {
         &self.kms_key_arn
     }
     /// Consumes the builder and constructs a [`ServerSideEncryptionConfiguration`](crate::types::ServerSideEncryptionConfiguration).
-    pub fn build(self) -> crate::types::ServerSideEncryptionConfiguration {
-        crate::types::ServerSideEncryptionConfiguration {
-            kms_key_arn: self.kms_key_arn,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`kms_key_arn`](crate::types::builders::ServerSideEncryptionConfigurationBuilder::kms_key_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::ServerSideEncryptionConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ServerSideEncryptionConfiguration {
+            kms_key_arn: self.kms_key_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "kms_key_arn",
+                    "kms_key_arn was not specified but it is required when building ServerSideEncryptionConfiguration",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for ServerSideEncryptionConfigurationBuilder {

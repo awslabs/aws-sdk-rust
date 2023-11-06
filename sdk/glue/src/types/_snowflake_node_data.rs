@@ -121,16 +121,20 @@ impl SnowflakeNodeData {
         self.staging_table.as_deref()
     }
     /// <p>Specifies the columns combined to identify a record when detecting matches for merges and upserts. A list of structures with <code>value</code>, <code>label</code> and <code> description</code> keys. Each structure describes a column.</p>
-    pub fn selected_columns(&self) -> ::std::option::Option<&[crate::types::Option]> {
-        self.selected_columns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.selected_columns.is_none()`.
+    pub fn selected_columns(&self) -> &[crate::types::Option] {
+        self.selected_columns.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether automatic query pushdown is enabled. If pushdown is enabled, then when a query is run on Spark, if part of the query can be "pushed down" to the Snowflake server, it is pushed down. This improves performance of some queries.</p>
     pub fn auto_pushdown(&self) -> bool {
         self.auto_pushdown
     }
     /// <p>Manually defines the target schema for the node. A list of structures with <code>value</code> , <code>label</code> and <code>description</code> keys. Each structure defines a column.</p>
-    pub fn table_schema(&self) -> ::std::option::Option<&[crate::types::Option]> {
-        self.table_schema.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.table_schema.is_none()`.
+    pub fn table_schema(&self) -> &[crate::types::Option] {
+        self.table_schema.as_deref().unwrap_or_default()
     }
 }
 impl SnowflakeNodeData {

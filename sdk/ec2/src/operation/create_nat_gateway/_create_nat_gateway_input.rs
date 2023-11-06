@@ -44,8 +44,10 @@ impl CreateNatGatewayInput {
         self.subnet_id.as_deref()
     }
     /// <p>The tags to assign to the NAT gateway.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether the NAT gateway supports public or private connectivity. The default is public connectivity.</p>
     pub fn connectivity_type(&self) -> ::std::option::Option<&crate::types::ConnectivityType> {
@@ -56,12 +58,16 @@ impl CreateNatGatewayInput {
         self.private_ip_address.as_deref()
     }
     /// <p>Secondary EIP allocation IDs. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
-    pub fn secondary_allocation_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.secondary_allocation_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secondary_allocation_ids.is_none()`.
+    pub fn secondary_allocation_ids(&self) -> &[::std::string::String] {
+        self.secondary_allocation_ids.as_deref().unwrap_or_default()
     }
     /// <p>Secondary private IPv4 addresses. For more information about secondary addresses, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
-    pub fn secondary_private_ip_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.secondary_private_ip_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secondary_private_ip_addresses.is_none()`.
+    pub fn secondary_private_ip_addresses(&self) -> &[::std::string::String] {
+        self.secondary_private_ip_addresses.as_deref().unwrap_or_default()
     }
     /// <p>[Private NAT gateway only] The number of secondary private IPv4 addresses you want to assign to the NAT gateway. For more information about secondary addresses, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
     pub fn secondary_private_ip_address_count(&self) -> ::std::option::Option<i32> {
@@ -137,6 +143,7 @@ impl CreateNatGatewayInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the subnet in which to create the NAT gateway.</p>
+    /// This field is required.
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
         self
@@ -255,7 +262,7 @@ impl CreateNatGatewayInputBuilder {
     /// Consumes the builder and constructs a [`CreateNatGatewayInput`](crate::operation::create_nat_gateway::CreateNatGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_nat_gateway::CreateNatGatewayInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_nat_gateway::CreateNatGatewayInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_nat_gateway::CreateNatGatewayInput {
             allocation_id: self.allocation_id,
             client_token: self.client_token,

@@ -34,6 +34,7 @@ pub struct UpdateServiceSyncBlockerInputBuilder {
 }
 impl UpdateServiceSyncBlockerInputBuilder {
     /// <p>The ID of the service sync blocker.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateServiceSyncBlockerInputBuilder {
         &self.id
     }
     /// <p>The reason the service sync blocker was resolved.</p>
+    /// This field is required.
     pub fn resolved_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolved_reason = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl UpdateServiceSyncBlockerInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_service_sync_blocker::UpdateServiceSyncBlockerInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_service_sync_blocker::UpdateServiceSyncBlockerInput {
             id: self.id,

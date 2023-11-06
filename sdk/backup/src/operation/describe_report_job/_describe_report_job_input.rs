@@ -27,6 +27,7 @@ pub struct DescribeReportJobInputBuilder {
 }
 impl DescribeReportJobInputBuilder {
     /// <p>The identifier of the report job. A unique, randomly generated, Unicode, UTF-8 encoded string that is at most 1,024 bytes long. The report job ID cannot be edited.</p>
+    /// This field is required.
     pub fn report_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.report_job_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeReportJobInputBuilder {
     /// Consumes the builder and constructs a [`DescribeReportJobInput`](crate::operation::describe_report_job::DescribeReportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_report_job::DescribeReportJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_report_job::DescribeReportJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_report_job::DescribeReportJobInput {
             report_job_id: self.report_job_id,
         })

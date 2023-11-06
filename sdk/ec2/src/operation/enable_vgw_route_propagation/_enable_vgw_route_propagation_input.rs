@@ -42,6 +42,7 @@ pub struct EnableVgwRoutePropagationInputBuilder {
 }
 impl EnableVgwRoutePropagationInputBuilder {
     /// <p>The ID of the virtual private gateway that is attached to a VPC. The virtual private gateway must be attached to the same VPC that the routing tables are associated with. </p>
+    /// This field is required.
     pub fn gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl EnableVgwRoutePropagationInputBuilder {
         &self.gateway_id
     }
     /// <p>The ID of the route table. The routing table must be associated with the same VPC that the virtual private gateway is attached to. </p>
+    /// This field is required.
     pub fn route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_table_id = ::std::option::Option::Some(input.into());
         self
@@ -88,7 +90,7 @@ impl EnableVgwRoutePropagationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable_vgw_route_propagation::EnableVgwRoutePropagationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::enable_vgw_route_propagation::EnableVgwRoutePropagationInput {
             gateway_id: self.gateway_id,

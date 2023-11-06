@@ -10,7 +10,7 @@ impl AddDraftAppVersionResourceMappingsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -22,7 +22,7 @@ impl AddDraftAppVersionResourceMappingsInputBuilder {
 }
 /// Fluent builder constructing a request to `AddDraftAppVersionResourceMappings`.
 ///
-/// <p>Adds the resource mapping for the draft application version. You can also update an existing resource mapping to a new physical resource.</p>
+/// <p>Adds the source of resource-maps to the draft version of an application. During assessment, Resilience Hub will use these resource-maps to resolve the latest physical ID for each resource in the application template. For more information about different types of resources suported by Resilience Hub and how to add them in your application, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/how-app-manage.html">Step 2: How is your application managed?</a> in the Resilience Hub User Guide.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AddDraftAppVersionResourceMappingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -72,12 +72,15 @@ impl AddDraftAppVersionResourceMappingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins =
             crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappings::operation_runtime_plugins(
                 self.handle.runtime_plugins.clone(),
@@ -87,20 +90,15 @@ impl AddDraftAppVersionResourceMappingsFluentBuilder {
         crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappings::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsOutput,
-            crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsOutput,
+        crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -111,17 +109,17 @@ impl AddDraftAppVersionResourceMappingsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn app_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_arn(input.into());
         self
     }
-    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn set_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_arn(input);
         self
     }
-    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_app_arn()
     }

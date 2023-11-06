@@ -69,6 +69,7 @@ impl DeregisterPackageVersionInputBuilder {
         &self.owner_account
     }
     /// <p>A package ID.</p>
+    /// This field is required.
     pub fn package_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +84,7 @@ impl DeregisterPackageVersionInputBuilder {
         &self.package_id
     }
     /// <p>A package version.</p>
+    /// This field is required.
     pub fn package_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_version = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +99,7 @@ impl DeregisterPackageVersionInputBuilder {
         &self.package_version
     }
     /// <p>A patch version.</p>
+    /// This field is required.
     pub fn patch_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.patch_version = ::std::option::Option::Some(input.into());
         self
@@ -129,7 +132,7 @@ impl DeregisterPackageVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_package_version::DeregisterPackageVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::deregister_package_version::DeregisterPackageVersionInput {
             owner_account: self.owner_account,

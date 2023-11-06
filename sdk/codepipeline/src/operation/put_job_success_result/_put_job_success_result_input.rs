@@ -56,6 +56,7 @@ pub struct PutJobSuccessResultInputBuilder {
 }
 impl PutJobSuccessResultInputBuilder {
     /// <p>The unique system-generated ID of the job that succeeded. This is the same ID returned from <code>PollForJobs</code>.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -141,7 +142,7 @@ impl PutJobSuccessResultInputBuilder {
     /// Consumes the builder and constructs a [`PutJobSuccessResultInput`](crate::operation::put_job_success_result::PutJobSuccessResultInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_job_success_result::PutJobSuccessResultInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_job_success_result::PutJobSuccessResultInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_job_success_result::PutJobSuccessResultInput {
             job_id: self.job_id,

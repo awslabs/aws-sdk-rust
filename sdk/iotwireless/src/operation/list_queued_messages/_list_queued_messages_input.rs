@@ -48,6 +48,7 @@ pub struct ListQueuedMessagesInputBuilder {
 }
 impl ListQueuedMessagesInputBuilder {
     /// <p>The ID of a given wireless device which the downlink message packets are being sent.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,8 @@ impl ListQueuedMessagesInputBuilder {
     /// Consumes the builder and constructs a [`ListQueuedMessagesInput`](crate::operation::list_queued_messages::ListQueuedMessagesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_queued_messages::ListQueuedMessagesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_queued_messages::ListQueuedMessagesInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_queued_messages::ListQueuedMessagesInput {
             id: self.id,
             next_token: self.next_token,

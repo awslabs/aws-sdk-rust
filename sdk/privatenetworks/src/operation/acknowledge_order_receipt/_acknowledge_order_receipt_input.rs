@@ -27,6 +27,7 @@ pub struct AcknowledgeOrderReceiptInputBuilder {
 }
 impl AcknowledgeOrderReceiptInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the order.</p>
+    /// This field is required.
     pub fn order_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.order_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl AcknowledgeOrderReceiptInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::acknowledge_order_receipt::AcknowledgeOrderReceiptInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::acknowledge_order_receipt::AcknowledgeOrderReceiptInput { order_arn: self.order_arn })
     }

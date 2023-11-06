@@ -47,8 +47,10 @@ pub struct AwsRdsDbClusterSnapshotDetails {
 }
 impl AwsRdsDbClusterSnapshotDetails {
     /// <p>A list of Availability Zones where instances in the DB cluster can be created.</p>
-    pub fn availability_zones(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.availability_zones.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
+    pub fn availability_zones(&self) -> &[::std::string::String] {
+        self.availability_zones.as_deref().unwrap_or_default()
     }
     /// <p>Indicates when the snapshot was taken.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
@@ -121,8 +123,10 @@ impl AwsRdsDbClusterSnapshotDetails {
         self.iam_database_authentication_enabled
     }
     /// <p> Contains the name and values of a manual DB cluster snapshot attribute. </p>
-    pub fn db_cluster_snapshot_attributes(&self) -> ::std::option::Option<&[crate::types::AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute]> {
-        self.db_cluster_snapshot_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_cluster_snapshot_attributes.is_none()`.
+    pub fn db_cluster_snapshot_attributes(&self) -> &[crate::types::AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute] {
+        self.db_cluster_snapshot_attributes.as_deref().unwrap_or_default()
     }
 }
 impl AwsRdsDbClusterSnapshotDetails {

@@ -2,7 +2,7 @@
 pub fn ser_associate_security_key_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::associate_security_key::AssociateSecurityKeyInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.key {
         object.key("Key").string(var_1.as_str());
     }

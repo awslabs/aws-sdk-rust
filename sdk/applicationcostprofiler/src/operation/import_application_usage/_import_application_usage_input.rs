@@ -27,6 +27,7 @@ pub struct ImportApplicationUsageInputBuilder {
 }
 impl ImportApplicationUsageInputBuilder {
     /// <p>Amazon S3 location to import application usage data from.</p>
+    /// This field is required.
     pub fn source_s3_location(mut self, input: crate::types::SourceS3Location) -> Self {
         self.source_s3_location = ::std::option::Option::Some(input);
         self
@@ -43,8 +44,10 @@ impl ImportApplicationUsageInputBuilder {
     /// Consumes the builder and constructs a [`ImportApplicationUsageInput`](crate::operation::import_application_usage::ImportApplicationUsageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::import_application_usage::ImportApplicationUsageInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::import_application_usage::ImportApplicationUsageInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::import_application_usage::ImportApplicationUsageInput {
             source_s3_location: self.source_s3_location,
         })

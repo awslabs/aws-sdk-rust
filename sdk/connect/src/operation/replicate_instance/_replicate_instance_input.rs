@@ -58,6 +58,7 @@ pub struct ReplicateInstanceInputBuilder {
 }
 impl ReplicateInstanceInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance. You can provide the <code>InstanceId</code>, or the entire ARN.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -72,6 +73,7 @@ impl ReplicateInstanceInputBuilder {
         &self.instance_id
     }
     /// <p>The Amazon Web Services Region where to replicate the Amazon Connect instance.</p>
+    /// This field is required.
     pub fn replica_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replica_region = ::std::option::Option::Some(input.into());
         self
@@ -100,6 +102,7 @@ impl ReplicateInstanceInputBuilder {
         &self.client_token
     }
     /// <p>The alias for the replicated instance. The <code>ReplicaAlias</code> must be unique.</p>
+    /// This field is required.
     pub fn replica_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replica_alias = ::std::option::Option::Some(input.into());
         self
@@ -116,7 +119,7 @@ impl ReplicateInstanceInputBuilder {
     /// Consumes the builder and constructs a [`ReplicateInstanceInput`](crate::operation::replicate_instance::ReplicateInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::replicate_instance::ReplicateInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::replicate_instance::ReplicateInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::replicate_instance::ReplicateInstanceInput {
             instance_id: self.instance_id,
             replica_region: self.replica_region,

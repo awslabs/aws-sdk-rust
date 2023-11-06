@@ -34,6 +34,7 @@ pub struct DeleteAssetInputBuilder {
 }
 impl DeleteAssetInputBuilder {
     /// <p>The ID of the asset to delete.</p>
+    /// This field is required.
     pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_id = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +63,7 @@ impl DeleteAssetInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`DeleteAssetInput`](crate::operation::delete_asset::DeleteAssetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_asset::DeleteAssetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_asset::DeleteAssetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_asset::DeleteAssetInput {
             asset_id: self.asset_id,
             client_token: self.client_token,

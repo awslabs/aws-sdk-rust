@@ -11,8 +11,10 @@ pub struct DisassociateResourceShareOutput {
 }
 impl DisassociateResourceShareOutput {
     /// <p>An array of objects with information about the updated associations for this resource share.</p>
-    pub fn resource_share_associations(&self) -> ::std::option::Option<&[crate::types::ResourceShareAssociation]> {
-        self.resource_share_associations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_share_associations.is_none()`.
+    pub fn resource_share_associations(&self) -> &[crate::types::ResourceShareAssociation] {
+        self.resource_share_associations.as_deref().unwrap_or_default()
     }
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {

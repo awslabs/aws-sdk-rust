@@ -2,21 +2,21 @@
 pub fn ser_conversation_logs_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ConversationLogsRequest,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.log_settings {
-        let mut array_2 = object.key("logSettings").start_array();
-        for item_3 in var_1 {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        let mut array_1 = object.key("logSettings").start_array();
+        for item_2 in &input.log_settings {
             {
                 #[allow(unused_mut)]
-                let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_log_settings_request::ser_log_settings_request(&mut object_4, item_3)?;
-                object_4.finish();
+                let mut object_3 = array_1.value().start_object();
+                crate::protocol_serde::shape_log_settings_request::ser_log_settings_request(&mut object_3, item_2)?;
+                object_3.finish();
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
-    if let Some(var_5) = &input.iam_role_arn {
-        object.key("iamRoleArn").string(var_5.as_str());
+    {
+        object.key("iamRoleArn").string(input.iam_role_arn.as_str());
     }
     Ok(())
 }

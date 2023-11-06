@@ -69,6 +69,7 @@ pub struct CreateOutpostInputBuilder {
 }
 impl CreateOutpostInputBuilder {
     /// <p>The name of the Outpost.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +98,7 @@ impl CreateOutpostInputBuilder {
         &self.description
     }
     /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
+    /// This field is required.
     pub fn site_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.site_id = ::std::option::Option::Some(input.into());
         self
@@ -175,7 +177,7 @@ impl CreateOutpostInputBuilder {
     /// Consumes the builder and constructs a [`CreateOutpostInput`](crate::operation::create_outpost::CreateOutpostInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_outpost::CreateOutpostInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_outpost::CreateOutpostInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_outpost::CreateOutpostInput {
             name: self.name,
             description: self.description,

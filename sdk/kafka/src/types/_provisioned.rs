@@ -98,6 +98,7 @@ pub struct ProvisionedBuilder {
 }
 impl ProvisionedBuilder {
     /// <p>Information about the brokers.</p>
+    /// This field is required.
     pub fn broker_node_group_info(mut self, input: crate::types::BrokerNodeGroupInfo) -> Self {
         self.broker_node_group_info = ::std::option::Option::Some(input);
         self
@@ -196,6 +197,7 @@ impl ProvisionedBuilder {
         &self.logging_info
     }
     /// <p>The number of broker nodes in the cluster.</p>
+    /// This field is required.
     pub fn number_of_broker_nodes(mut self, input: i32) -> Self {
         self.number_of_broker_nodes = ::std::option::Option::Some(input);
         self

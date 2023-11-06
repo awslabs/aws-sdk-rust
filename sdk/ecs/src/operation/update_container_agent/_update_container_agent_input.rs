@@ -48,6 +48,7 @@ impl UpdateContainerAgentInputBuilder {
         &self.cluster
     }
     /// <p>The container instance ID or full ARN entries for the container instance where you would like to update the Amazon ECS container agent.</p>
+    /// This field is required.
     pub fn container_instance(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_instance = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl UpdateContainerAgentInputBuilder {
     /// Consumes the builder and constructs a [`UpdateContainerAgentInput`](crate::operation::update_container_agent::UpdateContainerAgentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_container_agent::UpdateContainerAgentInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_container_agent::UpdateContainerAgentInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_container_agent::UpdateContainerAgentInput {
             cluster: self.cluster,

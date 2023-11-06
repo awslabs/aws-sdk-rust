@@ -34,6 +34,7 @@ pub struct CreateLogStreamInputBuilder {
 }
 impl CreateLogStreamInputBuilder {
     /// <p>The name of the log group.</p>
+    /// This field is required.
     pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl CreateLogStreamInputBuilder {
         &self.log_group_name
     }
     /// <p>The name of the log stream.</p>
+    /// This field is required.
     pub fn log_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_stream_name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl CreateLogStreamInputBuilder {
     /// Consumes the builder and constructs a [`CreateLogStreamInput`](crate::operation::create_log_stream::CreateLogStreamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_log_stream::CreateLogStreamInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_log_stream::CreateLogStreamInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_log_stream::CreateLogStreamInput {
             log_group_name: self.log_group_name,
             log_stream_name: self.log_stream_name,

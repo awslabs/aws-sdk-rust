@@ -2,7 +2,7 @@
 pub fn ser_ebs_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EbsOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ebs_enabled {
         object.key("EBSEnabled").boolean(*var_1);
     }

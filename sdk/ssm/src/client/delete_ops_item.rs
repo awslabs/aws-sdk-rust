@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteOpsItem`](crate::operation::delete_ops_item::builders::DeleteOpsItemFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`ops_item_id(impl Into<String>)`](crate::operation::delete_ops_item::builders::DeleteOpsItemFluentBuilder::ops_item_id) / [`set_ops_item_id(Option<String>)`](crate::operation::delete_ops_item::builders::DeleteOpsItemFluentBuilder::set_ops_item_id): <p>The ID of the OpsItem that you want to delete.</p>
+    ///   - [`ops_item_id(impl Into<String>)`](crate::operation::delete_ops_item::builders::DeleteOpsItemFluentBuilder::ops_item_id) / [`set_ops_item_id(Option<String>)`](crate::operation::delete_ops_item::builders::DeleteOpsItemFluentBuilder::set_ops_item_id):<br>required: **true**<br><p>The ID of the OpsItem that you want to delete.</p><br>
     /// - On success, responds with [`DeleteOpsItemOutput`](crate::operation::delete_ops_item::DeleteOpsItemOutput)
     /// - On failure, responds with [`SdkError<DeleteOpsItemError>`](crate::operation::delete_ops_item::DeleteOpsItemError)
     pub fn delete_ops_item(&self) -> crate::operation::delete_ops_item::builders::DeleteOpsItemFluentBuilder {

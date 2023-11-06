@@ -16,7 +16,7 @@ impl IsVpcPeeredInput {
 pub struct IsVpcPeeredInputBuilder {}
 impl IsVpcPeeredInputBuilder {
     /// Consumes the builder and constructs a [`IsVpcPeeredInput`](crate::operation::is_vpc_peered::IsVpcPeeredInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::is_vpc_peered::IsVpcPeeredInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::is_vpc_peered::IsVpcPeeredInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::is_vpc_peered::IsVpcPeeredInput {})
     }
 }

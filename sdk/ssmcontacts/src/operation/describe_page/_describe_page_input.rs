@@ -27,6 +27,7 @@ pub struct DescribePageInputBuilder {
 }
 impl DescribePageInputBuilder {
     /// <p>The ID of the engagement to a contact channel.</p>
+    /// This field is required.
     pub fn page_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.page_id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,9 @@ impl DescribePageInputBuilder {
         &self.page_id
     }
     /// Consumes the builder and constructs a [`DescribePageInput`](crate::operation::describe_page::DescribePageInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_page::DescribePageInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_page::DescribePageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_page::DescribePageInput { page_id: self.page_id })
     }
 }

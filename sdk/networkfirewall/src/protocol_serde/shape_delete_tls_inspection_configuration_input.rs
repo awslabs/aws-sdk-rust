@@ -2,7 +2,7 @@
 pub fn ser_delete_tls_inspection_configuration_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_tls_inspection_configuration::DeleteTlsInspectionConfigurationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.tls_inspection_configuration_arn {
         object.key("TLSInspectionConfigurationArn").string(var_1.as_str());
     }

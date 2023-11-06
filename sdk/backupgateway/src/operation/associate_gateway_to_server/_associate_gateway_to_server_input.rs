@@ -34,6 +34,7 @@ pub struct AssociateGatewayToServerInputBuilder {
 }
 impl AssociateGatewayToServerInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// This field is required.
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl AssociateGatewayToServerInputBuilder {
         &self.gateway_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the server that hosts your virtual machines.</p>
+    /// This field is required.
     pub fn server_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_arn = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl AssociateGatewayToServerInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_gateway_to_server::AssociateGatewayToServerInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::associate_gateway_to_server::AssociateGatewayToServerInput {
             gateway_arn: self.gateway_arn,

@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteProjectOutput {
     /// <p>The name of the project that you deleted.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     _request_id: Option<String>,
 }
 impl DeleteProjectOutput {
     /// <p>The name of the project that you deleted.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteProjectOutput {
@@ -34,6 +35,7 @@ pub struct DeleteProjectOutputBuilder {
 }
 impl DeleteProjectOutputBuilder {
     /// <p>The name of the project that you deleted.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,19 @@ impl DeleteProjectOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteProjectOutput`](crate::operation::delete_project::DeleteProjectOutput).
-    pub fn build(self) -> crate::operation::delete_project::DeleteProjectOutput {
-        crate::operation::delete_project::DeleteProjectOutput {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::delete_project::builders::DeleteProjectOutputBuilder::name)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_project::DeleteProjectOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_project::DeleteProjectOutput {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DeleteProjectOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

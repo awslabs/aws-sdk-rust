@@ -41,6 +41,7 @@ pub struct RemoveRoleFromDbClusterInputBuilder {
 }
 impl RemoveRoleFromDbClusterInputBuilder {
     /// <p>The name of the DB cluster to disassociate the IAM role from.</p>
+    /// This field is required.
     pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_identifier = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl RemoveRoleFromDbClusterInputBuilder {
         &self.db_cluster_identifier
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to disassociate from the Aurora DB cluster, for example <code>arn:aws:iam::123456789012:role/AuroraAccessRole</code>.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +89,7 @@ impl RemoveRoleFromDbClusterInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_role_from_db_cluster::RemoveRoleFromDbClusterInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::remove_role_from_db_cluster::RemoveRoleFromDbClusterInput {
             db_cluster_identifier: self.db_cluster_identifier,

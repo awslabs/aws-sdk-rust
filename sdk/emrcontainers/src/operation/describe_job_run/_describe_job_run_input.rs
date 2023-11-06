@@ -34,6 +34,7 @@ pub struct DescribeJobRunInputBuilder {
 }
 impl DescribeJobRunInputBuilder {
     /// <p>The ID of the job run request. </p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeJobRunInputBuilder {
         &self.id
     }
     /// <p>The ID of the virtual cluster for which the job run is submitted.</p>
+    /// This field is required.
     pub fn virtual_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_cluster_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DescribeJobRunInputBuilder {
     /// Consumes the builder and constructs a [`DescribeJobRunInput`](crate::operation::describe_job_run::DescribeJobRunInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_job_run::DescribeJobRunInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_job_run::DescribeJobRunInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_job_run::DescribeJobRunInput {
             id: self.id,
             virtual_cluster_id: self.virtual_cluster_id,

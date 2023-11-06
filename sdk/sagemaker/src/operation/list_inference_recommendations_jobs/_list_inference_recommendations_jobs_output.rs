@@ -11,8 +11,10 @@ pub struct ListInferenceRecommendationsJobsOutput {
 }
 impl ListInferenceRecommendationsJobsOutput {
     /// <p>The recommendations created from the Amazon SageMaker Inference Recommender job.</p>
-    pub fn inference_recommendations_jobs(&self) -> ::std::option::Option<&[crate::types::InferenceRecommendationsJob]> {
-        self.inference_recommendations_jobs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inference_recommendations_jobs.is_none()`.
+    pub fn inference_recommendations_jobs(&self) -> &[crate::types::InferenceRecommendationsJob] {
+        self.inference_recommendations_jobs.as_deref().unwrap_or_default()
     }
     /// <p>A token for getting the next set of recommendations, if there are any.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -34,6 +34,7 @@ pub struct UpdateNumberOfDomainControllersInputBuilder {
 }
 impl UpdateNumberOfDomainControllersInputBuilder {
     /// <p>Identifier of the directory to which the domain controllers will be added or removed.</p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateNumberOfDomainControllersInputBuilder {
         &self.directory_id
     }
     /// <p>The number of domain controllers desired in the directory.</p>
+    /// This field is required.
     pub fn desired_number(mut self, input: i32) -> Self {
         self.desired_number = ::std::option::Option::Some(input);
         self
@@ -66,7 +68,7 @@ impl UpdateNumberOfDomainControllersInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersInput {

@@ -5,25 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SubscriptionRequestSummary {
     /// <p>The identifier of the subscription request.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The Amazon DataZone user who created the subscription request.</p>
-    pub created_by: ::std::option::Option<::std::string::String>,
+    pub created_by: ::std::string::String,
     /// <p>The identifier of the Amazon DataZone user who updated the subscription request.</p>
     pub updated_by: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon DataZone domain in which a subscription request exists.</p>
-    pub domain_id: ::std::option::Option<::std::string::String>,
+    pub domain_id: ::std::string::String,
     /// <p>The status of the subscription request.</p>
-    pub status: ::std::option::Option<crate::types::SubscriptionRequestStatus>,
+    pub status: crate::types::SubscriptionRequestStatus,
     /// <p>The timestamp of when a subscription request was created.</p>
-    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The timestamp of when the subscription request was updated.</p>
-    pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub updated_at: ::aws_smithy_types::DateTime,
     /// <p>The reason for the subscription request.</p>
-    pub request_reason: ::std::option::Option<::std::string::String>,
+    pub request_reason: ::std::string::String,
     /// <p>The principals included in the subscription request. </p>
-    pub subscribed_principals: ::std::option::Option<::std::vec::Vec<crate::types::SubscribedPrincipal>>,
+    pub subscribed_principals: ::std::vec::Vec<crate::types::SubscribedPrincipal>,
     /// <p>The listings included in the subscription request.</p>
-    pub subscribed_listings: ::std::option::Option<::std::vec::Vec<crate::types::SubscribedListing>>,
+    pub subscribed_listings: ::std::vec::Vec<crate::types::SubscribedListing>,
     /// <p>The identifier of the subscription request reviewer.</p>
     pub reviewer_id: ::std::option::Option<::std::string::String>,
     /// <p>The decision comment of the subscription request.</p>
@@ -31,44 +31,50 @@ pub struct SubscriptionRequestSummary {
 }
 impl SubscriptionRequestSummary {
     /// <p>The identifier of the subscription request.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The Amazon DataZone user who created the subscription request.</p>
-    pub fn created_by(&self) -> ::std::option::Option<&str> {
-        self.created_by.as_deref()
+    pub fn created_by(&self) -> &str {
+        use std::ops::Deref;
+        self.created_by.deref()
     }
     /// <p>The identifier of the Amazon DataZone user who updated the subscription request.</p>
     pub fn updated_by(&self) -> ::std::option::Option<&str> {
         self.updated_by.as_deref()
     }
     /// <p>The identifier of the Amazon DataZone domain in which a subscription request exists.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
-        self.domain_id.as_deref()
+    pub fn domain_id(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_id.deref()
     }
     /// <p>The status of the subscription request.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::SubscriptionRequestStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::SubscriptionRequestStatus {
+        &self.status
     }
     /// <p>The timestamp of when a subscription request was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_at.as_ref()
+    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_at
     }
     /// <p>The timestamp of when the subscription request was updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.updated_at.as_ref()
+    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.updated_at
     }
     /// <p>The reason for the subscription request.</p>
-    pub fn request_reason(&self) -> ::std::option::Option<&str> {
-        self.request_reason.as_deref()
+    pub fn request_reason(&self) -> &str {
+        use std::ops::Deref;
+        self.request_reason.deref()
     }
     /// <p>The principals included in the subscription request. </p>
-    pub fn subscribed_principals(&self) -> ::std::option::Option<&[crate::types::SubscribedPrincipal]> {
-        self.subscribed_principals.as_deref()
+    pub fn subscribed_principals(&self) -> &[crate::types::SubscribedPrincipal] {
+        use std::ops::Deref;
+        self.subscribed_principals.deref()
     }
     /// <p>The listings included in the subscription request.</p>
-    pub fn subscribed_listings(&self) -> ::std::option::Option<&[crate::types::SubscribedListing]> {
-        self.subscribed_listings.as_deref()
+    pub fn subscribed_listings(&self) -> &[crate::types::SubscribedListing] {
+        use std::ops::Deref;
+        self.subscribed_listings.deref()
     }
     /// <p>The identifier of the subscription request reviewer.</p>
     pub fn reviewer_id(&self) -> ::std::option::Option<&str> {
@@ -123,6 +129,7 @@ pub struct SubscriptionRequestSummaryBuilder {
 }
 impl SubscriptionRequestSummaryBuilder {
     /// <p>The identifier of the subscription request.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -137,6 +144,7 @@ impl SubscriptionRequestSummaryBuilder {
         &self.id
     }
     /// <p>The Amazon DataZone user who created the subscription request.</p>
+    /// This field is required.
     pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by = ::std::option::Option::Some(input.into());
         self
@@ -165,6 +173,7 @@ impl SubscriptionRequestSummaryBuilder {
         &self.updated_by
     }
     /// <p>The identifier of the Amazon DataZone domain in which a subscription request exists.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -179,6 +188,7 @@ impl SubscriptionRequestSummaryBuilder {
         &self.domain_id
     }
     /// <p>The status of the subscription request.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::SubscriptionRequestStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -193,6 +203,7 @@ impl SubscriptionRequestSummaryBuilder {
         &self.status
     }
     /// <p>The timestamp of when a subscription request was created.</p>
+    /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
@@ -207,6 +218,7 @@ impl SubscriptionRequestSummaryBuilder {
         &self.created_at
     }
     /// <p>The timestamp of when the subscription request was updated.</p>
+    /// This field is required.
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
@@ -221,6 +233,7 @@ impl SubscriptionRequestSummaryBuilder {
         &self.updated_at
     }
     /// <p>The reason for the subscription request.</p>
+    /// This field is required.
     pub fn request_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_reason = ::std::option::Option::Some(input.into());
         self
@@ -303,21 +316,76 @@ impl SubscriptionRequestSummaryBuilder {
         &self.decision_comment
     }
     /// Consumes the builder and constructs a [`SubscriptionRequestSummary`](crate::types::SubscriptionRequestSummary).
-    pub fn build(self) -> crate::types::SubscriptionRequestSummary {
-        crate::types::SubscriptionRequestSummary {
-            id: self.id,
-            created_by: self.created_by,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::SubscriptionRequestSummaryBuilder::id)
+    /// - [`created_by`](crate::types::builders::SubscriptionRequestSummaryBuilder::created_by)
+    /// - [`domain_id`](crate::types::builders::SubscriptionRequestSummaryBuilder::domain_id)
+    /// - [`status`](crate::types::builders::SubscriptionRequestSummaryBuilder::status)
+    /// - [`created_at`](crate::types::builders::SubscriptionRequestSummaryBuilder::created_at)
+    /// - [`updated_at`](crate::types::builders::SubscriptionRequestSummaryBuilder::updated_at)
+    /// - [`request_reason`](crate::types::builders::SubscriptionRequestSummaryBuilder::request_reason)
+    /// - [`subscribed_principals`](crate::types::builders::SubscriptionRequestSummaryBuilder::subscribed_principals)
+    /// - [`subscribed_listings`](crate::types::builders::SubscriptionRequestSummaryBuilder::subscribed_listings)
+    pub fn build(self) -> ::std::result::Result<crate::types::SubscriptionRequestSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SubscriptionRequestSummary {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building SubscriptionRequestSummary",
+                )
+            })?,
+            created_by: self.created_by.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_by",
+                    "created_by was not specified but it is required when building SubscriptionRequestSummary",
+                )
+            })?,
             updated_by: self.updated_by,
-            domain_id: self.domain_id,
-            status: self.status,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
-            request_reason: self.request_reason,
-            subscribed_principals: self.subscribed_principals,
-            subscribed_listings: self.subscribed_listings,
+            domain_id: self.domain_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "domain_id",
+                    "domain_id was not specified but it is required when building SubscriptionRequestSummary",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building SubscriptionRequestSummary",
+                )
+            })?,
+            created_at: self.created_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_at",
+                    "created_at was not specified but it is required when building SubscriptionRequestSummary",
+                )
+            })?,
+            updated_at: self.updated_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "updated_at",
+                    "updated_at was not specified but it is required when building SubscriptionRequestSummary",
+                )
+            })?,
+            request_reason: self.request_reason.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "request_reason",
+                    "request_reason was not specified but it is required when building SubscriptionRequestSummary",
+                )
+            })?,
+            subscribed_principals: self.subscribed_principals.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "subscribed_principals",
+                    "subscribed_principals was not specified but it is required when building SubscriptionRequestSummary",
+                )
+            })?,
+            subscribed_listings: self.subscribed_listings.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "subscribed_listings",
+                    "subscribed_listings was not specified but it is required when building SubscriptionRequestSummary",
+                )
+            })?,
             reviewer_id: self.reviewer_id,
             decision_comment: self.decision_comment,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for SubscriptionRequestSummaryBuilder {

@@ -41,7 +41,7 @@ impl ListSpacesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListSpacesInput`](crate::operation::list_spaces::ListSpacesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_spaces::ListSpacesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_spaces::ListSpacesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_spaces::ListSpacesInput { next_token: self.next_token })
     }
 }

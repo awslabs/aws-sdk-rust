@@ -12,12 +12,16 @@ pub struct DeleteProjectOutput {
 }
 impl DeleteProjectOutput {
     /// <p> Resources which were deleted. </p>
-    pub fn deleted_resources(&self) -> ::std::option::Option<&[crate::types::Resource]> {
-        self.deleted_resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.deleted_resources.is_none()`.
+    pub fn deleted_resources(&self) -> &[crate::types::Resource] {
+        self.deleted_resources.as_deref().unwrap_or_default()
     }
     /// <p> Resources which were not deleted, due to a risk of losing potentially important data or files. </p>
-    pub fn orphaned_resources(&self) -> ::std::option::Option<&[crate::types::Resource]> {
-        self.orphaned_resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.orphaned_resources.is_none()`.
+    pub fn orphaned_resources(&self) -> &[crate::types::Resource] {
+        self.orphaned_resources.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteProjectOutput {

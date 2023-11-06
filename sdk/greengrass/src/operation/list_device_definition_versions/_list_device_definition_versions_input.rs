@@ -41,6 +41,7 @@ pub struct ListDeviceDefinitionVersionsInputBuilder {
 }
 impl ListDeviceDefinitionVersionsInputBuilder {
     /// The ID of the device definition.
+    /// This field is required.
     pub fn device_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_definition_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListDeviceDefinitionVersionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_device_definition_versions::ListDeviceDefinitionVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_device_definition_versions::ListDeviceDefinitionVersionsInput {
             device_definition_id: self.device_definition_id,

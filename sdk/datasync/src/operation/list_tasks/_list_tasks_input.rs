@@ -21,8 +21,10 @@ impl ListTasksInput {
         self.next_token.as_deref()
     }
     /// <p>You can use API filters to narrow down the list of resources returned by <code>ListTasks</code>. For example, to retrieve all tasks on a specific source location, you can use <code>ListTasks</code> with filter name <code>LocationId</code> and <code>Operator Equals</code> with the ARN for the location.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::TaskFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::TaskFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
 }
 impl ListTasksInput {
@@ -90,7 +92,7 @@ impl ListTasksInputBuilder {
         &self.filters
     }
     /// Consumes the builder and constructs a [`ListTasksInput`](crate::operation::list_tasks::ListTasksInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_tasks::ListTasksInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_tasks::ListTasksInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_tasks::ListTasksInput {
             max_results: self.max_results,
             next_token: self.next_token,

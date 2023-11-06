@@ -18,8 +18,10 @@ impl AddJobFlowStepsInput {
         self.job_flow_id.as_deref()
     }
     /// <p> A list of <code>StepConfig</code> to be executed by the job flow. </p>
-    pub fn steps(&self) -> ::std::option::Option<&[crate::types::StepConfig]> {
-        self.steps.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.steps.is_none()`.
+    pub fn steps(&self) -> &[crate::types::StepConfig] {
+        self.steps.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>. </p>
     /// <p>For example, <code>arn:aws:IAM::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.</p>
@@ -44,6 +46,7 @@ pub struct AddJobFlowStepsInputBuilder {
 }
 impl AddJobFlowStepsInputBuilder {
     /// <p>A string that uniquely identifies the job flow. This identifier is returned by <code>RunJobFlow</code> and can also be obtained from <code>ListClusters</code>. </p>
+    /// This field is required.
     pub fn job_flow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_flow_id = ::std::option::Option::Some(input.into());
         self
@@ -97,7 +100,7 @@ impl AddJobFlowStepsInputBuilder {
     /// Consumes the builder and constructs a [`AddJobFlowStepsInput`](crate::operation::add_job_flow_steps::AddJobFlowStepsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::add_job_flow_steps::AddJobFlowStepsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::add_job_flow_steps::AddJobFlowStepsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::add_job_flow_steps::AddJobFlowStepsInput {
             job_flow_id: self.job_flow_id,
             steps: self.steps,

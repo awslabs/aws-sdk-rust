@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KinesisVideoStreamSourceTaskConfiguration {
     /// <p>The ARN of the stream.</p>
-    pub stream_arn: ::std::option::Option<::std::string::String>,
+    pub stream_arn: ::std::string::String,
     /// <p>The channel ID.</p>
     pub channel_id: i32,
     /// <p>The unique identifier of the fragment to begin processing.</p>
@@ -13,8 +13,9 @@ pub struct KinesisVideoStreamSourceTaskConfiguration {
 }
 impl KinesisVideoStreamSourceTaskConfiguration {
     /// <p>The ARN of the stream.</p>
-    pub fn stream_arn(&self) -> ::std::option::Option<&str> {
-        self.stream_arn.as_deref()
+    pub fn stream_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.stream_arn.deref()
     }
     /// <p>The channel ID.</p>
     pub fn channel_id(&self) -> i32 {
@@ -42,6 +43,7 @@ pub struct KinesisVideoStreamSourceTaskConfigurationBuilder {
 }
 impl KinesisVideoStreamSourceTaskConfigurationBuilder {
     /// <p>The ARN of the stream.</p>
+    /// This field is required.
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_arn = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +58,7 @@ impl KinesisVideoStreamSourceTaskConfigurationBuilder {
         &self.stream_arn
     }
     /// <p>The channel ID.</p>
+    /// This field is required.
     pub fn channel_id(mut self, input: i32) -> Self {
         self.channel_id = ::std::option::Option::Some(input);
         self
@@ -84,11 +87,20 @@ impl KinesisVideoStreamSourceTaskConfigurationBuilder {
         &self.fragment_number
     }
     /// Consumes the builder and constructs a [`KinesisVideoStreamSourceTaskConfiguration`](crate::types::KinesisVideoStreamSourceTaskConfiguration).
-    pub fn build(self) -> crate::types::KinesisVideoStreamSourceTaskConfiguration {
-        crate::types::KinesisVideoStreamSourceTaskConfiguration {
-            stream_arn: self.stream_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`stream_arn`](crate::types::builders::KinesisVideoStreamSourceTaskConfigurationBuilder::stream_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::KinesisVideoStreamSourceTaskConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::KinesisVideoStreamSourceTaskConfiguration {
+            stream_arn: self.stream_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "stream_arn",
+                    "stream_arn was not specified but it is required when building KinesisVideoStreamSourceTaskConfiguration",
+                )
+            })?,
             channel_id: self.channel_id.unwrap_or_default(),
             fragment_number: self.fragment_number,
-        }
+        })
     }
 }

@@ -34,6 +34,7 @@ pub struct AssociateTrialComponentInputBuilder {
 }
 impl AssociateTrialComponentInputBuilder {
     /// <p>The name of the component to associated with the trial.</p>
+    /// This field is required.
     pub fn trial_component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trial_component_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl AssociateTrialComponentInputBuilder {
         &self.trial_component_name
     }
     /// <p>The name of the trial to associate with.</p>
+    /// This field is required.
     pub fn trial_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trial_name = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl AssociateTrialComponentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_trial_component::AssociateTrialComponentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::associate_trial_component::AssociateTrialComponentInput {
             trial_component_name: self.trial_component_name,

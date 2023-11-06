@@ -2,7 +2,7 @@
 pub fn ser_iot_site_wise_action(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IotSiteWiseAction,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.entry_id {
         object.key("entryId").string(var_1.as_str());
     }

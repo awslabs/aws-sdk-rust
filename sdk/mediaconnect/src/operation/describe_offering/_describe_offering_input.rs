@@ -27,6 +27,7 @@ pub struct DescribeOfferingInputBuilder {
 }
 impl DescribeOfferingInputBuilder {
     /// The Amazon Resource Name (ARN) of the offering.
+    /// This field is required.
     pub fn offering_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.offering_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeOfferingInputBuilder {
     /// Consumes the builder and constructs a [`DescribeOfferingInput`](crate::operation::describe_offering::DescribeOfferingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_offering::DescribeOfferingInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_offering::DescribeOfferingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_offering::DescribeOfferingInput {
             offering_arn: self.offering_arn,
         })

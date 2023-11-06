@@ -15,8 +15,10 @@ impl ListFaqsOutput {
         self.next_token.as_deref()
     }
     /// <p>information about the FAQs associated with the specified index.</p>
-    pub fn faq_summary_items(&self) -> ::std::option::Option<&[crate::types::FaqSummary]> {
-        self.faq_summary_items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.faq_summary_items.is_none()`.
+    pub fn faq_summary_items(&self) -> &[crate::types::FaqSummary] {
+        self.faq_summary_items.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListFaqsOutput {

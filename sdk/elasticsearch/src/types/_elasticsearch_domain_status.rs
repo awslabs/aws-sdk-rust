@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ElasticsearchDomainStatus {
     /// <p>The unique identifier for the specified Elasticsearch domain.</p>
-    pub domain_id: ::std::option::Option<::std::string::String>,
+    pub domain_id: ::std::string::String,
     /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    pub domain_name: ::std::option::Option<::std::string::String>,
+    pub domain_name: ::std::string::String,
     /// <p>The Amazon resource name (ARN) of an Elasticsearch domain. See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The domain creation status. <code>True</code> if the creation of an Elasticsearch domain is complete. <code>False</code> if domain creation is still in progress.</p>
     pub created: ::std::option::Option<bool>,
     /// <p>The domain deletion status. <code>True</code> if a delete request has been received for the domain but resource cleanup is still in progress. <code>False</code> if the domain has not been deleted. Once domain deletion is complete, the status of the domain is no longer returned.</p>
@@ -57,16 +57,19 @@ pub struct ElasticsearchDomainStatus {
 }
 impl ElasticsearchDomainStatus {
     /// <p>The unique identifier for the specified Elasticsearch domain.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
-        self.domain_id.as_deref()
+    pub fn domain_id(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_id.deref()
     }
     /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
-        self.domain_name.as_deref()
+    pub fn domain_name(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_name.deref()
     }
     /// <p>The Amazon resource name (ARN) of an Elasticsearch domain. See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The domain creation status. <code>True</code> if the creation of an Elasticsearch domain is complete. <code>False</code> if domain creation is still in progress.</p>
     pub fn created(&self) -> ::std::option::Option<bool> {
@@ -198,6 +201,7 @@ pub struct ElasticsearchDomainStatusBuilder {
 }
 impl ElasticsearchDomainStatusBuilder {
     /// <p>The unique identifier for the specified Elasticsearch domain.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -212,6 +216,7 @@ impl ElasticsearchDomainStatusBuilder {
         &self.domain_id
     }
     /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -226,6 +231,7 @@ impl ElasticsearchDomainStatusBuilder {
         &self.domain_name
     }
     /// <p>The Amazon resource name (ARN) of an Elasticsearch domain. See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -344,6 +350,7 @@ impl ElasticsearchDomainStatusBuilder {
         &self.elasticsearch_version
     }
     /// <p>The type and number of instances in the domain cluster.</p>
+    /// This field is required.
     pub fn elasticsearch_cluster_config(mut self, input: crate::types::ElasticsearchClusterConfig) -> Self {
         self.elasticsearch_cluster_config = ::std::option::Option::Some(input);
         self
@@ -578,11 +585,30 @@ impl ElasticsearchDomainStatusBuilder {
         &self.change_progress_details
     }
     /// Consumes the builder and constructs a [`ElasticsearchDomainStatus`](crate::types::ElasticsearchDomainStatus).
-    pub fn build(self) -> crate::types::ElasticsearchDomainStatus {
-        crate::types::ElasticsearchDomainStatus {
-            domain_id: self.domain_id,
-            domain_name: self.domain_name,
-            arn: self.arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`domain_id`](crate::types::builders::ElasticsearchDomainStatusBuilder::domain_id)
+    /// - [`domain_name`](crate::types::builders::ElasticsearchDomainStatusBuilder::domain_name)
+    /// - [`arn`](crate::types::builders::ElasticsearchDomainStatusBuilder::arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::ElasticsearchDomainStatus, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ElasticsearchDomainStatus {
+            domain_id: self.domain_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "domain_id",
+                    "domain_id was not specified but it is required when building ElasticsearchDomainStatus",
+                )
+            })?,
+            domain_name: self.domain_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "domain_name",
+                    "domain_name was not specified but it is required when building ElasticsearchDomainStatus",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building ElasticsearchDomainStatus",
+                )
+            })?,
             created: self.created,
             deleted: self.deleted,
             endpoint: self.endpoint,
@@ -605,6 +631,6 @@ impl ElasticsearchDomainStatusBuilder {
             advanced_security_options: self.advanced_security_options,
             auto_tune_options: self.auto_tune_options,
             change_progress_details: self.change_progress_details,
-        }
+        })
     }
 }

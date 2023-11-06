@@ -27,6 +27,7 @@ pub struct RegisterOrganizationAdminAccountInputBuilder {
 }
 impl RegisterOrganizationAdminAccountInputBuilder {
     /// <p> The identifier for the delegated administrator account. </p>
+    /// This field is required.
     pub fn admin_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_account_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl RegisterOrganizationAdminAccountInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountInput {

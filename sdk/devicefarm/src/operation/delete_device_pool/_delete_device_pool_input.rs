@@ -28,6 +28,7 @@ pub struct DeleteDevicePoolInputBuilder {
 }
 impl DeleteDevicePoolInputBuilder {
     /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm device pool to delete.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl DeleteDevicePoolInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDevicePoolInput`](crate::operation::delete_device_pool::DeleteDevicePoolInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_device_pool::DeleteDevicePoolInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_device_pool::DeleteDevicePoolInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_device_pool::DeleteDevicePoolInput { arn: self.arn })
     }
 }

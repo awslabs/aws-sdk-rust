@@ -48,6 +48,7 @@ pub struct CreatePublishingDestinationInputBuilder {
 }
 impl CreatePublishingDestinationInputBuilder {
     /// <p>The ID of the GuardDuty detector associated with the publishing destination.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl CreatePublishingDestinationInputBuilder {
         &self.detector_id
     }
     /// <p>The type of resource for the publishing destination. Currently only Amazon S3 buckets are supported.</p>
+    /// This field is required.
     pub fn destination_type(mut self, input: crate::types::DestinationType) -> Self {
         self.destination_type = ::std::option::Option::Some(input);
         self
@@ -76,6 +78,7 @@ impl CreatePublishingDestinationInputBuilder {
         &self.destination_type
     }
     /// <p>The properties of the publishing destination, including the ARNs for the destination and the KMS key used for encryption.</p>
+    /// This field is required.
     pub fn destination_properties(mut self, input: crate::types::DestinationProperties) -> Self {
         self.destination_properties = ::std::option::Option::Some(input);
         self
@@ -108,7 +111,7 @@ impl CreatePublishingDestinationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_publishing_destination::CreatePublishingDestinationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_publishing_destination::CreatePublishingDestinationInput {
             detector_id: self.detector_id,

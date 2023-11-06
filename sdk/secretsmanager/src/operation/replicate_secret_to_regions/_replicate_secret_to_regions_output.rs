@@ -15,8 +15,10 @@ impl ReplicateSecretToRegionsOutput {
         self.arn.as_deref()
     }
     /// <p>The status of replication.</p>
-    pub fn replication_status(&self) -> ::std::option::Option<&[crate::types::ReplicationStatusType]> {
-        self.replication_status.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_status.is_none()`.
+    pub fn replication_status(&self) -> &[crate::types::ReplicationStatusType] {
+        self.replication_status.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ReplicateSecretToRegionsOutput {

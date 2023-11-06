@@ -3,12 +3,12 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetApplication`](crate::operation::get_application::builders::GetApplicationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::set_application_id): <p>The ID of the application.</p>
-    ///   - [`application_arn(impl Into<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::application_arn) / [`set_application_arn(Option<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::set_application_arn): <p>The Amazon Resource Name (ARN) of the application. </p>
-    ///   - [`app_registry_arn(impl Into<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::app_registry_arn) / [`set_app_registry_arn(Option<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::set_app_registry_arn): <p>The Amazon Resource Name (ARN) of the application registry.</p>
+    ///   - [`application_id(impl Into<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::set_application_id):<br>required: **false**<br><p>The ID of the application.</p><br>
+    ///   - [`application_arn(impl Into<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::application_arn) / [`set_application_arn(Option<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::set_application_arn):<br>required: **false**<br><p>The Amazon Resource Name (ARN) of the application. </p><br>
+    ///   - [`app_registry_arn(impl Into<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::app_registry_arn) / [`set_app_registry_arn(Option<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::set_app_registry_arn):<br>required: **false**<br><p>The Amazon Resource Name (ARN) of the application registry.</p><br>
     /// - On success, responds with [`GetApplicationOutput`](crate::operation::get_application::GetApplicationOutput) with field(s):
     ///   - [`application(Option<Application>)`](crate::operation::get_application::GetApplicationOutput::application): <p>Returns all of the metadata of an application registered with AWS Systems Manager for SAP.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_application::GetApplicationOutput::tags): <p>The tags of a registered application.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_application::GetApplicationOutput::tags): <p>The tags of a registered application.</p>
     /// - On failure, responds with [`SdkError<GetApplicationError>`](crate::operation::get_application::GetApplicationError)
     pub fn get_application(&self) -> crate::operation::get_application::builders::GetApplicationFluentBuilder {
         crate::operation::get_application::builders::GetApplicationFluentBuilder::new(self.handle.clone())

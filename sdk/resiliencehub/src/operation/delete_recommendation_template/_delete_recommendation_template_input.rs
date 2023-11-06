@@ -34,6 +34,7 @@ pub struct DeleteRecommendationTemplateInputBuilder {
 }
 impl DeleteRecommendationTemplateInputBuilder {
     /// <p>The Amazon Resource Name (ARN) for a recommendation template.</p>
+    /// This field is required.
     pub fn recommendation_template_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommendation_template_arn = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl DeleteRecommendationTemplateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_recommendation_template::DeleteRecommendationTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_recommendation_template::DeleteRecommendationTemplateInput {
             recommendation_template_arn: self.recommendation_template_arn,

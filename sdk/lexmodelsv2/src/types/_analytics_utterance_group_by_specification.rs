@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalyticsUtteranceGroupBySpecification {
     /// <p>Specifies whether to group the utterances by their text or their state.</p>
-    pub name: ::std::option::Option<crate::types::AnalyticsUtteranceField>,
+    pub name: crate::types::AnalyticsUtteranceField,
 }
 impl AnalyticsUtteranceGroupBySpecification {
     /// <p>Specifies whether to group the utterances by their text or their state.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::AnalyticsUtteranceField> {
-        self.name.as_ref()
+    pub fn name(&self) -> &crate::types::AnalyticsUtteranceField {
+        &self.name
     }
 }
 impl AnalyticsUtteranceGroupBySpecification {
@@ -28,6 +28,7 @@ pub struct AnalyticsUtteranceGroupBySpecificationBuilder {
 }
 impl AnalyticsUtteranceGroupBySpecificationBuilder {
     /// <p>Specifies whether to group the utterances by their text or their state.</p>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::AnalyticsUtteranceField) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,18 @@ impl AnalyticsUtteranceGroupBySpecificationBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`AnalyticsUtteranceGroupBySpecification`](crate::types::AnalyticsUtteranceGroupBySpecification).
-    pub fn build(self) -> crate::types::AnalyticsUtteranceGroupBySpecification {
-        crate::types::AnalyticsUtteranceGroupBySpecification { name: self.name }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::AnalyticsUtteranceGroupBySpecificationBuilder::name)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::AnalyticsUtteranceGroupBySpecification, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AnalyticsUtteranceGroupBySpecification {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building AnalyticsUtteranceGroupBySpecification",
+                )
+            })?,
+        })
     }
 }

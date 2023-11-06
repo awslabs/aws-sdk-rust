@@ -34,6 +34,7 @@ pub struct AssociateTagOptionWithResourceInputBuilder {
 }
 impl AssociateTagOptionWithResourceInputBuilder {
     /// <p>The resource identifier.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl AssociateTagOptionWithResourceInputBuilder {
         &self.resource_id
     }
     /// <p>The TagOption identifier.</p>
+    /// This field is required.
     pub fn tag_option_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tag_option_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl AssociateTagOptionWithResourceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_tag_option_with_resource::AssociateTagOptionWithResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::associate_tag_option_with_resource::AssociateTagOptionWithResourceInput {

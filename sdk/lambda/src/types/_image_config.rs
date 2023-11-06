@@ -13,12 +13,16 @@ pub struct ImageConfig {
 }
 impl ImageConfig {
     /// <p>Specifies the entry point to their application, which is typically the location of the runtime executable.</p>
-    pub fn entry_point(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.entry_point.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entry_point.is_none()`.
+    pub fn entry_point(&self) -> &[::std::string::String] {
+        self.entry_point.as_deref().unwrap_or_default()
     }
     /// <p>Specifies parameters that you want to pass in with ENTRYPOINT.</p>
-    pub fn command(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.command.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.command.is_none()`.
+    pub fn command(&self) -> &[::std::string::String] {
+        self.command.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the working directory.</p>
     pub fn working_directory(&self) -> ::std::option::Option<&str> {

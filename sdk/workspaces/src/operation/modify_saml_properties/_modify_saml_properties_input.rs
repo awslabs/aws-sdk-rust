@@ -30,8 +30,10 @@ impl ModifySamlPropertiesInput {
     /// <li> <p> <code>SAML_PROPERTIES_USER_ACCESS_URL</code> to delete the user access URL.</p> </li>
     /// <li> <p> <code>SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME</code> to delete the relay state parameter name.</p> </li>
     /// </ul>
-    pub fn properties_to_delete(&self) -> ::std::option::Option<&[crate::types::DeletableSamlProperty]> {
-        self.properties_to_delete.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.properties_to_delete.is_none()`.
+    pub fn properties_to_delete(&self) -> &[crate::types::DeletableSamlProperty] {
+        self.properties_to_delete.as_deref().unwrap_or_default()
     }
 }
 impl ModifySamlPropertiesInput {
@@ -51,6 +53,7 @@ pub struct ModifySamlPropertiesInputBuilder {
 }
 impl ModifySamlPropertiesInputBuilder {
     /// <p>The directory identifier for which you want to configure SAML properties.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -116,7 +119,7 @@ impl ModifySamlPropertiesInputBuilder {
     /// Consumes the builder and constructs a [`ModifySamlPropertiesInput`](crate::operation::modify_saml_properties::ModifySamlPropertiesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_saml_properties::ModifySamlPropertiesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::modify_saml_properties::ModifySamlPropertiesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::modify_saml_properties::ModifySamlPropertiesInput {
             resource_id: self.resource_id,

@@ -95,7 +95,7 @@ where
                             builder = builder.set_state_info(crate::protocol_serde::shape_state_info::de_state_info(tokens)?);
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape___map_of__string::de___map_of__string(tokens)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens)?);
                         }
                         "zookeeperConnectString" => {
                             builder = builder.set_zookeeper_connect_string(

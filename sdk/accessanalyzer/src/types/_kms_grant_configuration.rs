@@ -5,24 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KmsGrantConfiguration {
     /// <p>A list of operations that the grant permits.</p>
-    pub operations: ::std::option::Option<::std::vec::Vec<crate::types::KmsGrantOperation>>,
+    pub operations: ::std::vec::Vec<crate::types::KmsGrantOperation>,
     /// <p>The principal that is given permission to perform the operations that the grant permits.</p>
-    pub grantee_principal: ::std::option::Option<::std::string::String>,
+    pub grantee_principal: ::std::string::String,
     /// <p>The principal that is given permission to retire the grant by using <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RetireGrant.html">RetireGrant</a> operation.</p>
     pub retiring_principal: ::std::option::Option<::std::string::String>,
     /// <p>Use this structure to propose allowing <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> in the grant only when the operation request includes the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption context</a>.</p>
     pub constraints: ::std::option::Option<crate::types::KmsGrantConstraints>,
     /// <p> The Amazon Web Services account under which the grant was issued. The account is used to propose KMS grants issued by accounts other than the owner of the key.</p>
-    pub issuing_account: ::std::option::Option<::std::string::String>,
+    pub issuing_account: ::std::string::String,
 }
 impl KmsGrantConfiguration {
     /// <p>A list of operations that the grant permits.</p>
-    pub fn operations(&self) -> ::std::option::Option<&[crate::types::KmsGrantOperation]> {
-        self.operations.as_deref()
+    pub fn operations(&self) -> &[crate::types::KmsGrantOperation] {
+        use std::ops::Deref;
+        self.operations.deref()
     }
     /// <p>The principal that is given permission to perform the operations that the grant permits.</p>
-    pub fn grantee_principal(&self) -> ::std::option::Option<&str> {
-        self.grantee_principal.as_deref()
+    pub fn grantee_principal(&self) -> &str {
+        use std::ops::Deref;
+        self.grantee_principal.deref()
     }
     /// <p>The principal that is given permission to retire the grant by using <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RetireGrant.html">RetireGrant</a> operation.</p>
     pub fn retiring_principal(&self) -> ::std::option::Option<&str> {
@@ -33,8 +35,9 @@ impl KmsGrantConfiguration {
         self.constraints.as_ref()
     }
     /// <p> The Amazon Web Services account under which the grant was issued. The account is used to propose KMS grants issued by accounts other than the owner of the key.</p>
-    pub fn issuing_account(&self) -> ::std::option::Option<&str> {
-        self.issuing_account.as_deref()
+    pub fn issuing_account(&self) -> &str {
+        use std::ops::Deref;
+        self.issuing_account.deref()
     }
 }
 impl KmsGrantConfiguration {
@@ -76,6 +79,7 @@ impl KmsGrantConfigurationBuilder {
         &self.operations
     }
     /// <p>The principal that is given permission to perform the operations that the grant permits.</p>
+    /// This field is required.
     pub fn grantee_principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grantee_principal = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +122,7 @@ impl KmsGrantConfigurationBuilder {
         &self.constraints
     }
     /// <p> The Amazon Web Services account under which the grant was issued. The account is used to propose KMS grants issued by accounts other than the owner of the key.</p>
+    /// This field is required.
     pub fn issuing_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.issuing_account = ::std::option::Option::Some(input.into());
         self
@@ -132,13 +137,32 @@ impl KmsGrantConfigurationBuilder {
         &self.issuing_account
     }
     /// Consumes the builder and constructs a [`KmsGrantConfiguration`](crate::types::KmsGrantConfiguration).
-    pub fn build(self) -> crate::types::KmsGrantConfiguration {
-        crate::types::KmsGrantConfiguration {
-            operations: self.operations,
-            grantee_principal: self.grantee_principal,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`operations`](crate::types::builders::KmsGrantConfigurationBuilder::operations)
+    /// - [`grantee_principal`](crate::types::builders::KmsGrantConfigurationBuilder::grantee_principal)
+    /// - [`issuing_account`](crate::types::builders::KmsGrantConfigurationBuilder::issuing_account)
+    pub fn build(self) -> ::std::result::Result<crate::types::KmsGrantConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::KmsGrantConfiguration {
+            operations: self.operations.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "operations",
+                    "operations was not specified but it is required when building KmsGrantConfiguration",
+                )
+            })?,
+            grantee_principal: self.grantee_principal.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "grantee_principal",
+                    "grantee_principal was not specified but it is required when building KmsGrantConfiguration",
+                )
+            })?,
             retiring_principal: self.retiring_principal,
             constraints: self.constraints,
-            issuing_account: self.issuing_account,
-        }
+            issuing_account: self.issuing_account.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "issuing_account",
+                    "issuing_account was not specified but it is required when building KmsGrantConfiguration",
+                )
+            })?,
+        })
     }
 }

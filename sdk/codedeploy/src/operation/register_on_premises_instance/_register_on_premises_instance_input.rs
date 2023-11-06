@@ -42,6 +42,7 @@ pub struct RegisterOnPremisesInstanceInputBuilder {
 }
 impl RegisterOnPremisesInstanceInputBuilder {
     /// <p>The name of the on-premises instance to register.</p>
+    /// This field is required.
     pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_name = ::std::option::Option::Some(input.into());
         self
@@ -88,7 +89,7 @@ impl RegisterOnPremisesInstanceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_on_premises_instance::RegisterOnPremisesInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::register_on_premises_instance::RegisterOnPremisesInstanceInput {
             instance_name: self.instance_name,

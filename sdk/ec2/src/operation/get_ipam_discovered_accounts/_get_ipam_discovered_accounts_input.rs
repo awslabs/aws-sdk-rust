@@ -30,8 +30,10 @@ impl GetIpamDiscoveredAccountsInput {
         self.discovery_region.as_deref()
     }
     /// <p>Discovered account filters.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -76,6 +78,7 @@ impl GetIpamDiscoveredAccountsInputBuilder {
         &self.dry_run
     }
     /// <p>A resource discovery ID.</p>
+    /// This field is required.
     pub fn ipam_resource_discovery_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_resource_discovery_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl GetIpamDiscoveredAccountsInputBuilder {
         &self.ipam_resource_discovery_id
     }
     /// <p>The Amazon Web Services Region that the account information is returned from.</p>
+    /// This field is required.
     pub fn discovery_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.discovery_region = ::std::option::Option::Some(input.into());
         self
@@ -156,7 +160,7 @@ impl GetIpamDiscoveredAccountsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsInput {
             dry_run: self.dry_run,

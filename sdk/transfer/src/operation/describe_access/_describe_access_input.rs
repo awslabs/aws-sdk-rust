@@ -40,6 +40,7 @@ pub struct DescribeAccessInputBuilder {
 }
 impl DescribeAccessInputBuilder {
     /// <p>A system-assigned unique identifier for a server that has this access assigned.</p>
+    /// This field is required.
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_id = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +58,7 @@ impl DescribeAccessInputBuilder {
     /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
     /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
     /// <p>The regular expression used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
+    /// This field is required.
     pub fn external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.external_id = ::std::option::Option::Some(input.into());
         self
@@ -79,7 +81,7 @@ impl DescribeAccessInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAccessInput`](crate::operation::describe_access::DescribeAccessInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_access::DescribeAccessInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_access::DescribeAccessInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_access::DescribeAccessInput {
             server_id: self.server_id,
             external_id: self.external_id,

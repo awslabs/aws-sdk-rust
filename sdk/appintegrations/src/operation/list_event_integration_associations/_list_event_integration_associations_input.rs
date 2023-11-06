@@ -41,6 +41,7 @@ pub struct ListEventIntegrationAssociationsInputBuilder {
 }
 impl ListEventIntegrationAssociationsInputBuilder {
     /// <p>The name of the event integration. </p>
+    /// This field is required.
     pub fn event_integration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_integration_name = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListEventIntegrationAssociationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_event_integration_associations::ListEventIntegrationAssociationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_event_integration_associations::ListEventIntegrationAssociationsInput {

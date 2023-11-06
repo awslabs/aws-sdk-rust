@@ -28,11 +28,10 @@ pub fn de_describe_batch_load_task_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::describe_batch_load_task::DescribeBatchLoadTaskError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::describe_batch_load_task::DescribeBatchLoadTaskError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerException" => crate::operation::describe_batch_load_task::DescribeBatchLoadTaskError::InternalServerException({
@@ -43,11 +42,10 @@ pub fn de_describe_batch_load_task_http_error(
                 output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
                     .map_err(crate::operation::describe_batch_load_task::DescribeBatchLoadTaskError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::describe_batch_load_task::DescribeBatchLoadTaskError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InvalidEndpointException" => crate::operation::describe_batch_load_task::DescribeBatchLoadTaskError::InvalidEndpointException({
@@ -88,11 +86,10 @@ pub fn de_describe_batch_load_task_http_error(
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::describe_batch_load_task::DescribeBatchLoadTaskError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::describe_batch_load_task::DescribeBatchLoadTaskError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::describe_batch_load_task::DescribeBatchLoadTaskError::generic(generic),
@@ -114,18 +111,18 @@ pub fn de_describe_batch_load_task_http_response(
         output = crate::protocol_serde::shape_describe_batch_load_task::de_describe_batch_load_task(_response_body, output)
             .map_err(crate::operation::describe_batch_load_task::DescribeBatchLoadTaskError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::describe_batch_load_task_output_correct_errors(output).build()
     })
 }
 
 pub fn ser_describe_batch_load_task_input(
     input: &crate::operation::describe_batch_load_task::DescribeBatchLoadTaskInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_describe_batch_load_task_input::ser_describe_batch_load_task_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_describe_batch_load_task(

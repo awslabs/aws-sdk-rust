@@ -34,6 +34,7 @@ pub struct PutRecordInputBuilder {
 }
 impl PutRecordInputBuilder {
     /// <p>The name of the delivery stream.</p>
+    /// This field is required.
     pub fn delivery_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delivery_stream_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl PutRecordInputBuilder {
         &self.delivery_stream_name
     }
     /// <p>The record.</p>
+    /// This field is required.
     pub fn record(mut self, input: crate::types::Record) -> Self {
         self.record = ::std::option::Option::Some(input);
         self
@@ -62,7 +64,7 @@ impl PutRecordInputBuilder {
         &self.record
     }
     /// Consumes the builder and constructs a [`PutRecordInput`](crate::operation::put_record::PutRecordInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_record::PutRecordInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_record::PutRecordInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_record::PutRecordInput {
             delivery_stream_name: self.delivery_stream_name,
             record: self.record,

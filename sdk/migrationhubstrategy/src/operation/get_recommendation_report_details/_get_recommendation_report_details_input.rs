@@ -27,6 +27,7 @@ pub struct GetRecommendationReportDetailsInputBuilder {
 }
 impl GetRecommendationReportDetailsInputBuilder {
     /// <p> The recommendation report generation task <code>id</code> returned by <code>StartRecommendationReportGeneration</code>. </p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetRecommendationReportDetailsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_recommendation_report_details::GetRecommendationReportDetailsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_recommendation_report_details::GetRecommendationReportDetailsInput { id: self.id })
     }

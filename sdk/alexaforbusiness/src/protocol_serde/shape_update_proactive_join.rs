@@ -2,9 +2,9 @@
 pub fn ser_update_proactive_join(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateProactiveJoin,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.enabled_by_motion {
-        object.key("EnabledByMotion").boolean(*var_1);
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("EnabledByMotion").boolean(input.enabled_by_motion);
     }
     Ok(())
 }

@@ -27,6 +27,7 @@ pub struct DeleteTrialComponentInputBuilder {
 }
 impl DeleteTrialComponentInputBuilder {
     /// <p>The name of the component to delete.</p>
+    /// This field is required.
     pub fn trial_component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trial_component_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteTrialComponentInputBuilder {
     /// Consumes the builder and constructs a [`DeleteTrialComponentInput`](crate::operation::delete_trial_component::DeleteTrialComponentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_trial_component::DeleteTrialComponentInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_trial_component::DeleteTrialComponentInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_trial_component::DeleteTrialComponentInput {
             trial_component_name: self.trial_component_name,

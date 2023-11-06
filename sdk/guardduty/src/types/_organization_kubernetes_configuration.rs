@@ -28,6 +28,7 @@ pub struct OrganizationKubernetesConfigurationBuilder {
 }
 impl OrganizationKubernetesConfigurationBuilder {
     /// <p>Whether Kubernetes audit logs data source should be auto-enabled for new members joining the organization.</p>
+    /// This field is required.
     pub fn audit_logs(mut self, input: crate::types::OrganizationKubernetesAuditLogsConfiguration) -> Self {
         self.audit_logs = ::std::option::Option::Some(input);
         self

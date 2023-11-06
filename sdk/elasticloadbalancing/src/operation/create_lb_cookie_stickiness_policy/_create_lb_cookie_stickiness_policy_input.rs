@@ -42,6 +42,7 @@ pub struct CreateLbCookieStickinessPolicyInputBuilder {
 }
 impl CreateLbCookieStickinessPolicyInputBuilder {
     /// <p>The name of the load balancer.</p>
+    /// This field is required.
     pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl CreateLbCookieStickinessPolicyInputBuilder {
         &self.load_balancer_name
     }
     /// <p>The name of the policy being created. Policy names must consist of alphanumeric characters and dashes (-). This name must be unique within the set of policies for this load balancer.</p>
+    /// This field is required.
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
         self
@@ -88,7 +90,7 @@ impl CreateLbCookieStickinessPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_lb_cookie_stickiness_policy::CreateLbCookieStickinessPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_lb_cookie_stickiness_policy::CreateLbCookieStickinessPolicyInput {

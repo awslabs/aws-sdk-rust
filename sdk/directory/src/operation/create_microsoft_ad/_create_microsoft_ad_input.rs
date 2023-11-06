@@ -47,8 +47,10 @@ impl CreateMicrosoftAdInput {
         self.edition.as_ref()
     }
     /// <p>The tags to be assigned to the Managed Microsoft AD directory.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for CreateMicrosoftAdInput {
@@ -85,6 +87,7 @@ pub struct CreateMicrosoftAdInputBuilder {
 }
 impl CreateMicrosoftAdInputBuilder {
     /// <p>The fully qualified domain name for the Managed Microsoft AD directory, such as <code>corp.example.com</code>. This name will resolve inside your VPC only. It does not need to be publicly resolvable.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -114,6 +117,7 @@ impl CreateMicrosoftAdInputBuilder {
     }
     /// <p>The password for the default administrative user named <code>Admin</code>.</p>
     /// <p>If you need to change the password for the administrator account, you can use the <code>ResetUserPassword</code> API call.</p>
+    /// This field is required.
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
         self
@@ -144,6 +148,7 @@ impl CreateMicrosoftAdInputBuilder {
         &self.description
     }
     /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
+    /// This field is required.
     pub fn vpc_settings(mut self, input: crate::types::DirectoryVpcSettings) -> Self {
         self.vpc_settings = ::std::option::Option::Some(input);
         self
@@ -194,7 +199,7 @@ impl CreateMicrosoftAdInputBuilder {
     /// Consumes the builder and constructs a [`CreateMicrosoftAdInput`](crate::operation::create_microsoft_ad::CreateMicrosoftAdInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_microsoft_ad::CreateMicrosoftAdInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_microsoft_ad::CreateMicrosoftAdInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_microsoft_ad::CreateMicrosoftAdInput {
             name: self.name,
             short_name: self.short_name,

@@ -67,8 +67,10 @@ impl UpdateWorkspaceInput {
         self.stack_set_name.as_deref()
     }
     /// <p>This parameter is for internal use only, and should not be used.</p>
-    pub fn workspace_data_sources(&self) -> ::std::option::Option<&[crate::types::DataSourceType]> {
-        self.workspace_data_sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.workspace_data_sources.is_none()`.
+    pub fn workspace_data_sources(&self) -> &[crate::types::DataSourceType] {
+        self.workspace_data_sources.as_deref().unwrap_or_default()
     }
     /// <p>A description for the workspace. This is used only to help you identify this workspace.</p>
     pub fn workspace_description(&self) -> ::std::option::Option<&str> {
@@ -83,12 +85,16 @@ impl UpdateWorkspaceInput {
         self.workspace_name.as_deref()
     }
     /// <p>Specify the Amazon Web Services notification channels that you plan to use in this workspace. Specifying these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana to use these channels.</p>
-    pub fn workspace_notification_destinations(&self) -> ::std::option::Option<&[crate::types::NotificationDestinationType]> {
-        self.workspace_notification_destinations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.workspace_notification_destinations.is_none()`.
+    pub fn workspace_notification_destinations(&self) -> &[crate::types::NotificationDestinationType] {
+        self.workspace_notification_destinations.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the organizational units that this workspace is allowed to use data sources from, if this workspace is in an account that is part of an organization.</p>
-    pub fn workspace_organizational_units(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.workspace_organizational_units.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.workspace_organizational_units.is_none()`.
+    pub fn workspace_organizational_units(&self) -> &[::std::string::String] {
+        self.workspace_organizational_units.as_deref().unwrap_or_default()
     }
     /// <p>Specifies an IAM role that grants permissions to Amazon Web Services resources that the workspace accesses, such as data sources and notification channels. If this workspace has <code>permissionType</code> <code>CUSTOMER_MANAGED</code>, then this role is required.</p>
     pub fn workspace_role_arn(&self) -> ::std::option::Option<&str> {
@@ -271,6 +277,7 @@ impl UpdateWorkspaceInputBuilder {
         &self.workspace_description
     }
     /// <p>The ID of the workspace to update.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -429,7 +436,7 @@ impl UpdateWorkspaceInputBuilder {
     /// Consumes the builder and constructs a [`UpdateWorkspaceInput`](crate::operation::update_workspace::UpdateWorkspaceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_workspace::UpdateWorkspaceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_workspace::UpdateWorkspaceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_workspace::UpdateWorkspaceInput {
             account_access_type: self.account_access_type,
             organization_role_name: self.organization_role_name,

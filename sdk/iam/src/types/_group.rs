@@ -11,36 +11,40 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Group {
     /// <p>The path to the group. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
-    pub path: ::std::option::Option<::std::string::String>,
+    pub path: ::std::string::String,
     /// <p>The friendly name that identifies the group.</p>
-    pub group_name: ::std::option::Option<::std::string::String>,
+    pub group_name: ::std::string::String,
     /// <p> The stable and unique string identifying the group. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
-    pub group_id: ::std::option::Option<::std::string::String>,
+    pub group_id: ::std::string::String,
     /// <p> The Amazon Resource Name (ARN) specifying the group. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the group was created.</p>
-    pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub create_date: ::aws_smithy_types::DateTime,
 }
 impl Group {
     /// <p>The path to the group. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
-    pub fn path(&self) -> ::std::option::Option<&str> {
-        self.path.as_deref()
+    pub fn path(&self) -> &str {
+        use std::ops::Deref;
+        self.path.deref()
     }
     /// <p>The friendly name that identifies the group.</p>
-    pub fn group_name(&self) -> ::std::option::Option<&str> {
-        self.group_name.as_deref()
+    pub fn group_name(&self) -> &str {
+        use std::ops::Deref;
+        self.group_name.deref()
     }
     /// <p> The stable and unique string identifying the group. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
-    pub fn group_id(&self) -> ::std::option::Option<&str> {
-        self.group_id.as_deref()
+    pub fn group_id(&self) -> &str {
+        use std::ops::Deref;
+        self.group_id.deref()
     }
     /// <p> The Amazon Resource Name (ARN) specifying the group. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the group was created.</p>
-    pub fn create_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.create_date.as_ref()
+    pub fn create_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.create_date
     }
 }
 impl Group {
@@ -62,6 +66,7 @@ pub struct GroupBuilder {
 }
 impl GroupBuilder {
     /// <p>The path to the group. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
+    /// This field is required.
     pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +81,7 @@ impl GroupBuilder {
         &self.path
     }
     /// <p>The friendly name that identifies the group.</p>
+    /// This field is required.
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +96,7 @@ impl GroupBuilder {
         &self.group_name
     }
     /// <p> The stable and unique string identifying the group. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
+    /// This field is required.
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +111,7 @@ impl GroupBuilder {
         &self.group_id
     }
     /// <p> The Amazon Resource Name (ARN) specifying the group. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +126,7 @@ impl GroupBuilder {
         &self.arn
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the group was created.</p>
+    /// This field is required.
     pub fn create_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_date = ::std::option::Option::Some(input);
         self
@@ -132,13 +141,41 @@ impl GroupBuilder {
         &self.create_date
     }
     /// Consumes the builder and constructs a [`Group`](crate::types::Group).
-    pub fn build(self) -> crate::types::Group {
-        crate::types::Group {
-            path: self.path,
-            group_name: self.group_name,
-            group_id: self.group_id,
-            arn: self.arn,
-            create_date: self.create_date,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`path`](crate::types::builders::GroupBuilder::path)
+    /// - [`group_name`](crate::types::builders::GroupBuilder::group_name)
+    /// - [`group_id`](crate::types::builders::GroupBuilder::group_id)
+    /// - [`arn`](crate::types::builders::GroupBuilder::arn)
+    /// - [`create_date`](crate::types::builders::GroupBuilder::create_date)
+    pub fn build(self) -> ::std::result::Result<crate::types::Group, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Group {
+            path: self.path.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "path",
+                    "path was not specified but it is required when building Group",
+                )
+            })?,
+            group_name: self.group_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "group_name",
+                    "group_name was not specified but it is required when building Group",
+                )
+            })?,
+            group_id: self.group_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "group_id",
+                    "group_id was not specified but it is required when building Group",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building Group")
+            })?,
+            create_date: self.create_date.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "create_date",
+                    "create_date was not specified but it is required when building Group",
+                )
+            })?,
+        })
     }
 }

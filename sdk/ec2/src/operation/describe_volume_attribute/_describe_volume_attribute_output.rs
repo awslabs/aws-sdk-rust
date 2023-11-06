@@ -17,8 +17,10 @@ impl DescribeVolumeAttributeOutput {
         self.auto_enable_io.as_ref()
     }
     /// <p>A list of product codes.</p>
-    pub fn product_codes(&self) -> ::std::option::Option<&[crate::types::ProductCode]> {
-        self.product_codes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.product_codes.is_none()`.
+    pub fn product_codes(&self) -> &[crate::types::ProductCode] {
+        self.product_codes.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the volume.</p>
     pub fn volume_id(&self) -> ::std::option::Option<&str> {

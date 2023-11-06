@@ -28,6 +28,7 @@ pub struct GetDeliverabilityTestReportInputBuilder {
 }
 impl GetDeliverabilityTestReportInputBuilder {
     /// <p>A unique string that identifies the predictive inbox placement test.</p>
+    /// This field is required.
     pub fn report_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.report_id = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl GetDeliverabilityTestReportInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_deliverability_test_report::GetDeliverabilityTestReportInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_deliverability_test_report::GetDeliverabilityTestReportInput { report_id: self.report_id })
     }

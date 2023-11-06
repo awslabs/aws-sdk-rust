@@ -55,6 +55,7 @@ pub struct GetLabelDetectionInputBuilder {
 }
 impl GetLabelDetectionInputBuilder {
     /// <p>Job identifier for the label detection operation for which you want results returned. You get the job identifer from an initial call to <code>StartlabelDetection</code>.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -127,7 +128,7 @@ impl GetLabelDetectionInputBuilder {
     /// Consumes the builder and constructs a [`GetLabelDetectionInput`](crate::operation::get_label_detection::GetLabelDetectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_label_detection::GetLabelDetectionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_label_detection::GetLabelDetectionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_label_detection::GetLabelDetectionInput {
             job_id: self.job_id,
             max_results: self.max_results,

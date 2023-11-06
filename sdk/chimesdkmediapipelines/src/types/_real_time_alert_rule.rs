@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RealTimeAlertRule {
     /// <p>The type of alert rule.</p>
-    pub r#type: ::std::option::Option<crate::types::RealTimeAlertRuleType>,
+    pub r#type: crate::types::RealTimeAlertRuleType,
     /// <p>Specifies the settings for matching the keywords in a real-time alert rule.</p>
     pub keyword_match_configuration: ::std::option::Option<crate::types::KeywordMatchConfiguration>,
     /// <p>Specifies the settings for predicting sentiment in a real-time alert rule.</p>
@@ -15,8 +15,8 @@ pub struct RealTimeAlertRule {
 }
 impl RealTimeAlertRule {
     /// <p>The type of alert rule.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::RealTimeAlertRuleType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::RealTimeAlertRuleType {
+        &self.r#type
     }
     /// <p>Specifies the settings for matching the keywords in a real-time alert rule.</p>
     pub fn keyword_match_configuration(&self) -> ::std::option::Option<&crate::types::KeywordMatchConfiguration> {
@@ -49,6 +49,7 @@ pub struct RealTimeAlertRuleBuilder {
 }
 impl RealTimeAlertRuleBuilder {
     /// <p>The type of alert rule.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::RealTimeAlertRuleType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -105,12 +106,19 @@ impl RealTimeAlertRuleBuilder {
         &self.issue_detection_configuration
     }
     /// Consumes the builder and constructs a [`RealTimeAlertRule`](crate::types::RealTimeAlertRule).
-    pub fn build(self) -> crate::types::RealTimeAlertRule {
-        crate::types::RealTimeAlertRule {
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::RealTimeAlertRuleBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::RealTimeAlertRule, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RealTimeAlertRule {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building RealTimeAlertRule",
+                )
+            })?,
             keyword_match_configuration: self.keyword_match_configuration,
             sentiment_configuration: self.sentiment_configuration,
             issue_detection_configuration: self.issue_detection_configuration,
-        }
+        })
     }
 }

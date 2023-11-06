@@ -42,6 +42,7 @@ pub struct UnsubscribeInputBuilder {
 }
 impl UnsubscribeInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl UnsubscribeInputBuilder {
         &self.arn
     }
     /// <p>The ARN of the Chatbot topic to unsubscribe from the notification rule.</p>
+    /// This field is required.
     pub fn target_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_address = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +72,7 @@ impl UnsubscribeInputBuilder {
         &self.target_address
     }
     /// Consumes the builder and constructs a [`UnsubscribeInput`](crate::operation::unsubscribe::UnsubscribeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::unsubscribe::UnsubscribeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::unsubscribe::UnsubscribeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::unsubscribe::UnsubscribeInput {
             arn: self.arn,
             target_address: self.target_address,

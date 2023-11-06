@@ -27,6 +27,7 @@ pub struct DeleteResourceTreeInputBuilder {
 }
 impl DeleteResourceTreeInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the parent resource to delete. All child resources of the parent resource will also be deleted.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,8 @@ impl DeleteResourceTreeInputBuilder {
     /// Consumes the builder and constructs a [`DeleteResourceTreeInput`](crate::operation::delete_resource_tree::DeleteResourceTreeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_resource_tree::DeleteResourceTreeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_resource_tree::DeleteResourceTreeInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_resource_tree::DeleteResourceTreeInput {
             resource_arn: self.resource_arn,
         })

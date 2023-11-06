@@ -34,6 +34,7 @@ pub struct GetServiceTemplateVersionOutputBuilder {
 }
 impl GetServiceTemplateVersionOutputBuilder {
     /// <p>The detailed data of the requested service template version.</p>
+    /// This field is required.
     pub fn service_template_version(mut self, input: crate::types::ServiceTemplateVersion) -> Self {
         self.service_template_version = ::std::option::Option::Some(input);
         self

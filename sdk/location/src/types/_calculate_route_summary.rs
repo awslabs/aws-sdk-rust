@@ -15,7 +15,7 @@ pub struct CalculateRouteSummary {
     /// <li> <p>The third <code>bbox</code> position is the X coordinate, or longitude of the upper northeast corner. </p> </li>
     /// <li> <p>The fourth <code>bbox</code> position is the Y coordinate, or latitude of the upper northeast corner. </p> </li>
     /// </ul>
-    pub route_b_box: ::std::option::Option<::std::vec::Vec<f64>>,
+    pub route_b_box: ::std::vec::Vec<f64>,
     /// <p>The data provider of traffic and road network data used to calculate the route. Indicates one of the available providers:</p>
     /// <ul>
     /// <li> <p> <code>Esri</code> </p> </li>
@@ -23,15 +23,15 @@ pub struct CalculateRouteSummary {
     /// <li> <p> <code>Here</code> </p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
-    pub data_source: ::std::option::Option<::std::string::String>,
+    pub data_source: ::std::string::String,
     /// <p>The total distance covered by the route. The sum of the distance travelled between every stop on the route.</p> <note>
     /// <p>If Esri is the data source for the route calculator, the route distance can’t be greater than 400 km. If the route exceeds 400 km, the response is a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
-    pub distance: ::std::option::Option<f64>,
+    pub distance: f64,
     /// <p>The total travel time for the route measured in seconds. The sum of the travel time between every stop on the route.</p>
-    pub duration_seconds: ::std::option::Option<f64>,
+    pub duration_seconds: f64,
     /// <p>The unit of measurement for route distances.</p>
-    pub distance_unit: ::std::option::Option<crate::types::DistanceUnit>,
+    pub distance_unit: crate::types::DistanceUnit,
 }
 impl CalculateRouteSummary {
     /// <p>Specifies a geographical box surrounding a route. Used to zoom into a route when displaying it in a map. For example, <code>[min x, min y, max x, max y]</code>.</p>
@@ -45,8 +45,9 @@ impl CalculateRouteSummary {
     /// <li> <p>The third <code>bbox</code> position is the X coordinate, or longitude of the upper northeast corner. </p> </li>
     /// <li> <p>The fourth <code>bbox</code> position is the Y coordinate, or latitude of the upper northeast corner. </p> </li>
     /// </ul>
-    pub fn route_b_box(&self) -> ::std::option::Option<&[f64]> {
-        self.route_b_box.as_deref()
+    pub fn route_b_box(&self) -> &[f64] {
+        use std::ops::Deref;
+        self.route_b_box.deref()
     }
     /// <p>The data provider of traffic and road network data used to calculate the route. Indicates one of the available providers:</p>
     /// <ul>
@@ -55,22 +56,23 @@ impl CalculateRouteSummary {
     /// <li> <p> <code>Here</code> </p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
-    pub fn data_source(&self) -> ::std::option::Option<&str> {
-        self.data_source.as_deref()
+    pub fn data_source(&self) -> &str {
+        use std::ops::Deref;
+        self.data_source.deref()
     }
     /// <p>The total distance covered by the route. The sum of the distance travelled between every stop on the route.</p> <note>
     /// <p>If Esri is the data source for the route calculator, the route distance can’t be greater than 400 km. If the route exceeds 400 km, the response is a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
-    pub fn distance(&self) -> ::std::option::Option<f64> {
+    pub fn distance(&self) -> f64 {
         self.distance
     }
     /// <p>The total travel time for the route measured in seconds. The sum of the travel time between every stop on the route.</p>
-    pub fn duration_seconds(&self) -> ::std::option::Option<f64> {
+    pub fn duration_seconds(&self) -> f64 {
         self.duration_seconds
     }
     /// <p>The unit of measurement for route distances.</p>
-    pub fn distance_unit(&self) -> ::std::option::Option<&crate::types::DistanceUnit> {
-        self.distance_unit.as_ref()
+    pub fn distance_unit(&self) -> &crate::types::DistanceUnit {
+        &self.distance_unit
     }
 }
 impl ::std::fmt::Debug for CalculateRouteSummary {
@@ -159,6 +161,7 @@ impl CalculateRouteSummaryBuilder {
     /// <li> <p> <code>Here</code> </p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    /// This field is required.
     pub fn data_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source = ::std::option::Option::Some(input.into());
         self
@@ -187,6 +190,7 @@ impl CalculateRouteSummaryBuilder {
     /// <p>The total distance covered by the route. The sum of the distance travelled between every stop on the route.</p> <note>
     /// <p>If Esri is the data source for the route calculator, the route distance can’t be greater than 400 km. If the route exceeds 400 km, the response is a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
+    /// This field is required.
     pub fn distance(mut self, input: f64) -> Self {
         self.distance = ::std::option::Option::Some(input);
         self
@@ -205,6 +209,7 @@ impl CalculateRouteSummaryBuilder {
         &self.distance
     }
     /// <p>The total travel time for the route measured in seconds. The sum of the travel time between every stop on the route.</p>
+    /// This field is required.
     pub fn duration_seconds(mut self, input: f64) -> Self {
         self.duration_seconds = ::std::option::Option::Some(input);
         self
@@ -219,6 +224,7 @@ impl CalculateRouteSummaryBuilder {
         &self.duration_seconds
     }
     /// <p>The unit of measurement for route distances.</p>
+    /// This field is required.
     pub fn distance_unit(mut self, input: crate::types::DistanceUnit) -> Self {
         self.distance_unit = ::std::option::Option::Some(input);
         self
@@ -233,14 +239,45 @@ impl CalculateRouteSummaryBuilder {
         &self.distance_unit
     }
     /// Consumes the builder and constructs a [`CalculateRouteSummary`](crate::types::CalculateRouteSummary).
-    pub fn build(self) -> crate::types::CalculateRouteSummary {
-        crate::types::CalculateRouteSummary {
-            route_b_box: self.route_b_box,
-            data_source: self.data_source,
-            distance: self.distance,
-            duration_seconds: self.duration_seconds,
-            distance_unit: self.distance_unit,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`route_b_box`](crate::types::builders::CalculateRouteSummaryBuilder::route_b_box)
+    /// - [`data_source`](crate::types::builders::CalculateRouteSummaryBuilder::data_source)
+    /// - [`distance`](crate::types::builders::CalculateRouteSummaryBuilder::distance)
+    /// - [`duration_seconds`](crate::types::builders::CalculateRouteSummaryBuilder::duration_seconds)
+    /// - [`distance_unit`](crate::types::builders::CalculateRouteSummaryBuilder::distance_unit)
+    pub fn build(self) -> ::std::result::Result<crate::types::CalculateRouteSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CalculateRouteSummary {
+            route_b_box: self.route_b_box.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "route_b_box",
+                    "route_b_box was not specified but it is required when building CalculateRouteSummary",
+                )
+            })?,
+            data_source: self.data_source.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "data_source",
+                    "data_source was not specified but it is required when building CalculateRouteSummary",
+                )
+            })?,
+            distance: self.distance.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "distance",
+                    "distance was not specified but it is required when building CalculateRouteSummary",
+                )
+            })?,
+            duration_seconds: self.duration_seconds.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "duration_seconds",
+                    "duration_seconds was not specified but it is required when building CalculateRouteSummary",
+                )
+            })?,
+            distance_unit: self.distance_unit.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "distance_unit",
+                    "distance_unit was not specified but it is required when building CalculateRouteSummary",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for CalculateRouteSummaryBuilder {

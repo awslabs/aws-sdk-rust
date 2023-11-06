@@ -44,7 +44,7 @@ pub mod delete_subnet_group;
 pub mod delete_user;
 
 /// Types for the `DescribeACLs` operation.
-pub mod describe_ac_ls;
+pub mod describe_acls;
 
 /// Types for the `DescribeClusters` operation.
 pub mod describe_clusters;

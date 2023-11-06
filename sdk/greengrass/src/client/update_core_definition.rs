@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateCoreDefinition`](crate::operation::update_core_definition::builders::UpdateCoreDefinitionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`core_definition_id(impl Into<String>)`](crate::operation::update_core_definition::builders::UpdateCoreDefinitionFluentBuilder::core_definition_id) / [`set_core_definition_id(Option<String>)`](crate::operation::update_core_definition::builders::UpdateCoreDefinitionFluentBuilder::set_core_definition_id): The ID of the core definition.
-    ///   - [`name(impl Into<String>)`](crate::operation::update_core_definition::builders::UpdateCoreDefinitionFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_core_definition::builders::UpdateCoreDefinitionFluentBuilder::set_name): The name of the definition.
+    ///   - [`core_definition_id(impl Into<String>)`](crate::operation::update_core_definition::builders::UpdateCoreDefinitionFluentBuilder::core_definition_id) / [`set_core_definition_id(Option<String>)`](crate::operation::update_core_definition::builders::UpdateCoreDefinitionFluentBuilder::set_core_definition_id):<br>required: **true**<br>The ID of the core definition.<br>
+    ///   - [`name(impl Into<String>)`](crate::operation::update_core_definition::builders::UpdateCoreDefinitionFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_core_definition::builders::UpdateCoreDefinitionFluentBuilder::set_name):<br>required: **false**<br>The name of the definition.<br>
     /// - On success, responds with [`UpdateCoreDefinitionOutput`](crate::operation::update_core_definition::UpdateCoreDefinitionOutput)
     /// - On failure, responds with [`SdkError<UpdateCoreDefinitionError>`](crate::operation::update_core_definition::UpdateCoreDefinitionError)
     pub fn update_core_definition(&self) -> crate::operation::update_core_definition::builders::UpdateCoreDefinitionFluentBuilder {

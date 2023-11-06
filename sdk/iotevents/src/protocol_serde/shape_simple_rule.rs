@@ -2,15 +2,15 @@
 pub fn ser_simple_rule(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SimpleRule,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.input_property {
-        object.key("inputProperty").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("inputProperty").string(input.input_property.as_str());
     }
-    if let Some(var_2) = &input.comparison_operator {
-        object.key("comparisonOperator").string(var_2.as_str());
+    {
+        object.key("comparisonOperator").string(input.comparison_operator.as_str());
     }
-    if let Some(var_3) = &input.threshold {
-        object.key("threshold").string(var_3.as_str());
+    {
+        object.key("threshold").string(input.threshold.as_str());
     }
     Ok(())
 }
@@ -61,7 +61,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::simple_rule_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

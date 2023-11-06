@@ -27,6 +27,7 @@ pub struct DescribeBillingGroupInputBuilder {
 }
 impl DescribeBillingGroupInputBuilder {
     /// <p>The name of the billing group.</p>
+    /// This field is required.
     pub fn billing_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.billing_group_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeBillingGroupInputBuilder {
     /// Consumes the builder and constructs a [`DescribeBillingGroupInput`](crate::operation::describe_billing_group::DescribeBillingGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_billing_group::DescribeBillingGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_billing_group::DescribeBillingGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_billing_group::DescribeBillingGroupInput {
             billing_group_name: self.billing_group_name,

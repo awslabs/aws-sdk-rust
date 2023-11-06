@@ -11,8 +11,10 @@ pub struct ListIndicesOutput {
 }
 impl ListIndicesOutput {
     /// <p>The index names.</p>
-    pub fn index_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.index_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.index_names.is_none()`.
+    pub fn index_names(&self) -> &[::std::string::String] {
+        self.index_names.as_deref().unwrap_or_default()
     }
     /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

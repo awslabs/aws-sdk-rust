@@ -41,6 +41,7 @@ pub struct DeleteSchemaVersionInputBuilder {
 }
 impl DeleteSchemaVersionInputBuilder {
     /// <p>The name of the registry.</p>
+    /// This field is required.
     pub fn registry_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DeleteSchemaVersionInputBuilder {
         &self.registry_name
     }
     /// <p>The name of the schema.</p>
+    /// This field is required.
     pub fn schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl DeleteSchemaVersionInputBuilder {
         &self.schema_name
     }
     /// The version number of the schema
+    /// This field is required.
     pub fn schema_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_version = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +88,7 @@ impl DeleteSchemaVersionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSchemaVersionInput`](crate::operation::delete_schema_version::DeleteSchemaVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_schema_version::DeleteSchemaVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_schema_version::DeleteSchemaVersionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_schema_version::DeleteSchemaVersionInput {
             registry_name: self.registry_name,

@@ -4,15 +4,15 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+use std::borrow::Cow;
+
 use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::interceptors::context::BeforeTransmitInterceptorContextMut;
-use aws_smithy_runtime_api::client::interceptors::{Interceptor, SharedInterceptor};
+use aws_smithy_runtime_api::client::interceptors::{Intercept, SharedInterceptor};
 use aws_smithy_runtime_api::client::runtime_components::{RuntimeComponents, RuntimeComponentsBuilder};
 use aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin;
 use aws_smithy_types::base64;
 use aws_smithy_types::config_bag::ConfigBag;
-use http::header::HeaderName;
-use std::borrow::Cow;
 
 #[derive(Debug)]
 pub(crate) struct HttpChecksumRequiredRuntimePlugin {
@@ -29,7 +29,7 @@ impl HttpChecksumRequiredRuntimePlugin {
 }
 
 impl RuntimePlugin for HttpChecksumRequiredRuntimePlugin {
-    fn runtime_components(&self) -> Cow<'_, RuntimeComponentsBuilder> {
+    fn runtime_components(&self, _: &RuntimeComponentsBuilder) -> Cow<'_, RuntimeComponentsBuilder> {
         Cow::Borrowed(&self.runtime_components)
     }
 }
@@ -37,7 +37,7 @@ impl RuntimePlugin for HttpChecksumRequiredRuntimePlugin {
 #[derive(Debug)]
 struct HttpChecksumRequiredInterceptor;
 
-impl Interceptor for HttpChecksumRequiredInterceptor {
+impl Intercept for HttpChecksumRequiredInterceptor {
     fn name(&self) -> &'static str {
         "HttpChecksumRequiredInterceptor"
     }
@@ -54,10 +54,7 @@ impl Interceptor for HttpChecksumRequiredInterceptor {
             .bytes()
             .expect("checksum can only be computed for non-streaming operations");
         let checksum = <md5::Md5 as md5::Digest>::digest(body_bytes);
-        request.headers_mut().insert(
-            HeaderName::from_static("content-md5"),
-            base64::encode(&checksum[..]).parse().expect("checksum is a valid header value"),
-        );
+        request.headers_mut().insert("content-md5", base64::encode(&checksum[..]));
         Ok(())
     }
 }

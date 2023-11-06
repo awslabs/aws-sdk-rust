@@ -28,6 +28,7 @@ pub struct GetAnalyzerInputBuilder {
 }
 impl GetAnalyzerInputBuilder {
     /// <p>The name of the analyzer retrieved.</p>
+    /// This field is required.
     pub fn analyzer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analyzer_name = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +43,7 @@ impl GetAnalyzerInputBuilder {
         &self.analyzer_name
     }
     /// Consumes the builder and constructs a [`GetAnalyzerInput`](crate::operation::get_analyzer::GetAnalyzerInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_analyzer::GetAnalyzerInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_analyzer::GetAnalyzerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_analyzer::GetAnalyzerInput {
             analyzer_name: self.analyzer_name,
         })

@@ -29,8 +29,10 @@ impl KubernetesApiCallAction {
         self.verb.as_deref()
     }
     /// <p>The IP of the Kubernetes API caller and the IPs of any proxies or load balancers between the caller and the API endpoint.</p>
-    pub fn source_ips(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.source_ips.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_ips.is_none()`.
+    pub fn source_ips(&self) -> &[::std::string::String] {
+        self.source_ips.as_deref().unwrap_or_default()
     }
     /// <p>The user agent of the caller of the Kubernetes API.</p>
     pub fn user_agent(&self) -> ::std::option::Option<&str> {

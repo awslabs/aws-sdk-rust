@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateHapg`](crate::operation::create_hapg::builders::CreateHapgFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`label(impl Into<String>)`](crate::operation::create_hapg::builders::CreateHapgFluentBuilder::label) / [`set_label(Option<String>)`](crate::operation::create_hapg::builders::CreateHapgFluentBuilder::set_label): <p>The label of the new high-availability partition group.</p>
+    ///   - [`label(impl Into<String>)`](crate::operation::create_hapg::builders::CreateHapgFluentBuilder::label) / [`set_label(Option<String>)`](crate::operation::create_hapg::builders::CreateHapgFluentBuilder::set_label):<br>required: **true**<br><p>The label of the new high-availability partition group.</p><br>
     /// - On success, responds with [`CreateHapgOutput`](crate::operation::create_hapg::CreateHapgOutput) with field(s):
     ///   - [`hapg_arn(Option<String>)`](crate::operation::create_hapg::CreateHapgOutput::hapg_arn): <p>The ARN of the high-availability partition group.</p>
     /// - On failure, responds with [`SdkError<CreateHapgError>`](crate::operation::create_hapg::CreateHapgError)

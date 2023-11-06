@@ -10,8 +10,10 @@ pub struct DescribeSeverityLevelsOutput {
 }
 impl DescribeSeverityLevelsOutput {
     /// <p>The available severity levels for the support case. Available severity levels are defined by your service level agreement with Amazon Web Services.</p>
-    pub fn severity_levels(&self) -> ::std::option::Option<&[crate::types::SeverityLevel]> {
-        self.severity_levels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.severity_levels.is_none()`.
+    pub fn severity_levels(&self) -> &[crate::types::SeverityLevel] {
+        self.severity_levels.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeSeverityLevelsOutput {

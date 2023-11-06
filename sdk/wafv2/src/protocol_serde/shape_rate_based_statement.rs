@@ -2,39 +2,39 @@
 pub fn ser_rate_based_statement(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RateBasedStatement,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.limit {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
         object.key("Limit").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+            ::aws_smithy_types::Number::NegInt((input.limit).into()),
         );
     }
-    if let Some(var_2) = &input.aggregate_key_type {
-        object.key("AggregateKeyType").string(var_2.as_str());
+    {
+        object.key("AggregateKeyType").string(input.aggregate_key_type.as_str());
     }
-    if let Some(var_3) = &input.scope_down_statement {
+    if let Some(var_1) = &input.scope_down_statement {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("ScopeDownStatement").start_object();
-        crate::protocol_serde::shape_statement::ser_statement(&mut object_4, var_3)?;
+        let mut object_2 = object.key("ScopeDownStatement").start_object();
+        crate::protocol_serde::shape_statement::ser_statement(&mut object_2, var_1)?;
+        object_2.finish();
+    }
+    if let Some(var_3) = &input.forwarded_ip_config {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("ForwardedIPConfig").start_object();
+        crate::protocol_serde::shape_forwarded_ip_config::ser_forwarded_ip_config(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.forwarded_ip_config {
-        #[allow(unused_mut)]
-        let mut object_6 = object.key("ForwardedIPConfig").start_object();
-        crate::protocol_serde::shape_forwarded_ip_config::ser_forwarded_ip_config(&mut object_6, var_5)?;
-        object_6.finish();
-    }
-    if let Some(var_7) = &input.custom_keys {
-        let mut array_8 = object.key("CustomKeys").start_array();
-        for item_9 in var_7 {
+    if let Some(var_5) = &input.custom_keys {
+        let mut array_6 = object.key("CustomKeys").start_array();
+        for item_7 in var_5 {
             {
                 #[allow(unused_mut)]
-                let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_rate_based_statement_custom_key::ser_rate_based_statement_custom_key(&mut object_10, item_9)?;
-                object_10.finish();
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_rate_based_statement_custom_key::ser_rate_based_statement_custom_key(&mut object_8, item_7)?;
+                object_8.finish();
             }
         }
-        array_8.finish();
+        array_6.finish();
     }
     Ok(())
 }
@@ -93,7 +93,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::rate_based_statement_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

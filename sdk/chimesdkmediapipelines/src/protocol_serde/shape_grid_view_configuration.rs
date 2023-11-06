@@ -2,42 +2,42 @@
 pub fn ser_grid_view_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GridViewConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.content_share_layout {
-        object.key("ContentShareLayout").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("ContentShareLayout").string(input.content_share_layout.as_str());
     }
-    if let Some(var_2) = &input.presenter_only_configuration {
+    if let Some(var_1) = &input.presenter_only_configuration {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("PresenterOnlyConfiguration").start_object();
-        crate::protocol_serde::shape_presenter_only_configuration::ser_presenter_only_configuration(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("PresenterOnlyConfiguration").start_object();
+        crate::protocol_serde::shape_presenter_only_configuration::ser_presenter_only_configuration(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.active_speaker_only_configuration {
+    if let Some(var_3) = &input.active_speaker_only_configuration {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("ActiveSpeakerOnlyConfiguration").start_object();
-        crate::protocol_serde::shape_active_speaker_only_configuration::ser_active_speaker_only_configuration(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("ActiveSpeakerOnlyConfiguration").start_object();
+        crate::protocol_serde::shape_active_speaker_only_configuration::ser_active_speaker_only_configuration(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_6) = &input.horizontal_layout_configuration {
+    if let Some(var_5) = &input.horizontal_layout_configuration {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("HorizontalLayoutConfiguration").start_object();
-        crate::protocol_serde::shape_horizontal_layout_configuration::ser_horizontal_layout_configuration(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_6 = object.key("HorizontalLayoutConfiguration").start_object();
+        crate::protocol_serde::shape_horizontal_layout_configuration::ser_horizontal_layout_configuration(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_8) = &input.vertical_layout_configuration {
+    if let Some(var_7) = &input.vertical_layout_configuration {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("VerticalLayoutConfiguration").start_object();
-        crate::protocol_serde::shape_vertical_layout_configuration::ser_vertical_layout_configuration(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_8 = object.key("VerticalLayoutConfiguration").start_object();
+        crate::protocol_serde::shape_vertical_layout_configuration::ser_vertical_layout_configuration(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_10) = &input.video_attribute {
+    if let Some(var_9) = &input.video_attribute {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("VideoAttribute").start_object();
-        crate::protocol_serde::shape_video_attribute::ser_video_attribute(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_10 = object.key("VideoAttribute").start_object();
+        crate::protocol_serde::shape_video_attribute::ser_video_attribute(&mut object_10, var_9)?;
+        object_10.finish();
     }
-    if let Some(var_12) = &input.canvas_orientation {
-        object.key("CanvasOrientation").string(var_12.as_str());
+    if let Some(var_11) = &input.canvas_orientation {
+        object.key("CanvasOrientation").string(var_11.as_str());
     }
     Ok(())
 }
@@ -104,7 +104,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::grid_view_configuration_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

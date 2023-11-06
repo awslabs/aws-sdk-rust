@@ -35,6 +35,7 @@ pub struct FollowModeScheduleActionStartSettingsBuilder {
 }
 impl FollowModeScheduleActionStartSettingsBuilder {
     /// Identifies whether this action starts relative to the start or relative to the end of the reference action.
+    /// This field is required.
     pub fn follow_point(mut self, input: crate::types::FollowPoint) -> Self {
         self.follow_point = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl FollowModeScheduleActionStartSettingsBuilder {
         &self.follow_point
     }
     /// The action name of another action that this one refers to.
+    /// This field is required.
     pub fn reference_action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reference_action_name = ::std::option::Option::Some(input.into());
         self

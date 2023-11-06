@@ -151,9 +151,7 @@ pub(crate) fn de_get_architecture_recommendations(
                     );
                 }
                 "recommendations" => {
-                    builder = builder.set_recommendations(crate::protocol_serde::shape___list_of_recommendation::de___list_of_recommendation(
-                        tokens,
-                    )?);
+                    builder = builder.set_recommendations(crate::protocol_serde::shape_list_of_recommendation::de_list_of_recommendation(tokens)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDeviceFleet`](crate::operation::delete_device_fleet::builders::DeleteDeviceFleetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`device_fleet_name(impl Into<String>)`](crate::operation::delete_device_fleet::builders::DeleteDeviceFleetFluentBuilder::device_fleet_name) / [`set_device_fleet_name(Option<String>)`](crate::operation::delete_device_fleet::builders::DeleteDeviceFleetFluentBuilder::set_device_fleet_name): <p>The name of the fleet to delete.</p>
+    ///   - [`device_fleet_name(impl Into<String>)`](crate::operation::delete_device_fleet::builders::DeleteDeviceFleetFluentBuilder::device_fleet_name) / [`set_device_fleet_name(Option<String>)`](crate::operation::delete_device_fleet::builders::DeleteDeviceFleetFluentBuilder::set_device_fleet_name):<br>required: **true**<br><p>The name of the fleet to delete.</p><br>
     /// - On success, responds with [`DeleteDeviceFleetOutput`](crate::operation::delete_device_fleet::DeleteDeviceFleetOutput)
     /// - On failure, responds with [`SdkError<DeleteDeviceFleetError>`](crate::operation::delete_device_fleet::DeleteDeviceFleetError)
     pub fn delete_device_fleet(&self) -> crate::operation::delete_device_fleet::builders::DeleteDeviceFleetFluentBuilder {

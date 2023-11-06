@@ -10,8 +10,10 @@ pub struct ListEulasInput {
 }
 impl ListEulasInput {
     /// <p>The list of EULA IDs that should be returned</p>
-    pub fn eula_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.eula_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.eula_ids.is_none()`.
+    pub fn eula_ids(&self) -> &[::std::string::String] {
+        self.eula_ids.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -68,7 +70,7 @@ impl ListEulasInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListEulasInput`](crate::operation::list_eulas::ListEulasInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_eulas::ListEulasInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_eulas::ListEulasInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_eulas::ListEulasInput {
             eula_ids: self.eula_ids,
             next_token: self.next_token,

@@ -49,6 +49,7 @@ pub struct DescribeEngineDefaultParametersInputBuilder {
 impl DescribeEngineDefaultParametersInputBuilder {
     /// <p>The name of the cache parameter group family.</p>
     /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis6.2</code> | <code>redis7</code> </p>
+    /// This field is required.
     pub fn cache_parameter_group_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_parameter_group_family = ::std::option::Option::Some(input.into());
         self
@@ -103,7 +104,7 @@ impl DescribeEngineDefaultParametersInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersInput {

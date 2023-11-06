@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HistoryEvent {
     /// <p>The date and time the event occurred.</p>
-    pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub timestamp: ::aws_smithy_types::DateTime,
     /// <p>The type of the event.</p>
-    pub r#type: ::std::option::Option<crate::types::HistoryEventType>,
+    pub r#type: crate::types::HistoryEventType,
     /// <p>The id of the event. Events are numbered sequentially, starting at one.</p>
     pub id: i64,
     /// <p>The id of the previous event.</p>
@@ -83,12 +83,12 @@ pub struct HistoryEvent {
 }
 impl HistoryEvent {
     /// <p>The date and time the event occurred.</p>
-    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.timestamp.as_ref()
+    pub fn timestamp(&self) -> &::aws_smithy_types::DateTime {
+        &self.timestamp
     }
     /// <p>The type of the event.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::HistoryEventType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::HistoryEventType {
+        &self.r#type
     }
     /// <p>The id of the event. Events are numbered sequentially, starting at one.</p>
     pub fn id(&self) -> i64 {
@@ -287,6 +287,7 @@ pub struct HistoryEventBuilder {
 }
 impl HistoryEventBuilder {
     /// <p>The date and time the event occurred.</p>
+    /// This field is required.
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
         self
@@ -301,6 +302,7 @@ impl HistoryEventBuilder {
         &self.timestamp
     }
     /// <p>The type of the event.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::HistoryEventType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -315,6 +317,7 @@ impl HistoryEventBuilder {
         &self.r#type
     }
     /// <p>The id of the event. Events are numbered sequentially, starting at one.</p>
+    /// This field is required.
     pub fn id(mut self, input: i64) -> Self {
         self.id = ::std::option::Option::Some(input);
         self
@@ -839,10 +842,23 @@ impl HistoryEventBuilder {
         &self.map_run_failed_event_details
     }
     /// Consumes the builder and constructs a [`HistoryEvent`](crate::types::HistoryEvent).
-    pub fn build(self) -> crate::types::HistoryEvent {
-        crate::types::HistoryEvent {
-            timestamp: self.timestamp,
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`timestamp`](crate::types::builders::HistoryEventBuilder::timestamp)
+    /// - [`r#type`](crate::types::builders::HistoryEventBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::HistoryEvent, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::HistoryEvent {
+            timestamp: self.timestamp.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "timestamp",
+                    "timestamp was not specified but it is required when building HistoryEvent",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building HistoryEvent",
+                )
+            })?,
             id: self.id.unwrap_or_default(),
             previous_event_id: self.previous_event_id.unwrap_or_default(),
             activity_failed_event_details: self.activity_failed_event_details,
@@ -879,6 +895,6 @@ impl HistoryEventBuilder {
             state_exited_event_details: self.state_exited_event_details,
             map_run_started_event_details: self.map_run_started_event_details,
             map_run_failed_event_details: self.map_run_failed_event_details,
-        }
+        })
     }
 }

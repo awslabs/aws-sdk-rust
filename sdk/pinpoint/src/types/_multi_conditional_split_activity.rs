@@ -15,8 +15,10 @@ pub struct MultiConditionalSplitActivity {
 }
 impl MultiConditionalSplitActivity {
     /// <p>The paths for the activity, including the conditions for entering each path and the activity to perform for each path.</p>
-    pub fn branches(&self) -> ::std::option::Option<&[crate::types::MultiConditionalBranch]> {
-        self.branches.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.branches.is_none()`.
+    pub fn branches(&self) -> &[crate::types::MultiConditionalBranch] {
+        self.branches.as_deref().unwrap_or_default()
     }
     /// <p>The unique identifier for the activity to perform for participants who don't meet any of the conditions specified for other paths in the activity.</p>
     pub fn default_activity(&self) -> ::std::option::Option<&str> {

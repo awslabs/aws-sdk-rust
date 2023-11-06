@@ -34,6 +34,7 @@ pub struct GetDetectorVersionInputBuilder {
 }
 impl GetDetectorVersionInputBuilder {
     /// <p>The detector ID.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetDetectorVersionInputBuilder {
         &self.detector_id
     }
     /// <p>The detector version ID.</p>
+    /// This field is required.
     pub fn detector_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_version_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,8 @@ impl GetDetectorVersionInputBuilder {
     /// Consumes the builder and constructs a [`GetDetectorVersionInput`](crate::operation::get_detector_version::GetDetectorVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_detector_version::GetDetectorVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_detector_version::GetDetectorVersionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_detector_version::GetDetectorVersionInput {
             detector_id: self.detector_id,
             detector_version_id: self.detector_version_id,

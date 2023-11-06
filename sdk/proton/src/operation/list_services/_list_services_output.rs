@@ -6,7 +6,7 @@ pub struct ListServicesOutput {
     /// <p>A token that indicates the location of the next service in the array of services, after the current requested list of services.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of services with summaries of detail data.</p>
-    pub services: ::std::option::Option<::std::vec::Vec<crate::types::ServiceSummary>>,
+    pub services: ::std::vec::Vec<crate::types::ServiceSummary>,
     _request_id: Option<String>,
 }
 impl ListServicesOutput {
@@ -15,8 +15,9 @@ impl ListServicesOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of services with summaries of detail data.</p>
-    pub fn services(&self) -> ::std::option::Option<&[crate::types::ServiceSummary]> {
-        self.services.as_deref()
+    pub fn services(&self) -> &[crate::types::ServiceSummary] {
+        use std::ops::Deref;
+        self.services.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListServicesOutput {
@@ -84,11 +85,20 @@ impl ListServicesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListServicesOutput`](crate::operation::list_services::ListServicesOutput).
-    pub fn build(self) -> crate::operation::list_services::ListServicesOutput {
-        crate::operation::list_services::ListServicesOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`services`](crate::operation::list_services::builders::ListServicesOutputBuilder::services)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_services::ListServicesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_services::ListServicesOutput {
             next_token: self.next_token,
-            services: self.services,
+            services: self.services.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "services",
+                    "services was not specified but it is required when building ListServicesOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

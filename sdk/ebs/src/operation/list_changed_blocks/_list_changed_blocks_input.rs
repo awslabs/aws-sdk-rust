@@ -95,6 +95,7 @@ impl ListChangedBlocksInputBuilder {
     /// <p>The ID of the second snapshot to use for the comparison.</p> <important>
     /// <p>The <code>SecondSnapshotId</code> parameter must be specified with a <code>FirstSnapshotID</code> parameter; otherwise, an error occurs.</p>
     /// </important>
+    /// This field is required.
     pub fn second_snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.second_snapshot_id = ::std::option::Option::Some(input.into());
         self
@@ -172,7 +173,7 @@ impl ListChangedBlocksInputBuilder {
     /// Consumes the builder and constructs a [`ListChangedBlocksInput`](crate::operation::list_changed_blocks::ListChangedBlocksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_changed_blocks::ListChangedBlocksInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_changed_blocks::ListChangedBlocksInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_changed_blocks::ListChangedBlocksInput {
             first_snapshot_id: self.first_snapshot_id,
             second_snapshot_id: self.second_snapshot_id,

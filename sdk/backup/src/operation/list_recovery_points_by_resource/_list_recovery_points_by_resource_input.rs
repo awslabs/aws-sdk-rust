@@ -45,6 +45,7 @@ pub struct ListRecoveryPointsByResourceInputBuilder {
 }
 impl ListRecoveryPointsByResourceInputBuilder {
     /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -97,7 +98,7 @@ impl ListRecoveryPointsByResourceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_recovery_points_by_resource::ListRecoveryPointsByResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_recovery_points_by_resource::ListRecoveryPointsByResourceInput {
             resource_arn: self.resource_arn,

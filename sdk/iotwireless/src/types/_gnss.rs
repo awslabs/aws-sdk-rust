@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Gnss {
     /// <p>Payload that contains the GNSS scan result, or NAV message, in hexadecimal notation.</p>
-    pub payload: ::std::option::Option<::std::string::String>,
+    pub payload: ::std::string::String,
     /// <p>Optional parameter that gives an estimate of the time when the GNSS scan information is taken, in seconds GPS time (GPST). If capture time is not specified, the local server time is used.</p>
     pub capture_time: ::std::option::Option<f32>,
     /// <p>Optional value that gives the capture time estimate accuracy, in seconds. If capture time accuracy is not specified, default value of 300 is used.</p>
@@ -19,8 +19,9 @@ pub struct Gnss {
 }
 impl Gnss {
     /// <p>Payload that contains the GNSS scan result, or NAV message, in hexadecimal notation.</p>
-    pub fn payload(&self) -> ::std::option::Option<&str> {
-        self.payload.as_deref()
+    pub fn payload(&self) -> &str {
+        use std::ops::Deref;
+        self.payload.deref()
     }
     /// <p>Optional parameter that gives an estimate of the time when the GNSS scan information is taken, in seconds GPS time (GPST). If capture time is not specified, the local server time is used.</p>
     pub fn capture_time(&self) -> ::std::option::Option<f32> {
@@ -31,8 +32,10 @@ impl Gnss {
         self.capture_time_accuracy
     }
     /// <p>Optional assistance position information, specified using latitude and longitude values in degrees. The coordinates are inside the WGS84 reference frame.</p>
-    pub fn assist_position(&self) -> ::std::option::Option<&[f32]> {
-        self.assist_position.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.assist_position.is_none()`.
+    pub fn assist_position(&self) -> &[f32] {
+        self.assist_position.as_deref().unwrap_or_default()
     }
     /// <p>Optional assistance altitude, which is the altitude of the device at capture time, specified in meters above the WGS84 reference ellipsoid.</p>
     pub fn assist_altitude(&self) -> ::std::option::Option<f32> {
@@ -63,6 +66,7 @@ pub struct GnssBuilder {
 }
 impl GnssBuilder {
     /// <p>Payload that contains the GNSS scan result, or NAV message, in hexadecimal notation.</p>
+    /// This field is required.
     pub fn payload(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.payload = ::std::option::Option::Some(input.into());
         self
@@ -153,14 +157,21 @@ impl GnssBuilder {
         &self.use2_d_solver
     }
     /// Consumes the builder and constructs a [`Gnss`](crate::types::Gnss).
-    pub fn build(self) -> crate::types::Gnss {
-        crate::types::Gnss {
-            payload: self.payload,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`payload`](crate::types::builders::GnssBuilder::payload)
+    pub fn build(self) -> ::std::result::Result<crate::types::Gnss, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Gnss {
+            payload: self.payload.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "payload",
+                    "payload was not specified but it is required when building Gnss",
+                )
+            })?,
             capture_time: self.capture_time,
             capture_time_accuracy: self.capture_time_accuracy,
             assist_position: self.assist_position,
             assist_altitude: self.assist_altitude,
             use2_d_solver: self.use2_d_solver.unwrap_or_default(),
-        }
+        })
     }
 }

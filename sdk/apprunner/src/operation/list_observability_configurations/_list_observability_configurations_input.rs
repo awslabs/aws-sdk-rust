@@ -128,7 +128,7 @@ impl ListObservabilityConfigurationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_observability_configurations::ListObservabilityConfigurationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_observability_configurations::ListObservabilityConfigurationsInput {

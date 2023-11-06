@@ -41,6 +41,7 @@ pub struct ListCollaborationAnalysisTemplatesInputBuilder {
 }
 impl ListCollaborationAnalysisTemplatesInputBuilder {
     /// <p>A unique identifier for the collaboration that the analysis templates belong to. Currently accepts collaboration ID.</p>
+    /// This field is required.
     pub fn collaboration_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collaboration_identifier = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListCollaborationAnalysisTemplatesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_collaboration_analysis_templates::ListCollaborationAnalysisTemplatesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_collaboration_analysis_templates::ListCollaborationAnalysisTemplatesInput {

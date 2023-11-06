@@ -48,6 +48,7 @@ pub struct CreateFieldInputBuilder {
 }
 impl CreateFieldInputBuilder {
     /// <p>The unique identifier of the Cases domain. </p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl CreateFieldInputBuilder {
         &self.domain_id
     }
     /// <p>The name of the field.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl CreateFieldInputBuilder {
         &self.name
     }
     /// <p>Defines the data type, some system constraints, and default display of the field.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::FieldType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -104,7 +107,7 @@ impl CreateFieldInputBuilder {
         &self.description
     }
     /// Consumes the builder and constructs a [`CreateFieldInput`](crate::operation::create_field::CreateFieldInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_field::CreateFieldInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_field::CreateFieldInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_field::CreateFieldInput {
             domain_id: self.domain_id,
             name: self.name,

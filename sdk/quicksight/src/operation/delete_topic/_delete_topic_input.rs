@@ -34,6 +34,7 @@ pub struct DeleteTopicInputBuilder {
 }
 impl DeleteTopicInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the topic that you want to delete.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteTopicInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID of the topic that you want to delete. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    /// This field is required.
     pub fn topic_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_id = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,7 @@ impl DeleteTopicInputBuilder {
         &self.topic_id
     }
     /// Consumes the builder and constructs a [`DeleteTopicInput`](crate::operation::delete_topic::DeleteTopicInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_topic::DeleteTopicInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_topic::DeleteTopicInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_topic::DeleteTopicInput {
             aws_account_id: self.aws_account_id,
             topic_id: self.topic_id,

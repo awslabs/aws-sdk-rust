@@ -27,6 +27,7 @@ pub struct GetPolicyStoreInputBuilder {
 }
 impl GetPolicyStoreInputBuilder {
     /// <p>Specifies the ID of the policy store that you want information about.</p>
+    /// This field is required.
     pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_store_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetPolicyStoreInputBuilder {
     /// Consumes the builder and constructs a [`GetPolicyStoreInput`](crate::operation::get_policy_store::GetPolicyStoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_policy_store::GetPolicyStoreInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_policy_store::GetPolicyStoreInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_policy_store::GetPolicyStoreInput {
             policy_store_id: self.policy_store_id,
         })

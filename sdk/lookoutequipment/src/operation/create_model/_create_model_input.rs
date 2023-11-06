@@ -84,8 +84,10 @@ impl CreateModelInput {
         self.server_side_kms_key_id.as_deref()
     }
     /// <p> Any tags associated with the machine learning model being created. </p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Indicates that the asset associated with this sensor has been shut off. As long as this condition is met, Lookout for Equipment will not use data from this asset for training, evaluation, or inference.</p>
     pub fn off_condition(&self) -> ::std::option::Option<&str> {
@@ -120,6 +122,7 @@ pub struct CreateModelInputBuilder {
 }
 impl CreateModelInputBuilder {
     /// <p>The name for the machine learning model to be created.</p>
+    /// This field is required.
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_name = ::std::option::Option::Some(input.into());
         self
@@ -134,6 +137,7 @@ impl CreateModelInputBuilder {
         &self.model_name
     }
     /// <p>The name of the dataset for the machine learning model being created. </p>
+    /// This field is required.
     pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_name = ::std::option::Option::Some(input.into());
         self
@@ -176,6 +180,7 @@ impl CreateModelInputBuilder {
         &self.labels_input_configuration
     }
     /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -325,7 +330,7 @@ impl CreateModelInputBuilder {
         &self.off_condition
     }
     /// Consumes the builder and constructs a [`CreateModelInput`](crate::operation::create_model::CreateModelInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_model::CreateModelInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_model::CreateModelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_model::CreateModelInput {
             model_name: self.model_name,
             dataset_name: self.dataset_name,

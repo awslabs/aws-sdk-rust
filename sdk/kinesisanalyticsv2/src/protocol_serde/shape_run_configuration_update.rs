@@ -2,7 +2,7 @@
 pub fn ser_run_configuration_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RunConfigurationUpdate,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.flink_run_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("FlinkRunConfiguration").start_object();

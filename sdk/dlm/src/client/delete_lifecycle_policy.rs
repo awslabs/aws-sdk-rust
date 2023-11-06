@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteLifecyclePolicy`](crate::operation::delete_lifecycle_policy::builders::DeleteLifecyclePolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`policy_id(impl Into<String>)`](crate::operation::delete_lifecycle_policy::builders::DeleteLifecyclePolicyFluentBuilder::policy_id) / [`set_policy_id(Option<String>)`](crate::operation::delete_lifecycle_policy::builders::DeleteLifecyclePolicyFluentBuilder::set_policy_id): <p>The identifier of the lifecycle policy.</p>
+    ///   - [`policy_id(impl Into<String>)`](crate::operation::delete_lifecycle_policy::builders::DeleteLifecyclePolicyFluentBuilder::policy_id) / [`set_policy_id(Option<String>)`](crate::operation::delete_lifecycle_policy::builders::DeleteLifecyclePolicyFluentBuilder::set_policy_id):<br>required: **true**<br><p>The identifier of the lifecycle policy.</p><br>
     /// - On success, responds with [`DeleteLifecyclePolicyOutput`](crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyOutput)
     /// - On failure, responds with [`SdkError<DeleteLifecyclePolicyError>`](crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyError)
     pub fn delete_lifecycle_policy(&self) -> crate::operation::delete_lifecycle_policy::builders::DeleteLifecyclePolicyFluentBuilder {

@@ -56,6 +56,7 @@ pub struct UpdateStorageInputBuilder {
 }
 impl UpdateStorageInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
+    /// This field is required.
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_arn = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +71,7 @@ impl UpdateStorageInputBuilder {
         &self.cluster_arn
     }
     /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
+    /// This field is required.
     pub fn current_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_version = ::std::option::Option::Some(input.into());
         self
@@ -128,7 +130,7 @@ impl UpdateStorageInputBuilder {
     /// Consumes the builder and constructs a [`UpdateStorageInput`](crate::operation::update_storage::UpdateStorageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_storage::UpdateStorageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_storage::UpdateStorageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_storage::UpdateStorageInput {
             cluster_arn: self.cluster_arn,
             current_version: self.current_version,

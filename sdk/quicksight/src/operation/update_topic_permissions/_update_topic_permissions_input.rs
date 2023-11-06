@@ -22,12 +22,16 @@ impl UpdateTopicPermissionsInput {
         self.topic_id.as_deref()
     }
     /// <p>The resource permissions that you want to grant to the topic.</p>
-    pub fn grant_permissions(&self) -> ::std::option::Option<&[crate::types::ResourcePermission]> {
-        self.grant_permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.grant_permissions.is_none()`.
+    pub fn grant_permissions(&self) -> &[crate::types::ResourcePermission] {
+        self.grant_permissions.as_deref().unwrap_or_default()
     }
     /// <p>The resource permissions that you want to revoke from the topic.</p>
-    pub fn revoke_permissions(&self) -> ::std::option::Option<&[crate::types::ResourcePermission]> {
-        self.revoke_permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.revoke_permissions.is_none()`.
+    pub fn revoke_permissions(&self) -> &[crate::types::ResourcePermission] {
+        self.revoke_permissions.as_deref().unwrap_or_default()
     }
 }
 impl UpdateTopicPermissionsInput {
@@ -48,6 +52,7 @@ pub struct UpdateTopicPermissionsInputBuilder {
 }
 impl UpdateTopicPermissionsInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the topic that you want to update the permissions for.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +67,7 @@ impl UpdateTopicPermissionsInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    /// This field is required.
     pub fn topic_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_id = ::std::option::Option::Some(input.into());
         self
@@ -118,8 +124,10 @@ impl UpdateTopicPermissionsInputBuilder {
     /// Consumes the builder and constructs a [`UpdateTopicPermissionsInput`](crate::operation::update_topic_permissions::UpdateTopicPermissionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_topic_permissions::UpdateTopicPermissionsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::update_topic_permissions::UpdateTopicPermissionsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::update_topic_permissions::UpdateTopicPermissionsInput {
             aws_account_id: self.aws_account_id,
             topic_id: self.topic_id,

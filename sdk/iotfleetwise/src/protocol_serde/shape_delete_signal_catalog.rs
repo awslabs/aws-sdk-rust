@@ -28,11 +28,10 @@ pub fn de_delete_signal_catalog_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::delete_signal_catalog::DeleteSignalCatalogError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::delete_signal_catalog::DeleteSignalCatalogError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ConflictException" => crate::operation::delete_signal_catalog::DeleteSignalCatalogError::ConflictException({
@@ -43,11 +42,10 @@ pub fn de_delete_signal_catalog_http_error(
                 output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
                     .map_err(crate::operation::delete_signal_catalog::DeleteSignalCatalogError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::conflict_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::delete_signal_catalog::DeleteSignalCatalogError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerException" => crate::operation::delete_signal_catalog::DeleteSignalCatalogError::InternalServerException({
@@ -58,11 +56,10 @@ pub fn de_delete_signal_catalog_http_error(
                 output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
                     .map_err(crate::operation::delete_signal_catalog::DeleteSignalCatalogError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::delete_signal_catalog::DeleteSignalCatalogError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::delete_signal_catalog::DeleteSignalCatalogError::ThrottlingException({
@@ -73,11 +70,10 @@ pub fn de_delete_signal_catalog_http_error(
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::delete_signal_catalog::DeleteSignalCatalogError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::delete_signal_catalog::DeleteSignalCatalogError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::delete_signal_catalog::DeleteSignalCatalogError::ValidationException({
@@ -88,11 +84,10 @@ pub fn de_delete_signal_catalog_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::delete_signal_catalog::DeleteSignalCatalogError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::delete_signal_catalog::DeleteSignalCatalogError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::delete_signal_catalog::DeleteSignalCatalogError::generic(generic),
@@ -114,18 +109,20 @@ pub fn de_delete_signal_catalog_http_response(
         output = crate::protocol_serde::shape_delete_signal_catalog::de_delete_signal_catalog(_response_body, output)
             .map_err(crate::operation::delete_signal_catalog::DeleteSignalCatalogError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::delete_signal_catalog_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::delete_signal_catalog::DeleteSignalCatalogError::unhandled)?
     })
 }
 
 pub fn ser_delete_signal_catalog_input(
     input: &crate::operation::delete_signal_catalog::DeleteSignalCatalogInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_delete_signal_catalog_input::ser_delete_signal_catalog_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_delete_signal_catalog(

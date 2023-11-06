@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceStringFilter {
     /// <p>The filter's comparison.</p>
-    pub comparison: ::std::option::Option<crate::types::ResourceStringComparison>,
+    pub comparison: crate::types::ResourceStringComparison,
     /// <p>The filter's value.</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
 }
 impl ResourceStringFilter {
     /// <p>The filter's comparison.</p>
-    pub fn comparison(&self) -> ::std::option::Option<&crate::types::ResourceStringComparison> {
-        self.comparison.as_ref()
+    pub fn comparison(&self) -> &crate::types::ResourceStringComparison {
+        &self.comparison
     }
     /// <p>The filter's value.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
 }
 impl ResourceStringFilter {
@@ -35,6 +36,7 @@ pub struct ResourceStringFilterBuilder {
 }
 impl ResourceStringFilterBuilder {
     /// <p>The filter's comparison.</p>
+    /// This field is required.
     pub fn comparison(mut self, input: crate::types::ResourceStringComparison) -> Self {
         self.comparison = ::std::option::Option::Some(input);
         self
@@ -49,6 +51,7 @@ impl ResourceStringFilterBuilder {
         &self.comparison
     }
     /// <p>The filter's value.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +66,23 @@ impl ResourceStringFilterBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`ResourceStringFilter`](crate::types::ResourceStringFilter).
-    pub fn build(self) -> crate::types::ResourceStringFilter {
-        crate::types::ResourceStringFilter {
-            comparison: self.comparison,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`comparison`](crate::types::builders::ResourceStringFilterBuilder::comparison)
+    /// - [`value`](crate::types::builders::ResourceStringFilterBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::ResourceStringFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ResourceStringFilter {
+            comparison: self.comparison.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "comparison",
+                    "comparison was not specified but it is required when building ResourceStringFilter",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building ResourceStringFilter",
+                )
+            })?,
+        })
     }
 }

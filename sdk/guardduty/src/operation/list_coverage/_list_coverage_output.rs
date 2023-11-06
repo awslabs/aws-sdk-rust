@@ -11,8 +11,10 @@ pub struct ListCoverageOutput {
 }
 impl ListCoverageOutput {
     /// <p>A list of resources and their attributes providing cluster details.</p>
-    pub fn resources(&self) -> ::std::option::Option<&[crate::types::CoverageResource]> {
-        self.resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
+    pub fn resources(&self) -> &[crate::types::CoverageResource] {
+        self.resources.as_deref().unwrap_or_default()
     }
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

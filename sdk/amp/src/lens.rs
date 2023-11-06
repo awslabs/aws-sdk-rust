@@ -22,19 +22,13 @@ pub(crate) fn reflens_list_workspaces_output_next_token(
 pub(crate) fn lens_list_rule_groups_namespaces_output_rule_groups_namespaces(
     input: crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupsNamespaceSummary>> {
-    let input = match input.rule_groups_namespaces {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.rule_groups_namespaces;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_workspaces_output_workspaces(
     input: crate::operation::list_workspaces::ListWorkspacesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceSummary>> {
-    let input = match input.workspaces {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.workspaces;
     ::std::option::Option::Some(input)
 }

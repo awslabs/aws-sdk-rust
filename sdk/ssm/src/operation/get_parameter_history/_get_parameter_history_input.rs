@@ -48,6 +48,7 @@ pub struct GetParameterHistoryInputBuilder {
 }
 impl GetParameterHistoryInputBuilder {
     /// <p>The name of the parameter for which you want to review history.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,7 @@ impl GetParameterHistoryInputBuilder {
     /// Consumes the builder and constructs a [`GetParameterHistoryInput`](crate::operation::get_parameter_history::GetParameterHistoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_parameter_history::GetParameterHistoryInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_parameter_history::GetParameterHistoryInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_parameter_history::GetParameterHistoryInput {
             name: self.name,

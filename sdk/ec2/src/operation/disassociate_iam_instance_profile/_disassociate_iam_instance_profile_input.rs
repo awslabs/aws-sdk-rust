@@ -27,6 +27,7 @@ pub struct DisassociateIamInstanceProfileInputBuilder {
 }
 impl DisassociateIamInstanceProfileInputBuilder {
     /// <p>The ID of the IAM instance profile association.</p>
+    /// This field is required.
     pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DisassociateIamInstanceProfileInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_iam_instance_profile::DisassociateIamInstanceProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_iam_instance_profile::DisassociateIamInstanceProfileInput {
             association_id: self.association_id,

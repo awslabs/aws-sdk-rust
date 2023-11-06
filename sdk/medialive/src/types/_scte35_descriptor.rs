@@ -28,6 +28,7 @@ pub struct Scte35DescriptorBuilder {
 }
 impl Scte35DescriptorBuilder {
     /// SCTE-35 Descriptor Settings.
+    /// This field is required.
     pub fn scte35_descriptor_settings(mut self, input: crate::types::Scte35DescriptorSettings) -> Self {
         self.scte35_descriptor_settings = ::std::option::Option::Some(input);
         self

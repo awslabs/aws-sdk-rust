@@ -34,6 +34,7 @@ pub struct ModifyAquaConfigurationInputBuilder {
 }
 impl ModifyAquaConfigurationInputBuilder {
     /// <p>The identifier of the cluster to be modified.</p>
+    /// This field is required.
     pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl ModifyAquaConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_aqua_configuration::ModifyAquaConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_aqua_configuration::ModifyAquaConfigurationInput {
             cluster_identifier: self.cluster_identifier,

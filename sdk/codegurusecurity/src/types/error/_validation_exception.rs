@@ -5,42 +5,43 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidationException {
     /// <p>The identifier for the error.</p>
-    pub error_code: ::std::option::Option<::std::string::String>,
+    pub error_code: ::std::string::String,
     /// <p>Description of the error.</p>
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
     /// <p>The reason the request failed validation.</p>
-    pub reason: ::std::option::Option<crate::types::ValidationExceptionReason>,
+    pub reason: crate::types::ValidationExceptionReason,
     /// <p>The field that caused the error, if applicable.</p>
     pub field_list: ::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionField>>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl ValidationException {
     /// <p>The identifier for the error.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
-        self.error_code.as_deref()
+    pub fn error_code(&self) -> &str {
+        use std::ops::Deref;
+        self.error_code.deref()
     }
     /// <p>The reason the request failed validation.</p>
-    pub fn reason(&self) -> ::std::option::Option<&crate::types::ValidationExceptionReason> {
-        self.reason.as_ref()
+    pub fn reason(&self) -> &crate::types::ValidationExceptionReason {
+        &self.reason
     }
     /// <p>The field that caused the error, if applicable.</p>
-    pub fn field_list(&self) -> ::std::option::Option<&[crate::types::ValidationExceptionField]> {
-        self.field_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.field_list.is_none()`.
+    pub fn field_list(&self) -> &[crate::types::ValidationExceptionField] {
+        self.field_list.as_deref().unwrap_or_default()
     }
 }
 impl ValidationException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        &self.message
     }
 }
 impl ::std::fmt::Display for ValidationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "ValidationException")?;
-        if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
-                ::std::write!(f, ": {}", inner_1)?;
-            }
+        {
+            ::std::write!(f, ": {}", &self.message)?;
         }
         Ok(())
     }
@@ -76,6 +77,7 @@ pub struct ValidationExceptionBuilder {
 }
 impl ValidationExceptionBuilder {
     /// <p>The identifier for the error.</p>
+    /// This field is required.
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +92,7 @@ impl ValidationExceptionBuilder {
         &self.error_code
     }
     /// <p>Description of the error.</p>
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +107,7 @@ impl ValidationExceptionBuilder {
         &self.message
     }
     /// <p>The reason the request failed validation.</p>
+    /// This field is required.
     pub fn reason(mut self, input: crate::types::ValidationExceptionReason) -> Self {
         self.reason = ::std::option::Option::Some(input);
         self
@@ -149,13 +153,32 @@ impl ValidationExceptionBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ValidationException`](crate::types::error::ValidationException).
-    pub fn build(self) -> crate::types::error::ValidationException {
-        crate::types::error::ValidationException {
-            error_code: self.error_code,
-            message: self.message,
-            reason: self.reason,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`error_code`](crate::types::error::builders::ValidationExceptionBuilder::error_code)
+    /// - [`message`](crate::types::error::builders::ValidationExceptionBuilder::message)
+    /// - [`reason`](crate::types::error::builders::ValidationExceptionBuilder::reason)
+    pub fn build(self) -> ::std::result::Result<crate::types::error::ValidationException, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::error::ValidationException {
+            error_code: self.error_code.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "error_code",
+                    "error_code was not specified but it is required when building ValidationException",
+                )
+            })?,
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building ValidationException",
+                )
+            })?,
+            reason: self.reason.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "reason",
+                    "reason was not specified but it is required when building ValidationException",
+                )
+            })?,
             field_list: self.field_list,
             meta: self.meta.unwrap_or_default(),
-        }
+        })
     }
 }

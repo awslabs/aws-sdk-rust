@@ -5,30 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RenameField {
     /// <p>The name of the transform node.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The data inputs identified by their node names.</p>
-    pub inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub inputs: ::std::vec::Vec<::std::string::String>,
     /// <p>A JSON path to a variable in the data structure for the source data.</p>
-    pub source_path: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub source_path: ::std::vec::Vec<::std::string::String>,
     /// <p>A JSON path to a variable in the data structure for the target data.</p>
-    pub target_path: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub target_path: ::std::vec::Vec<::std::string::String>,
 }
 impl RenameField {
     /// <p>The name of the transform node.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn inputs(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.inputs.as_deref()
+    pub fn inputs(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.inputs.deref()
     }
     /// <p>A JSON path to a variable in the data structure for the source data.</p>
-    pub fn source_path(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.source_path.as_deref()
+    pub fn source_path(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.source_path.deref()
     }
     /// <p>A JSON path to a variable in the data structure for the target data.</p>
-    pub fn target_path(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.target_path.as_deref()
+    pub fn target_path(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.target_path.deref()
     }
 }
 impl RenameField {
@@ -49,6 +53,7 @@ pub struct RenameFieldBuilder {
 }
 impl RenameFieldBuilder {
     /// <p>The name of the transform node.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -123,12 +128,37 @@ impl RenameFieldBuilder {
         &self.target_path
     }
     /// Consumes the builder and constructs a [`RenameField`](crate::types::RenameField).
-    pub fn build(self) -> crate::types::RenameField {
-        crate::types::RenameField {
-            name: self.name,
-            inputs: self.inputs,
-            source_path: self.source_path,
-            target_path: self.target_path,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::RenameFieldBuilder::name)
+    /// - [`inputs`](crate::types::builders::RenameFieldBuilder::inputs)
+    /// - [`source_path`](crate::types::builders::RenameFieldBuilder::source_path)
+    /// - [`target_path`](crate::types::builders::RenameFieldBuilder::target_path)
+    pub fn build(self) -> ::std::result::Result<crate::types::RenameField, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RenameField {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building RenameField",
+                )
+            })?,
+            inputs: self.inputs.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "inputs",
+                    "inputs was not specified but it is required when building RenameField",
+                )
+            })?,
+            source_path: self.source_path.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "source_path",
+                    "source_path was not specified but it is required when building RenameField",
+                )
+            })?,
+            target_path: self.target_path.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "target_path",
+                    "target_path was not specified but it is required when building RenameField",
+                )
+            })?,
+        })
     }
 }

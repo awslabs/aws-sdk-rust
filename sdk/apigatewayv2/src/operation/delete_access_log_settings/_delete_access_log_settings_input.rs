@@ -34,6 +34,7 @@ pub struct DeleteAccessLogSettingsInputBuilder {
 }
 impl DeleteAccessLogSettingsInputBuilder {
     /// <p>The API identifier.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteAccessLogSettingsInputBuilder {
         &self.api_id
     }
     /// <p>The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
+    /// This field is required.
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_name = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl DeleteAccessLogSettingsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_access_log_settings::DeleteAccessLogSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_access_log_settings::DeleteAccessLogSettingsInput {
             api_id: self.api_id,

@@ -160,6 +160,8 @@ pub struct Cluster {
     pub master_password_secret_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret.</p>
     pub master_password_secret_kms_key_id: ::std::option::Option<::std::string::String>,
+    /// <p>The IP address type for the cluster. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
+    pub ip_address_type: ::std::option::Option<::std::string::String>,
 }
 impl Cluster {
     /// <p>The unique identifier of the cluster.</p>
@@ -238,16 +240,22 @@ impl Cluster {
     }
     /// <p>A list of cluster security group that are associated with the cluster. Each security group is represented by an element that contains <code>ClusterSecurityGroup.Name</code> and <code>ClusterSecurityGroup.Status</code> subelements. </p>
     /// <p>Cluster security groups are used when the cluster is not created in an Amazon Virtual Private Cloud (VPC). Clusters that are created in a VPC use VPC security groups, which are listed by the <b>VpcSecurityGroups</b> parameter. </p>
-    pub fn cluster_security_groups(&self) -> ::std::option::Option<&[crate::types::ClusterSecurityGroupMembership]> {
-        self.cluster_security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cluster_security_groups.is_none()`.
+    pub fn cluster_security_groups(&self) -> &[crate::types::ClusterSecurityGroupMembership] {
+        self.cluster_security_groups.as_deref().unwrap_or_default()
     }
     /// <p>A list of Amazon Virtual Private Cloud (Amazon VPC) security groups that are associated with the cluster. This parameter is returned only if the cluster is in a VPC.</p>
-    pub fn vpc_security_groups(&self) -> ::std::option::Option<&[crate::types::VpcSecurityGroupMembership]> {
-        self.vpc_security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_groups.is_none()`.
+    pub fn vpc_security_groups(&self) -> &[crate::types::VpcSecurityGroupMembership] {
+        self.vpc_security_groups.as_deref().unwrap_or_default()
     }
     /// <p>The list of cluster parameter groups that are associated with this cluster. Each parameter group in the list is returned with its status.</p>
-    pub fn cluster_parameter_groups(&self) -> ::std::option::Option<&[crate::types::ClusterParameterGroupStatus]> {
-        self.cluster_parameter_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cluster_parameter_groups.is_none()`.
+    pub fn cluster_parameter_groups(&self) -> &[crate::types::ClusterParameterGroupStatus] {
+        self.cluster_parameter_groups.as_deref().unwrap_or_default()
     }
     /// <p>The name of the subnet group that is associated with the cluster. This parameter is valid only when the cluster is in a VPC.</p>
     pub fn cluster_subnet_group_name(&self) -> ::std::option::Option<&str> {
@@ -311,8 +319,10 @@ impl Cluster {
         self.cluster_public_key.as_deref()
     }
     /// <p>The nodes in the cluster.</p>
-    pub fn cluster_nodes(&self) -> ::std::option::Option<&[crate::types::ClusterNode]> {
-        self.cluster_nodes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cluster_nodes.is_none()`.
+    pub fn cluster_nodes(&self) -> &[crate::types::ClusterNode] {
+        self.cluster_nodes.as_deref().unwrap_or_default()
     }
     /// <p>The status of the elastic IP (EIP) address.</p>
     pub fn elastic_ip_status(&self) -> ::std::option::Option<&crate::types::ElasticIpStatus> {
@@ -323,8 +333,10 @@ impl Cluster {
         self.cluster_revision_number.as_deref()
     }
     /// <p>The list of tags for the cluster.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The Key Management Service (KMS) key ID of the encryption key used to encrypt data in the cluster.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
@@ -337,12 +349,16 @@ impl Cluster {
         self.enhanced_vpc_routing
     }
     /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services.</p>
-    pub fn iam_roles(&self) -> ::std::option::Option<&[crate::types::ClusterIamRole]> {
-        self.iam_roles.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.iam_roles.is_none()`.
+    pub fn iam_roles(&self) -> &[crate::types::ClusterIamRole] {
+        self.iam_roles.as_deref().unwrap_or_default()
     }
     /// <p>Cluster operations that are waiting to be started.</p>
-    pub fn pending_actions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.pending_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pending_actions.is_none()`.
+    pub fn pending_actions(&self) -> &[::std::string::String] {
+        self.pending_actions.as_deref().unwrap_or_default()
     }
     /// <p>The name of the maintenance track for the cluster.</p>
     pub fn maintenance_track_name(&self) -> ::std::option::Option<&str> {
@@ -353,8 +369,10 @@ impl Cluster {
         self.elastic_resize_number_of_node_options.as_deref()
     }
     /// <p>Describes a group of <code>DeferredMaintenanceWindow</code> objects.</p>
-    pub fn deferred_maintenance_windows(&self) -> ::std::option::Option<&[crate::types::DeferredMaintenanceWindow]> {
-        self.deferred_maintenance_windows.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.deferred_maintenance_windows.is_none()`.
+    pub fn deferred_maintenance_windows(&self) -> &[crate::types::DeferredMaintenanceWindow] {
+        self.deferred_maintenance_windows.as_deref().unwrap_or_default()
     }
     /// <p>A unique identifier for the cluster snapshot schedule.</p>
     pub fn snapshot_schedule_identifier(&self) -> ::std::option::Option<&str> {
@@ -432,6 +450,10 @@ impl Cluster {
     pub fn master_password_secret_kms_key_id(&self) -> ::std::option::Option<&str> {
         self.master_password_secret_kms_key_id.as_deref()
     }
+    /// <p>The IP address type for the cluster. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
+    pub fn ip_address_type(&self) -> ::std::option::Option<&str> {
+        self.ip_address_type.as_deref()
+    }
 }
 impl Cluster {
     /// Creates a new builder-style object to manufacture [`Cluster`](crate::types::Cluster).
@@ -501,6 +523,7 @@ pub struct ClusterBuilder {
     pub(crate) custom_domain_certificate_expiry_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) master_password_secret_arn: ::std::option::Option<::std::string::String>,
     pub(crate) master_password_secret_kms_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) ip_address_type: ::std::option::Option<::std::string::String>,
 }
 impl ClusterBuilder {
     /// <p>The unique identifier of the cluster.</p>
@@ -1481,6 +1504,20 @@ impl ClusterBuilder {
     pub fn get_master_password_secret_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.master_password_secret_kms_key_id
     }
+    /// <p>The IP address type for the cluster. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
+    pub fn ip_address_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ip_address_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The IP address type for the cluster. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ip_address_type = input;
+        self
+    }
+    /// <p>The IP address type for the cluster. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_address_type
+    }
     /// Consumes the builder and constructs a [`Cluster`](crate::types::Cluster).
     pub fn build(self) -> crate::types::Cluster {
         crate::types::Cluster {
@@ -1541,6 +1578,7 @@ impl ClusterBuilder {
             custom_domain_certificate_expiry_date: self.custom_domain_certificate_expiry_date,
             master_password_secret_arn: self.master_password_secret_arn,
             master_password_secret_kms_key_id: self.master_password_secret_kms_key_id,
+            ip_address_type: self.ip_address_type,
         }
     }
 }

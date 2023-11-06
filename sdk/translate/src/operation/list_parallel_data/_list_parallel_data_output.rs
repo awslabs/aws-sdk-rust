@@ -11,8 +11,10 @@ pub struct ListParallelDataOutput {
 }
 impl ListParallelDataOutput {
     /// <p>The properties of the parallel data resources returned by this request.</p>
-    pub fn parallel_data_properties_list(&self) -> ::std::option::Option<&[crate::types::ParallelDataProperties]> {
-        self.parallel_data_properties_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parallel_data_properties_list.is_none()`.
+    pub fn parallel_data_properties_list(&self) -> &[crate::types::ParallelDataProperties] {
+        self.parallel_data_properties_list.as_deref().unwrap_or_default()
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

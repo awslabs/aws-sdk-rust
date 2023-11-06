@@ -35,6 +35,7 @@ pub struct UpdateProfilingGroupInputBuilder {
 }
 impl UpdateProfilingGroupInputBuilder {
     /// <p>The name of the profiling group to update.</p>
+    /// This field is required.
     pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profiling_group_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl UpdateProfilingGroupInputBuilder {
         &self.profiling_group_name
     }
     /// <p> Specifies whether profiling is enabled or disabled for a profiling group. </p>
+    /// This field is required.
     pub fn agent_orchestration_config(mut self, input: crate::types::AgentOrchestrationConfig) -> Self {
         self.agent_orchestration_config = ::std::option::Option::Some(input);
         self
@@ -65,7 +67,7 @@ impl UpdateProfilingGroupInputBuilder {
     /// Consumes the builder and constructs a [`UpdateProfilingGroupInput`](crate::operation::update_profiling_group::UpdateProfilingGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_profiling_group::UpdateProfilingGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_profiling_group::UpdateProfilingGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_profiling_group::UpdateProfilingGroupInput {
             profiling_group_name: self.profiling_group_name,

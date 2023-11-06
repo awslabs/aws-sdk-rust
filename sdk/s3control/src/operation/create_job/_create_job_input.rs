@@ -64,8 +64,10 @@ impl CreateJobInput {
         self.role_arn.as_deref()
     }
     /// <p>A set of tags to associate with the S3 Batch Operations job. This is an optional parameter. </p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::S3Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::S3Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The attribute container for the ManifestGenerator details. Jobs must be created with either a manifest file or a ManifestGenerator, but not both.</p>
     pub fn manifest_generator(&self) -> ::std::option::Option<&crate::types::JobManifestGenerator> {
@@ -97,6 +99,7 @@ pub struct CreateJobInputBuilder {
 }
 impl CreateJobInputBuilder {
     /// <p>The Amazon Web Services account ID that creates the job.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +128,7 @@ impl CreateJobInputBuilder {
         &self.confirmation_required
     }
     /// <p>The action that you want this job to perform on every object listed in the manifest. For more information about the available actions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// This field is required.
     pub fn operation(mut self, input: crate::types::JobOperation) -> Self {
         self.operation = ::std::option::Option::Some(input);
         self
@@ -139,6 +143,7 @@ impl CreateJobInputBuilder {
         &self.operation
     }
     /// <p>Configuration parameters for the optional job-completion report.</p>
+    /// This field is required.
     pub fn report(mut self, input: crate::types::JobReport) -> Self {
         self.report = ::std::option::Option::Some(input);
         self
@@ -153,6 +158,7 @@ impl CreateJobInputBuilder {
         &self.report
     }
     /// <p>An idempotency token to ensure that you don't accidentally submit the same request twice. You can use any string up to the maximum length.</p>
+    /// This field is required.
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
@@ -195,6 +201,7 @@ impl CreateJobInputBuilder {
         &self.description
     }
     /// <p>The numerical priority for this job. Higher numbers indicate higher priority.</p>
+    /// This field is required.
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
         self
@@ -209,6 +216,7 @@ impl CreateJobInputBuilder {
         &self.priority
     }
     /// <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role that Batch Operations will use to run this job's action on every object in the manifest.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -257,7 +265,7 @@ impl CreateJobInputBuilder {
         &self.manifest_generator
     }
     /// Consumes the builder and constructs a [`CreateJobInput`](crate::operation::create_job::CreateJobInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_job::CreateJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_job::CreateJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_job::CreateJobInput {
             account_id: self.account_id,
             confirmation_required: self.confirmation_required,

@@ -11,12 +11,16 @@ pub struct BatchGetResourceConfigOutput {
 }
 impl BatchGetResourceConfigOutput {
     /// <p>A list that contains the current configuration of one or more resources.</p>
-    pub fn base_configuration_items(&self) -> ::std::option::Option<&[crate::types::BaseConfigurationItem]> {
-        self.base_configuration_items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.base_configuration_items.is_none()`.
+    pub fn base_configuration_items(&self) -> &[crate::types::BaseConfigurationItem] {
+        self.base_configuration_items.as_deref().unwrap_or_default()
     }
     /// <p>A list of resource keys that were not processed with the current response. The unprocessesResourceKeys value is in the same form as ResourceKeys, so the value can be directly provided to a subsequent BatchGetResourceConfig operation. If there are no unprocessed resource keys, the response contains an empty unprocessedResourceKeys list. </p>
-    pub fn unprocessed_resource_keys(&self) -> ::std::option::Option<&[crate::types::ResourceKey]> {
-        self.unprocessed_resource_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unprocessed_resource_keys.is_none()`.
+    pub fn unprocessed_resource_keys(&self) -> &[crate::types::ResourceKey] {
+        self.unprocessed_resource_keys.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchGetResourceConfigOutput {

@@ -2,7 +2,7 @@
 pub fn ser_hub_s3_storage_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HubS3StorageConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.s3_output_path {
         object.key("S3OutputPath").string(var_1.as_str());
     }

@@ -11,8 +11,10 @@ pub struct ListResourceEvaluationsOutput {
 }
 impl ListResourceEvaluationsOutput {
     /// <p>Returns a <code>ResourceEvaluations</code> object.</p>
-    pub fn resource_evaluations(&self) -> ::std::option::Option<&[crate::types::ResourceEvaluation]> {
-        self.resource_evaluations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_evaluations.is_none()`.
+    pub fn resource_evaluations(&self) -> &[crate::types::ResourceEvaluation] {
+        self.resource_evaluations.as_deref().unwrap_or_default()
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

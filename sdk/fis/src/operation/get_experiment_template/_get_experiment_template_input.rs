@@ -27,6 +27,7 @@ pub struct GetExperimentTemplateInputBuilder {
 }
 impl GetExperimentTemplateInputBuilder {
     /// <p>The ID of the experiment template.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetExperimentTemplateInputBuilder {
     /// Consumes the builder and constructs a [`GetExperimentTemplateInput`](crate::operation::get_experiment_template::GetExperimentTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_experiment_template::GetExperimentTemplateInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_experiment_template::GetExperimentTemplateInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_experiment_template::GetExperimentTemplateInput { id: self.id })
     }

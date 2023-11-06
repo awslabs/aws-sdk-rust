@@ -41,6 +41,7 @@ pub struct CreateAccessPreviewInputBuilder {
 }
 impl CreateAccessPreviewInputBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the account analyzer</a> used to generate the access preview. You can only create an access preview for analyzers with an <code>Account</code> type and <code>Active</code> status.</p>
+    /// This field is required.
     pub fn analyzer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analyzer_arn = ::std::option::Option::Some(input.into());
         self
@@ -94,7 +95,7 @@ impl CreateAccessPreviewInputBuilder {
     /// Consumes the builder and constructs a [`CreateAccessPreviewInput`](crate::operation::create_access_preview::CreateAccessPreviewInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_access_preview::CreateAccessPreviewInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_access_preview::CreateAccessPreviewInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_access_preview::CreateAccessPreviewInput {
             analyzer_arn: self.analyzer_arn,

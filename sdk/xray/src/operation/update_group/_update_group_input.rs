@@ -124,7 +124,7 @@ impl UpdateGroupInputBuilder {
         &self.insights_configuration
     }
     /// Consumes the builder and constructs a [`UpdateGroupInput`](crate::operation::update_group::UpdateGroupInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_group::UpdateGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_group::UpdateGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_group::UpdateGroupInput {
             group_name: self.group_name,
             group_arn: self.group_arn,

@@ -29,8 +29,10 @@ impl SamlConfiguration {
         self.role_values.as_ref()
     }
     /// <p>Lists which organizations defined in the SAML assertion are allowed to use the Amazon Managed Grafana workspace. If this is empty, all organizations in the assertion attribute have access.</p>
-    pub fn allowed_organizations(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.allowed_organizations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_organizations.is_none()`.
+    pub fn allowed_organizations(&self) -> &[::std::string::String] {
+        self.allowed_organizations.as_deref().unwrap_or_default()
     }
     /// <p>How long a sign-on session by a SAML user is valid, before the user has to sign on again.</p>
     pub fn login_validity_duration(&self) -> i32 {
@@ -56,6 +58,7 @@ pub struct SamlConfigurationBuilder {
 }
 impl SamlConfigurationBuilder {
     /// <p>A structure containing the identity provider (IdP) metadata used to integrate the identity provider with this workspace.</p>
+    /// This field is required.
     pub fn idp_metadata(mut self, input: crate::types::IdpMetadata) -> Self {
         self.idp_metadata = ::std::option::Option::Some(input);
         self

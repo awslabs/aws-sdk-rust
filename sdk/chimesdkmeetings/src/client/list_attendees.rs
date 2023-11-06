@@ -4,11 +4,11 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_attendees::builders::ListAttendeesFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`meeting_id(impl Into<String>)`](crate::operation::list_attendees::builders::ListAttendeesFluentBuilder::meeting_id) / [`set_meeting_id(Option<String>)`](crate::operation::list_attendees::builders::ListAttendeesFluentBuilder::set_meeting_id): <p>The Amazon Chime SDK meeting ID.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_attendees::builders::ListAttendeesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_attendees::builders::ListAttendeesFluentBuilder::set_next_token): <p>The token to use to retrieve the next page of results.</p>
-    ///   - [`max_results(i32)`](crate::operation::list_attendees::builders::ListAttendeesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_attendees::builders::ListAttendeesFluentBuilder::set_max_results): <p>The maximum number of results to return in a single call.</p>
+    ///   - [`meeting_id(impl Into<String>)`](crate::operation::list_attendees::builders::ListAttendeesFluentBuilder::meeting_id) / [`set_meeting_id(Option<String>)`](crate::operation::list_attendees::builders::ListAttendeesFluentBuilder::set_meeting_id):<br>required: **true**<br><p>The Amazon Chime SDK meeting ID.</p><br>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_attendees::builders::ListAttendeesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_attendees::builders::ListAttendeesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to use to retrieve the next page of results.</p><br>
+    ///   - [`max_results(i32)`](crate::operation::list_attendees::builders::ListAttendeesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_attendees::builders::ListAttendeesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in a single call.</p><br>
     /// - On success, responds with [`ListAttendeesOutput`](crate::operation::list_attendees::ListAttendeesOutput) with field(s):
-    ///   - [`attendees(Option<Vec<Attendee>>)`](crate::operation::list_attendees::ListAttendeesOutput::attendees): <p>The Amazon Chime SDK attendee information.</p>
+    ///   - [`attendees(Option<Vec::<Attendee>>)`](crate::operation::list_attendees::ListAttendeesOutput::attendees): <p>The Amazon Chime SDK attendee information.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_attendees::ListAttendeesOutput::next_token): <p>The token to use to retrieve the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListAttendeesError>`](crate::operation::list_attendees::ListAttendeesError)
     pub fn list_attendees(&self) -> crate::operation::list_attendees::builders::ListAttendeesFluentBuilder {

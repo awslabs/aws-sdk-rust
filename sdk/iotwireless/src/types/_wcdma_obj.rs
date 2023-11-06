@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WcdmaObj {
     /// <p>Mobile Country Code.</p>
-    pub mcc: ::std::option::Option<i32>,
+    pub mcc: i32,
     /// <p>Mobile Network Code.</p>
-    pub mnc: ::std::option::Option<i32>,
+    pub mnc: i32,
     /// <p>Location Area Code.</p>
     pub lac: ::std::option::Option<i32>,
     /// <p>UTRAN (UMTS Terrestrial Radio Access Network) Cell Global Identifier.</p>
-    pub utran_cid: ::std::option::Option<i32>,
+    pub utran_cid: i32,
     /// <p>WCDMA local ID information.</p>
     pub wcdma_local_id: ::std::option::Option<crate::types::WcdmaLocalId>,
     /// <p>Received Signal Code Power (signal power) (dBm).</p>
@@ -23,11 +23,11 @@ pub struct WcdmaObj {
 }
 impl WcdmaObj {
     /// <p>Mobile Country Code.</p>
-    pub fn mcc(&self) -> ::std::option::Option<i32> {
+    pub fn mcc(&self) -> i32 {
         self.mcc
     }
     /// <p>Mobile Network Code.</p>
-    pub fn mnc(&self) -> ::std::option::Option<i32> {
+    pub fn mnc(&self) -> i32 {
         self.mnc
     }
     /// <p>Location Area Code.</p>
@@ -35,7 +35,7 @@ impl WcdmaObj {
         self.lac
     }
     /// <p>UTRAN (UMTS Terrestrial Radio Access Network) Cell Global Identifier.</p>
-    pub fn utran_cid(&self) -> ::std::option::Option<i32> {
+    pub fn utran_cid(&self) -> i32 {
         self.utran_cid
     }
     /// <p>WCDMA local ID information.</p>
@@ -51,8 +51,10 @@ impl WcdmaObj {
         self.path_loss
     }
     /// <p>WCDMA object for network measurement reports.</p>
-    pub fn wcdma_nmr(&self) -> ::std::option::Option<&[crate::types::WcdmaNmrObj]> {
-        self.wcdma_nmr.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.wcdma_nmr.is_none()`.
+    pub fn wcdma_nmr(&self) -> &[crate::types::WcdmaNmrObj] {
+        self.wcdma_nmr.as_deref().unwrap_or_default()
     }
 }
 impl WcdmaObj {
@@ -77,6 +79,7 @@ pub struct WcdmaObjBuilder {
 }
 impl WcdmaObjBuilder {
     /// <p>Mobile Country Code.</p>
+    /// This field is required.
     pub fn mcc(mut self, input: i32) -> Self {
         self.mcc = ::std::option::Option::Some(input);
         self
@@ -91,6 +94,7 @@ impl WcdmaObjBuilder {
         &self.mcc
     }
     /// <p>Mobile Network Code.</p>
+    /// This field is required.
     pub fn mnc(mut self, input: i32) -> Self {
         self.mnc = ::std::option::Option::Some(input);
         self
@@ -119,6 +123,7 @@ impl WcdmaObjBuilder {
         &self.lac
     }
     /// <p>UTRAN (UMTS Terrestrial Radio Access Network) Cell Global Identifier.</p>
+    /// This field is required.
     pub fn utran_cid(mut self, input: i32) -> Self {
         self.utran_cid = ::std::option::Option::Some(input);
         self
@@ -195,16 +200,35 @@ impl WcdmaObjBuilder {
         &self.wcdma_nmr
     }
     /// Consumes the builder and constructs a [`WcdmaObj`](crate::types::WcdmaObj).
-    pub fn build(self) -> crate::types::WcdmaObj {
-        crate::types::WcdmaObj {
-            mcc: self.mcc,
-            mnc: self.mnc,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`mcc`](crate::types::builders::WcdmaObjBuilder::mcc)
+    /// - [`mnc`](crate::types::builders::WcdmaObjBuilder::mnc)
+    /// - [`utran_cid`](crate::types::builders::WcdmaObjBuilder::utran_cid)
+    pub fn build(self) -> ::std::result::Result<crate::types::WcdmaObj, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::WcdmaObj {
+            mcc: self.mcc.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "mcc",
+                    "mcc was not specified but it is required when building WcdmaObj",
+                )
+            })?,
+            mnc: self.mnc.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "mnc",
+                    "mnc was not specified but it is required when building WcdmaObj",
+                )
+            })?,
             lac: self.lac,
-            utran_cid: self.utran_cid,
+            utran_cid: self.utran_cid.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "utran_cid",
+                    "utran_cid was not specified but it is required when building WcdmaObj",
+                )
+            })?,
             wcdma_local_id: self.wcdma_local_id,
             rscp: self.rscp,
             path_loss: self.path_loss,
             wcdma_nmr: self.wcdma_nmr,
-        }
+        })
     }
 }

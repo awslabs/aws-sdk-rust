@@ -58,6 +58,7 @@ pub struct UpdateAppInstanceUserEndpointInputBuilder {
 }
 impl UpdateAppInstanceUserEndpointInputBuilder {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    /// This field is required.
     pub fn app_instance_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_user_arn = ::std::option::Option::Some(input.into());
         self
@@ -72,6 +73,7 @@ impl UpdateAppInstanceUserEndpointInputBuilder {
         &self.app_instance_user_arn
     }
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
+    /// This field is required.
     pub fn endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_id = ::std::option::Option::Some(input.into());
         self
@@ -118,7 +120,7 @@ impl UpdateAppInstanceUserEndpointInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointInput {
             app_instance_user_arn: self.app_instance_user_arn,

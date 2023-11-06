@@ -6,7 +6,7 @@ pub struct ListScheduleGroupsOutput {
     /// <p>Indicates whether there are additional results to retrieve. If the value is null, there are no more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The schedule groups that match the specified criteria.</p>
-    pub schedule_groups: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleGroupSummary>>,
+    pub schedule_groups: ::std::vec::Vec<crate::types::ScheduleGroupSummary>,
     _request_id: Option<String>,
 }
 impl ListScheduleGroupsOutput {
@@ -15,8 +15,9 @@ impl ListScheduleGroupsOutput {
         self.next_token.as_deref()
     }
     /// <p>The schedule groups that match the specified criteria.</p>
-    pub fn schedule_groups(&self) -> ::std::option::Option<&[crate::types::ScheduleGroupSummary]> {
-        self.schedule_groups.as_deref()
+    pub fn schedule_groups(&self) -> &[crate::types::ScheduleGroupSummary] {
+        use std::ops::Deref;
+        self.schedule_groups.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListScheduleGroupsOutput {
@@ -84,11 +85,21 @@ impl ListScheduleGroupsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListScheduleGroupsOutput`](crate::operation::list_schedule_groups::ListScheduleGroupsOutput).
-    pub fn build(self) -> crate::operation::list_schedule_groups::ListScheduleGroupsOutput {
-        crate::operation::list_schedule_groups::ListScheduleGroupsOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`schedule_groups`](crate::operation::list_schedule_groups::builders::ListScheduleGroupsOutputBuilder::schedule_groups)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_schedule_groups::ListScheduleGroupsOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_schedule_groups::ListScheduleGroupsOutput {
             next_token: self.next_token,
-            schedule_groups: self.schedule_groups,
+            schedule_groups: self.schedule_groups.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "schedule_groups",
+                    "schedule_groups was not specified but it is required when building ListScheduleGroupsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

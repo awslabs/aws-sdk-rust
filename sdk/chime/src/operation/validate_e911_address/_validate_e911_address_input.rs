@@ -82,6 +82,7 @@ pub struct ValidateE911AddressInputBuilder {
 }
 impl ValidateE911AddressInputBuilder {
     /// <p>The AWS account ID.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -96,6 +97,7 @@ impl ValidateE911AddressInputBuilder {
         &self.aws_account_id
     }
     /// <p>The address street number, such as <code>200</code> or <code>2121</code>.</p>
+    /// This field is required.
     pub fn street_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.street_number = ::std::option::Option::Some(input.into());
         self
@@ -110,6 +112,7 @@ impl ValidateE911AddressInputBuilder {
         &self.street_number
     }
     /// <p>The address street information, such as <code>8th Avenue</code>.</p>
+    /// This field is required.
     pub fn street_info(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.street_info = ::std::option::Option::Some(input.into());
         self
@@ -124,6 +127,7 @@ impl ValidateE911AddressInputBuilder {
         &self.street_info
     }
     /// <p>The address city, such as <code>Portland</code>.</p>
+    /// This field is required.
     pub fn city(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.city = ::std::option::Option::Some(input.into());
         self
@@ -138,6 +142,7 @@ impl ValidateE911AddressInputBuilder {
         &self.city
     }
     /// <p>The address state, such as <code>ME</code>.</p>
+    /// This field is required.
     pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state = ::std::option::Option::Some(input.into());
         self
@@ -152,6 +157,7 @@ impl ValidateE911AddressInputBuilder {
         &self.state
     }
     /// <p>The address country, such as <code>US</code>. </p>
+    /// This field is required.
     pub fn country(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.country = ::std::option::Option::Some(input.into());
         self
@@ -166,6 +172,7 @@ impl ValidateE911AddressInputBuilder {
         &self.country
     }
     /// <p>The address postal code, such as <code>04352</code>.</p>
+    /// This field is required.
     pub fn postal_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.postal_code = ::std::option::Option::Some(input.into());
         self
@@ -182,7 +189,7 @@ impl ValidateE911AddressInputBuilder {
     /// Consumes the builder and constructs a [`ValidateE911AddressInput`](crate::operation::validate_e911_address::ValidateE911AddressInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::validate_e911_address::ValidateE911AddressInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::validate_e911_address::ValidateE911AddressInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::validate_e911_address::ValidateE911AddressInput {
             aws_account_id: self.aws_account_id,

@@ -2,7 +2,7 @@
 pub fn ser_start_on_demand_replication_run_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.replication_job_id {
         object.key("replicationJobId").string(var_1.as_str());
     }

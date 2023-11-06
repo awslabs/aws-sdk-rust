@@ -21,8 +21,10 @@ impl FeatureValue {
         self.value_as_string.as_deref()
     }
     /// <p>The list of values in string format associated with a feature. Used when your <code>CollectionType</code> is a <code>List</code>, <code>Set</code>, or <code>Vector</code>. Note that features types can be <code>String</code>, <code>Integral</code>, or <code>Fractional</code>. These values represents all three types as a string.</p>
-    pub fn value_as_string_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.value_as_string_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.value_as_string_list.is_none()`.
+    pub fn value_as_string_list(&self) -> &[::std::string::String] {
+        self.value_as_string_list.as_deref().unwrap_or_default()
     }
 }
 impl FeatureValue {
@@ -42,6 +44,7 @@ pub struct FeatureValueBuilder {
 }
 impl FeatureValueBuilder {
     /// <p>The name of a feature that a feature value corresponds to.</p>
+    /// This field is required.
     pub fn feature_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_name = ::std::option::Option::Some(input.into());
         self

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDevice`](crate::operation::delete_device::builders::DeleteDeviceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`global_network_id(impl Into<String>)`](crate::operation::delete_device::builders::DeleteDeviceFluentBuilder::global_network_id) / [`set_global_network_id(Option<String>)`](crate::operation::delete_device::builders::DeleteDeviceFluentBuilder::set_global_network_id): <p>The ID of the global network.</p>
-    ///   - [`device_id(impl Into<String>)`](crate::operation::delete_device::builders::DeleteDeviceFluentBuilder::device_id) / [`set_device_id(Option<String>)`](crate::operation::delete_device::builders::DeleteDeviceFluentBuilder::set_device_id): <p>The ID of the device.</p>
+    ///   - [`global_network_id(impl Into<String>)`](crate::operation::delete_device::builders::DeleteDeviceFluentBuilder::global_network_id) / [`set_global_network_id(Option<String>)`](crate::operation::delete_device::builders::DeleteDeviceFluentBuilder::set_global_network_id):<br>required: **true**<br><p>The ID of the global network.</p><br>
+    ///   - [`device_id(impl Into<String>)`](crate::operation::delete_device::builders::DeleteDeviceFluentBuilder::device_id) / [`set_device_id(Option<String>)`](crate::operation::delete_device::builders::DeleteDeviceFluentBuilder::set_device_id):<br>required: **true**<br><p>The ID of the device.</p><br>
     /// - On success, responds with [`DeleteDeviceOutput`](crate::operation::delete_device::DeleteDeviceOutput) with field(s):
     ///   - [`device(Option<Device>)`](crate::operation::delete_device::DeleteDeviceOutput::device): <p>Information about the device.</p>
     /// - On failure, responds with [`SdkError<DeleteDeviceError>`](crate::operation::delete_device::DeleteDeviceError)

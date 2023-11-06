@@ -10,7 +10,7 @@ pub struct GetAppMonitorDataInput {
     /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::QueryFilter>>,
     /// <p>The maximum number of results to return in one operation. </p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>Use the token returned by the previous operation to request the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
@@ -24,11 +24,13 @@ impl GetAppMonitorDataInput {
         self.time_range.as_ref()
     }
     /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::QueryFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::QueryFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of results to return in one operation. </p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>Use the token returned by the previous operation to request the next page of results.</p>
@@ -55,6 +57,7 @@ pub struct GetAppMonitorDataInputBuilder {
 }
 impl GetAppMonitorDataInputBuilder {
     /// <p>The name of the app monitor that collected the data that you want to retrieve.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +72,7 @@ impl GetAppMonitorDataInputBuilder {
         &self.name
     }
     /// <p>A structure that defines the time range that you want to retrieve results from.</p>
+    /// This field is required.
     pub fn time_range(mut self, input: crate::types::TimeRange) -> Self {
         self.time_range = ::std::option::Option::Some(input);
         self
@@ -133,12 +137,12 @@ impl GetAppMonitorDataInputBuilder {
     /// Consumes the builder and constructs a [`GetAppMonitorDataInput`](crate::operation::get_app_monitor_data::GetAppMonitorDataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_app_monitor_data::GetAppMonitorDataInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_app_monitor_data::GetAppMonitorDataInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_app_monitor_data::GetAppMonitorDataInput {
             name: self.name,
             time_range: self.time_range,
             filters: self.filters,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
         })
     }

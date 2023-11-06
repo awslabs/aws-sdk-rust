@@ -90,7 +90,7 @@ pub fn de_get_realtime_log_config_http_response(
 
 pub fn ser_get_realtime_log_config_op_input(
     input: &crate::operation::get_realtime_log_config::GetRealtimeLogConfigInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = ::aws_smithy_xml::encode::XmlWriter::new(&mut out);
@@ -100,7 +100,7 @@ pub fn ser_get_realtime_log_config_op_input(
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
         crate::protocol_serde::shape_get_realtime_log_config_input::ser_get_realtime_log_config_input_input(input, root)?
     }
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 #[allow(unused_mut)]

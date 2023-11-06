@@ -41,6 +41,7 @@ pub struct ListMultipartReadSetUploadsInputBuilder {
 }
 impl ListMultipartReadSetUploadsInputBuilder {
     /// <p> The Sequence Store ID used for the multipart uploads. </p>
+    /// This field is required.
     pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_store_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListMultipartReadSetUploadsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsInput {
             sequence_store_id: self.sequence_store_id,

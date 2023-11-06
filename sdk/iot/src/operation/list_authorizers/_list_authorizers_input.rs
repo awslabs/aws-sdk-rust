@@ -106,7 +106,7 @@ impl ListAuthorizersInputBuilder {
     /// Consumes the builder and constructs a [`ListAuthorizersInput`](crate::operation::list_authorizers::ListAuthorizersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_authorizers::ListAuthorizersInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_authorizers::ListAuthorizersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_authorizers::ListAuthorizersInput {
             page_size: self.page_size,
             marker: self.marker,

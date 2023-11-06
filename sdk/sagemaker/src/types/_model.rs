@@ -37,8 +37,10 @@ impl Model {
         self.primary_container.as_ref()
     }
     /// <p>The containers in the inference pipeline.</p>
-    pub fn containers(&self) -> ::std::option::Option<&[crate::types::ContainerDefinition]> {
-        self.containers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.containers.is_none()`.
+    pub fn containers(&self) -> &[crate::types::ContainerDefinition] {
+        self.containers.as_deref().unwrap_or_default()
     }
     /// <p>Specifies details about how containers in a multi-container endpoint are run.</p>
     pub fn inference_execution_config(&self) -> ::std::option::Option<&crate::types::InferenceExecutionConfig> {
@@ -65,8 +67,10 @@ impl Model {
         self.enable_network_isolation
     }
     /// <p>A list of key-value pairs associated with the model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>A set of recommended deployment configurations for the model.</p>
     pub fn deployment_recommendation(&self) -> ::std::option::Option<&crate::types::DeploymentRecommendation> {

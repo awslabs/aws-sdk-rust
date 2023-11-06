@@ -27,6 +27,7 @@ pub struct GetContactListInputBuilder {
 }
 impl GetContactListInputBuilder {
     /// <p>The name of the contact list.</p>
+    /// This field is required.
     pub fn contact_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_list_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetContactListInputBuilder {
     /// Consumes the builder and constructs a [`GetContactListInput`](crate::operation::get_contact_list::GetContactListInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_contact_list::GetContactListInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_contact_list::GetContactListInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_contact_list::GetContactListInput {
             contact_list_name: self.contact_list_name,
         })

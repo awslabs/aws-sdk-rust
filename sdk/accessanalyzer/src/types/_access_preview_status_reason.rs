@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessPreviewStatusReason {
     /// <p>The reason code for the current status of the access preview.</p>
-    pub code: ::std::option::Option<crate::types::AccessPreviewStatusReasonCode>,
+    pub code: crate::types::AccessPreviewStatusReasonCode,
 }
 impl AccessPreviewStatusReason {
     /// <p>The reason code for the current status of the access preview.</p>
-    pub fn code(&self) -> ::std::option::Option<&crate::types::AccessPreviewStatusReasonCode> {
-        self.code.as_ref()
+    pub fn code(&self) -> &crate::types::AccessPreviewStatusReasonCode {
+        &self.code
     }
 }
 impl AccessPreviewStatusReason {
@@ -28,6 +28,7 @@ pub struct AccessPreviewStatusReasonBuilder {
 }
 impl AccessPreviewStatusReasonBuilder {
     /// <p>The reason code for the current status of the access preview.</p>
+    /// This field is required.
     pub fn code(mut self, input: crate::types::AccessPreviewStatusReasonCode) -> Self {
         self.code = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,16 @@ impl AccessPreviewStatusReasonBuilder {
         &self.code
     }
     /// Consumes the builder and constructs a [`AccessPreviewStatusReason`](crate::types::AccessPreviewStatusReason).
-    pub fn build(self) -> crate::types::AccessPreviewStatusReason {
-        crate::types::AccessPreviewStatusReason { code: self.code }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`code`](crate::types::builders::AccessPreviewStatusReasonBuilder::code)
+    pub fn build(self) -> ::std::result::Result<crate::types::AccessPreviewStatusReason, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AccessPreviewStatusReason {
+            code: self.code.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "code",
+                    "code was not specified but it is required when building AccessPreviewStatusReason",
+                )
+            })?,
+        })
     }
 }

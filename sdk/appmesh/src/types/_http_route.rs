@@ -49,6 +49,7 @@ pub struct HttpRouteBuilder {
 }
 impl HttpRouteBuilder {
     /// <p>An object that represents the criteria for determining a request match.</p>
+    /// This field is required.
     pub fn r#match(mut self, input: crate::types::HttpRouteMatch) -> Self {
         self.r#match = ::std::option::Option::Some(input);
         self
@@ -63,6 +64,7 @@ impl HttpRouteBuilder {
         &self.r#match
     }
     /// <p>An object that represents the action to take if a match is determined.</p>
+    /// This field is required.
     pub fn action(mut self, input: crate::types::HttpRouteAction) -> Self {
         self.action = ::std::option::Option::Some(input);
         self

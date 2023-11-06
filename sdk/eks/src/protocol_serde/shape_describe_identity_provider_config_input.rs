@@ -2,7 +2,7 @@
 pub fn ser_describe_identity_provider_config_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_identity_provider_config::DescribeIdentityProviderConfigInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.identity_provider_config {
         #[allow(unused_mut)]
         let mut object_2 = object.key("identityProviderConfig").start_object();

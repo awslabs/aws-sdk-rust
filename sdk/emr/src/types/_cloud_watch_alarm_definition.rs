@@ -57,8 +57,10 @@ impl CloudWatchAlarmDefinition {
         self.unit.as_ref()
     }
     /// <p>A CloudWatch metric dimension.</p>
-    pub fn dimensions(&self) -> ::std::option::Option<&[crate::types::MetricDimension]> {
-        self.dimensions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimensions.is_none()`.
+    pub fn dimensions(&self) -> &[crate::types::MetricDimension] {
+        self.dimensions.as_deref().unwrap_or_default()
     }
 }
 impl CloudWatchAlarmDefinition {
@@ -84,6 +86,7 @@ pub struct CloudWatchAlarmDefinitionBuilder {
 }
 impl CloudWatchAlarmDefinitionBuilder {
     /// <p>Determines how the metric specified by <code>MetricName</code> is compared to the value specified by <code>Threshold</code>.</p>
+    /// This field is required.
     pub fn comparison_operator(mut self, input: crate::types::ComparisonOperator) -> Self {
         self.comparison_operator = ::std::option::Option::Some(input);
         self
@@ -112,6 +115,7 @@ impl CloudWatchAlarmDefinitionBuilder {
         &self.evaluation_periods
     }
     /// <p>The name of the CloudWatch metric that is watched to determine an alarm condition.</p>
+    /// This field is required.
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_name = ::std::option::Option::Some(input.into());
         self
@@ -140,6 +144,7 @@ impl CloudWatchAlarmDefinitionBuilder {
         &self.namespace
     }
     /// <p>The period, in seconds, over which the statistic is applied. CloudWatch metrics for Amazon EMR are emitted every five minutes (300 seconds), so if you specify a CloudWatch metric, specify <code>300</code>.</p>
+    /// This field is required.
     pub fn period(mut self, input: i32) -> Self {
         self.period = ::std::option::Option::Some(input);
         self
@@ -168,6 +173,7 @@ impl CloudWatchAlarmDefinitionBuilder {
         &self.statistic
     }
     /// <p>The value against which the specified statistic is compared.</p>
+    /// This field is required.
     pub fn threshold(mut self, input: f64) -> Self {
         self.threshold = ::std::option::Option::Some(input);
         self

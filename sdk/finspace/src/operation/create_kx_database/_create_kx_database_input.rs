@@ -55,6 +55,7 @@ pub struct CreateKxDatabaseInputBuilder {
 }
 impl CreateKxDatabaseInputBuilder {
     /// <p>A unique identifier for the kdb environment.</p>
+    /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl CreateKxDatabaseInputBuilder {
         &self.environment_id
     }
     /// <p>The name of the kdb database.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -117,6 +119,7 @@ impl CreateKxDatabaseInputBuilder {
         &self.tags
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -133,7 +136,7 @@ impl CreateKxDatabaseInputBuilder {
     /// Consumes the builder and constructs a [`CreateKxDatabaseInput`](crate::operation::create_kx_database::CreateKxDatabaseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_kx_database::CreateKxDatabaseInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_kx_database::CreateKxDatabaseInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_kx_database::CreateKxDatabaseInput {
             environment_id: self.environment_id,
             database_name: self.database_name,

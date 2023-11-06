@@ -42,8 +42,10 @@ impl GetTileInput {
         self.z
     }
     /// <p>The particular assets or bands to tile.</p>
-    pub fn image_assets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.image_assets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_assets.is_none()`.
+    pub fn image_assets(&self) -> &[::std::string::String] {
+        self.image_assets.as_deref().unwrap_or_default()
     }
     /// <p>Determines what part of the Earth Observation job to tile. 'INPUT' or 'OUTPUT' are the valid options.</p>
     pub fn target(&self) -> ::std::option::Option<&crate::types::TargetOptions> {
@@ -104,6 +106,7 @@ pub struct GetTileInputBuilder {
 }
 impl GetTileInputBuilder {
     /// <p>The x coordinate of the tile input.</p>
+    /// This field is required.
     pub fn x(mut self, input: i32) -> Self {
         self.x = ::std::option::Option::Some(input);
         self
@@ -118,6 +121,7 @@ impl GetTileInputBuilder {
         &self.x
     }
     /// <p>The y coordinate of the tile input.</p>
+    /// This field is required.
     pub fn y(mut self, input: i32) -> Self {
         self.y = ::std::option::Option::Some(input);
         self
@@ -132,6 +136,7 @@ impl GetTileInputBuilder {
         &self.y
     }
     /// <p>The z coordinate of the tile input.</p>
+    /// This field is required.
     pub fn z(mut self, input: i32) -> Self {
         self.z = ::std::option::Option::Some(input);
         self
@@ -166,6 +171,7 @@ impl GetTileInputBuilder {
         &self.image_assets
     }
     /// <p>Determines what part of the Earth Observation job to tile. 'INPUT' or 'OUTPUT' are the valid options.</p>
+    /// This field is required.
     pub fn target(mut self, input: crate::types::TargetOptions) -> Self {
         self.target = ::std::option::Option::Some(input);
         self
@@ -180,6 +186,7 @@ impl GetTileInputBuilder {
         &self.target
     }
     /// <p>The Amazon Resource Name (ARN) of the tile operation.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -278,7 +285,7 @@ impl GetTileInputBuilder {
         &self.execution_role_arn
     }
     /// Consumes the builder and constructs a [`GetTileInput`](crate::operation::get_tile::GetTileInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_tile::GetTileInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_tile::GetTileInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_tile::GetTileInput {
             x: self.x,
             y: self.y,

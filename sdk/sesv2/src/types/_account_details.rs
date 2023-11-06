@@ -43,8 +43,10 @@ impl AccountDetails {
         self.use_case_description.as_deref()
     }
     /// <p>Additional email addresses where updates are sent about your account review process.</p>
-    pub fn additional_contact_email_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.additional_contact_email_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_contact_email_addresses.is_none()`.
+    pub fn additional_contact_email_addresses(&self) -> &[::std::string::String] {
+        self.additional_contact_email_addresses.as_deref().unwrap_or_default()
     }
     /// <p>Information about the review of the latest details you submitted.</p>
     pub fn review_details(&self) -> ::std::option::Option<&crate::types::ReviewDetails> {

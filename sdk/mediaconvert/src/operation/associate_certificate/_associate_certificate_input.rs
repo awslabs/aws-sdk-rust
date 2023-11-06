@@ -27,6 +27,7 @@ pub struct AssociateCertificateInputBuilder {
 }
 impl AssociateCertificateInputBuilder {
     /// The ARN of the ACM certificate that you want to associate with your MediaConvert resource.
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl AssociateCertificateInputBuilder {
     /// Consumes the builder and constructs a [`AssociateCertificateInput`](crate::operation::associate_certificate::AssociateCertificateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_certificate::AssociateCertificateInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::associate_certificate::AssociateCertificateInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::associate_certificate::AssociateCertificateInput { arn: self.arn })
     }

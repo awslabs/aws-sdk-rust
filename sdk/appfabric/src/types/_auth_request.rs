@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AuthRequest {
     /// <p>The redirect URL that is specified in the AuthURL and the application client.</p>
-    pub redirect_uri: ::std::option::Option<::std::string::String>,
+    pub redirect_uri: ::std::string::String,
     /// <p>The authorization code returned by the application after permission is granted in the application OAuth page (after clicking on the AuthURL).</p>
-    pub code: ::std::option::Option<::std::string::String>,
+    pub code: ::std::string::String,
 }
 impl AuthRequest {
     /// <p>The redirect URL that is specified in the AuthURL and the application client.</p>
-    pub fn redirect_uri(&self) -> ::std::option::Option<&str> {
-        self.redirect_uri.as_deref()
+    pub fn redirect_uri(&self) -> &str {
+        use std::ops::Deref;
+        self.redirect_uri.deref()
     }
     /// <p>The authorization code returned by the application after permission is granted in the application OAuth page (after clicking on the AuthURL).</p>
-    pub fn code(&self) -> ::std::option::Option<&str> {
-        self.code.as_deref()
+    pub fn code(&self) -> &str {
+        use std::ops::Deref;
+        self.code.deref()
     }
 }
 impl ::std::fmt::Debug for AuthRequest {
@@ -43,6 +45,7 @@ pub struct AuthRequestBuilder {
 }
 impl AuthRequestBuilder {
     /// <p>The redirect URL that is specified in the AuthURL and the application client.</p>
+    /// This field is required.
     pub fn redirect_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.redirect_uri = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +60,7 @@ impl AuthRequestBuilder {
         &self.redirect_uri
     }
     /// <p>The authorization code returned by the application after permission is granted in the application OAuth page (after clicking on the AuthURL).</p>
+    /// This field is required.
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
         self
@@ -71,11 +75,24 @@ impl AuthRequestBuilder {
         &self.code
     }
     /// Consumes the builder and constructs a [`AuthRequest`](crate::types::AuthRequest).
-    pub fn build(self) -> crate::types::AuthRequest {
-        crate::types::AuthRequest {
-            redirect_uri: self.redirect_uri,
-            code: self.code,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`redirect_uri`](crate::types::builders::AuthRequestBuilder::redirect_uri)
+    /// - [`code`](crate::types::builders::AuthRequestBuilder::code)
+    pub fn build(self) -> ::std::result::Result<crate::types::AuthRequest, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AuthRequest {
+            redirect_uri: self.redirect_uri.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "redirect_uri",
+                    "redirect_uri was not specified but it is required when building AuthRequest",
+                )
+            })?,
+            code: self.code.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "code",
+                    "code was not specified but it is required when building AuthRequest",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for AuthRequestBuilder {

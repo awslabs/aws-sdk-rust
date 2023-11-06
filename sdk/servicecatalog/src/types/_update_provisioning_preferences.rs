@@ -64,15 +64,19 @@ impl UpdateProvisioningPreferences {
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>The Amazon Web Services accounts specified should be within the list of accounts in the <code>STACKSET</code> constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
     /// <p>If no values are specified, the default value is all accounts from the <code>STACKSET</code> constraint.</p>
-    pub fn stack_set_accounts(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.stack_set_accounts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stack_set_accounts.is_none()`.
+    pub fn stack_set_accounts(&self) -> &[::std::string::String] {
+        self.stack_set_accounts.as_deref().unwrap_or_default()
     }
     /// <p>One or more Amazon Web Services Regions where the provisioned product will be available.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>The specified Regions should be within the list of Regions from the <code>STACKSET</code> constraint. To get the list of Regions in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
     /// <p>If no values are specified, the default value is all Regions from the <code>STACKSET</code> constraint.</p>
-    pub fn stack_set_regions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.stack_set_regions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stack_set_regions.is_none()`.
+    pub fn stack_set_regions(&self) -> &[::std::string::String] {
+        self.stack_set_regions.as_deref().unwrap_or_default()
     }
     /// <p>The number of accounts, per Region, for which this operation can fail before Service Catalog stops the operation in that Region. If the operation is stopped in a Region, Service Catalog doesn't attempt the operation in any subsequent Regions.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>

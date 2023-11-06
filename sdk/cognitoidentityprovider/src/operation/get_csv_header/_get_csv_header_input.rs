@@ -28,6 +28,7 @@ pub struct GetCsvHeaderInputBuilder {
 }
 impl GetCsvHeaderInputBuilder {
     /// <p>The user pool ID for the user pool that the users are to be imported into.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl GetCsvHeaderInputBuilder {
     /// Consumes the builder and constructs a [`GetCsvHeaderInput`](crate::operation::get_csv_header::GetCsvHeaderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_csv_header::GetCsvHeaderInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_csv_header::GetCsvHeaderInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_csv_header::GetCsvHeaderInput {
             user_pool_id: self.user_pool_id,
         })

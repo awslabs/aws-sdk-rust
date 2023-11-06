@@ -93,8 +93,10 @@ impl CreateModelPackageInput {
     }
     /// <p>A list of key value pairs associated with the model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     /// <p>If you supply <code>ModelPackageGroupName</code>, your model package belongs to the model group you specify and uses the tags associated with the model group. In this case, you cannot supply a <code>tag</code> argument. </p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Whether the model is approved for deployment.</p>
     /// <p>This parameter is optional for versioned models, and does not apply to unversioned models.</p>
@@ -136,8 +138,10 @@ impl CreateModelPackageInput {
         self.sample_payload_url.as_deref()
     }
     /// <p>An array of additional Inference Specification objects. Each additional Inference Specification specifies artifacts based on this model package that can be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts. </p>
-    pub fn additional_inference_specifications(&self) -> ::std::option::Option<&[crate::types::AdditionalInferenceSpecificationDefinition]> {
-        self.additional_inference_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_inference_specifications.is_none()`.
+    pub fn additional_inference_specifications(&self) -> &[crate::types::AdditionalInferenceSpecificationDefinition] {
+        self.additional_inference_specifications.as_deref().unwrap_or_default()
     }
     /// <p>Indicates if you want to skip model validation.</p>
     pub fn skip_model_validation(&self) -> ::std::option::Option<&crate::types::SkipModelValidation> {
@@ -513,7 +517,8 @@ impl CreateModelPackageInputBuilder {
     /// Consumes the builder and constructs a [`CreateModelPackageInput`](crate::operation::create_model_package::CreateModelPackageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_model_package::CreateModelPackageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_model_package::CreateModelPackageInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_model_package::CreateModelPackageInput {
             model_package_name: self.model_package_name,
             model_package_group_name: self.model_package_group_name,

@@ -82,6 +82,7 @@ impl DescribeProvisionedProductPlanInputBuilder {
         &self.accept_language
     }
     /// <p>The plan identifier.</p>
+    /// This field is required.
     pub fn plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.plan_id = ::std::option::Option::Some(input.into());
         self
@@ -128,7 +129,7 @@ impl DescribeProvisionedProductPlanInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_provisioned_product_plan::DescribeProvisionedProductPlanInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_provisioned_product_plan::DescribeProvisionedProductPlanInput {
             accept_language: self.accept_language,

@@ -34,6 +34,7 @@ pub struct DeauthorizeDataShareInputBuilder {
 }
 impl DeauthorizeDataShareInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the datashare to remove authorization from.</p>
+    /// This field is required.
     pub fn data_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_share_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeauthorizeDataShareInputBuilder {
         &self.data_share_arn
     }
     /// <p>The identifier of the data consumer that is to have authorization removed from the datashare. This identifier is an Amazon Web Services account ID or a keyword, such as ADX.</p>
+    /// This field is required.
     pub fn consumer_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.consumer_identifier = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DeauthorizeDataShareInputBuilder {
     /// Consumes the builder and constructs a [`DeauthorizeDataShareInput`](crate::operation::deauthorize_data_share::DeauthorizeDataShareInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::deauthorize_data_share::DeauthorizeDataShareInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::deauthorize_data_share::DeauthorizeDataShareInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::deauthorize_data_share::DeauthorizeDataShareInput {
             data_share_arn: self.data_share_arn,

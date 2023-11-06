@@ -48,6 +48,7 @@ pub struct GetCodeBindingSourceInputBuilder {
 }
 impl GetCodeBindingSourceInputBuilder {
     /// <p>The language of the code binding.</p>
+    /// This field is required.
     pub fn language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.language = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl GetCodeBindingSourceInputBuilder {
         &self.language
     }
     /// <p>The name of the registry.</p>
+    /// This field is required.
     pub fn registry_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl GetCodeBindingSourceInputBuilder {
         &self.registry_name
     }
     /// <p>The name of the schema.</p>
+    /// This field is required.
     pub fn schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_name = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +109,7 @@ impl GetCodeBindingSourceInputBuilder {
     /// Consumes the builder and constructs a [`GetCodeBindingSourceInput`](crate::operation::get_code_binding_source::GetCodeBindingSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_code_binding_source::GetCodeBindingSourceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_code_binding_source::GetCodeBindingSourceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_code_binding_source::GetCodeBindingSourceInput {
             language: self.language,

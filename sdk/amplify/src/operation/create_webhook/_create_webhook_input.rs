@@ -42,6 +42,7 @@ pub struct CreateWebhookInputBuilder {
 }
 impl CreateWebhookInputBuilder {
     /// <p> The unique ID for an Amplify app. </p>
+    /// This field is required.
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl CreateWebhookInputBuilder {
         &self.app_id
     }
     /// <p> The name for a branch that is part of an Amplify app. </p>
+    /// This field is required.
     pub fn branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch_name = ::std::option::Option::Some(input.into());
         self
@@ -86,7 +88,7 @@ impl CreateWebhookInputBuilder {
     /// Consumes the builder and constructs a [`CreateWebhookInput`](crate::operation::create_webhook::CreateWebhookInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_webhook::CreateWebhookInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_webhook::CreateWebhookInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_webhook::CreateWebhookInput {
             app_id: self.app_id,
             branch_name: self.branch_name,

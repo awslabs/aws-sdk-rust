@@ -106,6 +106,7 @@ pub struct CreateServiceInputBuilder {
 }
 impl CreateServiceInputBuilder {
     /// <p>The name of the service.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -134,6 +135,7 @@ impl CreateServiceInputBuilder {
         &self.description
     }
     /// <p>The ID of the environment in which the service is created.</p>
+    /// This field is required.
     pub fn environment_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_identifier = ::std::option::Option::Some(input.into());
         self
@@ -148,6 +150,7 @@ impl CreateServiceInputBuilder {
         &self.environment_identifier
     }
     /// <p>The ID of the application which the service is created.</p>
+    /// This field is required.
     pub fn application_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_identifier = ::std::option::Option::Some(input.into());
         self
@@ -176,6 +179,7 @@ impl CreateServiceInputBuilder {
         &self.vpc_id
     }
     /// <p>The type of endpoint to use for the service. The type can be a URL in a VPC or an Lambda function.</p>
+    /// This field is required.
     pub fn endpoint_type(mut self, input: crate::types::ServiceEndpointType) -> Self {
         self.endpoint_type = ::std::option::Option::Some(input);
         self
@@ -254,7 +258,7 @@ impl CreateServiceInputBuilder {
     /// Consumes the builder and constructs a [`CreateServiceInput`](crate::operation::create_service::CreateServiceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_service::CreateServiceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_service::CreateServiceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_service::CreateServiceInput {
             name: self.name,
             description: self.description,

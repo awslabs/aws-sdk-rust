@@ -48,6 +48,7 @@ pub struct AssociateTransitGatewayConnectPeerInputBuilder {
 }
 impl AssociateTransitGatewayConnectPeerInputBuilder {
     /// <p>The ID of the global network.</p>
+    /// This field is required.
     pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_network_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl AssociateTransitGatewayConnectPeerInputBuilder {
         &self.global_network_id
     }
     /// <p>The Amazon Resource Name (ARN) of the Connect peer.</p>
+    /// This field is required.
     pub fn transit_gateway_connect_peer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_connect_peer_arn = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl AssociateTransitGatewayConnectPeerInputBuilder {
         &self.transit_gateway_connect_peer_arn
     }
     /// <p>The ID of the device.</p>
+    /// This field is required.
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_id = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +111,7 @@ impl AssociateTransitGatewayConnectPeerInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_transit_gateway_connect_peer::AssociateTransitGatewayConnectPeerInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::associate_transit_gateway_connect_peer::AssociateTransitGatewayConnectPeerInput {

@@ -27,6 +27,7 @@ pub struct StopTrainingJobInputBuilder {
 }
 impl StopTrainingJobInputBuilder {
     /// <p>The name of the training job to stop.</p>
+    /// This field is required.
     pub fn training_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.training_job_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl StopTrainingJobInputBuilder {
     /// Consumes the builder and constructs a [`StopTrainingJobInput`](crate::operation::stop_training_job::StopTrainingJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_training_job::StopTrainingJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_training_job::StopTrainingJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_training_job::StopTrainingJobInput {
             training_job_name: self.training_job_name,
         })

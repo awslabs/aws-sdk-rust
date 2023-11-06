@@ -5,32 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Step {
     /// <p>The starting position of a step. If the position is the first step in the leg, this position is the same as the start position of the leg.</p>
-    pub start_position: ::std::option::Option<::std::vec::Vec<f64>>,
+    pub start_position: ::std::vec::Vec<f64>,
     /// <p>The end position of a step. If the position the last step in the leg, this position is the same as the end position of the leg.</p>
-    pub end_position: ::std::option::Option<::std::vec::Vec<f64>>,
+    pub end_position: ::std::vec::Vec<f64>,
     /// <p>The travel distance between the step's <code>StartPosition</code> and <code>EndPosition</code>.</p>
-    pub distance: ::std::option::Option<f64>,
+    pub distance: f64,
     /// <p>The estimated travel time, in seconds, from the step's <code>StartPosition</code> to the <code>EndPosition</code>. . The travel mode and departure time that you specify in the request determines the calculated time.</p>
-    pub duration_seconds: ::std::option::Option<f64>,
+    pub duration_seconds: f64,
     /// <p>Represents the start position, or index, in a sequence of steps within the leg's line string geometry. For example, the index of the first step in a leg geometry is <code>0</code>. </p>
     /// <p>Included in the response for queries that set <code>IncludeLegGeometry</code> to <code>True</code>. </p>
     pub geometry_offset: ::std::option::Option<i32>,
 }
 impl Step {
     /// <p>The starting position of a step. If the position is the first step in the leg, this position is the same as the start position of the leg.</p>
-    pub fn start_position(&self) -> ::std::option::Option<&[f64]> {
-        self.start_position.as_deref()
+    pub fn start_position(&self) -> &[f64] {
+        use std::ops::Deref;
+        self.start_position.deref()
     }
     /// <p>The end position of a step. If the position the last step in the leg, this position is the same as the end position of the leg.</p>
-    pub fn end_position(&self) -> ::std::option::Option<&[f64]> {
-        self.end_position.as_deref()
+    pub fn end_position(&self) -> &[f64] {
+        use std::ops::Deref;
+        self.end_position.deref()
     }
     /// <p>The travel distance between the step's <code>StartPosition</code> and <code>EndPosition</code>.</p>
-    pub fn distance(&self) -> ::std::option::Option<f64> {
+    pub fn distance(&self) -> f64 {
         self.distance
     }
     /// <p>The estimated travel time, in seconds, from the step's <code>StartPosition</code> to the <code>EndPosition</code>. . The travel mode and departure time that you specify in the request determines the calculated time.</p>
-    pub fn duration_seconds(&self) -> ::std::option::Option<f64> {
+    pub fn duration_seconds(&self) -> f64 {
         self.duration_seconds
     }
     /// <p>Represents the start position, or index, in a sequence of steps within the leg's line string geometry. For example, the index of the first step in a leg geometry is <code>0</code>. </p>
@@ -109,6 +111,7 @@ impl StepBuilder {
         &self.end_position
     }
     /// <p>The travel distance between the step's <code>StartPosition</code> and <code>EndPosition</code>.</p>
+    /// This field is required.
     pub fn distance(mut self, input: f64) -> Self {
         self.distance = ::std::option::Option::Some(input);
         self
@@ -123,6 +126,7 @@ impl StepBuilder {
         &self.distance
     }
     /// <p>The estimated travel time, in seconds, from the step's <code>StartPosition</code> to the <code>EndPosition</code>. . The travel mode and departure time that you specify in the request determines the calculated time.</p>
+    /// This field is required.
     pub fn duration_seconds(mut self, input: f64) -> Self {
         self.duration_seconds = ::std::option::Option::Some(input);
         self
@@ -154,14 +158,39 @@ impl StepBuilder {
         &self.geometry_offset
     }
     /// Consumes the builder and constructs a [`Step`](crate::types::Step).
-    pub fn build(self) -> crate::types::Step {
-        crate::types::Step {
-            start_position: self.start_position,
-            end_position: self.end_position,
-            distance: self.distance,
-            duration_seconds: self.duration_seconds,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`start_position`](crate::types::builders::StepBuilder::start_position)
+    /// - [`end_position`](crate::types::builders::StepBuilder::end_position)
+    /// - [`distance`](crate::types::builders::StepBuilder::distance)
+    /// - [`duration_seconds`](crate::types::builders::StepBuilder::duration_seconds)
+    pub fn build(self) -> ::std::result::Result<crate::types::Step, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Step {
+            start_position: self.start_position.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "start_position",
+                    "start_position was not specified but it is required when building Step",
+                )
+            })?,
+            end_position: self.end_position.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "end_position",
+                    "end_position was not specified but it is required when building Step",
+                )
+            })?,
+            distance: self.distance.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "distance",
+                    "distance was not specified but it is required when building Step",
+                )
+            })?,
+            duration_seconds: self.duration_seconds.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "duration_seconds",
+                    "duration_seconds was not specified but it is required when building Step",
+                )
+            })?,
             geometry_offset: self.geometry_offset,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for StepBuilder {

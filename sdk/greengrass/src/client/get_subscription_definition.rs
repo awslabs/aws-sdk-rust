@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSubscriptionDefinition`](crate::operation::get_subscription_definition::builders::GetSubscriptionDefinitionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`subscription_definition_id(impl Into<String>)`](crate::operation::get_subscription_definition::builders::GetSubscriptionDefinitionFluentBuilder::subscription_definition_id) / [`set_subscription_definition_id(Option<String>)`](crate::operation::get_subscription_definition::builders::GetSubscriptionDefinitionFluentBuilder::set_subscription_definition_id): The ID of the subscription definition.
+    ///   - [`subscription_definition_id(impl Into<String>)`](crate::operation::get_subscription_definition::builders::GetSubscriptionDefinitionFluentBuilder::subscription_definition_id) / [`set_subscription_definition_id(Option<String>)`](crate::operation::get_subscription_definition::builders::GetSubscriptionDefinitionFluentBuilder::set_subscription_definition_id):<br>required: **true**<br>The ID of the subscription definition.<br>
     /// - On success, responds with [`GetSubscriptionDefinitionOutput`](crate::operation::get_subscription_definition::GetSubscriptionDefinitionOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::get_subscription_definition::GetSubscriptionDefinitionOutput::arn): The ARN of the definition.
     ///   - [`creation_timestamp(Option<String>)`](crate::operation::get_subscription_definition::GetSubscriptionDefinitionOutput::creation_timestamp): The time, in milliseconds since the epoch, when the definition was created.
@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`latest_version(Option<String>)`](crate::operation::get_subscription_definition::GetSubscriptionDefinitionOutput::latest_version): The ID of the latest version associated with the definition.
     ///   - [`latest_version_arn(Option<String>)`](crate::operation::get_subscription_definition::GetSubscriptionDefinitionOutput::latest_version_arn): The ARN of the latest version associated with the definition.
     ///   - [`name(Option<String>)`](crate::operation::get_subscription_definition::GetSubscriptionDefinitionOutput::name): The name of the definition.
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_subscription_definition::GetSubscriptionDefinitionOutput::tags): Tag(s) attached to the resource arn.
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_subscription_definition::GetSubscriptionDefinitionOutput::tags): Tag(s) attached to the resource arn.
     /// - On failure, responds with [`SdkError<GetSubscriptionDefinitionError>`](crate::operation::get_subscription_definition::GetSubscriptionDefinitionError)
     pub fn get_subscription_definition(&self) -> crate::operation::get_subscription_definition::builders::GetSubscriptionDefinitionFluentBuilder {
         crate::operation::get_subscription_definition::builders::GetSubscriptionDefinitionFluentBuilder::new(self.handle.clone())

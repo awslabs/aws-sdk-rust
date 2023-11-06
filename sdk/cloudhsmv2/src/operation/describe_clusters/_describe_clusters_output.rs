@@ -11,8 +11,10 @@ pub struct DescribeClustersOutput {
 }
 impl DescribeClustersOutput {
     /// <p>A list of clusters.</p>
-    pub fn clusters(&self) -> ::std::option::Option<&[crate::types::Cluster]> {
-        self.clusters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.clusters.is_none()`.
+    pub fn clusters(&self) -> &[crate::types::Cluster] {
+        self.clusters.as_deref().unwrap_or_default()
     }
     /// <p>An opaque string that indicates that the response contains only a subset of clusters. Use this value in a subsequent <code>DescribeClusters</code> request to get more clusters.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

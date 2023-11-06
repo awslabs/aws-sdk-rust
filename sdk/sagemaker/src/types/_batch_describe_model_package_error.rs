@@ -35,6 +35,7 @@ pub struct BatchDescribeModelPackageErrorBuilder {
 }
 impl BatchDescribeModelPackageErrorBuilder {
     /// <p></p>
+    /// This field is required.
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl BatchDescribeModelPackageErrorBuilder {
         &self.error_code
     }
     /// <p></p>
+    /// This field is required.
     pub fn error_response(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_response = ::std::option::Option::Some(input.into());
         self

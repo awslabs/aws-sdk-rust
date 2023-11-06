@@ -9,8 +9,10 @@ pub struct EndpointBatchRequest {
 }
 impl EndpointBatchRequest {
     /// <p>An array that defines the endpoints to create or update and, for each endpoint, the property values to set or change. An array can contain a maximum of 100 items.</p>
-    pub fn item(&self) -> ::std::option::Option<&[crate::types::EndpointBatchItem]> {
-        self.item.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.item.is_none()`.
+    pub fn item(&self) -> &[crate::types::EndpointBatchItem] {
+        self.item.as_deref().unwrap_or_default()
     }
 }
 impl EndpointBatchRequest {

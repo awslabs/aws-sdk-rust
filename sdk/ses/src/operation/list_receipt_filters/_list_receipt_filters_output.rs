@@ -10,8 +10,10 @@ pub struct ListReceiptFiltersOutput {
 }
 impl ListReceiptFiltersOutput {
     /// <p>A list of IP address filter data structures, which each consist of a name, an IP address range, and whether to allow or block mail from it.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::ReceiptFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::ReceiptFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListReceiptFiltersOutput {

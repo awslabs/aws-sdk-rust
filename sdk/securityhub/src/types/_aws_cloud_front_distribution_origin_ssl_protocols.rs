@@ -11,8 +11,10 @@ pub struct AwsCloudFrontDistributionOriginSslProtocols {
 }
 impl AwsCloudFrontDistributionOriginSslProtocols {
     /// <p>A list that contains allowed SSL/TLS protocols for this distribution. </p>
-    pub fn items(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[::std::string::String] {
+        self.items.as_deref().unwrap_or_default()
     }
     /// <p>The number of SSL/TLS protocols that you want to allow CloudFront to use when establishing an HTTPS connection with this origin. </p>
     pub fn quantity(&self) -> ::std::option::Option<i32> {

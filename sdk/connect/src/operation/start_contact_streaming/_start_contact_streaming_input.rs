@@ -48,6 +48,7 @@ pub struct StartContactStreamingInputBuilder {
 }
 impl StartContactStreamingInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl StartContactStreamingInputBuilder {
         &self.instance_id
     }
     /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
+    /// This field is required.
     pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl StartContactStreamingInputBuilder {
         &self.contact_id
     }
     /// <p>The streaming configuration, such as the Amazon SNS streaming endpoint.</p>
+    /// This field is required.
     pub fn chat_streaming_configuration(mut self, input: crate::types::ChatStreamingConfiguration) -> Self {
         self.chat_streaming_configuration = ::std::option::Option::Some(input);
         self
@@ -90,6 +93,7 @@ impl StartContactStreamingInputBuilder {
         &self.chat_streaming_configuration
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +110,7 @@ impl StartContactStreamingInputBuilder {
     /// Consumes the builder and constructs a [`StartContactStreamingInput`](crate::operation::start_contact_streaming::StartContactStreamingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_contact_streaming::StartContactStreamingInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_contact_streaming::StartContactStreamingInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_contact_streaming::StartContactStreamingInput {
             instance_id: self.instance_id,

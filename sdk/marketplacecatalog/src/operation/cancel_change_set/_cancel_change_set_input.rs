@@ -34,6 +34,7 @@ pub struct CancelChangeSetInputBuilder {
 }
 impl CancelChangeSetInputBuilder {
     /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code>.</p>
+    /// This field is required.
     pub fn catalog(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.catalog = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl CancelChangeSetInputBuilder {
         &self.catalog
     }
     /// <p>Required. The unique identifier of the <code>StartChangeSet</code> request that you want to cancel.</p>
+    /// This field is required.
     pub fn change_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_set_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl CancelChangeSetInputBuilder {
     /// Consumes the builder and constructs a [`CancelChangeSetInput`](crate::operation::cancel_change_set::CancelChangeSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_change_set::CancelChangeSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::cancel_change_set::CancelChangeSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_change_set::CancelChangeSetInput {
             catalog: self.catalog,
             change_set_id: self.change_set_id,

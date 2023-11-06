@@ -88,7 +88,7 @@ impl ListVolumesInputBuilder {
         &self.limit
     }
     /// Consumes the builder and constructs a [`ListVolumesInput`](crate::operation::list_volumes::ListVolumesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_volumes::ListVolumesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_volumes::ListVolumesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_volumes::ListVolumesInput {
             gateway_arn: self.gateway_arn,
             marker: self.marker,

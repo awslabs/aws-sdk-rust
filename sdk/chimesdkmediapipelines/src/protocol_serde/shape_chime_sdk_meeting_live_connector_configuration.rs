@@ -2,24 +2,24 @@
 pub fn ser_chime_sdk_meeting_live_connector_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ChimeSdkMeetingLiveConnectorConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.arn {
-        object.key("Arn").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Arn").string(input.arn.as_str());
     }
-    if let Some(var_2) = &input.mux_type {
-        object.key("MuxType").string(var_2.as_str());
+    {
+        object.key("MuxType").string(input.mux_type.as_str());
     }
-    if let Some(var_3) = &input.composited_video {
+    if let Some(var_1) = &input.composited_video {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("CompositedVideo").start_object();
-        crate::protocol_serde::shape_composited_video_artifacts_configuration::ser_composited_video_artifacts_configuration(&mut object_4, var_3)?;
+        let mut object_2 = object.key("CompositedVideo").start_object();
+        crate::protocol_serde::shape_composited_video_artifacts_configuration::ser_composited_video_artifacts_configuration(&mut object_2, var_1)?;
+        object_2.finish();
+    }
+    if let Some(var_3) = &input.source_configuration {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("SourceConfiguration").start_object();
+        crate::protocol_serde::shape_source_configuration::ser_source_configuration(&mut object_4, var_3)?;
         object_4.finish();
-    }
-    if let Some(var_5) = &input.source_configuration {
-        #[allow(unused_mut)]
-        let mut object_6 = object.key("SourceConfiguration").start_object();
-        crate::protocol_serde::shape_source_configuration::ser_source_configuration(&mut object_6, var_5)?;
-        object_6.finish();
     }
     Ok(())
 }
@@ -74,7 +74,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::chime_sdk_meeting_live_connector_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

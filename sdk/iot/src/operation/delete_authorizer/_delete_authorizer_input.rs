@@ -27,6 +27,7 @@ pub struct DeleteAuthorizerInputBuilder {
 }
 impl DeleteAuthorizerInputBuilder {
     /// <p>The name of the authorizer to delete.</p>
+    /// This field is required.
     pub fn authorizer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorizer_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteAuthorizerInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAuthorizerInput`](crate::operation::delete_authorizer::DeleteAuthorizerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_authorizer::DeleteAuthorizerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_authorizer::DeleteAuthorizerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_authorizer::DeleteAuthorizerInput {
             authorizer_name: self.authorizer_name,
         })

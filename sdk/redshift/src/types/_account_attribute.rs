@@ -15,8 +15,10 @@ impl AccountAttribute {
         self.attribute_name.as_deref()
     }
     /// <p>A list of attribute values.</p>
-    pub fn attribute_values(&self) -> ::std::option::Option<&[crate::types::AttributeValueTarget]> {
-        self.attribute_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attribute_values.is_none()`.
+    pub fn attribute_values(&self) -> &[crate::types::AttributeValueTarget] {
+        self.attribute_values.as_deref().unwrap_or_default()
     }
 }
 impl AccountAttribute {

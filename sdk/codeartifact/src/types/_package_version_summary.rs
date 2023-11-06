@@ -5,26 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PackageVersionSummary {
     /// <p> Information about a package version. </p>
-    pub version: ::std::option::Option<::std::string::String>,
+    pub version: ::std::string::String,
     /// <p> The revision associated with a package version. </p>
     pub revision: ::std::option::Option<::std::string::String>,
     /// <p> A string that contains the status of the package version. It can be one of the following: </p>
-    pub status: ::std::option::Option<crate::types::PackageVersionStatus>,
+    pub status: crate::types::PackageVersionStatus,
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">PackageVersionOrigin</a> object that contains information about how the package version was added to the repository.</p>
     pub origin: ::std::option::Option<crate::types::PackageVersionOrigin>,
 }
 impl PackageVersionSummary {
     /// <p> Information about a package version. </p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
-        self.version.as_deref()
+    pub fn version(&self) -> &str {
+        use std::ops::Deref;
+        self.version.deref()
     }
     /// <p> The revision associated with a package version. </p>
     pub fn revision(&self) -> ::std::option::Option<&str> {
         self.revision.as_deref()
     }
     /// <p> A string that contains the status of the package version. It can be one of the following: </p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::PackageVersionStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::PackageVersionStatus {
+        &self.status
     }
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">PackageVersionOrigin</a> object that contains information about how the package version was added to the repository.</p>
     pub fn origin(&self) -> ::std::option::Option<&crate::types::PackageVersionOrigin> {
@@ -49,6 +50,7 @@ pub struct PackageVersionSummaryBuilder {
 }
 impl PackageVersionSummaryBuilder {
     /// <p> Information about a package version. </p>
+    /// This field is required.
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +79,7 @@ impl PackageVersionSummaryBuilder {
         &self.revision
     }
     /// <p> A string that contains the status of the package version. It can be one of the following: </p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::PackageVersionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -105,12 +108,25 @@ impl PackageVersionSummaryBuilder {
         &self.origin
     }
     /// Consumes the builder and constructs a [`PackageVersionSummary`](crate::types::PackageVersionSummary).
-    pub fn build(self) -> crate::types::PackageVersionSummary {
-        crate::types::PackageVersionSummary {
-            version: self.version,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`version`](crate::types::builders::PackageVersionSummaryBuilder::version)
+    /// - [`status`](crate::types::builders::PackageVersionSummaryBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::PackageVersionSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PackageVersionSummary {
+            version: self.version.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "version",
+                    "version was not specified but it is required when building PackageVersionSummary",
+                )
+            })?,
             revision: self.revision,
-            status: self.status,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building PackageVersionSummary",
+                )
+            })?,
             origin: self.origin,
-        }
+        })
     }
 }

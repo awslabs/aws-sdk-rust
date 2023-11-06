@@ -10,8 +10,10 @@ pub struct ListOpenIdConnectProvidersOutput {
 }
 impl ListOpenIdConnectProvidersOutput {
     /// <p>The list of IAM OIDC provider resource objects defined in the Amazon Web Services account.</p>
-    pub fn open_id_connect_provider_list(&self) -> ::std::option::Option<&[crate::types::OpenIdConnectProviderListEntry]> {
-        self.open_id_connect_provider_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.open_id_connect_provider_list.is_none()`.
+    pub fn open_id_connect_provider_list(&self) -> &[crate::types::OpenIdConnectProviderListEntry] {
+        self.open_id_connect_provider_list.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListOpenIdConnectProvidersOutput {

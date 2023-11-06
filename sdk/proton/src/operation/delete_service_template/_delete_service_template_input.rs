@@ -27,6 +27,7 @@ pub struct DeleteServiceTemplateInputBuilder {
 }
 impl DeleteServiceTemplateInputBuilder {
     /// <p>The name of the service template to delete.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteServiceTemplateInputBuilder {
     /// Consumes the builder and constructs a [`DeleteServiceTemplateInput`](crate::operation::delete_service_template::DeleteServiceTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_service_template::DeleteServiceTemplateInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_service_template::DeleteServiceTemplateInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_service_template::DeleteServiceTemplateInput { name: self.name })
     }

@@ -34,6 +34,7 @@ pub struct GetSolFunctionPackageDescriptorInputBuilder {
 }
 impl GetSolFunctionPackageDescriptorInputBuilder {
     /// <p>ID of the function package.</p>
+    /// This field is required.
     pub fn vnf_pkg_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vnf_pkg_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetSolFunctionPackageDescriptorInputBuilder {
         &self.vnf_pkg_id
     }
     /// <p>Indicates which content types, expressed as MIME types, the client is able to understand.</p>
+    /// This field is required.
     pub fn accept(mut self, input: crate::types::DescriptorContentType) -> Self {
         self.accept = ::std::option::Option::Some(input);
         self
@@ -66,7 +68,7 @@ impl GetSolFunctionPackageDescriptorInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorInput {

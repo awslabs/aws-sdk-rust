@@ -16,12 +16,16 @@ impl RegisterDevicesInput {
         self.device_fleet_name.as_deref()
     }
     /// <p>A list of devices to register with SageMaker Edge Manager.</p>
-    pub fn devices(&self) -> ::std::option::Option<&[crate::types::Device]> {
-        self.devices.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.devices.is_none()`.
+    pub fn devices(&self) -> &[crate::types::Device] {
+        self.devices.as_deref().unwrap_or_default()
     }
     /// <p>The tags associated with devices.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl RegisterDevicesInput {
@@ -41,6 +45,7 @@ pub struct RegisterDevicesInputBuilder {
 }
 impl RegisterDevicesInputBuilder {
     /// <p>The name of the fleet.</p>
+    /// This field is required.
     pub fn device_fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_fleet_name = ::std::option::Option::Some(input.into());
         self
@@ -97,7 +102,7 @@ impl RegisterDevicesInputBuilder {
     /// Consumes the builder and constructs a [`RegisterDevicesInput`](crate::operation::register_devices::RegisterDevicesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_devices::RegisterDevicesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::register_devices::RegisterDevicesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_devices::RegisterDevicesInput {
             device_fleet_name: self.device_fleet_name,
             devices: self.devices,

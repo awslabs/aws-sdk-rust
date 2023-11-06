@@ -27,6 +27,7 @@ pub struct ExportSnapshotInputBuilder {
 }
 impl ExportSnapshotInputBuilder {
     /// <p>The name of the instance or disk snapshot to be exported to Amazon EC2.</p>
+    /// This field is required.
     pub fn source_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_snapshot_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl ExportSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`ExportSnapshotInput`](crate::operation::export_snapshot::ExportSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::export_snapshot::ExportSnapshotInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::export_snapshot::ExportSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::export_snapshot::ExportSnapshotInput {
             source_snapshot_name: self.source_snapshot_name,
         })

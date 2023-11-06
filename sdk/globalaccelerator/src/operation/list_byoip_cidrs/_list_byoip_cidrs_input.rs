@@ -64,7 +64,7 @@ impl ListByoipCidrsInputBuilder {
     /// Consumes the builder and constructs a [`ListByoipCidrsInput`](crate::operation::list_byoip_cidrs::ListByoipCidrsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_byoip_cidrs::ListByoipCidrsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_byoip_cidrs::ListByoipCidrsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_byoip_cidrs::ListByoipCidrsInput {
             max_results: self.max_results,
             next_token: self.next_token,

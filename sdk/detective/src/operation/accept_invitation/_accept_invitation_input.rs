@@ -30,6 +30,7 @@ pub struct AcceptInvitationInputBuilder {
 impl AcceptInvitationInputBuilder {
     /// <p>The ARN of the behavior graph that the member account is accepting the invitation for.</p>
     /// <p>The member account status in the behavior graph must be <code>INVITED</code>.</p>
+    /// This field is required.
     pub fn graph_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.graph_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,7 +49,7 @@ impl AcceptInvitationInputBuilder {
     /// Consumes the builder and constructs a [`AcceptInvitationInput`](crate::operation::accept_invitation::AcceptInvitationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::accept_invitation::AcceptInvitationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::accept_invitation::AcceptInvitationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::accept_invitation::AcceptInvitationInput { graph_arn: self.graph_arn })
     }
 }

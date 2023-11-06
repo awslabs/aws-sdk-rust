@@ -15,8 +15,10 @@ impl PartialMatch {
         self.reference.as_deref()
     }
     /// <p>The violation reason.</p>
-    pub fn target_violation_reasons(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.target_violation_reasons.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_violation_reasons.is_none()`.
+    pub fn target_violation_reasons(&self) -> &[::std::string::String] {
+        self.target_violation_reasons.as_deref().unwrap_or_default()
     }
 }
 impl PartialMatch {

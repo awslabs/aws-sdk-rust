@@ -48,6 +48,7 @@ pub struct ListDeviceEventsInputBuilder {
 }
 impl ListDeviceEventsInputBuilder {
     /// <p>The ARN of a device.</p>
+    /// This field is required.
     pub fn device_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_arn = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,7 @@ impl ListDeviceEventsInputBuilder {
     /// Consumes the builder and constructs a [`ListDeviceEventsInput`](crate::operation::list_device_events::ListDeviceEventsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_device_events::ListDeviceEventsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_device_events::ListDeviceEventsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_device_events::ListDeviceEventsInput {
             device_arn: self.device_arn,
             event_type: self.event_type,

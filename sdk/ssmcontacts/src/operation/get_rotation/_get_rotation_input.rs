@@ -27,6 +27,7 @@ pub struct GetRotationInputBuilder {
 }
 impl GetRotationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the on-call rotation to retrieve information about.</p>
+    /// This field is required.
     pub fn rotation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rotation_id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetRotationInputBuilder {
         &self.rotation_id
     }
     /// Consumes the builder and constructs a [`GetRotationInput`](crate::operation::get_rotation::GetRotationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_rotation::GetRotationInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_rotation::GetRotationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_rotation::GetRotationInput {
             rotation_id: self.rotation_id,
         })

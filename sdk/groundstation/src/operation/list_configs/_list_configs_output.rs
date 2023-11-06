@@ -16,8 +16,10 @@ impl ListConfigsOutput {
         self.next_token.as_deref()
     }
     /// <p>List of <code>Config</code> items.</p>
-    pub fn config_list(&self) -> ::std::option::Option<&[crate::types::ConfigListItem]> {
-        self.config_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.config_list.is_none()`.
+    pub fn config_list(&self) -> &[crate::types::ConfigListItem] {
+        self.config_list.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListConfigsOutput {

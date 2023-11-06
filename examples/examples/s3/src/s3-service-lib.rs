@@ -35,22 +35,25 @@ pub async fn delete_objects(client: &Client, bucket_name: &str) -> Result<Vec<St
     let objects = client.list_objects_v2().bucket(bucket_name).send().await?;
 
     let mut delete_objects: Vec<ObjectIdentifier> = vec![];
-    for obj in objects.contents().unwrap_or_default() {
+    for obj in objects.contents() {
         let obj_id = ObjectIdentifier::builder()
             .set_key(Some(obj.key().unwrap().to_string()))
-            .build();
+            .build()
+            .map_err(Error::from)?;
         delete_objects.push(obj_id);
     }
 
-    let return_keys = delete_objects
-        .iter()
-        .map(|o| o.key().unwrap().to_string())
-        .collect();
+    let return_keys = delete_objects.iter().map(|o| o.key.clone()).collect();
 
     client
         .delete_objects()
         .bucket(bucket_name)
-        .delete(Delete::builder().set_objects(Some(delete_objects)).build())
+        .delete(
+            Delete::builder()
+                .set_objects(Some(delete_objects))
+                .build()
+                .map_err(Error::from)?,
+        )
         .send()
         .await?;
 
@@ -71,7 +74,7 @@ pub async fn delete_objects(client: &Client, bucket_name: &str) -> Result<Vec<St
 pub async fn list_objects(client: &Client, bucket_name: &str) -> Result<(), Error> {
     let objects = client.list_objects_v2().bucket(bucket_name).send().await?;
     println!("Objects in bucket:");
-    for obj in objects.contents().unwrap_or_default() {
+    for obj in objects.contents() {
         println!("{:?}", obj.key().unwrap());
     }
 
@@ -160,7 +163,7 @@ pub async fn create_bucket(
 mod test {
     use std::env::temp_dir;
 
-    use aws_smithy_client::test_connection::TestConnection;
+    use aws_smithy_runtime::client::http::test_util::StaticReplayClient;
     use sdk_examples_test_utils::{client_config, single_shot_client, test_event};
     use tokio::{fs::File, io::AsyncWriteExt};
     use uuid::Uuid;
@@ -187,7 +190,7 @@ mod test {
     async fn test_delete_objects() {
         let client = aws_sdk_s3::Client::from_conf(
             client_config!(aws_sdk_s3)
-                .http_connector(TestConnection::new(vec![
+                .http_client(StaticReplayClient::new(vec![
                     // client.list_objects_v2().bucket(bucket_name)
                     test_event!(
                         r#""#,
@@ -238,7 +241,7 @@ mod test {
     async fn test_delete_objects_failed() {
         let client = aws_sdk_s3::Client::from_conf(
             client_config!(aws_sdk_s3)
-                .http_connector(TestConnection::new(vec![
+                .http_client(StaticReplayClient::new(vec![
                     // client.list_objects_v2().bucket(bucket_name)
                     test_event!(
                         r#""#,

@@ -64,6 +64,7 @@ pub struct AcceptPageInputBuilder {
 }
 impl AcceptPageInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the engagement to a contact channel.</p>
+    /// This field is required.
     pub fn page_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.page_id = ::std::option::Option::Some(input.into());
         self
@@ -92,6 +93,7 @@ impl AcceptPageInputBuilder {
         &self.contact_channel_id
     }
     /// <p>The type indicates if the page was <code>DELIVERED</code> or <code>READ</code>.</p>
+    /// This field is required.
     pub fn accept_type(mut self, input: crate::types::AcceptType) -> Self {
         self.accept_type = ::std::option::Option::Some(input);
         self
@@ -120,6 +122,7 @@ impl AcceptPageInputBuilder {
         &self.note
     }
     /// <p>A 6-digit code used to acknowledge the page.</p>
+    /// This field is required.
     pub fn accept_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_code = ::std::option::Option::Some(input.into());
         self
@@ -151,7 +154,7 @@ impl AcceptPageInputBuilder {
         &self.accept_code_validation
     }
     /// Consumes the builder and constructs a [`AcceptPageInput`](crate::operation::accept_page::AcceptPageInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::accept_page::AcceptPageInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::accept_page::AcceptPageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::accept_page::AcceptPageInput {
             page_id: self.page_id,
             contact_channel_id: self.contact_channel_id,

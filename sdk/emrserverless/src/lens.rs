@@ -22,19 +22,13 @@ pub(crate) fn reflens_list_job_runs_output_next_token(
 pub(crate) fn lens_list_applications_output_applications(
     input: crate::operation::list_applications::ListApplicationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ApplicationSummary>> {
-    let input = match input.applications {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.applications;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_job_runs_output_job_runs(
     input: crate::operation::list_job_runs::ListJobRunsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::JobRunSummary>> {
-    let input = match input.job_runs {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.job_runs;
     ::std::option::Option::Some(input)
 }

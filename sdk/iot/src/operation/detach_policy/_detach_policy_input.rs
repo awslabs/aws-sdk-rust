@@ -34,6 +34,7 @@ pub struct DetachPolicyInputBuilder {
 }
 impl DetachPolicyInputBuilder {
     /// <p>The policy to detach.</p>
+    /// This field is required.
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DetachPolicyInputBuilder {
         &self.policy_name
     }
     /// <p>The target from which the policy will be detached.</p>
+    /// This field is required.
     pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,9 @@ impl DetachPolicyInputBuilder {
         &self.target
     }
     /// Consumes the builder and constructs a [`DetachPolicyInput`](crate::operation::detach_policy::DetachPolicyInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::detach_policy::DetachPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::detach_policy::DetachPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::detach_policy::DetachPolicyInput {
             policy_name: self.policy_name,
             target: self.target,

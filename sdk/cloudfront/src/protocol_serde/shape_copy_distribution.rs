@@ -677,7 +677,7 @@ pub fn de_copy_distribution_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::TooManyDistributionCnamEsBuilder::default();
-                output = crate::protocol_serde::shape_too_many_distribution_cnam_es::de_too_many_distribution_cnam_es_xml_err(_response_body, output)
+                output = crate::protocol_serde::shape_too_many_distribution_cnames::de_too_many_distribution_cnames_xml_err(_response_body, output)
                     .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -1062,14 +1062,14 @@ pub fn de_copy_distribution_http_response(
 pub fn ser_copy_distribution_headers(
     input: &crate::operation::copy_distribution::CopyDistributionInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.staging {
         let mut encoder = ::aws_smithy_types::primitive::Encoder::from(*inner_1);
         let formatted_2 = encoder.encode();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "staging",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -1082,7 +1082,7 @@ pub fn ser_copy_distribution_headers(
         if !formatted_4.is_empty() {
             let header_value = formatted_4;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "if_match",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -1095,7 +1095,7 @@ pub fn ser_copy_distribution_headers(
 
 pub fn ser_copy_distribution_op_input(
     input: &crate::operation::copy_distribution::CopyDistributionInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = ::aws_smithy_xml::encode::XmlWriter::new(&mut out);
@@ -1105,5 +1105,5 @@ pub fn ser_copy_distribution_op_input(
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
         crate::protocol_serde::shape_copy_distribution_input::ser_copy_distribution_input_input(input, root)?
     }
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

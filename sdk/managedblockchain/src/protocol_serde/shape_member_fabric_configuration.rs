@@ -2,12 +2,12 @@
 pub fn ser_member_fabric_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MemberFabricConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.admin_username {
-        object.key("AdminUsername").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("AdminUsername").string(input.admin_username.as_str());
     }
-    if let Some(var_2) = &input.admin_password {
-        object.key("AdminPassword").string(var_2.as_str());
+    {
+        object.key("AdminPassword").string(input.admin_password.as_str());
     }
     Ok(())
 }

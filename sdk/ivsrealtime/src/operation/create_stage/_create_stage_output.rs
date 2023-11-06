@@ -15,8 +15,10 @@ impl CreateStageOutput {
         self.stage.as_ref()
     }
     /// <p>Participant tokens attached to the stage. These correspond to the <code>participants</code> in the request.</p>
-    pub fn participant_tokens(&self) -> ::std::option::Option<&[crate::types::ParticipantToken]> {
-        self.participant_tokens.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.participant_tokens.is_none()`.
+    pub fn participant_tokens(&self) -> &[crate::types::ParticipantToken] {
+        self.participant_tokens.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateStageOutput {

@@ -27,8 +27,10 @@ impl AutomatedAbrSettings {
         self.min_abr_bitrate
     }
     /// Optional. Use Automated ABR rules to specify restrictions for the rendition sizes MediaConvert will create in your ABR stack. You can use these rules if your ABR workflow has specific rendition size requirements, but you still want MediaConvert to optimize for video quality and overall file size.
-    pub fn rules(&self) -> ::std::option::Option<&[crate::types::AutomatedAbrRule]> {
-        self.rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
+    pub fn rules(&self) -> &[crate::types::AutomatedAbrRule] {
+        self.rules.as_deref().unwrap_or_default()
     }
 }
 impl AutomatedAbrSettings {

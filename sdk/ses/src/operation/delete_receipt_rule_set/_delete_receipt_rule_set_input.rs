@@ -28,6 +28,7 @@ pub struct DeleteReceiptRuleSetInputBuilder {
 }
 impl DeleteReceiptRuleSetInputBuilder {
     /// <p>The name of the receipt rule set to delete.</p>
+    /// This field is required.
     pub fn rule_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_set_name = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl DeleteReceiptRuleSetInputBuilder {
     /// Consumes the builder and constructs a [`DeleteReceiptRuleSetInput`](crate::operation::delete_receipt_rule_set::DeleteReceiptRuleSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_receipt_rule_set::DeleteReceiptRuleSetInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_receipt_rule_set::DeleteReceiptRuleSetInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_receipt_rule_set::DeleteReceiptRuleSetInput {
             rule_set_name: self.rule_set_name,

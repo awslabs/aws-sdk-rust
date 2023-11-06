@@ -27,6 +27,7 @@ pub struct DescribeModelPackageGroupInputBuilder {
 }
 impl DescribeModelPackageGroupInputBuilder {
     /// <p>The name of gthe model group to describe.</p>
+    /// This field is required.
     pub fn model_package_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_group_name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeModelPackageGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_model_package_group::DescribeModelPackageGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_model_package_group::DescribeModelPackageGroupInput {
             model_package_group_name: self.model_package_group_name,

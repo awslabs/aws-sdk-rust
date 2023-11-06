@@ -41,6 +41,7 @@ pub struct DisassociateLexBotInputBuilder {
 }
 impl DisassociateLexBotInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DisassociateLexBotInputBuilder {
         &self.instance_id
     }
     /// <p>The name of the Amazon Lex bot. Maximum character limit of 50.</p>
+    /// This field is required.
     pub fn bot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl DisassociateLexBotInputBuilder {
         &self.bot_name
     }
     /// <p>The Amazon Web Services Region in which the Amazon Lex bot has been created.</p>
+    /// This field is required.
     pub fn lex_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lex_region = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +88,8 @@ impl DisassociateLexBotInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateLexBotInput`](crate::operation::disassociate_lex_bot::DisassociateLexBotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disassociate_lex_bot::DisassociateLexBotInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::disassociate_lex_bot::DisassociateLexBotInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::disassociate_lex_bot::DisassociateLexBotInput {
             instance_id: self.instance_id,
             bot_name: self.bot_name,

@@ -2,7 +2,7 @@
 pub fn ser_aws_redshift_cluster_cluster_snapshot_copy_status(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsRedshiftClusterClusterSnapshotCopyStatus,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.destination_region {
         object.key("DestinationRegion").string(var_1.as_str());
     }

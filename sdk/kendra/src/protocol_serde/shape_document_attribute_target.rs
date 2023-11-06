@@ -2,7 +2,7 @@
 pub fn ser_document_attribute_target(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DocumentAttributeTarget,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.target_document_attribute_key {
         object.key("TargetDocumentAttributeKey").string(var_1.as_str());
     }

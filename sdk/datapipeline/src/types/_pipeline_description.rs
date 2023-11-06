@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PipelineDescription {
     /// <p>The pipeline identifier that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
-    pub pipeline_id: ::std::option::Option<::std::string::String>,
+    pub pipeline_id: ::std::string::String,
     /// <p>The name of the pipeline.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>A list of read-only fields that contain metadata about the pipeline: @userId, @accountId, and @pipelineState.</p>
-    pub fields: ::std::option::Option<::std::vec::Vec<crate::types::Field>>,
+    pub fields: ::std::vec::Vec<crate::types::Field>,
     /// <p>Description of the pipeline.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags to associated with a pipeline. Tags let you control access to pipelines. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
@@ -17,24 +17,29 @@ pub struct PipelineDescription {
 }
 impl PipelineDescription {
     /// <p>The pipeline identifier that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
-    pub fn pipeline_id(&self) -> ::std::option::Option<&str> {
-        self.pipeline_id.as_deref()
+    pub fn pipeline_id(&self) -> &str {
+        use std::ops::Deref;
+        self.pipeline_id.deref()
     }
     /// <p>The name of the pipeline.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>A list of read-only fields that contain metadata about the pipeline: @userId, @accountId, and @pipelineState.</p>
-    pub fn fields(&self) -> ::std::option::Option<&[crate::types::Field]> {
-        self.fields.as_deref()
+    pub fn fields(&self) -> &[crate::types::Field] {
+        use std::ops::Deref;
+        self.fields.deref()
     }
     /// <p>Description of the pipeline.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>A list of tags to associated with a pipeline. Tags let you control access to pipelines. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl PipelineDescription {
@@ -56,6 +61,7 @@ pub struct PipelineDescriptionBuilder {
 }
 impl PipelineDescriptionBuilder {
     /// <p>The pipeline identifier that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
+    /// This field is required.
     pub fn pipeline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +76,7 @@ impl PipelineDescriptionBuilder {
         &self.pipeline_id
     }
     /// <p>The name of the pipeline.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -138,13 +145,32 @@ impl PipelineDescriptionBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`PipelineDescription`](crate::types::PipelineDescription).
-    pub fn build(self) -> crate::types::PipelineDescription {
-        crate::types::PipelineDescription {
-            pipeline_id: self.pipeline_id,
-            name: self.name,
-            fields: self.fields,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`pipeline_id`](crate::types::builders::PipelineDescriptionBuilder::pipeline_id)
+    /// - [`name`](crate::types::builders::PipelineDescriptionBuilder::name)
+    /// - [`fields`](crate::types::builders::PipelineDescriptionBuilder::fields)
+    pub fn build(self) -> ::std::result::Result<crate::types::PipelineDescription, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PipelineDescription {
+            pipeline_id: self.pipeline_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "pipeline_id",
+                    "pipeline_id was not specified but it is required when building PipelineDescription",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building PipelineDescription",
+                )
+            })?,
+            fields: self.fields.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "fields",
+                    "fields was not specified but it is required when building PipelineDescription",
+                )
+            })?,
             description: self.description,
             tags: self.tags,
-        }
+        })
     }
 }

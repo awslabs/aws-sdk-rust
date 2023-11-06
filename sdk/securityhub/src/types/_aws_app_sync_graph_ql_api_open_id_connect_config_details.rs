@@ -5,26 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsAppSyncGraphQlApiOpenIdConnectConfigDetails {
     /// <p> The number of milliseconds that a token is valid after being authenticated. </p>
-    pub auth_tt_l: ::std::option::Option<i64>,
+    pub auth_ttl: ::std::option::Option<i64>,
     /// <p> The client identifier of the relying party at the OpenID identity provider. This identifier is typically obtained when the relying party is registered with the OpenID identity provider. You can specify a regular expression so that AppSync can validate against multiple client identifiers at a time. </p>
     pub client_id: ::std::option::Option<::std::string::String>,
     /// <p> The number of milliseconds that a token is valid after it's issued to a user. </p>
-    pub iat_tt_l: ::std::option::Option<i64>,
+    pub iat_ttl: ::std::option::Option<i64>,
     /// <p> The issuer for the OIDC configuration. The issuer returned by discovery must exactly match the value of <code>iss</code> in the ID token. </p>
     pub issuer: ::std::option::Option<::std::string::String>,
 }
 impl AwsAppSyncGraphQlApiOpenIdConnectConfigDetails {
     /// <p> The number of milliseconds that a token is valid after being authenticated. </p>
-    pub fn auth_tt_l(&self) -> ::std::option::Option<i64> {
-        self.auth_tt_l
+    pub fn auth_ttl(&self) -> ::std::option::Option<i64> {
+        self.auth_ttl
     }
     /// <p> The client identifier of the relying party at the OpenID identity provider. This identifier is typically obtained when the relying party is registered with the OpenID identity provider. You can specify a regular expression so that AppSync can validate against multiple client identifiers at a time. </p>
     pub fn client_id(&self) -> ::std::option::Option<&str> {
         self.client_id.as_deref()
     }
     /// <p> The number of milliseconds that a token is valid after it's issued to a user. </p>
-    pub fn iat_tt_l(&self) -> ::std::option::Option<i64> {
-        self.iat_tt_l
+    pub fn iat_ttl(&self) -> ::std::option::Option<i64> {
+        self.iat_ttl
     }
     /// <p> The issuer for the OIDC configuration. The issuer returned by discovery must exactly match the value of <code>iss</code> in the ID token. </p>
     pub fn issuer(&self) -> ::std::option::Option<&str> {
@@ -42,25 +42,25 @@ impl AwsAppSyncGraphQlApiOpenIdConnectConfigDetails {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsAppSyncGraphQlApiOpenIdConnectConfigDetailsBuilder {
-    pub(crate) auth_tt_l: ::std::option::Option<i64>,
+    pub(crate) auth_ttl: ::std::option::Option<i64>,
     pub(crate) client_id: ::std::option::Option<::std::string::String>,
-    pub(crate) iat_tt_l: ::std::option::Option<i64>,
+    pub(crate) iat_ttl: ::std::option::Option<i64>,
     pub(crate) issuer: ::std::option::Option<::std::string::String>,
 }
 impl AwsAppSyncGraphQlApiOpenIdConnectConfigDetailsBuilder {
     /// <p> The number of milliseconds that a token is valid after being authenticated. </p>
-    pub fn auth_tt_l(mut self, input: i64) -> Self {
-        self.auth_tt_l = ::std::option::Option::Some(input);
+    pub fn auth_ttl(mut self, input: i64) -> Self {
+        self.auth_ttl = ::std::option::Option::Some(input);
         self
     }
     /// <p> The number of milliseconds that a token is valid after being authenticated. </p>
-    pub fn set_auth_tt_l(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.auth_tt_l = input;
+    pub fn set_auth_ttl(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.auth_ttl = input;
         self
     }
     /// <p> The number of milliseconds that a token is valid after being authenticated. </p>
-    pub fn get_auth_tt_l(&self) -> &::std::option::Option<i64> {
-        &self.auth_tt_l
+    pub fn get_auth_ttl(&self) -> &::std::option::Option<i64> {
+        &self.auth_ttl
     }
     /// <p> The client identifier of the relying party at the OpenID identity provider. This identifier is typically obtained when the relying party is registered with the OpenID identity provider. You can specify a regular expression so that AppSync can validate against multiple client identifiers at a time. </p>
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -77,18 +77,18 @@ impl AwsAppSyncGraphQlApiOpenIdConnectConfigDetailsBuilder {
         &self.client_id
     }
     /// <p> The number of milliseconds that a token is valid after it's issued to a user. </p>
-    pub fn iat_tt_l(mut self, input: i64) -> Self {
-        self.iat_tt_l = ::std::option::Option::Some(input);
+    pub fn iat_ttl(mut self, input: i64) -> Self {
+        self.iat_ttl = ::std::option::Option::Some(input);
         self
     }
     /// <p> The number of milliseconds that a token is valid after it's issued to a user. </p>
-    pub fn set_iat_tt_l(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.iat_tt_l = input;
+    pub fn set_iat_ttl(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.iat_ttl = input;
         self
     }
     /// <p> The number of milliseconds that a token is valid after it's issued to a user. </p>
-    pub fn get_iat_tt_l(&self) -> &::std::option::Option<i64> {
-        &self.iat_tt_l
+    pub fn get_iat_ttl(&self) -> &::std::option::Option<i64> {
+        &self.iat_ttl
     }
     /// <p> The issuer for the OIDC configuration. The issuer returned by discovery must exactly match the value of <code>iss</code> in the ID token. </p>
     pub fn issuer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -107,9 +107,9 @@ impl AwsAppSyncGraphQlApiOpenIdConnectConfigDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsAppSyncGraphQlApiOpenIdConnectConfigDetails`](crate::types::AwsAppSyncGraphQlApiOpenIdConnectConfigDetails).
     pub fn build(self) -> crate::types::AwsAppSyncGraphQlApiOpenIdConnectConfigDetails {
         crate::types::AwsAppSyncGraphQlApiOpenIdConnectConfigDetails {
-            auth_tt_l: self.auth_tt_l,
+            auth_ttl: self.auth_ttl,
             client_id: self.client_id,
-            iat_tt_l: self.iat_tt_l,
+            iat_ttl: self.iat_ttl,
             issuer: self.issuer,
         }
     }

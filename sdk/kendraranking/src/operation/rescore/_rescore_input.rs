@@ -20,8 +20,10 @@ impl RescoreInput {
         self.search_query.as_deref()
     }
     /// <p>The list of documents for Amazon Kendra Intelligent Ranking to rescore or rank on.</p>
-    pub fn documents(&self) -> ::std::option::Option<&[crate::types::Document]> {
-        self.documents.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.documents.is_none()`.
+    pub fn documents(&self) -> &[crate::types::Document] {
+        self.documents.as_deref().unwrap_or_default()
     }
 }
 impl RescoreInput {
@@ -41,6 +43,7 @@ pub struct RescoreInputBuilder {
 }
 impl RescoreInputBuilder {
     /// <p>The identifier of the rescore execution plan. A rescore execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning the <code>Rescore</code> API.</p>
+    /// This field is required.
     pub fn rescore_execution_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rescore_execution_plan_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl RescoreInputBuilder {
         &self.rescore_execution_plan_id
     }
     /// <p>The input query from the search service.</p>
+    /// This field is required.
     pub fn search_query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.search_query = ::std::option::Option::Some(input.into());
         self
@@ -89,7 +93,7 @@ impl RescoreInputBuilder {
         &self.documents
     }
     /// Consumes the builder and constructs a [`RescoreInput`](crate::operation::rescore::RescoreInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::rescore::RescoreInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::rescore::RescoreInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::rescore::RescoreInput {
             rescore_execution_plan_id: self.rescore_execution_plan_id,
             search_query: self.search_query,

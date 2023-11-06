@@ -27,6 +27,7 @@ pub struct DescribeMapRunInputBuilder {
 }
 impl DescribeMapRunInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that identifies a Map Run.</p>
+    /// This field is required.
     pub fn map_run_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.map_run_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeMapRunInputBuilder {
     /// Consumes the builder and constructs a [`DescribeMapRunInput`](crate::operation::describe_map_run::DescribeMapRunInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_map_run::DescribeMapRunInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_map_run::DescribeMapRunInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_map_run::DescribeMapRunInput {
             map_run_arn: self.map_run_arn,
         })

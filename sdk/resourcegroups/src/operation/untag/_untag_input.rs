@@ -14,8 +14,10 @@ impl UntagInput {
         self.arn.as_deref()
     }
     /// <p>The keys of the tags to be removed.</p>
-    pub fn keys(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.keys.is_none()`.
+    pub fn keys(&self) -> &[::std::string::String] {
+        self.keys.as_deref().unwrap_or_default()
     }
 }
 impl UntagInput {
@@ -34,6 +36,7 @@ pub struct UntagInputBuilder {
 }
 impl UntagInputBuilder {
     /// <p>The ARN of the resource group from which to remove tags. The command removed both the specified keys and any values associated with those keys.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -68,7 +71,7 @@ impl UntagInputBuilder {
         &self.keys
     }
     /// Consumes the builder and constructs a [`UntagInput`](crate::operation::untag::UntagInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::untag::UntagInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::untag::UntagInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::untag::UntagInput {
             arn: self.arn,
             keys: self.keys,

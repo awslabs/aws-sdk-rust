@@ -33,6 +33,7 @@ impl DeleteSystemTemplateInputBuilder {
     /// <p>The ID of the system to be deleted.</p>
     /// <p>The ID should be in the following format.</p>
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -53,7 +54,7 @@ impl DeleteSystemTemplateInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSystemTemplateInput`](crate::operation::delete_system_template::DeleteSystemTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_system_template::DeleteSystemTemplateInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_system_template::DeleteSystemTemplateInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_system_template::DeleteSystemTemplateInput { id: self.id })
     }

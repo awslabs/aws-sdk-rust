@@ -54,6 +54,7 @@ impl SearchThingsInputBuilder {
     /// <p>The ID of the entity to which the things are associated.</p>
     /// <p>The IDs should be in the following format.</p>
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
+    /// This field is required.
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
         self
@@ -114,7 +115,9 @@ impl SearchThingsInputBuilder {
         &self.namespace_version
     }
     /// Consumes the builder and constructs a [`SearchThingsInput`](crate::operation::search_things::SearchThingsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::search_things::SearchThingsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::search_things::SearchThingsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_things::SearchThingsInput {
             entity_id: self.entity_id,
             next_token: self.next_token,

@@ -29,8 +29,10 @@ impl RollbackConfiguration {
     /// <li> <p>To remove all currently specified triggers, specify an empty list for this parameter.</p> </li>
     /// </ul>
     /// <p>If a specified trigger is missing, the entire stack operation fails and is rolled back.</p>
-    pub fn rollback_triggers(&self) -> ::std::option::Option<&[crate::types::RollbackTrigger]> {
-        self.rollback_triggers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rollback_triggers.is_none()`.
+    pub fn rollback_triggers(&self) -> &[crate::types::RollbackTrigger] {
+        self.rollback_triggers.as_deref().unwrap_or_default()
     }
     /// <p>The amount of time, in minutes, during which CloudFormation should monitor all the rollback triggers after the stack creation or update operation deploys all necessary resources.</p>
     /// <p>The default is 0 minutes.</p>

@@ -85,7 +85,7 @@ impl ListFlywheelsInputBuilder {
     /// Consumes the builder and constructs a [`ListFlywheelsInput`](crate::operation::list_flywheels::ListFlywheelsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_flywheels::ListFlywheelsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_flywheels::ListFlywheelsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_flywheels::ListFlywheelsInput {
             filter: self.filter,
             next_token: self.next_token,

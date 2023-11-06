@@ -18,8 +18,10 @@ pub struct SearchOrganizationInsightsInput {
 }
 impl SearchOrganizationInsightsInput {
     /// <p>The ID of the Amazon Web Services account. </p>
-    pub fn account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.account_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
+    pub fn account_ids(&self) -> &[::std::string::String] {
+        self.account_ids.as_deref().unwrap_or_default()
     }
     /// <p> A time range used to specify when the behavior of an insight or anomaly started. </p>
     pub fn start_time_range(&self) -> ::std::option::Option<&crate::types::StartTimeRange> {
@@ -82,6 +84,7 @@ impl SearchOrganizationInsightsInputBuilder {
         &self.account_ids
     }
     /// <p> A time range used to specify when the behavior of an insight or anomaly started. </p>
+    /// This field is required.
     pub fn start_time_range(mut self, input: crate::types::StartTimeRange) -> Self {
         self.start_time_range = ::std::option::Option::Some(input);
         self
@@ -138,6 +141,7 @@ impl SearchOrganizationInsightsInputBuilder {
         &self.next_token
     }
     /// <p> The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::InsightType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -156,7 +160,7 @@ impl SearchOrganizationInsightsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_organization_insights::SearchOrganizationInsightsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::search_organization_insights::SearchOrganizationInsightsInput {
             account_ids: self.account_ids,

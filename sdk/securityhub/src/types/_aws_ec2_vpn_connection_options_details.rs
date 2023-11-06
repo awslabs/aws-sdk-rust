@@ -15,8 +15,10 @@ impl AwsEc2VpnConnectionOptionsDetails {
         self.static_routes_only
     }
     /// <p>The VPN tunnel options.</p>
-    pub fn tunnel_options(&self) -> ::std::option::Option<&[crate::types::AwsEc2VpnConnectionOptionsTunnelOptionsDetails]> {
-        self.tunnel_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tunnel_options.is_none()`.
+    pub fn tunnel_options(&self) -> &[crate::types::AwsEc2VpnConnectionOptionsTunnelOptionsDetails] {
+        self.tunnel_options.as_deref().unwrap_or_default()
     }
 }
 impl AwsEc2VpnConnectionOptionsDetails {

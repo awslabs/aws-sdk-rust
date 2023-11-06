@@ -34,6 +34,7 @@ pub struct CreateDirectoryInputBuilder {
 }
 impl CreateDirectoryInputBuilder {
     /// <p>The name of the <code>Directory</code>. Should be unique per account, per region.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl CreateDirectoryInputBuilder {
         &self.name
     }
     /// <p>The Amazon Resource Name (ARN) of the published schema that will be copied into the data <code>Directory</code>. For more information, see <code>arns</code>.</p>
+    /// This field is required.
     pub fn schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_arn = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl CreateDirectoryInputBuilder {
     /// Consumes the builder and constructs a [`CreateDirectoryInput`](crate::operation::create_directory::CreateDirectoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_directory::CreateDirectoryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_directory::CreateDirectoryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_directory::CreateDirectoryInput {
             name: self.name,
             schema_arn: self.schema_arn,

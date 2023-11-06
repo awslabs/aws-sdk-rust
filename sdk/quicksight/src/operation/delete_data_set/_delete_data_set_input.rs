@@ -34,6 +34,7 @@ pub struct DeleteDataSetInputBuilder {
 }
 impl DeleteDataSetInputBuilder {
     /// <p>The Amazon Web Services account ID.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteDataSetInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    /// This field is required.
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DeleteDataSetInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDataSetInput`](crate::operation::delete_data_set::DeleteDataSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_data_set::DeleteDataSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_data_set::DeleteDataSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_data_set::DeleteDataSetInput {
             aws_account_id: self.aws_account_id,
             data_set_id: self.data_set_id,

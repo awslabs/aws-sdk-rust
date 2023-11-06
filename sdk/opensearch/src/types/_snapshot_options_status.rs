@@ -35,6 +35,7 @@ pub struct SnapshotOptionsStatusBuilder {
 }
 impl SnapshotOptionsStatusBuilder {
     /// <p>The daily snapshot options specified for the domain.</p>
+    /// This field is required.
     pub fn options(mut self, input: crate::types::SnapshotOptions) -> Self {
         self.options = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl SnapshotOptionsStatusBuilder {
         &self.options
     }
     /// <p>The status of a daily automated snapshot.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self

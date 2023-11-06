@@ -34,14 +34,18 @@ impl EndpointDetails {
     /// <p>A list of address allocation IDs that are required to attach an Elastic IP address to your server's endpoint.</p> <note>
     /// <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC</code> and it is only valid in the <code>UpdateServer</code> API.</p>
     /// </note>
-    pub fn address_allocation_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.address_allocation_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.address_allocation_ids.is_none()`.
+    pub fn address_allocation_ids(&self) -> &[::std::string::String] {
+        self.address_allocation_ids.as_deref().unwrap_or_default()
     }
     /// <p>A list of subnet IDs that are required to host your server endpoint in your VPC.</p> <note>
     /// <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.</p>
     /// </note>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        self.subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>The identifier of the VPC endpoint.</p> <note>
     /// <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p>
@@ -60,8 +64,10 @@ impl EndpointDetails {
     /// <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.</p>
     /// <p>You can edit the <code>SecurityGroupIds</code> property in the <a href="https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateServer.html">UpdateServer</a> API only if you are changing the <code>EndpointType</code> from <code>PUBLIC</code> or <code>VPC_ENDPOINT</code> to <code>VPC</code>. To change security groups associated with your server's VPC endpoint after creation, use the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcEndpoint.html">ModifyVpcEndpoint</a> API.</p>
     /// </note>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
 }
 impl EndpointDetails {

@@ -9,8 +9,10 @@ pub struct DescribeTargetHealthOutput {
 }
 impl DescribeTargetHealthOutput {
     /// <p>Information about the health of the targets.</p>
-    pub fn target_health_descriptions(&self) -> ::std::option::Option<&[crate::types::TargetHealthDescription]> {
-        self.target_health_descriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_health_descriptions.is_none()`.
+    pub fn target_health_descriptions(&self) -> &[crate::types::TargetHealthDescription] {
+        self.target_health_descriptions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeTargetHealthOutput {

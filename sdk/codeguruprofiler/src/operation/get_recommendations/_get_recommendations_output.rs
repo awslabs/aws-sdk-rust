@@ -5,37 +5,40 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRecommendationsOutput {
     /// <p>The name of the profiling group the analysis data is about.</p>
-    pub profiling_group_name: ::std::option::Option<::std::string::String>,
+    pub profiling_group_name: ::std::string::String,
     /// <p> The start time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub profile_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub profile_start_time: ::aws_smithy_types::DateTime,
     /// <p> The end time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub profile_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub profile_end_time: ::aws_smithy_types::DateTime,
     /// <p>The list of recommendations that the analysis found for this profile.</p>
-    pub recommendations: ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>,
+    pub recommendations: ::std::vec::Vec<crate::types::Recommendation>,
     /// <p> The list of anomalies that the analysis has found for this profile. </p>
-    pub anomalies: ::std::option::Option<::std::vec::Vec<crate::types::Anomaly>>,
+    pub anomalies: ::std::vec::Vec<crate::types::Anomaly>,
     _request_id: Option<String>,
 }
 impl GetRecommendationsOutput {
     /// <p>The name of the profiling group the analysis data is about.</p>
-    pub fn profiling_group_name(&self) -> ::std::option::Option<&str> {
-        self.profiling_group_name.as_deref()
+    pub fn profiling_group_name(&self) -> &str {
+        use std::ops::Deref;
+        self.profiling_group_name.deref()
     }
     /// <p> The start time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn profile_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.profile_start_time.as_ref()
+    pub fn profile_start_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.profile_start_time
     }
     /// <p> The end time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn profile_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.profile_end_time.as_ref()
+    pub fn profile_end_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.profile_end_time
     }
     /// <p>The list of recommendations that the analysis found for this profile.</p>
-    pub fn recommendations(&self) -> ::std::option::Option<&[crate::types::Recommendation]> {
-        self.recommendations.as_deref()
+    pub fn recommendations(&self) -> &[crate::types::Recommendation] {
+        use std::ops::Deref;
+        self.recommendations.deref()
     }
     /// <p> The list of anomalies that the analysis has found for this profile. </p>
-    pub fn anomalies(&self) -> ::std::option::Option<&[crate::types::Anomaly]> {
-        self.anomalies.as_deref()
+    pub fn anomalies(&self) -> &[crate::types::Anomaly] {
+        use std::ops::Deref;
+        self.anomalies.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetRecommendationsOutput {
@@ -63,6 +66,7 @@ pub struct GetRecommendationsOutputBuilder {
 }
 impl GetRecommendationsOutputBuilder {
     /// <p>The name of the profiling group the analysis data is about.</p>
+    /// This field is required.
     pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profiling_group_name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +81,7 @@ impl GetRecommendationsOutputBuilder {
         &self.profiling_group_name
     }
     /// <p> The start time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    /// This field is required.
     pub fn profile_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.profile_start_time = ::std::option::Option::Some(input);
         self
@@ -91,6 +96,7 @@ impl GetRecommendationsOutputBuilder {
         &self.profile_start_time
     }
     /// <p> The end time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    /// This field is required.
     pub fn profile_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.profile_end_time = ::std::option::Option::Some(input);
         self
@@ -154,14 +160,48 @@ impl GetRecommendationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetRecommendationsOutput`](crate::operation::get_recommendations::GetRecommendationsOutput).
-    pub fn build(self) -> crate::operation::get_recommendations::GetRecommendationsOutput {
-        crate::operation::get_recommendations::GetRecommendationsOutput {
-            profiling_group_name: self.profiling_group_name,
-            profile_start_time: self.profile_start_time,
-            profile_end_time: self.profile_end_time,
-            recommendations: self.recommendations,
-            anomalies: self.anomalies,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`profiling_group_name`](crate::operation::get_recommendations::builders::GetRecommendationsOutputBuilder::profiling_group_name)
+    /// - [`profile_start_time`](crate::operation::get_recommendations::builders::GetRecommendationsOutputBuilder::profile_start_time)
+    /// - [`profile_end_time`](crate::operation::get_recommendations::builders::GetRecommendationsOutputBuilder::profile_end_time)
+    /// - [`recommendations`](crate::operation::get_recommendations::builders::GetRecommendationsOutputBuilder::recommendations)
+    /// - [`anomalies`](crate::operation::get_recommendations::builders::GetRecommendationsOutputBuilder::anomalies)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_recommendations::GetRecommendationsOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_recommendations::GetRecommendationsOutput {
+            profiling_group_name: self.profiling_group_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "profiling_group_name",
+                    "profiling_group_name was not specified but it is required when building GetRecommendationsOutput",
+                )
+            })?,
+            profile_start_time: self.profile_start_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "profile_start_time",
+                    "profile_start_time was not specified but it is required when building GetRecommendationsOutput",
+                )
+            })?,
+            profile_end_time: self.profile_end_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "profile_end_time",
+                    "profile_end_time was not specified but it is required when building GetRecommendationsOutput",
+                )
+            })?,
+            recommendations: self.recommendations.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "recommendations",
+                    "recommendations was not specified but it is required when building GetRecommendationsOutput",
+                )
+            })?,
+            anomalies: self.anomalies.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "anomalies",
+                    "anomalies was not specified but it is required when building GetRecommendationsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

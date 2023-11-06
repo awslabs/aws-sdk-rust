@@ -109,6 +109,7 @@ pub struct ConfirmForgotPasswordInputBuilder {
 }
 impl ConfirmForgotPasswordInputBuilder {
     /// <p>The app client ID of the app associated with the user pool.</p>
+    /// This field is required.
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
         self
@@ -137,6 +138,7 @@ impl ConfirmForgotPasswordInputBuilder {
         &self.secret_hash
     }
     /// <p>The user name of the user for whom you want to enter a code to retrieve a forgotten password.</p>
+    /// This field is required.
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self
@@ -151,6 +153,7 @@ impl ConfirmForgotPasswordInputBuilder {
         &self.username
     }
     /// <p>The confirmation code from your user's request to reset their password. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html">ForgotPassword</a>.</p>
+    /// This field is required.
     pub fn confirmation_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.confirmation_code = ::std::option::Option::Some(input.into());
         self
@@ -165,6 +168,7 @@ impl ConfirmForgotPasswordInputBuilder {
         &self.confirmation_code
     }
     /// <p>The new password that your user wants to set.</p>
+    /// This field is required.
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
         self
@@ -263,7 +267,7 @@ impl ConfirmForgotPasswordInputBuilder {
     /// Consumes the builder and constructs a [`ConfirmForgotPasswordInput`](crate::operation::confirm_forgot_password::ConfirmForgotPasswordInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::confirm_forgot_password::ConfirmForgotPasswordInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::confirm_forgot_password::ConfirmForgotPasswordInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::confirm_forgot_password::ConfirmForgotPasswordInput {
             client_id: self.client_id,

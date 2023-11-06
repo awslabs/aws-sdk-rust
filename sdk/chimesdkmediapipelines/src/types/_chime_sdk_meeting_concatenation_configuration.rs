@@ -28,6 +28,7 @@ pub struct ChimeSdkMeetingConcatenationConfigurationBuilder {
 }
 impl ChimeSdkMeetingConcatenationConfigurationBuilder {
     /// <p>The configuration for the artifacts in an Amazon Chime SDK meeting concatenation.</p>
+    /// This field is required.
     pub fn artifacts_configuration(mut self, input: crate::types::ArtifactsConcatenationConfiguration) -> Self {
         self.artifacts_configuration = ::std::option::Option::Some(input);
         self

@@ -38,8 +38,8 @@ pub fn de_put_service_quota_increase_request_into_template_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "AWSServiceAccessNotEnabledException" => crate::operation::put_service_quota_increase_request_into_template::PutServiceQuotaIncreaseRequestIntoTemplateError::AwsServiceAccessNotEnabledException({
@@ -54,8 +54,8 @@ pub fn de_put_service_quota_increase_request_into_template_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "DependencyAccessDeniedException" => crate::operation::put_service_quota_increase_request_into_template::PutServiceQuotaIncreaseRequestIntoTemplateError::DependencyAccessDeniedException({
@@ -70,8 +70,8 @@ pub fn de_put_service_quota_increase_request_into_template_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "IllegalArgumentException" => crate::operation::put_service_quota_increase_request_into_template::PutServiceQuotaIncreaseRequestIntoTemplateError::IllegalArgumentException({
@@ -86,8 +86,8 @@ pub fn de_put_service_quota_increase_request_into_template_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NoAvailableOrganizationException" => crate::operation::put_service_quota_increase_request_into_template::PutServiceQuotaIncreaseRequestIntoTemplateError::NoAvailableOrganizationException({
@@ -102,8 +102,8 @@ pub fn de_put_service_quota_increase_request_into_template_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NoSuchResourceException" => crate::operation::put_service_quota_increase_request_into_template::PutServiceQuotaIncreaseRequestIntoTemplateError::NoSuchResourceException({
@@ -118,8 +118,8 @@ pub fn de_put_service_quota_increase_request_into_template_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "QuotaExceededException" => crate::operation::put_service_quota_increase_request_into_template::PutServiceQuotaIncreaseRequestIntoTemplateError::QuotaExceededException({
@@ -134,8 +134,8 @@ pub fn de_put_service_quota_increase_request_into_template_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ServiceException" => crate::operation::put_service_quota_increase_request_into_template::PutServiceQuotaIncreaseRequestIntoTemplateError::ServiceException({
@@ -150,8 +150,8 @@ pub fn de_put_service_quota_increase_request_into_template_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TemplatesNotAvailableInRegionException" => crate::operation::put_service_quota_increase_request_into_template::PutServiceQuotaIncreaseRequestIntoTemplateError::TemplatesNotAvailableInRegionException({
@@ -166,8 +166,8 @@ pub fn de_put_service_quota_increase_request_into_template_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyRequestsException" => crate::operation::put_service_quota_increase_request_into_template::PutServiceQuotaIncreaseRequestIntoTemplateError::TooManyRequestsException({
@@ -182,8 +182,8 @@ pub fn de_put_service_quota_increase_request_into_template_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::put_service_quota_increase_request_into_template::PutServiceQuotaIncreaseRequestIntoTemplateError::generic(generic)
@@ -214,7 +214,7 @@ pub fn de_put_service_quota_increase_request_into_template_http_response(
 
 pub fn ser_put_service_quota_increase_request_into_template_input(
     input: &crate::operation::put_service_quota_increase_request_into_template::PutServiceQuotaIncreaseRequestIntoTemplateInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_put_service_quota_increase_request_into_template_input::ser_put_service_quota_increase_request_into_template_input(
@@ -222,7 +222,7 @@ pub fn ser_put_service_quota_increase_request_into_template_input(
         input,
     )?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_put_service_quota_increase_request_into_template(

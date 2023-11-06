@@ -49,8 +49,8 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = "0.56.1"
-//! aws-sdk-codedeploy = "0.34.0"
+//! aws-config = "0.57.1"
+//! aws-sdk-codedeploy = "0.35.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -203,6 +203,8 @@ pub mod primitives;
 
 /// Data structures used by operation inputs/outputs.
 pub mod types;
+
+mod auth_plugin;
 
 pub(crate) mod protocol_serde;
 

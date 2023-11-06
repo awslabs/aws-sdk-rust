@@ -27,6 +27,7 @@ pub struct GetPipelineChangeProgressInputBuilder {
 }
 impl GetPipelineChangeProgressInputBuilder {
     /// <p>The name of the pipeline.</p>
+    /// This field is required.
     pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetPipelineChangeProgressInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_pipeline_change_progress::GetPipelineChangeProgressInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_pipeline_change_progress::GetPipelineChangeProgressInput {
             pipeline_name: self.pipeline_name,

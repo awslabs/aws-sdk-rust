@@ -9,8 +9,10 @@ pub struct GetBlacklistReportsInput {
 }
 impl GetBlacklistReportsInput {
     /// <p>A list of IP addresses that you want to retrieve blacklist information about. You can only specify the dedicated IP addresses that you use to send email using Amazon SES or Amazon Pinpoint.</p>
-    pub fn blacklist_item_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.blacklist_item_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.blacklist_item_names.is_none()`.
+    pub fn blacklist_item_names(&self) -> &[::std::string::String] {
+        self.blacklist_item_names.as_deref().unwrap_or_default()
     }
 }
 impl GetBlacklistReportsInput {
@@ -50,7 +52,7 @@ impl GetBlacklistReportsInputBuilder {
     /// Consumes the builder and constructs a [`GetBlacklistReportsInput`](crate::operation::get_blacklist_reports::GetBlacklistReportsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_blacklist_reports::GetBlacklistReportsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_blacklist_reports::GetBlacklistReportsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_blacklist_reports::GetBlacklistReportsInput {
             blacklist_item_names: self.blacklist_item_names,

@@ -34,6 +34,7 @@ pub struct DeleteResourceServerInputBuilder {
 }
 impl DeleteResourceServerInputBuilder {
     /// <p>The user pool ID for the user pool that hosts the resource server.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteResourceServerInputBuilder {
         &self.user_pool_id
     }
     /// <p>The identifier for the resource server.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DeleteResourceServerInputBuilder {
     /// Consumes the builder and constructs a [`DeleteResourceServerInput`](crate::operation::delete_resource_server::DeleteResourceServerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_resource_server::DeleteResourceServerInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_resource_server::DeleteResourceServerInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_resource_server::DeleteResourceServerInput {
             user_pool_id: self.user_pool_id,

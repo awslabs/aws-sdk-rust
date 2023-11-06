@@ -34,6 +34,7 @@ pub struct UpdateGatewayInputBuilder {
 }
 impl UpdateGatewayInputBuilder {
     /// <p>The ID of the gateway to update.</p>
+    /// This field is required.
     pub fn gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateGatewayInputBuilder {
         &self.gateway_id
     }
     /// <p>A unique, friendly name for the gateway.</p>
+    /// This field is required.
     pub fn gateway_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl UpdateGatewayInputBuilder {
     /// Consumes the builder and constructs a [`UpdateGatewayInput`](crate::operation::update_gateway::UpdateGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_gateway::UpdateGatewayInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_gateway::UpdateGatewayInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_gateway::UpdateGatewayInput {
             gateway_id: self.gateway_id,
             gateway_name: self.gateway_name,

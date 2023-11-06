@@ -2,12 +2,12 @@
 pub fn ser_member_group(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MemberGroup,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.group_id {
-        object.key("GroupId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("GroupId").string(input.group_id.as_str());
     }
-    if let Some(var_2) = &input.data_source_id {
-        object.key("DataSourceId").string(var_2.as_str());
+    if let Some(var_1) = &input.data_source_id {
+        object.key("DataSourceId").string(var_1.as_str());
     }
     Ok(())
 }

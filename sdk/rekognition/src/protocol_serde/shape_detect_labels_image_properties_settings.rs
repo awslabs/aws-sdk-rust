@@ -2,7 +2,7 @@
 pub fn ser_detect_labels_image_properties_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DetectLabelsImagePropertiesSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.max_dominant_colors != 0 {
         object.key("MaxDominantColors").number(
             #[allow(clippy::useless_conversion)]

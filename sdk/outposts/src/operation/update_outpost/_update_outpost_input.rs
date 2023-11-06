@@ -48,6 +48,7 @@ pub struct UpdateOutpostInputBuilder {
 }
 impl UpdateOutpostInputBuilder {
     /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
+    /// This field is required.
     pub fn outpost_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outpost_id = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,7 @@ impl UpdateOutpostInputBuilder {
     /// Consumes the builder and constructs a [`UpdateOutpostInput`](crate::operation::update_outpost::UpdateOutpostInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_outpost::UpdateOutpostInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_outpost::UpdateOutpostInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_outpost::UpdateOutpostInput {
             outpost_id: self.outpost_id,
             name: self.name,

@@ -85,7 +85,7 @@ impl GetEntityTypesInputBuilder {
     /// Consumes the builder and constructs a [`GetEntityTypesInput`](crate::operation::get_entity_types::GetEntityTypesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_entity_types::GetEntityTypesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_entity_types::GetEntityTypesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_entity_types::GetEntityTypesInput {
             name: self.name,
             next_token: self.next_token,

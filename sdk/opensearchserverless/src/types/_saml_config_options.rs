@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SamlConfigOptions {
     /// <p>The XML IdP metadata file generated from your identity provider.</p>
-    pub metadata: ::std::option::Option<::std::string::String>,
+    pub metadata: ::std::string::String,
     /// <p>A user attribute for this SAML integration.</p>
     pub user_attribute: ::std::option::Option<::std::string::String>,
     /// <p>The group attribute for this SAML integration.</p>
@@ -15,8 +15,9 @@ pub struct SamlConfigOptions {
 }
 impl SamlConfigOptions {
     /// <p>The XML IdP metadata file generated from your identity provider.</p>
-    pub fn metadata(&self) -> ::std::option::Option<&str> {
-        self.metadata.as_deref()
+    pub fn metadata(&self) -> &str {
+        use std::ops::Deref;
+        self.metadata.deref()
     }
     /// <p>A user attribute for this SAML integration.</p>
     pub fn user_attribute(&self) -> ::std::option::Option<&str> {
@@ -49,6 +50,7 @@ pub struct SamlConfigOptionsBuilder {
 }
 impl SamlConfigOptionsBuilder {
     /// <p>The XML IdP metadata file generated from your identity provider.</p>
+    /// This field is required.
     pub fn metadata(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metadata = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +107,19 @@ impl SamlConfigOptionsBuilder {
         &self.session_timeout
     }
     /// Consumes the builder and constructs a [`SamlConfigOptions`](crate::types::SamlConfigOptions).
-    pub fn build(self) -> crate::types::SamlConfigOptions {
-        crate::types::SamlConfigOptions {
-            metadata: self.metadata,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`metadata`](crate::types::builders::SamlConfigOptionsBuilder::metadata)
+    pub fn build(self) -> ::std::result::Result<crate::types::SamlConfigOptions, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SamlConfigOptions {
+            metadata: self.metadata.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "metadata",
+                    "metadata was not specified but it is required when building SamlConfigOptions",
+                )
+            })?,
             user_attribute: self.user_attribute,
             group_attribute: self.group_attribute,
             session_timeout: self.session_timeout,
-        }
+        })
     }
 }

@@ -2,7 +2,7 @@
 pub fn ser_output_location_ref(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OutputLocationRef,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.destination_ref_id {
         object.key("destinationRefId").string(var_1.as_str());
     }

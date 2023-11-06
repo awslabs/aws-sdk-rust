@@ -51,8 +51,10 @@ impl OptionGroupOptionSetting {
         self.is_required
     }
     /// <p>The minimum DB engine version required for the corresponding allowed value for this option setting.</p>
-    pub fn minimum_engine_version_per_allowed_value(&self) -> ::std::option::Option<&[crate::types::MinimumEngineVersionPerAllowedValue]> {
-        self.minimum_engine_version_per_allowed_value.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.minimum_engine_version_per_allowed_value.is_none()`.
+    pub fn minimum_engine_version_per_allowed_value(&self) -> &[crate::types::MinimumEngineVersionPerAllowedValue] {
+        self.minimum_engine_version_per_allowed_value.as_deref().unwrap_or_default()
     }
 }
 impl OptionGroupOptionSetting {

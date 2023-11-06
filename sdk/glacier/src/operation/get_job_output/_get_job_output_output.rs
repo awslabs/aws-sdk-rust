@@ -5,7 +5,7 @@
 #[derive(::std::fmt::Debug)]
 pub struct GetJobOutputOutput {
     /// <p>The job data, either archive data or inventory data.</p>
-    pub body: ::aws_smithy_http::byte_stream::ByteStream,
+    pub body: ::aws_smithy_types::byte_stream::ByteStream,
     /// <p>The checksum of the data in the response. This header is returned only when retrieving the output for an archive retrieval job. Furthermore, this header appears only under the following conditions:</p>
     /// <ul>
     /// <li> <p>You get the entire range of the archive.</p> </li>
@@ -27,7 +27,7 @@ pub struct GetJobOutputOutput {
 }
 impl GetJobOutputOutput {
     /// <p>The job data, either archive data or inventory data.</p>
-    pub fn body(&self) -> &::aws_smithy_http::byte_stream::ByteStream {
+    pub fn body(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
         &self.body
     }
     /// <p>The checksum of the data in the response. This header is returned only when retrieving the output for an archive retrieval job. Furthermore, this header appears only under the following conditions:</p>
@@ -76,7 +76,7 @@ impl GetJobOutputOutput {
 #[non_exhaustive]
 #[derive(::std::default::Default, ::std::fmt::Debug)]
 pub struct GetJobOutputOutputBuilder {
-    pub(crate) body: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
+    pub(crate) body: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,
     pub(crate) checksum: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<i32>,
     pub(crate) content_range: ::std::option::Option<::std::string::String>,
@@ -87,17 +87,17 @@ pub struct GetJobOutputOutputBuilder {
 }
 impl GetJobOutputOutputBuilder {
     /// <p>The job data, either archive data or inventory data.</p>
-    pub fn body(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
+    pub fn body(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.body = ::std::option::Option::Some(input);
         self
     }
     /// <p>The job data, either archive data or inventory data.</p>
-    pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
+    pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.body = input;
         self
     }
     /// <p>The job data, either archive data or inventory data.</p>
-    pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         &self.body
     }
     /// <p>The checksum of the data in the response. This header is returned only when retrieving the output for an archive retrieval job. Furthermore, this header appears only under the following conditions:</p>

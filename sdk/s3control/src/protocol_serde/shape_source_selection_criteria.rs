@@ -2,7 +2,7 @@
 pub fn ser_source_selection_criteria(
     input: &crate::types::SourceSelectionCriteria,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_1) = &input.sse_kms_encrypted_objects {
@@ -17,6 +17,7 @@ pub fn ser_source_selection_criteria(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_source_selection_criteria(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::SourceSelectionCriteria, ::aws_smithy_xml::decode::XmlDecodeError> {

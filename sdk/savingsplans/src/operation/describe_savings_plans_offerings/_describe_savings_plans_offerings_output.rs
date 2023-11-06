@@ -11,8 +11,10 @@ pub struct DescribeSavingsPlansOfferingsOutput {
 }
 impl DescribeSavingsPlansOfferingsOutput {
     /// <p>Information about the Savings Plans offerings.</p>
-    pub fn search_results(&self) -> ::std::option::Option<&[crate::types::SavingsPlanOffering]> {
-        self.search_results.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.search_results.is_none()`.
+    pub fn search_results(&self) -> &[crate::types::SavingsPlanOffering] {
+        self.search_results.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

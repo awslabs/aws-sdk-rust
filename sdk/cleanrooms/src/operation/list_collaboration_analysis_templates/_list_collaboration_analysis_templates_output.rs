@@ -6,7 +6,7 @@ pub struct ListCollaborationAnalysisTemplatesOutput {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The metadata of the analysis template within a collaboration.</p>
-    pub collaboration_analysis_template_summaries: ::std::option::Option<::std::vec::Vec<crate::types::CollaborationAnalysisTemplateSummary>>,
+    pub collaboration_analysis_template_summaries: ::std::vec::Vec<crate::types::CollaborationAnalysisTemplateSummary>,
     _request_id: Option<String>,
 }
 impl ListCollaborationAnalysisTemplatesOutput {
@@ -15,8 +15,9 @@ impl ListCollaborationAnalysisTemplatesOutput {
         self.next_token.as_deref()
     }
     /// <p>The metadata of the analysis template within a collaboration.</p>
-    pub fn collaboration_analysis_template_summaries(&self) -> ::std::option::Option<&[crate::types::CollaborationAnalysisTemplateSummary]> {
-        self.collaboration_analysis_template_summaries.as_deref()
+    pub fn collaboration_analysis_template_summaries(&self) -> &[crate::types::CollaborationAnalysisTemplateSummary] {
+        use std::ops::Deref;
+        self.collaboration_analysis_template_summaries.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListCollaborationAnalysisTemplatesOutput {
@@ -89,11 +90,25 @@ impl ListCollaborationAnalysisTemplatesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListCollaborationAnalysisTemplatesOutput`](crate::operation::list_collaboration_analysis_templates::ListCollaborationAnalysisTemplatesOutput).
-    pub fn build(self) -> crate::operation::list_collaboration_analysis_templates::ListCollaborationAnalysisTemplatesOutput {
-        crate::operation::list_collaboration_analysis_templates::ListCollaborationAnalysisTemplatesOutput {
-            next_token: self.next_token,
-            collaboration_analysis_template_summaries: self.collaboration_analysis_template_summaries,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`collaboration_analysis_template_summaries`](crate::operation::list_collaboration_analysis_templates::builders::ListCollaborationAnalysisTemplatesOutputBuilder::collaboration_analysis_template_summaries)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_collaboration_analysis_templates::ListCollaborationAnalysisTemplatesOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::list_collaboration_analysis_templates::ListCollaborationAnalysisTemplatesOutput {
+                next_token: self.next_token
+                ,
+                collaboration_analysis_template_summaries: self.collaboration_analysis_template_summaries
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("collaboration_analysis_template_summaries", "collaboration_analysis_template_summaries was not specified but it is required when building ListCollaborationAnalysisTemplatesOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }

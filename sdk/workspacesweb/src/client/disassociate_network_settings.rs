@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DisassociateNetworkSettings`](crate::operation::disassociate_network_settings::builders::DisassociateNetworkSettingsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`portal_arn(impl Into<String>)`](crate::operation::disassociate_network_settings::builders::DisassociateNetworkSettingsFluentBuilder::portal_arn) / [`set_portal_arn(Option<String>)`](crate::operation::disassociate_network_settings::builders::DisassociateNetworkSettingsFluentBuilder::set_portal_arn): <p>The ARN of the web portal.</p>
+    ///   - [`portal_arn(impl Into<String>)`](crate::operation::disassociate_network_settings::builders::DisassociateNetworkSettingsFluentBuilder::portal_arn) / [`set_portal_arn(Option<String>)`](crate::operation::disassociate_network_settings::builders::DisassociateNetworkSettingsFluentBuilder::set_portal_arn):<br>required: **true**<br><p>The ARN of the web portal.</p><br>
     /// - On success, responds with [`DisassociateNetworkSettingsOutput`](crate::operation::disassociate_network_settings::DisassociateNetworkSettingsOutput)
     /// - On failure, responds with [`SdkError<DisassociateNetworkSettingsError>`](crate::operation::disassociate_network_settings::DisassociateNetworkSettingsError)
     pub fn disassociate_network_settings(

@@ -22,8 +22,10 @@ impl CreateSchemaMappingInput {
         self.description.as_deref()
     }
     /// <p>A list of <code>MappedInputFields</code>. Each <code>MappedInputField</code> corresponds to a column the source data table, and contains column name plus additional information that Entity Resolution uses for matching.</p>
-    pub fn mapped_input_fields(&self) -> ::std::option::Option<&[crate::types::SchemaInputAttribute]> {
-        self.mapped_input_fields.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mapped_input_fields.is_none()`.
+    pub fn mapped_input_fields(&self) -> &[crate::types::SchemaInputAttribute] {
+        self.mapped_input_fields.as_deref().unwrap_or_default()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -48,6 +50,7 @@ pub struct CreateSchemaMappingInputBuilder {
 }
 impl CreateSchemaMappingInputBuilder {
     /// <p>The name of the schema. There can't be multiple <code>SchemaMappings</code> with the same name.</p>
+    /// This field is required.
     pub fn schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_name = ::std::option::Option::Some(input.into());
         self
@@ -118,7 +121,7 @@ impl CreateSchemaMappingInputBuilder {
     /// Consumes the builder and constructs a [`CreateSchemaMappingInput`](crate::operation::create_schema_mapping::CreateSchemaMappingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_schema_mapping::CreateSchemaMappingInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_schema_mapping::CreateSchemaMappingInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_schema_mapping::CreateSchemaMappingInput {
             schema_name: self.schema_name,

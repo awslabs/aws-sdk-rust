@@ -9,7 +9,7 @@ pub struct SearchForPositionResult {
     /// <p>The distance in meters of a great-circle arc between the query position and the result.</p> <note>
     /// <p>A great-circle arc is the shortest path on a sphere, in this case the Earth. This returns the shortest distance between two locations.</p>
     /// </note>
-    pub distance: ::std::option::Option<f64>,
+    pub distance: f64,
     /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
     /// <p>For <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE or Grab as a data provider.</p>
     /// </note>
@@ -23,7 +23,7 @@ impl SearchForPositionResult {
     /// <p>The distance in meters of a great-circle arc between the query position and the result.</p> <note>
     /// <p>A great-circle arc is the shortest path on a sphere, in this case the Earth. This returns the shortest distance between two locations.</p>
     /// </note>
-    pub fn distance(&self) -> ::std::option::Option<f64> {
+    pub fn distance(&self) -> f64 {
         self.distance
     }
     /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
@@ -50,6 +50,7 @@ pub struct SearchForPositionResultBuilder {
 }
 impl SearchForPositionResultBuilder {
     /// <p>Details about the search result, such as its address and position.</p>
+    /// This field is required.
     pub fn place(mut self, input: crate::types::Place) -> Self {
         self.place = ::std::option::Option::Some(input);
         self
@@ -66,6 +67,7 @@ impl SearchForPositionResultBuilder {
     /// <p>The distance in meters of a great-circle arc between the query position and the result.</p> <note>
     /// <p>A great-circle arc is the shortest path on a sphere, in this case the Earth. This returns the shortest distance between two locations.</p>
     /// </note>
+    /// This field is required.
     pub fn distance(mut self, input: f64) -> Self {
         self.distance = ::std::option::Option::Some(input);
         self
@@ -104,11 +106,18 @@ impl SearchForPositionResultBuilder {
         &self.place_id
     }
     /// Consumes the builder and constructs a [`SearchForPositionResult`](crate::types::SearchForPositionResult).
-    pub fn build(self) -> crate::types::SearchForPositionResult {
-        crate::types::SearchForPositionResult {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`distance`](crate::types::builders::SearchForPositionResultBuilder::distance)
+    pub fn build(self) -> ::std::result::Result<crate::types::SearchForPositionResult, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SearchForPositionResult {
             place: self.place,
-            distance: self.distance,
+            distance: self.distance.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "distance",
+                    "distance was not specified but it is required when building SearchForPositionResult",
+                )
+            })?,
             place_id: self.place_id,
-        }
+        })
     }
 }

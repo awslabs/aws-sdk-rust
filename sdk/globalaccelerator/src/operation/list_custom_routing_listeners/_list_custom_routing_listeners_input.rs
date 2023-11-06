@@ -41,6 +41,7 @@ pub struct ListCustomRoutingListenersInputBuilder {
 }
 impl ListCustomRoutingListenersInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the accelerator to list listeners for.</p>
+    /// This field is required.
     pub fn accelerator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accelerator_arn = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListCustomRoutingListenersInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_custom_routing_listeners::ListCustomRoutingListenersInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_custom_routing_listeners::ListCustomRoutingListenersInput {
             accelerator_arn: self.accelerator_arn,

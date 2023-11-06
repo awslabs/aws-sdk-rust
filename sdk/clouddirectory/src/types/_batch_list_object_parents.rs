@@ -42,6 +42,7 @@ pub struct BatchListObjectParentsBuilder {
 }
 impl BatchListObjectParentsBuilder {
     /// <p>The reference that identifies an object.</p>
+    /// This field is required.
     pub fn object_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.object_reference = ::std::option::Option::Some(input);
         self

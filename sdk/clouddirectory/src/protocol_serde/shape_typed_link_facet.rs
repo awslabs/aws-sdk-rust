@@ -2,30 +2,30 @@
 pub fn ser_typed_link_facet(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TypedLinkFacet,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("Name").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.attributes {
-        let mut array_3 = object.key("Attributes").start_array();
-        for item_4 in var_2 {
+    {
+        let mut array_1 = object.key("Attributes").start_array();
+        for item_2 in &input.attributes {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_typed_link_attribute_definition::ser_typed_link_attribute_definition(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_3 = array_1.value().start_object();
+                crate::protocol_serde::shape_typed_link_attribute_definition::ser_typed_link_attribute_definition(&mut object_3, item_2)?;
+                object_3.finish();
             }
         }
-        array_3.finish();
+        array_1.finish();
     }
-    if let Some(var_6) = &input.identity_attribute_order {
-        let mut array_7 = object.key("IdentityAttributeOrder").start_array();
-        for item_8 in var_6 {
+    {
+        let mut array_4 = object.key("IdentityAttributeOrder").start_array();
+        for item_5 in &input.identity_attribute_order {
             {
-                array_7.value().string(item_8.as_str());
+                array_4.value().string(item_5.as_str());
             }
         }
-        array_7.finish();
+        array_4.finish();
     }
     Ok(())
 }

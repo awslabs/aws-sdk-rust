@@ -45,8 +45,10 @@ impl GetSecretValueOutput {
         self.secret_string.as_deref()
     }
     /// <p>A list of all of the staging labels currently attached to this version of the secret.</p>
-    pub fn version_stages(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.version_stages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.version_stages.is_none()`.
+    pub fn version_stages(&self) -> &[::std::string::String] {
+        self.version_stages.as_deref().unwrap_or_default()
     }
     /// <p>The date and time that this version of the secret was created. If you don't specify which version in <code>VersionId</code> or <code>VersionStage</code>, then Secrets Manager uses the <code>AWSCURRENT</code> version.</p>
     pub fn created_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

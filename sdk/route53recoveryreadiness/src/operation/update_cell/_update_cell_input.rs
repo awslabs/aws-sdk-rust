@@ -14,8 +14,10 @@ impl UpdateCellInput {
         self.cell_name.as_deref()
     }
     /// <p>A list of cell Amazon Resource Names (ARNs), which completely replaces the previous list.</p>
-    pub fn cells(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cells.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cells.is_none()`.
+    pub fn cells(&self) -> &[::std::string::String] {
+        self.cells.as_deref().unwrap_or_default()
     }
 }
 impl UpdateCellInput {
@@ -34,6 +36,7 @@ pub struct UpdateCellInputBuilder {
 }
 impl UpdateCellInputBuilder {
     /// <p>The name of the cell.</p>
+    /// This field is required.
     pub fn cell_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cell_name = ::std::option::Option::Some(input.into());
         self
@@ -68,7 +71,7 @@ impl UpdateCellInputBuilder {
         &self.cells
     }
     /// Consumes the builder and constructs a [`UpdateCellInput`](crate::operation::update_cell::UpdateCellInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_cell::UpdateCellInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_cell::UpdateCellInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_cell::UpdateCellInput {
             cell_name: self.cell_name,
             cells: self.cells,

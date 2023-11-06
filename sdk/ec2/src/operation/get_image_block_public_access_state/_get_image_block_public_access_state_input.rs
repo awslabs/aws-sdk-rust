@@ -45,7 +45,7 @@ impl GetImageBlockPublicAccessStateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_image_block_public_access_state::GetImageBlockPublicAccessStateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_image_block_public_access_state::GetImageBlockPublicAccessStateInput { dry_run: self.dry_run },

@@ -57,8 +57,10 @@ impl AuditFinding {
         self.non_compliant_resource.as_ref()
     }
     /// <p>The list of related resources.</p>
-    pub fn related_resources(&self) -> ::std::option::Option<&[crate::types::RelatedResource]> {
-        self.related_resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.related_resources.is_none()`.
+    pub fn related_resources(&self) -> &[crate::types::RelatedResource] {
+        self.related_resources.as_deref().unwrap_or_default()
     }
     /// <p>The reason the resource was noncompliant.</p>
     pub fn reason_for_non_compliance(&self) -> ::std::option::Option<&str> {

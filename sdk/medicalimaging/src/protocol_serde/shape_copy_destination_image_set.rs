@@ -2,12 +2,12 @@
 pub fn ser_copy_destination_image_set(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CopyDestinationImageSet,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.image_set_id {
-        object.key("imageSetId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("imageSetId").string(input.image_set_id.as_str());
     }
-    if let Some(var_2) = &input.latest_version_id {
-        object.key("latestVersionId").string(var_2.as_str());
+    {
+        object.key("latestVersionId").string(input.latest_version_id.as_str());
     }
     Ok(())
 }

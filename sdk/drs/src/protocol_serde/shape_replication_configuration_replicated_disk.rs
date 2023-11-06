@@ -2,7 +2,7 @@
 pub fn ser_replication_configuration_replicated_disk(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ReplicationConfigurationReplicatedDisk,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.device_name {
         object.key("deviceName").string(var_1.as_str());
     }

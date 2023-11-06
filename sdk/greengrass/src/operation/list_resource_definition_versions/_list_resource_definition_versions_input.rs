@@ -69,6 +69,7 @@ impl ListResourceDefinitionVersionsInputBuilder {
         &self.next_token
     }
     /// The ID of the resource definition.
+    /// This field is required.
     pub fn resource_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_definition_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListResourceDefinitionVersionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resource_definition_versions::ListResourceDefinitionVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_resource_definition_versions::ListResourceDefinitionVersionsInput {
             max_results: self.max_results,

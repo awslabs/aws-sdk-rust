@@ -129,20 +129,26 @@ impl Explanation {
         self.address.as_deref()
     }
     /// <p>The IPv4 addresses, in CIDR notation.</p>
-    pub fn addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.addresses.is_none()`.
+    pub fn addresses(&self) -> &[::std::string::String] {
+        self.addresses.as_deref().unwrap_or_default()
     }
     /// <p>The resource to which the component is attached.</p>
     pub fn attached_to(&self) -> ::std::option::Option<&crate::types::AnalysisComponent> {
         self.attached_to.as_ref()
     }
     /// <p>The Availability Zones.</p>
-    pub fn availability_zones(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.availability_zones.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
+    pub fn availability_zones(&self) -> &[::std::string::String] {
+        self.availability_zones.as_deref().unwrap_or_default()
     }
     /// <p>The CIDR ranges.</p>
-    pub fn cidrs(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cidrs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cidrs.is_none()`.
+    pub fn cidrs(&self) -> &[::std::string::String] {
+        self.cidrs.as_deref().unwrap_or_default()
     }
     /// <p>The component.</p>
     pub fn component(&self) -> ::std::option::Option<&crate::types::AnalysisComponent> {
@@ -201,8 +207,10 @@ impl Explanation {
         self.load_balancer_target_group.as_ref()
     }
     /// <p>The target groups.</p>
-    pub fn load_balancer_target_groups(&self) -> ::std::option::Option<&[crate::types::AnalysisComponent]> {
-        self.load_balancer_target_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.load_balancer_target_groups.is_none()`.
+    pub fn load_balancer_target_groups(&self) -> &[crate::types::AnalysisComponent] {
+        self.load_balancer_target_groups.as_deref().unwrap_or_default()
     }
     /// <p>The target port.</p>
     pub fn load_balancer_target_port(&self) -> ::std::option::Option<i32> {
@@ -237,16 +245,20 @@ impl Explanation {
         self.port
     }
     /// <p>The port ranges.</p>
-    pub fn port_ranges(&self) -> ::std::option::Option<&[crate::types::PortRange]> {
-        self.port_ranges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.port_ranges.is_none()`.
+    pub fn port_ranges(&self) -> &[crate::types::PortRange] {
+        self.port_ranges.as_deref().unwrap_or_default()
     }
     /// <p>The prefix list.</p>
     pub fn prefix_list(&self) -> ::std::option::Option<&crate::types::AnalysisComponent> {
         self.prefix_list.as_ref()
     }
     /// <p>The protocols.</p>
-    pub fn protocols(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.protocols.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.protocols.is_none()`.
+    pub fn protocols(&self) -> &[::std::string::String] {
+        self.protocols.as_deref().unwrap_or_default()
     }
     /// <p>The route table route.</p>
     pub fn route_table_route(&self) -> ::std::option::Option<&crate::types::AnalysisRouteTableRoute> {
@@ -265,8 +277,10 @@ impl Explanation {
         self.security_group_rule.as_ref()
     }
     /// <p>The security groups.</p>
-    pub fn security_groups(&self) -> ::std::option::Option<&[crate::types::AnalysisComponent]> {
-        self.security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
+    pub fn security_groups(&self) -> &[crate::types::AnalysisComponent] {
+        self.security_groups.as_deref().unwrap_or_default()
     }
     /// <p>The source VPC.</p>
     pub fn source_vpc(&self) -> ::std::option::Option<&crate::types::AnalysisComponent> {

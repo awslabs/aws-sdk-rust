@@ -65,7 +65,7 @@ impl GetDomainNamesInputBuilder {
     /// Consumes the builder and constructs a [`GetDomainNamesInput`](crate::operation::get_domain_names::GetDomainNamesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_domain_names::GetDomainNamesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_domain_names::GetDomainNamesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_domain_names::GetDomainNamesInput {
             position: self.position,
             limit: self.limit,

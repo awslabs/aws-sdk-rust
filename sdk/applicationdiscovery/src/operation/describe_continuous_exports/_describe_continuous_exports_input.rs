@@ -12,8 +12,10 @@ pub struct DescribeContinuousExportsInput {
 }
 impl DescribeContinuousExportsInput {
     /// <p>The unique IDs assigned to the exports.</p>
-    pub fn export_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.export_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.export_ids.is_none()`.
+    pub fn export_ids(&self) -> &[::std::string::String] {
+        self.export_ids.as_deref().unwrap_or_default()
     }
     /// <p>A number between 1 and 100 specifying the maximum number of continuous export descriptions returned.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -93,7 +95,7 @@ impl DescribeContinuousExportsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_continuous_exports::DescribeContinuousExportsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_continuous_exports::DescribeContinuousExportsInput {
             export_ids: self.export_ids,

@@ -42,8 +42,10 @@ impl AddIpRoutesInput {
         self.directory_id.as_deref()
     }
     /// <p>IP address blocks, using CIDR format, of the traffic to route. This is often the IP address block of the DNS server used for your self-managed domain.</p>
-    pub fn ip_routes(&self) -> ::std::option::Option<&[crate::types::IpRoute]> {
-        self.ip_routes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ip_routes.is_none()`.
+    pub fn ip_routes(&self) -> &[crate::types::IpRoute] {
+        self.ip_routes.as_deref().unwrap_or_default()
     }
     /// <p>If set to true, updates the inbound and outbound rules of the security group that has the description: "Amazon Web Services created security group for <i>directory ID</i> directory controllers." Following are the new rules: </p>
     /// <p>Inbound:</p>
@@ -93,6 +95,7 @@ pub struct AddIpRoutesInputBuilder {
 }
 impl AddIpRoutesInputBuilder {
     /// <p>Identifier (ID) of the directory to which to add the address block.</p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self
@@ -219,7 +222,7 @@ impl AddIpRoutesInputBuilder {
         &self.update_security_group_for_directory_controllers
     }
     /// Consumes the builder and constructs a [`AddIpRoutesInput`](crate::operation::add_ip_routes::AddIpRoutesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::add_ip_routes::AddIpRoutesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::add_ip_routes::AddIpRoutesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::add_ip_routes::AddIpRoutesInput {
             directory_id: self.directory_id,
             ip_routes: self.ip_routes,

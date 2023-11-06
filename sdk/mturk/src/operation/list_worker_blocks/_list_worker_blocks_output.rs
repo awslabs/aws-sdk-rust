@@ -21,8 +21,10 @@ impl ListWorkerBlocksOutput {
         self.num_results
     }
     /// <p> The list of WorkerBlocks, containing the collection of Worker IDs and reasons for blocking.</p>
-    pub fn worker_blocks(&self) -> ::std::option::Option<&[crate::types::WorkerBlock]> {
-        self.worker_blocks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.worker_blocks.is_none()`.
+    pub fn worker_blocks(&self) -> &[crate::types::WorkerBlock] {
+        self.worker_blocks.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListWorkerBlocksOutput {

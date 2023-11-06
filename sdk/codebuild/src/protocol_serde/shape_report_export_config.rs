@@ -2,7 +2,7 @@
 pub fn ser_report_export_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ReportExportConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.export_config_type {
         object.key("exportConfigType").string(var_1.as_str());
     }

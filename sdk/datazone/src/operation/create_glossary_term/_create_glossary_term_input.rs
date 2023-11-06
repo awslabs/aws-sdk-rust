@@ -90,6 +90,7 @@ pub struct CreateGlossaryTermInputBuilder {
 }
 impl CreateGlossaryTermInputBuilder {
     /// <p>The ID of the Amazon DataZone domain in which this business glossary term is created.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +105,7 @@ impl CreateGlossaryTermInputBuilder {
         &self.domain_identifier
     }
     /// <p>The ID of the business glossary in which this term is created.</p>
+    /// This field is required.
     pub fn glossary_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.glossary_identifier = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +120,7 @@ impl CreateGlossaryTermInputBuilder {
         &self.glossary_identifier
     }
     /// <p>The name of this business glossary term.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -204,7 +207,8 @@ impl CreateGlossaryTermInputBuilder {
     /// Consumes the builder and constructs a [`CreateGlossaryTermInput`](crate::operation::create_glossary_term::CreateGlossaryTermInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_glossary_term::CreateGlossaryTermInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_glossary_term::CreateGlossaryTermInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_glossary_term::CreateGlossaryTermInput {
             domain_identifier: self.domain_identifier,
             glossary_identifier: self.glossary_identifier,

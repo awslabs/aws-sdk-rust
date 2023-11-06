@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder takes no input, just [`send`](crate::operation::get_container_service_powers::builders::GetContainerServicePowersFluentBuilder::send) it.
     /// - On success, responds with [`GetContainerServicePowersOutput`](crate::operation::get_container_service_powers::GetContainerServicePowersOutput) with field(s):
-    ///   - [`powers(Option<Vec<ContainerServicePower>>)`](crate::operation::get_container_service_powers::GetContainerServicePowersOutput::powers): <p>An array of objects that describe the powers that can be specified for a container service.</p>
+    ///   - [`powers(Option<Vec::<ContainerServicePower>>)`](crate::operation::get_container_service_powers::GetContainerServicePowersOutput::powers): <p>An array of objects that describe the powers that can be specified for a container service.</p>
     /// - On failure, responds with [`SdkError<GetContainerServicePowersError>`](crate::operation::get_container_service_powers::GetContainerServicePowersError)
     pub fn get_container_service_powers(&self) -> crate::operation::get_container_service_powers::builders::GetContainerServicePowersFluentBuilder {
         crate::operation::get_container_service_powers::builders::GetContainerServicePowersFluentBuilder::new(self.handle.clone())

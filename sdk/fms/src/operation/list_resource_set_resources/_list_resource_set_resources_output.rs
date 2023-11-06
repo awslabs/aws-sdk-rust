@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListResourceSetResourcesOutput {
     /// <p>An array of the associated resources' uniform resource identifiers (URI).</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
+    pub items: ::std::vec::Vec<crate::types::Resource>,
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListResourceSetResourcesOutput {
     /// <p>An array of the associated resources' uniform resource identifiers (URI).</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::Resource]> {
-        self.items.as_deref()
+    pub fn items(&self) -> &[crate::types::Resource] {
+        use std::ops::Deref;
+        self.items.deref()
     }
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,23 @@ impl ListResourceSetResourcesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListResourceSetResourcesOutput`](crate::operation::list_resource_set_resources::ListResourceSetResourcesOutput).
-    pub fn build(self) -> crate::operation::list_resource_set_resources::ListResourceSetResourcesOutput {
-        crate::operation::list_resource_set_resources::ListResourceSetResourcesOutput {
-            items: self.items,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`items`](crate::operation::list_resource_set_resources::builders::ListResourceSetResourcesOutputBuilder::items)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_resource_set_resources::ListResourceSetResourcesOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_resource_set_resources::ListResourceSetResourcesOutput {
+            items: self.items.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "items",
+                    "items was not specified but it is required when building ListResourceSetResourcesOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

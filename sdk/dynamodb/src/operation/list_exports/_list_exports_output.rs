@@ -11,8 +11,10 @@ pub struct ListExportsOutput {
 }
 impl ListExportsOutput {
     /// <p>A list of <code>ExportSummary</code> objects.</p>
-    pub fn export_summaries(&self) -> ::std::option::Option<&[crate::types::ExportSummary]> {
-        self.export_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.export_summaries.is_none()`.
+    pub fn export_summaries(&self) -> &[crate::types::ExportSummary] {
+        self.export_summaries.as_deref().unwrap_or_default()
     }
     /// <p>If this value is returned, there are additional results to be displayed. To retrieve them, call <code>ListExports</code> again, with <code>NextToken</code> set to this value.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

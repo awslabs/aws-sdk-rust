@@ -44,12 +44,16 @@ impl GroupDetail {
         self.create_date.as_ref()
     }
     /// <p>A list of the inline policies embedded in the group.</p>
-    pub fn group_policy_list(&self) -> ::std::option::Option<&[crate::types::PolicyDetail]> {
-        self.group_policy_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_policy_list.is_none()`.
+    pub fn group_policy_list(&self) -> &[crate::types::PolicyDetail] {
+        self.group_policy_list.as_deref().unwrap_or_default()
     }
     /// <p>A list of the managed policies attached to the group.</p>
-    pub fn attached_managed_policies(&self) -> ::std::option::Option<&[crate::types::AttachedPolicy]> {
-        self.attached_managed_policies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attached_managed_policies.is_none()`.
+    pub fn attached_managed_policies(&self) -> &[crate::types::AttachedPolicy] {
+        self.attached_managed_policies.as_deref().unwrap_or_default()
     }
 }
 impl GroupDetail {

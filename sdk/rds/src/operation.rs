@@ -88,6 +88,9 @@ pub mod create_event_subscription;
 /// Types for the `CreateGlobalCluster` operation.
 pub mod create_global_cluster;
 
+/// Types for the `CreateIntegration` operation.
+pub mod create_integration;
+
 /// Types for the `CreateOptionGroup` operation.
 pub mod create_option_group;
 
@@ -141,6 +144,9 @@ pub mod delete_event_subscription;
 
 /// Types for the `DeleteGlobalCluster` operation.
 pub mod delete_global_cluster;
+
+/// Types for the `DeleteIntegration` operation.
+pub mod delete_integration;
 
 /// Types for the `DeleteOptionGroup` operation.
 pub mod delete_option_group;
@@ -243,6 +249,9 @@ pub mod describe_export_tasks;
 
 /// Types for the `DescribeGlobalClusters` operation.
 pub mod describe_global_clusters;
+
+/// Types for the `DescribeIntegrations` operation.
+pub mod describe_integrations;
 
 /// Types for the `DescribeOptionGroupOptions` operation.
 pub mod describe_option_group_options;

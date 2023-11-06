@@ -5,22 +5,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportAssetsFromLakeFormationTagPolicyResponseDetails {
     /// <p>The identifier for the AWS Glue Data Catalog.</p>
-    pub catalog_id: ::std::option::Option<::std::string::String>,
+    pub catalog_id: ::std::string::String,
     /// <p>A structure for the database object.</p>
     pub database: ::std::option::Option<crate::types::DatabaseLfTagPolicyAndPermissions>,
     /// <p>A structure for the table object.</p>
     pub table: ::std::option::Option<crate::types::TableLfTagPolicyAndPermissions>,
     /// <p>The IAM role's ARN that allows AWS Data Exchange to assume the role and grant and revoke permissions to AWS Lake Formation data permissions.</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
     /// <p>The unique identifier for the data set associated with this import job.</p>
-    pub data_set_id: ::std::option::Option<::std::string::String>,
+    pub data_set_id: ::std::string::String,
     /// <p>The unique identifier for the revision associated with this import job.</p>
-    pub revision_id: ::std::option::Option<::std::string::String>,
+    pub revision_id: ::std::string::String,
 }
 impl ImportAssetsFromLakeFormationTagPolicyResponseDetails {
     /// <p>The identifier for the AWS Glue Data Catalog.</p>
-    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
-        self.catalog_id.as_deref()
+    pub fn catalog_id(&self) -> &str {
+        use std::ops::Deref;
+        self.catalog_id.deref()
     }
     /// <p>A structure for the database object.</p>
     pub fn database(&self) -> ::std::option::Option<&crate::types::DatabaseLfTagPolicyAndPermissions> {
@@ -31,16 +32,19 @@ impl ImportAssetsFromLakeFormationTagPolicyResponseDetails {
         self.table.as_ref()
     }
     /// <p>The IAM role's ARN that allows AWS Data Exchange to assume the role and grant and revoke permissions to AWS Lake Formation data permissions.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
     /// <p>The unique identifier for the data set associated with this import job.</p>
-    pub fn data_set_id(&self) -> ::std::option::Option<&str> {
-        self.data_set_id.as_deref()
+    pub fn data_set_id(&self) -> &str {
+        use std::ops::Deref;
+        self.data_set_id.deref()
     }
     /// <p>The unique identifier for the revision associated with this import job.</p>
-    pub fn revision_id(&self) -> ::std::option::Option<&str> {
-        self.revision_id.as_deref()
+    pub fn revision_id(&self) -> &str {
+        use std::ops::Deref;
+        self.revision_id.deref()
     }
 }
 impl ImportAssetsFromLakeFormationTagPolicyResponseDetails {
@@ -63,6 +67,7 @@ pub struct ImportAssetsFromLakeFormationTagPolicyResponseDetailsBuilder {
 }
 impl ImportAssetsFromLakeFormationTagPolicyResponseDetailsBuilder {
     /// <p>The identifier for the AWS Glue Data Catalog.</p>
+    /// This field is required.
     pub fn catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.catalog_id = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +110,7 @@ impl ImportAssetsFromLakeFormationTagPolicyResponseDetailsBuilder {
         &self.table
     }
     /// <p>The IAM role's ARN that allows AWS Data Exchange to assume the role and grant and revoke permissions to AWS Lake Formation data permissions.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +125,7 @@ impl ImportAssetsFromLakeFormationTagPolicyResponseDetailsBuilder {
         &self.role_arn
     }
     /// <p>The unique identifier for the data set associated with this import job.</p>
+    /// This field is required.
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
         self
@@ -133,6 +140,7 @@ impl ImportAssetsFromLakeFormationTagPolicyResponseDetailsBuilder {
         &self.data_set_id
     }
     /// <p>The unique identifier for the revision associated with this import job.</p>
+    /// This field is required.
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
         self
@@ -147,14 +155,42 @@ impl ImportAssetsFromLakeFormationTagPolicyResponseDetailsBuilder {
         &self.revision_id
     }
     /// Consumes the builder and constructs a [`ImportAssetsFromLakeFormationTagPolicyResponseDetails`](crate::types::ImportAssetsFromLakeFormationTagPolicyResponseDetails).
-    pub fn build(self) -> crate::types::ImportAssetsFromLakeFormationTagPolicyResponseDetails {
-        crate::types::ImportAssetsFromLakeFormationTagPolicyResponseDetails {
-            catalog_id: self.catalog_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`catalog_id`](crate::types::builders::ImportAssetsFromLakeFormationTagPolicyResponseDetailsBuilder::catalog_id)
+    /// - [`role_arn`](crate::types::builders::ImportAssetsFromLakeFormationTagPolicyResponseDetailsBuilder::role_arn)
+    /// - [`data_set_id`](crate::types::builders::ImportAssetsFromLakeFormationTagPolicyResponseDetailsBuilder::data_set_id)
+    /// - [`revision_id`](crate::types::builders::ImportAssetsFromLakeFormationTagPolicyResponseDetailsBuilder::revision_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::ImportAssetsFromLakeFormationTagPolicyResponseDetails, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::types::ImportAssetsFromLakeFormationTagPolicyResponseDetails {
+            catalog_id: self.catalog_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "catalog_id",
+                    "catalog_id was not specified but it is required when building ImportAssetsFromLakeFormationTagPolicyResponseDetails",
+                )
+            })?,
             database: self.database,
             table: self.table,
-            role_arn: self.role_arn,
-            data_set_id: self.data_set_id,
-            revision_id: self.revision_id,
-        }
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building ImportAssetsFromLakeFormationTagPolicyResponseDetails",
+                )
+            })?,
+            data_set_id: self.data_set_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "data_set_id",
+                    "data_set_id was not specified but it is required when building ImportAssetsFromLakeFormationTagPolicyResponseDetails",
+                )
+            })?,
+            revision_id: self.revision_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "revision_id",
+                    "revision_id was not specified but it is required when building ImportAssetsFromLakeFormationTagPolicyResponseDetails",
+                )
+            })?,
+        })
     }
 }

@@ -4,29 +4,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateEnvironmentOutput {
     /// <p>The project identifier of the environment.</p>
-    pub project_id: ::std::option::Option<::std::string::String>,
+    pub project_id: ::std::string::String,
     /// <p>The identifier of the environment that is to be updated.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the domain in which the environment is to be updated.</p>
-    pub domain_id: ::std::option::Option<::std::string::String>,
+    pub domain_id: ::std::string::String,
     /// <p>The Amazon DataZone user who created the environment.</p>
-    pub created_by: ::std::option::Option<::std::string::String>,
+    pub created_by: ::std::string::String,
     /// <p>The timestamp of when the environment was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the environment was updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name to be updated as part of the <code>UpdateEnvironment</code> action.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The description to be updated as part of the <code>UpdateEnvironment</code> action.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The profile identifier of the environment.</p>
-    pub environment_profile_id: ::std::option::Option<::std::string::String>,
+    pub environment_profile_id: ::std::string::String,
     /// <p>The identifier of the Amazon Web Services account in which the environment is to be updated.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region in which the environment is updated.</p>
     pub aws_account_region: ::std::option::Option<::std::string::String>,
     /// <p>The provider identifier of the environment.</p>
-    pub provider: ::std::option::Option<::std::string::String>,
+    pub provider: ::std::string::String,
     /// <p>The provisioned resources to be updated as part of the <code>UpdateEnvironment</code> action.</p>
     pub provisioned_resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
     /// <p>The status to be updated as part of the <code>UpdateEnvironment</code> action.</p>
@@ -49,20 +49,23 @@ pub struct UpdateEnvironmentOutput {
 }
 impl UpdateEnvironmentOutput {
     /// <p>The project identifier of the environment.</p>
-    pub fn project_id(&self) -> ::std::option::Option<&str> {
-        self.project_id.as_deref()
+    pub fn project_id(&self) -> &str {
+        use std::ops::Deref;
+        self.project_id.deref()
     }
     /// <p>The identifier of the environment that is to be updated.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The identifier of the domain in which the environment is to be updated.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
-        self.domain_id.as_deref()
+    pub fn domain_id(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_id.deref()
     }
     /// <p>The Amazon DataZone user who created the environment.</p>
-    pub fn created_by(&self) -> ::std::option::Option<&str> {
-        self.created_by.as_deref()
+    pub fn created_by(&self) -> &str {
+        use std::ops::Deref;
+        self.created_by.deref()
     }
     /// <p>The timestamp of when the environment was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -73,16 +76,18 @@ impl UpdateEnvironmentOutput {
         self.updated_at.as_ref()
     }
     /// <p>The name to be updated as part of the <code>UpdateEnvironment</code> action.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The description to be updated as part of the <code>UpdateEnvironment</code> action.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The profile identifier of the environment.</p>
-    pub fn environment_profile_id(&self) -> ::std::option::Option<&str> {
-        self.environment_profile_id.as_deref()
+    pub fn environment_profile_id(&self) -> &str {
+        use std::ops::Deref;
+        self.environment_profile_id.deref()
     }
     /// <p>The identifier of the Amazon Web Services account in which the environment is to be updated.</p>
     pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
@@ -93,28 +98,37 @@ impl UpdateEnvironmentOutput {
         self.aws_account_region.as_deref()
     }
     /// <p>The provider identifier of the environment.</p>
-    pub fn provider(&self) -> ::std::option::Option<&str> {
-        self.provider.as_deref()
+    pub fn provider(&self) -> &str {
+        use std::ops::Deref;
+        self.provider.deref()
     }
     /// <p>The provisioned resources to be updated as part of the <code>UpdateEnvironment</code> action.</p>
-    pub fn provisioned_resources(&self) -> ::std::option::Option<&[crate::types::Resource]> {
-        self.provisioned_resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provisioned_resources.is_none()`.
+    pub fn provisioned_resources(&self) -> &[crate::types::Resource] {
+        self.provisioned_resources.as_deref().unwrap_or_default()
     }
     /// <p>The status to be updated as part of the <code>UpdateEnvironment</code> action.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::EnvironmentStatus> {
         self.status.as_ref()
     }
     /// <p>The environment actions to be updated as part of the <code>UpdateEnvironment</code> action.</p>
-    pub fn environment_actions(&self) -> ::std::option::Option<&[crate::types::ConfigurableEnvironmentAction]> {
-        self.environment_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.environment_actions.is_none()`.
+    pub fn environment_actions(&self) -> &[crate::types::ConfigurableEnvironmentAction] {
+        self.environment_actions.as_deref().unwrap_or_default()
     }
     /// <p>The glossary terms to be updated as part of the <code>UpdateEnvironment</code> action.</p>
-    pub fn glossary_terms(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.glossary_terms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.glossary_terms.is_none()`.
+    pub fn glossary_terms(&self) -> &[::std::string::String] {
+        self.glossary_terms.as_deref().unwrap_or_default()
     }
     /// <p>The user parameters to be updated as part of the <code>UpdateEnvironment</code> action.</p>
-    pub fn user_parameters(&self) -> ::std::option::Option<&[crate::types::CustomParameter]> {
-        self.user_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_parameters.is_none()`.
+    pub fn user_parameters(&self) -> &[crate::types::CustomParameter] {
+        self.user_parameters.as_deref().unwrap_or_default()
     }
     /// <p>The last deployment of the environment.</p>
     pub fn last_deployment(&self) -> ::std::option::Option<&crate::types::Deployment> {
@@ -202,6 +216,7 @@ pub struct UpdateEnvironmentOutputBuilder {
 }
 impl UpdateEnvironmentOutputBuilder {
     /// <p>The project identifier of the environment.</p>
+    /// This field is required.
     pub fn project_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_id = ::std::option::Option::Some(input.into());
         self
@@ -230,6 +245,7 @@ impl UpdateEnvironmentOutputBuilder {
         &self.id
     }
     /// <p>The identifier of the domain in which the environment is to be updated.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -244,6 +260,7 @@ impl UpdateEnvironmentOutputBuilder {
         &self.domain_id
     }
     /// <p>The Amazon DataZone user who created the environment.</p>
+    /// This field is required.
     pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by = ::std::option::Option::Some(input.into());
         self
@@ -286,6 +303,7 @@ impl UpdateEnvironmentOutputBuilder {
         &self.updated_at
     }
     /// <p>The name to be updated as part of the <code>UpdateEnvironment</code> action.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -314,6 +332,7 @@ impl UpdateEnvironmentOutputBuilder {
         &self.description
     }
     /// <p>The profile identifier of the environment.</p>
+    /// This field is required.
     pub fn environment_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_profile_id = ::std::option::Option::Some(input.into());
         self
@@ -356,6 +375,7 @@ impl UpdateEnvironmentOutputBuilder {
         &self.aws_account_region
     }
     /// <p>The provider identifier of the environment.</p>
+    /// This field is required.
     pub fn provider(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider = ::std::option::Option::Some(input.into());
         self
@@ -529,20 +549,59 @@ impl UpdateEnvironmentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateEnvironmentOutput`](crate::operation::update_environment::UpdateEnvironmentOutput).
-    pub fn build(self) -> crate::operation::update_environment::UpdateEnvironmentOutput {
-        crate::operation::update_environment::UpdateEnvironmentOutput {
-            project_id: self.project_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`project_id`](crate::operation::update_environment::builders::UpdateEnvironmentOutputBuilder::project_id)
+    /// - [`domain_id`](crate::operation::update_environment::builders::UpdateEnvironmentOutputBuilder::domain_id)
+    /// - [`created_by`](crate::operation::update_environment::builders::UpdateEnvironmentOutputBuilder::created_by)
+    /// - [`name`](crate::operation::update_environment::builders::UpdateEnvironmentOutputBuilder::name)
+    /// - [`environment_profile_id`](crate::operation::update_environment::builders::UpdateEnvironmentOutputBuilder::environment_profile_id)
+    /// - [`provider`](crate::operation::update_environment::builders::UpdateEnvironmentOutputBuilder::provider)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_environment::UpdateEnvironmentOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_environment::UpdateEnvironmentOutput {
+            project_id: self.project_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "project_id",
+                    "project_id was not specified but it is required when building UpdateEnvironmentOutput",
+                )
+            })?,
             id: self.id,
-            domain_id: self.domain_id,
-            created_by: self.created_by,
+            domain_id: self.domain_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "domain_id",
+                    "domain_id was not specified but it is required when building UpdateEnvironmentOutput",
+                )
+            })?,
+            created_by: self.created_by.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_by",
+                    "created_by was not specified but it is required when building UpdateEnvironmentOutput",
+                )
+            })?,
             created_at: self.created_at,
             updated_at: self.updated_at,
-            name: self.name,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building UpdateEnvironmentOutput",
+                )
+            })?,
             description: self.description,
-            environment_profile_id: self.environment_profile_id,
+            environment_profile_id: self.environment_profile_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "environment_profile_id",
+                    "environment_profile_id was not specified but it is required when building UpdateEnvironmentOutput",
+                )
+            })?,
             aws_account_id: self.aws_account_id,
             aws_account_region: self.aws_account_region,
-            provider: self.provider,
+            provider: self.provider.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "provider",
+                    "provider was not specified but it is required when building UpdateEnvironmentOutput",
+                )
+            })?,
             provisioned_resources: self.provisioned_resources,
             status: self.status,
             environment_actions: self.environment_actions,
@@ -553,7 +612,7 @@ impl UpdateEnvironmentOutputBuilder {
             deployment_properties: self.deployment_properties,
             environment_blueprint_id: self.environment_blueprint_id,
             _request_id: self._request_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for UpdateEnvironmentOutputBuilder {

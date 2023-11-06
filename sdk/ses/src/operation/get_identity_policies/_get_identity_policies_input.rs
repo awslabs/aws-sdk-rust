@@ -17,8 +17,10 @@ impl GetIdentityPoliciesInput {
         self.identity.as_deref()
     }
     /// <p>A list of the names of policies to be retrieved. You can retrieve a maximum of 20 policies at a time. If you do not know the names of the policies that are attached to the identity, you can use <code>ListIdentityPolicies</code>.</p>
-    pub fn policy_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.policy_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_names.is_none()`.
+    pub fn policy_names(&self) -> &[::std::string::String] {
+        self.policy_names.as_deref().unwrap_or_default()
     }
 }
 impl GetIdentityPoliciesInput {
@@ -38,6 +40,7 @@ pub struct GetIdentityPoliciesInputBuilder {
 impl GetIdentityPoliciesInputBuilder {
     /// <p>The identity for which the policies are retrieved. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
     /// <p>To successfully call this operation, you must own the identity.</p>
+    /// This field is required.
     pub fn identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity = ::std::option::Option::Some(input.into());
         self
@@ -76,7 +79,7 @@ impl GetIdentityPoliciesInputBuilder {
     /// Consumes the builder and constructs a [`GetIdentityPoliciesInput`](crate::operation::get_identity_policies::GetIdentityPoliciesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_identity_policies::GetIdentityPoliciesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_identity_policies::GetIdentityPoliciesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_identity_policies::GetIdentityPoliciesInput {
             identity: self.identity,

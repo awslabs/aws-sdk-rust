@@ -34,6 +34,7 @@ pub struct GetAppBundleOutputBuilder {
 }
 impl GetAppBundleOutputBuilder {
     /// <p>Contains information about an app bundle.</p>
+    /// This field is required.
     pub fn app_bundle(mut self, input: crate::types::AppBundle) -> Self {
         self.app_bundle = ::std::option::Option::Some(input);
         self

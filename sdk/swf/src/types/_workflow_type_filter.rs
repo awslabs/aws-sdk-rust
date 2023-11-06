@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkflowTypeFilter {
     /// <p> Name of the workflow type.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>Version of the workflow type.</p>
     pub version: ::std::option::Option<::std::string::String>,
 }
 impl WorkflowTypeFilter {
     /// <p> Name of the workflow type.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>Version of the workflow type.</p>
     pub fn version(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct WorkflowTypeFilterBuilder {
 }
 impl WorkflowTypeFilterBuilder {
     /// <p> Name of the workflow type.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl WorkflowTypeFilterBuilder {
         &self.version
     }
     /// Consumes the builder and constructs a [`WorkflowTypeFilter`](crate::types::WorkflowTypeFilter).
-    pub fn build(self) -> crate::types::WorkflowTypeFilter {
-        crate::types::WorkflowTypeFilter {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::WorkflowTypeFilterBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::WorkflowTypeFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::WorkflowTypeFilter {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building WorkflowTypeFilter",
+                )
+            })?,
             version: self.version,
-        }
+        })
     }
 }

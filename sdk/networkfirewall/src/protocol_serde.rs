@@ -285,9 +285,13 @@ pub(crate) mod shape_stateless_rule_group_references;
 
 pub(crate) mod shape_sync_states;
 
+pub(crate) mod shape_tls_certificate_data;
+
 pub(crate) mod shape_tls_inspection_configuration_metadata;
 
 pub(crate) mod shape_action_definition;
+
+pub(crate) mod shape_check_certificate_revocation_status_actions;
 
 pub(crate) mod shape_cidr_summary;
 
@@ -318,8 +322,6 @@ pub(crate) mod shape_stateful_rules;
 pub(crate) mod shape_stateless_rules_and_custom_actions;
 
 pub(crate) mod shape_sync_state;
-
-pub(crate) mod shape_tls_certificate_data;
 
 pub(crate) mod shape_address;
 

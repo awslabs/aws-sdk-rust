@@ -15,8 +15,10 @@ impl ListAccountsOutput {
         self.next_token.as_deref()
     }
     /// <p>A paginated response with the list of account information and the next token if more results are available.</p>
-    pub fn account_list(&self) -> ::std::option::Option<&[crate::types::AccountInfo]> {
-        self.account_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_list.is_none()`.
+    pub fn account_list(&self) -> &[crate::types::AccountInfo] {
+        self.account_list.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListAccountsOutput {

@@ -48,6 +48,7 @@ impl DeleteLifecyclePolicyInputBuilder {
         &self.registry_id
     }
     /// <p>The name of the repository.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl DeleteLifecyclePolicyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteLifecyclePolicyInput`](crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyInput {
             registry_id: self.registry_id,

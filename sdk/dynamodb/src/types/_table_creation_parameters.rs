@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableCreationParameters {
     /// <p> The name of the table created as part of the import operation. </p>
-    pub table_name: ::std::option::Option<::std::string::String>,
+    pub table_name: ::std::string::String,
     /// <p> The attributes of the table created as part of the import operation. </p>
-    pub attribute_definitions: ::std::option::Option<::std::vec::Vec<crate::types::AttributeDefinition>>,
+    pub attribute_definitions: ::std::vec::Vec<crate::types::AttributeDefinition>,
     /// <p> The primary key and option sort key of the table created as part of the import operation. </p>
-    pub key_schema: ::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>>,
+    pub key_schema: ::std::vec::Vec<crate::types::KeySchemaElement>,
     /// <p> The billing mode for provisioning the table created as part of the import operation. </p>
     pub billing_mode: ::std::option::Option<crate::types::BillingMode>,
     /// <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p>
@@ -22,16 +22,19 @@ pub struct TableCreationParameters {
 }
 impl TableCreationParameters {
     /// <p> The name of the table created as part of the import operation. </p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
-        self.table_name.as_deref()
+    pub fn table_name(&self) -> &str {
+        use std::ops::Deref;
+        self.table_name.deref()
     }
     /// <p> The attributes of the table created as part of the import operation. </p>
-    pub fn attribute_definitions(&self) -> ::std::option::Option<&[crate::types::AttributeDefinition]> {
-        self.attribute_definitions.as_deref()
+    pub fn attribute_definitions(&self) -> &[crate::types::AttributeDefinition] {
+        use std::ops::Deref;
+        self.attribute_definitions.deref()
     }
     /// <p> The primary key and option sort key of the table created as part of the import operation. </p>
-    pub fn key_schema(&self) -> ::std::option::Option<&[crate::types::KeySchemaElement]> {
-        self.key_schema.as_deref()
+    pub fn key_schema(&self) -> &[crate::types::KeySchemaElement] {
+        use std::ops::Deref;
+        self.key_schema.deref()
     }
     /// <p> The billing mode for provisioning the table created as part of the import operation. </p>
     pub fn billing_mode(&self) -> ::std::option::Option<&crate::types::BillingMode> {
@@ -47,8 +50,10 @@ impl TableCreationParameters {
         self.sse_specification.as_ref()
     }
     /// <p> The Global Secondary Indexes (GSI) of the table to be created as part of the import operation. </p>
-    pub fn global_secondary_indexes(&self) -> ::std::option::Option<&[crate::types::GlobalSecondaryIndex]> {
-        self.global_secondary_indexes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.global_secondary_indexes.is_none()`.
+    pub fn global_secondary_indexes(&self) -> &[crate::types::GlobalSecondaryIndex] {
+        self.global_secondary_indexes.as_deref().unwrap_or_default()
     }
 }
 impl TableCreationParameters {
@@ -72,6 +77,7 @@ pub struct TableCreationParametersBuilder {
 }
 impl TableCreationParametersBuilder {
     /// <p> The name of the table created as part of the import operation. </p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -191,15 +197,34 @@ impl TableCreationParametersBuilder {
         &self.global_secondary_indexes
     }
     /// Consumes the builder and constructs a [`TableCreationParameters`](crate::types::TableCreationParameters).
-    pub fn build(self) -> crate::types::TableCreationParameters {
-        crate::types::TableCreationParameters {
-            table_name: self.table_name,
-            attribute_definitions: self.attribute_definitions,
-            key_schema: self.key_schema,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`table_name`](crate::types::builders::TableCreationParametersBuilder::table_name)
+    /// - [`attribute_definitions`](crate::types::builders::TableCreationParametersBuilder::attribute_definitions)
+    /// - [`key_schema`](crate::types::builders::TableCreationParametersBuilder::key_schema)
+    pub fn build(self) -> ::std::result::Result<crate::types::TableCreationParameters, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TableCreationParameters {
+            table_name: self.table_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "table_name",
+                    "table_name was not specified but it is required when building TableCreationParameters",
+                )
+            })?,
+            attribute_definitions: self.attribute_definitions.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "attribute_definitions",
+                    "attribute_definitions was not specified but it is required when building TableCreationParameters",
+                )
+            })?,
+            key_schema: self.key_schema.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "key_schema",
+                    "key_schema was not specified but it is required when building TableCreationParameters",
+                )
+            })?,
             billing_mode: self.billing_mode,
             provisioned_throughput: self.provisioned_throughput,
             sse_specification: self.sse_specification,
             global_secondary_indexes: self.global_secondary_indexes,
-        }
+        })
     }
 }

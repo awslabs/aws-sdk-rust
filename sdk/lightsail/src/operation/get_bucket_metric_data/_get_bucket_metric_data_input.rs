@@ -75,8 +75,10 @@ impl GetBucketMetricDataInput {
     /// <li> <p> <code>Average</code> - The value of <code>Sum</code> / <code>SampleCount</code> during the specified period. By comparing this statistic with the <code>Minimum</code> and <code>Maximum</code> values, you can determine the full scope of a metric and how close the average use is to the <code>Minimum</code> and <code>Maximum</code> values. This comparison helps you to know when to increase or decrease your resources.</p> </li>
     /// <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>
     /// </ul>
-    pub fn statistics(&self) -> ::std::option::Option<&[crate::types::MetricStatistic]> {
-        self.statistics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.statistics.is_none()`.
+    pub fn statistics(&self) -> &[crate::types::MetricStatistic] {
+        self.statistics.as_deref().unwrap_or_default()
     }
     /// <p>The unit for the metric data request.</p>
     /// <p>Valid units depend on the metric data being requested. For the valid units with each available metric, see the <code>metricName</code> parameter.</p>
@@ -105,6 +107,7 @@ pub struct GetBucketMetricDataInputBuilder {
 }
 impl GetBucketMetricDataInputBuilder {
     /// <p>The name of the bucket for which to get metric data.</p>
+    /// This field is required.
     pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_name = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +129,7 @@ impl GetBucketMetricDataInputBuilder {
     /// <li> <p> <b> <code>BucketSizeBytes</code> </b> - The amount of data in bytes stored in a bucket. This value is calculated by summing the size of all objects in the bucket (including object versions), including the size of all parts for all incomplete multipart uploads to the bucket.</p> <p>Statistics: The most useful statistic is <code>Maximum</code>.</p> <p>Unit: The published unit is <code>Bytes</code>.</p> </li>
     /// <li> <p> <b> <code>NumberOfObjects</code> </b> - The total number of objects stored in a bucket. This value is calculated by counting all objects in the bucket (including object versions) and the total number of parts for all incomplete multipart uploads to the bucket.</p> <p>Statistics: The most useful statistic is <code>Average</code>.</p> <p>Unit: The published unit is <code>Count</code>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn metric_name(mut self, input: crate::types::BucketMetricName) -> Self {
         self.metric_name = ::std::option::Option::Some(input);
         self
@@ -154,6 +158,7 @@ impl GetBucketMetricDataInputBuilder {
         &self.metric_name
     }
     /// <p>The timestamp indicating the earliest data to be returned.</p>
+    /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
@@ -168,6 +173,7 @@ impl GetBucketMetricDataInputBuilder {
         &self.start_time
     }
     /// <p>The timestamp indicating the latest data to be returned.</p>
+    /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
@@ -184,6 +190,7 @@ impl GetBucketMetricDataInputBuilder {
     /// <p>The granularity, in seconds, of the returned data points.</p> <note>
     /// <p>Bucket storage metrics are reported once per day. Therefore, you should specify a period of 86400 seconds, which is the number of seconds in a day.</p>
     /// </note>
+    /// This field is required.
     pub fn period(mut self, input: i32) -> Self {
         self.period = ::std::option::Option::Some(input);
         self
@@ -247,6 +254,7 @@ impl GetBucketMetricDataInputBuilder {
     }
     /// <p>The unit for the metric data request.</p>
     /// <p>Valid units depend on the metric data being requested. For the valid units with each available metric, see the <code>metricName</code> parameter.</p>
+    /// This field is required.
     pub fn unit(mut self, input: crate::types::MetricUnit) -> Self {
         self.unit = ::std::option::Option::Some(input);
         self
@@ -265,7 +273,7 @@ impl GetBucketMetricDataInputBuilder {
     /// Consumes the builder and constructs a [`GetBucketMetricDataInput`](crate::operation::get_bucket_metric_data::GetBucketMetricDataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_bucket_metric_data::GetBucketMetricDataInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_bucket_metric_data::GetBucketMetricDataInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_bucket_metric_data::GetBucketMetricDataInput {
             bucket_name: self.bucket_name,

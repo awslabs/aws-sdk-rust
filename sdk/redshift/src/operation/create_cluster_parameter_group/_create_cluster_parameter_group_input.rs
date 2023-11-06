@@ -47,8 +47,10 @@ impl CreateClusterParameterGroupInput {
         self.description.as_deref()
     }
     /// <p>A list of tag instances.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateClusterParameterGroupInput {
@@ -78,6 +80,7 @@ impl CreateClusterParameterGroupInputBuilder {
     /// </ul> <note>
     /// <p>This value is stored as a lower-case string.</p>
     /// </note>
+    /// This field is required.
     pub fn parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_group_name = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +114,7 @@ impl CreateClusterParameterGroupInputBuilder {
     }
     /// <p>The Amazon Redshift engine version to which the cluster parameter group applies. The cluster engine version determines the set of parameters.</p>
     /// <p>To get a list of valid parameter group family names, you can call <code>DescribeClusterParameterGroups</code>. By default, Amazon Redshift returns a list of all the parameter groups that are owned by your Amazon Web Services account, including the default parameter groups for each Amazon Redshift engine version. The parameter group family names associated with the default parameter groups provide you the valid values. For example, a valid family name is "redshift-1.0". </p>
+    /// This field is required.
     pub fn parameter_group_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_group_family = ::std::option::Option::Some(input.into());
         self
@@ -127,6 +131,7 @@ impl CreateClusterParameterGroupInputBuilder {
         &self.parameter_group_family
     }
     /// <p>A description of the parameter group.</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -165,7 +170,7 @@ impl CreateClusterParameterGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupInput {
             parameter_group_name: self.parameter_group_name,

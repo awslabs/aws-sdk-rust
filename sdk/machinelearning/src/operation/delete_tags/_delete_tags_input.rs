@@ -12,8 +12,10 @@ pub struct DeleteTagsInput {
 }
 impl DeleteTagsInput {
     /// <p>One or more tags to delete.</p>
-    pub fn tag_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tag_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_keys.is_none()`.
+    pub fn tag_keys(&self) -> &[::std::string::String] {
+        self.tag_keys.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the tagged ML object. For example, <code>exampleModelId</code>.</p>
     pub fn resource_id(&self) -> ::std::option::Option<&str> {
@@ -61,6 +63,7 @@ impl DeleteTagsInputBuilder {
         &self.tag_keys
     }
     /// <p>The ID of the tagged ML object. For example, <code>exampleModelId</code>.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -75,6 +78,7 @@ impl DeleteTagsInputBuilder {
         &self.resource_id
     }
     /// <p>The type of the tagged ML object.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: crate::types::TaggableResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
@@ -89,7 +93,7 @@ impl DeleteTagsInputBuilder {
         &self.resource_type
     }
     /// Consumes the builder and constructs a [`DeleteTagsInput`](crate::operation::delete_tags::DeleteTagsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_tags::DeleteTagsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_tags::DeleteTagsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_tags::DeleteTagsInput {
             tag_keys: self.tag_keys,
             resource_id: self.resource_id,

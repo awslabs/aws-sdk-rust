@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Ssekms {
     /// <p>Specifies the ID of the Key Management Service (KMS) symmetric encryption customer managed key to use for encrypting inventory reports.</p>
-    pub key_id: ::std::option::Option<::std::string::String>,
+    pub key_id: ::std::string::String,
 }
 impl Ssekms {
     /// <p>Specifies the ID of the Key Management Service (KMS) symmetric encryption customer managed key to use for encrypting inventory reports.</p>
-    pub fn key_id(&self) -> ::std::option::Option<&str> {
-        self.key_id.as_deref()
+    pub fn key_id(&self) -> &str {
+        use std::ops::Deref;
+        self.key_id.deref()
     }
 }
 impl ::std::fmt::Debug for Ssekms {
@@ -35,6 +36,7 @@ pub struct SsekmsBuilder {
 }
 impl SsekmsBuilder {
     /// <p>Specifies the ID of the Key Management Service (KMS) symmetric encryption customer managed key to use for encrypting inventory reports.</p>
+    /// This field is required.
     pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_id = ::std::option::Option::Some(input.into());
         self
@@ -49,8 +51,17 @@ impl SsekmsBuilder {
         &self.key_id
     }
     /// Consumes the builder and constructs a [`Ssekms`](crate::types::Ssekms).
-    pub fn build(self) -> crate::types::Ssekms {
-        crate::types::Ssekms { key_id: self.key_id }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key_id`](crate::types::builders::SsekmsBuilder::key_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::Ssekms, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Ssekms {
+            key_id: self.key_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "key_id",
+                    "key_id was not specified but it is required when building Ssekms",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for SsekmsBuilder {

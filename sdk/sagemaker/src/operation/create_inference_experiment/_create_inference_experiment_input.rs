@@ -67,8 +67,10 @@ impl CreateInferenceExperimentInput {
         self.endpoint_name.as_deref()
     }
     /// <p> An array of <code>ModelVariantConfig</code> objects. There is one for each variant in the inference experiment. Each <code>ModelVariantConfig</code> object in the array describes the infrastructure configuration for the corresponding variant. </p>
-    pub fn model_variants(&self) -> ::std::option::Option<&[crate::types::ModelVariantConfig]> {
-        self.model_variants.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.model_variants.is_none()`.
+    pub fn model_variants(&self) -> &[crate::types::ModelVariantConfig] {
+        self.model_variants.as_deref().unwrap_or_default()
     }
     /// <p> The Amazon S3 location and configuration for storing inference request and response data. </p>
     /// <p> This is an optional parameter that you can use for data capture. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture data</a>. </p>
@@ -92,8 +94,10 @@ impl CreateInferenceExperimentInput {
         self.kms_key.as_deref()
     }
     /// <p> Array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/tagging.html">Tagging your Amazon Web Services Resources</a>. </p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateInferenceExperimentInput {
@@ -121,6 +125,7 @@ pub struct CreateInferenceExperimentInputBuilder {
 }
 impl CreateInferenceExperimentInputBuilder {
     /// <p>The name for the inference experiment.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -138,6 +143,7 @@ impl CreateInferenceExperimentInputBuilder {
     /// <ul>
     /// <li> <p> <code>ShadowMode</code>: You can use this type to validate a shadow variant. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/shadow-tests.html">Shadow tests</a>. </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::InferenceExperimentType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -186,6 +192,7 @@ impl CreateInferenceExperimentInputBuilder {
         &self.description
     }
     /// <p> The ARN of the IAM role that Amazon SageMaker can assume to access model artifacts and container images, and manage Amazon SageMaker Inference endpoints for model deployment. </p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -200,6 +207,7 @@ impl CreateInferenceExperimentInputBuilder {
         &self.role_arn
     }
     /// <p> The name of the Amazon SageMaker endpoint on which you want to run the inference experiment. </p>
+    /// This field is required.
     pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_name = ::std::option::Option::Some(input.into());
         self
@@ -251,6 +259,7 @@ impl CreateInferenceExperimentInputBuilder {
         &self.data_storage_config
     }
     /// <p> The configuration of <code>ShadowMode</code> inference experiment type. Use this field to specify a production variant which takes all the inference requests, and a shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant also specify the percentage of requests that Amazon SageMaker replicates. </p>
+    /// This field is required.
     pub fn shadow_mode_config(mut self, input: crate::types::ShadowModeConfig) -> Self {
         self.shadow_mode_config = ::std::option::Option::Some(input);
         self
@@ -327,7 +336,7 @@ impl CreateInferenceExperimentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_inference_experiment::CreateInferenceExperimentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_inference_experiment::CreateInferenceExperimentInput {
             name: self.name,

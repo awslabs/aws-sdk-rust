@@ -41,6 +41,7 @@ pub struct AllocatePublicVirtualInterfaceInputBuilder {
 }
 impl AllocatePublicVirtualInterfaceInputBuilder {
     /// <p>The ID of the connection on which the public virtual interface is provisioned.</p>
+    /// This field is required.
     pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl AllocatePublicVirtualInterfaceInputBuilder {
         &self.connection_id
     }
     /// <p>The ID of the Amazon Web Services account that owns the public virtual interface.</p>
+    /// This field is required.
     pub fn owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_account = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl AllocatePublicVirtualInterfaceInputBuilder {
         &self.owner_account
     }
     /// <p>Information about the public virtual interface.</p>
+    /// This field is required.
     pub fn new_public_virtual_interface_allocation(mut self, input: crate::types::NewPublicVirtualInterfaceAllocation) -> Self {
         self.new_public_virtual_interface_allocation = ::std::option::Option::Some(input);
         self
@@ -90,7 +93,7 @@ impl AllocatePublicVirtualInterfaceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::allocate_public_virtual_interface::AllocatePublicVirtualInterfaceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::allocate_public_virtual_interface::AllocatePublicVirtualInterfaceInput {
             connection_id: self.connection_id,

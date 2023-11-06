@@ -76,6 +76,7 @@ impl SearchSessionsInputBuilder {
         &self.max_results
     }
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// This field is required.
     pub fn assistant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assistant_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +91,7 @@ impl SearchSessionsInputBuilder {
         &self.assistant_id
     }
     /// <p>The search expression to filter results.</p>
+    /// This field is required.
     pub fn search_expression(mut self, input: crate::types::SearchExpression) -> Self {
         self.search_expression = ::std::option::Option::Some(input);
         self
@@ -106,7 +108,7 @@ impl SearchSessionsInputBuilder {
     /// Consumes the builder and constructs a [`SearchSessionsInput`](crate::operation::search_sessions::SearchSessionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_sessions::SearchSessionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::search_sessions::SearchSessionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_sessions::SearchSessionsInput {
             next_token: self.next_token,
             max_results: self.max_results,

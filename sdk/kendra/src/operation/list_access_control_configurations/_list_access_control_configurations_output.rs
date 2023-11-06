@@ -6,7 +6,7 @@ pub struct ListAccessControlConfigurationsOutput {
     /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use in the subsequent request to retrieve the next set of access control configurations.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The details of your access control configurations.</p>
-    pub access_control_configurations: ::std::option::Option<::std::vec::Vec<crate::types::AccessControlConfigurationSummary>>,
+    pub access_control_configurations: ::std::vec::Vec<crate::types::AccessControlConfigurationSummary>,
     _request_id: Option<String>,
 }
 impl ListAccessControlConfigurationsOutput {
@@ -15,8 +15,9 @@ impl ListAccessControlConfigurationsOutput {
         self.next_token.as_deref()
     }
     /// <p>The details of your access control configurations.</p>
-    pub fn access_control_configurations(&self) -> ::std::option::Option<&[crate::types::AccessControlConfigurationSummary]> {
-        self.access_control_configurations.as_deref()
+    pub fn access_control_configurations(&self) -> &[crate::types::AccessControlConfigurationSummary] {
+        use std::ops::Deref;
+        self.access_control_configurations.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListAccessControlConfigurationsOutput {
@@ -87,11 +88,25 @@ impl ListAccessControlConfigurationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAccessControlConfigurationsOutput`](crate::operation::list_access_control_configurations::ListAccessControlConfigurationsOutput).
-    pub fn build(self) -> crate::operation::list_access_control_configurations::ListAccessControlConfigurationsOutput {
-        crate::operation::list_access_control_configurations::ListAccessControlConfigurationsOutput {
-            next_token: self.next_token,
-            access_control_configurations: self.access_control_configurations,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`access_control_configurations`](crate::operation::list_access_control_configurations::builders::ListAccessControlConfigurationsOutputBuilder::access_control_configurations)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_access_control_configurations::ListAccessControlConfigurationsOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::list_access_control_configurations::ListAccessControlConfigurationsOutput {
+                next_token: self.next_token,
+                access_control_configurations: self.access_control_configurations.ok_or_else(|| {
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
+                        "access_control_configurations",
+                        "access_control_configurations was not specified but it is required when building ListAccessControlConfigurationsOutput",
+                    )
+                })?,
+                _request_id: self._request_id,
+            },
+        )
     }
 }

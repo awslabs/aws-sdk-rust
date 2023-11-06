@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualNodeStatus {
     /// <p>The current status of the virtual node.</p>
-    pub status: ::std::option::Option<crate::types::VirtualNodeStatusCode>,
+    pub status: crate::types::VirtualNodeStatusCode,
 }
 impl VirtualNodeStatus {
     /// <p>The current status of the virtual node.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::VirtualNodeStatusCode> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::VirtualNodeStatusCode {
+        &self.status
     }
 }
 impl VirtualNodeStatus {
@@ -28,6 +28,7 @@ pub struct VirtualNodeStatusBuilder {
 }
 impl VirtualNodeStatusBuilder {
     /// <p>The current status of the virtual node.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::VirtualNodeStatusCode) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,16 @@ impl VirtualNodeStatusBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`VirtualNodeStatus`](crate::types::VirtualNodeStatus).
-    pub fn build(self) -> crate::types::VirtualNodeStatus {
-        crate::types::VirtualNodeStatus { status: self.status }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::types::builders::VirtualNodeStatusBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::VirtualNodeStatus, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::VirtualNodeStatus {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building VirtualNodeStatus",
+                )
+            })?,
+        })
     }
 }

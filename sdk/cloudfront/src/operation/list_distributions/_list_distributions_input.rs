@@ -65,7 +65,7 @@ impl ListDistributionsInputBuilder {
     /// Consumes the builder and constructs a [`ListDistributionsInput`](crate::operation::list_distributions::ListDistributionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_distributions::ListDistributionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_distributions::ListDistributionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_distributions::ListDistributionsInput {
             marker: self.marker,
             max_items: self.max_items,

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomConnectorProfileCredentials {
     /// <p>The authentication type that the custom connector uses for authenticating while creating a connector profile.</p>
-    pub authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
+    pub authentication_type: crate::types::AuthenticationType,
     /// <p>The basic credentials that are required for the authentication of the user.</p>
     pub basic: ::std::option::Option<crate::types::BasicAuthCredentials>,
     /// <p>The OAuth 2.0 credentials required for the authentication of the user.</p>
@@ -17,8 +17,8 @@ pub struct CustomConnectorProfileCredentials {
 }
 impl CustomConnectorProfileCredentials {
     /// <p>The authentication type that the custom connector uses for authenticating while creating a connector profile.</p>
-    pub fn authentication_type(&self) -> ::std::option::Option<&crate::types::AuthenticationType> {
-        self.authentication_type.as_ref()
+    pub fn authentication_type(&self) -> &crate::types::AuthenticationType {
+        &self.authentication_type
     }
     /// <p>The basic credentials that are required for the authentication of the user.</p>
     pub fn basic(&self) -> ::std::option::Option<&crate::types::BasicAuthCredentials> {
@@ -56,6 +56,7 @@ pub struct CustomConnectorProfileCredentialsBuilder {
 }
 impl CustomConnectorProfileCredentialsBuilder {
     /// <p>The authentication type that the custom connector uses for authenticating while creating a connector profile.</p>
+    /// This field is required.
     pub fn authentication_type(mut self, input: crate::types::AuthenticationType) -> Self {
         self.authentication_type = ::std::option::Option::Some(input);
         self
@@ -126,13 +127,20 @@ impl CustomConnectorProfileCredentialsBuilder {
         &self.custom
     }
     /// Consumes the builder and constructs a [`CustomConnectorProfileCredentials`](crate::types::CustomConnectorProfileCredentials).
-    pub fn build(self) -> crate::types::CustomConnectorProfileCredentials {
-        crate::types::CustomConnectorProfileCredentials {
-            authentication_type: self.authentication_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`authentication_type`](crate::types::builders::CustomConnectorProfileCredentialsBuilder::authentication_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomConnectorProfileCredentials, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CustomConnectorProfileCredentials {
+            authentication_type: self.authentication_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "authentication_type",
+                    "authentication_type was not specified but it is required when building CustomConnectorProfileCredentials",
+                )
+            })?,
             basic: self.basic,
             oauth2: self.oauth2,
             api_key: self.api_key,
             custom: self.custom,
-        }
+        })
     }
 }

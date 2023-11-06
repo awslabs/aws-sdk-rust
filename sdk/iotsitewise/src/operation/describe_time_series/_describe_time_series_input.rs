@@ -85,7 +85,8 @@ impl DescribeTimeSeriesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTimeSeriesInput`](crate::operation::describe_time_series::DescribeTimeSeriesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_time_series::DescribeTimeSeriesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_time_series::DescribeTimeSeriesInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::describe_time_series::DescribeTimeSeriesInput {
             alias: self.alias,
             asset_id: self.asset_id,

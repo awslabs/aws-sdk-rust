@@ -105,7 +105,7 @@ impl ListPortfoliosInputBuilder {
     /// Consumes the builder and constructs a [`ListPortfoliosInput`](crate::operation::list_portfolios::ListPortfoliosInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_portfolios::ListPortfoliosInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_portfolios::ListPortfoliosInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_portfolios::ListPortfoliosInput {
             accept_language: self.accept_language,
             page_token: self.page_token,

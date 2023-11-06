@@ -15,8 +15,10 @@ pub struct DescribeJobQueuesInput {
 }
 impl DescribeJobQueuesInput {
     /// <p>A list of up to 100 queue names or full queue Amazon Resource Name (ARN) entries.</p>
-    pub fn job_queues(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.job_queues.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_queues.is_none()`.
+    pub fn job_queues(&self) -> &[::std::string::String] {
+        self.job_queues.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of results returned by <code>DescribeJobQueues</code> in paginated output. When this parameter is used, <code>DescribeJobQueues</code> only returns <code>maxResults</code> results in a single page and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeJobQueues</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>DescribeJobQueues</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -102,7 +104,7 @@ impl DescribeJobQueuesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeJobQueuesInput`](crate::operation::describe_job_queues::DescribeJobQueuesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_job_queues::DescribeJobQueuesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_job_queues::DescribeJobQueuesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_job_queues::DescribeJobQueuesInput {
             job_queues: self.job_queues,
             max_results: self.max_results,

@@ -2,21 +2,21 @@
 pub fn ser_analytics_intent_stage_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AnalyticsIntentStageFilter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("name").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.operator {
-        object.key("operator").string(var_2.as_str());
+    {
+        object.key("operator").string(input.operator.as_str());
     }
-    if let Some(var_3) = &input.values {
-        let mut array_4 = object.key("values").start_array();
-        for item_5 in var_3 {
+    {
+        let mut array_1 = object.key("values").start_array();
+        for item_2 in &input.values {
             {
-                array_4.value().string(item_5.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_4.finish();
+        array_1.finish();
     }
     Ok(())
 }

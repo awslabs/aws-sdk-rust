@@ -29,11 +29,10 @@ pub fn de_get_sol_function_package_descriptor_http_error(
                     output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                         .map_err(crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::access_denied_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -46,11 +45,10 @@ pub fn de_get_sol_function_package_descriptor_http_error(
                     output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
                         .map_err(crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::internal_server_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -64,11 +62,10 @@ pub fn de_get_sol_function_package_descriptor_http_error(
                         crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                             .map_err(crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::resource_not_found_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -80,11 +77,10 @@ pub fn de_get_sol_function_package_descriptor_http_error(
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorError::ValidationException({
@@ -95,11 +91,10 @@ pub fn de_get_sol_function_package_descriptor_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorError::generic(generic),
@@ -136,13 +131,13 @@ pub fn de_get_sol_function_package_descriptor_http_response(
 pub fn ser_get_sol_function_package_descriptor_headers(
     input: &crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.accept {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "accept",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )

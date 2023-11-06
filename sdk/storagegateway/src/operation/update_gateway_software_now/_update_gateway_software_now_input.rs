@@ -28,6 +28,7 @@ pub struct UpdateGatewaySoftwareNowInputBuilder {
 }
 impl UpdateGatewaySoftwareNowInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// This field is required.
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_arn = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl UpdateGatewaySoftwareNowInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_gateway_software_now::UpdateGatewaySoftwareNowInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_gateway_software_now::UpdateGatewaySoftwareNowInput {
             gateway_arn: self.gateway_arn,

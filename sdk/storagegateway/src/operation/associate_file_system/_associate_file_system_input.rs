@@ -46,8 +46,10 @@ impl AssociateFileSystemInput {
         self.location_arn.as_deref()
     }
     /// <p>A list of up to 50 tags that can be assigned to the file system association. Each tag is a key-value pair.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
     pub fn audit_destination_arn(&self) -> ::std::option::Option<&str> {
@@ -102,6 +104,7 @@ pub struct AssociateFileSystemInputBuilder {
 }
 impl AssociateFileSystemInputBuilder {
     /// <p>The user name of the user credential that has permission to access the root share D$ of the Amazon FSx file system. The user account must belong to the Amazon FSx delegated admin user group.</p>
+    /// This field is required.
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self
@@ -116,6 +119,7 @@ impl AssociateFileSystemInputBuilder {
         &self.user_name
     }
     /// <p>The password of the user credential.</p>
+    /// This field is required.
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
         self
@@ -130,6 +134,7 @@ impl AssociateFileSystemInputBuilder {
         &self.password
     }
     /// <p>A unique string value that you supply that is used by the FSx File Gateway to ensure idempotent file system association creation.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -144,6 +149,7 @@ impl AssociateFileSystemInputBuilder {
         &self.client_token
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// This field is required.
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_arn = ::std::option::Option::Some(input.into());
         self
@@ -158,6 +164,7 @@ impl AssociateFileSystemInputBuilder {
         &self.gateway_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon FSx file system to associate with the FSx File Gateway.</p>
+    /// This field is required.
     pub fn location_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_arn = ::std::option::Option::Some(input.into());
         self
@@ -242,7 +249,7 @@ impl AssociateFileSystemInputBuilder {
     /// Consumes the builder and constructs a [`AssociateFileSystemInput`](crate::operation::associate_file_system::AssociateFileSystemInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_file_system::AssociateFileSystemInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::associate_file_system::AssociateFileSystemInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::associate_file_system::AssociateFileSystemInput {
             user_name: self.user_name,

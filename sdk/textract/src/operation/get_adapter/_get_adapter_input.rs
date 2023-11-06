@@ -27,6 +27,7 @@ pub struct GetAdapterInputBuilder {
 }
 impl GetAdapterInputBuilder {
     /// <p>A string containing a unique ID for the adapter.</p>
+    /// This field is required.
     pub fn adapter_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.adapter_id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetAdapterInputBuilder {
         &self.adapter_id
     }
     /// Consumes the builder and constructs a [`GetAdapterInput`](crate::operation::get_adapter::GetAdapterInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_adapter::GetAdapterInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_adapter::GetAdapterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_adapter::GetAdapterInput { adapter_id: self.adapter_id })
     }
 }

@@ -27,6 +27,7 @@ pub struct DeleteReportInputBuilder {
 }
 impl DeleteReportInputBuilder {
     /// <p> The ARN of the report to delete. </p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,9 @@ impl DeleteReportInputBuilder {
         &self.arn
     }
     /// Consumes the builder and constructs a [`DeleteReportInput`](crate::operation::delete_report::DeleteReportInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_report::DeleteReportInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_report::DeleteReportInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_report::DeleteReportInput { arn: self.arn })
     }
 }

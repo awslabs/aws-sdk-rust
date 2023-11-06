@@ -48,6 +48,7 @@ pub struct StartSuiteRunInputBuilder {
 }
 impl StartSuiteRunInputBuilder {
     /// <p>Suite definition ID of the test suite.</p>
+    /// This field is required.
     pub fn suite_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.suite_definition_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl StartSuiteRunInputBuilder {
         &self.suite_definition_version
     }
     /// <p>Suite run configuration.</p>
+    /// This field is required.
     pub fn suite_run_configuration(mut self, input: crate::types::SuiteRunConfiguration) -> Self {
         self.suite_run_configuration = ::std::option::Option::Some(input);
         self
@@ -112,7 +114,7 @@ impl StartSuiteRunInputBuilder {
     /// Consumes the builder and constructs a [`StartSuiteRunInput`](crate::operation::start_suite_run::StartSuiteRunInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_suite_run::StartSuiteRunInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_suite_run::StartSuiteRunInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_suite_run::StartSuiteRunInput {
             suite_definition_id: self.suite_definition_id,
             suite_definition_version: self.suite_definition_version,

@@ -11,8 +11,10 @@ pub struct DescribePatchPropertiesOutput {
 }
 impl DescribePatchPropertiesOutput {
     /// <p>A list of the properties for patches matching the filter request parameters.</p>
-    pub fn properties(&self) -> ::std::option::Option<&[::std::collections::HashMap<::std::string::String, ::std::string::String>]> {
-        self.properties.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.properties.is_none()`.
+    pub fn properties(&self) -> &[::std::collections::HashMap<::std::string::String, ::std::string::String>] {
+        self.properties.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of items to return. (You use this token in the next call.)</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

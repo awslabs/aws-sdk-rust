@@ -27,6 +27,7 @@ pub struct DescribeIcd10CmInferenceJobInputBuilder {
 }
 impl DescribeIcd10CmInferenceJobInputBuilder {
     /// <p>The identifier that Amazon Comprehend Medical generated for the job. <code>The StartICD10CMInferenceJob</code> operation returns this identifier in its response.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeIcd10CmInferenceJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_icd10_cm_inference_job::DescribeIcd10CmInferenceJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_icd10_cm_inference_job::DescribeIcd10CmInferenceJobInput { job_id: self.job_id })
     }

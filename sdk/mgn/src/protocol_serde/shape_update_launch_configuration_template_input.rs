@@ -2,7 +2,7 @@
 pub fn ser_update_launch_configuration_template_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplateInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.associate_public_ip_address {
         object.key("associatePublicIpAddress").boolean(*var_1);
     }
@@ -51,14 +51,14 @@ pub fn ser_update_launch_configuration_template_input(
         crate::protocol_serde::shape_launch_template_disk_conf::ser_launch_template_disk_conf(&mut object_16, var_15)?;
         object_16.finish();
     }
-    if input.small_volume_max_size != 0 {
+    if let Some(var_17) = &input.small_volume_max_size {
         object.key("smallVolumeMaxSize").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.small_volume_max_size).into()),
+            ::aws_smithy_types::Number::NegInt((*var_17).into()),
         );
     }
-    if let Some(var_17) = &input.target_instance_type_right_sizing_method {
-        object.key("targetInstanceTypeRightSizingMethod").string(var_17.as_str());
+    if let Some(var_18) = &input.target_instance_type_right_sizing_method {
+        object.key("targetInstanceTypeRightSizingMethod").string(var_18.as_str());
     }
     Ok(())
 }

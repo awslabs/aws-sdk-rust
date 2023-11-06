@@ -16,8 +16,10 @@ impl StartFleetActionsInput {
         self.fleet_id.as_deref()
     }
     /// <p>List of actions to restart on the fleet.</p>
-    pub fn actions(&self) -> ::std::option::Option<&[crate::types::FleetAction]> {
-        self.actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
+    pub fn actions(&self) -> &[crate::types::FleetAction] {
+        self.actions.as_deref().unwrap_or_default()
     }
     /// <p>The fleet location to restart fleet actions for. Specify a location in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
     pub fn location(&self) -> ::std::option::Option<&str> {
@@ -41,6 +43,7 @@ pub struct StartFleetActionsInputBuilder {
 }
 impl StartFleetActionsInputBuilder {
     /// <p>A unique identifier for the fleet to restart actions on. You can use either the fleet ID or ARN value.</p>
+    /// This field is required.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
         self
@@ -91,7 +94,7 @@ impl StartFleetActionsInputBuilder {
     /// Consumes the builder and constructs a [`StartFleetActionsInput`](crate::operation::start_fleet_actions::StartFleetActionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_fleet_actions::StartFleetActionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_fleet_actions::StartFleetActionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_fleet_actions::StartFleetActionsInput {
             fleet_id: self.fleet_id,
             actions: self.actions,

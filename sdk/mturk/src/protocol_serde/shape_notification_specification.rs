@@ -2,24 +2,24 @@
 pub fn ser_notification_specification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NotificationSpecification,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.destination {
-        object.key("Destination").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Destination").string(input.destination.as_str());
     }
-    if let Some(var_2) = &input.transport {
-        object.key("Transport").string(var_2.as_str());
+    {
+        object.key("Transport").string(input.transport.as_str());
     }
-    if let Some(var_3) = &input.version {
-        object.key("Version").string(var_3.as_str());
+    {
+        object.key("Version").string(input.version.as_str());
     }
-    if let Some(var_4) = &input.event_types {
-        let mut array_5 = object.key("EventTypes").start_array();
-        for item_6 in var_4 {
+    {
+        let mut array_1 = object.key("EventTypes").start_array();
+        for item_2 in &input.event_types {
             {
-                array_5.value().string(item_6.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_5.finish();
+        array_1.finish();
     }
     Ok(())
 }

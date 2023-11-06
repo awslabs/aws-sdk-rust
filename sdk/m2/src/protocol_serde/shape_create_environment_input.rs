@@ -2,7 +2,7 @@
 pub fn ser_create_environment_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_environment::CreateEnvironmentInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.client_token {
         object.key("clientToken").string(var_1.as_str());
     }
@@ -33,48 +33,48 @@ pub fn ser_create_environment_input(
     if let Some(var_10) = &input.preferred_maintenance_window {
         object.key("preferredMaintenanceWindow").string(var_10.as_str());
     }
-    if input.publicly_accessible {
-        object.key("publiclyAccessible").boolean(input.publicly_accessible);
+    if let Some(var_11) = &input.publicly_accessible {
+        object.key("publiclyAccessible").boolean(*var_11);
     }
-    if let Some(var_11) = &input.security_group_ids {
-        let mut array_12 = object.key("securityGroupIds").start_array();
-        for item_13 in var_11 {
+    if let Some(var_12) = &input.security_group_ids {
+        let mut array_13 = object.key("securityGroupIds").start_array();
+        for item_14 in var_12 {
             {
-                array_12.value().string(item_13.as_str());
+                array_13.value().string(item_14.as_str());
             }
         }
-        array_12.finish();
+        array_13.finish();
     }
-    if let Some(var_14) = &input.storage_configurations {
-        let mut array_15 = object.key("storageConfigurations").start_array();
-        for item_16 in var_14 {
+    if let Some(var_15) = &input.storage_configurations {
+        let mut array_16 = object.key("storageConfigurations").start_array();
+        for item_17 in var_15 {
             {
                 #[allow(unused_mut)]
-                let mut object_17 = array_15.value().start_object();
-                crate::protocol_serde::shape_storage_configuration::ser_storage_configuration(&mut object_17, item_16)?;
-                object_17.finish();
+                let mut object_18 = array_16.value().start_object();
+                crate::protocol_serde::shape_storage_configuration::ser_storage_configuration(&mut object_18, item_17)?;
+                object_18.finish();
             }
         }
-        array_15.finish();
+        array_16.finish();
     }
-    if let Some(var_18) = &input.subnet_ids {
-        let mut array_19 = object.key("subnetIds").start_array();
-        for item_20 in var_18 {
+    if let Some(var_19) = &input.subnet_ids {
+        let mut array_20 = object.key("subnetIds").start_array();
+        for item_21 in var_19 {
             {
-                array_19.value().string(item_20.as_str());
+                array_20.value().string(item_21.as_str());
             }
         }
-        array_19.finish();
+        array_20.finish();
     }
-    if let Some(var_21) = &input.tags {
+    if let Some(var_22) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_22 = object.key("tags").start_object();
-        for (key_23, value_24) in var_21 {
+        let mut object_23 = object.key("tags").start_object();
+        for (key_24, value_25) in var_22 {
             {
-                object_22.key(key_23.as_str()).string(value_24.as_str());
+                object_23.key(key_24.as_str()).string(value_25.as_str());
             }
         }
-        object_22.finish();
+        object_23.finish();
     }
     Ok(())
 }

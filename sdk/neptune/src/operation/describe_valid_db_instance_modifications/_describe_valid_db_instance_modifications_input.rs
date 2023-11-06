@@ -27,6 +27,7 @@ pub struct DescribeValidDbInstanceModificationsInputBuilder {
 }
 impl DescribeValidDbInstanceModificationsInputBuilder {
     /// <p>The customer identifier or the ARN of your DB instance.</p>
+    /// This field is required.
     pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_identifier = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeValidDbInstanceModificationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_valid_db_instance_modifications::DescribeValidDbInstanceModificationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_valid_db_instance_modifications::DescribeValidDbInstanceModificationsInput {

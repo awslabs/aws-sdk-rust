@@ -48,6 +48,7 @@ pub struct DeleteRouteInputBuilder {
 }
 impl DeleteRouteInputBuilder {
     /// <p>The name of the route to delete.</p>
+    /// This field is required.
     pub fn route_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl DeleteRouteInputBuilder {
         &self.route_name
     }
     /// <p>The name of the service mesh to delete the route in.</p>
+    /// This field is required.
     pub fn mesh_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mesh_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl DeleteRouteInputBuilder {
         &self.mesh_name
     }
     /// <p>The name of the virtual router to delete the route in.</p>
+    /// This field is required.
     pub fn virtual_router_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_router_name = ::std::option::Option::Some(input.into());
         self
@@ -104,7 +107,7 @@ impl DeleteRouteInputBuilder {
         &self.mesh_owner
     }
     /// Consumes the builder and constructs a [`DeleteRouteInput`](crate::operation::delete_route::DeleteRouteInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_route::DeleteRouteInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_route::DeleteRouteInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_route::DeleteRouteInput {
             route_name: self.route_name,
             mesh_name: self.mesh_name,

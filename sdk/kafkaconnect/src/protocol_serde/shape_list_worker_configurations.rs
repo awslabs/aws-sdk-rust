@@ -181,7 +181,7 @@ pub(crate) fn de_list_worker_configurations(
                 }
                 "workerConfigurations" => {
                     builder = builder.set_worker_configurations(
-                        crate::protocol_serde::shape___list_of_worker_configuration_summary::de___list_of_worker_configuration_summary(tokens)?,
+                        crate::protocol_serde::shape_list_of_worker_configuration_summary::de_list_of_worker_configuration_summary(tokens)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

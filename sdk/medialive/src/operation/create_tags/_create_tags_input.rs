@@ -35,6 +35,7 @@ pub struct CreateTagsInputBuilder {
 }
 impl CreateTagsInputBuilder {
     /// Placeholder documentation for __string
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -69,7 +70,7 @@ impl CreateTagsInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateTagsInput`](crate::operation::create_tags::CreateTagsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_tags::CreateTagsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_tags::CreateTagsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_tags::CreateTagsInput {
             resource_arn: self.resource_arn,
             tags: self.tags,

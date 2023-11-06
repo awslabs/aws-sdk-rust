@@ -28,6 +28,7 @@ pub struct GetRepositoryTriggersInputBuilder {
 }
 impl GetRepositoryTriggersInputBuilder {
     /// <p>The name of the repository for which the trigger is configured.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl GetRepositoryTriggersInputBuilder {
     /// Consumes the builder and constructs a [`GetRepositoryTriggersInput`](crate::operation::get_repository_triggers::GetRepositoryTriggersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_repository_triggers::GetRepositoryTriggersInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_repository_triggers::GetRepositoryTriggersInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_repository_triggers::GetRepositoryTriggersInput {
             repository_name: self.repository_name,

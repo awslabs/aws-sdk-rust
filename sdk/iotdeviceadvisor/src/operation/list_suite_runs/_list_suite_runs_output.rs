@@ -11,8 +11,10 @@ pub struct ListSuiteRunsOutput {
 }
 impl ListSuiteRunsOutput {
     /// <p>An array of objects that provide summaries of information about the suite runs in the list.</p>
-    pub fn suite_runs_list(&self) -> ::std::option::Option<&[crate::types::SuiteRunInformation]> {
-        self.suite_runs_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.suite_runs_list.is_none()`.
+    pub fn suite_runs_list(&self) -> &[crate::types::SuiteRunInformation] {
+        self.suite_runs_list.as_deref().unwrap_or_default()
     }
     /// <p>A token to retrieve the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

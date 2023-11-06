@@ -38,8 +38,8 @@ pub fn de_decrease_node_groups_in_global_replication_group_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidGlobalReplicationGroupState" => crate::operation::decrease_node_groups_in_global_replication_group::DecreaseNodeGroupsInGlobalReplicationGroupError::InvalidGlobalReplicationGroupStateFault({
@@ -54,8 +54,8 @@ pub fn de_decrease_node_groups_in_global_replication_group_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidParameterCombination" => crate::operation::decrease_node_groups_in_global_replication_group::DecreaseNodeGroupsInGlobalReplicationGroupError::InvalidParameterCombinationException({
@@ -70,8 +70,8 @@ pub fn de_decrease_node_groups_in_global_replication_group_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidParameterValue" => crate::operation::decrease_node_groups_in_global_replication_group::DecreaseNodeGroupsInGlobalReplicationGroupError::InvalidParameterValueException({
@@ -86,8 +86,8 @@ pub fn de_decrease_node_groups_in_global_replication_group_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::decrease_node_groups_in_global_replication_group::DecreaseNodeGroupsInGlobalReplicationGroupError::generic(generic)

@@ -77,6 +77,7 @@ pub struct MemberBuilder {
 }
 impl MemberBuilder {
     /// <p>The ID of the member account.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +106,7 @@ impl MemberBuilder {
         &self.detector_id
     }
     /// <p>The administrator account ID.</p>
+    /// This field is required.
     pub fn master_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_id = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +121,7 @@ impl MemberBuilder {
         &self.master_id
     }
     /// <p>The email address of the member account.</p>
+    /// This field is required.
     pub fn email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email = ::std::option::Option::Some(input.into());
         self
@@ -133,6 +136,7 @@ impl MemberBuilder {
         &self.email
     }
     /// <p>The status of the relationship between the member and the administrator.</p>
+    /// This field is required.
     pub fn relationship_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.relationship_status = ::std::option::Option::Some(input.into());
         self
@@ -161,6 +165,7 @@ impl MemberBuilder {
         &self.invited_at
     }
     /// <p>The last-updated timestamp of the member.</p>
+    /// This field is required.
     pub fn updated_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.updated_at = ::std::option::Option::Some(input.into());
         self

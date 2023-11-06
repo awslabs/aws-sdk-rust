@@ -34,6 +34,7 @@ pub struct GetLayerVersionInputBuilder {
 }
 impl GetLayerVersionInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
+    /// This field is required.
     pub fn layer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.layer_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetLayerVersionInputBuilder {
         &self.layer_name
     }
     /// <p>The version number.</p>
+    /// This field is required.
     pub fn version_number(mut self, input: i64) -> Self {
         self.version_number = ::std::option::Option::Some(input);
         self
@@ -64,7 +66,7 @@ impl GetLayerVersionInputBuilder {
     /// Consumes the builder and constructs a [`GetLayerVersionInput`](crate::operation::get_layer_version::GetLayerVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_layer_version::GetLayerVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_layer_version::GetLayerVersionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_layer_version::GetLayerVersionInput {
             layer_name: self.layer_name,
             version_number: self.version_number,

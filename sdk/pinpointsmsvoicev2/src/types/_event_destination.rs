@@ -6,11 +6,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventDestination {
     /// <p>The name of the EventDestination.</p>
-    pub event_destination_name: ::std::option::Option<::std::string::String>,
+    pub event_destination_name: ::std::string::String,
     /// <p>When set to true events will be logged.</p>
-    pub enabled: ::std::option::Option<bool>,
+    pub enabled: bool,
     /// <p>An array of event types that determine which events to log.</p>
-    pub matching_event_types: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
+    pub matching_event_types: ::std::vec::Vec<crate::types::EventType>,
     /// <p>An object that contains information about an event destination that sends logging events to Amazon CloudWatch logs.</p>
     pub cloud_watch_logs_destination: ::std::option::Option<crate::types::CloudWatchLogsDestination>,
     /// <p>An object that contains information about an event destination for logging to Amazon Kinesis Data Firehose.</p>
@@ -20,16 +20,18 @@ pub struct EventDestination {
 }
 impl EventDestination {
     /// <p>The name of the EventDestination.</p>
-    pub fn event_destination_name(&self) -> ::std::option::Option<&str> {
-        self.event_destination_name.as_deref()
+    pub fn event_destination_name(&self) -> &str {
+        use std::ops::Deref;
+        self.event_destination_name.deref()
     }
     /// <p>When set to true events will be logged.</p>
-    pub fn enabled(&self) -> ::std::option::Option<bool> {
+    pub fn enabled(&self) -> bool {
         self.enabled
     }
     /// <p>An array of event types that determine which events to log.</p>
-    pub fn matching_event_types(&self) -> ::std::option::Option<&[crate::types::EventType]> {
-        self.matching_event_types.as_deref()
+    pub fn matching_event_types(&self) -> &[crate::types::EventType] {
+        use std::ops::Deref;
+        self.matching_event_types.deref()
     }
     /// <p>An object that contains information about an event destination that sends logging events to Amazon CloudWatch logs.</p>
     pub fn cloud_watch_logs_destination(&self) -> ::std::option::Option<&crate::types::CloudWatchLogsDestination> {
@@ -64,6 +66,7 @@ pub struct EventDestinationBuilder {
 }
 impl EventDestinationBuilder {
     /// <p>The name of the EventDestination.</p>
+    /// This field is required.
     pub fn event_destination_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_destination_name = ::std::option::Option::Some(input.into());
         self
@@ -78,6 +81,7 @@ impl EventDestinationBuilder {
         &self.event_destination_name
     }
     /// <p>When set to true events will be logged.</p>
+    /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
@@ -154,14 +158,33 @@ impl EventDestinationBuilder {
         &self.sns_destination
     }
     /// Consumes the builder and constructs a [`EventDestination`](crate::types::EventDestination).
-    pub fn build(self) -> crate::types::EventDestination {
-        crate::types::EventDestination {
-            event_destination_name: self.event_destination_name,
-            enabled: self.enabled,
-            matching_event_types: self.matching_event_types,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`event_destination_name`](crate::types::builders::EventDestinationBuilder::event_destination_name)
+    /// - [`enabled`](crate::types::builders::EventDestinationBuilder::enabled)
+    /// - [`matching_event_types`](crate::types::builders::EventDestinationBuilder::matching_event_types)
+    pub fn build(self) -> ::std::result::Result<crate::types::EventDestination, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EventDestination {
+            event_destination_name: self.event_destination_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "event_destination_name",
+                    "event_destination_name was not specified but it is required when building EventDestination",
+                )
+            })?,
+            enabled: self.enabled.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "enabled",
+                    "enabled was not specified but it is required when building EventDestination",
+                )
+            })?,
+            matching_event_types: self.matching_event_types.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "matching_event_types",
+                    "matching_event_types was not specified but it is required when building EventDestination",
+                )
+            })?,
             cloud_watch_logs_destination: self.cloud_watch_logs_destination,
             kinesis_firehose_destination: self.kinesis_firehose_destination,
             sns_destination: self.sns_destination,
-        }
+        })
     }
 }

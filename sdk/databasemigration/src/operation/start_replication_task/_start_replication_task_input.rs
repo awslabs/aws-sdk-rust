@@ -82,6 +82,7 @@ pub struct StartReplicationTaskInputBuilder {
 }
 impl StartReplicationTaskInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the replication task to be started.</p>
+    /// This field is required.
     pub fn replication_task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_task_arn = ::std::option::Option::Some(input.into());
         self
@@ -100,6 +101,7 @@ impl StartReplicationTaskInputBuilder {
     /// <p>You can also use <code>ReloadTables</code> to reload specific tables that failed during migration instead of restarting the task.</p>
     /// <p>The <code>resume-processing</code> option isn't applicable for a full-load task, because you can't resume partially loaded tables during the full load phase.</p>
     /// <p>For a <code>full-load-and-cdc</code> task, DMS migrates table data, and then applies data changes that occur on the source. To load all the tables again, and start capturing source changes, use <code>reload-target</code>. Otherwise use <code>resume-processing</code>, to replicate the changes from the last stop position.</p>
+    /// This field is required.
     pub fn start_replication_task_type(mut self, input: crate::types::StartReplicationTaskTypeValue) -> Self {
         self.start_replication_task_type = ::std::option::Option::Some(input);
         self
@@ -193,7 +195,7 @@ impl StartReplicationTaskInputBuilder {
     /// Consumes the builder and constructs a [`StartReplicationTaskInput`](crate::operation::start_replication_task::StartReplicationTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_replication_task::StartReplicationTaskInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_replication_task::StartReplicationTaskInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_replication_task::StartReplicationTaskInput {
             replication_task_arn: self.replication_task_arn,

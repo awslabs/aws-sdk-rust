@@ -2,17 +2,18 @@
 pub fn ser_delete_marker_replication(
     input: &crate::types::DeleteMarkerReplication,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.status {
+    {
         let mut inner_writer = scope.start_el("Status").finish();
-        inner_writer.data(var_1.as_str());
+        inner_writer.data(input.status.as_str());
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_delete_marker_replication(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::DeleteMarkerReplication, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -21,7 +22,7 @@ pub fn de_delete_marker_replication(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Status") /* Status com.amazonaws.s3control#DeleteMarkerReplication$Status */ =>  {
-                let var_2 =
+                let var_1 =
                     Some(
                         Result::<crate::types::DeleteMarkerReplicationStatus, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::DeleteMarkerReplicationStatus::from(
@@ -31,11 +32,13 @@ pub fn de_delete_marker_replication(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_2);
+                builder = builder.set_status(var_1);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::delete_marker_replication_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

@@ -17,8 +17,10 @@ impl ListResourcesAssociatedToCustomLineItemOutput {
         self.arn.as_deref()
     }
     /// <p> A list of <code>ListResourcesAssociatedToCustomLineItemResponseElement</code> for each resource association retrieved. </p>
-    pub fn associated_resources(&self) -> ::std::option::Option<&[crate::types::ListResourcesAssociatedToCustomLineItemResponseElement]> {
-        self.associated_resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_resources.is_none()`.
+    pub fn associated_resources(&self) -> &[crate::types::ListResourcesAssociatedToCustomLineItemResponseElement] {
+        self.associated_resources.as_deref().unwrap_or_default()
     }
     /// <p> The pagination token to be used in subsequent requests to retrieve additional results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

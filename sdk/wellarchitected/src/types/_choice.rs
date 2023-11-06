@@ -45,8 +45,10 @@ impl Choice {
     }
     /// <p>The additional resources for a choice in a custom lens.</p>
     /// <p>A choice can have up to two additional resources: one of type <code>HELPFUL_RESOURCE</code>, one of type <code>IMPROVEMENT_PLAN</code>, or both.</p>
-    pub fn additional_resources(&self) -> ::std::option::Option<&[crate::types::AdditionalResources]> {
-        self.additional_resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_resources.is_none()`.
+    pub fn additional_resources(&self) -> &[crate::types::AdditionalResources] {
+        self.additional_resources.as_deref().unwrap_or_default()
     }
 }
 impl Choice {

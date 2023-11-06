@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeAlgorithm`](crate::operation::describe_algorithm::builders::DescribeAlgorithmFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`algorithm_name(impl Into<String>)`](crate::operation::describe_algorithm::builders::DescribeAlgorithmFluentBuilder::algorithm_name) / [`set_algorithm_name(Option<String>)`](crate::operation::describe_algorithm::builders::DescribeAlgorithmFluentBuilder::set_algorithm_name): <p>The name of the algorithm to describe.</p>
+    ///   - [`algorithm_name(impl Into<String>)`](crate::operation::describe_algorithm::builders::DescribeAlgorithmFluentBuilder::algorithm_name) / [`set_algorithm_name(Option<String>)`](crate::operation::describe_algorithm::builders::DescribeAlgorithmFluentBuilder::set_algorithm_name):<br>required: **true**<br><p>The name of the algorithm to describe.</p><br>
     /// - On success, responds with [`DescribeAlgorithmOutput`](crate::operation::describe_algorithm::DescribeAlgorithmOutput) with field(s):
     ///   - [`algorithm_name(Option<String>)`](crate::operation::describe_algorithm::DescribeAlgorithmOutput::algorithm_name): <p>The name of the algorithm being described.</p>
     ///   - [`algorithm_arn(Option<String>)`](crate::operation::describe_algorithm::DescribeAlgorithmOutput::algorithm_arn): <p>The Amazon Resource Name (ARN) of the algorithm.</p>

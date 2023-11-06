@@ -36,8 +36,8 @@ pub fn de_disassociate_website_authorization_provider_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidRequestException" => crate::operation::disassociate_website_authorization_provider::DisassociateWebsiteAuthorizationProviderError::InvalidRequestException({
@@ -52,8 +52,8 @@ pub fn de_disassociate_website_authorization_provider_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ResourceAlreadyExistsException" => crate::operation::disassociate_website_authorization_provider::DisassociateWebsiteAuthorizationProviderError::ResourceAlreadyExistsException({
@@ -68,8 +68,8 @@ pub fn de_disassociate_website_authorization_provider_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::disassociate_website_authorization_provider::DisassociateWebsiteAuthorizationProviderError::ResourceNotFoundException({
@@ -84,8 +84,8 @@ pub fn de_disassociate_website_authorization_provider_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyRequestsException" => crate::operation::disassociate_website_authorization_provider::DisassociateWebsiteAuthorizationProviderError::TooManyRequestsException({
@@ -100,8 +100,8 @@ pub fn de_disassociate_website_authorization_provider_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "UnauthorizedException" => crate::operation::disassociate_website_authorization_provider::DisassociateWebsiteAuthorizationProviderError::UnauthorizedException({
@@ -116,8 +116,8 @@ pub fn de_disassociate_website_authorization_provider_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::disassociate_website_authorization_provider::DisassociateWebsiteAuthorizationProviderError::generic(generic)
@@ -144,7 +144,7 @@ pub fn de_disassociate_website_authorization_provider_http_response(
 
 pub fn ser_disassociate_website_authorization_provider_input(
     input: &crate::operation::disassociate_website_authorization_provider::DisassociateWebsiteAuthorizationProviderInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_disassociate_website_authorization_provider_input::ser_disassociate_website_authorization_provider_input(
@@ -152,5 +152,5 @@ pub fn ser_disassociate_website_authorization_provider_input(
         input,
     )?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

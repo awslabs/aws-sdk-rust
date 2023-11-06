@@ -34,6 +34,7 @@ pub struct UpdateAliasInputBuilder {
 }
 impl UpdateAliasInputBuilder {
     /// <p>The alias whose associated key is changing.</p>
+    /// This field is required.
     pub fn alias_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias_name = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +63,7 @@ impl UpdateAliasInputBuilder {
         &self.key_arn
     }
     /// Consumes the builder and constructs a [`UpdateAliasInput`](crate::operation::update_alias::UpdateAliasInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_alias::UpdateAliasInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_alias::UpdateAliasInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_alias::UpdateAliasInput {
             alias_name: self.alias_name,
             key_arn: self.key_arn,

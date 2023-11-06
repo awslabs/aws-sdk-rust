@@ -41,6 +41,7 @@ pub struct DescribeNotificationSubscriptionsInputBuilder {
 }
 impl DescribeNotificationSubscriptionsInputBuilder {
     /// <p>The ID of the organization.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl DescribeNotificationSubscriptionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_notification_subscriptions::DescribeNotificationSubscriptionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_notification_subscriptions::DescribeNotificationSubscriptionsInput {

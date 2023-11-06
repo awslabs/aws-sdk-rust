@@ -6,7 +6,7 @@ pub struct ListRotationsOutput {
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about rotations that meet the filter criteria.</p>
-    pub rotations: ::std::option::Option<::std::vec::Vec<crate::types::Rotation>>,
+    pub rotations: ::std::vec::Vec<crate::types::Rotation>,
     _request_id: Option<String>,
 }
 impl ListRotationsOutput {
@@ -15,8 +15,9 @@ impl ListRotationsOutput {
         self.next_token.as_deref()
     }
     /// <p>Information about rotations that meet the filter criteria.</p>
-    pub fn rotations(&self) -> ::std::option::Option<&[crate::types::Rotation]> {
-        self.rotations.as_deref()
+    pub fn rotations(&self) -> &[crate::types::Rotation] {
+        use std::ops::Deref;
+        self.rotations.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListRotationsOutput {
@@ -84,11 +85,20 @@ impl ListRotationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListRotationsOutput`](crate::operation::list_rotations::ListRotationsOutput).
-    pub fn build(self) -> crate::operation::list_rotations::ListRotationsOutput {
-        crate::operation::list_rotations::ListRotationsOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`rotations`](crate::operation::list_rotations::builders::ListRotationsOutputBuilder::rotations)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_rotations::ListRotationsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_rotations::ListRotationsOutput {
             next_token: self.next_token,
-            rotations: self.rotations,
+            rotations: self.rotations.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "rotations",
+                    "rotations was not specified but it is required when building ListRotationsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -59,8 +59,10 @@ impl IpamResourceDiscovery {
         self.description.as_deref()
     }
     /// <p>The operating Regions for the resource discovery. Operating Regions are Amazon Web Services Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services Regions you select as operating Regions.</p>
-    pub fn operating_regions(&self) -> ::std::option::Option<&[crate::types::IpamOperatingRegion]> {
-        self.operating_regions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.operating_regions.is_none()`.
+    pub fn operating_regions(&self) -> &[crate::types::IpamOperatingRegion] {
+        self.operating_regions.as_deref().unwrap_or_default()
     }
     /// <p>Defines if the resource discovery is the default. The default resource discovery is the resource discovery automatically created when you create an IPAM.</p>
     pub fn is_default(&self) -> ::std::option::Option<bool> {
@@ -85,8 +87,10 @@ impl IpamResourceDiscovery {
         self.state.as_ref()
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl IpamResourceDiscovery {

@@ -27,6 +27,7 @@ pub struct DeleteFileSystemPolicyInputBuilder {
 }
 impl DeleteFileSystemPolicyInputBuilder {
     /// <p>Specifies the EFS file system for which to delete the <code>FileSystemPolicy</code>.</p>
+    /// This field is required.
     pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteFileSystemPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_file_system_policy::DeleteFileSystemPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_file_system_policy::DeleteFileSystemPolicyInput {
             file_system_id: self.file_system_id,

@@ -27,6 +27,7 @@ pub struct GetReferenceStoreInputBuilder {
 }
 impl GetReferenceStoreInputBuilder {
     /// <p>The store's ID.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetReferenceStoreInputBuilder {
     /// Consumes the builder and constructs a [`GetReferenceStoreInput`](crate::operation::get_reference_store::GetReferenceStoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_reference_store::GetReferenceStoreInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_reference_store::GetReferenceStoreInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_reference_store::GetReferenceStoreInput { id: self.id })
     }
 }

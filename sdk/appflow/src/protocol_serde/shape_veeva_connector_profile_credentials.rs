@@ -2,12 +2,12 @@
 pub fn ser_veeva_connector_profile_credentials(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VeevaConnectorProfileCredentials,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.username {
-        object.key("username").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("username").string(input.username.as_str());
     }
-    if let Some(var_2) = &input.password {
-        object.key("password").string(var_2.as_str());
+    {
+        object.key("password").string(input.password.as_str());
     }
     Ok(())
 }

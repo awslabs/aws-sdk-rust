@@ -58,6 +58,7 @@ pub struct DeleteBucketTaggingInputBuilder {
 }
 impl DeleteBucketTaggingInputBuilder {
     /// <p>The Amazon Web Services account ID of the Outposts bucket tag set to be removed.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +85,7 @@ impl DeleteBucketTaggingInputBuilder {
     /// </outpost-id>
     /// </account-id>
     /// </region></code>. For example, to access the bucket <code>reports</code> through Outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -124,7 +126,7 @@ impl DeleteBucketTaggingInputBuilder {
     /// Consumes the builder and constructs a [`DeleteBucketTaggingInput`](crate::operation::delete_bucket_tagging::DeleteBucketTaggingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_bucket_tagging::DeleteBucketTaggingInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_bucket_tagging::DeleteBucketTaggingInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_bucket_tagging::DeleteBucketTaggingInput {
             account_id: self.account_id,

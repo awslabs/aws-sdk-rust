@@ -27,6 +27,7 @@ pub struct DeleteSubscriberNotificationInputBuilder {
 }
 impl DeleteSubscriberNotificationInputBuilder {
     /// <p>The ID of the Security Lake subscriber account.</p>
+    /// This field is required.
     pub fn subscriber_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscriber_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteSubscriberNotificationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_subscriber_notification::DeleteSubscriberNotificationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_subscriber_notification::DeleteSubscriberNotificationInput {
             subscriber_id: self.subscriber_id,

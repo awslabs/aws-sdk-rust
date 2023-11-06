@@ -55,6 +55,7 @@ impl DescribeDeviceInputBuilder {
         &self.next_token
     }
     /// <p>The unique ID of the device.</p>
+    /// This field is required.
     pub fn device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl DescribeDeviceInputBuilder {
         &self.device_name
     }
     /// <p>The name of the fleet the devices belong to.</p>
+    /// This field is required.
     pub fn device_fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_fleet_name = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +87,7 @@ impl DescribeDeviceInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDeviceInput`](crate::operation::describe_device::DescribeDeviceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_device::DescribeDeviceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_device::DescribeDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_device::DescribeDeviceInput {
             next_token: self.next_token,
             device_name: self.device_name,

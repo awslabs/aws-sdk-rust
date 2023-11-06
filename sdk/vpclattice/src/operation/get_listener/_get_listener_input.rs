@@ -34,6 +34,7 @@ pub struct GetListenerInputBuilder {
 }
 impl GetListenerInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    /// This field is required.
     pub fn service_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_identifier = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetListenerInputBuilder {
         &self.service_identifier
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
+    /// This field is required.
     pub fn listener_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.listener_identifier = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,7 @@ impl GetListenerInputBuilder {
         &self.listener_identifier
     }
     /// Consumes the builder and constructs a [`GetListenerInput`](crate::operation::get_listener::GetListenerInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_listener::GetListenerInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_listener::GetListenerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_listener::GetListenerInput {
             service_identifier: self.service_identifier,
             listener_identifier: self.listener_identifier,

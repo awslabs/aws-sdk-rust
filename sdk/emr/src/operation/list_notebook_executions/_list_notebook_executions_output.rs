@@ -11,8 +11,10 @@ pub struct ListNotebookExecutionsOutput {
 }
 impl ListNotebookExecutionsOutput {
     /// <p>A list of notebook executions.</p>
-    pub fn notebook_executions(&self) -> ::std::option::Option<&[crate::types::NotebookExecutionSummary]> {
-        self.notebook_executions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notebook_executions.is_none()`.
+    pub fn notebook_executions(&self) -> &[crate::types::NotebookExecutionSummary] {
+        self.notebook_executions.as_deref().unwrap_or_default()
     }
     /// <p>A pagination token that a subsequent <code>ListNotebookExecutions</code> can use to determine the next set of results to retrieve.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

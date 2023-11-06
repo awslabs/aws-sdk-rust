@@ -11,8 +11,10 @@ pub struct GetBotAliasesOutput {
 }
 impl GetBotAliasesOutput {
     /// <p>An array of <code>BotAliasMetadata</code> objects, each describing a bot alias.</p>
-    pub fn bot_aliases(&self) -> ::std::option::Option<&[crate::types::BotAliasMetadata]> {
-        self.bot_aliases.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bot_aliases.is_none()`.
+    pub fn bot_aliases(&self) -> &[crate::types::BotAliasMetadata] {
+        self.bot_aliases.as_deref().unwrap_or_default()
     }
     /// <p>A pagination token for fetching next page of aliases. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of aliases, specify the pagination token in the next request. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

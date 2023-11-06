@@ -157,12 +157,12 @@ pub fn de_list_classification_jobs_http_response(
 
 pub fn ser_list_classification_jobs_input(
     input: &crate::operation::list_classification_jobs::ListClassificationJobsInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_list_classification_jobs_input::ser_list_classification_jobs_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_list_classification_jobs(
@@ -180,7 +180,7 @@ pub(crate) fn de_list_classification_jobs(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "items" => {
-                    builder = builder.set_items(crate::protocol_serde::shape___list_of_job_summary::de___list_of_job_summary(tokens)?);
+                    builder = builder.set_items(crate::protocol_serde::shape_list_of_job_summary::de_list_of_job_summary(tokens)?);
                 }
                 "nextToken" => {
                     builder = builder.set_next_token(

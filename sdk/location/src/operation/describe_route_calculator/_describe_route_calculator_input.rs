@@ -27,6 +27,7 @@ pub struct DescribeRouteCalculatorInputBuilder {
 }
 impl DescribeRouteCalculatorInputBuilder {
     /// <p>The name of the route calculator resource.</p>
+    /// This field is required.
     pub fn calculator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.calculator_name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeRouteCalculatorInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_route_calculator::DescribeRouteCalculatorInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_route_calculator::DescribeRouteCalculatorInput {
             calculator_name: self.calculator_name,

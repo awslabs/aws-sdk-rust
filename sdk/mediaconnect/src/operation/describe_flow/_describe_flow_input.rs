@@ -27,6 +27,7 @@ pub struct DescribeFlowInputBuilder {
 }
 impl DescribeFlowInputBuilder {
     /// The ARN of the flow that you want to describe.
+    /// This field is required.
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_arn = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,9 @@ impl DescribeFlowInputBuilder {
         &self.flow_arn
     }
     /// Consumes the builder and constructs a [`DescribeFlowInput`](crate::operation::describe_flow::DescribeFlowInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_flow::DescribeFlowInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_flow::DescribeFlowInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_flow::DescribeFlowInput { flow_arn: self.flow_arn })
     }
 }

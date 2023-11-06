@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TaskSucceededEventDetails {
     /// <p>The service name of the resource in a task state.</p>
-    pub resource_type: ::std::option::Option<::std::string::String>,
+    pub resource_type: ::std::string::String,
     /// <p>The action of the resource called by a task state.</p>
-    pub resource: ::std::option::Option<::std::string::String>,
+    pub resource: ::std::string::String,
     /// <p>The full JSON response from a resource when a task has succeeded. This response becomes the output of the related task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub output: ::std::option::Option<::std::string::String>,
     /// <p>Contains details about the output of an execution history event.</p>
@@ -15,12 +15,14 @@ pub struct TaskSucceededEventDetails {
 }
 impl TaskSucceededEventDetails {
     /// <p>The service name of the resource in a task state.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
-        self.resource_type.as_deref()
+    pub fn resource_type(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_type.deref()
     }
     /// <p>The action of the resource called by a task state.</p>
-    pub fn resource(&self) -> ::std::option::Option<&str> {
-        self.resource.as_deref()
+    pub fn resource(&self) -> &str {
+        use std::ops::Deref;
+        self.resource.deref()
     }
     /// <p>The full JSON response from a resource when a task has succeeded. This response becomes the output of the related task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn output(&self) -> ::std::option::Option<&str> {
@@ -59,6 +61,7 @@ pub struct TaskSucceededEventDetailsBuilder {
 }
 impl TaskSucceededEventDetailsBuilder {
     /// <p>The service name of the resource in a task state.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
@@ -73,6 +76,7 @@ impl TaskSucceededEventDetailsBuilder {
         &self.resource_type
     }
     /// <p>The action of the resource called by a task state.</p>
+    /// This field is required.
     pub fn resource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource = ::std::option::Option::Some(input.into());
         self
@@ -115,13 +119,26 @@ impl TaskSucceededEventDetailsBuilder {
         &self.output_details
     }
     /// Consumes the builder and constructs a [`TaskSucceededEventDetails`](crate::types::TaskSucceededEventDetails).
-    pub fn build(self) -> crate::types::TaskSucceededEventDetails {
-        crate::types::TaskSucceededEventDetails {
-            resource_type: self.resource_type,
-            resource: self.resource,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource_type`](crate::types::builders::TaskSucceededEventDetailsBuilder::resource_type)
+    /// - [`resource`](crate::types::builders::TaskSucceededEventDetailsBuilder::resource)
+    pub fn build(self) -> ::std::result::Result<crate::types::TaskSucceededEventDetails, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TaskSucceededEventDetails {
+            resource_type: self.resource_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "resource_type",
+                    "resource_type was not specified but it is required when building TaskSucceededEventDetails",
+                )
+            })?,
+            resource: self.resource.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "resource",
+                    "resource was not specified but it is required when building TaskSucceededEventDetails",
+                )
+            })?,
             output: self.output,
             output_details: self.output_details,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for TaskSucceededEventDetailsBuilder {

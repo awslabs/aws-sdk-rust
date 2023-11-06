@@ -5,24 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamingLoggingConfig {
     /// <p>Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you don't want to enable logging when you create a streaming distribution or if you want to disable logging for an existing streaming distribution, specify <code>false</code> for <code>Enabled</code>, and specify <code>empty Bucket</code> and <code>Prefix</code> elements. If you specify <code>false</code> for <code>Enabled</code> but you specify values for <code>Bucket</code> and <code>Prefix</code>, the values are automatically deleted.</p>
-    pub enabled: ::std::option::Option<bool>,
+    pub enabled: bool,
     /// <p>The Amazon S3 bucket to store the access logs in, for example, <code>myawslogbucket.s3.amazonaws.com</code>.</p>
-    pub bucket: ::std::option::Option<::std::string::String>,
+    pub bucket: ::std::string::String,
     /// <p>An optional string that you want CloudFront to prefix to the access log filenames for this streaming distribution, for example, <code>myprefix/</code>. If you want to enable logging, but you don't want to specify a prefix, you still must include an empty <code>Prefix</code> element in the <code>Logging</code> element.</p>
-    pub prefix: ::std::option::Option<::std::string::String>,
+    pub prefix: ::std::string::String,
 }
 impl StreamingLoggingConfig {
     /// <p>Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you don't want to enable logging when you create a streaming distribution or if you want to disable logging for an existing streaming distribution, specify <code>false</code> for <code>Enabled</code>, and specify <code>empty Bucket</code> and <code>Prefix</code> elements. If you specify <code>false</code> for <code>Enabled</code> but you specify values for <code>Bucket</code> and <code>Prefix</code>, the values are automatically deleted.</p>
-    pub fn enabled(&self) -> ::std::option::Option<bool> {
+    pub fn enabled(&self) -> bool {
         self.enabled
     }
     /// <p>The Amazon S3 bucket to store the access logs in, for example, <code>myawslogbucket.s3.amazonaws.com</code>.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
-        self.bucket.as_deref()
+    pub fn bucket(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket.deref()
     }
     /// <p>An optional string that you want CloudFront to prefix to the access log filenames for this streaming distribution, for example, <code>myprefix/</code>. If you want to enable logging, but you don't want to specify a prefix, you still must include an empty <code>Prefix</code> element in the <code>Logging</code> element.</p>
-    pub fn prefix(&self) -> ::std::option::Option<&str> {
-        self.prefix.as_deref()
+    pub fn prefix(&self) -> &str {
+        use std::ops::Deref;
+        self.prefix.deref()
     }
 }
 impl StreamingLoggingConfig {
@@ -42,6 +44,7 @@ pub struct StreamingLoggingConfigBuilder {
 }
 impl StreamingLoggingConfigBuilder {
     /// <p>Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you don't want to enable logging when you create a streaming distribution or if you want to disable logging for an existing streaming distribution, specify <code>false</code> for <code>Enabled</code>, and specify <code>empty Bucket</code> and <code>Prefix</code> elements. If you specify <code>false</code> for <code>Enabled</code> but you specify values for <code>Bucket</code> and <code>Prefix</code>, the values are automatically deleted.</p>
+    /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
@@ -56,6 +59,7 @@ impl StreamingLoggingConfigBuilder {
         &self.enabled
     }
     /// <p>The Amazon S3 bucket to store the access logs in, for example, <code>myawslogbucket.s3.amazonaws.com</code>.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +74,7 @@ impl StreamingLoggingConfigBuilder {
         &self.bucket
     }
     /// <p>An optional string that you want CloudFront to prefix to the access log filenames for this streaming distribution, for example, <code>myprefix/</code>. If you want to enable logging, but you don't want to specify a prefix, you still must include an empty <code>Prefix</code> element in the <code>Logging</code> element.</p>
+    /// This field is required.
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +89,30 @@ impl StreamingLoggingConfigBuilder {
         &self.prefix
     }
     /// Consumes the builder and constructs a [`StreamingLoggingConfig`](crate::types::StreamingLoggingConfig).
-    pub fn build(self) -> crate::types::StreamingLoggingConfig {
-        crate::types::StreamingLoggingConfig {
-            enabled: self.enabled,
-            bucket: self.bucket,
-            prefix: self.prefix,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`enabled`](crate::types::builders::StreamingLoggingConfigBuilder::enabled)
+    /// - [`bucket`](crate::types::builders::StreamingLoggingConfigBuilder::bucket)
+    /// - [`prefix`](crate::types::builders::StreamingLoggingConfigBuilder::prefix)
+    pub fn build(self) -> ::std::result::Result<crate::types::StreamingLoggingConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::StreamingLoggingConfig {
+            enabled: self.enabled.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "enabled",
+                    "enabled was not specified but it is required when building StreamingLoggingConfig",
+                )
+            })?,
+            bucket: self.bucket.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "bucket",
+                    "bucket was not specified but it is required when building StreamingLoggingConfig",
+                )
+            })?,
+            prefix: self.prefix.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "prefix",
+                    "prefix was not specified but it is required when building StreamingLoggingConfig",
+                )
+            })?,
+        })
     }
 }

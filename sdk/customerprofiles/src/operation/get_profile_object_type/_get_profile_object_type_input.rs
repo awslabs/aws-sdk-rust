@@ -34,6 +34,7 @@ pub struct GetProfileObjectTypeInputBuilder {
 }
 impl GetProfileObjectTypeInputBuilder {
     /// <p>The unique name of the domain.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetProfileObjectTypeInputBuilder {
         &self.domain_name
     }
     /// <p>The name of the profile object type.</p>
+    /// This field is required.
     pub fn object_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_type_name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl GetProfileObjectTypeInputBuilder {
     /// Consumes the builder and constructs a [`GetProfileObjectTypeInput`](crate::operation::get_profile_object_type::GetProfileObjectTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_profile_object_type::GetProfileObjectTypeInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_profile_object_type::GetProfileObjectTypeInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_profile_object_type::GetProfileObjectTypeInput {
             domain_name: self.domain_name,

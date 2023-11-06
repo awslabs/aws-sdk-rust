@@ -26,8 +26,10 @@ impl PurchaseHostReservationInput {
         self.currency_code.as_ref()
     }
     /// <p>The IDs of the Dedicated Hosts with which the reservation will be associated.</p>
-    pub fn host_id_set(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.host_id_set.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.host_id_set.is_none()`.
+    pub fn host_id_set(&self) -> &[::std::string::String] {
+        self.host_id_set.as_deref().unwrap_or_default()
     }
     /// <p>The specified limit is checked against the total upfront cost of the reservation (calculated as the offering's upfront cost multiplied by the host count). If the total upfront cost is greater than the specified price limit, the request fails. This is used to ensure that the purchase does not exceed the expected upfront cost of the purchase. At this time, the only supported currency is <code>USD</code>. For example, to indicate a limit price of USD 100, specify 100.00.</p>
     pub fn limit_price(&self) -> ::std::option::Option<&str> {
@@ -38,8 +40,10 @@ impl PurchaseHostReservationInput {
         self.offering_id.as_deref()
     }
     /// <p>The tags to apply to the Dedicated Host Reservation during purchase.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
 }
 impl PurchaseHostReservationInput {
@@ -124,6 +128,7 @@ impl PurchaseHostReservationInputBuilder {
         &self.limit_price
     }
     /// <p>The ID of the offering.</p>
+    /// This field is required.
     pub fn offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.offering_id = ::std::option::Option::Some(input.into());
         self
@@ -162,7 +167,7 @@ impl PurchaseHostReservationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::purchase_host_reservation::PurchaseHostReservationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::purchase_host_reservation::PurchaseHostReservationInput {
             client_token: self.client_token,

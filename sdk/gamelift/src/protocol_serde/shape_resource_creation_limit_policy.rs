@@ -2,7 +2,7 @@
 pub fn ser_resource_creation_limit_policy(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ResourceCreationLimitPolicy,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.new_game_sessions_per_creator {
         object.key("NewGameSessionsPerCreator").number(
             #[allow(clippy::useless_conversion)]

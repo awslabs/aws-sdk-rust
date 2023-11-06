@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteGlobalNetwork`](crate::operation::delete_global_network::builders::DeleteGlobalNetworkFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`global_network_id(impl Into<String>)`](crate::operation::delete_global_network::builders::DeleteGlobalNetworkFluentBuilder::global_network_id) / [`set_global_network_id(Option<String>)`](crate::operation::delete_global_network::builders::DeleteGlobalNetworkFluentBuilder::set_global_network_id): <p>The ID of the global network.</p>
+    ///   - [`global_network_id(impl Into<String>)`](crate::operation::delete_global_network::builders::DeleteGlobalNetworkFluentBuilder::global_network_id) / [`set_global_network_id(Option<String>)`](crate::operation::delete_global_network::builders::DeleteGlobalNetworkFluentBuilder::set_global_network_id):<br>required: **true**<br><p>The ID of the global network.</p><br>
     /// - On success, responds with [`DeleteGlobalNetworkOutput`](crate::operation::delete_global_network::DeleteGlobalNetworkOutput) with field(s):
     ///   - [`global_network(Option<GlobalNetwork>)`](crate::operation::delete_global_network::DeleteGlobalNetworkOutput::global_network): <p>Information about the global network.</p>
     /// - On failure, responds with [`SdkError<DeleteGlobalNetworkError>`](crate::operation::delete_global_network::DeleteGlobalNetworkError)

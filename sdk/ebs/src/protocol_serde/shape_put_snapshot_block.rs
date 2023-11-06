@@ -25,7 +25,9 @@ pub fn de_put_snapshot_block_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::put_snapshot_block::PutSnapshotBlockError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::put_snapshot_block::PutSnapshotBlockError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -143,14 +145,14 @@ pub fn de_put_snapshot_block_http_response(
 pub fn ser_put_snapshot_block_headers(
     input: &crate::operation::put_snapshot_block::PutSnapshotBlockInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.data_length {
         let mut encoder = ::aws_smithy_types::primitive::Encoder::from(*inner_1);
         let formatted_2 = encoder.encode();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "data_length",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -164,7 +166,7 @@ pub fn ser_put_snapshot_block_headers(
         if !formatted_4.is_empty() {
             let header_value = formatted_4;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "progress",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -177,7 +179,7 @@ pub fn ser_put_snapshot_block_headers(
         if !formatted_6.is_empty() {
             let header_value = formatted_6;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "checksum",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -190,7 +192,7 @@ pub fn ser_put_snapshot_block_headers(
         if !formatted_8.is_empty() {
             let header_value = formatted_8;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "checksum_algorithm",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )

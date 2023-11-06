@@ -27,6 +27,7 @@ pub struct DeleteContactInputBuilder {
 }
 impl DeleteContactInputBuilder {
     /// <p>The ARN of the contact to delete.</p>
+    /// This field is required.
     pub fn contact_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteContactInputBuilder {
     /// Consumes the builder and constructs a [`DeleteContactInput`](crate::operation::delete_contact::DeleteContactInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_contact::DeleteContactInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_contact::DeleteContactInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_contact::DeleteContactInput {
             contact_arn: self.contact_arn,
         })

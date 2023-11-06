@@ -8,16 +8,22 @@ pub struct DescribeAgentOutput {
     pub agent_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the agent.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The status of the agent. If the status is ONLINE, then the agent is configured properly and is available to use. The Running status is the normal running status for an agent. If the status is OFFLINE, the agent's VM is turned off or the agent is in an unhealthy state. When the issue that caused the unhealthy state is resolved, the agent returns to ONLINE status.</p>
+    /// <p>The status of the agent.</p>
+    /// <ul>
+    /// <li> <p>If the status is <code>ONLINE</code>, the agent is configured properly and ready to use.</p> </li>
+    /// <li> <p>If the status is <code>OFFLINE</code>, the agent has been out of contact with DataSync for five minutes or longer. This can happen for a few reasons. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-agents.html#troubleshoot-agent-offline">What do I do if my agent is offline?</a> </p> </li>
+    /// </ul>
     pub status: ::std::option::Option<crate::types::AgentStatus>,
-    /// <p>The time that the agent last connected to DataSync.</p>
+    /// <p>The last time that the agent was communicating with the DataSync service.</p>
     pub last_connection_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The time that the agent was activated (that is, created in your account).</p>
+    /// <p>The time that the agent was <a href="https://docs.aws.amazon.com/datasync/latest/userguide/activate-agent.html">activated</a>.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint, the agent is not accessible over the public internet. </p>
+    /// <p>The type of <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html">service endpoint</a> that your agent is connected to.</p>
     pub endpoint_type: ::std::option::Option<crate::types::EndpointType>,
-    /// <p>The subnet and the security group that DataSync used to access a VPC endpoint.</p>
+    /// <p>The network configuration that the agent uses when connecting to a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc">VPC service endpoint</a>.</p>
     pub private_link_config: ::std::option::Option<crate::types::PrivateLinkConfig>,
+    /// <p>The platform-related details about the agent, such as the version number.</p>
+    pub platform: ::std::option::Option<crate::types::Platform>,
     _request_id: Option<String>,
 }
 impl DescribeAgentOutput {
@@ -29,25 +35,33 @@ impl DescribeAgentOutput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The status of the agent. If the status is ONLINE, then the agent is configured properly and is available to use. The Running status is the normal running status for an agent. If the status is OFFLINE, the agent's VM is turned off or the agent is in an unhealthy state. When the issue that caused the unhealthy state is resolved, the agent returns to ONLINE status.</p>
+    /// <p>The status of the agent.</p>
+    /// <ul>
+    /// <li> <p>If the status is <code>ONLINE</code>, the agent is configured properly and ready to use.</p> </li>
+    /// <li> <p>If the status is <code>OFFLINE</code>, the agent has been out of contact with DataSync for five minutes or longer. This can happen for a few reasons. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-agents.html#troubleshoot-agent-offline">What do I do if my agent is offline?</a> </p> </li>
+    /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::AgentStatus> {
         self.status.as_ref()
     }
-    /// <p>The time that the agent last connected to DataSync.</p>
+    /// <p>The last time that the agent was communicating with the DataSync service.</p>
     pub fn last_connection_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_connection_time.as_ref()
     }
-    /// <p>The time that the agent was activated (that is, created in your account).</p>
+    /// <p>The time that the agent was <a href="https://docs.aws.amazon.com/datasync/latest/userguide/activate-agent.html">activated</a>.</p>
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint, the agent is not accessible over the public internet. </p>
+    /// <p>The type of <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html">service endpoint</a> that your agent is connected to.</p>
     pub fn endpoint_type(&self) -> ::std::option::Option<&crate::types::EndpointType> {
         self.endpoint_type.as_ref()
     }
-    /// <p>The subnet and the security group that DataSync used to access a VPC endpoint.</p>
+    /// <p>The network configuration that the agent uses when connecting to a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc">VPC service endpoint</a>.</p>
     pub fn private_link_config(&self) -> ::std::option::Option<&crate::types::PrivateLinkConfig> {
         self.private_link_config.as_ref()
+    }
+    /// <p>The platform-related details about the agent, such as the version number.</p>
+    pub fn platform(&self) -> ::std::option::Option<&crate::types::Platform> {
+        self.platform.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeAgentOutput {
@@ -73,6 +87,7 @@ pub struct DescribeAgentOutputBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) endpoint_type: ::std::option::Option<crate::types::EndpointType>,
     pub(crate) private_link_config: ::std::option::Option<crate::types::PrivateLinkConfig>,
+    pub(crate) platform: ::std::option::Option<crate::types::Platform>,
     _request_id: Option<String>,
 }
 impl DescribeAgentOutputBuilder {
@@ -104,75 +119,101 @@ impl DescribeAgentOutputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The status of the agent. If the status is ONLINE, then the agent is configured properly and is available to use. The Running status is the normal running status for an agent. If the status is OFFLINE, the agent's VM is turned off or the agent is in an unhealthy state. When the issue that caused the unhealthy state is resolved, the agent returns to ONLINE status.</p>
+    /// <p>The status of the agent.</p>
+    /// <ul>
+    /// <li> <p>If the status is <code>ONLINE</code>, the agent is configured properly and ready to use.</p> </li>
+    /// <li> <p>If the status is <code>OFFLINE</code>, the agent has been out of contact with DataSync for five minutes or longer. This can happen for a few reasons. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-agents.html#troubleshoot-agent-offline">What do I do if my agent is offline?</a> </p> </li>
+    /// </ul>
     pub fn status(mut self, input: crate::types::AgentStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the agent. If the status is ONLINE, then the agent is configured properly and is available to use. The Running status is the normal running status for an agent. If the status is OFFLINE, the agent's VM is turned off or the agent is in an unhealthy state. When the issue that caused the unhealthy state is resolved, the agent returns to ONLINE status.</p>
+    /// <p>The status of the agent.</p>
+    /// <ul>
+    /// <li> <p>If the status is <code>ONLINE</code>, the agent is configured properly and ready to use.</p> </li>
+    /// <li> <p>If the status is <code>OFFLINE</code>, the agent has been out of contact with DataSync for five minutes or longer. This can happen for a few reasons. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-agents.html#troubleshoot-agent-offline">What do I do if my agent is offline?</a> </p> </li>
+    /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AgentStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the agent. If the status is ONLINE, then the agent is configured properly and is available to use. The Running status is the normal running status for an agent. If the status is OFFLINE, the agent's VM is turned off or the agent is in an unhealthy state. When the issue that caused the unhealthy state is resolved, the agent returns to ONLINE status.</p>
+    /// <p>The status of the agent.</p>
+    /// <ul>
+    /// <li> <p>If the status is <code>ONLINE</code>, the agent is configured properly and ready to use.</p> </li>
+    /// <li> <p>If the status is <code>OFFLINE</code>, the agent has been out of contact with DataSync for five minutes or longer. This can happen for a few reasons. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-agents.html#troubleshoot-agent-offline">What do I do if my agent is offline?</a> </p> </li>
+    /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AgentStatus> {
         &self.status
     }
-    /// <p>The time that the agent last connected to DataSync.</p>
+    /// <p>The last time that the agent was communicating with the DataSync service.</p>
     pub fn last_connection_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_connection_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time that the agent last connected to DataSync.</p>
+    /// <p>The last time that the agent was communicating with the DataSync service.</p>
     pub fn set_last_connection_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_connection_time = input;
         self
     }
-    /// <p>The time that the agent last connected to DataSync.</p>
+    /// <p>The last time that the agent was communicating with the DataSync service.</p>
     pub fn get_last_connection_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_connection_time
     }
-    /// <p>The time that the agent was activated (that is, created in your account).</p>
+    /// <p>The time that the agent was <a href="https://docs.aws.amazon.com/datasync/latest/userguide/activate-agent.html">activated</a>.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time that the agent was activated (that is, created in your account).</p>
+    /// <p>The time that the agent was <a href="https://docs.aws.amazon.com/datasync/latest/userguide/activate-agent.html">activated</a>.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
-    /// <p>The time that the agent was activated (that is, created in your account).</p>
+    /// <p>The time that the agent was <a href="https://docs.aws.amazon.com/datasync/latest/userguide/activate-agent.html">activated</a>.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
-    /// <p>The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint, the agent is not accessible over the public internet. </p>
+    /// <p>The type of <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html">service endpoint</a> that your agent is connected to.</p>
     pub fn endpoint_type(mut self, input: crate::types::EndpointType) -> Self {
         self.endpoint_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint, the agent is not accessible over the public internet. </p>
+    /// <p>The type of <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html">service endpoint</a> that your agent is connected to.</p>
     pub fn set_endpoint_type(mut self, input: ::std::option::Option<crate::types::EndpointType>) -> Self {
         self.endpoint_type = input;
         self
     }
-    /// <p>The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint, the agent is not accessible over the public internet. </p>
+    /// <p>The type of <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html">service endpoint</a> that your agent is connected to.</p>
     pub fn get_endpoint_type(&self) -> &::std::option::Option<crate::types::EndpointType> {
         &self.endpoint_type
     }
-    /// <p>The subnet and the security group that DataSync used to access a VPC endpoint.</p>
+    /// <p>The network configuration that the agent uses when connecting to a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc">VPC service endpoint</a>.</p>
     pub fn private_link_config(mut self, input: crate::types::PrivateLinkConfig) -> Self {
         self.private_link_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The subnet and the security group that DataSync used to access a VPC endpoint.</p>
+    /// <p>The network configuration that the agent uses when connecting to a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc">VPC service endpoint</a>.</p>
     pub fn set_private_link_config(mut self, input: ::std::option::Option<crate::types::PrivateLinkConfig>) -> Self {
         self.private_link_config = input;
         self
     }
-    /// <p>The subnet and the security group that DataSync used to access a VPC endpoint.</p>
+    /// <p>The network configuration that the agent uses when connecting to a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc">VPC service endpoint</a>.</p>
     pub fn get_private_link_config(&self) -> &::std::option::Option<crate::types::PrivateLinkConfig> {
         &self.private_link_config
+    }
+    /// <p>The platform-related details about the agent, such as the version number.</p>
+    pub fn platform(mut self, input: crate::types::Platform) -> Self {
+        self.platform = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The platform-related details about the agent, such as the version number.</p>
+    pub fn set_platform(mut self, input: ::std::option::Option<crate::types::Platform>) -> Self {
+        self.platform = input;
+        self
+    }
+    /// <p>The platform-related details about the agent, such as the version number.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<crate::types::Platform> {
+        &self.platform
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -193,6 +234,7 @@ impl DescribeAgentOutputBuilder {
             creation_time: self.creation_time,
             endpoint_type: self.endpoint_type,
             private_link_config: self.private_link_config,
+            platform: self.platform,
             _request_id: self._request_id,
         }
     }

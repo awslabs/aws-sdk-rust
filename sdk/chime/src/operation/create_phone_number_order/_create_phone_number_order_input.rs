@@ -14,8 +14,10 @@ impl CreatePhoneNumberOrderInput {
         self.product_type.as_ref()
     }
     /// <p>List of phone numbers, in E.164 format.</p>
-    pub fn e164_phone_numbers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.e164_phone_numbers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.e164_phone_numbers.is_none()`.
+    pub fn e164_phone_numbers(&self) -> &[::std::string::String] {
+        self.e164_phone_numbers.as_deref().unwrap_or_default()
     }
 }
 impl CreatePhoneNumberOrderInput {
@@ -34,6 +36,7 @@ pub struct CreatePhoneNumberOrderInputBuilder {
 }
 impl CreatePhoneNumberOrderInputBuilder {
     /// <p>The phone number product type.</p>
+    /// This field is required.
     pub fn product_type(mut self, input: crate::types::PhoneNumberProductType) -> Self {
         self.product_type = ::std::option::Option::Some(input);
         self
@@ -72,7 +75,7 @@ impl CreatePhoneNumberOrderInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_phone_number_order::CreatePhoneNumberOrderInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_phone_number_order::CreatePhoneNumberOrderInput {
             product_type: self.product_type,

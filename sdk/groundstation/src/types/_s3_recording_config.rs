@@ -5,20 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3RecordingConfig {
     /// <p>ARN of the bucket to record to.</p>
-    pub bucket_arn: ::std::option::Option<::std::string::String>,
+    pub bucket_arn: ::std::string::String,
     /// <p>ARN of the role Ground Station assumes to write data to the bucket.</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
     /// <p>S3 Key prefix to prefice data files.</p>
     pub prefix: ::std::option::Option<::std::string::String>,
 }
 impl S3RecordingConfig {
     /// <p>ARN of the bucket to record to.</p>
-    pub fn bucket_arn(&self) -> ::std::option::Option<&str> {
-        self.bucket_arn.as_deref()
+    pub fn bucket_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket_arn.deref()
     }
     /// <p>ARN of the role Ground Station assumes to write data to the bucket.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
     /// <p>S3 Key prefix to prefice data files.</p>
     pub fn prefix(&self) -> ::std::option::Option<&str> {
@@ -42,6 +44,7 @@ pub struct S3RecordingConfigBuilder {
 }
 impl S3RecordingConfigBuilder {
     /// <p>ARN of the bucket to record to.</p>
+    /// This field is required.
     pub fn bucket_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_arn = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl S3RecordingConfigBuilder {
         &self.bucket_arn
     }
     /// <p>ARN of the role Ground Station assumes to write data to the bucket.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +88,24 @@ impl S3RecordingConfigBuilder {
         &self.prefix
     }
     /// Consumes the builder and constructs a [`S3RecordingConfig`](crate::types::S3RecordingConfig).
-    pub fn build(self) -> crate::types::S3RecordingConfig {
-        crate::types::S3RecordingConfig {
-            bucket_arn: self.bucket_arn,
-            role_arn: self.role_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bucket_arn`](crate::types::builders::S3RecordingConfigBuilder::bucket_arn)
+    /// - [`role_arn`](crate::types::builders::S3RecordingConfigBuilder::role_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::S3RecordingConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::S3RecordingConfig {
+            bucket_arn: self.bucket_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "bucket_arn",
+                    "bucket_arn was not specified but it is required when building S3RecordingConfig",
+                )
+            })?,
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building S3RecordingConfig",
+                )
+            })?,
             prefix: self.prefix,
-        }
+        })
     }
 }

@@ -11,8 +11,10 @@ pub struct ListActiveViolationsOutput {
 }
 impl ListActiveViolationsOutput {
     /// <p>The list of active violations.</p>
-    pub fn active_violations(&self) -> ::std::option::Option<&[crate::types::ActiveViolation]> {
-        self.active_violations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.active_violations.is_none()`.
+    pub fn active_violations(&self) -> &[crate::types::ActiveViolation] {
+        self.active_violations.as_deref().unwrap_or_default()
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

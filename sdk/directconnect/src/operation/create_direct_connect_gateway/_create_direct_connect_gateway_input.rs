@@ -34,6 +34,7 @@ pub struct CreateDirectConnectGatewayInputBuilder {
 }
 impl CreateDirectConnectGatewayInputBuilder {
     /// <p>The name of the Direct Connect gateway.</p>
+    /// This field is required.
     pub fn direct_connect_gateway_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.direct_connect_gateway_name = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl CreateDirectConnectGatewayInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_direct_connect_gateway::CreateDirectConnectGatewayInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_direct_connect_gateway::CreateDirectConnectGatewayInput {
             direct_connect_gateway_name: self.direct_connect_gateway_name,

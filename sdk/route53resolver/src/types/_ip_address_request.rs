@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpAddressRequest {
     /// <p>The ID of the subnet that contains the IP address. </p>
-    pub subnet_id: ::std::option::Option<::std::string::String>,
+    pub subnet_id: ::std::string::String,
     /// <p>The IPv4 address that you want to use for DNS queries.</p>
     pub ip: ::std::option::Option<::std::string::String>,
     /// <p> The IPv6 address that you want to use for DNS queries. </p>
@@ -13,8 +13,9 @@ pub struct IpAddressRequest {
 }
 impl IpAddressRequest {
     /// <p>The ID of the subnet that contains the IP address. </p>
-    pub fn subnet_id(&self) -> ::std::option::Option<&str> {
-        self.subnet_id.as_deref()
+    pub fn subnet_id(&self) -> &str {
+        use std::ops::Deref;
+        self.subnet_id.deref()
     }
     /// <p>The IPv4 address that you want to use for DNS queries.</p>
     pub fn ip(&self) -> ::std::option::Option<&str> {
@@ -42,6 +43,7 @@ pub struct IpAddressRequestBuilder {
 }
 impl IpAddressRequestBuilder {
     /// <p>The ID of the subnet that contains the IP address. </p>
+    /// This field is required.
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +86,18 @@ impl IpAddressRequestBuilder {
         &self.ipv6
     }
     /// Consumes the builder and constructs a [`IpAddressRequest`](crate::types::IpAddressRequest).
-    pub fn build(self) -> crate::types::IpAddressRequest {
-        crate::types::IpAddressRequest {
-            subnet_id: self.subnet_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`subnet_id`](crate::types::builders::IpAddressRequestBuilder::subnet_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::IpAddressRequest, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::IpAddressRequest {
+            subnet_id: self.subnet_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "subnet_id",
+                    "subnet_id was not specified but it is required when building IpAddressRequest",
+                )
+            })?,
             ip: self.ip,
             ipv6: self.ipv6,
-        }
+        })
     }
 }

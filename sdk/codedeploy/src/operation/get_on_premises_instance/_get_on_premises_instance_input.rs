@@ -28,6 +28,7 @@ pub struct GetOnPremisesInstanceInputBuilder {
 }
 impl GetOnPremisesInstanceInputBuilder {
     /// <p> The name of the on-premises instance about which to get information. </p>
+    /// This field is required.
     pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_name = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl GetOnPremisesInstanceInputBuilder {
     /// Consumes the builder and constructs a [`GetOnPremisesInstanceInput`](crate::operation::get_on_premises_instance::GetOnPremisesInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_on_premises_instance::GetOnPremisesInstanceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_on_premises_instance::GetOnPremisesInstanceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_on_premises_instance::GetOnPremisesInstanceInput {
             instance_name: self.instance_name,

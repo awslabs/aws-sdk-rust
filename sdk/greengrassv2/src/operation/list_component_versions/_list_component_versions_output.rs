@@ -11,8 +11,10 @@ pub struct ListComponentVersionsOutput {
 }
 impl ListComponentVersionsOutput {
     /// <p>A list of versions that exist for the component.</p>
-    pub fn component_versions(&self) -> ::std::option::Option<&[crate::types::ComponentVersionListItem]> {
-        self.component_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.component_versions.is_none()`.
+    pub fn component_versions(&self) -> &[crate::types::ComponentVersionListItem] {
+        self.component_versions.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

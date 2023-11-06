@@ -50,6 +50,7 @@ pub struct UpdateAppInstanceUserInputBuilder {
 }
 impl UpdateAppInstanceUserInputBuilder {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    /// This field is required.
     pub fn app_instance_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_user_arn = ::std::option::Option::Some(input.into());
         self
@@ -64,6 +65,7 @@ impl UpdateAppInstanceUserInputBuilder {
         &self.app_instance_user_arn
     }
     /// <p>The name of the <code>AppInstanceUser</code>.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -78,6 +80,7 @@ impl UpdateAppInstanceUserInputBuilder {
         &self.name
     }
     /// <p>The metadata of the <code>AppInstanceUser</code>.</p>
+    /// This field is required.
     pub fn metadata(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metadata = ::std::option::Option::Some(input.into());
         self
@@ -94,7 +97,7 @@ impl UpdateAppInstanceUserInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAppInstanceUserInput`](crate::operation::update_app_instance_user::UpdateAppInstanceUserInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_app_instance_user::UpdateAppInstanceUserInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_app_instance_user::UpdateAppInstanceUserInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_app_instance_user::UpdateAppInstanceUserInput {
             app_instance_user_arn: self.app_instance_user_arn,

@@ -2,7 +2,7 @@
 pub fn ser_code_vulnerabilities_file_path(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CodeVulnerabilitiesFilePath,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.end_line {
         object.key("EndLine").number(
             #[allow(clippy::useless_conversion)]

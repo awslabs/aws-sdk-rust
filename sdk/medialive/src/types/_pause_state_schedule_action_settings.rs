@@ -9,8 +9,10 @@ pub struct PauseStateScheduleActionSettings {
 }
 impl PauseStateScheduleActionSettings {
     /// Placeholder documentation for __listOfPipelinePauseStateSettings
-    pub fn pipelines(&self) -> ::std::option::Option<&[crate::types::PipelinePauseStateSettings]> {
-        self.pipelines.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pipelines.is_none()`.
+    pub fn pipelines(&self) -> &[crate::types::PipelinePauseStateSettings] {
+        self.pipelines.as_deref().unwrap_or_default()
     }
 }
 impl PauseStateScheduleActionSettings {

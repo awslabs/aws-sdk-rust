@@ -42,6 +42,7 @@ pub struct GetReservedNodeExchangeOfferingsInputBuilder {
 }
 impl GetReservedNodeExchangeOfferingsInputBuilder {
     /// <p>A string representing the node identifier for the DC1 Reserved Node to be exchanged.</p>
+    /// This field is required.
     pub fn reserved_node_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_node_id = ::std::option::Option::Some(input.into());
         self
@@ -88,7 +89,7 @@ impl GetReservedNodeExchangeOfferingsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsInput {

@@ -45,28 +45,40 @@ impl AccessControlRule {
         self.description.as_deref()
     }
     /// <p>IPv4 CIDR ranges to include in the rule.</p>
-    pub fn ip_ranges(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ip_ranges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ip_ranges.is_none()`.
+    pub fn ip_ranges(&self) -> &[::std::string::String] {
+        self.ip_ranges.as_deref().unwrap_or_default()
     }
     /// <p>IPv4 CIDR ranges to exclude from the rule.</p>
-    pub fn not_ip_ranges(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.not_ip_ranges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.not_ip_ranges.is_none()`.
+    pub fn not_ip_ranges(&self) -> &[::std::string::String] {
+        self.not_ip_ranges.as_deref().unwrap_or_default()
     }
     /// <p>Access protocol actions to include in the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
-    pub fn actions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
+    pub fn actions(&self) -> &[::std::string::String] {
+        self.actions.as_deref().unwrap_or_default()
     }
     /// <p>Access protocol actions to exclude from the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
-    pub fn not_actions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.not_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.not_actions.is_none()`.
+    pub fn not_actions(&self) -> &[::std::string::String] {
+        self.not_actions.as_deref().unwrap_or_default()
     }
     /// <p>User IDs to include in the rule.</p>
-    pub fn user_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.user_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_ids.is_none()`.
+    pub fn user_ids(&self) -> &[::std::string::String] {
+        self.user_ids.as_deref().unwrap_or_default()
     }
     /// <p>User IDs to exclude from the rule.</p>
-    pub fn not_user_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.not_user_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.not_user_ids.is_none()`.
+    pub fn not_user_ids(&self) -> &[::std::string::String] {
+        self.not_user_ids.as_deref().unwrap_or_default()
     }
     /// <p>The date that the rule was created.</p>
     pub fn date_created(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -77,12 +89,16 @@ impl AccessControlRule {
         self.date_modified.as_ref()
     }
     /// <p>Impersonation role IDs to include in the rule.</p>
-    pub fn impersonation_role_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.impersonation_role_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.impersonation_role_ids.is_none()`.
+    pub fn impersonation_role_ids(&self) -> &[::std::string::String] {
+        self.impersonation_role_ids.as_deref().unwrap_or_default()
     }
     /// <p>Impersonation role IDs to exclude from the rule.</p>
-    pub fn not_impersonation_role_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.not_impersonation_role_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.not_impersonation_role_ids.is_none()`.
+    pub fn not_impersonation_role_ids(&self) -> &[::std::string::String] {
+        self.not_impersonation_role_ids.as_deref().unwrap_or_default()
     }
 }
 impl AccessControlRule {

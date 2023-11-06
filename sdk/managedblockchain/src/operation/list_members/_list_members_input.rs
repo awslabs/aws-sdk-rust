@@ -62,6 +62,7 @@ pub struct ListMembersInputBuilder {
 }
 impl ListMembersInputBuilder {
     /// <p>The unique identifier of the network for which to list members.</p>
+    /// This field is required.
     pub fn network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_id = ::std::option::Option::Some(input.into());
         self
@@ -146,7 +147,7 @@ impl ListMembersInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListMembersInput`](crate::operation::list_members::ListMembersInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_members::ListMembersInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_members::ListMembersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_members::ListMembersInput {
             network_id: self.network_id,
             name: self.name,

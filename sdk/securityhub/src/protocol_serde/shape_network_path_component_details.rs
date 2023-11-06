@@ -2,7 +2,7 @@
 pub fn ser_network_path_component_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NetworkPathComponentDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.address {
         let mut array_2 = object.key("Address").start_array();
         for item_3 in var_1 {

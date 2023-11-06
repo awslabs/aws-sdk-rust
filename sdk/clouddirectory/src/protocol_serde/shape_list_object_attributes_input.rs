@@ -2,7 +2,7 @@
 pub fn ser_list_object_attributes_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_object_attributes::ListObjectAttributesInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.facet_filter {
         #[allow(unused_mut)]
         let mut object_2 = object.key("FacetFilter").start_object();

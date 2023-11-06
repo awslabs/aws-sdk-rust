@@ -48,6 +48,7 @@ impl RegisterVolumeInputBuilder {
         &self.ec2_volume_id
     }
     /// <p>The stack ID.</p>
+    /// This field is required.
     pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl RegisterVolumeInputBuilder {
     /// Consumes the builder and constructs a [`RegisterVolumeInput`](crate::operation::register_volume::RegisterVolumeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_volume::RegisterVolumeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::register_volume::RegisterVolumeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_volume::RegisterVolumeInput {
             ec2_volume_id: self.ec2_volume_id,
             stack_id: self.stack_id,

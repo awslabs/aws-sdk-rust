@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RedshiftDatabase {
     /// <p>The name of a database hosted on an Amazon Redshift cluster.</p>
-    pub database_name: ::std::option::Option<::std::string::String>,
+    pub database_name: ::std::string::String,
     /// <p>The ID of an Amazon Redshift cluster.</p>
-    pub cluster_identifier: ::std::option::Option<::std::string::String>,
+    pub cluster_identifier: ::std::string::String,
 }
 impl RedshiftDatabase {
     /// <p>The name of a database hosted on an Amazon Redshift cluster.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
-        self.database_name.as_deref()
+    pub fn database_name(&self) -> &str {
+        use std::ops::Deref;
+        self.database_name.deref()
     }
     /// <p>The ID of an Amazon Redshift cluster.</p>
-    pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
-        self.cluster_identifier.as_deref()
+    pub fn cluster_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.cluster_identifier.deref()
     }
 }
 impl RedshiftDatabase {
@@ -35,6 +37,7 @@ pub struct RedshiftDatabaseBuilder {
 }
 impl RedshiftDatabaseBuilder {
     /// <p>The name of a database hosted on an Amazon Redshift cluster.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl RedshiftDatabaseBuilder {
         &self.database_name
     }
     /// <p>The ID of an Amazon Redshift cluster.</p>
+    /// This field is required.
     pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl RedshiftDatabaseBuilder {
         &self.cluster_identifier
     }
     /// Consumes the builder and constructs a [`RedshiftDatabase`](crate::types::RedshiftDatabase).
-    pub fn build(self) -> crate::types::RedshiftDatabase {
-        crate::types::RedshiftDatabase {
-            database_name: self.database_name,
-            cluster_identifier: self.cluster_identifier,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`database_name`](crate::types::builders::RedshiftDatabaseBuilder::database_name)
+    /// - [`cluster_identifier`](crate::types::builders::RedshiftDatabaseBuilder::cluster_identifier)
+    pub fn build(self) -> ::std::result::Result<crate::types::RedshiftDatabase, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RedshiftDatabase {
+            database_name: self.database_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "database_name",
+                    "database_name was not specified but it is required when building RedshiftDatabase",
+                )
+            })?,
+            cluster_identifier: self.cluster_identifier.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "cluster_identifier",
+                    "cluster_identifier was not specified but it is required when building RedshiftDatabase",
+                )
+            })?,
+        })
     }
 }

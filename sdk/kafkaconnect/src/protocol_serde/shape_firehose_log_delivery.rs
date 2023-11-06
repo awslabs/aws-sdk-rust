@@ -2,7 +2,7 @@
 pub fn ser_firehose_log_delivery(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FirehoseLogDelivery,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.delivery_stream {
         object.key("deliveryStream").string(var_1.as_str());
     }

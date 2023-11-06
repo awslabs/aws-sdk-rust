@@ -134,6 +134,7 @@ impl ModifySubnetAttributeInputBuilder {
         &self.map_public_ip_on_launch
     }
     /// <p>The ID of the subnet.</p>
+    /// This field is required.
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
         self
@@ -268,7 +269,7 @@ impl ModifySubnetAttributeInputBuilder {
     /// Consumes the builder and constructs a [`ModifySubnetAttributeInput`](crate::operation::modify_subnet_attribute::ModifySubnetAttributeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_subnet_attribute::ModifySubnetAttributeInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::modify_subnet_attribute::ModifySubnetAttributeInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::modify_subnet_attribute::ModifySubnetAttributeInput {
             assign_ipv6_address_on_creation: self.assign_ipv6_address_on_creation,

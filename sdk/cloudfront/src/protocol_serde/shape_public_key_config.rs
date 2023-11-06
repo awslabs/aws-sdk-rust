@@ -2,29 +2,30 @@
 pub fn ser_public_key_config(
     input: &crate::types::PublicKeyConfig,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.caller_reference {
+    {
         let mut inner_writer = scope.start_el("CallerReference").finish();
-        inner_writer.data(var_1.as_str());
+        inner_writer.data(input.caller_reference.as_str());
     }
-    if let Some(var_2) = &input.name {
+    {
         let mut inner_writer = scope.start_el("Name").finish();
-        inner_writer.data(var_2.as_str());
+        inner_writer.data(input.name.as_str());
     }
-    if let Some(var_3) = &input.encoded_key {
+    {
         let mut inner_writer = scope.start_el("EncodedKey").finish();
-        inner_writer.data(var_3.as_str());
+        inner_writer.data(input.encoded_key.as_str());
     }
-    if let Some(var_4) = &input.comment {
+    if let Some(var_1) = &input.comment {
         let mut inner_writer = scope.start_el("Comment").finish();
-        inner_writer.data(var_4.as_str());
+        inner_writer.data(var_1.as_str());
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_public_key_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::PublicKeyConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -33,6 +34,45 @@ pub fn de_public_key_config(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("CallerReference") /* CallerReference com.amazonaws.cloudfront#PublicKeyConfig$CallerReference */ =>  {
+                let var_2 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_caller_reference(var_2);
+            }
+            ,
+            s if s.matches("Name") /* Name com.amazonaws.cloudfront#PublicKeyConfig$Name */ =>  {
+                let var_3 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_name(var_3);
+            }
+            ,
+            s if s.matches("EncodedKey") /* EncodedKey com.amazonaws.cloudfront#PublicKeyConfig$EncodedKey */ =>  {
+                let var_4 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_encoded_key(var_4);
+            }
+            ,
+            s if s.matches("Comment") /* Comment com.amazonaws.cloudfront#PublicKeyConfig$Comment */ =>  {
                 let var_5 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -42,50 +82,13 @@ pub fn de_public_key_config(
                         ?
                     )
                 ;
-                builder = builder.set_caller_reference(var_5);
-            }
-            ,
-            s if s.matches("Name") /* Name com.amazonaws.cloudfront#PublicKeyConfig$Name */ =>  {
-                let var_6 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_name(var_6);
-            }
-            ,
-            s if s.matches("EncodedKey") /* EncodedKey com.amazonaws.cloudfront#PublicKeyConfig$EncodedKey */ =>  {
-                let var_7 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_encoded_key(var_7);
-            }
-            ,
-            s if s.matches("Comment") /* Comment com.amazonaws.cloudfront#PublicKeyConfig$Comment */ =>  {
-                let var_8 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_comment(var_8);
+                builder = builder.set_comment(var_5);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::public_key_config_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

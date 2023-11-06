@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamModeDetails {
     /// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
-    pub stream_mode: ::std::option::Option<crate::types::StreamMode>,
+    pub stream_mode: crate::types::StreamMode,
 }
 impl StreamModeDetails {
     /// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
-    pub fn stream_mode(&self) -> ::std::option::Option<&crate::types::StreamMode> {
-        self.stream_mode.as_ref()
+    pub fn stream_mode(&self) -> &crate::types::StreamMode {
+        &self.stream_mode
     }
 }
 impl StreamModeDetails {
@@ -28,6 +28,7 @@ pub struct StreamModeDetailsBuilder {
 }
 impl StreamModeDetailsBuilder {
     /// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
+    /// This field is required.
     pub fn stream_mode(mut self, input: crate::types::StreamMode) -> Self {
         self.stream_mode = ::std::option::Option::Some(input);
         self
@@ -42,9 +43,16 @@ impl StreamModeDetailsBuilder {
         &self.stream_mode
     }
     /// Consumes the builder and constructs a [`StreamModeDetails`](crate::types::StreamModeDetails).
-    pub fn build(self) -> crate::types::StreamModeDetails {
-        crate::types::StreamModeDetails {
-            stream_mode: self.stream_mode,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`stream_mode`](crate::types::builders::StreamModeDetailsBuilder::stream_mode)
+    pub fn build(self) -> ::std::result::Result<crate::types::StreamModeDetails, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::StreamModeDetails {
+            stream_mode: self.stream_mode.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "stream_mode",
+                    "stream_mode was not specified but it is required when building StreamModeDetails",
+                )
+            })?,
+        })
     }
 }

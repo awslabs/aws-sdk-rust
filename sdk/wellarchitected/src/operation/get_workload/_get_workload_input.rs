@@ -28,6 +28,7 @@ pub struct GetWorkloadInputBuilder {
 }
 impl GetWorkloadInputBuilder {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    /// This field is required.
     pub fn workload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workload_id = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +43,7 @@ impl GetWorkloadInputBuilder {
         &self.workload_id
     }
     /// Consumes the builder and constructs a [`GetWorkloadInput`](crate::operation::get_workload::GetWorkloadInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_workload::GetWorkloadInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_workload::GetWorkloadInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_workload::GetWorkloadInput {
             workload_id: self.workload_id,
         })

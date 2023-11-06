@@ -11,8 +11,10 @@ pub struct ListDecoderManifestSignalsOutput {
 }
 impl ListDecoderManifestSignalsOutput {
     /// <p> Information about a list of signals to decode. </p>
-    pub fn signal_decoders(&self) -> ::std::option::Option<&[crate::types::SignalDecoder]> {
-        self.signal_decoders.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.signal_decoders.is_none()`.
+    pub fn signal_decoders(&self) -> &[crate::types::SignalDecoder] {
+        self.signal_decoders.as_deref().unwrap_or_default()
     }
     /// <p> The token to retrieve the next set of results, or <code>null</code> if there are no more results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

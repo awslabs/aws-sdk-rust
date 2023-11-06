@@ -37,8 +37,10 @@ impl CopySnapshotInput {
         self.kms_key_id.as_deref()
     }
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CopySnapshotInput {
@@ -60,6 +62,7 @@ pub struct CopySnapshotInputBuilder {
 }
 impl CopySnapshotInputBuilder {
     /// <p>The name of an existing snapshot from which to make a copy.</p>
+    /// This field is required.
     pub fn source_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_snapshot_name = ::std::option::Option::Some(input.into());
         self
@@ -74,6 +77,7 @@ impl CopySnapshotInputBuilder {
         &self.source_snapshot_name
     }
     /// <p>A name for the snapshot copy. ElastiCache does not permit overwriting a snapshot, therefore this name must be unique within its context - ElastiCache or an Amazon S3 bucket if exporting.</p>
+    /// This field is required.
     pub fn target_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_snapshot_name = ::std::option::Option::Some(input.into());
         self
@@ -142,7 +146,9 @@ impl CopySnapshotInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CopySnapshotInput`](crate::operation::copy_snapshot::CopySnapshotInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::copy_snapshot::CopySnapshotInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::copy_snapshot::CopySnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::copy_snapshot::CopySnapshotInput {
             source_snapshot_name: self.source_snapshot_name,
             target_snapshot_name: self.target_snapshot_name,

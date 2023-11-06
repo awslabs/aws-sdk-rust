@@ -2,7 +2,7 @@
 pub fn ser_associate_transit_gateway_connect_peer_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::associate_transit_gateway_connect_peer::AssociateTransitGatewayConnectPeerInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.device_id {
         object.key("DeviceId").string(var_1.as_str());
     }

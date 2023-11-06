@@ -41,6 +41,7 @@ pub struct DeleteVirtualServiceInputBuilder {
 }
 impl DeleteVirtualServiceInputBuilder {
     /// <p>The name of the virtual service to delete.</p>
+    /// This field is required.
     pub fn virtual_service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_service_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DeleteVirtualServiceInputBuilder {
         &self.virtual_service_name
     }
     /// <p>The name of the service mesh to delete the virtual service in.</p>
+    /// This field is required.
     pub fn mesh_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mesh_name = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +87,7 @@ impl DeleteVirtualServiceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteVirtualServiceInput`](crate::operation::delete_virtual_service::DeleteVirtualServiceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_virtual_service::DeleteVirtualServiceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_virtual_service::DeleteVirtualServiceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_virtual_service::DeleteVirtualServiceInput {
             virtual_service_name: self.virtual_service_name,

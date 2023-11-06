@@ -2,7 +2,7 @@
 pub fn ser_monitor_contact_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::monitor_contact::MonitorContactInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.allowed_monitor_capabilities {
         let mut array_2 = object.key("AllowedMonitorCapabilities").start_array();
         for item_3 in var_1 {

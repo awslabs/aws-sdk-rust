@@ -21,8 +21,10 @@ impl UpdateChannelClassInput {
         self.channel_id.as_deref()
     }
     /// A list of output destinations for this channel.
-    pub fn destinations(&self) -> ::std::option::Option<&[crate::types::OutputDestination]> {
-        self.destinations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destinations.is_none()`.
+    pub fn destinations(&self) -> &[crate::types::OutputDestination] {
+        self.destinations.as_deref().unwrap_or_default()
     }
 }
 impl UpdateChannelClassInput {
@@ -42,6 +44,7 @@ pub struct UpdateChannelClassInputBuilder {
 }
 impl UpdateChannelClassInputBuilder {
     /// The channel class that you wish to update this channel to use.
+    /// This field is required.
     pub fn channel_class(mut self, input: crate::types::ChannelClass) -> Self {
         self.channel_class = ::std::option::Option::Some(input);
         self
@@ -56,6 +59,7 @@ impl UpdateChannelClassInputBuilder {
         &self.channel_class
     }
     /// Channel Id of the channel whose class should be updated.
+    /// This field is required.
     pub fn channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_id = ::std::option::Option::Some(input.into());
         self
@@ -92,7 +96,8 @@ impl UpdateChannelClassInputBuilder {
     /// Consumes the builder and constructs a [`UpdateChannelClassInput`](crate::operation::update_channel_class::UpdateChannelClassInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_channel_class::UpdateChannelClassInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_channel_class::UpdateChannelClassInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_channel_class::UpdateChannelClassInput {
             channel_class: self.channel_class,
             channel_id: self.channel_id,

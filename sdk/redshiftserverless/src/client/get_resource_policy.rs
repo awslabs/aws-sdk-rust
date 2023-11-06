@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetResourcePolicy`](crate::operation::get_resource_policy::builders::GetResourcePolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::operation::get_resource_policy::builders::GetResourcePolicyFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::get_resource_policy::builders::GetResourcePolicyFluentBuilder::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource to return.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::operation::get_resource_policy::builders::GetResourcePolicyFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::get_resource_policy::builders::GetResourcePolicyFluentBuilder::set_resource_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the resource to return.</p><br>
     /// - On success, responds with [`GetResourcePolicyOutput`](crate::operation::get_resource_policy::GetResourcePolicyOutput) with field(s):
     ///   - [`resource_policy(Option<ResourcePolicy>)`](crate::operation::get_resource_policy::GetResourcePolicyOutput::resource_policy): <p>The returned resource policy.</p>
     /// - On failure, responds with [`SdkError<GetResourcePolicyError>`](crate::operation::get_resource_policy::GetResourcePolicyError)

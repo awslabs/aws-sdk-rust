@@ -5,21 +5,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessPointAlreadyExists {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
-    pub error_code: ::std::option::Option<::std::string::String>,
+    pub error_code: ::std::string::String,
     /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
     pub message: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
-    pub access_point_id: ::std::option::Option<::std::string::String>,
+    pub access_point_id: ::std::string::String,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl AccessPointAlreadyExists {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
-        self.error_code.as_deref()
+    pub fn error_code(&self) -> &str {
+        use std::ops::Deref;
+        self.error_code.deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn access_point_id(&self) -> ::std::option::Option<&str> {
-        self.access_point_id.as_deref()
+    pub fn access_point_id(&self) -> &str {
+        use std::ops::Deref;
+        self.access_point_id.deref()
     }
 }
 impl AccessPointAlreadyExists {
@@ -69,6 +71,7 @@ pub struct AccessPointAlreadyExistsBuilder {
 }
 impl AccessPointAlreadyExistsBuilder {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
+    /// This field is required.
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +100,7 @@ impl AccessPointAlreadyExistsBuilder {
         &self.message
     }
     #[allow(missing_docs)] // documentation missing in model
+    /// This field is required.
     pub fn access_point_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_point_id = ::std::option::Option::Some(input.into());
         self
@@ -122,12 +126,25 @@ impl AccessPointAlreadyExistsBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AccessPointAlreadyExists`](crate::types::error::AccessPointAlreadyExists).
-    pub fn build(self) -> crate::types::error::AccessPointAlreadyExists {
-        crate::types::error::AccessPointAlreadyExists {
-            error_code: self.error_code,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`error_code`](crate::types::error::builders::AccessPointAlreadyExistsBuilder::error_code)
+    /// - [`access_point_id`](crate::types::error::builders::AccessPointAlreadyExistsBuilder::access_point_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::error::AccessPointAlreadyExists, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::error::AccessPointAlreadyExists {
+            error_code: self.error_code.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "error_code",
+                    "error_code was not specified but it is required when building AccessPointAlreadyExists",
+                )
+            })?,
             message: self.message,
-            access_point_id: self.access_point_id,
+            access_point_id: self.access_point_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "access_point_id",
+                    "access_point_id was not specified but it is required when building AccessPointAlreadyExists",
+                )
+            })?,
             meta: self.meta.unwrap_or_default(),
-        }
+        })
     }
 }

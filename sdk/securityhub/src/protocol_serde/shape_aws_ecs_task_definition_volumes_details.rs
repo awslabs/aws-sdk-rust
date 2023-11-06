@@ -2,7 +2,7 @@
 pub fn ser_aws_ecs_task_definition_volumes_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEcsTaskDefinitionVolumesDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.docker_volume_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("DockerVolumeConfiguration").start_object();

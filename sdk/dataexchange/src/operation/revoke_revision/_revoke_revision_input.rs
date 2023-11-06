@@ -41,6 +41,7 @@ pub struct RevokeRevisionInputBuilder {
 }
 impl RevokeRevisionInputBuilder {
     /// <p>The unique identifier for a data set.</p>
+    /// This field is required.
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl RevokeRevisionInputBuilder {
         &self.data_set_id
     }
     /// <p>The unique identifier for a revision.</p>
+    /// This field is required.
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl RevokeRevisionInputBuilder {
         &self.revision_id
     }
     /// <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
+    /// This field is required.
     pub fn revocation_comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revocation_comment = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +88,7 @@ impl RevokeRevisionInputBuilder {
     /// Consumes the builder and constructs a [`RevokeRevisionInput`](crate::operation::revoke_revision::RevokeRevisionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::revoke_revision::RevokeRevisionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::revoke_revision::RevokeRevisionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::revoke_revision::RevokeRevisionInput {
             data_set_id: self.data_set_id,
             revision_id: self.revision_id,

@@ -27,6 +27,7 @@ pub struct CreateUploadUrlInputBuilder {
 }
 impl CreateUploadUrlInputBuilder {
     /// <p>The name of the scan that will use the uploaded resource. CodeGuru Security uses the unique scan name to track revisions across multiple scans of the same resource. Use this <code>scanName</code> when you call <code>CreateScan</code> on the code resource you upload to this URL.</p>
+    /// This field is required.
     pub fn scan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scan_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl CreateUploadUrlInputBuilder {
     /// Consumes the builder and constructs a [`CreateUploadUrlInput`](crate::operation::create_upload_url::CreateUploadUrlInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_upload_url::CreateUploadUrlInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_upload_url::CreateUploadUrlInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_upload_url::CreateUploadUrlInput { scan_name: self.scan_name })
     }
 }

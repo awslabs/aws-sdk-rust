@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DocumentRelevanceConfiguration {
     /// <p>The name of the index field.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>Provides information for tuning the relevance of a field in a search. When a query includes terms that match the field, the results are given a boost in the response based on these tuning parameters.</p>
     pub relevance: ::std::option::Option<crate::types::Relevance>,
 }
 impl DocumentRelevanceConfiguration {
     /// <p>The name of the index field.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>Provides information for tuning the relevance of a field in a search. When a query includes terms that match the field, the results are given a boost in the response based on these tuning parameters.</p>
     pub fn relevance(&self) -> ::std::option::Option<&crate::types::Relevance> {
@@ -35,6 +36,7 @@ pub struct DocumentRelevanceConfigurationBuilder {
 }
 impl DocumentRelevanceConfigurationBuilder {
     /// <p>The name of the index field.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl DocumentRelevanceConfigurationBuilder {
         &self.name
     }
     /// <p>Provides information for tuning the relevance of a field in a search. When a query includes terms that match the field, the results are given a boost in the response based on these tuning parameters.</p>
+    /// This field is required.
     pub fn relevance(mut self, input: crate::types::Relevance) -> Self {
         self.relevance = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,17 @@ impl DocumentRelevanceConfigurationBuilder {
         &self.relevance
     }
     /// Consumes the builder and constructs a [`DocumentRelevanceConfiguration`](crate::types::DocumentRelevanceConfiguration).
-    pub fn build(self) -> crate::types::DocumentRelevanceConfiguration {
-        crate::types::DocumentRelevanceConfiguration {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::DocumentRelevanceConfigurationBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::DocumentRelevanceConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DocumentRelevanceConfiguration {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DocumentRelevanceConfiguration",
+                )
+            })?,
             relevance: self.relevance,
-        }
+        })
     }
 }

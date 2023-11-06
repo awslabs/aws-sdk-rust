@@ -2,7 +2,7 @@
 pub fn ser_dataset_schema(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DatasetSchema,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.inline_data_schema {
         object.key("InlineDataSchema").string(var_1.as_str());
     }

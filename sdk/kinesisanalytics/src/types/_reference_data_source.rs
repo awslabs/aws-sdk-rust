@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReferenceDataSource {
     /// <p>Name of the in-application table to create.</p>
-    pub table_name: ::std::option::Option<::std::string::String>,
+    pub table_name: ::std::string::String,
     /// <p>Identifies the S3 bucket and object that contains the reference data. Also identifies the IAM role Amazon Kinesis Analytics can assume to read this object on your behalf. An Amazon Kinesis Analytics application loads reference data only once. If the data changes, you call the <code>UpdateApplication</code> operation to trigger reloading of data into your application. </p>
     pub s3_reference_data_source: ::std::option::Option<crate::types::S3ReferenceDataSource>,
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.</p>
@@ -13,8 +13,9 @@ pub struct ReferenceDataSource {
 }
 impl ReferenceDataSource {
     /// <p>Name of the in-application table to create.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
-        self.table_name.as_deref()
+    pub fn table_name(&self) -> &str {
+        use std::ops::Deref;
+        self.table_name.deref()
     }
     /// <p>Identifies the S3 bucket and object that contains the reference data. Also identifies the IAM role Amazon Kinesis Analytics can assume to read this object on your behalf. An Amazon Kinesis Analytics application loads reference data only once. If the data changes, you call the <code>UpdateApplication</code> operation to trigger reloading of data into your application. </p>
     pub fn s3_reference_data_source(&self) -> ::std::option::Option<&crate::types::S3ReferenceDataSource> {
@@ -42,6 +43,7 @@ pub struct ReferenceDataSourceBuilder {
 }
 impl ReferenceDataSourceBuilder {
     /// <p>Name of the in-application table to create.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl ReferenceDataSourceBuilder {
         &self.s3_reference_data_source
     }
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.</p>
+    /// This field is required.
     pub fn reference_schema(mut self, input: crate::types::SourceSchema) -> Self {
         self.reference_schema = ::std::option::Option::Some(input);
         self
@@ -84,11 +87,18 @@ impl ReferenceDataSourceBuilder {
         &self.reference_schema
     }
     /// Consumes the builder and constructs a [`ReferenceDataSource`](crate::types::ReferenceDataSource).
-    pub fn build(self) -> crate::types::ReferenceDataSource {
-        crate::types::ReferenceDataSource {
-            table_name: self.table_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`table_name`](crate::types::builders::ReferenceDataSourceBuilder::table_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::ReferenceDataSource, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ReferenceDataSource {
+            table_name: self.table_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "table_name",
+                    "table_name was not specified but it is required when building ReferenceDataSource",
+                )
+            })?,
             s3_reference_data_source: self.s3_reference_data_source,
             reference_schema: self.reference_schema,
-        }
+        })
     }
 }

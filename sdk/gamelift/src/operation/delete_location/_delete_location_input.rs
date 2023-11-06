@@ -27,6 +27,7 @@ pub struct DeleteLocationInputBuilder {
 }
 impl DeleteLocationInputBuilder {
     /// <p>The location name of the custom location to be deleted.</p>
+    /// This field is required.
     pub fn location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteLocationInputBuilder {
     /// Consumes the builder and constructs a [`DeleteLocationInput`](crate::operation::delete_location::DeleteLocationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_location::DeleteLocationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_location::DeleteLocationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_location::DeleteLocationInput {
             location_name: self.location_name,
         })

@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateJsonClassifierRequest {
     /// <p>The name of the classifier.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify. Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
-    pub json_path: ::std::option::Option<::std::string::String>,
+    pub json_path: ::std::string::String,
 }
 impl CreateJsonClassifierRequest {
     /// <p>The name of the classifier.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify. Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
-    pub fn json_path(&self) -> ::std::option::Option<&str> {
-        self.json_path.as_deref()
+    pub fn json_path(&self) -> &str {
+        use std::ops::Deref;
+        self.json_path.deref()
     }
 }
 impl CreateJsonClassifierRequest {
@@ -35,6 +37,7 @@ pub struct CreateJsonClassifierRequestBuilder {
 }
 impl CreateJsonClassifierRequestBuilder {
     /// <p>The name of the classifier.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl CreateJsonClassifierRequestBuilder {
         &self.name
     }
     /// <p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify. Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
+    /// This field is required.
     pub fn json_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.json_path = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl CreateJsonClassifierRequestBuilder {
         &self.json_path
     }
     /// Consumes the builder and constructs a [`CreateJsonClassifierRequest`](crate::types::CreateJsonClassifierRequest).
-    pub fn build(self) -> crate::types::CreateJsonClassifierRequest {
-        crate::types::CreateJsonClassifierRequest {
-            name: self.name,
-            json_path: self.json_path,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::CreateJsonClassifierRequestBuilder::name)
+    /// - [`json_path`](crate::types::builders::CreateJsonClassifierRequestBuilder::json_path)
+    pub fn build(self) -> ::std::result::Result<crate::types::CreateJsonClassifierRequest, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CreateJsonClassifierRequest {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CreateJsonClassifierRequest",
+                )
+            })?,
+            json_path: self.json_path.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "json_path",
+                    "json_path was not specified but it is required when building CreateJsonClassifierRequest",
+                )
+            })?,
+        })
     }
 }

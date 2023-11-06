@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateTemplate`](crate::operation::update_template::builders::UpdateTemplateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`template(Template)`](crate::operation::update_template::builders::UpdateTemplateFluentBuilder::template) / [`set_template(Option<Template>)`](crate::operation::update_template::builders::UpdateTemplateFluentBuilder::set_template): <p>The content of the email, composed of a subject line and either an HTML part or a text-only part.</p>
+    ///   - [`template(Template)`](crate::operation::update_template::builders::UpdateTemplateFluentBuilder::template) / [`set_template(Option<Template>)`](crate::operation::update_template::builders::UpdateTemplateFluentBuilder::set_template):<br>required: **true**<br><p>The content of the email, composed of a subject line and either an HTML part or a text-only part.</p><br>
     /// - On success, responds with [`UpdateTemplateOutput`](crate::operation::update_template::UpdateTemplateOutput)
     /// - On failure, responds with [`SdkError<UpdateTemplateError>`](crate::operation::update_template::UpdateTemplateError)
     pub fn update_template(&self) -> crate::operation::update_template::builders::UpdateTemplateFluentBuilder {

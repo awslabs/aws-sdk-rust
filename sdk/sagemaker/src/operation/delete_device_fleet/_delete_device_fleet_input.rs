@@ -27,6 +27,7 @@ pub struct DeleteDeviceFleetInputBuilder {
 }
 impl DeleteDeviceFleetInputBuilder {
     /// <p>The name of the fleet to delete.</p>
+    /// This field is required.
     pub fn device_fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_fleet_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteDeviceFleetInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDeviceFleetInput`](crate::operation::delete_device_fleet::DeleteDeviceFleetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_device_fleet::DeleteDeviceFleetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_device_fleet::DeleteDeviceFleetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_device_fleet::DeleteDeviceFleetInput {
             device_fleet_name: self.device_fleet_name,
         })

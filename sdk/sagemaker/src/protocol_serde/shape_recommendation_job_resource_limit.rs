@@ -2,7 +2,7 @@
 pub fn ser_recommendation_job_resource_limit(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RecommendationJobResourceLimit,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.max_number_of_tests {
         object.key("MaxNumberOfTests").number(
             #[allow(clippy::useless_conversion)]

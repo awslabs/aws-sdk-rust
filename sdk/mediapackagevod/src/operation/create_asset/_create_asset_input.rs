@@ -63,6 +63,7 @@ pub struct CreateAssetInputBuilder {
 }
 impl CreateAssetInputBuilder {
     /// The unique identifier for the Asset.
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +78,7 @@ impl CreateAssetInputBuilder {
         &self.id
     }
     /// The ID of the PackagingGroup for the Asset.
+    /// This field is required.
     pub fn packaging_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.packaging_group_id = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +107,7 @@ impl CreateAssetInputBuilder {
         &self.resource_id
     }
     /// ARN of the source object in S3.
+    /// This field is required.
     pub fn source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_arn = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +122,7 @@ impl CreateAssetInputBuilder {
         &self.source_arn
     }
     /// The IAM role ARN used to access the source S3 bucket.
+    /// This field is required.
     pub fn source_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -153,7 +157,7 @@ impl CreateAssetInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateAssetInput`](crate::operation::create_asset::CreateAssetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_asset::CreateAssetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_asset::CreateAssetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_asset::CreateAssetInput {
             id: self.id,
             packaging_group_id: self.packaging_group_id,

@@ -2,32 +2,32 @@
 pub fn ser_time_equality_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TimeEqualityFilter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.filter_id {
-        object.key("FilterId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("FilterId").string(input.filter_id.as_str());
     }
-    if let Some(var_2) = &input.column {
+    if let Some(var_1) = &input.column {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("Column").start_object();
-        crate::protocol_serde::shape_column_identifier::ser_column_identifier(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("Column").start_object();
+        crate::protocol_serde::shape_column_identifier::ser_column_identifier(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.value {
+    if let Some(var_3) = &input.value {
         object
             .key("Value")
-            .date_time(var_4, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_3, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_5) = &input.parameter_name {
-        object.key("ParameterName").string(var_5.as_str());
+    if let Some(var_4) = &input.parameter_name {
+        object.key("ParameterName").string(var_4.as_str());
     }
-    if let Some(var_6) = &input.time_granularity {
-        object.key("TimeGranularity").string(var_6.as_str());
+    if let Some(var_5) = &input.time_granularity {
+        object.key("TimeGranularity").string(var_5.as_str());
     }
-    if let Some(var_7) = &input.rolling_date {
+    if let Some(var_6) = &input.rolling_date {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("RollingDate").start_object();
-        crate::protocol_serde::shape_rolling_date_configuration::ser_rolling_date_configuration(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_7 = object.key("RollingDate").start_object();
+        crate::protocol_serde::shape_rolling_date_configuration::ser_rolling_date_configuration(&mut object_7, var_6)?;
+        object_7.finish();
     }
     Ok(())
 }
@@ -92,7 +92,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::time_equality_filter_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

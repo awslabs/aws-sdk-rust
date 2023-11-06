@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetBucketTagging`](crate::operation::get_bucket_tagging::builders::GetBucketTaggingFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`bucket(impl Into<String>)`](crate::operation::get_bucket_tagging::builders::GetBucketTaggingFluentBuilder::bucket) / [`set_bucket(Option<String>)`](crate::operation::get_bucket_tagging::builders::GetBucketTaggingFluentBuilder::set_bucket): <p>The name of the bucket for which to get the tagging information.</p>
-    ///   - [`expected_bucket_owner(impl Into<String>)`](crate::operation::get_bucket_tagging::builders::GetBucketTaggingFluentBuilder::expected_bucket_owner) / [`set_expected_bucket_owner(Option<String>)`](crate::operation::get_bucket_tagging::builders::GetBucketTaggingFluentBuilder::set_expected_bucket_owner): <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
+    ///   - [`bucket(impl Into<String>)`](crate::operation::get_bucket_tagging::builders::GetBucketTaggingFluentBuilder::bucket) / [`set_bucket(Option<String>)`](crate::operation::get_bucket_tagging::builders::GetBucketTaggingFluentBuilder::set_bucket):<br>required: **true**<br><p>The name of the bucket for which to get the tagging information.</p><br>
+    ///   - [`expected_bucket_owner(impl Into<String>)`](crate::operation::get_bucket_tagging::builders::GetBucketTaggingFluentBuilder::expected_bucket_owner) / [`set_expected_bucket_owner(Option<String>)`](crate::operation::get_bucket_tagging::builders::GetBucketTaggingFluentBuilder::set_expected_bucket_owner):<br>required: **false**<br><p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p><br>
     /// - On success, responds with [`GetBucketTaggingOutput`](crate::operation::get_bucket_tagging::GetBucketTaggingOutput) with field(s):
-    ///   - [`tag_set(Option<Vec<Tag>>)`](crate::operation::get_bucket_tagging::GetBucketTaggingOutput::tag_set): <p>Contains the tag set.</p>
+    ///   - [`tag_set(Vec::<Tag>)`](crate::operation::get_bucket_tagging::GetBucketTaggingOutput::tag_set): <p>Contains the tag set.</p>
     /// - On failure, responds with [`SdkError<GetBucketTaggingError>`](crate::operation::get_bucket_tagging::GetBucketTaggingError)
     pub fn get_bucket_tagging(&self) -> crate::operation::get_bucket_tagging::builders::GetBucketTaggingFluentBuilder {
         crate::operation::get_bucket_tagging::builders::GetBucketTaggingFluentBuilder::new(self.handle.clone())

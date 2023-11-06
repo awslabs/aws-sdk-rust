@@ -2,7 +2,7 @@
 pub fn ser_s3_destination_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::S3DestinationSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.access_control {
         #[allow(unused_mut)]
         let mut object_2 = object.key("accessControl").start_object();

@@ -2,7 +2,7 @@
 pub fn ser_availability_zone(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AvailabilityZone,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.zone_name {
         object.key("ZoneName").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_input_parallelism_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InputParallelismUpdate,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.count_update {
         object.key("CountUpdate").number(
             #[allow(clippy::useless_conversion)]

@@ -10,8 +10,10 @@ pub struct UpdateUserAttributesOutput {
 }
 impl UpdateUserAttributesOutput {
     /// <p>The code delivery details list from the server for the request to update user attributes.</p>
-    pub fn code_delivery_details_list(&self) -> ::std::option::Option<&[crate::types::CodeDeliveryDetailsType]> {
-        self.code_delivery_details_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.code_delivery_details_list.is_none()`.
+    pub fn code_delivery_details_list(&self) -> &[crate::types::CodeDeliveryDetailsType] {
+        self.code_delivery_details_list.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateUserAttributesOutput {

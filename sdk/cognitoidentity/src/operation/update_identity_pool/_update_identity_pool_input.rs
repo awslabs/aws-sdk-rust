@@ -9,7 +9,7 @@ pub struct UpdateIdentityPoolInput {
     /// <p>A string that you provide.</p>
     pub identity_pool_name: ::std::option::Option<::std::string::String>,
     /// <p>TRUE if the identity pool supports unauthenticated logins.</p>
-    pub allow_unauthenticated_identities: bool,
+    pub allow_unauthenticated_identities: ::std::option::Option<bool>,
     /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
     pub allow_classic_flow: ::std::option::Option<bool>,
     /// <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
@@ -17,11 +17,11 @@ pub struct UpdateIdentityPoolInput {
     /// <p>The "domain" by which Cognito will refer to your users.</p>
     pub developer_provider_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARNs of the OpenID Connect providers.</p>
-    pub open_id_connect_provider_ar_ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub open_id_connect_provider_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list representing an Amazon Cognito user pool and its client ID.</p>
     pub cognito_identity_providers: ::std::option::Option<::std::vec::Vec<crate::types::CognitoIdentityProvider>>,
     /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>
-    pub saml_provider_ar_ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub saml_provider_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The tags that are assigned to the identity pool. A tag is a label that you can apply to identity pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.</p>
     pub identity_pool_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -35,7 +35,7 @@ impl UpdateIdentityPoolInput {
         self.identity_pool_name.as_deref()
     }
     /// <p>TRUE if the identity pool supports unauthenticated logins.</p>
-    pub fn allow_unauthenticated_identities(&self) -> bool {
+    pub fn allow_unauthenticated_identities(&self) -> ::std::option::Option<bool> {
         self.allow_unauthenticated_identities
     }
     /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
@@ -51,16 +51,22 @@ impl UpdateIdentityPoolInput {
         self.developer_provider_name.as_deref()
     }
     /// <p>The ARNs of the OpenID Connect providers.</p>
-    pub fn open_id_connect_provider_ar_ns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.open_id_connect_provider_ar_ns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.open_id_connect_provider_arns.is_none()`.
+    pub fn open_id_connect_provider_arns(&self) -> &[::std::string::String] {
+        self.open_id_connect_provider_arns.as_deref().unwrap_or_default()
     }
     /// <p>A list representing an Amazon Cognito user pool and its client ID.</p>
-    pub fn cognito_identity_providers(&self) -> ::std::option::Option<&[crate::types::CognitoIdentityProvider]> {
-        self.cognito_identity_providers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cognito_identity_providers.is_none()`.
+    pub fn cognito_identity_providers(&self) -> &[crate::types::CognitoIdentityProvider] {
+        self.cognito_identity_providers.as_deref().unwrap_or_default()
     }
     /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>
-    pub fn saml_provider_ar_ns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.saml_provider_ar_ns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.saml_provider_arns.is_none()`.
+    pub fn saml_provider_arns(&self) -> &[::std::string::String] {
+        self.saml_provider_arns.as_deref().unwrap_or_default()
     }
     /// <p>The tags that are assigned to the identity pool. A tag is a label that you can apply to identity pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.</p>
     pub fn identity_pool_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -84,13 +90,14 @@ pub struct UpdateIdentityPoolInputBuilder {
     pub(crate) allow_classic_flow: ::std::option::Option<bool>,
     pub(crate) supported_login_providers: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) developer_provider_name: ::std::option::Option<::std::string::String>,
-    pub(crate) open_id_connect_provider_ar_ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) open_id_connect_provider_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) cognito_identity_providers: ::std::option::Option<::std::vec::Vec<crate::types::CognitoIdentityProvider>>,
-    pub(crate) saml_provider_ar_ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) saml_provider_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) identity_pool_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl UpdateIdentityPoolInputBuilder {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
+    /// This field is required.
     pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +112,7 @@ impl UpdateIdentityPoolInputBuilder {
         &self.identity_pool_id
     }
     /// <p>A string that you provide.</p>
+    /// This field is required.
     pub fn identity_pool_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_pool_name = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +127,7 @@ impl UpdateIdentityPoolInputBuilder {
         &self.identity_pool_name
     }
     /// <p>TRUE if the identity pool supports unauthenticated logins.</p>
+    /// This field is required.
     pub fn allow_unauthenticated_identities(mut self, input: bool) -> Self {
         self.allow_unauthenticated_identities = ::std::option::Option::Some(input);
         self
@@ -187,25 +196,25 @@ impl UpdateIdentityPoolInputBuilder {
     pub fn get_developer_provider_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.developer_provider_name
     }
-    /// Appends an item to `open_id_connect_provider_ar_ns`.
+    /// Appends an item to `open_id_connect_provider_arns`.
     ///
-    /// To override the contents of this collection use [`set_open_id_connect_provider_ar_ns`](Self::set_open_id_connect_provider_ar_ns).
+    /// To override the contents of this collection use [`set_open_id_connect_provider_arns`](Self::set_open_id_connect_provider_arns).
     ///
     /// <p>The ARNs of the OpenID Connect providers.</p>
-    pub fn open_id_connect_provider_ar_ns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.open_id_connect_provider_ar_ns.unwrap_or_default();
+    pub fn open_id_connect_provider_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.open_id_connect_provider_arns.unwrap_or_default();
         v.push(input.into());
-        self.open_id_connect_provider_ar_ns = ::std::option::Option::Some(v);
+        self.open_id_connect_provider_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The ARNs of the OpenID Connect providers.</p>
-    pub fn set_open_id_connect_provider_ar_ns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.open_id_connect_provider_ar_ns = input;
+    pub fn set_open_id_connect_provider_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.open_id_connect_provider_arns = input;
         self
     }
     /// <p>The ARNs of the OpenID Connect providers.</p>
-    pub fn get_open_id_connect_provider_ar_ns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.open_id_connect_provider_ar_ns
+    pub fn get_open_id_connect_provider_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.open_id_connect_provider_arns
     }
     /// Appends an item to `cognito_identity_providers`.
     ///
@@ -227,25 +236,25 @@ impl UpdateIdentityPoolInputBuilder {
     pub fn get_cognito_identity_providers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CognitoIdentityProvider>> {
         &self.cognito_identity_providers
     }
-    /// Appends an item to `saml_provider_ar_ns`.
+    /// Appends an item to `saml_provider_arns`.
     ///
-    /// To override the contents of this collection use [`set_saml_provider_ar_ns`](Self::set_saml_provider_ar_ns).
+    /// To override the contents of this collection use [`set_saml_provider_arns`](Self::set_saml_provider_arns).
     ///
     /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>
-    pub fn saml_provider_ar_ns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.saml_provider_ar_ns.unwrap_or_default();
+    pub fn saml_provider_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.saml_provider_arns.unwrap_or_default();
         v.push(input.into());
-        self.saml_provider_ar_ns = ::std::option::Option::Some(v);
+        self.saml_provider_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>
-    pub fn set_saml_provider_ar_ns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.saml_provider_ar_ns = input;
+    pub fn set_saml_provider_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.saml_provider_arns = input;
         self
     }
     /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>
-    pub fn get_saml_provider_ar_ns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.saml_provider_ar_ns
+    pub fn get_saml_provider_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.saml_provider_arns
     }
     /// Adds a key-value pair to `identity_pool_tags`.
     ///
@@ -277,17 +286,18 @@ impl UpdateIdentityPoolInputBuilder {
     /// Consumes the builder and constructs a [`UpdateIdentityPoolInput`](crate::operation::update_identity_pool::UpdateIdentityPoolInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_identity_pool::UpdateIdentityPoolInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_identity_pool::UpdateIdentityPoolInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_identity_pool::UpdateIdentityPoolInput {
             identity_pool_id: self.identity_pool_id,
             identity_pool_name: self.identity_pool_name,
-            allow_unauthenticated_identities: self.allow_unauthenticated_identities.unwrap_or_default(),
+            allow_unauthenticated_identities: self.allow_unauthenticated_identities,
             allow_classic_flow: self.allow_classic_flow,
             supported_login_providers: self.supported_login_providers,
             developer_provider_name: self.developer_provider_name,
-            open_id_connect_provider_ar_ns: self.open_id_connect_provider_ar_ns,
+            open_id_connect_provider_arns: self.open_id_connect_provider_arns,
             cognito_identity_providers: self.cognito_identity_providers,
-            saml_provider_ar_ns: self.saml_provider_ar_ns,
+            saml_provider_arns: self.saml_provider_arns,
             identity_pool_tags: self.identity_pool_tags,
         })
     }

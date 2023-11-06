@@ -14,8 +14,10 @@ impl BatchDeleteGeofenceInput {
         self.collection_name.as_deref()
     }
     /// <p>The batch of geofences to be deleted.</p>
-    pub fn geofence_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.geofence_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.geofence_ids.is_none()`.
+    pub fn geofence_ids(&self) -> &[::std::string::String] {
+        self.geofence_ids.as_deref().unwrap_or_default()
     }
 }
 impl BatchDeleteGeofenceInput {
@@ -34,6 +36,7 @@ pub struct BatchDeleteGeofenceInputBuilder {
 }
 impl BatchDeleteGeofenceInputBuilder {
     /// <p>The geofence collection storing the geofences to be deleted.</p>
+    /// This field is required.
     pub fn collection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_name = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +73,7 @@ impl BatchDeleteGeofenceInputBuilder {
     /// Consumes the builder and constructs a [`BatchDeleteGeofenceInput`](crate::operation::batch_delete_geofence::BatchDeleteGeofenceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_delete_geofence::BatchDeleteGeofenceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_delete_geofence::BatchDeleteGeofenceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_delete_geofence::BatchDeleteGeofenceInput {
             collection_name: self.collection_name,

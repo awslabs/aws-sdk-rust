@@ -17,12 +17,12 @@ pub struct UpdateMonitorInput {
     /// <p>A unique, case-sensitive string of up to 64 ASCII characters that you specify to make an idempotent API request. You should not reuse the same client token for other API requests.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of city-networks to monitor for your application. A city-network is the location (city) where clients access your application resources from and the ASN or network provider, such as an internet service provider (ISP), that clients access the resources through. Setting this limit can help control billing costs.</p>
-    pub max_city_networks_to_monitor: i32,
+    pub max_city_networks_to_monitor: ::std::option::Option<i32>,
     /// <p>Publish internet measurements for Internet Monitor to another location, such as an Amazon S3 bucket. The measurements are also published to Amazon CloudWatch Logs.</p>
     pub internet_measurements_log_delivery: ::std::option::Option<crate::types::InternetMeasurementsLogDelivery>,
     /// <p>The percentage of the internet-facing traffic for your application that you want to monitor with this monitor. If you set a city-networks maximum, that limit overrides the traffic percentage that you set.</p>
     /// <p>To learn more, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMTrafficPercentage.html">Choosing an application traffic percentage to monitor </a> in the Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
-    pub traffic_percentage_to_monitor: i32,
+    pub traffic_percentage_to_monitor: ::std::option::Option<i32>,
     /// <p>The list of health score thresholds. A threshold percentage for health scores, along with other configuration information, determines when Internet Monitor creates a health event when there's an internet issue that affects your application end users.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview"> Change health event thresholds</a> in the Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
     pub health_events_config: ::std::option::Option<crate::types::HealthEventsConfig>,
@@ -36,12 +36,16 @@ impl UpdateMonitorInput {
     /// <p>You can add a combination of VPCs and CloudFront distributions, or you can add WorkSpaces directories, or you can add NLBs. You can't add NLBs or WorkSpaces directories together with any other resources.</p> <note>
     /// <p>If you add only Amazon Virtual Private Clouds resources, at least one VPC must have an Internet Gateway attached to it, to make sure that it has internet connectivity.</p>
     /// </note>
-    pub fn resources_to_add(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resources_to_add.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources_to_add.is_none()`.
+    pub fn resources_to_add(&self) -> &[::std::string::String] {
+        self.resources_to_add.as_deref().unwrap_or_default()
     }
     /// <p>The resources to remove from a monitor, which you provide as a set of Amazon Resource Names (ARNs).</p>
-    pub fn resources_to_remove(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resources_to_remove.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources_to_remove.is_none()`.
+    pub fn resources_to_remove(&self) -> &[::std::string::String] {
+        self.resources_to_remove.as_deref().unwrap_or_default()
     }
     /// <p>The status for a monitor. The accepted values for <code>Status</code> with the <code>UpdateMonitor</code> API call are the following: <code>ACTIVE</code> and <code>INACTIVE</code>. The following values are <i>not</i> accepted: <code>PENDING</code>, and <code>ERROR</code>.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::MonitorConfigState> {
@@ -52,7 +56,7 @@ impl UpdateMonitorInput {
         self.client_token.as_deref()
     }
     /// <p>The maximum number of city-networks to monitor for your application. A city-network is the location (city) where clients access your application resources from and the ASN or network provider, such as an internet service provider (ISP), that clients access the resources through. Setting this limit can help control billing costs.</p>
-    pub fn max_city_networks_to_monitor(&self) -> i32 {
+    pub fn max_city_networks_to_monitor(&self) -> ::std::option::Option<i32> {
         self.max_city_networks_to_monitor
     }
     /// <p>Publish internet measurements for Internet Monitor to another location, such as an Amazon S3 bucket. The measurements are also published to Amazon CloudWatch Logs.</p>
@@ -61,7 +65,7 @@ impl UpdateMonitorInput {
     }
     /// <p>The percentage of the internet-facing traffic for your application that you want to monitor with this monitor. If you set a city-networks maximum, that limit overrides the traffic percentage that you set.</p>
     /// <p>To learn more, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMTrafficPercentage.html">Choosing an application traffic percentage to monitor </a> in the Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
-    pub fn traffic_percentage_to_monitor(&self) -> i32 {
+    pub fn traffic_percentage_to_monitor(&self) -> ::std::option::Option<i32> {
         self.traffic_percentage_to_monitor
     }
     /// <p>The list of health score thresholds. A threshold percentage for health scores, along with other configuration information, determines when Internet Monitor creates a health event when there's an internet issue that affects your application end users.</p>
@@ -93,6 +97,7 @@ pub struct UpdateMonitorInputBuilder {
 }
 impl UpdateMonitorInputBuilder {
     /// <p>The name of the monitor. </p>
+    /// This field is required.
     pub fn monitor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitor_name = ::std::option::Option::Some(input.into());
         self
@@ -248,16 +253,16 @@ impl UpdateMonitorInputBuilder {
     /// Consumes the builder and constructs a [`UpdateMonitorInput`](crate::operation::update_monitor::UpdateMonitorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_monitor::UpdateMonitorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_monitor::UpdateMonitorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_monitor::UpdateMonitorInput {
             monitor_name: self.monitor_name,
             resources_to_add: self.resources_to_add,
             resources_to_remove: self.resources_to_remove,
             status: self.status,
             client_token: self.client_token,
-            max_city_networks_to_monitor: self.max_city_networks_to_monitor.unwrap_or_default(),
+            max_city_networks_to_monitor: self.max_city_networks_to_monitor,
             internet_measurements_log_delivery: self.internet_measurements_log_delivery,
-            traffic_percentage_to_monitor: self.traffic_percentage_to_monitor.unwrap_or_default(),
+            traffic_percentage_to_monitor: self.traffic_percentage_to_monitor,
             health_events_config: self.health_events_config,
         })
     }

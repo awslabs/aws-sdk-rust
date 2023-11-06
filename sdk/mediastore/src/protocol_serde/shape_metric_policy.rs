@@ -35,7 +35,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::metric_policy_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -46,21 +48,21 @@ where
 pub fn ser_metric_policy(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MetricPolicy,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.container_level_metrics {
-        object.key("ContainerLevelMetrics").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("ContainerLevelMetrics").string(input.container_level_metrics.as_str());
     }
-    if let Some(var_2) = &input.metric_policy_rules {
-        let mut array_3 = object.key("MetricPolicyRules").start_array();
-        for item_4 in var_2 {
+    if let Some(var_1) = &input.metric_policy_rules {
+        let mut array_2 = object.key("MetricPolicyRules").start_array();
+        for item_3 in var_1 {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_metric_policy_rule::ser_metric_policy_rule(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_metric_policy_rule::ser_metric_policy_rule(&mut object_4, item_3)?;
+                object_4.finish();
             }
         }
-        array_3.finish();
+        array_2.finish();
     }
     Ok(())
 }

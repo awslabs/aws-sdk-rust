@@ -60,8 +60,10 @@ impl CreateDataCatalogInput {
         self.parameters.as_ref()
     }
     /// <p>A list of comma separated tags to add to the data catalog that is created.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateDataCatalogInput {
@@ -83,6 +85,7 @@ pub struct CreateDataCatalogInputBuilder {
 }
 impl CreateDataCatalogInputBuilder {
     /// <p>The name of the data catalog to create. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of 256 is reserved for use by Athena.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +100,7 @@ impl CreateDataCatalogInputBuilder {
         &self.name
     }
     /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::DataCatalogType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -209,7 +213,7 @@ impl CreateDataCatalogInputBuilder {
     /// Consumes the builder and constructs a [`CreateDataCatalogInput`](crate::operation::create_data_catalog::CreateDataCatalogInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_data_catalog::CreateDataCatalogInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_data_catalog::CreateDataCatalogInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_data_catalog::CreateDataCatalogInput {
             name: self.name,
             r#type: self.r#type,

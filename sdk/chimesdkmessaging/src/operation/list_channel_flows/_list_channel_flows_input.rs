@@ -50,6 +50,7 @@ pub struct ListChannelFlowsInputBuilder {
 }
 impl ListChannelFlowsInputBuilder {
     /// <p>The ARN of the app instance.</p>
+    /// This field is required.
     pub fn app_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_arn = ::std::option::Option::Some(input.into());
         self
@@ -94,7 +95,7 @@ impl ListChannelFlowsInputBuilder {
     /// Consumes the builder and constructs a [`ListChannelFlowsInput`](crate::operation::list_channel_flows::ListChannelFlowsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_channel_flows::ListChannelFlowsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_channel_flows::ListChannelFlowsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_channel_flows::ListChannelFlowsInput {
             app_instance_arn: self.app_instance_arn,
             max_results: self.max_results,

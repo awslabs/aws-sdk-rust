@@ -34,6 +34,7 @@ pub struct DescribeApplicationOutputBuilder {
 }
 impl DescribeApplicationOutputBuilder {
     /// <p>Provides a description of the application, such as the application's Amazon Resource Name (ARN), status, and latest version.</p>
+    /// This field is required.
     pub fn application_detail(mut self, input: crate::types::ApplicationDetail) -> Self {
         self.application_detail = ::std::option::Option::Some(input);
         self

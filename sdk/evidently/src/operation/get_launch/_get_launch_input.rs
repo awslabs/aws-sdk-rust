@@ -34,6 +34,7 @@ pub struct GetLaunchInputBuilder {
 }
 impl GetLaunchInputBuilder {
     /// <p>The name or ARN of the project that contains the launch.</p>
+    /// This field is required.
     pub fn project(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetLaunchInputBuilder {
         &self.project
     }
     /// <p>The name of the launch that you want to see the details of.</p>
+    /// This field is required.
     pub fn launch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,7 @@ impl GetLaunchInputBuilder {
         &self.launch
     }
     /// Consumes the builder and constructs a [`GetLaunchInput`](crate::operation::get_launch::GetLaunchInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_launch::GetLaunchInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_launch::GetLaunchInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_launch::GetLaunchInput {
             project: self.project,
             launch: self.launch,

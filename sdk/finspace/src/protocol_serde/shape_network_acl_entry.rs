@@ -2,33 +2,33 @@
 pub fn ser_network_acl_entry(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NetworkAclEntry,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.rule_number {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
         object.key("ruleNumber").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+            ::aws_smithy_types::Number::NegInt((input.rule_number).into()),
         );
     }
-    if let Some(var_2) = &input.protocol {
-        object.key("protocol").string(var_2.as_str());
+    {
+        object.key("protocol").string(input.protocol.as_str());
     }
-    if let Some(var_3) = &input.rule_action {
-        object.key("ruleAction").string(var_3.as_str());
+    {
+        object.key("ruleAction").string(input.rule_action.as_str());
     }
-    if let Some(var_4) = &input.port_range {
+    if let Some(var_1) = &input.port_range {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("portRange").start_object();
-        crate::protocol_serde::shape_port_range::ser_port_range(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_2 = object.key("portRange").start_object();
+        crate::protocol_serde::shape_port_range::ser_port_range(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_6) = &input.icmp_type_code {
+    if let Some(var_3) = &input.icmp_type_code {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("icmpTypeCode").start_object();
-        crate::protocol_serde::shape_icmp_type_code::ser_icmp_type_code(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_4 = object.key("icmpTypeCode").start_object();
+        crate::protocol_serde::shape_icmp_type_code::ser_icmp_type_code(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_8) = &input.cidr_block {
-        object.key("cidrBlock").string(var_8.as_str());
+    {
+        object.key("cidrBlock").string(input.cidr_block.as_str());
     }
     Ok(())
 }
@@ -92,7 +92,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::network_acl_entry_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

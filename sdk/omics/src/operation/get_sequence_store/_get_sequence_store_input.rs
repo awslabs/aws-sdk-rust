@@ -27,6 +27,7 @@ pub struct GetSequenceStoreInputBuilder {
 }
 impl GetSequenceStoreInputBuilder {
     /// <p>The store's ID.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetSequenceStoreInputBuilder {
     /// Consumes the builder and constructs a [`GetSequenceStoreInput`](crate::operation::get_sequence_store::GetSequenceStoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_sequence_store::GetSequenceStoreInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_sequence_store::GetSequenceStoreInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_sequence_store::GetSequenceStoreInput { id: self.id })
     }
 }

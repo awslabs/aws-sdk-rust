@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeRobot`](crate::operation::describe_robot::builders::DescribeRobotFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`robot(impl Into<String>)`](crate::operation::describe_robot::builders::DescribeRobotFluentBuilder::robot) / [`set_robot(Option<String>)`](crate::operation::describe_robot::builders::DescribeRobotFluentBuilder::set_robot): <p>The Amazon Resource Name (ARN) of the robot to be described.</p>
+    ///   - [`robot(impl Into<String>)`](crate::operation::describe_robot::builders::DescribeRobotFluentBuilder::robot) / [`set_robot(Option<String>)`](crate::operation::describe_robot::builders::DescribeRobotFluentBuilder::set_robot):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the robot to be described.</p><br>
     /// - On success, responds with [`DescribeRobotOutput`](crate::operation::describe_robot::DescribeRobotOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::describe_robot::DescribeRobotOutput::arn): <p>The Amazon Resource Name (ARN) of the robot.</p>
     ///   - [`name(Option<String>)`](crate::operation::describe_robot::DescribeRobotOutput::name): <p>The name of the robot.</p>
@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`architecture(Option<Architecture>)`](crate::operation::describe_robot::DescribeRobotOutput::architecture): <p>The target architecture of the robot application.</p>
     ///   - [`last_deployment_job(Option<String>)`](crate::operation::describe_robot::DescribeRobotOutput::last_deployment_job): <p>The Amazon Resource Name (ARN) of the last deployment job.</p>
     ///   - [`last_deployment_time(Option<DateTime>)`](crate::operation::describe_robot::DescribeRobotOutput::last_deployment_time): <p>The time of the last deployment job.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_robot::DescribeRobotOutput::tags): <p>The list of all tags added to the specified robot.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_robot::DescribeRobotOutput::tags): <p>The list of all tags added to the specified robot.</p>
     /// - On failure, responds with [`SdkError<DescribeRobotError>`](crate::operation::describe_robot::DescribeRobotError)
     #[deprecated(
         note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."

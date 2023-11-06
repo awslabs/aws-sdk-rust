@@ -13,8 +13,10 @@ pub struct ListTagsForResourceOutput {
 }
 impl ListTagsForResourceOutput {
     /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(&self) -> ::std::option::Option<&str> {

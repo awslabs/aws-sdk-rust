@@ -4,10 +4,10 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_report_definitions::builders::ListReportDefinitionsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_report_definitions::builders::ListReportDefinitionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_report_definitions::builders::ListReportDefinitionsFluentBuilder::set_next_token): <p>The token value from a previous call to access the next page of results.</p>
-    ///   - [`max_results(i32)`](crate::operation::list_report_definitions::builders::ListReportDefinitionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_report_definitions::builders::ListReportDefinitionsFluentBuilder::set_max_results): <p>The maximum number of results to return.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_report_definitions::builders::ListReportDefinitionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_report_definitions::builders::ListReportDefinitionsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token value from a previous call to access the next page of results.</p><br>
+    ///   - [`max_results(i32)`](crate::operation::list_report_definitions::builders::ListReportDefinitionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_report_definitions::builders::ListReportDefinitionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     /// - On success, responds with [`ListReportDefinitionsOutput`](crate::operation::list_report_definitions::ListReportDefinitionsOutput) with field(s):
-    ///   - [`report_definitions(Option<Vec<ReportDefinition>>)`](crate::operation::list_report_definitions::ListReportDefinitionsOutput::report_definitions): <p>The retrieved reports.</p>
+    ///   - [`report_definitions(Option<Vec::<ReportDefinition>>)`](crate::operation::list_report_definitions::ListReportDefinitionsOutput::report_definitions): <p>The retrieved reports.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_report_definitions::ListReportDefinitionsOutput::next_token): <p>The value of the next token, if it exists. Null if there are no more results.</p>
     /// - On failure, responds with [`SdkError<ListReportDefinitionsError>`](crate::operation::list_report_definitions::ListReportDefinitionsError)
     pub fn list_report_definitions(&self) -> crate::operation::list_report_definitions::builders::ListReportDefinitionsFluentBuilder {

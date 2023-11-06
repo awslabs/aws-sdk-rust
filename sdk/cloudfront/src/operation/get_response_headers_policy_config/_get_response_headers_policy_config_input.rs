@@ -30,6 +30,7 @@ pub struct GetResponseHeadersPolicyConfigInputBuilder {
 impl GetResponseHeadersPolicyConfigInputBuilder {
     /// <p>The identifier for the response headers policy.</p>
     /// <p>If the response headers policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -50,7 +51,7 @@ impl GetResponseHeadersPolicyConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_response_headers_policy_config::GetResponseHeadersPolicyConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_response_headers_policy_config::GetResponseHeadersPolicyConfigInput { id: self.id })
     }

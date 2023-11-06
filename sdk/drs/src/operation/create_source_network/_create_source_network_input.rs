@@ -58,6 +58,7 @@ pub struct CreateSourceNetworkInputBuilder {
 }
 impl CreateSourceNetworkInputBuilder {
     /// <p>Which VPC ID to protect.</p>
+    /// This field is required.
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
         self
@@ -72,6 +73,7 @@ impl CreateSourceNetworkInputBuilder {
         &self.vpc_id
     }
     /// <p>Account containing the VPC to protect.</p>
+    /// This field is required.
     pub fn origin_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origin_account_id = ::std::option::Option::Some(input.into());
         self
@@ -86,6 +88,7 @@ impl CreateSourceNetworkInputBuilder {
         &self.origin_account_id
     }
     /// <p>Region containing the VPC to protect.</p>
+    /// This field is required.
     pub fn origin_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origin_region = ::std::option::Option::Some(input.into());
         self
@@ -122,7 +125,7 @@ impl CreateSourceNetworkInputBuilder {
     /// Consumes the builder and constructs a [`CreateSourceNetworkInput`](crate::operation::create_source_network::CreateSourceNetworkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_source_network::CreateSourceNetworkInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_source_network::CreateSourceNetworkInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_source_network::CreateSourceNetworkInput {
             vpc_id: self.vpc_id,

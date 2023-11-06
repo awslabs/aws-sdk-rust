@@ -41,8 +41,10 @@ impl ReservationPurchaseRecommendation {
         self.service_specification.as_ref()
     }
     /// <p>Details about the recommended purchases.</p>
-    pub fn recommendation_details(&self) -> ::std::option::Option<&[crate::types::ReservationPurchaseRecommendationDetail]> {
-        self.recommendation_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recommendation_details.is_none()`.
+    pub fn recommendation_details(&self) -> &[crate::types::ReservationPurchaseRecommendationDetail] {
+        self.recommendation_details.as_deref().unwrap_or_default()
     }
     /// <p>A summary about the recommended purchase.</p>
     pub fn recommendation_summary(&self) -> ::std::option::Option<&crate::types::ReservationPurchaseRecommendationSummary> {

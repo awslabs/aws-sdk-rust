@@ -67,6 +67,7 @@ pub struct ListFindingsReportsInputBuilder {
 }
 impl ListFindingsReportsInputBuilder {
     /// <p>The name of the profiling group from which to search for analysis data.</p>
+    /// This field is required.
     pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profiling_group_name = ::std::option::Option::Some(input.into());
         self
@@ -81,6 +82,7 @@ impl ListFindingsReportsInputBuilder {
         &self.profiling_group_name
     }
     /// <p> The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
@@ -95,6 +97,7 @@ impl ListFindingsReportsInputBuilder {
         &self.start_time
     }
     /// <p> The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
@@ -159,7 +162,7 @@ impl ListFindingsReportsInputBuilder {
     /// Consumes the builder and constructs a [`ListFindingsReportsInput`](crate::operation::list_findings_reports::ListFindingsReportsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_findings_reports::ListFindingsReportsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_findings_reports::ListFindingsReportsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_findings_reports::ListFindingsReportsInput {
             profiling_group_name: self.profiling_group_name,

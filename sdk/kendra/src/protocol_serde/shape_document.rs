@@ -2,63 +2,63 @@
 pub fn ser_document(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Document,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.id {
-        object.key("Id").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Id").string(input.id.as_str());
     }
-    if let Some(var_2) = &input.title {
-        object.key("Title").string(var_2.as_str());
+    if let Some(var_1) = &input.title {
+        object.key("Title").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.blob {
-        object.key("Blob").string_unchecked(&::aws_smithy_types::base64::encode(var_3));
+    if let Some(var_2) = &input.blob {
+        object.key("Blob").string_unchecked(&::aws_smithy_types::base64::encode(var_2));
     }
-    if let Some(var_4) = &input.s3_path {
+    if let Some(var_3) = &input.s3_path {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("S3Path").start_object();
-        crate::protocol_serde::shape_s3_path::ser_s3_path(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("S3Path").start_object();
+        crate::protocol_serde::shape_s3_path::ser_s3_path(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_6) = &input.attributes {
-        let mut array_7 = object.key("Attributes").start_array();
-        for item_8 in var_6 {
+    if let Some(var_5) = &input.attributes {
+        let mut array_6 = object.key("Attributes").start_array();
+        for item_7 in var_5 {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_document_attribute::ser_document_attribute(&mut object_9, item_8)?;
-                object_9.finish();
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_document_attribute::ser_document_attribute(&mut object_8, item_7)?;
+                object_8.finish();
             }
         }
-        array_7.finish();
+        array_6.finish();
     }
-    if let Some(var_10) = &input.access_control_list {
-        let mut array_11 = object.key("AccessControlList").start_array();
-        for item_12 in var_10 {
+    if let Some(var_9) = &input.access_control_list {
+        let mut array_10 = object.key("AccessControlList").start_array();
+        for item_11 in var_9 {
             {
                 #[allow(unused_mut)]
-                let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_principal::ser_principal(&mut object_13, item_12)?;
-                object_13.finish();
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_principal::ser_principal(&mut object_12, item_11)?;
+                object_12.finish();
             }
         }
-        array_11.finish();
+        array_10.finish();
     }
-    if let Some(var_14) = &input.hierarchical_access_control_list {
-        let mut array_15 = object.key("HierarchicalAccessControlList").start_array();
-        for item_16 in var_14 {
+    if let Some(var_13) = &input.hierarchical_access_control_list {
+        let mut array_14 = object.key("HierarchicalAccessControlList").start_array();
+        for item_15 in var_13 {
             {
                 #[allow(unused_mut)]
-                let mut object_17 = array_15.value().start_object();
-                crate::protocol_serde::shape_hierarchical_principal::ser_hierarchical_principal(&mut object_17, item_16)?;
-                object_17.finish();
+                let mut object_16 = array_14.value().start_object();
+                crate::protocol_serde::shape_hierarchical_principal::ser_hierarchical_principal(&mut object_16, item_15)?;
+                object_16.finish();
             }
         }
-        array_15.finish();
+        array_14.finish();
     }
-    if let Some(var_18) = &input.content_type {
-        object.key("ContentType").string(var_18.as_str());
+    if let Some(var_17) = &input.content_type {
+        object.key("ContentType").string(var_17.as_str());
     }
-    if let Some(var_19) = &input.access_control_configuration_id {
-        object.key("AccessControlConfigurationId").string(var_19.as_str());
+    if let Some(var_18) = &input.access_control_configuration_id {
+        object.key("AccessControlConfigurationId").string(var_18.as_str());
     }
     Ok(())
 }

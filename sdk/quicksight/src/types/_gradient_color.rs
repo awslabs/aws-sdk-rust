@@ -9,8 +9,10 @@ pub struct GradientColor {
 }
 impl GradientColor {
     /// <p>The list of gradient color stops.</p>
-    pub fn stops(&self) -> ::std::option::Option<&[crate::types::GradientStop]> {
-        self.stops.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stops.is_none()`.
+    pub fn stops(&self) -> &[crate::types::GradientStop] {
+        self.stops.as_deref().unwrap_or_default()
     }
 }
 impl GradientColor {

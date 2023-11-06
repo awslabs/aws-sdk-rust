@@ -34,6 +34,7 @@ pub struct UpdateConfiguredTableAnalysisRuleOutputBuilder {
 }
 impl UpdateConfiguredTableAnalysisRuleOutputBuilder {
     /// <p>The entire updated analysis rule.</p>
+    /// This field is required.
     pub fn analysis_rule(mut self, input: crate::types::ConfiguredTableAnalysisRule) -> Self {
         self.analysis_rule = ::std::option::Option::Some(input);
         self

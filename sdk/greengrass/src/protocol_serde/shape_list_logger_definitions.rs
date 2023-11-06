@@ -51,7 +51,7 @@ pub(crate) fn de_list_logger_definitions(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Definitions" => {
                     builder = builder
-                        .set_definitions(crate::protocol_serde::shape___list_of_definition_information::de___list_of_definition_information(tokens)?);
+                        .set_definitions(crate::protocol_serde::shape_list_of_definition_information::de_list_of_definition_information(tokens)?);
                 }
                 "NextToken" => {
                     builder = builder.set_next_token(

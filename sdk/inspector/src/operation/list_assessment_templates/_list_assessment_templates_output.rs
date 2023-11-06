@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAssessmentTemplatesOutput {
     /// <p>A list of ARNs that specifies the assessment templates returned by the action.</p>
-    pub assessment_template_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub assessment_template_arns: ::std::vec::Vec<::std::string::String>,
     /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAssessmentTemplatesOutput {
     /// <p>A list of ARNs that specifies the assessment templates returned by the action.</p>
-    pub fn assessment_template_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.assessment_template_arns.as_deref()
+    pub fn assessment_template_arns(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.assessment_template_arns.deref()
     }
     /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,23 @@ impl ListAssessmentTemplatesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAssessmentTemplatesOutput`](crate::operation::list_assessment_templates::ListAssessmentTemplatesOutput).
-    pub fn build(self) -> crate::operation::list_assessment_templates::ListAssessmentTemplatesOutput {
-        crate::operation::list_assessment_templates::ListAssessmentTemplatesOutput {
-            assessment_template_arns: self.assessment_template_arns,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`assessment_template_arns`](crate::operation::list_assessment_templates::builders::ListAssessmentTemplatesOutputBuilder::assessment_template_arns)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_assessment_templates::ListAssessmentTemplatesOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_assessment_templates::ListAssessmentTemplatesOutput {
+            assessment_template_arns: self.assessment_template_arns.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "assessment_template_arns",
+                    "assessment_template_arns was not specified but it is required when building ListAssessmentTemplatesOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

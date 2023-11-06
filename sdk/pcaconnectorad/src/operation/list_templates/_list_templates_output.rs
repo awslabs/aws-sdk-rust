@@ -11,8 +11,10 @@ pub struct ListTemplatesOutput {
 }
 impl ListTemplatesOutput {
     /// <p>Custom configuration templates used when issuing a certificate. </p>
-    pub fn templates(&self) -> ::std::option::Option<&[crate::types::TemplateSummary]> {
-        self.templates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.templates.is_none()`.
+    pub fn templates(&self) -> &[crate::types::TemplateSummary] {
+        self.templates.as_deref().unwrap_or_default()
     }
     /// <p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

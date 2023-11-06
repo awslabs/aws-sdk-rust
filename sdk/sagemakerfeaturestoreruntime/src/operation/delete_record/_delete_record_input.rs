@@ -28,8 +28,10 @@ impl DeleteRecordInput {
         self.event_time.as_deref()
     }
     /// <p>A list of stores from which you're deleting the record. By default, Feature Store deletes the record from all of the stores that you're using for the <code>FeatureGroup</code>.</p>
-    pub fn target_stores(&self) -> ::std::option::Option<&[crate::types::TargetStore]> {
-        self.target_stores.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_stores.is_none()`.
+    pub fn target_stores(&self) -> &[crate::types::TargetStore] {
+        self.target_stores.as_deref().unwrap_or_default()
     }
     /// <p>The name of the deletion mode for deleting the record. By default, the deletion mode is set to <code>SoftDelete</code>.</p>
     pub fn deletion_mode(&self) -> ::std::option::Option<&crate::types::DeletionMode> {
@@ -55,6 +57,7 @@ pub struct DeleteRecordInputBuilder {
 }
 impl DeleteRecordInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the feature group to delete the record from. </p>
+    /// This field is required.
     pub fn feature_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_group_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +72,7 @@ impl DeleteRecordInputBuilder {
         &self.feature_group_name
     }
     /// <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in string format. </p>
+    /// This field is required.
     pub fn record_identifier_value_as_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.record_identifier_value_as_string = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +87,7 @@ impl DeleteRecordInputBuilder {
         &self.record_identifier_value_as_string
     }
     /// <p>Timestamp indicating when the deletion event occurred. <code>EventTime</code> can be used to query data at a certain point in time.</p>
+    /// This field is required.
     pub fn event_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_time = ::std::option::Option::Some(input.into());
         self
@@ -131,7 +136,9 @@ impl DeleteRecordInputBuilder {
         &self.deletion_mode
     }
     /// Consumes the builder and constructs a [`DeleteRecordInput`](crate::operation::delete_record::DeleteRecordInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_record::DeleteRecordInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_record::DeleteRecordInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_record::DeleteRecordInput {
             feature_group_name: self.feature_group_name,
             record_identifier_value_as_string: self.record_identifier_value_as_string,

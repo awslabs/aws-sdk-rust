@@ -17,8 +17,10 @@ impl Configurations {
         self.current.as_ref()
     }
     /// <p>The history of configurations applied to the broker.</p>
-    pub fn history(&self) -> ::std::option::Option<&[crate::types::ConfigurationId]> {
-        self.history.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.history.is_none()`.
+    pub fn history(&self) -> &[crate::types::ConfigurationId] {
+        self.history.as_deref().unwrap_or_default()
     }
     /// <p>The broker's pending configuration.</p>
     pub fn pending(&self) -> ::std::option::Option<&crate::types::ConfigurationId> {

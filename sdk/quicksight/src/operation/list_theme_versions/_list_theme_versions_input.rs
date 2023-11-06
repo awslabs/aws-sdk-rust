@@ -48,6 +48,7 @@ pub struct ListThemeVersionsInputBuilder {
 }
 impl ListThemeVersionsInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the themes that you're listing.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl ListThemeVersionsInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID for the theme.</p>
+    /// This field is required.
     pub fn theme_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.theme_id = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +108,7 @@ impl ListThemeVersionsInputBuilder {
     /// Consumes the builder and constructs a [`ListThemeVersionsInput`](crate::operation::list_theme_versions::ListThemeVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_theme_versions::ListThemeVersionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_theme_versions::ListThemeVersionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_theme_versions::ListThemeVersionsInput {
             aws_account_id: self.aws_account_id,
             theme_id: self.theme_id,

@@ -34,6 +34,7 @@ pub struct DeleteSecurityConfigInputBuilder {
 }
 impl DeleteSecurityConfigInputBuilder {
     /// <p>The security configuration identifier. For SAML the ID will be <code>saml/&lt;accountId&gt;/&lt;idpProviderName&gt;</code>. For example, <code>saml/123456789123/OKTADev</code>.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl DeleteSecurityConfigInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSecurityConfigInput`](crate::operation::delete_security_config::DeleteSecurityConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_security_config::DeleteSecurityConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_security_config::DeleteSecurityConfigInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_security_config::DeleteSecurityConfigInput {
             id: self.id,

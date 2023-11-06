@@ -14,8 +14,10 @@ impl UntagQueueInput {
         self.queue_url.as_deref()
     }
     /// <p>The list of tags to be removed from the specified queue.</p>
-    pub fn tag_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tag_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_keys.is_none()`.
+    pub fn tag_keys(&self) -> &[::std::string::String] {
+        self.tag_keys.as_deref().unwrap_or_default()
     }
 }
 impl UntagQueueInput {
@@ -34,6 +36,7 @@ pub struct UntagQueueInputBuilder {
 }
 impl UntagQueueInputBuilder {
     /// <p>The URL of the queue.</p>
+    /// This field is required.
     pub fn queue_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_url = ::std::option::Option::Some(input.into());
         self
@@ -68,7 +71,7 @@ impl UntagQueueInputBuilder {
         &self.tag_keys
     }
     /// Consumes the builder and constructs a [`UntagQueueInput`](crate::operation::untag_queue::UntagQueueInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::untag_queue::UntagQueueInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::untag_queue::UntagQueueInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::untag_queue::UntagQueueInput {
             queue_url: self.queue_url,
             tag_keys: self.tag_keys,

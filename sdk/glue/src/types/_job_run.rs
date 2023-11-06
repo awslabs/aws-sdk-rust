@@ -132,8 +132,10 @@ impl JobRun {
         self.error_message.as_deref()
     }
     /// <p>A list of predecessors to this job run.</p>
-    pub fn predecessor_runs(&self) -> ::std::option::Option<&[crate::types::Predecessor]> {
-        self.predecessor_runs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.predecessor_runs.is_none()`.
+    pub fn predecessor_runs(&self) -> &[crate::types::Predecessor] {
+        self.predecessor_runs.as_deref().unwrap_or_default()
     }
     /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
     /// <p>The number of Glue data processing units (DPUs) allocated to this JobRun. From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>

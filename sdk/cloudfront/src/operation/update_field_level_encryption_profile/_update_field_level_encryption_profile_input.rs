@@ -41,6 +41,7 @@ pub struct UpdateFieldLevelEncryptionProfileInputBuilder {
 }
 impl UpdateFieldLevelEncryptionProfileInputBuilder {
     /// <p>Request to update a field-level encryption profile.</p>
+    /// This field is required.
     pub fn field_level_encryption_profile_config(mut self, input: crate::types::FieldLevelEncryptionProfileConfig) -> Self {
         self.field_level_encryption_profile_config = ::std::option::Option::Some(input);
         self
@@ -58,6 +59,7 @@ impl UpdateFieldLevelEncryptionProfileInputBuilder {
         &self.field_level_encryption_profile_config
     }
     /// <p>The ID of the field-level encryption profile request.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -90,7 +92,7 @@ impl UpdateFieldLevelEncryptionProfileInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_field_level_encryption_profile::UpdateFieldLevelEncryptionProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_field_level_encryption_profile::UpdateFieldLevelEncryptionProfileInput {

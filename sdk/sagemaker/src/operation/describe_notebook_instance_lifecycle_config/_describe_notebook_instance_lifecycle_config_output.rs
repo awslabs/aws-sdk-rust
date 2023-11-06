@@ -27,12 +27,16 @@ impl DescribeNotebookInstanceLifecycleConfigOutput {
         self.notebook_instance_lifecycle_config_name.as_deref()
     }
     /// <p>The shell script that runs only once, when you create a notebook instance.</p>
-    pub fn on_create(&self) -> ::std::option::Option<&[crate::types::NotebookInstanceLifecycleHook]> {
-        self.on_create.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.on_create.is_none()`.
+    pub fn on_create(&self) -> &[crate::types::NotebookInstanceLifecycleHook] {
+        self.on_create.as_deref().unwrap_or_default()
     }
     /// <p>The shell script that runs every time you start a notebook instance, including when you create the notebook instance.</p>
-    pub fn on_start(&self) -> ::std::option::Option<&[crate::types::NotebookInstanceLifecycleHook]> {
-        self.on_start.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.on_start.is_none()`.
+    pub fn on_start(&self) -> &[crate::types::NotebookInstanceLifecycleHook] {
+        self.on_start.as_deref().unwrap_or_default()
     }
     /// <p>A timestamp that tells when the lifecycle configuration was last modified.</p>
     pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

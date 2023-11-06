@@ -80,6 +80,7 @@ impl GetFolderPathInputBuilder {
         &self.authentication_token
     }
     /// <p>The ID of the folder.</p>
+    /// This field is required.
     pub fn folder_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.folder_id = ::std::option::Option::Some(input.into());
         self
@@ -138,7 +139,7 @@ impl GetFolderPathInputBuilder {
     /// Consumes the builder and constructs a [`GetFolderPathInput`](crate::operation::get_folder_path::GetFolderPathInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_folder_path::GetFolderPathInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_folder_path::GetFolderPathInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_folder_path::GetFolderPathInput {
             authentication_token: self.authentication_token,
             folder_id: self.folder_id,

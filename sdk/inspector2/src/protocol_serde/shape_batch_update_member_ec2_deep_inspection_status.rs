@@ -35,11 +35,10 @@ pub fn de_batch_update_member_ec2_deep_inspection_status_http_error(
                         crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusError::unhandled,
                     )?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::access_denied_exception_correct_errors(output).build().map_err(
+                        crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusError::unhandled,
+                    )?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -56,11 +55,8 @@ pub fn de_batch_update_member_ec2_deep_inspection_status_http_error(
                                                 .map_err(|_|crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                         let output = output.meta(generic);
-                        output.build()
+                        crate::serde_util::internal_server_exception_correct_errors(output).build().map_err(crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusError::unhandled)?
                     };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
                     tmp
                 },
             )
@@ -79,11 +75,10 @@ pub fn de_batch_update_member_ec2_deep_inspection_status_http_error(
                                                 .map_err(|_|crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::throttling_exception_correct_errors(output).build().map_err(
+                        crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusError::unhandled,
+                    )?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -97,11 +92,10 @@ pub fn de_batch_update_member_ec2_deep_inspection_status_http_error(
                         crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusError::unhandled,
                     )?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::validation_exception_correct_errors(output).build().map_err(
+                        crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusError::unhandled,
+                    )?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -133,7 +127,7 @@ pub fn de_batch_update_member_ec2_deep_inspection_status_http_response(
 
 pub fn ser_batch_update_member_ec2_deep_inspection_status_input(
     input: &crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_batch_update_member_ec2_deep_inspection_status_input::ser_batch_update_member_ec2_deep_inspection_status_input(
@@ -141,7 +135,7 @@ pub fn ser_batch_update_member_ec2_deep_inspection_status_input(
         input,
     )?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_batch_update_member_ec2_deep_inspection_status(

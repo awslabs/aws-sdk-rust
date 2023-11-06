@@ -48,6 +48,7 @@ pub struct DescribeWorkloadInputBuilder {
 }
 impl DescribeWorkloadInputBuilder {
     /// <p>The name of the resource group.</p>
+    /// This field is required.
     pub fn resource_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_group_name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl DescribeWorkloadInputBuilder {
         &self.resource_group_name
     }
     /// <p>The name of the component.</p>
+    /// This field is required.
     pub fn component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl DescribeWorkloadInputBuilder {
         &self.component_name
     }
     /// <p>The ID of the workload.</p>
+    /// This field is required.
     pub fn workload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workload_id = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +109,7 @@ impl DescribeWorkloadInputBuilder {
     /// Consumes the builder and constructs a [`DescribeWorkloadInput`](crate::operation::describe_workload::DescribeWorkloadInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_workload::DescribeWorkloadInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_workload::DescribeWorkloadInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_workload::DescribeWorkloadInput {
             resource_group_name: self.resource_group_name,
             component_name: self.component_name,

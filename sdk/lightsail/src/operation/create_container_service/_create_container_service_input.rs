@@ -83,8 +83,10 @@ impl CreateContainerServiceInput {
     /// <p>The tag keys and optional values to add to the container service during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
     /// <p>For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The public domain names to use with the container service, such as <code>example.com</code> and <code>www.example.com</code>.</p>
     /// <p>You can specify up to four public domain names for a container service. The domain names that you specify are used when you create a deployment with a container configured as the public endpoint of your container service.</p>
@@ -146,6 +148,7 @@ impl CreateContainerServiceInputBuilder {
     /// <li> <p>Must contain only alphanumeric characters and hyphens.</p> </li>
     /// <li> <p>A hyphen (-) can separate words but cannot be at the start or end of the name.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
         self
@@ -196,6 +199,7 @@ impl CreateContainerServiceInputBuilder {
     /// <p>The power specification for the container service.</p>
     /// <p>The power specifies the amount of memory, vCPUs, and base monthly cost of each node of the container service. The <code>power</code> and <code>scale</code> of a container service makes up its configured capacity. To determine the monthly price of your container service, multiply the base price of the <code>power</code> with the <code>scale</code> (the number of nodes) of the service.</p>
     /// <p>Use the <code>GetContainerServicePowers</code> action to get a list of power options that you can specify using this parameter, and their base monthly cost.</p>
+    /// This field is required.
     pub fn power(mut self, input: crate::types::ContainerServicePowerName) -> Self {
         self.power = ::std::option::Option::Some(input);
         self
@@ -215,6 +219,7 @@ impl CreateContainerServiceInputBuilder {
     }
     /// <p>The scale specification for the container service.</p>
     /// <p>The scale specifies the allocated compute nodes of the container service. The <code>power</code> and <code>scale</code> of a container service makes up its configured capacity. To determine the monthly price of your container service, multiply the base price of the <code>power</code> with the <code>scale</code> (the number of nodes) of the service.</p>
+    /// This field is required.
     pub fn scale(mut self, input: i32) -> Self {
         self.scale = ::std::option::Option::Some(input);
         self
@@ -333,8 +338,10 @@ impl CreateContainerServiceInputBuilder {
     /// Consumes the builder and constructs a [`CreateContainerServiceInput`](crate::operation::create_container_service::CreateContainerServiceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_container_service::CreateContainerServiceInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_container_service::CreateContainerServiceInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_container_service::CreateContainerServiceInput {
             service_name: self.service_name,
             power: self.power,

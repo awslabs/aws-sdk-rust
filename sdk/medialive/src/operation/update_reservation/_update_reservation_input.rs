@@ -70,6 +70,7 @@ impl UpdateReservationInputBuilder {
         &self.renewal_settings
     }
     /// Unique reservation ID, e.g. '1234567'
+    /// This field is required.
     pub fn reservation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reservation_id = ::std::option::Option::Some(input.into());
         self
@@ -86,7 +87,7 @@ impl UpdateReservationInputBuilder {
     /// Consumes the builder and constructs a [`UpdateReservationInput`](crate::operation::update_reservation::UpdateReservationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_reservation::UpdateReservationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_reservation::UpdateReservationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_reservation::UpdateReservationInput {
             name: self.name,
             renewal_settings: self.renewal_settings,

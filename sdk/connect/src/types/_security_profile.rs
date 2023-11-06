@@ -51,8 +51,10 @@ impl SecurityProfile {
         self.allowed_access_control_tags.as_ref()
     }
     /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect.</p>
-    pub fn tag_restricted_resources(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tag_restricted_resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_restricted_resources.is_none()`.
+    pub fn tag_restricted_resources(&self) -> &[::std::string::String] {
+        self.tag_restricted_resources.as_deref().unwrap_or_default()
     }
 }
 impl SecurityProfile {

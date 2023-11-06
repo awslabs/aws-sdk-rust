@@ -34,6 +34,7 @@ pub struct StopEngagementInputBuilder {
 }
 impl StopEngagementInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
+    /// This field is required.
     pub fn engagement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engagement_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl StopEngagementInputBuilder {
     /// Consumes the builder and constructs a [`StopEngagementInput`](crate::operation::stop_engagement::StopEngagementInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_engagement::StopEngagementInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_engagement::StopEngagementInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_engagement::StopEngagementInput {
             engagement_id: self.engagement_id,
             reason: self.reason,

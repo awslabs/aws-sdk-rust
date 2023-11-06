@@ -44,6 +44,7 @@ pub struct GitConfigBuilder {
 }
 impl GitConfigBuilder {
     /// <p>The URL where the Git repository is located.</p>
+    /// This field is required.
     pub fn repository_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_url = ::std::option::Option::Some(input.into());
         self

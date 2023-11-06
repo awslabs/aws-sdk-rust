@@ -23,8 +23,10 @@ impl S3Target {
         self.path.as_deref()
     }
     /// <p>A list of glob patterns used to exclude from the crawl. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.</p>
-    pub fn exclusions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.exclusions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclusions.is_none()`.
+    pub fn exclusions(&self) -> &[::std::string::String] {
+        self.exclusions.as_deref().unwrap_or_default()
     }
     /// <p>The name of a connection which allows a job or crawler to access data in Amazon S3 within an Amazon Virtual Private Cloud environment (Amazon VPC).</p>
     pub fn connection_name(&self) -> ::std::option::Option<&str> {

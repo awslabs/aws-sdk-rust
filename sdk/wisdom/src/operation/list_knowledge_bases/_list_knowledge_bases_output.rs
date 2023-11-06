@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListKnowledgeBasesOutput {
     /// <p>Information about the knowledge bases.</p>
-    pub knowledge_base_summaries: ::std::option::Option<::std::vec::Vec<crate::types::KnowledgeBaseSummary>>,
+    pub knowledge_base_summaries: ::std::vec::Vec<crate::types::KnowledgeBaseSummary>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListKnowledgeBasesOutput {
     /// <p>Information about the knowledge bases.</p>
-    pub fn knowledge_base_summaries(&self) -> ::std::option::Option<&[crate::types::KnowledgeBaseSummary]> {
-        self.knowledge_base_summaries.as_deref()
+    pub fn knowledge_base_summaries(&self) -> &[crate::types::KnowledgeBaseSummary] {
+        use std::ops::Deref;
+        self.knowledge_base_summaries.deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,21 @@ impl ListKnowledgeBasesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListKnowledgeBasesOutput`](crate::operation::list_knowledge_bases::ListKnowledgeBasesOutput).
-    pub fn build(self) -> crate::operation::list_knowledge_bases::ListKnowledgeBasesOutput {
-        crate::operation::list_knowledge_bases::ListKnowledgeBasesOutput {
-            knowledge_base_summaries: self.knowledge_base_summaries,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`knowledge_base_summaries`](crate::operation::list_knowledge_bases::builders::ListKnowledgeBasesOutputBuilder::knowledge_base_summaries)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_knowledge_bases::ListKnowledgeBasesOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_knowledge_bases::ListKnowledgeBasesOutput {
+            knowledge_base_summaries: self.knowledge_base_summaries.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "knowledge_base_summaries",
+                    "knowledge_base_summaries was not specified but it is required when building ListKnowledgeBasesOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

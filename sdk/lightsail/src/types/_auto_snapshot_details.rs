@@ -27,8 +27,10 @@ impl AutoSnapshotDetails {
         self.status.as_ref()
     }
     /// <p>An array of objects that describe the block storage disks attached to the instance when the automatic snapshot was created.</p>
-    pub fn from_attached_disks(&self) -> ::std::option::Option<&[crate::types::AttachedDisk]> {
-        self.from_attached_disks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.from_attached_disks.is_none()`.
+    pub fn from_attached_disks(&self) -> &[crate::types::AttachedDisk] {
+        self.from_attached_disks.as_deref().unwrap_or_default()
     }
 }
 impl AutoSnapshotDetails {

@@ -5,20 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PackageVersionOutputConfig {
     /// <p>The output's package name.</p>
-    pub package_name: ::std::option::Option<::std::string::String>,
+    pub package_name: ::std::string::String,
     /// <p>The output's package version.</p>
-    pub package_version: ::std::option::Option<::std::string::String>,
+    pub package_version: ::std::string::String,
     /// <p>Indicates that the version is recommended for all users.</p>
     pub mark_latest: bool,
 }
 impl PackageVersionOutputConfig {
     /// <p>The output's package name.</p>
-    pub fn package_name(&self) -> ::std::option::Option<&str> {
-        self.package_name.as_deref()
+    pub fn package_name(&self) -> &str {
+        use std::ops::Deref;
+        self.package_name.deref()
     }
     /// <p>The output's package version.</p>
-    pub fn package_version(&self) -> ::std::option::Option<&str> {
-        self.package_version.as_deref()
+    pub fn package_version(&self) -> &str {
+        use std::ops::Deref;
+        self.package_version.deref()
     }
     /// <p>Indicates that the version is recommended for all users.</p>
     pub fn mark_latest(&self) -> bool {
@@ -42,6 +44,7 @@ pub struct PackageVersionOutputConfigBuilder {
 }
 impl PackageVersionOutputConfigBuilder {
     /// <p>The output's package name.</p>
+    /// This field is required.
     pub fn package_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl PackageVersionOutputConfigBuilder {
         &self.package_name
     }
     /// <p>The output's package version.</p>
+    /// This field is required.
     pub fn package_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_version = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +88,24 @@ impl PackageVersionOutputConfigBuilder {
         &self.mark_latest
     }
     /// Consumes the builder and constructs a [`PackageVersionOutputConfig`](crate::types::PackageVersionOutputConfig).
-    pub fn build(self) -> crate::types::PackageVersionOutputConfig {
-        crate::types::PackageVersionOutputConfig {
-            package_name: self.package_name,
-            package_version: self.package_version,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`package_name`](crate::types::builders::PackageVersionOutputConfigBuilder::package_name)
+    /// - [`package_version`](crate::types::builders::PackageVersionOutputConfigBuilder::package_version)
+    pub fn build(self) -> ::std::result::Result<crate::types::PackageVersionOutputConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PackageVersionOutputConfig {
+            package_name: self.package_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "package_name",
+                    "package_name was not specified but it is required when building PackageVersionOutputConfig",
+                )
+            })?,
+            package_version: self.package_version.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "package_version",
+                    "package_version was not specified but it is required when building PackageVersionOutputConfig",
+                )
+            })?,
             mark_latest: self.mark_latest.unwrap_or_default(),
-        }
+        })
     }
 }

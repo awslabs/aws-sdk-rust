@@ -3,17 +3,17 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetReadSetImportJob`](crate::operation::get_read_set_import_job::builders::GetReadSetImportJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_read_set_import_job::builders::GetReadSetImportJobFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_read_set_import_job::builders::GetReadSetImportJobFluentBuilder::set_id): <p>The job's ID.</p>
-    ///   - [`sequence_store_id(impl Into<String>)`](crate::operation::get_read_set_import_job::builders::GetReadSetImportJobFluentBuilder::sequence_store_id) / [`set_sequence_store_id(Option<String>)`](crate::operation::get_read_set_import_job::builders::GetReadSetImportJobFluentBuilder::set_sequence_store_id): <p>The job's sequence store ID.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_read_set_import_job::builders::GetReadSetImportJobFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_read_set_import_job::builders::GetReadSetImportJobFluentBuilder::set_id):<br>required: **true**<br><p>The job's ID.</p><br>
+    ///   - [`sequence_store_id(impl Into<String>)`](crate::operation::get_read_set_import_job::builders::GetReadSetImportJobFluentBuilder::sequence_store_id) / [`set_sequence_store_id(Option<String>)`](crate::operation::get_read_set_import_job::builders::GetReadSetImportJobFluentBuilder::set_sequence_store_id):<br>required: **true**<br><p>The job's sequence store ID.</p><br>
     /// - On success, responds with [`GetReadSetImportJobOutput`](crate::operation::get_read_set_import_job::GetReadSetImportJobOutput) with field(s):
-    ///   - [`id(Option<String>)`](crate::operation::get_read_set_import_job::GetReadSetImportJobOutput::id): <p>The job's ID.</p>
-    ///   - [`sequence_store_id(Option<String>)`](crate::operation::get_read_set_import_job::GetReadSetImportJobOutput::sequence_store_id): <p>The job's sequence store ID.</p>
-    ///   - [`role_arn(Option<String>)`](crate::operation::get_read_set_import_job::GetReadSetImportJobOutput::role_arn): <p>The job's service role ARN.</p>
-    ///   - [`status(Option<ReadSetImportJobStatus>)`](crate::operation::get_read_set_import_job::GetReadSetImportJobOutput::status): <p>The job's status.</p>
+    ///   - [`id(String)`](crate::operation::get_read_set_import_job::GetReadSetImportJobOutput::id): <p>The job's ID.</p>
+    ///   - [`sequence_store_id(String)`](crate::operation::get_read_set_import_job::GetReadSetImportJobOutput::sequence_store_id): <p>The job's sequence store ID.</p>
+    ///   - [`role_arn(String)`](crate::operation::get_read_set_import_job::GetReadSetImportJobOutput::role_arn): <p>The job's service role ARN.</p>
+    ///   - [`status(ReadSetImportJobStatus)`](crate::operation::get_read_set_import_job::GetReadSetImportJobOutput::status): <p>The job's status.</p>
     ///   - [`status_message(Option<String>)`](crate::operation::get_read_set_import_job::GetReadSetImportJobOutput::status_message): <p>The job's status message.</p>
-    ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_read_set_import_job::GetReadSetImportJobOutput::creation_time): <p>When the job was created.</p>
+    ///   - [`creation_time(DateTime)`](crate::operation::get_read_set_import_job::GetReadSetImportJobOutput::creation_time): <p>When the job was created.</p>
     ///   - [`completion_time(Option<DateTime>)`](crate::operation::get_read_set_import_job::GetReadSetImportJobOutput::completion_time): <p>When the job completed.</p>
-    ///   - [`sources(Option<Vec<ImportReadSetSourceItem>>)`](crate::operation::get_read_set_import_job::GetReadSetImportJobOutput::sources): <p>The job's source files.</p>
+    ///   - [`sources(Vec::<ImportReadSetSourceItem>)`](crate::operation::get_read_set_import_job::GetReadSetImportJobOutput::sources): <p>The job's source files.</p>
     /// - On failure, responds with [`SdkError<GetReadSetImportJobError>`](crate::operation::get_read_set_import_job::GetReadSetImportJobError)
     pub fn get_read_set_import_job(&self) -> crate::operation::get_read_set_import_job::builders::GetReadSetImportJobFluentBuilder {
         crate::operation::get_read_set_import_job::builders::GetReadSetImportJobFluentBuilder::new(self.handle.clone())

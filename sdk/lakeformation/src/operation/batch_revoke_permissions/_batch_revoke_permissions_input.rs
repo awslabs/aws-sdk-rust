@@ -14,8 +14,10 @@ impl BatchRevokePermissionsInput {
         self.catalog_id.as_deref()
     }
     /// <p>A list of up to 20 entries for resource permissions to be revoked by batch operation to the principal.</p>
-    pub fn entries(&self) -> ::std::option::Option<&[crate::types::BatchPermissionsRequestEntry]> {
-        self.entries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entries.is_none()`.
+    pub fn entries(&self) -> &[crate::types::BatchPermissionsRequestEntry] {
+        self.entries.as_deref().unwrap_or_default()
     }
 }
 impl BatchRevokePermissionsInput {
@@ -70,8 +72,10 @@ impl BatchRevokePermissionsInputBuilder {
     /// Consumes the builder and constructs a [`BatchRevokePermissionsInput`](crate::operation::batch_revoke_permissions::BatchRevokePermissionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_revoke_permissions::BatchRevokePermissionsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::batch_revoke_permissions::BatchRevokePermissionsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::batch_revoke_permissions::BatchRevokePermissionsInput {
             catalog_id: self.catalog_id,
             entries: self.entries,

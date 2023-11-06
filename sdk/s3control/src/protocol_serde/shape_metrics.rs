@@ -2,28 +2,29 @@
 pub fn ser_metrics(
     input: &crate::types::Metrics,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.status {
+    {
         let mut inner_writer = scope.start_el("Status").finish();
-        inner_writer.data(var_1.as_str());
+        inner_writer.data(input.status.as_str());
     }
-    if let Some(var_2) = &input.event_threshold {
+    if let Some(var_1) = &input.event_threshold {
         let inner_writer = scope.start_el("EventThreshold");
-        crate::protocol_serde::shape_replication_time_value::ser_replication_time_value(var_2, inner_writer)?
+        crate::protocol_serde::shape_replication_time_value::ser_replication_time_value(var_1, inner_writer)?
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_metrics(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result<crate::types::Metrics, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::Metrics::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Status") /* Status com.amazonaws.s3control#Metrics$Status */ =>  {
-                let var_3 =
+                let var_2 =
                     Some(
                         Result::<crate::types::MetricsStatus, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::MetricsStatus::from(
@@ -33,21 +34,23 @@ pub fn de_metrics(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Resu
                         ?
                     )
                 ;
-                builder = builder.set_status(var_3);
+                builder = builder.set_status(var_2);
             }
             ,
             s if s.matches("EventThreshold") /* EventThreshold com.amazonaws.s3control#Metrics$EventThreshold */ =>  {
-                let var_4 =
+                let var_3 =
                     Some(
                         crate::protocol_serde::shape_replication_time_value::de_replication_time_value(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_event_threshold(var_4);
+                builder = builder.set_event_threshold(var_3);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::metrics_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

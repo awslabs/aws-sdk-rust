@@ -28,6 +28,7 @@ pub struct GetCognitoEventsInputBuilder {
 }
 impl GetCognitoEventsInputBuilder {
     /// <p>The Cognito Identity Pool ID for the request</p>
+    /// This field is required.
     pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl GetCognitoEventsInputBuilder {
     /// Consumes the builder and constructs a [`GetCognitoEventsInput`](crate::operation::get_cognito_events::GetCognitoEventsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_cognito_events::GetCognitoEventsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_cognito_events::GetCognitoEventsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_cognito_events::GetCognitoEventsInput {
             identity_pool_id: self.identity_pool_id,
         })

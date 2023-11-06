@@ -34,6 +34,7 @@ pub struct SignOutUserInputBuilder {
 }
 impl SignOutUserInputBuilder {
     /// <p>The ARN of the fleet.</p>
+    /// This field is required.
     pub fn fleet_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl SignOutUserInputBuilder {
         &self.fleet_arn
     }
     /// <p>The name of the user.</p>
+    /// This field is required.
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,7 @@ impl SignOutUserInputBuilder {
         &self.username
     }
     /// Consumes the builder and constructs a [`SignOutUserInput`](crate::operation::sign_out_user::SignOutUserInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::sign_out_user::SignOutUserInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::sign_out_user::SignOutUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::sign_out_user::SignOutUserInput {
             fleet_arn: self.fleet_arn,
             username: self.username,

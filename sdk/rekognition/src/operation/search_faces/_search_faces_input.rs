@@ -48,6 +48,7 @@ pub struct SearchFacesInputBuilder {
 }
 impl SearchFacesInputBuilder {
     /// <p>ID of the collection the face belongs to.</p>
+    /// This field is required.
     pub fn collection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl SearchFacesInputBuilder {
         &self.collection_id
     }
     /// <p>ID of a face to find matches for in the collection.</p>
+    /// This field is required.
     pub fn face_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.face_id = ::std::option::Option::Some(input.into());
         self
@@ -104,7 +106,7 @@ impl SearchFacesInputBuilder {
         &self.face_match_threshold
     }
     /// Consumes the builder and constructs a [`SearchFacesInput`](crate::operation::search_faces::SearchFacesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::search_faces::SearchFacesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::search_faces::SearchFacesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_faces::SearchFacesInput {
             collection_id: self.collection_id,
             face_id: self.face_id,

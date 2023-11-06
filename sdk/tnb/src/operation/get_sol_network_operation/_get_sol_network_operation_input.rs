@@ -27,6 +27,7 @@ pub struct GetSolNetworkOperationInputBuilder {
 }
 impl GetSolNetworkOperationInputBuilder {
     /// <p>The identifier of the network operation.</p>
+    /// This field is required.
     pub fn ns_lcm_op_occ_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ns_lcm_op_occ_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetSolNetworkOperationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_sol_network_operation::GetSolNetworkOperationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_sol_network_operation::GetSolNetworkOperationInput {
             ns_lcm_op_occ_id: self.ns_lcm_op_occ_id,

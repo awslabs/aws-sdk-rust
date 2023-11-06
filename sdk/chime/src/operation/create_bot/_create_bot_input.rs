@@ -50,6 +50,7 @@ pub struct CreateBotInputBuilder {
 }
 impl CreateBotInputBuilder {
     /// <p>The Amazon Chime account ID.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -64,6 +65,7 @@ impl CreateBotInputBuilder {
         &self.account_id
     }
     /// <p>The bot display name.</p>
+    /// This field is required.
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
         self
@@ -92,7 +94,7 @@ impl CreateBotInputBuilder {
         &self.domain
     }
     /// Consumes the builder and constructs a [`CreateBotInput`](crate::operation::create_bot::CreateBotInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_bot::CreateBotInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_bot::CreateBotInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_bot::CreateBotInput {
             account_id: self.account_id,
             display_name: self.display_name,

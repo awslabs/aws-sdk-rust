@@ -5,20 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OAuth2Properties {
     /// <p>The token URL required for OAuth 2.0 authentication.</p>
-    pub token_url: ::std::option::Option<::std::string::String>,
+    pub token_url: ::std::string::String,
     /// <p>The OAuth 2.0 grant type used by connector for OAuth 2.0 authentication.</p>
-    pub o_auth2_grant_type: ::std::option::Option<crate::types::OAuth2GrantType>,
+    pub o_auth2_grant_type: crate::types::OAuth2GrantType,
     /// <p>Associates your token URL with a map of properties that you define. Use this parameter to provide any additional details that the connector requires to authenticate your request.</p>
     pub token_url_custom_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl OAuth2Properties {
     /// <p>The token URL required for OAuth 2.0 authentication.</p>
-    pub fn token_url(&self) -> ::std::option::Option<&str> {
-        self.token_url.as_deref()
+    pub fn token_url(&self) -> &str {
+        use std::ops::Deref;
+        self.token_url.deref()
     }
     /// <p>The OAuth 2.0 grant type used by connector for OAuth 2.0 authentication.</p>
-    pub fn o_auth2_grant_type(&self) -> ::std::option::Option<&crate::types::OAuth2GrantType> {
-        self.o_auth2_grant_type.as_ref()
+    pub fn o_auth2_grant_type(&self) -> &crate::types::OAuth2GrantType {
+        &self.o_auth2_grant_type
     }
     /// <p>Associates your token URL with a map of properties that you define. Use this parameter to provide any additional details that the connector requires to authenticate your request.</p>
     pub fn token_url_custom_properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -42,6 +43,7 @@ pub struct OAuth2PropertiesBuilder {
 }
 impl OAuth2PropertiesBuilder {
     /// <p>The token URL required for OAuth 2.0 authentication.</p>
+    /// This field is required.
     pub fn token_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.token_url = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +58,7 @@ impl OAuth2PropertiesBuilder {
         &self.token_url
     }
     /// <p>The OAuth 2.0 grant type used by connector for OAuth 2.0 authentication.</p>
+    /// This field is required.
     pub fn o_auth2_grant_type(mut self, input: crate::types::OAuth2GrantType) -> Self {
         self.o_auth2_grant_type = ::std::option::Option::Some(input);
         self
@@ -99,11 +102,24 @@ impl OAuth2PropertiesBuilder {
         &self.token_url_custom_properties
     }
     /// Consumes the builder and constructs a [`OAuth2Properties`](crate::types::OAuth2Properties).
-    pub fn build(self) -> crate::types::OAuth2Properties {
-        crate::types::OAuth2Properties {
-            token_url: self.token_url,
-            o_auth2_grant_type: self.o_auth2_grant_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`token_url`](crate::types::builders::OAuth2PropertiesBuilder::token_url)
+    /// - [`o_auth2_grant_type`](crate::types::builders::OAuth2PropertiesBuilder::o_auth2_grant_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::OAuth2Properties, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::OAuth2Properties {
+            token_url: self.token_url.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "token_url",
+                    "token_url was not specified but it is required when building OAuth2Properties",
+                )
+            })?,
+            o_auth2_grant_type: self.o_auth2_grant_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "o_auth2_grant_type",
+                    "o_auth2_grant_type was not specified but it is required when building OAuth2Properties",
+                )
+            })?,
             token_url_custom_properties: self.token_url_custom_properties,
-        }
+        })
     }
 }

@@ -36,8 +36,10 @@ impl CreateAcceleratorInput {
     /// <p>You can specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
     /// <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new accelerator with the new addresses.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer Guide</i>.</p>
-    pub fn ip_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ip_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ip_addresses.is_none()`.
+    pub fn ip_addresses(&self) -> &[::std::string::String] {
+        self.ip_addresses.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>
     /// <p>If the value is set to true, an accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
@@ -50,8 +52,10 @@ impl CreateAcceleratorInput {
     }
     /// <p>Create tags for an accelerator.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateAcceleratorInput {
@@ -74,6 +78,7 @@ pub struct CreateAcceleratorInputBuilder {
 }
 impl CreateAcceleratorInputBuilder {
     /// <p>The name of the accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric characters, periods (.), or hyphens (-), and must not begin or end with a hyphen or period.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -151,6 +156,7 @@ impl CreateAcceleratorInputBuilder {
         &self.enabled
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of an accelerator.</p>
+    /// This field is required.
     pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.idempotency_token = ::std::option::Option::Some(input.into());
         self
@@ -190,7 +196,7 @@ impl CreateAcceleratorInputBuilder {
     /// Consumes the builder and constructs a [`CreateAcceleratorInput`](crate::operation::create_accelerator::CreateAcceleratorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_accelerator::CreateAcceleratorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_accelerator::CreateAcceleratorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_accelerator::CreateAcceleratorInput {
             name: self.name,
             ip_address_type: self.ip_address_type,

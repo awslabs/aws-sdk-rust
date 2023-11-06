@@ -11,8 +11,10 @@ pub struct ListServicePrincipalNamesOutput {
 }
 impl ListServicePrincipalNamesOutput {
     /// <p>The service principal name, if any, that the connector uses to authenticate with Active Directory.</p>
-    pub fn service_principal_names(&self) -> ::std::option::Option<&[crate::types::ServicePrincipalNameSummary]> {
-        self.service_principal_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_principal_names.is_none()`.
+    pub fn service_principal_names(&self) -> &[crate::types::ServicePrincipalNameSummary] {
+        self.service_principal_names.as_deref().unwrap_or_default()
     }
     /// <p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

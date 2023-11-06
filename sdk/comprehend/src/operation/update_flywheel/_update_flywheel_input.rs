@@ -48,6 +48,7 @@ pub struct UpdateFlywheelInputBuilder {
 }
 impl UpdateFlywheelInputBuilder {
     /// <p>The Amazon Resource Number (ARN) of the flywheel to update.</p>
+    /// This field is required.
     pub fn flywheel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flywheel_arn = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,7 @@ impl UpdateFlywheelInputBuilder {
     /// Consumes the builder and constructs a [`UpdateFlywheelInput`](crate::operation::update_flywheel::UpdateFlywheelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_flywheel::UpdateFlywheelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_flywheel::UpdateFlywheelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_flywheel::UpdateFlywheelInput {
             flywheel_arn: self.flywheel_arn,
             active_model_arn: self.active_model_arn,

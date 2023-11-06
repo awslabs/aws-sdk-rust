@@ -12,8 +12,10 @@ pub struct DescribeImageBuildersInput {
 }
 impl DescribeImageBuildersInput {
     /// <p>The names of the image builders to describe.</p>
-    pub fn names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.names.is_none()`.
+    pub fn names(&self) -> &[::std::string::String] {
+        self.names.as_deref().unwrap_or_default()
     }
     /// <p>The maximum size of each page of results.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -91,7 +93,7 @@ impl DescribeImageBuildersInputBuilder {
     /// Consumes the builder and constructs a [`DescribeImageBuildersInput`](crate::operation::describe_image_builders::DescribeImageBuildersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_image_builders::DescribeImageBuildersInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_image_builders::DescribeImageBuildersInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_image_builders::DescribeImageBuildersInput {
             names: self.names,

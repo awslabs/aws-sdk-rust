@@ -2,7 +2,7 @@
 pub fn ser_list_workflows_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_workflows::ListWorkflowsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.query_end_date {
         object
             .key("QueryEndDate")

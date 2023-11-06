@@ -27,8 +27,10 @@ impl CreateMountTargetInput {
         self.ip_address.as_deref()
     }
     /// <p>Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>. These must be for the same VPC as subnet specified.</p>
-    pub fn security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
+    pub fn security_groups(&self) -> &[::std::string::String] {
+        self.security_groups.as_deref().unwrap_or_default()
     }
 }
 impl CreateMountTargetInput {
@@ -49,6 +51,7 @@ pub struct CreateMountTargetInputBuilder {
 }
 impl CreateMountTargetInputBuilder {
     /// <p>The ID of the file system for which to create the mount target.</p>
+    /// This field is required.
     pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +66,7 @@ impl CreateMountTargetInputBuilder {
         &self.file_system_id
     }
     /// <p>The ID of the subnet to add the mount target in. For file systems that use One Zone storage classes, use the subnet that is associated with the file system's Availability Zone.</p>
+    /// This field is required.
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
         self
@@ -113,7 +117,7 @@ impl CreateMountTargetInputBuilder {
     /// Consumes the builder and constructs a [`CreateMountTargetInput`](crate::operation::create_mount_target::CreateMountTargetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_mount_target::CreateMountTargetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_mount_target::CreateMountTargetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_mount_target::CreateMountTargetInput {
             file_system_id: self.file_system_id,
             subnet_id: self.subnet_id,

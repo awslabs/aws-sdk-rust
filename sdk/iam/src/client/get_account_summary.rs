@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder takes no input, just [`send`](crate::operation::get_account_summary::builders::GetAccountSummaryFluentBuilder::send) it.
     /// - On success, responds with [`GetAccountSummaryOutput`](crate::operation::get_account_summary::GetAccountSummaryOutput) with field(s):
-    ///   - [`summary_map(Option<HashMap<SummaryKeyType, i32>>)`](crate::operation::get_account_summary::GetAccountSummaryOutput::summary_map): <p>A set of key–value pairs containing information about IAM entity usage and IAM quotas.</p>
+    ///   - [`summary_map(Option<HashMap::<SummaryKeyType, i32>>)`](crate::operation::get_account_summary::GetAccountSummaryOutput::summary_map): <p>A set of key–value pairs containing information about IAM entity usage and IAM quotas.</p>
     /// - On failure, responds with [`SdkError<GetAccountSummaryError>`](crate::operation::get_account_summary::GetAccountSummaryError)
     pub fn get_account_summary(&self) -> crate::operation::get_account_summary::builders::GetAccountSummaryFluentBuilder {
         crate::operation::get_account_summary::builders::GetAccountSummaryFluentBuilder::new(self.handle.clone())

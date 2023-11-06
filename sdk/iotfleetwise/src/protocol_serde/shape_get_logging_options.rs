@@ -26,11 +26,10 @@ pub fn de_get_logging_options_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_logging_options::GetLoggingOptionsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_logging_options::GetLoggingOptionsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::get_logging_options::GetLoggingOptionsError::ThrottlingException({
@@ -41,11 +40,10 @@ pub fn de_get_logging_options_http_error(
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_logging_options::GetLoggingOptionsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_logging_options::GetLoggingOptionsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerException" => crate::operation::get_logging_options::GetLoggingOptionsError::InternalServerException({
@@ -56,11 +54,10 @@ pub fn de_get_logging_options_http_error(
                 output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_logging_options::GetLoggingOptionsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_logging_options::GetLoggingOptionsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::get_logging_options::GetLoggingOptionsError::generic(generic),
@@ -80,14 +77,14 @@ pub fn de_get_logging_options_http_response(
         output = crate::protocol_serde::shape_get_logging_options::de_get_logging_options(_response_body, output)
             .map_err(crate::operation::get_logging_options::GetLoggingOptionsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::get_logging_options_output_correct_errors(output).build()
     })
 }
 
 pub fn ser_get_logging_options_input(
     _input: &crate::operation::get_logging_options::GetLoggingOptionsInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
-    Ok(::aws_smithy_http::body::SdkBody::from("{}"))
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+    Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }
 
 pub(crate) fn de_get_logging_options(

@@ -16,12 +16,16 @@ pub struct DescribeCapacityProvidersInput {
 }
 impl DescribeCapacityProvidersInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of one or more capacity providers. Up to <code>100</code> capacity providers can be described in an action.</p>
-    pub fn capacity_providers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.capacity_providers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capacity_providers.is_none()`.
+    pub fn capacity_providers(&self) -> &[::std::string::String] {
+        self.capacity_providers.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether or not you want to see the resource tags for the capacity provider. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
-    pub fn include(&self) -> ::std::option::Option<&[crate::types::CapacityProviderField]> {
-        self.include.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.include.is_none()`.
+    pub fn include(&self) -> &[crate::types::CapacityProviderField] {
+        self.include.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of account setting results returned by <code>DescribeCapacityProviders</code> in paginated output. When this parameter is used, <code>DescribeCapacityProviders</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeCapacityProviders</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 10. If this parameter is not used, then <code>DescribeCapacityProviders</code> returns up to 10 results and a <code>nextToken</code> value if applicable.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -130,7 +134,7 @@ impl DescribeCapacityProvidersInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_capacity_providers::DescribeCapacityProvidersInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_capacity_providers::DescribeCapacityProvidersInput {
             capacity_providers: self.capacity_providers,

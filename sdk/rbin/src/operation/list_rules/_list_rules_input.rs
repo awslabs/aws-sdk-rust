@@ -28,8 +28,10 @@ impl ListRulesInput {
         self.resource_type.as_ref()
     }
     /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
-    pub fn resource_tags(&self) -> ::std::option::Option<&[crate::types::ResourceTag]> {
-        self.resource_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_tags.is_none()`.
+    pub fn resource_tags(&self) -> &[crate::types::ResourceTag] {
+        self.resource_tags.as_deref().unwrap_or_default()
     }
     /// <p>The lock state of the retention rules to list. Only retention rules with the specified lock state are returned.</p>
     pub fn lock_state(&self) -> ::std::option::Option<&crate::types::LockState> {
@@ -83,6 +85,7 @@ impl ListRulesInputBuilder {
         &self.next_token
     }
     /// <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type are listed. Currently, only Amazon EBS snapshots and EBS-backed AMIs are supported. To list retention rules that retain snapshots, specify <code>EBS_SNAPSHOT</code>. To list retention rules that retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
@@ -131,7 +134,7 @@ impl ListRulesInputBuilder {
         &self.lock_state
     }
     /// Consumes the builder and constructs a [`ListRulesInput`](crate::operation::list_rules::ListRulesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_rules::ListRulesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_rules::ListRulesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_rules::ListRulesInput {
             max_results: self.max_results,
             next_token: self.next_token,

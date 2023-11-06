@@ -28,6 +28,7 @@ pub struct UserSettingsBuilder {
 }
 impl UserSettingsBuilder {
     /// <p>The telephony settings associated with the user.</p>
+    /// This field is required.
     pub fn telephony(mut self, input: crate::types::TelephonySettings) -> Self {
         self.telephony = ::std::option::Option::Some(input);
         self

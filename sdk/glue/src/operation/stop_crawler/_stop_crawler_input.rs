@@ -27,6 +27,7 @@ pub struct StopCrawlerInputBuilder {
 }
 impl StopCrawlerInputBuilder {
     /// <p>Name of the crawler to stop.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl StopCrawlerInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`StopCrawlerInput`](crate::operation::stop_crawler::StopCrawlerInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::stop_crawler::StopCrawlerInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_crawler::StopCrawlerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_crawler::StopCrawlerInput { name: self.name })
     }
 }

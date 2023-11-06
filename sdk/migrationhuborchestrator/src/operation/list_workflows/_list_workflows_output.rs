@@ -6,7 +6,7 @@ pub struct ListWorkflowsOutput {
     /// <p>The pagination token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The summary of the migration workflow.</p>
-    pub migration_workflow_summary: ::std::option::Option<::std::vec::Vec<crate::types::MigrationWorkflowSummary>>,
+    pub migration_workflow_summary: ::std::vec::Vec<crate::types::MigrationWorkflowSummary>,
     _request_id: Option<String>,
 }
 impl ListWorkflowsOutput {
@@ -15,8 +15,9 @@ impl ListWorkflowsOutput {
         self.next_token.as_deref()
     }
     /// <p>The summary of the migration workflow.</p>
-    pub fn migration_workflow_summary(&self) -> ::std::option::Option<&[crate::types::MigrationWorkflowSummary]> {
-        self.migration_workflow_summary.as_deref()
+    pub fn migration_workflow_summary(&self) -> &[crate::types::MigrationWorkflowSummary] {
+        use std::ops::Deref;
+        self.migration_workflow_summary.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListWorkflowsOutput {
@@ -84,11 +85,20 @@ impl ListWorkflowsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListWorkflowsOutput`](crate::operation::list_workflows::ListWorkflowsOutput).
-    pub fn build(self) -> crate::operation::list_workflows::ListWorkflowsOutput {
-        crate::operation::list_workflows::ListWorkflowsOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`migration_workflow_summary`](crate::operation::list_workflows::builders::ListWorkflowsOutputBuilder::migration_workflow_summary)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_workflows::ListWorkflowsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_workflows::ListWorkflowsOutput {
             next_token: self.next_token,
-            migration_workflow_summary: self.migration_workflow_summary,
+            migration_workflow_summary: self.migration_workflow_summary.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "migration_workflow_summary",
+                    "migration_workflow_summary was not specified but it is required when building ListWorkflowsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

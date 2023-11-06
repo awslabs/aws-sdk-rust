@@ -21,8 +21,10 @@ impl GetComplianceDetailsByConfigRuleInput {
     }
     /// <p>Filters the results by compliance.</p>
     /// <p> <code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule cannot be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a <code>ComplianceType</code> for filtering results.</p>
-    pub fn compliance_types(&self) -> ::std::option::Option<&[crate::types::ComplianceType]> {
-        self.compliance_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compliance_types.is_none()`.
+    pub fn compliance_types(&self) -> &[crate::types::ComplianceType] {
+        self.compliance_types.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     pub fn limit(&self) -> ::std::option::Option<i32> {
@@ -51,6 +53,7 @@ pub struct GetComplianceDetailsByConfigRuleInputBuilder {
 }
 impl GetComplianceDetailsByConfigRuleInputBuilder {
     /// <p>The name of the Config rule for which you want compliance information.</p>
+    /// This field is required.
     pub fn config_rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.config_rule_name = ::std::option::Option::Some(input.into());
         self
@@ -120,7 +123,7 @@ impl GetComplianceDetailsByConfigRuleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_compliance_details_by_config_rule::GetComplianceDetailsByConfigRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_compliance_details_by_config_rule::GetComplianceDetailsByConfigRuleInput {

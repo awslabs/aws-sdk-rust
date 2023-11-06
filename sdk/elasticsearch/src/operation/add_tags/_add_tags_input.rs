@@ -15,8 +15,10 @@ impl AddTagsInput {
         self.arn.as_deref()
     }
     /// <p> List of <code>Tag</code> that need to be added for the Elasticsearch domain. </p>
-    pub fn tag_list(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tag_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_list.is_none()`.
+    pub fn tag_list(&self) -> &[crate::types::Tag] {
+        self.tag_list.as_deref().unwrap_or_default()
     }
 }
 impl AddTagsInput {
@@ -35,6 +37,7 @@ pub struct AddTagsInputBuilder {
 }
 impl AddTagsInputBuilder {
     /// <p> Specify the <code>ARN</code> for which you want to add the tags.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -69,7 +72,7 @@ impl AddTagsInputBuilder {
         &self.tag_list
     }
     /// Consumes the builder and constructs a [`AddTagsInput`](crate::operation::add_tags::AddTagsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::add_tags::AddTagsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::add_tags::AddTagsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::add_tags::AddTagsInput {
             arn: self.arn,
             tag_list: self.tag_list,

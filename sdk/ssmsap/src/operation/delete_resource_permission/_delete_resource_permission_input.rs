@@ -69,6 +69,7 @@ impl DeleteResourcePermissionInputBuilder {
         &self.source_resource_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl DeleteResourcePermissionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_resource_permission::DeleteResourcePermissionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_resource_permission::DeleteResourcePermissionInput {
             action_type: self.action_type,

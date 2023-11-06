@@ -10,8 +10,10 @@ pub struct DescribeRulesPackagesInput {
 }
 impl DescribeRulesPackagesInput {
     /// <p>The ARN that specifies the rules package that you want to describe.</p>
-    pub fn rules_package_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.rules_package_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules_package_arns.is_none()`.
+    pub fn rules_package_arns(&self) -> &[::std::string::String] {
+        self.rules_package_arns.as_deref().unwrap_or_default()
     }
     /// <p>The locale that you want to translate a rules package description into.</p>
     pub fn locale(&self) -> ::std::option::Option<&crate::types::Locale> {
@@ -70,7 +72,7 @@ impl DescribeRulesPackagesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeRulesPackagesInput`](crate::operation::describe_rules_packages::DescribeRulesPackagesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_rules_packages::DescribeRulesPackagesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_rules_packages::DescribeRulesPackagesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_rules_packages::DescribeRulesPackagesInput {
             rules_package_arns: self.rules_package_arns,

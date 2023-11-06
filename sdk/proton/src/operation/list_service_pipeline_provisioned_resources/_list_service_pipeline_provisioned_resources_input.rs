@@ -34,6 +34,7 @@ pub struct ListServicePipelineProvisionedResourcesInputBuilder {
 }
 impl ListServicePipelineProvisionedResourcesInputBuilder {
     /// <p>The name of the service whose pipeline's provisioned resources you want.</p>
+    /// This field is required.
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl ListServicePipelineProvisionedResourcesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_service_pipeline_provisioned_resources::ListServicePipelineProvisionedResourcesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_service_pipeline_provisioned_resources::ListServicePipelineProvisionedResourcesInput {

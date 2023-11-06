@@ -81,6 +81,7 @@ pub struct ModifyCapacityReservationInputBuilder {
 }
 impl ModifyCapacityReservationInputBuilder {
     /// <p>The ID of the Capacity Reservation.</p>
+    /// This field is required.
     pub fn capacity_reservation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capacity_reservation_id = ::std::option::Option::Some(input.into());
         self
@@ -201,7 +202,7 @@ impl ModifyCapacityReservationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_capacity_reservation::ModifyCapacityReservationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_capacity_reservation::ModifyCapacityReservationInput {
             capacity_reservation_id: self.capacity_reservation_id,

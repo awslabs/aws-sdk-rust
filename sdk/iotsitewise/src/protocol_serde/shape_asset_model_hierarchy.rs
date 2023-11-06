@@ -2,15 +2,15 @@
 pub fn ser_asset_model_hierarchy(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AssetModelHierarchy,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.id {
         object.key("id").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.name {
-        object.key("name").string(var_2.as_str());
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_3) = &input.child_asset_model_id {
-        object.key("childAssetModelId").string(var_3.as_str());
+    {
+        object.key("childAssetModelId").string(input.child_asset_model_id.as_str());
     }
     Ok(())
 }
@@ -61,7 +61,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::asset_model_hierarchy_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

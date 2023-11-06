@@ -58,6 +58,7 @@ pub struct ListChannelBansInputBuilder {
 }
 impl ListChannelBansInputBuilder {
     /// <p>The ARN of the channel.</p>
+    /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self
@@ -100,6 +101,7 @@ impl ListChannelBansInputBuilder {
         &self.next_token
     }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
+    /// This field is required.
     pub fn chime_bearer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.chime_bearer = ::std::option::Option::Some(input.into());
         self
@@ -116,7 +118,7 @@ impl ListChannelBansInputBuilder {
     /// Consumes the builder and constructs a [`ListChannelBansInput`](crate::operation::list_channel_bans::ListChannelBansInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_channel_bans::ListChannelBansInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_channel_bans::ListChannelBansInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_channel_bans::ListChannelBansInput {
             channel_arn: self.channel_arn,
             max_results: self.max_results,

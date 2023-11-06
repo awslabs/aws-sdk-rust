@@ -11,20 +11,169 @@
 //! [`ConfigBag`](aws_smithy_types::config_bag::ConfigBag) instead of in
 //! [`RuntimeComponents`](RuntimeComponents).
 
+use crate::box_error::BoxError;
 use crate::client::auth::{
-    AuthScheme, AuthSchemeId, SharedAuthScheme, SharedAuthSchemeOptionResolver,
+    AuthScheme, AuthSchemeId, ResolveAuthSchemeOptions, SharedAuthScheme,
+    SharedAuthSchemeOptionResolver,
 };
-use crate::client::connectors::SharedHttpConnector;
-use crate::client::endpoint::SharedEndpointResolver;
-use crate::client::identity::{ConfiguredIdentityResolver, SharedIdentityResolver};
-use crate::client::interceptors::SharedInterceptor;
-use crate::client::retries::{RetryClassifiers, SharedRetryStrategy};
-use aws_smithy_async::rt::sleep::SharedAsyncSleep;
-use aws_smithy_async::time::SharedTimeSource;
+use crate::client::endpoint::{ResolveEndpoint, SharedEndpointResolver};
+use crate::client::http::{HttpClient, SharedHttpClient};
+use crate::client::identity::{
+    ConfiguredIdentityResolver, ResolveCachedIdentity, ResolveIdentity, SharedIdentityCache,
+    SharedIdentityResolver,
+};
+use crate::client::interceptors::{Intercept, SharedInterceptor};
+use crate::client::retries::classifiers::{ClassifyRetry, SharedRetryClassifier};
+use crate::client::retries::{RetryStrategy, SharedRetryStrategy};
+use crate::impl_shared_conversions;
+use crate::shared::IntoShared;
+use aws_smithy_async::rt::sleep::{AsyncSleep, SharedAsyncSleep};
+use aws_smithy_async::time::{SharedTimeSource, TimeSource};
+use aws_smithy_types::config_bag::ConfigBag;
 use std::fmt;
+use std::sync::Arc;
 
 pub(crate) static EMPTY_RUNTIME_COMPONENTS_BUILDER: RuntimeComponentsBuilder =
     RuntimeComponentsBuilder::new("empty");
+
+pub(crate) mod sealed {
+    use super::*;
+
+    /// Validates client configuration.
+    ///
+    /// This trait can be used to validate that certain required components or config values
+    /// are available, and provide an error with helpful instructions if they are not.
+    pub trait ValidateConfig: fmt::Debug + Send + Sync {
+        /// Validate the base client configuration.
+        ///
+        /// This gets called upon client construction. The full config may not be available at
+        /// this time (hence why it has [`RuntimeComponentsBuilder`] as an argument rather
+        /// than [`RuntimeComponents`]). Any error returned here will become a panic
+        /// in the client constructor.
+        fn validate_base_client_config(
+            &self,
+            runtime_components: &RuntimeComponentsBuilder,
+            cfg: &ConfigBag,
+        ) -> Result<(), BoxError> {
+            let _ = (runtime_components, cfg);
+            Ok(())
+        }
+
+        /// Validate the final client configuration.
+        ///
+        /// This gets called immediately after the [`Intercept::read_before_execution`] trait hook
+        /// when the final configuration has been resolved. Any error returned here will
+        /// cause the operation to return that error.
+        fn validate_final_config(
+            &self,
+            runtime_components: &RuntimeComponents,
+            cfg: &ConfigBag,
+        ) -> Result<(), BoxError> {
+            let _ = (runtime_components, cfg);
+            Ok(())
+        }
+    }
+}
+use sealed::ValidateConfig;
+
+#[derive(Clone)]
+enum ValidatorInner {
+    BaseConfigStaticFn(fn(&RuntimeComponentsBuilder, &ConfigBag) -> Result<(), BoxError>),
+    Shared(Arc<dyn ValidateConfig>),
+}
+
+impl fmt::Debug for ValidatorInner {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        match self {
+            Self::BaseConfigStaticFn(_) => f.debug_tuple("StaticFn").finish(),
+            Self::Shared(_) => f.debug_tuple("Shared").finish(),
+        }
+    }
+}
+
+/// A client config validator.
+#[derive(Clone, Debug)]
+pub struct SharedConfigValidator {
+    inner: ValidatorInner,
+}
+
+impl SharedConfigValidator {
+    /// Creates a new shared config validator.
+    pub(crate) fn new(validator: impl ValidateConfig + 'static) -> Self {
+        Self {
+            inner: ValidatorInner::Shared(Arc::new(validator) as _),
+        }
+    }
+
+    /// Creates a base client validator from a function.
+    ///
+    /// A base client validator gets called upon client construction. The full
+    /// config may not be available at this time (hence why it has
+    /// [`RuntimeComponentsBuilder`] as an argument rather than [`RuntimeComponents`]).
+    /// Any error returned from the validator function will become a panic in the
+    /// client constructor.
+    ///
+    /// # Examples
+    ///
+    /// Creating a validator function:
+    /// ```no_run
+    /// use aws_smithy_runtime_api::box_error::BoxError;
+    /// use aws_smithy_runtime_api::client::runtime_components::{
+    ///     RuntimeComponentsBuilder,
+    ///     SharedConfigValidator
+    /// };
+    /// use aws_smithy_types::config_bag::ConfigBag;
+    ///
+    /// fn my_validation(
+    ///     components: &RuntimeComponentsBuilder,
+    ///     config: &ConfigBag
+    /// ) -> Result<(), BoxError> {
+    ///     if components.sleep_impl().is_none() {
+    ///         return Err("I need a sleep_impl!".into());
+    ///     }
+    ///     Ok(())
+    /// }
+    ///
+    /// let validator = SharedConfigValidator::base_client_config_fn(my_validation);
+    /// ```
+    pub fn base_client_config_fn(
+        validator: fn(&RuntimeComponentsBuilder, &ConfigBag) -> Result<(), BoxError>,
+    ) -> Self {
+        Self {
+            inner: ValidatorInner::BaseConfigStaticFn(validator),
+        }
+    }
+}
+
+impl ValidateConfig for SharedConfigValidator {
+    fn validate_base_client_config(
+        &self,
+        runtime_components: &RuntimeComponentsBuilder,
+        cfg: &ConfigBag,
+    ) -> Result<(), BoxError> {
+        match &self.inner {
+            ValidatorInner::BaseConfigStaticFn(validator) => (validator)(runtime_components, cfg),
+            ValidatorInner::Shared(validator) => {
+                validator.validate_base_client_config(runtime_components, cfg)
+            }
+        }
+    }
+
+    fn validate_final_config(
+        &self,
+        runtime_components: &RuntimeComponents,
+        cfg: &ConfigBag,
+    ) -> Result<(), BoxError> {
+        match &self.inner {
+            ValidatorInner::Shared(validator) => {
+                validator.validate_final_config(runtime_components, cfg)
+            }
+            _ => Ok(()),
+        }
+    }
+}
+
+impl_shared_conversions!(convert SharedConfigValidator from ValidateConfig using SharedConfigValidator::new);
 
 /// Internal to `declare_runtime_components!`.
 ///
@@ -183,7 +332,7 @@ declare_runtime_components! {
         auth_scheme_option_resolver: Option<SharedAuthSchemeOptionResolver>,
 
         // A connector is not required since a client could technically only be used for presigning
-        http_connector: Option<SharedHttpConnector>,
+        http_client: Option<SharedHttpClient>,
 
         #[required]
         endpoint_resolver: Option<SharedEndpointResolver>,
@@ -191,12 +340,15 @@ declare_runtime_components! {
         #[atLeastOneRequired]
         auth_schemes: Vec<SharedAuthScheme>,
 
+        #[required]
+        identity_cache: Option<SharedIdentityCache>,
+
         #[atLeastOneRequired]
         identity_resolvers: Vec<ConfiguredIdentityResolver>,
 
         interceptors: Vec<SharedInterceptor>,
 
-        retry_classifiers: Option<RetryClassifiers>,
+        retry_classifiers: Vec<SharedRetryClassifier>,
 
         #[required]
         retry_strategy: Option<SharedRetryStrategy>,
@@ -204,6 +356,8 @@ declare_runtime_components! {
         time_source: Option<SharedTimeSource>,
 
         sleep_impl: Option<SharedAsyncSleep>,
+
+        config_validators: Vec<SharedConfigValidator>,
     }
 }
 
@@ -218,9 +372,9 @@ impl RuntimeComponents {
         self.auth_scheme_option_resolver.value.clone()
     }
 
-    /// Returns the connector.
-    pub fn http_connector(&self) -> Option<SharedHttpConnector> {
-        self.http_connector.as_ref().map(|s| s.value.clone())
+    /// Returns the HTTP client.
+    pub fn http_client(&self) -> Option<SharedHttpClient> {
+        self.http_client.as_ref().map(|s| s.value.clone())
     }
 
     /// Returns the endpoint resolver.
@@ -236,14 +390,19 @@ impl RuntimeComponents {
             .map(|s| s.value.clone())
     }
 
+    /// Returns the identity cache.
+    pub fn identity_cache(&self) -> SharedIdentityCache {
+        self.identity_cache.value.clone()
+    }
+
     /// Returns an iterator over the interceptors.
     pub fn interceptors(&self) -> impl Iterator<Item = SharedInterceptor> + '_ {
         self.interceptors.iter().map(|s| s.value.clone())
     }
 
-    /// Returns the retry classifiers.
-    pub fn retry_classifiers(&self) -> Option<&RetryClassifiers> {
-        self.retry_classifiers.as_ref().map(|s| &s.value)
+    /// Returns an iterator over the retry classifiers.
+    pub fn retry_classifiers(&self) -> impl Iterator<Item = SharedRetryClassifier> + '_ {
+        self.retry_classifiers.iter().map(|s| s.value.clone())
     }
 
     /// Returns the retry strategy.
@@ -260,6 +419,45 @@ impl RuntimeComponents {
     pub fn time_source(&self) -> Option<SharedTimeSource> {
         self.time_source.as_ref().map(|s| s.value.clone())
     }
+
+    /// Returns the config validators.
+    pub fn config_validators(&self) -> impl Iterator<Item = SharedConfigValidator> + '_ {
+        self.config_validators.iter().map(|s| s.value.clone())
+    }
+
+    /// Validate the final client configuration.
+    ///
+    /// This is intended to be called internally by the client.
+    pub fn validate_final_config(&self, cfg: &ConfigBag) -> Result<(), BoxError> {
+        macro_rules! validate {
+            (Required: $field:expr) => {
+                ValidateConfig::validate_final_config(&$field.value, self, cfg)?;
+            };
+            (Option: $field:expr) => {
+                if let Some(field) = $field.as_ref() {
+                    ValidateConfig::validate_final_config(&field.value, self, cfg)?;
+                }
+            };
+            (Vec: $field:expr) => {
+                for entry in &$field {
+                    ValidateConfig::validate_final_config(&entry.value, self, cfg)?;
+                }
+            };
+        }
+
+        tracing::trace!(runtime_components=?self, cfg=?cfg, "validating final config");
+        for validator in self.config_validators() {
+            validator.validate_final_config(self, cfg)?;
+        }
+        validate!(Option: self.http_client);
+        validate!(Required: self.endpoint_resolver);
+        validate!(Vec: self.auth_schemes);
+        validate!(Required: self.identity_cache);
+        validate!(Vec: self.identity_resolvers);
+        validate!(Vec: self.interceptors);
+        validate!(Required: self.retry_strategy);
+        Ok(())
+    }
 }
 
 impl RuntimeComponentsBuilder {
@@ -273,36 +471,36 @@ impl RuntimeComponentsBuilder {
     /// Sets the auth scheme option resolver.
     pub fn set_auth_scheme_option_resolver(
         &mut self,
-        auth_scheme_option_resolver: Option<SharedAuthSchemeOptionResolver>,
+        auth_scheme_option_resolver: Option<impl ResolveAuthSchemeOptions + 'static>,
     ) -> &mut Self {
         self.auth_scheme_option_resolver =
-            auth_scheme_option_resolver.map(|r| Tracked::new(self.builder_name, r));
+            auth_scheme_option_resolver.map(|r| Tracked::new(self.builder_name, r.into_shared()));
         self
     }
 
     /// Sets the auth scheme option resolver.
     pub fn with_auth_scheme_option_resolver(
         mut self,
-        auth_scheme_option_resolver: Option<SharedAuthSchemeOptionResolver>,
+        auth_scheme_option_resolver: Option<impl ResolveAuthSchemeOptions + 'static>,
     ) -> Self {
         self.set_auth_scheme_option_resolver(auth_scheme_option_resolver);
         self
     }
 
-    /// Returns the HTTP connector.
-    pub fn http_connector(&self) -> Option<SharedHttpConnector> {
-        self.http_connector.as_ref().map(|s| s.value.clone())
+    /// Returns the HTTP client.
+    pub fn http_client(&self) -> Option<SharedHttpClient> {
+        self.http_client.as_ref().map(|s| s.value.clone())
     }
 
-    /// Sets the HTTP connector.
-    pub fn set_http_connector(&mut self, connector: Option<SharedHttpConnector>) -> &mut Self {
-        self.http_connector = connector.map(|c| Tracked::new(self.builder_name, c));
+    /// Sets the HTTP client.
+    pub fn set_http_client(&mut self, connector: Option<impl HttpClient + 'static>) -> &mut Self {
+        self.http_client = connector.map(|c| Tracked::new(self.builder_name, c.into_shared()));
         self
     }
 
-    /// Sets the HTTP connector.
-    pub fn with_http_connector(mut self, connector: Option<SharedHttpConnector>) -> Self {
-        self.set_http_connector(connector);
+    /// Sets the HTTP client.
+    pub fn with_http_client(mut self, connector: Option<impl HttpClient + 'static>) -> Self {
+        self.set_http_client(connector);
         self
     }
 
@@ -314,16 +512,17 @@ impl RuntimeComponentsBuilder {
     /// Sets the endpoint resolver.
     pub fn set_endpoint_resolver(
         &mut self,
-        endpoint_resolver: Option<SharedEndpointResolver>,
+        endpoint_resolver: Option<impl ResolveEndpoint + 'static>,
     ) -> &mut Self {
-        self.endpoint_resolver = endpoint_resolver.map(|s| Tracked::new(self.builder_name, s));
+        self.endpoint_resolver =
+            endpoint_resolver.map(|s| Tracked::new(self.builder_name, s.into_shared()));
         self
     }
 
     /// Sets the endpoint resolver.
     pub fn with_endpoint_resolver(
         mut self,
-        endpoint_resolver: Option<SharedEndpointResolver>,
+        endpoint_resolver: Option<impl ResolveEndpoint + 'static>,
     ) -> Self {
         self.set_endpoint_resolver(endpoint_resolver);
         self
@@ -335,15 +534,39 @@ impl RuntimeComponentsBuilder {
     }
 
     /// Adds an auth scheme.
-    pub fn push_auth_scheme(&mut self, auth_scheme: SharedAuthScheme) -> &mut Self {
+    pub fn push_auth_scheme(&mut self, auth_scheme: impl AuthScheme + 'static) -> &mut Self {
         self.auth_schemes
-            .push(Tracked::new(self.builder_name, auth_scheme));
+            .push(Tracked::new(self.builder_name, auth_scheme.into_shared()));
         self
     }
 
     /// Adds an auth scheme.
-    pub fn with_auth_scheme(mut self, auth_scheme: SharedAuthScheme) -> Self {
+    pub fn with_auth_scheme(mut self, auth_scheme: impl AuthScheme + 'static) -> Self {
         self.push_auth_scheme(auth_scheme);
+        self
+    }
+
+    /// Returns the identity cache.
+    pub fn identity_cache(&self) -> Option<SharedIdentityCache> {
+        self.identity_cache.as_ref().map(|s| s.value.clone())
+    }
+
+    /// Sets the identity cache.
+    pub fn set_identity_cache(
+        &mut self,
+        identity_cache: Option<impl ResolveCachedIdentity + 'static>,
+    ) -> &mut Self {
+        self.identity_cache =
+            identity_cache.map(|c| Tracked::new(self.builder_name, c.into_shared()));
+        self
+    }
+
+    /// Sets the identity cache.
+    pub fn with_identity_cache(
+        mut self,
+        identity_cache: Option<impl ResolveCachedIdentity + 'static>,
+    ) -> Self {
+        self.set_identity_cache(identity_cache);
         self
     }
 
@@ -351,11 +574,11 @@ impl RuntimeComponentsBuilder {
     pub fn push_identity_resolver(
         &mut self,
         scheme_id: AuthSchemeId,
-        identity_resolver: SharedIdentityResolver,
+        identity_resolver: impl ResolveIdentity + 'static,
     ) -> &mut Self {
         self.identity_resolvers.push(Tracked::new(
             self.builder_name,
-            ConfiguredIdentityResolver::new(scheme_id, identity_resolver),
+            ConfiguredIdentityResolver::new(scheme_id, identity_resolver.into_shared()),
         ));
         self
     }
@@ -364,7 +587,7 @@ impl RuntimeComponentsBuilder {
     pub fn with_identity_resolver(
         mut self,
         scheme_id: AuthSchemeId,
-        identity_resolver: SharedIdentityResolver,
+        identity_resolver: impl ResolveIdentity + 'static,
     ) -> Self {
         self.push_identity_resolver(scheme_id, identity_resolver);
         self
@@ -386,14 +609,14 @@ impl RuntimeComponentsBuilder {
     }
 
     /// Adds an interceptor.
-    pub fn push_interceptor(&mut self, interceptor: SharedInterceptor) -> &mut Self {
+    pub fn push_interceptor(&mut self, interceptor: impl Intercept + 'static) -> &mut Self {
         self.interceptors
-            .push(Tracked::new(self.builder_name, interceptor));
+            .push(Tracked::new(self.builder_name, interceptor.into_shared()));
         self
     }
 
     /// Adds an interceptor.
-    pub fn with_interceptor(mut self, interceptor: SharedInterceptor) -> Self {
+    pub fn with_interceptor(mut self, interceptor: impl Intercept + 'static) -> Self {
         self.push_interceptor(interceptor);
         self
     }
@@ -419,22 +642,46 @@ impl RuntimeComponentsBuilder {
     }
 
     /// Returns the retry classifiers.
-    pub fn retry_classifiers(&self) -> Option<&RetryClassifiers> {
-        self.retry_classifiers.as_ref().map(|s| &s.value)
+    pub fn retry_classifiers(&self) -> impl Iterator<Item = SharedRetryClassifier> + '_ {
+        self.retry_classifiers.iter().map(|s| s.value.clone())
     }
 
-    /// Sets the retry classifiers.
-    pub fn set_retry_classifiers(
+    /// Adds all the given retry classifiers.
+    pub fn extend_retry_classifiers(
         &mut self,
-        retry_classifiers: Option<RetryClassifiers>,
+        retry_classifiers: impl Iterator<Item = SharedRetryClassifier>,
     ) -> &mut Self {
-        self.retry_classifiers = retry_classifiers.map(|s| Tracked::new(self.builder_name, s));
+        self.retry_classifiers
+            .extend(retry_classifiers.map(|s| Tracked::new(self.builder_name, s)));
         self
     }
 
-    /// Sets the retry classifiers.
-    pub fn with_retry_classifiers(mut self, retry_classifiers: Option<RetryClassifiers>) -> Self {
-        self.retry_classifiers = retry_classifiers.map(|s| Tracked::new(self.builder_name, s));
+    /// Adds an retry_classifier.
+    pub fn push_retry_classifier(
+        &mut self,
+        retry_classifier: impl ClassifyRetry + 'static,
+    ) -> &mut Self {
+        self.retry_classifiers.push(Tracked::new(
+            self.builder_name,
+            retry_classifier.into_shared(),
+        ));
+        self
+    }
+
+    /// Adds an retry_classifier.
+    pub fn with_retry_classifier(mut self, retry_classifier: impl ClassifyRetry + 'static) -> Self {
+        self.push_retry_classifier(retry_classifier);
+        self
+    }
+
+    /// Directly sets the retry_classifiers and clears out any that were previously pushed.
+    pub fn set_retry_classifiers(
+        &mut self,
+        retry_classifiers: impl Iterator<Item = SharedRetryClassifier>,
+    ) -> &mut Self {
+        self.retry_classifiers.clear();
+        self.retry_classifiers
+            .extend(retry_classifiers.map(|s| Tracked::new(self.builder_name, s)));
         self
     }
 
@@ -444,14 +691,22 @@ impl RuntimeComponentsBuilder {
     }
 
     /// Sets the retry strategy.
-    pub fn set_retry_strategy(&mut self, retry_strategy: Option<SharedRetryStrategy>) -> &mut Self {
-        self.retry_strategy = retry_strategy.map(|s| Tracked::new(self.builder_name, s));
+    pub fn set_retry_strategy(
+        &mut self,
+        retry_strategy: Option<impl RetryStrategy + 'static>,
+    ) -> &mut Self {
+        self.retry_strategy =
+            retry_strategy.map(|s| Tracked::new(self.builder_name, s.into_shared()));
         self
     }
 
     /// Sets the retry strategy.
-    pub fn with_retry_strategy(mut self, retry_strategy: Option<SharedRetryStrategy>) -> Self {
-        self.retry_strategy = retry_strategy.map(|s| Tracked::new(self.builder_name, s));
+    pub fn with_retry_strategy(
+        mut self,
+        retry_strategy: Option<impl RetryStrategy + 'static>,
+    ) -> Self {
+        self.retry_strategy =
+            retry_strategy.map(|s| Tracked::new(self.builder_name, s.into_shared()));
         self
     }
 
@@ -467,8 +722,8 @@ impl RuntimeComponentsBuilder {
     }
 
     /// Sets the async sleep implementation.
-    pub fn with_sleep_impl(mut self, sleep_impl: Option<SharedAsyncSleep>) -> Self {
-        self.sleep_impl = sleep_impl.map(|s| Tracked::new(self.builder_name, s));
+    pub fn with_sleep_impl(mut self, sleep_impl: Option<impl AsyncSleep + 'static>) -> Self {
+        self.sleep_impl = sleep_impl.map(|s| Tracked::new(self.builder_name, s.into_shared()));
         self
     }
 
@@ -484,9 +739,71 @@ impl RuntimeComponentsBuilder {
     }
 
     /// Sets the time source.
-    pub fn with_time_source(mut self, time_source: Option<SharedTimeSource>) -> Self {
-        self.time_source = time_source.map(|s| Tracked::new(self.builder_name, s));
+    pub fn with_time_source(mut self, time_source: Option<impl TimeSource + 'static>) -> Self {
+        self.time_source = time_source.map(|s| Tracked::new(self.builder_name, s.into_shared()));
         self
+    }
+
+    /// Returns the config validators.
+    pub fn config_validators(&self) -> impl Iterator<Item = SharedConfigValidator> + '_ {
+        self.config_validators.iter().map(|s| s.value.clone())
+    }
+
+    /// Adds all the given config validators.
+    pub fn extend_config_validators(
+        &mut self,
+        config_validators: impl Iterator<Item = SharedConfigValidator>,
+    ) -> &mut Self {
+        self.config_validators
+            .extend(config_validators.map(|s| Tracked::new(self.builder_name, s)));
+        self
+    }
+
+    /// Adds a config validator.
+    pub fn push_config_validator(
+        &mut self,
+        config_validator: impl ValidateConfig + 'static,
+    ) -> &mut Self {
+        self.config_validators.push(Tracked::new(
+            self.builder_name,
+            config_validator.into_shared(),
+        ));
+        self
+    }
+
+    /// Adds a config validator.
+    pub fn with_config_validator(
+        mut self,
+        config_validator: impl ValidateConfig + 'static,
+    ) -> Self {
+        self.push_config_validator(config_validator);
+        self
+    }
+
+    /// Validate the base client configuration.
+    ///
+    /// This is intended to be called internally by the client.
+    pub fn validate_base_client_config(&self, cfg: &ConfigBag) -> Result<(), BoxError> {
+        macro_rules! validate {
+            ($field:expr) => {
+                for entry in &$field {
+                    ValidateConfig::validate_base_client_config(&entry.value, self, cfg)?;
+                }
+            };
+        }
+
+        tracing::trace!(runtime_components=?self, cfg=?cfg, "validating base client config");
+        for validator in self.config_validators() {
+            validator.validate_base_client_config(self, cfg)?;
+        }
+        validate!(self.http_client);
+        validate!(self.endpoint_resolver);
+        validate!(self.auth_schemes);
+        validate!(self.identity_cache);
+        validate!(self.identity_resolvers);
+        validate!(self.interceptors);
+        validate!(self.retry_strategy);
+        Ok(())
     }
 }
 
@@ -510,21 +827,12 @@ impl RuntimeComponentsBuilder {
     /// Creates a runtime components builder with all the required components filled in with fake (panicking) implementations.
     #[cfg(feature = "test-util")]
     pub fn for_tests() -> Self {
-        use crate::client::auth::AuthSchemeOptionResolver;
-        use crate::client::connectors::HttpConnector;
-        use crate::client::endpoint::{EndpointResolver, EndpointResolverParams};
-        use crate::client::identity::Identity;
-        use crate::client::identity::IdentityResolver;
-        use crate::client::orchestrator::Future;
-        use crate::client::retries::RetryStrategy;
-        use aws_smithy_async::rt::sleep::AsyncSleep;
-        use aws_smithy_async::time::TimeSource;
-        use aws_smithy_types::config_bag::ConfigBag;
-        use aws_smithy_types::endpoint::Endpoint;
+        use crate::client::endpoint::{EndpointFuture, EndpointResolverParams};
+        use crate::client::identity::IdentityFuture;
 
         #[derive(Debug)]
         struct FakeAuthSchemeOptionResolver;
-        impl AuthSchemeOptionResolver for FakeAuthSchemeOptionResolver {
+        impl ResolveAuthSchemeOptions for FakeAuthSchemeOptionResolver {
             fn resolve_auth_scheme_options(
                 &self,
                 _: &crate::client::auth::AuthSchemeOptionResolverParams,
@@ -535,21 +843,21 @@ impl RuntimeComponentsBuilder {
         }
 
         #[derive(Debug)]
-        struct FakeConnector;
-        impl HttpConnector for FakeConnector {
-            fn call(
+        struct FakeClient;
+        impl HttpClient for FakeClient {
+            fn http_connector(
                 &self,
-                _: crate::client::orchestrator::HttpRequest,
-            ) -> crate::client::orchestrator::BoxFuture<crate::client::orchestrator::HttpResponse>
-            {
-                unreachable!("fake connector must be overridden for this test")
+                _: &crate::client::http::HttpConnectorSettings,
+                _: &RuntimeComponents,
+            ) -> crate::client::http::SharedHttpConnector {
+                unreachable!("fake client must be overridden for this test")
             }
         }
 
         #[derive(Debug)]
         struct FakeEndpointResolver;
-        impl EndpointResolver for FakeEndpointResolver {
-            fn resolve_endpoint(&self, _: &EndpointResolverParams) -> Future<Endpoint> {
+        impl ResolveEndpoint for FakeEndpointResolver {
+            fn resolve_endpoint<'a>(&'a self, _: &'a EndpointResolverParams) -> EndpointFuture<'a> {
                 unreachable!("fake endpoint resolver must be overridden for this test")
             }
         }
@@ -568,15 +876,19 @@ impl RuntimeComponentsBuilder {
                 None
             }
 
-            fn signer(&self) -> &dyn crate::client::auth::Signer {
+            fn signer(&self) -> &dyn crate::client::auth::Sign {
                 unreachable!("fake http auth scheme must be overridden for this test")
             }
         }
 
         #[derive(Debug)]
         struct FakeIdentityResolver;
-        impl IdentityResolver for FakeIdentityResolver {
-            fn resolve_identity(&self, _: &ConfigBag) -> Future<Identity> {
+        impl ResolveIdentity for FakeIdentityResolver {
+            fn resolve_identity<'a>(
+                &'a self,
+                _: &'a RuntimeComponents,
+                _: &'a ConfigBag,
+            ) -> IdentityFuture<'a> {
                 unreachable!("fake identity resolver must be overridden for this test")
             }
         }
@@ -620,14 +932,29 @@ impl RuntimeComponentsBuilder {
             }
         }
 
+        #[derive(Debug)]
+        struct FakeIdentityCache;
+        impl ResolveCachedIdentity for FakeIdentityCache {
+            fn resolve_cached_identity<'a>(
+                &'a self,
+                resolver: SharedIdentityResolver,
+                components: &'a RuntimeComponents,
+                config_bag: &'a ConfigBag,
+            ) -> IdentityFuture<'a> {
+                IdentityFuture::new(async move {
+                    resolver.resolve_identity(components, config_bag).await
+                })
+            }
+        }
+
         Self::new("aws_smithy_runtime_api::client::runtime_components::RuntimeComponentBuilder::for_tests")
-            .with_auth_scheme(SharedAuthScheme::new(FakeAuthScheme))
-            .with_auth_scheme_option_resolver(Some(SharedAuthSchemeOptionResolver::new(FakeAuthSchemeOptionResolver)))
-            .with_endpoint_resolver(Some(SharedEndpointResolver::new(FakeEndpointResolver)))
-            .with_http_connector(Some(SharedHttpConnector::new(FakeConnector)))
-            .with_identity_resolver(AuthSchemeId::new("fake"), SharedIdentityResolver::new(FakeIdentityResolver))
-            .with_retry_classifiers(Some(RetryClassifiers::new()))
-            .with_retry_strategy(Some(SharedRetryStrategy::new(FakeRetryStrategy)))
+            .with_auth_scheme(FakeAuthScheme)
+            .with_auth_scheme_option_resolver(Some(FakeAuthSchemeOptionResolver))
+            .with_endpoint_resolver(Some(FakeEndpointResolver))
+            .with_http_client(Some(FakeClient))
+            .with_identity_cache(Some(FakeIdentityCache))
+            .with_identity_resolver(AuthSchemeId::new("fake"), FakeIdentityResolver)
+            .with_retry_strategy(Some(FakeRetryStrategy))
             .with_sleep_impl(Some(SharedAsyncSleep::new(FakeSleep)))
             .with_time_source(Some(SharedTimeSource::new(FakeTimeSource)))
     }
@@ -647,7 +974,7 @@ impl fmt::Display for BuildError {
 
 /// A trait for retrieving a shared identity resolver.
 ///
-/// This trait exists so that [`AuthScheme::identity_resolver`](crate::client::auth::AuthScheme::identity_resolver)
+/// This trait exists so that [`AuthScheme::identity_resolver`]
 /// can have access to configured identity resolvers without having access to all the runtime components.
 pub trait GetIdentityResolver: Send + Sync {
     /// Returns the requested identity resolver if it is set.
@@ -665,7 +992,17 @@ impl GetIdentityResolver for RuntimeComponents {
 
 #[cfg(all(test, feature = "test-util"))]
 mod tests {
-    use super::*;
+    use super::{BuildError, RuntimeComponentsBuilder, Tracked};
+    use crate::client::runtime_components::ValidateConfig;
+
+    #[derive(Clone, Debug, Eq, PartialEq)]
+    struct TestComponent(String);
+    impl ValidateConfig for TestComponent {}
+    impl From<&'static str> for TestComponent {
+        fn from(value: &'static str) -> Self {
+            TestComponent(value.into())
+        }
+    }
 
     #[test]
     #[allow(unreachable_pub)]
@@ -674,35 +1011,38 @@ mod tests {
         declare_runtime_components! {
             fields for TestRc and TestRcBuilder {
                 #[required]
-                some_required_string: Option<String>,
+                some_required_component: Option<TestComponent>,
 
-                some_optional_string: Option<String>,
+                some_optional_component: Option<TestComponent>,
 
                 #[atLeastOneRequired]
-                some_required_vec: Vec<String>,
+                some_required_vec: Vec<TestComponent>,
 
-                some_optional_vec: Vec<String>,
+                some_optional_vec: Vec<TestComponent>,
             }
         }
 
         let builder1 = TestRcBuilder {
             builder_name: "builder1",
-            some_required_string: Some(Tracked::new("builder1", "override_me".into())),
-            some_optional_string: Some(Tracked::new("builder1", "override_me optional".into())),
+            some_required_component: Some(Tracked::new("builder1", "override_me".into())),
+            some_optional_component: Some(Tracked::new("builder1", "override_me optional".into())),
             some_required_vec: vec![Tracked::new("builder1", "first".into())],
             some_optional_vec: vec![Tracked::new("builder1", "first optional".into())],
         };
         let builder2 = TestRcBuilder {
             builder_name: "builder2",
-            some_required_string: Some(Tracked::new("builder2", "override_me_too".into())),
-            some_optional_string: Some(Tracked::new("builder2", "override_me_too optional".into())),
+            some_required_component: Some(Tracked::new("builder2", "override_me_too".into())),
+            some_optional_component: Some(Tracked::new(
+                "builder2",
+                "override_me_too optional".into(),
+            )),
             some_required_vec: vec![Tracked::new("builder2", "second".into())],
             some_optional_vec: vec![Tracked::new("builder2", "second optional".into())],
         };
         let builder3 = TestRcBuilder {
             builder_name: "builder3",
-            some_required_string: Some(Tracked::new("builder3", "correct".into())),
-            some_optional_string: Some(Tracked::new("builder3", "correct optional".into())),
+            some_required_component: Some(Tracked::new("builder3", "correct".into())),
+            some_optional_component: Some(Tracked::new("builder3", "correct optional".into())),
             some_required_vec: vec![Tracked::new("builder3", "third".into())],
             some_optional_vec: vec![Tracked::new("builder3", "third optional".into())],
         };
@@ -713,26 +1053,29 @@ mod tests {
             .build()
             .expect("success");
         assert_eq!(
-            Tracked::new("builder3", "correct".to_string()),
-            rc.some_required_string
+            Tracked::new("builder3", TestComponent::from("correct")),
+            rc.some_required_component
         );
         assert_eq!(
-            Some(Tracked::new("builder3", "correct optional".to_string())),
-            rc.some_optional_string
+            Some(Tracked::new(
+                "builder3",
+                TestComponent::from("correct optional")
+            )),
+            rc.some_optional_component
         );
         assert_eq!(
             vec![
-                Tracked::new("builder1", "first".to_string()),
-                Tracked::new("builder2", "second".into()),
-                Tracked::new("builder3", "third".into())
+                Tracked::new("builder1", TestComponent::from("first")),
+                Tracked::new("builder2", TestComponent::from("second")),
+                Tracked::new("builder3", TestComponent::from("third"))
             ],
             rc.some_required_vec
         );
         assert_eq!(
             vec![
-                Tracked::new("builder1", "first optional".to_string()),
-                Tracked::new("builder2", "second optional".into()),
-                Tracked::new("builder3", "third optional".into())
+                Tracked::new("builder1", TestComponent::from("first optional")),
+                Tracked::new("builder2", TestComponent::from("second optional")),
+                Tracked::new("builder3", TestComponent::from("third optional"))
             ],
             rc.some_optional_vec
         );
@@ -741,19 +1084,19 @@ mod tests {
     #[test]
     #[allow(unreachable_pub)]
     #[allow(dead_code)]
-    #[should_panic(expected = "the `_some_string` runtime component is required")]
+    #[should_panic(expected = "the `_some_component` runtime component is required")]
     fn require_field_singular() {
         declare_runtime_components! {
             fields for TestRc and TestRcBuilder {
                 #[required]
-                _some_string: Option<String>,
+                _some_component: Option<TestComponent>,
             }
         }
 
         let rc = TestRcBuilder::new("test").build().unwrap();
 
         // Ensure the correct types were used
-        let _: Tracked<String> = rc._some_string;
+        let _: Tracked<TestComponent> = rc._some_component;
     }
 
     #[test]
@@ -764,14 +1107,14 @@ mod tests {
         declare_runtime_components! {
             fields for TestRc and TestRcBuilder {
                 #[atLeastOneRequired]
-                _some_vec: Vec<String>,
+                _some_vec: Vec<TestComponent>,
             }
         }
 
         let rc = TestRcBuilder::new("test").build().unwrap();
 
         // Ensure the correct types were used
-        let _: Vec<Tracked<String>> = rc._some_vec;
+        let _: Vec<Tracked<TestComponent>> = rc._some_vec;
     }
 
     #[test]
@@ -780,16 +1123,16 @@ mod tests {
     fn optional_fields_dont_panic() {
         declare_runtime_components! {
             fields for TestRc and TestRcBuilder {
-                _some_optional_string: Option<String>,
-                _some_optional_vec: Vec<String>,
+                _some_optional_component: Option<TestComponent>,
+                _some_optional_vec: Vec<TestComponent>,
             }
         }
 
         let rc = TestRcBuilder::new("test").build().unwrap();
 
         // Ensure the correct types were used
-        let _: Option<Tracked<String>> = rc._some_optional_string;
-        let _: Vec<Tracked<String>> = rc._some_optional_vec;
+        let _: Option<Tracked<TestComponent>> = rc._some_optional_component;
+        let _: Vec<Tracked<TestComponent>> = rc._some_optional_vec;
     }
 
     #[test]

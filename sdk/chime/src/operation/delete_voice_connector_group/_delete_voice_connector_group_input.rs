@@ -27,6 +27,7 @@ pub struct DeleteVoiceConnectorGroupInputBuilder {
 }
 impl DeleteVoiceConnectorGroupInputBuilder {
     /// <p>The Amazon Chime Voice Connector group ID.</p>
+    /// This field is required.
     pub fn voice_connector_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_group_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteVoiceConnectorGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_voice_connector_group::DeleteVoiceConnectorGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_voice_connector_group::DeleteVoiceConnectorGroupInput {
             voice_connector_group_id: self.voice_connector_group_id,

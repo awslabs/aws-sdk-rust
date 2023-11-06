@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateCliToken`](crate::operation::create_cli_token::builders::CreateCliTokenFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::create_cli_token::builders::CreateCliTokenFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::create_cli_token::builders::CreateCliTokenFluentBuilder::set_name): <p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::create_cli_token::builders::CreateCliTokenFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::create_cli_token::builders::CreateCliTokenFluentBuilder::set_name):<br>required: **true**<br><p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p><br>
     /// - On success, responds with [`CreateCliTokenOutput`](crate::operation::create_cli_token::CreateCliTokenOutput) with field(s):
     ///   - [`cli_token(Option<String>)`](crate::operation::create_cli_token::CreateCliTokenOutput::cli_token): <p>An Airflow CLI login token.</p>
     ///   - [`web_server_hostname(Option<String>)`](crate::operation::create_cli_token::CreateCliTokenOutput::web_server_hostname): <p>The Airflow web server hostname for the environment.</p>

@@ -48,6 +48,7 @@ pub struct UpdateRouteInputBuilder {
 }
 impl UpdateRouteInputBuilder {
     /// <p> The ID of the environment in which the route is being updated. </p>
+    /// This field is required.
     pub fn environment_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_identifier = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl UpdateRouteInputBuilder {
         &self.environment_identifier
     }
     /// <p> The ID of the application within which the route is being updated. </p>
+    /// This field is required.
     pub fn application_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_identifier = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl UpdateRouteInputBuilder {
         &self.application_identifier
     }
     /// <p> The unique identifier of the route to update. </p>
+    /// This field is required.
     pub fn route_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_identifier = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl UpdateRouteInputBuilder {
         &self.route_identifier
     }
     /// <p> If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is updated. </p>
+    /// This field is required.
     pub fn activation_state(mut self, input: crate::types::RouteActivationState) -> Self {
         self.activation_state = ::std::option::Option::Some(input);
         self
@@ -104,7 +108,7 @@ impl UpdateRouteInputBuilder {
         &self.activation_state
     }
     /// Consumes the builder and constructs a [`UpdateRouteInput`](crate::operation::update_route::UpdateRouteInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_route::UpdateRouteInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_route::UpdateRouteInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_route::UpdateRouteInput {
             environment_identifier: self.environment_identifier,
             application_identifier: self.application_identifier,

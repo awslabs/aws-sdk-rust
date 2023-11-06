@@ -41,6 +41,7 @@ pub struct UpdateThingGroupInputBuilder {
 }
 impl UpdateThingGroupInputBuilder {
     /// <p>The thing group to update.</p>
+    /// This field is required.
     pub fn thing_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_group_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateThingGroupInputBuilder {
         &self.thing_group_name
     }
     /// <p>The thing group properties.</p>
+    /// This field is required.
     pub fn thing_group_properties(mut self, input: crate::types::ThingGroupProperties) -> Self {
         self.thing_group_properties = ::std::option::Option::Some(input);
         self
@@ -85,7 +87,7 @@ impl UpdateThingGroupInputBuilder {
     /// Consumes the builder and constructs a [`UpdateThingGroupInput`](crate::operation::update_thing_group::UpdateThingGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_thing_group::UpdateThingGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_thing_group::UpdateThingGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_thing_group::UpdateThingGroupInput {
             thing_group_name: self.thing_group_name,
             thing_group_properties: self.thing_group_properties,

@@ -27,6 +27,7 @@ pub struct GetResourcePolicyInputBuilder {
 }
 impl GetResourcePolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the resource associated with the policy. </p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetResourcePolicyInputBuilder {
     /// Consumes the builder and constructs a [`GetResourcePolicyInput`](crate::operation::get_resource_policy::GetResourcePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_resource_policy::GetResourcePolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_resource_policy::GetResourcePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_resource_policy::GetResourcePolicyInput { identifier: self.identifier })
     }
 }

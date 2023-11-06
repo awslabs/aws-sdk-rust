@@ -9,8 +9,10 @@ pub struct GetContainerServicePowersOutput {
 }
 impl GetContainerServicePowersOutput {
     /// <p>An array of objects that describe the powers that can be specified for a container service.</p>
-    pub fn powers(&self) -> ::std::option::Option<&[crate::types::ContainerServicePower]> {
-        self.powers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.powers.is_none()`.
+    pub fn powers(&self) -> &[crate::types::ContainerServicePower] {
+        self.powers.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetContainerServicePowersOutput {

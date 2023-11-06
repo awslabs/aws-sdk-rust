@@ -25,8 +25,10 @@ impl ResourceBudgetEstimate {
         self.resource_type.as_ref()
     }
     /// <p>The cost estimate for the specified budget.</p>
-    pub fn cost_estimates(&self) -> ::std::option::Option<&[crate::types::CostEstimate]> {
-        self.cost_estimates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cost_estimates.is_none()`.
+    pub fn cost_estimates(&self) -> &[crate::types::CostEstimate] {
+        self.cost_estimates.as_deref().unwrap_or_default()
     }
     /// <p>The estimate start time.</p>
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

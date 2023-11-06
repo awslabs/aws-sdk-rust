@@ -34,6 +34,7 @@ pub struct UpdateRecommenderInputBuilder {
 }
 impl UpdateRecommenderInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the recommender to modify.</p>
+    /// This field is required.
     pub fn recommender_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommender_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateRecommenderInputBuilder {
         &self.recommender_arn
     }
     /// <p>The configuration details of the recommender.</p>
+    /// This field is required.
     pub fn recommender_config(mut self, input: crate::types::RecommenderConfig) -> Self {
         self.recommender_config = ::std::option::Option::Some(input);
         self
@@ -64,7 +66,7 @@ impl UpdateRecommenderInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRecommenderInput`](crate::operation::update_recommender::UpdateRecommenderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_recommender::UpdateRecommenderInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_recommender::UpdateRecommenderInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_recommender::UpdateRecommenderInput {
             recommender_arn: self.recommender_arn,
             recommender_config: self.recommender_config,

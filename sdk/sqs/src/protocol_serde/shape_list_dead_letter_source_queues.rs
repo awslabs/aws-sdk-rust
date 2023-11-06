@@ -56,7 +56,9 @@ pub fn de_list_dead_letter_source_queues_http_response(
         output = crate::protocol_serde::shape_list_dead_letter_source_queues::de_list_dead_letter_source_queues(_response_body, output)
             .map_err(crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::list_dead_letter_source_queues_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesError::unhandled)?
     })
 }
 
@@ -93,7 +95,7 @@ pub fn de_list_dead_letter_source_queues(
             s if s.matches("QueueUrl") /* queueUrls com.amazonaws.sqs.synthetic#ListDeadLetterSourceQueuesOutput$queueUrls */ =>  {
                 let var_1 =
                     Some(
-                        Result::<::std::vec::Vec<::std::string::String>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<::std::string::String>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_2 = builder.queue_urls.take().unwrap_or_default();
                             list_2.push(
                                 Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(

@@ -2,21 +2,21 @@
 pub fn ser_aws_managed_rules_atp_rule_set(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsManagedRulesAtpRuleSet,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.login_path {
-        object.key("LoginPath").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("LoginPath").string(input.login_path.as_str());
     }
-    if let Some(var_2) = &input.request_inspection {
+    if let Some(var_1) = &input.request_inspection {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("RequestInspection").start_object();
-        crate::protocol_serde::shape_request_inspection::ser_request_inspection(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("RequestInspection").start_object();
+        crate::protocol_serde::shape_request_inspection::ser_request_inspection(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.response_inspection {
+    if let Some(var_3) = &input.response_inspection {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("ResponseInspection").start_object();
-        crate::protocol_serde::shape_response_inspection::ser_response_inspection(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("ResponseInspection").start_object();
+        crate::protocol_serde::shape_response_inspection::ser_response_inspection(&mut object_4, var_3)?;
+        object_4.finish();
     }
     if input.enable_regex_in_path {
         object.key("EnableRegexInPath").boolean(input.enable_regex_in_path);
@@ -66,7 +66,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::aws_managed_rules_atp_rule_set_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -41,6 +41,7 @@ pub struct DescribeComponentConfigurationInputBuilder {
 }
 impl DescribeComponentConfigurationInputBuilder {
     /// <p>The name of the resource group.</p>
+    /// This field is required.
     pub fn resource_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_group_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DescribeComponentConfigurationInputBuilder {
         &self.resource_group_name
     }
     /// <p>The name of the component.</p>
+    /// This field is required.
     pub fn component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_name = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +89,7 @@ impl DescribeComponentConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_component_configuration::DescribeComponentConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_component_configuration::DescribeComponentConfigurationInput {
             resource_group_name: self.resource_group_name,

@@ -11,8 +11,10 @@ pub struct ListOperationsOutput {
 }
 impl ListOperationsOutput {
     /// <p>A list of operation summary information records. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
-    pub fn operation_summary_list(&self) -> ::std::option::Option<&[crate::types::OperationSummary]> {
-        self.operation_summary_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.operation_summary_list.is_none()`.
+    pub fn operation_summary_list(&self) -> &[crate::types::OperationSummary] {
+        self.operation_summary_list.as_deref().unwrap_or_default()
     }
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

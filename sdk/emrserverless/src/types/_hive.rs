@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Hive {
     /// <p>The query for the Hive job run.</p>
-    pub query: ::std::option::Option<::std::string::String>,
+    pub query: ::std::string::String,
     /// <p>The query file for the Hive job run.</p>
     pub init_query_file: ::std::option::Option<::std::string::String>,
     /// <p>The parameters for the Hive job run.</p>
@@ -13,8 +13,9 @@ pub struct Hive {
 }
 impl Hive {
     /// <p>The query for the Hive job run.</p>
-    pub fn query(&self) -> ::std::option::Option<&str> {
-        self.query.as_deref()
+    pub fn query(&self) -> &str {
+        use std::ops::Deref;
+        self.query.deref()
     }
     /// <p>The query file for the Hive job run.</p>
     pub fn init_query_file(&self) -> ::std::option::Option<&str> {
@@ -51,6 +52,7 @@ pub struct HiveBuilder {
 }
 impl HiveBuilder {
     /// <p>The query for the Hive job run.</p>
+    /// This field is required.
     pub fn query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query = ::std::option::Option::Some(input.into());
         self
@@ -93,12 +95,19 @@ impl HiveBuilder {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`Hive`](crate::types::Hive).
-    pub fn build(self) -> crate::types::Hive {
-        crate::types::Hive {
-            query: self.query,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`query`](crate::types::builders::HiveBuilder::query)
+    pub fn build(self) -> ::std::result::Result<crate::types::Hive, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Hive {
+            query: self.query.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "query",
+                    "query was not specified but it is required when building Hive",
+                )
+            })?,
             init_query_file: self.init_query_file,
             parameters: self.parameters,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for HiveBuilder {

@@ -28,6 +28,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "IpAddresses" => {
+                            builder = builder.set_ip_addresses(crate::protocol_serde::shape_ip_address_list::de_ip_address_list(tokens)?);
+                        }
                         "OsVersion" => {
                             builder = builder.set_os_version(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -28,6 +28,7 @@ pub struct DeleteDedicatedIpPoolInputBuilder {
 }
 impl DeleteDedicatedIpPoolInputBuilder {
     /// <p>The name of the dedicated IP pool that you want to delete.</p>
+    /// This field is required.
     pub fn pool_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pool_name = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl DeleteDedicatedIpPoolInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDedicatedIpPoolInput`](crate::operation::delete_dedicated_ip_pool::DeleteDedicatedIpPoolInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_dedicated_ip_pool::DeleteDedicatedIpPoolInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_dedicated_ip_pool::DeleteDedicatedIpPoolInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_dedicated_ip_pool::DeleteDedicatedIpPoolInput { pool_name: self.pool_name })
     }

@@ -2,7 +2,7 @@
 pub fn ser_update_findings_feedback_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_findings_feedback::UpdateFindingsFeedbackInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.comments {
         object.key("comments").string(var_1.as_str());
     }

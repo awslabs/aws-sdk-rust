@@ -34,6 +34,7 @@ pub struct UpdateAssessmentStatusInputBuilder {
 }
 impl UpdateAssessmentStatusInputBuilder {
     /// <p> The unique identifier for the assessment. </p>
+    /// This field is required.
     pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateAssessmentStatusInputBuilder {
         &self.assessment_id
     }
     /// <p> The current status of the assessment. </p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::AssessmentStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -64,8 +66,10 @@ impl UpdateAssessmentStatusInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAssessmentStatusInput`](crate::operation::update_assessment_status::UpdateAssessmentStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_assessment_status::UpdateAssessmentStatusInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::update_assessment_status::UpdateAssessmentStatusInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::update_assessment_status::UpdateAssessmentStatusInput {
             assessment_id: self.assessment_id,
             status: self.status,

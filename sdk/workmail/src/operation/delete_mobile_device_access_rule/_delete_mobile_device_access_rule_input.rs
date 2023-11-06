@@ -34,6 +34,7 @@ pub struct DeleteMobileDeviceAccessRuleInputBuilder {
 }
 impl DeleteMobileDeviceAccessRuleInputBuilder {
     /// <p>The WorkMail organization under which the rule will be deleted.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteMobileDeviceAccessRuleInputBuilder {
         &self.organization_id
     }
     /// <p>The identifier of the rule to be deleted.</p>
+    /// This field is required.
     pub fn mobile_device_access_rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mobile_device_access_rule_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl DeleteMobileDeviceAccessRuleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRuleInput {
             organization_id: self.organization_id,

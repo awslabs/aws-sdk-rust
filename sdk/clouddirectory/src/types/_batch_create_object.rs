@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchCreateObject {
     /// <p>A list of <code>FacetArns</code> that will be associated with the object. For more information, see <code>arns</code>.</p>
-    pub schema_facet: ::std::option::Option<::std::vec::Vec<crate::types::SchemaFacet>>,
+    pub schema_facet: ::std::vec::Vec<crate::types::SchemaFacet>,
     /// <p>An attribute map, which contains an attribute ARN as the key and attribute value as the map value.</p>
-    pub object_attribute_list: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
+    pub object_attribute_list: ::std::vec::Vec<crate::types::AttributeKeyAndValue>,
     /// <p>If specified, the parent reference to which this object will be attached.</p>
     pub parent_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>The name of the link.</p>
@@ -17,12 +17,14 @@ pub struct BatchCreateObject {
 }
 impl BatchCreateObject {
     /// <p>A list of <code>FacetArns</code> that will be associated with the object. For more information, see <code>arns</code>.</p>
-    pub fn schema_facet(&self) -> ::std::option::Option<&[crate::types::SchemaFacet]> {
-        self.schema_facet.as_deref()
+    pub fn schema_facet(&self) -> &[crate::types::SchemaFacet] {
+        use std::ops::Deref;
+        self.schema_facet.deref()
     }
     /// <p>An attribute map, which contains an attribute ARN as the key and attribute value as the map value.</p>
-    pub fn object_attribute_list(&self) -> ::std::option::Option<&[crate::types::AttributeKeyAndValue]> {
-        self.object_attribute_list.as_deref()
+    pub fn object_attribute_list(&self) -> &[crate::types::AttributeKeyAndValue] {
+        use std::ops::Deref;
+        self.object_attribute_list.deref()
     }
     /// <p>If specified, the parent reference to which this object will be attached.</p>
     pub fn parent_reference(&self) -> ::std::option::Option<&crate::types::ObjectReference> {
@@ -138,13 +140,26 @@ impl BatchCreateObjectBuilder {
         &self.batch_reference_name
     }
     /// Consumes the builder and constructs a [`BatchCreateObject`](crate::types::BatchCreateObject).
-    pub fn build(self) -> crate::types::BatchCreateObject {
-        crate::types::BatchCreateObject {
-            schema_facet: self.schema_facet,
-            object_attribute_list: self.object_attribute_list,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`schema_facet`](crate::types::builders::BatchCreateObjectBuilder::schema_facet)
+    /// - [`object_attribute_list`](crate::types::builders::BatchCreateObjectBuilder::object_attribute_list)
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchCreateObject, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::BatchCreateObject {
+            schema_facet: self.schema_facet.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "schema_facet",
+                    "schema_facet was not specified but it is required when building BatchCreateObject",
+                )
+            })?,
+            object_attribute_list: self.object_attribute_list.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "object_attribute_list",
+                    "object_attribute_list was not specified but it is required when building BatchCreateObject",
+                )
+            })?,
             parent_reference: self.parent_reference,
             link_name: self.link_name,
             batch_reference_name: self.batch_reference_name,
-        }
+        })
     }
 }

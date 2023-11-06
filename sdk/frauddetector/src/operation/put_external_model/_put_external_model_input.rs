@@ -44,8 +44,10 @@ impl PutExternalModelInput {
         self.model_endpoint_status.as_ref()
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl PutExternalModelInput {
@@ -69,6 +71,7 @@ pub struct PutExternalModelInputBuilder {
 }
 impl PutExternalModelInputBuilder {
     /// <p>The model endpoints name.</p>
+    /// This field is required.
     pub fn model_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_endpoint = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +86,7 @@ impl PutExternalModelInputBuilder {
         &self.model_endpoint
     }
     /// <p>The source of the model.</p>
+    /// This field is required.
     pub fn model_source(mut self, input: crate::types::ModelSource) -> Self {
         self.model_source = ::std::option::Option::Some(input);
         self
@@ -97,6 +101,7 @@ impl PutExternalModelInputBuilder {
         &self.model_source
     }
     /// <p>The IAM role used to invoke the model endpoint.</p>
+    /// This field is required.
     pub fn invoke_model_endpoint_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.invoke_model_endpoint_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +116,7 @@ impl PutExternalModelInputBuilder {
         &self.invoke_model_endpoint_role_arn
     }
     /// <p>The model endpoint input configuration.</p>
+    /// This field is required.
     pub fn input_configuration(mut self, input: crate::types::ModelInputConfiguration) -> Self {
         self.input_configuration = ::std::option::Option::Some(input);
         self
@@ -125,6 +131,7 @@ impl PutExternalModelInputBuilder {
         &self.input_configuration
     }
     /// <p>The model endpoint output configuration.</p>
+    /// This field is required.
     pub fn output_configuration(mut self, input: crate::types::ModelOutputConfiguration) -> Self {
         self.output_configuration = ::std::option::Option::Some(input);
         self
@@ -139,6 +146,7 @@ impl PutExternalModelInputBuilder {
         &self.output_configuration
     }
     /// <p>The model endpoint’s status in Amazon Fraud Detector.</p>
+    /// This field is required.
     pub fn model_endpoint_status(mut self, input: crate::types::ModelEndpointStatus) -> Self {
         self.model_endpoint_status = ::std::option::Option::Some(input);
         self
@@ -175,7 +183,7 @@ impl PutExternalModelInputBuilder {
     /// Consumes the builder and constructs a [`PutExternalModelInput`](crate::operation::put_external_model::PutExternalModelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_external_model::PutExternalModelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_external_model::PutExternalModelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_external_model::PutExternalModelInput {
             model_endpoint: self.model_endpoint,
             model_source: self.model_source,

@@ -9,8 +9,10 @@ pub struct GetDataQualityMetricsOutput {
 }
 impl GetDataQualityMetricsOutput {
     /// <p>A list of the data quality metrics for the <code>AnomalyDetectorArn</code> that you requested.</p>
-    pub fn anomaly_detector_data_quality_metric_list(&self) -> ::std::option::Option<&[crate::types::AnomalyDetectorDataQualityMetric]> {
-        self.anomaly_detector_data_quality_metric_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.anomaly_detector_data_quality_metric_list.is_none()`.
+    pub fn anomaly_detector_data_quality_metric_list(&self) -> &[crate::types::AnomalyDetectorDataQualityMetric] {
+        self.anomaly_detector_data_quality_metric_list.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetDataQualityMetricsOutput {

@@ -42,6 +42,7 @@ pub struct BrokerEbsVolumeInfoBuilder {
 }
 impl BrokerEbsVolumeInfoBuilder {
     /// <p>The ID of the broker to update.</p>
+    /// This field is required.
     pub fn kafka_broker_node_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kafka_broker_node_id = ::std::option::Option::Some(input.into());
         self

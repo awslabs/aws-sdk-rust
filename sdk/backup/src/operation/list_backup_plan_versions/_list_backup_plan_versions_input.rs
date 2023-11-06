@@ -41,6 +41,7 @@ pub struct ListBackupPlanVersionsInputBuilder {
 }
 impl ListBackupPlanVersionsInputBuilder {
     /// <p>Uniquely identifies a backup plan.</p>
+    /// This field is required.
     pub fn backup_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_plan_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListBackupPlanVersionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_backup_plan_versions::ListBackupPlanVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_backup_plan_versions::ListBackupPlanVersionsInput {
             backup_plan_id: self.backup_plan_id,

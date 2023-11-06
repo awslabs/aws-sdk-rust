@@ -43,11 +43,10 @@ pub fn de_execute_statement_http_error(
                 output = crate::protocol_serde::shape_execute_statement_exception::de_execute_statement_exception_json_err(_response_body, output)
                     .map_err(crate::operation::execute_statement::ExecuteStatementError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::execute_statement_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::execute_statement::ExecuteStatementError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::execute_statement::ExecuteStatementError::ValidationException({
@@ -87,12 +86,12 @@ pub fn de_execute_statement_http_response(
 
 pub fn ser_execute_statement_input(
     input: &crate::operation::execute_statement::ExecuteStatementInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_execute_statement_input::ser_execute_statement_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_execute_statement(

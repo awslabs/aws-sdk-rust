@@ -15,8 +15,10 @@ pub struct PutEvaluationsInput {
 }
 impl PutEvaluationsInput {
     /// <p>The assessments that the Lambda function performs. Each evaluation identifies an Amazon Web Services resource and indicates whether it complies with the Config rule that invokes the Lambda function.</p>
-    pub fn evaluations(&self) -> ::std::option::Option<&[crate::types::Evaluation]> {
-        self.evaluations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.evaluations.is_none()`.
+    pub fn evaluations(&self) -> &[crate::types::Evaluation] {
+        self.evaluations.as_deref().unwrap_or_default()
     }
     /// <p>An encrypted token that associates an evaluation with an Config rule. Identifies the rule and the event that triggered the evaluation.</p>
     pub fn result_token(&self) -> ::std::option::Option<&str> {
@@ -66,6 +68,7 @@ impl PutEvaluationsInputBuilder {
         &self.evaluations
     }
     /// <p>An encrypted token that associates an evaluation with an Config rule. Identifies the rule and the event that triggered the evaluation.</p>
+    /// This field is required.
     pub fn result_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.result_token = ::std::option::Option::Some(input.into());
         self
@@ -102,7 +105,7 @@ impl PutEvaluationsInputBuilder {
     /// Consumes the builder and constructs a [`PutEvaluationsInput`](crate::operation::put_evaluations::PutEvaluationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_evaluations::PutEvaluationsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_evaluations::PutEvaluationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_evaluations::PutEvaluationsInput {
             evaluations: self.evaluations,
             result_token: self.result_token,

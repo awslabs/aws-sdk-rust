@@ -41,6 +41,7 @@ pub struct ListMailDomainsInputBuilder {
 }
 impl ListMailDomainsInputBuilder {
     /// <p>The WorkMail organization for which to list domains.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl ListMailDomainsInputBuilder {
     /// Consumes the builder and constructs a [`ListMailDomainsInput`](crate::operation::list_mail_domains::ListMailDomainsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_mail_domains::ListMailDomainsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_mail_domains::ListMailDomainsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_mail_domains::ListMailDomainsInput {
             organization_id: self.organization_id,
             max_results: self.max_results,

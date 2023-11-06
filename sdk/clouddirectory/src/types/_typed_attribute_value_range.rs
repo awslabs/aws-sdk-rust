@@ -5,26 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TypedAttributeValueRange {
     /// <p>The inclusive or exclusive range start.</p>
-    pub start_mode: ::std::option::Option<crate::types::RangeMode>,
+    pub start_mode: crate::types::RangeMode,
     /// <p>The value to start the range at.</p>
     pub start_value: ::std::option::Option<crate::types::TypedAttributeValue>,
     /// <p>The inclusive or exclusive range end.</p>
-    pub end_mode: ::std::option::Option<crate::types::RangeMode>,
+    pub end_mode: crate::types::RangeMode,
     /// <p>The attribute value to terminate the range at.</p>
     pub end_value: ::std::option::Option<crate::types::TypedAttributeValue>,
 }
 impl TypedAttributeValueRange {
     /// <p>The inclusive or exclusive range start.</p>
-    pub fn start_mode(&self) -> ::std::option::Option<&crate::types::RangeMode> {
-        self.start_mode.as_ref()
+    pub fn start_mode(&self) -> &crate::types::RangeMode {
+        &self.start_mode
     }
     /// <p>The value to start the range at.</p>
     pub fn start_value(&self) -> ::std::option::Option<&crate::types::TypedAttributeValue> {
         self.start_value.as_ref()
     }
     /// <p>The inclusive or exclusive range end.</p>
-    pub fn end_mode(&self) -> ::std::option::Option<&crate::types::RangeMode> {
-        self.end_mode.as_ref()
+    pub fn end_mode(&self) -> &crate::types::RangeMode {
+        &self.end_mode
     }
     /// <p>The attribute value to terminate the range at.</p>
     pub fn end_value(&self) -> ::std::option::Option<&crate::types::TypedAttributeValue> {
@@ -49,6 +49,7 @@ pub struct TypedAttributeValueRangeBuilder {
 }
 impl TypedAttributeValueRangeBuilder {
     /// <p>The inclusive or exclusive range start.</p>
+    /// This field is required.
     pub fn start_mode(mut self, input: crate::types::RangeMode) -> Self {
         self.start_mode = ::std::option::Option::Some(input);
         self
@@ -77,6 +78,7 @@ impl TypedAttributeValueRangeBuilder {
         &self.start_value
     }
     /// <p>The inclusive or exclusive range end.</p>
+    /// This field is required.
     pub fn end_mode(mut self, input: crate::types::RangeMode) -> Self {
         self.end_mode = ::std::option::Option::Some(input);
         self
@@ -105,12 +107,25 @@ impl TypedAttributeValueRangeBuilder {
         &self.end_value
     }
     /// Consumes the builder and constructs a [`TypedAttributeValueRange`](crate::types::TypedAttributeValueRange).
-    pub fn build(self) -> crate::types::TypedAttributeValueRange {
-        crate::types::TypedAttributeValueRange {
-            start_mode: self.start_mode,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`start_mode`](crate::types::builders::TypedAttributeValueRangeBuilder::start_mode)
+    /// - [`end_mode`](crate::types::builders::TypedAttributeValueRangeBuilder::end_mode)
+    pub fn build(self) -> ::std::result::Result<crate::types::TypedAttributeValueRange, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TypedAttributeValueRange {
+            start_mode: self.start_mode.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "start_mode",
+                    "start_mode was not specified but it is required when building TypedAttributeValueRange",
+                )
+            })?,
             start_value: self.start_value,
-            end_mode: self.end_mode,
+            end_mode: self.end_mode.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "end_mode",
+                    "end_mode was not specified but it is required when building TypedAttributeValueRange",
+                )
+            })?,
             end_value: self.end_value,
-        }
+        })
     }
 }

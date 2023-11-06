@@ -45,6 +45,7 @@ pub struct ListAddonsInputBuilder {
 }
 impl ListAddonsInputBuilder {
     /// <p>The name of the cluster.</p>
+    /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
@@ -93,7 +94,7 @@ impl ListAddonsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListAddonsInput`](crate::operation::list_addons::ListAddonsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_addons::ListAddonsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_addons::ListAddonsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_addons::ListAddonsInput {
             cluster_name: self.cluster_name,
             max_results: self.max_results,

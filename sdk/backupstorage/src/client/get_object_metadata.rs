@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetObjectMetadata`](crate::operation::get_object_metadata::builders::GetObjectMetadataFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`storage_job_id(impl Into<String>)`](crate::operation::get_object_metadata::builders::GetObjectMetadataFluentBuilder::storage_job_id) / [`set_storage_job_id(Option<String>)`](crate::operation::get_object_metadata::builders::GetObjectMetadataFluentBuilder::set_storage_job_id): Backup job id for the in-progress backup.
-    ///   - [`object_token(impl Into<String>)`](crate::operation::get_object_metadata::builders::GetObjectMetadataFluentBuilder::object_token) / [`set_object_token(Option<String>)`](crate::operation::get_object_metadata::builders::GetObjectMetadataFluentBuilder::set_object_token): Object token.
+    ///   - [`storage_job_id(impl Into<String>)`](crate::operation::get_object_metadata::builders::GetObjectMetadataFluentBuilder::storage_job_id) / [`set_storage_job_id(Option<String>)`](crate::operation::get_object_metadata::builders::GetObjectMetadataFluentBuilder::set_storage_job_id):<br>required: **true**<br>Backup job id for the in-progress backup.<br>
+    ///   - [`object_token(impl Into<String>)`](crate::operation::get_object_metadata::builders::GetObjectMetadataFluentBuilder::object_token) / [`set_object_token(Option<String>)`](crate::operation::get_object_metadata::builders::GetObjectMetadataFluentBuilder::set_object_token):<br>required: **true**<br>Object token.<br>
     /// - On success, responds with [`GetObjectMetadataOutput`](crate::operation::get_object_metadata::GetObjectMetadataOutput) with field(s):
     ///   - [`metadata_string(Option<String>)`](crate::operation::get_object_metadata::GetObjectMetadataOutput::metadata_string): Metadata string.
     ///   - [`metadata_blob(ByteStream)`](crate::operation::get_object_metadata::GetObjectMetadataOutput::metadata_blob): Metadata blob.

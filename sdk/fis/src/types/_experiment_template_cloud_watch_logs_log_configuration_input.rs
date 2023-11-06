@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExperimentTemplateCloudWatchLogsLogConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the destination Amazon CloudWatch Logs log group.</p>
-    pub log_group_arn: ::std::option::Option<::std::string::String>,
+    pub log_group_arn: ::std::string::String,
 }
 impl ExperimentTemplateCloudWatchLogsLogConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the destination Amazon CloudWatch Logs log group.</p>
-    pub fn log_group_arn(&self) -> ::std::option::Option<&str> {
-        self.log_group_arn.as_deref()
+    pub fn log_group_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.log_group_arn.deref()
     }
 }
 impl ExperimentTemplateCloudWatchLogsLogConfigurationInput {
@@ -28,6 +29,7 @@ pub struct ExperimentTemplateCloudWatchLogsLogConfigurationInputBuilder {
 }
 impl ExperimentTemplateCloudWatchLogsLogConfigurationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the destination Amazon CloudWatch Logs log group.</p>
+    /// This field is required.
     pub fn log_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_arn = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,19 @@ impl ExperimentTemplateCloudWatchLogsLogConfigurationInputBuilder {
         &self.log_group_arn
     }
     /// Consumes the builder and constructs a [`ExperimentTemplateCloudWatchLogsLogConfigurationInput`](crate::types::ExperimentTemplateCloudWatchLogsLogConfigurationInput).
-    pub fn build(self) -> crate::types::ExperimentTemplateCloudWatchLogsLogConfigurationInput {
-        crate::types::ExperimentTemplateCloudWatchLogsLogConfigurationInput {
-            log_group_arn: self.log_group_arn,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`log_group_arn`](crate::types::builders::ExperimentTemplateCloudWatchLogsLogConfigurationInputBuilder::log_group_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::ExperimentTemplateCloudWatchLogsLogConfigurationInput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::types::ExperimentTemplateCloudWatchLogsLogConfigurationInput {
+            log_group_arn: self.log_group_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "log_group_arn",
+                    "log_group_arn was not specified but it is required when building ExperimentTemplateCloudWatchLogsLogConfigurationInput",
+                )
+            })?,
+        })
     }
 }

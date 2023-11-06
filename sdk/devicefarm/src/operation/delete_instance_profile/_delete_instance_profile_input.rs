@@ -27,6 +27,7 @@ pub struct DeleteInstanceProfileInputBuilder {
 }
 impl DeleteInstanceProfileInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the instance profile you are requesting to delete.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteInstanceProfileInputBuilder {
     /// Consumes the builder and constructs a [`DeleteInstanceProfileInput`](crate::operation::delete_instance_profile::DeleteInstanceProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_instance_profile::DeleteInstanceProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_instance_profile::DeleteInstanceProfileInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_instance_profile::DeleteInstanceProfileInput { arn: self.arn })
     }

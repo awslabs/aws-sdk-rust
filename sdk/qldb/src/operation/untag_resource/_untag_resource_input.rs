@@ -16,8 +16,10 @@ impl UntagResourceInput {
         self.resource_arn.as_deref()
     }
     /// <p>The list of tag keys to remove.</p>
-    pub fn tag_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tag_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_keys.is_none()`.
+    pub fn tag_keys(&self) -> &[::std::string::String] {
+        self.tag_keys.as_deref().unwrap_or_default()
     }
 }
 impl UntagResourceInput {
@@ -37,6 +39,7 @@ pub struct UntagResourceInputBuilder {
 impl UntagResourceInputBuilder {
     /// <p>The Amazon Resource Name (ARN) from which to remove the tags. For example:</p>
     /// <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -75,7 +78,7 @@ impl UntagResourceInputBuilder {
     /// Consumes the builder and constructs a [`UntagResourceInput`](crate::operation::untag_resource::UntagResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::untag_resource::UntagResourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::untag_resource::UntagResourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::untag_resource::UntagResourceInput {
             resource_arn: self.resource_arn,
             tag_keys: self.tag_keys,

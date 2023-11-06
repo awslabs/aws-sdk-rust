@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RoomSkillParameter {
     /// <p>The parameter key of a room skill parameter. ParameterKey is an enumerated type that only takes “DEFAULT” or “SCOPE” as valid values.</p>
-    pub parameter_key: ::std::option::Option<::std::string::String>,
+    pub parameter_key: ::std::string::String,
     /// <p>The parameter value of a room skill parameter.</p>
-    pub parameter_value: ::std::option::Option<::std::string::String>,
+    pub parameter_value: ::std::string::String,
 }
 impl RoomSkillParameter {
     /// <p>The parameter key of a room skill parameter. ParameterKey is an enumerated type that only takes “DEFAULT” or “SCOPE” as valid values.</p>
-    pub fn parameter_key(&self) -> ::std::option::Option<&str> {
-        self.parameter_key.as_deref()
+    pub fn parameter_key(&self) -> &str {
+        use std::ops::Deref;
+        self.parameter_key.deref()
     }
     /// <p>The parameter value of a room skill parameter.</p>
-    pub fn parameter_value(&self) -> ::std::option::Option<&str> {
-        self.parameter_value.as_deref()
+    pub fn parameter_value(&self) -> &str {
+        use std::ops::Deref;
+        self.parameter_value.deref()
     }
 }
 impl RoomSkillParameter {
@@ -35,6 +37,7 @@ pub struct RoomSkillParameterBuilder {
 }
 impl RoomSkillParameterBuilder {
     /// <p>The parameter key of a room skill parameter. ParameterKey is an enumerated type that only takes “DEFAULT” or “SCOPE” as valid values.</p>
+    /// This field is required.
     pub fn parameter_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_key = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl RoomSkillParameterBuilder {
         &self.parameter_key
     }
     /// <p>The parameter value of a room skill parameter.</p>
+    /// This field is required.
     pub fn parameter_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_value = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl RoomSkillParameterBuilder {
         &self.parameter_value
     }
     /// Consumes the builder and constructs a [`RoomSkillParameter`](crate::types::RoomSkillParameter).
-    pub fn build(self) -> crate::types::RoomSkillParameter {
-        crate::types::RoomSkillParameter {
-            parameter_key: self.parameter_key,
-            parameter_value: self.parameter_value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`parameter_key`](crate::types::builders::RoomSkillParameterBuilder::parameter_key)
+    /// - [`parameter_value`](crate::types::builders::RoomSkillParameterBuilder::parameter_value)
+    pub fn build(self) -> ::std::result::Result<crate::types::RoomSkillParameter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RoomSkillParameter {
+            parameter_key: self.parameter_key.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "parameter_key",
+                    "parameter_key was not specified but it is required when building RoomSkillParameter",
+                )
+            })?,
+            parameter_value: self.parameter_value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "parameter_value",
+                    "parameter_value was not specified but it is required when building RoomSkillParameter",
+                )
+            })?,
+        })
     }
 }

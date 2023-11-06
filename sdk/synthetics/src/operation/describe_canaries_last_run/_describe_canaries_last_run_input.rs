@@ -24,8 +24,10 @@ impl DescribeCanariesLastRunInput {
     /// <p>Use this parameter to return only canaries that match the names that you specify here. You can specify as many as five canary names.</p>
     /// <p>If you specify this parameter, the operation is successful only if you have authorization to view all the canaries that you specify in your request. If you do not have permission to view any of the canaries, the request fails with a 403 response.</p>
     /// <p>You are required to use the <code>Names</code> parameter if you are logged on to a user or role that has an IAM policy that restricts which canaries that you are allowed to view. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html"> Limiting a user to viewing specific canaries</a>.</p>
-    pub fn names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.names.is_none()`.
+    pub fn names(&self) -> &[::std::string::String] {
+        self.names.as_deref().unwrap_or_default()
     }
 }
 impl DescribeCanariesLastRunInput {
@@ -103,7 +105,7 @@ impl DescribeCanariesLastRunInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_canaries_last_run::DescribeCanariesLastRunInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_canaries_last_run::DescribeCanariesLastRunInput {
             next_token: self.next_token,

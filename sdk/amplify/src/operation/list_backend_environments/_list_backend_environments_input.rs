@@ -49,6 +49,7 @@ pub struct ListBackendEnvironmentsInputBuilder {
 }
 impl ListBackendEnvironmentsInputBuilder {
     /// <p> The unique ID for an Amplify app. </p>
+    /// This field is required.
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
         self
@@ -109,7 +110,7 @@ impl ListBackendEnvironmentsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_backend_environments::ListBackendEnvironmentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_backend_environments::ListBackendEnvironmentsInput {
             app_id: self.app_id,

@@ -2,7 +2,7 @@
 pub fn ser_verify_otp_message_request_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VerifyOtpMessageRequestParameters,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.destination_identity {
         object.key("DestinationIdentity").string(var_1.as_str());
     }

@@ -27,6 +27,7 @@ pub struct GetLineageGroupPolicyInputBuilder {
 }
 impl GetLineageGroupPolicyInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the lineage group.</p>
+    /// This field is required.
     pub fn lineage_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lineage_group_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetLineageGroupPolicyInputBuilder {
     /// Consumes the builder and constructs a [`GetLineageGroupPolicyInput`](crate::operation::get_lineage_group_policy::GetLineageGroupPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_lineage_group_policy::GetLineageGroupPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_lineage_group_policy::GetLineageGroupPolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_lineage_group_policy::GetLineageGroupPolicyInput {
             lineage_group_name: self.lineage_group_name,

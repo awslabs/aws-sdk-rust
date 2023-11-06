@@ -24,7 +24,8 @@ pub struct CreateTopicInput {
     /// </ul>
     /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:</p>
     /// <ul>
-    /// <li> <p> <code>FifoTopic</code> – When this is set to <code>true</code>, a FIFO topic is created.</p> </li>
+    /// <li> <p> <code>ArchivePolicy</code> – Adds or updates an inline policy document to archive messages stored in the specified Amazon SNS topic.</p> </li>
+    /// <li> <p> <code>BeginningArchiveTime</code> – The earliest starting point at which a message in the topic’s archive can be replayed from. This point in time is based on the configured message retention period set by the topic’s message archiving policy.</p> </li>
     /// <li> <p> <code>ContentBasedDeduplication</code> – Enables content-based deduplication for FIFO topics.</p>
     /// <ul>
     /// <li> <p>By default, <code>ContentBasedDeduplication</code> is set to <code>false</code>. If you create a FIFO topic and this attribute is <code>false</code>, you must specify a value for the <code>MessageDeduplicationId</code> parameter for the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a> action. </p> </li>
@@ -65,7 +66,8 @@ impl CreateTopicInput {
     /// </ul>
     /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:</p>
     /// <ul>
-    /// <li> <p> <code>FifoTopic</code> – When this is set to <code>true</code>, a FIFO topic is created.</p> </li>
+    /// <li> <p> <code>ArchivePolicy</code> – Adds or updates an inline policy document to archive messages stored in the specified Amazon SNS topic.</p> </li>
+    /// <li> <p> <code>BeginningArchiveTime</code> – The earliest starting point at which a message in the topic’s archive can be replayed from. This point in time is based on the configured message retention period set by the topic’s message archiving policy.</p> </li>
     /// <li> <p> <code>ContentBasedDeduplication</code> – Enables content-based deduplication for FIFO topics.</p>
     /// <ul>
     /// <li> <p>By default, <code>ContentBasedDeduplication</code> is set to <code>false</code>. If you create a FIFO topic and this attribute is <code>false</code>, you must specify a value for the <code>MessageDeduplicationId</code> parameter for the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a> action. </p> </li>
@@ -78,8 +80,10 @@ impl CreateTopicInput {
     /// <p>The list of tags to add to a new topic.</p> <note>
     /// <p>To be able to tag a topic on creation, you must have the <code>sns:CreateTopic</code> and <code>sns:TagResource</code> permissions.</p>
     /// </note>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The body of the policy document you want to use for this topic.</p>
     /// <p>You can only add one policy per topic.</p>
@@ -109,6 +113,7 @@ impl CreateTopicInputBuilder {
     /// <p>The name of the topic you want to create.</p>
     /// <p>Constraints: Topic names must be made up of only uppercase and lowercase ASCII letters, numbers, underscores, and hyphens, and must be between 1 and 256 characters long.</p>
     /// <p>For a FIFO (first-in-first-out) topic, the name must end with the <code>.fifo</code> suffix. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -146,7 +151,8 @@ impl CreateTopicInputBuilder {
     /// </ul>
     /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:</p>
     /// <ul>
-    /// <li> <p> <code>FifoTopic</code> – When this is set to <code>true</code>, a FIFO topic is created.</p> </li>
+    /// <li> <p> <code>ArchivePolicy</code> – Adds or updates an inline policy document to archive messages stored in the specified Amazon SNS topic.</p> </li>
+    /// <li> <p> <code>BeginningArchiveTime</code> – The earliest starting point at which a message in the topic’s archive can be replayed from. This point in time is based on the configured message retention period set by the topic’s message archiving policy.</p> </li>
     /// <li> <p> <code>ContentBasedDeduplication</code> – Enables content-based deduplication for FIFO topics.</p>
     /// <ul>
     /// <li> <p>By default, <code>ContentBasedDeduplication</code> is set to <code>false</code>. If you create a FIFO topic and this attribute is <code>false</code>, you must specify a value for the <code>MessageDeduplicationId</code> parameter for the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a> action. </p> </li>
@@ -175,7 +181,8 @@ impl CreateTopicInputBuilder {
     /// </ul>
     /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:</p>
     /// <ul>
-    /// <li> <p> <code>FifoTopic</code> – When this is set to <code>true</code>, a FIFO topic is created.</p> </li>
+    /// <li> <p> <code>ArchivePolicy</code> – Adds or updates an inline policy document to archive messages stored in the specified Amazon SNS topic.</p> </li>
+    /// <li> <p> <code>BeginningArchiveTime</code> – The earliest starting point at which a message in the topic’s archive can be replayed from. This point in time is based on the configured message retention period set by the topic’s message archiving policy.</p> </li>
     /// <li> <p> <code>ContentBasedDeduplication</code> – Enables content-based deduplication for FIFO topics.</p>
     /// <ul>
     /// <li> <p>By default, <code>ContentBasedDeduplication</code> is set to <code>false</code>. If you create a FIFO topic and this attribute is <code>false</code>, you must specify a value for the <code>MessageDeduplicationId</code> parameter for the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a> action. </p> </li>
@@ -202,7 +209,8 @@ impl CreateTopicInputBuilder {
     /// </ul>
     /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:</p>
     /// <ul>
-    /// <li> <p> <code>FifoTopic</code> – When this is set to <code>true</code>, a FIFO topic is created.</p> </li>
+    /// <li> <p> <code>ArchivePolicy</code> – Adds or updates an inline policy document to archive messages stored in the specified Amazon SNS topic.</p> </li>
+    /// <li> <p> <code>BeginningArchiveTime</code> – The earliest starting point at which a message in the topic’s archive can be replayed from. This point in time is based on the configured message retention period set by the topic’s message archiving policy.</p> </li>
     /// <li> <p> <code>ContentBasedDeduplication</code> – Enables content-based deduplication for FIFO topics.</p>
     /// <ul>
     /// <li> <p>By default, <code>ContentBasedDeduplication</code> is set to <code>false</code>. If you create a FIFO topic and this attribute is <code>false</code>, you must specify a value for the <code>MessageDeduplicationId</code> parameter for the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a> action. </p> </li>
@@ -262,7 +270,7 @@ impl CreateTopicInputBuilder {
         &self.data_protection_policy
     }
     /// Consumes the builder and constructs a [`CreateTopicInput`](crate::operation::create_topic::CreateTopicInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_topic::CreateTopicInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_topic::CreateTopicInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_topic::CreateTopicInput {
             name: self.name,
             attributes: self.attributes,

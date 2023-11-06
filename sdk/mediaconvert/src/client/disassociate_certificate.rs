@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DisassociateCertificate`](crate::operation::disassociate_certificate::builders::DisassociateCertificateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::disassociate_certificate::builders::DisassociateCertificateFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::disassociate_certificate::builders::DisassociateCertificateFluentBuilder::set_arn): The ARN of the ACM certificate that you want to disassociate from your MediaConvert resource.
+    ///   - [`arn(impl Into<String>)`](crate::operation::disassociate_certificate::builders::DisassociateCertificateFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::disassociate_certificate::builders::DisassociateCertificateFluentBuilder::set_arn):<br>required: **true**<br>The ARN of the ACM certificate that you want to disassociate from your MediaConvert resource.<br>
     /// - On success, responds with [`DisassociateCertificateOutput`](crate::operation::disassociate_certificate::DisassociateCertificateOutput)
     /// - On failure, responds with [`SdkError<DisassociateCertificateError>`](crate::operation::disassociate_certificate::DisassociateCertificateError)
     pub fn disassociate_certificate(&self) -> crate::operation::disassociate_certificate::builders::DisassociateCertificateFluentBuilder {

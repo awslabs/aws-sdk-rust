@@ -2,7 +2,7 @@
 pub fn ser_self_managed_kafka_access_configuration_vpc(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SelfManagedKafkaAccessConfigurationVpc,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.subnets {
         let mut array_2 = object.key("Subnets").start_array();
         for item_3 in var_1 {

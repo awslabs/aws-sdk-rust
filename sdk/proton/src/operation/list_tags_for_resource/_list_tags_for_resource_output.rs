@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTagsForResourceOutput {
     /// <p>A list of resource tags with detail data.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::vec::Vec<crate::types::Tag>,
     /// <p>A token that indicates the location of the next resource tag in the array of resource tags, after the current requested list of resource tags.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>A list of resource tags with detail data.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        use std::ops::Deref;
+        self.tags.deref()
     }
     /// <p>A token that indicates the location of the next resource tag in the array of resource tags, after the current requested list of resource tags.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,21 @@ impl ListTagsForResourceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::operation::list_tags_for_resource::ListTagsForResourceOutput).
-    pub fn build(self) -> crate::operation::list_tags_for_resource::ListTagsForResourceOutput {
-        crate::operation::list_tags_for_resource::ListTagsForResourceOutput {
-            tags: self.tags,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`tags`](crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder::tags)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_tags_for_resource::ListTagsForResourceOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_tags_for_resource::ListTagsForResourceOutput {
+            tags: self.tags.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "tags",
+                    "tags was not specified but it is required when building ListTagsForResourceOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

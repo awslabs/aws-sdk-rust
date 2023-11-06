@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultipleOperatingModes {
     /// <p> Indicates whether there is a potential data issue related to having multiple operating modes. </p>
-    pub status: ::std::option::Option<crate::types::StatisticalIssueStatus>,
+    pub status: crate::types::StatisticalIssueStatus,
 }
 impl MultipleOperatingModes {
     /// <p> Indicates whether there is a potential data issue related to having multiple operating modes. </p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::StatisticalIssueStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::StatisticalIssueStatus {
+        &self.status
     }
 }
 impl MultipleOperatingModes {
@@ -28,6 +28,7 @@ pub struct MultipleOperatingModesBuilder {
 }
 impl MultipleOperatingModesBuilder {
     /// <p> Indicates whether there is a potential data issue related to having multiple operating modes. </p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::StatisticalIssueStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,16 @@ impl MultipleOperatingModesBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`MultipleOperatingModes`](crate::types::MultipleOperatingModes).
-    pub fn build(self) -> crate::types::MultipleOperatingModes {
-        crate::types::MultipleOperatingModes { status: self.status }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::types::builders::MultipleOperatingModesBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::MultipleOperatingModes, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::MultipleOperatingModes {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building MultipleOperatingModes",
+                )
+            })?,
+        })
     }
 }

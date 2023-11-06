@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateJobPriorityOutput {
     /// <p>The ID for the job whose priority Amazon S3 updated.</p>
-    pub job_id: ::std::option::Option<::std::string::String>,
+    pub job_id: ::std::string::String,
     /// <p>The new priority assigned to the specified job.</p>
     pub priority: i32,
     _request_id: Option<String>,
 }
 impl UpdateJobPriorityOutput {
     /// <p>The ID for the job whose priority Amazon S3 updated.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
-        self.job_id.as_deref()
+    pub fn job_id(&self) -> &str {
+        use std::ops::Deref;
+        self.job_id.deref()
     }
     /// <p>The new priority assigned to the specified job.</p>
     pub fn priority(&self) -> i32 {
@@ -41,6 +42,7 @@ pub struct UpdateJobPriorityOutputBuilder {
 }
 impl UpdateJobPriorityOutputBuilder {
     /// <p>The ID for the job whose priority Amazon S3 updated.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +57,7 @@ impl UpdateJobPriorityOutputBuilder {
         &self.job_id
     }
     /// <p>The new priority assigned to the specified job.</p>
+    /// This field is required.
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
         self
@@ -78,11 +81,20 @@ impl UpdateJobPriorityOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateJobPriorityOutput`](crate::operation::update_job_priority::UpdateJobPriorityOutput).
-    pub fn build(self) -> crate::operation::update_job_priority::UpdateJobPriorityOutput {
-        crate::operation::update_job_priority::UpdateJobPriorityOutput {
-            job_id: self.job_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`job_id`](crate::operation::update_job_priority::builders::UpdateJobPriorityOutputBuilder::job_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_job_priority::UpdateJobPriorityOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_job_priority::UpdateJobPriorityOutput {
+            job_id: self.job_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "job_id",
+                    "job_id was not specified but it is required when building UpdateJobPriorityOutput",
+                )
+            })?,
             priority: self.priority.unwrap_or_default(),
             _request_id: self._request_id,
-        }
+        })
     }
 }

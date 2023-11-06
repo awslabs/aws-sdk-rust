@@ -19,16 +19,20 @@ impl GetUnfilteredTableMetadataOutput {
         self.table.as_ref()
     }
     /// <p>A list of column names that the user has been granted access to.</p>
-    pub fn authorized_columns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.authorized_columns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.authorized_columns.is_none()`.
+    pub fn authorized_columns(&self) -> &[::std::string::String] {
+        self.authorized_columns.as_deref().unwrap_or_default()
     }
     /// <p>A Boolean value that indicates whether the partition location is registered with Lake Formation.</p>
     pub fn is_registered_with_lake_formation(&self) -> bool {
         self.is_registered_with_lake_formation
     }
     /// <p>A list of column row filters.</p>
-    pub fn cell_filters(&self) -> ::std::option::Option<&[crate::types::ColumnRowFilter]> {
-        self.cell_filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cell_filters.is_none()`.
+    pub fn cell_filters(&self) -> &[crate::types::ColumnRowFilter] {
+        self.cell_filters.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetUnfilteredTableMetadataOutput {

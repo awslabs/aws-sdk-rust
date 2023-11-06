@@ -34,6 +34,7 @@ pub struct GetDatabaseInputBuilder {
 }
 impl GetDatabaseInputBuilder {
     /// <p>The name of the data catalog that contains the database to return.</p>
+    /// This field is required.
     pub fn catalog_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.catalog_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetDatabaseInputBuilder {
         &self.catalog_name
     }
     /// <p>The name of the database to return.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,7 @@ impl GetDatabaseInputBuilder {
         &self.database_name
     }
     /// Consumes the builder and constructs a [`GetDatabaseInput`](crate::operation::get_database::GetDatabaseInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_database::GetDatabaseInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_database::GetDatabaseInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_database::GetDatabaseInput {
             catalog_name: self.catalog_name,
             database_name: self.database_name,

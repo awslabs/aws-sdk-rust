@@ -160,6 +160,7 @@ impl StartRunInputBuilder {
         &self.run_id
     }
     /// <p>A service role for the run.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -292,6 +293,7 @@ impl StartRunInputBuilder {
         &self.tags
     }
     /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
+    /// This field is required.
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_id = ::std::option::Option::Some(input.into());
         self
@@ -320,7 +322,7 @@ impl StartRunInputBuilder {
         &self.retention_mode
     }
     /// Consumes the builder and constructs a [`StartRunInput`](crate::operation::start_run::StartRunInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_run::StartRunInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_run::StartRunInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_run::StartRunInput {
             workflow_id: self.workflow_id,
             workflow_type: self.workflow_type,

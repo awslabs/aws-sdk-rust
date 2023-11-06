@@ -26,8 +26,10 @@ impl ImportSignalCatalogInput {
         self.vss.as_ref()
     }
     /// <p>Metadata that can be used to manage the signal catalog.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ImportSignalCatalogInput {
@@ -48,6 +50,7 @@ pub struct ImportSignalCatalogInputBuilder {
 }
 impl ImportSignalCatalogInputBuilder {
     /// <p>The name of the signal catalog to import.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -112,7 +115,7 @@ impl ImportSignalCatalogInputBuilder {
     /// Consumes the builder and constructs a [`ImportSignalCatalogInput`](crate::operation::import_signal_catalog::ImportSignalCatalogInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::import_signal_catalog::ImportSignalCatalogInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::import_signal_catalog::ImportSignalCatalogInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::import_signal_catalog::ImportSignalCatalogInput {
             name: self.name,

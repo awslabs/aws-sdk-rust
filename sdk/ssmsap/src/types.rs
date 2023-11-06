@@ -41,11 +41,19 @@ pub use crate::types::_database_status::DatabaseStatus;
 
 pub use crate::types::_component::Component;
 
+pub use crate::types::_database_connection::DatabaseConnection;
+
+pub use crate::types::_database_connection_method::DatabaseConnectionMethod;
+
 pub use crate::types::_host::Host;
 
 pub use crate::types::_host_role::HostRole;
 
 pub use crate::types::_associated_host::AssociatedHost;
+
+pub use crate::types::_ip_address_member::IpAddressMember;
+
+pub use crate::types::_allocation_type::AllocationType;
 
 pub use crate::types::_resilience::Resilience;
 
@@ -56,6 +64,8 @@ pub use crate::types::_operation_mode::OperationMode;
 pub use crate::types::_replication_mode::ReplicationMode;
 
 pub use crate::types::_component_status::ComponentStatus;
+
+mod _allocation_type;
 
 mod _application;
 
@@ -89,6 +99,10 @@ mod _credential_type;
 
 mod _database;
 
+mod _database_connection;
+
+mod _database_connection_method;
+
 mod _database_status;
 
 mod _database_summary;
@@ -102,6 +116,8 @@ mod _filter_operator;
 mod _host;
 
 mod _host_role;
+
+mod _ip_address_member;
 
 mod _operation;
 

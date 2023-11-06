@@ -48,7 +48,7 @@ impl GetStaticIpsInputBuilder {
     /// Consumes the builder and constructs a [`GetStaticIpsInput`](crate::operation::get_static_ips::GetStaticIpsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_static_ips::GetStaticIpsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_static_ips::GetStaticIpsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_static_ips::GetStaticIpsInput { page_token: self.page_token })
     }
 }

@@ -10,7 +10,7 @@ pub struct LambdaAction {
     /// <p>For more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
     pub topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Lambda function. An example of an Amazon Web Services Lambda function ARN is <code>arn:aws:lambda:us-west-2:account-id:function:MyFunction</code>. For more information about Amazon Web Services Lambda, see the <a href="https://docs.aws.amazon.com/lambda/latest/dg/welcome.html">Amazon Web Services Lambda Developer Guide</a>.</p>
-    pub function_arn: ::std::option::Option<::std::string::String>,
+    pub function_arn: ::std::string::String,
     /// <p>The invocation type of the Amazon Web Services Lambda function. An invocation type of <code>RequestResponse</code> means that the execution of the function immediately results in a response, and a value of <code>Event</code> means that the function is invoked asynchronously. The default value is <code>Event</code>. For information about Amazon Web Services Lambda invocation types, see the <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">Amazon Web Services Lambda Developer Guide</a>.</p> <important>
     /// <p>There is a 30-second timeout on <code>RequestResponse</code> invocations. You should use <code>Event</code> invocation in most cases. Use <code>RequestResponse</code> only to make a mail flow decision, such as whether to stop the receipt rule or the receipt rule set.</p>
     /// </important>
@@ -23,8 +23,9 @@ impl LambdaAction {
         self.topic_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Lambda function. An example of an Amazon Web Services Lambda function ARN is <code>arn:aws:lambda:us-west-2:account-id:function:MyFunction</code>. For more information about Amazon Web Services Lambda, see the <a href="https://docs.aws.amazon.com/lambda/latest/dg/welcome.html">Amazon Web Services Lambda Developer Guide</a>.</p>
-    pub fn function_arn(&self) -> ::std::option::Option<&str> {
-        self.function_arn.as_deref()
+    pub fn function_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.function_arn.deref()
     }
     /// <p>The invocation type of the Amazon Web Services Lambda function. An invocation type of <code>RequestResponse</code> means that the execution of the function immediately results in a response, and a value of <code>Event</code> means that the function is invoked asynchronously. The default value is <code>Event</code>. For information about Amazon Web Services Lambda invocation types, see the <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">Amazon Web Services Lambda Developer Guide</a>.</p> <important>
     /// <p>There is a 30-second timeout on <code>RequestResponse</code> invocations. You should use <code>Event</code> invocation in most cases. Use <code>RequestResponse</code> only to make a mail flow decision, such as whether to stop the receipt rule or the receipt rule set.</p>
@@ -67,6 +68,7 @@ impl LambdaActionBuilder {
         &self.topic_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Lambda function. An example of an Amazon Web Services Lambda function ARN is <code>arn:aws:lambda:us-west-2:account-id:function:MyFunction</code>. For more information about Amazon Web Services Lambda, see the <a href="https://docs.aws.amazon.com/lambda/latest/dg/welcome.html">Amazon Web Services Lambda Developer Guide</a>.</p>
+    /// This field is required.
     pub fn function_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_arn = ::std::option::Option::Some(input.into());
         self
@@ -101,11 +103,18 @@ impl LambdaActionBuilder {
         &self.invocation_type
     }
     /// Consumes the builder and constructs a [`LambdaAction`](crate::types::LambdaAction).
-    pub fn build(self) -> crate::types::LambdaAction {
-        crate::types::LambdaAction {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`function_arn`](crate::types::builders::LambdaActionBuilder::function_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::LambdaAction, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::LambdaAction {
             topic_arn: self.topic_arn,
-            function_arn: self.function_arn,
+            function_arn: self.function_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "function_arn",
+                    "function_arn was not specified but it is required when building LambdaAction",
+                )
+            })?,
             invocation_type: self.invocation_type,
-        }
+        })
     }
 }

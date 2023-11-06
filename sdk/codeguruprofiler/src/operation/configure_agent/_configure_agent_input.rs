@@ -64,6 +64,7 @@ pub struct ConfigureAgentInputBuilder {
 }
 impl ConfigureAgentInputBuilder {
     /// <p> The name of the profiling group for which the configured agent is collecting profiling data. </p>
+    /// This field is required.
     pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profiling_group_name = ::std::option::Option::Some(input.into());
         self
@@ -150,7 +151,7 @@ impl ConfigureAgentInputBuilder {
     /// Consumes the builder and constructs a [`ConfigureAgentInput`](crate::operation::configure_agent::ConfigureAgentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::configure_agent::ConfigureAgentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::configure_agent::ConfigureAgentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::configure_agent::ConfigureAgentInput {
             profiling_group_name: self.profiling_group_name,
             fleet_instance_id: self.fleet_instance_id,

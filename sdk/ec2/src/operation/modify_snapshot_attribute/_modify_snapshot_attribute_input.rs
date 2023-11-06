@@ -28,8 +28,10 @@ impl ModifySnapshotAttributeInput {
         self.create_volume_permission.as_ref()
     }
     /// <p>The group to modify for the snapshot.</p>
-    pub fn group_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.group_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_names.is_none()`.
+    pub fn group_names(&self) -> &[::std::string::String] {
+        self.group_names.as_deref().unwrap_or_default()
     }
     /// <p>The type of operation to perform to the attribute.</p>
     pub fn operation_type(&self) -> ::std::option::Option<&crate::types::OperationType> {
@@ -40,8 +42,10 @@ impl ModifySnapshotAttributeInput {
         self.snapshot_id.as_deref()
     }
     /// <p>The account ID to modify for the snapshot.</p>
-    pub fn user_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.user_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_ids.is_none()`.
+    pub fn user_ids(&self) -> &[::std::string::String] {
+        self.user_ids.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -131,6 +135,7 @@ impl ModifySnapshotAttributeInputBuilder {
         &self.operation_type
     }
     /// <p>The ID of the snapshot.</p>
+    /// This field is required.
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_id = ::std::option::Option::Some(input.into());
         self
@@ -183,7 +188,7 @@ impl ModifySnapshotAttributeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_snapshot_attribute::ModifySnapshotAttributeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_snapshot_attribute::ModifySnapshotAttributeInput {
             attribute: self.attribute,

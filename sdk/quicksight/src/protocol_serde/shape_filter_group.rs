@@ -2,33 +2,33 @@
 pub fn ser_filter_group(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FilterGroup,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.filter_group_id {
-        object.key("FilterGroupId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("FilterGroupId").string(input.filter_group_id.as_str());
     }
-    if let Some(var_2) = &input.filters {
-        let mut array_3 = object.key("Filters").start_array();
-        for item_4 in var_2 {
+    {
+        let mut array_1 = object.key("Filters").start_array();
+        for item_2 in &input.filters {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_filter::ser_filter(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_3 = array_1.value().start_object();
+                crate::protocol_serde::shape_filter::ser_filter(&mut object_3, item_2)?;
+                object_3.finish();
             }
         }
-        array_3.finish();
+        array_1.finish();
     }
-    if let Some(var_6) = &input.scope_configuration {
+    if let Some(var_4) = &input.scope_configuration {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("ScopeConfiguration").start_object();
-        crate::protocol_serde::shape_filter_scope_configuration::ser_filter_scope_configuration(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_5 = object.key("ScopeConfiguration").start_object();
+        crate::protocol_serde::shape_filter_scope_configuration::ser_filter_scope_configuration(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_8) = &input.status {
-        object.key("Status").string(var_8.as_str());
+    if let Some(var_6) = &input.status {
+        object.key("Status").string(var_6.as_str());
     }
-    if let Some(var_9) = &input.cross_dataset {
-        object.key("CrossDataset").string(var_9.as_str());
+    {
+        object.key("CrossDataset").string(input.cross_dataset.as_str());
     }
     Ok(())
 }
@@ -87,7 +87,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::filter_group_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

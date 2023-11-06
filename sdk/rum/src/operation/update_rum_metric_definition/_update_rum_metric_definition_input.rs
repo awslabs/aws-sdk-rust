@@ -57,6 +57,7 @@ pub struct UpdateRumMetricDefinitionInputBuilder {
 }
 impl UpdateRumMetricDefinitionInputBuilder {
     /// <p>The name of the CloudWatch RUM app monitor that sends these metrics.</p>
+    /// This field is required.
     pub fn app_monitor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_monitor_name = ::std::option::Option::Some(input.into());
         self
@@ -71,6 +72,7 @@ impl UpdateRumMetricDefinitionInputBuilder {
         &self.app_monitor_name
     }
     /// <p>The destination to send the metrics to. Valid values are <code>CloudWatch</code> and <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently experiment that will receive the metrics and an IAM role that has permission to write to the experiment.</p>
+    /// This field is required.
     pub fn destination(mut self, input: crate::types::MetricDestination) -> Self {
         self.destination = ::std::option::Option::Some(input);
         self
@@ -102,6 +104,7 @@ impl UpdateRumMetricDefinitionInputBuilder {
         &self.destination_arn
     }
     /// <p>A structure that contains the new definition that you want to use for this metric.</p>
+    /// This field is required.
     pub fn metric_definition(mut self, input: crate::types::MetricDefinitionRequest) -> Self {
         self.metric_definition = ::std::option::Option::Some(input);
         self
@@ -116,6 +119,7 @@ impl UpdateRumMetricDefinitionInputBuilder {
         &self.metric_definition
     }
     /// <p>The ID of the metric definition to update.</p>
+    /// This field is required.
     pub fn metric_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_definition_id = ::std::option::Option::Some(input.into());
         self
@@ -134,7 +138,7 @@ impl UpdateRumMetricDefinitionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_rum_metric_definition::UpdateRumMetricDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_rum_metric_definition::UpdateRumMetricDefinitionInput {
             app_monitor_name: self.app_monitor_name,

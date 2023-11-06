@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EntityConfiguration {
     /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
-    pub entity_id: ::std::option::Option<::std::string::String>,
+    pub entity_id: ::std::string::String,
     /// <p>Specifies whether you are configuring a <code>User</code> or a <code>Group</code>.</p>
-    pub entity_type: ::std::option::Option<crate::types::EntityType>,
+    pub entity_type: crate::types::EntityType,
 }
 impl EntityConfiguration {
     /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
-    pub fn entity_id(&self) -> ::std::option::Option<&str> {
-        self.entity_id.as_deref()
+    pub fn entity_id(&self) -> &str {
+        use std::ops::Deref;
+        self.entity_id.deref()
     }
     /// <p>Specifies whether you are configuring a <code>User</code> or a <code>Group</code>.</p>
-    pub fn entity_type(&self) -> ::std::option::Option<&crate::types::EntityType> {
-        self.entity_type.as_ref()
+    pub fn entity_type(&self) -> &crate::types::EntityType {
+        &self.entity_type
     }
 }
 impl EntityConfiguration {
@@ -35,6 +36,7 @@ pub struct EntityConfigurationBuilder {
 }
 impl EntityConfigurationBuilder {
     /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
+    /// This field is required.
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl EntityConfigurationBuilder {
         &self.entity_id
     }
     /// <p>Specifies whether you are configuring a <code>User</code> or a <code>Group</code>.</p>
+    /// This field is required.
     pub fn entity_type(mut self, input: crate::types::EntityType) -> Self {
         self.entity_type = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,23 @@ impl EntityConfigurationBuilder {
         &self.entity_type
     }
     /// Consumes the builder and constructs a [`EntityConfiguration`](crate::types::EntityConfiguration).
-    pub fn build(self) -> crate::types::EntityConfiguration {
-        crate::types::EntityConfiguration {
-            entity_id: self.entity_id,
-            entity_type: self.entity_type,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`entity_id`](crate::types::builders::EntityConfigurationBuilder::entity_id)
+    /// - [`entity_type`](crate::types::builders::EntityConfigurationBuilder::entity_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::EntityConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EntityConfiguration {
+            entity_id: self.entity_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "entity_id",
+                    "entity_id was not specified but it is required when building EntityConfiguration",
+                )
+            })?,
+            entity_type: self.entity_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "entity_type",
+                    "entity_type was not specified but it is required when building EntityConfiguration",
+                )
+            })?,
+        })
     }
 }

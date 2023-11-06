@@ -15,20 +15,28 @@ pub struct Conditions {
 }
 impl Conditions {
     /// <p>Filters the values of your tagged resources for only those resources that you tagged with the same value. Also called "exact matching."</p>
-    pub fn string_equals(&self) -> ::std::option::Option<&[crate::types::ConditionParameter]> {
-        self.string_equals.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.string_equals.is_none()`.
+    pub fn string_equals(&self) -> &[crate::types::ConditionParameter] {
+        self.string_equals.as_deref().unwrap_or_default()
     }
     /// <p>Filters the values of your tagged resources for only those resources that you tagged that do not have the same value. Also called "negated matching."</p>
-    pub fn string_not_equals(&self) -> ::std::option::Option<&[crate::types::ConditionParameter]> {
-        self.string_not_equals.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.string_not_equals.is_none()`.
+    pub fn string_not_equals(&self) -> &[crate::types::ConditionParameter] {
+        self.string_not_equals.as_deref().unwrap_or_default()
     }
     /// <p>Filters the values of your tagged resources for matching tag values with the use of a wildcard character (*) anywhere in the string. For example, "prod*" or "*rod*" matches the tag value "production".</p>
-    pub fn string_like(&self) -> ::std::option::Option<&[crate::types::ConditionParameter]> {
-        self.string_like.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.string_like.is_none()`.
+    pub fn string_like(&self) -> &[crate::types::ConditionParameter] {
+        self.string_like.as_deref().unwrap_or_default()
     }
     /// <p>Filters the values of your tagged resources for non-matching tag values with the use of a wildcard character (*) anywhere in the string.</p>
-    pub fn string_not_like(&self) -> ::std::option::Option<&[crate::types::ConditionParameter]> {
-        self.string_not_like.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.string_not_like.is_none()`.
+    pub fn string_not_like(&self) -> &[crate::types::ConditionParameter] {
+        self.string_not_like.as_deref().unwrap_or_default()
     }
 }
 impl Conditions {

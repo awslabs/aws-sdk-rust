@@ -106,7 +106,7 @@ impl ListBackupVaultsInputBuilder {
     /// Consumes the builder and constructs a [`ListBackupVaultsInput`](crate::operation::list_backup_vaults::ListBackupVaultsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_backup_vaults::ListBackupVaultsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_backup_vaults::ListBackupVaultsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_backup_vaults::ListBackupVaultsInput {
             by_vault_type: self.by_vault_type,
             by_shared: self.by_shared,

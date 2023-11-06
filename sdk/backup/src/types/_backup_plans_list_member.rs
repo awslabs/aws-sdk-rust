@@ -59,8 +59,10 @@ impl BackupPlansListMember {
         self.last_execution_date.as_ref()
     }
     /// <p>Contains a list of <code>BackupOptions</code> for a resource type.</p>
-    pub fn advanced_backup_settings(&self) -> ::std::option::Option<&[crate::types::AdvancedBackupSetting]> {
-        self.advanced_backup_settings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.advanced_backup_settings.is_none()`.
+    pub fn advanced_backup_settings(&self) -> &[crate::types::AdvancedBackupSetting] {
+        self.advanced_backup_settings.as_deref().unwrap_or_default()
     }
 }
 impl BackupPlansListMember {

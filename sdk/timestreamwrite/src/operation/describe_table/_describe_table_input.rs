@@ -34,6 +34,7 @@ pub struct DescribeTableInputBuilder {
 }
 impl DescribeTableInputBuilder {
     /// <p>The name of the Timestream database.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeTableInputBuilder {
         &self.database_name
     }
     /// <p>The name of the Timestream table.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DescribeTableInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTableInput`](crate::operation::describe_table::DescribeTableInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_table::DescribeTableInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_table::DescribeTableInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_table::DescribeTableInput {
             database_name: self.database_name,
             table_name: self.table_name,

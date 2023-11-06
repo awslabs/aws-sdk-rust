@@ -5,30 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MySqlCatalogTarget {
     /// <p>The name of the data target.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The nodes that are inputs to the data target.</p>
-    pub inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub inputs: ::std::vec::Vec<::std::string::String>,
     /// <p>The name of the database to write to.</p>
-    pub database: ::std::option::Option<::std::string::String>,
+    pub database: ::std::string::String,
     /// <p>The name of the table in the database to write to.</p>
-    pub table: ::std::option::Option<::std::string::String>,
+    pub table: ::std::string::String,
 }
 impl MySqlCatalogTarget {
     /// <p>The name of the data target.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The nodes that are inputs to the data target.</p>
-    pub fn inputs(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.inputs.as_deref()
+    pub fn inputs(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.inputs.deref()
     }
     /// <p>The name of the database to write to.</p>
-    pub fn database(&self) -> ::std::option::Option<&str> {
-        self.database.as_deref()
+    pub fn database(&self) -> &str {
+        use std::ops::Deref;
+        self.database.deref()
     }
     /// <p>The name of the table in the database to write to.</p>
-    pub fn table(&self) -> ::std::option::Option<&str> {
-        self.table.as_deref()
+    pub fn table(&self) -> &str {
+        use std::ops::Deref;
+        self.table.deref()
     }
 }
 impl MySqlCatalogTarget {
@@ -49,6 +53,7 @@ pub struct MySqlCatalogTargetBuilder {
 }
 impl MySqlCatalogTargetBuilder {
     /// <p>The name of the data target.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +88,7 @@ impl MySqlCatalogTargetBuilder {
         &self.inputs
     }
     /// <p>The name of the database to write to.</p>
+    /// This field is required.
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +103,7 @@ impl MySqlCatalogTargetBuilder {
         &self.database
     }
     /// <p>The name of the table in the database to write to.</p>
+    /// This field is required.
     pub fn table(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table = ::std::option::Option::Some(input.into());
         self
@@ -111,12 +118,37 @@ impl MySqlCatalogTargetBuilder {
         &self.table
     }
     /// Consumes the builder and constructs a [`MySqlCatalogTarget`](crate::types::MySqlCatalogTarget).
-    pub fn build(self) -> crate::types::MySqlCatalogTarget {
-        crate::types::MySqlCatalogTarget {
-            name: self.name,
-            inputs: self.inputs,
-            database: self.database,
-            table: self.table,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::MySqlCatalogTargetBuilder::name)
+    /// - [`inputs`](crate::types::builders::MySqlCatalogTargetBuilder::inputs)
+    /// - [`database`](crate::types::builders::MySqlCatalogTargetBuilder::database)
+    /// - [`table`](crate::types::builders::MySqlCatalogTargetBuilder::table)
+    pub fn build(self) -> ::std::result::Result<crate::types::MySqlCatalogTarget, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::MySqlCatalogTarget {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building MySqlCatalogTarget",
+                )
+            })?,
+            inputs: self.inputs.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "inputs",
+                    "inputs was not specified but it is required when building MySqlCatalogTarget",
+                )
+            })?,
+            database: self.database.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "database",
+                    "database was not specified but it is required when building MySqlCatalogTarget",
+                )
+            })?,
+            table: self.table.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "table",
+                    "table was not specified but it is required when building MySqlCatalogTarget",
+                )
+            })?,
+        })
     }
 }

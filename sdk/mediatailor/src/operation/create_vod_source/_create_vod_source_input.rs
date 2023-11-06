@@ -14,8 +14,10 @@ pub struct CreateVodSourceInput {
 }
 impl CreateVodSourceInput {
     /// <p>A list of HTTP package configuration parameters for this VOD source.</p>
-    pub fn http_package_configurations(&self) -> ::std::option::Option<&[crate::types::HttpPackageConfiguration]> {
-        self.http_package_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.http_package_configurations.is_none()`.
+    pub fn http_package_configurations(&self) -> &[crate::types::HttpPackageConfiguration] {
+        self.http_package_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The name of the source location for this VOD source.</p>
     pub fn source_location_name(&self) -> ::std::option::Option<&str> {
@@ -68,6 +70,7 @@ impl CreateVodSourceInputBuilder {
         &self.http_package_configurations
     }
     /// <p>The name of the source location for this VOD source.</p>
+    /// This field is required.
     pub fn source_location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_location_name = ::std::option::Option::Some(input.into());
         self
@@ -102,6 +105,7 @@ impl CreateVodSourceInputBuilder {
         &self.tags
     }
     /// <p>The name associated with the VOD source.&gt;</p>
+    /// This field is required.
     pub fn vod_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vod_source_name = ::std::option::Option::Some(input.into());
         self
@@ -118,7 +122,7 @@ impl CreateVodSourceInputBuilder {
     /// Consumes the builder and constructs a [`CreateVodSourceInput`](crate::operation::create_vod_source::CreateVodSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_vod_source::CreateVodSourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_vod_source::CreateVodSourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_vod_source::CreateVodSourceInput {
             http_package_configurations: self.http_package_configurations,
             source_location_name: self.source_location_name,

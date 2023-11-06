@@ -48,6 +48,7 @@ pub struct ListMembersInputBuilder {
 }
 impl ListMembersInputBuilder {
     /// <p>The unique ID of the detector the member is associated with.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
@@ -104,7 +105,7 @@ impl ListMembersInputBuilder {
         &self.only_associated
     }
     /// Consumes the builder and constructs a [`ListMembersInput`](crate::operation::list_members::ListMembersInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_members::ListMembersInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_members::ListMembersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_members::ListMembersInput {
             detector_id: self.detector_id,
             max_results: self.max_results,

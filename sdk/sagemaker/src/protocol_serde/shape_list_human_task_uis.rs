@@ -27,18 +27,18 @@ pub fn de_list_human_task_uis_http_response(
         output = crate::protocol_serde::shape_list_human_task_uis::de_list_human_task_uis(_response_body, output)
             .map_err(crate::operation::list_human_task_uis::ListHumanTaskUisError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::list_human_task_uis_output_correct_errors(output).build()
     })
 }
 
 pub fn ser_list_human_task_uis_input(
     input: &crate::operation::list_human_task_uis::ListHumanTaskUisInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_list_human_task_uis_input::ser_list_human_task_uis_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_list_human_task_uis(

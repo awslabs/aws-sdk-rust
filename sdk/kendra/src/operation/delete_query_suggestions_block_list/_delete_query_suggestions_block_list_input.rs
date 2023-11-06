@@ -34,6 +34,7 @@ pub struct DeleteQuerySuggestionsBlockListInputBuilder {
 }
 impl DeleteQuerySuggestionsBlockListInputBuilder {
     /// <p>The identifier of the index for the block list.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteQuerySuggestionsBlockListInputBuilder {
         &self.index_id
     }
     /// <p>The identifier of the block list you want to delete.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl DeleteQuerySuggestionsBlockListInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_query_suggestions_block_list::DeleteQuerySuggestionsBlockListInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_query_suggestions_block_list::DeleteQuerySuggestionsBlockListInput {

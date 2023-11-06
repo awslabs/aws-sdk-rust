@@ -12,8 +12,10 @@ pub struct GetComplianceDetailsByResourceOutput {
 }
 impl GetComplianceDetailsByResourceOutput {
     /// <p>Indicates whether the specified Amazon Web Services resource complies each Config rule.</p>
-    pub fn evaluation_results(&self) -> ::std::option::Option<&[crate::types::EvaluationResult]> {
-        self.evaluation_results.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.evaluation_results.is_none()`.
+    pub fn evaluation_results(&self) -> &[crate::types::EvaluationResult] {
+        self.evaluation_results.as_deref().unwrap_or_default()
     }
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

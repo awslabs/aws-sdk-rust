@@ -42,8 +42,10 @@ impl CreateMetricSetInput {
         self.metric_set_description.as_deref()
     }
     /// <p>A list of metrics that the dataset will contain.</p>
-    pub fn metric_list(&self) -> ::std::option::Option<&[crate::types::Metric]> {
-        self.metric_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_list.is_none()`.
+    pub fn metric_list(&self) -> &[crate::types::Metric] {
+        self.metric_list.as_deref().unwrap_or_default()
     }
     /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3, Redshift, Athena and datasources.</p>
     pub fn offset(&self) -> ::std::option::Option<i32> {
@@ -54,8 +56,10 @@ impl CreateMetricSetInput {
         self.timestamp_column.as_ref()
     }
     /// <p>A list of the fields you want to treat as dimensions.</p>
-    pub fn dimension_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.dimension_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimension_list.is_none()`.
+    pub fn dimension_list(&self) -> &[::std::string::String] {
+        self.dimension_list.as_deref().unwrap_or_default()
     }
     /// <p>The frequency with which the source data will be analyzed for anomalies.</p>
     pub fn metric_set_frequency(&self) -> ::std::option::Option<&crate::types::Frequency> {
@@ -74,8 +78,10 @@ impl CreateMetricSetInput {
         self.tags.as_ref()
     }
     /// <p>A list of filters that specify which data is kept for anomaly detection.</p>
-    pub fn dimension_filter_list(&self) -> ::std::option::Option<&[crate::types::MetricSetDimensionFilter]> {
-        self.dimension_filter_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimension_filter_list.is_none()`.
+    pub fn dimension_filter_list(&self) -> &[crate::types::MetricSetDimensionFilter] {
+        self.dimension_filter_list.as_deref().unwrap_or_default()
     }
 }
 impl CreateMetricSetInput {
@@ -104,6 +110,7 @@ pub struct CreateMetricSetInputBuilder {
 }
 impl CreateMetricSetInputBuilder {
     /// <p>The ARN of the anomaly detector that will use the dataset.</p>
+    /// This field is required.
     pub fn anomaly_detector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_detector_arn = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +125,7 @@ impl CreateMetricSetInputBuilder {
         &self.anomaly_detector_arn
     }
     /// <p>The name of the dataset.</p>
+    /// This field is required.
     pub fn metric_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_set_name = ::std::option::Option::Some(input.into());
         self
@@ -228,6 +236,7 @@ impl CreateMetricSetInputBuilder {
         &self.metric_set_frequency
     }
     /// <p>Contains information about how the source data should be interpreted.</p>
+    /// This field is required.
     pub fn metric_source(mut self, input: crate::types::MetricSource) -> Self {
         self.metric_source = ::std::option::Option::Some(input);
         self
@@ -298,7 +307,7 @@ impl CreateMetricSetInputBuilder {
     /// Consumes the builder and constructs a [`CreateMetricSetInput`](crate::operation::create_metric_set::CreateMetricSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_metric_set::CreateMetricSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_metric_set::CreateMetricSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_metric_set::CreateMetricSetInput {
             anomaly_detector_arn: self.anomaly_detector_arn,
             metric_set_name: self.metric_set_name,

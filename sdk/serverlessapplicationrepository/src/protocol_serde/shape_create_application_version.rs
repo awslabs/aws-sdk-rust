@@ -129,12 +129,12 @@ pub fn de_create_application_version_http_response(
 
 pub fn ser_create_application_version_input(
     input: &crate::operation::create_application_version::CreateApplicationVersionInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_application_version_input::ser_create_application_version_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_create_application_version(
@@ -167,11 +167,11 @@ pub(crate) fn de_create_application_version(
                 }
                 "parameterDefinitions" => {
                     builder = builder.set_parameter_definitions(
-                        crate::protocol_serde::shape___list_of_parameter_definition::de___list_of_parameter_definition(tokens)?,
+                        crate::protocol_serde::shape_list_of_parameter_definition::de_list_of_parameter_definition(tokens)?,
                     );
                 }
                 "requiredCapabilities" => {
-                    builder = builder.set_required_capabilities(crate::protocol_serde::shape___list_of_capability::de___list_of_capability(tokens)?);
+                    builder = builder.set_required_capabilities(crate::protocol_serde::shape_list_of_capability::de_list_of_capability(tokens)?);
                 }
                 "resourcesSupported" => {
                     builder = builder.set_resources_supported(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

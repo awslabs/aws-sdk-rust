@@ -57,6 +57,7 @@ pub struct DescribeClusterParametersInputBuilder {
 }
 impl DescribeClusterParametersInputBuilder {
     /// <p>The name of a cluster parameter group for which to return details.</p>
+    /// This field is required.
     pub fn parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_group_name = ::std::option::Option::Some(input.into());
         self
@@ -129,7 +130,7 @@ impl DescribeClusterParametersInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_cluster_parameters::DescribeClusterParametersInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_cluster_parameters::DescribeClusterParametersInput {
             parameter_group_name: self.parameter_group_name,

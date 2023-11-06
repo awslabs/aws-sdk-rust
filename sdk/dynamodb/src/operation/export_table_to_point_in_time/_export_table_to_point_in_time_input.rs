@@ -109,6 +109,7 @@ pub struct ExportTableToPointInTimeInputBuilder {
 }
 impl ExportTableToPointInTimeInputBuilder {
     /// <p>The Amazon Resource Name (ARN) associated with the table to export.</p>
+    /// This field is required.
     pub fn table_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_arn = ::std::option::Option::Some(input.into());
         self
@@ -157,6 +158,7 @@ impl ExportTableToPointInTimeInputBuilder {
         &self.client_token
     }
     /// <p>The name of the Amazon S3 bucket to export the snapshot to.</p>
+    /// This field is required.
     pub fn s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket = ::std::option::Option::Some(input.into());
         self
@@ -285,7 +287,7 @@ impl ExportTableToPointInTimeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::export_table_to_point_in_time::ExportTableToPointInTimeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::export_table_to_point_in_time::ExportTableToPointInTimeInput {
             table_arn: self.table_arn,

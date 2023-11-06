@@ -41,6 +41,7 @@ pub struct DescribeRegionsInputBuilder {
 }
 impl DescribeRegionsInputBuilder {
     /// <p>The identifier of the directory.</p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl DescribeRegionsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeRegionsInput`](crate::operation::describe_regions::DescribeRegionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_regions::DescribeRegionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_regions::DescribeRegionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_regions::DescribeRegionsInput {
             directory_id: self.directory_id,
             region_name: self.region_name,

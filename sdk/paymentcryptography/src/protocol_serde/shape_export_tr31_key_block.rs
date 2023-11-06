@@ -2,9 +2,9 @@
 pub fn ser_export_tr31_key_block(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ExportTr31KeyBlock,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.wrapping_key_identifier {
-        object.key("WrappingKeyIdentifier").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("WrappingKeyIdentifier").string(input.wrapping_key_identifier.as_str());
     }
     Ok(())
 }

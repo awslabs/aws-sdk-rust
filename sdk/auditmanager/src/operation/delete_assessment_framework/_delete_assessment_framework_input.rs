@@ -27,6 +27,7 @@ pub struct DeleteAssessmentFrameworkInputBuilder {
 }
 impl DeleteAssessmentFrameworkInputBuilder {
     /// <p> The identifier for the custom framework. </p>
+    /// This field is required.
     pub fn framework_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.framework_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteAssessmentFrameworkInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkInput {
             framework_id: self.framework_id,

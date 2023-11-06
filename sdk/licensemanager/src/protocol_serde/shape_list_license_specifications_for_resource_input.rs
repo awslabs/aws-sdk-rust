@@ -2,7 +2,7 @@
 pub fn ser_list_license_specifications_for_resource_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.resource_arn {
         object.key("ResourceArn").string(var_1.as_str());
     }

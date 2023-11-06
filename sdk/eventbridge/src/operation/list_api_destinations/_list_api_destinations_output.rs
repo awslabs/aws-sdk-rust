@@ -11,8 +11,10 @@ pub struct ListApiDestinationsOutput {
 }
 impl ListApiDestinationsOutput {
     /// <p>An array of <code>ApiDestination</code> objects that include information about an API destination.</p>
-    pub fn api_destinations(&self) -> ::std::option::Option<&[crate::types::ApiDestination]> {
-        self.api_destinations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.api_destinations.is_none()`.
+    pub fn api_destinations(&self) -> &[crate::types::ApiDestination] {
+        self.api_destinations.as_deref().unwrap_or_default()
     }
     /// <p>A token you can use in a subsequent request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

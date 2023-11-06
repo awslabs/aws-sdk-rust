@@ -4,14 +4,14 @@
 #[derive(::std::fmt::Debug)]
 pub struct GetImageFrameOutput {
     /// <p>The blob containing the aggregated image frame information.</p>
-    pub image_frame_blob: ::aws_smithy_http::byte_stream::ByteStream,
+    pub image_frame_blob: ::aws_smithy_types::byte_stream::ByteStream,
     /// <p>The format in which the image frame information is returned to the customer. Default is <code>application/octet-stream</code>.</p>
     pub content_type: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetImageFrameOutput {
     /// <p>The blob containing the aggregated image frame information.</p>
-    pub fn image_frame_blob(&self) -> &::aws_smithy_http::byte_stream::ByteStream {
+    pub fn image_frame_blob(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
         &self.image_frame_blob
     }
     /// <p>The format in which the image frame information is returned to the customer. Default is <code>application/octet-stream</code>.</p>
@@ -35,23 +35,24 @@ impl GetImageFrameOutput {
 #[non_exhaustive]
 #[derive(::std::default::Default, ::std::fmt::Debug)]
 pub struct GetImageFrameOutputBuilder {
-    pub(crate) image_frame_blob: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
+    pub(crate) image_frame_blob: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,
     pub(crate) content_type: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetImageFrameOutputBuilder {
     /// <p>The blob containing the aggregated image frame information.</p>
-    pub fn image_frame_blob(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
+    /// This field is required.
+    pub fn image_frame_blob(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.image_frame_blob = ::std::option::Option::Some(input);
         self
     }
     /// <p>The blob containing the aggregated image frame information.</p>
-    pub fn set_image_frame_blob(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
+    pub fn set_image_frame_blob(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.image_frame_blob = input;
         self
     }
     /// <p>The blob containing the aggregated image frame information.</p>
-    pub fn get_image_frame_blob(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_image_frame_blob(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         &self.image_frame_blob
     }
     /// <p>The format in which the image frame information is returned to the customer. Default is <code>application/octet-stream</code>.</p>

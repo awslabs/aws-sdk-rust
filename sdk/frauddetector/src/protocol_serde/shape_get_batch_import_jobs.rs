@@ -28,11 +28,10 @@ pub fn de_get_batch_import_jobs_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_batch_import_jobs::GetBatchImportJobsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_batch_import_jobs::GetBatchImportJobsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerException" => crate::operation::get_batch_import_jobs::GetBatchImportJobsError::InternalServerException({
@@ -43,11 +42,10 @@ pub fn de_get_batch_import_jobs_http_error(
                 output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_batch_import_jobs::GetBatchImportJobsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_batch_import_jobs::GetBatchImportJobsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::get_batch_import_jobs::GetBatchImportJobsError::ResourceNotFoundException({
@@ -58,11 +56,10 @@ pub fn de_get_batch_import_jobs_http_error(
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_batch_import_jobs::GetBatchImportJobsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_batch_import_jobs::GetBatchImportJobsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::get_batch_import_jobs::GetBatchImportJobsError::ThrottlingException({
@@ -73,11 +70,10 @@ pub fn de_get_batch_import_jobs_http_error(
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_batch_import_jobs::GetBatchImportJobsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_batch_import_jobs::GetBatchImportJobsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::get_batch_import_jobs::GetBatchImportJobsError::ValidationException({
@@ -88,11 +84,10 @@ pub fn de_get_batch_import_jobs_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_batch_import_jobs::GetBatchImportJobsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_batch_import_jobs::GetBatchImportJobsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::get_batch_import_jobs::GetBatchImportJobsError::generic(generic),
@@ -120,12 +115,12 @@ pub fn de_get_batch_import_jobs_http_response(
 
 pub fn ser_get_batch_import_jobs_input(
     input: &crate::operation::get_batch_import_jobs::GetBatchImportJobsInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_get_batch_import_jobs_input::ser_get_batch_import_jobs_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_get_batch_import_jobs(

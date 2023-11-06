@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetTemplate`](crate::operation::get_template::builders::GetTemplateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`template_arn(impl Into<String>)`](crate::operation::get_template::builders::GetTemplateFluentBuilder::template_arn) / [`set_template_arn(Option<String>)`](crate::operation::get_template::builders::GetTemplateFluentBuilder::set_template_arn): <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>.</p>
+    ///   - [`template_arn(impl Into<String>)`](crate::operation::get_template::builders::GetTemplateFluentBuilder::template_arn) / [`set_template_arn(Option<String>)`](crate::operation::get_template::builders::GetTemplateFluentBuilder::set_template_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>.</p><br>
     /// - On success, responds with [`GetTemplateOutput`](crate::operation::get_template::GetTemplateOutput) with field(s):
     ///   - [`template(Option<Template>)`](crate::operation::get_template::GetTemplateOutput::template): <p>A certificate template that the connector uses to issue certificates from a private CA.</p>
     /// - On failure, responds with [`SdkError<GetTemplateError>`](crate::operation::get_template::GetTemplateError)

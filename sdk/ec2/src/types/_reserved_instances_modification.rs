@@ -37,12 +37,16 @@ impl ReservedInstancesModification {
         self.effective_date.as_ref()
     }
     /// <p>Contains target configurations along with their corresponding new Reserved Instance IDs.</p>
-    pub fn modification_results(&self) -> ::std::option::Option<&[crate::types::ReservedInstancesModificationResult]> {
-        self.modification_results.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.modification_results.is_none()`.
+    pub fn modification_results(&self) -> &[crate::types::ReservedInstancesModificationResult] {
+        self.modification_results.as_deref().unwrap_or_default()
     }
     /// <p>The IDs of one or more Reserved Instances.</p>
-    pub fn reserved_instances_ids(&self) -> ::std::option::Option<&[crate::types::ReservedInstancesId]> {
-        self.reserved_instances_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reserved_instances_ids.is_none()`.
+    pub fn reserved_instances_ids(&self) -> &[crate::types::ReservedInstancesId] {
+        self.reserved_instances_ids.as_deref().unwrap_or_default()
     }
     /// <p>A unique ID for the Reserved Instance modification.</p>
     pub fn reserved_instances_modification_id(&self) -> ::std::option::Option<&str> {

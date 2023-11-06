@@ -3,7 +3,7 @@
 pub fn ser_vpn_tunnel_log_options_specification(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::VpnTunnelLogOptionsSpecification,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("CloudWatchLogOptions");
     if let Some(var_2) = &input.cloud_watch_log_options {

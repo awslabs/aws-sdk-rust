@@ -15,8 +15,10 @@ impl MessageMetadata {
         self.message_id.as_deref()
     }
     /// <p>The list of receipt information for a message for different recipients.</p>
-    pub fn receipts(&self) -> ::std::option::Option<&[crate::types::Receipt]> {
-        self.receipts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.receipts.is_none()`.
+    pub fn receipts(&self) -> &[crate::types::Receipt] {
+        self.receipts.as_deref().unwrap_or_default()
     }
 }
 impl MessageMetadata {

@@ -4,31 +4,33 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateIdentitySourceOutput {
     /// <p>The date and time the identity source was originally created.</p>
-    pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_date: ::aws_smithy_types::DateTime,
     /// <p>The unique ID of the new identity source.</p>
-    pub identity_source_id: ::std::option::Option<::std::string::String>,
+    pub identity_source_id: ::std::string::String,
     /// <p>The date and time the identity source was most recently updated.</p>
-    pub last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub last_updated_date: ::aws_smithy_types::DateTime,
     /// <p>The ID of the policy store that contains the identity source.</p>
-    pub policy_store_id: ::std::option::Option<::std::string::String>,
+    pub policy_store_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateIdentitySourceOutput {
     /// <p>The date and time the identity source was originally created.</p>
-    pub fn created_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_date.as_ref()
+    pub fn created_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_date
     }
     /// <p>The unique ID of the new identity source.</p>
-    pub fn identity_source_id(&self) -> ::std::option::Option<&str> {
-        self.identity_source_id.as_deref()
+    pub fn identity_source_id(&self) -> &str {
+        use std::ops::Deref;
+        self.identity_source_id.deref()
     }
     /// <p>The date and time the identity source was most recently updated.</p>
-    pub fn last_updated_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.last_updated_date.as_ref()
+    pub fn last_updated_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.last_updated_date
     }
     /// <p>The ID of the policy store that contains the identity source.</p>
-    pub fn policy_store_id(&self) -> ::std::option::Option<&str> {
-        self.policy_store_id.as_deref()
+    pub fn policy_store_id(&self) -> &str {
+        use std::ops::Deref;
+        self.policy_store_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateIdentitySourceOutput {
@@ -55,6 +57,7 @@ pub struct CreateIdentitySourceOutputBuilder {
 }
 impl CreateIdentitySourceOutputBuilder {
     /// <p>The date and time the identity source was originally created.</p>
+    /// This field is required.
     pub fn created_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_date = ::std::option::Option::Some(input);
         self
@@ -69,6 +72,7 @@ impl CreateIdentitySourceOutputBuilder {
         &self.created_date
     }
     /// <p>The unique ID of the new identity source.</p>
+    /// This field is required.
     pub fn identity_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_source_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +87,7 @@ impl CreateIdentitySourceOutputBuilder {
         &self.identity_source_id
     }
     /// <p>The date and time the identity source was most recently updated.</p>
+    /// This field is required.
     pub fn last_updated_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date = ::std::option::Option::Some(input);
         self
@@ -97,6 +102,7 @@ impl CreateIdentitySourceOutputBuilder {
         &self.last_updated_date
     }
     /// <p>The ID of the policy store that contains the identity source.</p>
+    /// This field is required.
     pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_store_id = ::std::option::Option::Some(input.into());
         self
@@ -120,13 +126,41 @@ impl CreateIdentitySourceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateIdentitySourceOutput`](crate::operation::create_identity_source::CreateIdentitySourceOutput).
-    pub fn build(self) -> crate::operation::create_identity_source::CreateIdentitySourceOutput {
-        crate::operation::create_identity_source::CreateIdentitySourceOutput {
-            created_date: self.created_date,
-            identity_source_id: self.identity_source_id,
-            last_updated_date: self.last_updated_date,
-            policy_store_id: self.policy_store_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`created_date`](crate::operation::create_identity_source::builders::CreateIdentitySourceOutputBuilder::created_date)
+    /// - [`identity_source_id`](crate::operation::create_identity_source::builders::CreateIdentitySourceOutputBuilder::identity_source_id)
+    /// - [`last_updated_date`](crate::operation::create_identity_source::builders::CreateIdentitySourceOutputBuilder::last_updated_date)
+    /// - [`policy_store_id`](crate::operation::create_identity_source::builders::CreateIdentitySourceOutputBuilder::policy_store_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_identity_source::CreateIdentitySourceOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_identity_source::CreateIdentitySourceOutput {
+            created_date: self.created_date.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_date",
+                    "created_date was not specified but it is required when building CreateIdentitySourceOutput",
+                )
+            })?,
+            identity_source_id: self.identity_source_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "identity_source_id",
+                    "identity_source_id was not specified but it is required when building CreateIdentitySourceOutput",
+                )
+            })?,
+            last_updated_date: self.last_updated_date.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "last_updated_date",
+                    "last_updated_date was not specified but it is required when building CreateIdentitySourceOutput",
+                )
+            })?,
+            policy_store_id: self.policy_store_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "policy_store_id",
+                    "policy_store_id was not specified but it is required when building CreateIdentitySourceOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

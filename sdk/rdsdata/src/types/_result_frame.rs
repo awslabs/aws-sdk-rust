@@ -17,8 +17,10 @@ impl ResultFrame {
         self.result_set_metadata.as_ref()
     }
     /// <p>The records in the result set.</p>
-    pub fn records(&self) -> ::std::option::Option<&[crate::types::Record]> {
-        self.records.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.records.is_none()`.
+    pub fn records(&self) -> &[crate::types::Record] {
+        self.records.as_deref().unwrap_or_default()
     }
 }
 impl ResultFrame {

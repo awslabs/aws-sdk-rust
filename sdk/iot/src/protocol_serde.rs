@@ -1305,9 +1305,9 @@ pub(crate) mod shape_denied;
 
 pub(crate) mod shape_details_map;
 
-pub(crate) mod shape_dynamo_d_bv2_action;
-
 pub(crate) mod shape_dynamo_db_action;
+
+pub(crate) mod shape_dynamo_dbv2_action;
 
 pub(crate) mod shape_elasticsearch_action;
 
@@ -1445,7 +1445,7 @@ pub(crate) mod shape_asset_property_value;
 
 pub(crate) mod shape_s3_destination;
 
-pub(crate) mod shape_sig_v4_authorization;
+pub(crate) mod shape_sigv4_authorization;
 
 pub(crate) mod shape_user_properties;
 

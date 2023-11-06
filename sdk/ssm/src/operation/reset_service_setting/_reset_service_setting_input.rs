@@ -58,6 +58,7 @@ impl ResetServiceSettingInputBuilder {
     /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>
     /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn setting_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.setting_id = ::std::option::Option::Some(input.into());
         self
@@ -94,7 +95,7 @@ impl ResetServiceSettingInputBuilder {
     /// Consumes the builder and constructs a [`ResetServiceSettingInput`](crate::operation::reset_service_setting::ResetServiceSettingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::reset_service_setting::ResetServiceSettingInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::reset_service_setting::ResetServiceSettingInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::reset_service_setting::ResetServiceSettingInput { setting_id: self.setting_id })
     }

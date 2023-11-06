@@ -2,7 +2,7 @@
 pub fn ser_cost_category_rule(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CostCategoryRule,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.value {
         object.key("Value").string(var_1.as_str());
     }

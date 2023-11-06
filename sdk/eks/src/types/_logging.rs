@@ -9,8 +9,10 @@ pub struct Logging {
 }
 impl Logging {
     /// <p>The cluster control plane logging configuration for your cluster.</p>
-    pub fn cluster_logging(&self) -> ::std::option::Option<&[crate::types::LogSetup]> {
-        self.cluster_logging.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cluster_logging.is_none()`.
+    pub fn cluster_logging(&self) -> &[crate::types::LogSetup] {
+        self.cluster_logging.as_deref().unwrap_or_default()
     }
 }
 impl Logging {

@@ -11,8 +11,10 @@ pub struct ListAssetsOutput {
 }
 impl ListAssetsOutput {
     /// <p>Information about the hardware assets.</p>
-    pub fn assets(&self) -> ::std::option::Option<&[crate::types::AssetInfo]> {
-        self.assets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.assets.is_none()`.
+    pub fn assets(&self) -> &[crate::types::AssetInfo] {
+        self.assets.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

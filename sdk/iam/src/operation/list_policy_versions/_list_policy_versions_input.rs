@@ -46,6 +46,7 @@ pub struct ListPolicyVersionsInputBuilder {
 impl ListPolicyVersionsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the IAM policy for which you want the versions.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// This field is required.
     pub fn policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_arn = ::std::option::Option::Some(input.into());
         self
@@ -95,7 +96,8 @@ impl ListPolicyVersionsInputBuilder {
     /// Consumes the builder and constructs a [`ListPolicyVersionsInput`](crate::operation::list_policy_versions::ListPolicyVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_policy_versions::ListPolicyVersionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_policy_versions::ListPolicyVersionsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_policy_versions::ListPolicyVersionsInput {
             policy_arn: self.policy_arn,
             marker: self.marker,

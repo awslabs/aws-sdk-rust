@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RestoreTableOutput {
     /// <p>The Amazon Resource Name (ARN) of the restored table.</p>
-    pub restored_table_arn: ::std::option::Option<::std::string::String>,
+    pub restored_table_arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl RestoreTableOutput {
     /// <p>The Amazon Resource Name (ARN) of the restored table.</p>
-    pub fn restored_table_arn(&self) -> ::std::option::Option<&str> {
-        self.restored_table_arn.as_deref()
+    pub fn restored_table_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.restored_table_arn.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for RestoreTableOutput {
@@ -34,6 +35,7 @@ pub struct RestoreTableOutputBuilder {
 }
 impl RestoreTableOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the restored table.</p>
+    /// This field is required.
     pub fn restored_table_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.restored_table_arn = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,19 @@ impl RestoreTableOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RestoreTableOutput`](crate::operation::restore_table::RestoreTableOutput).
-    pub fn build(self) -> crate::operation::restore_table::RestoreTableOutput {
-        crate::operation::restore_table::RestoreTableOutput {
-            restored_table_arn: self.restored_table_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`restored_table_arn`](crate::operation::restore_table::builders::RestoreTableOutputBuilder::restored_table_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::restore_table::RestoreTableOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::restore_table::RestoreTableOutput {
+            restored_table_arn: self.restored_table_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "restored_table_arn",
+                    "restored_table_arn was not specified but it is required when building RestoreTableOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

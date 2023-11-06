@@ -27,6 +27,7 @@ pub struct DeleteTapePoolInputBuilder {
 }
 impl DeleteTapePoolInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the custom tape pool to delete.</p>
+    /// This field is required.
     pub fn pool_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pool_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteTapePoolInputBuilder {
     /// Consumes the builder and constructs a [`DeleteTapePoolInput`](crate::operation::delete_tape_pool::DeleteTapePoolInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_tape_pool::DeleteTapePoolInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_tape_pool::DeleteTapePoolInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_tape_pool::DeleteTapePoolInput { pool_arn: self.pool_arn })
     }
 }

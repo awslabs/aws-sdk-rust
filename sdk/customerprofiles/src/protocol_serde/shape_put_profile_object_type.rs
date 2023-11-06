@@ -114,18 +114,20 @@ pub fn de_put_profile_object_type_http_response(
         output = crate::protocol_serde::shape_put_profile_object_type::de_put_profile_object_type(_response_body, output)
             .map_err(crate::operation::put_profile_object_type::PutProfileObjectTypeError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::put_profile_object_type_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::put_profile_object_type::PutProfileObjectTypeError::unhandled)?
     })
 }
 
 pub fn ser_put_profile_object_type_input(
     input: &crate::operation::put_profile_object_type::PutProfileObjectTypeInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_put_profile_object_type_input::ser_put_profile_object_type_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_put_profile_object_type(

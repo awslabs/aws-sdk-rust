@@ -2,7 +2,7 @@
 pub fn ser_mitigation_action_params(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MitigationActionParams,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.update_device_certificate_params {
         #[allow(unused_mut)]
         let mut object_2 = object.key("updateDeviceCertificateParams").start_object();

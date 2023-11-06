@@ -40,12 +40,16 @@ impl CreateRoutingProfileInput {
     }
     /// <p>The inbound queues associated with the routing profile. If no queue is added, the agent can make only outbound calls.</p>
     /// <p>The limit of 10 array members applies to the maximum number of <code>RoutingProfileQueueConfig</code> objects that can be passed during a CreateRoutingProfile API request. It is different from the quota of 50 queues per routing profile per instance that is listed in <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect service quotas</a>. </p>
-    pub fn queue_configs(&self) -> ::std::option::Option<&[crate::types::RoutingProfileQueueConfig]> {
-        self.queue_configs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.queue_configs.is_none()`.
+    pub fn queue_configs(&self) -> &[crate::types::RoutingProfileQueueConfig] {
+        self.queue_configs.as_deref().unwrap_or_default()
     }
     /// <p>The channels that agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
-    pub fn media_concurrencies(&self) -> ::std::option::Option<&[crate::types::MediaConcurrency]> {
-        self.media_concurrencies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.media_concurrencies.is_none()`.
+    pub fn media_concurrencies(&self) -> &[crate::types::MediaConcurrency] {
+        self.media_concurrencies.as_deref().unwrap_or_default()
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -78,6 +82,7 @@ pub struct CreateRoutingProfileInputBuilder {
 }
 impl CreateRoutingProfileInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -92,6 +97,7 @@ impl CreateRoutingProfileInputBuilder {
         &self.instance_id
     }
     /// <p>The name of the routing profile. Must not be more than 127 characters.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -106,6 +112,7 @@ impl CreateRoutingProfileInputBuilder {
         &self.name
     }
     /// <p>Description of the routing profile. Must not be more than 250 characters.</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -120,6 +127,7 @@ impl CreateRoutingProfileInputBuilder {
         &self.description
     }
     /// <p>The default outbound queue for the routing profile.</p>
+    /// This field is required.
     pub fn default_outbound_queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_outbound_queue_id = ::std::option::Option::Some(input.into());
         self
@@ -213,7 +221,7 @@ impl CreateRoutingProfileInputBuilder {
     /// Consumes the builder and constructs a [`CreateRoutingProfileInput`](crate::operation::create_routing_profile::CreateRoutingProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_routing_profile::CreateRoutingProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_routing_profile::CreateRoutingProfileInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_routing_profile::CreateRoutingProfileInput {
             instance_id: self.instance_id,

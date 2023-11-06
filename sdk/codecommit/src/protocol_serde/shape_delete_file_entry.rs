@@ -2,9 +2,9 @@
 pub fn ser_delete_file_entry(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DeleteFileEntry,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.file_path {
-        object.key("filePath").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("filePath").string(input.file_path.as_str());
     }
     Ok(())
 }

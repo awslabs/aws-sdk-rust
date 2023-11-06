@@ -34,6 +34,7 @@ pub struct DescribeQuerySuggestionsBlockListInputBuilder {
 }
 impl DescribeQuerySuggestionsBlockListInputBuilder {
     /// <p>The identifier of the index for the block list.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeQuerySuggestionsBlockListInputBuilder {
         &self.index_id
     }
     /// <p>The identifier of the block list you want to get information on.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl DescribeQuerySuggestionsBlockListInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_query_suggestions_block_list::DescribeQuerySuggestionsBlockListInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_query_suggestions_block_list::DescribeQuerySuggestionsBlockListInput {

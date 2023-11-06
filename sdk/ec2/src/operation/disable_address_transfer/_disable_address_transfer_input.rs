@@ -34,6 +34,7 @@ pub struct DisableAddressTransferInputBuilder {
 }
 impl DisableAddressTransferInputBuilder {
     /// <p>The allocation ID of an Elastic IP address.</p>
+    /// This field is required.
     pub fn allocation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.allocation_id = ::std::option::Option::Some(input.into());
         self
@@ -64,8 +65,10 @@ impl DisableAddressTransferInputBuilder {
     /// Consumes the builder and constructs a [`DisableAddressTransferInput`](crate::operation::disable_address_transfer::DisableAddressTransferInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disable_address_transfer::DisableAddressTransferInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::disable_address_transfer::DisableAddressTransferInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::disable_address_transfer::DisableAddressTransferInput {
             allocation_id: self.allocation_id,
             dry_run: self.dry_run,

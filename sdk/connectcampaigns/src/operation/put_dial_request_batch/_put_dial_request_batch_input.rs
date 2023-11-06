@@ -15,8 +15,10 @@ impl PutDialRequestBatchInput {
         self.id.as_deref()
     }
     /// A list of dial requests.
-    pub fn dial_requests(&self) -> ::std::option::Option<&[crate::types::DialRequest]> {
-        self.dial_requests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dial_requests.is_none()`.
+    pub fn dial_requests(&self) -> &[crate::types::DialRequest] {
+        self.dial_requests.as_deref().unwrap_or_default()
     }
 }
 impl PutDialRequestBatchInput {
@@ -35,6 +37,7 @@ pub struct PutDialRequestBatchInputBuilder {
 }
 impl PutDialRequestBatchInputBuilder {
     /// Identifier representing a Campaign
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -71,7 +74,7 @@ impl PutDialRequestBatchInputBuilder {
     /// Consumes the builder and constructs a [`PutDialRequestBatchInput`](crate::operation::put_dial_request_batch::PutDialRequestBatchInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_dial_request_batch::PutDialRequestBatchInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_dial_request_batch::PutDialRequestBatchInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_dial_request_batch::PutDialRequestBatchInput {
             id: self.id,

@@ -27,6 +27,7 @@ pub struct DeleteResolverRuleInputBuilder {
 }
 impl DeleteResolverRuleInputBuilder {
     /// <p>The ID of the Resolver rule that you want to delete.</p>
+    /// This field is required.
     pub fn resolver_rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolver_rule_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,8 @@ impl DeleteResolverRuleInputBuilder {
     /// Consumes the builder and constructs a [`DeleteResolverRuleInput`](crate::operation::delete_resolver_rule::DeleteResolverRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_resolver_rule::DeleteResolverRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_resolver_rule::DeleteResolverRuleInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_resolver_rule::DeleteResolverRuleInput {
             resolver_rule_id: self.resolver_rule_id,
         })

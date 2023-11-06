@@ -2,7 +2,7 @@
 pub fn ser_aws_ecs_task_definition_container_definitions_port_mappings_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.container_port {
         object.key("ContainerPort").number(
             #[allow(clippy::useless_conversion)]

@@ -2,24 +2,24 @@
 pub fn ser_batch_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BatchParameters,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.job_definition {
-        object.key("JobDefinition").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("JobDefinition").string(input.job_definition.as_str());
     }
-    if let Some(var_2) = &input.job_name {
-        object.key("JobName").string(var_2.as_str());
+    {
+        object.key("JobName").string(input.job_name.as_str());
     }
-    if let Some(var_3) = &input.array_properties {
+    if let Some(var_1) = &input.array_properties {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("ArrayProperties").start_object();
-        crate::protocol_serde::shape_batch_array_properties::ser_batch_array_properties(&mut object_4, var_3)?;
+        let mut object_2 = object.key("ArrayProperties").start_object();
+        crate::protocol_serde::shape_batch_array_properties::ser_batch_array_properties(&mut object_2, var_1)?;
+        object_2.finish();
+    }
+    if let Some(var_3) = &input.retry_strategy {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("RetryStrategy").start_object();
+        crate::protocol_serde::shape_batch_retry_strategy::ser_batch_retry_strategy(&mut object_4, var_3)?;
         object_4.finish();
-    }
-    if let Some(var_5) = &input.retry_strategy {
-        #[allow(unused_mut)]
-        let mut object_6 = object.key("RetryStrategy").start_object();
-        crate::protocol_serde::shape_batch_retry_strategy::ser_batch_retry_strategy(&mut object_6, var_5)?;
-        object_6.finish();
     }
     Ok(())
 }
@@ -70,7 +70,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::batch_parameters_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

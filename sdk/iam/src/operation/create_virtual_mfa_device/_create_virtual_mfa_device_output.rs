@@ -35,6 +35,7 @@ pub struct CreateVirtualMfaDeviceOutputBuilder {
 }
 impl CreateVirtualMfaDeviceOutputBuilder {
     /// <p>A structure containing details about the new virtual MFA device.</p>
+    /// This field is required.
     pub fn virtual_mfa_device(mut self, input: crate::types::VirtualMfaDevice) -> Self {
         self.virtual_mfa_device = ::std::option::Option::Some(input);
         self

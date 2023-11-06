@@ -23,8 +23,10 @@ impl ResetCacheParameterGroupInput {
         self.reset_all_parameters
     }
     /// <p>An array of parameter names to reset to their default values. If <code>ResetAllParameters</code> is <code>true</code>, do not use <code>ParameterNameValues</code>. If <code>ResetAllParameters</code> is <code>false</code>, you must specify the name of at least one parameter to reset.</p>
-    pub fn parameter_name_values(&self) -> ::std::option::Option<&[crate::types::ParameterNameValue]> {
-        self.parameter_name_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameter_name_values.is_none()`.
+    pub fn parameter_name_values(&self) -> &[crate::types::ParameterNameValue] {
+        self.parameter_name_values.as_deref().unwrap_or_default()
     }
 }
 impl ResetCacheParameterGroupInput {
@@ -44,6 +46,7 @@ pub struct ResetCacheParameterGroupInputBuilder {
 }
 impl ResetCacheParameterGroupInputBuilder {
     /// <p>The name of the cache parameter group to reset.</p>
+    /// This field is required.
     pub fn cache_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_parameter_group_name = ::std::option::Option::Some(input.into());
         self
@@ -99,7 +102,7 @@ impl ResetCacheParameterGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reset_cache_parameter_group::ResetCacheParameterGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::reset_cache_parameter_group::ResetCacheParameterGroupInput {
             cache_parameter_group_name: self.cache_parameter_group_name,

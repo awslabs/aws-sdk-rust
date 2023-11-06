@@ -20,12 +20,16 @@ impl DescribeOrganizationResourceCollectionHealthInput {
         self.organization_resource_collection_type.as_ref()
     }
     /// <p>The ID of the Amazon Web Services account.</p>
-    pub fn account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.account_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
+    pub fn account_ids(&self) -> &[::std::string::String] {
+        self.account_ids.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the organizational unit.</p>
-    pub fn organizational_unit_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.organizational_unit_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.organizational_unit_ids.is_none()`.
+    pub fn organizational_unit_ids(&self) -> &[::std::string::String] {
+        self.organizational_unit_ids.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -56,6 +60,7 @@ pub struct DescribeOrganizationResourceCollectionHealthInputBuilder {
 }
 impl DescribeOrganizationResourceCollectionHealthInputBuilder {
     /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    /// This field is required.
     pub fn organization_resource_collection_type(mut self, input: crate::types::OrganizationResourceCollectionType) -> Self {
         self.organization_resource_collection_type = ::std::option::Option::Some(input);
         self
@@ -145,7 +150,7 @@ impl DescribeOrganizationResourceCollectionHealthInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealthInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealthInput {

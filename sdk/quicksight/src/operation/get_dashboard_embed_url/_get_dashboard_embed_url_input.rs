@@ -74,8 +74,10 @@ impl GetDashboardEmbedUrlInput {
         self.namespace.as_deref()
     }
     /// <p>A list of one or more dashboard IDs that you want anonymous users to have tempporary access to. Currently, the <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code> because other identity types authenticate as Amazon QuickSight or IAM users. For example, if you set "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session can access all three dashboards.</p>
-    pub fn additional_dashboard_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.additional_dashboard_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_dashboard_ids.is_none()`.
+    pub fn additional_dashboard_ids(&self) -> &[::std::string::String] {
+        self.additional_dashboard_ids.as_deref().unwrap_or_default()
     }
 }
 impl GetDashboardEmbedUrlInput {
@@ -102,6 +104,7 @@ pub struct GetDashboardEmbedUrlInputBuilder {
 }
 impl GetDashboardEmbedUrlInputBuilder {
     /// <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -116,6 +119,7 @@ impl GetDashboardEmbedUrlInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID for the dashboard, also added to the Identity and Access Management (IAM) policy.</p>
+    /// This field is required.
     pub fn dashboard_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dashboard_id = ::std::option::Option::Some(input.into());
         self
@@ -130,6 +134,7 @@ impl GetDashboardEmbedUrlInputBuilder {
         &self.dashboard_id
     }
     /// <p>The authentication method that the user uses to sign in.</p>
+    /// This field is required.
     pub fn identity_type(mut self, input: crate::types::EmbeddingIdentityType) -> Self {
         self.identity_type = ::std::option::Option::Some(input);
         self
@@ -268,7 +273,7 @@ impl GetDashboardEmbedUrlInputBuilder {
     /// Consumes the builder and constructs a [`GetDashboardEmbedUrlInput`](crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlInput {
             aws_account_id: self.aws_account_id,

@@ -5,38 +5,41 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChannelListConfiguration {
     /// <p>The Amazon Resource Name (ARN) associated with the resource.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. </p>
-    pub channel_name: ::std::option::Option<::std::string::String>,
+    pub channel_name: ::std::string::String,
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
-    pub channel_group_name: ::std::option::Option<::std::string::String>,
+    pub channel_group_name: ::std::string::String,
     /// <p>The date and time the channel was created.</p>
-    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The date and time the channel was modified.</p>
-    pub modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub modified_at: ::aws_smithy_types::DateTime,
     /// <p>Any descriptive information that you want to add to the channel for future identification purposes.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl ChannelListConfiguration {
     /// <p>The Amazon Resource Name (ARN) associated with the resource.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. </p>
-    pub fn channel_name(&self) -> ::std::option::Option<&str> {
-        self.channel_name.as_deref()
+    pub fn channel_name(&self) -> &str {
+        use std::ops::Deref;
+        self.channel_name.deref()
     }
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
-    pub fn channel_group_name(&self) -> ::std::option::Option<&str> {
-        self.channel_group_name.as_deref()
+    pub fn channel_group_name(&self) -> &str {
+        use std::ops::Deref;
+        self.channel_group_name.deref()
     }
     /// <p>The date and time the channel was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_at.as_ref()
+    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_at
     }
     /// <p>The date and time the channel was modified.</p>
-    pub fn modified_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.modified_at.as_ref()
+    pub fn modified_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.modified_at
     }
     /// <p>Any descriptive information that you want to add to the channel for future identification purposes.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -63,6 +66,7 @@ pub struct ChannelListConfigurationBuilder {
 }
 impl ChannelListConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) associated with the resource.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +81,7 @@ impl ChannelListConfigurationBuilder {
         &self.arn
     }
     /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. </p>
+    /// This field is required.
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_name = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +96,7 @@ impl ChannelListConfigurationBuilder {
         &self.channel_name
     }
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
+    /// This field is required.
     pub fn channel_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_group_name = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +111,7 @@ impl ChannelListConfigurationBuilder {
         &self.channel_group_name
     }
     /// <p>The date and time the channel was created.</p>
+    /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
@@ -119,6 +126,7 @@ impl ChannelListConfigurationBuilder {
         &self.created_at
     }
     /// <p>The date and time the channel was modified.</p>
+    /// This field is required.
     pub fn modified_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.modified_at = ::std::option::Option::Some(input);
         self
@@ -147,14 +155,45 @@ impl ChannelListConfigurationBuilder {
         &self.description
     }
     /// Consumes the builder and constructs a [`ChannelListConfiguration`](crate::types::ChannelListConfiguration).
-    pub fn build(self) -> crate::types::ChannelListConfiguration {
-        crate::types::ChannelListConfiguration {
-            arn: self.arn,
-            channel_name: self.channel_name,
-            channel_group_name: self.channel_group_name,
-            created_at: self.created_at,
-            modified_at: self.modified_at,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::ChannelListConfigurationBuilder::arn)
+    /// - [`channel_name`](crate::types::builders::ChannelListConfigurationBuilder::channel_name)
+    /// - [`channel_group_name`](crate::types::builders::ChannelListConfigurationBuilder::channel_group_name)
+    /// - [`created_at`](crate::types::builders::ChannelListConfigurationBuilder::created_at)
+    /// - [`modified_at`](crate::types::builders::ChannelListConfigurationBuilder::modified_at)
+    pub fn build(self) -> ::std::result::Result<crate::types::ChannelListConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ChannelListConfiguration {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building ChannelListConfiguration",
+                )
+            })?,
+            channel_name: self.channel_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "channel_name",
+                    "channel_name was not specified but it is required when building ChannelListConfiguration",
+                )
+            })?,
+            channel_group_name: self.channel_group_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "channel_group_name",
+                    "channel_group_name was not specified but it is required when building ChannelListConfiguration",
+                )
+            })?,
+            created_at: self.created_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_at",
+                    "created_at was not specified but it is required when building ChannelListConfiguration",
+                )
+            })?,
+            modified_at: self.modified_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "modified_at",
+                    "modified_at was not specified but it is required when building ChannelListConfiguration",
+                )
+            })?,
             description: self.description,
-        }
+        })
     }
 }

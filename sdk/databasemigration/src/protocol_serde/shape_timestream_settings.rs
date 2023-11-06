@@ -2,27 +2,27 @@
 pub fn ser_timestream_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TimestreamSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.database_name {
-        object.key("DatabaseName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("DatabaseName").string(input.database_name.as_str());
     }
-    if let Some(var_2) = &input.memory_duration {
+    {
         object.key("MemoryDuration").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((input.memory_duration).into()),
         );
     }
-    if let Some(var_3) = &input.magnetic_duration {
+    {
         object.key("MagneticDuration").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((input.magnetic_duration).into()),
         );
     }
-    if let Some(var_4) = &input.cdc_inserts_and_updates {
-        object.key("CdcInsertsAndUpdates").boolean(*var_4);
+    if let Some(var_1) = &input.cdc_inserts_and_updates {
+        object.key("CdcInsertsAndUpdates").boolean(*var_1);
     }
-    if let Some(var_5) = &input.enable_magnetic_store_writes {
-        object.key("EnableMagneticStoreWrites").boolean(*var_5);
+    if let Some(var_2) = &input.enable_magnetic_store_writes {
+        object.key("EnableMagneticStoreWrites").boolean(*var_2);
     }
     Ok(())
 }
@@ -80,7 +80,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::timestream_settings_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

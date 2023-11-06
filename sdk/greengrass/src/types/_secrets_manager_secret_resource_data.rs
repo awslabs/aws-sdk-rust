@@ -15,8 +15,10 @@ impl SecretsManagerSecretResourceData {
         self.arn.as_deref()
     }
     /// Optional. The staging labels whose values you want to make available on the core, in addition to ''AWSCURRENT''.
-    pub fn additional_staging_labels_to_download(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.additional_staging_labels_to_download.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_staging_labels_to_download.is_none()`.
+    pub fn additional_staging_labels_to_download(&self) -> &[::std::string::String] {
+        self.additional_staging_labels_to_download.as_deref().unwrap_or_default()
     }
 }
 impl SecretsManagerSecretResourceData {

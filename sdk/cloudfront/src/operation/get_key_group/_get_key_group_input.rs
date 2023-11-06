@@ -27,6 +27,7 @@ pub struct GetKeyGroupInputBuilder {
 }
 impl GetKeyGroupInputBuilder {
     /// <p>The identifier of the key group that you are getting. To get the identifier, use <code>ListKeyGroups</code>.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetKeyGroupInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetKeyGroupInput`](crate::operation::get_key_group::GetKeyGroupInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_key_group::GetKeyGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_key_group::GetKeyGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_key_group::GetKeyGroupInput { id: self.id })
     }
 }

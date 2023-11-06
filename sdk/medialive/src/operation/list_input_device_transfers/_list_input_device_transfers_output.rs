@@ -12,8 +12,10 @@ pub struct ListInputDeviceTransfersOutput {
 }
 impl ListInputDeviceTransfersOutput {
     /// The list of devices that you are transferring or are being transferred to you.
-    pub fn input_device_transfers(&self) -> ::std::option::Option<&[crate::types::TransferringInputDeviceSummary]> {
-        self.input_device_transfers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_device_transfers.is_none()`.
+    pub fn input_device_transfers(&self) -> &[crate::types::TransferringInputDeviceSummary] {
+        self.input_device_transfers.as_deref().unwrap_or_default()
     }
     /// A token to get additional list results.
     pub fn next_token(&self) -> ::std::option::Option<&str> {

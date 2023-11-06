@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnowflakeTarget {
     /// <p>The name of the Snowflake target.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>Specifies the data of the Snowflake target node.</p>
     pub data: ::std::option::Option<crate::types::SnowflakeNodeData>,
     /// <p>The nodes that are inputs to the data target.</p>
@@ -13,16 +13,19 @@ pub struct SnowflakeTarget {
 }
 impl SnowflakeTarget {
     /// <p>The name of the Snowflake target.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>Specifies the data of the Snowflake target node.</p>
     pub fn data(&self) -> ::std::option::Option<&crate::types::SnowflakeNodeData> {
         self.data.as_ref()
     }
     /// <p>The nodes that are inputs to the data target.</p>
-    pub fn inputs(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.inputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inputs.is_none()`.
+    pub fn inputs(&self) -> &[::std::string::String] {
+        self.inputs.as_deref().unwrap_or_default()
     }
 }
 impl SnowflakeTarget {
@@ -42,6 +45,7 @@ pub struct SnowflakeTargetBuilder {
 }
 impl SnowflakeTargetBuilder {
     /// <p>The name of the Snowflake target.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +60,7 @@ impl SnowflakeTargetBuilder {
         &self.name
     }
     /// <p>Specifies the data of the Snowflake target node.</p>
+    /// This field is required.
     pub fn data(mut self, input: crate::types::SnowflakeNodeData) -> Self {
         self.data = ::std::option::Option::Some(input);
         self
@@ -90,11 +95,18 @@ impl SnowflakeTargetBuilder {
         &self.inputs
     }
     /// Consumes the builder and constructs a [`SnowflakeTarget`](crate::types::SnowflakeTarget).
-    pub fn build(self) -> crate::types::SnowflakeTarget {
-        crate::types::SnowflakeTarget {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::SnowflakeTargetBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::SnowflakeTarget, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SnowflakeTarget {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building SnowflakeTarget",
+                )
+            })?,
             data: self.data,
             inputs: self.inputs,
-        }
+        })
     }
 }

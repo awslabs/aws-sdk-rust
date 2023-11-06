@@ -10,7 +10,7 @@ impl CreateReplicationGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_replication_group::CreateReplicationGroupOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::create_replication_group::CreateReplicationGroupError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -80,12 +80,15 @@ impl CreateReplicationGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_replication_group::CreateReplicationGroupOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::create_replication_group::CreateReplicationGroupError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::create_replication_group::CreateReplicationGroup::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -94,20 +97,15 @@ impl CreateReplicationGroupFluentBuilder {
         crate::operation::create_replication_group::CreateReplicationGroup::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::create_replication_group::CreateReplicationGroupOutput,
-            crate::operation::create_replication_group::CreateReplicationGroupError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::create_replication_group::CreateReplicationGroupError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::create_replication_group::CreateReplicationGroupOutput,
+        crate::operation::create_replication_group::CreateReplicationGroupError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -254,7 +252,7 @@ impl CreateReplicationGroupFluentBuilder {
     }
     /// Appends an item to `PreferredCacheClusterAZs`.
     ///
-    /// To override the contents of this collection use [`set_preferred_cache_cluster_a_zs`](Self::set_preferred_cache_cluster_a_zs).
+    /// To override the contents of this collection use [`set_preferred_cache_cluster_azs`](Self::set_preferred_cache_cluster_azs).
     ///
     /// <p>A list of EC2 Availability Zones in which the replication group's clusters are created. The order of the Availability Zones in the list is the order in which clusters are allocated. The primary cluster is created in the first AZ in the list.</p>
     /// <p>This parameter is not used if there is more than one node group (shard). You should use <code>NodeGroupConfiguration</code> instead.</p> <note>
@@ -262,8 +260,8 @@ impl CreateReplicationGroupFluentBuilder {
     /// <p>The number of Availability Zones listed must equal the value of <code>NumCacheClusters</code>.</p>
     /// </note>
     /// <p>Default: system chosen Availability Zones.</p>
-    pub fn preferred_cache_cluster_a_zs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.preferred_cache_cluster_a_zs(input.into());
+    pub fn preferred_cache_cluster_azs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.preferred_cache_cluster_azs(input.into());
         self
     }
     /// <p>A list of EC2 Availability Zones in which the replication group's clusters are created. The order of the Availability Zones in the list is the order in which clusters are allocated. The primary cluster is created in the first AZ in the list.</p>
@@ -272,8 +270,8 @@ impl CreateReplicationGroupFluentBuilder {
     /// <p>The number of Availability Zones listed must equal the value of <code>NumCacheClusters</code>.</p>
     /// </note>
     /// <p>Default: system chosen Availability Zones.</p>
-    pub fn set_preferred_cache_cluster_a_zs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inner = self.inner.set_preferred_cache_cluster_a_zs(input);
+    pub fn set_preferred_cache_cluster_azs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_preferred_cache_cluster_azs(input);
         self
     }
     /// <p>A list of EC2 Availability Zones in which the replication group's clusters are created. The order of the Availability Zones in the list is the order in which clusters are allocated. The primary cluster is created in the first AZ in the list.</p>
@@ -282,8 +280,8 @@ impl CreateReplicationGroupFluentBuilder {
     /// <p>The number of Availability Zones listed must equal the value of <code>NumCacheClusters</code>.</p>
     /// </note>
     /// <p>Default: system chosen Availability Zones.</p>
-    pub fn get_preferred_cache_cluster_a_zs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        self.inner.get_preferred_cache_cluster_a_zs()
+    pub fn get_preferred_cache_cluster_azs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_preferred_cache_cluster_azs()
     }
     /// <p>An optional parameter that specifies the number of node groups (shards) for this Redis (cluster mode enabled) replication group. For Redis (cluster mode disabled) either omit this parameter or set it to 1.</p>
     /// <p>Default: 1</p>

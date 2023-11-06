@@ -85,11 +85,10 @@ pub fn de_generate_mac_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::generate_mac::GenerateMacError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::generate_mac::GenerateMacError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::generate_mac::GenerateMacError::generic(generic),
@@ -108,18 +107,20 @@ pub fn de_generate_mac_http_response(
         output = crate::protocol_serde::shape_generate_mac::de_generate_mac(_response_body, output)
             .map_err(crate::operation::generate_mac::GenerateMacError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::generate_mac_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::generate_mac::GenerateMacError::unhandled)?
     })
 }
 
 pub fn ser_generate_mac_input(
     input: &crate::operation::generate_mac::GenerateMacInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_generate_mac_input::ser_generate_mac_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_generate_mac(

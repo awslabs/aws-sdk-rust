@@ -55,8 +55,10 @@ impl SendRawEmailInput {
         self.source.as_deref()
     }
     /// <p>A list of destinations for the message, consisting of To:, CC:, and BCC: addresses.</p>
-    pub fn destinations(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.destinations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destinations.is_none()`.
+    pub fn destinations(&self) -> &[::std::string::String] {
+        self.destinations.as_deref().unwrap_or_default()
     }
     /// <p>The raw email message itself. The message has to meet the following criteria:</p>
     /// <ul>
@@ -97,8 +99,10 @@ impl SendRawEmailInput {
         self.return_path_arn.as_deref()
     }
     /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using <code>SendRawEmail</code>. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::MessageTag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::MessageTag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The name of the configuration set to use when you send an email using <code>SendRawEmail</code>.</p>
     pub fn configuration_set_name(&self) -> ::std::option::Option<&str> {
@@ -181,6 +185,7 @@ impl SendRawEmailInputBuilder {
     /// , must not exceed 1,000 characters.
     /// </crlf></p> </li>
     /// </ul>
+    /// This field is required.
     pub fn raw_message(mut self, input: crate::types::RawMessage) -> Self {
         self.raw_message = ::std::option::Option::Some(input);
         self
@@ -328,7 +333,7 @@ impl SendRawEmailInputBuilder {
     /// Consumes the builder and constructs a [`SendRawEmailInput`](crate::operation::send_raw_email::SendRawEmailInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::send_raw_email::SendRawEmailInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::send_raw_email::SendRawEmailInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_raw_email::SendRawEmailInput {
             source: self.source,
             destinations: self.destinations,

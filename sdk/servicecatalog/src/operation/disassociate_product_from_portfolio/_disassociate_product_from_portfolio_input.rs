@@ -75,6 +75,7 @@ impl DisassociateProductFromPortfolioInputBuilder {
         &self.accept_language
     }
     /// <p>The product identifier.</p>
+    /// This field is required.
     pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_id = ::std::option::Option::Some(input.into());
         self
@@ -89,6 +90,7 @@ impl DisassociateProductFromPortfolioInputBuilder {
         &self.product_id
     }
     /// <p>The portfolio identifier.</p>
+    /// This field is required.
     pub fn portfolio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portfolio_id = ::std::option::Option::Some(input.into());
         self
@@ -107,7 +109,7 @@ impl DisassociateProductFromPortfolioInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_product_from_portfolio::DisassociateProductFromPortfolioInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_product_from_portfolio::DisassociateProductFromPortfolioInput {

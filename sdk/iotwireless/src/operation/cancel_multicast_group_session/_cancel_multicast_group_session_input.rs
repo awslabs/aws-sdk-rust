@@ -27,6 +27,7 @@ pub struct CancelMulticastGroupSessionInputBuilder {
 }
 impl CancelMulticastGroupSessionInputBuilder {
     /// <p>The ID of the multicast group.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl CancelMulticastGroupSessionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_multicast_group_session::CancelMulticastGroupSessionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::cancel_multicast_group_session::CancelMulticastGroupSessionInput { id: self.id })
     }

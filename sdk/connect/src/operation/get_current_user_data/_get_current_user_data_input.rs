@@ -66,6 +66,7 @@ pub struct GetCurrentUserDataInputBuilder {
 }
 impl GetCurrentUserDataInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -89,6 +90,7 @@ impl GetCurrentUserDataInputBuilder {
     /// </ul>
     /// <p> The user data is retrieved for only the specified values/resources in the filter. A maximum of one filter can be passed from queues, routing profiles, agents, and user hierarchy groups. </p>
     /// <p>Currently tagging is only supported on the resources that are passed in the filter.</p>
+    /// This field is required.
     pub fn filters(mut self, input: crate::types::UserDataFilters) -> Self {
         self.filters = ::std::option::Option::Some(input);
         self
@@ -151,7 +153,7 @@ impl GetCurrentUserDataInputBuilder {
     /// Consumes the builder and constructs a [`GetCurrentUserDataInput`](crate::operation::get_current_user_data::GetCurrentUserDataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_current_user_data::GetCurrentUserDataInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_current_user_data::GetCurrentUserDataInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_current_user_data::GetCurrentUserDataInput {
             instance_id: self.instance_id,

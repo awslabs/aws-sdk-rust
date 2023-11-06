@@ -33,8 +33,10 @@ impl CreateBackupPlanOutput {
         self.version_id.as_deref()
     }
     /// <p>A list of <code>BackupOptions</code> settings for a resource type. This option is only available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
-    pub fn advanced_backup_settings(&self) -> ::std::option::Option<&[crate::types::AdvancedBackupSetting]> {
-        self.advanced_backup_settings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.advanced_backup_settings.is_none()`.
+    pub fn advanced_backup_settings(&self) -> &[crate::types::AdvancedBackupSetting] {
+        self.advanced_backup_settings.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateBackupPlanOutput {

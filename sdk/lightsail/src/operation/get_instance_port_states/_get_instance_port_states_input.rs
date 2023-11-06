@@ -27,6 +27,7 @@ pub struct GetInstancePortStatesInputBuilder {
 }
 impl GetInstancePortStatesInputBuilder {
     /// <p>The name of the instance for which to return firewall port states.</p>
+    /// This field is required.
     pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetInstancePortStatesInputBuilder {
     /// Consumes the builder and constructs a [`GetInstancePortStatesInput`](crate::operation::get_instance_port_states::GetInstancePortStatesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_instance_port_states::GetInstancePortStatesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_instance_port_states::GetInstancePortStatesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_instance_port_states::GetInstancePortStatesInput {
             instance_name: self.instance_name,

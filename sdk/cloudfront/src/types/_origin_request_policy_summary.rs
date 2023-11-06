@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OriginRequestPolicySummary {
     /// <p>The type of origin request policy, either <code>managed</code> (created by Amazon Web Services) or <code>custom</code> (created in this Amazon Web Services account).</p>
-    pub r#type: ::std::option::Option<crate::types::OriginRequestPolicyType>,
+    pub r#type: crate::types::OriginRequestPolicyType,
     /// <p>The origin request policy.</p>
     pub origin_request_policy: ::std::option::Option<crate::types::OriginRequestPolicy>,
 }
 impl OriginRequestPolicySummary {
     /// <p>The type of origin request policy, either <code>managed</code> (created by Amazon Web Services) or <code>custom</code> (created in this Amazon Web Services account).</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::OriginRequestPolicyType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::OriginRequestPolicyType {
+        &self.r#type
     }
     /// <p>The origin request policy.</p>
     pub fn origin_request_policy(&self) -> ::std::option::Option<&crate::types::OriginRequestPolicy> {
@@ -35,6 +35,7 @@ pub struct OriginRequestPolicySummaryBuilder {
 }
 impl OriginRequestPolicySummaryBuilder {
     /// <p>The type of origin request policy, either <code>managed</code> (created by Amazon Web Services) or <code>custom</code> (created in this Amazon Web Services account).</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::OriginRequestPolicyType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl OriginRequestPolicySummaryBuilder {
         &self.r#type
     }
     /// <p>The origin request policy.</p>
+    /// This field is required.
     pub fn origin_request_policy(mut self, input: crate::types::OriginRequestPolicy) -> Self {
         self.origin_request_policy = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,17 @@ impl OriginRequestPolicySummaryBuilder {
         &self.origin_request_policy
     }
     /// Consumes the builder and constructs a [`OriginRequestPolicySummary`](crate::types::OriginRequestPolicySummary).
-    pub fn build(self) -> crate::types::OriginRequestPolicySummary {
-        crate::types::OriginRequestPolicySummary {
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::OriginRequestPolicySummaryBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::OriginRequestPolicySummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::OriginRequestPolicySummary {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building OriginRequestPolicySummary",
+                )
+            })?,
             origin_request_policy: self.origin_request_policy,
-        }
+        })
     }
 }

@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssessmentRunNotification {
     /// <p>The date of the notification.</p>
-    pub date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub date: ::aws_smithy_types::DateTime,
     /// <p>The event for which a notification is sent.</p>
-    pub event: ::std::option::Option<crate::types::InspectorEvent>,
+    pub event: crate::types::InspectorEvent,
     /// <p>The message included in the notification.</p>
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The Boolean value that specifies whether the notification represents an error.</p>
-    pub error: ::std::option::Option<bool>,
+    pub error: bool,
     /// <p>The SNS topic to which the SNS notification is sent.</p>
     pub sns_topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status code of the SNS notification.</p>
@@ -19,19 +19,19 @@ pub struct AssessmentRunNotification {
 }
 impl AssessmentRunNotification {
     /// <p>The date of the notification.</p>
-    pub fn date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.date.as_ref()
+    pub fn date(&self) -> &::aws_smithy_types::DateTime {
+        &self.date
     }
     /// <p>The event for which a notification is sent.</p>
-    pub fn event(&self) -> ::std::option::Option<&crate::types::InspectorEvent> {
-        self.event.as_ref()
+    pub fn event(&self) -> &crate::types::InspectorEvent {
+        &self.event
     }
     /// <p>The message included in the notification.</p>
     pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>The Boolean value that specifies whether the notification represents an error.</p>
-    pub fn error(&self) -> ::std::option::Option<bool> {
+    pub fn error(&self) -> bool {
         self.error
     }
     /// <p>The SNS topic to which the SNS notification is sent.</p>
@@ -63,6 +63,7 @@ pub struct AssessmentRunNotificationBuilder {
 }
 impl AssessmentRunNotificationBuilder {
     /// <p>The date of the notification.</p>
+    /// This field is required.
     pub fn date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.date = ::std::option::Option::Some(input);
         self
@@ -77,6 +78,7 @@ impl AssessmentRunNotificationBuilder {
         &self.date
     }
     /// <p>The event for which a notification is sent.</p>
+    /// This field is required.
     pub fn event(mut self, input: crate::types::InspectorEvent) -> Self {
         self.event = ::std::option::Option::Some(input);
         self
@@ -105,6 +107,7 @@ impl AssessmentRunNotificationBuilder {
         &self.message
     }
     /// <p>The Boolean value that specifies whether the notification represents an error.</p>
+    /// This field is required.
     pub fn error(mut self, input: bool) -> Self {
         self.error = ::std::option::Option::Some(input);
         self
@@ -147,14 +150,33 @@ impl AssessmentRunNotificationBuilder {
         &self.sns_publish_status_code
     }
     /// Consumes the builder and constructs a [`AssessmentRunNotification`](crate::types::AssessmentRunNotification).
-    pub fn build(self) -> crate::types::AssessmentRunNotification {
-        crate::types::AssessmentRunNotification {
-            date: self.date,
-            event: self.event,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`date`](crate::types::builders::AssessmentRunNotificationBuilder::date)
+    /// - [`event`](crate::types::builders::AssessmentRunNotificationBuilder::event)
+    /// - [`error`](crate::types::builders::AssessmentRunNotificationBuilder::error)
+    pub fn build(self) -> ::std::result::Result<crate::types::AssessmentRunNotification, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AssessmentRunNotification {
+            date: self.date.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "date",
+                    "date was not specified but it is required when building AssessmentRunNotification",
+                )
+            })?,
+            event: self.event.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "event",
+                    "event was not specified but it is required when building AssessmentRunNotification",
+                )
+            })?,
             message: self.message,
-            error: self.error,
+            error: self.error.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "error",
+                    "error was not specified but it is required when building AssessmentRunNotification",
+                )
+            })?,
             sns_topic_arn: self.sns_topic_arn,
             sns_publish_status_code: self.sns_publish_status_code,
-        }
+        })
     }
 }

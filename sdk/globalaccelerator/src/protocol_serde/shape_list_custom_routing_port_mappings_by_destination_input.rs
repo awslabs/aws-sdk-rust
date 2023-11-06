@@ -2,7 +2,7 @@
 pub fn ser_list_custom_routing_port_mappings_by_destination_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_custom_routing_port_mappings_by_destination::ListCustomRoutingPortMappingsByDestinationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.endpoint_id {
         object.key("EndpointId").string(var_1.as_str());
     }

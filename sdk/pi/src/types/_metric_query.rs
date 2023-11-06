@@ -12,7 +12,7 @@ pub struct MetricQuery {
     /// <li> <p>The counter metrics listed in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS">Performance Insights operating system counters</a> in the <i>Amazon Aurora User Guide</i>.</p> </li>
     /// </ul>
     /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only.</p>
-    pub metric: ::std::option::Option<::std::string::String>,
+    pub metric: ::std::string::String,
     /// <p>A specification for how to aggregate the data points from a query result. You must specify a valid dimension group. Performance Insights will return all of the dimensions within that group, unless you provide the names of specific dimensions within that group. You can also request that Performance Insights return a limited number of values for a dimension.</p>
     pub group_by: ::std::option::Option<crate::types::DimensionGroup>,
     /// <p>One or more filters to apply in the request. Restrictions:</p>
@@ -31,8 +31,9 @@ impl MetricQuery {
     /// <li> <p>The counter metrics listed in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS">Performance Insights operating system counters</a> in the <i>Amazon Aurora User Guide</i>.</p> </li>
     /// </ul>
     /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only.</p>
-    pub fn metric(&self) -> ::std::option::Option<&str> {
-        self.metric.as_deref()
+    pub fn metric(&self) -> &str {
+        use std::ops::Deref;
+        self.metric.deref()
     }
     /// <p>A specification for how to aggregate the data points from a query result. You must specify a valid dimension group. Performance Insights will return all of the dimensions within that group, unless you provide the names of specific dimensions within that group. You can also request that Performance Insights return a limited number of values for a dimension.</p>
     pub fn group_by(&self) -> ::std::option::Option<&crate::types::DimensionGroup> {
@@ -71,6 +72,7 @@ impl MetricQueryBuilder {
     /// <li> <p>The counter metrics listed in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS">Performance Insights operating system counters</a> in the <i>Amazon Aurora User Guide</i>.</p> </li>
     /// </ul>
     /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only.</p>
+    /// This field is required.
     pub fn metric(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric = ::std::option::Option::Some(input.into());
         self
@@ -145,11 +147,18 @@ impl MetricQueryBuilder {
         &self.filter
     }
     /// Consumes the builder and constructs a [`MetricQuery`](crate::types::MetricQuery).
-    pub fn build(self) -> crate::types::MetricQuery {
-        crate::types::MetricQuery {
-            metric: self.metric,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`metric`](crate::types::builders::MetricQueryBuilder::metric)
+    pub fn build(self) -> ::std::result::Result<crate::types::MetricQuery, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::MetricQuery {
+            metric: self.metric.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "metric",
+                    "metric was not specified but it is required when building MetricQuery",
+                )
+            })?,
             group_by: self.group_by,
             filter: self.filter,
-        }
+        })
     }
 }

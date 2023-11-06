@@ -27,6 +27,7 @@ pub struct GetSinkPolicyInputBuilder {
 }
 impl GetSinkPolicyInputBuilder {
     /// <p>The ARN of the sink to retrieve the policy of.</p>
+    /// This field is required.
     pub fn sink_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sink_identifier = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetSinkPolicyInputBuilder {
     /// Consumes the builder and constructs a [`GetSinkPolicyInput`](crate::operation::get_sink_policy::GetSinkPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_sink_policy::GetSinkPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_sink_policy::GetSinkPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_sink_policy::GetSinkPolicyInput {
             sink_identifier: self.sink_identifier,
         })

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkflowExecutionSignaledEventAttributes {
     /// <p>The name of the signal received. The decider can use the signal name and inputs to determine how to the process the signal.</p>
-    pub signal_name: ::std::option::Option<::std::string::String>,
+    pub signal_name: ::std::string::String,
     /// <p>The inputs provided with the signal. The decider can use the signal name and inputs to determine how to process the signal.</p>
     pub input: ::std::option::Option<::std::string::String>,
     /// <p>The workflow execution that sent the signal. This is set only of the signal was sent by another workflow execution.</p>
@@ -15,8 +15,9 @@ pub struct WorkflowExecutionSignaledEventAttributes {
 }
 impl WorkflowExecutionSignaledEventAttributes {
     /// <p>The name of the signal received. The decider can use the signal name and inputs to determine how to the process the signal.</p>
-    pub fn signal_name(&self) -> ::std::option::Option<&str> {
-        self.signal_name.as_deref()
+    pub fn signal_name(&self) -> &str {
+        use std::ops::Deref;
+        self.signal_name.deref()
     }
     /// <p>The inputs provided with the signal. The decider can use the signal name and inputs to determine how to process the signal.</p>
     pub fn input(&self) -> ::std::option::Option<&str> {
@@ -49,6 +50,7 @@ pub struct WorkflowExecutionSignaledEventAttributesBuilder {
 }
 impl WorkflowExecutionSignaledEventAttributesBuilder {
     /// <p>The name of the signal received. The decider can use the signal name and inputs to determine how to the process the signal.</p>
+    /// This field is required.
     pub fn signal_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signal_name = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +107,21 @@ impl WorkflowExecutionSignaledEventAttributesBuilder {
         &self.external_initiated_event_id
     }
     /// Consumes the builder and constructs a [`WorkflowExecutionSignaledEventAttributes`](crate::types::WorkflowExecutionSignaledEventAttributes).
-    pub fn build(self) -> crate::types::WorkflowExecutionSignaledEventAttributes {
-        crate::types::WorkflowExecutionSignaledEventAttributes {
-            signal_name: self.signal_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`signal_name`](crate::types::builders::WorkflowExecutionSignaledEventAttributesBuilder::signal_name)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::WorkflowExecutionSignaledEventAttributes, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::WorkflowExecutionSignaledEventAttributes {
+            signal_name: self.signal_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "signal_name",
+                    "signal_name was not specified but it is required when building WorkflowExecutionSignaledEventAttributes",
+                )
+            })?,
             input: self.input,
             external_workflow_execution: self.external_workflow_execution,
             external_initiated_event_id: self.external_initiated_event_id.unwrap_or_default(),
-        }
+        })
     }
 }

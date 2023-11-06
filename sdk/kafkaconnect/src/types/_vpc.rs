@@ -7,16 +7,19 @@ pub struct Vpc {
     /// <p>The security groups for the connector.</p>
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The subnets for the connector.</p>
-    pub subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subnets: ::std::vec::Vec<::std::string::String>,
 }
 impl Vpc {
     /// <p>The security groups for the connector.</p>
-    pub fn security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
+    pub fn security_groups(&self) -> &[::std::string::String] {
+        self.security_groups.as_deref().unwrap_or_default()
     }
     /// <p>The subnets for the connector.</p>
-    pub fn subnets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnets.as_deref()
+    pub fn subnets(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.subnets.deref()
     }
 }
 impl Vpc {
@@ -75,10 +78,17 @@ impl VpcBuilder {
         &self.subnets
     }
     /// Consumes the builder and constructs a [`Vpc`](crate::types::Vpc).
-    pub fn build(self) -> crate::types::Vpc {
-        crate::types::Vpc {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`subnets`](crate::types::builders::VpcBuilder::subnets)
+    pub fn build(self) -> ::std::result::Result<crate::types::Vpc, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Vpc {
             security_groups: self.security_groups,
-            subnets: self.subnets,
-        }
+            subnets: self.subnets.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "subnets",
+                    "subnets was not specified but it is required when building Vpc",
+                )
+            })?,
+        })
     }
 }

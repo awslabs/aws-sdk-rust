@@ -27,6 +27,7 @@ pub struct RebootRelationalDatabaseInputBuilder {
 }
 impl RebootRelationalDatabaseInputBuilder {
     /// <p>The name of your database to reboot.</p>
+    /// This field is required.
     pub fn relational_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.relational_database_name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl RebootRelationalDatabaseInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reboot_relational_database::RebootRelationalDatabaseInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::reboot_relational_database::RebootRelationalDatabaseInput {
             relational_database_name: self.relational_database_name,

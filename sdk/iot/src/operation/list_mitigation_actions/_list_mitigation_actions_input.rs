@@ -85,7 +85,7 @@ impl ListMitigationActionsInputBuilder {
     /// Consumes the builder and constructs a [`ListMitigationActionsInput`](crate::operation::list_mitigation_actions::ListMitigationActionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_mitigation_actions::ListMitigationActionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_mitigation_actions::ListMitigationActionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_mitigation_actions::ListMitigationActionsInput {
             action_type: self.action_type,

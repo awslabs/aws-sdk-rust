@@ -5,24 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryLoggingConfig {
     /// <p>The ID for a configuration for DNS query logging.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The ID of the hosted zone that CloudWatch Logs is logging queries for. </p>
-    pub hosted_zone_id: ::std::option::Option<::std::string::String>,
+    pub hosted_zone_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch Logs log group that Amazon Route 53 is publishing logs to.</p>
-    pub cloud_watch_logs_log_group_arn: ::std::option::Option<::std::string::String>,
+    pub cloud_watch_logs_log_group_arn: ::std::string::String,
 }
 impl QueryLoggingConfig {
     /// <p>The ID for a configuration for DNS query logging.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The ID of the hosted zone that CloudWatch Logs is logging queries for. </p>
-    pub fn hosted_zone_id(&self) -> ::std::option::Option<&str> {
-        self.hosted_zone_id.as_deref()
+    pub fn hosted_zone_id(&self) -> &str {
+        use std::ops::Deref;
+        self.hosted_zone_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch Logs log group that Amazon Route 53 is publishing logs to.</p>
-    pub fn cloud_watch_logs_log_group_arn(&self) -> ::std::option::Option<&str> {
-        self.cloud_watch_logs_log_group_arn.as_deref()
+    pub fn cloud_watch_logs_log_group_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.cloud_watch_logs_log_group_arn.deref()
     }
 }
 impl QueryLoggingConfig {
@@ -42,6 +45,7 @@ pub struct QueryLoggingConfigBuilder {
 }
 impl QueryLoggingConfigBuilder {
     /// <p>The ID for a configuration for DNS query logging.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +60,7 @@ impl QueryLoggingConfigBuilder {
         &self.id
     }
     /// <p>The ID of the hosted zone that CloudWatch Logs is logging queries for. </p>
+    /// This field is required.
     pub fn hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hosted_zone_id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +75,7 @@ impl QueryLoggingConfigBuilder {
         &self.hosted_zone_id
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch Logs log group that Amazon Route 53 is publishing logs to.</p>
+    /// This field is required.
     pub fn cloud_watch_logs_log_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloud_watch_logs_log_group_arn = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +90,30 @@ impl QueryLoggingConfigBuilder {
         &self.cloud_watch_logs_log_group_arn
     }
     /// Consumes the builder and constructs a [`QueryLoggingConfig`](crate::types::QueryLoggingConfig).
-    pub fn build(self) -> crate::types::QueryLoggingConfig {
-        crate::types::QueryLoggingConfig {
-            id: self.id,
-            hosted_zone_id: self.hosted_zone_id,
-            cloud_watch_logs_log_group_arn: self.cloud_watch_logs_log_group_arn,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::QueryLoggingConfigBuilder::id)
+    /// - [`hosted_zone_id`](crate::types::builders::QueryLoggingConfigBuilder::hosted_zone_id)
+    /// - [`cloud_watch_logs_log_group_arn`](crate::types::builders::QueryLoggingConfigBuilder::cloud_watch_logs_log_group_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::QueryLoggingConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::QueryLoggingConfig {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building QueryLoggingConfig",
+                )
+            })?,
+            hosted_zone_id: self.hosted_zone_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "hosted_zone_id",
+                    "hosted_zone_id was not specified but it is required when building QueryLoggingConfig",
+                )
+            })?,
+            cloud_watch_logs_log_group_arn: self.cloud_watch_logs_log_group_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "cloud_watch_logs_log_group_arn",
+                    "cloud_watch_logs_log_group_arn was not specified but it is required when building QueryLoggingConfig",
+                )
+            })?,
+        })
     }
 }

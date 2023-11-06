@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UnarchiveWave`](crate::operation::unarchive_wave::builders::UnarchiveWaveFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`wave_id(impl Into<String>)`](crate::operation::unarchive_wave::builders::UnarchiveWaveFluentBuilder::wave_id) / [`set_wave_id(Option<String>)`](crate::operation::unarchive_wave::builders::UnarchiveWaveFluentBuilder::set_wave_id): <p>Wave ID.</p>
-    ///   - [`account_id(impl Into<String>)`](crate::operation::unarchive_wave::builders::UnarchiveWaveFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::unarchive_wave::builders::UnarchiveWaveFluentBuilder::set_account_id): <p>Account ID.</p>
+    ///   - [`wave_id(impl Into<String>)`](crate::operation::unarchive_wave::builders::UnarchiveWaveFluentBuilder::wave_id) / [`set_wave_id(Option<String>)`](crate::operation::unarchive_wave::builders::UnarchiveWaveFluentBuilder::set_wave_id):<br>required: **true**<br><p>Wave ID.</p><br>
+    ///   - [`account_id(impl Into<String>)`](crate::operation::unarchive_wave::builders::UnarchiveWaveFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::unarchive_wave::builders::UnarchiveWaveFluentBuilder::set_account_id):<br>required: **false**<br><p>Account ID.</p><br>
     /// - On success, responds with [`UnarchiveWaveOutput`](crate::operation::unarchive_wave::UnarchiveWaveOutput) with field(s):
     ///   - [`wave_id(Option<String>)`](crate::operation::unarchive_wave::UnarchiveWaveOutput::wave_id): <p>Wave ID.</p>
     ///   - [`arn(Option<String>)`](crate::operation::unarchive_wave::UnarchiveWaveOutput::arn): <p>Wave ARN.</p>
@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`wave_aggregated_status(Option<WaveAggregatedStatus>)`](crate::operation::unarchive_wave::UnarchiveWaveOutput::wave_aggregated_status): <p>Wave aggregated status.</p>
     ///   - [`creation_date_time(Option<String>)`](crate::operation::unarchive_wave::UnarchiveWaveOutput::creation_date_time): <p>Wave creation dateTime.</p>
     ///   - [`last_modified_date_time(Option<String>)`](crate::operation::unarchive_wave::UnarchiveWaveOutput::last_modified_date_time): <p>Wave last modified dateTime.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::unarchive_wave::UnarchiveWaveOutput::tags): <p>Wave tags.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::unarchive_wave::UnarchiveWaveOutput::tags): <p>Wave tags.</p>
     /// - On failure, responds with [`SdkError<UnarchiveWaveError>`](crate::operation::unarchive_wave::UnarchiveWaveError)
     pub fn unarchive_wave(&self) -> crate::operation::unarchive_wave::builders::UnarchiveWaveFluentBuilder {
         crate::operation::unarchive_wave::builders::UnarchiveWaveFluentBuilder::new(self.handle.clone())

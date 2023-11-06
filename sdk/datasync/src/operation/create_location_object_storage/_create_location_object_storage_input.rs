@@ -63,12 +63,16 @@ impl CreateLocationObjectStorageInput {
         self.secret_key.as_deref()
     }
     /// <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can securely connect with your location.</p>
-    pub fn agent_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.agent_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agent_arns.is_none()`.
+    pub fn agent_arns(&self) -> &[::std::string::String] {
+        self.agent_arns.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the key-value pair that represents a tag that you want to add to the resource. Tags can help you manage, filter, and search for your resources. We recommend creating a name tag for your location.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::TagListEntry]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::TagListEntry] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Specifies a file with the certificates that are used to sign the object storage server's certificate (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The file you specify must include the following:</p>
     /// <ul>
@@ -123,6 +127,7 @@ pub struct CreateLocationObjectStorageInputBuilder {
 }
 impl CreateLocationObjectStorageInputBuilder {
     /// <p>Specifies the domain name or IP address of the object storage server. A DataSync agent uses this hostname to mount the object storage server in a network.</p>
+    /// This field is required.
     pub fn server_hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_hostname = ::std::option::Option::Some(input.into());
         self
@@ -179,6 +184,7 @@ impl CreateLocationObjectStorageInputBuilder {
         &self.subdirectory
     }
     /// <p>Specifies the name of the object storage bucket involved in the transfer.</p>
+    /// This field is required.
     pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_name = ::std::option::Option::Some(input.into());
         self
@@ -303,7 +309,7 @@ impl CreateLocationObjectStorageInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_location_object_storage::CreateLocationObjectStorageInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_location_object_storage::CreateLocationObjectStorageInput {
             server_hostname: self.server_hostname,

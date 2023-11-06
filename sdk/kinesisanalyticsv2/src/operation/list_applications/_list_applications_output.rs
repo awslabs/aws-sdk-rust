@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListApplicationsOutput {
     /// <p>A list of <code>ApplicationSummary</code> objects.</p>
-    pub application_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationSummary>>,
+    pub application_summaries: ::std::vec::Vec<crate::types::ApplicationSummary>,
     /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results. Pass this token into a subsequent command to retrieve the next set of items For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListApplicationsOutput {
     /// <p>A list of <code>ApplicationSummary</code> objects.</p>
-    pub fn application_summaries(&self) -> ::std::option::Option<&[crate::types::ApplicationSummary]> {
-        self.application_summaries.as_deref()
+    pub fn application_summaries(&self) -> &[crate::types::ApplicationSummary] {
+        use std::ops::Deref;
+        self.application_summaries.deref()
     }
     /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results. Pass this token into a subsequent command to retrieve the next set of items For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ListApplicationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListApplicationsOutput`](crate::operation::list_applications::ListApplicationsOutput).
-    pub fn build(self) -> crate::operation::list_applications::ListApplicationsOutput {
-        crate::operation::list_applications::ListApplicationsOutput {
-            application_summaries: self.application_summaries,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`application_summaries`](crate::operation::list_applications::builders::ListApplicationsOutputBuilder::application_summaries)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_applications::ListApplicationsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_applications::ListApplicationsOutput {
+            application_summaries: self.application_summaries.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "application_summaries",
+                    "application_summaries was not specified but it is required when building ListApplicationsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -50,6 +50,7 @@ pub struct AssociateFraudsterInputBuilder {
 }
 impl AssociateFraudsterInputBuilder {
     /// <p>The identifier of the domain that contains the fraudster.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -64,6 +65,7 @@ impl AssociateFraudsterInputBuilder {
         &self.domain_id
     }
     /// <p>The identifier of the watchlist you want to associate with the fraudster.</p>
+    /// This field is required.
     pub fn watchlist_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.watchlist_id = ::std::option::Option::Some(input.into());
         self
@@ -78,6 +80,7 @@ impl AssociateFraudsterInputBuilder {
         &self.watchlist_id
     }
     /// <p>The identifier of the fraudster to be associated with the watchlist.</p>
+    /// This field is required.
     pub fn fraudster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fraudster_id = ::std::option::Option::Some(input.into());
         self
@@ -94,7 +97,7 @@ impl AssociateFraudsterInputBuilder {
     /// Consumes the builder and constructs a [`AssociateFraudsterInput`](crate::operation::associate_fraudster::AssociateFraudsterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_fraudster::AssociateFraudsterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::associate_fraudster::AssociateFraudsterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::associate_fraudster::AssociateFraudsterInput {
             domain_id: self.domain_id,
             watchlist_id: self.watchlist_id,

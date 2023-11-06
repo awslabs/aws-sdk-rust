@@ -5,24 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Filter {
     /// <p>The field on which to filter.</p>
-    pub field: ::std::option::Option<crate::types::FilterField>,
+    pub field: crate::types::FilterField,
     /// <p>The operator to use for comparing the field’s value with the provided value.</p>
-    pub operator: ::std::option::Option<crate::types::FilterOperator>,
+    pub operator: crate::types::FilterOperator,
     /// <p>The desired field value on which to filter.</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
 }
 impl Filter {
     /// <p>The field on which to filter.</p>
-    pub fn field(&self) -> ::std::option::Option<&crate::types::FilterField> {
-        self.field.as_ref()
+    pub fn field(&self) -> &crate::types::FilterField {
+        &self.field
     }
     /// <p>The operator to use for comparing the field’s value with the provided value.</p>
-    pub fn operator(&self) -> ::std::option::Option<&crate::types::FilterOperator> {
-        self.operator.as_ref()
+    pub fn operator(&self) -> &crate::types::FilterOperator {
+        &self.operator
     }
     /// <p>The desired field value on which to filter.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
 }
 impl Filter {
@@ -42,6 +43,7 @@ pub struct FilterBuilder {
 }
 impl FilterBuilder {
     /// <p>The field on which to filter.</p>
+    /// This field is required.
     pub fn field(mut self, input: crate::types::FilterField) -> Self {
         self.field = ::std::option::Option::Some(input);
         self
@@ -56,6 +58,7 @@ impl FilterBuilder {
         &self.field
     }
     /// <p>The operator to use for comparing the field’s value with the provided value.</p>
+    /// This field is required.
     pub fn operator(mut self, input: crate::types::FilterOperator) -> Self {
         self.operator = ::std::option::Option::Some(input);
         self
@@ -70,6 +73,7 @@ impl FilterBuilder {
         &self.operator
     }
     /// <p>The desired field value on which to filter.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +88,30 @@ impl FilterBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
-    pub fn build(self) -> crate::types::Filter {
-        crate::types::Filter {
-            field: self.field,
-            operator: self.operator,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`field`](crate::types::builders::FilterBuilder::field)
+    /// - [`operator`](crate::types::builders::FilterBuilder::operator)
+    /// - [`value`](crate::types::builders::FilterBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::Filter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Filter {
+            field: self.field.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "field",
+                    "field was not specified but it is required when building Filter",
+                )
+            })?,
+            operator: self.operator.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "operator",
+                    "operator was not specified but it is required when building Filter",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building Filter",
+                )
+            })?,
+        })
     }
 }

@@ -11,8 +11,10 @@ pub struct DescribeCommentsOutput {
 }
 impl DescribeCommentsOutput {
     /// <p>The list of comments for the specified document version.</p>
-    pub fn comments(&self) -> ::std::option::Option<&[crate::types::Comment]> {
-        self.comments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.comments.is_none()`.
+    pub fn comments(&self) -> &[crate::types::Comment] {
+        self.comments.as_deref().unwrap_or_default()
     }
     /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

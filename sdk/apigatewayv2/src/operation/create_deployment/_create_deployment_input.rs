@@ -42,6 +42,7 @@ pub struct CreateDeploymentInputBuilder {
 }
 impl CreateDeploymentInputBuilder {
     /// <p>The API identifier.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -86,7 +87,7 @@ impl CreateDeploymentInputBuilder {
     /// Consumes the builder and constructs a [`CreateDeploymentInput`](crate::operation::create_deployment::CreateDeploymentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_deployment::CreateDeploymentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_deployment::CreateDeploymentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_deployment::CreateDeploymentInput {
             api_id: self.api_id,
             description: self.description,

@@ -2,135 +2,135 @@
 pub fn ser_jira_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::JiraConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.jira_account_url {
-        object.key("JiraAccountUrl").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("JiraAccountUrl").string(input.jira_account_url.as_str());
     }
-    if let Some(var_2) = &input.secret_arn {
-        object.key("SecretArn").string(var_2.as_str());
+    {
+        object.key("SecretArn").string(input.secret_arn.as_str());
     }
     if input.use_change_log {
         object.key("UseChangeLog").boolean(input.use_change_log);
     }
-    if let Some(var_3) = &input.project {
-        let mut array_4 = object.key("Project").start_array();
-        for item_5 in var_3 {
+    if let Some(var_1) = &input.project {
+        let mut array_2 = object.key("Project").start_array();
+        for item_3 in var_1 {
             {
-                array_4.value().string(item_5.as_str());
+                array_2.value().string(item_3.as_str());
             }
         }
-        array_4.finish();
+        array_2.finish();
     }
-    if let Some(var_6) = &input.issue_type {
-        let mut array_7 = object.key("IssueType").start_array();
-        for item_8 in var_6 {
+    if let Some(var_4) = &input.issue_type {
+        let mut array_5 = object.key("IssueType").start_array();
+        for item_6 in var_4 {
             {
-                array_7.value().string(item_8.as_str());
+                array_5.value().string(item_6.as_str());
             }
         }
-        array_7.finish();
+        array_5.finish();
     }
-    if let Some(var_9) = &input.status {
-        let mut array_10 = object.key("Status").start_array();
-        for item_11 in var_9 {
+    if let Some(var_7) = &input.status {
+        let mut array_8 = object.key("Status").start_array();
+        for item_9 in var_7 {
             {
-                array_10.value().string(item_11.as_str());
+                array_8.value().string(item_9.as_str());
             }
         }
-        array_10.finish();
+        array_8.finish();
     }
-    if let Some(var_12) = &input.issue_sub_entity_filter {
-        let mut array_13 = object.key("IssueSubEntityFilter").start_array();
-        for item_14 in var_12 {
+    if let Some(var_10) = &input.issue_sub_entity_filter {
+        let mut array_11 = object.key("IssueSubEntityFilter").start_array();
+        for item_12 in var_10 {
             {
-                array_13.value().string(item_14.as_str());
+                array_11.value().string(item_12.as_str());
             }
         }
-        array_13.finish();
+        array_11.finish();
     }
-    if let Some(var_15) = &input.attachment_field_mappings {
-        let mut array_16 = object.key("AttachmentFieldMappings").start_array();
-        for item_17 in var_15 {
-            {
-                #[allow(unused_mut)]
-                let mut object_18 = array_16.value().start_object();
-                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_18, item_17)?;
-                object_18.finish();
-            }
-        }
-        array_16.finish();
-    }
-    if let Some(var_19) = &input.comment_field_mappings {
-        let mut array_20 = object.key("CommentFieldMappings").start_array();
-        for item_21 in var_19 {
+    if let Some(var_13) = &input.attachment_field_mappings {
+        let mut array_14 = object.key("AttachmentFieldMappings").start_array();
+        for item_15 in var_13 {
             {
                 #[allow(unused_mut)]
-                let mut object_22 = array_20.value().start_object();
-                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_22, item_21)?;
-                object_22.finish();
+                let mut object_16 = array_14.value().start_object();
+                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_16, item_15)?;
+                object_16.finish();
             }
         }
-        array_20.finish();
+        array_14.finish();
     }
-    if let Some(var_23) = &input.issue_field_mappings {
-        let mut array_24 = object.key("IssueFieldMappings").start_array();
-        for item_25 in var_23 {
+    if let Some(var_17) = &input.comment_field_mappings {
+        let mut array_18 = object.key("CommentFieldMappings").start_array();
+        for item_19 in var_17 {
             {
                 #[allow(unused_mut)]
-                let mut object_26 = array_24.value().start_object();
-                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_26, item_25)?;
-                object_26.finish();
+                let mut object_20 = array_18.value().start_object();
+                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_20, item_19)?;
+                object_20.finish();
             }
         }
-        array_24.finish();
+        array_18.finish();
     }
-    if let Some(var_27) = &input.project_field_mappings {
-        let mut array_28 = object.key("ProjectFieldMappings").start_array();
-        for item_29 in var_27 {
+    if let Some(var_21) = &input.issue_field_mappings {
+        let mut array_22 = object.key("IssueFieldMappings").start_array();
+        for item_23 in var_21 {
             {
                 #[allow(unused_mut)]
-                let mut object_30 = array_28.value().start_object();
-                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_30, item_29)?;
-                object_30.finish();
+                let mut object_24 = array_22.value().start_object();
+                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_24, item_23)?;
+                object_24.finish();
             }
         }
-        array_28.finish();
+        array_22.finish();
     }
-    if let Some(var_31) = &input.work_log_field_mappings {
-        let mut array_32 = object.key("WorkLogFieldMappings").start_array();
-        for item_33 in var_31 {
+    if let Some(var_25) = &input.project_field_mappings {
+        let mut array_26 = object.key("ProjectFieldMappings").start_array();
+        for item_27 in var_25 {
             {
                 #[allow(unused_mut)]
-                let mut object_34 = array_32.value().start_object();
-                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_34, item_33)?;
-                object_34.finish();
+                let mut object_28 = array_26.value().start_object();
+                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_28, item_27)?;
+                object_28.finish();
             }
         }
-        array_32.finish();
+        array_26.finish();
     }
-    if let Some(var_35) = &input.inclusion_patterns {
-        let mut array_36 = object.key("InclusionPatterns").start_array();
-        for item_37 in var_35 {
+    if let Some(var_29) = &input.work_log_field_mappings {
+        let mut array_30 = object.key("WorkLogFieldMappings").start_array();
+        for item_31 in var_29 {
             {
-                array_36.value().string(item_37.as_str());
+                #[allow(unused_mut)]
+                let mut object_32 = array_30.value().start_object();
+                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_32, item_31)?;
+                object_32.finish();
             }
         }
-        array_36.finish();
+        array_30.finish();
     }
-    if let Some(var_38) = &input.exclusion_patterns {
-        let mut array_39 = object.key("ExclusionPatterns").start_array();
-        for item_40 in var_38 {
+    if let Some(var_33) = &input.inclusion_patterns {
+        let mut array_34 = object.key("InclusionPatterns").start_array();
+        for item_35 in var_33 {
             {
-                array_39.value().string(item_40.as_str());
+                array_34.value().string(item_35.as_str());
             }
         }
-        array_39.finish();
+        array_34.finish();
     }
-    if let Some(var_41) = &input.vpc_configuration {
+    if let Some(var_36) = &input.exclusion_patterns {
+        let mut array_37 = object.key("ExclusionPatterns").start_array();
+        for item_38 in var_36 {
+            {
+                array_37.value().string(item_38.as_str());
+            }
+        }
+        array_37.finish();
+    }
+    if let Some(var_39) = &input.vpc_configuration {
         #[allow(unused_mut)]
-        let mut object_42 = object.key("VpcConfiguration").start_object();
-        crate::protocol_serde::shape_data_source_vpc_configuration::ser_data_source_vpc_configuration(&mut object_42, var_41)?;
-        object_42.finish();
+        let mut object_40 = object.key("VpcConfiguration").start_object();
+        crate::protocol_serde::shape_data_source_vpc_configuration::ser_data_source_vpc_configuration(&mut object_40, var_39)?;
+        object_40.finish();
     }
     Ok(())
 }
@@ -243,7 +243,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::jira_configuration_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

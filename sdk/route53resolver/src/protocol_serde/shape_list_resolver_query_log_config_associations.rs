@@ -79,11 +79,10 @@ pub fn de_list_resolver_query_log_config_associations_http_error(
                                 crate::operation::list_resolver_query_log_config_associations::ListResolverQueryLogConfigAssociationsError::unhandled,
                             )?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::invalid_parameter_exception_correct_errors(output).build().map_err(
+                        crate::operation::list_resolver_query_log_config_associations::ListResolverQueryLogConfigAssociationsError::unhandled,
+                    )?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -172,7 +171,7 @@ pub fn de_list_resolver_query_log_config_associations_http_response(
 
 pub fn ser_list_resolver_query_log_config_associations_input(
     input: &crate::operation::list_resolver_query_log_config_associations::ListResolverQueryLogConfigAssociationsInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_list_resolver_query_log_config_associations_input::ser_list_resolver_query_log_config_associations_input(
@@ -180,7 +179,7 @@ pub fn ser_list_resolver_query_log_config_associations_input(
         input,
     )?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_list_resolver_query_log_config_associations(

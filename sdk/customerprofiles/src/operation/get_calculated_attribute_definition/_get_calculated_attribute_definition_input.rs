@@ -34,6 +34,7 @@ pub struct GetCalculatedAttributeDefinitionInputBuilder {
 }
 impl GetCalculatedAttributeDefinitionInputBuilder {
     /// <p>The unique name of the domain.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetCalculatedAttributeDefinitionInputBuilder {
         &self.domain_name
     }
     /// <p>The unique name of the calculated attribute.</p>
+    /// This field is required.
     pub fn calculated_attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.calculated_attribute_name = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl GetCalculatedAttributeDefinitionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_calculated_attribute_definition::GetCalculatedAttributeDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_calculated_attribute_definition::GetCalculatedAttributeDefinitionInput {

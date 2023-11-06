@@ -28,8 +28,10 @@ impl CreateOpsMetadataInput {
     /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
     /// <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li>
     /// </ul>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateOpsMetadataInput {
@@ -49,6 +51,7 @@ pub struct CreateOpsMetadataInputBuilder {
 }
 impl CreateOpsMetadataInputBuilder {
     /// <p>A resource ID for a new Application Manager application.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -120,7 +123,7 @@ impl CreateOpsMetadataInputBuilder {
     /// Consumes the builder and constructs a [`CreateOpsMetadataInput`](crate::operation::create_ops_metadata::CreateOpsMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_ops_metadata::CreateOpsMetadataInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_ops_metadata::CreateOpsMetadataInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_ops_metadata::CreateOpsMetadataInput {
             resource_id: self.resource_id,
             metadata: self.metadata,

@@ -190,7 +190,7 @@ impl ListRestoreJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListRestoreJobsInput`](crate::operation::list_restore_jobs::ListRestoreJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_restore_jobs::ListRestoreJobsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_restore_jobs::ListRestoreJobsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_restore_jobs::ListRestoreJobsInput {
             next_token: self.next_token,
             max_results: self.max_results,

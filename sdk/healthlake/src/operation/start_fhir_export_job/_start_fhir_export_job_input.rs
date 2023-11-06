@@ -69,6 +69,7 @@ impl StartFhirExportJobInputBuilder {
         &self.job_name
     }
     /// <p>The output data configuration that was supplied when the export job was created.</p>
+    /// This field is required.
     pub fn output_data_config(mut self, input: crate::types::OutputDataConfig) -> Self {
         self.output_data_config = ::std::option::Option::Some(input);
         self
@@ -83,6 +84,7 @@ impl StartFhirExportJobInputBuilder {
         &self.output_data_config
     }
     /// <p>The AWS generated ID for the data store from which files are being exported for an export job.</p>
+    /// This field is required.
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_id = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +99,7 @@ impl StartFhirExportJobInputBuilder {
         &self.datastore_id
     }
     /// <p>The Amazon Resource Name used during the initiation of the job.</p>
+    /// This field is required.
     pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_access_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +114,7 @@ impl StartFhirExportJobInputBuilder {
         &self.data_access_role_arn
     }
     /// <p>An optional user provided token used for ensuring idempotency.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -127,7 +131,7 @@ impl StartFhirExportJobInputBuilder {
     /// Consumes the builder and constructs a [`StartFhirExportJobInput`](crate::operation::start_fhir_export_job::StartFhirExportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_fhir_export_job::StartFhirExportJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_fhir_export_job::StartFhirExportJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_fhir_export_job::StartFhirExportJobInput {
             job_name: self.job_name,

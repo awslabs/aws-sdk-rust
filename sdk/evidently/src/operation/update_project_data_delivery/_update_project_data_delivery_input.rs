@@ -41,6 +41,7 @@ pub struct UpdateProjectDataDeliveryInputBuilder {
 }
 impl UpdateProjectDataDeliveryInputBuilder {
     /// <p>The name or ARN of the project that you want to modify the data storage options for.</p>
+    /// This field is required.
     pub fn project(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl UpdateProjectDataDeliveryInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_project_data_delivery::UpdateProjectDataDeliveryInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_project_data_delivery::UpdateProjectDataDeliveryInput {
             project: self.project,

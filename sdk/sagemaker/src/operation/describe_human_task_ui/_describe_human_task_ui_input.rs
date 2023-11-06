@@ -27,6 +27,7 @@ pub struct DescribeHumanTaskUiInputBuilder {
 }
 impl DescribeHumanTaskUiInputBuilder {
     /// <p>The name of the human task user interface (worker task template) you want information about.</p>
+    /// This field is required.
     pub fn human_task_ui_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.human_task_ui_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeHumanTaskUiInputBuilder {
     /// Consumes the builder and constructs a [`DescribeHumanTaskUiInput`](crate::operation::describe_human_task_ui::DescribeHumanTaskUiInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_human_task_ui::DescribeHumanTaskUiInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_human_task_ui::DescribeHumanTaskUiInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_human_task_ui::DescribeHumanTaskUiInput {
             human_task_ui_name: self.human_task_ui_name,

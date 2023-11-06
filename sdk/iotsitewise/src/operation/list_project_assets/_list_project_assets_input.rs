@@ -43,6 +43,7 @@ pub struct ListProjectAssetsInputBuilder {
 }
 impl ListProjectAssetsInputBuilder {
     /// <p>The ID of the project.</p>
+    /// This field is required.
     pub fn project_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_id = ::std::option::Option::Some(input.into());
         self
@@ -90,7 +91,7 @@ impl ListProjectAssetsInputBuilder {
     /// Consumes the builder and constructs a [`ListProjectAssetsInput`](crate::operation::list_project_assets::ListProjectAssetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_project_assets::ListProjectAssetsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_project_assets::ListProjectAssetsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_project_assets::ListProjectAssetsInput {
             project_id: self.project_id,
             next_token: self.next_token,

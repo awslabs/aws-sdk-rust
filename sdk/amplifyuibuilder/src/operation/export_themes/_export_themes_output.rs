@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportThemesOutput {
     /// <p>Represents the configuration of the exported themes.</p>
-    pub entities: ::std::option::Option<::std::vec::Vec<crate::types::Theme>>,
+    pub entities: ::std::vec::Vec<crate::types::Theme>,
     /// <p>The pagination token that's included if more results are available.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ExportThemesOutput {
     /// <p>Represents the configuration of the exported themes.</p>
-    pub fn entities(&self) -> ::std::option::Option<&[crate::types::Theme]> {
-        self.entities.as_deref()
+    pub fn entities(&self) -> &[crate::types::Theme] {
+        use std::ops::Deref;
+        self.entities.deref()
     }
     /// <p>The pagination token that's included if more results are available.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ExportThemesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ExportThemesOutput`](crate::operation::export_themes::ExportThemesOutput).
-    pub fn build(self) -> crate::operation::export_themes::ExportThemesOutput {
-        crate::operation::export_themes::ExportThemesOutput {
-            entities: self.entities,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`entities`](crate::operation::export_themes::builders::ExportThemesOutputBuilder::entities)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::export_themes::ExportThemesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::export_themes::ExportThemesOutput {
+            entities: self.entities.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "entities",
+                    "entities was not specified but it is required when building ExportThemesOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

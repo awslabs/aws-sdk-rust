@@ -27,6 +27,7 @@ pub struct GetStageInputBuilder {
 }
 impl GetStageInputBuilder {
     /// <p>ARN of the stage for which the information is to be retrieved.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetStageInputBuilder {
         &self.arn
     }
     /// Consumes the builder and constructs a [`GetStageInput`](crate::operation::get_stage::GetStageInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_stage::GetStageInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_stage::GetStageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_stage::GetStageInput { arn: self.arn })
     }
 }

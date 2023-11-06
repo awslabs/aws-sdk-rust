@@ -5,19 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Prompt {
     /// <p>An array of objects, each of which provides a message string and its type. You can specify the message string in plain text or in Speech Synthesis Markup Language (SSML).</p>
-    pub messages: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
+    pub messages: ::std::vec::Vec<crate::types::Message>,
     /// <p>The number of times to prompt the user for information.</p>
-    pub max_attempts: ::std::option::Option<i32>,
+    pub max_attempts: i32,
     /// <p>A response card. Amazon Lex uses this prompt at runtime, in the <code>PostText</code> API response. It substitutes session attributes and slot values for placeholders in the response card. For more information, see <code>ex-resp-card</code>. </p>
     pub response_card: ::std::option::Option<::std::string::String>,
 }
 impl Prompt {
     /// <p>An array of objects, each of which provides a message string and its type. You can specify the message string in plain text or in Speech Synthesis Markup Language (SSML).</p>
-    pub fn messages(&self) -> ::std::option::Option<&[crate::types::Message]> {
-        self.messages.as_deref()
+    pub fn messages(&self) -> &[crate::types::Message] {
+        use std::ops::Deref;
+        self.messages.deref()
     }
     /// <p>The number of times to prompt the user for information.</p>
-    pub fn max_attempts(&self) -> ::std::option::Option<i32> {
+    pub fn max_attempts(&self) -> i32 {
         self.max_attempts
     }
     /// <p>A response card. Amazon Lex uses this prompt at runtime, in the <code>PostText</code> API response. It substitutes session attributes and slot values for placeholders in the response card. For more information, see <code>ex-resp-card</code>. </p>
@@ -62,6 +63,7 @@ impl PromptBuilder {
         &self.messages
     }
     /// <p>The number of times to prompt the user for information.</p>
+    /// This field is required.
     pub fn max_attempts(mut self, input: i32) -> Self {
         self.max_attempts = ::std::option::Option::Some(input);
         self
@@ -90,11 +92,24 @@ impl PromptBuilder {
         &self.response_card
     }
     /// Consumes the builder and constructs a [`Prompt`](crate::types::Prompt).
-    pub fn build(self) -> crate::types::Prompt {
-        crate::types::Prompt {
-            messages: self.messages,
-            max_attempts: self.max_attempts,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`messages`](crate::types::builders::PromptBuilder::messages)
+    /// - [`max_attempts`](crate::types::builders::PromptBuilder::max_attempts)
+    pub fn build(self) -> ::std::result::Result<crate::types::Prompt, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Prompt {
+            messages: self.messages.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "messages",
+                    "messages was not specified but it is required when building Prompt",
+                )
+            })?,
+            max_attempts: self.max_attempts.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "max_attempts",
+                    "max_attempts was not specified but it is required when building Prompt",
+                )
+            })?,
             response_card: self.response_card,
-        }
+        })
     }
 }

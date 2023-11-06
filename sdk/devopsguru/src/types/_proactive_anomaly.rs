@@ -83,8 +83,10 @@ impl ProactiveAnomaly {
         self.source_metadata.as_ref()
     }
     /// <p>Information about a resource in which DevOps Guru detected anomalous behavior.</p>
-    pub fn anomaly_resources(&self) -> ::std::option::Option<&[crate::types::AnomalyResource]> {
-        self.anomaly_resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.anomaly_resources.is_none()`.
+    pub fn anomaly_resources(&self) -> &[crate::types::AnomalyResource] {
+        self.anomaly_resources.as_deref().unwrap_or_default()
     }
     /// <p> A description of the proactive anomaly. </p>
     pub fn description(&self) -> ::std::option::Option<&str> {

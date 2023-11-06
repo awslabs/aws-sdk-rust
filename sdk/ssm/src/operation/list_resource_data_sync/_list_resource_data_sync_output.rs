@@ -11,8 +11,10 @@ pub struct ListResourceDataSyncOutput {
 }
 impl ListResourceDataSyncOutput {
     /// <p>A list of your current resource data sync configurations and their statuses.</p>
-    pub fn resource_data_sync_items(&self) -> ::std::option::Option<&[crate::types::ResourceDataSyncItem]> {
-        self.resource_data_sync_items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_data_sync_items.is_none()`.
+    pub fn resource_data_sync_items(&self) -> &[crate::types::ResourceDataSyncItem] {
+        self.resource_data_sync_items.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

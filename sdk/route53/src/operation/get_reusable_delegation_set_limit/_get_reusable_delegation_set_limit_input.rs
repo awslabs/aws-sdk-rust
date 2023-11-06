@@ -35,6 +35,7 @@ pub struct GetReusableDelegationSetLimitInputBuilder {
 }
 impl GetReusableDelegationSetLimitInputBuilder {
     /// <p>Specify <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code> to get the maximum number of hosted zones that you can associate with the specified reusable delegation set.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::ReusableDelegationSetLimitType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl GetReusableDelegationSetLimitInputBuilder {
         &self.r#type
     }
     /// <p>The ID of the delegation set that you want to get the limit for.</p>
+    /// This field is required.
     pub fn delegation_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delegation_set_id = ::std::option::Option::Some(input.into());
         self
@@ -67,7 +69,7 @@ impl GetReusableDelegationSetLimitInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimitInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimitInput {
             r#type: self.r#type,

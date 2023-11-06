@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfigurationStatus {
     /// <p>The current state of the configuration.</p>
-    pub state: ::std::option::Option<crate::types::ConfigurationState>,
+    pub state: crate::types::ConfigurationState,
     /// <p>Contains associated error information, if any.</p>
     pub error: ::std::option::Option<crate::types::ConfigurationErrorDetails>,
 }
 impl ConfigurationStatus {
     /// <p>The current state of the configuration.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ConfigurationState> {
-        self.state.as_ref()
+    pub fn state(&self) -> &crate::types::ConfigurationState {
+        &self.state
     }
     /// <p>Contains associated error information, if any.</p>
     pub fn error(&self) -> ::std::option::Option<&crate::types::ConfigurationErrorDetails> {
@@ -35,6 +35,7 @@ pub struct ConfigurationStatusBuilder {
 }
 impl ConfigurationStatusBuilder {
     /// <p>The current state of the configuration.</p>
+    /// This field is required.
     pub fn state(mut self, input: crate::types::ConfigurationState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
@@ -63,10 +64,17 @@ impl ConfigurationStatusBuilder {
         &self.error
     }
     /// Consumes the builder and constructs a [`ConfigurationStatus`](crate::types::ConfigurationStatus).
-    pub fn build(self) -> crate::types::ConfigurationStatus {
-        crate::types::ConfigurationStatus {
-            state: self.state,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`state`](crate::types::builders::ConfigurationStatusBuilder::state)
+    pub fn build(self) -> ::std::result::Result<crate::types::ConfigurationStatus, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ConfigurationStatus {
+            state: self.state.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "state",
+                    "state was not specified but it is required when building ConfigurationStatus",
+                )
+            })?,
             error: self.error,
-        }
+        })
     }
 }

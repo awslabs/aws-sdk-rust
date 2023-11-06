@@ -62,6 +62,7 @@ pub struct CreateAccountAssignmentInputBuilder {
 }
 impl CreateAccountAssignmentInputBuilder {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// This field is required.
     pub fn instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_arn = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl CreateAccountAssignmentInputBuilder {
         &self.instance_arn
     }
     /// <p>TargetID is an Amazon Web Services account identifier, (For example, 123456789012).</p>
+    /// This field is required.
     pub fn target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +92,7 @@ impl CreateAccountAssignmentInputBuilder {
         &self.target_id
     }
     /// <p>The entity type for which the assignment will be created.</p>
+    /// This field is required.
     pub fn target_type(mut self, input: crate::types::TargetType) -> Self {
         self.target_type = ::std::option::Option::Some(input);
         self
@@ -104,6 +107,7 @@ impl CreateAccountAssignmentInputBuilder {
         &self.target_type
     }
     /// <p>The ARN of the permission set that the admin wants to grant the principal access to.</p>
+    /// This field is required.
     pub fn permission_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permission_set_arn = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +122,7 @@ impl CreateAccountAssignmentInputBuilder {
         &self.permission_set_arn
     }
     /// <p>The entity type for which the assignment will be created.</p>
+    /// This field is required.
     pub fn principal_type(mut self, input: crate::types::PrincipalType) -> Self {
         self.principal_type = ::std::option::Option::Some(input);
         self
@@ -132,6 +137,7 @@ impl CreateAccountAssignmentInputBuilder {
         &self.principal_type
     }
     /// <p>An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API Reference</a>.</p>
+    /// This field is required.
     pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_id = ::std::option::Option::Some(input.into());
         self
@@ -150,7 +156,7 @@ impl CreateAccountAssignmentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_account_assignment::CreateAccountAssignmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_account_assignment::CreateAccountAssignmentInput {
             instance_arn: self.instance_arn,

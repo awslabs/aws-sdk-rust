@@ -2,7 +2,7 @@
 pub fn ser_journey_channel_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::JourneyChannelSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.connect_campaign_arn {
         object.key("ConnectCampaignArn").string(var_1.as_str());
     }

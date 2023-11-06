@@ -20,8 +20,10 @@ impl GetConfigInput {
         self.client_version.as_ref()
     }
     /// <p>A list of ARNs that identify the high-availability partition groups that are associated with the client.</p>
-    pub fn hapg_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.hapg_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hapg_list.is_none()`.
+    pub fn hapg_list(&self) -> &[::std::string::String] {
+        self.hapg_list.as_deref().unwrap_or_default()
     }
 }
 impl GetConfigInput {
@@ -41,6 +43,7 @@ pub struct GetConfigInputBuilder {
 }
 impl GetConfigInputBuilder {
     /// <p>The ARN of the client.</p>
+    /// This field is required.
     pub fn client_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl GetConfigInputBuilder {
         &self.client_arn
     }
     /// <p>The client version.</p>
+    /// This field is required.
     pub fn client_version(mut self, input: crate::types::ClientVersion) -> Self {
         self.client_version = ::std::option::Option::Some(input);
         self
@@ -89,7 +93,7 @@ impl GetConfigInputBuilder {
         &self.hapg_list
     }
     /// Consumes the builder and constructs a [`GetConfigInput`](crate::operation::get_config::GetConfigInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_config::GetConfigInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_config::GetConfigInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_config::GetConfigInput {
             client_arn: self.client_arn,
             client_version: self.client_version,

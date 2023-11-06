@@ -11,8 +11,10 @@ pub struct DescribeExportConfigurationsOutput {
 }
 impl DescribeExportConfigurationsOutput {
     /// <p></p>
-    pub fn exports_info(&self) -> ::std::option::Option<&[crate::types::ExportInfo]> {
-        self.exports_info.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exports_info.is_none()`.
+    pub fn exports_info(&self) -> &[crate::types::ExportInfo] {
+        self.exports_info.as_deref().unwrap_or_default()
     }
     /// <p>The token from the previous call to describe-export-tasks.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

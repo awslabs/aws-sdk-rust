@@ -11,8 +11,10 @@ pub struct DescribeInstanceRefreshesOutput {
 }
 impl DescribeInstanceRefreshesOutput {
     /// <p>The instance refreshes for the specified group, sorted by creation timestamp in descending order.</p>
-    pub fn instance_refreshes(&self) -> ::std::option::Option<&[crate::types::InstanceRefresh]> {
-        self.instance_refreshes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_refreshes.is_none()`.
+    pub fn instance_refreshes(&self) -> &[crate::types::InstanceRefresh] {
+        self.instance_refreshes.as_deref().unwrap_or_default()
     }
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

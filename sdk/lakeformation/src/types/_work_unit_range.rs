@@ -9,7 +9,7 @@ pub struct WorkUnitRange {
     /// <p>Defines the minimum work unit ID in the range.</p>
     pub work_unit_id_min: i64,
     /// <p>A work token used to query the execution service.</p>
-    pub work_unit_token: ::std::option::Option<::std::string::String>,
+    pub work_unit_token: ::std::string::String,
 }
 impl WorkUnitRange {
     /// <p>Defines the maximum work unit ID in the range. The maximum value is inclusive.</p>
@@ -21,8 +21,9 @@ impl WorkUnitRange {
         self.work_unit_id_min
     }
     /// <p>A work token used to query the execution service.</p>
-    pub fn work_unit_token(&self) -> ::std::option::Option<&str> {
-        self.work_unit_token.as_deref()
+    pub fn work_unit_token(&self) -> &str {
+        use std::ops::Deref;
+        self.work_unit_token.deref()
     }
 }
 impl WorkUnitRange {
@@ -42,6 +43,7 @@ pub struct WorkUnitRangeBuilder {
 }
 impl WorkUnitRangeBuilder {
     /// <p>Defines the maximum work unit ID in the range. The maximum value is inclusive.</p>
+    /// This field is required.
     pub fn work_unit_id_max(mut self, input: i64) -> Self {
         self.work_unit_id_max = ::std::option::Option::Some(input);
         self
@@ -56,6 +58,7 @@ impl WorkUnitRangeBuilder {
         &self.work_unit_id_max
     }
     /// <p>Defines the minimum work unit ID in the range.</p>
+    /// This field is required.
     pub fn work_unit_id_min(mut self, input: i64) -> Self {
         self.work_unit_id_min = ::std::option::Option::Some(input);
         self
@@ -70,6 +73,7 @@ impl WorkUnitRangeBuilder {
         &self.work_unit_id_min
     }
     /// <p>A work token used to query the execution service.</p>
+    /// This field is required.
     pub fn work_unit_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.work_unit_token = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +88,18 @@ impl WorkUnitRangeBuilder {
         &self.work_unit_token
     }
     /// Consumes the builder and constructs a [`WorkUnitRange`](crate::types::WorkUnitRange).
-    pub fn build(self) -> crate::types::WorkUnitRange {
-        crate::types::WorkUnitRange {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`work_unit_token`](crate::types::builders::WorkUnitRangeBuilder::work_unit_token)
+    pub fn build(self) -> ::std::result::Result<crate::types::WorkUnitRange, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::WorkUnitRange {
             work_unit_id_max: self.work_unit_id_max.unwrap_or_default(),
             work_unit_id_min: self.work_unit_id_min.unwrap_or_default(),
-            work_unit_token: self.work_unit_token,
-        }
+            work_unit_token: self.work_unit_token.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "work_unit_token",
+                    "work_unit_token was not specified but it is required when building WorkUnitRange",
+                )
+            })?,
+        })
     }
 }

@@ -55,6 +55,7 @@ pub struct ListEnvironmentBlueprintsInputBuilder {
 }
 impl ListEnvironmentBlueprintsInputBuilder {
     /// <p>The identifier of the Amazon DataZone domain.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -129,7 +130,7 @@ impl ListEnvironmentBlueprintsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_environment_blueprints::ListEnvironmentBlueprintsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_environment_blueprints::ListEnvironmentBlueprintsInput {
             domain_identifier: self.domain_identifier,

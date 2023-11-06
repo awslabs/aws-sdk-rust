@@ -41,6 +41,7 @@ pub struct UpdateOriginRequestPolicyInputBuilder {
 }
 impl UpdateOriginRequestPolicyInputBuilder {
     /// <p>An origin request policy configuration.</p>
+    /// This field is required.
     pub fn origin_request_policy_config(mut self, input: crate::types::OriginRequestPolicyConfig) -> Self {
         self.origin_request_policy_config = ::std::option::Option::Some(input);
         self
@@ -55,6 +56,7 @@ impl UpdateOriginRequestPolicyInputBuilder {
         &self.origin_request_policy_config
     }
     /// <p>The unique identifier for the origin request policy that you are updating. The identifier is returned in a cache behavior's <code>OriginRequestPolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +89,7 @@ impl UpdateOriginRequestPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_origin_request_policy::UpdateOriginRequestPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_origin_request_policy::UpdateOriginRequestPolicyInput {
             origin_request_policy_config: self.origin_request_policy_config,

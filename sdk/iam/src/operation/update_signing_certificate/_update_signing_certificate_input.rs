@@ -63,6 +63,7 @@ impl UpdateSigningCertificateInputBuilder {
     }
     /// <p>The ID of the signing certificate you want to update.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
+    /// This field is required.
     pub fn certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_id = ::std::option::Option::Some(input.into());
         self
@@ -79,6 +80,7 @@ impl UpdateSigningCertificateInputBuilder {
         &self.certificate_id
     }
     /// <p> The status you want to assign to the certificate. <code>Active</code> means that the certificate can be used for programmatic calls to Amazon Web Services <code>Inactive</code> means that the certificate cannot be used.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::StatusType) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -97,7 +99,7 @@ impl UpdateSigningCertificateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_signing_certificate::UpdateSigningCertificateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_signing_certificate::UpdateSigningCertificateInput {
             user_name: self.user_name,

@@ -9,8 +9,10 @@ pub struct BatchEnableAlarmOutput {
 }
 impl BatchEnableAlarmOutput {
     /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
-    pub fn error_entries(&self) -> ::std::option::Option<&[crate::types::BatchAlarmActionErrorEntry]> {
-        self.error_entries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.error_entries.is_none()`.
+    pub fn error_entries(&self) -> &[crate::types::BatchAlarmActionErrorEntry] {
+        self.error_entries.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchEnableAlarmOutput {

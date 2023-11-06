@@ -9,8 +9,10 @@ pub struct DescribeLifecycleHookTypesOutput {
 }
 impl DescribeLifecycleHookTypesOutput {
     /// <p>The lifecycle hook types.</p>
-    pub fn lifecycle_hook_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.lifecycle_hook_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lifecycle_hook_types.is_none()`.
+    pub fn lifecycle_hook_types(&self) -> &[::std::string::String] {
+        self.lifecycle_hook_types.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeLifecycleHookTypesOutput {

@@ -34,6 +34,7 @@ pub struct RemoveTemplateActionInputBuilder {
 }
 impl RemoveTemplateActionInputBuilder {
     /// <p>Launch configuration template ID of the post migration custom action to remove.</p>
+    /// This field is required.
     pub fn launch_configuration_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_configuration_template_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl RemoveTemplateActionInputBuilder {
         &self.launch_configuration_template_id
     }
     /// <p>Template post migration custom action ID to remove.</p>
+    /// This field is required.
     pub fn action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl RemoveTemplateActionInputBuilder {
     /// Consumes the builder and constructs a [`RemoveTemplateActionInput`](crate::operation::remove_template_action::RemoveTemplateActionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::remove_template_action::RemoveTemplateActionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::remove_template_action::RemoveTemplateActionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::remove_template_action::RemoveTemplateActionInput {
             launch_configuration_template_id: self.launch_configuration_template_id,

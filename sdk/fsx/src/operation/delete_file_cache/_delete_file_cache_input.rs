@@ -34,6 +34,7 @@ pub struct DeleteFileCacheInputBuilder {
 }
 impl DeleteFileCacheInputBuilder {
     /// <p>The ID of the cache that's being deleted.</p>
+    /// This field is required.
     pub fn file_cache_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_cache_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl DeleteFileCacheInputBuilder {
     /// Consumes the builder and constructs a [`DeleteFileCacheInput`](crate::operation::delete_file_cache::DeleteFileCacheInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_file_cache::DeleteFileCacheInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_file_cache::DeleteFileCacheInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_file_cache::DeleteFileCacheInput {
             file_cache_id: self.file_cache_id,
             client_request_token: self.client_request_token,

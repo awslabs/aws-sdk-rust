@@ -2,7 +2,7 @@
 pub fn ser_m2ts_scte35_esam(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::M2tsScte35Esam,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.scte35_esam_pid {
         object.key("scte35EsamPid").number(
             #[allow(clippy::useless_conversion)]

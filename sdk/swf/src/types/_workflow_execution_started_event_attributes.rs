@@ -19,7 +19,7 @@ pub struct WorkflowExecutionStartedEventAttributes {
     /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
     /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
     /// </ul>
-    pub child_policy: ::std::option::Option<crate::types::ChildPolicy>,
+    pub child_policy: crate::types::ChildPolicy,
     /// <p>The name of the task list for scheduling the decision tasks for this workflow execution.</p>
     pub task_list: ::std::option::Option<crate::types::TaskList>,
     /// <p>The priority of the decision tasks in the workflow execution.</p>
@@ -59,8 +59,8 @@ impl WorkflowExecutionStartedEventAttributes {
     /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
     /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
     /// </ul>
-    pub fn child_policy(&self) -> ::std::option::Option<&crate::types::ChildPolicy> {
-        self.child_policy.as_ref()
+    pub fn child_policy(&self) -> &crate::types::ChildPolicy {
+        &self.child_policy
     }
     /// <p>The name of the task list for scheduling the decision tasks for this workflow execution.</p>
     pub fn task_list(&self) -> ::std::option::Option<&crate::types::TaskList> {
@@ -75,8 +75,10 @@ impl WorkflowExecutionStartedEventAttributes {
         self.workflow_type.as_ref()
     }
     /// <p>The list of tags associated with this workflow execution. An execution can have up to 5 tags.</p>
-    pub fn tag_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tag_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_list.is_none()`.
+    pub fn tag_list(&self) -> &[::std::string::String] {
+        self.tag_list.as_deref().unwrap_or_default()
     }
     /// <p>If this workflow execution was started due to a <code>ContinueAsNewWorkflowExecution</code> decision, then it contains the <code>runId</code> of the previous workflow execution that was closed and continued as this execution.</p>
     pub fn continued_execution_run_id(&self) -> ::std::option::Option<&str> {
@@ -175,6 +177,7 @@ impl WorkflowExecutionStartedEventAttributesBuilder {
     /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
     /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn child_policy(mut self, input: crate::types::ChildPolicy) -> Self {
         self.child_policy = ::std::option::Option::Some(input);
         self
@@ -201,6 +204,7 @@ impl WorkflowExecutionStartedEventAttributesBuilder {
         &self.child_policy
     }
     /// <p>The name of the task list for scheduling the decision tasks for this workflow execution.</p>
+    /// This field is required.
     pub fn task_list(mut self, input: crate::types::TaskList) -> Self {
         self.task_list = ::std::option::Option::Some(input);
         self
@@ -229,6 +233,7 @@ impl WorkflowExecutionStartedEventAttributesBuilder {
         &self.task_priority
     }
     /// <p>The workflow type of this execution.</p>
+    /// This field is required.
     pub fn workflow_type(mut self, input: crate::types::WorkflowType) -> Self {
         self.workflow_type = ::std::option::Option::Some(input);
         self
@@ -319,12 +324,21 @@ impl WorkflowExecutionStartedEventAttributesBuilder {
         &self.lambda_role
     }
     /// Consumes the builder and constructs a [`WorkflowExecutionStartedEventAttributes`](crate::types::WorkflowExecutionStartedEventAttributes).
-    pub fn build(self) -> crate::types::WorkflowExecutionStartedEventAttributes {
-        crate::types::WorkflowExecutionStartedEventAttributes {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`child_policy`](crate::types::builders::WorkflowExecutionStartedEventAttributesBuilder::child_policy)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::WorkflowExecutionStartedEventAttributes, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::WorkflowExecutionStartedEventAttributes {
             input: self.input,
             execution_start_to_close_timeout: self.execution_start_to_close_timeout,
             task_start_to_close_timeout: self.task_start_to_close_timeout,
-            child_policy: self.child_policy,
+            child_policy: self.child_policy.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "child_policy",
+                    "child_policy was not specified but it is required when building WorkflowExecutionStartedEventAttributes",
+                )
+            })?,
             task_list: self.task_list,
             task_priority: self.task_priority,
             workflow_type: self.workflow_type,
@@ -333,6 +347,6 @@ impl WorkflowExecutionStartedEventAttributesBuilder {
             parent_workflow_execution: self.parent_workflow_execution,
             parent_initiated_event_id: self.parent_initiated_event_id.unwrap_or_default(),
             lambda_role: self.lambda_role,
-        }
+        })
     }
 }

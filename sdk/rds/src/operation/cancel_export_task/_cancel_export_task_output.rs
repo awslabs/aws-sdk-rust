@@ -71,8 +71,10 @@ impl CancelExportTaskOutput {
     /// <li> <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot or cluster. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
     /// <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
     /// </ul>
-    pub fn export_only(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.export_only.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.export_only.is_none()`.
+    pub fn export_only(&self) -> &[::std::string::String] {
+        self.export_only.as_deref().unwrap_or_default()
     }
     /// <p>The time when the snapshot was created.</p>
     pub fn snapshot_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

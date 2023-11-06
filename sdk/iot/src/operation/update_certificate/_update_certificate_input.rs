@@ -39,6 +39,7 @@ pub struct UpdateCertificateInputBuilder {
 }
 impl UpdateCertificateInputBuilder {
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
+    /// This field is required.
     pub fn certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateCertificateInputBuilder {
     /// <p>The new status.</p>
     /// <p> <b>Note:</b> Setting the status to PENDING_TRANSFER or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They are not intended for developer use.</p>
     /// <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
+    /// This field is required.
     pub fn new_status(mut self, input: crate::types::CertificateStatus) -> Self {
         self.new_status = ::std::option::Option::Some(input);
         self
@@ -75,7 +77,7 @@ impl UpdateCertificateInputBuilder {
     /// Consumes the builder and constructs a [`UpdateCertificateInput`](crate::operation::update_certificate::UpdateCertificateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_certificate::UpdateCertificateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_certificate::UpdateCertificateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_certificate::UpdateCertificateInput {
             certificate_id: self.certificate_id,
             new_status: self.new_status,

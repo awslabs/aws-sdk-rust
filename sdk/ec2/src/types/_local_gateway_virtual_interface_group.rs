@@ -21,8 +21,10 @@ impl LocalGatewayVirtualInterfaceGroup {
         self.local_gateway_virtual_interface_group_id.as_deref()
     }
     /// <p>The IDs of the virtual interfaces.</p>
-    pub fn local_gateway_virtual_interface_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.local_gateway_virtual_interface_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.local_gateway_virtual_interface_ids.is_none()`.
+    pub fn local_gateway_virtual_interface_ids(&self) -> &[::std::string::String] {
+        self.local_gateway_virtual_interface_ids.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the local gateway.</p>
     pub fn local_gateway_id(&self) -> ::std::option::Option<&str> {
@@ -33,8 +35,10 @@ impl LocalGatewayVirtualInterfaceGroup {
         self.owner_id.as_deref()
     }
     /// <p>The tags assigned to the virtual interface group.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl LocalGatewayVirtualInterfaceGroup {

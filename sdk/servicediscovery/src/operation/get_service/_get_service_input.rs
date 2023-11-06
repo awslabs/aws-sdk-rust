@@ -27,6 +27,7 @@ pub struct GetServiceInputBuilder {
 }
 impl GetServiceInputBuilder {
     /// <p>The ID of the service that you want to get settings for.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetServiceInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetServiceInput`](crate::operation::get_service::GetServiceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_service::GetServiceInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_service::GetServiceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_service::GetServiceInput { id: self.id })
     }
 }

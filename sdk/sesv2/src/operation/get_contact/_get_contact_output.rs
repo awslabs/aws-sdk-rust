@@ -31,12 +31,16 @@ impl GetContactOutput {
         self.email_address.as_deref()
     }
     /// <p>The contact's preference for being opted-in to or opted-out of a topic.&gt;</p>
-    pub fn topic_preferences(&self) -> ::std::option::Option<&[crate::types::TopicPreference]> {
-        self.topic_preferences.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.topic_preferences.is_none()`.
+    pub fn topic_preferences(&self) -> &[crate::types::TopicPreference] {
+        self.topic_preferences.as_deref().unwrap_or_default()
     }
     /// <p>The default topic preferences applied to the contact.</p>
-    pub fn topic_default_preferences(&self) -> ::std::option::Option<&[crate::types::TopicPreference]> {
-        self.topic_default_preferences.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.topic_default_preferences.is_none()`.
+    pub fn topic_default_preferences(&self) -> &[crate::types::TopicPreference] {
+        self.topic_default_preferences.as_deref().unwrap_or_default()
     }
     /// <p>A boolean value status noting if the contact is unsubscribed from all contact list topics.</p>
     pub fn unsubscribe_all(&self) -> bool {

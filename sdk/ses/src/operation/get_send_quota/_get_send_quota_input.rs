@@ -18,7 +18,7 @@ impl GetSendQuotaInputBuilder {
     /// Consumes the builder and constructs a [`GetSendQuotaInput`](crate::operation::get_send_quota::GetSendQuotaInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_send_quota::GetSendQuotaInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_send_quota::GetSendQuotaInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_send_quota::GetSendQuotaInput {})
     }
 }

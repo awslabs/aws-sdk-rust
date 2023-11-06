@@ -41,6 +41,7 @@ pub struct ListJournalS3ExportsForLedgerInputBuilder {
 }
 impl ListJournalS3ExportsForLedgerInputBuilder {
     /// <p>The name of the ledger.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListJournalS3ExportsForLedgerInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_journal_s3_exports_for_ledger::ListJournalS3ExportsForLedgerInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_journal_s3_exports_for_ledger::ListJournalS3ExportsForLedgerInput {
             name: self.name,

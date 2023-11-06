@@ -34,6 +34,7 @@ pub struct DeleteSnapshotInputBuilder {
 }
 impl DeleteSnapshotInputBuilder {
     /// <p>The ID of the EBS snapshot.</p>
+    /// This field is required.
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl DeleteSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSnapshotInput`](crate::operation::delete_snapshot::DeleteSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_snapshot::DeleteSnapshotInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_snapshot::DeleteSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_snapshot::DeleteSnapshotInput {
             snapshot_id: self.snapshot_id,
             dry_run: self.dry_run,

@@ -23,36 +23,52 @@ pub struct ResourceFilterCriteria {
 }
 impl ResourceFilterCriteria {
     /// <p>The account IDs used as resource filter criteria.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&[crate::types::ResourceStringFilter]> {
-        self.account_id.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_id.is_none()`.
+    pub fn account_id(&self) -> &[crate::types::ResourceStringFilter] {
+        self.account_id.as_deref().unwrap_or_default()
     }
     /// <p>The resource IDs used as resource filter criteria.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&[crate::types::ResourceStringFilter]> {
-        self.resource_id.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_id.is_none()`.
+    pub fn resource_id(&self) -> &[crate::types::ResourceStringFilter] {
+        self.resource_id.as_deref().unwrap_or_default()
     }
     /// <p>The resource types used as resource filter criteria.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&[crate::types::ResourceStringFilter]> {
-        self.resource_type.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_type.is_none()`.
+    pub fn resource_type(&self) -> &[crate::types::ResourceStringFilter] {
+        self.resource_type.as_deref().unwrap_or_default()
     }
     /// <p>The ECR repository names used as resource filter criteria.</p>
-    pub fn ecr_repository_name(&self) -> ::std::option::Option<&[crate::types::ResourceStringFilter]> {
-        self.ecr_repository_name.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ecr_repository_name.is_none()`.
+    pub fn ecr_repository_name(&self) -> &[crate::types::ResourceStringFilter] {
+        self.ecr_repository_name.as_deref().unwrap_or_default()
     }
     /// <p>The AWS Lambda function name used as resource filter criteria.</p>
-    pub fn lambda_function_name(&self) -> ::std::option::Option<&[crate::types::ResourceStringFilter]> {
-        self.lambda_function_name.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lambda_function_name.is_none()`.
+    pub fn lambda_function_name(&self) -> &[crate::types::ResourceStringFilter] {
+        self.lambda_function_name.as_deref().unwrap_or_default()
     }
     /// <p>The ECR image tags used as resource filter criteria.</p>
-    pub fn ecr_image_tags(&self) -> ::std::option::Option<&[crate::types::ResourceStringFilter]> {
-        self.ecr_image_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ecr_image_tags.is_none()`.
+    pub fn ecr_image_tags(&self) -> &[crate::types::ResourceStringFilter] {
+        self.ecr_image_tags.as_deref().unwrap_or_default()
     }
     /// <p>The EC2 instance tags used as resource filter criteria.</p>
-    pub fn ec2_instance_tags(&self) -> ::std::option::Option<&[crate::types::ResourceMapFilter]> {
-        self.ec2_instance_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ec2_instance_tags.is_none()`.
+    pub fn ec2_instance_tags(&self) -> &[crate::types::ResourceMapFilter] {
+        self.ec2_instance_tags.as_deref().unwrap_or_default()
     }
     /// <p>The AWS Lambda function tags used as resource filter criteria.</p>
-    pub fn lambda_function_tags(&self) -> ::std::option::Option<&[crate::types::ResourceMapFilter]> {
-        self.lambda_function_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lambda_function_tags.is_none()`.
+    pub fn lambda_function_tags(&self) -> &[crate::types::ResourceMapFilter] {
+        self.lambda_function_tags.as_deref().unwrap_or_default()
     }
 }
 impl ResourceFilterCriteria {

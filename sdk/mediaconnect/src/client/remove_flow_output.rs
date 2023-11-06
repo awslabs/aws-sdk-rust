@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RemoveFlowOutput`](crate::operation::remove_flow_output::builders::RemoveFlowOutputFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`flow_arn(impl Into<String>)`](crate::operation::remove_flow_output::builders::RemoveFlowOutputFluentBuilder::flow_arn) / [`set_flow_arn(Option<String>)`](crate::operation::remove_flow_output::builders::RemoveFlowOutputFluentBuilder::set_flow_arn): The flow that you want to remove an output from.
-    ///   - [`output_arn(impl Into<String>)`](crate::operation::remove_flow_output::builders::RemoveFlowOutputFluentBuilder::output_arn) / [`set_output_arn(Option<String>)`](crate::operation::remove_flow_output::builders::RemoveFlowOutputFluentBuilder::set_output_arn): The ARN of the output that you want to remove.
+    ///   - [`flow_arn(impl Into<String>)`](crate::operation::remove_flow_output::builders::RemoveFlowOutputFluentBuilder::flow_arn) / [`set_flow_arn(Option<String>)`](crate::operation::remove_flow_output::builders::RemoveFlowOutputFluentBuilder::set_flow_arn):<br>required: **true**<br>The flow that you want to remove an output from.<br>
+    ///   - [`output_arn(impl Into<String>)`](crate::operation::remove_flow_output::builders::RemoveFlowOutputFluentBuilder::output_arn) / [`set_output_arn(Option<String>)`](crate::operation::remove_flow_output::builders::RemoveFlowOutputFluentBuilder::set_output_arn):<br>required: **true**<br>The ARN of the output that you want to remove.<br>
     /// - On success, responds with [`RemoveFlowOutputOutput`](crate::operation::remove_flow_output::RemoveFlowOutputOutput) with field(s):
     ///   - [`flow_arn(Option<String>)`](crate::operation::remove_flow_output::RemoveFlowOutputOutput::flow_arn): The ARN of the flow that is associated with the output you removed.
     ///   - [`output_arn(Option<String>)`](crate::operation::remove_flow_output::RemoveFlowOutputOutput::output_arn): The ARN of the output that was removed.

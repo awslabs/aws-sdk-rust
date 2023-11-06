@@ -27,6 +27,7 @@ pub struct DisableDelegatedAdminAccountInputBuilder {
 }
 impl DisableDelegatedAdminAccountInputBuilder {
     /// <p>The Amazon Web Services account ID of the current Amazon Inspector delegated administrator.</p>
+    /// This field is required.
     pub fn delegated_admin_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delegated_admin_account_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DisableDelegatedAdminAccountInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_delegated_admin_account::DisableDelegatedAdminAccountInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disable_delegated_admin_account::DisableDelegatedAdminAccountInput {
             delegated_admin_account_id: self.delegated_admin_account_id,

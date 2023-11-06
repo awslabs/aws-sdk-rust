@@ -16,8 +16,10 @@ impl RoleUsageType {
         self.region.as_deref()
     }
     /// <p>The name of the resource that is using the service-linked role.</p>
-    pub fn resources(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
+    pub fn resources(&self) -> &[::std::string::String] {
+        self.resources.as_deref().unwrap_or_default()
     }
 }
 impl RoleUsageType {

@@ -9,8 +9,10 @@ pub struct PredictiveScalingCustomizedLoadMetric {
 }
 impl PredictiveScalingCustomizedLoadMetric {
     /// <p>One or more metric data queries to provide the data points for a load metric. Use multiple metric data queries only if you are performing a math expression on returned data. </p>
-    pub fn metric_data_queries(&self) -> ::std::option::Option<&[crate::types::MetricDataQuery]> {
-        self.metric_data_queries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_data_queries.is_none()`.
+    pub fn metric_data_queries(&self) -> &[crate::types::MetricDataQuery] {
+        self.metric_data_queries.as_deref().unwrap_or_default()
     }
 }
 impl PredictiveScalingCustomizedLoadMetric {

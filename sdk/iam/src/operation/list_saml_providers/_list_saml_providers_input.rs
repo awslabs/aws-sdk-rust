@@ -18,7 +18,7 @@ impl ListSamlProvidersInputBuilder {
     /// Consumes the builder and constructs a [`ListSamlProvidersInput`](crate::operation::list_saml_providers::ListSamlProvidersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_saml_providers::ListSamlProvidersInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_saml_providers::ListSamlProvidersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_saml_providers::ListSamlProvidersInput {})
     }
 }

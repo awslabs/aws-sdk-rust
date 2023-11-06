@@ -13,12 +13,16 @@ pub struct TableFieldOptions {
 }
 impl TableFieldOptions {
     /// <p>The field options to be configured to a table.</p>
-    pub fn selected_field_options(&self) -> ::std::option::Option<&[crate::types::TableFieldOption]> {
-        self.selected_field_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.selected_field_options.is_none()`.
+    pub fn selected_field_options(&self) -> &[crate::types::TableFieldOption] {
+        self.selected_field_options.as_deref().unwrap_or_default()
     }
     /// <p>The order of the field IDs that are configured as field options for a table visual.</p>
-    pub fn order(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.order.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.order.is_none()`.
+    pub fn order(&self) -> &[::std::string::String] {
+        self.order.as_deref().unwrap_or_default()
     }
     /// <p>The settings for the pinned columns of a table visual.</p>
     pub fn pinned_field_options(&self) -> ::std::option::Option<&crate::types::TablePinnedFieldOptions> {

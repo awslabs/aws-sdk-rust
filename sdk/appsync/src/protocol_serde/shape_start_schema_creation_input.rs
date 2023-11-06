@@ -2,7 +2,7 @@
 pub fn ser_start_schema_creation_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_schema_creation::StartSchemaCreationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.definition {
         object.key("definition").string_unchecked(&::aws_smithy_types::base64::encode(var_1));
     }

@@ -8,8 +8,10 @@ pub struct BatchGetDataQualityResultInput {
 }
 impl BatchGetDataQualityResultInput {
     /// <p>A list of unique result IDs for the data quality results.</p>
-    pub fn result_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.result_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.result_ids.is_none()`.
+    pub fn result_ids(&self) -> &[::std::string::String] {
+        self.result_ids.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetDataQualityResultInput {
@@ -51,7 +53,7 @@ impl BatchGetDataQualityResultInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultInput { result_ids: self.result_ids })
     }

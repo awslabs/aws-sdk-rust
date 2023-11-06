@@ -47,6 +47,7 @@ pub struct AddTagsToVaultInputBuilder {
 }
 impl AddTagsToVaultInputBuilder {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -61,6 +62,7 @@ impl AddTagsToVaultInputBuilder {
         &self.account_id
     }
     /// <p>The name of the vault.</p>
+    /// This field is required.
     pub fn vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vault_name = ::std::option::Option::Some(input.into());
         self
@@ -97,7 +99,7 @@ impl AddTagsToVaultInputBuilder {
     /// Consumes the builder and constructs a [`AddTagsToVaultInput`](crate::operation::add_tags_to_vault::AddTagsToVaultInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::add_tags_to_vault::AddTagsToVaultInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::add_tags_to_vault::AddTagsToVaultInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::add_tags_to_vault::AddTagsToVaultInput {
             account_id: self.account_id,
             vault_name: self.vault_name,

@@ -20,8 +20,10 @@ impl GetConnectionsInput {
         self.global_network_id.as_deref()
     }
     /// <p>One or more connection IDs.</p>
-    pub fn connection_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.connection_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connection_ids.is_none()`.
+    pub fn connection_ids(&self) -> &[::std::string::String] {
+        self.connection_ids.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the device.</p>
     pub fn device_id(&self) -> ::std::option::Option<&str> {
@@ -55,6 +57,7 @@ pub struct GetConnectionsInputBuilder {
 }
 impl GetConnectionsInputBuilder {
     /// <p>The ID of the global network.</p>
+    /// This field is required.
     pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_network_id = ::std::option::Option::Some(input.into());
         self
@@ -133,7 +136,7 @@ impl GetConnectionsInputBuilder {
     /// Consumes the builder and constructs a [`GetConnectionsInput`](crate::operation::get_connections::GetConnectionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_connections::GetConnectionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_connections::GetConnectionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_connections::GetConnectionsInput {
             global_network_id: self.global_network_id,
             connection_ids: self.connection_ids,

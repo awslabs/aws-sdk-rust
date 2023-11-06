@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrganizationConformancePackDetailedStatus {
     /// <p>The 12-digit account ID of a member account.</p>
-    pub account_id: ::std::option::Option<::std::string::String>,
+    pub account_id: ::std::string::String,
     /// <p>The name of conformance pack deployed in the member account.</p>
-    pub conformance_pack_name: ::std::option::Option<::std::string::String>,
+    pub conformance_pack_name: ::std::string::String,
     /// <p>Indicates deployment status for conformance pack in a member account. When management account calls <code>PutOrganizationConformancePack</code> action for the first time, conformance pack status is created in the member account. When management account calls <code>PutOrganizationConformancePack</code> action for the second time, conformance pack status is updated in the member account. Conformance pack status is deleted when the management account deletes <code>OrganizationConformancePack</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
     /// <p> Config sets the state of the conformance pack to:</p>
     /// <ul>
@@ -21,7 +21,7 @@ pub struct OrganizationConformancePackDetailedStatus {
     /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when conformance pack is being updated in the member account.</p> </li>
     /// <li> <p> <code>UPDATE_FAILED</code> when conformance pack deletion has failed in the member account.</p> </li>
     /// </ul>
-    pub status: ::std::option::Option<crate::types::OrganizationResourceDetailedStatus>,
+    pub status: crate::types::OrganizationResourceDetailedStatus,
     /// <p>An error code that is returned when conformance pack creation or deletion failed in the member account. </p>
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>An error message indicating that conformance pack account creation or deletion has failed due to an error in the member account. </p>
@@ -31,12 +31,14 @@ pub struct OrganizationConformancePackDetailedStatus {
 }
 impl OrganizationConformancePackDetailedStatus {
     /// <p>The 12-digit account ID of a member account.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
-        self.account_id.as_deref()
+    pub fn account_id(&self) -> &str {
+        use std::ops::Deref;
+        self.account_id.deref()
     }
     /// <p>The name of conformance pack deployed in the member account.</p>
-    pub fn conformance_pack_name(&self) -> ::std::option::Option<&str> {
-        self.conformance_pack_name.as_deref()
+    pub fn conformance_pack_name(&self) -> &str {
+        use std::ops::Deref;
+        self.conformance_pack_name.deref()
     }
     /// <p>Indicates deployment status for conformance pack in a member account. When management account calls <code>PutOrganizationConformancePack</code> action for the first time, conformance pack status is created in the member account. When management account calls <code>PutOrganizationConformancePack</code> action for the second time, conformance pack status is updated in the member account. Conformance pack status is deleted when the management account deletes <code>OrganizationConformancePack</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
     /// <p> Config sets the state of the conformance pack to:</p>
@@ -51,8 +53,8 @@ impl OrganizationConformancePackDetailedStatus {
     /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when conformance pack is being updated in the member account.</p> </li>
     /// <li> <p> <code>UPDATE_FAILED</code> when conformance pack deletion has failed in the member account.</p> </li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::OrganizationResourceDetailedStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::OrganizationResourceDetailedStatus {
+        &self.status
     }
     /// <p>An error code that is returned when conformance pack creation or deletion failed in the member account. </p>
     pub fn error_code(&self) -> ::std::option::Option<&str> {
@@ -87,6 +89,7 @@ pub struct OrganizationConformancePackDetailedStatusBuilder {
 }
 impl OrganizationConformancePackDetailedStatusBuilder {
     /// <p>The 12-digit account ID of a member account.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -101,6 +104,7 @@ impl OrganizationConformancePackDetailedStatusBuilder {
         &self.account_id
     }
     /// <p>The name of conformance pack deployed in the member account.</p>
+    /// This field is required.
     pub fn conformance_pack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.conformance_pack_name = ::std::option::Option::Some(input.into());
         self
@@ -127,6 +131,7 @@ impl OrganizationConformancePackDetailedStatusBuilder {
     /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when conformance pack is being updated in the member account.</p> </li>
     /// <li> <p> <code>UPDATE_FAILED</code> when conformance pack deletion has failed in the member account.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::OrganizationResourceDetailedStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -207,14 +212,35 @@ impl OrganizationConformancePackDetailedStatusBuilder {
         &self.last_update_time
     }
     /// Consumes the builder and constructs a [`OrganizationConformancePackDetailedStatus`](crate::types::OrganizationConformancePackDetailedStatus).
-    pub fn build(self) -> crate::types::OrganizationConformancePackDetailedStatus {
-        crate::types::OrganizationConformancePackDetailedStatus {
-            account_id: self.account_id,
-            conformance_pack_name: self.conformance_pack_name,
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`account_id`](crate::types::builders::OrganizationConformancePackDetailedStatusBuilder::account_id)
+    /// - [`conformance_pack_name`](crate::types::builders::OrganizationConformancePackDetailedStatusBuilder::conformance_pack_name)
+    /// - [`status`](crate::types::builders::OrganizationConformancePackDetailedStatusBuilder::status)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::OrganizationConformancePackDetailedStatus, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::OrganizationConformancePackDetailedStatus {
+            account_id: self.account_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "account_id",
+                    "account_id was not specified but it is required when building OrganizationConformancePackDetailedStatus",
+                )
+            })?,
+            conformance_pack_name: self.conformance_pack_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "conformance_pack_name",
+                    "conformance_pack_name was not specified but it is required when building OrganizationConformancePackDetailedStatus",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building OrganizationConformancePackDetailedStatus",
+                )
+            })?,
             error_code: self.error_code,
             error_message: self.error_message,
             last_update_time: self.last_update_time,
-        }
+        })
     }
 }

@@ -54,7 +54,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::activated_rule_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -65,42 +67,42 @@ where
 pub fn ser_activated_rule(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ActivatedRule,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.priority {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
         object.key("Priority").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+            ::aws_smithy_types::Number::NegInt((input.priority).into()),
         );
     }
-    if let Some(var_2) = &input.rule_id {
-        object.key("RuleId").string(var_2.as_str());
+    {
+        object.key("RuleId").string(input.rule_id.as_str());
     }
-    if let Some(var_3) = &input.action {
+    if let Some(var_1) = &input.action {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("Action").start_object();
-        crate::protocol_serde::shape_waf_action::ser_waf_action(&mut object_4, var_3)?;
+        let mut object_2 = object.key("Action").start_object();
+        crate::protocol_serde::shape_waf_action::ser_waf_action(&mut object_2, var_1)?;
+        object_2.finish();
+    }
+    if let Some(var_3) = &input.override_action {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("OverrideAction").start_object();
+        crate::protocol_serde::shape_waf_override_action::ser_waf_override_action(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.override_action {
-        #[allow(unused_mut)]
-        let mut object_6 = object.key("OverrideAction").start_object();
-        crate::protocol_serde::shape_waf_override_action::ser_waf_override_action(&mut object_6, var_5)?;
-        object_6.finish();
+    if let Some(var_5) = &input.r#type {
+        object.key("Type").string(var_5.as_str());
     }
-    if let Some(var_7) = &input.r#type {
-        object.key("Type").string(var_7.as_str());
-    }
-    if let Some(var_8) = &input.excluded_rules {
-        let mut array_9 = object.key("ExcludedRules").start_array();
-        for item_10 in var_8 {
+    if let Some(var_6) = &input.excluded_rules {
+        let mut array_7 = object.key("ExcludedRules").start_array();
+        for item_8 in var_6 {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_excluded_rule::ser_excluded_rule(&mut object_11, item_10)?;
-                object_11.finish();
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_excluded_rule::ser_excluded_rule(&mut object_9, item_8)?;
+                object_9.finish();
             }
         }
-        array_9.finish();
+        array_7.finish();
     }
     Ok(())
 }

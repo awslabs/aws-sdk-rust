@@ -8,8 +8,10 @@ pub struct BatchPutAssetPropertyValueInput {
 }
 impl BatchPutAssetPropertyValueInput {
     /// <p>The list of asset property value entries for the batch put request. You can specify up to 10 entries per request.</p>
-    pub fn entries(&self) -> ::std::option::Option<&[crate::types::PutAssetPropertyValueEntry]> {
-        self.entries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entries.is_none()`.
+    pub fn entries(&self) -> &[crate::types::PutAssetPropertyValueEntry] {
+        self.entries.as_deref().unwrap_or_default()
     }
 }
 impl BatchPutAssetPropertyValueInput {
@@ -51,7 +53,7 @@ impl BatchPutAssetPropertyValueInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueInput { entries: self.entries })
     }

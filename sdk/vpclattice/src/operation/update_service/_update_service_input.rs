@@ -49,6 +49,7 @@ pub struct UpdateServiceInputBuilder {
 }
 impl UpdateServiceInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    /// This field is required.
     pub fn service_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_identifier = ::std::option::Option::Some(input.into());
         self
@@ -105,7 +106,7 @@ impl UpdateServiceInputBuilder {
     /// Consumes the builder and constructs a [`UpdateServiceInput`](crate::operation::update_service::UpdateServiceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_service::UpdateServiceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_service::UpdateServiceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_service::UpdateServiceInput {
             service_identifier: self.service_identifier,
             certificate_arn: self.certificate_arn,

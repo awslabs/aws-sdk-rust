@@ -77,6 +77,7 @@ impl CaptionDescriptionBuilder {
         &self.accessibility
     }
     /// Specifies which input caption selector to use as a caption source when generating output captions. This field should match a captionSelector name.
+    /// This field is required.
     pub fn caption_selector_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.caption_selector_name = ::std::option::Option::Some(input.into());
         self
@@ -133,6 +134,7 @@ impl CaptionDescriptionBuilder {
         &self.language_description
     }
     /// Name of the caption description. Used to associate a caption description with an output. Names must be unique within an event.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

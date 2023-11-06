@@ -34,6 +34,7 @@ pub struct CreateVoiceTemplateOutputBuilder {
 }
 impl CreateVoiceTemplateOutputBuilder {
     /// <p>Provides information about a request to create a message template.</p>
+    /// This field is required.
     pub fn create_template_message_body(mut self, input: crate::types::CreateTemplateMessageBody) -> Self {
         self.create_template_message_body = ::std::option::Option::Some(input);
         self

@@ -2,7 +2,7 @@
 pub fn ser_redact_channel_message_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::redact_channel_message::RedactChannelMessageInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.sub_channel_id {
         object.key("SubChannelId").string(var_1.as_str());
     }

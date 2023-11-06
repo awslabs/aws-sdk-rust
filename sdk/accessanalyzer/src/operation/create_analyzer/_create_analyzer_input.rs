@@ -25,8 +25,10 @@ impl CreateAnalyzerInput {
         self.r#type.as_ref()
     }
     /// <p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the criteria you define for the rule.</p>
-    pub fn archive_rules(&self) -> ::std::option::Option<&[crate::types::InlineArchiveRule]> {
-        self.archive_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.archive_rules.is_none()`.
+    pub fn archive_rules(&self) -> &[crate::types::InlineArchiveRule] {
+        self.archive_rules.as_deref().unwrap_or_default()
     }
     /// <p>The tags to apply to the analyzer.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -56,6 +58,7 @@ pub struct CreateAnalyzerInputBuilder {
 }
 impl CreateAnalyzerInputBuilder {
     /// <p>The name of the analyzer to create.</p>
+    /// This field is required.
     pub fn analyzer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analyzer_name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +73,7 @@ impl CreateAnalyzerInputBuilder {
         &self.analyzer_name
     }
     /// <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::Type) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -140,7 +144,7 @@ impl CreateAnalyzerInputBuilder {
     /// Consumes the builder and constructs a [`CreateAnalyzerInput`](crate::operation::create_analyzer::CreateAnalyzerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_analyzer::CreateAnalyzerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_analyzer::CreateAnalyzerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_analyzer::CreateAnalyzerInput {
             analyzer_name: self.analyzer_name,
             r#type: self.r#type,

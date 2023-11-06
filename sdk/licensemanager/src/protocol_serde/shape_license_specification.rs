@@ -2,12 +2,12 @@
 pub fn ser_license_specification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LicenseSpecification,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.license_configuration_arn {
-        object.key("LicenseConfigurationArn").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("LicenseConfigurationArn").string(input.license_configuration_arn.as_str());
     }
-    if let Some(var_2) = &input.ami_association_scope {
-        object.key("AmiAssociationScope").string(var_2.as_str());
+    if let Some(var_1) = &input.ami_association_scope {
+        object.key("AmiAssociationScope").string(var_1.as_str());
     }
     Ok(())
 }
@@ -51,7 +51,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::license_specification_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

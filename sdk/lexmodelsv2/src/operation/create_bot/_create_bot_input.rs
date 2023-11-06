@@ -60,8 +60,10 @@ impl CreateBotInput {
         self.bot_type.as_ref()
     }
     /// <p>The list of bot members in a network to be created.</p>
-    pub fn bot_members(&self) -> ::std::option::Option<&[crate::types::BotMember]> {
-        self.bot_members.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bot_members.is_none()`.
+    pub fn bot_members(&self) -> &[crate::types::BotMember] {
+        self.bot_members.as_deref().unwrap_or_default()
     }
 }
 impl CreateBotInput {
@@ -87,6 +89,7 @@ pub struct CreateBotInputBuilder {
 }
 impl CreateBotInputBuilder {
     /// <p>The name of the bot. The bot name must be unique in the account that creates the bot.</p>
+    /// This field is required.
     pub fn bot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_name = ::std::option::Option::Some(input.into());
         self
@@ -115,6 +118,7 @@ impl CreateBotInputBuilder {
         &self.description
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to access the bot.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -129,6 +133,7 @@ impl CreateBotInputBuilder {
         &self.role_arn
     }
     /// <p>Provides information on additional privacy protections Amazon Lex should use with the bot's data.</p>
+    /// This field is required.
     pub fn data_privacy(mut self, input: crate::types::DataPrivacy) -> Self {
         self.data_privacy = ::std::option::Option::Some(input);
         self
@@ -145,6 +150,7 @@ impl CreateBotInputBuilder {
     /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot. </p>
     /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
     /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours) seconds.</p>
+    /// This field is required.
     pub fn idle_session_ttl_in_seconds(mut self, input: i32) -> Self {
         self.idle_session_ttl_in_seconds = ::std::option::Option::Some(input);
         self
@@ -244,7 +250,7 @@ impl CreateBotInputBuilder {
         &self.bot_members
     }
     /// Consumes the builder and constructs a [`CreateBotInput`](crate::operation::create_bot::CreateBotInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_bot::CreateBotInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_bot::CreateBotInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_bot::CreateBotInput {
             bot_name: self.bot_name,
             description: self.description,

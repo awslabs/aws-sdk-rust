@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListInstanceProfilesOutput {
     /// <p>A list of instance profiles.</p>
-    pub instance_profiles: ::std::option::Option<::std::vec::Vec<crate::types::InstanceProfile>>,
+    pub instance_profiles: ::std::vec::Vec<crate::types::InstanceProfile>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
@@ -14,8 +14,9 @@ pub struct ListInstanceProfilesOutput {
 }
 impl ListInstanceProfilesOutput {
     /// <p>A list of instance profiles.</p>
-    pub fn instance_profiles(&self) -> ::std::option::Option<&[crate::types::InstanceProfile]> {
-        self.instance_profiles.as_deref()
+    pub fn instance_profiles(&self) -> &[crate::types::InstanceProfile] {
+        use std::ops::Deref;
+        self.instance_profiles.deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub fn is_truncated(&self) -> bool {
@@ -106,12 +107,22 @@ impl ListInstanceProfilesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListInstanceProfilesOutput`](crate::operation::list_instance_profiles::ListInstanceProfilesOutput).
-    pub fn build(self) -> crate::operation::list_instance_profiles::ListInstanceProfilesOutput {
-        crate::operation::list_instance_profiles::ListInstanceProfilesOutput {
-            instance_profiles: self.instance_profiles,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`instance_profiles`](crate::operation::list_instance_profiles::builders::ListInstanceProfilesOutputBuilder::instance_profiles)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_instance_profiles::ListInstanceProfilesOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_instance_profiles::ListInstanceProfilesOutput {
+            instance_profiles: self.instance_profiles.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "instance_profiles",
+                    "instance_profiles was not specified but it is required when building ListInstanceProfilesOutput",
+                )
+            })?,
             is_truncated: self.is_truncated.unwrap_or_default(),
             marker: self.marker,
             _request_id: self._request_id,
-        }
+        })
     }
 }

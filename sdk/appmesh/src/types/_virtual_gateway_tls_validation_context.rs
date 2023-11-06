@@ -35,6 +35,7 @@ pub struct VirtualGatewayTlsValidationContextBuilder {
 }
 impl VirtualGatewayTlsValidationContextBuilder {
     /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
+    /// This field is required.
     pub fn trust(mut self, input: crate::types::VirtualGatewayTlsValidationContextTrust) -> Self {
         self.trust = ::std::option::Option::Some(input);
         self

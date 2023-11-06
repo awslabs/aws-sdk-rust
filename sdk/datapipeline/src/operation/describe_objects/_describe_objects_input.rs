@@ -19,8 +19,10 @@ impl DescribeObjectsInput {
         self.pipeline_id.as_deref()
     }
     /// <p>The IDs of the pipeline objects that contain the definitions to be described. You can pass as many as 25 identifiers in a single call to <code>DescribeObjects</code>.</p>
-    pub fn object_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.object_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.object_ids.is_none()`.
+    pub fn object_ids(&self) -> &[::std::string::String] {
+        self.object_ids.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether any expressions in the object should be evaluated when the object descriptions are returned.</p>
     pub fn evaluate_expressions(&self) -> ::std::option::Option<bool> {
@@ -49,6 +51,7 @@ pub struct DescribeObjectsInputBuilder {
 }
 impl DescribeObjectsInputBuilder {
     /// <p>The ID of the pipeline that contains the object definitions.</p>
+    /// This field is required.
     pub fn pipeline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_id = ::std::option::Option::Some(input.into());
         self
@@ -113,7 +116,7 @@ impl DescribeObjectsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeObjectsInput`](crate::operation::describe_objects::DescribeObjectsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_objects::DescribeObjectsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_objects::DescribeObjectsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_objects::DescribeObjectsInput {
             pipeline_id: self.pipeline_id,
             object_ids: self.object_ids,

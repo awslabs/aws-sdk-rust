@@ -27,6 +27,7 @@ pub struct GetNamedQueryInputBuilder {
 }
 impl GetNamedQueryInputBuilder {
     /// <p>The unique ID of the query. Use <code>ListNamedQueries</code> to get query IDs.</p>
+    /// This field is required.
     pub fn named_query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.named_query_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetNamedQueryInputBuilder {
     /// Consumes the builder and constructs a [`GetNamedQueryInput`](crate::operation::get_named_query::GetNamedQueryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_named_query::GetNamedQueryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_named_query::GetNamedQueryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_named_query::GetNamedQueryInput {
             named_query_id: self.named_query_id,
         })

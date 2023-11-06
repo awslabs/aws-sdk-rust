@@ -22,19 +22,13 @@ pub(crate) fn reflens_list_tags_for_resource_output_next_token(
 pub(crate) fn lens_list_scheduled_queries_output_scheduled_queries(
     input: crate::operation::list_scheduled_queries::ListScheduledQueriesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ScheduledQuery>> {
-    let input = match input.scheduled_queries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.scheduled_queries;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_tags_for_resource_output_tags(
     input: crate::operation::list_tags_for_resource::ListTagsForResourceOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
-    let input = match input.tags {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.tags;
     ::std::option::Option::Some(input)
 }

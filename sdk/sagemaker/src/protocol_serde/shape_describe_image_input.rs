@@ -2,7 +2,7 @@
 pub fn ser_describe_image_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_image::DescribeImageInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.image_name {
         object.key("ImageName").string(var_1.as_str());
     }

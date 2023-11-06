@@ -17,8 +17,10 @@ impl S3JobDefinition {
         self.bucket_criteria.as_ref()
     }
     /// <p>An array of objects, one for each Amazon Web Services account that owns specific S3 buckets to analyze. Each object specifies the account ID for an account and one or more buckets to analyze for that account. A job's definition can contain a bucketDefinitions array or a bucketCriteria object, not both.</p>
-    pub fn bucket_definitions(&self) -> ::std::option::Option<&[crate::types::S3BucketDefinitionForJob]> {
-        self.bucket_definitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bucket_definitions.is_none()`.
+    pub fn bucket_definitions(&self) -> &[crate::types::S3BucketDefinitionForJob] {
+        self.bucket_definitions.as_deref().unwrap_or_default()
     }
     /// <p>The property- and tag-based conditions that determine which S3 objects to include or exclude from the analysis. Each time the job runs, the job uses these criteria to determine which objects to analyze.</p>
     pub fn scoping(&self) -> ::std::option::Option<&crate::types::Scoping> {

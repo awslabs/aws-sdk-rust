@@ -51,6 +51,7 @@ pub struct AccessLogBuilder {
 }
 impl AccessLogBuilder {
     /// <p>Specifies whether access logs are enabled for the load balancer.</p>
+    /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self

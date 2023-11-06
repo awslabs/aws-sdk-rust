@@ -55,6 +55,7 @@ pub struct ListTableMetadataInputBuilder {
 }
 impl ListTableMetadataInputBuilder {
     /// <p>The name of the data catalog for which table metadata should be returned.</p>
+    /// This field is required.
     pub fn catalog_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.catalog_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl ListTableMetadataInputBuilder {
         &self.catalog_name
     }
     /// <p>The name of the database for which table metadata should be returned.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -127,7 +129,7 @@ impl ListTableMetadataInputBuilder {
     /// Consumes the builder and constructs a [`ListTableMetadataInput`](crate::operation::list_table_metadata::ListTableMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_table_metadata::ListTableMetadataInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_table_metadata::ListTableMetadataInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_table_metadata::ListTableMetadataInput {
             catalog_name: self.catalog_name,
             database_name: self.database_name,

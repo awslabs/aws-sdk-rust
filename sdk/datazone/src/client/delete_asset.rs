@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteAsset`](crate::operation::delete_asset::builders::DeleteAssetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_identifier(impl Into<String>)`](crate::operation::delete_asset::builders::DeleteAssetFluentBuilder::domain_identifier) / [`set_domain_identifier(Option<String>)`](crate::operation::delete_asset::builders::DeleteAssetFluentBuilder::set_domain_identifier): <p>The ID of the Amazon DataZone domain in which the asset is deleted.</p>
-    ///   - [`identifier(impl Into<String>)`](crate::operation::delete_asset::builders::DeleteAssetFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::delete_asset::builders::DeleteAssetFluentBuilder::set_identifier): <p>The identifier of the asset that is deleted.</p>
+    ///   - [`domain_identifier(impl Into<String>)`](crate::operation::delete_asset::builders::DeleteAssetFluentBuilder::domain_identifier) / [`set_domain_identifier(Option<String>)`](crate::operation::delete_asset::builders::DeleteAssetFluentBuilder::set_domain_identifier):<br>required: **true**<br><p>The ID of the Amazon DataZone domain in which the asset is deleted.</p><br>
+    ///   - [`identifier(impl Into<String>)`](crate::operation::delete_asset::builders::DeleteAssetFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::delete_asset::builders::DeleteAssetFluentBuilder::set_identifier):<br>required: **true**<br><p>The identifier of the asset that is deleted.</p><br>
     /// - On success, responds with [`DeleteAssetOutput`](crate::operation::delete_asset::DeleteAssetOutput)
     /// - On failure, responds with [`SdkError<DeleteAssetError>`](crate::operation::delete_asset::DeleteAssetError)
     pub fn delete_asset(&self) -> crate::operation::delete_asset::builders::DeleteAssetFluentBuilder {

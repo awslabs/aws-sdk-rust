@@ -27,6 +27,7 @@ pub struct DeleteVectorEnrichmentJobInputBuilder {
 }
 impl DeleteVectorEnrichmentJobInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job being deleted.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteVectorEnrichmentJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_vector_enrichment_job::DeleteVectorEnrichmentJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_vector_enrichment_job::DeleteVectorEnrichmentJobInput { arn: self.arn })
     }

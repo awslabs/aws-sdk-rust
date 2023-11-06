@@ -15,8 +15,10 @@ impl AddNotificationChannelsInput {
         self.profiling_group_name.as_deref()
     }
     /// <p>One or 2 channels to report to when anomalies are detected.</p>
-    pub fn channels(&self) -> ::std::option::Option<&[crate::types::Channel]> {
-        self.channels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.channels.is_none()`.
+    pub fn channels(&self) -> &[crate::types::Channel] {
+        self.channels.as_deref().unwrap_or_default()
     }
 }
 impl AddNotificationChannelsInput {
@@ -35,6 +37,7 @@ pub struct AddNotificationChannelsInputBuilder {
 }
 impl AddNotificationChannelsInputBuilder {
     /// <p>The name of the profiling group that we are setting up notifications for.</p>
+    /// This field is required.
     pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profiling_group_name = ::std::option::Option::Some(input.into());
         self
@@ -73,7 +76,7 @@ impl AddNotificationChannelsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_notification_channels::AddNotificationChannelsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::add_notification_channels::AddNotificationChannelsInput {
             profiling_group_name: self.profiling_group_name,

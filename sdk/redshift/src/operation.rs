@@ -121,6 +121,9 @@ pub mod delete_hsm_configuration;
 /// Types for the `DeletePartner` operation.
 pub mod delete_partner;
 
+/// Types for the `DeleteResourcePolicy` operation.
+pub mod delete_resource_policy;
+
 /// Types for the `DeleteScheduledAction` operation.
 pub mod delete_scheduled_action;
 
@@ -205,6 +208,9 @@ pub mod describe_hsm_client_certificates;
 /// Types for the `DescribeHsmConfigurations` operation.
 pub mod describe_hsm_configurations;
 
+/// Types for the `DescribeInboundIntegrations` operation.
+pub mod describe_inbound_integrations;
+
 /// Types for the `DescribeLoggingStatus` operation.
 pub mod describe_logging_status;
 
@@ -277,6 +283,9 @@ pub mod get_reserved_node_exchange_configuration_options;
 /// Types for the `GetReservedNodeExchangeOfferings` operation.
 pub mod get_reserved_node_exchange_offerings;
 
+/// Types for the `GetResourcePolicy` operation.
+pub mod get_resource_policy;
+
 /// Types for the `ModifyAquaConfiguration` operation.
 pub mod modify_aqua_configuration;
 
@@ -333,6 +342,9 @@ pub mod pause_cluster;
 
 /// Types for the `PurchaseReservedNodeOffering` operation.
 pub mod purchase_reserved_node_offering;
+
+/// Types for the `PutResourcePolicy` operation.
+pub mod put_resource_policy;
 
 /// Types for the `RebootCluster` operation.
 pub mod reboot_cluster;

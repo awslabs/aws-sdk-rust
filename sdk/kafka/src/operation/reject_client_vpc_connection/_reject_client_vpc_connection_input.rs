@@ -34,6 +34,7 @@ pub struct RejectClientVpcConnectionInputBuilder {
 }
 impl RejectClientVpcConnectionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    /// This field is required.
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl RejectClientVpcConnectionInputBuilder {
         &self.cluster_arn
     }
     /// <p>The VPC connection ARN.</p>
+    /// This field is required.
     pub fn vpc_connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_connection_arn = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl RejectClientVpcConnectionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reject_client_vpc_connection::RejectClientVpcConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::reject_client_vpc_connection::RejectClientVpcConnectionInput {
             cluster_arn: self.cluster_arn,

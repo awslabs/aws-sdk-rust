@@ -28,6 +28,7 @@ pub struct CreateStreamingDistributionWithTagsInputBuilder {
 }
 impl CreateStreamingDistributionWithTagsInputBuilder {
     /// <p>The streaming distribution's configuration information.</p>
+    /// This field is required.
     pub fn streaming_distribution_config_with_tags(mut self, input: crate::types::StreamingDistributionConfigWithTags) -> Self {
         self.streaming_distribution_config_with_tags = ::std::option::Option::Some(input);
         self
@@ -49,7 +50,7 @@ impl CreateStreamingDistributionWithTagsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_streaming_distribution_with_tags::CreateStreamingDistributionWithTagsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_streaming_distribution_with_tags::CreateStreamingDistributionWithTagsInput {

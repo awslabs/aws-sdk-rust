@@ -86,8 +86,10 @@ impl UploadServerCertificateInput {
     /// <p>A list of tags that you want to attach to the new IAM server certificate resource. Each tag consists of a key name and an associated value. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p> <note>
     /// <p>If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request fails and the resource is not created.</p>
     /// </note>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for UploadServerCertificateInput {
@@ -146,6 +148,7 @@ impl UploadServerCertificateInputBuilder {
     }
     /// <p>The name for the server certificate. Do not include the path in this value. The name of the certificate cannot contain any spaces.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// This field is required.
     pub fn server_certificate_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_certificate_name = ::std::option::Option::Some(input.into());
         self
@@ -168,6 +171,7 @@ impl UploadServerCertificateInputBuilder {
     /// <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li>
     /// <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn certificate_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_body = ::std::option::Option::Some(input.into());
         self
@@ -200,6 +204,7 @@ impl UploadServerCertificateInputBuilder {
     /// <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li>
     /// <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn private_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.private_key = ::std::option::Option::Some(input.into());
         self
@@ -288,7 +293,7 @@ impl UploadServerCertificateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::upload_server_certificate::UploadServerCertificateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::upload_server_certificate::UploadServerCertificateInput {
             path: self.path,

@@ -28,6 +28,7 @@ pub struct DeleteDataflowEndpointGroupInputBuilder {
 }
 impl DeleteDataflowEndpointGroupInputBuilder {
     /// <p>UUID of a dataflow endpoint group.</p>
+    /// This field is required.
     pub fn dataflow_endpoint_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataflow_endpoint_group_id = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl DeleteDataflowEndpointGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroupInput {
             dataflow_endpoint_group_id: self.dataflow_endpoint_group_id,

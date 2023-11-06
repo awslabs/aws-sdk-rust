@@ -68,6 +68,7 @@ pub struct AssociateExternalConnectionInputBuilder {
 }
 impl AssociateExternalConnectionInputBuilder {
     /// <p>The name of the domain that contains the repository.</p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -96,6 +97,7 @@ impl AssociateExternalConnectionInputBuilder {
         &self.domain_owner
     }
     /// <p> The name of the repository to which the external connection is added. </p>
+    /// This field is required.
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository = ::std::option::Option::Some(input.into());
         self
@@ -120,6 +122,7 @@ impl AssociateExternalConnectionInputBuilder {
     /// <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare Android repository. </p> </li>
     /// <li> <p> <code>public:maven-clojars</code> - for the Clojars repository. </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn external_connection(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.external_connection = ::std::option::Option::Some(input.into());
         self
@@ -158,7 +161,7 @@ impl AssociateExternalConnectionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_external_connection::AssociateExternalConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::associate_external_connection::AssociateExternalConnectionInput {
             domain: self.domain,

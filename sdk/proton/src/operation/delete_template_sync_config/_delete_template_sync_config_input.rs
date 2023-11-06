@@ -34,6 +34,7 @@ pub struct DeleteTemplateSyncConfigInputBuilder {
 }
 impl DeleteTemplateSyncConfigInputBuilder {
     /// <p>The template name.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteTemplateSyncConfigInputBuilder {
         &self.template_name
     }
     /// <p>The template type.</p>
+    /// This field is required.
     pub fn template_type(mut self, input: crate::types::TemplateType) -> Self {
         self.template_type = ::std::option::Option::Some(input);
         self
@@ -66,7 +68,7 @@ impl DeleteTemplateSyncConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_template_sync_config::DeleteTemplateSyncConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_template_sync_config::DeleteTemplateSyncConfigInput {
             template_name: self.template_name,

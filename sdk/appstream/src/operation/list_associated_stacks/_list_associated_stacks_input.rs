@@ -34,6 +34,7 @@ pub struct ListAssociatedStacksInputBuilder {
 }
 impl ListAssociatedStacksInputBuilder {
     /// <p>The name of the fleet.</p>
+    /// This field is required.
     pub fn fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl ListAssociatedStacksInputBuilder {
     /// Consumes the builder and constructs a [`ListAssociatedStacksInput`](crate::operation::list_associated_stacks::ListAssociatedStacksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_associated_stacks::ListAssociatedStacksInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_associated_stacks::ListAssociatedStacksInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_associated_stacks::ListAssociatedStacksInput {
             fleet_name: self.fleet_name,

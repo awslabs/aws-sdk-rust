@@ -20,8 +20,10 @@ impl ListReceivedLicensesForOrganizationInput {
     /// <li> <p> <code>Beneficiary</code> </p> </li>
     /// <li> <p> <code>ProductSKU</code> </p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>Token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -113,7 +115,7 @@ impl ListReceivedLicensesForOrganizationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_received_licenses_for_organization::ListReceivedLicensesForOrganizationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_received_licenses_for_organization::ListReceivedLicensesForOrganizationInput {

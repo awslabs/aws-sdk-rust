@@ -9,8 +9,10 @@ pub struct DescribeRemediationConfigurationsOutput {
 }
 impl DescribeRemediationConfigurationsOutput {
     /// <p>Returns a remediation configuration object.</p>
-    pub fn remediation_configurations(&self) -> ::std::option::Option<&[crate::types::RemediationConfiguration]> {
-        self.remediation_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remediation_configurations.is_none()`.
+    pub fn remediation_configurations(&self) -> &[crate::types::RemediationConfiguration] {
+        self.remediation_configurations.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeRemediationConfigurationsOutput {

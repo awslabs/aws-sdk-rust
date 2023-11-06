@@ -35,6 +35,7 @@ pub struct CreateApplicationOutputBuilder {
 }
 impl CreateApplicationOutputBuilder {
     /// <p>In response to your <code>CreateApplication</code> request, Amazon Kinesis Analytics returns a response with a summary of the application it created, including the application Amazon Resource Name (ARN), name, and status.</p>
+    /// This field is required.
     pub fn application_summary(mut self, input: crate::types::ApplicationSummary) -> Self {
         self.application_summary = ::std::option::Option::Some(input);
         self

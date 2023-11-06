@@ -106,6 +106,7 @@ impl ListDeviceIdentifiersInputBuilder {
         &self.filters
     }
     /// <p>The Amazon Resource Name (ARN) of the network.</p>
+    /// This field is required.
     pub fn network_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_arn = ::std::option::Option::Some(input.into());
         self
@@ -150,7 +151,7 @@ impl ListDeviceIdentifiersInputBuilder {
     /// Consumes the builder and constructs a [`ListDeviceIdentifiersInput`](crate::operation::list_device_identifiers::ListDeviceIdentifiersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_device_identifiers::ListDeviceIdentifiersInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_device_identifiers::ListDeviceIdentifiersInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_device_identifiers::ListDeviceIdentifiersInput {
             filters: self.filters,

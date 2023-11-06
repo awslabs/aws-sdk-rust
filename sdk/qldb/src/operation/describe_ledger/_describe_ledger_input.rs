@@ -27,6 +27,7 @@ pub struct DescribeLedgerInputBuilder {
 }
 impl DescribeLedgerInputBuilder {
     /// <p>The name of the ledger that you want to describe.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeLedgerInputBuilder {
     /// Consumes the builder and constructs a [`DescribeLedgerInput`](crate::operation::describe_ledger::DescribeLedgerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_ledger::DescribeLedgerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_ledger::DescribeLedgerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_ledger::DescribeLedgerInput { name: self.name })
     }
 }

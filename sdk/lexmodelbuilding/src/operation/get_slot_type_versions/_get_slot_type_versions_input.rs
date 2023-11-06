@@ -41,6 +41,7 @@ pub struct GetSlotTypeVersionsInputBuilder {
 }
 impl GetSlotTypeVersionsInputBuilder {
     /// <p>The name of the slot type for which versions should be returned.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl GetSlotTypeVersionsInputBuilder {
     /// Consumes the builder and constructs a [`GetSlotTypeVersionsInput`](crate::operation::get_slot_type_versions::GetSlotTypeVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_slot_type_versions::GetSlotTypeVersionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_slot_type_versions::GetSlotTypeVersionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_slot_type_versions::GetSlotTypeVersionsInput {
             name: self.name,

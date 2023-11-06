@@ -38,8 +38,10 @@ impl DescribeFleetInstancesInput {
     /// <ul>
     /// <li> <p> <code>instance-type</code> - The instance type.</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
 }
 impl DescribeFleetInstancesInput {
@@ -103,6 +105,7 @@ impl DescribeFleetInstancesInputBuilder {
         &self.next_token
     }
     /// <p>The ID of the EC2 Fleet.</p>
+    /// This field is required.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
         self
@@ -148,8 +151,10 @@ impl DescribeFleetInstancesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeFleetInstancesInput`](crate::operation::describe_fleet_instances::DescribeFleetInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_fleet_instances::DescribeFleetInstancesInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_fleet_instances::DescribeFleetInstancesInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_fleet_instances::DescribeFleetInstancesInput {
             dry_run: self.dry_run,
             max_results: self.max_results,

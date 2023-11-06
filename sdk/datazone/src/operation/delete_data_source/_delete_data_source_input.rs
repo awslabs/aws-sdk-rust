@@ -41,6 +41,7 @@ pub struct DeleteDataSourceInputBuilder {
 }
 impl DeleteDataSourceInputBuilder {
     /// <p>The ID of the Amazon DataZone domain in which the data source is deleted.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DeleteDataSourceInputBuilder {
         &self.domain_identifier
     }
     /// <p>The identifier of the data source that is deleted.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +87,7 @@ impl DeleteDataSourceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDataSourceInput`](crate::operation::delete_data_source::DeleteDataSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_data_source::DeleteDataSourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_data_source::DeleteDataSourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_data_source::DeleteDataSourceInput {
             domain_identifier: self.domain_identifier,
             identifier: self.identifier,

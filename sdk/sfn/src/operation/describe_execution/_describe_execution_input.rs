@@ -27,6 +27,7 @@ pub struct DescribeExecutionInputBuilder {
 }
 impl DescribeExecutionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the execution to describe.</p>
+    /// This field is required.
     pub fn execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeExecutionInputBuilder {
     /// Consumes the builder and constructs a [`DescribeExecutionInput`](crate::operation::describe_execution::DescribeExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_execution::DescribeExecutionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_execution::DescribeExecutionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_execution::DescribeExecutionInput {
             execution_arn: self.execution_arn,
         })

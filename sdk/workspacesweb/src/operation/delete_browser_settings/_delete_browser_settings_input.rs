@@ -27,6 +27,7 @@ pub struct DeleteBrowserSettingsInputBuilder {
 }
 impl DeleteBrowserSettingsInputBuilder {
     /// <p>The ARN of the browser settings.</p>
+    /// This field is required.
     pub fn browser_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.browser_settings_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteBrowserSettingsInputBuilder {
     /// Consumes the builder and constructs a [`DeleteBrowserSettingsInput`](crate::operation::delete_browser_settings::DeleteBrowserSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_browser_settings::DeleteBrowserSettingsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_browser_settings::DeleteBrowserSettingsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_browser_settings::DeleteBrowserSettingsInput {
             browser_settings_arn: self.browser_settings_arn,

@@ -48,6 +48,7 @@ pub struct GetCommentReactionsInputBuilder {
 }
 impl GetCommentReactionsInputBuilder {
     /// <p>The ID of the comment for which you want to get reactions information.</p>
+    /// This field is required.
     pub fn comment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment_id = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,7 @@ impl GetCommentReactionsInputBuilder {
     /// Consumes the builder and constructs a [`GetCommentReactionsInput`](crate::operation::get_comment_reactions::GetCommentReactionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_comment_reactions::GetCommentReactionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_comment_reactions::GetCommentReactionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_comment_reactions::GetCommentReactionsInput {
             comment_id: self.comment_id,

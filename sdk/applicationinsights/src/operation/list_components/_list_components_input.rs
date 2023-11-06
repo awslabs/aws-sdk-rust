@@ -48,6 +48,7 @@ pub struct ListComponentsInputBuilder {
 }
 impl ListComponentsInputBuilder {
     /// <p>The name of the resource group.</p>
+    /// This field is required.
     pub fn resource_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_group_name = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,7 @@ impl ListComponentsInputBuilder {
     /// Consumes the builder and constructs a [`ListComponentsInput`](crate::operation::list_components::ListComponentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_components::ListComponentsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_components::ListComponentsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_components::ListComponentsInput {
             resource_group_name: self.resource_group_name,
             max_results: self.max_results,

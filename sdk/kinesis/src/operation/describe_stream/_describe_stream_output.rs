@@ -35,6 +35,7 @@ pub struct DescribeStreamOutputBuilder {
 }
 impl DescribeStreamOutputBuilder {
     /// <p>The current status of the stream, the stream Amazon Resource Name (ARN), an array of shard objects that comprise the stream, and whether there are more shards available.</p>
+    /// This field is required.
     pub fn stream_description(mut self, input: crate::types::StreamDescription) -> Self {
         self.stream_description = ::std::option::Option::Some(input);
         self

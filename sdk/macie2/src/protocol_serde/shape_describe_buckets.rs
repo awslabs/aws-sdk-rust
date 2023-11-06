@@ -147,12 +147,12 @@ pub fn de_describe_buckets_http_response(
 
 pub fn ser_describe_buckets_input(
     input: &crate::operation::describe_buckets::DescribeBucketsInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_describe_buckets_input::ser_describe_buckets_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_describe_buckets(
@@ -167,9 +167,7 @@ pub(crate) fn de_describe_buckets(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "buckets" => {
-                    builder = builder.set_buckets(crate::protocol_serde::shape___list_of_bucket_metadata::de___list_of_bucket_metadata(
-                        tokens,
-                    )?);
+                    builder = builder.set_buckets(crate::protocol_serde::shape_list_of_bucket_metadata::de_list_of_bucket_metadata(tokens)?);
                 }
                 "nextToken" => {
                     builder = builder.set_next_token(

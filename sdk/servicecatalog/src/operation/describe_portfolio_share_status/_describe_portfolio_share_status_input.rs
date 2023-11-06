@@ -27,6 +27,7 @@ pub struct DescribePortfolioShareStatusInputBuilder {
 }
 impl DescribePortfolioShareStatusInputBuilder {
     /// <p>The token for the portfolio share operation. This token is returned either by CreatePortfolioShare or by DeletePortfolioShare.</p>
+    /// This field is required.
     pub fn portfolio_share_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portfolio_share_token = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribePortfolioShareStatusInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_portfolio_share_status::DescribePortfolioShareStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_portfolio_share_status::DescribePortfolioShareStatusInput {
             portfolio_share_token: self.portfolio_share_token,

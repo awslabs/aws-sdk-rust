@@ -28,6 +28,7 @@ pub struct GetDomainDeliverabilityCampaignInputBuilder {
 }
 impl GetDomainDeliverabilityCampaignInputBuilder {
     /// <p>The unique identifier for the campaign. Amazon Pinpoint automatically generates and assigns this identifier to a campaign. This value is not the same as the campaign identifier that Amazon Pinpoint assigns to campaigns that you create and manage by using the Amazon Pinpoint API or the Amazon Pinpoint console.</p>
+    /// This field is required.
     pub fn campaign_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.campaign_id = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl GetDomainDeliverabilityCampaignInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_domain_deliverability_campaign::GetDomainDeliverabilityCampaignInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_domain_deliverability_campaign::GetDomainDeliverabilityCampaignInput {

@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Filter {
     /// <p>The key that you're filtering on.</p>
-    pub key: ::std::option::Option<::std::string::String>,
+    pub key: ::std::string::String,
     /// <p>The condition accepts before or after a specified time, equal to a string, or equal to an integer.</p>
     pub condition: ::std::option::Option<crate::types::Condition>,
 }
 impl Filter {
     /// <p>The key that you're filtering on.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
-        self.key.as_deref()
+    pub fn key(&self) -> &str {
+        use std::ops::Deref;
+        self.key.deref()
     }
     /// <p>The condition accepts before or after a specified time, equal to a string, or equal to an integer.</p>
     pub fn condition(&self) -> ::std::option::Option<&crate::types::Condition> {
@@ -35,6 +36,7 @@ pub struct FilterBuilder {
 }
 impl FilterBuilder {
     /// <p>The key that you're filtering on.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl FilterBuilder {
         &self.key
     }
     /// <p>The condition accepts before or after a specified time, equal to a string, or equal to an integer.</p>
+    /// This field is required.
     pub fn condition(mut self, input: crate::types::Condition) -> Self {
         self.condition = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,17 @@ impl FilterBuilder {
         &self.condition
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
-    pub fn build(self) -> crate::types::Filter {
-        crate::types::Filter {
-            key: self.key,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key`](crate::types::builders::FilterBuilder::key)
+    pub fn build(self) -> ::std::result::Result<crate::types::Filter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Filter {
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building Filter",
+                )
+            })?,
             condition: self.condition,
-        }
+        })
     }
 }

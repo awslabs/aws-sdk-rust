@@ -4,11 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetFormTypeOutput {
     /// <p>The ID of the Amazon DataZone domain in which this metadata form type exists.</p>
-    pub domain_id: ::std::option::Option<::std::string::String>,
+    pub domain_id: ::std::string::String,
     /// <p>The name of the metadata form type.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The revision of the metadata form type.</p>
-    pub revision: ::std::option::Option<::std::string::String>,
+    pub revision: ::std::string::String,
     /// <p>The model of the metadata form type.</p>
     pub model: ::std::option::Option<crate::types::Model>,
     /// <p>The ID of the project that owns this metadata form type.</p>
@@ -31,16 +31,19 @@ pub struct GetFormTypeOutput {
 }
 impl GetFormTypeOutput {
     /// <p>The ID of the Amazon DataZone domain in which this metadata form type exists.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
-        self.domain_id.as_deref()
+    pub fn domain_id(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_id.deref()
     }
     /// <p>The name of the metadata form type.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The revision of the metadata form type.</p>
-    pub fn revision(&self) -> ::std::option::Option<&str> {
-        self.revision.as_deref()
+    pub fn revision(&self) -> &str {
+        use std::ops::Deref;
+        self.revision.deref()
     }
     /// <p>The model of the metadata form type.</p>
     pub fn model(&self) -> ::std::option::Option<&crate::types::Model> {
@@ -75,8 +78,10 @@ impl GetFormTypeOutput {
         self.description.as_deref()
     }
     /// <p>The imports of the metadata form type.</p>
-    pub fn imports(&self) -> ::std::option::Option<&[crate::types::Import]> {
-        self.imports.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.imports.is_none()`.
+    pub fn imports(&self) -> &[crate::types::Import] {
+        self.imports.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for GetFormTypeOutput {
@@ -130,6 +135,7 @@ pub struct GetFormTypeOutputBuilder {
 }
 impl GetFormTypeOutputBuilder {
     /// <p>The ID of the Amazon DataZone domain in which this metadata form type exists.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -144,6 +150,7 @@ impl GetFormTypeOutputBuilder {
         &self.domain_id
     }
     /// <p>The name of the metadata form type.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -158,6 +165,7 @@ impl GetFormTypeOutputBuilder {
         &self.name
     }
     /// <p>The revision of the metadata form type.</p>
+    /// This field is required.
     pub fn revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision = ::std::option::Option::Some(input.into());
         self
@@ -172,6 +180,7 @@ impl GetFormTypeOutputBuilder {
         &self.revision
     }
     /// <p>The model of the metadata form type.</p>
+    /// This field is required.
     pub fn model(mut self, input: crate::types::Model) -> Self {
         self.model = ::std::option::Option::Some(input);
         self
@@ -313,11 +322,32 @@ impl GetFormTypeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetFormTypeOutput`](crate::operation::get_form_type::GetFormTypeOutput).
-    pub fn build(self) -> crate::operation::get_form_type::GetFormTypeOutput {
-        crate::operation::get_form_type::GetFormTypeOutput {
-            domain_id: self.domain_id,
-            name: self.name,
-            revision: self.revision,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`domain_id`](crate::operation::get_form_type::builders::GetFormTypeOutputBuilder::domain_id)
+    /// - [`name`](crate::operation::get_form_type::builders::GetFormTypeOutputBuilder::name)
+    /// - [`revision`](crate::operation::get_form_type::builders::GetFormTypeOutputBuilder::revision)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_form_type::GetFormTypeOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_form_type::GetFormTypeOutput {
+            domain_id: self.domain_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "domain_id",
+                    "domain_id was not specified but it is required when building GetFormTypeOutput",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building GetFormTypeOutput",
+                )
+            })?,
+            revision: self.revision.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "revision",
+                    "revision was not specified but it is required when building GetFormTypeOutput",
+                )
+            })?,
             model: self.model,
             owning_project_id: self.owning_project_id,
             origin_domain_id: self.origin_domain_id,
@@ -328,7 +358,7 @@ impl GetFormTypeOutputBuilder {
             description: self.description,
             imports: self.imports,
             _request_id: self._request_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for GetFormTypeOutputBuilder {

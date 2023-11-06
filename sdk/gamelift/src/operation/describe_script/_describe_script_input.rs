@@ -27,6 +27,7 @@ pub struct DescribeScriptInputBuilder {
 }
 impl DescribeScriptInputBuilder {
     /// <p>A unique identifier for the Realtime script to retrieve properties for. You can use either the script ID or ARN value.</p>
+    /// This field is required.
     pub fn script_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.script_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeScriptInputBuilder {
     /// Consumes the builder and constructs a [`DescribeScriptInput`](crate::operation::describe_script::DescribeScriptInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_script::DescribeScriptInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_script::DescribeScriptInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_script::DescribeScriptInput { script_id: self.script_id })
     }
 }

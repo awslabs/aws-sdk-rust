@@ -34,6 +34,7 @@ pub struct CreatePresignedNotebookInstanceUrlInputBuilder {
 }
 impl CreatePresignedNotebookInstanceUrlInputBuilder {
     /// <p>The name of the notebook instance.</p>
+    /// This field is required.
     pub fn notebook_instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_instance_name = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl CreatePresignedNotebookInstanceUrlInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_presigned_notebook_instance_url::CreatePresignedNotebookInstanceUrlInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_presigned_notebook_instance_url::CreatePresignedNotebookInstanceUrlInput {

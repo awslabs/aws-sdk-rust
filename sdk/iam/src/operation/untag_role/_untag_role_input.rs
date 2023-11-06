@@ -16,8 +16,10 @@ impl UntagRoleInput {
         self.role_name.as_deref()
     }
     /// <p>A list of key names as a simple array of strings. The tags with matching keys are removed from the specified role.</p>
-    pub fn tag_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tag_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_keys.is_none()`.
+    pub fn tag_keys(&self) -> &[::std::string::String] {
+        self.tag_keys.as_deref().unwrap_or_default()
     }
 }
 impl UntagRoleInput {
@@ -37,6 +39,7 @@ pub struct UntagRoleInputBuilder {
 impl UntagRoleInputBuilder {
     /// <p>The name of the IAM role from which you want to remove tags.</p>
     /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// This field is required.
     pub fn role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_name = ::std::option::Option::Some(input.into());
         self
@@ -73,7 +76,7 @@ impl UntagRoleInputBuilder {
         &self.tag_keys
     }
     /// Consumes the builder and constructs a [`UntagRoleInput`](crate::operation::untag_role::UntagRoleInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::untag_role::UntagRoleInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::untag_role::UntagRoleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::untag_role::UntagRoleInput {
             role_name: self.role_name,
             tag_keys: self.tag_keys,

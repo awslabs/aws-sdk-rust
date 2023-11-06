@@ -72,7 +72,7 @@ impl ListMeshesInputBuilder {
         &self.limit
     }
     /// Consumes the builder and constructs a [`ListMeshesInput`](crate::operation::list_meshes::ListMeshesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_meshes::ListMeshesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_meshes::ListMeshesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_meshes::ListMeshesInput {
             next_token: self.next_token,
             limit: self.limit,

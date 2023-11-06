@@ -28,6 +28,7 @@ pub struct DescribeThingTypeInputBuilder {
 }
 impl DescribeThingTypeInputBuilder {
     /// <p>The name of the thing type.</p>
+    /// This field is required.
     pub fn thing_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_type_name = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl DescribeThingTypeInputBuilder {
     /// Consumes the builder and constructs a [`DescribeThingTypeInput`](crate::operation::describe_thing_type::DescribeThingTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_thing_type::DescribeThingTypeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_thing_type::DescribeThingTypeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_thing_type::DescribeThingTypeInput {
             thing_type_name: self.thing_type_name,
         })

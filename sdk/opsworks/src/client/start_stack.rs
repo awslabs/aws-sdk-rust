@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartStack`](crate::operation::start_stack::builders::StartStackFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`stack_id(impl Into<String>)`](crate::operation::start_stack::builders::StartStackFluentBuilder::stack_id) / [`set_stack_id(Option<String>)`](crate::operation::start_stack::builders::StartStackFluentBuilder::set_stack_id): <p>The stack ID.</p>
+    ///   - [`stack_id(impl Into<String>)`](crate::operation::start_stack::builders::StartStackFluentBuilder::stack_id) / [`set_stack_id(Option<String>)`](crate::operation::start_stack::builders::StartStackFluentBuilder::set_stack_id):<br>required: **true**<br><p>The stack ID.</p><br>
     /// - On success, responds with [`StartStackOutput`](crate::operation::start_stack::StartStackOutput)
     /// - On failure, responds with [`SdkError<StartStackError>`](crate::operation::start_stack::StartStackError)
     pub fn start_stack(&self) -> crate::operation::start_stack::builders::StartStackFluentBuilder {

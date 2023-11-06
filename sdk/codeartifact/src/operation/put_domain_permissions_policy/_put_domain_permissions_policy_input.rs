@@ -48,6 +48,7 @@ pub struct PutDomainPermissionsPolicyInputBuilder {
 }
 impl PutDomainPermissionsPolicyInputBuilder {
     /// <p> The name of the domain on which to set the resource policy. </p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +91,7 @@ impl PutDomainPermissionsPolicyInputBuilder {
         &self.policy_revision
     }
     /// <p> A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided domain. </p>
+    /// This field is required.
     pub fn policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_document = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +110,7 @@ impl PutDomainPermissionsPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_domain_permissions_policy::PutDomainPermissionsPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_domain_permissions_policy::PutDomainPermissionsPolicyInput {
             domain: self.domain,

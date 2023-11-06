@@ -20,8 +20,10 @@ impl UpdateGroupInput {
         self.group_id.as_deref()
     }
     /// <p>A list of <code>AttributeOperation</code> objects to apply to the requested group. These operations might add, replace, or remove an attribute.</p>
-    pub fn operations(&self) -> ::std::option::Option<&[crate::types::AttributeOperation]> {
-        self.operations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.operations.is_none()`.
+    pub fn operations(&self) -> &[crate::types::AttributeOperation] {
+        self.operations.as_deref().unwrap_or_default()
     }
 }
 impl UpdateGroupInput {
@@ -41,6 +43,7 @@ pub struct UpdateGroupInputBuilder {
 }
 impl UpdateGroupInputBuilder {
     /// <p>The globally unique identifier for the identity store.</p>
+    /// This field is required.
     pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_store_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl UpdateGroupInputBuilder {
         &self.identity_store_id
     }
     /// <p>The identifier for a group in the identity store.</p>
+    /// This field is required.
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
         self
@@ -89,7 +93,7 @@ impl UpdateGroupInputBuilder {
         &self.operations
     }
     /// Consumes the builder and constructs a [`UpdateGroupInput`](crate::operation::update_group::UpdateGroupInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_group::UpdateGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_group::UpdateGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_group::UpdateGroupInput {
             identity_store_id: self.identity_store_id,
             group_id: self.group_id,

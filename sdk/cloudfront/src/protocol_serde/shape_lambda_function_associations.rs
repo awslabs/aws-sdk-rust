@@ -2,19 +2,19 @@
 pub fn ser_lambda_function_associations(
     input: &crate::types::LambdaFunctionAssociations,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.quantity {
+    {
         let mut inner_writer = scope.start_el("Quantity").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_1).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.quantity).encode());
     }
-    if let Some(var_2) = &input.items {
+    if let Some(var_1) = &input.items {
         let mut inner_writer = scope.start_el("Items").finish();
-        for list_item_3 in var_2 {
+        for list_item_2 in var_1 {
             {
                 let inner_writer = inner_writer.start_el("LambdaFunctionAssociation");
-                crate::protocol_serde::shape_lambda_function_association::ser_lambda_function_association(list_item_3, inner_writer)?
+                crate::protocol_serde::shape_lambda_function_association::ser_lambda_function_association(list_item_2, inner_writer)?
             }
         }
     }
@@ -22,6 +22,7 @@ pub fn ser_lambda_function_associations(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_lambda_function_associations(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::LambdaFunctionAssociations, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -30,7 +31,7 @@ pub fn de_lambda_function_associations(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Quantity") /* Quantity com.amazonaws.cloudfront#LambdaFunctionAssociations$Quantity */ =>  {
-                let var_4 =
+                let var_3 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -41,21 +42,23 @@ pub fn de_lambda_function_associations(
                         ?
                     )
                 ;
-                builder = builder.set_quantity(var_4);
+                builder = builder.set_quantity(var_3);
             }
             ,
             s if s.matches("Items") /* Items com.amazonaws.cloudfront#LambdaFunctionAssociations$Items */ =>  {
-                let var_5 =
+                let var_4 =
                     Some(
                         crate::protocol_serde::shape_lambda_function_association_list::de_lambda_function_association_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_items(var_5);
+                builder = builder.set_items(var_4);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::lambda_function_associations_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

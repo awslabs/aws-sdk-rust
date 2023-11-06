@@ -175,18 +175,18 @@ pub fn de_get_pull_request_http_response(
         output = crate::protocol_serde::shape_get_pull_request::de_get_pull_request(_response_body, output)
             .map_err(crate::operation::get_pull_request::GetPullRequestError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::get_pull_request_output_correct_errors(output).build()
     })
 }
 
 pub fn ser_get_pull_request_input(
     input: &crate::operation::get_pull_request::GetPullRequestInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_get_pull_request_input::ser_get_pull_request_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_get_pull_request(

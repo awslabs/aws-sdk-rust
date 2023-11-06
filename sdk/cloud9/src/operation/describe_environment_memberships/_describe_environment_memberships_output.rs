@@ -11,8 +11,10 @@ pub struct DescribeEnvironmentMembershipsOutput {
 }
 impl DescribeEnvironmentMembershipsOutput {
     /// <p>Information about the environment members for the environment.</p>
-    pub fn memberships(&self) -> ::std::option::Option<&[crate::types::EnvironmentMember]> {
-        self.memberships.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.memberships.is_none()`.
+    pub fn memberships(&self) -> &[crate::types::EnvironmentMember] {
+        self.memberships.as_deref().unwrap_or_default()
     }
     /// <p>If there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

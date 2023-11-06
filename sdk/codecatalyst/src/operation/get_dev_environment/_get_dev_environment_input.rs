@@ -41,6 +41,7 @@ pub struct GetDevEnvironmentInputBuilder {
 }
 impl GetDevEnvironmentInputBuilder {
     /// <p>The name of the space.</p>
+    /// This field is required.
     pub fn space_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.space_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl GetDevEnvironmentInputBuilder {
         &self.space_name
     }
     /// <p>The name of the project in the space.</p>
+    /// This field is required.
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl GetDevEnvironmentInputBuilder {
         &self.project_name
     }
     /// <p>The system-generated unique ID of the Dev Environment for which you want to view information. To retrieve a list of Dev Environment IDs, use <code>ListDevEnvironments</code>.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +88,7 @@ impl GetDevEnvironmentInputBuilder {
     /// Consumes the builder and constructs a [`GetDevEnvironmentInput`](crate::operation::get_dev_environment::GetDevEnvironmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_dev_environment::GetDevEnvironmentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_dev_environment::GetDevEnvironmentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_dev_environment::GetDevEnvironmentInput {
             space_name: self.space_name,
             project_name: self.project_name,

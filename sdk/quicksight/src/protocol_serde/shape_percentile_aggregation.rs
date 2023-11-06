@@ -2,7 +2,7 @@
 pub fn ser_percentile_aggregation(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PercentileAggregation,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.percentile_value {
         object.key("PercentileValue").number(
             #[allow(clippy::useless_conversion)]

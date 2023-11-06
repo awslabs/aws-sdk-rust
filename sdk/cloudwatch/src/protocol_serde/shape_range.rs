@@ -3,7 +3,7 @@
 pub fn ser_range(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::Range,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("StartTime");
     if let Some(var_2) = &input.start_time {
@@ -17,6 +17,7 @@ pub fn ser_range(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_range(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result<crate::types::Range, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::Range::builder();
@@ -53,5 +54,5 @@ pub fn de_range(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::range_correct_errors(builder).build())
 }

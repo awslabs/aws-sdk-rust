@@ -93,12 +93,16 @@ impl UpdateAction {
         self.sla_met.as_ref()
     }
     /// <p>The status of the service update on the node group</p>
-    pub fn node_group_update_status(&self) -> ::std::option::Option<&[crate::types::NodeGroupUpdateStatus]> {
-        self.node_group_update_status.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.node_group_update_status.is_none()`.
+    pub fn node_group_update_status(&self) -> &[crate::types::NodeGroupUpdateStatus] {
+        self.node_group_update_status.as_deref().unwrap_or_default()
     }
     /// <p>The status of the service update on the cache node</p>
-    pub fn cache_node_update_status(&self) -> ::std::option::Option<&[crate::types::CacheNodeUpdateStatus]> {
-        self.cache_node_update_status.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cache_node_update_status.is_none()`.
+    pub fn cache_node_update_status(&self) -> &[crate::types::CacheNodeUpdateStatus] {
+        self.cache_node_update_status.as_deref().unwrap_or_default()
     }
     /// <p>The estimated length of time for the update to complete</p>
     pub fn estimated_update_time(&self) -> ::std::option::Option<&str> {

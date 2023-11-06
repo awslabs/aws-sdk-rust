@@ -34,6 +34,7 @@ pub struct StopActivityStreamInputBuilder {
 }
 impl StopActivityStreamInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the DB cluster for the database activity stream. For example, <code>arn:aws:rds:us-east-1:12345667890:cluster:das-cluster</code>.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,8 @@ impl StopActivityStreamInputBuilder {
     /// Consumes the builder and constructs a [`StopActivityStreamInput`](crate::operation::stop_activity_stream::StopActivityStreamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_activity_stream::StopActivityStreamInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_activity_stream::StopActivityStreamInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::stop_activity_stream::StopActivityStreamInput {
             resource_arn: self.resource_arn,
             apply_immediately: self.apply_immediately,

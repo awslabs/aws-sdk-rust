@@ -11,8 +11,10 @@ pub struct ListTypeVersionsOutput {
 }
 impl ListTypeVersionsOutput {
     /// <p>A list of <code>TypeVersionSummary</code> structures that contain information about the specified extension's versions.</p>
-    pub fn type_version_summaries(&self) -> ::std::option::Option<&[crate::types::TypeVersionSummary]> {
-        self.type_version_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.type_version_summaries.is_none()`.
+    pub fn type_version_summaries(&self) -> &[crate::types::TypeVersionSummary] {
+        self.type_version_summaries.as_deref().unwrap_or_default()
     }
     /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

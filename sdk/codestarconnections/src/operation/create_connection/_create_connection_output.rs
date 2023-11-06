@@ -6,7 +6,7 @@ pub struct CreateConnectionOutput {
     /// <p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the connection reference when the connection is shared between Amazon Web Services services.</p> <note>
     /// <p>The ARN is never reused if the connection is deleted.</p>
     /// </note>
-    pub connection_arn: ::std::option::Option<::std::string::String>,
+    pub connection_arn: ::std::string::String,
     /// <p>Specifies the tags applied to the resource.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
@@ -15,12 +15,15 @@ impl CreateConnectionOutput {
     /// <p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the connection reference when the connection is shared between Amazon Web Services services.</p> <note>
     /// <p>The ARN is never reused if the connection is deleted.</p>
     /// </note>
-    pub fn connection_arn(&self) -> ::std::option::Option<&str> {
-        self.connection_arn.as_deref()
+    pub fn connection_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.connection_arn.deref()
     }
     /// <p>Specifies the tags applied to the resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateConnectionOutput {
@@ -47,6 +50,7 @@ impl CreateConnectionOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the connection reference when the connection is shared between Amazon Web Services services.</p> <note>
     /// <p>The ARN is never reused if the connection is deleted.</p>
     /// </note>
+    /// This field is required.
     pub fn connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_arn = ::std::option::Option::Some(input.into());
         self
@@ -94,11 +98,20 @@ impl CreateConnectionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateConnectionOutput`](crate::operation::create_connection::CreateConnectionOutput).
-    pub fn build(self) -> crate::operation::create_connection::CreateConnectionOutput {
-        crate::operation::create_connection::CreateConnectionOutput {
-            connection_arn: self.connection_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`connection_arn`](crate::operation::create_connection::builders::CreateConnectionOutputBuilder::connection_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_connection::CreateConnectionOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_connection::CreateConnectionOutput {
+            connection_arn: self.connection_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "connection_arn",
+                    "connection_arn was not specified but it is required when building CreateConnectionOutput",
+                )
+            })?,
             tags: self.tags,
             _request_id: self._request_id,
-        }
+        })
     }
 }

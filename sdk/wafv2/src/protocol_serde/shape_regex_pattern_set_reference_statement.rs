@@ -2,27 +2,27 @@
 pub fn ser_regex_pattern_set_reference_statement(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RegexPatternSetReferenceStatement,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.arn {
-        object.key("ARN").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("ARN").string(input.arn.as_str());
     }
-    if let Some(var_2) = &input.field_to_match {
+    if let Some(var_1) = &input.field_to_match {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("FieldToMatch").start_object();
-        crate::protocol_serde::shape_field_to_match::ser_field_to_match(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("FieldToMatch").start_object();
+        crate::protocol_serde::shape_field_to_match::ser_field_to_match(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.text_transformations {
-        let mut array_5 = object.key("TextTransformations").start_array();
-        for item_6 in var_4 {
+    {
+        let mut array_3 = object.key("TextTransformations").start_array();
+        for item_4 in &input.text_transformations {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_text_transformation::ser_text_transformation(&mut object_7, item_6)?;
-                object_7.finish();
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_text_transformation::ser_text_transformation(&mut object_5, item_4)?;
+                object_5.finish();
             }
         }
-        array_5.finish();
+        array_3.finish();
     }
     Ok(())
 }
@@ -66,7 +66,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::regex_pattern_set_reference_statement_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

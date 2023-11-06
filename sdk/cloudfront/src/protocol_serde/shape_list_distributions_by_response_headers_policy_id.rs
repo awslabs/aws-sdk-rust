@@ -38,8 +38,8 @@ pub fn de_list_distributions_by_response_headers_policy_id_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidArgument" => crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyIdError::InvalidArgument({
@@ -54,8 +54,8 @@ pub fn de_list_distributions_by_response_headers_policy_id_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NoSuchResponseHeadersPolicy" => crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyIdError::NoSuchResponseHeadersPolicy({
@@ -70,8 +70,8 @@ pub fn de_list_distributions_by_response_headers_policy_id_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyIdError::generic(generic)

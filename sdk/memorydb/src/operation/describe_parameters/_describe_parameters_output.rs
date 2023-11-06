@@ -15,8 +15,10 @@ impl DescribeParametersOutput {
         self.next_token.as_deref()
     }
     /// <p>A list of parameters specific to a particular parameter group. Each element in the list contains detailed information about one parameter.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&[crate::types::Parameter]> {
-        self.parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
+    pub fn parameters(&self) -> &[crate::types::Parameter] {
+        self.parameters.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeParametersOutput {

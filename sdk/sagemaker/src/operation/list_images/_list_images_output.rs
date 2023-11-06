@@ -11,8 +11,10 @@ pub struct ListImagesOutput {
 }
 impl ListImagesOutput {
     /// <p>A list of images and their properties.</p>
-    pub fn images(&self) -> ::std::option::Option<&[crate::types::Image]> {
-        self.images.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.images.is_none()`.
+    pub fn images(&self) -> &[crate::types::Image] {
+        self.images.as_deref().unwrap_or_default()
     }
     /// <p>A token for getting the next set of images, if there are any.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

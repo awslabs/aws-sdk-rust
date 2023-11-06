@@ -2,34 +2,34 @@
 pub fn ser_cloud_watch_logging_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CloudWatchLoggingConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.enabled {
-        object.key("enabled").boolean(*var_1);
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("enabled").boolean(input.enabled);
     }
-    if let Some(var_2) = &input.log_group_name {
-        object.key("logGroupName").string(var_2.as_str());
+    if let Some(var_1) = &input.log_group_name {
+        object.key("logGroupName").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.log_stream_name_prefix {
-        object.key("logStreamNamePrefix").string(var_3.as_str());
+    if let Some(var_2) = &input.log_stream_name_prefix {
+        object.key("logStreamNamePrefix").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.encryption_key_arn {
-        object.key("encryptionKeyArn").string(var_4.as_str());
+    if let Some(var_3) = &input.encryption_key_arn {
+        object.key("encryptionKeyArn").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.log_types {
+    if let Some(var_4) = &input.log_types {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("logTypes").start_object();
-        for (key_7, value_8) in var_5 {
+        let mut object_5 = object.key("logTypes").start_object();
+        for (key_6, value_7) in var_4 {
             {
-                let mut array_9 = object_6.key(key_7.as_str()).start_array();
-                for item_10 in value_8 {
+                let mut array_8 = object_5.key(key_6.as_str()).start_array();
+                for item_9 in value_7 {
                     {
-                        array_9.value().string(item_10.as_str());
+                        array_8.value().string(item_9.as_str());
                     }
                 }
-                array_9.finish();
+                array_8.finish();
             }
         }
-        object_6.finish();
+        object_5.finish();
     }
     Ok(())
 }
@@ -86,7 +86,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::cloud_watch_logging_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

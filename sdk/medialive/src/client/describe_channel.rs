@@ -3,25 +3,25 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeChannel`](crate::operation::describe_channel::builders::DescribeChannelFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`channel_id(impl Into<String>)`](crate::operation::describe_channel::builders::DescribeChannelFluentBuilder::channel_id) / [`set_channel_id(Option<String>)`](crate::operation::describe_channel::builders::DescribeChannelFluentBuilder::set_channel_id): channel ID
+    ///   - [`channel_id(impl Into<String>)`](crate::operation::describe_channel::builders::DescribeChannelFluentBuilder::channel_id) / [`set_channel_id(Option<String>)`](crate::operation::describe_channel::builders::DescribeChannelFluentBuilder::set_channel_id):<br>required: **true**<br>channel ID<br>
     /// - On success, responds with [`DescribeChannelOutput`](crate::operation::describe_channel::DescribeChannelOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::describe_channel::DescribeChannelOutput::arn): The unique arn of the channel.
     ///   - [`cdi_input_specification(Option<CdiInputSpecification>)`](crate::operation::describe_channel::DescribeChannelOutput::cdi_input_specification): Specification of CDI inputs for this channel
     ///   - [`channel_class(Option<ChannelClass>)`](crate::operation::describe_channel::DescribeChannelOutput::channel_class): The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
-    ///   - [`destinations(Option<Vec<OutputDestination>>)`](crate::operation::describe_channel::DescribeChannelOutput::destinations): A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
-    ///   - [`egress_endpoints(Option<Vec<ChannelEgressEndpoint>>)`](crate::operation::describe_channel::DescribeChannelOutput::egress_endpoints): The endpoints where outgoing connections initiate from
+    ///   - [`destinations(Option<Vec::<OutputDestination>>)`](crate::operation::describe_channel::DescribeChannelOutput::destinations): A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
+    ///   - [`egress_endpoints(Option<Vec::<ChannelEgressEndpoint>>)`](crate::operation::describe_channel::DescribeChannelOutput::egress_endpoints): The endpoints where outgoing connections initiate from
     ///   - [`encoder_settings(Option<EncoderSettings>)`](crate::operation::describe_channel::DescribeChannelOutput::encoder_settings): Encoder Settings
     ///   - [`id(Option<String>)`](crate::operation::describe_channel::DescribeChannelOutput::id): The unique id of the channel.
-    ///   - [`input_attachments(Option<Vec<InputAttachment>>)`](crate::operation::describe_channel::DescribeChannelOutput::input_attachments): List of input attachments for channel.
+    ///   - [`input_attachments(Option<Vec::<InputAttachment>>)`](crate::operation::describe_channel::DescribeChannelOutput::input_attachments): List of input attachments for channel.
     ///   - [`input_specification(Option<InputSpecification>)`](crate::operation::describe_channel::DescribeChannelOutput::input_specification): Specification of network and file inputs for this channel
     ///   - [`log_level(Option<LogLevel>)`](crate::operation::describe_channel::DescribeChannelOutput::log_level): The log level being written to CloudWatch Logs.
     ///   - [`maintenance(Option<MaintenanceStatus>)`](crate::operation::describe_channel::DescribeChannelOutput::maintenance): Maintenance settings for this channel.
     ///   - [`name(Option<String>)`](crate::operation::describe_channel::DescribeChannelOutput::name): The name of the channel. (user-mutable)
-    ///   - [`pipeline_details(Option<Vec<PipelineDetail>>)`](crate::operation::describe_channel::DescribeChannelOutput::pipeline_details): Runtime details for the pipelines of a running channel.
+    ///   - [`pipeline_details(Option<Vec::<PipelineDetail>>)`](crate::operation::describe_channel::DescribeChannelOutput::pipeline_details): Runtime details for the pipelines of a running channel.
     ///   - [`pipelines_running_count(Option<i32>)`](crate::operation::describe_channel::DescribeChannelOutput::pipelines_running_count): The number of currently healthy pipelines.
     ///   - [`role_arn(Option<String>)`](crate::operation::describe_channel::DescribeChannelOutput::role_arn): The Amazon Resource Name (ARN) of the role assumed when running the Channel.
     ///   - [`state(Option<ChannelState>)`](crate::operation::describe_channel::DescribeChannelOutput::state): Placeholder documentation for ChannelState
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_channel::DescribeChannelOutput::tags): A collection of key-value pairs.
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_channel::DescribeChannelOutput::tags): A collection of key-value pairs.
     ///   - [`vpc(Option<VpcOutputSettingsDescription>)`](crate::operation::describe_channel::DescribeChannelOutput::vpc): Settings for VPC output
     /// - On failure, responds with [`SdkError<DescribeChannelError>`](crate::operation::describe_channel::DescribeChannelError)
     pub fn describe_channel(&self) -> crate::operation::describe_channel::builders::DescribeChannelFluentBuilder {

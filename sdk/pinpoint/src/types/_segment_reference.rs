@@ -35,6 +35,7 @@ pub struct SegmentReferenceBuilder {
 }
 impl SegmentReferenceBuilder {
     /// <p>The unique identifier for the segment.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

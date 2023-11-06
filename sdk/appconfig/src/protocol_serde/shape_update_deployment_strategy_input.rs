@@ -2,7 +2,7 @@
 pub fn ser_update_deployment_strategy_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_deployment_strategy::UpdateDeploymentStrategyInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.deployment_duration_in_minutes {
         object.key("DeploymentDurationInMinutes").number(
             #[allow(clippy::useless_conversion)]

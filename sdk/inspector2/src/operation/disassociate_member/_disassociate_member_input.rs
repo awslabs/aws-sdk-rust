@@ -27,6 +27,7 @@ pub struct DisassociateMemberInputBuilder {
 }
 impl DisassociateMemberInputBuilder {
     /// <p>The Amazon Web Services account ID of the member account to disassociate.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DisassociateMemberInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateMemberInput`](crate::operation::disassociate_member::DisassociateMemberInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disassociate_member::DisassociateMemberInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::disassociate_member::DisassociateMemberInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::disassociate_member::DisassociateMemberInput { account_id: self.account_id })
     }
 }

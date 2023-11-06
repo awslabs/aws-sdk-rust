@@ -40,8 +40,10 @@ impl CreateEnvironmentAccountConnectionInput {
     }
     /// <p>An optional list of metadata items that you can associate with the Proton environment account connection. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
     /// <p>You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in this account.</p>
@@ -89,6 +91,7 @@ impl CreateEnvironmentAccountConnectionInputBuilder {
         &self.client_token
     }
     /// <p>The ID of the management account that accepts or rejects the environment account connection. You create and manage the Proton environment in this account. If the management account accepts the environment account connection, Proton can use the associated IAM role to provision environment infrastructure resources in the associated environment account.</p>
+    /// This field is required.
     pub fn management_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.management_account_id = ::std::option::Option::Some(input.into());
         self
@@ -117,6 +120,7 @@ impl CreateEnvironmentAccountConnectionInputBuilder {
         &self.role_arn
     }
     /// <p>The name of the Proton environment that's created in the associated management account.</p>
+    /// This field is required.
     pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
@@ -192,7 +196,7 @@ impl CreateEnvironmentAccountConnectionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_environment_account_connection::CreateEnvironmentAccountConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_environment_account_connection::CreateEnvironmentAccountConnectionInput {

@@ -15,8 +15,10 @@ impl ListCodeSigningConfigsOutput {
         self.next_marker.as_deref()
     }
     /// <p>The code signing configurations</p>
-    pub fn code_signing_configs(&self) -> ::std::option::Option<&[crate::types::CodeSigningConfig]> {
-        self.code_signing_configs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.code_signing_configs.is_none()`.
+    pub fn code_signing_configs(&self) -> &[crate::types::CodeSigningConfig] {
+        self.code_signing_configs.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListCodeSigningConfigsOutput {

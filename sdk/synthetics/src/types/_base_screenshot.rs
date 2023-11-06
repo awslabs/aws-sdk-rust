@@ -5,18 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BaseScreenshot {
     /// <p>The name of the screenshot. This is generated the first time the canary is run after the <code>UpdateCanary</code> operation that specified for this canary to perform visual monitoring.</p>
-    pub screenshot_name: ::std::option::Option<::std::string::String>,
+    pub screenshot_name: ::std::string::String,
     /// <p>Coordinates that define the part of a screen to ignore during screenshot comparisons. To obtain the coordinates to use here, use the CloudWatch console to draw the boundaries on the screen. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/synthetics_canaries_deletion.html"> Editing or deleting a canary</a> </p>
     pub ignore_coordinates: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BaseScreenshot {
     /// <p>The name of the screenshot. This is generated the first time the canary is run after the <code>UpdateCanary</code> operation that specified for this canary to perform visual monitoring.</p>
-    pub fn screenshot_name(&self) -> ::std::option::Option<&str> {
-        self.screenshot_name.as_deref()
+    pub fn screenshot_name(&self) -> &str {
+        use std::ops::Deref;
+        self.screenshot_name.deref()
     }
     /// <p>Coordinates that define the part of a screen to ignore during screenshot comparisons. To obtain the coordinates to use here, use the CloudWatch console to draw the boundaries on the screen. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/synthetics_canaries_deletion.html"> Editing or deleting a canary</a> </p>
-    pub fn ignore_coordinates(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ignore_coordinates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ignore_coordinates.is_none()`.
+    pub fn ignore_coordinates(&self) -> &[::std::string::String] {
+        self.ignore_coordinates.as_deref().unwrap_or_default()
     }
 }
 impl BaseScreenshot {
@@ -35,6 +38,7 @@ pub struct BaseScreenshotBuilder {
 }
 impl BaseScreenshotBuilder {
     /// <p>The name of the screenshot. This is generated the first time the canary is run after the <code>UpdateCanary</code> operation that specified for this canary to perform visual monitoring.</p>
+    /// This field is required.
     pub fn screenshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.screenshot_name = ::std::option::Option::Some(input.into());
         self
@@ -69,10 +73,17 @@ impl BaseScreenshotBuilder {
         &self.ignore_coordinates
     }
     /// Consumes the builder and constructs a [`BaseScreenshot`](crate::types::BaseScreenshot).
-    pub fn build(self) -> crate::types::BaseScreenshot {
-        crate::types::BaseScreenshot {
-            screenshot_name: self.screenshot_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`screenshot_name`](crate::types::builders::BaseScreenshotBuilder::screenshot_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::BaseScreenshot, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::BaseScreenshot {
+            screenshot_name: self.screenshot_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "screenshot_name",
+                    "screenshot_name was not specified but it is required when building BaseScreenshot",
+                )
+            })?,
             ignore_coordinates: self.ignore_coordinates,
-        }
+        })
     }
 }

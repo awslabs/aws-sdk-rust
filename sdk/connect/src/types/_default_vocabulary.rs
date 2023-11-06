@@ -5,30 +5,33 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DefaultVocabulary {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub instance_id: ::std::option::Option<::std::string::String>,
+    pub instance_id: ::std::string::String,
     /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
-    pub language_code: ::std::option::Option<crate::types::VocabularyLanguageCode>,
+    pub language_code: crate::types::VocabularyLanguageCode,
     /// <p>The identifier of the custom vocabulary.</p>
-    pub vocabulary_id: ::std::option::Option<::std::string::String>,
+    pub vocabulary_id: ::std::string::String,
     /// <p>A unique name of the custom vocabulary.</p>
-    pub vocabulary_name: ::std::option::Option<::std::string::String>,
+    pub vocabulary_name: ::std::string::String,
 }
 impl DefaultVocabulary {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
-        self.instance_id.as_deref()
+    pub fn instance_id(&self) -> &str {
+        use std::ops::Deref;
+        self.instance_id.deref()
     }
     /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
-    pub fn language_code(&self) -> ::std::option::Option<&crate::types::VocabularyLanguageCode> {
-        self.language_code.as_ref()
+    pub fn language_code(&self) -> &crate::types::VocabularyLanguageCode {
+        &self.language_code
     }
     /// <p>The identifier of the custom vocabulary.</p>
-    pub fn vocabulary_id(&self) -> ::std::option::Option<&str> {
-        self.vocabulary_id.as_deref()
+    pub fn vocabulary_id(&self) -> &str {
+        use std::ops::Deref;
+        self.vocabulary_id.deref()
     }
     /// <p>A unique name of the custom vocabulary.</p>
-    pub fn vocabulary_name(&self) -> ::std::option::Option<&str> {
-        self.vocabulary_name.as_deref()
+    pub fn vocabulary_name(&self) -> &str {
+        use std::ops::Deref;
+        self.vocabulary_name.deref()
     }
 }
 impl DefaultVocabulary {
@@ -49,6 +52,7 @@ pub struct DefaultVocabularyBuilder {
 }
 impl DefaultVocabularyBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +67,7 @@ impl DefaultVocabularyBuilder {
         &self.instance_id
     }
     /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
+    /// This field is required.
     pub fn language_code(mut self, input: crate::types::VocabularyLanguageCode) -> Self {
         self.language_code = ::std::option::Option::Some(input);
         self
@@ -77,6 +82,7 @@ impl DefaultVocabularyBuilder {
         &self.language_code
     }
     /// <p>The identifier of the custom vocabulary.</p>
+    /// This field is required.
     pub fn vocabulary_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vocabulary_id = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +97,7 @@ impl DefaultVocabularyBuilder {
         &self.vocabulary_id
     }
     /// <p>A unique name of the custom vocabulary.</p>
+    /// This field is required.
     pub fn vocabulary_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vocabulary_name = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +112,37 @@ impl DefaultVocabularyBuilder {
         &self.vocabulary_name
     }
     /// Consumes the builder and constructs a [`DefaultVocabulary`](crate::types::DefaultVocabulary).
-    pub fn build(self) -> crate::types::DefaultVocabulary {
-        crate::types::DefaultVocabulary {
-            instance_id: self.instance_id,
-            language_code: self.language_code,
-            vocabulary_id: self.vocabulary_id,
-            vocabulary_name: self.vocabulary_name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`instance_id`](crate::types::builders::DefaultVocabularyBuilder::instance_id)
+    /// - [`language_code`](crate::types::builders::DefaultVocabularyBuilder::language_code)
+    /// - [`vocabulary_id`](crate::types::builders::DefaultVocabularyBuilder::vocabulary_id)
+    /// - [`vocabulary_name`](crate::types::builders::DefaultVocabularyBuilder::vocabulary_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::DefaultVocabulary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DefaultVocabulary {
+            instance_id: self.instance_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "instance_id",
+                    "instance_id was not specified but it is required when building DefaultVocabulary",
+                )
+            })?,
+            language_code: self.language_code.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "language_code",
+                    "language_code was not specified but it is required when building DefaultVocabulary",
+                )
+            })?,
+            vocabulary_id: self.vocabulary_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "vocabulary_id",
+                    "vocabulary_id was not specified but it is required when building DefaultVocabulary",
+                )
+            })?,
+            vocabulary_name: self.vocabulary_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "vocabulary_name",
+                    "vocabulary_name was not specified but it is required when building DefaultVocabulary",
+                )
+            })?,
+        })
     }
 }

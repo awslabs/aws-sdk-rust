@@ -3,7 +3,7 @@
 pub fn ser_recipient_dsn_fields(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::RecipientDsnFields,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("FinalRecipient");
     if let Some(var_2) = &input.final_recipient {
@@ -11,39 +11,39 @@ pub fn ser_recipient_dsn_fields(
     }
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("Action");
-    if let Some(var_4) = &input.action {
-        scope_3.string(var_4.as_str());
+    {
+        scope_3.string(input.action.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("RemoteMta");
-    if let Some(var_6) = &input.remote_mta {
-        scope_5.string(var_6);
+    let mut scope_4 = writer.prefix("RemoteMta");
+    if let Some(var_5) = &input.remote_mta {
+        scope_4.string(var_5);
     }
     #[allow(unused_mut)]
-    let mut scope_7 = writer.prefix("Status");
-    if let Some(var_8) = &input.status {
+    let mut scope_6 = writer.prefix("Status");
+    {
+        scope_6.string(&input.status);
+    }
+    #[allow(unused_mut)]
+    let mut scope_7 = writer.prefix("DiagnosticCode");
+    if let Some(var_8) = &input.diagnostic_code {
         scope_7.string(var_8);
     }
     #[allow(unused_mut)]
-    let mut scope_9 = writer.prefix("DiagnosticCode");
-    if let Some(var_10) = &input.diagnostic_code {
-        scope_9.string(var_10);
+    let mut scope_9 = writer.prefix("LastAttemptDate");
+    if let Some(var_10) = &input.last_attempt_date {
+        scope_9.date_time(var_10, ::aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
-    let mut scope_11 = writer.prefix("LastAttemptDate");
-    if let Some(var_12) = &input.last_attempt_date {
-        scope_11.date_time(var_12, ::aws_smithy_types::date_time::Format::DateTime)?;
-    }
-    #[allow(unused_mut)]
-    let mut scope_13 = writer.prefix("ExtensionFields");
-    if let Some(var_14) = &input.extension_fields {
-        let mut list_16 = scope_13.start_list(false, None);
-        for item_15 in var_14 {
+    let mut scope_11 = writer.prefix("ExtensionFields");
+    if let Some(var_12) = &input.extension_fields {
+        let mut list_14 = scope_11.start_list(false, None);
+        for item_13 in var_12 {
             #[allow(unused_mut)]
-            let mut entry_17 = list_16.entry();
-            crate::protocol_serde::shape_extension_field::ser_extension_field(entry_17, item_15)?;
+            let mut entry_15 = list_14.entry();
+            crate::protocol_serde::shape_extension_field::ser_extension_field(entry_15, item_13)?;
         }
-        list_16.finish();
+        list_14.finish();
     }
     Ok(())
 }

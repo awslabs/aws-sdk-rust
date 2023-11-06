@@ -69,6 +69,7 @@ pub struct UpdatePoolInputBuilder {
 }
 impl UpdatePoolInputBuilder {
     /// <p>The unique identifier of the pool to update. Valid values are either the PoolId or PoolArn.</p>
+    /// This field is required.
     pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pool_id = ::std::option::Option::Some(input.into());
         self
@@ -167,7 +168,7 @@ impl UpdatePoolInputBuilder {
         &self.deletion_protection_enabled
     }
     /// Consumes the builder and constructs a [`UpdatePoolInput`](crate::operation::update_pool::UpdatePoolInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_pool::UpdatePoolInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_pool::UpdatePoolInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_pool::UpdatePoolInput {
             pool_id: self.pool_id,
             two_way_enabled: self.two_way_enabled,

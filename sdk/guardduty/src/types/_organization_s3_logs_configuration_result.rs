@@ -28,6 +28,7 @@ pub struct OrganizationS3LogsConfigurationResultBuilder {
 }
 impl OrganizationS3LogsConfigurationResultBuilder {
     /// <p>A value that describes whether S3 data event logs are automatically enabled for new members of the organization.</p>
+    /// This field is required.
     pub fn auto_enable(mut self, input: bool) -> Self {
         self.auto_enable = ::std::option::Option::Some(input);
         self

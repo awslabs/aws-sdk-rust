@@ -28,12 +28,16 @@ impl PriorityConfiguration {
     /// <li> <p> <code>DESTINATION</code> -- FleetIQ prioritizes based on the order that destinations are listed in the queue configuration.</p> </li>
     /// <li> <p> <code>LOCATION</code> -- FleetIQ prioritizes based on the provided order of locations, as defined in <code>LocationOrder</code>. </p> </li>
     /// </ul>
-    pub fn priority_order(&self) -> ::std::option::Option<&[crate::types::PriorityType]> {
-        self.priority_order.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.priority_order.is_none()`.
+    pub fn priority_order(&self) -> &[crate::types::PriorityType] {
+        self.priority_order.as_deref().unwrap_or_default()
     }
     /// <p>The prioritization order to use for fleet locations, when the <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations are identified by Amazon Web Services Region codes such as <code>us-west-2</code>. Each location can only be listed once. </p>
-    pub fn location_order(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.location_order.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.location_order.is_none()`.
+    pub fn location_order(&self) -> &[::std::string::String] {
+        self.location_order.as_deref().unwrap_or_default()
     }
 }
 impl PriorityConfiguration {

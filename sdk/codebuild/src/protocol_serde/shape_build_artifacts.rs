@@ -22,14 +22,14 @@ where
                             );
                         }
                         "sha256sum" => {
-                            builder = builder.set_sha256sum(
+                            builder = builder.set_sha256_sum(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }
                         "md5sum" => {
-                            builder = builder.set_md5sum(
+                            builder = builder.set_md5_sum(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

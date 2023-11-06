@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TypedLinkSchemaAndFacetName {
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
-    pub schema_arn: ::std::option::Option<::std::string::String>,
+    pub schema_arn: ::std::string::String,
     /// <p>The unique name of the typed link facet.</p>
-    pub typed_link_name: ::std::option::Option<::std::string::String>,
+    pub typed_link_name: ::std::string::String,
 }
 impl TypedLinkSchemaAndFacetName {
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
-    pub fn schema_arn(&self) -> ::std::option::Option<&str> {
-        self.schema_arn.as_deref()
+    pub fn schema_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.schema_arn.deref()
     }
     /// <p>The unique name of the typed link facet.</p>
-    pub fn typed_link_name(&self) -> ::std::option::Option<&str> {
-        self.typed_link_name.as_deref()
+    pub fn typed_link_name(&self) -> &str {
+        use std::ops::Deref;
+        self.typed_link_name.deref()
     }
 }
 impl TypedLinkSchemaAndFacetName {
@@ -35,6 +37,7 @@ pub struct TypedLinkSchemaAndFacetNameBuilder {
 }
 impl TypedLinkSchemaAndFacetNameBuilder {
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
+    /// This field is required.
     pub fn schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_arn = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl TypedLinkSchemaAndFacetNameBuilder {
         &self.schema_arn
     }
     /// <p>The unique name of the typed link facet.</p>
+    /// This field is required.
     pub fn typed_link_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.typed_link_name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl TypedLinkSchemaAndFacetNameBuilder {
         &self.typed_link_name
     }
     /// Consumes the builder and constructs a [`TypedLinkSchemaAndFacetName`](crate::types::TypedLinkSchemaAndFacetName).
-    pub fn build(self) -> crate::types::TypedLinkSchemaAndFacetName {
-        crate::types::TypedLinkSchemaAndFacetName {
-            schema_arn: self.schema_arn,
-            typed_link_name: self.typed_link_name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`schema_arn`](crate::types::builders::TypedLinkSchemaAndFacetNameBuilder::schema_arn)
+    /// - [`typed_link_name`](crate::types::builders::TypedLinkSchemaAndFacetNameBuilder::typed_link_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::TypedLinkSchemaAndFacetName, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TypedLinkSchemaAndFacetName {
+            schema_arn: self.schema_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "schema_arn",
+                    "schema_arn was not specified but it is required when building TypedLinkSchemaAndFacetName",
+                )
+            })?,
+            typed_link_name: self.typed_link_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "typed_link_name",
+                    "typed_link_name was not specified but it is required when building TypedLinkSchemaAndFacetName",
+                )
+            })?,
+        })
     }
 }

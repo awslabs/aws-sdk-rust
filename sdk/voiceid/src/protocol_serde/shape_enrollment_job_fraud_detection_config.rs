@@ -2,7 +2,7 @@
 pub fn ser_enrollment_job_fraud_detection_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EnrollmentJobFraudDetectionConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.fraud_detection_action {
         object.key("FraudDetectionAction").string(var_1.as_str());
     }

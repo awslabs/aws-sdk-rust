@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationMaintenanceConfigurationDescription {
     /// <p>The start time for the maintenance window.</p>
-    pub application_maintenance_window_start_time: ::std::option::Option<::std::string::String>,
+    pub application_maintenance_window_start_time: ::std::string::String,
     /// <p>The end time for the maintenance window.</p>
-    pub application_maintenance_window_end_time: ::std::option::Option<::std::string::String>,
+    pub application_maintenance_window_end_time: ::std::string::String,
 }
 impl ApplicationMaintenanceConfigurationDescription {
     /// <p>The start time for the maintenance window.</p>
-    pub fn application_maintenance_window_start_time(&self) -> ::std::option::Option<&str> {
-        self.application_maintenance_window_start_time.as_deref()
+    pub fn application_maintenance_window_start_time(&self) -> &str {
+        use std::ops::Deref;
+        self.application_maintenance_window_start_time.deref()
     }
     /// <p>The end time for the maintenance window.</p>
-    pub fn application_maintenance_window_end_time(&self) -> ::std::option::Option<&str> {
-        self.application_maintenance_window_end_time.as_deref()
+    pub fn application_maintenance_window_end_time(&self) -> &str {
+        use std::ops::Deref;
+        self.application_maintenance_window_end_time.deref()
     }
 }
 impl ApplicationMaintenanceConfigurationDescription {
@@ -35,6 +37,7 @@ pub struct ApplicationMaintenanceConfigurationDescriptionBuilder {
 }
 impl ApplicationMaintenanceConfigurationDescriptionBuilder {
     /// <p>The start time for the maintenance window.</p>
+    /// This field is required.
     pub fn application_maintenance_window_start_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_maintenance_window_start_time = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl ApplicationMaintenanceConfigurationDescriptionBuilder {
         &self.application_maintenance_window_start_time
     }
     /// <p>The end time for the maintenance window.</p>
+    /// This field is required.
     pub fn application_maintenance_window_end_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_maintenance_window_end_time = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,25 @@ impl ApplicationMaintenanceConfigurationDescriptionBuilder {
         &self.application_maintenance_window_end_time
     }
     /// Consumes the builder and constructs a [`ApplicationMaintenanceConfigurationDescription`](crate::types::ApplicationMaintenanceConfigurationDescription).
-    pub fn build(self) -> crate::types::ApplicationMaintenanceConfigurationDescription {
-        crate::types::ApplicationMaintenanceConfigurationDescription {
-            application_maintenance_window_start_time: self.application_maintenance_window_start_time,
-            application_maintenance_window_end_time: self.application_maintenance_window_end_time,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`application_maintenance_window_start_time`](crate::types::builders::ApplicationMaintenanceConfigurationDescriptionBuilder::application_maintenance_window_start_time)
+    /// - [`application_maintenance_window_end_time`](crate::types::builders::ApplicationMaintenanceConfigurationDescriptionBuilder::application_maintenance_window_end_time)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::ApplicationMaintenanceConfigurationDescription, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::ApplicationMaintenanceConfigurationDescription {
+                application_maintenance_window_start_time: self.application_maintenance_window_start_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("application_maintenance_window_start_time", "application_maintenance_window_start_time was not specified but it is required when building ApplicationMaintenanceConfigurationDescription")
+                    )?
+                ,
+                application_maintenance_window_end_time: self.application_maintenance_window_end_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("application_maintenance_window_end_time", "application_maintenance_window_end_time was not specified but it is required when building ApplicationMaintenanceConfigurationDescription")
+                    )?
+                ,
+            }
+        )
     }
 }

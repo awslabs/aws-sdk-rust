@@ -11,8 +11,10 @@ pub struct ListResourceDelegatesOutput {
 }
 impl ListResourceDelegatesOutput {
     /// <p>One page of the resource's delegates.</p>
-    pub fn delegates(&self) -> ::std::option::Option<&[crate::types::Delegate]> {
-        self.delegates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.delegates.is_none()`.
+    pub fn delegates(&self) -> &[crate::types::Delegate] {
+        self.delegates.as_deref().unwrap_or_default()
     }
     /// <p>The token used to paginate through the delegates associated with a resource. While results are still available, it has an associated value. When the last page is reached, the token is empty.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

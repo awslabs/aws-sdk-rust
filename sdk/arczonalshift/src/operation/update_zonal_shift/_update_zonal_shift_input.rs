@@ -55,6 +55,7 @@ pub struct UpdateZonalShiftInputBuilder {
 }
 impl UpdateZonalShiftInputBuilder {
     /// <p>The identifier of a zonal shift.</p>
+    /// This field is required.
     pub fn zonal_shift_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.zonal_shift_id = ::std::option::Option::Some(input.into());
         self
@@ -120,7 +121,7 @@ impl UpdateZonalShiftInputBuilder {
     /// Consumes the builder and constructs a [`UpdateZonalShiftInput`](crate::operation::update_zonal_shift::UpdateZonalShiftInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_zonal_shift::UpdateZonalShiftInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_zonal_shift::UpdateZonalShiftInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_zonal_shift::UpdateZonalShiftInput {
             zonal_shift_id: self.zonal_shift_id,
             comment: self.comment,

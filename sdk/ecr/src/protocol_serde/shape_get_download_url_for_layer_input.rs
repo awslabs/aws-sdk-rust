@@ -2,7 +2,7 @@
 pub fn ser_get_download_url_for_layer_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_download_url_for_layer::GetDownloadUrlForLayerInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.registry_id {
         object.key("registryId").string(var_1.as_str());
     }

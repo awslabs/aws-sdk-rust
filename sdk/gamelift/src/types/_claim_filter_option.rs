@@ -10,8 +10,10 @@ pub struct ClaimFilterOption {
 }
 impl ClaimFilterOption {
     /// <p>List of instance statuses that game servers may be claimed on. If provided, the list must contain the <code>ACTIVE</code> status.</p>
-    pub fn instance_statuses(&self) -> ::std::option::Option<&[crate::types::FilterInstanceStatus]> {
-        self.instance_statuses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_statuses.is_none()`.
+    pub fn instance_statuses(&self) -> &[crate::types::FilterInstanceStatus] {
+        self.instance_statuses.as_deref().unwrap_or_default()
     }
 }
 impl ClaimFilterOption {

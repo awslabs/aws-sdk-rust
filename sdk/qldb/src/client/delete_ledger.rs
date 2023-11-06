@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteLedger`](crate::operation::delete_ledger::builders::DeleteLedgerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::delete_ledger::builders::DeleteLedgerFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_ledger::builders::DeleteLedgerFluentBuilder::set_name): <p>The name of the ledger that you want to delete.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::delete_ledger::builders::DeleteLedgerFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_ledger::builders::DeleteLedgerFluentBuilder::set_name):<br>required: **true**<br><p>The name of the ledger that you want to delete.</p><br>
     /// - On success, responds with [`DeleteLedgerOutput`](crate::operation::delete_ledger::DeleteLedgerOutput)
     /// - On failure, responds with [`SdkError<DeleteLedgerError>`](crate::operation::delete_ledger::DeleteLedgerError)
     pub fn delete_ledger(&self) -> crate::operation::delete_ledger::builders::DeleteLedgerFluentBuilder {

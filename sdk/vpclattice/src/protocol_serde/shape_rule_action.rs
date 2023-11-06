@@ -12,12 +12,17 @@ where
             match tokens.next().transpose()? {
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                    let key = key.to_unescaped()?;
+                    if key == "__type" {
+                        ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                        continue;
+                    }
                     if variant.is_some() {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
                             "encountered mixed variants in union",
                         ));
                     }
-                    variant = match key.to_unescaped()?.as_ref() {
+                    variant = match key.as_ref() {
                         "forward" => Some(crate::types::RuleAction::Forward(
                             crate::protocol_serde::shape_forward_action::de_forward_action(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'forward' cannot be null")
@@ -54,7 +59,7 @@ where
 pub fn ser_rule_action(
     object_3: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RuleAction,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::RuleAction::Forward(inner) => {
             #[allow(unused_mut)]
@@ -68,7 +73,7 @@ pub fn ser_rule_action(
             crate::protocol_serde::shape_fixed_response_action::ser_fixed_response_action(&mut object_2, inner)?;
             object_2.finish();
         }
-        crate::types::RuleAction::Unknown => return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("RuleAction")),
+        crate::types::RuleAction::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("RuleAction")),
     }
     Ok(())
 }

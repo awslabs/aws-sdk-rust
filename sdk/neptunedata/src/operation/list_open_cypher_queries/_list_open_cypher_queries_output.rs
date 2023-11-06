@@ -21,8 +21,10 @@ impl ListOpenCypherQueriesOutput {
         self.running_query_count
     }
     /// <p>A list of current openCypher queries.</p>
-    pub fn queries(&self) -> ::std::option::Option<&[crate::types::GremlinQueryStatus]> {
-        self.queries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.queries.is_none()`.
+    pub fn queries(&self) -> &[crate::types::GremlinQueryStatus] {
+        self.queries.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListOpenCypherQueriesOutput {

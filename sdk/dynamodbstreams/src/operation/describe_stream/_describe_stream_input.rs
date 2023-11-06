@@ -42,6 +42,7 @@ pub struct DescribeStreamInputBuilder {
 }
 impl DescribeStreamInputBuilder {
     /// <p>The Amazon Resource Name (ARN) for the stream.</p>
+    /// This field is required.
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_arn = ::std::option::Option::Some(input.into());
         self
@@ -86,7 +87,7 @@ impl DescribeStreamInputBuilder {
     /// Consumes the builder and constructs a [`DescribeStreamInput`](crate::operation::describe_stream::DescribeStreamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_stream::DescribeStreamInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_stream::DescribeStreamInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_stream::DescribeStreamInput {
             stream_arn: self.stream_arn,
             limit: self.limit,

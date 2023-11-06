@@ -34,6 +34,7 @@ pub struct DeleteClusterOutputBuilder {
 }
 impl DeleteClusterOutputBuilder {
     /// <p>Returns information about the newly deleted Elastic DocumentDB cluster.</p>
+    /// This field is required.
     pub fn cluster(mut self, input: crate::types::Cluster) -> Self {
         self.cluster = ::std::option::Option::Some(input);
         self

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetGateway`](crate::operation::get_gateway::builders::GetGatewayFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`gateway_arn(impl Into<String>)`](crate::operation::get_gateway::builders::GetGatewayFluentBuilder::gateway_arn) / [`set_gateway_arn(Option<String>)`](crate::operation::get_gateway::builders::GetGatewayFluentBuilder::set_gateway_arn): <p>The ARN of the gateway to get.</p>
+    ///   - [`gateway_arn(impl Into<String>)`](crate::operation::get_gateway::builders::GetGatewayFluentBuilder::gateway_arn) / [`set_gateway_arn(Option<String>)`](crate::operation::get_gateway::builders::GetGatewayFluentBuilder::set_gateway_arn):<br>required: **true**<br><p>The ARN of the gateway to get.</p><br>
     /// - On success, responds with [`GetGatewayOutput`](crate::operation::get_gateway::GetGatewayOutput) with field(s):
     ///   - [`gateway(Option<Gateway>)`](crate::operation::get_gateway::GetGatewayOutput::gateway): <p>The details of the gateway.</p>
     /// - On failure, responds with [`SdkError<GetGatewayError>`](crate::operation::get_gateway::GetGatewayError)

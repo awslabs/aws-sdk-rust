@@ -23,8 +23,10 @@ impl DescribeOptedOutNumbersOutput {
         self.opt_out_list_name.as_deref()
     }
     /// <p>An array of OptedOutNumbersInformation objects that provide information about the requested OptedOutNumbers.</p>
-    pub fn opted_out_numbers(&self) -> ::std::option::Option<&[crate::types::OptedOutNumberInformation]> {
-        self.opted_out_numbers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.opted_out_numbers.is_none()`.
+    pub fn opted_out_numbers(&self) -> &[crate::types::OptedOutNumberInformation] {
+        self.opted_out_numbers.as_deref().unwrap_or_default()
     }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -11,8 +11,10 @@ pub struct ListRoomMembershipsOutput {
 }
 impl ListRoomMembershipsOutput {
     /// <p>The room membership details.</p>
-    pub fn room_memberships(&self) -> ::std::option::Option<&[crate::types::RoomMembership]> {
-        self.room_memberships.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.room_memberships.is_none()`.
+    pub fn room_memberships(&self) -> &[crate::types::RoomMembership] {
+        self.room_memberships.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -28,6 +28,7 @@ pub struct GetSnapshotLimitsInputBuilder {
 }
 impl GetSnapshotLimitsInputBuilder {
     /// <p>Contains the identifier of the directory to obtain the limits for.</p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl GetSnapshotLimitsInputBuilder {
     /// Consumes the builder and constructs a [`GetSnapshotLimitsInput`](crate::operation::get_snapshot_limits::GetSnapshotLimitsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_snapshot_limits::GetSnapshotLimitsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_snapshot_limits::GetSnapshotLimitsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_snapshot_limits::GetSnapshotLimitsInput {
             directory_id: self.directory_id,
         })

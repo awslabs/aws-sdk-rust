@@ -42,6 +42,7 @@ pub struct StartUserAccessTasksInputBuilder {
 }
 impl StartUserAccessTasksInputBuilder {
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
+    /// This field is required.
     pub fn app_bundle_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_bundle_identifier = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl StartUserAccessTasksInputBuilder {
         &self.app_bundle_identifier
     }
     /// <p>The email address of the target user.</p>
+    /// This field is required.
     pub fn email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email = ::std::option::Option::Some(input.into());
         self
@@ -72,7 +74,7 @@ impl StartUserAccessTasksInputBuilder {
     /// Consumes the builder and constructs a [`StartUserAccessTasksInput`](crate::operation::start_user_access_tasks::StartUserAccessTasksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_user_access_tasks::StartUserAccessTasksInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_user_access_tasks::StartUserAccessTasksInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_user_access_tasks::StartUserAccessTasksInput {
             app_bundle_identifier: self.app_bundle_identifier,

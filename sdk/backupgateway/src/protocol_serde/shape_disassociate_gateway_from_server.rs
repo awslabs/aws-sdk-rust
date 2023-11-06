@@ -28,7 +28,9 @@ pub fn de_disassociate_gateway_from_server_http_error(
                 output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
                     .map_err(crate::operation::disassociate_gateway_from_server::DisassociateGatewayFromServerError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::conflict_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::disassociate_gateway_from_server::DisassociateGatewayFromServerError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -78,7 +80,9 @@ pub fn de_disassociate_gateway_from_server_http_error(
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::disassociate_gateway_from_server::DisassociateGatewayFromServerError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::disassociate_gateway_from_server::DisassociateGatewayFromServerError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -125,12 +129,12 @@ pub fn de_disassociate_gateway_from_server_http_response(
 
 pub fn ser_disassociate_gateway_from_server_input(
     input: &crate::operation::disassociate_gateway_from_server::DisassociateGatewayFromServerInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_disassociate_gateway_from_server_input::ser_disassociate_gateway_from_server_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_disassociate_gateway_from_server(

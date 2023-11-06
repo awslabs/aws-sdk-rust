@@ -2,33 +2,33 @@
 pub fn ser_notify_configuration_type(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NotifyConfigurationType,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.from {
         object.key("From").string(var_1.as_str());
     }
     if let Some(var_2) = &input.reply_to {
         object.key("ReplyTo").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.source_arn {
-        object.key("SourceArn").string(var_3.as_str());
+    {
+        object.key("SourceArn").string(input.source_arn.as_str());
     }
-    if let Some(var_4) = &input.block_email {
+    if let Some(var_3) = &input.block_email {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("BlockEmail").start_object();
-        crate::protocol_serde::shape_notify_email_type::ser_notify_email_type(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("BlockEmail").start_object();
+        crate::protocol_serde::shape_notify_email_type::ser_notify_email_type(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_6) = &input.no_action_email {
+    if let Some(var_5) = &input.no_action_email {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("NoActionEmail").start_object();
-        crate::protocol_serde::shape_notify_email_type::ser_notify_email_type(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_6 = object.key("NoActionEmail").start_object();
+        crate::protocol_serde::shape_notify_email_type::ser_notify_email_type(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_8) = &input.mfa_email {
+    if let Some(var_7) = &input.mfa_email {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("MfaEmail").start_object();
-        crate::protocol_serde::shape_notify_email_type::ser_notify_email_type(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_8 = object.key("MfaEmail").start_object();
+        crate::protocol_serde::shape_notify_email_type::ser_notify_email_type(&mut object_8, var_7)?;
+        object_8.finish();
     }
     Ok(())
 }
@@ -88,7 +88,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::notify_configuration_type_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

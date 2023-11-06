@@ -10,12 +10,16 @@ pub struct BatchGetCollectionInput {
 }
 impl BatchGetCollectionInput {
     /// <p>A list of collection IDs. You can't provide names and IDs in the same request. The ID is part of the collection endpoint. You can also retrieve it using the <a href="https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_ListCollections.html">ListCollections</a> API.</p>
-    pub fn ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ids.is_none()`.
+    pub fn ids(&self) -> &[::std::string::String] {
+        self.ids.as_deref().unwrap_or_default()
     }
     /// <p>A list of collection names. You can't provide names and IDs in the same request.</p>
-    pub fn names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.names.is_none()`.
+    pub fn names(&self) -> &[::std::string::String] {
+        self.names.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetCollectionInput {
@@ -76,7 +80,8 @@ impl BatchGetCollectionInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetCollectionInput`](crate::operation::batch_get_collection::BatchGetCollectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_get_collection::BatchGetCollectionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_get_collection::BatchGetCollectionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::batch_get_collection::BatchGetCollectionInput {
             ids: self.ids,
             names: self.names,

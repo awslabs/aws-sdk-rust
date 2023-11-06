@@ -38,8 +38,10 @@ impl DeleteStackInstancesInput {
     }
     /// <p>[Self-managed permissions] The names of the Amazon Web Services accounts that you want to delete stack instances for.</p>
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
-    pub fn accounts(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.accounts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accounts.is_none()`.
+    pub fn accounts(&self) -> &[::std::string::String] {
+        self.accounts.as_deref().unwrap_or_default()
     }
     /// <p>[Service-managed permissions] The Organizations accounts from which to delete stack instances.</p>
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
@@ -47,8 +49,10 @@ impl DeleteStackInstancesInput {
         self.deployment_targets.as_ref()
     }
     /// <p>The Amazon Web Services Regions where you want to delete stack set instances.</p>
-    pub fn regions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.regions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regions.is_none()`.
+    pub fn regions(&self) -> &[::std::string::String] {
+        self.regions.as_deref().unwrap_or_default()
     }
     /// <p>Preferences for how CloudFormation performs this stack set operation.</p>
     pub fn operation_preferences(&self) -> ::std::option::Option<&crate::types::StackSetOperationPreferences> {
@@ -98,6 +102,7 @@ pub struct DeleteStackInstancesInputBuilder {
 }
 impl DeleteStackInstancesInputBuilder {
     /// <p>The name or unique ID of the stack set that you want to delete stack instances for.</p>
+    /// This field is required.
     pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_set_name = ::std::option::Option::Some(input.into());
         self
@@ -187,6 +192,7 @@ impl DeleteStackInstancesInputBuilder {
     }
     /// <p>Removes the stack instances from the specified stack set, but doesn't delete the stacks. You can't reassociate a retained stack or add an existing, saved stack to a new stack set.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
+    /// This field is required.
     pub fn retain_stacks(mut self, input: bool) -> Self {
         self.retain_stacks = ::std::option::Option::Some(input);
         self
@@ -257,7 +263,7 @@ impl DeleteStackInstancesInputBuilder {
     /// Consumes the builder and constructs a [`DeleteStackInstancesInput`](crate::operation::delete_stack_instances::DeleteStackInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_stack_instances::DeleteStackInstancesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_stack_instances::DeleteStackInstancesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_stack_instances::DeleteStackInstancesInput {
             stack_set_name: self.stack_set_name,

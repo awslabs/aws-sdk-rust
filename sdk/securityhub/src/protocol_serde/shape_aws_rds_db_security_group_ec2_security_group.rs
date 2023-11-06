@@ -2,7 +2,7 @@
 pub fn ser_aws_rds_db_security_group_ec2_security_group(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsRdsDbSecurityGroupEc2SecurityGroup,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ec2_security_group_id {
         object.key("Ec2SecurityGroupId").string(var_1.as_str());
     }

@@ -34,6 +34,7 @@ pub struct DeleteDiskInputBuilder {
 }
 impl DeleteDiskInputBuilder {
     /// <p>The unique name of the disk you want to delete (e.g., <code>my-disk</code>).</p>
+    /// This field is required.
     pub fn disk_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.disk_name = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +63,7 @@ impl DeleteDiskInputBuilder {
         &self.force_delete_add_ons
     }
     /// Consumes the builder and constructs a [`DeleteDiskInput`](crate::operation::delete_disk::DeleteDiskInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_disk::DeleteDiskInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_disk::DeleteDiskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_disk::DeleteDiskInput {
             disk_name: self.disk_name,
             force_delete_add_ons: self.force_delete_add_ons,

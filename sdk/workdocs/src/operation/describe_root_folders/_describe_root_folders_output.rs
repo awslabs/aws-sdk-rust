@@ -11,8 +11,10 @@ pub struct DescribeRootFoldersOutput {
 }
 impl DescribeRootFoldersOutput {
     /// <p>The user's special folders.</p>
-    pub fn folders(&self) -> ::std::option::Option<&[crate::types::FolderMetadata]> {
-        self.folders.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.folders.is_none()`.
+    pub fn folders(&self) -> &[crate::types::FolderMetadata] {
+        self.folders.as_deref().unwrap_or_default()
     }
     /// <p>The marker for the next set of results.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

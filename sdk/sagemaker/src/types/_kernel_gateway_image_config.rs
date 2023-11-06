@@ -11,8 +11,10 @@ pub struct KernelGatewayImageConfig {
 }
 impl KernelGatewayImageConfig {
     /// <p>The specification of the Jupyter kernels in the image.</p>
-    pub fn kernel_specs(&self) -> ::std::option::Option<&[crate::types::KernelSpec]> {
-        self.kernel_specs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.kernel_specs.is_none()`.
+    pub fn kernel_specs(&self) -> &[crate::types::KernelSpec] {
+        self.kernel_specs.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Elastic File System (EFS) storage configuration for a SageMaker image.</p>
     pub fn file_system_config(&self) -> ::std::option::Option<&crate::types::FileSystemConfig> {

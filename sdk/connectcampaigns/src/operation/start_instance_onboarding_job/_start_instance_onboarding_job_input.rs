@@ -35,6 +35,7 @@ pub struct StartInstanceOnboardingJobInputBuilder {
 }
 impl StartInstanceOnboardingJobInputBuilder {
     /// Amazon Connect Instance Id
+    /// This field is required.
     pub fn connect_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connect_instance_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl StartInstanceOnboardingJobInputBuilder {
         &self.connect_instance_id
     }
     /// Encryption config for Connect Instance. Note that sensitive data will always be encrypted. If disabled, service will perform encryption with its own key. If enabled, a KMS key id needs to be provided and KMS charges will apply. KMS is only type supported
+    /// This field is required.
     pub fn encryption_config(mut self, input: crate::types::EncryptionConfig) -> Self {
         self.encryption_config = ::std::option::Option::Some(input);
         self
@@ -67,7 +69,7 @@ impl StartInstanceOnboardingJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobInput {
             connect_instance_id: self.connect_instance_id,

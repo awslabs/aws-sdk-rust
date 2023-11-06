@@ -11,8 +11,10 @@ pub struct ListTagOptionsOutput {
 }
 impl ListTagOptionsOutput {
     /// <p>Information about the TagOptions.</p>
-    pub fn tag_option_details(&self) -> ::std::option::Option<&[crate::types::TagOptionDetail]> {
-        self.tag_option_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_option_details.is_none()`.
+    pub fn tag_option_details(&self) -> &[crate::types::TagOptionDetail] {
+        self.tag_option_details.as_deref().unwrap_or_default()
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn page_token(&self) -> ::std::option::Option<&str> {

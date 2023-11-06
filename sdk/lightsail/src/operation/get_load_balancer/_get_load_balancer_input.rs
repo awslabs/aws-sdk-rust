@@ -27,6 +27,7 @@ pub struct GetLoadBalancerInputBuilder {
 }
 impl GetLoadBalancerInputBuilder {
     /// <p>The name of the load balancer.</p>
+    /// This field is required.
     pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetLoadBalancerInputBuilder {
     /// Consumes the builder and constructs a [`GetLoadBalancerInput`](crate::operation::get_load_balancer::GetLoadBalancerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_load_balancer::GetLoadBalancerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_load_balancer::GetLoadBalancerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_load_balancer::GetLoadBalancerInput {
             load_balancer_name: self.load_balancer_name,
         })

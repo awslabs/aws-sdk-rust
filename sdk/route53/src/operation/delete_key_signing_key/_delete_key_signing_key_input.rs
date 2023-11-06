@@ -34,6 +34,7 @@ pub struct DeleteKeySigningKeyInputBuilder {
 }
 impl DeleteKeySigningKeyInputBuilder {
     /// <p>A unique string used to identify a hosted zone.</p>
+    /// This field is required.
     pub fn hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hosted_zone_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteKeySigningKeyInputBuilder {
         &self.hosted_zone_id
     }
     /// <p>A string used to identify a key-signing key (KSK).</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DeleteKeySigningKeyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteKeySigningKeyInput`](crate::operation::delete_key_signing_key::DeleteKeySigningKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_key_signing_key::DeleteKeySigningKeyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_key_signing_key::DeleteKeySigningKeyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_key_signing_key::DeleteKeySigningKeyInput {
             hosted_zone_id: self.hosted_zone_id,

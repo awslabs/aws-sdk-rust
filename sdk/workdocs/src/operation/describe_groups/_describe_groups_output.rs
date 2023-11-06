@@ -11,8 +11,10 @@ pub struct DescribeGroupsOutput {
 }
 impl DescribeGroupsOutput {
     /// <p>The list of groups.</p>
-    pub fn groups(&self) -> ::std::option::Option<&[crate::types::GroupMetadata]> {
-        self.groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
+    pub fn groups(&self) -> &[crate::types::GroupMetadata] {
+        self.groups.as_deref().unwrap_or_default()
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

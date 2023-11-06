@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetApplication`](crate::operation::get_application::builders::GetApplicationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application(impl Into<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::application) / [`set_application(Option<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::set_application): <p> The name, ID, or ARN of the application. </p>
+    ///   - [`application(impl Into<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::application) / [`set_application(Option<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::set_application):<br>required: **true**<br><p> The name, ID, or ARN of the application. </p><br>
     /// - On success, responds with [`GetApplicationOutput`](crate::operation::get_application::GetApplicationOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_application::GetApplicationOutput::id): <p>The identifier of the application.</p>
     ///   - [`arn(Option<String>)`](crate::operation::get_application::GetApplicationOutput::arn): <p>The Amazon resource name (ARN) that specifies the application across services.</p>
@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_application::GetApplicationOutput::creation_time): <p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>
     ///   - [`last_update_time(Option<DateTime>)`](crate::operation::get_application::GetApplicationOutput::last_update_time): <p>The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
     ///   - [`associated_resource_count(i32)`](crate::operation::get_application::GetApplicationOutput::associated_resource_count): <p>The number of top-level resources that were registered as part of this application.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_application::GetApplicationOutput::tags): <p>Key-value pairs associated with the application.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_application::GetApplicationOutput::tags): <p>Key-value pairs associated with the application.</p>
     ///   - [`integrations(Option<Integrations>)`](crate::operation::get_application::GetApplicationOutput::integrations): <p> The information about the integration of the application with other services, such as Resource Groups. </p>
     /// - On failure, responds with [`SdkError<GetApplicationError>`](crate::operation::get_application::GetApplicationError)
     pub fn get_application(&self) -> crate::operation::get_application::builders::GetApplicationFluentBuilder {

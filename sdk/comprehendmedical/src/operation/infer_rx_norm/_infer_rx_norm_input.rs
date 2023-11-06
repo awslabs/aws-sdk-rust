@@ -27,6 +27,7 @@ pub struct InferRxNormInputBuilder {
 }
 impl InferRxNormInputBuilder {
     /// <p>The input text used for analysis.</p>
+    /// This field is required.
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl InferRxNormInputBuilder {
         &self.text
     }
     /// Consumes the builder and constructs a [`InferRxNormInput`](crate::operation::infer_rx_norm::InferRxNormInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::infer_rx_norm::InferRxNormInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::infer_rx_norm::InferRxNormInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::infer_rx_norm::InferRxNormInput { text: self.text })
     }
 }

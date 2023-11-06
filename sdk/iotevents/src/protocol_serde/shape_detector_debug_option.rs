@@ -2,12 +2,12 @@
 pub fn ser_detector_debug_option(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DetectorDebugOption,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.detector_model_name {
-        object.key("detectorModelName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("detectorModelName").string(input.detector_model_name.as_str());
     }
-    if let Some(var_2) = &input.key_value {
-        object.key("keyValue").string(var_2.as_str());
+    if let Some(var_1) = &input.key_value {
+        object.key("keyValue").string(var_1.as_str());
     }
     Ok(())
 }
@@ -51,7 +51,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::detector_debug_option_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

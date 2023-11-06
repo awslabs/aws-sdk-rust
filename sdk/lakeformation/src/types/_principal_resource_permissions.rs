@@ -29,12 +29,16 @@ impl PrincipalResourcePermissions {
         self.resource.as_ref()
     }
     /// <p>The permissions to be granted or revoked on the resource.</p>
-    pub fn permissions(&self) -> ::std::option::Option<&[crate::types::Permission]> {
-        self.permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permissions.is_none()`.
+    pub fn permissions(&self) -> &[crate::types::Permission] {
+        self.permissions.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether to grant the ability to grant permissions (as a subset of permissions granted).</p>
-    pub fn permissions_with_grant_option(&self) -> ::std::option::Option<&[crate::types::Permission]> {
-        self.permissions_with_grant_option.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permissions_with_grant_option.is_none()`.
+    pub fn permissions_with_grant_option(&self) -> &[crate::types::Permission] {
+        self.permissions_with_grant_option.as_deref().unwrap_or_default()
     }
     /// <p>This attribute can be used to return any additional details of <code>PrincipalResourcePermissions</code>. Currently returns only as a RAM resource share ARN.</p>
     pub fn additional_details(&self) -> ::std::option::Option<&crate::types::DetailsMap> {

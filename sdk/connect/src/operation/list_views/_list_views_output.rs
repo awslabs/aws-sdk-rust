@@ -11,8 +11,10 @@ pub struct ListViewsOutput {
 }
 impl ListViewsOutput {
     /// <p>A list of view summaries.</p>
-    pub fn views_summary_list(&self) -> ::std::option::Option<&[crate::types::ViewSummary]> {
-        self.views_summary_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.views_summary_list.is_none()`.
+    pub fn views_summary_list(&self) -> &[crate::types::ViewSummary] {
+        self.views_summary_list.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

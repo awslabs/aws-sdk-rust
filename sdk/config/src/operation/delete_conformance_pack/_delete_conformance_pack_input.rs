@@ -27,6 +27,7 @@ pub struct DeleteConformancePackInputBuilder {
 }
 impl DeleteConformancePackInputBuilder {
     /// <p>Name of the conformance pack you want to delete.</p>
+    /// This field is required.
     pub fn conformance_pack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.conformance_pack_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteConformancePackInputBuilder {
     /// Consumes the builder and constructs a [`DeleteConformancePackInput`](crate::operation::delete_conformance_pack::DeleteConformancePackInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_conformance_pack::DeleteConformancePackInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_conformance_pack::DeleteConformancePackInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_conformance_pack::DeleteConformancePackInput {
             conformance_pack_name: self.conformance_pack_name,

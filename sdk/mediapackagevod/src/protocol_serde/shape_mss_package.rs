@@ -18,8 +18,7 @@ where
                             builder = builder.set_encryption(crate::protocol_serde::shape_mss_encryption::de_mss_encryption(tokens)?);
                         }
                         "mssManifests" => {
-                            builder =
-                                builder.set_mss_manifests(crate::protocol_serde::shape___list_of_mss_manifest::de___list_of_mss_manifest(tokens)?);
+                            builder = builder.set_mss_manifests(crate::protocol_serde::shape_list_of_mss_manifest::de_list_of_mss_manifest(tokens)?);
                         }
                         "segmentDurationSeconds" => {
                             builder = builder.set_segment_duration_seconds(
@@ -38,7 +37,7 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::mss_package_correct_errors(builder).build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -49,7 +48,7 @@ where
 pub fn ser_mss_package(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MssPackage,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.encryption {
         #[allow(unused_mut)]
         let mut object_2 = object.key("encryption").start_object();

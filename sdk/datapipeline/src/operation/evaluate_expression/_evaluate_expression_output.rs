@@ -5,13 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluateExpressionOutput {
     /// <p>The evaluated expression.</p>
-    pub evaluated_expression: ::std::option::Option<::std::string::String>,
+    pub evaluated_expression: ::std::string::String,
     _request_id: Option<String>,
 }
 impl EvaluateExpressionOutput {
     /// <p>The evaluated expression.</p>
-    pub fn evaluated_expression(&self) -> ::std::option::Option<&str> {
-        self.evaluated_expression.as_deref()
+    pub fn evaluated_expression(&self) -> &str {
+        use std::ops::Deref;
+        self.evaluated_expression.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for EvaluateExpressionOutput {
@@ -35,6 +36,7 @@ pub struct EvaluateExpressionOutputBuilder {
 }
 impl EvaluateExpressionOutputBuilder {
     /// <p>The evaluated expression.</p>
+    /// This field is required.
     pub fn evaluated_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluated_expression = ::std::option::Option::Some(input.into());
         self
@@ -58,10 +60,20 @@ impl EvaluateExpressionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`EvaluateExpressionOutput`](crate::operation::evaluate_expression::EvaluateExpressionOutput).
-    pub fn build(self) -> crate::operation::evaluate_expression::EvaluateExpressionOutput {
-        crate::operation::evaluate_expression::EvaluateExpressionOutput {
-            evaluated_expression: self.evaluated_expression,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`evaluated_expression`](crate::operation::evaluate_expression::builders::EvaluateExpressionOutputBuilder::evaluated_expression)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::evaluate_expression::EvaluateExpressionOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::evaluate_expression::EvaluateExpressionOutput {
+            evaluated_expression: self.evaluated_expression.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "evaluated_expression",
+                    "evaluated_expression was not specified but it is required when building EvaluateExpressionOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -41,6 +41,7 @@ pub struct DeleteDataRepositoryAssociationInputBuilder {
 }
 impl DeleteDataRepositoryAssociationInputBuilder {
     /// <p>The ID of the data repository association that you want to delete.</p>
+    /// This field is required.
     pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl DeleteDataRepositoryAssociationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_data_repository_association::DeleteDataRepositoryAssociationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_data_repository_association::DeleteDataRepositoryAssociationInput {

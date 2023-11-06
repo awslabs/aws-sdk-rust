@@ -65,6 +65,7 @@ pub struct UpdateScheduledActionInputBuilder {
 }
 impl UpdateScheduledActionInputBuilder {
     /// <p>The name of the domain to reschedule an action for.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -79,6 +80,7 @@ impl UpdateScheduledActionInputBuilder {
         &self.domain_name
     }
     /// <p>The unique identifier of the action to reschedule. To retrieve this ID, send a <a href="https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_ListScheduledActions.html">ListScheduledActions</a> request.</p>
+    /// This field is required.
     pub fn action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_id = ::std::option::Option::Some(input.into());
         self
@@ -93,6 +95,7 @@ impl UpdateScheduledActionInputBuilder {
         &self.action_id
     }
     /// <p>The type of action to reschedule. Can be one of <code>SERVICE_SOFTWARE_UPDATE</code>, <code>JVM_HEAP_SIZE_TUNING</code>, or <code>JVM_YOUNG_GEN_TUNING</code>. To retrieve this value, send a <a href="https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_ListScheduledActions.html">ListScheduledActions</a> request.</p>
+    /// This field is required.
     pub fn action_type(mut self, input: crate::types::ActionType) -> Self {
         self.action_type = ::std::option::Option::Some(input);
         self
@@ -112,6 +115,7 @@ impl UpdateScheduledActionInputBuilder {
     /// <li> <p> <code>TIMESTAMP</code> - Lets you specify a custom date and time to apply the update. If you specify this value, you must also provide a value for <code>DesiredStartTime</code>.</p> </li>
     /// <li> <p> <code>OFF_PEAK_WINDOW</code> - Marks the action to be picked up during an upcoming off-peak window. There's no guarantee that the change will be implemented during the next immediate window. Depending on capacity, it might happen in subsequent days.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn schedule_at(mut self, input: crate::types::ScheduleAt) -> Self {
         self.schedule_at = ::std::option::Option::Some(input);
         self
@@ -152,7 +156,7 @@ impl UpdateScheduledActionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateScheduledActionInput`](crate::operation::update_scheduled_action::UpdateScheduledActionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_scheduled_action::UpdateScheduledActionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_scheduled_action::UpdateScheduledActionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_scheduled_action::UpdateScheduledActionInput {
             domain_name: self.domain_name,

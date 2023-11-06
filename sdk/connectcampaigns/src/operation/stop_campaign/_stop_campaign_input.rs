@@ -28,6 +28,7 @@ pub struct StopCampaignInputBuilder {
 }
 impl StopCampaignInputBuilder {
     /// Identifier representing a Campaign
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +43,9 @@ impl StopCampaignInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`StopCampaignInput`](crate::operation::stop_campaign::StopCampaignInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::stop_campaign::StopCampaignInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::stop_campaign::StopCampaignInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_campaign::StopCampaignInput { id: self.id })
     }
 }

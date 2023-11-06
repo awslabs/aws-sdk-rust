@@ -39,7 +39,7 @@ pub use crate::types::_pending_modified_service_update::PendingModifiedServiceUp
 
 pub use crate::types::_service_update_status::ServiceUpdateStatus;
 
-pub use crate::types::_ac_ls_update_status::AcLsUpdateStatus;
+pub use crate::types::_acls_update_status::AcLsUpdateStatus;
 
 pub use crate::types::_resharding_status::ReshardingStatus;
 
@@ -87,11 +87,11 @@ pub use crate::types::_unprocessed_cluster::UnprocessedCluster;
 
 pub use crate::types::_service_update_request::ServiceUpdateRequest;
 
-mod _ac_ls_update_status;
-
 mod _acl;
 
 mod _acl_pending_changes;
+
+mod _acls_update_status;
 
 mod _authentication;
 

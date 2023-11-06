@@ -2,7 +2,7 @@
 pub fn ser_auto_scaling_group_provider_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AutoScalingGroupProviderUpdate,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.managed_scaling {
         #[allow(unused_mut)]
         let mut object_2 = object.key("managedScaling").start_object();

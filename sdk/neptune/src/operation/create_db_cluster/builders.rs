@@ -10,7 +10,7 @@ impl CreateDbClusterInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_db_cluster::CreateDbClusterOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::create_db_cluster::CreateDBClusterError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -74,12 +74,15 @@ impl CreateDBClusterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_db_cluster::CreateDbClusterOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::create_db_cluster::CreateDBClusterError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::create_db_cluster::CreateDBCluster::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -88,20 +91,15 @@ impl CreateDBClusterFluentBuilder {
         crate::operation::create_db_cluster::CreateDBCluster::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::create_db_cluster::CreateDbClusterOutput,
-            crate::operation::create_db_cluster::CreateDBClusterError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::create_db_cluster::CreateDBClusterError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::create_db_cluster::CreateDbClusterOutput,
+        crate::operation::create_db_cluster::CreateDBClusterError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -394,7 +392,7 @@ impl CreateDBClusterFluentBuilder {
         self.inner.get_option_group_name()
     }
     /// <p>The daily time range during which automated backups are created if automated backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
-    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p>
+    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region. To see the time blocks available, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window">Neptune Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li>
@@ -407,7 +405,7 @@ impl CreateDBClusterFluentBuilder {
         self
     }
     /// <p>The daily time range during which automated backups are created if automated backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
-    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p>
+    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region. To see the time blocks available, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window">Neptune Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li>
@@ -420,7 +418,7 @@ impl CreateDBClusterFluentBuilder {
         self
     }
     /// <p>The daily time range during which automated backups are created if automated backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
-    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p>
+    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region. To see the time blocks available, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window">Neptune Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li>
@@ -433,7 +431,7 @@ impl CreateDBClusterFluentBuilder {
     }
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
-    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region, occurring on a random day of the week. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p>
+    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region, occurring on a random day of the week. To see the time blocks available, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window">Neptune Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p>
     /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
     pub fn preferred_maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -442,7 +440,7 @@ impl CreateDBClusterFluentBuilder {
     }
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
-    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region, occurring on a random day of the week. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p>
+    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region, occurring on a random day of the week. To see the time blocks available, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window">Neptune Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p>
     /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
     pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -451,7 +449,7 @@ impl CreateDBClusterFluentBuilder {
     }
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
-    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region, occurring on a random day of the week. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p>
+    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region, occurring on a random day of the week. To see the time blocks available, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window">Neptune Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p>
     /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
     pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {

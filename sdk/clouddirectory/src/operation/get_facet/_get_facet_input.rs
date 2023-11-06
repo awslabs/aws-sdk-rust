@@ -34,6 +34,7 @@ pub struct GetFacetInputBuilder {
 }
 impl GetFacetInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Facet</code>. For more information, see <code>arns</code>.</p>
+    /// This field is required.
     pub fn schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetFacetInputBuilder {
         &self.schema_arn
     }
     /// <p>The name of the facet to retrieve.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,7 @@ impl GetFacetInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`GetFacetInput`](crate::operation::get_facet::GetFacetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_facet::GetFacetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_facet::GetFacetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_facet::GetFacetInput {
             schema_arn: self.schema_arn,
             name: self.name,

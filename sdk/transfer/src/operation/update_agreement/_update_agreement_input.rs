@@ -88,6 +88,7 @@ pub struct UpdateAgreementInputBuilder {
 }
 impl UpdateAgreementInputBuilder {
     /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
+    /// This field is required.
     pub fn agreement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agreement_id = ::std::option::Option::Some(input.into());
         self
@@ -102,6 +103,7 @@ impl UpdateAgreementInputBuilder {
         &self.agreement_id
     }
     /// <p>A system-assigned unique identifier for a server instance. This is the specific server that the agreement uses.</p>
+    /// This field is required.
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_id = ::std::option::Option::Some(input.into());
         self
@@ -220,7 +222,7 @@ impl UpdateAgreementInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAgreementInput`](crate::operation::update_agreement::UpdateAgreementInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_agreement::UpdateAgreementInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_agreement::UpdateAgreementInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_agreement::UpdateAgreementInput {
             agreement_id: self.agreement_id,
             server_id: self.server_id,

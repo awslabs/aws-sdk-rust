@@ -34,6 +34,7 @@ pub struct DeleteLaunchActionInputBuilder {
 }
 impl DeleteLaunchActionInputBuilder {
     /// <p>Launch configuration template Id or Source Server Id</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteLaunchActionInputBuilder {
         &self.resource_id
     }
     /// <p>Launch action Id.</p>
+    /// This field is required.
     pub fn action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,8 @@ impl DeleteLaunchActionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteLaunchActionInput`](crate::operation::delete_launch_action::DeleteLaunchActionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_launch_action::DeleteLaunchActionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_launch_action::DeleteLaunchActionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_launch_action::DeleteLaunchActionInput {
             resource_id: self.resource_id,
             action_id: self.action_id,

@@ -2,18 +2,18 @@
 pub fn ser_human_loop_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HumanLoopConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.human_loop_name {
-        object.key("HumanLoopName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("HumanLoopName").string(input.human_loop_name.as_str());
     }
-    if let Some(var_2) = &input.flow_definition_arn {
-        object.key("FlowDefinitionArn").string(var_2.as_str());
+    {
+        object.key("FlowDefinitionArn").string(input.flow_definition_arn.as_str());
     }
-    if let Some(var_3) = &input.data_attributes {
+    if let Some(var_1) = &input.data_attributes {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("DataAttributes").start_object();
-        crate::protocol_serde::shape_human_loop_data_attributes::ser_human_loop_data_attributes(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_2 = object.key("DataAttributes").start_object();
+        crate::protocol_serde::shape_human_loop_data_attributes::ser_human_loop_data_attributes(&mut object_2, var_1)?;
+        object_2.finish();
     }
     Ok(())
 }

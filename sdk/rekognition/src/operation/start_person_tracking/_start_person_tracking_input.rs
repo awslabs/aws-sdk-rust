@@ -48,6 +48,7 @@ pub struct StartPersonTrackingInputBuilder {
 }
 impl StartPersonTrackingInputBuilder {
     /// <p>The video in which you want to detect people. The video must be stored in an Amazon S3 bucket.</p>
+    /// This field is required.
     pub fn video(mut self, input: crate::types::Video) -> Self {
         self.video = ::std::option::Option::Some(input);
         self
@@ -106,7 +107,7 @@ impl StartPersonTrackingInputBuilder {
     /// Consumes the builder and constructs a [`StartPersonTrackingInput`](crate::operation::start_person_tracking::StartPersonTrackingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_person_tracking::StartPersonTrackingInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_person_tracking::StartPersonTrackingInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_person_tracking::StartPersonTrackingInput {
             video: self.video,

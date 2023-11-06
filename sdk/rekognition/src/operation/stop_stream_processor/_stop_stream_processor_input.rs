@@ -27,6 +27,7 @@ pub struct StopStreamProcessorInputBuilder {
 }
 impl StopStreamProcessorInputBuilder {
     /// <p>The name of a stream processor created by <code>CreateStreamProcessor</code>.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl StopStreamProcessorInputBuilder {
     /// Consumes the builder and constructs a [`StopStreamProcessorInput`](crate::operation::stop_stream_processor::StopStreamProcessorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_stream_processor::StopStreamProcessorInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::stop_stream_processor::StopStreamProcessorInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::stop_stream_processor::StopStreamProcessorInput { name: self.name })
     }

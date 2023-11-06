@@ -2,79 +2,79 @@
 pub fn ser_budget(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Budget,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.budget_name {
-        object.key("BudgetName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("BudgetName").string(input.budget_name.as_str());
     }
-    if let Some(var_2) = &input.budget_limit {
+    if let Some(var_1) = &input.budget_limit {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("BudgetLimit").start_object();
-        crate::protocol_serde::shape_spend::ser_spend(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("BudgetLimit").start_object();
+        crate::protocol_serde::shape_spend::ser_spend(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.planned_budget_limits {
+    if let Some(var_3) = &input.planned_budget_limits {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("PlannedBudgetLimits").start_object();
-        for (key_6, value_7) in var_4 {
+        let mut object_4 = object.key("PlannedBudgetLimits").start_object();
+        for (key_5, value_6) in var_3 {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = object_5.key(key_6.as_str()).start_object();
-                crate::protocol_serde::shape_spend::ser_spend(&mut object_8, value_7)?;
-                object_8.finish();
+                let mut object_7 = object_4.key(key_5.as_str()).start_object();
+                crate::protocol_serde::shape_spend::ser_spend(&mut object_7, value_6)?;
+                object_7.finish();
             }
         }
-        object_5.finish();
+        object_4.finish();
     }
-    if let Some(var_9) = &input.cost_filters {
+    if let Some(var_8) = &input.cost_filters {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("CostFilters").start_object();
-        for (key_11, value_12) in var_9 {
+        let mut object_9 = object.key("CostFilters").start_object();
+        for (key_10, value_11) in var_8 {
             {
-                let mut array_13 = object_10.key(key_11.as_str()).start_array();
-                for item_14 in value_12 {
+                let mut array_12 = object_9.key(key_10.as_str()).start_array();
+                for item_13 in value_11 {
                     {
-                        array_13.value().string(item_14.as_str());
+                        array_12.value().string(item_13.as_str());
                     }
                 }
-                array_13.finish();
+                array_12.finish();
             }
         }
-        object_10.finish();
+        object_9.finish();
     }
-    if let Some(var_15) = &input.cost_types {
+    if let Some(var_14) = &input.cost_types {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("CostTypes").start_object();
-        crate::protocol_serde::shape_cost_types::ser_cost_types(&mut object_16, var_15)?;
-        object_16.finish();
+        let mut object_15 = object.key("CostTypes").start_object();
+        crate::protocol_serde::shape_cost_types::ser_cost_types(&mut object_15, var_14)?;
+        object_15.finish();
     }
-    if let Some(var_17) = &input.time_unit {
-        object.key("TimeUnit").string(var_17.as_str());
+    {
+        object.key("TimeUnit").string(input.time_unit.as_str());
     }
-    if let Some(var_18) = &input.time_period {
+    if let Some(var_16) = &input.time_period {
         #[allow(unused_mut)]
-        let mut object_19 = object.key("TimePeriod").start_object();
-        crate::protocol_serde::shape_time_period::ser_time_period(&mut object_19, var_18)?;
+        let mut object_17 = object.key("TimePeriod").start_object();
+        crate::protocol_serde::shape_time_period::ser_time_period(&mut object_17, var_16)?;
+        object_17.finish();
+    }
+    if let Some(var_18) = &input.calculated_spend {
+        #[allow(unused_mut)]
+        let mut object_19 = object.key("CalculatedSpend").start_object();
+        crate::protocol_serde::shape_calculated_spend::ser_calculated_spend(&mut object_19, var_18)?;
         object_19.finish();
     }
-    if let Some(var_20) = &input.calculated_spend {
-        #[allow(unused_mut)]
-        let mut object_21 = object.key("CalculatedSpend").start_object();
-        crate::protocol_serde::shape_calculated_spend::ser_calculated_spend(&mut object_21, var_20)?;
-        object_21.finish();
+    {
+        object.key("BudgetType").string(input.budget_type.as_str());
     }
-    if let Some(var_22) = &input.budget_type {
-        object.key("BudgetType").string(var_22.as_str());
-    }
-    if let Some(var_23) = &input.last_updated_time {
+    if let Some(var_20) = &input.last_updated_time {
         object
             .key("LastUpdatedTime")
-            .date_time(var_23, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_20, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_24) = &input.auto_adjust_data {
+    if let Some(var_21) = &input.auto_adjust_data {
         #[allow(unused_mut)]
-        let mut object_25 = object.key("AutoAdjustData").start_object();
-        crate::protocol_serde::shape_auto_adjust_data::ser_auto_adjust_data(&mut object_25, var_24)?;
-        object_25.finish();
+        let mut object_22 = object.key("AutoAdjustData").start_object();
+        crate::protocol_serde::shape_auto_adjust_data::ser_auto_adjust_data(&mut object_22, var_21)?;
+        object_22.finish();
     }
     Ok(())
 }
@@ -153,7 +153,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::budget_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

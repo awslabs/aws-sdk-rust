@@ -2,9 +2,9 @@
 pub fn ser_delete_agent(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DeleteAgent,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.agent_id {
-        object.key("agentId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("agentId").string(input.agent_id.as_str());
     }
     if input.force {
         object.key("force").boolean(input.force);

@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DescribeNotificationRuleOutput {
     /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The name of the notification rule.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A list of the event types associated with the notification rule.</p>
@@ -29,24 +29,29 @@ pub struct DescribeNotificationRuleOutput {
 }
 impl DescribeNotificationRuleOutput {
     /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The name of the notification rule.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A list of the event types associated with the notification rule.</p>
-    pub fn event_types(&self) -> ::std::option::Option<&[crate::types::EventTypeSummary]> {
-        self.event_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_types.is_none()`.
+    pub fn event_types(&self) -> &[crate::types::EventTypeSummary] {
+        self.event_types.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the resource associated with the notification rule.</p>
     pub fn resource(&self) -> ::std::option::Option<&str> {
         self.resource.as_deref()
     }
     /// <p>A list of the Chatbot topics and Chatbot clients associated with the notification rule.</p>
-    pub fn targets(&self) -> ::std::option::Option<&[crate::types::TargetSummary]> {
-        self.targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
+    pub fn targets(&self) -> &[crate::types::TargetSummary] {
+        self.targets.as_deref().unwrap_or_default()
     }
     /// <p>The level of detail included in the notifications for this resource. BASIC will include only the contents of the event as it would appear in Amazon CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
     pub fn detail_type(&self) -> ::std::option::Option<&crate::types::DetailType> {
@@ -122,6 +127,7 @@ pub struct DescribeNotificationRuleOutputBuilder {
 }
 impl DescribeNotificationRuleOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -303,9 +309,21 @@ impl DescribeNotificationRuleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeNotificationRuleOutput`](crate::operation::describe_notification_rule::DescribeNotificationRuleOutput).
-    pub fn build(self) -> crate::operation::describe_notification_rule::DescribeNotificationRuleOutput {
-        crate::operation::describe_notification_rule::DescribeNotificationRuleOutput {
-            arn: self.arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::operation::describe_notification_rule::builders::DescribeNotificationRuleOutputBuilder::arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_notification_rule::DescribeNotificationRuleOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::describe_notification_rule::DescribeNotificationRuleOutput {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building DescribeNotificationRuleOutput",
+                )
+            })?,
             name: self.name,
             event_types: self.event_types,
             resource: self.resource,
@@ -317,7 +335,7 @@ impl DescribeNotificationRuleOutputBuilder {
             last_modified_timestamp: self.last_modified_timestamp,
             tags: self.tags,
             _request_id: self._request_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for DescribeNotificationRuleOutputBuilder {

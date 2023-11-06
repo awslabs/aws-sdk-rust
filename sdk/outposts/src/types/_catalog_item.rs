@@ -29,8 +29,10 @@ impl CatalogItem {
         self.item_status.as_ref()
     }
     /// <p> Information about the EC2 capacity of an item. </p>
-    pub fn ec2_capacities(&self) -> ::std::option::Option<&[crate::types::Ec2Capacity]> {
-        self.ec2_capacities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ec2_capacities.is_none()`.
+    pub fn ec2_capacities(&self) -> &[crate::types::Ec2Capacity] {
+        self.ec2_capacities.as_deref().unwrap_or_default()
     }
     /// <p> Information about the power draw of an item. </p>
     pub fn power_kva(&self) -> ::std::option::Option<f32> {
@@ -41,12 +43,16 @@ impl CatalogItem {
         self.weight_lbs
     }
     /// <p> The uplink speed this catalog item requires for the connection to the Region. </p>
-    pub fn supported_uplink_gbps(&self) -> ::std::option::Option<&[i32]> {
-        self.supported_uplink_gbps.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_uplink_gbps.is_none()`.
+    pub fn supported_uplink_gbps(&self) -> &[i32] {
+        self.supported_uplink_gbps.as_deref().unwrap_or_default()
     }
     /// <p> The supported storage options for the catalog item. </p>
-    pub fn supported_storage(&self) -> ::std::option::Option<&[crate::types::SupportedStorageEnum]> {
-        self.supported_storage.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_storage.is_none()`.
+    pub fn supported_storage(&self) -> &[crate::types::SupportedStorageEnum] {
+        self.supported_storage.as_deref().unwrap_or_default()
     }
 }
 impl CatalogItem {

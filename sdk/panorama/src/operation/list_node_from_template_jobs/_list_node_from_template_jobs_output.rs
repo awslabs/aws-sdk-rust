@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListNodeFromTemplateJobsOutput {
     /// <p>A list of jobs.</p>
-    pub node_from_template_jobs: ::std::option::Option<::std::vec::Vec<crate::types::NodeFromTemplateJob>>,
+    pub node_from_template_jobs: ::std::vec::Vec<crate::types::NodeFromTemplateJob>,
     /// <p>A pagination token that's included if more results are available.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListNodeFromTemplateJobsOutput {
     /// <p>A list of jobs.</p>
-    pub fn node_from_template_jobs(&self) -> ::std::option::Option<&[crate::types::NodeFromTemplateJob]> {
-        self.node_from_template_jobs.as_deref()
+    pub fn node_from_template_jobs(&self) -> &[crate::types::NodeFromTemplateJob] {
+        use std::ops::Deref;
+        self.node_from_template_jobs.deref()
     }
     /// <p>A pagination token that's included if more results are available.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,23 @@ impl ListNodeFromTemplateJobsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListNodeFromTemplateJobsOutput`](crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsOutput).
-    pub fn build(self) -> crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsOutput {
-        crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsOutput {
-            node_from_template_jobs: self.node_from_template_jobs,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`node_from_template_jobs`](crate::operation::list_node_from_template_jobs::builders::ListNodeFromTemplateJobsOutputBuilder::node_from_template_jobs)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsOutput {
+            node_from_template_jobs: self.node_from_template_jobs.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "node_from_template_jobs",
+                    "node_from_template_jobs was not specified but it is required when building ListNodeFromTemplateJobsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

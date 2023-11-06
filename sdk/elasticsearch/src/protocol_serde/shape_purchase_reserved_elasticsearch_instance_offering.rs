@@ -38,8 +38,8 @@ pub fn de_purchase_reserved_elasticsearch_instance_offering_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InternalException" => crate::operation::purchase_reserved_elasticsearch_instance_offering::PurchaseReservedElasticsearchInstanceOfferingError::InternalException({
@@ -54,8 +54,8 @@ pub fn de_purchase_reserved_elasticsearch_instance_offering_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "LimitExceededException" => crate::operation::purchase_reserved_elasticsearch_instance_offering::PurchaseReservedElasticsearchInstanceOfferingError::LimitExceededException({
@@ -70,8 +70,8 @@ pub fn de_purchase_reserved_elasticsearch_instance_offering_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ResourceAlreadyExistsException" => crate::operation::purchase_reserved_elasticsearch_instance_offering::PurchaseReservedElasticsearchInstanceOfferingError::ResourceAlreadyExistsException({
@@ -86,8 +86,8 @@ pub fn de_purchase_reserved_elasticsearch_instance_offering_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::purchase_reserved_elasticsearch_instance_offering::PurchaseReservedElasticsearchInstanceOfferingError::ResourceNotFoundException({
@@ -102,8 +102,8 @@ pub fn de_purchase_reserved_elasticsearch_instance_offering_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ValidationException" => crate::operation::purchase_reserved_elasticsearch_instance_offering::PurchaseReservedElasticsearchInstanceOfferingError::ValidationException({
@@ -118,8 +118,8 @@ pub fn de_purchase_reserved_elasticsearch_instance_offering_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::purchase_reserved_elasticsearch_instance_offering::PurchaseReservedElasticsearchInstanceOfferingError::generic(generic)
@@ -153,12 +153,12 @@ pub fn de_purchase_reserved_elasticsearch_instance_offering_http_response(
 
 pub fn ser_purchase_reserved_elasticsearch_instance_offering_input(
     input: &crate::operation::purchase_reserved_elasticsearch_instance_offering::PurchaseReservedElasticsearchInstanceOfferingInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_purchase_reserved_elasticsearch_instance_offering_input::ser_purchase_reserved_elasticsearch_instance_offering_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_purchase_reserved_elasticsearch_instance_offering(

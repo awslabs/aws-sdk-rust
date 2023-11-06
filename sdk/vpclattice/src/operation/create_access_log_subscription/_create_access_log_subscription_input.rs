@@ -62,6 +62,7 @@ impl CreateAccessLogSubscriptionInputBuilder {
         &self.client_token
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service network or service.</p>
+    /// This field is required.
     pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_identifier = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl CreateAccessLogSubscriptionInputBuilder {
         &self.resource_identifier
     }
     /// <p>The Amazon Resource Name (ARN) of the destination. The supported destination types are CloudWatch Log groups, Kinesis Data Firehose delivery streams, and Amazon S3 buckets.</p>
+    /// This field is required.
     pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_arn = ::std::option::Option::Some(input.into());
         self
@@ -114,7 +116,7 @@ impl CreateAccessLogSubscriptionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_access_log_subscription::CreateAccessLogSubscriptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_access_log_subscription::CreateAccessLogSubscriptionInput {
             client_token: self.client_token,

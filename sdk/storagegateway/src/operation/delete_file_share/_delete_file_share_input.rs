@@ -37,6 +37,7 @@ pub struct DeleteFileShareInputBuilder {
 }
 impl DeleteFileShareInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the file share to be deleted.</p>
+    /// This field is required.
     pub fn file_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_share_arn = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +71,7 @@ impl DeleteFileShareInputBuilder {
     /// Consumes the builder and constructs a [`DeleteFileShareInput`](crate::operation::delete_file_share::DeleteFileShareInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_file_share::DeleteFileShareInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_file_share::DeleteFileShareInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_file_share::DeleteFileShareInput {
             file_share_arn: self.file_share_arn,
             force_delete: self.force_delete,

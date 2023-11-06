@@ -5,24 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OpsItemRelatedItemsFilter {
     /// <p>The name of the filter key. Supported values include <code>ResourceUri</code>, <code>ResourceType</code>, or <code>AssociationId</code>.</p>
-    pub key: ::std::option::Option<crate::types::OpsItemRelatedItemsFilterKey>,
+    pub key: crate::types::OpsItemRelatedItemsFilterKey,
     /// <p>The values for the filter.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::vec::Vec<::std::string::String>,
     /// <p>The operator used by the filter call. The only supported operator is <code>EQUAL</code>.</p>
-    pub operator: ::std::option::Option<crate::types::OpsItemRelatedItemsFilterOperator>,
+    pub operator: crate::types::OpsItemRelatedItemsFilterOperator,
 }
 impl OpsItemRelatedItemsFilter {
     /// <p>The name of the filter key. Supported values include <code>ResourceUri</code>, <code>ResourceType</code>, or <code>AssociationId</code>.</p>
-    pub fn key(&self) -> ::std::option::Option<&crate::types::OpsItemRelatedItemsFilterKey> {
-        self.key.as_ref()
+    pub fn key(&self) -> &crate::types::OpsItemRelatedItemsFilterKey {
+        &self.key
     }
     /// <p>The values for the filter.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    pub fn values(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.values.deref()
     }
     /// <p>The operator used by the filter call. The only supported operator is <code>EQUAL</code>.</p>
-    pub fn operator(&self) -> ::std::option::Option<&crate::types::OpsItemRelatedItemsFilterOperator> {
-        self.operator.as_ref()
+    pub fn operator(&self) -> &crate::types::OpsItemRelatedItemsFilterOperator {
+        &self.operator
     }
 }
 impl OpsItemRelatedItemsFilter {
@@ -42,6 +43,7 @@ pub struct OpsItemRelatedItemsFilterBuilder {
 }
 impl OpsItemRelatedItemsFilterBuilder {
     /// <p>The name of the filter key. Supported values include <code>ResourceUri</code>, <code>ResourceType</code>, or <code>AssociationId</code>.</p>
+    /// This field is required.
     pub fn key(mut self, input: crate::types::OpsItemRelatedItemsFilterKey) -> Self {
         self.key = ::std::option::Option::Some(input);
         self
@@ -76,6 +78,7 @@ impl OpsItemRelatedItemsFilterBuilder {
         &self.values
     }
     /// <p>The operator used by the filter call. The only supported operator is <code>EQUAL</code>.</p>
+    /// This field is required.
     pub fn operator(mut self, input: crate::types::OpsItemRelatedItemsFilterOperator) -> Self {
         self.operator = ::std::option::Option::Some(input);
         self
@@ -90,11 +93,30 @@ impl OpsItemRelatedItemsFilterBuilder {
         &self.operator
     }
     /// Consumes the builder and constructs a [`OpsItemRelatedItemsFilter`](crate::types::OpsItemRelatedItemsFilter).
-    pub fn build(self) -> crate::types::OpsItemRelatedItemsFilter {
-        crate::types::OpsItemRelatedItemsFilter {
-            key: self.key,
-            values: self.values,
-            operator: self.operator,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key`](crate::types::builders::OpsItemRelatedItemsFilterBuilder::key)
+    /// - [`values`](crate::types::builders::OpsItemRelatedItemsFilterBuilder::values)
+    /// - [`operator`](crate::types::builders::OpsItemRelatedItemsFilterBuilder::operator)
+    pub fn build(self) -> ::std::result::Result<crate::types::OpsItemRelatedItemsFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::OpsItemRelatedItemsFilter {
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building OpsItemRelatedItemsFilter",
+                )
+            })?,
+            values: self.values.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "values",
+                    "values was not specified but it is required when building OpsItemRelatedItemsFilter",
+                )
+            })?,
+            operator: self.operator.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "operator",
+                    "operator was not specified but it is required when building OpsItemRelatedItemsFilter",
+                )
+            })?,
+        })
     }
 }

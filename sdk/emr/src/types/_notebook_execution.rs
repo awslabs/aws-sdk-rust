@@ -113,8 +113,10 @@ impl NotebookExecution {
         self.notebook_instance_security_group_id.as_deref()
     }
     /// <p>A list of tags associated with a notebook execution. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters and an optional value string with a maximum of 256 characters.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon S3 location that stores the notebook execution input.</p>
     pub fn notebook_s3_location(&self) -> ::std::option::Option<&crate::types::NotebookS3LocationForOutput> {

@@ -2,7 +2,7 @@
 pub fn ser_update_file_system_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_file_system::UpdateFileSystemInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.provisioned_throughput_in_mibps {
         object.key("ProvisionedThroughputInMibps").number(
             #[allow(clippy::useless_conversion)]

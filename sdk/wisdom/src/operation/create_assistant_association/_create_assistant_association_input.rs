@@ -55,6 +55,7 @@ pub struct CreateAssistantAssociationInputBuilder {
 }
 impl CreateAssistantAssociationInputBuilder {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// This field is required.
     pub fn assistant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assistant_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl CreateAssistantAssociationInputBuilder {
         &self.assistant_id
     }
     /// <p>The type of association.</p>
+    /// This field is required.
     pub fn association_type(mut self, input: crate::types::AssociationType) -> Self {
         self.association_type = ::std::option::Option::Some(input);
         self
@@ -83,6 +85,7 @@ impl CreateAssistantAssociationInputBuilder {
         &self.association_type
     }
     /// <p>The identifier of the associated resource.</p>
+    /// This field is required.
     pub fn association(mut self, input: crate::types::AssistantAssociationInputData) -> Self {
         self.association = ::std::option::Option::Some(input);
         self
@@ -135,7 +138,7 @@ impl CreateAssistantAssociationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_assistant_association::CreateAssistantAssociationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_assistant_association::CreateAssistantAssociationInput {
             assistant_id: self.assistant_id,

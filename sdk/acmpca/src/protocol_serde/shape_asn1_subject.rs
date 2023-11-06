@@ -2,7 +2,7 @@
 pub fn ser_asn1_subject(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Asn1Subject,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.country {
         object.key("Country").string(var_1.as_str());
     }

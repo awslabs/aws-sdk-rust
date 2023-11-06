@@ -18,8 +18,10 @@ impl GetDataLakeSourcesOutput {
         self.data_lake_arn.as_deref()
     }
     /// <p>The list of enabled accounts and enabled sources.</p>
-    pub fn data_lake_sources(&self) -> ::std::option::Option<&[crate::types::DataLakeSource]> {
-        self.data_lake_sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_lake_sources.is_none()`.
+    pub fn data_lake_sources(&self) -> &[crate::types::DataLakeSource] {
+        self.data_lake_sources.as_deref().unwrap_or_default()
     }
     /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>

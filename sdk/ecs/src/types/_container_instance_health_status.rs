@@ -15,8 +15,10 @@ impl ContainerInstanceHealthStatus {
         self.overall_status.as_ref()
     }
     /// <p>An array of objects representing the details of the container instance health status.</p>
-    pub fn details(&self) -> ::std::option::Option<&[crate::types::InstanceHealthCheckResult]> {
-        self.details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.details.is_none()`.
+    pub fn details(&self) -> &[crate::types::InstanceHealthCheckResult] {
+        self.details.as_deref().unwrap_or_default()
     }
 }
 impl ContainerInstanceHealthStatus {

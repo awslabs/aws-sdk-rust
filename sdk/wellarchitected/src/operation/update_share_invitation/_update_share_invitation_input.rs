@@ -35,6 +35,7 @@ pub struct UpdateShareInvitationInputBuilder {
 }
 impl UpdateShareInvitationInputBuilder {
     /// <p>The ID assigned to the share invitation.</p>
+    /// This field is required.
     pub fn share_invitation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.share_invitation_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl UpdateShareInvitationInputBuilder {
         &self.share_invitation_id
     }
     /// <p>Share invitation action taken by contributor.</p>
+    /// This field is required.
     pub fn share_invitation_action(mut self, input: crate::types::ShareInvitationAction) -> Self {
         self.share_invitation_action = ::std::option::Option::Some(input);
         self
@@ -65,7 +67,7 @@ impl UpdateShareInvitationInputBuilder {
     /// Consumes the builder and constructs a [`UpdateShareInvitationInput`](crate::operation::update_share_invitation::UpdateShareInvitationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_share_invitation::UpdateShareInvitationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_share_invitation::UpdateShareInvitationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_share_invitation::UpdateShareInvitationInput {
             share_invitation_id: self.share_invitation_id,

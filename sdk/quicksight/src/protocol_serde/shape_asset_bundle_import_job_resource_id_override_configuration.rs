@@ -42,7 +42,7 @@ where
 pub fn ser_asset_bundle_import_job_resource_id_override_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AssetBundleImportJobResourceIdOverrideConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.prefix_for_all_resources {
         object.key("PrefixForAllResources").string(var_1.as_str());
     }

@@ -27,6 +27,7 @@ pub struct GetQueryLoggingConfigInputBuilder {
 }
 impl GetQueryLoggingConfigInputBuilder {
     /// <p>The ID of the configuration for DNS query logging that you want to get information about.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetQueryLoggingConfigInputBuilder {
     /// Consumes the builder and constructs a [`GetQueryLoggingConfigInput`](crate::operation::get_query_logging_config::GetQueryLoggingConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_query_logging_config::GetQueryLoggingConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_query_logging_config::GetQueryLoggingConfigInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_query_logging_config::GetQueryLoggingConfigInput { id: self.id })
     }

@@ -73,8 +73,10 @@ impl RunTaskInput {
     /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or <code>launchType</code> is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
     /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
     /// <p>A capacity provider strategy may contain a maximum of 6 capacity providers.</p>
-    pub fn capacity_provider_strategy(&self) -> ::std::option::Option<&[crate::types::CapacityProviderStrategyItem]> {
-        self.capacity_provider_strategy.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capacity_provider_strategy.is_none()`.
+    pub fn capacity_provider_strategy(&self) -> &[crate::types::CapacityProviderStrategyItem] {
+        self.capacity_provider_strategy.as_deref().unwrap_or_default()
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to run your task on. If you do not specify a cluster, the default cluster is assumed.</p>
     pub fn cluster(&self) -> ::std::option::Option<&str> {
@@ -118,12 +120,16 @@ impl RunTaskInput {
         self.overrides.as_ref()
     }
     /// <p>An array of placement constraint objects to use for the task. You can specify up to 10 constraints for each task (including constraints in the task definition and those specified at runtime).</p>
-    pub fn placement_constraints(&self) -> ::std::option::Option<&[crate::types::PlacementConstraint]> {
-        self.placement_constraints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.placement_constraints.is_none()`.
+    pub fn placement_constraints(&self) -> &[crate::types::PlacementConstraint] {
+        self.placement_constraints.as_deref().unwrap_or_default()
     }
     /// <p>The placement strategy objects to use for the task. You can specify a maximum of 5 strategy rules for each task.</p>
-    pub fn placement_strategy(&self) -> ::std::option::Option<&[crate::types::PlacementStrategy]> {
-        self.placement_strategy.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.placement_strategy.is_none()`.
+    pub fn placement_strategy(&self) -> &[crate::types::PlacementStrategy] {
+        self.placement_strategy.as_deref().unwrap_or_default()
     }
     /// <p>The platform version the task uses. A platform version is only specified for tasks hosted on Fargate. If one isn't specified, the <code>LATEST</code> platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn platform_version(&self) -> ::std::option::Option<&str> {
@@ -155,8 +161,10 @@ impl RunTaskInput {
     /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task definition to run. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
     /// <p>When you create a policy for run-task, you can set the resource to be the latest task definition revision, or a specific revision.</p>
@@ -530,6 +538,7 @@ impl RunTaskInputBuilder {
     /// <p>When you specify the policy resource as the latest task definition version (by setting the <code>Resource</code> in the policy to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>), then set this value to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.</p>
     /// <p>When you specify the policy resource as a specific task definition version (by setting the <code>Resource</code> in the policy to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code> or <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</code>), then set this value to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources">Policy Resources for Amazon ECS</a> in the Amazon Elastic Container Service developer Guide.</p>
+    /// This field is required.
     pub fn task_definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_definition = ::std::option::Option::Some(input.into());
         self
@@ -554,7 +563,7 @@ impl RunTaskInputBuilder {
         &self.task_definition
     }
     /// Consumes the builder and constructs a [`RunTaskInput`](crate::operation::run_task::RunTaskInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::run_task::RunTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::run_task::RunTaskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::run_task::RunTaskInput {
             capacity_provider_strategy: self.capacity_provider_strategy,
             cluster: self.cluster,

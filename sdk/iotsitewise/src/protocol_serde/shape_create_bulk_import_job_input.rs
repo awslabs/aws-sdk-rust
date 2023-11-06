@@ -2,7 +2,7 @@
 pub fn ser_create_bulk_import_job_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_bulk_import_job::CreateBulkImportJobInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.error_report_location {
         #[allow(unused_mut)]
         let mut object_2 = object.key("errorReportLocation").start_object();

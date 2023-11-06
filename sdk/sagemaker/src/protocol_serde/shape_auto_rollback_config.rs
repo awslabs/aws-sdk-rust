@@ -2,7 +2,7 @@
 pub fn ser_auto_rollback_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AutoRollbackConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.alarms {
         let mut array_2 = object.key("Alarms").start_array();
         for item_3 in var_1 {

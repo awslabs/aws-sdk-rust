@@ -23,8 +23,10 @@ impl AwsWafRuleDetails {
         self.name.as_deref()
     }
     /// <p>Specifies the <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, and <code>SizeConstraintSet</code> objects that you want to add to a rule and, for each object, indicates whether you want to negate the settings. </p>
-    pub fn predicate_list(&self) -> ::std::option::Option<&[crate::types::AwsWafRulePredicateListDetails]> {
-        self.predicate_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.predicate_list.is_none()`.
+    pub fn predicate_list(&self) -> &[crate::types::AwsWafRulePredicateListDetails] {
+        self.predicate_list.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the WAF rule. </p>
     pub fn rule_id(&self) -> ::std::option::Option<&str> {

@@ -27,6 +27,7 @@ pub struct DescribeBuildInputBuilder {
 }
 impl DescribeBuildInputBuilder {
     /// <p>A unique identifier for the build to retrieve properties for. You can use either the build ID or ARN value. </p>
+    /// This field is required.
     pub fn build_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.build_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeBuildInputBuilder {
     /// Consumes the builder and constructs a [`DescribeBuildInput`](crate::operation::describe_build::DescribeBuildInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_build::DescribeBuildInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_build::DescribeBuildInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_build::DescribeBuildInput { build_id: self.build_id })
     }
 }

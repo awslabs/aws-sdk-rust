@@ -31,8 +31,10 @@ impl AwsCodeBuildProjectDetails {
         self.encryption_key.as_deref()
     }
     /// <p>Information about the build artifacts for the CodeBuild project.</p>
-    pub fn artifacts(&self) -> ::std::option::Option<&[crate::types::AwsCodeBuildProjectArtifactsDetails]> {
-        self.artifacts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.artifacts.is_none()`.
+    pub fn artifacts(&self) -> &[crate::types::AwsCodeBuildProjectArtifactsDetails] {
+        self.artifacts.as_deref().unwrap_or_default()
     }
     /// <p>Information about the build environment for this build project.</p>
     pub fn environment(&self) -> ::std::option::Option<&crate::types::AwsCodeBuildProjectEnvironment> {
@@ -59,8 +61,10 @@ impl AwsCodeBuildProjectDetails {
         self.vpc_config.as_ref()
     }
     /// <p>Information about the secondary artifacts for the CodeBuild project.</p>
-    pub fn secondary_artifacts(&self) -> ::std::option::Option<&[crate::types::AwsCodeBuildProjectArtifactsDetails]> {
-        self.secondary_artifacts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secondary_artifacts.is_none()`.
+    pub fn secondary_artifacts(&self) -> &[crate::types::AwsCodeBuildProjectArtifactsDetails] {
+        self.secondary_artifacts.as_deref().unwrap_or_default()
     }
 }
 impl AwsCodeBuildProjectDetails {

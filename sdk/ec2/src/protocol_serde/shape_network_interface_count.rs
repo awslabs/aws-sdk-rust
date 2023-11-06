@@ -3,7 +3,7 @@
 pub fn ser_network_interface_count(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::NetworkInterfaceCount,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Min");
     if let Some(var_2) = &input.min {
@@ -23,6 +23,7 @@ pub fn ser_network_interface_count(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_network_interface_count(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::NetworkInterfaceCount, ::aws_smithy_xml::decode::XmlDecodeError> {

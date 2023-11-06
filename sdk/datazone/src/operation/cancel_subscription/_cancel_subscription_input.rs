@@ -34,6 +34,7 @@ pub struct CancelSubscriptionInputBuilder {
 }
 impl CancelSubscriptionInputBuilder {
     /// <p>The unique identifier of the Amazon DataZone domain where the subscription request is being cancelled.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl CancelSubscriptionInputBuilder {
         &self.domain_identifier
     }
     /// <p>The unique identifier of the subscription that is being cancelled.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl CancelSubscriptionInputBuilder {
     /// Consumes the builder and constructs a [`CancelSubscriptionInput`](crate::operation::cancel_subscription::CancelSubscriptionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_subscription::CancelSubscriptionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::cancel_subscription::CancelSubscriptionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_subscription::CancelSubscriptionInput {
             domain_identifier: self.domain_identifier,
             identifier: self.identifier,

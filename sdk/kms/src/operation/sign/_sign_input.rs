@@ -78,8 +78,10 @@ impl SignInput {
     }
     /// <p>A list of grant tokens.</p>
     /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    pub fn grant_tokens(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.grant_tokens.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.grant_tokens.is_none()`.
+    pub fn grant_tokens(&self) -> &[::std::string::String] {
+        self.grant_tokens.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the signing algorithm to use when signing the message. </p>
     /// <p>Choose an algorithm that is compatible with the type and size of the specified asymmetric KMS key. When signing with RSA key pairs, RSASSA-PSS algorithms are preferred. We include RSASSA-PKCS1-v1_5 algorithms for compatibility with existing applications.</p>
@@ -133,6 +135,7 @@ impl SignInputBuilder {
     /// <li> <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code> </p> </li>
     /// </ul>
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>. To get the alias name and alias ARN, use <code>ListAliases</code>.</p>
+    /// This field is required.
     pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_id = ::std::option::Option::Some(input.into());
         self
@@ -166,6 +169,7 @@ impl SignInputBuilder {
     }
     /// <p>Specifies the message or message digest to sign. Messages can be 0-4096 bytes. To sign a larger message, provide a message digest.</p>
     /// <p>If you provide a message digest, use the <code>DIGEST</code> value of <code>MessageType</code> to prevent the digest from being hashed again while signing.</p>
+    /// This field is required.
     pub fn message(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.message = ::std::option::Option::Some(input);
         self
@@ -256,6 +260,7 @@ impl SignInputBuilder {
     }
     /// <p>Specifies the signing algorithm to use when signing the message. </p>
     /// <p>Choose an algorithm that is compatible with the type and size of the specified asymmetric KMS key. When signing with RSA key pairs, RSASSA-PSS algorithms are preferred. We include RSASSA-PKCS1-v1_5 algorithms for compatibility with existing applications.</p>
+    /// This field is required.
     pub fn signing_algorithm(mut self, input: crate::types::SigningAlgorithmSpec) -> Self {
         self.signing_algorithm = ::std::option::Option::Some(input);
         self
@@ -289,7 +294,7 @@ impl SignInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`SignInput`](crate::operation::sign::SignInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::sign::SignInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::sign::SignInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::sign::SignInput {
             key_id: self.key_id,
             message: self.message,

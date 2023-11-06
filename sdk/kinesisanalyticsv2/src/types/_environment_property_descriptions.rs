@@ -9,8 +9,10 @@ pub struct EnvironmentPropertyDescriptions {
 }
 impl EnvironmentPropertyDescriptions {
     /// <p>Describes the execution property groups.</p>
-    pub fn property_group_descriptions(&self) -> ::std::option::Option<&[crate::types::PropertyGroup]> {
-        self.property_group_descriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.property_group_descriptions.is_none()`.
+    pub fn property_group_descriptions(&self) -> &[crate::types::PropertyGroup] {
+        self.property_group_descriptions.as_deref().unwrap_or_default()
     }
 }
 impl EnvironmentPropertyDescriptions {

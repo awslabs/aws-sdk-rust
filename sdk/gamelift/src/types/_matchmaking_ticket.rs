@@ -85,8 +85,10 @@ impl MatchmakingTicket {
         self.end_time.as_ref()
     }
     /// <p>A set of <code>Player</code> objects, each representing a player to find matches for. Players are identified by a unique player ID and may include latency data for use during matchmaking. If the ticket is in status <code>COMPLETED</code>, the <code>Player</code> objects include the team the players were assigned to in the resulting match.</p>
-    pub fn players(&self) -> ::std::option::Option<&[crate::types::Player]> {
-        self.players.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.players.is_none()`.
+    pub fn players(&self) -> &[crate::types::Player] {
+        self.players.as_deref().unwrap_or_default()
     }
     /// <p>Connection information for a new game session. Once a match is made, the FlexMatch engine creates a new game session for it. This information is added to the matchmaking ticket, which you can be retrieve by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeMatchmaking.html">DescribeMatchmaking</a> .</p>
     pub fn game_session_connection_info(&self) -> ::std::option::Option<&crate::types::GameSessionConnectionInfo> {

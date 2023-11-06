@@ -41,6 +41,7 @@ pub struct DeleteLifecyclePolicyInputBuilder {
 }
 impl DeleteLifecyclePolicyInputBuilder {
     /// <p>The type of lifecycle policy.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::LifecyclePolicyType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -55,6 +56,7 @@ impl DeleteLifecyclePolicyInputBuilder {
         &self.r#type
     }
     /// <p>The name of the policy to delete.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +87,7 @@ impl DeleteLifecyclePolicyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteLifecyclePolicyInput`](crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyInput {
             r#type: self.r#type,

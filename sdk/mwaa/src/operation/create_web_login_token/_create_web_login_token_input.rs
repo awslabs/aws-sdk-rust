@@ -27,6 +27,7 @@ pub struct CreateWebLoginTokenInputBuilder {
 }
 impl CreateWebLoginTokenInputBuilder {
     /// <p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl CreateWebLoginTokenInputBuilder {
     /// Consumes the builder and constructs a [`CreateWebLoginTokenInput`](crate::operation::create_web_login_token::CreateWebLoginTokenInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_web_login_token::CreateWebLoginTokenInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_web_login_token::CreateWebLoginTokenInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_web_login_token::CreateWebLoginTokenInput { name: self.name })
     }

@@ -10,7 +10,7 @@ pub struct ListComponentsInput {
     /// <p>The token to request the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of components to retrieve.</p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
 }
 impl ListComponentsInput {
     /// <p>The unique ID for the Amplify app.</p>
@@ -26,7 +26,7 @@ impl ListComponentsInput {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of components to retrieve.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
 }
@@ -48,6 +48,7 @@ pub struct ListComponentsInputBuilder {
 }
 impl ListComponentsInputBuilder {
     /// <p>The unique ID for the Amplify app.</p>
+    /// This field is required.
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl ListComponentsInputBuilder {
         &self.app_id
     }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
+    /// This field is required.
     pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
@@ -106,12 +108,12 @@ impl ListComponentsInputBuilder {
     /// Consumes the builder and constructs a [`ListComponentsInput`](crate::operation::list_components::ListComponentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_components::ListComponentsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_components::ListComponentsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_components::ListComponentsInput {
             app_id: self.app_id,
             environment_name: self.environment_name,
             next_token: self.next_token,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
         })
     }
 }

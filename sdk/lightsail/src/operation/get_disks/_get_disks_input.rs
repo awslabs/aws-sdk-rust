@@ -46,7 +46,7 @@ impl GetDisksInputBuilder {
         &self.page_token
     }
     /// Consumes the builder and constructs a [`GetDisksInput`](crate::operation::get_disks::GetDisksInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_disks::GetDisksInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_disks::GetDisksInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_disks::GetDisksInput { page_token: self.page_token })
     }
 }

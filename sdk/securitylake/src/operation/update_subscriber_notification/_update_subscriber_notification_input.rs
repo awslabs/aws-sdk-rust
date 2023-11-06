@@ -34,6 +34,7 @@ pub struct UpdateSubscriberNotificationInputBuilder {
 }
 impl UpdateSubscriberNotificationInputBuilder {
     /// <p>The subscription ID for which the subscription notification is specified.</p>
+    /// This field is required.
     pub fn subscriber_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscriber_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateSubscriberNotificationInputBuilder {
         &self.subscriber_id
     }
     /// <p>The configuration for subscriber notification.</p>
+    /// This field is required.
     pub fn configuration(mut self, input: crate::types::NotificationConfiguration) -> Self {
         self.configuration = ::std::option::Option::Some(input);
         self
@@ -66,7 +68,7 @@ impl UpdateSubscriberNotificationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_subscriber_notification::UpdateSubscriberNotificationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_subscriber_notification::UpdateSubscriberNotificationInput {
             subscriber_id: self.subscriber_id,

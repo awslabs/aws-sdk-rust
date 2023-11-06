@@ -27,6 +27,7 @@ pub struct DescribeChannelFlowInputBuilder {
 }
 impl DescribeChannelFlowInputBuilder {
     /// <p>The ARN of the channel flow.</p>
+    /// This field is required.
     pub fn channel_flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_flow_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeChannelFlowInputBuilder {
     /// Consumes the builder and constructs a [`DescribeChannelFlowInput`](crate::operation::describe_channel_flow::DescribeChannelFlowInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_channel_flow::DescribeChannelFlowInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_channel_flow::DescribeChannelFlowInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_channel_flow::DescribeChannelFlowInput {
             channel_flow_arn: self.channel_flow_arn,

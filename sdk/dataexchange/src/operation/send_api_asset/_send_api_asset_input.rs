@@ -117,6 +117,7 @@ impl SendApiAssetInputBuilder {
         &self.query_string_parameters
     }
     /// <p>Asset ID value for the API request.</p>
+    /// This field is required.
     pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_id = ::std::option::Option::Some(input.into());
         self
@@ -131,6 +132,7 @@ impl SendApiAssetInputBuilder {
         &self.asset_id
     }
     /// <p>Data set ID value for the API request.</p>
+    /// This field is required.
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
         self
@@ -200,6 +202,7 @@ impl SendApiAssetInputBuilder {
         &self.path
     }
     /// <p>Revision ID value for the API request.</p>
+    /// This field is required.
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
         self
@@ -216,7 +219,7 @@ impl SendApiAssetInputBuilder {
     /// Consumes the builder and constructs a [`SendApiAssetInput`](crate::operation::send_api_asset::SendApiAssetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::send_api_asset::SendApiAssetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::send_api_asset::SendApiAssetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_api_asset::SendApiAssetInput {
             body: self.body,
             query_string_parameters: self.query_string_parameters,

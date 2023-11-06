@@ -36,8 +36,10 @@ impl CreateEndpointInput {
         self.client_request_token.as_deref()
     }
     /// <p>Tags to associate with the endpoint. A tag is a key-value pair that adds metadata to the endpoint. For example, a tag with "Sales" as the key might be added to an endpoint to indicate its use by the sales department. </p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).</p>
     pub fn data_access_role_arn(&self) -> ::std::option::Option<&str> {
@@ -69,6 +71,7 @@ pub struct CreateEndpointInputBuilder {
 }
 impl CreateEndpointInputBuilder {
     /// <p>This is the descriptive suffix that becomes part of the <code>EndpointArn</code> used for all subsequent requests to this resource. </p>
+    /// This field is required.
     pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +100,7 @@ impl CreateEndpointInputBuilder {
         &self.model_arn
     }
     /// <p> The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.</p>
+    /// This field is required.
     pub fn desired_inference_units(mut self, input: i32) -> Self {
         self.desired_inference_units = ::std::option::Option::Some(input);
         self
@@ -175,7 +179,7 @@ impl CreateEndpointInputBuilder {
     /// Consumes the builder and constructs a [`CreateEndpointInput`](crate::operation::create_endpoint::CreateEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_endpoint::CreateEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_endpoint::CreateEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_endpoint::CreateEndpointInput {
             endpoint_name: self.endpoint_name,
             model_arn: self.model_arn,

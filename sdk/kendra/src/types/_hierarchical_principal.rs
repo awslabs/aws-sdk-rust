@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HierarchicalPrincipal {
     /// <p>A list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to. Each hierarchical list specifies which user or group has allow or deny access for each document.</p>
-    pub principal_list: ::std::option::Option<::std::vec::Vec<crate::types::Principal>>,
+    pub principal_list: ::std::vec::Vec<crate::types::Principal>,
 }
 impl HierarchicalPrincipal {
     /// <p>A list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to. Each hierarchical list specifies which user or group has allow or deny access for each document.</p>
-    pub fn principal_list(&self) -> ::std::option::Option<&[crate::types::Principal]> {
-        self.principal_list.as_deref()
+    pub fn principal_list(&self) -> &[crate::types::Principal] {
+        use std::ops::Deref;
+        self.principal_list.deref()
     }
 }
 impl HierarchicalPrincipal {
@@ -48,9 +49,16 @@ impl HierarchicalPrincipalBuilder {
         &self.principal_list
     }
     /// Consumes the builder and constructs a [`HierarchicalPrincipal`](crate::types::HierarchicalPrincipal).
-    pub fn build(self) -> crate::types::HierarchicalPrincipal {
-        crate::types::HierarchicalPrincipal {
-            principal_list: self.principal_list,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`principal_list`](crate::types::builders::HierarchicalPrincipalBuilder::principal_list)
+    pub fn build(self) -> ::std::result::Result<crate::types::HierarchicalPrincipal, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::HierarchicalPrincipal {
+            principal_list: self.principal_list.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "principal_list",
+                    "principal_list was not specified but it is required when building HierarchicalPrincipal",
+                )
+            })?,
+        })
     }
 }

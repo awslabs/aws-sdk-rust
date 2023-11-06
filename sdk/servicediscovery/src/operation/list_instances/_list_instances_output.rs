@@ -11,8 +11,10 @@ pub struct ListInstancesOutput {
 }
 impl ListInstancesOutput {
     /// <p>Summary information about the instances that are associated with the specified service.</p>
-    pub fn instances(&self) -> ::std::option::Option<&[crate::types::InstanceSummary]> {
-        self.instances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instances.is_none()`.
+    pub fn instances(&self) -> &[crate::types::InstanceSummary] {
+        self.instances.as_deref().unwrap_or_default()
     }
     /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another <code>ListInstances</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

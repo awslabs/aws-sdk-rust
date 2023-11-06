@@ -16,14 +16,18 @@ pub struct ListDocumentsInput {
 }
 impl ListDocumentsInput {
     /// <p>This data type is deprecated. Instead, use <code>Filters</code>.</p>
-    pub fn document_filter_list(&self) -> ::std::option::Option<&[crate::types::DocumentFilter]> {
-        self.document_filter_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.document_filter_list.is_none()`.
+    pub fn document_filter_list(&self) -> &[crate::types::DocumentFilter] {
+        self.document_filter_list.as_deref().unwrap_or_default()
     }
     /// <p>One or more <code>DocumentKeyValuesFilter</code> objects. Use a filter to return a more specific list of results. For keys, you can specify one or more key-value pair tags that have been applied to a document. Other valid keys include <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>, <code>DocumentType</code>, and <code>TargetType</code>. For example, to return documents you own use <code>Key=Owner,Values=Self</code>. To specify a custom key-value pair, use the format <code>Key=tag:tagName,Values=valueName</code>.</p> <note>
     /// <p>This API operation only supports filtering documents by using a single tag key and one or more tag values. For example: <code>Key=tag:tagName,Values=valueName1,valueName2</code> </p>
     /// </note>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::DocumentKeyValuesFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::DocumentKeyValuesFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -128,7 +132,7 @@ impl ListDocumentsInputBuilder {
     /// Consumes the builder and constructs a [`ListDocumentsInput`](crate::operation::list_documents::ListDocumentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_documents::ListDocumentsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_documents::ListDocumentsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_documents::ListDocumentsInput {
             document_filter_list: self.document_filter_list,
             filters: self.filters,

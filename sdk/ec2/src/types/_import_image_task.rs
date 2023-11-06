@@ -85,8 +85,10 @@ impl ImportImageTask {
         self.progress.as_deref()
     }
     /// <p>Information about the snapshots.</p>
-    pub fn snapshot_details(&self) -> ::std::option::Option<&[crate::types::SnapshotDetail]> {
-        self.snapshot_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.snapshot_details.is_none()`.
+    pub fn snapshot_details(&self) -> &[crate::types::SnapshotDetail] {
+        self.snapshot_details.as_deref().unwrap_or_default()
     }
     /// <p>A brief status for the import image task.</p>
     pub fn status(&self) -> ::std::option::Option<&str> {
@@ -97,12 +99,16 @@ impl ImportImageTask {
         self.status_message.as_deref()
     }
     /// <p>The tags for the import image task.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The ARNs of the license configurations that are associated with the import image task.</p>
-    pub fn license_specifications(&self) -> ::std::option::Option<&[crate::types::ImportImageLicenseConfigurationResponse]> {
-        self.license_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.license_specifications.is_none()`.
+    pub fn license_specifications(&self) -> &[crate::types::ImportImageLicenseConfigurationResponse] {
+        self.license_specifications.as_deref().unwrap_or_default()
     }
     /// <p>The usage operation value.</p>
     pub fn usage_operation(&self) -> ::std::option::Option<&str> {

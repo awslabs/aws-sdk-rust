@@ -27,6 +27,7 @@ pub struct DescribeApplicationInstanceDetailsInputBuilder {
 }
 impl DescribeApplicationInstanceDetailsInputBuilder {
     /// <p>The application instance's ID.</p>
+    /// This field is required.
     pub fn application_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_instance_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeApplicationInstanceDetailsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_application_instance_details::DescribeApplicationInstanceDetailsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_application_instance_details::DescribeApplicationInstanceDetailsInput {

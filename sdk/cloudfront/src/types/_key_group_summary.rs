@@ -28,6 +28,7 @@ pub struct KeyGroupSummaryBuilder {
 }
 impl KeyGroupSummaryBuilder {
     /// <p>A key group.</p>
+    /// This field is required.
     pub fn key_group(mut self, input: crate::types::KeyGroup) -> Self {
         self.key_group = ::std::option::Option::Some(input);
         self

@@ -42,6 +42,7 @@ pub struct DeleteTargetInputBuilder {
 }
 impl DeleteTargetInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client to delete.</p>
+    /// This field is required.
     pub fn target_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_address = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +71,9 @@ impl DeleteTargetInputBuilder {
         &self.force_unsubscribe_all
     }
     /// Consumes the builder and constructs a [`DeleteTargetInput`](crate::operation::delete_target::DeleteTargetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_target::DeleteTargetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_target::DeleteTargetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_target::DeleteTargetInput {
             target_address: self.target_address,
             force_unsubscribe_all: self.force_unsubscribe_all,

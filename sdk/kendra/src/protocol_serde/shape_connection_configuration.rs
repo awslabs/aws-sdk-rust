@@ -2,24 +2,24 @@
 pub fn ser_connection_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ConnectionConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.database_host {
-        object.key("DatabaseHost").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("DatabaseHost").string(input.database_host.as_str());
     }
-    if let Some(var_2) = &input.database_port {
+    {
         object.key("DatabasePort").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((input.database_port).into()),
         );
     }
-    if let Some(var_3) = &input.database_name {
-        object.key("DatabaseName").string(var_3.as_str());
+    {
+        object.key("DatabaseName").string(input.database_name.as_str());
     }
-    if let Some(var_4) = &input.table_name {
-        object.key("TableName").string(var_4.as_str());
+    {
+        object.key("TableName").string(input.table_name.as_str());
     }
-    if let Some(var_5) = &input.secret_arn {
-        object.key("SecretArn").string(var_5.as_str());
+    {
+        object.key("SecretArn").string(input.secret_arn.as_str());
     }
     Ok(())
 }
@@ -84,7 +84,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::connection_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

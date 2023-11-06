@@ -89,8 +89,10 @@ impl SessionSpecification {
         self.number_of_turns
     }
     /// <p>A list of objects containing the name of an intent that was invoked.</p>
-    pub fn invoked_intent_samples(&self) -> ::std::option::Option<&[crate::types::InvokedIntentSample]> {
-        self.invoked_intent_samples.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.invoked_intent_samples.is_none()`.
+    pub fn invoked_intent_samples(&self) -> &[crate::types::InvokedIntentSample] {
+        self.invoked_intent_samples.as_deref().unwrap_or_default()
     }
     /// <p>The identifier of the first request in a session.</p>
     pub fn originating_request_id(&self) -> ::std::option::Option<&str> {

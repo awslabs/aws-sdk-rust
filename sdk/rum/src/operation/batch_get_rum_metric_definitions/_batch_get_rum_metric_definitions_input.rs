@@ -59,6 +59,7 @@ pub struct BatchGetRumMetricDefinitionsInputBuilder {
 }
 impl BatchGetRumMetricDefinitionsInputBuilder {
     /// <p>The name of the CloudWatch RUM app monitor that is sending the metrics.</p>
+    /// This field is required.
     pub fn app_monitor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_monitor_name = ::std::option::Option::Some(input.into());
         self
@@ -73,6 +74,7 @@ impl BatchGetRumMetricDefinitionsInputBuilder {
         &self.app_monitor_name
     }
     /// <p>The type of destination that you want to view metrics for. Valid values are <code>CloudWatch</code> and <code>Evidently</code>.</p>
+    /// This field is required.
     pub fn destination(mut self, input: crate::types::MetricDestination) -> Self {
         self.destination = ::std::option::Option::Some(input);
         self
@@ -139,7 +141,7 @@ impl BatchGetRumMetricDefinitionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_rum_metric_definitions::BatchGetRumMetricDefinitionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_get_rum_metric_definitions::BatchGetRumMetricDefinitionsInput {
             app_monitor_name: self.app_monitor_name,

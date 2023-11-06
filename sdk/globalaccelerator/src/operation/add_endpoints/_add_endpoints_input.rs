@@ -10,8 +10,10 @@ pub struct AddEndpointsInput {
 }
 impl AddEndpointsInput {
     /// <p>The list of endpoint objects.</p>
-    pub fn endpoint_configurations(&self) -> ::std::option::Option<&[crate::types::EndpointConfiguration]> {
-        self.endpoint_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.endpoint_configurations.is_none()`.
+    pub fn endpoint_configurations(&self) -> &[crate::types::EndpointConfiguration] {
+        self.endpoint_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
     pub fn endpoint_group_arn(&self) -> ::std::option::Option<&str> {
@@ -54,6 +56,7 @@ impl AddEndpointsInputBuilder {
         &self.endpoint_configurations
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
+    /// This field is required.
     pub fn endpoint_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_group_arn = ::std::option::Option::Some(input.into());
         self
@@ -68,7 +71,9 @@ impl AddEndpointsInputBuilder {
         &self.endpoint_group_arn
     }
     /// Consumes the builder and constructs a [`AddEndpointsInput`](crate::operation::add_endpoints::AddEndpointsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::add_endpoints::AddEndpointsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::add_endpoints::AddEndpointsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::add_endpoints::AddEndpointsInput {
             endpoint_configurations: self.endpoint_configurations,
             endpoint_group_arn: self.endpoint_group_arn,

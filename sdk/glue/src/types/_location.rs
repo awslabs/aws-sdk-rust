@@ -13,16 +13,22 @@ pub struct Location {
 }
 impl Location {
     /// <p>A JDBC location.</p>
-    pub fn jdbc(&self) -> ::std::option::Option<&[crate::types::CodeGenNodeArg]> {
-        self.jdbc.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.jdbc.is_none()`.
+    pub fn jdbc(&self) -> &[crate::types::CodeGenNodeArg] {
+        self.jdbc.as_deref().unwrap_or_default()
     }
     /// <p>An Amazon Simple Storage Service (Amazon S3) location.</p>
-    pub fn s3(&self) -> ::std::option::Option<&[crate::types::CodeGenNodeArg]> {
-        self.s3.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.s3.is_none()`.
+    pub fn s3(&self) -> &[crate::types::CodeGenNodeArg] {
+        self.s3.as_deref().unwrap_or_default()
     }
     /// <p>An Amazon DynamoDB table location.</p>
-    pub fn dynamo_db(&self) -> ::std::option::Option<&[crate::types::CodeGenNodeArg]> {
-        self.dynamo_db.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dynamo_db.is_none()`.
+    pub fn dynamo_db(&self) -> &[crate::types::CodeGenNodeArg] {
+        self.dynamo_db.as_deref().unwrap_or_default()
     }
 }
 impl Location {

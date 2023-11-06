@@ -42,6 +42,7 @@ pub struct ActivateUserInputBuilder {
 }
 impl ActivateUserInputBuilder {
     /// <p>The ID of the user.</p>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +71,9 @@ impl ActivateUserInputBuilder {
         &self.authentication_token
     }
     /// Consumes the builder and constructs a [`ActivateUserInput`](crate::operation::activate_user::ActivateUserInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::activate_user::ActivateUserInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::activate_user::ActivateUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::activate_user::ActivateUserInput {
             user_id: self.user_id,
             authentication_token: self.authentication_token,

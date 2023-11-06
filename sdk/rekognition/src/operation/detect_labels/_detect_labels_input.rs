@@ -32,8 +32,10 @@ impl DetectLabelsInput {
         self.min_confidence
     }
     /// <p>A list of the types of analysis to perform. Specifying GENERAL_LABELS uses the label detection feature, while specifying IMAGE_PROPERTIES returns information regarding image color and quality. If no option is specified GENERAL_LABELS is used by default.</p>
-    pub fn features(&self) -> ::std::option::Option<&[crate::types::DetectLabelsFeatureName]> {
-        self.features.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.features.is_none()`.
+    pub fn features(&self) -> &[crate::types::DetectLabelsFeatureName] {
+        self.features.as_deref().unwrap_or_default()
     }
     /// <p>A list of the filters to be applied to returned detected labels and image properties. Specified filters can be inclusive, exclusive, or a combination of both. Filters can be used for individual labels or label categories. The exact label names or label categories must be supplied. For a full list of labels and label categories, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/labels.html">Detecting labels</a>.</p>
     pub fn settings(&self) -> ::std::option::Option<&crate::types::DetectLabelsSettings> {
@@ -60,6 +62,7 @@ pub struct DetectLabelsInputBuilder {
 impl DetectLabelsInputBuilder {
     /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes is not supported. Images stored in an S3 Bucket do not need to be base64-encoded.</p>
     /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
+    /// This field is required.
     pub fn image(mut self, input: crate::types::Image) -> Self {
         self.image = ::std::option::Option::Some(input);
         self
@@ -141,7 +144,9 @@ impl DetectLabelsInputBuilder {
         &self.settings
     }
     /// Consumes the builder and constructs a [`DetectLabelsInput`](crate::operation::detect_labels::DetectLabelsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::detect_labels::DetectLabelsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::detect_labels::DetectLabelsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::detect_labels::DetectLabelsInput {
             image: self.image,
             max_labels: self.max_labels,

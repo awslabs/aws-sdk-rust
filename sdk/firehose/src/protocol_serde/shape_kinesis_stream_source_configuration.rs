@@ -2,12 +2,12 @@
 pub fn ser_kinesis_stream_source_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::KinesisStreamSourceConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.kinesis_stream_arn {
-        object.key("KinesisStreamARN").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("KinesisStreamARN").string(input.kinesis_stream_arn.as_str());
     }
-    if let Some(var_2) = &input.role_arn {
-        object.key("RoleARN").string(var_2.as_str());
+    {
+        object.key("RoleARN").string(input.role_arn.as_str());
     }
     Ok(())
 }

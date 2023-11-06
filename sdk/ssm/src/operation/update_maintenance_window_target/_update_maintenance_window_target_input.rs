@@ -28,8 +28,10 @@ impl UpdateMaintenanceWindowTargetInput {
         self.window_target_id.as_deref()
     }
     /// <p>The targets to add or replace.</p>
-    pub fn targets(&self) -> ::std::option::Option<&[crate::types::Target]> {
-        self.targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
+    pub fn targets(&self) -> &[crate::types::Target] {
+        self.targets.as_deref().unwrap_or_default()
     }
     /// <p>User-provided value that will be included in any Amazon CloudWatch Events events raised while running tasks for these targets in this maintenance window.</p>
     pub fn owner_information(&self) -> ::std::option::Option<&str> {
@@ -82,6 +84,7 @@ pub struct UpdateMaintenanceWindowTargetInputBuilder {
 }
 impl UpdateMaintenanceWindowTargetInputBuilder {
     /// <p>The maintenance window ID with which to modify the target.</p>
+    /// This field is required.
     pub fn window_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.window_id = ::std::option::Option::Some(input.into());
         self
@@ -96,6 +99,7 @@ impl UpdateMaintenanceWindowTargetInputBuilder {
         &self.window_id
     }
     /// <p>The target ID to modify.</p>
+    /// This field is required.
     pub fn window_target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.window_target_id = ::std::option::Option::Some(input.into());
         self
@@ -190,7 +194,7 @@ impl UpdateMaintenanceWindowTargetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_maintenance_window_target::UpdateMaintenanceWindowTargetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_maintenance_window_target::UpdateMaintenanceWindowTargetInput {
             window_id: self.window_id,

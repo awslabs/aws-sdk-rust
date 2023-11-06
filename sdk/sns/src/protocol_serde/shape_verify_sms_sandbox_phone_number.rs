@@ -103,11 +103,10 @@ pub fn de_verify_sms_sandbox_phone_number_http_error(
                 output = crate::protocol_serde::shape_verification_exception::de_verification_exception_xml_err(_response_body, output)
                     .map_err(crate::operation::verify_sms_sandbox_phone_number::VerifySMSSandboxPhoneNumberError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::verification_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::verify_sms_sandbox_phone_number::VerifySMSSandboxPhoneNumberError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::verify_sms_sandbox_phone_number::VerifySMSSandboxPhoneNumberError::generic(generic),

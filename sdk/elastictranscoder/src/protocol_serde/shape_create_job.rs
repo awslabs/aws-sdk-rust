@@ -25,11 +25,10 @@ pub fn de_create_job_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_job::CreateJobError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_job::CreateJobError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "IncompatibleVersionException" => crate::operation::create_job::CreateJobError::IncompatibleVersionException({
@@ -41,11 +40,10 @@ pub fn de_create_job_http_error(
                     crate::protocol_serde::shape_incompatible_version_exception::de_incompatible_version_exception_json_err(_response_body, output)
                         .map_err(crate::operation::create_job::CreateJobError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::incompatible_version_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_job::CreateJobError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServiceException" => crate::operation::create_job::CreateJobError::InternalServiceException({
@@ -56,11 +54,10 @@ pub fn de_create_job_http_error(
                 output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_job::CreateJobError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_service_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_job::CreateJobError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "LimitExceededException" => crate::operation::create_job::CreateJobError::LimitExceededException({
@@ -71,11 +68,10 @@ pub fn de_create_job_http_error(
                 output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_job::CreateJobError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::limit_exceeded_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_job::CreateJobError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::create_job::CreateJobError::ResourceNotFoundException({
@@ -86,11 +82,10 @@ pub fn de_create_job_http_error(
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_job::CreateJobError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_job::CreateJobError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::create_job::CreateJobError::ValidationException({
@@ -101,11 +96,10 @@ pub fn de_create_job_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_job::CreateJobError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_job::CreateJobError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::create_job::CreateJobError::generic(generic),
@@ -130,12 +124,12 @@ pub fn de_create_job_http_response(
 
 pub fn ser_create_job_input(
     input: &crate::operation::create_job::CreateJobInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_job_input::ser_create_job_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_create_job(

@@ -2,7 +2,7 @@
 pub fn ser_profiler_config_for_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ProfilerConfigForUpdate,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.s3_output_path {
         object.key("S3OutputPath").string(var_1.as_str());
     }

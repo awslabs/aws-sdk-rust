@@ -11,8 +11,10 @@ pub struct ListRecordHistoryOutput {
 }
 impl ListRecordHistoryOutput {
     /// <p>The records, in reverse chronological order.</p>
-    pub fn record_details(&self) -> ::std::option::Option<&[crate::types::RecordDetail]> {
-        self.record_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.record_details.is_none()`.
+    pub fn record_details(&self) -> &[crate::types::RecordDetail] {
+        self.record_details.as_deref().unwrap_or_default()
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub fn next_page_token(&self) -> ::std::option::Option<&str> {

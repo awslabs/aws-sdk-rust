@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FreeFormSectionLayoutConfiguration {
     /// <p>The elements that are included in the free-form layout.</p>
-    pub elements: ::std::option::Option<::std::vec::Vec<crate::types::FreeFormLayoutElement>>,
+    pub elements: ::std::vec::Vec<crate::types::FreeFormLayoutElement>,
 }
 impl FreeFormSectionLayoutConfiguration {
     /// <p>The elements that are included in the free-form layout.</p>
-    pub fn elements(&self) -> ::std::option::Option<&[crate::types::FreeFormLayoutElement]> {
-        self.elements.as_deref()
+    pub fn elements(&self) -> &[crate::types::FreeFormLayoutElement] {
+        use std::ops::Deref;
+        self.elements.deref()
     }
 }
 impl FreeFormSectionLayoutConfiguration {
@@ -48,7 +49,16 @@ impl FreeFormSectionLayoutConfigurationBuilder {
         &self.elements
     }
     /// Consumes the builder and constructs a [`FreeFormSectionLayoutConfiguration`](crate::types::FreeFormSectionLayoutConfiguration).
-    pub fn build(self) -> crate::types::FreeFormSectionLayoutConfiguration {
-        crate::types::FreeFormSectionLayoutConfiguration { elements: self.elements }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`elements`](crate::types::builders::FreeFormSectionLayoutConfigurationBuilder::elements)
+    pub fn build(self) -> ::std::result::Result<crate::types::FreeFormSectionLayoutConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::FreeFormSectionLayoutConfiguration {
+            elements: self.elements.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "elements",
+                    "elements was not specified but it is required when building FreeFormSectionLayoutConfiguration",
+                )
+            })?,
+        })
     }
 }

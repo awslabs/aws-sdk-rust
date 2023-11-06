@@ -107,7 +107,7 @@ impl DescribeRuleGroupMetadataInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadataInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadataInput {
             rule_group_name: self.rule_group_name,

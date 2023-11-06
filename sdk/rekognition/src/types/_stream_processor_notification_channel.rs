@@ -7,12 +7,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamProcessorNotificationChannel {
     /// <p> The Amazon Resource Number (ARN) of the Amazon Amazon Simple Notification Service topic to which Amazon Rekognition posts the completion status. </p>
-    pub sns_topic_arn: ::std::option::Option<::std::string::String>,
+    pub sns_topic_arn: ::std::string::String,
 }
 impl StreamProcessorNotificationChannel {
     /// <p> The Amazon Resource Number (ARN) of the Amazon Amazon Simple Notification Service topic to which Amazon Rekognition posts the completion status. </p>
-    pub fn sns_topic_arn(&self) -> ::std::option::Option<&str> {
-        self.sns_topic_arn.as_deref()
+    pub fn sns_topic_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.sns_topic_arn.deref()
     }
 }
 impl StreamProcessorNotificationChannel {
@@ -30,6 +31,7 @@ pub struct StreamProcessorNotificationChannelBuilder {
 }
 impl StreamProcessorNotificationChannelBuilder {
     /// <p> The Amazon Resource Number (ARN) of the Amazon Amazon Simple Notification Service topic to which Amazon Rekognition posts the completion status. </p>
+    /// This field is required.
     pub fn sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sns_topic_arn = ::std::option::Option::Some(input.into());
         self
@@ -44,9 +46,16 @@ impl StreamProcessorNotificationChannelBuilder {
         &self.sns_topic_arn
     }
     /// Consumes the builder and constructs a [`StreamProcessorNotificationChannel`](crate::types::StreamProcessorNotificationChannel).
-    pub fn build(self) -> crate::types::StreamProcessorNotificationChannel {
-        crate::types::StreamProcessorNotificationChannel {
-            sns_topic_arn: self.sns_topic_arn,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`sns_topic_arn`](crate::types::builders::StreamProcessorNotificationChannelBuilder::sns_topic_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::StreamProcessorNotificationChannel, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::StreamProcessorNotificationChannel {
+            sns_topic_arn: self.sns_topic_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "sns_topic_arn",
+                    "sns_topic_arn was not specified but it is required when building StreamProcessorNotificationChannel",
+                )
+            })?,
+        })
     }
 }

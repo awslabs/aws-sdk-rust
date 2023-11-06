@@ -36,8 +36,10 @@ impl GetQuerySuggestionsInput {
     /// <p>The suggestions type to base query suggestions on. The suggestion types are query history or document fields/attributes. You can set one type or the other.</p>
     /// <p>If you set query history as your suggestions type, Amazon Kendra suggests queries relevant to your users based on popular queries in the query history.</p>
     /// <p>If you set document fields/attributes as your suggestions type, Amazon Kendra suggests queries relevant to your users based on the contents of document fields.</p>
-    pub fn suggestion_types(&self) -> ::std::option::Option<&[crate::types::SuggestionType]> {
-        self.suggestion_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.suggestion_types.is_none()`.
+    pub fn suggestion_types(&self) -> &[crate::types::SuggestionType] {
+        self.suggestion_types.as_deref().unwrap_or_default()
     }
     /// <p>Configuration information for the document fields/attributes that you want to base query suggestions on.</p>
     pub fn attribute_suggestions_config(&self) -> ::std::option::Option<&crate::types::AttributeSuggestionsGetConfig> {
@@ -63,6 +65,7 @@ pub struct GetQuerySuggestionsInputBuilder {
 }
 impl GetQuerySuggestionsInputBuilder {
     /// <p>The identifier of the index you want to get query suggestions from.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self
@@ -79,6 +82,7 @@ impl GetQuerySuggestionsInputBuilder {
     /// <p>The text of a user's query to generate query suggestions.</p>
     /// <p>A query is suggested if the query prefix matches what a user starts to type as their query.</p>
     /// <p>Amazon Kendra does not show any suggestions if a user types fewer than two characters or more than 60 characters. A query must also have at least one search result and contain at least one word of more than four characters.</p>
+    /// This field is required.
     pub fn query_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_text = ::std::option::Option::Some(input.into());
         self
@@ -153,7 +157,7 @@ impl GetQuerySuggestionsInputBuilder {
     /// Consumes the builder and constructs a [`GetQuerySuggestionsInput`](crate::operation::get_query_suggestions::GetQuerySuggestionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_query_suggestions::GetQuerySuggestionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_query_suggestions::GetQuerySuggestionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_query_suggestions::GetQuerySuggestionsInput {
             index_id: self.index_id,

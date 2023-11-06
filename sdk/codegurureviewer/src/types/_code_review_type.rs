@@ -19,8 +19,10 @@ impl CodeReviewType {
         self.repository_analysis.as_ref()
     }
     /// <p>They types of analysis performed during a repository analysis or a pull request review. You can specify either <code>Security</code>, <code>CodeQuality</code>, or both.</p>
-    pub fn analysis_types(&self) -> ::std::option::Option<&[crate::types::AnalysisType]> {
-        self.analysis_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.analysis_types.is_none()`.
+    pub fn analysis_types(&self) -> &[crate::types::AnalysisType] {
+        self.analysis_types.as_deref().unwrap_or_default()
     }
 }
 impl CodeReviewType {
@@ -39,6 +41,7 @@ pub struct CodeReviewTypeBuilder {
 }
 impl CodeReviewTypeBuilder {
     /// <p>A code review that analyzes all code under a specified branch in an associated repository. The associated repository is specified using its ARN in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">CreateCodeReview</a>.</p>
+    /// This field is required.
     pub fn repository_analysis(mut self, input: crate::types::RepositoryAnalysis) -> Self {
         self.repository_analysis = ::std::option::Option::Some(input);
         self

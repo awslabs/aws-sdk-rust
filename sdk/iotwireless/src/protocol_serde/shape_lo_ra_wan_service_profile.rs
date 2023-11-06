@@ -2,7 +2,7 @@
 pub fn ser_lo_ra_wan_service_profile(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LoRaWanServiceProfile,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.add_gw_metadata {
         object.key("AddGwMetadata").boolean(input.add_gw_metadata);
     }

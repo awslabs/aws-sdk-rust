@@ -41,6 +41,7 @@ pub struct UpdateTestSetInputBuilder {
 }
 impl UpdateTestSetInputBuilder {
     /// <p>The test set Id for which update test operation to be performed.</p>
+    /// This field is required.
     pub fn test_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.test_set_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateTestSetInputBuilder {
         &self.test_set_id
     }
     /// <p>The new test set name.</p>
+    /// This field is required.
     pub fn test_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.test_set_name = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +87,7 @@ impl UpdateTestSetInputBuilder {
     /// Consumes the builder and constructs a [`UpdateTestSetInput`](crate::operation::update_test_set::UpdateTestSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_test_set::UpdateTestSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_test_set::UpdateTestSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_test_set::UpdateTestSetInput {
             test_set_id: self.test_set_id,
             test_set_name: self.test_set_name,

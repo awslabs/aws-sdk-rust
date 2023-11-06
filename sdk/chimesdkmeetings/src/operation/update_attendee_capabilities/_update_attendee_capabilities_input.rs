@@ -41,6 +41,7 @@ pub struct UpdateAttendeeCapabilitiesInputBuilder {
 }
 impl UpdateAttendeeCapabilitiesInputBuilder {
     /// <p>The ID of the meeting associated with the update request.</p>
+    /// This field is required.
     pub fn meeting_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.meeting_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateAttendeeCapabilitiesInputBuilder {
         &self.meeting_id
     }
     /// <p>The ID of the attendee associated with the update request.</p>
+    /// This field is required.
     pub fn attendee_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attendee_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl UpdateAttendeeCapabilitiesInputBuilder {
         &self.attendee_id
     }
     /// <p>The capabilities that you want to update.</p>
+    /// This field is required.
     pub fn capabilities(mut self, input: crate::types::AttendeeCapabilities) -> Self {
         self.capabilities = ::std::option::Option::Some(input);
         self
@@ -87,7 +90,7 @@ impl UpdateAttendeeCapabilitiesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_attendee_capabilities::UpdateAttendeeCapabilitiesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_attendee_capabilities::UpdateAttendeeCapabilitiesInput {
             meeting_id: self.meeting_id,

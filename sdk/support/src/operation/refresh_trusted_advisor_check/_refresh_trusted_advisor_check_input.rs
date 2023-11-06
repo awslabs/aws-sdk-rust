@@ -34,6 +34,7 @@ impl RefreshTrustedAdvisorCheckInputBuilder {
     /// <p>The unique identifier for the Trusted Advisor check to refresh.</p> <note>
     /// <p>Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.</p>
     /// </note>
+    /// This field is required.
     pub fn check_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.check_id = ::std::option::Option::Some(input.into());
         self
@@ -56,7 +57,7 @@ impl RefreshTrustedAdvisorCheckInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::refresh_trusted_advisor_check::RefreshTrustedAdvisorCheckInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::refresh_trusted_advisor_check::RefreshTrustedAdvisorCheckInput { check_id: self.check_id })
     }

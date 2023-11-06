@@ -7,8 +7,8 @@ impl super::Client {
     ///   - [`linux_subscriptions_discovery(Option<LinuxSubscriptionsDiscovery>)`](crate::operation::get_service_settings::GetServiceSettingsOutput::linux_subscriptions_discovery): <p>Lists if discovery has been enabled for Linux subscriptions.</p>
     ///   - [`linux_subscriptions_discovery_settings(Option<LinuxSubscriptionsDiscoverySettings>)`](crate::operation::get_service_settings::GetServiceSettingsOutput::linux_subscriptions_discovery_settings): <p>Lists the settings defined for Linux subscriptions discovery. The settings include if Organizations integration has been enabled, and which Regions data will be aggregated from.</p>
     ///   - [`status(Option<Status>)`](crate::operation::get_service_settings::GetServiceSettingsOutput::status): <p>Indicates the status of Linux subscriptions settings being applied.</p>
-    ///   - [`status_message(Option<HashMap<String, String>>)`](crate::operation::get_service_settings::GetServiceSettingsOutput::status_message): <p>A message which details the Linux subscriptions service settings current status.</p>
-    ///   - [`home_regions(Option<Vec<String>>)`](crate::operation::get_service_settings::GetServiceSettingsOutput::home_regions): <p>The Region in which License Manager displays the aggregated data for Linux subscriptions.</p>
+    ///   - [`status_message(Option<HashMap::<String, String>>)`](crate::operation::get_service_settings::GetServiceSettingsOutput::status_message): <p>A message which details the Linux subscriptions service settings current status.</p>
+    ///   - [`home_regions(Option<Vec::<String>>)`](crate::operation::get_service_settings::GetServiceSettingsOutput::home_regions): <p>The Region in which License Manager displays the aggregated data for Linux subscriptions.</p>
     /// - On failure, responds with [`SdkError<GetServiceSettingsError>`](crate::operation::get_service_settings::GetServiceSettingsError)
     pub fn get_service_settings(&self) -> crate::operation::get_service_settings::builders::GetServiceSettingsFluentBuilder {
         crate::operation::get_service_settings::builders::GetServiceSettingsFluentBuilder::new(self.handle.clone())

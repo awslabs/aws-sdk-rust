@@ -15,8 +15,10 @@ impl ListSubscribedRuleGroupsOutput {
         self.next_marker.as_deref()
     }
     /// <p>An array of <code>RuleGroup</code> objects.</p>
-    pub fn rule_groups(&self) -> ::std::option::Option<&[crate::types::SubscribedRuleGroupSummary]> {
-        self.rule_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rule_groups.is_none()`.
+    pub fn rule_groups(&self) -> &[crate::types::SubscribedRuleGroupSummary] {
+        self.rule_groups.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListSubscribedRuleGroupsOutput {

@@ -26,7 +26,7 @@ pub struct UpdateLaunchConfigurationTemplateInput {
     /// <p>Launch configuration template boot mode.</p>
     pub boot_mode: ::std::option::Option<crate::types::BootMode>,
     /// <p>Small volume maximum size.</p>
-    pub small_volume_max_size: i64,
+    pub small_volume_max_size: ::std::option::Option<i64>,
     /// <p>Small volume config.</p>
     pub small_volume_conf: ::std::option::Option<crate::types::LaunchTemplateDiskConf>,
     /// <p>Large volume config.</p>
@@ -78,7 +78,7 @@ impl UpdateLaunchConfigurationTemplateInput {
         self.boot_mode.as_ref()
     }
     /// <p>Small volume maximum size.</p>
-    pub fn small_volume_max_size(&self) -> i64 {
+    pub fn small_volume_max_size(&self) -> ::std::option::Option<i64> {
         self.small_volume_max_size
     }
     /// <p>Small volume config.</p>
@@ -118,6 +118,7 @@ pub struct UpdateLaunchConfigurationTemplateInputBuilder {
 }
 impl UpdateLaunchConfigurationTemplateInputBuilder {
     /// <p>Launch Configuration Template ID.</p>
+    /// This field is required.
     pub fn launch_configuration_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_configuration_template_id = ::std::option::Option::Some(input.into());
         self
@@ -321,7 +322,7 @@ impl UpdateLaunchConfigurationTemplateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplateInput {
@@ -336,7 +337,7 @@ impl UpdateLaunchConfigurationTemplateInputBuilder {
                 copy_tags: self.copy_tags,
                 licensing: self.licensing,
                 boot_mode: self.boot_mode,
-                small_volume_max_size: self.small_volume_max_size.unwrap_or_default(),
+                small_volume_max_size: self.small_volume_max_size,
                 small_volume_conf: self.small_volume_conf,
                 large_volume_conf: self.large_volume_conf,
             },

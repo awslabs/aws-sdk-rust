@@ -21,8 +21,10 @@ impl InputPrepareScheduleActionSettings {
         self.input_clipping_settings.as_ref()
     }
     /// The value for the variable portion of the URL for the dynamic input, for this instance of the input. Each time you use the same dynamic input in an input switch action, you can provide a different value, in order to connect the input to a different content source.
-    pub fn url_path(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.url_path.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.url_path.is_none()`.
+    pub fn url_path(&self) -> &[::std::string::String] {
+        self.url_path.as_deref().unwrap_or_default()
     }
 }
 impl InputPrepareScheduleActionSettings {

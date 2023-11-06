@@ -18,8 +18,10 @@ impl GetTransitGatewayRegistrationsInput {
         self.global_network_id.as_deref()
     }
     /// <p>The Amazon Resource Names (ARNs) of one or more transit gateways. The maximum is 10.</p>
-    pub fn transit_gateway_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.transit_gateway_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.transit_gateway_arns.is_none()`.
+    pub fn transit_gateway_arns(&self) -> &[::std::string::String] {
+        self.transit_gateway_arns.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -48,6 +50,7 @@ pub struct GetTransitGatewayRegistrationsInputBuilder {
 }
 impl GetTransitGatewayRegistrationsInputBuilder {
     /// <p>The ID of the global network.</p>
+    /// This field is required.
     pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_network_id = ::std::option::Option::Some(input.into());
         self
@@ -114,7 +117,7 @@ impl GetTransitGatewayRegistrationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_transit_gateway_registrations::GetTransitGatewayRegistrationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_transit_gateway_registrations::GetTransitGatewayRegistrationsInput {
             global_network_id: self.global_network_id,

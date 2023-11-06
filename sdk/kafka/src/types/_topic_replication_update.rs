@@ -29,12 +29,16 @@ impl TopicReplicationUpdate {
         self.detect_and_copy_new_topics
     }
     /// <p>List of regular expression patterns indicating the topics that should not be replicated.</p>
-    pub fn topics_to_exclude(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.topics_to_exclude.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.topics_to_exclude.is_none()`.
+    pub fn topics_to_exclude(&self) -> &[::std::string::String] {
+        self.topics_to_exclude.as_deref().unwrap_or_default()
     }
     /// <p>List of regular expression patterns indicating the topics to copy.</p>
-    pub fn topics_to_replicate(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.topics_to_replicate.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.topics_to_replicate.is_none()`.
+    pub fn topics_to_replicate(&self) -> &[::std::string::String] {
+        self.topics_to_replicate.as_deref().unwrap_or_default()
     }
 }
 impl TopicReplicationUpdate {
@@ -56,6 +60,7 @@ pub struct TopicReplicationUpdateBuilder {
 }
 impl TopicReplicationUpdateBuilder {
     /// <p>Whether to periodically configure remote topic ACLs to match their corresponding upstream topics.</p>
+    /// This field is required.
     pub fn copy_access_control_lists_for_topics(mut self, input: bool) -> Self {
         self.copy_access_control_lists_for_topics = ::std::option::Option::Some(input);
         self
@@ -70,6 +75,7 @@ impl TopicReplicationUpdateBuilder {
         &self.copy_access_control_lists_for_topics
     }
     /// <p>Whether to periodically configure remote topics to match their corresponding upstream topics.</p>
+    /// This field is required.
     pub fn copy_topic_configurations(mut self, input: bool) -> Self {
         self.copy_topic_configurations = ::std::option::Option::Some(input);
         self
@@ -84,6 +90,7 @@ impl TopicReplicationUpdateBuilder {
         &self.copy_topic_configurations
     }
     /// <p>Whether to periodically check for new topics and partitions.</p>
+    /// This field is required.
     pub fn detect_and_copy_new_topics(mut self, input: bool) -> Self {
         self.detect_and_copy_new_topics = ::std::option::Option::Some(input);
         self

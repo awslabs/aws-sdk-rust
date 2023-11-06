@@ -7,7 +7,7 @@ pub struct EvaluationRule {
     /// <p>The name of the experiment or launch.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>This value is <code>aws.evidently.splits</code> if this is an evaluation rule for a launch, and it is <code>aws.evidently.onlineab</code> if this is an evaluation rule for an experiment.</p>
-    pub r#type: ::std::option::Option<::std::string::String>,
+    pub r#type: ::std::string::String,
 }
 impl EvaluationRule {
     /// <p>The name of the experiment or launch.</p>
@@ -15,8 +15,9 @@ impl EvaluationRule {
         self.name.as_deref()
     }
     /// <p>This value is <code>aws.evidently.splits</code> if this is an evaluation rule for a launch, and it is <code>aws.evidently.onlineab</code> if this is an evaluation rule for an experiment.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
-        self.r#type.as_deref()
+    pub fn r#type(&self) -> &str {
+        use std::ops::Deref;
+        self.r#type.deref()
     }
 }
 impl EvaluationRule {
@@ -49,6 +50,7 @@ impl EvaluationRuleBuilder {
         &self.name
     }
     /// <p>This value is <code>aws.evidently.splits</code> if this is an evaluation rule for a launch, and it is <code>aws.evidently.onlineab</code> if this is an evaluation rule for an experiment.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl EvaluationRuleBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`EvaluationRule`](crate::types::EvaluationRule).
-    pub fn build(self) -> crate::types::EvaluationRule {
-        crate::types::EvaluationRule {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::EvaluationRuleBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::EvaluationRule, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EvaluationRule {
             name: self.name,
-            r#type: self.r#type,
-        }
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building EvaluationRule",
+                )
+            })?,
+        })
     }
 }

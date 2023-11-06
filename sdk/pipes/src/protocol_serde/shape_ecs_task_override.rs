@@ -2,7 +2,7 @@
 pub fn ser_ecs_task_override(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EcsTaskOverride,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.container_overrides {
         let mut array_2 = object.key("ContainerOverrides").start_array();
         for item_3 in var_1 {

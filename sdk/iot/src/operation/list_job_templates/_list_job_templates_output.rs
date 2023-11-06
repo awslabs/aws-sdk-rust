@@ -11,8 +11,10 @@ pub struct ListJobTemplatesOutput {
 }
 impl ListJobTemplatesOutput {
     /// <p>A list of objects that contain information about the job templates.</p>
-    pub fn job_templates(&self) -> ::std::option::Option<&[crate::types::JobTemplateSummary]> {
-        self.job_templates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_templates.is_none()`.
+    pub fn job_templates(&self) -> &[crate::types::JobTemplateSummary] {
+        self.job_templates.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of results, or <b>null</b> if there are no additional results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

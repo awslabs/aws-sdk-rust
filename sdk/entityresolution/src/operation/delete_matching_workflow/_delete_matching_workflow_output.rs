@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteMatchingWorkflowOutput {
     /// <p>A successful operation message.</p>
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
     _request_id: Option<String>,
 }
 impl DeleteMatchingWorkflowOutput {
     /// <p>A successful operation message.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        use std::ops::Deref;
+        self.message.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteMatchingWorkflowOutput {
@@ -34,6 +35,7 @@ pub struct DeleteMatchingWorkflowOutputBuilder {
 }
 impl DeleteMatchingWorkflowOutputBuilder {
     /// <p>A successful operation message.</p>
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,22 @@ impl DeleteMatchingWorkflowOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteMatchingWorkflowOutput`](crate::operation::delete_matching_workflow::DeleteMatchingWorkflowOutput).
-    pub fn build(self) -> crate::operation::delete_matching_workflow::DeleteMatchingWorkflowOutput {
-        crate::operation::delete_matching_workflow::DeleteMatchingWorkflowOutput {
-            message: self.message,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`message`](crate::operation::delete_matching_workflow::builders::DeleteMatchingWorkflowOutputBuilder::message)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_matching_workflow::DeleteMatchingWorkflowOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::delete_matching_workflow::DeleteMatchingWorkflowOutput {
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building DeleteMatchingWorkflowOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

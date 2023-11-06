@@ -27,6 +27,7 @@ pub struct StopDbClusterInputBuilder {
 }
 impl StopDbClusterInputBuilder {
     /// <p>The identifier of the cluster to stop. Example: <code>docdb-2019-05-28-15-24-52</code> </p>
+    /// This field is required.
     pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_identifier = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl StopDbClusterInputBuilder {
     /// Consumes the builder and constructs a [`StopDbClusterInput`](crate::operation::stop_db_cluster::StopDbClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_db_cluster::StopDbClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_db_cluster::StopDbClusterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_db_cluster::StopDbClusterInput {
             db_cluster_identifier: self.db_cluster_identifier,
         })

@@ -27,6 +27,7 @@ pub struct DeleteHypervisorInputBuilder {
 }
 impl DeleteHypervisorInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor to delete.</p>
+    /// This field is required.
     pub fn hypervisor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hypervisor_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteHypervisorInputBuilder {
     /// Consumes the builder and constructs a [`DeleteHypervisorInput`](crate::operation::delete_hypervisor::DeleteHypervisorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_hypervisor::DeleteHypervisorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_hypervisor::DeleteHypervisorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_hypervisor::DeleteHypervisorInput {
             hypervisor_arn: self.hypervisor_arn,
         })

@@ -30,16 +30,20 @@ impl CreateScheduledAuditInput {
         self.day_of_week.as_ref()
     }
     /// <p>Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
-    pub fn target_check_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.target_check_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_check_names.is_none()`.
+    pub fn target_check_names(&self) -> &[::std::string::String] {
+        self.target_check_names.as_deref().unwrap_or_default()
     }
     /// <p>The name you want to give to the scheduled audit. (Max. 128 chars)</p>
     pub fn scheduled_audit_name(&self) -> ::std::option::Option<&str> {
         self.scheduled_audit_name.as_deref()
     }
     /// <p>Metadata that can be used to manage the scheduled audit.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateScheduledAuditInput {
@@ -62,6 +66,7 @@ pub struct CreateScheduledAuditInputBuilder {
 }
 impl CreateScheduledAuditInputBuilder {
     /// <p>How often the scheduled audit takes place, either <code>DAILY</code>, <code>WEEKLY</code>, <code>BIWEEKLY</code> or <code>MONTHLY</code>. The start time of each audit is determined by the system.</p>
+    /// This field is required.
     pub fn frequency(mut self, input: crate::types::AuditFrequency) -> Self {
         self.frequency = ::std::option::Option::Some(input);
         self
@@ -124,6 +129,7 @@ impl CreateScheduledAuditInputBuilder {
         &self.target_check_names
     }
     /// <p>The name you want to give to the scheduled audit. (Max. 128 chars)</p>
+    /// This field is required.
     pub fn scheduled_audit_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduled_audit_name = ::std::option::Option::Some(input.into());
         self
@@ -160,7 +166,7 @@ impl CreateScheduledAuditInputBuilder {
     /// Consumes the builder and constructs a [`CreateScheduledAuditInput`](crate::operation::create_scheduled_audit::CreateScheduledAuditInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_scheduled_audit::CreateScheduledAuditInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_scheduled_audit::CreateScheduledAuditInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_scheduled_audit::CreateScheduledAuditInput {
             frequency: self.frequency,

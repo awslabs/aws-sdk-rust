@@ -15,8 +15,10 @@ impl ModifyInstanceGroupsInput {
         self.cluster_id.as_deref()
     }
     /// <p>Instance groups to change.</p>
-    pub fn instance_groups(&self) -> ::std::option::Option<&[crate::types::InstanceGroupModifyConfig]> {
-        self.instance_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_groups.is_none()`.
+    pub fn instance_groups(&self) -> &[crate::types::InstanceGroupModifyConfig] {
+        self.instance_groups.as_deref().unwrap_or_default()
     }
 }
 impl ModifyInstanceGroupsInput {
@@ -71,7 +73,7 @@ impl ModifyInstanceGroupsInputBuilder {
     /// Consumes the builder and constructs a [`ModifyInstanceGroupsInput`](crate::operation::modify_instance_groups::ModifyInstanceGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_instance_groups::ModifyInstanceGroupsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::modify_instance_groups::ModifyInstanceGroupsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::modify_instance_groups::ModifyInstanceGroupsInput {
             cluster_id: self.cluster_id,

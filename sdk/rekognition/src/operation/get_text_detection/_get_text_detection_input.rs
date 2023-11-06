@@ -41,6 +41,7 @@ pub struct GetTextDetectionInputBuilder {
 }
 impl GetTextDetectionInputBuilder {
     /// <p>Job identifier for the text detection operation for which you want results returned. You get the job identifer from an initial call to <code>StartTextDetection</code>.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl GetTextDetectionInputBuilder {
     /// Consumes the builder and constructs a [`GetTextDetectionInput`](crate::operation::get_text_detection::GetTextDetectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_text_detection::GetTextDetectionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_text_detection::GetTextDetectionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_text_detection::GetTextDetectionInput {
             job_id: self.job_id,
             max_results: self.max_results,

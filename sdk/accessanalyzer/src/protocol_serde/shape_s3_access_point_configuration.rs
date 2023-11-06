@@ -2,7 +2,7 @@
 pub fn ser_s3_access_point_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::S3AccessPointConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.access_point_policy {
         object.key("accessPointPolicy").string(var_1.as_str());
     }

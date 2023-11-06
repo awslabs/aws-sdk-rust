@@ -21,8 +21,10 @@ impl ListFileSystemAssociationsOutput {
         self.next_marker.as_deref()
     }
     /// <p>An array of information about the Amazon FSx gateway's file system associations.</p>
-    pub fn file_system_association_summary_list(&self) -> ::std::option::Option<&[crate::types::FileSystemAssociationSummary]> {
-        self.file_system_association_summary_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.file_system_association_summary_list.is_none()`.
+    pub fn file_system_association_summary_list(&self) -> &[crate::types::FileSystemAssociationSummary] {
+        self.file_system_association_summary_list.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListFileSystemAssociationsOutput {

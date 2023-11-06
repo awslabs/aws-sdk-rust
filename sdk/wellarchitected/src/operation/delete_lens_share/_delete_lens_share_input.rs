@@ -53,6 +53,7 @@ pub struct DeleteLensShareInputBuilder {
 }
 impl DeleteLensShareInputBuilder {
     /// <p>The ID associated with the share.</p>
+    /// This field is required.
     pub fn share_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.share_id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +71,7 @@ impl DeleteLensShareInputBuilder {
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    /// This field is required.
     pub fn lens_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lens_alias = ::std::option::Option::Some(input.into());
         self
@@ -93,6 +95,7 @@ impl DeleteLensShareInputBuilder {
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
+    /// This field is required.
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
@@ -115,7 +118,7 @@ impl DeleteLensShareInputBuilder {
     /// Consumes the builder and constructs a [`DeleteLensShareInput`](crate::operation::delete_lens_share::DeleteLensShareInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_lens_share::DeleteLensShareInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_lens_share::DeleteLensShareInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_lens_share::DeleteLensShareInput {
             share_id: self.share_id,
             lens_alias: self.lens_alias,

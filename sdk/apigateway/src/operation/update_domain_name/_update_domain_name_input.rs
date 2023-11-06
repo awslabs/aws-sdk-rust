@@ -15,8 +15,10 @@ impl UpdateDomainNameInput {
         self.domain_name.as_deref()
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn patch_operations(&self) -> ::std::option::Option<&[crate::types::PatchOperation]> {
-        self.patch_operations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.patch_operations.is_none()`.
+    pub fn patch_operations(&self) -> &[crate::types::PatchOperation] {
+        self.patch_operations.as_deref().unwrap_or_default()
     }
 }
 impl UpdateDomainNameInput {
@@ -35,6 +37,7 @@ pub struct UpdateDomainNameInputBuilder {
 }
 impl UpdateDomainNameInputBuilder {
     /// <p>The name of the DomainName resource to be changed.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -71,7 +74,7 @@ impl UpdateDomainNameInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDomainNameInput`](crate::operation::update_domain_name::UpdateDomainNameInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_domain_name::UpdateDomainNameInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_domain_name::UpdateDomainNameInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_domain_name::UpdateDomainNameInput {
             domain_name: self.domain_name,
             patch_operations: self.patch_operations,

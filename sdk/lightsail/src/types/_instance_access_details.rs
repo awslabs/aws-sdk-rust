@@ -69,8 +69,10 @@ impl InstanceAccessDetails {
         self.username.as_deref()
     }
     /// <p>Describes the public SSH host keys or the RDP certificate.</p>
-    pub fn host_keys(&self) -> ::std::option::Option<&[crate::types::HostKeyAttributes]> {
-        self.host_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.host_keys.is_none()`.
+    pub fn host_keys(&self) -> &[crate::types::HostKeyAttributes] {
+        self.host_keys.as_deref().unwrap_or_default()
     }
 }
 impl InstanceAccessDetails {

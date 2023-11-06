@@ -27,6 +27,7 @@ pub struct DeleteHumanTaskUiInputBuilder {
 }
 impl DeleteHumanTaskUiInputBuilder {
     /// <p>The name of the human task user interface (work task template) you want to delete.</p>
+    /// This field is required.
     pub fn human_task_ui_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.human_task_ui_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteHumanTaskUiInputBuilder {
     /// Consumes the builder and constructs a [`DeleteHumanTaskUiInput`](crate::operation::delete_human_task_ui::DeleteHumanTaskUiInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_human_task_ui::DeleteHumanTaskUiInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_human_task_ui::DeleteHumanTaskUiInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_human_task_ui::DeleteHumanTaskUiInput {
             human_task_ui_name: self.human_task_ui_name,
         })

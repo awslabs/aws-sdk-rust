@@ -56,6 +56,7 @@ pub struct CreateProfilingGroupInputBuilder {
 }
 impl CreateProfilingGroupInputBuilder {
     /// <p>The name of the profiling group to create.</p>
+    /// This field is required.
     pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profiling_group_name = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +85,7 @@ impl CreateProfilingGroupInputBuilder {
         &self.compute_platform
     }
     /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental creation of duplicate profiling groups if there are failures and retries. </p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -134,7 +136,7 @@ impl CreateProfilingGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateProfilingGroupInput`](crate::operation::create_profiling_group::CreateProfilingGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_profiling_group::CreateProfilingGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_profiling_group::CreateProfilingGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_profiling_group::CreateProfilingGroupInput {
             profiling_group_name: self.profiling_group_name,

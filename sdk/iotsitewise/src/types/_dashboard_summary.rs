@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DashboardSummary {
     /// <p>The ID of the dashboard.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The name of the dashboard</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The dashboard's description.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The date the dashboard was created, in Unix epoch time.</p>
@@ -17,12 +17,14 @@ pub struct DashboardSummary {
 }
 impl DashboardSummary {
     /// <p>The ID of the dashboard.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The name of the dashboard</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The dashboard's description.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -56,6 +58,7 @@ pub struct DashboardSummaryBuilder {
 }
 impl DashboardSummaryBuilder {
     /// <p>The ID of the dashboard.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +73,7 @@ impl DashboardSummaryBuilder {
         &self.id
     }
     /// <p>The name of the dashboard</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -126,13 +130,26 @@ impl DashboardSummaryBuilder {
         &self.last_update_date
     }
     /// Consumes the builder and constructs a [`DashboardSummary`](crate::types::DashboardSummary).
-    pub fn build(self) -> crate::types::DashboardSummary {
-        crate::types::DashboardSummary {
-            id: self.id,
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::DashboardSummaryBuilder::id)
+    /// - [`name`](crate::types::builders::DashboardSummaryBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::DashboardSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DashboardSummary {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building DashboardSummary",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DashboardSummary",
+                )
+            })?,
             description: self.description,
             creation_date: self.creation_date,
             last_update_date: self.last_update_date,
-        }
+        })
     }
 }

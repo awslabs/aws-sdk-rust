@@ -29,8 +29,10 @@ impl VerifiedAccessInstance {
         self.description.as_deref()
     }
     /// <p>The IDs of the Amazon Web Services Verified Access trust providers.</p>
-    pub fn verified_access_trust_providers(&self) -> ::std::option::Option<&[crate::types::VerifiedAccessTrustProviderCondensed]> {
-        self.verified_access_trust_providers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.verified_access_trust_providers.is_none()`.
+    pub fn verified_access_trust_providers(&self) -> &[crate::types::VerifiedAccessTrustProviderCondensed] {
+        self.verified_access_trust_providers.as_deref().unwrap_or_default()
     }
     /// <p>The creation time.</p>
     pub fn creation_time(&self) -> ::std::option::Option<&str> {
@@ -41,8 +43,10 @@ impl VerifiedAccessInstance {
         self.last_updated_time.as_deref()
     }
     /// <p>The tags.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Describes whether support for Federal Information Processing Standards (FIPS) is enabled on the instance.</p>
     pub fn fips_enabled(&self) -> ::std::option::Option<bool> {

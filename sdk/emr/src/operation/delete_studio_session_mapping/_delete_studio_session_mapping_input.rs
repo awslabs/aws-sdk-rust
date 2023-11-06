@@ -48,6 +48,7 @@ pub struct DeleteStudioSessionMappingInputBuilder {
 }
 impl DeleteStudioSessionMappingInputBuilder {
     /// <p>The ID of the Amazon EMR Studio.</p>
+    /// This field is required.
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +91,7 @@ impl DeleteStudioSessionMappingInputBuilder {
         &self.identity_name
     }
     /// <p>Specifies whether the identity to delete from the Amazon EMR Studio is a user or a group.</p>
+    /// This field is required.
     pub fn identity_type(mut self, input: crate::types::IdentityType) -> Self {
         self.identity_type = ::std::option::Option::Some(input);
         self
@@ -108,7 +110,7 @@ impl DeleteStudioSessionMappingInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_studio_session_mapping::DeleteStudioSessionMappingInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_studio_session_mapping::DeleteStudioSessionMappingInput {
             studio_id: self.studio_id,

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListedServer {
     /// <p>Specifies the unique Amazon Resource Name (ARN) for a server to be listed.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>Specifies the domain of the storage system that is used for file transfers.</p>
     pub domain: ::std::option::Option<crate::types::Domain>,
     /// <p>The mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Transfer Family service.</p>
@@ -27,8 +27,9 @@ pub struct ListedServer {
 }
 impl ListedServer {
     /// <p>Specifies the unique Amazon Resource Name (ARN) for a server to be listed.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>Specifies the domain of the storage system that is used for file transfers.</p>
     pub fn domain(&self) -> ::std::option::Option<&crate::types::Domain> {
@@ -85,6 +86,7 @@ pub struct ListedServerBuilder {
 }
 impl ListedServerBuilder {
     /// <p>Specifies the unique Amazon Resource Name (ARN) for a server to be listed.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -209,9 +211,16 @@ impl ListedServerBuilder {
         &self.user_count
     }
     /// Consumes the builder and constructs a [`ListedServer`](crate::types::ListedServer).
-    pub fn build(self) -> crate::types::ListedServer {
-        crate::types::ListedServer {
-            arn: self.arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::ListedServerBuilder::arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::ListedServer, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ListedServer {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building ListedServer",
+                )
+            })?,
             domain: self.domain,
             identity_provider_type: self.identity_provider_type,
             endpoint_type: self.endpoint_type,
@@ -219,6 +228,6 @@ impl ListedServerBuilder {
             server_id: self.server_id,
             state: self.state,
             user_count: self.user_count,
-        }
+        })
     }
 }

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KxDatabaseConfiguration {
     /// <p>The name of the kdb database. When this parameter is specified in the structure, S3 with the whole database is included by default.</p>
-    pub database_name: ::std::option::Option<::std::string::String>,
+    pub database_name: ::std::string::String,
     /// <p>Configuration details for the disk cache used to increase performance reading from a kdb database mounted to the cluster.</p>
     pub cache_configurations: ::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseCacheConfiguration>>,
     /// <p>A unique identifier of the changeset that is associated with the cluster.</p>
@@ -13,12 +13,15 @@ pub struct KxDatabaseConfiguration {
 }
 impl KxDatabaseConfiguration {
     /// <p>The name of the kdb database. When this parameter is specified in the structure, S3 with the whole database is included by default.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
-        self.database_name.as_deref()
+    pub fn database_name(&self) -> &str {
+        use std::ops::Deref;
+        self.database_name.deref()
     }
     /// <p>Configuration details for the disk cache used to increase performance reading from a kdb database mounted to the cluster.</p>
-    pub fn cache_configurations(&self) -> ::std::option::Option<&[crate::types::KxDatabaseCacheConfiguration]> {
-        self.cache_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cache_configurations.is_none()`.
+    pub fn cache_configurations(&self) -> &[crate::types::KxDatabaseCacheConfiguration] {
+        self.cache_configurations.as_deref().unwrap_or_default()
     }
     /// <p>A unique identifier of the changeset that is associated with the cluster.</p>
     pub fn changeset_id(&self) -> ::std::option::Option<&str> {
@@ -42,6 +45,7 @@ pub struct KxDatabaseConfigurationBuilder {
 }
 impl KxDatabaseConfigurationBuilder {
     /// <p>The name of the kdb database. When this parameter is specified in the structure, S3 with the whole database is included by default.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -90,11 +94,18 @@ impl KxDatabaseConfigurationBuilder {
         &self.changeset_id
     }
     /// Consumes the builder and constructs a [`KxDatabaseConfiguration`](crate::types::KxDatabaseConfiguration).
-    pub fn build(self) -> crate::types::KxDatabaseConfiguration {
-        crate::types::KxDatabaseConfiguration {
-            database_name: self.database_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`database_name`](crate::types::builders::KxDatabaseConfigurationBuilder::database_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::KxDatabaseConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::KxDatabaseConfiguration {
+            database_name: self.database_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "database_name",
+                    "database_name was not specified but it is required when building KxDatabaseConfiguration",
+                )
+            })?,
             cache_configurations: self.cache_configurations,
             changeset_id: self.changeset_id,
-        }
+        })
     }
 }

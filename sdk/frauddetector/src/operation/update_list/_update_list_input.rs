@@ -29,8 +29,10 @@ impl UpdateListInput {
     }
     /// <p> One or more list elements to add or replace. If you are providing the elements, make sure to specify the <code>updateMode</code> to use. </p>
     /// <p>If you are deleting all elements from the list, use <code>REPLACE</code> for the <code>updateMode</code> and provide an empty list (0 elements).</p>
-    pub fn elements(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.elements.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.elements.is_none()`.
+    pub fn elements(&self) -> &[::std::string::String] {
+        self.elements.as_deref().unwrap_or_default()
     }
     /// <p> The new description. </p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -71,6 +73,7 @@ pub struct UpdateListInputBuilder {
 }
 impl UpdateListInputBuilder {
     /// <p> The name of the list to update. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -171,7 +174,7 @@ impl UpdateListInputBuilder {
         &self.variable_type
     }
     /// Consumes the builder and constructs a [`UpdateListInput`](crate::operation::update_list::UpdateListInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_list::UpdateListInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_list::UpdateListInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_list::UpdateListInput {
             name: self.name,
             elements: self.elements,

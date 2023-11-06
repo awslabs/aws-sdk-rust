@@ -2,7 +2,7 @@
 pub fn ser_list_resources_for_tag_option_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_resources_for_tag_option::ListResourcesForTagOptionInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.tag_option_id {
         object.key("TagOptionId").string(var_1.as_str());
     }

@@ -62,8 +62,10 @@ impl ImportCertificateInput {
         self.description.as_deref()
     }
     /// <p>Key-value pairs that can be used to group and search for certificates.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for ImportCertificateInput {
@@ -102,6 +104,7 @@ pub struct ImportCertificateInputBuilder {
 }
 impl ImportCertificateInputBuilder {
     /// <p>Specifies whether this certificate is used for signing or encryption.</p>
+    /// This field is required.
     pub fn usage(mut self, input: crate::types::CertificateUsageType) -> Self {
         self.usage = ::std::option::Option::Some(input);
         self
@@ -119,6 +122,7 @@ impl ImportCertificateInputBuilder {
     /// <li> <p>For the CLI, provide a file path for a certificate in URI format. For example, <code>--certificate file://encryption-cert.pem</code>. Alternatively, you can provide the raw content.</p> </li>
     /// <li> <p>For the SDK, specify the raw content of a certificate file. For example, <code>--certificate "`cat encryption-cert.pem`"</code>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate = ::std::option::Option::Some(input.into());
         self
@@ -240,7 +244,7 @@ impl ImportCertificateInputBuilder {
     /// Consumes the builder and constructs a [`ImportCertificateInput`](crate::operation::import_certificate::ImportCertificateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::import_certificate::ImportCertificateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::import_certificate::ImportCertificateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::import_certificate::ImportCertificateInput {
             usage: self.usage,
             certificate: self.certificate,

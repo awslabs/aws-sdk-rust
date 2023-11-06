@@ -2,7 +2,7 @@
 pub fn ser_delete_notebook_instance_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_notebook_instance::DeleteNotebookInstanceInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.notebook_instance_name {
         object.key("NotebookInstanceName").string(var_1.as_str());
     }

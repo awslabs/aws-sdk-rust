@@ -65,7 +65,7 @@ impl ListIdentityPoolUsageInputBuilder {
     /// Consumes the builder and constructs a [`ListIdentityPoolUsageInput`](crate::operation::list_identity_pool_usage::ListIdentityPoolUsageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_identity_pool_usage::ListIdentityPoolUsageInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_identity_pool_usage::ListIdentityPoolUsageInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_identity_pool_usage::ListIdentityPoolUsageInput {
             next_token: self.next_token,

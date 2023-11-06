@@ -11,12 +11,16 @@ pub struct TermRelations {
 }
 impl TermRelations {
     /// <p>The <code>isA</code> property of the term relations.</p>
-    pub fn is_a(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.is_a.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.is_a.is_none()`.
+    pub fn is_a(&self) -> &[::std::string::String] {
+        self.is_a.as_deref().unwrap_or_default()
     }
     /// <p>The classifies of the term relations.</p>
-    pub fn classifies(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.classifies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.classifies.is_none()`.
+    pub fn classifies(&self) -> &[::std::string::String] {
+        self.classifies.as_deref().unwrap_or_default()
     }
 }
 impl TermRelations {

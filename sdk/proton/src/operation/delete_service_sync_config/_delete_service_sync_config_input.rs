@@ -27,6 +27,7 @@ pub struct DeleteServiceSyncConfigInputBuilder {
 }
 impl DeleteServiceSyncConfigInputBuilder {
     /// <p>The name of the service that you want to delete the service sync configuration for.</p>
+    /// This field is required.
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteServiceSyncConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_service_sync_config::DeleteServiceSyncConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_service_sync_config::DeleteServiceSyncConfigInput {
             service_name: self.service_name,

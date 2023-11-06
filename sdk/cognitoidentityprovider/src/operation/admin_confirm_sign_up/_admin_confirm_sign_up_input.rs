@@ -69,6 +69,7 @@ pub struct AdminConfirmSignUpInputBuilder {
 }
 impl AdminConfirmSignUpInputBuilder {
     /// <p>The user pool ID for which you want to confirm user registration.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +84,7 @@ impl AdminConfirmSignUpInputBuilder {
         &self.user_pool_id
     }
     /// <p>The user name for which you want to confirm user registration.</p>
+    /// This field is required.
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self
@@ -153,7 +155,7 @@ impl AdminConfirmSignUpInputBuilder {
     /// Consumes the builder and constructs a [`AdminConfirmSignUpInput`](crate::operation::admin_confirm_sign_up::AdminConfirmSignUpInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::admin_confirm_sign_up::AdminConfirmSignUpInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::admin_confirm_sign_up::AdminConfirmSignUpInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::admin_confirm_sign_up::AdminConfirmSignUpInput {
             user_pool_id: self.user_pool_id,

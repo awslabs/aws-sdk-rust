@@ -33,8 +33,10 @@ impl UpdateTaskInput {
         self.options.as_ref()
     }
     /// <p>Specifies a list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    pub fn excludes(&self) -> ::std::option::Option<&[crate::types::FilterRule]> {
-        self.excludes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.excludes.is_none()`.
+    pub fn excludes(&self) -> &[crate::types::FilterRule] {
+        self.excludes.as_deref().unwrap_or_default()
     }
     /// <p>Specifies a schedule used to periodically transfer files from a source to a destination location. You can configure your task to execute hourly, daily, weekly or on specific days of the week. You control when in the day or hour you want the task to execute. The time you specify is UTC time. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
     pub fn schedule(&self) -> ::std::option::Option<&crate::types::TaskSchedule> {
@@ -49,8 +51,10 @@ impl UpdateTaskInput {
         self.cloud_watch_log_group_arn.as_deref()
     }
     /// <p>Specifies a list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    pub fn includes(&self) -> ::std::option::Option<&[crate::types::FilterRule]> {
-        self.includes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.includes.is_none()`.
+    pub fn includes(&self) -> &[crate::types::FilterRule] {
+        self.includes.as_deref().unwrap_or_default()
     }
     /// <p>Specifies how you want to configure a task report, which provides detailed information about for your DataSync transfer.</p>
     pub fn task_report_config(&self) -> ::std::option::Option<&crate::types::TaskReportConfig> {
@@ -79,6 +83,7 @@ pub struct UpdateTaskInputBuilder {
 }
 impl UpdateTaskInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the resource name of the task to update.</p>
+    /// This field is required.
     pub fn task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_arn = ::std::option::Option::Some(input.into());
         self
@@ -206,7 +211,7 @@ impl UpdateTaskInputBuilder {
         &self.task_report_config
     }
     /// Consumes the builder and constructs a [`UpdateTaskInput`](crate::operation::update_task::UpdateTaskInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_task::UpdateTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_task::UpdateTaskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_task::UpdateTaskInput {
             task_arn: self.task_arn,
             options: self.options,

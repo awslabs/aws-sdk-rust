@@ -11,8 +11,10 @@ pub struct ListDataQualityRuleRecommendationRunsOutput {
 }
 impl ListDataQualityRuleRecommendationRunsOutput {
     /// <p>A list of <code>DataQualityRuleRecommendationRunDescription</code> objects.</p>
-    pub fn runs(&self) -> ::std::option::Option<&[crate::types::DataQualityRuleRecommendationRunDescription]> {
-        self.runs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.runs.is_none()`.
+    pub fn runs(&self) -> &[crate::types::DataQualityRuleRecommendationRunDescription] {
+        self.runs.as_deref().unwrap_or_default()
     }
     /// <p>A pagination token, if more results are available.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

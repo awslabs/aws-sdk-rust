@@ -10,7 +10,7 @@ pub struct SlotValueSelectionSetting {
     /// <li> <p> <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p> </li>
     /// </ul>
     /// <p>If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>
-    pub resolution_strategy: ::std::option::Option<crate::types::SlotValueResolutionStrategy>,
+    pub resolution_strategy: crate::types::SlotValueResolutionStrategy,
     /// <p>A regular expression used to validate the value of a slot.</p>
     pub regex_filter: ::std::option::Option<crate::types::SlotValueRegexFilter>,
     /// <p>Provides settings that enable advanced recognition settings for slot values. You can use this to enable using slot values as a custom vocabulary for recognizing user utterances.</p>
@@ -23,8 +23,8 @@ impl SlotValueSelectionSetting {
     /// <li> <p> <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p> </li>
     /// </ul>
     /// <p>If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>
-    pub fn resolution_strategy(&self) -> ::std::option::Option<&crate::types::SlotValueResolutionStrategy> {
-        self.resolution_strategy.as_ref()
+    pub fn resolution_strategy(&self) -> &crate::types::SlotValueResolutionStrategy {
+        &self.resolution_strategy
     }
     /// <p>A regular expression used to validate the value of a slot.</p>
     pub fn regex_filter(&self) -> ::std::option::Option<&crate::types::SlotValueRegexFilter> {
@@ -57,6 +57,7 @@ impl SlotValueSelectionSettingBuilder {
     /// <li> <p> <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p> </li>
     /// </ul>
     /// <p>If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>
+    /// This field is required.
     pub fn resolution_strategy(mut self, input: crate::types::SlotValueResolutionStrategy) -> Self {
         self.resolution_strategy = ::std::option::Option::Some(input);
         self
@@ -109,11 +110,18 @@ impl SlotValueSelectionSettingBuilder {
         &self.advanced_recognition_setting
     }
     /// Consumes the builder and constructs a [`SlotValueSelectionSetting`](crate::types::SlotValueSelectionSetting).
-    pub fn build(self) -> crate::types::SlotValueSelectionSetting {
-        crate::types::SlotValueSelectionSetting {
-            resolution_strategy: self.resolution_strategy,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resolution_strategy`](crate::types::builders::SlotValueSelectionSettingBuilder::resolution_strategy)
+    pub fn build(self) -> ::std::result::Result<crate::types::SlotValueSelectionSetting, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SlotValueSelectionSetting {
+            resolution_strategy: self.resolution_strategy.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "resolution_strategy",
+                    "resolution_strategy was not specified but it is required when building SlotValueSelectionSetting",
+                )
+            })?,
             regex_filter: self.regex_filter,
             advanced_recognition_setting: self.advanced_recognition_setting,
-        }
+        })
     }
 }

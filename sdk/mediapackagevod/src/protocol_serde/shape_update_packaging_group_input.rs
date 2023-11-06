@@ -2,7 +2,7 @@
 pub fn ser_update_packaging_group_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_packaging_group::UpdatePackagingGroupInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.authorization {
         #[allow(unused_mut)]
         let mut object_2 = object.key("authorization").start_object();

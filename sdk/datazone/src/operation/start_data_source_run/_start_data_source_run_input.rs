@@ -41,6 +41,7 @@ pub struct StartDataSourceRunInputBuilder {
 }
 impl StartDataSourceRunInputBuilder {
     /// <p>The identifier of the Amazon DataZone domain in which to start a data source run.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl StartDataSourceRunInputBuilder {
         &self.domain_identifier
     }
     /// <p>The identifier of the data source.</p>
+    /// This field is required.
     pub fn data_source_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_identifier = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +87,7 @@ impl StartDataSourceRunInputBuilder {
     /// Consumes the builder and constructs a [`StartDataSourceRunInput`](crate::operation::start_data_source_run::StartDataSourceRunInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_data_source_run::StartDataSourceRunInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_data_source_run::StartDataSourceRunInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_data_source_run::StartDataSourceRunInput {
             domain_identifier: self.domain_identifier,

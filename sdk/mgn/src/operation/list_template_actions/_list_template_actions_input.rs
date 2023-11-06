@@ -8,7 +8,7 @@ pub struct ListTemplateActionsInput {
     /// <p>Filters to apply when listing template post migration custom actions.</p>
     pub filters: ::std::option::Option<crate::types::TemplateActionsRequestFilters>,
     /// <p>Maximum amount of items to return when listing template post migration custom actions.</p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>Next token to use when listing template post migration custom actions.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
@@ -22,7 +22,7 @@ impl ListTemplateActionsInput {
         self.filters.as_ref()
     }
     /// <p>Maximum amount of items to return when listing template post migration custom actions.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>Next token to use when listing template post migration custom actions.</p>
@@ -48,6 +48,7 @@ pub struct ListTemplateActionsInputBuilder {
 }
 impl ListTemplateActionsInputBuilder {
     /// <p>Launch configuration template ID.</p>
+    /// This field is required.
     pub fn launch_configuration_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_configuration_template_id = ::std::option::Option::Some(input.into());
         self
@@ -106,12 +107,12 @@ impl ListTemplateActionsInputBuilder {
     /// Consumes the builder and constructs a [`ListTemplateActionsInput`](crate::operation::list_template_actions::ListTemplateActionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_template_actions::ListTemplateActionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_template_actions::ListTemplateActionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_template_actions::ListTemplateActionsInput {
             launch_configuration_template_id: self.launch_configuration_template_id,
             filters: self.filters,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
         })
     }

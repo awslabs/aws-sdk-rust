@@ -112,13 +112,17 @@ impl FileSystem {
     }
     /// <p>Specifies the IDs of the subnets that the file system is accessible from. For the Amazon FSx Windows and ONTAP <code>MULTI_AZ_1</code> file system deployment type, there are two subnet IDs, one for the preferred file server and one for the standby file server. The preferred file server subnet identified in the <code>PreferredSubnetID</code> property. All other file systems have only one subnet ID.</p>
     /// <p>For FSx for Lustre file systems, and Single-AZ Windows file systems, this is the ID of the subnet that contains the file system's endpoint. For <code>MULTI_AZ_1</code> Windows and ONTAP file systems, the file system endpoint is available in the <code>PreferredSubnetID</code>.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        self.subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>The IDs of the elastic network interfaces from which a specific file system is accessible. The elastic network interface is automatically created in the same virtual private cloud (VPC) that the Amazon FSx file system was created in. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic Network Interfaces</a> in the <i>Amazon EC2 User Guide.</i> </p>
     /// <p>For an Amazon FSx for Windows File Server file system, you can have one network interface ID. For an Amazon FSx for Lustre file system, you can have more than one.</p>
-    pub fn network_interface_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.network_interface_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_interface_ids.is_none()`.
+    pub fn network_interface_ids(&self) -> &[::std::string::String] {
+        self.network_interface_ids.as_deref().unwrap_or_default()
     }
     /// <p>The Domain Name System (DNS) name for the file system.</p>
     pub fn dns_name(&self) -> ::std::option::Option<&str> {
@@ -139,8 +143,10 @@ impl FileSystem {
         self.resource_arn.as_deref()
     }
     /// <p>The tags to associate with the file system. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging your Amazon EC2 resources</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The configuration for this Amazon FSx for Windows File Server file system.</p>
     pub fn windows_configuration(&self) -> ::std::option::Option<&crate::types::WindowsFileSystemConfiguration> {
@@ -151,8 +157,10 @@ impl FileSystem {
         self.lustre_configuration.as_ref()
     }
     /// <p>A list of administrative actions for the file system that are in process or waiting to be processed. Administrative actions describe changes to the Amazon FSx system that you have initiated using the <code>UpdateFileSystem</code> operation.</p>
-    pub fn administrative_actions(&self) -> ::std::option::Option<&[crate::types::AdministrativeAction]> {
-        self.administrative_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.administrative_actions.is_none()`.
+    pub fn administrative_actions(&self) -> &[crate::types::AdministrativeAction] {
+        self.administrative_actions.as_deref().unwrap_or_default()
     }
     /// <p>The configuration for this Amazon FSx for NetApp ONTAP file system.</p>
     pub fn ontap_configuration(&self) -> ::std::option::Option<&crate::types::OntapFileSystemConfiguration> {

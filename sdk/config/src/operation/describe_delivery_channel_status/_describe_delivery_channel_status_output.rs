@@ -10,8 +10,10 @@ pub struct DescribeDeliveryChannelStatusOutput {
 }
 impl DescribeDeliveryChannelStatusOutput {
     /// <p>A list that contains the status of a specified delivery channel.</p>
-    pub fn delivery_channels_status(&self) -> ::std::option::Option<&[crate::types::DeliveryChannelStatus]> {
-        self.delivery_channels_status.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.delivery_channels_status.is_none()`.
+    pub fn delivery_channels_status(&self) -> &[crate::types::DeliveryChannelStatus] {
+        self.delivery_channels_status.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeDeliveryChannelStatusOutput {

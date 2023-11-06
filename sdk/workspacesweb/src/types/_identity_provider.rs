@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct IdentityProvider {
     /// <p>The ARN of the identity provider.</p>
-    pub identity_provider_arn: ::std::option::Option<::std::string::String>,
+    pub identity_provider_arn: ::std::string::String,
     /// <p>The identity provider name.</p>
     pub identity_provider_name: ::std::option::Option<::std::string::String>,
     /// <p>The identity provider type.</p>
@@ -55,8 +55,9 @@ pub struct IdentityProvider {
 }
 impl IdentityProvider {
     /// <p>The ARN of the identity provider.</p>
-    pub fn identity_provider_arn(&self) -> ::std::option::Option<&str> {
-        self.identity_provider_arn.as_deref()
+    pub fn identity_provider_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.identity_provider_arn.deref()
     }
     /// <p>The identity provider name.</p>
     pub fn identity_provider_name(&self) -> ::std::option::Option<&str> {
@@ -139,6 +140,7 @@ pub struct IdentityProviderBuilder {
 }
 impl IdentityProviderBuilder {
     /// <p>The ARN of the identity provider.</p>
+    /// This field is required.
     pub fn identity_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_provider_arn = ::std::option::Option::Some(input.into());
         self
@@ -328,13 +330,20 @@ impl IdentityProviderBuilder {
         &self.identity_provider_details
     }
     /// Consumes the builder and constructs a [`IdentityProvider`](crate::types::IdentityProvider).
-    pub fn build(self) -> crate::types::IdentityProvider {
-        crate::types::IdentityProvider {
-            identity_provider_arn: self.identity_provider_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`identity_provider_arn`](crate::types::builders::IdentityProviderBuilder::identity_provider_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::IdentityProvider, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::IdentityProvider {
+            identity_provider_arn: self.identity_provider_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "identity_provider_arn",
+                    "identity_provider_arn was not specified but it is required when building IdentityProvider",
+                )
+            })?,
             identity_provider_name: self.identity_provider_name,
             identity_provider_type: self.identity_provider_type,
             identity_provider_details: self.identity_provider_details,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for IdentityProviderBuilder {

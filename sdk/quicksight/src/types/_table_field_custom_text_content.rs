@@ -49,6 +49,7 @@ impl TableFieldCustomTextContentBuilder {
         &self.value
     }
     /// <p>The font configuration of the custom text content for the table URL link content.</p>
+    /// This field is required.
     pub fn font_configuration(mut self, input: crate::types::FontConfiguration) -> Self {
         self.font_configuration = ::std::option::Option::Some(input);
         self

@@ -2,7 +2,7 @@
 pub fn ser_node_fabric_log_publishing_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NodeFabricLogPublishingConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.chaincode_logs {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ChaincodeLogs").start_object();

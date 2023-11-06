@@ -75,6 +75,7 @@ impl DeleteProvisioningArtifactInputBuilder {
         &self.accept_language
     }
     /// <p>The product identifier.</p>
+    /// This field is required.
     pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_id = ::std::option::Option::Some(input.into());
         self
@@ -89,6 +90,7 @@ impl DeleteProvisioningArtifactInputBuilder {
         &self.product_id
     }
     /// <p>The identifier of the provisioning artifact.</p>
+    /// This field is required.
     pub fn provisioning_artifact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioning_artifact_id = ::std::option::Option::Some(input.into());
         self
@@ -107,7 +109,7 @@ impl DeleteProvisioningArtifactInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_provisioning_artifact::DeleteProvisioningArtifactInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_provisioning_artifact::DeleteProvisioningArtifactInput {
             accept_language: self.accept_language,

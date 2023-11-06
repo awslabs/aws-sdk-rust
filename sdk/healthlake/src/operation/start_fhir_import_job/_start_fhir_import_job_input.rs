@@ -76,6 +76,7 @@ impl StartFhirImportJobInputBuilder {
         &self.job_name
     }
     /// <p>The input properties of the FHIR Import job in the StartFHIRImport job request.</p>
+    /// This field is required.
     pub fn input_data_config(mut self, input: crate::types::InputDataConfig) -> Self {
         self.input_data_config = ::std::option::Option::Some(input);
         self
@@ -90,6 +91,7 @@ impl StartFhirImportJobInputBuilder {
         &self.input_data_config
     }
     /// <p>The output data configuration that was supplied when the export job was created.</p>
+    /// This field is required.
     pub fn job_output_data_config(mut self, input: crate::types::OutputDataConfig) -> Self {
         self.job_output_data_config = ::std::option::Option::Some(input);
         self
@@ -104,6 +106,7 @@ impl StartFhirImportJobInputBuilder {
         &self.job_output_data_config
     }
     /// <p>The AWS-generated data store ID.</p>
+    /// This field is required.
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_id = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +121,7 @@ impl StartFhirImportJobInputBuilder {
         &self.datastore_id
     }
     /// <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access permission.</p>
+    /// This field is required.
     pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_access_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +136,7 @@ impl StartFhirImportJobInputBuilder {
         &self.data_access_role_arn
     }
     /// <p>Optional user provided token used for ensuring idempotency.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -148,7 +153,7 @@ impl StartFhirImportJobInputBuilder {
     /// Consumes the builder and constructs a [`StartFhirImportJobInput`](crate::operation::start_fhir_import_job::StartFhirImportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_fhir_import_job::StartFhirImportJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_fhir_import_job::StartFhirImportJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_fhir_import_job::StartFhirImportJobInput {
             job_name: self.job_name,

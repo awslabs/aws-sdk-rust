@@ -114,6 +114,7 @@ impl StartSimulationInputBuilder {
         &self.client_token
     }
     /// <p>The name of the simulation.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -142,6 +143,7 @@ impl StartSimulationInputBuilder {
         &self.description
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that the simulation assumes to perform actions. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. For more information about IAM roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM roles</a> in the <i>Identity and Access Management User Guide</i>.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -235,7 +237,7 @@ impl StartSimulationInputBuilder {
     /// Consumes the builder and constructs a [`StartSimulationInput`](crate::operation::start_simulation::StartSimulationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_simulation::StartSimulationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_simulation::StartSimulationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_simulation::StartSimulationInput {
             client_token: self.client_token,
             name: self.name,

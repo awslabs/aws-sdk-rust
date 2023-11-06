@@ -4,21 +4,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeConformancePackComplianceOutput {
     /// <p>Name of the conformance pack.</p>
-    pub conformance_pack_name: ::std::option::Option<::std::string::String>,
+    pub conformance_pack_name: ::std::string::String,
     /// <p>Returns a list of <code>ConformancePackRuleCompliance</code> objects.</p>
-    pub conformance_pack_rule_compliance_list: ::std::option::Option<::std::vec::Vec<crate::types::ConformancePackRuleCompliance>>,
+    pub conformance_pack_rule_compliance_list: ::std::vec::Vec<crate::types::ConformancePackRuleCompliance>,
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeConformancePackComplianceOutput {
     /// <p>Name of the conformance pack.</p>
-    pub fn conformance_pack_name(&self) -> ::std::option::Option<&str> {
-        self.conformance_pack_name.as_deref()
+    pub fn conformance_pack_name(&self) -> &str {
+        use std::ops::Deref;
+        self.conformance_pack_name.deref()
     }
     /// <p>Returns a list of <code>ConformancePackRuleCompliance</code> objects.</p>
-    pub fn conformance_pack_rule_compliance_list(&self) -> ::std::option::Option<&[crate::types::ConformancePackRuleCompliance]> {
-        self.conformance_pack_rule_compliance_list.as_deref()
+    pub fn conformance_pack_rule_compliance_list(&self) -> &[crate::types::ConformancePackRuleCompliance] {
+        use std::ops::Deref;
+        self.conformance_pack_rule_compliance_list.deref()
     }
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -48,6 +50,7 @@ pub struct DescribeConformancePackComplianceOutputBuilder {
 }
 impl DescribeConformancePackComplianceOutputBuilder {
     /// <p>Name of the conformance pack.</p>
+    /// This field is required.
     pub fn conformance_pack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.conformance_pack_name = ::std::option::Option::Some(input.into());
         self
@@ -108,12 +111,31 @@ impl DescribeConformancePackComplianceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeConformancePackComplianceOutput`](crate::operation::describe_conformance_pack_compliance::DescribeConformancePackComplianceOutput).
-    pub fn build(self) -> crate::operation::describe_conformance_pack_compliance::DescribeConformancePackComplianceOutput {
-        crate::operation::describe_conformance_pack_compliance::DescribeConformancePackComplianceOutput {
-            conformance_pack_name: self.conformance_pack_name,
-            conformance_pack_rule_compliance_list: self.conformance_pack_rule_compliance_list,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`conformance_pack_name`](crate::operation::describe_conformance_pack_compliance::builders::DescribeConformancePackComplianceOutputBuilder::conformance_pack_name)
+    /// - [`conformance_pack_rule_compliance_list`](crate::operation::describe_conformance_pack_compliance::builders::DescribeConformancePackComplianceOutputBuilder::conformance_pack_rule_compliance_list)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_conformance_pack_compliance::DescribeConformancePackComplianceOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::describe_conformance_pack_compliance::DescribeConformancePackComplianceOutput {
+                conformance_pack_name: self.conformance_pack_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("conformance_pack_name", "conformance_pack_name was not specified but it is required when building DescribeConformancePackComplianceOutput")
+                    )?
+                ,
+                conformance_pack_rule_compliance_list: self.conformance_pack_rule_compliance_list
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("conformance_pack_rule_compliance_list", "conformance_pack_rule_compliance_list was not specified but it is required when building DescribeConformancePackComplianceOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }

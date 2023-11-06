@@ -11,8 +11,10 @@ pub struct DescribeBlueGreenDeploymentsOutput {
 }
 impl DescribeBlueGreenDeploymentsOutput {
     /// <p>A list of blue/green deployments in the current account and Amazon Web Services Region.</p>
-    pub fn blue_green_deployments(&self) -> ::std::option::Option<&[crate::types::BlueGreenDeployment]> {
-        self.blue_green_deployments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.blue_green_deployments.is_none()`.
+    pub fn blue_green_deployments(&self) -> &[crate::types::BlueGreenDeployment] {
+        self.blue_green_deployments.as_deref().unwrap_or_default()
     }
     /// <p>A pagination token that can be used in a later <code>DescribeBlueGreenDeployments</code> request.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

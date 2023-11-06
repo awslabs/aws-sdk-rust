@@ -27,6 +27,7 @@ pub struct GetFirewallRuleGroupInputBuilder {
 }
 impl GetFirewallRuleGroupInputBuilder {
     /// <p>The unique identifier of the firewall rule group. </p>
+    /// This field is required.
     pub fn firewall_rule_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_rule_group_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetFirewallRuleGroupInputBuilder {
     /// Consumes the builder and constructs a [`GetFirewallRuleGroupInput`](crate::operation::get_firewall_rule_group::GetFirewallRuleGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_firewall_rule_group::GetFirewallRuleGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_firewall_rule_group::GetFirewallRuleGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_firewall_rule_group::GetFirewallRuleGroupInput {
             firewall_rule_group_id: self.firewall_rule_group_id,

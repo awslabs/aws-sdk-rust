@@ -11,8 +11,10 @@ pub struct ListSchemaMappingsOutput {
 }
 impl ListSchemaMappingsOutput {
     /// <p>A list of <code>SchemaMappingSummary</code> objects, each of which contain the fields <code>SchemaName</code>, <code>SchemaArn</code>, <code>CreatedAt</code>, <code>UpdatedAt</code>.</p>
-    pub fn schema_list(&self) -> ::std::option::Option<&[crate::types::SchemaMappingSummary]> {
-        self.schema_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.schema_list.is_none()`.
+    pub fn schema_list(&self) -> &[crate::types::SchemaMappingSummary] {
+        self.schema_list.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token from the previous API call.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

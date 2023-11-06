@@ -2,7 +2,7 @@
 pub fn ser_on_demand_capacity_reservation_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OnDemandCapacityReservationOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.usage_strategy {
         object.key("UsageStrategy").string(var_1.as_str());
     }

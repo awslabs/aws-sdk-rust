@@ -11,8 +11,10 @@ pub struct AutomaticTapeCreationPolicyInfo {
 }
 impl AutomaticTapeCreationPolicyInfo {
     /// <p>An automatic tape creation policy consists of a list of automatic tape creation rules. This returns the rules that determine when and how to automatically create new tapes.</p>
-    pub fn automatic_tape_creation_rules(&self) -> ::std::option::Option<&[crate::types::AutomaticTapeCreationRule]> {
-        self.automatic_tape_creation_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.automatic_tape_creation_rules.is_none()`.
+    pub fn automatic_tape_creation_rules(&self) -> &[crate::types::AutomaticTapeCreationRule] {
+        self.automatic_tape_creation_rules.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn gateway_arn(&self) -> ::std::option::Option<&str> {

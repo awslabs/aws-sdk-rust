@@ -4,21 +4,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAppVersionResourcesOutput {
     /// <p>The physical resources in the application version.</p>
-    pub physical_resources: ::std::option::Option<::std::vec::Vec<crate::types::PhysicalResource>>,
+    pub physical_resources: ::std::vec::Vec<crate::types::PhysicalResource>,
     /// <p>The ID for a specific resolution.</p>
-    pub resolution_id: ::std::option::Option<::std::string::String>,
+    pub resolution_id: ::std::string::String,
     /// <p>Token for the next set of results, or null if there are no more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAppVersionResourcesOutput {
     /// <p>The physical resources in the application version.</p>
-    pub fn physical_resources(&self) -> ::std::option::Option<&[crate::types::PhysicalResource]> {
-        self.physical_resources.as_deref()
+    pub fn physical_resources(&self) -> &[crate::types::PhysicalResource] {
+        use std::ops::Deref;
+        self.physical_resources.deref()
     }
     /// <p>The ID for a specific resolution.</p>
-    pub fn resolution_id(&self) -> ::std::option::Option<&str> {
-        self.resolution_id.as_deref()
+    pub fn resolution_id(&self) -> &str {
+        use std::ops::Deref;
+        self.resolution_id.deref()
     }
     /// <p>Token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -68,6 +70,7 @@ impl ListAppVersionResourcesOutputBuilder {
         &self.physical_resources
     }
     /// <p>The ID for a specific resolution.</p>
+    /// This field is required.
     pub fn resolution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolution_id = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +108,30 @@ impl ListAppVersionResourcesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAppVersionResourcesOutput`](crate::operation::list_app_version_resources::ListAppVersionResourcesOutput).
-    pub fn build(self) -> crate::operation::list_app_version_resources::ListAppVersionResourcesOutput {
-        crate::operation::list_app_version_resources::ListAppVersionResourcesOutput {
-            physical_resources: self.physical_resources,
-            resolution_id: self.resolution_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`physical_resources`](crate::operation::list_app_version_resources::builders::ListAppVersionResourcesOutputBuilder::physical_resources)
+    /// - [`resolution_id`](crate::operation::list_app_version_resources::builders::ListAppVersionResourcesOutputBuilder::resolution_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_app_version_resources::ListAppVersionResourcesOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_app_version_resources::ListAppVersionResourcesOutput {
+            physical_resources: self.physical_resources.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "physical_resources",
+                    "physical_resources was not specified but it is required when building ListAppVersionResourcesOutput",
+                )
+            })?,
+            resolution_id: self.resolution_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "resolution_id",
+                    "resolution_id was not specified but it is required when building ListAppVersionResourcesOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

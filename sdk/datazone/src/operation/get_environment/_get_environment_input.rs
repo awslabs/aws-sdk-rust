@@ -34,6 +34,7 @@ pub struct GetEnvironmentInputBuilder {
 }
 impl GetEnvironmentInputBuilder {
     /// <p>The ID of the Amazon DataZone domain where the environment exists.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetEnvironmentInputBuilder {
         &self.domain_identifier
     }
     /// <p>The ID of the Amazon DataZone environment.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl GetEnvironmentInputBuilder {
     /// Consumes the builder and constructs a [`GetEnvironmentInput`](crate::operation::get_environment::GetEnvironmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_environment::GetEnvironmentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_environment::GetEnvironmentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_environment::GetEnvironmentInput {
             domain_identifier: self.domain_identifier,
             identifier: self.identifier,

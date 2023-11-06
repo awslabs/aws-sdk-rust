@@ -116,6 +116,6 @@ pub fn de_create_email_template_http_response(
             crate::protocol_serde::shape_create_email_template_output::de_create_template_message_body_payload(_response_body)?,
         );
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::create_email_template_output_correct_errors(output).build()
     })
 }

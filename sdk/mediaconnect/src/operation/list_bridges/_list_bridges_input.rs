@@ -83,7 +83,7 @@ impl ListBridgesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListBridgesInput`](crate::operation::list_bridges::ListBridgesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_bridges::ListBridgesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_bridges::ListBridgesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_bridges::ListBridgesInput {
             filter_arn: self.filter_arn,
             max_results: self.max_results,

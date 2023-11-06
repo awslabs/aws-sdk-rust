@@ -15,6 +15,10 @@ pub use crate::types::_tls_inspection_configuration::TlsInspectionConfiguration;
 
 pub use crate::types::_server_certificate_configuration::ServerCertificateConfiguration;
 
+pub use crate::types::_check_certificate_revocation_status_actions::CheckCertificateRevocationStatusActions;
+
+pub use crate::types::_revocation_check_action::RevocationCheckAction;
+
 pub use crate::types::_server_certificate_scope::ServerCertificateScope;
 
 pub use crate::types::_port_range::PortRange;
@@ -161,6 +165,8 @@ mod _attachment_status;
 
 mod _capacity_usage_summary;
 
+mod _check_certificate_revocation_status_actions;
+
 mod _cidr_summary;
 
 mod _configuration_sync_state;
@@ -230,6 +236,8 @@ mod _resource_managed_status;
 mod _resource_managed_type;
 
 mod _resource_status;
+
+mod _revocation_check_action;
 
 mod _rule_definition;
 

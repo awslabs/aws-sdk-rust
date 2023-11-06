@@ -51,20 +51,26 @@ impl UtteranceEvent {
         self.transcript.as_deref()
     }
     /// <p>Contains words, phrases, or punctuation marks that are associated with the specified <code>UtteranceEvent</code>.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::CallAnalyticsItem]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[crate::types::CallAnalyticsItem] {
+        self.items.as_deref().unwrap_or_default()
     }
     /// <p>Contains entities identified as personally identifiable information (PII) in your transcription output.</p>
-    pub fn entities(&self) -> ::std::option::Option<&[crate::types::CallAnalyticsEntity]> {
-        self.entities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entities.is_none()`.
+    pub fn entities(&self) -> &[crate::types::CallAnalyticsEntity] {
+        self.entities.as_deref().unwrap_or_default()
     }
     /// <p>Provides the sentiment that was detected in the specified segment.</p>
     pub fn sentiment(&self) -> ::std::option::Option<&crate::types::Sentiment> {
         self.sentiment.as_ref()
     }
     /// <p>Provides the issue that was detected in the specified segment.</p>
-    pub fn issues_detected(&self) -> ::std::option::Option<&[crate::types::IssueDetected]> {
-        self.issues_detected.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.issues_detected.is_none()`.
+    pub fn issues_detected(&self) -> &[crate::types::IssueDetected] {
+        self.issues_detected.as_deref().unwrap_or_default()
     }
 }
 impl UtteranceEvent {

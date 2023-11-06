@@ -120,8 +120,10 @@ impl UpdateStackSetInput {
         self.use_previous_template
     }
     /// <p>A list of input parameters for the stack set template.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&[crate::types::Parameter]> {
-        self.parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
+    pub fn parameters(&self) -> &[crate::types::Parameter] {
+        self.parameters.as_deref().unwrap_or_default()
     }
     /// <p>In some cases, you must explicitly acknowledge that your stack template contains certain capabilities in order for CloudFormation to update the stack set and its associated stack instances.</p>
     /// <ul>
@@ -144,8 +146,10 @@ impl UpdateStackSetInput {
     /// <p>Stack sets with service-managed permissions do not currently support the use of macros in templates. (This includes the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a> and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this capability for a stack set with service-managed permissions, if you reference a macro in your template the stack set operation will fail.</p>
     /// </important> </li>
     /// </ul>
-    pub fn capabilities(&self) -> ::std::option::Option<&[crate::types::Capability]> {
-        self.capabilities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capabilities.is_none()`.
+    pub fn capabilities(&self) -> &[crate::types::Capability] {
+        self.capabilities.as_deref().unwrap_or_default()
     }
     /// <p>The key-value pairs to associate with this stack set and the stacks created from it. CloudFormation also propagates these tags to supported resources that are created in the stacks. You can specify a maximum number of 50 tags.</p>
     /// <p>If you specify tags for this parameter, those tags replace any list of tags that are currently associated with this stack set. This means:</p>
@@ -155,8 +159,10 @@ impl UpdateStackSetInput {
     /// <li> <p>If you specify an empty value, CloudFormation removes all currently associated tags.</p> </li>
     /// </ul>
     /// <p>If you specify new tags as part of an <code>UpdateStackSet</code> action, CloudFormation checks to see if you have the required IAM permission to tag resources. If you omit tags that are currently associated with the stack set from the list of tags you specify, CloudFormation assumes that you want to remove those tags from the stack set, and checks to see if you have permission to untag resources. If you don't have the necessary permission(s), the entire <code>UpdateStackSet</code> action fails with an <code>access denied</code> error, and the stack set is not updated.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Preferences for how CloudFormation performs this stack set operation.</p>
     pub fn operation_preferences(&self) -> ::std::option::Option<&crate::types::StackSetOperationPreferences> {
@@ -203,14 +209,18 @@ impl UpdateStackSetInput {
     /// <p>[Self-managed permissions] The accounts in which to update associated stack instances. If you specify accounts, you must also specify the Amazon Web Services Regions in which to update stack set instances.</p>
     /// <p>To update <i>all</i> the stack instances associated with this stack set, don't specify the <code>Accounts</code> or <code>Regions</code> properties.</p>
     /// <p>If the stack set update includes changes to the template (that is, if the <code>TemplateBody</code> or <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, CloudFormation marks all stack instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the specified accounts and Amazon Web Services Regions. If the stack set update does not include changes to the template or parameters, CloudFormation updates the stack instances in the specified accounts and Amazon Web Services Regions, while leaving all other stack instances with their existing stack instance status.</p>
-    pub fn accounts(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.accounts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accounts.is_none()`.
+    pub fn accounts(&self) -> &[::std::string::String] {
+        self.accounts.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Web Services Regions in which to update associated stack instances. If you specify Regions, you must also specify accounts in which to update stack set instances.</p>
     /// <p>To update <i>all</i> the stack instances associated with this stack set, do not specify the <code>Accounts</code> or <code>Regions</code> properties.</p>
     /// <p>If the stack set update includes changes to the template (that is, if the <code>TemplateBody</code> or <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, CloudFormation marks all stack instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the specified accounts and Regions. If the stack set update does not include changes to the template or parameters, CloudFormation updates the stack instances in the specified accounts and Regions, while leaving all other stack instances with their existing stack instance status.</p>
-    pub fn regions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.regions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regions.is_none()`.
+    pub fn regions(&self) -> &[::std::string::String] {
+        self.regions.as_deref().unwrap_or_default()
     }
     /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
     /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
@@ -259,6 +269,7 @@ pub struct UpdateStackSetInputBuilder {
 }
 impl UpdateStackSetInputBuilder {
     /// <p>The name or unique ID of the stack set that you want to update.</p>
+    /// This field is required.
     pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_set_name = ::std::option::Option::Some(input.into());
         self
@@ -716,7 +727,7 @@ impl UpdateStackSetInputBuilder {
     /// Consumes the builder and constructs a [`UpdateStackSetInput`](crate::operation::update_stack_set::UpdateStackSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_stack_set::UpdateStackSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_stack_set::UpdateStackSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_stack_set::UpdateStackSetInput {
             stack_set_name: self.stack_set_name,
             description: self.description,

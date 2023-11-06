@@ -45,7 +45,7 @@ impl ConfirmCustomerAgreementInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementInput {
             agreement_name: self.agreement_name,

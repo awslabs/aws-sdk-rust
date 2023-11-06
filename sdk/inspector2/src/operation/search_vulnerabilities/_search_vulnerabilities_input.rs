@@ -34,6 +34,7 @@ pub struct SearchVulnerabilitiesInputBuilder {
 }
 impl SearchVulnerabilitiesInputBuilder {
     /// <p>The criteria used to filter the results of a vulnerability search.</p>
+    /// This field is required.
     pub fn filter_criteria(mut self, input: crate::types::SearchVulnerabilitiesFilterCriteria) -> Self {
         self.filter_criteria = ::std::option::Option::Some(input);
         self
@@ -64,7 +65,7 @@ impl SearchVulnerabilitiesInputBuilder {
     /// Consumes the builder and constructs a [`SearchVulnerabilitiesInput`](crate::operation::search_vulnerabilities::SearchVulnerabilitiesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_vulnerabilities::SearchVulnerabilitiesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::search_vulnerabilities::SearchVulnerabilitiesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::search_vulnerabilities::SearchVulnerabilitiesInput {
             filter_criteria: self.filter_criteria,

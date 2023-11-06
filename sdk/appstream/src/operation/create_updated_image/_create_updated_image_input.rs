@@ -70,6 +70,7 @@ pub struct CreateUpdatedImageInputBuilder {
 }
 impl CreateUpdatedImageInputBuilder {
     /// <p>The name of the image to update.</p>
+    /// This field is required.
     pub fn existing_image_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.existing_image_name = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +85,7 @@ impl CreateUpdatedImageInputBuilder {
         &self.existing_image_name
     }
     /// <p>The name of the new image. The name must be unique within the AWS account and Region.</p>
+    /// This field is required.
     pub fn new_image_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.new_image_name = ::std::option::Option::Some(input.into());
         self
@@ -181,7 +183,8 @@ impl CreateUpdatedImageInputBuilder {
     /// Consumes the builder and constructs a [`CreateUpdatedImageInput`](crate::operation::create_updated_image::CreateUpdatedImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_updated_image::CreateUpdatedImageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_updated_image::CreateUpdatedImageInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_updated_image::CreateUpdatedImageInput {
             existing_image_name: self.existing_image_name,
             new_image_name: self.new_image_name,

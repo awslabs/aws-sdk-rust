@@ -12,8 +12,10 @@ pub struct AnomalyDetectorConfiguration {
 }
 impl AnomalyDetectorConfiguration {
     /// <p>An array of time ranges to exclude from use when the anomaly detection model is trained. Use this to make sure that events that could cause unusual values for the metric, such as deployments, aren't used when CloudWatch creates the model.</p>
-    pub fn excluded_time_ranges(&self) -> ::std::option::Option<&[crate::types::Range]> {
-        self.excluded_time_ranges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.excluded_time_ranges.is_none()`.
+    pub fn excluded_time_ranges(&self) -> &[crate::types::Range] {
+        self.excluded_time_ranges.as_deref().unwrap_or_default()
     }
     /// <p>The time zone to use for the metric. This is useful to enable the model to automatically account for daylight savings time changes if the metric is sensitive to such time changes.</p>
     /// <p>To specify a time zone, use the name of the time zone as specified in the standard tz database. For more information, see <a href="https://en.wikipedia.org/wiki/Tz_database">tz database</a>.</p>

@@ -34,6 +34,7 @@ pub struct StartAppAssessmentOutputBuilder {
 }
 impl StartAppAssessmentOutputBuilder {
     /// <p>The assessment created.</p>
+    /// This field is required.
     pub fn assessment(mut self, input: crate::types::AppAssessment) -> Self {
         self.assessment = ::std::option::Option::Some(input);
         self

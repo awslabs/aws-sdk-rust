@@ -47,6 +47,7 @@ pub struct DeleteDistributionInputBuilder {
 }
 impl DeleteDistributionInputBuilder {
     /// <p>The distribution ID.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -77,7 +78,7 @@ impl DeleteDistributionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDistributionInput`](crate::operation::delete_distribution::DeleteDistributionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_distribution::DeleteDistributionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_distribution::DeleteDistributionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_distribution::DeleteDistributionInput {
             id: self.id,
             if_match: self.if_match,

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetTimerAction {
     /// <p>The name of the timer.</p>
-    pub timer_name: ::std::option::Option<::std::string::String>,
+    pub timer_name: ::std::string::String,
     /// <p>The number of seconds until the timer expires. The minimum value is 60 seconds to ensure accuracy. The maximum value is 31622400 seconds. </p>
     #[deprecated(
         note = "seconds is deprecated. You can use durationExpression for SetTimerAction. The value of seconds can be used as a string expression for durationExpression."
@@ -21,8 +21,9 @@ pub struct SetTimerAction {
 }
 impl SetTimerAction {
     /// <p>The name of the timer.</p>
-    pub fn timer_name(&self) -> ::std::option::Option<&str> {
-        self.timer_name.as_deref()
+    pub fn timer_name(&self) -> &str {
+        use std::ops::Deref;
+        self.timer_name.deref()
     }
     /// <p>The number of seconds until the timer expires. The minimum value is 60 seconds to ensure accuracy. The maximum value is 31622400 seconds. </p>
     #[deprecated(
@@ -58,6 +59,7 @@ pub struct SetTimerActionBuilder {
 }
 impl SetTimerActionBuilder {
     /// <p>The name of the timer.</p>
+    /// This field is required.
     pub fn timer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timer_name = ::std::option::Option::Some(input.into());
         self
@@ -124,11 +126,18 @@ impl SetTimerActionBuilder {
         &self.duration_expression
     }
     /// Consumes the builder and constructs a [`SetTimerAction`](crate::types::SetTimerAction).
-    pub fn build(self) -> crate::types::SetTimerAction {
-        crate::types::SetTimerAction {
-            timer_name: self.timer_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`timer_name`](crate::types::builders::SetTimerActionBuilder::timer_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::SetTimerAction, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SetTimerAction {
+            timer_name: self.timer_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "timer_name",
+                    "timer_name was not specified but it is required when building SetTimerAction",
+                )
+            })?,
             seconds: self.seconds,
             duration_expression: self.duration_expression,
-        }
+        })
     }
 }

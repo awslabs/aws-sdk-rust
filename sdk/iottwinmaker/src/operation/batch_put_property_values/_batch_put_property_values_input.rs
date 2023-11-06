@@ -14,8 +14,10 @@ impl BatchPutPropertyValuesInput {
         self.workspace_id.as_deref()
     }
     /// <p>An object that maps strings to the property value entries to set. Each string in the mapping must be unique to this object.</p>
-    pub fn entries(&self) -> ::std::option::Option<&[crate::types::PropertyValueEntry]> {
-        self.entries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entries.is_none()`.
+    pub fn entries(&self) -> &[crate::types::PropertyValueEntry] {
+        self.entries.as_deref().unwrap_or_default()
     }
 }
 impl BatchPutPropertyValuesInput {
@@ -34,6 +36,7 @@ pub struct BatchPutPropertyValuesInputBuilder {
 }
 impl BatchPutPropertyValuesInputBuilder {
     /// <p>The ID of the workspace that contains the properties to set.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -72,7 +75,7 @@ impl BatchPutPropertyValuesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_put_property_values::BatchPutPropertyValuesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_put_property_values::BatchPutPropertyValuesInput {
             workspace_id: self.workspace_id,

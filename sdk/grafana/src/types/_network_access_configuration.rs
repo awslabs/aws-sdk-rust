@@ -13,28 +13,30 @@ pub struct NetworkAccessConfiguration {
     /// <p>An array of prefix list IDs. A prefix list is a list of CIDR ranges of IP addresses. The IP addresses specified are allowed to access your workspace. If the list is not included in the configuration (passed an empty array) then no IP addresses are allowed to access the workspace. You create a prefix list using the Amazon VPC console.</p>
     /// <p>Prefix list IDs have the format <code>pl-<i>1a2b3c4d</i> </code>.</p>
     /// <p>For more information about prefix lists, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/managed-prefix-lists.html">Group CIDR blocks using managed prefix lists</a>in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-    pub prefix_list_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub prefix_list_ids: ::std::vec::Vec<::std::string::String>,
     /// <p>An array of Amazon VPC endpoint IDs for the workspace. You can create VPC endpoints to your Amazon Managed Grafana workspace for access from within a VPC. If a <code>NetworkAccessConfiguration</code> is specified then only VPC endpoints specified here are allowed to access the workspace. If you pass in an empty array of strings, then no VPCs are allowed to access the workspace.</p>
     /// <p>VPC endpoint IDs have the format <code>vpce-<i>1a2b3c4d</i> </code>.</p>
     /// <p>For more information about creating an interface VPC endpoint, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/VPC-endpoints">Interface VPC endpoints</a> in the <i>Amazon Managed Grafana User Guide</i>.</p> <note>
     /// <p>The only VPC endpoints that can be specified here are interface VPC endpoints for Grafana workspaces (using the <code>com.amazonaws.[region].grafana-workspace</code> service endpoint). Other VPC endpoints are ignored.</p>
     /// </note>
-    pub vpce_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub vpce_ids: ::std::vec::Vec<::std::string::String>,
 }
 impl NetworkAccessConfiguration {
     /// <p>An array of prefix list IDs. A prefix list is a list of CIDR ranges of IP addresses. The IP addresses specified are allowed to access your workspace. If the list is not included in the configuration (passed an empty array) then no IP addresses are allowed to access the workspace. You create a prefix list using the Amazon VPC console.</p>
     /// <p>Prefix list IDs have the format <code>pl-<i>1a2b3c4d</i> </code>.</p>
     /// <p>For more information about prefix lists, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/managed-prefix-lists.html">Group CIDR blocks using managed prefix lists</a>in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-    pub fn prefix_list_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.prefix_list_ids.as_deref()
+    pub fn prefix_list_ids(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.prefix_list_ids.deref()
     }
     /// <p>An array of Amazon VPC endpoint IDs for the workspace. You can create VPC endpoints to your Amazon Managed Grafana workspace for access from within a VPC. If a <code>NetworkAccessConfiguration</code> is specified then only VPC endpoints specified here are allowed to access the workspace. If you pass in an empty array of strings, then no VPCs are allowed to access the workspace.</p>
     /// <p>VPC endpoint IDs have the format <code>vpce-<i>1a2b3c4d</i> </code>.</p>
     /// <p>For more information about creating an interface VPC endpoint, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/VPC-endpoints">Interface VPC endpoints</a> in the <i>Amazon Managed Grafana User Guide</i>.</p> <note>
     /// <p>The only VPC endpoints that can be specified here are interface VPC endpoints for Grafana workspaces (using the <code>com.amazonaws.[region].grafana-workspace</code> service endpoint). Other VPC endpoints are ignored.</p>
     /// </note>
-    pub fn vpce_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.vpce_ids.as_deref()
+    pub fn vpce_ids(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.vpce_ids.deref()
     }
 }
 impl NetworkAccessConfiguration {
@@ -111,10 +113,23 @@ impl NetworkAccessConfigurationBuilder {
         &self.vpce_ids
     }
     /// Consumes the builder and constructs a [`NetworkAccessConfiguration`](crate::types::NetworkAccessConfiguration).
-    pub fn build(self) -> crate::types::NetworkAccessConfiguration {
-        crate::types::NetworkAccessConfiguration {
-            prefix_list_ids: self.prefix_list_ids,
-            vpce_ids: self.vpce_ids,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`prefix_list_ids`](crate::types::builders::NetworkAccessConfigurationBuilder::prefix_list_ids)
+    /// - [`vpce_ids`](crate::types::builders::NetworkAccessConfigurationBuilder::vpce_ids)
+    pub fn build(self) -> ::std::result::Result<crate::types::NetworkAccessConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::NetworkAccessConfiguration {
+            prefix_list_ids: self.prefix_list_ids.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "prefix_list_ids",
+                    "prefix_list_ids was not specified but it is required when building NetworkAccessConfiguration",
+                )
+            })?,
+            vpce_ids: self.vpce_ids.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "vpce_ids",
+                    "vpce_ids was not specified but it is required when building NetworkAccessConfiguration",
+                )
+            })?,
+        })
     }
 }

@@ -27,6 +27,7 @@ pub struct DeleteJobTemplateInputBuilder {
 }
 impl DeleteJobTemplateInputBuilder {
     /// <p>The unique identifier of the job template to delete.</p>
+    /// This field is required.
     pub fn job_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_template_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteJobTemplateInputBuilder {
     /// Consumes the builder and constructs a [`DeleteJobTemplateInput`](crate::operation::delete_job_template::DeleteJobTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_job_template::DeleteJobTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_job_template::DeleteJobTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_job_template::DeleteJobTemplateInput {
             job_template_id: self.job_template_id,
         })

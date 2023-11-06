@@ -2,7 +2,7 @@
 pub fn ser_aws_wafv2_web_acl_captcha_config_immunity_time_property_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.immunity_time {
         object.key("ImmunityTime").number(
             #[allow(clippy::useless_conversion)]

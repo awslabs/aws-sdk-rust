@@ -44,8 +44,10 @@ impl GetConfigurationSetOutput {
         self.sending_options.as_ref()
     }
     /// <p>An array of objects that define the tags (keys and values) that are associated with the configuration set.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>An object that contains information about the suppression list preferences for your account.</p>
     pub fn suppression_options(&self) -> ::std::option::Option<&crate::types::SuppressionOptions> {

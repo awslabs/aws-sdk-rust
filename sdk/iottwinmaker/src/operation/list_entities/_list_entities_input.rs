@@ -23,8 +23,10 @@ impl ListEntitiesInput {
     /// <p>A list of objects that filter the request.</p> <note>
     /// <p>Only one object is accepted as a valid input.</p>
     /// </note>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::ListEntitiesFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::ListEntitiesFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
@@ -54,6 +56,7 @@ pub struct ListEntitiesInputBuilder {
 }
 impl ListEntitiesInputBuilder {
     /// <p>The ID of the workspace.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -125,7 +128,9 @@ impl ListEntitiesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListEntitiesInput`](crate::operation::list_entities::ListEntitiesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_entities::ListEntitiesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_entities::ListEntitiesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_entities::ListEntitiesInput {
             workspace_id: self.workspace_id,
             filters: self.filters,

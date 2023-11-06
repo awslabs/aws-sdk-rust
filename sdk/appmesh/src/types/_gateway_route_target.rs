@@ -35,6 +35,7 @@ pub struct GatewayRouteTargetBuilder {
 }
 impl GatewayRouteTargetBuilder {
     /// <p>An object that represents a virtual service gateway route target.</p>
+    /// This field is required.
     pub fn virtual_service(mut self, input: crate::types::GatewayRouteVirtualService) -> Self {
         self.virtual_service = ::std::option::Option::Some(input);
         self

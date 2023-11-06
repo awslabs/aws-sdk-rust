@@ -27,6 +27,7 @@ pub struct DescribeApplicationStateInputBuilder {
 }
 impl DescribeApplicationStateInputBuilder {
     /// <p>The configurationId in Application Discovery Service that uniquely identifies the grouped application.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeApplicationStateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_application_state::DescribeApplicationStateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_application_state::DescribeApplicationStateInput {
             application_id: self.application_id,

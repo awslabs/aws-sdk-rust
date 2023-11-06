@@ -11,12 +11,16 @@ pub struct BatchGetRepositoryScanningConfigurationOutput {
 }
 impl BatchGetRepositoryScanningConfigurationOutput {
     /// <p>The scanning configuration for the requested repositories.</p>
-    pub fn scanning_configurations(&self) -> ::std::option::Option<&[crate::types::RepositoryScanningConfiguration]> {
-        self.scanning_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scanning_configurations.is_none()`.
+    pub fn scanning_configurations(&self) -> &[crate::types::RepositoryScanningConfiguration] {
+        self.scanning_configurations.as_deref().unwrap_or_default()
     }
     /// <p>Any failures associated with the call.</p>
-    pub fn failures(&self) -> ::std::option::Option<&[crate::types::RepositoryScanningConfigurationFailure]> {
-        self.failures.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failures.is_none()`.
+    pub fn failures(&self) -> &[crate::types::RepositoryScanningConfigurationFailure] {
+        self.failures.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchGetRepositoryScanningConfigurationOutput {

@@ -30,8 +30,10 @@ impl DescribeLocationSmbOutput {
         self.location_uri.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the source SMB file system location that is created.</p>
-    pub fn agent_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.agent_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agent_arns.is_none()`.
+    pub fn agent_arns(&self) -> &[::std::string::String] {
+        self.agent_arns.as_deref().unwrap_or_default()
     }
     /// <p>The user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
     pub fn user(&self) -> ::std::option::Option<&str> {

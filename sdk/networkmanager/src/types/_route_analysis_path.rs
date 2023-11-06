@@ -15,8 +15,10 @@ impl RouteAnalysisPath {
         self.completion_status.as_ref()
     }
     /// <p>The route analysis path.</p>
-    pub fn path(&self) -> ::std::option::Option<&[crate::types::PathComponent]> {
-        self.path.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.path.is_none()`.
+    pub fn path(&self) -> &[crate::types::PathComponent] {
+        self.path.as_deref().unwrap_or_default()
     }
 }
 impl RouteAnalysisPath {

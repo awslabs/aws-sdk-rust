@@ -78,18 +78,18 @@ pub fn de_import_hub_content_http_response(
         output = crate::protocol_serde::shape_import_hub_content::de_import_hub_content(_response_body, output)
             .map_err(crate::operation::import_hub_content::ImportHubContentError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::import_hub_content_output_correct_errors(output).build()
     })
 }
 
 pub fn ser_import_hub_content_input(
     input: &crate::operation::import_hub_content::ImportHubContentInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_import_hub_content_input::ser_import_hub_content_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_import_hub_content(

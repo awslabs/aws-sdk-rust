@@ -10,7 +10,7 @@ impl AssociateConfigurationItemsToApplicationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -74,12 +74,15 @@ impl AssociateConfigurationItemsToApplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins =
             crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplication::operation_runtime_plugins(
                 self.handle.runtime_plugins.clone(),
@@ -90,22 +93,15 @@ impl AssociateConfigurationItemsToApplicationFluentBuilder {
             .await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationOutput,
-            crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationError,
-        >,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationOutput,
+        crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

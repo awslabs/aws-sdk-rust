@@ -2,21 +2,21 @@
 pub fn ser_po_attributes(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PoAttributes,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.format {
-        object.key("format").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("format").string(input.format.as_str());
     }
-    if let Some(var_2) = &input.encoding {
-        object.key("encoding").string(var_2.as_str());
+    if let Some(var_1) = &input.encoding {
+        object.key("encoding").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.member_file_extensions {
-        let mut array_4 = object.key("memberFileExtensions").start_array();
-        for item_5 in var_3 {
+    {
+        let mut array_2 = object.key("memberFileExtensions").start_array();
+        for item_3 in &input.member_file_extensions {
             {
-                array_4.value().string(item_5.as_str());
+                array_2.value().string(item_3.as_str());
             }
         }
-        array_4.finish();
+        array_2.finish();
     }
     Ok(())
 }

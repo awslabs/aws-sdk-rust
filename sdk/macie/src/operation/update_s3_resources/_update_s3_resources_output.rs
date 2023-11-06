@@ -9,8 +9,10 @@ pub struct UpdateS3ResourcesOutput {
 }
 impl UpdateS3ResourcesOutput {
     /// <p>(Discontinued) The S3 resources whose classification types can't be updated. An error code and an error message are provided for each failed item.</p>
-    pub fn failed_s3_resources(&self) -> ::std::option::Option<&[crate::types::FailedS3Resource]> {
-        self.failed_s3_resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_s3_resources.is_none()`.
+    pub fn failed_s3_resources(&self) -> &[crate::types::FailedS3Resource] {
+        self.failed_s3_resources.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateS3ResourcesOutput {

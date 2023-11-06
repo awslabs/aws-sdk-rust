@@ -27,6 +27,7 @@ pub struct DescribeStackProvisioningParametersInputBuilder {
 }
 impl DescribeStackProvisioningParametersInputBuilder {
     /// <p>The stack ID.</p>
+    /// This field is required.
     pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeStackProvisioningParametersInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_stack_provisioning_parameters::DescribeStackProvisioningParametersInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_stack_provisioning_parameters::DescribeStackProvisioningParametersInput { stack_id: self.stack_id },

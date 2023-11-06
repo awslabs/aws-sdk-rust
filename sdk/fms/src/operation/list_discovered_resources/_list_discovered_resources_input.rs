@@ -14,8 +14,10 @@ pub struct ListDiscoveredResourcesInput {
 }
 impl ListDiscoveredResourcesInput {
     /// <p>The Amazon Web Services account IDs to discover resources in. Only one account is supported per request. The account must be a member of your organization.</p>
-    pub fn member_account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.member_account_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.member_account_ids.is_none()`.
+    pub fn member_account_ids(&self) -> &[::std::string::String] {
+        self.member_account_ids.as_deref().unwrap_or_default()
     }
     /// <p>The type of resources to discover.</p>
     pub fn resource_type(&self) -> ::std::option::Option<&str> {
@@ -68,6 +70,7 @@ impl ListDiscoveredResourcesInputBuilder {
         &self.member_account_ids
     }
     /// <p>The type of resources to discover.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
@@ -114,7 +117,7 @@ impl ListDiscoveredResourcesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_discovered_resources::ListDiscoveredResourcesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_discovered_resources::ListDiscoveredResourcesInput {
             member_account_ids: self.member_account_ids,

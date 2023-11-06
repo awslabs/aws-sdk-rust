@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Document {
     /// <p>The identifier of the document from the search service.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The optional group identifier of the document from the search service. Documents with the same group identifier are grouped together and processed as one document within the service.</p>
     pub group_id: ::std::option::Option<::std::string::String>,
     /// <p>The title of the search service's document.</p>
@@ -17,12 +17,13 @@ pub struct Document {
     /// <p>The body text of the search service's document represented as a list of tokens or words. You must choose to provide <code>Body</code> or <code>TokenizedBody</code>. You cannot provide both.</p>
     pub tokenized_body: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The original document score or rank from the search service. Amazon Kendra Intelligent Ranking gives the document a new score or rank based on its intelligent search algorithms.</p>
-    pub original_score: ::std::option::Option<f32>,
+    pub original_score: f32,
 }
 impl Document {
     /// <p>The identifier of the document from the search service.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The optional group identifier of the document from the search service. Documents with the same group identifier are grouped together and processed as one document within the service.</p>
     pub fn group_id(&self) -> ::std::option::Option<&str> {
@@ -37,15 +38,19 @@ impl Document {
         self.body.as_deref()
     }
     /// <p>The title of the search service's document represented as a list of tokens or words. You must choose to provide <code>Title</code> or <code>TokenizedTitle</code>. You cannot provide both.</p>
-    pub fn tokenized_title(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tokenized_title.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tokenized_title.is_none()`.
+    pub fn tokenized_title(&self) -> &[::std::string::String] {
+        self.tokenized_title.as_deref().unwrap_or_default()
     }
     /// <p>The body text of the search service's document represented as a list of tokens or words. You must choose to provide <code>Body</code> or <code>TokenizedBody</code>. You cannot provide both.</p>
-    pub fn tokenized_body(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tokenized_body.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tokenized_body.is_none()`.
+    pub fn tokenized_body(&self) -> &[::std::string::String] {
+        self.tokenized_body.as_deref().unwrap_or_default()
     }
     /// <p>The original document score or rank from the search service. Amazon Kendra Intelligent Ranking gives the document a new score or rank based on its intelligent search algorithms.</p>
-    pub fn original_score(&self) -> ::std::option::Option<f32> {
+    pub fn original_score(&self) -> f32 {
         self.original_score
     }
 }
@@ -70,6 +75,7 @@ pub struct DocumentBuilder {
 }
 impl DocumentBuilder {
     /// <p>The identifier of the document from the search service.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -166,6 +172,7 @@ impl DocumentBuilder {
         &self.tokenized_body
     }
     /// <p>The original document score or rank from the search service. Amazon Kendra Intelligent Ranking gives the document a new score or rank based on its intelligent search algorithms.</p>
+    /// This field is required.
     pub fn original_score(mut self, input: f32) -> Self {
         self.original_score = ::std::option::Option::Some(input);
         self
@@ -180,15 +187,28 @@ impl DocumentBuilder {
         &self.original_score
     }
     /// Consumes the builder and constructs a [`Document`](crate::types::Document).
-    pub fn build(self) -> crate::types::Document {
-        crate::types::Document {
-            id: self.id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::DocumentBuilder::id)
+    /// - [`original_score`](crate::types::builders::DocumentBuilder::original_score)
+    pub fn build(self) -> ::std::result::Result<crate::types::Document, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Document {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building Document",
+                )
+            })?,
             group_id: self.group_id,
             title: self.title,
             body: self.body,
             tokenized_title: self.tokenized_title,
             tokenized_body: self.tokenized_body,
-            original_score: self.original_score,
-        }
+            original_score: self.original_score.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "original_score",
+                    "original_score was not specified but it is required when building Document",
+                )
+            })?,
+        })
     }
 }

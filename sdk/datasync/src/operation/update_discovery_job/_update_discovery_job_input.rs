@@ -34,6 +34,7 @@ pub struct UpdateDiscoveryJobInputBuilder {
 }
 impl UpdateDiscoveryJobInputBuilder {
     /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want to update.</p>
+    /// This field is required.
     pub fn discovery_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.discovery_job_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateDiscoveryJobInputBuilder {
         &self.discovery_job_arn
     }
     /// <p>Specifies in minutes how long that you want the discovery job to run. (You can't set this parameter to less than the number of minutes that the job has already run for.)</p>
+    /// This field is required.
     pub fn collection_duration_minutes(mut self, input: i32) -> Self {
         self.collection_duration_minutes = ::std::option::Option::Some(input);
         self
@@ -64,7 +66,8 @@ impl UpdateDiscoveryJobInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDiscoveryJobInput`](crate::operation::update_discovery_job::UpdateDiscoveryJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_discovery_job::UpdateDiscoveryJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_discovery_job::UpdateDiscoveryJobInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_discovery_job::UpdateDiscoveryJobInput {
             discovery_job_arn: self.discovery_job_arn,
             collection_duration_minutes: self.collection_duration_minutes,

@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Content {
     /// <p>The content of the message itself.</p>
-    pub data: ::std::option::Option<::std::string::String>,
+    pub data: ::std::string::String,
     /// <p>The character set for the content. Because of the constraints of the SMTP protocol, Amazon SES uses 7-bit ASCII by default. If the text includes characters outside of the ASCII range, you have to specify a character set. For example, you could specify <code>UTF-8</code>, <code>ISO-8859-1</code>, or <code>Shift_JIS</code>.</p>
     pub charset: ::std::option::Option<::std::string::String>,
 }
 impl Content {
     /// <p>The content of the message itself.</p>
-    pub fn data(&self) -> ::std::option::Option<&str> {
-        self.data.as_deref()
+    pub fn data(&self) -> &str {
+        use std::ops::Deref;
+        self.data.deref()
     }
     /// <p>The character set for the content. Because of the constraints of the SMTP protocol, Amazon SES uses 7-bit ASCII by default. If the text includes characters outside of the ASCII range, you have to specify a character set. For example, you could specify <code>UTF-8</code>, <code>ISO-8859-1</code>, or <code>Shift_JIS</code>.</p>
     pub fn charset(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct ContentBuilder {
 }
 impl ContentBuilder {
     /// <p>The content of the message itself.</p>
+    /// This field is required.
     pub fn data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl ContentBuilder {
         &self.charset
     }
     /// Consumes the builder and constructs a [`Content`](crate::types::Content).
-    pub fn build(self) -> crate::types::Content {
-        crate::types::Content {
-            data: self.data,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`data`](crate::types::builders::ContentBuilder::data)
+    pub fn build(self) -> ::std::result::Result<crate::types::Content, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Content {
+            data: self.data.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "data",
+                    "data was not specified but it is required when building Content",
+                )
+            })?,
             charset: self.charset,
-        }
+        })
     }
 }

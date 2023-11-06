@@ -5,18 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalysisRuleCustom {
     /// <p>The analysis templates that are allowed by the custom analysis rule.</p>
-    pub allowed_analyses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub allowed_analyses: ::std::vec::Vec<::std::string::String>,
     /// <p>The Amazon Web Services accounts that are allowed to query by the custom analysis rule. Required when <code>allowedAnalyses</code> is <code>ANY_QUERY</code>.</p>
     pub allowed_analysis_providers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AnalysisRuleCustom {
     /// <p>The analysis templates that are allowed by the custom analysis rule.</p>
-    pub fn allowed_analyses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.allowed_analyses.as_deref()
+    pub fn allowed_analyses(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.allowed_analyses.deref()
     }
     /// <p>The Amazon Web Services accounts that are allowed to query by the custom analysis rule. Required when <code>allowedAnalyses</code> is <code>ANY_QUERY</code>.</p>
-    pub fn allowed_analysis_providers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.allowed_analysis_providers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_analysis_providers.is_none()`.
+    pub fn allowed_analysis_providers(&self) -> &[::std::string::String] {
+        self.allowed_analysis_providers.as_deref().unwrap_or_default()
     }
 }
 impl AnalysisRuleCustom {
@@ -75,10 +78,17 @@ impl AnalysisRuleCustomBuilder {
         &self.allowed_analysis_providers
     }
     /// Consumes the builder and constructs a [`AnalysisRuleCustom`](crate::types::AnalysisRuleCustom).
-    pub fn build(self) -> crate::types::AnalysisRuleCustom {
-        crate::types::AnalysisRuleCustom {
-            allowed_analyses: self.allowed_analyses,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`allowed_analyses`](crate::types::builders::AnalysisRuleCustomBuilder::allowed_analyses)
+    pub fn build(self) -> ::std::result::Result<crate::types::AnalysisRuleCustom, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AnalysisRuleCustom {
+            allowed_analyses: self.allowed_analyses.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "allowed_analyses",
+                    "allowed_analyses was not specified but it is required when building AnalysisRuleCustom",
+                )
+            })?,
             allowed_analysis_providers: self.allowed_analysis_providers,
-        }
+        })
     }
 }

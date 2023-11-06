@@ -2,35 +2,35 @@
 pub fn ser_grid_layout_element(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GridLayoutElement,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.element_id {
-        object.key("ElementId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("ElementId").string(input.element_id.as_str());
     }
-    if let Some(var_2) = &input.element_type {
-        object.key("ElementType").string(var_2.as_str());
+    {
+        object.key("ElementType").string(input.element_type.as_str());
     }
-    if let Some(var_3) = &input.column_index {
+    if let Some(var_1) = &input.column_index {
         object.key("ColumnIndex").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_4) = &input.column_span {
+    {
         object.key("ColumnSpan").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+            ::aws_smithy_types::Number::NegInt((input.column_span).into()),
         );
     }
-    if let Some(var_5) = &input.row_index {
+    if let Some(var_2) = &input.row_index {
         object.key("RowIndex").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_5).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_6) = &input.row_span {
+    {
         object.key("RowSpan").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_6).into()),
+            ::aws_smithy_types::Number::NegInt((input.row_span).into()),
         );
     }
     Ok(())
@@ -103,7 +103,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::grid_layout_element_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

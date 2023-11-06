@@ -15,8 +15,10 @@ impl DescribeProvisionedProductOutput {
         self.provisioned_product_detail.as_ref()
     }
     /// <p>Any CloudWatch dashboards that were created when provisioning the product.</p>
-    pub fn cloud_watch_dashboards(&self) -> ::std::option::Option<&[crate::types::CloudWatchDashboard]> {
-        self.cloud_watch_dashboards.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_watch_dashboards.is_none()`.
+    pub fn cloud_watch_dashboards(&self) -> &[crate::types::CloudWatchDashboard] {
+        self.cloud_watch_dashboards.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeProvisionedProductOutput {

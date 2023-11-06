@@ -62,6 +62,7 @@ pub struct CreateStreamingUrlInputBuilder {
 }
 impl CreateStreamingUrlInputBuilder {
     /// <p>The name of the stack.</p>
+    /// This field is required.
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl CreateStreamingUrlInputBuilder {
         &self.stack_name
     }
     /// <p>The name of the fleet.</p>
+    /// This field is required.
     pub fn fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +92,7 @@ impl CreateStreamingUrlInputBuilder {
         &self.fleet_name
     }
     /// <p>The identifier of the user.</p>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
@@ -148,7 +151,8 @@ impl CreateStreamingUrlInputBuilder {
     /// Consumes the builder and constructs a [`CreateStreamingUrlInput`](crate::operation::create_streaming_url::CreateStreamingUrlInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_streaming_url::CreateStreamingUrlInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_streaming_url::CreateStreamingUrlInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_streaming_url::CreateStreamingUrlInput {
             stack_name: self.stack_name,
             fleet_name: self.fleet_name,

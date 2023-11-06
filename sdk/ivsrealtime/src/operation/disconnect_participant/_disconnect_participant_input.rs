@@ -41,6 +41,7 @@ pub struct DisconnectParticipantInputBuilder {
 }
 impl DisconnectParticipantInputBuilder {
     /// <p>ARN of the stage to which the participant is attached.</p>
+    /// This field is required.
     pub fn stage_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DisconnectParticipantInputBuilder {
         &self.stage_arn
     }
     /// <p>Identifier of the participant to be disconnected. This is assigned by IVS and returned by <code>CreateParticipantToken</code>.</p>
+    /// This field is required.
     pub fn participant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.participant_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +87,7 @@ impl DisconnectParticipantInputBuilder {
     /// Consumes the builder and constructs a [`DisconnectParticipantInput`](crate::operation::disconnect_participant::DisconnectParticipantInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disconnect_participant::DisconnectParticipantInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::disconnect_participant::DisconnectParticipantInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::disconnect_participant::DisconnectParticipantInput {
             stage_arn: self.stage_arn,

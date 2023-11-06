@@ -2,21 +2,21 @@
 pub fn ser_schedule_lambda_function_decision_attributes(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ScheduleLambdaFunctionDecisionAttributes,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.id {
-        object.key("id").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("id").string(input.id.as_str());
     }
-    if let Some(var_2) = &input.name {
-        object.key("name").string(var_2.as_str());
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_3) = &input.control {
-        object.key("control").string(var_3.as_str());
+    if let Some(var_1) = &input.control {
+        object.key("control").string(var_1.as_str());
     }
-    if let Some(var_4) = &input.input {
-        object.key("input").string(var_4.as_str());
+    if let Some(var_2) = &input.input {
+        object.key("input").string(var_2.as_str());
     }
-    if let Some(var_5) = &input.start_to_close_timeout {
-        object.key("startToCloseTimeout").string(var_5.as_str());
+    if let Some(var_3) = &input.start_to_close_timeout {
+        object.key("startToCloseTimeout").string(var_3.as_str());
     }
     Ok(())
 }

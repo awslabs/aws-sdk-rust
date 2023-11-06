@@ -34,6 +34,7 @@ pub struct CreateSuiteDefinitionInputBuilder {
 }
 impl CreateSuiteDefinitionInputBuilder {
     /// <p>Creates a Device Advisor test suite with suite definition configuration.</p>
+    /// This field is required.
     pub fn suite_definition_configuration(mut self, input: crate::types::SuiteDefinitionConfiguration) -> Self {
         self.suite_definition_configuration = ::std::option::Option::Some(input);
         self
@@ -70,7 +71,7 @@ impl CreateSuiteDefinitionInputBuilder {
     /// Consumes the builder and constructs a [`CreateSuiteDefinitionInput`](crate::operation::create_suite_definition::CreateSuiteDefinitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_suite_definition::CreateSuiteDefinitionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_suite_definition::CreateSuiteDefinitionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_suite_definition::CreateSuiteDefinitionInput {
             suite_definition_configuration: self.suite_definition_configuration,

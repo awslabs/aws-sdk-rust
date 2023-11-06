@@ -34,6 +34,7 @@ pub struct AssociateSubnetCidrBlockInputBuilder {
 }
 impl AssociateSubnetCidrBlockInputBuilder {
     /// <p>The IPv6 CIDR block for your subnet. The subnet must have a /64 prefix length.</p>
+    /// This field is required.
     pub fn ipv6_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipv6_cidr_block = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl AssociateSubnetCidrBlockInputBuilder {
         &self.ipv6_cidr_block
     }
     /// <p>The ID of your subnet.</p>
+    /// This field is required.
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl AssociateSubnetCidrBlockInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_subnet_cidr_block::AssociateSubnetCidrBlockInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::associate_subnet_cidr_block::AssociateSubnetCidrBlockInput {
             ipv6_cidr_block: self.ipv6_cidr_block,

@@ -27,6 +27,7 @@ pub struct DeleteRetentionConfigurationInputBuilder {
 }
 impl DeleteRetentionConfigurationInputBuilder {
     /// <p>The name of the retention configuration to delete.</p>
+    /// This field is required.
     pub fn retention_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.retention_configuration_name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteRetentionConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_retention_configuration::DeleteRetentionConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_retention_configuration::DeleteRetentionConfigurationInput {
             retention_configuration_name: self.retention_configuration_name,

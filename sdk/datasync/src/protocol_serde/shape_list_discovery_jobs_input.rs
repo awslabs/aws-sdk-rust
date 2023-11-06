@@ -2,7 +2,7 @@
 pub fn ser_list_discovery_jobs_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_discovery_jobs::ListDiscoveryJobsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.storage_system_arn {
         object.key("StorageSystemArn").string(var_1.as_str());
     }

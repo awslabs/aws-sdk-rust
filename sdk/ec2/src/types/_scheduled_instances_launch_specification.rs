@@ -37,8 +37,10 @@ pub struct ScheduledInstancesLaunchSpecification {
 }
 impl ScheduledInstancesLaunchSpecification {
     /// <p>The block device mapping entries.</p>
-    pub fn block_device_mappings(&self) -> ::std::option::Option<&[crate::types::ScheduledInstancesBlockDeviceMapping]> {
-        self.block_device_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.block_device_mappings.is_none()`.
+    pub fn block_device_mappings(&self) -> &[crate::types::ScheduledInstancesBlockDeviceMapping] {
+        self.block_device_mappings.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether the instances are optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS-optimized instance.</p>
     /// <p>Default: <code>false</code> </p>
@@ -70,8 +72,10 @@ impl ScheduledInstancesLaunchSpecification {
         self.monitoring.as_ref()
     }
     /// <p>The network interfaces.</p>
-    pub fn network_interfaces(&self) -> ::std::option::Option<&[crate::types::ScheduledInstancesNetworkInterface]> {
-        self.network_interfaces.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_interfaces.is_none()`.
+    pub fn network_interfaces(&self) -> &[crate::types::ScheduledInstancesNetworkInterface] {
+        self.network_interfaces.as_deref().unwrap_or_default()
     }
     /// <p>The placement information.</p>
     pub fn placement(&self) -> ::std::option::Option<&crate::types::ScheduledInstancesPlacement> {
@@ -82,8 +86,10 @@ impl ScheduledInstancesLaunchSpecification {
         self.ramdisk_id.as_deref()
     }
     /// <p>The IDs of the security groups.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the subnet in which to launch the instances.</p>
     pub fn subnet_id(&self) -> ::std::option::Option<&str> {
@@ -196,6 +202,7 @@ impl ScheduledInstancesLaunchSpecificationBuilder {
         &self.iam_instance_profile
     }
     /// <p>The ID of the Amazon Machine Image (AMI).</p>
+    /// This field is required.
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_id = ::std::option::Option::Some(input.into());
         self

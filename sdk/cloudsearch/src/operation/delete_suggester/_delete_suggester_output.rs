@@ -35,6 +35,7 @@ pub struct DeleteSuggesterOutputBuilder {
 }
 impl DeleteSuggesterOutputBuilder {
     /// <p>The status of the suggester being deleted.</p>
+    /// This field is required.
     pub fn suggester(mut self, input: crate::types::SuggesterStatus) -> Self {
         self.suggester = ::std::option::Option::Some(input);
         self

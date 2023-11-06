@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnaggregatedField {
     /// <p>The custom field ID.</p>
-    pub field_id: ::std::option::Option<::std::string::String>,
+    pub field_id: ::std::string::String,
     /// <p>The column that is used in the <code>UnaggregatedField</code>.</p>
     pub column: ::std::option::Option<crate::types::ColumnIdentifier>,
     /// <p>The format configuration of the field.</p>
@@ -13,8 +13,9 @@ pub struct UnaggregatedField {
 }
 impl UnaggregatedField {
     /// <p>The custom field ID.</p>
-    pub fn field_id(&self) -> ::std::option::Option<&str> {
-        self.field_id.as_deref()
+    pub fn field_id(&self) -> &str {
+        use std::ops::Deref;
+        self.field_id.deref()
     }
     /// <p>The column that is used in the <code>UnaggregatedField</code>.</p>
     pub fn column(&self) -> ::std::option::Option<&crate::types::ColumnIdentifier> {
@@ -42,6 +43,7 @@ pub struct UnaggregatedFieldBuilder {
 }
 impl UnaggregatedFieldBuilder {
     /// <p>The custom field ID.</p>
+    /// This field is required.
     pub fn field_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.field_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +58,7 @@ impl UnaggregatedFieldBuilder {
         &self.field_id
     }
     /// <p>The column that is used in the <code>UnaggregatedField</code>.</p>
+    /// This field is required.
     pub fn column(mut self, input: crate::types::ColumnIdentifier) -> Self {
         self.column = ::std::option::Option::Some(input);
         self
@@ -84,11 +87,18 @@ impl UnaggregatedFieldBuilder {
         &self.format_configuration
     }
     /// Consumes the builder and constructs a [`UnaggregatedField`](crate::types::UnaggregatedField).
-    pub fn build(self) -> crate::types::UnaggregatedField {
-        crate::types::UnaggregatedField {
-            field_id: self.field_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`field_id`](crate::types::builders::UnaggregatedFieldBuilder::field_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::UnaggregatedField, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::UnaggregatedField {
+            field_id: self.field_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "field_id",
+                    "field_id was not specified but it is required when building UnaggregatedField",
+                )
+            })?,
             column: self.column,
             format_configuration: self.format_configuration,
-        }
+        })
     }
 }

@@ -2,7 +2,7 @@
 pub fn ser_notification_recipient_type(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NotificationRecipientType,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.user_tags {
         #[allow(unused_mut)]
         let mut object_2 = object.key("UserTags").start_object();

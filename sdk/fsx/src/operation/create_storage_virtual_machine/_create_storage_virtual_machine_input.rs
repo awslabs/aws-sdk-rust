@@ -45,8 +45,10 @@ impl CreateStorageVirtualMachineInput {
         self.svm_admin_password.as_deref()
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The security style of the root volume of the SVM. Specify one of the following values:</p>
     /// <ul>
@@ -120,6 +122,7 @@ impl CreateStorageVirtualMachineInputBuilder {
         &self.client_request_token
     }
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
+    /// This field is required.
     pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
@@ -134,6 +137,7 @@ impl CreateStorageVirtualMachineInputBuilder {
         &self.file_system_id
     }
     /// <p>The name of the SVM.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -218,7 +222,7 @@ impl CreateStorageVirtualMachineInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_storage_virtual_machine::CreateStorageVirtualMachineInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_storage_virtual_machine::CreateStorageVirtualMachineInput {
             active_directory_configuration: self.active_directory_configuration,

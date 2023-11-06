@@ -32,11 +32,10 @@ pub fn de_list_event_subscriptions_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_event_subscriptions::ListEventSubscriptionsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_event_subscriptions::ListEventSubscriptionsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalException" => crate::operation::list_event_subscriptions::ListEventSubscriptionsError::InternalException({
@@ -47,11 +46,10 @@ pub fn de_list_event_subscriptions_http_error(
                 output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_event_subscriptions::ListEventSubscriptionsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_event_subscriptions::ListEventSubscriptionsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InvalidInputException" => crate::operation::list_event_subscriptions::ListEventSubscriptionsError::InvalidInputException({
@@ -62,11 +60,10 @@ pub fn de_list_event_subscriptions_http_error(
                 output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_event_subscriptions::ListEventSubscriptionsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_input_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_event_subscriptions::ListEventSubscriptionsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "NoSuchEntityException" => crate::operation::list_event_subscriptions::ListEventSubscriptionsError::NoSuchEntityException({
@@ -77,11 +74,10 @@ pub fn de_list_event_subscriptions_http_error(
                 output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_event_subscriptions::ListEventSubscriptionsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::no_such_entity_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_event_subscriptions::ListEventSubscriptionsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::list_event_subscriptions::ListEventSubscriptionsError::generic(generic),
@@ -103,18 +99,20 @@ pub fn de_list_event_subscriptions_http_response(
         output = crate::protocol_serde::shape_list_event_subscriptions::de_list_event_subscriptions(_response_body, output)
             .map_err(crate::operation::list_event_subscriptions::ListEventSubscriptionsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::list_event_subscriptions_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::list_event_subscriptions::ListEventSubscriptionsError::unhandled)?
     })
 }
 
 pub fn ser_list_event_subscriptions_input(
     input: &crate::operation::list_event_subscriptions::ListEventSubscriptionsInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_list_event_subscriptions_input::ser_list_event_subscriptions_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_list_event_subscriptions(

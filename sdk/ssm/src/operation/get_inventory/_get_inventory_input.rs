@@ -16,16 +16,22 @@ pub struct GetInventoryInput {
 }
 impl GetInventoryInput {
     /// <p>One or more filters. Use a filter to return a more specific list of results.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::InventoryFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::InventoryFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>Returns counts of inventory types based on one or more expressions. For example, if you aggregate by using an expression that uses the <code>AWS:InstanceInformation.PlatformType</code> type, you can see a count of how many Windows and Linux managed nodes exist in your inventoried fleet.</p>
-    pub fn aggregators(&self) -> ::std::option::Option<&[crate::types::InventoryAggregator]> {
-        self.aggregators.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aggregators.is_none()`.
+    pub fn aggregators(&self) -> &[crate::types::InventoryAggregator] {
+        self.aggregators.as_deref().unwrap_or_default()
     }
     /// <p>The list of inventory item types to return.</p>
-    pub fn result_attributes(&self) -> ::std::option::Option<&[crate::types::ResultAttribute]> {
-        self.result_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.result_attributes.is_none()`.
+    pub fn result_attributes(&self) -> &[crate::types::ResultAttribute] {
+        self.result_attributes.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -143,7 +149,9 @@ impl GetInventoryInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetInventoryInput`](crate::operation::get_inventory::GetInventoryInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_inventory::GetInventoryInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_inventory::GetInventoryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_inventory::GetInventoryInput {
             filters: self.filters,
             aggregators: self.aggregators,

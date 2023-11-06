@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListResourceRecordSetsOutput {
     /// <p>Information about multiple resource record sets.</p>
-    pub resource_record_sets: ::std::option::Option<::std::vec::Vec<crate::types::ResourceRecordSet>>,
+    pub resource_record_sets: ::std::vec::Vec<crate::types::ResourceRecordSet>,
     /// <p>A flag that indicates whether more resource record sets remain to be listed. If your results were truncated, you can make a follow-up pagination request by using the <code>NextRecordName</code> element.</p>
     pub is_truncated: bool,
     /// <p>If the results were truncated, the name of the next record in the list.</p>
@@ -18,13 +18,14 @@ pub struct ListResourceRecordSetsOutput {
     /// <p>For information about routing policies, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     pub next_record_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of records you requested.</p>
-    pub max_items: ::std::option::Option<i32>,
+    pub max_items: i32,
     _request_id: Option<String>,
 }
 impl ListResourceRecordSetsOutput {
     /// <p>Information about multiple resource record sets.</p>
-    pub fn resource_record_sets(&self) -> ::std::option::Option<&[crate::types::ResourceRecordSet]> {
-        self.resource_record_sets.as_deref()
+    pub fn resource_record_sets(&self) -> &[crate::types::ResourceRecordSet] {
+        use std::ops::Deref;
+        self.resource_record_sets.deref()
     }
     /// <p>A flag that indicates whether more resource record sets remain to be listed. If your results were truncated, you can make a follow-up pagination request by using the <code>NextRecordName</code> element.</p>
     pub fn is_truncated(&self) -> bool {
@@ -46,7 +47,7 @@ impl ListResourceRecordSetsOutput {
         self.next_record_identifier.as_deref()
     }
     /// <p>The maximum number of records you requested.</p>
-    pub fn max_items(&self) -> ::std::option::Option<i32> {
+    pub fn max_items(&self) -> i32 {
         self.max_items
     }
 }
@@ -96,6 +97,7 @@ impl ListResourceRecordSetsOutputBuilder {
         &self.resource_record_sets
     }
     /// <p>A flag that indicates whether more resource record sets remain to be listed. If your results were truncated, you can make a follow-up pagination request by using the <code>NextRecordName</code> element.</p>
+    /// This field is required.
     pub fn is_truncated(mut self, input: bool) -> Self {
         self.is_truncated = ::std::option::Option::Some(input);
         self
@@ -161,6 +163,7 @@ impl ListResourceRecordSetsOutputBuilder {
         &self.next_record_identifier
     }
     /// <p>The maximum number of records you requested.</p>
+    /// This field is required.
     pub fn max_items(mut self, input: i32) -> Self {
         self.max_items = ::std::option::Option::Some(input);
         self
@@ -184,15 +187,33 @@ impl ListResourceRecordSetsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListResourceRecordSetsOutput`](crate::operation::list_resource_record_sets::ListResourceRecordSetsOutput).
-    pub fn build(self) -> crate::operation::list_resource_record_sets::ListResourceRecordSetsOutput {
-        crate::operation::list_resource_record_sets::ListResourceRecordSetsOutput {
-            resource_record_sets: self.resource_record_sets,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource_record_sets`](crate::operation::list_resource_record_sets::builders::ListResourceRecordSetsOutputBuilder::resource_record_sets)
+    /// - [`max_items`](crate::operation::list_resource_record_sets::builders::ListResourceRecordSetsOutputBuilder::max_items)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_resource_record_sets::ListResourceRecordSetsOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_resource_record_sets::ListResourceRecordSetsOutput {
+            resource_record_sets: self.resource_record_sets.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "resource_record_sets",
+                    "resource_record_sets was not specified but it is required when building ListResourceRecordSetsOutput",
+                )
+            })?,
             is_truncated: self.is_truncated.unwrap_or_default(),
             next_record_name: self.next_record_name,
             next_record_type: self.next_record_type,
             next_record_identifier: self.next_record_identifier,
-            max_items: self.max_items,
+            max_items: self.max_items.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "max_items",
+                    "max_items was not specified but it is required when building ListResourceRecordSetsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

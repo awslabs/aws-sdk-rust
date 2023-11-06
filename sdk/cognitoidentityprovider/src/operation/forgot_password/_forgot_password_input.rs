@@ -93,6 +93,7 @@ pub struct ForgotPasswordInputBuilder {
 }
 impl ForgotPasswordInputBuilder {
     /// <p>The ID of the client associated with the user pool.</p>
+    /// This field is required.
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
         self
@@ -135,6 +136,7 @@ impl ForgotPasswordInputBuilder {
         &self.user_context_data
     }
     /// <p>The user name of the user for whom you want to enter a code to reset a forgotten password.</p>
+    /// This field is required.
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self
@@ -219,7 +221,7 @@ impl ForgotPasswordInputBuilder {
     /// Consumes the builder and constructs a [`ForgotPasswordInput`](crate::operation::forgot_password::ForgotPasswordInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::forgot_password::ForgotPasswordInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::forgot_password::ForgotPasswordInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::forgot_password::ForgotPasswordInput {
             client_id: self.client_id,
             secret_hash: self.secret_hash,

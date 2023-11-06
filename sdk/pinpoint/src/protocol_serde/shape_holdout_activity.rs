@@ -2,7 +2,7 @@
 pub fn ser_holdout_activity(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HoldoutActivity,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.next_activity {
         object.key("NextActivity").string(var_1.as_str());
     }
@@ -54,7 +54,7 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::holdout_activity_correct_errors(builder).build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

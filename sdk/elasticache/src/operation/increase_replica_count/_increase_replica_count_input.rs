@@ -22,8 +22,10 @@ impl IncreaseReplicaCountInput {
         self.new_replica_count
     }
     /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard in a Redis (cluster mode enabled) replication group. The <code>ConfigureShard</code> has three members: <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
-    pub fn replica_configuration(&self) -> ::std::option::Option<&[crate::types::ConfigureShard]> {
-        self.replica_configuration.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replica_configuration.is_none()`.
+    pub fn replica_configuration(&self) -> &[crate::types::ConfigureShard] {
+        self.replica_configuration.as_deref().unwrap_or_default()
     }
     /// <p>If <code>True</code>, the number of replica nodes is increased immediately. <code>ApplyImmediately=False</code> is not currently supported.</p>
     pub fn apply_immediately(&self) -> ::std::option::Option<bool> {
@@ -48,6 +50,7 @@ pub struct IncreaseReplicaCountInputBuilder {
 }
 impl IncreaseReplicaCountInputBuilder {
     /// <p>The id of the replication group to which you want to add replica nodes.</p>
+    /// This field is required.
     pub fn replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_group_id = ::std::option::Option::Some(input.into());
         self
@@ -96,6 +99,7 @@ impl IncreaseReplicaCountInputBuilder {
         &self.replica_configuration
     }
     /// <p>If <code>True</code>, the number of replica nodes is increased immediately. <code>ApplyImmediately=False</code> is not currently supported.</p>
+    /// This field is required.
     pub fn apply_immediately(mut self, input: bool) -> Self {
         self.apply_immediately = ::std::option::Option::Some(input);
         self
@@ -112,7 +116,7 @@ impl IncreaseReplicaCountInputBuilder {
     /// Consumes the builder and constructs a [`IncreaseReplicaCountInput`](crate::operation::increase_replica_count::IncreaseReplicaCountInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::increase_replica_count::IncreaseReplicaCountInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::increase_replica_count::IncreaseReplicaCountInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::increase_replica_count::IncreaseReplicaCountInput {
             replication_group_id: self.replication_group_id,

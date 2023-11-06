@@ -7,7 +7,7 @@ pub struct ExportServerSideEncryption {
     /// <p>The Amazon Resource Name (ARN) of the AWS KMS key you want to use to encrypt the Amazon S3 objects. This parameter is required if you choose aws:kms as an encryption type.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of server side encryption used for encrypting the objects in Amazon S3.</p>
-    pub r#type: ::std::option::Option<crate::types::ServerSideEncryptionTypes>,
+    pub r#type: crate::types::ServerSideEncryptionTypes,
 }
 impl ExportServerSideEncryption {
     /// <p>The Amazon Resource Name (ARN) of the AWS KMS key you want to use to encrypt the Amazon S3 objects. This parameter is required if you choose aws:kms as an encryption type.</p>
@@ -15,8 +15,8 @@ impl ExportServerSideEncryption {
         self.kms_key_arn.as_deref()
     }
     /// <p>The type of server side encryption used for encrypting the objects in Amazon S3.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ServerSideEncryptionTypes> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::ServerSideEncryptionTypes {
+        &self.r#type
     }
 }
 impl ExportServerSideEncryption {
@@ -49,6 +49,7 @@ impl ExportServerSideEncryptionBuilder {
         &self.kms_key_arn
     }
     /// <p>The type of server side encryption used for encrypting the objects in Amazon S3.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::ServerSideEncryptionTypes) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -63,10 +64,17 @@ impl ExportServerSideEncryptionBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`ExportServerSideEncryption`](crate::types::ExportServerSideEncryption).
-    pub fn build(self) -> crate::types::ExportServerSideEncryption {
-        crate::types::ExportServerSideEncryption {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::ExportServerSideEncryptionBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::ExportServerSideEncryption, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ExportServerSideEncryption {
             kms_key_arn: self.kms_key_arn,
-            r#type: self.r#type,
-        }
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building ExportServerSideEncryption",
+                )
+            })?,
+        })
     }
 }

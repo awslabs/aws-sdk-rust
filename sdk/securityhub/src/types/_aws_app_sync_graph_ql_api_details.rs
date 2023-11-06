@@ -72,10 +72,10 @@ impl AwsAppSyncGraphQlApiDetails {
         self.log_config.as_ref()
     }
     /// <p> A list of additional authentication providers for the GraphQL API. </p>
-    pub fn additional_authentication_providers(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails]> {
-        self.additional_authentication_providers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_authentication_providers.is_none()`.
+    pub fn additional_authentication_providers(&self) -> &[crate::types::AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails] {
+        self.additional_authentication_providers.as_deref().unwrap_or_default()
     }
     /// <p> The Amazon Resource Name (ARN) of the WAF web access control list (web ACL) associated with this GraphQL API, if one exists. </p>
     pub fn waf_web_acl_arn(&self) -> ::std::option::Option<&str> {

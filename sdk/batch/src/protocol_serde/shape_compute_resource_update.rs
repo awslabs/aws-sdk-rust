@@ -2,7 +2,7 @@
 pub fn ser_compute_resource_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ComputeResourceUpdate,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.minv_cpus {
         object.key("minvCpus").number(
             #[allow(clippy::useless_conversion)]

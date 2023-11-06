@@ -17,8 +17,10 @@ impl ItemCollectionMetrics {
     }
     /// <p>An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p>
     /// <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p>
-    pub fn size_estimate_range_gb(&self) -> ::std::option::Option<&[f64]> {
-        self.size_estimate_range_gb.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.size_estimate_range_gb.is_none()`.
+    pub fn size_estimate_range_gb(&self) -> &[f64] {
+        self.size_estimate_range_gb.as_deref().unwrap_or_default()
     }
 }
 impl ItemCollectionMetrics {

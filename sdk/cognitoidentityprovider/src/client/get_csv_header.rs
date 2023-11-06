@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetCSVHeader`](crate::operation::get_csv_header::builders::GetCSVHeaderFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`user_pool_id(impl Into<String>)`](crate::operation::get_csv_header::builders::GetCSVHeaderFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::get_csv_header::builders::GetCSVHeaderFluentBuilder::set_user_pool_id): <p>The user pool ID for the user pool that the users are to be imported into.</p>
+    ///   - [`user_pool_id(impl Into<String>)`](crate::operation::get_csv_header::builders::GetCSVHeaderFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::get_csv_header::builders::GetCSVHeaderFluentBuilder::set_user_pool_id):<br>required: **true**<br><p>The user pool ID for the user pool that the users are to be imported into.</p><br>
     /// - On success, responds with [`GetCsvHeaderOutput`](crate::operation::get_csv_header::GetCsvHeaderOutput) with field(s):
     ///   - [`user_pool_id(Option<String>)`](crate::operation::get_csv_header::GetCsvHeaderOutput::user_pool_id): <p>The user pool ID for the user pool that the users are to be imported into.</p>
-    ///   - [`csv_header(Option<Vec<String>>)`](crate::operation::get_csv_header::GetCsvHeaderOutput::csv_header): <p>The header information of the CSV file for the user import job.</p>
+    ///   - [`csv_header(Option<Vec::<String>>)`](crate::operation::get_csv_header::GetCsvHeaderOutput::csv_header): <p>The header information of the CSV file for the user import job.</p>
     /// - On failure, responds with [`SdkError<GetCSVHeaderError>`](crate::operation::get_csv_header::GetCSVHeaderError)
     pub fn get_csv_header(&self) -> crate::operation::get_csv_header::builders::GetCSVHeaderFluentBuilder {
         crate::operation::get_csv_header::builders::GetCSVHeaderFluentBuilder::new(self.handle.clone())

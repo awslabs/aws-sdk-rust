@@ -41,6 +41,7 @@ pub struct GetTemplateSyncStatusInputBuilder {
 }
 impl GetTemplateSyncStatusInputBuilder {
     /// <p>The template name.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl GetTemplateSyncStatusInputBuilder {
         &self.template_name
     }
     /// <p>The template type.</p>
+    /// This field is required.
     pub fn template_type(mut self, input: crate::types::TemplateType) -> Self {
         self.template_type = ::std::option::Option::Some(input);
         self
@@ -69,6 +71,7 @@ impl GetTemplateSyncStatusInputBuilder {
         &self.template_type
     }
     /// <p>The template major version.</p>
+    /// This field is required.
     pub fn template_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_version = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +88,7 @@ impl GetTemplateSyncStatusInputBuilder {
     /// Consumes the builder and constructs a [`GetTemplateSyncStatusInput`](crate::operation::get_template_sync_status::GetTemplateSyncStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_template_sync_status::GetTemplateSyncStatusInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_template_sync_status::GetTemplateSyncStatusInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_template_sync_status::GetTemplateSyncStatusInput {
             template_name: self.template_name,

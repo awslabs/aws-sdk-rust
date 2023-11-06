@@ -185,16 +185,20 @@ impl DbSnapshot {
         self.iam_database_authentication_enabled
     }
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance when the DB snapshot was created.</p>
-    pub fn processor_features(&self) -> ::std::option::Option<&[crate::types::ProcessorFeature]> {
-        self.processor_features.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.processor_features.is_none()`.
+    pub fn processor_features(&self) -> &[crate::types::ProcessorFeature] {
+        self.processor_features.as_deref().unwrap_or_default()
     }
     /// <p>The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web Services Region.</p>
     pub fn dbi_resource_id(&self) -> ::std::option::Option<&str> {
         self.dbi_resource_id.as_deref()
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn tag_list(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tag_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_list.is_none()`.
+    pub fn tag_list(&self) -> &[crate::types::Tag] {
+        self.tag_list.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the time of the CreateDBSnapshot operation in Coordinated Universal Time (UTC). Doesn't change when the snapshot is copied.</p>
     pub fn original_snapshot_create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

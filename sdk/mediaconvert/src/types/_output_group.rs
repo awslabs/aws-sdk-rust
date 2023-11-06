@@ -33,8 +33,10 @@ impl OutputGroup {
         self.output_group_settings.as_ref()
     }
     /// This object holds groups of encoding settings, one group of settings per output.
-    pub fn outputs(&self) -> ::std::option::Option<&[crate::types::Output]> {
-        self.outputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outputs.is_none()`.
+    pub fn outputs(&self) -> &[crate::types::Output] {
+        self.outputs.as_deref().unwrap_or_default()
     }
 }
 impl OutputGroup {

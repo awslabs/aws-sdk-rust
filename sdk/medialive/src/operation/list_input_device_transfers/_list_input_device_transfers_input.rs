@@ -70,6 +70,7 @@ impl ListInputDeviceTransfersInputBuilder {
         &self.next_token
     }
     /// Placeholder documentation for __string
+    /// This field is required.
     pub fn transfer_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transfer_type = ::std::option::Option::Some(input.into());
         self
@@ -88,7 +89,7 @@ impl ListInputDeviceTransfersInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_input_device_transfers::ListInputDeviceTransfersInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_input_device_transfers::ListInputDeviceTransfersInput {
             max_results: self.max_results,

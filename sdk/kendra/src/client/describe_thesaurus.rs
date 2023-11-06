@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeThesaurus`](crate::operation::describe_thesaurus::builders::DescribeThesaurusFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::describe_thesaurus::builders::DescribeThesaurusFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::describe_thesaurus::builders::DescribeThesaurusFluentBuilder::set_id): <p>The identifier of the thesaurus you want to get information on.</p>
-    ///   - [`index_id(impl Into<String>)`](crate::operation::describe_thesaurus::builders::DescribeThesaurusFluentBuilder::index_id) / [`set_index_id(Option<String>)`](crate::operation::describe_thesaurus::builders::DescribeThesaurusFluentBuilder::set_index_id): <p>The identifier of the index for the thesaurus.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::describe_thesaurus::builders::DescribeThesaurusFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::describe_thesaurus::builders::DescribeThesaurusFluentBuilder::set_id):<br>required: **true**<br><p>The identifier of the thesaurus you want to get information on.</p><br>
+    ///   - [`index_id(impl Into<String>)`](crate::operation::describe_thesaurus::builders::DescribeThesaurusFluentBuilder::index_id) / [`set_index_id(Option<String>)`](crate::operation::describe_thesaurus::builders::DescribeThesaurusFluentBuilder::set_index_id):<br>required: **true**<br><p>The identifier of the index for the thesaurus.</p><br>
     /// - On success, responds with [`DescribeThesaurusOutput`](crate::operation::describe_thesaurus::DescribeThesaurusOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::describe_thesaurus::DescribeThesaurusOutput::id): <p>The identifier of the thesaurus.</p>
     ///   - [`index_id(Option<String>)`](crate::operation::describe_thesaurus::DescribeThesaurusOutput::index_id): <p>The identifier of the index for the thesaurus.</p>

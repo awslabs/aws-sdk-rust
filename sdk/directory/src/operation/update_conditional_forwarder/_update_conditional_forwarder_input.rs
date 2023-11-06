@@ -21,8 +21,10 @@ impl UpdateConditionalForwarderInput {
         self.remote_domain_name.as_deref()
     }
     /// <p>The updated IP addresses of the remote DNS server associated with the conditional forwarder.</p>
-    pub fn dns_ip_addrs(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.dns_ip_addrs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dns_ip_addrs.is_none()`.
+    pub fn dns_ip_addrs(&self) -> &[::std::string::String] {
+        self.dns_ip_addrs.as_deref().unwrap_or_default()
     }
 }
 impl UpdateConditionalForwarderInput {
@@ -42,6 +44,7 @@ pub struct UpdateConditionalForwarderInputBuilder {
 }
 impl UpdateConditionalForwarderInputBuilder {
     /// <p>The directory ID of the Amazon Web Services directory for which to update the conditional forwarder.</p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl UpdateConditionalForwarderInputBuilder {
         &self.directory_id
     }
     /// <p>The fully qualified domain name (FQDN) of the remote domain with which you will set up a trust relationship.</p>
+    /// This field is required.
     pub fn remote_domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.remote_domain_name = ::std::option::Option::Some(input.into());
         self
@@ -94,7 +98,7 @@ impl UpdateConditionalForwarderInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_conditional_forwarder::UpdateConditionalForwarderInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_conditional_forwarder::UpdateConditionalForwarderInput {
             directory_id: self.directory_id,

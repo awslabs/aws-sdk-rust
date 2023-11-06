@@ -38,8 +38,10 @@ impl UpdateAssessmentInput {
         self.assessment_reports_destination.as_ref()
     }
     /// <p> The list of roles for the assessment. </p>
-    pub fn roles(&self) -> ::std::option::Option<&[crate::types::Role]> {
-        self.roles.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.roles.is_none()`.
+    pub fn roles(&self) -> &[crate::types::Role] {
+        self.roles.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for UpdateAssessmentInput {
@@ -74,6 +76,7 @@ pub struct UpdateAssessmentInputBuilder {
 }
 impl UpdateAssessmentInputBuilder {
     /// <p> The unique identifier for the assessment. </p>
+    /// This field is required.
     pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_id = ::std::option::Option::Some(input.into());
         self
@@ -116,6 +119,7 @@ impl UpdateAssessmentInputBuilder {
         &self.assessment_description
     }
     /// <p> The scope of the assessment. </p>
+    /// This field is required.
     pub fn scope(mut self, input: crate::types::Scope) -> Self {
         self.scope = ::std::option::Option::Some(input);
         self
@@ -166,7 +170,7 @@ impl UpdateAssessmentInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAssessmentInput`](crate::operation::update_assessment::UpdateAssessmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_assessment::UpdateAssessmentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_assessment::UpdateAssessmentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_assessment::UpdateAssessmentInput {
             assessment_id: self.assessment_id,
             assessment_name: self.assessment_name,

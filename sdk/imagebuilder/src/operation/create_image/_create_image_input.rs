@@ -125,6 +125,7 @@ impl CreateImageInputBuilder {
         &self.distribution_configuration_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that defines the environment in which your image will be built and tested.</p>
+    /// This field is required.
     pub fn infrastructure_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.infrastructure_configuration_arn = ::std::option::Option::Some(input.into());
         self
@@ -187,6 +188,7 @@ impl CreateImageInputBuilder {
         &self.tags
     }
     /// <p>The idempotency token used to make this request idempotent.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -215,7 +217,7 @@ impl CreateImageInputBuilder {
         &self.image_scanning_configuration
     }
     /// Consumes the builder and constructs a [`CreateImageInput`](crate::operation::create_image::CreateImageInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_image::CreateImageInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_image::CreateImageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_image::CreateImageInput {
             image_recipe_arn: self.image_recipe_arn,
             container_recipe_arn: self.container_recipe_arn,

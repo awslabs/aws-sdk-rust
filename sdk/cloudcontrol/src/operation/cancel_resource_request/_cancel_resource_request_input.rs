@@ -27,6 +27,7 @@ pub struct CancelResourceRequestInputBuilder {
 }
 impl CancelResourceRequestInputBuilder {
     /// <p>The <code>RequestToken</code> of the <code>ProgressEvent</code> object returned by the resource operation request.</p>
+    /// This field is required.
     pub fn request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_token = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl CancelResourceRequestInputBuilder {
     /// Consumes the builder and constructs a [`CancelResourceRequestInput`](crate::operation::cancel_resource_request::CancelResourceRequestInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_resource_request::CancelResourceRequestInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::cancel_resource_request::CancelResourceRequestInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::cancel_resource_request::CancelResourceRequestInput {
             request_token: self.request_token,

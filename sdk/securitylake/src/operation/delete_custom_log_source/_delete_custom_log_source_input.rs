@@ -34,6 +34,7 @@ pub struct DeleteCustomLogSourceInputBuilder {
 }
 impl DeleteCustomLogSourceInputBuilder {
     /// <p>The source name of custom log source that you want to delete.</p>
+    /// This field is required.
     pub fn source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl DeleteCustomLogSourceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCustomLogSourceInput`](crate::operation::delete_custom_log_source::DeleteCustomLogSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_custom_log_source::DeleteCustomLogSourceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_custom_log_source::DeleteCustomLogSourceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_custom_log_source::DeleteCustomLogSourceInput {
             source_name: self.source_name,

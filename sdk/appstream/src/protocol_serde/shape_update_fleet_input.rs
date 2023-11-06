@@ -2,7 +2,7 @@
 pub fn ser_update_fleet_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_fleet::UpdateFleetInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.image_name {
         object.key("ImageName").string(var_1.as_str());
     }
@@ -101,6 +101,12 @@ pub fn ser_update_fleet_input(
         let mut object_29 = object.key("SessionScriptS3Location").start_object();
         crate::protocol_serde::shape_s3_location::ser_s3_location(&mut object_29, var_28)?;
         object_29.finish();
+    }
+    if let Some(var_30) = &input.max_sessions_per_instance {
+        object.key("MaxSessionsPerInstance").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_30).into()),
+        );
     }
     Ok(())
 }

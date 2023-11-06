@@ -25,11 +25,8 @@ pub fn de_list_entitlements_http_error(
                 output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_entitlements::ListEntitlementsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::bad_request_exception_correct_errors(output).build()
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerErrorException" => crate::operation::list_entitlements::ListEntitlementsError::InternalServerErrorException({
@@ -41,11 +38,8 @@ pub fn de_list_entitlements_http_error(
                     crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(_response_body, output)
                         .map_err(crate::operation::list_entitlements::ListEntitlementsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_error_exception_correct_errors(output).build()
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::list_entitlements::ListEntitlementsError::ServiceUnavailableException({
@@ -57,11 +51,8 @@ pub fn de_list_entitlements_http_error(
                     crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
                         .map_err(crate::operation::list_entitlements::ListEntitlementsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::service_unavailable_exception_correct_errors(output).build()
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "TooManyRequestsException" => crate::operation::list_entitlements::ListEntitlementsError::TooManyRequestsException({
@@ -72,11 +63,8 @@ pub fn de_list_entitlements_http_error(
                 output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_entitlements::ListEntitlementsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::too_many_requests_exception_correct_errors(output).build()
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::list_entitlements::ListEntitlementsError::generic(generic),
@@ -111,8 +99,9 @@ pub(crate) fn de_list_entitlements(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "entitlements" => {
-                    builder =
-                        builder.set_entitlements(crate::protocol_serde::shape___list_of_listed_entitlement::de___list_of_listed_entitlement(tokens)?);
+                    builder = builder.set_entitlements(crate::protocol_serde::shape_list_of_listed_entitlement::de_list_of_listed_entitlement(
+                        tokens,
+                    )?);
                 }
                 "nextToken" => {
                     builder = builder.set_next_token(

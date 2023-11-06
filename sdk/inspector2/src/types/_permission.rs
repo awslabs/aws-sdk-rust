@@ -5,18 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Permission {
     /// <p>The services that the permissions allow an account to perform the given operations for.</p>
-    pub service: ::std::option::Option<crate::types::Service>,
+    pub service: crate::types::Service,
     /// <p>The operations that can be performed with the given permissions.</p>
-    pub operation: ::std::option::Option<crate::types::Operation>,
+    pub operation: crate::types::Operation,
 }
 impl Permission {
     /// <p>The services that the permissions allow an account to perform the given operations for.</p>
-    pub fn service(&self) -> ::std::option::Option<&crate::types::Service> {
-        self.service.as_ref()
+    pub fn service(&self) -> &crate::types::Service {
+        &self.service
     }
     /// <p>The operations that can be performed with the given permissions.</p>
-    pub fn operation(&self) -> ::std::option::Option<&crate::types::Operation> {
-        self.operation.as_ref()
+    pub fn operation(&self) -> &crate::types::Operation {
+        &self.operation
     }
 }
 impl Permission {
@@ -35,6 +35,7 @@ pub struct PermissionBuilder {
 }
 impl PermissionBuilder {
     /// <p>The services that the permissions allow an account to perform the given operations for.</p>
+    /// This field is required.
     pub fn service(mut self, input: crate::types::Service) -> Self {
         self.service = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl PermissionBuilder {
         &self.service
     }
     /// <p>The operations that can be performed with the given permissions.</p>
+    /// This field is required.
     pub fn operation(mut self, input: crate::types::Operation) -> Self {
         self.operation = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl PermissionBuilder {
         &self.operation
     }
     /// Consumes the builder and constructs a [`Permission`](crate::types::Permission).
-    pub fn build(self) -> crate::types::Permission {
-        crate::types::Permission {
-            service: self.service,
-            operation: self.operation,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`service`](crate::types::builders::PermissionBuilder::service)
+    /// - [`operation`](crate::types::builders::PermissionBuilder::operation)
+    pub fn build(self) -> ::std::result::Result<crate::types::Permission, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Permission {
+            service: self.service.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "service",
+                    "service was not specified but it is required when building Permission",
+                )
+            })?,
+            operation: self.operation.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "operation",
+                    "operation was not specified but it is required when building Permission",
+                )
+            })?,
+        })
     }
 }

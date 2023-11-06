@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Statement {
     /// <p>A collection of message objects.</p>
-    pub messages: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
+    pub messages: ::std::vec::Vec<crate::types::Message>,
     /// <p> At runtime, if the client is using the <a href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> API, Amazon Lex includes the response card in the response. It substitutes all of the session attributes and slot values for placeholders in the response card. </p>
     pub response_card: ::std::option::Option<::std::string::String>,
 }
 impl Statement {
     /// <p>A collection of message objects.</p>
-    pub fn messages(&self) -> ::std::option::Option<&[crate::types::Message]> {
-        self.messages.as_deref()
+    pub fn messages(&self) -> &[crate::types::Message] {
+        use std::ops::Deref;
+        self.messages.deref()
     }
     /// <p> At runtime, if the client is using the <a href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> API, Amazon Lex includes the response card in the response. It substitutes all of the session attributes and slot values for placeholders in the response card. </p>
     pub fn response_card(&self) -> ::std::option::Option<&str> {
@@ -69,10 +70,17 @@ impl StatementBuilder {
         &self.response_card
     }
     /// Consumes the builder and constructs a [`Statement`](crate::types::Statement).
-    pub fn build(self) -> crate::types::Statement {
-        crate::types::Statement {
-            messages: self.messages,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`messages`](crate::types::builders::StatementBuilder::messages)
+    pub fn build(self) -> ::std::result::Result<crate::types::Statement, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Statement {
+            messages: self.messages.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "messages",
+                    "messages was not specified but it is required when building Statement",
+                )
+            })?,
             response_card: self.response_card,
-        }
+        })
     }
 }

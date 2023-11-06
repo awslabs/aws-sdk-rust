@@ -2,7 +2,7 @@
 pub fn ser_refresh_trusted_advisor_check_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::refresh_trusted_advisor_check::RefreshTrustedAdvisorCheckInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.check_id {
         object.key("checkId").string(var_1.as_str());
     }

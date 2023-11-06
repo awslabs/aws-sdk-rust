@@ -27,6 +27,7 @@ pub struct DeleteFhirDatastoreInputBuilder {
 }
 impl DeleteFhirDatastoreInputBuilder {
     /// <p> The AWS-generated ID for the data store to be deleted.</p>
+    /// This field is required.
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteFhirDatastoreInputBuilder {
     /// Consumes the builder and constructs a [`DeleteFhirDatastoreInput`](crate::operation::delete_fhir_datastore::DeleteFhirDatastoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_fhir_datastore::DeleteFhirDatastoreInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_fhir_datastore::DeleteFhirDatastoreInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_fhir_datastore::DeleteFhirDatastoreInput {
             datastore_id: self.datastore_id,

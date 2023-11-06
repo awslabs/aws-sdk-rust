@@ -2,21 +2,21 @@
 pub fn ser_entity_account_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EntityAccountFilter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.event_arn {
-        object.key("eventArn").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("eventArn").string(input.event_arn.as_str());
     }
-    if let Some(var_2) = &input.aws_account_id {
-        object.key("awsAccountId").string(var_2.as_str());
+    if let Some(var_1) = &input.aws_account_id {
+        object.key("awsAccountId").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.status_codes {
-        let mut array_4 = object.key("statusCodes").start_array();
-        for item_5 in var_3 {
+    if let Some(var_2) = &input.status_codes {
+        let mut array_3 = object.key("statusCodes").start_array();
+        for item_4 in var_2 {
             {
-                array_4.value().string(item_5.as_str());
+                array_3.value().string(item_4.as_str());
             }
         }
-        array_4.finish();
+        array_3.finish();
     }
     Ok(())
 }

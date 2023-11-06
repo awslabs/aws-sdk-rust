@@ -128,7 +128,7 @@ impl ScanProvisionedProductsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::scan_provisioned_products::ScanProvisionedProductsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::scan_provisioned_products::ScanProvisionedProductsInput {
             accept_language: self.accept_language,

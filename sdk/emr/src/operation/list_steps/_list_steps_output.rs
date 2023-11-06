@@ -12,8 +12,10 @@ pub struct ListStepsOutput {
 }
 impl ListStepsOutput {
     /// <p>The filtered list of steps for the cluster.</p>
-    pub fn steps(&self) -> ::std::option::Option<&[crate::types::StepSummary]> {
-        self.steps.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.steps.is_none()`.
+    pub fn steps(&self) -> &[crate::types::StepSummary] {
+        self.steps.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of steps that a single <code>ListSteps</code> action returns is 50. To return a longer list of steps, use multiple <code>ListSteps</code> actions along with the <code>Marker</code> parameter, which is a pagination token that indicates the next set of results to retrieve.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

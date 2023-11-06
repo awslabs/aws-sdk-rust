@@ -176,7 +176,9 @@ impl ListPoliciesInputBuilder {
         &self.max_items
     }
     /// Consumes the builder and constructs a [`ListPoliciesInput`](crate::operation::list_policies::ListPoliciesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_policies::ListPoliciesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_policies::ListPoliciesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_policies::ListPoliciesInput {
             scope: self.scope,
             only_attached: self.only_attached,

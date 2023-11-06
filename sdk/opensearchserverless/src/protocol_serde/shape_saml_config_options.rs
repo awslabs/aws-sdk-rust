@@ -2,20 +2,20 @@
 pub fn ser_saml_config_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SamlConfigOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.metadata {
-        object.key("metadata").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("metadata").string(input.metadata.as_str());
     }
-    if let Some(var_2) = &input.user_attribute {
-        object.key("userAttribute").string(var_2.as_str());
+    if let Some(var_1) = &input.user_attribute {
+        object.key("userAttribute").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.group_attribute {
-        object.key("groupAttribute").string(var_3.as_str());
+    if let Some(var_2) = &input.group_attribute {
+        object.key("groupAttribute").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.session_timeout {
+    if let Some(var_3) = &input.session_timeout {
         object.key("sessionTimeout").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
     Ok(())
@@ -74,7 +74,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::saml_config_options_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

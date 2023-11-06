@@ -50,6 +50,21 @@ pub fn de_register_application_http_error(
             }
             tmp
         }),
+        "ResourceNotFoundException" => crate::operation::register_application::RegisterApplicationError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::register_application::RegisterApplicationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ValidationException" => crate::operation::register_application::RegisterApplicationError::ValidationException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -90,12 +105,12 @@ pub fn de_register_application_http_response(
 
 pub fn ser_register_application_input(
     input: &crate::operation::register_application::RegisterApplicationInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_register_application_input::ser_register_application_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_register_application(

@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GroupedResourceCount {
     /// <p>The name of the group that can be region, account ID, or resource type. For example, region1, region2 if the region was chosen as <code>GroupByKey</code>.</p>
-    pub group_name: ::std::option::Option<::std::string::String>,
+    pub group_name: ::std::string::String,
     /// <p>The number of resources in the group.</p>
     pub resource_count: i64,
 }
 impl GroupedResourceCount {
     /// <p>The name of the group that can be region, account ID, or resource type. For example, region1, region2 if the region was chosen as <code>GroupByKey</code>.</p>
-    pub fn group_name(&self) -> ::std::option::Option<&str> {
-        self.group_name.as_deref()
+    pub fn group_name(&self) -> &str {
+        use std::ops::Deref;
+        self.group_name.deref()
     }
     /// <p>The number of resources in the group.</p>
     pub fn resource_count(&self) -> i64 {
@@ -35,6 +36,7 @@ pub struct GroupedResourceCountBuilder {
 }
 impl GroupedResourceCountBuilder {
     /// <p>The name of the group that can be region, account ID, or resource type. For example, region1, region2 if the region was chosen as <code>GroupByKey</code>.</p>
+    /// This field is required.
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl GroupedResourceCountBuilder {
         &self.group_name
     }
     /// <p>The number of resources in the group.</p>
+    /// This field is required.
     pub fn resource_count(mut self, input: i64) -> Self {
         self.resource_count = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,17 @@ impl GroupedResourceCountBuilder {
         &self.resource_count
     }
     /// Consumes the builder and constructs a [`GroupedResourceCount`](crate::types::GroupedResourceCount).
-    pub fn build(self) -> crate::types::GroupedResourceCount {
-        crate::types::GroupedResourceCount {
-            group_name: self.group_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`group_name`](crate::types::builders::GroupedResourceCountBuilder::group_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::GroupedResourceCount, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::GroupedResourceCount {
+            group_name: self.group_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "group_name",
+                    "group_name was not specified but it is required when building GroupedResourceCount",
+                )
+            })?,
             resource_count: self.resource_count.unwrap_or_default(),
-        }
+        })
     }
 }

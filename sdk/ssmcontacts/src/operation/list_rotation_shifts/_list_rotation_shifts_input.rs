@@ -55,6 +55,7 @@ pub struct ListRotationShiftsInputBuilder {
 }
 impl ListRotationShiftsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the rotation to retrieve shift information about. </p>
+    /// This field is required.
     pub fn rotation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rotation_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +84,7 @@ impl ListRotationShiftsInputBuilder {
         &self.start_time
     }
     /// <p>The date and time for the end of the time range to list shifts for.</p>
+    /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
@@ -127,7 +129,8 @@ impl ListRotationShiftsInputBuilder {
     /// Consumes the builder and constructs a [`ListRotationShiftsInput`](crate::operation::list_rotation_shifts::ListRotationShiftsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_rotation_shifts::ListRotationShiftsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_rotation_shifts::ListRotationShiftsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_rotation_shifts::ListRotationShiftsInput {
             rotation_id: self.rotation_id,
             start_time: self.start_time,

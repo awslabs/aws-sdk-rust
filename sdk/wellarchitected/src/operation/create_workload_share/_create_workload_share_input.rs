@@ -55,6 +55,7 @@ pub struct CreateWorkloadShareInputBuilder {
 }
 impl CreateWorkloadShareInputBuilder {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    /// This field is required.
     pub fn workload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workload_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl CreateWorkloadShareInputBuilder {
         &self.workload_id
     }
     /// <p>The Amazon Web Services account ID, organization ID, or organizational unit (OU) ID with which the workload, lens, profile, or review template is shared.</p>
+    /// This field is required.
     pub fn shared_with(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shared_with = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +85,7 @@ impl CreateWorkloadShareInputBuilder {
         &self.shared_with
     }
     /// <p>Permission granted on a share request.</p>
+    /// This field is required.
     pub fn permission_type(mut self, input: crate::types::PermissionType) -> Self {
         self.permission_type = ::std::option::Option::Some(input);
         self
@@ -100,6 +103,7 @@ impl CreateWorkloadShareInputBuilder {
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
+    /// This field is required.
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
@@ -122,7 +126,7 @@ impl CreateWorkloadShareInputBuilder {
     /// Consumes the builder and constructs a [`CreateWorkloadShareInput`](crate::operation::create_workload_share::CreateWorkloadShareInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_workload_share::CreateWorkloadShareInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_workload_share::CreateWorkloadShareInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_workload_share::CreateWorkloadShareInput {
             workload_id: self.workload_id,

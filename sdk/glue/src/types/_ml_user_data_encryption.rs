@@ -9,7 +9,7 @@ pub struct MlUserDataEncryption {
     /// <li> <p>DISABLED: encryption is disabled</p> </li>
     /// <li> <p>SSEKMS: use of server-side encryption with Key Management Service (SSE-KMS) for user data stored in Amazon S3.</p> </li>
     /// </ul>
-    pub ml_user_data_encryption_mode: ::std::option::Option<crate::types::MlUserDataEncryptionModeString>,
+    pub ml_user_data_encryption_mode: crate::types::MlUserDataEncryptionModeString,
     /// <p>The ID for the customer-provided KMS key.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
@@ -19,8 +19,8 @@ impl MlUserDataEncryption {
     /// <li> <p>DISABLED: encryption is disabled</p> </li>
     /// <li> <p>SSEKMS: use of server-side encryption with Key Management Service (SSE-KMS) for user data stored in Amazon S3.</p> </li>
     /// </ul>
-    pub fn ml_user_data_encryption_mode(&self) -> ::std::option::Option<&crate::types::MlUserDataEncryptionModeString> {
-        self.ml_user_data_encryption_mode.as_ref()
+    pub fn ml_user_data_encryption_mode(&self) -> &crate::types::MlUserDataEncryptionModeString {
+        &self.ml_user_data_encryption_mode
     }
     /// <p>The ID for the customer-provided KMS key.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
@@ -47,6 +47,7 @@ impl MlUserDataEncryptionBuilder {
     /// <li> <p>DISABLED: encryption is disabled</p> </li>
     /// <li> <p>SSEKMS: use of server-side encryption with Key Management Service (SSE-KMS) for user data stored in Amazon S3.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn ml_user_data_encryption_mode(mut self, input: crate::types::MlUserDataEncryptionModeString) -> Self {
         self.ml_user_data_encryption_mode = ::std::option::Option::Some(input);
         self
@@ -83,10 +84,17 @@ impl MlUserDataEncryptionBuilder {
         &self.kms_key_id
     }
     /// Consumes the builder and constructs a [`MlUserDataEncryption`](crate::types::MlUserDataEncryption).
-    pub fn build(self) -> crate::types::MlUserDataEncryption {
-        crate::types::MlUserDataEncryption {
-            ml_user_data_encryption_mode: self.ml_user_data_encryption_mode,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`ml_user_data_encryption_mode`](crate::types::builders::MlUserDataEncryptionBuilder::ml_user_data_encryption_mode)
+    pub fn build(self) -> ::std::result::Result<crate::types::MlUserDataEncryption, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::MlUserDataEncryption {
+            ml_user_data_encryption_mode: self.ml_user_data_encryption_mode.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "ml_user_data_encryption_mode",
+                    "ml_user_data_encryption_mode was not specified but it is required when building MlUserDataEncryption",
+                )
+            })?,
             kms_key_id: self.kms_key_id,
-        }
+        })
     }
 }

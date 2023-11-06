@@ -4,25 +4,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAnnotationImportJobOutput {
     /// <p>The job's ID.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The job's destination annotation store.</p>
-    pub destination_name: ::std::option::Option<::std::string::String>,
+    pub destination_name: ::std::string::String,
     /// <p> The name of the annotation store version. </p>
-    pub version_name: ::std::option::Option<::std::string::String>,
+    pub version_name: ::std::string::String,
     /// <p>The job's service role ARN.</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
     /// <p>The job's status.</p>
-    pub status: ::std::option::Option<crate::types::JobStatus>,
+    pub status: crate::types::JobStatus,
     /// <p>The job's status message.</p>
-    pub status_message: ::std::option::Option<::std::string::String>,
+    pub status_message: ::std::string::String,
     /// <p>When the job was created.</p>
-    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_time: ::aws_smithy_types::DateTime,
     /// <p>When the job was updated.</p>
-    pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub update_time: ::aws_smithy_types::DateTime,
     /// <p>When the job completed.</p>
-    pub completion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub completion_time: ::aws_smithy_types::DateTime,
     /// <p>The job's imported items.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::AnnotationImportItemDetail>>,
+    pub items: ::std::vec::Vec<crate::types::AnnotationImportItemDetail>,
     /// <p>The job's left normalization setting.</p>
     pub run_left_normalization: bool,
     /// <p>Formatting options for a file.</p>
@@ -33,44 +33,50 @@ pub struct GetAnnotationImportJobOutput {
 }
 impl GetAnnotationImportJobOutput {
     /// <p>The job's ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The job's destination annotation store.</p>
-    pub fn destination_name(&self) -> ::std::option::Option<&str> {
-        self.destination_name.as_deref()
+    pub fn destination_name(&self) -> &str {
+        use std::ops::Deref;
+        self.destination_name.deref()
     }
     /// <p> The name of the annotation store version. </p>
-    pub fn version_name(&self) -> ::std::option::Option<&str> {
-        self.version_name.as_deref()
+    pub fn version_name(&self) -> &str {
+        use std::ops::Deref;
+        self.version_name.deref()
     }
     /// <p>The job's service role ARN.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
     /// <p>The job's status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::JobStatus {
+        &self.status
     }
     /// <p>The job's status message.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
-        self.status_message.as_deref()
+    pub fn status_message(&self) -> &str {
+        use std::ops::Deref;
+        self.status_message.deref()
     }
     /// <p>When the job was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_time.as_ref()
+    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_time
     }
     /// <p>When the job was updated.</p>
-    pub fn update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.update_time.as_ref()
+    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.update_time
     }
     /// <p>When the job completed.</p>
-    pub fn completion_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.completion_time.as_ref()
+    pub fn completion_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.completion_time
     }
     /// <p>The job's imported items.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::AnnotationImportItemDetail]> {
-        self.items.as_deref()
+    pub fn items(&self) -> &[crate::types::AnnotationImportItemDetail] {
+        use std::ops::Deref;
+        self.items.deref()
     }
     /// <p>The job's left normalization setting.</p>
     pub fn run_left_normalization(&self) -> bool {
@@ -118,6 +124,7 @@ pub struct GetAnnotationImportJobOutputBuilder {
 }
 impl GetAnnotationImportJobOutputBuilder {
     /// <p>The job's ID.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +139,7 @@ impl GetAnnotationImportJobOutputBuilder {
         &self.id
     }
     /// <p>The job's destination annotation store.</p>
+    /// This field is required.
     pub fn destination_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_name = ::std::option::Option::Some(input.into());
         self
@@ -146,6 +154,7 @@ impl GetAnnotationImportJobOutputBuilder {
         &self.destination_name
     }
     /// <p> The name of the annotation store version. </p>
+    /// This field is required.
     pub fn version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_name = ::std::option::Option::Some(input.into());
         self
@@ -160,6 +169,7 @@ impl GetAnnotationImportJobOutputBuilder {
         &self.version_name
     }
     /// <p>The job's service role ARN.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -174,6 +184,7 @@ impl GetAnnotationImportJobOutputBuilder {
         &self.role_arn
     }
     /// <p>The job's status.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::JobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -188,6 +199,7 @@ impl GetAnnotationImportJobOutputBuilder {
         &self.status
     }
     /// <p>The job's status message.</p>
+    /// This field is required.
     pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
@@ -202,6 +214,7 @@ impl GetAnnotationImportJobOutputBuilder {
         &self.status_message
     }
     /// <p>When the job was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -216,6 +229,7 @@ impl GetAnnotationImportJobOutputBuilder {
         &self.creation_time
     }
     /// <p>When the job was updated.</p>
+    /// This field is required.
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
         self
@@ -230,6 +244,7 @@ impl GetAnnotationImportJobOutputBuilder {
         &self.update_time
     }
     /// <p>When the job completed.</p>
+    /// This field is required.
     pub fn completion_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.completion_time = ::std::option::Option::Some(input);
         self
@@ -264,6 +279,7 @@ impl GetAnnotationImportJobOutputBuilder {
         &self.items
     }
     /// <p>The job's left normalization setting.</p>
+    /// This field is required.
     pub fn run_left_normalization(mut self, input: bool) -> Self {
         self.run_left_normalization = ::std::option::Option::Some(input);
         self
@@ -278,6 +294,7 @@ impl GetAnnotationImportJobOutputBuilder {
         &self.run_left_normalization
     }
     /// <p>Formatting options for a file.</p>
+    /// This field is required.
     pub fn format_options(mut self, input: crate::types::FormatOptions) -> Self {
         self.format_options = ::std::option::Option::Some(input);
         self
@@ -328,22 +345,88 @@ impl GetAnnotationImportJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetAnnotationImportJobOutput`](crate::operation::get_annotation_import_job::GetAnnotationImportJobOutput).
-    pub fn build(self) -> crate::operation::get_annotation_import_job::GetAnnotationImportJobOutput {
-        crate::operation::get_annotation_import_job::GetAnnotationImportJobOutput {
-            id: self.id,
-            destination_name: self.destination_name,
-            version_name: self.version_name,
-            role_arn: self.role_arn,
-            status: self.status,
-            status_message: self.status_message,
-            creation_time: self.creation_time,
-            update_time: self.update_time,
-            completion_time: self.completion_time,
-            items: self.items,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::get_annotation_import_job::builders::GetAnnotationImportJobOutputBuilder::id)
+    /// - [`destination_name`](crate::operation::get_annotation_import_job::builders::GetAnnotationImportJobOutputBuilder::destination_name)
+    /// - [`version_name`](crate::operation::get_annotation_import_job::builders::GetAnnotationImportJobOutputBuilder::version_name)
+    /// - [`role_arn`](crate::operation::get_annotation_import_job::builders::GetAnnotationImportJobOutputBuilder::role_arn)
+    /// - [`status`](crate::operation::get_annotation_import_job::builders::GetAnnotationImportJobOutputBuilder::status)
+    /// - [`status_message`](crate::operation::get_annotation_import_job::builders::GetAnnotationImportJobOutputBuilder::status_message)
+    /// - [`creation_time`](crate::operation::get_annotation_import_job::builders::GetAnnotationImportJobOutputBuilder::creation_time)
+    /// - [`update_time`](crate::operation::get_annotation_import_job::builders::GetAnnotationImportJobOutputBuilder::update_time)
+    /// - [`completion_time`](crate::operation::get_annotation_import_job::builders::GetAnnotationImportJobOutputBuilder::completion_time)
+    /// - [`items`](crate::operation::get_annotation_import_job::builders::GetAnnotationImportJobOutputBuilder::items)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_annotation_import_job::GetAnnotationImportJobOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::get_annotation_import_job::GetAnnotationImportJobOutput {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building GetAnnotationImportJobOutput",
+                )
+            })?,
+            destination_name: self.destination_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "destination_name",
+                    "destination_name was not specified but it is required when building GetAnnotationImportJobOutput",
+                )
+            })?,
+            version_name: self.version_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "version_name",
+                    "version_name was not specified but it is required when building GetAnnotationImportJobOutput",
+                )
+            })?,
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building GetAnnotationImportJobOutput",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building GetAnnotationImportJobOutput",
+                )
+            })?,
+            status_message: self.status_message.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status_message",
+                    "status_message was not specified but it is required when building GetAnnotationImportJobOutput",
+                )
+            })?,
+            creation_time: self.creation_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "creation_time",
+                    "creation_time was not specified but it is required when building GetAnnotationImportJobOutput",
+                )
+            })?,
+            update_time: self.update_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "update_time",
+                    "update_time was not specified but it is required when building GetAnnotationImportJobOutput",
+                )
+            })?,
+            completion_time: self.completion_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "completion_time",
+                    "completion_time was not specified but it is required when building GetAnnotationImportJobOutput",
+                )
+            })?,
+            items: self.items.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "items",
+                    "items was not specified but it is required when building GetAnnotationImportJobOutput",
+                )
+            })?,
             run_left_normalization: self.run_left_normalization.unwrap_or_default(),
             format_options: self.format_options,
             annotation_fields: self.annotation_fields,
             _request_id: self._request_id,
-        }
+        })
     }
 }

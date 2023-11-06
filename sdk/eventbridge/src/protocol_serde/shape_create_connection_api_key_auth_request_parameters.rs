@@ -2,12 +2,12 @@
 pub fn ser_create_connection_api_key_auth_request_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CreateConnectionApiKeyAuthRequestParameters,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.api_key_name {
-        object.key("ApiKeyName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("ApiKeyName").string(input.api_key_name.as_str());
     }
-    if let Some(var_2) = &input.api_key_value {
-        object.key("ApiKeyValue").string(var_2.as_str());
+    {
+        object.key("ApiKeyValue").string(input.api_key_value.as_str());
     }
     Ok(())
 }

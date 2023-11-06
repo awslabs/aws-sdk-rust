@@ -9,8 +9,10 @@ pub struct GetLifecyclePoliciesOutput {
 }
 impl GetLifecyclePoliciesOutput {
     /// <p>Summary information about the lifecycle policies.</p>
-    pub fn policies(&self) -> ::std::option::Option<&[crate::types::LifecyclePolicySummary]> {
-        self.policies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policies.is_none()`.
+    pub fn policies(&self) -> &[crate::types::LifecyclePolicySummary] {
+        self.policies.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetLifecyclePoliciesOutput {

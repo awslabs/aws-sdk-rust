@@ -76,6 +76,7 @@ impl SearchContentInputBuilder {
         &self.max_results
     }
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// This field is required.
     pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.knowledge_base_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +91,7 @@ impl SearchContentInputBuilder {
         &self.knowledge_base_id
     }
     /// <p>The search expression to filter results.</p>
+    /// This field is required.
     pub fn search_expression(mut self, input: crate::types::SearchExpression) -> Self {
         self.search_expression = ::std::option::Option::Some(input);
         self
@@ -106,7 +108,7 @@ impl SearchContentInputBuilder {
     /// Consumes the builder and constructs a [`SearchContentInput`](crate::operation::search_content::SearchContentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_content::SearchContentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::search_content::SearchContentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_content::SearchContentInput {
             next_token: self.next_token,
             max_results: self.max_results,

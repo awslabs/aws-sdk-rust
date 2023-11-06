@@ -34,6 +34,7 @@ pub struct GetLaunchProfileDetailsInputBuilder {
 }
 impl GetLaunchProfileDetailsInputBuilder {
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
+    /// This field is required.
     pub fn launch_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_profile_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetLaunchProfileDetailsInputBuilder {
         &self.launch_profile_id
     }
     /// <p>The studio ID. </p>
+    /// This field is required.
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl GetLaunchProfileDetailsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_launch_profile_details::GetLaunchProfileDetailsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_launch_profile_details::GetLaunchProfileDetailsInput {
             launch_profile_id: self.launch_profile_id,

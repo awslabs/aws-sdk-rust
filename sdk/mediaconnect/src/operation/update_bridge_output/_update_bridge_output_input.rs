@@ -42,6 +42,7 @@ pub struct UpdateBridgeOutputInputBuilder {
 }
 impl UpdateBridgeOutputInputBuilder {
     /// The ARN of the bridge that you want to update.
+    /// This field is required.
     pub fn bridge_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bridge_arn = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +71,7 @@ impl UpdateBridgeOutputInputBuilder {
         &self.network_output
     }
     /// The name of the bridge output that you want to update.
+    /// This field is required.
     pub fn output_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_name = ::std::option::Option::Some(input.into());
         self
@@ -86,7 +88,8 @@ impl UpdateBridgeOutputInputBuilder {
     /// Consumes the builder and constructs a [`UpdateBridgeOutputInput`](crate::operation::update_bridge_output::UpdateBridgeOutputInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_bridge_output::UpdateBridgeOutputInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_bridge_output::UpdateBridgeOutputInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_bridge_output::UpdateBridgeOutputInput {
             bridge_arn: self.bridge_arn,
             network_output: self.network_output,

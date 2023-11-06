@@ -41,6 +41,7 @@ pub struct GetVoiceToneAnalysisTaskInputBuilder {
 }
 impl GetVoiceToneAnalysisTaskInputBuilder {
     /// <p>The Voice Connector ID.</p>
+    /// This field is required.
     pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl GetVoiceToneAnalysisTaskInputBuilder {
         &self.voice_connector_id
     }
     /// <p>The ID of the voice tone anlysis task.</p>
+    /// This field is required.
     pub fn voice_tone_analysis_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_tone_analysis_task_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl GetVoiceToneAnalysisTaskInputBuilder {
         &self.voice_tone_analysis_task_id
     }
     /// <p>Specifies whether the voice being analyzed is the caller (originator) or the callee (responder).</p>
+    /// This field is required.
     pub fn is_caller(mut self, input: bool) -> Self {
         self.is_caller = ::std::option::Option::Some(input);
         self
@@ -87,7 +90,7 @@ impl GetVoiceToneAnalysisTaskInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_voice_tone_analysis_task::GetVoiceToneAnalysisTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_voice_tone_analysis_task::GetVoiceToneAnalysisTaskInput {
             voice_connector_id: self.voice_connector_id,

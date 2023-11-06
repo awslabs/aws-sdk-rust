@@ -27,6 +27,7 @@ pub struct DetachStaticIpInputBuilder {
 }
 impl DetachStaticIpInputBuilder {
     /// <p>The name of the static IP to detach from the instance.</p>
+    /// This field is required.
     pub fn static_ip_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.static_ip_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DetachStaticIpInputBuilder {
     /// Consumes the builder and constructs a [`DetachStaticIpInput`](crate::operation::detach_static_ip::DetachStaticIpInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::detach_static_ip::DetachStaticIpInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::detach_static_ip::DetachStaticIpInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::detach_static_ip::DetachStaticIpInput {
             static_ip_name: self.static_ip_name,
         })

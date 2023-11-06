@@ -23,8 +23,10 @@ impl ListPoolOriginationIdentitiesOutput {
         self.pool_id.as_deref()
     }
     /// <p>An array of any OriginationIdentityMetadata objects.</p>
-    pub fn origination_identities(&self) -> ::std::option::Option<&[crate::types::OriginationIdentityMetadata]> {
-        self.origination_identities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.origination_identities.is_none()`.
+    pub fn origination_identities(&self) -> &[crate::types::OriginationIdentityMetadata] {
+        self.origination_identities.as_deref().unwrap_or_default()
     }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

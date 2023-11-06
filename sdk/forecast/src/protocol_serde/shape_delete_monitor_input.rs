@@ -2,7 +2,7 @@
 pub fn ser_delete_monitor_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_monitor::DeleteMonitorInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.monitor_arn {
         object.key("MonitorArn").string(var_1.as_str());
     }

@@ -38,8 +38,8 @@ pub fn de_get_sip_media_application_logging_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ForbiddenException" => crate::operation::get_sip_media_application_logging_configuration::GetSipMediaApplicationLoggingConfigurationError::ForbiddenException({
@@ -54,8 +54,8 @@ pub fn de_get_sip_media_application_logging_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NotFoundException" => crate::operation::get_sip_media_application_logging_configuration::GetSipMediaApplicationLoggingConfigurationError::NotFoundException({
@@ -70,8 +70,8 @@ pub fn de_get_sip_media_application_logging_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ServiceFailureException" => crate::operation::get_sip_media_application_logging_configuration::GetSipMediaApplicationLoggingConfigurationError::ServiceFailureException({
@@ -86,8 +86,8 @@ pub fn de_get_sip_media_application_logging_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::get_sip_media_application_logging_configuration::GetSipMediaApplicationLoggingConfigurationError::ServiceUnavailableException({
@@ -102,8 +102,8 @@ pub fn de_get_sip_media_application_logging_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ThrottledClientException" => crate::operation::get_sip_media_application_logging_configuration::GetSipMediaApplicationLoggingConfigurationError::ThrottledClientException({
@@ -118,8 +118,8 @@ pub fn de_get_sip_media_application_logging_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "UnauthorizedClientException" => crate::operation::get_sip_media_application_logging_configuration::GetSipMediaApplicationLoggingConfigurationError::UnauthorizedClientException({
@@ -134,8 +134,8 @@ pub fn de_get_sip_media_application_logging_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::get_sip_media_application_logging_configuration::GetSipMediaApplicationLoggingConfigurationError::generic(generic)

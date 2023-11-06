@@ -34,32 +34,46 @@ impl GetNetworkRoutesInput {
         self.route_table_identifier.as_ref()
     }
     /// <p>An exact CIDR block.</p>
-    pub fn exact_cidr_matches(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.exact_cidr_matches.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exact_cidr_matches.is_none()`.
+    pub fn exact_cidr_matches(&self) -> &[::std::string::String] {
+        self.exact_cidr_matches.as_deref().unwrap_or_default()
     }
     /// <p>The most specific route that matches the traffic (longest prefix match).</p>
-    pub fn longest_prefix_matches(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.longest_prefix_matches.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.longest_prefix_matches.is_none()`.
+    pub fn longest_prefix_matches(&self) -> &[::std::string::String] {
+        self.longest_prefix_matches.as_deref().unwrap_or_default()
     }
     /// <p>The routes with a subnet that match the specified CIDR filter.</p>
-    pub fn subnet_of_matches(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_of_matches.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_of_matches.is_none()`.
+    pub fn subnet_of_matches(&self) -> &[::std::string::String] {
+        self.subnet_of_matches.as_deref().unwrap_or_default()
     }
     /// <p>The routes with a CIDR that encompasses the CIDR filter. Example: If you specify 10.0.1.0/30, then the result returns 10.0.1.0/29.</p>
-    pub fn supernet_of_matches(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.supernet_of_matches.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supernet_of_matches.is_none()`.
+    pub fn supernet_of_matches(&self) -> &[::std::string::String] {
+        self.supernet_of_matches.as_deref().unwrap_or_default()
     }
     /// <p>The IDs of the prefix lists.</p>
-    pub fn prefix_list_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.prefix_list_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.prefix_list_ids.is_none()`.
+    pub fn prefix_list_ids(&self) -> &[::std::string::String] {
+        self.prefix_list_ids.as_deref().unwrap_or_default()
     }
     /// <p>The route states.</p>
-    pub fn states(&self) -> ::std::option::Option<&[crate::types::RouteState]> {
-        self.states.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.states.is_none()`.
+    pub fn states(&self) -> &[crate::types::RouteState] {
+        self.states.as_deref().unwrap_or_default()
     }
     /// <p>The route types.</p>
-    pub fn types(&self) -> ::std::option::Option<&[crate::types::RouteType]> {
-        self.types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.types.is_none()`.
+    pub fn types(&self) -> &[crate::types::RouteType] {
+        self.types.as_deref().unwrap_or_default()
     }
     /// <p>Filter by route table destination. Possible Values: TRANSIT_GATEWAY_ATTACHMENT_ID, RESOURCE_ID, or RESOURCE_TYPE.</p>
     pub fn destination_filters(
@@ -92,6 +106,7 @@ pub struct GetNetworkRoutesInputBuilder {
 }
 impl GetNetworkRoutesInputBuilder {
     /// <p>The ID of the global network.</p>
+    /// This field is required.
     pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_network_id = ::std::option::Option::Some(input.into());
         self
@@ -106,6 +121,7 @@ impl GetNetworkRoutesInputBuilder {
         &self.global_network_id
     }
     /// <p>The ID of the route table.</p>
+    /// This field is required.
     pub fn route_table_identifier(mut self, input: crate::types::RouteTableIdentifier) -> Self {
         self.route_table_identifier = ::std::option::Option::Some(input);
         self
@@ -287,7 +303,7 @@ impl GetNetworkRoutesInputBuilder {
     /// Consumes the builder and constructs a [`GetNetworkRoutesInput`](crate::operation::get_network_routes::GetNetworkRoutesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_network_routes::GetNetworkRoutesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_network_routes::GetNetworkRoutesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_network_routes::GetNetworkRoutesInput {
             global_network_id: self.global_network_id,
             route_table_identifier: self.route_table_identifier,

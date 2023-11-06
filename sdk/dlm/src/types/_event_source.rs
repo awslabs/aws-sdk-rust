@@ -35,6 +35,7 @@ pub struct EventSourceBuilder {
 }
 impl EventSourceBuilder {
     /// <p>The source of the event. Currently only managed CloudWatch Events rules are supported.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::EventSourceValues) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self

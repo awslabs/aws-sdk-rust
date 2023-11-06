@@ -10,8 +10,10 @@ pub struct DescribeInstanceHealthOutput {
 }
 impl DescribeInstanceHealthOutput {
     /// <p>Information about the health of the instances.</p>
-    pub fn instance_states(&self) -> ::std::option::Option<&[crate::types::InstanceState]> {
-        self.instance_states.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_states.is_none()`.
+    pub fn instance_states(&self) -> &[crate::types::InstanceState] {
+        self.instance_states.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeInstanceHealthOutput {

@@ -2,20 +2,20 @@
 pub fn ser_sampling_rule(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SamplingRule,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.rule_name {
         object.key("RuleName").string(var_1.as_str());
     }
     if let Some(var_2) = &input.rule_arn {
         object.key("RuleARN").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.resource_arn {
-        object.key("ResourceARN").string(var_3.as_str());
+    {
+        object.key("ResourceARN").string(input.resource_arn.as_str());
     }
-    if let Some(var_4) = &input.priority {
+    {
         object.key("Priority").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+            ::aws_smithy_types::Number::NegInt((input.priority).into()),
         );
     }
     {
@@ -30,36 +30,36 @@ pub fn ser_sampling_rule(
             ::aws_smithy_types::Number::NegInt((input.reservoir_size).into()),
         );
     }
-    if let Some(var_5) = &input.service_name {
-        object.key("ServiceName").string(var_5.as_str());
+    {
+        object.key("ServiceName").string(input.service_name.as_str());
     }
-    if let Some(var_6) = &input.service_type {
-        object.key("ServiceType").string(var_6.as_str());
+    {
+        object.key("ServiceType").string(input.service_type.as_str());
     }
-    if let Some(var_7) = &input.host {
-        object.key("Host").string(var_7.as_str());
+    {
+        object.key("Host").string(input.host.as_str());
     }
-    if let Some(var_8) = &input.http_method {
-        object.key("HTTPMethod").string(var_8.as_str());
+    {
+        object.key("HTTPMethod").string(input.http_method.as_str());
     }
-    if let Some(var_9) = &input.url_path {
-        object.key("URLPath").string(var_9.as_str());
+    {
+        object.key("URLPath").string(input.url_path.as_str());
     }
-    if let Some(var_10) = &input.version {
+    {
         object.key("Version").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_10).into()),
+            ::aws_smithy_types::Number::NegInt((input.version).into()),
         );
     }
-    if let Some(var_11) = &input.attributes {
+    if let Some(var_3) = &input.attributes {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("Attributes").start_object();
-        for (key_13, value_14) in var_11 {
+        let mut object_4 = object.key("Attributes").start_object();
+        for (key_5, value_6) in var_3 {
             {
-                object_12.key(key_13.as_str()).string(value_14.as_str());
+                object_4.key(key_5.as_str()).string(value_6.as_str());
             }
         }
-        object_12.finish();
+        object_4.finish();
     }
     Ok(())
 }
@@ -174,7 +174,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::sampling_rule_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

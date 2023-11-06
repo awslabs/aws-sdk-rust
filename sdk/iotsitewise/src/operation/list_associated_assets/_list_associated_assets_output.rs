@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAssociatedAssetsOutput {
     /// <p>A list that summarizes the associated assets.</p>
-    pub asset_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedAssetsSummary>>,
+    pub asset_summaries: ::std::vec::Vec<crate::types::AssociatedAssetsSummary>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAssociatedAssetsOutput {
     /// <p>A list that summarizes the associated assets.</p>
-    pub fn asset_summaries(&self) -> ::std::option::Option<&[crate::types::AssociatedAssetsSummary]> {
-        self.asset_summaries.as_deref()
+    pub fn asset_summaries(&self) -> &[crate::types::AssociatedAssetsSummary] {
+        use std::ops::Deref;
+        self.asset_summaries.deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,21 @@ impl ListAssociatedAssetsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAssociatedAssetsOutput`](crate::operation::list_associated_assets::ListAssociatedAssetsOutput).
-    pub fn build(self) -> crate::operation::list_associated_assets::ListAssociatedAssetsOutput {
-        crate::operation::list_associated_assets::ListAssociatedAssetsOutput {
-            asset_summaries: self.asset_summaries,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`asset_summaries`](crate::operation::list_associated_assets::builders::ListAssociatedAssetsOutputBuilder::asset_summaries)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_associated_assets::ListAssociatedAssetsOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_associated_assets::ListAssociatedAssetsOutput {
+            asset_summaries: self.asset_summaries.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "asset_summaries",
+                    "asset_summaries was not specified but it is required when building ListAssociatedAssetsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

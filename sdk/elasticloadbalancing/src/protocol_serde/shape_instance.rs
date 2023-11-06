@@ -3,7 +3,7 @@
 pub fn ser_instance(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::Instance,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("InstanceId");
     if let Some(var_2) = &input.instance_id {
@@ -12,6 +12,7 @@ pub fn ser_instance(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_instance(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::Instance, ::aws_smithy_xml::decode::XmlDecodeError> {

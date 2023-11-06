@@ -33,11 +33,10 @@ pub fn de_signal_application_instance_node_instances_http_error(
                             crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesError::unhandled,
                         )?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::access_denied_exception_correct_errors(output).build().map_err(
+                        crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesError::unhandled,
+                    )?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -59,11 +58,10 @@ pub fn de_signal_application_instance_node_instances_http_error(
                         })?,
                     );
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::internal_server_exception_correct_errors(output).build().map_err(
+                        crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesError::unhandled,
+                    )?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -82,11 +80,12 @@ pub fn de_signal_application_instance_node_instances_http_error(
                             crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesError::unhandled,
                         )?;
                         let output = output.meta(generic);
-                        output.build()
+                        crate::serde_util::service_quota_exceeded_exception_correct_errors(output)
+                            .build()
+                            .map_err(
+                                crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesError::unhandled,
+                            )?
                     };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
                     tmp
                 },
             )
@@ -101,11 +100,10 @@ pub fn de_signal_application_instance_node_instances_http_error(
                         crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesError::unhandled,
                     )?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::validation_exception_correct_errors(output).build().map_err(
+                        crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesError::unhandled,
+                    )?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -132,13 +130,15 @@ pub fn de_signal_application_instance_node_instances_http_response(
         )
         .map_err(crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::signal_application_instance_node_instances_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesError::unhandled)?
     })
 }
 
 pub fn ser_signal_application_instance_node_instances_input(
     input: &crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_signal_application_instance_node_instances_input::ser_signal_application_instance_node_instances_input(
@@ -146,7 +146,7 @@ pub fn ser_signal_application_instance_node_instances_input(
         input,
     )?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_signal_application_instance_node_instances(

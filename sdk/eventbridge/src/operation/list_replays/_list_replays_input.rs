@@ -125,7 +125,7 @@ impl ListReplaysInputBuilder {
         &self.limit
     }
     /// Consumes the builder and constructs a [`ListReplaysInput`](crate::operation::list_replays::ListReplaysInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_replays::ListReplaysInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_replays::ListReplaysInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_replays::ListReplaysInput {
             name_prefix: self.name_prefix,
             state: self.state,

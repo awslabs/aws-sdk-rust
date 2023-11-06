@@ -28,6 +28,7 @@ pub struct PrivateDnsPropertiesMutableChangeBuilder {
 }
 impl PrivateDnsPropertiesMutableChangeBuilder {
     /// <p>Updated fields for the Start of Authority (SOA) record for the hosted zone for the private DNS namespace.</p>
+    /// This field is required.
     pub fn soa(mut self, input: crate::types::SoaChange) -> Self {
         self.soa = ::std::option::Option::Some(input);
         self

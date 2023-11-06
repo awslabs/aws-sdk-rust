@@ -149,12 +149,12 @@ pub fn de_create_invitations_http_response(
 
 pub fn ser_create_invitations_input(
     input: &crate::operation::create_invitations::CreateInvitationsInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_invitations_input::ser_create_invitations_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_create_invitations(
@@ -170,7 +170,7 @@ pub(crate) fn de_create_invitations(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "unprocessedAccounts" => {
                     builder = builder.set_unprocessed_accounts(
-                        crate::protocol_serde::shape___list_of_unprocessed_account::de___list_of_unprocessed_account(tokens)?,
+                        crate::protocol_serde::shape_list_of_unprocessed_account::de_list_of_unprocessed_account(tokens)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

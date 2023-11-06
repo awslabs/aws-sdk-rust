@@ -9,7 +9,7 @@ pub struct ModelInputConfiguration {
     /// <p> The format of the model input configuration. The format differs depending on if it is passed through to SageMaker or constructed by Amazon Fraud Detector.</p>
     pub format: ::std::option::Option<crate::types::ModelInputDataFormat>,
     /// <p>The event variables.</p>
-    pub use_event_variables: ::std::option::Option<bool>,
+    pub use_event_variables: bool,
     /// <p> Template for constructing the JSON input-data sent to SageMaker. At event-evaluation, the placeholders for variable names in the template will be replaced with the variable values before being sent to SageMaker. </p>
     pub json_input_template: ::std::option::Option<::std::string::String>,
     /// <p> Template for constructing the CSV input-data sent to SageMaker. At event-evaluation, the placeholders for variable-names in the template will be replaced with the variable values before being sent to SageMaker. </p>
@@ -25,7 +25,7 @@ impl ModelInputConfiguration {
         self.format.as_ref()
     }
     /// <p>The event variables.</p>
-    pub fn use_event_variables(&self) -> ::std::option::Option<bool> {
+    pub fn use_event_variables(&self) -> bool {
         self.use_event_variables
     }
     /// <p> Template for constructing the JSON input-data sent to SageMaker. At event-evaluation, the placeholders for variable names in the template will be replaced with the variable values before being sent to SageMaker. </p>
@@ -84,6 +84,7 @@ impl ModelInputConfigurationBuilder {
         &self.format
     }
     /// <p>The event variables.</p>
+    /// This field is required.
     pub fn use_event_variables(mut self, input: bool) -> Self {
         self.use_event_variables = ::std::option::Option::Some(input);
         self
@@ -126,13 +127,20 @@ impl ModelInputConfigurationBuilder {
         &self.csv_input_template
     }
     /// Consumes the builder and constructs a [`ModelInputConfiguration`](crate::types::ModelInputConfiguration).
-    pub fn build(self) -> crate::types::ModelInputConfiguration {
-        crate::types::ModelInputConfiguration {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`use_event_variables`](crate::types::builders::ModelInputConfigurationBuilder::use_event_variables)
+    pub fn build(self) -> ::std::result::Result<crate::types::ModelInputConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ModelInputConfiguration {
             event_type_name: self.event_type_name,
             format: self.format,
-            use_event_variables: self.use_event_variables,
+            use_event_variables: self.use_event_variables.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "use_event_variables",
+                    "use_event_variables was not specified but it is required when building ModelInputConfiguration",
+                )
+            })?,
             json_input_template: self.json_input_template,
             csv_input_template: self.csv_input_template,
-        }
+        })
     }
 }

@@ -48,6 +48,7 @@ pub struct PutResourcePolicyInputBuilder {
 }
 impl PutResourcePolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the resource for which the policy is being created.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl PutResourcePolicyInputBuilder {
         &self.resource_arn
     }
     /// <p>The JSON-formatted resource policy to create.</p>
+    /// This field is required.
     pub fn resource_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_policy = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +92,7 @@ impl PutResourcePolicyInputBuilder {
         &self.policy_revision_id
     }
     /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +109,7 @@ impl PutResourcePolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutResourcePolicyInput`](crate::operation::put_resource_policy::PutResourcePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_resource_policy::PutResourcePolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_resource_policy::PutResourcePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_resource_policy::PutResourcePolicyInput {
             resource_arn: self.resource_arn,
             resource_policy: self.resource_policy,

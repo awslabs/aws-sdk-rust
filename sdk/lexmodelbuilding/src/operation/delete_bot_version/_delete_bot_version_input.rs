@@ -34,6 +34,7 @@ pub struct DeleteBotVersionInputBuilder {
 }
 impl DeleteBotVersionInputBuilder {
     /// <p>The name of the bot.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteBotVersionInputBuilder {
         &self.name
     }
     /// <p>The version of the bot to delete. You cannot delete the <code>$LATEST</code> version of the bot. To delete the <code>$LATEST</code> version, use the <code>DeleteBot</code> operation.</p>
+    /// This field is required.
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DeleteBotVersionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteBotVersionInput`](crate::operation::delete_bot_version::DeleteBotVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_bot_version::DeleteBotVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_bot_version::DeleteBotVersionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_bot_version::DeleteBotVersionInput {
             name: self.name,
             version: self.version,

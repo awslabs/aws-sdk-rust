@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotificationConfiguration {
     /// <p>Indicates if a notification configuration is enabled or disabled.</p>
-    pub status: ::std::option::Option<crate::types::ConfigurationStatus>,
+    pub status: crate::types::ConfigurationStatus,
     /// <p>The destination information required to deliver a notification to a customer.</p>
     pub destination_config: ::std::option::Option<crate::types::NotificationDestinationConfig>,
 }
 impl NotificationConfiguration {
     /// <p>Indicates if a notification configuration is enabled or disabled.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ConfigurationStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::ConfigurationStatus {
+        &self.status
     }
     /// <p>The destination information required to deliver a notification to a customer.</p>
     pub fn destination_config(&self) -> ::std::option::Option<&crate::types::NotificationDestinationConfig> {
@@ -35,6 +35,7 @@ pub struct NotificationConfigurationBuilder {
 }
 impl NotificationConfigurationBuilder {
     /// <p>Indicates if a notification configuration is enabled or disabled.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::ConfigurationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl NotificationConfigurationBuilder {
         &self.status
     }
     /// <p>The destination information required to deliver a notification to a customer.</p>
+    /// This field is required.
     pub fn destination_config(mut self, input: crate::types::NotificationDestinationConfig) -> Self {
         self.destination_config = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,17 @@ impl NotificationConfigurationBuilder {
         &self.destination_config
     }
     /// Consumes the builder and constructs a [`NotificationConfiguration`](crate::types::NotificationConfiguration).
-    pub fn build(self) -> crate::types::NotificationConfiguration {
-        crate::types::NotificationConfiguration {
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::types::builders::NotificationConfigurationBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::NotificationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::NotificationConfiguration {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building NotificationConfiguration",
+                )
+            })?,
             destination_config: self.destination_config,
-        }
+        })
     }
 }

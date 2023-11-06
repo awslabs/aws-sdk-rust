@@ -7,7 +7,7 @@ pub struct WebsiteAuthorizationProviderSummary {
     /// <p>A unique identifier for the authorization provider.</p>
     pub authorization_provider_id: ::std::option::Option<::std::string::String>,
     /// <p>The authorization provider type.</p>
-    pub authorization_provider_type: ::std::option::Option<crate::types::AuthorizationProviderType>,
+    pub authorization_provider_type: crate::types::AuthorizationProviderType,
     /// <p>The domain name of the authorization provider. This applies only to SAML-based authorization providers.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The time of creation.</p>
@@ -19,8 +19,8 @@ impl WebsiteAuthorizationProviderSummary {
         self.authorization_provider_id.as_deref()
     }
     /// <p>The authorization provider type.</p>
-    pub fn authorization_provider_type(&self) -> ::std::option::Option<&crate::types::AuthorizationProviderType> {
-        self.authorization_provider_type.as_ref()
+    pub fn authorization_provider_type(&self) -> &crate::types::AuthorizationProviderType {
+        &self.authorization_provider_type
     }
     /// <p>The domain name of the authorization provider. This applies only to SAML-based authorization providers.</p>
     pub fn domain_name(&self) -> ::std::option::Option<&str> {
@@ -63,6 +63,7 @@ impl WebsiteAuthorizationProviderSummaryBuilder {
         &self.authorization_provider_id
     }
     /// <p>The authorization provider type.</p>
+    /// This field is required.
     pub fn authorization_provider_type(mut self, input: crate::types::AuthorizationProviderType) -> Self {
         self.authorization_provider_type = ::std::option::Option::Some(input);
         self
@@ -105,12 +106,19 @@ impl WebsiteAuthorizationProviderSummaryBuilder {
         &self.created_time
     }
     /// Consumes the builder and constructs a [`WebsiteAuthorizationProviderSummary`](crate::types::WebsiteAuthorizationProviderSummary).
-    pub fn build(self) -> crate::types::WebsiteAuthorizationProviderSummary {
-        crate::types::WebsiteAuthorizationProviderSummary {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`authorization_provider_type`](crate::types::builders::WebsiteAuthorizationProviderSummaryBuilder::authorization_provider_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::WebsiteAuthorizationProviderSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::WebsiteAuthorizationProviderSummary {
             authorization_provider_id: self.authorization_provider_id,
-            authorization_provider_type: self.authorization_provider_type,
+            authorization_provider_type: self.authorization_provider_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "authorization_provider_type",
+                    "authorization_provider_type was not specified but it is required when building WebsiteAuthorizationProviderSummary",
+                )
+            })?,
             domain_name: self.domain_name,
             created_time: self.created_time,
-        }
+        })
     }
 }

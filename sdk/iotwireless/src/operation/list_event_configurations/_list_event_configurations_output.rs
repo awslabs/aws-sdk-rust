@@ -15,8 +15,10 @@ impl ListEventConfigurationsOutput {
         self.next_token.as_deref()
     }
     /// <p>Event configurations of all events for a single resource.</p>
-    pub fn event_configurations_list(&self) -> ::std::option::Option<&[crate::types::EventConfigurationItem]> {
-        self.event_configurations_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_configurations_list.is_none()`.
+    pub fn event_configurations_list(&self) -> &[crate::types::EventConfigurationItem] {
+        self.event_configurations_list.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListEventConfigurationsOutput {

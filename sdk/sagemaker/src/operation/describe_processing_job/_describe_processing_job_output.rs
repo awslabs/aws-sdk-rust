@@ -49,8 +49,10 @@ pub struct DescribeProcessingJobOutput {
 }
 impl DescribeProcessingJobOutput {
     /// <p>The inputs for a processing job.</p>
-    pub fn processing_inputs(&self) -> ::std::option::Option<&[crate::types::ProcessingInput]> {
-        self.processing_inputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.processing_inputs.is_none()`.
+    pub fn processing_inputs(&self) -> &[crate::types::ProcessingInput] {
+        self.processing_inputs.as_deref().unwrap_or_default()
     }
     /// <p>Output configuration for the processing job.</p>
     pub fn processing_output_config(&self) -> ::std::option::Option<&crate::types::ProcessingOutputConfig> {
@@ -208,6 +210,7 @@ impl DescribeProcessingJobOutputBuilder {
         &self.processing_output_config
     }
     /// <p>The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
+    /// This field is required.
     pub fn processing_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.processing_job_name = ::std::option::Option::Some(input.into());
         self
@@ -222,6 +225,7 @@ impl DescribeProcessingJobOutputBuilder {
         &self.processing_job_name
     }
     /// <p>Identifies the resources, ML compute instances, and ML storage volumes to deploy for a processing job. In distributed training, you specify more than one instance.</p>
+    /// This field is required.
     pub fn processing_resources(mut self, input: crate::types::ProcessingResources) -> Self {
         self.processing_resources = ::std::option::Option::Some(input);
         self
@@ -250,6 +254,7 @@ impl DescribeProcessingJobOutputBuilder {
         &self.stopping_condition
     }
     /// <p>Configures the processing job to run a specified container image.</p>
+    /// This field is required.
     pub fn app_specification(mut self, input: crate::types::AppSpecification) -> Self {
         self.app_specification = ::std::option::Option::Some(input);
         self
@@ -329,6 +334,7 @@ impl DescribeProcessingJobOutputBuilder {
         &self.experiment_config
     }
     /// <p>The Amazon Resource Name (ARN) of the processing job.</p>
+    /// This field is required.
     pub fn processing_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.processing_job_arn = ::std::option::Option::Some(input.into());
         self
@@ -343,6 +349,7 @@ impl DescribeProcessingJobOutputBuilder {
         &self.processing_job_arn
     }
     /// <p>Provides the status of a processing job.</p>
+    /// This field is required.
     pub fn processing_job_status(mut self, input: crate::types::ProcessingJobStatus) -> Self {
         self.processing_job_status = ::std::option::Option::Some(input);
         self
@@ -427,6 +434,7 @@ impl DescribeProcessingJobOutputBuilder {
         &self.last_modified_time
     }
     /// <p>The time at which the processing job was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self

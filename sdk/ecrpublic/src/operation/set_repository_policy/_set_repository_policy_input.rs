@@ -62,6 +62,7 @@ impl SetRepositoryPolicyInputBuilder {
         &self.registry_id
     }
     /// <p>The name of the repository to receive the policy.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl SetRepositoryPolicyInputBuilder {
         &self.repository_name
     }
     /// <p>The JSON repository policy text to apply to the repository. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon ECR Repository Policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
+    /// This field is required.
     pub fn policy_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_text = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +108,7 @@ impl SetRepositoryPolicyInputBuilder {
     /// Consumes the builder and constructs a [`SetRepositoryPolicyInput`](crate::operation::set_repository_policy::SetRepositoryPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::set_repository_policy::SetRepositoryPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::set_repository_policy::SetRepositoryPolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::set_repository_policy::SetRepositoryPolicyInput {
             registry_id: self.registry_id,

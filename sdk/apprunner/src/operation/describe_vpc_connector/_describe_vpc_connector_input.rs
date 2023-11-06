@@ -30,6 +30,7 @@ pub struct DescribeVpcConnectorInputBuilder {
 impl DescribeVpcConnectorInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want a description for.</p>
     /// <p>The ARN must be a full VPC connector ARN.</p>
+    /// This field is required.
     pub fn vpc_connector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_connector_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,7 +49,7 @@ impl DescribeVpcConnectorInputBuilder {
     /// Consumes the builder and constructs a [`DescribeVpcConnectorInput`](crate::operation::describe_vpc_connector::DescribeVpcConnectorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_vpc_connector::DescribeVpcConnectorInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_vpc_connector::DescribeVpcConnectorInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_vpc_connector::DescribeVpcConnectorInput {
             vpc_connector_arn: self.vpc_connector_arn,

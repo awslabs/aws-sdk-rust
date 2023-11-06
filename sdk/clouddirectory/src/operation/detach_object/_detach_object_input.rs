@@ -41,6 +41,7 @@ pub struct DetachObjectInputBuilder {
 }
 impl DetachObjectInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
+    /// This field is required.
     pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DetachObjectInputBuilder {
         &self.directory_arn
     }
     /// <p>The parent reference from which the object with the specified link name is detached.</p>
+    /// This field is required.
     pub fn parent_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.parent_reference = ::std::option::Option::Some(input);
         self
@@ -69,6 +71,7 @@ impl DetachObjectInputBuilder {
         &self.parent_reference
     }
     /// <p>The link name associated with the object that needs to be detached.</p>
+    /// This field is required.
     pub fn link_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.link_name = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +86,9 @@ impl DetachObjectInputBuilder {
         &self.link_name
     }
     /// Consumes the builder and constructs a [`DetachObjectInput`](crate::operation::detach_object::DetachObjectInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::detach_object::DetachObjectInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::detach_object::DetachObjectInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::detach_object::DetachObjectInput {
             directory_arn: self.directory_arn,
             parent_reference: self.parent_reference,

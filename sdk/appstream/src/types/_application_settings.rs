@@ -35,6 +35,7 @@ pub struct ApplicationSettingsBuilder {
 }
 impl ApplicationSettingsBuilder {
     /// <p>Enables or disables persistent application settings for users during their streaming sessions. </p>
+    /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self

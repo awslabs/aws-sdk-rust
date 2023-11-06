@@ -8,8 +8,10 @@ pub struct UpdateOrgEc2DeepInspectionConfigurationInput {
 }
 impl UpdateOrgEc2DeepInspectionConfigurationInput {
     /// <p>The Amazon Inspector deep inspection custom paths you are adding for your organization.</p>
-    pub fn org_package_paths(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.org_package_paths.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.org_package_paths.is_none()`.
+    pub fn org_package_paths(&self) -> &[::std::string::String] {
+        self.org_package_paths.as_deref().unwrap_or_default()
     }
 }
 impl UpdateOrgEc2DeepInspectionConfigurationInput {
@@ -52,7 +54,7 @@ impl UpdateOrgEc2DeepInspectionConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_org_ec2_deep_inspection_configuration::UpdateOrgEc2DeepInspectionConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_org_ec2_deep_inspection_configuration::UpdateOrgEc2DeepInspectionConfigurationInput {

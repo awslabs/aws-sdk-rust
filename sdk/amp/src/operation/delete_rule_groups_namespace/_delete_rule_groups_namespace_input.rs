@@ -42,6 +42,7 @@ pub struct DeleteRuleGroupsNamespaceInputBuilder {
 }
 impl DeleteRuleGroupsNamespaceInputBuilder {
     /// The ID of the workspace to delete rule group definition.
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl DeleteRuleGroupsNamespaceInputBuilder {
         &self.workspace_id
     }
     /// The rule groups namespace name.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -88,7 +90,7 @@ impl DeleteRuleGroupsNamespaceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_rule_groups_namespace::DeleteRuleGroupsNamespaceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_rule_groups_namespace::DeleteRuleGroupsNamespaceInput {
             workspace_id: self.workspace_id,

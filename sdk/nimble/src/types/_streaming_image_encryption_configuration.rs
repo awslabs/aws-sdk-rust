@@ -7,7 +7,7 @@ pub struct StreamingImageEncryptionConfiguration {
     /// <p>The ARN for a KMS key that is used to encrypt studio data.</p>
     pub key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of KMS key that is used to encrypt studio data.</p>
-    pub key_type: ::std::option::Option<crate::types::StreamingImageEncryptionConfigurationKeyType>,
+    pub key_type: crate::types::StreamingImageEncryptionConfigurationKeyType,
 }
 impl StreamingImageEncryptionConfiguration {
     /// <p>The ARN for a KMS key that is used to encrypt studio data.</p>
@@ -15,8 +15,8 @@ impl StreamingImageEncryptionConfiguration {
         self.key_arn.as_deref()
     }
     /// <p>The type of KMS key that is used to encrypt studio data.</p>
-    pub fn key_type(&self) -> ::std::option::Option<&crate::types::StreamingImageEncryptionConfigurationKeyType> {
-        self.key_type.as_ref()
+    pub fn key_type(&self) -> &crate::types::StreamingImageEncryptionConfigurationKeyType {
+        &self.key_type
     }
 }
 impl StreamingImageEncryptionConfiguration {
@@ -49,6 +49,7 @@ impl StreamingImageEncryptionConfigurationBuilder {
         &self.key_arn
     }
     /// <p>The type of KMS key that is used to encrypt studio data.</p>
+    /// This field is required.
     pub fn key_type(mut self, input: crate::types::StreamingImageEncryptionConfigurationKeyType) -> Self {
         self.key_type = ::std::option::Option::Some(input);
         self
@@ -63,10 +64,19 @@ impl StreamingImageEncryptionConfigurationBuilder {
         &self.key_type
     }
     /// Consumes the builder and constructs a [`StreamingImageEncryptionConfiguration`](crate::types::StreamingImageEncryptionConfiguration).
-    pub fn build(self) -> crate::types::StreamingImageEncryptionConfiguration {
-        crate::types::StreamingImageEncryptionConfiguration {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key_type`](crate::types::builders::StreamingImageEncryptionConfigurationBuilder::key_type)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::StreamingImageEncryptionConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::StreamingImageEncryptionConfiguration {
             key_arn: self.key_arn,
-            key_type: self.key_type,
-        }
+            key_type: self.key_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "key_type",
+                    "key_type was not specified but it is required when building StreamingImageEncryptionConfiguration",
+                )
+            })?,
+        })
     }
 }

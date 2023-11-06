@@ -13,8 +13,10 @@ pub struct SearchRoomsOutput {
 }
 impl SearchRoomsOutput {
     /// <p>The rooms that meet the specified set of filter criteria, in sort order.</p>
-    pub fn rooms(&self) -> ::std::option::Option<&[crate::types::RoomData]> {
-        self.rooms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rooms.is_none()`.
+    pub fn rooms(&self) -> &[crate::types::RoomData] {
+        self.rooms.as_deref().unwrap_or_default()
     }
     /// <p>The token returned to indicate that there is more data available.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

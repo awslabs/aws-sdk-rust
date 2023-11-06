@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CryptogramVerificationArpcMethod2 {
     /// <p>The data indicating whether the issuer approves or declines an online transaction using an EMV chip card.</p>
-    pub card_status_update: ::std::option::Option<::std::string::String>,
+    pub card_status_update: ::std::string::String,
     /// <p>The proprietary authentication data used by issuer for communication during online transaction using an EMV chip card.</p>
     pub proprietary_authentication_data: ::std::option::Option<::std::string::String>,
 }
 impl CryptogramVerificationArpcMethod2 {
     /// <p>The data indicating whether the issuer approves or declines an online transaction using an EMV chip card.</p>
-    pub fn card_status_update(&self) -> ::std::option::Option<&str> {
-        self.card_status_update.as_deref()
+    pub fn card_status_update(&self) -> &str {
+        use std::ops::Deref;
+        self.card_status_update.deref()
     }
     /// <p>The proprietary authentication data used by issuer for communication during online transaction using an EMV chip card.</p>
     pub fn proprietary_authentication_data(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct CryptogramVerificationArpcMethod2Builder {
 }
 impl CryptogramVerificationArpcMethod2Builder {
     /// <p>The data indicating whether the issuer approves or declines an online transaction using an EMV chip card.</p>
+    /// This field is required.
     pub fn card_status_update(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.card_status_update = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl CryptogramVerificationArpcMethod2Builder {
         &self.proprietary_authentication_data
     }
     /// Consumes the builder and constructs a [`CryptogramVerificationArpcMethod2`](crate::types::CryptogramVerificationArpcMethod2).
-    pub fn build(self) -> crate::types::CryptogramVerificationArpcMethod2 {
-        crate::types::CryptogramVerificationArpcMethod2 {
-            card_status_update: self.card_status_update,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`card_status_update`](crate::types::builders::CryptogramVerificationArpcMethod2Builder::card_status_update)
+    pub fn build(self) -> ::std::result::Result<crate::types::CryptogramVerificationArpcMethod2, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CryptogramVerificationArpcMethod2 {
+            card_status_update: self.card_status_update.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "card_status_update",
+                    "card_status_update was not specified but it is required when building CryptogramVerificationArpcMethod2",
+                )
+            })?,
             proprietary_authentication_data: self.proprietary_authentication_data,
-        }
+        })
     }
 }

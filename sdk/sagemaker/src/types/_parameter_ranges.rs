@@ -17,20 +17,28 @@ pub struct ParameterRanges {
 }
 impl ParameterRanges {
     /// <p>The array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_IntegerParameterRange.html">IntegerParameterRange</a> objects that specify ranges of integer hyperparameters that a hyperparameter tuning job searches.</p>
-    pub fn integer_parameter_ranges(&self) -> ::std::option::Option<&[crate::types::IntegerParameterRange]> {
-        self.integer_parameter_ranges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.integer_parameter_ranges.is_none()`.
+    pub fn integer_parameter_ranges(&self) -> &[crate::types::IntegerParameterRange] {
+        self.integer_parameter_ranges.as_deref().unwrap_or_default()
     }
     /// <p>The array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContinuousParameterRange.html">ContinuousParameterRange</a> objects that specify ranges of continuous hyperparameters that a hyperparameter tuning job searches.</p>
-    pub fn continuous_parameter_ranges(&self) -> ::std::option::Option<&[crate::types::ContinuousParameterRange]> {
-        self.continuous_parameter_ranges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.continuous_parameter_ranges.is_none()`.
+    pub fn continuous_parameter_ranges(&self) -> &[crate::types::ContinuousParameterRange] {
+        self.continuous_parameter_ranges.as_deref().unwrap_or_default()
     }
     /// <p>The array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CategoricalParameterRange.html">CategoricalParameterRange</a> objects that specify ranges of categorical hyperparameters that a hyperparameter tuning job searches.</p>
-    pub fn categorical_parameter_ranges(&self) -> ::std::option::Option<&[crate::types::CategoricalParameterRange]> {
-        self.categorical_parameter_ranges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.categorical_parameter_ranges.is_none()`.
+    pub fn categorical_parameter_ranges(&self) -> &[crate::types::CategoricalParameterRange] {
+        self.categorical_parameter_ranges.as_deref().unwrap_or_default()
     }
     /// <p>A list containing hyperparameter names and example values to be used by Autotune to determine optimal ranges for your tuning job.</p>
-    pub fn auto_parameters(&self) -> ::std::option::Option<&[crate::types::AutoParameter]> {
-        self.auto_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auto_parameters.is_none()`.
+    pub fn auto_parameters(&self) -> &[crate::types::AutoParameter] {
+        self.auto_parameters.as_deref().unwrap_or_default()
     }
 }
 impl ParameterRanges {

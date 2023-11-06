@@ -39,17 +39,23 @@ impl AppMonitorConfiguration {
     }
     /// <p>A list of URLs in your website or application to exclude from RUM data collection.</p>
     /// <p>You can't include both <code>ExcludedPages</code> and <code>IncludedPages</code> in the same operation.</p>
-    pub fn excluded_pages(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.excluded_pages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.excluded_pages.is_none()`.
+    pub fn excluded_pages(&self) -> &[::std::string::String] {
+        self.excluded_pages.as_deref().unwrap_or_default()
     }
     /// <p>If this app monitor is to collect data from only certain pages in your application, this structure lists those pages. </p>
     /// <p>You can't include both <code>ExcludedPages</code> and <code>IncludedPages</code> in the same operation.</p>
-    pub fn included_pages(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.included_pages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.included_pages.is_none()`.
+    pub fn included_pages(&self) -> &[::std::string::String] {
+        self.included_pages.as_deref().unwrap_or_default()
     }
     /// <p>A list of pages in your application that are to be displayed with a "favorite" icon in the CloudWatch RUM console.</p>
-    pub fn favorite_pages(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.favorite_pages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.favorite_pages.is_none()`.
+    pub fn favorite_pages(&self) -> &[::std::string::String] {
+        self.favorite_pages.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the portion of user sessions to use for RUM data collection. Choosing a higher portion gives you more data but also incurs more costs.</p>
     /// <p>The range for this value is 0 to 1 inclusive. Setting this to 1 means that 100% of user sessions are sampled, and setting it to 0.1 means that 10% of user sessions are sampled.</p>
@@ -71,8 +77,10 @@ impl AppMonitorConfiguration {
     /// <li> <p> <code>performance</code> indicates that RUM collects performance data about how your application and its resources are loaded and rendered. This includes Core Web Vitals.</p> </li>
     /// <li> <p> <code>http</code> indicates that RUM collects data about HTTP errors thrown by your application.</p> </li>
     /// </ul>
-    pub fn telemetries(&self) -> ::std::option::Option<&[crate::types::Telemetry]> {
-        self.telemetries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.telemetries.is_none()`.
+    pub fn telemetries(&self) -> &[crate::types::Telemetry] {
+        self.telemetries.as_deref().unwrap_or_default()
     }
     /// <p>If you set this to <code>true</code>, RUM enables X-Ray tracing for the user sessions that RUM samples. RUM adds an X-Ray trace header to allowed HTTP requests. It also records an X-Ray segment for allowed HTTP requests. You can see traces and segments from these user sessions in the X-Ray console and the CloudWatch ServiceLens console. For more information, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/aws-xray.html">What is X-Ray?</a> </p>
     pub fn enable_x_ray(&self) -> ::std::option::Option<bool> {

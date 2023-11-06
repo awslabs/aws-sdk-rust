@@ -5,15 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobSummary {
     /// <p>The status of the Amazon Braket job.</p>
-    pub status: ::std::option::Option<crate::types::JobPrimaryStatus>,
+    pub status: crate::types::JobPrimaryStatus,
     /// <p>The ARN of the Amazon Braket job.</p>
-    pub job_arn: ::std::option::Option<::std::string::String>,
+    pub job_arn: ::std::string::String,
     /// <p>The name of the Amazon Braket job.</p>
-    pub job_name: ::std::option::Option<::std::string::String>,
+    pub job_name: ::std::string::String,
     /// <p>Provides summary information about the primary device used by an Amazon Braket job.</p>
-    pub device: ::std::option::Option<::std::string::String>,
+    pub device: ::std::string::String,
     /// <p>The date and time that the Amazon Braket job was created.</p>
-    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The date and time that the Amazon Braket job was started.</p>
     pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the Amazon Braket job ended.</p>
@@ -23,24 +23,27 @@ pub struct JobSummary {
 }
 impl JobSummary {
     /// <p>The status of the Amazon Braket job.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::JobPrimaryStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::JobPrimaryStatus {
+        &self.status
     }
     /// <p>The ARN of the Amazon Braket job.</p>
-    pub fn job_arn(&self) -> ::std::option::Option<&str> {
-        self.job_arn.as_deref()
+    pub fn job_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.job_arn.deref()
     }
     /// <p>The name of the Amazon Braket job.</p>
-    pub fn job_name(&self) -> ::std::option::Option<&str> {
-        self.job_name.as_deref()
+    pub fn job_name(&self) -> &str {
+        use std::ops::Deref;
+        self.job_name.deref()
     }
     /// <p>Provides summary information about the primary device used by an Amazon Braket job.</p>
-    pub fn device(&self) -> ::std::option::Option<&str> {
-        self.device.as_deref()
+    pub fn device(&self) -> &str {
+        use std::ops::Deref;
+        self.device.deref()
     }
     /// <p>The date and time that the Amazon Braket job was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_at.as_ref()
+    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_at
     }
     /// <p>The date and time that the Amazon Braket job was started.</p>
     pub fn started_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -77,6 +80,7 @@ pub struct JobSummaryBuilder {
 }
 impl JobSummaryBuilder {
     /// <p>The status of the Amazon Braket job.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::JobPrimaryStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -91,6 +95,7 @@ impl JobSummaryBuilder {
         &self.status
     }
     /// <p>The ARN of the Amazon Braket job.</p>
+    /// This field is required.
     pub fn job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_arn = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +110,7 @@ impl JobSummaryBuilder {
         &self.job_arn
     }
     /// <p>The name of the Amazon Braket job.</p>
+    /// This field is required.
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +125,7 @@ impl JobSummaryBuilder {
         &self.job_name
     }
     /// <p>Provides summary information about the primary device used by an Amazon Braket job.</p>
+    /// This field is required.
     pub fn device(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device = ::std::option::Option::Some(input.into());
         self
@@ -133,6 +140,7 @@ impl JobSummaryBuilder {
         &self.device
     }
     /// <p>The date and time that the Amazon Braket job was created.</p>
+    /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
@@ -195,16 +203,47 @@ impl JobSummaryBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`JobSummary`](crate::types::JobSummary).
-    pub fn build(self) -> crate::types::JobSummary {
-        crate::types::JobSummary {
-            status: self.status,
-            job_arn: self.job_arn,
-            job_name: self.job_name,
-            device: self.device,
-            created_at: self.created_at,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::types::builders::JobSummaryBuilder::status)
+    /// - [`job_arn`](crate::types::builders::JobSummaryBuilder::job_arn)
+    /// - [`job_name`](crate::types::builders::JobSummaryBuilder::job_name)
+    /// - [`device`](crate::types::builders::JobSummaryBuilder::device)
+    /// - [`created_at`](crate::types::builders::JobSummaryBuilder::created_at)
+    pub fn build(self) -> ::std::result::Result<crate::types::JobSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::JobSummary {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building JobSummary",
+                )
+            })?,
+            job_arn: self.job_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "job_arn",
+                    "job_arn was not specified but it is required when building JobSummary",
+                )
+            })?,
+            job_name: self.job_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "job_name",
+                    "job_name was not specified but it is required when building JobSummary",
+                )
+            })?,
+            device: self.device.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "device",
+                    "device was not specified but it is required when building JobSummary",
+                )
+            })?,
+            created_at: self.created_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_at",
+                    "created_at was not specified but it is required when building JobSummary",
+                )
+            })?,
             started_at: self.started_at,
             ended_at: self.ended_at,
             tags: self.tags,
-        }
+        })
     }
 }

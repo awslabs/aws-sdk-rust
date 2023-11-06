@@ -55,6 +55,7 @@ impl DeleteServiceInputBuilder {
         &self.cluster
     }
     /// <p>The name of the service to delete.</p>
+    /// This field is required.
     pub fn service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl DeleteServiceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteServiceInput`](crate::operation::delete_service::DeleteServiceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_service::DeleteServiceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_service::DeleteServiceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_service::DeleteServiceInput {
             cluster: self.cluster,
             service: self.service,

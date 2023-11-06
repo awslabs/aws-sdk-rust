@@ -41,7 +41,7 @@ pub struct PutSessionOutput {
     /// <p>If the <code>dialogState</code> is <code>ElicitSlot</code>, returns the name of the slot for which Amazon Lex is eliciting a value.</p>
     pub slot_to_elicit: ::std::option::Option<::std::string::String>,
     /// <p>The audio version of the message to convey to the user.</p>
-    pub audio_stream: ::aws_smithy_http::byte_stream::ByteStream,
+    pub audio_stream: ::aws_smithy_types::byte_stream::ByteStream,
     /// <p>A unique identifier for the session.</p>
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of active contexts for the session.</p>
@@ -106,7 +106,7 @@ impl PutSessionOutput {
         self.slot_to_elicit.as_deref()
     }
     /// <p>The audio version of the message to convey to the user.</p>
-    pub fn audio_stream(&self) -> &::aws_smithy_http::byte_stream::ByteStream {
+    pub fn audio_stream(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
         &self.audio_stream
     }
     /// <p>A unique identifier for the session.</p>
@@ -162,7 +162,7 @@ pub struct PutSessionOutputBuilder {
     pub(crate) message_format: ::std::option::Option<crate::types::MessageFormatType>,
     pub(crate) dialog_state: ::std::option::Option<crate::types::DialogState>,
     pub(crate) slot_to_elicit: ::std::option::Option<::std::string::String>,
-    pub(crate) audio_stream: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
+    pub(crate) audio_stream: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     pub(crate) active_contexts: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -355,17 +355,17 @@ impl PutSessionOutputBuilder {
         &self.slot_to_elicit
     }
     /// <p>The audio version of the message to convey to the user.</p>
-    pub fn audio_stream(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
+    pub fn audio_stream(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.audio_stream = ::std::option::Option::Some(input);
         self
     }
     /// <p>The audio version of the message to convey to the user.</p>
-    pub fn set_audio_stream(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
+    pub fn set_audio_stream(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.audio_stream = input;
         self
     }
     /// <p>The audio version of the message to convey to the user.</p>
-    pub fn get_audio_stream(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_audio_stream(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         &self.audio_stream
     }
     /// <p>A unique identifier for the session.</p>

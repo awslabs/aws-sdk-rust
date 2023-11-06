@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AppVersionSummary {
     /// <p>Version of an application.</p>
-    pub app_version: ::std::option::Option<::std::string::String>,
+    pub app_version: ::std::string::String,
     /// <p>Identifier of the application version.</p>
     pub identifier: ::std::option::Option<i64>,
     /// <p>Creation time of the application version.</p>
@@ -15,8 +15,9 @@ pub struct AppVersionSummary {
 }
 impl AppVersionSummary {
     /// <p>Version of an application.</p>
-    pub fn app_version(&self) -> ::std::option::Option<&str> {
-        self.app_version.as_deref()
+    pub fn app_version(&self) -> &str {
+        use std::ops::Deref;
+        self.app_version.deref()
     }
     /// <p>Identifier of the application version.</p>
     pub fn identifier(&self) -> ::std::option::Option<i64> {
@@ -49,6 +50,7 @@ pub struct AppVersionSummaryBuilder {
 }
 impl AppVersionSummaryBuilder {
     /// <p>Version of an application.</p>
+    /// This field is required.
     pub fn app_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_version = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +107,19 @@ impl AppVersionSummaryBuilder {
         &self.version_name
     }
     /// Consumes the builder and constructs a [`AppVersionSummary`](crate::types::AppVersionSummary).
-    pub fn build(self) -> crate::types::AppVersionSummary {
-        crate::types::AppVersionSummary {
-            app_version: self.app_version,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`app_version`](crate::types::builders::AppVersionSummaryBuilder::app_version)
+    pub fn build(self) -> ::std::result::Result<crate::types::AppVersionSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AppVersionSummary {
+            app_version: self.app_version.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "app_version",
+                    "app_version was not specified but it is required when building AppVersionSummary",
+                )
+            })?,
             identifier: self.identifier,
             creation_time: self.creation_time,
             version_name: self.version_name,
-        }
+        })
     }
 }

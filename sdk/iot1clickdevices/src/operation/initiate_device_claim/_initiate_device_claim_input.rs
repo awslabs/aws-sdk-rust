@@ -27,6 +27,7 @@ pub struct InitiateDeviceClaimInputBuilder {
 }
 impl InitiateDeviceClaimInputBuilder {
     /// <p>The unique identifier of the device.</p>
+    /// This field is required.
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl InitiateDeviceClaimInputBuilder {
     /// Consumes the builder and constructs a [`InitiateDeviceClaimInput`](crate::operation::initiate_device_claim::InitiateDeviceClaimInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::initiate_device_claim::InitiateDeviceClaimInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::initiate_device_claim::InitiateDeviceClaimInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::initiate_device_claim::InitiateDeviceClaimInput { device_id: self.device_id })
     }

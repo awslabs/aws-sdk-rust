@@ -27,6 +27,7 @@ pub struct GetLinkInputBuilder {
 }
 impl GetLinkInputBuilder {
     /// <p>The ARN of the link to retrieve information for.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetLinkInputBuilder {
         &self.identifier
     }
     /// Consumes the builder and constructs a [`GetLinkInput`](crate::operation::get_link::GetLinkInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_link::GetLinkInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_link::GetLinkInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_link::GetLinkInput { identifier: self.identifier })
     }
 }

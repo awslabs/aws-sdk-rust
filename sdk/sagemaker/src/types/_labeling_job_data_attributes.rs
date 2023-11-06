@@ -9,8 +9,10 @@ pub struct LabelingJobDataAttributes {
 }
 impl LabelingJobDataAttributes {
     /// <p>Declares that your content is free of personally identifiable information or adult content. SageMaker may restrict the Amazon Mechanical Turk workers that can view your task based on this information.</p>
-    pub fn content_classifiers(&self) -> ::std::option::Option<&[crate::types::ContentClassifier]> {
-        self.content_classifiers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.content_classifiers.is_none()`.
+    pub fn content_classifiers(&self) -> &[crate::types::ContentClassifier] {
+        self.content_classifiers.as_deref().unwrap_or_default()
     }
 }
 impl LabelingJobDataAttributes {

@@ -2,7 +2,7 @@
 pub fn ser_create_home_region_control_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_home_region_control::CreateHomeRegionControlInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.home_region {
         object.key("HomeRegion").string(var_1.as_str());
     }

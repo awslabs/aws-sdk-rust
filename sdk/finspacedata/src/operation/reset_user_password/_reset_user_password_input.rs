@@ -34,6 +34,7 @@ pub struct ResetUserPasswordInputBuilder {
 }
 impl ResetUserPasswordInputBuilder {
     /// <p>The unique identifier of the user that a temporary password is requested for.</p>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl ResetUserPasswordInputBuilder {
     /// Consumes the builder and constructs a [`ResetUserPasswordInput`](crate::operation::reset_user_password::ResetUserPasswordInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::reset_user_password::ResetUserPasswordInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::reset_user_password::ResetUserPasswordInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::reset_user_password::ResetUserPasswordInput {
             user_id: self.user_id,
             client_token: self.client_token,

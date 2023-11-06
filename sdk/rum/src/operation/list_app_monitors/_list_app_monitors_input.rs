@@ -64,7 +64,7 @@ impl ListAppMonitorsInputBuilder {
     /// Consumes the builder and constructs a [`ListAppMonitorsInput`](crate::operation::list_app_monitors::ListAppMonitorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_app_monitors::ListAppMonitorsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_app_monitors::ListAppMonitorsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_app_monitors::ListAppMonitorsInput {
             max_results: self.max_results,
             next_token: self.next_token,

@@ -2,7 +2,7 @@
 pub fn ser_visual_axis_sort_option(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VisualAxisSortOption,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.availability_status {
         object.key("AvailabilityStatus").string(var_1.as_str());
     }

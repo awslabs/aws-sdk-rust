@@ -2,15 +2,15 @@
 pub fn ser_cloud_watch_logs_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CloudWatchLogsConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.status {
-        object.key("status").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("status").string(input.status.as_str());
     }
-    if let Some(var_2) = &input.group_name {
-        object.key("groupName").string(var_2.as_str());
+    if let Some(var_1) = &input.group_name {
+        object.key("groupName").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.stream_name {
-        object.key("streamName").string(var_3.as_str());
+    if let Some(var_2) = &input.stream_name {
+        object.key("streamName").string(var_2.as_str());
     }
     Ok(())
 }
@@ -61,7 +61,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::cloud_watch_logs_config_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

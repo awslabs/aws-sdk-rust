@@ -7,7 +7,7 @@ pub struct ResultRow {
     /// <p>The ID for a particular row.</p>
     pub row_id: ::std::option::Option<::std::string::String>,
     /// <p>List of all the data cells in a row.</p>
-    pub data_items: ::std::option::Option<::std::vec::Vec<crate::types::DataItem>>,
+    pub data_items: ::std::vec::Vec<crate::types::DataItem>,
 }
 impl ResultRow {
     /// <p>The ID for a particular row.</p>
@@ -15,8 +15,9 @@ impl ResultRow {
         self.row_id.as_deref()
     }
     /// <p>List of all the data cells in a row.</p>
-    pub fn data_items(&self) -> ::std::option::Option<&[crate::types::DataItem]> {
-        self.data_items.as_deref()
+    pub fn data_items(&self) -> &[crate::types::DataItem] {
+        use std::ops::Deref;
+        self.data_items.deref()
     }
 }
 impl ResultRow {
@@ -69,10 +70,17 @@ impl ResultRowBuilder {
         &self.data_items
     }
     /// Consumes the builder and constructs a [`ResultRow`](crate::types::ResultRow).
-    pub fn build(self) -> crate::types::ResultRow {
-        crate::types::ResultRow {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`data_items`](crate::types::builders::ResultRowBuilder::data_items)
+    pub fn build(self) -> ::std::result::Result<crate::types::ResultRow, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ResultRow {
             row_id: self.row_id,
-            data_items: self.data_items,
-        }
+            data_items: self.data_items.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "data_items",
+                    "data_items was not specified but it is required when building ResultRow",
+                )
+            })?,
+        })
     }
 }

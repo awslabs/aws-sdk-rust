@@ -91,6 +91,7 @@ pub struct AuthenticateCognitoActionConfigBuilder {
 }
 impl AuthenticateCognitoActionConfigBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Cognito user pool.</p>
+    /// This field is required.
     pub fn user_pool_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_arn = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +106,7 @@ impl AuthenticateCognitoActionConfigBuilder {
         &self.user_pool_arn
     }
     /// <p>The ID of the Amazon Cognito user pool client.</p>
+    /// This field is required.
     pub fn user_pool_client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_client_id = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +121,7 @@ impl AuthenticateCognitoActionConfigBuilder {
         &self.user_pool_client_id
     }
     /// <p>The domain prefix or fully-qualified domain name of the Amazon Cognito user pool.</p>
+    /// This field is required.
     pub fn user_pool_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_domain = ::std::option::Option::Some(input.into());
         self

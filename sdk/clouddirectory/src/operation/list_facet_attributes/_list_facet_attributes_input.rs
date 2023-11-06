@@ -48,6 +48,7 @@ pub struct ListFacetAttributesInputBuilder {
 }
 impl ListFacetAttributesInputBuilder {
     /// <p>The ARN of the schema where the facet resides.</p>
+    /// This field is required.
     pub fn schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_arn = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl ListFacetAttributesInputBuilder {
         &self.schema_arn
     }
     /// <p>The name of the facet whose attributes will be retrieved.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +108,7 @@ impl ListFacetAttributesInputBuilder {
     /// Consumes the builder and constructs a [`ListFacetAttributesInput`](crate::operation::list_facet_attributes::ListFacetAttributesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_facet_attributes::ListFacetAttributesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_facet_attributes::ListFacetAttributesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_facet_attributes::ListFacetAttributesInput {
             schema_arn: self.schema_arn,

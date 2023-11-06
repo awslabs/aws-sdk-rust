@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SharePointConfiguration {
     /// <p>The version of Microsoft SharePoint that you use.</p>
-    pub share_point_version: ::std::option::Option<crate::types::SharePointVersion>,
+    pub share_point_version: crate::types::SharePointVersion,
     /// <p>The Microsoft SharePoint site URLs for the documents you want to index.</p>
-    pub urls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub urls: ::std::vec::Vec<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to connect to the SharePoint instance. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Microsoft SharePoint</a>.</p>
-    pub secret_arn: ::std::option::Option<::std::string::String>,
+    pub secret_arn: ::std::string::String,
     /// <p> <code>TRUE</code> to index document attachments.</p>
     pub crawl_attachments: bool,
     /// <p> <code>TRUE</code> to use the SharePoint change log to determine which documents require updating in the index. Depending on the change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in SharePoint.</p>
@@ -41,16 +41,18 @@ pub struct SharePointConfiguration {
 }
 impl SharePointConfiguration {
     /// <p>The version of Microsoft SharePoint that you use.</p>
-    pub fn share_point_version(&self) -> ::std::option::Option<&crate::types::SharePointVersion> {
-        self.share_point_version.as_ref()
+    pub fn share_point_version(&self) -> &crate::types::SharePointVersion {
+        &self.share_point_version
     }
     /// <p>The Microsoft SharePoint site URLs for the documents you want to index.</p>
-    pub fn urls(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.urls.as_deref()
+    pub fn urls(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.urls.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to connect to the SharePoint instance. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Microsoft SharePoint</a>.</p>
-    pub fn secret_arn(&self) -> ::std::option::Option<&str> {
-        self.secret_arn.as_deref()
+    pub fn secret_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.secret_arn.deref()
     }
     /// <p> <code>TRUE</code> to index document attachments.</p>
     pub fn crawl_attachments(&self) -> bool {
@@ -62,21 +64,27 @@ impl SharePointConfiguration {
     }
     /// <p>A list of regular expression patterns to include certain documents in your SharePoint. Documents that match the patterns are included in the index. Documents that don't match the patterns are excluded from the index. If a document matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the document isn't included in the index.</p>
     /// <p>The regex applies to the display URL of the SharePoint document.</p>
-    pub fn inclusion_patterns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.inclusion_patterns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inclusion_patterns.is_none()`.
+    pub fn inclusion_patterns(&self) -> &[::std::string::String] {
+        self.inclusion_patterns.as_deref().unwrap_or_default()
     }
     /// <p>A list of regular expression patterns to exclude certain documents in your SharePoint. Documents that match the patterns are excluded from the index. Documents that don't match the patterns are included in the index. If a document matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the document isn't included in the index.</p>
     /// <p>The regex applies to the display URL of the SharePoint document.</p>
-    pub fn exclusion_patterns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.exclusion_patterns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclusion_patterns.is_none()`.
+    pub fn exclusion_patterns(&self) -> &[::std::string::String] {
+        self.exclusion_patterns.as_deref().unwrap_or_default()
     }
     /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Microsoft SharePoint. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
     pub fn vpc_configuration(&self) -> ::std::option::Option<&crate::types::DataSourceVpcConfiguration> {
         self.vpc_configuration.as_ref()
     }
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map SharePoint data source attributes or field names to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to SharePoint fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The SharePoint data source field names must exist in your SharePoint custom metadata.</p>
-    pub fn field_mappings(&self) -> ::std::option::Option<&[crate::types::DataSourceToIndexFieldMapping]> {
-        self.field_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.field_mappings.is_none()`.
+    pub fn field_mappings(&self) -> &[crate::types::DataSourceToIndexFieldMapping] {
+        self.field_mappings.as_deref().unwrap_or_default()
     }
     /// <p>The Microsoft SharePoint attribute field that contains the title of the document.</p>
     pub fn document_title_field_name(&self) -> ::std::option::Option<&str> {
@@ -131,6 +139,7 @@ pub struct SharePointConfigurationBuilder {
 }
 impl SharePointConfigurationBuilder {
     /// <p>The version of Microsoft SharePoint that you use.</p>
+    /// This field is required.
     pub fn share_point_version(mut self, input: crate::types::SharePointVersion) -> Self {
         self.share_point_version = ::std::option::Option::Some(input);
         self
@@ -165,6 +174,7 @@ impl SharePointConfigurationBuilder {
         &self.urls
     }
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to connect to the SharePoint instance. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Microsoft SharePoint</a>.</p>
+    /// This field is required.
     pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_arn = ::std::option::Option::Some(input.into());
         self
@@ -369,11 +379,30 @@ impl SharePointConfigurationBuilder {
         &self.proxy_configuration
     }
     /// Consumes the builder and constructs a [`SharePointConfiguration`](crate::types::SharePointConfiguration).
-    pub fn build(self) -> crate::types::SharePointConfiguration {
-        crate::types::SharePointConfiguration {
-            share_point_version: self.share_point_version,
-            urls: self.urls,
-            secret_arn: self.secret_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`share_point_version`](crate::types::builders::SharePointConfigurationBuilder::share_point_version)
+    /// - [`urls`](crate::types::builders::SharePointConfigurationBuilder::urls)
+    /// - [`secret_arn`](crate::types::builders::SharePointConfigurationBuilder::secret_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::SharePointConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SharePointConfiguration {
+            share_point_version: self.share_point_version.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "share_point_version",
+                    "share_point_version was not specified but it is required when building SharePointConfiguration",
+                )
+            })?,
+            urls: self.urls.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "urls",
+                    "urls was not specified but it is required when building SharePointConfiguration",
+                )
+            })?,
+            secret_arn: self.secret_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "secret_arn",
+                    "secret_arn was not specified but it is required when building SharePointConfiguration",
+                )
+            })?,
             crawl_attachments: self.crawl_attachments.unwrap_or_default(),
             use_change_log: self.use_change_log.unwrap_or_default(),
             inclusion_patterns: self.inclusion_patterns,
@@ -385,6 +414,6 @@ impl SharePointConfigurationBuilder {
             ssl_certificate_s3_path: self.ssl_certificate_s3_path,
             authentication_type: self.authentication_type,
             proxy_configuration: self.proxy_configuration,
-        }
+        })
     }
 }

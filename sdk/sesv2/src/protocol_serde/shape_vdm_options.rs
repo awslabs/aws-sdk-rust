@@ -2,7 +2,7 @@
 pub fn ser_vdm_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VdmOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.dashboard_options {
         #[allow(unused_mut)]
         let mut object_2 = object.key("DashboardOptions").start_object();

@@ -34,6 +34,7 @@ pub struct GetBatchJobExecutionInputBuilder {
 }
 impl GetBatchJobExecutionInputBuilder {
     /// <p>The identifier of the application.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetBatchJobExecutionInputBuilder {
         &self.application_id
     }
     /// <p>The unique identifier of the batch job execution.</p>
+    /// This field is required.
     pub fn execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl GetBatchJobExecutionInputBuilder {
     /// Consumes the builder and constructs a [`GetBatchJobExecutionInput`](crate::operation::get_batch_job_execution::GetBatchJobExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_batch_job_execution::GetBatchJobExecutionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_batch_job_execution::GetBatchJobExecutionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_batch_job_execution::GetBatchJobExecutionInput {
             application_id: self.application_id,

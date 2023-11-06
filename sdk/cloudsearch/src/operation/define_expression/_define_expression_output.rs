@@ -35,6 +35,7 @@ pub struct DefineExpressionOutputBuilder {
 }
 impl DefineExpressionOutputBuilder {
     /// <p>The value of an <code>Expression</code> and its current status.</p>
+    /// This field is required.
     pub fn expression(mut self, input: crate::types::ExpressionStatus) -> Self {
         self.expression = ::std::option::Option::Some(input);
         self

@@ -49,7 +49,7 @@ where
 pub fn ser_local_size_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LocalSizeConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.max_local_media_size_in_mb {
         object.key("MaxLocalMediaSizeInMB").number(
             #[allow(clippy::useless_conversion)]

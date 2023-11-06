@@ -27,6 +27,7 @@ pub struct DescribeQuerySuggestionsConfigInputBuilder {
 }
 impl DescribeQuerySuggestionsConfigInputBuilder {
     /// <p>The identifier of the index with query suggestions that you want to get information on.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeQuerySuggestionsConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigInput {
             index_id: self.index_id,

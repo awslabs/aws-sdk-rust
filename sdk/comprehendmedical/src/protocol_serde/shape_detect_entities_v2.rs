@@ -127,18 +127,20 @@ pub fn de_detect_entities_v2_http_response(
         output = crate::protocol_serde::shape_detect_entities_v2::de_detect_entities_v2(_response_body, output)
             .map_err(crate::operation::detect_entities_v2::DetectEntitiesV2Error::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::detect_entities_v2_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::detect_entities_v2::DetectEntitiesV2Error::unhandled)?
     })
 }
 
 pub fn ser_detect_entities_v2_input(
     input: &crate::operation::detect_entities_v2::DetectEntitiesV2Input,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_detect_entities_v2_input::ser_detect_entities_v2_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_detect_entities_v2(

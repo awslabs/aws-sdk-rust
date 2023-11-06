@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WhatIfPointScenario {
     /// <p>The date that you need the forecast results for.</p>
-    pub date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub date: ::aws_smithy_types::DateTime,
     /// <p>The target value that you want to meet for the provided date.</p>
     pub value: f64,
 }
 impl WhatIfPointScenario {
     /// <p>The date that you need the forecast results for.</p>
-    pub fn date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.date.as_ref()
+    pub fn date(&self) -> &::aws_smithy_types::DateTime {
+        &self.date
     }
     /// <p>The target value that you want to meet for the provided date.</p>
     pub fn value(&self) -> f64 {
@@ -35,6 +35,7 @@ pub struct WhatIfPointScenarioBuilder {
 }
 impl WhatIfPointScenarioBuilder {
     /// <p>The date that you need the forecast results for.</p>
+    /// This field is required.
     pub fn date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.date = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl WhatIfPointScenarioBuilder {
         &self.date
     }
     /// <p>The target value that you want to meet for the provided date.</p>
+    /// This field is required.
     pub fn value(mut self, input: f64) -> Self {
         self.value = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,17 @@ impl WhatIfPointScenarioBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`WhatIfPointScenario`](crate::types::WhatIfPointScenario).
-    pub fn build(self) -> crate::types::WhatIfPointScenario {
-        crate::types::WhatIfPointScenario {
-            date: self.date,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`date`](crate::types::builders::WhatIfPointScenarioBuilder::date)
+    pub fn build(self) -> ::std::result::Result<crate::types::WhatIfPointScenario, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::WhatIfPointScenario {
+            date: self.date.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "date",
+                    "date was not specified but it is required when building WhatIfPointScenario",
+                )
+            })?,
             value: self.value.unwrap_or_default(),
-        }
+        })
     }
 }

@@ -11,8 +11,10 @@ pub struct ListAdaptersOutput {
 }
 impl ListAdaptersOutput {
     /// <p>A list of adapters that matches the filtering criteria specified when calling ListAdapters.</p>
-    pub fn adapters(&self) -> ::std::option::Option<&[crate::types::AdapterOverview]> {
-        self.adapters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.adapters.is_none()`.
+    pub fn adapters(&self) -> &[crate::types::AdapterOverview] {
+        self.adapters.as_deref().unwrap_or_default()
     }
     /// <p>Identifies the next page of results to return when listing adapters.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

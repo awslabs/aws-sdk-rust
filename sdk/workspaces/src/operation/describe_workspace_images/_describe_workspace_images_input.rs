@@ -14,8 +14,10 @@ pub struct DescribeWorkspaceImagesInput {
 }
 impl DescribeWorkspaceImagesInput {
     /// <p>The identifier of the image.</p>
-    pub fn image_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.image_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_ids.is_none()`.
+    pub fn image_ids(&self) -> &[::std::string::String] {
+        self.image_ids.as_deref().unwrap_or_default()
     }
     /// <p>The type (owned or shared) of the image.</p>
     pub fn image_type(&self) -> ::std::option::Option<&crate::types::ImageType> {
@@ -114,7 +116,7 @@ impl DescribeWorkspaceImagesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_workspace_images::DescribeWorkspaceImagesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_workspace_images::DescribeWorkspaceImagesInput {
             image_ids: self.image_ids,

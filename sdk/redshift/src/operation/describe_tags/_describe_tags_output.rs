@@ -12,8 +12,10 @@ pub struct DescribeTagsOutput {
 }
 impl DescribeTagsOutput {
     /// <p>A list of tags with their associated resources.</p>
-    pub fn tagged_resources(&self) -> ::std::option::Option<&[crate::types::TaggedResource]> {
-        self.tagged_resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tagged_resources.is_none()`.
+    pub fn tagged_resources(&self) -> &[crate::types::TaggedResource] {
+        self.tagged_resources.as_deref().unwrap_or_default()
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

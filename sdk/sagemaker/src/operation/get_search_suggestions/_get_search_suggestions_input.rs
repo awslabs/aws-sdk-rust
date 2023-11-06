@@ -34,6 +34,7 @@ pub struct GetSearchSuggestionsInputBuilder {
 }
 impl GetSearchSuggestionsInputBuilder {
     /// <p>The name of the SageMaker resource to search for.</p>
+    /// This field is required.
     pub fn resource(mut self, input: crate::types::ResourceType) -> Self {
         self.resource = ::std::option::Option::Some(input);
         self
@@ -64,7 +65,7 @@ impl GetSearchSuggestionsInputBuilder {
     /// Consumes the builder and constructs a [`GetSearchSuggestionsInput`](crate::operation::get_search_suggestions::GetSearchSuggestionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_search_suggestions::GetSearchSuggestionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_search_suggestions::GetSearchSuggestionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_search_suggestions::GetSearchSuggestionsInput {
             resource: self.resource,

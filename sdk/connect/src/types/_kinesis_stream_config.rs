@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KinesisStreamConfig {
     /// <p>The Amazon Resource Name (ARN) of the data stream.</p>
-    pub stream_arn: ::std::option::Option<::std::string::String>,
+    pub stream_arn: ::std::string::String,
 }
 impl KinesisStreamConfig {
     /// <p>The Amazon Resource Name (ARN) of the data stream.</p>
-    pub fn stream_arn(&self) -> ::std::option::Option<&str> {
-        self.stream_arn.as_deref()
+    pub fn stream_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.stream_arn.deref()
     }
 }
 impl KinesisStreamConfig {
@@ -28,6 +29,7 @@ pub struct KinesisStreamConfigBuilder {
 }
 impl KinesisStreamConfigBuilder {
     /// <p>The Amazon Resource Name (ARN) of the data stream.</p>
+    /// This field is required.
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_arn = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl KinesisStreamConfigBuilder {
         &self.stream_arn
     }
     /// Consumes the builder and constructs a [`KinesisStreamConfig`](crate::types::KinesisStreamConfig).
-    pub fn build(self) -> crate::types::KinesisStreamConfig {
-        crate::types::KinesisStreamConfig { stream_arn: self.stream_arn }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`stream_arn`](crate::types::builders::KinesisStreamConfigBuilder::stream_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::KinesisStreamConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::KinesisStreamConfig {
+            stream_arn: self.stream_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "stream_arn",
+                    "stream_arn was not specified but it is required when building KinesisStreamConfig",
+                )
+            })?,
+        })
     }
 }

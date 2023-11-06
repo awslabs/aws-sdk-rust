@@ -36,11 +36,10 @@ pub fn de_associate_service_role_to_account_http_error(
                         })?,
                     );
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::internal_server_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::associate_service_role_to_account::AssociateServiceRoleToAccountError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -52,11 +51,10 @@ pub fn de_associate_service_role_to_account_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::associate_service_role_to_account::AssociateServiceRoleToAccountError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::associate_service_role_to_account::AssociateServiceRoleToAccountError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::associate_service_role_to_account::AssociateServiceRoleToAccountError::generic(generic),
@@ -84,12 +82,12 @@ pub fn de_associate_service_role_to_account_http_response(
 
 pub fn ser_associate_service_role_to_account_input(
     input: &crate::operation::associate_service_role_to_account::AssociateServiceRoleToAccountInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_associate_service_role_to_account_input::ser_associate_service_role_to_account_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_associate_service_role_to_account(

@@ -27,6 +27,7 @@ pub struct DescribeKeyInputBuilder {
 }
 impl DescribeKeyInputBuilder {
     /// <p>The name of the API key resource.</p>
+    /// This field is required.
     pub fn key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_name = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl DescribeKeyInputBuilder {
         &self.key_name
     }
     /// Consumes the builder and constructs a [`DescribeKeyInput`](crate::operation::describe_key::DescribeKeyInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_key::DescribeKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_key::DescribeKeyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_key::DescribeKeyInput { key_name: self.key_name })
     }
 }

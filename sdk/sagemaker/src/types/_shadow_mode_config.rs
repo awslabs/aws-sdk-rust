@@ -15,8 +15,10 @@ impl ShadowModeConfig {
         self.source_model_variant_name.as_deref()
     }
     /// <p>List of shadow variant configurations.</p>
-    pub fn shadow_model_variants(&self) -> ::std::option::Option<&[crate::types::ShadowModelVariantConfig]> {
-        self.shadow_model_variants.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.shadow_model_variants.is_none()`.
+    pub fn shadow_model_variants(&self) -> &[crate::types::ShadowModelVariantConfig] {
+        self.shadow_model_variants.as_deref().unwrap_or_default()
     }
 }
 impl ShadowModeConfig {
@@ -35,6 +37,7 @@ pub struct ShadowModeConfigBuilder {
 }
 impl ShadowModeConfigBuilder {
     /// <p> The name of the production variant, which takes all the inference requests. </p>
+    /// This field is required.
     pub fn source_model_variant_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_model_variant_name = ::std::option::Option::Some(input.into());
         self

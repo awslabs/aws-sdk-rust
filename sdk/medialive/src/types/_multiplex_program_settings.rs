@@ -63,6 +63,7 @@ impl MultiplexProgramSettingsBuilder {
         &self.preferred_channel_pipeline
     }
     /// Unique program number.
+    /// This field is required.
     pub fn program_number(mut self, input: i32) -> Self {
         self.program_number = ::std::option::Option::Some(input);
         self

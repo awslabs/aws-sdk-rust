@@ -28,6 +28,7 @@ pub struct KubernetesConfigurationBuilder {
 }
 impl KubernetesConfigurationBuilder {
     /// <p>The status of Kubernetes audit logs as a data source.</p>
+    /// This field is required.
     pub fn audit_logs(mut self, input: crate::types::KubernetesAuditLogsConfiguration) -> Self {
         self.audit_logs = ::std::option::Option::Some(input);
         self

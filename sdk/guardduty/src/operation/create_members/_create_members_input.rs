@@ -14,8 +14,10 @@ impl CreateMembersInput {
         self.detector_id.as_deref()
     }
     /// <p>A list of account ID and email address pairs of the accounts that you want to associate with the GuardDuty administrator account.</p>
-    pub fn account_details(&self) -> ::std::option::Option<&[crate::types::AccountDetail]> {
-        self.account_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_details.is_none()`.
+    pub fn account_details(&self) -> &[crate::types::AccountDetail] {
+        self.account_details.as_deref().unwrap_or_default()
     }
 }
 impl CreateMembersInput {
@@ -34,6 +36,7 @@ pub struct CreateMembersInputBuilder {
 }
 impl CreateMembersInputBuilder {
     /// <p>The unique ID of the detector of the GuardDuty account that you want to associate member accounts with.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +73,7 @@ impl CreateMembersInputBuilder {
     /// Consumes the builder and constructs a [`CreateMembersInput`](crate::operation::create_members::CreateMembersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_members::CreateMembersInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_members::CreateMembersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_members::CreateMembersInput {
             detector_id: self.detector_id,
             account_details: self.account_details,

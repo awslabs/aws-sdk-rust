@@ -5,13 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartQueryPlanningOutput {
     /// <p>The ID of the plan query operation can be used to fetch the actual work unit descriptors that are produced as the result of the operation. The ID is also used to get the query state and as an input to the <code>Execute</code> operation.</p>
-    pub query_id: ::std::option::Option<::std::string::String>,
+    pub query_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl StartQueryPlanningOutput {
     /// <p>The ID of the plan query operation can be used to fetch the actual work unit descriptors that are produced as the result of the operation. The ID is also used to get the query state and as an input to the <code>Execute</code> operation.</p>
-    pub fn query_id(&self) -> ::std::option::Option<&str> {
-        self.query_id.as_deref()
+    pub fn query_id(&self) -> &str {
+        use std::ops::Deref;
+        self.query_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for StartQueryPlanningOutput {
@@ -35,6 +36,7 @@ pub struct StartQueryPlanningOutputBuilder {
 }
 impl StartQueryPlanningOutputBuilder {
     /// <p>The ID of the plan query operation can be used to fetch the actual work unit descriptors that are produced as the result of the operation. The ID is also used to get the query state and as an input to the <code>Execute</code> operation.</p>
+    /// This field is required.
     pub fn query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_id = ::std::option::Option::Some(input.into());
         self
@@ -58,10 +60,20 @@ impl StartQueryPlanningOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartQueryPlanningOutput`](crate::operation::start_query_planning::StartQueryPlanningOutput).
-    pub fn build(self) -> crate::operation::start_query_planning::StartQueryPlanningOutput {
-        crate::operation::start_query_planning::StartQueryPlanningOutput {
-            query_id: self.query_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`query_id`](crate::operation::start_query_planning::builders::StartQueryPlanningOutputBuilder::query_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::start_query_planning::StartQueryPlanningOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::start_query_planning::StartQueryPlanningOutput {
+            query_id: self.query_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "query_id",
+                    "query_id was not specified but it is required when building StartQueryPlanningOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

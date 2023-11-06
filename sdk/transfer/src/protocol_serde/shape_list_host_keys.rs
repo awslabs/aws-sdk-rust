@@ -25,11 +25,10 @@ pub fn de_list_host_keys_http_error(
                 output = crate::protocol_serde::shape_internal_service_error::de_internal_service_error_json_err(_response_body, output)
                     .map_err(crate::operation::list_host_keys::ListHostKeysError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_service_error_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_host_keys::ListHostKeysError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InvalidNextTokenException" => crate::operation::list_host_keys::ListHostKeysError::InvalidNextTokenException({
@@ -40,11 +39,10 @@ pub fn de_list_host_keys_http_error(
                 output = crate::protocol_serde::shape_invalid_next_token_exception::de_invalid_next_token_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_host_keys::ListHostKeysError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_next_token_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_host_keys::ListHostKeysError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InvalidRequestException" => crate::operation::list_host_keys::ListHostKeysError::InvalidRequestException({
@@ -55,11 +53,10 @@ pub fn de_list_host_keys_http_error(
                 output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_host_keys::ListHostKeysError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_request_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_host_keys::ListHostKeysError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::list_host_keys::ListHostKeysError::ResourceNotFoundException({
@@ -70,11 +67,10 @@ pub fn de_list_host_keys_http_error(
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_host_keys::ListHostKeysError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_host_keys::ListHostKeysError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::list_host_keys::ListHostKeysError::ServiceUnavailableException({
@@ -109,18 +105,20 @@ pub fn de_list_host_keys_http_response(
         output = crate::protocol_serde::shape_list_host_keys::de_list_host_keys(_response_body, output)
             .map_err(crate::operation::list_host_keys::ListHostKeysError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::list_host_keys_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::list_host_keys::ListHostKeysError::unhandled)?
     })
 }
 
 pub fn ser_list_host_keys_input(
     input: &crate::operation::list_host_keys::ListHostKeysInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_list_host_keys_input::ser_list_host_keys_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_list_host_keys(

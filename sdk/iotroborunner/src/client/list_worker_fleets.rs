@@ -4,12 +4,12 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_worker_fleets::builders::ListWorkerFleetsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`site(impl Into<String>)`](crate::operation::list_worker_fleets::builders::ListWorkerFleetsFluentBuilder::site) / [`set_site(Option<String>)`](crate::operation::list_worker_fleets::builders::ListWorkerFleetsFluentBuilder::set_site): Site ARN.
-    ///   - [`max_results(i32)`](crate::operation::list_worker_fleets::builders::ListWorkerFleetsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_worker_fleets::builders::ListWorkerFleetsFluentBuilder::set_max_results): Maximum number of results to retrieve in a single ListWorkerFleets call.
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_worker_fleets::builders::ListWorkerFleetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_worker_fleets::builders::ListWorkerFleetsFluentBuilder::set_next_token): Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
+    ///   - [`site(impl Into<String>)`](crate::operation::list_worker_fleets::builders::ListWorkerFleetsFluentBuilder::site) / [`set_site(Option<String>)`](crate::operation::list_worker_fleets::builders::ListWorkerFleetsFluentBuilder::set_site):<br>required: **true**<br>Site ARN.<br>
+    ///   - [`max_results(i32)`](crate::operation::list_worker_fleets::builders::ListWorkerFleetsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_worker_fleets::builders::ListWorkerFleetsFluentBuilder::set_max_results):<br>required: **false**<br>Maximum number of results to retrieve in a single ListWorkerFleets call.<br>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_worker_fleets::builders::ListWorkerFleetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_worker_fleets::builders::ListWorkerFleetsFluentBuilder::set_next_token):<br>required: **false**<br>Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.<br>
     /// - On success, responds with [`ListWorkerFleetsOutput`](crate::operation::list_worker_fleets::ListWorkerFleetsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_worker_fleets::ListWorkerFleetsOutput::next_token): Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
-    ///   - [`worker_fleets(Option<Vec<WorkerFleet>>)`](crate::operation::list_worker_fleets::ListWorkerFleetsOutput::worker_fleets): List of worker fleets.
+    ///   - [`worker_fleets(Option<Vec::<WorkerFleet>>)`](crate::operation::list_worker_fleets::ListWorkerFleetsOutput::worker_fleets): List of worker fleets.
     /// - On failure, responds with [`SdkError<ListWorkerFleetsError>`](crate::operation::list_worker_fleets::ListWorkerFleetsError)
     pub fn list_worker_fleets(&self) -> crate::operation::list_worker_fleets::builders::ListWorkerFleetsFluentBuilder {
         crate::operation::list_worker_fleets::builders::ListWorkerFleetsFluentBuilder::new(self.handle.clone())

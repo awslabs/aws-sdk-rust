@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RemoveBridgeOutput`](crate::operation::remove_bridge_output::builders::RemoveBridgeOutputFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`bridge_arn(impl Into<String>)`](crate::operation::remove_bridge_output::builders::RemoveBridgeOutputFluentBuilder::bridge_arn) / [`set_bridge_arn(Option<String>)`](crate::operation::remove_bridge_output::builders::RemoveBridgeOutputFluentBuilder::set_bridge_arn): The ARN of the bridge that you want to update.
-    ///   - [`output_name(impl Into<String>)`](crate::operation::remove_bridge_output::builders::RemoveBridgeOutputFluentBuilder::output_name) / [`set_output_name(Option<String>)`](crate::operation::remove_bridge_output::builders::RemoveBridgeOutputFluentBuilder::set_output_name): The name of the bridge output that you want to remove.
+    ///   - [`bridge_arn(impl Into<String>)`](crate::operation::remove_bridge_output::builders::RemoveBridgeOutputFluentBuilder::bridge_arn) / [`set_bridge_arn(Option<String>)`](crate::operation::remove_bridge_output::builders::RemoveBridgeOutputFluentBuilder::set_bridge_arn):<br>required: **true**<br>The ARN of the bridge that you want to update.<br>
+    ///   - [`output_name(impl Into<String>)`](crate::operation::remove_bridge_output::builders::RemoveBridgeOutputFluentBuilder::output_name) / [`set_output_name(Option<String>)`](crate::operation::remove_bridge_output::builders::RemoveBridgeOutputFluentBuilder::set_output_name):<br>required: **true**<br>The name of the bridge output that you want to remove.<br>
     /// - On success, responds with [`RemoveBridgeOutputOutput`](crate::operation::remove_bridge_output::RemoveBridgeOutputOutput) with field(s):
     ///   - [`bridge_arn(Option<String>)`](crate::operation::remove_bridge_output::RemoveBridgeOutputOutput::bridge_arn): (undocumented)
     ///   - [`output_name(Option<String>)`](crate::operation::remove_bridge_output::RemoveBridgeOutputOutput::output_name): (undocumented)

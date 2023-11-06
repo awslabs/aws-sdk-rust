@@ -5,24 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Rule {
     /// <p>The detector for which the rule is associated.</p>
-    pub detector_id: ::std::option::Option<::std::string::String>,
+    pub detector_id: ::std::string::String,
     /// <p>The rule ID.</p>
-    pub rule_id: ::std::option::Option<::std::string::String>,
+    pub rule_id: ::std::string::String,
     /// <p>The rule version.</p>
-    pub rule_version: ::std::option::Option<::std::string::String>,
+    pub rule_version: ::std::string::String,
 }
 impl Rule {
     /// <p>The detector for which the rule is associated.</p>
-    pub fn detector_id(&self) -> ::std::option::Option<&str> {
-        self.detector_id.as_deref()
+    pub fn detector_id(&self) -> &str {
+        use std::ops::Deref;
+        self.detector_id.deref()
     }
     /// <p>The rule ID.</p>
-    pub fn rule_id(&self) -> ::std::option::Option<&str> {
-        self.rule_id.as_deref()
+    pub fn rule_id(&self) -> &str {
+        use std::ops::Deref;
+        self.rule_id.deref()
     }
     /// <p>The rule version.</p>
-    pub fn rule_version(&self) -> ::std::option::Option<&str> {
-        self.rule_version.as_deref()
+    pub fn rule_version(&self) -> &str {
+        use std::ops::Deref;
+        self.rule_version.deref()
     }
 }
 impl Rule {
@@ -42,6 +45,7 @@ pub struct RuleBuilder {
 }
 impl RuleBuilder {
     /// <p>The detector for which the rule is associated.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +60,7 @@ impl RuleBuilder {
         &self.detector_id
     }
     /// <p>The rule ID.</p>
+    /// This field is required.
     pub fn rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +75,7 @@ impl RuleBuilder {
         &self.rule_id
     }
     /// <p>The rule version.</p>
+    /// This field is required.
     pub fn rule_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_version = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +90,30 @@ impl RuleBuilder {
         &self.rule_version
     }
     /// Consumes the builder and constructs a [`Rule`](crate::types::Rule).
-    pub fn build(self) -> crate::types::Rule {
-        crate::types::Rule {
-            detector_id: self.detector_id,
-            rule_id: self.rule_id,
-            rule_version: self.rule_version,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`detector_id`](crate::types::builders::RuleBuilder::detector_id)
+    /// - [`rule_id`](crate::types::builders::RuleBuilder::rule_id)
+    /// - [`rule_version`](crate::types::builders::RuleBuilder::rule_version)
+    pub fn build(self) -> ::std::result::Result<crate::types::Rule, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Rule {
+            detector_id: self.detector_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "detector_id",
+                    "detector_id was not specified but it is required when building Rule",
+                )
+            })?,
+            rule_id: self.rule_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "rule_id",
+                    "rule_id was not specified but it is required when building Rule",
+                )
+            })?,
+            rule_version: self.rule_version.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "rule_version",
+                    "rule_version was not specified but it is required when building Rule",
+                )
+            })?,
+        })
     }
 }

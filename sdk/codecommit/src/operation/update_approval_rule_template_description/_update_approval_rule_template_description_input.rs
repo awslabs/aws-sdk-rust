@@ -34,6 +34,7 @@ pub struct UpdateApprovalRuleTemplateDescriptionInputBuilder {
 }
 impl UpdateApprovalRuleTemplateDescriptionInputBuilder {
     /// <p>The name of the template for which you want to update the description.</p>
+    /// This field is required.
     pub fn approval_rule_template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.approval_rule_template_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateApprovalRuleTemplateDescriptionInputBuilder {
         &self.approval_rule_template_name
     }
     /// <p>The updated description of the approval rule template.</p>
+    /// This field is required.
     pub fn approval_rule_template_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.approval_rule_template_description = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl UpdateApprovalRuleTemplateDescriptionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescriptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescriptionInput {

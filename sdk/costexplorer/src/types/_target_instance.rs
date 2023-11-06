@@ -45,8 +45,10 @@ impl TargetInstance {
         self.expected_resource_utilization.as_ref()
     }
     /// <p>Explains the actions that you might need to take to successfully migrate your workloads from the current instance type to the recommended instance type. </p>
-    pub fn platform_differences(&self) -> ::std::option::Option<&[crate::types::PlatformDifference]> {
-        self.platform_differences.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.platform_differences.is_none()`.
+    pub fn platform_differences(&self) -> &[crate::types::PlatformDifference] {
+        self.platform_differences.as_deref().unwrap_or_default()
     }
 }
 impl TargetInstance {

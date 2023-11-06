@@ -18,8 +18,10 @@ impl ContextEntry {
         self.context_key_name.as_deref()
     }
     /// <p>The value (or values, if the condition context key supports multiple values) to provide to the simulation when the key is referenced by a <code>Condition</code> element in an input policy.</p>
-    pub fn context_key_values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.context_key_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.context_key_values.is_none()`.
+    pub fn context_key_values(&self) -> &[::std::string::String] {
+        self.context_key_values.as_deref().unwrap_or_default()
     }
     /// <p>The data type of the value (or values) specified in the <code>ContextKeyValues</code> parameter.</p>
     pub fn context_key_type(&self) -> ::std::option::Option<&crate::types::ContextKeyTypeEnum> {

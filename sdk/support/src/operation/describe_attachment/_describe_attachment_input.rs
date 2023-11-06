@@ -27,6 +27,7 @@ pub struct DescribeAttachmentInputBuilder {
 }
 impl DescribeAttachmentInputBuilder {
     /// <p>The ID of the attachment to return. Attachment IDs are returned by the <code>DescribeCommunications</code> operation.</p>
+    /// This field is required.
     pub fn attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attachment_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeAttachmentInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAttachmentInput`](crate::operation::describe_attachment::DescribeAttachmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_attachment::DescribeAttachmentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_attachment::DescribeAttachmentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_attachment::DescribeAttachmentInput {
             attachment_id: self.attachment_id,
         })

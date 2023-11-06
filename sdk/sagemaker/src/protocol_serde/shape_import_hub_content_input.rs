@@ -2,7 +2,7 @@
 pub fn ser_import_hub_content_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::import_hub_content::ImportHubContentInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.hub_content_name {
         object.key("HubContentName").string(var_1.as_str());
     }

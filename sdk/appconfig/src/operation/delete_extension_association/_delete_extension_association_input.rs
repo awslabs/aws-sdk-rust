@@ -27,6 +27,7 @@ pub struct DeleteExtensionAssociationInputBuilder {
 }
 impl DeleteExtensionAssociationInputBuilder {
     /// <p>The ID of the extension association to delete.</p>
+    /// This field is required.
     pub fn extension_association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.extension_association_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteExtensionAssociationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_extension_association::DeleteExtensionAssociationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_extension_association::DeleteExtensionAssociationInput {
             extension_association_id: self.extension_association_id,

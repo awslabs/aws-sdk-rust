@@ -25,8 +25,10 @@ pub struct JobProcessDetails {
 }
 impl JobProcessDetails {
     /// <p>The target devices to which the job execution is being rolled out. This value will be null after the job execution has finished rolling out to all the target devices.</p>
-    pub fn processing_targets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.processing_targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.processing_targets.is_none()`.
+    pub fn processing_targets(&self) -> &[::std::string::String] {
+        self.processing_targets.as_deref().unwrap_or_default()
     }
     /// <p>The number of things that cancelled the job.</p>
     pub fn number_of_canceled_things(&self) -> ::std::option::Option<i32> {

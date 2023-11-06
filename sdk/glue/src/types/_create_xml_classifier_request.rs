@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateXmlClassifierRequest {
     /// <p>An identifier of the data format that the classifier matches.</p>
-    pub classification: ::std::option::Option<::std::string::String>,
+    pub classification: ::std::string::String,
     /// <p>The name of the classifier.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The XML tag designating the element that contains each record in an XML document being parsed. This can't identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only attributes can be parsed as long as it ends with a closing tag (for example, <code>
     /// <row item_a="A" item_b="B" /></code> is okay, but <code>
     /// <row item_a="A" item_b="B" /></code> is not).</p>
@@ -15,12 +15,14 @@ pub struct CreateXmlClassifierRequest {
 }
 impl CreateXmlClassifierRequest {
     /// <p>An identifier of the data format that the classifier matches.</p>
-    pub fn classification(&self) -> ::std::option::Option<&str> {
-        self.classification.as_deref()
+    pub fn classification(&self) -> &str {
+        use std::ops::Deref;
+        self.classification.deref()
     }
     /// <p>The name of the classifier.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The XML tag designating the element that contains each record in an XML document being parsed. This can't identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only attributes can be parsed as long as it ends with a closing tag (for example, <code>
     /// <row item_a="A" item_b="B" /></code> is okay, but <code>
@@ -46,6 +48,7 @@ pub struct CreateXmlClassifierRequestBuilder {
 }
 impl CreateXmlClassifierRequestBuilder {
     /// <p>An identifier of the data format that the classifier matches.</p>
+    /// This field is required.
     pub fn classification(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.classification = ::std::option::Option::Some(input.into());
         self
@@ -60,6 +63,7 @@ impl CreateXmlClassifierRequestBuilder {
         &self.classification
     }
     /// <p>The name of the classifier.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -94,11 +98,24 @@ impl CreateXmlClassifierRequestBuilder {
         &self.row_tag
     }
     /// Consumes the builder and constructs a [`CreateXmlClassifierRequest`](crate::types::CreateXmlClassifierRequest).
-    pub fn build(self) -> crate::types::CreateXmlClassifierRequest {
-        crate::types::CreateXmlClassifierRequest {
-            classification: self.classification,
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`classification`](crate::types::builders::CreateXmlClassifierRequestBuilder::classification)
+    /// - [`name`](crate::types::builders::CreateXmlClassifierRequestBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::CreateXmlClassifierRequest, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CreateXmlClassifierRequest {
+            classification: self.classification.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "classification",
+                    "classification was not specified but it is required when building CreateXmlClassifierRequest",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CreateXmlClassifierRequest",
+                )
+            })?,
             row_tag: self.row_tag,
-        }
+        })
     }
 }

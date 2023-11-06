@@ -27,6 +27,7 @@ pub struct ValidateAssessmentReportIntegrityInputBuilder {
 }
 impl ValidateAssessmentReportIntegrityInputBuilder {
     /// <p> The relative path of the Amazon S3 bucket that the assessment report is stored in. </p>
+    /// This field is required.
     pub fn s3_relative_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_relative_path = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl ValidateAssessmentReportIntegrityInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::validate_assessment_report_integrity::ValidateAssessmentReportIntegrityInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::validate_assessment_report_integrity::ValidateAssessmentReportIntegrityInput {

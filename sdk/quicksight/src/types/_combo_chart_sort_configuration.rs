@@ -15,16 +15,20 @@ pub struct ComboChartSortConfiguration {
 }
 impl ComboChartSortConfiguration {
     /// <p>The sort configuration of the category field well in a combo chart.</p>
-    pub fn category_sort(&self) -> ::std::option::Option<&[crate::types::FieldSortOptions]> {
-        self.category_sort.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.category_sort.is_none()`.
+    pub fn category_sort(&self) -> &[crate::types::FieldSortOptions] {
+        self.category_sort.as_deref().unwrap_or_default()
     }
     /// <p>The item limit configuration for the category field well of a combo chart.</p>
     pub fn category_items_limit(&self) -> ::std::option::Option<&crate::types::ItemsLimitConfiguration> {
         self.category_items_limit.as_ref()
     }
     /// <p>The sort configuration of the color field well in a combo chart.</p>
-    pub fn color_sort(&self) -> ::std::option::Option<&[crate::types::FieldSortOptions]> {
-        self.color_sort.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.color_sort.is_none()`.
+    pub fn color_sort(&self) -> &[crate::types::FieldSortOptions] {
+        self.color_sort.as_deref().unwrap_or_default()
     }
     /// <p>The item limit configuration of the color field well in a combo chart.</p>
     pub fn color_items_limit(&self) -> ::std::option::Option<&crate::types::ItemsLimitConfiguration> {

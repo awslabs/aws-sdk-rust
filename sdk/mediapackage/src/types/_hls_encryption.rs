@@ -112,6 +112,7 @@ impl HlsEncryptionBuilder {
         &self.repeat_ext_x_key
     }
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
+    /// This field is required.
     pub fn speke_key_provider(mut self, input: crate::types::SpekeKeyProvider) -> Self {
         self.speke_key_provider = ::std::option::Option::Some(input);
         self

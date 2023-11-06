@@ -71,6 +71,7 @@ pub struct UpdateDomainInputBuilder {
 }
 impl UpdateDomainInputBuilder {
     /// <p>The unique name of the domain.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -178,7 +179,9 @@ impl UpdateDomainInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`UpdateDomainInput`](crate::operation::update_domain::UpdateDomainInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_domain::UpdateDomainInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_domain::UpdateDomainInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_domain::UpdateDomainInput {
             domain_name: self.domain_name,
             default_expiration_days: self.default_expiration_days,

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListServerCertificatesOutput {
     /// <p>A list of server certificates.</p>
-    pub server_certificate_metadata_list: ::std::option::Option<::std::vec::Vec<crate::types::ServerCertificateMetadata>>,
+    pub server_certificate_metadata_list: ::std::vec::Vec<crate::types::ServerCertificateMetadata>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
@@ -14,8 +14,9 @@ pub struct ListServerCertificatesOutput {
 }
 impl ListServerCertificatesOutput {
     /// <p>A list of server certificates.</p>
-    pub fn server_certificate_metadata_list(&self) -> ::std::option::Option<&[crate::types::ServerCertificateMetadata]> {
-        self.server_certificate_metadata_list.as_deref()
+    pub fn server_certificate_metadata_list(&self) -> &[crate::types::ServerCertificateMetadata] {
+        use std::ops::Deref;
+        self.server_certificate_metadata_list.deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub fn is_truncated(&self) -> bool {
@@ -109,12 +110,24 @@ impl ListServerCertificatesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListServerCertificatesOutput`](crate::operation::list_server_certificates::ListServerCertificatesOutput).
-    pub fn build(self) -> crate::operation::list_server_certificates::ListServerCertificatesOutput {
-        crate::operation::list_server_certificates::ListServerCertificatesOutput {
-            server_certificate_metadata_list: self.server_certificate_metadata_list,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`server_certificate_metadata_list`](crate::operation::list_server_certificates::builders::ListServerCertificatesOutputBuilder::server_certificate_metadata_list)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_server_certificates::ListServerCertificatesOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_server_certificates::ListServerCertificatesOutput {
+            server_certificate_metadata_list: self.server_certificate_metadata_list.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "server_certificate_metadata_list",
+                    "server_certificate_metadata_list was not specified but it is required when building ListServerCertificatesOutput",
+                )
+            })?,
             is_truncated: self.is_truncated.unwrap_or_default(),
             marker: self.marker,
             _request_id: self._request_id,
-        }
+        })
     }
 }

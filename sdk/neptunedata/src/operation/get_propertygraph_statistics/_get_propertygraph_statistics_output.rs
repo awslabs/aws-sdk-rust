@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPropertygraphStatisticsOutput {
     /// <p>The HTTP return code of the request. If the request succeeded, the code is 200. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors">Common error codes for DFE statistics request</a> for a list of common errors.</p>
-    pub status: ::std::option::Option<::std::string::String>,
+    pub status: ::std::string::String,
     /// <p>Statistics for property-graph data.</p>
     pub payload: ::std::option::Option<crate::types::Statistics>,
     _request_id: Option<String>,
 }
 impl GetPropertygraphStatisticsOutput {
     /// <p>The HTTP return code of the request. If the request succeeded, the code is 200. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors">Common error codes for DFE statistics request</a> for a list of common errors.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
-        self.status.as_deref()
+    pub fn status(&self) -> &str {
+        use std::ops::Deref;
+        self.status.deref()
     }
     /// <p>Statistics for property-graph data.</p>
     pub fn payload(&self) -> ::std::option::Option<&crate::types::Statistics> {
@@ -41,6 +42,7 @@ pub struct GetPropertygraphStatisticsOutputBuilder {
 }
 impl GetPropertygraphStatisticsOutputBuilder {
     /// <p>The HTTP return code of the request. If the request succeeded, the code is 200. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors">Common error codes for DFE statistics request</a> for a list of common errors.</p>
+    /// This field is required.
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +57,7 @@ impl GetPropertygraphStatisticsOutputBuilder {
         &self.status
     }
     /// <p>Statistics for property-graph data.</p>
+    /// This field is required.
     pub fn payload(mut self, input: crate::types::Statistics) -> Self {
         self.payload = ::std::option::Option::Some(input);
         self
@@ -78,11 +81,23 @@ impl GetPropertygraphStatisticsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetPropertygraphStatisticsOutput`](crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsOutput).
-    pub fn build(self) -> crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsOutput {
-        crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsOutput {
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::operation::get_propertygraph_statistics::builders::GetPropertygraphStatisticsOutputBuilder::status)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsOutput {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building GetPropertygraphStatisticsOutput",
+                )
+            })?,
             payload: self.payload,
             _request_id: self._request_id,
-        }
+        })
     }
 }

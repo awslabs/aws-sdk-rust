@@ -9,7 +9,7 @@ pub struct CommandFilter {
     /// <p>The name of the filter.</p> <note>
     /// <p>The <code>ExecutionStage</code> filter can't be used with the <code>ListCommandInvocations</code> operation, only with <code>ListCommands</code>.</p>
     /// </note>
-    pub key: ::std::option::Option<crate::types::CommandFilterKey>,
+    pub key: crate::types::CommandFilterKey,
     /// <p>The filter value. Valid values for each filter key are as follows:</p>
     /// <ul>
     /// <li> <p> <b>InvokedAfter</b>: Specify a timestamp to limit your results. For example, specify <code>2021-07-07T00:00:00Z</code> to see a list of command executions occurring July 7, 2021, and later.</p> </li>
@@ -51,14 +51,14 @@ pub struct CommandFilter {
     /// <li> <p> <code>Complete</code>: Returns a list of command executions that have already completed. </p> </li>
     /// </ul> </li>
     /// </ul>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
 }
 impl CommandFilter {
     /// <p>The name of the filter.</p> <note>
     /// <p>The <code>ExecutionStage</code> filter can't be used with the <code>ListCommandInvocations</code> operation, only with <code>ListCommands</code>.</p>
     /// </note>
-    pub fn key(&self) -> ::std::option::Option<&crate::types::CommandFilterKey> {
-        self.key.as_ref()
+    pub fn key(&self) -> &crate::types::CommandFilterKey {
+        &self.key
     }
     /// <p>The filter value. Valid values for each filter key are as follows:</p>
     /// <ul>
@@ -101,8 +101,9 @@ impl CommandFilter {
     /// <li> <p> <code>Complete</code>: Returns a list of command executions that have already completed. </p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
 }
 impl CommandFilter {
@@ -123,6 +124,7 @@ impl CommandFilterBuilder {
     /// <p>The name of the filter.</p> <note>
     /// <p>The <code>ExecutionStage</code> filter can't be used with the <code>ListCommandInvocations</code> operation, only with <code>ListCommands</code>.</p>
     /// </note>
+    /// This field is required.
     pub fn key(mut self, input: crate::types::CommandFilterKey) -> Self {
         self.key = ::std::option::Option::Some(input);
         self
@@ -181,6 +183,7 @@ impl CommandFilterBuilder {
     /// <li> <p> <code>Complete</code>: Returns a list of command executions that have already completed. </p> </li>
     /// </ul> </li>
     /// </ul>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -275,10 +278,23 @@ impl CommandFilterBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`CommandFilter`](crate::types::CommandFilter).
-    pub fn build(self) -> crate::types::CommandFilter {
-        crate::types::CommandFilter {
-            key: self.key,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key`](crate::types::builders::CommandFilterBuilder::key)
+    /// - [`value`](crate::types::builders::CommandFilterBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::CommandFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CommandFilter {
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building CommandFilter",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building CommandFilter",
+                )
+            })?,
+        })
     }
 }

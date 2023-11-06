@@ -9,11 +9,11 @@ pub struct Destination {
     /// <li> <p>The <code>Paused</code> state occurs as a result of opting out of the source or destination Region after the replication configuration was created. To resume replication for the file system, you need to again opt in to the Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Managing Amazon Web Services Regions</a> in the <i>Amazon Web Services General Reference Guide</i>.</p> </li>
     /// <li> <p>The <code>Error</code> state occurs when either the source or the destination file system (or both) is in a failed state and is unrecoverable. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#restoring-backup-efsmonitoring-replication-status.html">Monitoring replication status</a> in the <i>Amazon EFS User Guide</i>. You must delete the replication configuration, and then restore the most recent backup of the failed file system (either the source or the destination) to a new file system.</p> </li>
     /// </ul>
-    pub status: ::std::option::Option<crate::types::ReplicationStatus>,
+    pub status: crate::types::ReplicationStatus,
     /// <p>The ID of the destination Amazon EFS file system.</p>
-    pub file_system_id: ::std::option::Option<::std::string::String>,
+    pub file_system_id: ::std::string::String,
     /// <p>The Amazon Web Services Region in which the destination file system is located.</p>
-    pub region: ::std::option::Option<::std::string::String>,
+    pub region: ::std::string::String,
     /// <p>The time when the most recent sync was successfully completed on the destination file system. Any changes to data on the source file system that occurred before this time have been successfully replicated to the destination file system. Any changes that occurred after this time might not be fully replicated.</p>
     pub last_replicated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -23,16 +23,18 @@ impl Destination {
     /// <li> <p>The <code>Paused</code> state occurs as a result of opting out of the source or destination Region after the replication configuration was created. To resume replication for the file system, you need to again opt in to the Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Managing Amazon Web Services Regions</a> in the <i>Amazon Web Services General Reference Guide</i>.</p> </li>
     /// <li> <p>The <code>Error</code> state occurs when either the source or the destination file system (or both) is in a failed state and is unrecoverable. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#restoring-backup-efsmonitoring-replication-status.html">Monitoring replication status</a> in the <i>Amazon EFS User Guide</i>. You must delete the replication configuration, and then restore the most recent backup of the failed file system (either the source or the destination) to a new file system.</p> </li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ReplicationStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::ReplicationStatus {
+        &self.status
     }
     /// <p>The ID of the destination Amazon EFS file system.</p>
-    pub fn file_system_id(&self) -> ::std::option::Option<&str> {
-        self.file_system_id.as_deref()
+    pub fn file_system_id(&self) -> &str {
+        use std::ops::Deref;
+        self.file_system_id.deref()
     }
     /// <p>The Amazon Web Services Region in which the destination file system is located.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
-        self.region.as_deref()
+    pub fn region(&self) -> &str {
+        use std::ops::Deref;
+        self.region.deref()
     }
     /// <p>The time when the most recent sync was successfully completed on the destination file system. Any changes to data on the source file system that occurred before this time have been successfully replicated to the destination file system. Any changes that occurred after this time might not be fully replicated.</p>
     pub fn last_replicated_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -61,6 +63,7 @@ impl DestinationBuilder {
     /// <li> <p>The <code>Paused</code> state occurs as a result of opting out of the source or destination Region after the replication configuration was created. To resume replication for the file system, you need to again opt in to the Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Managing Amazon Web Services Regions</a> in the <i>Amazon Web Services General Reference Guide</i>.</p> </li>
     /// <li> <p>The <code>Error</code> state occurs when either the source or the destination file system (or both) is in a failed state and is unrecoverable. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#restoring-backup-efsmonitoring-replication-status.html">Monitoring replication status</a> in the <i>Amazon EFS User Guide</i>. You must delete the replication configuration, and then restore the most recent backup of the failed file system (either the source or the destination) to a new file system.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::ReplicationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -83,6 +86,7 @@ impl DestinationBuilder {
         &self.status
     }
     /// <p>The ID of the destination Amazon EFS file system.</p>
+    /// This field is required.
     pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +101,7 @@ impl DestinationBuilder {
         &self.file_system_id
     }
     /// <p>The Amazon Web Services Region in which the destination file system is located.</p>
+    /// This field is required.
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
         self
@@ -125,12 +130,31 @@ impl DestinationBuilder {
         &self.last_replicated_timestamp
     }
     /// Consumes the builder and constructs a [`Destination`](crate::types::Destination).
-    pub fn build(self) -> crate::types::Destination {
-        crate::types::Destination {
-            status: self.status,
-            file_system_id: self.file_system_id,
-            region: self.region,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::types::builders::DestinationBuilder::status)
+    /// - [`file_system_id`](crate::types::builders::DestinationBuilder::file_system_id)
+    /// - [`region`](crate::types::builders::DestinationBuilder::region)
+    pub fn build(self) -> ::std::result::Result<crate::types::Destination, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Destination {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building Destination",
+                )
+            })?,
+            file_system_id: self.file_system_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "file_system_id",
+                    "file_system_id was not specified but it is required when building Destination",
+                )
+            })?,
+            region: self.region.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "region",
+                    "region was not specified but it is required when building Destination",
+                )
+            })?,
             last_replicated_timestamp: self.last_replicated_timestamp,
-        }
+        })
     }
 }

@@ -36,8 +36,10 @@ impl ListForecastsInput {
     /// </ul>
     /// <p>For example, to list all forecasts whose status is not ACTIVE, you would specify:</p>
     /// <p> <code>"Filters": [ { "Condition": "IS_NOT", "Key": "Status", "Value": "ACTIVE" } ]</code> </p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
 }
 impl ListForecastsInput {
@@ -131,7 +133,7 @@ impl ListForecastsInputBuilder {
     /// Consumes the builder and constructs a [`ListForecastsInput`](crate::operation::list_forecasts::ListForecastsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_forecasts::ListForecastsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_forecasts::ListForecastsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_forecasts::ListForecastsInput {
             next_token: self.next_token,
             max_results: self.max_results,

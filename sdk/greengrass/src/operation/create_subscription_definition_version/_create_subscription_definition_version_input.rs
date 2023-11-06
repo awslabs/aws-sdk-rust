@@ -20,8 +20,10 @@ impl CreateSubscriptionDefinitionVersionInput {
         self.subscription_definition_id.as_deref()
     }
     /// A list of subscriptions.
-    pub fn subscriptions(&self) -> ::std::option::Option<&[crate::types::Subscription]> {
-        self.subscriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subscriptions.is_none()`.
+    pub fn subscriptions(&self) -> &[crate::types::Subscription] {
+        self.subscriptions.as_deref().unwrap_or_default()
     }
 }
 impl CreateSubscriptionDefinitionVersionInput {
@@ -55,6 +57,7 @@ impl CreateSubscriptionDefinitionVersionInputBuilder {
         &self.amzn_client_token
     }
     /// The ID of the subscription definition.
+    /// This field is required.
     pub fn subscription_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_definition_id = ::std::option::Option::Some(input.into());
         self
@@ -93,7 +96,7 @@ impl CreateSubscriptionDefinitionVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_subscription_definition_version::CreateSubscriptionDefinitionVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_subscription_definition_version::CreateSubscriptionDefinitionVersionInput {

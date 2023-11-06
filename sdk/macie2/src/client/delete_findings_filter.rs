@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteFindingsFilter`](crate::operation::delete_findings_filter::builders::DeleteFindingsFilterFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::delete_findings_filter::builders::DeleteFindingsFilterFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_findings_filter::builders::DeleteFindingsFilterFluentBuilder::set_id): <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::delete_findings_filter::builders::DeleteFindingsFilterFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_findings_filter::builders::DeleteFindingsFilterFluentBuilder::set_id):<br>required: **true**<br><p>The unique identifier for the Amazon Macie resource that the request applies to.</p><br>
     /// - On success, responds with [`DeleteFindingsFilterOutput`](crate::operation::delete_findings_filter::DeleteFindingsFilterOutput)
     /// - On failure, responds with [`SdkError<DeleteFindingsFilterError>`](crate::operation::delete_findings_filter::DeleteFindingsFilterError)
     pub fn delete_findings_filter(&self) -> crate::operation::delete_findings_filter::builders::DeleteFindingsFilterFluentBuilder {

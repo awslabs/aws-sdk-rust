@@ -11,8 +11,10 @@ pub struct GetBotsOutput {
 }
 impl GetBotsOutput {
     /// <p>An array of <code>botMetadata</code> objects, with one entry for each bot. </p>
-    pub fn bots(&self) -> ::std::option::Option<&[crate::types::BotMetadata]> {
-        self.bots.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bots.is_none()`.
+    pub fn bots(&self) -> &[crate::types::BotMetadata] {
+        self.bots.as_deref().unwrap_or_default()
     }
     /// <p>If the response is truncated, it includes a pagination token that you can specify in your next request to fetch the next page of bots. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

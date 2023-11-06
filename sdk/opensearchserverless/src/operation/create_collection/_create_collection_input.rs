@@ -28,8 +28,10 @@ impl CreateCollectionInput {
         self.description.as_deref()
     }
     /// <p>An arbitrary set of tags (key–value pairs) to associate with the OpenSearch Serverless collection.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -55,6 +57,7 @@ pub struct CreateCollectionInputBuilder {
 }
 impl CreateCollectionInputBuilder {
     /// <p>Name of the collection.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -133,7 +136,7 @@ impl CreateCollectionInputBuilder {
     /// Consumes the builder and constructs a [`CreateCollectionInput`](crate::operation::create_collection::CreateCollectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_collection::CreateCollectionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_collection::CreateCollectionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_collection::CreateCollectionInput {
             name: self.name,
             r#type: self.r#type,

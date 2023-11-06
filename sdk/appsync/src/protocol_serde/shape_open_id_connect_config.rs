@@ -2,12 +2,12 @@
 pub fn ser_open_id_connect_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OpenIdConnectConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.issuer {
-        object.key("issuer").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("issuer").string(input.issuer.as_str());
     }
-    if let Some(var_2) = &input.client_id {
-        object.key("clientId").string(var_2.as_str());
+    if let Some(var_1) = &input.client_id {
+        object.key("clientId").string(var_1.as_str());
     }
     if input.iat_ttl != 0 {
         object.key("iatTTL").number(
@@ -77,7 +77,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::open_id_connect_config_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

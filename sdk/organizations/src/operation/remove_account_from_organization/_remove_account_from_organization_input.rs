@@ -30,6 +30,7 @@ pub struct RemoveAccountFromOrganizationInputBuilder {
 impl RemoveAccountFromOrganizationInputBuilder {
     /// <p>The unique identifier (ID) of the member account that you want to remove from the organization.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -50,7 +51,7 @@ impl RemoveAccountFromOrganizationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_account_from_organization::RemoveAccountFromOrganizationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::remove_account_from_organization::RemoveAccountFromOrganizationInput {
             account_id: self.account_id,

@@ -63,6 +63,7 @@ pub struct ReserveContactInputBuilder {
 }
 impl ReserveContactInputBuilder {
     /// <p>ARN of a mission profile.</p>
+    /// This field is required.
     pub fn mission_profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mission_profile_arn = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +78,7 @@ impl ReserveContactInputBuilder {
         &self.mission_profile_arn
     }
     /// <p>ARN of a satellite</p>
+    /// This field is required.
     pub fn satellite_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.satellite_arn = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +93,7 @@ impl ReserveContactInputBuilder {
         &self.satellite_arn
     }
     /// <p>Start time of a contact in UTC.</p>
+    /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
@@ -105,6 +108,7 @@ impl ReserveContactInputBuilder {
         &self.start_time
     }
     /// <p>End time of a contact in UTC.</p>
+    /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
@@ -119,6 +123,7 @@ impl ReserveContactInputBuilder {
         &self.end_time
     }
     /// <p>Name of a ground station.</p>
+    /// This field is required.
     pub fn ground_station(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ground_station = ::std::option::Option::Some(input.into());
         self
@@ -155,7 +160,7 @@ impl ReserveContactInputBuilder {
     /// Consumes the builder and constructs a [`ReserveContactInput`](crate::operation::reserve_contact::ReserveContactInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::reserve_contact::ReserveContactInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::reserve_contact::ReserveContactInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::reserve_contact::ReserveContactInput {
             mission_profile_arn: self.mission_profile_arn,
             satellite_arn: self.satellite_arn,

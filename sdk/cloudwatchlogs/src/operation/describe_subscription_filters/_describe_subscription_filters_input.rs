@@ -48,6 +48,7 @@ pub struct DescribeSubscriptionFiltersInputBuilder {
 }
 impl DescribeSubscriptionFiltersInputBuilder {
     /// <p>The name of the log group.</p>
+    /// This field is required.
     pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_name = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +109,7 @@ impl DescribeSubscriptionFiltersInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersInput {
             log_group_name: self.log_group_name,

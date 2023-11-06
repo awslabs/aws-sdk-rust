@@ -48,6 +48,7 @@ pub struct GetStudioSessionMappingInputBuilder {
 }
 impl GetStudioSessionMappingInputBuilder {
     /// <p>The ID of the Amazon EMR Studio.</p>
+    /// This field is required.
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +91,7 @@ impl GetStudioSessionMappingInputBuilder {
         &self.identity_name
     }
     /// <p>Specifies whether the identity to fetch is a user or a group.</p>
+    /// This field is required.
     pub fn identity_type(mut self, input: crate::types::IdentityType) -> Self {
         self.identity_type = ::std::option::Option::Some(input);
         self
@@ -108,7 +110,7 @@ impl GetStudioSessionMappingInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_studio_session_mapping::GetStudioSessionMappingInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_studio_session_mapping::GetStudioSessionMappingInput {
             studio_id: self.studio_id,

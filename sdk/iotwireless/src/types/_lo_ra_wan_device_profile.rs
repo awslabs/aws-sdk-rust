@@ -97,8 +97,10 @@ impl LoRaWanDeviceProfile {
         self.rx_freq2
     }
     /// <p>The list of values that make up the FactoryPresetFreqs value.</p>
-    pub fn factory_preset_freqs_list(&self) -> ::std::option::Option<&[i32]> {
-        self.factory_preset_freqs_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.factory_preset_freqs_list.is_none()`.
+    pub fn factory_preset_freqs_list(&self) -> &[i32] {
+        self.factory_preset_freqs_list.as_deref().unwrap_or_default()
     }
     /// <p>The MaxEIRP value.</p>
     pub fn max_eirp(&self) -> ::std::option::Option<i32> {

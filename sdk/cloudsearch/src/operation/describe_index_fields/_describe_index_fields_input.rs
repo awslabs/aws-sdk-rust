@@ -17,8 +17,10 @@ impl DescribeIndexFieldsInput {
         self.domain_name.as_deref()
     }
     /// <p>A list of the index fields you want to describe. If not specified, information is returned for all configured index fields.</p>
-    pub fn field_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.field_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.field_names.is_none()`.
+    pub fn field_names(&self) -> &[::std::string::String] {
+        self.field_names.as_deref().unwrap_or_default()
     }
     /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
     pub fn deployed(&self) -> ::std::option::Option<bool> {
@@ -42,6 +44,7 @@ pub struct DescribeIndexFieldsInputBuilder {
 }
 impl DescribeIndexFieldsInputBuilder {
     /// <p>The name of the domain you want to describe.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -92,7 +95,7 @@ impl DescribeIndexFieldsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeIndexFieldsInput`](crate::operation::describe_index_fields::DescribeIndexFieldsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_index_fields::DescribeIndexFieldsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_index_fields::DescribeIndexFieldsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_index_fields::DescribeIndexFieldsInput {
             domain_name: self.domain_name,

@@ -27,6 +27,7 @@ pub struct RestartSimulationJobInputBuilder {
 }
 impl RestartSimulationJobInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the simulation job.</p>
+    /// This field is required.
     pub fn job(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl RestartSimulationJobInputBuilder {
     /// Consumes the builder and constructs a [`RestartSimulationJobInput`](crate::operation::restart_simulation_job::RestartSimulationJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::restart_simulation_job::RestartSimulationJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::restart_simulation_job::RestartSimulationJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::restart_simulation_job::RestartSimulationJobInput { job: self.job })
     }

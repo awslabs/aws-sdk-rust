@@ -35,6 +35,7 @@ pub struct CustomActionFilterOperationBuilder {
 }
 impl CustomActionFilterOperationBuilder {
     /// <p>The configuration that chooses the fields to be filtered.</p>
+    /// This field is required.
     pub fn selected_fields_configuration(mut self, input: crate::types::FilterOperationSelectedFieldsConfiguration) -> Self {
         self.selected_fields_configuration = ::std::option::Option::Some(input);
         self
@@ -52,6 +53,7 @@ impl CustomActionFilterOperationBuilder {
         &self.selected_fields_configuration
     }
     /// <p>The configuration that chooses the target visuals to be filtered.</p>
+    /// This field is required.
     pub fn target_visuals_configuration(mut self, input: crate::types::FilterOperationTargetVisualsConfiguration) -> Self {
         self.target_visuals_configuration = ::std::option::Option::Some(input);
         self

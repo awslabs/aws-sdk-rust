@@ -33,8 +33,10 @@ pub struct Transport {
 }
 impl Transport {
     /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-    pub fn cidr_allow_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cidr_allow_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cidr_allow_list.is_none()`.
+    pub fn cidr_allow_list(&self) -> &[::std::string::String] {
+        self.cidr_allow_list.as_deref().unwrap_or_default()
     }
     /// The smoothing max bitrate (in bps) for RIST, RTP, and RTP-FEC streams.
     pub fn max_bitrate(&self) -> ::std::option::Option<i32> {
@@ -188,6 +190,7 @@ impl TransportBuilder {
         &self.min_latency
     }
     /// The protocol that is used by the source or output.
+    /// This field is required.
     pub fn protocol(mut self, input: crate::types::Protocol) -> Self {
         self.protocol = ::std::option::Option::Some(input);
         self

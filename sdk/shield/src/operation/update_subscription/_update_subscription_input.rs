@@ -43,7 +43,7 @@ impl UpdateSubscriptionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateSubscriptionInput`](crate::operation::update_subscription::UpdateSubscriptionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_subscription::UpdateSubscriptionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_subscription::UpdateSubscriptionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_subscription::UpdateSubscriptionInput { auto_renew: self.auto_renew })
     }
 }

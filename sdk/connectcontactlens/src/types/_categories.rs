@@ -11,8 +11,10 @@ pub struct Categories {
 }
 impl Categories {
     /// <p>The category rules that have been matched in the analyzed segment.</p>
-    pub fn matched_categories(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.matched_categories.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.matched_categories.is_none()`.
+    pub fn matched_categories(&self) -> &[::std::string::String] {
+        self.matched_categories.as_deref().unwrap_or_default()
     }
     /// <p>The category rule that was matched and when it occurred in the transcript.</p>
     pub fn matched_details(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::CategoryDetails>> {

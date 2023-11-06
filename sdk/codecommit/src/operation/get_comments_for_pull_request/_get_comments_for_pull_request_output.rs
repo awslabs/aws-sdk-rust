@@ -11,8 +11,10 @@ pub struct GetCommentsForPullRequestOutput {
 }
 impl GetCommentsForPullRequestOutput {
     /// <p>An array of comment objects on the pull request.</p>
-    pub fn comments_for_pull_request_data(&self) -> ::std::option::Option<&[crate::types::CommentsForPullRequest]> {
-        self.comments_for_pull_request_data.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.comments_for_pull_request_data.is_none()`.
+    pub fn comments_for_pull_request_data(&self) -> &[crate::types::CommentsForPullRequest] {
+        self.comments_for_pull_request_data.as_deref().unwrap_or_default()
     }
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

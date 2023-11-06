@@ -65,6 +65,7 @@ impl CreatePolicyInputBuilder {
         &self.client_token
     }
     /// <p>Specifies the <code>PolicyStoreId</code> of the policy store you want to store the policy in.</p>
+    /// This field is required.
     pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_store_id = ::std::option::Option::Some(input.into());
         self
@@ -79,6 +80,7 @@ impl CreatePolicyInputBuilder {
         &self.policy_store_id
     }
     /// <p>A structure that specifies the policy type and content to use for the new policy. You must include either a static or a templateLinked element. The policy content must be written in the Cedar policy language.</p>
+    /// This field is required.
     pub fn definition(mut self, input: crate::types::PolicyDefinition) -> Self {
         self.definition = ::std::option::Option::Some(input);
         self
@@ -93,7 +95,9 @@ impl CreatePolicyInputBuilder {
         &self.definition
     }
     /// Consumes the builder and constructs a [`CreatePolicyInput`](crate::operation::create_policy::CreatePolicyInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_policy::CreatePolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_policy::CreatePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_policy::CreatePolicyInput {
             client_token: self.client_token,
             policy_store_id: self.policy_store_id,

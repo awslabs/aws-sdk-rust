@@ -11,8 +11,10 @@ pub struct ListManagedInsightRulesOutput {
 }
 impl ListManagedInsightRulesOutput {
     /// <p> The managed rules that are available for the specified Amazon Web Services resource. </p>
-    pub fn managed_rules(&self) -> ::std::option::Option<&[crate::types::ManagedRuleDescription]> {
-        self.managed_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.managed_rules.is_none()`.
+    pub fn managed_rules(&self) -> &[crate::types::ManagedRuleDescription] {
+        self.managed_rules.as_deref().unwrap_or_default()
     }
     /// <p> Include this value to get the next set of rules if the value was returned by the previous operation. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -31,12 +31,16 @@ impl CreateDomainAssociationInput {
         self.enable_auto_sub_domain
     }
     /// <p> The setting for the subdomain. </p>
-    pub fn sub_domain_settings(&self) -> ::std::option::Option<&[crate::types::SubDomainSetting]> {
-        self.sub_domain_settings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sub_domain_settings.is_none()`.
+    pub fn sub_domain_settings(&self) -> &[crate::types::SubDomainSetting] {
+        self.sub_domain_settings.as_deref().unwrap_or_default()
     }
     /// <p> Sets the branch patterns for automatic subdomain creation. </p>
-    pub fn auto_sub_domain_creation_patterns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.auto_sub_domain_creation_patterns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auto_sub_domain_creation_patterns.is_none()`.
+    pub fn auto_sub_domain_creation_patterns(&self) -> &[::std::string::String] {
+        self.auto_sub_domain_creation_patterns.as_deref().unwrap_or_default()
     }
     /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
     pub fn auto_sub_domain_iam_role(&self) -> ::std::option::Option<&str> {
@@ -63,6 +67,7 @@ pub struct CreateDomainAssociationInputBuilder {
 }
 impl CreateDomainAssociationInputBuilder {
     /// <p> The unique ID for an Amplify app. </p>
+    /// This field is required.
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +82,7 @@ impl CreateDomainAssociationInputBuilder {
         &self.app_id
     }
     /// <p> The domain name for the domain association. </p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -163,7 +169,7 @@ impl CreateDomainAssociationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_domain_association::CreateDomainAssociationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_domain_association::CreateDomainAssociationInput {
             app_id: self.app_id,

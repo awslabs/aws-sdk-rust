@@ -2,7 +2,7 @@
 pub fn ser_trial_component_parameter_value(
     object_11: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TrialComponentParameterValue,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::TrialComponentParameterValue::StringValue(inner) => {
             object_11.key("StringValue").string(inner.as_str());
@@ -14,7 +14,7 @@ pub fn ser_trial_component_parameter_value(
             );
         }
         crate::types::TrialComponentParameterValue::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "TrialComponentParameterValue",
             ))
         }
@@ -35,22 +35,31 @@ where
             match tokens.next().transpose()? {
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                    let key = key.to_unescaped()?;
+                    if key == "__type" {
+                        ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                        continue;
+                    }
                     if variant.is_some() {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
                             "encountered mixed variants in union",
                         ));
                     }
-                    variant = match key.to_unescaped()?.as_ref() {
+                    variant = match key.as_ref() {
                         "StringValue" => Some(crate::types::TrialComponentParameterValue::StringValue(
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                 .transpose()?
-                                .unwrap_or_default(),
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'StringValue' cannot be null")
+                                })?,
                         )),
                         "NumberValue" => Some(crate::types::TrialComponentParameterValue::NumberValue(
                             ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                 .map(|v| v.to_f64_lossy())
-                                .unwrap_or_default(),
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'NumberValue' cannot be null")
+                                })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

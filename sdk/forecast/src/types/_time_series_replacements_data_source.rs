@@ -49,6 +49,7 @@ pub struct TimeSeriesReplacementsDataSourceBuilder {
 }
 impl TimeSeriesReplacementsDataSourceBuilder {
     /// <p>The path to the file(s) in an Amazon Simple Storage Service (Amazon S3) bucket, and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the file(s). Optionally, includes an Key Management Service (KMS) key. This object is part of the <code>DataSource</code> object that is submitted in the <code>CreateDatasetImportJob</code> request, and part of the <code>DataDestination</code> object.</p>
+    /// This field is required.
     pub fn s3_config(mut self, input: crate::types::S3Config) -> Self {
         self.s3_config = ::std::option::Option::Some(input);
         self
@@ -63,6 +64,7 @@ impl TimeSeriesReplacementsDataSourceBuilder {
         &self.s3_config
     }
     /// <p>Defines the fields of a dataset.</p>
+    /// This field is required.
     pub fn schema(mut self, input: crate::types::Schema) -> Self {
         self.schema = ::std::option::Option::Some(input);
         self

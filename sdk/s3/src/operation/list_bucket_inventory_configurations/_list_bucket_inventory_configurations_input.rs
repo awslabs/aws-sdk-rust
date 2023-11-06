@@ -41,6 +41,7 @@ pub struct ListBucketInventoryConfigurationsInputBuilder {
 }
 impl ListBucketInventoryConfigurationsInputBuilder {
     /// <p>The name of the bucket containing the inventory configurations to retrieve.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListBucketInventoryConfigurationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_bucket_inventory_configurations::ListBucketInventoryConfigurationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_bucket_inventory_configurations::ListBucketInventoryConfigurationsInput {

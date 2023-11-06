@@ -27,6 +27,7 @@ pub struct GetRequestedServiceQuotaChangeInputBuilder {
 }
 impl GetRequestedServiceQuotaChangeInputBuilder {
     /// <p>Specifies the ID of the quota increase request.</p>
+    /// This field is required.
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetRequestedServiceQuotaChangeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_requested_service_quota_change::GetRequestedServiceQuotaChangeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_requested_service_quota_change::GetRequestedServiceQuotaChangeInput { request_id: self.request_id },

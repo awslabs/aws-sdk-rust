@@ -5,26 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaEventSource {
     /// <p>The topic to which to subscribe to receive event messages.</p>
-    pub topic: ::std::option::Option<::std::string::String>,
+    pub topic: ::std::string::String,
     /// <p>The type of event source. Choose from the following options:</p>
     /// <ul>
     /// <li> <p> <code>PUB_SUB</code> – Subscribe to local publish/subscribe messages. This event source type doesn't support MQTT wildcards (<code>+</code> and <code>#</code>) in the event source topic.</p> </li>
     /// <li> <p> <code>IOT_CORE</code> – Subscribe to Amazon Web Services IoT Core MQTT messages. This event source type supports MQTT wildcards (<code>+</code> and <code>#</code>) in the event source topic.</p> </li>
     /// </ul>
-    pub r#type: ::std::option::Option<crate::types::LambdaEventSourceType>,
+    pub r#type: crate::types::LambdaEventSourceType,
 }
 impl LambdaEventSource {
     /// <p>The topic to which to subscribe to receive event messages.</p>
-    pub fn topic(&self) -> ::std::option::Option<&str> {
-        self.topic.as_deref()
+    pub fn topic(&self) -> &str {
+        use std::ops::Deref;
+        self.topic.deref()
     }
     /// <p>The type of event source. Choose from the following options:</p>
     /// <ul>
     /// <li> <p> <code>PUB_SUB</code> – Subscribe to local publish/subscribe messages. This event source type doesn't support MQTT wildcards (<code>+</code> and <code>#</code>) in the event source topic.</p> </li>
     /// <li> <p> <code>IOT_CORE</code> – Subscribe to Amazon Web Services IoT Core MQTT messages. This event source type supports MQTT wildcards (<code>+</code> and <code>#</code>) in the event source topic.</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::LambdaEventSourceType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::LambdaEventSourceType {
+        &self.r#type
     }
 }
 impl LambdaEventSource {
@@ -43,6 +44,7 @@ pub struct LambdaEventSourceBuilder {
 }
 impl LambdaEventSourceBuilder {
     /// <p>The topic to which to subscribe to receive event messages.</p>
+    /// This field is required.
     pub fn topic(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic = ::std::option::Option::Some(input.into());
         self
@@ -61,6 +63,7 @@ impl LambdaEventSourceBuilder {
     /// <li> <p> <code>PUB_SUB</code> – Subscribe to local publish/subscribe messages. This event source type doesn't support MQTT wildcards (<code>+</code> and <code>#</code>) in the event source topic.</p> </li>
     /// <li> <p> <code>IOT_CORE</code> – Subscribe to Amazon Web Services IoT Core MQTT messages. This event source type supports MQTT wildcards (<code>+</code> and <code>#</code>) in the event source topic.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::LambdaEventSourceType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -83,10 +86,23 @@ impl LambdaEventSourceBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`LambdaEventSource`](crate::types::LambdaEventSource).
-    pub fn build(self) -> crate::types::LambdaEventSource {
-        crate::types::LambdaEventSource {
-            topic: self.topic,
-            r#type: self.r#type,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`topic`](crate::types::builders::LambdaEventSourceBuilder::topic)
+    /// - [`r#type`](crate::types::builders::LambdaEventSourceBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::LambdaEventSource, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::LambdaEventSource {
+            topic: self.topic.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "topic",
+                    "topic was not specified but it is required when building LambdaEventSource",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building LambdaEventSource",
+                )
+            })?,
+        })
     }
 }

@@ -56,6 +56,7 @@ pub struct CreateDatasetInputBuilder {
 }
 impl CreateDatasetInputBuilder {
     /// <p>The name of the project in which you want to create a dataset.</p>
+    /// This field is required.
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +71,7 @@ impl CreateDatasetInputBuilder {
         &self.project_name
     }
     /// <p>The type of the dataset. Specify <code>train</code> for a training dataset. Specify <code>test</code> for a test dataset.</p>
+    /// This field is required.
     pub fn dataset_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_type = ::std::option::Option::Some(input.into());
         self
@@ -126,7 +128,7 @@ impl CreateDatasetInputBuilder {
     /// Consumes the builder and constructs a [`CreateDatasetInput`](crate::operation::create_dataset::CreateDatasetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_dataset::CreateDatasetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_dataset::CreateDatasetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_dataset::CreateDatasetInput {
             project_name: self.project_name,
             dataset_type: self.dataset_type,

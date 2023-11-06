@@ -51,8 +51,10 @@ impl WorkloadSummary {
     }
     /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     /// <p>If a review template that specifies lenses is applied to the workload, those lenses are applied to the workload in addition to these lenses.</p>
-    pub fn lenses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.lenses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lenses.is_none()`.
+    pub fn lenses(&self) -> &[::std::string::String] {
+        self.lenses.as_deref().unwrap_or_default()
     }
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
     pub fn risk_counts(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::Risk, i32>> {
@@ -63,8 +65,10 @@ impl WorkloadSummary {
         self.improvement_status.as_ref()
     }
     /// <p>Profile associated with a workload.</p>
-    pub fn profiles(&self) -> ::std::option::Option<&[crate::types::WorkloadProfile]> {
-        self.profiles.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.profiles.is_none()`.
+    pub fn profiles(&self) -> &[crate::types::WorkloadProfile] {
+        self.profiles.as_deref().unwrap_or_default()
     }
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
     pub fn prioritized_risk_counts(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::Risk, i32>> {

@@ -34,6 +34,7 @@ pub struct DeleteMemberInputBuilder {
 }
 impl DeleteMemberInputBuilder {
     /// <p>The unique identifier for the associated collaboration.</p>
+    /// This field is required.
     pub fn collaboration_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collaboration_identifier = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteMemberInputBuilder {
         &self.collaboration_identifier
     }
     /// <p>The account ID of the member to remove.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,9 @@ impl DeleteMemberInputBuilder {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`DeleteMemberInput`](crate::operation::delete_member::DeleteMemberInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_member::DeleteMemberInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_member::DeleteMemberInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_member::DeleteMemberInput {
             collaboration_identifier: self.collaboration_identifier,
             account_id: self.account_id,

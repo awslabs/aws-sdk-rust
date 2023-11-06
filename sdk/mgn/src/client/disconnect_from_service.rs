@@ -3,13 +3,13 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DisconnectFromService`](crate::operation::disconnect_from_service::builders::DisconnectFromServiceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`source_server_id(impl Into<String>)`](crate::operation::disconnect_from_service::builders::DisconnectFromServiceFluentBuilder::source_server_id) / [`set_source_server_id(Option<String>)`](crate::operation::disconnect_from_service::builders::DisconnectFromServiceFluentBuilder::set_source_server_id): <p>Request to disconnect Source Server from service by Server ID.</p>
-    ///   - [`account_id(impl Into<String>)`](crate::operation::disconnect_from_service::builders::DisconnectFromServiceFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::disconnect_from_service::builders::DisconnectFromServiceFluentBuilder::set_account_id): <p>Request to disconnect Source Server from service by Account ID.</p>
+    ///   - [`source_server_id(impl Into<String>)`](crate::operation::disconnect_from_service::builders::DisconnectFromServiceFluentBuilder::source_server_id) / [`set_source_server_id(Option<String>)`](crate::operation::disconnect_from_service::builders::DisconnectFromServiceFluentBuilder::set_source_server_id):<br>required: **true**<br><p>Request to disconnect Source Server from service by Server ID.</p><br>
+    ///   - [`account_id(impl Into<String>)`](crate::operation::disconnect_from_service::builders::DisconnectFromServiceFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::disconnect_from_service::builders::DisconnectFromServiceFluentBuilder::set_account_id):<br>required: **false**<br><p>Request to disconnect Source Server from service by Account ID.</p><br>
     /// - On success, responds with [`DisconnectFromServiceOutput`](crate::operation::disconnect_from_service::DisconnectFromServiceOutput) with field(s):
     ///   - [`source_server_id(Option<String>)`](crate::operation::disconnect_from_service::DisconnectFromServiceOutput::source_server_id): <p>Source server ID.</p>
     ///   - [`arn(Option<String>)`](crate::operation::disconnect_from_service::DisconnectFromServiceOutput::arn): <p>Source server ARN.</p>
     ///   - [`is_archived(Option<bool>)`](crate::operation::disconnect_from_service::DisconnectFromServiceOutput::is_archived): <p>Source server archived status.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::disconnect_from_service::DisconnectFromServiceOutput::tags): <p>Source server Tags.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::disconnect_from_service::DisconnectFromServiceOutput::tags): <p>Source server Tags.</p>
     ///   - [`launched_instance(Option<LaunchedInstance>)`](crate::operation::disconnect_from_service::DisconnectFromServiceOutput::launched_instance): <p>Source server launched instance.</p>
     ///   - [`data_replication_info(Option<DataReplicationInfo>)`](crate::operation::disconnect_from_service::DisconnectFromServiceOutput::data_replication_info): <p>Source server data replication info.</p>
     ///   - [`life_cycle(Option<LifeCycle>)`](crate::operation::disconnect_from_service::DisconnectFromServiceOutput::life_cycle): <p>Source server lifecycle state.</p>

@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct XmlClassifier {
     /// <p>The name of the classifier.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>An identifier of the data format that the classifier matches.</p>
-    pub classification: ::std::option::Option<::std::string::String>,
+    pub classification: ::std::string::String,
     /// <p>The time that this classifier was registered.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that this classifier was last updated.</p>
@@ -21,12 +21,14 @@ pub struct XmlClassifier {
 }
 impl XmlClassifier {
     /// <p>The name of the classifier.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>An identifier of the data format that the classifier matches.</p>
-    pub fn classification(&self) -> ::std::option::Option<&str> {
-        self.classification.as_deref()
+    pub fn classification(&self) -> &str {
+        use std::ops::Deref;
+        self.classification.deref()
     }
     /// <p>The time that this classifier was registered.</p>
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -67,6 +69,7 @@ pub struct XmlClassifierBuilder {
 }
 impl XmlClassifierBuilder {
     /// <p>The name of the classifier.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -81,6 +84,7 @@ impl XmlClassifierBuilder {
         &self.name
     }
     /// <p>An identifier of the data format that the classifier matches.</p>
+    /// This field is required.
     pub fn classification(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.classification = ::std::option::Option::Some(input.into());
         self
@@ -157,14 +161,27 @@ impl XmlClassifierBuilder {
         &self.row_tag
     }
     /// Consumes the builder and constructs a [`XmlClassifier`](crate::types::XmlClassifier).
-    pub fn build(self) -> crate::types::XmlClassifier {
-        crate::types::XmlClassifier {
-            name: self.name,
-            classification: self.classification,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::XmlClassifierBuilder::name)
+    /// - [`classification`](crate::types::builders::XmlClassifierBuilder::classification)
+    pub fn build(self) -> ::std::result::Result<crate::types::XmlClassifier, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::XmlClassifier {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building XmlClassifier",
+                )
+            })?,
+            classification: self.classification.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "classification",
+                    "classification was not specified but it is required when building XmlClassifier",
+                )
+            })?,
             creation_time: self.creation_time,
             last_updated: self.last_updated,
             version: self.version.unwrap_or_default(),
             row_tag: self.row_tag,
-        }
+        })
     }
 }

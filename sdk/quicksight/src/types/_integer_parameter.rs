@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IntegerParameter {
     /// <p>The name of the integer parameter.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The values for the integer parameter.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<i64>>,
+    pub values: ::std::vec::Vec<i64>,
 }
 impl IntegerParameter {
     /// <p>The name of the integer parameter.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The values for the integer parameter.</p>
-    pub fn values(&self) -> ::std::option::Option<&[i64]> {
-        self.values.as_deref()
+    pub fn values(&self) -> &[i64] {
+        use std::ops::Deref;
+        self.values.deref()
     }
 }
 impl IntegerParameter {
@@ -35,6 +37,7 @@ pub struct IntegerParameterBuilder {
 }
 impl IntegerParameterBuilder {
     /// <p>The name of the integer parameter.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -69,10 +72,23 @@ impl IntegerParameterBuilder {
         &self.values
     }
     /// Consumes the builder and constructs a [`IntegerParameter`](crate::types::IntegerParameter).
-    pub fn build(self) -> crate::types::IntegerParameter {
-        crate::types::IntegerParameter {
-            name: self.name,
-            values: self.values,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::IntegerParameterBuilder::name)
+    /// - [`values`](crate::types::builders::IntegerParameterBuilder::values)
+    pub fn build(self) -> ::std::result::Result<crate::types::IntegerParameter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::IntegerParameter {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building IntegerParameter",
+                )
+            })?,
+            values: self.values.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "values",
+                    "values was not specified but it is required when building IntegerParameter",
+                )
+            })?,
+        })
     }
 }

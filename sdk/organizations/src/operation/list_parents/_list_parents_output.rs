@@ -11,8 +11,10 @@ pub struct ListParentsOutput {
 }
 impl ListParentsOutput {
     /// <p>A list of parents for the specified child account or OU.</p>
-    pub fn parents(&self) -> ::std::option::Option<&[crate::types::Parent]> {
-        self.parents.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parents.is_none()`.
+    pub fn parents(&self) -> &[crate::types::Parent] {
+        self.parents.as_deref().unwrap_or_default()
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

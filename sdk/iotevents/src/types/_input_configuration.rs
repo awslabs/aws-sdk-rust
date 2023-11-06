@@ -5,42 +5,44 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputConfiguration {
     /// <p>The name of the input.</p>
-    pub input_name: ::std::option::Option<::std::string::String>,
+    pub input_name: ::std::string::String,
     /// <p>A brief description of the input.</p>
     pub input_description: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the input.</p>
-    pub input_arn: ::std::option::Option<::std::string::String>,
+    pub input_arn: ::std::string::String,
     /// <p>The time the input was created.</p>
-    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_time: ::aws_smithy_types::DateTime,
     /// <p>The last time the input was updated.</p>
-    pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub last_update_time: ::aws_smithy_types::DateTime,
     /// <p>The status of the input.</p>
-    pub status: ::std::option::Option<crate::types::InputStatus>,
+    pub status: crate::types::InputStatus,
 }
 impl InputConfiguration {
     /// <p>The name of the input.</p>
-    pub fn input_name(&self) -> ::std::option::Option<&str> {
-        self.input_name.as_deref()
+    pub fn input_name(&self) -> &str {
+        use std::ops::Deref;
+        self.input_name.deref()
     }
     /// <p>A brief description of the input.</p>
     pub fn input_description(&self) -> ::std::option::Option<&str> {
         self.input_description.as_deref()
     }
     /// <p>The ARN of the input.</p>
-    pub fn input_arn(&self) -> ::std::option::Option<&str> {
-        self.input_arn.as_deref()
+    pub fn input_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.input_arn.deref()
     }
     /// <p>The time the input was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_time.as_ref()
+    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_time
     }
     /// <p>The last time the input was updated.</p>
-    pub fn last_update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.last_update_time.as_ref()
+    pub fn last_update_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.last_update_time
     }
     /// <p>The status of the input.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::InputStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::InputStatus {
+        &self.status
     }
 }
 impl InputConfiguration {
@@ -63,6 +65,7 @@ pub struct InputConfigurationBuilder {
 }
 impl InputConfigurationBuilder {
     /// <p>The name of the input.</p>
+    /// This field is required.
     pub fn input_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_name = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +94,7 @@ impl InputConfigurationBuilder {
         &self.input_description
     }
     /// <p>The ARN of the input.</p>
+    /// This field is required.
     pub fn input_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_arn = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +109,7 @@ impl InputConfigurationBuilder {
         &self.input_arn
     }
     /// <p>The time the input was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -119,6 +124,7 @@ impl InputConfigurationBuilder {
         &self.creation_time
     }
     /// <p>The last time the input was updated.</p>
+    /// This field is required.
     pub fn last_update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_update_time = ::std::option::Option::Some(input);
         self
@@ -133,6 +139,7 @@ impl InputConfigurationBuilder {
         &self.last_update_time
     }
     /// <p>The status of the input.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::InputStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -147,14 +154,45 @@ impl InputConfigurationBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`InputConfiguration`](crate::types::InputConfiguration).
-    pub fn build(self) -> crate::types::InputConfiguration {
-        crate::types::InputConfiguration {
-            input_name: self.input_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`input_name`](crate::types::builders::InputConfigurationBuilder::input_name)
+    /// - [`input_arn`](crate::types::builders::InputConfigurationBuilder::input_arn)
+    /// - [`creation_time`](crate::types::builders::InputConfigurationBuilder::creation_time)
+    /// - [`last_update_time`](crate::types::builders::InputConfigurationBuilder::last_update_time)
+    /// - [`status`](crate::types::builders::InputConfigurationBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::InputConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::InputConfiguration {
+            input_name: self.input_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "input_name",
+                    "input_name was not specified but it is required when building InputConfiguration",
+                )
+            })?,
             input_description: self.input_description,
-            input_arn: self.input_arn,
-            creation_time: self.creation_time,
-            last_update_time: self.last_update_time,
-            status: self.status,
-        }
+            input_arn: self.input_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "input_arn",
+                    "input_arn was not specified but it is required when building InputConfiguration",
+                )
+            })?,
+            creation_time: self.creation_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "creation_time",
+                    "creation_time was not specified but it is required when building InputConfiguration",
+                )
+            })?,
+            last_update_time: self.last_update_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "last_update_time",
+                    "last_update_time was not specified but it is required when building InputConfiguration",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building InputConfiguration",
+                )
+            })?,
+        })
     }
 }

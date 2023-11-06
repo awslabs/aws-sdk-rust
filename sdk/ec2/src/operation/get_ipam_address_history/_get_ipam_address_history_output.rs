@@ -11,8 +11,10 @@ pub struct GetIpamAddressHistoryOutput {
 }
 impl GetIpamAddressHistoryOutput {
     /// <p>A historical record for a CIDR within an IPAM scope. If the CIDR is associated with an EC2 instance, you will see an object in the response for the instance and one for the network interface.</p>
-    pub fn history_records(&self) -> ::std::option::Option<&[crate::types::IpamAddressHistoryRecord]> {
-        self.history_records.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.history_records.is_none()`.
+    pub fn history_records(&self) -> &[crate::types::IpamAddressHistoryRecord] {
+        self.history_records.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

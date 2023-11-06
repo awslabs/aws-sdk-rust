@@ -42,39 +42,27 @@ pub(crate) fn reflens_list_policy_templates_output_next_token(
 pub(crate) fn lens_list_identity_sources_output_identity_sources(
     input: crate::operation::list_identity_sources::ListIdentitySourcesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::IdentitySourceItem>> {
-    let input = match input.identity_sources {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.identity_sources;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_policies_output_policies(
     input: crate::operation::list_policies::ListPoliciesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PolicyItem>> {
-    let input = match input.policies {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.policies;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_policy_stores_output_policy_stores(
     input: crate::operation::list_policy_stores::ListPolicyStoresOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PolicyStoreItem>> {
-    let input = match input.policy_stores {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.policy_stores;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_policy_templates_output_policy_templates(
     input: crate::operation::list_policy_templates::ListPolicyTemplatesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PolicyTemplateItem>> {
-    let input = match input.policy_templates {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.policy_templates;
     ::std::option::Option::Some(input)
 }

@@ -11,8 +11,10 @@ pub struct DescribeAppBlocksOutput {
 }
 impl DescribeAppBlocksOutput {
     /// <p>The app blocks in the list.</p>
-    pub fn app_blocks(&self) -> ::std::option::Option<&[crate::types::AppBlock]> {
-        self.app_blocks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.app_blocks.is_none()`.
+    pub fn app_blocks(&self) -> &[crate::types::AppBlock] {
+        self.app_blocks.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

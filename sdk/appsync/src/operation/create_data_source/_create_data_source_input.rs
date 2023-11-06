@@ -106,6 +106,7 @@ pub struct CreateDataSourceInputBuilder {
 }
 impl CreateDataSourceInputBuilder {
     /// <p>The API ID for the GraphQL API for the <code>DataSource</code>.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -120,6 +121,7 @@ impl CreateDataSourceInputBuilder {
         &self.api_id
     }
     /// <p>A user-supplied name for the <code>DataSource</code>.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -148,6 +150,7 @@ impl CreateDataSourceInputBuilder {
         &self.description
     }
     /// <p>The type of the <code>DataSource</code>.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::DataSourceType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -279,7 +282,7 @@ impl CreateDataSourceInputBuilder {
     /// Consumes the builder and constructs a [`CreateDataSourceInput`](crate::operation::create_data_source::CreateDataSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_data_source::CreateDataSourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_data_source::CreateDataSourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_data_source::CreateDataSourceInput {
             api_id: self.api_id,
             name: self.name,

@@ -41,6 +41,7 @@ pub struct UpdateFolderInputBuilder {
 }
 impl UpdateFolderInputBuilder {
     /// <p>The ID for the Amazon Web Services account that contains the folder to update.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateFolderInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID of the folder.</p>
+    /// This field is required.
     pub fn folder_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.folder_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl UpdateFolderInputBuilder {
         &self.folder_id
     }
     /// <p>The name of the folder.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +86,9 @@ impl UpdateFolderInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`UpdateFolderInput`](crate::operation::update_folder::UpdateFolderInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_folder::UpdateFolderInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_folder::UpdateFolderInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_folder::UpdateFolderInput {
             aws_account_id: self.aws_account_id,
             folder_id: self.folder_id,

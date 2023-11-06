@@ -27,6 +27,7 @@ pub struct DeleteVpcConnectionInputBuilder {
 }
 impl DeleteVpcConnectionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK VPC connection.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteVpcConnectionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteVpcConnectionInput`](crate::operation::delete_vpc_connection::DeleteVpcConnectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_vpc_connection::DeleteVpcConnectionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_vpc_connection::DeleteVpcConnectionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_vpc_connection::DeleteVpcConnectionInput { arn: self.arn })
     }

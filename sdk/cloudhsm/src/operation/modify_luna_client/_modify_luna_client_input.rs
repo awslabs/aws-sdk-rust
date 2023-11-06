@@ -34,6 +34,7 @@ pub struct ModifyLunaClientInputBuilder {
 }
 impl ModifyLunaClientInputBuilder {
     /// <p>The ARN of the client.</p>
+    /// This field is required.
     pub fn client_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl ModifyLunaClientInputBuilder {
         &self.client_arn
     }
     /// <p>The new certificate for the client.</p>
+    /// This field is required.
     pub fn certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl ModifyLunaClientInputBuilder {
     /// Consumes the builder and constructs a [`ModifyLunaClientInput`](crate::operation::modify_luna_client::ModifyLunaClientInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_luna_client::ModifyLunaClientInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::modify_luna_client::ModifyLunaClientInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_luna_client::ModifyLunaClientInput {
             client_arn: self.client_arn,
             certificate: self.certificate,

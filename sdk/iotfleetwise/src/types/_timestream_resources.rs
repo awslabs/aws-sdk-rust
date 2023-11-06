@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimestreamResources {
     /// <p>The name of the registered Amazon Timestream database.</p>
-    pub timestream_database_name: ::std::option::Option<::std::string::String>,
+    pub timestream_database_name: ::std::string::String,
     /// <p>The name of the registered Amazon Timestream database table.</p>
-    pub timestream_table_name: ::std::option::Option<::std::string::String>,
+    pub timestream_table_name: ::std::string::String,
 }
 impl TimestreamResources {
     /// <p>The name of the registered Amazon Timestream database.</p>
-    pub fn timestream_database_name(&self) -> ::std::option::Option<&str> {
-        self.timestream_database_name.as_deref()
+    pub fn timestream_database_name(&self) -> &str {
+        use std::ops::Deref;
+        self.timestream_database_name.deref()
     }
     /// <p>The name of the registered Amazon Timestream database table.</p>
-    pub fn timestream_table_name(&self) -> ::std::option::Option<&str> {
-        self.timestream_table_name.as_deref()
+    pub fn timestream_table_name(&self) -> &str {
+        use std::ops::Deref;
+        self.timestream_table_name.deref()
     }
 }
 impl TimestreamResources {
@@ -35,6 +37,7 @@ pub struct TimestreamResourcesBuilder {
 }
 impl TimestreamResourcesBuilder {
     /// <p>The name of the registered Amazon Timestream database.</p>
+    /// This field is required.
     pub fn timestream_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timestream_database_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl TimestreamResourcesBuilder {
         &self.timestream_database_name
     }
     /// <p>The name of the registered Amazon Timestream database table.</p>
+    /// This field is required.
     pub fn timestream_table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timestream_table_name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl TimestreamResourcesBuilder {
         &self.timestream_table_name
     }
     /// Consumes the builder and constructs a [`TimestreamResources`](crate::types::TimestreamResources).
-    pub fn build(self) -> crate::types::TimestreamResources {
-        crate::types::TimestreamResources {
-            timestream_database_name: self.timestream_database_name,
-            timestream_table_name: self.timestream_table_name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`timestream_database_name`](crate::types::builders::TimestreamResourcesBuilder::timestream_database_name)
+    /// - [`timestream_table_name`](crate::types::builders::TimestreamResourcesBuilder::timestream_table_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::TimestreamResources, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TimestreamResources {
+            timestream_database_name: self.timestream_database_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "timestream_database_name",
+                    "timestream_database_name was not specified but it is required when building TimestreamResources",
+                )
+            })?,
+            timestream_table_name: self.timestream_table_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "timestream_table_name",
+                    "timestream_table_name was not specified but it is required when building TimestreamResources",
+                )
+            })?,
+        })
     }
 }

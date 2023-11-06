@@ -72,12 +72,12 @@ pub fn de_create_tapes_http_response(
 
 pub fn ser_create_tapes_input(
     input: &crate::operation::create_tapes::CreateTapesInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_tapes_input::ser_create_tapes_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_create_tapes(
@@ -92,7 +92,7 @@ pub(crate) fn de_create_tapes(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "TapeARNs" => {
-                    builder = builder.set_tape_ar_ns(crate::protocol_serde::shape_tape_ar_ns::de_tape_ar_ns(tokens)?);
+                    builder = builder.set_tape_arns(crate::protocol_serde::shape_tape_arns::de_tape_arns(tokens)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

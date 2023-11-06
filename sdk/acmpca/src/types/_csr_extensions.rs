@@ -15,8 +15,10 @@ impl CsrExtensions {
         self.key_usage.as_ref()
     }
     /// <p>For CA certificates, provides a path to additional information pertaining to the CA, such as revocation and policy. For more information, see <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.2.2">Subject Information Access</a> in RFC 5280.</p>
-    pub fn subject_information_access(&self) -> ::std::option::Option<&[crate::types::AccessDescription]> {
-        self.subject_information_access.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subject_information_access.is_none()`.
+    pub fn subject_information_access(&self) -> &[crate::types::AccessDescription] {
+        self.subject_information_access.as_deref().unwrap_or_default()
     }
 }
 impl CsrExtensions {

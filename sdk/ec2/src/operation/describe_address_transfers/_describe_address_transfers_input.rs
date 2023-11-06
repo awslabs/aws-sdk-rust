@@ -14,8 +14,10 @@ pub struct DescribeAddressTransfersInput {
 }
 impl DescribeAddressTransfersInput {
     /// <p>The allocation IDs of Elastic IP addresses.</p>
-    pub fn allocation_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.allocation_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allocation_ids.is_none()`.
+    pub fn allocation_ids(&self) -> &[::std::string::String] {
+        self.allocation_ids.as_deref().unwrap_or_default()
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -114,7 +116,7 @@ impl DescribeAddressTransfersInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_address_transfers::DescribeAddressTransfersInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_address_transfers::DescribeAddressTransfersInput {
             allocation_ids: self.allocation_ids,

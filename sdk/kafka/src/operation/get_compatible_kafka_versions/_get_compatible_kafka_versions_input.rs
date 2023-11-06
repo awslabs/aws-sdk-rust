@@ -45,7 +45,7 @@ impl GetCompatibleKafkaVersionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsInput {
             cluster_arn: self.cluster_arn,

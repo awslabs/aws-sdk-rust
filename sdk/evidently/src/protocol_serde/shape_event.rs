@@ -2,17 +2,17 @@
 pub fn ser_event(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Event,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.timestamp {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
         object
             .key("timestamp")
-            .date_time(var_1, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(&input.timestamp, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_2) = &input.r#type {
-        object.key("type").string(var_2.as_str());
+    {
+        object.key("type").string(input.r#type.as_str());
     }
-    if let Some(var_3) = &input.data {
-        object.key("data").string(var_3.as_str());
+    {
+        object.key("data").string(input.data.as_str());
     }
     Ok(())
 }

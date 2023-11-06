@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Region {
     /// <p>The name of the associated bucket for the Region.</p>
-    pub bucket: ::std::option::Option<::std::string::String>,
+    pub bucket: ::std::string::String,
     /// <p>The Amazon Web Services account ID that owns the Amazon S3 bucket that's associated with this Multi-Region Access Point.</p>
     pub bucket_account_id: ::std::option::Option<::std::string::String>,
 }
 impl Region {
     /// <p>The name of the associated bucket for the Region.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
-        self.bucket.as_deref()
+    pub fn bucket(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket.deref()
     }
     /// <p>The Amazon Web Services account ID that owns the Amazon S3 bucket that's associated with this Multi-Region Access Point.</p>
     pub fn bucket_account_id(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct RegionBuilder {
 }
 impl RegionBuilder {
     /// <p>The name of the associated bucket for the Region.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl RegionBuilder {
         &self.bucket_account_id
     }
     /// Consumes the builder and constructs a [`Region`](crate::types::Region).
-    pub fn build(self) -> crate::types::Region {
-        crate::types::Region {
-            bucket: self.bucket,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bucket`](crate::types::builders::RegionBuilder::bucket)
+    pub fn build(self) -> ::std::result::Result<crate::types::Region, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Region {
+            bucket: self.bucket.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "bucket",
+                    "bucket was not specified but it is required when building Region",
+                )
+            })?,
             bucket_account_id: self.bucket_account_id,
-        }
+        })
     }
 }

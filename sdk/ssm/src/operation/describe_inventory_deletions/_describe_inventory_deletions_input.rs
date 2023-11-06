@@ -87,7 +87,7 @@ impl DescribeInventoryDeletionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_inventory_deletions::DescribeInventoryDeletionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_inventory_deletions::DescribeInventoryDeletionsInput {
             deletion_id: self.deletion_id,

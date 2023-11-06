@@ -64,7 +64,7 @@ impl GetClassifiersInputBuilder {
     /// Consumes the builder and constructs a [`GetClassifiersInput`](crate::operation::get_classifiers::GetClassifiersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_classifiers::GetClassifiersInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_classifiers::GetClassifiersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_classifiers::GetClassifiersInput {
             max_results: self.max_results,
             next_token: self.next_token,

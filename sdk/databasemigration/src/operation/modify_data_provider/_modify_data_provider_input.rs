@@ -70,6 +70,7 @@ pub struct ModifyDataProviderInputBuilder {
 }
 impl ModifyDataProviderInputBuilder {
     /// <p>The identifier of the data provider. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen, or contain two consecutive hyphens.</p>
+    /// This field is required.
     pub fn data_provider_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_provider_identifier = ::std::option::Option::Some(input.into());
         self
@@ -168,7 +169,8 @@ impl ModifyDataProviderInputBuilder {
     /// Consumes the builder and constructs a [`ModifyDataProviderInput`](crate::operation::modify_data_provider::ModifyDataProviderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_data_provider::ModifyDataProviderInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::modify_data_provider::ModifyDataProviderInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::modify_data_provider::ModifyDataProviderInput {
             data_provider_identifier: self.data_provider_identifier,
             data_provider_name: self.data_provider_name,

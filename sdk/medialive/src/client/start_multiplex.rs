@@ -3,18 +3,18 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartMultiplex`](crate::operation::start_multiplex::builders::StartMultiplexFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`multiplex_id(impl Into<String>)`](crate::operation::start_multiplex::builders::StartMultiplexFluentBuilder::multiplex_id) / [`set_multiplex_id(Option<String>)`](crate::operation::start_multiplex::builders::StartMultiplexFluentBuilder::set_multiplex_id): The ID of the multiplex.
+    ///   - [`multiplex_id(impl Into<String>)`](crate::operation::start_multiplex::builders::StartMultiplexFluentBuilder::multiplex_id) / [`set_multiplex_id(Option<String>)`](crate::operation::start_multiplex::builders::StartMultiplexFluentBuilder::set_multiplex_id):<br>required: **true**<br>The ID of the multiplex.<br>
     /// - On success, responds with [`StartMultiplexOutput`](crate::operation::start_multiplex::StartMultiplexOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::start_multiplex::StartMultiplexOutput::arn): The unique arn of the multiplex.
-    ///   - [`availability_zones(Option<Vec<String>>)`](crate::operation::start_multiplex::StartMultiplexOutput::availability_zones): A list of availability zones for the multiplex.
-    ///   - [`destinations(Option<Vec<MultiplexOutputDestination>>)`](crate::operation::start_multiplex::StartMultiplexOutput::destinations): A list of the multiplex output destinations.
+    ///   - [`availability_zones(Option<Vec::<String>>)`](crate::operation::start_multiplex::StartMultiplexOutput::availability_zones): A list of availability zones for the multiplex.
+    ///   - [`destinations(Option<Vec::<MultiplexOutputDestination>>)`](crate::operation::start_multiplex::StartMultiplexOutput::destinations): A list of the multiplex output destinations.
     ///   - [`id(Option<String>)`](crate::operation::start_multiplex::StartMultiplexOutput::id): The unique id of the multiplex.
     ///   - [`multiplex_settings(Option<MultiplexSettings>)`](crate::operation::start_multiplex::StartMultiplexOutput::multiplex_settings): Configuration for a multiplex event.
     ///   - [`name(Option<String>)`](crate::operation::start_multiplex::StartMultiplexOutput::name): The name of the multiplex.
     ///   - [`pipelines_running_count(Option<i32>)`](crate::operation::start_multiplex::StartMultiplexOutput::pipelines_running_count): The number of currently healthy pipelines.
     ///   - [`program_count(Option<i32>)`](crate::operation::start_multiplex::StartMultiplexOutput::program_count): The number of programs in the multiplex.
     ///   - [`state(Option<MultiplexState>)`](crate::operation::start_multiplex::StartMultiplexOutput::state): The current state of the multiplex.
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::start_multiplex::StartMultiplexOutput::tags): A collection of key-value pairs.
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::start_multiplex::StartMultiplexOutput::tags): A collection of key-value pairs.
     /// - On failure, responds with [`SdkError<StartMultiplexError>`](crate::operation::start_multiplex::StartMultiplexError)
     pub fn start_multiplex(&self) -> crate::operation::start_multiplex::builders::StartMultiplexFluentBuilder {
         crate::operation::start_multiplex::builders::StartMultiplexFluentBuilder::new(self.handle.clone())

@@ -129,6 +129,7 @@ pub struct UpdateScheduleInputBuilder {
 }
 impl UpdateScheduleInputBuilder {
     /// <p>The name of the schedule that you are updating.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -166,6 +167,7 @@ impl UpdateScheduleInputBuilder {
     /// <p> A <code>cron</code> expression consists of six fields separated by white spaces: <code>(minutes hours day_of_month month day_of_week year)</code>. </p>
     /// <p> A <code>rate</code> expression consists of a <i>value</i> as a positive integer, and a <i>unit</i> with the following options: <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code> </p>
     /// <p> For more information and examples, see <a href="https://docs.aws.amazon.com/scheduler/latest/UserGuide/schedule-types.html">Schedule types on EventBridge Scheduler</a> in the <i>EventBridge Scheduler User Guide</i>. </p>
+    /// This field is required.
     pub fn schedule_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule_expression = ::std::option::Option::Some(input.into());
         self
@@ -282,6 +284,7 @@ impl UpdateScheduleInputBuilder {
         &self.kms_key_arn
     }
     /// <p>The schedule target. You can use this operation to change the target that your schedule invokes.</p>
+    /// This field is required.
     pub fn target(mut self, input: crate::types::Target) -> Self {
         self.target = ::std::option::Option::Some(input);
         self
@@ -296,6 +299,7 @@ impl UpdateScheduleInputBuilder {
         &self.target
     }
     /// <p>Allows you to configure a time window during which EventBridge Scheduler invokes the schedule.</p>
+    /// This field is required.
     pub fn flexible_time_window(mut self, input: crate::types::FlexibleTimeWindow) -> Self {
         self.flexible_time_window = ::std::option::Option::Some(input);
         self
@@ -340,7 +344,7 @@ impl UpdateScheduleInputBuilder {
     /// Consumes the builder and constructs a [`UpdateScheduleInput`](crate::operation::update_schedule::UpdateScheduleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_schedule::UpdateScheduleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_schedule::UpdateScheduleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_schedule::UpdateScheduleInput {
             name: self.name,
             group_name: self.group_name,

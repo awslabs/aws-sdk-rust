@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Location {
     /// <p>The Amazon S3 bucket name.</p>
-    pub bucket: ::std::option::Option<::std::string::String>,
+    pub bucket: ::std::string::String,
     /// <p>The unique name of the object in the bucket.</p>
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the bucket owner.</p>
@@ -13,8 +13,9 @@ pub struct S3Location {
 }
 impl S3Location {
     /// <p>The Amazon S3 bucket name.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
-        self.bucket.as_deref()
+    pub fn bucket(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket.deref()
     }
     /// <p>The unique name of the object in the bucket.</p>
     pub fn key(&self) -> ::std::option::Option<&str> {
@@ -42,6 +43,7 @@ pub struct S3LocationBuilder {
 }
 impl S3LocationBuilder {
     /// <p>The Amazon S3 bucket name.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +86,18 @@ impl S3LocationBuilder {
         &self.bucket_owner
     }
     /// Consumes the builder and constructs a [`S3Location`](crate::types::S3Location).
-    pub fn build(self) -> crate::types::S3Location {
-        crate::types::S3Location {
-            bucket: self.bucket,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bucket`](crate::types::builders::S3LocationBuilder::bucket)
+    pub fn build(self) -> ::std::result::Result<crate::types::S3Location, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::S3Location {
+            bucket: self.bucket.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "bucket",
+                    "bucket was not specified but it is required when building S3Location",
+                )
+            })?,
             key: self.key,
             bucket_owner: self.bucket_owner,
-        }
+        })
     }
 }

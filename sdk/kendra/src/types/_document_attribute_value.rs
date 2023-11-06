@@ -20,8 +20,10 @@ impl DocumentAttributeValue {
         self.string_value.as_deref()
     }
     /// <p>A list of strings. The default maximum length or number of strings is 10.</p>
-    pub fn string_list_value(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.string_list_value.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.string_list_value.is_none()`.
+    pub fn string_list_value(&self) -> &[::std::string::String] {
+        self.string_list_value.as_deref().unwrap_or_default()
     }
     /// <p>A long integer value.</p>
     pub fn long_value(&self) -> ::std::option::Option<i64> {

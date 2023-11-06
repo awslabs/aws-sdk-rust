@@ -2,18 +2,20 @@
 pub fn ser_dynamic_card_verification_value(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DynamicCardVerificationValue,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.pan_sequence_number {
-        object.key("PanSequenceNumber").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("PanSequenceNumber").string(input.pan_sequence_number.as_str());
     }
-    if let Some(var_2) = &input.card_expiry_date {
-        object.key("CardExpiryDate").string(var_2.as_str());
+    {
+        object.key("CardExpiryDate").string(input.card_expiry_date.as_str());
     }
-    if let Some(var_3) = &input.service_code {
-        object.key("ServiceCode").string(var_3.as_str());
+    {
+        object.key("ServiceCode").string(input.service_code.as_str());
     }
-    if let Some(var_4) = &input.application_transaction_counter {
-        object.key("ApplicationTransactionCounter").string(var_4.as_str());
+    {
+        object
+            .key("ApplicationTransactionCounter")
+            .string(input.application_transaction_counter.as_str());
     }
     Ok(())
 }

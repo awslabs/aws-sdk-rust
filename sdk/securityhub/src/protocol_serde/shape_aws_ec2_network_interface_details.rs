@@ -2,7 +2,7 @@
 pub fn ser_aws_ec2_network_interface_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEc2NetworkInterfaceDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.attachment {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Attachment").start_object();
@@ -30,13 +30,13 @@ pub fn ser_aws_ec2_network_interface_details(
     if let Some(var_8) = &input.source_dest_check {
         object.key("SourceDestCheck").boolean(*var_8);
     }
-    if let Some(var_9) = &input.ip_v6_addresses {
+    if let Some(var_9) = &input.ipv6_addresses {
         let mut array_10 = object.key("IpV6Addresses").start_array();
         for item_11 in var_9 {
             {
                 #[allow(unused_mut)]
                 let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_aws_ec2_network_interface_ip_v6_address_detail::ser_aws_ec2_network_interface_ip_v6_address_detail(
+                crate::protocol_serde::shape_aws_ec2_network_interface_ipv6_address_detail::ser_aws_ec2_network_interface_ipv6_address_detail(
                     &mut object_12,
                     item_11,
                 )?;
@@ -102,8 +102,8 @@ where
                             builder = builder.set_source_dest_check(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "IpV6Addresses" => {
-                            builder = builder.set_ip_v6_addresses(
-                                    crate::protocol_serde::shape_aws_ec2_network_interface_ip_v6_address_list::de_aws_ec2_network_interface_ip_v6_address_list(tokens)?
+                            builder = builder.set_ipv6_addresses(
+                                    crate::protocol_serde::shape_aws_ec2_network_interface_ipv6_address_list::de_aws_ec2_network_interface_ipv6_address_list(tokens)?
                                 );
                         }
                         "PrivateIpAddresses" => {

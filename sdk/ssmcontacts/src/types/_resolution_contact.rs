@@ -6,20 +6,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResolutionContact {
     /// <p>The Amazon Resource Name (ARN) of a contact in the engagement resolution process. </p>
-    pub contact_arn: ::std::option::Option<::std::string::String>,
+    pub contact_arn: ::std::string::String,
     /// <p>The type of contact for a resolution step.</p>
-    pub r#type: ::std::option::Option<crate::types::ContactType>,
+    pub r#type: crate::types::ContactType,
     /// <p>The stage in the escalation plan that resolves to this contact.</p>
     pub stage_index: ::std::option::Option<i32>,
 }
 impl ResolutionContact {
     /// <p>The Amazon Resource Name (ARN) of a contact in the engagement resolution process. </p>
-    pub fn contact_arn(&self) -> ::std::option::Option<&str> {
-        self.contact_arn.as_deref()
+    pub fn contact_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.contact_arn.deref()
     }
     /// <p>The type of contact for a resolution step.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ContactType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::ContactType {
+        &self.r#type
     }
     /// <p>The stage in the escalation plan that resolves to this contact.</p>
     pub fn stage_index(&self) -> ::std::option::Option<i32> {
@@ -43,6 +44,7 @@ pub struct ResolutionContactBuilder {
 }
 impl ResolutionContactBuilder {
     /// <p>The Amazon Resource Name (ARN) of a contact in the engagement resolution process. </p>
+    /// This field is required.
     pub fn contact_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_arn = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +59,7 @@ impl ResolutionContactBuilder {
         &self.contact_arn
     }
     /// <p>The type of contact for a resolution step.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::ContactType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -85,11 +88,24 @@ impl ResolutionContactBuilder {
         &self.stage_index
     }
     /// Consumes the builder and constructs a [`ResolutionContact`](crate::types::ResolutionContact).
-    pub fn build(self) -> crate::types::ResolutionContact {
-        crate::types::ResolutionContact {
-            contact_arn: self.contact_arn,
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`contact_arn`](crate::types::builders::ResolutionContactBuilder::contact_arn)
+    /// - [`r#type`](crate::types::builders::ResolutionContactBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::ResolutionContact, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ResolutionContact {
+            contact_arn: self.contact_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "contact_arn",
+                    "contact_arn was not specified but it is required when building ResolutionContact",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building ResolutionContact",
+                )
+            })?,
             stage_index: self.stage_index,
-        }
+        })
     }
 }

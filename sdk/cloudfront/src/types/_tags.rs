@@ -9,8 +9,10 @@ pub struct Tags {
 }
 impl Tags {
     /// <p>A complex type that contains <code>Tag</code> elements.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[crate::types::Tag] {
+        self.items.as_deref().unwrap_or_default()
     }
 }
 impl Tags {

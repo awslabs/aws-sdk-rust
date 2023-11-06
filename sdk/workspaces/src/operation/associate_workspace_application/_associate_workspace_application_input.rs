@@ -34,6 +34,7 @@ pub struct AssociateWorkspaceApplicationInputBuilder {
 }
 impl AssociateWorkspaceApplicationInputBuilder {
     /// <p>The identifier of the WorkSpace.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl AssociateWorkspaceApplicationInputBuilder {
         &self.workspace_id
     }
     /// <p>The identifier of the application.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl AssociateWorkspaceApplicationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_workspace_application::AssociateWorkspaceApplicationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::associate_workspace_application::AssociateWorkspaceApplicationInput {
             workspace_id: self.workspace_id,

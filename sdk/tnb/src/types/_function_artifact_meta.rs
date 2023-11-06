@@ -10,8 +10,10 @@ pub struct FunctionArtifactMeta {
 }
 impl FunctionArtifactMeta {
     /// <p>Lists of function package overrides.</p>
-    pub fn overrides(&self) -> ::std::option::Option<&[crate::types::ToscaOverride]> {
-        self.overrides.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.overrides.is_none()`.
+    pub fn overrides(&self) -> &[crate::types::ToscaOverride] {
+        self.overrides.as_deref().unwrap_or_default()
     }
 }
 impl FunctionArtifactMeta {

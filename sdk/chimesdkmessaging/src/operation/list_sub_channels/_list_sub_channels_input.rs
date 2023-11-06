@@ -58,6 +58,7 @@ pub struct ListSubChannelsInputBuilder {
 }
 impl ListSubChannelsInputBuilder {
     /// <p>The ARN of elastic channel.</p>
+    /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self
@@ -72,6 +73,7 @@ impl ListSubChannelsInputBuilder {
         &self.channel_arn
     }
     /// <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
+    /// This field is required.
     pub fn chime_bearer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.chime_bearer = ::std::option::Option::Some(input.into());
         self
@@ -116,7 +118,7 @@ impl ListSubChannelsInputBuilder {
     /// Consumes the builder and constructs a [`ListSubChannelsInput`](crate::operation::list_sub_channels::ListSubChannelsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_sub_channels::ListSubChannelsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_sub_channels::ListSubChannelsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_sub_channels::ListSubChannelsInput {
             channel_arn: self.channel_arn,
             chime_bearer: self.chime_bearer,

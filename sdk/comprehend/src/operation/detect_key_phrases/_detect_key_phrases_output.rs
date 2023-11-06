@@ -9,8 +9,10 @@ pub struct DetectKeyPhrasesOutput {
 }
 impl DetectKeyPhrasesOutput {
     /// <p>A collection of key phrases that Amazon Comprehend identified in the input text. For each key phrase, the response provides the text of the key phrase, where the key phrase begins and ends, and the level of confidence that Amazon Comprehend has in the accuracy of the detection. </p>
-    pub fn key_phrases(&self) -> ::std::option::Option<&[crate::types::KeyPhrase]> {
-        self.key_phrases.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.key_phrases.is_none()`.
+    pub fn key_phrases(&self) -> &[crate::types::KeyPhrase] {
+        self.key_phrases.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for DetectKeyPhrasesOutput {

@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecutionTimeFilter {
     /// <p>Specifies the oldest start or close date and time to return.</p>
-    pub oldest_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub oldest_date: ::aws_smithy_types::DateTime,
     /// <p>Specifies the latest start or close date and time to return.</p>
     pub latest_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ExecutionTimeFilter {
     /// <p>Specifies the oldest start or close date and time to return.</p>
-    pub fn oldest_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.oldest_date.as_ref()
+    pub fn oldest_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.oldest_date
     }
     /// <p>Specifies the latest start or close date and time to return.</p>
     pub fn latest_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -35,6 +35,7 @@ pub struct ExecutionTimeFilterBuilder {
 }
 impl ExecutionTimeFilterBuilder {
     /// <p>Specifies the oldest start or close date and time to return.</p>
+    /// This field is required.
     pub fn oldest_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.oldest_date = ::std::option::Option::Some(input);
         self
@@ -63,10 +64,17 @@ impl ExecutionTimeFilterBuilder {
         &self.latest_date
     }
     /// Consumes the builder and constructs a [`ExecutionTimeFilter`](crate::types::ExecutionTimeFilter).
-    pub fn build(self) -> crate::types::ExecutionTimeFilter {
-        crate::types::ExecutionTimeFilter {
-            oldest_date: self.oldest_date,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`oldest_date`](crate::types::builders::ExecutionTimeFilterBuilder::oldest_date)
+    pub fn build(self) -> ::std::result::Result<crate::types::ExecutionTimeFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ExecutionTimeFilter {
+            oldest_date: self.oldest_date.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "oldest_date",
+                    "oldest_date was not specified but it is required when building ExecutionTimeFilter",
+                )
+            })?,
             latest_date: self.latest_date,
-        }
+        })
     }
 }

@@ -5,42 +5,49 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Exclusion {
     /// <p>The ARN that specifies the exclusion.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The name of the exclusion.</p>
-    pub title: ::std::option::Option<::std::string::String>,
+    pub title: ::std::string::String,
     /// <p>The description of the exclusion.</p>
-    pub description: ::std::option::Option<::std::string::String>,
+    pub description: ::std::string::String,
     /// <p>The recommendation for the exclusion.</p>
-    pub recommendation: ::std::option::Option<::std::string::String>,
+    pub recommendation: ::std::string::String,
     /// <p>The AWS resources for which the exclusion pertains.</p>
-    pub scopes: ::std::option::Option<::std::vec::Vec<crate::types::Scope>>,
+    pub scopes: ::std::vec::Vec<crate::types::Scope>,
     /// <p>The system-defined attributes for the exclusion.</p>
     pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
 }
 impl Exclusion {
     /// <p>The ARN that specifies the exclusion.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The name of the exclusion.</p>
-    pub fn title(&self) -> ::std::option::Option<&str> {
-        self.title.as_deref()
+    pub fn title(&self) -> &str {
+        use std::ops::Deref;
+        self.title.deref()
     }
     /// <p>The description of the exclusion.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
-        self.description.as_deref()
+    pub fn description(&self) -> &str {
+        use std::ops::Deref;
+        self.description.deref()
     }
     /// <p>The recommendation for the exclusion.</p>
-    pub fn recommendation(&self) -> ::std::option::Option<&str> {
-        self.recommendation.as_deref()
+    pub fn recommendation(&self) -> &str {
+        use std::ops::Deref;
+        self.recommendation.deref()
     }
     /// <p>The AWS resources for which the exclusion pertains.</p>
-    pub fn scopes(&self) -> ::std::option::Option<&[crate::types::Scope]> {
-        self.scopes.as_deref()
+    pub fn scopes(&self) -> &[crate::types::Scope] {
+        use std::ops::Deref;
+        self.scopes.deref()
     }
     /// <p>The system-defined attributes for the exclusion.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&[crate::types::Attribute]> {
-        self.attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
+    pub fn attributes(&self) -> &[crate::types::Attribute] {
+        self.attributes.as_deref().unwrap_or_default()
     }
 }
 impl Exclusion {
@@ -63,6 +70,7 @@ pub struct ExclusionBuilder {
 }
 impl ExclusionBuilder {
     /// <p>The ARN that specifies the exclusion.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +85,7 @@ impl ExclusionBuilder {
         &self.arn
     }
     /// <p>The name of the exclusion.</p>
+    /// This field is required.
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +100,7 @@ impl ExclusionBuilder {
         &self.title
     }
     /// <p>The description of the exclusion.</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +115,7 @@ impl ExclusionBuilder {
         &self.description
     }
     /// <p>The recommendation for the exclusion.</p>
+    /// This field is required.
     pub fn recommendation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommendation = ::std::option::Option::Some(input.into());
         self
@@ -159,14 +170,45 @@ impl ExclusionBuilder {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`Exclusion`](crate::types::Exclusion).
-    pub fn build(self) -> crate::types::Exclusion {
-        crate::types::Exclusion {
-            arn: self.arn,
-            title: self.title,
-            description: self.description,
-            recommendation: self.recommendation,
-            scopes: self.scopes,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::ExclusionBuilder::arn)
+    /// - [`title`](crate::types::builders::ExclusionBuilder::title)
+    /// - [`description`](crate::types::builders::ExclusionBuilder::description)
+    /// - [`recommendation`](crate::types::builders::ExclusionBuilder::recommendation)
+    /// - [`scopes`](crate::types::builders::ExclusionBuilder::scopes)
+    pub fn build(self) -> ::std::result::Result<crate::types::Exclusion, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Exclusion {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building Exclusion",
+                )
+            })?,
+            title: self.title.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "title",
+                    "title was not specified but it is required when building Exclusion",
+                )
+            })?,
+            description: self.description.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "description",
+                    "description was not specified but it is required when building Exclusion",
+                )
+            })?,
+            recommendation: self.recommendation.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "recommendation",
+                    "recommendation was not specified but it is required when building Exclusion",
+                )
+            })?,
+            scopes: self.scopes.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "scopes",
+                    "scopes was not specified but it is required when building Exclusion",
+                )
+            })?,
             attributes: self.attributes,
-        }
+        })
     }
 }

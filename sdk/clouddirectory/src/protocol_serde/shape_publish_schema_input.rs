@@ -2,7 +2,7 @@
 pub fn ser_publish_schema_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::publish_schema::PublishSchemaInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.minor_version {
         object.key("MinorVersion").string(var_1.as_str());
     }

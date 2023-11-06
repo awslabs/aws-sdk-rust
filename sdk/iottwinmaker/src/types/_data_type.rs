@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataType {
     /// <p>The underlying type of the data type.</p>
-    pub r#type: ::std::option::Option<crate::types::Type>,
+    pub r#type: crate::types::Type,
     /// <p>The nested type in the data type.</p>
     pub nested_type: ::std::option::Option<::std::boxed::Box<crate::types::DataType>>,
     /// <p>The allowed values for this data type.</p>
@@ -17,16 +17,18 @@ pub struct DataType {
 }
 impl DataType {
     /// <p>The underlying type of the data type.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::Type> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::Type {
+        &self.r#type
     }
     /// <p>The nested type in the data type.</p>
     pub fn nested_type(&self) -> ::std::option::Option<&crate::types::DataType> {
         self.nested_type.as_deref()
     }
     /// <p>The allowed values for this data type.</p>
-    pub fn allowed_values(&self) -> ::std::option::Option<&[crate::types::DataValue]> {
-        self.allowed_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_values.is_none()`.
+    pub fn allowed_values(&self) -> &[crate::types::DataValue] {
+        self.allowed_values.as_deref().unwrap_or_default()
     }
     /// <p>The unit of measure used in this data type.</p>
     pub fn unit_of_measure(&self) -> ::std::option::Option<&str> {
@@ -56,6 +58,7 @@ pub struct DataTypeBuilder {
 }
 impl DataTypeBuilder {
     /// <p>The underlying type of the data type.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::Type) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -132,13 +135,20 @@ impl DataTypeBuilder {
         &self.relationship
     }
     /// Consumes the builder and constructs a [`DataType`](crate::types::DataType).
-    pub fn build(self) -> crate::types::DataType {
-        crate::types::DataType {
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::DataTypeBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::DataType, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DataType {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building DataType",
+                )
+            })?,
             nested_type: self.nested_type,
             allowed_values: self.allowed_values,
             unit_of_measure: self.unit_of_measure,
             relationship: self.relationship,
-        }
+        })
     }
 }

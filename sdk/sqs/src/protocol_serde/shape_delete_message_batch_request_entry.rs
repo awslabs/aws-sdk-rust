@@ -3,16 +3,16 @@
 pub fn ser_delete_message_batch_request_entry(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::DeleteMessageBatchRequestEntry,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Id");
-    if let Some(var_2) = &input.id {
-        scope_1.string(var_2);
+    {
+        scope_1.string(&input.id);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("ReceiptHandle");
-    if let Some(var_4) = &input.receipt_handle {
-        scope_3.string(var_4);
+    let mut scope_2 = writer.prefix("ReceiptHandle");
+    {
+        scope_2.string(&input.receipt_handle);
     }
     Ok(())
 }

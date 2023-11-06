@@ -58,8 +58,10 @@ impl CreateNetworkInterfaceInput {
         self.dry_run
     }
     /// <p>The IDs of one or more security groups.</p>
-    pub fn groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
+    pub fn groups(&self) -> &[::std::string::String] {
+        self.groups.as_deref().unwrap_or_default()
     }
     /// <p>The number of IPv6 addresses to assign to a network interface. Amazon EC2 automatically selects the IPv6 addresses from the subnet range.</p>
     /// <p>You can't specify a count of IPv6 addresses using this parameter if you've specified one of the following: specific IPv6 addresses, specific IPv6 prefixes, or a count of IPv6 prefixes.</p>
@@ -69,8 +71,10 @@ impl CreateNetworkInterfaceInput {
     }
     /// <p>The IPv6 addresses from the IPv6 CIDR block range of your subnet.</p>
     /// <p>You can't specify IPv6 addresses using this parameter if you've specified one of the following: a count of IPv6 addresses, specific IPv6 prefixes, or a count of IPv6 prefixes.</p>
-    pub fn ipv6_addresses(&self) -> ::std::option::Option<&[crate::types::InstanceIpv6Address]> {
-        self.ipv6_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv6_addresses.is_none()`.
+    pub fn ipv6_addresses(&self) -> &[crate::types::InstanceIpv6Address] {
+        self.ipv6_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The primary private IPv4 address of the network interface. If you don't specify an IPv4 address, Amazon EC2 selects one for you from the subnet's IPv4 CIDR range. If you specify an IP address, you cannot indicate any IP addresses specified in <code>privateIpAddresses</code> as primary (only one IP address can be designated as primary).</p>
     pub fn private_ip_address(&self) -> ::std::option::Option<&str> {
@@ -78,8 +82,10 @@ impl CreateNetworkInterfaceInput {
     }
     /// <p>The private IPv4 addresses.</p>
     /// <p>You can't specify private IPv4 addresses if you've specified one of the following: a count of private IPv4 addresses, specific IPv4 prefixes, or a count of IPv4 prefixes.</p>
-    pub fn private_ip_addresses(&self) -> ::std::option::Option<&[crate::types::PrivateIpAddressSpecification]> {
-        self.private_ip_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.private_ip_addresses.is_none()`.
+    pub fn private_ip_addresses(&self) -> &[crate::types::PrivateIpAddressSpecification] {
+        self.private_ip_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The number of secondary private IPv4 addresses to assign to a network interface. When you specify a number of secondary IPv4 addresses, Amazon EC2 selects these IP addresses within the subnet's IPv4 CIDR range. You can't specify this option and specify more than one private IP address using <code>privateIpAddresses</code>.</p>
     /// <p>You can't specify a count of private IPv4 addresses if you've specified one of the following: specific private IPv4 addresses, specific IPv4 prefixes, or a count of IPv4 prefixes.</p>
@@ -88,8 +94,10 @@ impl CreateNetworkInterfaceInput {
     }
     /// <p>The IPv4 prefixes assigned to the network interface.</p>
     /// <p>You can't specify IPv4 prefixes if you've specified one of the following: a count of IPv4 prefixes, specific private IPv4 addresses, or a count of private IPv4 addresses.</p>
-    pub fn ipv4_prefixes(&self) -> ::std::option::Option<&[crate::types::Ipv4PrefixSpecificationRequest]> {
-        self.ipv4_prefixes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv4_prefixes.is_none()`.
+    pub fn ipv4_prefixes(&self) -> &[crate::types::Ipv4PrefixSpecificationRequest] {
+        self.ipv4_prefixes.as_deref().unwrap_or_default()
     }
     /// <p>The number of IPv4 prefixes that Amazon Web Services automatically assigns to the network interface.</p>
     /// <p>You can't specify a count of IPv4 prefixes if you've specified one of the following: specific IPv4 prefixes, specific private IPv4 addresses, or a count of private IPv4 addresses.</p>
@@ -98,8 +106,10 @@ impl CreateNetworkInterfaceInput {
     }
     /// <p>The IPv6 prefixes assigned to the network interface.</p>
     /// <p>You can't specify IPv6 prefixes if you've specified one of the following: a count of IPv6 prefixes, specific IPv6 addresses, or a count of IPv6 addresses.</p>
-    pub fn ipv6_prefixes(&self) -> ::std::option::Option<&[crate::types::Ipv6PrefixSpecificationRequest]> {
-        self.ipv6_prefixes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv6_prefixes.is_none()`.
+    pub fn ipv6_prefixes(&self) -> &[crate::types::Ipv6PrefixSpecificationRequest] {
+        self.ipv6_prefixes.as_deref().unwrap_or_default()
     }
     /// <p>The number of IPv6 prefixes that Amazon Web Services automatically assigns to the network interface.</p>
     /// <p>You can't specify a count of IPv6 prefixes if you've specified one of the following: specific IPv6 prefixes, specific IPv6 addresses, or a count of IPv6 addresses.</p>
@@ -116,8 +126,10 @@ impl CreateNetworkInterfaceInput {
         self.subnet_id.as_deref()
     }
     /// <p>The tags to apply to the new network interface.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -401,6 +413,7 @@ impl CreateNetworkInterfaceInputBuilder {
         &self.interface_type
     }
     /// <p>The ID of the subnet to associate with the network interface.</p>
+    /// This field is required.
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
         self
@@ -465,8 +478,10 @@ impl CreateNetworkInterfaceInputBuilder {
     /// Consumes the builder and constructs a [`CreateNetworkInterfaceInput`](crate::operation::create_network_interface::CreateNetworkInterfaceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_network_interface::CreateNetworkInterfaceInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_network_interface::CreateNetworkInterfaceInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_network_interface::CreateNetworkInterfaceInput {
             description: self.description,
             dry_run: self.dry_run,

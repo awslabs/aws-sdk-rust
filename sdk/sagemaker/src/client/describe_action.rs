@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeAction`](crate::operation::describe_action::builders::DescribeActionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`action_name(impl Into<String>)`](crate::operation::describe_action::builders::DescribeActionFluentBuilder::action_name) / [`set_action_name(Option<String>)`](crate::operation::describe_action::builders::DescribeActionFluentBuilder::set_action_name): <p>The name of the action to describe.</p>
+    ///   - [`action_name(impl Into<String>)`](crate::operation::describe_action::builders::DescribeActionFluentBuilder::action_name) / [`set_action_name(Option<String>)`](crate::operation::describe_action::builders::DescribeActionFluentBuilder::set_action_name):<br>required: **true**<br><p>The name of the action to describe.</p><br>
     /// - On success, responds with [`DescribeActionOutput`](crate::operation::describe_action::DescribeActionOutput) with field(s):
     ///   - [`action_name(Option<String>)`](crate::operation::describe_action::DescribeActionOutput::action_name): <p>The name of the action.</p>
     ///   - [`action_arn(Option<String>)`](crate::operation::describe_action::DescribeActionOutput::action_arn): <p>The Amazon Resource Name (ARN) of the action.</p>
@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`action_type(Option<String>)`](crate::operation::describe_action::DescribeActionOutput::action_type): <p>The type of the action.</p>
     ///   - [`description(Option<String>)`](crate::operation::describe_action::DescribeActionOutput::description): <p>The description of the action.</p>
     ///   - [`status(Option<ActionStatus>)`](crate::operation::describe_action::DescribeActionOutput::status): <p>The status of the action.</p>
-    ///   - [`properties(Option<HashMap<String, String>>)`](crate::operation::describe_action::DescribeActionOutput::properties): <p>A list of the action's properties.</p>
+    ///   - [`properties(Option<HashMap::<String, String>>)`](crate::operation::describe_action::DescribeActionOutput::properties): <p>A list of the action's properties.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_action::DescribeActionOutput::creation_time): <p>When the action was created.</p>
     ///   - [`created_by(Option<UserContext>)`](crate::operation::describe_action::DescribeActionOutput::created_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::describe_action::DescribeActionOutput::last_modified_time): <p>When the action was last modified.</p>

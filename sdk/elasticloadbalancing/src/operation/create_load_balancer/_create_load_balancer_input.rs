@@ -34,22 +34,30 @@ impl CreateLoadBalancerInput {
     }
     /// <p>The listeners.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
-    pub fn listeners(&self) -> ::std::option::Option<&[crate::types::Listener]> {
-        self.listeners.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.listeners.is_none()`.
+    pub fn listeners(&self) -> &[crate::types::Listener] {
+        self.listeners.as_deref().unwrap_or_default()
     }
     /// <p>One or more Availability Zones from the same region as the load balancer.</p>
     /// <p>You must specify at least one Availability Zone.</p>
     /// <p>You can add more Availability Zones after you create the load balancer using <code>EnableAvailabilityZonesForLoadBalancer</code>.</p>
-    pub fn availability_zones(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.availability_zones.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
+    pub fn availability_zones(&self) -> &[::std::string::String] {
+        self.availability_zones.as_deref().unwrap_or_default()
     }
     /// <p>The IDs of the subnets in your VPC to attach to the load balancer. Specify one subnet per Availability Zone specified in <code>AvailabilityZones</code>.</p>
-    pub fn subnets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnets.is_none()`.
+    pub fn subnets(&self) -> &[::std::string::String] {
+        self.subnets.as_deref().unwrap_or_default()
     }
     /// <p>The IDs of the security groups to assign to the load balancer.</p>
-    pub fn security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
+    pub fn security_groups(&self) -> &[::std::string::String] {
+        self.security_groups.as_deref().unwrap_or_default()
     }
     /// <p>The type of a load balancer. Valid only for load balancers in a VPC.</p>
     /// <p>By default, Elastic Load Balancing creates an Internet-facing load balancer with a DNS name that resolves to public IP addresses. For more information about Internet-facing and Internal load balancers, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load Balancer Scheme</a> in the <i>Elastic Load Balancing User Guide</i>.</p>
@@ -59,8 +67,10 @@ impl CreateLoadBalancerInput {
     }
     /// <p>A list of tags to assign to the load balancer.</p>
     /// <p>For more information about tagging your load balancer, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateLoadBalancerInput {
@@ -85,6 +95,7 @@ pub struct CreateLoadBalancerInputBuilder {
 impl CreateLoadBalancerInputBuilder {
     /// <p>The name of the load balancer.</p>
     /// <p>This name must be unique within your set of load balancers for the region, must have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and cannot begin or end with a hyphen.</p>
+    /// This field is required.
     pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
@@ -235,7 +246,8 @@ impl CreateLoadBalancerInputBuilder {
     /// Consumes the builder and constructs a [`CreateLoadBalancerInput`](crate::operation::create_load_balancer::CreateLoadBalancerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_load_balancer::CreateLoadBalancerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_load_balancer::CreateLoadBalancerInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_load_balancer::CreateLoadBalancerInput {
             load_balancer_name: self.load_balancer_name,
             listeners: self.listeners,

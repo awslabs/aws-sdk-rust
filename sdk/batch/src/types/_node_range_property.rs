@@ -35,6 +35,7 @@ pub struct NodeRangePropertyBuilder {
 }
 impl NodeRangePropertyBuilder {
     /// <p>The range of nodes, using node index values. A range of <code>0:3</code> indicates nodes with index values of <code>0</code> through <code>3</code>. If the starting range value is omitted (<code>:n</code>), then <code>0</code> is used to start the range. If the ending range value is omitted (<code>n:</code>), then the highest possible node index is used to end the range. Your accumulative node ranges must account for all nodes (<code>0:n</code>). You can nest node ranges (for example, <code>0:10</code> and <code>4:5</code>). In this case, the <code>4:5</code> range properties override the <code>0:10</code> properties.</p>
+    /// This field is required.
     pub fn target_nodes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_nodes = ::std::option::Option::Some(input.into());
         self

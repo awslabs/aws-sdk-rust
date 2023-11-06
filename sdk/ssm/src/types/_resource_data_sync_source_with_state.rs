@@ -35,8 +35,10 @@ impl ResourceDataSyncSourceWithState {
         self.aws_organizations_source.as_ref()
     }
     /// <p>The <code>SyncSource</code> Amazon Web Services Regions included in the resource data sync.</p>
-    pub fn source_regions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.source_regions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_regions.is_none()`.
+    pub fn source_regions(&self) -> &[::std::string::String] {
+        self.source_regions.as_deref().unwrap_or_default()
     }
     /// <p>Whether to automatically synchronize and aggregate data from new Amazon Web Services Regions when those Regions come online.</p>
     pub fn include_future_regions(&self) -> bool {

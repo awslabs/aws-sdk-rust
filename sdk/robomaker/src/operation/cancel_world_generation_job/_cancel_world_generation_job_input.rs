@@ -27,6 +27,7 @@ pub struct CancelWorldGenerationJobInputBuilder {
 }
 impl CancelWorldGenerationJobInputBuilder {
     /// <p>The Amazon Resource Name (arn) of the world generator job to cancel.</p>
+    /// This field is required.
     pub fn job(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl CancelWorldGenerationJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_world_generation_job::CancelWorldGenerationJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::cancel_world_generation_job::CancelWorldGenerationJobInput { job: self.job })
     }

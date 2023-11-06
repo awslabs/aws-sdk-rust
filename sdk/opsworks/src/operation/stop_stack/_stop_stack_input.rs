@@ -27,6 +27,7 @@ pub struct StopStackInputBuilder {
 }
 impl StopStackInputBuilder {
     /// <p>The stack ID.</p>
+    /// This field is required.
     pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl StopStackInputBuilder {
         &self.stack_id
     }
     /// Consumes the builder and constructs a [`StopStackInput`](crate::operation::stop_stack::StopStackInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::stop_stack::StopStackInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_stack::StopStackInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_stack::StopStackInput { stack_id: self.stack_id })
     }
 }

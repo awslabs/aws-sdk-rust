@@ -12,8 +12,10 @@ pub struct BatchGetDeploymentGroupsOutput {
 }
 impl BatchGetDeploymentGroupsOutput {
     /// <p>Information about the deployment groups.</p>
-    pub fn deployment_groups_info(&self) -> ::std::option::Option<&[crate::types::DeploymentGroupInfo]> {
-        self.deployment_groups_info.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.deployment_groups_info.is_none()`.
+    pub fn deployment_groups_info(&self) -> &[crate::types::DeploymentGroupInfo] {
+        self.deployment_groups_info.as_deref().unwrap_or_default()
     }
     /// <p>Information about errors that might have occurred during the API call.</p>
     pub fn error_message(&self) -> ::std::option::Option<&str> {

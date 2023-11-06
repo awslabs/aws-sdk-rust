@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct S3BucketSinkConfiguration {
     /// <p>The destination URL of the S3 bucket.</p>
-    pub destination: ::std::option::Option<::std::string::String>,
+    pub destination: ::std::string::String,
 }
 impl S3BucketSinkConfiguration {
     /// <p>The destination URL of the S3 bucket.</p>
-    pub fn destination(&self) -> ::std::option::Option<&str> {
-        self.destination.as_deref()
+    pub fn destination(&self) -> &str {
+        use std::ops::Deref;
+        self.destination.deref()
     }
 }
 impl ::std::fmt::Debug for S3BucketSinkConfiguration {
@@ -35,6 +36,7 @@ pub struct S3BucketSinkConfigurationBuilder {
 }
 impl S3BucketSinkConfigurationBuilder {
     /// <p>The destination URL of the S3 bucket.</p>
+    /// This field is required.
     pub fn destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination = ::std::option::Option::Some(input.into());
         self
@@ -49,10 +51,17 @@ impl S3BucketSinkConfigurationBuilder {
         &self.destination
     }
     /// Consumes the builder and constructs a [`S3BucketSinkConfiguration`](crate::types::S3BucketSinkConfiguration).
-    pub fn build(self) -> crate::types::S3BucketSinkConfiguration {
-        crate::types::S3BucketSinkConfiguration {
-            destination: self.destination,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`destination`](crate::types::builders::S3BucketSinkConfigurationBuilder::destination)
+    pub fn build(self) -> ::std::result::Result<crate::types::S3BucketSinkConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::S3BucketSinkConfiguration {
+            destination: self.destination.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "destination",
+                    "destination was not specified but it is required when building S3BucketSinkConfiguration",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for S3BucketSinkConfigurationBuilder {

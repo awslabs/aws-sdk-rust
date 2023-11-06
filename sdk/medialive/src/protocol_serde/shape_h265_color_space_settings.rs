@@ -2,7 +2,7 @@
 pub fn ser_h265_color_space_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::H265ColorSpaceSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.color_space_passthrough_settings {
         #[allow(unused_mut)]
         let mut object_2 = object.key("colorSpacePassthroughSettings").start_object();

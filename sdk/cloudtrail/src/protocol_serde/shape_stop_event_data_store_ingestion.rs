@@ -32,8 +32,8 @@ pub fn de_stop_event_data_store_ingestion_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "EventDataStoreNotFoundException" => crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionError::EventDataStoreNotFoundException({
@@ -48,8 +48,8 @@ pub fn de_stop_event_data_store_ingestion_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InsufficientDependencyServiceAccessPermissionException" => crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionError::InsufficientDependencyServiceAccessPermissionException({
@@ -64,8 +64,8 @@ pub fn de_stop_event_data_store_ingestion_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidEventDataStoreCategoryException" => crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionError::InvalidEventDataStoreCategoryException({
@@ -80,8 +80,8 @@ pub fn de_stop_event_data_store_ingestion_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidEventDataStoreStatusException" => crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionError::InvalidEventDataStoreStatusException({
@@ -96,8 +96,8 @@ pub fn de_stop_event_data_store_ingestion_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidParameterException" => crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionError::InvalidParameterException({
@@ -112,8 +112,8 @@ pub fn de_stop_event_data_store_ingestion_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NoManagementAccountSLRExistsException" => crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionError::NoManagementAccountSlrExistsException({
@@ -128,8 +128,8 @@ pub fn de_stop_event_data_store_ingestion_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NotOrganizationMasterAccountException" => crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionError::NotOrganizationMasterAccountException({
@@ -144,8 +144,8 @@ pub fn de_stop_event_data_store_ingestion_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "OperationNotPermittedException" => crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionError::OperationNotPermittedException({
@@ -160,8 +160,8 @@ pub fn de_stop_event_data_store_ingestion_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "UnsupportedOperationException" => crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionError::UnsupportedOperationException({
@@ -176,8 +176,8 @@ pub fn de_stop_event_data_store_ingestion_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionError::generic(generic)
@@ -203,10 +203,10 @@ pub fn de_stop_event_data_store_ingestion_http_response(
 
 pub fn ser_stop_event_data_store_ingestion_input(
     input: &crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_stop_event_data_store_ingestion_input::ser_stop_event_data_store_ingestion_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

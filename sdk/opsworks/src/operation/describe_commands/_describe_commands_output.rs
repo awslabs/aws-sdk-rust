@@ -10,8 +10,10 @@ pub struct DescribeCommandsOutput {
 }
 impl DescribeCommandsOutput {
     /// <p>An array of <code>Command</code> objects that describe each of the specified commands.</p>
-    pub fn commands(&self) -> ::std::option::Option<&[crate::types::Command]> {
-        self.commands.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.commands.is_none()`.
+    pub fn commands(&self) -> &[crate::types::Command] {
+        self.commands.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeCommandsOutput {

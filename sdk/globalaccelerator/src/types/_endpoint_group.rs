@@ -38,8 +38,10 @@ impl EndpointGroup {
         self.endpoint_group_region.as_deref()
     }
     /// <p>The list of endpoint objects.</p>
-    pub fn endpoint_descriptions(&self) -> ::std::option::Option<&[crate::types::EndpointDescription]> {
-        self.endpoint_descriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.endpoint_descriptions.is_none()`.
+    pub fn endpoint_descriptions(&self) -> &[crate::types::EndpointDescription] {
+        self.endpoint_descriptions.as_deref().unwrap_or_default()
     }
     /// <p>The percentage of traffic to send to an Amazon Web Services Region. Additional traffic is distributed to other endpoint groups for this listener. </p>
     /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
@@ -69,8 +71,10 @@ impl EndpointGroup {
         self.threshold_count
     }
     /// <p>Allows you to override the destination ports used to route traffic to an endpoint. Using a port override lets you map a list of external destination ports (that your users send traffic to) to a list of internal destination ports that you want an application endpoint to receive traffic on. </p>
-    pub fn port_overrides(&self) -> ::std::option::Option<&[crate::types::PortOverride]> {
-        self.port_overrides.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.port_overrides.is_none()`.
+    pub fn port_overrides(&self) -> &[crate::types::PortOverride] {
+        self.port_overrides.as_deref().unwrap_or_default()
     }
 }
 impl EndpointGroup {

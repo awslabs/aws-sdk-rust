@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PutCorsPolicy`](crate::operation::put_cors_policy::builders::PutCorsPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`container_name(impl Into<String>)`](crate::operation::put_cors_policy::builders::PutCorsPolicyFluentBuilder::container_name) / [`set_container_name(Option<String>)`](crate::operation::put_cors_policy::builders::PutCorsPolicyFluentBuilder::set_container_name): <p>The name of the container that you want to assign the CORS policy to.</p>
-    ///   - [`cors_policy(CorsRule)`](crate::operation::put_cors_policy::builders::PutCorsPolicyFluentBuilder::cors_policy) / [`set_cors_policy(Option<Vec<CorsRule>>)`](crate::operation::put_cors_policy::builders::PutCorsPolicyFluentBuilder::set_cors_policy): <p>The CORS policy to apply to the container. </p>
+    ///   - [`container_name(impl Into<String>)`](crate::operation::put_cors_policy::builders::PutCorsPolicyFluentBuilder::container_name) / [`set_container_name(Option<String>)`](crate::operation::put_cors_policy::builders::PutCorsPolicyFluentBuilder::set_container_name):<br>required: **true**<br><p>The name of the container that you want to assign the CORS policy to.</p><br>
+    ///   - [`cors_policy(CorsRule)`](crate::operation::put_cors_policy::builders::PutCorsPolicyFluentBuilder::cors_policy) / [`set_cors_policy(Option<Vec::<CorsRule>>)`](crate::operation::put_cors_policy::builders::PutCorsPolicyFluentBuilder::set_cors_policy):<br>required: **true**<br><p>The CORS policy to apply to the container. </p><br>
     /// - On success, responds with [`PutCorsPolicyOutput`](crate::operation::put_cors_policy::PutCorsPolicyOutput)
     /// - On failure, responds with [`SdkError<PutCorsPolicyError>`](crate::operation::put_cors_policy::PutCorsPolicyError)
     pub fn put_cors_policy(&self) -> crate::operation::put_cors_policy::builders::PutCorsPolicyFluentBuilder {

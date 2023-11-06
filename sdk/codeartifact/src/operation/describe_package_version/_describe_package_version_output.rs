@@ -34,6 +34,7 @@ pub struct DescribePackageVersionOutputBuilder {
 }
 impl DescribePackageVersionOutputBuilder {
     /// <p> A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">PackageVersionDescription</a> object that contains information about the requested package version. </p>
+    /// This field is required.
     pub fn package_version(mut self, input: crate::types::PackageVersionDescription) -> Self {
         self.package_version = ::std::option::Option::Some(input);
         self

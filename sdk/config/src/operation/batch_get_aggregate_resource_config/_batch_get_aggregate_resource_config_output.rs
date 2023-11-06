@@ -11,12 +11,16 @@ pub struct BatchGetAggregateResourceConfigOutput {
 }
 impl BatchGetAggregateResourceConfigOutput {
     /// <p>A list that contains the current configuration of one or more resources.</p>
-    pub fn base_configuration_items(&self) -> ::std::option::Option<&[crate::types::BaseConfigurationItem]> {
-        self.base_configuration_items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.base_configuration_items.is_none()`.
+    pub fn base_configuration_items(&self) -> &[crate::types::BaseConfigurationItem] {
+        self.base_configuration_items.as_deref().unwrap_or_default()
     }
     /// <p>A list of resource identifiers that were not processed with current scope. The list is empty if all the resources are processed.</p>
-    pub fn unprocessed_resource_identifiers(&self) -> ::std::option::Option<&[crate::types::AggregateResourceIdentifier]> {
-        self.unprocessed_resource_identifiers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unprocessed_resource_identifiers.is_none()`.
+    pub fn unprocessed_resource_identifiers(&self) -> &[crate::types::AggregateResourceIdentifier] {
+        self.unprocessed_resource_identifiers.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchGetAggregateResourceConfigOutput {

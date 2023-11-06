@@ -2,15 +2,15 @@
 pub fn ser_table_field_link_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TableFieldLinkConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.target {
-        object.key("Target").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Target").string(input.target.as_str());
     }
-    if let Some(var_2) = &input.content {
+    if let Some(var_1) = &input.content {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("Content").start_object();
-        crate::protocol_serde::shape_table_field_link_content_configuration::ser_table_field_link_content_configuration(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("Content").start_object();
+        crate::protocol_serde::shape_table_field_link_content_configuration::ser_table_field_link_content_configuration(&mut object_2, var_1)?;
+        object_2.finish();
     }
     Ok(())
 }
@@ -54,7 +54,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::table_field_link_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

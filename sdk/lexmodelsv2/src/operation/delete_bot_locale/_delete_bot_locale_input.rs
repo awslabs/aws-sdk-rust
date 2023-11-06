@@ -41,6 +41,7 @@ pub struct DeleteBotLocaleInputBuilder {
 }
 impl DeleteBotLocaleInputBuilder {
     /// <p>The unique identifier of the bot that contains the locale.</p>
+    /// This field is required.
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DeleteBotLocaleInputBuilder {
         &self.bot_id
     }
     /// <p>The version of the bot that contains the locale. </p>
+    /// This field is required.
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl DeleteBotLocaleInputBuilder {
         &self.bot_version
     }
     /// <p>The identifier of the language and locale that will be deleted. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// This field is required.
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +88,7 @@ impl DeleteBotLocaleInputBuilder {
     /// Consumes the builder and constructs a [`DeleteBotLocaleInput`](crate::operation::delete_bot_locale::DeleteBotLocaleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_bot_locale::DeleteBotLocaleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_bot_locale::DeleteBotLocaleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_bot_locale::DeleteBotLocaleInput {
             bot_id: self.bot_id,
             bot_version: self.bot_version,

@@ -16,8 +16,10 @@ impl UpdateCallAnalyticsCategoryInput {
         self.category_name.as_deref()
     }
     /// <p>The rules used for the updated Call Analytics category. The rules you provide in this field replace the ones that are currently being used in the specified category.</p>
-    pub fn rules(&self) -> ::std::option::Option<&[crate::types::Rule]> {
-        self.rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
+    pub fn rules(&self) -> &[crate::types::Rule] {
+        self.rules.as_deref().unwrap_or_default()
     }
     /// <p>Choose whether you want to update a real-time or a post-call category. The input type you specify must match the input type specified when the category was created. For example, if you created a category with the <code>POST_CALL</code> input type, you must use <code>POST_CALL</code> as the input type when updating this category.</p>
     pub fn input_type(&self) -> ::std::option::Option<&crate::types::InputType> {
@@ -41,6 +43,7 @@ pub struct UpdateCallAnalyticsCategoryInputBuilder {
 }
 impl UpdateCallAnalyticsCategoryInputBuilder {
     /// <p>The name of the Call Analytics category you want to update. Category names are case sensitive.</p>
+    /// This field is required.
     pub fn category_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.category_name = ::std::option::Option::Some(input.into());
         self
@@ -93,7 +96,7 @@ impl UpdateCallAnalyticsCategoryInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_call_analytics_category::UpdateCallAnalyticsCategoryInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_call_analytics_category::UpdateCallAnalyticsCategoryInput {
             category_name: self.category_name,

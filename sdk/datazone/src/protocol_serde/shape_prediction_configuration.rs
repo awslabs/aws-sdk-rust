@@ -42,7 +42,7 @@ where
 pub fn ser_prediction_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PredictionConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.business_name_generation {
         #[allow(unused_mut)]
         let mut object_2 = object.key("businessNameGeneration").start_object();

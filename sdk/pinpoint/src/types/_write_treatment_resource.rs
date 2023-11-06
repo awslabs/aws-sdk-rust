@@ -112,6 +112,7 @@ impl WriteTreatmentResourceBuilder {
         &self.schedule
     }
     /// <p>The allocated percentage of users (segment members) to send the treatment to.</p>
+    /// This field is required.
     pub fn size_percent(mut self, input: i32) -> Self {
         self.size_percent = ::std::option::Option::Some(input);
         self

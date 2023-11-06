@@ -48,6 +48,7 @@ pub struct UpdateInsightInputBuilder {
 }
 impl UpdateInsightInputBuilder {
     /// <p>The ARN of the insight that you want to update.</p>
+    /// This field is required.
     pub fn insight_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.insight_arn = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,7 @@ impl UpdateInsightInputBuilder {
     /// Consumes the builder and constructs a [`UpdateInsightInput`](crate::operation::update_insight::UpdateInsightInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_insight::UpdateInsightInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_insight::UpdateInsightInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_insight::UpdateInsightInput {
             insight_arn: self.insight_arn,
             name: self.name,

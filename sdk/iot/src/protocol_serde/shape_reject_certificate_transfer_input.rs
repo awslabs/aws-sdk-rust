@@ -2,7 +2,7 @@
 pub fn ser_reject_certificate_transfer_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::reject_certificate_transfer::RejectCertificateTransferInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.reject_reason {
         object.key("rejectReason").string(var_1.as_str());
     }

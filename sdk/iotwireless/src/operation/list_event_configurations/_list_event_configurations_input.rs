@@ -41,6 +41,7 @@ pub struct ListEventConfigurationsInputBuilder {
 }
 impl ListEventConfigurationsInputBuilder {
     /// <p>Resource type to filter event configurations.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: crate::types::EventNotificationResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
@@ -87,7 +88,7 @@ impl ListEventConfigurationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_event_configurations::ListEventConfigurationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_event_configurations::ListEventConfigurationsInput {
             resource_type: self.resource_type,

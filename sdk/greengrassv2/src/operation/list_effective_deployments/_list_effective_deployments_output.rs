@@ -11,8 +11,10 @@ pub struct ListEffectiveDeploymentsOutput {
 }
 impl ListEffectiveDeploymentsOutput {
     /// <p>A list that summarizes each deployment on the core device.</p>
-    pub fn effective_deployments(&self) -> ::std::option::Option<&[crate::types::EffectiveDeployment]> {
-        self.effective_deployments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.effective_deployments.is_none()`.
+    pub fn effective_deployments(&self) -> &[crate::types::EffectiveDeployment] {
+        self.effective_deployments.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

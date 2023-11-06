@@ -11,8 +11,10 @@ pub struct AddCustomRoutingEndpointsOutput {
 }
 impl AddCustomRoutingEndpointsOutput {
     /// <p>The endpoint objects added to the custom routing accelerator.</p>
-    pub fn endpoint_descriptions(&self) -> ::std::option::Option<&[crate::types::CustomRoutingEndpointDescription]> {
-        self.endpoint_descriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.endpoint_descriptions.is_none()`.
+    pub fn endpoint_descriptions(&self) -> &[crate::types::CustomRoutingEndpointDescription] {
+        self.endpoint_descriptions.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group for the custom routing endpoint.</p>
     pub fn endpoint_group_arn(&self) -> ::std::option::Option<&str> {

@@ -3,7 +3,7 @@
 pub fn ser_iam_instance_profile_specification(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::IamInstanceProfileSpecification,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Arn");
     if let Some(var_2) = &input.arn {
@@ -17,6 +17,7 @@ pub fn ser_iam_instance_profile_specification(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_iam_instance_profile_specification(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::IamInstanceProfileSpecification, ::aws_smithy_xml::decode::XmlDecodeError> {

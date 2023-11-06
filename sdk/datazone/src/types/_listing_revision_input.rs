@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListingRevisionInput {
     /// <p>An identifier of revision to be made to an asset published in a Amazon DataZone catalog.</p>
-    pub identifier: ::std::option::Option<::std::string::String>,
+    pub identifier: ::std::string::String,
     /// <p>The details of a revision to be made to an asset published in a Amazon DataZone catalog.</p>
-    pub revision: ::std::option::Option<::std::string::String>,
+    pub revision: ::std::string::String,
 }
 impl ListingRevisionInput {
     /// <p>An identifier of revision to be made to an asset published in a Amazon DataZone catalog.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
-        self.identifier.as_deref()
+    pub fn identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.identifier.deref()
     }
     /// <p>The details of a revision to be made to an asset published in a Amazon DataZone catalog.</p>
-    pub fn revision(&self) -> ::std::option::Option<&str> {
-        self.revision.as_deref()
+    pub fn revision(&self) -> &str {
+        use std::ops::Deref;
+        self.revision.deref()
     }
 }
 impl ListingRevisionInput {
@@ -35,6 +37,7 @@ pub struct ListingRevisionInputBuilder {
 }
 impl ListingRevisionInputBuilder {
     /// <p>An identifier of revision to be made to an asset published in a Amazon DataZone catalog.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl ListingRevisionInputBuilder {
         &self.identifier
     }
     /// <p>The details of a revision to be made to an asset published in a Amazon DataZone catalog.</p>
+    /// This field is required.
     pub fn revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl ListingRevisionInputBuilder {
         &self.revision
     }
     /// Consumes the builder and constructs a [`ListingRevisionInput`](crate::types::ListingRevisionInput).
-    pub fn build(self) -> crate::types::ListingRevisionInput {
-        crate::types::ListingRevisionInput {
-            identifier: self.identifier,
-            revision: self.revision,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`identifier`](crate::types::builders::ListingRevisionInputBuilder::identifier)
+    /// - [`revision`](crate::types::builders::ListingRevisionInputBuilder::revision)
+    pub fn build(self) -> ::std::result::Result<crate::types::ListingRevisionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ListingRevisionInput {
+            identifier: self.identifier.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "identifier",
+                    "identifier was not specified but it is required when building ListingRevisionInput",
+                )
+            })?,
+            revision: self.revision.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "revision",
+                    "revision was not specified but it is required when building ListingRevisionInput",
+                )
+            })?,
+        })
     }
 }

@@ -5,18 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SlotTypeSortBy {
     /// <p>The attribute to use to sort the list of slot types.</p>
-    pub attribute: ::std::option::Option<crate::types::SlotTypeSortAttribute>,
+    pub attribute: crate::types::SlotTypeSortAttribute,
     /// <p>The order to sort the list. You can say ascending or descending.</p>
-    pub order: ::std::option::Option<crate::types::SortOrder>,
+    pub order: crate::types::SortOrder,
 }
 impl SlotTypeSortBy {
     /// <p>The attribute to use to sort the list of slot types.</p>
-    pub fn attribute(&self) -> ::std::option::Option<&crate::types::SlotTypeSortAttribute> {
-        self.attribute.as_ref()
+    pub fn attribute(&self) -> &crate::types::SlotTypeSortAttribute {
+        &self.attribute
     }
     /// <p>The order to sort the list. You can say ascending or descending.</p>
-    pub fn order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
-        self.order.as_ref()
+    pub fn order(&self) -> &crate::types::SortOrder {
+        &self.order
     }
 }
 impl SlotTypeSortBy {
@@ -35,6 +35,7 @@ pub struct SlotTypeSortByBuilder {
 }
 impl SlotTypeSortByBuilder {
     /// <p>The attribute to use to sort the list of slot types.</p>
+    /// This field is required.
     pub fn attribute(mut self, input: crate::types::SlotTypeSortAttribute) -> Self {
         self.attribute = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl SlotTypeSortByBuilder {
         &self.attribute
     }
     /// <p>The order to sort the list. You can say ascending or descending.</p>
+    /// This field is required.
     pub fn order(mut self, input: crate::types::SortOrder) -> Self {
         self.order = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl SlotTypeSortByBuilder {
         &self.order
     }
     /// Consumes the builder and constructs a [`SlotTypeSortBy`](crate::types::SlotTypeSortBy).
-    pub fn build(self) -> crate::types::SlotTypeSortBy {
-        crate::types::SlotTypeSortBy {
-            attribute: self.attribute,
-            order: self.order,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`attribute`](crate::types::builders::SlotTypeSortByBuilder::attribute)
+    /// - [`order`](crate::types::builders::SlotTypeSortByBuilder::order)
+    pub fn build(self) -> ::std::result::Result<crate::types::SlotTypeSortBy, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SlotTypeSortBy {
+            attribute: self.attribute.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "attribute",
+                    "attribute was not specified but it is required when building SlotTypeSortBy",
+                )
+            })?,
+            order: self.order.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "order",
+                    "order was not specified but it is required when building SlotTypeSortBy",
+                )
+            })?,
+        })
     }
 }

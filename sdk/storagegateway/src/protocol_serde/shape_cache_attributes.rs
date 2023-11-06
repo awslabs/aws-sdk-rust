@@ -2,7 +2,7 @@
 pub fn ser_cache_attributes(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CacheAttributes,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cache_stale_timeout_in_seconds {
         object.key("CacheStaleTimeoutInSeconds").number(
             #[allow(clippy::useless_conversion)]

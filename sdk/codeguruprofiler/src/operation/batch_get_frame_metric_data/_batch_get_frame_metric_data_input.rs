@@ -49,8 +49,10 @@ impl BatchGetFrameMetricDataInput {
         self.target_resolution.as_ref()
     }
     /// <p> The details of the metrics that are used to request a time series of values. The metric includes the name of the frame, the aggregation type to calculate the metric value for the frame, and the thread states to use to get the count for the metric value of the frame.</p>
-    pub fn frame_metrics(&self) -> ::std::option::Option<&[crate::types::FrameMetric]> {
-        self.frame_metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.frame_metrics.is_none()`.
+    pub fn frame_metrics(&self) -> &[crate::types::FrameMetric] {
+        self.frame_metrics.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetFrameMetricDataInput {
@@ -73,6 +75,7 @@ pub struct BatchGetFrameMetricDataInputBuilder {
 }
 impl BatchGetFrameMetricDataInputBuilder {
     /// <p> The name of the profiling group associated with the the frame metrics used to return the time series values. </p>
+    /// This field is required.
     pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profiling_group_name = ::std::option::Option::Some(input.into());
         self
@@ -182,7 +185,7 @@ impl BatchGetFrameMetricDataInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_frame_metric_data::BatchGetFrameMetricDataInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_get_frame_metric_data::BatchGetFrameMetricDataInput {
             profiling_group_name: self.profiling_group_name,

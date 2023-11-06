@@ -34,6 +34,7 @@ pub struct DeleteResourcePolicyInputBuilder {
 }
 impl DeleteResourcePolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the resource you're deleting the policy from.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteResourcePolicyInputBuilder {
         &self.resource_arn
     }
     /// <p>The ID of the resource policy you're deleting.</p>
+    /// This field is required.
     pub fn policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DeleteResourcePolicyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteResourcePolicyInput`](crate::operation::delete_resource_policy::DeleteResourcePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_resource_policy::DeleteResourcePolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_resource_policy::DeleteResourcePolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_resource_policy::DeleteResourcePolicyInput {
             resource_arn: self.resource_arn,

@@ -34,6 +34,7 @@ pub struct DeleteListenerInputBuilder {
 }
 impl DeleteListenerInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    /// This field is required.
     pub fn service_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_identifier = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteListenerInputBuilder {
         &self.service_identifier
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
+    /// This field is required.
     pub fn listener_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.listener_identifier = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DeleteListenerInputBuilder {
     /// Consumes the builder and constructs a [`DeleteListenerInput`](crate::operation::delete_listener::DeleteListenerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_listener::DeleteListenerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_listener::DeleteListenerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_listener::DeleteListenerInput {
             service_identifier: self.service_identifier,
             listener_identifier: self.listener_identifier,

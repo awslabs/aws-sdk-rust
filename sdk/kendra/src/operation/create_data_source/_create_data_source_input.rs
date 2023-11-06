@@ -75,8 +75,10 @@ impl CreateDataSourceInput {
         self.role_arn.as_deref()
     }
     /// <p>A list of key-value pairs that identify or categorize the data source connector. You can also use tags to help control access to the data source connector. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>A token that you provide to identify the request to create a data source connector. Multiple calls to the <code>CreateDataSource</code> API with the same client token will create only one data source connector.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -118,6 +120,7 @@ pub struct CreateDataSourceInputBuilder {
 }
 impl CreateDataSourceInputBuilder {
     /// <p>A name for the data source connector.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +135,7 @@ impl CreateDataSourceInputBuilder {
         &self.name
     }
     /// <p>The identifier of the index you want to use with the data source connector.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self
@@ -146,6 +150,7 @@ impl CreateDataSourceInputBuilder {
         &self.index_id
     }
     /// <p>The type of data source repository. For example, <code>SHAREPOINT</code>.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::DataSourceType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -318,7 +323,7 @@ impl CreateDataSourceInputBuilder {
     /// Consumes the builder and constructs a [`CreateDataSourceInput`](crate::operation::create_data_source::CreateDataSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_data_source::CreateDataSourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_data_source::CreateDataSourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_data_source::CreateDataSourceInput {
             name: self.name,
             index_id: self.index_id,

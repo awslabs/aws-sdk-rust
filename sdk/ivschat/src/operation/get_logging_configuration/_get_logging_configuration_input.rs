@@ -27,6 +27,7 @@ pub struct GetLoggingConfigurationInputBuilder {
 }
 impl GetLoggingConfigurationInputBuilder {
     /// <p>Identifier of the logging configuration to be retrieved.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetLoggingConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_logging_configuration::GetLoggingConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_logging_configuration::GetLoggingConfigurationInput { identifier: self.identifier })
     }

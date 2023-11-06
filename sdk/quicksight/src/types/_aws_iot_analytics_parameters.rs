@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsIotAnalyticsParameters {
     /// <p>Dataset name.</p>
-    pub data_set_name: ::std::option::Option<::std::string::String>,
+    pub data_set_name: ::std::string::String,
 }
 impl AwsIotAnalyticsParameters {
     /// <p>Dataset name.</p>
-    pub fn data_set_name(&self) -> ::std::option::Option<&str> {
-        self.data_set_name.as_deref()
+    pub fn data_set_name(&self) -> &str {
+        use std::ops::Deref;
+        self.data_set_name.deref()
     }
 }
 impl AwsIotAnalyticsParameters {
@@ -28,6 +29,7 @@ pub struct AwsIotAnalyticsParametersBuilder {
 }
 impl AwsIotAnalyticsParametersBuilder {
     /// <p>Dataset name.</p>
+    /// This field is required.
     pub fn data_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_name = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl AwsIotAnalyticsParametersBuilder {
         &self.data_set_name
     }
     /// Consumes the builder and constructs a [`AwsIotAnalyticsParameters`](crate::types::AwsIotAnalyticsParameters).
-    pub fn build(self) -> crate::types::AwsIotAnalyticsParameters {
-        crate::types::AwsIotAnalyticsParameters {
-            data_set_name: self.data_set_name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`data_set_name`](crate::types::builders::AwsIotAnalyticsParametersBuilder::data_set_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::AwsIotAnalyticsParameters, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AwsIotAnalyticsParameters {
+            data_set_name: self.data_set_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "data_set_name",
+                    "data_set_name was not specified but it is required when building AwsIotAnalyticsParameters",
+                )
+            })?,
+        })
     }
 }

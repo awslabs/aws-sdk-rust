@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ApiKeyCredential {
     /// <p>An API key for an application.</p>
-    pub api_key: ::std::option::Option<::std::string::String>,
+    pub api_key: ::std::string::String,
 }
 impl ApiKeyCredential {
     /// <p>An API key for an application.</p>
-    pub fn api_key(&self) -> ::std::option::Option<&str> {
-        self.api_key.as_deref()
+    pub fn api_key(&self) -> &str {
+        use std::ops::Deref;
+        self.api_key.deref()
     }
 }
 impl ::std::fmt::Debug for ApiKeyCredential {
@@ -35,6 +36,7 @@ pub struct ApiKeyCredentialBuilder {
 }
 impl ApiKeyCredentialBuilder {
     /// <p>An API key for an application.</p>
+    /// This field is required.
     pub fn api_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_key = ::std::option::Option::Some(input.into());
         self
@@ -49,8 +51,17 @@ impl ApiKeyCredentialBuilder {
         &self.api_key
     }
     /// Consumes the builder and constructs a [`ApiKeyCredential`](crate::types::ApiKeyCredential).
-    pub fn build(self) -> crate::types::ApiKeyCredential {
-        crate::types::ApiKeyCredential { api_key: self.api_key }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`api_key`](crate::types::builders::ApiKeyCredentialBuilder::api_key)
+    pub fn build(self) -> ::std::result::Result<crate::types::ApiKeyCredential, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ApiKeyCredential {
+            api_key: self.api_key.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "api_key",
+                    "api_key was not specified but it is required when building ApiKeyCredential",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for ApiKeyCredentialBuilder {

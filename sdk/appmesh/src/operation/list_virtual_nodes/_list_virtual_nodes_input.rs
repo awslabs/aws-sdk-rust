@@ -48,6 +48,7 @@ pub struct ListVirtualNodesInputBuilder {
 }
 impl ListVirtualNodesInputBuilder {
     /// <p>The name of the service mesh to list virtual nodes in.</p>
+    /// This field is required.
     pub fn mesh_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mesh_name = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,7 @@ impl ListVirtualNodesInputBuilder {
     /// Consumes the builder and constructs a [`ListVirtualNodesInput`](crate::operation::list_virtual_nodes::ListVirtualNodesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_virtual_nodes::ListVirtualNodesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_virtual_nodes::ListVirtualNodesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_virtual_nodes::ListVirtualNodesInput {
             mesh_name: self.mesh_name,
             next_token: self.next_token,

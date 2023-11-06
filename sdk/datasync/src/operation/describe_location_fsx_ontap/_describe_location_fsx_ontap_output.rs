@@ -37,8 +37,10 @@ impl DescribeLocationFsxOntapOutput {
         self.protocol.as_ref()
     }
     /// <p>The security groups that DataSync uses to access your FSx for ONTAP file system.</p>
-    pub fn security_group_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_arns.is_none()`.
+    pub fn security_group_arns(&self) -> &[::std::string::String] {
+        self.security_group_arns.as_deref().unwrap_or_default()
     }
     /// <p>The ARN of the storage virtual machine (SVM) on your FSx for ONTAP file system where you're copying data to or from.</p>
     pub fn storage_virtual_machine_arn(&self) -> ::std::option::Option<&str> {

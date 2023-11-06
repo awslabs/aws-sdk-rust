@@ -3,7 +3,7 @@
 pub fn ser_step_adjustment(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::StepAdjustment,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("MetricIntervalLowerBound");
     if let Some(var_2) = &input.metric_interval_lower_bound {
@@ -31,6 +31,7 @@ pub fn ser_step_adjustment(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_step_adjustment(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::StepAdjustment, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -86,5 +87,5 @@ pub fn de_step_adjustment(
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::step_adjustment_correct_errors(builder).build())
 }

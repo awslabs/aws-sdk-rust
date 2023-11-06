@@ -11,8 +11,10 @@ pub struct ListEnabledProductsForImportOutput {
 }
 impl ListEnabledProductsForImportOutput {
     /// <p>The list of ARNs for the resources that represent your subscriptions to products. </p>
-    pub fn product_subscriptions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.product_subscriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.product_subscriptions.is_none()`.
+    pub fn product_subscriptions(&self) -> &[::std::string::String] {
+        self.product_subscriptions.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token to use to request the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

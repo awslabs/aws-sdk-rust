@@ -64,6 +64,7 @@ pub struct ListWorkflowTypesInputBuilder {
 }
 impl ListWorkflowTypesInputBuilder {
     /// <p>The name of the domain in which the workflow types have been registered.</p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -92,6 +93,7 @@ impl ListWorkflowTypesInputBuilder {
         &self.name
     }
     /// <p>Specifies the registration status of the workflow types to list.</p>
+    /// This field is required.
     pub fn registration_status(mut self, input: crate::types::RegistrationStatus) -> Self {
         self.registration_status = ::std::option::Option::Some(input);
         self
@@ -153,7 +155,7 @@ impl ListWorkflowTypesInputBuilder {
     /// Consumes the builder and constructs a [`ListWorkflowTypesInput`](crate::operation::list_workflow_types::ListWorkflowTypesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_workflow_types::ListWorkflowTypesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_workflow_types::ListWorkflowTypesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_workflow_types::ListWorkflowTypesInput {
             domain: self.domain,
             name: self.name,

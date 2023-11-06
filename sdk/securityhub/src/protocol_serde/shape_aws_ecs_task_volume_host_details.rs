@@ -2,7 +2,7 @@
 pub fn ser_aws_ecs_task_volume_host_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEcsTaskVolumeHostDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.source_path {
         object.key("SourcePath").string(var_1.as_str());
     }

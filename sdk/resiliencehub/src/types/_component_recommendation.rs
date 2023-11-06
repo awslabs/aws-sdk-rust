@@ -5,24 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComponentRecommendation {
     /// <p>Name of the Application Component.</p>
-    pub app_component_name: ::std::option::Option<::std::string::String>,
+    pub app_component_name: ::std::string::String,
     /// <p>Status of the recommendation.</p>
-    pub recommendation_status: ::std::option::Option<crate::types::RecommendationComplianceStatus>,
+    pub recommendation_status: crate::types::RecommendationComplianceStatus,
     /// <p>List of recommendations.</p>
-    pub config_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::ConfigRecommendation>>,
+    pub config_recommendations: ::std::vec::Vec<crate::types::ConfigRecommendation>,
 }
 impl ComponentRecommendation {
     /// <p>Name of the Application Component.</p>
-    pub fn app_component_name(&self) -> ::std::option::Option<&str> {
-        self.app_component_name.as_deref()
+    pub fn app_component_name(&self) -> &str {
+        use std::ops::Deref;
+        self.app_component_name.deref()
     }
     /// <p>Status of the recommendation.</p>
-    pub fn recommendation_status(&self) -> ::std::option::Option<&crate::types::RecommendationComplianceStatus> {
-        self.recommendation_status.as_ref()
+    pub fn recommendation_status(&self) -> &crate::types::RecommendationComplianceStatus {
+        &self.recommendation_status
     }
     /// <p>List of recommendations.</p>
-    pub fn config_recommendations(&self) -> ::std::option::Option<&[crate::types::ConfigRecommendation]> {
-        self.config_recommendations.as_deref()
+    pub fn config_recommendations(&self) -> &[crate::types::ConfigRecommendation] {
+        use std::ops::Deref;
+        self.config_recommendations.deref()
     }
 }
 impl ComponentRecommendation {
@@ -42,6 +44,7 @@ pub struct ComponentRecommendationBuilder {
 }
 impl ComponentRecommendationBuilder {
     /// <p>Name of the Application Component.</p>
+    /// This field is required.
     pub fn app_component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_component_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl ComponentRecommendationBuilder {
         &self.app_component_name
     }
     /// <p>Status of the recommendation.</p>
+    /// This field is required.
     pub fn recommendation_status(mut self, input: crate::types::RecommendationComplianceStatus) -> Self {
         self.recommendation_status = ::std::option::Option::Some(input);
         self
@@ -90,11 +94,30 @@ impl ComponentRecommendationBuilder {
         &self.config_recommendations
     }
     /// Consumes the builder and constructs a [`ComponentRecommendation`](crate::types::ComponentRecommendation).
-    pub fn build(self) -> crate::types::ComponentRecommendation {
-        crate::types::ComponentRecommendation {
-            app_component_name: self.app_component_name,
-            recommendation_status: self.recommendation_status,
-            config_recommendations: self.config_recommendations,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`app_component_name`](crate::types::builders::ComponentRecommendationBuilder::app_component_name)
+    /// - [`recommendation_status`](crate::types::builders::ComponentRecommendationBuilder::recommendation_status)
+    /// - [`config_recommendations`](crate::types::builders::ComponentRecommendationBuilder::config_recommendations)
+    pub fn build(self) -> ::std::result::Result<crate::types::ComponentRecommendation, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ComponentRecommendation {
+            app_component_name: self.app_component_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "app_component_name",
+                    "app_component_name was not specified but it is required when building ComponentRecommendation",
+                )
+            })?,
+            recommendation_status: self.recommendation_status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "recommendation_status",
+                    "recommendation_status was not specified but it is required when building ComponentRecommendation",
+                )
+            })?,
+            config_recommendations: self.config_recommendations.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "config_recommendations",
+                    "config_recommendations was not specified but it is required when building ComponentRecommendation",
+                )
+            })?,
+        })
     }
 }

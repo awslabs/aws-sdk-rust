@@ -69,6 +69,7 @@ pub struct DeleteJobExecutionInputBuilder {
 }
 impl DeleteJobExecutionInputBuilder {
     /// <p>The ID of the job whose execution on a particular device will be deleted.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +84,7 @@ impl DeleteJobExecutionInputBuilder {
         &self.job_id
     }
     /// <p>The name of the thing whose job execution will be deleted.</p>
+    /// This field is required.
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_name = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +100,7 @@ impl DeleteJobExecutionInputBuilder {
     }
     /// <p>The ID of the job execution to be deleted. The <code>executionNumber</code> refers to the execution of a particular job on a particular device.</p>
     /// <p>Note that once a job execution is deleted, the <code>executionNumber</code> may be reused by IoT, so be sure you get and use the correct value here.</p>
+    /// This field is required.
     pub fn execution_number(mut self, input: i64) -> Self {
         self.execution_number = ::std::option::Option::Some(input);
         self
@@ -162,7 +165,8 @@ impl DeleteJobExecutionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteJobExecutionInput`](crate::operation::delete_job_execution::DeleteJobExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_job_execution::DeleteJobExecutionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_job_execution::DeleteJobExecutionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_job_execution::DeleteJobExecutionInput {
             job_id: self.job_id,
             thing_name: self.thing_name,

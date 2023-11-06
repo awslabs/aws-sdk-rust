@@ -76,6 +76,7 @@ impl CreateAliasInputBuilder {
     /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    /// This field is required.
     pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_name = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +105,7 @@ impl CreateAliasInputBuilder {
         &self.function_name
     }
     /// <p>The name of the alias.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +120,7 @@ impl CreateAliasInputBuilder {
         &self.name
     }
     /// <p>The function version that the alias invokes.</p>
+    /// This field is required.
     pub fn function_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_version = ::std::option::Option::Some(input.into());
         self
@@ -160,7 +163,7 @@ impl CreateAliasInputBuilder {
         &self.routing_config
     }
     /// Consumes the builder and constructs a [`CreateAliasInput`](crate::operation::create_alias::CreateAliasInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_alias::CreateAliasInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_alias::CreateAliasInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_alias::CreateAliasInput {
             function_name: self.function_name,
             name: self.name,

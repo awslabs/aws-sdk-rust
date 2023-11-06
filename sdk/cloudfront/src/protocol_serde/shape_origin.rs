@@ -2,59 +2,86 @@
 pub fn ser_origin(
     input: &crate::types::Origin,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.id {
+    {
         let mut inner_writer = scope.start_el("Id").finish();
+        inner_writer.data(input.id.as_str());
+    }
+    {
+        let mut inner_writer = scope.start_el("DomainName").finish();
+        inner_writer.data(input.domain_name.as_str());
+    }
+    if let Some(var_1) = &input.origin_path {
+        let mut inner_writer = scope.start_el("OriginPath").finish();
         inner_writer.data(var_1.as_str());
     }
-    if let Some(var_2) = &input.domain_name {
-        let mut inner_writer = scope.start_el("DomainName").finish();
-        inner_writer.data(var_2.as_str());
-    }
-    if let Some(var_3) = &input.origin_path {
-        let mut inner_writer = scope.start_el("OriginPath").finish();
-        inner_writer.data(var_3.as_str());
-    }
-    if let Some(var_4) = &input.custom_headers {
+    if let Some(var_2) = &input.custom_headers {
         let inner_writer = scope.start_el("CustomHeaders");
-        crate::protocol_serde::shape_custom_headers::ser_custom_headers(var_4, inner_writer)?
+        crate::protocol_serde::shape_custom_headers::ser_custom_headers(var_2, inner_writer)?
     }
-    if let Some(var_5) = &input.s3_origin_config {
+    if let Some(var_3) = &input.s3_origin_config {
         let inner_writer = scope.start_el("S3OriginConfig");
-        crate::protocol_serde::shape_s3_origin_config::ser_s3_origin_config(var_5, inner_writer)?
+        crate::protocol_serde::shape_s3_origin_config::ser_s3_origin_config(var_3, inner_writer)?
     }
-    if let Some(var_6) = &input.custom_origin_config {
+    if let Some(var_4) = &input.custom_origin_config {
         let inner_writer = scope.start_el("CustomOriginConfig");
-        crate::protocol_serde::shape_custom_origin_config::ser_custom_origin_config(var_6, inner_writer)?
+        crate::protocol_serde::shape_custom_origin_config::ser_custom_origin_config(var_4, inner_writer)?
     }
-    if let Some(var_7) = &input.connection_attempts {
+    if let Some(var_5) = &input.connection_attempts {
         let mut inner_writer = scope.start_el("ConnectionAttempts").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_7).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_5).encode());
     }
-    if let Some(var_8) = &input.connection_timeout {
+    if let Some(var_6) = &input.connection_timeout {
         let mut inner_writer = scope.start_el("ConnectionTimeout").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_8).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_6).encode());
     }
-    if let Some(var_9) = &input.origin_shield {
+    if let Some(var_7) = &input.origin_shield {
         let inner_writer = scope.start_el("OriginShield");
-        crate::protocol_serde::shape_origin_shield::ser_origin_shield(var_9, inner_writer)?
+        crate::protocol_serde::shape_origin_shield::ser_origin_shield(var_7, inner_writer)?
     }
-    if let Some(var_10) = &input.origin_access_control_id {
+    if let Some(var_8) = &input.origin_access_control_id {
         let mut inner_writer = scope.start_el("OriginAccessControlId").finish();
-        inner_writer.data(var_10.as_str());
+        inner_writer.data(var_8.as_str());
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_origin(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result<crate::types::Origin, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::Origin::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Id") /* Id com.amazonaws.cloudfront#Origin$Id */ =>  {
+                let var_9 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_id(var_9);
+            }
+            ,
+            s if s.matches("DomainName") /* DomainName com.amazonaws.cloudfront#Origin$DomainName */ =>  {
+                let var_10 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_domain_name(var_10);
+            }
+            ,
+            s if s.matches("OriginPath") /* OriginPath com.amazonaws.cloudfront#Origin$OriginPath */ =>  {
                 let var_11 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -64,67 +91,41 @@ pub fn de_origin(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Resul
                         ?
                     )
                 ;
-                builder = builder.set_id(var_11);
-            }
-            ,
-            s if s.matches("DomainName") /* DomainName com.amazonaws.cloudfront#Origin$DomainName */ =>  {
-                let var_12 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_domain_name(var_12);
-            }
-            ,
-            s if s.matches("OriginPath") /* OriginPath com.amazonaws.cloudfront#Origin$OriginPath */ =>  {
-                let var_13 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_origin_path(var_13);
+                builder = builder.set_origin_path(var_11);
             }
             ,
             s if s.matches("CustomHeaders") /* CustomHeaders com.amazonaws.cloudfront#Origin$CustomHeaders */ =>  {
-                let var_14 =
+                let var_12 =
                     Some(
                         crate::protocol_serde::shape_custom_headers::de_custom_headers(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_custom_headers(var_14);
+                builder = builder.set_custom_headers(var_12);
             }
             ,
             s if s.matches("S3OriginConfig") /* S3OriginConfig com.amazonaws.cloudfront#Origin$S3OriginConfig */ =>  {
-                let var_15 =
+                let var_13 =
                     Some(
                         crate::protocol_serde::shape_s3_origin_config::de_s3_origin_config(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_s3_origin_config(var_15);
+                builder = builder.set_s3_origin_config(var_13);
             }
             ,
             s if s.matches("CustomOriginConfig") /* CustomOriginConfig com.amazonaws.cloudfront#Origin$CustomOriginConfig */ =>  {
-                let var_16 =
+                let var_14 =
                     Some(
                         crate::protocol_serde::shape_custom_origin_config::de_custom_origin_config(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_custom_origin_config(var_16);
+                builder = builder.set_custom_origin_config(var_14);
             }
             ,
             s if s.matches("ConnectionAttempts") /* ConnectionAttempts com.amazonaws.cloudfront#Origin$ConnectionAttempts */ =>  {
-                let var_17 =
+                let var_15 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -135,11 +136,11 @@ pub fn de_origin(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Resul
                         ?
                     )
                 ;
-                builder = builder.set_connection_attempts(var_17);
+                builder = builder.set_connection_attempts(var_15);
             }
             ,
             s if s.matches("ConnectionTimeout") /* ConnectionTimeout com.amazonaws.cloudfront#Origin$ConnectionTimeout */ =>  {
-                let var_18 =
+                let var_16 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -150,21 +151,21 @@ pub fn de_origin(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Resul
                         ?
                     )
                 ;
-                builder = builder.set_connection_timeout(var_18);
+                builder = builder.set_connection_timeout(var_16);
             }
             ,
             s if s.matches("OriginShield") /* OriginShield com.amazonaws.cloudfront#Origin$OriginShield */ =>  {
-                let var_19 =
+                let var_17 =
                     Some(
                         crate::protocol_serde::shape_origin_shield::de_origin_shield(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_origin_shield(var_19);
+                builder = builder.set_origin_shield(var_17);
             }
             ,
             s if s.matches("OriginAccessControlId") /* OriginAccessControlId com.amazonaws.cloudfront#Origin$OriginAccessControlId */ =>  {
-                let var_20 =
+                let var_18 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -173,11 +174,13 @@ pub fn de_origin(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Resul
                         ?
                     )
                 ;
-                builder = builder.set_origin_access_control_id(var_20);
+                builder = builder.set_origin_access_control_id(var_18);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::origin_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

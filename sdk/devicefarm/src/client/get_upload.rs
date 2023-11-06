@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetUpload`](crate::operation::get_upload::builders::GetUploadFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::get_upload::builders::GetUploadFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_upload::builders::GetUploadFluentBuilder::set_arn): <p>The upload's ARN.</p>
+    ///   - [`arn(impl Into<String>)`](crate::operation::get_upload::builders::GetUploadFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_upload::builders::GetUploadFluentBuilder::set_arn):<br>required: **true**<br><p>The upload's ARN.</p><br>
     /// - On success, responds with [`GetUploadOutput`](crate::operation::get_upload::GetUploadOutput) with field(s):
     ///   - [`upload(Option<Upload>)`](crate::operation::get_upload::GetUploadOutput::upload): <p>An app or a set of one or more tests to upload or that have been uploaded.</p>
     /// - On failure, responds with [`SdkError<GetUploadError>`](crate::operation::get_upload::GetUploadError)

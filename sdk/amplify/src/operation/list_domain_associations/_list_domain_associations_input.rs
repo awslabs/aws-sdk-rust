@@ -42,6 +42,7 @@ pub struct ListDomainAssociationsInputBuilder {
 }
 impl ListDomainAssociationsInputBuilder {
     /// <p> The unique ID for an Amplify app. </p>
+    /// This field is required.
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
         self
@@ -86,8 +87,10 @@ impl ListDomainAssociationsInputBuilder {
     /// Consumes the builder and constructs a [`ListDomainAssociationsInput`](crate::operation::list_domain_associations::ListDomainAssociationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_domain_associations::ListDomainAssociationsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::list_domain_associations::ListDomainAssociationsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::list_domain_associations::ListDomainAssociationsInput {
             app_id: self.app_id,
             next_token: self.next_token,

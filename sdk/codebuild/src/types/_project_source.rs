@@ -14,7 +14,7 @@ pub struct ProjectSource {
     /// <li> <p> <code>NO_SOURCE</code>: The project does not have input source code.</p> </li>
     /// <li> <p> <code>S3</code>: The source code is in an Amazon S3 bucket.</p> </li>
     /// </ul>
-    pub r#type: ::std::option::Option<crate::types::SourceType>,
+    pub r#type: crate::types::SourceType,
     /// <p>Information about the location of the source code to be built. Valid values include:</p>
     /// <ul>
     /// <li> <p>For source code settings that are specified in the source action of a pipeline in CodePipeline, <code>location</code> should not be specified. If it is specified, CodePipeline ignores it. This is because CodePipeline uses the settings in a pipeline's source action instead of this value.</p> </li>
@@ -84,8 +84,8 @@ impl ProjectSource {
     /// <li> <p> <code>NO_SOURCE</code>: The project does not have input source code.</p> </li>
     /// <li> <p> <code>S3</code>: The source code is in an Amazon S3 bucket.</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::SourceType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::SourceType {
+        &self.r#type
     }
     /// <p>Information about the location of the source code to be built. Valid values include:</p>
     /// <ul>
@@ -196,6 +196,7 @@ impl ProjectSourceBuilder {
     /// <li> <p> <code>NO_SOURCE</code>: The project does not have input source code.</p> </li>
     /// <li> <p> <code>S3</code>: The source code is in an Amazon S3 bucket.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::SourceType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -471,9 +472,16 @@ impl ProjectSourceBuilder {
         &self.source_identifier
     }
     /// Consumes the builder and constructs a [`ProjectSource`](crate::types::ProjectSource).
-    pub fn build(self) -> crate::types::ProjectSource {
-        crate::types::ProjectSource {
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::ProjectSourceBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::ProjectSource, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ProjectSource {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building ProjectSource",
+                )
+            })?,
             location: self.location,
             git_clone_depth: self.git_clone_depth,
             git_submodules_config: self.git_submodules_config,
@@ -483,6 +491,6 @@ impl ProjectSourceBuilder {
             build_status_config: self.build_status_config,
             insecure_ssl: self.insecure_ssl,
             source_identifier: self.source_identifier,
-        }
+        })
     }
 }

@@ -5,15 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AlarmRecommendation {
     /// <p>Identifier of the alarm recommendation.</p>
-    pub recommendation_id: ::std::option::Option<::std::string::String>,
+    pub recommendation_id: ::std::string::String,
     /// <p>Reference identifier of the alarm recommendation.</p>
-    pub reference_id: ::std::option::Option<::std::string::String>,
+    pub reference_id: ::std::string::String,
     /// <p>Name of the alarm recommendation.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>Description of the alarm recommendation.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Type of alarm recommendation.</p>
-    pub r#type: ::std::option::Option<crate::types::AlarmType>,
+    pub r#type: crate::types::AlarmType,
     /// <p>Application Component name for the CloudWatch alarm recommendation. This name is saved as the first item in the <code>appComponentNames</code> list.</p>
     #[deprecated(
         note = "An alarm recommendation can be attached to multiple Application Components, hence this property will be replaced by the new property 'appComponentNames'."
@@ -28,24 +28,27 @@ pub struct AlarmRecommendation {
 }
 impl AlarmRecommendation {
     /// <p>Identifier of the alarm recommendation.</p>
-    pub fn recommendation_id(&self) -> ::std::option::Option<&str> {
-        self.recommendation_id.as_deref()
+    pub fn recommendation_id(&self) -> &str {
+        use std::ops::Deref;
+        self.recommendation_id.deref()
     }
     /// <p>Reference identifier of the alarm recommendation.</p>
-    pub fn reference_id(&self) -> ::std::option::Option<&str> {
-        self.reference_id.as_deref()
+    pub fn reference_id(&self) -> &str {
+        use std::ops::Deref;
+        self.reference_id.deref()
     }
     /// <p>Name of the alarm recommendation.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>Description of the alarm recommendation.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Type of alarm recommendation.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::AlarmType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::AlarmType {
+        &self.r#type
     }
     /// <p>Application Component name for the CloudWatch alarm recommendation. This name is saved as the first item in the <code>appComponentNames</code> list.</p>
     #[deprecated(
@@ -55,16 +58,20 @@ impl AlarmRecommendation {
         self.app_component_name.as_deref()
     }
     /// <p>List of CloudWatch alarm recommendations.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::RecommendationItem]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[crate::types::RecommendationItem] {
+        self.items.as_deref().unwrap_or_default()
     }
     /// <p>The prerequisite for the alarm recommendation.</p>
     pub fn prerequisite(&self) -> ::std::option::Option<&str> {
         self.prerequisite.as_deref()
     }
     /// <p>List of Application Component names for the CloudWatch alarm recommendation.</p>
-    pub fn app_component_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.app_component_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.app_component_names.is_none()`.
+    pub fn app_component_names(&self) -> &[::std::string::String] {
+        self.app_component_names.as_deref().unwrap_or_default()
     }
 }
 impl AlarmRecommendation {
@@ -90,6 +97,7 @@ pub struct AlarmRecommendationBuilder {
 }
 impl AlarmRecommendationBuilder {
     /// <p>Identifier of the alarm recommendation.</p>
+    /// This field is required.
     pub fn recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommendation_id = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +112,7 @@ impl AlarmRecommendationBuilder {
         &self.recommendation_id
     }
     /// <p>Reference identifier of the alarm recommendation.</p>
+    /// This field is required.
     pub fn reference_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reference_id = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +127,7 @@ impl AlarmRecommendationBuilder {
         &self.reference_id
     }
     /// <p>Name of the alarm recommendation.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -146,6 +156,7 @@ impl AlarmRecommendationBuilder {
         &self.description
     }
     /// <p>Type of alarm recommendation.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::AlarmType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -237,17 +248,42 @@ impl AlarmRecommendationBuilder {
         &self.app_component_names
     }
     /// Consumes the builder and constructs a [`AlarmRecommendation`](crate::types::AlarmRecommendation).
-    pub fn build(self) -> crate::types::AlarmRecommendation {
-        crate::types::AlarmRecommendation {
-            recommendation_id: self.recommendation_id,
-            reference_id: self.reference_id,
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`recommendation_id`](crate::types::builders::AlarmRecommendationBuilder::recommendation_id)
+    /// - [`reference_id`](crate::types::builders::AlarmRecommendationBuilder::reference_id)
+    /// - [`name`](crate::types::builders::AlarmRecommendationBuilder::name)
+    /// - [`r#type`](crate::types::builders::AlarmRecommendationBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::AlarmRecommendation, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AlarmRecommendation {
+            recommendation_id: self.recommendation_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "recommendation_id",
+                    "recommendation_id was not specified but it is required when building AlarmRecommendation",
+                )
+            })?,
+            reference_id: self.reference_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "reference_id",
+                    "reference_id was not specified but it is required when building AlarmRecommendation",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building AlarmRecommendation",
+                )
+            })?,
             description: self.description,
-            r#type: self.r#type,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building AlarmRecommendation",
+                )
+            })?,
             app_component_name: self.app_component_name,
             items: self.items,
             prerequisite: self.prerequisite,
             app_component_names: self.app_component_names,
-        }
+        })
     }
 }

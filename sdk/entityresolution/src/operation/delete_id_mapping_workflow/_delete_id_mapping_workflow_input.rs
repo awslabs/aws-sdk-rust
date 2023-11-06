@@ -27,6 +27,7 @@ pub struct DeleteIdMappingWorkflowInputBuilder {
 }
 impl DeleteIdMappingWorkflowInputBuilder {
     /// <p>The name of the workflow to be deleted.</p>
+    /// This field is required.
     pub fn workflow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteIdMappingWorkflowInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_id_mapping_workflow::DeleteIdMappingWorkflowInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_id_mapping_workflow::DeleteIdMappingWorkflowInput {
             workflow_name: self.workflow_name,

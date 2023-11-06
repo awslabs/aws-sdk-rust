@@ -27,6 +27,7 @@ pub struct CancelMessageMoveTaskInputBuilder {
 }
 impl CancelMessageMoveTaskInputBuilder {
     /// <p>An identifier associated with a message movement task.</p>
+    /// This field is required.
     pub fn task_handle(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_handle = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl CancelMessageMoveTaskInputBuilder {
     /// Consumes the builder and constructs a [`CancelMessageMoveTaskInput`](crate::operation::cancel_message_move_task::CancelMessageMoveTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_message_move_task::CancelMessageMoveTaskInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::cancel_message_move_task::CancelMessageMoveTaskInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::cancel_message_move_task::CancelMessageMoveTaskInput {
             task_handle: self.task_handle,

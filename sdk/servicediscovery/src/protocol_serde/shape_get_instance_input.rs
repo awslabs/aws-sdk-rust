@@ -2,7 +2,7 @@
 pub fn ser_get_instance_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_instance::GetInstanceInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.service_id {
         object.key("ServiceId").string(var_1.as_str());
     }

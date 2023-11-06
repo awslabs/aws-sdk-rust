@@ -41,6 +41,7 @@ pub struct ListUserHierarchyGroupsInputBuilder {
 }
 impl ListUserHierarchyGroupsInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListUserHierarchyGroupsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsInput {
             instance_id: self.instance_id,

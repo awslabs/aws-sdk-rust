@@ -50,6 +50,7 @@ pub struct AssociatePhoneNumberWithUserInputBuilder {
 }
 impl AssociatePhoneNumberWithUserInputBuilder {
     /// <p>The Amazon Chime account ID.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -64,6 +65,7 @@ impl AssociatePhoneNumberWithUserInputBuilder {
         &self.account_id
     }
     /// <p>The user ID.</p>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
@@ -78,6 +80,7 @@ impl AssociatePhoneNumberWithUserInputBuilder {
         &self.user_id
     }
     /// <p>The phone number, in E.164 format.</p>
+    /// This field is required.
     pub fn e164_phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.e164_phone_number = ::std::option::Option::Some(input.into());
         self
@@ -96,7 +99,7 @@ impl AssociatePhoneNumberWithUserInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_phone_number_with_user::AssociatePhoneNumberWithUserInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::associate_phone_number_with_user::AssociatePhoneNumberWithUserInput {
             account_id: self.account_id,

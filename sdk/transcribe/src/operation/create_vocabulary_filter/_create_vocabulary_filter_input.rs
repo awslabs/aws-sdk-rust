@@ -41,8 +41,10 @@ impl CreateVocabularyFilterInput {
     /// <p>Use this parameter if you want to create your custom vocabulary filter by including all desired terms, as comma-separated values, within your request. The other option for creating your vocabulary filter is to save your entries in a text file and upload them to an Amazon S3 bucket, then specify the location of your file using the <code>VocabularyFilterFileUri</code> parameter.</p>
     /// <p>Note that if you include <code>Words</code> in your request, you cannot use <code>VocabularyFilterFileUri</code>; you must choose one or the other.</p>
     /// <p>Each language has a character set that contains all allowed characters for that specific language. If you use unsupported characters, your custom vocabulary filter request fails. Refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a> to get the character set for your language.</p>
-    pub fn words(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.words.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.words.is_none()`.
+    pub fn words(&self) -> &[::std::string::String] {
+        self.words.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon S3 location of the text file that contains your custom vocabulary filter terms. The URI must be located in the same Amazon Web Services Region as the resource you're calling.</p>
     /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-filter-file.txt</code> </p>
@@ -52,8 +54,10 @@ impl CreateVocabularyFilterInput {
     }
     /// <p>Adds one or more custom tags, each in the form of a key:value pair, to a new custom vocabulary filter at the time you create this new vocabulary filter.</p>
     /// <p>To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files (in this case, your custom vocabulary filter). If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
     /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>.</p>
@@ -83,6 +87,7 @@ pub struct CreateVocabularyFilterInputBuilder {
 impl CreateVocabularyFilterInputBuilder {
     /// <p>A unique name, chosen by you, for your new custom vocabulary filter.</p>
     /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a new custom vocabulary filter with the same name as an existing custom vocabulary filter, you get a <code>ConflictException</code> error.</p>
+    /// This field is required.
     pub fn vocabulary_filter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vocabulary_filter_name = ::std::option::Option::Some(input.into());
         self
@@ -101,6 +106,7 @@ impl CreateVocabularyFilterInputBuilder {
     /// <p>The language code that represents the language of the entries in your vocabulary filter. Each custom vocabulary filter must contain terms in only one language.</p>
     /// <p>A custom vocabulary filter can only be used to transcribe files in the same language as the filter. For example, if you create a custom vocabulary filter using US English (<code>en-US</code>), you can only apply this filter to files that contain English audio.</p>
     /// <p>For a list of supported languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
+    /// This field is required.
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.language_code = ::std::option::Option::Some(input);
         self
@@ -210,8 +216,10 @@ impl CreateVocabularyFilterInputBuilder {
     /// Consumes the builder and constructs a [`CreateVocabularyFilterInput`](crate::operation::create_vocabulary_filter::CreateVocabularyFilterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_vocabulary_filter::CreateVocabularyFilterInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_vocabulary_filter::CreateVocabularyFilterInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_vocabulary_filter::CreateVocabularyFilterInput {
             vocabulary_filter_name: self.vocabulary_filter_name,
             language_code: self.language_code,

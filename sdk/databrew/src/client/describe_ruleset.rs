@@ -3,18 +3,18 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeRuleset`](crate::operation::describe_ruleset::builders::DescribeRulesetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::describe_ruleset::builders::DescribeRulesetFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_ruleset::builders::DescribeRulesetFluentBuilder::set_name): <p>The name of the ruleset to be described.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::describe_ruleset::builders::DescribeRulesetFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_ruleset::builders::DescribeRulesetFluentBuilder::set_name):<br>required: **true**<br><p>The name of the ruleset to be described.</p><br>
     /// - On success, responds with [`DescribeRulesetOutput`](crate::operation::describe_ruleset::DescribeRulesetOutput) with field(s):
-    ///   - [`name(Option<String>)`](crate::operation::describe_ruleset::DescribeRulesetOutput::name): <p>The name of the ruleset.</p>
+    ///   - [`name(String)`](crate::operation::describe_ruleset::DescribeRulesetOutput::name): <p>The name of the ruleset.</p>
     ///   - [`description(Option<String>)`](crate::operation::describe_ruleset::DescribeRulesetOutput::description): <p>The description of the ruleset.</p>
     ///   - [`target_arn(Option<String>)`](crate::operation::describe_ruleset::DescribeRulesetOutput::target_arn): <p>The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is associated with.</p>
-    ///   - [`rules(Option<Vec<Rule>>)`](crate::operation::describe_ruleset::DescribeRulesetOutput::rules): <p>A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset.</p>
+    ///   - [`rules(Option<Vec::<Rule>>)`](crate::operation::describe_ruleset::DescribeRulesetOutput::rules): <p>A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset.</p>
     ///   - [`create_date(Option<DateTime>)`](crate::operation::describe_ruleset::DescribeRulesetOutput::create_date): <p>The date and time that the ruleset was created.</p>
     ///   - [`created_by(Option<String>)`](crate::operation::describe_ruleset::DescribeRulesetOutput::created_by): <p>The Amazon Resource Name (ARN) of the user who created the ruleset.</p>
     ///   - [`last_modified_by(Option<String>)`](crate::operation::describe_ruleset::DescribeRulesetOutput::last_modified_by): <p>The Amazon Resource Name (ARN) of the user who last modified the ruleset.</p>
     ///   - [`last_modified_date(Option<DateTime>)`](crate::operation::describe_ruleset::DescribeRulesetOutput::last_modified_date): <p>The modification date and time of the ruleset.</p>
     ///   - [`resource_arn(Option<String>)`](crate::operation::describe_ruleset::DescribeRulesetOutput::resource_arn): <p>The Amazon Resource Name (ARN) for the ruleset.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_ruleset::DescribeRulesetOutput::tags): <p>Metadata tags that have been applied to the ruleset.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_ruleset::DescribeRulesetOutput::tags): <p>Metadata tags that have been applied to the ruleset.</p>
     /// - On failure, responds with [`SdkError<DescribeRulesetError>`](crate::operation::describe_ruleset::DescribeRulesetError)
     pub fn describe_ruleset(&self) -> crate::operation::describe_ruleset::builders::DescribeRulesetFluentBuilder {
         crate::operation::describe_ruleset::builders::DescribeRulesetFluentBuilder::new(self.handle.clone())

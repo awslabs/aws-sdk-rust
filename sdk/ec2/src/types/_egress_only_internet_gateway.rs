@@ -13,16 +13,20 @@ pub struct EgressOnlyInternetGateway {
 }
 impl EgressOnlyInternetGateway {
     /// <p>Information about the attachment of the egress-only internet gateway.</p>
-    pub fn attachments(&self) -> ::std::option::Option<&[crate::types::InternetGatewayAttachment]> {
-        self.attachments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attachments.is_none()`.
+    pub fn attachments(&self) -> &[crate::types::InternetGatewayAttachment] {
+        self.attachments.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the egress-only internet gateway.</p>
     pub fn egress_only_internet_gateway_id(&self) -> ::std::option::Option<&str> {
         self.egress_only_internet_gateway_id.as_deref()
     }
     /// <p>The tags assigned to the egress-only internet gateway.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl EgressOnlyInternetGateway {

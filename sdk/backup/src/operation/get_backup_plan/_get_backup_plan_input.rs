@@ -34,6 +34,7 @@ pub struct GetBackupPlanInputBuilder {
 }
 impl GetBackupPlanInputBuilder {
     /// <p>Uniquely identifies a backup plan.</p>
+    /// This field is required.
     pub fn backup_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_plan_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl GetBackupPlanInputBuilder {
     /// Consumes the builder and constructs a [`GetBackupPlanInput`](crate::operation::get_backup_plan::GetBackupPlanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_backup_plan::GetBackupPlanInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_backup_plan::GetBackupPlanInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_backup_plan::GetBackupPlanInput {
             backup_plan_id: self.backup_plan_id,
             version_id: self.version_id,

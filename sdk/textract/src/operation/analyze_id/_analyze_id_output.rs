@@ -13,8 +13,10 @@ pub struct AnalyzeIdOutput {
 }
 impl AnalyzeIdOutput {
     /// <p>The list of documents processed by AnalyzeID. Includes a number denoting their place in the list and the response structure for the document.</p>
-    pub fn identity_documents(&self) -> ::std::option::Option<&[crate::types::IdentityDocument]> {
-        self.identity_documents.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.identity_documents.is_none()`.
+    pub fn identity_documents(&self) -> &[crate::types::IdentityDocument] {
+        self.identity_documents.as_deref().unwrap_or_default()
     }
     /// <p>Information about the input document.</p>
     pub fn document_metadata(&self) -> ::std::option::Option<&crate::types::DocumentMetadata> {

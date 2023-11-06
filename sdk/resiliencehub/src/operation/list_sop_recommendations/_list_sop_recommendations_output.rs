@@ -6,7 +6,7 @@ pub struct ListSopRecommendationsOutput {
     /// <p>Token for the next set of results, or null if there are no more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The standard operating procedure (SOP) recommendations for the Resilience Hub applications.</p>
-    pub sop_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::SopRecommendation>>,
+    pub sop_recommendations: ::std::vec::Vec<crate::types::SopRecommendation>,
     _request_id: Option<String>,
 }
 impl ListSopRecommendationsOutput {
@@ -15,8 +15,9 @@ impl ListSopRecommendationsOutput {
         self.next_token.as_deref()
     }
     /// <p>The standard operating procedure (SOP) recommendations for the Resilience Hub applications.</p>
-    pub fn sop_recommendations(&self) -> ::std::option::Option<&[crate::types::SopRecommendation]> {
-        self.sop_recommendations.as_deref()
+    pub fn sop_recommendations(&self) -> &[crate::types::SopRecommendation] {
+        use std::ops::Deref;
+        self.sop_recommendations.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListSopRecommendationsOutput {
@@ -84,11 +85,23 @@ impl ListSopRecommendationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListSopRecommendationsOutput`](crate::operation::list_sop_recommendations::ListSopRecommendationsOutput).
-    pub fn build(self) -> crate::operation::list_sop_recommendations::ListSopRecommendationsOutput {
-        crate::operation::list_sop_recommendations::ListSopRecommendationsOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`sop_recommendations`](crate::operation::list_sop_recommendations::builders::ListSopRecommendationsOutputBuilder::sop_recommendations)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_sop_recommendations::ListSopRecommendationsOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_sop_recommendations::ListSopRecommendationsOutput {
             next_token: self.next_token,
-            sop_recommendations: self.sop_recommendations,
+            sop_recommendations: self.sop_recommendations.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "sop_recommendations",
+                    "sop_recommendations was not specified but it is required when building ListSopRecommendationsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

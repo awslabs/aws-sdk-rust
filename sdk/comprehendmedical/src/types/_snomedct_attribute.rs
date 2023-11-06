@@ -65,12 +65,16 @@ impl SnomedctAttribute {
         self.text.as_deref()
     }
     /// <p> Contextual information for an attribute. Examples include signs, symptoms, diagnosis, and negation. </p>
-    pub fn traits(&self) -> ::std::option::Option<&[crate::types::SnomedctTrait]> {
-        self.traits.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.traits.is_none()`.
+    pub fn traits(&self) -> &[crate::types::SnomedctTrait] {
+        self.traits.as_deref().unwrap_or_default()
     }
     /// <p> The SNOMED-CT concepts specific to an attribute, along with a score indicating the likelihood of the match. </p>
-    pub fn snomedct_concepts(&self) -> ::std::option::Option<&[crate::types::SnomedctConcept]> {
-        self.snomedct_concepts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.snomedct_concepts.is_none()`.
+    pub fn snomedct_concepts(&self) -> &[crate::types::SnomedctConcept] {
+        self.snomedct_concepts.as_deref().unwrap_or_default()
     }
 }
 impl SnomedctAttribute {

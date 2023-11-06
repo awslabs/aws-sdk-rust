@@ -88,7 +88,7 @@ impl DescribeReservedInstancesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_reserved_instances::DescribeReservedInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_reserved_instances::DescribeReservedInstancesInput {
             reserved_instance_id: self.reserved_instance_id,

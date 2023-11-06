@@ -12,8 +12,10 @@ pub struct ListSuitesOutput {
 }
 impl ListSuitesOutput {
     /// <p>Information about the suites.</p>
-    pub fn suites(&self) -> ::std::option::Option<&[crate::types::Suite]> {
-        self.suites.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.suites.is_none()`.
+    pub fn suites(&self) -> &[crate::types::Suite] {
+        self.suites.as_deref().unwrap_or_default()
     }
     /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

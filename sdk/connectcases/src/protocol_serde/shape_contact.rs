@@ -2,9 +2,9 @@
 pub fn ser_contact(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Contact,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.contact_arn {
-        object.key("contactArn").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("contactArn").string(input.contact_arn.as_str());
     }
     Ok(())
 }

@@ -4,8 +4,7 @@
  */
 
 use aws_smithy_http::http::HttpHeaders;
-use aws_smithy_http::operation;
-use aws_smithy_http::result::SdkError;
+use aws_smithy_runtime_api::client::result::SdkError;
 use aws_smithy_types::error::metadata::{
     Builder as ErrorMetadataBuilder, ErrorMetadata, ProvideErrorMetadata,
 };
@@ -43,12 +42,6 @@ impl RequestId for ErrorMetadata {
 impl RequestId for Unhandled {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
-    }
-}
-
-impl RequestId for operation::Response {
-    fn request_id(&self) -> Option<&str> {
-        extract_request_id(self.http().headers())
     }
 }
 
@@ -101,23 +94,20 @@ fn extract_request_id(headers: &HeaderMap<HeaderValue>) -> Option<&str> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use aws_smithy_http::body::SdkBody;
+    use aws_smithy_types::body::SdkBody;
     use http::Response;
 
     #[test]
     fn test_request_id_sdk_error() {
-        let without_request_id =
-            || operation::Response::new(Response::builder().body(SdkBody::empty()).unwrap());
+        let without_request_id = || Response::builder().body(SdkBody::empty()).unwrap();
         let with_request_id = || {
-            operation::Response::new(
-                Response::builder()
-                    .header(
-                        "x-amzn-requestid",
-                        HeaderValue::from_static("some-request-id"),
-                    )
-                    .body(SdkBody::empty())
-                    .unwrap(),
-            )
+            Response::builder()
+                .header(
+                    "x-amzn-requestid",
+                    HeaderValue::from_static("some-request-id"),
+                )
+                .body(SdkBody::empty())
+                .unwrap()
         };
         assert_eq!(
             None,

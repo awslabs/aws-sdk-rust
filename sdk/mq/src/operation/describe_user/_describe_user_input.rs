@@ -34,6 +34,7 @@ pub struct DescribeUserInputBuilder {
 }
 impl DescribeUserInputBuilder {
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
+    /// This field is required.
     pub fn broker_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.broker_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeUserInputBuilder {
         &self.broker_id
     }
     /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
+    /// This field is required.
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,9 @@ impl DescribeUserInputBuilder {
         &self.username
     }
     /// Consumes the builder and constructs a [`DescribeUserInput`](crate::operation::describe_user::DescribeUserInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_user::DescribeUserInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_user::DescribeUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_user::DescribeUserInput {
             broker_id: self.broker_id,
             username: self.username,

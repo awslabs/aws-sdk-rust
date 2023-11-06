@@ -35,6 +35,7 @@ pub struct DeleteVpnConnectionInputBuilder {
 }
 impl DeleteVpnConnectionInputBuilder {
     /// <p>The ID of the VPN connection.</p>
+    /// This field is required.
     pub fn vpn_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpn_connection_id = ::std::option::Option::Some(input.into());
         self
@@ -65,7 +66,7 @@ impl DeleteVpnConnectionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteVpnConnectionInput`](crate::operation::delete_vpn_connection::DeleteVpnConnectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_vpn_connection::DeleteVpnConnectionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_vpn_connection::DeleteVpnConnectionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_vpn_connection::DeleteVpnConnectionInput {
             vpn_connection_id: self.vpn_connection_id,

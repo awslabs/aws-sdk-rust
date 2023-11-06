@@ -34,6 +34,7 @@ pub struct GetSigningProfileInputBuilder {
 }
 impl GetSigningProfileInputBuilder {
     /// <p>The name of the target signing profile.</p>
+    /// This field is required.
     pub fn profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl GetSigningProfileInputBuilder {
     /// Consumes the builder and constructs a [`GetSigningProfileInput`](crate::operation::get_signing_profile::GetSigningProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_signing_profile::GetSigningProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_signing_profile::GetSigningProfileInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_signing_profile::GetSigningProfileInput {
             profile_name: self.profile_name,
             profile_owner: self.profile_owner,

@@ -18,8 +18,10 @@ impl DescribeReportCreationInputBuilder {
     /// Consumes the builder and constructs a [`DescribeReportCreationInput`](crate::operation::describe_report_creation::DescribeReportCreationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_report_creation::DescribeReportCreationInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_report_creation::DescribeReportCreationInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_report_creation::DescribeReportCreationInput {})
     }
 }

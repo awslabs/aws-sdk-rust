@@ -17,8 +17,10 @@ impl Compatibility {
         self.cluster_version.as_deref()
     }
     /// <p>The supported compute platform.</p>
-    pub fn platform_versions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.platform_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.platform_versions.is_none()`.
+    pub fn platform_versions(&self) -> &[::std::string::String] {
+        self.platform_versions.as_deref().unwrap_or_default()
     }
     /// <p>The supported default version.</p>
     pub fn default_version(&self) -> bool {

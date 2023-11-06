@@ -34,6 +34,7 @@ pub struct DescribeAuditSuppressionInputBuilder {
 }
 impl DescribeAuditSuppressionInputBuilder {
     /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
+    /// This field is required.
     pub fn check_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.check_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeAuditSuppressionInputBuilder {
         &self.check_name
     }
     /// <p>Information that identifies the noncompliant resource.</p>
+    /// This field is required.
     pub fn resource_identifier(mut self, input: crate::types::ResourceIdentifier) -> Self {
         self.resource_identifier = ::std::option::Option::Some(input);
         self
@@ -66,7 +68,7 @@ impl DescribeAuditSuppressionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_audit_suppression::DescribeAuditSuppressionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_audit_suppression::DescribeAuditSuppressionInput {
             check_name: self.check_name,

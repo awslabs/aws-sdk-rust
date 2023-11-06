@@ -2,27 +2,27 @@
 pub fn ser_database_lf_tag_policy_and_permissions(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DatabaseLfTagPolicyAndPermissions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.expression {
-        let mut array_2 = object.key("Expression").start_array();
-        for item_3 in var_1 {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        let mut array_1 = object.key("Expression").start_array();
+        for item_2 in &input.expression {
             {
                 #[allow(unused_mut)]
-                let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_lf_tag::ser_lf_tag(&mut object_4, item_3)?;
-                object_4.finish();
+                let mut object_3 = array_1.value().start_object();
+                crate::protocol_serde::shape_lf_tag::ser_lf_tag(&mut object_3, item_2)?;
+                object_3.finish();
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
-    if let Some(var_5) = &input.permissions {
-        let mut array_6 = object.key("Permissions").start_array();
-        for item_7 in var_5 {
+    {
+        let mut array_4 = object.key("Permissions").start_array();
+        for item_5 in &input.permissions {
             {
-                array_6.value().string(item_7.as_str());
+                array_4.value().string(item_5.as_str());
             }
         }
-        array_6.finish();
+        array_4.finish();
     }
     Ok(())
 }
@@ -60,7 +60,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::database_lf_tag_policy_and_permissions_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -11,8 +11,10 @@ pub struct ListHumanTaskUisOutput {
 }
 impl ListHumanTaskUisOutput {
     /// <p>An array of objects describing the human task user interfaces.</p>
-    pub fn human_task_ui_summaries(&self) -> ::std::option::Option<&[crate::types::HumanTaskUiSummary]> {
-        self.human_task_ui_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.human_task_ui_summaries.is_none()`.
+    pub fn human_task_ui_summaries(&self) -> &[crate::types::HumanTaskUiSummary] {
+        self.human_task_ui_summaries.as_deref().unwrap_or_default()
     }
     /// <p>A token to resume pagination.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

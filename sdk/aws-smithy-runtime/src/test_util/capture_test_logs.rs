@@ -83,7 +83,8 @@ where
     fn write(&mut self, buf: &[u8]) -> std::io::Result<usize> {
         self.buf.lock().unwrap().extend_from_slice(buf);
         if !self.quiet {
-            self.inner.write(buf)
+            self.inner.write_all(buf)?;
+            Ok(buf.len())
         } else {
             Ok(buf.len())
         }

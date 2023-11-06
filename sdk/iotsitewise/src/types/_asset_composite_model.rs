@@ -5,32 +5,35 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetCompositeModel {
     /// <p>The name of the composite model.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The description of the composite model.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The type of the composite model. For alarm composite models, this type is <code>AWS/ALARM</code>.</p>
-    pub r#type: ::std::option::Option<::std::string::String>,
+    pub r#type: ::std::string::String,
     /// <p>The asset properties that this composite model defines.</p>
-    pub properties: ::std::option::Option<::std::vec::Vec<crate::types::AssetProperty>>,
+    pub properties: ::std::vec::Vec<crate::types::AssetProperty>,
     /// <p> The ID of the asset composite model. </p>
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl AssetCompositeModel {
     /// <p>The name of the composite model.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The description of the composite model.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The type of the composite model. For alarm composite models, this type is <code>AWS/ALARM</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
-        self.r#type.as_deref()
+    pub fn r#type(&self) -> &str {
+        use std::ops::Deref;
+        self.r#type.deref()
     }
     /// <p>The asset properties that this composite model defines.</p>
-    pub fn properties(&self) -> ::std::option::Option<&[crate::types::AssetProperty]> {
-        self.properties.as_deref()
+    pub fn properties(&self) -> &[crate::types::AssetProperty] {
+        use std::ops::Deref;
+        self.properties.deref()
     }
     /// <p> The ID of the asset composite model. </p>
     pub fn id(&self) -> ::std::option::Option<&str> {
@@ -56,6 +59,7 @@ pub struct AssetCompositeModelBuilder {
 }
 impl AssetCompositeModelBuilder {
     /// <p>The name of the composite model.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +88,7 @@ impl AssetCompositeModelBuilder {
         &self.description
     }
     /// <p>The type of the composite model. For alarm composite models, this type is <code>AWS/ALARM</code>.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
@@ -132,13 +137,32 @@ impl AssetCompositeModelBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`AssetCompositeModel`](crate::types::AssetCompositeModel).
-    pub fn build(self) -> crate::types::AssetCompositeModel {
-        crate::types::AssetCompositeModel {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::AssetCompositeModelBuilder::name)
+    /// - [`r#type`](crate::types::builders::AssetCompositeModelBuilder::r#type)
+    /// - [`properties`](crate::types::builders::AssetCompositeModelBuilder::properties)
+    pub fn build(self) -> ::std::result::Result<crate::types::AssetCompositeModel, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AssetCompositeModel {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building AssetCompositeModel",
+                )
+            })?,
             description: self.description,
-            r#type: self.r#type,
-            properties: self.properties,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building AssetCompositeModel",
+                )
+            })?,
+            properties: self.properties.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "properties",
+                    "properties was not specified but it is required when building AssetCompositeModel",
+                )
+            })?,
             id: self.id,
-        }
+        })
     }
 }

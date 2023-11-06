@@ -41,6 +41,7 @@ pub struct ListDetectorModelVersionsInputBuilder {
 }
 impl ListDetectorModelVersionsInputBuilder {
     /// <p>The name of the detector model whose versions are returned.</p>
+    /// This field is required.
     pub fn detector_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_model_name = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListDetectorModelVersionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_detector_model_versions::ListDetectorModelVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_detector_model_versions::ListDetectorModelVersionsInput {
             detector_model_name: self.detector_model_name,

@@ -11,12 +11,16 @@ pub struct DeleteTaskDefinitionsOutput {
 }
 impl DeleteTaskDefinitionsOutput {
     /// <p>The list of deleted task definitions.</p>
-    pub fn task_definitions(&self) -> ::std::option::Option<&[crate::types::TaskDefinition]> {
-        self.task_definitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.task_definitions.is_none()`.
+    pub fn task_definitions(&self) -> &[crate::types::TaskDefinition] {
+        self.task_definitions.as_deref().unwrap_or_default()
     }
     /// <p>Any failures associated with the call.</p>
-    pub fn failures(&self) -> ::std::option::Option<&[crate::types::Failure]> {
-        self.failures.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failures.is_none()`.
+    pub fn failures(&self) -> &[crate::types::Failure] {
+        self.failures.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteTaskDefinitionsOutput {

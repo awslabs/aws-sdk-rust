@@ -27,6 +27,7 @@ pub struct DisassociateBrowserSettingsInputBuilder {
 }
 impl DisassociateBrowserSettingsInputBuilder {
     /// <p>The ARN of the web portal.</p>
+    /// This field is required.
     pub fn portal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portal_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DisassociateBrowserSettingsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_browser_settings::DisassociateBrowserSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_browser_settings::DisassociateBrowserSettingsInput { portal_arn: self.portal_arn })
     }

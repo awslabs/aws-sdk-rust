@@ -27,6 +27,7 @@ pub struct DescribeSubscribedWorkteamInputBuilder {
 }
 impl DescribeSubscribedWorkteamInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the subscribed work team to describe.</p>
+    /// This field is required.
     pub fn workteam_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workteam_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeSubscribedWorkteamInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_subscribed_workteam::DescribeSubscribedWorkteamInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_subscribed_workteam::DescribeSubscribedWorkteamInput {
             workteam_arn: self.workteam_arn,

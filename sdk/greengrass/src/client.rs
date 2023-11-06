@@ -84,31 +84,22 @@ impl Client {
     ///
     /// # Panics
     ///
-    /// This method will panic if the `conf` has retry or timeouts enabled without a `sleep_impl`.
-    /// If you experience this panic, it can be fixed by setting the `sleep_impl`, or by disabling
-    /// retries and timeouts.
+    /// This method will panic in the following cases:
+    ///
+    /// - Retries or timeouts are enabled without a `sleep_impl` configured.
+    /// - Identity caching is enabled without a `sleep_impl` and `time_source` configured.
+    ///
+    /// The panic message for each of these will have instructions on how to resolve them.
     pub fn from_conf(conf: crate::Config) -> Self {
-        let retry_config = conf
-            .retry_config()
-            .cloned()
-            .unwrap_or_else(::aws_smithy_types::retry::RetryConfig::disabled);
-        let timeout_config = conf
-            .timeout_config()
-            .cloned()
-            .unwrap_or_else(::aws_smithy_types::timeout::TimeoutConfig::disabled);
-        let sleep_impl = conf.sleep_impl();
-        if (retry_config.has_retry() || timeout_config.has_timeouts()) && sleep_impl.is_none() {
-            panic!(
-                "An async sleep implementation is required for retries or timeouts to work. \
-                                        Set the `sleep_impl` on the Config passed into this function to fix this panic."
-            );
+        let handle = Handle {
+            conf: conf.clone(),
+            runtime_plugins: crate::config::base_client_runtime_plugins(conf),
+        };
+        if let Err(err) = Self::validate_config(&handle) {
+            panic!("Invalid client configuration: {err}");
         }
-
         Self {
-            handle: ::std::sync::Arc::new(Handle {
-                conf: conf.clone(),
-                runtime_plugins: crate::config::base_client_runtime_plugins(conf),
-            }),
+            handle: ::std::sync::Arc::new(handle),
         }
     }
 
@@ -117,20 +108,13 @@ impl Client {
         &self.handle.conf
     }
 
-    #[doc(hidden)]
-    // TODO(enableNewSmithyRuntimeCleanup): Delete this function when cleaning up middleware
-    // This is currently kept around so the tests still compile in both modes
-    /// Creates a client with the given service configuration.
-    pub fn with_config<C, M, R>(_client: ::aws_smithy_client::Client<C, M, R>, conf: crate::Config) -> Self {
-        Self::from_conf(conf)
-    }
-
-    #[doc(hidden)]
-    // TODO(enableNewSmithyRuntimeCleanup): Delete this function when cleaning up middleware
-    // This is currently kept around so the tests still compile in both modes
-    /// Returns the client's configuration.
-    pub fn conf(&self) -> &crate::Config {
-        &self.handle.conf
+    fn validate_config(handle: &Handle) -> Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        let mut cfg = ::aws_smithy_types::config_bag::ConfigBag::base();
+        handle
+            .runtime_plugins
+            .apply_client_configuration(&mut cfg)?
+            .validate_base_client_config(&cfg)?;
+        Ok(())
     }
 }
 
@@ -203,7 +187,6 @@ mod create_subscription_definition_version;
 ///
 /// let result = client.associate_role_to_group()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

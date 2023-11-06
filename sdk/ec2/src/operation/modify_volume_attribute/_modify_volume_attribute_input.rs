@@ -55,6 +55,7 @@ impl ModifyVolumeAttributeInputBuilder {
         &self.auto_enable_io
     }
     /// <p>The ID of the volume.</p>
+    /// This field is required.
     pub fn volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl ModifyVolumeAttributeInputBuilder {
     /// Consumes the builder and constructs a [`ModifyVolumeAttributeInput`](crate::operation::modify_volume_attribute::ModifyVolumeAttributeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_volume_attribute::ModifyVolumeAttributeInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::modify_volume_attribute::ModifyVolumeAttributeInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::modify_volume_attribute::ModifyVolumeAttributeInput {
             auto_enable_io: self.auto_enable_io,

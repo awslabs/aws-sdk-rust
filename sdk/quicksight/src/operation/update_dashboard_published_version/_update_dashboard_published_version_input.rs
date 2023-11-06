@@ -41,6 +41,7 @@ pub struct UpdateDashboardPublishedVersionInputBuilder {
 }
 impl UpdateDashboardPublishedVersionInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're updating.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateDashboardPublishedVersionInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID for the dashboard.</p>
+    /// This field is required.
     pub fn dashboard_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dashboard_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl UpdateDashboardPublishedVersionInputBuilder {
         &self.dashboard_id
     }
     /// <p>The version number of the dashboard.</p>
+    /// This field is required.
     pub fn version_number(mut self, input: i64) -> Self {
         self.version_number = ::std::option::Option::Some(input);
         self
@@ -87,7 +90,7 @@ impl UpdateDashboardPublishedVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_dashboard_published_version::UpdateDashboardPublishedVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_dashboard_published_version::UpdateDashboardPublishedVersionInput {

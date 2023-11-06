@@ -34,6 +34,7 @@ pub struct GetDomainPermissionsPolicyInputBuilder {
 }
 impl GetDomainPermissionsPolicyInputBuilder {
     /// <p> The name of the domain to which the resource policy is attached. </p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl GetDomainPermissionsPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_domain_permissions_policy::GetDomainPermissionsPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_domain_permissions_policy::GetDomainPermissionsPolicyInput {
             domain: self.domain,

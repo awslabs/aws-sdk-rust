@@ -41,6 +41,7 @@ pub struct UpdateMembershipInputBuilder {
 }
 impl UpdateMembershipInputBuilder {
     /// <p>The unique identifier of the membership.</p>
+    /// This field is required.
     pub fn membership_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.membership_identifier = ::std::option::Option::Some(input.into());
         self
@@ -88,7 +89,7 @@ impl UpdateMembershipInputBuilder {
     /// Consumes the builder and constructs a [`UpdateMembershipInput`](crate::operation::update_membership::UpdateMembershipInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_membership::UpdateMembershipInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_membership::UpdateMembershipInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_membership::UpdateMembershipInput {
             membership_identifier: self.membership_identifier,
             query_log_status: self.query_log_status,

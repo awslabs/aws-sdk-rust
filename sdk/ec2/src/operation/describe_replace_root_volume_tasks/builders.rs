@@ -10,7 +10,7 @@ impl DescribeReplaceRootVolumeTasksInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_replace_root_volume_tasks::DescribeReplaceRootVolumeTasksOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::describe_replace_root_volume_tasks::DescribeReplaceRootVolumeTasksError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl DescribeReplaceRootVolumeTasksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_replace_root_volume_tasks::DescribeReplaceRootVolumeTasksOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::describe_replace_root_volume_tasks::DescribeReplaceRootVolumeTasksError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::describe_replace_root_volume_tasks::DescribeReplaceRootVolumeTasks::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -86,20 +89,15 @@ impl DescribeReplaceRootVolumeTasksFluentBuilder {
         crate::operation::describe_replace_root_volume_tasks::DescribeReplaceRootVolumeTasks::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::describe_replace_root_volume_tasks::DescribeReplaceRootVolumeTasksOutput,
-            crate::operation::describe_replace_root_volume_tasks::DescribeReplaceRootVolumeTasksError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::describe_replace_root_volume_tasks::DescribeReplaceRootVolumeTasksError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::describe_replace_root_volume_tasks::DescribeReplaceRootVolumeTasksOutput,
+        crate::operation::describe_replace_root_volume_tasks::DescribeReplaceRootVolumeTasksError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -112,7 +110,7 @@ impl DescribeReplaceRootVolumeTasksFluentBuilder {
     }
     /// Create a paginator for this request
     ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_replace_root_volume_tasks::paginator::DescribeReplaceRootVolumeTasksPaginator::send) which returns a `Stream`.
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_replace_root_volume_tasks::paginator::DescribeReplaceRootVolumeTasksPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
     pub fn into_paginator(self) -> crate::operation::describe_replace_root_volume_tasks::paginator::DescribeReplaceRootVolumeTasksPaginator {
         crate::operation::describe_replace_root_volume_tasks::paginator::DescribeReplaceRootVolumeTasksPaginator::new(self.handle, self.inner)
     }

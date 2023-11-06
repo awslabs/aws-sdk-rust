@@ -42,7 +42,7 @@ where
 pub fn ser_ingress_access_logs(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IngressAccessLogs,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.log_group_name {
         object.key("logGroupName").string(var_1.as_str());
     }

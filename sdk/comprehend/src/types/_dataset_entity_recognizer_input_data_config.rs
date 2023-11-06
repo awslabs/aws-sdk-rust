@@ -56,6 +56,7 @@ impl DatasetEntityRecognizerInputDataConfigBuilder {
         &self.annotations
     }
     /// <p>The format and location of the training documents for your custom entity recognizer.</p>
+    /// This field is required.
     pub fn documents(mut self, input: crate::types::DatasetEntityRecognizerDocuments) -> Self {
         self.documents = ::std::option::Option::Some(input);
         self

@@ -6,12 +6,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrackingOptions {
     /// <p>The domain that you want to use for tracking open and click events.</p>
-    pub custom_redirect_domain: ::std::option::Option<::std::string::String>,
+    pub custom_redirect_domain: ::std::string::String,
 }
 impl TrackingOptions {
     /// <p>The domain that you want to use for tracking open and click events.</p>
-    pub fn custom_redirect_domain(&self) -> ::std::option::Option<&str> {
-        self.custom_redirect_domain.as_deref()
+    pub fn custom_redirect_domain(&self) -> &str {
+        use std::ops::Deref;
+        self.custom_redirect_domain.deref()
     }
 }
 impl TrackingOptions {
@@ -29,6 +30,7 @@ pub struct TrackingOptionsBuilder {
 }
 impl TrackingOptionsBuilder {
     /// <p>The domain that you want to use for tracking open and click events.</p>
+    /// This field is required.
     pub fn custom_redirect_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_redirect_domain = ::std::option::Option::Some(input.into());
         self
@@ -43,9 +45,16 @@ impl TrackingOptionsBuilder {
         &self.custom_redirect_domain
     }
     /// Consumes the builder and constructs a [`TrackingOptions`](crate::types::TrackingOptions).
-    pub fn build(self) -> crate::types::TrackingOptions {
-        crate::types::TrackingOptions {
-            custom_redirect_domain: self.custom_redirect_domain,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`custom_redirect_domain`](crate::types::builders::TrackingOptionsBuilder::custom_redirect_domain)
+    pub fn build(self) -> ::std::result::Result<crate::types::TrackingOptions, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TrackingOptions {
+            custom_redirect_domain: self.custom_redirect_domain.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "custom_redirect_domain",
+                    "custom_redirect_domain was not specified but it is required when building TrackingOptions",
+                )
+            })?,
+        })
     }
 }

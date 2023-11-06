@@ -37,6 +37,7 @@ pub struct DetachVolumeInputBuilder {
 }
 impl DetachVolumeInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the volume to detach from the gateway.</p>
+    /// This field is required.
     pub fn volume_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_arn = ::std::option::Option::Some(input.into());
         self
@@ -68,7 +69,9 @@ impl DetachVolumeInputBuilder {
         &self.force_detach
     }
     /// Consumes the builder and constructs a [`DetachVolumeInput`](crate::operation::detach_volume::DetachVolumeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::detach_volume::DetachVolumeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::detach_volume::DetachVolumeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::detach_volume::DetachVolumeInput {
             volume_arn: self.volume_arn,
             force_detach: self.force_detach,

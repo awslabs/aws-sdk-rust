@@ -5,24 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TeradataParameters {
     /// <p>Host.</p>
-    pub host: ::std::option::Option<::std::string::String>,
+    pub host: ::std::string::String,
     /// <p>Port.</p>
-    pub port: ::std::option::Option<i32>,
+    pub port: i32,
     /// <p>Database.</p>
-    pub database: ::std::option::Option<::std::string::String>,
+    pub database: ::std::string::String,
 }
 impl TeradataParameters {
     /// <p>Host.</p>
-    pub fn host(&self) -> ::std::option::Option<&str> {
-        self.host.as_deref()
+    pub fn host(&self) -> &str {
+        use std::ops::Deref;
+        self.host.deref()
     }
     /// <p>Port.</p>
-    pub fn port(&self) -> ::std::option::Option<i32> {
+    pub fn port(&self) -> i32 {
         self.port
     }
     /// <p>Database.</p>
-    pub fn database(&self) -> ::std::option::Option<&str> {
-        self.database.as_deref()
+    pub fn database(&self) -> &str {
+        use std::ops::Deref;
+        self.database.deref()
     }
 }
 impl TeradataParameters {
@@ -42,6 +44,7 @@ pub struct TeradataParametersBuilder {
 }
 impl TeradataParametersBuilder {
     /// <p>Host.</p>
+    /// This field is required.
     pub fn host(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl TeradataParametersBuilder {
         &self.host
     }
     /// <p>Port.</p>
+    /// This field is required.
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
         self
@@ -70,6 +74,7 @@ impl TeradataParametersBuilder {
         &self.port
     }
     /// <p>Database.</p>
+    /// This field is required.
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +89,30 @@ impl TeradataParametersBuilder {
         &self.database
     }
     /// Consumes the builder and constructs a [`TeradataParameters`](crate::types::TeradataParameters).
-    pub fn build(self) -> crate::types::TeradataParameters {
-        crate::types::TeradataParameters {
-            host: self.host,
-            port: self.port,
-            database: self.database,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`host`](crate::types::builders::TeradataParametersBuilder::host)
+    /// - [`port`](crate::types::builders::TeradataParametersBuilder::port)
+    /// - [`database`](crate::types::builders::TeradataParametersBuilder::database)
+    pub fn build(self) -> ::std::result::Result<crate::types::TeradataParameters, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TeradataParameters {
+            host: self.host.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "host",
+                    "host was not specified but it is required when building TeradataParameters",
+                )
+            })?,
+            port: self.port.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "port",
+                    "port was not specified but it is required when building TeradataParameters",
+                )
+            })?,
+            database: self.database.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "database",
+                    "database was not specified but it is required when building TeradataParameters",
+                )
+            })?,
+        })
     }
 }

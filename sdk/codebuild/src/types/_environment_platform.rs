@@ -15,8 +15,10 @@ impl EnvironmentPlatform {
         self.platform.as_ref()
     }
     /// <p>The list of programming languages that are available for the specified platform.</p>
-    pub fn languages(&self) -> ::std::option::Option<&[crate::types::EnvironmentLanguage]> {
-        self.languages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.languages.is_none()`.
+    pub fn languages(&self) -> &[crate::types::EnvironmentLanguage] {
+        self.languages.as_deref().unwrap_or_default()
     }
 }
 impl EnvironmentPlatform {

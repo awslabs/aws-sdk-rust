@@ -2,128 +2,128 @@
 pub fn ser_create_association_batch_request_entry(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CreateAssociationBatchRequestEntry,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("Name").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.instance_id {
-        object.key("InstanceId").string(var_2.as_str());
+    if let Some(var_1) = &input.instance_id {
+        object.key("InstanceId").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.parameters {
+    if let Some(var_2) = &input.parameters {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("Parameters").start_object();
-        for (key_5, value_6) in var_3 {
+        let mut object_3 = object.key("Parameters").start_object();
+        for (key_4, value_5) in var_2 {
             {
-                let mut array_7 = object_4.key(key_5.as_str()).start_array();
-                for item_8 in value_6 {
+                let mut array_6 = object_3.key(key_4.as_str()).start_array();
+                for item_7 in value_5 {
                     {
-                        array_7.value().string(item_8.as_str());
+                        array_6.value().string(item_7.as_str());
                     }
                 }
-                array_7.finish();
+                array_6.finish();
             }
         }
-        object_4.finish();
+        object_3.finish();
     }
-    if let Some(var_9) = &input.automation_target_parameter_name {
-        object.key("AutomationTargetParameterName").string(var_9.as_str());
+    if let Some(var_8) = &input.automation_target_parameter_name {
+        object.key("AutomationTargetParameterName").string(var_8.as_str());
     }
-    if let Some(var_10) = &input.document_version {
-        object.key("DocumentVersion").string(var_10.as_str());
+    if let Some(var_9) = &input.document_version {
+        object.key("DocumentVersion").string(var_9.as_str());
     }
-    if let Some(var_11) = &input.targets {
-        let mut array_12 = object.key("Targets").start_array();
-        for item_13 in var_11 {
+    if let Some(var_10) = &input.targets {
+        let mut array_11 = object.key("Targets").start_array();
+        for item_12 in var_10 {
             {
                 #[allow(unused_mut)]
-                let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_target::ser_target(&mut object_14, item_13)?;
-                object_14.finish();
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_target::ser_target(&mut object_13, item_12)?;
+                object_13.finish();
             }
         }
-        array_12.finish();
+        array_11.finish();
     }
-    if let Some(var_15) = &input.schedule_expression {
-        object.key("ScheduleExpression").string(var_15.as_str());
+    if let Some(var_14) = &input.schedule_expression {
+        object.key("ScheduleExpression").string(var_14.as_str());
     }
-    if let Some(var_16) = &input.output_location {
+    if let Some(var_15) = &input.output_location {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("OutputLocation").start_object();
-        crate::protocol_serde::shape_instance_association_output_location::ser_instance_association_output_location(&mut object_17, var_16)?;
-        object_17.finish();
+        let mut object_16 = object.key("OutputLocation").start_object();
+        crate::protocol_serde::shape_instance_association_output_location::ser_instance_association_output_location(&mut object_16, var_15)?;
+        object_16.finish();
     }
-    if let Some(var_18) = &input.association_name {
-        object.key("AssociationName").string(var_18.as_str());
+    if let Some(var_17) = &input.association_name {
+        object.key("AssociationName").string(var_17.as_str());
     }
-    if let Some(var_19) = &input.max_errors {
-        object.key("MaxErrors").string(var_19.as_str());
+    if let Some(var_18) = &input.max_errors {
+        object.key("MaxErrors").string(var_18.as_str());
     }
-    if let Some(var_20) = &input.max_concurrency {
-        object.key("MaxConcurrency").string(var_20.as_str());
+    if let Some(var_19) = &input.max_concurrency {
+        object.key("MaxConcurrency").string(var_19.as_str());
     }
-    if let Some(var_21) = &input.compliance_severity {
-        object.key("ComplianceSeverity").string(var_21.as_str());
+    if let Some(var_20) = &input.compliance_severity {
+        object.key("ComplianceSeverity").string(var_20.as_str());
     }
-    if let Some(var_22) = &input.sync_compliance {
-        object.key("SyncCompliance").string(var_22.as_str());
+    if let Some(var_21) = &input.sync_compliance {
+        object.key("SyncCompliance").string(var_21.as_str());
     }
     if input.apply_only_at_cron_interval {
         object.key("ApplyOnlyAtCronInterval").boolean(input.apply_only_at_cron_interval);
     }
-    if let Some(var_23) = &input.calendar_names {
-        let mut array_24 = object.key("CalendarNames").start_array();
-        for item_25 in var_23 {
+    if let Some(var_22) = &input.calendar_names {
+        let mut array_23 = object.key("CalendarNames").start_array();
+        for item_24 in var_22 {
             {
-                array_24.value().string(item_25.as_str());
+                array_23.value().string(item_24.as_str());
             }
         }
-        array_24.finish();
+        array_23.finish();
     }
-    if let Some(var_26) = &input.target_locations {
-        let mut array_27 = object.key("TargetLocations").start_array();
-        for item_28 in var_26 {
+    if let Some(var_25) = &input.target_locations {
+        let mut array_26 = object.key("TargetLocations").start_array();
+        for item_27 in var_25 {
             {
                 #[allow(unused_mut)]
-                let mut object_29 = array_27.value().start_object();
-                crate::protocol_serde::shape_target_location::ser_target_location(&mut object_29, item_28)?;
-                object_29.finish();
+                let mut object_28 = array_26.value().start_object();
+                crate::protocol_serde::shape_target_location::ser_target_location(&mut object_28, item_27)?;
+                object_28.finish();
             }
         }
-        array_27.finish();
+        array_26.finish();
     }
-    if let Some(var_30) = &input.schedule_offset {
+    if let Some(var_29) = &input.schedule_offset {
         object.key("ScheduleOffset").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_30).into()),
+            ::aws_smithy_types::Number::NegInt((*var_29).into()),
         );
     }
-    if let Some(var_31) = &input.target_maps {
-        let mut array_32 = object.key("TargetMaps").start_array();
-        for item_33 in var_31 {
+    if let Some(var_30) = &input.target_maps {
+        let mut array_31 = object.key("TargetMaps").start_array();
+        for item_32 in var_30 {
             {
                 #[allow(unused_mut)]
-                let mut object_34 = array_32.value().start_object();
-                for (key_35, value_36) in item_33 {
+                let mut object_33 = array_31.value().start_object();
+                for (key_34, value_35) in item_32 {
                     {
-                        let mut array_37 = object_34.key(key_35.as_str()).start_array();
-                        for item_38 in value_36 {
+                        let mut array_36 = object_33.key(key_34.as_str()).start_array();
+                        for item_37 in value_35 {
                             {
-                                array_37.value().string(item_38.as_str());
+                                array_36.value().string(item_37.as_str());
                             }
                         }
-                        array_37.finish();
+                        array_36.finish();
                     }
                 }
-                object_34.finish();
+                object_33.finish();
             }
         }
-        array_32.finish();
+        array_31.finish();
     }
-    if let Some(var_39) = &input.alarm_configuration {
+    if let Some(var_38) = &input.alarm_configuration {
         #[allow(unused_mut)]
-        let mut object_40 = object.key("AlarmConfiguration").start_object();
-        crate::protocol_serde::shape_alarm_configuration::ser_alarm_configuration(&mut object_40, var_39)?;
-        object_40.finish();
+        let mut object_39 = object.key("AlarmConfiguration").start_object();
+        crate::protocol_serde::shape_alarm_configuration::ser_alarm_configuration(&mut object_39, var_38)?;
+        object_39.finish();
     }
     Ok(())
 }
@@ -260,7 +260,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::create_association_batch_request_entry_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

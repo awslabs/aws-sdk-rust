@@ -9,7 +9,7 @@ pub struct SourceAuth {
     /// <p> This data type is deprecated and is no longer accurate or used. </p>
     /// </note>
     /// <p>The authorization type to use. The only valid value is <code>OAUTH</code>, which represents the OAuth authorization type.</p>
-    pub r#type: ::std::option::Option<crate::types::SourceAuthType>,
+    pub r#type: crate::types::SourceAuthType,
     /// <p>The resource value that applies to the specified authorization type.</p>
     pub resource: ::std::option::Option<::std::string::String>,
 }
@@ -18,8 +18,8 @@ impl SourceAuth {
     /// <p> This data type is deprecated and is no longer accurate or used. </p>
     /// </note>
     /// <p>The authorization type to use. The only valid value is <code>OAUTH</code>, which represents the OAuth authorization type.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::SourceAuthType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::SourceAuthType {
+        &self.r#type
     }
     /// <p>The resource value that applies to the specified authorization type.</p>
     pub fn resource(&self) -> ::std::option::Option<&str> {
@@ -45,6 +45,7 @@ impl SourceAuthBuilder {
     /// <p> This data type is deprecated and is no longer accurate or used. </p>
     /// </note>
     /// <p>The authorization type to use. The only valid value is <code>OAUTH</code>, which represents the OAuth authorization type.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::SourceAuthType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -79,10 +80,17 @@ impl SourceAuthBuilder {
         &self.resource
     }
     /// Consumes the builder and constructs a [`SourceAuth`](crate::types::SourceAuth).
-    pub fn build(self) -> crate::types::SourceAuth {
-        crate::types::SourceAuth {
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::SourceAuthBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::SourceAuth, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SourceAuth {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building SourceAuth",
+                )
+            })?,
             resource: self.resource,
-        }
+        })
     }
 }

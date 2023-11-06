@@ -27,6 +27,7 @@ pub struct GetPlaybackKeyPairInputBuilder {
 }
 impl GetPlaybackKeyPairInputBuilder {
     /// <p>ARN of the key pair to be returned.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetPlaybackKeyPairInputBuilder {
     /// Consumes the builder and constructs a [`GetPlaybackKeyPairInput`](crate::operation::get_playback_key_pair::GetPlaybackKeyPairInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_playback_key_pair::GetPlaybackKeyPairInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_playback_key_pair::GetPlaybackKeyPairInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_playback_key_pair::GetPlaybackKeyPairInput { arn: self.arn })
     }

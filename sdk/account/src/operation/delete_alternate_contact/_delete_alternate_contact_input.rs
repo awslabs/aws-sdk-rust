@@ -44,6 +44,7 @@ pub struct DeleteAlternateContactInputBuilder {
 }
 impl DeleteAlternateContactInputBuilder {
     /// <p>Specifies which of the alternate contacts to delete. </p>
+    /// This field is required.
     pub fn alternate_contact_type(mut self, input: crate::types::AlternateContactType) -> Self {
         self.alternate_contact_type = ::std::option::Option::Some(input);
         self
@@ -89,8 +90,10 @@ impl DeleteAlternateContactInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAlternateContactInput`](crate::operation::delete_alternate_contact::DeleteAlternateContactInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_alternate_contact::DeleteAlternateContactInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_alternate_contact::DeleteAlternateContactInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_alternate_contact::DeleteAlternateContactInput {
             alternate_contact_type: self.alternate_contact_type,
             account_id: self.account_id,

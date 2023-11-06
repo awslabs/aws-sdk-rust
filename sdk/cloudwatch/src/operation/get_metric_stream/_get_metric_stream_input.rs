@@ -27,6 +27,7 @@ pub struct GetMetricStreamInputBuilder {
 }
 impl GetMetricStreamInputBuilder {
     /// <p>The name of the metric stream to retrieve information about.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetMetricStreamInputBuilder {
     /// Consumes the builder and constructs a [`GetMetricStreamInput`](crate::operation::get_metric_stream::GetMetricStreamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_metric_stream::GetMetricStreamInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_metric_stream::GetMetricStreamInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_metric_stream::GetMetricStreamInput { name: self.name })
     }
 }

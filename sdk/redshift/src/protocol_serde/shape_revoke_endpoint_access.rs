@@ -274,7 +274,7 @@ pub fn de_revoke_endpoint_access(
                         ?
                     )
                 ;
-                builder = builder.set_allowed_all_vp_cs(var_7);
+                builder = builder.set_allowed_all_vpcs(var_7);
             }
             ,
             s if s.matches("AllowedVPCs") /* AllowedVPCs com.amazonaws.redshift.synthetic#RevokeEndpointAccessOutput$AllowedVPCs */ =>  {
@@ -284,7 +284,7 @@ pub fn de_revoke_endpoint_access(
                         ?
                     )
                 ;
-                builder = builder.set_allowed_vp_cs(var_8);
+                builder = builder.set_allowed_vpcs(var_8);
             }
             ,
             s if s.matches("EndpointCount") /* EndpointCount com.amazonaws.redshift.synthetic#RevokeEndpointAccessOutput$EndpointCount */ =>  {

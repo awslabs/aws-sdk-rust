@@ -34,6 +34,7 @@ pub struct DeleteWorkspaceApiKeyInputBuilder {
 }
 impl DeleteWorkspaceApiKeyInputBuilder {
     /// <p>The name of the API key to delete.</p>
+    /// This field is required.
     pub fn key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteWorkspaceApiKeyInputBuilder {
         &self.key_name
     }
     /// <p>The ID of the workspace to delete.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DeleteWorkspaceApiKeyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteWorkspaceApiKeyInput`](crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyInput {
             key_name: self.key_name,

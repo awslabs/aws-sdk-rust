@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteNetworkProfile`](crate::operation::delete_network_profile::builders::DeleteNetworkProfileFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`network_profile_arn(impl Into<String>)`](crate::operation::delete_network_profile::builders::DeleteNetworkProfileFluentBuilder::network_profile_arn) / [`set_network_profile_arn(Option<String>)`](crate::operation::delete_network_profile::builders::DeleteNetworkProfileFluentBuilder::set_network_profile_arn): <p>The ARN of the network profile associated with a device.</p>
+    ///   - [`network_profile_arn(impl Into<String>)`](crate::operation::delete_network_profile::builders::DeleteNetworkProfileFluentBuilder::network_profile_arn) / [`set_network_profile_arn(Option<String>)`](crate::operation::delete_network_profile::builders::DeleteNetworkProfileFluentBuilder::set_network_profile_arn):<br>required: **true**<br><p>The ARN of the network profile associated with a device.</p><br>
     /// - On success, responds with [`DeleteNetworkProfileOutput`](crate::operation::delete_network_profile::DeleteNetworkProfileOutput)
     /// - On failure, responds with [`SdkError<DeleteNetworkProfileError>`](crate::operation::delete_network_profile::DeleteNetworkProfileError)
     #[deprecated(note = "Alexa For Business is no longer supported")]

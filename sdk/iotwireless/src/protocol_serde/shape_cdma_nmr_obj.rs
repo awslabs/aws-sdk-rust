@@ -2,29 +2,29 @@
 pub fn ser_cdma_nmr_obj(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CdmaNmrObj,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.pn_offset {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
         object.key("PnOffset").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((input.pn_offset).into()),
+        );
+    }
+    {
+        object.key("CdmaChannel").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((input.cdma_channel).into()),
+        );
+    }
+    if let Some(var_1) = &input.pilot_power {
+        object.key("PilotPower").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_2) = &input.cdma_channel {
-        object.key("CdmaChannel").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
-        );
-    }
-    if let Some(var_3) = &input.pilot_power {
-        object.key("PilotPower").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
-        );
-    }
-    if let Some(var_4) = &input.base_station_id {
+    if let Some(var_2) = &input.base_station_id {
         object.key("BaseStationId").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())

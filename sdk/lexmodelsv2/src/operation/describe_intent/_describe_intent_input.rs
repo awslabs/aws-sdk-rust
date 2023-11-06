@@ -48,6 +48,7 @@ pub struct DescribeIntentInputBuilder {
 }
 impl DescribeIntentInputBuilder {
     /// <p>The identifier of the intent to describe.</p>
+    /// This field is required.
     pub fn intent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.intent_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl DescribeIntentInputBuilder {
         &self.intent_id
     }
     /// <p>The identifier of the bot associated with the intent.</p>
+    /// This field is required.
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl DescribeIntentInputBuilder {
         &self.bot_id
     }
     /// <p>The version of the bot associated with the intent.</p>
+    /// This field is required.
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl DescribeIntentInputBuilder {
         &self.bot_version
     }
     /// <p>The identifier of the language and locale of the intent to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// This field is required.
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +110,7 @@ impl DescribeIntentInputBuilder {
     /// Consumes the builder and constructs a [`DescribeIntentInput`](crate::operation::describe_intent::DescribeIntentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_intent::DescribeIntentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_intent::DescribeIntentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_intent::DescribeIntentInput {
             intent_id: self.intent_id,
             bot_id: self.bot_id,

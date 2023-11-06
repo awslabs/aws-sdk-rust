@@ -28,8 +28,10 @@ impl ListIdentitySourcesInput {
         self.max_results
     }
     /// <p>Specifies characteristics of an identity source that you can use to limit the output to matching identity sources.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::IdentitySourceFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::IdentitySourceFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
 }
 impl ListIdentitySourcesInput {
@@ -50,6 +52,7 @@ pub struct ListIdentitySourcesInputBuilder {
 }
 impl ListIdentitySourcesInputBuilder {
     /// <p>Specifies the ID of the policy store that contains the identity sources that you want to list.</p>
+    /// This field is required.
     pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_store_id = ::std::option::Option::Some(input.into());
         self
@@ -117,7 +120,7 @@ impl ListIdentitySourcesInputBuilder {
     /// Consumes the builder and constructs a [`ListIdentitySourcesInput`](crate::operation::list_identity_sources::ListIdentitySourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_identity_sources::ListIdentitySourcesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_identity_sources::ListIdentitySourcesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_identity_sources::ListIdentitySourcesInput {
             policy_store_id: self.policy_store_id,

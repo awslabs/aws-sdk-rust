@@ -66,6 +66,7 @@ pub struct UpdateFileSystemAssociationInputBuilder {
 }
 impl UpdateFileSystemAssociationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the file system association that you want to update.</p>
+    /// This field is required.
     pub fn file_system_association_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_association_arn = ::std::option::Option::Some(input.into());
         self
@@ -140,7 +141,7 @@ impl UpdateFileSystemAssociationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_file_system_association::UpdateFileSystemAssociationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_file_system_association::UpdateFileSystemAssociationInput {
             file_system_association_arn: self.file_system_association_arn,

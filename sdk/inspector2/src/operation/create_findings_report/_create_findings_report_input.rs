@@ -55,6 +55,7 @@ impl CreateFindingsReportInputBuilder {
         &self.filter_criteria
     }
     /// <p>The format to generate the report in.</p>
+    /// This field is required.
     pub fn report_format(mut self, input: crate::types::ReportFormat) -> Self {
         self.report_format = ::std::option::Option::Some(input);
         self
@@ -69,6 +70,7 @@ impl CreateFindingsReportInputBuilder {
         &self.report_format
     }
     /// <p>The Amazon S3 export destination for the report.</p>
+    /// This field is required.
     pub fn s3_destination(mut self, input: crate::types::Destination) -> Self {
         self.s3_destination = ::std::option::Option::Some(input);
         self
@@ -85,7 +87,7 @@ impl CreateFindingsReportInputBuilder {
     /// Consumes the builder and constructs a [`CreateFindingsReportInput`](crate::operation::create_findings_report::CreateFindingsReportInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_findings_report::CreateFindingsReportInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_findings_report::CreateFindingsReportInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_findings_report::CreateFindingsReportInput {
             filter_criteria: self.filter_criteria,

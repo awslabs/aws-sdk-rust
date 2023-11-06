@@ -15,8 +15,10 @@ pub struct DescribeConfigRuleEvaluationStatusInput {
 }
 impl DescribeConfigRuleEvaluationStatusInput {
     /// <p>The name of the Config managed rules for which you want status information. If you do not specify any names, Config returns status information for all Config managed rules that you use.</p>
-    pub fn config_rule_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.config_rule_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.config_rule_names.is_none()`.
+    pub fn config_rule_names(&self) -> &[::std::string::String] {
+        self.config_rule_names.as_deref().unwrap_or_default()
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -104,7 +106,7 @@ impl DescribeConfigRuleEvaluationStatusInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusInput {

@@ -34,6 +34,7 @@ pub struct DeleteSceneInputBuilder {
 }
 impl DeleteSceneInputBuilder {
     /// <p>The ID of the workspace.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteSceneInputBuilder {
         &self.workspace_id
     }
     /// <p>The ID of the scene to delete.</p>
+    /// This field is required.
     pub fn scene_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scene_id = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,7 @@ impl DeleteSceneInputBuilder {
         &self.scene_id
     }
     /// Consumes the builder and constructs a [`DeleteSceneInput`](crate::operation::delete_scene::DeleteSceneInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_scene::DeleteSceneInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_scene::DeleteSceneInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_scene::DeleteSceneInput {
             workspace_id: self.workspace_id,
             scene_id: self.scene_id,

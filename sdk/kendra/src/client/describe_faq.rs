@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeFaq`](crate::operation::describe_faq::builders::DescribeFaqFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::describe_faq::builders::DescribeFaqFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::describe_faq::builders::DescribeFaqFluentBuilder::set_id): <p>The identifier of the FAQ you want to get information on.</p>
-    ///   - [`index_id(impl Into<String>)`](crate::operation::describe_faq::builders::DescribeFaqFluentBuilder::index_id) / [`set_index_id(Option<String>)`](crate::operation::describe_faq::builders::DescribeFaqFluentBuilder::set_index_id): <p>The identifier of the index for the FAQ.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::describe_faq::builders::DescribeFaqFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::describe_faq::builders::DescribeFaqFluentBuilder::set_id):<br>required: **true**<br><p>The identifier of the FAQ you want to get information on.</p><br>
+    ///   - [`index_id(impl Into<String>)`](crate::operation::describe_faq::builders::DescribeFaqFluentBuilder::index_id) / [`set_index_id(Option<String>)`](crate::operation::describe_faq::builders::DescribeFaqFluentBuilder::set_index_id):<br>required: **true**<br><p>The identifier of the index for the FAQ.</p><br>
     /// - On success, responds with [`DescribeFaqOutput`](crate::operation::describe_faq::DescribeFaqOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::describe_faq::DescribeFaqOutput::id): <p>The identifier of the FAQ.</p>
     ///   - [`index_id(Option<String>)`](crate::operation::describe_faq::DescribeFaqOutput::index_id): <p>The identifier of the index for the FAQ.</p>

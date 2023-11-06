@@ -89,8 +89,10 @@ impl GetKxEnvironmentOutput {
         self.transit_gateway_configuration.as_ref()
     }
     /// <p>A list of DNS server name and server IP. This is used to set up Route-53 outbound resolvers.</p>
-    pub fn custom_dns_configuration(&self) -> ::std::option::Option<&[crate::types::CustomDnsServer]> {
-        self.custom_dns_configuration.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_dns_configuration.is_none()`.
+    pub fn custom_dns_configuration(&self) -> &[crate::types::CustomDnsServer] {
+        self.custom_dns_configuration.as_deref().unwrap_or_default()
     }
     /// <p>The timestamp at which the kdb environment was created in FinSpace. </p>
     pub fn creation_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -101,8 +103,10 @@ impl GetKxEnvironmentOutput {
         self.update_timestamp.as_ref()
     }
     /// <p>The identifier of the availability zones where subnets for the environment are created.</p>
-    pub fn availability_zone_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.availability_zone_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zone_ids.is_none()`.
+    pub fn availability_zone_ids(&self) -> &[::std::string::String] {
+        self.availability_zone_ids.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate authority of the kdb environment.</p>
     pub fn certificate_authority_arn(&self) -> ::std::option::Option<&str> {

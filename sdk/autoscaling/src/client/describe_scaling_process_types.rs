@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder takes no input, just [`send`](crate::operation::describe_scaling_process_types::builders::DescribeScalingProcessTypesFluentBuilder::send) it.
     /// - On success, responds with [`DescribeScalingProcessTypesOutput`](crate::operation::describe_scaling_process_types::DescribeScalingProcessTypesOutput) with field(s):
-    ///   - [`processes(Option<Vec<ProcessType>>)`](crate::operation::describe_scaling_process_types::DescribeScalingProcessTypesOutput::processes): <p>The names of the process types.</p>
+    ///   - [`processes(Option<Vec::<ProcessType>>)`](crate::operation::describe_scaling_process_types::DescribeScalingProcessTypesOutput::processes): <p>The names of the process types.</p>
     /// - On failure, responds with [`SdkError<DescribeScalingProcessTypesError>`](crate::operation::describe_scaling_process_types::DescribeScalingProcessTypesError)
     pub fn describe_scaling_process_types(
         &self,

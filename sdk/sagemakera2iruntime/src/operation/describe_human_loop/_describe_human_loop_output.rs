@@ -85,6 +85,7 @@ pub struct DescribeHumanLoopOutputBuilder {
 }
 impl DescribeHumanLoopOutputBuilder {
     /// <p>The creation time when Amazon Augmented AI created the human loop.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -130,6 +131,7 @@ impl DescribeHumanLoopOutputBuilder {
         &self.failure_code
     }
     /// <p>The status of the human loop. </p>
+    /// This field is required.
     pub fn human_loop_status(mut self, input: crate::types::HumanLoopStatus) -> Self {
         self.human_loop_status = ::std::option::Option::Some(input);
         self
@@ -144,6 +146,7 @@ impl DescribeHumanLoopOutputBuilder {
         &self.human_loop_status
     }
     /// <p>The name of the human loop. The name must be lowercase, unique within the Region in your account, and can have up to 63 characters. Valid characters: a-z, 0-9, and - (hyphen).</p>
+    /// This field is required.
     pub fn human_loop_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.human_loop_name = ::std::option::Option::Some(input.into());
         self
@@ -158,6 +161,7 @@ impl DescribeHumanLoopOutputBuilder {
         &self.human_loop_name
     }
     /// <p>The Amazon Resource Name (ARN) of the human loop.</p>
+    /// This field is required.
     pub fn human_loop_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.human_loop_arn = ::std::option::Option::Some(input.into());
         self
@@ -172,6 +176,7 @@ impl DescribeHumanLoopOutputBuilder {
         &self.human_loop_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the flow definition.</p>
+    /// This field is required.
     pub fn flow_definition_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_definition_arn = ::std::option::Option::Some(input.into());
         self

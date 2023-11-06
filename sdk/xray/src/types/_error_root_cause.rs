@@ -11,8 +11,10 @@ pub struct ErrorRootCause {
 }
 impl ErrorRootCause {
     /// <p>A list of services corresponding to an error. A service identifies a segment and it contains a name, account ID, type, and inferred flag.</p>
-    pub fn services(&self) -> ::std::option::Option<&[crate::types::ErrorRootCauseService]> {
-        self.services.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.services.is_none()`.
+    pub fn services(&self) -> &[crate::types::ErrorRootCauseService] {
+        self.services.as_deref().unwrap_or_default()
     }
     /// <p>A flag that denotes that the root cause impacts the trace client.</p>
     pub fn client_impacting(&self) -> ::std::option::Option<bool> {

@@ -48,6 +48,7 @@ pub struct AssociateClientVpnTargetNetworkInputBuilder {
 }
 impl AssociateClientVpnTargetNetworkInputBuilder {
     /// <p>The ID of the Client VPN endpoint.</p>
+    /// This field is required.
     pub fn client_vpn_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_vpn_endpoint_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl AssociateClientVpnTargetNetworkInputBuilder {
         &self.client_vpn_endpoint_id
     }
     /// <p>The ID of the subnet to associate with the Client VPN endpoint.</p>
+    /// This field is required.
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +110,7 @@ impl AssociateClientVpnTargetNetworkInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_client_vpn_target_network::AssociateClientVpnTargetNetworkInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::associate_client_vpn_target_network::AssociateClientVpnTargetNetworkInput {

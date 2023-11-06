@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FacetAttribute {
     /// <p>The name of the facet attribute.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>A facet attribute consists of either a definition or a reference. This structure contains the attribute definition. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
     pub attribute_definition: ::std::option::Option<crate::types::FacetAttributeDefinition>,
     /// <p>An attribute reference that is associated with the attribute. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
@@ -15,8 +15,9 @@ pub struct FacetAttribute {
 }
 impl FacetAttribute {
     /// <p>The name of the facet attribute.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>A facet attribute consists of either a definition or a reference. This structure contains the attribute definition. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
     pub fn attribute_definition(&self) -> ::std::option::Option<&crate::types::FacetAttributeDefinition> {
@@ -49,6 +50,7 @@ pub struct FacetAttributeBuilder {
 }
 impl FacetAttributeBuilder {
     /// <p>The name of the facet attribute.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +107,19 @@ impl FacetAttributeBuilder {
         &self.required_behavior
     }
     /// Consumes the builder and constructs a [`FacetAttribute`](crate::types::FacetAttribute).
-    pub fn build(self) -> crate::types::FacetAttribute {
-        crate::types::FacetAttribute {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::FacetAttributeBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::FacetAttribute, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::FacetAttribute {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building FacetAttribute",
+                )
+            })?,
             attribute_definition: self.attribute_definition,
             attribute_reference: self.attribute_reference,
             required_behavior: self.required_behavior,
-        }
+        })
     }
 }

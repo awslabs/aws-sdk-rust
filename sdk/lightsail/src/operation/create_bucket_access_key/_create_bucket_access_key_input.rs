@@ -27,6 +27,7 @@ pub struct CreateBucketAccessKeyInputBuilder {
 }
 impl CreateBucketAccessKeyInputBuilder {
     /// <p>The name of the bucket that the new access key will belong to, and grant access to.</p>
+    /// This field is required.
     pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl CreateBucketAccessKeyInputBuilder {
     /// Consumes the builder and constructs a [`CreateBucketAccessKeyInput`](crate::operation::create_bucket_access_key::CreateBucketAccessKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_bucket_access_key::CreateBucketAccessKeyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_bucket_access_key::CreateBucketAccessKeyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_bucket_access_key::CreateBucketAccessKeyInput {
             bucket_name: self.bucket_name,

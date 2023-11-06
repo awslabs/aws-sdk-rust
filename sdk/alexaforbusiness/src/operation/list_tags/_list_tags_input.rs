@@ -41,6 +41,7 @@ pub struct ListTagsInputBuilder {
 }
 impl ListTagsInputBuilder {
     /// <p>The ARN of the specified resource for which to list tags.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +84,7 @@ impl ListTagsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListTagsInput`](crate::operation::list_tags::ListTagsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_tags::ListTagsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_tags::ListTagsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_tags::ListTagsInput {
             arn: self.arn,
             next_token: self.next_token,

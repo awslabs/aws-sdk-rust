@@ -62,6 +62,7 @@ pub struct GetCommentsForPullRequestInputBuilder {
 }
 impl GetCommentsForPullRequestInputBuilder {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
+    /// This field is required.
     pub fn pull_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pull_request_id = ::std::option::Option::Some(input.into());
         self
@@ -150,7 +151,7 @@ impl GetCommentsForPullRequestInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestInput {
             pull_request_id: self.pull_request_id,

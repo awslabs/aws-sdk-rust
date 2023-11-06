@@ -28,6 +28,7 @@ pub struct GetSdkTypeInputBuilder {
 }
 impl GetSdkTypeInputBuilder {
     /// <p>The identifier of the queried SdkType instance.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +43,7 @@ impl GetSdkTypeInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetSdkTypeInput`](crate::operation::get_sdk_type::GetSdkTypeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_sdk_type::GetSdkTypeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_sdk_type::GetSdkTypeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_sdk_type::GetSdkTypeInput { id: self.id })
     }
 }

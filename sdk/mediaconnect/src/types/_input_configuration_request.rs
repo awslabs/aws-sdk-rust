@@ -35,6 +35,7 @@ pub struct InputConfigurationRequestBuilder {
 }
 impl InputConfigurationRequestBuilder {
     /// The port that you want the flow to listen on for an incoming media stream.
+    /// This field is required.
     pub fn input_port(mut self, input: i32) -> Self {
         self.input_port = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl InputConfigurationRequestBuilder {
         &self.input_port
     }
     /// The VPC interface that you want to use for the incoming media stream.
+    /// This field is required.
     pub fn interface(mut self, input: crate::types::InterfaceRequest) -> Self {
         self.interface = ::std::option::Option::Some(input);
         self

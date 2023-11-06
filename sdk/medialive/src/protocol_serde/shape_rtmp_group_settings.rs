@@ -2,7 +2,7 @@
 pub fn ser_rtmp_group_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RtmpGroupSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ad_markers {
         let mut array_2 = object.key("adMarkers").start_array();
         for item_3 in var_1 {
@@ -58,9 +58,8 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "adMarkers" => {
-                            builder = builder.set_ad_markers(crate::protocol_serde::shape___list_of_rtmp_ad_markers::de___list_of_rtmp_ad_markers(
-                                tokens,
-                            )?);
+                            builder =
+                                builder.set_ad_markers(crate::protocol_serde::shape_list_of_rtmp_ad_markers::de_list_of_rtmp_ad_markers(tokens)?);
                         }
                         "authenticationScheme" => {
                             builder = builder.set_authentication_scheme(

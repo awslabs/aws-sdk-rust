@@ -2,7 +2,7 @@
 pub fn ser_alarm_action(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AlarmAction,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.sns {
         #[allow(unused_mut)]
         let mut object_2 = object.key("sns").start_object();
@@ -45,10 +45,10 @@ pub fn ser_alarm_action(
         crate::protocol_serde::shape_dynamo_db_action::ser_dynamo_db_action(&mut object_14, var_13)?;
         object_14.finish();
     }
-    if let Some(var_15) = &input.dynamo_d_bv2 {
+    if let Some(var_15) = &input.dynamo_dbv2 {
         #[allow(unused_mut)]
         let mut object_16 = object.key("dynamoDBv2").start_object();
-        crate::protocol_serde::shape_dynamo_d_bv2_action::ser_dynamo_d_bv2_action(&mut object_16, var_15)?;
+        crate::protocol_serde::shape_dynamo_dbv2_action::ser_dynamo_dbv2_action(&mut object_16, var_15)?;
         object_16.finish();
     }
     if let Some(var_17) = &input.iot_site_wise {
@@ -101,7 +101,7 @@ where
                             builder = builder.set_dynamo_db(crate::protocol_serde::shape_dynamo_db_action::de_dynamo_db_action(tokens)?);
                         }
                         "dynamoDBv2" => {
-                            builder = builder.set_dynamo_d_bv2(crate::protocol_serde::shape_dynamo_d_bv2_action::de_dynamo_d_bv2_action(tokens)?);
+                            builder = builder.set_dynamo_dbv2(crate::protocol_serde::shape_dynamo_dbv2_action::de_dynamo_dbv2_action(tokens)?);
                         }
                         "iotSiteWise" => {
                             builder = builder.set_iot_site_wise(crate::protocol_serde::shape_iot_site_wise_action::de_iot_site_wise_action(tokens)?);

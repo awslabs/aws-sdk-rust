@@ -51,6 +51,7 @@ pub struct GetWebAclInputBuilder {
 }
 impl GetWebAclInputBuilder {
     /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +71,7 @@ impl GetWebAclInputBuilder {
     /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
     /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn scope(mut self, input: crate::types::Scope) -> Self {
         self.scope = ::std::option::Option::Some(input);
         self
@@ -94,6 +96,7 @@ impl GetWebAclInputBuilder {
         &self.scope
     }
     /// <p>The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +111,7 @@ impl GetWebAclInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetWebAclInput`](crate::operation::get_web_acl::GetWebAclInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_web_acl::GetWebAclInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_web_acl::GetWebAclInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_web_acl::GetWebAclInput {
             name: self.name,
             scope: self.scope,

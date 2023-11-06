@@ -8,8 +8,10 @@ pub struct DescribeTimeBasedAutoScalingInput {
 }
 impl DescribeTimeBasedAutoScalingInput {
     /// <p>An array of instance IDs.</p>
-    pub fn instance_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.instance_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_ids.is_none()`.
+    pub fn instance_ids(&self) -> &[::std::string::String] {
+        self.instance_ids.as_deref().unwrap_or_default()
     }
 }
 impl DescribeTimeBasedAutoScalingInput {
@@ -51,7 +53,7 @@ impl DescribeTimeBasedAutoScalingInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_time_based_auto_scaling::DescribeTimeBasedAutoScalingInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_time_based_auto_scaling::DescribeTimeBasedAutoScalingInput {
             instance_ids: self.instance_ids,

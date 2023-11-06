@@ -36,8 +36,10 @@ impl PutEnvironmentBlueprintConfigurationInput {
         self.manage_access_role_arn.as_deref()
     }
     /// <p>Specifies the enabled Amazon Web Services Regions.</p>
-    pub fn enabled_regions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.enabled_regions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enabled_regions.is_none()`.
+    pub fn enabled_regions(&self) -> &[::std::string::String] {
+        self.enabled_regions.as_deref().unwrap_or_default()
     }
     /// <p>The regional parameters in the environment blueprint.</p>
     pub fn regional_parameters(
@@ -70,6 +72,7 @@ pub struct PutEnvironmentBlueprintConfigurationInputBuilder {
 }
 impl PutEnvironmentBlueprintConfigurationInputBuilder {
     /// <p>The identifier of the Amazon DataZone domain.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +87,7 @@ impl PutEnvironmentBlueprintConfigurationInputBuilder {
         &self.domain_identifier
     }
     /// <p>The identifier of the environment blueprint.</p>
+    /// This field is required.
     pub fn environment_blueprint_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_blueprint_identifier = ::std::option::Option::Some(input.into());
         self
@@ -183,7 +187,7 @@ impl PutEnvironmentBlueprintConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_environment_blueprint_configuration::PutEnvironmentBlueprintConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::put_environment_blueprint_configuration::PutEnvironmentBlueprintConfigurationInput {

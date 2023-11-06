@@ -37,11 +37,10 @@ pub fn de_delete_permission_version_http_error(
                         )
                         .map_err(crate::operation::delete_permission_version::DeletePermissionVersionError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::idempotent_parameter_mismatch_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::delete_permission_version::DeletePermissionVersionError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -54,11 +53,10 @@ pub fn de_delete_permission_version_http_error(
                     crate::protocol_serde::shape_invalid_client_token_exception::de_invalid_client_token_exception_json_err(_response_body, output)
                         .map_err(crate::operation::delete_permission_version::DeletePermissionVersionError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_client_token_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::delete_permission_version::DeletePermissionVersionError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InvalidParameterException" => crate::operation::delete_permission_version::DeletePermissionVersionError::InvalidParameterException({
@@ -69,11 +67,10 @@ pub fn de_delete_permission_version_http_error(
                 output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output)
                     .map_err(crate::operation::delete_permission_version::DeletePermissionVersionError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_parameter_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::delete_permission_version::DeletePermissionVersionError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "MalformedArnException" => crate::operation::delete_permission_version::DeletePermissionVersionError::MalformedArnException({
@@ -84,11 +81,10 @@ pub fn de_delete_permission_version_http_error(
                 output = crate::protocol_serde::shape_malformed_arn_exception::de_malformed_arn_exception_json_err(_response_body, output)
                     .map_err(crate::operation::delete_permission_version::DeletePermissionVersionError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::malformed_arn_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::delete_permission_version::DeletePermissionVersionError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "OperationNotPermittedException" => {
@@ -103,11 +99,10 @@ pub fn de_delete_permission_version_http_error(
                     )
                     .map_err(crate::operation::delete_permission_version::DeletePermissionVersionError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::operation_not_permitted_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::delete_permission_version::DeletePermissionVersionError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -119,11 +114,10 @@ pub fn de_delete_permission_version_http_error(
                 output = crate::protocol_serde::shape_server_internal_exception::de_server_internal_exception_json_err(_response_body, output)
                     .map_err(crate::operation::delete_permission_version::DeletePermissionVersionError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::server_internal_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::delete_permission_version::DeletePermissionVersionError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::delete_permission_version::DeletePermissionVersionError::ServiceUnavailableException({
@@ -135,11 +129,10 @@ pub fn de_delete_permission_version_http_error(
                     crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
                         .map_err(crate::operation::delete_permission_version::DeletePermissionVersionError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::service_unavailable_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::delete_permission_version::DeletePermissionVersionError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "UnknownResourceException" => crate::operation::delete_permission_version::DeletePermissionVersionError::UnknownResourceException({
@@ -150,11 +143,10 @@ pub fn de_delete_permission_version_http_error(
                 output = crate::protocol_serde::shape_unknown_resource_exception::de_unknown_resource_exception_json_err(_response_body, output)
                     .map_err(crate::operation::delete_permission_version::DeletePermissionVersionError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::unknown_resource_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::delete_permission_version::DeletePermissionVersionError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::delete_permission_version::DeletePermissionVersionError::generic(generic),

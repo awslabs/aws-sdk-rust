@@ -12,8 +12,10 @@ pub struct ListConfigurationSetsOutput {
 }
 impl ListConfigurationSetsOutput {
     /// An object that contains a list of configuration sets for your account in the current region.
-    pub fn configuration_sets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.configuration_sets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configuration_sets.is_none()`.
+    pub fn configuration_sets(&self) -> &[::std::string::String] {
+        self.configuration_sets.as_deref().unwrap_or_default()
     }
     /// A token returned from a previous call to ListConfigurationSets to indicate the position in the list of configuration sets.
     pub fn next_token(&self) -> ::std::option::Option<&str> {

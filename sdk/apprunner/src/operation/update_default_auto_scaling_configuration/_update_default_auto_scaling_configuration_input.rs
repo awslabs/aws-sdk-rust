@@ -30,6 +30,7 @@ pub struct UpdateDefaultAutoScalingConfigurationInputBuilder {
 impl UpdateDefaultAutoScalingConfigurationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want to set as the default.</p>
     /// <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is set as the default.</p>
+    /// This field is required.
     pub fn auto_scaling_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_configuration_arn = ::std::option::Option::Some(input.into());
         self
@@ -50,7 +51,7 @@ impl UpdateDefaultAutoScalingConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_default_auto_scaling_configuration::UpdateDefaultAutoScalingConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_default_auto_scaling_configuration::UpdateDefaultAutoScalingConfigurationInput {

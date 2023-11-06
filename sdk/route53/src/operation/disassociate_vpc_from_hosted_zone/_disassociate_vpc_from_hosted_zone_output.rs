@@ -35,6 +35,7 @@ pub struct DisassociateVpcFromHostedZoneOutputBuilder {
 }
 impl DisassociateVpcFromHostedZoneOutputBuilder {
     /// <p>A complex type that describes the changes made to the specified private hosted zone.</p>
+    /// This field is required.
     pub fn change_info(mut self, input: crate::types::ChangeInfo) -> Self {
         self.change_info = ::std::option::Option::Some(input);
         self

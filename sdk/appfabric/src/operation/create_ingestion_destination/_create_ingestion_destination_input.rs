@@ -42,8 +42,10 @@ impl CreateIngestionDestinationInput {
         self.client_token.as_deref()
     }
     /// <p>A map of the key-value pairs of the tag or tags to assign to the resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateIngestionDestinationInput {
@@ -66,6 +68,7 @@ pub struct CreateIngestionDestinationInputBuilder {
 }
 impl CreateIngestionDestinationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
+    /// This field is required.
     pub fn app_bundle_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_bundle_identifier = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +83,7 @@ impl CreateIngestionDestinationInputBuilder {
         &self.app_bundle_identifier
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.</p>
+    /// This field is required.
     pub fn ingestion_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ingestion_identifier = ::std::option::Option::Some(input.into());
         self
@@ -94,6 +98,7 @@ impl CreateIngestionDestinationInputBuilder {
         &self.ingestion_identifier
     }
     /// <p>Contains information about how ingested data is processed.</p>
+    /// This field is required.
     pub fn processing_configuration(mut self, input: crate::types::ProcessingConfiguration) -> Self {
         self.processing_configuration = ::std::option::Option::Some(input);
         self
@@ -108,6 +113,7 @@ impl CreateIngestionDestinationInputBuilder {
         &self.processing_configuration
     }
     /// <p>Contains information about the destination of ingested data.</p>
+    /// This field is required.
     pub fn destination_configuration(mut self, input: crate::types::DestinationConfiguration) -> Self {
         self.destination_configuration = ::std::option::Option::Some(input);
         self
@@ -166,7 +172,7 @@ impl CreateIngestionDestinationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_ingestion_destination::CreateIngestionDestinationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_ingestion_destination::CreateIngestionDestinationInput {
             app_bundle_identifier: self.app_bundle_identifier,

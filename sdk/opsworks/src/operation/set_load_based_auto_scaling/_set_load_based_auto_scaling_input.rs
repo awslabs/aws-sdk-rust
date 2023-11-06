@@ -48,6 +48,7 @@ pub struct SetLoadBasedAutoScalingInputBuilder {
 }
 impl SetLoadBasedAutoScalingInputBuilder {
     /// <p>The layer ID.</p>
+    /// This field is required.
     pub fn layer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.layer_id = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +109,7 @@ impl SetLoadBasedAutoScalingInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_load_based_auto_scaling::SetLoadBasedAutoScalingInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::set_load_based_auto_scaling::SetLoadBasedAutoScalingInput {
             layer_id: self.layer_id,

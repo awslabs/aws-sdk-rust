@@ -5,35 +5,37 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrafficPolicySummary {
     /// <p>The ID that Amazon Route 53 assigned to the traffic policy when you created it.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The name that you specified for the traffic policy when you created it.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The DNS type of the resource record sets that Amazon Route 53 creates when you use a traffic policy to create a traffic policy instance.</p>
-    pub r#type: ::std::option::Option<crate::types::RrType>,
+    pub r#type: crate::types::RrType,
     /// <p>The version number of the latest version of the traffic policy.</p>
-    pub latest_version: ::std::option::Option<i32>,
+    pub latest_version: i32,
     /// <p>The number of traffic policies that are associated with the current Amazon Web Services account.</p>
-    pub traffic_policy_count: ::std::option::Option<i32>,
+    pub traffic_policy_count: i32,
 }
 impl TrafficPolicySummary {
     /// <p>The ID that Amazon Route 53 assigned to the traffic policy when you created it.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The name that you specified for the traffic policy when you created it.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The DNS type of the resource record sets that Amazon Route 53 creates when you use a traffic policy to create a traffic policy instance.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::RrType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::RrType {
+        &self.r#type
     }
     /// <p>The version number of the latest version of the traffic policy.</p>
-    pub fn latest_version(&self) -> ::std::option::Option<i32> {
+    pub fn latest_version(&self) -> i32 {
         self.latest_version
     }
     /// <p>The number of traffic policies that are associated with the current Amazon Web Services account.</p>
-    pub fn traffic_policy_count(&self) -> ::std::option::Option<i32> {
+    pub fn traffic_policy_count(&self) -> i32 {
         self.traffic_policy_count
     }
 }
@@ -56,6 +58,7 @@ pub struct TrafficPolicySummaryBuilder {
 }
 impl TrafficPolicySummaryBuilder {
     /// <p>The ID that Amazon Route 53 assigned to the traffic policy when you created it.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +73,7 @@ impl TrafficPolicySummaryBuilder {
         &self.id
     }
     /// <p>The name that you specified for the traffic policy when you created it.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +88,7 @@ impl TrafficPolicySummaryBuilder {
         &self.name
     }
     /// <p>The DNS type of the resource record sets that Amazon Route 53 creates when you use a traffic policy to create a traffic policy instance.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::RrType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -98,6 +103,7 @@ impl TrafficPolicySummaryBuilder {
         &self.r#type
     }
     /// <p>The version number of the latest version of the traffic policy.</p>
+    /// This field is required.
     pub fn latest_version(mut self, input: i32) -> Self {
         self.latest_version = ::std::option::Option::Some(input);
         self
@@ -112,6 +118,7 @@ impl TrafficPolicySummaryBuilder {
         &self.latest_version
     }
     /// <p>The number of traffic policies that are associated with the current Amazon Web Services account.</p>
+    /// This field is required.
     pub fn traffic_policy_count(mut self, input: i32) -> Self {
         self.traffic_policy_count = ::std::option::Option::Some(input);
         self
@@ -126,13 +133,44 @@ impl TrafficPolicySummaryBuilder {
         &self.traffic_policy_count
     }
     /// Consumes the builder and constructs a [`TrafficPolicySummary`](crate::types::TrafficPolicySummary).
-    pub fn build(self) -> crate::types::TrafficPolicySummary {
-        crate::types::TrafficPolicySummary {
-            id: self.id,
-            name: self.name,
-            r#type: self.r#type,
-            latest_version: self.latest_version,
-            traffic_policy_count: self.traffic_policy_count,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::TrafficPolicySummaryBuilder::id)
+    /// - [`name`](crate::types::builders::TrafficPolicySummaryBuilder::name)
+    /// - [`r#type`](crate::types::builders::TrafficPolicySummaryBuilder::r#type)
+    /// - [`latest_version`](crate::types::builders::TrafficPolicySummaryBuilder::latest_version)
+    /// - [`traffic_policy_count`](crate::types::builders::TrafficPolicySummaryBuilder::traffic_policy_count)
+    pub fn build(self) -> ::std::result::Result<crate::types::TrafficPolicySummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TrafficPolicySummary {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building TrafficPolicySummary",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building TrafficPolicySummary",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building TrafficPolicySummary",
+                )
+            })?,
+            latest_version: self.latest_version.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "latest_version",
+                    "latest_version was not specified but it is required when building TrafficPolicySummary",
+                )
+            })?,
+            traffic_policy_count: self.traffic_policy_count.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "traffic_policy_count",
+                    "traffic_policy_count was not specified but it is required when building TrafficPolicySummary",
+                )
+            })?,
+        })
     }
 }

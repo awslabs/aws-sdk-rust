@@ -2,7 +2,7 @@
 pub fn ser_input_schema_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InputSchemaUpdate,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.record_format_update {
         #[allow(unused_mut)]
         let mut object_2 = object.key("RecordFormatUpdate").start_object();

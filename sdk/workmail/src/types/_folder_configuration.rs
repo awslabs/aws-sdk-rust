@@ -5,20 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FolderConfiguration {
     /// <p>The folder name.</p>
-    pub name: ::std::option::Option<crate::types::FolderName>,
+    pub name: crate::types::FolderName,
     /// <p>The action to take on the folder contents at the end of the folder configuration period.</p>
-    pub action: ::std::option::Option<crate::types::RetentionAction>,
+    pub action: crate::types::RetentionAction,
     /// <p>The number of days for which the folder-configuration action applies.</p>
     pub period: ::std::option::Option<i32>,
 }
 impl FolderConfiguration {
     /// <p>The folder name.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::FolderName> {
-        self.name.as_ref()
+    pub fn name(&self) -> &crate::types::FolderName {
+        &self.name
     }
     /// <p>The action to take on the folder contents at the end of the folder configuration period.</p>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::RetentionAction> {
-        self.action.as_ref()
+    pub fn action(&self) -> &crate::types::RetentionAction {
+        &self.action
     }
     /// <p>The number of days for which the folder-configuration action applies.</p>
     pub fn period(&self) -> ::std::option::Option<i32> {
@@ -42,6 +42,7 @@ pub struct FolderConfigurationBuilder {
 }
 impl FolderConfigurationBuilder {
     /// <p>The folder name.</p>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::FolderName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -56,6 +57,7 @@ impl FolderConfigurationBuilder {
         &self.name
     }
     /// <p>The action to take on the folder contents at the end of the folder configuration period.</p>
+    /// This field is required.
     pub fn action(mut self, input: crate::types::RetentionAction) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
@@ -84,11 +86,24 @@ impl FolderConfigurationBuilder {
         &self.period
     }
     /// Consumes the builder and constructs a [`FolderConfiguration`](crate::types::FolderConfiguration).
-    pub fn build(self) -> crate::types::FolderConfiguration {
-        crate::types::FolderConfiguration {
-            name: self.name,
-            action: self.action,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::FolderConfigurationBuilder::name)
+    /// - [`action`](crate::types::builders::FolderConfigurationBuilder::action)
+    pub fn build(self) -> ::std::result::Result<crate::types::FolderConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::FolderConfiguration {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building FolderConfiguration",
+                )
+            })?,
+            action: self.action.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "action",
+                    "action was not specified but it is required when building FolderConfiguration",
+                )
+            })?,
             period: self.period,
-        }
+        })
     }
 }

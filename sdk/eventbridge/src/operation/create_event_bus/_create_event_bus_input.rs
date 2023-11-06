@@ -24,8 +24,10 @@ impl CreateEventBusInput {
         self.event_source_name.as_deref()
     }
     /// <p>Tags to associate with the event bus.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateEventBusInput {
@@ -47,6 +49,7 @@ impl CreateEventBusInputBuilder {
     /// <p>The name of the new event bus. </p>
     /// <p>Custom event bus names can't contain the <code>/</code> character, but you can use the <code>/</code> character in partner event bus names. In addition, for partner event buses, the name must exactly match the name of the partner event source that this event bus is matched to.</p>
     /// <p>You can't use the name <code>default</code> for a custom event bus, as this name is already used for your account's default event bus.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -101,7 +104,7 @@ impl CreateEventBusInputBuilder {
     /// Consumes the builder and constructs a [`CreateEventBusInput`](crate::operation::create_event_bus::CreateEventBusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_event_bus::CreateEventBusInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_event_bus::CreateEventBusInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_event_bus::CreateEventBusInput {
             name: self.name,
             event_source_name: self.event_source_name,

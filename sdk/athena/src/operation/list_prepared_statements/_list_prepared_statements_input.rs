@@ -41,6 +41,7 @@ pub struct ListPreparedStatementsInputBuilder {
 }
 impl ListPreparedStatementsInputBuilder {
     /// <p>The workgroup to list the prepared statements for.</p>
+    /// This field is required.
     pub fn work_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.work_group = ::std::option::Option::Some(input.into());
         self
@@ -85,8 +86,10 @@ impl ListPreparedStatementsInputBuilder {
     /// Consumes the builder and constructs a [`ListPreparedStatementsInput`](crate::operation::list_prepared_statements::ListPreparedStatementsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_prepared_statements::ListPreparedStatementsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::list_prepared_statements::ListPreparedStatementsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::list_prepared_statements::ListPreparedStatementsInput {
             work_group: self.work_group,
             next_token: self.next_token,

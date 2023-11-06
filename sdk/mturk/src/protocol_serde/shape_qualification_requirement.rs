@@ -2,42 +2,42 @@
 pub fn ser_qualification_requirement(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::QualificationRequirement,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.qualification_type_id {
-        object.key("QualificationTypeId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("QualificationTypeId").string(input.qualification_type_id.as_str());
     }
-    if let Some(var_2) = &input.comparator {
-        object.key("Comparator").string(var_2.as_str());
+    {
+        object.key("Comparator").string(input.comparator.as_str());
     }
-    if let Some(var_3) = &input.integer_values {
-        let mut array_4 = object.key("IntegerValues").start_array();
-        for item_5 in var_3 {
+    if let Some(var_1) = &input.integer_values {
+        let mut array_2 = object.key("IntegerValues").start_array();
+        for item_3 in var_1 {
             {
-                array_4.value().number(
+                array_2.value().number(
                     #[allow(clippy::useless_conversion)]
-                    ::aws_smithy_types::Number::NegInt((*item_5).into()),
+                    ::aws_smithy_types::Number::NegInt((*item_3).into()),
                 );
             }
         }
-        array_4.finish();
+        array_2.finish();
     }
-    if let Some(var_6) = &input.locale_values {
-        let mut array_7 = object.key("LocaleValues").start_array();
-        for item_8 in var_6 {
+    if let Some(var_4) = &input.locale_values {
+        let mut array_5 = object.key("LocaleValues").start_array();
+        for item_6 in var_4 {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_locale::ser_locale(&mut object_9, item_8)?;
-                object_9.finish();
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_locale::ser_locale(&mut object_7, item_6)?;
+                object_7.finish();
             }
         }
-        array_7.finish();
+        array_5.finish();
     }
-    if let Some(var_10) = &input.required_to_preview {
-        object.key("RequiredToPreview").boolean(*var_10);
+    if let Some(var_8) = &input.required_to_preview {
+        object.key("RequiredToPreview").boolean(*var_8);
     }
-    if let Some(var_11) = &input.actions_guarded {
-        object.key("ActionsGuarded").string(var_11.as_str());
+    if let Some(var_9) = &input.actions_guarded {
+        object.key("ActionsGuarded").string(var_9.as_str());
     }
     Ok(())
 }
@@ -97,7 +97,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::qualification_requirement_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

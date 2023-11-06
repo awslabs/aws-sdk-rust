@@ -94,6 +94,7 @@ impl ListExecutionsInputBuilder {
         &self.next_token
     }
     /// <p>A unique identifier for the workflow.</p>
+    /// This field is required.
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_id = ::std::option::Option::Some(input.into());
         self
@@ -110,7 +111,7 @@ impl ListExecutionsInputBuilder {
     /// Consumes the builder and constructs a [`ListExecutionsInput`](crate::operation::list_executions::ListExecutionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_executions::ListExecutionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_executions::ListExecutionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_executions::ListExecutionsInput {
             max_results: self.max_results,
             next_token: self.next_token,

@@ -27,6 +27,7 @@ pub struct DescribeServerInputBuilder {
 }
 impl DescribeServerInputBuilder {
     /// <p>A system-assigned unique identifier for a server.</p>
+    /// This field is required.
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeServerInputBuilder {
     /// Consumes the builder and constructs a [`DescribeServerInput`](crate::operation::describe_server::DescribeServerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_server::DescribeServerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_server::DescribeServerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_server::DescribeServerInput { server_id: self.server_id })
     }
 }

@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeHook {
     /// <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
-    pub uri: ::std::option::Option<::std::string::String>,
+    pub uri: ::std::string::String,
     /// <p>The version of the request-response that you want Amazon Lex to use to invoke your Lambda function. For more information, see <code>using-lambda</code>.</p>
-    pub message_version: ::std::option::Option<::std::string::String>,
+    pub message_version: ::std::string::String,
 }
 impl CodeHook {
     /// <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
-    pub fn uri(&self) -> ::std::option::Option<&str> {
-        self.uri.as_deref()
+    pub fn uri(&self) -> &str {
+        use std::ops::Deref;
+        self.uri.deref()
     }
     /// <p>The version of the request-response that you want Amazon Lex to use to invoke your Lambda function. For more information, see <code>using-lambda</code>.</p>
-    pub fn message_version(&self) -> ::std::option::Option<&str> {
-        self.message_version.as_deref()
+    pub fn message_version(&self) -> &str {
+        use std::ops::Deref;
+        self.message_version.deref()
     }
 }
 impl CodeHook {
@@ -35,6 +37,7 @@ pub struct CodeHookBuilder {
 }
 impl CodeHookBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
+    /// This field is required.
     pub fn uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.uri = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl CodeHookBuilder {
         &self.uri
     }
     /// <p>The version of the request-response that you want Amazon Lex to use to invoke your Lambda function. For more information, see <code>using-lambda</code>.</p>
+    /// This field is required.
     pub fn message_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_version = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl CodeHookBuilder {
         &self.message_version
     }
     /// Consumes the builder and constructs a [`CodeHook`](crate::types::CodeHook).
-    pub fn build(self) -> crate::types::CodeHook {
-        crate::types::CodeHook {
-            uri: self.uri,
-            message_version: self.message_version,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`uri`](crate::types::builders::CodeHookBuilder::uri)
+    /// - [`message_version`](crate::types::builders::CodeHookBuilder::message_version)
+    pub fn build(self) -> ::std::result::Result<crate::types::CodeHook, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CodeHook {
+            uri: self.uri.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "uri",
+                    "uri was not specified but it is required when building CodeHook",
+                )
+            })?,
+            message_version: self.message_version.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "message_version",
+                    "message_version was not specified but it is required when building CodeHook",
+                )
+            })?,
+        })
     }
 }

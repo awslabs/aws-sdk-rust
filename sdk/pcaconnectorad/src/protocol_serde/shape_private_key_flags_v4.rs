@@ -2,7 +2,7 @@
 pub fn ser_private_key_flags_v4(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PrivateKeyFlagsV4,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.exportable_key {
         object.key("ExportableKey").boolean(*var_1);
     }
@@ -18,8 +18,8 @@ pub fn ser_private_key_flags_v4(
     if let Some(var_5) = &input.use_legacy_provider {
         object.key("UseLegacyProvider").boolean(*var_5);
     }
-    if let Some(var_6) = &input.client_version {
-        object.key("ClientVersion").string(var_6.as_str());
+    {
+        object.key("ClientVersion").string(input.client_version.as_str());
     }
     Ok(())
 }
@@ -75,7 +75,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::private_key_flags_v4_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

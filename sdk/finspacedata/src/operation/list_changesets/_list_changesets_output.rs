@@ -12,8 +12,10 @@ pub struct ListChangesetsOutput {
 }
 impl ListChangesetsOutput {
     /// <p>List of Changesets found.</p>
-    pub fn changesets(&self) -> ::std::option::Option<&[crate::types::ChangesetSummary]> {
-        self.changesets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.changesets.is_none()`.
+    pub fn changesets(&self) -> &[crate::types::ChangesetSummary] {
+        self.changesets.as_deref().unwrap_or_default()
     }
     /// <p>A token that indicates where a results page should begin.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

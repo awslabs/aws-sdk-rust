@@ -27,6 +27,7 @@ pub struct DeleteUsageLimitInputBuilder {
 }
 impl DeleteUsageLimitInputBuilder {
     /// <p>The unique identifier of the usage limit to delete.</p>
+    /// This field is required.
     pub fn usage_limit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.usage_limit_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteUsageLimitInputBuilder {
     /// Consumes the builder and constructs a [`DeleteUsageLimitInput`](crate::operation::delete_usage_limit::DeleteUsageLimitInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_usage_limit::DeleteUsageLimitInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_usage_limit::DeleteUsageLimitInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_usage_limit::DeleteUsageLimitInput {
             usage_limit_id: self.usage_limit_id,
         })

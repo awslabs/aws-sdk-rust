@@ -10,7 +10,7 @@ impl CreateAuthorizerInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_authorizer::CreateAuthorizerOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::create_authorizer::CreateAuthorizerError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl CreateAuthorizerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_authorizer::CreateAuthorizerOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::create_authorizer::CreateAuthorizerError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::create_authorizer::CreateAuthorizer::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -86,20 +89,15 @@ impl CreateAuthorizerFluentBuilder {
         crate::operation::create_authorizer::CreateAuthorizer::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::create_authorizer::CreateAuthorizerOutput,
-            crate::operation::create_authorizer::CreateAuthorizerError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::create_authorizer::CreateAuthorizerError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::create_authorizer::CreateAuthorizerOutput,
+        crate::operation::create_authorizer::CreateAuthorizerError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -154,21 +152,21 @@ impl CreateAuthorizerFluentBuilder {
     }
     /// Appends an item to `providerARNs`.
     ///
-    /// To override the contents of this collection use [`set_provider_ar_ns`](Self::set_provider_ar_ns).
+    /// To override the contents of this collection use [`set_provider_arns`](Self::set_provider_arns).
     ///
     /// <p>A list of the Amazon Cognito user pool ARNs for the <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>. For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not defined. </p>
-    pub fn provider_ar_ns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.provider_ar_ns(input.into());
+    pub fn provider_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.provider_arns(input.into());
         self
     }
     /// <p>A list of the Amazon Cognito user pool ARNs for the <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>. For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not defined. </p>
-    pub fn set_provider_ar_ns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inner = self.inner.set_provider_ar_ns(input);
+    pub fn set_provider_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_provider_arns(input);
         self
     }
     /// <p>A list of the Amazon Cognito user pool ARNs for the <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>. For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not defined. </p>
-    pub fn get_provider_ar_ns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        self.inner.get_provider_ar_ns()
+    pub fn get_provider_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_provider_arns()
     }
     /// <p>Optional customer-defined field, used in OpenAPI imports and exports without functional impact.</p>
     pub fn auth_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

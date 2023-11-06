@@ -48,6 +48,7 @@ pub struct ListServiceInstanceOutputsInputBuilder {
 }
 impl ListServiceInstanceOutputsInputBuilder {
     /// <p>The name of the service instance whose outputs you want.</p>
+    /// This field is required.
     pub fn service_instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_instance_name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl ListServiceInstanceOutputsInputBuilder {
         &self.service_instance_name
     }
     /// <p>The name of the service that <code>serviceInstanceName</code> is associated to.</p>
+    /// This field is required.
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +110,7 @@ impl ListServiceInstanceOutputsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsInput {
             service_instance_name: self.service_instance_name,

@@ -20,8 +20,10 @@ impl CreateListInput {
         self.name.as_deref()
     }
     /// <p> The names of the elements, if providing. You can also create an empty list and add elements later using the <a href="https://docs.aws.amazon.com/frauddetector/latest/api/API_Updatelist.html">UpdateList</a> API. </p>
-    pub fn elements(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.elements.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.elements.is_none()`.
+    pub fn elements(&self) -> &[::std::string::String] {
+        self.elements.as_deref().unwrap_or_default()
     }
     /// <p> The variable type of the list. You can only assign the variable type with String data type. For more information, see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>. </p>
     pub fn variable_type(&self) -> ::std::option::Option<&str> {
@@ -32,8 +34,10 @@ impl CreateListInput {
         self.description.as_deref()
     }
     /// <p> A collection of the key and value pairs. </p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateListInput {
@@ -55,6 +59,7 @@ pub struct CreateListInputBuilder {
 }
 impl CreateListInputBuilder {
     /// <p> The name of the list. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -137,7 +142,7 @@ impl CreateListInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateListInput`](crate::operation::create_list::CreateListInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_list::CreateListInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_list::CreateListInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_list::CreateListInput {
             name: self.name,
             elements: self.elements,

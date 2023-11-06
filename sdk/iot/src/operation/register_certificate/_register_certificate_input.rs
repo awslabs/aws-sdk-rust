@@ -53,6 +53,7 @@ pub struct RegisterCertificateInputBuilder {
 }
 impl RegisterCertificateInputBuilder {
     /// <p>The certificate data, in PEM format.</p>
+    /// This field is required.
     pub fn certificate_pem(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_pem = ::std::option::Option::Some(input.into());
         self
@@ -117,7 +118,7 @@ impl RegisterCertificateInputBuilder {
     /// Consumes the builder and constructs a [`RegisterCertificateInput`](crate::operation::register_certificate::RegisterCertificateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_certificate::RegisterCertificateInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::register_certificate::RegisterCertificateInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::register_certificate::RegisterCertificateInput {
             certificate_pem: self.certificate_pem,

@@ -11,8 +11,10 @@ pub struct DescribeRemediationExceptionsOutput {
 }
 impl DescribeRemediationExceptionsOutput {
     /// <p>Returns a list of remediation exception objects.</p>
-    pub fn remediation_exceptions(&self) -> ::std::option::Option<&[crate::types::RemediationException]> {
-        self.remediation_exceptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remediation_exceptions.is_none()`.
+    pub fn remediation_exceptions(&self) -> &[crate::types::RemediationException] {
+        self.remediation_exceptions.as_deref().unwrap_or_default()
     }
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

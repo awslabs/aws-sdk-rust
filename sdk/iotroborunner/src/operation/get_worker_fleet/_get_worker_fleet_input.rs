@@ -27,6 +27,7 @@ pub struct GetWorkerFleetInputBuilder {
 }
 impl GetWorkerFleetInputBuilder {
     /// Full ARN of the worker fleet.
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetWorkerFleetInputBuilder {
     /// Consumes the builder and constructs a [`GetWorkerFleetInput`](crate::operation::get_worker_fleet::GetWorkerFleetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_worker_fleet::GetWorkerFleetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_worker_fleet::GetWorkerFleetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_worker_fleet::GetWorkerFleetInput { id: self.id })
     }
 }

@@ -44,6 +44,7 @@ pub struct DeleteGroupInputBuilder {
 }
 impl DeleteGroupInputBuilder {
     /// <p>The organization that contains the group.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl DeleteGroupInputBuilder {
     /// <li> <p>Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p> </li>
     /// <li> <p>Group name: group</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +89,7 @@ impl DeleteGroupInputBuilder {
         &self.group_id
     }
     /// Consumes the builder and constructs a [`DeleteGroupInput`](crate::operation::delete_group::DeleteGroupInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_group::DeleteGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_group::DeleteGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_group::DeleteGroupInput {
             organization_id: self.organization_id,
             group_id: self.group_id,

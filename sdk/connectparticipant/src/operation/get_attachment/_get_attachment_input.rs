@@ -34,6 +34,7 @@ pub struct GetAttachmentInputBuilder {
 }
 impl GetAttachmentInputBuilder {
     /// <p>A unique identifier for the attachment.</p>
+    /// This field is required.
     pub fn attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attachment_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetAttachmentInputBuilder {
         &self.attachment_id
     }
     /// <p>The authentication token associated with the participant's connection.</p>
+    /// This field is required.
     pub fn connection_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_token = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl GetAttachmentInputBuilder {
     /// Consumes the builder and constructs a [`GetAttachmentInput`](crate::operation::get_attachment::GetAttachmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_attachment::GetAttachmentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_attachment::GetAttachmentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_attachment::GetAttachmentInput {
             attachment_id: self.attachment_id,
             connection_token: self.connection_token,

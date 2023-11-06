@@ -2,7 +2,7 @@
 pub fn ser_adapter_version_dataset_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AdapterVersionDatasetConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.manifest_s3_object {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ManifestS3Object").start_object();

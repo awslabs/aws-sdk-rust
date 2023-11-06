@@ -41,6 +41,7 @@ pub struct ListPagesByContactInputBuilder {
 }
 impl ListPagesByContactInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the contact you are retrieving engagements for.</p>
+    /// This field is required.
     pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl ListPagesByContactInputBuilder {
     /// Consumes the builder and constructs a [`ListPagesByContactInput`](crate::operation::list_pages_by_contact::ListPagesByContactInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_pages_by_contact::ListPagesByContactInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_pages_by_contact::ListPagesByContactInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_pages_by_contact::ListPagesByContactInput {
             contact_id: self.contact_id,

@@ -45,8 +45,10 @@ impl DataValue {
         self.string_value.as_deref()
     }
     /// <p>A list of multiple values.</p>
-    pub fn list_value(&self) -> ::std::option::Option<&[crate::types::DataValue]> {
-        self.list_value.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.list_value.is_none()`.
+    pub fn list_value(&self) -> &[crate::types::DataValue] {
+        self.list_value.as_deref().unwrap_or_default()
     }
     /// <p>An object that maps strings to multiple <code>DataValue</code> objects.</p>
     pub fn map_value(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::DataValue>> {

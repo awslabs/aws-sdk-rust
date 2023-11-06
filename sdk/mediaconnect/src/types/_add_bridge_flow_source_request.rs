@@ -42,6 +42,7 @@ pub struct AddBridgeFlowSourceRequestBuilder {
 }
 impl AddBridgeFlowSourceRequestBuilder {
     /// The Amazon Resource Number (ARN) of the cloud flow to use as a source of this bridge.
+    /// This field is required.
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_arn = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +71,7 @@ impl AddBridgeFlowSourceRequestBuilder {
         &self.flow_vpc_interface_attachment
     }
     /// The name of the flow source. This name is used to reference the source and must be unique among sources in this bridge.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteIncidentRecord`](crate::operation::delete_incident_record::builders::DeleteIncidentRecordFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::delete_incident_record::builders::DeleteIncidentRecordFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_incident_record::builders::DeleteIncidentRecordFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) of the incident record you are deleting.</p>
+    ///   - [`arn(impl Into<String>)`](crate::operation::delete_incident_record::builders::DeleteIncidentRecordFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_incident_record::builders::DeleteIncidentRecordFluentBuilder::set_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the incident record you are deleting.</p><br>
     /// - On success, responds with [`DeleteIncidentRecordOutput`](crate::operation::delete_incident_record::DeleteIncidentRecordOutput)
     /// - On failure, responds with [`SdkError<DeleteIncidentRecordError>`](crate::operation::delete_incident_record::DeleteIncidentRecordError)
     pub fn delete_incident_record(&self) -> crate::operation::delete_incident_record::builders::DeleteIncidentRecordFluentBuilder {

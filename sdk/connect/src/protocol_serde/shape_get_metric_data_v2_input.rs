@@ -2,7 +2,7 @@
 pub fn ser_get_metric_data_v2_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_metric_data_v2::GetMetricDataV2Input,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.end_time {
         object
             .key("EndTime")

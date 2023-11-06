@@ -3,13 +3,13 @@ impl super::Client {
     /// Constructs a fluent builder for the [`MarkAsArchived`](crate::operation::mark_as_archived::builders::MarkAsArchivedFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`source_server_id(impl Into<String>)`](crate::operation::mark_as_archived::builders::MarkAsArchivedFluentBuilder::source_server_id) / [`set_source_server_id(Option<String>)`](crate::operation::mark_as_archived::builders::MarkAsArchivedFluentBuilder::set_source_server_id): <p>Mark as archived by Source Server ID.</p>
-    ///   - [`account_id(impl Into<String>)`](crate::operation::mark_as_archived::builders::MarkAsArchivedFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::mark_as_archived::builders::MarkAsArchivedFluentBuilder::set_account_id): <p>Mark as archived by Account ID.</p>
+    ///   - [`source_server_id(impl Into<String>)`](crate::operation::mark_as_archived::builders::MarkAsArchivedFluentBuilder::source_server_id) / [`set_source_server_id(Option<String>)`](crate::operation::mark_as_archived::builders::MarkAsArchivedFluentBuilder::set_source_server_id):<br>required: **true**<br><p>Mark as archived by Source Server ID.</p><br>
+    ///   - [`account_id(impl Into<String>)`](crate::operation::mark_as_archived::builders::MarkAsArchivedFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::mark_as_archived::builders::MarkAsArchivedFluentBuilder::set_account_id):<br>required: **false**<br><p>Mark as archived by Account ID.</p><br>
     /// - On success, responds with [`MarkAsArchivedOutput`](crate::operation::mark_as_archived::MarkAsArchivedOutput) with field(s):
     ///   - [`source_server_id(Option<String>)`](crate::operation::mark_as_archived::MarkAsArchivedOutput::source_server_id): <p>Source server ID.</p>
     ///   - [`arn(Option<String>)`](crate::operation::mark_as_archived::MarkAsArchivedOutput::arn): <p>Source server ARN.</p>
     ///   - [`is_archived(Option<bool>)`](crate::operation::mark_as_archived::MarkAsArchivedOutput::is_archived): <p>Source server archived status.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::mark_as_archived::MarkAsArchivedOutput::tags): <p>Source server Tags.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::mark_as_archived::MarkAsArchivedOutput::tags): <p>Source server Tags.</p>
     ///   - [`launched_instance(Option<LaunchedInstance>)`](crate::operation::mark_as_archived::MarkAsArchivedOutput::launched_instance): <p>Source server launched instance.</p>
     ///   - [`data_replication_info(Option<DataReplicationInfo>)`](crate::operation::mark_as_archived::MarkAsArchivedOutput::data_replication_info): <p>Source server data replication info.</p>
     ///   - [`life_cycle(Option<LifeCycle>)`](crate::operation::mark_as_archived::MarkAsArchivedOutput::life_cycle): <p>Source server lifecycle state.</p>

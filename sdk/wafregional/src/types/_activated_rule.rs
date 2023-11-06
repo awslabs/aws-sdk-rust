@@ -10,10 +10,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActivatedRule {
     /// <p>Specifies the order in which the <code>Rules</code> in a <code>WebACL</code> are evaluated. Rules with a lower value for <code>Priority</code> are evaluated before <code>Rules</code> with a higher value. The value must be a unique integer. If you add multiple <code>Rules</code> to a <code>WebACL</code>, the values don't need to be consecutive.</p>
-    pub priority: ::std::option::Option<i32>,
+    pub priority: i32,
     /// <p>The <code>RuleId</code> for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a <code>Rule</code> (see <code>GetRule</code>), update a <code>Rule</code> (see <code>UpdateRule</code>), insert a <code>Rule</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>Rule</code> from AWS WAF (see <code>DeleteRule</code>).</p>
     /// <p> <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
-    pub rule_id: ::std::option::Option<::std::string::String>,
+    pub rule_id: ::std::string::String,
     /// <p>Specifies the action that CloudFront or AWS WAF takes when a web request matches the conditions in the <code>Rule</code>. Valid values for <code>Action</code> include the following:</p>
     /// <ul>
     /// <li> <p> <code>ALLOW</code>: CloudFront responds with the requested object.</p> </li>
@@ -44,13 +44,14 @@ pub struct ActivatedRule {
 }
 impl ActivatedRule {
     /// <p>Specifies the order in which the <code>Rules</code> in a <code>WebACL</code> are evaluated. Rules with a lower value for <code>Priority</code> are evaluated before <code>Rules</code> with a higher value. The value must be a unique integer. If you add multiple <code>Rules</code> to a <code>WebACL</code>, the values don't need to be consecutive.</p>
-    pub fn priority(&self) -> ::std::option::Option<i32> {
+    pub fn priority(&self) -> i32 {
         self.priority
     }
     /// <p>The <code>RuleId</code> for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a <code>Rule</code> (see <code>GetRule</code>), update a <code>Rule</code> (see <code>UpdateRule</code>), insert a <code>Rule</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>Rule</code> from AWS WAF (see <code>DeleteRule</code>).</p>
     /// <p> <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
-    pub fn rule_id(&self) -> ::std::option::Option<&str> {
-        self.rule_id.as_deref()
+    pub fn rule_id(&self) -> &str {
+        use std::ops::Deref;
+        self.rule_id.deref()
     }
     /// <p>Specifies the action that CloudFront or AWS WAF takes when a web request matches the conditions in the <code>Rule</code>. Valid values for <code>Action</code> include the following:</p>
     /// <ul>
@@ -84,8 +85,10 @@ impl ActivatedRule {
     /// <li> <p>The second action inserts the same rule group back in, but specifying the rules to exclude. That is, the second <code>Updates:Action</code> should be <code>INSERT</code>, <code>Updates:ActivatedRule:RuleId</code> should be the rule group that you just removed, and <code>ExcludedRules</code> should contain the rules that you want to exclude.</p> </li>
     /// </ul> </li>
     /// </ol>
-    pub fn excluded_rules(&self) -> ::std::option::Option<&[crate::types::ExcludedRule]> {
-        self.excluded_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.excluded_rules.is_none()`.
+    pub fn excluded_rules(&self) -> &[crate::types::ExcludedRule] {
+        self.excluded_rules.as_deref().unwrap_or_default()
     }
 }
 impl ActivatedRule {
@@ -108,6 +111,7 @@ pub struct ActivatedRuleBuilder {
 }
 impl ActivatedRuleBuilder {
     /// <p>Specifies the order in which the <code>Rules</code> in a <code>WebACL</code> are evaluated. Rules with a lower value for <code>Priority</code> are evaluated before <code>Rules</code> with a higher value. The value must be a unique integer. If you add multiple <code>Rules</code> to a <code>WebACL</code>, the values don't need to be consecutive.</p>
+    /// This field is required.
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
         self
@@ -123,6 +127,7 @@ impl ActivatedRuleBuilder {
     }
     /// <p>The <code>RuleId</code> for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a <code>Rule</code> (see <code>GetRule</code>), update a <code>Rule</code> (see <code>UpdateRule</code>), insert a <code>Rule</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>Rule</code> from AWS WAF (see <code>DeleteRule</code>).</p>
     /// <p> <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
+    /// This field is required.
     pub fn rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_id = ::std::option::Option::Some(input.into());
         self
@@ -258,14 +263,27 @@ impl ActivatedRuleBuilder {
         &self.excluded_rules
     }
     /// Consumes the builder and constructs a [`ActivatedRule`](crate::types::ActivatedRule).
-    pub fn build(self) -> crate::types::ActivatedRule {
-        crate::types::ActivatedRule {
-            priority: self.priority,
-            rule_id: self.rule_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`priority`](crate::types::builders::ActivatedRuleBuilder::priority)
+    /// - [`rule_id`](crate::types::builders::ActivatedRuleBuilder::rule_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::ActivatedRule, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ActivatedRule {
+            priority: self.priority.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "priority",
+                    "priority was not specified but it is required when building ActivatedRule",
+                )
+            })?,
+            rule_id: self.rule_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "rule_id",
+                    "rule_id was not specified but it is required when building ActivatedRule",
+                )
+            })?,
             action: self.action,
             override_action: self.override_action,
             r#type: self.r#type,
             excluded_rules: self.excluded_rules,
-        }
+        })
     }
 }

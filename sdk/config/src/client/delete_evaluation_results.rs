@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteEvaluationResults`](crate::operation::delete_evaluation_results::builders::DeleteEvaluationResultsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`config_rule_name(impl Into<String>)`](crate::operation::delete_evaluation_results::builders::DeleteEvaluationResultsFluentBuilder::config_rule_name) / [`set_config_rule_name(Option<String>)`](crate::operation::delete_evaluation_results::builders::DeleteEvaluationResultsFluentBuilder::set_config_rule_name): <p>The name of the Config rule for which you want to delete the evaluation results.</p>
+    ///   - [`config_rule_name(impl Into<String>)`](crate::operation::delete_evaluation_results::builders::DeleteEvaluationResultsFluentBuilder::config_rule_name) / [`set_config_rule_name(Option<String>)`](crate::operation::delete_evaluation_results::builders::DeleteEvaluationResultsFluentBuilder::set_config_rule_name):<br>required: **true**<br><p>The name of the Config rule for which you want to delete the evaluation results.</p><br>
     /// - On success, responds with [`DeleteEvaluationResultsOutput`](crate::operation::delete_evaluation_results::DeleteEvaluationResultsOutput)
     /// - On failure, responds with [`SdkError<DeleteEvaluationResultsError>`](crate::operation::delete_evaluation_results::DeleteEvaluationResultsError)
     pub fn delete_evaluation_results(&self) -> crate::operation::delete_evaluation_results::builders::DeleteEvaluationResultsFluentBuilder {

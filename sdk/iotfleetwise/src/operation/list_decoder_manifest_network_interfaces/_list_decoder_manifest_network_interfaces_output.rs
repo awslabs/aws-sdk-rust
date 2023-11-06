@@ -11,8 +11,10 @@ pub struct ListDecoderManifestNetworkInterfacesOutput {
 }
 impl ListDecoderManifestNetworkInterfacesOutput {
     /// <p> A list of information about network interfaces. </p>
-    pub fn network_interfaces(&self) -> ::std::option::Option<&[crate::types::NetworkInterface]> {
-        self.network_interfaces.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_interfaces.is_none()`.
+    pub fn network_interfaces(&self) -> &[crate::types::NetworkInterface] {
+        self.network_interfaces.as_deref().unwrap_or_default()
     }
     /// <p> The token to retrieve the next set of results, or <code>null</code> if there are no more results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

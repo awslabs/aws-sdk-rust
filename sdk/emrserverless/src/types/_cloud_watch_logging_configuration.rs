@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudWatchLoggingConfiguration {
     /// <p>Enables CloudWatch logging.</p>
-    pub enabled: ::std::option::Option<bool>,
+    pub enabled: bool,
     /// <p>The name of the log group in Amazon CloudWatch Logs where you want to publish your logs.</p>
     pub log_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Prefix for the CloudWatch log stream name.</p>
@@ -21,7 +21,7 @@ pub struct CloudWatchLoggingConfiguration {
 }
 impl CloudWatchLoggingConfiguration {
     /// <p>Enables CloudWatch logging.</p>
-    pub fn enabled(&self) -> ::std::option::Option<bool> {
+    pub fn enabled(&self) -> bool {
         self.enabled
     }
     /// <p>The name of the log group in Amazon CloudWatch Logs where you want to publish your logs.</p>
@@ -64,6 +64,7 @@ pub struct CloudWatchLoggingConfigurationBuilder {
 }
 impl CloudWatchLoggingConfigurationBuilder {
     /// <p>Enables CloudWatch logging.</p>
+    /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
@@ -157,13 +158,20 @@ impl CloudWatchLoggingConfigurationBuilder {
         &self.log_types
     }
     /// Consumes the builder and constructs a [`CloudWatchLoggingConfiguration`](crate::types::CloudWatchLoggingConfiguration).
-    pub fn build(self) -> crate::types::CloudWatchLoggingConfiguration {
-        crate::types::CloudWatchLoggingConfiguration {
-            enabled: self.enabled,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`enabled`](crate::types::builders::CloudWatchLoggingConfigurationBuilder::enabled)
+    pub fn build(self) -> ::std::result::Result<crate::types::CloudWatchLoggingConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CloudWatchLoggingConfiguration {
+            enabled: self.enabled.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "enabled",
+                    "enabled was not specified but it is required when building CloudWatchLoggingConfiguration",
+                )
+            })?,
             log_group_name: self.log_group_name,
             log_stream_name_prefix: self.log_stream_name_prefix,
             encryption_key_arn: self.encryption_key_arn,
             log_types: self.log_types,
-        }
+        })
     }
 }

@@ -39,6 +39,7 @@ pub struct DetachGroupPolicyInputBuilder {
 impl DetachGroupPolicyInputBuilder {
     /// <p>The name (friendly name, not ARN) of the IAM group to detach the policy from.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// This field is required.
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl DetachGroupPolicyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// This field is required.
     pub fn policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_arn = ::std::option::Option::Some(input.into());
         self
@@ -74,7 +76,7 @@ impl DetachGroupPolicyInputBuilder {
     /// Consumes the builder and constructs a [`DetachGroupPolicyInput`](crate::operation::detach_group_policy::DetachGroupPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::detach_group_policy::DetachGroupPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::detach_group_policy::DetachGroupPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::detach_group_policy::DetachGroupPolicyInput {
             group_name: self.group_name,
             policy_arn: self.policy_arn,

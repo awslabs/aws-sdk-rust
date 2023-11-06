@@ -27,8 +27,10 @@ impl NodeOverrides {
         self.num_nodes
     }
     /// <p>The node property overrides for the job.</p>
-    pub fn node_property_overrides(&self) -> ::std::option::Option<&[crate::types::NodePropertyOverride]> {
-        self.node_property_overrides.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.node_property_overrides.is_none()`.
+    pub fn node_property_overrides(&self) -> &[crate::types::NodePropertyOverride] {
+        self.node_property_overrides.as_deref().unwrap_or_default()
     }
 }
 impl NodeOverrides {

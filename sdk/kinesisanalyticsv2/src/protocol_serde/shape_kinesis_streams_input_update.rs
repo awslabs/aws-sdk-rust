@@ -2,9 +2,9 @@
 pub fn ser_kinesis_streams_input_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::KinesisStreamsInputUpdate,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.resource_arn_update {
-        object.key("ResourceARNUpdate").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("ResourceARNUpdate").string(input.resource_arn_update.as_str());
     }
     Ok(())
 }

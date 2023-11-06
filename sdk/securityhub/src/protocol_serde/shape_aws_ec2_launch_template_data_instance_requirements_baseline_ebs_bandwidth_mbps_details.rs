@@ -2,7 +2,7 @@
 pub fn ser_aws_ec2_launch_template_data_instance_requirements_baseline_ebs_bandwidth_mbps_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.max {
         object.key("Max").number(
             #[allow(clippy::useless_conversion)]

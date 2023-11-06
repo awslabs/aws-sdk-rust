@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PutRawMessageContent`](crate::operation::put_raw_message_content::builders::PutRawMessageContentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`message_id(impl Into<String>)`](crate::operation::put_raw_message_content::builders::PutRawMessageContentFluentBuilder::message_id) / [`set_message_id(Option<String>)`](crate::operation::put_raw_message_content::builders::PutRawMessageContentFluentBuilder::set_message_id): <p>The identifier of the email message being updated.</p>
-    ///   - [`content(RawMessageContent)`](crate::operation::put_raw_message_content::builders::PutRawMessageContentFluentBuilder::content) / [`set_content(Option<RawMessageContent>)`](crate::operation::put_raw_message_content::builders::PutRawMessageContentFluentBuilder::set_content): <p>Describes the raw message content of the updated email message.</p>
+    ///   - [`message_id(impl Into<String>)`](crate::operation::put_raw_message_content::builders::PutRawMessageContentFluentBuilder::message_id) / [`set_message_id(Option<String>)`](crate::operation::put_raw_message_content::builders::PutRawMessageContentFluentBuilder::set_message_id):<br>required: **true**<br><p>The identifier of the email message being updated.</p><br>
+    ///   - [`content(RawMessageContent)`](crate::operation::put_raw_message_content::builders::PutRawMessageContentFluentBuilder::content) / [`set_content(Option<RawMessageContent>)`](crate::operation::put_raw_message_content::builders::PutRawMessageContentFluentBuilder::set_content):<br>required: **true**<br><p>Describes the raw message content of the updated email message.</p><br>
     /// - On success, responds with [`PutRawMessageContentOutput`](crate::operation::put_raw_message_content::PutRawMessageContentOutput)
     /// - On failure, responds with [`SdkError<PutRawMessageContentError>`](crate::operation::put_raw_message_content::PutRawMessageContentError)
     pub fn put_raw_message_content(&self) -> crate::operation::put_raw_message_content::builders::PutRawMessageContentFluentBuilder {

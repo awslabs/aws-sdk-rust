@@ -48,6 +48,7 @@ pub struct StartSchemaExtensionInputBuilder {
 }
 impl StartSchemaExtensionInputBuilder {
     /// <p>The identifier of the directory for which the schema extension will be applied to.</p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl StartSchemaExtensionInputBuilder {
         &self.directory_id
     }
     /// <p>If true, creates a snapshot of the directory before applying the schema extension.</p>
+    /// This field is required.
     pub fn create_snapshot_before_schema_extension(mut self, input: bool) -> Self {
         self.create_snapshot_before_schema_extension = ::std::option::Option::Some(input);
         self
@@ -76,6 +78,7 @@ impl StartSchemaExtensionInputBuilder {
         &self.create_snapshot_before_schema_extension
     }
     /// <p>The LDIF file represented as a string. To construct the LdifContent string, precede each line as it would be formatted in an ldif file with \n. See the example request below for more details. The file size can be no larger than 1MB.</p>
+    /// This field is required.
     pub fn ldif_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ldif_content = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl StartSchemaExtensionInputBuilder {
         &self.ldif_content
     }
     /// <p>A description of the schema extension.</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +110,7 @@ impl StartSchemaExtensionInputBuilder {
     /// Consumes the builder and constructs a [`StartSchemaExtensionInput`](crate::operation::start_schema_extension::StartSchemaExtensionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_schema_extension::StartSchemaExtensionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_schema_extension::StartSchemaExtensionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_schema_extension::StartSchemaExtensionInput {
             directory_id: self.directory_id,

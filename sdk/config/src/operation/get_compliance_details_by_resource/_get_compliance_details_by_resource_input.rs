@@ -29,8 +29,10 @@ impl GetComplianceDetailsByResourceInput {
     }
     /// <p>Filters the results by compliance.</p>
     /// <p> <code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule cannot be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a <code>ComplianceType</code> for filtering results.</p>
-    pub fn compliance_types(&self) -> ::std::option::Option<&[crate::types::ComplianceType]> {
-        self.compliance_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compliance_types.is_none()`.
+    pub fn compliance_types(&self) -> &[crate::types::ComplianceType] {
+        self.compliance_types.as_deref().unwrap_or_default()
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -151,7 +153,7 @@ impl GetComplianceDetailsByResourceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResourceInput {

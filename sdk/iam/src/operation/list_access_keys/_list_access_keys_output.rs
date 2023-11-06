@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAccessKeysOutput {
     /// <p>A list of objects containing metadata about the access keys.</p>
-    pub access_key_metadata: ::std::option::Option<::std::vec::Vec<crate::types::AccessKeyMetadata>>,
+    pub access_key_metadata: ::std::vec::Vec<crate::types::AccessKeyMetadata>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
@@ -14,8 +14,9 @@ pub struct ListAccessKeysOutput {
 }
 impl ListAccessKeysOutput {
     /// <p>A list of objects containing metadata about the access keys.</p>
-    pub fn access_key_metadata(&self) -> ::std::option::Option<&[crate::types::AccessKeyMetadata]> {
-        self.access_key_metadata.as_deref()
+    pub fn access_key_metadata(&self) -> &[crate::types::AccessKeyMetadata] {
+        use std::ops::Deref;
+        self.access_key_metadata.deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub fn is_truncated(&self) -> bool {
@@ -106,12 +107,21 @@ impl ListAccessKeysOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAccessKeysOutput`](crate::operation::list_access_keys::ListAccessKeysOutput).
-    pub fn build(self) -> crate::operation::list_access_keys::ListAccessKeysOutput {
-        crate::operation::list_access_keys::ListAccessKeysOutput {
-            access_key_metadata: self.access_key_metadata,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`access_key_metadata`](crate::operation::list_access_keys::builders::ListAccessKeysOutputBuilder::access_key_metadata)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_access_keys::ListAccessKeysOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_access_keys::ListAccessKeysOutput {
+            access_key_metadata: self.access_key_metadata.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "access_key_metadata",
+                    "access_key_metadata was not specified but it is required when building ListAccessKeysOutput",
+                )
+            })?,
             is_truncated: self.is_truncated.unwrap_or_default(),
             marker: self.marker,
             _request_id: self._request_id,
-        }
+        })
     }
 }

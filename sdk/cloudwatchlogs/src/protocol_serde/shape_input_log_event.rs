@@ -2,15 +2,15 @@
 pub fn ser_input_log_event(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InputLogEvent,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.timestamp {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
         object.key("timestamp").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+            ::aws_smithy_types::Number::NegInt((input.timestamp).into()),
         );
     }
-    if let Some(var_2) = &input.message {
-        object.key("message").string(var_2.as_str());
+    {
+        object.key("message").string(input.message.as_str());
     }
     Ok(())
 }

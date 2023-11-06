@@ -46,6 +46,7 @@ impl DeleteBlueGreenDeploymentInputBuilder {
     /// <ul>
     /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn blue_green_deployment_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.blue_green_deployment_identifier = ::std::option::Option::Some(input.into());
         self
@@ -86,7 +87,7 @@ impl DeleteBlueGreenDeploymentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_blue_green_deployment::DeleteBlueGreenDeploymentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_blue_green_deployment::DeleteBlueGreenDeploymentInput {
             blue_green_deployment_identifier: self.blue_green_deployment_identifier,

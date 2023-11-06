@@ -34,6 +34,7 @@ pub struct ActivateContactChannelInputBuilder {
 }
 impl ActivateContactChannelInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
+    /// This field is required.
     pub fn contact_channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_channel_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl ActivateContactChannelInputBuilder {
         &self.contact_channel_id
     }
     /// <p>The code sent to the contact channel when it was created in the contact.</p>
+    /// This field is required.
     pub fn activation_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.activation_code = ::std::option::Option::Some(input.into());
         self
@@ -64,8 +66,10 @@ impl ActivateContactChannelInputBuilder {
     /// Consumes the builder and constructs a [`ActivateContactChannelInput`](crate::operation::activate_contact_channel::ActivateContactChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::activate_contact_channel::ActivateContactChannelInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::activate_contact_channel::ActivateContactChannelInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::activate_contact_channel::ActivateContactChannelInput {
             contact_channel_id: self.contact_channel_id,
             activation_code: self.activation_code,

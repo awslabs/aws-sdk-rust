@@ -27,6 +27,7 @@ pub struct StartEventDataStoreIngestionInputBuilder {
 }
 impl StartEventDataStoreIngestionInputBuilder {
     /// <p>The ARN (or ID suffix of the ARN) of the event data store for which you want to start ingestion.</p>
+    /// This field is required.
     pub fn event_data_store(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_data_store = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl StartEventDataStoreIngestionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_event_data_store_ingestion::StartEventDataStoreIngestionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_event_data_store_ingestion::StartEventDataStoreIngestionInput {
             event_data_store: self.event_data_store,

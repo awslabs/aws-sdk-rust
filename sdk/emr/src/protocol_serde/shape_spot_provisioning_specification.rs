@@ -2,7 +2,7 @@
 pub fn ser_spot_provisioning_specification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SpotProvisioningSpecification,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.timeout_duration_minutes {
         object.key("TimeoutDurationMinutes").number(
             #[allow(clippy::useless_conversion)]
@@ -80,7 +80,7 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::spot_provisioning_specification_correct_errors(builder).build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

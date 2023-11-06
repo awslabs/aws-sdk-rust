@@ -15,8 +15,10 @@ impl DescribeClusterDbRevisionsOutput {
         self.marker.as_deref()
     }
     /// <p>A list of revisions.</p>
-    pub fn cluster_db_revisions(&self) -> ::std::option::Option<&[crate::types::ClusterDbRevision]> {
-        self.cluster_db_revisions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cluster_db_revisions.is_none()`.
+    pub fn cluster_db_revisions(&self) -> &[crate::types::ClusterDbRevision] {
+        self.cluster_db_revisions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeClusterDbRevisionsOutput {

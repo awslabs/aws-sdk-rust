@@ -27,6 +27,7 @@ pub struct CreateSchemaInputBuilder {
 }
 impl CreateSchemaInputBuilder {
     /// <p>The name that is associated with the schema. This is unique to each account and in each region.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,9 @@ impl CreateSchemaInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`CreateSchemaInput`](crate::operation::create_schema::CreateSchemaInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_schema::CreateSchemaInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_schema::CreateSchemaInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_schema::CreateSchemaInput { name: self.name })
     }
 }

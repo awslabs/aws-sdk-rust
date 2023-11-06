@@ -90,7 +90,7 @@ impl ListOutpostResolversInputBuilder {
     /// Consumes the builder and constructs a [`ListOutpostResolversInput`](crate::operation::list_outpost_resolvers::ListOutpostResolversInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_outpost_resolvers::ListOutpostResolversInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_outpost_resolvers::ListOutpostResolversInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_outpost_resolvers::ListOutpostResolversInput {
             outpost_arn: self.outpost_arn,

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteMediaPipelineKinesisVideoStreamPool`](crate::operation::delete_media_pipeline_kinesis_video_stream_pool::builders::DeleteMediaPipelineKinesisVideoStreamPoolFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identifier(impl Into<String>)`](crate::operation::delete_media_pipeline_kinesis_video_stream_pool::builders::DeleteMediaPipelineKinesisVideoStreamPoolFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::delete_media_pipeline_kinesis_video_stream_pool::builders::DeleteMediaPipelineKinesisVideoStreamPoolFluentBuilder::set_identifier): <p>The ID of the pool being deleted.</p>
+    ///   - [`identifier(impl Into<String>)`](crate::operation::delete_media_pipeline_kinesis_video_stream_pool::builders::DeleteMediaPipelineKinesisVideoStreamPoolFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::delete_media_pipeline_kinesis_video_stream_pool::builders::DeleteMediaPipelineKinesisVideoStreamPoolFluentBuilder::set_identifier):<br>required: **true**<br><p>The ID of the pool being deleted.</p><br>
     /// - On success, responds with [`DeleteMediaPipelineKinesisVideoStreamPoolOutput`](crate::operation::delete_media_pipeline_kinesis_video_stream_pool::DeleteMediaPipelineKinesisVideoStreamPoolOutput)
     /// - On failure, responds with [`SdkError<DeleteMediaPipelineKinesisVideoStreamPoolError>`](crate::operation::delete_media_pipeline_kinesis_video_stream_pool::DeleteMediaPipelineKinesisVideoStreamPoolError)
     pub fn delete_media_pipeline_kinesis_video_stream_pool(

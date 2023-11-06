@@ -28,6 +28,7 @@ pub struct ToolchainSourceBuilder {
 }
 impl ToolchainSourceBuilder {
     /// <p>The Amazon S3 bucket where the toolchain template file provided with the project request is stored.</p>
+    /// This field is required.
     pub fn s3(mut self, input: crate::types::S3Location) -> Self {
         self.s3 = ::std::option::Option::Some(input);
         self

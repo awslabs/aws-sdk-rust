@@ -27,6 +27,7 @@ pub struct DescribeMitigationActionInputBuilder {
 }
 impl DescribeMitigationActionInputBuilder {
     /// <p>The friendly name that uniquely identifies the mitigation action.</p>
+    /// This field is required.
     pub fn action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeMitigationActionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_mitigation_action::DescribeMitigationActionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_mitigation_action::DescribeMitigationActionInput {
             action_name: self.action_name,

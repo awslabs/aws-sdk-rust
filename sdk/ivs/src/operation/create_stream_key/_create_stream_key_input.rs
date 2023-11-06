@@ -34,6 +34,7 @@ pub struct CreateStreamKeyInputBuilder {
 }
 impl CreateStreamKeyInputBuilder {
     /// <p>ARN of the channel for which to create the stream key.</p>
+    /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +71,7 @@ impl CreateStreamKeyInputBuilder {
     /// Consumes the builder and constructs a [`CreateStreamKeyInput`](crate::operation::create_stream_key::CreateStreamKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_stream_key::CreateStreamKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_stream_key::CreateStreamKeyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_stream_key::CreateStreamKeyInput {
             channel_arn: self.channel_arn,
             tags: self.tags,

@@ -32,10 +32,7 @@ pub(crate) fn reflens_list_tags_for_resource_output_next_token(
 pub(crate) fn lens_list_keyspaces_output_keyspaces(
     input: crate::operation::list_keyspaces::ListKeyspacesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::KeyspaceSummary>> {
-    let input = match input.keyspaces {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.keyspaces;
     ::std::option::Option::Some(input)
 }
 

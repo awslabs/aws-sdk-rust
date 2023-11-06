@@ -65,6 +65,7 @@ pub struct PutResourcePolicyInputBuilder {
 }
 impl PutResourcePolicyInputBuilder {
     /// <p>Contains the policy document to set, in JSON format.</p>
+    /// This field is required.
     pub fn policy_in_json(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_in_json = ::std::option::Option::Some(input.into());
         self
@@ -152,7 +153,7 @@ impl PutResourcePolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutResourcePolicyInput`](crate::operation::put_resource_policy::PutResourcePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_resource_policy::PutResourcePolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_resource_policy::PutResourcePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_resource_policy::PutResourcePolicyInput {
             policy_in_json: self.policy_in_json,
             resource_arn: self.resource_arn,

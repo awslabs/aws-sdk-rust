@@ -69,6 +69,7 @@ pub struct ListWorkflowsInputBuilder {
 }
 impl ListWorkflowsInputBuilder {
     /// <p>The unique name of the domain.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -169,7 +170,7 @@ impl ListWorkflowsInputBuilder {
     /// Consumes the builder and constructs a [`ListWorkflowsInput`](crate::operation::list_workflows::ListWorkflowsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_workflows::ListWorkflowsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_workflows::ListWorkflowsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_workflows::ListWorkflowsInput {
             domain_name: self.domain_name,
             workflow_type: self.workflow_type,

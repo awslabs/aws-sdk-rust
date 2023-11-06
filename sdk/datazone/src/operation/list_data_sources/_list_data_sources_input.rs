@@ -90,6 +90,7 @@ pub struct ListDataSourcesInputBuilder {
 }
 impl ListDataSourcesInputBuilder {
     /// <p>The identifier of the Amazon DataZone domain in which to list the data sources.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +105,7 @@ impl ListDataSourcesInputBuilder {
         &self.domain_identifier
     }
     /// <p>The identifier of the project in which to list data sources.</p>
+    /// This field is required.
     pub fn project_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_identifier = ::std::option::Option::Some(input.into());
         self
@@ -204,7 +206,7 @@ impl ListDataSourcesInputBuilder {
     /// Consumes the builder and constructs a [`ListDataSourcesInput`](crate::operation::list_data_sources::ListDataSourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_data_sources::ListDataSourcesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_data_sources::ListDataSourcesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_data_sources::ListDataSourcesInput {
             domain_identifier: self.domain_identifier,
             project_identifier: self.project_identifier,

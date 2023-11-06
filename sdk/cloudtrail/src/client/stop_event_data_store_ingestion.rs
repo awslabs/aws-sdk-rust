@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopEventDataStoreIngestion`](crate::operation::stop_event_data_store_ingestion::builders::StopEventDataStoreIngestionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`event_data_store(impl Into<String>)`](crate::operation::stop_event_data_store_ingestion::builders::StopEventDataStoreIngestionFluentBuilder::event_data_store) / [`set_event_data_store(Option<String>)`](crate::operation::stop_event_data_store_ingestion::builders::StopEventDataStoreIngestionFluentBuilder::set_event_data_store): <p>The ARN (or ID suffix of the ARN) of the event data store for which you want to stop ingestion.</p>
+    ///   - [`event_data_store(impl Into<String>)`](crate::operation::stop_event_data_store_ingestion::builders::StopEventDataStoreIngestionFluentBuilder::event_data_store) / [`set_event_data_store(Option<String>)`](crate::operation::stop_event_data_store_ingestion::builders::StopEventDataStoreIngestionFluentBuilder::set_event_data_store):<br>required: **true**<br><p>The ARN (or ID suffix of the ARN) of the event data store for which you want to stop ingestion.</p><br>
     /// - On success, responds with [`StopEventDataStoreIngestionOutput`](crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionOutput)
     /// - On failure, responds with [`SdkError<StopEventDataStoreIngestionError>`](crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionError)
     pub fn stop_event_data_store_ingestion(

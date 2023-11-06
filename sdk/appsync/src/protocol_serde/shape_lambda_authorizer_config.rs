@@ -2,18 +2,18 @@
 pub fn ser_lambda_authorizer_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LambdaAuthorizerConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.authorizer_result_ttl_in_seconds != 0 {
         object.key("authorizerResultTtlInSeconds").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((input.authorizer_result_ttl_in_seconds).into()),
         );
     }
-    if let Some(var_1) = &input.authorizer_uri {
-        object.key("authorizerUri").string(var_1.as_str());
+    {
+        object.key("authorizerUri").string(input.authorizer_uri.as_str());
     }
-    if let Some(var_2) = &input.identity_validation_expression {
-        object.key("identityValidationExpression").string(var_2.as_str());
+    if let Some(var_1) = &input.identity_validation_expression {
+        object.key("identityValidationExpression").string(var_1.as_str());
     }
     Ok(())
 }
@@ -64,7 +64,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::lambda_authorizer_config_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

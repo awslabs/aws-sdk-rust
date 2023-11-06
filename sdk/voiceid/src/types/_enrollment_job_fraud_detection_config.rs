@@ -21,8 +21,10 @@ impl EnrollmentJobFraudDetectionConfig {
         self.risk_threshold
     }
     /// <p>The identifier of watchlists against which fraud detection is performed. </p>
-    pub fn watchlist_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.watchlist_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.watchlist_ids.is_none()`.
+    pub fn watchlist_ids(&self) -> &[::std::string::String] {
+        self.watchlist_ids.as_deref().unwrap_or_default()
     }
 }
 impl EnrollmentJobFraudDetectionConfig {

@@ -36,6 +36,7 @@ pub struct ModelPackageValidationProfileBuilder {
 }
 impl ModelPackageValidationProfileBuilder {
     /// <p>The name of the profile for the model package.</p>
+    /// This field is required.
     pub fn profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_name = ::std::option::Option::Some(input.into());
         self
@@ -50,6 +51,7 @@ impl ModelPackageValidationProfileBuilder {
         &self.profile_name
     }
     /// <p>The <code>TransformJobDefinition</code> object that describes the transform job used for the validation of the model package.</p>
+    /// This field is required.
     pub fn transform_job_definition(mut self, input: crate::types::TransformJobDefinition) -> Self {
         self.transform_job_definition = ::std::option::Option::Some(input);
         self

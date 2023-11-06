@@ -9,8 +9,10 @@ pub struct DescribeSchedulingPoliciesOutput {
 }
 impl DescribeSchedulingPoliciesOutput {
     /// <p>The list of scheduling policies.</p>
-    pub fn scheduling_policies(&self) -> ::std::option::Option<&[crate::types::SchedulingPolicyDetail]> {
-        self.scheduling_policies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scheduling_policies.is_none()`.
+    pub fn scheduling_policies(&self) -> &[crate::types::SchedulingPolicyDetail] {
+        self.scheduling_policies.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeSchedulingPoliciesOutput {

@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetStatementResultOutput {
     /// <p>The results of the SQL statement.</p>
-    pub records: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::Field>>>,
+    pub records: ::std::vec::Vec<::std::vec::Vec<crate::types::Field>>,
     /// <p>The properties (metadata) of a column. </p>
     pub column_metadata: ::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>>,
     /// <p>The total number of rows in the result set returned from a query. You can use this number to estimate the number of calls to the <code>GetStatementResult</code> operation needed to page through the results. </p>
@@ -15,12 +15,15 @@ pub struct GetStatementResultOutput {
 }
 impl GetStatementResultOutput {
     /// <p>The results of the SQL statement.</p>
-    pub fn records(&self) -> ::std::option::Option<&[::std::vec::Vec<crate::types::Field>]> {
-        self.records.as_deref()
+    pub fn records(&self) -> &[::std::vec::Vec<crate::types::Field>] {
+        use std::ops::Deref;
+        self.records.deref()
     }
     /// <p>The properties (metadata) of a column. </p>
-    pub fn column_metadata(&self) -> ::std::option::Option<&[crate::types::ColumnMetadata]> {
-        self.column_metadata.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.column_metadata.is_none()`.
+    pub fn column_metadata(&self) -> &[crate::types::ColumnMetadata] {
+        self.column_metadata.as_deref().unwrap_or_default()
     }
     /// <p>The total number of rows in the result set returned from a query. You can use this number to estimate the number of calls to the <code>GetStatementResult</code> operation needed to page through the results. </p>
     pub fn total_num_rows(&self) -> i64 {
@@ -132,13 +135,23 @@ impl GetStatementResultOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetStatementResultOutput`](crate::operation::get_statement_result::GetStatementResultOutput).
-    pub fn build(self) -> crate::operation::get_statement_result::GetStatementResultOutput {
-        crate::operation::get_statement_result::GetStatementResultOutput {
-            records: self.records,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`records`](crate::operation::get_statement_result::builders::GetStatementResultOutputBuilder::records)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_statement_result::GetStatementResultOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_statement_result::GetStatementResultOutput {
+            records: self.records.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "records",
+                    "records was not specified but it is required when building GetStatementResultOutput",
+                )
+            })?,
             column_metadata: self.column_metadata,
             total_num_rows: self.total_num_rows.unwrap_or_default(),
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -26,14 +26,14 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.56.1"
-aws-sdk-ssooidc = "0.34.0"
+aws-config = "0.57.1"
+aws-sdk-ssooidc = "0.35.0"
 tokio = { version = "1", features = ["full"] }
 ```
 
 Then in code, a client can be created with the following:
 
-```rust,no_run
+```rust,ignore
 use aws_sdk_ssooidc as ssooidc;
 
 #[::tokio::main]

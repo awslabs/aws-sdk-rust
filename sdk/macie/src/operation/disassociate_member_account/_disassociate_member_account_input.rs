@@ -27,6 +27,7 @@ pub struct DisassociateMemberAccountInputBuilder {
 }
 impl DisassociateMemberAccountInputBuilder {
     /// <p>(Discontinued) The ID of the member account that you want to remove from Amazon Macie Classic.</p>
+    /// This field is required.
     pub fn member_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_account_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DisassociateMemberAccountInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_member_account::DisassociateMemberAccountInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_member_account::DisassociateMemberAccountInput {
             member_account_id: self.member_account_id,

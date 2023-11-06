@@ -120,6 +120,7 @@ impl CreateNetworkAclEntryInputBuilder {
         &self.dry_run
     }
     /// <p>Indicates whether this is an egress rule (rule is applied to traffic leaving the subnet).</p>
+    /// This field is required.
     pub fn egress(mut self, input: bool) -> Self {
         self.egress = ::std::option::Option::Some(input);
         self
@@ -162,6 +163,7 @@ impl CreateNetworkAclEntryInputBuilder {
         &self.ipv6_cidr_block
     }
     /// <p>The ID of the network ACL.</p>
+    /// This field is required.
     pub fn network_acl_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_acl_id = ::std::option::Option::Some(input.into());
         self
@@ -190,6 +192,7 @@ impl CreateNetworkAclEntryInputBuilder {
         &self.port_range
     }
     /// <p>The protocol number. A value of "-1" means all protocols. If you specify "-1" or a protocol number other than "6" (TCP), "17" (UDP), or "1" (ICMP), traffic on all ports is allowed, regardless of any ports or ICMP types or codes that you specify. If you specify protocol "58" (ICMPv6) and specify an IPv4 CIDR block, traffic for all ICMP types and codes allowed, regardless of any that you specify. If you specify protocol "58" (ICMPv6) and specify an IPv6 CIDR block, you must specify an ICMP type and code.</p>
+    /// This field is required.
     pub fn protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.protocol = ::std::option::Option::Some(input.into());
         self
@@ -204,6 +207,7 @@ impl CreateNetworkAclEntryInputBuilder {
         &self.protocol
     }
     /// <p>Indicates whether to allow or deny the traffic that matches the rule.</p>
+    /// This field is required.
     pub fn rule_action(mut self, input: crate::types::RuleAction) -> Self {
         self.rule_action = ::std::option::Option::Some(input);
         self
@@ -219,6 +223,7 @@ impl CreateNetworkAclEntryInputBuilder {
     }
     /// <p>The rule number for the entry (for example, 100). ACL entries are processed in ascending order by rule number.</p>
     /// <p>Constraints: Positive integer from 1 to 32766. The range 32767 to 65535 is reserved for internal use.</p>
+    /// This field is required.
     pub fn rule_number(mut self, input: i32) -> Self {
         self.rule_number = ::std::option::Option::Some(input);
         self
@@ -237,7 +242,7 @@ impl CreateNetworkAclEntryInputBuilder {
     /// Consumes the builder and constructs a [`CreateNetworkAclEntryInput`](crate::operation::create_network_acl_entry::CreateNetworkAclEntryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_network_acl_entry::CreateNetworkAclEntryInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_network_acl_entry::CreateNetworkAclEntryInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_network_acl_entry::CreateNetworkAclEntryInput {
             cidr_block: self.cidr_block,

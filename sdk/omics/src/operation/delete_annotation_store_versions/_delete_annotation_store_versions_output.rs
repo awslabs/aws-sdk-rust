@@ -9,8 +9,10 @@ pub struct DeleteAnnotationStoreVersionsOutput {
 }
 impl DeleteAnnotationStoreVersionsOutput {
     /// <p> Any errors that occur when attempting to delete an annotation store version. </p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::VersionDeleteError]> {
-        self.errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
+    pub fn errors(&self) -> &[crate::types::VersionDeleteError] {
+        self.errors.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteAnnotationStoreVersionsOutput {

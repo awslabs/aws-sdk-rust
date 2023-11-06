@@ -18,7 +18,7 @@ impl DeleteServerCatalogInputBuilder {
     /// Consumes the builder and constructs a [`DeleteServerCatalogInput`](crate::operation::delete_server_catalog::DeleteServerCatalogInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_server_catalog::DeleteServerCatalogInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_server_catalog::DeleteServerCatalogInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_server_catalog::DeleteServerCatalogInput {})
     }

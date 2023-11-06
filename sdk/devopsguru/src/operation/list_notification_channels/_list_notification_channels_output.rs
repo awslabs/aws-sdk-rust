@@ -11,8 +11,10 @@ pub struct ListNotificationChannelsOutput {
 }
 impl ListNotificationChannelsOutput {
     /// <p> An array that contains the requested notification channels. </p>
-    pub fn channels(&self) -> ::std::option::Option<&[crate::types::NotificationChannel]> {
-        self.channels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.channels.is_none()`.
+    pub fn channels(&self) -> &[crate::types::NotificationChannel] {
+        self.channels.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

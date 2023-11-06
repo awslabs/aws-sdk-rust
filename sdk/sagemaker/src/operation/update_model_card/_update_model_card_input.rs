@@ -64,6 +64,7 @@ pub struct UpdateModelCardInputBuilder {
 }
 impl UpdateModelCardInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the model card to update.</p>
+    /// This field is required.
     pub fn model_card_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_card_name = ::std::option::Option::Some(input.into());
         self
@@ -129,7 +130,7 @@ impl UpdateModelCardInputBuilder {
     /// Consumes the builder and constructs a [`UpdateModelCardInput`](crate::operation::update_model_card::UpdateModelCardInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_model_card::UpdateModelCardInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_model_card::UpdateModelCardInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_model_card::UpdateModelCardInput {
             model_card_name: self.model_card_name,
             content: self.content,

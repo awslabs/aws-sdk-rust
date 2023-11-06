@@ -15,8 +15,10 @@ impl AttachLoadBalancerToSubnetsInput {
         self.load_balancer_name.as_deref()
     }
     /// <p>The IDs of the subnets to add. You can add only one subnet per Availability Zone.</p>
-    pub fn subnets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnets.is_none()`.
+    pub fn subnets(&self) -> &[::std::string::String] {
+        self.subnets.as_deref().unwrap_or_default()
     }
 }
 impl AttachLoadBalancerToSubnetsInput {
@@ -35,6 +37,7 @@ pub struct AttachLoadBalancerToSubnetsInputBuilder {
 }
 impl AttachLoadBalancerToSubnetsInputBuilder {
     /// <p>The name of the load balancer.</p>
+    /// This field is required.
     pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
@@ -73,7 +76,7 @@ impl AttachLoadBalancerToSubnetsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsInput {
             load_balancer_name: self.load_balancer_name,

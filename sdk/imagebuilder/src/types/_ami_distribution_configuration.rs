@@ -27,8 +27,10 @@ impl AmiDistributionConfiguration {
         self.description.as_deref()
     }
     /// <p>The ID of an account to which you want to distribute an image.</p>
-    pub fn target_account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.target_account_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_account_ids.is_none()`.
+    pub fn target_account_ids(&self) -> &[::std::string::String] {
+        self.target_account_ids.as_deref().unwrap_or_default()
     }
     /// <p>The tags to apply to AMIs distributed to this Region.</p>
     pub fn ami_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {

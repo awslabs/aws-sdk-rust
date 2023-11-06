@@ -105,7 +105,7 @@ impl GetSchemaVersionInputBuilder {
     /// Consumes the builder and constructs a [`GetSchemaVersionInput`](crate::operation::get_schema_version::GetSchemaVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_schema_version::GetSchemaVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_schema_version::GetSchemaVersionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_schema_version::GetSchemaVersionInput {
             schema_id: self.schema_id,
             schema_version_id: self.schema_version_id,

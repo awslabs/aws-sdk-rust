@@ -28,6 +28,7 @@ pub struct GetApiCacheInputBuilder {
 }
 impl GetApiCacheInputBuilder {
     /// <p>The API ID.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +43,7 @@ impl GetApiCacheInputBuilder {
         &self.api_id
     }
     /// Consumes the builder and constructs a [`GetApiCacheInput`](crate::operation::get_api_cache::GetApiCacheInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_api_cache::GetApiCacheInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_api_cache::GetApiCacheInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_api_cache::GetApiCacheInput { api_id: self.api_id })
     }
 }

@@ -27,6 +27,7 @@ pub struct DeleteCorsConfigurationInputBuilder {
 }
 impl DeleteCorsConfigurationInputBuilder {
     /// <p>The API identifier.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteCorsConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_cors_configuration::DeleteCorsConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_cors_configuration::DeleteCorsConfigurationInput { api_id: self.api_id })
     }

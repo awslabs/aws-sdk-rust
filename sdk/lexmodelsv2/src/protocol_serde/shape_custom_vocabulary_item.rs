@@ -2,21 +2,21 @@
 pub fn ser_custom_vocabulary_item(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CustomVocabularyItem,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.item_id {
-        object.key("itemId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("itemId").string(input.item_id.as_str());
     }
-    if let Some(var_2) = &input.phrase {
-        object.key("phrase").string(var_2.as_str());
+    {
+        object.key("phrase").string(input.phrase.as_str());
     }
-    if let Some(var_3) = &input.weight {
+    if let Some(var_1) = &input.weight {
         object.key("weight").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_4) = &input.display_as {
-        object.key("displayAs").string(var_4.as_str());
+    if let Some(var_2) = &input.display_as {
+        object.key("displayAs").string(var_2.as_str());
     }
     Ok(())
 }
@@ -74,7 +74,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::custom_vocabulary_item_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

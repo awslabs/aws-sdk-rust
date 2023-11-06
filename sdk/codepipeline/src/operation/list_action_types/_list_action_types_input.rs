@@ -86,7 +86,7 @@ impl ListActionTypesInputBuilder {
     /// Consumes the builder and constructs a [`ListActionTypesInput`](crate::operation::list_action_types::ListActionTypesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_action_types::ListActionTypesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_action_types::ListActionTypesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_action_types::ListActionTypesInput {
             action_owner_filter: self.action_owner_filter,
             next_token: self.next_token,

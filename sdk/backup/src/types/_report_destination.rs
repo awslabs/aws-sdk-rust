@@ -15,8 +15,10 @@ impl ReportDestination {
         self.s3_bucket_name.as_deref()
     }
     /// <p>The object key that uniquely identifies your reports in your S3 bucket.</p>
-    pub fn s3_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.s3_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.s3_keys.is_none()`.
+    pub fn s3_keys(&self) -> &[::std::string::String] {
+        self.s3_keys.as_deref().unwrap_or_default()
     }
 }
 impl ReportDestination {

@@ -9,8 +9,10 @@ pub struct GetIdentityNotificationAttributesInput {
 }
 impl GetIdentityNotificationAttributesInput {
     /// <p>A list of one or more identities. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
-    pub fn identities(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.identities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.identities.is_none()`.
+    pub fn identities(&self) -> &[::std::string::String] {
+        self.identities.as_deref().unwrap_or_default()
     }
 }
 impl GetIdentityNotificationAttributesInput {
@@ -52,7 +54,7 @@ impl GetIdentityNotificationAttributesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributesInput { identities: self.identities },

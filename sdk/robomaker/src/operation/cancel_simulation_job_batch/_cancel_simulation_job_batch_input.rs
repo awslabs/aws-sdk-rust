@@ -27,6 +27,7 @@ pub struct CancelSimulationJobBatchInputBuilder {
 }
 impl CancelSimulationJobBatchInputBuilder {
     /// <p>The id of the batch to cancel.</p>
+    /// This field is required.
     pub fn batch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.batch = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl CancelSimulationJobBatchInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatchInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatchInput { batch: self.batch })
     }

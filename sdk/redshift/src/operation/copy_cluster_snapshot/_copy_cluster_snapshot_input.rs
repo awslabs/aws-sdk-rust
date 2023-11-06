@@ -89,6 +89,7 @@ impl CopyClusterSnapshotInputBuilder {
     /// <ul>
     /// <li> <p>Must be the identifier for a valid automated snapshot whose state is <code>available</code>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn source_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_snapshot_identifier = ::std::option::Option::Some(input.into());
         self
@@ -145,6 +146,7 @@ impl CopyClusterSnapshotInputBuilder {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// <li> <p>Must be unique for the Amazon Web Services account that is making the request.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn target_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_snapshot_identifier = ::std::option::Option::Some(input.into());
         self
@@ -197,7 +199,7 @@ impl CopyClusterSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`CopyClusterSnapshotInput`](crate::operation::copy_cluster_snapshot::CopyClusterSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::copy_cluster_snapshot::CopyClusterSnapshotInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::copy_cluster_snapshot::CopyClusterSnapshotInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::copy_cluster_snapshot::CopyClusterSnapshotInput {
             source_snapshot_identifier: self.source_snapshot_identifier,

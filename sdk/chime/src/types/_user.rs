@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct User {
     /// <p>The user ID.</p>
-    pub user_id: ::std::option::Option<::std::string::String>,
+    pub user_id: ::std::string::String,
     /// <p>The Amazon Chime account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The primary email address of the user.</p>
@@ -33,8 +33,9 @@ pub struct User {
 }
 impl User {
     /// <p>The user ID.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
-        self.user_id.as_deref()
+    pub fn user_id(&self) -> &str {
+        use std::ops::Deref;
+        self.user_id.deref()
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
@@ -131,6 +132,7 @@ pub struct UserBuilder {
 }
 impl UserBuilder {
     /// <p>The user ID.</p>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
@@ -313,9 +315,16 @@ impl UserBuilder {
         &self.personal_pin
     }
     /// Consumes the builder and constructs a [`User`](crate::types::User).
-    pub fn build(self) -> crate::types::User {
-        crate::types::User {
-            user_id: self.user_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`user_id`](crate::types::builders::UserBuilder::user_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::User, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::User {
+            user_id: self.user_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "user_id",
+                    "user_id was not specified but it is required when building User",
+                )
+            })?,
             account_id: self.account_id,
             primary_email: self.primary_email,
             primary_provisioned_number: self.primary_provisioned_number,
@@ -328,7 +337,7 @@ impl UserBuilder {
             invited_on: self.invited_on,
             alexa_for_business_metadata: self.alexa_for_business_metadata,
             personal_pin: self.personal_pin,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for UserBuilder {

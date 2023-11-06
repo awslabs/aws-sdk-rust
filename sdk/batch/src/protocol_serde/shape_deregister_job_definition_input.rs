@@ -2,7 +2,7 @@
 pub fn ser_deregister_job_definition_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::deregister_job_definition::DeregisterJobDefinitionInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.job_definition {
         object.key("jobDefinition").string(var_1.as_str());
     }

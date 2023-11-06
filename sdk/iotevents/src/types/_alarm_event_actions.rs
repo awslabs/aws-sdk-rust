@@ -9,8 +9,10 @@ pub struct AlarmEventActions {
 }
 impl AlarmEventActions {
     /// <p>Specifies one or more supported actions to receive notifications when the alarm state changes.</p>
-    pub fn alarm_actions(&self) -> ::std::option::Option<&[crate::types::AlarmAction]> {
-        self.alarm_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alarm_actions.is_none()`.
+    pub fn alarm_actions(&self) -> &[crate::types::AlarmAction] {
+        self.alarm_actions.as_deref().unwrap_or_default()
     }
 }
 impl AlarmEventActions {

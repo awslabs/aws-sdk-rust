@@ -56,6 +56,7 @@ pub struct AuthorizeDbSecurityGroupIngressInputBuilder {
 }
 impl AuthorizeDbSecurityGroupIngressInputBuilder {
     /// <p>The name of the DB security group to add authorization to.</p>
+    /// This field is required.
     pub fn db_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_security_group_name = ::std::option::Option::Some(input.into());
         self
@@ -130,7 +131,7 @@ impl AuthorizeDbSecurityGroupIngressInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::authorize_db_security_group_ingress::AuthorizeDbSecurityGroupIngressInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::authorize_db_security_group_ingress::AuthorizeDbSecurityGroupIngressInput {

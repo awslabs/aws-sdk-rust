@@ -11,8 +11,10 @@ pub struct SearchResourcesOutput {
 }
 impl SearchResourcesOutput {
     /// <p>List of Documents, Folders, Comments, and Document Versions matching the query.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::ResponseItem]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[crate::types::ResponseItem] {
+        self.items.as_deref().unwrap_or_default()
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

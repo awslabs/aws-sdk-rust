@@ -2,9 +2,9 @@
 pub fn ser_aws_managed_rules_bot_control_rule_set(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsManagedRulesBotControlRuleSet,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.inspection_level {
-        object.key("InspectionLevel").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("InspectionLevel").string(input.inspection_level.as_str());
     }
     if input.enable_machine_learning {
         object.key("EnableMachineLearning").boolean(input.enable_machine_learning);
@@ -47,7 +47,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::aws_managed_rules_bot_control_rule_set_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IotSiteWiseCustomerManagedDatastoreS3Storage {
     /// <p> The name of the Amazon S3 bucket where your data is stored. </p>
-    pub bucket: ::std::option::Option<::std::string::String>,
+    pub bucket: ::std::string::String,
     /// <p> (Optional) The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/). </p>
     pub key_prefix: ::std::option::Option<::std::string::String>,
 }
 impl IotSiteWiseCustomerManagedDatastoreS3Storage {
     /// <p> The name of the Amazon S3 bucket where your data is stored. </p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
-        self.bucket.as_deref()
+    pub fn bucket(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket.deref()
     }
     /// <p> (Optional) The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/). </p>
     pub fn key_prefix(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct IotSiteWiseCustomerManagedDatastoreS3StorageBuilder {
 }
 impl IotSiteWiseCustomerManagedDatastoreS3StorageBuilder {
     /// <p> The name of the Amazon S3 bucket where your data is stored. </p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,19 @@ impl IotSiteWiseCustomerManagedDatastoreS3StorageBuilder {
         &self.key_prefix
     }
     /// Consumes the builder and constructs a [`IotSiteWiseCustomerManagedDatastoreS3Storage`](crate::types::IotSiteWiseCustomerManagedDatastoreS3Storage).
-    pub fn build(self) -> crate::types::IotSiteWiseCustomerManagedDatastoreS3Storage {
-        crate::types::IotSiteWiseCustomerManagedDatastoreS3Storage {
-            bucket: self.bucket,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bucket`](crate::types::builders::IotSiteWiseCustomerManagedDatastoreS3StorageBuilder::bucket)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::IotSiteWiseCustomerManagedDatastoreS3Storage, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::IotSiteWiseCustomerManagedDatastoreS3Storage {
+            bucket: self.bucket.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "bucket",
+                    "bucket was not specified but it is required when building IotSiteWiseCustomerManagedDatastoreS3Storage",
+                )
+            })?,
             key_prefix: self.key_prefix,
-        }
+        })
     }
 }

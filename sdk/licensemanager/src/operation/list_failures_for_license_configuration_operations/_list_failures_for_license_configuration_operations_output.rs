@@ -11,8 +11,10 @@ pub struct ListFailuresForLicenseConfigurationOperationsOutput {
 }
 impl ListFailuresForLicenseConfigurationOperationsOutput {
     /// <p>License configuration operations that failed.</p>
-    pub fn license_operation_failure_list(&self) -> ::std::option::Option<&[crate::types::LicenseOperationFailure]> {
-        self.license_operation_failure_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.license_operation_failure_list.is_none()`.
+    pub fn license_operation_failure_list(&self) -> &[crate::types::LicenseOperationFailure] {
+        self.license_operation_failure_list.as_deref().unwrap_or_default()
     }
     /// <p>Token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

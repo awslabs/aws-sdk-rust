@@ -5,26 +5,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PackageImportJobOutput {
     /// <p>The package's ID.</p>
-    pub package_id: ::std::option::Option<::std::string::String>,
+    pub package_id: ::std::string::String,
     /// <p>The package's version.</p>
-    pub package_version: ::std::option::Option<::std::string::String>,
+    pub package_version: ::std::string::String,
     /// <p>The package's patch version.</p>
-    pub patch_version: ::std::option::Option<::std::string::String>,
+    pub patch_version: ::std::string::String,
     /// <p>The package's output location.</p>
     pub output_s3_location: ::std::option::Option<crate::types::OutPutS3Location>,
 }
 impl PackageImportJobOutput {
     /// <p>The package's ID.</p>
-    pub fn package_id(&self) -> ::std::option::Option<&str> {
-        self.package_id.as_deref()
+    pub fn package_id(&self) -> &str {
+        use std::ops::Deref;
+        self.package_id.deref()
     }
     /// <p>The package's version.</p>
-    pub fn package_version(&self) -> ::std::option::Option<&str> {
-        self.package_version.as_deref()
+    pub fn package_version(&self) -> &str {
+        use std::ops::Deref;
+        self.package_version.deref()
     }
     /// <p>The package's patch version.</p>
-    pub fn patch_version(&self) -> ::std::option::Option<&str> {
-        self.patch_version.as_deref()
+    pub fn patch_version(&self) -> &str {
+        use std::ops::Deref;
+        self.patch_version.deref()
     }
     /// <p>The package's output location.</p>
     pub fn output_s3_location(&self) -> ::std::option::Option<&crate::types::OutPutS3Location> {
@@ -49,6 +52,7 @@ pub struct PackageImportJobOutputBuilder {
 }
 impl PackageImportJobOutputBuilder {
     /// <p>The package's ID.</p>
+    /// This field is required.
     pub fn package_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +67,7 @@ impl PackageImportJobOutputBuilder {
         &self.package_id
     }
     /// <p>The package's version.</p>
+    /// This field is required.
     pub fn package_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_version = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +82,7 @@ impl PackageImportJobOutputBuilder {
         &self.package_version
     }
     /// <p>The package's patch version.</p>
+    /// This field is required.
     pub fn patch_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.patch_version = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +97,7 @@ impl PackageImportJobOutputBuilder {
         &self.patch_version
     }
     /// <p>The package's output location.</p>
+    /// This field is required.
     pub fn output_s3_location(mut self, input: crate::types::OutPutS3Location) -> Self {
         self.output_s3_location = ::std::option::Option::Some(input);
         self
@@ -105,12 +112,31 @@ impl PackageImportJobOutputBuilder {
         &self.output_s3_location
     }
     /// Consumes the builder and constructs a [`PackageImportJobOutput`](crate::types::PackageImportJobOutput).
-    pub fn build(self) -> crate::types::PackageImportJobOutput {
-        crate::types::PackageImportJobOutput {
-            package_id: self.package_id,
-            package_version: self.package_version,
-            patch_version: self.patch_version,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`package_id`](crate::types::builders::PackageImportJobOutputBuilder::package_id)
+    /// - [`package_version`](crate::types::builders::PackageImportJobOutputBuilder::package_version)
+    /// - [`patch_version`](crate::types::builders::PackageImportJobOutputBuilder::patch_version)
+    pub fn build(self) -> ::std::result::Result<crate::types::PackageImportJobOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PackageImportJobOutput {
+            package_id: self.package_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "package_id",
+                    "package_id was not specified but it is required when building PackageImportJobOutput",
+                )
+            })?,
+            package_version: self.package_version.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "package_version",
+                    "package_version was not specified but it is required when building PackageImportJobOutput",
+                )
+            })?,
+            patch_version: self.patch_version.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "patch_version",
+                    "patch_version was not specified but it is required when building PackageImportJobOutput",
+                )
+            })?,
             output_s3_location: self.output_s3_location,
-        }
+        })
     }
 }

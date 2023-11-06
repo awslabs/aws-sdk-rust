@@ -38,8 +38,8 @@ pub fn de_describe_reserved_elasticsearch_instance_offerings_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InternalException" => crate::operation::describe_reserved_elasticsearch_instance_offerings::DescribeReservedElasticsearchInstanceOfferingsError::InternalException({
@@ -54,8 +54,8 @@ pub fn de_describe_reserved_elasticsearch_instance_offerings_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::describe_reserved_elasticsearch_instance_offerings::DescribeReservedElasticsearchInstanceOfferingsError::ResourceNotFoundException({
@@ -70,8 +70,8 @@ pub fn de_describe_reserved_elasticsearch_instance_offerings_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ValidationException" => crate::operation::describe_reserved_elasticsearch_instance_offerings::DescribeReservedElasticsearchInstanceOfferingsError::ValidationException({
@@ -86,8 +86,8 @@ pub fn de_describe_reserved_elasticsearch_instance_offerings_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::describe_reserved_elasticsearch_instance_offerings::DescribeReservedElasticsearchInstanceOfferingsError::generic(generic)

@@ -2,7 +2,7 @@
 pub fn ser_get_time_series_service_statistics_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_time_series_service_statistics::GetTimeSeriesServiceStatisticsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.end_time {
         object
             .key("EndTime")

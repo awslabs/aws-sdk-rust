@@ -28,6 +28,7 @@ pub struct GetNotificationConfigurationInputBuilder {
 }
 impl GetNotificationConfigurationInputBuilder {
     /// <p>The name of the profiling group we want to get the notification configuration for.</p>
+    /// This field is required.
     pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profiling_group_name = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl GetNotificationConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_notification_configuration::GetNotificationConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_notification_configuration::GetNotificationConfigurationInput {
             profiling_group_name: self.profiling_group_name,

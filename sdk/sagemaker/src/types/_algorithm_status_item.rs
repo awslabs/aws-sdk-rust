@@ -42,6 +42,7 @@ pub struct AlgorithmStatusItemBuilder {
 }
 impl AlgorithmStatusItemBuilder {
     /// <p>The name of the algorithm for which the overall status is being reported.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl AlgorithmStatusItemBuilder {
         &self.name
     }
     /// <p>The current status.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::DetailedAlgorithmStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self

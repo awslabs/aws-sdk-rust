@@ -9,8 +9,10 @@ pub struct AwsS3BucketBucketLifecycleConfigurationDetails {
 }
 impl AwsS3BucketBucketLifecycleConfigurationDetails {
     /// <p>The lifecycle rules.</p>
-    pub fn rules(&self) -> ::std::option::Option<&[crate::types::AwsS3BucketBucketLifecycleConfigurationRulesDetails]> {
-        self.rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
+    pub fn rules(&self) -> &[crate::types::AwsS3BucketBucketLifecycleConfigurationRulesDetails] {
+        self.rules.as_deref().unwrap_or_default()
     }
 }
 impl AwsS3BucketBucketLifecycleConfigurationDetails {

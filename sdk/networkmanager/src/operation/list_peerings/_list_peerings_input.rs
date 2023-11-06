@@ -146,7 +146,9 @@ impl ListPeeringsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListPeeringsInput`](crate::operation::list_peerings::ListPeeringsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_peerings::ListPeeringsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_peerings::ListPeeringsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_peerings::ListPeeringsInput {
             core_network_id: self.core_network_id,
             peering_type: self.peering_type,

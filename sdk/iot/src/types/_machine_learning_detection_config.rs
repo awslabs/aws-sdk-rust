@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MachineLearningDetectionConfig {
     /// <p> The sensitivity of anomalous behavior evaluation. Can be <code>Low</code>, <code>Medium</code>, or <code>High</code>. </p>
-    pub confidence_level: ::std::option::Option<crate::types::ConfidenceLevel>,
+    pub confidence_level: crate::types::ConfidenceLevel,
 }
 impl MachineLearningDetectionConfig {
     /// <p> The sensitivity of anomalous behavior evaluation. Can be <code>Low</code>, <code>Medium</code>, or <code>High</code>. </p>
-    pub fn confidence_level(&self) -> ::std::option::Option<&crate::types::ConfidenceLevel> {
-        self.confidence_level.as_ref()
+    pub fn confidence_level(&self) -> &crate::types::ConfidenceLevel {
+        &self.confidence_level
     }
 }
 impl MachineLearningDetectionConfig {
@@ -28,6 +28,7 @@ pub struct MachineLearningDetectionConfigBuilder {
 }
 impl MachineLearningDetectionConfigBuilder {
     /// <p> The sensitivity of anomalous behavior evaluation. Can be <code>Low</code>, <code>Medium</code>, or <code>High</code>. </p>
+    /// This field is required.
     pub fn confidence_level(mut self, input: crate::types::ConfidenceLevel) -> Self {
         self.confidence_level = ::std::option::Option::Some(input);
         self
@@ -42,9 +43,16 @@ impl MachineLearningDetectionConfigBuilder {
         &self.confidence_level
     }
     /// Consumes the builder and constructs a [`MachineLearningDetectionConfig`](crate::types::MachineLearningDetectionConfig).
-    pub fn build(self) -> crate::types::MachineLearningDetectionConfig {
-        crate::types::MachineLearningDetectionConfig {
-            confidence_level: self.confidence_level,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`confidence_level`](crate::types::builders::MachineLearningDetectionConfigBuilder::confidence_level)
+    pub fn build(self) -> ::std::result::Result<crate::types::MachineLearningDetectionConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::MachineLearningDetectionConfig {
+            confidence_level: self.confidence_level.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "confidence_level",
+                    "confidence_level was not specified but it is required when building MachineLearningDetectionConfig",
+                )
+            })?,
+        })
     }
 }

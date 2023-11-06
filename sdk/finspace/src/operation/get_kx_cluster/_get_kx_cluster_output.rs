@@ -97,12 +97,16 @@ impl GetKxClusterOutput {
         self.cluster_type.as_ref()
     }
     /// <p> A list of databases mounted on the cluster.</p>
-    pub fn databases(&self) -> ::std::option::Option<&[crate::types::KxDatabaseConfiguration]> {
-        self.databases.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.databases.is_none()`.
+    pub fn databases(&self) -> &[crate::types::KxDatabaseConfiguration] {
+        self.databases.as_deref().unwrap_or_default()
     }
     /// <p>The configurations for a read only cache storage associated with a cluster. This cache will be stored as an FSx Lustre that reads from the S3 store. </p>
-    pub fn cache_storage_configurations(&self) -> ::std::option::Option<&[crate::types::KxCacheStorageConfiguration]> {
-        self.cache_storage_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cache_storage_configurations.is_none()`.
+    pub fn cache_storage_configurations(&self) -> &[crate::types::KxCacheStorageConfiguration] {
+        self.cache_storage_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The configuration based on which FinSpace will scale in or scale out nodes in your cluster.</p>
     pub fn auto_scaling_configuration(&self) -> ::std::option::Option<&crate::types::AutoScalingConfiguration> {
@@ -129,8 +133,10 @@ impl GetKxClusterOutput {
         self.initialization_script.as_deref()
     }
     /// <p>Defines key-value pairs to make them available inside the cluster.</p>
-    pub fn command_line_arguments(&self) -> ::std::option::Option<&[crate::types::KxCommandLineArgument]> {
-        self.command_line_arguments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.command_line_arguments.is_none()`.
+    pub fn command_line_arguments(&self) -> &[crate::types::KxCommandLineArgument] {
+        self.command_line_arguments.as_deref().unwrap_or_default()
     }
     /// <p>The details of the custom code that you want to use inside a cluster when analyzing a data. It consists of the S3 source bucket, location, S3 object version, and the relative path from where the custom code is loaded into the cluster. </p>
     pub fn code(&self) -> ::std::option::Option<&crate::types::CodeConfiguration> {

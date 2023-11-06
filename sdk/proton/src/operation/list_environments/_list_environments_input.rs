@@ -20,8 +20,10 @@ impl ListEnvironmentsInput {
         self.max_results
     }
     /// <p>An array of the versions of the environment template.</p>
-    pub fn environment_templates(&self) -> ::std::option::Option<&[crate::types::EnvironmentTemplateFilter]> {
-        self.environment_templates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.environment_templates.is_none()`.
+    pub fn environment_templates(&self) -> &[crate::types::EnvironmentTemplateFilter] {
+        self.environment_templates.as_deref().unwrap_or_default()
     }
 }
 impl ListEnvironmentsInput {
@@ -91,7 +93,7 @@ impl ListEnvironmentsInputBuilder {
     /// Consumes the builder and constructs a [`ListEnvironmentsInput`](crate::operation::list_environments::ListEnvironmentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_environments::ListEnvironmentsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_environments::ListEnvironmentsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_environments::ListEnvironmentsInput {
             next_token: self.next_token,
             max_results: self.max_results,

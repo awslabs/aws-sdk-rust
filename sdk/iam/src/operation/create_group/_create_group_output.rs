@@ -35,6 +35,7 @@ pub struct CreateGroupOutputBuilder {
 }
 impl CreateGroupOutputBuilder {
     /// <p>A structure containing details about the new group.</p>
+    /// This field is required.
     pub fn group(mut self, input: crate::types::Group) -> Self {
         self.group = ::std::option::Option::Some(input);
         self

@@ -27,6 +27,7 @@ pub struct DeleteTopicInputBuilder {
 }
 impl DeleteTopicInputBuilder {
     /// <p>The ARN of the topic you want to delete.</p>
+    /// This field is required.
     pub fn topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_arn = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl DeleteTopicInputBuilder {
         &self.topic_arn
     }
     /// Consumes the builder and constructs a [`DeleteTopicInput`](crate::operation::delete_topic::DeleteTopicInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_topic::DeleteTopicInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_topic::DeleteTopicInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_topic::DeleteTopicInput { topic_arn: self.topic_arn })
     }
 }

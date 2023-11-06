@@ -129,6 +129,7 @@ pub struct CreateKeySigningKeyInputBuilder {
 }
 impl CreateKeySigningKeyInputBuilder {
     /// <p>A unique string that identifies the request.</p>
+    /// This field is required.
     pub fn caller_reference(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.caller_reference = ::std::option::Option::Some(input.into());
         self
@@ -143,6 +144,7 @@ impl CreateKeySigningKeyInputBuilder {
         &self.caller_reference
     }
     /// <p>The unique string (ID) used to identify a hosted zone.</p>
+    /// This field is required.
     pub fn hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hosted_zone_id = ::std::option::Option::Some(input.into());
         self
@@ -194,6 +196,7 @@ impl CreateKeySigningKeyInputBuilder {
     /// </dd>
     /// </dl>
     /// <p>For more information about working with a customer managed key in KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key Management Service concepts</a>.</p>
+    /// This field is required.
     pub fn key_management_service_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_management_service_arn = ::std::option::Option::Some(input.into());
         self
@@ -282,6 +285,7 @@ impl CreateKeySigningKeyInputBuilder {
         &self.key_management_service_arn
     }
     /// <p>A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters, and underscores (_). <code>Name</code> must be unique for each key-signing key in the same hosted zone.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -296,6 +300,7 @@ impl CreateKeySigningKeyInputBuilder {
         &self.name
     }
     /// <p>A string specifying the initial status of the key-signing key (KSK). You can set the value to <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
+    /// This field is required.
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
         self
@@ -312,7 +317,7 @@ impl CreateKeySigningKeyInputBuilder {
     /// Consumes the builder and constructs a [`CreateKeySigningKeyInput`](crate::operation::create_key_signing_key::CreateKeySigningKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_key_signing_key::CreateKeySigningKeyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_key_signing_key::CreateKeySigningKeyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_key_signing_key::CreateKeySigningKeyInput {
             caller_reference: self.caller_reference,

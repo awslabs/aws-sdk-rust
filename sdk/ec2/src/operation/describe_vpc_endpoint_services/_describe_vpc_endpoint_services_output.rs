@@ -13,12 +13,16 @@ pub struct DescribeVpcEndpointServicesOutput {
 }
 impl DescribeVpcEndpointServicesOutput {
     /// <p>The supported services.</p>
-    pub fn service_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.service_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_names.is_none()`.
+    pub fn service_names(&self) -> &[::std::string::String] {
+        self.service_names.as_deref().unwrap_or_default()
     }
     /// <p>Information about the service.</p>
-    pub fn service_details(&self) -> ::std::option::Option<&[crate::types::ServiceDetail]> {
-        self.service_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_details.is_none()`.
+    pub fn service_details(&self) -> &[crate::types::ServiceDetail] {
+        self.service_details.as_deref().unwrap_or_default()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

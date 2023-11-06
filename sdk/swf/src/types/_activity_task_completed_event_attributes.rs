@@ -56,6 +56,7 @@ impl ActivityTaskCompletedEventAttributesBuilder {
         &self.result
     }
     /// <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    /// This field is required.
     pub fn scheduled_event_id(mut self, input: i64) -> Self {
         self.scheduled_event_id = ::std::option::Option::Some(input);
         self
@@ -70,6 +71,7 @@ impl ActivityTaskCompletedEventAttributesBuilder {
         &self.scheduled_event_id
     }
     /// <p>The ID of the <code>ActivityTaskStarted</code> event recorded when this activity task was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    /// This field is required.
     pub fn started_event_id(mut self, input: i64) -> Self {
         self.started_event_id = ::std::option::Option::Some(input);
         self

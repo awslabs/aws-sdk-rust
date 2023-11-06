@@ -11,8 +11,10 @@ pub struct BatchListObjectParentsResponse {
 }
 impl BatchListObjectParentsResponse {
     /// <p>Returns a list of parent reference and LinkName Tuples.</p>
-    pub fn parent_links(&self) -> ::std::option::Option<&[crate::types::ObjectIdentifierAndLinkNameTuple]> {
-        self.parent_links.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parent_links.is_none()`.
+    pub fn parent_links(&self) -> &[crate::types::ObjectIdentifierAndLinkNameTuple] {
+        self.parent_links.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

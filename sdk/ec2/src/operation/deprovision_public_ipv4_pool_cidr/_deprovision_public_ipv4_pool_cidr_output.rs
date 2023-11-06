@@ -15,8 +15,10 @@ impl DeprovisionPublicIpv4PoolCidrOutput {
         self.pool_id.as_deref()
     }
     /// <p>The deprovisioned CIDRs.</p>
-    pub fn deprovisioned_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.deprovisioned_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.deprovisioned_addresses.is_none()`.
+    pub fn deprovisioned_addresses(&self) -> &[::std::string::String] {
+        self.deprovisioned_addresses.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DeprovisionPublicIpv4PoolCidrOutput {

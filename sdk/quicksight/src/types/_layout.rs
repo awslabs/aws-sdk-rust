@@ -30,6 +30,7 @@ pub struct LayoutBuilder {
 }
 impl LayoutBuilder {
     /// <p>The configuration that determines what the type of layout for a sheet.</p>
+    /// This field is required.
     pub fn configuration(mut self, input: crate::types::LayoutConfiguration) -> Self {
         self.configuration = ::std::option::Option::Some(input);
         self

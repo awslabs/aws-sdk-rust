@@ -41,6 +41,7 @@ pub struct ListJobRunsInputBuilder {
 }
 impl ListJobRunsInputBuilder {
     /// <p>The name of the job.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +84,7 @@ impl ListJobRunsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListJobRunsInput`](crate::operation::list_job_runs::ListJobRunsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_job_runs::ListJobRunsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_job_runs::ListJobRunsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_job_runs::ListJobRunsInput {
             name: self.name,
             max_results: self.max_results,

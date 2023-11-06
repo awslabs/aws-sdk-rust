@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeregisterCompute`](crate::operation::deregister_compute::builders::DeregisterComputeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`fleet_id(impl Into<String>)`](crate::operation::deregister_compute::builders::DeregisterComputeFluentBuilder::fleet_id) / [`set_fleet_id(Option<String>)`](crate::operation::deregister_compute::builders::DeregisterComputeFluentBuilder::set_fleet_id): <p>A unique identifier for the fleet the compute resource is currently registered to.</p>
-    ///   - [`compute_name(impl Into<String>)`](crate::operation::deregister_compute::builders::DeregisterComputeFluentBuilder::compute_name) / [`set_compute_name(Option<String>)`](crate::operation::deregister_compute::builders::DeregisterComputeFluentBuilder::set_compute_name): <p>The name of the compute resource to remove from the specified Anywhere fleet.</p>
+    ///   - [`fleet_id(impl Into<String>)`](crate::operation::deregister_compute::builders::DeregisterComputeFluentBuilder::fleet_id) / [`set_fleet_id(Option<String>)`](crate::operation::deregister_compute::builders::DeregisterComputeFluentBuilder::set_fleet_id):<br>required: **true**<br><p>A unique identifier for the fleet the compute resource is currently registered to.</p><br>
+    ///   - [`compute_name(impl Into<String>)`](crate::operation::deregister_compute::builders::DeregisterComputeFluentBuilder::compute_name) / [`set_compute_name(Option<String>)`](crate::operation::deregister_compute::builders::DeregisterComputeFluentBuilder::set_compute_name):<br>required: **true**<br><p>The name of the compute resource to remove from the specified Anywhere fleet.</p><br>
     /// - On success, responds with [`DeregisterComputeOutput`](crate::operation::deregister_compute::DeregisterComputeOutput)
     /// - On failure, responds with [`SdkError<DeregisterComputeError>`](crate::operation::deregister_compute::DeregisterComputeError)
     pub fn deregister_compute(&self) -> crate::operation::deregister_compute::builders::DeregisterComputeFluentBuilder {

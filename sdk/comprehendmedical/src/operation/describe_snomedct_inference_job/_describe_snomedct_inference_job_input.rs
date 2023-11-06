@@ -27,6 +27,7 @@ pub struct DescribeSnomedctInferenceJobInputBuilder {
 }
 impl DescribeSnomedctInferenceJobInputBuilder {
     /// <p> The identifier that Amazon Comprehend Medical generated for the job. The StartSNOMEDCTInferenceJob operation returns this identifier in its response. </p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeSnomedctInferenceJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_snomedct_inference_job::DescribeSnomedctInferenceJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_snomedct_inference_job::DescribeSnomedctInferenceJobInput { job_id: self.job_id })
     }

@@ -97,8 +97,10 @@ impl JobDetail {
         self.scheduling_priority
     }
     /// <p>A list of job attempts that are associated with this job.</p>
-    pub fn attempts(&self) -> ::std::option::Option<&[crate::types::AttemptDetail]> {
-        self.attempts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attempts.is_none()`.
+    pub fn attempts(&self) -> &[crate::types::AttemptDetail] {
+        self.attempts.as_deref().unwrap_or_default()
     }
     /// <p>A short, human-readable string to provide more details for the current status of the job.</p>
     pub fn status_reason(&self) -> ::std::option::Option<&str> {
@@ -121,8 +123,10 @@ impl JobDetail {
         self.stopped_at
     }
     /// <p>A list of job IDs that this job depends on.</p>
-    pub fn depends_on(&self) -> ::std::option::Option<&[crate::types::JobDependency]> {
-        self.depends_on.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.depends_on.is_none()`.
+    pub fn depends_on(&self) -> &[crate::types::JobDependency] {
+        self.depends_on.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the job definition that this job uses.</p>
     pub fn job_definition(&self) -> ::std::option::Option<&str> {
@@ -163,16 +167,20 @@ impl JobDetail {
         self.propagate_tags
     }
     /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.</p>
-    pub fn platform_capabilities(&self) -> ::std::option::Option<&[crate::types::PlatformCapability]> {
-        self.platform_capabilities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.platform_capabilities.is_none()`.
+    pub fn platform_capabilities(&self) -> &[crate::types::PlatformCapability] {
+        self.platform_capabilities.as_deref().unwrap_or_default()
     }
     /// <p>An object with various properties that are specific to Amazon EKS based jobs. Only one of <code>container</code>, <code>eksProperties</code>, or <code>nodeDetails</code> is specified.</p>
     pub fn eks_properties(&self) -> ::std::option::Option<&crate::types::EksPropertiesDetail> {
         self.eks_properties.as_ref()
     }
     /// <p>A list of job attempts that are associated with this job.</p>
-    pub fn eks_attempts(&self) -> ::std::option::Option<&[crate::types::EksAttemptDetail]> {
-        self.eks_attempts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.eks_attempts.is_none()`.
+    pub fn eks_attempts(&self) -> &[crate::types::EksAttemptDetail] {
+        self.eks_attempts.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether the job is canceled.</p>
     pub fn is_cancelled(&self) -> ::std::option::Option<bool> {
@@ -239,6 +247,7 @@ impl JobDetailBuilder {
         &self.job_arn
     }
     /// <p>The job name.</p>
+    /// This field is required.
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name = ::std::option::Option::Some(input.into());
         self
@@ -253,6 +262,7 @@ impl JobDetailBuilder {
         &self.job_name
     }
     /// <p>The job ID.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -267,6 +277,7 @@ impl JobDetailBuilder {
         &self.job_id
     }
     /// <p>The Amazon Resource Name (ARN) of the job queue that the job is associated with.</p>
+    /// This field is required.
     pub fn job_queue(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_queue = ::std::option::Option::Some(input.into());
         self
@@ -283,6 +294,7 @@ impl JobDetailBuilder {
     /// <p>The current status for the job.</p> <note>
     /// <p>If your jobs don't progress to <code>STARTING</code>, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs stuck in RUNNABLE status</a> in the troubleshooting section of the <i>Batch User Guide</i>.</p>
     /// </note>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::JobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -391,6 +403,7 @@ impl JobDetailBuilder {
         &self.retry_strategy
     }
     /// <p>The Unix timestamp (in milliseconds) for when the job was started. More specifically, it's when the job transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state. This parameter isn't provided for child jobs of array jobs or multi-node parallel jobs.</p>
+    /// This field is required.
     pub fn started_at(mut self, input: i64) -> Self {
         self.started_at = ::std::option::Option::Some(input);
         self
@@ -439,6 +452,7 @@ impl JobDetailBuilder {
         &self.depends_on
     }
     /// <p>The Amazon Resource Name (ARN) of the job definition that this job uses.</p>
+    /// This field is required.
     pub fn job_definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_definition = ::std::option::Option::Some(input.into());
         self

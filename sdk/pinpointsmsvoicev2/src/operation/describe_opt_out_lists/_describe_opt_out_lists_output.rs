@@ -11,8 +11,10 @@ pub struct DescribeOptOutListsOutput {
 }
 impl DescribeOptOutListsOutput {
     /// <p>An array of OptOutListInformation objects that contain the details for the requested OptOutLists.</p>
-    pub fn opt_out_lists(&self) -> ::std::option::Option<&[crate::types::OptOutListInformation]> {
-        self.opt_out_lists.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.opt_out_lists.is_none()`.
+    pub fn opt_out_lists(&self) -> &[crate::types::OptOutListInformation] {
+        self.opt_out_lists.as_deref().unwrap_or_default()
     }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

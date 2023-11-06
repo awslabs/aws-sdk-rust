@@ -27,6 +27,7 @@ pub struct DescribeMetricAttributionInputBuilder {
 }
 impl DescribeMetricAttributionInputBuilder {
     /// <p>The metric attribution's Amazon Resource Name (ARN).</p>
+    /// This field is required.
     pub fn metric_attribution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_attribution_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeMetricAttributionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_metric_attribution::DescribeMetricAttributionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_metric_attribution::DescribeMetricAttributionInput {
             metric_attribution_arn: self.metric_attribution_arn,

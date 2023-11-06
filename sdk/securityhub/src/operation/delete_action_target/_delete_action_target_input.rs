@@ -27,6 +27,7 @@ pub struct DeleteActionTargetInputBuilder {
 }
 impl DeleteActionTargetInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the custom action target to delete.</p>
+    /// This field is required.
     pub fn action_target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_target_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,8 @@ impl DeleteActionTargetInputBuilder {
     /// Consumes the builder and constructs a [`DeleteActionTargetInput`](crate::operation::delete_action_target::DeleteActionTargetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_action_target::DeleteActionTargetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_action_target::DeleteActionTargetInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_action_target::DeleteActionTargetInput {
             action_target_arn: self.action_target_arn,
         })

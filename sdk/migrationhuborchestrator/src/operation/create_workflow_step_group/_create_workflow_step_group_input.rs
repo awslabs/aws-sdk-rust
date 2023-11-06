@@ -28,12 +28,16 @@ impl CreateWorkflowStepGroupInput {
         self.description.as_deref()
     }
     /// <p>The next step group.</p>
-    pub fn next(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.next.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.next.is_none()`.
+    pub fn next(&self) -> &[::std::string::String] {
+        self.next.as_deref().unwrap_or_default()
     }
     /// <p>The previous step group.</p>
-    pub fn previous(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.previous.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.previous.is_none()`.
+    pub fn previous(&self) -> &[::std::string::String] {
+        self.previous.as_deref().unwrap_or_default()
     }
 }
 impl CreateWorkflowStepGroupInput {
@@ -55,6 +59,7 @@ pub struct CreateWorkflowStepGroupInputBuilder {
 }
 impl CreateWorkflowStepGroupInputBuilder {
     /// <p>The ID of the migration workflow that will contain the step group.</p>
+    /// This field is required.
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +74,7 @@ impl CreateWorkflowStepGroupInputBuilder {
         &self.workflow_id
     }
     /// <p>The name of the step group.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -141,7 +147,7 @@ impl CreateWorkflowStepGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_workflow_step_group::CreateWorkflowStepGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_workflow_step_group::CreateWorkflowStepGroupInput {
             workflow_id: self.workflow_id,

@@ -27,6 +27,7 @@ pub struct CancelAnnotationImportJobInputBuilder {
 }
 impl CancelAnnotationImportJobInputBuilder {
     /// <p>The job's ID.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl CancelAnnotationImportJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_annotation_import_job::CancelAnnotationImportJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::cancel_annotation_import_job::CancelAnnotationImportJobInput { job_id: self.job_id })
     }

@@ -11,8 +11,10 @@ pub struct ListRecommendationsOutput {
 }
 impl ListRecommendationsOutput {
     /// <p>List of recommendations for the requested code review.</p>
-    pub fn recommendation_summaries(&self) -> ::std::option::Option<&[crate::types::RecommendationSummary]> {
-        self.recommendation_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recommendation_summaries.is_none()`.
+    pub fn recommendation_summaries(&self) -> &[crate::types::RecommendationSummary] {
+        self.recommendation_summaries.as_deref().unwrap_or_default()
     }
     /// <p>Pagination token.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

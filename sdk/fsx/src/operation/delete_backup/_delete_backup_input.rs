@@ -35,6 +35,7 @@ pub struct DeleteBackupInputBuilder {
 }
 impl DeleteBackupInputBuilder {
     /// <p>The ID of the backup that you want to delete.</p>
+    /// This field is required.
     pub fn backup_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_id = ::std::option::Option::Some(input.into());
         self
@@ -63,7 +64,9 @@ impl DeleteBackupInputBuilder {
         &self.client_request_token
     }
     /// Consumes the builder and constructs a [`DeleteBackupInput`](crate::operation::delete_backup::DeleteBackupInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_backup::DeleteBackupInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_backup::DeleteBackupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_backup::DeleteBackupInput {
             backup_id: self.backup_id,
             client_request_token: self.client_request_token,

@@ -48,6 +48,7 @@ pub struct ListIntegrationsInputBuilder {
 }
 impl ListIntegrationsInputBuilder {
     /// <p>The unique name of the domain.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,7 @@ impl ListIntegrationsInputBuilder {
     /// Consumes the builder and constructs a [`ListIntegrationsInput`](crate::operation::list_integrations::ListIntegrationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_integrations::ListIntegrationsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_integrations::ListIntegrationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_integrations::ListIntegrationsInput {
             domain_name: self.domain_name,
             next_token: self.next_token,

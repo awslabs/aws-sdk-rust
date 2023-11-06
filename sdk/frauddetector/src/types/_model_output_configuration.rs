@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelOutputConfiguration {
     /// <p>The format of the model output configuration.</p>
-    pub format: ::std::option::Option<crate::types::ModelOutputDataFormat>,
+    pub format: crate::types::ModelOutputDataFormat,
     /// <p>A map of JSON keys in response from SageMaker to the Amazon Fraud Detector variables. </p>
     pub json_key_to_variable_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A map of CSV index values in the SageMaker response to the Amazon Fraud Detector variables. </p>
@@ -13,8 +13,8 @@ pub struct ModelOutputConfiguration {
 }
 impl ModelOutputConfiguration {
     /// <p>The format of the model output configuration.</p>
-    pub fn format(&self) -> ::std::option::Option<&crate::types::ModelOutputDataFormat> {
-        self.format.as_ref()
+    pub fn format(&self) -> &crate::types::ModelOutputDataFormat {
+        &self.format
     }
     /// <p>A map of JSON keys in response from SageMaker to the Amazon Fraud Detector variables. </p>
     pub fn json_key_to_variable_map(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -42,6 +42,7 @@ pub struct ModelOutputConfigurationBuilder {
 }
 impl ModelOutputConfigurationBuilder {
     /// <p>The format of the model output configuration.</p>
+    /// This field is required.
     pub fn format(mut self, input: crate::types::ModelOutputDataFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
         self
@@ -110,11 +111,18 @@ impl ModelOutputConfigurationBuilder {
         &self.csv_index_to_variable_map
     }
     /// Consumes the builder and constructs a [`ModelOutputConfiguration`](crate::types::ModelOutputConfiguration).
-    pub fn build(self) -> crate::types::ModelOutputConfiguration {
-        crate::types::ModelOutputConfiguration {
-            format: self.format,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`format`](crate::types::builders::ModelOutputConfigurationBuilder::format)
+    pub fn build(self) -> ::std::result::Result<crate::types::ModelOutputConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ModelOutputConfiguration {
+            format: self.format.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "format",
+                    "format was not specified but it is required when building ModelOutputConfiguration",
+                )
+            })?,
             json_key_to_variable_map: self.json_key_to_variable_map,
             csv_index_to_variable_map: self.csv_index_to_variable_map,
-        }
+        })
     }
 }

@@ -15,8 +15,10 @@ impl GetModelsOutput {
         self.next_token.as_deref()
     }
     /// <p>The array of models.</p>
-    pub fn models(&self) -> ::std::option::Option<&[crate::types::Model]> {
-        self.models.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.models.is_none()`.
+    pub fn models(&self) -> &[crate::types::Model] {
+        self.models.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetModelsOutput {

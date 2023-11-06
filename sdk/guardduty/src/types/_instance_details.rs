@@ -69,20 +69,26 @@ impl InstanceDetails {
         self.launch_time.as_deref()
     }
     /// <p>The elastic network interface information of the EC2 instance.</p>
-    pub fn network_interfaces(&self) -> ::std::option::Option<&[crate::types::NetworkInterface]> {
-        self.network_interfaces.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_interfaces.is_none()`.
+    pub fn network_interfaces(&self) -> &[crate::types::NetworkInterface] {
+        self.network_interfaces.as_deref().unwrap_or_default()
     }
     /// <p>The platform of the EC2 instance.</p>
     pub fn platform(&self) -> ::std::option::Option<&str> {
         self.platform.as_deref()
     }
     /// <p>The product code of the EC2 instance.</p>
-    pub fn product_codes(&self) -> ::std::option::Option<&[crate::types::ProductCode]> {
-        self.product_codes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.product_codes.is_none()`.
+    pub fn product_codes(&self) -> &[crate::types::ProductCode] {
+        self.product_codes.as_deref().unwrap_or_default()
     }
     /// <p>The tags of the EC2 instance.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl InstanceDetails {

@@ -27,6 +27,7 @@ pub struct DescribeScheduleInputBuilder {
 }
 impl DescribeScheduleInputBuilder {
     /// <p>The name of the schedule to be described.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeScheduleInputBuilder {
     /// Consumes the builder and constructs a [`DescribeScheduleInput`](crate::operation::describe_schedule::DescribeScheduleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_schedule::DescribeScheduleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_schedule::DescribeScheduleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_schedule::DescribeScheduleInput { name: self.name })
     }
 }

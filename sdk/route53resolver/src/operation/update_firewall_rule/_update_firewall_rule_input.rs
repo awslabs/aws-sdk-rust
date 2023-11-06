@@ -105,6 +105,7 @@ pub struct UpdateFirewallRuleInputBuilder {
 }
 impl UpdateFirewallRuleInputBuilder {
     /// <p>The unique identifier of the firewall rule group for the rule. </p>
+    /// This field is required.
     pub fn firewall_rule_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_rule_group_id = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +120,7 @@ impl UpdateFirewallRuleInputBuilder {
         &self.firewall_rule_group_id
     }
     /// <p>The ID of the domain list to use in the rule. </p>
+    /// This field is required.
     pub fn firewall_domain_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_domain_list_id = ::std::option::Option::Some(input.into());
         self
@@ -266,7 +268,8 @@ impl UpdateFirewallRuleInputBuilder {
     /// Consumes the builder and constructs a [`UpdateFirewallRuleInput`](crate::operation::update_firewall_rule::UpdateFirewallRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_firewall_rule::UpdateFirewallRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_firewall_rule::UpdateFirewallRuleInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_firewall_rule::UpdateFirewallRuleInput {
             firewall_rule_group_id: self.firewall_rule_group_id,
             firewall_domain_list_id: self.firewall_domain_list_id,

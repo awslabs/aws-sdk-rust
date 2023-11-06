@@ -64,6 +64,7 @@ pub struct AssociateRepositoryInputBuilder {
 }
 impl AssociateRepositoryInputBuilder {
     /// <p>The repository to associate.</p>
+    /// This field is required.
     pub fn repository(mut self, input: crate::types::Repository) -> Self {
         self.repository = ::std::option::Option::Some(input);
         self
@@ -152,7 +153,7 @@ impl AssociateRepositoryInputBuilder {
     /// Consumes the builder and constructs a [`AssociateRepositoryInput`](crate::operation::associate_repository::AssociateRepositoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_repository::AssociateRepositoryInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::associate_repository::AssociateRepositoryInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::associate_repository::AssociateRepositoryInput {
             repository: self.repository,

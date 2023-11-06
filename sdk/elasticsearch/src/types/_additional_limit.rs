@@ -25,8 +25,10 @@ impl AdditionalLimit {
         self.limit_name.as_deref()
     }
     /// <p> Value for given <code> <code>AdditionalLimit$LimitName</code> </code> . </p>
-    pub fn limit_values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.limit_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.limit_values.is_none()`.
+    pub fn limit_values(&self) -> &[::std::string::String] {
+        self.limit_values.as_deref().unwrap_or_default()
     }
 }
 impl AdditionalLimit {

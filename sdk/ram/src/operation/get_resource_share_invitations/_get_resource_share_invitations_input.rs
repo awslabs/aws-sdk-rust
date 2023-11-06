@@ -14,12 +14,16 @@ pub struct GetResourceShareInvitationsInput {
 }
 impl GetResourceShareInvitationsInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resource share invitations you want information about.</p>
-    pub fn resource_share_invitation_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_share_invitation_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_share_invitation_arns.is_none()`.
+    pub fn resource_share_invitation_arns(&self) -> &[::std::string::String] {
+        self.resource_share_invitation_arns.as_deref().unwrap_or_default()
     }
     /// <p>Specifies that you want details about invitations only for the resource shares described by this list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> </p>
-    pub fn resource_share_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_share_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_share_arns.is_none()`.
+    pub fn resource_share_arns(&self) -> &[::std::string::String] {
+        self.resource_share_arns.as_deref().unwrap_or_default()
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -120,7 +124,7 @@ impl GetResourceShareInvitationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resource_share_invitations::GetResourceShareInvitationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_resource_share_invitations::GetResourceShareInvitationsInput {
             resource_share_invitation_arns: self.resource_share_invitation_arns,

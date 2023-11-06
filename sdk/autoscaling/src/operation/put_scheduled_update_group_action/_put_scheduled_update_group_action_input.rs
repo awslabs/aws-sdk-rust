@@ -102,6 +102,7 @@ pub struct PutScheduledUpdateGroupActionInputBuilder {
 }
 impl PutScheduledUpdateGroupActionInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
+    /// This field is required.
     pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
@@ -116,6 +117,7 @@ impl PutScheduledUpdateGroupActionInputBuilder {
         &self.auto_scaling_group_name
     }
     /// <p>The name of this scaling action.</p>
+    /// This field is required.
     pub fn scheduled_action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduled_action_name = ::std::option::Option::Some(input.into());
         self
@@ -264,7 +266,7 @@ impl PutScheduledUpdateGroupActionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_scheduled_update_group_action::PutScheduledUpdateGroupActionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_scheduled_update_group_action::PutScheduledUpdateGroupActionInput {
             auto_scaling_group_name: self.auto_scaling_group_name,

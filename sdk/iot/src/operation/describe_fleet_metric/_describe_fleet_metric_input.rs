@@ -27,6 +27,7 @@ pub struct DescribeFleetMetricInputBuilder {
 }
 impl DescribeFleetMetricInputBuilder {
     /// <p>The name of the fleet metric to describe.</p>
+    /// This field is required.
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeFleetMetricInputBuilder {
     /// Consumes the builder and constructs a [`DescribeFleetMetricInput`](crate::operation::describe_fleet_metric::DescribeFleetMetricInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_fleet_metric::DescribeFleetMetricInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_fleet_metric::DescribeFleetMetricInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_fleet_metric::DescribeFleetMetricInput {
             metric_name: self.metric_name,

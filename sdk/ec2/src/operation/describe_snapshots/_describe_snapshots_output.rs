@@ -11,8 +11,10 @@ pub struct DescribeSnapshotsOutput {
 }
 impl DescribeSnapshotsOutput {
     /// <p>Information about the snapshots.</p>
-    pub fn snapshots(&self) -> ::std::option::Option<&[crate::types::Snapshot]> {
-        self.snapshots.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.snapshots.is_none()`.
+    pub fn snapshots(&self) -> &[crate::types::Snapshot] {
+        self.snapshots.as_deref().unwrap_or_default()
     }
     /// <p>The token to include in another request to return the next page of snapshots. This value is <code>null</code> when there are no more snapshots to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

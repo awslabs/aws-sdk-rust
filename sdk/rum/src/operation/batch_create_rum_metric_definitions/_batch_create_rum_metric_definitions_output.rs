@@ -4,19 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchCreateRumMetricDefinitionsOutput {
     /// <p>An array of error objects, if the operation caused any errors.</p>
-    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchCreateRumMetricDefinitionsError>>,
+    pub errors: ::std::vec::Vec<crate::types::BatchCreateRumMetricDefinitionsError>,
     /// <p>An array of structures that define the extended metrics.</p>
     pub metric_definitions: ::std::option::Option<::std::vec::Vec<crate::types::MetricDefinition>>,
     _request_id: Option<String>,
 }
 impl BatchCreateRumMetricDefinitionsOutput {
     /// <p>An array of error objects, if the operation caused any errors.</p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::BatchCreateRumMetricDefinitionsError]> {
-        self.errors.as_deref()
+    pub fn errors(&self) -> &[crate::types::BatchCreateRumMetricDefinitionsError] {
+        use std::ops::Deref;
+        self.errors.deref()
     }
     /// <p>An array of structures that define the extended metrics.</p>
-    pub fn metric_definitions(&self) -> ::std::option::Option<&[crate::types::MetricDefinition]> {
-        self.metric_definitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_definitions.is_none()`.
+    pub fn metric_definitions(&self) -> &[crate::types::MetricDefinition] {
+        self.metric_definitions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchCreateRumMetricDefinitionsOutput {
@@ -90,11 +93,25 @@ impl BatchCreateRumMetricDefinitionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchCreateRumMetricDefinitionsOutput`](crate::operation::batch_create_rum_metric_definitions::BatchCreateRumMetricDefinitionsOutput).
-    pub fn build(self) -> crate::operation::batch_create_rum_metric_definitions::BatchCreateRumMetricDefinitionsOutput {
-        crate::operation::batch_create_rum_metric_definitions::BatchCreateRumMetricDefinitionsOutput {
-            errors: self.errors,
-            metric_definitions: self.metric_definitions,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`errors`](crate::operation::batch_create_rum_metric_definitions::builders::BatchCreateRumMetricDefinitionsOutputBuilder::errors)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::batch_create_rum_metric_definitions::BatchCreateRumMetricDefinitionsOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::batch_create_rum_metric_definitions::BatchCreateRumMetricDefinitionsOutput {
+                errors: self.errors.ok_or_else(|| {
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
+                        "errors",
+                        "errors was not specified but it is required when building BatchCreateRumMetricDefinitionsOutput",
+                    )
+                })?,
+                metric_definitions: self.metric_definitions,
+                _request_id: self._request_id,
+            },
+        )
     }
 }

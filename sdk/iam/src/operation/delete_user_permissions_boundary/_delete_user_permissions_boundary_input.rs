@@ -27,6 +27,7 @@ pub struct DeleteUserPermissionsBoundaryInputBuilder {
 }
 impl DeleteUserPermissionsBoundaryInputBuilder {
     /// <p>The name (friendly name, not ARN) of the IAM user from which you want to remove the permissions boundary.</p>
+    /// This field is required.
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteUserPermissionsBoundaryInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_user_permissions_boundary::DeleteUserPermissionsBoundaryInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_user_permissions_boundary::DeleteUserPermissionsBoundaryInput {
             user_name: self.user_name,

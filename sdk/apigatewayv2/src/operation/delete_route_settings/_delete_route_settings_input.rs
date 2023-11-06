@@ -41,6 +41,7 @@ pub struct DeleteRouteSettingsInputBuilder {
 }
 impl DeleteRouteSettingsInputBuilder {
     /// <p>The API identifier.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DeleteRouteSettingsInputBuilder {
         &self.api_id
     }
     /// <p>The route key.</p>
+    /// This field is required.
     pub fn route_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_key = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl DeleteRouteSettingsInputBuilder {
         &self.route_key
     }
     /// <p>The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
+    /// This field is required.
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_name = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +88,7 @@ impl DeleteRouteSettingsInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRouteSettingsInput`](crate::operation::delete_route_settings::DeleteRouteSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_route_settings::DeleteRouteSettingsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_route_settings::DeleteRouteSettingsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_route_settings::DeleteRouteSettingsInput {
             api_id: self.api_id,

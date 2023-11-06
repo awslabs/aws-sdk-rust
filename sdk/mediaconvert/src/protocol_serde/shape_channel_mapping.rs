@@ -2,7 +2,7 @@
 pub fn ser_channel_mapping(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ChannelMapping,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.output_channels {
         let mut array_2 = object.key("outputChannels").start_array();
         for item_3 in var_1 {
@@ -35,7 +35,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "outputChannels" => {
                             builder = builder.set_output_channels(
-                                crate::protocol_serde::shape___list_of_output_channel_mapping::de___list_of_output_channel_mapping(tokens)?,
+                                crate::protocol_serde::shape_list_of_output_channel_mapping::de_list_of_output_channel_mapping(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

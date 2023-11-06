@@ -11,8 +11,10 @@ pub struct ListVehiclesOutput {
 }
 impl ListVehiclesOutput {
     /// <p> A list of vehicles and information about them. </p>
-    pub fn vehicle_summaries(&self) -> ::std::option::Option<&[crate::types::VehicleSummary]> {
-        self.vehicle_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vehicle_summaries.is_none()`.
+    pub fn vehicle_summaries(&self) -> &[crate::types::VehicleSummary] {
+        self.vehicle_summaries.as_deref().unwrap_or_default()
     }
     /// <p> The token to retrieve the next set of results, or <code>null</code> if there are no more results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

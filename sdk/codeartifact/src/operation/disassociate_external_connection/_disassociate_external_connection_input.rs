@@ -48,6 +48,7 @@ pub struct DisassociateExternalConnectionInputBuilder {
 }
 impl DisassociateExternalConnectionInputBuilder {
     /// <p>The name of the domain that contains the repository from which to remove the external repository. </p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl DisassociateExternalConnectionInputBuilder {
         &self.domain_owner
     }
     /// <p>The name of the repository from which the external connection will be removed. </p>
+    /// This field is required.
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +92,7 @@ impl DisassociateExternalConnectionInputBuilder {
         &self.repository
     }
     /// <p>The name of the external connection to be removed from the repository. </p>
+    /// This field is required.
     pub fn external_connection(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.external_connection = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +111,7 @@ impl DisassociateExternalConnectionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_external_connection::DisassociateExternalConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_external_connection::DisassociateExternalConnectionInput {
             domain: self.domain,

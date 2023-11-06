@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopEarthObservationJob`](crate::operation::stop_earth_observation_job::builders::StopEarthObservationJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::stop_earth_observation_job::builders::StopEarthObservationJobFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::stop_earth_observation_job::builders::StopEarthObservationJobFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) of the Earth Observation job being stopped.</p>
+    ///   - [`arn(impl Into<String>)`](crate::operation::stop_earth_observation_job::builders::StopEarthObservationJobFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::stop_earth_observation_job::builders::StopEarthObservationJobFluentBuilder::set_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the Earth Observation job being stopped.</p><br>
     /// - On success, responds with [`StopEarthObservationJobOutput`](crate::operation::stop_earth_observation_job::StopEarthObservationJobOutput)
     /// - On failure, responds with [`SdkError<StopEarthObservationJobError>`](crate::operation::stop_earth_observation_job::StopEarthObservationJobError)
     pub fn stop_earth_observation_job(&self) -> crate::operation::stop_earth_observation_job::builders::StopEarthObservationJobFluentBuilder {

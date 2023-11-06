@@ -43,6 +43,7 @@ pub struct StartPolicyGenerationInputBuilder {
 }
 impl StartPolicyGenerationInputBuilder {
     /// <p>Contains the ARN of the IAM entity (user or role) for which you are generating a policy.</p>
+    /// This field is required.
     pub fn policy_generation_details(mut self, input: crate::types::PolicyGenerationDetails) -> Self {
         self.policy_generation_details = ::std::option::Option::Some(input);
         self
@@ -90,7 +91,7 @@ impl StartPolicyGenerationInputBuilder {
     /// Consumes the builder and constructs a [`StartPolicyGenerationInput`](crate::operation::start_policy_generation::StartPolicyGenerationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_policy_generation::StartPolicyGenerationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_policy_generation::StartPolicyGenerationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_policy_generation::StartPolicyGenerationInput {
             policy_generation_details: self.policy_generation_details,

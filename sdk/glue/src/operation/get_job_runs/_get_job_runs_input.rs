@@ -41,6 +41,7 @@ pub struct GetJobRunsInputBuilder {
 }
 impl GetJobRunsInputBuilder {
     /// <p>The name of the job definition for which to retrieve all job runs.</p>
+    /// This field is required.
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +84,7 @@ impl GetJobRunsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetJobRunsInput`](crate::operation::get_job_runs::GetJobRunsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_job_runs::GetJobRunsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_job_runs::GetJobRunsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_job_runs::GetJobRunsInput {
             job_name: self.job_name,
             next_token: self.next_token,

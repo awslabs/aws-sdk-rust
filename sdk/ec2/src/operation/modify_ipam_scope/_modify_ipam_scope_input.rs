@@ -55,6 +55,7 @@ impl ModifyIpamScopeInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the scope you want to modify.</p>
+    /// This field is required.
     pub fn ipam_scope_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_scope_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl ModifyIpamScopeInputBuilder {
     /// Consumes the builder and constructs a [`ModifyIpamScopeInput`](crate::operation::modify_ipam_scope::ModifyIpamScopeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_ipam_scope::ModifyIpamScopeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::modify_ipam_scope::ModifyIpamScopeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_ipam_scope::ModifyIpamScopeInput {
             dry_run: self.dry_run,
             ipam_scope_id: self.ipam_scope_id,

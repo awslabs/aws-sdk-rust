@@ -11,8 +11,10 @@ pub struct UpdateRecoveryGroupInput {
 }
 impl UpdateRecoveryGroupInput {
     /// <p>A list of cell Amazon Resource Names (ARNs). This list completely replaces the previous list.</p>
-    pub fn cells(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cells.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cells.is_none()`.
+    pub fn cells(&self) -> &[::std::string::String] {
+        self.cells.as_deref().unwrap_or_default()
     }
     /// <p>The name of a recovery group.</p>
     pub fn recovery_group_name(&self) -> ::std::option::Option<&str> {
@@ -55,6 +57,7 @@ impl UpdateRecoveryGroupInputBuilder {
         &self.cells
     }
     /// <p>The name of a recovery group.</p>
+    /// This field is required.
     pub fn recovery_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recovery_group_name = ::std::option::Option::Some(input.into());
         self
@@ -71,7 +74,7 @@ impl UpdateRecoveryGroupInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRecoveryGroupInput`](crate::operation::update_recovery_group::UpdateRecoveryGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_recovery_group::UpdateRecoveryGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_recovery_group::UpdateRecoveryGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_recovery_group::UpdateRecoveryGroupInput {
             cells: self.cells,

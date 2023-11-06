@@ -2,7 +2,7 @@
 pub fn ser_register_account_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::register_account::RegisterAccountInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.delegated_admin_account {
         object.key("delegatedAdminAccount").string(var_1.as_str());
     }

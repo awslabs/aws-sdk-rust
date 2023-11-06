@@ -27,6 +27,7 @@ pub struct DeleteStreamInputBuilder {
 }
 impl DeleteStreamInputBuilder {
     /// <p>The stream ID.</p>
+    /// This field is required.
     pub fn stream_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,9 @@ impl DeleteStreamInputBuilder {
         &self.stream_id
     }
     /// Consumes the builder and constructs a [`DeleteStreamInput`](crate::operation::delete_stream::DeleteStreamInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_stream::DeleteStreamInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_stream::DeleteStreamInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_stream::DeleteStreamInput { stream_id: self.stream_id })
     }
 }

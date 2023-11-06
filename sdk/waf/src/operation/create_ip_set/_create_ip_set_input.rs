@@ -34,6 +34,7 @@ pub struct CreateIpSetInputBuilder {
 }
 impl CreateIpSetInputBuilder {
     /// <p>A friendly name or description of the <code>IPSet</code>. You can't change <code>Name</code> after you create the <code>IPSet</code>.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl CreateIpSetInputBuilder {
         &self.name
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    /// This field is required.
     pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_token = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,7 @@ impl CreateIpSetInputBuilder {
         &self.change_token
     }
     /// Consumes the builder and constructs a [`CreateIpSetInput`](crate::operation::create_ip_set::CreateIpSetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_ip_set::CreateIpSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_ip_set::CreateIpSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_ip_set::CreateIpSetInput {
             name: self.name,
             change_token: self.change_token,

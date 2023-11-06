@@ -5,24 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Topic {
     /// <p>The subject of the resource mentioned in a notification.</p>
-    pub subject: ::std::option::Option<::std::string::String>,
+    pub subject: ::std::string::String,
     /// <p>The details of the resource mentioned in a notification.</p>
     pub resource: ::std::option::Option<crate::types::NotificationResource>,
     /// <p>The role of the resource mentioned in a notification.</p>
-    pub role: ::std::option::Option<crate::types::NotificationRole>,
+    pub role: crate::types::NotificationRole,
 }
 impl Topic {
     /// <p>The subject of the resource mentioned in a notification.</p>
-    pub fn subject(&self) -> ::std::option::Option<&str> {
-        self.subject.as_deref()
+    pub fn subject(&self) -> &str {
+        use std::ops::Deref;
+        self.subject.deref()
     }
     /// <p>The details of the resource mentioned in a notification.</p>
     pub fn resource(&self) -> ::std::option::Option<&crate::types::NotificationResource> {
         self.resource.as_ref()
     }
     /// <p>The role of the resource mentioned in a notification.</p>
-    pub fn role(&self) -> ::std::option::Option<&crate::types::NotificationRole> {
-        self.role.as_ref()
+    pub fn role(&self) -> &crate::types::NotificationRole {
+        &self.role
     }
 }
 impl Topic {
@@ -42,6 +43,7 @@ pub struct TopicBuilder {
 }
 impl TopicBuilder {
     /// <p>The subject of the resource mentioned in a notification.</p>
+    /// This field is required.
     pub fn subject(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subject = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +58,7 @@ impl TopicBuilder {
         &self.subject
     }
     /// <p>The details of the resource mentioned in a notification.</p>
+    /// This field is required.
     pub fn resource(mut self, input: crate::types::NotificationResource) -> Self {
         self.resource = ::std::option::Option::Some(input);
         self
@@ -70,6 +73,7 @@ impl TopicBuilder {
         &self.resource
     }
     /// <p>The role of the resource mentioned in a notification.</p>
+    /// This field is required.
     pub fn role(mut self, input: crate::types::NotificationRole) -> Self {
         self.role = ::std::option::Option::Some(input);
         self
@@ -84,11 +88,24 @@ impl TopicBuilder {
         &self.role
     }
     /// Consumes the builder and constructs a [`Topic`](crate::types::Topic).
-    pub fn build(self) -> crate::types::Topic {
-        crate::types::Topic {
-            subject: self.subject,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`subject`](crate::types::builders::TopicBuilder::subject)
+    /// - [`role`](crate::types::builders::TopicBuilder::role)
+    pub fn build(self) -> ::std::result::Result<crate::types::Topic, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Topic {
+            subject: self.subject.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "subject",
+                    "subject was not specified but it is required when building Topic",
+                )
+            })?,
             resource: self.resource,
-            role: self.role,
-        }
+            role: self.role.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "role",
+                    "role was not specified but it is required when building Topic",
+                )
+            })?,
+        })
     }
 }

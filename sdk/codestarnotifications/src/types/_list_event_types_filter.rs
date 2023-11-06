@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEventTypesFilter {
     /// <p>The system-generated name of the filter type you want to filter by.</p>
-    pub name: ::std::option::Option<crate::types::ListEventTypesFilterName>,
+    pub name: crate::types::ListEventTypesFilterName,
     /// <p>The name of the resource type (for example, pipeline) or service name (for example, CodePipeline) that you want to filter by.</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
 }
 impl ListEventTypesFilter {
     /// <p>The system-generated name of the filter type you want to filter by.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::ListEventTypesFilterName> {
-        self.name.as_ref()
+    pub fn name(&self) -> &crate::types::ListEventTypesFilterName {
+        &self.name
     }
     /// <p>The name of the resource type (for example, pipeline) or service name (for example, CodePipeline) that you want to filter by.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
 }
 impl ListEventTypesFilter {
@@ -35,6 +36,7 @@ pub struct ListEventTypesFilterBuilder {
 }
 impl ListEventTypesFilterBuilder {
     /// <p>The system-generated name of the filter type you want to filter by.</p>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::ListEventTypesFilterName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -49,6 +51,7 @@ impl ListEventTypesFilterBuilder {
         &self.name
     }
     /// <p>The name of the resource type (for example, pipeline) or service name (for example, CodePipeline) that you want to filter by.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +66,23 @@ impl ListEventTypesFilterBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`ListEventTypesFilter`](crate::types::ListEventTypesFilter).
-    pub fn build(self) -> crate::types::ListEventTypesFilter {
-        crate::types::ListEventTypesFilter {
-            name: self.name,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::ListEventTypesFilterBuilder::name)
+    /// - [`value`](crate::types::builders::ListEventTypesFilterBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::ListEventTypesFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ListEventTypesFilter {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ListEventTypesFilter",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building ListEventTypesFilter",
+                )
+            })?,
+        })
     }
 }

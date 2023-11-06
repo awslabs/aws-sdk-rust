@@ -2,93 +2,93 @@
 pub fn ser_sheet_definition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SheetDefinition,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.sheet_id {
-        object.key("SheetId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("SheetId").string(input.sheet_id.as_str());
     }
-    if let Some(var_2) = &input.title {
-        object.key("Title").string(var_2.as_str());
+    if let Some(var_1) = &input.title {
+        object.key("Title").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.description {
-        object.key("Description").string(var_3.as_str());
+    if let Some(var_2) = &input.description {
+        object.key("Description").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.name {
-        object.key("Name").string(var_4.as_str());
+    if let Some(var_3) = &input.name {
+        object.key("Name").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.parameter_controls {
-        let mut array_6 = object.key("ParameterControls").start_array();
-        for item_7 in var_5 {
+    if let Some(var_4) = &input.parameter_controls {
+        let mut array_5 = object.key("ParameterControls").start_array();
+        for item_6 in var_4 {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_parameter_control::ser_parameter_control(&mut object_8, item_7)?;
-                object_8.finish();
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_parameter_control::ser_parameter_control(&mut object_7, item_6)?;
+                object_7.finish();
             }
         }
-        array_6.finish();
+        array_5.finish();
     }
-    if let Some(var_9) = &input.filter_controls {
-        let mut array_10 = object.key("FilterControls").start_array();
-        for item_11 in var_9 {
+    if let Some(var_8) = &input.filter_controls {
+        let mut array_9 = object.key("FilterControls").start_array();
+        for item_10 in var_8 {
             {
                 #[allow(unused_mut)]
-                let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_filter_control::ser_filter_control(&mut object_12, item_11)?;
-                object_12.finish();
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_filter_control::ser_filter_control(&mut object_11, item_10)?;
+                object_11.finish();
             }
         }
-        array_10.finish();
+        array_9.finish();
     }
-    if let Some(var_13) = &input.visuals {
-        let mut array_14 = object.key("Visuals").start_array();
-        for item_15 in var_13 {
+    if let Some(var_12) = &input.visuals {
+        let mut array_13 = object.key("Visuals").start_array();
+        for item_14 in var_12 {
             {
                 #[allow(unused_mut)]
-                let mut object_16 = array_14.value().start_object();
-                crate::protocol_serde::shape_visual::ser_visual(&mut object_16, item_15)?;
-                object_16.finish();
+                let mut object_15 = array_13.value().start_object();
+                crate::protocol_serde::shape_visual::ser_visual(&mut object_15, item_14)?;
+                object_15.finish();
             }
         }
-        array_14.finish();
+        array_13.finish();
     }
-    if let Some(var_17) = &input.text_boxes {
-        let mut array_18 = object.key("TextBoxes").start_array();
-        for item_19 in var_17 {
+    if let Some(var_16) = &input.text_boxes {
+        let mut array_17 = object.key("TextBoxes").start_array();
+        for item_18 in var_16 {
             {
                 #[allow(unused_mut)]
-                let mut object_20 = array_18.value().start_object();
-                crate::protocol_serde::shape_sheet_text_box::ser_sheet_text_box(&mut object_20, item_19)?;
-                object_20.finish();
+                let mut object_19 = array_17.value().start_object();
+                crate::protocol_serde::shape_sheet_text_box::ser_sheet_text_box(&mut object_19, item_18)?;
+                object_19.finish();
             }
         }
-        array_18.finish();
+        array_17.finish();
     }
-    if let Some(var_21) = &input.layouts {
-        let mut array_22 = object.key("Layouts").start_array();
-        for item_23 in var_21 {
+    if let Some(var_20) = &input.layouts {
+        let mut array_21 = object.key("Layouts").start_array();
+        for item_22 in var_20 {
             {
                 #[allow(unused_mut)]
-                let mut object_24 = array_22.value().start_object();
-                crate::protocol_serde::shape_layout::ser_layout(&mut object_24, item_23)?;
-                object_24.finish();
+                let mut object_23 = array_21.value().start_object();
+                crate::protocol_serde::shape_layout::ser_layout(&mut object_23, item_22)?;
+                object_23.finish();
             }
         }
-        array_22.finish();
+        array_21.finish();
     }
-    if let Some(var_25) = &input.sheet_control_layouts {
-        let mut array_26 = object.key("SheetControlLayouts").start_array();
-        for item_27 in var_25 {
+    if let Some(var_24) = &input.sheet_control_layouts {
+        let mut array_25 = object.key("SheetControlLayouts").start_array();
+        for item_26 in var_24 {
             {
                 #[allow(unused_mut)]
-                let mut object_28 = array_26.value().start_object();
-                crate::protocol_serde::shape_sheet_control_layout::ser_sheet_control_layout(&mut object_28, item_27)?;
-                object_28.finish();
+                let mut object_27 = array_25.value().start_object();
+                crate::protocol_serde::shape_sheet_control_layout::ser_sheet_control_layout(&mut object_27, item_26)?;
+                object_27.finish();
             }
         }
-        array_26.finish();
+        array_25.finish();
     }
-    if let Some(var_29) = &input.content_type {
-        object.key("ContentType").string(var_29.as_str());
+    if let Some(var_28) = &input.content_type {
+        object.key("ContentType").string(var_28.as_str());
     }
     Ok(())
 }
@@ -174,7 +174,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::sheet_definition_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

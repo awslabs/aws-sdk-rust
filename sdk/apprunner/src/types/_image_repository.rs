@@ -6,25 +6,26 @@
 pub struct ImageRepository {
     /// <p>The identifier of an image.</p>
     /// <p>For an image in Amazon Elastic Container Registry (Amazon ECR), this is an image name. For the image name format, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/docker-pull-ecr-image.html">Pulling an image</a> in the <i>Amazon ECR User Guide</i>.</p>
-    pub image_identifier: ::std::option::Option<::std::string::String>,
+    pub image_identifier: ::std::string::String,
     /// <p>Configuration for running the identified image.</p>
     pub image_configuration: ::std::option::Option<crate::types::ImageConfiguration>,
     /// <p>The type of the image repository. This reflects the repository provider and whether the repository is private or public.</p>
-    pub image_repository_type: ::std::option::Option<crate::types::ImageRepositoryType>,
+    pub image_repository_type: crate::types::ImageRepositoryType,
 }
 impl ImageRepository {
     /// <p>The identifier of an image.</p>
     /// <p>For an image in Amazon Elastic Container Registry (Amazon ECR), this is an image name. For the image name format, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/docker-pull-ecr-image.html">Pulling an image</a> in the <i>Amazon ECR User Guide</i>.</p>
-    pub fn image_identifier(&self) -> ::std::option::Option<&str> {
-        self.image_identifier.as_deref()
+    pub fn image_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.image_identifier.deref()
     }
     /// <p>Configuration for running the identified image.</p>
     pub fn image_configuration(&self) -> ::std::option::Option<&crate::types::ImageConfiguration> {
         self.image_configuration.as_ref()
     }
     /// <p>The type of the image repository. This reflects the repository provider and whether the repository is private or public.</p>
-    pub fn image_repository_type(&self) -> ::std::option::Option<&crate::types::ImageRepositoryType> {
-        self.image_repository_type.as_ref()
+    pub fn image_repository_type(&self) -> &crate::types::ImageRepositoryType {
+        &self.image_repository_type
     }
 }
 impl ImageRepository {
@@ -45,6 +46,7 @@ pub struct ImageRepositoryBuilder {
 impl ImageRepositoryBuilder {
     /// <p>The identifier of an image.</p>
     /// <p>For an image in Amazon Elastic Container Registry (Amazon ECR), this is an image name. For the image name format, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/docker-pull-ecr-image.html">Pulling an image</a> in the <i>Amazon ECR User Guide</i>.</p>
+    /// This field is required.
     pub fn image_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_identifier = ::std::option::Option::Some(input.into());
         self
@@ -75,6 +77,7 @@ impl ImageRepositoryBuilder {
         &self.image_configuration
     }
     /// <p>The type of the image repository. This reflects the repository provider and whether the repository is private or public.</p>
+    /// This field is required.
     pub fn image_repository_type(mut self, input: crate::types::ImageRepositoryType) -> Self {
         self.image_repository_type = ::std::option::Option::Some(input);
         self
@@ -89,11 +92,24 @@ impl ImageRepositoryBuilder {
         &self.image_repository_type
     }
     /// Consumes the builder and constructs a [`ImageRepository`](crate::types::ImageRepository).
-    pub fn build(self) -> crate::types::ImageRepository {
-        crate::types::ImageRepository {
-            image_identifier: self.image_identifier,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`image_identifier`](crate::types::builders::ImageRepositoryBuilder::image_identifier)
+    /// - [`image_repository_type`](crate::types::builders::ImageRepositoryBuilder::image_repository_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::ImageRepository, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ImageRepository {
+            image_identifier: self.image_identifier.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "image_identifier",
+                    "image_identifier was not specified but it is required when building ImageRepository",
+                )
+            })?,
             image_configuration: self.image_configuration,
-            image_repository_type: self.image_repository_type,
-        }
+            image_repository_type: self.image_repository_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "image_repository_type",
+                    "image_repository_type was not specified but it is required when building ImageRepository",
+                )
+            })?,
+        })
     }
 }

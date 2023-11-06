@@ -11,7 +11,7 @@ pub struct AssetRelationshipSummary {
     /// <ul>
     /// <li> <p> <code>HIERARCHY</code> – The assets are related through an asset hierarchy. If you specify this relationship type, this asset relationship includes the <code>hierarchyInfo</code> object.</p> </li>
     /// </ul>
-    pub relationship_type: ::std::option::Option<crate::types::AssetRelationshipType>,
+    pub relationship_type: crate::types::AssetRelationshipType,
 }
 impl AssetRelationshipSummary {
     /// <p>The assets that are related through an asset hierarchy.</p>
@@ -23,8 +23,8 @@ impl AssetRelationshipSummary {
     /// <ul>
     /// <li> <p> <code>HIERARCHY</code> – The assets are related through an asset hierarchy. If you specify this relationship type, this asset relationship includes the <code>hierarchyInfo</code> object.</p> </li>
     /// </ul>
-    pub fn relationship_type(&self) -> ::std::option::Option<&crate::types::AssetRelationshipType> {
-        self.relationship_type.as_ref()
+    pub fn relationship_type(&self) -> &crate::types::AssetRelationshipType {
+        &self.relationship_type
     }
 }
 impl AssetRelationshipSummary {
@@ -63,6 +63,7 @@ impl AssetRelationshipSummaryBuilder {
     /// <ul>
     /// <li> <p> <code>HIERARCHY</code> – The assets are related through an asset hierarchy. If you specify this relationship type, this asset relationship includes the <code>hierarchyInfo</code> object.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn relationship_type(mut self, input: crate::types::AssetRelationshipType) -> Self {
         self.relationship_type = ::std::option::Option::Some(input);
         self
@@ -83,10 +84,17 @@ impl AssetRelationshipSummaryBuilder {
         &self.relationship_type
     }
     /// Consumes the builder and constructs a [`AssetRelationshipSummary`](crate::types::AssetRelationshipSummary).
-    pub fn build(self) -> crate::types::AssetRelationshipSummary {
-        crate::types::AssetRelationshipSummary {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`relationship_type`](crate::types::builders::AssetRelationshipSummaryBuilder::relationship_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::AssetRelationshipSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AssetRelationshipSummary {
             hierarchy_info: self.hierarchy_info,
-            relationship_type: self.relationship_type,
-        }
+            relationship_type: self.relationship_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "relationship_type",
+                    "relationship_type was not specified but it is required when building AssetRelationshipSummary",
+                )
+            })?,
+        })
     }
 }

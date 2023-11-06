@@ -2,12 +2,12 @@
 pub fn ser_amex_card_security_code_version2(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AmexCardSecurityCodeVersion2,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.card_expiry_date {
-        object.key("CardExpiryDate").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("CardExpiryDate").string(input.card_expiry_date.as_str());
     }
-    if let Some(var_2) = &input.service_code {
-        object.key("ServiceCode").string(var_2.as_str());
+    {
+        object.key("ServiceCode").string(input.service_code.as_str());
     }
     Ok(())
 }

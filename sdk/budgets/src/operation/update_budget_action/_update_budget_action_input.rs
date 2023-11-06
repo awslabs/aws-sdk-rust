@@ -56,8 +56,10 @@ impl UpdateBudgetActionInput {
         self.approval_model.as_ref()
     }
     /// <p> A list of subscribers.</p>
-    pub fn subscribers(&self) -> ::std::option::Option<&[crate::types::Subscriber]> {
-        self.subscribers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subscribers.is_none()`.
+    pub fn subscribers(&self) -> &[crate::types::Subscriber] {
+        self.subscribers.as_deref().unwrap_or_default()
     }
 }
 impl UpdateBudgetActionInput {
@@ -83,6 +85,7 @@ pub struct UpdateBudgetActionInputBuilder {
 }
 impl UpdateBudgetActionInputBuilder {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +100,7 @@ impl UpdateBudgetActionInputBuilder {
         &self.account_id
     }
     /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
+    /// This field is required.
     pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.budget_name = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +115,7 @@ impl UpdateBudgetActionInputBuilder {
         &self.budget_name
     }
     /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
+    /// This field is required.
     pub fn action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_id = ::std::option::Option::Some(input.into());
         self
@@ -217,7 +222,8 @@ impl UpdateBudgetActionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateBudgetActionInput`](crate::operation::update_budget_action::UpdateBudgetActionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_budget_action::UpdateBudgetActionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_budget_action::UpdateBudgetActionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_budget_action::UpdateBudgetActionInput {
             account_id: self.account_id,
             budget_name: self.budget_name,

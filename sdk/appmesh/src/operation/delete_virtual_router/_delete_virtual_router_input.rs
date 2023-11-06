@@ -41,6 +41,7 @@ pub struct DeleteVirtualRouterInputBuilder {
 }
 impl DeleteVirtualRouterInputBuilder {
     /// <p>The name of the virtual router to delete.</p>
+    /// This field is required.
     pub fn virtual_router_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_router_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DeleteVirtualRouterInputBuilder {
         &self.virtual_router_name
     }
     /// <p>The name of the service mesh to delete the virtual router in.</p>
+    /// This field is required.
     pub fn mesh_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mesh_name = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +87,7 @@ impl DeleteVirtualRouterInputBuilder {
     /// Consumes the builder and constructs a [`DeleteVirtualRouterInput`](crate::operation::delete_virtual_router::DeleteVirtualRouterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_virtual_router::DeleteVirtualRouterInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_virtual_router::DeleteVirtualRouterInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_virtual_router::DeleteVirtualRouterInput {
             virtual_router_name: self.virtual_router_name,

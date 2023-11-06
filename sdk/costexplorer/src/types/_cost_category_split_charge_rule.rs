@@ -5,36 +5,40 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CostCategorySplitChargeRule {
     /// <p>The Cost Category value that you want to split. That value can't be used as a source or a target in other split charge rules. To indicate uncategorized costs, you can use an empty string as the source.</p>
-    pub source: ::std::option::Option<::std::string::String>,
+    pub source: ::std::string::String,
     /// <p>The Cost Category values that you want to split costs across. These values can't be used as a source in other split charge rules. </p>
-    pub targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub targets: ::std::vec::Vec<::std::string::String>,
     /// <p>The method that's used to define how to split your source costs across your targets. </p>
     /// <p> <code>Proportional</code> - Allocates charges across your targets based on the proportional weighted cost of each target.</p>
     /// <p> <code>Fixed</code> - Allocates charges across your targets based on your defined allocation percentage.</p>
     /// <p>&gt;<code>Even</code> - Allocates costs evenly across all targets.</p>
-    pub method: ::std::option::Option<crate::types::CostCategorySplitChargeMethod>,
+    pub method: crate::types::CostCategorySplitChargeMethod,
     /// <p>The parameters for a split charge method. This is only required for the <code>FIXED</code> method. </p>
     pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::CostCategorySplitChargeRuleParameter>>,
 }
 impl CostCategorySplitChargeRule {
     /// <p>The Cost Category value that you want to split. That value can't be used as a source or a target in other split charge rules. To indicate uncategorized costs, you can use an empty string as the source.</p>
-    pub fn source(&self) -> ::std::option::Option<&str> {
-        self.source.as_deref()
+    pub fn source(&self) -> &str {
+        use std::ops::Deref;
+        self.source.deref()
     }
     /// <p>The Cost Category values that you want to split costs across. These values can't be used as a source in other split charge rules. </p>
-    pub fn targets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.targets.as_deref()
+    pub fn targets(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.targets.deref()
     }
     /// <p>The method that's used to define how to split your source costs across your targets. </p>
     /// <p> <code>Proportional</code> - Allocates charges across your targets based on the proportional weighted cost of each target.</p>
     /// <p> <code>Fixed</code> - Allocates charges across your targets based on your defined allocation percentage.</p>
     /// <p>&gt;<code>Even</code> - Allocates costs evenly across all targets.</p>
-    pub fn method(&self) -> ::std::option::Option<&crate::types::CostCategorySplitChargeMethod> {
-        self.method.as_ref()
+    pub fn method(&self) -> &crate::types::CostCategorySplitChargeMethod {
+        &self.method
     }
     /// <p>The parameters for a split charge method. This is only required for the <code>FIXED</code> method. </p>
-    pub fn parameters(&self) -> ::std::option::Option<&[crate::types::CostCategorySplitChargeRuleParameter]> {
-        self.parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
+    pub fn parameters(&self) -> &[crate::types::CostCategorySplitChargeRuleParameter] {
+        self.parameters.as_deref().unwrap_or_default()
     }
 }
 impl CostCategorySplitChargeRule {
@@ -55,6 +59,7 @@ pub struct CostCategorySplitChargeRuleBuilder {
 }
 impl CostCategorySplitChargeRuleBuilder {
     /// <p>The Cost Category value that you want to split. That value can't be used as a source or a target in other split charge rules. To indicate uncategorized costs, you can use an empty string as the source.</p>
+    /// This field is required.
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source = ::std::option::Option::Some(input.into());
         self
@@ -92,6 +97,7 @@ impl CostCategorySplitChargeRuleBuilder {
     /// <p> <code>Proportional</code> - Allocates charges across your targets based on the proportional weighted cost of each target.</p>
     /// <p> <code>Fixed</code> - Allocates charges across your targets based on your defined allocation percentage.</p>
     /// <p>&gt;<code>Even</code> - Allocates costs evenly across all targets.</p>
+    /// This field is required.
     pub fn method(mut self, input: crate::types::CostCategorySplitChargeMethod) -> Self {
         self.method = ::std::option::Option::Some(input);
         self
@@ -132,12 +138,31 @@ impl CostCategorySplitChargeRuleBuilder {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`CostCategorySplitChargeRule`](crate::types::CostCategorySplitChargeRule).
-    pub fn build(self) -> crate::types::CostCategorySplitChargeRule {
-        crate::types::CostCategorySplitChargeRule {
-            source: self.source,
-            targets: self.targets,
-            method: self.method,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`source`](crate::types::builders::CostCategorySplitChargeRuleBuilder::source)
+    /// - [`targets`](crate::types::builders::CostCategorySplitChargeRuleBuilder::targets)
+    /// - [`method`](crate::types::builders::CostCategorySplitChargeRuleBuilder::method)
+    pub fn build(self) -> ::std::result::Result<crate::types::CostCategorySplitChargeRule, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CostCategorySplitChargeRule {
+            source: self.source.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "source",
+                    "source was not specified but it is required when building CostCategorySplitChargeRule",
+                )
+            })?,
+            targets: self.targets.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "targets",
+                    "targets was not specified but it is required when building CostCategorySplitChargeRule",
+                )
+            })?,
+            method: self.method.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "method",
+                    "method was not specified but it is required when building CostCategorySplitChargeRule",
+                )
+            })?,
             parameters: self.parameters,
-        }
+        })
     }
 }

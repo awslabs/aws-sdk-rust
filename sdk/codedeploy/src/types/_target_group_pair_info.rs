@@ -13,8 +13,10 @@ pub struct TargetGroupPairInfo {
 }
 impl TargetGroupPairInfo {
     /// <p> One pair of target groups. One is associated with the original task set. The second is associated with the task set that serves traffic after the deployment is complete. </p>
-    pub fn target_groups(&self) -> ::std::option::Option<&[crate::types::TargetGroupInfo]> {
-        self.target_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_groups.is_none()`.
+    pub fn target_groups(&self) -> &[crate::types::TargetGroupInfo] {
+        self.target_groups.as_deref().unwrap_or_default()
     }
     /// <p> The path used by a load balancer to route production traffic when an Amazon ECS deployment is complete. </p>
     pub fn prod_traffic_route(&self) -> ::std::option::Option<&crate::types::TrafficRoute> {

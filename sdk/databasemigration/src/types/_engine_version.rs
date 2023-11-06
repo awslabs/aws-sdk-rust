@@ -51,8 +51,10 @@ impl EngineVersion {
         self.force_upgrade_date.as_ref()
     }
     /// <p>The list of valid replication instance versions that you can upgrade to.</p>
-    pub fn available_upgrades(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.available_upgrades.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.available_upgrades.is_none()`.
+    pub fn available_upgrades(&self) -> &[::std::string::String] {
+        self.available_upgrades.as_deref().unwrap_or_default()
     }
 }
 impl EngineVersion {

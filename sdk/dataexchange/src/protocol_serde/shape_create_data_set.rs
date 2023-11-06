@@ -25,11 +25,10 @@ pub fn de_create_data_set_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_data_set::CreateDataSetError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_data_set::CreateDataSetError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerException" => crate::operation::create_data_set::CreateDataSetError::InternalServerException({
@@ -40,11 +39,10 @@ pub fn de_create_data_set_http_error(
                 output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_data_set::CreateDataSetError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_data_set::CreateDataSetError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ServiceLimitExceededException" => crate::operation::create_data_set::CreateDataSetError::ServiceLimitExceededException({
@@ -58,11 +56,10 @@ pub fn de_create_data_set_http_error(
                 )
                 .map_err(crate::operation::create_data_set::CreateDataSetError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::service_limit_exceeded_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_data_set::CreateDataSetError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::create_data_set::CreateDataSetError::ThrottlingException({
@@ -73,11 +70,10 @@ pub fn de_create_data_set_http_error(
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_data_set::CreateDataSetError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_data_set::CreateDataSetError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::create_data_set::CreateDataSetError::ValidationException({
@@ -88,11 +84,10 @@ pub fn de_create_data_set_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_data_set::CreateDataSetError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_data_set::CreateDataSetError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::create_data_set::CreateDataSetError::generic(generic),
@@ -117,12 +112,12 @@ pub fn de_create_data_set_http_response(
 
 pub fn ser_create_data_set_input(
     input: &crate::operation::create_data_set::CreateDataSetInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_data_set_input::ser_create_data_set_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_create_data_set(
@@ -195,7 +190,7 @@ pub(crate) fn de_create_data_set(
                     );
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_map_of__string::de_map_of__string(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens)?);
                 }
                 "UpdatedAt" => {
                     builder = builder.set_updated_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

@@ -97,8 +97,10 @@ impl CreateTransformJobInput {
         self.data_processing.as_ref()
     }
     /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
     /// <ul>
@@ -138,6 +140,7 @@ pub struct CreateTransformJobInputBuilder {
 }
 impl CreateTransformJobInputBuilder {
     /// <p>The name of the transform job. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account. </p>
+    /// This field is required.
     pub fn transform_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transform_job_name = ::std::option::Option::Some(input.into());
         self
@@ -152,6 +155,7 @@ impl CreateTransformJobInputBuilder {
         &self.transform_job_name
     }
     /// <p>The name of the model that you want to use for the transform job. <code>ModelName</code> must be the name of an existing Amazon SageMaker model within an Amazon Web Services Region in an Amazon Web Services account.</p>
+    /// This field is required.
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_name = ::std::option::Option::Some(input.into());
         self
@@ -260,6 +264,7 @@ impl CreateTransformJobInputBuilder {
         &self.environment
     }
     /// <p>Describes the input source and the way the transform job consumes it.</p>
+    /// This field is required.
     pub fn transform_input(mut self, input: crate::types::TransformInput) -> Self {
         self.transform_input = ::std::option::Option::Some(input);
         self
@@ -274,6 +279,7 @@ impl CreateTransformJobInputBuilder {
         &self.transform_input
     }
     /// <p>Describes the results of the transform job.</p>
+    /// This field is required.
     pub fn transform_output(mut self, input: crate::types::TransformOutput) -> Self {
         self.transform_output = ::std::option::Option::Some(input);
         self
@@ -302,6 +308,7 @@ impl CreateTransformJobInputBuilder {
         &self.data_capture_config
     }
     /// <p>Describes the resources, including ML instance types and ML instance count, to use for the transform job.</p>
+    /// This field is required.
     pub fn transform_resources(mut self, input: crate::types::TransformResources) -> Self {
         self.transform_resources = ::std::option::Option::Some(input);
         self
@@ -381,7 +388,8 @@ impl CreateTransformJobInputBuilder {
     /// Consumes the builder and constructs a [`CreateTransformJobInput`](crate::operation::create_transform_job::CreateTransformJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_transform_job::CreateTransformJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_transform_job::CreateTransformJobInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_transform_job::CreateTransformJobInput {
             transform_job_name: self.transform_job_name,
             model_name: self.model_name,

@@ -60,8 +60,10 @@ impl CreateCrawlerInput {
         self.schedule.as_deref()
     }
     /// <p>A list of custom classifiers that the user has registered. By default, all built-in classifiers are included in a crawl, but these custom classifiers always override the default classifiers for a given classification.</p>
-    pub fn classifiers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.classifiers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.classifiers.is_none()`.
+    pub fn classifiers(&self) -> &[::std::string::String] {
+        self.classifiers.as_deref().unwrap_or_default()
     }
     /// <p>The table prefix used for catalog tables that are created.</p>
     pub fn table_prefix(&self) -> ::std::option::Option<&str> {
@@ -125,6 +127,7 @@ pub struct CreateCrawlerInputBuilder {
 }
 impl CreateCrawlerInputBuilder {
     /// <p>Name of the new crawler.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -139,6 +142,7 @@ impl CreateCrawlerInputBuilder {
         &self.name
     }
     /// <p>The IAM role or Amazon Resource Name (ARN) of an IAM role used by the new crawler to access customer resources.</p>
+    /// This field is required.
     pub fn role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role = ::std::option::Option::Some(input.into());
         self
@@ -181,6 +185,7 @@ impl CreateCrawlerInputBuilder {
         &self.description
     }
     /// <p>A list of collection of targets to crawl.</p>
+    /// This field is required.
     pub fn targets(mut self, input: crate::types::CrawlerTargets) -> Self {
         self.targets = ::std::option::Option::Some(input);
         self
@@ -349,7 +354,7 @@ impl CreateCrawlerInputBuilder {
     /// Consumes the builder and constructs a [`CreateCrawlerInput`](crate::operation::create_crawler::CreateCrawlerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_crawler::CreateCrawlerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_crawler::CreateCrawlerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_crawler::CreateCrawlerInput {
             name: self.name,
             role: self.role,

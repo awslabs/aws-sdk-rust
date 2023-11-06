@@ -3,7 +3,7 @@
 pub fn ser_launch_template_enclave_options_request(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::LaunchTemplateEnclaveOptionsRequest,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Enabled");
     if let Some(var_2) = &input.enabled {

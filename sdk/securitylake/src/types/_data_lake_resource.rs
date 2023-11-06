@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataLakeResource {
     /// <p>The Amazon Resource Name (ARN) created by you to provide to the subscriber. For more information about ARNs and how to use them in policies, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/subscriber-management.html">Amazon Security Lake User Guide</a>.</p>
-    pub data_lake_arn: ::std::option::Option<::std::string::String>,
+    pub data_lake_arn: ::std::string::String,
     /// <p>The Amazon Web Services Regions where Security Lake is enabled.</p>
-    pub region: ::std::option::Option<::std::string::String>,
+    pub region: ::std::string::String,
     /// <p>The ARN for the Amazon Security Lake Amazon S3 bucket.</p>
     pub s3_bucket_arn: ::std::option::Option<::std::string::String>,
     /// <p>Provides encryption details of Amazon Security Lake object.</p>
@@ -23,12 +23,14 @@ pub struct DataLakeResource {
 }
 impl DataLakeResource {
     /// <p>The Amazon Resource Name (ARN) created by you to provide to the subscriber. For more information about ARNs and how to use them in policies, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/subscriber-management.html">Amazon Security Lake User Guide</a>.</p>
-    pub fn data_lake_arn(&self) -> ::std::option::Option<&str> {
-        self.data_lake_arn.as_deref()
+    pub fn data_lake_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.data_lake_arn.deref()
     }
     /// <p>The Amazon Web Services Regions where Security Lake is enabled.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
-        self.region.as_deref()
+    pub fn region(&self) -> &str {
+        use std::ops::Deref;
+        self.region.deref()
     }
     /// <p>The ARN for the Amazon Security Lake Amazon S3 bucket.</p>
     pub fn s3_bucket_arn(&self) -> ::std::option::Option<&str> {
@@ -77,6 +79,7 @@ pub struct DataLakeResourceBuilder {
 }
 impl DataLakeResourceBuilder {
     /// <p>The Amazon Resource Name (ARN) created by you to provide to the subscriber. For more information about ARNs and how to use them in policies, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/subscriber-management.html">Amazon Security Lake User Guide</a>.</p>
+    /// This field is required.
     pub fn data_lake_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_lake_arn = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +94,7 @@ impl DataLakeResourceBuilder {
         &self.data_lake_arn
     }
     /// <p>The Amazon Web Services Regions where Security Lake is enabled.</p>
+    /// This field is required.
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
         self
@@ -189,16 +193,29 @@ impl DataLakeResourceBuilder {
         &self.update_status
     }
     /// Consumes the builder and constructs a [`DataLakeResource`](crate::types::DataLakeResource).
-    pub fn build(self) -> crate::types::DataLakeResource {
-        crate::types::DataLakeResource {
-            data_lake_arn: self.data_lake_arn,
-            region: self.region,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`data_lake_arn`](crate::types::builders::DataLakeResourceBuilder::data_lake_arn)
+    /// - [`region`](crate::types::builders::DataLakeResourceBuilder::region)
+    pub fn build(self) -> ::std::result::Result<crate::types::DataLakeResource, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DataLakeResource {
+            data_lake_arn: self.data_lake_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "data_lake_arn",
+                    "data_lake_arn was not specified but it is required when building DataLakeResource",
+                )
+            })?,
+            region: self.region.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "region",
+                    "region was not specified but it is required when building DataLakeResource",
+                )
+            })?,
             s3_bucket_arn: self.s3_bucket_arn,
             encryption_configuration: self.encryption_configuration,
             lifecycle_configuration: self.lifecycle_configuration,
             replication_configuration: self.replication_configuration,
             create_status: self.create_status,
             update_status: self.update_status,
-        }
+        })
     }
 }

@@ -28,6 +28,7 @@ pub struct DeleteUsagePlanInputBuilder {
 }
 impl DeleteUsagePlanInputBuilder {
     /// <p>The Id of the to-be-deleted usage plan.</p>
+    /// This field is required.
     pub fn usage_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.usage_plan_id = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl DeleteUsagePlanInputBuilder {
     /// Consumes the builder and constructs a [`DeleteUsagePlanInput`](crate::operation::delete_usage_plan::DeleteUsagePlanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_usage_plan::DeleteUsagePlanInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_usage_plan::DeleteUsagePlanInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_usage_plan::DeleteUsagePlanInput {
             usage_plan_id: self.usage_plan_id,
         })

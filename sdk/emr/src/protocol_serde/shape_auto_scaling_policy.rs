@@ -2,7 +2,7 @@
 pub fn ser_auto_scaling_policy(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AutoScalingPolicy,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.constraints {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Constraints").start_object();

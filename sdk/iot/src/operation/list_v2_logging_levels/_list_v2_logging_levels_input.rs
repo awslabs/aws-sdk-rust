@@ -85,7 +85,7 @@ impl ListV2LoggingLevelsInputBuilder {
     /// Consumes the builder and constructs a [`ListV2LoggingLevelsInput`](crate::operation::list_v2_logging_levels::ListV2LoggingLevelsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_v2_logging_levels::ListV2LoggingLevelsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_v2_logging_levels::ListV2LoggingLevelsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_v2_logging_levels::ListV2LoggingLevelsInput {
             target_type: self.target_type,

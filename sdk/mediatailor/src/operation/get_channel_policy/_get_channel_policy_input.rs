@@ -27,6 +27,7 @@ pub struct GetChannelPolicyInputBuilder {
 }
 impl GetChannelPolicyInputBuilder {
     /// <p>The name of the channel associated with this Channel Policy.</p>
+    /// This field is required.
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetChannelPolicyInputBuilder {
     /// Consumes the builder and constructs a [`GetChannelPolicyInput`](crate::operation::get_channel_policy::GetChannelPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_channel_policy::GetChannelPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_channel_policy::GetChannelPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_channel_policy::GetChannelPolicyInput {
             channel_name: self.channel_name,
         })

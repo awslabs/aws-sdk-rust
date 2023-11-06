@@ -41,8 +41,10 @@ impl DescribeAnalysisDefinitionOutput {
         self.name.as_deref()
     }
     /// <p>Errors associated with the analysis.</p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::AnalysisError]> {
-        self.errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
+    pub fn errors(&self) -> &[crate::types::AnalysisError] {
+        self.errors.as_deref().unwrap_or_default()
     }
     /// <p>Status associated with the analysis.</p>
     /// <ul>

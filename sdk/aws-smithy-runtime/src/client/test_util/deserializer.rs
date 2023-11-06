@@ -6,7 +6,7 @@
 use aws_smithy_runtime_api::client::interceptors::context::{Error, Output};
 use aws_smithy_runtime_api::client::orchestrator::{HttpResponse, OrchestratorError};
 use aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin;
-use aws_smithy_runtime_api::client::ser_de::{ResponseDeserializer, SharedResponseDeserializer};
+use aws_smithy_runtime_api::client::ser_de::{DeserializeResponse, SharedResponseDeserializer};
 use aws_smithy_types::config_bag::{FrozenLayer, Layer};
 use std::sync::Mutex;
 
@@ -32,7 +32,7 @@ impl CannedResponseDeserializer {
     }
 }
 
-impl ResponseDeserializer for CannedResponseDeserializer {
+impl DeserializeResponse for CannedResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         _response: &HttpResponse,

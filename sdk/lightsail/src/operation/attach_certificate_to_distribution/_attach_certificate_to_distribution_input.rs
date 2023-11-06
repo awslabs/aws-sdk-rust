@@ -45,6 +45,7 @@ pub struct AttachCertificateToDistributionInputBuilder {
 impl AttachCertificateToDistributionInputBuilder {
     /// <p>The name of the distribution that the certificate will be attached to.</p>
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
+    /// This field is required.
     pub fn distribution_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.distribution_name = ::std::option::Option::Some(input.into());
         self
@@ -65,6 +66,7 @@ impl AttachCertificateToDistributionInputBuilder {
     /// <p>Use the <code>GetCertificates</code> action to get a list of certificate names that you can specify.</p> <note>
     /// <p>This is the name of the certificate resource type and is used only to reference the certificate in other API actions. It can be different than the domain name of the certificate. For example, your certificate name might be <code>WordPress-Blog-Certificate</code> and the domain name of the certificate might be <code>example.com</code>.</p>
     /// </note>
+    /// This field is required.
     pub fn certificate_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_name = ::std::option::Option::Some(input.into());
         self
@@ -91,7 +93,7 @@ impl AttachCertificateToDistributionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionInput {

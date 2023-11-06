@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteApplication`](crate::operation::delete_application::builders::DeleteApplicationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`environment_identifier(impl Into<String>)`](crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::environment_identifier) / [`set_environment_identifier(Option<String>)`](crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::set_environment_identifier): <p>The ID of the environment. </p>
-    ///   - [`application_identifier(impl Into<String>)`](crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::application_identifier) / [`set_application_identifier(Option<String>)`](crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::set_application_identifier): <p>The ID of the application.</p>
+    ///   - [`environment_identifier(impl Into<String>)`](crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::environment_identifier) / [`set_environment_identifier(Option<String>)`](crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::set_environment_identifier):<br>required: **true**<br><p>The ID of the environment. </p><br>
+    ///   - [`application_identifier(impl Into<String>)`](crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::application_identifier) / [`set_application_identifier(Option<String>)`](crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::set_application_identifier):<br>required: **true**<br><p>The ID of the application.</p><br>
     /// - On success, responds with [`DeleteApplicationOutput`](crate::operation::delete_application::DeleteApplicationOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::delete_application::DeleteApplicationOutput::name): <p>The name of the application.</p>
     ///   - [`arn(Option<String>)`](crate::operation::delete_application::DeleteApplicationOutput::arn): <p>The Amazon Resource Name (ARN) of the application.</p>

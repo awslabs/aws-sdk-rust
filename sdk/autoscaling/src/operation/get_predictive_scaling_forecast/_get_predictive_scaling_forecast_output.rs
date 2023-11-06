@@ -13,8 +13,10 @@ pub struct GetPredictiveScalingForecastOutput {
 }
 impl GetPredictiveScalingForecastOutput {
     /// <p>The load forecast.</p>
-    pub fn load_forecast(&self) -> ::std::option::Option<&[crate::types::LoadForecast]> {
-        self.load_forecast.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.load_forecast.is_none()`.
+    pub fn load_forecast(&self) -> &[crate::types::LoadForecast] {
+        self.load_forecast.as_deref().unwrap_or_default()
     }
     /// <p>The capacity forecast.</p>
     pub fn capacity_forecast(&self) -> ::std::option::Option<&crate::types::CapacityForecast> {
@@ -68,6 +70,7 @@ impl GetPredictiveScalingForecastOutputBuilder {
         &self.load_forecast
     }
     /// <p>The capacity forecast.</p>
+    /// This field is required.
     pub fn capacity_forecast(mut self, input: crate::types::CapacityForecast) -> Self {
         self.capacity_forecast = ::std::option::Option::Some(input);
         self
@@ -82,6 +85,7 @@ impl GetPredictiveScalingForecastOutputBuilder {
         &self.capacity_forecast
     }
     /// <p>The time the forecast was made.</p>
+    /// This field is required.
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
         self

@@ -34,6 +34,7 @@ pub struct FailoverShardInputBuilder {
 }
 impl FailoverShardInputBuilder {
     /// <p>The cluster being failed over</p>
+    /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl FailoverShardInputBuilder {
         &self.cluster_name
     }
     /// <p>The name of the shard</p>
+    /// This field is required.
     pub fn shard_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shard_name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl FailoverShardInputBuilder {
     /// Consumes the builder and constructs a [`FailoverShardInput`](crate::operation::failover_shard::FailoverShardInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::failover_shard::FailoverShardInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::failover_shard::FailoverShardInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::failover_shard::FailoverShardInput {
             cluster_name: self.cluster_name,
             shard_name: self.shard_name,

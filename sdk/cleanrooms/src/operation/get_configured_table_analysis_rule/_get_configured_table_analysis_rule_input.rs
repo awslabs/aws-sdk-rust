@@ -34,6 +34,7 @@ pub struct GetConfiguredTableAnalysisRuleInputBuilder {
 }
 impl GetConfiguredTableAnalysisRuleInputBuilder {
     /// <p>The unique identifier for the configured table to retrieve. Currently accepts the configured table ID.</p>
+    /// This field is required.
     pub fn configured_table_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configured_table_identifier = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetConfiguredTableAnalysisRuleInputBuilder {
         &self.configured_table_identifier
     }
     /// <p>The analysis rule to be retrieved. Configured table analysis rules are uniquely identified by their configured table identifier and analysis rule type.</p>
+    /// This field is required.
     pub fn analysis_rule_type(mut self, input: crate::types::ConfiguredTableAnalysisRuleType) -> Self {
         self.analysis_rule_type = ::std::option::Option::Some(input);
         self
@@ -66,7 +68,7 @@ impl GetConfiguredTableAnalysisRuleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_configured_table_analysis_rule::GetConfiguredTableAnalysisRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_configured_table_analysis_rule::GetConfiguredTableAnalysisRuleInput {

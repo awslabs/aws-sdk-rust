@@ -2,7 +2,7 @@
 pub fn ser_api_stage(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ApiStage,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.api_id {
         object.key("apiId").string(var_1.as_str());
     }

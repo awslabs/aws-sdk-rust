@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetApiMapping`](crate::operation::get_api_mapping::builders::GetApiMappingFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`api_mapping_id(impl Into<String>)`](crate::operation::get_api_mapping::builders::GetApiMappingFluentBuilder::api_mapping_id) / [`set_api_mapping_id(Option<String>)`](crate::operation::get_api_mapping::builders::GetApiMappingFluentBuilder::set_api_mapping_id): <p>The API mapping identifier.</p>
-    ///   - [`domain_name(impl Into<String>)`](crate::operation::get_api_mapping::builders::GetApiMappingFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::get_api_mapping::builders::GetApiMappingFluentBuilder::set_domain_name): <p>The domain name.</p>
+    ///   - [`api_mapping_id(impl Into<String>)`](crate::operation::get_api_mapping::builders::GetApiMappingFluentBuilder::api_mapping_id) / [`set_api_mapping_id(Option<String>)`](crate::operation::get_api_mapping::builders::GetApiMappingFluentBuilder::set_api_mapping_id):<br>required: **true**<br><p>The API mapping identifier.</p><br>
+    ///   - [`domain_name(impl Into<String>)`](crate::operation::get_api_mapping::builders::GetApiMappingFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::get_api_mapping::builders::GetApiMappingFluentBuilder::set_domain_name):<br>required: **true**<br><p>The domain name.</p><br>
     /// - On success, responds with [`GetApiMappingOutput`](crate::operation::get_api_mapping::GetApiMappingOutput) with field(s):
     ///   - [`api_id(Option<String>)`](crate::operation::get_api_mapping::GetApiMappingOutput::api_id): <p>The API identifier.</p>
     ///   - [`api_mapping_id(Option<String>)`](crate::operation::get_api_mapping::GetApiMappingOutput::api_mapping_id): <p>The API mapping identifier.</p>

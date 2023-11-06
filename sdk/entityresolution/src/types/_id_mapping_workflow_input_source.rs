@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IdMappingWorkflowInputSource {
     /// <p>An Gluetable ARN for the input source table.</p>
-    pub input_source_arn: ::std::option::Option<::std::string::String>,
+    pub input_source_arn: ::std::string::String,
     /// <p>The name of the schema to be retrieved.</p>
-    pub schema_name: ::std::option::Option<::std::string::String>,
+    pub schema_name: ::std::string::String,
 }
 impl IdMappingWorkflowInputSource {
     /// <p>An Gluetable ARN for the input source table.</p>
-    pub fn input_source_arn(&self) -> ::std::option::Option<&str> {
-        self.input_source_arn.as_deref()
+    pub fn input_source_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.input_source_arn.deref()
     }
     /// <p>The name of the schema to be retrieved.</p>
-    pub fn schema_name(&self) -> ::std::option::Option<&str> {
-        self.schema_name.as_deref()
+    pub fn schema_name(&self) -> &str {
+        use std::ops::Deref;
+        self.schema_name.deref()
     }
 }
 impl IdMappingWorkflowInputSource {
@@ -35,6 +37,7 @@ pub struct IdMappingWorkflowInputSourceBuilder {
 }
 impl IdMappingWorkflowInputSourceBuilder {
     /// <p>An Gluetable ARN for the input source table.</p>
+    /// This field is required.
     pub fn input_source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_source_arn = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl IdMappingWorkflowInputSourceBuilder {
         &self.input_source_arn
     }
     /// <p>The name of the schema to be retrieved.</p>
+    /// This field is required.
     pub fn schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl IdMappingWorkflowInputSourceBuilder {
         &self.schema_name
     }
     /// Consumes the builder and constructs a [`IdMappingWorkflowInputSource`](crate::types::IdMappingWorkflowInputSource).
-    pub fn build(self) -> crate::types::IdMappingWorkflowInputSource {
-        crate::types::IdMappingWorkflowInputSource {
-            input_source_arn: self.input_source_arn,
-            schema_name: self.schema_name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`input_source_arn`](crate::types::builders::IdMappingWorkflowInputSourceBuilder::input_source_arn)
+    /// - [`schema_name`](crate::types::builders::IdMappingWorkflowInputSourceBuilder::schema_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::IdMappingWorkflowInputSource, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::IdMappingWorkflowInputSource {
+            input_source_arn: self.input_source_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "input_source_arn",
+                    "input_source_arn was not specified but it is required when building IdMappingWorkflowInputSource",
+                )
+            })?,
+            schema_name: self.schema_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "schema_name",
+                    "schema_name was not specified but it is required when building IdMappingWorkflowInputSource",
+                )
+            })?,
+        })
     }
 }

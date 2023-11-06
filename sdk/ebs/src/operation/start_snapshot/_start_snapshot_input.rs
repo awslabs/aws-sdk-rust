@@ -52,8 +52,10 @@ impl StartSnapshotInput {
         self.parent_snapshot_id.as_deref()
     }
     /// <p>The tags to apply to the snapshot.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>A description for the snapshot.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -126,6 +128,7 @@ pub struct StartSnapshotInputBuilder {
 }
 impl StartSnapshotInputBuilder {
     /// <p>The size of the volume, in GiB. The maximum size is <code>65536</code> GiB (64 TiB).</p>
+    /// This field is required.
     pub fn volume_size(mut self, input: i64) -> Self {
         self.volume_size = ::std::option::Option::Some(input);
         self
@@ -300,7 +303,7 @@ impl StartSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`StartSnapshotInput`](crate::operation::start_snapshot::StartSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_snapshot::StartSnapshotInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_snapshot::StartSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_snapshot::StartSnapshotInput {
             volume_size: self.volume_size,
             parent_snapshot_id: self.parent_snapshot_id,

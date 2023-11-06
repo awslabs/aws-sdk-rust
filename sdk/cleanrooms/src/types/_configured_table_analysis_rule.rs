@@ -5,42 +5,44 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfiguredTableAnalysisRule {
     /// <p>The unique ID for the configured table.</p>
-    pub configured_table_id: ::std::option::Option<::std::string::String>,
+    pub configured_table_id: ::std::string::String,
     /// <p>The unique ARN for the configured table.</p>
-    pub configured_table_arn: ::std::option::Option<::std::string::String>,
+    pub configured_table_arn: ::std::string::String,
     /// <p>The policy that controls SQL query rules.</p>
     pub policy: ::std::option::Option<crate::types::ConfiguredTableAnalysisRulePolicy>,
     /// <p>The type of configured table analysis rule.</p>
-    pub r#type: ::std::option::Option<crate::types::ConfiguredTableAnalysisRuleType>,
+    pub r#type: crate::types::ConfiguredTableAnalysisRuleType,
     /// <p>The time the configured table analysis rule was created.</p>
-    pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub create_time: ::aws_smithy_types::DateTime,
     /// <p>The time the configured table analysis rule was last updated.</p>
-    pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub update_time: ::aws_smithy_types::DateTime,
 }
 impl ConfiguredTableAnalysisRule {
     /// <p>The unique ID for the configured table.</p>
-    pub fn configured_table_id(&self) -> ::std::option::Option<&str> {
-        self.configured_table_id.as_deref()
+    pub fn configured_table_id(&self) -> &str {
+        use std::ops::Deref;
+        self.configured_table_id.deref()
     }
     /// <p>The unique ARN for the configured table.</p>
-    pub fn configured_table_arn(&self) -> ::std::option::Option<&str> {
-        self.configured_table_arn.as_deref()
+    pub fn configured_table_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.configured_table_arn.deref()
     }
     /// <p>The policy that controls SQL query rules.</p>
     pub fn policy(&self) -> ::std::option::Option<&crate::types::ConfiguredTableAnalysisRulePolicy> {
         self.policy.as_ref()
     }
     /// <p>The type of configured table analysis rule.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ConfiguredTableAnalysisRuleType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::ConfiguredTableAnalysisRuleType {
+        &self.r#type
     }
     /// <p>The time the configured table analysis rule was created.</p>
-    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.create_time.as_ref()
+    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.create_time
     }
     /// <p>The time the configured table analysis rule was last updated.</p>
-    pub fn update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.update_time.as_ref()
+    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.update_time
     }
 }
 impl ConfiguredTableAnalysisRule {
@@ -63,6 +65,7 @@ pub struct ConfiguredTableAnalysisRuleBuilder {
 }
 impl ConfiguredTableAnalysisRuleBuilder {
     /// <p>The unique ID for the configured table.</p>
+    /// This field is required.
     pub fn configured_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configured_table_id = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +80,7 @@ impl ConfiguredTableAnalysisRuleBuilder {
         &self.configured_table_id
     }
     /// <p>The unique ARN for the configured table.</p>
+    /// This field is required.
     pub fn configured_table_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configured_table_arn = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +95,7 @@ impl ConfiguredTableAnalysisRuleBuilder {
         &self.configured_table_arn
     }
     /// <p>The policy that controls SQL query rules.</p>
+    /// This field is required.
     pub fn policy(mut self, input: crate::types::ConfiguredTableAnalysisRulePolicy) -> Self {
         self.policy = ::std::option::Option::Some(input);
         self
@@ -105,6 +110,7 @@ impl ConfiguredTableAnalysisRuleBuilder {
         &self.policy
     }
     /// <p>The type of configured table analysis rule.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::ConfiguredTableAnalysisRuleType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -119,6 +125,7 @@ impl ConfiguredTableAnalysisRuleBuilder {
         &self.r#type
     }
     /// <p>The time the configured table analysis rule was created.</p>
+    /// This field is required.
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
         self
@@ -133,6 +140,7 @@ impl ConfiguredTableAnalysisRuleBuilder {
         &self.create_time
     }
     /// <p>The time the configured table analysis rule was last updated.</p>
+    /// This field is required.
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
         self
@@ -147,14 +155,45 @@ impl ConfiguredTableAnalysisRuleBuilder {
         &self.update_time
     }
     /// Consumes the builder and constructs a [`ConfiguredTableAnalysisRule`](crate::types::ConfiguredTableAnalysisRule).
-    pub fn build(self) -> crate::types::ConfiguredTableAnalysisRule {
-        crate::types::ConfiguredTableAnalysisRule {
-            configured_table_id: self.configured_table_id,
-            configured_table_arn: self.configured_table_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`configured_table_id`](crate::types::builders::ConfiguredTableAnalysisRuleBuilder::configured_table_id)
+    /// - [`configured_table_arn`](crate::types::builders::ConfiguredTableAnalysisRuleBuilder::configured_table_arn)
+    /// - [`r#type`](crate::types::builders::ConfiguredTableAnalysisRuleBuilder::r#type)
+    /// - [`create_time`](crate::types::builders::ConfiguredTableAnalysisRuleBuilder::create_time)
+    /// - [`update_time`](crate::types::builders::ConfiguredTableAnalysisRuleBuilder::update_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::ConfiguredTableAnalysisRule, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ConfiguredTableAnalysisRule {
+            configured_table_id: self.configured_table_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "configured_table_id",
+                    "configured_table_id was not specified but it is required when building ConfiguredTableAnalysisRule",
+                )
+            })?,
+            configured_table_arn: self.configured_table_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "configured_table_arn",
+                    "configured_table_arn was not specified but it is required when building ConfiguredTableAnalysisRule",
+                )
+            })?,
             policy: self.policy,
-            r#type: self.r#type,
-            create_time: self.create_time,
-            update_time: self.update_time,
-        }
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building ConfiguredTableAnalysisRule",
+                )
+            })?,
+            create_time: self.create_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "create_time",
+                    "create_time was not specified but it is required when building ConfiguredTableAnalysisRule",
+                )
+            })?,
+            update_time: self.update_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "update_time",
+                    "update_time was not specified but it is required when building ConfiguredTableAnalysisRule",
+                )
+            })?,
+        })
     }
 }

@@ -40,8 +40,10 @@ impl CreateOutpostResolverInput {
         self.outpost_arn.as_deref()
     }
     /// <p> A string that helps identify the Route&nbsp;53 Resolvers on Outpost. </p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateOutpostResolverInput {
@@ -65,6 +67,7 @@ pub struct CreateOutpostResolverInputBuilder {
 impl CreateOutpostResolverInputBuilder {
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. </p>
     /// <p> <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
+    /// This field is required.
     pub fn creator_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creator_request_id = ::std::option::Option::Some(input.into());
         self
@@ -81,6 +84,7 @@ impl CreateOutpostResolverInputBuilder {
         &self.creator_request_id
     }
     /// <p>A friendly name that lets you easily find a configuration in the Resolver dashboard in the Route&nbsp;53 console.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -109,6 +113,7 @@ impl CreateOutpostResolverInputBuilder {
         &self.instance_count
     }
     /// <p> The Amazon EC2 instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>. </p>
+    /// This field is required.
     pub fn preferred_instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_instance_type = ::std::option::Option::Some(input.into());
         self
@@ -123,6 +128,7 @@ impl CreateOutpostResolverInputBuilder {
         &self.preferred_instance_type
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the <code>PreferredInstanceType</code>.</p>
+    /// This field is required.
     pub fn outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outpost_arn = ::std::option::Option::Some(input.into());
         self
@@ -159,7 +165,7 @@ impl CreateOutpostResolverInputBuilder {
     /// Consumes the builder and constructs a [`CreateOutpostResolverInput`](crate::operation::create_outpost_resolver::CreateOutpostResolverInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_outpost_resolver::CreateOutpostResolverInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_outpost_resolver::CreateOutpostResolverInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_outpost_resolver::CreateOutpostResolverInput {
             creator_request_id: self.creator_request_id,

@@ -2,7 +2,7 @@
 pub fn ser_virtual_gateway_client_tls_certificate(
     object_6: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VirtualGatewayClientTlsCertificate,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::VirtualGatewayClientTlsCertificate::File(inner) => {
             #[allow(unused_mut)]
@@ -23,7 +23,7 @@ pub fn ser_virtual_gateway_client_tls_certificate(
             object_2.finish();
         }
         crate::types::VirtualGatewayClientTlsCertificate::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "VirtualGatewayClientTlsCertificate",
             ))
         }
@@ -44,12 +44,17 @@ where
             match tokens.next().transpose()? {
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                    let key = key.to_unescaped()?;
+                    if key == "__type" {
+                        ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                        continue;
+                    }
                     if variant.is_some() {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
                             "encountered mixed variants in union",
                         ));
                     }
-                    variant = match key.to_unescaped()?.as_ref() {
+                    variant = match key.as_ref() {
                             "file" => {
                                 Some(crate::types::VirtualGatewayClientTlsCertificate::File(
                                     crate::protocol_serde::shape_virtual_gateway_listener_tls_file_certificate::de_virtual_gateway_listener_tls_file_certificate(tokens)?

@@ -35,6 +35,7 @@ pub struct AuthorizeVpcEndpointAccessOutputBuilder {
 }
 impl AuthorizeVpcEndpointAccessOutputBuilder {
     /// <p>Information about the account or service that was provided access to the domain.</p>
+    /// This field is required.
     pub fn authorized_principal(mut self, input: crate::types::AuthorizedPrincipal) -> Self {
         self.authorized_principal = ::std::option::Option::Some(input);
         self

@@ -93,8 +93,10 @@ impl DbInstance {
         self.backup_retention_period
     }
     /// <p>Provides a list of VPC security group elements that the instance belongs to.</p>
-    pub fn vpc_security_groups(&self) -> ::std::option::Option<&[crate::types::VpcSecurityGroupMembership]> {
-        self.vpc_security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_groups.is_none()`.
+    pub fn vpc_security_groups(&self) -> &[crate::types::VpcSecurityGroupMembership] {
+        self.vpc_security_groups.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the name of the Availability Zone that the instance is located in.</p>
     pub fn availability_zone(&self) -> ::std::option::Option<&str> {
@@ -129,8 +131,10 @@ impl DbInstance {
         self.publicly_accessible
     }
     /// <p>The status of a read replica. If the instance is not a read replica, this is blank.</p>
-    pub fn status_infos(&self) -> ::std::option::Option<&[crate::types::DbInstanceStatusInfo]> {
-        self.status_infos.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.status_infos.is_none()`.
+    pub fn status_infos(&self) -> &[crate::types::DbInstanceStatusInfo] {
+        self.status_infos.as_deref().unwrap_or_default()
     }
     /// <p>Contains the name of the cluster that the instance is a member of if the instance is a member of a cluster.</p>
     pub fn db_cluster_identifier(&self) -> ::std::option::Option<&str> {
@@ -165,8 +169,10 @@ impl DbInstance {
         self.db_instance_arn.as_deref()
     }
     /// <p>A list of log types that this instance is configured to export to CloudWatch Logs.</p>
-    pub fn enabled_cloudwatch_logs_exports(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.enabled_cloudwatch_logs_exports.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enabled_cloudwatch_logs_exports.is_none()`.
+    pub fn enabled_cloudwatch_logs_exports(&self) -> &[::std::string::String] {
+        self.enabled_cloudwatch_logs_exports.as_deref().unwrap_or_default()
     }
 }
 impl DbInstance {

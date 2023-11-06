@@ -274,7 +274,8 @@ impl SearchGameSessionsInputBuilder {
     /// Consumes the builder and constructs a [`SearchGameSessionsInput`](crate::operation::search_game_sessions::SearchGameSessionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_game_sessions::SearchGameSessionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::search_game_sessions::SearchGameSessionsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::search_game_sessions::SearchGameSessionsInput {
             fleet_id: self.fleet_id,
             alias_id: self.alias_id,

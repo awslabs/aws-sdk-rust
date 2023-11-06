@@ -11,8 +11,10 @@ pub struct ListInstancesOutput {
 }
 impl ListInstancesOutput {
     /// <p>Metadata that describes the list instances operation.</p>
-    pub fn instance_summaries(&self) -> ::std::option::Option<&[crate::types::InstanceSummary]> {
-        self.instance_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_summaries.is_none()`.
+    pub fn instance_summaries(&self) -> &[crate::types::InstanceSummary] {
+        self.instance_summaries.as_deref().unwrap_or_default()
     }
     /// <p>Token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

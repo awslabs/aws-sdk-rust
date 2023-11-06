@@ -44,6 +44,7 @@ pub struct CrossRegionCopyActionBuilder {
 }
 impl CrossRegionCopyActionBuilder {
     /// <p>The target Region.</p>
+    /// This field is required.
     pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target = ::std::option::Option::Some(input.into());
         self
@@ -58,6 +59,7 @@ impl CrossRegionCopyActionBuilder {
         &self.target
     }
     /// <p>The encryption settings for the copied snapshot.</p>
+    /// This field is required.
     pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
         self.encryption_configuration = ::std::option::Option::Some(input);
         self

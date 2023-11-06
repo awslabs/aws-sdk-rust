@@ -76,6 +76,7 @@ impl PutImageInputBuilder {
         &self.registry_id
     }
     /// <p>The name of the repository in which to put the image.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +91,7 @@ impl PutImageInputBuilder {
         &self.repository_name
     }
     /// <p>The image manifest corresponding to the image to be uploaded.</p>
+    /// This field is required.
     pub fn image_manifest(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_manifest = ::std::option::Option::Some(input.into());
         self
@@ -146,7 +148,7 @@ impl PutImageInputBuilder {
         &self.image_digest
     }
     /// Consumes the builder and constructs a [`PutImageInput`](crate::operation::put_image::PutImageInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_image::PutImageInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_image::PutImageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_image::PutImageInput {
             registry_id: self.registry_id,
             repository_name: self.repository_name,

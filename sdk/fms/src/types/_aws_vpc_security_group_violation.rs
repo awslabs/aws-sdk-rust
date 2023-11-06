@@ -23,12 +23,16 @@ impl AwsVpcSecurityGroupViolation {
         self.violation_target_description.as_deref()
     }
     /// <p>List of rules specified in the security group of the Firewall Manager policy that partially match the <code>ViolationTarget</code> rule.</p>
-    pub fn partial_matches(&self) -> ::std::option::Option<&[crate::types::PartialMatch]> {
-        self.partial_matches.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.partial_matches.is_none()`.
+    pub fn partial_matches(&self) -> &[crate::types::PartialMatch] {
+        self.partial_matches.as_deref().unwrap_or_default()
     }
     /// <p>Remediation options for the rule specified in the <code>ViolationTarget</code>.</p>
-    pub fn possible_security_group_remediation_actions(&self) -> ::std::option::Option<&[crate::types::SecurityGroupRemediationAction]> {
-        self.possible_security_group_remediation_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.possible_security_group_remediation_actions.is_none()`.
+    pub fn possible_security_group_remediation_actions(&self) -> &[crate::types::SecurityGroupRemediationAction] {
+        self.possible_security_group_remediation_actions.as_deref().unwrap_or_default()
     }
 }
 impl AwsVpcSecurityGroupViolation {

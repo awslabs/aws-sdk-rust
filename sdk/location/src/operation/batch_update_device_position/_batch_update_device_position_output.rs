@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchUpdateDevicePositionOutput {
     /// <p>Contains error details for each device that failed to update its position.</p>
-    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateDevicePositionError>>,
+    pub errors: ::std::vec::Vec<crate::types::BatchUpdateDevicePositionError>,
     _request_id: Option<String>,
 }
 impl BatchUpdateDevicePositionOutput {
     /// <p>Contains error details for each device that failed to update its position.</p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::BatchUpdateDevicePositionError]> {
-        self.errors.as_deref()
+    pub fn errors(&self) -> &[crate::types::BatchUpdateDevicePositionError] {
+        use std::ops::Deref;
+        self.errors.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchUpdateDevicePositionOutput {
@@ -63,10 +64,22 @@ impl BatchUpdateDevicePositionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchUpdateDevicePositionOutput`](crate::operation::batch_update_device_position::BatchUpdateDevicePositionOutput).
-    pub fn build(self) -> crate::operation::batch_update_device_position::BatchUpdateDevicePositionOutput {
-        crate::operation::batch_update_device_position::BatchUpdateDevicePositionOutput {
-            errors: self.errors,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`errors`](crate::operation::batch_update_device_position::builders::BatchUpdateDevicePositionOutputBuilder::errors)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::batch_update_device_position::BatchUpdateDevicePositionOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::batch_update_device_position::BatchUpdateDevicePositionOutput {
+            errors: self.errors.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "errors",
+                    "errors was not specified but it is required when building BatchUpdateDevicePositionOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

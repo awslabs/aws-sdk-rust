@@ -48,6 +48,7 @@ pub struct GetViolationDetailsInputBuilder {
 }
 impl GetViolationDetailsInputBuilder {
     /// <p>The ID of the Firewall Manager policy that you want the details for. This currently only supports security group content audit policies.</p>
+    /// This field is required.
     pub fn policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl GetViolationDetailsInputBuilder {
         &self.policy_id
     }
     /// <p>The Amazon Web Services account ID that you want the details for.</p>
+    /// This field is required.
     pub fn member_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_account = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl GetViolationDetailsInputBuilder {
         &self.member_account
     }
     /// <p>The ID of the resource that has violations.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl GetViolationDetailsInputBuilder {
         &self.resource_id
     }
     /// <p>The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>. Supported resource types are: <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>, <code>AWS::EC2::SecurityGroup</code>, <code>AWS::NetworkFirewall::FirewallPolicy</code>, and <code>AWS::EC2::Subnet</code>. </p>
+    /// This field is required.
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +110,7 @@ impl GetViolationDetailsInputBuilder {
     /// Consumes the builder and constructs a [`GetViolationDetailsInput`](crate::operation::get_violation_details::GetViolationDetailsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_violation_details::GetViolationDetailsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_violation_details::GetViolationDetailsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_violation_details::GetViolationDetailsInput {
             policy_id: self.policy_id,

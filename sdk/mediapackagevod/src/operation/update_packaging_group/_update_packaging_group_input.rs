@@ -49,6 +49,7 @@ impl UpdatePackagingGroupInputBuilder {
         &self.authorization
     }
     /// The ID of a MediaPackage VOD PackagingGroup resource.
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -65,7 +66,7 @@ impl UpdatePackagingGroupInputBuilder {
     /// Consumes the builder and constructs a [`UpdatePackagingGroupInput`](crate::operation::update_packaging_group::UpdatePackagingGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_packaging_group::UpdatePackagingGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_packaging_group::UpdatePackagingGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_packaging_group::UpdatePackagingGroupInput {
             authorization: self.authorization,

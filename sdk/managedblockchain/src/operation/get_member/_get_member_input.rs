@@ -34,6 +34,7 @@ pub struct GetMemberInputBuilder {
 }
 impl GetMemberInputBuilder {
     /// <p>The unique identifier of the network to which the member belongs.</p>
+    /// This field is required.
     pub fn network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetMemberInputBuilder {
         &self.network_id
     }
     /// <p>The unique identifier of the member.</p>
+    /// This field is required.
     pub fn member_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_id = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,7 @@ impl GetMemberInputBuilder {
         &self.member_id
     }
     /// Consumes the builder and constructs a [`GetMemberInput`](crate::operation::get_member::GetMemberInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_member::GetMemberInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_member::GetMemberInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_member::GetMemberInput {
             network_id: self.network_id,
             member_id: self.member_id,

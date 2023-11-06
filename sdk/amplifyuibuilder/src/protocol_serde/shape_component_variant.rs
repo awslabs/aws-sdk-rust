@@ -2,7 +2,7 @@
 pub fn ser_component_variant(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ComponentVariant,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.variant_values {
         #[allow(unused_mut)]
         let mut object_2 = object.key("variantValues").start_object();

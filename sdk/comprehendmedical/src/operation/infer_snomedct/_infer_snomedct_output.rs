@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InferSnomedctOutput {
     /// <p> The collection of medical concept entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Amazon Comprehend Medical has in the detection and analysis. Attributes and traits of the entity are also returned. </p>
-    pub entities: ::std::option::Option<::std::vec::Vec<crate::types::SnomedctEntity>>,
+    pub entities: ::std::vec::Vec<crate::types::SnomedctEntity>,
     /// <p> If the result of the request is truncated, the pagination token can be used to fetch the next page of entities. </p>
     pub pagination_token: ::std::option::Option<::std::string::String>,
     /// <p> The version of the model used to analyze the documents, in the format n.n.n You can use this information to track the model used for a particular batch of documents. </p>
@@ -17,8 +17,9 @@ pub struct InferSnomedctOutput {
 }
 impl InferSnomedctOutput {
     /// <p> The collection of medical concept entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Amazon Comprehend Medical has in the detection and analysis. Attributes and traits of the entity are also returned. </p>
-    pub fn entities(&self) -> ::std::option::Option<&[crate::types::SnomedctEntity]> {
-        self.entities.as_deref()
+    pub fn entities(&self) -> &[crate::types::SnomedctEntity] {
+        use std::ops::Deref;
+        self.entities.deref()
     }
     /// <p> If the result of the request is truncated, the pagination token can be used to fetch the next page of entities. </p>
     pub fn pagination_token(&self) -> ::std::option::Option<&str> {
@@ -147,14 +148,23 @@ impl InferSnomedctOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`InferSnomedctOutput`](crate::operation::infer_snomedct::InferSnomedctOutput).
-    pub fn build(self) -> crate::operation::infer_snomedct::InferSnomedctOutput {
-        crate::operation::infer_snomedct::InferSnomedctOutput {
-            entities: self.entities,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`entities`](crate::operation::infer_snomedct::builders::InferSnomedctOutputBuilder::entities)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::infer_snomedct::InferSnomedctOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::infer_snomedct::InferSnomedctOutput {
+            entities: self.entities.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "entities",
+                    "entities was not specified but it is required when building InferSnomedctOutput",
+                )
+            })?,
             pagination_token: self.pagination_token,
             model_version: self.model_version,
             snomedct_details: self.snomedct_details,
             characters: self.characters,
             _request_id: self._request_id,
-        }
+        })
     }
 }

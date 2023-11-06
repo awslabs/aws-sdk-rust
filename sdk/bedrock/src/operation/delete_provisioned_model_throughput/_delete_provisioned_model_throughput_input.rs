@@ -27,6 +27,7 @@ pub struct DeleteProvisionedModelThroughputInputBuilder {
 }
 impl DeleteProvisionedModelThroughputInputBuilder {
     /// <p>The ARN or name of the provisioned throughput.</p>
+    /// This field is required.
     pub fn provisioned_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioned_model_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteProvisionedModelThroughputInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_provisioned_model_throughput::DeleteProvisionedModelThroughputInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_provisioned_model_throughput::DeleteProvisionedModelThroughputInput {

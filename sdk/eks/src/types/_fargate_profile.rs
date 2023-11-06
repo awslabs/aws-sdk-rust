@@ -45,12 +45,16 @@ impl FargateProfile {
         self.pod_execution_role_arn.as_deref()
     }
     /// <p>The IDs of subnets to launch pods into.</p>
-    pub fn subnets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnets.is_none()`.
+    pub fn subnets(&self) -> &[::std::string::String] {
+        self.subnets.as_deref().unwrap_or_default()
     }
     /// <p>The selectors to match for pods to use this Fargate profile.</p>
-    pub fn selectors(&self) -> ::std::option::Option<&[crate::types::FargateProfileSelector]> {
-        self.selectors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.selectors.is_none()`.
+    pub fn selectors(&self) -> &[crate::types::FargateProfileSelector] {
+        self.selectors.as_deref().unwrap_or_default()
     }
     /// <p>The current status of the Fargate profile.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::FargateProfileStatus> {

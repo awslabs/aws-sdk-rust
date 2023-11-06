@@ -27,6 +27,7 @@ pub struct DeleteWhatIfForecastInputBuilder {
 }
 impl DeleteWhatIfForecastInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast that you want to delete.</p>
+    /// This field is required.
     pub fn what_if_forecast_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.what_if_forecast_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteWhatIfForecastInputBuilder {
     /// Consumes the builder and constructs a [`DeleteWhatIfForecastInput`](crate::operation::delete_what_if_forecast::DeleteWhatIfForecastInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_what_if_forecast::DeleteWhatIfForecastInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_what_if_forecast::DeleteWhatIfForecastInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_what_if_forecast::DeleteWhatIfForecastInput {
             what_if_forecast_arn: self.what_if_forecast_arn,

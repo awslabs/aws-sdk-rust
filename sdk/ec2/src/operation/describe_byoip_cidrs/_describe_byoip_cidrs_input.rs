@@ -55,6 +55,7 @@ impl DescribeByoipCidrsInputBuilder {
         &self.dry_run
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// This field is required.
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
@@ -85,7 +86,8 @@ impl DescribeByoipCidrsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeByoipCidrsInput`](crate::operation::describe_byoip_cidrs::DescribeByoipCidrsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_byoip_cidrs::DescribeByoipCidrsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_byoip_cidrs::DescribeByoipCidrsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::describe_byoip_cidrs::DescribeByoipCidrsInput {
             dry_run: self.dry_run,
             max_results: self.max_results,

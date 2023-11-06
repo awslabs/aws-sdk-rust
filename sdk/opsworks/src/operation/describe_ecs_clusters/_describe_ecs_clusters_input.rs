@@ -14,8 +14,10 @@ pub struct DescribeEcsClustersInput {
 }
 impl DescribeEcsClustersInput {
     /// <p>A list of ARNs, one for each cluster to be described.</p>
-    pub fn ecs_cluster_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ecs_cluster_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ecs_cluster_arns.is_none()`.
+    pub fn ecs_cluster_arns(&self) -> &[::std::string::String] {
+        self.ecs_cluster_arns.as_deref().unwrap_or_default()
     }
     /// <p>A stack ID. <code>DescribeEcsClusters</code> returns a description of the cluster that is registered with the stack.</p>
     pub fn stack_id(&self) -> ::std::option::Option<&str> {
@@ -112,7 +114,7 @@ impl DescribeEcsClustersInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEcsClustersInput`](crate::operation::describe_ecs_clusters::DescribeEcsClustersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_ecs_clusters::DescribeEcsClustersInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_ecs_clusters::DescribeEcsClustersInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_ecs_clusters::DescribeEcsClustersInput {
             ecs_cluster_arns: self.ecs_cluster_arns,

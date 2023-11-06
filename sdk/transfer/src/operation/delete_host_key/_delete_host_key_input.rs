@@ -34,6 +34,7 @@ pub struct DeleteHostKeyInputBuilder {
 }
 impl DeleteHostKeyInputBuilder {
     /// <p>The identifier of the server that contains the host key that you are deleting.</p>
+    /// This field is required.
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteHostKeyInputBuilder {
         &self.server_id
     }
     /// <p>The identifier of the host key that you are deleting.</p>
+    /// This field is required.
     pub fn host_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host_key_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DeleteHostKeyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteHostKeyInput`](crate::operation::delete_host_key::DeleteHostKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_host_key::DeleteHostKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_host_key::DeleteHostKeyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_host_key::DeleteHostKeyInput {
             server_id: self.server_id,
             host_key_id: self.host_key_id,

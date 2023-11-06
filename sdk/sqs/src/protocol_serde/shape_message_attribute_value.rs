@@ -3,7 +3,7 @@
 pub fn ser_message_attribute_value(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::MessageAttributeValue,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("StringValue");
     if let Some(var_2) = &input.string_value {
@@ -38,12 +38,13 @@ pub fn ser_message_attribute_value(
     }
     #[allow(unused_mut)]
     let mut scope_15 = writer.prefix("DataType");
-    if let Some(var_16) = &input.data_type {
-        scope_15.string(var_16);
+    {
+        scope_15.string(&input.data_type);
     }
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_message_attribute_value(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::MessageAttributeValue, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -52,7 +53,7 @@ pub fn de_message_attribute_value(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("StringValue") /* StringValue com.amazonaws.sqs#MessageAttributeValue$StringValue */ =>  {
-                let var_17 =
+                let var_16 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -61,11 +62,11 @@ pub fn de_message_attribute_value(
                         ?
                     )
                 ;
-                builder = builder.set_string_value(var_17);
+                builder = builder.set_string_value(var_16);
             }
             ,
             s if s.matches("BinaryValue") /* BinaryValue com.amazonaws.sqs#MessageAttributeValue$BinaryValue */ =>  {
-                let var_18 =
+                let var_17 =
                     Some(
                         ::aws_smithy_types::base64::decode(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -74,51 +75,51 @@ pub fn de_message_attribute_value(
                         ?
                     )
                 ;
-                builder = builder.set_binary_value(var_18);
+                builder = builder.set_binary_value(var_17);
             }
             ,
             s if s.matches("StringListValue") /* StringListValues com.amazonaws.sqs#MessageAttributeValue$StringListValues */ =>  {
-                let var_19 =
+                let var_18 =
                     Some(
-                        Result::<::std::vec::Vec<::std::string::String>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
-                            let mut list_20 = builder.string_list_values.take().unwrap_or_default();
-                            list_20.push(
+                        Result::<::std::vec::Vec::<::std::string::String>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                            let mut list_19 = builder.string_list_values.take().unwrap_or_default();
+                            list_19.push(
                                 Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                                     ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                                     .into()
                                 )
                                 ?
                             );
-                            list_20
+                            list_19
                         })
                         ?
                     )
                 ;
-                builder = builder.set_string_list_values(var_19);
+                builder = builder.set_string_list_values(var_18);
             }
             ,
             s if s.matches("BinaryListValue") /* BinaryListValues com.amazonaws.sqs#MessageAttributeValue$BinaryListValues */ =>  {
-                let var_21 =
+                let var_20 =
                     Some(
-                        Result::<::std::vec::Vec<::aws_smithy_types::Blob>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
-                            let mut list_22 = builder.binary_list_values.take().unwrap_or_default();
-                            list_22.push(
+                        Result::<::std::vec::Vec::<::aws_smithy_types::Blob>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                            let mut list_21 = builder.binary_list_values.take().unwrap_or_default();
+                            list_21.push(
                                 ::aws_smithy_types::base64::decode(
                                     ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                                 )
                                 .map_err(|err|::aws_smithy_xml::decode::XmlDecodeError::custom(format!("invalid base64: {:?}", err))).map(::aws_smithy_types::Blob::new)
                                 ?
                             );
-                            list_22
+                            list_21
                         })
                         ?
                     )
                 ;
-                builder = builder.set_binary_list_values(var_21);
+                builder = builder.set_binary_list_values(var_20);
             }
             ,
             s if s.matches("DataType") /* DataType com.amazonaws.sqs#MessageAttributeValue$DataType */ =>  {
-                let var_23 =
+                let var_22 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -127,11 +128,13 @@ pub fn de_message_attribute_value(
                         ?
                     )
                 ;
-                builder = builder.set_data_type(var_23);
+                builder = builder.set_data_type(var_22);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::message_attribute_value_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

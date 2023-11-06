@@ -24,7 +24,7 @@ pub struct CreateStackInput {
     /// <p>The amount of time that can pass before the stack status becomes CREATE_FAILED; if <code>DisableRollback</code> is not set or is set to <code>false</code>, the stack will be rolled back.</p>
     pub timeout_in_minutes: ::std::option::Option<i32>,
     /// <p>The Amazon Simple Notification Service (Amazon SNS) topic ARNs to publish stack related events. You can find your Amazon SNS topic ARNs using the Amazon SNS console or your Command Line Interface (CLI).</p>
-    pub notification_ar_ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub notification_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>In some cases, you must explicitly acknowledge that your stack template contains certain capabilities in order for CloudFormation to create the stack.</p>
     /// <ul>
     /// <li> <p> <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some stack templates might include resources that can affect permissions in your Amazon Web Services account; for example, by creating new Identity and Access Management (IAM) users. For those stacks, you must explicitly acknowledge this by specifying one of these capabilities.</p> <p>The following IAM resources require you to specify either the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> capability.</p>
@@ -92,8 +92,10 @@ impl CreateStackInput {
         self.template_url.as_deref()
     }
     /// <p>A list of <code>Parameter</code> structures that specify input parameters for the stack. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data type.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&[crate::types::Parameter]> {
-        self.parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
+    pub fn parameters(&self) -> &[crate::types::Parameter] {
+        self.parameters.as_deref().unwrap_or_default()
     }
     /// <p>Set to <code>true</code> to disable rollback of the stack if stack creation failed. You can specify either <code>DisableRollback</code> or <code>OnFailure</code>, but not both.</p>
     /// <p>Default: <code>false</code> </p>
@@ -109,8 +111,10 @@ impl CreateStackInput {
         self.timeout_in_minutes
     }
     /// <p>The Amazon Simple Notification Service (Amazon SNS) topic ARNs to publish stack related events. You can find your Amazon SNS topic ARNs using the Amazon SNS console or your Command Line Interface (CLI).</p>
-    pub fn notification_ar_ns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.notification_ar_ns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notification_arns.is_none()`.
+    pub fn notification_arns(&self) -> &[::std::string::String] {
+        self.notification_arns.as_deref().unwrap_or_default()
     }
     /// <p>In some cases, you must explicitly acknowledge that your stack template contains certain capabilities in order for CloudFormation to create the stack.</p>
     /// <ul>
@@ -134,13 +138,17 @@ impl CreateStackInput {
     /// <p>Each macro relies on an underlying Lambda service function for processing stack templates. Be aware that the Lambda function owner can update the function operation without CloudFormation being notified.</p>
     /// </important> <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation macros to perform custom processing on templates</a>.</p> </li>
     /// </ul>
-    pub fn capabilities(&self) -> ::std::option::Option<&[crate::types::Capability]> {
-        self.capabilities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capabilities.is_none()`.
+    pub fn capabilities(&self) -> &[crate::types::Capability] {
+        self.capabilities.as_deref().unwrap_or_default()
     }
     /// <p>The template resource types that you have permissions to work with for this create stack action, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>. Use the following syntax to describe template resource types: <code>AWS::*</code> (for all Amazon Web Services resources), <code>Custom::*</code> (for all custom resources), <code>Custom::<i>logical_ID</i> </code> (for a specific custom resource), <code>AWS::<i>service_name</i>::*</code> (for all resources of a particular Amazon Web Services service), and <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i> </code> (for a specific Amazon Web Services resource).</p>
     /// <p>If the list of resource types doesn't include a resource that you're creating, the stack creation fails. By default, CloudFormation grants permissions to all resource types. Identity and Access Management (IAM) uses this parameter for CloudFormation-specific condition keys in IAM policies. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access with Identity and Access Management</a>.</p>
-    pub fn resource_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_types.is_none()`.
+    pub fn resource_types(&self) -> &[::std::string::String] {
+        self.resource_types.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFormation assumes to create the stack. CloudFormation uses the role's credentials to make calls on your behalf. CloudFormation always uses this role for all future operations on the stack. Provided that users have permission to operate on the stack, CloudFormation uses this role even if the users don't have permission to pass it. Ensure that the role grants least privilege.</p>
     /// <p>If you don't specify a value, CloudFormation uses the role that was previously associated with the stack. If no role is available, CloudFormation uses a temporary session that's generated from your user credentials.</p>
@@ -161,8 +169,10 @@ impl CreateStackInput {
         self.stack_policy_url.as_deref()
     }
     /// <p>Key-value pairs to associate with this stack. CloudFormation also propagates these tags to the resources created in the stack. A maximum number of 50 tags can be specified.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>A unique identifier for this <code>CreateStack</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to create a stack with the same name. You might retry <code>CreateStack</code> requests to ensure that CloudFormation successfully received them.</p>
     /// <p>All events initiated by a given stack operation are assigned the same client request token, which you can use to track operations. For example, if you execute a <code>CreateStack</code> operation with the token <code>token1</code>, then all the <code>StackEvents</code> generated by that operation will have <code>ClientRequestToken</code> set as <code>token1</code>.</p>
@@ -199,7 +209,7 @@ pub struct CreateStackInputBuilder {
     pub(crate) disable_rollback: ::std::option::Option<bool>,
     pub(crate) rollback_configuration: ::std::option::Option<crate::types::RollbackConfiguration>,
     pub(crate) timeout_in_minutes: ::std::option::Option<i32>,
-    pub(crate) notification_ar_ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) notification_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) capabilities: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>,
     pub(crate) resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
@@ -215,6 +225,7 @@ impl CreateStackInputBuilder {
     /// <p>The name that's associated with the stack. The name must be unique in the Region in which you are creating the stack.</p> <note>
     /// <p>A stack name can contain only alphanumeric characters (case sensitive) and hyphens. It must start with an alphabetical character and can't be longer than 128 characters.</p>
     /// </note>
+    /// This field is required.
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_name = ::std::option::Option::Some(input.into());
         self
@@ -331,25 +342,25 @@ impl CreateStackInputBuilder {
     pub fn get_timeout_in_minutes(&self) -> &::std::option::Option<i32> {
         &self.timeout_in_minutes
     }
-    /// Appends an item to `notification_ar_ns`.
+    /// Appends an item to `notification_arns`.
     ///
-    /// To override the contents of this collection use [`set_notification_ar_ns`](Self::set_notification_ar_ns).
+    /// To override the contents of this collection use [`set_notification_arns`](Self::set_notification_arns).
     ///
     /// <p>The Amazon Simple Notification Service (Amazon SNS) topic ARNs to publish stack related events. You can find your Amazon SNS topic ARNs using the Amazon SNS console or your Command Line Interface (CLI).</p>
-    pub fn notification_ar_ns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.notification_ar_ns.unwrap_or_default();
+    pub fn notification_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.notification_arns.unwrap_or_default();
         v.push(input.into());
-        self.notification_ar_ns = ::std::option::Option::Some(v);
+        self.notification_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon Simple Notification Service (Amazon SNS) topic ARNs to publish stack related events. You can find your Amazon SNS topic ARNs using the Amazon SNS console or your Command Line Interface (CLI).</p>
-    pub fn set_notification_ar_ns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.notification_ar_ns = input;
+    pub fn set_notification_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.notification_arns = input;
         self
     }
     /// <p>The Amazon Simple Notification Service (Amazon SNS) topic ARNs to publish stack related events. You can find your Amazon SNS topic ARNs using the Amazon SNS console or your Command Line Interface (CLI).</p>
-    pub fn get_notification_ar_ns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.notification_ar_ns
+    pub fn get_notification_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.notification_arns
     }
     /// Appends an item to `capabilities`.
     ///
@@ -594,7 +605,7 @@ impl CreateStackInputBuilder {
         &self.retain_except_on_create
     }
     /// Consumes the builder and constructs a [`CreateStackInput`](crate::operation::create_stack::CreateStackInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_stack::CreateStackInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_stack::CreateStackInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_stack::CreateStackInput {
             stack_name: self.stack_name,
             template_body: self.template_body,
@@ -603,7 +614,7 @@ impl CreateStackInputBuilder {
             disable_rollback: self.disable_rollback,
             rollback_configuration: self.rollback_configuration,
             timeout_in_minutes: self.timeout_in_minutes,
-            notification_ar_ns: self.notification_ar_ns,
+            notification_arns: self.notification_arns,
             capabilities: self.capabilities,
             resource_types: self.resource_types,
             role_arn: self.role_arn,

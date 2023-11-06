@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetTelemetryMetadata`](crate::operation::get_telemetry_metadata::builders::GetTelemetryMetadataFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`assessment_run_arn(impl Into<String>)`](crate::operation::get_telemetry_metadata::builders::GetTelemetryMetadataFluentBuilder::assessment_run_arn) / [`set_assessment_run_arn(Option<String>)`](crate::operation::get_telemetry_metadata::builders::GetTelemetryMetadataFluentBuilder::set_assessment_run_arn): <p>The ARN that specifies the assessment run that has the telemetry data that you want to obtain.</p>
+    ///   - [`assessment_run_arn(impl Into<String>)`](crate::operation::get_telemetry_metadata::builders::GetTelemetryMetadataFluentBuilder::assessment_run_arn) / [`set_assessment_run_arn(Option<String>)`](crate::operation::get_telemetry_metadata::builders::GetTelemetryMetadataFluentBuilder::set_assessment_run_arn):<br>required: **true**<br><p>The ARN that specifies the assessment run that has the telemetry data that you want to obtain.</p><br>
     /// - On success, responds with [`GetTelemetryMetadataOutput`](crate::operation::get_telemetry_metadata::GetTelemetryMetadataOutput) with field(s):
-    ///   - [`telemetry_metadata(Option<Vec<TelemetryMetadata>>)`](crate::operation::get_telemetry_metadata::GetTelemetryMetadataOutput::telemetry_metadata): <p>Telemetry details.</p>
+    ///   - [`telemetry_metadata(Vec::<TelemetryMetadata>)`](crate::operation::get_telemetry_metadata::GetTelemetryMetadataOutput::telemetry_metadata): <p>Telemetry details.</p>
     /// - On failure, responds with [`SdkError<GetTelemetryMetadataError>`](crate::operation::get_telemetry_metadata::GetTelemetryMetadataError)
     pub fn get_telemetry_metadata(&self) -> crate::operation::get_telemetry_metadata::builders::GetTelemetryMetadataFluentBuilder {
         crate::operation::get_telemetry_metadata::builders::GetTelemetryMetadataFluentBuilder::new(self.handle.clone())

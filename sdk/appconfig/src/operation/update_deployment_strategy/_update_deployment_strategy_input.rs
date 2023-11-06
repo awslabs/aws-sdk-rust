@@ -74,6 +74,7 @@ pub struct UpdateDeploymentStrategyInputBuilder {
 }
 impl UpdateDeploymentStrategyInputBuilder {
     /// <p>The deployment strategy ID.</p>
+    /// This field is required.
     pub fn deployment_strategy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_strategy_id = ::std::option::Option::Some(input.into());
         self
@@ -180,7 +181,7 @@ impl UpdateDeploymentStrategyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_deployment_strategy::UpdateDeploymentStrategyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_deployment_strategy::UpdateDeploymentStrategyInput {
             deployment_strategy_id: self.deployment_strategy_id,

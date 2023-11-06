@@ -27,7 +27,7 @@ pub use crate::types::error::_kms_access_denied_fault::KmsAccessDeniedFaultBuild
 
 pub use crate::types::error::_subnet_already_in_use::SubnetAlreadyInUseBuilder;
 
-pub use crate::types::error::_replication_subnet_group_does_not_cover_enough_a_zs::ReplicationSubnetGroupDoesNotCoverEnoughAZsBuilder;
+pub use crate::types::error::_replication_subnet_group_does_not_cover_enough_azs::ReplicationSubnetGroupDoesNotCoverEnoughAZsBuilder;
 
 pub use crate::types::error::_invalid_subnet::InvalidSubnetBuilder;
 

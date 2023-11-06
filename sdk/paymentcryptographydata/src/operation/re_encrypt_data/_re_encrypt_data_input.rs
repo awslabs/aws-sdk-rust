@@ -66,6 +66,7 @@ pub struct ReEncryptDataInputBuilder {
 }
 impl ReEncryptDataInputBuilder {
     /// <p>The <code>keyARN</code> of the encryption key of incoming ciphertext data.</p>
+    /// This field is required.
     pub fn incoming_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.incoming_key_identifier = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +81,7 @@ impl ReEncryptDataInputBuilder {
         &self.incoming_key_identifier
     }
     /// <p>The <code>keyARN</code> of the encryption key of outgoing ciphertext data after encryption by Amazon Web Services Payment Cryptography.</p>
+    /// This field is required.
     pub fn outgoing_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outgoing_key_identifier = ::std::option::Option::Some(input.into());
         self
@@ -94,6 +96,7 @@ impl ReEncryptDataInputBuilder {
         &self.outgoing_key_identifier
     }
     /// <p>Ciphertext to be encrypted. The minimum allowed length is 16 bytes and maximum allowed length is 4096 bytes.</p>
+    /// This field is required.
     pub fn cipher_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cipher_text = ::std::option::Option::Some(input.into());
         self
@@ -108,6 +111,7 @@ impl ReEncryptDataInputBuilder {
         &self.cipher_text
     }
     /// <p>The attributes and values for incoming ciphertext.</p>
+    /// This field is required.
     pub fn incoming_encryption_attributes(mut self, input: crate::types::ReEncryptionAttributes) -> Self {
         self.incoming_encryption_attributes = ::std::option::Option::Some(input);
         self
@@ -122,6 +126,7 @@ impl ReEncryptDataInputBuilder {
         &self.incoming_encryption_attributes
     }
     /// <p>The attributes and values for outgoing ciphertext data after encryption by Amazon Web Services Payment Cryptography.</p>
+    /// This field is required.
     pub fn outgoing_encryption_attributes(mut self, input: crate::types::ReEncryptionAttributes) -> Self {
         self.outgoing_encryption_attributes = ::std::option::Option::Some(input);
         self
@@ -138,7 +143,7 @@ impl ReEncryptDataInputBuilder {
     /// Consumes the builder and constructs a [`ReEncryptDataInput`](crate::operation::re_encrypt_data::ReEncryptDataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::re_encrypt_data::ReEncryptDataInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::re_encrypt_data::ReEncryptDataInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::re_encrypt_data::ReEncryptDataInput {
             incoming_key_identifier: self.incoming_key_identifier,
             outgoing_key_identifier: self.outgoing_key_identifier,

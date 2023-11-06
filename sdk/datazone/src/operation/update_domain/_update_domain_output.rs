@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDomainOutput {
     /// <p>The identifier of the Amazon DataZone domain.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The description to be updated as part of the <code>UpdateDomain</code> action.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The single sign-on option of the Amazon DataZone domain.</p>
@@ -19,8 +19,9 @@ pub struct UpdateDomainOutput {
 }
 impl UpdateDomainOutput {
     /// <p>The identifier of the Amazon DataZone domain.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The description to be updated as part of the <code>UpdateDomain</code> action.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -69,6 +70,7 @@ pub struct UpdateDomainOutputBuilder {
 }
 impl UpdateDomainOutputBuilder {
     /// <p>The identifier of the Amazon DataZone domain.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -162,15 +164,24 @@ impl UpdateDomainOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateDomainOutput`](crate::operation::update_domain::UpdateDomainOutput).
-    pub fn build(self) -> crate::operation::update_domain::UpdateDomainOutput {
-        crate::operation::update_domain::UpdateDomainOutput {
-            id: self.id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::update_domain::builders::UpdateDomainOutputBuilder::id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_domain::UpdateDomainOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_domain::UpdateDomainOutput {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building UpdateDomainOutput",
+                )
+            })?,
             description: self.description,
             single_sign_on: self.single_sign_on,
             domain_execution_role: self.domain_execution_role,
             name: self.name,
             last_updated_at: self.last_updated_at,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -15,8 +15,10 @@ impl DescribeKinesisStreamingDestinationOutput {
         self.table_name.as_deref()
     }
     /// <p>The list of replica structures for the table being described.</p>
-    pub fn kinesis_data_stream_destinations(&self) -> ::std::option::Option<&[crate::types::KinesisDataStreamDestination]> {
-        self.kinesis_data_stream_destinations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.kinesis_data_stream_destinations.is_none()`.
+    pub fn kinesis_data_stream_destinations(&self) -> &[crate::types::KinesisDataStreamDestination] {
+        self.kinesis_data_stream_destinations.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeKinesisStreamingDestinationOutput {

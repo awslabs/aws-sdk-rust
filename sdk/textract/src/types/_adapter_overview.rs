@@ -27,8 +27,10 @@ impl AdapterOverview {
         self.creation_time.as_ref()
     }
     /// <p>The feature types that the adapter is operating on.</p>
-    pub fn feature_types(&self) -> ::std::option::Option<&[crate::types::FeatureType]> {
-        self.feature_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.feature_types.is_none()`.
+    pub fn feature_types(&self) -> &[crate::types::FeatureType] {
+        self.feature_types.as_deref().unwrap_or_default()
     }
 }
 impl AdapterOverview {

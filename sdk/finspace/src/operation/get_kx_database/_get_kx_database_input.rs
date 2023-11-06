@@ -34,6 +34,7 @@ pub struct GetKxDatabaseInputBuilder {
 }
 impl GetKxDatabaseInputBuilder {
     /// <p>A unique identifier for the kdb environment.</p>
+    /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetKxDatabaseInputBuilder {
         &self.environment_id
     }
     /// <p>The name of the kdb database.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl GetKxDatabaseInputBuilder {
     /// Consumes the builder and constructs a [`GetKxDatabaseInput`](crate::operation::get_kx_database::GetKxDatabaseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_kx_database::GetKxDatabaseInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_kx_database::GetKxDatabaseInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_kx_database::GetKxDatabaseInput {
             environment_id: self.environment_id,
             database_name: self.database_name,

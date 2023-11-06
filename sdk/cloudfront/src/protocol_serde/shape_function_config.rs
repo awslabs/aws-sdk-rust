@@ -2,21 +2,22 @@
 pub fn ser_function_config(
     input: &crate::types::FunctionConfig,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.comment {
+    {
         let mut inner_writer = scope.start_el("Comment").finish();
-        inner_writer.data(var_1.as_str());
+        inner_writer.data(input.comment.as_str());
     }
-    if let Some(var_2) = &input.runtime {
+    {
         let mut inner_writer = scope.start_el("Runtime").finish();
-        inner_writer.data(var_2.as_str());
+        inner_writer.data(input.runtime.as_str());
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_function_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::FunctionConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -25,7 +26,7 @@ pub fn de_function_config(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Comment") /* Comment com.amazonaws.cloudfront#FunctionConfig$Comment */ =>  {
-                let var_3 =
+                let var_1 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -34,11 +35,11 @@ pub fn de_function_config(
                         ?
                     )
                 ;
-                builder = builder.set_comment(var_3);
+                builder = builder.set_comment(var_1);
             }
             ,
             s if s.matches("Runtime") /* Runtime com.amazonaws.cloudfront#FunctionConfig$Runtime */ =>  {
-                let var_4 =
+                let var_2 =
                     Some(
                         Result::<crate::types::FunctionRuntime, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::FunctionRuntime::from(
@@ -48,11 +49,13 @@ pub fn de_function_config(
                         ?
                     )
                 ;
-                builder = builder.set_runtime(var_4);
+                builder = builder.set_runtime(var_2);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::function_config_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

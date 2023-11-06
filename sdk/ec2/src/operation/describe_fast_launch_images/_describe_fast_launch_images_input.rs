@@ -22,8 +22,10 @@ pub struct DescribeFastLaunchImagesInput {
 }
 impl DescribeFastLaunchImagesInput {
     /// <p>Details for one or more Windows AMI image IDs.</p>
-    pub fn image_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.image_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_ids.is_none()`.
+    pub fn image_ids(&self) -> &[::std::string::String] {
+        self.image_ids.as_deref().unwrap_or_default()
     }
     /// <p>Use the following filters to streamline results.</p>
     /// <ul>
@@ -32,8 +34,10 @@ impl DescribeFastLaunchImagesInput {
     /// <li> <p> <code>owner-id</code> - The owner ID for the pre-provisioning resource.</p> </li>
     /// <li> <p> <code>state</code> - The current state of fast launching for the Windows AMI.</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -171,7 +175,7 @@ impl DescribeFastLaunchImagesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_fast_launch_images::DescribeFastLaunchImagesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_fast_launch_images::DescribeFastLaunchImagesInput {
             image_ids: self.image_ids,

@@ -66,6 +66,7 @@ pub struct IsAuthorizedInputBuilder {
 }
 impl IsAuthorizedInputBuilder {
     /// <p>Specifies the ID of the policy store. Policies in this policy store will be used to make an authorization decision for the input.</p>
+    /// This field is required.
     pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_store_id = ::std::option::Option::Some(input.into());
         self
@@ -156,7 +157,9 @@ impl IsAuthorizedInputBuilder {
         &self.entities
     }
     /// Consumes the builder and constructs a [`IsAuthorizedInput`](crate::operation::is_authorized::IsAuthorizedInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::is_authorized::IsAuthorizedInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::is_authorized::IsAuthorizedInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::is_authorized::IsAuthorizedInput {
             policy_store_id: self.policy_store_id,
             principal: self.principal,

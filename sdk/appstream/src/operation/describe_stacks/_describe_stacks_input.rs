@@ -10,8 +10,10 @@ pub struct DescribeStacksInput {
 }
 impl DescribeStacksInput {
     /// <p>The names of the stacks to describe.</p>
-    pub fn names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.names.is_none()`.
+    pub fn names(&self) -> &[::std::string::String] {
+        self.names.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -70,7 +72,7 @@ impl DescribeStacksInputBuilder {
     /// Consumes the builder and constructs a [`DescribeStacksInput`](crate::operation::describe_stacks::DescribeStacksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_stacks::DescribeStacksInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_stacks::DescribeStacksInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_stacks::DescribeStacksInput {
             names: self.names,
             next_token: self.next_token,

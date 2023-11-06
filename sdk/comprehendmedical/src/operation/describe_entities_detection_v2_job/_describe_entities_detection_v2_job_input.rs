@@ -27,6 +27,7 @@ pub struct DescribeEntitiesDetectionV2JobInputBuilder {
 }
 impl DescribeEntitiesDetectionV2JobInputBuilder {
     /// <p>The identifier that Amazon Comprehend Medical generated for the job. The <code>StartEntitiesDetectionV2Job</code> operation returns this identifier in its response.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeEntitiesDetectionV2JobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_entities_detection_v2_job::DescribeEntitiesDetectionV2JobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_entities_detection_v2_job::DescribeEntitiesDetectionV2JobInput { job_id: self.job_id })
     }

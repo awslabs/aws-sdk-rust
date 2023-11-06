@@ -2,7 +2,7 @@
 pub fn ser_public_workforce_task_price(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PublicWorkforceTaskPrice,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.amount_in_usd {
         #[allow(unused_mut)]
         let mut object_2 = object.key("AmountInUsd").start_object();

@@ -343,7 +343,7 @@ impl DescribeDataSourcesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDataSourcesInput`](crate::operation::describe_data_sources::DescribeDataSourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_data_sources::DescribeDataSourcesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_data_sources::DescribeDataSourcesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_data_sources::DescribeDataSourcesInput {
             filter_variable: self.filter_variable,

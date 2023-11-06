@@ -29,6 +29,7 @@ pub struct CancelElasticsearchServiceSoftwareUpdateInputBuilder {
 }
 impl CancelElasticsearchServiceSoftwareUpdateInputBuilder {
     /// <p>The name of the domain that you want to stop the latest service software update on.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -47,7 +48,7 @@ impl CancelElasticsearchServiceSoftwareUpdateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_elasticsearch_service_software_update::CancelElasticsearchServiceSoftwareUpdateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::cancel_elasticsearch_service_software_update::CancelElasticsearchServiceSoftwareUpdateInput {

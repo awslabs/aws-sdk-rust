@@ -27,6 +27,7 @@ pub struct GetVocabularyInputBuilder {
 }
 impl GetVocabularyInputBuilder {
     /// <p>The name of the custom vocabulary you want information about. Custom vocabulary names are case sensitive.</p>
+    /// This field is required.
     pub fn vocabulary_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vocabulary_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetVocabularyInputBuilder {
     /// Consumes the builder and constructs a [`GetVocabularyInput`](crate::operation::get_vocabulary::GetVocabularyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_vocabulary::GetVocabularyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_vocabulary::GetVocabularyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_vocabulary::GetVocabularyInput {
             vocabulary_name: self.vocabulary_name,
         })

@@ -15,8 +15,10 @@ impl ApplicationDpuSizes {
         self.application_runtime_id.as_deref()
     }
     /// <p>A list of the supported DPU sizes that the application runtime supports.</p>
-    pub fn supported_dpu_sizes(&self) -> ::std::option::Option<&[i32]> {
-        self.supported_dpu_sizes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_dpu_sizes.is_none()`.
+    pub fn supported_dpu_sizes(&self) -> &[i32] {
+        self.supported_dpu_sizes.as_deref().unwrap_or_default()
     }
 }
 impl ApplicationDpuSizes {

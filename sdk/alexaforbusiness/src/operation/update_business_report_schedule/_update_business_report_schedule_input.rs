@@ -62,6 +62,7 @@ pub struct UpdateBusinessReportScheduleInputBuilder {
 }
 impl UpdateBusinessReportScheduleInputBuilder {
     /// <p>The ARN of the business report schedule.</p>
+    /// This field is required.
     pub fn schedule_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule_arn = ::std::option::Option::Some(input.into());
         self
@@ -150,7 +151,7 @@ impl UpdateBusinessReportScheduleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_business_report_schedule::UpdateBusinessReportScheduleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_business_report_schedule::UpdateBusinessReportScheduleInput {
             schedule_arn: self.schedule_arn,

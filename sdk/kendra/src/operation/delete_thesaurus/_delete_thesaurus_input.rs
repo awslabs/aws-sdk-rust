@@ -34,6 +34,7 @@ pub struct DeleteThesaurusInputBuilder {
 }
 impl DeleteThesaurusInputBuilder {
     /// <p>The identifier of the thesaurus you want to delete.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteThesaurusInputBuilder {
         &self.id
     }
     /// <p>The identifier of the index for the thesaurus.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DeleteThesaurusInputBuilder {
     /// Consumes the builder and constructs a [`DeleteThesaurusInput`](crate::operation::delete_thesaurus::DeleteThesaurusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_thesaurus::DeleteThesaurusInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_thesaurus::DeleteThesaurusInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_thesaurus::DeleteThesaurusInput {
             id: self.id,
             index_id: self.index_id,

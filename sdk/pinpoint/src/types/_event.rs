@@ -167,6 +167,7 @@ impl EventBuilder {
         &self.client_sdk_version
     }
     /// <p>The name of the event.</p>
+    /// This field is required.
     pub fn event_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_type = ::std::option::Option::Some(input.into());
         self
@@ -229,6 +230,7 @@ impl EventBuilder {
         &self.session
     }
     /// <p>The date and time, in ISO 8601 format, when the event occurred.</p>
+    /// This field is required.
     pub fn timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timestamp = ::std::option::Option::Some(input.into());
         self

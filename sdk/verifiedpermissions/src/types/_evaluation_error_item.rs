@@ -6,12 +6,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct EvaluationErrorItem {
     /// <p>The error description.</p>
-    pub error_description: ::std::option::Option<::std::string::String>,
+    pub error_description: ::std::string::String,
 }
 impl EvaluationErrorItem {
     /// <p>The error description.</p>
-    pub fn error_description(&self) -> ::std::option::Option<&str> {
-        self.error_description.as_deref()
+    pub fn error_description(&self) -> &str {
+        use std::ops::Deref;
+        self.error_description.deref()
     }
 }
 impl ::std::fmt::Debug for EvaluationErrorItem {
@@ -36,6 +37,7 @@ pub struct EvaluationErrorItemBuilder {
 }
 impl EvaluationErrorItemBuilder {
     /// <p>The error description.</p>
+    /// This field is required.
     pub fn error_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_description = ::std::option::Option::Some(input.into());
         self
@@ -50,10 +52,17 @@ impl EvaluationErrorItemBuilder {
         &self.error_description
     }
     /// Consumes the builder and constructs a [`EvaluationErrorItem`](crate::types::EvaluationErrorItem).
-    pub fn build(self) -> crate::types::EvaluationErrorItem {
-        crate::types::EvaluationErrorItem {
-            error_description: self.error_description,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`error_description`](crate::types::builders::EvaluationErrorItemBuilder::error_description)
+    pub fn build(self) -> ::std::result::Result<crate::types::EvaluationErrorItem, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EvaluationErrorItem {
+            error_description: self.error_description.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "error_description",
+                    "error_description was not specified but it is required when building EvaluationErrorItem",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for EvaluationErrorItemBuilder {

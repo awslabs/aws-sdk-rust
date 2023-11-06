@@ -27,6 +27,7 @@ pub struct GetClusterSnapshotInputBuilder {
 }
 impl GetClusterSnapshotInputBuilder {
     /// <p>The arn of the Elastic DocumentDB snapshot.</p>
+    /// This field is required.
     pub fn snapshot_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,8 @@ impl GetClusterSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`GetClusterSnapshotInput`](crate::operation::get_cluster_snapshot::GetClusterSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_cluster_snapshot::GetClusterSnapshotInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_cluster_snapshot::GetClusterSnapshotInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_cluster_snapshot::GetClusterSnapshotInput {
             snapshot_arn: self.snapshot_arn,
         })

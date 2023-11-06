@@ -55,7 +55,7 @@ impl PutRegistryCatalogDataInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_registry_catalog_data::PutRegistryCatalogDataInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_registry_catalog_data::PutRegistryCatalogDataInput {
             display_name: self.display_name,

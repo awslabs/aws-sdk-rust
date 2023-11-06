@@ -11,8 +11,10 @@ pub struct ListReceivedGrantsOutput {
 }
 impl ListReceivedGrantsOutput {
     /// <p>Received grant details.</p>
-    pub fn grants(&self) -> ::std::option::Option<&[crate::types::Grant]> {
-        self.grants.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.grants.is_none()`.
+    pub fn grants(&self) -> &[crate::types::Grant] {
+        self.grants.as_deref().unwrap_or_default()
     }
     /// <p>Token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

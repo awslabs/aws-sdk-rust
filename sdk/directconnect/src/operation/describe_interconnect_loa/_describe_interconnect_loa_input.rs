@@ -41,6 +41,7 @@ pub struct DescribeInterconnectLoaInputBuilder {
 }
 impl DescribeInterconnectLoaInputBuilder {
     /// <p>The ID of the interconnect.</p>
+    /// This field is required.
     pub fn interconnect_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.interconnect_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl DescribeInterconnectLoaInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_interconnect_loa::DescribeInterconnectLoaInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_interconnect_loa::DescribeInterconnectLoaInput {
             interconnect_id: self.interconnect_id,

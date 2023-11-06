@@ -133,20 +133,15 @@ pub(crate) mod shape_update_registry_input;
 
 pub(crate) mod shape_update_schema_input;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_discoverer_summary;
+pub(crate) mod shape_list_of_discoverer_summary;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_registry_summary;
+pub(crate) mod shape_list_of_registry_summary;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_schema_summary;
+pub(crate) mod shape_list_of_schema_summary;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_schema_version_summary;
+pub(crate) mod shape_list_of_schema_version_summary;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_search_schema_summary;
+pub(crate) mod shape_list_of_search_schema_summary;
 
 pub(crate) mod shape_tags;
 
@@ -160,7 +155,6 @@ pub(crate) mod shape_schema_version_summary;
 
 pub(crate) mod shape_search_schema_summary;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_search_schema_version_summary;
+pub(crate) mod shape_list_of_search_schema_version_summary;
 
 pub(crate) mod shape_search_schema_version_summary;

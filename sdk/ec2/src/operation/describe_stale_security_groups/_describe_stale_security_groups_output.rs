@@ -15,8 +15,10 @@ impl DescribeStaleSecurityGroupsOutput {
         self.next_token.as_deref()
     }
     /// <p>Information about the stale security groups.</p>
-    pub fn stale_security_group_set(&self) -> ::std::option::Option<&[crate::types::StaleSecurityGroup]> {
-        self.stale_security_group_set.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stale_security_group_set.is_none()`.
+    pub fn stale_security_group_set(&self) -> &[crate::types::StaleSecurityGroup] {
+        self.stale_security_group_set.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeStaleSecurityGroupsOutput {

@@ -55,6 +55,7 @@ pub struct CreateKxEnvironmentInputBuilder {
 }
 impl CreateKxEnvironmentInputBuilder {
     /// <p>The name of the kdb environment that you want to create.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +84,7 @@ impl CreateKxEnvironmentInputBuilder {
         &self.description
     }
     /// <p>The KMS key ID to encrypt your data in the FinSpace environment.</p>
+    /// This field is required.
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
         self
@@ -133,7 +135,7 @@ impl CreateKxEnvironmentInputBuilder {
     /// Consumes the builder and constructs a [`CreateKxEnvironmentInput`](crate::operation::create_kx_environment::CreateKxEnvironmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_kx_environment::CreateKxEnvironmentInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_kx_environment::CreateKxEnvironmentInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_kx_environment::CreateKxEnvironmentInput {
             name: self.name,

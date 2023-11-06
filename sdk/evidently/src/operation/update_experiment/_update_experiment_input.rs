@@ -21,7 +21,7 @@ pub struct UpdateExperimentInput {
     /// <p>Adds an audience <i>segment</i> to an experiment. When a segment is used in an experiment, only user sessions that match the segment pattern are used in the experiment. You can't use this parameter if the experiment is currently running.</p>
     pub segment: ::std::option::Option<::std::string::String>,
     /// <p>Removes a segment from being used in an experiment. You can't use this parameter if the experiment is currently running.</p>
-    pub remove_segment: bool,
+    pub remove_segment: ::std::option::Option<bool>,
     /// <p>A structure that contains the configuration of which variation o use as the "control" version. The "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
     pub online_ab_config: ::std::option::Option<crate::types::OnlineAbConfig>,
 }
@@ -39,12 +39,16 @@ impl UpdateExperimentInput {
         self.description.as_deref()
     }
     /// <p>An array of structures that define the variations being tested in the experiment.</p>
-    pub fn treatments(&self) -> ::std::option::Option<&[crate::types::TreatmentConfig]> {
-        self.treatments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.treatments.is_none()`.
+    pub fn treatments(&self) -> &[crate::types::TreatmentConfig] {
+        self.treatments.as_deref().unwrap_or_default()
     }
     /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
-    pub fn metric_goals(&self) -> ::std::option::Option<&[crate::types::MetricGoalConfig]> {
-        self.metric_goals.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_goals.is_none()`.
+    pub fn metric_goals(&self) -> &[crate::types::MetricGoalConfig] {
+        self.metric_goals.as_deref().unwrap_or_default()
     }
     /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
     pub fn randomization_salt(&self) -> ::std::option::Option<&str> {
@@ -60,7 +64,7 @@ impl UpdateExperimentInput {
         self.segment.as_deref()
     }
     /// <p>Removes a segment from being used in an experiment. You can't use this parameter if the experiment is currently running.</p>
-    pub fn remove_segment(&self) -> bool {
+    pub fn remove_segment(&self) -> ::std::option::Option<bool> {
         self.remove_segment
     }
     /// <p>A structure that contains the configuration of which variation o use as the "control" version. The "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
@@ -92,6 +96,7 @@ pub struct UpdateExperimentInputBuilder {
 }
 impl UpdateExperimentInputBuilder {
     /// <p>The name or ARN of the project that contains the experiment that you want to update.</p>
+    /// This field is required.
     pub fn project(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project = ::std::option::Option::Some(input.into());
         self
@@ -106,6 +111,7 @@ impl UpdateExperimentInputBuilder {
         &self.project
     }
     /// <p>The name of the experiment to update.</p>
+    /// This field is required.
     pub fn experiment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.experiment = ::std::option::Option::Some(input.into());
         self
@@ -249,7 +255,7 @@ impl UpdateExperimentInputBuilder {
     /// Consumes the builder and constructs a [`UpdateExperimentInput`](crate::operation::update_experiment::UpdateExperimentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_experiment::UpdateExperimentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_experiment::UpdateExperimentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_experiment::UpdateExperimentInput {
             project: self.project,
             experiment: self.experiment,
@@ -259,7 +265,7 @@ impl UpdateExperimentInputBuilder {
             randomization_salt: self.randomization_salt,
             sampling_rate: self.sampling_rate,
             segment: self.segment,
-            remove_segment: self.remove_segment.unwrap_or_default(),
+            remove_segment: self.remove_segment,
             online_ab_config: self.online_ab_config,
         })
     }

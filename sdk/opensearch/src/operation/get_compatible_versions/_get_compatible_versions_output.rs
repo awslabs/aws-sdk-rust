@@ -10,8 +10,10 @@ pub struct GetCompatibleVersionsOutput {
 }
 impl GetCompatibleVersionsOutput {
     /// <p>A map of OpenSearch or Elasticsearch versions and the versions you can upgrade them to.</p>
-    pub fn compatible_versions(&self) -> ::std::option::Option<&[crate::types::CompatibleVersionsMap]> {
-        self.compatible_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compatible_versions.is_none()`.
+    pub fn compatible_versions(&self) -> &[crate::types::CompatibleVersionsMap] {
+        self.compatible_versions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetCompatibleVersionsOutput {

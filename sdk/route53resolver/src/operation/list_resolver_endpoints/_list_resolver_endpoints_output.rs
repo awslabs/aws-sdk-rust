@@ -21,8 +21,10 @@ impl ListResolverEndpointsOutput {
         self.max_results
     }
     /// <p>The Resolver endpoints that were created by using the current Amazon Web Services account, and that match the specified filters, if any.</p>
-    pub fn resolver_endpoints(&self) -> ::std::option::Option<&[crate::types::ResolverEndpoint]> {
-        self.resolver_endpoints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resolver_endpoints.is_none()`.
+    pub fn resolver_endpoints(&self) -> &[crate::types::ResolverEndpoint] {
+        self.resolver_endpoints.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListResolverEndpointsOutput {

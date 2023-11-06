@@ -13,7 +13,7 @@ pub struct CreateHostedZoneOutput {
     /// <p>A complex type that contains information about an Amazon VPC that you associated with this hosted zone.</p>
     pub vpc: ::std::option::Option<crate::types::Vpc>,
     /// <p>The unique URL representing the new hosted zone.</p>
-    pub location: ::std::option::Option<::std::string::String>,
+    pub location: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateHostedZoneOutput {
@@ -34,8 +34,9 @@ impl CreateHostedZoneOutput {
         self.vpc.as_ref()
     }
     /// <p>The unique URL representing the new hosted zone.</p>
-    pub fn location(&self) -> ::std::option::Option<&str> {
-        self.location.as_deref()
+    pub fn location(&self) -> &str {
+        use std::ops::Deref;
+        self.location.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateHostedZoneOutput {
@@ -63,6 +64,7 @@ pub struct CreateHostedZoneOutputBuilder {
 }
 impl CreateHostedZoneOutputBuilder {
     /// <p>A complex type that contains general information about the hosted zone.</p>
+    /// This field is required.
     pub fn hosted_zone(mut self, input: crate::types::HostedZone) -> Self {
         self.hosted_zone = ::std::option::Option::Some(input);
         self
@@ -77,6 +79,7 @@ impl CreateHostedZoneOutputBuilder {
         &self.hosted_zone
     }
     /// <p>A complex type that contains information about the <code>CreateHostedZone</code> request.</p>
+    /// This field is required.
     pub fn change_info(mut self, input: crate::types::ChangeInfo) -> Self {
         self.change_info = ::std::option::Option::Some(input);
         self
@@ -91,6 +94,7 @@ impl CreateHostedZoneOutputBuilder {
         &self.change_info
     }
     /// <p>A complex type that describes the name servers for this hosted zone.</p>
+    /// This field is required.
     pub fn delegation_set(mut self, input: crate::types::DelegationSet) -> Self {
         self.delegation_set = ::std::option::Option::Some(input);
         self
@@ -119,6 +123,7 @@ impl CreateHostedZoneOutputBuilder {
         &self.vpc
     }
     /// <p>The unique URL representing the new hosted zone.</p>
+    /// This field is required.
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
         self
@@ -142,14 +147,23 @@ impl CreateHostedZoneOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateHostedZoneOutput`](crate::operation::create_hosted_zone::CreateHostedZoneOutput).
-    pub fn build(self) -> crate::operation::create_hosted_zone::CreateHostedZoneOutput {
-        crate::operation::create_hosted_zone::CreateHostedZoneOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`location`](crate::operation::create_hosted_zone::builders::CreateHostedZoneOutputBuilder::location)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_hosted_zone::CreateHostedZoneOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_hosted_zone::CreateHostedZoneOutput {
             hosted_zone: self.hosted_zone,
             change_info: self.change_info,
             delegation_set: self.delegation_set,
             vpc: self.vpc,
-            location: self.location,
+            location: self.location.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "location",
+                    "location was not specified but it is required when building CreateHostedZoneOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

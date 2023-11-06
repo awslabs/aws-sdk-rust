@@ -5,18 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationFormScoringStrategy {
     /// <p>The scoring mode of the evaluation form.</p>
-    pub mode: ::std::option::Option<crate::types::EvaluationFormScoringMode>,
+    pub mode: crate::types::EvaluationFormScoringMode,
     /// <p>The scoring status of the evaluation form.</p>
-    pub status: ::std::option::Option<crate::types::EvaluationFormScoringStatus>,
+    pub status: crate::types::EvaluationFormScoringStatus,
 }
 impl EvaluationFormScoringStrategy {
     /// <p>The scoring mode of the evaluation form.</p>
-    pub fn mode(&self) -> ::std::option::Option<&crate::types::EvaluationFormScoringMode> {
-        self.mode.as_ref()
+    pub fn mode(&self) -> &crate::types::EvaluationFormScoringMode {
+        &self.mode
     }
     /// <p>The scoring status of the evaluation form.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::EvaluationFormScoringStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::EvaluationFormScoringStatus {
+        &self.status
     }
 }
 impl EvaluationFormScoringStrategy {
@@ -35,6 +35,7 @@ pub struct EvaluationFormScoringStrategyBuilder {
 }
 impl EvaluationFormScoringStrategyBuilder {
     /// <p>The scoring mode of the evaluation form.</p>
+    /// This field is required.
     pub fn mode(mut self, input: crate::types::EvaluationFormScoringMode) -> Self {
         self.mode = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl EvaluationFormScoringStrategyBuilder {
         &self.mode
     }
     /// <p>The scoring status of the evaluation form.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::EvaluationFormScoringStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl EvaluationFormScoringStrategyBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`EvaluationFormScoringStrategy`](crate::types::EvaluationFormScoringStrategy).
-    pub fn build(self) -> crate::types::EvaluationFormScoringStrategy {
-        crate::types::EvaluationFormScoringStrategy {
-            mode: self.mode,
-            status: self.status,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`mode`](crate::types::builders::EvaluationFormScoringStrategyBuilder::mode)
+    /// - [`status`](crate::types::builders::EvaluationFormScoringStrategyBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::EvaluationFormScoringStrategy, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EvaluationFormScoringStrategy {
+            mode: self.mode.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "mode",
+                    "mode was not specified but it is required when building EvaluationFormScoringStrategy",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building EvaluationFormScoringStrategy",
+                )
+            })?,
+        })
     }
 }

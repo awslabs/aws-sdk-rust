@@ -50,6 +50,7 @@ impl TrialComponentArtifactBuilder {
         &self.media_type
     }
     /// <p>The location of the artifact.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self

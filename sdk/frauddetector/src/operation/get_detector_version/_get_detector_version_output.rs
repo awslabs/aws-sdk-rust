@@ -43,16 +43,22 @@ impl GetDetectorVersionOutput {
         self.description.as_deref()
     }
     /// <p>The Amazon SageMaker model endpoints included in the detector version.</p>
-    pub fn external_model_endpoints(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.external_model_endpoints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.external_model_endpoints.is_none()`.
+    pub fn external_model_endpoints(&self) -> &[::std::string::String] {
+        self.external_model_endpoints.as_deref().unwrap_or_default()
     }
     /// <p>The model versions included in the detector version. </p>
-    pub fn model_versions(&self) -> ::std::option::Option<&[crate::types::ModelVersion]> {
-        self.model_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.model_versions.is_none()`.
+    pub fn model_versions(&self) -> &[crate::types::ModelVersion] {
+        self.model_versions.as_deref().unwrap_or_default()
     }
     /// <p>The rules included in the detector version.</p>
-    pub fn rules(&self) -> ::std::option::Option<&[crate::types::Rule]> {
-        self.rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
+    pub fn rules(&self) -> &[crate::types::Rule] {
+        self.rules.as_deref().unwrap_or_default()
     }
     /// <p>The status of the detector version.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::DetectorVersionStatus> {

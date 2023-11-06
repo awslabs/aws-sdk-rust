@@ -34,6 +34,7 @@ pub struct UpdateAccessLogSubscriptionInputBuilder {
 }
 impl UpdateAccessLogSubscriptionInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
+    /// This field is required.
     pub fn access_log_subscription_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_log_subscription_identifier = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateAccessLogSubscriptionInputBuilder {
         &self.access_log_subscription_identifier
     }
     /// <p>The Amazon Resource Name (ARN) of the access log destination.</p>
+    /// This field is required.
     pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_arn = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl UpdateAccessLogSubscriptionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_access_log_subscription::UpdateAccessLogSubscriptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_access_log_subscription::UpdateAccessLogSubscriptionInput {
             access_log_subscription_identifier: self.access_log_subscription_identifier,

@@ -34,6 +34,7 @@ pub struct GetIdentitySourceInputBuilder {
 }
 impl GetIdentitySourceInputBuilder {
     /// <p>Specifies the ID of the policy store that contains the identity source you want information about.</p>
+    /// This field is required.
     pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_store_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetIdentitySourceInputBuilder {
         &self.policy_store_id
     }
     /// <p>Specifies the ID of the identity source you want information about.</p>
+    /// This field is required.
     pub fn identity_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_source_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl GetIdentitySourceInputBuilder {
     /// Consumes the builder and constructs a [`GetIdentitySourceInput`](crate::operation::get_identity_source::GetIdentitySourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_identity_source::GetIdentitySourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_identity_source::GetIdentitySourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_identity_source::GetIdentitySourceInput {
             policy_store_id: self.policy_store_id,
             identity_source_id: self.identity_source_id,

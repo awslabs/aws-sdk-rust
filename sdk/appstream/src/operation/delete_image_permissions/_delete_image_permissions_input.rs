@@ -34,6 +34,7 @@ pub struct DeleteImagePermissionsInputBuilder {
 }
 impl DeleteImagePermissionsInputBuilder {
     /// <p>The name of the private image.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteImagePermissionsInputBuilder {
         &self.name
     }
     /// <p>The 12-digit identifier of the AWS account for which to delete image permissions.</p>
+    /// This field is required.
     pub fn shared_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shared_account_id = ::std::option::Option::Some(input.into());
         self
@@ -64,8 +66,10 @@ impl DeleteImagePermissionsInputBuilder {
     /// Consumes the builder and constructs a [`DeleteImagePermissionsInput`](crate::operation::delete_image_permissions::DeleteImagePermissionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_image_permissions::DeleteImagePermissionsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_image_permissions::DeleteImagePermissionsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_image_permissions::DeleteImagePermissionsInput {
             name: self.name,
             shared_account_id: self.shared_account_id,

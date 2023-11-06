@@ -83,12 +83,12 @@ pub fn de_get_replication_configuration_http_response(
 
 pub fn ser_get_replication_configuration_input(
     input: &crate::operation::get_replication_configuration::GetReplicationConfigurationInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_get_replication_configuration_input::ser_get_replication_configuration_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_get_replication_configuration(
@@ -178,8 +178,8 @@ pub(crate) fn de_get_replication_configuration(
                     );
                 }
                 "replicationServersSecurityGroupsIDs" => {
-                    builder = builder.set_replication_servers_security_groups_i_ds(
-                        crate::protocol_serde::shape_replication_servers_security_groups_i_ds::de_replication_servers_security_groups_i_ds(tokens)?,
+                    builder = builder.set_replication_servers_security_groups_ids(
+                        crate::protocol_serde::shape_replication_servers_security_groups_ids::de_replication_servers_security_groups_ids(tokens)?,
                     );
                 }
                 "sourceServerID" => {

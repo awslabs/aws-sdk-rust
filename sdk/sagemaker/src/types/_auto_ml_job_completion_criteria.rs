@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoMlJobCompletionCriteria {
     /// <p>The maximum number of times a training job is allowed to run.</p>
-    /// <p>For text and image classification, as well as time-series forecasting problem types, the supported value is 1. For tabular problem types, the maximum value is 750.</p>
+    /// <p>For text and image classification, time-series forecasting, as well as text generation (LLMs fine-tuning) problem types, the supported value is 1. For tabular problem types, the maximum value is 750.</p>
     pub max_candidates: ::std::option::Option<i32>,
     /// <p>The maximum time, in seconds, that each training job executed inside hyperparameter tuning is allowed to run as part of a hyperparameter tuning job. For more information, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StoppingCondition.html">StoppingCondition</a> used by the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateHyperParameterTuningJob.html">CreateHyperParameterTuningJob</a> action.</p>
     /// <p>For job V2s (jobs created by calling <code>CreateAutoMLJobV2</code>), this field controls the runtime of the job candidate.</p>
@@ -16,7 +16,7 @@ pub struct AutoMlJobCompletionCriteria {
 }
 impl AutoMlJobCompletionCriteria {
     /// <p>The maximum number of times a training job is allowed to run.</p>
-    /// <p>For text and image classification, as well as time-series forecasting problem types, the supported value is 1. For tabular problem types, the maximum value is 750.</p>
+    /// <p>For text and image classification, time-series forecasting, as well as text generation (LLMs fine-tuning) problem types, the supported value is 1. For tabular problem types, the maximum value is 750.</p>
     pub fn max_candidates(&self) -> ::std::option::Option<i32> {
         self.max_candidates
     }
@@ -48,19 +48,19 @@ pub struct AutoMlJobCompletionCriteriaBuilder {
 }
 impl AutoMlJobCompletionCriteriaBuilder {
     /// <p>The maximum number of times a training job is allowed to run.</p>
-    /// <p>For text and image classification, as well as time-series forecasting problem types, the supported value is 1. For tabular problem types, the maximum value is 750.</p>
+    /// <p>For text and image classification, time-series forecasting, as well as text generation (LLMs fine-tuning) problem types, the supported value is 1. For tabular problem types, the maximum value is 750.</p>
     pub fn max_candidates(mut self, input: i32) -> Self {
         self.max_candidates = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of times a training job is allowed to run.</p>
-    /// <p>For text and image classification, as well as time-series forecasting problem types, the supported value is 1. For tabular problem types, the maximum value is 750.</p>
+    /// <p>For text and image classification, time-series forecasting, as well as text generation (LLMs fine-tuning) problem types, the supported value is 1. For tabular problem types, the maximum value is 750.</p>
     pub fn set_max_candidates(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_candidates = input;
         self
     }
     /// <p>The maximum number of times a training job is allowed to run.</p>
-    /// <p>For text and image classification, as well as time-series forecasting problem types, the supported value is 1. For tabular problem types, the maximum value is 750.</p>
+    /// <p>For text and image classification, time-series forecasting, as well as text generation (LLMs fine-tuning) problem types, the supported value is 1. For tabular problem types, the maximum value is 750.</p>
     pub fn get_max_candidates(&self) -> &::std::option::Option<i32> {
         &self.max_candidates
     }

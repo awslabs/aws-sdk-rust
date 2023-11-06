@@ -2,7 +2,7 @@
 pub fn ser_aws_cloud_front_distribution_cache_behavior(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsCloudFrontDistributionCacheBehavior,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.viewer_protocol_policy {
         object.key("ViewerProtocolPolicy").string(var_1.as_str());
     }

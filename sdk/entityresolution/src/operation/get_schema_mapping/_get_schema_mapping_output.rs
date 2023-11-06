@@ -4,54 +4,57 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSchemaMappingOutput {
     /// <p>The name of the schema.</p>
-    pub schema_name: ::std::option::Option<::std::string::String>,
+    pub schema_name: ::std::string::String,
     /// <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the SchemaMapping.</p>
-    pub schema_arn: ::std::option::Option<::std::string::String>,
+    pub schema_arn: ::std::string::String,
     /// <p>A description of the schema.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>MappedInputFields</code>. Each <code>MappedInputField</code> corresponds to a column the source data table, and contains column name plus additional information Venice uses for matching.</p>
-    pub mapped_input_fields: ::std::option::Option<::std::vec::Vec<crate::types::SchemaInputAttribute>>,
+    pub mapped_input_fields: ::std::vec::Vec<crate::types::SchemaInputAttribute>,
     /// <p>The timestamp of when the <code>SchemaMapping</code> was created.</p>
-    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The timestamp of when the <code>SchemaMapping</code> was last updated.</p>
-    pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub updated_at: ::aws_smithy_types::DateTime,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Specifies whether the schema mapping has been applied to a workflow.</p>
-    pub has_workflows: ::std::option::Option<bool>,
+    pub has_workflows: bool,
     _request_id: Option<String>,
 }
 impl GetSchemaMappingOutput {
     /// <p>The name of the schema.</p>
-    pub fn schema_name(&self) -> ::std::option::Option<&str> {
-        self.schema_name.as_deref()
+    pub fn schema_name(&self) -> &str {
+        use std::ops::Deref;
+        self.schema_name.deref()
     }
     /// <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the SchemaMapping.</p>
-    pub fn schema_arn(&self) -> ::std::option::Option<&str> {
-        self.schema_arn.as_deref()
+    pub fn schema_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.schema_arn.deref()
     }
     /// <p>A description of the schema.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>A list of <code>MappedInputFields</code>. Each <code>MappedInputField</code> corresponds to a column the source data table, and contains column name plus additional information Venice uses for matching.</p>
-    pub fn mapped_input_fields(&self) -> ::std::option::Option<&[crate::types::SchemaInputAttribute]> {
-        self.mapped_input_fields.as_deref()
+    pub fn mapped_input_fields(&self) -> &[crate::types::SchemaInputAttribute] {
+        use std::ops::Deref;
+        self.mapped_input_fields.deref()
     }
     /// <p>The timestamp of when the <code>SchemaMapping</code> was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_at.as_ref()
+    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_at
     }
     /// <p>The timestamp of when the <code>SchemaMapping</code> was last updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.updated_at.as_ref()
+    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.updated_at
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Specifies whether the schema mapping has been applied to a workflow.</p>
-    pub fn has_workflows(&self) -> ::std::option::Option<bool> {
+    pub fn has_workflows(&self) -> bool {
         self.has_workflows
     }
 }
@@ -83,6 +86,7 @@ pub struct GetSchemaMappingOutputBuilder {
 }
 impl GetSchemaMappingOutputBuilder {
     /// <p>The name of the schema.</p>
+    /// This field is required.
     pub fn schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +101,7 @@ impl GetSchemaMappingOutputBuilder {
         &self.schema_name
     }
     /// <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the SchemaMapping.</p>
+    /// This field is required.
     pub fn schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_arn = ::std::option::Option::Some(input.into());
         self
@@ -145,6 +150,7 @@ impl GetSchemaMappingOutputBuilder {
         &self.mapped_input_fields
     }
     /// <p>The timestamp of when the <code>SchemaMapping</code> was created.</p>
+    /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
@@ -159,6 +165,7 @@ impl GetSchemaMappingOutputBuilder {
         &self.created_at
     }
     /// <p>The timestamp of when the <code>SchemaMapping</code> was last updated.</p>
+    /// This field is required.
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
@@ -193,6 +200,7 @@ impl GetSchemaMappingOutputBuilder {
         &self.tags
     }
     /// <p>Specifies whether the schema mapping has been applied to a workflow.</p>
+    /// This field is required.
     pub fn has_workflows(mut self, input: bool) -> Self {
         self.has_workflows = ::std::option::Option::Some(input);
         self
@@ -216,17 +224,56 @@ impl GetSchemaMappingOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetSchemaMappingOutput`](crate::operation::get_schema_mapping::GetSchemaMappingOutput).
-    pub fn build(self) -> crate::operation::get_schema_mapping::GetSchemaMappingOutput {
-        crate::operation::get_schema_mapping::GetSchemaMappingOutput {
-            schema_name: self.schema_name,
-            schema_arn: self.schema_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`schema_name`](crate::operation::get_schema_mapping::builders::GetSchemaMappingOutputBuilder::schema_name)
+    /// - [`schema_arn`](crate::operation::get_schema_mapping::builders::GetSchemaMappingOutputBuilder::schema_arn)
+    /// - [`mapped_input_fields`](crate::operation::get_schema_mapping::builders::GetSchemaMappingOutputBuilder::mapped_input_fields)
+    /// - [`created_at`](crate::operation::get_schema_mapping::builders::GetSchemaMappingOutputBuilder::created_at)
+    /// - [`updated_at`](crate::operation::get_schema_mapping::builders::GetSchemaMappingOutputBuilder::updated_at)
+    /// - [`has_workflows`](crate::operation::get_schema_mapping::builders::GetSchemaMappingOutputBuilder::has_workflows)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_schema_mapping::GetSchemaMappingOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_schema_mapping::GetSchemaMappingOutput {
+            schema_name: self.schema_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "schema_name",
+                    "schema_name was not specified but it is required when building GetSchemaMappingOutput",
+                )
+            })?,
+            schema_arn: self.schema_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "schema_arn",
+                    "schema_arn was not specified but it is required when building GetSchemaMappingOutput",
+                )
+            })?,
             description: self.description,
-            mapped_input_fields: self.mapped_input_fields,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
+            mapped_input_fields: self.mapped_input_fields.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "mapped_input_fields",
+                    "mapped_input_fields was not specified but it is required when building GetSchemaMappingOutput",
+                )
+            })?,
+            created_at: self.created_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_at",
+                    "created_at was not specified but it is required when building GetSchemaMappingOutput",
+                )
+            })?,
+            updated_at: self.updated_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "updated_at",
+                    "updated_at was not specified but it is required when building GetSchemaMappingOutput",
+                )
+            })?,
             tags: self.tags,
-            has_workflows: self.has_workflows,
+            has_workflows: self.has_workflows.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "has_workflows",
+                    "has_workflows was not specified but it is required when building GetSchemaMappingOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

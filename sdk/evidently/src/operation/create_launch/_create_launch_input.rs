@@ -42,12 +42,16 @@ impl CreateLaunchInput {
         self.scheduled_splits_config.as_ref()
     }
     /// <p>An array of structures that define the metrics that will be used to monitor the launch performance.</p>
-    pub fn metric_monitors(&self) -> ::std::option::Option<&[crate::types::MetricMonitorConfig]> {
-        self.metric_monitors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_monitors.is_none()`.
+    pub fn metric_monitors(&self) -> &[crate::types::MetricMonitorConfig] {
+        self.metric_monitors.as_deref().unwrap_or_default()
     }
     /// <p>An array of structures that contains the feature and variations that are to be used for the launch.</p>
-    pub fn groups(&self) -> ::std::option::Option<&[crate::types::LaunchGroupConfig]> {
-        self.groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
+    pub fn groups(&self) -> &[crate::types::LaunchGroupConfig] {
+        self.groups.as_deref().unwrap_or_default()
     }
     /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationSalt</code>.</p>
     pub fn randomization_salt(&self) -> ::std::option::Option<&str> {
@@ -84,6 +88,7 @@ pub struct CreateLaunchInputBuilder {
 }
 impl CreateLaunchInputBuilder {
     /// <p>The name or ARN of the project that you want to create the launch in.</p>
+    /// This field is required.
     pub fn project(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +103,7 @@ impl CreateLaunchInputBuilder {
         &self.project
     }
     /// <p>The name for the new launch.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -226,7 +232,9 @@ impl CreateLaunchInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateLaunchInput`](crate::operation::create_launch::CreateLaunchInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_launch::CreateLaunchInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_launch::CreateLaunchInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_launch::CreateLaunchInput {
             project: self.project,
             name: self.name,

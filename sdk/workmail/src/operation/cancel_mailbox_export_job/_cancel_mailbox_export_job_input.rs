@@ -41,6 +41,7 @@ pub struct CancelMailboxExportJobInputBuilder {
 }
 impl CancelMailboxExportJobInputBuilder {
     /// <p>The idempotency token for the client request.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl CancelMailboxExportJobInputBuilder {
         &self.client_token
     }
     /// <p>The job ID.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl CancelMailboxExportJobInputBuilder {
         &self.job_id
     }
     /// <p>The organization ID.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +90,7 @@ impl CancelMailboxExportJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_mailbox_export_job::CancelMailboxExportJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::cancel_mailbox_export_job::CancelMailboxExportJobInput {
             client_token: self.client_token,

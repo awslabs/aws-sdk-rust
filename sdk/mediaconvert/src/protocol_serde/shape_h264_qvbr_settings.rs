@@ -2,7 +2,7 @@
 pub fn ser_h264_qvbr_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::H264QvbrSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.max_average_bitrate {
         object.key("maxAverageBitrate").number(
             #[allow(clippy::useless_conversion)]

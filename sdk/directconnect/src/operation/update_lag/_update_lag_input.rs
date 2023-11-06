@@ -50,6 +50,7 @@ pub struct UpdateLagInputBuilder {
 }
 impl UpdateLagInputBuilder {
     /// <p>The ID of the LAG.</p>
+    /// This field is required.
     pub fn lag_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lag_id = ::std::option::Option::Some(input.into());
         self
@@ -109,7 +110,7 @@ impl UpdateLagInputBuilder {
         &self.encryption_mode
     }
     /// Consumes the builder and constructs a [`UpdateLagInput`](crate::operation::update_lag::UpdateLagInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_lag::UpdateLagInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_lag::UpdateLagInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_lag::UpdateLagInput {
             lag_id: self.lag_id,
             lag_name: self.lag_name,

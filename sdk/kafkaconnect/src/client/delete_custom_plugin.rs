@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteCustomPlugin`](crate::operation::delete_custom_plugin::builders::DeleteCustomPluginFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`custom_plugin_arn(impl Into<String>)`](crate::operation::delete_custom_plugin::builders::DeleteCustomPluginFluentBuilder::custom_plugin_arn) / [`set_custom_plugin_arn(Option<String>)`](crate::operation::delete_custom_plugin::builders::DeleteCustomPluginFluentBuilder::set_custom_plugin_arn): <p>The Amazon Resource Name (ARN) of the custom plugin that you want to delete.</p>
+    ///   - [`custom_plugin_arn(impl Into<String>)`](crate::operation::delete_custom_plugin::builders::DeleteCustomPluginFluentBuilder::custom_plugin_arn) / [`set_custom_plugin_arn(Option<String>)`](crate::operation::delete_custom_plugin::builders::DeleteCustomPluginFluentBuilder::set_custom_plugin_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the custom plugin that you want to delete.</p><br>
     /// - On success, responds with [`DeleteCustomPluginOutput`](crate::operation::delete_custom_plugin::DeleteCustomPluginOutput) with field(s):
     ///   - [`custom_plugin_arn(Option<String>)`](crate::operation::delete_custom_plugin::DeleteCustomPluginOutput::custom_plugin_arn): <p>The Amazon Resource Name (ARN) of the custom plugin that you requested to delete.</p>
     ///   - [`custom_plugin_state(Option<CustomPluginState>)`](crate::operation::delete_custom_plugin::DeleteCustomPluginOutput::custom_plugin_state): <p>The state of the custom plugin.</p>

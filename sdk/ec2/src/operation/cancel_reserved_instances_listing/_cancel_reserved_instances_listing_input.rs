@@ -28,6 +28,7 @@ pub struct CancelReservedInstancesListingInputBuilder {
 }
 impl CancelReservedInstancesListingInputBuilder {
     /// <p>The ID of the Reserved Instance listing.</p>
+    /// This field is required.
     pub fn reserved_instances_listing_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_instances_listing_id = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl CancelReservedInstancesListingInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_reserved_instances_listing::CancelReservedInstancesListingInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::cancel_reserved_instances_listing::CancelReservedInstancesListingInput {
             reserved_instances_listing_id: self.reserved_instances_listing_id,

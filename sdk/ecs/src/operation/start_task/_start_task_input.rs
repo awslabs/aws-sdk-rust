@@ -47,8 +47,10 @@ impl StartTaskInput {
         self.cluster.as_deref()
     }
     /// <p>The container instance IDs or full ARN entries for the container instances where you would like to place your task. You can specify up to 10 container instances.</p>
-    pub fn container_instances(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.container_instances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.container_instances.is_none()`.
+    pub fn container_instances(&self) -> &[::std::string::String] {
+        self.container_instances.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether to use Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn enable_ecs_managed_tags(&self) -> ::std::option::Option<bool> {
@@ -96,8 +98,10 @@ impl StartTaskInput {
     /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task definition to start. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
     pub fn task_definition(&self) -> ::std::option::Option<&str> {
@@ -335,6 +339,7 @@ impl StartTaskInputBuilder {
         &self.tags
     }
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task definition to start. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
+    /// This field is required.
     pub fn task_definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_definition = ::std::option::Option::Some(input.into());
         self
@@ -349,7 +354,7 @@ impl StartTaskInputBuilder {
         &self.task_definition
     }
     /// Consumes the builder and constructs a [`StartTaskInput`](crate::operation::start_task::StartTaskInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_task::StartTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_task::StartTaskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_task::StartTaskInput {
             cluster: self.cluster,
             container_instances: self.container_instances,

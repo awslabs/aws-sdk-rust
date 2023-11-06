@@ -39,13 +39,13 @@ pub fn de_delete_objects_http_response(
 pub fn ser_delete_objects_headers(
     input: &crate::operation::delete_objects::DeleteObjectsInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.mfa {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "mfa",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -58,7 +58,7 @@ pub fn ser_delete_objects_headers(
         if !formatted_4.is_empty() {
             let header_value = formatted_4;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "request_payer",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -72,7 +72,7 @@ pub fn ser_delete_objects_headers(
         if !formatted_6.is_empty() {
             let header_value = formatted_6;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "bypass_governance_retention",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -85,7 +85,7 @@ pub fn ser_delete_objects_headers(
         if !formatted_8.is_empty() {
             let header_value = formatted_8;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "expected_bucket_owner",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -98,7 +98,7 @@ pub fn ser_delete_objects_headers(
         if !formatted_10.is_empty() {
             let header_value = formatted_10;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "checksum_algorithm",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -131,7 +131,7 @@ pub fn de_delete_objects(
             s if s.matches("Error") /* Errors com.amazonaws.s3.synthetic#DeleteObjectsOutput$Errors */ =>  {
                 let var_11 =
                     Some(
-                        Result::<::std::vec::Vec<crate::types::Error>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<crate::types::Error>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_12 = builder.errors.take().unwrap_or_default();
                             list_12.push(
                                 crate::protocol_serde::shape_error::de_error(&mut tag)
@@ -148,7 +148,7 @@ pub fn de_delete_objects(
             s if s.matches("Deleted") /* Deleted com.amazonaws.s3.synthetic#DeleteObjectsOutput$Deleted */ =>  {
                 let var_13 =
                     Some(
-                        Result::<::std::vec::Vec<crate::types::DeletedObject>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<crate::types::DeletedObject>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_14 = builder.deleted.take().unwrap_or_default();
                             list_14.push(
                                 crate::protocol_serde::shape_deleted_object::de_deleted_object(&mut tag)

@@ -11,8 +11,10 @@ pub struct RunPipelineActivityOutput {
 }
 impl RunPipelineActivityOutput {
     /// <p>The enriched or transformed sample message payloads as base64-encoded strings. (The results of running the pipeline activity on each input sample message payload, encoded in base64.)</p>
-    pub fn payloads(&self) -> ::std::option::Option<&[::aws_smithy_types::Blob]> {
-        self.payloads.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.payloads.is_none()`.
+    pub fn payloads(&self) -> &[::aws_smithy_types::Blob] {
+        self.payloads.as_deref().unwrap_or_default()
     }
     /// <p>In case the pipeline activity fails, the log message that is generated.</p>
     pub fn log_result(&self) -> ::std::option::Option<&str> {

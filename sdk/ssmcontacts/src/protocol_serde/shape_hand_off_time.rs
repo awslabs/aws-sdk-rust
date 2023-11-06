@@ -2,7 +2,7 @@
 pub fn ser_hand_off_time(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HandOffTime,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("HourOfDay").number(
             #[allow(clippy::useless_conversion)]
@@ -57,7 +57,7 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::hand_off_time_correct_errors(builder).build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

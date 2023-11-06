@@ -11,8 +11,10 @@ pub struct ConfluencePageConfiguration {
 impl ConfluencePageConfiguration {
     /// <p>Maps attributes or field names of Confluence pages to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
     /// <p>If you specify the <code>PageFieldMappings</code> parameter, you must specify at least one field mapping.</p>
-    pub fn page_field_mappings(&self) -> ::std::option::Option<&[crate::types::ConfluencePageToIndexFieldMapping]> {
-        self.page_field_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.page_field_mappings.is_none()`.
+    pub fn page_field_mappings(&self) -> &[crate::types::ConfluencePageToIndexFieldMapping] {
+        self.page_field_mappings.as_deref().unwrap_or_default()
     }
 }
 impl ConfluencePageConfiguration {

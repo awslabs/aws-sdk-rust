@@ -79,8 +79,10 @@ impl CreateComponentInput {
         self.platform.as_ref()
     }
     /// <p>The operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
-    pub fn supported_os_versions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.supported_os_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_os_versions.is_none()`.
+    pub fn supported_os_versions(&self) -> &[::std::string::String] {
+        self.supported_os_versions.as_deref().unwrap_or_default()
     }
     /// <p>Component <code>data</code> contains inline YAML document content for the component. Alternatively, you can specify the <code>uri</code> of a YAML document file stored in Amazon S3. However, you cannot specify both properties.</p>
     pub fn data(&self) -> ::std::option::Option<&str> {
@@ -129,6 +131,7 @@ pub struct CreateComponentInputBuilder {
 }
 impl CreateComponentInputBuilder {
     /// <p>The name of the component.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -158,6 +161,7 @@ impl CreateComponentInputBuilder {
     /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
     /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
     /// </note>
+    /// This field is required.
     pub fn semantic_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.semantic_version = ::std::option::Option::Some(input.into());
         self
@@ -230,6 +234,7 @@ impl CreateComponentInputBuilder {
         &self.change_description
     }
     /// <p>The operating system platform of the component.</p>
+    /// This field is required.
     pub fn platform(mut self, input: crate::types::Platform) -> Self {
         self.platform = ::std::option::Option::Some(input);
         self
@@ -329,6 +334,7 @@ impl CreateComponentInputBuilder {
         &self.tags
     }
     /// <p>The idempotency token of the component.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -345,7 +351,7 @@ impl CreateComponentInputBuilder {
     /// Consumes the builder and constructs a [`CreateComponentInput`](crate::operation::create_component::CreateComponentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_component::CreateComponentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_component::CreateComponentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_component::CreateComponentInput {
             name: self.name,
             semantic_version: self.semantic_version,

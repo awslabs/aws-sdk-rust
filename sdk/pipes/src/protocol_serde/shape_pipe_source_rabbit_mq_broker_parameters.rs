@@ -2,29 +2,29 @@
 pub fn ser_pipe_source_rabbit_mq_broker_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PipeSourceRabbitMqBrokerParameters,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.credentials {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Credentials").start_object();
         crate::protocol_serde::shape_mq_broker_access_credentials::ser_mq_broker_access_credentials(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.queue_name {
-        object.key("QueueName").string(var_3.as_str());
+    {
+        object.key("QueueName").string(input.queue_name.as_str());
     }
-    if let Some(var_4) = &input.virtual_host {
-        object.key("VirtualHost").string(var_4.as_str());
+    if let Some(var_3) = &input.virtual_host {
+        object.key("VirtualHost").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.batch_size {
+    if let Some(var_4) = &input.batch_size {
         object.key("BatchSize").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_5).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_6) = &input.maximum_batching_window_in_seconds {
+    if let Some(var_5) = &input.maximum_batching_window_in_seconds {
         object.key("MaximumBatchingWindowInSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_6).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
     Ok(())
@@ -87,7 +87,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::pipe_source_rabbit_mq_broker_parameters_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

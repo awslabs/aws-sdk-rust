@@ -27,6 +27,7 @@ pub struct DescribeComponentInputBuilder {
 }
 impl DescribeComponentInputBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeComponentInputBuilder {
     /// Consumes the builder and constructs a [`DescribeComponentInput`](crate::operation::describe_component::DescribeComponentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_component::DescribeComponentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_component::DescribeComponentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_component::DescribeComponentInput { arn: self.arn })
     }
 }

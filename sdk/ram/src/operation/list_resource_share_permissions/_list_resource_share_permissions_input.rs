@@ -41,6 +41,7 @@ pub struct ListResourceSharePermissionsInputBuilder {
 }
 impl ListResourceSharePermissionsInputBuilder {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share for which you want to retrieve the associated permissions.</p>
+    /// This field is required.
     pub fn resource_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_share_arn = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListResourceSharePermissionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resource_share_permissions::ListResourceSharePermissionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_resource_share_permissions::ListResourceSharePermissionsInput {
             resource_share_arn: self.resource_share_arn,

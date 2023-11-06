@@ -55,6 +55,7 @@ pub struct ListUpdatesInputBuilder {
 }
 impl ListUpdatesInputBuilder {
     /// <p>The name of the Amazon EKS cluster to list updates for.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -125,7 +126,7 @@ impl ListUpdatesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListUpdatesInput`](crate::operation::list_updates::ListUpdatesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_updates::ListUpdatesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_updates::ListUpdatesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_updates::ListUpdatesInput {
             name: self.name,
             nodegroup_name: self.nodegroup_name,

@@ -48,6 +48,7 @@ pub struct CreateProjectMembershipInputBuilder {
 }
 impl CreateProjectMembershipInputBuilder {
     /// <p>The ID of the Amazon DataZone domain in which project membership is created.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl CreateProjectMembershipInputBuilder {
         &self.domain_identifier
     }
     /// <p>The ID of the project for which this project membership was created.</p>
+    /// This field is required.
     pub fn project_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_identifier = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl CreateProjectMembershipInputBuilder {
         &self.project_identifier
     }
     /// <p>The project member whose project membership was created.</p>
+    /// This field is required.
     pub fn member(mut self, input: crate::types::Member) -> Self {
         self.member = ::std::option::Option::Some(input);
         self
@@ -90,6 +93,7 @@ impl CreateProjectMembershipInputBuilder {
         &self.member
     }
     /// <p>The designation of the project membership.</p>
+    /// This field is required.
     pub fn designation(mut self, input: crate::types::UserDesignation) -> Self {
         self.designation = ::std::option::Option::Some(input);
         self
@@ -108,7 +112,7 @@ impl CreateProjectMembershipInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_project_membership::CreateProjectMembershipInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_project_membership::CreateProjectMembershipInput {
             domain_identifier: self.domain_identifier,

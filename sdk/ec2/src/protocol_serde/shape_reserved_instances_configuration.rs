@@ -3,7 +3,7 @@
 pub fn ser_reserved_instances_configuration(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::ReservedInstancesConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("AvailabilityZone");
     if let Some(var_2) = &input.availability_zone {
@@ -35,6 +35,7 @@ pub fn ser_reserved_instances_configuration(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_reserved_instances_configuration(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::ReservedInstancesConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {

@@ -85,6 +85,7 @@ pub struct ModifyInstanceMetadataOptionsInputBuilder {
 }
 impl ModifyInstanceMetadataOptionsInputBuilder {
     /// <p>The ID of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -211,7 +212,7 @@ impl ModifyInstanceMetadataOptionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_instance_metadata_options::ModifyInstanceMetadataOptionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_instance_metadata_options::ModifyInstanceMetadataOptionsInput {
             instance_id: self.instance_id,

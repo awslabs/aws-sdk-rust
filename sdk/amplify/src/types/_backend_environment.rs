@@ -5,26 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BackendEnvironment {
     /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
-    pub backend_environment_arn: ::std::option::Option<::std::string::String>,
+    pub backend_environment_arn: ::std::string::String,
     /// <p> The name for a backend environment that is part of an Amplify app. </p>
-    pub environment_name: ::std::option::Option<::std::string::String>,
+    pub environment_name: ::std::string::String,
     /// <p> The AWS CloudFormation stack name of a backend environment. </p>
     pub stack_name: ::std::option::Option<::std::string::String>,
     /// <p> The name of deployment artifacts. </p>
     pub deployment_artifacts: ::std::option::Option<::std::string::String>,
     /// <p> The creation date and time for a backend environment that is part of an Amplify app. </p>
-    pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub create_time: ::aws_smithy_types::DateTime,
     /// <p> The last updated date and time for a backend environment that is part of an Amplify app. </p>
-    pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub update_time: ::aws_smithy_types::DateTime,
 }
 impl BackendEnvironment {
     /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
-    pub fn backend_environment_arn(&self) -> ::std::option::Option<&str> {
-        self.backend_environment_arn.as_deref()
+    pub fn backend_environment_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.backend_environment_arn.deref()
     }
     /// <p> The name for a backend environment that is part of an Amplify app. </p>
-    pub fn environment_name(&self) -> ::std::option::Option<&str> {
-        self.environment_name.as_deref()
+    pub fn environment_name(&self) -> &str {
+        use std::ops::Deref;
+        self.environment_name.deref()
     }
     /// <p> The AWS CloudFormation stack name of a backend environment. </p>
     pub fn stack_name(&self) -> ::std::option::Option<&str> {
@@ -35,12 +37,12 @@ impl BackendEnvironment {
         self.deployment_artifacts.as_deref()
     }
     /// <p> The creation date and time for a backend environment that is part of an Amplify app. </p>
-    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.create_time.as_ref()
+    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.create_time
     }
     /// <p> The last updated date and time for a backend environment that is part of an Amplify app. </p>
-    pub fn update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.update_time.as_ref()
+    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.update_time
     }
 }
 impl BackendEnvironment {
@@ -63,6 +65,7 @@ pub struct BackendEnvironmentBuilder {
 }
 impl BackendEnvironmentBuilder {
     /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
+    /// This field is required.
     pub fn backend_environment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backend_environment_arn = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +80,7 @@ impl BackendEnvironmentBuilder {
         &self.backend_environment_arn
     }
     /// <p> The name for a backend environment that is part of an Amplify app. </p>
+    /// This field is required.
     pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +123,7 @@ impl BackendEnvironmentBuilder {
         &self.deployment_artifacts
     }
     /// <p> The creation date and time for a backend environment that is part of an Amplify app. </p>
+    /// This field is required.
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
         self
@@ -133,6 +138,7 @@ impl BackendEnvironmentBuilder {
         &self.create_time
     }
     /// <p> The last updated date and time for a backend environment that is part of an Amplify app. </p>
+    /// This field is required.
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
         self
@@ -147,14 +153,39 @@ impl BackendEnvironmentBuilder {
         &self.update_time
     }
     /// Consumes the builder and constructs a [`BackendEnvironment`](crate::types::BackendEnvironment).
-    pub fn build(self) -> crate::types::BackendEnvironment {
-        crate::types::BackendEnvironment {
-            backend_environment_arn: self.backend_environment_arn,
-            environment_name: self.environment_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`backend_environment_arn`](crate::types::builders::BackendEnvironmentBuilder::backend_environment_arn)
+    /// - [`environment_name`](crate::types::builders::BackendEnvironmentBuilder::environment_name)
+    /// - [`create_time`](crate::types::builders::BackendEnvironmentBuilder::create_time)
+    /// - [`update_time`](crate::types::builders::BackendEnvironmentBuilder::update_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::BackendEnvironment, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::BackendEnvironment {
+            backend_environment_arn: self.backend_environment_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "backend_environment_arn",
+                    "backend_environment_arn was not specified but it is required when building BackendEnvironment",
+                )
+            })?,
+            environment_name: self.environment_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "environment_name",
+                    "environment_name was not specified but it is required when building BackendEnvironment",
+                )
+            })?,
             stack_name: self.stack_name,
             deployment_artifacts: self.deployment_artifacts,
-            create_time: self.create_time,
-            update_time: self.update_time,
-        }
+            create_time: self.create_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "create_time",
+                    "create_time was not specified but it is required when building BackendEnvironment",
+                )
+            })?,
+            update_time: self.update_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "update_time",
+                    "update_time was not specified but it is required when building BackendEnvironment",
+                )
+            })?,
+        })
     }
 }

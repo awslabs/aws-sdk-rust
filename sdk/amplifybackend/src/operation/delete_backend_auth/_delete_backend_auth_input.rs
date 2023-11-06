@@ -42,6 +42,7 @@ pub struct DeleteBackendAuthInputBuilder {
 }
 impl DeleteBackendAuthInputBuilder {
     /// <p>The app ID.</p>
+    /// This field is required.
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl DeleteBackendAuthInputBuilder {
         &self.app_id
     }
     /// <p>The name of the backend environment.</p>
+    /// This field is required.
     pub fn backend_environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backend_environment_name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl DeleteBackendAuthInputBuilder {
         &self.backend_environment_name
     }
     /// <p>The name of this resource.</p>
+    /// This field is required.
     pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self
@@ -86,7 +89,7 @@ impl DeleteBackendAuthInputBuilder {
     /// Consumes the builder and constructs a [`DeleteBackendAuthInput`](crate::operation::delete_backend_auth::DeleteBackendAuthInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_backend_auth::DeleteBackendAuthInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_backend_auth::DeleteBackendAuthInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_backend_auth::DeleteBackendAuthInput {
             app_id: self.app_id,
             backend_environment_name: self.backend_environment_name,

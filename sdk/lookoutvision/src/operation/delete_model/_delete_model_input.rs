@@ -45,6 +45,7 @@ pub struct DeleteModelInputBuilder {
 }
 impl DeleteModelInputBuilder {
     /// <p>The name of the project that contains the model that you want to delete.</p>
+    /// This field is required.
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
         self
@@ -59,6 +60,7 @@ impl DeleteModelInputBuilder {
         &self.project_name
     }
     /// <p>The version of the model that you want to delete.</p>
+    /// This field is required.
     pub fn model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_version = ::std::option::Option::Some(input.into());
         self
@@ -93,7 +95,7 @@ impl DeleteModelInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`DeleteModelInput`](crate::operation::delete_model::DeleteModelInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_model::DeleteModelInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_model::DeleteModelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_model::DeleteModelInput {
             project_name: self.project_name,
             model_version: self.model_version,

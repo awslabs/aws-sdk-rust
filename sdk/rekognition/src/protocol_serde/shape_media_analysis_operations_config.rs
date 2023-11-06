@@ -40,7 +40,7 @@ where
 pub fn ser_media_analysis_operations_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MediaAnalysisOperationsConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.detect_moderation_labels {
         #[allow(unused_mut)]
         let mut object_2 = object.key("DetectModerationLabels").start_object();

@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TdscdmaNmrObj {
     /// <p>TD-SCDMA UTRA (Universal Terrestrial Radio Access Network) absolute RF channel number.</p>
-    pub uarfcn: ::std::option::Option<i32>,
+    pub uarfcn: i32,
     /// <p>Cell parameters for TD-SCDMA network measurement reports object.</p>
-    pub cell_params: ::std::option::Option<i32>,
+    pub cell_params: i32,
     /// <p>UTRAN (UMTS Terrestrial Radio Access Network) cell global identifier.</p>
     pub utran_cid: ::std::option::Option<i32>,
     /// <p>Code power of the received signal, measured in decibel-milliwatts (dBm).</p>
@@ -17,11 +17,11 @@ pub struct TdscdmaNmrObj {
 }
 impl TdscdmaNmrObj {
     /// <p>TD-SCDMA UTRA (Universal Terrestrial Radio Access Network) absolute RF channel number.</p>
-    pub fn uarfcn(&self) -> ::std::option::Option<i32> {
+    pub fn uarfcn(&self) -> i32 {
         self.uarfcn
     }
     /// <p>Cell parameters for TD-SCDMA network measurement reports object.</p>
-    pub fn cell_params(&self) -> ::std::option::Option<i32> {
+    pub fn cell_params(&self) -> i32 {
         self.cell_params
     }
     /// <p>UTRAN (UMTS Terrestrial Radio Access Network) cell global identifier.</p>
@@ -56,6 +56,7 @@ pub struct TdscdmaNmrObjBuilder {
 }
 impl TdscdmaNmrObjBuilder {
     /// <p>TD-SCDMA UTRA (Universal Terrestrial Radio Access Network) absolute RF channel number.</p>
+    /// This field is required.
     pub fn uarfcn(mut self, input: i32) -> Self {
         self.uarfcn = ::std::option::Option::Some(input);
         self
@@ -70,6 +71,7 @@ impl TdscdmaNmrObjBuilder {
         &self.uarfcn
     }
     /// <p>Cell parameters for TD-SCDMA network measurement reports object.</p>
+    /// This field is required.
     pub fn cell_params(mut self, input: i32) -> Self {
         self.cell_params = ::std::option::Option::Some(input);
         self
@@ -126,13 +128,26 @@ impl TdscdmaNmrObjBuilder {
         &self.path_loss
     }
     /// Consumes the builder and constructs a [`TdscdmaNmrObj`](crate::types::TdscdmaNmrObj).
-    pub fn build(self) -> crate::types::TdscdmaNmrObj {
-        crate::types::TdscdmaNmrObj {
-            uarfcn: self.uarfcn,
-            cell_params: self.cell_params,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`uarfcn`](crate::types::builders::TdscdmaNmrObjBuilder::uarfcn)
+    /// - [`cell_params`](crate::types::builders::TdscdmaNmrObjBuilder::cell_params)
+    pub fn build(self) -> ::std::result::Result<crate::types::TdscdmaNmrObj, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TdscdmaNmrObj {
+            uarfcn: self.uarfcn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "uarfcn",
+                    "uarfcn was not specified but it is required when building TdscdmaNmrObj",
+                )
+            })?,
+            cell_params: self.cell_params.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "cell_params",
+                    "cell_params was not specified but it is required when building TdscdmaNmrObj",
+                )
+            })?,
             utran_cid: self.utran_cid,
             rscp: self.rscp,
             path_loss: self.path_loss,
-        }
+        })
     }
 }

@@ -64,7 +64,7 @@ impl ListScheduledQueriesInputBuilder {
     /// Consumes the builder and constructs a [`ListScheduledQueriesInput`](crate::operation::list_scheduled_queries::ListScheduledQueriesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_scheduled_queries::ListScheduledQueriesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_scheduled_queries::ListScheduledQueriesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_scheduled_queries::ListScheduledQueriesInput {
             max_results: self.max_results,

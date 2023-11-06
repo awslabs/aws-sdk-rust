@@ -2,7 +2,7 @@
 pub fn ser_create_prepared_statement_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_prepared_statement::CreatePreparedStatementInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.statement_name {
         object.key("StatementName").string(var_1.as_str());
     }

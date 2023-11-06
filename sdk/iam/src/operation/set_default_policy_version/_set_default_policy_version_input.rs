@@ -39,6 +39,7 @@ pub struct SetDefaultPolicyVersionInputBuilder {
 impl SetDefaultPolicyVersionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the IAM policy whose default version you want to set.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// This field is required.
     pub fn policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_arn = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl SetDefaultPolicyVersionInputBuilder {
     }
     /// <p>The version of the policy to set as the default (operative) version.</p>
     /// <p>For more information about managed policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed policies</a> in the <i>IAM User Guide</i>.</p>
+    /// This field is required.
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_id = ::std::option::Option::Some(input.into());
         self
@@ -76,7 +78,7 @@ impl SetDefaultPolicyVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_default_policy_version::SetDefaultPolicyVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::set_default_policy_version::SetDefaultPolicyVersionInput {
             policy_arn: self.policy_arn,

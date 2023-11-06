@@ -2,12 +2,12 @@
 pub fn ser_sender_id_and_country(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SenderIdAndCountry,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.sender_id {
-        object.key("SenderId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("SenderId").string(input.sender_id.as_str());
     }
-    if let Some(var_2) = &input.iso_country_code {
-        object.key("IsoCountryCode").string(var_2.as_str());
+    {
+        object.key("IsoCountryCode").string(input.iso_country_code.as_str());
     }
     Ok(())
 }

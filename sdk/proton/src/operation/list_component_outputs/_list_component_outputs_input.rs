@@ -41,6 +41,7 @@ pub struct ListComponentOutputsInputBuilder {
 }
 impl ListComponentOutputsInputBuilder {
     /// <p>The name of the component whose outputs you want.</p>
+    /// This field is required.
     pub fn component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_name = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl ListComponentOutputsInputBuilder {
     /// Consumes the builder and constructs a [`ListComponentOutputsInput`](crate::operation::list_component_outputs::ListComponentOutputsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_component_outputs::ListComponentOutputsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_component_outputs::ListComponentOutputsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_component_outputs::ListComponentOutputsInput {
             component_name: self.component_name,

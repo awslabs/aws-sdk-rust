@@ -42,6 +42,7 @@ pub struct ListJobsByStatusInputBuilder {
 }
 impl ListJobsByStatusInputBuilder {
     /// <p>To get information about all of the jobs associated with the current AWS account that have a given status, specify the following status: <code>Submitted</code>, <code>Progressing</code>, <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>.</p>
+    /// This field is required.
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
         self
@@ -86,7 +87,7 @@ impl ListJobsByStatusInputBuilder {
     /// Consumes the builder and constructs a [`ListJobsByStatusInput`](crate::operation::list_jobs_by_status::ListJobsByStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_jobs_by_status::ListJobsByStatusInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_jobs_by_status::ListJobsByStatusInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_jobs_by_status::ListJobsByStatusInput {
             status: self.status,
             ascending: self.ascending,

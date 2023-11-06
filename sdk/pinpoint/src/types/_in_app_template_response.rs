@@ -33,8 +33,10 @@ impl InAppTemplateResponse {
         self.arn.as_deref()
     }
     /// <p>The content of the message, can include up to 5 modals. Each modal must contain a message, a header, and background color. ImageUrl and buttons are optional.</p>
-    pub fn content(&self) -> ::std::option::Option<&[crate::types::InAppMessageContent]> {
-        self.content.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.content.is_none()`.
+    pub fn content(&self) -> &[crate::types::InAppMessageContent] {
+        self.content.as_deref().unwrap_or_default()
     }
     /// <p>The creation date of the template.</p>
     pub fn creation_date(&self) -> ::std::option::Option<&str> {
@@ -132,6 +134,7 @@ impl InAppTemplateResponseBuilder {
         &self.content
     }
     /// <p>The creation date of the template.</p>
+    /// This field is required.
     pub fn creation_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_date = ::std::option::Option::Some(input.into());
         self
@@ -169,6 +172,7 @@ impl InAppTemplateResponseBuilder {
         &self.custom_config
     }
     /// <p>The last modified date of the template.</p>
+    /// This field is required.
     pub fn last_modified_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input.into());
         self
@@ -231,6 +235,7 @@ impl InAppTemplateResponseBuilder {
         &self.template_description
     }
     /// <p>The name of the template.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
@@ -245,6 +250,7 @@ impl InAppTemplateResponseBuilder {
         &self.template_name
     }
     /// <p>The type of the template.</p>
+    /// This field is required.
     pub fn template_type(mut self, input: crate::types::TemplateType) -> Self {
         self.template_type = ::std::option::Option::Some(input);
         self

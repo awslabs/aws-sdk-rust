@@ -12,8 +12,10 @@ pub struct DashboardInvalidInputError {
 }
 impl DashboardInvalidInputError {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn dashboard_validation_messages(&self) -> ::std::option::Option<&[crate::types::DashboardValidationMessage]> {
-        self.dashboard_validation_messages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dashboard_validation_messages.is_none()`.
+    pub fn dashboard_validation_messages(&self) -> &[crate::types::DashboardValidationMessage] {
+        self.dashboard_validation_messages.as_deref().unwrap_or_default()
     }
 }
 impl DashboardInvalidInputError {

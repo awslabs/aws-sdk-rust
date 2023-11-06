@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PermissionModel {
     /// <p>Defines how Resilience Hub scans your resources. It can scan for the resources by using a pre-existing role in your Amazon Web Services account, or by using the credentials of the current IAM user.</p>
-    pub r#type: ::std::option::Option<crate::types::PermissionModelType>,
+    pub r#type: crate::types::PermissionModelType,
     /// <p>Existing Amazon Web Services IAM role name in the primary Amazon Web Services account that will be assumed by Resilience Hub Service Principle to obtain a read-only access to your application resources while running an assessment.</p> <note>
     /// <p>You must have <code>iam:passRole</code> permission for this role while creating or updating the application.</p>
     /// </note>
@@ -20,8 +20,8 @@ pub struct PermissionModel {
 }
 impl PermissionModel {
     /// <p>Defines how Resilience Hub scans your resources. It can scan for the resources by using a pre-existing role in your Amazon Web Services account, or by using the credentials of the current IAM user.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::PermissionModelType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::PermissionModelType {
+        &self.r#type
     }
     /// <p>Existing Amazon Web Services IAM role name in the primary Amazon Web Services account that will be assumed by Resilience Hub Service Principle to obtain a read-only access to your application resources while running an assessment.</p> <note>
     /// <p>You must have <code>iam:passRole</code> permission for this role while creating or updating the application.</p>
@@ -35,8 +35,10 @@ impl PermissionModel {
     /// <li> <p>These roles must have a trust policy with <code>iam:AssumeRole</code> permission to the invoker role in the primary account.</p> </li>
     /// </ul>
     /// </note>
-    pub fn cross_account_role_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cross_account_role_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cross_account_role_arns.is_none()`.
+    pub fn cross_account_role_arns(&self) -> &[::std::string::String] {
+        self.cross_account_role_arns.as_deref().unwrap_or_default()
     }
 }
 impl PermissionModel {
@@ -56,6 +58,7 @@ pub struct PermissionModelBuilder {
 }
 impl PermissionModelBuilder {
     /// <p>Defines how Resilience Hub scans your resources. It can scan for the resources by using a pre-existing role in your Amazon Web Services account, or by using the credentials of the current IAM user.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::PermissionModelType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -125,11 +128,18 @@ impl PermissionModelBuilder {
         &self.cross_account_role_arns
     }
     /// Consumes the builder and constructs a [`PermissionModel`](crate::types::PermissionModel).
-    pub fn build(self) -> crate::types::PermissionModel {
-        crate::types::PermissionModel {
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::PermissionModelBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::PermissionModel, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PermissionModel {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building PermissionModel",
+                )
+            })?,
             invoker_role_name: self.invoker_role_name,
             cross_account_role_arns: self.cross_account_role_arns,
-        }
+        })
     }
 }

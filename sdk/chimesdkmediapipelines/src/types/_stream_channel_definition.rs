@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamChannelDefinition {
     /// <p>The number of channels in a streaming channel.</p>
-    pub number_of_channels: ::std::option::Option<i32>,
+    pub number_of_channels: i32,
     /// <p>The definitions of the channels in a streaming channel.</p>
     pub channel_definitions: ::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>>,
 }
 impl StreamChannelDefinition {
     /// <p>The number of channels in a streaming channel.</p>
-    pub fn number_of_channels(&self) -> ::std::option::Option<i32> {
+    pub fn number_of_channels(&self) -> i32 {
         self.number_of_channels
     }
     /// <p>The definitions of the channels in a streaming channel.</p>
-    pub fn channel_definitions(&self) -> ::std::option::Option<&[crate::types::ChannelDefinition]> {
-        self.channel_definitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.channel_definitions.is_none()`.
+    pub fn channel_definitions(&self) -> &[crate::types::ChannelDefinition] {
+        self.channel_definitions.as_deref().unwrap_or_default()
     }
 }
 impl StreamChannelDefinition {
@@ -35,6 +37,7 @@ pub struct StreamChannelDefinitionBuilder {
 }
 impl StreamChannelDefinitionBuilder {
     /// <p>The number of channels in a streaming channel.</p>
+    /// This field is required.
     pub fn number_of_channels(mut self, input: i32) -> Self {
         self.number_of_channels = ::std::option::Option::Some(input);
         self
@@ -69,10 +72,17 @@ impl StreamChannelDefinitionBuilder {
         &self.channel_definitions
     }
     /// Consumes the builder and constructs a [`StreamChannelDefinition`](crate::types::StreamChannelDefinition).
-    pub fn build(self) -> crate::types::StreamChannelDefinition {
-        crate::types::StreamChannelDefinition {
-            number_of_channels: self.number_of_channels,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`number_of_channels`](crate::types::builders::StreamChannelDefinitionBuilder::number_of_channels)
+    pub fn build(self) -> ::std::result::Result<crate::types::StreamChannelDefinition, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::StreamChannelDefinition {
+            number_of_channels: self.number_of_channels.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "number_of_channels",
+                    "number_of_channels was not specified but it is required when building StreamChannelDefinition",
+                )
+            })?,
             channel_definitions: self.channel_definitions,
-        }
+        })
     }
 }

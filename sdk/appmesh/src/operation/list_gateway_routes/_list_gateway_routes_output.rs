@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListGatewayRoutesOutput {
     /// <p>The list of existing gateway routes for the specified service mesh and virtual gateway.</p>
-    pub gateway_routes: ::std::option::Option<::std::vec::Vec<crate::types::GatewayRouteRef>>,
+    pub gateway_routes: ::std::vec::Vec<crate::types::GatewayRouteRef>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListGatewayRoutes</code> request. When the results of a <code>ListGatewayRoutes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListGatewayRoutesOutput {
     /// <p>The list of existing gateway routes for the specified service mesh and virtual gateway.</p>
-    pub fn gateway_routes(&self) -> ::std::option::Option<&[crate::types::GatewayRouteRef]> {
-        self.gateway_routes.as_deref()
+    pub fn gateway_routes(&self) -> &[crate::types::GatewayRouteRef] {
+        use std::ops::Deref;
+        self.gateway_routes.deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListGatewayRoutes</code> request. When the results of a <code>ListGatewayRoutes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ListGatewayRoutesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListGatewayRoutesOutput`](crate::operation::list_gateway_routes::ListGatewayRoutesOutput).
-    pub fn build(self) -> crate::operation::list_gateway_routes::ListGatewayRoutesOutput {
-        crate::operation::list_gateway_routes::ListGatewayRoutesOutput {
-            gateway_routes: self.gateway_routes,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`gateway_routes`](crate::operation::list_gateway_routes::builders::ListGatewayRoutesOutputBuilder::gateway_routes)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_gateway_routes::ListGatewayRoutesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_gateway_routes::ListGatewayRoutesOutput {
+            gateway_routes: self.gateway_routes.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "gateway_routes",
+                    "gateway_routes was not specified but it is required when building ListGatewayRoutesOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

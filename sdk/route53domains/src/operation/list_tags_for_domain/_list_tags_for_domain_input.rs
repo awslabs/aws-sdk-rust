@@ -28,6 +28,7 @@ pub struct ListTagsForDomainInputBuilder {
 }
 impl ListTagsForDomainInputBuilder {
     /// <p>The domain for which you want to get a list of tags.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl ListTagsForDomainInputBuilder {
     /// Consumes the builder and constructs a [`ListTagsForDomainInput`](crate::operation::list_tags_for_domain::ListTagsForDomainInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_tags_for_domain::ListTagsForDomainInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_tags_for_domain::ListTagsForDomainInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_tags_for_domain::ListTagsForDomainInput {
             domain_name: self.domain_name,
         })

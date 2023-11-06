@@ -55,6 +55,7 @@ pub struct GetMergeOptionsInputBuilder {
 }
 impl GetMergeOptionsInputBuilder {
     /// <p>The name of the repository that contains the commits about which you want to get merge options.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl GetMergeOptionsInputBuilder {
         &self.repository_name
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    /// This field is required.
     pub fn source_commit_specifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_commit_specifier = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +85,7 @@ impl GetMergeOptionsInputBuilder {
         &self.source_commit_specifier
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    /// This field is required.
     pub fn destination_commit_specifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_commit_specifier = ::std::option::Option::Some(input.into());
         self
@@ -127,7 +130,7 @@ impl GetMergeOptionsInputBuilder {
     /// Consumes the builder and constructs a [`GetMergeOptionsInput`](crate::operation::get_merge_options::GetMergeOptionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_merge_options::GetMergeOptionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_merge_options::GetMergeOptionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_merge_options::GetMergeOptionsInput {
             repository_name: self.repository_name,
             source_commit_specifier: self.source_commit_specifier,

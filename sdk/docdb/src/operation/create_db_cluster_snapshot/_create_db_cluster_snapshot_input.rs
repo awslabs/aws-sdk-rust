@@ -45,8 +45,10 @@ impl CreateDbClusterSnapshotInput {
         self.db_cluster_identifier.as_deref()
     }
     /// <p>The tags to be assigned to the cluster snapshot.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateDbClusterSnapshotInput {
@@ -73,6 +75,7 @@ impl CreateDbClusterSnapshotInputBuilder {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens. </p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot1</code> </p>
+    /// This field is required.
     pub fn db_cluster_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_snapshot_identifier = ::std::option::Option::Some(input.into());
         self
@@ -106,6 +109,7 @@ impl CreateDbClusterSnapshotInputBuilder {
     /// <li> <p>Must match the identifier of an existing <code>DBCluster</code>.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster</code> </p>
+    /// This field is required.
     pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_identifier = ::std::option::Option::Some(input.into());
         self
@@ -154,7 +158,7 @@ impl CreateDbClusterSnapshotInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_db_cluster_snapshot::CreateDbClusterSnapshotInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_db_cluster_snapshot::CreateDbClusterSnapshotInput {
             db_cluster_snapshot_identifier: self.db_cluster_snapshot_identifier,

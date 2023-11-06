@@ -41,6 +41,7 @@ pub struct ListJournalKinesisStreamsForLedgerInputBuilder {
 }
 impl ListJournalKinesisStreamsForLedgerInputBuilder {
     /// <p>The name of the ledger.</p>
+    /// This field is required.
     pub fn ledger_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ledger_name = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListJournalKinesisStreamsForLedgerInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_journal_kinesis_streams_for_ledger::ListJournalKinesisStreamsForLedgerInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_journal_kinesis_streams_for_ledger::ListJournalKinesisStreamsForLedgerInput {

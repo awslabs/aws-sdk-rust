@@ -34,6 +34,7 @@ pub struct GetModelPackageGroupPolicyOutputBuilder {
 }
 impl GetModelPackageGroupPolicyOutputBuilder {
     /// <p>The resource policy for the model group.</p>
+    /// This field is required.
     pub fn resource_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_policy = ::std::option::Option::Some(input.into());
         self

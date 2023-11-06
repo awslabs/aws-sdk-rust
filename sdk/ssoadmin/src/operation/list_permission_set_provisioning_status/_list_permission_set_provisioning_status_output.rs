@@ -11,8 +11,10 @@ pub struct ListPermissionSetProvisioningStatusOutput {
 }
 impl ListPermissionSetProvisioningStatusOutput {
     /// <p>The status object for the permission set provisioning operation.</p>
-    pub fn permission_sets_provisioning_status(&self) -> ::std::option::Option<&[crate::types::PermissionSetProvisioningStatusMetadata]> {
-        self.permission_sets_provisioning_status.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permission_sets_provisioning_status.is_none()`.
+    pub fn permission_sets_provisioning_status(&self) -> &[crate::types::PermissionSetProvisioningStatusMetadata] {
+        self.permission_sets_provisioning_status.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

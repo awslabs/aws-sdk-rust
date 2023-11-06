@@ -36,6 +36,7 @@ pub struct CreateMemberInputBuilder {
 }
 impl CreateMemberInputBuilder {
     /// <p>The details of the account to associate with the administrator account.</p>
+    /// This field is required.
     pub fn account(mut self, input: crate::types::AccountDetail) -> Self {
         self.account = ::std::option::Option::Some(input);
         self
@@ -73,7 +74,9 @@ impl CreateMemberInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateMemberInput`](crate::operation::create_member::CreateMemberInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_member::CreateMemberInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_member::CreateMemberInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_member::CreateMemberInput {
             account: self.account,
             tags: self.tags,

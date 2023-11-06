@@ -2,20 +2,20 @@
 pub fn ser_trigger_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TriggerDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.source {
-        object.key("source").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("source").string(input.source.as_str());
     }
-    if let Some(var_2) = &input.trigger_arn {
-        object.key("triggerArn").string(var_2.as_str());
+    if let Some(var_1) = &input.trigger_arn {
+        object.key("triggerArn").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.timestamp {
+    {
         object
             .key("timestamp")
-            .date_time(var_3, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(&input.timestamp, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_4) = &input.raw_data {
-        object.key("rawData").string(var_4.as_str());
+    if let Some(var_2) = &input.raw_data {
+        object.key("rawData").string(var_2.as_str());
     }
     Ok(())
 }

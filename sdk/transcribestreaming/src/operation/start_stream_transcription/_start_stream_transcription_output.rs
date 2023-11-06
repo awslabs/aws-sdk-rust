@@ -536,11 +536,13 @@ impl StartStreamTranscriptionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartStreamTranscriptionOutput`](crate::operation::start_stream_transcription::StartStreamTranscriptionOutput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`transcript_result_stream`](crate::operation::start_stream_transcription::builders::StartStreamTranscriptionOutputBuilder::transcript_result_stream)
     pub fn build(
         self,
     ) -> ::std::result::Result<
         crate::operation::start_stream_transcription::StartStreamTranscriptionOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_stream_transcription::StartStreamTranscriptionOutput {
             request_id: self.request_id,
@@ -550,7 +552,7 @@ impl StartStreamTranscriptionOutputBuilder {
             vocabulary_name: self.vocabulary_name,
             session_id: self.session_id,
             transcript_result_stream: self.transcript_result_stream.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "transcript_result_stream",
                     "transcript_result_stream was not specified but it is required when building StartStreamTranscriptionOutput",
                 )

@@ -27,6 +27,7 @@ pub struct DescribeTunnelInputBuilder {
 }
 impl DescribeTunnelInputBuilder {
     /// <p>The tunnel to describe.</p>
+    /// This field is required.
     pub fn tunnel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tunnel_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeTunnelInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTunnelInput`](crate::operation::describe_tunnel::DescribeTunnelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_tunnel::DescribeTunnelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_tunnel::DescribeTunnelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_tunnel::DescribeTunnelInput { tunnel_id: self.tunnel_id })
     }
 }

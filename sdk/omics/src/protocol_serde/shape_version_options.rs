@@ -12,12 +12,17 @@ where
             match tokens.next().transpose()? {
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                    let key = key.to_unescaped()?;
+                    if key == "__type" {
+                        ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                        continue;
+                    }
                     if variant.is_some() {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
                             "encountered mixed variants in union",
                         ));
                     }
-                    variant = match key.to_unescaped()?.as_ref() {
+                    variant = match key.as_ref() {
                         "tsvVersionOptions" => Some(crate::types::VersionOptions::TsvVersionOptions(
                             crate::protocol_serde::shape_tsv_version_options::de_tsv_version_options(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'tsvVersionOptions' cannot be null")
@@ -49,7 +54,7 @@ where
 pub fn ser_version_options(
     object_8: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VersionOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::VersionOptions::TsvVersionOptions(inner) => {
             #[allow(unused_mut)]
@@ -58,7 +63,9 @@ pub fn ser_version_options(
             object_1.finish();
         }
         crate::types::VersionOptions::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("VersionOptions"))
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
+                "VersionOptions",
+            ))
         }
     }
     Ok(())

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnowflakeSource {
     /// <p>The name of the Snowflake data source.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>Configuration for the Snowflake data source.</p>
     pub data: ::std::option::Option<crate::types::SnowflakeNodeData>,
     /// <p>Specifies user-defined schemas for your output data.</p>
@@ -13,16 +13,19 @@ pub struct SnowflakeSource {
 }
 impl SnowflakeSource {
     /// <p>The name of the Snowflake data source.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>Configuration for the Snowflake data source.</p>
     pub fn data(&self) -> ::std::option::Option<&crate::types::SnowflakeNodeData> {
         self.data.as_ref()
     }
     /// <p>Specifies user-defined schemas for your output data.</p>
-    pub fn output_schemas(&self) -> ::std::option::Option<&[crate::types::GlueSchema]> {
-        self.output_schemas.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_schemas.is_none()`.
+    pub fn output_schemas(&self) -> &[crate::types::GlueSchema] {
+        self.output_schemas.as_deref().unwrap_or_default()
     }
 }
 impl SnowflakeSource {
@@ -42,6 +45,7 @@ pub struct SnowflakeSourceBuilder {
 }
 impl SnowflakeSourceBuilder {
     /// <p>The name of the Snowflake data source.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +60,7 @@ impl SnowflakeSourceBuilder {
         &self.name
     }
     /// <p>Configuration for the Snowflake data source.</p>
+    /// This field is required.
     pub fn data(mut self, input: crate::types::SnowflakeNodeData) -> Self {
         self.data = ::std::option::Option::Some(input);
         self
@@ -90,11 +95,18 @@ impl SnowflakeSourceBuilder {
         &self.output_schemas
     }
     /// Consumes the builder and constructs a [`SnowflakeSource`](crate::types::SnowflakeSource).
-    pub fn build(self) -> crate::types::SnowflakeSource {
-        crate::types::SnowflakeSource {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::SnowflakeSourceBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::SnowflakeSource, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SnowflakeSource {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building SnowflakeSource",
+                )
+            })?,
             data: self.data,
             output_schemas: self.output_schemas,
-        }
+        })
     }
 }

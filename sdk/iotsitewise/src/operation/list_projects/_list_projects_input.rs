@@ -43,6 +43,7 @@ pub struct ListProjectsInputBuilder {
 }
 impl ListProjectsInputBuilder {
     /// <p>The ID of the portal.</p>
+    /// This field is required.
     pub fn portal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portal_id = ::std::option::Option::Some(input.into());
         self
@@ -88,7 +89,9 @@ impl ListProjectsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListProjectsInput`](crate::operation::list_projects::ListProjectsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_projects::ListProjectsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_projects::ListProjectsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_projects::ListProjectsInput {
             portal_id: self.portal_id,
             next_token: self.next_token,

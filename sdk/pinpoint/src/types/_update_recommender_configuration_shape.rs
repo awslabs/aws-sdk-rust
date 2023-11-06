@@ -200,6 +200,7 @@ impl UpdateRecommenderConfigurationShapeBuilder {
         &self.recommendation_provider_id_type
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorizes Amazon Pinpoint to retrieve recommendation data from the recommender model.</p>
+    /// This field is required.
     pub fn recommendation_provider_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommendation_provider_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -214,6 +215,7 @@ impl UpdateRecommenderConfigurationShapeBuilder {
         &self.recommendation_provider_role_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the recommender model to retrieve recommendation data from. This value must match the ARN of an Amazon Personalize campaign.</p>
+    /// This field is required.
     pub fn recommendation_provider_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommendation_provider_uri = ::std::option::Option::Some(input.into());
         self

@@ -36,8 +36,10 @@ impl CreateRoleAliasInput {
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateRoleAliasInput {
@@ -58,6 +60,7 @@ pub struct CreateRoleAliasInputBuilder {
 }
 impl CreateRoleAliasInputBuilder {
     /// <p>The role alias that points to a role ARN. This allows you to change the role without having to update the device.</p>
+    /// This field is required.
     pub fn role_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_alias = ::std::option::Option::Some(input.into());
         self
@@ -72,6 +75,7 @@ impl CreateRoleAliasInputBuilder {
         &self.role_alias
     }
     /// <p>The role ARN.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -137,7 +141,7 @@ impl CreateRoleAliasInputBuilder {
     /// Consumes the builder and constructs a [`CreateRoleAliasInput`](crate::operation::create_role_alias::CreateRoleAliasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_role_alias::CreateRoleAliasInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_role_alias::CreateRoleAliasInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_role_alias::CreateRoleAliasInput {
             role_alias: self.role_alias,
             role_arn: self.role_arn,

@@ -2,15 +2,15 @@
 pub fn ser_dns_service_discovery(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DnsServiceDiscovery,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.hostname {
-        object.key("hostname").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("hostname").string(input.hostname.as_str());
     }
-    if let Some(var_2) = &input.response_type {
-        object.key("responseType").string(var_2.as_str());
+    if let Some(var_1) = &input.response_type {
+        object.key("responseType").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.ip_preference {
-        object.key("ipPreference").string(var_3.as_str());
+    if let Some(var_2) = &input.ip_preference {
+        object.key("ipPreference").string(var_2.as_str());
     }
     Ok(())
 }
@@ -61,7 +61,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::dns_service_discovery_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

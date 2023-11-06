@@ -48,6 +48,7 @@ pub struct GetExportInputBuilder {
 }
 impl GetExportInputBuilder {
     /// <p>The name of the bot to export.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl GetExportInputBuilder {
         &self.name
     }
     /// <p>The version of the bot to export.</p>
+    /// This field is required.
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl GetExportInputBuilder {
         &self.version
     }
     /// <p>The type of resource to export. </p>
+    /// This field is required.
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
@@ -90,6 +93,7 @@ impl GetExportInputBuilder {
         &self.resource_type
     }
     /// <p>The format of the exported data.</p>
+    /// This field is required.
     pub fn export_type(mut self, input: crate::types::ExportType) -> Self {
         self.export_type = ::std::option::Option::Some(input);
         self
@@ -104,7 +108,7 @@ impl GetExportInputBuilder {
         &self.export_type
     }
     /// Consumes the builder and constructs a [`GetExportInput`](crate::operation::get_export::GetExportInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_export::GetExportInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_export::GetExportInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_export::GetExportInput {
             name: self.name,
             version: self.version,

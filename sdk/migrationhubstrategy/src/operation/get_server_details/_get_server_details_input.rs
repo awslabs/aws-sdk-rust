@@ -41,6 +41,7 @@ pub struct GetServerDetailsInputBuilder {
 }
 impl GetServerDetailsInputBuilder {
     /// <p> The ID of the server. </p>
+    /// This field is required.
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl GetServerDetailsInputBuilder {
     /// Consumes the builder and constructs a [`GetServerDetailsInput`](crate::operation::get_server_details::GetServerDetailsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_server_details::GetServerDetailsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_server_details::GetServerDetailsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_server_details::GetServerDetailsInput {
             server_id: self.server_id,
             next_token: self.next_token,

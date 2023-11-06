@@ -39,8 +39,10 @@ impl DescribeFleetsInput {
     /// <p>The IDs of the EC2 Fleets.</p> <note>
     /// <p>If a fleet is of type <code>instant</code>, you must specify the fleet ID, otherwise it does not appear in the response.</p>
     /// </note>
-    pub fn fleet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.fleet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fleet_ids.is_none()`.
+    pub fn fleet_ids(&self) -> &[::std::string::String] {
+        self.fleet_ids.as_deref().unwrap_or_default()
     }
     /// <p>The filters.</p>
     /// <ul>
@@ -50,8 +52,10 @@ impl DescribeFleetsInput {
     /// <li> <p> <code>replace-unhealthy-instances</code> - Indicates whether EC2 Fleet should replace unhealthy instances (<code>true</code> | <code>false</code>).</p> </li>
     /// <li> <p> <code>type</code> - The type of request (<code>instant</code> | <code>request</code> | <code>maintain</code>).</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
 }
 impl DescribeFleetsInput {
@@ -184,7 +188,7 @@ impl DescribeFleetsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeFleetsInput`](crate::operation::describe_fleets::DescribeFleetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_fleets::DescribeFleetsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_fleets::DescribeFleetsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_fleets::DescribeFleetsInput {
             dry_run: self.dry_run,
             max_results: self.max_results,

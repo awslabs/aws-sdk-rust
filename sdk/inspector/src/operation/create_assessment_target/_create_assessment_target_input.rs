@@ -34,6 +34,7 @@ pub struct CreateAssessmentTargetInputBuilder {
 }
 impl CreateAssessmentTargetInputBuilder {
     /// <p>The user-defined name that identifies the assessment target that you want to create. The name must be unique within the AWS account.</p>
+    /// This field is required.
     pub fn assessment_target_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_target_name = ::std::option::Option::Some(input.into());
         self
@@ -64,8 +65,10 @@ impl CreateAssessmentTargetInputBuilder {
     /// Consumes the builder and constructs a [`CreateAssessmentTargetInput`](crate::operation::create_assessment_target::CreateAssessmentTargetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_assessment_target::CreateAssessmentTargetInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_assessment_target::CreateAssessmentTargetInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_assessment_target::CreateAssessmentTargetInput {
             assessment_target_name: self.assessment_target_name,
             resource_group_arn: self.resource_group_arn,

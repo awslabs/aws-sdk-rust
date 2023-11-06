@@ -74,6 +74,7 @@ pub struct UpdateBillingGroupInputBuilder {
 }
 impl UpdateBillingGroupInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the billing group being updated. </p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -160,7 +161,8 @@ impl UpdateBillingGroupInputBuilder {
     /// Consumes the builder and constructs a [`UpdateBillingGroupInput`](crate::operation::update_billing_group::UpdateBillingGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_billing_group::UpdateBillingGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_billing_group::UpdateBillingGroupInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_billing_group::UpdateBillingGroupInput {
             arn: self.arn,
             name: self.name,

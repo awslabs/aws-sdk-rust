@@ -8,8 +8,10 @@ pub struct BatchGetTokenBalanceInput {
 }
 impl BatchGetTokenBalanceInput {
     /// <p>An array of <code>BatchGetTokenBalanceInputItem</code> objects whose balance is being requested.</p>
-    pub fn get_token_balance_inputs(&self) -> ::std::option::Option<&[crate::types::BatchGetTokenBalanceInputItem]> {
-        self.get_token_balance_inputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.get_token_balance_inputs.is_none()`.
+    pub fn get_token_balance_inputs(&self) -> &[crate::types::BatchGetTokenBalanceInputItem] {
+        self.get_token_balance_inputs.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetTokenBalanceInput {
@@ -52,7 +54,7 @@ impl BatchGetTokenBalanceInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetTokenBalanceInput`](crate::operation::batch_get_token_balance::BatchGetTokenBalanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_get_token_balance::BatchGetTokenBalanceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_get_token_balance::BatchGetTokenBalanceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_get_token_balance::BatchGetTokenBalanceInput {
             get_token_balance_inputs: self.get_token_balance_inputs,

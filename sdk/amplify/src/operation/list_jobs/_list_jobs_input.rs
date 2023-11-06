@@ -49,6 +49,7 @@ pub struct ListJobsInputBuilder {
 }
 impl ListJobsInputBuilder {
     /// <p> The unique ID for an Amplify app. </p>
+    /// This field is required.
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl ListJobsInputBuilder {
         &self.app_id
     }
     /// <p> The name for a branch. </p>
+    /// This field is required.
     pub fn branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch_name = ::std::option::Option::Some(input.into());
         self
@@ -105,7 +107,7 @@ impl ListJobsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListJobsInput`](crate::operation::list_jobs::ListJobsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_jobs::ListJobsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_jobs::ListJobsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_jobs::ListJobsInput {
             app_id: self.app_id,
             branch_name: self.branch_name,

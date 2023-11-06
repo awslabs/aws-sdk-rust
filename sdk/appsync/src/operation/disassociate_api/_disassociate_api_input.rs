@@ -27,6 +27,7 @@ pub struct DisassociateApiInputBuilder {
 }
 impl DisassociateApiInputBuilder {
     /// <p>The domain name.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DisassociateApiInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateApiInput`](crate::operation::disassociate_api::DisassociateApiInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disassociate_api::DisassociateApiInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::disassociate_api::DisassociateApiInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::disassociate_api::DisassociateApiInput {
             domain_name: self.domain_name,
         })

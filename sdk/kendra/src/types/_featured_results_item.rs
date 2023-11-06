@@ -33,8 +33,10 @@ impl FeaturedResultsItem {
         self.r#type.as_ref()
     }
     /// <p>One or more additional attributes associated with the featured result.</p>
-    pub fn additional_attributes(&self) -> ::std::option::Option<&[crate::types::AdditionalResultAttribute]> {
-        self.additional_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_attributes.is_none()`.
+    pub fn additional_attributes(&self) -> &[crate::types::AdditionalResultAttribute] {
+        self.additional_attributes.as_deref().unwrap_or_default()
     }
     /// <p>The identifier of the featured document.</p>
     pub fn document_id(&self) -> ::std::option::Option<&str> {
@@ -53,8 +55,10 @@ impl FeaturedResultsItem {
         self.document_uri.as_deref()
     }
     /// <p>An array of document attributes assigned to a featured document in the search results. For example, the document author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.</p>
-    pub fn document_attributes(&self) -> ::std::option::Option<&[crate::types::DocumentAttribute]> {
-        self.document_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.document_attributes.is_none()`.
+    pub fn document_attributes(&self) -> &[crate::types::DocumentAttribute] {
+        self.document_attributes.as_deref().unwrap_or_default()
     }
     /// <p>A token that identifies a particular featured result from a particular query. Use this token to provide click-through feedback for the result. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">Submitting feedback</a>.</p>
     pub fn feedback_token(&self) -> ::std::option::Option<&str> {

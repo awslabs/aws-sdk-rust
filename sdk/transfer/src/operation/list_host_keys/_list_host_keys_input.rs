@@ -69,6 +69,7 @@ impl ListHostKeysInputBuilder {
         &self.next_token
     }
     /// <p>The identifier of the server that contains the host keys that you want to view.</p>
+    /// This field is required.
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl ListHostKeysInputBuilder {
     /// Consumes the builder and constructs a [`ListHostKeysInput`](crate::operation::list_host_keys::ListHostKeysInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_host_keys::ListHostKeysInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_host_keys::ListHostKeysInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_host_keys::ListHostKeysInput {
             max_results: self.max_results,
             next_token: self.next_token,

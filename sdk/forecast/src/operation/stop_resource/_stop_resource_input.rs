@@ -27,6 +27,7 @@ pub struct StopResourceInputBuilder {
 }
 impl StopResourceInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that identifies the resource to stop. The supported ARNs are <code>DatasetImportJobArn</code>, <code>PredictorArn</code>, <code>PredictorBacktestExportJobArn</code>, <code>ForecastArn</code>, <code>ForecastExportJobArn</code>, <code>ExplainabilityArn</code>, and <code>ExplainabilityExportArn</code>. </p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,9 @@ impl StopResourceInputBuilder {
         &self.resource_arn
     }
     /// Consumes the builder and constructs a [`StopResourceInput`](crate::operation::stop_resource::StopResourceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::stop_resource::StopResourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::stop_resource::StopResourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_resource::StopResourceInput {
             resource_arn: self.resource_arn,
         })

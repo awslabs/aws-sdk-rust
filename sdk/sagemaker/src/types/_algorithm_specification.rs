@@ -78,8 +78,10 @@ impl AlgorithmSpecification {
         self.training_input_mode.as_ref()
     }
     /// <p>A list of metric definition objects. Each object specifies the metric name and regular expressions used to parse algorithm logs. SageMaker publishes each metric to Amazon CloudWatch.</p>
-    pub fn metric_definitions(&self) -> ::std::option::Option<&[crate::types::MetricDefinition]> {
-        self.metric_definitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_definitions.is_none()`.
+    pub fn metric_definitions(&self) -> &[crate::types::MetricDefinition] {
+        self.metric_definitions.as_deref().unwrap_or_default()
     }
     /// <p>To generate and save time-series metrics during training, set to <code>true</code>. The default is <code>false</code> and time-series metrics aren't generated except in the following cases:</p>
     /// <ul>
@@ -96,12 +98,16 @@ impl AlgorithmSpecification {
         self.enable_sage_maker_metrics_time_series
     }
     /// <p>The <a href="https://docs.docker.com/engine/reference/builder/">entrypoint script for a Docker container</a> used to run a training job. This script takes precedence over the default train processing instructions. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How Amazon SageMaker Runs Your Training Image</a> for more information.</p>
-    pub fn container_entrypoint(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.container_entrypoint.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.container_entrypoint.is_none()`.
+    pub fn container_entrypoint(&self) -> &[::std::string::String] {
+        self.container_entrypoint.as_deref().unwrap_or_default()
     }
     /// <p>The arguments for a container used to run a training job. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How Amazon SageMaker Runs Your Training Image</a> for additional information.</p>
-    pub fn container_arguments(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.container_arguments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.container_arguments.is_none()`.
+    pub fn container_arguments(&self) -> &[::std::string::String] {
+        self.container_arguments.as_deref().unwrap_or_default()
     }
     /// <p>The configuration to use an image from a private Docker registry for a training job.</p>
     pub fn training_image_config(&self) -> ::std::option::Option<&crate::types::TrainingImageConfig> {
@@ -188,6 +194,7 @@ impl AlgorithmSpecificationBuilder {
     /// <p> <b>FastFile mode</b> </p>
     /// <p>If an algorithm supports <code>FastFile</code> mode, SageMaker streams data directly from S3 to the container with no code changes, and provides file system access to the data. Users can author their training script to interact with these files as if they were stored on disk.</p>
     /// <p> <code>FastFile</code> mode works best when the data is read sequentially. Augmented manifest files aren't supported. The startup time is lower when there are fewer files in the S3 bucket provided.</p>
+    /// This field is required.
     pub fn training_input_mode(mut self, input: crate::types::TrainingInputMode) -> Self {
         self.training_input_mode = ::std::option::Option::Some(input);
         self

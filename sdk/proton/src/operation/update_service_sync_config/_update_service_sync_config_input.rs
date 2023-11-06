@@ -55,6 +55,7 @@ pub struct UpdateServiceSyncConfigInputBuilder {
 }
 impl UpdateServiceSyncConfigInputBuilder {
     /// <p>The name of the service the Proton Ops file is for.</p>
+    /// This field is required.
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl UpdateServiceSyncConfigInputBuilder {
         &self.service_name
     }
     /// <p>The name of the repository provider where the Proton Ops file is found.</p>
+    /// This field is required.
     pub fn repository_provider(mut self, input: crate::types::RepositoryProvider) -> Self {
         self.repository_provider = ::std::option::Option::Some(input);
         self
@@ -83,6 +85,7 @@ impl UpdateServiceSyncConfigInputBuilder {
         &self.repository_provider
     }
     /// <p>The name of the repository where the Proton Ops file is found.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +100,7 @@ impl UpdateServiceSyncConfigInputBuilder {
         &self.repository_name
     }
     /// <p>The name of the code repository branch where the Proton Ops file is found.</p>
+    /// This field is required.
     pub fn branch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +115,7 @@ impl UpdateServiceSyncConfigInputBuilder {
         &self.branch
     }
     /// <p>The path to the Proton Ops file.</p>
+    /// This field is required.
     pub fn file_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_path = ::std::option::Option::Some(input.into());
         self
@@ -129,7 +134,7 @@ impl UpdateServiceSyncConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_service_sync_config::UpdateServiceSyncConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_service_sync_config::UpdateServiceSyncConfigInput {
             service_name: self.service_name,

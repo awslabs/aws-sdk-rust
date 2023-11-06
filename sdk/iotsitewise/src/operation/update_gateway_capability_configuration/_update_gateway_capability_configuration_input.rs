@@ -41,6 +41,7 @@ pub struct UpdateGatewayCapabilityConfigurationInputBuilder {
 }
 impl UpdateGatewayCapabilityConfigurationInputBuilder {
     /// <p>The ID of the gateway to be updated.</p>
+    /// This field is required.
     pub fn gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateGatewayCapabilityConfigurationInputBuilder {
         &self.gateway_id
     }
     /// <p>The namespace of the gateway capability configuration to be updated. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
+    /// This field is required.
     pub fn capability_namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capability_namespace = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl UpdateGatewayCapabilityConfigurationInputBuilder {
         &self.capability_namespace
     }
     /// <p>The JSON document that defines the configuration for the gateway capability. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    /// This field is required.
     pub fn capability_configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capability_configuration = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +90,7 @@ impl UpdateGatewayCapabilityConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_gateway_capability_configuration::UpdateGatewayCapabilityConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_gateway_capability_configuration::UpdateGatewayCapabilityConfigurationInput {

@@ -107,13 +107,15 @@ impl SelectObjectContentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SelectObjectContentOutput`](crate::operation::select_object_content::SelectObjectContentOutput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`payload`](crate::operation::select_object_content::builders::SelectObjectContentOutputBuilder::payload)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::select_object_content::SelectObjectContentOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::select_object_content::SelectObjectContentOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::select_object_content::SelectObjectContentOutput {
             payload: self.payload.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "payload",
                     "payload was not specified but it is required when building SelectObjectContentOutput",
                 )

@@ -188,7 +188,9 @@ impl ListProblemsInputBuilder {
         &self.visibility
     }
     /// Consumes the builder and constructs a [`ListProblemsInput`](crate::operation::list_problems::ListProblemsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_problems::ListProblemsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_problems::ListProblemsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_problems::ListProblemsInput {
             account_id: self.account_id,
             resource_group_name: self.resource_group_name,

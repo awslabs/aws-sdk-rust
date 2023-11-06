@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteRepository`](crate::operation::delete_repository::builders::DeleteRepositoryFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`provider(RepositoryProvider)`](crate::operation::delete_repository::builders::DeleteRepositoryFluentBuilder::provider) / [`set_provider(Option<RepositoryProvider>)`](crate::operation::delete_repository::builders::DeleteRepositoryFluentBuilder::set_provider): <p>The repository provider.</p>
-    ///   - [`name(impl Into<String>)`](crate::operation::delete_repository::builders::DeleteRepositoryFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_repository::builders::DeleteRepositoryFluentBuilder::set_name): <p>The repository name.</p>
+    ///   - [`provider(RepositoryProvider)`](crate::operation::delete_repository::builders::DeleteRepositoryFluentBuilder::provider) / [`set_provider(Option<RepositoryProvider>)`](crate::operation::delete_repository::builders::DeleteRepositoryFluentBuilder::set_provider):<br>required: **true**<br><p>The repository provider.</p><br>
+    ///   - [`name(impl Into<String>)`](crate::operation::delete_repository::builders::DeleteRepositoryFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_repository::builders::DeleteRepositoryFluentBuilder::set_name):<br>required: **true**<br><p>The repository name.</p><br>
     /// - On success, responds with [`DeleteRepositoryOutput`](crate::operation::delete_repository::DeleteRepositoryOutput) with field(s):
     ///   - [`repository(Option<Repository>)`](crate::operation::delete_repository::DeleteRepositoryOutput::repository): <p>The deleted repository link's detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<DeleteRepositoryError>`](crate::operation::delete_repository::DeleteRepositoryError)

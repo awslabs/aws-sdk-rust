@@ -2,7 +2,7 @@
 pub fn ser_redshift_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RedshiftParameters,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.host {
         object.key("Host").string(var_1.as_str());
     }
@@ -12,17 +12,17 @@ pub fn ser_redshift_parameters(
             ::aws_smithy_types::Number::NegInt((input.port).into()),
         );
     }
-    if let Some(var_2) = &input.database {
-        object.key("Database").string(var_2.as_str());
+    {
+        object.key("Database").string(input.database.as_str());
     }
-    if let Some(var_3) = &input.cluster_id {
-        object.key("ClusterId").string(var_3.as_str());
+    if let Some(var_2) = &input.cluster_id {
+        object.key("ClusterId").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.iam_parameters {
+    if let Some(var_3) = &input.iam_parameters {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("IAMParameters").start_object();
-        crate::protocol_serde::shape_redshift_iam_parameters::ser_redshift_iam_parameters(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("IAMParameters").start_object();
+        crate::protocol_serde::shape_redshift_iam_parameters::ser_redshift_iam_parameters(&mut object_4, var_3)?;
+        object_4.finish();
     }
     Ok(())
 }
@@ -84,7 +84,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::redshift_parameters_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

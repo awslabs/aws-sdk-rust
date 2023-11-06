@@ -12,8 +12,10 @@ pub struct ListLocationsInput {
 }
 impl ListLocationsInput {
     /// <p>Filters the list for <code>AWS</code> or <code>CUSTOM</code> locations.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::LocationFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::LocationFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub fn limit(&self) -> ::std::option::Option<i32> {
@@ -91,7 +93,7 @@ impl ListLocationsInputBuilder {
     /// Consumes the builder and constructs a [`ListLocationsInput`](crate::operation::list_locations::ListLocationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_locations::ListLocationsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_locations::ListLocationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_locations::ListLocationsInput {
             filters: self.filters,
             limit: self.limit,

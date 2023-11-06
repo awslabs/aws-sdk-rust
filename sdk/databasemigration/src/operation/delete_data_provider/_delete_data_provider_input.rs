@@ -27,6 +27,7 @@ pub struct DeleteDataProviderInputBuilder {
 }
 impl DeleteDataProviderInputBuilder {
     /// <p>The identifier of the data provider to delete.</p>
+    /// This field is required.
     pub fn data_provider_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_provider_identifier = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,8 @@ impl DeleteDataProviderInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDataProviderInput`](crate::operation::delete_data_provider::DeleteDataProviderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_data_provider::DeleteDataProviderInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_data_provider::DeleteDataProviderInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_data_provider::DeleteDataProviderInput {
             data_provider_identifier: self.data_provider_identifier,
         })

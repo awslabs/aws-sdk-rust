@@ -24,8 +24,10 @@ impl StartVariantImportJobInput {
         self.role_arn.as_deref()
     }
     /// <p>Items to import.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::VariantImportItemSource]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[crate::types::VariantImportItemSource] {
+        self.items.as_deref().unwrap_or_default()
     }
     /// <p>The job's left normalization setting.</p>
     pub fn run_left_normalization(&self) -> ::std::option::Option<bool> {
@@ -55,6 +57,7 @@ pub struct StartVariantImportJobInputBuilder {
 }
 impl StartVariantImportJobInputBuilder {
     /// <p>The destination variant store for the job.</p>
+    /// This field is required.
     pub fn destination_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +72,7 @@ impl StartVariantImportJobInputBuilder {
         &self.destination_name
     }
     /// <p>A service role for the job.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -146,7 +150,7 @@ impl StartVariantImportJobInputBuilder {
     /// Consumes the builder and constructs a [`StartVariantImportJobInput`](crate::operation::start_variant_import_job::StartVariantImportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_variant_import_job::StartVariantImportJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_variant_import_job::StartVariantImportJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_variant_import_job::StartVariantImportJobInput {
             destination_name: self.destination_name,

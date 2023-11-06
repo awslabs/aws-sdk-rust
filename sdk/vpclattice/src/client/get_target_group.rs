@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetTargetGroup`](crate::operation::get_target_group::builders::GetTargetGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`target_group_identifier(impl Into<String>)`](crate::operation::get_target_group::builders::GetTargetGroupFluentBuilder::target_group_identifier) / [`set_target_group_identifier(Option<String>)`](crate::operation::get_target_group::builders::GetTargetGroupFluentBuilder::set_target_group_identifier): <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
+    ///   - [`target_group_identifier(impl Into<String>)`](crate::operation::get_target_group::builders::GetTargetGroupFluentBuilder::target_group_identifier) / [`set_target_group_identifier(Option<String>)`](crate::operation::get_target_group::builders::GetTargetGroupFluentBuilder::set_target_group_identifier):<br>required: **true**<br><p>The ID or Amazon Resource Name (ARN) of the target group.</p><br>
     /// - On success, responds with [`GetTargetGroupOutput`](crate::operation::get_target_group::GetTargetGroupOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_target_group::GetTargetGroupOutput::id): <p>The ID of the target group.</p>
     ///   - [`arn(Option<String>)`](crate::operation::get_target_group::GetTargetGroupOutput::arn): <p>The Amazon Resource Name (ARN) of the target group.</p>
@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_target_group::GetTargetGroupOutput::created_at): <p>The date and time that the target group was created, specified in ISO-8601 format.</p>
     ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::get_target_group::GetTargetGroupOutput::last_updated_at): <p>The date and time that the target group was last updated, specified in ISO-8601 format.</p>
     ///   - [`status(Option<TargetGroupStatus>)`](crate::operation::get_target_group::GetTargetGroupOutput::status): <p>The status.</p>
-    ///   - [`service_arns(Option<Vec<String>>)`](crate::operation::get_target_group::GetTargetGroupOutput::service_arns): <p>The Amazon Resource Names (ARNs) of the service.</p>
+    ///   - [`service_arns(Option<Vec::<String>>)`](crate::operation::get_target_group::GetTargetGroupOutput::service_arns): <p>The Amazon Resource Names (ARNs) of the service.</p>
     ///   - [`failure_message(Option<String>)`](crate::operation::get_target_group::GetTargetGroupOutput::failure_message): <p>The failure message.</p>
     ///   - [`failure_code(Option<String>)`](crate::operation::get_target_group::GetTargetGroupOutput::failure_code): <p>The failure code.</p>
     /// - On failure, responds with [`SdkError<GetTargetGroupError>`](crate::operation::get_target_group::GetTargetGroupError)

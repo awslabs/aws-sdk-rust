@@ -35,6 +35,7 @@ pub struct ActionTypeArtifactDetailsBuilder {
 }
 impl ActionTypeArtifactDetailsBuilder {
     /// <p>The minimum number of artifacts that can be used with the action type. For example, you should specify a minimum and maximum of zero input artifacts for an action type with a category of <code>source</code>.</p>
+    /// This field is required.
     pub fn minimum_count(mut self, input: i32) -> Self {
         self.minimum_count = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl ActionTypeArtifactDetailsBuilder {
         &self.minimum_count
     }
     /// <p>The maximum number of artifacts that can be used with the actiontype. For example, you should specify a minimum and maximum of zero input artifacts for an action type with a category of <code>source</code>.</p>
+    /// This field is required.
     pub fn maximum_count(mut self, input: i32) -> Self {
         self.maximum_count = ::std::option::Option::Some(input);
         self

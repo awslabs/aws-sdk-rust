@@ -42,6 +42,7 @@ pub struct ListDomainsForPackageInputBuilder {
 }
 impl ListDomainsForPackageInputBuilder {
     /// <p>The unique identifier of the package for which to list associated domains.</p>
+    /// This field is required.
     pub fn package_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_id = ::std::option::Option::Some(input.into());
         self
@@ -86,7 +87,7 @@ impl ListDomainsForPackageInputBuilder {
     /// Consumes the builder and constructs a [`ListDomainsForPackageInput`](crate::operation::list_domains_for_package::ListDomainsForPackageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_domains_for_package::ListDomainsForPackageInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_domains_for_package::ListDomainsForPackageInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_domains_for_package::ListDomainsForPackageInput {
             package_id: self.package_id,

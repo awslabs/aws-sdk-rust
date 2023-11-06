@@ -12,8 +12,10 @@ pub struct ListJobsOutput {
 }
 impl ListJobsOutput {
     /// <p>A list of job objects. Each job object contains metadata describing the job.</p>
-    pub fn job_list(&self) -> ::std::option::Option<&[crate::types::GlacierJobDescription]> {
-        self.job_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_list.is_none()`.
+    pub fn job_list(&self) -> &[crate::types::GlacierJobDescription] {
+        self.job_list.as_deref().unwrap_or_default()
     }
     /// <p> An opaque string used for pagination that specifies the job at which the listing of jobs should begin. You get the <code>marker</code> value from a previous List Jobs response. You only need to include the marker if you are continuing the pagination of the results started in a previous List Jobs request. </p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

@@ -34,6 +34,7 @@ pub struct CancelServiceInstanceDeploymentOutputBuilder {
 }
 impl CancelServiceInstanceDeploymentOutputBuilder {
     /// <p>The service instance summary data that's returned by Proton.</p>
+    /// This field is required.
     pub fn service_instance(mut self, input: crate::types::ServiceInstance) -> Self {
         self.service_instance = ::std::option::Option::Some(input);
         self

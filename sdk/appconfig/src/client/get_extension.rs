@@ -3,16 +3,16 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetExtension`](crate::operation::get_extension::builders::GetExtensionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`extension_identifier(impl Into<String>)`](crate::operation::get_extension::builders::GetExtensionFluentBuilder::extension_identifier) / [`set_extension_identifier(Option<String>)`](crate::operation::get_extension::builders::GetExtensionFluentBuilder::set_extension_identifier): <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
-    ///   - [`version_number(i32)`](crate::operation::get_extension::builders::GetExtensionFluentBuilder::version_number) / [`set_version_number(Option<i32>)`](crate::operation::get_extension::builders::GetExtensionFluentBuilder::set_version_number): <p>The extension version number. If no version number was defined, AppConfig uses the highest version.</p>
+    ///   - [`extension_identifier(impl Into<String>)`](crate::operation::get_extension::builders::GetExtensionFluentBuilder::extension_identifier) / [`set_extension_identifier(Option<String>)`](crate::operation::get_extension::builders::GetExtensionFluentBuilder::set_extension_identifier):<br>required: **true**<br><p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p><br>
+    ///   - [`version_number(i32)`](crate::operation::get_extension::builders::GetExtensionFluentBuilder::version_number) / [`set_version_number(Option<i32>)`](crate::operation::get_extension::builders::GetExtensionFluentBuilder::set_version_number):<br>required: **false**<br><p>The extension version number. If no version number was defined, AppConfig uses the highest version.</p><br>
     /// - On success, responds with [`GetExtensionOutput`](crate::operation::get_extension::GetExtensionOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_extension::GetExtensionOutput::id): <p>The system-generated ID of the extension.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_extension::GetExtensionOutput::name): <p>The extension name.</p>
     ///   - [`version_number(i32)`](crate::operation::get_extension::GetExtensionOutput::version_number): <p>The extension version number.</p>
     ///   - [`arn(Option<String>)`](crate::operation::get_extension::GetExtensionOutput::arn): <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_extension::GetExtensionOutput::description): <p>Information about the extension.</p>
-    ///   - [`actions(Option<HashMap<ActionPoint, Vec<Action>>>)`](crate::operation::get_extension::GetExtensionOutput::actions): <p>The actions defined in the extension.</p>
-    ///   - [`parameters(Option<HashMap<String, Parameter>>)`](crate::operation::get_extension::GetExtensionOutput::parameters): <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
+    ///   - [`actions(Option<HashMap::<ActionPoint, Vec::<Action>>>)`](crate::operation::get_extension::GetExtensionOutput::actions): <p>The actions defined in the extension.</p>
+    ///   - [`parameters(Option<HashMap::<String, Parameter>>)`](crate::operation::get_extension::GetExtensionOutput::parameters): <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
     /// - On failure, responds with [`SdkError<GetExtensionError>`](crate::operation::get_extension::GetExtensionError)
     pub fn get_extension(&self) -> crate::operation::get_extension::builders::GetExtensionFluentBuilder {
         crate::operation::get_extension::builders::GetExtensionFluentBuilder::new(self.handle.clone())

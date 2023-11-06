@@ -2,7 +2,7 @@
 pub fn ser_cloud_watch_encryption(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CloudWatchEncryption,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cloud_watch_encryption_mode {
         object.key("CloudWatchEncryptionMode").string(var_1.as_str());
     }

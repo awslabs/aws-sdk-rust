@@ -11,8 +11,10 @@ pub struct ListDeviceEventsOutput {
 }
 impl ListDeviceEventsOutput {
     /// <p>The device events requested for the device ARN.</p>
-    pub fn device_events(&self) -> ::std::option::Option<&[crate::types::DeviceEvent]> {
-        self.device_events.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.device_events.is_none()`.
+    pub fn device_events(&self) -> &[crate::types::DeviceEvent] {
+        self.device_events.as_deref().unwrap_or_default()
     }
     /// <p>The token returned to indicate that there is more data available.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -44,12 +44,16 @@ impl SearchProfilesInput {
         self.key_name.as_deref()
     }
     /// <p>A list of key values.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
+    pub fn values(&self) -> &[::std::string::String] {
+        self.values.as_deref().unwrap_or_default()
     }
     /// <p>A list of <code>AdditionalSearchKey</code> objects that are each searchable identifiers of a profile. Each <code>AdditionalSearchKey</code> object contains a <code>KeyName</code> and a list of <code>Values</code> associated with that specific key (i.e., a key-value(s) pair). These additional search keys will be used in conjunction with the <code>LogicalOperator</code> and the required <code>KeyName</code> and <code>Values</code> parameters to search for profiles that satisfy the search criteria. </p>
-    pub fn additional_search_keys(&self) -> ::std::option::Option<&[crate::types::AdditionalSearchKey]> {
-        self.additional_search_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_search_keys.is_none()`.
+    pub fn additional_search_keys(&self) -> &[crate::types::AdditionalSearchKey] {
+        self.additional_search_keys.as_deref().unwrap_or_default()
     }
     /// <p>Relationship between all specified search keys that will be used to search for profiles. This includes the required <code>KeyName</code> and <code>Values</code> parameters as well as any key-value(s) pairs specified in the <code>AdditionalSearchKeys</code> list.</p>
     /// <p>This parameter influences which profiles will be returned in the response in the following manner:</p>
@@ -114,6 +118,7 @@ impl SearchProfilesInputBuilder {
         &self.max_results
     }
     /// <p>The unique name of the domain.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -128,6 +133,7 @@ impl SearchProfilesInputBuilder {
         &self.domain_name
     }
     /// <p>A searchable identifier of a customer profile. The predefined keys you can use to search include: _account, _profileId, _assetId, _caseId, _orderId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId, _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId, _shopifyCustomerId, _shopifyOrderId.</p>
+    /// This field is required.
     pub fn key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_name = ::std::option::Option::Some(input.into());
         self
@@ -216,7 +222,7 @@ impl SearchProfilesInputBuilder {
     /// Consumes the builder and constructs a [`SearchProfilesInput`](crate::operation::search_profiles::SearchProfilesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_profiles::SearchProfilesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::search_profiles::SearchProfilesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_profiles::SearchProfilesInput {
             next_token: self.next_token,
             max_results: self.max_results,

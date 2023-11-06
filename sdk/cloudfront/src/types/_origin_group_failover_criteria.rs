@@ -28,6 +28,7 @@ pub struct OriginGroupFailoverCriteriaBuilder {
 }
 impl OriginGroupFailoverCriteriaBuilder {
     /// <p>The status codes that, when returned from the primary origin, will trigger CloudFront to failover to the second origin.</p>
+    /// This field is required.
     pub fn status_codes(mut self, input: crate::types::StatusCodes) -> Self {
         self.status_codes = ::std::option::Option::Some(input);
         self

@@ -55,6 +55,7 @@ pub struct RevokeClientVpnIngressInputBuilder {
 }
 impl RevokeClientVpnIngressInputBuilder {
     /// <p>The ID of the Client VPN endpoint with which the authorization rule is associated.</p>
+    /// This field is required.
     pub fn client_vpn_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_vpn_endpoint_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl RevokeClientVpnIngressInputBuilder {
         &self.client_vpn_endpoint_id
     }
     /// <p>The IPv4 address range, in CIDR notation, of the network for which access is being removed.</p>
+    /// This field is required.
     pub fn target_network_cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_network_cidr = ::std::option::Option::Some(input.into());
         self
@@ -129,7 +131,7 @@ impl RevokeClientVpnIngressInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressInput {
             client_vpn_endpoint_id: self.client_vpn_endpoint_id,

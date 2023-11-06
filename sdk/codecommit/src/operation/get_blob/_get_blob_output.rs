@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBlobOutput {
     /// <p>The content of the blob, usually a file.</p>
-    pub content: ::std::option::Option<::aws_smithy_types::Blob>,
+    pub content: ::aws_smithy_types::Blob,
     _request_id: Option<String>,
 }
 impl GetBlobOutput {
     /// <p>The content of the blob, usually a file.</p>
-    pub fn content(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
-        self.content.as_ref()
+    pub fn content(&self) -> &::aws_smithy_types::Blob {
+        &self.content
     }
 }
 impl ::aws_http::request_id::RequestId for GetBlobOutput {
@@ -35,6 +35,7 @@ pub struct GetBlobOutputBuilder {
 }
 impl GetBlobOutputBuilder {
     /// <p>The content of the blob, usually a file.</p>
+    /// This field is required.
     pub fn content(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.content = ::std::option::Option::Some(input);
         self
@@ -58,10 +59,17 @@ impl GetBlobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetBlobOutput`](crate::operation::get_blob::GetBlobOutput).
-    pub fn build(self) -> crate::operation::get_blob::GetBlobOutput {
-        crate::operation::get_blob::GetBlobOutput {
-            content: self.content,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`content`](crate::operation::get_blob::builders::GetBlobOutputBuilder::content)
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_blob::GetBlobOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_blob::GetBlobOutput {
+            content: self.content.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "content",
+                    "content was not specified but it is required when building GetBlobOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

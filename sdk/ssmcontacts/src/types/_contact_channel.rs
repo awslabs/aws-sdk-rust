@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContactChannel {
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
-    pub contact_channel_arn: ::std::option::Option<::std::string::String>,
+    pub contact_channel_arn: ::std::string::String,
     /// <p>The ARN of the contact that contains the contact channel.</p>
-    pub contact_arn: ::std::option::Option<::std::string::String>,
+    pub contact_arn: ::std::string::String,
     /// <p>The name of the contact channel.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The type of the contact channel. Incident Manager supports three contact methods:</p>
     /// <ul>
     /// <li> <p>SMS</p> </li>
@@ -20,20 +20,23 @@ pub struct ContactChannel {
     /// <p>The details that Incident Manager uses when trying to engage the contact channel.</p>
     pub delivery_address: ::std::option::Option<crate::types::ContactChannelAddress>,
     /// <p>A Boolean value describing if the contact channel has been activated or not. If the contact channel isn't activated, Incident Manager can't engage the contact through it.</p>
-    pub activation_status: ::std::option::Option<crate::types::ActivationStatus>,
+    pub activation_status: crate::types::ActivationStatus,
 }
 impl ContactChannel {
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
-    pub fn contact_channel_arn(&self) -> ::std::option::Option<&str> {
-        self.contact_channel_arn.as_deref()
+    pub fn contact_channel_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.contact_channel_arn.deref()
     }
     /// <p>The ARN of the contact that contains the contact channel.</p>
-    pub fn contact_arn(&self) -> ::std::option::Option<&str> {
-        self.contact_arn.as_deref()
+    pub fn contact_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.contact_arn.deref()
     }
     /// <p>The name of the contact channel.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The type of the contact channel. Incident Manager supports three contact methods:</p>
     /// <ul>
@@ -49,8 +52,8 @@ impl ContactChannel {
         self.delivery_address.as_ref()
     }
     /// <p>A Boolean value describing if the contact channel has been activated or not. If the contact channel isn't activated, Incident Manager can't engage the contact through it.</p>
-    pub fn activation_status(&self) -> ::std::option::Option<&crate::types::ActivationStatus> {
-        self.activation_status.as_ref()
+    pub fn activation_status(&self) -> &crate::types::ActivationStatus {
+        &self.activation_status
     }
 }
 impl ContactChannel {
@@ -73,6 +76,7 @@ pub struct ContactChannelBuilder {
 }
 impl ContactChannelBuilder {
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
+    /// This field is required.
     pub fn contact_channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_channel_arn = ::std::option::Option::Some(input.into());
         self
@@ -87,6 +91,7 @@ impl ContactChannelBuilder {
         &self.contact_channel_arn
     }
     /// <p>The ARN of the contact that contains the contact channel.</p>
+    /// This field is required.
     pub fn contact_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_arn = ::std::option::Option::Some(input.into());
         self
@@ -101,6 +106,7 @@ impl ContactChannelBuilder {
         &self.contact_arn
     }
     /// <p>The name of the contact channel.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -144,6 +150,7 @@ impl ContactChannelBuilder {
         &self.r#type
     }
     /// <p>The details that Incident Manager uses when trying to engage the contact channel.</p>
+    /// This field is required.
     pub fn delivery_address(mut self, input: crate::types::ContactChannelAddress) -> Self {
         self.delivery_address = ::std::option::Option::Some(input);
         self
@@ -158,6 +165,7 @@ impl ContactChannelBuilder {
         &self.delivery_address
     }
     /// <p>A Boolean value describing if the contact channel has been activated or not. If the contact channel isn't activated, Incident Manager can't engage the contact through it.</p>
+    /// This field is required.
     pub fn activation_status(mut self, input: crate::types::ActivationStatus) -> Self {
         self.activation_status = ::std::option::Option::Some(input);
         self
@@ -172,14 +180,39 @@ impl ContactChannelBuilder {
         &self.activation_status
     }
     /// Consumes the builder and constructs a [`ContactChannel`](crate::types::ContactChannel).
-    pub fn build(self) -> crate::types::ContactChannel {
-        crate::types::ContactChannel {
-            contact_channel_arn: self.contact_channel_arn,
-            contact_arn: self.contact_arn,
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`contact_channel_arn`](crate::types::builders::ContactChannelBuilder::contact_channel_arn)
+    /// - [`contact_arn`](crate::types::builders::ContactChannelBuilder::contact_arn)
+    /// - [`name`](crate::types::builders::ContactChannelBuilder::name)
+    /// - [`activation_status`](crate::types::builders::ContactChannelBuilder::activation_status)
+    pub fn build(self) -> ::std::result::Result<crate::types::ContactChannel, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ContactChannel {
+            contact_channel_arn: self.contact_channel_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "contact_channel_arn",
+                    "contact_channel_arn was not specified but it is required when building ContactChannel",
+                )
+            })?,
+            contact_arn: self.contact_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "contact_arn",
+                    "contact_arn was not specified but it is required when building ContactChannel",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ContactChannel",
+                )
+            })?,
             r#type: self.r#type,
             delivery_address: self.delivery_address,
-            activation_status: self.activation_status,
-        }
+            activation_status: self.activation_status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "activation_status",
+                    "activation_status was not specified but it is required when building ContactChannel",
+                )
+            })?,
+        })
     }
 }

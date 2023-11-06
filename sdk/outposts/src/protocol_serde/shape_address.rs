@@ -2,39 +2,39 @@
 pub fn ser_address(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Address,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.contact_name {
         object.key("ContactName").string(var_1.as_str());
     }
     if let Some(var_2) = &input.contact_phone_number {
         object.key("ContactPhoneNumber").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.address_line1 {
-        object.key("AddressLine1").string(var_3.as_str());
+    {
+        object.key("AddressLine1").string(input.address_line1.as_str());
     }
-    if let Some(var_4) = &input.address_line2 {
-        object.key("AddressLine2").string(var_4.as_str());
+    if let Some(var_3) = &input.address_line2 {
+        object.key("AddressLine2").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.address_line3 {
-        object.key("AddressLine3").string(var_5.as_str());
+    if let Some(var_4) = &input.address_line3 {
+        object.key("AddressLine3").string(var_4.as_str());
     }
-    if let Some(var_6) = &input.city {
-        object.key("City").string(var_6.as_str());
+    {
+        object.key("City").string(input.city.as_str());
     }
-    if let Some(var_7) = &input.state_or_region {
-        object.key("StateOrRegion").string(var_7.as_str());
+    {
+        object.key("StateOrRegion").string(input.state_or_region.as_str());
     }
-    if let Some(var_8) = &input.district_or_county {
-        object.key("DistrictOrCounty").string(var_8.as_str());
+    if let Some(var_5) = &input.district_or_county {
+        object.key("DistrictOrCounty").string(var_5.as_str());
     }
-    if let Some(var_9) = &input.postal_code {
-        object.key("PostalCode").string(var_9.as_str());
+    {
+        object.key("PostalCode").string(input.postal_code.as_str());
     }
-    if let Some(var_10) = &input.country_code {
-        object.key("CountryCode").string(var_10.as_str());
+    {
+        object.key("CountryCode").string(input.country_code.as_str());
     }
-    if let Some(var_11) = &input.municipality {
-        object.key("Municipality").string(var_11.as_str());
+    if let Some(var_6) = &input.municipality {
+        object.key("Municipality").string(var_6.as_str());
     }
     Ok(())
 }
@@ -141,7 +141,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::address_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

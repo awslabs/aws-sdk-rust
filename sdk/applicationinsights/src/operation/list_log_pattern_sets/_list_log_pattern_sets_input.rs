@@ -48,6 +48,7 @@ pub struct ListLogPatternSetsInputBuilder {
 }
 impl ListLogPatternSetsInputBuilder {
     /// <p>The name of the resource group.</p>
+    /// This field is required.
     pub fn resource_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_group_name = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,7 @@ impl ListLogPatternSetsInputBuilder {
     /// Consumes the builder and constructs a [`ListLogPatternSetsInput`](crate::operation::list_log_pattern_sets::ListLogPatternSetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_log_pattern_sets::ListLogPatternSetsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_log_pattern_sets::ListLogPatternSetsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_log_pattern_sets::ListLogPatternSetsInput {
             resource_group_name: self.resource_group_name,

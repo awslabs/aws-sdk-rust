@@ -28,6 +28,7 @@ pub struct BatchInferenceJobOutputBuilder {
 }
 impl BatchInferenceJobOutputBuilder {
     /// <p>Information on the Amazon S3 bucket in which the batch inference job's output is stored.</p>
+    /// This field is required.
     pub fn s3_data_destination(mut self, input: crate::types::S3DataConfig) -> Self {
         self.s3_data_destination = ::std::option::Option::Some(input);
         self

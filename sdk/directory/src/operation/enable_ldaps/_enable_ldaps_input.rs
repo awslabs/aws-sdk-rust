@@ -34,6 +34,7 @@ pub struct EnableLdapsInputBuilder {
 }
 impl EnableLdapsInputBuilder {
     /// <p>The identifier of the directory.</p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl EnableLdapsInputBuilder {
         &self.directory_id
     }
     /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::LdapsType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -62,7 +64,7 @@ impl EnableLdapsInputBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`EnableLdapsInput`](crate::operation::enable_ldaps::EnableLdapsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::enable_ldaps::EnableLdapsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::enable_ldaps::EnableLdapsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::enable_ldaps::EnableLdapsInput {
             directory_id: self.directory_id,
             r#type: self.r#type,

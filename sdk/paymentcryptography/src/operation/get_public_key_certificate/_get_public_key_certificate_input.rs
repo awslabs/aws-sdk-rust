@@ -27,6 +27,7 @@ pub struct GetPublicKeyCertificateInputBuilder {
 }
 impl GetPublicKeyCertificateInputBuilder {
     /// <p>The <code>KeyARN</code> of the asymmetric key pair.</p>
+    /// This field is required.
     pub fn key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_identifier = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetPublicKeyCertificateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_public_key_certificate::GetPublicKeyCertificateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_public_key_certificate::GetPublicKeyCertificateInput {
             key_identifier: self.key_identifier,

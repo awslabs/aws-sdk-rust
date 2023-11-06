@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTemplateStepsInput {
     /// <p>The maximum number of results that can be returned.</p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>The pagination token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the template.</p>
@@ -14,7 +14,7 @@ pub struct ListTemplateStepsInput {
 }
 impl ListTemplateStepsInput {
     /// <p>The maximum number of results that can be returned.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The pagination token.</p>
@@ -76,6 +76,7 @@ impl ListTemplateStepsInputBuilder {
         &self.next_token
     }
     /// <p>The ID of the template.</p>
+    /// This field is required.
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +91,7 @@ impl ListTemplateStepsInputBuilder {
         &self.template_id
     }
     /// <p>The ID of the step group.</p>
+    /// This field is required.
     pub fn step_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.step_group_id = ::std::option::Option::Some(input.into());
         self
@@ -106,9 +108,9 @@ impl ListTemplateStepsInputBuilder {
     /// Consumes the builder and constructs a [`ListTemplateStepsInput`](crate::operation::list_template_steps::ListTemplateStepsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_template_steps::ListTemplateStepsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_template_steps::ListTemplateStepsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_template_steps::ListTemplateStepsInput {
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
             template_id: self.template_id,
             step_group_id: self.step_group_id,

@@ -13,12 +13,16 @@ pub struct AddTagsToOnPremisesInstancesInput {
 impl AddTagsToOnPremisesInstancesInput {
     /// <p>The tag key-value pairs to add to the on-premises instances.</p>
     /// <p>Keys and values are both required. Keys cannot be null or empty strings. Value-only tags are not allowed.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The names of the on-premises instances to which to add tags.</p>
-    pub fn instance_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.instance_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_names.is_none()`.
+    pub fn instance_names(&self) -> &[::std::string::String] {
+        self.instance_names.as_deref().unwrap_or_default()
     }
 }
 impl AddTagsToOnPremisesInstancesInput {
@@ -84,7 +88,7 @@ impl AddTagsToOnPremisesInstancesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_tags_to_on_premises_instances::AddTagsToOnPremisesInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::add_tags_to_on_premises_instances::AddTagsToOnPremisesInstancesInput {
             tags: self.tags,

@@ -41,6 +41,7 @@ pub struct DescribeDetectorInputBuilder {
 }
 impl DescribeDetectorInputBuilder {
     /// <p>The detector ID.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl DescribeDetectorInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDetectorInput`](crate::operation::describe_detector::DescribeDetectorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_detector::DescribeDetectorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_detector::DescribeDetectorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_detector::DescribeDetectorInput {
             detector_id: self.detector_id,
             next_token: self.next_token,

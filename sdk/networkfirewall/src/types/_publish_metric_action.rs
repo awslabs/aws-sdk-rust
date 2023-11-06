@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PublishMetricAction {
     /// <p></p>
-    pub dimensions: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
+    pub dimensions: ::std::vec::Vec<crate::types::Dimension>,
 }
 impl PublishMetricAction {
     /// <p></p>
-    pub fn dimensions(&self) -> ::std::option::Option<&[crate::types::Dimension]> {
-        self.dimensions.as_deref()
+    pub fn dimensions(&self) -> &[crate::types::Dimension] {
+        use std::ops::Deref;
+        self.dimensions.deref()
     }
 }
 impl PublishMetricAction {
@@ -48,7 +49,16 @@ impl PublishMetricActionBuilder {
         &self.dimensions
     }
     /// Consumes the builder and constructs a [`PublishMetricAction`](crate::types::PublishMetricAction).
-    pub fn build(self) -> crate::types::PublishMetricAction {
-        crate::types::PublishMetricAction { dimensions: self.dimensions }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`dimensions`](crate::types::builders::PublishMetricActionBuilder::dimensions)
+    pub fn build(self) -> ::std::result::Result<crate::types::PublishMetricAction, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PublishMetricAction {
+            dimensions: self.dimensions.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "dimensions",
+                    "dimensions was not specified but it is required when building PublishMetricAction",
+                )
+            })?,
+        })
     }
 }

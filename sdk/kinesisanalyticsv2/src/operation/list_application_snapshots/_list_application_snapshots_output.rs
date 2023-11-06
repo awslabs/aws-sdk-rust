@@ -11,8 +11,10 @@ pub struct ListApplicationSnapshotsOutput {
 }
 impl ListApplicationSnapshotsOutput {
     /// <p>A collection of objects containing information about the application snapshots.</p>
-    pub fn snapshot_summaries(&self) -> ::std::option::Option<&[crate::types::SnapshotDetails]> {
-        self.snapshot_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.snapshot_summaries.is_none()`.
+    pub fn snapshot_summaries(&self) -> &[crate::types::SnapshotDetails] {
+        self.snapshot_summaries.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

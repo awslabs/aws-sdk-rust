@@ -64,6 +64,7 @@ pub struct CreateApplicationVersionInputBuilder {
 }
 impl CreateApplicationVersionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -78,6 +79,7 @@ impl CreateApplicationVersionInputBuilder {
         &self.application_id
     }
     /// <p>The semantic version of the new version.</p>
+    /// This field is required.
     pub fn semantic_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.semantic_version = ::std::option::Option::Some(input.into());
         self
@@ -155,7 +157,7 @@ impl CreateApplicationVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_application_version::CreateApplicationVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_application_version::CreateApplicationVersionInput {
             application_id: self.application_id,

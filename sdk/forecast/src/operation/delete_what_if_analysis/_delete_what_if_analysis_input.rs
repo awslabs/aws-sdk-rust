@@ -27,6 +27,7 @@ pub struct DeleteWhatIfAnalysisInputBuilder {
 }
 impl DeleteWhatIfAnalysisInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the what-if analysis that you want to delete.</p>
+    /// This field is required.
     pub fn what_if_analysis_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.what_if_analysis_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteWhatIfAnalysisInputBuilder {
     /// Consumes the builder and constructs a [`DeleteWhatIfAnalysisInput`](crate::operation::delete_what_if_analysis::DeleteWhatIfAnalysisInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_what_if_analysis::DeleteWhatIfAnalysisInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_what_if_analysis::DeleteWhatIfAnalysisInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_what_if_analysis::DeleteWhatIfAnalysisInput {
             what_if_analysis_arn: self.what_if_analysis_arn,

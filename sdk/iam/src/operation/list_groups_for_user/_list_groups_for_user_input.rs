@@ -46,6 +46,7 @@ pub struct ListGroupsForUserInputBuilder {
 impl ListGroupsForUserInputBuilder {
     /// <p>The name of the user to list groups for.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// This field is required.
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self
@@ -95,7 +96,7 @@ impl ListGroupsForUserInputBuilder {
     /// Consumes the builder and constructs a [`ListGroupsForUserInput`](crate::operation::list_groups_for_user::ListGroupsForUserInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_groups_for_user::ListGroupsForUserInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_groups_for_user::ListGroupsForUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_groups_for_user::ListGroupsForUserInput {
             user_name: self.user_name,
             marker: self.marker,

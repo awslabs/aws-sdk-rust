@@ -85,28 +85,21 @@ pub(crate) mod shape_unshare_application_input;
 
 pub(crate) mod shape_update_application_input;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of__string;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_application_dependency_summary;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_application_policy_statement;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_application_summary;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_capability;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_parameter_definition;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_version_summary;
-
 pub(crate) mod shape_application_policy_statement;
+
+pub(crate) mod shape_list_of_application_dependency_summary;
+
+pub(crate) mod shape_list_of_application_policy_statement;
+
+pub(crate) mod shape_list_of_application_summary;
+
+pub(crate) mod shape_list_of_capability;
+
+pub(crate) mod shape_list_of_parameter_definition;
+
+pub(crate) mod shape_list_of_string;
+
+pub(crate) mod shape_list_of_version_summary;
 
 pub(crate) mod shape_parameter_value;
 

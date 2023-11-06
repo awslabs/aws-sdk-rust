@@ -27,6 +27,7 @@ pub struct GetResolverDnssecConfigInputBuilder {
 }
 impl GetResolverDnssecConfigInputBuilder {
     /// <p>The ID of the virtual private cloud (VPC) for the DNSSEC validation status.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetResolverDnssecConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigInput {
             resource_id: self.resource_id,

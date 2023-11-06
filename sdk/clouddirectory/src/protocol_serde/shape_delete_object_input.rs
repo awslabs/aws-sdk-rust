@@ -2,7 +2,7 @@
 pub fn ser_delete_object_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_object::DeleteObjectInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.object_reference {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ObjectReference").start_object();

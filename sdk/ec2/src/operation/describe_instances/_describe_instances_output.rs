@@ -11,8 +11,10 @@ pub struct DescribeInstancesOutput {
 }
 impl DescribeInstancesOutput {
     /// <p>Information about the reservations.</p>
-    pub fn reservations(&self) -> ::std::option::Option<&[crate::types::Reservation]> {
-        self.reservations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reservations.is_none()`.
+    pub fn reservations(&self) -> &[crate::types::Reservation] {
+        self.reservations.as_deref().unwrap_or_default()
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

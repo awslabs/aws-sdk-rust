@@ -27,6 +27,7 @@ pub struct GetLoadBalancerTlsCertificatesInputBuilder {
 }
 impl GetLoadBalancerTlsCertificatesInputBuilder {
     /// <p>The name of the load balancer you associated with your SSL/TLS certificate.</p>
+    /// This field is required.
     pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetLoadBalancerTlsCertificatesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_load_balancer_tls_certificates::GetLoadBalancerTlsCertificatesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_load_balancer_tls_certificates::GetLoadBalancerTlsCertificatesInput {

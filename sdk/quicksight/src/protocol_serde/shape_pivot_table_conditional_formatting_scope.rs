@@ -2,7 +2,7 @@
 pub fn ser_pivot_table_conditional_formatting_scope(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PivotTableConditionalFormattingScope,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.role {
         object.key("Role").string(var_1.as_str());
     }

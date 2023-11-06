@@ -42,6 +42,7 @@ pub struct ConfigurationRevisionBuilder {
 }
 impl ConfigurationRevisionBuilder {
     /// <p>The time when the configuration revision was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -70,6 +71,7 @@ impl ConfigurationRevisionBuilder {
         &self.description
     }
     /// <p>The revision number.</p>
+    /// This field is required.
     pub fn revision(mut self, input: i64) -> Self {
         self.revision = ::std::option::Option::Some(input);
         self

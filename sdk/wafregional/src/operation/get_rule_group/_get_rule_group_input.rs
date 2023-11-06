@@ -27,6 +27,7 @@ pub struct GetRuleGroupInputBuilder {
 }
 impl GetRuleGroupInputBuilder {
     /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to get. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
+    /// This field is required.
     pub fn rule_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_group_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetRuleGroupInputBuilder {
     /// Consumes the builder and constructs a [`GetRuleGroupInput`](crate::operation::get_rule_group::GetRuleGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_rule_group::GetRuleGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_rule_group::GetRuleGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_rule_group::GetRuleGroupInput {
             rule_group_id: self.rule_group_id,
         })

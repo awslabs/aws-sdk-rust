@@ -27,6 +27,7 @@ pub struct DeleteMediaPipelineInputBuilder {
 }
 impl DeleteMediaPipelineInputBuilder {
     /// <p>The ID of the media pipeline to delete.</p>
+    /// This field is required.
     pub fn media_pipeline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.media_pipeline_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteMediaPipelineInputBuilder {
     /// Consumes the builder and constructs a [`DeleteMediaPipelineInput`](crate::operation::delete_media_pipeline::DeleteMediaPipelineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_media_pipeline::DeleteMediaPipelineInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_media_pipeline::DeleteMediaPipelineInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_media_pipeline::DeleteMediaPipelineInput {
             media_pipeline_id: self.media_pipeline_id,

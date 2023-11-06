@@ -86,6 +86,7 @@ impl MessageResultBuilder {
     /// <li><p>TIMEOUT - The message couldn't be sent within the timeout period.</p></li>
     /// <li><p>UNKNOWN_FAILURE - An unknown error occurred.</p></li>
     /// </ul>
+    /// This field is required.
     pub fn delivery_status(mut self, input: crate::types::DeliveryStatus) -> Self {
         self.delivery_status = ::std::option::Option::Some(input);
         self
@@ -134,6 +135,7 @@ impl MessageResultBuilder {
         &self.message_id
     }
     /// <p>The downstream service status code for delivering the message.</p>
+    /// This field is required.
     pub fn status_code(mut self, input: i32) -> Self {
         self.status_code = ::std::option::Option::Some(input);
         self

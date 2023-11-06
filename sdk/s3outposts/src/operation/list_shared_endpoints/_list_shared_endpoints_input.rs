@@ -69,6 +69,7 @@ impl ListSharedEndpointsInputBuilder {
         &self.max_results
     }
     /// <p>The ID of the Amazon Web Services Outpost.</p>
+    /// This field is required.
     pub fn outpost_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outpost_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl ListSharedEndpointsInputBuilder {
     /// Consumes the builder and constructs a [`ListSharedEndpointsInput`](crate::operation::list_shared_endpoints::ListSharedEndpointsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_shared_endpoints::ListSharedEndpointsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_shared_endpoints::ListSharedEndpointsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_shared_endpoints::ListSharedEndpointsInput {
             next_token: self.next_token,

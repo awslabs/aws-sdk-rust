@@ -11,12 +11,16 @@ pub struct BatchDescribeSimulationJobOutput {
 }
 impl BatchDescribeSimulationJobOutput {
     /// <p>A list of simulation jobs.</p>
-    pub fn jobs(&self) -> ::std::option::Option<&[crate::types::SimulationJob]> {
-        self.jobs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.jobs.is_none()`.
+    pub fn jobs(&self) -> &[crate::types::SimulationJob] {
+        self.jobs.as_deref().unwrap_or_default()
     }
     /// <p>A list of unprocessed simulation job Amazon Resource Names (ARNs).</p>
-    pub fn unprocessed_jobs(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.unprocessed_jobs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unprocessed_jobs.is_none()`.
+    pub fn unprocessed_jobs(&self) -> &[::std::string::String] {
+        self.unprocessed_jobs.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchDescribeSimulationJobOutput {

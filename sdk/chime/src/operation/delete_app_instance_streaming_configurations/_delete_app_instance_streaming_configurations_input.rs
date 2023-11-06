@@ -28,6 +28,7 @@ pub struct DeleteAppInstanceStreamingConfigurationsInputBuilder {
 }
 impl DeleteAppInstanceStreamingConfigurationsInputBuilder {
     /// <p>The ARN of the streaming configurations being deleted.</p>
+    /// This field is required.
     pub fn app_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_arn = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl DeleteAppInstanceStreamingConfigurationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_app_instance_streaming_configurations::DeleteAppInstanceStreamingConfigurationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_app_instance_streaming_configurations::DeleteAppInstanceStreamingConfigurationsInput {

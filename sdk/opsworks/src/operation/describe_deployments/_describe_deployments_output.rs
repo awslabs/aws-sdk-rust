@@ -10,8 +10,10 @@ pub struct DescribeDeploymentsOutput {
 }
 impl DescribeDeploymentsOutput {
     /// <p>An array of <code>Deployment</code> objects that describe the deployments.</p>
-    pub fn deployments(&self) -> ::std::option::Option<&[crate::types::Deployment]> {
-        self.deployments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.deployments.is_none()`.
+    pub fn deployments(&self) -> &[crate::types::Deployment] {
+        self.deployments.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeDeploymentsOutput {

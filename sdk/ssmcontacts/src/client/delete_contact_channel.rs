@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteContactChannel`](crate::operation::delete_contact_channel::builders::DeleteContactChannelFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`contact_channel_id(impl Into<String>)`](crate::operation::delete_contact_channel::builders::DeleteContactChannelFluentBuilder::contact_channel_id) / [`set_contact_channel_id(Option<String>)`](crate::operation::delete_contact_channel::builders::DeleteContactChannelFluentBuilder::set_contact_channel_id): <p>The Amazon Resource Name (ARN) of the contact channel.</p>
+    ///   - [`contact_channel_id(impl Into<String>)`](crate::operation::delete_contact_channel::builders::DeleteContactChannelFluentBuilder::contact_channel_id) / [`set_contact_channel_id(Option<String>)`](crate::operation::delete_contact_channel::builders::DeleteContactChannelFluentBuilder::set_contact_channel_id):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the contact channel.</p><br>
     /// - On success, responds with [`DeleteContactChannelOutput`](crate::operation::delete_contact_channel::DeleteContactChannelOutput)
     /// - On failure, responds with [`SdkError<DeleteContactChannelError>`](crate::operation::delete_contact_channel::DeleteContactChannelError)
     pub fn delete_contact_channel(&self) -> crate::operation::delete_contact_channel::builders::DeleteContactChannelFluentBuilder {

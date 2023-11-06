@@ -53,8 +53,10 @@ impl Endpoint {
         self.replication_config.as_ref()
     }
     /// <p>The event buses being used by the endpoint.</p>
-    pub fn event_buses(&self) -> ::std::option::Option<&[crate::types::EndpointEventBus]> {
-        self.event_buses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_buses.is_none()`.
+    pub fn event_buses(&self) -> &[crate::types::EndpointEventBus] {
+        self.event_buses.as_deref().unwrap_or_default()
     }
     /// <p>The ARN of the role used by event replication for the endpoint.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {

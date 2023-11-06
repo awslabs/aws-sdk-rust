@@ -27,6 +27,7 @@ pub struct DeleteFirewallRuleGroupInputBuilder {
 }
 impl DeleteFirewallRuleGroupInputBuilder {
     /// <p>The unique identifier of the firewall rule group that you want to delete. </p>
+    /// This field is required.
     pub fn firewall_rule_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_rule_group_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteFirewallRuleGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_firewall_rule_group::DeleteFirewallRuleGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_firewall_rule_group::DeleteFirewallRuleGroupInput {
             firewall_rule_group_id: self.firewall_rule_group_id,

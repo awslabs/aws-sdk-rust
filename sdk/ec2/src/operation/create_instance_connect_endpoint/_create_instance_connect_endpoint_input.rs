@@ -31,8 +31,10 @@ impl CreateInstanceConnectEndpointInput {
         self.subnet_id.as_deref()
     }
     /// <p>One or more security groups to associate with the endpoint. If you don't specify a security group, the default security group for your VPC will be associated with the endpoint.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether your client's IP address is preserved as the source. The value is <code>true</code> or <code>false</code>.</p>
     /// <ul>
@@ -48,8 +50,10 @@ impl CreateInstanceConnectEndpointInput {
         self.client_token.as_deref()
     }
     /// <p>The tags to apply to the EC2 Instance Connect Endpoint during creation.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
 }
 impl CreateInstanceConnectEndpointInput {
@@ -86,6 +90,7 @@ impl CreateInstanceConnectEndpointInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the subnet in which to create the EC2 Instance Connect Endpoint.</p>
+    /// This field is required.
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
         self
@@ -187,7 +192,7 @@ impl CreateInstanceConnectEndpointInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_instance_connect_endpoint::CreateInstanceConnectEndpointInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_instance_connect_endpoint::CreateInstanceConnectEndpointInput {
             dry_run: self.dry_run,

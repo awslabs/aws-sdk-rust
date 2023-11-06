@@ -20,8 +20,10 @@ impl CreateHumanTaskUiInput {
         self.ui_template.as_ref()
     }
     /// <p>An array of key-value pairs that contain metadata to help you categorize and organize a human review workflow user interface. Each tag consists of a key and a value, both of which you define.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateHumanTaskUiInput {
@@ -41,6 +43,7 @@ pub struct CreateHumanTaskUiInputBuilder {
 }
 impl CreateHumanTaskUiInputBuilder {
     /// <p>The name of the user interface you are creating.</p>
+    /// This field is required.
     pub fn human_task_ui_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.human_task_ui_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl CreateHumanTaskUiInputBuilder {
         &self.human_task_ui_name
     }
     /// <p>The Liquid template for the worker user interface.</p>
+    /// This field is required.
     pub fn ui_template(mut self, input: crate::types::UiTemplate) -> Self {
         self.ui_template = ::std::option::Option::Some(input);
         self
@@ -91,7 +95,7 @@ impl CreateHumanTaskUiInputBuilder {
     /// Consumes the builder and constructs a [`CreateHumanTaskUiInput`](crate::operation::create_human_task_ui::CreateHumanTaskUiInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_human_task_ui::CreateHumanTaskUiInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_human_task_ui::CreateHumanTaskUiInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_human_task_ui::CreateHumanTaskUiInput {
             human_task_ui_name: self.human_task_ui_name,
             ui_template: self.ui_template,

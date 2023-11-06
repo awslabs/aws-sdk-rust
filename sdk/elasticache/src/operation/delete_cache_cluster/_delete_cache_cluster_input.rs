@@ -35,6 +35,7 @@ pub struct DeleteCacheClusterInputBuilder {
 }
 impl DeleteCacheClusterInputBuilder {
     /// <p>The cluster identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
+    /// This field is required.
     pub fn cache_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_cluster_id = ::std::option::Option::Some(input.into());
         self
@@ -65,7 +66,8 @@ impl DeleteCacheClusterInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCacheClusterInput`](crate::operation::delete_cache_cluster::DeleteCacheClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_cache_cluster::DeleteCacheClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_cache_cluster::DeleteCacheClusterInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_cache_cluster::DeleteCacheClusterInput {
             cache_cluster_id: self.cache_cluster_id,
             final_snapshot_identifier: self.final_snapshot_identifier,

@@ -34,6 +34,7 @@ pub struct UpdateOrganizationConfigurationInputBuilder {
 }
 impl UpdateOrganizationConfigurationInputBuilder {
     /// <p>The ARN of the organization behavior graph.</p>
+    /// This field is required.
     pub fn graph_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.graph_arn = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl UpdateOrganizationConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_organization_configuration::UpdateOrganizationConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_organization_configuration::UpdateOrganizationConfigurationInput {

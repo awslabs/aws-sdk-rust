@@ -2,7 +2,7 @@
 pub fn ser_vpc_info_ipv6_cidr_block_set_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VpcInfoIpv6CidrBlockSetDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ipv6_cidr_block {
         object.key("Ipv6CidrBlock").string(var_1.as_str());
     }

@@ -27,6 +27,7 @@ pub struct GetInstanceProfileInputBuilder {
 }
 impl GetInstanceProfileInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of an instance profile.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,8 @@ impl GetInstanceProfileInputBuilder {
     /// Consumes the builder and constructs a [`GetInstanceProfileInput`](crate::operation::get_instance_profile::GetInstanceProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_instance_profile::GetInstanceProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_instance_profile::GetInstanceProfileInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_instance_profile::GetInstanceProfileInput { arn: self.arn })
     }
 }

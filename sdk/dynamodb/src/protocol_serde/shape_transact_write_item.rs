@@ -2,7 +2,7 @@
 pub fn ser_transact_write_item(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TransactWriteItem,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.condition_check {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ConditionCheck").start_object();

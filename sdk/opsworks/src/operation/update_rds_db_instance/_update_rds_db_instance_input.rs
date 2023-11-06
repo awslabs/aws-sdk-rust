@@ -41,6 +41,7 @@ pub struct UpdateRdsDbInstanceInputBuilder {
 }
 impl UpdateRdsDbInstanceInputBuilder {
     /// <p>The Amazon RDS instance's ARN.</p>
+    /// This field is required.
     pub fn rds_db_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rds_db_instance_arn = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl UpdateRdsDbInstanceInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRdsDbInstanceInput`](crate::operation::update_rds_db_instance::UpdateRdsDbInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_rds_db_instance::UpdateRdsDbInstanceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_rds_db_instance::UpdateRdsDbInstanceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_rds_db_instance::UpdateRdsDbInstanceInput {
             rds_db_instance_arn: self.rds_db_instance_arn,

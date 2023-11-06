@@ -36,6 +36,7 @@ pub struct DeleteDeliveryStreamInputBuilder {
 }
 impl DeleteDeliveryStreamInputBuilder {
     /// <p>The name of the delivery stream.</p>
+    /// This field is required.
     pub fn delivery_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delivery_stream_name = ::std::option::Option::Some(input.into());
         self
@@ -69,7 +70,7 @@ impl DeleteDeliveryStreamInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDeliveryStreamInput`](crate::operation::delete_delivery_stream::DeleteDeliveryStreamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_delivery_stream::DeleteDeliveryStreamInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_delivery_stream::DeleteDeliveryStreamInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_delivery_stream::DeleteDeliveryStreamInput {
             delivery_stream_name: self.delivery_stream_name,

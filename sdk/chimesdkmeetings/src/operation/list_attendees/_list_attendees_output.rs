@@ -11,8 +11,10 @@ pub struct ListAttendeesOutput {
 }
 impl ListAttendeesOutput {
     /// <p>The Amazon Chime SDK attendee information.</p>
-    pub fn attendees(&self) -> ::std::option::Option<&[crate::types::Attendee]> {
-        self.attendees.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attendees.is_none()`.
+    pub fn attendees(&self) -> &[crate::types::Attendee] {
+        self.attendees.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

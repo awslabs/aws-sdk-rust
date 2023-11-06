@@ -118,18 +118,20 @@ pub fn de_update_id_mapping_workflow_http_response(
         output = crate::protocol_serde::shape_update_id_mapping_workflow::de_update_id_mapping_workflow(_response_body, output)
             .map_err(crate::operation::update_id_mapping_workflow::UpdateIdMappingWorkflowError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::update_id_mapping_workflow_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::update_id_mapping_workflow::UpdateIdMappingWorkflowError::unhandled)?
     })
 }
 
 pub fn ser_update_id_mapping_workflow_input(
     input: &crate::operation::update_id_mapping_workflow::UpdateIdMappingWorkflowInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_update_id_mapping_workflow_input::ser_update_id_mapping_workflow_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_update_id_mapping_workflow(

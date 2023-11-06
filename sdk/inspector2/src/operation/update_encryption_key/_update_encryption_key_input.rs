@@ -41,6 +41,7 @@ pub struct UpdateEncryptionKeyInputBuilder {
 }
 impl UpdateEncryptionKeyInputBuilder {
     /// <p>A KMS key ID for the encryption key.</p>
+    /// This field is required.
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateEncryptionKeyInputBuilder {
         &self.kms_key_id
     }
     /// <p>The scan type for the encryption key.</p>
+    /// This field is required.
     pub fn scan_type(mut self, input: crate::types::ScanType) -> Self {
         self.scan_type = ::std::option::Option::Some(input);
         self
@@ -69,6 +71,7 @@ impl UpdateEncryptionKeyInputBuilder {
         &self.scan_type
     }
     /// <p>The resource type for the encryption key.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
@@ -85,7 +88,7 @@ impl UpdateEncryptionKeyInputBuilder {
     /// Consumes the builder and constructs a [`UpdateEncryptionKeyInput`](crate::operation::update_encryption_key::UpdateEncryptionKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_encryption_key::UpdateEncryptionKeyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_encryption_key::UpdateEncryptionKeyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_encryption_key::UpdateEncryptionKeyInput {
             kms_key_id: self.kms_key_id,

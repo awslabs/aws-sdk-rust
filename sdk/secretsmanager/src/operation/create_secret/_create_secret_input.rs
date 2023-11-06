@@ -96,12 +96,16 @@ impl CreateSecretInput {
     /// <p>If you check tags in permissions policies as part of your security strategy, then adding or removing a tag can change permissions. If the completion of this operation would result in you losing your permissions for this secret, then Secrets Manager blocks the operation and returns an <code>Access Denied</code> error. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html#tag-secrets-abac">Control access to secrets using tags</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html#auth-and-access_tags2">Limit access to identities with tags that match secrets' tags</a>.</p>
     /// <p>For information about how to format a JSON parameter for the various command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for Parameters</a>. If your command-line tool or SDK requires quotation marks around the parameter, you should use single quotes to avoid confusion with the double quotes required in the JSON text.</p>
     /// <p>For tag quotas and naming restrictions, see <a href="https://docs.aws.amazon.com/general/latest/gr/arg.html#taged-reference-quotas">Service quotas for Tagging</a> in the <i>Amazon Web Services General Reference guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>A list of Regions and KMS keys to replicate secrets.</p>
-    pub fn add_replica_regions(&self) -> ::std::option::Option<&[crate::types::ReplicaRegionType]> {
-        self.add_replica_regions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_replica_regions.is_none()`.
+    pub fn add_replica_regions(&self) -> &[crate::types::ReplicaRegionType] {
+        self.add_replica_regions.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether to overwrite a secret with the same name in the destination Region. By default, secrets aren't overwritten.</p>
     pub fn force_overwrite_replica_secret(&self) -> ::std::option::Option<bool> {
@@ -148,6 +152,7 @@ impl CreateSecretInputBuilder {
     /// <p>The name of the new secret.</p>
     /// <p>The secret name can contain ASCII letters, numbers, and the following characters: /_+=.@-</p>
     /// <p>Do not end your secret name with a hyphen followed by six characters. If you do so, you risk confusion and unexpected results when searching for a secret by partial ARN. Secrets Manager automatically adds a hyphen and six random characters after the secret name at the end of the ARN.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -356,7 +361,9 @@ impl CreateSecretInputBuilder {
         &self.force_overwrite_replica_secret
     }
     /// Consumes the builder and constructs a [`CreateSecretInput`](crate::operation::create_secret::CreateSecretInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_secret::CreateSecretInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_secret::CreateSecretInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_secret::CreateSecretInput {
             name: self.name,
             client_request_token: self.client_request_token,

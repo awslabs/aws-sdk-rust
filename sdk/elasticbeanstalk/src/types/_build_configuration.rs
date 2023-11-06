@@ -7,7 +7,7 @@ pub struct BuildConfiguration {
     /// <p>The name of the artifact of the CodeBuild build. If provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>-<i>artifact-name</i>.zip. If not provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>.zip. </p>
     pub artifact_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS services on behalf of the AWS account.</p>
-    pub code_build_service_role: ::std::option::Option<::std::string::String>,
+    pub code_build_service_role: ::std::string::String,
     /// <p>Information about the compute resources the build project will use.</p>
     /// <ul>
     /// <li> <p> <code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code> </p> </li>
@@ -16,7 +16,7 @@ pub struct BuildConfiguration {
     /// </ul>
     pub compute_type: ::std::option::Option<crate::types::ComputeType>,
     /// <p>The ID of the Docker image to use for this build project.</p>
-    pub image: ::std::option::Option<::std::string::String>,
+    pub image: ::std::string::String,
     /// <p>How long in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing out any related build that does not get marked as completed. The default is 60 minutes.</p>
     pub timeout_in_minutes: ::std::option::Option<i32>,
 }
@@ -26,8 +26,9 @@ impl BuildConfiguration {
         self.artifact_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS services on behalf of the AWS account.</p>
-    pub fn code_build_service_role(&self) -> ::std::option::Option<&str> {
-        self.code_build_service_role.as_deref()
+    pub fn code_build_service_role(&self) -> &str {
+        use std::ops::Deref;
+        self.code_build_service_role.deref()
     }
     /// <p>Information about the compute resources the build project will use.</p>
     /// <ul>
@@ -39,8 +40,9 @@ impl BuildConfiguration {
         self.compute_type.as_ref()
     }
     /// <p>The ID of the Docker image to use for this build project.</p>
-    pub fn image(&self) -> ::std::option::Option<&str> {
-        self.image.as_deref()
+    pub fn image(&self) -> &str {
+        use std::ops::Deref;
+        self.image.deref()
     }
     /// <p>How long in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing out any related build that does not get marked as completed. The default is 60 minutes.</p>
     pub fn timeout_in_minutes(&self) -> ::std::option::Option<i32> {
@@ -80,6 +82,7 @@ impl BuildConfigurationBuilder {
         &self.artifact_name
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS services on behalf of the AWS account.</p>
+    /// This field is required.
     pub fn code_build_service_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code_build_service_role = ::std::option::Option::Some(input.into());
         self
@@ -123,6 +126,7 @@ impl BuildConfigurationBuilder {
         &self.compute_type
     }
     /// <p>The ID of the Docker image to use for this build project.</p>
+    /// This field is required.
     pub fn image(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image = ::std::option::Option::Some(input.into());
         self
@@ -151,13 +155,26 @@ impl BuildConfigurationBuilder {
         &self.timeout_in_minutes
     }
     /// Consumes the builder and constructs a [`BuildConfiguration`](crate::types::BuildConfiguration).
-    pub fn build(self) -> crate::types::BuildConfiguration {
-        crate::types::BuildConfiguration {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`code_build_service_role`](crate::types::builders::BuildConfigurationBuilder::code_build_service_role)
+    /// - [`image`](crate::types::builders::BuildConfigurationBuilder::image)
+    pub fn build(self) -> ::std::result::Result<crate::types::BuildConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::BuildConfiguration {
             artifact_name: self.artifact_name,
-            code_build_service_role: self.code_build_service_role,
+            code_build_service_role: self.code_build_service_role.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "code_build_service_role",
+                    "code_build_service_role was not specified but it is required when building BuildConfiguration",
+                )
+            })?,
             compute_type: self.compute_type,
-            image: self.image,
+            image: self.image.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "image",
+                    "image was not specified but it is required when building BuildConfiguration",
+                )
+            })?,
             timeout_in_minutes: self.timeout_in_minutes,
-        }
+        })
     }
 }

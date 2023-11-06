@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AlarmStateInformation {
     /// <p>The name of your CloudWatch alarm.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The state of your CloudWatch alarm.</p>
-    pub state: ::std::option::Option<crate::types::ExternalAlarmState>,
+    pub state: crate::types::ExternalAlarmState,
 }
 impl AlarmStateInformation {
     /// <p>The name of your CloudWatch alarm.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The state of your CloudWatch alarm.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ExternalAlarmState> {
-        self.state.as_ref()
+    pub fn state(&self) -> &crate::types::ExternalAlarmState {
+        &self.state
     }
 }
 impl AlarmStateInformation {
@@ -35,6 +36,7 @@ pub struct AlarmStateInformationBuilder {
 }
 impl AlarmStateInformationBuilder {
     /// <p>The name of your CloudWatch alarm.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl AlarmStateInformationBuilder {
         &self.name
     }
     /// <p>The state of your CloudWatch alarm.</p>
+    /// This field is required.
     pub fn state(mut self, input: crate::types::ExternalAlarmState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,23 @@ impl AlarmStateInformationBuilder {
         &self.state
     }
     /// Consumes the builder and constructs a [`AlarmStateInformation`](crate::types::AlarmStateInformation).
-    pub fn build(self) -> crate::types::AlarmStateInformation {
-        crate::types::AlarmStateInformation {
-            name: self.name,
-            state: self.state,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::AlarmStateInformationBuilder::name)
+    /// - [`state`](crate::types::builders::AlarmStateInformationBuilder::state)
+    pub fn build(self) -> ::std::result::Result<crate::types::AlarmStateInformation, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AlarmStateInformation {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building AlarmStateInformation",
+                )
+            })?,
+            state: self.state.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "state",
+                    "state was not specified but it is required when building AlarmStateInformation",
+                )
+            })?,
+        })
     }
 }

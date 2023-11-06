@@ -35,6 +35,7 @@ pub struct RecordActivityTaskHeartbeatOutputBuilder {
 }
 impl RecordActivityTaskHeartbeatOutputBuilder {
     /// <p>Set to <code>true</code> if cancellation of the task is requested.</p>
+    /// This field is required.
     pub fn cancel_requested(mut self, input: bool) -> Self {
         self.cancel_requested = ::std::option::Option::Some(input);
         self

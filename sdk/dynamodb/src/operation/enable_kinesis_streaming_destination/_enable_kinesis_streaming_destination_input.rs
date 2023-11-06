@@ -34,6 +34,7 @@ pub struct EnableKinesisStreamingDestinationInputBuilder {
 }
 impl EnableKinesisStreamingDestinationInputBuilder {
     /// <p>The name of the DynamoDB table.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl EnableKinesisStreamingDestinationInputBuilder {
         &self.table_name
     }
     /// <p>The ARN for a Kinesis data stream.</p>
+    /// This field is required.
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_arn = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl EnableKinesisStreamingDestinationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable_kinesis_streaming_destination::EnableKinesisStreamingDestinationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::enable_kinesis_streaming_destination::EnableKinesisStreamingDestinationInput {

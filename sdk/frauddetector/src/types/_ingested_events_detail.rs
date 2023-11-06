@@ -28,6 +28,7 @@ pub struct IngestedEventsDetailBuilder {
 }
 impl IngestedEventsDetailBuilder {
     /// <p>The start and stop time of the ingested events.</p>
+    /// This field is required.
     pub fn ingested_events_time_window(mut self, input: crate::types::IngestedEventsTimeWindow) -> Self {
         self.ingested_events_time_window = ::std::option::Option::Some(input);
         self

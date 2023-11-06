@@ -15,20 +15,28 @@ pub struct BarChartAggregatedFieldWells {
 }
 impl BarChartAggregatedFieldWells {
     /// <p>The category (y-axis) field well of a bar chart.</p>
-    pub fn category(&self) -> ::std::option::Option<&[crate::types::DimensionField]> {
-        self.category.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.category.is_none()`.
+    pub fn category(&self) -> &[crate::types::DimensionField] {
+        self.category.as_deref().unwrap_or_default()
     }
     /// <p>The value field wells of a bar chart. Values are aggregated by category.</p>
-    pub fn values(&self) -> ::std::option::Option<&[crate::types::MeasureField]> {
-        self.values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
+    pub fn values(&self) -> &[crate::types::MeasureField] {
+        self.values.as_deref().unwrap_or_default()
     }
     /// <p>The color (group/color) field well of a bar chart.</p>
-    pub fn colors(&self) -> ::std::option::Option<&[crate::types::DimensionField]> {
-        self.colors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.colors.is_none()`.
+    pub fn colors(&self) -> &[crate::types::DimensionField] {
+        self.colors.as_deref().unwrap_or_default()
     }
     /// <p>The small multiples field well of a bar chart.</p>
-    pub fn small_multiples(&self) -> ::std::option::Option<&[crate::types::DimensionField]> {
-        self.small_multiples.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.small_multiples.is_none()`.
+    pub fn small_multiples(&self) -> &[crate::types::DimensionField] {
+        self.small_multiples.as_deref().unwrap_or_default()
     }
 }
 impl BarChartAggregatedFieldWells {

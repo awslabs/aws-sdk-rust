@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetFeature`](crate::operation::get_feature::builders::GetFeatureFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`project(impl Into<String>)`](crate::operation::get_feature::builders::GetFeatureFluentBuilder::project) / [`set_project(Option<String>)`](crate::operation::get_feature::builders::GetFeatureFluentBuilder::set_project): <p>The name or ARN of the project that contains the feature.</p>
-    ///   - [`feature(impl Into<String>)`](crate::operation::get_feature::builders::GetFeatureFluentBuilder::feature) / [`set_feature(Option<String>)`](crate::operation::get_feature::builders::GetFeatureFluentBuilder::set_feature): <p>The name of the feature that you want to retrieve information for.</p>
+    ///   - [`project(impl Into<String>)`](crate::operation::get_feature::builders::GetFeatureFluentBuilder::project) / [`set_project(Option<String>)`](crate::operation::get_feature::builders::GetFeatureFluentBuilder::set_project):<br>required: **true**<br><p>The name or ARN of the project that contains the feature.</p><br>
+    ///   - [`feature(impl Into<String>)`](crate::operation::get_feature::builders::GetFeatureFluentBuilder::feature) / [`set_feature(Option<String>)`](crate::operation::get_feature::builders::GetFeatureFluentBuilder::set_feature):<br>required: **true**<br><p>The name of the feature that you want to retrieve information for.</p><br>
     /// - On success, responds with [`GetFeatureOutput`](crate::operation::get_feature::GetFeatureOutput) with field(s):
     ///   - [`feature(Option<Feature>)`](crate::operation::get_feature::GetFeatureOutput::feature): <p>A structure containing the configuration details of the feature.</p>
     /// - On failure, responds with [`SdkError<GetFeatureError>`](crate::operation::get_feature::GetFeatureError)

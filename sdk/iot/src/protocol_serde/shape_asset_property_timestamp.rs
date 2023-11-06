@@ -2,12 +2,12 @@
 pub fn ser_asset_property_timestamp(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AssetPropertyTimestamp,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.time_in_seconds {
-        object.key("timeInSeconds").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("timeInSeconds").string(input.time_in_seconds.as_str());
     }
-    if let Some(var_2) = &input.offset_in_nanos {
-        object.key("offsetInNanos").string(var_2.as_str());
+    if let Some(var_1) = &input.offset_in_nanos {
+        object.key("offsetInNanos").string(var_1.as_str());
     }
     Ok(())
 }
@@ -51,7 +51,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::asset_property_timestamp_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

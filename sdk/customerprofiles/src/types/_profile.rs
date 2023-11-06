@@ -157,8 +157,10 @@ impl Profile {
     /// <li> <p> <code>OR</code> - The profile included in the response matched at least one of the search keys specified in the request. The <code>FoundByItems</code> will include each of the key-value(s) pairs that the profile was found by.</p> </li>
     /// </ul>
     /// <p>The <code>OR</code> relationship is the default behavior if the <code>LogicalOperator</code> parameter is not included in the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a> request.</p>
-    pub fn found_by_items(&self) -> ::std::option::Option<&[crate::types::FoundByKeyValue]> {
-        self.found_by_items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.found_by_items.is_none()`.
+    pub fn found_by_items(&self) -> &[crate::types::FoundByKeyValue] {
+        self.found_by_items.as_deref().unwrap_or_default()
     }
     /// <p>An alternative to PartyType which accepts any string as input.</p>
     pub fn party_type_string(&self) -> ::std::option::Option<&str> {

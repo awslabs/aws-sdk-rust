@@ -2,7 +2,7 @@
 pub fn ser_delete_workflow_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_workflow::DeleteWorkflowInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.workflow_id {
         object.key("WorkflowId").string(var_1.as_str());
     }

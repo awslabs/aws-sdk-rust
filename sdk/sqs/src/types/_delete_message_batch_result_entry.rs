@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteMessageBatchResultEntry {
     /// <p>Represents a successfully deleted message.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
 }
 impl DeleteMessageBatchResultEntry {
     /// <p>Represents a successfully deleted message.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
 }
 impl DeleteMessageBatchResultEntry {
@@ -28,6 +29,7 @@ pub struct DeleteMessageBatchResultEntryBuilder {
 }
 impl DeleteMessageBatchResultEntryBuilder {
     /// <p>Represents a successfully deleted message.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl DeleteMessageBatchResultEntryBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`DeleteMessageBatchResultEntry`](crate::types::DeleteMessageBatchResultEntry).
-    pub fn build(self) -> crate::types::DeleteMessageBatchResultEntry {
-        crate::types::DeleteMessageBatchResultEntry { id: self.id }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::DeleteMessageBatchResultEntryBuilder::id)
+    pub fn build(self) -> ::std::result::Result<crate::types::DeleteMessageBatchResultEntry, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DeleteMessageBatchResultEntry {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building DeleteMessageBatchResultEntry",
+                )
+            })?,
+        })
     }
 }

@@ -2,7 +2,7 @@
 pub fn ser_flink_run_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FlinkRunConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.allow_non_restored_state {
         object.key("AllowNonRestoredState").boolean(*var_1);
     }

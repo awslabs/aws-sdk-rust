@@ -5,32 +5,35 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Repository {
     /// <p>The Amazon Resource Name (ARN) of the linked repository.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The repository provider.</p>
-    pub provider: ::std::option::Option<crate::types::RepositoryProvider>,
+    pub provider: crate::types::RepositoryProvider,
     /// <p>The repository name.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects Proton to your repository provider account.</p>
-    pub connection_arn: ::std::option::Option<::std::string::String>,
+    pub connection_arn: ::std::string::String,
     /// <p>Your customer Amazon Web Services KMS encryption key.</p>
     pub encryption_key: ::std::option::Option<::std::string::String>,
 }
 impl Repository {
     /// <p>The Amazon Resource Name (ARN) of the linked repository.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The repository provider.</p>
-    pub fn provider(&self) -> ::std::option::Option<&crate::types::RepositoryProvider> {
-        self.provider.as_ref()
+    pub fn provider(&self) -> &crate::types::RepositoryProvider {
+        &self.provider
     }
     /// <p>The repository name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects Proton to your repository provider account.</p>
-    pub fn connection_arn(&self) -> ::std::option::Option<&str> {
-        self.connection_arn.as_deref()
+    pub fn connection_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.connection_arn.deref()
     }
     /// <p>Your customer Amazon Web Services KMS encryption key.</p>
     pub fn encryption_key(&self) -> ::std::option::Option<&str> {
@@ -56,6 +59,7 @@ pub struct RepositoryBuilder {
 }
 impl RepositoryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the linked repository.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +74,7 @@ impl RepositoryBuilder {
         &self.arn
     }
     /// <p>The repository provider.</p>
+    /// This field is required.
     pub fn provider(mut self, input: crate::types::RepositoryProvider) -> Self {
         self.provider = ::std::option::Option::Some(input);
         self
@@ -84,6 +89,7 @@ impl RepositoryBuilder {
         &self.provider
     }
     /// <p>The repository name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +104,7 @@ impl RepositoryBuilder {
         &self.name
     }
     /// <p>The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects Proton to your repository provider account.</p>
+    /// This field is required.
     pub fn connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_arn = ::std::option::Option::Some(input.into());
         self
@@ -126,13 +133,38 @@ impl RepositoryBuilder {
         &self.encryption_key
     }
     /// Consumes the builder and constructs a [`Repository`](crate::types::Repository).
-    pub fn build(self) -> crate::types::Repository {
-        crate::types::Repository {
-            arn: self.arn,
-            provider: self.provider,
-            name: self.name,
-            connection_arn: self.connection_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::RepositoryBuilder::arn)
+    /// - [`provider`](crate::types::builders::RepositoryBuilder::provider)
+    /// - [`name`](crate::types::builders::RepositoryBuilder::name)
+    /// - [`connection_arn`](crate::types::builders::RepositoryBuilder::connection_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::Repository, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Repository {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building Repository",
+                )
+            })?,
+            provider: self.provider.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "provider",
+                    "provider was not specified but it is required when building Repository",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building Repository",
+                )
+            })?,
+            connection_arn: self.connection_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "connection_arn",
+                    "connection_arn was not specified but it is required when building Repository",
+                )
+            })?,
             encryption_key: self.encryption_key,
-        }
+        })
     }
 }

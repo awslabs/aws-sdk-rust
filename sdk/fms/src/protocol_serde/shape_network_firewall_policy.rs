@@ -42,7 +42,7 @@ where
 pub fn ser_network_firewall_policy(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NetworkFirewallPolicy,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.firewall_deployment_model {
         object.key("FirewallDeploymentModel").string(var_1.as_str());
     }

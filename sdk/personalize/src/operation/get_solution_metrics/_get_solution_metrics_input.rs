@@ -27,6 +27,7 @@ pub struct GetSolutionMetricsInputBuilder {
 }
 impl GetSolutionMetricsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the solution version for which to get metrics.</p>
+    /// This field is required.
     pub fn solution_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.solution_version_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,8 @@ impl GetSolutionMetricsInputBuilder {
     /// Consumes the builder and constructs a [`GetSolutionMetricsInput`](crate::operation::get_solution_metrics::GetSolutionMetricsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_solution_metrics::GetSolutionMetricsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_solution_metrics::GetSolutionMetricsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_solution_metrics::GetSolutionMetricsInput {
             solution_version_arn: self.solution_version_arn,
         })

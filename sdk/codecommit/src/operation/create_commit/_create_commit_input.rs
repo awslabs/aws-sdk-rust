@@ -54,16 +54,22 @@ impl CreateCommitInput {
         self.keep_empty_folders
     }
     /// <p>The files to add or update in this commit.</p>
-    pub fn put_files(&self) -> ::std::option::Option<&[crate::types::PutFileEntry]> {
-        self.put_files.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.put_files.is_none()`.
+    pub fn put_files(&self) -> &[crate::types::PutFileEntry] {
+        self.put_files.as_deref().unwrap_or_default()
     }
     /// <p>The files to delete in this commit. These files still exist in earlier commits.</p>
-    pub fn delete_files(&self) -> ::std::option::Option<&[crate::types::DeleteFileEntry]> {
-        self.delete_files.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.delete_files.is_none()`.
+    pub fn delete_files(&self) -> &[crate::types::DeleteFileEntry] {
+        self.delete_files.as_deref().unwrap_or_default()
     }
     /// <p>The file modes to update for files in this commit.</p>
-    pub fn set_file_modes(&self) -> ::std::option::Option<&[crate::types::SetFileModeEntry]> {
-        self.set_file_modes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.set_file_modes.is_none()`.
+    pub fn set_file_modes(&self) -> &[crate::types::SetFileModeEntry] {
+        self.set_file_modes.as_deref().unwrap_or_default()
     }
 }
 impl CreateCommitInput {
@@ -90,6 +96,7 @@ pub struct CreateCommitInputBuilder {
 }
 impl CreateCommitInputBuilder {
     /// <p>The name of the repository where you create the commit.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +111,7 @@ impl CreateCommitInputBuilder {
         &self.repository_name
     }
     /// <p>The name of the branch where you create the commit.</p>
+    /// This field is required.
     pub fn branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch_name = ::std::option::Option::Some(input.into());
         self
@@ -248,7 +256,9 @@ impl CreateCommitInputBuilder {
         &self.set_file_modes
     }
     /// Consumes the builder and constructs a [`CreateCommitInput`](crate::operation::create_commit::CreateCommitInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_commit::CreateCommitInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_commit::CreateCommitInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_commit::CreateCommitInput {
             repository_name: self.repository_name,
             branch_name: self.branch_name,

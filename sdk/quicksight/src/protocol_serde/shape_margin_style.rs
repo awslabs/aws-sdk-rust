@@ -2,7 +2,7 @@
 pub fn ser_margin_style(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MarginStyle,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.show {
         object.key("Show").boolean(*var_1);
     }

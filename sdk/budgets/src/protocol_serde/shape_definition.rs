@@ -2,7 +2,7 @@
 pub fn ser_definition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Definition,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.iam_action_definition {
         #[allow(unused_mut)]
         let mut object_2 = object.key("IamActionDefinition").start_object();

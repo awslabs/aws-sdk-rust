@@ -17,45 +17,47 @@ pub struct Leg {
     /// <p>The starting position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note>
     /// <p>If the <code>StartPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>. </p>
     /// </note>
-    pub start_position: ::std::option::Option<::std::vec::Vec<f64>>,
+    pub start_position: ::std::vec::Vec<f64>,
     /// <p>The terminating position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note>
     /// <p>If the <code>EndPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/nap-to-nearby-road.html">snapped to a nearby road</a>. </p>
     /// </note>
-    pub end_position: ::std::option::Option<::std::vec::Vec<f64>>,
+    pub end_position: ::std::vec::Vec<f64>,
     /// <p>The distance between the leg's <code>StartPosition</code> and <code>EndPosition</code> along a calculated route. </p>
     /// <ul>
     /// <li> <p>The default measurement is <code>Kilometers</code> unless the request specifies a <code>DistanceUnit</code> of <code>Miles</code>.</p> </li>
     /// </ul>
-    pub distance: ::std::option::Option<f64>,
+    pub distance: f64,
     /// <p>The estimated travel time between the leg's <code>StartPosition</code> and <code>EndPosition</code>. The travel mode and departure time that you specify in the request determines the calculated time.</p>
-    pub duration_seconds: ::std::option::Option<f64>,
+    pub duration_seconds: f64,
     /// <p>Contains the calculated route's path as a linestring geometry.</p>
     pub geometry: ::std::option::Option<crate::types::LegGeometry>,
     /// <p>Contains a list of steps, which represent subsections of a leg. Each step provides instructions for how to move to the next step in the leg such as the step's start position, end position, travel distance, travel duration, and geometry offset.</p>
-    pub steps: ::std::option::Option<::std::vec::Vec<crate::types::Step>>,
+    pub steps: ::std::vec::Vec<crate::types::Step>,
 }
 impl Leg {
     /// <p>The starting position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note>
     /// <p>If the <code>StartPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>. </p>
     /// </note>
-    pub fn start_position(&self) -> ::std::option::Option<&[f64]> {
-        self.start_position.as_deref()
+    pub fn start_position(&self) -> &[f64] {
+        use std::ops::Deref;
+        self.start_position.deref()
     }
     /// <p>The terminating position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note>
     /// <p>If the <code>EndPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/nap-to-nearby-road.html">snapped to a nearby road</a>. </p>
     /// </note>
-    pub fn end_position(&self) -> ::std::option::Option<&[f64]> {
-        self.end_position.as_deref()
+    pub fn end_position(&self) -> &[f64] {
+        use std::ops::Deref;
+        self.end_position.deref()
     }
     /// <p>The distance between the leg's <code>StartPosition</code> and <code>EndPosition</code> along a calculated route. </p>
     /// <ul>
     /// <li> <p>The default measurement is <code>Kilometers</code> unless the request specifies a <code>DistanceUnit</code> of <code>Miles</code>.</p> </li>
     /// </ul>
-    pub fn distance(&self) -> ::std::option::Option<f64> {
+    pub fn distance(&self) -> f64 {
         self.distance
     }
     /// <p>The estimated travel time between the leg's <code>StartPosition</code> and <code>EndPosition</code>. The travel mode and departure time that you specify in the request determines the calculated time.</p>
-    pub fn duration_seconds(&self) -> ::std::option::Option<f64> {
+    pub fn duration_seconds(&self) -> f64 {
         self.duration_seconds
     }
     /// <p>Contains the calculated route's path as a linestring geometry.</p>
@@ -63,8 +65,9 @@ impl Leg {
         self.geometry.as_ref()
     }
     /// <p>Contains a list of steps, which represent subsections of a leg. Each step provides instructions for how to move to the next step in the leg such as the step's start position, end position, travel distance, travel duration, and geometry offset.</p>
-    pub fn steps(&self) -> ::std::option::Option<&[crate::types::Step]> {
-        self.steps.as_deref()
+    pub fn steps(&self) -> &[crate::types::Step] {
+        use std::ops::Deref;
+        self.steps.deref()
     }
 }
 impl ::std::fmt::Debug for Leg {
@@ -154,6 +157,7 @@ impl LegBuilder {
     /// <ul>
     /// <li> <p>The default measurement is <code>Kilometers</code> unless the request specifies a <code>DistanceUnit</code> of <code>Miles</code>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn distance(mut self, input: f64) -> Self {
         self.distance = ::std::option::Option::Some(input);
         self
@@ -174,6 +178,7 @@ impl LegBuilder {
         &self.distance
     }
     /// <p>The estimated travel time between the leg's <code>StartPosition</code> and <code>EndPosition</code>. The travel mode and departure time that you specify in the request determines the calculated time.</p>
+    /// This field is required.
     pub fn duration_seconds(mut self, input: f64) -> Self {
         self.duration_seconds = ::std::option::Option::Some(input);
         self
@@ -222,15 +227,46 @@ impl LegBuilder {
         &self.steps
     }
     /// Consumes the builder and constructs a [`Leg`](crate::types::Leg).
-    pub fn build(self) -> crate::types::Leg {
-        crate::types::Leg {
-            start_position: self.start_position,
-            end_position: self.end_position,
-            distance: self.distance,
-            duration_seconds: self.duration_seconds,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`start_position`](crate::types::builders::LegBuilder::start_position)
+    /// - [`end_position`](crate::types::builders::LegBuilder::end_position)
+    /// - [`distance`](crate::types::builders::LegBuilder::distance)
+    /// - [`duration_seconds`](crate::types::builders::LegBuilder::duration_seconds)
+    /// - [`steps`](crate::types::builders::LegBuilder::steps)
+    pub fn build(self) -> ::std::result::Result<crate::types::Leg, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Leg {
+            start_position: self.start_position.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "start_position",
+                    "start_position was not specified but it is required when building Leg",
+                )
+            })?,
+            end_position: self.end_position.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "end_position",
+                    "end_position was not specified but it is required when building Leg",
+                )
+            })?,
+            distance: self.distance.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "distance",
+                    "distance was not specified but it is required when building Leg",
+                )
+            })?,
+            duration_seconds: self.duration_seconds.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "duration_seconds",
+                    "duration_seconds was not specified but it is required when building Leg",
+                )
+            })?,
             geometry: self.geometry,
-            steps: self.steps,
-        }
+            steps: self.steps.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "steps",
+                    "steps was not specified but it is required when building Leg",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for LegBuilder {

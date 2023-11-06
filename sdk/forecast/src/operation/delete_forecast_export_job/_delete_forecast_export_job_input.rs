@@ -27,6 +27,7 @@ pub struct DeleteForecastExportJobInputBuilder {
 }
 impl DeleteForecastExportJobInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the forecast export job to delete.</p>
+    /// This field is required.
     pub fn forecast_export_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.forecast_export_job_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteForecastExportJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_forecast_export_job::DeleteForecastExportJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_forecast_export_job::DeleteForecastExportJobInput {
             forecast_export_job_arn: self.forecast_export_job_arn,

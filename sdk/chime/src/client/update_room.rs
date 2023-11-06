@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateRoom`](crate::operation::update_room::builders::UpdateRoomFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::operation::update_room::builders::UpdateRoomFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::update_room::builders::UpdateRoomFluentBuilder::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`room_id(impl Into<String>)`](crate::operation::update_room::builders::UpdateRoomFluentBuilder::room_id) / [`set_room_id(Option<String>)`](crate::operation::update_room::builders::UpdateRoomFluentBuilder::set_room_id): <p>The room ID.</p>
-    ///   - [`name(impl Into<String>)`](crate::operation::update_room::builders::UpdateRoomFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_room::builders::UpdateRoomFluentBuilder::set_name): <p>The room name.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::operation::update_room::builders::UpdateRoomFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::update_room::builders::UpdateRoomFluentBuilder::set_account_id):<br>required: **true**<br><p>The Amazon Chime account ID.</p><br>
+    ///   - [`room_id(impl Into<String>)`](crate::operation::update_room::builders::UpdateRoomFluentBuilder::room_id) / [`set_room_id(Option<String>)`](crate::operation::update_room::builders::UpdateRoomFluentBuilder::set_room_id):<br>required: **true**<br><p>The room ID.</p><br>
+    ///   - [`name(impl Into<String>)`](crate::operation::update_room::builders::UpdateRoomFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_room::builders::UpdateRoomFluentBuilder::set_name):<br>required: **false**<br><p>The room name.</p><br>
     /// - On success, responds with [`UpdateRoomOutput`](crate::operation::update_room::UpdateRoomOutput) with field(s):
     ///   - [`room(Option<Room>)`](crate::operation::update_room::UpdateRoomOutput::room): <p>The room details.</p>
     /// - On failure, responds with [`SdkError<UpdateRoomError>`](crate::operation::update_room::UpdateRoomError)

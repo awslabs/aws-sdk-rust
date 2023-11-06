@@ -41,6 +41,7 @@ pub struct GetImageSetInputBuilder {
 }
 impl GetImageSetInputBuilder {
     /// <p>The data store identifier.</p>
+    /// This field is required.
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl GetImageSetInputBuilder {
         &self.datastore_id
     }
     /// <p>The image set identifier.</p>
+    /// This field is required.
     pub fn image_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_set_id = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +85,7 @@ impl GetImageSetInputBuilder {
         &self.version_id
     }
     /// Consumes the builder and constructs a [`GetImageSetInput`](crate::operation::get_image_set::GetImageSetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_image_set::GetImageSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_image_set::GetImageSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_image_set::GetImageSetInput {
             datastore_id: self.datastore_id,
             image_set_id: self.image_set_id,

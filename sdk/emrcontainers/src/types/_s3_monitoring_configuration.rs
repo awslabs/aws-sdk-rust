@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3MonitoringConfiguration {
     /// <p>Amazon S3 destination URI for log publishing.</p>
-    pub log_uri: ::std::option::Option<::std::string::String>,
+    pub log_uri: ::std::string::String,
 }
 impl S3MonitoringConfiguration {
     /// <p>Amazon S3 destination URI for log publishing.</p>
-    pub fn log_uri(&self) -> ::std::option::Option<&str> {
-        self.log_uri.as_deref()
+    pub fn log_uri(&self) -> &str {
+        use std::ops::Deref;
+        self.log_uri.deref()
     }
 }
 impl S3MonitoringConfiguration {
@@ -28,6 +29,7 @@ pub struct S3MonitoringConfigurationBuilder {
 }
 impl S3MonitoringConfigurationBuilder {
     /// <p>Amazon S3 destination URI for log publishing.</p>
+    /// This field is required.
     pub fn log_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_uri = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl S3MonitoringConfigurationBuilder {
         &self.log_uri
     }
     /// Consumes the builder and constructs a [`S3MonitoringConfiguration`](crate::types::S3MonitoringConfiguration).
-    pub fn build(self) -> crate::types::S3MonitoringConfiguration {
-        crate::types::S3MonitoringConfiguration { log_uri: self.log_uri }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`log_uri`](crate::types::builders::S3MonitoringConfigurationBuilder::log_uri)
+    pub fn build(self) -> ::std::result::Result<crate::types::S3MonitoringConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::S3MonitoringConfiguration {
+            log_uri: self.log_uri.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "log_uri",
+                    "log_uri was not specified but it is required when building S3MonitoringConfiguration",
+                )
+            })?,
+        })
     }
 }

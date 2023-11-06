@@ -27,6 +27,7 @@ pub struct DeleteProtocolsListInputBuilder {
 }
 impl DeleteProtocolsListInputBuilder {
     /// <p>The ID of the protocols list that you want to delete. You can retrieve this ID from <code>PutProtocolsList</code>, <code>ListProtocolsLists</code>, and <code>GetProtocolsLost</code>.</p>
+    /// This field is required.
     pub fn list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.list_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteProtocolsListInputBuilder {
     /// Consumes the builder and constructs a [`DeleteProtocolsListInput`](crate::operation::delete_protocols_list::DeleteProtocolsListInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_protocols_list::DeleteProtocolsListInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_protocols_list::DeleteProtocolsListInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_protocols_list::DeleteProtocolsListInput { list_id: self.list_id })
     }

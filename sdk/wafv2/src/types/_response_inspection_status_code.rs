@@ -8,21 +8,23 @@
 pub struct ResponseInspectionStatusCode {
     /// <p>Status codes in the response that indicate a successful login or account creation attempt. To be counted as a success, the response status code must match one of these. Each code must be unique among the success and failure status codes. </p>
     /// <p>JSON example: <code>"SuccessCodes": [ 200, 201 ]</code> </p>
-    pub success_codes: ::std::option::Option<::std::vec::Vec<i32>>,
+    pub success_codes: ::std::vec::Vec<i32>,
     /// <p>Status codes in the response that indicate a failed login or account creation attempt. To be counted as a failure, the response status code must match one of these. Each code must be unique among the success and failure status codes. </p>
     /// <p>JSON example: <code>"FailureCodes": [ 400, 404 ]</code> </p>
-    pub failure_codes: ::std::option::Option<::std::vec::Vec<i32>>,
+    pub failure_codes: ::std::vec::Vec<i32>,
 }
 impl ResponseInspectionStatusCode {
     /// <p>Status codes in the response that indicate a successful login or account creation attempt. To be counted as a success, the response status code must match one of these. Each code must be unique among the success and failure status codes. </p>
     /// <p>JSON example: <code>"SuccessCodes": [ 200, 201 ]</code> </p>
-    pub fn success_codes(&self) -> ::std::option::Option<&[i32]> {
-        self.success_codes.as_deref()
+    pub fn success_codes(&self) -> &[i32] {
+        use std::ops::Deref;
+        self.success_codes.deref()
     }
     /// <p>Status codes in the response that indicate a failed login or account creation attempt. To be counted as a failure, the response status code must match one of these. Each code must be unique among the success and failure status codes. </p>
     /// <p>JSON example: <code>"FailureCodes": [ 400, 404 ]</code> </p>
-    pub fn failure_codes(&self) -> ::std::option::Option<&[i32]> {
-        self.failure_codes.as_deref()
+    pub fn failure_codes(&self) -> &[i32] {
+        use std::ops::Deref;
+        self.failure_codes.deref()
     }
 }
 impl ResponseInspectionStatusCode {
@@ -87,10 +89,23 @@ impl ResponseInspectionStatusCodeBuilder {
         &self.failure_codes
     }
     /// Consumes the builder and constructs a [`ResponseInspectionStatusCode`](crate::types::ResponseInspectionStatusCode).
-    pub fn build(self) -> crate::types::ResponseInspectionStatusCode {
-        crate::types::ResponseInspectionStatusCode {
-            success_codes: self.success_codes,
-            failure_codes: self.failure_codes,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`success_codes`](crate::types::builders::ResponseInspectionStatusCodeBuilder::success_codes)
+    /// - [`failure_codes`](crate::types::builders::ResponseInspectionStatusCodeBuilder::failure_codes)
+    pub fn build(self) -> ::std::result::Result<crate::types::ResponseInspectionStatusCode, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ResponseInspectionStatusCode {
+            success_codes: self.success_codes.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "success_codes",
+                    "success_codes was not specified but it is required when building ResponseInspectionStatusCode",
+                )
+            })?,
+            failure_codes: self.failure_codes.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "failure_codes",
+                    "failure_codes was not specified but it is required when building ResponseInspectionStatusCode",
+                )
+            })?,
+        })
     }
 }

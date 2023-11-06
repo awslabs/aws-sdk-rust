@@ -28,6 +28,7 @@ pub struct SupportedFieldTypeDetailsBuilder {
 }
 impl SupportedFieldTypeDetailsBuilder {
     /// <p> The initial supported version for <code>fieldType</code>. If this is later changed to a different version, v2 will be introduced. </p>
+    /// This field is required.
     pub fn v1(mut self, input: crate::types::FieldTypeDetails) -> Self {
         self.v1 = ::std::option::Option::Some(input);
         self

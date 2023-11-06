@@ -42,6 +42,7 @@ pub struct BatchListObjectParentPathsBuilder {
 }
 impl BatchListObjectParentPathsBuilder {
     /// <p>The reference that identifies the object whose attributes will be listed.</p>
+    /// This field is required.
     pub fn object_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.object_reference = ::std::option::Option::Some(input);
         self

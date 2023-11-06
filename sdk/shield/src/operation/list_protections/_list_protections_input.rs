@@ -105,7 +105,7 @@ impl ListProtectionsInputBuilder {
     /// Consumes the builder and constructs a [`ListProtectionsInput`](crate::operation::list_protections::ListProtectionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_protections::ListProtectionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_protections::ListProtectionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_protections::ListProtectionsInput {
             next_token: self.next_token,
             max_results: self.max_results,

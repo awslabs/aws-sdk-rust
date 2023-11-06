@@ -2,7 +2,7 @@
 pub fn ser_validate_assessment_report_integrity_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::validate_assessment_report_integrity::ValidateAssessmentReportIntegrityInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.s3_relative_path {
         object.key("s3RelativePath").string(var_1.as_str());
     }

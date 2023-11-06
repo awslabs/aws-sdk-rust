@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TopicColumn {
     /// <p>The name of the column.</p>
-    pub column_name: ::std::option::Option<::std::string::String>,
+    pub column_name: ::std::string::String,
     /// <p>A user-friendly name for the column.</p>
     pub column_friendly_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the column and its contents.</p>
@@ -41,8 +41,9 @@ pub struct TopicColumn {
 }
 impl TopicColumn {
     /// <p>The name of the column.</p>
-    pub fn column_name(&self) -> ::std::option::Option<&str> {
-        self.column_name.as_deref()
+    pub fn column_name(&self) -> &str {
+        use std::ops::Deref;
+        self.column_name.deref()
     }
     /// <p>A user-friendly name for the column.</p>
     pub fn column_friendly_name(&self) -> ::std::option::Option<&str> {
@@ -53,8 +54,10 @@ impl TopicColumn {
         self.column_description.as_deref()
     }
     /// <p>The other names or aliases for the column.</p>
-    pub fn column_synonyms(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.column_synonyms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.column_synonyms.is_none()`.
+    pub fn column_synonyms(&self) -> &[::std::string::String] {
+        self.column_synonyms.as_deref().unwrap_or_default()
     }
     /// <p>The role of the column in the data. Valid values are <code>DIMENSION</code> and <code>MEASURE</code>.</p>
     pub fn column_data_role(&self) -> ::std::option::Option<&crate::types::ColumnDataRole> {
@@ -85,12 +88,16 @@ impl TopicColumn {
         self.time_granularity.as_ref()
     }
     /// <p>The list of aggregation types that are allowed for the column. Valid values for this structure are <code>COUNT</code>, <code>DISTINCT_COUNT</code>, <code>MIN</code>, <code>MAX</code>, <code>MEDIAN</code>, <code>SUM</code>, <code>AVERAGE</code>, <code>STDEV</code>, <code>STDEVP</code>, <code>VAR</code>, <code>VARP</code>, and <code>PERCENTILE</code>.</p>
-    pub fn allowed_aggregations(&self) -> ::std::option::Option<&[crate::types::AuthorSpecifiedAggregation]> {
-        self.allowed_aggregations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_aggregations.is_none()`.
+    pub fn allowed_aggregations(&self) -> &[crate::types::AuthorSpecifiedAggregation] {
+        self.allowed_aggregations.as_deref().unwrap_or_default()
     }
     /// <p>The list of aggregation types that are not allowed for the column. Valid values for this structure are <code>COUNT</code>, <code>DISTINCT_COUNT</code>, <code>MIN</code>, <code>MAX</code>, <code>MEDIAN</code>, <code>SUM</code>, <code>AVERAGE</code>, <code>STDEV</code>, <code>STDEVP</code>, <code>VAR</code>, <code>VARP</code>, and <code>PERCENTILE</code>.</p>
-    pub fn not_allowed_aggregations(&self) -> ::std::option::Option<&[crate::types::AuthorSpecifiedAggregation]> {
-        self.not_allowed_aggregations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.not_allowed_aggregations.is_none()`.
+    pub fn not_allowed_aggregations(&self) -> &[crate::types::AuthorSpecifiedAggregation] {
+        self.not_allowed_aggregations.as_deref().unwrap_or_default()
     }
     /// <p>The default formatting used for values in the column.</p>
     pub fn default_formatting(&self) -> ::std::option::Option<&crate::types::DefaultFormatting> {
@@ -101,8 +108,10 @@ impl TopicColumn {
         self.never_aggregate_in_filter
     }
     /// <p>The other names or aliases for the column cell value.</p>
-    pub fn cell_value_synonyms(&self) -> ::std::option::Option<&[crate::types::CellValueSynonym]> {
-        self.cell_value_synonyms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cell_value_synonyms.is_none()`.
+    pub fn cell_value_synonyms(&self) -> &[crate::types::CellValueSynonym] {
+        self.cell_value_synonyms.as_deref().unwrap_or_default()
     }
     /// <p>The non additive value for the column.</p>
     pub fn non_additive(&self) -> ::std::option::Option<bool> {
@@ -140,6 +149,7 @@ pub struct TopicColumnBuilder {
 }
 impl TopicColumnBuilder {
     /// <p>The name of the column.</p>
+    /// This field is required.
     pub fn column_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.column_name = ::std::option::Option::Some(input.into());
         self
@@ -402,9 +412,16 @@ impl TopicColumnBuilder {
         &self.non_additive
     }
     /// Consumes the builder and constructs a [`TopicColumn`](crate::types::TopicColumn).
-    pub fn build(self) -> crate::types::TopicColumn {
-        crate::types::TopicColumn {
-            column_name: self.column_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`column_name`](crate::types::builders::TopicColumnBuilder::column_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::TopicColumn, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TopicColumn {
+            column_name: self.column_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "column_name",
+                    "column_name was not specified but it is required when building TopicColumn",
+                )
+            })?,
             column_friendly_name: self.column_friendly_name,
             column_description: self.column_description,
             column_synonyms: self.column_synonyms,
@@ -421,6 +438,6 @@ impl TopicColumnBuilder {
             never_aggregate_in_filter: self.never_aggregate_in_filter.unwrap_or_default(),
             cell_value_synonyms: self.cell_value_synonyms,
             non_additive: self.non_additive,
-        }
+        })
     }
 }

@@ -5,24 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CredentialPair {
     /// <p>User name.</p>
-    pub username: ::std::option::Option<::std::string::String>,
+    pub username: ::std::string::String,
     /// <p>Password.</p>
-    pub password: ::std::option::Option<::std::string::String>,
+    pub password: ::std::string::String,
     /// <p>A set of alternate data source parameters that you want to share for these credentials. The credentials are applied in tandem with the data source parameters when you copy a data source by using a create or update request. The API operation compares the <code>DataSourceParameters</code> structure that's in the request with the structures in the <code>AlternateDataSourceParameters</code> allow list. If the structures are an exact match, the request is allowed to use the new data source with the existing credentials. If the <code>AlternateDataSourceParameters</code> list is null, the <code>DataSourceParameters</code> originally used with these <code>Credentials</code> is automatically allowed.</p>
     pub alternate_data_source_parameters: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceParameters>>,
 }
 impl CredentialPair {
     /// <p>User name.</p>
-    pub fn username(&self) -> ::std::option::Option<&str> {
-        self.username.as_deref()
+    pub fn username(&self) -> &str {
+        use std::ops::Deref;
+        self.username.deref()
     }
     /// <p>Password.</p>
-    pub fn password(&self) -> ::std::option::Option<&str> {
-        self.password.as_deref()
+    pub fn password(&self) -> &str {
+        use std::ops::Deref;
+        self.password.deref()
     }
     /// <p>A set of alternate data source parameters that you want to share for these credentials. The credentials are applied in tandem with the data source parameters when you copy a data source by using a create or update request. The API operation compares the <code>DataSourceParameters</code> structure that's in the request with the structures in the <code>AlternateDataSourceParameters</code> allow list. If the structures are an exact match, the request is allowed to use the new data source with the existing credentials. If the <code>AlternateDataSourceParameters</code> list is null, the <code>DataSourceParameters</code> originally used with these <code>Credentials</code> is automatically allowed.</p>
-    pub fn alternate_data_source_parameters(&self) -> ::std::option::Option<&[crate::types::DataSourceParameters]> {
-        self.alternate_data_source_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alternate_data_source_parameters.is_none()`.
+    pub fn alternate_data_source_parameters(&self) -> &[crate::types::DataSourceParameters] {
+        self.alternate_data_source_parameters.as_deref().unwrap_or_default()
     }
 }
 impl CredentialPair {
@@ -42,6 +46,7 @@ pub struct CredentialPairBuilder {
 }
 impl CredentialPairBuilder {
     /// <p>User name.</p>
+    /// This field is required.
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +61,7 @@ impl CredentialPairBuilder {
         &self.username
     }
     /// <p>Password.</p>
+    /// This field is required.
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
         self
@@ -90,11 +96,24 @@ impl CredentialPairBuilder {
         &self.alternate_data_source_parameters
     }
     /// Consumes the builder and constructs a [`CredentialPair`](crate::types::CredentialPair).
-    pub fn build(self) -> crate::types::CredentialPair {
-        crate::types::CredentialPair {
-            username: self.username,
-            password: self.password,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`username`](crate::types::builders::CredentialPairBuilder::username)
+    /// - [`password`](crate::types::builders::CredentialPairBuilder::password)
+    pub fn build(self) -> ::std::result::Result<crate::types::CredentialPair, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CredentialPair {
+            username: self.username.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "username",
+                    "username was not specified but it is required when building CredentialPair",
+                )
+            })?,
+            password: self.password.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "password",
+                    "password was not specified but it is required when building CredentialPair",
+                )
+            })?,
             alternate_data_source_parameters: self.alternate_data_source_parameters,
-        }
+        })
     }
 }

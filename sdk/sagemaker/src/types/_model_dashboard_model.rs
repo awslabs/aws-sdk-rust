@@ -21,16 +21,20 @@ impl ModelDashboardModel {
         self.model.as_ref()
     }
     /// <p>The endpoints that host a model.</p>
-    pub fn endpoints(&self) -> ::std::option::Option<&[crate::types::ModelDashboardEndpoint]> {
-        self.endpoints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.endpoints.is_none()`.
+    pub fn endpoints(&self) -> &[crate::types::ModelDashboardEndpoint] {
+        self.endpoints.as_deref().unwrap_or_default()
     }
     /// <p>A batch transform job. For information about SageMaker batch transform, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform.html">Use Batch Transform</a>.</p>
     pub fn last_batch_transform_job(&self) -> ::std::option::Option<&crate::types::TransformJob> {
         self.last_batch_transform_job.as_ref()
     }
     /// <p>The monitoring schedules for a model.</p>
-    pub fn monitoring_schedules(&self) -> ::std::option::Option<&[crate::types::ModelDashboardMonitoringSchedule]> {
-        self.monitoring_schedules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.monitoring_schedules.is_none()`.
+    pub fn monitoring_schedules(&self) -> &[crate::types::ModelDashboardMonitoringSchedule] {
+        self.monitoring_schedules.as_deref().unwrap_or_default()
     }
     /// <p>The model card for a model.</p>
     pub fn model_card(&self) -> ::std::option::Option<&crate::types::ModelDashboardModelCard> {

@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudWatchLogGroupLogDestination {
     /// <p>The Amazon Resource Name (ARN) of the log group where text and metadata logs are delivered.</p>
-    pub cloud_watch_log_group_arn: ::std::option::Option<::std::string::String>,
+    pub cloud_watch_log_group_arn: ::std::string::String,
     /// <p>The prefix of the log stream name within the log group that you specified </p>
-    pub log_prefix: ::std::option::Option<::std::string::String>,
+    pub log_prefix: ::std::string::String,
 }
 impl CloudWatchLogGroupLogDestination {
     /// <p>The Amazon Resource Name (ARN) of the log group where text and metadata logs are delivered.</p>
-    pub fn cloud_watch_log_group_arn(&self) -> ::std::option::Option<&str> {
-        self.cloud_watch_log_group_arn.as_deref()
+    pub fn cloud_watch_log_group_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.cloud_watch_log_group_arn.deref()
     }
     /// <p>The prefix of the log stream name within the log group that you specified </p>
-    pub fn log_prefix(&self) -> ::std::option::Option<&str> {
-        self.log_prefix.as_deref()
+    pub fn log_prefix(&self) -> &str {
+        use std::ops::Deref;
+        self.log_prefix.deref()
     }
 }
 impl CloudWatchLogGroupLogDestination {
@@ -35,6 +37,7 @@ pub struct CloudWatchLogGroupLogDestinationBuilder {
 }
 impl CloudWatchLogGroupLogDestinationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the log group where text and metadata logs are delivered.</p>
+    /// This field is required.
     pub fn cloud_watch_log_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloud_watch_log_group_arn = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl CloudWatchLogGroupLogDestinationBuilder {
         &self.cloud_watch_log_group_arn
     }
     /// <p>The prefix of the log stream name within the log group that you specified </p>
+    /// This field is required.
     pub fn log_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_prefix = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl CloudWatchLogGroupLogDestinationBuilder {
         &self.log_prefix
     }
     /// Consumes the builder and constructs a [`CloudWatchLogGroupLogDestination`](crate::types::CloudWatchLogGroupLogDestination).
-    pub fn build(self) -> crate::types::CloudWatchLogGroupLogDestination {
-        crate::types::CloudWatchLogGroupLogDestination {
-            cloud_watch_log_group_arn: self.cloud_watch_log_group_arn,
-            log_prefix: self.log_prefix,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`cloud_watch_log_group_arn`](crate::types::builders::CloudWatchLogGroupLogDestinationBuilder::cloud_watch_log_group_arn)
+    /// - [`log_prefix`](crate::types::builders::CloudWatchLogGroupLogDestinationBuilder::log_prefix)
+    pub fn build(self) -> ::std::result::Result<crate::types::CloudWatchLogGroupLogDestination, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CloudWatchLogGroupLogDestination {
+            cloud_watch_log_group_arn: self.cloud_watch_log_group_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "cloud_watch_log_group_arn",
+                    "cloud_watch_log_group_arn was not specified but it is required when building CloudWatchLogGroupLogDestination",
+                )
+            })?,
+            log_prefix: self.log_prefix.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "log_prefix",
+                    "log_prefix was not specified but it is required when building CloudWatchLogGroupLogDestination",
+                )
+            })?,
+        })
     }
 }

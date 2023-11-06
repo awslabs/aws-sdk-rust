@@ -28,6 +28,7 @@ pub struct CancelDataRepositoryTaskInputBuilder {
 }
 impl CancelDataRepositoryTaskInputBuilder {
     /// <p>Specifies the data repository task to cancel.</p>
+    /// This field is required.
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_id = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl CancelDataRepositoryTaskInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_data_repository_task::CancelDataRepositoryTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::cancel_data_repository_task::CancelDataRepositoryTaskInput { task_id: self.task_id })
     }

@@ -2,7 +2,7 @@
 pub fn ser_s3_retention(
     input: &crate::types::S3Retention,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_1) = &input.retain_until_date {
@@ -17,6 +17,7 @@ pub fn ser_s3_retention(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_s3_retention(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::S3Retention, ::aws_smithy_xml::decode::XmlDecodeError> {

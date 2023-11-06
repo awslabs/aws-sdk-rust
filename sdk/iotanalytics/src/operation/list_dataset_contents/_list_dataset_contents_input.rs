@@ -55,6 +55,7 @@ pub struct ListDatasetContentsInputBuilder {
 }
 impl ListDatasetContentsInputBuilder {
     /// <p>The name of the dataset whose contents information you want to list.</p>
+    /// This field is required.
     pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_name = ::std::option::Option::Some(input.into());
         self
@@ -127,7 +128,7 @@ impl ListDatasetContentsInputBuilder {
     /// Consumes the builder and constructs a [`ListDatasetContentsInput`](crate::operation::list_dataset_contents::ListDatasetContentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_dataset_contents::ListDatasetContentsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_dataset_contents::ListDatasetContentsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_dataset_contents::ListDatasetContentsInput {
             dataset_name: self.dataset_name,

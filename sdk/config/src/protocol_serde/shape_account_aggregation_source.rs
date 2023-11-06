@@ -2,27 +2,27 @@
 pub fn ser_account_aggregation_source(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AccountAggregationSource,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.account_ids {
-        let mut array_2 = object.key("AccountIds").start_array();
-        for item_3 in var_1 {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        let mut array_1 = object.key("AccountIds").start_array();
+        for item_2 in &input.account_ids {
             {
-                array_2.value().string(item_3.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
     if input.all_aws_regions {
         object.key("AllAwsRegions").boolean(input.all_aws_regions);
     }
-    if let Some(var_4) = &input.aws_regions {
-        let mut array_5 = object.key("AwsRegions").start_array();
-        for item_6 in var_4 {
+    if let Some(var_3) = &input.aws_regions {
+        let mut array_4 = object.key("AwsRegions").start_array();
+        for item_5 in var_3 {
             {
-                array_5.value().string(item_6.as_str());
+                array_4.value().string(item_5.as_str());
             }
         }
-        array_5.finish();
+        array_4.finish();
     }
     Ok(())
 }
@@ -66,7 +66,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::account_aggregation_source_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

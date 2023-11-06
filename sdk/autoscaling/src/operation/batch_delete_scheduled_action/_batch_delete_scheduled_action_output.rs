@@ -9,8 +9,10 @@ pub struct BatchDeleteScheduledActionOutput {
 }
 impl BatchDeleteScheduledActionOutput {
     /// <p>The names of the scheduled actions that could not be deleted, including an error message.</p>
-    pub fn failed_scheduled_actions(&self) -> ::std::option::Option<&[crate::types::FailedScheduledUpdateGroupActionRequest]> {
-        self.failed_scheduled_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_scheduled_actions.is_none()`.
+    pub fn failed_scheduled_actions(&self) -> &[crate::types::FailedScheduledUpdateGroupActionRequest] {
+        self.failed_scheduled_actions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchDeleteScheduledActionOutput {

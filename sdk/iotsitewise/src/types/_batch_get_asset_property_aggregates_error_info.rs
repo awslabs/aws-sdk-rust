@@ -5,18 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetAssetPropertyAggregatesErrorInfo {
     /// <p>The error code.</p>
-    pub error_code: ::std::option::Option<crate::types::BatchGetAssetPropertyAggregatesErrorCode>,
+    pub error_code: crate::types::BatchGetAssetPropertyAggregatesErrorCode,
     /// <p>The date the error occurred, in Unix epoch time.</p>
-    pub error_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub error_timestamp: ::aws_smithy_types::DateTime,
 }
 impl BatchGetAssetPropertyAggregatesErrorInfo {
     /// <p>The error code.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&crate::types::BatchGetAssetPropertyAggregatesErrorCode> {
-        self.error_code.as_ref()
+    pub fn error_code(&self) -> &crate::types::BatchGetAssetPropertyAggregatesErrorCode {
+        &self.error_code
     }
     /// <p>The date the error occurred, in Unix epoch time.</p>
-    pub fn error_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.error_timestamp.as_ref()
+    pub fn error_timestamp(&self) -> &::aws_smithy_types::DateTime {
+        &self.error_timestamp
     }
 }
 impl BatchGetAssetPropertyAggregatesErrorInfo {
@@ -35,6 +35,7 @@ pub struct BatchGetAssetPropertyAggregatesErrorInfoBuilder {
 }
 impl BatchGetAssetPropertyAggregatesErrorInfoBuilder {
     /// <p>The error code.</p>
+    /// This field is required.
     pub fn error_code(mut self, input: crate::types::BatchGetAssetPropertyAggregatesErrorCode) -> Self {
         self.error_code = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl BatchGetAssetPropertyAggregatesErrorInfoBuilder {
         &self.error_code
     }
     /// <p>The date the error occurred, in Unix epoch time.</p>
+    /// This field is required.
     pub fn error_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.error_timestamp = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,25 @@ impl BatchGetAssetPropertyAggregatesErrorInfoBuilder {
         &self.error_timestamp
     }
     /// Consumes the builder and constructs a [`BatchGetAssetPropertyAggregatesErrorInfo`](crate::types::BatchGetAssetPropertyAggregatesErrorInfo).
-    pub fn build(self) -> crate::types::BatchGetAssetPropertyAggregatesErrorInfo {
-        crate::types::BatchGetAssetPropertyAggregatesErrorInfo {
-            error_code: self.error_code,
-            error_timestamp: self.error_timestamp,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`error_code`](crate::types::builders::BatchGetAssetPropertyAggregatesErrorInfoBuilder::error_code)
+    /// - [`error_timestamp`](crate::types::builders::BatchGetAssetPropertyAggregatesErrorInfoBuilder::error_timestamp)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::BatchGetAssetPropertyAggregatesErrorInfo, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::BatchGetAssetPropertyAggregatesErrorInfo {
+            error_code: self.error_code.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "error_code",
+                    "error_code was not specified but it is required when building BatchGetAssetPropertyAggregatesErrorInfo",
+                )
+            })?,
+            error_timestamp: self.error_timestamp.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "error_timestamp",
+                    "error_timestamp was not specified but it is required when building BatchGetAssetPropertyAggregatesErrorInfo",
+                )
+            })?,
+        })
     }
 }

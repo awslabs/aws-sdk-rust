@@ -35,6 +35,7 @@ pub struct MetricStreamStatisticsMetricBuilder {
 }
 impl MetricStreamStatisticsMetricBuilder {
     /// <p>The namespace of the metric.</p>
+    /// This field is required.
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl MetricStreamStatisticsMetricBuilder {
         &self.namespace
     }
     /// <p>The name of the metric.</p>
+    /// This field is required.
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_name = ::std::option::Option::Some(input.into());
         self

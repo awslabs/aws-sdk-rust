@@ -32,11 +32,10 @@ pub fn de_get_routing_control_state_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_routing_control_state::GetRoutingControlStateError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_routing_control_state::GetRoutingControlStateError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "EndpointTemporarilyUnavailableException" => {
@@ -47,11 +46,10 @@ pub fn de_get_routing_control_state_http_error(
                     let mut output = crate::types::error::builders::EndpointTemporarilyUnavailableExceptionBuilder::default();
                     output = crate::protocol_serde::shape_endpoint_temporarily_unavailable_exception::de_endpoint_temporarily_unavailable_exception_json_err(_response_body, output).map_err(crate::operation::get_routing_control_state::GetRoutingControlStateError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::endpoint_temporarily_unavailable_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::get_routing_control_state::GetRoutingControlStateError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -63,11 +61,10 @@ pub fn de_get_routing_control_state_http_error(
                 output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_routing_control_state::GetRoutingControlStateError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_routing_control_state::GetRoutingControlStateError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::get_routing_control_state::GetRoutingControlStateError::ResourceNotFoundException({
@@ -78,11 +75,10 @@ pub fn de_get_routing_control_state_http_error(
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_routing_control_state::GetRoutingControlStateError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_routing_control_state::GetRoutingControlStateError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::get_routing_control_state::GetRoutingControlStateError::ThrottlingException({
@@ -93,11 +89,10 @@ pub fn de_get_routing_control_state_http_error(
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_routing_control_state::GetRoutingControlStateError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_routing_control_state::GetRoutingControlStateError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::get_routing_control_state::GetRoutingControlStateError::ValidationException({
@@ -108,11 +103,10 @@ pub fn de_get_routing_control_state_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_routing_control_state::GetRoutingControlStateError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_routing_control_state::GetRoutingControlStateError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::get_routing_control_state::GetRoutingControlStateError::generic(generic),
@@ -134,18 +128,20 @@ pub fn de_get_routing_control_state_http_response(
         output = crate::protocol_serde::shape_get_routing_control_state::de_get_routing_control_state(_response_body, output)
             .map_err(crate::operation::get_routing_control_state::GetRoutingControlStateError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::get_routing_control_state_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::get_routing_control_state::GetRoutingControlStateError::unhandled)?
     })
 }
 
 pub fn ser_get_routing_control_state_input(
     input: &crate::operation::get_routing_control_state::GetRoutingControlStateInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_get_routing_control_state_input::ser_get_routing_control_state_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_get_routing_control_state(

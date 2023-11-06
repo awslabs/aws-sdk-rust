@@ -45,6 +45,7 @@ pub struct DescribeCustomDomainsInputBuilder {
 }
 impl DescribeCustomDomainsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want associated custom domain names to be described for.</p>
+    /// This field is required.
     pub fn service_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_arn = ::std::option::Option::Some(input.into());
         self
@@ -95,7 +96,7 @@ impl DescribeCustomDomainsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeCustomDomainsInput`](crate::operation::describe_custom_domains::DescribeCustomDomainsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_custom_domains::DescribeCustomDomainsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_custom_domains::DescribeCustomDomainsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_custom_domains::DescribeCustomDomainsInput {
             service_arn: self.service_arn,

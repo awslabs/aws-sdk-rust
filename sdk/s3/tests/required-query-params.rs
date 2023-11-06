@@ -6,14 +6,14 @@
 use aws_sdk_s3::config::{Credentials, Region};
 use aws_sdk_s3::error::DisplayErrorContext;
 use aws_sdk_s3::Client;
-use aws_smithy_client::test_connection::capture_request;
-use aws_smithy_http::operation::error::BuildError;
+use aws_smithy_runtime::client::http::test_util::capture_request;
+use aws_smithy_types::error::operation::BuildError;
 
 #[tokio::test]
 async fn test_error_when_required_query_param_is_unset() {
-    let (conn, _request) = capture_request(None);
+    let (http_client, _request) = capture_request(None);
     let config = aws_sdk_s3::Config::builder()
-        .http_connector(conn)
+        .http_client(http_client)
         .credentials_provider(Credentials::for_tests())
         .region(Region::new("us-east-1"))
         .build();
@@ -36,9 +36,9 @@ async fn test_error_when_required_query_param_is_unset() {
 
 #[tokio::test]
 async fn test_error_when_required_query_param_is_set_but_empty() {
-    let (conn, _request) = capture_request(None);
+    let (http_client, _request) = capture_request(None);
     let config = aws_sdk_s3::Config::builder()
-        .http_connector(conn)
+        .http_client(http_client)
         .credentials_provider(Credentials::for_tests())
         .region(Region::new("us-east-1"))
         .build();

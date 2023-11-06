@@ -67,6 +67,7 @@ pub struct AssociateResourceSharePermissionInputBuilder {
 }
 impl AssociateResourceSharePermissionInputBuilder {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share to which you want to add or replace permissions.</p>
+    /// This field is required.
     pub fn resource_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_share_arn = ::std::option::Option::Some(input.into());
         self
@@ -81,6 +82,7 @@ impl AssociateResourceSharePermissionInputBuilder {
         &self.resource_share_arn
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the RAM permission to associate with the resource share. To find the ARN for a permission, use either the <code>ListPermissions</code> operation or go to the <a href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions library</a> page in the RAM console and then choose the name of the permission. The ARN is displayed on the detail page.</p>
+    /// This field is required.
     pub fn permission_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permission_arn = ::std::option::Option::Some(input.into());
         self
@@ -159,7 +161,7 @@ impl AssociateResourceSharePermissionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_resource_share_permission::AssociateResourceSharePermissionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::associate_resource_share_permission::AssociateResourceSharePermissionInput {

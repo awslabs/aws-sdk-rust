@@ -3,7 +3,7 @@
 pub fn ser_directory_service_authentication_request(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::DirectoryServiceAuthenticationRequest,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("DirectoryId");
     if let Some(var_2) = &input.directory_id {

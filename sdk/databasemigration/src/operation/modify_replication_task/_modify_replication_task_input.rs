@@ -114,6 +114,7 @@ pub struct ModifyReplicationTaskInputBuilder {
 }
 impl ModifyReplicationTaskInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
+    /// This field is required.
     pub fn replication_task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_task_arn = ::std::option::Option::Some(input.into());
         self
@@ -287,7 +288,7 @@ impl ModifyReplicationTaskInputBuilder {
     /// Consumes the builder and constructs a [`ModifyReplicationTaskInput`](crate::operation::modify_replication_task::ModifyReplicationTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_replication_task::ModifyReplicationTaskInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::modify_replication_task::ModifyReplicationTaskInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::modify_replication_task::ModifyReplicationTaskInput {
             replication_task_arn: self.replication_task_arn,

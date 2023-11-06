@@ -35,6 +35,7 @@ pub struct DeleteModelInputBuilder {
 }
 impl DeleteModelInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
+    /// This field is required.
     pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rest_api_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl DeleteModelInputBuilder {
         &self.rest_api_id
     }
     /// <p>The name of the model to delete.</p>
+    /// This field is required.
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_name = ::std::option::Option::Some(input.into());
         self
@@ -63,7 +65,7 @@ impl DeleteModelInputBuilder {
         &self.model_name
     }
     /// Consumes the builder and constructs a [`DeleteModelInput`](crate::operation::delete_model::DeleteModelInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_model::DeleteModelInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_model::DeleteModelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_model::DeleteModelInput {
             rest_api_id: self.rest_api_id,
             model_name: self.model_name,

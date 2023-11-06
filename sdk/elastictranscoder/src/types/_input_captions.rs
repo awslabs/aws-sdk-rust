@@ -27,8 +27,10 @@ impl InputCaptions {
         self.merge_policy.as_deref()
     }
     /// <p>Source files for the input sidecar captions used during the transcoding process. To omit all sidecar captions, leave <code>CaptionSources</code> blank.</p>
-    pub fn caption_sources(&self) -> ::std::option::Option<&[crate::types::CaptionSource]> {
-        self.caption_sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.caption_sources.is_none()`.
+    pub fn caption_sources(&self) -> &[crate::types::CaptionSource] {
+        self.caption_sources.as_deref().unwrap_or_default()
     }
 }
 impl InputCaptions {

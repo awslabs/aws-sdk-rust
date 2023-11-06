@@ -34,6 +34,7 @@ pub struct GetSegmentInputBuilder {
 }
 impl GetSegmentInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetSegmentInputBuilder {
         &self.application_id
     }
     /// <p>The unique identifier for the segment.</p>
+    /// This field is required.
     pub fn segment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.segment_id = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,7 @@ impl GetSegmentInputBuilder {
         &self.segment_id
     }
     /// Consumes the builder and constructs a [`GetSegmentInput`](crate::operation::get_segment::GetSegmentInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_segment::GetSegmentInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_segment::GetSegmentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_segment::GetSegmentInput {
             application_id: self.application_id,
             segment_id: self.segment_id,

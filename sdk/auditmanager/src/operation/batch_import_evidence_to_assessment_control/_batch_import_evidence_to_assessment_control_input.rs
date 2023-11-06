@@ -26,8 +26,10 @@ impl BatchImportEvidenceToAssessmentControlInput {
         self.control_id.as_deref()
     }
     /// <p> The list of manual evidence objects. </p>
-    pub fn manual_evidence(&self) -> ::std::option::Option<&[crate::types::ManualEvidence]> {
-        self.manual_evidence.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.manual_evidence.is_none()`.
+    pub fn manual_evidence(&self) -> &[crate::types::ManualEvidence] {
+        self.manual_evidence.as_deref().unwrap_or_default()
     }
 }
 impl BatchImportEvidenceToAssessmentControlInput {
@@ -48,6 +50,7 @@ pub struct BatchImportEvidenceToAssessmentControlInputBuilder {
 }
 impl BatchImportEvidenceToAssessmentControlInputBuilder {
     /// <p> The identifier for the assessment. </p>
+    /// This field is required.
     pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl BatchImportEvidenceToAssessmentControlInputBuilder {
         &self.assessment_id
     }
     /// <p> The identifier for the control set. </p>
+    /// This field is required.
     pub fn control_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_set_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +80,7 @@ impl BatchImportEvidenceToAssessmentControlInputBuilder {
         &self.control_set_id
     }
     /// <p> The identifier for the control. </p>
+    /// This field is required.
     pub fn control_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_id = ::std::option::Option::Some(input.into());
         self
@@ -114,7 +119,7 @@ impl BatchImportEvidenceToAssessmentControlInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlInput {

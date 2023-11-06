@@ -2,7 +2,7 @@
 pub fn ser_output_group(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OutputGroup,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.name {
         object.key("name").string(var_1.as_str());
     }
@@ -54,7 +54,7 @@ where
                                 .set_output_group_settings(crate::protocol_serde::shape_output_group_settings::de_output_group_settings(tokens)?);
                         }
                         "outputs" => {
-                            builder = builder.set_outputs(crate::protocol_serde::shape___list_of_output::de___list_of_output(tokens)?);
+                            builder = builder.set_outputs(crate::protocol_serde::shape_list_of_output::de_list_of_output(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
@@ -66,7 +66,7 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::output_group_correct_errors(builder).build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

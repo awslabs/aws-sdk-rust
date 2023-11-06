@@ -88,6 +88,7 @@ impl CreateIdentitySourceInputBuilder {
         &self.client_token
     }
     /// <p>Specifies the ID of the policy store in which you want to store this identity source. Only policies and requests made using this policy store can reference identities from the identity provider configured in the new identity source.</p>
+    /// This field is required.
     pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_store_id = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +106,7 @@ impl CreateIdentitySourceInputBuilder {
     /// <p>At this time, the only valid member of this structure is a Amazon Cognito user pool configuration.</p>
     /// <p>You must specify a <code>UserPoolArn</code>, and optionally, a <code>ClientId</code>.</p>
     /// </note>
+    /// This field is required.
     pub fn configuration(mut self, input: crate::types::Configuration) -> Self {
         self.configuration = ::std::option::Option::Some(input);
         self
@@ -141,7 +143,7 @@ impl CreateIdentitySourceInputBuilder {
     /// Consumes the builder and constructs a [`CreateIdentitySourceInput`](crate::operation::create_identity_source::CreateIdentitySourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_identity_source::CreateIdentitySourceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_identity_source::CreateIdentitySourceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_identity_source::CreateIdentitySourceInput {
             client_token: self.client_token,

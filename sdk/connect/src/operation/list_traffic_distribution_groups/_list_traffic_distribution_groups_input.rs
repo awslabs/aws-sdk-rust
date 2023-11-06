@@ -87,7 +87,7 @@ impl ListTrafficDistributionGroupsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_traffic_distribution_groups::ListTrafficDistributionGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_traffic_distribution_groups::ListTrafficDistributionGroupsInput {
             max_results: self.max_results,

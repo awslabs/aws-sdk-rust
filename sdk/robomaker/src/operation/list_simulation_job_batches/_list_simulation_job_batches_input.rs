@@ -20,8 +20,10 @@ impl ListSimulationJobBatchesInput {
         self.max_results
     }
     /// <p>Optional filters to limit results.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
 }
 impl ListSimulationJobBatchesInput {
@@ -93,7 +95,7 @@ impl ListSimulationJobBatchesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_simulation_job_batches::ListSimulationJobBatchesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_simulation_job_batches::ListSimulationJobBatchesInput {
             next_token: self.next_token,

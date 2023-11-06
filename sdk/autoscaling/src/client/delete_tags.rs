@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteTags`](crate::operation::delete_tags::builders::DeleteTagsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`tags(Tag)`](crate::operation::delete_tags::builders::DeleteTagsFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::delete_tags::builders::DeleteTagsFluentBuilder::set_tags): <p>One or more tags.</p>
+    ///   - [`tags(Tag)`](crate::operation::delete_tags::builders::DeleteTagsFluentBuilder::tags) / [`set_tags(Option<Vec::<Tag>>)`](crate::operation::delete_tags::builders::DeleteTagsFluentBuilder::set_tags):<br>required: **true**<br><p>One or more tags.</p><br>
     /// - On success, responds with [`DeleteTagsOutput`](crate::operation::delete_tags::DeleteTagsOutput)
     /// - On failure, responds with [`SdkError<DeleteTagsError>`](crate::operation::delete_tags::DeleteTagsError)
     pub fn delete_tags(&self) -> crate::operation::delete_tags::builders::DeleteTagsFluentBuilder {

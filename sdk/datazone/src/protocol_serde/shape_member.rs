@@ -2,7 +2,7 @@
 pub fn ser_member(
     object_3: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Member,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::Member::UserIdentifier(inner) => {
             object_3.key("userIdentifier").string(inner.as_str());
@@ -10,7 +10,7 @@ pub fn ser_member(
         crate::types::Member::GroupIdentifier(inner) => {
             object_3.key("groupIdentifier").string(inner.as_str());
         }
-        crate::types::Member::Unknown => return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("Member")),
+        crate::types::Member::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("Member")),
     }
     Ok(())
 }

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JwtTokenTypeConfiguration {
     /// <p>The location of the key.</p>
-    pub key_location: ::std::option::Option<crate::types::KeyLocation>,
+    pub key_location: crate::types::KeyLocation,
     /// <p>The signing key URL.</p>
     pub url: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (arn) of the secret.</p>
@@ -21,8 +21,8 @@ pub struct JwtTokenTypeConfiguration {
 }
 impl JwtTokenTypeConfiguration {
     /// <p>The location of the key.</p>
-    pub fn key_location(&self) -> ::std::option::Option<&crate::types::KeyLocation> {
-        self.key_location.as_ref()
+    pub fn key_location(&self) -> &crate::types::KeyLocation {
+        &self.key_location
     }
     /// <p>The signing key URL.</p>
     pub fn url(&self) -> ::std::option::Option<&str> {
@@ -70,6 +70,7 @@ pub struct JwtTokenTypeConfigurationBuilder {
 }
 impl JwtTokenTypeConfigurationBuilder {
     /// <p>The location of the key.</p>
+    /// This field is required.
     pub fn key_location(mut self, input: crate::types::KeyLocation) -> Self {
         self.key_location = ::std::option::Option::Some(input);
         self
@@ -168,15 +169,22 @@ impl JwtTokenTypeConfigurationBuilder {
         &self.claim_regex
     }
     /// Consumes the builder and constructs a [`JwtTokenTypeConfiguration`](crate::types::JwtTokenTypeConfiguration).
-    pub fn build(self) -> crate::types::JwtTokenTypeConfiguration {
-        crate::types::JwtTokenTypeConfiguration {
-            key_location: self.key_location,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key_location`](crate::types::builders::JwtTokenTypeConfigurationBuilder::key_location)
+    pub fn build(self) -> ::std::result::Result<crate::types::JwtTokenTypeConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::JwtTokenTypeConfiguration {
+            key_location: self.key_location.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "key_location",
+                    "key_location was not specified but it is required when building JwtTokenTypeConfiguration",
+                )
+            })?,
             url: self.url,
             secret_manager_arn: self.secret_manager_arn,
             user_name_attribute_field: self.user_name_attribute_field,
             group_attribute_field: self.group_attribute_field,
             issuer: self.issuer,
             claim_regex: self.claim_regex,
-        }
+        })
     }
 }

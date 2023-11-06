@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Greengrass {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Greengrass group. For more information about how to find a group's ARN, see <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/listgroups-get.html">ListGroups</a> and <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/getgroup-get.html">GetGroup</a> in the <i>IoT Greengrass API Reference</i>.</p>
-    pub group_arn: ::std::option::Option<::std::string::String>,
+    pub group_arn: ::std::string::String,
 }
 impl Greengrass {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Greengrass group. For more information about how to find a group's ARN, see <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/listgroups-get.html">ListGroups</a> and <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/getgroup-get.html">GetGroup</a> in the <i>IoT Greengrass API Reference</i>.</p>
-    pub fn group_arn(&self) -> ::std::option::Option<&str> {
-        self.group_arn.as_deref()
+    pub fn group_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.group_arn.deref()
     }
 }
 impl Greengrass {
@@ -28,6 +29,7 @@ pub struct GreengrassBuilder {
 }
 impl GreengrassBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Greengrass group. For more information about how to find a group's ARN, see <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/listgroups-get.html">ListGroups</a> and <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/getgroup-get.html">GetGroup</a> in the <i>IoT Greengrass API Reference</i>.</p>
+    /// This field is required.
     pub fn group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_arn = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl GreengrassBuilder {
         &self.group_arn
     }
     /// Consumes the builder and constructs a [`Greengrass`](crate::types::Greengrass).
-    pub fn build(self) -> crate::types::Greengrass {
-        crate::types::Greengrass { group_arn: self.group_arn }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`group_arn`](crate::types::builders::GreengrassBuilder::group_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::Greengrass, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Greengrass {
+            group_arn: self.group_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "group_arn",
+                    "group_arn was not specified but it is required when building Greengrass",
+                )
+            })?,
+        })
     }
 }

@@ -30,6 +30,7 @@ pub struct DescribeDeploymentJobInputBuilder {
 }
 impl DescribeDeploymentJobInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the deployment job.</p>
+    /// This field is required.
     pub fn job(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl DescribeDeploymentJobInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDeploymentJobInput`](crate::operation::describe_deployment_job::DescribeDeploymentJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_deployment_job::DescribeDeploymentJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_deployment_job::DescribeDeploymentJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_deployment_job::DescribeDeploymentJobInput { job: self.job })
     }

@@ -15,8 +15,10 @@ impl MetricSetDataQualityMetric {
         self.metric_set_arn.as_deref()
     }
     /// <p>The array of data quality metrics contained in the data quality metric set.</p>
-    pub fn data_quality_metric_list(&self) -> ::std::option::Option<&[crate::types::DataQualityMetric]> {
-        self.data_quality_metric_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_quality_metric_list.is_none()`.
+    pub fn data_quality_metric_list(&self) -> &[crate::types::DataQualityMetric] {
+        self.data_quality_metric_list.as_deref().unwrap_or_default()
     }
 }
 impl MetricSetDataQualityMetric {

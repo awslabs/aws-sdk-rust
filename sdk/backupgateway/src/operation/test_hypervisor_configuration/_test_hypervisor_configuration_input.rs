@@ -58,6 +58,7 @@ pub struct TestHypervisorConfigurationInputBuilder {
 }
 impl TestHypervisorConfigurationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the gateway to the hypervisor to test.</p>
+    /// This field is required.
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_arn = ::std::option::Option::Some(input.into());
         self
@@ -72,6 +73,7 @@ impl TestHypervisorConfigurationInputBuilder {
         &self.gateway_arn
     }
     /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
+    /// This field is required.
     pub fn host(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host = ::std::option::Option::Some(input.into());
         self
@@ -118,7 +120,7 @@ impl TestHypervisorConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::test_hypervisor_configuration::TestHypervisorConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::test_hypervisor_configuration::TestHypervisorConfigurationInput {
             gateway_arn: self.gateway_arn,

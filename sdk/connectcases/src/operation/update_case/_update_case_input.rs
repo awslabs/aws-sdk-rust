@@ -20,8 +20,10 @@ impl UpdateCaseInput {
         self.case_id.as_deref()
     }
     /// <p>An array of objects with <code>fieldId</code> (matching ListFields/DescribeField) and value union data, structured identical to <code>CreateCase</code>.</p>
-    pub fn fields(&self) -> ::std::option::Option<&[crate::types::FieldValue]> {
-        self.fields.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fields.is_none()`.
+    pub fn fields(&self) -> &[crate::types::FieldValue] {
+        self.fields.as_deref().unwrap_or_default()
     }
 }
 impl UpdateCaseInput {
@@ -41,6 +43,7 @@ pub struct UpdateCaseInputBuilder {
 }
 impl UpdateCaseInputBuilder {
     /// <p>The unique identifier of the Cases domain. </p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl UpdateCaseInputBuilder {
         &self.domain_id
     }
     /// <p>A unique identifier of the case.</p>
+    /// This field is required.
     pub fn case_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.case_id = ::std::option::Option::Some(input.into());
         self
@@ -89,7 +93,7 @@ impl UpdateCaseInputBuilder {
         &self.fields
     }
     /// Consumes the builder and constructs a [`UpdateCaseInput`](crate::operation::update_case::UpdateCaseInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_case::UpdateCaseInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_case::UpdateCaseInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_case::UpdateCaseInput {
             domain_id: self.domain_id,
             case_id: self.case_id,

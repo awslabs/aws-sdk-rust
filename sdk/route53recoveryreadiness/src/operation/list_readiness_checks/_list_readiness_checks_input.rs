@@ -64,7 +64,7 @@ impl ListReadinessChecksInputBuilder {
     /// Consumes the builder and constructs a [`ListReadinessChecksInput`](crate::operation::list_readiness_checks::ListReadinessChecksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_readiness_checks::ListReadinessChecksInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_readiness_checks::ListReadinessChecksInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_readiness_checks::ListReadinessChecksInput {
             max_results: self.max_results,

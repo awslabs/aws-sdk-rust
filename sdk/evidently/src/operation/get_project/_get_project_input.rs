@@ -27,6 +27,7 @@ pub struct GetProjectInputBuilder {
 }
 impl GetProjectInputBuilder {
     /// <p>The name or ARN of the project that you want to see the details of.</p>
+    /// This field is required.
     pub fn project(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetProjectInputBuilder {
         &self.project
     }
     /// Consumes the builder and constructs a [`GetProjectInput`](crate::operation::get_project::GetProjectInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_project::GetProjectInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_project::GetProjectInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_project::GetProjectInput { project: self.project })
     }
 }

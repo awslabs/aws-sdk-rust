@@ -19,14 +19,18 @@ pub struct BatchContainerOverrides {
 }
 impl BatchContainerOverrides {
     /// <p>The command to send to the container that overrides the default command from the Docker image or the task definition.</p>
-    pub fn command(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.command.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.command.is_none()`.
+    pub fn command(&self) -> &[::std::string::String] {
+        self.command.as_deref().unwrap_or_default()
     }
     /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the task definition.</p> <note>
     /// <p>Environment variables cannot start with "<code>Batch</code>". This naming convention is reserved for variables that Batch sets.</p>
     /// </note>
-    pub fn environment(&self) -> ::std::option::Option<&[crate::types::BatchEnvironmentVariable]> {
-        self.environment.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.environment.is_none()`.
+    pub fn environment(&self) -> &[crate::types::BatchEnvironmentVariable] {
+        self.environment.as_deref().unwrap_or_default()
     }
     /// <p>The instance type to use for a multi-node parallel job.</p> <note>
     /// <p>This parameter isn't applicable to single-node container jobs or jobs that run on Fargate resources, and shouldn't be provided.</p>
@@ -35,8 +39,10 @@ impl BatchContainerOverrides {
         self.instance_type.as_deref()
     }
     /// <p>The type and amount of resources to assign to a container. This overrides the settings in the job definition. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
-    pub fn resource_requirements(&self) -> ::std::option::Option<&[crate::types::BatchResourceRequirement]> {
-        self.resource_requirements.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_requirements.is_none()`.
+    pub fn resource_requirements(&self) -> &[crate::types::BatchResourceRequirement] {
+        self.resource_requirements.as_deref().unwrap_or_default()
     }
 }
 impl BatchContainerOverrides {

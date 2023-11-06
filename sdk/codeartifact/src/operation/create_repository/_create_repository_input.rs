@@ -34,12 +34,16 @@ impl CreateRepositoryInput {
         self.description.as_deref()
     }
     /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
-    pub fn upstreams(&self) -> ::std::option::Option<&[crate::types::UpstreamRepository]> {
-        self.upstreams.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.upstreams.is_none()`.
+    pub fn upstreams(&self) -> &[crate::types::UpstreamRepository] {
+        self.upstreams.as_deref().unwrap_or_default()
     }
     /// <p>One or more tag key-value pairs for the repository.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateRepositoryInput {
@@ -62,6 +66,7 @@ pub struct CreateRepositoryInputBuilder {
 }
 impl CreateRepositoryInputBuilder {
     /// <p> The name of the domain that contains the created repository. </p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +95,7 @@ impl CreateRepositoryInputBuilder {
         &self.domain_owner
     }
     /// <p> The name of the repository to create. </p>
+    /// This field is required.
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository = ::std::option::Option::Some(input.into());
         self
@@ -160,7 +166,7 @@ impl CreateRepositoryInputBuilder {
     /// Consumes the builder and constructs a [`CreateRepositoryInput`](crate::operation::create_repository::CreateRepositoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_repository::CreateRepositoryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_repository::CreateRepositoryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_repository::CreateRepositoryInput {
             domain: self.domain,
             domain_owner: self.domain_owner,

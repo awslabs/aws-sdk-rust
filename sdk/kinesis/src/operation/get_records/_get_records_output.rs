@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRecordsOutput {
     /// <p>The data records retrieved from the shard.</p>
-    pub records: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
+    pub records: ::std::vec::Vec<crate::types::Record>,
     /// <p>The next position in the shard from which to start sequentially reading data records. If set to <code>null</code>, the shard has been closed and the requested iterator does not return any more data. </p>
     pub next_shard_iterator: ::std::option::Option<::std::string::String>,
     /// <p>The number of milliseconds the <code>GetRecords</code> response is from the tip of the stream, indicating how far behind current time the consumer is. A value of zero indicates that record processing is caught up, and there are no new records to process at this moment.</p>
@@ -16,8 +16,9 @@ pub struct GetRecordsOutput {
 }
 impl GetRecordsOutput {
     /// <p>The data records retrieved from the shard.</p>
-    pub fn records(&self) -> ::std::option::Option<&[crate::types::Record]> {
-        self.records.as_deref()
+    pub fn records(&self) -> &[crate::types::Record] {
+        use std::ops::Deref;
+        self.records.deref()
     }
     /// <p>The next position in the shard from which to start sequentially reading data records. If set to <code>null</code>, the shard has been closed and the requested iterator does not return any more data. </p>
     pub fn next_shard_iterator(&self) -> ::std::option::Option<&str> {
@@ -28,8 +29,10 @@ impl GetRecordsOutput {
         self.millis_behind_latest
     }
     /// <p>The list of the current shard's child shards, returned in the <code>GetRecords</code> API's response only when the end of the current shard is reached.</p>
-    pub fn child_shards(&self) -> ::std::option::Option<&[crate::types::ChildShard]> {
-        self.child_shards.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.child_shards.is_none()`.
+    pub fn child_shards(&self) -> &[crate::types::ChildShard] {
+        self.child_shards.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetRecordsOutput {
@@ -133,13 +136,20 @@ impl GetRecordsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetRecordsOutput`](crate::operation::get_records::GetRecordsOutput).
-    pub fn build(self) -> crate::operation::get_records::GetRecordsOutput {
-        crate::operation::get_records::GetRecordsOutput {
-            records: self.records,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`records`](crate::operation::get_records::builders::GetRecordsOutputBuilder::records)
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_records::GetRecordsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_records::GetRecordsOutput {
+            records: self.records.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "records",
+                    "records was not specified but it is required when building GetRecordsOutput",
+                )
+            })?,
             next_shard_iterator: self.next_shard_iterator,
             millis_behind_latest: self.millis_behind_latest,
             child_shards: self.child_shards,
             _request_id: self._request_id,
-        }
+        })
     }
 }

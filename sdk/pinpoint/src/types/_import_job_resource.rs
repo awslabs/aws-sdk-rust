@@ -122,6 +122,7 @@ impl ImportJobResourceBuilder {
     }
     /// <p>The format of the files that contain the endpoint definitions to import. Valid values are: CSV, for comma-separated values format; and, JSON, for newline-delimited JSON format.</p>
     /// <p>If the files are stored in an Amazon S3 location and that location contains multiple files that use different formats, Amazon Pinpoint imports data only from the files that use the specified format.</p>
+    /// This field is required.
     pub fn format(mut self, input: crate::types::Format) -> Self {
         self.format = ::std::option::Option::Some(input);
         self
@@ -152,6 +153,7 @@ impl ImportJobResourceBuilder {
         &self.register_endpoints
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorizes Amazon Pinpoint to access the Amazon S3 location to import endpoint definitions from.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -173,6 +175,7 @@ impl ImportJobResourceBuilder {
     /// </replaceable>/<replaceable>
     /// file-name
     /// </replaceable>. The location can end with the key for an individual object or a prefix that qualifies multiple objects.</p>
+    /// This field is required.
     pub fn s3_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_url = ::std::option::Option::Some(input.into());
         self

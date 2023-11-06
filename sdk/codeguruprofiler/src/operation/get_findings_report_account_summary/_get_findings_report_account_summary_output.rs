@@ -5,15 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFindingsReportAccountSummaryOutput {
     /// <p>The return list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_FindingsReportSummary.html"> <code>FindingsReportSummary</code> </a> objects taht contain summaries of analysis results for all profiling groups in your AWS account.</p>
-    pub report_summaries: ::std::option::Option<::std::vec::Vec<crate::types::FindingsReportSummary>>,
+    pub report_summaries: ::std::vec::Vec<crate::types::FindingsReportSummary>,
     /// <p>The <code>nextToken</code> value to include in a future <code>GetFindingsReportAccountSummary</code> request. When the results of a <code>GetFindingsReportAccountSummary</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetFindingsReportAccountSummaryOutput {
     /// <p>The return list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_FindingsReportSummary.html"> <code>FindingsReportSummary</code> </a> objects taht contain summaries of analysis results for all profiling groups in your AWS account.</p>
-    pub fn report_summaries(&self) -> ::std::option::Option<&[crate::types::FindingsReportSummary]> {
-        self.report_summaries.as_deref()
+    pub fn report_summaries(&self) -> &[crate::types::FindingsReportSummary] {
+        use std::ops::Deref;
+        self.report_summaries.deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>GetFindingsReportAccountSummary</code> request. When the results of a <code>GetFindingsReportAccountSummary</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -85,11 +86,25 @@ impl GetFindingsReportAccountSummaryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetFindingsReportAccountSummaryOutput`](crate::operation::get_findings_report_account_summary::GetFindingsReportAccountSummaryOutput).
-    pub fn build(self) -> crate::operation::get_findings_report_account_summary::GetFindingsReportAccountSummaryOutput {
-        crate::operation::get_findings_report_account_summary::GetFindingsReportAccountSummaryOutput {
-            report_summaries: self.report_summaries,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`report_summaries`](crate::operation::get_findings_report_account_summary::builders::GetFindingsReportAccountSummaryOutputBuilder::report_summaries)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_findings_report_account_summary::GetFindingsReportAccountSummaryOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::get_findings_report_account_summary::GetFindingsReportAccountSummaryOutput {
+                report_summaries: self.report_summaries.ok_or_else(|| {
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
+                        "report_summaries",
+                        "report_summaries was not specified but it is required when building GetFindingsReportAccountSummaryOutput",
+                    )
+                })?,
+                next_token: self.next_token,
+                _request_id: self._request_id,
+            },
+        )
     }
 }

@@ -21,8 +21,10 @@ impl UpdateViewInput {
     }
     /// <p>Specifies optional fields that you want included in search results from this view. It is a list of objects that each describe a field to include.</p>
     /// <p>The default is an empty list, with no optional fields included in the results.</p>
-    pub fn included_properties(&self) -> ::std::option::Option<&[crate::types::IncludedProperty]> {
-        self.included_properties.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.included_properties.is_none()`.
+    pub fn included_properties(&self) -> &[crate::types::IncludedProperty] {
+        self.included_properties.as_deref().unwrap_or_default()
     }
     /// <p>An array of strings that specify which resources are included in the results of queries made using this view. When you use this view in a <code>Search</code> operation, the filter string is combined with the search's <code>QueryString</code> parameter using a logical <code>AND</code> operator.</p>
     /// <p>For information about the supported syntax, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html">Search query reference for Resource Explorer</a> in the <i>Amazon Web Services Resource Explorer User Guide</i>.</p> <important>
@@ -58,6 +60,7 @@ pub struct UpdateViewInputBuilder {
 }
 impl UpdateViewInputBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that you want to modify.</p>
+    /// This field is required.
     pub fn view_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.view_arn = ::std::option::Option::Some(input.into());
         self
@@ -118,7 +121,7 @@ impl UpdateViewInputBuilder {
         &self.filters
     }
     /// Consumes the builder and constructs a [`UpdateViewInput`](crate::operation::update_view::UpdateViewInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_view::UpdateViewInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_view::UpdateViewInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_view::UpdateViewInput {
             view_arn: self.view_arn,
             included_properties: self.included_properties,

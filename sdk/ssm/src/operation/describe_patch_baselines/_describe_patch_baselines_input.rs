@@ -24,8 +24,10 @@ impl DescribePatchBaselinesInput {
     /// <li> <p> <b> <code>OWNER</code> </b> </p> <p>Sample values: <code>AWS</code> | <code>Self</code> </p> </li>
     /// <li> <p> <b> <code>OPERATING_SYSTEM</code> </b> </p> <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code> </p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::PatchOrchestratorFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::PatchOrchestratorFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of patch baselines to return (per page).</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -121,8 +123,10 @@ impl DescribePatchBaselinesInputBuilder {
     /// Consumes the builder and constructs a [`DescribePatchBaselinesInput`](crate::operation::describe_patch_baselines::DescribePatchBaselinesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_patch_baselines::DescribePatchBaselinesInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_patch_baselines::DescribePatchBaselinesInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_patch_baselines::DescribePatchBaselinesInput {
             filters: self.filters,
             max_results: self.max_results,

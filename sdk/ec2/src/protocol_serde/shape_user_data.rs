@@ -3,7 +3,7 @@
 pub fn ser_user_data(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::UserData,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Data");
     if let Some(var_2) = &input.data {

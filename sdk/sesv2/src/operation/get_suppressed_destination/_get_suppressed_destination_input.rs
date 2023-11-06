@@ -28,6 +28,7 @@ pub struct GetSuppressedDestinationInputBuilder {
 }
 impl GetSuppressedDestinationInputBuilder {
     /// <p>The email address that's on the account suppression list.</p>
+    /// This field is required.
     pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_address = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl GetSuppressedDestinationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_suppressed_destination::GetSuppressedDestinationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_suppressed_destination::GetSuppressedDestinationInput {
             email_address: self.email_address,

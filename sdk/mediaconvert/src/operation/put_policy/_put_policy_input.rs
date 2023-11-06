@@ -27,6 +27,7 @@ pub struct PutPolicyInputBuilder {
 }
 impl PutPolicyInputBuilder {
     /// A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+    /// This field is required.
     pub fn policy(mut self, input: crate::types::Policy) -> Self {
         self.policy = ::std::option::Option::Some(input);
         self
@@ -41,7 +42,7 @@ impl PutPolicyInputBuilder {
         &self.policy
     }
     /// Consumes the builder and constructs a [`PutPolicyInput`](crate::operation::put_policy::PutPolicyInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_policy::PutPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_policy::PutPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_policy::PutPolicyInput { policy: self.policy })
     }
 }

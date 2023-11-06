@@ -45,6 +45,7 @@ pub struct ListFirewallDomainsInputBuilder {
 }
 impl ListFirewallDomainsInputBuilder {
     /// <p>The ID of the domain list whose domains you want to retrieve. </p>
+    /// This field is required.
     pub fn firewall_domain_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_domain_list_id = ::std::option::Option::Some(input.into());
         self
@@ -95,7 +96,7 @@ impl ListFirewallDomainsInputBuilder {
     /// Consumes the builder and constructs a [`ListFirewallDomainsInput`](crate::operation::list_firewall_domains::ListFirewallDomainsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_firewall_domains::ListFirewallDomainsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_firewall_domains::ListFirewallDomainsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_firewall_domains::ListFirewallDomainsInput {
             firewall_domain_list_id: self.firewall_domain_list_id,

@@ -6,9 +6,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceSpecificResult {
     /// <p>The name of the simulated resource, in Amazon Resource Name (ARN) format.</p>
-    pub eval_resource_name: ::std::option::Option<::std::string::String>,
+    pub eval_resource_name: ::std::string::String,
     /// <p>The result of the simulation of the simulated API operation on the resource specified in <code>EvalResourceName</code>.</p>
-    pub eval_resource_decision: ::std::option::Option<crate::types::PolicyEvaluationDecisionType>,
+    pub eval_resource_decision: crate::types::PolicyEvaluationDecisionType,
     /// <p>A list of the statements in the input policies that determine the result for this part of the simulation. Remember that even if multiple statements allow the operation on the resource, if <i>any</i> statement denies that operation, then the explicit deny overrides any allow. In addition, the deny statement is the only entry included in the result.</p>
     pub matched_statements: ::std::option::Option<::std::vec::Vec<crate::types::Statement>>,
     /// <p>A list of context keys that are required by the included input policies but that were not provided by one of the input parameters. This list is used when a list of ARNs is included in the <code>ResourceArns</code> parameter instead of "*". If you do not specify individual resources, by setting <code>ResourceArns</code> to "*" or by not including the <code>ResourceArns</code> parameter, then any missing context values are instead included under the <code>EvaluationResults</code> section. To discover the context keys used by a set of policies, you can call <code>GetContextKeysForCustomPolicy</code> or <code>GetContextKeysForPrincipalPolicy</code>.</p>
@@ -20,20 +20,25 @@ pub struct ResourceSpecificResult {
 }
 impl ResourceSpecificResult {
     /// <p>The name of the simulated resource, in Amazon Resource Name (ARN) format.</p>
-    pub fn eval_resource_name(&self) -> ::std::option::Option<&str> {
-        self.eval_resource_name.as_deref()
+    pub fn eval_resource_name(&self) -> &str {
+        use std::ops::Deref;
+        self.eval_resource_name.deref()
     }
     /// <p>The result of the simulation of the simulated API operation on the resource specified in <code>EvalResourceName</code>.</p>
-    pub fn eval_resource_decision(&self) -> ::std::option::Option<&crate::types::PolicyEvaluationDecisionType> {
-        self.eval_resource_decision.as_ref()
+    pub fn eval_resource_decision(&self) -> &crate::types::PolicyEvaluationDecisionType {
+        &self.eval_resource_decision
     }
     /// <p>A list of the statements in the input policies that determine the result for this part of the simulation. Remember that even if multiple statements allow the operation on the resource, if <i>any</i> statement denies that operation, then the explicit deny overrides any allow. In addition, the deny statement is the only entry included in the result.</p>
-    pub fn matched_statements(&self) -> ::std::option::Option<&[crate::types::Statement]> {
-        self.matched_statements.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.matched_statements.is_none()`.
+    pub fn matched_statements(&self) -> &[crate::types::Statement] {
+        self.matched_statements.as_deref().unwrap_or_default()
     }
     /// <p>A list of context keys that are required by the included input policies but that were not provided by one of the input parameters. This list is used when a list of ARNs is included in the <code>ResourceArns</code> parameter instead of "*". If you do not specify individual resources, by setting <code>ResourceArns</code> to "*" or by not including the <code>ResourceArns</code> parameter, then any missing context values are instead included under the <code>EvaluationResults</code> section. To discover the context keys used by a set of policies, you can call <code>GetContextKeysForCustomPolicy</code> or <code>GetContextKeysForPrincipalPolicy</code>.</p>
-    pub fn missing_context_values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.missing_context_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.missing_context_values.is_none()`.
+    pub fn missing_context_values(&self) -> &[::std::string::String] {
+        self.missing_context_values.as_deref().unwrap_or_default()
     }
     /// <p>Additional details about the results of the evaluation decision on a single resource. This parameter is returned only for cross-account simulations. This parameter explains how each policy type contributes to the resource-specific evaluation decision.</p>
     pub fn eval_decision_details(
@@ -67,6 +72,7 @@ pub struct ResourceSpecificResultBuilder {
 }
 impl ResourceSpecificResultBuilder {
     /// <p>The name of the simulated resource, in Amazon Resource Name (ARN) format.</p>
+    /// This field is required.
     pub fn eval_resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.eval_resource_name = ::std::option::Option::Some(input.into());
         self
@@ -81,6 +87,7 @@ impl ResourceSpecificResultBuilder {
         &self.eval_resource_name
     }
     /// <p>The result of the simulation of the simulated API operation on the resource specified in <code>EvalResourceName</code>.</p>
+    /// This field is required.
     pub fn eval_resource_decision(mut self, input: crate::types::PolicyEvaluationDecisionType) -> Self {
         self.eval_resource_decision = ::std::option::Option::Some(input);
         self
@@ -178,14 +185,27 @@ impl ResourceSpecificResultBuilder {
         &self.permissions_boundary_decision_detail
     }
     /// Consumes the builder and constructs a [`ResourceSpecificResult`](crate::types::ResourceSpecificResult).
-    pub fn build(self) -> crate::types::ResourceSpecificResult {
-        crate::types::ResourceSpecificResult {
-            eval_resource_name: self.eval_resource_name,
-            eval_resource_decision: self.eval_resource_decision,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`eval_resource_name`](crate::types::builders::ResourceSpecificResultBuilder::eval_resource_name)
+    /// - [`eval_resource_decision`](crate::types::builders::ResourceSpecificResultBuilder::eval_resource_decision)
+    pub fn build(self) -> ::std::result::Result<crate::types::ResourceSpecificResult, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ResourceSpecificResult {
+            eval_resource_name: self.eval_resource_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "eval_resource_name",
+                    "eval_resource_name was not specified but it is required when building ResourceSpecificResult",
+                )
+            })?,
+            eval_resource_decision: self.eval_resource_decision.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "eval_resource_decision",
+                    "eval_resource_decision was not specified but it is required when building ResourceSpecificResult",
+                )
+            })?,
             matched_statements: self.matched_statements,
             missing_context_values: self.missing_context_values,
             eval_decision_details: self.eval_decision_details,
             permissions_boundary_decision_detail: self.permissions_boundary_decision_detail,
-        }
+        })
     }
 }

@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InventoryFilter {
     /// <p>The prefix that an object must have to be included in the inventory results.</p>
-    pub prefix: ::std::option::Option<::std::string::String>,
+    pub prefix: ::std::string::String,
 }
 impl InventoryFilter {
     /// <p>The prefix that an object must have to be included in the inventory results.</p>
-    pub fn prefix(&self) -> ::std::option::Option<&str> {
-        self.prefix.as_deref()
+    pub fn prefix(&self) -> &str {
+        use std::ops::Deref;
+        self.prefix.deref()
     }
 }
 impl InventoryFilter {
@@ -28,6 +29,7 @@ pub struct InventoryFilterBuilder {
 }
 impl InventoryFilterBuilder {
     /// <p>The prefix that an object must have to be included in the inventory results.</p>
+    /// This field is required.
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl InventoryFilterBuilder {
         &self.prefix
     }
     /// Consumes the builder and constructs a [`InventoryFilter`](crate::types::InventoryFilter).
-    pub fn build(self) -> crate::types::InventoryFilter {
-        crate::types::InventoryFilter { prefix: self.prefix }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`prefix`](crate::types::builders::InventoryFilterBuilder::prefix)
+    pub fn build(self) -> ::std::result::Result<crate::types::InventoryFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::InventoryFilter {
+            prefix: self.prefix.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "prefix",
+                    "prefix was not specified but it is required when building InventoryFilter",
+                )
+            })?,
+        })
     }
 }

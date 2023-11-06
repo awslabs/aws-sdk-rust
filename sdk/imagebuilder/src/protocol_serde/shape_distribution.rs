@@ -2,60 +2,60 @@
 pub fn ser_distribution(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Distribution,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.region {
-        object.key("region").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("region").string(input.region.as_str());
     }
-    if let Some(var_2) = &input.ami_distribution_configuration {
+    if let Some(var_1) = &input.ami_distribution_configuration {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("amiDistributionConfiguration").start_object();
-        crate::protocol_serde::shape_ami_distribution_configuration::ser_ami_distribution_configuration(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("amiDistributionConfiguration").start_object();
+        crate::protocol_serde::shape_ami_distribution_configuration::ser_ami_distribution_configuration(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.container_distribution_configuration {
+    if let Some(var_3) = &input.container_distribution_configuration {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("containerDistributionConfiguration").start_object();
-        crate::protocol_serde::shape_container_distribution_configuration::ser_container_distribution_configuration(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("containerDistributionConfiguration").start_object();
+        crate::protocol_serde::shape_container_distribution_configuration::ser_container_distribution_configuration(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_6) = &input.license_configuration_arns {
-        let mut array_7 = object.key("licenseConfigurationArns").start_array();
-        for item_8 in var_6 {
+    if let Some(var_5) = &input.license_configuration_arns {
+        let mut array_6 = object.key("licenseConfigurationArns").start_array();
+        for item_7 in var_5 {
             {
-                array_7.value().string(item_8.as_str());
+                array_6.value().string(item_7.as_str());
             }
         }
-        array_7.finish();
+        array_6.finish();
     }
-    if let Some(var_9) = &input.launch_template_configurations {
-        let mut array_10 = object.key("launchTemplateConfigurations").start_array();
-        for item_11 in var_9 {
-            {
-                #[allow(unused_mut)]
-                let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_launch_template_configuration::ser_launch_template_configuration(&mut object_12, item_11)?;
-                object_12.finish();
-            }
-        }
-        array_10.finish();
-    }
-    if let Some(var_13) = &input.s3_export_configuration {
-        #[allow(unused_mut)]
-        let mut object_14 = object.key("s3ExportConfiguration").start_object();
-        crate::protocol_serde::shape_s3_export_configuration::ser_s3_export_configuration(&mut object_14, var_13)?;
-        object_14.finish();
-    }
-    if let Some(var_15) = &input.fast_launch_configurations {
-        let mut array_16 = object.key("fastLaunchConfigurations").start_array();
-        for item_17 in var_15 {
+    if let Some(var_8) = &input.launch_template_configurations {
+        let mut array_9 = object.key("launchTemplateConfigurations").start_array();
+        for item_10 in var_8 {
             {
                 #[allow(unused_mut)]
-                let mut object_18 = array_16.value().start_object();
-                crate::protocol_serde::shape_fast_launch_configuration::ser_fast_launch_configuration(&mut object_18, item_17)?;
-                object_18.finish();
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_launch_template_configuration::ser_launch_template_configuration(&mut object_11, item_10)?;
+                object_11.finish();
             }
         }
-        array_16.finish();
+        array_9.finish();
+    }
+    if let Some(var_12) = &input.s3_export_configuration {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("s3ExportConfiguration").start_object();
+        crate::protocol_serde::shape_s3_export_configuration::ser_s3_export_configuration(&mut object_13, var_12)?;
+        object_13.finish();
+    }
+    if let Some(var_14) = &input.fast_launch_configurations {
+        let mut array_15 = object.key("fastLaunchConfigurations").start_array();
+        for item_16 in var_14 {
+            {
+                #[allow(unused_mut)]
+                let mut object_17 = array_15.value().start_object();
+                crate::protocol_serde::shape_fast_launch_configuration::ser_fast_launch_configuration(&mut object_17, item_16)?;
+                object_17.finish();
+            }
+        }
+        array_15.finish();
     }
     Ok(())
 }
@@ -122,7 +122,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::distribution_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

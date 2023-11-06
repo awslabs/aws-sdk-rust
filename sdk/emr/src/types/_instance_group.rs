@@ -23,7 +23,7 @@ pub struct InstanceGroup {
     /// <p>The current status of the instance group.</p>
     pub status: ::std::option::Option<crate::types::InstanceGroupStatus>,
     /// <note>
-    /// <p>Amazon EMR releases 4.x or later.</p>
+    /// <p>Amazon EMR releases 4.x or higher.</p>
     /// </note>
     /// <p>The list of configurations supplied for an Amazon EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>
     pub configurations: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
@@ -82,27 +82,33 @@ impl InstanceGroup {
         self.status.as_ref()
     }
     /// <note>
-    /// <p>Amazon EMR releases 4.x or later.</p>
+    /// <p>Amazon EMR releases 4.x or higher.</p>
     /// </note>
     /// <p>The list of configurations supplied for an Amazon EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>
-    pub fn configurations(&self) -> ::std::option::Option<&[crate::types::Configuration]> {
-        self.configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configurations.is_none()`.
+    pub fn configurations(&self) -> &[crate::types::Configuration] {
+        self.configurations.as_deref().unwrap_or_default()
     }
     /// <p>The version number of the requested configuration specification for this instance group.</p>
     pub fn configurations_version(&self) -> ::std::option::Option<i64> {
         self.configurations_version
     }
     /// <p>A list of configurations that were successfully applied for an instance group last time.</p>
-    pub fn last_successfully_applied_configurations(&self) -> ::std::option::Option<&[crate::types::Configuration]> {
-        self.last_successfully_applied_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.last_successfully_applied_configurations.is_none()`.
+    pub fn last_successfully_applied_configurations(&self) -> &[crate::types::Configuration] {
+        self.last_successfully_applied_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The version number of a configuration specification that was successfully applied for an instance group last time. </p>
     pub fn last_successfully_applied_configurations_version(&self) -> ::std::option::Option<i64> {
         self.last_successfully_applied_configurations_version
     }
     /// <p>The EBS block devices that are mapped to this instance group.</p>
-    pub fn ebs_block_devices(&self) -> ::std::option::Option<&[crate::types::EbsBlockDevice]> {
-        self.ebs_block_devices.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ebs_block_devices.is_none()`.
+    pub fn ebs_block_devices(&self) -> &[crate::types::EbsBlockDevice] {
+        self.ebs_block_devices.as_deref().unwrap_or_default()
     }
     /// <p>If the instance group is EBS-optimized. An Amazon EBS-optimized instance uses an optimized configuration stack and provides additional, dedicated capacity for Amazon EBS I/O.</p>
     pub fn ebs_optimized(&self) -> ::std::option::Option<bool> {
@@ -283,7 +289,7 @@ impl InstanceGroupBuilder {
     /// To override the contents of this collection use [`set_configurations`](Self::set_configurations).
     ///
     /// <note>
-    /// <p>Amazon EMR releases 4.x or later.</p>
+    /// <p>Amazon EMR releases 4.x or higher.</p>
     /// </note>
     /// <p>The list of configurations supplied for an Amazon EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>
     pub fn configurations(mut self, input: crate::types::Configuration) -> Self {
@@ -293,7 +299,7 @@ impl InstanceGroupBuilder {
         self
     }
     /// <note>
-    /// <p>Amazon EMR releases 4.x or later.</p>
+    /// <p>Amazon EMR releases 4.x or higher.</p>
     /// </note>
     /// <p>The list of configurations supplied for an Amazon EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>
     pub fn set_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>) -> Self {
@@ -301,7 +307,7 @@ impl InstanceGroupBuilder {
         self
     }
     /// <note>
-    /// <p>Amazon EMR releases 4.x or later.</p>
+    /// <p>Amazon EMR releases 4.x or higher.</p>
     /// </note>
     /// <p>The list of configurations supplied for an Amazon EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>
     pub fn get_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Configuration>> {

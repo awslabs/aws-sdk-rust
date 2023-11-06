@@ -41,6 +41,7 @@ pub struct DeleteVerifiedAccessEndpointInputBuilder {
 }
 impl DeleteVerifiedAccessEndpointInputBuilder {
     /// <p>The ID of the Verified Access endpoint.</p>
+    /// This field is required.
     pub fn verified_access_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.verified_access_endpoint_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl DeleteVerifiedAccessEndpointInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_verified_access_endpoint::DeleteVerifiedAccessEndpointInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_verified_access_endpoint::DeleteVerifiedAccessEndpointInput {
             verified_access_endpoint_id: self.verified_access_endpoint_id,

@@ -2,7 +2,7 @@
 pub fn ser_log_delivery(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LogDelivery,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.worker_log_delivery {
         #[allow(unused_mut)]
         let mut object_2 = object.key("workerLogDelivery").start_object();

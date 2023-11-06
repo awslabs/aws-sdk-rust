@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ElicitSubSlot {
     /// <p>The name of the slot that should be elicited from the user.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The field is not supported.</p>
     pub sub_slot_to_elicit: ::std::option::Option<::std::boxed::Box<crate::types::ElicitSubSlot>>,
 }
 impl ElicitSubSlot {
     /// <p>The name of the slot that should be elicited from the user.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The field is not supported.</p>
     pub fn sub_slot_to_elicit(&self) -> ::std::option::Option<&crate::types::ElicitSubSlot> {
@@ -35,6 +36,7 @@ pub struct ElicitSubSlotBuilder {
 }
 impl ElicitSubSlotBuilder {
     /// <p>The name of the slot that should be elicited from the user.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl ElicitSubSlotBuilder {
         &self.sub_slot_to_elicit
     }
     /// Consumes the builder and constructs a [`ElicitSubSlot`](crate::types::ElicitSubSlot).
-    pub fn build(self) -> crate::types::ElicitSubSlot {
-        crate::types::ElicitSubSlot {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::ElicitSubSlotBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::ElicitSubSlot, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ElicitSubSlot {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ElicitSubSlot",
+                )
+            })?,
             sub_slot_to_elicit: self.sub_slot_to_elicit,
-        }
+        })
     }
 }

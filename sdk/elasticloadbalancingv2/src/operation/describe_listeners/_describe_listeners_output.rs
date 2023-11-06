@@ -11,8 +11,10 @@ pub struct DescribeListenersOutput {
 }
 impl DescribeListenersOutput {
     /// <p>Information about the listeners.</p>
-    pub fn listeners(&self) -> ::std::option::Option<&[crate::types::Listener]> {
-        self.listeners.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.listeners.is_none()`.
+    pub fn listeners(&self) -> &[crate::types::Listener] {
+        self.listeners.as_deref().unwrap_or_default()
     }
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
     pub fn next_marker(&self) -> ::std::option::Option<&str> {

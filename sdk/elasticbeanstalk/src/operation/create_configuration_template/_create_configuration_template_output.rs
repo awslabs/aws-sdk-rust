@@ -76,8 +76,10 @@ impl CreateConfigurationTemplateOutput {
         self.date_updated.as_ref()
     }
     /// <p>A list of the configuration options and their values in this configuration set.</p>
-    pub fn option_settings(&self) -> ::std::option::Option<&[crate::types::ConfigurationOptionSetting]> {
-        self.option_settings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.option_settings.is_none()`.
+    pub fn option_settings(&self) -> &[crate::types::ConfigurationOptionSetting] {
+        self.option_settings.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateConfigurationTemplateOutput {

@@ -11,12 +11,16 @@ pub struct ConversationLogSettings {
 }
 impl ConversationLogSettings {
     /// <p>The Amazon CloudWatch Logs settings for logging text and metadata.</p>
-    pub fn text_log_settings(&self) -> ::std::option::Option<&[crate::types::TextLogSetting]> {
-        self.text_log_settings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.text_log_settings.is_none()`.
+    pub fn text_log_settings(&self) -> &[crate::types::TextLogSetting] {
+        self.text_log_settings.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon S3 settings for logging audio to an S3 bucket.</p>
-    pub fn audio_log_settings(&self) -> ::std::option::Option<&[crate::types::AudioLogSetting]> {
-        self.audio_log_settings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.audio_log_settings.is_none()`.
+    pub fn audio_log_settings(&self) -> &[crate::types::AudioLogSetting] {
+        self.audio_log_settings.as_deref().unwrap_or_default()
     }
 }
 impl ConversationLogSettings {

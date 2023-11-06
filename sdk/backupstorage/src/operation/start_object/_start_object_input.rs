@@ -41,6 +41,7 @@ pub struct StartObjectInputBuilder {
 }
 impl StartObjectInputBuilder {
     /// Backup job Id for the in-progress backup
+    /// This field is required.
     pub fn backup_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_job_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl StartObjectInputBuilder {
         &self.backup_job_id
     }
     /// Name for the object.
+    /// This field is required.
     pub fn object_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_name = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +85,7 @@ impl StartObjectInputBuilder {
         &self.throw_on_duplicate
     }
     /// Consumes the builder and constructs a [`StartObjectInput`](crate::operation::start_object::StartObjectInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_object::StartObjectInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_object::StartObjectInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_object::StartObjectInput {
             backup_job_id: self.backup_job_id,
             object_name: self.object_name,

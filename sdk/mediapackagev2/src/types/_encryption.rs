@@ -65,6 +65,7 @@ impl EncryptionBuilder {
         &self.constant_initialization_vector
     }
     /// <p>The encryption method to use.</p>
+    /// This field is required.
     pub fn encryption_method(mut self, input: crate::types::EncryptionMethod) -> Self {
         self.encryption_method = ::std::option::Option::Some(input);
         self
@@ -96,6 +97,7 @@ impl EncryptionBuilder {
         &self.key_rotation_interval_seconds
     }
     /// <p>The parameters for the SPEKE key provider.</p>
+    /// This field is required.
     pub fn speke_key_provider(mut self, input: crate::types::SpekeKeyProvider) -> Self {
         self.speke_key_provider = ::std::option::Option::Some(input);
         self

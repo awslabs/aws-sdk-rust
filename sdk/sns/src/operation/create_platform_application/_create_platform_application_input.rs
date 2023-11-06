@@ -42,6 +42,7 @@ pub struct CreatePlatformApplicationInputBuilder {
 }
 impl CreatePlatformApplicationInputBuilder {
     /// <p>Application names must be made up of only uppercase and lowercase ASCII letters, numbers, underscores, hyphens, and periods, and must be between 1 and 256 characters long.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl CreatePlatformApplicationInputBuilder {
         &self.name
     }
     /// <p>The following platforms are supported: ADM (Amazon Device Messaging), APNS (Apple Push Notification Service), APNS_SANDBOX, and GCM (Firebase Cloud Messaging).</p>
+    /// This field is required.
     pub fn platform(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform = ::std::option::Option::Some(input.into());
         self
@@ -94,7 +96,7 @@ impl CreatePlatformApplicationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_platform_application::CreatePlatformApplicationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_platform_application::CreatePlatformApplicationInput {
             name: self.name,

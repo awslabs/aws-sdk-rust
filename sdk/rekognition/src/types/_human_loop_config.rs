@@ -5,20 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HumanLoopConfig {
     /// <p>The name of the human review used for this image. This should be kept unique within a region.</p>
-    pub human_loop_name: ::std::option::Option<::std::string::String>,
+    pub human_loop_name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the flow definition. You can create a flow definition by using the Amazon Sagemaker <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateFlowDefinition.html">CreateFlowDefinition</a> Operation. </p>
-    pub flow_definition_arn: ::std::option::Option<::std::string::String>,
+    pub flow_definition_arn: ::std::string::String,
     /// <p>Sets attributes of the input data.</p>
     pub data_attributes: ::std::option::Option<crate::types::HumanLoopDataAttributes>,
 }
 impl HumanLoopConfig {
     /// <p>The name of the human review used for this image. This should be kept unique within a region.</p>
-    pub fn human_loop_name(&self) -> ::std::option::Option<&str> {
-        self.human_loop_name.as_deref()
+    pub fn human_loop_name(&self) -> &str {
+        use std::ops::Deref;
+        self.human_loop_name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the flow definition. You can create a flow definition by using the Amazon Sagemaker <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateFlowDefinition.html">CreateFlowDefinition</a> Operation. </p>
-    pub fn flow_definition_arn(&self) -> ::std::option::Option<&str> {
-        self.flow_definition_arn.as_deref()
+    pub fn flow_definition_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.flow_definition_arn.deref()
     }
     /// <p>Sets attributes of the input data.</p>
     pub fn data_attributes(&self) -> ::std::option::Option<&crate::types::HumanLoopDataAttributes> {
@@ -42,6 +44,7 @@ pub struct HumanLoopConfigBuilder {
 }
 impl HumanLoopConfigBuilder {
     /// <p>The name of the human review used for this image. This should be kept unique within a region.</p>
+    /// This field is required.
     pub fn human_loop_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.human_loop_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl HumanLoopConfigBuilder {
         &self.human_loop_name
     }
     /// <p>The Amazon Resource Name (ARN) of the flow definition. You can create a flow definition by using the Amazon Sagemaker <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateFlowDefinition.html">CreateFlowDefinition</a> Operation. </p>
+    /// This field is required.
     pub fn flow_definition_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_definition_arn = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +88,24 @@ impl HumanLoopConfigBuilder {
         &self.data_attributes
     }
     /// Consumes the builder and constructs a [`HumanLoopConfig`](crate::types::HumanLoopConfig).
-    pub fn build(self) -> crate::types::HumanLoopConfig {
-        crate::types::HumanLoopConfig {
-            human_loop_name: self.human_loop_name,
-            flow_definition_arn: self.flow_definition_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`human_loop_name`](crate::types::builders::HumanLoopConfigBuilder::human_loop_name)
+    /// - [`flow_definition_arn`](crate::types::builders::HumanLoopConfigBuilder::flow_definition_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::HumanLoopConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::HumanLoopConfig {
+            human_loop_name: self.human_loop_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "human_loop_name",
+                    "human_loop_name was not specified but it is required when building HumanLoopConfig",
+                )
+            })?,
+            flow_definition_arn: self.flow_definition_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "flow_definition_arn",
+                    "flow_definition_arn was not specified but it is required when building HumanLoopConfig",
+                )
+            })?,
             data_attributes: self.data_attributes,
-        }
+        })
     }
 }

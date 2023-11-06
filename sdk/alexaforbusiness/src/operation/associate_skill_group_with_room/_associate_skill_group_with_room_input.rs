@@ -66,7 +66,7 @@ impl AssociateSkillGroupWithRoomInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_skill_group_with_room::AssociateSkillGroupWithRoomInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::associate_skill_group_with_room::AssociateSkillGroupWithRoomInput {
             skill_group_arn: self.skill_group_arn,

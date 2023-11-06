@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PlainTextMessage {
     /// <p>The message to send to the user.</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
 }
 impl PlainTextMessage {
     /// <p>The message to send to the user.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
 }
 impl PlainTextMessage {
@@ -28,6 +29,7 @@ pub struct PlainTextMessageBuilder {
 }
 impl PlainTextMessageBuilder {
     /// <p>The message to send to the user.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl PlainTextMessageBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`PlainTextMessage`](crate::types::PlainTextMessage).
-    pub fn build(self) -> crate::types::PlainTextMessage {
-        crate::types::PlainTextMessage { value: self.value }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`value`](crate::types::builders::PlainTextMessageBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::PlainTextMessage, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PlainTextMessage {
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building PlainTextMessage",
+                )
+            })?,
+        })
     }
 }

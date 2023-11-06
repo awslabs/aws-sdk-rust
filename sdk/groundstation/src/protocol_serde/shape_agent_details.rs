@@ -2,18 +2,30 @@
 pub fn ser_agent_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AgentDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.agent_version {
-        object.key("agentVersion").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("agentVersion").string(input.agent_version.as_str());
     }
-    if let Some(var_2) = &input.instance_id {
-        object.key("instanceId").string(var_2.as_str());
+    {
+        object.key("instanceId").string(input.instance_id.as_str());
     }
-    if let Some(var_3) = &input.instance_type {
-        object.key("instanceType").string(var_3.as_str());
+    {
+        object.key("instanceType").string(input.instance_type.as_str());
     }
-    if let Some(var_4) = &input.reserved_cpu_cores {
-        let mut array_5 = object.key("reservedCpuCores").start_array();
+    if let Some(var_1) = &input.reserved_cpu_cores {
+        let mut array_2 = object.key("reservedCpuCores").start_array();
+        for item_3 in var_1 {
+            {
+                array_2.value().number(
+                    #[allow(clippy::useless_conversion)]
+                    ::aws_smithy_types::Number::NegInt((*item_3).into()),
+                );
+            }
+        }
+        array_2.finish();
+    }
+    if let Some(var_4) = &input.agent_cpu_cores {
+        let mut array_5 = object.key("agentCpuCores").start_array();
         for item_6 in var_4 {
             {
                 array_5.value().number(
@@ -24,29 +36,17 @@ pub fn ser_agent_details(
         }
         array_5.finish();
     }
-    if let Some(var_7) = &input.agent_cpu_cores {
-        let mut array_8 = object.key("agentCpuCores").start_array();
-        for item_9 in var_7 {
-            {
-                array_8.value().number(
-                    #[allow(clippy::useless_conversion)]
-                    ::aws_smithy_types::Number::NegInt((*item_9).into()),
-                );
-            }
-        }
-        array_8.finish();
-    }
-    if let Some(var_10) = &input.component_versions {
-        let mut array_11 = object.key("componentVersions").start_array();
-        for item_12 in var_10 {
+    {
+        let mut array_7 = object.key("componentVersions").start_array();
+        for item_8 in &input.component_versions {
             {
                 #[allow(unused_mut)]
-                let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_component_version::ser_component_version(&mut object_13, item_12)?;
-                object_13.finish();
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_component_version::ser_component_version(&mut object_9, item_8)?;
+                object_9.finish();
             }
         }
-        array_11.finish();
+        array_7.finish();
     }
     Ok(())
 }

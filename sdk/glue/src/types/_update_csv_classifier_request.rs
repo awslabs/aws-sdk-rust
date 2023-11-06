@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCsvClassifierRequest {
     /// <p>The name of the classifier.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>A custom symbol to denote what separates each column entry in the row.</p>
     pub delimiter: ::std::option::Option<::std::string::String>,
     /// <p>A custom symbol to denote what combines content into a single column value. It must be different from the column delimiter.</p>
@@ -27,8 +27,9 @@ pub struct UpdateCsvClassifierRequest {
 }
 impl UpdateCsvClassifierRequest {
     /// <p>The name of the classifier.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>A custom symbol to denote what separates each column entry in the row.</p>
     pub fn delimiter(&self) -> ::std::option::Option<&str> {
@@ -43,8 +44,10 @@ impl UpdateCsvClassifierRequest {
         self.contains_header.as_ref()
     }
     /// <p>A list of strings representing column names.</p>
-    pub fn header(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.header.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.header.is_none()`.
+    pub fn header(&self) -> &[::std::string::String] {
+        self.header.as_deref().unwrap_or_default()
     }
     /// <p>Specifies not to trim values before identifying the type of column values. The default value is true.</p>
     pub fn disable_value_trimming(&self) -> ::std::option::Option<bool> {
@@ -59,8 +62,10 @@ impl UpdateCsvClassifierRequest {
         self.custom_datatype_configured
     }
     /// <p>Specifies a list of supported custom datatypes.</p>
-    pub fn custom_datatypes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.custom_datatypes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_datatypes.is_none()`.
+    pub fn custom_datatypes(&self) -> &[::std::string::String] {
+        self.custom_datatypes.as_deref().unwrap_or_default()
     }
     /// <p>Sets the SerDe for processing CSV in the classifier, which will be applied in the Data Catalog. Valid values are <code>OpenCSVSerDe</code>, <code>LazySimpleSerDe</code>, and <code>None</code>. You can specify the <code>None</code> value when you want the crawler to do the detection.</p>
     pub fn serde(&self) -> ::std::option::Option<&crate::types::CsvSerdeOption> {
@@ -91,6 +96,7 @@ pub struct UpdateCsvClassifierRequestBuilder {
 }
 impl UpdateCsvClassifierRequestBuilder {
     /// <p>The name of the classifier.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -243,9 +249,16 @@ impl UpdateCsvClassifierRequestBuilder {
         &self.serde
     }
     /// Consumes the builder and constructs a [`UpdateCsvClassifierRequest`](crate::types::UpdateCsvClassifierRequest).
-    pub fn build(self) -> crate::types::UpdateCsvClassifierRequest {
-        crate::types::UpdateCsvClassifierRequest {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::UpdateCsvClassifierRequestBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::UpdateCsvClassifierRequest, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::UpdateCsvClassifierRequest {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building UpdateCsvClassifierRequest",
+                )
+            })?,
             delimiter: self.delimiter,
             quote_symbol: self.quote_symbol,
             contains_header: self.contains_header,
@@ -255,6 +268,6 @@ impl UpdateCsvClassifierRequestBuilder {
             custom_datatype_configured: self.custom_datatype_configured,
             custom_datatypes: self.custom_datatypes,
             serde: self.serde,
-        }
+        })
     }
 }

@@ -15,8 +15,10 @@ impl AddFlowMediaStreamsInput {
         self.flow_arn.as_deref()
     }
     /// The media streams that you want to add to the flow.
-    pub fn media_streams(&self) -> ::std::option::Option<&[crate::types::AddMediaStreamRequest]> {
-        self.media_streams.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.media_streams.is_none()`.
+    pub fn media_streams(&self) -> &[crate::types::AddMediaStreamRequest] {
+        self.media_streams.as_deref().unwrap_or_default()
     }
 }
 impl AddFlowMediaStreamsInput {
@@ -35,6 +37,7 @@ pub struct AddFlowMediaStreamsInputBuilder {
 }
 impl AddFlowMediaStreamsInputBuilder {
     /// The Amazon Resource Name (ARN) of the flow.
+    /// This field is required.
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_arn = ::std::option::Option::Some(input.into());
         self
@@ -71,7 +74,7 @@ impl AddFlowMediaStreamsInputBuilder {
     /// Consumes the builder and constructs a [`AddFlowMediaStreamsInput`](crate::operation::add_flow_media_streams::AddFlowMediaStreamsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::add_flow_media_streams::AddFlowMediaStreamsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::add_flow_media_streams::AddFlowMediaStreamsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::add_flow_media_streams::AddFlowMediaStreamsInput {
             flow_arn: self.flow_arn,

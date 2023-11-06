@@ -100,8 +100,10 @@ impl AutomationExecution {
         self.automation_execution_status.as_ref()
     }
     /// <p>A list of details about the current state of all steps that comprise an execution. An Automation runbook contains a list of steps that are run in order.</p>
-    pub fn step_executions(&self) -> ::std::option::Option<&[crate::types::StepExecution]> {
-        self.step_executions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.step_executions.is_none()`.
+    pub fn step_executions(&self) -> &[crate::types::StepExecution] {
+        self.step_executions.as_deref().unwrap_or_default()
     }
     /// <p>A boolean value that indicates if the response contains the full list of the Automation step executions. If true, use the DescribeAutomationStepExecutions API operation to get the full list of step executions.</p>
     pub fn step_executions_truncated(&self) -> bool {
@@ -144,14 +146,16 @@ impl AutomationExecution {
         self.target_parameter_name.as_deref()
     }
     /// <p>The specified targets.</p>
-    pub fn targets(&self) -> ::std::option::Option<&[crate::types::Target]> {
-        self.targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
+    pub fn targets(&self) -> &[crate::types::Target] {
+        self.targets.as_deref().unwrap_or_default()
     }
     /// <p>The specified key-value mapping of document parameters to target resources.</p>
-    pub fn target_maps(
-        &self,
-    ) -> ::std::option::Option<&[::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>]> {
-        self.target_maps.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_maps.is_none()`.
+    pub fn target_maps(&self) -> &[::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>] {
+        self.target_maps.as_deref().unwrap_or_default()
     }
     /// <p>A list of resolved targets in the rate control execution.</p>
     pub fn resolved_targets(&self) -> ::std::option::Option<&crate::types::ResolvedTargets> {
@@ -170,8 +174,10 @@ impl AutomationExecution {
         self.target.as_deref()
     }
     /// <p>The combination of Amazon Web Services Regions and/or Amazon Web Services accounts where you want to run the Automation.</p>
-    pub fn target_locations(&self) -> ::std::option::Option<&[crate::types::TargetLocation]> {
-        self.target_locations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_locations.is_none()`.
+    pub fn target_locations(&self) -> &[crate::types::TargetLocation] {
+        self.target_locations.as_deref().unwrap_or_default()
     }
     /// <p>An aggregate of step execution statuses displayed in the Amazon Web Services Systems Manager console for a multi-Region and multi-account Automation execution.</p>
     pub fn progress_counters(&self) -> ::std::option::Option<&crate::types::ProgressCounters> {
@@ -182,8 +188,10 @@ impl AutomationExecution {
         self.alarm_configuration.as_ref()
     }
     /// <p>The CloudWatch alarm that was invoked by the automation.</p>
-    pub fn triggered_alarms(&self) -> ::std::option::Option<&[crate::types::AlarmStateInformation]> {
-        self.triggered_alarms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.triggered_alarms.is_none()`.
+    pub fn triggered_alarms(&self) -> &[crate::types::AlarmStateInformation] {
+        self.triggered_alarms.as_deref().unwrap_or_default()
     }
     /// <p>The subtype of the Automation operation. Currently, the only supported value is <code>ChangeRequest</code>.</p>
     pub fn automation_subtype(&self) -> ::std::option::Option<&crate::types::AutomationSubtype> {
@@ -196,8 +204,10 @@ impl AutomationExecution {
     /// <p>Information about the Automation runbooks that are run as part of a runbook workflow.</p> <note>
     /// <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p>
     /// </note>
-    pub fn runbooks(&self) -> ::std::option::Option<&[crate::types::Runbook]> {
-        self.runbooks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.runbooks.is_none()`.
+    pub fn runbooks(&self) -> &[crate::types::Runbook] {
+        self.runbooks.as_deref().unwrap_or_default()
     }
     /// <p>The ID of an OpsItem that is created to represent a Change Manager change request.</p>
     pub fn ops_item_id(&self) -> ::std::option::Option<&str> {

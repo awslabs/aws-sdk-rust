@@ -2,7 +2,7 @@
 pub fn ser_hpo_resource_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HpoResourceConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.max_number_of_training_jobs {
         object.key("maxNumberOfTrainingJobs").string(var_1.as_str());
     }

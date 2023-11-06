@@ -2,26 +2,26 @@
 pub fn ser_participating_gateways(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ParticipatingGateways,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.downlink_mode {
-        object.key("DownlinkMode").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("DownlinkMode").string(input.downlink_mode.as_str());
     }
-    if let Some(var_2) = &input.gateway_list {
-        let mut array_3 = object.key("GatewayList").start_array();
-        for item_4 in var_2 {
+    {
+        let mut array_1 = object.key("GatewayList").start_array();
+        for item_2 in &input.gateway_list {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_gateway_list_item::ser_gateway_list_item(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_3 = array_1.value().start_object();
+                crate::protocol_serde::shape_gateway_list_item::ser_gateway_list_item(&mut object_3, item_2)?;
+                object_3.finish();
             }
         }
-        array_3.finish();
+        array_1.finish();
     }
-    if let Some(var_6) = &input.transmission_interval {
+    {
         object.key("TransmissionInterval").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_6).into()),
+            ::aws_smithy_types::Number::NegInt((input.transmission_interval).into()),
         );
     }
     Ok(())
@@ -69,7 +69,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::participating_gateways_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

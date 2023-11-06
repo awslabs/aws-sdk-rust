@@ -14,8 +14,10 @@ impl DisassociateConfigurationItemsFromApplicationInput {
         self.application_configuration_id.as_deref()
     }
     /// <p>Configuration ID of each item to be disassociated from an application.</p>
-    pub fn configuration_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.configuration_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configuration_ids.is_none()`.
+    pub fn configuration_ids(&self) -> &[::std::string::String] {
+        self.configuration_ids.as_deref().unwrap_or_default()
     }
 }
 impl DisassociateConfigurationItemsFromApplicationInput {
@@ -36,6 +38,7 @@ pub struct DisassociateConfigurationItemsFromApplicationInputBuilder {
 }
 impl DisassociateConfigurationItemsFromApplicationInputBuilder {
     /// <p>Configuration ID of an application from which each item is disassociated.</p>
+    /// This field is required.
     pub fn application_configuration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_configuration_id = ::std::option::Option::Some(input.into());
         self
@@ -74,7 +77,7 @@ impl DisassociateConfigurationItemsFromApplicationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationInput {

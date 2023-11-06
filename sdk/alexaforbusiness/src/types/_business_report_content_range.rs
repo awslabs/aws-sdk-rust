@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BusinessReportContentRange {
     /// <p>The interval of the content range.</p>
-    pub interval: ::std::option::Option<crate::types::BusinessReportInterval>,
+    pub interval: crate::types::BusinessReportInterval,
 }
 impl BusinessReportContentRange {
     /// <p>The interval of the content range.</p>
-    pub fn interval(&self) -> ::std::option::Option<&crate::types::BusinessReportInterval> {
-        self.interval.as_ref()
+    pub fn interval(&self) -> &crate::types::BusinessReportInterval {
+        &self.interval
     }
 }
 impl BusinessReportContentRange {
@@ -28,6 +28,7 @@ pub struct BusinessReportContentRangeBuilder {
 }
 impl BusinessReportContentRangeBuilder {
     /// <p>The interval of the content range.</p>
+    /// This field is required.
     pub fn interval(mut self, input: crate::types::BusinessReportInterval) -> Self {
         self.interval = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,16 @@ impl BusinessReportContentRangeBuilder {
         &self.interval
     }
     /// Consumes the builder and constructs a [`BusinessReportContentRange`](crate::types::BusinessReportContentRange).
-    pub fn build(self) -> crate::types::BusinessReportContentRange {
-        crate::types::BusinessReportContentRange { interval: self.interval }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`interval`](crate::types::builders::BusinessReportContentRangeBuilder::interval)
+    pub fn build(self) -> ::std::result::Result<crate::types::BusinessReportContentRange, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::BusinessReportContentRange {
+            interval: self.interval.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "interval",
+                    "interval was not specified but it is required when building BusinessReportContentRange",
+                )
+            })?,
+        })
     }
 }

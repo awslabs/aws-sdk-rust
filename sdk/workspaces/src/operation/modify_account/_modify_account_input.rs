@@ -64,7 +64,7 @@ impl ModifyAccountInputBuilder {
     /// Consumes the builder and constructs a [`ModifyAccountInput`](crate::operation::modify_account::ModifyAccountInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_account::ModifyAccountInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::modify_account::ModifyAccountInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_account::ModifyAccountInput {
             dedicated_tenancy_support: self.dedicated_tenancy_support,
             dedicated_tenancy_management_cidr_range: self.dedicated_tenancy_management_cidr_range,

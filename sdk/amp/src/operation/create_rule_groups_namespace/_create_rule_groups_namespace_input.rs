@@ -56,6 +56,7 @@ pub struct CreateRuleGroupsNamespaceInputBuilder {
 }
 impl CreateRuleGroupsNamespaceInputBuilder {
     /// The ID of the workspace in which to create the rule group namespace.
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +71,7 @@ impl CreateRuleGroupsNamespaceInputBuilder {
         &self.workspace_id
     }
     /// The rule groups namespace name.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +86,7 @@ impl CreateRuleGroupsNamespaceInputBuilder {
         &self.name
     }
     /// The namespace data that define the rule groups.
+    /// This field is required.
     pub fn data(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.data = ::std::option::Option::Some(input);
         self
@@ -136,7 +139,7 @@ impl CreateRuleGroupsNamespaceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_rule_groups_namespace::CreateRuleGroupsNamespaceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_rule_groups_namespace::CreateRuleGroupsNamespaceInput {
             workspace_id: self.workspace_id,

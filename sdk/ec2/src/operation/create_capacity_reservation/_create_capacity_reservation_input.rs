@@ -118,8 +118,10 @@ impl CreateCapacityReservationInput {
         self.instance_match_criteria.as_ref()
     }
     /// <p>The tags to apply to the Capacity Reservation during launch.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -178,6 +180,7 @@ impl CreateCapacityReservationInputBuilder {
         &self.client_token
     }
     /// <p>The instance type for which to reserve capacity. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// This field is required.
     pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
@@ -192,6 +195,7 @@ impl CreateCapacityReservationInputBuilder {
         &self.instance_type
     }
     /// <p>The type of operating system for which to reserve capacity.</p>
+    /// This field is required.
     pub fn instance_platform(mut self, input: crate::types::CapacityReservationInstancePlatform) -> Self {
         self.instance_platform = ::std::option::Option::Some(input);
         self
@@ -261,6 +265,7 @@ impl CreateCapacityReservationInputBuilder {
     }
     /// <p>The number of instances for which to reserve capacity.</p>
     /// <p>Valid range: 1 - 1000</p>
+    /// This field is required.
     pub fn instance_count(mut self, input: i32) -> Self {
         self.instance_count = ::std::option::Option::Some(input);
         self
@@ -446,7 +451,7 @@ impl CreateCapacityReservationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_capacity_reservation::CreateCapacityReservationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_capacity_reservation::CreateCapacityReservationInput {
             client_token: self.client_token,

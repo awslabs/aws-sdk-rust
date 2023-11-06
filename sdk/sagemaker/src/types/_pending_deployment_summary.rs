@@ -19,16 +19,20 @@ impl PendingDeploymentSummary {
         self.endpoint_config_name.as_deref()
     }
     /// <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_PendingProductionVariantSummary.html">PendingProductionVariantSummary</a> objects, one for each model hosted behind this endpoint for the in-progress deployment.</p>
-    pub fn production_variants(&self) -> ::std::option::Option<&[crate::types::PendingProductionVariantSummary]> {
-        self.production_variants.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.production_variants.is_none()`.
+    pub fn production_variants(&self) -> &[crate::types::PendingProductionVariantSummary] {
+        self.production_variants.as_deref().unwrap_or_default()
     }
     /// <p>The start time of the deployment.</p>
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_PendingProductionVariantSummary.html">PendingProductionVariantSummary</a> objects, one for each model hosted behind this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code> for the in-progress deployment.</p>
-    pub fn shadow_production_variants(&self) -> ::std::option::Option<&[crate::types::PendingProductionVariantSummary]> {
-        self.shadow_production_variants.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.shadow_production_variants.is_none()`.
+    pub fn shadow_production_variants(&self) -> &[crate::types::PendingProductionVariantSummary] {
+        self.shadow_production_variants.as_deref().unwrap_or_default()
     }
 }
 impl PendingDeploymentSummary {
@@ -49,6 +53,7 @@ pub struct PendingDeploymentSummaryBuilder {
 }
 impl PendingDeploymentSummaryBuilder {
     /// <p>The name of the endpoint configuration used in the deployment. </p>
+    /// This field is required.
     pub fn endpoint_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_config_name = ::std::option::Option::Some(input.into());
         self

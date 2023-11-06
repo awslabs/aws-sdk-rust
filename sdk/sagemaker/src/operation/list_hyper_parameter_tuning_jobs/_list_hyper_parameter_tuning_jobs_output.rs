@@ -11,8 +11,10 @@ pub struct ListHyperParameterTuningJobsOutput {
 }
 impl ListHyperParameterTuningJobsOutput {
     /// <p>A list of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobSummary.html">HyperParameterTuningJobSummary</a> objects that describe the tuning jobs that the <code>ListHyperParameterTuningJobs</code> request returned.</p>
-    pub fn hyper_parameter_tuning_job_summaries(&self) -> ::std::option::Option<&[crate::types::HyperParameterTuningJobSummary]> {
-        self.hyper_parameter_tuning_job_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hyper_parameter_tuning_job_summaries.is_none()`.
+    pub fn hyper_parameter_tuning_job_summaries(&self) -> &[crate::types::HyperParameterTuningJobSummary] {
+        self.hyper_parameter_tuning_job_summaries.as_deref().unwrap_or_default()
     }
     /// <p>If the result of this <code>ListHyperParameterTuningJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of tuning jobs, use the token in the next request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

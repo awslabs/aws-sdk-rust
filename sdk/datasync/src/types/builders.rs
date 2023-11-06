@@ -49,6 +49,8 @@ pub use crate::types::_discovery_job_list_entry::DiscoveryJobListEntryBuilder;
 
 pub use crate::types::_agent_list_entry::AgentListEntryBuilder;
 
+pub use crate::types::_platform::PlatformBuilder;
+
 pub use crate::types::_report_result::ReportResultBuilder;
 
 pub use crate::types::_task_execution_result_detail::TaskExecutionResultDetailBuilder;

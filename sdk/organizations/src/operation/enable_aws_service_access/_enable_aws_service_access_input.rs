@@ -27,6 +27,7 @@ pub struct EnableAwsServiceAccessInputBuilder {
 }
 impl EnableAwsServiceAccessInputBuilder {
     /// <p>The service principal name of the Amazon Web Services service for which you want to enable integration with your organization. This is typically in the form of a URL, such as <code> <i>service-abbreviation</i>.amazonaws.com</code>.</p>
+    /// This field is required.
     pub fn service_principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_principal = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl EnableAwsServiceAccessInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable_aws_service_access::EnableAwsServiceAccessInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::enable_aws_service_access::EnableAwsServiceAccessInput {
             service_principal: self.service_principal,

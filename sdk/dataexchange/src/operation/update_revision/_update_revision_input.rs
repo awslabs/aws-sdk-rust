@@ -8,7 +8,7 @@ pub struct UpdateRevisionInput {
     /// <p>The unique identifier for a data set.</p>
     pub data_set_id: ::std::option::Option<::std::string::String>,
     /// <p>Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>
-    pub finalized: bool,
+    pub finalized: ::std::option::Option<bool>,
     /// <p>The unique identifier for a revision.</p>
     pub revision_id: ::std::option::Option<::std::string::String>,
 }
@@ -22,7 +22,7 @@ impl UpdateRevisionInput {
         self.data_set_id.as_deref()
     }
     /// <p>Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>
-    pub fn finalized(&self) -> bool {
+    pub fn finalized(&self) -> ::std::option::Option<bool> {
         self.finalized
     }
     /// <p>The unique identifier for a revision.</p>
@@ -62,6 +62,7 @@ impl UpdateRevisionInputBuilder {
         &self.comment
     }
     /// <p>The unique identifier for a data set.</p>
+    /// This field is required.
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +91,7 @@ impl UpdateRevisionInputBuilder {
         &self.finalized
     }
     /// <p>The unique identifier for a revision.</p>
+    /// This field is required.
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
         self
@@ -106,11 +108,11 @@ impl UpdateRevisionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRevisionInput`](crate::operation::update_revision::UpdateRevisionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_revision::UpdateRevisionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_revision::UpdateRevisionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_revision::UpdateRevisionInput {
             comment: self.comment,
             data_set_id: self.data_set_id,
-            finalized: self.finalized.unwrap_or_default(),
+            finalized: self.finalized,
             revision_id: self.revision_id,
         })
     }

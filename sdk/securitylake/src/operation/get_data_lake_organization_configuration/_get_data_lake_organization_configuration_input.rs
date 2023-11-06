@@ -20,7 +20,7 @@ impl GetDataLakeOrganizationConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_data_lake_organization_configuration::GetDataLakeOrganizationConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_data_lake_organization_configuration::GetDataLakeOrganizationConfigurationInput {})
     }

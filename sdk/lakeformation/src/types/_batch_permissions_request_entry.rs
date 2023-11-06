@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchPermissionsRequestEntry {
     /// <p>A unique identifier for the batch permissions request entry.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The principal to be granted a permission.</p>
     pub principal: ::std::option::Option<crate::types::DataLakePrincipal>,
     /// <p>The resource to which the principal is to be granted a permission.</p>
@@ -17,8 +17,9 @@ pub struct BatchPermissionsRequestEntry {
 }
 impl BatchPermissionsRequestEntry {
     /// <p>A unique identifier for the batch permissions request entry.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The principal to be granted a permission.</p>
     pub fn principal(&self) -> ::std::option::Option<&crate::types::DataLakePrincipal> {
@@ -29,12 +30,16 @@ impl BatchPermissionsRequestEntry {
         self.resource.as_ref()
     }
     /// <p>The permissions to be granted.</p>
-    pub fn permissions(&self) -> ::std::option::Option<&[crate::types::Permission]> {
-        self.permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permissions.is_none()`.
+    pub fn permissions(&self) -> &[crate::types::Permission] {
+        self.permissions.as_deref().unwrap_or_default()
     }
     /// <p>Indicates if the option to pass permissions is granted.</p>
-    pub fn permissions_with_grant_option(&self) -> ::std::option::Option<&[crate::types::Permission]> {
-        self.permissions_with_grant_option.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permissions_with_grant_option.is_none()`.
+    pub fn permissions_with_grant_option(&self) -> &[crate::types::Permission] {
+        self.permissions_with_grant_option.as_deref().unwrap_or_default()
     }
 }
 impl BatchPermissionsRequestEntry {
@@ -56,6 +61,7 @@ pub struct BatchPermissionsRequestEntryBuilder {
 }
 impl BatchPermissionsRequestEntryBuilder {
     /// <p>A unique identifier for the batch permissions request entry.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -138,13 +144,20 @@ impl BatchPermissionsRequestEntryBuilder {
         &self.permissions_with_grant_option
     }
     /// Consumes the builder and constructs a [`BatchPermissionsRequestEntry`](crate::types::BatchPermissionsRequestEntry).
-    pub fn build(self) -> crate::types::BatchPermissionsRequestEntry {
-        crate::types::BatchPermissionsRequestEntry {
-            id: self.id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::BatchPermissionsRequestEntryBuilder::id)
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchPermissionsRequestEntry, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::BatchPermissionsRequestEntry {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building BatchPermissionsRequestEntry",
+                )
+            })?,
             principal: self.principal,
             resource: self.resource,
             permissions: self.permissions,
             permissions_with_grant_option: self.permissions_with_grant_option,
-        }
+        })
     }
 }

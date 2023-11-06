@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteProtocolsList`](crate::operation::delete_protocols_list::builders::DeleteProtocolsListFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`list_id(impl Into<String>)`](crate::operation::delete_protocols_list::builders::DeleteProtocolsListFluentBuilder::list_id) / [`set_list_id(Option<String>)`](crate::operation::delete_protocols_list::builders::DeleteProtocolsListFluentBuilder::set_list_id): <p>The ID of the protocols list that you want to delete. You can retrieve this ID from <code>PutProtocolsList</code>, <code>ListProtocolsLists</code>, and <code>GetProtocolsLost</code>.</p>
+    ///   - [`list_id(impl Into<String>)`](crate::operation::delete_protocols_list::builders::DeleteProtocolsListFluentBuilder::list_id) / [`set_list_id(Option<String>)`](crate::operation::delete_protocols_list::builders::DeleteProtocolsListFluentBuilder::set_list_id):<br>required: **true**<br><p>The ID of the protocols list that you want to delete. You can retrieve this ID from <code>PutProtocolsList</code>, <code>ListProtocolsLists</code>, and <code>GetProtocolsLost</code>.</p><br>
     /// - On success, responds with [`DeleteProtocolsListOutput`](crate::operation::delete_protocols_list::DeleteProtocolsListOutput)
     /// - On failure, responds with [`SdkError<DeleteProtocolsListError>`](crate::operation::delete_protocols_list::DeleteProtocolsListError)
     pub fn delete_protocols_list(&self) -> crate::operation::delete_protocols_list::builders::DeleteProtocolsListFluentBuilder {

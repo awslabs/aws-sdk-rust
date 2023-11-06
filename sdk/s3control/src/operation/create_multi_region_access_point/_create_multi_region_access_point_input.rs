@@ -41,6 +41,7 @@ pub struct CreateMultiRegionAccessPointInputBuilder {
 }
 impl CreateMultiRegionAccessPointInputBuilder {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point. The owner of the Multi-Region Access Point also must own the underlying buckets.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl CreateMultiRegionAccessPointInputBuilder {
         &self.account_id
     }
     /// <p>An idempotency token used to identify the request and guarantee that requests are unique.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl CreateMultiRegionAccessPointInputBuilder {
         &self.client_token
     }
     /// <p>A container element containing details about the Multi-Region Access Point.</p>
+    /// This field is required.
     pub fn details(mut self, input: crate::types::CreateMultiRegionAccessPointInput) -> Self {
         self.details = ::std::option::Option::Some(input);
         self
@@ -87,7 +90,7 @@ impl CreateMultiRegionAccessPointInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_multi_region_access_point::CreateMultiRegionAccessPointInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_multi_region_access_point::CreateMultiRegionAccessPointInput {
             account_id: self.account_id,

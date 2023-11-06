@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScanStatus {
     /// <p>The status code of the scan.</p>
-    pub status_code: ::std::option::Option<crate::types::ScanStatusCode>,
+    pub status_code: crate::types::ScanStatusCode,
     /// <p>The scan status. Possible return values and descriptions are: </p>
     /// <p> <code>PENDING_INITIAL_SCAN</code> - This resource has been identified for scanning, results will be available soon.</p>
     /// <p> <code>ACCESS_DENIED</code> - Resource access policy restricting Amazon Inspector access. Please update the IAM policy.</p>
@@ -32,12 +32,12 @@ pub struct ScanStatus {
     /// <p> <code>DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED</code> - Amazon Inspector failed to extract the package inventory because the package collection time exceeding the maximum threshold of 15 minutes.</p>
     /// <p> <code>DEEP_INSPECTION_NO_INVENTORY</code> The Amazon Inspector plugin hasn't yet been able to collect an inventory of packages for this instance. This is usually the result of a pending scan, however, if this status persists after 6 hours, use SSM to ensure that the required Amazon Inspector associations exist and are running for the instance.</p>
     /// <p></p>
-    pub reason: ::std::option::Option<crate::types::ScanStatusReason>,
+    pub reason: crate::types::ScanStatusReason,
 }
 impl ScanStatus {
     /// <p>The status code of the scan.</p>
-    pub fn status_code(&self) -> ::std::option::Option<&crate::types::ScanStatusCode> {
-        self.status_code.as_ref()
+    pub fn status_code(&self) -> &crate::types::ScanStatusCode {
+        &self.status_code
     }
     /// <p>The scan status. Possible return values and descriptions are: </p>
     /// <p> <code>PENDING_INITIAL_SCAN</code> - This resource has been identified for scanning, results will be available soon.</p>
@@ -65,8 +65,8 @@ impl ScanStatus {
     /// <p> <code>DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED</code> - Amazon Inspector failed to extract the package inventory because the package collection time exceeding the maximum threshold of 15 minutes.</p>
     /// <p> <code>DEEP_INSPECTION_NO_INVENTORY</code> The Amazon Inspector plugin hasn't yet been able to collect an inventory of packages for this instance. This is usually the result of a pending scan, however, if this status persists after 6 hours, use SSM to ensure that the required Amazon Inspector associations exist and are running for the instance.</p>
     /// <p></p>
-    pub fn reason(&self) -> ::std::option::Option<&crate::types::ScanStatusReason> {
-        self.reason.as_ref()
+    pub fn reason(&self) -> &crate::types::ScanStatusReason {
+        &self.reason
     }
 }
 impl ScanStatus {
@@ -85,6 +85,7 @@ pub struct ScanStatusBuilder {
 }
 impl ScanStatusBuilder {
     /// <p>The status code of the scan.</p>
+    /// This field is required.
     pub fn status_code(mut self, input: crate::types::ScanStatusCode) -> Self {
         self.status_code = ::std::option::Option::Some(input);
         self
@@ -124,6 +125,7 @@ impl ScanStatusBuilder {
     /// <p> <code>DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED</code> - Amazon Inspector failed to extract the package inventory because the package collection time exceeding the maximum threshold of 15 minutes.</p>
     /// <p> <code>DEEP_INSPECTION_NO_INVENTORY</code> The Amazon Inspector plugin hasn't yet been able to collect an inventory of packages for this instance. This is usually the result of a pending scan, however, if this status persists after 6 hours, use SSM to ensure that the required Amazon Inspector associations exist and are running for the instance.</p>
     /// <p></p>
+    /// This field is required.
     pub fn reason(mut self, input: crate::types::ScanStatusReason) -> Self {
         self.reason = ::std::option::Option::Some(input);
         self
@@ -188,10 +190,23 @@ impl ScanStatusBuilder {
         &self.reason
     }
     /// Consumes the builder and constructs a [`ScanStatus`](crate::types::ScanStatus).
-    pub fn build(self) -> crate::types::ScanStatus {
-        crate::types::ScanStatus {
-            status_code: self.status_code,
-            reason: self.reason,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status_code`](crate::types::builders::ScanStatusBuilder::status_code)
+    /// - [`reason`](crate::types::builders::ScanStatusBuilder::reason)
+    pub fn build(self) -> ::std::result::Result<crate::types::ScanStatus, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ScanStatus {
+            status_code: self.status_code.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status_code",
+                    "status_code was not specified but it is required when building ScanStatus",
+                )
+            })?,
+            reason: self.reason.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "reason",
+                    "reason was not specified but it is required when building ScanStatus",
+                )
+            })?,
+        })
     }
 }

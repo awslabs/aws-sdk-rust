@@ -38,8 +38,8 @@ pub fn de_get_reserved_node_exchange_configuration_options_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ClusterSnapshotNotFound" => crate::operation::get_reserved_node_exchange_configuration_options::GetReservedNodeExchangeConfigurationOptionsError::ClusterSnapshotNotFoundFault({
@@ -54,8 +54,8 @@ pub fn de_get_reserved_node_exchange_configuration_options_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "DependentServiceUnavailableFault" => crate::operation::get_reserved_node_exchange_configuration_options::GetReservedNodeExchangeConfigurationOptionsError::DependentServiceUnavailableFault({
@@ -70,8 +70,8 @@ pub fn de_get_reserved_node_exchange_configuration_options_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidReservedNodeState" => crate::operation::get_reserved_node_exchange_configuration_options::GetReservedNodeExchangeConfigurationOptionsError::InvalidReservedNodeStateFault({
@@ -86,8 +86,8 @@ pub fn de_get_reserved_node_exchange_configuration_options_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ReservedNodeAlreadyMigrated" => crate::operation::get_reserved_node_exchange_configuration_options::GetReservedNodeExchangeConfigurationOptionsError::ReservedNodeAlreadyMigratedFault({
@@ -102,8 +102,8 @@ pub fn de_get_reserved_node_exchange_configuration_options_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ReservedNodeNotFound" => crate::operation::get_reserved_node_exchange_configuration_options::GetReservedNodeExchangeConfigurationOptionsError::ReservedNodeNotFoundFault({
@@ -118,8 +118,8 @@ pub fn de_get_reserved_node_exchange_configuration_options_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ReservedNodeOfferingNotFound" => crate::operation::get_reserved_node_exchange_configuration_options::GetReservedNodeExchangeConfigurationOptionsError::ReservedNodeOfferingNotFoundFault({
@@ -134,8 +134,8 @@ pub fn de_get_reserved_node_exchange_configuration_options_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "UnsupportedOperation" => crate::operation::get_reserved_node_exchange_configuration_options::GetReservedNodeExchangeConfigurationOptionsError::UnsupportedOperationFault({
@@ -150,8 +150,8 @@ pub fn de_get_reserved_node_exchange_configuration_options_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::get_reserved_node_exchange_configuration_options::GetReservedNodeExchangeConfigurationOptionsError::generic(generic)

@@ -2,27 +2,27 @@
 pub fn ser_real_time_alert_rule(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RealTimeAlertRule,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.r#type {
-        object.key("Type").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Type").string(input.r#type.as_str());
     }
-    if let Some(var_2) = &input.keyword_match_configuration {
+    if let Some(var_1) = &input.keyword_match_configuration {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("KeywordMatchConfiguration").start_object();
-        crate::protocol_serde::shape_keyword_match_configuration::ser_keyword_match_configuration(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("KeywordMatchConfiguration").start_object();
+        crate::protocol_serde::shape_keyword_match_configuration::ser_keyword_match_configuration(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.sentiment_configuration {
+    if let Some(var_3) = &input.sentiment_configuration {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("SentimentConfiguration").start_object();
-        crate::protocol_serde::shape_sentiment_configuration::ser_sentiment_configuration(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("SentimentConfiguration").start_object();
+        crate::protocol_serde::shape_sentiment_configuration::ser_sentiment_configuration(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_6) = &input.issue_detection_configuration {
+    if let Some(var_5) = &input.issue_detection_configuration {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("IssueDetectionConfiguration").start_object();
-        crate::protocol_serde::shape_issue_detection_configuration::ser_issue_detection_configuration(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_6 = object.key("IssueDetectionConfiguration").start_object();
+        crate::protocol_serde::shape_issue_detection_configuration::ser_issue_detection_configuration(&mut object_6, var_5)?;
+        object_6.finish();
     }
     Ok(())
 }
@@ -74,7 +74,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::real_time_alert_rule_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

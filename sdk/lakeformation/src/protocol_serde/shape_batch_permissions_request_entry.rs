@@ -2,39 +2,39 @@
 pub fn ser_batch_permissions_request_entry(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BatchPermissionsRequestEntry,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.id {
-        object.key("Id").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Id").string(input.id.as_str());
     }
-    if let Some(var_2) = &input.principal {
+    if let Some(var_1) = &input.principal {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("Principal").start_object();
-        crate::protocol_serde::shape_data_lake_principal::ser_data_lake_principal(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("Principal").start_object();
+        crate::protocol_serde::shape_data_lake_principal::ser_data_lake_principal(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.resource {
+    if let Some(var_3) = &input.resource {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("Resource").start_object();
-        crate::protocol_serde::shape_resource::ser_resource(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("Resource").start_object();
+        crate::protocol_serde::shape_resource::ser_resource(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_6) = &input.permissions {
-        let mut array_7 = object.key("Permissions").start_array();
-        for item_8 in var_6 {
+    if let Some(var_5) = &input.permissions {
+        let mut array_6 = object.key("Permissions").start_array();
+        for item_7 in var_5 {
             {
-                array_7.value().string(item_8.as_str());
+                array_6.value().string(item_7.as_str());
             }
         }
-        array_7.finish();
+        array_6.finish();
     }
-    if let Some(var_9) = &input.permissions_with_grant_option {
-        let mut array_10 = object.key("PermissionsWithGrantOption").start_array();
-        for item_11 in var_9 {
+    if let Some(var_8) = &input.permissions_with_grant_option {
+        let mut array_9 = object.key("PermissionsWithGrantOption").start_array();
+        for item_10 in var_8 {
             {
-                array_10.value().string(item_11.as_str());
+                array_9.value().string(item_10.as_str());
             }
         }
-        array_10.finish();
+        array_9.finish();
     }
     Ok(())
 }
@@ -84,7 +84,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::batch_permissions_request_entry_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

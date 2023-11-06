@@ -34,6 +34,7 @@ pub struct GetBucketReplicationInputBuilder {
 }
 impl GetBucketReplicationInputBuilder {
     /// <p>The bucket name for which to get the replication information.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl GetBucketReplicationInputBuilder {
     /// Consumes the builder and constructs a [`GetBucketReplicationInput`](crate::operation::get_bucket_replication::GetBucketReplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_bucket_replication::GetBucketReplicationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_bucket_replication::GetBucketReplicationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_bucket_replication::GetBucketReplicationInput {
             bucket: self.bucket,

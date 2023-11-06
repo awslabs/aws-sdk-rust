@@ -28,6 +28,7 @@ pub struct GetVpcLinkInputBuilder {
 }
 impl GetVpcLinkInputBuilder {
     /// <p>The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.</p>
+    /// This field is required.
     pub fn vpc_link_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_link_id = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +43,7 @@ impl GetVpcLinkInputBuilder {
         &self.vpc_link_id
     }
     /// Consumes the builder and constructs a [`GetVpcLinkInput`](crate::operation::get_vpc_link::GetVpcLinkInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_vpc_link::GetVpcLinkInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_vpc_link::GetVpcLinkInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_vpc_link::GetVpcLinkInput {
             vpc_link_id: self.vpc_link_id,
         })

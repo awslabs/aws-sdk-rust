@@ -5,18 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Frequency {
     /// <p>Frequency value. Valid values are between 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to 2120 MHz for uplink.</p>
-    pub value: ::std::option::Option<f64>,
+    pub value: f64,
     /// <p>Frequency units.</p>
-    pub units: ::std::option::Option<crate::types::FrequencyUnits>,
+    pub units: crate::types::FrequencyUnits,
 }
 impl Frequency {
     /// <p>Frequency value. Valid values are between 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to 2120 MHz for uplink.</p>
-    pub fn value(&self) -> ::std::option::Option<f64> {
+    pub fn value(&self) -> f64 {
         self.value
     }
     /// <p>Frequency units.</p>
-    pub fn units(&self) -> ::std::option::Option<&crate::types::FrequencyUnits> {
-        self.units.as_ref()
+    pub fn units(&self) -> &crate::types::FrequencyUnits {
+        &self.units
     }
 }
 impl Frequency {
@@ -35,6 +35,7 @@ pub struct FrequencyBuilder {
 }
 impl FrequencyBuilder {
     /// <p>Frequency value. Valid values are between 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to 2120 MHz for uplink.</p>
+    /// This field is required.
     pub fn value(mut self, input: f64) -> Self {
         self.value = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl FrequencyBuilder {
         &self.value
     }
     /// <p>Frequency units.</p>
+    /// This field is required.
     pub fn units(mut self, input: crate::types::FrequencyUnits) -> Self {
         self.units = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl FrequencyBuilder {
         &self.units
     }
     /// Consumes the builder and constructs a [`Frequency`](crate::types::Frequency).
-    pub fn build(self) -> crate::types::Frequency {
-        crate::types::Frequency {
-            value: self.value,
-            units: self.units,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`value`](crate::types::builders::FrequencyBuilder::value)
+    /// - [`units`](crate::types::builders::FrequencyBuilder::units)
+    pub fn build(self) -> ::std::result::Result<crate::types::Frequency, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Frequency {
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building Frequency",
+                )
+            })?,
+            units: self.units.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "units",
+                    "units was not specified but it is required when building Frequency",
+                )
+            })?,
+        })
     }
 }

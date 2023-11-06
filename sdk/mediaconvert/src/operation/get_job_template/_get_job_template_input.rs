@@ -27,6 +27,7 @@ pub struct GetJobTemplateInputBuilder {
 }
 impl GetJobTemplateInputBuilder {
     /// The name of the job template.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetJobTemplateInputBuilder {
     /// Consumes the builder and constructs a [`GetJobTemplateInput`](crate::operation::get_job_template::GetJobTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_job_template::GetJobTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_job_template::GetJobTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_job_template::GetJobTemplateInput { name: self.name })
     }
 }

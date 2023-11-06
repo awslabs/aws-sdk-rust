@@ -43,6 +43,7 @@ pub struct SetSmbGuestPasswordInputBuilder {
 }
 impl SetSmbGuestPasswordInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the S3 File Gateway the SMB file share is associated with.</p>
+    /// This field is required.
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_arn = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +58,7 @@ impl SetSmbGuestPasswordInputBuilder {
         &self.gateway_arn
     }
     /// <p>The password that you want to set for your SMB server.</p>
+    /// This field is required.
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
         self
@@ -73,7 +75,7 @@ impl SetSmbGuestPasswordInputBuilder {
     /// Consumes the builder and constructs a [`SetSmbGuestPasswordInput`](crate::operation::set_smb_guest_password::SetSmbGuestPasswordInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::set_smb_guest_password::SetSmbGuestPasswordInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::set_smb_guest_password::SetSmbGuestPasswordInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::set_smb_guest_password::SetSmbGuestPasswordInput {
             gateway_arn: self.gateway_arn,

@@ -46,6 +46,7 @@ pub struct TestAlarmInputBuilder {
 }
 impl TestAlarmInputBuilder {
     /// <p>The name of the alarm to test.</p>
+    /// This field is required.
     pub fn alarm_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alarm_name = ::std::option::Option::Some(input.into());
         self
@@ -66,6 +67,7 @@ impl TestAlarmInputBuilder {
     /// <li> <p> <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is available for the metric to determine the alarm state.</p> </li>
     /// <li> <p> <code>OK</code> - The metric is within the defined threshold.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn state(mut self, input: crate::types::AlarmState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
@@ -92,7 +94,7 @@ impl TestAlarmInputBuilder {
         &self.state
     }
     /// Consumes the builder and constructs a [`TestAlarmInput`](crate::operation::test_alarm::TestAlarmInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::test_alarm::TestAlarmInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::test_alarm::TestAlarmInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::test_alarm::TestAlarmInput {
             alarm_name: self.alarm_name,
             state: self.state,

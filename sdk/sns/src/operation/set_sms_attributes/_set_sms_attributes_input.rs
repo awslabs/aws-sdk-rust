@@ -175,7 +175,7 @@ impl SetSmsAttributesInputBuilder {
     /// Consumes the builder and constructs a [`SetSmsAttributesInput`](crate::operation::set_sms_attributes::SetSmsAttributesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::set_sms_attributes::SetSmsAttributesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::set_sms_attributes::SetSmsAttributesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::set_sms_attributes::SetSmsAttributesInput { attributes: self.attributes })
     }
 }

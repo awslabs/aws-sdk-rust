@@ -58,6 +58,7 @@ pub struct StartProtectedQueryInputBuilder {
 }
 impl StartProtectedQueryInputBuilder {
     /// <p>The type of the protected query to be started.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::ProtectedQueryType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -72,6 +73,7 @@ impl StartProtectedQueryInputBuilder {
         &self.r#type
     }
     /// <p>A unique identifier for the membership to run this query against. Currently accepts a membership ID.</p>
+    /// This field is required.
     pub fn membership_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.membership_identifier = ::std::option::Option::Some(input.into());
         self
@@ -86,6 +88,7 @@ impl StartProtectedQueryInputBuilder {
         &self.membership_identifier
     }
     /// <p>The protected SQL query parameters.</p>
+    /// This field is required.
     pub fn sql_parameters(mut self, input: crate::types::ProtectedQuerySqlParameters) -> Self {
         self.sql_parameters = ::std::option::Option::Some(input);
         self
@@ -116,7 +119,7 @@ impl StartProtectedQueryInputBuilder {
     /// Consumes the builder and constructs a [`StartProtectedQueryInput`](crate::operation::start_protected_query::StartProtectedQueryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_protected_query::StartProtectedQueryInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_protected_query::StartProtectedQueryInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_protected_query::StartProtectedQueryInput {
             r#type: self.r#type,

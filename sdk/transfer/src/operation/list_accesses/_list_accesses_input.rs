@@ -69,6 +69,7 @@ impl ListAccessesInputBuilder {
         &self.next_token
     }
     /// <p>A system-assigned unique identifier for a server that has users assigned to it.</p>
+    /// This field is required.
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_id = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +84,9 @@ impl ListAccessesInputBuilder {
         &self.server_id
     }
     /// Consumes the builder and constructs a [`ListAccessesInput`](crate::operation::list_accesses::ListAccessesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_accesses::ListAccessesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_accesses::ListAccessesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_accesses::ListAccessesInput {
             max_results: self.max_results,
             next_token: self.next_token,

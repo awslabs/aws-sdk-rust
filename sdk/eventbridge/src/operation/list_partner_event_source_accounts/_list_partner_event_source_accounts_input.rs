@@ -41,6 +41,7 @@ pub struct ListPartnerEventSourceAccountsInputBuilder {
 }
 impl ListPartnerEventSourceAccountsInputBuilder {
     /// <p>The name of the partner event source to display account information about.</p>
+    /// This field is required.
     pub fn event_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_source_name = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListPartnerEventSourceAccountsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_partner_event_source_accounts::ListPartnerEventSourceAccountsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_partner_event_source_accounts::ListPartnerEventSourceAccountsInput {

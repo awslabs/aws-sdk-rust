@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomerContentEncryptionConfiguration {
     /// <p>The KMS key that is used to encrypt the user's data stores in Athena.</p>
-    pub kms_key: ::std::option::Option<::std::string::String>,
+    pub kms_key: ::std::string::String,
 }
 impl CustomerContentEncryptionConfiguration {
     /// <p>The KMS key that is used to encrypt the user's data stores in Athena.</p>
-    pub fn kms_key(&self) -> ::std::option::Option<&str> {
-        self.kms_key.as_deref()
+    pub fn kms_key(&self) -> &str {
+        use std::ops::Deref;
+        self.kms_key.deref()
     }
 }
 impl CustomerContentEncryptionConfiguration {
@@ -28,6 +29,7 @@ pub struct CustomerContentEncryptionConfigurationBuilder {
 }
 impl CustomerContentEncryptionConfigurationBuilder {
     /// <p>The KMS key that is used to encrypt the user's data stores in Athena.</p>
+    /// This field is required.
     pub fn kms_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,18 @@ impl CustomerContentEncryptionConfigurationBuilder {
         &self.kms_key
     }
     /// Consumes the builder and constructs a [`CustomerContentEncryptionConfiguration`](crate::types::CustomerContentEncryptionConfiguration).
-    pub fn build(self) -> crate::types::CustomerContentEncryptionConfiguration {
-        crate::types::CustomerContentEncryptionConfiguration { kms_key: self.kms_key }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`kms_key`](crate::types::builders::CustomerContentEncryptionConfigurationBuilder::kms_key)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::CustomerContentEncryptionConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CustomerContentEncryptionConfiguration {
+            kms_key: self.kms_key.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "kms_key",
+                    "kms_key was not specified but it is required when building CustomerContentEncryptionConfiguration",
+                )
+            })?,
+        })
     }
 }

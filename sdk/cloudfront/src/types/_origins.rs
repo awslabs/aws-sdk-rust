@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Origins {
     /// <p>The number of origins for this distribution.</p>
-    pub quantity: ::std::option::Option<i32>,
+    pub quantity: i32,
     /// <p>A list of origins.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::Origin>>,
+    pub items: ::std::vec::Vec<crate::types::Origin>,
 }
 impl Origins {
     /// <p>The number of origins for this distribution.</p>
-    pub fn quantity(&self) -> ::std::option::Option<i32> {
+    pub fn quantity(&self) -> i32 {
         self.quantity
     }
     /// <p>A list of origins.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::Origin]> {
-        self.items.as_deref()
+    pub fn items(&self) -> &[crate::types::Origin] {
+        use std::ops::Deref;
+        self.items.deref()
     }
 }
 impl Origins {
@@ -35,6 +36,7 @@ pub struct OriginsBuilder {
 }
 impl OriginsBuilder {
     /// <p>The number of origins for this distribution.</p>
+    /// This field is required.
     pub fn quantity(mut self, input: i32) -> Self {
         self.quantity = ::std::option::Option::Some(input);
         self
@@ -69,10 +71,23 @@ impl OriginsBuilder {
         &self.items
     }
     /// Consumes the builder and constructs a [`Origins`](crate::types::Origins).
-    pub fn build(self) -> crate::types::Origins {
-        crate::types::Origins {
-            quantity: self.quantity,
-            items: self.items,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`quantity`](crate::types::builders::OriginsBuilder::quantity)
+    /// - [`items`](crate::types::builders::OriginsBuilder::items)
+    pub fn build(self) -> ::std::result::Result<crate::types::Origins, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Origins {
+            quantity: self.quantity.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "quantity",
+                    "quantity was not specified but it is required when building Origins",
+                )
+            })?,
+            items: self.items.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "items",
+                    "items was not specified but it is required when building Origins",
+                )
+            })?,
+        })
     }
 }

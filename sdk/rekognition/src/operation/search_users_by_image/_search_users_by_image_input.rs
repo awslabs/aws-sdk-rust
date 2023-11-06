@@ -67,6 +67,7 @@ pub struct SearchUsersByImageInputBuilder {
 }
 impl SearchUsersByImageInputBuilder {
     /// <p>The ID of an existing collection containing the UserID.</p>
+    /// This field is required.
     pub fn collection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_id = ::std::option::Option::Some(input.into());
         self
@@ -87,6 +88,7 @@ impl SearchUsersByImageInputBuilder {
     /// <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p>
     /// <p>If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes using the Bytes property is not supported. You must first upload the image to an Amazon S3 bucket and then call the operation using the S3Object property.</p>
     /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see How Amazon Rekognition works with IAM in the Amazon Rekognition Developer Guide. </p>
+    /// This field is required.
     pub fn image(mut self, input: crate::types::Image) -> Self {
         self.image = ::std::option::Option::Some(input);
         self
@@ -157,7 +159,7 @@ impl SearchUsersByImageInputBuilder {
     /// Consumes the builder and constructs a [`SearchUsersByImageInput`](crate::operation::search_users_by_image::SearchUsersByImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_users_by_image::SearchUsersByImageInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::search_users_by_image::SearchUsersByImageInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::search_users_by_image::SearchUsersByImageInput {
             collection_id: self.collection_id,

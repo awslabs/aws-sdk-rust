@@ -2,24 +2,24 @@
 pub fn ser_parameter_text_area_control(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ParameterTextAreaControl,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.parameter_control_id {
-        object.key("ParameterControlId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("ParameterControlId").string(input.parameter_control_id.as_str());
     }
-    if let Some(var_2) = &input.title {
-        object.key("Title").string(var_2.as_str());
+    {
+        object.key("Title").string(input.title.as_str());
     }
-    if let Some(var_3) = &input.source_parameter_name {
-        object.key("SourceParameterName").string(var_3.as_str());
+    {
+        object.key("SourceParameterName").string(input.source_parameter_name.as_str());
     }
-    if let Some(var_4) = &input.delimiter {
-        object.key("Delimiter").string(var_4.as_str());
+    if let Some(var_1) = &input.delimiter {
+        object.key("Delimiter").string(var_1.as_str());
     }
-    if let Some(var_5) = &input.display_options {
+    if let Some(var_2) = &input.display_options {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("DisplayOptions").start_object();
-        crate::protocol_serde::shape_text_area_control_display_options::ser_text_area_control_display_options(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_3 = object.key("DisplayOptions").start_object();
+        crate::protocol_serde::shape_text_area_control_display_options::ser_text_area_control_display_options(&mut object_3, var_2)?;
+        object_3.finish();
     }
     Ok(())
 }
@@ -82,7 +82,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::parameter_text_area_control_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -46,6 +46,7 @@ pub struct GetGroupInputBuilder {
 impl GetGroupInputBuilder {
     /// <p>The name of the group.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// This field is required.
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_name = ::std::option::Option::Some(input.into());
         self
@@ -93,7 +94,7 @@ impl GetGroupInputBuilder {
         &self.max_items
     }
     /// Consumes the builder and constructs a [`GetGroupInput`](crate::operation::get_group::GetGroupInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_group::GetGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_group::GetGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_group::GetGroupInput {
             group_name: self.group_name,
             marker: self.marker,

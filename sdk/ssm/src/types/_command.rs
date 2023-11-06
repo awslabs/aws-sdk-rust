@@ -95,12 +95,16 @@ impl Command {
         self.parameters.as_ref()
     }
     /// <p>The managed node IDs against which this command was requested.</p>
-    pub fn instance_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.instance_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_ids.is_none()`.
+    pub fn instance_ids(&self) -> &[::std::string::String] {
+        self.instance_ids.as_deref().unwrap_or_default()
     }
     /// <p>An array of search criteria that targets managed nodes using a Key,Value combination that you specify. Targets is required if you don't provide one or more managed node IDs in the call.</p>
-    pub fn targets(&self) -> ::std::option::Option<&[crate::types::Target]> {
-        self.targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
+    pub fn targets(&self) -> &[crate::types::Target] {
+        self.targets.as_deref().unwrap_or_default()
     }
     /// <p>The date and time the command was requested.</p>
     pub fn requested_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -183,8 +187,10 @@ impl Command {
         self.alarm_configuration.as_ref()
     }
     /// <p>The CloudWatch alarm that was invoked by the command.</p>
-    pub fn triggered_alarms(&self) -> ::std::option::Option<&[crate::types::AlarmStateInformation]> {
-        self.triggered_alarms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.triggered_alarms.is_none()`.
+    pub fn triggered_alarms(&self) -> &[crate::types::AlarmStateInformation] {
+        self.triggered_alarms.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for Command {

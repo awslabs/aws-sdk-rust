@@ -22,12 +22,16 @@ impl UpdateLfTagInput {
         self.tag_key.as_deref()
     }
     /// <p>A list of LF-tag values to delete from the LF-tag.</p>
-    pub fn tag_values_to_delete(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tag_values_to_delete.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_values_to_delete.is_none()`.
+    pub fn tag_values_to_delete(&self) -> &[::std::string::String] {
+        self.tag_values_to_delete.as_deref().unwrap_or_default()
     }
     /// <p>A list of LF-tag values to add from the LF-tag.</p>
-    pub fn tag_values_to_add(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tag_values_to_add.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_values_to_add.is_none()`.
+    pub fn tag_values_to_add(&self) -> &[::std::string::String] {
+        self.tag_values_to_add.as_deref().unwrap_or_default()
     }
 }
 impl UpdateLfTagInput {
@@ -62,6 +66,7 @@ impl UpdateLfTagInputBuilder {
         &self.catalog_id
     }
     /// <p>The key-name for the LF-tag for which to add or delete values.</p>
+    /// This field is required.
     pub fn tag_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tag_key = ::std::option::Option::Some(input.into());
         self
@@ -116,7 +121,7 @@ impl UpdateLfTagInputBuilder {
         &self.tag_values_to_add
     }
     /// Consumes the builder and constructs a [`UpdateLfTagInput`](crate::operation::update_lf_tag::UpdateLfTagInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_lf_tag::UpdateLfTagInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_lf_tag::UpdateLfTagInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_lf_tag::UpdateLfTagInput {
             catalog_id: self.catalog_id,
             tag_key: self.tag_key,

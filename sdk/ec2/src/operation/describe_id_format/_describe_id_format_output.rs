@@ -9,8 +9,10 @@ pub struct DescribeIdFormatOutput {
 }
 impl DescribeIdFormatOutput {
     /// <p>Information about the ID format for the resource.</p>
-    pub fn statuses(&self) -> ::std::option::Option<&[crate::types::IdFormat]> {
-        self.statuses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.statuses.is_none()`.
+    pub fn statuses(&self) -> &[crate::types::IdFormat] {
+        self.statuses.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeIdFormatOutput {

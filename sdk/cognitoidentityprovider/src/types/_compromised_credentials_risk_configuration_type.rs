@@ -11,8 +11,10 @@ pub struct CompromisedCredentialsRiskConfigurationType {
 }
 impl CompromisedCredentialsRiskConfigurationType {
     /// <p>Perform the action for these events. The default is to perform all events if no event filter is specified.</p>
-    pub fn event_filter(&self) -> ::std::option::Option<&[crate::types::EventFilterType]> {
-        self.event_filter.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_filter.is_none()`.
+    pub fn event_filter(&self) -> &[crate::types::EventFilterType] {
+        self.event_filter.as_deref().unwrap_or_default()
     }
     /// <p>The compromised credentials risk configuration actions.</p>
     pub fn actions(&self) -> ::std::option::Option<&crate::types::CompromisedCredentialsActionsType> {
@@ -55,6 +57,7 @@ impl CompromisedCredentialsRiskConfigurationTypeBuilder {
         &self.event_filter
     }
     /// <p>The compromised credentials risk configuration actions.</p>
+    /// This field is required.
     pub fn actions(mut self, input: crate::types::CompromisedCredentialsActionsType) -> Self {
         self.actions = ::std::option::Option::Some(input);
         self

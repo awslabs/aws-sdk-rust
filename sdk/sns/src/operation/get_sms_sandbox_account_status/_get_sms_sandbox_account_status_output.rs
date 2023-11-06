@@ -34,6 +34,7 @@ pub struct GetSmsSandboxAccountStatusOutputBuilder {
 }
 impl GetSmsSandboxAccountStatusOutputBuilder {
     /// <p>Indicates whether the calling Amazon Web Services account is in the SMS sandbox.</p>
+    /// This field is required.
     pub fn is_in_sandbox(mut self, input: bool) -> Self {
         self.is_in_sandbox = ::std::option::Option::Some(input);
         self

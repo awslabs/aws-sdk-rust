@@ -15,7 +15,7 @@ pub struct MigrationAlert {
     /// <p>Additional details about the alert.</p>
     pub details: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A link to the Amazon Lex documentation that describes how to resolve the alert.</p>
-    pub reference_ur_ls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub reference_urls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl MigrationAlert {
     /// <p>The type of alert. There are two kinds of alerts:</p>
@@ -31,12 +31,16 @@ impl MigrationAlert {
         self.message.as_deref()
     }
     /// <p>Additional details about the alert.</p>
-    pub fn details(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.details.is_none()`.
+    pub fn details(&self) -> &[::std::string::String] {
+        self.details.as_deref().unwrap_or_default()
     }
     /// <p>A link to the Amazon Lex documentation that describes how to resolve the alert.</p>
-    pub fn reference_ur_ls(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.reference_ur_ls.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reference_urls.is_none()`.
+    pub fn reference_urls(&self) -> &[::std::string::String] {
+        self.reference_urls.as_deref().unwrap_or_default()
     }
 }
 impl MigrationAlert {
@@ -53,7 +57,7 @@ pub struct MigrationAlertBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::MigrationAlertType>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) details: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) reference_ur_ls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) reference_urls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl MigrationAlertBuilder {
     /// <p>The type of alert. There are two kinds of alerts:</p>
@@ -116,25 +120,25 @@ impl MigrationAlertBuilder {
     pub fn get_details(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.details
     }
-    /// Appends an item to `reference_ur_ls`.
+    /// Appends an item to `reference_urls`.
     ///
-    /// To override the contents of this collection use [`set_reference_ur_ls`](Self::set_reference_ur_ls).
+    /// To override the contents of this collection use [`set_reference_urls`](Self::set_reference_urls).
     ///
     /// <p>A link to the Amazon Lex documentation that describes how to resolve the alert.</p>
-    pub fn reference_ur_ls(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.reference_ur_ls.unwrap_or_default();
+    pub fn reference_urls(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.reference_urls.unwrap_or_default();
         v.push(input.into());
-        self.reference_ur_ls = ::std::option::Option::Some(v);
+        self.reference_urls = ::std::option::Option::Some(v);
         self
     }
     /// <p>A link to the Amazon Lex documentation that describes how to resolve the alert.</p>
-    pub fn set_reference_ur_ls(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.reference_ur_ls = input;
+    pub fn set_reference_urls(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.reference_urls = input;
         self
     }
     /// <p>A link to the Amazon Lex documentation that describes how to resolve the alert.</p>
-    pub fn get_reference_ur_ls(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.reference_ur_ls
+    pub fn get_reference_urls(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.reference_urls
     }
     /// Consumes the builder and constructs a [`MigrationAlert`](crate::types::MigrationAlert).
     pub fn build(self) -> crate::types::MigrationAlert {
@@ -142,7 +146,7 @@ impl MigrationAlertBuilder {
             r#type: self.r#type,
             message: self.message,
             details: self.details,
-            reference_ur_ls: self.reference_ur_ls,
+            reference_urls: self.reference_urls,
         }
     }
 }

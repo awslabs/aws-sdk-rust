@@ -34,6 +34,7 @@ pub struct GetServiceInstanceInputBuilder {
 }
 impl GetServiceInstanceInputBuilder {
     /// <p>The name of a service instance that you want to get the detailed data for.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetServiceInstanceInputBuilder {
         &self.name
     }
     /// <p>The name of the service that you want the service instance input for.</p>
+    /// This field is required.
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,8 @@ impl GetServiceInstanceInputBuilder {
     /// Consumes the builder and constructs a [`GetServiceInstanceInput`](crate::operation::get_service_instance::GetServiceInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_service_instance::GetServiceInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_service_instance::GetServiceInstanceInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_service_instance::GetServiceInstanceInput {
             name: self.name,
             service_name: self.service_name,

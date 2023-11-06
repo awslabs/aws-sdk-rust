@@ -133,7 +133,7 @@ impl DescribeProductAsAdminInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_product_as_admin::DescribeProductAsAdminInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_product_as_admin::DescribeProductAsAdminInput {
             accept_language: self.accept_language,

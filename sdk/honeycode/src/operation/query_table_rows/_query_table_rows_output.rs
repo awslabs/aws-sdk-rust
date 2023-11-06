@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryTableRowsOutput {
     /// <p> The list of columns in the table whose row data is returned in the result. </p>
-    pub column_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub column_ids: ::std::vec::Vec<::std::string::String>,
     /// <p> The list of rows in the table that match the query filter. </p>
-    pub rows: ::std::option::Option<::std::vec::Vec<crate::types::TableRow>>,
+    pub rows: ::std::vec::Vec<crate::types::TableRow>,
     /// <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
@@ -15,12 +15,14 @@ pub struct QueryTableRowsOutput {
 }
 impl QueryTableRowsOutput {
     /// <p> The list of columns in the table whose row data is returned in the result. </p>
-    pub fn column_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.column_ids.as_deref()
+    pub fn column_ids(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.column_ids.deref()
     }
     /// <p> The list of rows in the table that match the query filter. </p>
-    pub fn rows(&self) -> ::std::option::Option<&[crate::types::TableRow]> {
-        self.rows.as_deref()
+    pub fn rows(&self) -> &[crate::types::TableRow] {
+        use std::ops::Deref;
+        self.rows.deref()
     }
     /// <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -109,6 +111,7 @@ impl QueryTableRowsOutputBuilder {
         &self.next_token
     }
     /// <p> Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
+    /// This field is required.
     pub fn workbook_cursor(mut self, input: i64) -> Self {
         self.workbook_cursor = ::std::option::Option::Some(input);
         self
@@ -132,13 +135,28 @@ impl QueryTableRowsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`QueryTableRowsOutput`](crate::operation::query_table_rows::QueryTableRowsOutput).
-    pub fn build(self) -> crate::operation::query_table_rows::QueryTableRowsOutput {
-        crate::operation::query_table_rows::QueryTableRowsOutput {
-            column_ids: self.column_ids,
-            rows: self.rows,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`column_ids`](crate::operation::query_table_rows::builders::QueryTableRowsOutputBuilder::column_ids)
+    /// - [`rows`](crate::operation::query_table_rows::builders::QueryTableRowsOutputBuilder::rows)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::query_table_rows::QueryTableRowsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::query_table_rows::QueryTableRowsOutput {
+            column_ids: self.column_ids.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "column_ids",
+                    "column_ids was not specified but it is required when building QueryTableRowsOutput",
+                )
+            })?,
+            rows: self.rows.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "rows",
+                    "rows was not specified but it is required when building QueryTableRowsOutput",
+                )
+            })?,
             next_token: self.next_token,
             workbook_cursor: self.workbook_cursor.unwrap_or_default(),
             _request_id: self._request_id,
-        }
+        })
     }
 }

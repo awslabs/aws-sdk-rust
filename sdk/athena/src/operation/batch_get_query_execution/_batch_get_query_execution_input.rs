@@ -9,8 +9,10 @@ pub struct BatchGetQueryExecutionInput {
 }
 impl BatchGetQueryExecutionInput {
     /// <p>An array of query execution IDs.</p>
-    pub fn query_execution_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.query_execution_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.query_execution_ids.is_none()`.
+    pub fn query_execution_ids(&self) -> &[::std::string::String] {
+        self.query_execution_ids.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetQueryExecutionInput {
@@ -52,7 +54,7 @@ impl BatchGetQueryExecutionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_query_execution::BatchGetQueryExecutionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_get_query_execution::BatchGetQueryExecutionInput {
             query_execution_ids: self.query_execution_ids,

@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMonitoredResourcesFilters {
     /// <p> The permission status of a resource. </p>
-    pub resource_permission: ::std::option::Option<crate::types::ResourcePermission>,
+    pub resource_permission: crate::types::ResourcePermission,
     /// <p> The type of resource that you wish to retrieve, such as log groups. </p>
-    pub resource_type_filters: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTypeFilter>>,
+    pub resource_type_filters: ::std::vec::Vec<crate::types::ResourceTypeFilter>,
 }
 impl ListMonitoredResourcesFilters {
     /// <p> The permission status of a resource. </p>
-    pub fn resource_permission(&self) -> ::std::option::Option<&crate::types::ResourcePermission> {
-        self.resource_permission.as_ref()
+    pub fn resource_permission(&self) -> &crate::types::ResourcePermission {
+        &self.resource_permission
     }
     /// <p> The type of resource that you wish to retrieve, such as log groups. </p>
-    pub fn resource_type_filters(&self) -> ::std::option::Option<&[crate::types::ResourceTypeFilter]> {
-        self.resource_type_filters.as_deref()
+    pub fn resource_type_filters(&self) -> &[crate::types::ResourceTypeFilter] {
+        use std::ops::Deref;
+        self.resource_type_filters.deref()
     }
 }
 impl ListMonitoredResourcesFilters {
@@ -35,6 +36,7 @@ pub struct ListMonitoredResourcesFiltersBuilder {
 }
 impl ListMonitoredResourcesFiltersBuilder {
     /// <p> The permission status of a resource. </p>
+    /// This field is required.
     pub fn resource_permission(mut self, input: crate::types::ResourcePermission) -> Self {
         self.resource_permission = ::std::option::Option::Some(input);
         self
@@ -69,10 +71,23 @@ impl ListMonitoredResourcesFiltersBuilder {
         &self.resource_type_filters
     }
     /// Consumes the builder and constructs a [`ListMonitoredResourcesFilters`](crate::types::ListMonitoredResourcesFilters).
-    pub fn build(self) -> crate::types::ListMonitoredResourcesFilters {
-        crate::types::ListMonitoredResourcesFilters {
-            resource_permission: self.resource_permission,
-            resource_type_filters: self.resource_type_filters,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource_permission`](crate::types::builders::ListMonitoredResourcesFiltersBuilder::resource_permission)
+    /// - [`resource_type_filters`](crate::types::builders::ListMonitoredResourcesFiltersBuilder::resource_type_filters)
+    pub fn build(self) -> ::std::result::Result<crate::types::ListMonitoredResourcesFilters, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ListMonitoredResourcesFilters {
+            resource_permission: self.resource_permission.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "resource_permission",
+                    "resource_permission was not specified but it is required when building ListMonitoredResourcesFilters",
+                )
+            })?,
+            resource_type_filters: self.resource_type_filters.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "resource_type_filters",
+                    "resource_type_filters was not specified but it is required when building ListMonitoredResourcesFilters",
+                )
+            })?,
+        })
     }
 }

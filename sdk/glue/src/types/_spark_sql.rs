@@ -5,40 +5,46 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SparkSql {
     /// <p>The name of the transform node.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The data inputs identified by their node names. You can associate a table name with each input node to use in the SQL query. The name you choose must meet the Spark SQL naming restrictions.</p>
-    pub inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub inputs: ::std::vec::Vec<::std::string::String>,
     /// <p>A SQL query that must use Spark SQL syntax and return a single data set.</p>
-    pub sql_query: ::std::option::Option<::std::string::String>,
+    pub sql_query: ::std::string::String,
     /// <p>A list of aliases. An alias allows you to specify what name to use in the SQL for a given input. For example, you have a datasource named "MyDataSource". If you specify <code>From</code> as MyDataSource, and <code>Alias</code> as SqlName, then in your SQL you can do:</p>
     /// <p> <code>select * from SqlName</code> </p>
     /// <p>and that gets data from MyDataSource.</p>
-    pub sql_aliases: ::std::option::Option<::std::vec::Vec<crate::types::SqlAlias>>,
+    pub sql_aliases: ::std::vec::Vec<crate::types::SqlAlias>,
     /// <p>Specifies the data schema for the SparkSQL transform.</p>
     pub output_schemas: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
 }
 impl SparkSql {
     /// <p>The name of the transform node.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The data inputs identified by their node names. You can associate a table name with each input node to use in the SQL query. The name you choose must meet the Spark SQL naming restrictions.</p>
-    pub fn inputs(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.inputs.as_deref()
+    pub fn inputs(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.inputs.deref()
     }
     /// <p>A SQL query that must use Spark SQL syntax and return a single data set.</p>
-    pub fn sql_query(&self) -> ::std::option::Option<&str> {
-        self.sql_query.as_deref()
+    pub fn sql_query(&self) -> &str {
+        use std::ops::Deref;
+        self.sql_query.deref()
     }
     /// <p>A list of aliases. An alias allows you to specify what name to use in the SQL for a given input. For example, you have a datasource named "MyDataSource". If you specify <code>From</code> as MyDataSource, and <code>Alias</code> as SqlName, then in your SQL you can do:</p>
     /// <p> <code>select * from SqlName</code> </p>
     /// <p>and that gets data from MyDataSource.</p>
-    pub fn sql_aliases(&self) -> ::std::option::Option<&[crate::types::SqlAlias]> {
-        self.sql_aliases.as_deref()
+    pub fn sql_aliases(&self) -> &[crate::types::SqlAlias] {
+        use std::ops::Deref;
+        self.sql_aliases.deref()
     }
     /// <p>Specifies the data schema for the SparkSQL transform.</p>
-    pub fn output_schemas(&self) -> ::std::option::Option<&[crate::types::GlueSchema]> {
-        self.output_schemas.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_schemas.is_none()`.
+    pub fn output_schemas(&self) -> &[crate::types::GlueSchema] {
+        self.output_schemas.as_deref().unwrap_or_default()
     }
 }
 impl SparkSql {
@@ -60,6 +66,7 @@ pub struct SparkSqlBuilder {
 }
 impl SparkSqlBuilder {
     /// <p>The name of the transform node.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -94,6 +101,7 @@ impl SparkSqlBuilder {
         &self.inputs
     }
     /// <p>A SQL query that must use Spark SQL syntax and return a single data set.</p>
+    /// This field is required.
     pub fn sql_query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sql_query = ::std::option::Option::Some(input.into());
         self
@@ -154,13 +162,38 @@ impl SparkSqlBuilder {
         &self.output_schemas
     }
     /// Consumes the builder and constructs a [`SparkSql`](crate::types::SparkSql).
-    pub fn build(self) -> crate::types::SparkSql {
-        crate::types::SparkSql {
-            name: self.name,
-            inputs: self.inputs,
-            sql_query: self.sql_query,
-            sql_aliases: self.sql_aliases,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::SparkSqlBuilder::name)
+    /// - [`inputs`](crate::types::builders::SparkSqlBuilder::inputs)
+    /// - [`sql_query`](crate::types::builders::SparkSqlBuilder::sql_query)
+    /// - [`sql_aliases`](crate::types::builders::SparkSqlBuilder::sql_aliases)
+    pub fn build(self) -> ::std::result::Result<crate::types::SparkSql, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SparkSql {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building SparkSql",
+                )
+            })?,
+            inputs: self.inputs.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "inputs",
+                    "inputs was not specified but it is required when building SparkSql",
+                )
+            })?,
+            sql_query: self.sql_query.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "sql_query",
+                    "sql_query was not specified but it is required when building SparkSql",
+                )
+            })?,
+            sql_aliases: self.sql_aliases.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "sql_aliases",
+                    "sql_aliases was not specified but it is required when building SparkSql",
+                )
+            })?,
             output_schemas: self.output_schemas,
-        }
+        })
     }
 }

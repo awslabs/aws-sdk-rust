@@ -16,8 +16,10 @@ impl CreateStageInput {
         self.name.as_deref()
     }
     /// <p>Array of participant token configuration objects to attach to the new stage.</p>
-    pub fn participant_token_configurations(&self) -> ::std::option::Option<&[crate::types::ParticipantTokenConfiguration]> {
-        self.participant_token_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.participant_token_configurations.is_none()`.
+    pub fn participant_token_configurations(&self) -> &[crate::types::ParticipantTokenConfiguration] {
+        self.participant_token_configurations.as_deref().unwrap_or_default()
     }
     /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no constraints on tags beyond what is documented there. </p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -98,7 +100,7 @@ impl CreateStageInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateStageInput`](crate::operation::create_stage::CreateStageInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_stage::CreateStageInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_stage::CreateStageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_stage::CreateStageInput {
             name: self.name,
             participant_token_configurations: self.participant_token_configurations,

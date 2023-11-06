@@ -34,8 +34,8 @@ pub fn de_update_pull_request_approval_rule_content_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ApprovalRuleDoesNotExistException" => crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError::ApprovalRuleDoesNotExistException({
@@ -50,8 +50,8 @@ pub fn de_update_pull_request_approval_rule_content_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ApprovalRuleNameRequiredException" => crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError::ApprovalRuleNameRequiredException({
@@ -66,8 +66,8 @@ pub fn de_update_pull_request_approval_rule_content_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "CannotModifyApprovalRuleFromTemplateException" => crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError::CannotModifyApprovalRuleFromTemplateException({
@@ -82,8 +82,8 @@ pub fn de_update_pull_request_approval_rule_content_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "EncryptionIntegrityChecksFailedException" => crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError::EncryptionIntegrityChecksFailedException({
@@ -98,8 +98,8 @@ pub fn de_update_pull_request_approval_rule_content_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "EncryptionKeyAccessDeniedException" => crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError::EncryptionKeyAccessDeniedException({
@@ -114,8 +114,8 @@ pub fn de_update_pull_request_approval_rule_content_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "EncryptionKeyDisabledException" => crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError::EncryptionKeyDisabledException({
@@ -130,8 +130,8 @@ pub fn de_update_pull_request_approval_rule_content_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "EncryptionKeyNotFoundException" => crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError::EncryptionKeyNotFoundException({
@@ -146,8 +146,8 @@ pub fn de_update_pull_request_approval_rule_content_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "EncryptionKeyUnavailableException" => crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError::EncryptionKeyUnavailableException({
@@ -162,8 +162,8 @@ pub fn de_update_pull_request_approval_rule_content_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidApprovalRuleContentException" => crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError::InvalidApprovalRuleContentException({
@@ -178,8 +178,8 @@ pub fn de_update_pull_request_approval_rule_content_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidApprovalRuleNameException" => crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError::InvalidApprovalRuleNameException({
@@ -194,8 +194,8 @@ pub fn de_update_pull_request_approval_rule_content_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidPullRequestIdException" => crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError::InvalidPullRequestIdException({
@@ -210,8 +210,8 @@ pub fn de_update_pull_request_approval_rule_content_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidRuleContentSha256Exception" => crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError::InvalidRuleContentSha256Exception({
@@ -226,8 +226,8 @@ pub fn de_update_pull_request_approval_rule_content_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "PullRequestAlreadyClosedException" => crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError::PullRequestAlreadyClosedException({
@@ -242,8 +242,8 @@ pub fn de_update_pull_request_approval_rule_content_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "PullRequestDoesNotExistException" => crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError::PullRequestDoesNotExistException({
@@ -258,8 +258,8 @@ pub fn de_update_pull_request_approval_rule_content_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "PullRequestIdRequiredException" => crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError::PullRequestIdRequiredException({
@@ -274,8 +274,8 @@ pub fn de_update_pull_request_approval_rule_content_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError::generic(generic)
@@ -301,13 +301,13 @@ pub fn de_update_pull_request_approval_rule_content_http_response(
         )
         .map_err(crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::update_pull_request_approval_rule_content_output_correct_errors(output).build()
     })
 }
 
 pub fn ser_update_pull_request_approval_rule_content_input(
     input: &crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_update_pull_request_approval_rule_content_input::ser_update_pull_request_approval_rule_content_input(
@@ -315,7 +315,7 @@ pub fn ser_update_pull_request_approval_rule_content_input(
         input,
     )?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_update_pull_request_approval_rule_content(

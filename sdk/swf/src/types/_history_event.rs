@@ -55,9 +55,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HistoryEvent {
     /// <p>The date and time when the event occurred.</p>
-    pub event_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub event_timestamp: ::aws_smithy_types::DateTime,
     /// <p>The type of the history event.</p>
-    pub event_type: ::std::option::Option<crate::types::EventType>,
+    pub event_type: crate::types::EventType,
     /// <p>The system generated ID of the event. This ID uniquely identifies the event with in the workflow execution history.</p>
     pub event_id: i64,
     /// <p>If the event is of type <code>WorkflowExecutionStarted</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
@@ -178,12 +178,12 @@ pub struct HistoryEvent {
 }
 impl HistoryEvent {
     /// <p>The date and time when the event occurred.</p>
-    pub fn event_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.event_timestamp.as_ref()
+    pub fn event_timestamp(&self) -> &::aws_smithy_types::DateTime {
+        &self.event_timestamp
     }
     /// <p>The type of the history event.</p>
-    pub fn event_type(&self) -> ::std::option::Option<&crate::types::EventType> {
-        self.event_type.as_ref()
+    pub fn event_type(&self) -> &crate::types::EventType {
+        &self.event_type
     }
     /// <p>The system generated ID of the event. This ID uniquely identifies the event with in the workflow execution history.</p>
     pub fn event_id(&self) -> i64 {
@@ -539,6 +539,7 @@ pub struct HistoryEventBuilder {
 }
 impl HistoryEventBuilder {
     /// <p>The date and time when the event occurred.</p>
+    /// This field is required.
     pub fn event_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.event_timestamp = ::std::option::Option::Some(input);
         self
@@ -553,6 +554,7 @@ impl HistoryEventBuilder {
         &self.event_timestamp
     }
     /// <p>The type of the history event.</p>
+    /// This field is required.
     pub fn event_type(mut self, input: crate::types::EventType) -> Self {
         self.event_type = ::std::option::Option::Some(input);
         self
@@ -567,6 +569,7 @@ impl HistoryEventBuilder {
         &self.event_type
     }
     /// <p>The system generated ID of the event. This ID uniquely identifies the event with in the workflow execution history.</p>
+    /// This field is required.
     pub fn event_id(mut self, input: i64) -> Self {
         self.event_id = ::std::option::Option::Some(input);
         self
@@ -1582,10 +1585,23 @@ impl HistoryEventBuilder {
         &self.start_lambda_function_failed_event_attributes
     }
     /// Consumes the builder and constructs a [`HistoryEvent`](crate::types::HistoryEvent).
-    pub fn build(self) -> crate::types::HistoryEvent {
-        crate::types::HistoryEvent {
-            event_timestamp: self.event_timestamp,
-            event_type: self.event_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`event_timestamp`](crate::types::builders::HistoryEventBuilder::event_timestamp)
+    /// - [`event_type`](crate::types::builders::HistoryEventBuilder::event_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::HistoryEvent, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::HistoryEvent {
+            event_timestamp: self.event_timestamp.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "event_timestamp",
+                    "event_timestamp was not specified but it is required when building HistoryEvent",
+                )
+            })?,
+            event_type: self.event_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "event_type",
+                    "event_type was not specified but it is required when building HistoryEvent",
+                )
+            })?,
             event_id: self.event_id.unwrap_or_default(),
             workflow_execution_started_event_attributes: self.workflow_execution_started_event_attributes,
             workflow_execution_completed_event_attributes: self.workflow_execution_completed_event_attributes,
@@ -1643,6 +1659,6 @@ impl HistoryEventBuilder {
             lambda_function_timed_out_event_attributes: self.lambda_function_timed_out_event_attributes,
             schedule_lambda_function_failed_event_attributes: self.schedule_lambda_function_failed_event_attributes,
             start_lambda_function_failed_event_attributes: self.start_lambda_function_failed_event_attributes,
-        }
+        })
     }
 }

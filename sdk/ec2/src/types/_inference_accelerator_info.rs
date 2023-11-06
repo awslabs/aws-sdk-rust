@@ -7,16 +7,18 @@ pub struct InferenceAcceleratorInfo {
     /// <p>Describes the Inference accelerators for the instance type.</p>
     pub accelerators: ::std::option::Option<::std::vec::Vec<crate::types::InferenceDeviceInfo>>,
     /// <p>The total size of the memory for the inference accelerators for the instance type, in MiB.</p>
-    pub total_inference_memory_in_mi_b: ::std::option::Option<i32>,
+    pub total_inference_memory_in_mib: ::std::option::Option<i32>,
 }
 impl InferenceAcceleratorInfo {
     /// <p>Describes the Inference accelerators for the instance type.</p>
-    pub fn accelerators(&self) -> ::std::option::Option<&[crate::types::InferenceDeviceInfo]> {
-        self.accelerators.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accelerators.is_none()`.
+    pub fn accelerators(&self) -> &[crate::types::InferenceDeviceInfo] {
+        self.accelerators.as_deref().unwrap_or_default()
     }
     /// <p>The total size of the memory for the inference accelerators for the instance type, in MiB.</p>
-    pub fn total_inference_memory_in_mi_b(&self) -> ::std::option::Option<i32> {
-        self.total_inference_memory_in_mi_b
+    pub fn total_inference_memory_in_mib(&self) -> ::std::option::Option<i32> {
+        self.total_inference_memory_in_mib
     }
 }
 impl InferenceAcceleratorInfo {
@@ -31,7 +33,7 @@ impl InferenceAcceleratorInfo {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InferenceAcceleratorInfoBuilder {
     pub(crate) accelerators: ::std::option::Option<::std::vec::Vec<crate::types::InferenceDeviceInfo>>,
-    pub(crate) total_inference_memory_in_mi_b: ::std::option::Option<i32>,
+    pub(crate) total_inference_memory_in_mib: ::std::option::Option<i32>,
 }
 impl InferenceAcceleratorInfoBuilder {
     /// Appends an item to `accelerators`.
@@ -55,24 +57,24 @@ impl InferenceAcceleratorInfoBuilder {
         &self.accelerators
     }
     /// <p>The total size of the memory for the inference accelerators for the instance type, in MiB.</p>
-    pub fn total_inference_memory_in_mi_b(mut self, input: i32) -> Self {
-        self.total_inference_memory_in_mi_b = ::std::option::Option::Some(input);
+    pub fn total_inference_memory_in_mib(mut self, input: i32) -> Self {
+        self.total_inference_memory_in_mib = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total size of the memory for the inference accelerators for the instance type, in MiB.</p>
-    pub fn set_total_inference_memory_in_mi_b(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_inference_memory_in_mi_b = input;
+    pub fn set_total_inference_memory_in_mib(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.total_inference_memory_in_mib = input;
         self
     }
     /// <p>The total size of the memory for the inference accelerators for the instance type, in MiB.</p>
-    pub fn get_total_inference_memory_in_mi_b(&self) -> &::std::option::Option<i32> {
-        &self.total_inference_memory_in_mi_b
+    pub fn get_total_inference_memory_in_mib(&self) -> &::std::option::Option<i32> {
+        &self.total_inference_memory_in_mib
     }
     /// Consumes the builder and constructs a [`InferenceAcceleratorInfo`](crate::types::InferenceAcceleratorInfo).
     pub fn build(self) -> crate::types::InferenceAcceleratorInfo {
         crate::types::InferenceAcceleratorInfo {
             accelerators: self.accelerators,
-            total_inference_memory_in_mi_b: self.total_inference_memory_in_mi_b,
+            total_inference_memory_in_mib: self.total_inference_memory_in_mib,
         }
     }
 }

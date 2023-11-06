@@ -41,6 +41,7 @@ pub struct UpdateLongTermPricingInputBuilder {
 }
 impl UpdateLongTermPricingInputBuilder {
     /// <p>The ID of the long-term pricing type for the device.</p>
+    /// This field is required.
     pub fn long_term_pricing_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.long_term_pricing_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl UpdateLongTermPricingInputBuilder {
     /// Consumes the builder and constructs a [`UpdateLongTermPricingInput`](crate::operation::update_long_term_pricing::UpdateLongTermPricingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_long_term_pricing::UpdateLongTermPricingInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_long_term_pricing::UpdateLongTermPricingInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_long_term_pricing::UpdateLongTermPricingInput {
             long_term_pricing_id: self.long_term_pricing_id,

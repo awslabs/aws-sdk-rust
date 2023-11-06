@@ -27,6 +27,7 @@ pub struct DisassociateWirelessGatewayFromThingInputBuilder {
 }
 impl DisassociateWirelessGatewayFromThingInputBuilder {
     /// <p>The ID of the resource to update.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DisassociateWirelessGatewayFromThingInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_wireless_gateway_from_thing::DisassociateWirelessGatewayFromThingInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_wireless_gateway_from_thing::DisassociateWirelessGatewayFromThingInput { id: self.id },

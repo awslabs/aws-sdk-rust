@@ -29,7 +29,7 @@ pub use crate::types::_cluster_pending_updates::ClusterPendingUpdatesBuilder;
 
 pub use crate::types::_pending_modified_service_update::PendingModifiedServiceUpdateBuilder;
 
-pub use crate::types::_ac_ls_update_status::AcLsUpdateStatusBuilder;
+pub use crate::types::_acls_update_status::AcLsUpdateStatusBuilder;
 
 pub use crate::types::_resharding_status::ReshardingStatusBuilder;
 

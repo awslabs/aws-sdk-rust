@@ -27,6 +27,7 @@ pub struct UpdateRevealConfigurationInputBuilder {
 }
 impl UpdateRevealConfigurationInputBuilder {
     /// <p>The new configuration settings and the status of the configuration for the account.</p>
+    /// This field is required.
     pub fn configuration(mut self, input: crate::types::RevealConfiguration) -> Self {
         self.configuration = ::std::option::Option::Some(input);
         self
@@ -45,7 +46,7 @@ impl UpdateRevealConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_reveal_configuration::UpdateRevealConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_reveal_configuration::UpdateRevealConfigurationInput {
             configuration: self.configuration,

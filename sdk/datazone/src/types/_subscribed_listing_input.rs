@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubscribedListingInput {
     /// <p>The identifier of the published asset for which the subscription grant is to be created.</p>
-    pub identifier: ::std::option::Option<::std::string::String>,
+    pub identifier: ::std::string::String,
 }
 impl SubscribedListingInput {
     /// <p>The identifier of the published asset for which the subscription grant is to be created.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
-        self.identifier.as_deref()
+    pub fn identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.identifier.deref()
     }
 }
 impl SubscribedListingInput {
@@ -28,6 +29,7 @@ pub struct SubscribedListingInputBuilder {
 }
 impl SubscribedListingInputBuilder {
     /// <p>The identifier of the published asset for which the subscription grant is to be created.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl SubscribedListingInputBuilder {
         &self.identifier
     }
     /// Consumes the builder and constructs a [`SubscribedListingInput`](crate::types::SubscribedListingInput).
-    pub fn build(self) -> crate::types::SubscribedListingInput {
-        crate::types::SubscribedListingInput { identifier: self.identifier }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`identifier`](crate::types::builders::SubscribedListingInputBuilder::identifier)
+    pub fn build(self) -> ::std::result::Result<crate::types::SubscribedListingInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SubscribedListingInput {
+            identifier: self.identifier.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "identifier",
+                    "identifier was not specified but it is required when building SubscribedListingInput",
+                )
+            })?,
+        })
     }
 }

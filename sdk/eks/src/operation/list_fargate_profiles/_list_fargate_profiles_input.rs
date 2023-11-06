@@ -41,6 +41,7 @@ pub struct ListFargateProfilesInputBuilder {
 }
 impl ListFargateProfilesInputBuilder {
     /// <p>The name of the Amazon EKS cluster that you would like to list Fargate profiles in.</p>
+    /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl ListFargateProfilesInputBuilder {
     /// Consumes the builder and constructs a [`ListFargateProfilesInput`](crate::operation::list_fargate_profiles::ListFargateProfilesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_fargate_profiles::ListFargateProfilesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_fargate_profiles::ListFargateProfilesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_fargate_profiles::ListFargateProfilesInput {
             cluster_name: self.cluster_name,

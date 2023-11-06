@@ -11,8 +11,10 @@ pub struct ListProcessingJobsOutput {
 }
 impl ListProcessingJobsOutput {
     /// <p>An array of <code>ProcessingJobSummary</code> objects, each listing a processing job.</p>
-    pub fn processing_job_summaries(&self) -> ::std::option::Option<&[crate::types::ProcessingJobSummary]> {
-        self.processing_job_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.processing_job_summaries.is_none()`.
+    pub fn processing_job_summaries(&self) -> &[crate::types::ProcessingJobSummary] {
+        self.processing_job_summaries.as_deref().unwrap_or_default()
     }
     /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of processing jobs, use it in the subsequent request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

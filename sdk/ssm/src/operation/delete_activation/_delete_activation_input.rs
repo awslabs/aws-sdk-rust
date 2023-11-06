@@ -27,6 +27,7 @@ pub struct DeleteActivationInputBuilder {
 }
 impl DeleteActivationInputBuilder {
     /// <p>The ID of the activation that you want to delete.</p>
+    /// This field is required.
     pub fn activation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.activation_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteActivationInputBuilder {
     /// Consumes the builder and constructs a [`DeleteActivationInput`](crate::operation::delete_activation::DeleteActivationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_activation::DeleteActivationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_activation::DeleteActivationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_activation::DeleteActivationInput {
             activation_id: self.activation_id,
         })

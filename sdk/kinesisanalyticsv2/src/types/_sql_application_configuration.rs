@@ -13,16 +13,22 @@ pub struct SqlApplicationConfiguration {
 }
 impl SqlApplicationConfiguration {
     /// <p>The array of <code>Input</code> objects describing the input streams used by the application.</p>
-    pub fn inputs(&self) -> ::std::option::Option<&[crate::types::Input]> {
-        self.inputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inputs.is_none()`.
+    pub fn inputs(&self) -> &[crate::types::Input] {
+        self.inputs.as_deref().unwrap_or_default()
     }
     /// <p>The array of <code>Output</code> objects describing the destination streams used by the application.</p>
-    pub fn outputs(&self) -> ::std::option::Option<&[crate::types::Output]> {
-        self.outputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outputs.is_none()`.
+    pub fn outputs(&self) -> &[crate::types::Output] {
+        self.outputs.as_deref().unwrap_or_default()
     }
     /// <p>The array of <code>ReferenceDataSource</code> objects describing the reference data sources used by the application.</p>
-    pub fn reference_data_sources(&self) -> ::std::option::Option<&[crate::types::ReferenceDataSource]> {
-        self.reference_data_sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reference_data_sources.is_none()`.
+    pub fn reference_data_sources(&self) -> &[crate::types::ReferenceDataSource] {
+        self.reference_data_sources.as_deref().unwrap_or_default()
     }
 }
 impl SqlApplicationConfiguration {

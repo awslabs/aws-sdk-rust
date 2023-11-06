@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDomainsOutput {
     /// <p>A list of DomainInfo structures.</p>
-    pub domain_infos: ::std::option::Option<::std::vec::Vec<crate::types::DomainInfo>>,
+    pub domain_infos: ::std::vec::Vec<crate::types::DomainInfo>,
     /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
     pub next_page_token: ::std::option::Option<::std::string::String>,
@@ -13,8 +13,9 @@ pub struct ListDomainsOutput {
 }
 impl ListDomainsOutput {
     /// <p>A list of DomainInfo structures.</p>
-    pub fn domain_infos(&self) -> ::std::option::Option<&[crate::types::DomainInfo]> {
-        self.domain_infos.as_deref()
+    pub fn domain_infos(&self) -> &[crate::types::DomainInfo] {
+        use std::ops::Deref;
+        self.domain_infos.deref()
     }
     /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
@@ -90,11 +91,18 @@ impl ListDomainsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDomainsOutput`](crate::operation::list_domains::ListDomainsOutput).
-    pub fn build(self) -> crate::operation::list_domains::ListDomainsOutput {
-        crate::operation::list_domains::ListDomainsOutput {
-            domain_infos: self.domain_infos,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`domain_infos`](crate::operation::list_domains::builders::ListDomainsOutputBuilder::domain_infos)
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_domains::ListDomainsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_domains::ListDomainsOutput {
+            domain_infos: self.domain_infos.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "domain_infos",
+                    "domain_infos was not specified but it is required when building ListDomainsOutput",
+                )
+            })?,
             next_page_token: self.next_page_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

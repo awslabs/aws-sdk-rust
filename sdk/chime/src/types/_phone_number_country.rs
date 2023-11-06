@@ -15,8 +15,10 @@ impl PhoneNumberCountry {
         self.country_code.as_deref()
     }
     /// <p>The supported phone number types. </p>
-    pub fn supported_phone_number_types(&self) -> ::std::option::Option<&[crate::types::PhoneNumberType]> {
-        self.supported_phone_number_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_phone_number_types.is_none()`.
+    pub fn supported_phone_number_types(&self) -> &[crate::types::PhoneNumberType] {
+        self.supported_phone_number_types.as_deref().unwrap_or_default()
     }
 }
 impl PhoneNumberCountry {

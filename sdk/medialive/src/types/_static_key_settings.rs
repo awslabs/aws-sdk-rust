@@ -49,6 +49,7 @@ impl StaticKeySettingsBuilder {
         &self.key_provider_server
     }
     /// Static key value as a 32 character hexadecimal string.
+    /// This field is required.
     pub fn static_key_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.static_key_value = ::std::option::Option::Some(input.into());
         self

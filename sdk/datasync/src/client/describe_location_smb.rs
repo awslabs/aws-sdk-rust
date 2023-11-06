@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeLocationSmb`](crate::operation::describe_location_smb::builders::DescribeLocationSmbFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`location_arn(impl Into<String>)`](crate::operation::describe_location_smb::builders::DescribeLocationSmbFluentBuilder::location_arn) / [`set_location_arn(Option<String>)`](crate::operation::describe_location_smb::builders::DescribeLocationSmbFluentBuilder::set_location_arn): <p>The Amazon Resource Name (ARN) of the SMB location to describe.</p>
+    ///   - [`location_arn(impl Into<String>)`](crate::operation::describe_location_smb::builders::DescribeLocationSmbFluentBuilder::location_arn) / [`set_location_arn(Option<String>)`](crate::operation::describe_location_smb::builders::DescribeLocationSmbFluentBuilder::set_location_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the SMB location to describe.</p><br>
     /// - On success, responds with [`DescribeLocationSmbOutput`](crate::operation::describe_location_smb::DescribeLocationSmbOutput) with field(s):
     ///   - [`location_arn(Option<String>)`](crate::operation::describe_location_smb::DescribeLocationSmbOutput::location_arn): <p>The Amazon Resource Name (ARN) of the SMB location that was described.</p>
     ///   - [`location_uri(Option<String>)`](crate::operation::describe_location_smb::DescribeLocationSmbOutput::location_uri): <p>The URL of the source SMB location that was described.</p>
-    ///   - [`agent_arns(Option<Vec<String>>)`](crate::operation::describe_location_smb::DescribeLocationSmbOutput::agent_arns): <p>The Amazon Resource Name (ARN) of the source SMB file system location that is created.</p>
+    ///   - [`agent_arns(Option<Vec::<String>>)`](crate::operation::describe_location_smb::DescribeLocationSmbOutput::agent_arns): <p>The Amazon Resource Name (ARN) of the source SMB file system location that is created.</p>
     ///   - [`user(Option<String>)`](crate::operation::describe_location_smb::DescribeLocationSmbOutput::user): <p>The user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
     ///   - [`domain(Option<String>)`](crate::operation::describe_location_smb::DescribeLocationSmbOutput::domain): <p>The name of the Windows domain that the SMB server belongs to.</p>
     ///   - [`mount_options(Option<SmbMountOptions>)`](crate::operation::describe_location_smb::DescribeLocationSmbOutput::mount_options): <p>The mount options that are available for DataSync to use to access an SMB location.</p>

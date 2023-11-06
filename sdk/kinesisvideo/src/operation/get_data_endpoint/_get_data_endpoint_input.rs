@@ -69,6 +69,7 @@ impl GetDataEndpointInputBuilder {
         &self.stream_arn
     }
     /// <p>The name of the API action for which to get an endpoint.</p>
+    /// This field is required.
     pub fn api_name(mut self, input: crate::types::ApiName) -> Self {
         self.api_name = ::std::option::Option::Some(input);
         self
@@ -85,7 +86,7 @@ impl GetDataEndpointInputBuilder {
     /// Consumes the builder and constructs a [`GetDataEndpointInput`](crate::operation::get_data_endpoint::GetDataEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_data_endpoint::GetDataEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_data_endpoint::GetDataEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_data_endpoint::GetDataEndpointInput {
             stream_name: self.stream_name,
             stream_arn: self.stream_arn,

@@ -30,8 +30,10 @@ impl FindingProviderFields {
         self.criticality
     }
     /// <p>A list of findings that are related to the current finding.</p>
-    pub fn related_findings(&self) -> ::std::option::Option<&[crate::types::RelatedFinding]> {
-        self.related_findings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.related_findings.is_none()`.
+    pub fn related_findings(&self) -> &[crate::types::RelatedFinding] {
+        self.related_findings.as_deref().unwrap_or_default()
     }
     /// <p>The severity of a finding.</p>
     pub fn severity(&self) -> ::std::option::Option<&crate::types::FindingProviderSeverity> {
@@ -39,8 +41,10 @@ impl FindingProviderFields {
     }
     /// <p>One or more finding types in the format of <code>namespace/category/classifier</code> that classify a finding.</p>
     /// <p>Valid namespace values are: Software and Configuration Checks | TTPs | Effects | Unusual Behaviors | Sensitive Data Identifications</p>
-    pub fn types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.types.is_none()`.
+    pub fn types(&self) -> &[::std::string::String] {
+        self.types.as_deref().unwrap_or_default()
     }
 }
 impl FindingProviderFields {

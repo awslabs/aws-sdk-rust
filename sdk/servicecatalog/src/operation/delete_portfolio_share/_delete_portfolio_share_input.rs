@@ -82,6 +82,7 @@ impl DeletePortfolioShareInputBuilder {
         &self.accept_language
     }
     /// <p>The portfolio identifier.</p>
+    /// This field is required.
     pub fn portfolio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portfolio_id = ::std::option::Option::Some(input.into());
         self
@@ -126,7 +127,7 @@ impl DeletePortfolioShareInputBuilder {
     /// Consumes the builder and constructs a [`DeletePortfolioShareInput`](crate::operation::delete_portfolio_share::DeletePortfolioShareInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_portfolio_share::DeletePortfolioShareInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_portfolio_share::DeletePortfolioShareInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_portfolio_share::DeletePortfolioShareInput {
             accept_language: self.accept_language,

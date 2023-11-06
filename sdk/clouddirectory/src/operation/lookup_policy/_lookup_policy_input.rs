@@ -48,6 +48,7 @@ pub struct LookupPolicyInputBuilder {
 }
 impl LookupPolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
+    /// This field is required.
     pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl LookupPolicyInputBuilder {
         &self.directory_arn
     }
     /// <p>Reference that identifies the object whose policies will be looked up.</p>
+    /// This field is required.
     pub fn object_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.object_reference = ::std::option::Option::Some(input);
         self
@@ -104,7 +106,9 @@ impl LookupPolicyInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`LookupPolicyInput`](crate::operation::lookup_policy::LookupPolicyInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::lookup_policy::LookupPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::lookup_policy::LookupPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::lookup_policy::LookupPolicyInput {
             directory_arn: self.directory_arn,
             object_reference: self.object_reference,

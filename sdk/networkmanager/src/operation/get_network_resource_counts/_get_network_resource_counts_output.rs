@@ -11,8 +11,10 @@ pub struct GetNetworkResourceCountsOutput {
 }
 impl GetNetworkResourceCountsOutput {
     /// <p>The count of resources.</p>
-    pub fn network_resource_counts(&self) -> ::std::option::Option<&[crate::types::NetworkResourceCount]> {
-        self.network_resource_counts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_resource_counts.is_none()`.
+    pub fn network_resource_counts(&self) -> &[crate::types::NetworkResourceCount] {
+        self.network_resource_counts.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

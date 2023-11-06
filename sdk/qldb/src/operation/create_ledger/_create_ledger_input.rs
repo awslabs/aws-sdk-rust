@@ -102,6 +102,7 @@ pub struct CreateLedgerInputBuilder {
 impl CreateLedgerInputBuilder {
     /// <p>The name of the ledger that you want to create. The name must be unique among all of the ledgers in your Amazon Web Services account in the current Region.</p>
     /// <p>Naming constraints for ledger names are defined in <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -149,6 +150,7 @@ impl CreateLedgerInputBuilder {
     /// </ul> <note>
     /// <p>We strongly recommend using the <code>STANDARD</code> permissions mode to maximize the security of your ledger data.</p>
     /// </note>
+    /// This field is required.
     pub fn permissions_mode(mut self, input: crate::types::PermissionsMode) -> Self {
         self.permissions_mode = ::std::option::Option::Some(input);
         self
@@ -251,7 +253,9 @@ impl CreateLedgerInputBuilder {
         &self.kms_key
     }
     /// Consumes the builder and constructs a [`CreateLedgerInput`](crate::operation::create_ledger::CreateLedgerInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_ledger::CreateLedgerInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_ledger::CreateLedgerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_ledger::CreateLedgerInput {
             name: self.name,
             tags: self.tags,

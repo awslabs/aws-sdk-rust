@@ -11,8 +11,10 @@ pub struct ListEventTypesOutput {
 }
 impl ListEventTypesOutput {
     /// <p>Information about each event, including service name, resource type, event ID, and event name.</p>
-    pub fn event_types(&self) -> ::std::option::Option<&[crate::types::EventTypeSummary]> {
-        self.event_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_types.is_none()`.
+    pub fn event_types(&self) -> &[crate::types::EventTypeSummary] {
+        self.event_types.as_deref().unwrap_or_default()
     }
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

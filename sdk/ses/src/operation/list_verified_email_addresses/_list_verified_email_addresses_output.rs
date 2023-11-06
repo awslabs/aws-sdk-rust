@@ -10,8 +10,10 @@ pub struct ListVerifiedEmailAddressesOutput {
 }
 impl ListVerifiedEmailAddressesOutput {
     /// <p>A list of email addresses that have been verified.</p>
-    pub fn verified_email_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.verified_email_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.verified_email_addresses.is_none()`.
+    pub fn verified_email_addresses(&self) -> &[::std::string::String] {
+        self.verified_email_addresses.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListVerifiedEmailAddressesOutput {

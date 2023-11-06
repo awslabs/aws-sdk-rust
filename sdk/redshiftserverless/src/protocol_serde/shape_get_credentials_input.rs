@@ -2,18 +2,21 @@
 pub fn ser_get_credentials_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_credentials::GetCredentialsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.workgroup_name {
-        object.key("workgroupName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    if let Some(var_1) = &input.db_name {
+        object.key("dbName").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.db_name {
-        object.key("dbName").string(var_2.as_str());
-    }
-    if let Some(var_3) = &input.duration_seconds {
+    if let Some(var_2) = &input.duration_seconds {
         object.key("durationSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
+    }
+    if let Some(var_3) = &input.workgroup_name {
+        object.key("workgroupName").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.custom_domain_name {
+        object.key("customDomainName").string(var_4.as_str());
     }
     Ok(())
 }

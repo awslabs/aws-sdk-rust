@@ -10,7 +10,7 @@ impl AttachVpnGatewayInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::attach_vpn_gateway::AttachVpnGatewayOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::attach_vpn_gateway::AttachVpnGatewayError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -73,12 +73,15 @@ impl AttachVpnGatewayFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::attach_vpn_gateway::AttachVpnGatewayOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::attach_vpn_gateway::AttachVpnGatewayError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::attach_vpn_gateway::AttachVpnGateway::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -87,20 +90,15 @@ impl AttachVpnGatewayFluentBuilder {
         crate::operation::attach_vpn_gateway::AttachVpnGateway::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::attach_vpn_gateway::AttachVpnGatewayOutput,
-            crate::operation::attach_vpn_gateway::AttachVpnGatewayError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::attach_vpn_gateway::AttachVpnGatewayError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::attach_vpn_gateway::AttachVpnGatewayOutput,
+        crate::operation::attach_vpn_gateway::AttachVpnGatewayError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

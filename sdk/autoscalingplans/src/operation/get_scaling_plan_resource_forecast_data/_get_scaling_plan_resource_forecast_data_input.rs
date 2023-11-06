@@ -90,6 +90,7 @@ pub struct GetScalingPlanResourceForecastDataInputBuilder {
 }
 impl GetScalingPlanResourceForecastDataInputBuilder {
     /// <p>The name of the scaling plan.</p>
+    /// This field is required.
     pub fn scaling_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scaling_plan_name = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +105,7 @@ impl GetScalingPlanResourceForecastDataInputBuilder {
         &self.scaling_plan_name
     }
     /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
+    /// This field is required.
     pub fn scaling_plan_version(mut self, input: i64) -> Self {
         self.scaling_plan_version = ::std::option::Option::Some(input);
         self
@@ -118,6 +120,7 @@ impl GetScalingPlanResourceForecastDataInputBuilder {
         &self.scaling_plan_version
     }
     /// <p>The namespace of the AWS service. The only valid value is <code>autoscaling</code>. </p>
+    /// This field is required.
     pub fn service_namespace(mut self, input: crate::types::ServiceNamespace) -> Self {
         self.service_namespace = ::std::option::Option::Some(input);
         self
@@ -132,6 +135,7 @@ impl GetScalingPlanResourceForecastDataInputBuilder {
         &self.service_namespace
     }
     /// <p>The ID of the resource. This string consists of a prefix (<code>autoScalingGroup</code>) followed by the name of a specified Auto Scaling group (<code>my-asg</code>). Example: <code>autoScalingGroup/my-asg</code>. </p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -146,6 +150,7 @@ impl GetScalingPlanResourceForecastDataInputBuilder {
         &self.resource_id
     }
     /// <p>The scalable dimension for the resource. The only valid value is <code>autoscaling:autoScalingGroup:DesiredCapacity</code>. </p>
+    /// This field is required.
     pub fn scalable_dimension(mut self, input: crate::types::ScalableDimension) -> Self {
         self.scalable_dimension = ::std::option::Option::Some(input);
         self
@@ -166,6 +171,7 @@ impl GetScalingPlanResourceForecastDataInputBuilder {
     /// <li> <p> <code>ScheduledActionMinCapacity</code>: The minimum capacity for each scheduled scaling action. This data is calculated as the larger of two values: the capacity forecast or the minimum capacity in the scaling instruction.</p> </li>
     /// <li> <p> <code>ScheduledActionMaxCapacity</code>: The maximum capacity for each scheduled scaling action. The calculation used is determined by the predictive scaling maximum capacity behavior setting in the scaling instruction.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn forecast_data_type(mut self, input: crate::types::ForecastDataType) -> Self {
         self.forecast_data_type = ::std::option::Option::Some(input);
         self
@@ -192,6 +198,7 @@ impl GetScalingPlanResourceForecastDataInputBuilder {
         &self.forecast_data_type
     }
     /// <p>The inclusive start time of the time range for the forecast data to get. The date and time can be at most 56 days before the current date and time. </p>
+    /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
@@ -207,6 +214,7 @@ impl GetScalingPlanResourceForecastDataInputBuilder {
     }
     /// <p>The exclusive end time of the time range for the forecast data to get. The maximum time duration between the start and end time is seven days. </p>
     /// <p>Although this parameter can accept a date and time that is more than two days in the future, the availability of forecast data has limits. AWS Auto Scaling only issues forecasts for periods of two days in advance.</p>
+    /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
@@ -227,7 +235,7 @@ impl GetScalingPlanResourceForecastDataInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataInput {

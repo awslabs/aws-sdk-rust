@@ -34,6 +34,7 @@ pub struct DeleteDataSetRefreshPropertiesInputBuilder {
 }
 impl DeleteDataSetRefreshPropertiesInputBuilder {
     /// <p>The Amazon Web Services account ID.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteDataSetRefreshPropertiesInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID of the dataset.</p>
+    /// This field is required.
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl DeleteDataSetRefreshPropertiesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_data_set_refresh_properties::DeleteDataSetRefreshPropertiesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_data_set_refresh_properties::DeleteDataSetRefreshPropertiesInput {

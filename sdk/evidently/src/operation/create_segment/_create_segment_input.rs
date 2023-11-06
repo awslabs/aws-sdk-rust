@@ -56,6 +56,7 @@ pub struct CreateSegmentInputBuilder {
 }
 impl CreateSegmentInputBuilder {
     /// <p>A name for the segment.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +71,7 @@ impl CreateSegmentInputBuilder {
         &self.name
     }
     /// <p>The pattern to use for the segment. For more information about pattern syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html#CloudWatch-Evidently-segments-syntax.html"> Segment rule pattern syntax</a>.</p>
+    /// This field is required.
     pub fn pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pattern = ::std::option::Option::Some(input.into());
         self
@@ -132,7 +134,7 @@ impl CreateSegmentInputBuilder {
     /// Consumes the builder and constructs a [`CreateSegmentInput`](crate::operation::create_segment::CreateSegmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_segment::CreateSegmentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_segment::CreateSegmentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_segment::CreateSegmentInput {
             name: self.name,
             pattern: self.pattern,

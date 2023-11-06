@@ -2,7 +2,7 @@
 pub fn ser_resource_evaluation_filters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ResourceEvaluationFilters,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.evaluation_mode {
         object.key("EvaluationMode").string(var_1.as_str());
     }

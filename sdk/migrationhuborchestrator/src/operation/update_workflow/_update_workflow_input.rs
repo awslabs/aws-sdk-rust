@@ -32,8 +32,10 @@ impl UpdateWorkflowInput {
         self.input_parameters.as_ref()
     }
     /// <p>The servers on which a step will be run.</p>
-    pub fn step_targets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.step_targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.step_targets.is_none()`.
+    pub fn step_targets(&self) -> &[::std::string::String] {
+        self.step_targets.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for UpdateWorkflowInput {
@@ -66,6 +68,7 @@ pub struct UpdateWorkflowInputBuilder {
 }
 impl UpdateWorkflowInputBuilder {
     /// <p>The ID of the migration workflow.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -153,7 +156,7 @@ impl UpdateWorkflowInputBuilder {
     /// Consumes the builder and constructs a [`UpdateWorkflowInput`](crate::operation::update_workflow::UpdateWorkflowInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_workflow::UpdateWorkflowInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_workflow::UpdateWorkflowInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_workflow::UpdateWorkflowInput {
             id: self.id,
             name: self.name,

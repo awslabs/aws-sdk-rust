@@ -46,12 +46,16 @@ impl CreateThemeInput {
         self.configuration.as_ref()
     }
     /// <p>A valid grouping of resource permissions to apply to the new theme. </p>
-    pub fn permissions(&self) -> ::std::option::Option<&[crate::types::ResourcePermission]> {
-        self.permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permissions.is_none()`.
+    pub fn permissions(&self) -> &[crate::types::ResourcePermission] {
+        self.permissions.as_deref().unwrap_or_default()
     }
     /// <p>A map of the key-value pairs for the resource tag or tags that you want to add to the resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateThemeInput {
@@ -76,6 +80,7 @@ pub struct CreateThemeInputBuilder {
 }
 impl CreateThemeInputBuilder {
     /// <p>The ID of the Amazon Web Services account where you want to store the new theme. </p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +95,7 @@ impl CreateThemeInputBuilder {
         &self.aws_account_id
     }
     /// <p>An ID for the theme that you want to create. The theme ID is unique per Amazon Web Services Region in each Amazon Web Services account.</p>
+    /// This field is required.
     pub fn theme_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.theme_id = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +110,7 @@ impl CreateThemeInputBuilder {
         &self.theme_id
     }
     /// <p>A display name for the theme.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +125,7 @@ impl CreateThemeInputBuilder {
         &self.name
     }
     /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of the starting themes defined by Amazon QuickSight. For a list of the starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within an analysis. </p>
+    /// This field is required.
     pub fn base_theme_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.base_theme_id = ::std::option::Option::Some(input.into());
         self
@@ -146,6 +154,7 @@ impl CreateThemeInputBuilder {
         &self.version_description
     }
     /// <p>The theme configuration, which contains the theme display properties.</p>
+    /// This field is required.
     pub fn configuration(mut self, input: crate::types::ThemeConfiguration) -> Self {
         self.configuration = ::std::option::Option::Some(input);
         self
@@ -200,7 +209,7 @@ impl CreateThemeInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateThemeInput`](crate::operation::create_theme::CreateThemeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_theme::CreateThemeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_theme::CreateThemeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_theme::CreateThemeInput {
             aws_account_id: self.aws_account_id,
             theme_id: self.theme_id,

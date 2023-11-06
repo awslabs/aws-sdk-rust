@@ -2,7 +2,7 @@
 pub fn ser_field_position(
     object_3: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FieldPosition,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::FieldPosition::Fixed(inner) => {
             object_3.key("fixed").string(inner.as_str());
@@ -14,7 +14,7 @@ pub fn ser_field_position(
             object_3.key("below").string(inner.as_str());
         }
         crate::types::FieldPosition::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("FieldPosition"))
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("FieldPosition"))
         }
     }
     Ok(())
@@ -33,12 +33,17 @@ where
             match tokens.next().transpose()? {
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                    let key = key.to_unescaped()?;
+                    if key == "__type" {
+                        ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                        continue;
+                    }
                     if variant.is_some() {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
                             "encountered mixed variants in union",
                         ));
                     }
-                    variant = match key.to_unescaped()?.as_ref() {
+                    variant = match key.as_ref() {
                         "fixed" => Some(crate::types::FieldPosition::Fixed(
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| crate::types::FixedPosition::from(u.as_ref())))
@@ -49,13 +54,15 @@ where
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                 .transpose()?
-                                .unwrap_or_default(),
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'rightOf' cannot be null")
+                                })?,
                         )),
                         "below" => Some(crate::types::FieldPosition::Below(
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                 .transpose()?
-                                .unwrap_or_default(),
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'below' cannot be null"))?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

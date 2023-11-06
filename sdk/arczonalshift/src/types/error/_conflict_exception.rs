@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConflictException {
     #[allow(missing_docs)] // documentation missing in model
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
     /// <p>The reason for the conflict exception.</p>
-    pub reason: ::std::option::Option<crate::types::ConflictExceptionReason>,
+    pub reason: crate::types::ConflictExceptionReason,
     /// <p>The zonal shift ID associated with the conflict exception.</p>
     pub zonal_shift_id: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl ConflictException {
     /// <p>The reason for the conflict exception.</p>
-    pub fn reason(&self) -> ::std::option::Option<&crate::types::ConflictExceptionReason> {
-        self.reason.as_ref()
+    pub fn reason(&self) -> &crate::types::ConflictExceptionReason {
+        &self.reason
     }
     /// <p>The zonal shift ID associated with the conflict exception.</p>
     pub fn zonal_shift_id(&self) -> ::std::option::Option<&str> {
@@ -24,17 +24,15 @@ impl ConflictException {
 }
 impl ConflictException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        &self.message
     }
 }
 impl ::std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "ConflictException")?;
-        if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
-                ::std::write!(f, ": {}", inner_1)?;
-            }
+        {
+            ::std::write!(f, ": {}", &self.message)?;
         }
         Ok(())
     }
@@ -69,6 +67,7 @@ pub struct ConflictExceptionBuilder {
 }
 impl ConflictExceptionBuilder {
     #[allow(missing_docs)] // documentation missing in model
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +82,7 @@ impl ConflictExceptionBuilder {
         &self.message
     }
     /// <p>The reason for the conflict exception.</p>
+    /// This field is required.
     pub fn reason(mut self, input: crate::types::ConflictExceptionReason) -> Self {
         self.reason = ::std::option::Option::Some(input);
         self
@@ -122,12 +122,25 @@ impl ConflictExceptionBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ConflictException`](crate::types::error::ConflictException).
-    pub fn build(self) -> crate::types::error::ConflictException {
-        crate::types::error::ConflictException {
-            message: self.message,
-            reason: self.reason,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`message`](crate::types::error::builders::ConflictExceptionBuilder::message)
+    /// - [`reason`](crate::types::error::builders::ConflictExceptionBuilder::reason)
+    pub fn build(self) -> ::std::result::Result<crate::types::error::ConflictException, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::error::ConflictException {
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building ConflictException",
+                )
+            })?,
+            reason: self.reason.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "reason",
+                    "reason was not specified but it is required when building ConflictException",
+                )
+            })?,
             zonal_shift_id: self.zonal_shift_id,
             meta: self.meta.unwrap_or_default(),
-        }
+        })
     }
 }

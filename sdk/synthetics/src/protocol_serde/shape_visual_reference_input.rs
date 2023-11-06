@@ -2,7 +2,7 @@
 pub fn ser_visual_reference_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VisualReferenceInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.base_screenshots {
         let mut array_2 = object.key("BaseScreenshots").start_array();
         for item_3 in var_1 {
@@ -15,8 +15,8 @@ pub fn ser_visual_reference_input(
         }
         array_2.finish();
     }
-    if let Some(var_5) = &input.base_canary_run_id {
-        object.key("BaseCanaryRunId").string(var_5.as_str());
+    {
+        object.key("BaseCanaryRunId").string(input.base_canary_run_id.as_str());
     }
     Ok(())
 }

@@ -2,7 +2,7 @@
 pub fn ser_general_flags_v2(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GeneralFlagsV2,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.auto_enrollment {
         object.key("AutoEnrollment").boolean(*var_1);
     }

@@ -9,8 +9,10 @@ pub struct ListSourceCredentialsOutput {
 }
 impl ListSourceCredentialsOutput {
     /// <p> A list of <code>SourceCredentialsInfo</code> objects. Each <code>SourceCredentialsInfo</code> object includes the authentication type, token ARN, and type of source provider for one set of credentials. </p>
-    pub fn source_credentials_infos(&self) -> ::std::option::Option<&[crate::types::SourceCredentialsInfo]> {
-        self.source_credentials_infos.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_credentials_infos.is_none()`.
+    pub fn source_credentials_infos(&self) -> &[crate::types::SourceCredentialsInfo] {
+        self.source_credentials_infos.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListSourceCredentialsOutput {

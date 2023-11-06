@@ -34,6 +34,7 @@ pub struct StopVoiceToneAnalysisTaskInputBuilder {
 }
 impl StopVoiceToneAnalysisTaskInputBuilder {
     /// <p>The Voice Connector ID.</p>
+    /// This field is required.
     pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl StopVoiceToneAnalysisTaskInputBuilder {
         &self.voice_connector_id
     }
     /// <p>The ID of the voice tone analysis task.</p>
+    /// This field is required.
     pub fn voice_tone_analysis_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_tone_analysis_task_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl StopVoiceToneAnalysisTaskInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTaskInput {
             voice_connector_id: self.voice_connector_id,

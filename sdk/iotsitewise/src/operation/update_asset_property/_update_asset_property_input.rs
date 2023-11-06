@@ -66,6 +66,7 @@ pub struct UpdateAssetPropertyInputBuilder {
 }
 impl UpdateAssetPropertyInputBuilder {
     /// <p>The ID of the asset to be updated.</p>
+    /// This field is required.
     pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_id = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +81,7 @@ impl UpdateAssetPropertyInputBuilder {
         &self.asset_id
     }
     /// <p>The ID of the asset property to be updated.</p>
+    /// This field is required.
     pub fn property_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.property_id = ::std::option::Option::Some(input.into());
         self
@@ -158,7 +160,7 @@ impl UpdateAssetPropertyInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAssetPropertyInput`](crate::operation::update_asset_property::UpdateAssetPropertyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_asset_property::UpdateAssetPropertyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_asset_property::UpdateAssetPropertyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_asset_property::UpdateAssetPropertyInput {
             asset_id: self.asset_id,

@@ -2,12 +2,12 @@
 pub fn ser_rule_trigger_event_source(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RuleTriggerEventSource,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.event_source_name {
-        object.key("EventSourceName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("EventSourceName").string(input.event_source_name.as_str());
     }
-    if let Some(var_2) = &input.integration_association_id {
-        object.key("IntegrationAssociationId").string(var_2.as_str());
+    if let Some(var_1) = &input.integration_association_id {
+        object.key("IntegrationAssociationId").string(var_1.as_str());
     }
     Ok(())
 }
@@ -51,7 +51,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::rule_trigger_event_source_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -27,6 +27,7 @@ pub struct DescribeGatewayInstanceInputBuilder {
 }
 impl DescribeGatewayInstanceInputBuilder {
     /// The Amazon Resource Name (ARN) of the gateway instance that you want to describe.
+    /// This field is required.
     pub fn gateway_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_instance_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeGatewayInstanceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_gateway_instance::DescribeGatewayInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_gateway_instance::DescribeGatewayInstanceInput {
             gateway_instance_arn: self.gateway_instance_arn,

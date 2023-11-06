@@ -27,6 +27,7 @@ pub struct DeleteCustomEntityTypeInputBuilder {
 }
 impl DeleteCustomEntityTypeInputBuilder {
     /// <p>The name of the custom pattern that you want to delete.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteCustomEntityTypeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_custom_entity_type::DeleteCustomEntityTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_custom_entity_type::DeleteCustomEntityTypeInput { name: self.name })
     }

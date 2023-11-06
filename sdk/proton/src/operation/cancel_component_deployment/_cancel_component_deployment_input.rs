@@ -27,6 +27,7 @@ pub struct CancelComponentDeploymentInputBuilder {
 }
 impl CancelComponentDeploymentInputBuilder {
     /// <p>The name of the component with the deployment to cancel.</p>
+    /// This field is required.
     pub fn component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl CancelComponentDeploymentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_component_deployment::CancelComponentDeploymentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::cancel_component_deployment::CancelComponentDeploymentInput {
             component_name: self.component_name,

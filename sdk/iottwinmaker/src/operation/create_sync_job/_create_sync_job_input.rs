@@ -52,6 +52,7 @@ pub struct CreateSyncJobInputBuilder {
 }
 impl CreateSyncJobInputBuilder {
     /// <p>The workspace ID.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -68,6 +69,7 @@ impl CreateSyncJobInputBuilder {
     /// <p>The sync source.</p> <note>
     /// <p>Currently the only supported syncSoource is <code>SITEWISE </code>.</p>
     /// </note>
+    /// This field is required.
     pub fn sync_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sync_source = ::std::option::Option::Some(input.into());
         self
@@ -86,6 +88,7 @@ impl CreateSyncJobInputBuilder {
         &self.sync_source
     }
     /// <p>The SyncJob IAM role. This IAM role is used by the SyncJob to read from the syncSource, and create, update, or delete the corresponding resources.</p>
+    /// This field is required.
     pub fn sync_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sync_role = ::std::option::Option::Some(input.into());
         self
@@ -122,7 +125,7 @@ impl CreateSyncJobInputBuilder {
     /// Consumes the builder and constructs a [`CreateSyncJobInput`](crate::operation::create_sync_job::CreateSyncJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_sync_job::CreateSyncJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_sync_job::CreateSyncJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_sync_job::CreateSyncJobInput {
             workspace_id: self.workspace_id,
             sync_source: self.sync_source,

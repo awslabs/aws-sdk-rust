@@ -27,6 +27,7 @@ pub struct DescribeLocationHdfsInputBuilder {
 }
 impl DescribeLocationHdfsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the HDFS cluster location to describe.</p>
+    /// This field is required.
     pub fn location_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeLocationHdfsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeLocationHdfsInput`](crate::operation::describe_location_hdfs::DescribeLocationHdfsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_location_hdfs::DescribeLocationHdfsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_location_hdfs::DescribeLocationHdfsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_location_hdfs::DescribeLocationHdfsInput {
             location_arn: self.location_arn,

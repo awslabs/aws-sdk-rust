@@ -24,8 +24,10 @@ impl CheckCapacityInput {
         self.scope.as_ref()
     }
     /// <p>An array of <code>Rule</code> that you're configuring to use in a rule group or web ACL. </p>
-    pub fn rules(&self) -> ::std::option::Option<&[crate::types::Rule]> {
-        self.rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
+    pub fn rules(&self) -> &[crate::types::Rule] {
+        self.rules.as_deref().unwrap_or_default()
     }
 }
 impl CheckCapacityInput {
@@ -49,6 +51,7 @@ impl CheckCapacityInputBuilder {
     /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
     /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn scope(mut self, input: crate::types::Scope) -> Self {
         self.scope = ::std::option::Option::Some(input);
         self
@@ -95,7 +98,7 @@ impl CheckCapacityInputBuilder {
     /// Consumes the builder and constructs a [`CheckCapacityInput`](crate::operation::check_capacity::CheckCapacityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::check_capacity::CheckCapacityInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::check_capacity::CheckCapacityInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::check_capacity::CheckCapacityInput {
             scope: self.scope,
             rules: self.rules,

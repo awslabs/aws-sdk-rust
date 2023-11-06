@@ -55,6 +55,7 @@ pub struct CreateWorkspaceInputBuilder {
 }
 impl CreateWorkspaceInputBuilder {
     /// <p>The ID of the workspace.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +84,7 @@ impl CreateWorkspaceInputBuilder {
         &self.description
     }
     /// <p>The ARN of the S3 bucket where resources associated with the workspace are stored.</p>
+    /// This field is required.
     pub fn s3_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_location = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +99,7 @@ impl CreateWorkspaceInputBuilder {
         &self.s3_location
     }
     /// <p>The ARN of the execution role associated with the workspace.</p>
+    /// This field is required.
     pub fn role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role = ::std::option::Option::Some(input.into());
         self
@@ -133,7 +136,7 @@ impl CreateWorkspaceInputBuilder {
     /// Consumes the builder and constructs a [`CreateWorkspaceInput`](crate::operation::create_workspace::CreateWorkspaceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_workspace::CreateWorkspaceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_workspace::CreateWorkspaceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_workspace::CreateWorkspaceInput {
             workspace_id: self.workspace_id,
             description: self.description,

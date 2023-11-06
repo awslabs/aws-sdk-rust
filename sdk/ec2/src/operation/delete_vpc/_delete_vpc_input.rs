@@ -34,6 +34,7 @@ pub struct DeleteVpcInputBuilder {
 }
 impl DeleteVpcInputBuilder {
     /// <p>The ID of the VPC.</p>
+    /// This field is required.
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +63,7 @@ impl DeleteVpcInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`DeleteVpcInput`](crate::operation::delete_vpc::DeleteVpcInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_vpc::DeleteVpcInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_vpc::DeleteVpcInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_vpc::DeleteVpcInput {
             vpc_id: self.vpc_id,
             dry_run: self.dry_run,

@@ -11,8 +11,10 @@ pub struct ListSensorStatisticsOutput {
 }
 impl ListSensorStatisticsOutput {
     /// <p>Provides ingestion-based statistics regarding the specified sensor with respect to various validation types, such as whether data exists, the number and percentage of missing values, and the number and percentage of duplicate timestamps. </p>
-    pub fn sensor_statistics_summaries(&self) -> ::std::option::Option<&[crate::types::SensorStatisticsSummary]> {
-        self.sensor_statistics_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sensor_statistics_summaries.is_none()`.
+    pub fn sensor_statistics_summaries(&self) -> &[crate::types::SensorStatisticsSummary] {
+        self.sensor_statistics_summaries.as_deref().unwrap_or_default()
     }
     /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -6,13 +6,13 @@
 pub struct DatasetChanges {
     /// <p>A Base64-encoded binary data object containing one or JSON lines that either update the dataset or are additions to the dataset. You change a dataset by calling <code>UpdateDatasetEntries</code>. If you are using an AWS SDK to call <code>UpdateDatasetEntries</code>, you don't need to encode <code>Changes</code> as the SDK encodes the data for you. </p>
     /// <p>For example JSON lines, see Image-Level labels in manifest files and and Object localization in manifest files in the <i>Amazon Rekognition Custom Labels Developer Guide</i>. </p>
-    pub ground_truth: ::std::option::Option<::aws_smithy_types::Blob>,
+    pub ground_truth: ::aws_smithy_types::Blob,
 }
 impl DatasetChanges {
     /// <p>A Base64-encoded binary data object containing one or JSON lines that either update the dataset or are additions to the dataset. You change a dataset by calling <code>UpdateDatasetEntries</code>. If you are using an AWS SDK to call <code>UpdateDatasetEntries</code>, you don't need to encode <code>Changes</code> as the SDK encodes the data for you. </p>
     /// <p>For example JSON lines, see Image-Level labels in manifest files and and Object localization in manifest files in the <i>Amazon Rekognition Custom Labels Developer Guide</i>. </p>
-    pub fn ground_truth(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
-        self.ground_truth.as_ref()
+    pub fn ground_truth(&self) -> &::aws_smithy_types::Blob {
+        &self.ground_truth
     }
 }
 impl DatasetChanges {
@@ -31,6 +31,7 @@ pub struct DatasetChangesBuilder {
 impl DatasetChangesBuilder {
     /// <p>A Base64-encoded binary data object containing one or JSON lines that either update the dataset or are additions to the dataset. You change a dataset by calling <code>UpdateDatasetEntries</code>. If you are using an AWS SDK to call <code>UpdateDatasetEntries</code>, you don't need to encode <code>Changes</code> as the SDK encodes the data for you. </p>
     /// <p>For example JSON lines, see Image-Level labels in manifest files and and Object localization in manifest files in the <i>Amazon Rekognition Custom Labels Developer Guide</i>. </p>
+    /// This field is required.
     pub fn ground_truth(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.ground_truth = ::std::option::Option::Some(input);
         self
@@ -47,9 +48,16 @@ impl DatasetChangesBuilder {
         &self.ground_truth
     }
     /// Consumes the builder and constructs a [`DatasetChanges`](crate::types::DatasetChanges).
-    pub fn build(self) -> crate::types::DatasetChanges {
-        crate::types::DatasetChanges {
-            ground_truth: self.ground_truth,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`ground_truth`](crate::types::builders::DatasetChangesBuilder::ground_truth)
+    pub fn build(self) -> ::std::result::Result<crate::types::DatasetChanges, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DatasetChanges {
+            ground_truth: self.ground_truth.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "ground_truth",
+                    "ground_truth was not specified but it is required when building DatasetChanges",
+                )
+            })?,
+        })
     }
 }

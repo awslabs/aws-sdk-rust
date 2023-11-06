@@ -2,17 +2,17 @@
 pub fn ser_action_revision(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ActionRevision,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.revision_id {
-        object.key("revisionId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("revisionId").string(input.revision_id.as_str());
     }
-    if let Some(var_2) = &input.revision_change_id {
-        object.key("revisionChangeId").string(var_2.as_str());
+    {
+        object.key("revisionChangeId").string(input.revision_change_id.as_str());
     }
-    if let Some(var_3) = &input.created {
+    {
         object
             .key("created")
-            .date_time(var_3, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(&input.created, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }
@@ -62,7 +62,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::action_revision_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

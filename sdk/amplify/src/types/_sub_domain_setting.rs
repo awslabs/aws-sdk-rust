@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubDomainSetting {
     /// <p> The prefix setting for the subdomain. </p>
-    pub prefix: ::std::option::Option<::std::string::String>,
+    pub prefix: ::std::string::String,
     /// <p> The branch name setting for the subdomain. </p>
-    pub branch_name: ::std::option::Option<::std::string::String>,
+    pub branch_name: ::std::string::String,
 }
 impl SubDomainSetting {
     /// <p> The prefix setting for the subdomain. </p>
-    pub fn prefix(&self) -> ::std::option::Option<&str> {
-        self.prefix.as_deref()
+    pub fn prefix(&self) -> &str {
+        use std::ops::Deref;
+        self.prefix.deref()
     }
     /// <p> The branch name setting for the subdomain. </p>
-    pub fn branch_name(&self) -> ::std::option::Option<&str> {
-        self.branch_name.as_deref()
+    pub fn branch_name(&self) -> &str {
+        use std::ops::Deref;
+        self.branch_name.deref()
     }
 }
 impl SubDomainSetting {
@@ -35,6 +37,7 @@ pub struct SubDomainSettingBuilder {
 }
 impl SubDomainSettingBuilder {
     /// <p> The prefix setting for the subdomain. </p>
+    /// This field is required.
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl SubDomainSettingBuilder {
         &self.prefix
     }
     /// <p> The branch name setting for the subdomain. </p>
+    /// This field is required.
     pub fn branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch_name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl SubDomainSettingBuilder {
         &self.branch_name
     }
     /// Consumes the builder and constructs a [`SubDomainSetting`](crate::types::SubDomainSetting).
-    pub fn build(self) -> crate::types::SubDomainSetting {
-        crate::types::SubDomainSetting {
-            prefix: self.prefix,
-            branch_name: self.branch_name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`prefix`](crate::types::builders::SubDomainSettingBuilder::prefix)
+    /// - [`branch_name`](crate::types::builders::SubDomainSettingBuilder::branch_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::SubDomainSetting, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SubDomainSetting {
+            prefix: self.prefix.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "prefix",
+                    "prefix was not specified but it is required when building SubDomainSetting",
+                )
+            })?,
+            branch_name: self.branch_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "branch_name",
+                    "branch_name was not specified but it is required when building SubDomainSetting",
+                )
+            })?,
+        })
     }
 }

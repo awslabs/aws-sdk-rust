@@ -2,52 +2,52 @@
 pub fn ser_jdbc_connector_target(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::JdbcConnectorTarget,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("Name").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.inputs {
-        let mut array_3 = object.key("Inputs").start_array();
-        for item_4 in var_2 {
+    {
+        let mut array_1 = object.key("Inputs").start_array();
+        for item_2 in &input.inputs {
             {
-                array_3.value().string(item_4.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_3.finish();
+        array_1.finish();
     }
-    if let Some(var_5) = &input.connection_name {
-        object.key("ConnectionName").string(var_5.as_str());
+    {
+        object.key("ConnectionName").string(input.connection_name.as_str());
     }
-    if let Some(var_6) = &input.connection_table {
-        object.key("ConnectionTable").string(var_6.as_str());
+    {
+        object.key("ConnectionTable").string(input.connection_table.as_str());
     }
-    if let Some(var_7) = &input.connector_name {
-        object.key("ConnectorName").string(var_7.as_str());
+    {
+        object.key("ConnectorName").string(input.connector_name.as_str());
     }
-    if let Some(var_8) = &input.connection_type {
-        object.key("ConnectionType").string(var_8.as_str());
+    {
+        object.key("ConnectionType").string(input.connection_type.as_str());
     }
-    if let Some(var_9) = &input.additional_options {
+    if let Some(var_3) = &input.additional_options {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("AdditionalOptions").start_object();
-        for (key_11, value_12) in var_9 {
+        let mut object_4 = object.key("AdditionalOptions").start_object();
+        for (key_5, value_6) in var_3 {
             {
-                object_10.key(key_11.as_str()).string(value_12.as_str());
+                object_4.key(key_5.as_str()).string(value_6.as_str());
             }
         }
-        object_10.finish();
+        object_4.finish();
     }
-    if let Some(var_13) = &input.output_schemas {
-        let mut array_14 = object.key("OutputSchemas").start_array();
-        for item_15 in var_13 {
+    if let Some(var_7) = &input.output_schemas {
+        let mut array_8 = object.key("OutputSchemas").start_array();
+        for item_9 in var_7 {
             {
                 #[allow(unused_mut)]
-                let mut object_16 = array_14.value().start_object();
-                crate::protocol_serde::shape_glue_schema::ser_glue_schema(&mut object_16, item_15)?;
-                object_16.finish();
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_glue_schema::ser_glue_schema(&mut object_10, item_9)?;
+                object_10.finish();
             }
         }
-        array_14.finish();
+        array_8.finish();
     }
     Ok(())
 }
@@ -121,7 +121,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::jdbc_connector_target_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

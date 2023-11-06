@@ -2,22 +2,22 @@
 pub fn ser_o_auth2_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OAuth2Properties,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.token_url {
-        object.key("tokenUrl").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("tokenUrl").string(input.token_url.as_str());
     }
-    if let Some(var_2) = &input.o_auth2_grant_type {
-        object.key("oAuth2GrantType").string(var_2.as_str());
+    {
+        object.key("oAuth2GrantType").string(input.o_auth2_grant_type.as_str());
     }
-    if let Some(var_3) = &input.token_url_custom_properties {
+    if let Some(var_1) = &input.token_url_custom_properties {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("tokenUrlCustomProperties").start_object();
-        for (key_5, value_6) in var_3 {
+        let mut object_2 = object.key("tokenUrlCustomProperties").start_object();
+        for (key_3, value_4) in var_1 {
             {
-                object_4.key(key_5.as_str()).string(value_6.as_str());
+                object_2.key(key_3.as_str()).string(value_4.as_str());
             }
         }
-        object_4.finish();
+        object_2.finish();
     }
     Ok(())
 }
@@ -66,7 +66,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::o_auth2_properties_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

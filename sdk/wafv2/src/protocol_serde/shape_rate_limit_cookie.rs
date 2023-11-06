@@ -2,21 +2,21 @@
 pub fn ser_rate_limit_cookie(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RateLimitCookie,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("Name").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.text_transformations {
-        let mut array_3 = object.key("TextTransformations").start_array();
-        for item_4 in var_2 {
+    {
+        let mut array_1 = object.key("TextTransformations").start_array();
+        for item_2 in &input.text_transformations {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_text_transformation::ser_text_transformation(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_3 = array_1.value().start_object();
+                crate::protocol_serde::shape_text_transformation::ser_text_transformation(&mut object_3, item_2)?;
+                object_3.finish();
             }
         }
-        array_3.finish();
+        array_1.finish();
     }
     Ok(())
 }
@@ -57,7 +57,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::rate_limit_cookie_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

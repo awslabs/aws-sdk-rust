@@ -24,12 +24,16 @@ impl ModifyDocumentPermissionInput {
         self.permission_type.as_ref()
     }
     /// <p>The Amazon Web Services users that should have access to the document. The account IDs can either be a group of account IDs or <i>All</i>.</p>
-    pub fn account_ids_to_add(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.account_ids_to_add.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids_to_add.is_none()`.
+    pub fn account_ids_to_add(&self) -> &[::std::string::String] {
+        self.account_ids_to_add.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Web Services users that should no longer have access to the document. The Amazon Web Services user can either be a group of account IDs or <i>All</i>. This action has a higher priority than <i>AccountIdsToAdd</i>. If you specify an ID to add and the same ID to remove, the system removes access to the document.</p>
-    pub fn account_ids_to_remove(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.account_ids_to_remove.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids_to_remove.is_none()`.
+    pub fn account_ids_to_remove(&self) -> &[::std::string::String] {
+        self.account_ids_to_remove.as_deref().unwrap_or_default()
     }
     /// <p>(Optional) The version of the document to share. If it isn't specified, the system choose the <code>Default</code> version to share.</p>
     pub fn shared_document_version(&self) -> ::std::option::Option<&str> {
@@ -55,6 +59,7 @@ pub struct ModifyDocumentPermissionInputBuilder {
 }
 impl ModifyDocumentPermissionInputBuilder {
     /// <p>The name of the document that you want to share.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +74,7 @@ impl ModifyDocumentPermissionInputBuilder {
         &self.name
     }
     /// <p>The permission type for the document. The permission type can be <i>Share</i>.</p>
+    /// This field is required.
     pub fn permission_type(mut self, input: crate::types::DocumentPermissionType) -> Self {
         self.permission_type = ::std::option::Option::Some(input);
         self
@@ -141,7 +147,7 @@ impl ModifyDocumentPermissionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_document_permission::ModifyDocumentPermissionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_document_permission::ModifyDocumentPermissionInput {
             name: self.name,

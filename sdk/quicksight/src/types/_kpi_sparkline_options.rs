@@ -7,7 +7,7 @@ pub struct KpiSparklineOptions {
     /// <p>The visibility of the sparkline.</p>
     pub visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>The type of the sparkline.</p>
-    pub r#type: ::std::option::Option<crate::types::KpiSparklineType>,
+    pub r#type: crate::types::KpiSparklineType,
     /// <p>The color of the sparkline.</p>
     pub color: ::std::option::Option<::std::string::String>,
     /// <p>The tooltip visibility of the sparkline.</p>
@@ -19,8 +19,8 @@ impl KpiSparklineOptions {
         self.visibility.as_ref()
     }
     /// <p>The type of the sparkline.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::KpiSparklineType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::KpiSparklineType {
+        &self.r#type
     }
     /// <p>The color of the sparkline.</p>
     pub fn color(&self) -> ::std::option::Option<&str> {
@@ -63,6 +63,7 @@ impl KpiSparklineOptionsBuilder {
         &self.visibility
     }
     /// <p>The type of the sparkline.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::KpiSparklineType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -105,12 +106,19 @@ impl KpiSparklineOptionsBuilder {
         &self.tooltip_visibility
     }
     /// Consumes the builder and constructs a [`KpiSparklineOptions`](crate::types::KpiSparklineOptions).
-    pub fn build(self) -> crate::types::KpiSparklineOptions {
-        crate::types::KpiSparklineOptions {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::KpiSparklineOptionsBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::KpiSparklineOptions, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::KpiSparklineOptions {
             visibility: self.visibility,
-            r#type: self.r#type,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building KpiSparklineOptions",
+                )
+            })?,
             color: self.color,
             tooltip_visibility: self.tooltip_visibility,
-        }
+        })
     }
 }

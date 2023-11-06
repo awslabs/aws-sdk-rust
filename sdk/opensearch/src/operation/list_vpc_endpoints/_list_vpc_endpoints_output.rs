@@ -4,19 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListVpcEndpointsOutput {
     /// <p>Information about each endpoint.</p>
-    pub vpc_endpoint_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpointSummary>>,
+    pub vpc_endpoint_summary_list: ::std::vec::Vec<crate::types::VpcEndpointSummary>,
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    pub next_token: ::std::option::Option<::std::string::String>,
+    pub next_token: ::std::string::String,
     _request_id: Option<String>,
 }
 impl ListVpcEndpointsOutput {
     /// <p>Information about each endpoint.</p>
-    pub fn vpc_endpoint_summary_list(&self) -> ::std::option::Option<&[crate::types::VpcEndpointSummary]> {
-        self.vpc_endpoint_summary_list.as_deref()
+    pub fn vpc_endpoint_summary_list(&self) -> &[crate::types::VpcEndpointSummary] {
+        use std::ops::Deref;
+        self.vpc_endpoint_summary_list.deref()
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
-        self.next_token.as_deref()
+    pub fn next_token(&self) -> &str {
+        use std::ops::Deref;
+        self.next_token.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListVpcEndpointsOutput {
@@ -61,6 +63,7 @@ impl ListVpcEndpointsOutputBuilder {
         &self.vpc_endpoint_summary_list
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
+    /// This field is required.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +87,26 @@ impl ListVpcEndpointsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListVpcEndpointsOutput`](crate::operation::list_vpc_endpoints::ListVpcEndpointsOutput).
-    pub fn build(self) -> crate::operation::list_vpc_endpoints::ListVpcEndpointsOutput {
-        crate::operation::list_vpc_endpoints::ListVpcEndpointsOutput {
-            vpc_endpoint_summary_list: self.vpc_endpoint_summary_list,
-            next_token: self.next_token,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`vpc_endpoint_summary_list`](crate::operation::list_vpc_endpoints::builders::ListVpcEndpointsOutputBuilder::vpc_endpoint_summary_list)
+    /// - [`next_token`](crate::operation::list_vpc_endpoints::builders::ListVpcEndpointsOutputBuilder::next_token)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_vpc_endpoints::ListVpcEndpointsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_vpc_endpoints::ListVpcEndpointsOutput {
+            vpc_endpoint_summary_list: self.vpc_endpoint_summary_list.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "vpc_endpoint_summary_list",
+                    "vpc_endpoint_summary_list was not specified but it is required when building ListVpcEndpointsOutput",
+                )
+            })?,
+            next_token: self.next_token.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "next_token",
+                    "next_token was not specified but it is required when building ListVpcEndpointsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

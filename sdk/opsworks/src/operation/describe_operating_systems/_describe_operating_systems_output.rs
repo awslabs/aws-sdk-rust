@@ -10,8 +10,10 @@ pub struct DescribeOperatingSystemsOutput {
 }
 impl DescribeOperatingSystemsOutput {
     /// <p>Contains information in response to a <code>DescribeOperatingSystems</code> request.</p>
-    pub fn operating_systems(&self) -> ::std::option::Option<&[crate::types::OperatingSystem]> {
-        self.operating_systems.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.operating_systems.is_none()`.
+    pub fn operating_systems(&self) -> &[crate::types::OperatingSystem] {
+        self.operating_systems.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeOperatingSystemsOutput {

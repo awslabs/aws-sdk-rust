@@ -62,6 +62,7 @@ impl StopStreamingSessionInputBuilder {
         &self.client_token
     }
     /// <p>The streaming session ID for the <code>StopStreamingSessionRequest</code>.</p>
+    /// This field is required.
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl StopStreamingSessionInputBuilder {
         &self.session_id
     }
     /// <p>The studioId for the StopStreamingSessionRequest.</p>
+    /// This field is required.
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +108,7 @@ impl StopStreamingSessionInputBuilder {
     /// Consumes the builder and constructs a [`StopStreamingSessionInput`](crate::operation::stop_streaming_session::StopStreamingSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_streaming_session::StopStreamingSessionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::stop_streaming_session::StopStreamingSessionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::stop_streaming_session::StopStreamingSessionInput {
             client_token: self.client_token,

@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatastoreActivity {
     /// <p>The name of the datastore activity.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The name of the data store where processed messages are stored.</p>
-    pub datastore_name: ::std::option::Option<::std::string::String>,
+    pub datastore_name: ::std::string::String,
 }
 impl DatastoreActivity {
     /// <p>The name of the datastore activity.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The name of the data store where processed messages are stored.</p>
-    pub fn datastore_name(&self) -> ::std::option::Option<&str> {
-        self.datastore_name.as_deref()
+    pub fn datastore_name(&self) -> &str {
+        use std::ops::Deref;
+        self.datastore_name.deref()
     }
 }
 impl DatastoreActivity {
@@ -35,6 +37,7 @@ pub struct DatastoreActivityBuilder {
 }
 impl DatastoreActivityBuilder {
     /// <p>The name of the datastore activity.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl DatastoreActivityBuilder {
         &self.name
     }
     /// <p>The name of the data store where processed messages are stored.</p>
+    /// This field is required.
     pub fn datastore_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl DatastoreActivityBuilder {
         &self.datastore_name
     }
     /// Consumes the builder and constructs a [`DatastoreActivity`](crate::types::DatastoreActivity).
-    pub fn build(self) -> crate::types::DatastoreActivity {
-        crate::types::DatastoreActivity {
-            name: self.name,
-            datastore_name: self.datastore_name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::DatastoreActivityBuilder::name)
+    /// - [`datastore_name`](crate::types::builders::DatastoreActivityBuilder::datastore_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::DatastoreActivity, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DatastoreActivity {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DatastoreActivity",
+                )
+            })?,
+            datastore_name: self.datastore_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "datastore_name",
+                    "datastore_name was not specified but it is required when building DatastoreActivity",
+                )
+            })?,
+        })
     }
 }

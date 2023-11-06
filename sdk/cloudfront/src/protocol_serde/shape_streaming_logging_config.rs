@@ -2,25 +2,26 @@
 pub fn ser_streaming_logging_config(
     input: &crate::types::StreamingLoggingConfig,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.enabled {
+    {
         let mut inner_writer = scope.start_el("Enabled").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_1).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.enabled).encode());
     }
-    if let Some(var_2) = &input.bucket {
+    {
         let mut inner_writer = scope.start_el("Bucket").finish();
-        inner_writer.data(var_2.as_str());
+        inner_writer.data(input.bucket.as_str());
     }
-    if let Some(var_3) = &input.prefix {
+    {
         let mut inner_writer = scope.start_el("Prefix").finish();
-        inner_writer.data(var_3.as_str());
+        inner_writer.data(input.prefix.as_str());
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_streaming_logging_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::StreamingLoggingConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -29,7 +30,7 @@ pub fn de_streaming_logging_config(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Enabled") /* Enabled com.amazonaws.cloudfront#StreamingLoggingConfig$Enabled */ =>  {
-                let var_4 =
+                let var_1 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -40,11 +41,11 @@ pub fn de_streaming_logging_config(
                         ?
                     )
                 ;
-                builder = builder.set_enabled(var_4);
+                builder = builder.set_enabled(var_1);
             }
             ,
             s if s.matches("Bucket") /* Bucket com.amazonaws.cloudfront#StreamingLoggingConfig$Bucket */ =>  {
-                let var_5 =
+                let var_2 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -53,11 +54,11 @@ pub fn de_streaming_logging_config(
                         ?
                     )
                 ;
-                builder = builder.set_bucket(var_5);
+                builder = builder.set_bucket(var_2);
             }
             ,
             s if s.matches("Prefix") /* Prefix com.amazonaws.cloudfront#StreamingLoggingConfig$Prefix */ =>  {
-                let var_6 =
+                let var_3 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -66,11 +67,13 @@ pub fn de_streaming_logging_config(
                         ?
                     )
                 ;
-                builder = builder.set_prefix(var_6);
+                builder = builder.set_prefix(var_3);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::streaming_logging_config_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

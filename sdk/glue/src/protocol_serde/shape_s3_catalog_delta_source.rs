@@ -2,37 +2,37 @@
 pub fn ser_s3_catalog_delta_source(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::S3CatalogDeltaSource,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("Name").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.database {
-        object.key("Database").string(var_2.as_str());
+    {
+        object.key("Database").string(input.database.as_str());
     }
-    if let Some(var_3) = &input.table {
-        object.key("Table").string(var_3.as_str());
+    {
+        object.key("Table").string(input.table.as_str());
     }
-    if let Some(var_4) = &input.additional_delta_options {
+    if let Some(var_1) = &input.additional_delta_options {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("AdditionalDeltaOptions").start_object();
-        for (key_6, value_7) in var_4 {
+        let mut object_2 = object.key("AdditionalDeltaOptions").start_object();
+        for (key_3, value_4) in var_1 {
             {
-                object_5.key(key_6.as_str()).string(value_7.as_str());
+                object_2.key(key_3.as_str()).string(value_4.as_str());
             }
         }
-        object_5.finish();
+        object_2.finish();
     }
-    if let Some(var_8) = &input.output_schemas {
-        let mut array_9 = object.key("OutputSchemas").start_array();
-        for item_10 in var_8 {
+    if let Some(var_5) = &input.output_schemas {
+        let mut array_6 = object.key("OutputSchemas").start_array();
+        for item_7 in var_5 {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_glue_schema::ser_glue_schema(&mut object_11, item_10)?;
-                object_11.finish();
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_glue_schema::ser_glue_schema(&mut object_8, item_7)?;
+                object_8.finish();
             }
         }
-        array_9.finish();
+        array_6.finish();
     }
     Ok(())
 }
@@ -90,7 +90,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::s3_catalog_delta_source_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

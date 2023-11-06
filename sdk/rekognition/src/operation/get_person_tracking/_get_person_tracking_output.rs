@@ -39,8 +39,10 @@ impl GetPersonTrackingOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of the persons detected in the video and the time(s) their path was tracked throughout the video. An array element will exist for each time a person's path is tracked. </p>
-    pub fn persons(&self) -> ::std::option::Option<&[crate::types::PersonDetection]> {
-        self.persons.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.persons.is_none()`.
+    pub fn persons(&self) -> &[crate::types::PersonDetection] {
+        self.persons.as_deref().unwrap_or_default()
     }
     /// <p>Job identifier for the person tracking operation for which you want to obtain results. The job identifer is returned by an initial call to StartPersonTracking.</p>
     pub fn job_id(&self) -> ::std::option::Option<&str> {

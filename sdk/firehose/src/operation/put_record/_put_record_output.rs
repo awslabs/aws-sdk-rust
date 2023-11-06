@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutRecordOutput {
     /// <p>The ID of the record.</p>
-    pub record_id: ::std::option::Option<::std::string::String>,
+    pub record_id: ::std::string::String,
     /// <p>Indicates whether server-side encryption (SSE) was enabled during this operation.</p>
     pub encrypted: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl PutRecordOutput {
     /// <p>The ID of the record.</p>
-    pub fn record_id(&self) -> ::std::option::Option<&str> {
-        self.record_id.as_deref()
+    pub fn record_id(&self) -> &str {
+        use std::ops::Deref;
+        self.record_id.deref()
     }
     /// <p>Indicates whether server-side encryption (SSE) was enabled during this operation.</p>
     pub fn encrypted(&self) -> ::std::option::Option<bool> {
@@ -41,6 +42,7 @@ pub struct PutRecordOutputBuilder {
 }
 impl PutRecordOutputBuilder {
     /// <p>The ID of the record.</p>
+    /// This field is required.
     pub fn record_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.record_id = ::std::option::Option::Some(input.into());
         self
@@ -78,11 +80,18 @@ impl PutRecordOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutRecordOutput`](crate::operation::put_record::PutRecordOutput).
-    pub fn build(self) -> crate::operation::put_record::PutRecordOutput {
-        crate::operation::put_record::PutRecordOutput {
-            record_id: self.record_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`record_id`](crate::operation::put_record::builders::PutRecordOutputBuilder::record_id)
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_record::PutRecordOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::put_record::PutRecordOutput {
+            record_id: self.record_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "record_id",
+                    "record_id was not specified but it is required when building PutRecordOutput",
+                )
+            })?,
             encrypted: self.encrypted,
             _request_id: self._request_id,
-        }
+        })
     }
 }

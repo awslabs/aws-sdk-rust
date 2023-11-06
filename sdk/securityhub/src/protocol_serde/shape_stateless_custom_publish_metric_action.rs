@@ -2,7 +2,7 @@
 pub fn ser_stateless_custom_publish_metric_action(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StatelessCustomPublishMetricAction,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.dimensions {
         let mut array_2 = object.key("Dimensions").start_array();
         for item_3 in var_1 {

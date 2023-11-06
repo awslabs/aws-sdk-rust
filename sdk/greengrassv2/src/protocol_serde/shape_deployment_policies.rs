@@ -2,7 +2,7 @@
 pub fn ser_deployment_policies(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DeploymentPolicies,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.failure_handling_policy {
         object.key("failureHandlingPolicy").string(var_1.as_str());
     }

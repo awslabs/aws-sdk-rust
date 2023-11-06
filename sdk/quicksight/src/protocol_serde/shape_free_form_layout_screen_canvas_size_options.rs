@@ -2,9 +2,9 @@
 pub fn ser_free_form_layout_screen_canvas_size_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FreeFormLayoutScreenCanvasSizeOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.optimized_view_port_width {
-        object.key("OptimizedViewPortWidth").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("OptimizedViewPortWidth").string(input.optimized_view_port_width.as_str());
     }
     Ok(())
 }
@@ -41,7 +41,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::free_form_layout_screen_canvas_size_options_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -27,6 +27,7 @@ pub struct DeleteAssetInputBuilder {
 }
 impl DeleteAssetInputBuilder {
     /// The ID of the MediaPackage VOD Asset resource to delete.
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl DeleteAssetInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`DeleteAssetInput`](crate::operation::delete_asset::DeleteAssetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_asset::DeleteAssetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_asset::DeleteAssetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_asset::DeleteAssetInput { id: self.id })
     }
 }

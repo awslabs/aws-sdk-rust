@@ -35,6 +35,7 @@ pub struct NodePropertyOverrideBuilder {
 }
 impl NodePropertyOverrideBuilder {
     /// <p>The range of nodes, using node index values, that's used to override. A range of <code>0:3</code> indicates nodes with index values of <code>0</code> through <code>3</code>. If the starting range value is omitted (<code>:n</code>), then <code>0</code> is used to start the range. If the ending range value is omitted (<code>n:</code>), then the highest possible node index is used to end the range.</p>
+    /// This field is required.
     pub fn target_nodes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_nodes = ::std::option::Option::Some(input.into());
         self

@@ -8,10 +8,10 @@
 pub struct CustomExtension {
     /// <p></p>
     /// <p>Specifies the object identifier (OID) of the X.509 extension. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a> </p>
-    pub object_identifier: ::std::option::Option<::std::string::String>,
+    pub object_identifier: ::std::string::String,
     /// <p></p>
     /// <p>Specifies the base64-encoded value of the X.509 extension.</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
     /// <p></p>
     /// <p>Specifies the critical flag of the X.509 extension.</p>
     pub critical: ::std::option::Option<bool>,
@@ -19,13 +19,15 @@ pub struct CustomExtension {
 impl CustomExtension {
     /// <p></p>
     /// <p>Specifies the object identifier (OID) of the X.509 extension. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a> </p>
-    pub fn object_identifier(&self) -> ::std::option::Option<&str> {
-        self.object_identifier.as_deref()
+    pub fn object_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.object_identifier.deref()
     }
     /// <p></p>
     /// <p>Specifies the base64-encoded value of the X.509 extension.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
     /// <p></p>
     /// <p>Specifies the critical flag of the X.509 extension.</p>
@@ -51,6 +53,7 @@ pub struct CustomExtensionBuilder {
 impl CustomExtensionBuilder {
     /// <p></p>
     /// <p>Specifies the object identifier (OID) of the X.509 extension. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a> </p>
+    /// This field is required.
     pub fn object_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_identifier = ::std::option::Option::Some(input.into());
         self
@@ -68,6 +71,7 @@ impl CustomExtensionBuilder {
     }
     /// <p></p>
     /// <p>Specifies the base64-encoded value of the X.509 extension.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -101,11 +105,24 @@ impl CustomExtensionBuilder {
         &self.critical
     }
     /// Consumes the builder and constructs a [`CustomExtension`](crate::types::CustomExtension).
-    pub fn build(self) -> crate::types::CustomExtension {
-        crate::types::CustomExtension {
-            object_identifier: self.object_identifier,
-            value: self.value,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`object_identifier`](crate::types::builders::CustomExtensionBuilder::object_identifier)
+    /// - [`value`](crate::types::builders::CustomExtensionBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomExtension, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CustomExtension {
+            object_identifier: self.object_identifier.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "object_identifier",
+                    "object_identifier was not specified but it is required when building CustomExtension",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building CustomExtension",
+                )
+            })?,
             critical: self.critical,
-        }
+        })
     }
 }

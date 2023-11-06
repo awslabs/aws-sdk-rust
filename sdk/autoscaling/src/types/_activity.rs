@@ -105,6 +105,7 @@ pub struct ActivityBuilder {
 }
 impl ActivityBuilder {
     /// <p>The ID of the activity.</p>
+    /// This field is required.
     pub fn activity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.activity_id = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +120,7 @@ impl ActivityBuilder {
         &self.activity_id
     }
     /// <p>The name of the Auto Scaling group.</p>
+    /// This field is required.
     pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
@@ -147,6 +149,7 @@ impl ActivityBuilder {
         &self.description
     }
     /// <p>The reason the activity began.</p>
+    /// This field is required.
     pub fn cause(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cause = ::std::option::Option::Some(input.into());
         self
@@ -161,6 +164,7 @@ impl ActivityBuilder {
         &self.cause
     }
     /// <p>The start time of the activity.</p>
+    /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
@@ -189,6 +193,7 @@ impl ActivityBuilder {
         &self.end_time
     }
     /// <p>The current status of the activity.</p>
+    /// This field is required.
     pub fn status_code(mut self, input: crate::types::ScalingActivityStatusCode) -> Self {
         self.status_code = ::std::option::Option::Some(input);
         self

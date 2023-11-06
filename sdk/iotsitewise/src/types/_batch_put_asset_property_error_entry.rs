@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchPutAssetPropertyErrorEntry {
     /// <p>The ID of the failed entry.</p>
-    pub entry_id: ::std::option::Option<::std::string::String>,
+    pub entry_id: ::std::string::String,
     /// <p>The list of update property value errors.</p>
-    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutAssetPropertyError>>,
+    pub errors: ::std::vec::Vec<crate::types::BatchPutAssetPropertyError>,
 }
 impl BatchPutAssetPropertyErrorEntry {
     /// <p>The ID of the failed entry.</p>
-    pub fn entry_id(&self) -> ::std::option::Option<&str> {
-        self.entry_id.as_deref()
+    pub fn entry_id(&self) -> &str {
+        use std::ops::Deref;
+        self.entry_id.deref()
     }
     /// <p>The list of update property value errors.</p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::BatchPutAssetPropertyError]> {
-        self.errors.as_deref()
+    pub fn errors(&self) -> &[crate::types::BatchPutAssetPropertyError] {
+        use std::ops::Deref;
+        self.errors.deref()
     }
 }
 impl BatchPutAssetPropertyErrorEntry {
@@ -35,6 +37,7 @@ pub struct BatchPutAssetPropertyErrorEntryBuilder {
 }
 impl BatchPutAssetPropertyErrorEntryBuilder {
     /// <p>The ID of the failed entry.</p>
+    /// This field is required.
     pub fn entry_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entry_id = ::std::option::Option::Some(input.into());
         self
@@ -69,10 +72,23 @@ impl BatchPutAssetPropertyErrorEntryBuilder {
         &self.errors
     }
     /// Consumes the builder and constructs a [`BatchPutAssetPropertyErrorEntry`](crate::types::BatchPutAssetPropertyErrorEntry).
-    pub fn build(self) -> crate::types::BatchPutAssetPropertyErrorEntry {
-        crate::types::BatchPutAssetPropertyErrorEntry {
-            entry_id: self.entry_id,
-            errors: self.errors,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`entry_id`](crate::types::builders::BatchPutAssetPropertyErrorEntryBuilder::entry_id)
+    /// - [`errors`](crate::types::builders::BatchPutAssetPropertyErrorEntryBuilder::errors)
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchPutAssetPropertyErrorEntry, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::BatchPutAssetPropertyErrorEntry {
+            entry_id: self.entry_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "entry_id",
+                    "entry_id was not specified but it is required when building BatchPutAssetPropertyErrorEntry",
+                )
+            })?,
+            errors: self.errors.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "errors",
+                    "errors was not specified but it is required when building BatchPutAssetPropertyErrorEntry",
+                )
+            })?,
+        })
     }
 }

@@ -56,6 +56,7 @@ impl DeleteFolderInputBuilder {
         &self.authentication_token
     }
     /// <p>The ID of the folder.</p>
+    /// This field is required.
     pub fn folder_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.folder_id = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +71,9 @@ impl DeleteFolderInputBuilder {
         &self.folder_id
     }
     /// Consumes the builder and constructs a [`DeleteFolderInput`](crate::operation::delete_folder::DeleteFolderInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_folder::DeleteFolderInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_folder::DeleteFolderInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_folder::DeleteFolderInput {
             authentication_token: self.authentication_token,
             folder_id: self.folder_id,

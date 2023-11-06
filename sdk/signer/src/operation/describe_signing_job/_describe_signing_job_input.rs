@@ -27,6 +27,7 @@ pub struct DescribeSigningJobInputBuilder {
 }
 impl DescribeSigningJobInputBuilder {
     /// <p>The ID of the signing job on input.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,8 @@ impl DescribeSigningJobInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSigningJobInput`](crate::operation::describe_signing_job::DescribeSigningJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_signing_job::DescribeSigningJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_signing_job::DescribeSigningJobInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::describe_signing_job::DescribeSigningJobInput { job_id: self.job_id })
     }
 }

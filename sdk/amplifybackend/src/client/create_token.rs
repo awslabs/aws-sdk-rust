@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateToken`](crate::operation::create_token::builders::CreateTokenFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_id(impl Into<String>)`](crate::operation::create_token::builders::CreateTokenFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::create_token::builders::CreateTokenFluentBuilder::set_app_id): <p>The app ID.</p>
+    ///   - [`app_id(impl Into<String>)`](crate::operation::create_token::builders::CreateTokenFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::create_token::builders::CreateTokenFluentBuilder::set_app_id):<br>required: **true**<br><p>The app ID.</p><br>
     /// - On success, responds with [`CreateTokenOutput`](crate::operation::create_token::CreateTokenOutput) with field(s):
     ///   - [`app_id(Option<String>)`](crate::operation::create_token::CreateTokenOutput::app_id): <p>The app ID.</p>
     ///   - [`challenge_code(Option<String>)`](crate::operation::create_token::CreateTokenOutput::challenge_code): <p>One-time challenge code for authenticating into the Amplify Admin UI.</p>

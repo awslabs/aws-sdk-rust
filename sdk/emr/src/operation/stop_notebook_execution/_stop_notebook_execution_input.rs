@@ -27,6 +27,7 @@ pub struct StopNotebookExecutionInputBuilder {
 }
 impl StopNotebookExecutionInputBuilder {
     /// <p>The unique identifier of the notebook execution.</p>
+    /// This field is required.
     pub fn notebook_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_execution_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl StopNotebookExecutionInputBuilder {
     /// Consumes the builder and constructs a [`StopNotebookExecutionInput`](crate::operation::stop_notebook_execution::StopNotebookExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_notebook_execution::StopNotebookExecutionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::stop_notebook_execution::StopNotebookExecutionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::stop_notebook_execution::StopNotebookExecutionInput {
             notebook_execution_id: self.notebook_execution_id,

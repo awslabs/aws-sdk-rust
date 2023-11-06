@@ -9,7 +9,7 @@ pub struct CanaryScheduleInput {
     /// <p>For example, <code>rate(1 minute)</code> runs the canary once a minute, <code>rate(10 minutes)</code> runs it once every 10 minutes, and <code>rate(1 hour)</code> runs it once every hour. You can specify a frequency between <code>rate(1 minute)</code> and <code>rate(1 hour)</code>.</p>
     /// <p>Specifying <code>rate(0 minute)</code> or <code>rate(0 hour)</code> is a special value that causes the canary to run only once when it is started.</p>
     /// <p>Use <code>cron(<i>expression</i>)</code> to specify a cron expression. You can't schedule a canary to wait for more than a year before running. For information about the syntax for cron expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_cron.html"> Scheduling canary runs using cron</a>.</p>
-    pub expression: ::std::option::Option<::std::string::String>,
+    pub expression: ::std::string::String,
     /// <p>How long, in seconds, for the canary to continue making regular runs according to the schedule in the <code>Expression</code> value. If you specify 0, the canary continues making runs until you stop it. If you omit this field, the default of 0 is used.</p>
     pub duration_in_seconds: ::std::option::Option<i64>,
 }
@@ -19,8 +19,9 @@ impl CanaryScheduleInput {
     /// <p>For example, <code>rate(1 minute)</code> runs the canary once a minute, <code>rate(10 minutes)</code> runs it once every 10 minutes, and <code>rate(1 hour)</code> runs it once every hour. You can specify a frequency between <code>rate(1 minute)</code> and <code>rate(1 hour)</code>.</p>
     /// <p>Specifying <code>rate(0 minute)</code> or <code>rate(0 hour)</code> is a special value that causes the canary to run only once when it is started.</p>
     /// <p>Use <code>cron(<i>expression</i>)</code> to specify a cron expression. You can't schedule a canary to wait for more than a year before running. For information about the syntax for cron expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_cron.html"> Scheduling canary runs using cron</a>.</p>
-    pub fn expression(&self) -> ::std::option::Option<&str> {
-        self.expression.as_deref()
+    pub fn expression(&self) -> &str {
+        use std::ops::Deref;
+        self.expression.deref()
     }
     /// <p>How long, in seconds, for the canary to continue making regular runs according to the schedule in the <code>Expression</code> value. If you specify 0, the canary continues making runs until you stop it. If you omit this field, the default of 0 is used.</p>
     pub fn duration_in_seconds(&self) -> ::std::option::Option<i64> {
@@ -47,6 +48,7 @@ impl CanaryScheduleInputBuilder {
     /// <p>For example, <code>rate(1 minute)</code> runs the canary once a minute, <code>rate(10 minutes)</code> runs it once every 10 minutes, and <code>rate(1 hour)</code> runs it once every hour. You can specify a frequency between <code>rate(1 minute)</code> and <code>rate(1 hour)</code>.</p>
     /// <p>Specifying <code>rate(0 minute)</code> or <code>rate(0 hour)</code> is a special value that causes the canary to run only once when it is started.</p>
     /// <p>Use <code>cron(<i>expression</i>)</code> to specify a cron expression. You can't schedule a canary to wait for more than a year before running. For information about the syntax for cron expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_cron.html"> Scheduling canary runs using cron</a>.</p>
+    /// This field is required.
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expression = ::std::option::Option::Some(input.into());
         self
@@ -83,10 +85,17 @@ impl CanaryScheduleInputBuilder {
         &self.duration_in_seconds
     }
     /// Consumes the builder and constructs a [`CanaryScheduleInput`](crate::types::CanaryScheduleInput).
-    pub fn build(self) -> crate::types::CanaryScheduleInput {
-        crate::types::CanaryScheduleInput {
-            expression: self.expression,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`expression`](crate::types::builders::CanaryScheduleInputBuilder::expression)
+    pub fn build(self) -> ::std::result::Result<crate::types::CanaryScheduleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CanaryScheduleInput {
+            expression: self.expression.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "expression",
+                    "expression was not specified but it is required when building CanaryScheduleInput",
+                )
+            })?,
             duration_in_seconds: self.duration_in_seconds,
-        }
+        })
     }
 }

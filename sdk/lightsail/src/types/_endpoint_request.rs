@@ -5,19 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EndpointRequest {
     /// <p>The name of the container for the endpoint.</p>
-    pub container_name: ::std::option::Option<::std::string::String>,
+    pub container_name: ::std::string::String,
     /// <p>The port of the container to which traffic is forwarded to.</p>
-    pub container_port: ::std::option::Option<i32>,
+    pub container_port: i32,
     /// <p>An object that describes the health check configuration of the container.</p>
     pub health_check: ::std::option::Option<crate::types::ContainerServiceHealthCheckConfig>,
 }
 impl EndpointRequest {
     /// <p>The name of the container for the endpoint.</p>
-    pub fn container_name(&self) -> ::std::option::Option<&str> {
-        self.container_name.as_deref()
+    pub fn container_name(&self) -> &str {
+        use std::ops::Deref;
+        self.container_name.deref()
     }
     /// <p>The port of the container to which traffic is forwarded to.</p>
-    pub fn container_port(&self) -> ::std::option::Option<i32> {
+    pub fn container_port(&self) -> i32 {
         self.container_port
     }
     /// <p>An object that describes the health check configuration of the container.</p>
@@ -42,6 +43,7 @@ pub struct EndpointRequestBuilder {
 }
 impl EndpointRequestBuilder {
     /// <p>The name of the container for the endpoint.</p>
+    /// This field is required.
     pub fn container_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +58,7 @@ impl EndpointRequestBuilder {
         &self.container_name
     }
     /// <p>The port of the container to which traffic is forwarded to.</p>
+    /// This field is required.
     pub fn container_port(mut self, input: i32) -> Self {
         self.container_port = ::std::option::Option::Some(input);
         self
@@ -84,11 +87,24 @@ impl EndpointRequestBuilder {
         &self.health_check
     }
     /// Consumes the builder and constructs a [`EndpointRequest`](crate::types::EndpointRequest).
-    pub fn build(self) -> crate::types::EndpointRequest {
-        crate::types::EndpointRequest {
-            container_name: self.container_name,
-            container_port: self.container_port,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`container_name`](crate::types::builders::EndpointRequestBuilder::container_name)
+    /// - [`container_port`](crate::types::builders::EndpointRequestBuilder::container_port)
+    pub fn build(self) -> ::std::result::Result<crate::types::EndpointRequest, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EndpointRequest {
+            container_name: self.container_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "container_name",
+                    "container_name was not specified but it is required when building EndpointRequest",
+                )
+            })?,
+            container_port: self.container_port.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "container_port",
+                    "container_port was not specified but it is required when building EndpointRequest",
+                )
+            })?,
             health_check: self.health_check,
-        }
+        })
     }
 }

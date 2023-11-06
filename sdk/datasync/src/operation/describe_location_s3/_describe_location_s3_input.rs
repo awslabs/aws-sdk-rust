@@ -28,6 +28,7 @@ pub struct DescribeLocationS3InputBuilder {
 }
 impl DescribeLocationS3InputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket location to describe.</p>
+    /// This field is required.
     pub fn location_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_arn = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,8 @@ impl DescribeLocationS3InputBuilder {
     /// Consumes the builder and constructs a [`DescribeLocationS3Input`](crate::operation::describe_location_s3::DescribeLocationS3Input).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_location_s3::DescribeLocationS3Input, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_location_s3::DescribeLocationS3Input, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::describe_location_s3::DescribeLocationS3Input {
             location_arn: self.location_arn,
         })

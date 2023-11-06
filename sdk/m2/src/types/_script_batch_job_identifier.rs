@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScriptBatchJobIdentifier {
     /// <p>The name of the script containing the batch job definition.</p>
-    pub script_name: ::std::option::Option<::std::string::String>,
+    pub script_name: ::std::string::String,
 }
 impl ScriptBatchJobIdentifier {
     /// <p>The name of the script containing the batch job definition.</p>
-    pub fn script_name(&self) -> ::std::option::Option<&str> {
-        self.script_name.as_deref()
+    pub fn script_name(&self) -> &str {
+        use std::ops::Deref;
+        self.script_name.deref()
     }
 }
 impl ScriptBatchJobIdentifier {
@@ -28,6 +29,7 @@ pub struct ScriptBatchJobIdentifierBuilder {
 }
 impl ScriptBatchJobIdentifierBuilder {
     /// <p>The name of the script containing the batch job definition.</p>
+    /// This field is required.
     pub fn script_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.script_name = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl ScriptBatchJobIdentifierBuilder {
         &self.script_name
     }
     /// Consumes the builder and constructs a [`ScriptBatchJobIdentifier`](crate::types::ScriptBatchJobIdentifier).
-    pub fn build(self) -> crate::types::ScriptBatchJobIdentifier {
-        crate::types::ScriptBatchJobIdentifier {
-            script_name: self.script_name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`script_name`](crate::types::builders::ScriptBatchJobIdentifierBuilder::script_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::ScriptBatchJobIdentifier, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ScriptBatchJobIdentifier {
+            script_name: self.script_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "script_name",
+                    "script_name was not specified but it is required when building ScriptBatchJobIdentifier",
+                )
+            })?,
+        })
     }
 }

@@ -36,7 +36,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::auto_enable_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -47,18 +49,18 @@ where
 pub fn ser_auto_enable(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AutoEnable,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.ec2 {
-        object.key("ec2").boolean(*var_1);
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("ec2").boolean(input.ec2);
     }
-    if let Some(var_2) = &input.ecr {
-        object.key("ecr").boolean(*var_2);
+    {
+        object.key("ecr").boolean(input.ecr);
     }
-    if let Some(var_3) = &input.lambda {
-        object.key("lambda").boolean(*var_3);
+    if let Some(var_1) = &input.lambda {
+        object.key("lambda").boolean(*var_1);
     }
-    if let Some(var_4) = &input.lambda_code {
-        object.key("lambdaCode").boolean(*var_4);
+    if let Some(var_2) = &input.lambda_code {
+        object.key("lambdaCode").boolean(*var_2);
     }
     Ok(())
 }

@@ -48,6 +48,7 @@ pub struct TerminateClientVpnConnectionsInputBuilder {
 }
 impl TerminateClientVpnConnectionsInputBuilder {
     /// <p>The ID of the Client VPN endpoint to which the client is connected.</p>
+    /// This field is required.
     pub fn client_vpn_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_vpn_endpoint_id = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +109,7 @@ impl TerminateClientVpnConnectionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsInput {
             client_vpn_endpoint_id: self.client_vpn_endpoint_id,

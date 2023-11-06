@@ -27,6 +27,7 @@ pub struct DescribeVirtualClusterInputBuilder {
 }
 impl DescribeVirtualClusterInputBuilder {
     /// <p>The ID of the virtual cluster that will be described.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -43,8 +44,10 @@ impl DescribeVirtualClusterInputBuilder {
     /// Consumes the builder and constructs a [`DescribeVirtualClusterInput`](crate::operation::describe_virtual_cluster::DescribeVirtualClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_virtual_cluster::DescribeVirtualClusterInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_virtual_cluster::DescribeVirtualClusterInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_virtual_cluster::DescribeVirtualClusterInput { id: self.id })
     }
 }

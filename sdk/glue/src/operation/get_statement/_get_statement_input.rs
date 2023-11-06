@@ -41,6 +41,7 @@ pub struct GetStatementInputBuilder {
 }
 impl GetStatementInputBuilder {
     /// <p>The Session ID of the statement.</p>
+    /// This field is required.
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl GetStatementInputBuilder {
         &self.session_id
     }
     /// <p>The Id of the statement.</p>
+    /// This field is required.
     pub fn id(mut self, input: i32) -> Self {
         self.id = ::std::option::Option::Some(input);
         self
@@ -83,7 +85,9 @@ impl GetStatementInputBuilder {
         &self.request_origin
     }
     /// Consumes the builder and constructs a [`GetStatementInput`](crate::operation::get_statement::GetStatementInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_statement::GetStatementInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_statement::GetStatementInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_statement::GetStatementInput {
             session_id: self.session_id,
             id: self.id,

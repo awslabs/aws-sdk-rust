@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamSummary {
     /// <p>The name of a stream.</p>
-    pub stream_name: ::std::option::Option<::std::string::String>,
+    pub stream_name: ::std::string::String,
     /// <p>The ARN of the stream.</p>
-    pub stream_arn: ::std::option::Option<::std::string::String>,
+    pub stream_arn: ::std::string::String,
     /// <p>The status of the stream.</p>
-    pub stream_status: ::std::option::Option<crate::types::StreamStatus>,
+    pub stream_status: crate::types::StreamStatus,
     /// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
     pub stream_mode_details: ::std::option::Option<crate::types::StreamModeDetails>,
     /// <p>The timestamp at which the stream was created.</p>
@@ -17,16 +17,18 @@ pub struct StreamSummary {
 }
 impl StreamSummary {
     /// <p>The name of a stream.</p>
-    pub fn stream_name(&self) -> ::std::option::Option<&str> {
-        self.stream_name.as_deref()
+    pub fn stream_name(&self) -> &str {
+        use std::ops::Deref;
+        self.stream_name.deref()
     }
     /// <p>The ARN of the stream.</p>
-    pub fn stream_arn(&self) -> ::std::option::Option<&str> {
-        self.stream_arn.as_deref()
+    pub fn stream_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.stream_arn.deref()
     }
     /// <p>The status of the stream.</p>
-    pub fn stream_status(&self) -> ::std::option::Option<&crate::types::StreamStatus> {
-        self.stream_status.as_ref()
+    pub fn stream_status(&self) -> &crate::types::StreamStatus {
+        &self.stream_status
     }
     /// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
     pub fn stream_mode_details(&self) -> ::std::option::Option<&crate::types::StreamModeDetails> {
@@ -56,6 +58,7 @@ pub struct StreamSummaryBuilder {
 }
 impl StreamSummaryBuilder {
     /// <p>The name of a stream.</p>
+    /// This field is required.
     pub fn stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +73,7 @@ impl StreamSummaryBuilder {
         &self.stream_name
     }
     /// <p>The ARN of the stream.</p>
+    /// This field is required.
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_arn = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +88,7 @@ impl StreamSummaryBuilder {
         &self.stream_arn
     }
     /// <p>The status of the stream.</p>
+    /// This field is required.
     pub fn stream_status(mut self, input: crate::types::StreamStatus) -> Self {
         self.stream_status = ::std::option::Option::Some(input);
         self
@@ -126,13 +131,32 @@ impl StreamSummaryBuilder {
         &self.stream_creation_timestamp
     }
     /// Consumes the builder and constructs a [`StreamSummary`](crate::types::StreamSummary).
-    pub fn build(self) -> crate::types::StreamSummary {
-        crate::types::StreamSummary {
-            stream_name: self.stream_name,
-            stream_arn: self.stream_arn,
-            stream_status: self.stream_status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`stream_name`](crate::types::builders::StreamSummaryBuilder::stream_name)
+    /// - [`stream_arn`](crate::types::builders::StreamSummaryBuilder::stream_arn)
+    /// - [`stream_status`](crate::types::builders::StreamSummaryBuilder::stream_status)
+    pub fn build(self) -> ::std::result::Result<crate::types::StreamSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::StreamSummary {
+            stream_name: self.stream_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "stream_name",
+                    "stream_name was not specified but it is required when building StreamSummary",
+                )
+            })?,
+            stream_arn: self.stream_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "stream_arn",
+                    "stream_arn was not specified but it is required when building StreamSummary",
+                )
+            })?,
+            stream_status: self.stream_status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "stream_status",
+                    "stream_status was not specified but it is required when building StreamSummary",
+                )
+            })?,
             stream_mode_details: self.stream_mode_details,
             stream_creation_timestamp: self.stream_creation_timestamp,
-        }
+        })
     }
 }

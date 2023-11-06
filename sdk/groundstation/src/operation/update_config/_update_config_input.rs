@@ -49,6 +49,7 @@ pub struct UpdateConfigInputBuilder {
 }
 impl UpdateConfigInputBuilder {
     /// <p>UUID of a <code>Config</code>.</p>
+    /// This field is required.
     pub fn config_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.config_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl UpdateConfigInputBuilder {
         &self.config_id
     }
     /// <p>Name of a <code>Config</code>.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +79,7 @@ impl UpdateConfigInputBuilder {
         &self.name
     }
     /// <p>Type of a <code>Config</code>.</p>
+    /// This field is required.
     pub fn config_type(mut self, input: crate::types::ConfigCapabilityType) -> Self {
         self.config_type = ::std::option::Option::Some(input);
         self
@@ -91,6 +94,7 @@ impl UpdateConfigInputBuilder {
         &self.config_type
     }
     /// <p>Parameters of a <code>Config</code>.</p>
+    /// This field is required.
     pub fn config_data(mut self, input: crate::types::ConfigTypeData) -> Self {
         self.config_data = ::std::option::Option::Some(input);
         self
@@ -105,7 +109,9 @@ impl UpdateConfigInputBuilder {
         &self.config_data
     }
     /// Consumes the builder and constructs a [`UpdateConfigInput`](crate::operation::update_config::UpdateConfigInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_config::UpdateConfigInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_config::UpdateConfigInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_config::UpdateConfigInput {
             config_id: self.config_id,
             name: self.name,

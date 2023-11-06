@@ -11,13 +11,17 @@ pub struct CreateTagsInput {
 }
 impl CreateTagsInput {
     /// <p>A list of configuration items that you want to tag.</p>
-    pub fn configuration_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.configuration_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configuration_ids.is_none()`.
+    pub fn configuration_ids(&self) -> &[::std::string::String] {
+        self.configuration_ids.as_deref().unwrap_or_default()
     }
     /// <p>Tags that you want to associate with one or more configuration items. Specify the tags that you want to create in a <i>key</i>-<i>value</i> format. For example:</p>
     /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateTagsInput {
@@ -79,7 +83,7 @@ impl CreateTagsInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateTagsInput`](crate::operation::create_tags::CreateTagsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_tags::CreateTagsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_tags::CreateTagsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_tags::CreateTagsInput {
             configuration_ids: self.configuration_ids,
             tags: self.tags,

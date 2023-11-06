@@ -2,7 +2,7 @@
 pub fn ser_update_vpc_endpoint_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_vpc_endpoint::UpdateVpcEndpointInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.vpc_endpoint_id {
         object.key("VpcEndpointId").string(var_1.as_str());
     }

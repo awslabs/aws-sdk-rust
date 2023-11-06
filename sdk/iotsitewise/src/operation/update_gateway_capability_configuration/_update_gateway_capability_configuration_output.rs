@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateGatewayCapabilityConfigurationOutput {
     /// <p>The namespace of the gateway capability.</p>
-    pub capability_namespace: ::std::option::Option<::std::string::String>,
+    pub capability_namespace: ::std::string::String,
     /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
     /// <ul>
     /// <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li>
@@ -12,13 +12,14 @@ pub struct UpdateGatewayCapabilityConfigurationOutput {
     /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li>
     /// </ul>
     /// <p>After you update a capability configuration, its sync status is <code>OUT_OF_SYNC</code> until the gateway receives and applies or rejects the updated configuration.</p>
-    pub capability_sync_status: ::std::option::Option<crate::types::CapabilitySyncStatus>,
+    pub capability_sync_status: crate::types::CapabilitySyncStatus,
     _request_id: Option<String>,
 }
 impl UpdateGatewayCapabilityConfigurationOutput {
     /// <p>The namespace of the gateway capability.</p>
-    pub fn capability_namespace(&self) -> ::std::option::Option<&str> {
-        self.capability_namespace.as_deref()
+    pub fn capability_namespace(&self) -> &str {
+        use std::ops::Deref;
+        self.capability_namespace.deref()
     }
     /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
     /// <ul>
@@ -27,8 +28,8 @@ impl UpdateGatewayCapabilityConfigurationOutput {
     /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li>
     /// </ul>
     /// <p>After you update a capability configuration, its sync status is <code>OUT_OF_SYNC</code> until the gateway receives and applies or rejects the updated configuration.</p>
-    pub fn capability_sync_status(&self) -> ::std::option::Option<&crate::types::CapabilitySyncStatus> {
-        self.capability_sync_status.as_ref()
+    pub fn capability_sync_status(&self) -> &crate::types::CapabilitySyncStatus {
+        &self.capability_sync_status
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateGatewayCapabilityConfigurationOutput {
@@ -53,6 +54,7 @@ pub struct UpdateGatewayCapabilityConfigurationOutputBuilder {
 }
 impl UpdateGatewayCapabilityConfigurationOutputBuilder {
     /// <p>The namespace of the gateway capability.</p>
+    /// This field is required.
     pub fn capability_namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capability_namespace = ::std::option::Option::Some(input.into());
         self
@@ -73,6 +75,7 @@ impl UpdateGatewayCapabilityConfigurationOutputBuilder {
     /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li>
     /// </ul>
     /// <p>After you update a capability configuration, its sync status is <code>OUT_OF_SYNC</code> until the gateway receives and applies or rejects the updated configuration.</p>
+    /// This field is required.
     pub fn capability_sync_status(mut self, input: crate::types::CapabilitySyncStatus) -> Self {
         self.capability_sync_status = ::std::option::Option::Some(input);
         self
@@ -108,11 +111,31 @@ impl UpdateGatewayCapabilityConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateGatewayCapabilityConfigurationOutput`](crate::operation::update_gateway_capability_configuration::UpdateGatewayCapabilityConfigurationOutput).
-    pub fn build(self) -> crate::operation::update_gateway_capability_configuration::UpdateGatewayCapabilityConfigurationOutput {
-        crate::operation::update_gateway_capability_configuration::UpdateGatewayCapabilityConfigurationOutput {
-            capability_namespace: self.capability_namespace,
-            capability_sync_status: self.capability_sync_status,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`capability_namespace`](crate::operation::update_gateway_capability_configuration::builders::UpdateGatewayCapabilityConfigurationOutputBuilder::capability_namespace)
+    /// - [`capability_sync_status`](crate::operation::update_gateway_capability_configuration::builders::UpdateGatewayCapabilityConfigurationOutputBuilder::capability_sync_status)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_gateway_capability_configuration::UpdateGatewayCapabilityConfigurationOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::update_gateway_capability_configuration::UpdateGatewayCapabilityConfigurationOutput {
+                capability_namespace: self.capability_namespace.ok_or_else(|| {
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
+                        "capability_namespace",
+                        "capability_namespace was not specified but it is required when building UpdateGatewayCapabilityConfigurationOutput",
+                    )
+                })?,
+                capability_sync_status: self.capability_sync_status.ok_or_else(|| {
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
+                        "capability_sync_status",
+                        "capability_sync_status was not specified but it is required when building UpdateGatewayCapabilityConfigurationOutput",
+                    )
+                })?,
+                _request_id: self._request_id,
+            },
+        )
     }
 }

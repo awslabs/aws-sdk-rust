@@ -35,8 +35,10 @@ impl ChangeSummary {
         self.details_document.as_ref()
     }
     /// <p>An array of <code>ErrorDetail</code> objects associated with the change.</p>
-    pub fn error_detail_list(&self) -> ::std::option::Option<&[crate::types::ErrorDetail]> {
-        self.error_detail_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.error_detail_list.is_none()`.
+    pub fn error_detail_list(&self) -> &[crate::types::ErrorDetail] {
+        self.error_detail_list.as_deref().unwrap_or_default()
     }
     /// <p>Optional name for the change.</p>
     pub fn change_name(&self) -> ::std::option::Option<&str> {

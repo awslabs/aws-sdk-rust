@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputDataConfig {
     /// <p>The URI of the S3 bucket that contains the input data. The bucket must be in the same region as the API endpoint that you are calling.</p>
-    pub s3_bucket: ::std::option::Option<::std::string::String>,
+    pub s3_bucket: ::std::string::String,
     /// <p>The path to the input data files in the S3 bucket.</p>
     pub s3_key: ::std::option::Option<::std::string::String>,
 }
 impl InputDataConfig {
     /// <p>The URI of the S3 bucket that contains the input data. The bucket must be in the same region as the API endpoint that you are calling.</p>
-    pub fn s3_bucket(&self) -> ::std::option::Option<&str> {
-        self.s3_bucket.as_deref()
+    pub fn s3_bucket(&self) -> &str {
+        use std::ops::Deref;
+        self.s3_bucket.deref()
     }
     /// <p>The path to the input data files in the S3 bucket.</p>
     pub fn s3_key(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct InputDataConfigBuilder {
 }
 impl InputDataConfigBuilder {
     /// <p>The URI of the S3 bucket that contains the input data. The bucket must be in the same region as the API endpoint that you are calling.</p>
+    /// This field is required.
     pub fn s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl InputDataConfigBuilder {
         &self.s3_key
     }
     /// Consumes the builder and constructs a [`InputDataConfig`](crate::types::InputDataConfig).
-    pub fn build(self) -> crate::types::InputDataConfig {
-        crate::types::InputDataConfig {
-            s3_bucket: self.s3_bucket,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`s3_bucket`](crate::types::builders::InputDataConfigBuilder::s3_bucket)
+    pub fn build(self) -> ::std::result::Result<crate::types::InputDataConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::InputDataConfig {
+            s3_bucket: self.s3_bucket.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "s3_bucket",
+                    "s3_bucket was not specified but it is required when building InputDataConfig",
+                )
+            })?,
             s3_key: self.s3_key,
-        }
+        })
     }
 }

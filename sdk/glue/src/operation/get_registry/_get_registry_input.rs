@@ -27,6 +27,7 @@ pub struct GetRegistryInputBuilder {
 }
 impl GetRegistryInputBuilder {
     /// <p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
+    /// This field is required.
     pub fn registry_id(mut self, input: crate::types::RegistryId) -> Self {
         self.registry_id = ::std::option::Option::Some(input);
         self
@@ -41,7 +42,7 @@ impl GetRegistryInputBuilder {
         &self.registry_id
     }
     /// Consumes the builder and constructs a [`GetRegistryInput`](crate::operation::get_registry::GetRegistryInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_registry::GetRegistryInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_registry::GetRegistryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_registry::GetRegistryInput {
             registry_id: self.registry_id,
         })

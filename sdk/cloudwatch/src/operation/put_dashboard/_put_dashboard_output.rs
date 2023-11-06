@@ -13,8 +13,10 @@ impl PutDashboardOutput {
     /// <p>If the input for <code>PutDashboard</code> was correct and the dashboard was successfully created or modified, this result is empty.</p>
     /// <p>If this result includes only warning messages, then the input was valid enough for the dashboard to be created or modified, but some elements of the dashboard might not render.</p>
     /// <p>If this result includes error messages, the input was not valid and the operation failed.</p>
-    pub fn dashboard_validation_messages(&self) -> ::std::option::Option<&[crate::types::DashboardValidationMessage]> {
-        self.dashboard_validation_messages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dashboard_validation_messages.is_none()`.
+    pub fn dashboard_validation_messages(&self) -> &[crate::types::DashboardValidationMessage] {
+        self.dashboard_validation_messages.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for PutDashboardOutput {

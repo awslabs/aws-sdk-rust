@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteTrial`](crate::operation::delete_trial::builders::DeleteTrialFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`trial_name(impl Into<String>)`](crate::operation::delete_trial::builders::DeleteTrialFluentBuilder::trial_name) / [`set_trial_name(Option<String>)`](crate::operation::delete_trial::builders::DeleteTrialFluentBuilder::set_trial_name): <p>The name of the trial to delete.</p>
+    ///   - [`trial_name(impl Into<String>)`](crate::operation::delete_trial::builders::DeleteTrialFluentBuilder::trial_name) / [`set_trial_name(Option<String>)`](crate::operation::delete_trial::builders::DeleteTrialFluentBuilder::set_trial_name):<br>required: **true**<br><p>The name of the trial to delete.</p><br>
     /// - On success, responds with [`DeleteTrialOutput`](crate::operation::delete_trial::DeleteTrialOutput) with field(s):
     ///   - [`trial_arn(Option<String>)`](crate::operation::delete_trial::DeleteTrialOutput::trial_arn): <p>The Amazon Resource Name (ARN) of the trial that is being deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteTrialError>`](crate::operation::delete_trial::DeleteTrialError)

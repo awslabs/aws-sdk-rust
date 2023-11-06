@@ -2,9 +2,9 @@
 pub fn ser_anonymous_user_dashboard_embedding_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AnonymousUserDashboardEmbeddingConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.initial_dashboard_id {
-        object.key("InitialDashboardId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("InitialDashboardId").string(input.initial_dashboard_id.as_str());
     }
     Ok(())
 }

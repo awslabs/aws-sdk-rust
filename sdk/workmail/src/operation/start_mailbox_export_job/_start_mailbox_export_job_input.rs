@@ -88,6 +88,7 @@ pub struct StartMailboxExportJobInputBuilder {
 }
 impl StartMailboxExportJobInputBuilder {
     /// <p>The idempotency token for the client request.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -102,6 +103,7 @@ impl StartMailboxExportJobInputBuilder {
         &self.client_token
     }
     /// <p>The identifier associated with the organization.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -122,6 +124,7 @@ impl StartMailboxExportJobInputBuilder {
     /// <li> <p>Email address: entity@domain.tld</p> </li>
     /// <li> <p>Entity name: entity</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
         self
@@ -162,6 +165,7 @@ impl StartMailboxExportJobInputBuilder {
         &self.description
     }
     /// <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the S3 bucket.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -176,6 +180,7 @@ impl StartMailboxExportJobInputBuilder {
         &self.role_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS) key that encrypts the exported mailbox content.</p>
+    /// This field is required.
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_arn = ::std::option::Option::Some(input.into());
         self
@@ -190,6 +195,7 @@ impl StartMailboxExportJobInputBuilder {
         &self.kms_key_arn
     }
     /// <p>The name of the S3 bucket.</p>
+    /// This field is required.
     pub fn s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket_name = ::std::option::Option::Some(input.into());
         self
@@ -204,6 +210,7 @@ impl StartMailboxExportJobInputBuilder {
         &self.s3_bucket_name
     }
     /// <p>The S3 bucket prefix.</p>
+    /// This field is required.
     pub fn s3_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_prefix = ::std::option::Option::Some(input.into());
         self
@@ -220,7 +227,7 @@ impl StartMailboxExportJobInputBuilder {
     /// Consumes the builder and constructs a [`StartMailboxExportJobInput`](crate::operation::start_mailbox_export_job::StartMailboxExportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_mailbox_export_job::StartMailboxExportJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_mailbox_export_job::StartMailboxExportJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_mailbox_export_job::StartMailboxExportJobInput {
             client_token: self.client_token,

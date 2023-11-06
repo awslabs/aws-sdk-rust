@@ -41,6 +41,7 @@ pub struct RevokeSubscriptionInputBuilder {
 }
 impl RevokeSubscriptionInputBuilder {
     /// <p>The identifier of the Amazon DataZone domain where you want to revoke a subscription.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl RevokeSubscriptionInputBuilder {
         &self.domain_identifier
     }
     /// <p>The identifier of the revoked subscription.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +87,7 @@ impl RevokeSubscriptionInputBuilder {
     /// Consumes the builder and constructs a [`RevokeSubscriptionInput`](crate::operation::revoke_subscription::RevokeSubscriptionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::revoke_subscription::RevokeSubscriptionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::revoke_subscription::RevokeSubscriptionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::revoke_subscription::RevokeSubscriptionInput {
             domain_identifier: self.domain_identifier,
             identifier: self.identifier,

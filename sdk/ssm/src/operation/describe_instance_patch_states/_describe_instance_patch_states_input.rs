@@ -12,8 +12,10 @@ pub struct DescribeInstancePatchStatesInput {
 }
 impl DescribeInstancePatchStatesInput {
     /// <p>The ID of the managed node for which patch state information should be retrieved.</p>
-    pub fn instance_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.instance_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_ids.is_none()`.
+    pub fn instance_ids(&self) -> &[::std::string::String] {
+        self.instance_ids.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -93,7 +95,7 @@ impl DescribeInstancePatchStatesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_instance_patch_states::DescribeInstancePatchStatesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_instance_patch_states::DescribeInstancePatchStatesInput {
             instance_ids: self.instance_ids,

@@ -13,12 +13,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RequestCancelActivityTaskDecisionAttributes {
     /// <p>The <code>activityId</code> of the activity task to be canceled.</p>
-    pub activity_id: ::std::option::Option<::std::string::String>,
+    pub activity_id: ::std::string::String,
 }
 impl RequestCancelActivityTaskDecisionAttributes {
     /// <p>The <code>activityId</code> of the activity task to be canceled.</p>
-    pub fn activity_id(&self) -> ::std::option::Option<&str> {
-        self.activity_id.as_deref()
+    pub fn activity_id(&self) -> &str {
+        use std::ops::Deref;
+        self.activity_id.deref()
     }
 }
 impl RequestCancelActivityTaskDecisionAttributes {
@@ -36,6 +37,7 @@ pub struct RequestCancelActivityTaskDecisionAttributesBuilder {
 }
 impl RequestCancelActivityTaskDecisionAttributesBuilder {
     /// <p>The <code>activityId</code> of the activity task to be canceled.</p>
+    /// This field is required.
     pub fn activity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.activity_id = ::std::option::Option::Some(input.into());
         self
@@ -50,9 +52,18 @@ impl RequestCancelActivityTaskDecisionAttributesBuilder {
         &self.activity_id
     }
     /// Consumes the builder and constructs a [`RequestCancelActivityTaskDecisionAttributes`](crate::types::RequestCancelActivityTaskDecisionAttributes).
-    pub fn build(self) -> crate::types::RequestCancelActivityTaskDecisionAttributes {
-        crate::types::RequestCancelActivityTaskDecisionAttributes {
-            activity_id: self.activity_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`activity_id`](crate::types::builders::RequestCancelActivityTaskDecisionAttributesBuilder::activity_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::RequestCancelActivityTaskDecisionAttributes, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RequestCancelActivityTaskDecisionAttributes {
+            activity_id: self.activity_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "activity_id",
+                    "activity_id was not specified but it is required when building RequestCancelActivityTaskDecisionAttributes",
+                )
+            })?,
+        })
     }
 }

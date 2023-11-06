@@ -2,7 +2,7 @@
 pub fn ser_pipe_target_event_bridge_event_bus_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PipeTargetEventBridgeEventBusParameters,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.endpoint_id {
         object.key("EndpointId").string(var_1.as_str());
     }

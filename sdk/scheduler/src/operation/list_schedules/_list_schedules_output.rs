@@ -6,7 +6,7 @@ pub struct ListSchedulesOutput {
     /// <p>Indicates whether there are additional results to retrieve. If the value is null, there are no more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The schedules that match the specified criteria.</p>
-    pub schedules: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleSummary>>,
+    pub schedules: ::std::vec::Vec<crate::types::ScheduleSummary>,
     _request_id: Option<String>,
 }
 impl ListSchedulesOutput {
@@ -15,8 +15,9 @@ impl ListSchedulesOutput {
         self.next_token.as_deref()
     }
     /// <p>The schedules that match the specified criteria.</p>
-    pub fn schedules(&self) -> ::std::option::Option<&[crate::types::ScheduleSummary]> {
-        self.schedules.as_deref()
+    pub fn schedules(&self) -> &[crate::types::ScheduleSummary] {
+        use std::ops::Deref;
+        self.schedules.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListSchedulesOutput {
@@ -84,11 +85,20 @@ impl ListSchedulesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListSchedulesOutput`](crate::operation::list_schedules::ListSchedulesOutput).
-    pub fn build(self) -> crate::operation::list_schedules::ListSchedulesOutput {
-        crate::operation::list_schedules::ListSchedulesOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`schedules`](crate::operation::list_schedules::builders::ListSchedulesOutputBuilder::schedules)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_schedules::ListSchedulesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_schedules::ListSchedulesOutput {
             next_token: self.next_token,
-            schedules: self.schedules,
+            schedules: self.schedules.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "schedules",
+                    "schedules was not specified but it is required when building ListSchedulesOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -76,6 +76,7 @@ impl GetAnomaliesInputBuilder {
         &self.monitor_arn
     }
     /// <p>Assigns the start and end dates for retrieving cost anomalies. The returned anomaly object will have an <code>AnomalyEndDate</code> in the specified time range. </p>
+    /// This field is required.
     pub fn date_interval(mut self, input: crate::types::AnomalyDateInterval) -> Self {
         self.date_interval = ::std::option::Option::Some(input);
         self
@@ -146,7 +147,9 @@ impl GetAnomaliesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetAnomaliesInput`](crate::operation::get_anomalies::GetAnomaliesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_anomalies::GetAnomaliesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_anomalies::GetAnomaliesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_anomalies::GetAnomaliesInput {
             monitor_arn: self.monitor_arn,
             date_interval: self.date_interval,

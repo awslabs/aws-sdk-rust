@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetPipelineChangeProgress`](crate::operation::get_pipeline_change_progress::builders::GetPipelineChangeProgressFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`pipeline_name(impl Into<String>)`](crate::operation::get_pipeline_change_progress::builders::GetPipelineChangeProgressFluentBuilder::pipeline_name) / [`set_pipeline_name(Option<String>)`](crate::operation::get_pipeline_change_progress::builders::GetPipelineChangeProgressFluentBuilder::set_pipeline_name): <p>The name of the pipeline.</p>
+    ///   - [`pipeline_name(impl Into<String>)`](crate::operation::get_pipeline_change_progress::builders::GetPipelineChangeProgressFluentBuilder::pipeline_name) / [`set_pipeline_name(Option<String>)`](crate::operation::get_pipeline_change_progress::builders::GetPipelineChangeProgressFluentBuilder::set_pipeline_name):<br>required: **true**<br><p>The name of the pipeline.</p><br>
     /// - On success, responds with [`GetPipelineChangeProgressOutput`](crate::operation::get_pipeline_change_progress::GetPipelineChangeProgressOutput) with field(s):
-    ///   - [`change_progress_statuses(Option<Vec<ChangeProgressStatus>>)`](crate::operation::get_pipeline_change_progress::GetPipelineChangeProgressOutput::change_progress_statuses): <p>The current status of the change happening on the pipeline.</p>
+    ///   - [`change_progress_statuses(Option<Vec::<ChangeProgressStatus>>)`](crate::operation::get_pipeline_change_progress::GetPipelineChangeProgressOutput::change_progress_statuses): <p>The current status of the change happening on the pipeline.</p>
     /// - On failure, responds with [`SdkError<GetPipelineChangeProgressError>`](crate::operation::get_pipeline_change_progress::GetPipelineChangeProgressError)
     pub fn get_pipeline_change_progress(&self) -> crate::operation::get_pipeline_change_progress::builders::GetPipelineChangeProgressFluentBuilder {
         crate::operation::get_pipeline_change_progress::builders::GetPipelineChangeProgressFluentBuilder::new(self.handle.clone())

@@ -14,8 +14,10 @@ impl TestMetricFilterInput {
         self.filter_pattern.as_deref()
     }
     /// <p>The log event messages to test.</p>
-    pub fn log_event_messages(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.log_event_messages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_event_messages.is_none()`.
+    pub fn log_event_messages(&self) -> &[::std::string::String] {
+        self.log_event_messages.as_deref().unwrap_or_default()
     }
 }
 impl TestMetricFilterInput {
@@ -34,6 +36,7 @@ pub struct TestMetricFilterInputBuilder {
 }
 impl TestMetricFilterInputBuilder {
     /// <p>A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.</p>
+    /// This field is required.
     pub fn filter_pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter_pattern = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +73,7 @@ impl TestMetricFilterInputBuilder {
     /// Consumes the builder and constructs a [`TestMetricFilterInput`](crate::operation::test_metric_filter::TestMetricFilterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::test_metric_filter::TestMetricFilterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::test_metric_filter::TestMetricFilterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::test_metric_filter::TestMetricFilterInput {
             filter_pattern: self.filter_pattern,
             log_event_messages: self.log_event_messages,

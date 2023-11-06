@@ -42,6 +42,7 @@ pub struct InAppMessageHeaderConfigBuilder {
 }
 impl InAppMessageHeaderConfigBuilder {
     /// <p>The alignment of the text. Valid values: LEFT, CENTER, RIGHT.</p>
+    /// This field is required.
     pub fn alignment(mut self, input: crate::types::Alignment) -> Self {
         self.alignment = ::std::option::Option::Some(input);
         self
@@ -56,6 +57,7 @@ impl InAppMessageHeaderConfigBuilder {
         &self.alignment
     }
     /// <p>Message Header.</p>
+    /// This field is required.
     pub fn header(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.header = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl InAppMessageHeaderConfigBuilder {
         &self.header
     }
     /// <p>The text color.</p>
+    /// This field is required.
     pub fn text_color(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text_color = ::std::option::Option::Some(input.into());
         self

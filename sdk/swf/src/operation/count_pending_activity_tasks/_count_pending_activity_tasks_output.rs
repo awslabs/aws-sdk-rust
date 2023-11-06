@@ -42,6 +42,7 @@ pub struct CountPendingActivityTasksOutputBuilder {
 }
 impl CountPendingActivityTasksOutputBuilder {
     /// <p>The number of tasks in the task list.</p>
+    /// This field is required.
     pub fn count(mut self, input: i32) -> Self {
         self.count = ::std::option::Option::Some(input);
         self

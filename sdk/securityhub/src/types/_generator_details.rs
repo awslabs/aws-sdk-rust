@@ -21,8 +21,10 @@ impl GeneratorDetails {
         self.description.as_deref()
     }
     /// <p> An array of tags used to identify the detector associated with the finding. </p>
-    pub fn labels(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.labels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.labels.is_none()`.
+    pub fn labels(&self) -> &[::std::string::String] {
+        self.labels.as_deref().unwrap_or_default()
     }
 }
 impl GeneratorDetails {

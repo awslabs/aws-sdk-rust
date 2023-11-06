@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GovernedCatalogSource {
     /// <p>The name of the data store.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The database to read from.</p>
-    pub database: ::std::option::Option<::std::string::String>,
+    pub database: ::std::string::String,
     /// <p>The database table to read from.</p>
-    pub table: ::std::option::Option<::std::string::String>,
+    pub table: ::std::string::String,
     /// <p>Partitions satisfying this predicate are deleted. Files within the retention period in these partitions are not deleted. Set to <code>""</code> – empty by default.</p>
     pub partition_predicate: ::std::option::Option<::std::string::String>,
     /// <p>Specifies additional connection options.</p>
@@ -17,16 +17,19 @@ pub struct GovernedCatalogSource {
 }
 impl GovernedCatalogSource {
     /// <p>The name of the data store.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The database to read from.</p>
-    pub fn database(&self) -> ::std::option::Option<&str> {
-        self.database.as_deref()
+    pub fn database(&self) -> &str {
+        use std::ops::Deref;
+        self.database.deref()
     }
     /// <p>The database table to read from.</p>
-    pub fn table(&self) -> ::std::option::Option<&str> {
-        self.table.as_deref()
+    pub fn table(&self) -> &str {
+        use std::ops::Deref;
+        self.table.deref()
     }
     /// <p>Partitions satisfying this predicate are deleted. Files within the retention period in these partitions are not deleted. Set to <code>""</code> – empty by default.</p>
     pub fn partition_predicate(&self) -> ::std::option::Option<&str> {
@@ -56,6 +59,7 @@ pub struct GovernedCatalogSourceBuilder {
 }
 impl GovernedCatalogSourceBuilder {
     /// <p>The name of the data store.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +74,7 @@ impl GovernedCatalogSourceBuilder {
         &self.name
     }
     /// <p>The database to read from.</p>
+    /// This field is required.
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +89,7 @@ impl GovernedCatalogSourceBuilder {
         &self.database
     }
     /// <p>The database table to read from.</p>
+    /// This field is required.
     pub fn table(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table = ::std::option::Option::Some(input.into());
         self
@@ -126,13 +132,32 @@ impl GovernedCatalogSourceBuilder {
         &self.additional_options
     }
     /// Consumes the builder and constructs a [`GovernedCatalogSource`](crate::types::GovernedCatalogSource).
-    pub fn build(self) -> crate::types::GovernedCatalogSource {
-        crate::types::GovernedCatalogSource {
-            name: self.name,
-            database: self.database,
-            table: self.table,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::GovernedCatalogSourceBuilder::name)
+    /// - [`database`](crate::types::builders::GovernedCatalogSourceBuilder::database)
+    /// - [`table`](crate::types::builders::GovernedCatalogSourceBuilder::table)
+    pub fn build(self) -> ::std::result::Result<crate::types::GovernedCatalogSource, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::GovernedCatalogSource {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building GovernedCatalogSource",
+                )
+            })?,
+            database: self.database.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "database",
+                    "database was not specified but it is required when building GovernedCatalogSource",
+                )
+            })?,
+            table: self.table.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "table",
+                    "table was not specified but it is required when building GovernedCatalogSource",
+                )
+            })?,
             partition_predicate: self.partition_predicate,
             additional_options: self.additional_options,
-        }
+        })
     }
 }

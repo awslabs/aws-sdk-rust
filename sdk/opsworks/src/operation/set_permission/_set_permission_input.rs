@@ -71,6 +71,7 @@ pub struct SetPermissionInputBuilder {
 }
 impl SetPermissionInputBuilder {
     /// <p>The stack ID.</p>
+    /// This field is required.
     pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_id = ::std::option::Option::Some(input.into());
         self
@@ -85,6 +86,7 @@ impl SetPermissionInputBuilder {
         &self.stack_id
     }
     /// <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
+    /// This field is required.
     pub fn iam_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_user_arn = ::std::option::Option::Some(input.into());
         self
@@ -167,7 +169,7 @@ impl SetPermissionInputBuilder {
     /// Consumes the builder and constructs a [`SetPermissionInput`](crate::operation::set_permission::SetPermissionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::set_permission::SetPermissionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::set_permission::SetPermissionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::set_permission::SetPermissionInput {
             stack_id: self.stack_id,
             iam_user_arn: self.iam_user_arn,

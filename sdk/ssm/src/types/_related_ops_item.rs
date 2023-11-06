@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RelatedOpsItem {
     /// <p>The ID of an OpsItem related to the current OpsItem.</p>
-    pub ops_item_id: ::std::option::Option<::std::string::String>,
+    pub ops_item_id: ::std::string::String,
 }
 impl RelatedOpsItem {
     /// <p>The ID of an OpsItem related to the current OpsItem.</p>
-    pub fn ops_item_id(&self) -> ::std::option::Option<&str> {
-        self.ops_item_id.as_deref()
+    pub fn ops_item_id(&self) -> &str {
+        use std::ops::Deref;
+        self.ops_item_id.deref()
     }
 }
 impl RelatedOpsItem {
@@ -28,6 +29,7 @@ pub struct RelatedOpsItemBuilder {
 }
 impl RelatedOpsItemBuilder {
     /// <p>The ID of an OpsItem related to the current OpsItem.</p>
+    /// This field is required.
     pub fn ops_item_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ops_item_id = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl RelatedOpsItemBuilder {
         &self.ops_item_id
     }
     /// Consumes the builder and constructs a [`RelatedOpsItem`](crate::types::RelatedOpsItem).
-    pub fn build(self) -> crate::types::RelatedOpsItem {
-        crate::types::RelatedOpsItem {
-            ops_item_id: self.ops_item_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`ops_item_id`](crate::types::builders::RelatedOpsItemBuilder::ops_item_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::RelatedOpsItem, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RelatedOpsItem {
+            ops_item_id: self.ops_item_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "ops_item_id",
+                    "ops_item_id was not specified but it is required when building RelatedOpsItem",
+                )
+            })?,
+        })
     }
 }

@@ -63,16 +63,20 @@ impl DescribeMetricSetOutput {
         self.offset
     }
     /// <p>A list of the metrics defined by the dataset.</p>
-    pub fn metric_list(&self) -> ::std::option::Option<&[crate::types::Metric]> {
-        self.metric_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_list.is_none()`.
+    pub fn metric_list(&self) -> &[crate::types::Metric] {
+        self.metric_list.as_deref().unwrap_or_default()
     }
     /// <p>Contains information about the column used for tracking time in your source data.</p>
     pub fn timestamp_column(&self) -> ::std::option::Option<&crate::types::TimestampColumn> {
         self.timestamp_column.as_ref()
     }
     /// <p>A list of the dimensions chosen for analysis.</p>
-    pub fn dimension_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.dimension_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimension_list.is_none()`.
+    pub fn dimension_list(&self) -> &[::std::string::String] {
+        self.dimension_list.as_deref().unwrap_or_default()
     }
     /// <p>The interval at which the data will be analyzed for anomalies.</p>
     pub fn metric_set_frequency(&self) -> ::std::option::Option<&crate::types::Frequency> {
@@ -87,8 +91,10 @@ impl DescribeMetricSetOutput {
         self.metric_source.as_ref()
     }
     /// <p>The dimensions and their values that were used to filter the dataset.</p>
-    pub fn dimension_filter_list(&self) -> ::std::option::Option<&[crate::types::MetricSetDimensionFilter]> {
-        self.dimension_filter_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimension_filter_list.is_none()`.
+    pub fn dimension_filter_list(&self) -> &[crate::types::MetricSetDimensionFilter] {
+        self.dimension_filter_list.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeMetricSetOutput {

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeOrganizationConfiguration`](crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`graph_arn(impl Into<String>)`](crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationFluentBuilder::graph_arn) / [`set_graph_arn(Option<String>)`](crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationFluentBuilder::set_graph_arn): <p>The ARN of the organization behavior graph.</p>
+    ///   - [`graph_arn(impl Into<String>)`](crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationFluentBuilder::graph_arn) / [`set_graph_arn(Option<String>)`](crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationFluentBuilder::set_graph_arn):<br>required: **true**<br><p>The ARN of the organization behavior graph.</p><br>
     /// - On success, responds with [`DescribeOrganizationConfigurationOutput`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput) with field(s):
     ///   - [`auto_enable(bool)`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput::auto_enable): <p>Indicates whether to automatically enable new organization accounts as member accounts in the organization behavior graph.</p>
     /// - On failure, responds with [`SdkError<DescribeOrganizationConfigurationError>`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationError)

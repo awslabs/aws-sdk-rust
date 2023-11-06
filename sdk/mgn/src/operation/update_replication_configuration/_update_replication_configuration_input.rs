@@ -12,7 +12,7 @@ pub struct UpdateReplicationConfigurationInput {
     /// <p>Update replication configuration associate default Application Migration Service Security group request.</p>
     pub associate_default_security_group: ::std::option::Option<bool>,
     /// <p>Update replication configuration Replication Server Security Groups IDs request.</p>
-    pub replication_servers_security_groups_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub replication_servers_security_groups_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Update replication configuration Replication Server instance type request.</p>
     pub replication_server_instance_type: ::std::option::Option<::std::string::String>,
     /// <p>Update replication configuration use dedicated Replication Server request.</p>
@@ -26,7 +26,7 @@ pub struct UpdateReplicationConfigurationInput {
     /// <p>Update replication configuration EBS encryption key ARN request.</p>
     pub ebs_encryption_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>Update replication configuration bandwidth throttling request.</p>
-    pub bandwidth_throttling: i64,
+    pub bandwidth_throttling: ::std::option::Option<i64>,
     /// <p>Update replication configuration data plane routing request.</p>
     pub data_plane_routing: ::std::option::Option<crate::types::ReplicationConfigurationDataPlaneRouting>,
     /// <p>Update replication configuration create Public IP request.</p>
@@ -56,8 +56,10 @@ impl UpdateReplicationConfigurationInput {
         self.associate_default_security_group
     }
     /// <p>Update replication configuration Replication Server Security Groups IDs request.</p>
-    pub fn replication_servers_security_groups_i_ds(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.replication_servers_security_groups_i_ds.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_servers_security_groups_ids.is_none()`.
+    pub fn replication_servers_security_groups_ids(&self) -> &[::std::string::String] {
+        self.replication_servers_security_groups_ids.as_deref().unwrap_or_default()
     }
     /// <p>Update replication configuration Replication Server instance type request.</p>
     pub fn replication_server_instance_type(&self) -> ::std::option::Option<&str> {
@@ -72,8 +74,10 @@ impl UpdateReplicationConfigurationInput {
         self.default_large_staging_disk_type.as_ref()
     }
     /// <p>Update replication configuration replicated disks request.</p>
-    pub fn replicated_disks(&self) -> ::std::option::Option<&[crate::types::ReplicationConfigurationReplicatedDisk]> {
-        self.replicated_disks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replicated_disks.is_none()`.
+    pub fn replicated_disks(&self) -> &[crate::types::ReplicationConfigurationReplicatedDisk] {
+        self.replicated_disks.as_deref().unwrap_or_default()
     }
     /// <p>Update replication configuration EBS encryption request.</p>
     pub fn ebs_encryption(&self) -> ::std::option::Option<&crate::types::ReplicationConfigurationEbsEncryption> {
@@ -84,7 +88,7 @@ impl UpdateReplicationConfigurationInput {
         self.ebs_encryption_key_arn.as_deref()
     }
     /// <p>Update replication configuration bandwidth throttling request.</p>
-    pub fn bandwidth_throttling(&self) -> i64 {
+    pub fn bandwidth_throttling(&self) -> ::std::option::Option<i64> {
         self.bandwidth_throttling
     }
     /// <p>Update replication configuration data plane routing request.</p>
@@ -115,7 +119,7 @@ impl ::std::fmt::Debug for UpdateReplicationConfigurationInput {
         formatter.field("name", &self.name);
         formatter.field("staging_area_subnet_id", &self.staging_area_subnet_id);
         formatter.field("associate_default_security_group", &self.associate_default_security_group);
-        formatter.field("replication_servers_security_groups_i_ds", &self.replication_servers_security_groups_i_ds);
+        formatter.field("replication_servers_security_groups_ids", &self.replication_servers_security_groups_ids);
         formatter.field("replication_server_instance_type", &self.replication_server_instance_type);
         formatter.field("use_dedicated_replication_server", &self.use_dedicated_replication_server);
         formatter.field("default_large_staging_disk_type", &self.default_large_staging_disk_type);
@@ -146,7 +150,7 @@ pub struct UpdateReplicationConfigurationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) staging_area_subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) associate_default_security_group: ::std::option::Option<bool>,
-    pub(crate) replication_servers_security_groups_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) replication_servers_security_groups_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) replication_server_instance_type: ::std::option::Option<::std::string::String>,
     pub(crate) use_dedicated_replication_server: ::std::option::Option<bool>,
     pub(crate) default_large_staging_disk_type: ::std::option::Option<crate::types::ReplicationConfigurationDefaultLargeStagingDiskType>,
@@ -162,6 +166,7 @@ pub struct UpdateReplicationConfigurationInputBuilder {
 }
 impl UpdateReplicationConfigurationInputBuilder {
     /// <p>Update replication configuration Source Server ID request.</p>
+    /// This field is required.
     pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
@@ -217,25 +222,25 @@ impl UpdateReplicationConfigurationInputBuilder {
     pub fn get_associate_default_security_group(&self) -> &::std::option::Option<bool> {
         &self.associate_default_security_group
     }
-    /// Appends an item to `replication_servers_security_groups_i_ds`.
+    /// Appends an item to `replication_servers_security_groups_ids`.
     ///
-    /// To override the contents of this collection use [`set_replication_servers_security_groups_i_ds`](Self::set_replication_servers_security_groups_i_ds).
+    /// To override the contents of this collection use [`set_replication_servers_security_groups_ids`](Self::set_replication_servers_security_groups_ids).
     ///
     /// <p>Update replication configuration Replication Server Security Groups IDs request.</p>
-    pub fn replication_servers_security_groups_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.replication_servers_security_groups_i_ds.unwrap_or_default();
+    pub fn replication_servers_security_groups_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.replication_servers_security_groups_ids.unwrap_or_default();
         v.push(input.into());
-        self.replication_servers_security_groups_i_ds = ::std::option::Option::Some(v);
+        self.replication_servers_security_groups_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>Update replication configuration Replication Server Security Groups IDs request.</p>
-    pub fn set_replication_servers_security_groups_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.replication_servers_security_groups_i_ds = input;
+    pub fn set_replication_servers_security_groups_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.replication_servers_security_groups_ids = input;
         self
     }
     /// <p>Update replication configuration Replication Server Security Groups IDs request.</p>
-    pub fn get_replication_servers_security_groups_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.replication_servers_security_groups_i_ds
+    pub fn get_replication_servers_security_groups_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.replication_servers_security_groups_ids
     }
     /// <p>Update replication configuration Replication Server instance type request.</p>
     pub fn replication_server_instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -435,21 +440,21 @@ impl UpdateReplicationConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_replication_configuration::UpdateReplicationConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_replication_configuration::UpdateReplicationConfigurationInput {
             source_server_id: self.source_server_id,
             name: self.name,
             staging_area_subnet_id: self.staging_area_subnet_id,
             associate_default_security_group: self.associate_default_security_group,
-            replication_servers_security_groups_i_ds: self.replication_servers_security_groups_i_ds,
+            replication_servers_security_groups_ids: self.replication_servers_security_groups_ids,
             replication_server_instance_type: self.replication_server_instance_type,
             use_dedicated_replication_server: self.use_dedicated_replication_server,
             default_large_staging_disk_type: self.default_large_staging_disk_type,
             replicated_disks: self.replicated_disks,
             ebs_encryption: self.ebs_encryption,
             ebs_encryption_key_arn: self.ebs_encryption_key_arn,
-            bandwidth_throttling: self.bandwidth_throttling.unwrap_or_default(),
+            bandwidth_throttling: self.bandwidth_throttling,
             data_plane_routing: self.data_plane_routing,
             create_public_ip: self.create_public_ip,
             staging_area_tags: self.staging_area_tags,
@@ -465,7 +470,7 @@ impl ::std::fmt::Debug for UpdateReplicationConfigurationInputBuilder {
         formatter.field("name", &self.name);
         formatter.field("staging_area_subnet_id", &self.staging_area_subnet_id);
         formatter.field("associate_default_security_group", &self.associate_default_security_group);
-        formatter.field("replication_servers_security_groups_i_ds", &self.replication_servers_security_groups_i_ds);
+        formatter.field("replication_servers_security_groups_ids", &self.replication_servers_security_groups_ids);
         formatter.field("replication_server_instance_type", &self.replication_server_instance_type);
         formatter.field("use_dedicated_replication_server", &self.use_dedicated_replication_server);
         formatter.field("default_large_staging_disk_type", &self.default_large_staging_disk_type);

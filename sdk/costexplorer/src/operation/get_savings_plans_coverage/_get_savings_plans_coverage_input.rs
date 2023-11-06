@@ -46,8 +46,10 @@ impl GetSavingsPlansCoverageInput {
         self.time_period.as_ref()
     }
     /// <p>You can group the data using the attributes <code>INSTANCE_FAMILY</code>, <code>REGION</code>, or <code>SERVICE</code>.</p>
-    pub fn group_by(&self) -> ::std::option::Option<&[crate::types::GroupDefinition]> {
-        self.group_by.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_by.is_none()`.
+    pub fn group_by(&self) -> &[crate::types::GroupDefinition] {
+        self.group_by.as_deref().unwrap_or_default()
     }
     /// <p>The granularity of the Amazon Web Services cost data for your Savings Plans. <code>Granularity</code> can't be set if <code>GroupBy</code> is set.</p>
     /// <p>The <code>GetSavingsPlansCoverage</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
@@ -67,8 +69,10 @@ impl GetSavingsPlansCoverageInput {
         self.filter.as_ref()
     }
     /// <p>The measurement that you want your Savings Plans coverage reported in. The only valid value is <code>SpendCoveredBySavingsPlans</code>.</p>
-    pub fn metrics(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metrics.is_none()`.
+    pub fn metrics(&self) -> &[::std::string::String] {
+        self.metrics.as_deref().unwrap_or_default()
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -116,6 +120,7 @@ pub struct GetSavingsPlansCoverageInputBuilder {
 }
 impl GetSavingsPlansCoverageInputBuilder {
     /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
+    /// This field is required.
     pub fn time_period(mut self, input: crate::types::DateInterval) -> Self {
         self.time_period = ::std::option::Option::Some(input);
         self
@@ -304,7 +309,7 @@ impl GetSavingsPlansCoverageInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageInput {
             time_period: self.time_period,

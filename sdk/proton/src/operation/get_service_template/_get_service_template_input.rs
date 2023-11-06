@@ -27,6 +27,7 @@ pub struct GetServiceTemplateInputBuilder {
 }
 impl GetServiceTemplateInputBuilder {
     /// <p>The name of the service template that you want to get detailed data for.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,8 @@ impl GetServiceTemplateInputBuilder {
     /// Consumes the builder and constructs a [`GetServiceTemplateInput`](crate::operation::get_service_template::GetServiceTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_service_template::GetServiceTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_service_template::GetServiceTemplateInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_service_template::GetServiceTemplateInput { name: self.name })
     }
 }

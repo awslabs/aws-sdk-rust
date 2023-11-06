@@ -2,7 +2,7 @@
 pub fn ser_aws_guard_duty_detector_data_sources_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsGuardDutyDetectorDataSourcesDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cloud_trail {
         #[allow(unused_mut)]
         let mut object_2 = object.key("CloudTrail").start_object();

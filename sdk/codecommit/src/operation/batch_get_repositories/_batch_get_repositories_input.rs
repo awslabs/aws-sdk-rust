@@ -13,8 +13,10 @@ impl BatchGetRepositoriesInput {
     /// <p>The names of the repositories to get information about.</p> <note>
     /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>
     /// </note>
-    pub fn repository_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.repository_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.repository_names.is_none()`.
+    pub fn repository_names(&self) -> &[::std::string::String] {
+        self.repository_names.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetRepositoriesInput {
@@ -60,7 +62,7 @@ impl BatchGetRepositoriesInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetRepositoriesInput`](crate::operation::batch_get_repositories::BatchGetRepositoriesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_get_repositories::BatchGetRepositoriesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_get_repositories::BatchGetRepositoriesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_get_repositories::BatchGetRepositoriesInput {
             repository_names: self.repository_names,

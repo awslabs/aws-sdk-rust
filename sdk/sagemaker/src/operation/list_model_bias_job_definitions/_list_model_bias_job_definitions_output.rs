@@ -11,8 +11,10 @@ pub struct ListModelBiasJobDefinitionsOutput {
 }
 impl ListModelBiasJobDefinitionsOutput {
     /// <p>A JSON array in which each element is a summary for a model bias jobs.</p>
-    pub fn job_definition_summaries(&self) -> ::std::option::Option<&[crate::types::MonitoringJobDefinitionSummary]> {
-        self.job_definition_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_definition_summaries.is_none()`.
+    pub fn job_definition_summaries(&self) -> &[crate::types::MonitoringJobDefinitionSummary] {
+        self.job_definition_summaries.as_deref().unwrap_or_default()
     }
     /// <p>The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

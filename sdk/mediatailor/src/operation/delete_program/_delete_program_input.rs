@@ -34,6 +34,7 @@ pub struct DeleteProgramInputBuilder {
 }
 impl DeleteProgramInputBuilder {
     /// <p>The name of the channel.</p>
+    /// This field is required.
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteProgramInputBuilder {
         &self.channel_name
     }
     /// <p>The name of the program.</p>
+    /// This field is required.
     pub fn program_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.program_name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DeleteProgramInputBuilder {
     /// Consumes the builder and constructs a [`DeleteProgramInput`](crate::operation::delete_program::DeleteProgramInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_program::DeleteProgramInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_program::DeleteProgramInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_program::DeleteProgramInput {
             channel_name: self.channel_name,
             program_name: self.program_name,

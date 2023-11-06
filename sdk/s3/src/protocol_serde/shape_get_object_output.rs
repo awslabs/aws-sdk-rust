@@ -7,11 +7,11 @@ pub(crate) fn de_accept_ranges_header(
 }
 
 pub fn de_body_payload(
-    body: &mut ::aws_smithy_http::body::SdkBody,
-) -> std::result::Result<::aws_smithy_http::byte_stream::ByteStream, crate::operation::get_object::GetObjectError> {
+    body: &mut ::aws_smithy_types::body::SdkBody,
+) -> std::result::Result<::aws_smithy_types::byte_stream::ByteStream, crate::operation::get_object::GetObjectError> {
     // replace the body with an empty body
-    let body = std::mem::replace(body, ::aws_smithy_http::body::SdkBody::taken());
-    Ok(::aws_smithy_http::byte_stream::ByteStream::new(body))
+    let body = std::mem::replace(body, ::aws_smithy_types::body::SdkBody::taken());
+    Ok(::aws_smithy_types::byte_stream::ByteStream::new(body))
 }
 
 pub(crate) fn de_bucket_key_enabled_header(

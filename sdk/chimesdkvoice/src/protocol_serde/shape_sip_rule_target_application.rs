@@ -2,7 +2,7 @@
 pub fn ser_sip_rule_target_application(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SipRuleTargetApplication,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.sip_media_application_id {
         object.key("SipMediaApplicationId").string(var_1.as_str());
     }

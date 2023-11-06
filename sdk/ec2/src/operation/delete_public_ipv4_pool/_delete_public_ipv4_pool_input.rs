@@ -48,6 +48,7 @@ impl DeletePublicIpv4PoolInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the public IPv4 pool you want to delete.</p>
+    /// This field is required.
     pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pool_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl DeletePublicIpv4PoolInputBuilder {
     /// Consumes the builder and constructs a [`DeletePublicIpv4PoolInput`](crate::operation::delete_public_ipv4_pool::DeletePublicIpv4PoolInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_public_ipv4_pool::DeletePublicIpv4PoolInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_public_ipv4_pool::DeletePublicIpv4PoolInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_public_ipv4_pool::DeletePublicIpv4PoolInput {
             dry_run: self.dry_run,

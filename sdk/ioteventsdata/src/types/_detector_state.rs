@@ -5,24 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectorState {
     /// <p>The name of the state.</p>
-    pub state_name: ::std::option::Option<::std::string::String>,
+    pub state_name: ::std::string::String,
     /// <p>The current values of the detector's variables.</p>
-    pub variables: ::std::option::Option<::std::vec::Vec<crate::types::Variable>>,
+    pub variables: ::std::vec::Vec<crate::types::Variable>,
     /// <p>The current state of the detector's timers.</p>
-    pub timers: ::std::option::Option<::std::vec::Vec<crate::types::Timer>>,
+    pub timers: ::std::vec::Vec<crate::types::Timer>,
 }
 impl DetectorState {
     /// <p>The name of the state.</p>
-    pub fn state_name(&self) -> ::std::option::Option<&str> {
-        self.state_name.as_deref()
+    pub fn state_name(&self) -> &str {
+        use std::ops::Deref;
+        self.state_name.deref()
     }
     /// <p>The current values of the detector's variables.</p>
-    pub fn variables(&self) -> ::std::option::Option<&[crate::types::Variable]> {
-        self.variables.as_deref()
+    pub fn variables(&self) -> &[crate::types::Variable] {
+        use std::ops::Deref;
+        self.variables.deref()
     }
     /// <p>The current state of the detector's timers.</p>
-    pub fn timers(&self) -> ::std::option::Option<&[crate::types::Timer]> {
-        self.timers.as_deref()
+    pub fn timers(&self) -> &[crate::types::Timer] {
+        use std::ops::Deref;
+        self.timers.deref()
     }
 }
 impl DetectorState {
@@ -42,6 +45,7 @@ pub struct DetectorStateBuilder {
 }
 impl DetectorStateBuilder {
     /// <p>The name of the state.</p>
+    /// This field is required.
     pub fn state_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_name = ::std::option::Option::Some(input.into());
         self
@@ -96,11 +100,30 @@ impl DetectorStateBuilder {
         &self.timers
     }
     /// Consumes the builder and constructs a [`DetectorState`](crate::types::DetectorState).
-    pub fn build(self) -> crate::types::DetectorState {
-        crate::types::DetectorState {
-            state_name: self.state_name,
-            variables: self.variables,
-            timers: self.timers,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`state_name`](crate::types::builders::DetectorStateBuilder::state_name)
+    /// - [`variables`](crate::types::builders::DetectorStateBuilder::variables)
+    /// - [`timers`](crate::types::builders::DetectorStateBuilder::timers)
+    pub fn build(self) -> ::std::result::Result<crate::types::DetectorState, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DetectorState {
+            state_name: self.state_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "state_name",
+                    "state_name was not specified but it is required when building DetectorState",
+                )
+            })?,
+            variables: self.variables.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "variables",
+                    "variables was not specified but it is required when building DetectorState",
+                )
+            })?,
+            timers: self.timers.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "timers",
+                    "timers was not specified but it is required when building DetectorState",
+                )
+            })?,
+        })
     }
 }

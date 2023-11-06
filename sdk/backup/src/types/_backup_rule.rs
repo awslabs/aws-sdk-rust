@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct BackupRule {
     /// <p>A display name for a backup rule. Must contain 1 to 50 alphanumeric or '-_.' characters.</p>
-    pub rule_name: ::std::option::Option<::std::string::String>,
+    pub rule_name: ::std::string::String,
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub target_backup_vault_name: ::std::option::Option<::std::string::String>,
+    pub target_backup_vault_name: ::std::string::String,
     /// <p>A cron expression in UTC specifying when Backup initiates a backup job. For more information about Amazon Web Services cron expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide.</i>. Two examples of Amazon Web Services cron expressions are <code> 15 * ? * * *</code> (take a backup every hour at 15 minutes past the hour) and <code>0 12 * * ? *</code> (take a backup every day at 12 noon UTC). For a table of examples, click the preceding link and scroll down the page.</p>
     pub schedule_expression: ::std::option::Option<::std::string::String>,
     /// <p>A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully. This value is optional. If this value is included, it must be at least 60 minutes to avoid errors.</p>
@@ -32,12 +32,14 @@ pub struct BackupRule {
 }
 impl BackupRule {
     /// <p>A display name for a backup rule. Must contain 1 to 50 alphanumeric or '-_.' characters.</p>
-    pub fn rule_name(&self) -> ::std::option::Option<&str> {
-        self.rule_name.as_deref()
+    pub fn rule_name(&self) -> &str {
+        use std::ops::Deref;
+        self.rule_name.deref()
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn target_backup_vault_name(&self) -> ::std::option::Option<&str> {
-        self.target_backup_vault_name.as_deref()
+    pub fn target_backup_vault_name(&self) -> &str {
+        use std::ops::Deref;
+        self.target_backup_vault_name.deref()
     }
     /// <p>A cron expression in UTC specifying when Backup initiates a backup job. For more information about Amazon Web Services cron expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide.</i>. Two examples of Amazon Web Services cron expressions are <code> 15 * ? * * *</code> (take a backup every hour at 15 minutes past the hour) and <code>0 12 * * ? *</code> (take a backup every day at 12 noon UTC). For a table of examples, click the preceding link and scroll down the page.</p>
     pub fn schedule_expression(&self) -> ::std::option::Option<&str> {
@@ -67,8 +69,10 @@ impl BackupRule {
         self.rule_id.as_deref()
     }
     /// <p>An array of <code>CopyAction</code> objects, which contains the details of the copy operation.</p>
-    pub fn copy_actions(&self) -> ::std::option::Option<&[crate::types::CopyAction]> {
-        self.copy_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.copy_actions.is_none()`.
+    pub fn copy_actions(&self) -> &[crate::types::CopyAction] {
+        self.copy_actions.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether Backup creates continuous backups. True causes Backup to create continuous backups capable of point-in-time restore (PITR). False (or not specified) causes Backup to create snapshot backups.</p>
     pub fn enable_continuous_backup(&self) -> ::std::option::Option<bool> {
@@ -121,6 +125,7 @@ pub struct BackupRuleBuilder {
 }
 impl BackupRuleBuilder {
     /// <p>A display name for a backup rule. Must contain 1 to 50 alphanumeric or '-_.' characters.</p>
+    /// This field is required.
     pub fn rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_name = ::std::option::Option::Some(input.into());
         self
@@ -135,6 +140,7 @@ impl BackupRuleBuilder {
         &self.rule_name
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    /// This field is required.
     pub fn target_backup_vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_backup_vault_name = ::std::option::Option::Some(input.into());
         self
@@ -303,10 +309,23 @@ impl BackupRuleBuilder {
         &self.schedule_expression_timezone
     }
     /// Consumes the builder and constructs a [`BackupRule`](crate::types::BackupRule).
-    pub fn build(self) -> crate::types::BackupRule {
-        crate::types::BackupRule {
-            rule_name: self.rule_name,
-            target_backup_vault_name: self.target_backup_vault_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`rule_name`](crate::types::builders::BackupRuleBuilder::rule_name)
+    /// - [`target_backup_vault_name`](crate::types::builders::BackupRuleBuilder::target_backup_vault_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::BackupRule, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::BackupRule {
+            rule_name: self.rule_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "rule_name",
+                    "rule_name was not specified but it is required when building BackupRule",
+                )
+            })?,
+            target_backup_vault_name: self.target_backup_vault_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "target_backup_vault_name",
+                    "target_backup_vault_name was not specified but it is required when building BackupRule",
+                )
+            })?,
             schedule_expression: self.schedule_expression,
             start_window_minutes: self.start_window_minutes,
             completion_window_minutes: self.completion_window_minutes,
@@ -316,7 +335,7 @@ impl BackupRuleBuilder {
             copy_actions: self.copy_actions,
             enable_continuous_backup: self.enable_continuous_backup,
             schedule_expression_timezone: self.schedule_expression_timezone,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for BackupRuleBuilder {

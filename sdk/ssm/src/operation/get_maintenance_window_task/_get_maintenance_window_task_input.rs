@@ -34,6 +34,7 @@ pub struct GetMaintenanceWindowTaskInputBuilder {
 }
 impl GetMaintenanceWindowTaskInputBuilder {
     /// <p>The maintenance window ID that includes the task to retrieve.</p>
+    /// This field is required.
     pub fn window_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.window_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetMaintenanceWindowTaskInputBuilder {
         &self.window_id
     }
     /// <p>The maintenance window task ID to retrieve.</p>
+    /// This field is required.
     pub fn window_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.window_task_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl GetMaintenanceWindowTaskInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_maintenance_window_task::GetMaintenanceWindowTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_maintenance_window_task::GetMaintenanceWindowTaskInput {
             window_id: self.window_id,

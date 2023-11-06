@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteInstanceProfile`](crate::operation::delete_instance_profile::builders::DeleteInstanceProfileFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_profile_identifier(impl Into<String>)`](crate::operation::delete_instance_profile::builders::DeleteInstanceProfileFluentBuilder::instance_profile_identifier) / [`set_instance_profile_identifier(Option<String>)`](crate::operation::delete_instance_profile::builders::DeleteInstanceProfileFluentBuilder::set_instance_profile_identifier): <p>The identifier of the instance profile to delete.</p>
+    ///   - [`instance_profile_identifier(impl Into<String>)`](crate::operation::delete_instance_profile::builders::DeleteInstanceProfileFluentBuilder::instance_profile_identifier) / [`set_instance_profile_identifier(Option<String>)`](crate::operation::delete_instance_profile::builders::DeleteInstanceProfileFluentBuilder::set_instance_profile_identifier):<br>required: **true**<br><p>The identifier of the instance profile to delete.</p><br>
     /// - On success, responds with [`DeleteInstanceProfileOutput`](crate::operation::delete_instance_profile::DeleteInstanceProfileOutput) with field(s):
     ///   - [`instance_profile(Option<InstanceProfile>)`](crate::operation::delete_instance_profile::DeleteInstanceProfileOutput::instance_profile): <p>The instance profile that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteInstanceProfileError>`](crate::operation::delete_instance_profile::DeleteInstanceProfileError)

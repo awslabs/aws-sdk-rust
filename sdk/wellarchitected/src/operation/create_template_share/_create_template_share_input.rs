@@ -47,6 +47,7 @@ pub struct CreateTemplateShareInputBuilder {
 }
 impl CreateTemplateShareInputBuilder {
     /// <p>The review template ARN.</p>
+    /// This field is required.
     pub fn template_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_arn = ::std::option::Option::Some(input.into());
         self
@@ -61,6 +62,7 @@ impl CreateTemplateShareInputBuilder {
         &self.template_arn
     }
     /// <p>The Amazon Web Services account ID, organization ID, or organizational unit (OU) ID with which the workload, lens, profile, or review template is shared.</p>
+    /// This field is required.
     pub fn shared_with(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shared_with = ::std::option::Option::Some(input.into());
         self
@@ -78,6 +80,7 @@ impl CreateTemplateShareInputBuilder {
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
+    /// This field is required.
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
@@ -100,7 +103,7 @@ impl CreateTemplateShareInputBuilder {
     /// Consumes the builder and constructs a [`CreateTemplateShareInput`](crate::operation::create_template_share::CreateTemplateShareInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_template_share::CreateTemplateShareInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_template_share::CreateTemplateShareInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_template_share::CreateTemplateShareInput {
             template_arn: self.template_arn,

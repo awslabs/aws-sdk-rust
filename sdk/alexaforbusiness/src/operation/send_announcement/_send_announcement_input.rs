@@ -14,8 +14,10 @@ pub struct SendAnnouncementInput {
 }
 impl SendAnnouncementInput {
     /// <p>The filters to use to send an announcement to a specified list of rooms. The supported filter keys are RoomName, ProfileName, RoomArn, and ProfileArn. To send to all rooms, specify an empty RoomFilters list.</p>
-    pub fn room_filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.room_filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.room_filters.is_none()`.
+    pub fn room_filters(&self) -> &[crate::types::Filter] {
+        self.room_filters.as_deref().unwrap_or_default()
     }
     /// <p>The announcement content. This can contain only one of the three possible announcement types (text, SSML or audio).</p>
     pub fn content(&self) -> ::std::option::Option<&crate::types::Content> {
@@ -68,6 +70,7 @@ impl SendAnnouncementInputBuilder {
         &self.room_filters
     }
     /// <p>The announcement content. This can contain only one of the three possible announcement types (text, SSML or audio).</p>
+    /// This field is required.
     pub fn content(mut self, input: crate::types::Content) -> Self {
         self.content = ::std::option::Option::Some(input);
         self
@@ -96,6 +99,7 @@ impl SendAnnouncementInputBuilder {
         &self.time_to_live_in_seconds
     }
     /// <p>The unique, user-specified identifier for the request that ensures idempotency.</p>
+    /// This field is required.
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
@@ -112,7 +116,7 @@ impl SendAnnouncementInputBuilder {
     /// Consumes the builder and constructs a [`SendAnnouncementInput`](crate::operation::send_announcement::SendAnnouncementInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::send_announcement::SendAnnouncementInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::send_announcement::SendAnnouncementInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_announcement::SendAnnouncementInput {
             room_filters: self.room_filters,
             content: self.content,

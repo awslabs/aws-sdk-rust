@@ -14,9 +14,9 @@ pub struct Payload {
     /// .
     /// <path-to-datum></path-to-datum>
     /// </input-name></code>), string concatenations, and quoted strings that contain <code>${}</code> as the content. The recommended maximum size of a content expression is 1 KB.</p>
-    pub content_expression: ::std::option::Option<::std::string::String>,
+    pub content_expression: ::std::string::String,
     /// <p>The value of the payload type can be either <code>STRING</code> or <code>JSON</code>.</p>
-    pub r#type: ::std::option::Option<crate::types::PayloadType>,
+    pub r#type: crate::types::PayloadType,
 }
 impl Payload {
     /// <p>The content of the payload. You can use a string expression that includes quoted strings (<code>'
@@ -28,12 +28,13 @@ impl Payload {
     /// .
     /// <path-to-datum></path-to-datum>
     /// </input-name></code>), string concatenations, and quoted strings that contain <code>${}</code> as the content. The recommended maximum size of a content expression is 1 KB.</p>
-    pub fn content_expression(&self) -> ::std::option::Option<&str> {
-        self.content_expression.as_deref()
+    pub fn content_expression(&self) -> &str {
+        use std::ops::Deref;
+        self.content_expression.deref()
     }
     /// <p>The value of the payload type can be either <code>STRING</code> or <code>JSON</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::PayloadType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::PayloadType {
+        &self.r#type
     }
 }
 impl Payload {
@@ -60,6 +61,7 @@ impl PayloadBuilder {
     /// .
     /// <path-to-datum></path-to-datum>
     /// </input-name></code>), string concatenations, and quoted strings that contain <code>${}</code> as the content. The recommended maximum size of a content expression is 1 KB.</p>
+    /// This field is required.
     pub fn content_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_expression = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +92,7 @@ impl PayloadBuilder {
         &self.content_expression
     }
     /// <p>The value of the payload type can be either <code>STRING</code> or <code>JSON</code>.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::PayloadType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -104,10 +107,23 @@ impl PayloadBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`Payload`](crate::types::Payload).
-    pub fn build(self) -> crate::types::Payload {
-        crate::types::Payload {
-            content_expression: self.content_expression,
-            r#type: self.r#type,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`content_expression`](crate::types::builders::PayloadBuilder::content_expression)
+    /// - [`r#type`](crate::types::builders::PayloadBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::Payload, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Payload {
+            content_expression: self.content_expression.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "content_expression",
+                    "content_expression was not specified but it is required when building Payload",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building Payload",
+                )
+            })?,
+        })
     }
 }

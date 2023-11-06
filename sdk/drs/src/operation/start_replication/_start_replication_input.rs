@@ -27,6 +27,7 @@ pub struct StartReplicationInputBuilder {
 }
 impl StartReplicationInputBuilder {
     /// <p>The ID of the Source Server to start replication for.</p>
+    /// This field is required.
     pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl StartReplicationInputBuilder {
     /// Consumes the builder and constructs a [`StartReplicationInput`](crate::operation::start_replication::StartReplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_replication::StartReplicationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_replication::StartReplicationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_replication::StartReplicationInput {
             source_server_id: self.source_server_id,
         })

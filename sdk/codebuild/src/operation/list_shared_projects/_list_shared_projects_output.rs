@@ -15,8 +15,10 @@ impl ListSharedProjectsOutput {
         self.next_token.as_deref()
     }
     /// <p> The list of ARNs for the build projects shared with the current Amazon Web Services account or user. </p>
-    pub fn projects(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.projects.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.projects.is_none()`.
+    pub fn projects(&self) -> &[::std::string::String] {
+        self.projects.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListSharedProjectsOutput {

@@ -64,7 +64,7 @@ impl ListAccessTokensInputBuilder {
     /// Consumes the builder and constructs a [`ListAccessTokensInput`](crate::operation::list_access_tokens::ListAccessTokensInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_access_tokens::ListAccessTokensInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_access_tokens::ListAccessTokensInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_access_tokens::ListAccessTokensInput {
             max_results: self.max_results,
             next_token: self.next_token,

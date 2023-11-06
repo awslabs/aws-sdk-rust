@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeCompanyNetworkConfiguration`](crate::operation::describe_company_network_configuration::builders::DescribeCompanyNetworkConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`fleet_arn(impl Into<String>)`](crate::operation::describe_company_network_configuration::builders::DescribeCompanyNetworkConfigurationFluentBuilder::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::operation::describe_company_network_configuration::builders::DescribeCompanyNetworkConfigurationFluentBuilder::set_fleet_arn): <p>The ARN of the fleet.</p>
+    ///   - [`fleet_arn(impl Into<String>)`](crate::operation::describe_company_network_configuration::builders::DescribeCompanyNetworkConfigurationFluentBuilder::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::operation::describe_company_network_configuration::builders::DescribeCompanyNetworkConfigurationFluentBuilder::set_fleet_arn):<br>required: **true**<br><p>The ARN of the fleet.</p><br>
     /// - On success, responds with [`DescribeCompanyNetworkConfigurationOutput`](crate::operation::describe_company_network_configuration::DescribeCompanyNetworkConfigurationOutput) with field(s):
     ///   - [`vpc_id(Option<String>)`](crate::operation::describe_company_network_configuration::DescribeCompanyNetworkConfigurationOutput::vpc_id): <p>The VPC with connectivity to associated websites.</p>
-    ///   - [`subnet_ids(Option<Vec<String>>)`](crate::operation::describe_company_network_configuration::DescribeCompanyNetworkConfigurationOutput::subnet_ids): <p>The subnets used for X-ENI connections from Amazon WorkLink rendering containers.</p>
-    ///   - [`security_group_ids(Option<Vec<String>>)`](crate::operation::describe_company_network_configuration::DescribeCompanyNetworkConfigurationOutput::security_group_ids): <p>The security groups associated with access to the provided subnets.</p>
+    ///   - [`subnet_ids(Option<Vec::<String>>)`](crate::operation::describe_company_network_configuration::DescribeCompanyNetworkConfigurationOutput::subnet_ids): <p>The subnets used for X-ENI connections from Amazon WorkLink rendering containers.</p>
+    ///   - [`security_group_ids(Option<Vec::<String>>)`](crate::operation::describe_company_network_configuration::DescribeCompanyNetworkConfigurationOutput::security_group_ids): <p>The security groups associated with access to the provided subnets.</p>
     /// - On failure, responds with [`SdkError<DescribeCompanyNetworkConfigurationError>`](crate::operation::describe_company_network_configuration::DescribeCompanyNetworkConfigurationError)
     #[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
     pub fn describe_company_network_configuration(

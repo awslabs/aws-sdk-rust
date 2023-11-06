@@ -11,8 +11,10 @@ pub struct ListMonitoringAlertsOutput {
 }
 impl ListMonitoringAlertsOutput {
     /// <p>A JSON array where each element is a summary for a monitoring alert.</p>
-    pub fn monitoring_alert_summaries(&self) -> ::std::option::Option<&[crate::types::MonitoringAlertSummary]> {
-        self.monitoring_alert_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.monitoring_alert_summaries.is_none()`.
+    pub fn monitoring_alert_summaries(&self) -> &[crate::types::MonitoringAlertSummary] {
+        self.monitoring_alert_summaries.as_deref().unwrap_or_default()
     }
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of alerts, use it in the subsequent request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

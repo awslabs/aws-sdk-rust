@@ -55,6 +55,7 @@ pub struct UpdateReportDefinitionInputBuilder {
 }
 impl UpdateReportDefinitionInputBuilder {
     /// <p>Required. ID of the report to update.</p>
+    /// This field is required.
     pub fn report_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.report_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl UpdateReportDefinitionInputBuilder {
         &self.report_id
     }
     /// <p>Required. Description of the report.</p>
+    /// This field is required.
     pub fn report_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.report_description = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +85,7 @@ impl UpdateReportDefinitionInputBuilder {
         &self.report_description
     }
     /// <p>Required. The cadence to generate the report.</p>
+    /// This field is required.
     pub fn report_frequency(mut self, input: crate::types::ReportFrequency) -> Self {
         self.report_frequency = ::std::option::Option::Some(input);
         self
@@ -97,6 +100,7 @@ impl UpdateReportDefinitionInputBuilder {
         &self.report_frequency
     }
     /// <p>Required. The format to use for the generated report.</p>
+    /// This field is required.
     pub fn format(mut self, input: crate::types::Format) -> Self {
         self.format = ::std::option::Option::Some(input);
         self
@@ -111,6 +115,7 @@ impl UpdateReportDefinitionInputBuilder {
         &self.format
     }
     /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the report.</p>
+    /// This field is required.
     pub fn destination_s3_location(mut self, input: crate::types::S3Location) -> Self {
         self.destination_s3_location = ::std::option::Option::Some(input);
         self
@@ -127,8 +132,10 @@ impl UpdateReportDefinitionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateReportDefinitionInput`](crate::operation::update_report_definition::UpdateReportDefinitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_report_definition::UpdateReportDefinitionInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::update_report_definition::UpdateReportDefinitionInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::update_report_definition::UpdateReportDefinitionInput {
             report_id: self.report_id,
             report_description: self.report_description,

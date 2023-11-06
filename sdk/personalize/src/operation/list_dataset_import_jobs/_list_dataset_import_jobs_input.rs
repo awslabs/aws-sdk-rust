@@ -85,7 +85,7 @@ impl ListDatasetImportJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListDatasetImportJobsInput`](crate::operation::list_dataset_import_jobs::ListDatasetImportJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_dataset_import_jobs::ListDatasetImportJobsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_dataset_import_jobs::ListDatasetImportJobsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_dataset_import_jobs::ListDatasetImportJobsInput {
             dataset_arn: self.dataset_arn,

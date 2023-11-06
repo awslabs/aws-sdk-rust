@@ -9,17 +9,20 @@
 //!
 //! This module contains an shared configuration representation that is agnostic from a specific service.
 
-use aws_credential_types::cache::CredentialsCache;
-use aws_credential_types::provider::SharedCredentialsProvider;
-use aws_smithy_async::rt::sleep::SharedAsyncSleep;
-use aws_smithy_async::time::{SharedTimeSource, TimeSource};
-use aws_smithy_client::http_connector::HttpConnector;
-use aws_smithy_types::retry::RetryConfig;
-use aws_smithy_types::timeout::TimeoutConfig;
-
 use crate::app_name::AppName;
 use crate::docs_for;
 use crate::region::Region;
+
+pub use aws_credential_types::provider::SharedCredentialsProvider;
+use aws_smithy_async::rt::sleep::AsyncSleep;
+pub use aws_smithy_async::rt::sleep::SharedAsyncSleep;
+pub use aws_smithy_async::time::{SharedTimeSource, TimeSource};
+use aws_smithy_runtime_api::client::http::HttpClient;
+pub use aws_smithy_runtime_api::client::http::SharedHttpClient;
+use aws_smithy_runtime_api::client::identity::{ResolveCachedIdentity, SharedIdentityCache};
+use aws_smithy_runtime_api::shared::IntoShared;
+pub use aws_smithy_types::retry::RetryConfig;
+pub use aws_smithy_types::timeout::TimeoutConfig;
 
 #[doc(hidden)]
 /// Unified docstrings to keep crates in sync. Not intended for public use
@@ -48,7 +51,7 @@ these services, this setting has no effect"
 #[derive(Debug, Clone)]
 pub struct SdkConfig {
     app_name: Option<AppName>,
-    credentials_cache: Option<CredentialsCache>,
+    identity_cache: Option<SharedIdentityCache>,
     credentials_provider: Option<SharedCredentialsProvider>,
     region: Option<Region>,
     endpoint_url: Option<String>,
@@ -56,7 +59,7 @@ pub struct SdkConfig {
     sleep_impl: Option<SharedAsyncSleep>,
     time_source: Option<SharedTimeSource>,
     timeout_config: Option<TimeoutConfig>,
-    http_connector: Option<HttpConnector>,
+    http_client: Option<SharedHttpClient>,
     use_fips: Option<bool>,
     use_dual_stack: Option<bool>,
 }
@@ -69,7 +72,7 @@ pub struct SdkConfig {
 #[derive(Debug, Default)]
 pub struct Builder {
     app_name: Option<AppName>,
-    credentials_cache: Option<CredentialsCache>,
+    identity_cache: Option<SharedIdentityCache>,
     credentials_provider: Option<SharedCredentialsProvider>,
     region: Option<Region>,
     endpoint_url: Option<String>,
@@ -77,7 +80,7 @@ pub struct Builder {
     sleep_impl: Option<SharedAsyncSleep>,
     time_source: Option<SharedTimeSource>,
     timeout_config: Option<TimeoutConfig>,
-    http_connector: Option<HttpConnector>,
+    http_client: Option<SharedHttpClient>,
     use_fips: Option<bool>,
     use_dual_stack: Option<bool>,
 }
@@ -230,8 +233,9 @@ impl Builder {
         self
     }
 
-    /// Set the sleep implementation for the builder. The sleep implementation is used to create
-    /// timeout futures.
+    /// Set the sleep implementation for the builder.
+    ///
+    /// The sleep implementation is used to create timeout futures.
     ///
     /// _Note:_ If you're using the Tokio runtime, a `TokioSleep` implementation is available in
     /// the `aws-smithy-async` crate.
@@ -254,8 +258,8 @@ impl Builder {
     /// let sleep_impl = SharedAsyncSleep::new(ForeverSleep);
     /// let config = SdkConfig::builder().sleep_impl(sleep_impl).build();
     /// ```
-    pub fn sleep_impl(mut self, sleep_impl: SharedAsyncSleep) -> Self {
-        self.set_sleep_impl(Some(sleep_impl));
+    pub fn sleep_impl(mut self, sleep_impl: impl AsyncSleep + 'static) -> Self {
+        self.set_sleep_impl(Some(sleep_impl.into_shared()));
         self
     }
 
@@ -292,40 +296,64 @@ impl Builder {
         self
     }
 
-    /// Set the [`CredentialsCache`] for the builder
+    /// Set the identity cache for caching credentials and SSO tokens.
+    ///
+    /// The default identity cache will wait until the first request that requires authentication
+    /// to load an identity. Once the identity is loaded, it is cached until shortly before it
+    /// expires.
     ///
     /// # Examples
+    /// Disabling identity caching:
     /// ```rust
-    /// use aws_credential_types::cache::CredentialsCache;
-    /// use aws_types::SdkConfig;
+    /// # use aws_types::SdkConfig;
+    /// use aws_smithy_runtime::client::identity::IdentityCache;
     /// let config = SdkConfig::builder()
-    ///     .credentials_cache(CredentialsCache::lazy())
+    ///     .identity_cache(IdentityCache::no_cache())
     ///     .build();
     /// ```
-    pub fn credentials_cache(mut self, cache: CredentialsCache) -> Self {
-        self.set_credentials_cache(Some(cache));
+    /// Changing settings on the default cache implementation:
+    /// ```rust
+    /// # use aws_types::SdkConfig;
+    /// use aws_smithy_runtime::client::identity::IdentityCache;
+    /// use std::time::Duration;
+    ///
+    /// let config = SdkConfig::builder()
+    ///     .identity_cache(
+    ///         IdentityCache::lazy()
+    ///             .load_timeout(Duration::from_secs(10))
+    ///             .build()
+    ///     )
+    ///     .build();
+    /// ```
+    pub fn identity_cache(mut self, cache: impl ResolveCachedIdentity + 'static) -> Self {
+        self.set_identity_cache(Some(cache.into_shared()));
         self
     }
 
-    /// Set the [`CredentialsCache`] for the builder
+    /// Set the identity cache for caching credentials and SSO tokens.
+    ///
+    /// The default identity cache will wait until the first request that requires authentication
+    /// to load an identity. Once the identity is loaded, it is cached until shortly before it
+    /// expires.
     ///
     /// # Examples
     /// ```rust
-    /// use aws_credential_types::cache::CredentialsCache;
-    /// use aws_types::SdkConfig;
-    /// fn override_credentials_cache() -> bool {
+    /// # use aws_types::SdkConfig;
+    /// use aws_smithy_runtime::client::identity::IdentityCache;
+    ///
+    /// fn override_identity_cache() -> bool {
     ///   // ...
     ///   # true
     /// }
     ///
     /// let mut builder = SdkConfig::builder();
-    /// if override_credentials_cache() {
-    ///     builder.set_credentials_cache(Some(CredentialsCache::lazy()));
+    /// if override_identity_cache() {
+    ///     builder.set_identity_cache(Some(IdentityCache::lazy().build()));
     /// }
     /// let config = builder.build();
     /// ```
-    pub fn set_credentials_cache(&mut self, cache: Option<CredentialsCache>) -> &mut Self {
-        self.credentials_cache = cache;
+    pub fn set_identity_cache(&mut self, cache: Option<SharedIdentityCache>) -> &mut Self {
+        self.identity_cache = cache;
         self
     }
 
@@ -399,81 +427,76 @@ impl Builder {
         self
     }
 
-    /// Sets the HTTP connector to use when making requests.
+    /// Sets the HTTP client to use when making requests.
     ///
     /// ## Examples
     /// ```no_run
     /// # #[cfg(feature = "examples")]
     /// # fn example() {
+    /// use aws_types::sdk_config::{SdkConfig, TimeoutConfig};
+    /// use aws_smithy_runtime::client::http::hyper_014::HyperClientBuilder;
     /// use std::time::Duration;
-    /// use aws_smithy_client::{Client, hyper_ext};
-    /// use aws_smithy_client::erase::DynConnector;
-    /// use aws_smithy_client::http_connector::ConnectorSettings;
-    /// use aws_types::SdkConfig;
     ///
-    /// let https_connector = hyper_rustls::HttpsConnectorBuilder::new()
+    /// // Create a connector that will be used to establish TLS connections
+    /// let tls_connector = hyper_rustls::HttpsConnectorBuilder::new()
     ///     .with_webpki_roots()
     ///     .https_only()
     ///     .enable_http1()
     ///     .enable_http2()
     ///     .build();
-    /// let smithy_connector = hyper_ext::Adapter::builder()
-    ///     // Optionally set things like timeouts as well
-    ///     .connector_settings(
-    ///         ConnectorSettings::builder()
+    /// // Create a HTTP client that uses the TLS connector. This client is
+    /// // responsible for creating and caching a HttpConnector when given HttpConnectorSettings.
+    /// // This hyper client will create HttpConnectors backed by hyper and the tls_connector.
+    /// let http_client = HyperClientBuilder::new().build(tls_connector);
+    /// let sdk_config = SdkConfig::builder()
+    ///     .http_client(http_client)
+    ///     // Connect/read timeouts are passed to the HTTP client when servicing a request
+    ///     .timeout_config(
+    ///         TimeoutConfig::builder()
     ///             .connect_timeout(Duration::from_secs(5))
     ///             .build()
     ///     )
-    ///     .build(https_connector);
-    /// let sdk_config = SdkConfig::builder()
-    ///     .http_connector(smithy_connector)
     ///     .build();
     /// # }
     /// ```
-    pub fn http_connector(mut self, http_connector: impl Into<HttpConnector>) -> Self {
-        self.set_http_connector(Some(http_connector));
+    pub fn http_client(mut self, http_client: impl HttpClient + 'static) -> Self {
+        self.set_http_client(Some(http_client.into_shared()));
         self
     }
 
-    /// Sets the HTTP connector to use when making requests.
+    /// Sets the HTTP client to use when making requests.
     ///
     /// ## Examples
     /// ```no_run
     /// # #[cfg(feature = "examples")]
     /// # fn example() {
+    /// use aws_types::sdk_config::{Builder, SdkConfig, TimeoutConfig};
+    /// use aws_smithy_runtime::client::http::hyper_014::HyperClientBuilder;
     /// use std::time::Duration;
-    /// use aws_smithy_client::hyper_ext;
-    /// use aws_smithy_client::http_connector::ConnectorSettings;
-    /// use aws_types::sdk_config::{Builder, SdkConfig};
     ///
-    /// fn override_http_connector(builder: &mut Builder) {
-    ///     let https_connector = hyper_rustls::HttpsConnectorBuilder::new()
+    /// fn override_http_client(builder: &mut Builder) {
+    ///     // Create a connector that will be used to establish TLS connections
+    ///     let tls_connector = hyper_rustls::HttpsConnectorBuilder::new()
     ///         .with_webpki_roots()
     ///         .https_only()
     ///         .enable_http1()
     ///         .enable_http2()
     ///         .build();
-    ///     let smithy_connector = hyper_ext::Adapter::builder()
-    ///         // Optionally set things like timeouts as well
-    ///         .connector_settings(
-    ///             ConnectorSettings::builder()
-    ///                 .connect_timeout(Duration::from_secs(5))
-    ///                 .build()
-    ///         )
-    ///         .build(https_connector);
-    ///     builder.set_http_connector(Some(smithy_connector));
+    ///     // Create a HTTP client that uses the TLS connector. This client is
+    ///     // responsible for creating and caching a HttpConnector when given HttpConnectorSettings.
+    ///     // This hyper client will create HttpConnectors backed by hyper and the tls_connector.
+    ///     let http_client = HyperClientBuilder::new().build(tls_connector);
+    ///
+    ///     builder.set_http_client(Some(http_client));
     /// }
     ///
     /// let mut builder = SdkConfig::builder();
-    /// override_http_connector(&mut builder);
+    /// override_http_client(&mut builder);
     /// let config = builder.build();
     /// # }
     /// ```
-    pub fn set_http_connector(
-        &mut self,
-        http_connector: Option<impl Into<HttpConnector>>,
-    ) -> &mut Self {
-        self.http_connector = http_connector.map(|inner| inner.into());
+    pub fn set_http_client(&mut self, http_client: Option<SharedHttpClient>) -> &mut Self {
+        self.http_client = http_client;
         self
     }
 
@@ -517,14 +540,14 @@ impl Builder {
     pub fn build(self) -> SdkConfig {
         SdkConfig {
             app_name: self.app_name,
-            credentials_cache: self.credentials_cache,
+            identity_cache: self.identity_cache,
             credentials_provider: self.credentials_provider,
             region: self.region,
             endpoint_url: self.endpoint_url,
             retry_config: self.retry_config,
             sleep_impl: self.sleep_impl,
             timeout_config: self.timeout_config,
-            http_connector: self.http_connector,
+            http_client: self.http_client,
             use_fips: self.use_fips,
             use_dual_stack: self.use_dual_stack,
             time_source: self.time_source,
@@ -559,9 +582,9 @@ impl SdkConfig {
         self.sleep_impl.clone()
     }
 
-    /// Configured credentials cache
-    pub fn credentials_cache(&self) -> Option<&CredentialsCache> {
-        self.credentials_cache.as_ref()
+    /// Configured identity cache
+    pub fn identity_cache(&self) -> Option<SharedIdentityCache> {
+        self.identity_cache.clone()
     }
 
     /// Configured credentials provider
@@ -579,9 +602,9 @@ impl SdkConfig {
         self.app_name.as_ref()
     }
 
-    /// Configured HTTP Connector
-    pub fn http_connector(&self) -> Option<&HttpConnector> {
-        self.http_connector.as_ref()
+    /// Configured HTTP client
+    pub fn http_client(&self) -> Option<SharedHttpClient> {
+        self.http_client.clone()
     }
 
     /// Use FIPS endpoints
@@ -601,5 +624,28 @@ impl SdkConfig {
     /// configuration values.
     pub fn builder() -> Builder {
         Builder::default()
+    }
+
+    /// Convert this [`SdkConfig`] into a [`Builder`] by cloning it first
+    pub fn to_builder(&self) -> Builder {
+        self.clone().into_builder()
+    }
+
+    /// Convert this [`SdkConfig`] back to a builder to enable modification
+    pub fn into_builder(self) -> Builder {
+        Builder {
+            app_name: self.app_name,
+            identity_cache: self.identity_cache,
+            credentials_provider: self.credentials_provider,
+            region: self.region,
+            endpoint_url: self.endpoint_url,
+            retry_config: self.retry_config,
+            sleep_impl: self.sleep_impl,
+            time_source: self.time_source,
+            timeout_config: self.timeout_config,
+            http_client: self.http_client,
+            use_fips: self.use_fips,
+            use_dual_stack: self.use_dual_stack,
+        }
     }
 }

@@ -2,7 +2,7 @@
 pub fn ser_aws_rds_db_domain_membership(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsRdsDbDomainMembership,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.domain {
         object.key("Domain").string(var_1.as_str());
     }

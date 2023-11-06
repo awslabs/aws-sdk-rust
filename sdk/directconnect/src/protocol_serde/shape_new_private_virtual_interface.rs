@@ -2,9 +2,9 @@
 pub fn ser_new_private_virtual_interface(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NewPrivateVirtualInterface,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.virtual_interface_name {
-        object.key("virtualInterfaceName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("virtualInterfaceName").string(input.virtual_interface_name.as_str());
     }
     {
         object.key("vlan").number(
@@ -18,44 +18,44 @@ pub fn ser_new_private_virtual_interface(
             ::aws_smithy_types::Number::NegInt((input.asn).into()),
         );
     }
-    if let Some(var_2) = &input.mtu {
+    if let Some(var_1) = &input.mtu {
         object.key("mtu").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_3) = &input.auth_key {
-        object.key("authKey").string(var_3.as_str());
+    if let Some(var_2) = &input.auth_key {
+        object.key("authKey").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.amazon_address {
-        object.key("amazonAddress").string(var_4.as_str());
+    if let Some(var_3) = &input.amazon_address {
+        object.key("amazonAddress").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.customer_address {
-        object.key("customerAddress").string(var_5.as_str());
+    if let Some(var_4) = &input.customer_address {
+        object.key("customerAddress").string(var_4.as_str());
     }
-    if let Some(var_6) = &input.address_family {
-        object.key("addressFamily").string(var_6.as_str());
+    if let Some(var_5) = &input.address_family {
+        object.key("addressFamily").string(var_5.as_str());
     }
-    if let Some(var_7) = &input.virtual_gateway_id {
-        object.key("virtualGatewayId").string(var_7.as_str());
+    if let Some(var_6) = &input.virtual_gateway_id {
+        object.key("virtualGatewayId").string(var_6.as_str());
     }
-    if let Some(var_8) = &input.direct_connect_gateway_id {
-        object.key("directConnectGatewayId").string(var_8.as_str());
+    if let Some(var_7) = &input.direct_connect_gateway_id {
+        object.key("directConnectGatewayId").string(var_7.as_str());
     }
-    if let Some(var_9) = &input.tags {
-        let mut array_10 = object.key("tags").start_array();
-        for item_11 in var_9 {
+    if let Some(var_8) = &input.tags {
+        let mut array_9 = object.key("tags").start_array();
+        for item_10 in var_8 {
             {
                 #[allow(unused_mut)]
-                let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_12, item_11)?;
-                object_12.finish();
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_11, item_10)?;
+                object_11.finish();
             }
         }
-        array_10.finish();
+        array_9.finish();
     }
-    if let Some(var_13) = &input.enable_site_link {
-        object.key("enableSiteLink").boolean(*var_13);
+    if let Some(var_12) = &input.enable_site_link {
+        object.key("enableSiteLink").boolean(*var_12);
     }
     Ok(())
 }

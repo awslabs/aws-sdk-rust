@@ -2,7 +2,7 @@
 pub fn ser_drift_check_bias(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DriftCheckBias,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.config_file {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ConfigFile").start_object();

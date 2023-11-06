@@ -46,6 +46,7 @@ impl RegisterSchemaVersionInputBuilder {
     /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
     /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn schema_id(mut self, input: crate::types::SchemaId) -> Self {
         self.schema_id = ::std::option::Option::Some(input);
         self
@@ -68,6 +69,7 @@ impl RegisterSchemaVersionInputBuilder {
         &self.schema_id
     }
     /// <p>The schema definition using the <code>DataFormat</code> setting for the <code>SchemaName</code>.</p>
+    /// This field is required.
     pub fn schema_definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_definition = ::std::option::Option::Some(input.into());
         self
@@ -84,7 +86,7 @@ impl RegisterSchemaVersionInputBuilder {
     /// Consumes the builder and constructs a [`RegisterSchemaVersionInput`](crate::operation::register_schema_version::RegisterSchemaVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_schema_version::RegisterSchemaVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::register_schema_version::RegisterSchemaVersionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::register_schema_version::RegisterSchemaVersionInput {
             schema_id: self.schema_id,

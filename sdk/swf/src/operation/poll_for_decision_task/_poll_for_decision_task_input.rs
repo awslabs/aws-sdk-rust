@@ -79,6 +79,7 @@ pub struct PollForDecisionTaskInputBuilder {
 }
 impl PollForDecisionTaskInputBuilder {
     /// <p>The name of the domain containing the task lists to poll.</p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -94,6 +95,7 @@ impl PollForDecisionTaskInputBuilder {
     }
     /// <p>Specifies the task list to poll for decision tasks.</p>
     /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
+    /// This field is required.
     pub fn task_list(mut self, input: crate::types::TaskList) -> Self {
         self.task_list = ::std::option::Option::Some(input);
         self
@@ -194,7 +196,7 @@ impl PollForDecisionTaskInputBuilder {
     /// Consumes the builder and constructs a [`PollForDecisionTaskInput`](crate::operation::poll_for_decision_task::PollForDecisionTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::poll_for_decision_task::PollForDecisionTaskInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::poll_for_decision_task::PollForDecisionTaskInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::poll_for_decision_task::PollForDecisionTaskInput {
             domain: self.domain,

@@ -29,12 +29,16 @@ impl CreateChannelOutput {
         self.source.as_deref()
     }
     /// <p>The event data stores that log the events arriving through the channel.</p>
-    pub fn destinations(&self) -> ::std::option::Option<&[crate::types::Destination]> {
-        self.destinations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destinations.is_none()`.
+    pub fn destinations(&self) -> &[crate::types::Destination] {
+        self.destinations.as_deref().unwrap_or_default()
     }
     /// <p>A list of tags.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateChannelOutput {

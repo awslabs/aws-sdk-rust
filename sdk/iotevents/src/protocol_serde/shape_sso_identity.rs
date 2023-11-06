@@ -2,12 +2,12 @@
 pub fn ser_sso_identity(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SsoIdentity,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.identity_store_id {
-        object.key("identityStoreId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("identityStoreId").string(input.identity_store_id.as_str());
     }
-    if let Some(var_2) = &input.user_id {
-        object.key("userId").string(var_2.as_str());
+    if let Some(var_1) = &input.user_id {
+        object.key("userId").string(var_1.as_str());
     }
     Ok(())
 }
@@ -51,7 +51,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::sso_identity_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

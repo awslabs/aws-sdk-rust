@@ -129,8 +129,10 @@ impl ReplicationInstance {
         self.instance_create_time.as_ref()
     }
     /// <p>The VPC security group for the instance.</p>
-    pub fn vpc_security_groups(&self) -> ::std::option::Option<&[crate::types::VpcSecurityGroupMembership]> {
-        self.vpc_security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_groups.is_none()`.
+    pub fn vpc_security_groups(&self) -> &[crate::types::VpcSecurityGroupMembership] {
+        self.vpc_security_groups.as_deref().unwrap_or_default()
     }
     /// <p>The Availability Zone for the instance.</p>
     pub fn availability_zone(&self) -> ::std::option::Option<&str> {
@@ -183,16 +185,22 @@ impl ReplicationInstance {
         self.replication_instance_private_ip_address.as_deref()
     }
     /// <p>One or more public IP addresses for the replication instance.</p>
-    pub fn replication_instance_public_ip_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.replication_instance_public_ip_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_instance_public_ip_addresses.is_none()`.
+    pub fn replication_instance_public_ip_addresses(&self) -> &[::std::string::String] {
+        self.replication_instance_public_ip_addresses.as_deref().unwrap_or_default()
     }
     /// <p>One or more private IP addresses for the replication instance.</p>
-    pub fn replication_instance_private_ip_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.replication_instance_private_ip_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_instance_private_ip_addresses.is_none()`.
+    pub fn replication_instance_private_ip_addresses(&self) -> &[::std::string::String] {
+        self.replication_instance_private_ip_addresses.as_deref().unwrap_or_default()
     }
     /// <p>One or more IPv6 addresses for the replication instance.</p>
-    pub fn replication_instance_ipv6_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.replication_instance_ipv6_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_instance_ipv6_addresses.is_none()`.
+    pub fn replication_instance_ipv6_addresses(&self) -> &[::std::string::String] {
+        self.replication_instance_ipv6_addresses.as_deref().unwrap_or_default()
     }
     /// <p> Specifies the accessibility options for the replication instance. A value of <code>true</code> represents an instance with a public IP address. A value of <code>false</code> represents an instance with a private IP address. The default value is <code>true</code>. </p>
     pub fn publicly_accessible(&self) -> bool {

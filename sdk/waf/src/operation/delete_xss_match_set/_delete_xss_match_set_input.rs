@@ -35,6 +35,7 @@ pub struct DeleteXssMatchSetInputBuilder {
 }
 impl DeleteXssMatchSetInputBuilder {
     /// <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to delete. <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
+    /// This field is required.
     pub fn xss_match_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.xss_match_set_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl DeleteXssMatchSetInputBuilder {
         &self.xss_match_set_id
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    /// This field is required.
     pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_token = ::std::option::Option::Some(input.into());
         self
@@ -65,7 +67,7 @@ impl DeleteXssMatchSetInputBuilder {
     /// Consumes the builder and constructs a [`DeleteXssMatchSetInput`](crate::operation::delete_xss_match_set::DeleteXssMatchSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_xss_match_set::DeleteXssMatchSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_xss_match_set::DeleteXssMatchSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_xss_match_set::DeleteXssMatchSetInput {
             xss_match_set_id: self.xss_match_set_id,
             change_token: self.change_token,

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteSite`](crate::operation::delete_site::builders::DeleteSiteFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`global_network_id(impl Into<String>)`](crate::operation::delete_site::builders::DeleteSiteFluentBuilder::global_network_id) / [`set_global_network_id(Option<String>)`](crate::operation::delete_site::builders::DeleteSiteFluentBuilder::set_global_network_id): <p>The ID of the global network.</p>
-    ///   - [`site_id(impl Into<String>)`](crate::operation::delete_site::builders::DeleteSiteFluentBuilder::site_id) / [`set_site_id(Option<String>)`](crate::operation::delete_site::builders::DeleteSiteFluentBuilder::set_site_id): <p>The ID of the site.</p>
+    ///   - [`global_network_id(impl Into<String>)`](crate::operation::delete_site::builders::DeleteSiteFluentBuilder::global_network_id) / [`set_global_network_id(Option<String>)`](crate::operation::delete_site::builders::DeleteSiteFluentBuilder::set_global_network_id):<br>required: **true**<br><p>The ID of the global network.</p><br>
+    ///   - [`site_id(impl Into<String>)`](crate::operation::delete_site::builders::DeleteSiteFluentBuilder::site_id) / [`set_site_id(Option<String>)`](crate::operation::delete_site::builders::DeleteSiteFluentBuilder::set_site_id):<br>required: **true**<br><p>The ID of the site.</p><br>
     /// - On success, responds with [`DeleteSiteOutput`](crate::operation::delete_site::DeleteSiteOutput) with field(s):
     ///   - [`site(Option<Site>)`](crate::operation::delete_site::DeleteSiteOutput::site): <p>Information about the site.</p>
     /// - On failure, responds with [`SdkError<DeleteSiteError>`](crate::operation::delete_site::DeleteSiteError)

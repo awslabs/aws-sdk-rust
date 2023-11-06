@@ -41,6 +41,7 @@ pub struct ImportHubContentOutputBuilder {
 }
 impl ImportHubContentOutputBuilder {
     /// <p>The ARN of the hub that the content was imported into.</p>
+    /// This field is required.
     pub fn hub_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hub_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl ImportHubContentOutputBuilder {
         &self.hub_arn
     }
     /// <p>The ARN of the hub content that was imported.</p>
+    /// This field is required.
     pub fn hub_content_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hub_content_arn = ::std::option::Option::Some(input.into());
         self

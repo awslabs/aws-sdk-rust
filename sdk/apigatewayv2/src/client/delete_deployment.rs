@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDeployment`](crate::operation::delete_deployment::builders::DeleteDeploymentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`api_id(impl Into<String>)`](crate::operation::delete_deployment::builders::DeleteDeploymentFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::delete_deployment::builders::DeleteDeploymentFluentBuilder::set_api_id): <p>The API identifier.</p>
-    ///   - [`deployment_id(impl Into<String>)`](crate::operation::delete_deployment::builders::DeleteDeploymentFluentBuilder::deployment_id) / [`set_deployment_id(Option<String>)`](crate::operation::delete_deployment::builders::DeleteDeploymentFluentBuilder::set_deployment_id): <p>The deployment ID.</p>
+    ///   - [`api_id(impl Into<String>)`](crate::operation::delete_deployment::builders::DeleteDeploymentFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::delete_deployment::builders::DeleteDeploymentFluentBuilder::set_api_id):<br>required: **true**<br><p>The API identifier.</p><br>
+    ///   - [`deployment_id(impl Into<String>)`](crate::operation::delete_deployment::builders::DeleteDeploymentFluentBuilder::deployment_id) / [`set_deployment_id(Option<String>)`](crate::operation::delete_deployment::builders::DeleteDeploymentFluentBuilder::set_deployment_id):<br>required: **true**<br><p>The deployment ID.</p><br>
     /// - On success, responds with [`DeleteDeploymentOutput`](crate::operation::delete_deployment::DeleteDeploymentOutput)
     /// - On failure, responds with [`SdkError<DeleteDeploymentError>`](crate::operation::delete_deployment::DeleteDeploymentError)
     pub fn delete_deployment(&self) -> crate::operation::delete_deployment::builders::DeleteDeploymentFluentBuilder {

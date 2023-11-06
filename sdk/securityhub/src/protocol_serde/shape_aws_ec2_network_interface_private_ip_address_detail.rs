@@ -2,7 +2,7 @@
 pub fn ser_aws_ec2_network_interface_private_ip_address_detail(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEc2NetworkInterfacePrivateIpAddressDetail,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.private_ip_address {
         object.key("PrivateIpAddress").string(var_1.as_str());
     }

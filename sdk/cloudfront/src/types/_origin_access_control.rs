@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OriginAccessControl {
     /// <p>The unique identifier of the origin access control.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The origin access control.</p>
     pub origin_access_control_config: ::std::option::Option<crate::types::OriginAccessControlConfig>,
 }
 impl OriginAccessControl {
     /// <p>The unique identifier of the origin access control.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The origin access control.</p>
     pub fn origin_access_control_config(&self) -> ::std::option::Option<&crate::types::OriginAccessControlConfig> {
@@ -35,6 +36,7 @@ pub struct OriginAccessControlBuilder {
 }
 impl OriginAccessControlBuilder {
     /// <p>The unique identifier of the origin access control.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl OriginAccessControlBuilder {
         &self.origin_access_control_config
     }
     /// Consumes the builder and constructs a [`OriginAccessControl`](crate::types::OriginAccessControl).
-    pub fn build(self) -> crate::types::OriginAccessControl {
-        crate::types::OriginAccessControl {
-            id: self.id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::OriginAccessControlBuilder::id)
+    pub fn build(self) -> ::std::result::Result<crate::types::OriginAccessControl, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::OriginAccessControl {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building OriginAccessControl",
+                )
+            })?,
             origin_access_control_config: self.origin_access_control_config,
-        }
+        })
     }
 }

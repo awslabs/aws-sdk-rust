@@ -6,7 +6,7 @@ pub struct ListMediaAnalysisJobsOutput {
     /// <p>Pagination token, if the previous response was incomplete.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Contains a list of all media analysis jobs.</p>
-    pub media_analysis_jobs: ::std::option::Option<::std::vec::Vec<crate::types::MediaAnalysisJobDescription>>,
+    pub media_analysis_jobs: ::std::vec::Vec<crate::types::MediaAnalysisJobDescription>,
     _request_id: Option<String>,
 }
 impl ListMediaAnalysisJobsOutput {
@@ -15,8 +15,9 @@ impl ListMediaAnalysisJobsOutput {
         self.next_token.as_deref()
     }
     /// <p>Contains a list of all media analysis jobs.</p>
-    pub fn media_analysis_jobs(&self) -> ::std::option::Option<&[crate::types::MediaAnalysisJobDescription]> {
-        self.media_analysis_jobs.as_deref()
+    pub fn media_analysis_jobs(&self) -> &[crate::types::MediaAnalysisJobDescription] {
+        use std::ops::Deref;
+        self.media_analysis_jobs.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListMediaAnalysisJobsOutput {
@@ -84,11 +85,23 @@ impl ListMediaAnalysisJobsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListMediaAnalysisJobsOutput`](crate::operation::list_media_analysis_jobs::ListMediaAnalysisJobsOutput).
-    pub fn build(self) -> crate::operation::list_media_analysis_jobs::ListMediaAnalysisJobsOutput {
-        crate::operation::list_media_analysis_jobs::ListMediaAnalysisJobsOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`media_analysis_jobs`](crate::operation::list_media_analysis_jobs::builders::ListMediaAnalysisJobsOutputBuilder::media_analysis_jobs)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_media_analysis_jobs::ListMediaAnalysisJobsOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_media_analysis_jobs::ListMediaAnalysisJobsOutput {
             next_token: self.next_token,
-            media_analysis_jobs: self.media_analysis_jobs,
+            media_analysis_jobs: self.media_analysis_jobs.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "media_analysis_jobs",
+                    "media_analysis_jobs was not specified but it is required when building ListMediaAnalysisJobsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

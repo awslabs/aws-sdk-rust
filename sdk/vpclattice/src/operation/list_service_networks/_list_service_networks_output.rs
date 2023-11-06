@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListServiceNetworksOutput {
     /// <p>Information about the service networks.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::ServiceNetworkSummary>>,
+    pub items: ::std::vec::Vec<crate::types::ServiceNetworkSummary>,
     /// <p>If there are additional results, a pagination token for the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListServiceNetworksOutput {
     /// <p>Information about the service networks.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::ServiceNetworkSummary]> {
-        self.items.as_deref()
+    pub fn items(&self) -> &[crate::types::ServiceNetworkSummary] {
+        use std::ops::Deref;
+        self.items.deref()
     }
     /// <p>If there are additional results, a pagination token for the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,21 @@ impl ListServiceNetworksOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListServiceNetworksOutput`](crate::operation::list_service_networks::ListServiceNetworksOutput).
-    pub fn build(self) -> crate::operation::list_service_networks::ListServiceNetworksOutput {
-        crate::operation::list_service_networks::ListServiceNetworksOutput {
-            items: self.items,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`items`](crate::operation::list_service_networks::builders::ListServiceNetworksOutputBuilder::items)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_service_networks::ListServiceNetworksOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_service_networks::ListServiceNetworksOutput {
+            items: self.items.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "items",
+                    "items was not specified but it is required when building ListServiceNetworksOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

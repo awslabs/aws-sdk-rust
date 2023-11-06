@@ -28,6 +28,7 @@ pub struct DeleteDeliveryChannelInputBuilder {
 }
 impl DeleteDeliveryChannelInputBuilder {
     /// <p>The name of the delivery channel to delete.</p>
+    /// This field is required.
     pub fn delivery_channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delivery_channel_name = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl DeleteDeliveryChannelInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDeliveryChannelInput`](crate::operation::delete_delivery_channel::DeleteDeliveryChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_delivery_channel::DeleteDeliveryChannelInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_delivery_channel::DeleteDeliveryChannelInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_delivery_channel::DeleteDeliveryChannelInput {
             delivery_channel_name: self.delivery_channel_name,

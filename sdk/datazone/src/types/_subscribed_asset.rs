@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubscribedAsset {
     /// <p>The identifier of the asset for which the subscription grant is created.</p>
-    pub asset_id: ::std::option::Option<::std::string::String>,
+    pub asset_id: ::std::string::String,
     /// <p>The revision of the asset for which the subscription grant is created.</p>
-    pub asset_revision: ::std::option::Option<::std::string::String>,
+    pub asset_revision: ::std::string::String,
     /// <p>The status of the asset for which the subscription grant is created.</p>
-    pub status: ::std::option::Option<crate::types::SubscriptionGrantStatus>,
+    pub status: crate::types::SubscriptionGrantStatus,
     /// <p>The target name of the asset for which the subscription grant is created.</p>
     pub target_name: ::std::option::Option<::std::string::String>,
     /// <p>The failure cause included in the details of the asset for which the subscription grant is created.</p>
@@ -21,16 +21,18 @@ pub struct SubscribedAsset {
 }
 impl SubscribedAsset {
     /// <p>The identifier of the asset for which the subscription grant is created.</p>
-    pub fn asset_id(&self) -> ::std::option::Option<&str> {
-        self.asset_id.as_deref()
+    pub fn asset_id(&self) -> &str {
+        use std::ops::Deref;
+        self.asset_id.deref()
     }
     /// <p>The revision of the asset for which the subscription grant is created.</p>
-    pub fn asset_revision(&self) -> ::std::option::Option<&str> {
-        self.asset_revision.as_deref()
+    pub fn asset_revision(&self) -> &str {
+        use std::ops::Deref;
+        self.asset_revision.deref()
     }
     /// <p>The status of the asset for which the subscription grant is created.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::SubscriptionGrantStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::SubscriptionGrantStatus {
+        &self.status
     }
     /// <p>The target name of the asset for which the subscription grant is created.</p>
     pub fn target_name(&self) -> ::std::option::Option<&str> {
@@ -70,6 +72,7 @@ pub struct SubscribedAssetBuilder {
 }
 impl SubscribedAssetBuilder {
     /// <p>The identifier of the asset for which the subscription grant is created.</p>
+    /// This field is required.
     pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_id = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +87,7 @@ impl SubscribedAssetBuilder {
         &self.asset_id
     }
     /// <p>The revision of the asset for which the subscription grant is created.</p>
+    /// This field is required.
     pub fn asset_revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_revision = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +102,7 @@ impl SubscribedAssetBuilder {
         &self.asset_revision
     }
     /// <p>The status of the asset for which the subscription grant is created.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::SubscriptionGrantStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -168,15 +173,34 @@ impl SubscribedAssetBuilder {
         &self.failure_timestamp
     }
     /// Consumes the builder and constructs a [`SubscribedAsset`](crate::types::SubscribedAsset).
-    pub fn build(self) -> crate::types::SubscribedAsset {
-        crate::types::SubscribedAsset {
-            asset_id: self.asset_id,
-            asset_revision: self.asset_revision,
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`asset_id`](crate::types::builders::SubscribedAssetBuilder::asset_id)
+    /// - [`asset_revision`](crate::types::builders::SubscribedAssetBuilder::asset_revision)
+    /// - [`status`](crate::types::builders::SubscribedAssetBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::SubscribedAsset, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SubscribedAsset {
+            asset_id: self.asset_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "asset_id",
+                    "asset_id was not specified but it is required when building SubscribedAsset",
+                )
+            })?,
+            asset_revision: self.asset_revision.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "asset_revision",
+                    "asset_revision was not specified but it is required when building SubscribedAsset",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building SubscribedAsset",
+                )
+            })?,
             target_name: self.target_name,
             failure_cause: self.failure_cause,
             granted_timestamp: self.granted_timestamp,
             failure_timestamp: self.failure_timestamp,
-        }
+        })
     }
 }

@@ -137,18 +137,20 @@ pub fn de_query_http_response(
         let mut output = crate::operation::query::builders::QueryOutputBuilder::default();
         output = crate::protocol_serde::shape_query::de_query(_response_body, output).map_err(crate::operation::query::QueryError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::query_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::query::QueryError::unhandled)?
     })
 }
 
 pub fn ser_query_input(
     input: &crate::operation::query::QueryInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_query_input::ser_query_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_query(

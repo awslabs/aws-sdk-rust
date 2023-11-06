@@ -2,33 +2,33 @@
 pub fn ser_rule_action(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RuleAction,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.action_type {
-        object.key("ActionType").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("ActionType").string(input.action_type.as_str());
     }
-    if let Some(var_2) = &input.task_action {
+    if let Some(var_1) = &input.task_action {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("TaskAction").start_object();
-        crate::protocol_serde::shape_task_action_definition::ser_task_action_definition(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("TaskAction").start_object();
+        crate::protocol_serde::shape_task_action_definition::ser_task_action_definition(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.event_bridge_action {
+    if let Some(var_3) = &input.event_bridge_action {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("EventBridgeAction").start_object();
-        crate::protocol_serde::shape_event_bridge_action_definition::ser_event_bridge_action_definition(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("EventBridgeAction").start_object();
+        crate::protocol_serde::shape_event_bridge_action_definition::ser_event_bridge_action_definition(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_6) = &input.assign_contact_category_action {
+    if let Some(var_5) = &input.assign_contact_category_action {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("AssignContactCategoryAction").start_object();
-        crate::protocol_serde::shape_assign_contact_category_action_definition::ser_assign_contact_category_action_definition(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_6 = object.key("AssignContactCategoryAction").start_object();
+        crate::protocol_serde::shape_assign_contact_category_action_definition::ser_assign_contact_category_action_definition(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_8) = &input.send_notification_action {
+    if let Some(var_7) = &input.send_notification_action {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("SendNotificationAction").start_object();
-        crate::protocol_serde::shape_send_notification_action_definition::ser_send_notification_action_definition(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_8 = object.key("SendNotificationAction").start_object();
+        crate::protocol_serde::shape_send_notification_action_definition::ser_send_notification_action_definition(&mut object_8, var_7)?;
+        object_8.finish();
     }
     Ok(())
 }
@@ -86,7 +86,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::rule_action_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

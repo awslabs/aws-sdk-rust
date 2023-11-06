@@ -59,8 +59,10 @@ impl ListPlatformBranchesInput {
     /// </ul>
     /// <p>Array size: limited to 10 <code>SearchFilter</code> objects.</p>
     /// <p>Within each <code>SearchFilter</code> item, the <code>Values</code> array is limited to 10 items.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::SearchFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::SearchFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of platform branch values returned in one call.</p>
     pub fn max_records(&self) -> ::std::option::Option<i32> {
@@ -211,7 +213,7 @@ impl ListPlatformBranchesInputBuilder {
     /// Consumes the builder and constructs a [`ListPlatformBranchesInput`](crate::operation::list_platform_branches::ListPlatformBranchesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_platform_branches::ListPlatformBranchesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_platform_branches::ListPlatformBranchesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_platform_branches::ListPlatformBranchesInput {
             filters: self.filters,

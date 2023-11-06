@@ -2,7 +2,7 @@
 pub fn ser_batch_create_variable_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::batch_create_variable::BatchCreateVariableInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.variable_entries {
         let mut array_2 = object.key("variableEntries").start_array();
         for item_3 in var_1 {

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RejectInboundConnection`](crate::operation::reject_inbound_connection::builders::RejectInboundConnectionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`connection_id(impl Into<String>)`](crate::operation::reject_inbound_connection::builders::RejectInboundConnectionFluentBuilder::connection_id) / [`set_connection_id(Option<String>)`](crate::operation::reject_inbound_connection::builders::RejectInboundConnectionFluentBuilder::set_connection_id): <p>The unique identifier of the inbound connection to reject.</p>
+    ///   - [`connection_id(impl Into<String>)`](crate::operation::reject_inbound_connection::builders::RejectInboundConnectionFluentBuilder::connection_id) / [`set_connection_id(Option<String>)`](crate::operation::reject_inbound_connection::builders::RejectInboundConnectionFluentBuilder::set_connection_id):<br>required: **true**<br><p>The unique identifier of the inbound connection to reject.</p><br>
     /// - On success, responds with [`RejectInboundConnectionOutput`](crate::operation::reject_inbound_connection::RejectInboundConnectionOutput) with field(s):
     ///   - [`connection(Option<InboundConnection>)`](crate::operation::reject_inbound_connection::RejectInboundConnectionOutput::connection): <p>Contains details about the rejected inbound connection.</p>
     /// - On failure, responds with [`SdkError<RejectInboundConnectionError>`](crate::operation::reject_inbound_connection::RejectInboundConnectionError)

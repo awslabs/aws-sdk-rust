@@ -34,6 +34,7 @@ pub struct DeleteIdentityProviderInputBuilder {
 }
 impl DeleteIdentityProviderInputBuilder {
     /// <p>The user pool ID.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteIdentityProviderInputBuilder {
         &self.user_pool_id
     }
     /// <p>The IdP name.</p>
+    /// This field is required.
     pub fn provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider_name = ::std::option::Option::Some(input.into());
         self
@@ -64,8 +66,10 @@ impl DeleteIdentityProviderInputBuilder {
     /// Consumes the builder and constructs a [`DeleteIdentityProviderInput`](crate::operation::delete_identity_provider::DeleteIdentityProviderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_identity_provider::DeleteIdentityProviderInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_identity_provider::DeleteIdentityProviderInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_identity_provider::DeleteIdentityProviderInput {
             user_pool_id: self.user_pool_id,
             provider_name: self.provider_name,

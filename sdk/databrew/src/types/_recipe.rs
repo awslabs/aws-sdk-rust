@@ -21,7 +21,7 @@ pub struct Recipe {
     /// <p>The description of the recipe.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The unique name for the recipe.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) for the recipe.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of steps that are defined by the recipe.</p>
@@ -70,16 +70,19 @@ impl Recipe {
         self.description.as_deref()
     }
     /// <p>The unique name for the recipe.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the recipe.</p>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>A list of steps that are defined by the recipe.</p>
-    pub fn steps(&self) -> ::std::option::Option<&[crate::types::RecipeStep]> {
-        self.steps.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.steps.is_none()`.
+    pub fn steps(&self) -> &[crate::types::RecipeStep] {
+        self.steps.as_deref().unwrap_or_default()
     }
     /// <p>Metadata tags that have been applied to the recipe.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -234,6 +237,7 @@ impl RecipeBuilder {
         &self.description
     }
     /// <p>The unique name for the recipe.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -331,8 +335,10 @@ impl RecipeBuilder {
         &self.recipe_version
     }
     /// Consumes the builder and constructs a [`Recipe`](crate::types::Recipe).
-    pub fn build(self) -> crate::types::Recipe {
-        crate::types::Recipe {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::RecipeBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::Recipe, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Recipe {
             created_by: self.created_by,
             create_date: self.create_date,
             last_modified_by: self.last_modified_by,
@@ -341,11 +347,16 @@ impl RecipeBuilder {
             published_by: self.published_by,
             published_date: self.published_date,
             description: self.description,
-            name: self.name,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building Recipe",
+                )
+            })?,
             resource_arn: self.resource_arn,
             steps: self.steps,
             tags: self.tags,
             recipe_version: self.recipe_version,
-        }
+        })
     }
 }

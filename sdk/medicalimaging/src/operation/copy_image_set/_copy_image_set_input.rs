@@ -41,6 +41,7 @@ pub struct CopyImageSetInputBuilder {
 }
 impl CopyImageSetInputBuilder {
     /// <p>The data store identifier.</p>
+    /// This field is required.
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl CopyImageSetInputBuilder {
         &self.datastore_id
     }
     /// <p>The source image set identifier.</p>
+    /// This field is required.
     pub fn source_image_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_image_set_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl CopyImageSetInputBuilder {
         &self.source_image_set_id
     }
     /// <p>Copy image set information.</p>
+    /// This field is required.
     pub fn copy_image_set_information(mut self, input: crate::types::CopyImageSetInformation) -> Self {
         self.copy_image_set_information = ::std::option::Option::Some(input);
         self
@@ -85,7 +88,7 @@ impl CopyImageSetInputBuilder {
     /// Consumes the builder and constructs a [`CopyImageSetInput`](crate::operation::copy_image_set::CopyImageSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::copy_image_set::CopyImageSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::copy_image_set::CopyImageSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::copy_image_set::CopyImageSetInput {
             datastore_id: self.datastore_id,
             source_image_set_id: self.source_image_set_id,

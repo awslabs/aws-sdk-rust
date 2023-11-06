@@ -50,6 +50,7 @@ pub struct PutBucketAccelerateConfigurationInputBuilder {
 }
 impl PutBucketAccelerateConfigurationInputBuilder {
     /// <p>The name of the bucket for which the accelerate configuration is set.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -64,6 +65,7 @@ impl PutBucketAccelerateConfigurationInputBuilder {
         &self.bucket
     }
     /// <p>Container for setting the transfer acceleration state.</p>
+    /// This field is required.
     pub fn accelerate_configuration(mut self, input: crate::types::AccelerateConfiguration) -> Self {
         self.accelerate_configuration = ::std::option::Option::Some(input);
         self
@@ -113,7 +115,7 @@ impl PutBucketAccelerateConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_bucket_accelerate_configuration::PutBucketAccelerateConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::put_bucket_accelerate_configuration::PutBucketAccelerateConfigurationInput {

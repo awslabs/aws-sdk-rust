@@ -46,7 +46,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::fulfillment_updates_specification_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -57,26 +61,26 @@ where
 pub fn ser_fulfillment_updates_specification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FulfillmentUpdatesSpecification,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.active {
-        object.key("active").boolean(*var_1);
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("active").boolean(input.active);
     }
-    if let Some(var_2) = &input.start_response {
+    if let Some(var_1) = &input.start_response {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("startResponse").start_object();
-        crate::protocol_serde::shape_fulfillment_start_response_specification::ser_fulfillment_start_response_specification(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("startResponse").start_object();
+        crate::protocol_serde::shape_fulfillment_start_response_specification::ser_fulfillment_start_response_specification(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.update_response {
+    if let Some(var_3) = &input.update_response {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("updateResponse").start_object();
-        crate::protocol_serde::shape_fulfillment_update_response_specification::ser_fulfillment_update_response_specification(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("updateResponse").start_object();
+        crate::protocol_serde::shape_fulfillment_update_response_specification::ser_fulfillment_update_response_specification(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_6) = &input.timeout_in_seconds {
+    if let Some(var_5) = &input.timeout_in_seconds {
         object.key("timeoutInSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_6).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
     Ok(())

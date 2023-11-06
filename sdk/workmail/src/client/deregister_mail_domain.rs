@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeregisterMailDomain`](crate::operation::deregister_mail_domain::builders::DeregisterMailDomainFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`organization_id(impl Into<String>)`](crate::operation::deregister_mail_domain::builders::DeregisterMailDomainFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::deregister_mail_domain::builders::DeregisterMailDomainFluentBuilder::set_organization_id): <p>The WorkMail organization for which the domain will be deregistered.</p>
-    ///   - [`domain_name(impl Into<String>)`](crate::operation::deregister_mail_domain::builders::DeregisterMailDomainFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::deregister_mail_domain::builders::DeregisterMailDomainFluentBuilder::set_domain_name): <p>The domain to deregister in WorkMail and SES.</p>
+    ///   - [`organization_id(impl Into<String>)`](crate::operation::deregister_mail_domain::builders::DeregisterMailDomainFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::deregister_mail_domain::builders::DeregisterMailDomainFluentBuilder::set_organization_id):<br>required: **true**<br><p>The WorkMail organization for which the domain will be deregistered.</p><br>
+    ///   - [`domain_name(impl Into<String>)`](crate::operation::deregister_mail_domain::builders::DeregisterMailDomainFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::deregister_mail_domain::builders::DeregisterMailDomainFluentBuilder::set_domain_name):<br>required: **true**<br><p>The domain to deregister in WorkMail and SES.</p><br>
     /// - On success, responds with [`DeregisterMailDomainOutput`](crate::operation::deregister_mail_domain::DeregisterMailDomainOutput)
     /// - On failure, responds with [`SdkError<DeregisterMailDomainError>`](crate::operation::deregister_mail_domain::DeregisterMailDomainError)
     pub fn deregister_mail_domain(&self) -> crate::operation::deregister_mail_domain::builders::DeregisterMailDomainFluentBuilder {

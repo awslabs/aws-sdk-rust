@@ -56,6 +56,7 @@ pub struct ComputeLimitsBuilder {
 }
 impl ComputeLimitsBuilder {
     /// <p> The unit type used for specifying a managed scaling policy. </p>
+    /// This field is required.
     pub fn unit_type(mut self, input: crate::types::ComputeLimitsUnitType) -> Self {
         self.unit_type = ::std::option::Option::Some(input);
         self
@@ -70,6 +71,7 @@ impl ComputeLimitsBuilder {
         &self.unit_type
     }
     /// <p> The lower boundary of Amazon EC2 units. It is measured through vCPU cores or instances for instance groups and measured through units for instance fleets. Managed scaling activities are not allowed beyond this boundary. The limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration. </p>
+    /// This field is required.
     pub fn minimum_capacity_units(mut self, input: i32) -> Self {
         self.minimum_capacity_units = ::std::option::Option::Some(input);
         self
@@ -84,6 +86,7 @@ impl ComputeLimitsBuilder {
         &self.minimum_capacity_units
     }
     /// <p> The upper boundary of Amazon EC2 units. It is measured through vCPU cores or instances for instance groups and measured through units for instance fleets. Managed scaling activities are not allowed beyond this boundary. The limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration. </p>
+    /// This field is required.
     pub fn maximum_capacity_units(mut self, input: i32) -> Self {
         self.maximum_capacity_units = ::std::option::Option::Some(input);
         self

@@ -34,6 +34,7 @@ pub struct UpdateBackupPlanInputBuilder {
 }
 impl UpdateBackupPlanInputBuilder {
     /// <p>Uniquely identifies a backup plan.</p>
+    /// This field is required.
     pub fn backup_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_plan_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateBackupPlanInputBuilder {
         &self.backup_plan_id
     }
     /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
+    /// This field is required.
     pub fn backup_plan(mut self, input: crate::types::BackupPlanInput) -> Self {
         self.backup_plan = ::std::option::Option::Some(input);
         self
@@ -64,7 +66,7 @@ impl UpdateBackupPlanInputBuilder {
     /// Consumes the builder and constructs a [`UpdateBackupPlanInput`](crate::operation::update_backup_plan::UpdateBackupPlanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_backup_plan::UpdateBackupPlanInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_backup_plan::UpdateBackupPlanInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_backup_plan::UpdateBackupPlanInput {
             backup_plan_id: self.backup_plan_id,
             backup_plan: self.backup_plan,

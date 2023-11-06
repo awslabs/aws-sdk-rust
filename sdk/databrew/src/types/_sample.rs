@@ -7,7 +7,7 @@ pub struct Sample {
     /// <p>The number of rows in the sample.</p>
     pub size: ::std::option::Option<i32>,
     /// <p>The way in which DataBrew obtains rows from a dataset.</p>
-    pub r#type: ::std::option::Option<crate::types::SampleType>,
+    pub r#type: crate::types::SampleType,
 }
 impl Sample {
     /// <p>The number of rows in the sample.</p>
@@ -15,8 +15,8 @@ impl Sample {
         self.size
     }
     /// <p>The way in which DataBrew obtains rows from a dataset.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::SampleType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::SampleType {
+        &self.r#type
     }
 }
 impl Sample {
@@ -49,6 +49,7 @@ impl SampleBuilder {
         &self.size
     }
     /// <p>The way in which DataBrew obtains rows from a dataset.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::SampleType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -63,10 +64,17 @@ impl SampleBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`Sample`](crate::types::Sample).
-    pub fn build(self) -> crate::types::Sample {
-        crate::types::Sample {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::SampleBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::Sample, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Sample {
             size: self.size,
-            r#type: self.r#type,
-        }
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building Sample",
+                )
+            })?,
+        })
     }
 }

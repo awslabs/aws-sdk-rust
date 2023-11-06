@@ -34,6 +34,7 @@ pub struct DeleteGroupInputBuilder {
 }
 impl DeleteGroupInputBuilder {
     /// <p>The globally unique identifier for the identity store.</p>
+    /// This field is required.
     pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_store_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteGroupInputBuilder {
         &self.identity_store_id
     }
     /// <p>The identifier for a group in the identity store.</p>
+    /// This field is required.
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,7 @@ impl DeleteGroupInputBuilder {
         &self.group_id
     }
     /// Consumes the builder and constructs a [`DeleteGroupInput`](crate::operation::delete_group::DeleteGroupInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_group::DeleteGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_group::DeleteGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_group::DeleteGroupInput {
             identity_store_id: self.identity_store_id,
             group_id: self.group_id,

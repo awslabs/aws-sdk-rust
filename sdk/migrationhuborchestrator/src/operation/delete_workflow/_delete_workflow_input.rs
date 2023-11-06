@@ -27,6 +27,7 @@ pub struct DeleteWorkflowInputBuilder {
 }
 impl DeleteWorkflowInputBuilder {
     /// <p>The ID of the migration workflow you want to delete.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteWorkflowInputBuilder {
     /// Consumes the builder and constructs a [`DeleteWorkflowInput`](crate::operation::delete_workflow::DeleteWorkflowInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_workflow::DeleteWorkflowInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_workflow::DeleteWorkflowInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_workflow::DeleteWorkflowInput { id: self.id })
     }
 }

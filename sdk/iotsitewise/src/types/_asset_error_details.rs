@@ -5,24 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetErrorDetails {
     /// <p>The ID of the asset.</p>
-    pub asset_id: ::std::option::Option<::std::string::String>,
+    pub asset_id: ::std::string::String,
     /// <p>The error code.</p>
-    pub code: ::std::option::Option<crate::types::AssetErrorCode>,
+    pub code: crate::types::AssetErrorCode,
     /// <p>The error message.</p>
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
 }
 impl AssetErrorDetails {
     /// <p>The ID of the asset.</p>
-    pub fn asset_id(&self) -> ::std::option::Option<&str> {
-        self.asset_id.as_deref()
+    pub fn asset_id(&self) -> &str {
+        use std::ops::Deref;
+        self.asset_id.deref()
     }
     /// <p>The error code.</p>
-    pub fn code(&self) -> ::std::option::Option<&crate::types::AssetErrorCode> {
-        self.code.as_ref()
+    pub fn code(&self) -> &crate::types::AssetErrorCode {
+        &self.code
     }
     /// <p>The error message.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        use std::ops::Deref;
+        self.message.deref()
     }
 }
 impl AssetErrorDetails {
@@ -42,6 +44,7 @@ pub struct AssetErrorDetailsBuilder {
 }
 impl AssetErrorDetailsBuilder {
     /// <p>The ID of the asset.</p>
+    /// This field is required.
     pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl AssetErrorDetailsBuilder {
         &self.asset_id
     }
     /// <p>The error code.</p>
+    /// This field is required.
     pub fn code(mut self, input: crate::types::AssetErrorCode) -> Self {
         self.code = ::std::option::Option::Some(input);
         self
@@ -70,6 +74,7 @@ impl AssetErrorDetailsBuilder {
         &self.code
     }
     /// <p>The error message.</p>
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +89,30 @@ impl AssetErrorDetailsBuilder {
         &self.message
     }
     /// Consumes the builder and constructs a [`AssetErrorDetails`](crate::types::AssetErrorDetails).
-    pub fn build(self) -> crate::types::AssetErrorDetails {
-        crate::types::AssetErrorDetails {
-            asset_id: self.asset_id,
-            code: self.code,
-            message: self.message,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`asset_id`](crate::types::builders::AssetErrorDetailsBuilder::asset_id)
+    /// - [`code`](crate::types::builders::AssetErrorDetailsBuilder::code)
+    /// - [`message`](crate::types::builders::AssetErrorDetailsBuilder::message)
+    pub fn build(self) -> ::std::result::Result<crate::types::AssetErrorDetails, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AssetErrorDetails {
+            asset_id: self.asset_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "asset_id",
+                    "asset_id was not specified but it is required when building AssetErrorDetails",
+                )
+            })?,
+            code: self.code.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "code",
+                    "code was not specified but it is required when building AssetErrorDetails",
+                )
+            })?,
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building AssetErrorDetails",
+                )
+            })?,
+        })
     }
 }

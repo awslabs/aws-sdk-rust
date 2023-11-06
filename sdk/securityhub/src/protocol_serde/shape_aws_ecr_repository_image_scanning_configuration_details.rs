@@ -2,7 +2,7 @@
 pub fn ser_aws_ecr_repository_image_scanning_configuration_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEcrRepositoryImageScanningConfigurationDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.scan_on_push {
         object.key("ScanOnPush").boolean(*var_1);
     }

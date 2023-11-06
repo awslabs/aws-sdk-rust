@@ -2,9 +2,11 @@
 pub fn ser_decimal_number(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DecimalNumber,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.unscaled_value {
-        object.key("UnscaledValue").string_unchecked(&::aws_smithy_types::base64::encode(var_1));
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object
+            .key("UnscaledValue")
+            .string_unchecked(&::aws_smithy_types::base64::encode(&input.unscaled_value));
     }
     {
         object.key("Scale").number(
@@ -50,7 +52,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::decimal_number_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

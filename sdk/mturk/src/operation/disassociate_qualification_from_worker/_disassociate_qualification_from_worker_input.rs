@@ -41,6 +41,7 @@ pub struct DisassociateQualificationFromWorkerInputBuilder {
 }
 impl DisassociateQualificationFromWorkerInputBuilder {
     /// <p>The ID of the Worker who possesses the Qualification to be revoked.</p>
+    /// This field is required.
     pub fn worker_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.worker_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DisassociateQualificationFromWorkerInputBuilder {
         &self.worker_id
     }
     /// <p>The ID of the Qualification type of the Qualification to be revoked.</p>
+    /// This field is required.
     pub fn qualification_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.qualification_type_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +89,7 @@ impl DisassociateQualificationFromWorkerInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_qualification_from_worker::DisassociateQualificationFromWorkerInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_qualification_from_worker::DisassociateQualificationFromWorkerInput {

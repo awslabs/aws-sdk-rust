@@ -2,7 +2,7 @@
 pub fn ser_disassociate_budget_from_resource_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::disassociate_budget_from_resource::DisassociateBudgetFromResourceInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.budget_name {
         object.key("BudgetName").string(var_1.as_str());
     }

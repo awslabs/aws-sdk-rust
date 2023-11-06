@@ -51,8 +51,10 @@ impl Transcript {
         self.sentiment.as_ref()
     }
     /// <p>List of positions where issues were detected on the transcript.</p>
-    pub fn issues_detected(&self) -> ::std::option::Option<&[crate::types::IssueDetected]> {
-        self.issues_detected.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.issues_detected.is_none()`.
+    pub fn issues_detected(&self) -> &[crate::types::IssueDetected] {
+        self.issues_detected.as_deref().unwrap_or_default()
     }
 }
 impl Transcript {
@@ -77,6 +79,7 @@ pub struct TranscriptBuilder {
 }
 impl TranscriptBuilder {
     /// <p>The identifier of the transcript.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +94,7 @@ impl TranscriptBuilder {
         &self.id
     }
     /// <p>The identifier of the participant.</p>
+    /// This field is required.
     pub fn participant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.participant_id = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +109,7 @@ impl TranscriptBuilder {
         &self.participant_id
     }
     /// <p>The role of participant. For example, is it a customer, agent, or system.</p>
+    /// This field is required.
     pub fn participant_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.participant_role = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +124,7 @@ impl TranscriptBuilder {
         &self.participant_role
     }
     /// <p>The content of the transcript.</p>
+    /// This field is required.
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
         self
@@ -133,6 +139,7 @@ impl TranscriptBuilder {
         &self.content
     }
     /// <p>The beginning offset in the contact for this transcript.</p>
+    /// This field is required.
     pub fn begin_offset_millis(mut self, input: i32) -> Self {
         self.begin_offset_millis = ::std::option::Option::Some(input);
         self
@@ -147,6 +154,7 @@ impl TranscriptBuilder {
         &self.begin_offset_millis
     }
     /// <p>The end offset in the contact for this transcript.</p>
+    /// This field is required.
     pub fn end_offset_millis(mut self, input: i32) -> Self {
         self.end_offset_millis = ::std::option::Option::Some(input);
         self
@@ -161,6 +169,7 @@ impl TranscriptBuilder {
         &self.end_offset_millis
     }
     /// <p>The sentiment of the detected for this piece of transcript.</p>
+    /// This field is required.
     pub fn sentiment(mut self, input: crate::types::SentimentValue) -> Self {
         self.sentiment = ::std::option::Option::Some(input);
         self

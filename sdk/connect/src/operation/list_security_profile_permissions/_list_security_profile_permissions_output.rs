@@ -11,8 +11,10 @@ pub struct ListSecurityProfilePermissionsOutput {
 }
 impl ListSecurityProfilePermissionsOutput {
     /// <p>The permissions granted to the security profile. For a complete list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>.</p>
-    pub fn permissions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permissions.is_none()`.
+    pub fn permissions(&self) -> &[::std::string::String] {
+        self.permissions.as_deref().unwrap_or_default()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

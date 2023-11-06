@@ -41,6 +41,7 @@ pub struct DescribeDashboardSnapshotJobResultInputBuilder {
 }
 impl DescribeDashboardSnapshotJobResultInputBuilder {
     /// <p>The ID of the Amazon Web Services account that the dashboard snapshot job is executed in.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DescribeDashboardSnapshotJobResultInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID of the dashboard that you have started a snapshot job for.</p>
+    /// This field is required.
     pub fn dashboard_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dashboard_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl DescribeDashboardSnapshotJobResultInputBuilder {
         &self.dashboard_id
     }
     /// <p>The ID of the job to be described. The job ID is set when you start a new job with a <code>StartDashboardSnapshotJob</code> API call.</p>
+    /// This field is required.
     pub fn snapshot_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_job_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +90,7 @@ impl DescribeDashboardSnapshotJobResultInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_dashboard_snapshot_job_result::DescribeDashboardSnapshotJobResultInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_dashboard_snapshot_job_result::DescribeDashboardSnapshotJobResultInput {

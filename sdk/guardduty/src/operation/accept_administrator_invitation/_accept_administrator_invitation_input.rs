@@ -41,6 +41,7 @@ pub struct AcceptAdministratorInvitationInputBuilder {
 }
 impl AcceptAdministratorInvitationInputBuilder {
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl AcceptAdministratorInvitationInputBuilder {
         &self.detector_id
     }
     /// <p>The account ID of the GuardDuty administrator account whose invitation you're accepting.</p>
+    /// This field is required.
     pub fn administrator_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.administrator_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl AcceptAdministratorInvitationInputBuilder {
         &self.administrator_id
     }
     /// <p>The value that is used to validate the administrator account to the member account.</p>
+    /// This field is required.
     pub fn invitation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.invitation_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +90,7 @@ impl AcceptAdministratorInvitationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::accept_administrator_invitation::AcceptAdministratorInvitationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::accept_administrator_invitation::AcceptAdministratorInvitationInput {
             detector_id: self.detector_id,

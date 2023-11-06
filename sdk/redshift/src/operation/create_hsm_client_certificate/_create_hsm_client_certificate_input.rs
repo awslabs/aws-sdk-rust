@@ -15,8 +15,10 @@ impl CreateHsmClientCertificateInput {
         self.hsm_client_certificate_identifier.as_deref()
     }
     /// <p>A list of tag instances.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateHsmClientCertificateInput {
@@ -35,6 +37,7 @@ pub struct CreateHsmClientCertificateInputBuilder {
 }
 impl CreateHsmClientCertificateInputBuilder {
     /// <p>The identifier to be assigned to the new HSM client certificate that the cluster will use to connect to the HSM to use the database encryption keys.</p>
+    /// This field is required.
     pub fn hsm_client_certificate_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hsm_client_certificate_identifier = ::std::option::Option::Some(input.into());
         self
@@ -73,7 +76,7 @@ impl CreateHsmClientCertificateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateInput {
             hsm_client_certificate_identifier: self.hsm_client_certificate_identifier,

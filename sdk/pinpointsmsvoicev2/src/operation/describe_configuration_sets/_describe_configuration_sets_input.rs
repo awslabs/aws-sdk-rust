@@ -14,12 +14,16 @@ pub struct DescribeConfigurationSetsInput {
 }
 impl DescribeConfigurationSetsInput {
     /// <p>An array of strings. Each element can be either a ConfigurationSetName or ConfigurationSetArn.</p>
-    pub fn configuration_set_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.configuration_set_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configuration_set_names.is_none()`.
+    pub fn configuration_set_names(&self) -> &[::std::string::String] {
+        self.configuration_set_names.as_deref().unwrap_or_default()
     }
     /// <p>An array of filters to apply to the results that are returned.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::ConfigurationSetFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::ConfigurationSetFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -120,7 +124,7 @@ impl DescribeConfigurationSetsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_configuration_sets::DescribeConfigurationSetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_configuration_sets::DescribeConfigurationSetsInput {
             configuration_set_names: self.configuration_set_names,

@@ -28,6 +28,7 @@ pub struct VectorConfigBuilder {
 }
 impl VectorConfigBuilder {
     /// <p>The number of elements in your vector.</p>
+    /// This field is required.
     pub fn dimension(mut self, input: i32) -> Self {
         self.dimension = ::std::option::Option::Some(input);
         self

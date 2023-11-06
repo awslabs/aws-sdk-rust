@@ -2,11 +2,11 @@
 pub fn ser_visa_pin(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VisaPin,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.pin_verification_key_index {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
         object.key("PinVerificationKeyIndex").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+            ::aws_smithy_types::Number::NegInt((input.pin_verification_key_index).into()),
         );
     }
     Ok(())

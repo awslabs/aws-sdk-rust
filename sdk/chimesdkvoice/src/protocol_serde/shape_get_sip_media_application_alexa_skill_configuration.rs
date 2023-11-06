@@ -38,8 +38,8 @@ pub fn de_get_sip_media_application_alexa_skill_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ForbiddenException" => crate::operation::get_sip_media_application_alexa_skill_configuration::GetSipMediaApplicationAlexaSkillConfigurationError::ForbiddenException({
@@ -54,8 +54,8 @@ pub fn de_get_sip_media_application_alexa_skill_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NotFoundException" => crate::operation::get_sip_media_application_alexa_skill_configuration::GetSipMediaApplicationAlexaSkillConfigurationError::NotFoundException({
@@ -70,8 +70,8 @@ pub fn de_get_sip_media_application_alexa_skill_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ServiceFailureException" => crate::operation::get_sip_media_application_alexa_skill_configuration::GetSipMediaApplicationAlexaSkillConfigurationError::ServiceFailureException({
@@ -86,8 +86,8 @@ pub fn de_get_sip_media_application_alexa_skill_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::get_sip_media_application_alexa_skill_configuration::GetSipMediaApplicationAlexaSkillConfigurationError::ServiceUnavailableException({
@@ -102,8 +102,8 @@ pub fn de_get_sip_media_application_alexa_skill_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ThrottledClientException" => crate::operation::get_sip_media_application_alexa_skill_configuration::GetSipMediaApplicationAlexaSkillConfigurationError::ThrottledClientException({
@@ -118,8 +118,8 @@ pub fn de_get_sip_media_application_alexa_skill_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "UnauthorizedClientException" => crate::operation::get_sip_media_application_alexa_skill_configuration::GetSipMediaApplicationAlexaSkillConfigurationError::UnauthorizedClientException({
@@ -134,8 +134,8 @@ pub fn de_get_sip_media_application_alexa_skill_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::get_sip_media_application_alexa_skill_configuration::GetSipMediaApplicationAlexaSkillConfigurationError::generic(generic)

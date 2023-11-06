@@ -40,7 +40,7 @@ pub struct MapConfiguration {
     /// <li> <p> <code>VectorOpenDataVisualizationLight</code> – The Open Data Visualization Light map style is a light-themed style with muted colors and fewer features that aids in understanding overlaid data.</p> </li>
     /// <li> <p> <code>VectorOpenDataVisualizationDark</code> – The Open Data Visualization Dark map style is a dark-themed style with muted colors and fewer features that aids in understanding overlaid data.</p> </li>
     /// </ul>
-    pub style: ::std::option::Option<::std::string::String>,
+    pub style: ::std::string::String,
     /// <p>Specifies the political view for the style. Leave unset to not use a political view, or, for styles that support specific political views, you can choose a view, such as <code>IND</code> for the Indian view.</p>
     /// <p>Default is unset.</p> <note>
     /// <p>Not all map resources or styles support political view styles. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#political-views">Political views</a> for more information.</p>
@@ -84,8 +84,9 @@ impl MapConfiguration {
     /// <li> <p> <code>VectorOpenDataVisualizationLight</code> – The Open Data Visualization Light map style is a light-themed style with muted colors and fewer features that aids in understanding overlaid data.</p> </li>
     /// <li> <p> <code>VectorOpenDataVisualizationDark</code> – The Open Data Visualization Dark map style is a dark-themed style with muted colors and fewer features that aids in understanding overlaid data.</p> </li>
     /// </ul>
-    pub fn style(&self) -> ::std::option::Option<&str> {
-        self.style.as_deref()
+    pub fn style(&self) -> &str {
+        use std::ops::Deref;
+        self.style.deref()
     }
     /// <p>Specifies the political view for the style. Leave unset to not use a political view, or, for styles that support specific political views, you can choose a view, such as <code>IND</code> for the Indian view.</p>
     /// <p>Default is unset.</p> <note>
@@ -146,6 +147,7 @@ impl MapConfigurationBuilder {
     /// <li> <p> <code>VectorOpenDataVisualizationLight</code> – The Open Data Visualization Light map style is a light-themed style with muted colors and fewer features that aids in understanding overlaid data.</p> </li>
     /// <li> <p> <code>VectorOpenDataVisualizationDark</code> – The Open Data Visualization Dark map style is a dark-themed style with muted colors and fewer features that aids in understanding overlaid data.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn style(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.style = ::std::option::Option::Some(input.into());
         self
@@ -253,10 +255,17 @@ impl MapConfigurationBuilder {
         &self.political_view
     }
     /// Consumes the builder and constructs a [`MapConfiguration`](crate::types::MapConfiguration).
-    pub fn build(self) -> crate::types::MapConfiguration {
-        crate::types::MapConfiguration {
-            style: self.style,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`style`](crate::types::builders::MapConfigurationBuilder::style)
+    pub fn build(self) -> ::std::result::Result<crate::types::MapConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::MapConfiguration {
+            style: self.style.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "style",
+                    "style was not specified but it is required when building MapConfiguration",
+                )
+            })?,
             political_view: self.political_view,
-        }
+        })
     }
 }

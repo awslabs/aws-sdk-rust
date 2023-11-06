@@ -28,6 +28,7 @@ pub struct RestoreFromSnapshotInputBuilder {
 }
 impl RestoreFromSnapshotInputBuilder {
     /// <p>The identifier of the snapshot to restore from.</p>
+    /// This field is required.
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_id = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl RestoreFromSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`RestoreFromSnapshotInput`](crate::operation::restore_from_snapshot::RestoreFromSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::restore_from_snapshot::RestoreFromSnapshotInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::restore_from_snapshot::RestoreFromSnapshotInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::restore_from_snapshot::RestoreFromSnapshotInput {
             snapshot_id: self.snapshot_id,

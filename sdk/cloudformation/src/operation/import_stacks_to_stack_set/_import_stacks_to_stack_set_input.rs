@@ -32,8 +32,10 @@ impl ImportStacksToStackSetInput {
     }
     /// <p>The IDs of the stacks you are importing into a stack set. You import up to 10 stacks per stack set at a time.</p>
     /// <p>Specify either <code>StackIds</code> or <code>StackIdsUrl</code>.</p>
-    pub fn stack_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.stack_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stack_ids.is_none()`.
+    pub fn stack_ids(&self) -> &[::std::string::String] {
+        self.stack_ids.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon S3 URL which contains list of stack ids to be inputted.</p>
     /// <p>Specify either <code>StackIds</code> or <code>StackIdsUrl</code>.</p>
@@ -41,8 +43,10 @@ impl ImportStacksToStackSetInput {
         self.stack_ids_url.as_deref()
     }
     /// <p>The list of OU ID's to which the stacks being imported has to be mapped as deployment target.</p>
-    pub fn organizational_unit_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.organizational_unit_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.organizational_unit_ids.is_none()`.
+    pub fn organizational_unit_ids(&self) -> &[::std::string::String] {
+        self.organizational_unit_ids.as_deref().unwrap_or_default()
     }
     /// <p>The user-specified preferences for how CloudFormation performs a stack set operation.</p>
     /// <p>For more information about maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
@@ -83,6 +87,7 @@ pub struct ImportStacksToStackSetInputBuilder {
 }
 impl ImportStacksToStackSetInputBuilder {
     /// <p>The name of the stack set. The name must be unique in the Region where you create your stack set.</p>
+    /// This field is required.
     pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_set_name = ::std::option::Option::Some(input.into());
         self
@@ -218,7 +223,7 @@ impl ImportStacksToStackSetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetInput {
             stack_set_name: self.stack_set_name,

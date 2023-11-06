@@ -91,6 +91,7 @@ pub struct UpdateQuerySuggestionsConfigInputBuilder {
 }
 impl UpdateQuerySuggestionsConfigInputBuilder {
     /// <p> The identifier of the index with query suggestions you want to update.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self
@@ -226,7 +227,7 @@ impl UpdateQuerySuggestionsConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_query_suggestions_config::UpdateQuerySuggestionsConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_query_suggestions_config::UpdateQuerySuggestionsConfigInput {
             index_id: self.index_id,

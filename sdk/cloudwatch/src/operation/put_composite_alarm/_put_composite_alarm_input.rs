@@ -59,8 +59,10 @@ impl PutCompositeAlarmInput {
     }
     /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
     /// <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code> </p>
-    pub fn alarm_actions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.alarm_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alarm_actions.is_none()`.
+    pub fn alarm_actions(&self) -> &[::std::string::String] {
+        self.alarm_actions.as_deref().unwrap_or_default()
     }
     /// <p>The description for the composite alarm.</p>
     pub fn alarm_description(&self) -> ::std::option::Option<&str> {
@@ -94,18 +96,24 @@ impl PutCompositeAlarmInput {
     }
     /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
     /// <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> </p>
-    pub fn insufficient_data_actions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.insufficient_data_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.insufficient_data_actions.is_none()`.
+    pub fn insufficient_data_actions(&self) -> &[::std::string::String] {
+        self.insufficient_data_actions.as_deref().unwrap_or_default()
     }
     /// <p>The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
     /// <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> </p>
-    pub fn ok_actions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ok_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ok_actions.is_none()`.
+    pub fn ok_actions(&self) -> &[::std::string::String] {
+        self.ok_actions.as_deref().unwrap_or_default()
     }
     /// <p>A list of key-value pairs to associate with the composite alarm. You can associate as many as 50 tags with an alarm.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only resources with certain tag values.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p> Actions will be suppressed if the suppressor alarm is in the <code>ALARM</code> state. <code>ActionsSuppressor</code> can be an AlarmName or an Amazon Resource Name (ARN) from an existing alarm. </p>
     pub fn actions_suppressor(&self) -> ::std::option::Option<&str> {
@@ -200,6 +208,7 @@ impl PutCompositeAlarmInputBuilder {
         &self.alarm_description
     }
     /// <p>The name for the composite alarm. This name must be unique within the Region.</p>
+    /// This field is required.
     pub fn alarm_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alarm_name = ::std::option::Option::Some(input.into());
         self
@@ -232,6 +241,7 @@ impl PutCompositeAlarmInputBuilder {
     /// <li> <p> <code>(ALARM(CPUUtilizationTooHigh) OR ALARM(DiskReadOpsTooHigh)) AND OK(NetworkOutTooHigh)</code> goes into ALARM state if CPUUtilizationTooHigh OR DiskReadOpsTooHigh is in ALARM state, and if NetworkOutTooHigh is in OK state. This provides another example of using a composite alarm to prevent noise. This rule ensures that you are not notified with an alarm action on high CPU or disk usage if a known network problem is also occurring.</p> </li>
     /// </ul>
     /// <p>The <code>AlarmRule</code> can specify as many as 100 "children" alarms. The <code>AlarmRule</code> expression can have as many as 500 elements. Elements are child alarms, TRUE or FALSE statements, and parentheses.</p>
+    /// This field is required.
     pub fn alarm_rule(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alarm_rule = ::std::option::Option::Some(input.into());
         self
@@ -407,7 +417,7 @@ impl PutCompositeAlarmInputBuilder {
     /// Consumes the builder and constructs a [`PutCompositeAlarmInput`](crate::operation::put_composite_alarm::PutCompositeAlarmInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_composite_alarm::PutCompositeAlarmInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_composite_alarm::PutCompositeAlarmInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_composite_alarm::PutCompositeAlarmInput {
             actions_enabled: self.actions_enabled,
             alarm_actions: self.alarm_actions,

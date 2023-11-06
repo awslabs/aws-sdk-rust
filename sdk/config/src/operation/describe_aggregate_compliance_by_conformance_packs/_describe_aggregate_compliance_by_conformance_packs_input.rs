@@ -50,6 +50,7 @@ pub struct DescribeAggregateComplianceByConformancePacksInputBuilder {
 }
 impl DescribeAggregateComplianceByConformancePacksInputBuilder {
     /// <p>The name of the configuration aggregator.</p>
+    /// This field is required.
     pub fn configuration_aggregator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_aggregator_name = ::std::option::Option::Some(input.into());
         self
@@ -110,7 +111,7 @@ impl DescribeAggregateComplianceByConformancePacksInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_aggregate_compliance_by_conformance_packs::DescribeAggregateComplianceByConformancePacksInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_aggregate_compliance_by_conformance_packs::DescribeAggregateComplianceByConformancePacksInput {

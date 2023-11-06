@@ -10,11 +10,11 @@ pub struct RecipientDsnFields {
     /// </note>
     pub final_recipient: ::std::option::Option<::std::string::String>,
     /// <p>The action performed by the reporting mail transfer agent (MTA) as a result of its attempt to deliver the message to the recipient address. This is required by <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>.</p>
-    pub action: ::std::option::Option<crate::types::DsnAction>,
+    pub action: crate::types::DsnAction,
     /// <p>The MTA to which the remote MTA attempted to deliver the message, formatted as specified in <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a> (<code>mta-name-type; mta-name</code>). This parameter typically applies only to propagating synchronous bounces.</p>
     pub remote_mta: ::std::option::Option<::std::string::String>,
     /// <p>The status code that indicates what went wrong. This is required by <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>.</p>
-    pub status: ::std::option::Option<::std::string::String>,
+    pub status: ::std::string::String,
     /// <p>An extended explanation of what went wrong; this is usually an SMTP response. See <a href="https://tools.ietf.org/html/rfc3463">RFC 3463</a> for the correct formatting of this parameter.</p>
     pub diagnostic_code: ::std::option::Option<::std::string::String>,
     /// <p>The time the final delivery attempt was made, in <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
@@ -30,16 +30,17 @@ impl RecipientDsnFields {
         self.final_recipient.as_deref()
     }
     /// <p>The action performed by the reporting mail transfer agent (MTA) as a result of its attempt to deliver the message to the recipient address. This is required by <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>.</p>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::DsnAction> {
-        self.action.as_ref()
+    pub fn action(&self) -> &crate::types::DsnAction {
+        &self.action
     }
     /// <p>The MTA to which the remote MTA attempted to deliver the message, formatted as specified in <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a> (<code>mta-name-type; mta-name</code>). This parameter typically applies only to propagating synchronous bounces.</p>
     pub fn remote_mta(&self) -> ::std::option::Option<&str> {
         self.remote_mta.as_deref()
     }
     /// <p>The status code that indicates what went wrong. This is required by <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
-        self.status.as_deref()
+    pub fn status(&self) -> &str {
+        use std::ops::Deref;
+        self.status.deref()
     }
     /// <p>An extended explanation of what went wrong; this is usually an SMTP response. See <a href="https://tools.ietf.org/html/rfc3463">RFC 3463</a> for the correct formatting of this parameter.</p>
     pub fn diagnostic_code(&self) -> ::std::option::Option<&str> {
@@ -50,8 +51,10 @@ impl RecipientDsnFields {
         self.last_attempt_date.as_ref()
     }
     /// <p>Additional X-headers to include in the DSN.</p>
-    pub fn extension_fields(&self) -> ::std::option::Option<&[crate::types::ExtensionField]> {
-        self.extension_fields.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.extension_fields.is_none()`.
+    pub fn extension_fields(&self) -> &[crate::types::ExtensionField] {
+        self.extension_fields.as_deref().unwrap_or_default()
     }
 }
 impl RecipientDsnFields {
@@ -95,6 +98,7 @@ impl RecipientDsnFieldsBuilder {
         &self.final_recipient
     }
     /// <p>The action performed by the reporting mail transfer agent (MTA) as a result of its attempt to deliver the message to the recipient address. This is required by <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>.</p>
+    /// This field is required.
     pub fn action(mut self, input: crate::types::DsnAction) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
@@ -123,6 +127,7 @@ impl RecipientDsnFieldsBuilder {
         &self.remote_mta
     }
     /// <p>The status code that indicates what went wrong. This is required by <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>.</p>
+    /// This field is required.
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
         self
@@ -185,15 +190,28 @@ impl RecipientDsnFieldsBuilder {
         &self.extension_fields
     }
     /// Consumes the builder and constructs a [`RecipientDsnFields`](crate::types::RecipientDsnFields).
-    pub fn build(self) -> crate::types::RecipientDsnFields {
-        crate::types::RecipientDsnFields {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`action`](crate::types::builders::RecipientDsnFieldsBuilder::action)
+    /// - [`status`](crate::types::builders::RecipientDsnFieldsBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::RecipientDsnFields, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RecipientDsnFields {
             final_recipient: self.final_recipient,
-            action: self.action,
+            action: self.action.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "action",
+                    "action was not specified but it is required when building RecipientDsnFields",
+                )
+            })?,
             remote_mta: self.remote_mta,
-            status: self.status,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building RecipientDsnFields",
+                )
+            })?,
             diagnostic_code: self.diagnostic_code,
             last_attempt_date: self.last_attempt_date,
             extension_fields: self.extension_fields,
-        }
+        })
     }
 }

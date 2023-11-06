@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ModifyInstanceGroups`](crate::operation::modify_instance_groups::builders::ModifyInstanceGroupsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cluster_id(impl Into<String>)`](crate::operation::modify_instance_groups::builders::ModifyInstanceGroupsFluentBuilder::cluster_id) / [`set_cluster_id(Option<String>)`](crate::operation::modify_instance_groups::builders::ModifyInstanceGroupsFluentBuilder::set_cluster_id): <p>The ID of the cluster to which the instance group belongs.</p>
-    ///   - [`instance_groups(InstanceGroupModifyConfig)`](crate::operation::modify_instance_groups::builders::ModifyInstanceGroupsFluentBuilder::instance_groups) / [`set_instance_groups(Option<Vec<InstanceGroupModifyConfig>>)`](crate::operation::modify_instance_groups::builders::ModifyInstanceGroupsFluentBuilder::set_instance_groups): <p>Instance groups to change.</p>
+    ///   - [`cluster_id(impl Into<String>)`](crate::operation::modify_instance_groups::builders::ModifyInstanceGroupsFluentBuilder::cluster_id) / [`set_cluster_id(Option<String>)`](crate::operation::modify_instance_groups::builders::ModifyInstanceGroupsFluentBuilder::set_cluster_id):<br>required: **false**<br><p>The ID of the cluster to which the instance group belongs.</p><br>
+    ///   - [`instance_groups(InstanceGroupModifyConfig)`](crate::operation::modify_instance_groups::builders::ModifyInstanceGroupsFluentBuilder::instance_groups) / [`set_instance_groups(Option<Vec::<InstanceGroupModifyConfig>>)`](crate::operation::modify_instance_groups::builders::ModifyInstanceGroupsFluentBuilder::set_instance_groups):<br>required: **false**<br><p>Instance groups to change.</p><br>
     /// - On success, responds with [`ModifyInstanceGroupsOutput`](crate::operation::modify_instance_groups::ModifyInstanceGroupsOutput)
     /// - On failure, responds with [`SdkError<ModifyInstanceGroupsError>`](crate::operation::modify_instance_groups::ModifyInstanceGroupsError)
     pub fn modify_instance_groups(&self) -> crate::operation::modify_instance_groups::builders::ModifyInstanceGroupsFluentBuilder {

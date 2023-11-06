@@ -34,6 +34,7 @@ pub struct ArchiveApplicationInputBuilder {
 }
 impl ArchiveApplicationInputBuilder {
     /// <p>Application ID.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl ArchiveApplicationInputBuilder {
     /// Consumes the builder and constructs a [`ArchiveApplicationInput`](crate::operation::archive_application::ArchiveApplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::archive_application::ArchiveApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::archive_application::ArchiveApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::archive_application::ArchiveApplicationInput {
             application_id: self.application_id,
             account_id: self.account_id,

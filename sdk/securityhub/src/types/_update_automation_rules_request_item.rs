@@ -51,8 +51,10 @@ impl UpdateAutomationRulesRequestItem {
         self.criteria.as_ref()
     }
     /// <p> One or more actions to update finding fields if a finding matches the conditions specified in <code>Criteria</code>. </p>
-    pub fn actions(&self) -> ::std::option::Option<&[crate::types::AutomationRulesAction]> {
-        self.actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
+    pub fn actions(&self) -> &[crate::types::AutomationRulesAction] {
+        self.actions.as_deref().unwrap_or_default()
     }
 }
 impl UpdateAutomationRulesRequestItem {
@@ -77,6 +79,7 @@ pub struct UpdateAutomationRulesRequestItemBuilder {
 }
 impl UpdateAutomationRulesRequestItemBuilder {
     /// <p> The Amazon Resource Name (ARN) for the rule. </p>
+    /// This field is required.
     pub fn rule_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_arn = ::std::option::Option::Some(input.into());
         self

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceSummary {
     /// <p>The resource type.</p>
-    pub resource_type: ::std::option::Option<::std::string::String>,
+    pub resource_type: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the resource.</p>
@@ -13,8 +13,9 @@ pub struct ResourceSummary {
 }
 impl ResourceSummary {
     /// <p>The resource type.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
-        self.resource_type.as_deref()
+    pub fn resource_type(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_type.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
@@ -42,6 +43,7 @@ pub struct ResourceSummaryBuilder {
 }
 impl ResourceSummaryBuilder {
     /// <p>The resource type.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +86,18 @@ impl ResourceSummaryBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`ResourceSummary`](crate::types::ResourceSummary).
-    pub fn build(self) -> crate::types::ResourceSummary {
-        crate::types::ResourceSummary {
-            resource_type: self.resource_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource_type`](crate::types::builders::ResourceSummaryBuilder::resource_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::ResourceSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ResourceSummary {
+            resource_type: self.resource_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "resource_type",
+                    "resource_type was not specified but it is required when building ResourceSummary",
+                )
+            })?,
             arn: self.arn,
             id: self.id,
-        }
+        })
     }
 }

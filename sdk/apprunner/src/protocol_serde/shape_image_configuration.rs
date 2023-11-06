@@ -2,7 +2,7 @@
 pub fn ser_image_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ImageConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.runtime_environment_variables {
         #[allow(unused_mut)]
         let mut object_2 = object.key("RuntimeEnvironmentVariables").start_object();

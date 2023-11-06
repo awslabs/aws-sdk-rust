@@ -31,8 +31,10 @@ impl CheckoutBorrowLicenseOutput {
         self.license_consumption_token.as_deref()
     }
     /// <p>Allowed license entitlements.</p>
-    pub fn entitlements_allowed(&self) -> ::std::option::Option<&[crate::types::EntitlementData]> {
-        self.entitlements_allowed.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entitlements_allowed.is_none()`.
+    pub fn entitlements_allowed(&self) -> &[crate::types::EntitlementData] {
+        self.entitlements_allowed.as_deref().unwrap_or_default()
     }
     /// <p>Node ID.</p>
     pub fn node_id(&self) -> ::std::option::Option<&str> {
@@ -51,8 +53,10 @@ impl CheckoutBorrowLicenseOutput {
         self.expiration.as_deref()
     }
     /// <p>Information about constraints.</p>
-    pub fn checkout_metadata(&self) -> ::std::option::Option<&[crate::types::Metadata]> {
-        self.checkout_metadata.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.checkout_metadata.is_none()`.
+    pub fn checkout_metadata(&self) -> &[crate::types::Metadata] {
+        self.checkout_metadata.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for CheckoutBorrowLicenseOutput {

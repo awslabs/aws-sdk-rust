@@ -126,6 +126,7 @@ impl SmsTemplateResponseBuilder {
         &self.body
     }
     /// <p>The date, in ISO 8601 format, when the message template was created.</p>
+    /// This field is required.
     pub fn creation_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_date = ::std::option::Option::Some(input.into());
         self
@@ -154,6 +155,7 @@ impl SmsTemplateResponseBuilder {
         &self.default_substitutions
     }
     /// <p>The date, in ISO 8601 format, when the message template was last modified.</p>
+    /// This field is required.
     pub fn last_modified_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input.into());
         self
@@ -216,6 +218,7 @@ impl SmsTemplateResponseBuilder {
         &self.template_description
     }
     /// <p>The name of the message template.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
@@ -230,6 +233,7 @@ impl SmsTemplateResponseBuilder {
         &self.template_name
     }
     /// <p>The type of channel that the message template is designed for. For an SMS template, this value is SMS.</p>
+    /// This field is required.
     pub fn template_type(mut self, input: crate::types::TemplateType) -> Self {
         self.template_type = ::std::option::Option::Some(input);
         self

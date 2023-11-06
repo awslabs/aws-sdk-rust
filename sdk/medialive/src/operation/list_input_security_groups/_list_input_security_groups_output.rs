@@ -12,8 +12,10 @@ pub struct ListInputSecurityGroupsOutput {
 }
 impl ListInputSecurityGroupsOutput {
     /// List of input security groups
-    pub fn input_security_groups(&self) -> ::std::option::Option<&[crate::types::InputSecurityGroup]> {
-        self.input_security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_security_groups.is_none()`.
+    pub fn input_security_groups(&self) -> &[crate::types::InputSecurityGroup] {
+        self.input_security_groups.as_deref().unwrap_or_default()
     }
     /// Placeholder documentation for __string
     pub fn next_token(&self) -> ::std::option::Option<&str> {

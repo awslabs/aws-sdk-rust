@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDevicePool`](crate::operation::delete_device_pool::builders::DeleteDevicePoolFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::delete_device_pool::builders::DeleteDevicePoolFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_device_pool::builders::DeleteDevicePoolFluentBuilder::set_arn): <p>Represents the Amazon Resource Name (ARN) of the Device Farm device pool to delete.</p>
+    ///   - [`arn(impl Into<String>)`](crate::operation::delete_device_pool::builders::DeleteDevicePoolFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_device_pool::builders::DeleteDevicePoolFluentBuilder::set_arn):<br>required: **true**<br><p>Represents the Amazon Resource Name (ARN) of the Device Farm device pool to delete.</p><br>
     /// - On success, responds with [`DeleteDevicePoolOutput`](crate::operation::delete_device_pool::DeleteDevicePoolOutput)
     /// - On failure, responds with [`SdkError<DeleteDevicePoolError>`](crate::operation::delete_device_pool::DeleteDevicePoolError)
     pub fn delete_device_pool(&self) -> crate::operation::delete_device_pool::builders::DeleteDevicePoolFluentBuilder {

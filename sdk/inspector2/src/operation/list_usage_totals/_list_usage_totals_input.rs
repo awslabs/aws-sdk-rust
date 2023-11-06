@@ -20,8 +20,10 @@ impl ListUsageTotalsInput {
         self.next_token.as_deref()
     }
     /// <p>The Amazon Web Services account IDs to retrieve usage totals for.</p>
-    pub fn account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.account_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
+    pub fn account_ids(&self) -> &[::std::string::String] {
+        self.account_ids.as_deref().unwrap_or_default()
     }
 }
 impl ListUsageTotalsInput {
@@ -91,7 +93,7 @@ impl ListUsageTotalsInputBuilder {
     /// Consumes the builder and constructs a [`ListUsageTotalsInput`](crate::operation::list_usage_totals::ListUsageTotalsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_usage_totals::ListUsageTotalsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_usage_totals::ListUsageTotalsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_usage_totals::ListUsageTotalsInput {
             max_results: self.max_results,
             next_token: self.next_token,

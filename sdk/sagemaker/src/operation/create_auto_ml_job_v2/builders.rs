@@ -10,7 +10,7 @@ impl CreateAutoMlJobV2InputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_auto_ml_job_v2::CreateAutoMlJobV2Output,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::create_auto_ml_job_v2::CreateAutoMLJobV2Error,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -24,7 +24,7 @@ impl CreateAutoMlJobV2InputBuilder {
 ///
 /// <p>Creates an Autopilot job also referred to as Autopilot experiment or AutoML job V2.</p> <note>
 /// <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJobV2.html">DescribeAutoMLJobV2</a> are new versions of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html">CreateAutoMLJob</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJob.html">DescribeAutoMLJob</a> which offer backward compatibility.</p>
-/// <p> <code>CreateAutoMLJobV2</code> can manage tabular problem types identical to those of its previous version <code>CreateAutoMLJob</code>, as well as time-series forecasting, and non-tabular problem types such as image or text classification.</p>
+/// <p> <code>CreateAutoMLJobV2</code> can manage tabular problem types identical to those of its previous version <code>CreateAutoMLJob</code>, as well as time-series forecasting, non-tabular problem types such as image or text classification, and text generation (LLMs fine-tuning).</p>
 /// <p>Find guidelines about how to migrate a <code>CreateAutoMLJob</code> to <code>CreateAutoMLJobV2</code> in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-create-experiment-api.html#autopilot-create-experiment-api-migrate-v1-v2">Migrate a CreateAutoMLJob to CreateAutoMLJobV2</a>.</p>
 /// </note>
 /// <p>For the list of available problem types supported by <code>CreateAutoMLJobV2</code>, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLProblemTypeConfig.html">AutoMLProblemTypeConfig</a>.</p>
@@ -78,12 +78,15 @@ impl CreateAutoMLJobV2FluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_auto_ml_job_v2::CreateAutoMlJobV2Output,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::create_auto_ml_job_v2::CreateAutoMLJobV2Error,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::create_auto_ml_job_v2::CreateAutoMLJobV2::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -92,20 +95,15 @@ impl CreateAutoMLJobV2FluentBuilder {
         crate::operation::create_auto_ml_job_v2::CreateAutoMLJobV2::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::create_auto_ml_job_v2::CreateAutoMlJobV2Output,
-            crate::operation::create_auto_ml_job_v2::CreateAutoMLJobV2Error,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::create_auto_ml_job_v2::CreateAutoMLJobV2Error>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::create_auto_ml_job_v2::CreateAutoMlJobV2Output,
+        crate::operation::create_auto_ml_job_v2::CreateAutoMLJobV2Error,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -140,6 +138,7 @@ impl CreateAutoMLJobV2FluentBuilder {
     /// <li> <p>For image classification: <code>S3Prefix</code>, <code>ManifestFile</code>, <code>AugmentedManifestFile</code>.</p> </li>
     /// <li> <p>For text classification: <code>S3Prefix</code>.</p> </li>
     /// <li> <p>For time-series forecasting: <code>S3Prefix</code>.</p> </li>
+    /// <li> <p>For text generation (LLMs fine-tuning): <code>S3Prefix</code>.</p> </li>
     /// </ul>
     pub fn auto_ml_job_input_data_config(mut self, input: crate::types::AutoMlJobChannel) -> Self {
         self.inner = self.inner.auto_ml_job_input_data_config(input);
@@ -151,6 +150,7 @@ impl CreateAutoMLJobV2FluentBuilder {
     /// <li> <p>For image classification: <code>S3Prefix</code>, <code>ManifestFile</code>, <code>AugmentedManifestFile</code>.</p> </li>
     /// <li> <p>For text classification: <code>S3Prefix</code>.</p> </li>
     /// <li> <p>For time-series forecasting: <code>S3Prefix</code>.</p> </li>
+    /// <li> <p>For text generation (LLMs fine-tuning): <code>S3Prefix</code>.</p> </li>
     /// </ul>
     pub fn set_auto_ml_job_input_data_config(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AutoMlJobChannel>>) -> Self {
         self.inner = self.inner.set_auto_ml_job_input_data_config(input);
@@ -162,6 +162,7 @@ impl CreateAutoMLJobV2FluentBuilder {
     /// <li> <p>For image classification: <code>S3Prefix</code>, <code>ManifestFile</code>, <code>AugmentedManifestFile</code>.</p> </li>
     /// <li> <p>For text classification: <code>S3Prefix</code>.</p> </li>
     /// <li> <p>For time-series forecasting: <code>S3Prefix</code>.</p> </li>
+    /// <li> <p>For text generation (LLMs fine-tuning): <code>S3Prefix</code>.</p> </li>
     /// </ul>
     pub fn get_auto_ml_job_input_data_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoMlJobChannel>> {
         self.inner.get_auto_ml_job_input_data_config()
@@ -241,21 +242,30 @@ impl CreateAutoMLJobV2FluentBuilder {
         self.inner.get_security_config()
     }
     /// <p>Specifies a metric to minimize or maximize as the objective of a job. If not specified, the default objective metric depends on the problem type. For the list of default values per problem type, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective</a>.</p> <note>
-    /// <p>For tabular problem types, you must either provide both the <code>AutoMLJobObjective</code> and indicate the type of supervised learning problem in <code>AutoMLProblemTypeConfig</code> (<code>TabularJobConfig.ProblemType</code>), or none at all.</p>
+    /// <ul>
+    /// <li> <p>For tabular problem types: You must either provide both the <code>AutoMLJobObjective</code> and indicate the type of supervised learning problem in <code>AutoMLProblemTypeConfig</code> (<code>TabularJobConfig.ProblemType</code>), or none at all.</p> </li>
+    /// <li> <p>For text generation problem types (LLMs fine-tuning): Fine-tuning language models in Autopilot does not require setting the <code>AutoMLJobObjective</code> field. Autopilot fine-tunes LLMs without requiring multiple candidates to be trained and evaluated. Instead, using your dataset, Autopilot directly fine-tunes your target model to enhance a default objective metric, the cross-entropy loss. After fine-tuning a language model, you can evaluate the quality of its generated text using different metrics. For a list of the available metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/llms-finetuning-models.html">Metrics for fine-tuning LLMs in Autopilot</a>.</p> </li>
+    /// </ul>
     /// </note>
     pub fn auto_ml_job_objective(mut self, input: crate::types::AutoMlJobObjective) -> Self {
         self.inner = self.inner.auto_ml_job_objective(input);
         self
     }
     /// <p>Specifies a metric to minimize or maximize as the objective of a job. If not specified, the default objective metric depends on the problem type. For the list of default values per problem type, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective</a>.</p> <note>
-    /// <p>For tabular problem types, you must either provide both the <code>AutoMLJobObjective</code> and indicate the type of supervised learning problem in <code>AutoMLProblemTypeConfig</code> (<code>TabularJobConfig.ProblemType</code>), or none at all.</p>
+    /// <ul>
+    /// <li> <p>For tabular problem types: You must either provide both the <code>AutoMLJobObjective</code> and indicate the type of supervised learning problem in <code>AutoMLProblemTypeConfig</code> (<code>TabularJobConfig.ProblemType</code>), or none at all.</p> </li>
+    /// <li> <p>For text generation problem types (LLMs fine-tuning): Fine-tuning language models in Autopilot does not require setting the <code>AutoMLJobObjective</code> field. Autopilot fine-tunes LLMs without requiring multiple candidates to be trained and evaluated. Instead, using your dataset, Autopilot directly fine-tunes your target model to enhance a default objective metric, the cross-entropy loss. After fine-tuning a language model, you can evaluate the quality of its generated text using different metrics. For a list of the available metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/llms-finetuning-models.html">Metrics for fine-tuning LLMs in Autopilot</a>.</p> </li>
+    /// </ul>
     /// </note>
     pub fn set_auto_ml_job_objective(mut self, input: ::std::option::Option<crate::types::AutoMlJobObjective>) -> Self {
         self.inner = self.inner.set_auto_ml_job_objective(input);
         self
     }
     /// <p>Specifies a metric to minimize or maximize as the objective of a job. If not specified, the default objective metric depends on the problem type. For the list of default values per problem type, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective</a>.</p> <note>
-    /// <p>For tabular problem types, you must either provide both the <code>AutoMLJobObjective</code> and indicate the type of supervised learning problem in <code>AutoMLProblemTypeConfig</code> (<code>TabularJobConfig.ProblemType</code>), or none at all.</p>
+    /// <ul>
+    /// <li> <p>For tabular problem types: You must either provide both the <code>AutoMLJobObjective</code> and indicate the type of supervised learning problem in <code>AutoMLProblemTypeConfig</code> (<code>TabularJobConfig.ProblemType</code>), or none at all.</p> </li>
+    /// <li> <p>For text generation problem types (LLMs fine-tuning): Fine-tuning language models in Autopilot does not require setting the <code>AutoMLJobObjective</code> field. Autopilot fine-tunes LLMs without requiring multiple candidates to be trained and evaluated. Instead, using your dataset, Autopilot directly fine-tunes your target model to enhance a default objective metric, the cross-entropy loss. After fine-tuning a language model, you can evaluate the quality of its generated text using different metrics. For a list of the available metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/llms-finetuning-models.html">Metrics for fine-tuning LLMs in Autopilot</a>.</p> </li>
+    /// </ul>
     /// </note>
     pub fn get_auto_ml_job_objective(&self) -> &::std::option::Option<crate::types::AutoMlJobObjective> {
         self.inner.get_auto_ml_job_objective()

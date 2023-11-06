@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteBatchPredictionJob`](crate::operation::delete_batch_prediction_job::builders::DeleteBatchPredictionJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_id(impl Into<String>)`](crate::operation::delete_batch_prediction_job::builders::DeleteBatchPredictionJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::delete_batch_prediction_job::builders::DeleteBatchPredictionJobFluentBuilder::set_job_id): <p>The ID of the batch prediction job to delete.</p>
+    ///   - [`job_id(impl Into<String>)`](crate::operation::delete_batch_prediction_job::builders::DeleteBatchPredictionJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::delete_batch_prediction_job::builders::DeleteBatchPredictionJobFluentBuilder::set_job_id):<br>required: **true**<br><p>The ID of the batch prediction job to delete.</p><br>
     /// - On success, responds with [`DeleteBatchPredictionJobOutput`](crate::operation::delete_batch_prediction_job::DeleteBatchPredictionJobOutput)
     /// - On failure, responds with [`SdkError<DeleteBatchPredictionJobError>`](crate::operation::delete_batch_prediction_job::DeleteBatchPredictionJobError)
     pub fn delete_batch_prediction_job(&self) -> crate::operation::delete_batch_prediction_job::builders::DeleteBatchPredictionJobFluentBuilder {

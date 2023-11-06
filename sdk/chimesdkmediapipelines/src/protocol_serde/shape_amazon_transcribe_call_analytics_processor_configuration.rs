@@ -2,56 +2,56 @@
 pub fn ser_amazon_transcribe_call_analytics_processor_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AmazonTranscribeCallAnalyticsProcessorConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.language_code {
-        object.key("LanguageCode").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("LanguageCode").string(input.language_code.as_str());
     }
-    if let Some(var_2) = &input.vocabulary_name {
-        object.key("VocabularyName").string(var_2.as_str());
+    if let Some(var_1) = &input.vocabulary_name {
+        object.key("VocabularyName").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.vocabulary_filter_name {
-        object.key("VocabularyFilterName").string(var_3.as_str());
+    if let Some(var_2) = &input.vocabulary_filter_name {
+        object.key("VocabularyFilterName").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.vocabulary_filter_method {
-        object.key("VocabularyFilterMethod").string(var_4.as_str());
+    if let Some(var_3) = &input.vocabulary_filter_method {
+        object.key("VocabularyFilterMethod").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.language_model_name {
-        object.key("LanguageModelName").string(var_5.as_str());
+    if let Some(var_4) = &input.language_model_name {
+        object.key("LanguageModelName").string(var_4.as_str());
     }
     if input.enable_partial_results_stabilization {
         object
             .key("EnablePartialResultsStabilization")
             .boolean(input.enable_partial_results_stabilization);
     }
-    if let Some(var_6) = &input.partial_results_stability {
-        object.key("PartialResultsStability").string(var_6.as_str());
+    if let Some(var_5) = &input.partial_results_stability {
+        object.key("PartialResultsStability").string(var_5.as_str());
     }
-    if let Some(var_7) = &input.content_identification_type {
-        object.key("ContentIdentificationType").string(var_7.as_str());
+    if let Some(var_6) = &input.content_identification_type {
+        object.key("ContentIdentificationType").string(var_6.as_str());
     }
-    if let Some(var_8) = &input.content_redaction_type {
-        object.key("ContentRedactionType").string(var_8.as_str());
+    if let Some(var_7) = &input.content_redaction_type {
+        object.key("ContentRedactionType").string(var_7.as_str());
     }
-    if let Some(var_9) = &input.pii_entity_types {
-        object.key("PiiEntityTypes").string(var_9.as_str());
+    if let Some(var_8) = &input.pii_entity_types {
+        object.key("PiiEntityTypes").string(var_8.as_str());
     }
     if input.filter_partial_results {
         object.key("FilterPartialResults").boolean(input.filter_partial_results);
     }
-    if let Some(var_10) = &input.post_call_analytics_settings {
+    if let Some(var_9) = &input.post_call_analytics_settings {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("PostCallAnalyticsSettings").start_object();
-        crate::protocol_serde::shape_post_call_analytics_settings::ser_post_call_analytics_settings(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_10 = object.key("PostCallAnalyticsSettings").start_object();
+        crate::protocol_serde::shape_post_call_analytics_settings::ser_post_call_analytics_settings(&mut object_10, var_9)?;
+        object_10.finish();
     }
-    if let Some(var_12) = &input.call_analytics_stream_categories {
-        let mut array_13 = object.key("CallAnalyticsStreamCategories").start_array();
-        for item_14 in var_12 {
+    if let Some(var_11) = &input.call_analytics_stream_categories {
+        let mut array_12 = object.key("CallAnalyticsStreamCategories").start_array();
+        for item_13 in var_11 {
             {
-                array_13.value().string(item_14.as_str());
+                array_12.value().string(item_13.as_str());
             }
         }
-        array_13.finish();
+        array_12.finish();
     }
     Ok(())
 }
@@ -161,7 +161,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::amazon_transcribe_call_analytics_processor_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

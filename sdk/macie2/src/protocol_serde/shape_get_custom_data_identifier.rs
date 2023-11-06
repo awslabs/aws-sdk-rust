@@ -202,10 +202,10 @@ pub(crate) fn de_get_custom_data_identifier(
                     );
                 }
                 "ignoreWords" => {
-                    builder = builder.set_ignore_words(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                    builder = builder.set_ignore_words(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                 }
                 "keywords" => {
-                    builder = builder.set_keywords(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                    builder = builder.set_keywords(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                 }
                 "maximumMatchDistance" => {
                     builder = builder.set_maximum_match_distance(

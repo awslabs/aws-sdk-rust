@@ -75,12 +75,16 @@ impl ContainerInstance {
         self.version_info.as_ref()
     }
     /// <p>For CPU and memory resource types, this parameter describes the remaining CPU and memory that wasn't already allocated to tasks and is therefore available for new tasks. For port resource types, this parameter describes the ports that were reserved by the Amazon ECS container agent (at instance registration time) and any task containers that have reserved port mappings on the host (with the <code>host</code> or <code>bridge</code> network mode). Any port that's not specified here is available for new tasks.</p>
-    pub fn remaining_resources(&self) -> ::std::option::Option<&[crate::types::Resource]> {
-        self.remaining_resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remaining_resources.is_none()`.
+    pub fn remaining_resources(&self) -> &[crate::types::Resource] {
+        self.remaining_resources.as_deref().unwrap_or_default()
     }
     /// <p>For CPU and memory resource types, this parameter describes the amount of each resource that was available on the container instance when the container agent registered it with Amazon ECS. This value represents the total amount of CPU and memory that can be allocated on this container instance to tasks. For port resource types, this parameter describes the ports that were reserved by the Amazon ECS container agent when it registered the container instance with Amazon ECS.</p>
-    pub fn registered_resources(&self) -> ::std::option::Option<&[crate::types::Resource]> {
-        self.registered_resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.registered_resources.is_none()`.
+    pub fn registered_resources(&self) -> &[crate::types::Resource] {
+        self.registered_resources.as_deref().unwrap_or_default()
     }
     /// <p>The status of the container instance. The valid values are <code>REGISTERING</code>, <code>REGISTRATION_FAILED</code>, <code>ACTIVE</code>, <code>INACTIVE</code>, <code>DEREGISTERING</code>, or <code>DRAINING</code>.</p>
     /// <p>If your account has opted in to the <code>awsvpcTrunking</code> account setting, then any newly registered container instance will transition to a <code>REGISTERING</code> status while the trunk elastic network interface is provisioned for the instance. If the registration fails, the instance will transition to a <code>REGISTRATION_FAILED</code> status. You can describe the container instance and see the reason for failure in the <code>statusReason</code> parameter. Once the container instance is terminated, the instance transitions to a <code>DEREGISTERING</code> status while the trunk elastic network interface is deprovisioned. The instance then transitions to an <code>INACTIVE</code> status.</p>
@@ -109,16 +113,20 @@ impl ContainerInstance {
         self.agent_update_status.as_ref()
     }
     /// <p>The attributes set for the container instance, either by the Amazon ECS container agent at instance registration or manually with the <code>PutAttributes</code> operation.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&[crate::types::Attribute]> {
-        self.attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
+    pub fn attributes(&self) -> &[crate::types::Attribute] {
+        self.attributes.as_deref().unwrap_or_default()
     }
     /// <p>The Unix timestamp for the time when the container instance was registered.</p>
     pub fn registered_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.registered_at.as_ref()
     }
     /// <p>The resources attached to a container instance, such as an elastic network interface.</p>
-    pub fn attachments(&self) -> ::std::option::Option<&[crate::types::Attachment]> {
-        self.attachments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attachments.is_none()`.
+    pub fn attachments(&self) -> &[crate::types::Attachment] {
+        self.attachments.as_deref().unwrap_or_default()
     }
     /// <p>The metadata that you apply to the container instance to help you categorize and organize them. Each tag consists of a key and an optional value. You define both.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -131,8 +139,10 @@ impl ContainerInstance {
     /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>An object representing the health status of the container instance.</p>
     pub fn health_status(&self) -> ::std::option::Option<&crate::types::ContainerInstanceHealthStatus> {

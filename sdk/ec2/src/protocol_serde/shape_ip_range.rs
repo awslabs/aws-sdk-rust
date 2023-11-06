@@ -3,7 +3,7 @@
 pub fn ser_ip_range(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::IpRange,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("CidrIp");
     if let Some(var_2) = &input.cidr_ip {
@@ -17,6 +17,7 @@ pub fn ser_ip_range(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_ip_range(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result<crate::types::IpRange, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::IpRange::builder();

@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSimulationJobsOutput {
     /// <p>A list of simulation job summaries that meet the criteria of the request.</p>
-    pub simulation_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SimulationJobSummary>>,
+    pub simulation_job_summaries: ::std::vec::Vec<crate::types::SimulationJobSummary>,
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListSimulationJobsOutput {
     /// <p>A list of simulation job summaries that meet the criteria of the request.</p>
-    pub fn simulation_job_summaries(&self) -> ::std::option::Option<&[crate::types::SimulationJobSummary]> {
-        self.simulation_job_summaries.as_deref()
+    pub fn simulation_job_summaries(&self) -> &[crate::types::SimulationJobSummary] {
+        use std::ops::Deref;
+        self.simulation_job_summaries.deref()
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,21 @@ impl ListSimulationJobsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListSimulationJobsOutput`](crate::operation::list_simulation_jobs::ListSimulationJobsOutput).
-    pub fn build(self) -> crate::operation::list_simulation_jobs::ListSimulationJobsOutput {
-        crate::operation::list_simulation_jobs::ListSimulationJobsOutput {
-            simulation_job_summaries: self.simulation_job_summaries,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`simulation_job_summaries`](crate::operation::list_simulation_jobs::builders::ListSimulationJobsOutputBuilder::simulation_job_summaries)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_simulation_jobs::ListSimulationJobsOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_simulation_jobs::ListSimulationJobsOutput {
+            simulation_job_summaries: self.simulation_job_summaries.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "simulation_job_summaries",
+                    "simulation_job_summaries was not specified but it is required when building ListSimulationJobsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

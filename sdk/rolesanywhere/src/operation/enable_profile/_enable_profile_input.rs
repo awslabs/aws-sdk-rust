@@ -27,6 +27,7 @@ pub struct EnableProfileInputBuilder {
 }
 impl EnableProfileInputBuilder {
     /// <p>The unique identifier of the profile.</p>
+    /// This field is required.
     pub fn profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl EnableProfileInputBuilder {
     /// Consumes the builder and constructs a [`EnableProfileInput`](crate::operation::enable_profile::EnableProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::enable_profile::EnableProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::enable_profile::EnableProfileInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::enable_profile::EnableProfileInput { profile_id: self.profile_id })
     }
 }

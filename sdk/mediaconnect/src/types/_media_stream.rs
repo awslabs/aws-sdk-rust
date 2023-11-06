@@ -119,6 +119,7 @@ impl MediaStreamBuilder {
         &self.description
     }
     /// The format type number (sometimes referred to as RTP payload type) of the media stream. MediaConnect assigns this value to the media stream. For ST 2110 JPEG XS outputs, you need to provide this value to the receiver.
+    /// This field is required.
     pub fn fmt(mut self, input: i32) -> Self {
         self.fmt = ::std::option::Option::Some(input);
         self
@@ -133,6 +134,7 @@ impl MediaStreamBuilder {
         &self.fmt
     }
     /// A unique identifier for the media stream.
+    /// This field is required.
     pub fn media_stream_id(mut self, input: i32) -> Self {
         self.media_stream_id = ::std::option::Option::Some(input);
         self
@@ -147,6 +149,7 @@ impl MediaStreamBuilder {
         &self.media_stream_id
     }
     /// A name that helps you distinguish one media stream from another.
+    /// This field is required.
     pub fn media_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.media_stream_name = ::std::option::Option::Some(input.into());
         self
@@ -161,6 +164,7 @@ impl MediaStreamBuilder {
         &self.media_stream_name
     }
     /// The type of media stream.
+    /// This field is required.
     pub fn media_stream_type(mut self, input: crate::types::MediaStreamType) -> Self {
         self.media_stream_type = ::std::option::Option::Some(input);
         self

@@ -62,6 +62,7 @@ pub struct CreateSchemaInputBuilder {
 }
 impl CreateSchemaInputBuilder {
     /// <p>The source of the schema definition.</p>
+    /// This field is required.
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +91,7 @@ impl CreateSchemaInputBuilder {
         &self.description
     }
     /// <p>The name of the registry.</p>
+    /// This field is required.
     pub fn registry_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_name = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +106,7 @@ impl CreateSchemaInputBuilder {
         &self.registry_name
     }
     /// <p>The name of the schema.</p>
+    /// This field is required.
     pub fn schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_name = ::std::option::Option::Some(input.into());
         self
@@ -138,6 +141,7 @@ impl CreateSchemaInputBuilder {
         &self.tags
     }
     /// <p>The type of schema.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::Type) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -152,7 +156,9 @@ impl CreateSchemaInputBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`CreateSchemaInput`](crate::operation::create_schema::CreateSchemaInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_schema::CreateSchemaInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_schema::CreateSchemaInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_schema::CreateSchemaInput {
             content: self.content,
             description: self.description,

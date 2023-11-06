@@ -5,20 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Publication {
     /// <p>The name of the publication.</p>
-    pub event: ::std::option::Option<::std::string::String>,
+    pub event: ::std::string::String,
     /// <p>The JSON schema of the publication event.</p>
-    pub schema: ::std::option::Option<::std::string::String>,
+    pub schema: ::std::string::String,
     /// <p>The description of the publication.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl Publication {
     /// <p>The name of the publication.</p>
-    pub fn event(&self) -> ::std::option::Option<&str> {
-        self.event.as_deref()
+    pub fn event(&self) -> &str {
+        use std::ops::Deref;
+        self.event.deref()
     }
     /// <p>The JSON schema of the publication event.</p>
-    pub fn schema(&self) -> ::std::option::Option<&str> {
-        self.schema.as_deref()
+    pub fn schema(&self) -> &str {
+        use std::ops::Deref;
+        self.schema.deref()
     }
     /// <p>The description of the publication.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -42,6 +44,7 @@ pub struct PublicationBuilder {
 }
 impl PublicationBuilder {
     /// <p>The name of the publication.</p>
+    /// This field is required.
     pub fn event(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl PublicationBuilder {
         &self.event
     }
     /// <p>The JSON schema of the publication event.</p>
+    /// This field is required.
     pub fn schema(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +88,24 @@ impl PublicationBuilder {
         &self.description
     }
     /// Consumes the builder and constructs a [`Publication`](crate::types::Publication).
-    pub fn build(self) -> crate::types::Publication {
-        crate::types::Publication {
-            event: self.event,
-            schema: self.schema,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`event`](crate::types::builders::PublicationBuilder::event)
+    /// - [`schema`](crate::types::builders::PublicationBuilder::schema)
+    pub fn build(self) -> ::std::result::Result<crate::types::Publication, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Publication {
+            event: self.event.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "event",
+                    "event was not specified but it is required when building Publication",
+                )
+            })?,
+            schema: self.schema.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "schema",
+                    "schema was not specified but it is required when building Publication",
+                )
+            })?,
             description: self.description,
-        }
+        })
     }
 }

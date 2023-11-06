@@ -50,8 +50,10 @@ impl DecryptInput {
     }
     /// <p>A list of grant tokens. </p>
     /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    pub fn grant_tokens(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.grant_tokens.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.grant_tokens.is_none()`.
+    pub fn grant_tokens(&self) -> &[::std::string::String] {
+        self.grant_tokens.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the KMS key that KMS uses to decrypt the ciphertext.</p>
     /// <p>Enter a key ID of the KMS key that was used to encrypt the ciphertext. If you identify a different KMS key, the <code>Decrypt</code> operation throws an <code>IncorrectKeyException</code>.</p>
@@ -107,6 +109,7 @@ pub struct DecryptInputBuilder {
 }
 impl DecryptInputBuilder {
     /// <p>Ciphertext to be decrypted. The blob includes metadata.</p>
+    /// This field is required.
     pub fn ciphertext_blob(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.ciphertext_blob = ::std::option::Option::Some(input);
         self
@@ -281,7 +284,7 @@ impl DecryptInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`DecryptInput`](crate::operation::decrypt::DecryptInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::decrypt::DecryptInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::decrypt::DecryptInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::decrypt::DecryptInput {
             ciphertext_blob: self.ciphertext_blob,
             encryption_context: self.encryption_context,

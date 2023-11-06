@@ -143,6 +143,7 @@ impl RedirectActionConfigBuilder {
         &self.query
     }
     /// <p>The HTTP redirect code. The redirect is either permanent (HTTP 301) or temporary (HTTP 302).</p>
+    /// This field is required.
     pub fn status_code(mut self, input: crate::types::RedirectActionStatusCodeEnum) -> Self {
         self.status_code = ::std::option::Option::Some(input);
         self

@@ -29,8 +29,10 @@ impl MonitoringJobDefinition {
         self.baseline_config.as_ref()
     }
     /// <p>The array of inputs for the monitoring job. Currently we support monitoring an Amazon SageMaker Endpoint.</p>
-    pub fn monitoring_inputs(&self) -> ::std::option::Option<&[crate::types::MonitoringInput]> {
-        self.monitoring_inputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.monitoring_inputs.is_none()`.
+    pub fn monitoring_inputs(&self) -> &[crate::types::MonitoringInput] {
+        self.monitoring_inputs.as_deref().unwrap_or_default()
     }
     /// <p>The array of outputs from the monitoring job to be uploaded to Amazon S3.</p>
     pub fn monitoring_output_config(&self) -> ::std::option::Option<&crate::types::MonitoringOutputConfig> {
@@ -118,6 +120,7 @@ impl MonitoringJobDefinitionBuilder {
         &self.monitoring_inputs
     }
     /// <p>The array of outputs from the monitoring job to be uploaded to Amazon S3.</p>
+    /// This field is required.
     pub fn monitoring_output_config(mut self, input: crate::types::MonitoringOutputConfig) -> Self {
         self.monitoring_output_config = ::std::option::Option::Some(input);
         self
@@ -132,6 +135,7 @@ impl MonitoringJobDefinitionBuilder {
         &self.monitoring_output_config
     }
     /// <p>Identifies the resources, ML compute instances, and ML storage volumes to deploy for a monitoring job. In distributed processing, you specify more than one instance.</p>
+    /// This field is required.
     pub fn monitoring_resources(mut self, input: crate::types::MonitoringResources) -> Self {
         self.monitoring_resources = ::std::option::Option::Some(input);
         self
@@ -146,6 +150,7 @@ impl MonitoringJobDefinitionBuilder {
         &self.monitoring_resources
     }
     /// <p>Configures the monitoring job to run a specified Docker container image.</p>
+    /// This field is required.
     pub fn monitoring_app_specification(mut self, input: crate::types::MonitoringAppSpecification) -> Self {
         self.monitoring_app_specification = ::std::option::Option::Some(input);
         self
@@ -211,6 +216,7 @@ impl MonitoringJobDefinitionBuilder {
         &self.network_config
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self

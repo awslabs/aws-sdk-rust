@@ -27,6 +27,7 @@ pub struct DescribeTestSetInputBuilder {
 }
 impl DescribeTestSetInputBuilder {
     /// <p>The test set Id for the test set request.</p>
+    /// This field is required.
     pub fn test_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.test_set_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeTestSetInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTestSetInput`](crate::operation::describe_test_set::DescribeTestSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_test_set::DescribeTestSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_test_set::DescribeTestSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_test_set::DescribeTestSetInput {
             test_set_id: self.test_set_id,
         })

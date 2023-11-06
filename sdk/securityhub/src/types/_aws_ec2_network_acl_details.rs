@@ -35,12 +35,16 @@ impl AwsEc2NetworkAclDetails {
         self.vpc_id.as_deref()
     }
     /// <p>Associations between the network ACL and subnets.</p>
-    pub fn associations(&self) -> ::std::option::Option<&[crate::types::AwsEc2NetworkAclAssociation]> {
-        self.associations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associations.is_none()`.
+    pub fn associations(&self) -> &[crate::types::AwsEc2NetworkAclAssociation] {
+        self.associations.as_deref().unwrap_or_default()
     }
     /// <p>The set of rules in the network ACL.</p>
-    pub fn entries(&self) -> ::std::option::Option<&[crate::types::AwsEc2NetworkAclEntry]> {
-        self.entries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entries.is_none()`.
+    pub fn entries(&self) -> &[crate::types::AwsEc2NetworkAclEntry] {
+        self.entries.as_deref().unwrap_or_default()
     }
 }
 impl AwsEc2NetworkAclDetails {

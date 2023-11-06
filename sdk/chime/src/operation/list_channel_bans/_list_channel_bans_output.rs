@@ -21,8 +21,10 @@ impl ListChannelBansOutput {
         self.next_token.as_deref()
     }
     /// <p>The information for each requested ban.</p>
-    pub fn channel_bans(&self) -> ::std::option::Option<&[crate::types::ChannelBanSummary]> {
-        self.channel_bans.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.channel_bans.is_none()`.
+    pub fn channel_bans(&self) -> &[crate::types::ChannelBanSummary] {
+        self.channel_bans.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for ListChannelBansOutput {

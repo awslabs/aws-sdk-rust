@@ -2,27 +2,27 @@
 pub fn ser_data_catalog_output(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataCatalogOutput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.catalog_id {
         object.key("CatalogId").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.database_name {
-        object.key("DatabaseName").string(var_2.as_str());
+    {
+        object.key("DatabaseName").string(input.database_name.as_str());
     }
-    if let Some(var_3) = &input.table_name {
-        object.key("TableName").string(var_3.as_str());
+    {
+        object.key("TableName").string(input.table_name.as_str());
     }
-    if let Some(var_4) = &input.s3_options {
+    if let Some(var_2) = &input.s3_options {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("S3Options").start_object();
-        crate::protocol_serde::shape_s3_table_output_options::ser_s3_table_output_options(&mut object_5, var_4)?;
+        let mut object_3 = object.key("S3Options").start_object();
+        crate::protocol_serde::shape_s3_table_output_options::ser_s3_table_output_options(&mut object_3, var_2)?;
+        object_3.finish();
+    }
+    if let Some(var_4) = &input.database_options {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("DatabaseOptions").start_object();
+        crate::protocol_serde::shape_database_table_output_options::ser_database_table_output_options(&mut object_5, var_4)?;
         object_5.finish();
-    }
-    if let Some(var_6) = &input.database_options {
-        #[allow(unused_mut)]
-        let mut object_7 = object.key("DatabaseOptions").start_object();
-        crate::protocol_serde::shape_database_table_output_options::ser_database_table_output_options(&mut object_7, var_6)?;
-        object_7.finish();
     }
     if input.overwrite {
         object.key("Overwrite").boolean(input.overwrite);
@@ -88,7 +88,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::data_catalog_output_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

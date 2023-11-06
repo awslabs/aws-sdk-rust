@@ -27,6 +27,7 @@ pub struct StopTextTranslationJobInputBuilder {
 }
 impl StopTextTranslationJobInputBuilder {
     /// <p>The job ID of the job to be stopped.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl StopTextTranslationJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_text_translation_job::StopTextTranslationJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::stop_text_translation_job::StopTextTranslationJobInput { job_id: self.job_id })
     }

@@ -10,7 +10,7 @@ impl UpdateIpSetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_ip_set::UpdateIpSetOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::update_ip_set::UpdateIPSetError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -31,7 +31,15 @@ impl UpdateIpSetInputBuilder {
 /// <li> <p>Provide the complete IP set specification to this call</p> </li>
 /// </ol>
 /// </note>
-/// <p>When you make changes to web ACLs or web ACL components, like rules and rule groups, WAF propagates the changes everywhere that the web ACL and its components are stored and used. Your changes are applied within seconds, but there might be a brief period of inconsistency when the changes have arrived in some places and not in others. So, for example, if you change a rule action setting, the action might be the old action in one area and the new action in another area. Or if you add an IP address to an IP set used in a blocking rule, the new address might briefly be blocked in one area while still allowed in another. This temporary inconsistency can occur when you first associate a web ACL with an Amazon Web Services resource and when you change a web ACL that is already associated with a resource. Generally, any inconsistencies of this type last only a few seconds.</p>
+/// <p> <b>Temporary inconsistencies during updates</b> </p>
+/// <p>When you create or change a web ACL or other WAF resources, the changes take a small amount of time to propagate to all areas where the resources are stored. The propagation time can be from a few seconds to a number of minutes. </p>
+/// <p>The following are examples of the temporary inconsistencies that you might notice during change propagation: </p>
+/// <ul>
+/// <li> <p>After you create a web ACL, if you try to associate it with a resource, you might get an exception indicating that the web ACL is unavailable. </p> </li>
+/// <li> <p>After you add a rule group to a web ACL, the new rule group rules might be in effect in one area where the web ACL is used and not in another.</p> </li>
+/// <li> <p>After you change a rule action setting, you might see the old action in some places and the new action in others. </p> </li>
+/// <li> <p>After you add an IP address to an IP set that is in use in a blocking rule, the new address might be blocked in one area while still allowed in another.</p> </li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateIPSetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -81,12 +89,15 @@ impl UpdateIPSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_ip_set::UpdateIpSetOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::update_ip_set::UpdateIPSetError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::update_ip_set::UpdateIPSet::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -95,20 +106,15 @@ impl UpdateIPSetFluentBuilder {
         crate::operation::update_ip_set::UpdateIPSet::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::update_ip_set::UpdateIpSetOutput,
-            crate::operation::update_ip_set::UpdateIPSetError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::update_ip_set::UpdateIPSetError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::update_ip_set::UpdateIpSetOutput,
+        crate::operation::update_ip_set::UpdateIPSetError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

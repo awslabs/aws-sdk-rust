@@ -16,12 +16,16 @@ pub struct DescribeImagesInput {
 }
 impl DescribeImagesInput {
     /// <p>The names of the public or private images to describe.</p>
-    pub fn names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.names.is_none()`.
+    pub fn names(&self) -> &[::std::string::String] {
+        self.names.as_deref().unwrap_or_default()
     }
     /// <p>The ARNs of the public, private, and shared images to describe.</p>
-    pub fn arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.arns.is_none()`.
+    pub fn arns(&self) -> &[::std::string::String] {
+        self.arns.as_deref().unwrap_or_default()
     }
     /// <p>The type of image (public, private, or shared) to describe. </p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::VisibilityType> {
@@ -139,7 +143,7 @@ impl DescribeImagesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeImagesInput`](crate::operation::describe_images::DescribeImagesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_images::DescribeImagesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_images::DescribeImagesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_images::DescribeImagesInput {
             names: self.names,
             arns: self.arns,

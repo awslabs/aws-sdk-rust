@@ -35,6 +35,7 @@ pub struct FraudRiskDetailsBuilder {
 }
 impl FraudRiskDetailsBuilder {
     /// <p>The details resulting from 'Known Fraudster Risk' analysis of the speaker.</p>
+    /// This field is required.
     pub fn known_fraudster_risk(mut self, input: crate::types::KnownFraudsterRisk) -> Self {
         self.known_fraudster_risk = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl FraudRiskDetailsBuilder {
         &self.known_fraudster_risk
     }
     /// <p>The details resulting from 'Voice Spoofing Risk' analysis of the speaker.</p>
+    /// This field is required.
     pub fn voice_spoofing_risk(mut self, input: crate::types::VoiceSpoofingRisk) -> Self {
         self.voice_spoofing_risk = ::std::option::Option::Some(input);
         self

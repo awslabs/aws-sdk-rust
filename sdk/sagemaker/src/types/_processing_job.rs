@@ -56,8 +56,10 @@ pub struct ProcessingJob {
 }
 impl ProcessingJob {
     /// <p>List of input configurations for the processing job.</p>
-    pub fn processing_inputs(&self) -> ::std::option::Option<&[crate::types::ProcessingInput]> {
-        self.processing_inputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.processing_inputs.is_none()`.
+    pub fn processing_inputs(&self) -> &[crate::types::ProcessingInput] {
+        self.processing_inputs.as_deref().unwrap_or_default()
     }
     /// <p>Configuration for uploading output from the processing container.</p>
     pub fn processing_output_config(&self) -> ::std::option::Option<&crate::types::ProcessingOutputConfig> {
@@ -145,8 +147,10 @@ impl ProcessingJob {
         self.training_job_arn.as_deref()
     }
     /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ProcessingJob {

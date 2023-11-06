@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectorConfigRequest {
     /// <p>The Amazon Resource Name (ARN) of the role that is authorized to request the connector configuration.</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
     /// <p>The cloud provider for the target cluster to connect.</p>
-    pub provider: ::std::option::Option<crate::types::ConnectorConfigProvider>,
+    pub provider: crate::types::ConnectorConfigProvider,
 }
 impl ConnectorConfigRequest {
     /// <p>The Amazon Resource Name (ARN) of the role that is authorized to request the connector configuration.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
     /// <p>The cloud provider for the target cluster to connect.</p>
-    pub fn provider(&self) -> ::std::option::Option<&crate::types::ConnectorConfigProvider> {
-        self.provider.as_ref()
+    pub fn provider(&self) -> &crate::types::ConnectorConfigProvider {
+        &self.provider
     }
 }
 impl ConnectorConfigRequest {
@@ -35,6 +36,7 @@ pub struct ConnectorConfigRequestBuilder {
 }
 impl ConnectorConfigRequestBuilder {
     /// <p>The Amazon Resource Name (ARN) of the role that is authorized to request the connector configuration.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl ConnectorConfigRequestBuilder {
         &self.role_arn
     }
     /// <p>The cloud provider for the target cluster to connect.</p>
+    /// This field is required.
     pub fn provider(mut self, input: crate::types::ConnectorConfigProvider) -> Self {
         self.provider = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,23 @@ impl ConnectorConfigRequestBuilder {
         &self.provider
     }
     /// Consumes the builder and constructs a [`ConnectorConfigRequest`](crate::types::ConnectorConfigRequest).
-    pub fn build(self) -> crate::types::ConnectorConfigRequest {
-        crate::types::ConnectorConfigRequest {
-            role_arn: self.role_arn,
-            provider: self.provider,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`role_arn`](crate::types::builders::ConnectorConfigRequestBuilder::role_arn)
+    /// - [`provider`](crate::types::builders::ConnectorConfigRequestBuilder::provider)
+    pub fn build(self) -> ::std::result::Result<crate::types::ConnectorConfigRequest, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ConnectorConfigRequest {
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building ConnectorConfigRequest",
+                )
+            })?,
+            provider: self.provider.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "provider",
+                    "provider was not specified but it is required when building ConnectorConfigRequest",
+                )
+            })?,
+        })
     }
 }

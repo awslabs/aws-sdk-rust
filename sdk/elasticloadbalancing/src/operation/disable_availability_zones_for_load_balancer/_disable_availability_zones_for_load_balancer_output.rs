@@ -10,8 +10,10 @@ pub struct DisableAvailabilityZonesForLoadBalancerOutput {
 }
 impl DisableAvailabilityZonesForLoadBalancerOutput {
     /// <p>The remaining Availability Zones for the load balancer.</p>
-    pub fn availability_zones(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.availability_zones.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
+    pub fn availability_zones(&self) -> &[::std::string::String] {
+        self.availability_zones.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DisableAvailabilityZonesForLoadBalancerOutput {

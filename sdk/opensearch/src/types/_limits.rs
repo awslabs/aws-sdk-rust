@@ -13,16 +13,20 @@ pub struct Limits {
 }
 impl Limits {
     /// <p>Storage-related attributes that are available for a given instance type.</p>
-    pub fn storage_types(&self) -> ::std::option::Option<&[crate::types::StorageType]> {
-        self.storage_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.storage_types.is_none()`.
+    pub fn storage_types(&self) -> &[crate::types::StorageType] {
+        self.storage_types.as_deref().unwrap_or_default()
     }
     /// <p>The limits for a given instance type.</p>
     pub fn instance_limits(&self) -> ::std::option::Option<&crate::types::InstanceLimits> {
         self.instance_limits.as_ref()
     }
     /// <p>List of additional limits that are specific to a given instance type for each of its instance roles.</p>
-    pub fn additional_limits(&self) -> ::std::option::Option<&[crate::types::AdditionalLimit]> {
-        self.additional_limits.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_limits.is_none()`.
+    pub fn additional_limits(&self) -> &[crate::types::AdditionalLimit] {
+        self.additional_limits.as_deref().unwrap_or_default()
     }
 }
 impl Limits {

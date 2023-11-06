@@ -11,8 +11,10 @@ pub struct ListSegmentsOutput {
 }
 impl ListSegmentsOutput {
     /// <p>An array of structures that contain information about the segments in this Region.</p>
-    pub fn segments(&self) -> ::std::option::Option<&[crate::types::Segment]> {
-        self.segments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.segments.is_none()`.
+    pub fn segments(&self) -> &[crate::types::Segment] {
+        self.segments.as_deref().unwrap_or_default()
     }
     /// <p>The token to use in a subsequent <code>ListSegments</code> operation to return the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

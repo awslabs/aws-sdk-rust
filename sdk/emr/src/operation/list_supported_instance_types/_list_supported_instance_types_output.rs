@@ -11,8 +11,10 @@ pub struct ListSupportedInstanceTypesOutput {
 }
 impl ListSupportedInstanceTypesOutput {
     /// <p>The list of instance types that the release specified in <code>ListSupportedInstanceTypesInput$ReleaseLabel</code> supports, filtered by Amazon Web Services Region.</p>
-    pub fn supported_instance_types(&self) -> ::std::option::Option<&[crate::types::SupportedInstanceType]> {
-        self.supported_instance_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_instance_types.is_none()`.
+    pub fn supported_instance_types(&self) -> &[crate::types::SupportedInstanceType] {
+        self.supported_instance_types.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token that marks the next set of results to retrieve.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

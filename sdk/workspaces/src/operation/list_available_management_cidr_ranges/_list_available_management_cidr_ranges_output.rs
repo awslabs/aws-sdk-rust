@@ -11,8 +11,10 @@ pub struct ListAvailableManagementCidrRangesOutput {
 }
 impl ListAvailableManagementCidrRangesOutput {
     /// <p>The list of available IP address ranges, specified as IPv4 CIDR blocks.</p>
-    pub fn management_cidr_ranges(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.management_cidr_ranges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.management_cidr_ranges.is_none()`.
+    pub fn management_cidr_ranges(&self) -> &[::std::string::String] {
+        self.management_cidr_ranges.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

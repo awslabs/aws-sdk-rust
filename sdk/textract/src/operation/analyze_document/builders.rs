@@ -10,7 +10,7 @@ impl AnalyzeDocumentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::analyze_document::AnalyzeDocumentOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::analyze_document::AnalyzeDocumentError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -86,12 +86,15 @@ impl AnalyzeDocumentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::analyze_document::AnalyzeDocumentOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::analyze_document::AnalyzeDocumentError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::analyze_document::AnalyzeDocument::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -100,20 +103,15 @@ impl AnalyzeDocumentFluentBuilder {
         crate::operation::analyze_document::AnalyzeDocument::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::analyze_document::AnalyzeDocumentOutput,
-            crate::operation::analyze_document::AnalyzeDocumentError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::analyze_document::AnalyzeDocumentError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::analyze_document::AnalyzeDocumentOutput,
+        crate::operation::analyze_document::AnalyzeDocumentError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

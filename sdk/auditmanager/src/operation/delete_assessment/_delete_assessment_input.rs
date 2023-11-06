@@ -27,6 +27,7 @@ pub struct DeleteAssessmentInputBuilder {
 }
 impl DeleteAssessmentInputBuilder {
     /// <p> The identifier for the assessment. </p>
+    /// This field is required.
     pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteAssessmentInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAssessmentInput`](crate::operation::delete_assessment::DeleteAssessmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_assessment::DeleteAssessmentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_assessment::DeleteAssessmentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_assessment::DeleteAssessmentInput {
             assessment_id: self.assessment_id,
         })

@@ -27,6 +27,7 @@ pub struct RemoveNotificationChannelInputBuilder {
 }
 impl RemoveNotificationChannelInputBuilder {
     /// <p> The ID of the notification channel to be removed. </p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl RemoveNotificationChannelInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_notification_channel::RemoveNotificationChannelInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::remove_notification_channel::RemoveNotificationChannelInput { id: self.id })
     }

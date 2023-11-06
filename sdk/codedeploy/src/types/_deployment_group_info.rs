@@ -73,16 +73,22 @@ impl DeploymentGroupInfo {
         self.deployment_config_name.as_deref()
     }
     /// <p>The Amazon EC2 tags on which to filter. The deployment group includes EC2 instances with any of the specified tags.</p>
-    pub fn ec2_tag_filters(&self) -> ::std::option::Option<&[crate::types::Ec2TagFilter]> {
-        self.ec2_tag_filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ec2_tag_filters.is_none()`.
+    pub fn ec2_tag_filters(&self) -> &[crate::types::Ec2TagFilter] {
+        self.ec2_tag_filters.as_deref().unwrap_or_default()
     }
     /// <p>The on-premises instance tags on which to filter. The deployment group includes on-premises instances with any of the specified tags.</p>
-    pub fn on_premises_instance_tag_filters(&self) -> ::std::option::Option<&[crate::types::TagFilter]> {
-        self.on_premises_instance_tag_filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.on_premises_instance_tag_filters.is_none()`.
+    pub fn on_premises_instance_tag_filters(&self) -> &[crate::types::TagFilter] {
+        self.on_premises_instance_tag_filters.as_deref().unwrap_or_default()
     }
     /// <p>A list of associated Auto Scaling groups.</p>
-    pub fn auto_scaling_groups(&self) -> ::std::option::Option<&[crate::types::AutoScalingGroup]> {
-        self.auto_scaling_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auto_scaling_groups.is_none()`.
+    pub fn auto_scaling_groups(&self) -> &[crate::types::AutoScalingGroup] {
+        self.auto_scaling_groups.as_deref().unwrap_or_default()
     }
     /// <p>A service role Amazon Resource Name (ARN) that grants CodeDeploy permission to make calls to Amazon Web Services services on your behalf. For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/getting-started-create-service-role.html">Create a Service Role for CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.</p>
     pub fn service_role_arn(&self) -> ::std::option::Option<&str> {
@@ -93,8 +99,10 @@ impl DeploymentGroupInfo {
         self.target_revision.as_ref()
     }
     /// <p>Information about triggers associated with the deployment group.</p>
-    pub fn trigger_configurations(&self) -> ::std::option::Option<&[crate::types::TriggerConfig]> {
-        self.trigger_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.trigger_configurations.is_none()`.
+    pub fn trigger_configurations(&self) -> &[crate::types::TriggerConfig] {
+        self.trigger_configurations.as_deref().unwrap_or_default()
     }
     /// <p>A list of alarms associated with the deployment group.</p>
     pub fn alarm_configuration(&self) -> ::std::option::Option<&crate::types::AlarmConfiguration> {
@@ -147,8 +155,10 @@ impl DeploymentGroupInfo {
     /// :
     /// <servicename></servicename>
     /// </clustername></code>. </p>
-    pub fn ecs_services(&self) -> ::std::option::Option<&[crate::types::EcsService]> {
-        self.ecs_services.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ecs_services.is_none()`.
+    pub fn ecs_services(&self) -> &[crate::types::EcsService] {
+        self.ecs_services.as_deref().unwrap_or_default()
     }
 }
 impl DeploymentGroupInfo {

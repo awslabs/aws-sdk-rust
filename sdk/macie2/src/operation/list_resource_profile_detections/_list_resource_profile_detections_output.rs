@@ -11,8 +11,10 @@ pub struct ListResourceProfileDetectionsOutput {
 }
 impl ListResourceProfileDetectionsOutput {
     /// <p>An array of objects, one for each type of sensitive data that Amazon Macie found in the bucket. Each object reports the number of occurrences of the specified type and provides information about the custom data identifier or managed data identifier that detected the data.</p>
-    pub fn detections(&self) -> ::std::option::Option<&[crate::types::Detection]> {
-        self.detections.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.detections.is_none()`.
+    pub fn detections(&self) -> &[crate::types::Detection] {
+        self.detections.as_deref().unwrap_or_default()
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

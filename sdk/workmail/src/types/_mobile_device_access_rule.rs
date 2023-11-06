@@ -51,36 +51,52 @@ impl MobileDeviceAccessRule {
         self.effect.as_ref()
     }
     /// <p>Device types that a rule will match.</p>
-    pub fn device_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.device_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.device_types.is_none()`.
+    pub fn device_types(&self) -> &[::std::string::String] {
+        self.device_types.as_deref().unwrap_or_default()
     }
     /// <p>Device types that a rule <b>will not</b> match. All other device types will match.</p>
-    pub fn not_device_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.not_device_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.not_device_types.is_none()`.
+    pub fn not_device_types(&self) -> &[::std::string::String] {
+        self.not_device_types.as_deref().unwrap_or_default()
     }
     /// <p>Device models that a rule will match.</p>
-    pub fn device_models(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.device_models.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.device_models.is_none()`.
+    pub fn device_models(&self) -> &[::std::string::String] {
+        self.device_models.as_deref().unwrap_or_default()
     }
     /// <p>Device models that a rule <b>will not</b> match. All other device models will match.</p>
-    pub fn not_device_models(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.not_device_models.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.not_device_models.is_none()`.
+    pub fn not_device_models(&self) -> &[::std::string::String] {
+        self.not_device_models.as_deref().unwrap_or_default()
     }
     /// <p>Device operating systems that a rule will match.</p>
-    pub fn device_operating_systems(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.device_operating_systems.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.device_operating_systems.is_none()`.
+    pub fn device_operating_systems(&self) -> &[::std::string::String] {
+        self.device_operating_systems.as_deref().unwrap_or_default()
     }
     /// <p>Device operating systems that a rule <b>will not</b> match. All other device types will match.</p>
-    pub fn not_device_operating_systems(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.not_device_operating_systems.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.not_device_operating_systems.is_none()`.
+    pub fn not_device_operating_systems(&self) -> &[::std::string::String] {
+        self.not_device_operating_systems.as_deref().unwrap_or_default()
     }
     /// <p>Device user agents that a rule will match.</p>
-    pub fn device_user_agents(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.device_user_agents.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.device_user_agents.is_none()`.
+    pub fn device_user_agents(&self) -> &[::std::string::String] {
+        self.device_user_agents.as_deref().unwrap_or_default()
     }
     /// <p>Device user agents that a rule <b>will not</b> match. All other device user agents will match.</p>
-    pub fn not_device_user_agents(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.not_device_user_agents.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.not_device_user_agents.is_none()`.
+    pub fn not_device_user_agents(&self) -> &[::std::string::String] {
+        self.not_device_user_agents.as_deref().unwrap_or_default()
     }
     /// <p>The date and time at which an access rule was created.</p>
     pub fn date_created(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

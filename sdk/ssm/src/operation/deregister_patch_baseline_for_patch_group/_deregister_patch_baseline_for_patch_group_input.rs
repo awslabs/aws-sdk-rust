@@ -34,6 +34,7 @@ pub struct DeregisterPatchBaselineForPatchGroupInputBuilder {
 }
 impl DeregisterPatchBaselineForPatchGroupInputBuilder {
     /// <p>The ID of the patch baseline to deregister the patch group from.</p>
+    /// This field is required.
     pub fn baseline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.baseline_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeregisterPatchBaselineForPatchGroupInputBuilder {
         &self.baseline_id
     }
     /// <p>The name of the patch group that should be deregistered from the patch baseline.</p>
+    /// This field is required.
     pub fn patch_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.patch_group = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl DeregisterPatchBaselineForPatchGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_patch_baseline_for_patch_group::DeregisterPatchBaselineForPatchGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::deregister_patch_baseline_for_patch_group::DeregisterPatchBaselineForPatchGroupInput {

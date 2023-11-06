@@ -27,6 +27,7 @@ pub struct DeleteIntentInputBuilder {
 }
 impl DeleteIntentInputBuilder {
     /// <p>The name of the intent. The name is case sensitive. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,9 @@ impl DeleteIntentInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`DeleteIntentInput`](crate::operation::delete_intent::DeleteIntentInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_intent::DeleteIntentInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_intent::DeleteIntentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_intent::DeleteIntentInput { name: self.name })
     }
 }

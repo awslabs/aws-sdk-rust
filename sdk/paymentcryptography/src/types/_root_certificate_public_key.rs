@@ -7,7 +7,7 @@ pub struct RootCertificatePublicKey {
     /// <p>The role of the key, the algorithm it supports, and the cryptographic operations allowed with the key. This data is immutable after the root public key is imported.</p>
     pub key_attributes: ::std::option::Option<crate::types::KeyAttributes>,
     /// <p>Parameter information for root public key certificate import.</p>
-    pub public_key_certificate: ::std::option::Option<::std::string::String>,
+    pub public_key_certificate: ::std::string::String,
 }
 impl RootCertificatePublicKey {
     /// <p>The role of the key, the algorithm it supports, and the cryptographic operations allowed with the key. This data is immutable after the root public key is imported.</p>
@@ -15,8 +15,9 @@ impl RootCertificatePublicKey {
         self.key_attributes.as_ref()
     }
     /// <p>Parameter information for root public key certificate import.</p>
-    pub fn public_key_certificate(&self) -> ::std::option::Option<&str> {
-        self.public_key_certificate.as_deref()
+    pub fn public_key_certificate(&self) -> &str {
+        use std::ops::Deref;
+        self.public_key_certificate.deref()
     }
 }
 impl ::std::fmt::Debug for RootCertificatePublicKey {
@@ -43,6 +44,7 @@ pub struct RootCertificatePublicKeyBuilder {
 }
 impl RootCertificatePublicKeyBuilder {
     /// <p>The role of the key, the algorithm it supports, and the cryptographic operations allowed with the key. This data is immutable after the root public key is imported.</p>
+    /// This field is required.
     pub fn key_attributes(mut self, input: crate::types::KeyAttributes) -> Self {
         self.key_attributes = ::std::option::Option::Some(input);
         self
@@ -57,6 +59,7 @@ impl RootCertificatePublicKeyBuilder {
         &self.key_attributes
     }
     /// <p>Parameter information for root public key certificate import.</p>
+    /// This field is required.
     pub fn public_key_certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_key_certificate = ::std::option::Option::Some(input.into());
         self
@@ -71,11 +74,18 @@ impl RootCertificatePublicKeyBuilder {
         &self.public_key_certificate
     }
     /// Consumes the builder and constructs a [`RootCertificatePublicKey`](crate::types::RootCertificatePublicKey).
-    pub fn build(self) -> crate::types::RootCertificatePublicKey {
-        crate::types::RootCertificatePublicKey {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`public_key_certificate`](crate::types::builders::RootCertificatePublicKeyBuilder::public_key_certificate)
+    pub fn build(self) -> ::std::result::Result<crate::types::RootCertificatePublicKey, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RootCertificatePublicKey {
             key_attributes: self.key_attributes,
-            public_key_certificate: self.public_key_certificate,
-        }
+            public_key_certificate: self.public_key_certificate.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "public_key_certificate",
+                    "public_key_certificate was not specified but it is required when building RootCertificatePublicKey",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for RootCertificatePublicKeyBuilder {

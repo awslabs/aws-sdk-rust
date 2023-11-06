@@ -5,32 +5,36 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeviceShadowEnrichActivity {
     /// <p>The name of the <code>deviceShadowEnrich</code> activity.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The name of the attribute that is added to the message.</p>
-    pub attribute: ::std::option::Option<::std::string::String>,
+    pub attribute: ::std::string::String,
     /// <p>The name of the IoT device whose shadow information is added to the message.</p>
-    pub thing_name: ::std::option::Option<::std::string::String>,
+    pub thing_name: ::std::string::String,
     /// <p>The ARN of the role that allows access to the device's shadow.</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
     /// <p>The next activity in the pipeline.</p>
     pub next: ::std::option::Option<::std::string::String>,
 }
 impl DeviceShadowEnrichActivity {
     /// <p>The name of the <code>deviceShadowEnrich</code> activity.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The name of the attribute that is added to the message.</p>
-    pub fn attribute(&self) -> ::std::option::Option<&str> {
-        self.attribute.as_deref()
+    pub fn attribute(&self) -> &str {
+        use std::ops::Deref;
+        self.attribute.deref()
     }
     /// <p>The name of the IoT device whose shadow information is added to the message.</p>
-    pub fn thing_name(&self) -> ::std::option::Option<&str> {
-        self.thing_name.as_deref()
+    pub fn thing_name(&self) -> &str {
+        use std::ops::Deref;
+        self.thing_name.deref()
     }
     /// <p>The ARN of the role that allows access to the device's shadow.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
     /// <p>The next activity in the pipeline.</p>
     pub fn next(&self) -> ::std::option::Option<&str> {
@@ -56,6 +60,7 @@ pub struct DeviceShadowEnrichActivityBuilder {
 }
 impl DeviceShadowEnrichActivityBuilder {
     /// <p>The name of the <code>deviceShadowEnrich</code> activity.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +75,7 @@ impl DeviceShadowEnrichActivityBuilder {
         &self.name
     }
     /// <p>The name of the attribute that is added to the message.</p>
+    /// This field is required.
     pub fn attribute(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +90,7 @@ impl DeviceShadowEnrichActivityBuilder {
         &self.attribute
     }
     /// <p>The name of the IoT device whose shadow information is added to the message.</p>
+    /// This field is required.
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_name = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +105,7 @@ impl DeviceShadowEnrichActivityBuilder {
         &self.thing_name
     }
     /// <p>The ARN of the role that allows access to the device's shadow.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -126,13 +134,38 @@ impl DeviceShadowEnrichActivityBuilder {
         &self.next
     }
     /// Consumes the builder and constructs a [`DeviceShadowEnrichActivity`](crate::types::DeviceShadowEnrichActivity).
-    pub fn build(self) -> crate::types::DeviceShadowEnrichActivity {
-        crate::types::DeviceShadowEnrichActivity {
-            name: self.name,
-            attribute: self.attribute,
-            thing_name: self.thing_name,
-            role_arn: self.role_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::DeviceShadowEnrichActivityBuilder::name)
+    /// - [`attribute`](crate::types::builders::DeviceShadowEnrichActivityBuilder::attribute)
+    /// - [`thing_name`](crate::types::builders::DeviceShadowEnrichActivityBuilder::thing_name)
+    /// - [`role_arn`](crate::types::builders::DeviceShadowEnrichActivityBuilder::role_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::DeviceShadowEnrichActivity, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DeviceShadowEnrichActivity {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DeviceShadowEnrichActivity",
+                )
+            })?,
+            attribute: self.attribute.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "attribute",
+                    "attribute was not specified but it is required when building DeviceShadowEnrichActivity",
+                )
+            })?,
+            thing_name: self.thing_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "thing_name",
+                    "thing_name was not specified but it is required when building DeviceShadowEnrichActivity",
+                )
+            })?,
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building DeviceShadowEnrichActivity",
+                )
+            })?,
             next: self.next,
-        }
+        })
     }
 }

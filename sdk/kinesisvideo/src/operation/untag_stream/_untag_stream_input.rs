@@ -20,8 +20,10 @@ impl UntagStreamInput {
         self.stream_name.as_deref()
     }
     /// <p>A list of the keys of the tags that you want to remove.</p>
-    pub fn tag_key_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tag_key_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_key_list.is_none()`.
+    pub fn tag_key_list(&self) -> &[::std::string::String] {
+        self.tag_key_list.as_deref().unwrap_or_default()
     }
 }
 impl UntagStreamInput {
@@ -89,7 +91,7 @@ impl UntagStreamInputBuilder {
         &self.tag_key_list
     }
     /// Consumes the builder and constructs a [`UntagStreamInput`](crate::operation::untag_stream::UntagStreamInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::untag_stream::UntagStreamInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::untag_stream::UntagStreamInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::untag_stream::UntagStreamInput {
             stream_arn: self.stream_arn,
             stream_name: self.stream_name,

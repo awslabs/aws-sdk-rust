@@ -5,19 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Filter {
     /// <p>The Amazon Resource Number (ARN) associated with this filter.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The Amazon Web Services account ID of the account that created the filter.</p>
-    pub owner_id: ::std::option::Option<::std::string::String>,
+    pub owner_id: ::std::string::String,
     /// <p>The name of the filter.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>Details on the filter criteria associated with this filter.</p>
     pub criteria: ::std::option::Option<crate::types::FilterCriteria>,
     /// <p>The action that is to be applied to the findings that match the filter.</p>
-    pub action: ::std::option::Option<crate::types::FilterAction>,
+    pub action: crate::types::FilterAction,
     /// <p>The date and time this filter was created at.</p>
-    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The date and time the filter was last updated at.</p>
-    pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub updated_at: ::aws_smithy_types::DateTime,
     /// <p>A description of the filter.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The reason for the filter.</p>
@@ -27,32 +27,35 @@ pub struct Filter {
 }
 impl Filter {
     /// <p>The Amazon Resource Number (ARN) associated with this filter.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The Amazon Web Services account ID of the account that created the filter.</p>
-    pub fn owner_id(&self) -> ::std::option::Option<&str> {
-        self.owner_id.as_deref()
+    pub fn owner_id(&self) -> &str {
+        use std::ops::Deref;
+        self.owner_id.deref()
     }
     /// <p>The name of the filter.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>Details on the filter criteria associated with this filter.</p>
     pub fn criteria(&self) -> ::std::option::Option<&crate::types::FilterCriteria> {
         self.criteria.as_ref()
     }
     /// <p>The action that is to be applied to the findings that match the filter.</p>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::FilterAction> {
-        self.action.as_ref()
+    pub fn action(&self) -> &crate::types::FilterAction {
+        &self.action
     }
     /// <p>The date and time this filter was created at.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_at.as_ref()
+    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_at
     }
     /// <p>The date and time the filter was last updated at.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.updated_at.as_ref()
+    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.updated_at
     }
     /// <p>A description of the filter.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -91,6 +94,7 @@ pub struct FilterBuilder {
 }
 impl FilterBuilder {
     /// <p>The Amazon Resource Number (ARN) associated with this filter.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +109,7 @@ impl FilterBuilder {
         &self.arn
     }
     /// <p>The Amazon Web Services account ID of the account that created the filter.</p>
+    /// This field is required.
     pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_id = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +124,7 @@ impl FilterBuilder {
         &self.owner_id
     }
     /// <p>The name of the filter.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -133,6 +139,7 @@ impl FilterBuilder {
         &self.name
     }
     /// <p>Details on the filter criteria associated with this filter.</p>
+    /// This field is required.
     pub fn criteria(mut self, input: crate::types::FilterCriteria) -> Self {
         self.criteria = ::std::option::Option::Some(input);
         self
@@ -147,6 +154,7 @@ impl FilterBuilder {
         &self.criteria
     }
     /// <p>The action that is to be applied to the findings that match the filter.</p>
+    /// This field is required.
     pub fn action(mut self, input: crate::types::FilterAction) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
@@ -161,6 +169,7 @@ impl FilterBuilder {
         &self.action
     }
     /// <p>The date and time this filter was created at.</p>
+    /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
@@ -175,6 +184,7 @@ impl FilterBuilder {
         &self.created_at
     }
     /// <p>The date and time the filter was last updated at.</p>
+    /// This field is required.
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
@@ -237,18 +247,55 @@ impl FilterBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
-    pub fn build(self) -> crate::types::Filter {
-        crate::types::Filter {
-            arn: self.arn,
-            owner_id: self.owner_id,
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::FilterBuilder::arn)
+    /// - [`owner_id`](crate::types::builders::FilterBuilder::owner_id)
+    /// - [`name`](crate::types::builders::FilterBuilder::name)
+    /// - [`action`](crate::types::builders::FilterBuilder::action)
+    /// - [`created_at`](crate::types::builders::FilterBuilder::created_at)
+    /// - [`updated_at`](crate::types::builders::FilterBuilder::updated_at)
+    pub fn build(self) -> ::std::result::Result<crate::types::Filter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Filter {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building Filter",
+                )
+            })?,
+            owner_id: self.owner_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "owner_id",
+                    "owner_id was not specified but it is required when building Filter",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building Filter",
+                )
+            })?,
             criteria: self.criteria,
-            action: self.action,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
+            action: self.action.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "action",
+                    "action was not specified but it is required when building Filter",
+                )
+            })?,
+            created_at: self.created_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_at",
+                    "created_at was not specified but it is required when building Filter",
+                )
+            })?,
+            updated_at: self.updated_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "updated_at",
+                    "updated_at was not specified but it is required when building Filter",
+                )
+            })?,
             description: self.description,
             reason: self.reason,
             tags: self.tags,
-        }
+        })
     }
 }

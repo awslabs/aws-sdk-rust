@@ -42,6 +42,7 @@ pub struct BridgeFlowOutputBuilder {
 }
 impl BridgeFlowOutputBuilder {
     /// The Amazon Resource Number (ARN) of the cloud flow.
+    /// This field is required.
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_arn = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl BridgeFlowOutputBuilder {
         &self.flow_arn
     }
     /// The Amazon Resource Number (ARN) of the flow source.
+    /// This field is required.
     pub fn flow_source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_source_arn = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl BridgeFlowOutputBuilder {
         &self.flow_source_arn
     }
     /// The name of the bridge's output.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

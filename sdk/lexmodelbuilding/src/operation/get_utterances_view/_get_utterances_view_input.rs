@@ -16,8 +16,10 @@ impl GetUtterancesViewInput {
         self.bot_name.as_deref()
     }
     /// <p>An array of bot versions for which utterance information should be returned. The limit is 5 versions per request.</p>
-    pub fn bot_versions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.bot_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bot_versions.is_none()`.
+    pub fn bot_versions(&self) -> &[::std::string::String] {
+        self.bot_versions.as_deref().unwrap_or_default()
     }
     /// <p>To return utterances that were recognized and handled, use <code>Detected</code>. To return utterances that were not recognized, use <code>Missed</code>.</p>
     pub fn status_type(&self) -> ::std::option::Option<&crate::types::StatusType> {
@@ -41,6 +43,7 @@ pub struct GetUtterancesViewInputBuilder {
 }
 impl GetUtterancesViewInputBuilder {
     /// <p>The name of the bot for which utterance information should be returned.</p>
+    /// This field is required.
     pub fn bot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_name = ::std::option::Option::Some(input.into());
         self
@@ -75,6 +78,7 @@ impl GetUtterancesViewInputBuilder {
         &self.bot_versions
     }
     /// <p>To return utterances that were recognized and handled, use <code>Detected</code>. To return utterances that were not recognized, use <code>Missed</code>.</p>
+    /// This field is required.
     pub fn status_type(mut self, input: crate::types::StatusType) -> Self {
         self.status_type = ::std::option::Option::Some(input);
         self
@@ -91,7 +95,7 @@ impl GetUtterancesViewInputBuilder {
     /// Consumes the builder and constructs a [`GetUtterancesViewInput`](crate::operation::get_utterances_view::GetUtterancesViewInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_utterances_view::GetUtterancesViewInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_utterances_view::GetUtterancesViewInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_utterances_view::GetUtterancesViewInput {
             bot_name: self.bot_name,
             bot_versions: self.bot_versions,

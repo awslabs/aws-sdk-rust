@@ -149,8 +149,10 @@ impl NfsFileShareInfo {
         self.object_acl.as_ref()
     }
     /// <p>The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IP addresses or valid CIDR blocks.</p>
-    pub fn client_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.client_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.client_list.is_none()`.
+    pub fn client_list(&self) -> &[::std::string::String] {
+        self.client_list.as_deref().unwrap_or_default()
     }
     /// <p>The user mapped to anonymous user. Valid options are the following:</p>
     /// <ul>
@@ -179,8 +181,10 @@ impl NfsFileShareInfo {
         self.requester_pays
     }
     /// <p>A list of up to 50 tags assigned to the NFS file share, sorted alphabetically by key name. Each tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the <code>ListTagsForResource</code> API operation.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The name of the file share. Optional.</p> <note>
     /// <p> <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>

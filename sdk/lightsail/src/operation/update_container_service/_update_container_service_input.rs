@@ -82,6 +82,7 @@ pub struct UpdateContainerServiceInputBuilder {
 }
 impl UpdateContainerServiceInputBuilder {
     /// <p>The name of the container service to update.</p>
+    /// This field is required.
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
         self
@@ -206,8 +207,10 @@ impl UpdateContainerServiceInputBuilder {
     /// Consumes the builder and constructs a [`UpdateContainerServiceInput`](crate::operation::update_container_service::UpdateContainerServiceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_container_service::UpdateContainerServiceInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::update_container_service::UpdateContainerServiceInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::update_container_service::UpdateContainerServiceInput {
             service_name: self.service_name,
             power: self.power,

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetAllowList`](crate::operation::get_allow_list::builders::GetAllowListFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_allow_list::builders::GetAllowListFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_allow_list::builders::GetAllowListFluentBuilder::set_id): <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_allow_list::builders::GetAllowListFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_allow_list::builders::GetAllowListFluentBuilder::set_id):<br>required: **true**<br><p>The unique identifier for the Amazon Macie resource that the request applies to.</p><br>
     /// - On success, responds with [`GetAllowListOutput`](crate::operation::get_allow_list::GetAllowListOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::get_allow_list::GetAllowListOutput::arn): <p>The Amazon Resource Name (ARN) of the allow list.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_allow_list::GetAllowListOutput::created_at): <p>The date and time, in UTC and extended ISO 8601 format, when the allow list was created in Amazon Macie.</p>
@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::get_allow_list::GetAllowListOutput::id): <p>The unique identifier for the allow list.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_allow_list::GetAllowListOutput::name): <p>The custom name of the allow list.</p>
     ///   - [`status(Option<AllowListStatus>)`](crate::operation::get_allow_list::GetAllowListOutput::status): <p>The current status of the allow list, which indicates whether Amazon Macie can access and use the list's criteria.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_allow_list::GetAllowListOutput::tags): <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the allow list.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_allow_list::GetAllowListOutput::tags): <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the allow list.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_allow_list::GetAllowListOutput::updated_at): <p>The date and time, in UTC and extended ISO 8601 format, when the allow list's settings were most recently changed in Amazon Macie.</p>
     /// - On failure, responds with [`SdkError<GetAllowListError>`](crate::operation::get_allow_list::GetAllowListError)
     pub fn get_allow_list(&self) -> crate::operation::get_allow_list::builders::GetAllowListFluentBuilder {

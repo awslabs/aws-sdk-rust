@@ -27,6 +27,7 @@ pub struct DescribeTrafficDistributionGroupInputBuilder {
 }
 impl DescribeTrafficDistributionGroupInputBuilder {
     /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
+    /// This field is required.
     pub fn traffic_distribution_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.traffic_distribution_group_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeTrafficDistributionGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_traffic_distribution_group::DescribeTrafficDistributionGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_traffic_distribution_group::DescribeTrafficDistributionGroupInput {

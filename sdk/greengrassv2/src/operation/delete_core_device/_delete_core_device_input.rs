@@ -27,6 +27,7 @@ pub struct DeleteCoreDeviceInputBuilder {
 }
 impl DeleteCoreDeviceInputBuilder {
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
+    /// This field is required.
     pub fn core_device_thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_device_thing_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteCoreDeviceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCoreDeviceInput`](crate::operation::delete_core_device::DeleteCoreDeviceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_core_device::DeleteCoreDeviceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_core_device::DeleteCoreDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_core_device::DeleteCoreDeviceInput {
             core_device_thing_name: self.core_device_thing_name,
         })

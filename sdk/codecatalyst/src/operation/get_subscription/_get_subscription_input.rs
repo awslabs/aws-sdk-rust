@@ -27,6 +27,7 @@ pub struct GetSubscriptionInputBuilder {
 }
 impl GetSubscriptionInputBuilder {
     /// <p>The name of the space.</p>
+    /// This field is required.
     pub fn space_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.space_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetSubscriptionInputBuilder {
     /// Consumes the builder and constructs a [`GetSubscriptionInput`](crate::operation::get_subscription::GetSubscriptionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_subscription::GetSubscriptionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_subscription::GetSubscriptionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_subscription::GetSubscriptionInput { space_name: self.space_name })
     }
 }

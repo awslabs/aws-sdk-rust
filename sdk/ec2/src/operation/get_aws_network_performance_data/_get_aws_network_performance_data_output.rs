@@ -11,8 +11,10 @@ pub struct GetAwsNetworkPerformanceDataOutput {
 }
 impl GetAwsNetworkPerformanceDataOutput {
     /// <p>The list of data responses.</p>
-    pub fn data_responses(&self) -> ::std::option::Option<&[crate::types::DataResponse]> {
-        self.data_responses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_responses.is_none()`.
+    pub fn data_responses(&self) -> &[crate::types::DataResponse] {
+        self.data_responses.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

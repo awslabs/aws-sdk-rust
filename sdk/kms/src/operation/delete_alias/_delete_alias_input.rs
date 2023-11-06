@@ -27,6 +27,7 @@ pub struct DeleteAliasInputBuilder {
 }
 impl DeleteAliasInputBuilder {
     /// <p>The alias to be deleted. The alias name must begin with <code>alias/</code> followed by the alias name, such as <code>alias/ExampleAlias</code>.</p>
+    /// This field is required.
     pub fn alias_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias_name = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl DeleteAliasInputBuilder {
         &self.alias_name
     }
     /// Consumes the builder and constructs a [`DeleteAliasInput`](crate::operation::delete_alias::DeleteAliasInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_alias::DeleteAliasInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_alias::DeleteAliasInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_alias::DeleteAliasInput { alias_name: self.alias_name })
     }
 }

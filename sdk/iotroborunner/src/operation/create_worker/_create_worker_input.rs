@@ -90,6 +90,7 @@ impl CreateWorkerInputBuilder {
         &self.client_token
     }
     /// Human friendly name of the resource.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +105,7 @@ impl CreateWorkerInputBuilder {
         &self.name
     }
     /// Full ARN of the worker fleet.
+    /// This field is required.
     pub fn fleet(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet = ::std::option::Option::Some(input.into());
         self
@@ -188,7 +190,9 @@ impl CreateWorkerInputBuilder {
         &self.orientation
     }
     /// Consumes the builder and constructs a [`CreateWorkerInput`](crate::operation::create_worker::CreateWorkerInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_worker::CreateWorkerInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_worker::CreateWorkerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_worker::CreateWorkerInput {
             client_token: self.client_token,
             name: self.name,

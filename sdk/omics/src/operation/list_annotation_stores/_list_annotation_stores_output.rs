@@ -11,8 +11,10 @@ pub struct ListAnnotationStoresOutput {
 }
 impl ListAnnotationStoresOutput {
     /// <p>A list of stores.</p>
-    pub fn annotation_stores(&self) -> ::std::option::Option<&[crate::types::AnnotationStoreItem]> {
-        self.annotation_stores.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.annotation_stores.is_none()`.
+    pub fn annotation_stores(&self) -> &[crate::types::AnnotationStoreItem] {
+        self.annotation_stores.as_deref().unwrap_or_default()
     }
     /// <p>A pagination token that's included if more results are available.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -15,8 +15,10 @@ pub struct BatchListIndex {
 }
 impl BatchListIndex {
     /// <p>Specifies the ranges of indexed values that you want to query.</p>
-    pub fn ranges_on_indexed_values(&self) -> ::std::option::Option<&[crate::types::ObjectAttributeRange]> {
-        self.ranges_on_indexed_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ranges_on_indexed_values.is_none()`.
+    pub fn ranges_on_indexed_values(&self) -> &[crate::types::ObjectAttributeRange] {
+        self.ranges_on_indexed_values.as_deref().unwrap_or_default()
     }
     /// <p>The reference to the index to list.</p>
     pub fn index_reference(&self) -> ::std::option::Option<&crate::types::ObjectReference> {
@@ -69,6 +71,7 @@ impl BatchListIndexBuilder {
         &self.ranges_on_indexed_values
     }
     /// <p>The reference to the index to list.</p>
+    /// This field is required.
     pub fn index_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.index_reference = ::std::option::Option::Some(input);
         self

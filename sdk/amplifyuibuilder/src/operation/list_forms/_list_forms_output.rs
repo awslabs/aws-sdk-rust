@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFormsOutput {
     /// <p>The list of forms for the Amplify app.</p>
-    pub entities: ::std::option::Option<::std::vec::Vec<crate::types::FormSummary>>,
+    pub entities: ::std::vec::Vec<crate::types::FormSummary>,
     /// <p>The pagination token that's included if more results are available.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListFormsOutput {
     /// <p>The list of forms for the Amplify app.</p>
-    pub fn entities(&self) -> ::std::option::Option<&[crate::types::FormSummary]> {
-        self.entities.as_deref()
+    pub fn entities(&self) -> &[crate::types::FormSummary] {
+        use std::ops::Deref;
+        self.entities.deref()
     }
     /// <p>The pagination token that's included if more results are available.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,18 @@ impl ListFormsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListFormsOutput`](crate::operation::list_forms::ListFormsOutput).
-    pub fn build(self) -> crate::operation::list_forms::ListFormsOutput {
-        crate::operation::list_forms::ListFormsOutput {
-            entities: self.entities,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`entities`](crate::operation::list_forms::builders::ListFormsOutputBuilder::entities)
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_forms::ListFormsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_forms::ListFormsOutput {
+            entities: self.entities.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "entities",
+                    "entities was not specified but it is required when building ListFormsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

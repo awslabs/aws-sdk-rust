@@ -20,8 +20,10 @@ impl DescribeDeploymentsInput {
         self.app_id.as_deref()
     }
     /// <p>An array of deployment IDs to be described. If you include this parameter, the command returns a description of the specified deployments. Otherwise, it returns a description of every deployment.</p>
-    pub fn deployment_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.deployment_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.deployment_ids.is_none()`.
+    pub fn deployment_ids(&self) -> &[::std::string::String] {
+        self.deployment_ids.as_deref().unwrap_or_default()
     }
 }
 impl DescribeDeploymentsInput {
@@ -91,7 +93,7 @@ impl DescribeDeploymentsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDeploymentsInput`](crate::operation::describe_deployments::DescribeDeploymentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_deployments::DescribeDeploymentsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_deployments::DescribeDeploymentsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_deployments::DescribeDeploymentsInput {
             stack_id: self.stack_id,

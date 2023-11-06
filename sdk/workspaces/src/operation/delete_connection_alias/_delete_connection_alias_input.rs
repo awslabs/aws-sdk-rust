@@ -27,6 +27,7 @@ pub struct DeleteConnectionAliasInputBuilder {
 }
 impl DeleteConnectionAliasInputBuilder {
     /// <p>The identifier of the connection alias to delete.</p>
+    /// This field is required.
     pub fn alias_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteConnectionAliasInputBuilder {
     /// Consumes the builder and constructs a [`DeleteConnectionAliasInput`](crate::operation::delete_connection_alias::DeleteConnectionAliasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_connection_alias::DeleteConnectionAliasInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_connection_alias::DeleteConnectionAliasInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_connection_alias::DeleteConnectionAliasInput { alias_id: self.alias_id })
     }

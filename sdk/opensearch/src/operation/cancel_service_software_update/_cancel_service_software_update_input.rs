@@ -28,6 +28,7 @@ pub struct CancelServiceSoftwareUpdateInputBuilder {
 }
 impl CancelServiceSoftwareUpdateInputBuilder {
     /// <p>Name of the OpenSearch Service domain that you want to cancel the service software update on.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl CancelServiceSoftwareUpdateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateInput {
             domain_name: self.domain_name,

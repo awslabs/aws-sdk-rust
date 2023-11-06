@@ -2,7 +2,7 @@
 pub fn ser_deployment_configuration_validation_policy(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DeploymentConfigurationValidationPolicy,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.timeout_in_seconds {
         object.key("timeoutInSeconds").number(
             #[allow(clippy::useless_conversion)]

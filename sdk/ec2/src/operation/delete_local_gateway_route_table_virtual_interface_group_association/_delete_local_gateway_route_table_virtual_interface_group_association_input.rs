@@ -34,6 +34,7 @@ pub struct DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationInputBuil
 }
 impl DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationInputBuilder {
     /// <p> The ID of the local gateway route table virtual interface group association. </p>
+    /// This field is required.
     pub fn local_gateway_route_table_virtual_interface_group_association_id(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -68,7 +69,7 @@ impl DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationInput`](crate::operation::delete_local_gateway_route_table_virtual_interface_group_association::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_local_gateway_route_table_virtual_interface_group_association::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_local_gateway_route_table_virtual_interface_group_association::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationInput, ::aws_smithy_types::error::operation::BuildError>{
         ::std::result::Result::Ok(
             crate::operation::delete_local_gateway_route_table_virtual_interface_group_association::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationInput {
                 local_gateway_route_table_virtual_interface_group_association_id: self.local_gateway_route_table_virtual_interface_group_association_id

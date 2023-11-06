@@ -2,7 +2,7 @@
 pub fn ser_get_ec2_recommendation_projected_metrics_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_ec2_recommendation_projected_metrics::GetEc2RecommendationProjectedMetricsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.instance_arn {
         object.key("instanceArn").string(var_1.as_str());
     }

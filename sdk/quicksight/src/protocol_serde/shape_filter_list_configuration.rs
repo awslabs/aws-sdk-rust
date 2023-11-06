@@ -2,24 +2,24 @@
 pub fn ser_filter_list_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FilterListConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.match_operator {
-        object.key("MatchOperator").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("MatchOperator").string(input.match_operator.as_str());
     }
-    if let Some(var_2) = &input.category_values {
-        let mut array_3 = object.key("CategoryValues").start_array();
-        for item_4 in var_2 {
+    if let Some(var_1) = &input.category_values {
+        let mut array_2 = object.key("CategoryValues").start_array();
+        for item_3 in var_1 {
             {
-                array_3.value().string(item_4.as_str());
+                array_2.value().string(item_3.as_str());
             }
         }
-        array_3.finish();
+        array_2.finish();
     }
-    if let Some(var_5) = &input.select_all_options {
-        object.key("SelectAllOptions").string(var_5.as_str());
+    if let Some(var_4) = &input.select_all_options {
+        object.key("SelectAllOptions").string(var_4.as_str());
     }
-    if let Some(var_6) = &input.null_option {
-        object.key("NullOption").string(var_6.as_str());
+    if let Some(var_5) = &input.null_option {
+        object.key("NullOption").string(var_5.as_str());
     }
     Ok(())
 }
@@ -73,7 +73,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::filter_list_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

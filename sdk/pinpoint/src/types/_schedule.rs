@@ -170,6 +170,7 @@ impl ScheduleBuilder {
         &self.quiet_time
     }
     /// <p>The scheduled time when the campaign began or will begin. Valid values are: IMMEDIATE, to start the campaign immediately; or, a specific time in ISO 8601 format.</p>
+    /// This field is required.
     pub fn start_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_time = ::std::option::Option::Some(input.into());
         self

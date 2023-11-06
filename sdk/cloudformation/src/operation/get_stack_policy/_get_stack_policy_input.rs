@@ -28,6 +28,7 @@ pub struct GetStackPolicyInputBuilder {
 }
 impl GetStackPolicyInputBuilder {
     /// <p>The name or unique stack ID that's associated with the stack whose policy you want to get.</p>
+    /// This field is required.
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_name = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl GetStackPolicyInputBuilder {
     /// Consumes the builder and constructs a [`GetStackPolicyInput`](crate::operation::get_stack_policy::GetStackPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_stack_policy::GetStackPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_stack_policy::GetStackPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_stack_policy::GetStackPolicyInput { stack_name: self.stack_name })
     }
 }

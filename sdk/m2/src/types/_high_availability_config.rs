@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HighAvailabilityConfig {
     /// <p>The number of instances in a high availability configuration. The minimum possible value is 1 and the maximum is 100.</p>
-    pub desired_capacity: ::std::option::Option<i32>,
+    pub desired_capacity: i32,
 }
 impl HighAvailabilityConfig {
     /// <p>The number of instances in a high availability configuration. The minimum possible value is 1 and the maximum is 100.</p>
-    pub fn desired_capacity(&self) -> ::std::option::Option<i32> {
+    pub fn desired_capacity(&self) -> i32 {
         self.desired_capacity
     }
 }
@@ -28,6 +28,7 @@ pub struct HighAvailabilityConfigBuilder {
 }
 impl HighAvailabilityConfigBuilder {
     /// <p>The number of instances in a high availability configuration. The minimum possible value is 1 and the maximum is 100.</p>
+    /// This field is required.
     pub fn desired_capacity(mut self, input: i32) -> Self {
         self.desired_capacity = ::std::option::Option::Some(input);
         self
@@ -42,9 +43,16 @@ impl HighAvailabilityConfigBuilder {
         &self.desired_capacity
     }
     /// Consumes the builder and constructs a [`HighAvailabilityConfig`](crate::types::HighAvailabilityConfig).
-    pub fn build(self) -> crate::types::HighAvailabilityConfig {
-        crate::types::HighAvailabilityConfig {
-            desired_capacity: self.desired_capacity,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`desired_capacity`](crate::types::builders::HighAvailabilityConfigBuilder::desired_capacity)
+    pub fn build(self) -> ::std::result::Result<crate::types::HighAvailabilityConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::HighAvailabilityConfig {
+            desired_capacity: self.desired_capacity.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "desired_capacity",
+                    "desired_capacity was not specified but it is required when building HighAvailabilityConfig",
+                )
+            })?,
+        })
     }
 }

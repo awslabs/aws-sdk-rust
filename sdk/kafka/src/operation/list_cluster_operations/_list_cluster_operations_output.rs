@@ -11,8 +11,10 @@ pub struct ListClusterOperationsOutput {
 }
 impl ListClusterOperationsOutput {
     /// <p>An array of cluster operation information objects.</p>
-    pub fn cluster_operation_info_list(&self) -> ::std::option::Option<&[crate::types::ClusterOperationInfo]> {
-        self.cluster_operation_info_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cluster_operation_info_list.is_none()`.
+    pub fn cluster_operation_info_list(&self) -> &[crate::types::ClusterOperationInfo] {
+        self.cluster_operation_info_list.as_deref().unwrap_or_default()
     }
     /// <p>If the response of ListClusterOperations is truncated, it returns a NextToken in the response. This Nexttoken should be sent in the subsequent request to ListClusterOperations.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

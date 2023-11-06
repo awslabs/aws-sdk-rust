@@ -2,15 +2,15 @@
 pub fn ser_virtual_gateway_port_mapping(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VirtualGatewayPortMapping,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("port").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((input.port).into()),
         );
     }
-    if let Some(var_1) = &input.protocol {
-        object.key("protocol").string(var_1.as_str());
+    {
+        object.key("protocol").string(input.protocol.as_str());
     }
     Ok(())
 }
@@ -54,7 +54,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::virtual_gateway_port_mapping_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

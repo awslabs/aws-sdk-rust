@@ -34,6 +34,7 @@ pub struct DisassociateFleetInputBuilder {
 }
 impl DisassociateFleetInputBuilder {
     /// <p>The name of the fleet.</p>
+    /// This field is required.
     pub fn fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DisassociateFleetInputBuilder {
         &self.fleet_name
     }
     /// <p>The name of the stack.</p>
+    /// This field is required.
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DisassociateFleetInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateFleetInput`](crate::operation::disassociate_fleet::DisassociateFleetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disassociate_fleet::DisassociateFleetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::disassociate_fleet::DisassociateFleetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::disassociate_fleet::DisassociateFleetInput {
             fleet_name: self.fleet_name,
             stack_name: self.stack_name,

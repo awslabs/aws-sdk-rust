@@ -5,15 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFindingsOutput {
     /// <p>A list of findings retrieved from the analyzer that match the filter criteria specified, if any.</p>
-    pub findings: ::std::option::Option<::std::vec::Vec<crate::types::FindingSummary>>,
+    pub findings: ::std::vec::Vec<crate::types::FindingSummary>,
     /// <p>A token used for pagination of results returned.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListFindingsOutput {
     /// <p>A list of findings retrieved from the analyzer that match the filter criteria specified, if any.</p>
-    pub fn findings(&self) -> ::std::option::Option<&[crate::types::FindingSummary]> {
-        self.findings.as_deref()
+    pub fn findings(&self) -> &[crate::types::FindingSummary] {
+        use std::ops::Deref;
+        self.findings.deref()
     }
     /// <p>A token used for pagination of results returned.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -85,11 +86,20 @@ impl ListFindingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListFindingsOutput`](crate::operation::list_findings::ListFindingsOutput).
-    pub fn build(self) -> crate::operation::list_findings::ListFindingsOutput {
-        crate::operation::list_findings::ListFindingsOutput {
-            findings: self.findings,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`findings`](crate::operation::list_findings::builders::ListFindingsOutputBuilder::findings)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_findings::ListFindingsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_findings::ListFindingsOutput {
+            findings: self.findings.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "findings",
+                    "findings was not specified but it is required when building ListFindingsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

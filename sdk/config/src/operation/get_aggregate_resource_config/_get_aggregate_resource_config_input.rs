@@ -34,6 +34,7 @@ pub struct GetAggregateResourceConfigInputBuilder {
 }
 impl GetAggregateResourceConfigInputBuilder {
     /// <p>The name of the configuration aggregator.</p>
+    /// This field is required.
     pub fn configuration_aggregator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_aggregator_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetAggregateResourceConfigInputBuilder {
         &self.configuration_aggregator_name
     }
     /// <p>An object that identifies aggregate resource.</p>
+    /// This field is required.
     pub fn resource_identifier(mut self, input: crate::types::AggregateResourceIdentifier) -> Self {
         self.resource_identifier = ::std::option::Option::Some(input);
         self
@@ -66,7 +68,7 @@ impl GetAggregateResourceConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_aggregate_resource_config::GetAggregateResourceConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_aggregate_resource_config::GetAggregateResourceConfigInput {
             configuration_aggregator_name: self.configuration_aggregator_name,

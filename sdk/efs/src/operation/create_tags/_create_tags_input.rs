@@ -15,8 +15,10 @@ impl CreateTagsInput {
         self.file_system_id.as_deref()
     }
     /// <p>An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair. </p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateTagsInput {
@@ -35,6 +37,7 @@ pub struct CreateTagsInputBuilder {
 }
 impl CreateTagsInputBuilder {
     /// <p>The ID of the file system whose tags you want to modify (String). This operation modifies the tags only, not the file system.</p>
+    /// This field is required.
     pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
@@ -69,7 +72,7 @@ impl CreateTagsInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateTagsInput`](crate::operation::create_tags::CreateTagsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_tags::CreateTagsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_tags::CreateTagsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_tags::CreateTagsInput {
             file_system_id: self.file_system_id,
             tags: self.tags,

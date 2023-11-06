@@ -15,12 +15,16 @@ impl BatchUpdateVehicleOutput {
     /// <p> A list of information about the batch of updated vehicles. </p> <note>
     /// <p>This list contains only unique IDs for the vehicles that were updated.</p>
     /// </note>
-    pub fn vehicles(&self) -> ::std::option::Option<&[crate::types::UpdateVehicleResponseItem]> {
-        self.vehicles.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vehicles.is_none()`.
+    pub fn vehicles(&self) -> &[crate::types::UpdateVehicleResponseItem] {
+        self.vehicles.as_deref().unwrap_or_default()
     }
     /// <p>A list of information about errors returned while updating a batch of vehicles, or, if there aren't any errors, an empty list.</p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::UpdateVehicleError]> {
-        self.errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
+    pub fn errors(&self) -> &[crate::types::UpdateVehicleError] {
+        self.errors.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchUpdateVehicleOutput {

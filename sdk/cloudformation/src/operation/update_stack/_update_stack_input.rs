@@ -61,7 +61,7 @@ pub struct UpdateStackInput {
     /// <p>You might update the stack policy, for example, in order to protect a new resource that you created during a stack update. If you don't specify a stack policy, the current policy that is associated with the stack is unchanged.</p>
     pub stack_policy_url: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Simple Notification Service topic Amazon Resource Names (ARNs) that CloudFormation associates with the stack. Specify an empty list to remove all notification topics.</p>
-    pub notification_ar_ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub notification_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Key-value pairs to associate with this stack. CloudFormation also propagates these tags to supported resources in the stack. You can specify a maximum number of 50 tags.</p>
     /// <p>If you don't specify this parameter, CloudFormation doesn't modify the stack's tags. If you specify an empty value, CloudFormation removes all associated tags.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -107,8 +107,10 @@ impl UpdateStackInput {
         self.stack_policy_during_update_url.as_deref()
     }
     /// <p>A list of <code>Parameter</code> structures that specify input parameters for the stack. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data type.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&[crate::types::Parameter]> {
-        self.parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
+    pub fn parameters(&self) -> &[crate::types::Parameter] {
+        self.parameters.as_deref().unwrap_or_default()
     }
     /// <p>In some cases, you must explicitly acknowledge that your stack template contains certain capabilities in order for CloudFormation to update the stack.</p>
     /// <ul>
@@ -132,13 +134,17 @@ impl UpdateStackInput {
     /// <p>Each macro relies on an underlying Lambda service function for processing stack templates. Be aware that the Lambda function owner can update the function operation without CloudFormation being notified.</p>
     /// </important> <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation Macros to Perform Custom Processing on Templates</a>.</p> </li>
     /// </ul>
-    pub fn capabilities(&self) -> ::std::option::Option<&[crate::types::Capability]> {
-        self.capabilities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capabilities.is_none()`.
+    pub fn capabilities(&self) -> &[crate::types::Capability] {
+        self.capabilities.as_deref().unwrap_or_default()
     }
     /// <p>The template resource types that you have permissions to work with for this update stack action, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.</p>
     /// <p>If the list of resource types doesn't include a resource that you're updating, the stack update fails. By default, CloudFormation grants permissions to all resource types. Identity and Access Management (IAM) uses this parameter for CloudFormation-specific condition keys in IAM policies. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access with Identity and Access Management</a>.</p>
-    pub fn resource_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_types.is_none()`.
+    pub fn resource_types(&self) -> &[::std::string::String] {
+        self.resource_types.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFormation assumes to update the stack. CloudFormation uses the role's credentials to make calls on your behalf. CloudFormation always uses this role for all future operations on the stack. Provided that users have permission to operate on the stack, CloudFormation uses this role even if the users don't have permission to pass it. Ensure that the role grants least privilege.</p>
     /// <p>If you don't specify a value, CloudFormation uses the role that was previously associated with the stack. If no role is available, CloudFormation uses a temporary session that is generated from your user credentials.</p>
@@ -160,13 +166,17 @@ impl UpdateStackInput {
         self.stack_policy_url.as_deref()
     }
     /// <p>Amazon Simple Notification Service topic Amazon Resource Names (ARNs) that CloudFormation associates with the stack. Specify an empty list to remove all notification topics.</p>
-    pub fn notification_ar_ns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.notification_ar_ns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notification_arns.is_none()`.
+    pub fn notification_arns(&self) -> &[::std::string::String] {
+        self.notification_arns.as_deref().unwrap_or_default()
     }
     /// <p>Key-value pairs to associate with this stack. CloudFormation also propagates these tags to supported resources in the stack. You can specify a maximum number of 50 tags.</p>
     /// <p>If you don't specify this parameter, CloudFormation doesn't modify the stack's tags. If you specify an empty value, CloudFormation removes all associated tags.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Preserve the state of previously provisioned resources when an operation fails.</p>
     /// <p>Default: <code>False</code> </p>
@@ -209,7 +219,7 @@ pub struct UpdateStackInputBuilder {
     pub(crate) rollback_configuration: ::std::option::Option<crate::types::RollbackConfiguration>,
     pub(crate) stack_policy_body: ::std::option::Option<::std::string::String>,
     pub(crate) stack_policy_url: ::std::option::Option<::std::string::String>,
-    pub(crate) notification_ar_ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) notification_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) disable_rollback: ::std::option::Option<bool>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
@@ -217,6 +227,7 @@ pub struct UpdateStackInputBuilder {
 }
 impl UpdateStackInputBuilder {
     /// <p>The name or unique stack ID of the stack to update.</p>
+    /// This field is required.
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_name = ::std::option::Option::Some(input.into());
         self
@@ -506,25 +517,25 @@ impl UpdateStackInputBuilder {
     pub fn get_stack_policy_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.stack_policy_url
     }
-    /// Appends an item to `notification_ar_ns`.
+    /// Appends an item to `notification_arns`.
     ///
-    /// To override the contents of this collection use [`set_notification_ar_ns`](Self::set_notification_ar_ns).
+    /// To override the contents of this collection use [`set_notification_arns`](Self::set_notification_arns).
     ///
     /// <p>Amazon Simple Notification Service topic Amazon Resource Names (ARNs) that CloudFormation associates with the stack. Specify an empty list to remove all notification topics.</p>
-    pub fn notification_ar_ns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.notification_ar_ns.unwrap_or_default();
+    pub fn notification_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.notification_arns.unwrap_or_default();
         v.push(input.into());
-        self.notification_ar_ns = ::std::option::Option::Some(v);
+        self.notification_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>Amazon Simple Notification Service topic Amazon Resource Names (ARNs) that CloudFormation associates with the stack. Specify an empty list to remove all notification topics.</p>
-    pub fn set_notification_ar_ns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.notification_ar_ns = input;
+    pub fn set_notification_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.notification_arns = input;
         self
     }
     /// <p>Amazon Simple Notification Service topic Amazon Resource Names (ARNs) that CloudFormation associates with the stack. Specify an empty list to remove all notification topics.</p>
-    pub fn get_notification_ar_ns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.notification_ar_ns
+    pub fn get_notification_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.notification_arns
     }
     /// Appends an item to `tags`.
     ///
@@ -604,7 +615,7 @@ impl UpdateStackInputBuilder {
         &self.retain_except_on_create
     }
     /// Consumes the builder and constructs a [`UpdateStackInput`](crate::operation::update_stack::UpdateStackInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_stack::UpdateStackInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_stack::UpdateStackInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_stack::UpdateStackInput {
             stack_name: self.stack_name,
             template_body: self.template_body,
@@ -619,7 +630,7 @@ impl UpdateStackInputBuilder {
             rollback_configuration: self.rollback_configuration,
             stack_policy_body: self.stack_policy_body,
             stack_policy_url: self.stack_policy_url,
-            notification_ar_ns: self.notification_ar_ns,
+            notification_arns: self.notification_arns,
             tags: self.tags,
             disable_rollback: self.disable_rollback,
             client_request_token: self.client_request_token,

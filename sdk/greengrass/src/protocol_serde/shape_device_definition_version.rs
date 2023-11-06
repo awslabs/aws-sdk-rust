@@ -2,7 +2,7 @@
 pub fn ser_device_definition_version(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DeviceDefinitionVersion,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.devices {
         let mut array_2 = object.key("Devices").start_array();
         for item_3 in var_1 {
@@ -34,7 +34,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Devices" => {
-                            builder = builder.set_devices(crate::protocol_serde::shape___list_of_device::de___list_of_device(tokens)?);
+                            builder = builder.set_devices(crate::protocol_serde::shape_list_of_device::de_list_of_device(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -36,6 +36,7 @@ pub struct GetLogRecordInputBuilder {
 }
 impl GetLogRecordInputBuilder {
     /// <p>The pointer corresponding to the log event record you want to retrieve. You get this from the response of a <code>GetQueryResults</code> operation. In that response, the value of the <code>@ptr</code> field for a log event is the value to use as <code>logRecordPointer</code> to retrieve that complete log event record.</p>
+    /// This field is required.
     pub fn log_record_pointer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_record_pointer = ::std::option::Option::Some(input.into());
         self
@@ -69,7 +70,7 @@ impl GetLogRecordInputBuilder {
     /// Consumes the builder and constructs a [`GetLogRecordInput`](crate::operation::get_log_record::GetLogRecordInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_log_record::GetLogRecordInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_log_record::GetLogRecordInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_log_record::GetLogRecordInput {
             log_record_pointer: self.log_record_pointer,
             unmask: self.unmask,

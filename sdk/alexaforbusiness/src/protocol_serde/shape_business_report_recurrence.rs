@@ -2,7 +2,7 @@
 pub fn ser_business_report_recurrence(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BusinessReportRecurrence,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.start_date {
         object.key("StartDate").string(var_1.as_str());
     }

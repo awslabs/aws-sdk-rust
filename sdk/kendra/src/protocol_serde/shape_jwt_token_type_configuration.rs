@@ -2,27 +2,27 @@
 pub fn ser_jwt_token_type_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::JwtTokenTypeConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.key_location {
-        object.key("KeyLocation").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("KeyLocation").string(input.key_location.as_str());
     }
-    if let Some(var_2) = &input.url {
-        object.key("URL").string(var_2.as_str());
+    if let Some(var_1) = &input.url {
+        object.key("URL").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.secret_manager_arn {
-        object.key("SecretManagerArn").string(var_3.as_str());
+    if let Some(var_2) = &input.secret_manager_arn {
+        object.key("SecretManagerArn").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.user_name_attribute_field {
-        object.key("UserNameAttributeField").string(var_4.as_str());
+    if let Some(var_3) = &input.user_name_attribute_field {
+        object.key("UserNameAttributeField").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.group_attribute_field {
-        object.key("GroupAttributeField").string(var_5.as_str());
+    if let Some(var_4) = &input.group_attribute_field {
+        object.key("GroupAttributeField").string(var_4.as_str());
     }
-    if let Some(var_6) = &input.issuer {
-        object.key("Issuer").string(var_6.as_str());
+    if let Some(var_5) = &input.issuer {
+        object.key("Issuer").string(var_5.as_str());
     }
-    if let Some(var_7) = &input.claim_regex {
-        object.key("ClaimRegex").string(var_7.as_str());
+    if let Some(var_6) = &input.claim_regex {
+        object.key("ClaimRegex").string(var_6.as_str());
     }
     Ok(())
 }
@@ -101,7 +101,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::jwt_token_type_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

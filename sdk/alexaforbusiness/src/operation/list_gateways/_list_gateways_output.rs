@@ -11,8 +11,10 @@ pub struct ListGatewaysOutput {
 }
 impl ListGatewaysOutput {
     /// <p>The gateways in the list.</p>
-    pub fn gateways(&self) -> ::std::option::Option<&[crate::types::GatewaySummary]> {
-        self.gateways.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.gateways.is_none()`.
+    pub fn gateways(&self) -> &[crate::types::GatewaySummary] {
+        self.gateways.as_deref().unwrap_or_default()
     }
     /// <p>The token used to paginate though multiple pages of gateway summaries.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

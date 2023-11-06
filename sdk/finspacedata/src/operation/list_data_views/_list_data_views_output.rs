@@ -15,8 +15,10 @@ impl ListDataViewsOutput {
         self.next_token.as_deref()
     }
     /// <p>A list of Dataviews.</p>
-    pub fn data_views(&self) -> ::std::option::Option<&[crate::types::DataViewSummary]> {
-        self.data_views.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_views.is_none()`.
+    pub fn data_views(&self) -> &[crate::types::DataViewSummary] {
+        self.data_views.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListDataViewsOutput {

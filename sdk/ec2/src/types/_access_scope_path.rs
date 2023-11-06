@@ -21,8 +21,10 @@ impl AccessScopePath {
         self.destination.as_ref()
     }
     /// <p>The through resources.</p>
-    pub fn through_resources(&self) -> ::std::option::Option<&[crate::types::ThroughResourcesStatement]> {
-        self.through_resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.through_resources.is_none()`.
+    pub fn through_resources(&self) -> &[crate::types::ThroughResourcesStatement] {
+        self.through_resources.as_deref().unwrap_or_default()
     }
 }
 impl AccessScopePath {

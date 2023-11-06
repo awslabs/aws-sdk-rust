@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct EndpointAttributes {
     /// <p>The device token for the GCM, APNS, and APNS_SANDBOX endpoint types.</p>
-    pub device_token: ::std::option::Option<::std::string::String>,
+    pub device_token: ::std::string::String,
     /// <p>The VOIP device token for the APNS and APNS_SANDBOX endpoint types.</p>
     pub voip_device_token: ::std::option::Option<::std::string::String>,
 }
 impl EndpointAttributes {
     /// <p>The device token for the GCM, APNS, and APNS_SANDBOX endpoint types.</p>
-    pub fn device_token(&self) -> ::std::option::Option<&str> {
-        self.device_token.as_deref()
+    pub fn device_token(&self) -> &str {
+        use std::ops::Deref;
+        self.device_token.deref()
     }
     /// <p>The VOIP device token for the APNS and APNS_SANDBOX endpoint types.</p>
     pub fn voip_device_token(&self) -> ::std::option::Option<&str> {
@@ -43,6 +44,7 @@ pub struct EndpointAttributesBuilder {
 }
 impl EndpointAttributesBuilder {
     /// <p>The device token for the GCM, APNS, and APNS_SANDBOX endpoint types.</p>
+    /// This field is required.
     pub fn device_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_token = ::std::option::Option::Some(input.into());
         self
@@ -71,11 +73,18 @@ impl EndpointAttributesBuilder {
         &self.voip_device_token
     }
     /// Consumes the builder and constructs a [`EndpointAttributes`](crate::types::EndpointAttributes).
-    pub fn build(self) -> crate::types::EndpointAttributes {
-        crate::types::EndpointAttributes {
-            device_token: self.device_token,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`device_token`](crate::types::builders::EndpointAttributesBuilder::device_token)
+    pub fn build(self) -> ::std::result::Result<crate::types::EndpointAttributes, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EndpointAttributes {
+            device_token: self.device_token.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "device_token",
+                    "device_token was not specified but it is required when building EndpointAttributes",
+                )
+            })?,
             voip_device_token: self.voip_device_token,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for EndpointAttributesBuilder {

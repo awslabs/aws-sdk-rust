@@ -34,6 +34,7 @@ pub struct AssociateAssessmentReportEvidenceFolderInputBuilder {
 }
 impl AssociateAssessmentReportEvidenceFolderInputBuilder {
     /// <p> The identifier for the assessment. </p>
+    /// This field is required.
     pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl AssociateAssessmentReportEvidenceFolderInputBuilder {
         &self.assessment_id
     }
     /// <p> The identifier for the folder that the evidence is stored in. </p>
+    /// This field is required.
     pub fn evidence_folder_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evidence_folder_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl AssociateAssessmentReportEvidenceFolderInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_assessment_report_evidence_folder::AssociateAssessmentReportEvidenceFolderInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::associate_assessment_report_evidence_folder::AssociateAssessmentReportEvidenceFolderInput {

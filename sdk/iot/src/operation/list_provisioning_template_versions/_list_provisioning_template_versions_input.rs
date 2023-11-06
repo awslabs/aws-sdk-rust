@@ -41,6 +41,7 @@ pub struct ListProvisioningTemplateVersionsInputBuilder {
 }
 impl ListProvisioningTemplateVersionsInputBuilder {
     /// <p>The name of the provisioning template.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListProvisioningTemplateVersionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_provisioning_template_versions::ListProvisioningTemplateVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_provisioning_template_versions::ListProvisioningTemplateVersionsInput {

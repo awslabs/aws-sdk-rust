@@ -11,8 +11,10 @@ pub struct ListDeploymentTargetsOutput {
 }
 impl ListDeploymentTargetsOutput {
     /// <p> The unique IDs of deployment targets. </p>
-    pub fn target_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.target_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_ids.is_none()`.
+    pub fn target_ids(&self) -> &[::std::string::String] {
+        self.target_ids.as_deref().unwrap_or_default()
     }
     /// <p> If a large amount of information is returned, a token identifier is also returned. It can be used in a subsequent <code>ListDeploymentTargets</code> call to return the next set of deployment targets in the list. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

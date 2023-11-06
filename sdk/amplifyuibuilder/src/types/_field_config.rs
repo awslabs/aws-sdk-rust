@@ -33,8 +33,10 @@ impl FieldConfig {
         self.input_type.as_ref()
     }
     /// <p>The validations to perform on the value in the field.</p>
-    pub fn validations(&self) -> ::std::option::Option<&[crate::types::FieldValidationConfiguration]> {
-        self.validations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.validations.is_none()`.
+    pub fn validations(&self) -> &[crate::types::FieldValidationConfiguration] {
+        self.validations.as_deref().unwrap_or_default()
     }
 }
 impl FieldConfig {

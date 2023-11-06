@@ -2,7 +2,7 @@
 pub fn ser_aws_open_search_service_domain_master_user_options_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsOpenSearchServiceDomainMasterUserOptionsDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.master_user_arn {
         object.key("MasterUserArn").string(var_1.as_str());
     }

@@ -6,15 +6,16 @@
 pub struct PiiOutputDataConfig {
     /// <p>When you use the <code>PiiOutputDataConfig</code> object with asynchronous operations, you specify the Amazon S3 location where you want to write the output data. </p>
     /// <p> For a PII entity detection job, the output file is plain text, not a compressed archive. The output file name is the same as the input file, with <code>.out</code> appended at the end. </p>
-    pub s3_uri: ::std::option::Option<::std::string::String>,
+    pub s3_uri: ::std::string::String,
     /// <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt the output results from an analysis job.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl PiiOutputDataConfig {
     /// <p>When you use the <code>PiiOutputDataConfig</code> object with asynchronous operations, you specify the Amazon S3 location where you want to write the output data. </p>
     /// <p> For a PII entity detection job, the output file is plain text, not a compressed archive. The output file name is the same as the input file, with <code>.out</code> appended at the end. </p>
-    pub fn s3_uri(&self) -> ::std::option::Option<&str> {
-        self.s3_uri.as_deref()
+    pub fn s3_uri(&self) -> &str {
+        use std::ops::Deref;
+        self.s3_uri.deref()
     }
     /// <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt the output results from an analysis job.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
@@ -38,6 +39,7 @@ pub struct PiiOutputDataConfigBuilder {
 impl PiiOutputDataConfigBuilder {
     /// <p>When you use the <code>PiiOutputDataConfig</code> object with asynchronous operations, you specify the Amazon S3 location where you want to write the output data. </p>
     /// <p> For a PII entity detection job, the output file is plain text, not a compressed archive. The output file name is the same as the input file, with <code>.out</code> appended at the end. </p>
+    /// This field is required.
     pub fn s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_uri = ::std::option::Option::Some(input.into());
         self
@@ -68,10 +70,17 @@ impl PiiOutputDataConfigBuilder {
         &self.kms_key_id
     }
     /// Consumes the builder and constructs a [`PiiOutputDataConfig`](crate::types::PiiOutputDataConfig).
-    pub fn build(self) -> crate::types::PiiOutputDataConfig {
-        crate::types::PiiOutputDataConfig {
-            s3_uri: self.s3_uri,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`s3_uri`](crate::types::builders::PiiOutputDataConfigBuilder::s3_uri)
+    pub fn build(self) -> ::std::result::Result<crate::types::PiiOutputDataConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PiiOutputDataConfig {
+            s3_uri: self.s3_uri.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "s3_uri",
+                    "s3_uri was not specified but it is required when building PiiOutputDataConfig",
+                )
+            })?,
             kms_key_id: self.kms_key_id,
-        }
+        })
     }
 }

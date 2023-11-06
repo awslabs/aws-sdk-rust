@@ -41,6 +41,7 @@ pub struct UpdateUserIdentityInfoInputBuilder {
 }
 impl UpdateUserIdentityInfoInputBuilder {
     /// <p>The identity information for the user.</p>
+    /// This field is required.
     pub fn identity_info(mut self, input: crate::types::UserIdentityInfo) -> Self {
         self.identity_info = ::std::option::Option::Some(input);
         self
@@ -55,6 +56,7 @@ impl UpdateUserIdentityInfoInputBuilder {
         &self.identity_info
     }
     /// <p>The identifier of the user account.</p>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl UpdateUserIdentityInfoInputBuilder {
         &self.user_id
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +90,7 @@ impl UpdateUserIdentityInfoInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_user_identity_info::UpdateUserIdentityInfoInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_user_identity_info::UpdateUserIdentityInfoInput {
             identity_info: self.identity_info,

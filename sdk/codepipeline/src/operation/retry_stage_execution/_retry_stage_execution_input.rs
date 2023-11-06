@@ -49,6 +49,7 @@ pub struct RetryStageExecutionInputBuilder {
 }
 impl RetryStageExecutionInputBuilder {
     /// <p>The name of the pipeline that contains the failed stage.</p>
+    /// This field is required.
     pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_name = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl RetryStageExecutionInputBuilder {
         &self.pipeline_name
     }
     /// <p>The name of the failed stage to be retried.</p>
+    /// This field is required.
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +79,7 @@ impl RetryStageExecutionInputBuilder {
         &self.stage_name
     }
     /// <p>The ID of the pipeline execution in the failed stage to be retried. Use the <code>GetPipelineState</code> action to retrieve the current pipelineExecutionId of the failed stage</p>
+    /// This field is required.
     pub fn pipeline_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_execution_id = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +94,7 @@ impl RetryStageExecutionInputBuilder {
         &self.pipeline_execution_id
     }
     /// <p>The scope of the retry attempt.</p>
+    /// This field is required.
     pub fn retry_mode(mut self, input: crate::types::StageRetryMode) -> Self {
         self.retry_mode = ::std::option::Option::Some(input);
         self
@@ -107,7 +111,7 @@ impl RetryStageExecutionInputBuilder {
     /// Consumes the builder and constructs a [`RetryStageExecutionInput`](crate::operation::retry_stage_execution::RetryStageExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::retry_stage_execution::RetryStageExecutionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::retry_stage_execution::RetryStageExecutionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::retry_stage_execution::RetryStageExecutionInput {
             pipeline_name: self.pipeline_name,

@@ -97,8 +97,10 @@ impl CopyDbClusterSnapshotInput {
         self.copy_tags
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CopyDbClusterSnapshotInput {
@@ -129,6 +131,7 @@ impl CopyDbClusterSnapshotInputBuilder {
     /// <li> <p>If the source snapshot is in a different Amazon Web Services Region than the copy, specify a valid DB cluster snapshot ARN. For more information, go to <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions"> Copying Snapshots Across Amazon Web Services Regions</a> in the <i>Amazon Aurora User Guide</i>.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot1</code> </p>
+    /// This field is required.
     pub fn source_db_cluster_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_db_cluster_snapshot_identifier = ::std::option::Option::Some(input.into());
         self
@@ -166,6 +169,7 @@ impl CopyDbClusterSnapshotInputBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot2</code> </p>
+    /// This field is required.
     pub fn target_db_cluster_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_db_cluster_snapshot_identifier = ::std::option::Option::Some(input.into());
         self
@@ -300,7 +304,7 @@ impl CopyDbClusterSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`CopyDbClusterSnapshotInput`](crate::operation::copy_db_cluster_snapshot::CopyDbClusterSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::copy_db_cluster_snapshot::CopyDbClusterSnapshotInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::copy_db_cluster_snapshot::CopyDbClusterSnapshotInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::copy_db_cluster_snapshot::CopyDbClusterSnapshotInput {
             source_db_cluster_snapshot_identifier: self.source_db_cluster_snapshot_identifier,

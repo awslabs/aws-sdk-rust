@@ -234,7 +234,7 @@ impl ListTasksInputBuilder {
         &self.launch_type
     }
     /// Consumes the builder and constructs a [`ListTasksInput`](crate::operation::list_tasks::ListTasksInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_tasks::ListTasksInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_tasks::ListTasksInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_tasks::ListTasksInput {
             cluster: self.cluster,
             container_instance: self.container_instance,

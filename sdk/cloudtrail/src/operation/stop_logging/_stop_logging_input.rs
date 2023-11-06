@@ -31,6 +31,7 @@ pub struct StopLoggingInputBuilder {
 impl StopLoggingInputBuilder {
     /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail will stop logging Amazon Web Services API calls. The following is the format of a trail ARN.</p>
     /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -47,7 +48,7 @@ impl StopLoggingInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`StopLoggingInput`](crate::operation::stop_logging::StopLoggingInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::stop_logging::StopLoggingInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_logging::StopLoggingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_logging::StopLoggingInput { name: self.name })
     }
 }

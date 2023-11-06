@@ -23,12 +23,16 @@ impl DescribeJobFlowsInput {
         self.created_before.as_ref()
     }
     /// <p>Return only job flows whose job flow ID is contained in this list.</p>
-    pub fn job_flow_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.job_flow_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_flow_ids.is_none()`.
+    pub fn job_flow_ids(&self) -> &[::std::string::String] {
+        self.job_flow_ids.as_deref().unwrap_or_default()
     }
     /// <p>Return only job flows whose state is contained in this list.</p>
-    pub fn job_flow_states(&self) -> ::std::option::Option<&[crate::types::JobFlowExecutionState]> {
-        self.job_flow_states.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_flow_states.is_none()`.
+    pub fn job_flow_states(&self) -> &[crate::types::JobFlowExecutionState] {
+        self.job_flow_states.as_deref().unwrap_or_default()
     }
 }
 impl DescribeJobFlowsInput {
@@ -119,7 +123,7 @@ impl DescribeJobFlowsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeJobFlowsInput`](crate::operation::describe_job_flows::DescribeJobFlowsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_job_flows::DescribeJobFlowsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_job_flows::DescribeJobFlowsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_job_flows::DescribeJobFlowsInput {
             created_after: self.created_after,
             created_before: self.created_before,

@@ -11,8 +11,10 @@ pub struct ListChangeSetsOutput {
 }
 impl ListChangeSetsOutput {
     /// <p> Array of <code>ChangeSetSummaryListItem</code> objects.</p>
-    pub fn change_set_summary_list(&self) -> ::std::option::Option<&[crate::types::ChangeSetSummaryListItem]> {
-        self.change_set_summary_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.change_set_summary_list.is_none()`.
+    pub fn change_set_summary_list(&self) -> &[crate::types::ChangeSetSummaryListItem] {
+        self.change_set_summary_list.as_deref().unwrap_or_default()
     }
     /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

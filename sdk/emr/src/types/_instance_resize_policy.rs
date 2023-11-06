@@ -13,12 +13,16 @@ pub struct InstanceResizePolicy {
 }
 impl InstanceResizePolicy {
     /// <p>Specific list of instances to be terminated when shrinking an instance group.</p>
-    pub fn instances_to_terminate(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.instances_to_terminate.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instances_to_terminate.is_none()`.
+    pub fn instances_to_terminate(&self) -> &[::std::string::String] {
+        self.instances_to_terminate.as_deref().unwrap_or_default()
     }
     /// <p>Specific list of instances to be protected when shrinking an instance group.</p>
-    pub fn instances_to_protect(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.instances_to_protect.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instances_to_protect.is_none()`.
+    pub fn instances_to_protect(&self) -> &[::std::string::String] {
+        self.instances_to_protect.as_deref().unwrap_or_default()
     }
     /// <p>Decommissioning timeout override for the specific list of instances to be terminated.</p>
     pub fn instance_termination_timeout(&self) -> ::std::option::Option<i32> {

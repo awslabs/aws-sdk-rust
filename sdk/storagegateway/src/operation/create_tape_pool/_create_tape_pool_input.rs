@@ -36,8 +36,10 @@ impl CreateTapePoolInput {
     /// <p>A list of up to 50 tags that can be assigned to tape pool. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateTapePoolInput {
@@ -59,6 +61,7 @@ pub struct CreateTapePoolInputBuilder {
 }
 impl CreateTapePoolInputBuilder {
     /// <p>The name of the new custom tape pool.</p>
+    /// This field is required.
     pub fn pool_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pool_name = ::std::option::Option::Some(input.into());
         self
@@ -73,6 +76,7 @@ impl CreateTapePoolInputBuilder {
         &self.pool_name
     }
     /// <p>The storage class that is associated with the new custom pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
+    /// This field is required.
     pub fn storage_class(mut self, input: crate::types::TapeStorageClass) -> Self {
         self.storage_class = ::std::option::Option::Some(input);
         self
@@ -143,7 +147,7 @@ impl CreateTapePoolInputBuilder {
     /// Consumes the builder and constructs a [`CreateTapePoolInput`](crate::operation::create_tape_pool::CreateTapePoolInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_tape_pool::CreateTapePoolInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_tape_pool::CreateTapePoolInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_tape_pool::CreateTapePoolInput {
             pool_name: self.pool_name,
             storage_class: self.storage_class,

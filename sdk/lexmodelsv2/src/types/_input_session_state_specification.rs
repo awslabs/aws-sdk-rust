@@ -17,8 +17,10 @@ impl InputSessionStateSpecification {
         self.session_attributes.as_ref()
     }
     /// <p>Active contexts for the session state.</p>
-    pub fn active_contexts(&self) -> ::std::option::Option<&[crate::types::ActiveContext]> {
-        self.active_contexts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.active_contexts.is_none()`.
+    pub fn active_contexts(&self) -> &[crate::types::ActiveContext] {
+        self.active_contexts.as_deref().unwrap_or_default()
     }
     /// <p>Runtime hints for the session state.</p>
     pub fn runtime_hints(&self) -> ::std::option::Option<&crate::types::RuntimeHints> {

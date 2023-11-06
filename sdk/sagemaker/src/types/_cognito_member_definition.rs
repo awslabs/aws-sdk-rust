@@ -42,6 +42,7 @@ pub struct CognitoMemberDefinitionBuilder {
 }
 impl CognitoMemberDefinitionBuilder {
     /// <p>An identifier for a user pool. The user pool must be in the same region as the service that you are calling.</p>
+    /// This field is required.
     pub fn user_pool(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl CognitoMemberDefinitionBuilder {
         &self.user_pool
     }
     /// <p>An identifier for a user group.</p>
+    /// This field is required.
     pub fn user_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_group = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl CognitoMemberDefinitionBuilder {
         &self.user_group
     }
     /// <p>An identifier for an application client. You must create the app client ID using Amazon Cognito.</p>
+    /// This field is required.
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
         self

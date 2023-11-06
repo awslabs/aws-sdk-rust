@@ -34,6 +34,7 @@ pub struct GetProjectInputBuilder {
 }
 impl GetProjectInputBuilder {
     /// <p>The ID of the Amazon DataZone domain in which the project exists.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetProjectInputBuilder {
         &self.domain_identifier
     }
     /// <p>The ID of the project.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,7 @@ impl GetProjectInputBuilder {
         &self.identifier
     }
     /// Consumes the builder and constructs a [`GetProjectInput`](crate::operation::get_project::GetProjectInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_project::GetProjectInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_project::GetProjectInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_project::GetProjectInput {
             domain_identifier: self.domain_identifier,
             identifier: self.identifier,

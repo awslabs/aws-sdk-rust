@@ -48,6 +48,7 @@ impl UpdateGroupCertificateConfigurationInputBuilder {
         &self.certificate_expiry_in_milliseconds
     }
     /// The ID of the Greengrass group.
+    /// This field is required.
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl UpdateGroupCertificateConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_group_certificate_configuration::UpdateGroupCertificateConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_group_certificate_configuration::UpdateGroupCertificateConfigurationInput {

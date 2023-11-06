@@ -11,8 +11,10 @@ pub struct ListSecretsOutput {
 }
 impl ListSecretsOutput {
     /// <p>A list of the secrets in the account.</p>
-    pub fn secret_list(&self) -> ::std::option::Option<&[crate::types::SecretListEntry]> {
-        self.secret_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secret_list.is_none()`.
+    pub fn secret_list(&self) -> &[crate::types::SecretListEntry] {
+        self.secret_list.as_deref().unwrap_or_default()
     }
     /// <p>Secrets Manager includes this value if there's more output available than what is included in the current response. This can occur even when the response includes no values at all, such as when you ask for a filtered view of a long list. To get the next results, call <code>ListSecrets</code> again with this value.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

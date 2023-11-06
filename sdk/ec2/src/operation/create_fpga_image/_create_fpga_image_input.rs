@@ -44,8 +44,10 @@ impl CreateFpgaImageInput {
         self.client_token.as_deref()
     }
     /// <p>The tags to apply to the FPGA image during creation.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
 }
 impl CreateFpgaImageInput {
@@ -83,6 +85,7 @@ impl CreateFpgaImageInputBuilder {
         &self.dry_run
     }
     /// <p>The location of the encrypted design checkpoint in Amazon S3. The input must be a tarball.</p>
+    /// This field is required.
     pub fn input_storage_location(mut self, input: crate::types::StorageLocation) -> Self {
         self.input_storage_location = ::std::option::Option::Some(input);
         self
@@ -175,7 +178,7 @@ impl CreateFpgaImageInputBuilder {
     /// Consumes the builder and constructs a [`CreateFpgaImageInput`](crate::operation::create_fpga_image::CreateFpgaImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_fpga_image::CreateFpgaImageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_fpga_image::CreateFpgaImageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_fpga_image::CreateFpgaImageInput {
             dry_run: self.dry_run,
             input_storage_location: self.input_storage_location,

@@ -27,6 +27,7 @@ pub struct GetRateBasedRuleInputBuilder {
 }
 impl GetRateBasedRuleInputBuilder {
     /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to get. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
+    /// This field is required.
     pub fn rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetRateBasedRuleInputBuilder {
     /// Consumes the builder and constructs a [`GetRateBasedRuleInput`](crate::operation::get_rate_based_rule::GetRateBasedRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_rate_based_rule::GetRateBasedRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_rate_based_rule::GetRateBasedRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_rate_based_rule::GetRateBasedRuleInput { rule_id: self.rule_id })
     }
 }

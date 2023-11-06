@@ -22,8 +22,10 @@ impl CreateCaseInput {
         self.template_id.as_deref()
     }
     /// <p>An array of objects with field ID (matching ListFields/DescribeField) and value union data.</p>
-    pub fn fields(&self) -> ::std::option::Option<&[crate::types::FieldValue]> {
-        self.fields.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fields.is_none()`.
+    pub fn fields(&self) -> &[crate::types::FieldValue] {
+        self.fields.as_deref().unwrap_or_default()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -48,6 +50,7 @@ pub struct CreateCaseInputBuilder {
 }
 impl CreateCaseInputBuilder {
     /// <p>The unique identifier of the Cases domain. </p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl CreateCaseInputBuilder {
         &self.domain_id
     }
     /// <p>A unique identifier of a template.</p>
+    /// This field is required.
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_id = ::std::option::Option::Some(input.into());
         self
@@ -110,7 +114,7 @@ impl CreateCaseInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateCaseInput`](crate::operation::create_case::CreateCaseInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_case::CreateCaseInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_case::CreateCaseInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_case::CreateCaseInput {
             domain_id: self.domain_id,
             template_id: self.template_id,

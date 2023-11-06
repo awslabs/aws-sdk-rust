@@ -119,12 +119,16 @@ impl ConfigurationItem {
     /// <p>A list of CloudTrail event IDs.</p>
     /// <p>A populated field indicates that the current configuration was initiated by the events recorded in the CloudTrail log. For more information about CloudTrail, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What Is CloudTrail</a>.</p>
     /// <p>An empty field indicates that the current configuration was not initiated by any event. As of Version 1.3, the relatedEvents field is empty. You can access the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html">LookupEvents API</a> in the <i>CloudTrail API Reference</i> to retrieve the events for the resource.</p>
-    pub fn related_events(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.related_events.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.related_events.is_none()`.
+    pub fn related_events(&self) -> &[::std::string::String] {
+        self.related_events.as_deref().unwrap_or_default()
     }
     /// <p>A list of related Amazon Web Services resources.</p>
-    pub fn relationships(&self) -> ::std::option::Option<&[crate::types::Relationship]> {
-        self.relationships.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.relationships.is_none()`.
+    pub fn relationships(&self) -> &[crate::types::Relationship] {
+        self.relationships.as_deref().unwrap_or_default()
     }
     /// <p>The description of the resource configuration.</p>
     pub fn configuration(&self) -> ::std::option::Option<&str> {

@@ -11,8 +11,10 @@ pub struct DescribeIpGroupsOutput {
 }
 impl DescribeIpGroupsOutput {
     /// <p>Information about the IP access control groups.</p>
-    pub fn result(&self) -> ::std::option::Option<&[crate::types::WorkspacesIpGroup]> {
-        self.result.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.result.is_none()`.
+    pub fn result(&self) -> &[crate::types::WorkspacesIpGroup] {
+        self.result.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

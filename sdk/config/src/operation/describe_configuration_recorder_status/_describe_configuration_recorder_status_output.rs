@@ -10,8 +10,10 @@ pub struct DescribeConfigurationRecorderStatusOutput {
 }
 impl DescribeConfigurationRecorderStatusOutput {
     /// <p>A list that contains status of the specified recorders.</p>
-    pub fn configuration_recorders_status(&self) -> ::std::option::Option<&[crate::types::ConfigurationRecorderStatus]> {
-        self.configuration_recorders_status.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configuration_recorders_status.is_none()`.
+    pub fn configuration_recorders_status(&self) -> &[crate::types::ConfigurationRecorderStatus] {
+        self.configuration_recorders_status.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeConfigurationRecorderStatusOutput {

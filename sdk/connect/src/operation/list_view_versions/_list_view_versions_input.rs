@@ -48,6 +48,7 @@ pub struct ListViewVersionsInputBuilder {
 }
 impl ListViewVersionsInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl ListViewVersionsInputBuilder {
         &self.instance_id
     }
     /// <p>The identifier of the view. Both <code>ViewArn</code> and <code>ViewId</code> can be used.</p>
+    /// This field is required.
     pub fn view_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.view_id = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +108,7 @@ impl ListViewVersionsInputBuilder {
     /// Consumes the builder and constructs a [`ListViewVersionsInput`](crate::operation::list_view_versions::ListViewVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_view_versions::ListViewVersionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_view_versions::ListViewVersionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_view_versions::ListViewVersionsInput {
             instance_id: self.instance_id,
             view_id: self.view_id,

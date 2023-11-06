@@ -34,6 +34,7 @@ pub struct DeleteSessionInputBuilder {
 }
 impl DeleteSessionInputBuilder {
     /// <p>The ID of the session to be deleted.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl DeleteSessionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSessionInput`](crate::operation::delete_session::DeleteSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_session::DeleteSessionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_session::DeleteSessionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_session::DeleteSessionInput {
             id: self.id,
             request_origin: self.request_origin,

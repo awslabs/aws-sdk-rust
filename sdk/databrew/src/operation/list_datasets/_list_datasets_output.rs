@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDatasetsOutput {
     /// <p>A list of datasets that are defined.</p>
-    pub datasets: ::std::option::Option<::std::vec::Vec<crate::types::Dataset>>,
+    pub datasets: ::std::vec::Vec<crate::types::Dataset>,
     /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListDatasetsOutput {
     /// <p>A list of datasets that are defined.</p>
-    pub fn datasets(&self) -> ::std::option::Option<&[crate::types::Dataset]> {
-        self.datasets.as_deref()
+    pub fn datasets(&self) -> &[crate::types::Dataset] {
+        use std::ops::Deref;
+        self.datasets.deref()
     }
     /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ListDatasetsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDatasetsOutput`](crate::operation::list_datasets::ListDatasetsOutput).
-    pub fn build(self) -> crate::operation::list_datasets::ListDatasetsOutput {
-        crate::operation::list_datasets::ListDatasetsOutput {
-            datasets: self.datasets,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`datasets`](crate::operation::list_datasets::builders::ListDatasetsOutputBuilder::datasets)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_datasets::ListDatasetsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_datasets::ListDatasetsOutput {
+            datasets: self.datasets.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "datasets",
+                    "datasets was not specified but it is required when building ListDatasetsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -2,7 +2,7 @@
 pub fn ser_aws_code_build_project_logs_config_cloud_watch_logs_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.group_name {
         object.key("GroupName").string(var_1.as_str());
     }

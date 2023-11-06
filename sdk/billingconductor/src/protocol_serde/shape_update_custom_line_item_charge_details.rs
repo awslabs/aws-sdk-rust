@@ -2,7 +2,7 @@
 pub fn ser_update_custom_line_item_charge_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateCustomLineItemChargeDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.flat {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Flat").start_object();

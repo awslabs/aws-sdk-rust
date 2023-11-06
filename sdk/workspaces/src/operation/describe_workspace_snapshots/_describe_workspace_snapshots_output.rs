@@ -11,12 +11,16 @@ pub struct DescribeWorkspaceSnapshotsOutput {
 }
 impl DescribeWorkspaceSnapshotsOutput {
     /// <p>Information about the snapshots that can be used to rebuild a WorkSpace. These snapshots include the user volume.</p>
-    pub fn rebuild_snapshots(&self) -> ::std::option::Option<&[crate::types::Snapshot]> {
-        self.rebuild_snapshots.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rebuild_snapshots.is_none()`.
+    pub fn rebuild_snapshots(&self) -> &[crate::types::Snapshot] {
+        self.rebuild_snapshots.as_deref().unwrap_or_default()
     }
     /// <p>Information about the snapshots that can be used to restore a WorkSpace. These snapshots include both the root volume and the user volume.</p>
-    pub fn restore_snapshots(&self) -> ::std::option::Option<&[crate::types::Snapshot]> {
-        self.restore_snapshots.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.restore_snapshots.is_none()`.
+    pub fn restore_snapshots(&self) -> &[crate::types::Snapshot] {
+        self.restore_snapshots.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeWorkspaceSnapshotsOutput {

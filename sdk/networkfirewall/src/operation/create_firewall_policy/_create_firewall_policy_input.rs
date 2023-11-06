@@ -32,8 +32,10 @@ impl CreateFirewallPolicyInput {
         self.description.as_deref()
     }
     /// <p>The key:value pairs to associate with the resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
     /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
@@ -66,6 +68,7 @@ pub struct CreateFirewallPolicyInputBuilder {
 }
 impl CreateFirewallPolicyInputBuilder {
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
+    /// This field is required.
     pub fn firewall_policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_policy_name = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +83,7 @@ impl CreateFirewallPolicyInputBuilder {
         &self.firewall_policy_name
     }
     /// <p>The rule groups and policy actions to use in the firewall policy.</p>
+    /// This field is required.
     pub fn firewall_policy(mut self, input: crate::types::FirewallPolicy) -> Self {
         self.firewall_policy = ::std::option::Option::Some(input);
         self
@@ -164,7 +168,7 @@ impl CreateFirewallPolicyInputBuilder {
     /// Consumes the builder and constructs a [`CreateFirewallPolicyInput`](crate::operation::create_firewall_policy::CreateFirewallPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_firewall_policy::CreateFirewallPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_firewall_policy::CreateFirewallPolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_firewall_policy::CreateFirewallPolicyInput {
             firewall_policy_name: self.firewall_policy_name,

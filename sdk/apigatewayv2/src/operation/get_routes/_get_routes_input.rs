@@ -41,6 +41,7 @@ pub struct GetRoutesInputBuilder {
 }
 impl GetRoutesInputBuilder {
     /// <p>The API identifier.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +84,7 @@ impl GetRoutesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetRoutesInput`](crate::operation::get_routes::GetRoutesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_routes::GetRoutesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_routes::GetRoutesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_routes::GetRoutesInput {
             api_id: self.api_id,
             max_results: self.max_results,

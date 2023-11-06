@@ -38,12 +38,16 @@ impl DbSecurityGroup {
         self.vpc_id.as_deref()
     }
     /// <p>Contains a list of <code>EC2SecurityGroup</code> elements.</p>
-    pub fn ec2_security_groups(&self) -> ::std::option::Option<&[crate::types::Ec2SecurityGroup]> {
-        self.ec2_security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ec2_security_groups.is_none()`.
+    pub fn ec2_security_groups(&self) -> &[crate::types::Ec2SecurityGroup] {
+        self.ec2_security_groups.as_deref().unwrap_or_default()
     }
     /// <p>Contains a list of <code>IPRange</code> elements.</p>
-    pub fn ip_ranges(&self) -> ::std::option::Option<&[crate::types::IpRange]> {
-        self.ip_ranges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ip_ranges.is_none()`.
+    pub fn ip_ranges(&self) -> &[crate::types::IpRange] {
+        self.ip_ranges.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) for the DB security group.</p>
     pub fn db_security_group_arn(&self) -> ::std::option::Option<&str> {

@@ -6,7 +6,7 @@ pub struct UpdateProjectOutput {
     /// <p>The date and time that the project was last modified.</p>
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the project that you updated.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     _request_id: Option<String>,
 }
 impl UpdateProjectOutput {
@@ -15,8 +15,9 @@ impl UpdateProjectOutput {
         self.last_modified_date.as_ref()
     }
     /// <p>The name of the project that you updated.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateProjectOutput {
@@ -55,6 +56,7 @@ impl UpdateProjectOutputBuilder {
         &self.last_modified_date
     }
     /// <p>The name of the project that you updated.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -78,11 +80,20 @@ impl UpdateProjectOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateProjectOutput`](crate::operation::update_project::UpdateProjectOutput).
-    pub fn build(self) -> crate::operation::update_project::UpdateProjectOutput {
-        crate::operation::update_project::UpdateProjectOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::update_project::builders::UpdateProjectOutputBuilder::name)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_project::UpdateProjectOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_project::UpdateProjectOutput {
             last_modified_date: self.last_modified_date,
-            name: self.name,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building UpdateProjectOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

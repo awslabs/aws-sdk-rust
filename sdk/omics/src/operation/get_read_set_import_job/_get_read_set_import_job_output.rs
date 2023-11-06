@@ -4,55 +4,59 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetReadSetImportJobOutput {
     /// <p>The job's ID.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The job's sequence store ID.</p>
-    pub sequence_store_id: ::std::option::Option<::std::string::String>,
+    pub sequence_store_id: ::std::string::String,
     /// <p>The job's service role ARN.</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
     /// <p>The job's status.</p>
-    pub status: ::std::option::Option<crate::types::ReadSetImportJobStatus>,
+    pub status: crate::types::ReadSetImportJobStatus,
     /// <p>The job's status message.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>When the job was created.</p>
-    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_time: ::aws_smithy_types::DateTime,
     /// <p>When the job completed.</p>
     pub completion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The job's source files.</p>
-    pub sources: ::std::option::Option<::std::vec::Vec<crate::types::ImportReadSetSourceItem>>,
+    pub sources: ::std::vec::Vec<crate::types::ImportReadSetSourceItem>,
     _request_id: Option<String>,
 }
 impl GetReadSetImportJobOutput {
     /// <p>The job's ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The job's sequence store ID.</p>
-    pub fn sequence_store_id(&self) -> ::std::option::Option<&str> {
-        self.sequence_store_id.as_deref()
+    pub fn sequence_store_id(&self) -> &str {
+        use std::ops::Deref;
+        self.sequence_store_id.deref()
     }
     /// <p>The job's service role ARN.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
     /// <p>The job's status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ReadSetImportJobStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::ReadSetImportJobStatus {
+        &self.status
     }
     /// <p>The job's status message.</p>
     pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
     /// <p>When the job was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_time.as_ref()
+    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_time
     }
     /// <p>When the job completed.</p>
     pub fn completion_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.completion_time.as_ref()
     }
     /// <p>The job's source files.</p>
-    pub fn sources(&self) -> ::std::option::Option<&[crate::types::ImportReadSetSourceItem]> {
-        self.sources.as_deref()
+    pub fn sources(&self) -> &[crate::types::ImportReadSetSourceItem] {
+        use std::ops::Deref;
+        self.sources.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetReadSetImportJobOutput {
@@ -83,6 +87,7 @@ pub struct GetReadSetImportJobOutputBuilder {
 }
 impl GetReadSetImportJobOutputBuilder {
     /// <p>The job's ID.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +102,7 @@ impl GetReadSetImportJobOutputBuilder {
         &self.id
     }
     /// <p>The job's sequence store ID.</p>
+    /// This field is required.
     pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_store_id = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +117,7 @@ impl GetReadSetImportJobOutputBuilder {
         &self.sequence_store_id
     }
     /// <p>The job's service role ARN.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +132,7 @@ impl GetReadSetImportJobOutputBuilder {
         &self.role_arn
     }
     /// <p>The job's status.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::ReadSetImportJobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -153,6 +161,7 @@ impl GetReadSetImportJobOutputBuilder {
         &self.status_message
     }
     /// <p>When the job was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -210,17 +219,57 @@ impl GetReadSetImportJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetReadSetImportJobOutput`](crate::operation::get_read_set_import_job::GetReadSetImportJobOutput).
-    pub fn build(self) -> crate::operation::get_read_set_import_job::GetReadSetImportJobOutput {
-        crate::operation::get_read_set_import_job::GetReadSetImportJobOutput {
-            id: self.id,
-            sequence_store_id: self.sequence_store_id,
-            role_arn: self.role_arn,
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::get_read_set_import_job::builders::GetReadSetImportJobOutputBuilder::id)
+    /// - [`sequence_store_id`](crate::operation::get_read_set_import_job::builders::GetReadSetImportJobOutputBuilder::sequence_store_id)
+    /// - [`role_arn`](crate::operation::get_read_set_import_job::builders::GetReadSetImportJobOutputBuilder::role_arn)
+    /// - [`status`](crate::operation::get_read_set_import_job::builders::GetReadSetImportJobOutputBuilder::status)
+    /// - [`creation_time`](crate::operation::get_read_set_import_job::builders::GetReadSetImportJobOutputBuilder::creation_time)
+    /// - [`sources`](crate::operation::get_read_set_import_job::builders::GetReadSetImportJobOutputBuilder::sources)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_read_set_import_job::GetReadSetImportJobOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_read_set_import_job::GetReadSetImportJobOutput {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building GetReadSetImportJobOutput",
+                )
+            })?,
+            sequence_store_id: self.sequence_store_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "sequence_store_id",
+                    "sequence_store_id was not specified but it is required when building GetReadSetImportJobOutput",
+                )
+            })?,
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building GetReadSetImportJobOutput",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building GetReadSetImportJobOutput",
+                )
+            })?,
             status_message: self.status_message,
-            creation_time: self.creation_time,
+            creation_time: self.creation_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "creation_time",
+                    "creation_time was not specified but it is required when building GetReadSetImportJobOutput",
+                )
+            })?,
             completion_time: self.completion_time,
-            sources: self.sources,
+            sources: self.sources.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "sources",
+                    "sources was not specified but it is required when building GetReadSetImportJobOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -2,36 +2,36 @@
 pub fn ser_column_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ColumnConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.document_id_column_name {
-        object.key("DocumentIdColumnName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("DocumentIdColumnName").string(input.document_id_column_name.as_str());
     }
-    if let Some(var_2) = &input.document_data_column_name {
-        object.key("DocumentDataColumnName").string(var_2.as_str());
+    {
+        object.key("DocumentDataColumnName").string(input.document_data_column_name.as_str());
     }
-    if let Some(var_3) = &input.document_title_column_name {
-        object.key("DocumentTitleColumnName").string(var_3.as_str());
+    if let Some(var_1) = &input.document_title_column_name {
+        object.key("DocumentTitleColumnName").string(var_1.as_str());
     }
-    if let Some(var_4) = &input.field_mappings {
-        let mut array_5 = object.key("FieldMappings").start_array();
-        for item_6 in var_4 {
+    if let Some(var_2) = &input.field_mappings {
+        let mut array_3 = object.key("FieldMappings").start_array();
+        for item_4 in var_2 {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_7, item_6)?;
-                object_7.finish();
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_5, item_4)?;
+                object_5.finish();
             }
         }
-        array_5.finish();
+        array_3.finish();
     }
-    if let Some(var_8) = &input.change_detecting_columns {
-        let mut array_9 = object.key("ChangeDetectingColumns").start_array();
-        for item_10 in var_8 {
+    {
+        let mut array_6 = object.key("ChangeDetectingColumns").start_array();
+        for item_7 in &input.change_detecting_columns {
             {
-                array_9.value().string(item_10.as_str());
+                array_6.value().string(item_7.as_str());
             }
         }
-        array_9.finish();
+        array_6.finish();
     }
     Ok(())
 }
@@ -94,7 +94,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::column_configuration_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

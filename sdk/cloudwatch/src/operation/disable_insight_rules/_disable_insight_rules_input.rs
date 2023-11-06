@@ -8,8 +8,10 @@ pub struct DisableInsightRulesInput {
 }
 impl DisableInsightRulesInput {
     /// <p>An array of the rule names to disable. If you need to find out the names of your rules, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.</p>
-    pub fn rule_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.rule_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rule_names.is_none()`.
+    pub fn rule_names(&self) -> &[::std::string::String] {
+        self.rule_names.as_deref().unwrap_or_default()
     }
 }
 impl DisableInsightRulesInput {
@@ -49,7 +51,7 @@ impl DisableInsightRulesInputBuilder {
     /// Consumes the builder and constructs a [`DisableInsightRulesInput`](crate::operation::disable_insight_rules::DisableInsightRulesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disable_insight_rules::DisableInsightRulesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::disable_insight_rules::DisableInsightRulesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::disable_insight_rules::DisableInsightRulesInput { rule_names: self.rule_names })
     }

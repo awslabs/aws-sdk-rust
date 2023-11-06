@@ -32,8 +32,10 @@ impl CreateDataProviderInput {
         self.settings.as_ref()
     }
     /// <p>One or more tags to be assigned to the data provider.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateDataProviderInput {
@@ -83,6 +85,7 @@ impl CreateDataProviderInputBuilder {
         &self.description
     }
     /// <p>The type of database engine for the data provider. Valid values include <code>"aurora"</code>, <code>"aurora_postgresql"</code>, <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, and <code>"sqlserver"</code>. A value of <code>"aurora"</code> represents Amazon Aurora MySQL-Compatible Edition.</p>
+    /// This field is required.
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +100,7 @@ impl CreateDataProviderInputBuilder {
         &self.engine
     }
     /// <p>The settings in JSON format for a data provider.</p>
+    /// This field is required.
     pub fn settings(mut self, input: crate::types::DataProviderSettings) -> Self {
         self.settings = ::std::option::Option::Some(input);
         self
@@ -133,7 +137,8 @@ impl CreateDataProviderInputBuilder {
     /// Consumes the builder and constructs a [`CreateDataProviderInput`](crate::operation::create_data_provider::CreateDataProviderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_data_provider::CreateDataProviderInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_data_provider::CreateDataProviderInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_data_provider::CreateDataProviderInput {
             data_provider_name: self.data_provider_name,
             description: self.description,

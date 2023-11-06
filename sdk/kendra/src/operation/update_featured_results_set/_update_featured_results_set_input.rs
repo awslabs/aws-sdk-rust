@@ -40,12 +40,16 @@ impl UpdateFeaturedResultsSetInput {
         self.status.as_ref()
     }
     /// <p>A list of queries for featuring results. For more information on the list of queries, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_FeaturedResultsSet.html">FeaturedResultsSet</a>.</p>
-    pub fn query_texts(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.query_texts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.query_texts.is_none()`.
+    pub fn query_texts(&self) -> &[::std::string::String] {
+        self.query_texts.as_deref().unwrap_or_default()
     }
     /// <p>A list of document IDs for the documents you want to feature at the top of the search results page. For more information on the list of featured documents, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_FeaturedResultsSet.html">FeaturedResultsSet</a>.</p>
-    pub fn featured_documents(&self) -> ::std::option::Option<&[crate::types::FeaturedDocument]> {
-        self.featured_documents.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.featured_documents.is_none()`.
+    pub fn featured_documents(&self) -> &[crate::types::FeaturedDocument] {
+        self.featured_documents.as_deref().unwrap_or_default()
     }
 }
 impl UpdateFeaturedResultsSetInput {
@@ -69,6 +73,7 @@ pub struct UpdateFeaturedResultsSetInputBuilder {
 }
 impl UpdateFeaturedResultsSetInputBuilder {
     /// <p>The identifier of the index used for featuring results.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +88,7 @@ impl UpdateFeaturedResultsSetInputBuilder {
         &self.index_id
     }
     /// <p>The identifier of the set of featured results that you want to update.</p>
+    /// This field is required.
     pub fn featured_results_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.featured_results_set_id = ::std::option::Option::Some(input.into());
         self
@@ -183,7 +189,7 @@ impl UpdateFeaturedResultsSetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_featured_results_set::UpdateFeaturedResultsSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_featured_results_set::UpdateFeaturedResultsSetInput {
             index_id: self.index_id,

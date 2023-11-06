@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFaceLivenessSessionResultsOutput {
     /// <p>The sessionId for which this request was called.</p>
-    pub session_id: ::std::option::Option<::std::string::String>,
+    pub session_id: ::std::string::String,
     /// <p>Represents a status corresponding to the state of the session. Possible statuses are: CREATED, IN_PROGRESS, SUCCEEDED, FAILED, EXPIRED.</p>
-    pub status: ::std::option::Option<crate::types::LivenessSessionStatus>,
+    pub status: crate::types::LivenessSessionStatus,
     /// <p>Probabalistic confidence score for if the person in the given video was live, represented as a float value between 0 to 100.</p>
     pub confidence: ::std::option::Option<f32>,
     /// <p>A high-quality image from the Face Liveness video that can be used for face comparison or search. It includes a bounding box of the face and the Base64-encoded bytes that return an image. If the CreateFaceLivenessSession request included an OutputConfig argument, the image will be uploaded to an S3Object specified in the output configuration. In case the reference image is not returned, it's recommended to retry the Liveness check.</p>
@@ -17,12 +17,13 @@ pub struct GetFaceLivenessSessionResultsOutput {
 }
 impl GetFaceLivenessSessionResultsOutput {
     /// <p>The sessionId for which this request was called.</p>
-    pub fn session_id(&self) -> ::std::option::Option<&str> {
-        self.session_id.as_deref()
+    pub fn session_id(&self) -> &str {
+        use std::ops::Deref;
+        self.session_id.deref()
     }
     /// <p>Represents a status corresponding to the state of the session. Possible statuses are: CREATED, IN_PROGRESS, SUCCEEDED, FAILED, EXPIRED.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::LivenessSessionStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::LivenessSessionStatus {
+        &self.status
     }
     /// <p>Probabalistic confidence score for if the person in the given video was live, represented as a float value between 0 to 100.</p>
     pub fn confidence(&self) -> ::std::option::Option<f32> {
@@ -33,8 +34,10 @@ impl GetFaceLivenessSessionResultsOutput {
         self.reference_image.as_ref()
     }
     /// <p>A set of images from the Face Liveness video that can be used for audit purposes. It includes a bounding box of the face and the Base64-encoded bytes that return an image. If the CreateFaceLivenessSession request included an OutputConfig argument, the image will be uploaded to an S3Object specified in the output configuration. If no Amazon S3 bucket is defined, raw bytes are sent instead.</p>
-    pub fn audit_images(&self) -> ::std::option::Option<&[crate::types::AuditImage]> {
-        self.audit_images.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.audit_images.is_none()`.
+    pub fn audit_images(&self) -> &[crate::types::AuditImage] {
+        self.audit_images.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetFaceLivenessSessionResultsOutput {
@@ -62,6 +65,7 @@ pub struct GetFaceLivenessSessionResultsOutputBuilder {
 }
 impl GetFaceLivenessSessionResultsOutputBuilder {
     /// <p>The sessionId for which this request was called.</p>
+    /// This field is required.
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +80,7 @@ impl GetFaceLivenessSessionResultsOutputBuilder {
         &self.session_id
     }
     /// <p>Represents a status corresponding to the state of the session. Possible statuses are: CREATED, IN_PROGRESS, SUCCEEDED, FAILED, EXPIRED.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::LivenessSessionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -147,14 +152,32 @@ impl GetFaceLivenessSessionResultsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetFaceLivenessSessionResultsOutput`](crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsOutput).
-    pub fn build(self) -> crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsOutput {
-        crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsOutput {
-            session_id: self.session_id,
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`session_id`](crate::operation::get_face_liveness_session_results::builders::GetFaceLivenessSessionResultsOutputBuilder::session_id)
+    /// - [`status`](crate::operation::get_face_liveness_session_results::builders::GetFaceLivenessSessionResultsOutputBuilder::status)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsOutput {
+            session_id: self.session_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "session_id",
+                    "session_id was not specified but it is required when building GetFaceLivenessSessionResultsOutput",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building GetFaceLivenessSessionResultsOutput",
+                )
+            })?,
             confidence: self.confidence,
             reference_image: self.reference_image,
             audit_images: self.audit_images,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -70,6 +70,7 @@ impl ApplyEnvironmentManagedActionInputBuilder {
         &self.environment_id
     }
     /// <p>The action ID of the scheduled managed action to execute.</p>
+    /// This field is required.
     pub fn action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_id = ::std::option::Option::Some(input.into());
         self
@@ -88,7 +89,7 @@ impl ApplyEnvironmentManagedActionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::apply_environment_managed_action::ApplyEnvironmentManagedActionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::apply_environment_managed_action::ApplyEnvironmentManagedActionInput {
             environment_name: self.environment_name,

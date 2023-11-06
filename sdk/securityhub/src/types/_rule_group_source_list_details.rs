@@ -17,12 +17,16 @@ impl RuleGroupSourceListDetails {
         self.generated_rules_type.as_deref()
     }
     /// <p>The protocols that you want to inspect. Specify <code>LS_SNI</code> for HTTPS. Specify <code>HTTP_HOST</code> for HTTP. You can specify either or both.</p>
-    pub fn target_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.target_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_types.is_none()`.
+    pub fn target_types(&self) -> &[::std::string::String] {
+        self.target_types.as_deref().unwrap_or_default()
     }
     /// <p>The domains that you want to inspect for in your traffic flows. You can provide full domain names, or use the '.' prefix as a wildcard. For example, <code>.example.com</code> matches all domains that end with <code>example.com</code>.</p>
-    pub fn targets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
+    pub fn targets(&self) -> &[::std::string::String] {
+        self.targets.as_deref().unwrap_or_default()
     }
 }
 impl RuleGroupSourceListDetails {

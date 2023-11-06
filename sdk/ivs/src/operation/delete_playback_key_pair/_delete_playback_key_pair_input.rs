@@ -27,6 +27,7 @@ pub struct DeletePlaybackKeyPairInputBuilder {
 }
 impl DeletePlaybackKeyPairInputBuilder {
     /// <p>ARN of the key pair to be deleted.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeletePlaybackKeyPairInputBuilder {
     /// Consumes the builder and constructs a [`DeletePlaybackKeyPairInput`](crate::operation::delete_playback_key_pair::DeletePlaybackKeyPairInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_playback_key_pair::DeletePlaybackKeyPairInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_playback_key_pair::DeletePlaybackKeyPairInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_playback_key_pair::DeletePlaybackKeyPairInput { arn: self.arn })
     }

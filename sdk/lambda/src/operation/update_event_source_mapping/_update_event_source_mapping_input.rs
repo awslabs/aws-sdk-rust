@@ -122,16 +122,20 @@ impl UpdateEventSourceMappingInput {
         self.parallelization_factor
     }
     /// <p>An array of authentication protocols or VPC components required to secure your event source.</p>
-    pub fn source_access_configurations(&self) -> ::std::option::Option<&[crate::types::SourceAccessConfiguration]> {
-        self.source_access_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_access_configurations.is_none()`.
+    pub fn source_access_configurations(&self) -> &[crate::types::SourceAccessConfiguration] {
+        self.source_access_configurations.as_deref().unwrap_or_default()
     }
     /// <p>(Kinesis and DynamoDB Streams only) The duration in seconds of a processing window for DynamoDB and Kinesis Streams event sources. A value of 0 seconds indicates no tumbling window.</p>
     pub fn tumbling_window_in_seconds(&self) -> ::std::option::Option<i32> {
         self.tumbling_window_in_seconds
     }
     /// <p>(Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
-    pub fn function_response_types(&self) -> ::std::option::Option<&[crate::types::FunctionResponseType]> {
-        self.function_response_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.function_response_types.is_none()`.
+    pub fn function_response_types(&self) -> &[crate::types::FunctionResponseType] {
+        self.function_response_types.as_deref().unwrap_or_default()
     }
     /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
     pub fn scaling_config(&self) -> ::std::option::Option<&crate::types::ScalingConfig> {
@@ -172,6 +176,7 @@ pub struct UpdateEventSourceMappingInputBuilder {
 }
 impl UpdateEventSourceMappingInputBuilder {
     /// <p>The identifier of the event source mapping.</p>
+    /// This field is required.
     pub fn uuid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.uuid = ::std::option::Option::Some(input.into());
         self
@@ -475,7 +480,7 @@ impl UpdateEventSourceMappingInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_event_source_mapping::UpdateEventSourceMappingInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_event_source_mapping::UpdateEventSourceMappingInput {
             uuid: self.uuid,

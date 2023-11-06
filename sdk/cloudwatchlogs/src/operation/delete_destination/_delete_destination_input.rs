@@ -27,6 +27,7 @@ pub struct DeleteDestinationInputBuilder {
 }
 impl DeleteDestinationInputBuilder {
     /// <p>The name of the destination.</p>
+    /// This field is required.
     pub fn destination_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteDestinationInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDestinationInput`](crate::operation::delete_destination::DeleteDestinationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_destination::DeleteDestinationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_destination::DeleteDestinationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_destination::DeleteDestinationInput {
             destination_name: self.destination_name,
         })

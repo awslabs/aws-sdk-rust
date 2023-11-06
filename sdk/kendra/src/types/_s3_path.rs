@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Path {
     /// <p>The name of the S3 bucket that contains the file.</p>
-    pub bucket: ::std::option::Option<::std::string::String>,
+    pub bucket: ::std::string::String,
     /// <p>The name of the file.</p>
-    pub key: ::std::option::Option<::std::string::String>,
+    pub key: ::std::string::String,
 }
 impl S3Path {
     /// <p>The name of the S3 bucket that contains the file.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
-        self.bucket.as_deref()
+    pub fn bucket(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket.deref()
     }
     /// <p>The name of the file.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
-        self.key.as_deref()
+    pub fn key(&self) -> &str {
+        use std::ops::Deref;
+        self.key.deref()
     }
 }
 impl S3Path {
@@ -35,6 +37,7 @@ pub struct S3PathBuilder {
 }
 impl S3PathBuilder {
     /// <p>The name of the S3 bucket that contains the file.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl S3PathBuilder {
         &self.bucket
     }
     /// <p>The name of the file.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl S3PathBuilder {
         &self.key
     }
     /// Consumes the builder and constructs a [`S3Path`](crate::types::S3Path).
-    pub fn build(self) -> crate::types::S3Path {
-        crate::types::S3Path {
-            bucket: self.bucket,
-            key: self.key,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bucket`](crate::types::builders::S3PathBuilder::bucket)
+    /// - [`key`](crate::types::builders::S3PathBuilder::key)
+    pub fn build(self) -> ::std::result::Result<crate::types::S3Path, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::S3Path {
+            bucket: self.bucket.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "bucket",
+                    "bucket was not specified but it is required when building S3Path",
+                )
+            })?,
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building S3Path",
+                )
+            })?,
+        })
     }
 }

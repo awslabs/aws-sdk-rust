@@ -27,6 +27,7 @@ pub struct GetCachePolicyConfigInputBuilder {
 }
 impl GetCachePolicyConfigInputBuilder {
     /// <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetCachePolicyConfigInputBuilder {
     /// Consumes the builder and constructs a [`GetCachePolicyConfigInput`](crate::operation::get_cache_policy_config::GetCachePolicyConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_cache_policy_config::GetCachePolicyConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_cache_policy_config::GetCachePolicyConfigInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_cache_policy_config::GetCachePolicyConfigInput { id: self.id })
     }

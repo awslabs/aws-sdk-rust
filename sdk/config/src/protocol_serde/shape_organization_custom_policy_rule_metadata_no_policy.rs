@@ -23,7 +23,7 @@ where
                         }
                         "OrganizationConfigRuleTriggerTypes" => {
                             builder = builder.set_organization_config_rule_trigger_types(
-                                    crate::protocol_serde::shape_organization_config_rule_trigger_type_no_s_ns::de_organization_config_rule_trigger_type_no_s_ns(tokens)?
+                                    crate::protocol_serde::shape_organization_config_rule_trigger_type_no_sns::de_organization_config_rule_trigger_type_no_sns(tokens)?
                                 );
                         }
                         "InputParameters" => {

@@ -38,8 +38,10 @@ impl GetProvisionedProductOutputsInput {
         self.provisioned_product_name.as_deref()
     }
     /// <p>The list of keys that the API should return with their values. If none are provided, the API will return all outputs of the provisioned product.</p>
-    pub fn output_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.output_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_keys.is_none()`.
+    pub fn output_keys(&self) -> &[::std::string::String] {
+        self.output_keys.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn page_size(&self) -> ::std::option::Option<i32> {
@@ -176,7 +178,7 @@ impl GetProvisionedProductOutputsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_provisioned_product_outputs::GetProvisionedProductOutputsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_provisioned_product_outputs::GetProvisionedProductOutputsInput {
             accept_language: self.accept_language,

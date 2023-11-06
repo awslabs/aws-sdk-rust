@@ -86,7 +86,7 @@ impl ListPublicKeysInputBuilder {
     /// Consumes the builder and constructs a [`ListPublicKeysInput`](crate::operation::list_public_keys::ListPublicKeysInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_public_keys::ListPublicKeysInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_public_keys::ListPublicKeysInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_public_keys::ListPublicKeysInput {
             start_time: self.start_time,
             end_time: self.end_time,

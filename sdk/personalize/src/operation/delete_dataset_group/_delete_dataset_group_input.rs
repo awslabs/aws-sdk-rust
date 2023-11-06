@@ -27,6 +27,7 @@ pub struct DeleteDatasetGroupInputBuilder {
 }
 impl DeleteDatasetGroupInputBuilder {
     /// <p>The ARN of the dataset group to delete.</p>
+    /// This field is required.
     pub fn dataset_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_group_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,8 @@ impl DeleteDatasetGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDatasetGroupInput`](crate::operation::delete_dataset_group::DeleteDatasetGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_dataset_group::DeleteDatasetGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_dataset_group::DeleteDatasetGroupInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_dataset_group::DeleteDatasetGroupInput {
             dataset_group_arn: self.dataset_group_arn,
         })

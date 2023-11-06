@@ -34,6 +34,7 @@ pub struct DisassociateOpsItemRelatedItemInputBuilder {
 }
 impl DisassociateOpsItemRelatedItemInputBuilder {
     /// <p>The ID of the OpsItem for which you want to delete an association between the OpsItem and a related item.</p>
+    /// This field is required.
     pub fn ops_item_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ops_item_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DisassociateOpsItemRelatedItemInputBuilder {
         &self.ops_item_id
     }
     /// <p>The ID of the association for which you want to delete an association between the OpsItem and a related item.</p>
+    /// This field is required.
     pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl DisassociateOpsItemRelatedItemInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItemInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItemInput {

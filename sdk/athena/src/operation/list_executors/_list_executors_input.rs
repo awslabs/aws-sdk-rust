@@ -60,6 +60,7 @@ pub struct ListExecutorsInputBuilder {
 }
 impl ListExecutorsInputBuilder {
     /// <p>The session ID.</p>
+    /// This field is required.
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
         self
@@ -136,7 +137,7 @@ impl ListExecutorsInputBuilder {
     /// Consumes the builder and constructs a [`ListExecutorsInput`](crate::operation::list_executors::ListExecutorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_executors::ListExecutorsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_executors::ListExecutorsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_executors::ListExecutorsInput {
             session_id: self.session_id,
             executor_state_filter: self.executor_state_filter,

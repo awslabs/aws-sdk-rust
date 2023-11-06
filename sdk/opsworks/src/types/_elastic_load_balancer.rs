@@ -49,16 +49,22 @@ impl ElasticLoadBalancer {
         self.vpc_id.as_deref()
     }
     /// <p>A list of Availability Zones.</p>
-    pub fn availability_zones(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.availability_zones.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
+    pub fn availability_zones(&self) -> &[::std::string::String] {
+        self.availability_zones.as_deref().unwrap_or_default()
     }
     /// <p>A list of subnet IDs, if the stack is running in a VPC.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        self.subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>A list of the EC2 instances that the Elastic Load Balancing instance is managing traffic for.</p>
-    pub fn ec2_instance_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ec2_instance_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ec2_instance_ids.is_none()`.
+    pub fn ec2_instance_ids(&self) -> &[::std::string::String] {
+        self.ec2_instance_ids.as_deref().unwrap_or_default()
     }
 }
 impl ElasticLoadBalancer {

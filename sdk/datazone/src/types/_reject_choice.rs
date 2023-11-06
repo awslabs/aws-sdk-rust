@@ -15,8 +15,10 @@ impl RejectChoice {
         self.prediction_target.as_deref()
     }
     /// <p>Specifies the the automatically generated business metadata that can be rejected.</p>
-    pub fn prediction_choices(&self) -> ::std::option::Option<&[i32]> {
-        self.prediction_choices.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.prediction_choices.is_none()`.
+    pub fn prediction_choices(&self) -> &[i32] {
+        self.prediction_choices.as_deref().unwrap_or_default()
     }
 }
 impl RejectChoice {

@@ -174,7 +174,7 @@ impl BatchWriteItemInputBuilder {
     /// Consumes the builder and constructs a [`BatchWriteItemInput`](crate::operation::batch_write_item::BatchWriteItemInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_write_item::BatchWriteItemInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_write_item::BatchWriteItemInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_write_item::BatchWriteItemInput {
             request_items: self.request_items,
             return_consumed_capacity: self.return_consumed_capacity,

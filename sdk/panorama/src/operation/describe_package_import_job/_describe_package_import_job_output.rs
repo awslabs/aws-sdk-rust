@@ -4,11 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePackageImportJobOutput {
     /// <p>The job's ID.</p>
-    pub job_id: ::std::option::Option<::std::string::String>,
+    pub job_id: ::std::string::String,
     /// <p>The job's client token.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The job's type.</p>
-    pub job_type: ::std::option::Option<crate::types::PackageImportJobType>,
+    pub job_type: crate::types::PackageImportJobType,
     /// <p>The job's input config.</p>
     pub input_config: ::std::option::Option<crate::types::PackageImportJobInputConfig>,
     /// <p>The job's output config.</p>
@@ -16,29 +16,30 @@ pub struct DescribePackageImportJobOutput {
     /// <p>The job's output.</p>
     pub output: ::std::option::Option<crate::types::PackageImportJobOutput>,
     /// <p>When the job was created.</p>
-    pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_time: ::aws_smithy_types::DateTime,
     /// <p>When the job was updated.</p>
-    pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub last_updated_time: ::aws_smithy_types::DateTime,
     /// <p>The job's status.</p>
-    pub status: ::std::option::Option<crate::types::PackageImportJobStatus>,
+    pub status: crate::types::PackageImportJobStatus,
     /// <p>The job's status message.</p>
-    pub status_message: ::std::option::Option<::std::string::String>,
+    pub status_message: ::std::string::String,
     /// <p>The job's tags.</p>
     pub job_tags: ::std::option::Option<::std::vec::Vec<crate::types::JobResourceTags>>,
     _request_id: Option<String>,
 }
 impl DescribePackageImportJobOutput {
     /// <p>The job's ID.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
-        self.job_id.as_deref()
+    pub fn job_id(&self) -> &str {
+        use std::ops::Deref;
+        self.job_id.deref()
     }
     /// <p>The job's client token.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
     /// <p>The job's type.</p>
-    pub fn job_type(&self) -> ::std::option::Option<&crate::types::PackageImportJobType> {
-        self.job_type.as_ref()
+    pub fn job_type(&self) -> &crate::types::PackageImportJobType {
+        &self.job_type
     }
     /// <p>The job's input config.</p>
     pub fn input_config(&self) -> ::std::option::Option<&crate::types::PackageImportJobInputConfig> {
@@ -53,24 +54,27 @@ impl DescribePackageImportJobOutput {
         self.output.as_ref()
     }
     /// <p>When the job was created.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_time.as_ref()
+    pub fn created_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_time
     }
     /// <p>When the job was updated.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.last_updated_time.as_ref()
+    pub fn last_updated_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.last_updated_time
     }
     /// <p>The job's status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::PackageImportJobStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::PackageImportJobStatus {
+        &self.status
     }
     /// <p>The job's status message.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
-        self.status_message.as_deref()
+    pub fn status_message(&self) -> &str {
+        use std::ops::Deref;
+        self.status_message.deref()
     }
     /// <p>The job's tags.</p>
-    pub fn job_tags(&self) -> ::std::option::Option<&[crate::types::JobResourceTags]> {
-        self.job_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_tags.is_none()`.
+    pub fn job_tags(&self) -> &[crate::types::JobResourceTags] {
+        self.job_tags.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribePackageImportJobOutput {
@@ -104,6 +108,7 @@ pub struct DescribePackageImportJobOutputBuilder {
 }
 impl DescribePackageImportJobOutputBuilder {
     /// <p>The job's ID.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +137,7 @@ impl DescribePackageImportJobOutputBuilder {
         &self.client_token
     }
     /// <p>The job's type.</p>
+    /// This field is required.
     pub fn job_type(mut self, input: crate::types::PackageImportJobType) -> Self {
         self.job_type = ::std::option::Option::Some(input);
         self
@@ -146,6 +152,7 @@ impl DescribePackageImportJobOutputBuilder {
         &self.job_type
     }
     /// <p>The job's input config.</p>
+    /// This field is required.
     pub fn input_config(mut self, input: crate::types::PackageImportJobInputConfig) -> Self {
         self.input_config = ::std::option::Option::Some(input);
         self
@@ -160,6 +167,7 @@ impl DescribePackageImportJobOutputBuilder {
         &self.input_config
     }
     /// <p>The job's output config.</p>
+    /// This field is required.
     pub fn output_config(mut self, input: crate::types::PackageImportJobOutputConfig) -> Self {
         self.output_config = ::std::option::Option::Some(input);
         self
@@ -174,6 +182,7 @@ impl DescribePackageImportJobOutputBuilder {
         &self.output_config
     }
     /// <p>The job's output.</p>
+    /// This field is required.
     pub fn output(mut self, input: crate::types::PackageImportJobOutput) -> Self {
         self.output = ::std::option::Option::Some(input);
         self
@@ -188,6 +197,7 @@ impl DescribePackageImportJobOutputBuilder {
         &self.output
     }
     /// <p>When the job was created.</p>
+    /// This field is required.
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
         self
@@ -202,6 +212,7 @@ impl DescribePackageImportJobOutputBuilder {
         &self.created_time
     }
     /// <p>When the job was updated.</p>
+    /// This field is required.
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
         self
@@ -216,6 +227,7 @@ impl DescribePackageImportJobOutputBuilder {
         &self.last_updated_time
     }
     /// <p>The job's status.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::PackageImportJobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -230,6 +242,7 @@ impl DescribePackageImportJobOutputBuilder {
         &self.status
     }
     /// <p>The job's status message.</p>
+    /// This field is required.
     pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
@@ -273,20 +286,62 @@ impl DescribePackageImportJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribePackageImportJobOutput`](crate::operation::describe_package_import_job::DescribePackageImportJobOutput).
-    pub fn build(self) -> crate::operation::describe_package_import_job::DescribePackageImportJobOutput {
-        crate::operation::describe_package_import_job::DescribePackageImportJobOutput {
-            job_id: self.job_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`job_id`](crate::operation::describe_package_import_job::builders::DescribePackageImportJobOutputBuilder::job_id)
+    /// - [`job_type`](crate::operation::describe_package_import_job::builders::DescribePackageImportJobOutputBuilder::job_type)
+    /// - [`created_time`](crate::operation::describe_package_import_job::builders::DescribePackageImportJobOutputBuilder::created_time)
+    /// - [`last_updated_time`](crate::operation::describe_package_import_job::builders::DescribePackageImportJobOutputBuilder::last_updated_time)
+    /// - [`status`](crate::operation::describe_package_import_job::builders::DescribePackageImportJobOutputBuilder::status)
+    /// - [`status_message`](crate::operation::describe_package_import_job::builders::DescribePackageImportJobOutputBuilder::status_message)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_package_import_job::DescribePackageImportJobOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::describe_package_import_job::DescribePackageImportJobOutput {
+            job_id: self.job_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "job_id",
+                    "job_id was not specified but it is required when building DescribePackageImportJobOutput",
+                )
+            })?,
             client_token: self.client_token,
-            job_type: self.job_type,
+            job_type: self.job_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "job_type",
+                    "job_type was not specified but it is required when building DescribePackageImportJobOutput",
+                )
+            })?,
             input_config: self.input_config,
             output_config: self.output_config,
             output: self.output,
-            created_time: self.created_time,
-            last_updated_time: self.last_updated_time,
-            status: self.status,
-            status_message: self.status_message,
+            created_time: self.created_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_time",
+                    "created_time was not specified but it is required when building DescribePackageImportJobOutput",
+                )
+            })?,
+            last_updated_time: self.last_updated_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "last_updated_time",
+                    "last_updated_time was not specified but it is required when building DescribePackageImportJobOutput",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building DescribePackageImportJobOutput",
+                )
+            })?,
+            status_message: self.status_message.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status_message",
+                    "status_message was not specified but it is required when building DescribePackageImportJobOutput",
+                )
+            })?,
             job_tags: self.job_tags,
             _request_id: self._request_id,
-        }
+        })
     }
 }

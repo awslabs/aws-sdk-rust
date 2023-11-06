@@ -69,6 +69,21 @@ pub fn de_start_application_refresh_http_error(
             }
             tmp
         }),
+        "UnauthorizedException" => crate::operation::start_application_refresh::StartApplicationRefreshError::UnauthorizedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::UnauthorizedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::start_application_refresh::StartApplicationRefreshError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ValidationException" => crate::operation::start_application_refresh::StartApplicationRefreshError::ValidationException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -109,12 +124,12 @@ pub fn de_start_application_refresh_http_response(
 
 pub fn ser_start_application_refresh_input(
     input: &crate::operation::start_application_refresh::StartApplicationRefreshInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_start_application_refresh_input::ser_start_application_refresh_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_start_application_refresh(

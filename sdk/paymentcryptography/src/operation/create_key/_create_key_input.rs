@@ -44,8 +44,10 @@ impl CreateKeyInput {
     /// </important> <note>
     /// <p>Tagging or untagging an Amazon Web Services Payment Cryptography key can allow or deny permission to the key.</p>
     /// </note>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateKeyInput {
@@ -67,6 +69,7 @@ pub struct CreateKeyInputBuilder {
 }
 impl CreateKeyInputBuilder {
     /// <p>The role of the key, the algorithm it supports, and the cryptographic operations allowed with the key. This data is immutable after the key is created.</p>
+    /// This field is required.
     pub fn key_attributes(mut self, input: crate::types::KeyAttributes) -> Self {
         self.key_attributes = ::std::option::Option::Some(input);
         self
@@ -98,6 +101,7 @@ impl CreateKeyInputBuilder {
         &self.key_check_value_algorithm
     }
     /// <p>Specifies whether the key is exportable from the service.</p>
+    /// This field is required.
     pub fn exportable(mut self, input: bool) -> Self {
         self.exportable = ::std::option::Option::Some(input);
         self
@@ -161,7 +165,7 @@ impl CreateKeyInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateKeyInput`](crate::operation::create_key::CreateKeyInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_key::CreateKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_key::CreateKeyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_key::CreateKeyInput {
             key_attributes: self.key_attributes,
             key_check_value_algorithm: self.key_check_value_algorithm,

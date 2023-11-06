@@ -26,8 +26,10 @@ impl ConvertRecoveryPointToSnapshotInput {
         self.retention_period
     }
     /// <p>An array of <a href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag objects</a> to associate with the created snapshot.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ConvertRecoveryPointToSnapshotInput {
@@ -48,6 +50,7 @@ pub struct ConvertRecoveryPointToSnapshotInputBuilder {
 }
 impl ConvertRecoveryPointToSnapshotInputBuilder {
     /// <p>The unique identifier of the recovery point.</p>
+    /// This field is required.
     pub fn recovery_point_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recovery_point_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl ConvertRecoveryPointToSnapshotInputBuilder {
         &self.recovery_point_id
     }
     /// <p>The name of the snapshot.</p>
+    /// This field is required.
     pub fn snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_name = ::std::option::Option::Some(input.into());
         self
@@ -114,7 +118,7 @@ impl ConvertRecoveryPointToSnapshotInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::convert_recovery_point_to_snapshot::ConvertRecoveryPointToSnapshotInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::convert_recovery_point_to_snapshot::ConvertRecoveryPointToSnapshotInput {

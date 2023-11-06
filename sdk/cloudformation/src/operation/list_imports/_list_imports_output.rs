@@ -11,8 +11,10 @@ pub struct ListImportsOutput {
 }
 impl ListImportsOutput {
     /// <p>A list of stack names that are importing the specified exported output value.</p>
-    pub fn imports(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.imports.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.imports.is_none()`.
+    pub fn imports(&self) -> &[::std::string::String] {
+        self.imports.as_deref().unwrap_or_default()
     }
     /// <p>A string that identifies the next page of exports. If there is no additional page, this value is null.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

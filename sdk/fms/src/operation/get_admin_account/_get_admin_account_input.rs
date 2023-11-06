@@ -18,7 +18,7 @@ impl GetAdminAccountInputBuilder {
     /// Consumes the builder and constructs a [`GetAdminAccountInput`](crate::operation::get_admin_account::GetAdminAccountInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_admin_account::GetAdminAccountInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_admin_account::GetAdminAccountInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_admin_account::GetAdminAccountInput {})
     }
 }

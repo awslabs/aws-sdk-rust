@@ -2,7 +2,7 @@
 pub fn ser_email_template_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EmailTemplateRequest,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.default_substitutions {
         object.key("DefaultSubstitutions").string(var_1.as_str());
     }

@@ -11,8 +11,10 @@ pub struct RuleGroupSourceStatelessRuleDefinition {
 }
 impl RuleGroupSourceStatelessRuleDefinition {
     /// <p>The actions to take on a packet that matches one of the stateless rule definition's match attributes. You must specify a standard action (<code>aws:pass</code>, <code>aws:drop</code>, or <code>aws:forward_to_sfe</code>). You can then add custom actions.</p>
-    pub fn actions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
+    pub fn actions(&self) -> &[::std::string::String] {
+        self.actions.as_deref().unwrap_or_default()
     }
     /// <p>The criteria for Network Firewall to use to inspect an individual packet in a stateless rule inspection.</p>
     pub fn match_attributes(&self) -> ::std::option::Option<&crate::types::RuleGroupSourceStatelessRuleMatchAttributes> {

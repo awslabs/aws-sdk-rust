@@ -45,20 +45,28 @@ impl BatchDeleteConfigurationTask {
         self.configuration_type.as_ref()
     }
     /// <p> The list of configuration IDs that were originally requested to be deleted by the deletion task. </p>
-    pub fn requested_configurations(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.requested_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.requested_configurations.is_none()`.
+    pub fn requested_configurations(&self) -> &[::std::string::String] {
+        self.requested_configurations.as_deref().unwrap_or_default()
     }
     /// <p> The list of configuration IDs that were successfully deleted by the deletion task. </p>
-    pub fn deleted_configurations(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.deleted_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.deleted_configurations.is_none()`.
+    pub fn deleted_configurations(&self) -> &[::std::string::String] {
+        self.deleted_configurations.as_deref().unwrap_or_default()
     }
     /// <p> A list of configuration IDs that failed to delete during the deletion task, each paired with an error message. </p>
-    pub fn failed_configurations(&self) -> ::std::option::Option<&[crate::types::FailedConfiguration]> {
-        self.failed_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_configurations.is_none()`.
+    pub fn failed_configurations(&self) -> &[crate::types::FailedConfiguration] {
+        self.failed_configurations.as_deref().unwrap_or_default()
     }
     /// <p> A list of configuration IDs that produced warnings regarding their deletion, paired with a warning message. </p>
-    pub fn deletion_warnings(&self) -> ::std::option::Option<&[crate::types::DeletionWarning]> {
-        self.deletion_warnings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.deletion_warnings.is_none()`.
+    pub fn deletion_warnings(&self) -> &[crate::types::DeletionWarning] {
+        self.deletion_warnings.as_deref().unwrap_or_default()
     }
 }
 impl BatchDeleteConfigurationTask {

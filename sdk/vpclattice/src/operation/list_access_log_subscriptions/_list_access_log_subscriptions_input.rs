@@ -41,6 +41,7 @@ pub struct ListAccessLogSubscriptionsInputBuilder {
 }
 impl ListAccessLogSubscriptionsInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the service network or service.</p>
+    /// This field is required.
     pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_identifier = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListAccessLogSubscriptionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsInput {
             resource_identifier: self.resource_identifier,

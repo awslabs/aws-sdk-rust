@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListIncidentRecordsOutput {
     /// <p>The details of each listed incident record.</p>
-    pub incident_record_summaries: ::std::option::Option<::std::vec::Vec<crate::types::IncidentRecordSummary>>,
+    pub incident_record_summaries: ::std::vec::Vec<crate::types::IncidentRecordSummary>,
     /// <p>The pagination token to continue to the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListIncidentRecordsOutput {
     /// <p>The details of each listed incident record.</p>
-    pub fn incident_record_summaries(&self) -> ::std::option::Option<&[crate::types::IncidentRecordSummary]> {
-        self.incident_record_summaries.as_deref()
+    pub fn incident_record_summaries(&self) -> &[crate::types::IncidentRecordSummary] {
+        use std::ops::Deref;
+        self.incident_record_summaries.deref()
     }
     /// <p>The pagination token to continue to the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,21 @@ impl ListIncidentRecordsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListIncidentRecordsOutput`](crate::operation::list_incident_records::ListIncidentRecordsOutput).
-    pub fn build(self) -> crate::operation::list_incident_records::ListIncidentRecordsOutput {
-        crate::operation::list_incident_records::ListIncidentRecordsOutput {
-            incident_record_summaries: self.incident_record_summaries,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`incident_record_summaries`](crate::operation::list_incident_records::builders::ListIncidentRecordsOutputBuilder::incident_record_summaries)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_incident_records::ListIncidentRecordsOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_incident_records::ListIncidentRecordsOutput {
+            incident_record_summaries: self.incident_record_summaries.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "incident_record_summaries",
+                    "incident_record_summaries was not specified but it is required when building ListIncidentRecordsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

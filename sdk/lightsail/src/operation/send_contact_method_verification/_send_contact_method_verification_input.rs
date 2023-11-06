@@ -27,6 +27,7 @@ pub struct SendContactMethodVerificationInputBuilder {
 }
 impl SendContactMethodVerificationInputBuilder {
     /// <p>The protocol to verify, such as <code>Email</code> or <code>SMS</code> (text messaging).</p>
+    /// This field is required.
     pub fn protocol(mut self, input: crate::types::ContactMethodVerificationProtocol) -> Self {
         self.protocol = ::std::option::Option::Some(input);
         self
@@ -45,7 +46,7 @@ impl SendContactMethodVerificationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::send_contact_method_verification::SendContactMethodVerificationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::send_contact_method_verification::SendContactMethodVerificationInput { protocol: self.protocol })
     }

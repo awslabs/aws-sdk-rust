@@ -26,20 +26,28 @@ impl UpdateDashboardPermissionsInput {
         self.dashboard_id.as_deref()
     }
     /// <p>The permissions that you want to grant on this resource.</p>
-    pub fn grant_permissions(&self) -> ::std::option::Option<&[crate::types::ResourcePermission]> {
-        self.grant_permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.grant_permissions.is_none()`.
+    pub fn grant_permissions(&self) -> &[crate::types::ResourcePermission] {
+        self.grant_permissions.as_deref().unwrap_or_default()
     }
     /// <p>The permissions that you want to revoke from this resource.</p>
-    pub fn revoke_permissions(&self) -> ::std::option::Option<&[crate::types::ResourcePermission]> {
-        self.revoke_permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.revoke_permissions.is_none()`.
+    pub fn revoke_permissions(&self) -> &[crate::types::ResourcePermission] {
+        self.revoke_permissions.as_deref().unwrap_or_default()
     }
     /// <p>Grants link permissions to all users in a defined namespace.</p>
-    pub fn grant_link_permissions(&self) -> ::std::option::Option<&[crate::types::ResourcePermission]> {
-        self.grant_link_permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.grant_link_permissions.is_none()`.
+    pub fn grant_link_permissions(&self) -> &[crate::types::ResourcePermission] {
+        self.grant_link_permissions.as_deref().unwrap_or_default()
     }
     /// <p>Revokes link permissions from all users in a defined namespace.</p>
-    pub fn revoke_link_permissions(&self) -> ::std::option::Option<&[crate::types::ResourcePermission]> {
-        self.revoke_link_permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.revoke_link_permissions.is_none()`.
+    pub fn revoke_link_permissions(&self) -> &[crate::types::ResourcePermission] {
+        self.revoke_link_permissions.as_deref().unwrap_or_default()
     }
 }
 impl UpdateDashboardPermissionsInput {
@@ -62,6 +70,7 @@ pub struct UpdateDashboardPermissionsInputBuilder {
 }
 impl UpdateDashboardPermissionsInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the dashboard whose permissions you're updating.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +85,7 @@ impl UpdateDashboardPermissionsInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID for the dashboard.</p>
+    /// This field is required.
     pub fn dashboard_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dashboard_id = ::std::option::Option::Some(input.into());
         self
@@ -174,7 +184,7 @@ impl UpdateDashboardPermissionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_dashboard_permissions::UpdateDashboardPermissionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_dashboard_permissions::UpdateDashboardPermissionsInput {
             aws_account_id: self.aws_account_id,

@@ -27,6 +27,7 @@ pub struct DisassociateRoleFromGroupInputBuilder {
 }
 impl DisassociateRoleFromGroupInputBuilder {
     /// The ID of the Greengrass group.
+    /// This field is required.
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DisassociateRoleFromGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_role_from_group::DisassociateRoleFromGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_role_from_group::DisassociateRoleFromGroupInput { group_id: self.group_id })
     }

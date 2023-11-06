@@ -34,6 +34,7 @@ pub struct DisableUserInputBuilder {
 }
 impl DisableUserInputBuilder {
     /// <p>The unique identifier for the user that you want to deactivate.</p>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +63,7 @@ impl DisableUserInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`DisableUserInput`](crate::operation::disable_user::DisableUserInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::disable_user::DisableUserInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::disable_user::DisableUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::disable_user::DisableUserInput {
             user_id: self.user_id,
             client_token: self.client_token,

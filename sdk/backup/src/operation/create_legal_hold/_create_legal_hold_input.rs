@@ -66,6 +66,7 @@ pub struct CreateLegalHoldInputBuilder {
 }
 impl CreateLegalHoldInputBuilder {
     /// <p>This is the string title of the legal hold.</p>
+    /// This field is required.
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +81,7 @@ impl CreateLegalHoldInputBuilder {
         &self.title
     }
     /// <p>This is the string description of the legal hold.</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -144,7 +146,7 @@ impl CreateLegalHoldInputBuilder {
     /// Consumes the builder and constructs a [`CreateLegalHoldInput`](crate::operation::create_legal_hold::CreateLegalHoldInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_legal_hold::CreateLegalHoldInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_legal_hold::CreateLegalHoldInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_legal_hold::CreateLegalHoldInput {
             title: self.title,
             description: self.description,

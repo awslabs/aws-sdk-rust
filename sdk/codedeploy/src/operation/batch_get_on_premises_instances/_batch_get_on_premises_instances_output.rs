@@ -10,8 +10,10 @@ pub struct BatchGetOnPremisesInstancesOutput {
 }
 impl BatchGetOnPremisesInstancesOutput {
     /// <p>Information about the on-premises instances.</p>
-    pub fn instance_infos(&self) -> ::std::option::Option<&[crate::types::InstanceInfo]> {
-        self.instance_infos.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_infos.is_none()`.
+    pub fn instance_infos(&self) -> &[crate::types::InstanceInfo] {
+        self.instance_infos.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchGetOnPremisesInstancesOutput {

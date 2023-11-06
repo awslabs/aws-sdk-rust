@@ -44,8 +44,10 @@ impl DescribeNodeConfigurationOptionsInput {
         self.owner_account.as_deref()
     }
     /// <p>A set of name, operator, and value items to filter the results.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::NodeConfigurationOptionsFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::NodeConfigurationOptionsFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeNodeConfigurationOptions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     pub fn marker(&self) -> ::std::option::Option<&str> {
@@ -80,6 +82,7 @@ pub struct DescribeNodeConfigurationOptionsInputBuilder {
 }
 impl DescribeNodeConfigurationOptionsInputBuilder {
     /// <p>The action type to evaluate for possible node configurations. Specify "restore-cluster" to get configuration combinations based on an existing snapshot. Specify "recommend-node-config" to get configuration recommendations based on an existing cluster or snapshot. Specify "resize-cluster" to get configuration combinations for elastic resize based on an existing cluster. </p>
+    /// This field is required.
     pub fn action_type(mut self, input: crate::types::ActionType) -> Self {
         self.action_type = ::std::option::Option::Some(input);
         self
@@ -208,7 +211,7 @@ impl DescribeNodeConfigurationOptionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsInput {

@@ -2,9 +2,9 @@
 pub fn ser_gateway_route_virtual_service(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GatewayRouteVirtualService,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.virtual_service_name {
-        object.key("virtualServiceName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("virtualServiceName").string(input.virtual_service_name.as_str());
     }
     Ok(())
 }
@@ -41,7 +41,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::gateway_route_virtual_service_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

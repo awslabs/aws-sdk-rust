@@ -27,6 +27,7 @@ pub struct DescribeProtectionGroupInputBuilder {
 }
 impl DescribeProtectionGroupInputBuilder {
     /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
+    /// This field is required.
     pub fn protection_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.protection_group_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeProtectionGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_protection_group::DescribeProtectionGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_protection_group::DescribeProtectionGroupInput {
             protection_group_id: self.protection_group_id,

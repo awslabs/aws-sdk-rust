@@ -5,30 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkInfo {
     /// <p> Information about the name of the interface of the server for which the assessment was run. </p>
-    pub interface_name: ::std::option::Option<::std::string::String>,
+    pub interface_name: ::std::string::String,
     /// <p> Information about the IP address of the server for which the assessment was run. </p>
-    pub ip_address: ::std::option::Option<::std::string::String>,
+    pub ip_address: ::std::string::String,
     /// <p> Information about the MAC address of the server for which the assessment was run. </p>
-    pub mac_address: ::std::option::Option<::std::string::String>,
+    pub mac_address: ::std::string::String,
     /// <p> Information about the subnet mask of the server for which the assessment was run. </p>
-    pub net_mask: ::std::option::Option<::std::string::String>,
+    pub net_mask: ::std::string::String,
 }
 impl NetworkInfo {
     /// <p> Information about the name of the interface of the server for which the assessment was run. </p>
-    pub fn interface_name(&self) -> ::std::option::Option<&str> {
-        self.interface_name.as_deref()
+    pub fn interface_name(&self) -> &str {
+        use std::ops::Deref;
+        self.interface_name.deref()
     }
     /// <p> Information about the IP address of the server for which the assessment was run. </p>
-    pub fn ip_address(&self) -> ::std::option::Option<&str> {
-        self.ip_address.as_deref()
+    pub fn ip_address(&self) -> &str {
+        use std::ops::Deref;
+        self.ip_address.deref()
     }
     /// <p> Information about the MAC address of the server for which the assessment was run. </p>
-    pub fn mac_address(&self) -> ::std::option::Option<&str> {
-        self.mac_address.as_deref()
+    pub fn mac_address(&self) -> &str {
+        use std::ops::Deref;
+        self.mac_address.deref()
     }
     /// <p> Information about the subnet mask of the server for which the assessment was run. </p>
-    pub fn net_mask(&self) -> ::std::option::Option<&str> {
-        self.net_mask.as_deref()
+    pub fn net_mask(&self) -> &str {
+        use std::ops::Deref;
+        self.net_mask.deref()
     }
 }
 impl NetworkInfo {
@@ -49,6 +53,7 @@ pub struct NetworkInfoBuilder {
 }
 impl NetworkInfoBuilder {
     /// <p> Information about the name of the interface of the server for which the assessment was run. </p>
+    /// This field is required.
     pub fn interface_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.interface_name = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +68,7 @@ impl NetworkInfoBuilder {
         &self.interface_name
     }
     /// <p> Information about the IP address of the server for which the assessment was run. </p>
+    /// This field is required.
     pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_address = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +83,7 @@ impl NetworkInfoBuilder {
         &self.ip_address
     }
     /// <p> Information about the MAC address of the server for which the assessment was run. </p>
+    /// This field is required.
     pub fn mac_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mac_address = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +98,7 @@ impl NetworkInfoBuilder {
         &self.mac_address
     }
     /// <p> Information about the subnet mask of the server for which the assessment was run. </p>
+    /// This field is required.
     pub fn net_mask(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.net_mask = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +113,37 @@ impl NetworkInfoBuilder {
         &self.net_mask
     }
     /// Consumes the builder and constructs a [`NetworkInfo`](crate::types::NetworkInfo).
-    pub fn build(self) -> crate::types::NetworkInfo {
-        crate::types::NetworkInfo {
-            interface_name: self.interface_name,
-            ip_address: self.ip_address,
-            mac_address: self.mac_address,
-            net_mask: self.net_mask,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`interface_name`](crate::types::builders::NetworkInfoBuilder::interface_name)
+    /// - [`ip_address`](crate::types::builders::NetworkInfoBuilder::ip_address)
+    /// - [`mac_address`](crate::types::builders::NetworkInfoBuilder::mac_address)
+    /// - [`net_mask`](crate::types::builders::NetworkInfoBuilder::net_mask)
+    pub fn build(self) -> ::std::result::Result<crate::types::NetworkInfo, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::NetworkInfo {
+            interface_name: self.interface_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "interface_name",
+                    "interface_name was not specified but it is required when building NetworkInfo",
+                )
+            })?,
+            ip_address: self.ip_address.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "ip_address",
+                    "ip_address was not specified but it is required when building NetworkInfo",
+                )
+            })?,
+            mac_address: self.mac_address.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "mac_address",
+                    "mac_address was not specified but it is required when building NetworkInfo",
+                )
+            })?,
+            net_mask: self.net_mask.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "net_mask",
+                    "net_mask was not specified but it is required when building NetworkInfo",
+                )
+            })?,
+        })
     }
 }

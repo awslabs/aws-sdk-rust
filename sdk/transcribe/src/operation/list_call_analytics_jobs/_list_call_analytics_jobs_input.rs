@@ -106,7 +106,7 @@ impl ListCallAnalyticsJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListCallAnalyticsJobsInput`](crate::operation::list_call_analytics_jobs::ListCallAnalyticsJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_call_analytics_jobs::ListCallAnalyticsJobsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_call_analytics_jobs::ListCallAnalyticsJobsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_call_analytics_jobs::ListCallAnalyticsJobsInput {
             status: self.status,

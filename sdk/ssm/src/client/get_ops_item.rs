@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetOpsItem`](crate::operation::get_ops_item::builders::GetOpsItemFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`ops_item_id(impl Into<String>)`](crate::operation::get_ops_item::builders::GetOpsItemFluentBuilder::ops_item_id) / [`set_ops_item_id(Option<String>)`](crate::operation::get_ops_item::builders::GetOpsItemFluentBuilder::set_ops_item_id): <p>The ID of the OpsItem that you want to get.</p>
-    ///   - [`ops_item_arn(impl Into<String>)`](crate::operation::get_ops_item::builders::GetOpsItemFluentBuilder::ops_item_arn) / [`set_ops_item_arn(Option<String>)`](crate::operation::get_ops_item::builders::GetOpsItemFluentBuilder::set_ops_item_arn): <p>The OpsItem Amazon Resource Name (ARN).</p>
+    ///   - [`ops_item_id(impl Into<String>)`](crate::operation::get_ops_item::builders::GetOpsItemFluentBuilder::ops_item_id) / [`set_ops_item_id(Option<String>)`](crate::operation::get_ops_item::builders::GetOpsItemFluentBuilder::set_ops_item_id):<br>required: **true**<br><p>The ID of the OpsItem that you want to get.</p><br>
+    ///   - [`ops_item_arn(impl Into<String>)`](crate::operation::get_ops_item::builders::GetOpsItemFluentBuilder::ops_item_arn) / [`set_ops_item_arn(Option<String>)`](crate::operation::get_ops_item::builders::GetOpsItemFluentBuilder::set_ops_item_arn):<br>required: **false**<br><p>The OpsItem Amazon Resource Name (ARN).</p><br>
     /// - On success, responds with [`GetOpsItemOutput`](crate::operation::get_ops_item::GetOpsItemOutput) with field(s):
     ///   - [`ops_item(Option<OpsItem>)`](crate::operation::get_ops_item::GetOpsItemOutput::ops_item): <p>The OpsItem.</p>
     /// - On failure, responds with [`SdkError<GetOpsItemError>`](crate::operation::get_ops_item::GetOpsItemError)

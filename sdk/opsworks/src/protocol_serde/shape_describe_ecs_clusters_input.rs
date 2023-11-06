@@ -2,7 +2,7 @@
 pub fn ser_describe_ecs_clusters_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_ecs_clusters::DescribeEcsClustersInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ecs_cluster_arns {
         let mut array_2 = object.key("EcsClusterArns").start_array();
         for item_3 in var_1 {

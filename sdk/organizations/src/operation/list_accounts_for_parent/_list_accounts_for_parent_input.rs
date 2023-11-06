@@ -41,6 +41,7 @@ pub struct ListAccountsForParentInputBuilder {
 }
 impl ListAccountsForParentInputBuilder {
     /// <p>The unique identifier (ID) for the parent root or organization unit (OU) whose accounts you want to list.</p>
+    /// This field is required.
     pub fn parent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl ListAccountsForParentInputBuilder {
     /// Consumes the builder and constructs a [`ListAccountsForParentInput`](crate::operation::list_accounts_for_parent::ListAccountsForParentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_accounts_for_parent::ListAccountsForParentInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_accounts_for_parent::ListAccountsForParentInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_accounts_for_parent::ListAccountsForParentInput {
             parent_id: self.parent_id,

@@ -2,7 +2,7 @@
 pub fn ser_create_dev_environment_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_dev_environment::CreateDevEnvironmentInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.alias {
         object.key("alias").string(var_1.as_str());
     }
@@ -21,32 +21,32 @@ pub fn ser_create_dev_environment_input(
         }
         array_4.finish();
     }
-    if input.inactivity_timeout_minutes != 0 {
+    if let Some(var_7) = &input.inactivity_timeout_minutes {
         object.key("inactivityTimeoutMinutes").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.inactivity_timeout_minutes).into()),
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_7) = &input.instance_type {
-        object.key("instanceType").string(var_7.as_str());
+    if let Some(var_8) = &input.instance_type {
+        object.key("instanceType").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.persistent_storage {
+    if let Some(var_9) = &input.persistent_storage {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("persistentStorage").start_object();
-        crate::protocol_serde::shape_persistent_storage_configuration::ser_persistent_storage_configuration(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_10 = object.key("persistentStorage").start_object();
+        crate::protocol_serde::shape_persistent_storage_configuration::ser_persistent_storage_configuration(&mut object_10, var_9)?;
+        object_10.finish();
     }
-    if let Some(var_10) = &input.repositories {
-        let mut array_11 = object.key("repositories").start_array();
-        for item_12 in var_10 {
+    if let Some(var_11) = &input.repositories {
+        let mut array_12 = object.key("repositories").start_array();
+        for item_13 in var_11 {
             {
                 #[allow(unused_mut)]
-                let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_repository_input::ser_repository_input(&mut object_13, item_12)?;
-                object_13.finish();
+                let mut object_14 = array_12.value().start_object();
+                crate::protocol_serde::shape_repository_input::ser_repository_input(&mut object_14, item_13)?;
+                object_14.finish();
             }
         }
-        array_11.finish();
+        array_12.finish();
     }
     Ok(())
 }

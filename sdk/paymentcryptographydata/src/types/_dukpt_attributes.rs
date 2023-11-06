@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DukptAttributes {
     /// <p>The unique identifier known as Key Serial Number (KSN) that comes from an encrypting device using DUKPT encryption method. The KSN is derived from the encrypting device unique identifier and an internal transaction counter.</p>
-    pub key_serial_number: ::std::option::Option<::std::string::String>,
+    pub key_serial_number: ::std::string::String,
     /// <p>The key type derived using DUKPT from a Base Derivation Key (BDK) and Key Serial Number (KSN). This must be less than or equal to the strength of the BDK. For example, you can't use <code>AES_128</code> as a derivation type for a BDK of <code>AES_128</code> or <code>TDES_2KEY</code>.</p>
-    pub dukpt_derivation_type: ::std::option::Option<crate::types::DukptDerivationType>,
+    pub dukpt_derivation_type: crate::types::DukptDerivationType,
 }
 impl DukptAttributes {
     /// <p>The unique identifier known as Key Serial Number (KSN) that comes from an encrypting device using DUKPT encryption method. The KSN is derived from the encrypting device unique identifier and an internal transaction counter.</p>
-    pub fn key_serial_number(&self) -> ::std::option::Option<&str> {
-        self.key_serial_number.as_deref()
+    pub fn key_serial_number(&self) -> &str {
+        use std::ops::Deref;
+        self.key_serial_number.deref()
     }
     /// <p>The key type derived using DUKPT from a Base Derivation Key (BDK) and Key Serial Number (KSN). This must be less than or equal to the strength of the BDK. For example, you can't use <code>AES_128</code> as a derivation type for a BDK of <code>AES_128</code> or <code>TDES_2KEY</code>.</p>
-    pub fn dukpt_derivation_type(&self) -> ::std::option::Option<&crate::types::DukptDerivationType> {
-        self.dukpt_derivation_type.as_ref()
+    pub fn dukpt_derivation_type(&self) -> &crate::types::DukptDerivationType {
+        &self.dukpt_derivation_type
     }
 }
 impl DukptAttributes {
@@ -35,6 +36,7 @@ pub struct DukptAttributesBuilder {
 }
 impl DukptAttributesBuilder {
     /// <p>The unique identifier known as Key Serial Number (KSN) that comes from an encrypting device using DUKPT encryption method. The KSN is derived from the encrypting device unique identifier and an internal transaction counter.</p>
+    /// This field is required.
     pub fn key_serial_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_serial_number = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl DukptAttributesBuilder {
         &self.key_serial_number
     }
     /// <p>The key type derived using DUKPT from a Base Derivation Key (BDK) and Key Serial Number (KSN). This must be less than or equal to the strength of the BDK. For example, you can't use <code>AES_128</code> as a derivation type for a BDK of <code>AES_128</code> or <code>TDES_2KEY</code>.</p>
+    /// This field is required.
     pub fn dukpt_derivation_type(mut self, input: crate::types::DukptDerivationType) -> Self {
         self.dukpt_derivation_type = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,23 @@ impl DukptAttributesBuilder {
         &self.dukpt_derivation_type
     }
     /// Consumes the builder and constructs a [`DukptAttributes`](crate::types::DukptAttributes).
-    pub fn build(self) -> crate::types::DukptAttributes {
-        crate::types::DukptAttributes {
-            key_serial_number: self.key_serial_number,
-            dukpt_derivation_type: self.dukpt_derivation_type,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key_serial_number`](crate::types::builders::DukptAttributesBuilder::key_serial_number)
+    /// - [`dukpt_derivation_type`](crate::types::builders::DukptAttributesBuilder::dukpt_derivation_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::DukptAttributes, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DukptAttributes {
+            key_serial_number: self.key_serial_number.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "key_serial_number",
+                    "key_serial_number was not specified but it is required when building DukptAttributes",
+                )
+            })?,
+            dukpt_derivation_type: self.dukpt_derivation_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "dukpt_derivation_type",
+                    "dukpt_derivation_type was not specified but it is required when building DukptAttributes",
+                )
+            })?,
+        })
     }
 }

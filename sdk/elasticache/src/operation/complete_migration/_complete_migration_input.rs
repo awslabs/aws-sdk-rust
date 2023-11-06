@@ -34,6 +34,7 @@ pub struct CompleteMigrationInputBuilder {
 }
 impl CompleteMigrationInputBuilder {
     /// <p>The ID of the replication group to which data is being migrated.</p>
+    /// This field is required.
     pub fn replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_group_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl CompleteMigrationInputBuilder {
     /// Consumes the builder and constructs a [`CompleteMigrationInput`](crate::operation::complete_migration::CompleteMigrationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::complete_migration::CompleteMigrationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::complete_migration::CompleteMigrationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::complete_migration::CompleteMigrationInput {
             replication_group_id: self.replication_group_id,
             force: self.force,

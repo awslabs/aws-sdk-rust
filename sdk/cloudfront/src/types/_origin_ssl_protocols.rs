@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OriginSslProtocols {
     /// <p>The number of SSL/TLS protocols that you want to allow CloudFront to use when establishing an HTTPS connection with this origin.</p>
-    pub quantity: ::std::option::Option<i32>,
+    pub quantity: i32,
     /// <p>A list that contains allowed SSL/TLS protocols for this distribution.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::SslProtocol>>,
+    pub items: ::std::vec::Vec<crate::types::SslProtocol>,
 }
 impl OriginSslProtocols {
     /// <p>The number of SSL/TLS protocols that you want to allow CloudFront to use when establishing an HTTPS connection with this origin.</p>
-    pub fn quantity(&self) -> ::std::option::Option<i32> {
+    pub fn quantity(&self) -> i32 {
         self.quantity
     }
     /// <p>A list that contains allowed SSL/TLS protocols for this distribution.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::SslProtocol]> {
-        self.items.as_deref()
+    pub fn items(&self) -> &[crate::types::SslProtocol] {
+        use std::ops::Deref;
+        self.items.deref()
     }
 }
 impl OriginSslProtocols {
@@ -35,6 +36,7 @@ pub struct OriginSslProtocolsBuilder {
 }
 impl OriginSslProtocolsBuilder {
     /// <p>The number of SSL/TLS protocols that you want to allow CloudFront to use when establishing an HTTPS connection with this origin.</p>
+    /// This field is required.
     pub fn quantity(mut self, input: i32) -> Self {
         self.quantity = ::std::option::Option::Some(input);
         self
@@ -69,10 +71,23 @@ impl OriginSslProtocolsBuilder {
         &self.items
     }
     /// Consumes the builder and constructs a [`OriginSslProtocols`](crate::types::OriginSslProtocols).
-    pub fn build(self) -> crate::types::OriginSslProtocols {
-        crate::types::OriginSslProtocols {
-            quantity: self.quantity,
-            items: self.items,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`quantity`](crate::types::builders::OriginSslProtocolsBuilder::quantity)
+    /// - [`items`](crate::types::builders::OriginSslProtocolsBuilder::items)
+    pub fn build(self) -> ::std::result::Result<crate::types::OriginSslProtocols, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::OriginSslProtocols {
+            quantity: self.quantity.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "quantity",
+                    "quantity was not specified but it is required when building OriginSslProtocols",
+                )
+            })?,
+            items: self.items.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "items",
+                    "items was not specified but it is required when building OriginSslProtocols",
+                )
+            })?,
+        })
     }
 }

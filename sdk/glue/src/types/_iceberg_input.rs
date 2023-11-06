@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IcebergInput {
     /// <p>A required metadata operation. Can only be set to <code>CREATE</code>.</p>
-    pub metadata_operation: ::std::option::Option<crate::types::MetadataOperation>,
+    pub metadata_operation: crate::types::MetadataOperation,
     /// <p>The table version for the Iceberg table. Defaults to 2.</p>
     pub version: ::std::option::Option<::std::string::String>,
 }
 impl IcebergInput {
     /// <p>A required metadata operation. Can only be set to <code>CREATE</code>.</p>
-    pub fn metadata_operation(&self) -> ::std::option::Option<&crate::types::MetadataOperation> {
-        self.metadata_operation.as_ref()
+    pub fn metadata_operation(&self) -> &crate::types::MetadataOperation {
+        &self.metadata_operation
     }
     /// <p>The table version for the Iceberg table. Defaults to 2.</p>
     pub fn version(&self) -> ::std::option::Option<&str> {
@@ -35,6 +35,7 @@ pub struct IcebergInputBuilder {
 }
 impl IcebergInputBuilder {
     /// <p>A required metadata operation. Can only be set to <code>CREATE</code>.</p>
+    /// This field is required.
     pub fn metadata_operation(mut self, input: crate::types::MetadataOperation) -> Self {
         self.metadata_operation = ::std::option::Option::Some(input);
         self
@@ -63,10 +64,17 @@ impl IcebergInputBuilder {
         &self.version
     }
     /// Consumes the builder and constructs a [`IcebergInput`](crate::types::IcebergInput).
-    pub fn build(self) -> crate::types::IcebergInput {
-        crate::types::IcebergInput {
-            metadata_operation: self.metadata_operation,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`metadata_operation`](crate::types::builders::IcebergInputBuilder::metadata_operation)
+    pub fn build(self) -> ::std::result::Result<crate::types::IcebergInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::IcebergInput {
+            metadata_operation: self.metadata_operation.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "metadata_operation",
+                    "metadata_operation was not specified but it is required when building IcebergInput",
+                )
+            })?,
             version: self.version,
-        }
+        })
     }
 }

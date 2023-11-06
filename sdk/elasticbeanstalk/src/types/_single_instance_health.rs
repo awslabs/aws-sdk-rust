@@ -39,8 +39,10 @@ impl SingleInstanceHealth {
         self.color.as_deref()
     }
     /// <p>Represents the causes, which provide more information about the current health status.</p>
-    pub fn causes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.causes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.causes.is_none()`.
+    pub fn causes(&self) -> &[::std::string::String] {
+        self.causes.as_deref().unwrap_or_default()
     }
     /// <p>The time at which the EC2 instance was launched.</p>
     pub fn launched_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

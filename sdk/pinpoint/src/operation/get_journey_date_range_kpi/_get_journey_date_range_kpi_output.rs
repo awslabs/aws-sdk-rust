@@ -34,6 +34,7 @@ pub struct GetJourneyDateRangeKpiOutputBuilder {
 }
 impl GetJourneyDateRangeKpiOutputBuilder {
     /// <p>Provides the results of a query that retrieved the data for a standard engagement metric that applies to a journey, and provides information about that query.</p>
+    /// This field is required.
     pub fn journey_date_range_kpi_response(mut self, input: crate::types::JourneyDateRangeKpiResponse) -> Self {
         self.journey_date_range_kpi_response = ::std::option::Option::Some(input);
         self

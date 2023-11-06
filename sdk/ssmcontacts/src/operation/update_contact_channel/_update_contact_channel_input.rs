@@ -41,6 +41,7 @@ pub struct UpdateContactChannelInputBuilder {
 }
 impl UpdateContactChannelInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the contact channel you want to update.</p>
+    /// This field is required.
     pub fn contact_channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_channel_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl UpdateContactChannelInputBuilder {
     /// Consumes the builder and constructs a [`UpdateContactChannelInput`](crate::operation::update_contact_channel::UpdateContactChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_contact_channel::UpdateContactChannelInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_contact_channel::UpdateContactChannelInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_contact_channel::UpdateContactChannelInput {
             contact_channel_id: self.contact_channel_id,

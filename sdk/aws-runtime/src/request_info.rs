@@ -7,7 +7,7 @@ use crate::service_clock_skew::ServiceClockSkew;
 use aws_smithy_async::time::TimeSource;
 use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::interceptors::context::BeforeTransmitInterceptorContextMut;
-use aws_smithy_runtime_api::client::interceptors::Interceptor;
+use aws_smithy_runtime_api::client::interceptors::Intercept;
 use aws_smithy_runtime_api::client::retries::RequestAttempts;
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 use aws_smithy_types::config_bag::ConfigBag;
@@ -91,7 +91,7 @@ impl RequestInfoInterceptor {
     }
 }
 
-impl Interceptor for RequestInfoInterceptor {
+impl Intercept for RequestInfoInterceptor {
     fn name(&self) -> &'static str {
         "RequestInfoInterceptor"
     }
@@ -179,10 +179,10 @@ impl TryFrom<RequestPairs> for HeaderValue {
 mod tests {
     use super::RequestInfoInterceptor;
     use crate::request_info::RequestPairs;
-    use aws_smithy_http::body::SdkBody;
     use aws_smithy_runtime_api::client::interceptors::context::Input;
     use aws_smithy_runtime_api::client::interceptors::context::InterceptorContext;
-    use aws_smithy_runtime_api::client::interceptors::Interceptor;
+    use aws_smithy_runtime_api::client::interceptors::Intercept;
+    use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
     use aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder;
     use aws_smithy_types::config_bag::{ConfigBag, Layer};
     use aws_smithy_types::retry::RetryConfig;
@@ -198,8 +198,6 @@ mod tests {
             .headers()
             .get(header_name)
             .unwrap()
-            .to_str()
-            .unwrap()
     }
 
     #[test]
@@ -207,7 +205,7 @@ mod tests {
         let rc = RuntimeComponentsBuilder::for_tests().build().unwrap();
         let mut context = InterceptorContext::new(Input::doesnt_matter());
         context.enter_serialization_phase();
-        context.set_request(http::Request::builder().body(SdkBody::empty()).unwrap());
+        context.set_request(HttpRequest::empty());
 
         let mut layer = Layer::new("test");
         layer.store_put(RetryConfig::standard());

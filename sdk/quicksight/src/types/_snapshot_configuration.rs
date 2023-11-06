@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnapshotConfiguration {
     /// <p>A list of <code>SnapshotJobResultFileGroup</code> objects that contain information about the snapshot that is generated. This list can hold a maximum of 6 <code>FileGroup</code> configurations.</p>
-    pub file_groups: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotFileGroup>>,
+    pub file_groups: ::std::vec::Vec<crate::types::SnapshotFileGroup>,
     /// <p>A structure that contains information on the Amazon S3 bucket that the generated snapshot is stored in.</p>
     pub destination_configuration: ::std::option::Option<crate::types::SnapshotDestinationConfiguration>,
     /// <p>A list of Amazon QuickSight parameters and the list's override values.</p>
@@ -13,8 +13,9 @@ pub struct SnapshotConfiguration {
 }
 impl SnapshotConfiguration {
     /// <p>A list of <code>SnapshotJobResultFileGroup</code> objects that contain information about the snapshot that is generated. This list can hold a maximum of 6 <code>FileGroup</code> configurations.</p>
-    pub fn file_groups(&self) -> ::std::option::Option<&[crate::types::SnapshotFileGroup]> {
-        self.file_groups.as_deref()
+    pub fn file_groups(&self) -> &[crate::types::SnapshotFileGroup] {
+        use std::ops::Deref;
+        self.file_groups.deref()
     }
     /// <p>A structure that contains information on the Amazon S3 bucket that the generated snapshot is stored in.</p>
     pub fn destination_configuration(&self) -> ::std::option::Option<&crate::types::SnapshotDestinationConfiguration> {
@@ -90,11 +91,18 @@ impl SnapshotConfigurationBuilder {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`SnapshotConfiguration`](crate::types::SnapshotConfiguration).
-    pub fn build(self) -> crate::types::SnapshotConfiguration {
-        crate::types::SnapshotConfiguration {
-            file_groups: self.file_groups,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`file_groups`](crate::types::builders::SnapshotConfigurationBuilder::file_groups)
+    pub fn build(self) -> ::std::result::Result<crate::types::SnapshotConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SnapshotConfiguration {
+            file_groups: self.file_groups.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "file_groups",
+                    "file_groups was not specified but it is required when building SnapshotConfiguration",
+                )
+            })?,
             destination_configuration: self.destination_configuration,
             parameters: self.parameters,
-        }
+        })
     }
 }

@@ -15,8 +15,10 @@ impl ListContactsOutput {
         self.next_token.as_deref()
     }
     /// <p>A list of the contacts and escalation plans in your Incident Manager account.</p>
-    pub fn contacts(&self) -> ::std::option::Option<&[crate::types::Contact]> {
-        self.contacts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.contacts.is_none()`.
+    pub fn contacts(&self) -> &[crate::types::Contact] {
+        self.contacts.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListContactsOutput {

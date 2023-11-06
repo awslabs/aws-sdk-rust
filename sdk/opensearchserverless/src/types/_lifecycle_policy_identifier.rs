@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LifecyclePolicyIdentifier {
     /// <p>The type of lifecycle policy.</p>
-    pub r#type: ::std::option::Option<crate::types::LifecyclePolicyType>,
+    pub r#type: crate::types::LifecyclePolicyType,
     /// <p>The name of the lifecycle policy.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
 }
 impl LifecyclePolicyIdentifier {
     /// <p>The type of lifecycle policy.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::LifecyclePolicyType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::LifecyclePolicyType {
+        &self.r#type
     }
     /// <p>The name of the lifecycle policy.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
 }
 impl LifecyclePolicyIdentifier {
@@ -35,6 +36,7 @@ pub struct LifecyclePolicyIdentifierBuilder {
 }
 impl LifecyclePolicyIdentifierBuilder {
     /// <p>The type of lifecycle policy.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::LifecyclePolicyType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -49,6 +51,7 @@ impl LifecyclePolicyIdentifierBuilder {
         &self.r#type
     }
     /// <p>The name of the lifecycle policy.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +66,23 @@ impl LifecyclePolicyIdentifierBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`LifecyclePolicyIdentifier`](crate::types::LifecyclePolicyIdentifier).
-    pub fn build(self) -> crate::types::LifecyclePolicyIdentifier {
-        crate::types::LifecyclePolicyIdentifier {
-            r#type: self.r#type,
-            name: self.name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::LifecyclePolicyIdentifierBuilder::r#type)
+    /// - [`name`](crate::types::builders::LifecyclePolicyIdentifierBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::LifecyclePolicyIdentifier, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::LifecyclePolicyIdentifier {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building LifecyclePolicyIdentifier",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building LifecyclePolicyIdentifier",
+                )
+            })?,
+        })
     }
 }

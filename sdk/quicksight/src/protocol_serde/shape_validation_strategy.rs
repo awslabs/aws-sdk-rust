@@ -2,9 +2,9 @@
 pub fn ser_validation_strategy(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ValidationStrategy,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.mode {
-        object.key("Mode").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Mode").string(input.mode.as_str());
     }
     Ok(())
 }

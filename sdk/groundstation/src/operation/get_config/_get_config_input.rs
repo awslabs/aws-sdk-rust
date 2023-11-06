@@ -35,6 +35,7 @@ pub struct GetConfigInputBuilder {
 }
 impl GetConfigInputBuilder {
     /// <p>UUID of a <code>Config</code>.</p>
+    /// This field is required.
     pub fn config_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.config_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl GetConfigInputBuilder {
         &self.config_id
     }
     /// <p>Type of a <code>Config</code>.</p>
+    /// This field is required.
     pub fn config_type(mut self, input: crate::types::ConfigCapabilityType) -> Self {
         self.config_type = ::std::option::Option::Some(input);
         self
@@ -63,7 +65,7 @@ impl GetConfigInputBuilder {
         &self.config_type
     }
     /// Consumes the builder and constructs a [`GetConfigInput`](crate::operation::get_config::GetConfigInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_config::GetConfigInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_config::GetConfigInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_config::GetConfigInput {
             config_id: self.config_id,
             config_type: self.config_type,

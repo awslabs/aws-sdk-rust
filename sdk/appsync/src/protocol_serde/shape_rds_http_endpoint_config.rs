@@ -2,7 +2,7 @@
 pub fn ser_rds_http_endpoint_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RdsHttpEndpointConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.aws_region {
         object.key("awsRegion").string(var_1.as_str());
     }

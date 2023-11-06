@@ -97,6 +97,7 @@ pub struct MergeBranchesBySquashInputBuilder {
 }
 impl MergeBranchesBySquashInputBuilder {
     /// <p>The name of the repository where you want to merge two branches.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +112,7 @@ impl MergeBranchesBySquashInputBuilder {
         &self.repository_name
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    /// This field is required.
     pub fn source_commit_specifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_commit_specifier = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +127,7 @@ impl MergeBranchesBySquashInputBuilder {
         &self.source_commit_specifier
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    /// This field is required.
     pub fn destination_commit_specifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_commit_specifier = ::std::option::Option::Some(input.into());
         self
@@ -253,7 +256,7 @@ impl MergeBranchesBySquashInputBuilder {
     /// Consumes the builder and constructs a [`MergeBranchesBySquashInput`](crate::operation::merge_branches_by_squash::MergeBranchesBySquashInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::merge_branches_by_squash::MergeBranchesBySquashInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::merge_branches_by_squash::MergeBranchesBySquashInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::merge_branches_by_squash::MergeBranchesBySquashInput {
             repository_name: self.repository_name,

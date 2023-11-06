@@ -78,6 +78,7 @@ impl SetUserMfaPreferenceInputBuilder {
         &self.software_token_mfa_settings
     }
     /// <p>A valid access token that Amazon Cognito issued to the user whose MFA preference you want to set.</p>
+    /// This field is required.
     pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_token = ::std::option::Option::Some(input.into());
         self
@@ -94,7 +95,7 @@ impl SetUserMfaPreferenceInputBuilder {
     /// Consumes the builder and constructs a [`SetUserMfaPreferenceInput`](crate::operation::set_user_mfa_preference::SetUserMfaPreferenceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::set_user_mfa_preference::SetUserMfaPreferenceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::set_user_mfa_preference::SetUserMfaPreferenceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::set_user_mfa_preference::SetUserMfaPreferenceInput {
             sms_mfa_settings: self.sms_mfa_settings,

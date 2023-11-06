@@ -22,8 +22,10 @@ impl DescribeReplicationTableStatisticsOutput {
         self.marker.as_deref()
     }
     /// <p>Returns table statistics on the replication, including table name, rows inserted, rows updated, and rows deleted.</p>
-    pub fn replication_table_statistics(&self) -> ::std::option::Option<&[crate::types::TableStatistics]> {
-        self.replication_table_statistics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_table_statistics.is_none()`.
+    pub fn replication_table_statistics(&self) -> &[crate::types::TableStatistics] {
+        self.replication_table_statistics.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeReplicationTableStatisticsOutput {

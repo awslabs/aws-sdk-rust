@@ -111,6 +111,7 @@ impl DeleteRouteInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the route table.</p>
+    /// This field is required.
     pub fn route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_table_id = ::std::option::Option::Some(input.into());
         self
@@ -125,7 +126,7 @@ impl DeleteRouteInputBuilder {
         &self.route_table_id
     }
     /// Consumes the builder and constructs a [`DeleteRouteInput`](crate::operation::delete_route::DeleteRouteInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_route::DeleteRouteInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_route::DeleteRouteInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_route::DeleteRouteInput {
             destination_cidr_block: self.destination_cidr_block,
             destination_ipv6_cidr_block: self.destination_ipv6_cidr_block,

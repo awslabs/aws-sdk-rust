@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateBot`](crate::operation::create_bot::builders::CreateBotFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::operation::create_bot::builders::CreateBotFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::create_bot::builders::CreateBotFluentBuilder::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`display_name(impl Into<String>)`](crate::operation::create_bot::builders::CreateBotFluentBuilder::display_name) / [`set_display_name(Option<String>)`](crate::operation::create_bot::builders::CreateBotFluentBuilder::set_display_name): <p>The bot display name.</p>
-    ///   - [`domain(impl Into<String>)`](crate::operation::create_bot::builders::CreateBotFluentBuilder::domain) / [`set_domain(Option<String>)`](crate::operation::create_bot::builders::CreateBotFluentBuilder::set_domain): <p>The domain of the Amazon Chime Enterprise account.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::operation::create_bot::builders::CreateBotFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::create_bot::builders::CreateBotFluentBuilder::set_account_id):<br>required: **true**<br><p>The Amazon Chime account ID.</p><br>
+    ///   - [`display_name(impl Into<String>)`](crate::operation::create_bot::builders::CreateBotFluentBuilder::display_name) / [`set_display_name(Option<String>)`](crate::operation::create_bot::builders::CreateBotFluentBuilder::set_display_name):<br>required: **true**<br><p>The bot display name.</p><br>
+    ///   - [`domain(impl Into<String>)`](crate::operation::create_bot::builders::CreateBotFluentBuilder::domain) / [`set_domain(Option<String>)`](crate::operation::create_bot::builders::CreateBotFluentBuilder::set_domain):<br>required: **false**<br><p>The domain of the Amazon Chime Enterprise account.</p><br>
     /// - On success, responds with [`CreateBotOutput`](crate::operation::create_bot::CreateBotOutput) with field(s):
     ///   - [`bot(Option<Bot>)`](crate::operation::create_bot::CreateBotOutput::bot): <p>The bot details.</p>
     /// - On failure, responds with [`SdkError<CreateBotError>`](crate::operation::create_bot::CreateBotError)

@@ -26,8 +26,10 @@ impl CreateSnapshotInput {
         self.retention_period
     }
     /// <p>An array of <a href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag objects</a> to associate with the snapshot.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateSnapshotInput {
@@ -48,6 +50,7 @@ pub struct CreateSnapshotInputBuilder {
 }
 impl CreateSnapshotInputBuilder {
     /// <p>The namespace to create a snapshot for.</p>
+    /// This field is required.
     pub fn namespace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace_name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl CreateSnapshotInputBuilder {
         &self.namespace_name
     }
     /// <p>The name of the snapshot.</p>
+    /// This field is required.
     pub fn snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_name = ::std::option::Option::Some(input.into());
         self
@@ -112,7 +116,7 @@ impl CreateSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`CreateSnapshotInput`](crate::operation::create_snapshot::CreateSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_snapshot::CreateSnapshotInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_snapshot::CreateSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_snapshot::CreateSnapshotInput {
             namespace_name: self.namespace_name,
             snapshot_name: self.snapshot_name,

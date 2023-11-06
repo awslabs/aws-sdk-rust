@@ -2,7 +2,7 @@
 pub fn ser_cell(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Cell,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.column {
         object.key("Column").number(
             #[allow(clippy::useless_conversion)]

@@ -28,6 +28,7 @@ pub struct DisableDomainTransferLockInputBuilder {
 }
 impl DisableDomainTransferLockInputBuilder {
     /// <p>The name of the domain that you want to remove the transfer lock for.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl DisableDomainTransferLockInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_domain_transfer_lock::DisableDomainTransferLockInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disable_domain_transfer_lock::DisableDomainTransferLockInput {
             domain_name: self.domain_name,

@@ -41,6 +41,7 @@ pub struct GetSubscriptionTargetInputBuilder {
 }
 impl GetSubscriptionTargetInputBuilder {
     /// <p>The ID of the Amazon DataZone domain in which the subscription target exists.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl GetSubscriptionTargetInputBuilder {
         &self.domain_identifier
     }
     /// <p>The ID of the environment associated with the subscription target.</p>
+    /// This field is required.
     pub fn environment_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_identifier = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl GetSubscriptionTargetInputBuilder {
         &self.environment_identifier
     }
     /// <p>The ID of the subscription target.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +88,7 @@ impl GetSubscriptionTargetInputBuilder {
     /// Consumes the builder and constructs a [`GetSubscriptionTargetInput`](crate::operation::get_subscription_target::GetSubscriptionTargetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_subscription_target::GetSubscriptionTargetInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_subscription_target::GetSubscriptionTargetInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_subscription_target::GetSubscriptionTargetInput {
             domain_identifier: self.domain_identifier,

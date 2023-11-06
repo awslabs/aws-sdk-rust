@@ -84,6 +84,7 @@ pub struct UpdateJobInputBuilder {
 }
 impl UpdateJobInputBuilder {
     /// <p>The ID of the job to be updated.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -208,7 +209,7 @@ impl UpdateJobInputBuilder {
         &self.job_executions_retry_config
     }
     /// Consumes the builder and constructs a [`UpdateJobInput`](crate::operation::update_job::UpdateJobInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_job::UpdateJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_job::UpdateJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_job::UpdateJobInput {
             job_id: self.job_id,
             description: self.description,

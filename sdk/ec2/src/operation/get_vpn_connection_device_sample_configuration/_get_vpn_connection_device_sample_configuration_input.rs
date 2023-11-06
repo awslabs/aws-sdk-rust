@@ -49,6 +49,7 @@ pub struct GetVpnConnectionDeviceSampleConfigurationInputBuilder {
 }
 impl GetVpnConnectionDeviceSampleConfigurationInputBuilder {
     /// <p>The <code>VpnConnectionId</code> specifies the Site-to-Site VPN connection used for the sample configuration.</p>
+    /// This field is required.
     pub fn vpn_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpn_connection_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl GetVpnConnectionDeviceSampleConfigurationInputBuilder {
         &self.vpn_connection_id
     }
     /// <p>Device identifier provided by the <code>GetVpnConnectionDeviceTypes</code> API.</p>
+    /// This field is required.
     pub fn vpn_connection_device_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpn_connection_device_type_id = ::std::option::Option::Some(input.into());
         self
@@ -109,7 +111,7 @@ impl GetVpnConnectionDeviceSampleConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_vpn_connection_device_sample_configuration::GetVpnConnectionDeviceSampleConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_vpn_connection_device_sample_configuration::GetVpnConnectionDeviceSampleConfigurationInput {

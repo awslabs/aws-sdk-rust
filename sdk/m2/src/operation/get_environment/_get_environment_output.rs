@@ -4,29 +4,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEnvironmentOutput {
     /// <p>The name of the runtime environment. Must be unique within the account.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The description of the runtime environment.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the runtime environment.</p>
-    pub environment_arn: ::std::option::Option<::std::string::String>,
+    pub environment_arn: ::std::string::String,
     /// <p>The unique identifier of the runtime environment.</p>
-    pub environment_id: ::std::option::Option<::std::string::String>,
+    pub environment_id: ::std::string::String,
     /// <p>The type of instance underlying the runtime environment.</p>
-    pub instance_type: ::std::option::Option<::std::string::String>,
+    pub instance_type: ::std::string::String,
     /// <p>The status of the runtime environment.</p>
-    pub status: ::std::option::Option<crate::types::EnvironmentLifecycle>,
+    pub status: crate::types::EnvironmentLifecycle,
     /// <p>The target platform for the runtime environment.</p>
-    pub engine_type: ::std::option::Option<crate::types::EngineType>,
+    pub engine_type: crate::types::EngineType,
     /// <p>The version of the runtime engine.</p>
-    pub engine_version: ::std::option::Option<::std::string::String>,
+    pub engine_version: ::std::string::String,
     /// <p>The unique identifier for the VPC used with this runtime environment.</p>
-    pub vpc_id: ::std::option::Option<::std::string::String>,
+    pub vpc_id: ::std::string::String,
     /// <p>The unique identifiers of the subnets assigned to this runtime environment.</p>
-    pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subnet_ids: ::std::vec::Vec<::std::string::String>,
     /// <p>The unique identifiers of the security groups assigned to this runtime environment.</p>
-    pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_group_ids: ::std::vec::Vec<::std::string::String>,
     /// <p>The timestamp when the runtime environment was created.</p>
-    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_time: ::aws_smithy_types::DateTime,
     /// <p>The storage configurations defined for the runtime environment.</p>
     pub storage_configurations: ::std::option::Option<::std::vec::Vec<crate::types::StorageConfiguration>>,
     /// <p>The tags defined for this runtime environment.</p>
@@ -51,56 +51,66 @@ pub struct GetEnvironmentOutput {
 }
 impl GetEnvironmentOutput {
     /// <p>The name of the runtime environment. Must be unique within the account.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The description of the runtime environment.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the runtime environment.</p>
-    pub fn environment_arn(&self) -> ::std::option::Option<&str> {
-        self.environment_arn.as_deref()
+    pub fn environment_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.environment_arn.deref()
     }
     /// <p>The unique identifier of the runtime environment.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
-        self.environment_id.as_deref()
+    pub fn environment_id(&self) -> &str {
+        use std::ops::Deref;
+        self.environment_id.deref()
     }
     /// <p>The type of instance underlying the runtime environment.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&str> {
-        self.instance_type.as_deref()
+    pub fn instance_type(&self) -> &str {
+        use std::ops::Deref;
+        self.instance_type.deref()
     }
     /// <p>The status of the runtime environment.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::EnvironmentLifecycle> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::EnvironmentLifecycle {
+        &self.status
     }
     /// <p>The target platform for the runtime environment.</p>
-    pub fn engine_type(&self) -> ::std::option::Option<&crate::types::EngineType> {
-        self.engine_type.as_ref()
+    pub fn engine_type(&self) -> &crate::types::EngineType {
+        &self.engine_type
     }
     /// <p>The version of the runtime engine.</p>
-    pub fn engine_version(&self) -> ::std::option::Option<&str> {
-        self.engine_version.as_deref()
+    pub fn engine_version(&self) -> &str {
+        use std::ops::Deref;
+        self.engine_version.deref()
     }
     /// <p>The unique identifier for the VPC used with this runtime environment.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
-        self.vpc_id.as_deref()
+    pub fn vpc_id(&self) -> &str {
+        use std::ops::Deref;
+        self.vpc_id.deref()
     }
     /// <p>The unique identifiers of the subnets assigned to this runtime environment.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.subnet_ids.deref()
     }
     /// <p>The unique identifiers of the security groups assigned to this runtime environment.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.security_group_ids.deref()
     }
     /// <p>The timestamp when the runtime environment was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_time.as_ref()
+    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_time
     }
     /// <p>The storage configurations defined for the runtime environment.</p>
-    pub fn storage_configurations(&self) -> ::std::option::Option<&[crate::types::StorageConfiguration]> {
-        self.storage_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.storage_configurations.is_none()`.
+    pub fn storage_configurations(&self) -> &[crate::types::StorageConfiguration] {
+        self.storage_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The tags defined for this runtime environment.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -181,6 +191,7 @@ pub struct GetEnvironmentOutputBuilder {
 }
 impl GetEnvironmentOutputBuilder {
     /// <p>The name of the runtime environment. Must be unique within the account.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -209,6 +220,7 @@ impl GetEnvironmentOutputBuilder {
         &self.description
     }
     /// <p>The Amazon Resource Name (ARN) of the runtime environment.</p>
+    /// This field is required.
     pub fn environment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_arn = ::std::option::Option::Some(input.into());
         self
@@ -223,6 +235,7 @@ impl GetEnvironmentOutputBuilder {
         &self.environment_arn
     }
     /// <p>The unique identifier of the runtime environment.</p>
+    /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
@@ -237,6 +250,7 @@ impl GetEnvironmentOutputBuilder {
         &self.environment_id
     }
     /// <p>The type of instance underlying the runtime environment.</p>
+    /// This field is required.
     pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
@@ -251,6 +265,7 @@ impl GetEnvironmentOutputBuilder {
         &self.instance_type
     }
     /// <p>The status of the runtime environment.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::EnvironmentLifecycle) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -265,6 +280,7 @@ impl GetEnvironmentOutputBuilder {
         &self.status
     }
     /// <p>The target platform for the runtime environment.</p>
+    /// This field is required.
     pub fn engine_type(mut self, input: crate::types::EngineType) -> Self {
         self.engine_type = ::std::option::Option::Some(input);
         self
@@ -279,6 +295,7 @@ impl GetEnvironmentOutputBuilder {
         &self.engine_type
     }
     /// <p>The version of the runtime engine.</p>
+    /// This field is required.
     pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
@@ -293,6 +310,7 @@ impl GetEnvironmentOutputBuilder {
         &self.engine_version
     }
     /// <p>The unique identifier for the VPC used with this runtime environment.</p>
+    /// This field is required.
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
         self
@@ -347,6 +365,7 @@ impl GetEnvironmentOutputBuilder {
         &self.security_group_ids
     }
     /// <p>The timestamp when the runtime environment was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -522,20 +541,89 @@ impl GetEnvironmentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetEnvironmentOutput`](crate::operation::get_environment::GetEnvironmentOutput).
-    pub fn build(self) -> crate::operation::get_environment::GetEnvironmentOutput {
-        crate::operation::get_environment::GetEnvironmentOutput {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::get_environment::builders::GetEnvironmentOutputBuilder::name)
+    /// - [`environment_arn`](crate::operation::get_environment::builders::GetEnvironmentOutputBuilder::environment_arn)
+    /// - [`environment_id`](crate::operation::get_environment::builders::GetEnvironmentOutputBuilder::environment_id)
+    /// - [`instance_type`](crate::operation::get_environment::builders::GetEnvironmentOutputBuilder::instance_type)
+    /// - [`status`](crate::operation::get_environment::builders::GetEnvironmentOutputBuilder::status)
+    /// - [`engine_type`](crate::operation::get_environment::builders::GetEnvironmentOutputBuilder::engine_type)
+    /// - [`engine_version`](crate::operation::get_environment::builders::GetEnvironmentOutputBuilder::engine_version)
+    /// - [`vpc_id`](crate::operation::get_environment::builders::GetEnvironmentOutputBuilder::vpc_id)
+    /// - [`subnet_ids`](crate::operation::get_environment::builders::GetEnvironmentOutputBuilder::subnet_ids)
+    /// - [`security_group_ids`](crate::operation::get_environment::builders::GetEnvironmentOutputBuilder::security_group_ids)
+    /// - [`creation_time`](crate::operation::get_environment::builders::GetEnvironmentOutputBuilder::creation_time)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_environment::GetEnvironmentOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_environment::GetEnvironmentOutput {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building GetEnvironmentOutput",
+                )
+            })?,
             description: self.description,
-            environment_arn: self.environment_arn,
-            environment_id: self.environment_id,
-            instance_type: self.instance_type,
-            status: self.status,
-            engine_type: self.engine_type,
-            engine_version: self.engine_version,
-            vpc_id: self.vpc_id,
-            subnet_ids: self.subnet_ids,
-            security_group_ids: self.security_group_ids,
-            creation_time: self.creation_time,
+            environment_arn: self.environment_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "environment_arn",
+                    "environment_arn was not specified but it is required when building GetEnvironmentOutput",
+                )
+            })?,
+            environment_id: self.environment_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "environment_id",
+                    "environment_id was not specified but it is required when building GetEnvironmentOutput",
+                )
+            })?,
+            instance_type: self.instance_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "instance_type",
+                    "instance_type was not specified but it is required when building GetEnvironmentOutput",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building GetEnvironmentOutput",
+                )
+            })?,
+            engine_type: self.engine_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "engine_type",
+                    "engine_type was not specified but it is required when building GetEnvironmentOutput",
+                )
+            })?,
+            engine_version: self.engine_version.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "engine_version",
+                    "engine_version was not specified but it is required when building GetEnvironmentOutput",
+                )
+            })?,
+            vpc_id: self.vpc_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "vpc_id",
+                    "vpc_id was not specified but it is required when building GetEnvironmentOutput",
+                )
+            })?,
+            subnet_ids: self.subnet_ids.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "subnet_ids",
+                    "subnet_ids was not specified but it is required when building GetEnvironmentOutput",
+                )
+            })?,
+            security_group_ids: self.security_group_ids.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "security_group_ids",
+                    "security_group_ids was not specified but it is required when building GetEnvironmentOutput",
+                )
+            })?,
+            creation_time: self.creation_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "creation_time",
+                    "creation_time was not specified but it is required when building GetEnvironmentOutput",
+                )
+            })?,
             storage_configurations: self.storage_configurations,
             tags: self.tags,
             high_availability_config: self.high_availability_config,
@@ -547,6 +635,6 @@ impl GetEnvironmentOutputBuilder {
             pending_maintenance: self.pending_maintenance,
             kms_key_id: self.kms_key_id,
             _request_id: self._request_id,
-        }
+        })
     }
 }

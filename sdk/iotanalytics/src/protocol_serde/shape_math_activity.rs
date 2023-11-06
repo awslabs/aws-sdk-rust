@@ -2,18 +2,18 @@
 pub fn ser_math_activity(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MathActivity,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("name").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.attribute {
-        object.key("attribute").string(var_2.as_str());
+    {
+        object.key("attribute").string(input.attribute.as_str());
     }
-    if let Some(var_3) = &input.math {
-        object.key("math").string(var_3.as_str());
+    {
+        object.key("math").string(input.math.as_str());
     }
-    if let Some(var_4) = &input.next {
-        object.key("next").string(var_4.as_str());
+    if let Some(var_1) = &input.next {
+        object.key("next").string(var_1.as_str());
     }
     Ok(())
 }
@@ -71,7 +71,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::math_activity_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -71,8 +71,10 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationRequest {
         self.device_index
     }
     /// <p>The IDs of one or more security groups.</p>
-    pub fn groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
+    pub fn groups(&self) -> &[::std::string::String] {
+        self.groups.as_deref().unwrap_or_default()
     }
     /// <p>The type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// <p>If you are not creating an EFA, specify <code>interface</code> or omit this parameter.</p>
@@ -85,8 +87,10 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationRequest {
         self.ipv6_address_count
     }
     /// <p>One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this option if you're specifying a number of IPv6 addresses.</p>
-    pub fn ipv6_addresses(&self) -> ::std::option::Option<&[crate::types::InstanceIpv6AddressRequest]> {
-        self.ipv6_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv6_addresses.is_none()`.
+    pub fn ipv6_addresses(&self) -> &[crate::types::InstanceIpv6AddressRequest] {
+        self.ipv6_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the network interface.</p>
     pub fn network_interface_id(&self) -> ::std::option::Option<&str> {
@@ -97,8 +101,10 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationRequest {
         self.private_ip_address.as_deref()
     }
     /// <p>One or more private IPv4 addresses.</p>
-    pub fn private_ip_addresses(&self) -> ::std::option::Option<&[crate::types::PrivateIpAddressSpecification]> {
-        self.private_ip_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.private_ip_addresses.is_none()`.
+    pub fn private_ip_addresses(&self) -> &[crate::types::PrivateIpAddressSpecification] {
+        self.private_ip_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The number of secondary private IPv4 addresses to assign to a network interface.</p>
     pub fn secondary_private_ip_address_count(&self) -> ::std::option::Option<i32> {
@@ -113,16 +119,20 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationRequest {
         self.network_card_index
     }
     /// <p>One or more IPv4 prefixes to be assigned to the network interface. You cannot use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
-    pub fn ipv4_prefixes(&self) -> ::std::option::Option<&[crate::types::Ipv4PrefixSpecificationRequest]> {
-        self.ipv4_prefixes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv4_prefixes.is_none()`.
+    pub fn ipv4_prefixes(&self) -> &[crate::types::Ipv4PrefixSpecificationRequest] {
+        self.ipv4_prefixes.as_deref().unwrap_or_default()
     }
     /// <p>The number of IPv4 prefixes to be automatically assigned to the network interface. You cannot use this option if you use the <code>Ipv4Prefix</code> option.</p>
     pub fn ipv4_prefix_count(&self) -> ::std::option::Option<i32> {
         self.ipv4_prefix_count
     }
     /// <p>One or more IPv6 prefixes to be assigned to the network interface. You cannot use this option if you use the <code>Ipv6PrefixCount</code> option.</p>
-    pub fn ipv6_prefixes(&self) -> ::std::option::Option<&[crate::types::Ipv6PrefixSpecificationRequest]> {
-        self.ipv6_prefixes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv6_prefixes.is_none()`.
+    pub fn ipv6_prefixes(&self) -> &[crate::types::Ipv6PrefixSpecificationRequest] {
+        self.ipv6_prefixes.as_deref().unwrap_or_default()
     }
     /// <p>The number of IPv6 prefixes to be automatically assigned to the network interface. You cannot use this option if you use the <code>Ipv6Prefix</code> option.</p>
     pub fn ipv6_prefix_count(&self) -> ::std::option::Option<i32> {

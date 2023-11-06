@@ -91,8 +91,10 @@ impl CreateClusterInput {
         self.subnet_group_name.as_deref()
     }
     /// <p>A list of security group names to associate with this cluster.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
     /// <p>Valid values for <code>ddd</code> are:</p>
@@ -126,8 +128,10 @@ impl CreateClusterInput {
         self.kms_key_id.as_deref()
     }
     /// <p>A list of Amazon Resource Names (ARN) that uniquely identify the RDB snapshot files stored in Amazon S3. The snapshot files are used to populate the new cluster. The Amazon S3 object name in the ARN cannot contain any commas.</p>
-    pub fn snapshot_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.snapshot_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.snapshot_arns.is_none()`.
+    pub fn snapshot_arns(&self) -> &[::std::string::String] {
+        self.snapshot_arns.as_deref().unwrap_or_default()
     }
     /// <p>The name of a snapshot from which to restore data into the new cluster. The snapshot status changes to restoring while the new cluster is being created.</p>
     pub fn snapshot_name(&self) -> ::std::option::Option<&str> {
@@ -138,8 +142,10 @@ impl CreateClusterInput {
         self.snapshot_retention_limit
     }
     /// <p>A list of tags to be added to this resource. Tags are comma-separated key,value pairs (e.g. Key=myKey, Value=myKeyValue. You can include multiple tags as shown following: Key=myKey, Value=myKeyValue Key=mySecondKey, Value=mySecondKeyValue.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard.</p>
     /// <p> Example: 05:00-09:00</p>
@@ -200,6 +206,7 @@ pub struct CreateClusterInputBuilder {
 }
 impl CreateClusterInputBuilder {
     /// <p>The name of the cluster. This value must be unique as it also serves as the cluster identifier.</p>
+    /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
@@ -214,6 +221,7 @@ impl CreateClusterInputBuilder {
         &self.cluster_name
     }
     /// <p>The compute and memory capacity of the nodes in the cluster.</p>
+    /// This field is required.
     pub fn node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_type = ::std::option::Option::Some(input.into());
         self
@@ -509,6 +517,7 @@ impl CreateClusterInputBuilder {
         &self.snapshot_window
     }
     /// <p>The name of the Access Control List to associate with the cluster.</p>
+    /// This field is required.
     pub fn acl_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.acl_name = ::std::option::Option::Some(input.into());
         self
@@ -567,7 +576,7 @@ impl CreateClusterInputBuilder {
     /// Consumes the builder and constructs a [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_cluster::CreateClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_cluster::CreateClusterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_cluster::CreateClusterInput {
             cluster_name: self.cluster_name,
             node_type: self.node_type,

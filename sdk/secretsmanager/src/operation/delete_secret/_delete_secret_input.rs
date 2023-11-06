@@ -52,6 +52,7 @@ pub struct DeleteSecretInputBuilder {
 impl DeleteSecretInputBuilder {
     /// <p>The ARN or name of the secret to delete.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
+    /// This field is required.
     pub fn secret_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_id = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +109,9 @@ impl DeleteSecretInputBuilder {
         &self.force_delete_without_recovery
     }
     /// Consumes the builder and constructs a [`DeleteSecretInput`](crate::operation::delete_secret::DeleteSecretInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_secret::DeleteSecretInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_secret::DeleteSecretInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_secret::DeleteSecretInput {
             secret_id: self.secret_id,
             recovery_window_in_days: self.recovery_window_in_days,

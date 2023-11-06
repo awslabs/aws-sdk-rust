@@ -5,42 +5,47 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventSummary {
     /// <p>The Amazon Resource Name (ARN) of the incident that the event happened during.</p>
-    pub incident_record_arn: ::std::option::Option<::std::string::String>,
+    pub incident_record_arn: ::std::string::String,
     /// <p>The timeline event ID.</p>
-    pub event_id: ::std::option::Option<::std::string::String>,
+    pub event_id: ::std::string::String,
     /// <p>The time that the event occurred.</p>
-    pub event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub event_time: ::aws_smithy_types::DateTime,
     /// <p>The time that the timeline event was last updated.</p>
-    pub event_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub event_updated_time: ::aws_smithy_types::DateTime,
     /// <p>The type of event. The timeline event must be <code>Custom Event</code>.</p>
-    pub event_type: ::std::option::Option<::std::string::String>,
+    pub event_type: ::std::string::String,
     /// <p>A list of references in a <code>TimelineEvent</code>.</p>
     pub event_references: ::std::option::Option<::std::vec::Vec<crate::types::EventReference>>,
 }
 impl EventSummary {
     /// <p>The Amazon Resource Name (ARN) of the incident that the event happened during.</p>
-    pub fn incident_record_arn(&self) -> ::std::option::Option<&str> {
-        self.incident_record_arn.as_deref()
+    pub fn incident_record_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.incident_record_arn.deref()
     }
     /// <p>The timeline event ID.</p>
-    pub fn event_id(&self) -> ::std::option::Option<&str> {
-        self.event_id.as_deref()
+    pub fn event_id(&self) -> &str {
+        use std::ops::Deref;
+        self.event_id.deref()
     }
     /// <p>The time that the event occurred.</p>
-    pub fn event_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.event_time.as_ref()
+    pub fn event_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.event_time
     }
     /// <p>The time that the timeline event was last updated.</p>
-    pub fn event_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.event_updated_time.as_ref()
+    pub fn event_updated_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.event_updated_time
     }
     /// <p>The type of event. The timeline event must be <code>Custom Event</code>.</p>
-    pub fn event_type(&self) -> ::std::option::Option<&str> {
-        self.event_type.as_deref()
+    pub fn event_type(&self) -> &str {
+        use std::ops::Deref;
+        self.event_type.deref()
     }
     /// <p>A list of references in a <code>TimelineEvent</code>.</p>
-    pub fn event_references(&self) -> ::std::option::Option<&[crate::types::EventReference]> {
-        self.event_references.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_references.is_none()`.
+    pub fn event_references(&self) -> &[crate::types::EventReference] {
+        self.event_references.as_deref().unwrap_or_default()
     }
 }
 impl EventSummary {
@@ -63,6 +68,7 @@ pub struct EventSummaryBuilder {
 }
 impl EventSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the incident that the event happened during.</p>
+    /// This field is required.
     pub fn incident_record_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.incident_record_arn = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +83,7 @@ impl EventSummaryBuilder {
         &self.incident_record_arn
     }
     /// <p>The timeline event ID.</p>
+    /// This field is required.
     pub fn event_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_id = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +98,7 @@ impl EventSummaryBuilder {
         &self.event_id
     }
     /// <p>The time that the event occurred.</p>
+    /// This field is required.
     pub fn event_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.event_time = ::std::option::Option::Some(input);
         self
@@ -105,6 +113,7 @@ impl EventSummaryBuilder {
         &self.event_time
     }
     /// <p>The time that the timeline event was last updated.</p>
+    /// This field is required.
     pub fn event_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.event_updated_time = ::std::option::Option::Some(input);
         self
@@ -119,6 +128,7 @@ impl EventSummaryBuilder {
         &self.event_updated_time
     }
     /// <p>The type of event. The timeline event must be <code>Custom Event</code>.</p>
+    /// This field is required.
     pub fn event_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_type = ::std::option::Option::Some(input.into());
         self
@@ -153,14 +163,45 @@ impl EventSummaryBuilder {
         &self.event_references
     }
     /// Consumes the builder and constructs a [`EventSummary`](crate::types::EventSummary).
-    pub fn build(self) -> crate::types::EventSummary {
-        crate::types::EventSummary {
-            incident_record_arn: self.incident_record_arn,
-            event_id: self.event_id,
-            event_time: self.event_time,
-            event_updated_time: self.event_updated_time,
-            event_type: self.event_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`incident_record_arn`](crate::types::builders::EventSummaryBuilder::incident_record_arn)
+    /// - [`event_id`](crate::types::builders::EventSummaryBuilder::event_id)
+    /// - [`event_time`](crate::types::builders::EventSummaryBuilder::event_time)
+    /// - [`event_updated_time`](crate::types::builders::EventSummaryBuilder::event_updated_time)
+    /// - [`event_type`](crate::types::builders::EventSummaryBuilder::event_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::EventSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EventSummary {
+            incident_record_arn: self.incident_record_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "incident_record_arn",
+                    "incident_record_arn was not specified but it is required when building EventSummary",
+                )
+            })?,
+            event_id: self.event_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "event_id",
+                    "event_id was not specified but it is required when building EventSummary",
+                )
+            })?,
+            event_time: self.event_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "event_time",
+                    "event_time was not specified but it is required when building EventSummary",
+                )
+            })?,
+            event_updated_time: self.event_updated_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "event_updated_time",
+                    "event_updated_time was not specified but it is required when building EventSummary",
+                )
+            })?,
+            event_type: self.event_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "event_type",
+                    "event_type was not specified but it is required when building EventSummary",
+                )
+            })?,
             event_references: self.event_references,
-        }
+        })
     }
 }

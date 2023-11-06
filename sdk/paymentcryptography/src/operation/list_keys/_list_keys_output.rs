@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListKeysOutput {
     /// <p>The list of keys created within the caller's Amazon Web Services account and Amazon Web Services Region.</p>
-    pub keys: ::std::option::Option<::std::vec::Vec<crate::types::KeySummary>>,
+    pub keys: ::std::vec::Vec<crate::types::KeySummary>,
     /// <p>The token for the next set of results, or an empty or null value if there are no more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListKeysOutput {
     /// <p>The list of keys created within the caller's Amazon Web Services account and Amazon Web Services Region.</p>
-    pub fn keys(&self) -> ::std::option::Option<&[crate::types::KeySummary]> {
-        self.keys.as_deref()
+    pub fn keys(&self) -> &[crate::types::KeySummary] {
+        use std::ops::Deref;
+        self.keys.deref()
     }
     /// <p>The token for the next set of results, or an empty or null value if there are no more results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,18 @@ impl ListKeysOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListKeysOutput`](crate::operation::list_keys::ListKeysOutput).
-    pub fn build(self) -> crate::operation::list_keys::ListKeysOutput {
-        crate::operation::list_keys::ListKeysOutput {
-            keys: self.keys,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`keys`](crate::operation::list_keys::builders::ListKeysOutputBuilder::keys)
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_keys::ListKeysOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_keys::ListKeysOutput {
+            keys: self.keys.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "keys",
+                    "keys was not specified but it is required when building ListKeysOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

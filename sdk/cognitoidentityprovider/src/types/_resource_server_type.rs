@@ -27,8 +27,10 @@ impl ResourceServerType {
         self.name.as_deref()
     }
     /// <p>A list of scopes that are defined for the resource server.</p>
-    pub fn scopes(&self) -> ::std::option::Option<&[crate::types::ResourceServerScopeType]> {
-        self.scopes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scopes.is_none()`.
+    pub fn scopes(&self) -> &[crate::types::ResourceServerScopeType] {
+        self.scopes.as_deref().unwrap_or_default()
     }
 }
 impl ResourceServerType {

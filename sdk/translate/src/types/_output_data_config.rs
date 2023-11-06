@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputDataConfig {
     /// <p>The URI of the S3 folder that contains a translation job's output file. The folder must be in the same Region as the API endpoint that you are calling.</p>
-    pub s3_uri: ::std::option::Option<::std::string::String>,
+    pub s3_uri: ::std::string::String,
     /// <p>The encryption key used to encrypt this object.</p>
     pub encryption_key: ::std::option::Option<crate::types::EncryptionKey>,
 }
 impl OutputDataConfig {
     /// <p>The URI of the S3 folder that contains a translation job's output file. The folder must be in the same Region as the API endpoint that you are calling.</p>
-    pub fn s3_uri(&self) -> ::std::option::Option<&str> {
-        self.s3_uri.as_deref()
+    pub fn s3_uri(&self) -> &str {
+        use std::ops::Deref;
+        self.s3_uri.deref()
     }
     /// <p>The encryption key used to encrypt this object.</p>
     pub fn encryption_key(&self) -> ::std::option::Option<&crate::types::EncryptionKey> {
@@ -35,6 +36,7 @@ pub struct OutputDataConfigBuilder {
 }
 impl OutputDataConfigBuilder {
     /// <p>The URI of the S3 folder that contains a translation job's output file. The folder must be in the same Region as the API endpoint that you are calling.</p>
+    /// This field is required.
     pub fn s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_uri = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl OutputDataConfigBuilder {
         &self.encryption_key
     }
     /// Consumes the builder and constructs a [`OutputDataConfig`](crate::types::OutputDataConfig).
-    pub fn build(self) -> crate::types::OutputDataConfig {
-        crate::types::OutputDataConfig {
-            s3_uri: self.s3_uri,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`s3_uri`](crate::types::builders::OutputDataConfigBuilder::s3_uri)
+    pub fn build(self) -> ::std::result::Result<crate::types::OutputDataConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::OutputDataConfig {
+            s3_uri: self.s3_uri.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "s3_uri",
+                    "s3_uri was not specified but it is required when building OutputDataConfig",
+                )
+            })?,
             encryption_key: self.encryption_key,
-        }
+        })
     }
 }

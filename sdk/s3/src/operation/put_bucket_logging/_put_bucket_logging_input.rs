@@ -59,6 +59,7 @@ pub struct PutBucketLoggingInputBuilder {
 }
 impl PutBucketLoggingInputBuilder {
     /// <p>The name of the bucket for which to set the logging parameters.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -73,6 +74,7 @@ impl PutBucketLoggingInputBuilder {
         &self.bucket
     }
     /// <p>Container for logging status information.</p>
+    /// This field is required.
     pub fn bucket_logging_status(mut self, input: crate::types::BucketLoggingStatus) -> Self {
         self.bucket_logging_status = ::std::option::Option::Some(input);
         self
@@ -137,7 +139,7 @@ impl PutBucketLoggingInputBuilder {
     /// Consumes the builder and constructs a [`PutBucketLoggingInput`](crate::operation::put_bucket_logging::PutBucketLoggingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_bucket_logging::PutBucketLoggingInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_bucket_logging::PutBucketLoggingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_bucket_logging::PutBucketLoggingInput {
             bucket: self.bucket,
             bucket_logging_status: self.bucket_logging_status,

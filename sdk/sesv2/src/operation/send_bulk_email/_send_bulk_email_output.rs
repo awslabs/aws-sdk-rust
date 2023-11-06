@@ -5,13 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendBulkEmailOutput {
     /// <p>One object per intended recipient. Check each response object and retry any messages with a failure status.</p>
-    pub bulk_email_entry_results: ::std::option::Option<::std::vec::Vec<crate::types::BulkEmailEntryResult>>,
+    pub bulk_email_entry_results: ::std::vec::Vec<crate::types::BulkEmailEntryResult>,
     _request_id: Option<String>,
 }
 impl SendBulkEmailOutput {
     /// <p>One object per intended recipient. Check each response object and retry any messages with a failure status.</p>
-    pub fn bulk_email_entry_results(&self) -> ::std::option::Option<&[crate::types::BulkEmailEntryResult]> {
-        self.bulk_email_entry_results.as_deref()
+    pub fn bulk_email_entry_results(&self) -> &[crate::types::BulkEmailEntryResult] {
+        use std::ops::Deref;
+        self.bulk_email_entry_results.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for SendBulkEmailOutput {
@@ -64,10 +65,19 @@ impl SendBulkEmailOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SendBulkEmailOutput`](crate::operation::send_bulk_email::SendBulkEmailOutput).
-    pub fn build(self) -> crate::operation::send_bulk_email::SendBulkEmailOutput {
-        crate::operation::send_bulk_email::SendBulkEmailOutput {
-            bulk_email_entry_results: self.bulk_email_entry_results,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bulk_email_entry_results`](crate::operation::send_bulk_email::builders::SendBulkEmailOutputBuilder::bulk_email_entry_results)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::send_bulk_email::SendBulkEmailOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::send_bulk_email::SendBulkEmailOutput {
+            bulk_email_entry_results: self.bulk_email_entry_results.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "bulk_email_entry_results",
+                    "bulk_email_entry_results was not specified but it is required when building SendBulkEmailOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

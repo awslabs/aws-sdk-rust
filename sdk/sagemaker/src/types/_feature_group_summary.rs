@@ -56,6 +56,7 @@ pub struct FeatureGroupSummaryBuilder {
 }
 impl FeatureGroupSummaryBuilder {
     /// <p>The name of <code>FeatureGroup</code>.</p>
+    /// This field is required.
     pub fn feature_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_group_name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +71,7 @@ impl FeatureGroupSummaryBuilder {
         &self.feature_group_name
     }
     /// <p>Unique identifier for the <code>FeatureGroup</code>.</p>
+    /// This field is required.
     pub fn feature_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_group_arn = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +86,7 @@ impl FeatureGroupSummaryBuilder {
         &self.feature_group_arn
     }
     /// <p>A timestamp indicating the time of creation time of the <code>FeatureGroup</code>.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self

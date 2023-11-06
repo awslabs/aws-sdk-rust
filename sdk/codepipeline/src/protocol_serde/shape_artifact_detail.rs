@@ -22,7 +22,7 @@ where
                             );
                         }
                         "s3location" => {
-                            builder = builder.set_s3location(crate::protocol_serde::shape_s3_location::de_s3_location(tokens)?);
+                            builder = builder.set_s3_location(crate::protocol_serde::shape_s3_location::de_s3_location(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

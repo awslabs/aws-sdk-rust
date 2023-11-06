@@ -57,6 +57,7 @@ pub struct GetLoaderJobStatusInputBuilder {
 }
 impl GetLoaderJobStatusInputBuilder {
     /// <p>The load ID of the load job to get the status of.</p>
+    /// This field is required.
     pub fn load_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_id = ::std::option::Option::Some(input.into());
         self
@@ -132,7 +133,7 @@ impl GetLoaderJobStatusInputBuilder {
     /// Consumes the builder and constructs a [`GetLoaderJobStatusInput`](crate::operation::get_loader_job_status::GetLoaderJobStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_loader_job_status::GetLoaderJobStatusInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_loader_job_status::GetLoaderJobStatusInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_loader_job_status::GetLoaderJobStatusInput {
             load_id: self.load_id,

@@ -11,8 +11,10 @@ pub struct ListCreateAccountStatusOutput {
 }
 impl ListCreateAccountStatusOutput {
     /// <p>A list of objects with details about the requests. Certain elements, such as the accountId number, are present in the output only after the account has been successfully created.</p>
-    pub fn create_account_statuses(&self) -> ::std::option::Option<&[crate::types::CreateAccountStatus]> {
-        self.create_account_statuses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.create_account_statuses.is_none()`.
+    pub fn create_account_statuses(&self) -> &[crate::types::CreateAccountStatus] {
+        self.create_account_statuses.as_deref().unwrap_or_default()
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

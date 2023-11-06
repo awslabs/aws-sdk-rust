@@ -2,7 +2,7 @@
 pub fn ser_thousand_separator_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ThousandSeparatorOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.symbol {
         object.key("Symbol").string(var_1.as_str());
     }

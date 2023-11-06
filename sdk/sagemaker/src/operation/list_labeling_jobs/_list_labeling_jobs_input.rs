@@ -232,7 +232,7 @@ impl ListLabelingJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListLabelingJobsInput`](crate::operation::list_labeling_jobs::ListLabelingJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_labeling_jobs::ListLabelingJobsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_labeling_jobs::ListLabelingJobsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_labeling_jobs::ListLabelingJobsInput {
             creation_time_after: self.creation_time_after,
             creation_time_before: self.creation_time_before,

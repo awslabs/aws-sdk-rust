@@ -28,6 +28,7 @@ pub struct ResolveCustomerInputBuilder {
 }
 impl ResolveCustomerInputBuilder {
     /// <p>When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a <code>CustomerIdentifier</code> along with the <code>CustomerAWSAccountId</code> and <code>ProductCode</code>.</p>
+    /// This field is required.
     pub fn registration_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registration_token = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl ResolveCustomerInputBuilder {
     /// Consumes the builder and constructs a [`ResolveCustomerInput`](crate::operation::resolve_customer::ResolveCustomerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::resolve_customer::ResolveCustomerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::resolve_customer::ResolveCustomerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::resolve_customer::ResolveCustomerInput {
             registration_token: self.registration_token,
         })

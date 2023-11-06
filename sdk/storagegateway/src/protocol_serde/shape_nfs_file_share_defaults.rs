@@ -2,7 +2,7 @@
 pub fn ser_nfs_file_share_defaults(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NfsFileShareDefaults,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.file_mode {
         object.key("FileMode").string(var_1.as_str());
     }

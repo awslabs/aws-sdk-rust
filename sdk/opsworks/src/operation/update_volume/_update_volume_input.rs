@@ -41,6 +41,7 @@ pub struct UpdateVolumeInputBuilder {
 }
 impl UpdateVolumeInputBuilder {
     /// <p>The volume ID.</p>
+    /// This field is required.
     pub fn volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_id = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +84,9 @@ impl UpdateVolumeInputBuilder {
         &self.mount_point
     }
     /// Consumes the builder and constructs a [`UpdateVolumeInput`](crate::operation::update_volume::UpdateVolumeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_volume::UpdateVolumeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_volume::UpdateVolumeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_volume::UpdateVolumeInput {
             volume_id: self.volume_id,
             name: self.name,

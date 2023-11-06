@@ -27,6 +27,7 @@ pub struct DeregisterManagedInstanceInputBuilder {
 }
 impl DeregisterManagedInstanceInputBuilder {
     /// <p>The ID assigned to the managed node when you registered it using the activation process. </p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeregisterManagedInstanceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_managed_instance::DeregisterManagedInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::deregister_managed_instance::DeregisterManagedInstanceInput {
             instance_id: self.instance_id,

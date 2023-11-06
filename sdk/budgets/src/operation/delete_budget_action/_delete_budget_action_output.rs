@@ -4,21 +4,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteBudgetActionOutput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
-    pub account_id: ::std::option::Option<::std::string::String>,
+    pub account_id: ::std::string::String,
     /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
-    pub budget_name: ::std::option::Option<::std::string::String>,
+    pub budget_name: ::std::string::String,
     /// <p>A budget action resource. </p>
     pub action: ::std::option::Option<crate::types::Action>,
     _request_id: Option<String>,
 }
 impl DeleteBudgetActionOutput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
-        self.account_id.as_deref()
+    pub fn account_id(&self) -> &str {
+        use std::ops::Deref;
+        self.account_id.deref()
     }
     /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
-    pub fn budget_name(&self) -> ::std::option::Option<&str> {
-        self.budget_name.as_deref()
+    pub fn budget_name(&self) -> &str {
+        use std::ops::Deref;
+        self.budget_name.deref()
     }
     /// <p>A budget action resource. </p>
     pub fn action(&self) -> ::std::option::Option<&crate::types::Action> {
@@ -48,6 +50,7 @@ pub struct DeleteBudgetActionOutputBuilder {
 }
 impl DeleteBudgetActionOutputBuilder {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl DeleteBudgetActionOutputBuilder {
         &self.account_id
     }
     /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
+    /// This field is required.
     pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.budget_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +80,7 @@ impl DeleteBudgetActionOutputBuilder {
         &self.budget_name
     }
     /// <p>A budget action resource. </p>
+    /// This field is required.
     pub fn action(mut self, input: crate::types::Action) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
@@ -99,12 +104,28 @@ impl DeleteBudgetActionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteBudgetActionOutput`](crate::operation::delete_budget_action::DeleteBudgetActionOutput).
-    pub fn build(self) -> crate::operation::delete_budget_action::DeleteBudgetActionOutput {
-        crate::operation::delete_budget_action::DeleteBudgetActionOutput {
-            account_id: self.account_id,
-            budget_name: self.budget_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`account_id`](crate::operation::delete_budget_action::builders::DeleteBudgetActionOutputBuilder::account_id)
+    /// - [`budget_name`](crate::operation::delete_budget_action::builders::DeleteBudgetActionOutputBuilder::budget_name)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_budget_action::DeleteBudgetActionOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_budget_action::DeleteBudgetActionOutput {
+            account_id: self.account_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "account_id",
+                    "account_id was not specified but it is required when building DeleteBudgetActionOutput",
+                )
+            })?,
+            budget_name: self.budget_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "budget_name",
+                    "budget_name was not specified but it is required when building DeleteBudgetActionOutput",
+                )
+            })?,
             action: self.action,
             _request_id: self._request_id,
-        }
+        })
     }
 }

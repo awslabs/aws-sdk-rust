@@ -48,6 +48,7 @@ pub struct UpdateUploadInputBuilder {
 }
 impl UpdateUploadInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the uploaded test spec.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -104,7 +105,9 @@ impl UpdateUploadInputBuilder {
         &self.edit_content
     }
     /// Consumes the builder and constructs a [`UpdateUploadInput`](crate::operation::update_upload::UpdateUploadInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_upload::UpdateUploadInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_upload::UpdateUploadInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_upload::UpdateUploadInput {
             arn: self.arn,
             name: self.name,

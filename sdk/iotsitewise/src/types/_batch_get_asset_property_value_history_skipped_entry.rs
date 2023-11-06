@@ -5,20 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetAssetPropertyValueHistorySkippedEntry {
     /// <p>The ID of the entry.</p>
-    pub entry_id: ::std::option::Option<::std::string::String>,
+    pub entry_id: ::std::string::String,
     /// <p>The completion status of each entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValueHistory.html">BatchGetAssetPropertyValueHistory</a> API.</p>
-    pub completion_status: ::std::option::Option<crate::types::BatchEntryCompletionStatus>,
+    pub completion_status: crate::types::BatchEntryCompletionStatus,
     /// <p>The error information, such as the error code and the timestamp.</p>
     pub error_info: ::std::option::Option<crate::types::BatchGetAssetPropertyValueHistoryErrorInfo>,
 }
 impl BatchGetAssetPropertyValueHistorySkippedEntry {
     /// <p>The ID of the entry.</p>
-    pub fn entry_id(&self) -> ::std::option::Option<&str> {
-        self.entry_id.as_deref()
+    pub fn entry_id(&self) -> &str {
+        use std::ops::Deref;
+        self.entry_id.deref()
     }
     /// <p>The completion status of each entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValueHistory.html">BatchGetAssetPropertyValueHistory</a> API.</p>
-    pub fn completion_status(&self) -> ::std::option::Option<&crate::types::BatchEntryCompletionStatus> {
-        self.completion_status.as_ref()
+    pub fn completion_status(&self) -> &crate::types::BatchEntryCompletionStatus {
+        &self.completion_status
     }
     /// <p>The error information, such as the error code and the timestamp.</p>
     pub fn error_info(&self) -> ::std::option::Option<&crate::types::BatchGetAssetPropertyValueHistoryErrorInfo> {
@@ -42,6 +43,7 @@ pub struct BatchGetAssetPropertyValueHistorySkippedEntryBuilder {
 }
 impl BatchGetAssetPropertyValueHistorySkippedEntryBuilder {
     /// <p>The ID of the entry.</p>
+    /// This field is required.
     pub fn entry_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entry_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +58,7 @@ impl BatchGetAssetPropertyValueHistorySkippedEntryBuilder {
         &self.entry_id
     }
     /// <p>The completion status of each entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValueHistory.html">BatchGetAssetPropertyValueHistory</a> API.</p>
+    /// This field is required.
     pub fn completion_status(mut self, input: crate::types::BatchEntryCompletionStatus) -> Self {
         self.completion_status = ::std::option::Option::Some(input);
         self
@@ -84,11 +87,26 @@ impl BatchGetAssetPropertyValueHistorySkippedEntryBuilder {
         &self.error_info
     }
     /// Consumes the builder and constructs a [`BatchGetAssetPropertyValueHistorySkippedEntry`](crate::types::BatchGetAssetPropertyValueHistorySkippedEntry).
-    pub fn build(self) -> crate::types::BatchGetAssetPropertyValueHistorySkippedEntry {
-        crate::types::BatchGetAssetPropertyValueHistorySkippedEntry {
-            entry_id: self.entry_id,
-            completion_status: self.completion_status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`entry_id`](crate::types::builders::BatchGetAssetPropertyValueHistorySkippedEntryBuilder::entry_id)
+    /// - [`completion_status`](crate::types::builders::BatchGetAssetPropertyValueHistorySkippedEntryBuilder::completion_status)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::BatchGetAssetPropertyValueHistorySkippedEntry, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::BatchGetAssetPropertyValueHistorySkippedEntry {
+            entry_id: self.entry_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "entry_id",
+                    "entry_id was not specified but it is required when building BatchGetAssetPropertyValueHistorySkippedEntry",
+                )
+            })?,
+            completion_status: self.completion_status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "completion_status",
+                    "completion_status was not specified but it is required when building BatchGetAssetPropertyValueHistorySkippedEntry",
+                )
+            })?,
             error_info: self.error_info,
-        }
+        })
     }
 }

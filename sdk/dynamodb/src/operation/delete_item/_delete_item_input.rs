@@ -196,6 +196,7 @@ pub struct DeleteItemInputBuilder {
 }
 impl DeleteItemInputBuilder {
     /// <p>The name of the table from which to delete the item.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -538,7 +539,7 @@ impl DeleteItemInputBuilder {
         &self.return_values_on_condition_check_failure
     }
     /// Consumes the builder and constructs a [`DeleteItemInput`](crate::operation::delete_item::DeleteItemInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_item::DeleteItemInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_item::DeleteItemInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_item::DeleteItemInput {
             table_name: self.table_name,
             key: self.key,

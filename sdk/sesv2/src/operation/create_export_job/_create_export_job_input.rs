@@ -35,6 +35,7 @@ pub struct CreateExportJobInputBuilder {
 }
 impl CreateExportJobInputBuilder {
     /// <p>The data source for the export job.</p>
+    /// This field is required.
     pub fn export_data_source(mut self, input: crate::types::ExportDataSource) -> Self {
         self.export_data_source = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl CreateExportJobInputBuilder {
         &self.export_data_source
     }
     /// <p>The destination for the export job.</p>
+    /// This field is required.
     pub fn export_destination(mut self, input: crate::types::ExportDestination) -> Self {
         self.export_destination = ::std::option::Option::Some(input);
         self
@@ -65,7 +67,7 @@ impl CreateExportJobInputBuilder {
     /// Consumes the builder and constructs a [`CreateExportJobInput`](crate::operation::create_export_job::CreateExportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_export_job::CreateExportJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_export_job::CreateExportJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_export_job::CreateExportJobInput {
             export_data_source: self.export_data_source,
             export_destination: self.export_destination,

@@ -103,8 +103,10 @@ impl AmazonRedshiftNodeData {
         self.iam_role.as_ref()
     }
     /// <p>Optional values when connecting to the Redshift cluster.</p>
-    pub fn advanced_options(&self) -> ::std::option::Option<&[crate::types::AmazonRedshiftAdvancedOption]> {
-        self.advanced_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.advanced_options.is_none()`.
+    pub fn advanced_options(&self) -> &[crate::types::AmazonRedshiftAdvancedOption] {
+        self.advanced_options.as_deref().unwrap_or_default()
     }
     /// <p>The SQL used to fetch the data from a Redshift sources when the SourceType is 'query'.</p>
     pub fn sample_query(&self) -> ::std::option::Option<&str> {
@@ -151,16 +153,20 @@ impl AmazonRedshiftNodeData {
         self.crawler_connection.as_deref()
     }
     /// <p>The array of schema output for a given node.</p>
-    pub fn table_schema(&self) -> ::std::option::Option<&[crate::types::Option]> {
-        self.table_schema.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.table_schema.is_none()`.
+    pub fn table_schema(&self) -> &[crate::types::Option] {
+        self.table_schema.as_deref().unwrap_or_default()
     }
     /// <p>The name of the temporary staging table that is used when doing a MERGE or APPEND with upsert.</p>
     pub fn staging_table(&self) -> ::std::option::Option<&str> {
         self.staging_table.as_deref()
     }
     /// <p>The list of column names used to determine a matching record when doing a MERGE or APPEND with upsert.</p>
-    pub fn selected_columns(&self) -> ::std::option::Option<&[crate::types::Option]> {
-        self.selected_columns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.selected_columns.is_none()`.
+    pub fn selected_columns(&self) -> &[crate::types::Option] {
+        self.selected_columns.as_deref().unwrap_or_default()
     }
 }
 impl AmazonRedshiftNodeData {

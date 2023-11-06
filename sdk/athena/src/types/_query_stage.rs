@@ -57,8 +57,10 @@ impl QueryStage {
         self.query_stage_plan.as_ref()
     }
     /// <p>List of sub query stages that form this stage execution plan.</p>
-    pub fn sub_stages(&self) -> ::std::option::Option<&[crate::types::QueryStage]> {
-        self.sub_stages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sub_stages.is_none()`.
+    pub fn sub_stages(&self) -> &[crate::types::QueryStage] {
+        self.sub_stages.as_deref().unwrap_or_default()
     }
 }
 impl QueryStage {

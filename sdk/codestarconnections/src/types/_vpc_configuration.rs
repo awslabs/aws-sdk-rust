@@ -5,26 +5,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcConfiguration {
     /// <p>The ID of the Amazon VPC connected to the infrastructure where your provider type is installed.</p>
-    pub vpc_id: ::std::option::Option<::std::string::String>,
+    pub vpc_id: ::std::string::String,
     /// <p>The ID of the subnet or subnets associated with the Amazon VPC connected to the infrastructure where your provider type is installed.</p>
-    pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subnet_ids: ::std::vec::Vec<::std::string::String>,
     /// <p>The ID of the security group or security groups associated with the Amazon VPC connected to the infrastructure where your provider type is installed.</p>
-    pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_group_ids: ::std::vec::Vec<::std::string::String>,
     /// <p>The value of the Transport Layer Security (TLS) certificate associated with the infrastructure where your provider type is installed.</p>
     pub tls_certificate: ::std::option::Option<::std::string::String>,
 }
 impl VpcConfiguration {
     /// <p>The ID of the Amazon VPC connected to the infrastructure where your provider type is installed.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
-        self.vpc_id.as_deref()
+    pub fn vpc_id(&self) -> &str {
+        use std::ops::Deref;
+        self.vpc_id.deref()
     }
     /// <p>The ID of the subnet or subnets associated with the Amazon VPC connected to the infrastructure where your provider type is installed.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.subnet_ids.deref()
     }
     /// <p>The ID of the security group or security groups associated with the Amazon VPC connected to the infrastructure where your provider type is installed.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.security_group_ids.deref()
     }
     /// <p>The value of the Transport Layer Security (TLS) certificate associated with the infrastructure where your provider type is installed.</p>
     pub fn tls_certificate(&self) -> ::std::option::Option<&str> {
@@ -49,6 +52,7 @@ pub struct VpcConfigurationBuilder {
 }
 impl VpcConfigurationBuilder {
     /// <p>The ID of the Amazon VPC connected to the infrastructure where your provider type is installed.</p>
+    /// This field is required.
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
         self
@@ -117,12 +121,31 @@ impl VpcConfigurationBuilder {
         &self.tls_certificate
     }
     /// Consumes the builder and constructs a [`VpcConfiguration`](crate::types::VpcConfiguration).
-    pub fn build(self) -> crate::types::VpcConfiguration {
-        crate::types::VpcConfiguration {
-            vpc_id: self.vpc_id,
-            subnet_ids: self.subnet_ids,
-            security_group_ids: self.security_group_ids,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`vpc_id`](crate::types::builders::VpcConfigurationBuilder::vpc_id)
+    /// - [`subnet_ids`](crate::types::builders::VpcConfigurationBuilder::subnet_ids)
+    /// - [`security_group_ids`](crate::types::builders::VpcConfigurationBuilder::security_group_ids)
+    pub fn build(self) -> ::std::result::Result<crate::types::VpcConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::VpcConfiguration {
+            vpc_id: self.vpc_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "vpc_id",
+                    "vpc_id was not specified but it is required when building VpcConfiguration",
+                )
+            })?,
+            subnet_ids: self.subnet_ids.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "subnet_ids",
+                    "subnet_ids was not specified but it is required when building VpcConfiguration",
+                )
+            })?,
+            security_group_ids: self.security_group_ids.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "security_group_ids",
+                    "security_group_ids was not specified but it is required when building VpcConfiguration",
+                )
+            })?,
             tls_certificate: self.tls_certificate,
-        }
+        })
     }
 }

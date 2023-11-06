@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDevEnvironmentsOutput {
     /// <p>Information about the Dev Environments in a project.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::DevEnvironmentSummary>>,
+    pub items: ::std::vec::Vec<crate::types::DevEnvironmentSummary>,
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListDevEnvironmentsOutput {
     /// <p>Information about the Dev Environments in a project.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::DevEnvironmentSummary]> {
-        self.items.as_deref()
+    pub fn items(&self) -> &[crate::types::DevEnvironmentSummary] {
+        use std::ops::Deref;
+        self.items.deref()
     }
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,21 @@ impl ListDevEnvironmentsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDevEnvironmentsOutput`](crate::operation::list_dev_environments::ListDevEnvironmentsOutput).
-    pub fn build(self) -> crate::operation::list_dev_environments::ListDevEnvironmentsOutput {
-        crate::operation::list_dev_environments::ListDevEnvironmentsOutput {
-            items: self.items,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`items`](crate::operation::list_dev_environments::builders::ListDevEnvironmentsOutputBuilder::items)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_dev_environments::ListDevEnvironmentsOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_dev_environments::ListDevEnvironmentsOutput {
+            items: self.items.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "items",
+                    "items was not specified but it is required when building ListDevEnvironmentsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

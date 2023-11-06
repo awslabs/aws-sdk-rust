@@ -27,6 +27,7 @@ pub struct DescribeAddressInputBuilder {
 }
 impl DescribeAddressInputBuilder {
     /// <p>The automatically generated ID for a specific address.</p>
+    /// This field is required.
     pub fn address_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.address_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeAddressInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAddressInput`](crate::operation::describe_address::DescribeAddressInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_address::DescribeAddressInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_address::DescribeAddressInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_address::DescribeAddressInput { address_id: self.address_id })
     }
 }

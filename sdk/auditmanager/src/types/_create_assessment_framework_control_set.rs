@@ -5,18 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAssessmentFrameworkControlSet {
     /// <p> The name of the control set. </p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p> The list of controls within the control set. This doesn't contain the control set ID. </p>
     pub controls: ::std::option::Option<::std::vec::Vec<crate::types::CreateAssessmentFrameworkControl>>,
 }
 impl CreateAssessmentFrameworkControlSet {
     /// <p> The name of the control set. </p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p> The list of controls within the control set. This doesn't contain the control set ID. </p>
-    pub fn controls(&self) -> ::std::option::Option<&[crate::types::CreateAssessmentFrameworkControl]> {
-        self.controls.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.controls.is_none()`.
+    pub fn controls(&self) -> &[crate::types::CreateAssessmentFrameworkControl] {
+        self.controls.as_deref().unwrap_or_default()
     }
 }
 impl CreateAssessmentFrameworkControlSet {
@@ -35,6 +38,7 @@ pub struct CreateAssessmentFrameworkControlSetBuilder {
 }
 impl CreateAssessmentFrameworkControlSetBuilder {
     /// <p> The name of the control set. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -69,10 +73,17 @@ impl CreateAssessmentFrameworkControlSetBuilder {
         &self.controls
     }
     /// Consumes the builder and constructs a [`CreateAssessmentFrameworkControlSet`](crate::types::CreateAssessmentFrameworkControlSet).
-    pub fn build(self) -> crate::types::CreateAssessmentFrameworkControlSet {
-        crate::types::CreateAssessmentFrameworkControlSet {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::CreateAssessmentFrameworkControlSetBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::CreateAssessmentFrameworkControlSet, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CreateAssessmentFrameworkControlSet {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CreateAssessmentFrameworkControlSet",
+                )
+            })?,
             controls: self.controls,
-        }
+        })
     }
 }

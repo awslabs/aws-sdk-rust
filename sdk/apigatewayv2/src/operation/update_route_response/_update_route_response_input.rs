@@ -72,6 +72,7 @@ pub struct UpdateRouteResponseInputBuilder {
 }
 impl UpdateRouteResponseInputBuilder {
     /// <p>The API identifier.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -152,6 +153,7 @@ impl UpdateRouteResponseInputBuilder {
         &self.response_parameters
     }
     /// <p>The route ID.</p>
+    /// This field is required.
     pub fn route_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_id = ::std::option::Option::Some(input.into());
         self
@@ -166,6 +168,7 @@ impl UpdateRouteResponseInputBuilder {
         &self.route_id
     }
     /// <p>The route response ID.</p>
+    /// This field is required.
     pub fn route_response_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_response_id = ::std::option::Option::Some(input.into());
         self
@@ -196,7 +199,7 @@ impl UpdateRouteResponseInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRouteResponseInput`](crate::operation::update_route_response::UpdateRouteResponseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_route_response::UpdateRouteResponseInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_route_response::UpdateRouteResponseInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_route_response::UpdateRouteResponseInput {
             api_id: self.api_id,

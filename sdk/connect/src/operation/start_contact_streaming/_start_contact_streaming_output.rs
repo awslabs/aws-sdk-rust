@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartContactStreamingOutput {
     /// <p>The identifier of the streaming configuration enabled. </p>
-    pub streaming_id: ::std::option::Option<::std::string::String>,
+    pub streaming_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl StartContactStreamingOutput {
     /// <p>The identifier of the streaming configuration enabled. </p>
-    pub fn streaming_id(&self) -> ::std::option::Option<&str> {
-        self.streaming_id.as_deref()
+    pub fn streaming_id(&self) -> &str {
+        use std::ops::Deref;
+        self.streaming_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for StartContactStreamingOutput {
@@ -34,6 +35,7 @@ pub struct StartContactStreamingOutputBuilder {
 }
 impl StartContactStreamingOutputBuilder {
     /// <p>The identifier of the streaming configuration enabled. </p>
+    /// This field is required.
     pub fn streaming_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.streaming_id = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,20 @@ impl StartContactStreamingOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartContactStreamingOutput`](crate::operation::start_contact_streaming::StartContactStreamingOutput).
-    pub fn build(self) -> crate::operation::start_contact_streaming::StartContactStreamingOutput {
-        crate::operation::start_contact_streaming::StartContactStreamingOutput {
-            streaming_id: self.streaming_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`streaming_id`](crate::operation::start_contact_streaming::builders::StartContactStreamingOutputBuilder::streaming_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::start_contact_streaming::StartContactStreamingOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::start_contact_streaming::StartContactStreamingOutput {
+            streaming_id: self.streaming_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "streaming_id",
+                    "streaming_id was not specified but it is required when building StartContactStreamingOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

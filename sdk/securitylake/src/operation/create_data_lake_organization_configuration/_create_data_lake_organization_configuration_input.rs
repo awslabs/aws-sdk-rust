@@ -8,8 +8,10 @@ pub struct CreateDataLakeOrganizationConfigurationInput {
 }
 impl CreateDataLakeOrganizationConfigurationInput {
     /// <p>Enable Security Lake with the specified configuration settings, to begin collecting security data for new accounts in your organization.</p>
-    pub fn auto_enable_new_account(&self) -> ::std::option::Option<&[crate::types::DataLakeAutoEnableNewAccountConfiguration]> {
-        self.auto_enable_new_account.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auto_enable_new_account.is_none()`.
+    pub fn auto_enable_new_account(&self) -> &[crate::types::DataLakeAutoEnableNewAccountConfiguration] {
+        self.auto_enable_new_account.as_deref().unwrap_or_default()
     }
 }
 impl CreateDataLakeOrganizationConfigurationInput {
@@ -54,7 +56,7 @@ impl CreateDataLakeOrganizationConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_data_lake_organization_configuration::CreateDataLakeOrganizationConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_data_lake_organization_configuration::CreateDataLakeOrganizationConfigurationInput {

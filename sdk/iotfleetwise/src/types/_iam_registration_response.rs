@@ -5,20 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IamRegistrationResponse {
     /// <p>The Amazon Resource Name (ARN) of the IAM role to register.</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
     /// <p>The status of registering your IAM resource. The status can be one of <code>REGISTRATION_SUCCESS</code>, <code>REGISTRATION_PENDING</code>, <code>REGISTRATION_FAILURE</code>.</p>
-    pub registration_status: ::std::option::Option<crate::types::RegistrationStatus>,
+    pub registration_status: crate::types::RegistrationStatus,
     /// <p>A message associated with a registration error.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl IamRegistrationResponse {
     /// <p>The Amazon Resource Name (ARN) of the IAM role to register.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
     /// <p>The status of registering your IAM resource. The status can be one of <code>REGISTRATION_SUCCESS</code>, <code>REGISTRATION_PENDING</code>, <code>REGISTRATION_FAILURE</code>.</p>
-    pub fn registration_status(&self) -> ::std::option::Option<&crate::types::RegistrationStatus> {
-        self.registration_status.as_ref()
+    pub fn registration_status(&self) -> &crate::types::RegistrationStatus {
+        &self.registration_status
     }
     /// <p>A message associated with a registration error.</p>
     pub fn error_message(&self) -> ::std::option::Option<&str> {
@@ -42,6 +43,7 @@ pub struct IamRegistrationResponseBuilder {
 }
 impl IamRegistrationResponseBuilder {
     /// <p>The Amazon Resource Name (ARN) of the IAM role to register.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +58,7 @@ impl IamRegistrationResponseBuilder {
         &self.role_arn
     }
     /// <p>The status of registering your IAM resource. The status can be one of <code>REGISTRATION_SUCCESS</code>, <code>REGISTRATION_PENDING</code>, <code>REGISTRATION_FAILURE</code>.</p>
+    /// This field is required.
     pub fn registration_status(mut self, input: crate::types::RegistrationStatus) -> Self {
         self.registration_status = ::std::option::Option::Some(input);
         self
@@ -84,11 +87,24 @@ impl IamRegistrationResponseBuilder {
         &self.error_message
     }
     /// Consumes the builder and constructs a [`IamRegistrationResponse`](crate::types::IamRegistrationResponse).
-    pub fn build(self) -> crate::types::IamRegistrationResponse {
-        crate::types::IamRegistrationResponse {
-            role_arn: self.role_arn,
-            registration_status: self.registration_status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`role_arn`](crate::types::builders::IamRegistrationResponseBuilder::role_arn)
+    /// - [`registration_status`](crate::types::builders::IamRegistrationResponseBuilder::registration_status)
+    pub fn build(self) -> ::std::result::Result<crate::types::IamRegistrationResponse, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::IamRegistrationResponse {
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building IamRegistrationResponse",
+                )
+            })?,
+            registration_status: self.registration_status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "registration_status",
+                    "registration_status was not specified but it is required when building IamRegistrationResponse",
+                )
+            })?,
             error_message: self.error_message,
-        }
+        })
     }
 }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeRoleAlias`](crate::operation::describe_role_alias::builders::DescribeRoleAliasFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`role_alias(impl Into<String>)`](crate::operation::describe_role_alias::builders::DescribeRoleAliasFluentBuilder::role_alias) / [`set_role_alias(Option<String>)`](crate::operation::describe_role_alias::builders::DescribeRoleAliasFluentBuilder::set_role_alias): <p>The role alias to describe.</p>
+    ///   - [`role_alias(impl Into<String>)`](crate::operation::describe_role_alias::builders::DescribeRoleAliasFluentBuilder::role_alias) / [`set_role_alias(Option<String>)`](crate::operation::describe_role_alias::builders::DescribeRoleAliasFluentBuilder::set_role_alias):<br>required: **true**<br><p>The role alias to describe.</p><br>
     /// - On success, responds with [`DescribeRoleAliasOutput`](crate::operation::describe_role_alias::DescribeRoleAliasOutput) with field(s):
     ///   - [`role_alias_description(Option<RoleAliasDescription>)`](crate::operation::describe_role_alias::DescribeRoleAliasOutput::role_alias_description): <p>The role alias description.</p>
     /// - On failure, responds with [`SdkError<DescribeRoleAliasError>`](crate::operation::describe_role_alias::DescribeRoleAliasError)

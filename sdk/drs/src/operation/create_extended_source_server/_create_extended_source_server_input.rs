@@ -42,6 +42,7 @@ pub struct CreateExtendedSourceServerInputBuilder {
 }
 impl CreateExtendedSourceServerInputBuilder {
     /// <p>This defines the ARN of the source server in staging Account based on which you want to create an extended source server.</p>
+    /// This field is required.
     pub fn source_server_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_arn = ::std::option::Option::Some(input.into());
         self
@@ -80,7 +81,7 @@ impl CreateExtendedSourceServerInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_extended_source_server::CreateExtendedSourceServerInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_extended_source_server::CreateExtendedSourceServerInput {
             source_server_arn: self.source_server_arn,

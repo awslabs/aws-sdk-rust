@@ -41,6 +41,7 @@ pub struct ListPageReceiptsInputBuilder {
 }
 impl ListPageReceiptsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the engagement to a specific contact channel.</p>
+    /// This field is required.
     pub fn page_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.page_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl ListPageReceiptsInputBuilder {
     /// Consumes the builder and constructs a [`ListPageReceiptsInput`](crate::operation::list_page_receipts::ListPageReceiptsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_page_receipts::ListPageReceiptsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_page_receipts::ListPageReceiptsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_page_receipts::ListPageReceiptsInput {
             page_id: self.page_id,
             next_token: self.next_token,

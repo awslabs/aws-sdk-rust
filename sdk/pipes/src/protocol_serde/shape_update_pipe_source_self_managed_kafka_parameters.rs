@@ -2,7 +2,7 @@
 pub fn ser_update_pipe_source_self_managed_kafka_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdatePipeSourceSelfManagedKafkaParameters,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.batch_size {
         object.key("BatchSize").number(
             #[allow(clippy::useless_conversion)]

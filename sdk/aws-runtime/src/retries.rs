@@ -4,4 +4,4 @@
  */
 
 /// Classifiers that can inspect a response and determine if it should be retried.
-pub mod classifier;
+pub mod classifiers;

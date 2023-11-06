@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListServicesOutput {
     /// <p>A list of service summary information records. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
-    pub service_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ServiceSummary>>,
+    pub service_summary_list: ::std::vec::Vec<crate::types::ServiceSummary>,
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListServicesOutput {
     /// <p>A list of service summary information records. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
-    pub fn service_summary_list(&self) -> ::std::option::Option<&[crate::types::ServiceSummary]> {
-        self.service_summary_list.as_deref()
+    pub fn service_summary_list(&self) -> &[crate::types::ServiceSummary] {
+        use std::ops::Deref;
+        self.service_summary_list.deref()
     }
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ListServicesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListServicesOutput`](crate::operation::list_services::ListServicesOutput).
-    pub fn build(self) -> crate::operation::list_services::ListServicesOutput {
-        crate::operation::list_services::ListServicesOutput {
-            service_summary_list: self.service_summary_list,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`service_summary_list`](crate::operation::list_services::builders::ListServicesOutputBuilder::service_summary_list)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_services::ListServicesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_services::ListServicesOutput {
+            service_summary_list: self.service_summary_list.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "service_summary_list",
+                    "service_summary_list was not specified but it is required when building ListServicesOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

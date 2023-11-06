@@ -62,6 +62,7 @@ pub struct QueryTableRowsInputBuilder {
 impl QueryTableRowsInputBuilder {
     /// <p>The ID of the workbook whose table rows are being queried.</p>
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    /// This field is required.
     pub fn workbook_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workbook_id = ::std::option::Option::Some(input.into());
         self
@@ -79,6 +80,7 @@ impl QueryTableRowsInputBuilder {
     }
     /// <p>The ID of the table whose rows are being queried.</p>
     /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    /// This field is required.
     pub fn table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_id = ::std::option::Option::Some(input.into());
         self
@@ -95,6 +97,7 @@ impl QueryTableRowsInputBuilder {
         &self.table_id
     }
     /// <p>An object that represents a filter formula along with the id of the context row under which the filter function needs to evaluate.</p>
+    /// This field is required.
     pub fn filter_formula(mut self, input: crate::types::Filter) -> Self {
         self.filter_formula = ::std::option::Option::Some(input);
         self
@@ -142,7 +145,7 @@ impl QueryTableRowsInputBuilder {
     /// Consumes the builder and constructs a [`QueryTableRowsInput`](crate::operation::query_table_rows::QueryTableRowsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::query_table_rows::QueryTableRowsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::query_table_rows::QueryTableRowsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::query_table_rows::QueryTableRowsInput {
             workbook_id: self.workbook_id,
             table_id: self.table_id,

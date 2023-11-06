@@ -34,6 +34,7 @@ pub struct AuthorizeVpcEndpointAccessInputBuilder {
 }
 impl AuthorizeVpcEndpointAccessInputBuilder {
     /// <p>The name of the OpenSearch Service domain to provide access to.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl AuthorizeVpcEndpointAccessInputBuilder {
         &self.domain_name
     }
     /// <p>The Amazon Web Services account ID to grant access to.</p>
+    /// This field is required.
     pub fn account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl AuthorizeVpcEndpointAccessInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::authorize_vpc_endpoint_access::AuthorizeVpcEndpointAccessInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::authorize_vpc_endpoint_access::AuthorizeVpcEndpointAccessInput {
             domain_name: self.domain_name,

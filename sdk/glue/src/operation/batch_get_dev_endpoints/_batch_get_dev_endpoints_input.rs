@@ -8,8 +8,10 @@ pub struct BatchGetDevEndpointsInput {
 }
 impl BatchGetDevEndpointsInput {
     /// <p>The list of <code>DevEndpoint</code> names, which might be the names returned from the <code>ListDevEndpoint</code> operation.</p>
-    pub fn dev_endpoint_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.dev_endpoint_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dev_endpoint_names.is_none()`.
+    pub fn dev_endpoint_names(&self) -> &[::std::string::String] {
+        self.dev_endpoint_names.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetDevEndpointsInput {
@@ -49,7 +51,7 @@ impl BatchGetDevEndpointsInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetDevEndpointsInput`](crate::operation::batch_get_dev_endpoints::BatchGetDevEndpointsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_get_dev_endpoints::BatchGetDevEndpointsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_get_dev_endpoints::BatchGetDevEndpointsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_get_dev_endpoints::BatchGetDevEndpointsInput {
             dev_endpoint_names: self.dev_endpoint_names,

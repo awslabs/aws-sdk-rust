@@ -27,6 +27,7 @@ pub struct DeleteTrialInputBuilder {
 }
 impl DeleteTrialInputBuilder {
     /// <p>The name of the trial to delete.</p>
+    /// This field is required.
     pub fn trial_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trial_name = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl DeleteTrialInputBuilder {
         &self.trial_name
     }
     /// Consumes the builder and constructs a [`DeleteTrialInput`](crate::operation::delete_trial::DeleteTrialInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_trial::DeleteTrialInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_trial::DeleteTrialInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_trial::DeleteTrialInput { trial_name: self.trial_name })
     }
 }

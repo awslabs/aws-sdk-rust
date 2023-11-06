@@ -4,10 +4,10 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_gateways::builders::ListGatewaysFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_gateways::builders::ListGatewaysFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_gateways::builders::ListGatewaysFluentBuilder::set_next_token): <p>The token to be used for the next set of paginated results.</p>
-    ///   - [`max_results(i32)`](crate::operation::list_gateways::builders::ListGatewaysFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_gateways::builders::ListGatewaysFluentBuilder::set_max_results): <p>The maximum number of results to return for each paginated request.</p>  <p>Default: 50</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_gateways::builders::ListGatewaysFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_gateways::builders::ListGatewaysFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to be used for the next set of paginated results.</p><br>
+    ///   - [`max_results(i32)`](crate::operation::list_gateways::builders::ListGatewaysFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_gateways::builders::ListGatewaysFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return for each paginated request.</p>  <p>Default: 50</p><br>
     /// - On success, responds with [`ListGatewaysOutput`](crate::operation::list_gateways::ListGatewaysOutput) with field(s):
-    ///   - [`gateway_summaries(Option<Vec<GatewaySummary>>)`](crate::operation::list_gateways::ListGatewaysOutput::gateway_summaries): <p>A list that summarizes each gateway.</p>
+    ///   - [`gateway_summaries(Vec::<GatewaySummary>)`](crate::operation::list_gateways::ListGatewaysOutput::gateway_summaries): <p>A list that summarizes each gateway.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_gateways::ListGatewaysOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListGatewaysError>`](crate::operation::list_gateways::ListGatewaysError)
     pub fn list_gateways(&self) -> crate::operation::list_gateways::builders::ListGatewaysFluentBuilder {

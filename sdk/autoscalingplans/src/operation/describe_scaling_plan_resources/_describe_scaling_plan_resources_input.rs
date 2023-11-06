@@ -48,6 +48,7 @@ pub struct DescribeScalingPlanResourcesInputBuilder {
 }
 impl DescribeScalingPlanResourcesInputBuilder {
     /// <p>The name of the scaling plan.</p>
+    /// This field is required.
     pub fn scaling_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scaling_plan_name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl DescribeScalingPlanResourcesInputBuilder {
         &self.scaling_plan_name
     }
     /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
+    /// This field is required.
     pub fn scaling_plan_version(mut self, input: i64) -> Self {
         self.scaling_plan_version = ::std::option::Option::Some(input);
         self
@@ -108,7 +110,7 @@ impl DescribeScalingPlanResourcesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_scaling_plan_resources::DescribeScalingPlanResourcesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_scaling_plan_resources::DescribeScalingPlanResourcesInput {
             scaling_plan_name: self.scaling_plan_name,

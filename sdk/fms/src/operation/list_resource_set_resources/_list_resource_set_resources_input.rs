@@ -41,6 +41,7 @@ pub struct ListResourceSetResourcesInputBuilder {
 }
 impl ListResourceSetResourcesInputBuilder {
     /// <p>A unique identifier for the resource set, used in a request to refer to the resource set.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListResourceSetResourcesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resource_set_resources::ListResourceSetResourcesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_resource_set_resources::ListResourceSetResourcesInput {
             identifier: self.identifier,

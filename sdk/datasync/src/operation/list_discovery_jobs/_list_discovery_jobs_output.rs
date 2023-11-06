@@ -11,8 +11,10 @@ pub struct ListDiscoveryJobsOutput {
 }
 impl ListDiscoveryJobsOutput {
     /// <p>The discovery jobs that you've run.</p>
-    pub fn discovery_jobs(&self) -> ::std::option::Option<&[crate::types::DiscoveryJobListEntry]> {
-        self.discovery_jobs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.discovery_jobs.is_none()`.
+    pub fn discovery_jobs(&self) -> &[crate::types::DiscoveryJobListEntry] {
+        self.discovery_jobs.as_deref().unwrap_or_default()
     }
     /// <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

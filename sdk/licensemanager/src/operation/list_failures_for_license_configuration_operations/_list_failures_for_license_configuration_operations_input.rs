@@ -43,6 +43,7 @@ pub struct ListFailuresForLicenseConfigurationOperationsInputBuilder {
 }
 impl ListFailuresForLicenseConfigurationOperationsInputBuilder {
     /// <p>Amazon Resource Name of the license configuration.</p>
+    /// This field is required.
     pub fn license_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_configuration_arn = ::std::option::Option::Some(input.into());
         self
@@ -89,7 +90,7 @@ impl ListFailuresForLicenseConfigurationOperationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsInput {

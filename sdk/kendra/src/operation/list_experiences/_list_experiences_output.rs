@@ -11,8 +11,10 @@ pub struct ListExperiencesOutput {
 }
 impl ListExperiencesOutput {
     /// <p>An array of summary information for one or more Amazon Kendra experiences.</p>
-    pub fn summary_items(&self) -> ::std::option::Option<&[crate::types::ExperiencesSummary]> {
-        self.summary_items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.summary_items.is_none()`.
+    pub fn summary_items(&self) -> &[crate::types::ExperiencesSummary] {
+        self.summary_items.as_deref().unwrap_or_default()
     }
     /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use in a later request to retrieve the next set of Amazon Kendra experiences.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

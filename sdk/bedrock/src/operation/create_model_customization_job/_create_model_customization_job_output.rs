@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateModelCustomizationJobOutput {
     /// <p>ARN of the fine tuning job</p>
-    pub job_arn: ::std::option::Option<::std::string::String>,
+    pub job_arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateModelCustomizationJobOutput {
     /// <p>ARN of the fine tuning job</p>
-    pub fn job_arn(&self) -> ::std::option::Option<&str> {
-        self.job_arn.as_deref()
+    pub fn job_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.job_arn.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateModelCustomizationJobOutput {
@@ -34,6 +35,7 @@ pub struct CreateModelCustomizationJobOutputBuilder {
 }
 impl CreateModelCustomizationJobOutputBuilder {
     /// <p>ARN of the fine tuning job</p>
+    /// This field is required.
     pub fn job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_arn = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,22 @@ impl CreateModelCustomizationJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateModelCustomizationJobOutput`](crate::operation::create_model_customization_job::CreateModelCustomizationJobOutput).
-    pub fn build(self) -> crate::operation::create_model_customization_job::CreateModelCustomizationJobOutput {
-        crate::operation::create_model_customization_job::CreateModelCustomizationJobOutput {
-            job_arn: self.job_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`job_arn`](crate::operation::create_model_customization_job::builders::CreateModelCustomizationJobOutputBuilder::job_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_model_customization_job::CreateModelCustomizationJobOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::create_model_customization_job::CreateModelCustomizationJobOutput {
+            job_arn: self.job_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "job_arn",
+                    "job_arn was not specified but it is required when building CreateModelCustomizationJobOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

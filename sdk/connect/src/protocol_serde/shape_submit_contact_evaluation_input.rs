@@ -2,7 +2,7 @@
 pub fn ser_submit_contact_evaluation_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::submit_contact_evaluation::SubmitContactEvaluationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.answers {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Answers").start_object();

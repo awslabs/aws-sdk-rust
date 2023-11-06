@@ -35,6 +35,7 @@ pub struct BlockPublicAccessConfigurationMetadataBuilder {
 }
 impl BlockPublicAccessConfigurationMetadataBuilder {
     /// <p>The date and time that the configuration was created.</p>
+    /// This field is required.
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl BlockPublicAccessConfigurationMetadataBuilder {
         &self.creation_date_time
     }
     /// <p>The Amazon Resource Name that created or last modified the configuration.</p>
+    /// This field is required.
     pub fn created_by_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by_arn = ::std::option::Option::Some(input.into());
         self

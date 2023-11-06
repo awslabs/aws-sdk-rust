@@ -27,6 +27,7 @@ pub struct GetConfigurationSetEventDestinationsInputBuilder {
 }
 impl GetConfigurationSetEventDestinationsInputBuilder {
     /// ConfigurationSetName
+    /// This field is required.
     pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetConfigurationSetEventDestinationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_configuration_set_event_destinations::GetConfigurationSetEventDestinationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_configuration_set_event_destinations::GetConfigurationSetEventDestinationsInput {

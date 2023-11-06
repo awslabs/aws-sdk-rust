@@ -27,6 +27,7 @@ pub struct DeleteLicenseConfigurationInputBuilder {
 }
 impl DeleteLicenseConfigurationInputBuilder {
     /// <p>ID of the license configuration.</p>
+    /// This field is required.
     pub fn license_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_configuration_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteLicenseConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_license_configuration::DeleteLicenseConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_license_configuration::DeleteLicenseConfigurationInput {
             license_configuration_arn: self.license_configuration_arn,

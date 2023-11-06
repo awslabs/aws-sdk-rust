@@ -48,6 +48,7 @@ impl DeleteUserInputBuilder {
         &self.user_arn
     }
     /// <p>The ARN of the user's enrollment in the organization. Required.</p>
+    /// This field is required.
     pub fn enrollment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.enrollment_id = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +63,7 @@ impl DeleteUserInputBuilder {
         &self.enrollment_id
     }
     /// Consumes the builder and constructs a [`DeleteUserInput`](crate::operation::delete_user::DeleteUserInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_user::DeleteUserInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_user::DeleteUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_user::DeleteUserInput {
             user_arn: self.user_arn,
             enrollment_id: self.enrollment_id,

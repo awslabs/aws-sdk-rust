@@ -34,6 +34,7 @@ pub struct CreateReusableDelegationSetInputBuilder {
 }
 impl CreateReusableDelegationSetInputBuilder {
     /// <p>A unique string that identifies the request, and that allows you to retry failed <code>CreateReusableDelegationSet</code> requests without the risk of executing the operation twice. You must use a unique <code>CallerReference</code> string every time you submit a <code>CreateReusableDelegationSet</code> request. <code>CallerReference</code> can be any unique string, for example a date/time stamp.</p>
+    /// This field is required.
     pub fn caller_reference(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.caller_reference = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl CreateReusableDelegationSetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetInput {
             caller_reference: self.caller_reference,

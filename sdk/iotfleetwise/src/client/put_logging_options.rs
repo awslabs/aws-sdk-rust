@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PutLoggingOptions`](crate::operation::put_logging_options::builders::PutLoggingOptionsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cloud_watch_log_delivery(CloudWatchLogDeliveryOptions)`](crate::operation::put_logging_options::builders::PutLoggingOptionsFluentBuilder::cloud_watch_log_delivery) / [`set_cloud_watch_log_delivery(Option<CloudWatchLogDeliveryOptions>)`](crate::operation::put_logging_options::builders::PutLoggingOptionsFluentBuilder::set_cloud_watch_log_delivery): <p>Creates or updates the log delivery option to Amazon CloudWatch Logs.</p>
+    ///   - [`cloud_watch_log_delivery(CloudWatchLogDeliveryOptions)`](crate::operation::put_logging_options::builders::PutLoggingOptionsFluentBuilder::cloud_watch_log_delivery) / [`set_cloud_watch_log_delivery(Option<CloudWatchLogDeliveryOptions>)`](crate::operation::put_logging_options::builders::PutLoggingOptionsFluentBuilder::set_cloud_watch_log_delivery):<br>required: **true**<br><p>Creates or updates the log delivery option to Amazon CloudWatch Logs.</p><br>
     /// - On success, responds with [`PutLoggingOptionsOutput`](crate::operation::put_logging_options::PutLoggingOptionsOutput)
     /// - On failure, responds with [`SdkError<PutLoggingOptionsError>`](crate::operation::put_logging_options::PutLoggingOptionsError)
     pub fn put_logging_options(&self) -> crate::operation::put_logging_options::builders::PutLoggingOptionsFluentBuilder {

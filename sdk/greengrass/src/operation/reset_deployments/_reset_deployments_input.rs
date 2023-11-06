@@ -70,6 +70,7 @@ impl ResetDeploymentsInputBuilder {
         &self.force
     }
     /// The ID of the Greengrass group.
+    /// This field is required.
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
         self
@@ -86,7 +87,7 @@ impl ResetDeploymentsInputBuilder {
     /// Consumes the builder and constructs a [`ResetDeploymentsInput`](crate::operation::reset_deployments::ResetDeploymentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::reset_deployments::ResetDeploymentsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::reset_deployments::ResetDeploymentsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::reset_deployments::ResetDeploymentsInput {
             amzn_client_token: self.amzn_client_token,
             force: self.force,

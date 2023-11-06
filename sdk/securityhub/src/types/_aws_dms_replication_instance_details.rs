@@ -75,8 +75,10 @@ impl AwsDmsReplicationInstanceDetails {
         self.replication_subnet_group.as_ref()
     }
     /// <p> The virtual private cloud (VPC) security group for the replication instance.</p>
-    pub fn vpc_security_groups(&self) -> ::std::option::Option<&[crate::types::AwsDmsReplicationInstanceVpcSecurityGroupsDetails]> {
-        self.vpc_security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_groups.is_none()`.
+    pub fn vpc_security_groups(&self) -> &[crate::types::AwsDmsReplicationInstanceVpcSecurityGroupsDetails] {
+        self.vpc_security_groups.as_deref().unwrap_or_default()
     }
 }
 impl AwsDmsReplicationInstanceDetails {

@@ -22,8 +22,10 @@ impl StartMatchmakingInput {
     }
     /// <p>Information on each player to be matched. This information must include a player ID, and may contain player attributes and latency data to be used in the matchmaking process. After a successful match, <code>Player</code> objects contain the name of the team the player is assigned to.</p>
     /// <p>You can include up to 10 <code>Players</code> in a <code>StartMatchmaking</code> request.</p>
-    pub fn players(&self) -> ::std::option::Option<&[crate::types::Player]> {
-        self.players.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.players.is_none()`.
+    pub fn players(&self) -> &[crate::types::Player] {
+        self.players.as_deref().unwrap_or_default()
     }
 }
 impl StartMatchmakingInput {
@@ -57,6 +59,7 @@ impl StartMatchmakingInputBuilder {
         &self.ticket_id
     }
     /// <p>Name of the matchmaking configuration to use for this request. Matchmaking configurations must exist in the same Region as this request. You can use either the configuration name or ARN value.</p>
+    /// This field is required.
     pub fn configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_name = ::std::option::Option::Some(input.into());
         self
@@ -96,7 +99,7 @@ impl StartMatchmakingInputBuilder {
     /// Consumes the builder and constructs a [`StartMatchmakingInput`](crate::operation::start_matchmaking::StartMatchmakingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_matchmaking::StartMatchmakingInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_matchmaking::StartMatchmakingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_matchmaking::StartMatchmakingInput {
             ticket_id: self.ticket_id,
             configuration_name: self.configuration_name,

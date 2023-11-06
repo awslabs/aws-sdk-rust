@@ -34,6 +34,7 @@ pub struct DeleteAssessmentFrameworkShareInputBuilder {
 }
 impl DeleteAssessmentFrameworkShareInputBuilder {
     /// <p>The unique identifier for the share request to be deleted.</p>
+    /// This field is required.
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteAssessmentFrameworkShareInputBuilder {
         &self.request_id
     }
     /// <p>Specifies whether the share request is a sent request or a received request.</p>
+    /// This field is required.
     pub fn request_type(mut self, input: crate::types::ShareRequestType) -> Self {
         self.request_type = ::std::option::Option::Some(input);
         self
@@ -66,7 +68,7 @@ impl DeleteAssessmentFrameworkShareInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_assessment_framework_share::DeleteAssessmentFrameworkShareInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_assessment_framework_share::DeleteAssessmentFrameworkShareInput {
             request_id: self.request_id,

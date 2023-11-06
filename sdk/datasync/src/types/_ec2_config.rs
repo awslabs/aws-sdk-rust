@@ -12,9 +12,9 @@ pub struct Ec2Config {
     /// </ul> <note>
     /// <p>You don't need to specify a subnet that includes a file system mount target.</p>
     /// </note>
-    pub subnet_arn: ::std::option::Option<::std::string::String>,
+    pub subnet_arn: ::std::string::String,
     /// <p>Specifies the Amazon Resource Names (ARNs) of the security groups associated with an Amazon EFS file system's mount target.</p>
-    pub security_group_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_group_arns: ::std::vec::Vec<::std::string::String>,
 }
 impl Ec2Config {
     /// <p>Specifies the ARN of a subnet where DataSync creates the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network interfaces</a> for managing traffic during your transfer.</p>
@@ -25,12 +25,14 @@ impl Ec2Config {
     /// </ul> <note>
     /// <p>You don't need to specify a subnet that includes a file system mount target.</p>
     /// </note>
-    pub fn subnet_arn(&self) -> ::std::option::Option<&str> {
-        self.subnet_arn.as_deref()
+    pub fn subnet_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.subnet_arn.deref()
     }
     /// <p>Specifies the Amazon Resource Names (ARNs) of the security groups associated with an Amazon EFS file system's mount target.</p>
-    pub fn security_group_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_arns.as_deref()
+    pub fn security_group_arns(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.security_group_arns.deref()
     }
 }
 impl Ec2Config {
@@ -56,6 +58,7 @@ impl Ec2ConfigBuilder {
     /// </ul> <note>
     /// <p>You don't need to specify a subnet that includes a file system mount target.</p>
     /// </note>
+    /// This field is required.
     pub fn subnet_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_arn = ::std::option::Option::Some(input.into());
         self
@@ -104,10 +107,23 @@ impl Ec2ConfigBuilder {
         &self.security_group_arns
     }
     /// Consumes the builder and constructs a [`Ec2Config`](crate::types::Ec2Config).
-    pub fn build(self) -> crate::types::Ec2Config {
-        crate::types::Ec2Config {
-            subnet_arn: self.subnet_arn,
-            security_group_arns: self.security_group_arns,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`subnet_arn`](crate::types::builders::Ec2ConfigBuilder::subnet_arn)
+    /// - [`security_group_arns`](crate::types::builders::Ec2ConfigBuilder::security_group_arns)
+    pub fn build(self) -> ::std::result::Result<crate::types::Ec2Config, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Ec2Config {
+            subnet_arn: self.subnet_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "subnet_arn",
+                    "subnet_arn was not specified but it is required when building Ec2Config",
+                )
+            })?,
+            security_group_arns: self.security_group_arns.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "security_group_arns",
+                    "security_group_arns was not specified but it is required when building Ec2Config",
+                )
+            })?,
+        })
     }
 }

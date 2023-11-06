@@ -41,6 +41,7 @@ pub struct RetryWorkflowStepInputBuilder {
 }
 impl RetryWorkflowStepInputBuilder {
     /// <p>The ID of the migration workflow.</p>
+    /// This field is required.
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl RetryWorkflowStepInputBuilder {
         &self.workflow_id
     }
     /// <p>The ID of the step group.</p>
+    /// This field is required.
     pub fn step_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.step_group_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl RetryWorkflowStepInputBuilder {
         &self.step_group_id
     }
     /// <p>The ID of the step.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +88,7 @@ impl RetryWorkflowStepInputBuilder {
     /// Consumes the builder and constructs a [`RetryWorkflowStepInput`](crate::operation::retry_workflow_step::RetryWorkflowStepInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::retry_workflow_step::RetryWorkflowStepInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::retry_workflow_step::RetryWorkflowStepInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::retry_workflow_step::RetryWorkflowStepInput {
             workflow_id: self.workflow_id,
             step_group_id: self.step_group_id,

@@ -31,8 +31,10 @@ impl AttributesResource {
         self.attribute_type.as_deref()
     }
     /// <p>An array that specifies the names of the attributes that were removed from the endpoints.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
+    pub fn attributes(&self) -> &[::std::string::String] {
+        self.attributes.as_deref().unwrap_or_default()
     }
 }
 impl AttributesResource {
@@ -52,6 +54,7 @@ pub struct AttributesResourceBuilder {
 }
 impl AttributesResourceBuilder {
     /// <p>The unique identifier for the application.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -71,6 +74,7 @@ impl AttributesResourceBuilder {
     /// <li><p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints.</p></li>
     /// <li><p>endpoint-user-attributes - Custom attributes that describe users.</p></li>
     /// </ul>
+    /// This field is required.
     pub fn attribute_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_type = ::std::option::Option::Some(input.into());
         self

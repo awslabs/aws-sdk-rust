@@ -2,12 +2,12 @@
 pub fn ser_resource_server_scope_type(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ResourceServerScopeType,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.scope_name {
-        object.key("ScopeName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("ScopeName").string(input.scope_name.as_str());
     }
-    if let Some(var_2) = &input.scope_description {
-        object.key("ScopeDescription").string(var_2.as_str());
+    {
+        object.key("ScopeDescription").string(input.scope_description.as_str());
     }
     Ok(())
 }
@@ -51,7 +51,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::resource_server_scope_type_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

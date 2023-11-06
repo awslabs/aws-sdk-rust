@@ -2,20 +2,20 @@
 pub fn ser_current_revision(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CurrentRevision,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.revision {
-        object.key("revision").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("revision").string(input.revision.as_str());
     }
-    if let Some(var_2) = &input.change_identifier {
-        object.key("changeIdentifier").string(var_2.as_str());
+    {
+        object.key("changeIdentifier").string(input.change_identifier.as_str());
     }
-    if let Some(var_3) = &input.created {
+    if let Some(var_1) = &input.created {
         object
             .key("created")
-            .date_time(var_3, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_1, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_4) = &input.revision_summary {
-        object.key("revisionSummary").string(var_4.as_str());
+    if let Some(var_2) = &input.revision_summary {
+        object.key("revisionSummary").string(var_2.as_str());
     }
     Ok(())
 }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetCatalogItem`](crate::operation::get_catalog_item::builders::GetCatalogItemFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`catalog_item_id(impl Into<String>)`](crate::operation::get_catalog_item::builders::GetCatalogItemFluentBuilder::catalog_item_id) / [`set_catalog_item_id(Option<String>)`](crate::operation::get_catalog_item::builders::GetCatalogItemFluentBuilder::set_catalog_item_id): <p>The ID of the catalog item.</p>
+    ///   - [`catalog_item_id(impl Into<String>)`](crate::operation::get_catalog_item::builders::GetCatalogItemFluentBuilder::catalog_item_id) / [`set_catalog_item_id(Option<String>)`](crate::operation::get_catalog_item::builders::GetCatalogItemFluentBuilder::set_catalog_item_id):<br>required: **true**<br><p>The ID of the catalog item.</p><br>
     /// - On success, responds with [`GetCatalogItemOutput`](crate::operation::get_catalog_item::GetCatalogItemOutput) with field(s):
     ///   - [`catalog_item(Option<CatalogItem>)`](crate::operation::get_catalog_item::GetCatalogItemOutput::catalog_item): <p>Information about this catalog item.</p>
     /// - On failure, responds with [`SdkError<GetCatalogItemError>`](crate::operation::get_catalog_item::GetCatalogItemError)

@@ -27,6 +27,7 @@ pub struct DeleteExperimentInputBuilder {
 }
 impl DeleteExperimentInputBuilder {
     /// <p>The name of the experiment to delete.</p>
+    /// This field is required.
     pub fn experiment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.experiment_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteExperimentInputBuilder {
     /// Consumes the builder and constructs a [`DeleteExperimentInput`](crate::operation::delete_experiment::DeleteExperimentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_experiment::DeleteExperimentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_experiment::DeleteExperimentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_experiment::DeleteExperimentInput {
             experiment_name: self.experiment_name,
         })

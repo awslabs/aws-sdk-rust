@@ -35,6 +35,7 @@ pub struct AttributeKeyAndValueBuilder {
 }
 impl AttributeKeyAndValueBuilder {
     /// <p>The key of the attribute.</p>
+    /// This field is required.
     pub fn key(mut self, input: crate::types::AttributeKey) -> Self {
         self.key = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl AttributeKeyAndValueBuilder {
         &self.key
     }
     /// <p>The value of the attribute.</p>
+    /// This field is required.
     pub fn value(mut self, input: crate::types::TypedAttributeValue) -> Self {
         self.value = ::std::option::Option::Some(input);
         self

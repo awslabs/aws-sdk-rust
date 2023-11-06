@@ -66,8 +66,10 @@ impl CreateMlTransformInput {
         self.description.as_deref()
     }
     /// <p>A list of Glue table definitions used by the transform.</p>
-    pub fn input_record_tables(&self) -> ::std::option::Option<&[crate::types::GlueTable]> {
-        self.input_record_tables.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_record_tables.is_none()`.
+    pub fn input_record_tables(&self) -> &[crate::types::GlueTable] {
+        self.input_record_tables.as_deref().unwrap_or_default()
     }
     /// <p>The algorithmic parameters that are specific to the transform type used. Conditionally dependent on the transform type.</p>
     pub fn parameters(&self) -> ::std::option::Option<&crate::types::TransformParameters> {
@@ -163,6 +165,7 @@ pub struct CreateMlTransformInputBuilder {
 }
 impl CreateMlTransformInputBuilder {
     /// <p>The unique name that you give the transform when you create it.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -211,6 +214,7 @@ impl CreateMlTransformInputBuilder {
         &self.input_record_tables
     }
     /// <p>The algorithmic parameters that are specific to the transform type used. Conditionally dependent on the transform type.</p>
+    /// This field is required.
     pub fn parameters(mut self, input: crate::types::TransformParameters) -> Self {
         self.parameters = ::std::option::Option::Some(input);
         self
@@ -229,6 +233,7 @@ impl CreateMlTransformInputBuilder {
     /// <li> <p>This role needs Glue service role permissions to allow access to resources in Glue. See <a href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM Users That Access Glue</a>.</p> </li>
     /// <li> <p>This role needs permission to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary directory, scripts, and any libraries used by the task run for this transform.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role = ::std::option::Option::Some(input.into());
         self
@@ -437,7 +442,7 @@ impl CreateMlTransformInputBuilder {
     /// Consumes the builder and constructs a [`CreateMlTransformInput`](crate::operation::create_ml_transform::CreateMlTransformInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_ml_transform::CreateMlTransformInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_ml_transform::CreateMlTransformInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_ml_transform::CreateMlTransformInput {
             name: self.name,
             description: self.description,

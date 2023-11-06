@@ -2,12 +2,12 @@
 pub fn ser_connection_alias_permission(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ConnectionAliasPermission,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.shared_account_id {
-        object.key("SharedAccountId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("SharedAccountId").string(input.shared_account_id.as_str());
     }
-    if let Some(var_2) = &input.allow_association {
-        object.key("AllowAssociation").boolean(*var_2);
+    {
+        object.key("AllowAssociation").boolean(input.allow_association);
     }
     Ok(())
 }
@@ -47,7 +47,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::connection_alias_permission_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

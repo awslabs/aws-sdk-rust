@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotificationSettingKey {
     /// <p>The notification setting event to reset.</p>
-    pub event: ::std::option::Option<crate::types::NotificationEvent>,
+    pub event: crate::types::NotificationEvent,
     /// <p>The specified channel of notification.</p>
     pub channel: ::std::option::Option<crate::types::NotificationChannel>,
 }
 impl NotificationSettingKey {
     /// <p>The notification setting event to reset.</p>
-    pub fn event(&self) -> ::std::option::Option<&crate::types::NotificationEvent> {
-        self.event.as_ref()
+    pub fn event(&self) -> &crate::types::NotificationEvent {
+        &self.event
     }
     /// <p>The specified channel of notification.</p>
     pub fn channel(&self) -> ::std::option::Option<&crate::types::NotificationChannel> {
@@ -35,6 +35,7 @@ pub struct NotificationSettingKeyBuilder {
 }
 impl NotificationSettingKeyBuilder {
     /// <p>The notification setting event to reset.</p>
+    /// This field is required.
     pub fn event(mut self, input: crate::types::NotificationEvent) -> Self {
         self.event = ::std::option::Option::Some(input);
         self
@@ -63,10 +64,17 @@ impl NotificationSettingKeyBuilder {
         &self.channel
     }
     /// Consumes the builder and constructs a [`NotificationSettingKey`](crate::types::NotificationSettingKey).
-    pub fn build(self) -> crate::types::NotificationSettingKey {
-        crate::types::NotificationSettingKey {
-            event: self.event,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`event`](crate::types::builders::NotificationSettingKeyBuilder::event)
+    pub fn build(self) -> ::std::result::Result<crate::types::NotificationSettingKey, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::NotificationSettingKey {
+            event: self.event.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "event",
+                    "event was not specified but it is required when building NotificationSettingKey",
+                )
+            })?,
             channel: self.channel,
-        }
+        })
     }
 }

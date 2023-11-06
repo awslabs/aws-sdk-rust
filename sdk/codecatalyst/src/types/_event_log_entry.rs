@@ -5,19 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventLogEntry {
     /// <p>The system-generated unique ID of the event.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The name of the event.</p>
-    pub event_name: ::std::option::Option<::std::string::String>,
+    pub event_name: ::std::string::String,
     /// <p>The type of the event.</p>
-    pub event_type: ::std::option::Option<::std::string::String>,
+    pub event_type: ::std::string::String,
     /// <p>The category for the event.</p>
-    pub event_category: ::std::option::Option<::std::string::String>,
+    pub event_category: ::std::string::String,
     /// <p>The source of the event.</p>
-    pub event_source: ::std::option::Option<::std::string::String>,
+    pub event_source: ::std::string::String,
     /// <p>The time the event took place, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-    pub event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub event_time: ::aws_smithy_types::DateTime,
     /// <p>The type of the event.</p>
-    pub operation_type: ::std::option::Option<crate::types::OperationType>,
+    pub operation_type: crate::types::OperationType,
     /// <p>The system-generated unique ID of the user whose actions are recorded in the event.</p>
     pub user_identity: ::std::option::Option<crate::types::UserIdentity>,
     /// <p>Information about the project where the event occurred.</p>
@@ -37,32 +37,37 @@ pub struct EventLogEntry {
 }
 impl EventLogEntry {
     /// <p>The system-generated unique ID of the event.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The name of the event.</p>
-    pub fn event_name(&self) -> ::std::option::Option<&str> {
-        self.event_name.as_deref()
+    pub fn event_name(&self) -> &str {
+        use std::ops::Deref;
+        self.event_name.deref()
     }
     /// <p>The type of the event.</p>
-    pub fn event_type(&self) -> ::std::option::Option<&str> {
-        self.event_type.as_deref()
+    pub fn event_type(&self) -> &str {
+        use std::ops::Deref;
+        self.event_type.deref()
     }
     /// <p>The category for the event.</p>
-    pub fn event_category(&self) -> ::std::option::Option<&str> {
-        self.event_category.as_deref()
+    pub fn event_category(&self) -> &str {
+        use std::ops::Deref;
+        self.event_category.deref()
     }
     /// <p>The source of the event.</p>
-    pub fn event_source(&self) -> ::std::option::Option<&str> {
-        self.event_source.as_deref()
+    pub fn event_source(&self) -> &str {
+        use std::ops::Deref;
+        self.event_source.deref()
     }
     /// <p>The time the event took place, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-    pub fn event_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.event_time.as_ref()
+    pub fn event_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.event_time
     }
     /// <p>The type of the event.</p>
-    pub fn operation_type(&self) -> ::std::option::Option<&crate::types::OperationType> {
-        self.operation_type.as_ref()
+    pub fn operation_type(&self) -> &crate::types::OperationType {
+        &self.operation_type
     }
     /// <p>The system-generated unique ID of the user whose actions are recorded in the event.</p>
     pub fn user_identity(&self) -> ::std::option::Option<&crate::types::UserIdentity> {
@@ -126,6 +131,7 @@ pub struct EventLogEntryBuilder {
 }
 impl EventLogEntryBuilder {
     /// <p>The system-generated unique ID of the event.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -140,6 +146,7 @@ impl EventLogEntryBuilder {
         &self.id
     }
     /// <p>The name of the event.</p>
+    /// This field is required.
     pub fn event_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_name = ::std::option::Option::Some(input.into());
         self
@@ -154,6 +161,7 @@ impl EventLogEntryBuilder {
         &self.event_name
     }
     /// <p>The type of the event.</p>
+    /// This field is required.
     pub fn event_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_type = ::std::option::Option::Some(input.into());
         self
@@ -168,6 +176,7 @@ impl EventLogEntryBuilder {
         &self.event_type
     }
     /// <p>The category for the event.</p>
+    /// This field is required.
     pub fn event_category(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_category = ::std::option::Option::Some(input.into());
         self
@@ -182,6 +191,7 @@ impl EventLogEntryBuilder {
         &self.event_category
     }
     /// <p>The source of the event.</p>
+    /// This field is required.
     pub fn event_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_source = ::std::option::Option::Some(input.into());
         self
@@ -196,6 +206,7 @@ impl EventLogEntryBuilder {
         &self.event_source
     }
     /// <p>The time the event took place, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
+    /// This field is required.
     pub fn event_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.event_time = ::std::option::Option::Some(input);
         self
@@ -210,6 +221,7 @@ impl EventLogEntryBuilder {
         &self.event_time
     }
     /// <p>The type of the event.</p>
+    /// This field is required.
     pub fn operation_type(mut self, input: crate::types::OperationType) -> Self {
         self.operation_type = ::std::option::Option::Some(input);
         self
@@ -224,6 +236,7 @@ impl EventLogEntryBuilder {
         &self.operation_type
     }
     /// <p>The system-generated unique ID of the user whose actions are recorded in the event.</p>
+    /// This field is required.
     pub fn user_identity(mut self, input: crate::types::UserIdentity) -> Self {
         self.user_identity = ::std::option::Option::Some(input);
         self
@@ -336,15 +349,58 @@ impl EventLogEntryBuilder {
         &self.user_agent
     }
     /// Consumes the builder and constructs a [`EventLogEntry`](crate::types::EventLogEntry).
-    pub fn build(self) -> crate::types::EventLogEntry {
-        crate::types::EventLogEntry {
-            id: self.id,
-            event_name: self.event_name,
-            event_type: self.event_type,
-            event_category: self.event_category,
-            event_source: self.event_source,
-            event_time: self.event_time,
-            operation_type: self.operation_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::EventLogEntryBuilder::id)
+    /// - [`event_name`](crate::types::builders::EventLogEntryBuilder::event_name)
+    /// - [`event_type`](crate::types::builders::EventLogEntryBuilder::event_type)
+    /// - [`event_category`](crate::types::builders::EventLogEntryBuilder::event_category)
+    /// - [`event_source`](crate::types::builders::EventLogEntryBuilder::event_source)
+    /// - [`event_time`](crate::types::builders::EventLogEntryBuilder::event_time)
+    /// - [`operation_type`](crate::types::builders::EventLogEntryBuilder::operation_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::EventLogEntry, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EventLogEntry {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building EventLogEntry",
+                )
+            })?,
+            event_name: self.event_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "event_name",
+                    "event_name was not specified but it is required when building EventLogEntry",
+                )
+            })?,
+            event_type: self.event_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "event_type",
+                    "event_type was not specified but it is required when building EventLogEntry",
+                )
+            })?,
+            event_category: self.event_category.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "event_category",
+                    "event_category was not specified but it is required when building EventLogEntry",
+                )
+            })?,
+            event_source: self.event_source.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "event_source",
+                    "event_source was not specified but it is required when building EventLogEntry",
+                )
+            })?,
+            event_time: self.event_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "event_time",
+                    "event_time was not specified but it is required when building EventLogEntry",
+                )
+            })?,
+            operation_type: self.operation_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "operation_type",
+                    "operation_type was not specified but it is required when building EventLogEntry",
+                )
+            })?,
             user_identity: self.user_identity,
             project_information: self.project_information,
             request_id: self.request_id,
@@ -353,6 +409,6 @@ impl EventLogEntryBuilder {
             error_code: self.error_code,
             source_ip_address: self.source_ip_address,
             user_agent: self.user_agent,
-        }
+        })
     }
 }

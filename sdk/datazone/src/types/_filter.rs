@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Filter {
     /// <p>A search filter attribute in Amazon DataZone.</p>
-    pub attribute: ::std::option::Option<::std::string::String>,
+    pub attribute: ::std::string::String,
     /// <p>A search filter value in Amazon DataZone.</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
 }
 impl Filter {
     /// <p>A search filter attribute in Amazon DataZone.</p>
-    pub fn attribute(&self) -> ::std::option::Option<&str> {
-        self.attribute.as_deref()
+    pub fn attribute(&self) -> &str {
+        use std::ops::Deref;
+        self.attribute.deref()
     }
     /// <p>A search filter value in Amazon DataZone.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
 }
 impl Filter {
@@ -35,6 +37,7 @@ pub struct FilterBuilder {
 }
 impl FilterBuilder {
     /// <p>A search filter attribute in Amazon DataZone.</p>
+    /// This field is required.
     pub fn attribute(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl FilterBuilder {
         &self.attribute
     }
     /// <p>A search filter value in Amazon DataZone.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl FilterBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
-    pub fn build(self) -> crate::types::Filter {
-        crate::types::Filter {
-            attribute: self.attribute,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`attribute`](crate::types::builders::FilterBuilder::attribute)
+    /// - [`value`](crate::types::builders::FilterBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::Filter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Filter {
+            attribute: self.attribute.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "attribute",
+                    "attribute was not specified but it is required when building Filter",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building Filter",
+                )
+            })?,
+        })
     }
 }

@@ -27,6 +27,7 @@ pub struct DeleteEndpointConfigInputBuilder {
 }
 impl DeleteEndpointConfigInputBuilder {
     /// <p>The name of the endpoint configuration that you want to delete.</p>
+    /// This field is required.
     pub fn endpoint_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_config_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteEndpointConfigInputBuilder {
     /// Consumes the builder and constructs a [`DeleteEndpointConfigInput`](crate::operation::delete_endpoint_config::DeleteEndpointConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_endpoint_config::DeleteEndpointConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_endpoint_config::DeleteEndpointConfigInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_endpoint_config::DeleteEndpointConfigInput {
             endpoint_config_name: self.endpoint_config_name,

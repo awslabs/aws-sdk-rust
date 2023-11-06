@@ -28,6 +28,7 @@ pub struct SegmentConditionBuilder {
 }
 impl SegmentConditionBuilder {
     /// <p>The unique identifier for the segment to associate with the activity.</p>
+    /// This field is required.
     pub fn segment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.segment_id = ::std::option::Option::Some(input.into());
         self

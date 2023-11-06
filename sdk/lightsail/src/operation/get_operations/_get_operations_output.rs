@@ -13,8 +13,10 @@ pub struct GetOperationsOutput {
 }
 impl GetOperationsOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operations(&self) -> ::std::option::Option<&[crate::types::Operation]> {
-        self.operations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.operations.is_none()`.
+    pub fn operations(&self) -> &[crate::types::Operation] {
+        self.operations.as_deref().unwrap_or_default()
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>

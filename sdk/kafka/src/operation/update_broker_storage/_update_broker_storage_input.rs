@@ -20,8 +20,10 @@ impl UpdateBrokerStorageInput {
         self.current_version.as_deref()
     }
     /// <p>Describes the target volume size and the ID of the broker to apply the update to.</p>
-    pub fn target_broker_ebs_volume_info(&self) -> ::std::option::Option<&[crate::types::BrokerEbsVolumeInfo]> {
-        self.target_broker_ebs_volume_info.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_broker_ebs_volume_info.is_none()`.
+    pub fn target_broker_ebs_volume_info(&self) -> &[crate::types::BrokerEbsVolumeInfo] {
+        self.target_broker_ebs_volume_info.as_deref().unwrap_or_default()
     }
 }
 impl UpdateBrokerStorageInput {
@@ -41,6 +43,7 @@ pub struct UpdateBrokerStorageInputBuilder {
 }
 impl UpdateBrokerStorageInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    /// This field is required.
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl UpdateBrokerStorageInputBuilder {
         &self.cluster_arn
     }
     /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
+    /// This field is required.
     pub fn current_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_version = ::std::option::Option::Some(input.into());
         self
@@ -91,7 +95,7 @@ impl UpdateBrokerStorageInputBuilder {
     /// Consumes the builder and constructs a [`UpdateBrokerStorageInput`](crate::operation::update_broker_storage::UpdateBrokerStorageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_broker_storage::UpdateBrokerStorageInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_broker_storage::UpdateBrokerStorageInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_broker_storage::UpdateBrokerStorageInput {
             cluster_arn: self.cluster_arn,

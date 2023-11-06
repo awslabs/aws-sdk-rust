@@ -210,6 +210,7 @@ impl MsSmoothGroupSettingsBuilder {
         &self.connection_retry_interval
     }
     /// Smooth Streaming publish point on an IIS server. Elemental Live acts as a "Push" encoder to IIS.
+    /// This field is required.
     pub fn destination(mut self, input: crate::types::OutputLocationRef) -> Self {
         self.destination = ::std::option::Option::Some(input);
         self

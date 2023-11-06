@@ -55,6 +55,7 @@ pub struct CreateWorkflowInputBuilder {
 }
 impl CreateWorkflowInputBuilder {
     /// <p>The name to be assigned to the workflow. It should be unique within your account.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -146,7 +147,7 @@ impl CreateWorkflowInputBuilder {
     /// Consumes the builder and constructs a [`CreateWorkflowInput`](crate::operation::create_workflow::CreateWorkflowInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_workflow::CreateWorkflowInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_workflow::CreateWorkflowInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_workflow::CreateWorkflowInput {
             name: self.name,
             description: self.description,

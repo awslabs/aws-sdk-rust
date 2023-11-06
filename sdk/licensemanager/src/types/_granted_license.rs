@@ -73,16 +73,20 @@ impl GrantedLicense {
         self.beneficiary.as_deref()
     }
     /// <p>License entitlements.</p>
-    pub fn entitlements(&self) -> ::std::option::Option<&[crate::types::Entitlement]> {
-        self.entitlements.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entitlements.is_none()`.
+    pub fn entitlements(&self) -> &[crate::types::Entitlement] {
+        self.entitlements.as_deref().unwrap_or_default()
     }
     /// <p>Configuration for consumption of the license.</p>
     pub fn consumption_configuration(&self) -> ::std::option::Option<&crate::types::ConsumptionConfiguration> {
         self.consumption_configuration.as_ref()
     }
     /// <p>Granted license metadata.</p>
-    pub fn license_metadata(&self) -> ::std::option::Option<&[crate::types::Metadata]> {
-        self.license_metadata.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.license_metadata.is_none()`.
+    pub fn license_metadata(&self) -> &[crate::types::Metadata] {
+        self.license_metadata.as_deref().unwrap_or_default()
     }
     /// <p>Creation time of the granted license.</p>
     pub fn create_time(&self) -> ::std::option::Option<&str> {

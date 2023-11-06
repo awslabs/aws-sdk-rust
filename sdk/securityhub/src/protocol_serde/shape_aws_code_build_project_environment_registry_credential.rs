@@ -2,7 +2,7 @@
 pub fn ser_aws_code_build_project_environment_registry_credential(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsCodeBuildProjectEnvironmentRegistryCredential,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.credential {
         object.key("Credential").string(var_1.as_str());
     }

@@ -153,6 +153,7 @@ impl RegisterDomainInputBuilder {
     /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>
     /// </ul>
     /// <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use supports internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns">Formatting Internationalized Domain Names</a>. </p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -198,6 +199,7 @@ impl RegisterDomainInputBuilder {
     }
     /// <p>The number of years that you want to register the domain for. Domains are registered for a minimum of one year. The maximum period depends on the top-level domain. For the range of valid values for your domain, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>Default: 1</p>
+    /// This field is required.
     pub fn duration_in_years(mut self, input: i32) -> Self {
         self.duration_in_years = ::std::option::Option::Some(input);
         self
@@ -231,6 +233,7 @@ impl RegisterDomainInputBuilder {
         &self.auto_renew
     }
     /// <p>Provides detailed contact information. For information about the values that you specify for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
+    /// This field is required.
     pub fn admin_contact(mut self, input: crate::types::ContactDetail) -> Self {
         self.admin_contact = ::std::option::Option::Some(input);
         self
@@ -245,6 +248,7 @@ impl RegisterDomainInputBuilder {
         &self.admin_contact
     }
     /// <p>Provides detailed contact information. For information about the values that you specify for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
+    /// This field is required.
     pub fn registrant_contact(mut self, input: crate::types::ContactDetail) -> Self {
         self.registrant_contact = ::std::option::Option::Some(input);
         self
@@ -259,6 +263,7 @@ impl RegisterDomainInputBuilder {
         &self.registrant_contact
     }
     /// <p>Provides detailed contact information. For information about the values that you specify for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
+    /// This field is required.
     pub fn tech_contact(mut self, input: crate::types::ContactDetail) -> Self {
         self.tech_contact = ::std::option::Option::Some(input);
         self
@@ -344,7 +349,7 @@ impl RegisterDomainInputBuilder {
     /// Consumes the builder and constructs a [`RegisterDomainInput`](crate::operation::register_domain::RegisterDomainInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_domain::RegisterDomainInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::register_domain::RegisterDomainInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_domain::RegisterDomainInput {
             domain_name: self.domain_name,
             idn_lang_code: self.idn_lang_code,

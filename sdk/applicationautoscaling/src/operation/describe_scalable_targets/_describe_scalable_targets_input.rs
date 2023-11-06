@@ -82,8 +82,10 @@ impl DescribeScalableTargetsInput {
     /// <li> <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p> </li>
     /// <li> <p>SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li>
     /// </ul>
-    pub fn resource_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_ids.is_none()`.
+    pub fn resource_ids(&self) -> &[::std::string::String] {
+        self.resource_ids.as_deref().unwrap_or_default()
     }
     /// <p>The scalable dimension associated with the scalable target. This string consists of the service namespace, resource type, and scaling property. If you specify a scalable dimension, you must also specify a resource ID.</p>
     /// <ul>
@@ -141,6 +143,7 @@ pub struct DescribeScalableTargetsInputBuilder {
 }
 impl DescribeScalableTargetsInputBuilder {
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
+    /// This field is required.
     pub fn service_namespace(mut self, input: crate::types::ServiceNamespace) -> Self {
         self.service_namespace = ::std::option::Option::Some(input);
         self
@@ -350,7 +353,7 @@ impl DescribeScalableTargetsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_scalable_targets::DescribeScalableTargetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_scalable_targets::DescribeScalableTargetsInput {
             service_namespace: self.service_namespace,

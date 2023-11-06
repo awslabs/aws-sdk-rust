@@ -27,6 +27,7 @@ pub struct ResendOperationAuthorizationInputBuilder {
 }
 impl ResendOperationAuthorizationInputBuilder {
     /// <p> Operation ID. </p>
+    /// This field is required.
     pub fn operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operation_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl ResendOperationAuthorizationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::resend_operation_authorization::ResendOperationAuthorizationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::resend_operation_authorization::ResendOperationAuthorizationInput {
             operation_id: self.operation_id,

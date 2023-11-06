@@ -92,8 +92,10 @@ impl ReportGroup {
     }
     /// <p>A list of tag key and value pairs associated with this report group. </p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The status of the report group. This property is read-only.</p>
     /// <p>This can be one of the following values:</p>

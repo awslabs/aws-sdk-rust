@@ -35,6 +35,7 @@ pub struct ReportTaskRunnerHeartbeatOutputBuilder {
 }
 impl ReportTaskRunnerHeartbeatOutputBuilder {
     /// <p>Indicates whether the calling task runner should terminate.</p>
+    /// This field is required.
     pub fn terminate(mut self, input: bool) -> Self {
         self.terminate = ::std::option::Option::Some(input);
         self

@@ -20,8 +20,10 @@ impl GetLaunchProfileInitializationInput {
         self.launch_profile_id.as_deref()
     }
     /// <p>The launch profile protocol versions supported by the client.</p>
-    pub fn launch_profile_protocol_versions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.launch_profile_protocol_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.launch_profile_protocol_versions.is_none()`.
+    pub fn launch_profile_protocol_versions(&self) -> &[::std::string::String] {
+        self.launch_profile_protocol_versions.as_deref().unwrap_or_default()
     }
     /// <p>The launch purpose.</p>
     pub fn launch_purpose(&self) -> ::std::option::Option<&str> {
@@ -55,6 +57,7 @@ pub struct GetLaunchProfileInitializationInputBuilder {
 }
 impl GetLaunchProfileInitializationInputBuilder {
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
+    /// This field is required.
     pub fn launch_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_profile_id = ::std::option::Option::Some(input.into());
         self
@@ -89,6 +92,7 @@ impl GetLaunchProfileInitializationInputBuilder {
         &self.launch_profile_protocol_versions
     }
     /// <p>The launch purpose.</p>
+    /// This field is required.
     pub fn launch_purpose(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_purpose = ::std::option::Option::Some(input.into());
         self
@@ -103,6 +107,7 @@ impl GetLaunchProfileInitializationInputBuilder {
         &self.launch_purpose
     }
     /// <p>The platform where this Launch Profile will be used, either Windows or Linux.</p>
+    /// This field is required.
     pub fn platform(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform = ::std::option::Option::Some(input.into());
         self
@@ -117,6 +122,7 @@ impl GetLaunchProfileInitializationInputBuilder {
         &self.platform
     }
     /// <p>The studio ID. </p>
+    /// This field is required.
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
         self
@@ -135,7 +141,7 @@ impl GetLaunchProfileInitializationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_launch_profile_initialization::GetLaunchProfileInitializationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_launch_profile_initialization::GetLaunchProfileInitializationInput {
             launch_profile_id: self.launch_profile_id,

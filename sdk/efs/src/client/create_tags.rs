@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateTags`](crate::operation::create_tags::builders::CreateTagsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`file_system_id(impl Into<String>)`](crate::operation::create_tags::builders::CreateTagsFluentBuilder::file_system_id) / [`set_file_system_id(Option<String>)`](crate::operation::create_tags::builders::CreateTagsFluentBuilder::set_file_system_id): <p>The ID of the file system whose tags you want to modify (String). This operation modifies the tags only, not the file system.</p>
-    ///   - [`tags(Tag)`](crate::operation::create_tags::builders::CreateTagsFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::create_tags::builders::CreateTagsFluentBuilder::set_tags): <p>An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair. </p>
+    ///   - [`file_system_id(impl Into<String>)`](crate::operation::create_tags::builders::CreateTagsFluentBuilder::file_system_id) / [`set_file_system_id(Option<String>)`](crate::operation::create_tags::builders::CreateTagsFluentBuilder::set_file_system_id):<br>required: **true**<br><p>The ID of the file system whose tags you want to modify (String). This operation modifies the tags only, not the file system.</p><br>
+    ///   - [`tags(Tag)`](crate::operation::create_tags::builders::CreateTagsFluentBuilder::tags) / [`set_tags(Option<Vec::<Tag>>)`](crate::operation::create_tags::builders::CreateTagsFluentBuilder::set_tags):<br>required: **true**<br><p>An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair. </p><br>
     /// - On success, responds with [`CreateTagsOutput`](crate::operation::create_tags::CreateTagsOutput)
     /// - On failure, responds with [`SdkError<CreateTagsError>`](crate::operation::create_tags::CreateTagsError)
     #[deprecated(note = "Use TagResource.")]

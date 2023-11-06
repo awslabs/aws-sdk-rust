@@ -32,8 +32,10 @@ impl ListImageBuildVersionsInput {
     /// <li> <p> <code>type</code> </p> </li>
     /// <li> <p> <code>version</code> </p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum items to return in a request.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -62,6 +64,7 @@ pub struct ListImageBuildVersionsInputBuilder {
 }
 impl ListImageBuildVersionsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the image whose build versions you want to retrieve.</p>
+    /// This field is required.
     pub fn image_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_version_arn = ::std::option::Option::Some(input.into());
         self
@@ -149,7 +152,7 @@ impl ListImageBuildVersionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_image_build_versions::ListImageBuildVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_image_build_versions::ListImageBuildVersionsInput {
             image_version_arn: self.image_version_arn,

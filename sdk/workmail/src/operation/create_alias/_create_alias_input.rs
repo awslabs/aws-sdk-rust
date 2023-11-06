@@ -41,6 +41,7 @@ pub struct CreateAliasInputBuilder {
 }
 impl CreateAliasInputBuilder {
     /// <p>The organization under which the member (user or group) exists.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl CreateAliasInputBuilder {
         &self.organization_id
     }
     /// <p>The member (user or group) to which this alias is added.</p>
+    /// This field is required.
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl CreateAliasInputBuilder {
         &self.entity_id
     }
     /// <p>The alias to add to the member set.</p>
+    /// This field is required.
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +86,7 @@ impl CreateAliasInputBuilder {
         &self.alias
     }
     /// Consumes the builder and constructs a [`CreateAliasInput`](crate::operation::create_alias::CreateAliasInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_alias::CreateAliasInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_alias::CreateAliasInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_alias::CreateAliasInput {
             organization_id: self.organization_id,
             entity_id: self.entity_id,

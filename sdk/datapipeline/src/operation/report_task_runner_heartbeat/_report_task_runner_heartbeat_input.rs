@@ -42,6 +42,7 @@ pub struct ReportTaskRunnerHeartbeatInputBuilder {
 }
 impl ReportTaskRunnerHeartbeatInputBuilder {
     /// <p>The ID of the task runner. This value should be unique across your AWS account. In the case of AWS Data Pipeline Task Runner launched on a resource managed by AWS Data Pipeline, the web service provides a unique identifier when it launches the application. If you have written a custom task runner, you should assign a unique identifier for the task runner.</p>
+    /// This field is required.
     pub fn taskrunner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.taskrunner_id = ::std::option::Option::Some(input.into());
         self
@@ -88,7 +89,7 @@ impl ReportTaskRunnerHeartbeatInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatInput {
             taskrunner_id: self.taskrunner_id,

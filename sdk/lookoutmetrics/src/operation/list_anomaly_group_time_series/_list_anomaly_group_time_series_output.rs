@@ -25,16 +25,20 @@ impl ListAnomalyGroupTimeSeriesOutput {
         self.metric_name.as_deref()
     }
     /// <p>Timestamps for the anomalous metrics.</p>
-    pub fn timestamp_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.timestamp_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.timestamp_list.is_none()`.
+    pub fn timestamp_list(&self) -> &[::std::string::String] {
+        self.timestamp_list.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token that's included if more results are available.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>A list of anomalous metrics.</p>
-    pub fn time_series_list(&self) -> ::std::option::Option<&[crate::types::TimeSeries]> {
-        self.time_series_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.time_series_list.is_none()`.
+    pub fn time_series_list(&self) -> &[crate::types::TimeSeries] {
+        self.time_series_list.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListAnomalyGroupTimeSeriesOutput {

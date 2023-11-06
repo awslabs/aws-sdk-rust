@@ -20,8 +20,10 @@ impl PutJobTaggingInput {
         self.job_id.as_deref()
     }
     /// <p>The set of tags to associate with the S3 Batch Operations job.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::S3Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::S3Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl PutJobTaggingInput {
@@ -41,6 +43,7 @@ pub struct PutJobTaggingInputBuilder {
 }
 impl PutJobTaggingInputBuilder {
     /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl PutJobTaggingInputBuilder {
         &self.account_id
     }
     /// <p>The ID for the S3 Batch Operations job whose tags you want to replace.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -91,7 +95,7 @@ impl PutJobTaggingInputBuilder {
     /// Consumes the builder and constructs a [`PutJobTaggingInput`](crate::operation::put_job_tagging::PutJobTaggingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_job_tagging::PutJobTaggingInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_job_tagging::PutJobTaggingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_job_tagging::PutJobTaggingInput {
             account_id: self.account_id,
             job_id: self.job_id,

@@ -14,7 +14,7 @@ pub struct UpdateEnvironmentInput {
     /// <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to update the runtime environment during the maintenance window. The default is false. Currently, Amazon Web Services Mainframe Modernization accepts the <code>engineVersion</code> parameter only if <code>applyDuringMaintenanceWindow</code> is true. If any parameter other than <code>engineVersion</code> is provided in <code>UpdateEnvironmentRequest</code>, it will fail if <code>applyDuringMaintenanceWindow</code> is set to true.</p>
-    pub apply_during_maintenance_window: bool,
+    pub apply_during_maintenance_window: ::std::option::Option<bool>,
 }
 impl UpdateEnvironmentInput {
     /// <p>The unique identifier of the runtime environment that you want to update.</p>
@@ -38,7 +38,7 @@ impl UpdateEnvironmentInput {
         self.preferred_maintenance_window.as_deref()
     }
     /// <p>Indicates whether to update the runtime environment during the maintenance window. The default is false. Currently, Amazon Web Services Mainframe Modernization accepts the <code>engineVersion</code> parameter only if <code>applyDuringMaintenanceWindow</code> is true. If any parameter other than <code>engineVersion</code> is provided in <code>UpdateEnvironmentRequest</code>, it will fail if <code>applyDuringMaintenanceWindow</code> is set to true.</p>
-    pub fn apply_during_maintenance_window(&self) -> bool {
+    pub fn apply_during_maintenance_window(&self) -> ::std::option::Option<bool> {
         self.apply_during_maintenance_window
     }
 }
@@ -62,6 +62,7 @@ pub struct UpdateEnvironmentInputBuilder {
 }
 impl UpdateEnvironmentInputBuilder {
     /// <p>The unique identifier of the runtime environment that you want to update.</p>
+    /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
@@ -148,14 +149,14 @@ impl UpdateEnvironmentInputBuilder {
     /// Consumes the builder and constructs a [`UpdateEnvironmentInput`](crate::operation::update_environment::UpdateEnvironmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_environment::UpdateEnvironmentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_environment::UpdateEnvironmentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_environment::UpdateEnvironmentInput {
             environment_id: self.environment_id,
             desired_capacity: self.desired_capacity,
             instance_type: self.instance_type,
             engine_version: self.engine_version,
             preferred_maintenance_window: self.preferred_maintenance_window,
-            apply_during_maintenance_window: self.apply_during_maintenance_window.unwrap_or_default(),
+            apply_during_maintenance_window: self.apply_during_maintenance_window,
         })
     }
 }

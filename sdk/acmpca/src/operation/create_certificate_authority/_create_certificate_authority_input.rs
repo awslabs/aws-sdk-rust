@@ -67,8 +67,10 @@ impl CreateCertificateAuthorityInput {
         self.key_storage_security_standard.as_ref()
     }
     /// <p>Key-value pairs that will be attached to the new private CA. You can associate up to 50 tags with a private CA. For information using tags with IAM to manage permissions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether the CA issues general-purpose certificates that typically require a revocation mechanism, or short-lived certificates that may optionally omit revocation because they expire quickly. Short-lived certificate validity is limited to seven days.</p>
     /// <p>The default value is GENERAL_PURPOSE.</p>
@@ -97,6 +99,7 @@ pub struct CreateCertificateAuthorityInputBuilder {
 }
 impl CreateCertificateAuthorityInputBuilder {
     /// <p>Name and bit size of the private key algorithm, the name of the signing algorithm, and X.500 certificate subject information.</p>
+    /// This field is required.
     pub fn certificate_authority_configuration(mut self, input: crate::types::CertificateAuthorityConfiguration) -> Self {
         self.certificate_authority_configuration = ::std::option::Option::Some(input);
         self
@@ -152,6 +155,7 @@ impl CreateCertificateAuthorityInputBuilder {
         &self.revocation_configuration
     }
     /// <p>The type of the certificate authority.</p>
+    /// This field is required.
     pub fn certificate_authority_type(mut self, input: crate::types::CertificateAuthorityType) -> Self {
         self.certificate_authority_type = ::std::option::Option::Some(input);
         self
@@ -247,7 +251,7 @@ impl CreateCertificateAuthorityInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_certificate_authority::CreateCertificateAuthorityInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_certificate_authority::CreateCertificateAuthorityInput {
             certificate_authority_configuration: self.certificate_authority_configuration,

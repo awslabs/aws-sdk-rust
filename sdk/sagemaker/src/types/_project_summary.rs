@@ -63,6 +63,7 @@ pub struct ProjectSummaryBuilder {
 }
 impl ProjectSummaryBuilder {
     /// <p>The name of the project.</p>
+    /// This field is required.
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +92,7 @@ impl ProjectSummaryBuilder {
         &self.project_description
     }
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
+    /// This field is required.
     pub fn project_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_arn = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +107,7 @@ impl ProjectSummaryBuilder {
         &self.project_arn
     }
     /// <p>The ID of the project.</p>
+    /// This field is required.
     pub fn project_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_id = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +122,7 @@ impl ProjectSummaryBuilder {
         &self.project_id
     }
     /// <p>The time that the project was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -133,6 +137,7 @@ impl ProjectSummaryBuilder {
         &self.creation_time
     }
     /// <p>The status of the project.</p>
+    /// This field is required.
     pub fn project_status(mut self, input: crate::types::ProjectStatus) -> Self {
         self.project_status = ::std::option::Option::Some(input);
         self

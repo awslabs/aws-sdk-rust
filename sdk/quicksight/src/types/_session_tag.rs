@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SessionTag {
     /// <p>The key for the tag.</p>
-    pub key: ::std::option::Option<::std::string::String>,
+    pub key: ::std::string::String,
     /// <p>The value that you want to assign the tag.</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
 }
 impl SessionTag {
     /// <p>The key for the tag.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
-        self.key.as_deref()
+    pub fn key(&self) -> &str {
+        use std::ops::Deref;
+        self.key.deref()
     }
     /// <p>The value that you want to assign the tag.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
 }
 impl ::std::fmt::Debug for SessionTag {
@@ -43,6 +45,7 @@ pub struct SessionTagBuilder {
 }
 impl SessionTagBuilder {
     /// <p>The key for the tag.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +60,7 @@ impl SessionTagBuilder {
         &self.key
     }
     /// <p>The value that you want to assign the tag.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -71,11 +75,24 @@ impl SessionTagBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`SessionTag`](crate::types::SessionTag).
-    pub fn build(self) -> crate::types::SessionTag {
-        crate::types::SessionTag {
-            key: self.key,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key`](crate::types::builders::SessionTagBuilder::key)
+    /// - [`value`](crate::types::builders::SessionTagBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::SessionTag, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SessionTag {
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building SessionTag",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building SessionTag",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for SessionTagBuilder {
